@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import ProtectedContent from "@/components/ProtectedContent";
 import { createClient } from "@/lib/supabase/client";
+import AIGradeButton from "@/components/AIGradeButton";
 import {
   ChevronDown,
   ChevronUp,
@@ -53,6 +54,7 @@ export default function AnswerClient({
   const [loading, setLoading] = useState(true);
   const [studentNotes, setStudentNotes] = useState<Record<number, string>>({});
   const [scores, setScores] = useState<Record<number, number>>({});
+  const [aiScores, setAiScores] = useState<Record<number, number>>({});
 
   useEffect(() => {
     try {
@@ -60,6 +62,8 @@ export default function AnswerClient({
       if (savedNotes) setStudentNotes(JSON.parse(savedNotes));
       const savedScores = localStorage.getItem(`exam-scores-${exam.id}`);
       if (savedScores) setScores(JSON.parse(savedScores));
+      const savedAiScores = localStorage.getItem(`exam-ai-scores-${exam.id}`);
+      if (savedAiScores) setAiScores(JSON.parse(savedAiScores));
     } catch {}
   }, [exam.id]);
 
@@ -68,6 +72,12 @@ export default function AnswerClient({
       localStorage.setItem(`exam-scores-${exam.id}`, JSON.stringify(scores));
     }
   }, [scores, exam.id]);
+
+  useEffect(() => {
+    if (Object.keys(aiScores).length > 0) {
+      localStorage.setItem(`exam-ai-scores-${exam.id}`, JSON.stringify(aiScores));
+    }
+  }, [aiScores, exam.id]);
 
   useEffect(() => {
     async function loadProfile() {
@@ -94,6 +104,12 @@ export default function AnswerClient({
       profile.membership_type !== "free" &&
       (!profile.membership_expires_at ||
         new Date(profile.membership_expires_at) > new Date()));
+
+  const isPaidMember =
+    !!profile &&
+    profile.membership_type !== "free" &&
+    (!profile.membership_expires_at ||
+      new Date(profile.membership_expires_at) > new Date());
 
   const togglePart = (partNumber: number) => {
     setOpenParts((prev) => {
@@ -345,6 +361,24 @@ export default function AnswerClient({
                             </p>
                           )}
                         </div>
+
+                        {/* AI Grade Button — paid members only */}
+                        {isPaidMember && studentNotes[part.part_number - 1]?.trim() && (
+                          <AIGradeButton
+                            studentAnswer={studentNotes[part.part_number - 1]}
+                            correctAnswer={part.answer}
+                            keyPoints={part.key_points}
+                            question={part.question}
+                            partNumber={part.part_number}
+                            examId={exam.id}
+                            onGraded={(result) => {
+                              setAiScores((prev) => ({
+                                ...prev,
+                                [part.part_number]: result.score,
+                              }));
+                            }}
+                          />
+                        )}
                       </ProtectedContent>
                     </CardContent>
                   )}
