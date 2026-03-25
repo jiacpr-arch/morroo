@@ -7,13 +7,31 @@ export async function getExams(): Promise<Exam[]> {
     .from("exams")
     .select("*")
     .eq("status", "published")
-    .order("created_at", { ascending: false });
+    .order("publish_date", { ascending: true });
 
   if (error) {
     console.error("Error fetching exams:", error);
     return [];
   }
   return (data as Exam[]) || [];
+}
+
+// Sort exams: available first (has parts + publish_date passed), then coming soon by date
+export function sortExamsAvailableFirst(exams: Exam[], partCounts: Record<string, number>): Exam[] {
+  const now = new Date();
+  return [...exams].sort((a, b) => {
+    const aAvailable = (partCounts[a.id] || 0) > 0 && (!a.publish_date || new Date(a.publish_date + "T00:00:00") <= now);
+    const bAvailable = (partCounts[b.id] || 0) > 0 && (!b.publish_date || new Date(b.publish_date + "T00:00:00") <= now);
+
+    // Available exams first
+    if (aAvailable && !bAvailable) return -1;
+    if (!aAvailable && bAvailable) return 1;
+
+    // Within same group: sort by publish_date ascending (earliest first)
+    const aDate = a.publish_date ? new Date(a.publish_date) : new Date(a.created_at);
+    const bDate = b.publish_date ? new Date(b.publish_date) : new Date(b.created_at);
+    return aDate.getTime() - bDate.getTime();
+  });
 }
 
 export async function getExam(id: string): Promise<Exam | null> {

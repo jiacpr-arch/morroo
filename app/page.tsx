@@ -5,7 +5,7 @@ import ExamCard from "@/components/ExamCard";
 import PricingCard from "@/components/PricingCard";
 import DailyCountdown from "@/components/DailyCountdown";
 import { CATEGORIES, PRICING_PLANS } from "@/lib/types";
-import { getExams, getExamPartCounts } from "@/lib/supabase/queries";
+import { getExams, getExamPartCounts, sortExamsAvailableFirst } from "@/lib/supabase/queries";
 import {
   BookOpen,
   Clock,
@@ -17,7 +17,8 @@ import {
 } from "lucide-react";
 
 export default async function HomePage() {
-  const [exams, partCounts] = await Promise.all([getExams(), getExamPartCounts()]);
+  const [allExams, partCounts] = await Promise.all([getExams(), getExamPartCounts()]);
+  const exams = sortExamsAvailableFirst(allExams, partCounts);
   const latestExams = exams.slice(0, 6);
   const dailyExam = exams[0];
 

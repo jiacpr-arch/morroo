@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import ExamCard from "@/components/ExamCard";
 import { Badge } from "@/components/ui/badge";
-import { getExams, getExamPartCounts } from "@/lib/supabase/queries";
+import { getExams, getExamPartCounts, sortExamsAvailableFirst } from "@/lib/supabase/queries";
 import { CATEGORIES } from "@/lib/types";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -21,7 +21,7 @@ async function ExamsList({
   isFree?: string;
 }) {
   const [allExams, partCounts] = await Promise.all([getExams(), getExamPartCounts()]);
-  let exams = allExams;
+  let exams = sortExamsAvailableFirst(allExams, partCounts);
 
   if (category) {
     exams = exams.filter((e) => e.category === category);
