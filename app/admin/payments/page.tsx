@@ -73,12 +73,35 @@ export default function AdminPaymentsPage() {
       setIsAdmin(true);
 
       // Fetch orders
-      const { data } = await supabase
+      const { data: ordersData } = await supabase
         .from("payment_orders")
-        .select("*, profiles(email, name)")
+        .select("*")
         .order("created_at", { ascending: false });
 
-      setOrders((data as PaymentOrder[]) || []);
+      if (ordersData && ordersData.length > 0) {
+        // Fetch profiles for all user_ids
+        const userIds = [...new Set(ordersData.map((o: PaymentOrder) => o.user_id))];
+        const { data: profilesData } = await supabase
+          .from("profiles")
+          .select("id, email, name")
+          .in("id", userIds);
+
+        const profileMap: Record<string, { email: string; name: string }> = {};
+        if (profilesData) {
+          for (const p of profilesData) {
+            profileMap[p.id] = { email: p.email, name: p.name };
+          }
+        }
+
+        setOrders(
+          ordersData.map((o: PaymentOrder) => ({
+            ...o,
+            profiles: profileMap[o.user_id] || { email: o.user_id.slice(0, 8), name: "" },
+          }))
+        );
+      } else {
+        setOrders([]);
+      }
       setLoading(false);
     }
     load();
