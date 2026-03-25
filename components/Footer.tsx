@@ -41,8 +41,8 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold mb-3">ติดต่อเรา</h3>
             <ul className="space-y-2 text-sm text-white/70">
-              <li>📧 contact@morroo.com</li>
-              <li>📱 Line: @morroo</li>
+              <li>📧 jiacpr@gmail.com</li>
+              <li>📱 Line: @jiacpr</li>
             </ul>
           </div>
         </div>
