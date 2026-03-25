@@ -16,19 +16,13 @@ import {
   Shield,
 } from "lucide-react";
 
+export const revalidate = 60; // revalidate every 60 seconds
+
 export default async function HomePage() {
   const [allExams, partCounts] = await Promise.all([getExams(), getExamPartCounts()]);
   const exams = sortExamsAvailableFirst(allExams, partCounts);
   const latestExams = exams.slice(0, 6);
-  const dailyExam = exams[0];
-
-  if (!dailyExam) {
-    return (
-      <div className="flex items-center justify-center min-h-[50vh]">
-        <p className="text-muted-foreground">กำลังโหลดข้อมูล...</p>
-      </div>
-    );
-  }
+  const dailyExam = exams[0] || null;
 
   return (
     <>
@@ -83,33 +77,35 @@ export default async function HomePage() {
       </section>
 
       {/* Daily Exam */}
-      <section className="py-12 bg-white border-b">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-6 rounded-2xl bg-gradient-to-r from-brand/5 to-brand-light/5 border border-brand/10">
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <Badge className="bg-brand text-white">ข้อสอบประจำวัน</Badge>
-                {dailyExam.is_free && (
-                  <Badge variant="secondary">ฟรี</Badge>
-                )}
+      {dailyExam && (
+        <section className="py-12 bg-white border-b">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-6 rounded-2xl bg-gradient-to-r from-brand/5 to-brand-light/5 border border-brand/10">
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <Badge className="bg-brand text-white">ข้อสอบประจำวัน</Badge>
+                  {dailyExam.is_free && (
+                    <Badge variant="secondary">ฟรี</Badge>
+                  )}
+                </div>
+                <h3 className="text-lg font-semibold">{dailyExam.title}</h3>
+                <p className="text-sm text-muted-foreground mt-1">
+                  {dailyExam.category} &bull; 6 ตอน
+                </p>
               </div>
-              <h3 className="text-lg font-semibold">{dailyExam.title}</h3>
-              <p className="text-sm text-muted-foreground mt-1">
-                {dailyExam.category} &bull; 6 ตอน
-              </p>
-            </div>
-            <div className="flex flex-col sm:items-end gap-3">
-              <div className="text-sm text-muted-foreground">ข้อถัดไปใน</div>
-              <DailyCountdown />
-              <Link href={`/exams/${dailyExam.id}`}>
-                <Button className="bg-brand hover:bg-brand-light text-white">
-                  เริ่มทำข้อสอบ <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
+              <div className="flex flex-col sm:items-end gap-3">
+                <div className="text-sm text-muted-foreground">ข้อถัดไปใน</div>
+                <DailyCountdown />
+                <Link href={`/exams/${dailyExam.id}`}>
+                  <Button className="bg-brand hover:bg-brand-light text-white">
+                    เริ่มทำข้อสอบ <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Categories */}
       <section className="py-16">
@@ -150,9 +146,15 @@ export default async function HomePage() {
             </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {latestExams.map((exam) => (
-              <ExamCard key={exam.id} exam={exam} partCount={partCounts[exam.id] || 0} />
-            ))}
+            {latestExams.length > 0 ? (
+              latestExams.map((exam) => (
+                <ExamCard key={exam.id} exam={exam} partCount={partCounts[exam.id] || 0} />
+              ))
+            ) : (
+              <p className="col-span-full text-center text-muted-foreground py-8">
+                กำลังเตรียมข้อสอบ... กลับมาเร็วๆ นี้
+              </p>
+            )}
           </div>
         </div>
       </section>
