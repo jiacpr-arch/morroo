@@ -238,8 +238,7 @@ export default async function HomePage() {
             <Link href="/exams">
               <Button
                 size="lg"
-                variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 px-8 text-base"
+                className="bg-transparent border border-white/30 text-white hover:bg-white/10 px-8 text-base"
               >
                 ดูข้อสอบตัวอย่าง
               </Button>
