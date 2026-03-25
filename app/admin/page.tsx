@@ -146,7 +146,7 @@ export default function AdminDashboard() {
 
       {/* Quick actions */}
       <h2 className="text-lg font-bold mb-4">จัดการ</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <Link href="/admin/exams">
           <Card className="hover:shadow-md transition-shadow cursor-pointer h-full">
             <CardHeader className="pb-2">
@@ -180,6 +180,21 @@ export default function AdminDashboard() {
             <CardContent>
               <p className="text-sm text-muted-foreground">
                 ตรวจสอบสลิปและอนุมัติสมาชิก
+              </p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/users">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Users className="h-5 w-5 text-brand" />
+                <h3 className="font-bold">จัดการสมาชิก</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                ดูข้อมูลสมาชิก แก้ไขสมาชิกภาพ และกำหนดสิทธิ์
               </p>
             </CardContent>
           </Card>
