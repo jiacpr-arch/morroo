@@ -2,25 +2,35 @@
 
 import { useState, useEffect } from "react";
 
-// Each exam gets a different "coming soon" date based on its ID
-function getTargetDate(examId: string): Date {
-  // Simple hash to spread dates out 3-14 days from now
+function getTargetDate(publishDate: string | null, examId: string): Date {
+  // If publish_date is set, use it
+  if (publishDate) {
+    const target = new Date(publishDate + "T09:00:00");
+    return target;
+  }
+  // Fallback: hash-based date for exams without publish_date
   let hash = 0;
   for (let i = 0; i < examId.length; i++) {
     hash = (hash * 31 + examId.charCodeAt(i)) % 12;
   }
-  const daysFromNow = 3 + hash; // 3-14 days
+  const daysFromNow = 3 + hash;
   const target = new Date();
   target.setDate(target.getDate() + daysFromNow);
-  target.setHours(9, 0, 0, 0); // 9:00 AM
+  target.setHours(9, 0, 0, 0);
   return target;
 }
 
-export default function ComingSoonCountdown({ examId }: { examId: string }) {
+export default function ComingSoonCountdown({
+  publishDate,
+  examId,
+}: {
+  publishDate?: string | null;
+  examId: string;
+}) {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
-    const target = getTargetDate(examId);
+    const target = getTargetDate(publishDate || null, examId);
 
     function calc() {
       const now = new Date();
@@ -36,7 +46,7 @@ export default function ComingSoonCountdown({ examId }: { examId: string }) {
     setTimeLeft(calc());
     const timer = setInterval(() => setTimeLeft(calc()), 1000);
     return () => clearInterval(timer);
-  }, [examId]);
+  }, [publishDate, examId]);
 
   return (
     <div className="flex items-center gap-1.5 text-xs text-purple-600">

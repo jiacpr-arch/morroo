@@ -20,7 +20,10 @@ const difficultyLabels = {
 };
 
 export default function ExamCard({ exam, partCount = 0 }: { exam: Exam; partCount?: number }) {
-  const isComingSoon = partCount === 0;
+  // Coming soon if publish_date is in the future OR no parts yet
+  const publishDate = exam.publish_date ? new Date(exam.publish_date + "T00:00:00") : null;
+  const now = new Date();
+  const isComingSoon = (publishDate && publishDate > now) || partCount === 0;
 
   if (isComingSoon) {
     return (
@@ -45,7 +48,7 @@ export default function ExamCard({ exam, partCount = 0 }: { exam: Exam; partCoun
           </h3>
         </CardContent>
         <CardFooter className="pt-0">
-          <ComingSoonCountdown examId={exam.id} />
+          <ComingSoonCountdown publishDate={exam.publish_date} examId={exam.id} />
         </CardFooter>
       </Card>
     );
