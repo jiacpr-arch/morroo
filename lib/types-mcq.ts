@@ -13,6 +13,13 @@ export interface McqChoice {
   text: string;
 }
 
+export interface McqChoiceExplanation {
+  label: string;
+  text: string;
+  is_correct: boolean;
+  explanation: string;
+}
+
 export interface McqQuestion {
   id: string;
   subject_id: string;
@@ -23,6 +30,12 @@ export interface McqQuestion {
   choices: McqChoice[];
   correct_answer: string;
   explanation: string | null;
+  detailed_explanation: {
+    summary: string;
+    reason: string;
+    choices: McqChoiceExplanation[];
+    key_takeaway: string;
+  } | null;
   difficulty: "easy" | "medium" | "hard";
   is_ai_enhanced: boolean;
   ai_notes: string | null;

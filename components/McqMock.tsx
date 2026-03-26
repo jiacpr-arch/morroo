@@ -535,27 +535,101 @@ export default function McqMock({ questions, timeLimitMinutes }: McqMockProps) {
         </div>
 
         {/* Explanation */}
-        {reviewQuestion.explanation && (
+        {(reviewQuestion.detailed_explanation || reviewQuestion.explanation) && (
           <div>
             <button
               onClick={() => setShowExplanation(!showExplanation)}
-              className="flex items-center gap-2 text-sm text-brand hover:underline"
+              className="flex items-center gap-2 text-sm font-medium text-brand hover:underline"
             >
               {showExplanation ? (
                 <ChevronUp className="h-4 w-4" />
               ) : (
                 <ChevronDown className="h-4 w-4" />
               )}
-              {showExplanation ? "ซ่อนคำอธิบาย" : "ดูคำอธิบาย"}
+              {showExplanation ? "ซ่อนคำอธิบาย" : "ดูเฉลยละเอียด"}
             </button>
             {showExplanation && (
-              <Card className="mt-3 border-brand/20">
-                <CardContent className="p-4">
-                  <p className="text-sm leading-relaxed whitespace-pre-line text-muted-foreground">
-                    {reviewQuestion.explanation}
-                  </p>
-                </CardContent>
-              </Card>
+              <div className="mt-3 space-y-4">
+                {reviewQuestion.detailed_explanation ? (
+                  <>
+                    <Card className="border-green-300 bg-green-50/50">
+                      <CardContent className="p-4">
+                        <div className="flex items-start gap-2 mb-2">
+                          <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                          <h4 className="font-bold text-green-800">
+                            คำตอบที่ถูกต้อง: {reviewQuestion.correct_answer}
+                          </h4>
+                        </div>
+                        <p className="text-sm leading-relaxed text-green-900">
+                          {reviewQuestion.detailed_explanation.summary}
+                        </p>
+                      </CardContent>
+                    </Card>
+
+                    <Card className="border-blue-200 bg-blue-50/30">
+                      <CardContent className="p-4">
+                        <h4 className="font-bold text-blue-800 mb-2">เหตุผลโดยละเอียด</h4>
+                        <p className="text-sm leading-relaxed whitespace-pre-line text-foreground/80">
+                          {reviewQuestion.detailed_explanation.reason}
+                        </p>
+                      </CardContent>
+                    </Card>
+
+                    <div>
+                      <h4 className="font-bold text-sm mb-3">อธิบายแต่ละตัวเลือก</h4>
+                      <div className="space-y-2">
+                        {reviewQuestion.detailed_explanation.choices.map((ce) => (
+                          <div
+                            key={ce.label}
+                            className={`p-3 rounded-lg border text-sm ${
+                              ce.is_correct
+                                ? "border-green-300 bg-green-50/50"
+                                : "border-border bg-muted/30"
+                            }`}
+                          >
+                            <div className="flex items-start gap-2">
+                              <span
+                                className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
+                                  ce.is_correct
+                                    ? "bg-green-500 text-white"
+                                    : "bg-muted text-muted-foreground"
+                                }`}
+                              >
+                                {ce.label}
+                              </span>
+                              <div>
+                                <span className="font-medium">{ce.text}</span>
+                                <p className="text-muted-foreground mt-1 leading-relaxed">
+                                  {ce.explanation}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {reviewQuestion.detailed_explanation.key_takeaway && (
+                      <Card className="border-amber-200 bg-amber-50/30">
+                        <CardContent className="p-4">
+                          <h4 className="font-bold text-amber-800 mb-1 text-sm">สรุปจุดสำคัญ</h4>
+                          <p className="text-sm leading-relaxed text-amber-900">
+                            {reviewQuestion.detailed_explanation.key_takeaway}
+                          </p>
+                        </CardContent>
+                      </Card>
+                    )}
+                  </>
+                ) : (
+                  <Card className="border-brand/20">
+                    <CardContent className="p-4">
+                      <p className="text-sm leading-relaxed whitespace-pre-line text-muted-foreground">
+                        {reviewQuestion.explanation}
+                      </p>
+                    </CardContent>
+                  </Card>
+                )}
+              </div>
             )}
           </div>
         )}
