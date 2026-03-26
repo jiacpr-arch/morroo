@@ -32,7 +32,7 @@ export default async function HomePage() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <Badge className="mb-6 bg-white/10 text-white border-white/20 hover:bg-white/20">
-              <Sparkles className="h-3 w-3 mr-1" /> แพลตฟอร์มข้อสอบ MEQ ออนไลน์
+              <Sparkles className="h-3 w-3 mr-1" /> แพลตฟอร์มข้อสอบ MEQ + NL ออนไลน์
             </Badge>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
               เตรียมสอบแพทย์
@@ -40,8 +40,8 @@ export default async function HomePage() {
               <span className="text-brand-light">ด้วย AI ที่เข้าใจคุณ</span>
             </h1>
             <p className="mt-6 text-lg text-white/70 max-w-2xl mx-auto">
-              ข้อสอบ MEQ แบบ Progressive Case ครบทุกสาขาวิชา
-              พร้อมเฉลยละเอียดและ Key Points จากผู้เชี่ยวชาญ
+              ข้อสอบ MEQ แบบ Progressive Case + ข้อสอบ NL ใบประกอบวิชาชีพ 1,300+ ข้อ
+              ครบทุกสาขาวิชา พร้อมเฉลยละเอียด
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/exams">
@@ -49,15 +49,15 @@ export default async function HomePage() {
                   size="lg"
                   className="bg-brand hover:bg-brand-light text-white px-8 text-base"
                 >
-                  เริ่มทำข้อสอบ <ArrowRight className="ml-2 h-4 w-4" />
+                  ข้อสอบ MEQ <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-              <Link href="/pricing">
+              <Link href="/nl">
                 <Button
                   size="lg"
                   className="bg-white/10 border border-white/30 text-white hover:bg-white/20 px-8 text-base"
                 >
-                  ดูแพ็กเกจราคา
+                  ข้อสอบ NL Exam <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
             </div>
@@ -66,7 +66,7 @@ export default async function HomePage() {
                 <Users className="h-4 w-4" /> 1,000+ แพทย์ใช้งาน
               </span>
               <span className="flex items-center gap-1.5">
-                <BookOpen className="h-4 w-4" /> 100+ ข้อสอบ
+                <BookOpen className="h-4 w-4" /> 1,300+ ข้อสอบ
               </span>
               <span className="flex items-center gap-1.5">
                 <Shield className="h-4 w-4" /> เฉลยจากผู้เชี่ยวชาญ

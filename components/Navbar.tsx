@@ -10,7 +10,8 @@ import type { User as SupabaseUser } from "@supabase/supabase-js";
 
 const navLinks = [
   { href: "/", label: "หน้าแรก" },
-  { href: "/exams", label: "ข้อสอบ" },
+  { href: "/exams", label: "MEQ" },
+  { href: "/nl", label: "NL Exam" },
   { href: "/pricing", label: "แพ็กเกจ" },
 ];
 
