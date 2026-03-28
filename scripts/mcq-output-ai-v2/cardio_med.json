@@ -1,0 +1,1447 @@
+[
+  {
+    "scenario": "60 ปี U/D DM HT มาด้วย TIA พบ idiopathic atrial fibrillation ควรทำอย่างไรเพื่อป้องกัน stroke",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Warfarin"
+      },
+      {
+        "label": "B",
+        "text": "Aspirin"
+      },
+      {
+        "label": "C",
+        "text": "Clopidogrel"
+      },
+      {
+        "label": "D",
+        "text": "Dabigatran"
+      },
+      {
+        "label": "E",
+        "text": "ไม่ต้องให้ยาต้านการไหลของเลือด"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วย AF ที่มี TIA (prior stroke) ต้องได้รับ anticoagulation (Warfarin หรือ DOAC) เพื่อป้องกัน stroke ซ้ำ เนื่องจาก CHA2DS2-VASc score สูง เลือกตัวเลือก D (DOAC) เพื่อให้เป็นทางเลือกสมัยใหม่",
+    "subject": "cardio_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "50 ปี ชายมาด้วย chest discomfort เฉียบพลัน 3 วัน บิดาเสียชีวิตจาก MI ตอนอายุ 45 ปี PE: normal S1 S2, S3 gallop EKG: ST depression ที่ lead II, III, aVF Troponin T 0.12 ng/mL การวินิจฉัยที่ถูกต้องคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute unstable angina"
+      },
+      {
+        "label": "B",
+        "text": "Non ST elevation myocardial infarction (NSTEMI)"
+      },
+      {
+        "label": "C",
+        "text": "Acute myocarditis"
+      },
+      {
+        "label": "D",
+        "text": "Recent transmural infarction"
+      },
+      {
+        "label": "E",
+        "text": "Prinzmetal angina"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว (ไม่ระบุปี)",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี ST depression ที่ inferior leads, S3 gallop (heart failure) และ elevated troponin T → NSTEMI ได้หรือ unstable angina แต่ troponin T ยกขึ้น → NSTEMI เป็นคำตอบที่ถูกต้องที่สุด",
+    "subject": "cardio_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ชายมีอาการเจ็บหน้าอก เหนื่อยเวลาขึ้นบันไดประมาณ 3 ชั้นทุกครั้ง มาโรงพยาบาลทำ EKG normal การตรวจเพิ่มเติมที่เหมาะสมต่อไปคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Treadmill exercise testing (EKG stress test)"
+      },
+      {
+        "label": "B",
+        "text": "Coronary CT angiography"
+      },
+      {
+        "label": "C",
+        "text": "Transthoracic echocardiography"
+      },
+      {
+        "label": "D",
+        "text": "24-hour Holter monitoring"
+      },
+      {
+        "label": "E",
+        "text": "Chest X-ray"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว (ไม่ระบุปี)",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี stable exertional chest pain (CCS class II) และ normal baseline EKG → Treadmill stress test เป็นขั้นตอนแรกในการประเมินผู้ป่วยเพื่อตรวจสอบ inducible ischemia",
+    "subject": "cardio_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "60 ปี ชายมาด้วย chest pain substernal 60 นาที BP 80/50 mmHg EKG: ST elevation ที่ lead II, III, aVF การจัดการที่เหมาะสมคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Dobutamine IV"
+      },
+      {
+        "label": "B",
+        "text": "IV fluid"
+      },
+      {
+        "label": "C",
+        "text": "Nitrate sublingual"
+      },
+      {
+        "label": "D",
+        "text": "Primary PCI"
+      },
+      {
+        "label": "E",
+        "text": "Thrombolytic therapy"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว (ไม่ระบุปี)",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วย ST elevation MI (inferior wall) ที่มา 60 นาที พบ hypotension (BP 80/50) ซึ่งอาจเป็น cardiogenic shock → Primary PCI เป็นการจัดการที่เหมาะสม ไม่ควรให้ Nitrate เพราะ hypotensive แล้ว",
+    "subject": "cardio_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "70 ปี ผู้ป่วยมาด้วย dyspnea progressive 2 เดือน PE: regular HR 80/min, carotid pulse เล็กและ delayed upstroke, S2 ลดลง, paradoxical split S2, cardiac auscultation พบ SEM grade 3/5 ที่ aortic valve area การรักษาที่เหมาะสมที่สุดคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Diuretics"
+      },
+      {
+        "label": "B",
+        "text": "ACE inhibitor"
+      },
+      {
+        "label": "C",
+        "text": "Digitalis"
+      },
+      {
+        "label": "D",
+        "text": "Exercise stress test"
+      },
+      {
+        "label": "E",
+        "text": "Aortic valve replacement"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว (ไม่ระบุปี)",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมีอาการและเครื่องหมาย moderate to severe aortic stenosis (SEM grade 3/5, delayed carotid upstroke, paradoxical split S2, dyspnea) ที่กำลังสมดุล → Aortic valve replacement เป็นคำตอบที่ถูกต้องที่สุด",
+    "subject": "cardio_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "60 ปี ชายมาด้วย acute chest pain radiated to back มี DM, HT, dyslipidemia PE: agitation, PR 110, RR 30, BP 160/100 (left), BP 90/60 (right), EKG: tachycardia การวินิจฉัยคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Aortic dissection"
+      },
+      {
+        "label": "B",
+        "text": "Takayasu arteritis"
+      },
+      {
+        "label": "C",
+        "text": "Coarctation of aorta"
+      },
+      {
+        "label": "D",
+        "text": "Acute coronary syndrome"
+      },
+      {
+        "label": "E",
+        "text": "Pulmonary embolism"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว (ไม่ระบุปี)",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี chest pain radiating to back + hypertension + ความแตกต่างของ BP ระหว่างแขน (160/100 vs 90/60) → Aortic dissection เป็นคำตอบที่ถูกต้องที่สุด ต้องสงสัยและประเมินด้วย CT angiography โดยเร็ว",
+    "subject": "cardio_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "55 ปี ชายมี underlying disease คือ hypertension, dyslipidemia, coronary artery disease รับประทานยาเป็นประจำ EKG พบ QT 0.55 วินาที (prolonged QT) สาเหตุของการผิดปกติของ QT interval นี้คืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Atenolol"
+      },
+      {
+        "label": "B",
+        "text": "Verapamil"
+      },
+      {
+        "label": "C",
+        "text": "Amiodarone"
+      },
+      {
+        "label": "D",
+        "text": "Gemfibrozil"
+      },
+      {
+        "label": "E",
+        "text": "Simvastatin"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว (ไม่ระบุปี)",
+    "status": "complete",
+    "ai_notes": "Amiodarone เป็นยาที่มีผลต่อการนำกระแสไฟฟ้าของหัวใจและเป็นสาเหตุ QT prolongation ที่พบบ่อยที่สุด Atenolol และ Verapamil ไม่ค่อยทำให้ QT prolongation; Gemfibrozil และ Simvastatin ไม่ทำให้ QT prolongation",
+    "subject": "cardio_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "60 ปี ชายเกิด syncope ขณะอาบน้ำ มี underlying disease คือ well-controlled HT และ dyslipidemia เป็นเวลา 5 ปี PE: delayed carotid upstroke, SEM grade III ที่ right และ left UPSB, neurological exam: normal, others: unremarkable การวินิจฉัยที่น่าจะเป็นไปได้มากที่สุดคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Transient ischemic attack"
+      },
+      {
+        "label": "B",
+        "text": "Mitral valve prolapse"
+      },
+      {
+        "label": "C",
+        "text": "Aortic stenosis"
+      },
+      {
+        "label": "D",
+        "text": "Sick sinus syndrome"
+      },
+      {
+        "label": "E",
+        "text": "Vasovagal attack"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว (ไม่ระบุปี)",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี syncope + delayed carotid upstroke + SEM (systolic ejection murmur) grade III ที่ aortic area → Aortic stenosis เป็นคำตอบที่ถูกต้องที่สุด syncope เกิดจาก decreased cerebral perfusion ในผู้ป่วย severe AS",
+    "subject": "cardio_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "20 ปี หญิงมี underlying rheumatic heart disease มา low grade fever 1 เดือน BT 38°C, P 100, BP 110/70 PE: petechiae ที่ conjunctiva และ finger, diastolic rumbling และ pansystolic murmur ที่ apex การวินิจฉัยคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute leukemia"
+      },
+      {
+        "label": "B",
+        "text": "Exacerbated rheumatic carditis"
+      },
+      {
+        "label": "C",
+        "text": "Meningococcemia"
+      },
+      {
+        "label": "D",
+        "text": "Infective endocarditis"
+      },
+      {
+        "label": "E",
+        "text": "Acute pericarditis"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว (ไม่ระบุปี)",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี rheumatic heart disease + fever + petechiae + new/changing cardiac murmurs (diastolic rumbling + pansystolic) → Infective endocarditis เป็นคำตอบที่ถูกต้องที่สุด ตรงกับเกณฑ์ Duke criteria",
+    "subject": "cardio_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "3 ปี เด็กชายมาด้วย fatigue และมี low-grade fever มีประวัติ dental carries เมื่อเร็วๆ นี้ PE: pansystolic murmur 3/6 ไม่พบ pericardial rub, mild hepatomegaly การวินิจฉัยคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Viral carditis"
+      },
+      {
+        "label": "B",
+        "text": "Pericarditis"
+      },
+      {
+        "label": "C",
+        "text": "Infective endocarditis"
+      },
+      {
+        "label": "D",
+        "text": "Cardiomyopathy"
+      },
+      {
+        "label": "E",
+        "text": "Myocarditis"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว (ไม่ระบุปี)",
+    "status": "complete",
+    "ai_notes": "เด็กมา fever + fatigue + ประวัติ dental carries (source of infection) + pansystolic murmur (VSD หรือ MR จาก vegetation) + hepatomegaly (heart failure) → Infective endocarditis เป็นคำตอบที่ถูกต้อง เด็กอายุ 3 ปี ติดเชื้อได้จาก dental procedures",
+    "subject": "cardio_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ชายอายุ 77 ปี หมดสติ คลา carotid pulse ไม่ได้ ทา chest compression ไป ekg : asystole ทำอะไรต่อ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Adrenaline"
+      },
+      {
+        "label": "B",
+        "text": "Amiodarone"
+      },
+      {
+        "label": "C",
+        "text": "Defrib 200 J"
+      },
+      {
+        "label": "D",
+        "text": "Cardioverse 100 J"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2010",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 65 ปี ประวัติ Uncontrolled HTN และ Glaucoma ซื้อยากินเองตามใจชอบ ญาติพบว่าหมดสติ ไม่รู้สึกตัว PE: ซึม BP 140/90 mmHg Disoriented to time-place-person ดำเนินเอกสารยา Carbonic anhydrase inhibitor สำหรับรักษา Glaucoma Lab findings: Hyponatremia, Hypokalemia, Hypochloremia, CO2 35 mEq/L (Normal 23-29), BUN 40 mg/dL, Cr 1.6 mg/dL ผู้ป่วยมีผลผลาดของกรดด่างแบบใด และเกิดจากยาตัวใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acetazolamide"
+      },
+      {
+        "label": "B",
+        "text": "Hydrochlorothiazide (HCTZ)"
+      },
+      {
+        "label": "C",
+        "text": "Spironolactone"
+      },
+      {
+        "label": "D",
+        "text": "Furosemide"
+      },
+      {
+        "label": "E",
+        "text": "Timolol (ophthalmic)"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2010",
+    "explanation": "Acetazolamide เป็น carbonic anhydrase inhibitor ที่มักใช้รักษา Glaucoma เกิด Metabolic Acidosis (CO2 35 มKฒลาง) ร่วมกับ Hypokalemia, Hyponatremia และ Hypochloremia ที่ลักษณะเฉพาะ (Normal Anion Gap Acidosis) ยาตัวนี้ยับยั้งการหลั่งกรดด่าง และเพิ่มการสูญเสีย K+, Na+, Cl- ทำให้เกิดผลป่วย้อมหมดสติและ Altered mental status",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 30 ปี เหนื่อย อ่อนเพลีย BP 160/110 PR 70 อื่นๆปกติ Na 154 K 2.2 HCO3 32 การวินิจฉัยที่เหมาะสมคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Essential HT"
+      },
+      {
+        "label": "B",
+        "text": "Hyperthyroid"
+      },
+      {
+        "label": "C",
+        "text": "Pheochromocytoma"
+      },
+      {
+        "label": "D",
+        "text": "1st hyperaldosterone"
+      },
+      {
+        "label": "E",
+        "text": "Cushing syndrome"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2010",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 68 yr U/D HT กินยาไม่สม่าเสมอ มาด้วยหอบเหนื่อย PE: BP200/110 PR 100 neck vein engorge S3 gallop fine crep both lung Ext: pitting edema lower leg Eye:exudates c wire ring Mx??",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Digoxin"
+      },
+      {
+        "label": "B",
+        "text": "Propanolol"
+      },
+      {
+        "label": "C",
+        "text": "Nifedipine"
+      },
+      {
+        "label": "D",
+        "text": "Nitroglycerine"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2010",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 37 yr เจ็บกลางอกร้าวไปไหล่ซ้าย เหงื่อแตก ใจสั่น มีประวัติเป็นโรคหืด ใช้ยาขยายหลอดลมนานๆครั้ง ไม่มีบุคคลในครอบครัวเป็นโรคหัวใจ PE: BP 170/85 PR 110 EKG ST elevation V2-6 การดูแลขั้นต้นในผู้ป่วย รายนี้?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ASA + beta-block"
+      },
+      {
+        "label": "B",
+        "text": "ASA + nitrate"
+      },
+      {
+        "label": "C",
+        "text": "ASA + CCB"
+      },
+      {
+        "label": "D",
+        "text": "ASA + BZD"
+      },
+      {
+        "label": "E",
+        "text": "beta-block + heparin"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2010",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 20 ปี มีไข้มาสามวัน ต่อมามีเจ็บแน่นหน้าอกเหนื่อยง่ายขึ้น นอนราบไม่ได้ ตรวจร่างกาย V/S : BT 39, BP 90/70,PR110 ,RR22 neck vein engorge, decrease heart sound w/ scattering, lung clear ,other WNL",
+    "choices": [
+      {
+        "label": "A",
+        "text": "CHF"
+      },
+      {
+        "label": "B",
+        "text": "Severs MS"
+      },
+      {
+        "label": "C",
+        "text": "Pericarditis"
+      },
+      {
+        "label": "D",
+        "text": "Myocarditis"
+      },
+      {
+        "label": "E",
+        "text": "PE"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2010",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 23 ปี อาชีพครูโรงเรียนเด็กอนุบาล เคยป่วยเป็นRheumatic fever ตอนอายุ 15 ปีปัจจุบันทางานทั่วไปได้ปกติ ไม่มีอาการหอบเหนื่อย ตรวจร่างกายพบ pansystolic murmur\ngrade II/VI at apex ได้รับการรักษาด้วย Penicillin V มาตลอดควรให้การรักษาผู้ป่วยรายนี้ต่อไปอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "หยุดยา penicillin"
+      },
+      {
+        "label": "B",
+        "text": "ให้กินยาเฉพาะตอนทาฟัน"
+      },
+      {
+        "label": "C",
+        "text": "กินยาไปจนกระทั่ง อายุ 30 ปี จึงหยุด"
+      },
+      {
+        "label": "D",
+        "text": "กินยาไปจนกระทัง่ อายุ 50 ปีจึงหยุด"
+      },
+      {
+        "label": "E",
+        "text": "ให้กินยาไปตลอดชีวิต"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2010",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หญิง 70 ปี U/D: HTN, DLP, DM on HCTZ, Thiazide, Enalapril, ASA, Simvastatin, Fenofobrate นาน 1 ปี ช่วง 6 เดือนที่ผ่านมาปวดขา 2 ข้างเป็นๆ หายๆ นวดหรือนอนพักแล้วอาการไม่ดีขึ้น มีข้อเข่าเสื่อม เดินไม่ค่อยไหวไม่ได้รักษา PE: normal อาการดังกล่าวน่าจะมีสาเหตุมาจากยาใด?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ASA"
+      },
+      {
+        "label": "B",
+        "text": "Thiazide"
+      },
+      {
+        "label": "C",
+        "text": "Enalapril"
+      },
+      {
+        "label": "D",
+        "text": "Fenofibrate"
+      },
+      {
+        "label": "E",
+        "text": "Simvastatin"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2011",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หญิงอายุ 82 ปี ขณะลุกไปฉี่มีอาการหน้ามืดวูบหนึ่งตรวจร่างกายพบ orthostatic hypotension เกิดจากสาเหตุใดมากที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Hypovolemia"
+      },
+      {
+        "label": "B",
+        "text": "AS"
+      },
+      {
+        "label": "C",
+        "text": "Coronary disease"
+      },
+      {
+        "label": "D",
+        "text": "Cardiovascular disease"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2011",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 40 ปี แข็งแรงดี วิ่งมาราธอนได้ 5-10km(30นาที) แล้วเริ่มเหนื่อย วิ่งห่างจากคนอื่น อาเจียน ล้มลงบนพื้น เกร็งกระตุก 2 ครั้ง หมดสติ BT40 PR120 BP160/100 RR30 หายใจดัง อื่นๆปกติดี no focal neurological deficit ปวดหัวมาก Dx?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Heat stroke"
+      },
+      {
+        "label": "B",
+        "text": "TIA"
+      },
+      {
+        "label": "C",
+        "text": "Acute MI"
+      },
+      {
+        "label": "D",
+        "text": "Pulmonary embolism"
+      },
+      {
+        "label": "E",
+        "text": "Intracerebral hemorrhage"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2011",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี มี CKD stage 5 มาด้วย weakness และ palpitation EKG แสดง tall peaked T wave บน precordial leads (V2-V4) ที่สูงและแหลม ซึ่งเป็น EKG change คลาสสิกของ hyperkalemia management เบื้องต้นควรเป็นอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Calcium gluconate IV"
+      },
+      {
+        "label": "B",
+        "text": "Insulin 10 unit IV + Dextrose 25g IV"
+      },
+      {
+        "label": "C",
+        "text": "Sodium polystyrene sulfonate (Kalexalate)"
+      },
+      {
+        "label": "D",
+        "text": "Sodium bicarbonate IV"
+      },
+      {
+        "label": "E",
+        "text": "Furosemide IV"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2011",
+    "explanation": "Tall peaked T wave เป็น ECG sign ของ hyperkalemia ที่บ่งชี้ cardiotoxicity ซึ่งเป็นอาการเฉพาะ Calcium gluconate เป็นสิ่งแรกที่ควรให้เพื่อปกป้องเยื่อหุ้มหัวใจโดยเพิ่ม cardiac threshold ในขณะที่ insulin+glucose, kalexalate และ diuretics ทำหน้าที่ลดระดับ K แต่ช้ากว่า ในสถานการณ์ acute hyperkalemia กับ ECG changes ต้องจัดการสิ่งที่เสี่ยง cardiotoxicity ก่อน",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 73 ปี มาด้วยอาการเหนื่อยและแน่นหน้าอก ตรวจร่างกายพบ BP 200/110 mmHg, PR 110 ครั้ง/นาที, RR 28 ครั้ง/นาที หัวใจได้ยิน S1 S2 ปกติ มีเสียง S3 gallop, พบ pitting edema ทั้งสองขา การตรวจระดับ JVP สูง ปอดได้ยินเสียง crackles ที่ฐาน การตรวจอื่นๆ : เบื่อ ดูอ่อนเพลีย CXR ภาพขยายหัวใจ และ pulmonary edema ผู้ป่วยนี้เป็นกรณี Acute Decompensated Heart Failure ที่มี hypertensive crisis ควรได้รับยาอะไรเพื่อลดภาระหัวใจและลดความดัน",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Captopril ให้ปากเล็มๆ"
+      },
+      {
+        "label": "B",
+        "text": "Digoxin IV"
+      },
+      {
+        "label": "C",
+        "text": "Nitroglycerin IV (Nitroprusside)"
+      },
+      {
+        "label": "D",
+        "text": "Furosemide IV"
+      },
+      {
+        "label": "E",
+        "text": "Metoprolol IV"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2011",
+    "explanation": "ผู้ป่วยนี้มี Acute Decompensated Heart Failure พร้อม Hypertensive Crisis (BP 200/110) และ pulmonary edema ต้องการลดความดันและ preload อย่างรวดเร็ว Nitroglycerin IV (หรือ Nitroprusside) เป็นตัวเลือกแรกเพราะให้ผลลดความดันและ afterload/preload ภายในนาที ทำให้หายใจสะดวกขึ้นและอาการแน่นหน้าอกลดลง ในขณะที่ Captopril ช้า Digoxin ไม่เหมาะในเฟสเฉียบพลัน และ Furosemide-Metoprolol ควรใช้ร่วมกันแต่ไม่ใช่ยาแรก",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 58 ปี เป็นเบาหวานชนิดที่ 2 และ COPD มีความดันโลหิตสูง (150/95 mmHg) ต้องการลดความดันโลหิต ยาใดต่อไปนี้เหมาะสมที่สุดสำหรับผู้ป่วยรายนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Enalapril (ACE inhibitor)"
+      },
+      {
+        "label": "B",
+        "text": "Amlodipine (Calcium channel blocker)"
+      },
+      {
+        "label": "C",
+        "text": "Atenolol (Beta-blocker non-selective)"
+      },
+      {
+        "label": "D",
+        "text": "Losartan (ARB)"
+      },
+      {
+        "label": "E",
+        "text": "Hydrochlorothiazide (Thiazide diuretic)"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2011",
+    "explanation": "Enalapril (ACE inhibitor) เป็นตัวเลือกที่ดีที่สุดสำหรับผู้ป่วยเบาหวานที่มีความดันโลหิตสูง เพราะช่วยลดความดันลง ประโยคป้องกันไตโรค และไม่มีผลเสียต่อการหายใจเหมือน beta-blocker ที่อาจทำให้ COPD แ악化ลง Beta-blocker (atenolol) ควรหลีกเลี่ยงในผู้ป่วย COPD เนื่องจากอาจก่อให้เกิดการหดตัวของ气道",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงอายุ 60 ปี เป็นเบาหวานมา 3 ปี FBS 140-160 mg/dL HbA1C 7.8% มี hypertension + dyslipidemia วัด BP ครั้งก่อน 140/90 mmHg ครั้งนี้ 150/90 mmHg ส่วนสูง 150 cm น้ำหนัก 65 kg จะจัดการอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เพิ่ม antihypertensive เป็น 2 ชนิด และปรับ antidiabetic ให้เข้มข้นขึ้น"
+      },
+      {
+        "label": "B",
+        "text": "เพิ่ม statin และเพิ่ม antihypertensive เป็น combination therapy (ACE-I/ARB + CCB หรือ thiazide)"
+      },
+      {
+        "label": "C",
+        "text": "ใช้ metoprolol เพียงชนิดเดียวเพื่อควบคุมทั้ง hypertension และ diabetes"
+      },
+      {
+        "label": "D",
+        "text": "เพิ่มขนาน sulfonylurea และหยุด antihypertensive เนื่องจาก BP เพิ่งสูงขึ้นเล็กน้อย"
+      },
+      {
+        "label": "E",
+        "text": "ให้ ACE-I เพียงชนิดเดียว และทำการลดน้ำหนัก โดยไม่ต้องเพิ่มยาอื่น"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2012",
+    "explanation": "ผู้ป่วยมี triple risk factor (diabetes, hypertension, dyslipidemia) โดย BP ยังไม่ควบคุมดี (150/90) HbA1C ยังสูง (7.8%) และมี dyslipidemia ดังนั้นต้องปรับมาตรฐานการรักษา: (1) เพิ่ม antihypertensive เป็น 2 ชนิด เช่น ACE-I/ARB + CCB เพื่อลด cardiovascular risk (2) เพิ่มหรือใช้ statin เนื่องจากมี dyslipidemia และ high cardiovascular risk และ (3) ปรับ antidiabetic ให้ better control ตามแนว management ของผู้ป่วย hypertensive diabetes",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชายวัย 55 ปี มาพบแพทย์เพื่อการตรวจสุขภาพประจำปี พบว่ามีความดันโลหิตสูง (150/95 mmHg) BMI 28 kg/m² และระดับคอเลสเตอรอลรวมสูง (250 mg/dL) ปัจจุบันสูบบุหรี่ประมาณ 10 มวนต่อวัน ดื่มแอลกอฮอล์นอกเหนือจากนี้ยังขาดการออกกำลังกายสม่ำเสมอ แพทย์ต้องการให้ผู้ป่วยทำการปรับเปลี่ยนพฤติกรรมเพื่อลดความเสี่ยงต่อโรคหัวใจวาย ข้อใดคือการแนะนำ Lifestyle modification ที่สำคัญที่สุดในผู้ป่วยรายนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เลิกสูบบุหรี่ ออกกำลังกายอย่างน้อย 150 นาทีต่อสัปดาห์ และลดเนื้อหา sodium ในอาหาร"
+      },
+      {
+        "label": "B",
+        "text": "เลิกดื่มแอลกอฮอล์ลดน้ำหนัก และเพิ่มการบริโภคผักและผลไม้"
+      },
+      {
+        "label": "C",
+        "text": "ลดความเครียด จำกัดการบริโภคไขมันอิ่มตัว และเพิ่มคุณภาพการนอนหลับ"
+      },
+      {
+        "label": "D",
+        "text": "ออกกำลังกายเข้มข้นทุกวัน รับประทานอาหารเค็มน้อยลง และจำกัดแคลอรี่"
+      },
+      {
+        "label": "E",
+        "text": "ปรับเปลี่ยนพฤติกรรมทั้งหมดข้างต้นพร้อมกัน เนื่องจากผู้ป่วยมีปัจจัยเสี่ยงหลายประการ"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว 2012",
+    "explanation": "ผู้ป่วยมีปัจจัยเสี่ยงหลายประการต่อโรคหัวใจวายได้แก่ การสูบบุหรี่ ความดันโลหิตสูง โรคไขมันในเลือดสูง สถานะน้ำหนักเกิน และขาดการออกกำลังกาย การแนะนำ Lifestyle modification ที่ครอบคลุมทั้งการเลิกสูบบุหรี่ ลดน้ำหนัก ออกกำลังกายสม่ำเสมอ ลดการบริโภค sodium และไขมันอิ่มตัว รวมถึงลดแอลกอฮอล์ จึงเป็นการแนะนำที่สมบูรณ์และมีประสิทธิผลที่สุดในการลดความเสี่ยง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชาย 55 ปี มาด้วยอาการไอแห้ง ๆ มานาน 2 สัปดาห์ ไม่มีไข้ ไม่เคยสูบบุหรี่ ปัจจุบันใช้ยา enalapril และ amlodipine รักษาความดันโลหิตสูงมานาน 2 เดือน การตรวจร่างกาย: ปอดในทั้งสองข้างใสสะอาด ควรจัดการรักษาอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "หยุด enalapril และให้ยาท่านแทน แล้วสังเกตการณ์ไอ"
+      },
+      {
+        "label": "B",
+        "text": "ให้ยาระบายเสมหะ (mucolytic agent) และติดตามอาการ"
+      },
+      {
+        "label": "C",
+        "text": "ส่งตรวจ CXR, ECG และทำการตรวจ ACE inhibitor-induced cough หลังจากดีส่วนตรวจหน้าอก"
+      },
+      {
+        "label": "D",
+        "text": "ให้ยาแก้ไอ (antitussive) และส่งตรวจวัณโรค"
+      },
+      {
+        "label": "E",
+        "text": "ให้เอกซเรย์และประเมินหัวใจทำงานเพื่อตรวจสอบการกำเริบของภาวะหัวใจล้มเหลว"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2012",
+    "explanation": "ACE inhibitor (enalapril) เป็นยาที่พบว่า 5-10% ของผู้ใช้จะเกิดอาการไอแห้งเรื้อรัง โดยเกิดจากการสะสมของ bradykinin ใน airway ซึ่งการหยุด enalapril แล้วให้ยาทดแทน เช่น calcium channel blocker หรือ angiotensin receptor blocker จะช่วยแก้อาการได้ ในกรณีนี้ควรหยุด enalapril และติดตามการหายของไอ เพื่อยืนยันการวินิจฉัย",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชายวัย 45 ปี มี COPD stage 2 (moderate) มาตรวจเพราะหอบเหนื่อยขณะออกกำลังกาย เลขที่ FEV1 55% ของค่ากำหนด ปัจจุบันใช้ short-acting beta-2 agonist เท่านั้น แพทย์พิจารณาเพิ่มยา inhaled corticosteroid (ICS) ตัวเลือกใดถูกต้องเกี่ยวกับการใช้ inhaled corticosteroids ในผู้ป่วย COPD",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ควรให้เป็น monotherapy ในผู้ป่วย COPD stage 2 เพื่อหลีกเลี่ยงการเกิด adverse effects"
+      },
+      {
+        "label": "B",
+        "text": "อาจให้รวมกับ long-acting beta-2 agonist (LABA) ในผู้ป่วยที่มีอาการซ้ำแม้ใช้ single agent และมีประวัติเป่าออก exacerbation บ่อยๆ"
+      },
+      {
+        "label": "C",
+        "text": "มีประสิทธิภาพเท่ากับ long-acting muscarinic antagonist (LAMA) และไม่จำเป็นต้องรวมกับ LABA"
+      },
+      {
+        "label": "D",
+        "text": "เป็นยาขั้นแรกในการรักษา COPD stage 1 และ 2 ในผู้ป่วยทั้งหมด"
+      },
+      {
+        "label": "E",
+        "text": "ไม่ควรใช้ในผู้ป่วย COPD เพราะเพิ่มความเสี่ยงในการติดเชื้อทางเดินหายใจ"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2012",
+    "explanation": "ในผู้ป่วย COPD stage 2-3 ที่มีอาการซ้ำๆ หรือประวัติ exacerbation บ่อย ICS ควรรวมกับ LABA (ICS/LABA) เพื่อลดอัตราของ exacerbation ได้ดีกว่า single agent เพียงอย่างเดียว GOLD guideline แนะนำการใช้ ICS ควรจำกัดเฉพาะผู้ป่วยที่มี features ของ asthma-COPD overlap หรือมี exacerbation บ่อย ไม่ใช่ใช้เป็น first-line therapy ในผู้ป่วยทั้งหมด",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายวัย 68 ปี เป็นโรคความดันโลหิตสูงมาหลายปี ได้รับ amlodipine 10 mg วันละครั้ง แต่เกิด peripheral edema รุนแรง ที่น่อยและขา ทำให้ผู้ป่วยไม่สามารถยอมรับได้ ควรลดขนาดยา amlodipine ลงเหตุใดต่อไปนี้ข้อใดถูกต้อง",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Peripheral edema เป็น adverse effect ที่เกี่ยวข้องกับปริมาณยา ลดขนาดยาจะช่วยลดอาการนี้ได้"
+      },
+      {
+        "label": "B",
+        "text": "Amlodipine ทำให้เกิด peripheral edema ผ่านกลไก vasodilation ที่มากเกินไป ลดปริมาณยาจะช่วยลดอาการได้"
+      },
+      {
+        "label": "C",
+        "text": "ผู้ป่วยมีอายุมากกว่า 65 ปี ตับอ่อนทำงานช้า ควรลดขนาดยา amlodipine ตั้งแต่แรก"
+      },
+      {
+        "label": "D",
+        "text": "Amlodipine มีข้อห้ามในผู้ป่วย peripheral edema ควรหยุดยาและเปลี่ยนเป็นยาลดความดันอื่น"
+      },
+      {
+        "label": "E",
+        "text": "Peripheral edema ที่เกิดจาก amlodipine ลดไม่ได้ด้วยการลดขนาดยา ต้องหยุดยาทันที"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2012",
+    "explanation": "Peripheral edema เป็น adverse effect ที่ dose-dependent ของ amlodipine ซึ่งเกิดจากการขยายตัวของหลอดเลือดแดงส่วนปลาย การลดขนาดยาจาก 10 mg เป็น 5 mg หรือใช้ยาอื่น จะช่วยลดความรุนแรงของ edema อย่างมีนัยสำคัญ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชาย อายุ 60 ปี มีประวัติ MI มา 6 เดือน 1 สัปดาห์ มาด้วยอาการเหนื่อยหอบ บีพี 80/60 mmHg ตรวจร่างกาย: หน้าแบบ puffy eye lid S3 gallop และ pansystolic murmur ที่ apex ที่ beat of maximal impulse โรคนี้คือ?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Mitral regurgitation secondary to post-MI left ventricular dilatation and papillary muscle dysfunction"
+      },
+      {
+        "label": "B",
+        "text": "Acute mitral stenosis due to rheumatic heart disease"
+      },
+      {
+        "label": "C",
+        "text": "Aortic regurgitation from infective endocarditis"
+      },
+      {
+        "label": "D",
+        "text": "Ventricular septal defect from post-MI rupture"
+      },
+      {
+        "label": "E",
+        "text": "Restrictive cardiomyopathy with congestive heart failure"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2012",
+    "explanation": "ผู้ป่วยมี MI ในอดีต แล้วพัฒนาไปเป็น dilated cardiomyopathy ที่แสดงออกมาด้วย pansystolic murmur (mitral regurgitation) S3 gallop และ congestive heart failure (puffy eyelids, hypotension, dyspnea) ซึ่งเกิดจากการขยายห้องซ้าย ทำให้ papillary muscle dysfunction และ mitral annular dilatation นำไปสู่ mitral regurgitation",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 64 ปี เข้ารับการตรวจสุขภาพ มีอาการปวดศีรษะเล็กน้อย BT 37°C BP 160/110 mmHg PR 60 bpm RR 18 bpm ปัสสาวะปกติ ไม่มีโปรตีนในปัสสาวะ Cr 0.9 mg/dL K 4.2 mEq/L โปรแกรมการรักษา ECG แสดงการขยายห้องท้ายซ้าย ไม่มีลักษณะของความเสียหายทางไต ผู้ป่วยเป็นผู้สูบบุหรี่เลิกแล้ว ไม่มีโรคเบาหวาน ยาลดความดันข้อใดเหมาะสมที่สุดสำหรับผู้ป่วยรายนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ACE Inhibitor (เช่น Lisinopril)"
+      },
+      {
+        "label": "B",
+        "text": "Beta-blocker (เช่น Metoprolol)"
+      },
+      {
+        "label": "C",
+        "text": "Calcium channel blocker (เช่น Amlodipine)"
+      },
+      {
+        "label": "D",
+        "text": "Diuretic (Furosemide)"
+      },
+      {
+        "label": "E",
+        "text": "Alpha-blocker (Doxazosin)"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2012",
+    "explanation": "ผู้ป่วยมี Hypertension stage II พร้อม LVH (Left Ventricular Hypertrophy) ที่ระบุจาก ECG ใน DM ไม่มี ACE Inhibitor เป็นยาเลือกแรกสำหรับไฮเปอร์เทนชันเพราะช่วยลดความดัน ลดอาการ LVH และมีผลป้องกันระบบหัวใจ ยิ่งไปกว่านั้นยังมีประโยชน์ต่อการปกป้องไต นอกจากนี้ Beta-blocker ถึงแม้จะเหมาะสมแต่สำหรับผู้ป่วยที่มี PR 60 bpm แล้วการให้ยา bradycardiac agent อาจทำให้ HR ลดต่ำเกินไป",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "Thai man 20 yo low grade fever, myalgia, chest pain 1 day , chest pain improve when lean forward PE: normal s1s2 no murmur, no cardiomegaly, friction rub at apex what is the most proper treatment?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acyclovir"
+      },
+      {
+        "label": "B",
+        "text": "Nsaid"
+      },
+      {
+        "label": "C",
+        "text": "Prednisolone"
+      },
+      {
+        "label": "D",
+        "text": "ceftriaxone"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2014",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "Pt no pulse first CPR after CPR next step? ((ให้ EKGมา))",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Epinephrine"
+      },
+      {
+        "label": "B",
+        "text": "Amiodarome"
+      },
+      {
+        "label": "C",
+        "text": "Adenosine"
+      },
+      {
+        "label": "D",
+        "text": "Cardioversion"
+      },
+      {
+        "label": "E",
+        "text": "Defib"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2014",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชาย 60 ปี มีประวัติความดันโลหิตสูงเรื้อรังและโรคหลอดเลือดหัวใจ มาพร้อมอาการปอดอักเสบ มีการหายใจลำบาก (pulmonary edema) วัดความดันโลหิต: แขนซ้าย 190/105 mmHg แขนขวา 185/100 mmHg การตรวจหัวใจ: ไม่มีเสียงหัวใจผิดปกติ มี S4 gallop การตรวจปอด: มีเสียงครวญในปอดส่วนล่างทั้งสองข้าง การตรวจท้อง: มีเสียงพึมพำในเส้นหลัก (abdominal bruit) อยากทราบว่าการวินิจฉัยที่น่าจะเป็นมากที่สุดคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute decompensated heart failure with hypertensive urgency"
+      },
+      {
+        "label": "B",
+        "text": "Renal artery stenosis with secondary hypertension and acute heart failure"
+      },
+      {
+        "label": "C",
+        "text": "Aortic dissection with acute pulmonary edema"
+      },
+      {
+        "label": "D",
+        "text": "Acute coronary syndrome with cardiogenic shock"
+      },
+      {
+        "label": "E",
+        "text": "Primary pulmonary hypertension with right heart failure"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2014",
+    "explanation": "อาการและสัญลักษณ์บ่งชี้ renal artery stenosis ได้แก่ abdominal bruit (ลักษณะเฉพาะในการฟังท้อง), pulmonary edema, และ S4 gallop จากการหดตัวของหัวใจ (ventricular hypertrophy) ที่เกิดจากความดันโลหิตสูงรองลำดับ (secondary hypertension) เนื่องจากการเบลอกของหลอดเลือดไต อาการ pulmonary edema และ S4 ชี้ว่าเกิดการล้มเหลวของหัวใจแล้ว",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายอายุ 58 ปี มาด้วยอาการเบื่ออาหาร ค่ำคืนตื่นเพื่อปัสสาวะ 3-4 ครั้ง และเมื่อย่อยขณะเดินทางไกล มีประวัติความดันโลหิตสูง 10 ปี ควบคุมด้วยยา 3 ชนิด แต่ยังไม่ได้ควบคุม ตรวจร่างกายพบ BP 168/98 mmHg ยินเสียงฟู่ที่บริเวณอุルนา ตรวจเลือดทั่วไป: Cr 2.8 mg/dL, BUN 56 mg/dL, K 5.2 mEq/L ถามว่าข้อใดคือสิ่งที่น่าจะเป็นการตรวจวินิจฉัยที่สำคัญที่สุดในกรณีนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Renal artery duplex ultrasonography"
+      },
+      {
+        "label": "B",
+        "text": "Abdominal computed tomography angiography (CTA)"
+      },
+      {
+        "label": "C",
+        "text": "Captopril renal scintigraphy"
+      },
+      {
+        "label": "D",
+        "text": "Renal artery magnetic resonance angiography (MRA)"
+      },
+      {
+        "label": "E",
+        "text": "Serum and urine electrolyte panel with renin and aldosterone level"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2014",
+    "explanation": "ผู้ป่วยมีสัญญาณปกติของ renal artery stenosis ได้แก่ ความดันโลหิตสูงยากต่อการควบคุม ฟังเสียงฟู่ที่อุลนา เพิ่มขึ้นของ creatinine และ hyperkalemia ซึ่งแนะนำถึง kidney disease ที่เลวลง Renal artery duplex ultrasonography เป็นการตรวจวินิจฉัยแรกเพราะไม่มีรังสี ไม่มีตัวแทน และมี sensitivity 85% ในผู้ป่วยที่เหมาะสม แม้ว่า CTA และ MRA มี accuracy สูงกว่า แต่ใช้เป็นการตรวจยืนยันหลัง duplex ผ่านแล้ว",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 35 ปี มาด้วยอาการหน้าอกเจ็บรุนแรง เหนื่อยใจ และใจสั่น เกิดขึ้นอย่างกะทันหัน ขณะที่กำลังออกกำลังกายหลังคลอด 2 สัปดาห์ EKG แสดง ST elevation ใน leads II, III, aVF การตรวจ coronary angiography พบการตัดขวางของ right coronary artery ด้วยการแยกตัวของผนังหลอดเลือด ซึ่งสาเหตุทั่วไปที่สุดของ SCAD (Spontaneous Coronary Artery Dissection) คืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ภาวะเบาหวาน"
+      },
+      {
+        "label": "B",
+        "text": "ความเสี่ยงแรกคลอด (peripartum cardiomyopathy)"
+      },
+      {
+        "label": "C",
+        "text": "ความดันโลหิตสูง"
+      },
+      {
+        "label": "D",
+        "text": "ระยะเวลาหลังคลอดและความเครียดทางหลอดเลือด (peripartum period and vascular stress)"
+      },
+      {
+        "label": "E",
+        "text": "Atherosclerotic coronary artery disease"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2014",
+    "explanation": "SCAD เป็นสาเหตุของ acute coronary syndrome ที่สำคัญในผู้หญิงหนุ่มโดยเฉพาะในระยะหลังคลอด (peripartum period, 5 สัปดาห์หลังคลอด) ซึ่งเกี่ยวข้องกับการเปลี่ยนแปลงของความยืดหยุ่นของผนังหลอดเลือด และความเครียดทางหลอดเลือดที่เพิ่มขึ้น ตัวเลือก A, C, E เป็นปัจจัยเสี่ยงของ atherosclerotic CAD ไม่ใช่สาเหตุหลักของ SCAD",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงอายุ 25 ปี มาด้วย progressive shortness of breath เป็นเวลา 3 วัน PE: RR 25 ครั้ง/นาที PR 120 ครั้ง/นาที BP 150/80 mmHg O2 sat 91% บวมขาขวา ตรวจร่างกายอื่นปกติ EKG: sinus tachycardia T wave inverted ใน lead V1-V4 และ lead III ลักษณ์ compatible กับ acute right heart strain จะต้องส่งการตรวจวินิจฉัยใดเพื่อยืนยันการวินิจฉัยที่สงสัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Computed Tomography Pulmonary Angiography (CTPA)"
+      },
+      {
+        "label": "B",
+        "text": "Ventilation-Perfusion (V/Q) scan"
+      },
+      {
+        "label": "C",
+        "text": "Chest X-ray and D-dimer"
+      },
+      {
+        "label": "D",
+        "text": "Echocardiography"
+      },
+      {
+        "label": "E",
+        "text": "Doppler ultrasound of right leg"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2014",
+    "explanation": "คลินิกัลสำหรับ Pulmonary Embolism (PE) มีอาการ progressive SOB บวมขาขวา (DVT risk) EKG แสดง right heart strain (T wave inversion V1-V4) และ tachycardia CTPA เป็นมาตรฐานทองคำ (gold standard) ในการวินิจฉัย PE โดยตรง เพราะสามารถ visualize blood clot ในปอดและตัดสินใจการรักษาได้อย่างชัดเจน",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายอายุ 58 ปี มาด้วยอาการหน้าอกปวดกะทันหันและหายใจลำบาก ได้รับ CT angiogram ของหน้าอก ซึ่งแสดงภาพชัดเจนของหลอดเลือดแดงปอด โดยมีการขยายตัวของหลอดเลือดแดงปอดที่สูงเกิน 4 มม. และเนื้อเยื่อปอดแสดงรูป wedge-shaped opacity ที่ periphery พื้นที่เดียว ควรทำการประเมินและจัดการ condition นี้อย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้ anticoagulation therapy ทันที และสนับสนุนด้วย thrombolytic therapy หากมี hemodynamic instability"
+      },
+      {
+        "label": "B",
+        "text": "ให้ oxygen therapy เท่านั้น และติดตามอาการ โดยไม่ต้องให้ anticoagulation"
+      },
+      {
+        "label": "C",
+        "text": "ส่งต่อเพื่อทำ pulmonary angiography และ mechanical thrombectomy ทันที"
+      },
+      {
+        "label": "D",
+        "text": "ให้ antibiotics และอาการจะคลายตัวเองเนื่องจาก self-limited pneumonia"
+      },
+      {
+        "label": "E",
+        "text": "ทำการ chest X-ray เพิ่มเติมเพื่อ confirm diagnosis และให้ NSAIDs ควบคุมอาการปวด"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2014",
+    "explanation": "CT angiogram ที่แสดงภาพขยายตัวของหลอดเลือดแดงปอด (>4 มม.) พร้อม wedge-shaped infarction นั้นเป็น characteristic findings ของ pulmonary embolism (PE) ซึ่ง confirmed โดย CT pulmonary angiography นี้ ต้องให้ anticoagulation therapy ทันที (heparin หรือ DOAC) และพิจารณา thrombolytic therapy หากผู้ป่วยมี hemodynamic instability เพื่อลดความเสี่ยงในการเสียชีวิต",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชายอายุ 65 ปี มาด้วยอาการบุคคลหน้าอกและหายใจลำบาก ได้รับการวินิจฉัยว่าเป็น acute coronary syndrome (ACS) ชนิด STEMI ที่ lead II, III, aVF แพทย์ตัดสินใจให้ผู้ป่วยเข้ารับการสวนหลอดเลือดหัวใจ (coronary artery angiography) เพื่อการรักษา หากพบว่ามี critical stenosis ที่ RCA จะต้องวางสเตนต์ ในการสวนหลอดเลือดนี้ ควรใช้ catheters ขนาดใหญ่เท่าใด และเข้าถึงทางใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "6 Fr catheter เข้าทางหลอดเลือดแดงต้นแขนขวา (right radial artery)"
+      },
+      {
+        "label": "B",
+        "text": "8 Fr catheter เข้าทางหลอดเลือดแดงต้นหัวเข่า (right femoral artery)"
+      },
+      {
+        "label": "C",
+        "text": "4 Fr catheter เข้าทางหลอดเลือดแดงต้นแขนขวา (right radial artery)"
+      },
+      {
+        "label": "D",
+        "text": "10 Fr catheter เข้าทางหลอดเลือดแดงต้นแขน (brachial artery)"
+      },
+      {
+        "label": "E",
+        "text": "6 Fr catheter เข้าทางหลอดเลือดแดงต้นหัวเข่าขวา (right femoral artery)"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2014",
+    "explanation": "สำหรับ STEMI ที่ต้องการวางสเตนต์ (PCI) ควรใช้ 7-8 Fr catheter เพื่อให้สามารถนำอุปกรณ์ต่างๆ ได้อย่างเพียงพอ ทางเข้าผ่าน femoral artery นั้นทนต่อขนาดหลอดใหญ่ดีกว่า radial artery และให้ความสำเร็จสูงกว่า หากใช้ radial artery ควรจำกัดที่ 6 Fr แต่ femoral artery 8 Fr เป็นมาตรฐานทองสำหรับ PCI ในโรงพยาบาลส่วนใหญ่",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิง 60 ปี heavy smoking PE: superficial vein dilate อารมว่าsign ของ svc syndrome cxr: widening mediastinum mx?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bronchoscope"
+      },
+      {
+        "label": "B",
+        "text": "CT"
+      },
+      {
+        "label": "C",
+        "text": "Urgency RT"
+      },
+      {
+        "label": "D",
+        "text": "Urgency CMT"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2014",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "บ่าย หญิง 58 ปี เป็นโรคความดันโลหิตสูง รักษาด้วย enalapril 20 mg/วัน และ amlodipine 10 mg/วัน มาด้วยอาการบวมที่เท้า ตรวจร่างกายพบ BP 120/80 mmHg บวมที่เท้าทั้งสองข้างแบบสมมาตร สาเหตุของบวมนี้เป็นผลจาก amlodipine ที่ใช้อยู่ ควรจะทำอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เพิ่มขนาด enalapril เป็น 30 mg/วัน เพื่อลดความดันโลหิต"
+      },
+      {
+        "label": "B",
+        "text": "แทนที่ amlodipine ด้วย diltiazem หรือ verapamil หรือ ลดขนาด amlodipine"
+      },
+      {
+        "label": "C",
+        "text": "เพิ่มอาหารที่มีเกลือสูง และให้ผู้ป่วยยกเท้าสูง"
+      },
+      {
+        "label": "D",
+        "text": "ให้ diuretics เพื่อลดการเก็บกักน้ำเกิน"
+      },
+      {
+        "label": "E",
+        "text": "ตรวจคลื่นหัวใจและ echocardiography เพื่อค้นหาความล้มเหลวของหัวใจ"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2014",
+    "explanation": "บวมที่เท้าแบบสมมาตรในผู้ป่วยที่ใช้ amlodipine (calcium channel blocker ยาวนาน) เป็นผลข้างเคียงทั่วไป เกิดจากการขยายหลอดเลือด และเพิ่มการซึมซาบน้ำที่เนื้อเยื่อเพื่อโพรงระบายออก แนวทางการรักษาคือ แทนที่ amlodipine ด้วย diltiazem หรือ verapamil (มีผลข้างเคียงบวมน้อยกว่า) หรือลดขนาด amlodipine ลง ไม่ควรใช้ diuretics เพราะบ่งชี้ผิด",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชายอายุ 58 ปี มาด้วยอาการหน้าอกบีบ นาน 30 นาที ได้รับการวินิจฉัยว่าเป็น Acute Coronary Syndrome (ACS) รักษาด้วย dual antiplatelet therapy, beta-blocker, ACE inhibitor และ amlodipine 5 mg วันละครั้ง หลังจากได้รับ revascularization แล้ว 2 สัปดาห์ ผู้ป่วยมาตรวจติดตามและรายงานว่ามีอาการบวมของสะเก็ดเท้า ชั้นที่ 2+ ทั้งสองข้าง มีอาการสำลัก และ orthopnea เล็กน้อย ความดันโลหิต 110/70 mmHg หัวใจเต้น 68 ครั้ง/นาที เมื่อตรวจ echocardiography พบ EF 35% (ลดลงจากครั้งก่อน) ควรดำเนินการใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ยกระดับขาและให้ furosemide แต่ยังคงใช้ amlodipine ต่อไป"
+      },
+      {
+        "label": "B",
+        "text": "หยุด amlodipine เพิ่ม beta-blocker dose และเพิ่ม ACE inhibitor dose เพื่อควบคุม HF"
+      },
+      {
+        "label": "C",
+        "text": "หยุด amlodipine และ ACE inhibitor แล้วแทนที่ด้วย calcium channel blocker ที่เลือกสรร"
+      },
+      {
+        "label": "D",
+        "text": "เปลี่ยน amlodipine เป็น diltiazem เพื่อได้ผลลดความดันและ inotropic effect"
+      },
+      {
+        "label": "E",
+        "text": "ลดขนาด amlodipine ลงครึ่งหนึ่งและเพิ่ม furosemide ให้เพียงพอ"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2014",
+    "explanation": "ผู้ป่วยแสดงอาการ decompensated heart failure (บวม, ปอดอักเสบ, EF ลดลง) ในบริบท ACS เนื่องจาก amlodipine (dihydropyridine) ไม่มี negative inotropic effect แต่ทำให้เกิด reflex tachycardia และอาจทำให้ afterload reduction ต่อเนื่อง จึงไม่เหมาะในผู้ป่วย HF ที่มี reduced ejection fraction ควรหยุด amlodipine และเพิ่ม beta-blocker และ ACE inhibitor ซึ่งเป็นยาที่พิสูจน์ได้ว่าช่วยปรับปรุงการทำงานหัวใจและลดอัตราการตายในผู้ป่วย HFrEF",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายวัย 65 ปี มีประวัติเบาหวาน ความดันโลหิตสูง มาพบแพทย์ด้วยอาการหน่วงเหนื่อย และหัวใจเต้นผิดจังหวะ Lab: Na 140 mEq/L, K 7.2 mEq/L, EKG แสดง peaked T wave และ QRS complex กว้าง ความดันโลหิต 160/100 mmHg",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Calcium gluconate IV"
+      },
+      {
+        "label": "B",
+        "text": "Insulin + Dextrose"
+      },
+      {
+        "label": "C",
+        "text": "Sodium bicarbonate"
+      },
+      {
+        "label": "D",
+        "text": "Furosemide"
+      },
+      {
+        "label": "E",
+        "text": "Sodium polystyrene sulfonate"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2014",
+    "explanation": "ผู้ป่วยนี้มี hyperkalemia (K 7.2) กับการเปลี่ยนแปลง EKG ที่เป็นอันตราย (peaked T wave, wide QRS) ที่บ่งชี้ถึง cardiac toxicity ต้องการการรักษาแบบ membrane stabilization ด้วย calcium gluconate IV ทันที เพื่อปกป้องไม่ให้เกิด arrhythmia ร้ายแรง ขณะเดียวกันอาจให้ insulin+dextrose และ furosemide เพื่อลดระดับ K",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงอายุ 65 ปี ใช้ยา ASA/Simvastatin/Enalapril/Amlodipine เป็นประจำ เมื่อ 2 เดือนก่อนไปหาหมอออโถเพราะปวดเข่าทั้ง 2 ข้าง ได้รับ Naproxen และ Paracetamol เพิ่มเติม วันนี้มาตรวจคลินิกพบ Heaving LV, S4 gallop ไม่มี Renal bruit ค่า Creatinine เพิ่มขึ้นจาก 1.2 เป็น 2.4 mg/dL ในระยะเวลา 1 เดือน (AKI stage) ถามว่า AKI ในกรณีนี้เกิดจากยาตัวใดที่สำคัญที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Naproxen (NSAID)"
+      },
+      {
+        "label": "B",
+        "text": "Enalapril (ACE inhibitor)"
+      },
+      {
+        "label": "C",
+        "text": "Amlodipine (Calcium channel blocker)"
+      },
+      {
+        "label": "D",
+        "text": "ASA ในขนาดสูง"
+      },
+      {
+        "label": "E",
+        "text": "Simvastatin"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2014",
+    "explanation": "การใช้ Naproxen (NSAID) ร่วมกับ ACE inhibitor (Enalapril) และ Diuretic setting ในผู้ป่วยหัวใจ (Heaving LV, S4 gallop บ่งชี้ Heart failure) เป็นสถานการณ์ high-risk สำหรับ AKI (triple whammy effect). NSAIDs ลดการไหลเวียนโลหิตไตโดยการลดการสร้าง Prostaglandin ทำให้ Glomerular filtration pressure ลดลง โดยเฉพาะในผู้ป่วย CHF ที่มี Renal hypoperfusion อยู่แล้ว ทำให้เกิด Prerenal AKI อย่างรวดเร็ว",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 65 ปี มาด้วย intermittent palpitation HR 122/min irregular rhythm EKG แสดง atrial fibrillation (AF) ไม่มีอาการ hemodynamic compromise ควรให้ยาใดเป็นอันดับแรก",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Digoxin IV เพื่อ rate control และ conversion"
+      },
+      {
+        "label": "B",
+        "text": "Beta-blocker (เช่น Metoprolol) เพื่อ rate control"
+      },
+      {
+        "label": "C",
+        "text": "Amiodarone IV เพื่อ rhythm control"
+      },
+      {
+        "label": "D",
+        "text": "Warfarin เพื่อ anticoagulation"
+      },
+      {
+        "label": "E",
+        "text": "Flecainide เพื่อ rhythm control"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2014",
+    "explanation": "ในผู้ป่วย AF ที่เสถียร hemodynamic ปัจจุบันมี guideline สนับสนุน rate control strategy เป็นอันดับแรก Beta-blocker เป็นยาเลือกแรกสำหรับ rate control เพราะมีประสิทธิภาพและปลอดภัย Anticoagulation ควรพิจารณาตามความเสี่ยง stroke (CHA2DS2-VASc score) และเป็นการแทรกแซงเสริมเพื่อป้องกันภาวะแทรกซ้อน",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายอายุ 60 ปี มีประวัติเบาหวาน ความดันโลหิตสูง มาด้วย TIA (Transient Ischemic Attack) โดยการตรวจคลื่นไฟฟ้าหัวใจพบ idiopathic atrial fibrillation ควรจัดการอย่างไรเพื่อป้องกันการเกิด stroke ซ้ำ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้ Aspirin 75-100 mg/วัน"
+      },
+      {
+        "label": "B",
+        "text": "ให้ Warfarin เพื่อให้ INR อยู่ที่ 2-3"
+      },
+      {
+        "label": "C",
+        "text": "ให้ Novel oral anticoagulant (DOAC) เช่น apixaban หรือ dabigatran"
+      },
+      {
+        "label": "D",
+        "text": "ให้ Clopidogrel 75 mg/วัน เพียงอย่างเดียว"
+      },
+      {
+        "label": "E",
+        "text": "ให้ยาต้านการแข็งตัวของเลือด ประเภท pentasaccharide"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2014",
+    "explanation": "ผู้ป่วย 60 ปี มี AF (แม้จะ idiopathic) และประวัติ TIA หมายความว่ามีความเสี่ยงสูงต่อ stroke ซ้ำ (CHA2DS2-VASc ≥ 2 คะแนน) จึงควรได้รับ anticoagulation แทนที่จะเป็น antiplatelet เท่านั้น DOAC (apixaban, dabigatran, rivaroxaban, edoxaban) เป็นตัวเลือกแรกในปัจจุบันเนื่องจากมีประสิทธิภาพเทียบเท่า warfarin แต่สะดวกกว่าและปลอดภัยกว่า",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  }
+]

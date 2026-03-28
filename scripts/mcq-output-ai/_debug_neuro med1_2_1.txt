@@ -1,0 +1,350 @@
+[
+  {
+    "scenario": "หญิง อายุ 10 ปี มาด้วย clinical ตาเหม่อลอย นิ่ง ไม่มีเคี้ยวปาก น้าลายไหลเป็น 10 วินาที วันละ 10-20 ครั้ง ประมาณ 2-3 weeks ประวัติแม่เป็นลมชัก PE: Normal, Neuro exam Normal",
+    "choices": [
+      {"label": "A", "text": "Pseudoseizure"},
+      {"label": "B", "text": "Absence seizure"},
+      {"label": "C", "text": "Simple partial seizure"},
+      {"label": "D", "text": "Complex partial seizure"},
+      {"label": "E", "text": "Atonic seizure"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "ลักษณะการชักสั้น (10 วินาที) ซ้ำหลายครั้ง ไม่มีเคี้ยวปาก โครงร่างเงียบนิ่ง ประวัติแม่เป็นลมชัก และ PE, neuro exam ปกติทั้งหมด สอดคล้องกับ pseudoseizure (non-epileptic seizure) มากกว่า absence seizure ที่ควรมีลักษณะ staring spells สั้น ๆ 5-10 วินาที ซ้ำๆ แต่ไม่มี drooling"
+  },
+  {
+    "scenario": "หญิง 55 ปี ปวดศีรษะ 1 เดือน ปวดแปล๊บๆ หน้าซีกซ้าย โดยเฉพาะกกหู กินยา Paracetamol ไม่ดีขึ้น ให้การรักษาใดเหมาะสมที่สุด",
+    "choices": [
+      {"label": "A", "text": "Midazolam"},
+      {"label": "B", "text": "Alprazolam"},
+      {"label": "C", "text": "Indomethacin"},
+      {"label": "D", "text": "Carbamazepine"},
+      {"label": "E", "text": "Sodium valproate"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "ลักษณะปวดแปล๊บๆ (sharp, shooting pain) ที่กกหูและหน้าซีกซ้าย ระยะเวลา 1 เดือน ไม่ตอบสนองต่อ paracetamol สอดคล้องกับ Trigeminal neuralgia (ตามการอ้างอิง V2 distribution) Carbamazepine เป็น first-line treatment สำหรับโรคนี้"
+  },
+  {
+    "scenario": "หญิง 45 ปี ชักแบบ GTC หลังชักมี postictal phase 30 นาที จากนั้นปกติ จงสั่ง investigation ที่จาเป็น",
+    "choices": [
+      {"label": "A", "text": "Serum Ca"},
+      {"label": "B", "text": "Serum electrolyte"},
+      {"label": "C", "text": "EEG"},
+      {"label": "D", "text": "MRI brain"},
+      {"label": "E", "text": "Serum glucose"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยชักครั้งแรก (first-time seizure) ต้องรู้สาเหตุ MRI brain เป็น investigation ที่จาเป็นที่สุดเพื่อหาโครงสร้างผิดปกติ เช่น tumor, stroke, malformation หรือ lesion อื่น ๆ EEG ก็มีประโยชน์ แต่ MRI มี priority สูงกว่า"
+  },
+  {
+    "scenario": "ผู้ป่วย GTC seizure หลังชักซึมลง 30 นาที จากนั้นปกติ no neurological deficit PE: WNL Investigation ใดมีประโยชน์ต่อผู้ป่วยมากที่สุด",
+    "choices": [
+      {"label": "A", "text": "Serum Ca"},
+      {"label": "B", "text": "Serum electrolyte"},
+      {"label": "C", "text": "EEG"},
+      {"label": "D", "text": "MRI brain"},
+      {"label": "E", "text": "Serum glucose"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "เหมือนกับข้อ 61 แต่มีรายละเอียด PE, neuro deficit ปกติเพิ่มเติม MRI brain ยังคงเป็น investigation ที่มีประโยชน์มากที่สุดเพื่อหารูปสัณฐานของสมอง และค้นหาสาเหตุของการชัก"
+  },
+  {
+    "scenario": "Female age unspecified อาการ migraine ถามยาที่ใช้รักษาขณะมีอาการ (ศรว. มี.ค. 2555)",
+    "choices": [
+      {"label": "A", "text": "Paracetamol"},
+      {"label": "B", "text": "Amitriptyline"},
+      {"label": "C", "text": "Flunarizine"},
+      {"label": "D", "text": "Valproate"},
+      {"label": "E", "text": "Beta-blocker"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว. มี.ค. 2555",
+    "status": "complete",
+    "ai_notes": "ยาที่ใช้ขณะมีอาการ (acute treatment) ได้แก่ Paracetamol, NSAIDs, Triptans ส่วนยาอื่น ๆ (Amitriptyline, Flunarizine, Valproate, Beta-blocker) เป็น prophylactic treatment ใช้ป้องกัน"
+  },
+  {
+    "scenario": "หญิง 70 ปี ปวดหัว temporal ด้านขวา เป็นๆหายๆ ปวดตา ปวดกรามมากเวลาเคี้ยว จงให้การวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "Optic neuritis"},
+      {"label": "B", "text": "Facial migraine"},
+      {"label": "C", "text": "Giant cell arteritis"},
+      {"label": "D", "text": "Cavernous sinus thrombosis"},
+      {"label": "E", "text": "Posterior communicating artery aneurysm"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยอายุ 70 ปี ปวด temporal ด้านขวา jaw claudication (ปวดกรามเวลาเคี้ยว) และ eye pain สอดคล้องกับ Giant cell arteritis (temporal arteritis) ซึ่งมักเกิดในผู้สูงอายุ"
+  },
+  {
+    "scenario": "A 45-year-old healthy female has headache, PE reveals stiff neck positive, CT shows leptomeningeal enhancement. LP reveals CSF open pressure 28 cm H2O, WBC 300 (lymphocytes > neutrophils), protein 400 mg/dL, glucose 25 mg/dL (plasma glucose 100 mg/dL), no bacteria in gram stain. What is your diagnosis?",
+    "choices": [
+      {"label": "A", "text": "TB meningitis"},
+      {"label": "B", "text": "Aseptic meningitis"},
+      {"label": "C", "text": "Purulent meningitis"},
+      {"label": "D", "text": "Fungal meningitis"},
+      {"label": "E", "text": "Cryptococcal meningitis"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "CSF profile: lymphocytic predominance, low glucose (25 mg/dL ต่ำกว่า 40), high protein (400), no bacteria in gram stain, leptomeningeal enhancement สอดคล้องกับ TB meningitis มากที่สุด (aseptic meningitis มักมี glucose ปกติกว่า)"
+  },
+  {
+    "scenario": "A 50-year-old man had involved a vehicle accident, he didn't wear any restraint and struck by the windshield of his van. He didn't lose consciousness at that time or at any time after. But 1 month later he complains of headache, becomes irritable and acts strangely. What is the most possible diagnosis?",
+    "choices": [
+      {"label": "A", "text": "Epidural hematoma"},
+      {"label": "B", "text": "Cerebral contusion"},
+      {"label": "C", "text": "Intracerebral hematoma"},
+      {"label": "D", "text": "Subarachnoid hemorrhage"},
+      {"label": "E", "text": "Chronic subdural hematoma"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยเกิดอาการ 1 เดือนหลังจากอุบัติเหตุ โดยไม่สูญเสียสติในตอนแรก แล้วมาด้วย headache, irritability, behavioral changes สอดคล้องกับ chronic subdural hematoma ที่มีอาการเริ่มช้า"
+  },
+  {
+    "scenario": "ชาย 25 ปี หน้าและมือด้านขวาชักเกร็งกระตุก ต่อมาชักทั้งตัว เป็นอยู่นาน 2 นาที หลังจากหยุดชัก มีอ่อนแรงทั้งตัว 6 ชั่วโมง แล้วกลับมาเป็นปกติ Lab: glucose, electrolyte, Ca ปกติหมด ถามว่าให้ยาอะไร",
+    "choices": [
+      {"label": "A", "text": "Phenytoin"},
+      {"label": "B", "text": "Alprazolam"},
+      {"label": "C", "text": "Lorazepam"},
+      {"label": "D", "text": "Clonazepam"},
+      {"label": "E", "text": "Phenobarbital"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยชักครั้งแรก (first-time seizure) ด้วย GTC ต้องเริ่ม antiepileptic drug Phenytoin เป็น first-line long-term prophylaxis (ยาอื่น ๆ เป็น acute treatment หรือ benzodiazepine)"
+  },
+  {
+    "scenario": "ผู้ป่วยเคยมี self-limited ischemic stroke ครั้งนี้มาด้วยอ่อนแรงครึ่งตัว BP สูงนิดหน่อย ถามว่าทำอะไร",
+    "choices": [
+      {"label": "A", "text": "CT brain"},
+      {"label": "B", "text": "Streptokinase"},
+      {"label": "C", "text": "Antihypertensive"},
+      {"label": "D", "text": "Aspirin"},
+      {"label": "E", "text": "Heparin"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยสงสัยเป็น recurrent stroke ต้อง CT brain ก่อนเพื่อแยกแยะ ischemic vs hemorrhagic stroke จะได้รู้ว่าควรใช้ thrombolysis หรือไม่"
+  },
+  {
+    "scenario": "หญิง 60 ปี เกิด abrupt onset of severe headache ไม่มีประวัติปวดหัวมาก่อน VS: no fever, BP 140/90 มี stiff neck positive ไม่มี neurological deficit",
+    "choices": [
+      {"label": "A", "text": "Migraine"},
+      {"label": "B", "text": "Bacterial meningitis"},
+      {"label": "C", "text": "Subarachnoid hemorrhage"},
+      {"label": "D", "text": "Subdural hemorrhage"},
+      {"label": "E", "text": "Intracerebral hematoma"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "Abrupt onset of severe headache + stiff neck + ไม่มี fever (vs bacterial meningitis) สอดคล้องกับ subarachnoid hemorrhage ซึ่ง thunderclap headache เป็นลักษณะเฉพาะ"
+  },
+  {
+    "scenario": "ผู้ชายรับการรักษา epilepsy กินยา multiple antiepileptic drug วันนึงพอนอนอยู่ในห้อง ประสาทสติหลัว ลูกตาเล็ก 2 mm RR 8/min มี decreased deep tendon reflex อาการอื่น ๆ ไม่แน่ใจ ถามว่าเกิดจากยาใด",
+    "choices": [
+      {"label": "A", "text": "Carbamazepine"},
+      {"label": "B", "text": "Phenytoin"},
+      {"label": "C", "text": "Benzodiazepine"},
+      {"label": "D", "text": "Phenobarbital"},
+      {"label": "E", "text": "Valproic acid"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "Stupor, pinpoint pupils (2 mm), respiratory depression (RR 8/min), decreased DTR เป็น classic overdose toxicity ของ benzodiazepine ซึ่ง CNS depressant"
+  },
+  {
+    "scenario": "ผู้ป่วยดื่มเหล้าทุกวัน 1 วันก่อนดื่มเหล้าลดลง มาด้วย agitation tremor แต่ neurological sign ปกติ ถามว่าการรักษาที่เหมาะสม",
+    "choices": [
+      {"label": "A", "text": "Thiamine"},
+      {"label": "B", "text": "Diazepam"},
+      {"label": "C", "text": "Lorazepam"},
+      {"label": "D", "text": "Phenytoin"},
+      {"label": "E", "text": "Chlorpromazine"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "Agitation tremor หลังลดการดื่มเหล้า แสดง alcohol withdrawal syndrome ยาเลือก คือ benzodiazepine (diazepam หรือ lorazepam) ในขณะที่ thiamine ควรให้พร้อมกันเพื่อป้องกัน Wernicke encephalopathy"
+  },
+  {
+    "scenario": "A 14-year-old girl with history of on and off headache for 5 months with nausea/vomiting. Clinical symptoms improve with paracetamol. PE: BP 120/80 mmHg, HR 90/min, no neurological deficit, no papilledema. What is the most likely diagnosis?",
+    "choices": [
+      {"label": "A", "text": "Migraine"},
+      {"label": "B", "text": "Cluster headache"},
+      {"label": "C", "text": "Tension headache"},
+      {"label": "D", "text": "Psychological"},
+      {"label": "E", "text": "Intracranial mass"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "หญิงวัยรุ่น 14 ปี ปวดหัวซ้ำๆ 5 เดือน พร้อม N/V ตอบสนองต่อ paracetamol ไม่มี papilledema สอดคล้องกับ migraine"
+  },
+  {
+    "scenario": "A patient with right hemiparesis and motor aphasia. Where is the lesion?",
+    "choices": [
+      {"label": "A", "text": "Lacunar infarction"},
+      {"label": "B", "text": "Left middle cerebral artery"},
+      {"label": "C", "text": "Right middle cerebral artery"},
+      {"label": "D", "text": "Left posterior cerebral artery"},
+      {"label": "E", "text": "Right posterior cerebral artery"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Right hemiparesis + motor aphasia แสดงว่าทำลาย left hemisphere ซึ่ง motor cortex และ Broca area (speech) อยู่ Lesion ที่ left MCA distribution"
+  },
+  {
+    "scenario": "A patient was normal until morning when he woke up 2 hours prior to arrival. BP high, no murmur, no carotid bruit. CT scan shows parenchymal hemorrhage. What is the management?",
+    "choices": [
+      {"label": "A", "text": "Aspirin"},
+      {"label": "B", "text": "Heparin"},
+      {"label": "C", "text": "Streptokinase"},
+      {"label": "D", "text": "Tissue plasminogen activator"},
+      {"label": "E", "text": "Antihypertensive drugs"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "CT shows parenchymal hemorrhage (hemorrhagic stroke) ต้องหลีกเลี่ยง thrombolytics ควรควบคุม BP ด้วย antihypertensive drugs แทน"
+  },
+  {
+    "scenario": "A 40-year-old woman sudden convulsion, loss of consciousness. At ER, BP 180/90 mmHg, PR 100/min, RR 20/min, E3M6V5, pupil right 3 mm, left 5 mm. What is the most likely diagnosis?",
+    "choices": [
+      {"label": "A", "text": "Subarachnoid hemorrhage"},
+      {"label": "B", "text": "Ruptured AVM at parietal lobe"},
+      {"label": "C", "text": "Intraventricular hemorrhage"},
+      {"label": "D", "text": "Epidural hematoma"},
+      {"label": "E", "text": "Intracerebral hemorrhage frontal lobe"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Seizure + anisocoria (right pupil 3 mm fixed, left 5 mm dilated/reactive) + low GCS + high BP แสดง herniation syndrome จากการขยายตัวของเนื้อสมองด้านซ้าย (left hemisphere) ที่ดันเข้า midline โดยลูกตาด้านขวา dilate แสดง III nerve compression ที่ด้านขวา (ipsilateral) = lesion ที่ left cerebral hemisphere ที่สามารถเกิดจากสารเลือดออก intracerebral hemorrhage"
+  },
+  {
+    "scenario": "A patient with acute headache. PE: left eye 5 mm not reactive to light, right eye 2 mm reactive to light, right hemiparesis. What is the diagnosis?",
+    "choices": [
+      {"label": "A", "text": "Epidural hematoma"},
+      {"label": "B", "text": "Subdural hemorrhage"},
+      {"label": "C", "text": "Subarachnoid hemorrhage"},
+      {"label": "D", "text": "Intracerebral hemorrhage"},
+      {"label": "E", "text": "Intraventricular hemorrhage"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Left pupil dilated & fixed (5 mm NRTL) + right hemiparesis แสดง left III nerve palsy (pupil dilates = sympathetic unopposed) + contralateral hemiparesis (right) = left hemisphere lesion ที่ midbrain ช่วง (Weber syndrome) หรือ epidural hematoma ที่ท้ายทวาย causing transtentorial herniation"
+  },
+  {
+    "scenario": "CT shows typical lens-shaped hematoma with midline shift. What is the diagnosis?",
+    "choices": [
+      {"label": "A", "text": "Epidural hemorrhage"},
+      {"label": "B", "text": "Subdural hemorrhage"},
+      {"label": "C", "text": "Subarachnoid hemorrhage"},
+      {"label": "D", "text": "Intracerebral hemorrhage"},
+      {"label": "E", "text": "Intraventricular hemorrhage"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Lens-shaped (lenticular) hematoma เป็นลักษณะเฉพาะของ epidural hematoma ที่อยู่ระหว่าง dura กับ skull ไม่เหลือคลานเข้า subarachnoid space"
+  },
+  {
+    "scenario": "A 70-year-old woman with underlying disease diabetes, hypertension, dyslipidemia. She was found unconscious in her bathroom 1 hour prior to arrival. Physical examination revealed BP 220/120 mmHg, E2M4V1, motor grade III all. CT scan reveals intracerebral hemorrhage with intraventricular extension. Which is unnecessary management?",
+    "choices": [
+      {"label": "A", "text": "IV corticosteroid"},
+      {"label": "B", "text": "IV 20% mannitol"},
+      {"label": "C", "text": "Ventricular drainage"},
+      {"label": "D", "text": "Intubate and assisted ventilation"},
+      {"label": "E", "text": "Parenteral antihypertensive drug"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "ICH with IVH ต้องสนับสนุนการหายใจ ลดความดันในช่องสมอง (mannitol, ventricular drainage) และควบคุม BP แต่ corticosteroid ไม่ได้แสดงประโยชน์ใน ICH ตรงกันข้ามกับ stroke ชนิด ischemic"
+  },
+  {
+    "scenario": "A patient with epidural hematoma with midline shift is intubated. What is the initial management?",
+    "choices": [
+      {"label": "A", "text": "Mannitol"},
+      {"label": "B", "text": "Hyperventilate"},
+      {"label": "C", "text": "Dexamethasone"},
+      {"label": "D", "text": "Emergency surgery"},
+      {"label": "E", "text": "Phenytoin"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Epidural hematoma with midline shift ที่ intubated แล้ว ต้อง hyperventilation ทันที (ลดความดันในกะโหลก) และเตรียม emergency surgery พร้อมกัน"
+  },
+  {
+    "scenario": "Brain hemorrhage with RR 28/min. What is the initial effective treatment?",
+    "choices": [
+      {"label": "A", "text": "Mannitol"},
+      {"label": "B", "text": "Hyperventilate"},
+      {"label": "C", "text": "Acetazolamide"},
+      {"label": "D", "text": "Corticosteroid"},
+      {"label": "E", "text": "Sedation"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "RR 28/min แสดง respiratory distress จากเพิ่มความดันในกะโหลก Hyperventilation ลดความดันได้อย่างรวดเร็ว (ลดความดัน CO2 -> ลด ICP) และสามารถทำได้ทันในสถานการณ์ฉุกเฉิน"
+  },
+  {
+    "scenario": "คนที่เป็น DM, HTN มีประวัติ stroke ลืมทุกอย่างในชีวิต โรคประสาทเสื่อมชนิดใด",
+    "choices": [
+      {"label": "A", "text": "Vascular dementia"},
+      {"label": "B", "text": "Alzheimer dementia"},
+      {"label": "C", "text": "Lewy body dementia"},
+      {"label": "D", "text": "Frontotemporal dementia"},
+      {"label": "E", "text": "Mixed dementia"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "ประวัติ DM, HTN, stroke และอาการด้านความจำเสื่อม (ลืมทุกอย่างในชีวิต) สอดคล้องกับ vascular dementia จากหลายครั้งของสารเลือดออก/ภาวะขาดเลือดในสมอง"
+  },
+  {
+    "scenario": "A dementia patient who has ataxic gait. What is the investigation?",
+    "choices": [
+      {"label": "A", "text": "CT brain"},
+      {"label": "B", "text": "MRI brain"},
+      {"label": "C", "text": "EEG"},
+      {"label": "D", "text": "Lumbar puncture"},
+      {"label": "E", "text": "Blood test for metabolic markers"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Dementia + ataxic gait สอดคล้องกับ normal pressure hydrocephalus (NPH) ซึ่งเรียกว่า \"triad of NPH\" ได้แก่ dementia, gait disturbance, incontinence MRI brain สามารถแสดง dilated ventricles"
+  },
+  {
+    "scenario": "A 30-year-old woman presents with headache at bitemporal and occipital lobe. It occurs 2-3 times per week with duration of 5-6 hours. What is the prophylaxis treatment?",
+    "choices": [
+      {"label": "A", "text": "Topiramate"},
+      {"label": "B", "text": "Gabapentin"},
+      {"label": "C", "text": "Flunarizine"},
+      {"label": "D", "text": "Amitriptyline"},
+      {"label": "E", "text": "Sodium valproate"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Bitemporal and occipital headache 2-3 times/week ระยะ

@@ -1,0 +1,151 @@
+{
+  "total_files": 18,
+  "total_questions": 1319,
+  "total_issues": 973,
+  "per_file": {
+    "Cardio med": {
+      "total": 70,
+      "no_choices": 53,
+      "few_choices": 5,
+      "good": 12,
+      "no_scenario": 0,
+      "short_scenario": 32
+    },
+    "Chest med": {
+      "total": 59,
+      "no_choices": 35,
+      "few_choices": 6,
+      "good": 18,
+      "no_scenario": 0,
+      "short_scenario": 18
+    },
+    "ENT": {
+      "total": 103,
+      "no_choices": 77,
+      "few_choices": 4,
+      "good": 22,
+      "no_scenario": 0,
+      "short_scenario": 33
+    },
+    "Endocrine": {
+      "total": 94,
+      "no_choices": 63,
+      "few_choices": 7,
+      "good": 24,
+      "no_scenario": 0,
+      "short_scenario": 40
+    },
+    "Forensic": {
+      "total": 75,
+      "no_choices": 40,
+      "few_choices": 11,
+      "good": 24,
+      "no_scenario": 0,
+      "short_scenario": 12
+    },
+    "GYN": {
+      "total": 67,
+      "no_choices": 55,
+      "few_choices": 8,
+      "good": 4,
+      "no_scenario": 0,
+      "short_scenario": 28
+    },
+    "HEMATO": {
+      "total": 82,
+      "no_choices": 41,
+      "few_choices": 4,
+      "good": 37,
+      "no_scenario": 0,
+      "short_scenario": 15
+    },
+    "INFECTIOUS": {
+      "total": 146,
+      "no_choices": 76,
+      "few_choices": 9,
+      "good": 61,
+      "no_scenario": 0,
+      "short_scenario": 36
+    },
+    "OB": {
+      "total": 138,
+      "no_choices": 84,
+      "few_choices": 16,
+      "good": 38,
+      "no_scenario": 0,
+      "short_scenario": 47
+    },
+    "ORTHO": {
+      "total": 133,
+      "no_choices": 97,
+      "few_choices": 7,
+      "good": 29,
+      "no_scenario": 0,
+      "short_scenario": 48
+    },
+    "Ped": {
+      "total": 76,
+      "no_choices": 69,
+      "few_choices": 2,
+      "good": 5,
+      "no_scenario": 0,
+      "short_scenario": 44
+    },
+    "Psychi": {
+      "total": 33,
+      "no_choices": 30,
+      "few_choices": 1,
+      "good": 2,
+      "no_scenario": 0,
+      "short_scenario": 12
+    },
+    "Surgery": {
+      "total": 85,
+      "no_choices": 63,
+      "few_choices": 3,
+      "good": 19,
+      "no_scenario": 0,
+      "short_scenario": 33
+    },
+    "epidemio": {
+      "total": 14,
+      "no_choices": 7,
+      "few_choices": 0,
+      "good": 7,
+      "no_scenario": 0,
+      "short_scenario": 4
+    },
+    "gi med": {
+      "total": 32,
+      "no_choices": 32,
+      "few_choices": 0,
+      "good": 0,
+      "no_scenario": 0,
+      "short_scenario": 19
+    },
+    "nephro": {
+      "total": 14,
+      "no_choices": 2,
+      "few_choices": 3,
+      "good": 9,
+      "no_scenario": 0,
+      "short_scenario": 0
+    },
+    "neuro med1": {
+      "total": 27,
+      "no_choices": 6,
+      "few_choices": 6,
+      "good": 15,
+      "no_scenario": 0,
+      "short_scenario": 4
+    },
+    "neuro med1_2": {
+      "total": 71,
+      "no_choices": 43,
+      "few_choices": 8,
+      "good": 20,
+      "no_scenario": 0,
+      "short_scenario": 29
+    }
+  }
+}

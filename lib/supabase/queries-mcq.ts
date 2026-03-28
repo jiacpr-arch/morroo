@@ -70,6 +70,33 @@ export async function getMcqQuestion(id: string): Promise<McqQuestion | null> {
   return data as McqQuestion;
 }
 
+export async function getFreeAttemptsCount(
+  userId: string,
+  subjectId?: string
+): Promise<number> {
+  const supabase = await createClient();
+  let query = supabase
+    .from("mcq_attempts")
+    .select("id", { count: "exact", head: true })
+    .eq("user_id", userId);
+
+  if (subjectId) {
+    // Join with mcq_questions to filter by subject
+    const { data: qids } = await supabase
+      .from("mcq_questions")
+      .select("id")
+      .eq("subject_id", subjectId)
+      .eq("status", "active");
+
+    const ids = (qids ?? []).map((q: { id: string }) => q.id);
+    if (ids.length === 0) return 0;
+    query = query.in("question_id", ids);
+  }
+
+  const { count } = await query;
+  return count ?? 0;
+}
+
 export async function getMcqSubjectCounts(): Promise<Record<string, number>> {
   const supabase = await createClient();
   const { data, error } = await supabase

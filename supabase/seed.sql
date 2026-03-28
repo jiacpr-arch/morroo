@@ -77,6 +77,14 @@ create policy "Admins can manage exam parts"
   on public.exam_parts for all
   using (auth.uid() in (select id from public.profiles where role = 'admin'));
 
+create policy "Admins can update all profiles"
+  on public.profiles for update
+  using (auth.uid() in (select id from public.profiles where role = 'admin'));
+
+create policy "Admins can view all profiles"
+  on public.profiles for select
+  using (auth.uid() in (select id from public.profiles where role = 'admin'));
+
 -- ============================================
 -- Seed Data: ข้อสอบตัวอย่าง
 -- ============================================

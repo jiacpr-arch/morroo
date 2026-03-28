@@ -1,0 +1,4661 @@
+[
+  {
+    "scenario": "A 24-year-old woman presents with abnormal vaginal bleeding with abdominal pain for 6 hours. LMP 2 months. Urine pregnancy weakly positive. PE: P 110/min, BP 90/60 mmHg. Abdomen- distended, generalized guarding, pain at suprapubic. PV: NIUB- normal, Vg- normal, Cx- cervical motion tenderness and minimal bleed per os, Adx- 4cm mass at right adnexa, tender. What is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Rupture ovarian cyst"
+      },
+      {
+        "label": "B",
+        "text": "Acute appendicitis"
+      },
+      {
+        "label": "C",
+        "text": "Ectopic pregnancy"
+      },
+      {
+        "label": "D",
+        "text": "Torsion ovary"
+      },
+      {
+        "label": "E",
+        "text": "Tuboovarian cyst"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว GYN",
+    "status": "complete",
+    "ai_notes": "Clinical presentation consistent with ectopic pregnancy: weakly positive pregnancy test, hemodynamic instability (BP 90/60, HR 110), abdominal distension with guarding, cervical motion tenderness, adnexal mass. The 4cm right adnexal mass with hemodynamic compromise is classic for rupturing ectopic pregnancy.",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 34-year-old woman with previous pregnancy 3 times but abortion in 7, 11, 8 weeks, respectively. What is the most likely cause of abortion?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Myoma uteri"
+      },
+      {
+        "label": "B",
+        "text": "Bicornuate uterus"
+      },
+      {
+        "label": "C",
+        "text": "Infection"
+      },
+      {
+        "label": "D",
+        "text": "Cervical incompetence"
+      },
+      {
+        "label": "E",
+        "text": "Chromosomal abnormalities"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว GYN",
+    "status": "complete",
+    "ai_notes": "Recurrent early miscarriages (7, 11, 8 weeks) in first trimester suggest chromosomal abnormalities (most common cause of recurrent early losses), rather than structural uterine issues (which typically cause second trimester losses) or cervical incompetence (typically causes second/third trimester losses).",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 35-year-old woman presented with menometrorrhagia for 6 months. Dilatation and curettage revealed secretory endometrium. Physical exam: smooth surface uterus, globular, symmetrical enlarged uterus size 6-8 weeks. She continue to have abnormal bleeding and dysmenorrheal after the procedure 6 months. Physical exam is the same. What is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Adenomyosis"
+      },
+      {
+        "label": "B",
+        "text": "Myoma uteri"
+      },
+      {
+        "label": "C",
+        "text": "Endocervical polyp"
+      },
+      {
+        "label": "D",
+        "text": "Endometrial hyperplasia"
+      },
+      {
+        "label": "E",
+        "text": "Endometrial carcinoma"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว GYN",
+    "status": "complete",
+    "ai_notes": "Adenomyosis is most likely: globular symmetrical enlarged uterus with dysmenorrhea and menometrorrhagia that persists after D&C (D&C does not treat adenomyosis, only curettage of uterine surface). Secretory endometrium on D&C helps rule out hyperplasia/carcinoma.",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 14-year-old girl, with no underlying disease, was raped 2 days ago. She has regular menstrual cycle of 28 days. LMP was 18 days ago. What is the proper management for pregnancy prevention?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Reassure"
+      },
+      {
+        "label": "B",
+        "text": "DMPA 150 mg IV stat"
+      },
+      {
+        "label": "C",
+        "text": "Levonorgestrel (0.75 mg) 2 tablets po stat"
+      },
+      {
+        "label": "D",
+        "text": "Ethyl estradiol (20 mcg) 2 tablets po stat"
+      },
+      {
+        "label": "E",
+        "text": "Medroxyprogesterone acetate (5 mg) 2 tablets po stat and repeat dose within 12 hours"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว GYN",
+    "status": "complete",
+    "ai_notes": "Levonorgestrel is the most appropriate emergency contraception. LMP was 18 days ago (follicular phase, high pregnancy risk). Emergency contraception should be given within 72 hours post-intercourse. Levonorgestrel (Plan B) 1.5 mg total dose (0.75 mg × 2 tablets) is the standard regimen.",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 30-year-old woman uses intrauterine device and presents to clinic with PID. What is the management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Remove IUD"
+      },
+      {
+        "label": "B",
+        "text": "Remove IUD and oral antibiotics"
+      },
+      {
+        "label": "C",
+        "text": "Remove IUD, insert new IUD and oral antibiotics"
+      },
+      {
+        "label": "D",
+        "text": "Keep IUD and start oral antibiotics"
+      },
+      {
+        "label": "E",
+        "text": "Keep IUD and start IV antibiotics"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว GYN",
+    "status": "complete",
+    "ai_notes": "Standard management for PID with IUD in situ is to remove the IUD and initiate antibiotic therapy. IUD should not be reinserted until infection is resolved (typically 3 months after treatment completion). Added options D and E for plausibility.",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 30-year-old female, married, presented with itching and yellowish leukorrhea 3 days prior to admission. Pelvic examination revealed yellowish curd-like leukorrhea. What is the most proper investigation for diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "KOH preparation"
+      },
+      {
+        "label": "B",
+        "text": "Pap smear"
+      },
+      {
+        "label": "C",
+        "text": "Gram stain"
+      },
+      {
+        "label": "D",
+        "text": "Tzanck smear"
+      },
+      {
+        "label": "E",
+        "text": "Culture and sensitivity for anaerobes"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว GYN",
+    "status": "complete",
+    "ai_notes": "Curd-like yellow discharge with itching is classic for Candida albicans vulvovaginitis. KOH (Potassium Hydroxide) preparation is the gold standard for diagnosing candidiasis, showing budding yeast and pseudohyphae.",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A Thai 25-year-old female patient presents with foul-smelling vaginal discharge. PE: yellow-greenish discharge with red spot at cervix and vagina. What is the etiology?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Candida albicans"
+      },
+      {
+        "label": "B",
+        "text": "Neisseria gonorrhoeae"
+      },
+      {
+        "label": "C",
+        "text": "Hemophilus ducreyi"
+      },
+      {
+        "label": "D",
+        "text": "Gardnerella vaginalis"
+      },
+      {
+        "label": "E",
+        "text": "Trichomonas vaginalis"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว GYN",
+    "status": "complete",
+    "ai_notes": "Trichomonas vaginalis causes yellow-greenish frothy discharge with foul odor and characteristic 'strawberry cervix' (red spots on cervix). This is the classic presentation described in the case.",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 25-year-old male patient presents with greenish purulent discharge with pain on urination for 2 weeks. He has a history of multiple sex partners and unsafe sex. What is the most appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ceftriaxone + Doxycycline"
+      },
+      {
+        "label": "B",
+        "text": "Cephalosporin + Clindamycin"
+      },
+      {
+        "label": "C",
+        "text": "Ciprofloxacin monotherapy"
+      },
+      {
+        "label": "D",
+        "text": "Doxycycline monotherapy"
+      },
+      {
+        "label": "E",
+        "text": "Azithromycin monotherapy"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว GYN",
+    "status": "complete",
+    "ai_notes": "Greenish purulent urethral discharge suggests gonorrhea (Neisseria gonorrhoeae). Current CDC guidelines recommend Ceftriaxone 500 mg IM × 1 dose PLUS Doxycycline 100 mg PO BID × 7 days to cover concurrent chlamydia infection.",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "Regarding antibiotic treatment for tubo-ovarian abscess (TOA), what is the appropriate antibiotic regimen?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cephalosporin (3rd generation) + Doxycycline"
+      },
+      {
+        "label": "B",
+        "text": "Clindamycin + Gentamicin"
+      },
+      {
+        "label": "C",
+        "text": "Ciprofloxacin monotherapy"
+      },
+      {
+        "label": "D",
+        "text": "Metronidazole monotherapy"
+      },
+      {
+        "label": "E",
+        "text": "Cephalosporin monotherapy"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว GYN",
+    "status": "complete",
+    "ai_notes": "TOA requires broad-spectrum coverage for polymicrobial infection (aerobes and anaerobes). Clindamycin + Gentamicin is standard empiric therapy for TOA, particularly for anaerobic and gram-negative coverage. Ceftriaxone + Doxycycline is also acceptable.",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 25-year-old man presents with fever and rash at palm and sole. Lab: positive VDRL 1:128, reactive TPHA. What is the appropriate treatment?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Benzathine penicillin G 2.4 MU IM single dose"
+      },
+      {
+        "label": "B",
+        "text": "Benzathine penicillin G 2.4 MU IM weekly for 3 weeks"
+      },
+      {
+        "label": "C",
+        "text": "Doxycycline 100 mg po BID × 28 days"
+      },
+      {
+        "label": "D",
+        "text": "Ceftriaxone 1 g IV single dose"
+      },
+      {
+        "label": "E",
+        "text": "Azithromycin 500 mg po daily × 14 days"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว GYN",
+    "status": "complete",
+    "ai_notes": "Presentation suggests secondary syphilis (fever, rash on palms/soles, positive serology). Early syphilis (primary/secondary) treatment is Benzathine penicillin G 2.4 MU IM × 1 dose. Neurosyphilis requires weekly dosing × 3 weeks, but clinical presentation suggests early syphilis.",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 16-year-old girl presents with metromenorrhagia for 3 months. What is the most likely cause?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Anovulation"
+      },
+      {
+        "label": "B",
+        "text": "Polycystic ovary syndrome"
+      },
+      {
+        "label": "C",
+        "text": "Thyroid dysfunction"
+      },
+      {
+        "label": "D",
+        "text": "Bleeding disorder"
+      },
+      {
+        "label": "E",
+        "text": "Uterine fibroids"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว GYN",
+    "status": "complete",
+    "ai_notes": "In adolescents, metromenorrhagia is most commonly due to anovulation secondary to immature hypothalamic-pituitary-ovarian axis. This is the most common cause of abnormal uterine bleeding in teenage girls.",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 16-year-old girl has never had menstruation. PE: normal secondary sex characteristics, tense cystic mass at pelvis, purplish bulging mass at the introitus. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bartholin cyst"
+      },
+      {
+        "label": "B",
+        "text": "Endometriotic cyst"
+      },
+      {
+        "label": "C",
+        "text": "Imperforate hymen"
+      },
+      {
+        "label": "D",
+        "text": "Transverse vaginal septum"
+      },
+      {
+        "label": "E",
+        "text": "Müllerian agenesis"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว GYN",
+    "status": "complete",
+    "ai_notes": "Classic presentation of imperforate hymen: primary amenorrhea with normal secondary sexual characteristics, pelvic mass (hematometra), and purplish bulging at introitus due to accumulated menstrual blood. Normal breast development indicates functioning ovaries.",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient has been married for 2 years with no contraception. Physical exam reveals left and right adnexal masses with fluid at cul-de-sac. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Leiomyoma"
+      },
+      {
+        "label": "B",
+        "text": "Endometrioma"
+      },
+      {
+        "label": "C",
+        "text": "Ovarian fibromas"
+      },
+      {
+        "label": "D",
+        "text": "Tubo-ovarian complex"
+      },
+      {
+        "label": "E",
+        "text": "Physiologic ovarian cysts"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว GYN",
+    "status": "complete",
+    "ai_notes": "Bilateral adnexal masses with cul-de-sac fluid in infertile patient suggest endometriosis with bilateral endometriomas. Endometriosis is common in infertile women. Added option D as plausible distractor and option E for incomplete option list.",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 45-year-old woman with nulliparity, diagnosed with PCOS and obesity, presents with vaginal bleeding. What is the most appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Contraceptive pill"
+      },
+      {
+        "label": "B",
+        "text": "Fractional curettage"
+      },
+      {
+        "label": "C",
+        "text": "Hysterectomy"
+      },
+      {
+        "label": "D",
+        "text": "Progestin therapy"
+      },
+      {
+        "label": "E",
+        "text": "Diagnostic hysteroscopy"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว GYN",
+    "status": "complete",
+    "ai_notes": "PCOS with abnormal uterine bleeding is managed with hormonal contraception to regulate cycles and protect endometrium. Contraceptive pill is first-line. Added options to complete 5 choices as only A and B were provided originally.",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 52-year-old woman, amenorrhea for 6 months, drinks a glass of wine daily, smokes 10 cigarettes daily, exercises by walking on weekends. She has no family history of spine or hip fracture. Vital signs normal, height 165 cm, weight 70 kg (BMI 25.7). What is the most important factor to develop osteoporosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Age"
+      },
+      {
+        "label": "B",
+        "text": "Obesity"
+      },
+      {
+        "label": "C",
+        "text": "Decrease activity"
+      },
+      {
+        "label": "D",
+        "text": "Smoking"
+      },
+      {
+        "label": "E",
+        "text": "Alcohol"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว GYN",
+    "status": "complete",
+    "ai_notes": "Age (52 years postmenopausal) is the most important factor. Menopause with estrogen deficiency combined with age is the primary risk factor. BMI is normal (not obese), family history is negative, smoking and alcohol are risk factors but less significant than menopausal age.",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 46-year-old woman presents with intermittent palpitation, sweating, irritability, anxiety, and heat intolerance. Menstruation is regular but decreased in the past 6 months. She drinks 5 cups of coffee daily. PE: BT 37°C, PR 84, BP 110/70, others unremarkable. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Carcinoid tumor"
+      },
+      {
+        "label": "B",
+        "text": "Perimenopause"
+      },
+      {
+        "label": "C",
+        "text": "Hyperthyroidism"
+      },
+      {
+        "label": "D",
+        "text": "Excessive caffeine ingestion"
+      },
+      {
+        "label": "E",
+        "text": "Generalized anxiety disorder"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว GYN",
+    "status": "complete",
+    "ai_notes": "Perimenopause (age 46, regular but decreasing menses) with vasomotor symptoms (palpitations, sweating, heat intolerance) and mood changes is most likely. High caffeine intake (5 cups daily) contributes but is not the primary cause. Normal vital signs and no thyroid signs make hyperthyroidism unlikely.",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 59-year-old woman presents with post-coital bleeding. Pap smear: squamous cell carcinoma. Cervical biopsy: CIN 1. What is the most appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Conization"
+      },
+      {
+        "label": "B",
+        "text": "Fractional curettage"
+      },
+      {
+        "label": "C",
+        "text": "Hysterectomy"
+      },
+      {
+        "label": "D",
+        "text": "Wertheim operation"
+      },
+      {
+        "label": "E",
+        "text": "Chemoradiation"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว GYN",
+    "status": "complete",
+    "ai_notes": "Pap smear shows squamous cell carcinoma, biopsy shows CIN 1 (discordance suggests invasive cancer). Post-coital bleeding in elderly woman with cervical cancer diagnosis requires Wertheim operation (radical hysterectomy with pelvic lymphadenectomy) for cervical cancer. Note: Pap cytology showing frank carcinoma cells warrants treatment as cervical cancer, not CIN.",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 30-year-old woman with general health normal presents with bilateral adnexal cysts: right 6 cm, left 5 cm. What is the most appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "FSH, LH, estradiol levels"
+      },
+      {
+        "label": "B",
+        "text": "Pelvic ultrasound follow-up in 6-8 weeks"
+      },
+      {
+        "label": "C",
+        "text": "CT abdomen"
+      },
+      {
+        "label": "D",
+        "text": "Exploratory laparotomy"
+      },
+      {
+        "label": "E",
+        "text": "Immediate surgical intervention"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว GYN",
+    "status": "complete",
+    "ai_notes": "Asymptomatic bilateral ovarian cysts <8 cm in reproductive-age woman are likely benign (follicular cysts). Management is conservative with ultrasound follow-up in 6-8 weeks. Hormone levels and imaging are not indicated initially. Surgery is not needed unless cysts are >8 cm, complex, or symptomatic.",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 60-year-old woman in menopause for 10 years presents with dyspareunia for 1 year. PV: atrophic vaginal mucosa with scant discharge. What is the most appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Reassure"
+      },
+      {
+        "label": "B",
+        "text": "Pelvic floor exercise"
+      },
+      {
+        "label": "C",
+        "text": "Oral estrogen"
+      },
+      {
+        "label": "D",
+        "text": "Transdermal estrogen"
+      },
+      {
+        "label": "E",
+        "text": "Vaginal estrogen cream"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว GYN",
+    "status": "complete",
+    "ai_notes": "Genitourinary syndrome of menopause (atrophic vaginitis) with dyspareunia is best treated with vaginal estrogen cream for local effect without systemic absorption. Effective for vaginal atrophy and dyspareunia.",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A woman presents with urinary stress incontinence and pelvic organ prolapse. What is the most appropriate surgical management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "LeFort procedure"
+      },
+      {
+        "label": "B",
+        "text": "Marshall-Marchetti-Krantz procedure"
+      },
+      {
+        "label": "C",
+        "text": "Tension-free vaginal tape (TVT)"
+      },
+      {
+        "label": "D",
+        "text": "Sacrocolpopexy"
+      },
+      {
+        "label": "E",
+        "text": "Anterior colporrhaphy"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว GYN",
+    "status": "complete",
+    "ai_notes": "LeFort procedure (partial closure of vaginal vault) is for severe uterovaginal prolapse with stress incontinence in women not desiring future intercourse or uterine conservation. Added options B, C, D, E to complete the choices as only A was provided originally.",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 25-year-old female with a 2-month-old infant on exclusive breastfeeding comes for family planning consultation. What is the best contraceptive method?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Combined oral contraceptive pill"
+      },
+      {
+        "label": "B",
+        "text": "Contraceptive patch"
+      },
+      {
+        "label": "C",
+        "text": "Vaginal ring"
+      },
+      {
+        "label": "D",
+        "text": "Depot medroxyprogesterone acetate (DMPA)"
+      },
+      {
+        "label": "E",
+        "text": "Progestin-only pill (minipill)"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว GYN",
+    "status": "complete",
+    "ai_notes": "DMPA is preferred for breastfeeding women as progestin-only method does not affect milk supply. Tubal ligation (if in original options) is not ideal for 25-year-old wanting only temporary contraception. Combined hormonal methods reduce milk supply. Changed option E from tubal ligation to minipill as more appropriate.",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 30-year-old breastfeeding woman presents with right breast tenderness. PE: tender and swelling at right periareolar area. What is the most appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cold compression"
+      },
+      {
+        "label": "B",
+        "text": "IV steroid/NSAID"
+      },
+      {
+        "label": "C",
+        "text": "Oral steroid/NSAID"
+      },
+      {
+        "label": "D",
+        "text": "Oral antibiotics"
+      },
+      {
+        "label": "E",
+        "text": "Incision and drainage"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว GYN",
+    "status": "complete",
+    "ai_notes": "Periareolar tenderness and swelling in breastfeeding woman suggests mastitis or breast engorgement. Initial management is oral NSAID (ibuprofen) and continuation of breastfeeding. If abscess develops, then incision and drainage is needed. Antibiotics if signs of infection/mastitis persist.",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 30-year-old woman presents with vomiting, diarrhea, and right lower quadrant (RLQ) pain. PE: tender at RLQ. LMP 2 weeks ago. What is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Appendicitis"
+      },
+      {
+        "label": "B",
+        "text": "Tubo-ovarian abscess"
+      },
+      {
+        "label": "C",
+        "text": "Mittelschmerz"
+      },
+      {
+        "label": "D",
+        "text": "Colitis"
+      },
+      {
+        "label": "E",
+        "text": "Ileitis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว GYN",
+    "status": "complete",
+    "ai_notes": "RLQ pain with vomiting and diarrhea 2 weeks after LMP (not ovulation time for mittelschmerz) is classic for appendicitis. Gastrointestinal symptoms (vomiting, diarrhea) support appendicitis over gynecologic causes.",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "An 8-year-old girl was brought to hospital by her mother complaining of abnormal discharge from her vagina. Mother suspects sexual abuse or STD. What is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Herpes genitalis"
+      },
+      {
+        "label": "B",
+        "text": "Condyloma acuminata"
+      },
+      {
+        "label": "C",
+        "text": "Bacterial vaginosis"
+      },
+      {
+        "label": "D",
+        "text": "Candidiasis vaginitis"
+      },
+      {
+        "label": "E",
+        "text": "Trichomonas vaginalis"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว GYN 2014",
+    "status": "complete",
+    "ai_notes": "In prepubertal girls with abnormal discharge and suspicion of sexual abuse, condyloma acuminata (anogenital warts from HPV) is the most common STD finding. It is highly suspicious for sexual abuse in this age group. Candida is common in children but not abuse-related.",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 28-year-old woman presents with amenorrhea for 15 months, severe acne, hirsutism, BMI 30, and acanthosis nigricans. BS 110 mg/dL, elevated lipids. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Polycystic ovary syndrome (PCOS)"
+      },
+      {
+        "label": "B",
+        "text": "Prolactinoma"
+      },
+      {
+        "label": "C",
+        "text": "Hypothyroidism"
+      },
+      {
+        "label": "D",
+        "text": "Cushing syndrome"
+      },
+      {
+        "label": "E",
+        "text": "Adrenal hyperplasia"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว GYN 2014",
+    "status": "complete",
+    "ai_notes": "Classic presentation of PCOS: amenorrhea, hirsutism, acne, obesity (BMI 30), acanthosis nigricans (insulin resistance marker), impaired fasting glucose (BS 110), dyslipidemia. These are hallmark features of PCOS with metabolic syndrome. Added option E to complete the original incomplete list.",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิง 40 ปี อายุครรภ์ 10 สัปดาห์ มีชิ้นเนื้อหลุดออกมา ขูดมาได้ complete hydatidiform mole ถามการรักษาต่อ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ตัดมดลูก"
+      },
+      {
+        "label": "B",
+        "text": "CMT (chemotherapy)"
+      },
+      {
+        "label": "C",
+        "text": "นัดติดตามผล"
+      },
+      {
+        "label": "D",
+        "text": "ดูระยะมะเร็ง"
+      },
+      {
+        "label": "E",
+        "text": "ติดตาม hCG"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว (ไม่ระบุปี)",
+    "status": "complete",
+    "ai_notes": "Complete mole ต้องติดตาม hCG เพื่อเฝ้าระวัง gestational trophoblastic disease และมะเร็ง ขูดมดลูก (D&C) เป็นขั้นตอนแรก แต่คำถามถาม mx ต่อ ตัดมดลูกไม่เป็นมาตรฐาน CMT ใช้ถ้า hCG ยังสูง",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 4 ขวบ มี itching และ yellow discharge with foul smell จากช่องคลอด มารับยาฆ่าเชื้อมา 2 สัปดาห์ แต่อาการไม่ดีขึ้น PE: erythematous, scratch marks at labia with foul smell and yellow discharge, hymen intact ถามการรักษาต่อ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Keep hygiene"
+      },
+      {
+        "label": "B",
+        "text": "Start IV ATB"
+      },
+      {
+        "label": "C",
+        "text": "Examine with general anesthesia"
+      },
+      {
+        "label": "D",
+        "text": "Culture for bacterial organism"
+      },
+      {
+        "label": "E",
+        "text": "Work up sexual transmitted disease"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว (ไม่ระบุปี)",
+    "status": "complete",
+    "ai_notes": "ในเด็กอายุน้อยที่มี vulvovaginitis ที่ไม่ตอบสนองต่อการรักษา ต้องส่งเลือดเพื่อ culture หาแบคทีเรียที่แท้จริง เพื่อปรับเปลี่ยนยา และต้องตรวจอื่นๆ เช่น foreign body หรือ sexual abuse",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 18 ปี หนัก 50 kg สูง 155 cm Tanner stage 5 ที่นม 5 ที่ pubic hair มี whitish discharge from nipple อื่นๆปกติดี ถามส่งตรวจอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "FSH, LH"
+      },
+      {
+        "label": "B",
+        "text": "Progesterone"
+      },
+      {
+        "label": "C",
+        "text": "Prolactin"
+      },
+      {
+        "label": "D",
+        "text": "17-hydroxyprogesterone"
+      },
+      {
+        "label": "E",
+        "text": "Chromosome study"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว (ไม่ระบุปี)",
+    "status": "complete",
+    "ai_notes": "Whitish discharge from nipple ที่ Tanner stage 5 ชี้ไปที่ galactorrhea ต้องตรวจ prolactin เพื่อ rule out hyperprolactinemia",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิง 51 ปี เลือดออกกระปริด ๆ ปะปรอย ๆ จากช่องคลอด ถามการรักษา",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ขูดมดลูก + ตรวจปากมดลูก ส่ง病理"
+      },
+      {
+        "label": "B",
+        "text": "U/S ดู endometrium หนามากกว่า 5 mm ถ้ามากกว่านั้นถึงขูด"
+      },
+      {
+        "label": "C",
+        "text": "ให้ 3 นัด follow-up ทุก 3 เดือน"
+      },
+      {
+        "label": "D",
+        "text": "ให้ Progestin"
+      },
+      {
+        "label": "E",
+        "text": "ให้ combined oral contraceptive"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว (ไม่ระบุปี)",
+    "status": "complete",
+    "ai_notes": "ผู้หญิงอายุ 51 ปี (perimenopause/postmenopause) มี abnormal uterine bleeding ต้อง rule out malignancy โดย U/S first ดู endometrial thickness ถ้า ≥5 mm ต้องขูดมดลูกและส่ง病理",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิง 35 ปี menometrorrhagia os close irregular uterus 10 weeks size U/S: proliferative endometrium ทาไง",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ตัดมดลูก"
+      },
+      {
+        "label": "B",
+        "text": "GnRH analog"
+      },
+      {
+        "label": "C",
+        "text": "Myomectomy"
+      },
+      {
+        "label": "D",
+        "text": "Progestin"
+      },
+      {
+        "label": "E",
+        "text": "Endometrial ablation"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว (ไม่ระบุปี)",
+    "status": "complete",
+    "ai_notes": "Irregular uterus 10 weeks size + menometrorrhagia = fibroid uterus Myomectomy เป็นตัวเลือกที่เหมาะสมเพราะอายุยังไม่มากและต้องการเก็บมดลูก GnRH analog ใช้ก่อนผ่าตัด",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิงอายุ 20 ปี มีเพศสัมพันธ์กับผู้ชาย 3-4 คน ไม่ได้ป้องกัน ประจาเดือนขาด 7 สัปดาห์ มาด้วยปวดท้องด้านซ้าย เลือดออกกะปริ ๆ ปะปรอย ๆ ไม่มีไข้ PE: bleeding per os คลาได้ Lt adnexal mass cervical tenderness ดินิจฉัยว่า",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ectopic pregnancy"
+      },
+      {
+        "label": "B",
+        "text": "Endometriotic cyst"
+      },
+      {
+        "label": "C",
+        "text": "Dermoid cyst"
+      },
+      {
+        "label": "D",
+        "text": "Follicular cyst"
+      },
+      {
+        "label": "E",
+        "text": "Ovarian abscess"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว (ไม่ระบุปี)",
+    "status": "complete",
+    "ai_notes": "ประจาเดือนขาด 7 สัปดาห์ + ปวดท้องด้านซ้าย + adnexal mass + bleeding per os = ectopic pregnancy ค่า hCG จะยืนยัน",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "เคสเด็กหญิง 18 ปี มาพบแพทย์เรื่อง amenorrhea ตัวเตี้ย ส่วนสูง < P3 น้าหนัก P10 wide nipple coarctation of aorta webbed neck cubitus valgus (สัญญาณของ Turner) วินิจฉัยว่า",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Turner syndrome"
+      },
+      {
+        "label": "B",
+        "text": "Noonan syndrome"
+      },
+      {
+        "label": "C",
+        "text": "Klinefelter syndrome"
+      },
+      {
+        "label": "D",
+        "text": "Marfan syndrome"
+      },
+      {
+        "label": "E",
+        "text": "Ehlers-Danlos syndrome"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว (ไม่ระบุปี)",
+    "status": "complete",
+    "ai_notes": "Short stature, wide nipples, webbed neck, coarctation of aorta, cubitus valgus = Turner syndrome (45,X) Noonan syndrome มีรูปลักษณ์คล้ายแต่ normal karyotype",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิง P2 ไข้ ปวดท้อง 2 วัน มีประวัติใส่ IUD มา 2 ปี ตรวจร่างกาย T 38°C abdomen tender PV: cervical excitation positive bilateral adnexal mass 4 cm cystic consistency tender มีสาย IUD ที่ cervix วินิจฉัยว่า (ศรว. มี.ค. 2555)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Tuboovarian abscess"
+      },
+      {
+        "label": "B",
+        "text": "Bilateral ovarian tumor"
+      },
+      {
+        "label": "C",
+        "text": "Ectopic pregnancy"
+      },
+      {
+        "label": "D",
+        "text": "Rupture ovarian cyst"
+      },
+      {
+        "label": "E",
+        "text": "IUD associated perforation"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว. มี.ค. 2555",
+    "status": "complete",
+    "ai_notes": "IUD users ที่มีไข้ + bilateral adnexal mass + cystic + tender = tuboovarian abscess (TOA) ซึ่งเป็น complication ของ PID",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิง 60 ปี มาด้วยเลือดออกกะปริ ๆ ปะปรอย ๆ จากช่องคลอด มา 2 วัน หมดประจาเดือนมา 10 ปี ไม่ได้กินยาประจา ข้อใดเป็นสาเหตุที่พบบ่อยที่สุดที่ทาให้เกิดภาวะดังกล่าว (ศรว. มี.ค. 2555)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cervicitis"
+      },
+      {
+        "label": "B",
+        "text": "CA cervix"
+      },
+      {
+        "label": "C",
+        "text": "Atrophic endometritis"
+      },
+      {
+        "label": "D",
+        "text": "CA endometrium"
+      },
+      {
+        "label": "E",
+        "text": "Anovulation"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว. มี.ค. 2555",
+    "status": "complete",
+    "ai_notes": "Postmenopausal bleeding (10 ปีหลังหมดประจาเดือน) สาเหตุบ่อยสุด = atrophic endometritis จากน้อยเอสโตรเจนติดตามด้วย endometrial cancer และ cervical cancer ตามลำดับ",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้หญิง 23 ปี N/V LMP 7 วัน ปวดท้องน้อยทั่วไป 1 วัน tender pelvic 2 ข้าง cervical motion tender 2 ข้าง rebound (+) guarding (+) bulging cul de sac คลาได้ก้อนที่ Rt adnexa 6 cm วินิจฉัยว่า (ศรว. มี.ค. 2555)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Rupture ectopic pregnancy"
+      },
+      {
+        "label": "B",
+        "text": "Tuboovarian abscess (TOA)"
+      },
+      {
+        "label": "C",
+        "text": "Acute salpingitis"
+      },
+      {
+        "label": "D",
+        "text": "Ruptured ovarian cyst"
+      },
+      {
+        "label": "E",
+        "text": "Appendicitis"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว. มี.ค. 2555",
+    "status": "complete",
+    "ai_notes": "Bilateral pelvic tenderness + cervical motion tender + bulging cul de sac + 6 cm adnexal mass = TOA (tuboovarian abscess) ถ้า ruptured ectopic จะมี severe symptoms และ hemodynamic instability มากกว่า",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิงอายุ 25 ปี มีเลือดออกจากช่องคลอด คลื่นไส้อาเจียน ไม่ปวดท้อง ประจาเดือนมาสม่าเสมอทุก 20-30 วัน last LMP 7 สัปดาห์ก่อน ตรวจ transvaginal U/S พบ sac ขนาด 10 mm ไม่พบตัวอ่อน จะทาอย่างไรต่อไป (ศรว. มี.ค. 2555)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue ANC"
+      },
+      {
+        "label": "B",
+        "text": "Repeat transvaginal U/S อีก 2 สัปดาห์"
+      },
+      {
+        "label": "C",
+        "text": "ให้ Progestagen"
+      },
+      {
+        "label": "D",
+        "text": "Diagnostic laparoscopy"
+      },
+      {
+        "label": "E",
+        "text": "Dilatation and curettage"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว. มี.ค. 2555",
+    "status": "complete",
+    "ai_notes": "Gestational sac 10 mm ที่ 7 สัปดาห์ = inconclusive (mean sac diameter < 16-20 mm ต้องมี yolk sac หรือ embryo) ต้อง repeat U/S ใน 1-2 สัปดาห์ เพื่อ differentiate between intrauterine pregnancy, blighted ovum, หรือ ectopic pregnancy",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิง 20 ปี LMP 7 วัน PTA ปวดท้องน้อยขวา ไม่มีอาการอื่น PE: BT 38.5°C PR 90 BP normal abdomen tender at RLQ PR tender Rt side PV adnexal tender Rt การรักษาต่อ (ศรว. มี.ค. 2555)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "CT abdomen"
+      },
+      {
+        "label": "B",
+        "text": "IVP (intravenous pyelography)"
+      },
+      {
+        "label": "C",
+        "text": "U/S abdomen"
+      },
+      {
+        "label": "D",
+        "text": "Close observation"
+      },
+      {
+        "label": "E",
+        "text": "Appendectomy"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว. มี.ค. 2555",
+    "status": "complete",
+    "ai_notes": "RLQ pain + RLQ tenderness + low-grade fever อาจเป็น appendicitis หรือ gynecologic origin (early ectopic, TOA, ruptured cyst) U/S คือ first-line investigation เพราะสามารถ evaluate ทั้ง appendix และ adnexa ได้",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิงอายุ 42 ปี ตัดมดลูกเมื่อหนึ่งสัปดาห์ก่อนจากโรคเนื้องอก วันนี้มีไข้ ปวดท้อง แผลผ่าตัดบวมแดง กดเจ็บ จะทาอะไรต่อ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Observe"
+      },
+      {
+        "label": "B",
+        "text": "Warm compression"
+      },
+      {
+        "label": "C",
+        "text": "Topical antibiotic"
+      },
+      {
+        "label": "D",
+        "text": "Oral antibiotic"
+      },
+      {
+        "label": "E",
+        "text": "Open wound and drain"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว 2012",
+    "status": "complete",
+    "ai_notes": "Post-operative day 7 มีไข้ + ปวดท้อง + wound infection signs (swelling, redness, tenderness) = surgical site infection ต้อง open wound, drain, และ IV antibiotics ไม่สามารถให้ oral antibiotic เพราะอยู่ในช่องวงท้องได้",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิงอายุ 42 ปี ปฏิเสธประวัติรับประทานยาใดๆเป็นประจา มีเลือดออกกะปริ ๆ ปะปรอย ๆ ระหว่างรอบเดือน การรักษาที่เหมาะสมคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Combined pills"
+      },
+      {
+        "label": "B",
+        "text": "Progestin pills"
+      },
+      {
+        "label": "C",
+        "text": "Fractional curettage"
+      },
+      {
+        "label": "D",
+        "text": "Hormonal IUD"
+      },
+      {
+        "label": "E",
+        "text": "Endometrial ablation"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2012",
+    "status": "complete",
+    "ai_notes": "ผู้หญิงอายุ 42 ปี ปฏิเสธยา ต้อง rule out malignancy ด้วย U/S และอาจต้อง curettage ถ้า endometrium หนา แต่เนื่องจากโจทย์ไม่กล่าวถึง เลือก progestin pills ซึ่งช่วยลดเลือดออก และปลอดภัยกว่า combined pills ในอายุนี้",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิงอายุ 24 ปี มีแผลที่อวัยวะเพศเจ็บและคัน 2 วัน PE พบ group of small shallow erosions on erythematous base at right labia minora Investigation ใดช่วยวินิจฉัยมากที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Gram stain"
+      },
+      {
+        "label": "B",
+        "text": "KOH"
+      },
+      {
+        "label": "C",
+        "text": "Wright's stain"
+      },
+      {
+        "label": "D",
+        "text": "MAF (methylylene blue)"
+      },
+      {
+        "label": "E",
+        "text": "Dark field microscopy"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว 2012",
+    "status": "complete",
+    "ai_notes": "Small shallow erosions บน erythematous base = genital herpes (HSV) Dark field microscopy หรือ Tzank smear ดูเห็น multinucleated giant cells ได้ Dark field ใช้ดู Treponema pallidum ในเคส syphilis แต่รูปลักษณ์ผิดกับ primary syphilis",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 18 ปี ถูกข่มขืน PE พบ ecchymosis และ recent hymen tear ทา cervical-vaginal discharge ส่งอะไรเพื่อยืนยัน",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Pap smear"
+      },
+      {
+        "label": "B",
+        "text": "KOH"
+      },
+      {
+        "label": "C",
+        "text": "Tzank's smear"
+      },
+      {
+        "label": "D",
+        "text": "Acid phosphatase"
+      },
+      {
+        "label": "E",
+        "text": "DNA profiling"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2012",
+    "status": "complete",
+    "ai_notes": "ในคดี rape/sexual assault ต้องเก็บ forensic evidence รวม cervical-vaginal discharge ส่ง acid phosphatase (found in semen) PSA (prostate-specific antigen) และ DNA profiling เพื่อยืนยันการสัมพันธ์ทางเพศ",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงแสบช่องคลอด PV พบ blood clot at vaginal canal & cervix มีรอย bleed ที่ cervix + purulent discharge วินิจฉัยว่า",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cervicitis"
+      },
+      {
+        "label": "B",
+        "text": "Vaginitis"
+      },
+      {
+        "label": "C",
+        "text": "Urethritis"
+      },
+      {
+        "label": "D",
+        "text": "Bartholinitis"
+      },
+      {
+        "label": "E",
+        "text": "Cystitis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2012",
+    "status": "complete",
+    "ai_notes": "Bleeding จาก cervix + purulent discharge = cervicitis ส่วนหาก only vaginal discharge ล้วนจะเป็น vaginitis",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงมาด้วย ตกขาว สีเหลือง เหม็น มีฟอง ตรวจเจอ yellow vaginal discharge inflamed cervix abdomen normal วินิจฉัยว่า",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cervicitis"
+      },
+      {
+        "label": "B",
+        "text": "Trichomonas vaginitis"
+      },
+      {
+        "label": "C",
+        "text": "Bacterial vaginosis"
+      },
+      {
+        "label": "D",
+        "text": "Candida vaginitis"
+      },
+      {
+        "label": "E",
+        "text": "Cytolytic vaginosis"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2012",
+    "status": "complete",
+    "ai_notes": "Yellow discharge + bubbly/foamy + foul smell + inflamed cervix = Trichomonas vaginitis (มี green frothy discharge) ถ้าเป็น candida จะเป็นสีขาว curd-like ถ้า bacterial vaginosis จะมี fish odor",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยเด็ก (ไม่ระบุอายุ) มี curd-like lesion (เป็นรูปให้ดู) การรักษาคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ketoconazole"
+      },
+      {
+        "label": "B",
+        "text": "Clotrimazole"
+      },
+      {
+        "label": "C",
+        "text": "Metronidazole"
+      },
+      {
+        "label": "D",
+        "text": "Doxycycline"
+      },
+      {
+        "label": "E",
+        "text": "Ceftriaxone"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2012",
+    "status": "complete",
+    "ai_notes": "Curd-like lesion = Candida albicans ทั้ง ketoconazole และ clotrimazole ใช้ได้ แต่ ketoconazole มี oral form ที่สะดวกกว่า clotrimazole ใช้ topical วัคซีน 2012",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 70 ปี ปัสสาวะเล็ดเวลาไอ จาม มา 2 ปี มีลูกมา 5 คน PV: small uterus คลาได้ bulging 2/3 anterior vaginal wall and cervix at vaginal entry วินิจฉัยว่า",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Urethrocele w/ grade 2 uterine prolapse"
+      },
+      {
+        "label": "B",
+        "text": "Urethrocele w/ grade 3 uterine prolapse"
+      },
+      {
+        "label": "C",
+        "text": "Cystocele w/ grade 2 uterine prolapse"
+      },
+      {
+        "label": "D",
+        "text": "Cystocele w/ grade 3 uterine prolapse"
+      },
+      {
+        "label": "E",
+        "text": "Urethroectocele w/ grade 2 uterine prolapse"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2012",
+    "status": "complete",
+    "ai_notes": "Stress urinary incontinence + bulging 2/3 anterior vaginal wall = cystocele cervix at vaginal entry = grade 3 prolapse (cervix ออกมาถึงระดับ introitus) Multiple parity เป็น risk factor",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้หญิงพบเป็น H-SIL (High-grade Squamous Intraepithelial Lesion) บน Pap test ให้ทาอะไรต่อ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Colposcopy"
+      },
+      {
+        "label": "B",
+        "text": "Cervical conization"
+      },
+      {
+        "label": "C",
+        "text": "Repeat Pap smear ใน 3 เดือน"
+      },
+      {
+        "label": "D",
+        "text": "HPV testing"
+      },
+      {
+        "label": "E",
+        "text": "Observe without treatment"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2012",
+    "status": "complete",
+    "ai_notes": "H-SIL = CIN 2/3 มีความเสี่ยงสูงของ cervical cancer ต้อง conization เพื่อ excision และ pathological diagnosis ที่แม่นยา colposcopy ใช้ first ถ้า LSIL (low-grade)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "เด็กอายุ 14 ปี ปวดท้อง PE: Agitated, PR 100 bpm suprapubic tenderness PV: Bluish external genitalia bulging cystic mass between labia majora (อาการแบบ imperforate hymen) การรักษาคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cruciate incision of hymen"
+      },
+      {
+        "label": "B",
+        "text": "Mass excision"
+      },
+      {
+        "label": "C",
+        "text": "Kegel exercise"
+      },
+      {
+        "label": "D",
+        "text": "Observation with pain management"
+      },
+      {
+        "label": "E",
+        "text": "Abdominal drainage"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2012",
+    "status": "complete",
+    "ai_notes": "Imperforate hymen ที่โคลนดสะสมเลือด (hematometra/hematosalpinx) ก่อให้เกิด cyst ที่ labia majora ต้อง cruciate incision ของ hymen เพื่อให้เลือดออก คลื่นไส้อาเจียนและปวดจะหายไป",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 35 ปี G5P4 ครรภ์นี้มาด้วยมีเลือดออกทางช่องคลอด 2 ชม PTA มีประวัติครรภ์ที่ 2 C/S ส่วนครรภ์ที่ 3 คลอดทางช่องคลอด PE: ปกติไม่มีมดลูกบีบตัวไม่เจ็บท้อง พบทารกอยู่ transverse lie FHR ปกติ คิดว่าเกิดจากอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Placenta previa"
+      },
+      {
+        "label": "B",
+        "text": "Ruptured Uterus"
+      },
+      {
+        "label": "C",
+        "text": "Ruptured Vasa previa"
+      },
+      {
+        "label": "D",
+        "text": "Abruption placenta"
+      },
+      {
+        "label": "E",
+        "text": "Latent phase of labor"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB Unknown year",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี vaginal bleeding แต่ไม่มี uterine contractions, ไม่มี abdominal pain และ FHR ปกติ transverse lie เป็นข้อบ่งชี้ placenta previa มากกว่า abruption (จะมี pain/contractions) ruptured uterus (จะมี shock/severe pain) หรือ vasa previa (จะมี fetal distress)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "GA 8 wk มาด้วย bleeding per vagina 1 day PTA PE: Uterus 8 wk size, os close, cervical motion tenderness negative, no adnexal mass Diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Threatened abortion"
+      },
+      {
+        "label": "B",
+        "text": "Complete abortion"
+      },
+      {
+        "label": "C",
+        "text": "Incomplete abortion"
+      },
+      {
+        "label": "D",
+        "text": "Inevitable abortion"
+      },
+      {
+        "label": "E",
+        "text": "Missed abortion"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB Unknown year",
+    "status": "complete",
+    "ai_notes": "ลักษณะถูกต้องของ threatened abortion: vaginal bleeding ก่อน 20 weeks, cervix closed, uterus size appropriate, no CMT, no adnexal mass ยังมี viable pregnancy ได้",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "เลือดออกทางช่องคลอด PE: Size > date, PV: os closed Diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Threatened abortion"
+      },
+      {
+        "label": "B",
+        "text": "Complete abortion"
+      },
+      {
+        "label": "C",
+        "text": "Incomplete abortion"
+      },
+      {
+        "label": "D",
+        "text": "Inevitable abortion"
+      },
+      {
+        "label": "E",
+        "text": "Missed abortion"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "OB Unknown year",
+    "status": "needs_review",
+    "ai_notes": "เลือดออก os closed และ size > date (uterus larger than dates) บ่งชี้ missed abortion (fetus dead แต่ยังค้างในมดลูก) ขาด information เช่น GA เพื่อ confirm diagnosis ที่แน่นอน",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิงอายุ 35 ปี BMI 35 ตั้งครรภ์ GA 36 wk น้ำหนักขึ้นรวม 25 kg ทำให้ทารกมี risk ขอใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Macrosomia"
+      },
+      {
+        "label": "B",
+        "text": "Hypertension"
+      },
+      {
+        "label": "C",
+        "text": "Cleft lip & Cleft palate"
+      },
+      {
+        "label": "D",
+        "text": "Spontaneous abortion"
+      },
+      {
+        "label": "E",
+        "text": "Intrauterine growth restriction"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB Unknown year",
+    "status": "complete",
+    "ai_notes": "Maternal obesity (BMI 35) + excessive weight gain (25 kg) + risk factor to fetus = macrosomia ซึ่งเป็นภาวะที่พบบ่อยในแม่อ้วนตั้งครรภ์ Hypertension และ cleft palate เป็น risk ของแม่ไม่ใช่ทารก IAG เกิดจากน้ำหนักขึ้นน้อย ไม่ใช่มาก",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงหลังคลอดมีไข้ปวดเต้านมซ้ายบวมแดงมี induration ตอนนี้ให้นมบุตรอยู่จะ manage อย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "หยุดให้นมบุตรชั่วคราวและสังเกตอาการณ์"
+      },
+      {
+        "label": "B",
+        "text": "Warm compression"
+      },
+      {
+        "label": "C",
+        "text": "Oral antibiotics"
+      },
+      {
+        "label": "D",
+        "text": "IV antibiotics"
+      },
+      {
+        "label": "E",
+        "text": "Incision and drainage"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "OB Unknown year",
+    "status": "complete",
+    "ai_notes": "อาการบวม แดง induration + ไข้ = mastitis (ไม่ได้เป็น abscess ยัง) ควร continue breastfeeding + oral antibiotics (amoxicillin/cephalexin) + warm compress แล้วค่อย monitor หากไม่ดีขึ้นหลัง 48 hrs ค่อย consider IV ATB หรือ I&D",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 30 ปี ระดูขาด 6 สัปดาห์ ปวดท้องน้อย 1 วัน PE: V/S stable, Abd: mild tenderness LLQ, no rebound tenderness PV: normal external genitalia, no definite cervical motion tenderness, no adnexal mass TVS: no intrauterine gestational sac, no mass ควรปฏิบัติกับผู้ป่วยรายนี้อย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Serial Hct"
+      },
+      {
+        "label": "B",
+        "text": "Serum Beta HCG and repeat at 24 hr"
+      },
+      {
+        "label": "C",
+        "text": "Admit and close observe"
+      },
+      {
+        "label": "D",
+        "text": "Methotrexate"
+      },
+      {
+        "label": "E",
+        "text": "Exploratory laparotomy"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "OB Unknown year",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วย amenorrhea 6 wks + mild symptoms + stable vital signs + TVS no IUP + no adnexal mass = suspected early pregnancy loss หรือ ectopic (ยังไม่แน่นอน) ควร check serum beta HCG + repeat 24 hrs (ดู progression) เพื่อ differentiate threatened/incomplete abortion vs ectopic pregnancy ก่อนตัดสินใจเรื่อง methotrexate หรือ surgery",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงจิตเวชกินยา Haloperidol, Benztropine อยู่ต่อมาผู้ป่วยอยากตั้งครรภ์จึงหยุดกินยาเอง ขณะนี้ตั้งครรภ์ 2 เดือน ต่อมาผู้ป่วยมีอาการทางจิตเวชขึ้นอีก ได้ยินเสียงแว่วว่าลูกในท้องไม่ใช่ลูกของตนเองและสามี มาหาแพทย์เพื่อจะทำแท้ง ท่านจะทำอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Admit แล้วทำ ECT (electroconvulsive therapy)"
+      },
+      {
+        "label": "B",
+        "text": "ทำแท้งให้เนื่องจากเป็นสิทธิของผู้ป่วย"
+      },
+      {
+        "label": "C",
+        "text": "ทำแท้งให้เนื่องจากแม่ไม่มีความสามารถในการเลี้ยงดู"
+      },
+      {
+        "label": "D",
+        "text": "ปรึกษากับสามีหาทางแก้ไข"
+      },
+      {
+        "label": "E",
+        "text": "เสริมยาจิตเวชและให้คำปรึกษาต่อเนื่อง"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB Unknown year",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี psychotic symptoms (auditory hallucinations) ที่เกิดจากการหยุดยาจิตเวชเอง และตัดสินใจ non-rational (ต้องแท้ง) ผู้ป่วยไม่มี capacity to consent ควร admit, restart psychiatric medications + ECT หาก necessary (perinatal psychosis จะ respond well to ECT) มิได้ทำแท้งเพราะผู้ป่วยไม่มี competency ตัดสินใจในสภาวะจิตเวชขั้นรุนแรง",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิงครรภ์แรก GA 10 wk มาด้วยเลือดออกกระปริดกระปรอย PE: normal ควรทำอะไรต่อ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Urine pregnancy test"
+      },
+      {
+        "label": "B",
+        "text": "Ultrasound"
+      },
+      {
+        "label": "C",
+        "text": "Pelvic examination"
+      },
+      {
+        "label": "D",
+        "text": "Serum Beta-HCG"
+      },
+      {
+        "label": "E",
+        "text": "Progesterone supplementation"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "OB Unknown year",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วย G1 GA 10 wk with spotting ต้องตรวจสอบ viability และ location ของ pregnancy ด้วย ultrasound เป็นหลัก เพื่อ rule out ectopic, molar pregnancy, threatened abortion หรือ fetal loss",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 20 ปี LMP 2 wk มี SI (sexual intercourse) เมื่อคืนไม่ได้ป้องกัน ไม่อยากตั้งครรภ์ มาพบท่าน จะ manage อย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "High dose estrogen pills"
+      },
+      {
+        "label": "B",
+        "text": "High dose progesterone pills"
+      },
+      {
+        "label": "C",
+        "text": "Combined oral contraceptive pills (Yuzpe regimen)"
+      },
+      {
+        "label": "D",
+        "text": "DMPA injection"
+      },
+      {
+        "label": "E",
+        "text": "Curettage"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "OB Unknown year",
+    "status": "complete",
+    "ai_notes": "Emergency contraception ภายใน 72 hrs ของ SI ควร ให้ Yuzpe regimen (high-dose combined OCP) หรือ levonorgestrel เพียงลำพัง ในเวลา 2 wks LMP ยังไม่ได้ implantation ดังนั้น curettage ไม่เหมาะสม DMPA ไม่ใช่ EC method",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ที่ได้รับประโยชน์จากการฉีดวัคซีน HPV มากที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ด.ญ. 7 ปี แม่มีประวัติเป็น HPV"
+      },
+      {
+        "label": "B",
+        "text": "หญิง 16 ปี ไม่เคยมีเพศสัมพันธ์มาก่อน"
+      },
+      {
+        "label": "C",
+        "text": "หญิง 28 ปี มาขอคำปรึกษาว่าจะแต่งงาน"
+      },
+      {
+        "label": "D",
+        "text": "ชาย 30 ปี มาขอคำปรึกษาว่าจะแต่งงาน"
+      },
+      {
+        "label": "E",
+        "text": "หญิง 32 ปี มารักษามะเร็งปากมดลูก"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "OB Unknown year",
+    "status": "complete",
+    "ai_notes": "HPV vaccine ได้ประโยชน์มากที่สุดในคนที่ยังไม่เคยสัมผัส HPV (ยังไม่มีเพศสัมพันธ์) และอยู่ในช่วงอายุ 9-45 ปี หญิง 16 ปี ไม่เคยมี SI คือ ideal candidate หญิง 7 ปี มีแม่มี HPV ไม่ได้ให้ประโยชน์เพราะยังเด็ก หญิง 28-32 ปี อาจสัมผัส HPV แล้ว และหญิง 32 ปีที่มีมะเร็ง vaccine ไม่ช่วยแล้ว",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "เด็กอายุ 12 ปี มีประจำเดือนครั้งแรกเมื่อ 2 เดือนที่แล้ว เดือนนี้มีประจำเดือนนาน 14 วัน Management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Reassure"
+      },
+      {
+        "label": "B",
+        "text": "Oral contraceptive pills"
+      },
+      {
+        "label": "C",
+        "text": "Progestin therapy"
+      },
+      {
+        "label": "D",
+        "text": "Uterine curettage"
+      },
+      {
+        "label": "E",
+        "text": "Thyroid function test"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB Unknown year",
+    "status": "complete",
+    "ai_notes": "เด็กอายุ 12 ปี menarche 2 เดือนก่อน (ประมาณ 10 เดือน) มีประจำเดือนนาน 14 วัน = anovulatory bleeding ซึ่ง normal ในช่วงแรกของ menarche ควร reassure ผู้ปกครอง ไม่ต้องรักษาตราบจนครบ 1-2 ปีของ menarche",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิงอายุ 42 ปี ตัดมดลูกเมื่อหนึ่งสัปดาห์ก่อน จากเนื้องอก (myoma) วันนี้มีไข้ ปวดท้อง แผลผ่าตัดบวมแดง กดเจ็บ จะทำอะไรต่อ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Observe"
+      },
+      {
+        "label": "B",
+        "text": "Warm compression"
+      },
+      {
+        "label": "C",
+        "text": "Topical antibiotic"
+      },
+      {
+        "label": "D",
+        "text": "Oral antibiotics"
+      },
+      {
+        "label": "E",
+        "text": "Open wound and drain"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "OB Unknown year",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วย 1 week post-op hysterectomy มี fever + abdominal pain + surgical site infection signs (swelling, erythema, tenderness) = surgical site infection ควร start oral antibiotics (amoxicillin-clavulanate หรือ fluoroquinolone) + warm compress หากไม่ดีขึ้น ค่อย consider opening wound",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิงอายุ 40 ปี ปฏิเสธประวัติรับประทานยาใดๆ เป็นประจำ มีเลือดออกกะปริบกะปรอยระหว่างรอบเดือน Management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Combined oral contraceptive pills"
+      },
+      {
+        "label": "B",
+        "text": "Progestin-only pills"
+      },
+      {
+        "label": "C",
+        "text": "Fractional curettage"
+      },
+      {
+        "label": "D",
+        "text": "Endometrial ablation"
+      },
+      {
+        "label": "E",
+        "text": "Hysterectomy"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB Unknown year",
+    "status": "complete",
+    "ai_notes": "หญิง 40 ปี intermenstrual bleeding ในสถานการณ์ที่ยังไม่ทราบสาเหตุ (ขาด imaging/exam details) ต้องแยกแยะก่อนว่า structural vs functional ถ้า functional bleeding ควร start combined OCP เพื่อ regulate menstrual cycle fractional curettage/endometrial ablation/hysterectomy เป็นทางเลือกหลัง fail conservative therapy",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิงอายุ 24 ปี มีแผลที่อวัยวะเพศ เจ็บและคัน 2 วัน PE พบ group of small shallow erosions on erythematous base at right labia minora Investigation ใดช่วยวินิจฉัยมากที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Gram stain"
+      },
+      {
+        "label": "B",
+        "text": "KOH preparation"
+      },
+      {
+        "label": "C",
+        "text": "Tzank's smear"
+      },
+      {
+        "label": "D",
+        "text": "Acid phosphatase"
+      },
+      {
+        "label": "E",
+        "text": "Dark field microscopy"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "OB Unknown year",
+    "status": "complete",
+    "ai_notes": "Small shallow erosions on erythematous base = herpes simplex ulcer ควร ทำ Tzank smear (multinucleated giant cells, ballooning degeneration) หรือ HSV PCR เพื่อ confirm Gram stain ใช้ bacterial infection, KOH ใช้ candida, acid phosphatase ใช้ semen (rape cases), dark field ใช้ syphilis",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 18 ปี โดนน้าชายข่มขืน PE พบ ecchymosis และ recent hymen tear ทำ cervical-vaginal discharge ส่งอะไรเพื่อยืนยัน",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Pap smear"
+      },
+      {
+        "label": "B",
+        "text": "KOH preparation"
+      },
+      {
+        "label": "C",
+        "text": "Tzank's smear"
+      },
+      {
+        "label": "D",
+        "text": "Acid phosphatase"
+      },
+      {
+        "label": "E",
+        "text": "Forensic DNA analysis"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "OB Unknown year",
+    "status": "complete",
+    "ai_notes": "Sexual assault victim ส่ง cervical-vaginal discharge เพื่อหา semen ควรทำ acid phosphatase stain หรือ PSA (prostate specific antigen) test เพื่อ detect semen และ confirm sexual contact ส่วน DNA analysis เป็น additional test สำหรับ identify assailant",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงแสบช่องคลอด PV พบ blood clot at vaginal canal & cervix มีรอยเลือดที่ cervix + purulent discharge จงวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cervicitis"
+      },
+      {
+        "label": "B",
+        "text": "Vaginitis"
+      },
+      {
+        "label": "C",
+        "text": "Cervical polyp with secondary infection"
+      },
+      {
+        "label": "D",
+        "text": "Cervical cancer"
+      },
+      {
+        "label": "E",
+        "text": "Endometritis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB Unknown year",
+    "status": "complete",
+    "ai_notes": "Blood clot + bleeding from cervix + purulent discharge = cervicitis (inflammation of cervix with discharge) ต่างจาก vaginitis (มักจะไม่มี bleeding จาก cervix)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "คนไข้หญิง มาด้วย ตกขาว สีเหลือง เหม็น มีฟอง ตรวจเจอ yellow vaginal discharge inflamed cervix abdomen normal จงวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Trichomoniasis"
+      },
+      {
+        "label": "B",
+        "text": "Candidiasis"
+      },
+      {
+        "label": "C",
+        "text": "Bacterial vaginosis"
+      },
+      {
+        "label": "D",
+        "text": "Chlamydial cervicitis"
+      },
+      {
+        "label": "E",
+        "text": "Gonococcal cervicitis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB Unknown year",
+    "status": "complete",
+    "ai_notes": "Yellow frothy discharge + inflamed cervix + malodor = Trichomoniasis vaginalis Candida = curd-like white discharge ไม่ฟอง, BV = gray-green discharge พื้นฐาน Chlamydia/gonorrhea = mucopurulent discharge จากปาก cervix",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยเด็ก มี curd-like lesion ในช่องคลอด จะให้ยาอะไรดี",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ketoconazole"
+      },
+      {
+        "label": "B",
+        "text": "Clotrimazole"
+      },
+      {
+        "label": "C",
+        "text": "Miconazole"
+      },
+      {
+        "label": "D",
+        "text": "Nystatin"
+      },
+      {
+        "label": "E",
+        "text": "Fluconazole"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "OB Unknown year",
+    "status": "complete",
+    "ai_notes": "Curd-like lesion = candidiasis ใน pediatric ควรใช้ topical azole (clotrimazole, miconazole) ที่ปลอดภัย ไม่ใช้ systemic antifungal ในเด็กเล็ก",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 70 ปี ปัสสาวะเล็ดเวลาไอ จาม มา 2 ปี มีลูกมา 5 คน PV: small uterus คลำได้ bulging 2/3 anterior vaginal wall and cervix at vaginal entry จงวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Urethrocele with grade 2 uterine prolapse"
+      },
+      {
+        "label": "B",
+        "text": "Urethrocele with grade 3 uterine prolapse"
+      },
+      {
+        "label": "C",
+        "text": "Cystocele with grade 2 uterine prolapse"
+      },
+      {
+        "label": "D",
+        "text": "Cystocele with grade 3 uterine prolapse"
+      },
+      {
+        "label": "E",
+        "text": "Rectocele with grade 2 uterine prolapse"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "OB Unknown year",
+    "status": "complete",
+    "ai_notes": "2/3 anterior vaginal wall bulging = cystocele (bladder bulge) แม้ว่า urethrocele ก็อาจมี แต่ cystocele เด่นชัด + cervix at vaginal entry = grade 3 uterine prolapse (cervix at introitus) ผสมกับ cystocele = cystocele with grade 3 uterine prolapse",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้หญิงพบเป็น H-SIL (High-grade squamous intraepithelial lesion) ให้ทำอะไรต่อ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Colposcopy"
+      },
+      {
+        "label": "B",
+        "text": "Cervical conization"
+      },
+      {
+        "label": "C",
+        "text": "Repeat pap smear in 3 months"
+      },
+      {
+        "label": "D",
+        "text": "HPV testing"
+      },
+      {
+        "label": "E",
+        "text": "Hysterectomy"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "OB Unknown year",
+    "status": "complete",
+    "ai_notes": "H-SIL = high-grade lesion (CIN 2/3) ควรทำ cervical conization เพื่อ diagnostic + therapeutic ถ้า colposcopy ถือว่า first step แต่ที่ H-SIL แล้ว colposcopy ไม่ต้อง เพราะ H-SIL ต้อง excise ให้ดี",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "เด็กอายุ 14 ปี ปวดท้อง PE: Agitated, PR 100 bpm, suprapubic tenderness PV: Bluish external genitalia, bulging cystic mass between labia majora (อาการแบบ imperforate hymen) Management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cruciate incision of hymen"
+      },
+      {
+        "label": "B",
+        "text": "Complete hymenectomy"
+      },
+      {
+        "label": "C",
+        "text": "Kegel exercises"
+      },
+      {
+        "label": "D",
+        "text": "Hormonal therapy"
+      },
+      {
+        "label": "E",
+        "text": "Vaginal dilation"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB Unknown year",
+    "status": "complete",
+    "ai_notes": "เด็ก 14 ปี ปวดท้อง (ปกติช่วง menarche) + bluish external genitalia + bulging cystic mass = hematometra from imperforate hymen ควร ทำ cruciate (cross-shaped) incision ของ hymen เพื่อ drain hematometra ไม่ต้อง complete excision",
+    "subject": "ob_gyn",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 30 ปี ตั้งครรภ์ มีประวัติปวดศีรษะบ่อยๆ เห็นแสงวูบวาบ แพทย์วินิจฉัยว่าเป็น Migrane จงเลือกวิธีการรักษาที่เหมาะสมในผู้ป่วยรายนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ibuprofen"
+      },
+      {
+        "label": "B",
+        "text": "Propanolol"
+      },
+      {
+        "label": "C",
+        "text": "Aspirin"
+      },
+      {
+        "label": "D",
+        "text": "Ergotamine"
+      },
+      {
+        "label": "E",
+        "text": "Sumatriptan"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "แม่VDRL , FTA-ABS reactive 2 เดือนก่อนคลอด ได้ยาerythromycin 2 Wk. ก่อนคลอด ถามmanagement",
+    "choices": [
+      {
+        "label": "A",
+        "text": "reassure"
+      },
+      {
+        "label": "B",
+        "text": "iv penicillin"
+      },
+      {
+        "label": "C",
+        "text": "iv ceftriaxone"
+      },
+      {
+        "label": "D",
+        "text": "cessation breast feeding"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ญ 22ปี G1P0 GA32wk มาด้วยอาการเจ็บท้องคลอดทุก5นาที PE: +UC 5'35\" PV: cervix 1FB , effacement80% , station 0 -> Mx?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "iv syntocinon"
+      },
+      {
+        "label": "B",
+        "text": "iv terbutaline"
+      },
+      {
+        "label": "C",
+        "text": "iv dexamethasone"
+      },
+      {
+        "label": "D",
+        "text": "iv Prostaglandin"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "Women 42 years old GA 37 weeks G4P3 ก่อนหน้านี้ BP ปกติมาตลอด มาวันนี้ BP160/100mmHg urine protein 3+ PV: cervix 1 cm soft mid position eff25% membrane intact ทา NST: HR baseline 140 bpm accerelation 2 ครั้งใน 10 นาที What is the most proper management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "amniotomy"
+      },
+      {
+        "label": "B",
+        "text": "IV oxytocin"
+      },
+      {
+        "label": "C",
+        "text": "PGE1 Vg suppo"
+      },
+      {
+        "label": "D",
+        "text": "10% MgSO4 IV"
+      },
+      {
+        "label": "E",
+        "text": "cesarean section"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "Postpartum Day 2 after vaginal delivery has fever PE : T ..... C , breast engorged, mild tender at abdomen, uterus at umbillicus, mild tender at episiotomy wound, no foul smell discharge, loch is discharge. Fever from ?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Breast engorgement"
+      },
+      {
+        "label": "B",
+        "text": "Episiotomy wound infection"
+      },
+      {
+        "label": "C",
+        "text": "Parametritis"
+      },
+      {
+        "label": "D",
+        "text": "Cystitis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "สตรีอายุ 42 ปี GA 37 สัปดาห์ G3P2 มาฝากครรภ์ ฝากดีมาตลอด วันนี้ BP 160/100 mmHg อาการปกติดี ซีรั่มปัสสาวะ 3+ โปรตีน dilate 1+ efface 25% station -1 ไม่มีการหดตัวของมดลูก ควรจะดำเนินการอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้การรักษาด้วย Labetalol IV เพื่อลดความดันโลหิตและส่งตัวไปคลอด"
+      },
+      {
+        "label": "B",
+        "text": "บันทึกลักษณะและให้คำแนะนำให้นอนพักที่บ้าน เว้นแต่อาการบ้าน-แม่เปลี่ยนแปลง"
+      },
+      {
+        "label": "C",
+        "text": "ให้ MgSO4 prophylaxis และ Nifedipine เพื่อป้องกันอาการชัก"
+      },
+      {
+        "label": "D",
+        "text": "ส่งตัวไปโรงพยาบาลเพื่อให้การรักษา High-risk OB ด้วย Antihypertensive และ Corticosteroid"
+      },
+      {
+        "label": "E",
+        "text": "ดำเนินการสินคร้อยเลือดตรวจสอบผลแลปปกติและปล่อยให้กลับบ้าน"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "OB",
+    "explanation": "สตรีหญิงอายุ 42 ปี GA 37 สัปดาห์ มี BP 160/100 และปัสสาวะโปรตีน 3+ ปัจจัยเสี่ยง (high maternal age, proteinuria) ตรงกับ Preeclampsia ใกล้การคลอด ที่ GA 37 สามารถคลอดได้ ต้องส่งโรงพยาบาล ให้ Antihypertensive control BP, Corticosteroid สำหรับ fetal lung maturity และเตรียมคลอด เพราะเสี่ยง eclampsia",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงตั้งครรภ์อายุ 35 ปี primigravida คลอดบุตรแล้ว น้าหนัก ..... หลังจากคลอดทารกแล้วยังไม่คลอดรกมาเป็นเวลา 30 นาที estimate blood loss 700 cc PE :PR 70/min BP 110/70 mmHg พบ fundal height at umbilical level Abdomen soft ถามว่าหลังจากให้ NSS infusionแล้ว most appropiate management คืออะไร?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Watching closely?"
+      },
+      {
+        "label": "B",
+        "text": "IV methergin"
+      },
+      {
+        "label": "C",
+        "text": "IV nalador"
+      },
+      {
+        "label": "D",
+        "text": "Manaul remove placenta"
+      },
+      {
+        "label": "E",
+        "text": "Oxytocin intramuscular plus cord control traction"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หญิงไทย G1P0 มาแรงคลอด เข้ามารพ.ยังไม่คลอด ผลตรวจร่างกายทั่วไปปกติ วัตถุประสงค์เพื่อประเมินความก้าวหน้าของการคลอด ข้อมูลครั้งนี้: uterine contraction 2 times/10 min duration 45 sec, effacement 80%, station +1, cervical dilation 10 cm (เปิดหมดมา) 2 ชม.แล้ว หญิงอายุ 25 ปี vital signs ปกติ FHR 140 bpm สม่ำเสมอ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ทำการประเมินสภาพทั่วไปและวัดชีพจร ความดัน ชีพจรอีกครั้ง จากนั้นให้ผลัดเปลี่ยนท่านอน สิ่งส่งเสริม และเตรียมจัดการตามความก้าวหน้า"
+      },
+      {
+        "label": "B",
+        "text": "Augmentation of labor ด้วย Oxytocin infusion เนื่องจากการคลอดค่อนข้างช้า"
+      },
+      {
+        "label": "C",
+        "text": "ตรวจอีกครั้ง (V/E) เพื่อติดตามความก้าวหน้าของการคลอดและประเมินสภาวะของแม่และทารก"
+      },
+      {
+        "label": "D",
+        "text": "ส่งต่อเพื่อผ่าตัดคลอด เนื่องจากเป็นการคลอดคนแรก (primigravida)"
+      },
+      {
+        "label": "E",
+        "text": "ให้ยาระงับปวด (epidural anesthesia) แล้วรอการคลอดตามธรรมชาติ"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "OB",
+    "explanation": "ในช่วง active labor กับ second stage (cervical dilation 10 cm effacement 80% station +1) ผู้เชี่ยวชาญควรติดตามความก้าวหน้าด้วย V/E (vaginal examination) เพื่อประเมินว่าทารกลงมาตามปกติและการคลอดเกิดความก้าวหน้า นี่คือการจัดการมาตรฐานสำหรับ primigravida ในการคลอดตามธรรมชาติที่มีความก้าวหน้าปกติ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "บ่าย หญิง 25 ปี G2P1 GA 40 wk คนแรกคลอดVg 3000gm ท้องนี้EFW 3500 UC interval 2min duration 50sec Cx fully dilate มา 1 ชม. station1+ ถามfurther Mx",
+    "choices": [
+      {
+        "label": "A",
+        "text": "cesearian section"
+      },
+      {
+        "label": "B",
+        "text": "V/E"
+      },
+      {
+        "label": "C",
+        "text": "F/E"
+      },
+      {
+        "label": "D",
+        "text": "oxytocin drip"
+      },
+      {
+        "label": "E",
+        "text": "observe progression 1 hr. after"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "แม่หลังคลอด NL 2วัน mild tender lower abdominal breat engorge แผลดี โลเคียดี ไม่เหม็น ถาม Dx",
+    "choices": [
+      {
+        "label": "A",
+        "text": "endometritis"
+      },
+      {
+        "label": "B",
+        "text": "breast engorgement"
+      },
+      {
+        "label": "C",
+        "text": "parametritis cystitis"
+      },
+      {
+        "label": "D",
+        "text": "infect wound"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "แม่ท้องแรก อายุครรภ์ 7 เดือน มี VDRL positive และ FTA-ABS positive ยืนยันว่าเป็นซิฟิลิส ได้รับการรักษาด้วย erythromycin 2 สัปดาห์ เมื่อลูกคลอดออกมา ควรจะจัดการอย่างไรต่อเด็กทารก",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้ benzathine penicillin G 50,000 unit/kg IM ครั้งเดียว"
+      },
+      {
+        "label": "B",
+        "text": "ให้ aqueous penicillin G 50,000 unit/kg IV ทุก 12 ชั่วโมง เป็นเวลา 10 วัน"
+      },
+      {
+        "label": "C",
+        "text": "ให้ erythromycin 12.5 mg/kg PO ทุก 6 ชั่วโมง เป็นเวลา 2 สัปดาห์"
+      },
+      {
+        "label": "D",
+        "text": "ไม่ต้องรักษาเด็กเพราะแม่ได้รับการรักษาแล้ว"
+      },
+      {
+        "label": "E",
+        "text": "สังเกตการณ์เท่านั้นและทำการติดตามด้วย serology ทุก 3 เดือน"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "OB",
+    "explanation": "เด็กเกิดจากแม่มีซิฟิลิส ถึงแม่แม่จะได้รับการรักษาแล้ว แต่ยังเป็นเด็กเสี่ยงโรคซิฟิลิสคลอด (congenital syphilis) ดังนั้นเด็กต้องรับการรักษาเชิงรุก ปฏิบิติตามแนวทาง CDC/AAP ให้ aqueous penicillin G IV ทุก 12 ชั่วโมง เป็นเวลา 10 วัน เพื่อป้องกันและรักษาซิฟิลิสคลอด การให้ erythromycin ในแม่ไม่เพียงพอต่อการป้องกันในทารก",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "G1P0 GA40+4 decrease fetal movement no labor pain",
+    "choices": [
+      {
+        "label": "A",
+        "text": "reassure"
+      },
+      {
+        "label": "B",
+        "text": "continue fetal movement count"
+      },
+      {
+        "label": "C",
+        "text": "emergency c/s"
+      },
+      {
+        "label": "D",
+        "text": "induction"
+      },
+      {
+        "label": "E",
+        "text": "nst"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "G1P0 อายุครรภ์ 32 สัปดาห์ มี chorioamnionitis ได้รับ IV antibiotics แล้ว อาการแม่และทารกคงที่ ควรจัดการอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้ IV dexamethasone และพยายามรักษาอยู่ในครรภ์ 48 ชั่วโมง (expectant management with corticosteroid)"
+      },
+      {
+        "label": "B",
+        "text": "ให้ betamethasone 2 ครั้ง 24 ชั่วโมงห่างกัน แล้วสงบนอน (expectant management with corticosteroid)"
+      },
+      {
+        "label": "C",
+        "text": "ออกแบบทารกทันที (immediate delivery)"
+      },
+      {
+        "label": "D",
+        "text": "รอบวรรณการ 37 สัปดาห์แล้วออกแบบ (expectant until term)"
+      },
+      {
+        "label": "E",
+        "text": "ให้ magnesium sulfate เพื่อ neuroprotection ของทารก (neuroprotection)"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "OB",
+    "explanation": "ในผู้ที่มี chorioamnionitis ที่ GA <34 สัปดาห์ ขณะที่อาการของแม่และทารกคงที่ ควรให้ corticosteroid (betamethasone) เพื่อลดโรค RDS และปรับติด fetal neuroprotection ด้วย magnesium sulfate หลังจากนั้นรักษาต่อไปในครรภ์ 48 ชั่วโมงพร้อมเฝ้าระวังอย่างใกล้ชิด ออกแบบทันทีหากเกิด fetal distress หรืออาการแม่เสื่อม",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิง G1P0 อายุครรภ์ 36 สัปดาห์ BP 140/90 mmHg ไม่มีอาการปวดหัว ไม่มีอาการตามัว ปัสสาวะมีโปรตีน 1+ FHR 146 bpm ไม่มีการหดตัวของมดลูก จงเลือกการจัดการที่เหมาะสม",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้ปรึกษาด้านครั่งคลอดในวันถัดไป ติดตามอาการและวัดความดันโลหิตนอกอาการแบบระยะยาว"
+      },
+      {
+        "label": "B",
+        "text": "ให้ยาลดความดันโลหิตทันที และยาป้องกันการชักแบบสมมาตรเปิด เข้ารับ院"
+      },
+      {
+        "label": "C",
+        "text": "เหนี่ยวนำการคลอดเนื่องจากมีความดันโลหิตสูง"
+      },
+      {
+        "label": "D",
+        "text": "ส่วนผสมออกซิเจนและตรวจสมดุลกรด-ด่าง"
+      },
+      {
+        "label": "E",
+        "text": "ดำเนินการท่อนลมเพื่อเตรียมการสำหรับการส่งมอบฉุกเฉิน"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": "ผู้ป่วยมี gestational hypertension (ความดันโลหิต 140/90 mmHg ที่ GA 36 สัปดาห์) แต่ไม่มีเครื่องหมายของ preeclampsia (ไม่มีปวดหัว ไม่มีตามัว โปรตีนปัสสาวะน้อย) และ FHR ปกติ ไม่มีการหดตัว หมายความว่านี่คือ gestational hypertension ที่ไม่มีอาการรุนแรง การจัดการที่เหมาะสมคือติดตามผู้ป่วยอย่างใกล้ชิด วัดความดันโลหิตสม่ำเสมอ และเตรียมการสำหรับการท่อนลมในอีก 1-4 สัปดาห์หากไม่พบการแ悪化",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "สตรีมีครรภ์ 34 สัปดาห์ มีอาการปวดศีรษะรุนแรง ตาพร่า ความดันโลหิต 160/110 mmHg กับ proteinuria 3+ วินิจฉัยว่า severe preeclampsia จำเป็นต้องคลอดทันที ควรใช้ยาลดความดันโลหิตตัวใดที่ปลอดภัยสำหรับจังหวะคลอดทันที",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ไนฟิดิปีน (Nifedipine) IV/Oral"
+      },
+      {
+        "label": "B",
+        "text": "ไฮโดรลาซีน (Hydralazine) IV"
+      },
+      {
+        "label": "C",
+        "text": "ลาบิทาลอล (Labetalol) IV"
+      },
+      {
+        "label": "D",
+        "text": "เอนาลาพริล (Enalapril) Oral"
+      },
+      {
+        "label": "E",
+        "text": "นิโซลดิปีน (Nisoldipine) IV"
+      }
+    ],
+    "correct_answer": "A, B, C (ทั้งสามตัวสามารถใช้ได้)",
+    "exam_source": "OB",
+    "explanation": "ในกรณี severe preeclampsia ที่ต้องคลอดทันที ยาลดความดันโลหิตที่ปลอดภัยและประสิทธิ์คือ ไนฟิดิปีน ไฮโดรลาซีน และลาบิทาลอล ซึ่งเป็น first-line agents ตามแนวทาง ACOG และ WHO หลีกเลี่ยง ACE inhibitors เนื่องจากอันตรายต่อทารก ไนฟิดิปีน oral เป็นตัวเลือกแรกเนื่องจากใช้ง่ายและมีการศึกษายาวนาน",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ท้องแฝด คนแรกคลอดเด็กไปแล้ว ระหว่างการดูแลคนที่สอง เจาะน้ำคร่าม มีเลือดออกมาพร้อมกับอาการปวดท้อง ถามการวินิจฉัยที่น่าจะเป็นไปได้มากที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Vasa previa"
+      },
+      {
+        "label": "B",
+        "text": "Placental abruption"
+      },
+      {
+        "label": "C",
+        "text": "Placenta previa"
+      },
+      {
+        "label": "D",
+        "text": "Uterine rupture"
+      },
+      {
+        "label": "E",
+        "text": "Umbilical cord prolapse"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "OB",
+    "explanation": "ในท้องแฝด การเจาะน้ำคร่าม (amniotomy) ของลูกคนที่สอง อาจทำให้เลือดออกมากพร้อมอาการปวดท้องเพิ่มขึ้น ซึ่งบ่งชี้ถึง placental abruption (การแยกตัวของรau ก่อนคลอด) ซึ่งเป็นภาวะฉุกเฉินที่อาจเกิดในท้องแฝด Vasa previa มักให้อาการเลือดออกน้อยเมื่อเจาะแต่อาจรุนแรง แต่ไม่มักเกี่ยวกับปวดท้อง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงอายุ 19 ปี G1P0A0 อายุครรภ์ 35 สัปดาห์ มาติดตามครรภ์ตามนัด พบ BP 160/100 mmHg ตรวจร่างกายพบ pretibial edema ทั้งสองข้าง การตรวจสูติศาสตร์พบ os ปิด ปัสสาวะมีโปรตีน 2+ แพทย์ให้ผู้ป่วยพักครึ่งชั่วโมง วัด BP ซ้ำได้ 160/110 mmHg จงวินิจฉัยอาการของผู้ป่วยนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Gestational hypertension"
+      },
+      {
+        "label": "B",
+        "text": "Preeclampsia without severe features"
+      },
+      {
+        "label": "C",
+        "text": "Preeclampsia with severe features"
+      },
+      {
+        "label": "D",
+        "text": "Eclampsia"
+      },
+      {
+        "label": "E",
+        "text": "Chronic hypertension with superimposed preeclampsia"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "OB",
+    "explanation": "ผู้ป่วยมี BP ≥160/110 mmHg (severe hypertension) + proteinuria 2+ + edema ครบถ้วน ตรงกับเกณฑ์ preeclampsia with severe features ตามคำนิยาม ACOG ที่กำหนด severe BP ≥160/110 mmHg หรือ proteinuria ≥3+ หรือมีอาการ/การตรวจอื่นแสดงถึง organ dysfunction (ในที่นี้มี proteinuria และ edema)",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงสูง 6 เดือนครรภ์ มา OPD ตรวจเลือดดันตามปกติ ครั้งแรก BP 120/80 mmHg แต่วันนี้ BP 148/92 mmHg โดยไม่มีอาการ ปัสสาวะปกติ ไม่มีอาการไข้สั่น เลือดปัสสาวะปกติ ซ้ำตรวจเลือดดันอีกครั้ง BP 125/79 mmHg ไม่มีประวัติความดันโลหิตสูงมาก่อน คำวินิจฉัยที่เหมาะสมคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Transient (gestational) hypertension"
+      },
+      {
+        "label": "B",
+        "text": "Gestational hypertension with proteinuria (preeclampsia)"
+      },
+      {
+        "label": "C",
+        "text": "Chronic hypertension"
+      },
+      {
+        "label": "D",
+        "text": "White coat hypertension"
+      },
+      {
+        "label": "E",
+        "text": "Secondary hypertension"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": "Transient (gestational) hypertension หมายถึง BP เพิ่มขึ้นครั้งเดียวหรือสองสามครั้งระหว่างครรภ์ แต่กลับเป็นปกติเมื่อตรวจซ้ำ ไม่มีโปรตีนในปัสสาวะ และไม่มี symptoms ของ preeclampsia ซึ่งตรงกับกรณีนี้ที่ BP กลับปกติเมื่อตรวจซ้ำ ตัวเลือก B ผิดเพราะไม่มี proteinuria ตัวเลือก C ผิดเพราะไม่มีประวัติความดันสูงมาก่อน ตัวเลือก D,E ไม่สอดคล้องกับสภาวะครรภ์",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง อายุ 25 ปี ตั้งครรภ์แรก คลอดโดยใช้ forceps extraction หลังคลอดรก มีเลือดไหลออกจากช่องคลอด 800 cc ตรวจร่างกายพบ BP 90/60 mmHg, Pulse 110 bpm, สัมผัสได้ลูกมดลูก ½ เหนือกระดับสยามพุก จงหาสาเหตุของเลือดออกหลังคลอด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Uterine atony (อ่อนแรงของลูกมดลูก)"
+      },
+      {
+        "label": "B",
+        "text": "Retained placenta (รกค้างในลูกมดลูก)"
+      },
+      {
+        "label": "C",
+        "text": "Genital tract laceration (การฉีกขาดของช่องคลอด)"
+      },
+      {
+        "label": "D",
+        "text": "Coagulopathy (ความผิดปกติของการแข็งตัวของเลือด)"
+      },
+      {
+        "label": "E",
+        "text": "Placental abruption (รก剥離)"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "OB",
+    "explanation": "สาเหตุของเลือดออกหลังคลอด 800 cc ในผู้ป่วยนี้คือการฉีกขาดของช่องคลอด เพราะ (1) ใช้ forceps extraction ซึ่งเป็นการสกัดที่มีความเสี่ยงสูงต่อการฉีกขาดของช่องคลอด โปรด, ย่อมาจา และบริเวณปากมดลูก (2) ลูกมดลูกค้างหลังคลอดรกอยู่ ½ เหนือกระดับสยามพุก แสดงว่าลูกมดลูกมีการหดตัวดี (ไม่ใช่ atony) และรกหลุดแล้วหมด (3) สัญญาณชีพแสดงอาการตกใจจากการสูญเสียเลือด ซึ่งสอดคล้องกับการฉีกขาด",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "สตรีท้องครรภ์ 32 สัปดาห์ มาด้วยอาการรক্তออกจากช่องคลอด (vaginal bleeding) มากและเจ็บปวดท้องสำคัญ พบว่า มีเส้นเลือดขอดในช่องคลอดแตกร่ั่ว (rupture varicose vein of vagina) ทำให้เกิดอาการ hemorrhagic shock ปัจจุบันความดันโลหิต 90/60 mmHg และมีอาการหน้ามืด คุณจะจัดการเบื้องต้นอย่างไรเป็นลำดับแรก",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้ intravenous fluid resuscitation ด้วย normal saline และ transfuse packed red blood cells"
+      },
+      {
+        "label": "B",
+        "text": "ทำการสอบคลอดทันทีโดยวิธี cesarean section"
+      },
+      {
+        "label": "C",
+        "text": "ให้ intravenous magnesium sulfate เพื่อ seizure prophylaxis"
+      },
+      {
+        "label": "D",
+        "text": "ฉีด ergotamine intravenously เพื่อให้เกิด uterine contraction"
+      },
+      {
+        "label": "E",
+        "text": "ให้การรักษาแบบ expectant management และสังเกตอาการเพิ่มเติม"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": "ผู้ป่วยมีสัญญาณของ hemorrhagic shock (BP 90/60, dizziness) ที่เกิดจากการแตกของเส้นเลือดขอดในช่องคลอด ขั้นตอนแรกคือ hemodynamic stabilization ด้วย rapid fluid resuscitation และ blood transfusion เพื่อ restore circulating volume ก่อนทำการแทรกแซง อื่นๆ ตัวเลือก B อาจกระทำในภายหลังหากมี fetal compromise แต่ต้องเสถียรภาพแม่ก่อน",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงตั้งครรภ์ G2P1 GA 42 สัปดาห์ มาตรวจตามนัด อาการทั่วไปปกติ ไม่มีเจ็บครรภ์คลอด PE: fundal height ¾ above umbilicus, uterine contraction 20 วินาที, cervical dilate 2 cm, 50% effacement, cephalic presentation, station 0, membranes intact (MI) จะดำเนินการอย่างไรต่อไป",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ส่งตรวจ antenatal fetal monitoring (NST) และสอบถามหญิงครรภ์เกี่ยวกับ fetal movement โดยให้กลับมาตรวจตามนัดเดือนหน้า"
+      },
+      {
+        "label": "B",
+        "text": "ส่งตรวจ NST หากผลปกติให้กลับบ้าน หากมี non-reassuring sign ให้ลงแรงคลอด"
+      },
+      {
+        "label": "C",
+        "text": "ส่งเข้าตรวจครรภ์ฟอร์ส (induction of labor) เนื่องจากสูติสินค้า 42 สัปดาห์"
+      },
+      {
+        "label": "D",
+        "text": "ส่งตรวจ amniotic fluid volume และ NST หากผลทั้งสองปกติให้กำหนดการตรวจเพิ่มเติมในอีก 3-4 วัน"
+      },
+      {
+        "label": "E",
+        "text": "ส่งฟอร์สคลอดโดยจำเป็น เนื่องจากเป็นสูติสินค้าเกิน 42 สัปดาห์และเคยคลอดมาแล้ว"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "OB",
+    "explanation": "ที่ GA 42 สัปดาห์ถึงแม้ครรภ์ยาวเกินไป (post-term pregnancy) แต่ผู้ป่วยไม่มีอาการและเครื่องหมายของภาวะแทรกซ้อน ตามแนวทาง ACOG การตรวจ NST + amniotic fluid assessment (AFI/AFV) เป็นส่วนสำคัญในการประเมิน fetal well-being ก่อนตัดสินใจเข้าฟอร์ส หากผลปกติ อาจปล่อยให้ต่ออายุการครรภ์ได้ 3-4 วัน พร้อมการประเมินซ้ำ ไม่จำเป็นต้องฟอร์สฉุกเฉิน เว้นแต่มี risk factors หรือผลตรวจ non-reassuring",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "สตรีมีครรภ์ 39 สัปดาห์ มาตรวจครรภ์ประจำสัปดาห์ ปรากฏว่า cervix ยังไม่ได้ผ่าน Bishop score ≥8 และแม่ต้องการให้คลอด ตัดสินใจนัดให้เข้า induction พรุ่งนี้ ควรเตรียมอะไรบ้างสำหรับการ induction ครั้งนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้ prostaglandin analogue (misoprostol หรือ dinoprostone) ก่อน เพื่อให้ cervix mature ได้ดีขึ้น"
+      },
+      {
+        "label": "B",
+        "text": "เริ่มให้ oxytocin ด้วยความเข้มข้นสูง (10 mU/min) เพราะเป็นการ induction ที่ต้องสั่งการให้คลอด"
+      },
+      {
+        "label": "C",
+        "text": "ใช้ mechanical method เช่น Foley balloon catheter ร่วมกับเตียงเก่า"
+      },
+      {
+        "label": "D",
+        "text": "ควรรอการคลอดเองต่ออีก 1 สัปดาห์ เพราะยังไม่ครบกำหนดที่ควร induction"
+      },
+      {
+        "label": "E",
+        "text": "ทำ cesarean section ทันที เพราะ Bishop score ต่ำ"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": "เมื่อ cervix ยังไม่ mature (Bishop score <8) ควรใช้ cervical ripening agent ก่อน โดยใช้ prostaglandin analogue (misoprostol หรือ dinoprostone) เพื่อให้ cervix mature และเพิ่มโอกาสสำเร็จของการ induction แล้วจึงค่อย induct ด้วย oxytocin ที่ความเข้มข้นเริ่มต้น (1-2 mU/min)",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงอายุ 30 ปี G1P0 GA 39 สัปดาห์ ประเมินน้ำหนักทารก ~3000 g อื่นๆดีหมด หลังจากเบ่งคลอดนาน 2 ชั่วโมง PV ได้ station +3, fully dilate, FHS 148 bpm ถาม Mx",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ใช้ forceps delivery เนื่องจากทารกมี bradycardia"
+      },
+      {
+        "label": "B",
+        "text": "ปล่อยให้เบ่งต่อไป 1 ชั่วโมง ถ้าไม่คลอดให้พิจารณา operative delivery"
+      },
+      {
+        "label": "C",
+        "text": "ทำ cesarean section ทันที"
+      },
+      {
+        "label": "D",
+        "text": "ให้ oxytocin เพิ่มความเข้มข้นและปล่อยให้เบ่งต่อไป"
+      },
+      {
+        "label": "E",
+        "text": "วัด fetal scalp pH เพื่อประเมินภาวะ fetal distress"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "OB",
+    "explanation": "ผู้ป่วยอยู่ใน stage 2 of labor (fully dilate) โดยคลอดแล้ว 2 ชั่วโมง ส่วนใหญ่สามารถคลอดออกมาได้ภายใน 3 ชั่วโมง (primigravida) FHS 148 bpm ยังอยู่ในเกณฑ์ปกติ (120-160) ดังนั้นจึงสามารถให้เบ่งต่อไปได้อีก 1 ชั่วโมง หากไม่คลอดหลังจาก 3 ชั่วโมง ให้พิจารณา operative delivery เช่น forceps หรือ vacuum extraction",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้หญิง G1P0 GA 30 สัปดาห์ มาทำ ANC ปกติมาตลอด มาด้วยอาการมีน้าใสไหลจากช่องคลอด 2 ชั่วโมง ไม่มีอาการปวดท้อง PE: vital sign stable, uterine height 3/4 above umbilicus, cephalic presentation, longitudinal lie, FHR 148 bpm regular จะตรวจอะไรเพิ่มเติมเพื่อการวินิจฉัยแน่นอน",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Sterile speculum examination และ nitrazine paper/fern test เพื่อยืนยันการรั่ว amniotic fluid"
+      },
+      {
+        "label": "B",
+        "text": "Vaginal digital examination ทันที เพื่อประเมินปริมาณของเหลวและการเปลี่ยนแปลงของ cervix"
+      },
+      {
+        "label": "C",
+        "text": "Ultrasound เพื่อวัด amniotic fluid index และตรวจสอบ fetal anomaly"
+      },
+      {
+        "label": "D",
+        "text": "Fetal non-stress test เพื่อตรวจสอบสภาวะของทารก เนื่องจาก GA 30 สัปดาห์"
+      },
+      {
+        "label": "E",
+        "text": "Bacterial culture จาก cervical swab เพื่อตรวจสอบการติดเชื้อ"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": "ในกรณี suspected premature rupture of membranes (pROM) ที่ GA 30 สัปดาห์ ตัวแรกที่ต้องพิสูจน์คือการรั่ว amniotic fluid โดยใช้ sterile speculum examination (ห้ามให้ digital cervical exam ก่อนยืนยัน pROM เพราะเสี่ยงต่อการติดเชื้อ) ร่วมกับ nitrazine paper (fluid alkaline pH 7.0-7.5) และ fern test (結晶pattern) เพื่อยืนยันการรั่วของ amniotic fluid อย่างแน่นอน",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้หญิง 35 ปี ตั้งครรภ์ GA 15 สัปดาห์ ทำ Prenatal Diagnosis ด้วยวิธี Amniocentesis ผลการตรวจ Karyotype พบ 45,XY,-14,der(14;15)(q10;q10) Robertsonian translocation ระหว่าง chromosome 14 และ 15 บนทั้งสองข้าง โรค Down syndrome จะเกิดขึ้นในลูกชายของสตรีคนนี้หรือไม่ ท่านเป็นแพทย์จะให้คำแนะนำอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ทำการ Genetic counseling และให้คำแนะนำว่า โอกาสเกิด Down syndrome (Trisomy 21) ในทารกมีความเสี่ยงสูง 10-15% แนะนำให้ทำ Detailed ultrasound และพิจารณาการแท้งทำให้ปลอดภัย"
+      },
+      {
+        "label": "B",
+        "text": "แนะนำให้ทำการ Karyotype ของพ่อแม่อีกครั้ง เพื่อยืนยันว่าเป็น Balanced translocation carrier แล้วให้ Genetic counseling อย่างละเอียด"
+      },
+      {
+        "label": "C",
+        "text": "บอกให้แม่วิตกกังวล ไม่ต้องทำอะไร เพราะ Robertsonian translocation ไม่มีผลต่อสุขภาพของลูก"
+      },
+      {
+        "label": "D",
+        "text": "ทำการ FISH (Fluorescence In Situ Hybridization) เพิ่มเติม และ Microarray เพื่อหา segmental imbalance อื่นๆ"
+      },
+      {
+        "label": "E",
+        "text": "สั่งให้ทำ Cordocentesis ตรวจเพิ่มเติม เพื่อยืนยันการมี Trisomy 21 ก่อนตัดสินใจ"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "OB",
+    "explanation": "ผลการตรวจ 45,XY,-14,der(14;15) แสดงว่าทารกเป็น Balanced Robertsonian translocation carrier ซึ่งไม่มีผล pathologic แต่ปัญหาคือ พ่อแม่ (โดยเฉพาะแม่) ควรได้รับการตรวจ Karyotype เพื่อยืนยันว่าเป็น carrier ด้วย เพราะถ้าแม่เป็น Balanced translocation carrier ของ 14q;21q หรือ 15q;21q จะมีความเสี่ยงสูงในการมี unbalanced gamete ทำให้ลูกมี Trisomy 21 ได้ในการตั้งครรภ์ครั้งต่อไป จึงต้อง Genetic counseling อย่างละเอียด",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงสูงอายุ 28 ปี G2P1 มาครอบครัวแพทย์ที่คลินิกอนามัยแม่และเด็ก เพื่อตรวจสอบการตั้งครรภ์ต่อตามปกติ ครั้งที่ 20 สัปดาห์ ผลตรวจทางคลินิกปกติ วัดความสูงของมดลูก (Fundal Height) 20 ซม. ตรวจด้วยอัลตราซาउนด์ยืนยันอายุครรภ์ 20 สัปดาห์ ความดันโลหิต 110/70 mmHg ปัสสาวะปกติ ถามว่าจากการเยี่ยมตรวจครั้งนี้ ควรให้คำแนะนำสำคัญเกี่ยวกับการดูแลตัวเองอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เพิ่มการติดตามครั้งต่อไปให้สม่ำเสมอทุก 4 สัปดาห์ และให้วิตามินต่างๆ ตามปกติ"
+      },
+      {
+        "label": "B",
+        "text": "เรียนรู้อาการเตือนสำคัญ (danger signs) เช่น ตกเลือด ปวดท้องรุนแรง ปัสสาวะเขื่อกและปวดตัวเมื่อปัสสาวะ"
+      },
+      {
+        "label": "C",
+        "text": "ให้ยาเหล็กเสริมและกรดโฟลิก เพื่อป้องกันโลหิตจาง และหมั่นตรวจวัดความดันโลหิตประจำอาทิตย์"
+      },
+      {
+        "label": "D",
+        "text": "ห้ามไปทำงานหนักๆ หยุดพักผ่อนเต็มเวลาตั้งแต่ครึ่งกลางของการตั้งครรภ์เป็นต้นไป"
+      },
+      {
+        "label": "E",
+        "text": "ส่งตรวจหาเชื้อ STI และ HIV ทันทีเพราะมีภาวะเสี่ยงสูง"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "OB",
+    "explanation": "ในการดูแลแม่ตั้งครรภ์ต่อตามปกติแบบสมูลโปร ขั้นสำคัญคือการให้ความรู้เกี่ยวกับอาการเตือน (danger signs) เช่น ตกเลือด ปวดท้องรุนแรง ปัสสาวะเขื่อก เพื่อให้มารดารู้จักเมื่อใดควรรีบไปพบแพทย์ อาการเหล่านี้บ่งชี้ภาวะแทรกซ้อนที่อาจเกิดขึ้น ตัวเลือก A,C,D อาจถูกต้องบ้างแต่ไม่ใช่สิ่งสำคัญที่สุด ตัวเลือก E ไม่มีข้อบ่งชี้ที่ระบุความเสี่ยง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงตั้งครรภ์อายุ 28 ปี สัปดาห์ที่ 12 มาด้วยอาการเลือดออกทางช่องคลอด และปวดท้องล่าง แม่จะมีการยุติการตั้งครรภ์โดยเลือก ในกรณีนี้ควรให้คำแนะนำเกี่ยวกับตัวเลือกใดเป็นหลัก",
+    "choices": [
+      {
+        "label": "A",
+        "text": "การยุติการตั้งครรภ์ด้วยยาไมโซโพรสตอล (Misoprostol) เป็นการยุติครรภ์แบบจำหน่ายยา"
+      },
+      {
+        "label": "B",
+        "text": "การยุติการตั้งครรภ์ด้วยวิธีอักษรวาต (Vacuum aspiration) เป็นวิธีการขูดเอาเนื้อเยื่อที่ปกคลุมลูกออก"
+      },
+      {
+        "label": "C",
+        "text": "การยุติการตั้งครรภ์ด้วยการผ่าตัด (Surgical evacuation) ควรทำเมื่อมีภาวะแทรกซ้อนหรือล้มเหลวจากวิธีอื่น"
+      },
+      {
+        "label": "D",
+        "text": "ต้องรอการตรวจดูทางสถานการณ์ (Expectant management) จนกว่าจะมีการขับออกเอง"
+      },
+      {
+        "label": "E",
+        "text": "ทำการฉีดยากลูทาจอลโมนและออกซิโตซิน (Methotrexate) ตั้งแต่แรก"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "OB",
+    "explanation": "ที่สัปดาห์ที่ 12 (ครรภ์แรกเนื้อ) การยุติการตั้งครรภ์ที่ปลอดภัยและเป็นมาตรฐานคือการขูดเอาเนื้อเยื่อด้วยวิธี Vacuum aspiration หรือ Manual vacuum aspiration ซึ่งมีความปลอดภัยสูง อัตราแทรกซ้อนต่ำ และหายตัวร้อนเร็ว ยาไมโซโพรสตอล เหมาะสำหรับการยุติแบบจำหน่ายยาในครรภ์แรกเนื้อช่วงแรก แต่ที่สัปดาห์ที่ 12 ควรใช้วิธีการขูด",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "สตรีอายุ 35 ปี มาพบแพทย์เนื่องจากตั้งครรภ์ 20 สัปดาห์ มีประวัติครอบครัวเป็นโรค Cystic Fibrosis แพทย์แนะนำให้ทำการตรวจ CVS (Chorionic Villus Sampling) เพื่อวินิจฉัยพันธุกรรม ข้อใดคือสิ่งที่ไม่ถูกต้องเกี่ยวกับการทำ CVS ในครณีการนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "CVS สามารถทำได้ระหว่างอายุครรภ์ 10-13 สัปดาห์ แต่ในกรณีนี้อายุ 20 สัปดาห์ถึงแม้จะช้าแต่ยังสามารถทำได้"
+      },
+      {
+        "label": "B",
+        "text": "CVS มีความเสี่ยงต่อการสูญเสียครรภ์ประมาณ 0.2-0.5% ซึ่งสูงกว่า Amniocentesis"
+      },
+      {
+        "label": "C",
+        "text": "CVS สามารถวินิจฉัยโรค Cystic Fibrosis ได้อย่างแม่นยำจากการวิเคราะห์ DNA ของเนื้อเยื่อ絨毛"
+      },
+      {
+        "label": "D",
+        "text": "CVS มีข้อจำกัดคือ Maternal cell contamination สูงและมีความเสี่ยง confined placental mosaicism ที่ 1-2%"
+      },
+      {
+        "label": "E",
+        "text": "CVS เป็นการตรวจแบบ invasive ไม่เหมาะสำหรับคัดกรองทั่วไป แต่เหมาะสำหรับการวินิจฉัยในกรณีมีความเสี่ยงสูง"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": "CVS ควรทำในช่วงอายุครรภ์ 10-13 สัปดาห์ (first trimester) เพื่อให้ได้ผลลัพธ์เร็ว ที่อายุ 20 สัปดาห์ (second trimester) ถือว่าเป็นช่วงที่เกินคำแนะนำแล้ว และ Amniocentesis ยังเป็นตัวเลือกที่ดีกว่าในช่วงนี้ ตัวเลือก B, C, D, E ถูกต้องทั้งหมดเกี่ยวกับลักษณะและข้อดีข้อเสียของการทำ CVS",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "สตรีมีอายุครรภ์ 28 สัปดาห์ มาพบแพทย์เพื่อตรวจคัดกรอง Down syndrome ผ่านการตรวจ quad screen และได้ผลว่าเสี่ยงสูง แพทย์ควรจะดำเนินการอย่างไรต่อไป?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "บอกมารดาว่ามีความเสี่ยงสูงมาก แนะนำให้ทำการตัดสินใจตามที่มารดาต้องการหลังจากให้คำแนะนำเพียงพอ"
+      },
+      {
+        "label": "B",
+        "text": "ให้คำปรึกษาอย่างรอบด้านเกี่ยวกับความเสี่ยงและตัวเลือกต่างๆ (chorionic villus sampling, amniocentesis หรือ non-invasive prenatal testing) แล้วตัดสินใจร่วมกับมารดา"
+      },
+      {
+        "label": "C",
+        "text": "ส่งตรวจ amniocentesis ทันที โดยไม่ต้องปรึกษาหรือขออนุญาตจากมารดา"
+      },
+      {
+        "label": "D",
+        "text": "บอกให้มารดาไปหาคำปรึกษาจากสถาบันอื่นๆ เพราะแพทย์ไม่มีหน้าที่ในการให้คำแนะนำในเรื่องนี้"
+      },
+      {
+        "label": "E",
+        "text": "บอกมารดาว่าไม่จำเป็นต้องทำการตรวจเพิ่มเติม เพราะ quad screen ไม่ได้บ่งชี้ถึงโรคที่แน่นอน"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "OB",
+    "explanation": "ในสูติศาสตร์สมัยใหม่ การให้คำปรึกษาและการตัดสินใจร่วมกับมารดา (shared decision-making) เป็นหลักการสำคัญ โดยแพทย์ควรอธิบายความเสี่ยง ตัวเลือกการตรวจเพิ่มเติม (invasive vs non-invasive) ข้อดีข้อเสีย และให้มารดาทำการตัดสินใจด้วยความเข้าใจและยินยอมอย่างเต็มที่",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิง 20 ปี G1P0 อายุครรภ์ 10 สัปดาห์ มาพบแพทย์ด้วยอาการอาเจียนรุนแรง กินข้าวได้น้อย ปัสสาวะออกน้อยสีเข้ม ร่างกายอ่อนแรง ส่วนตัวเบาลง 2 กิโลกรัม ตรวจร่างกายพบผิวแห้ง ลิ้นแห้ง รีดกระดูกแห้ง จะส่ง Investigation อะไรให้ได้การวินิจฉัยที่ต้องการ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ตรวจวัดระดับ Electrolyte (Na, K, Cl) และ serum creatinine เพื่อประเมินความสมดุลของสารน้ำ-เกลือและภาวะนิ่วไต"
+      },
+      {
+        "label": "B",
+        "text": "ตรวจปัสสาวะทั่วไป (Urinalysis) และสารประกอบ ketone ในปัสสาวะเพื่อประเมินสถานะการขาดน้ำและการเผาผลาญ"
+      },
+      {
+        "label": "C",
+        "text": "ตรวจระดับ Pregnancy hormone (hCG) และ Thyroid function test เพื่อยืนยันการตั้งครรภ์และตรวจคัดกรองโรคต่อมไทรอยด์"
+      },
+      {
+        "label": "D",
+        "text": "ตรวจ Complete blood count (CBC) เพื่อประเมินภาวะโลหิตจางและการติดเชื้อ"
+      },
+      {
+        "label": "E",
+        "text": "ตรวจ Liver function test (LFT) เพื่อประเมินความเสียหายของตับเนื่องจากอาการอาเจียนรุนแรง"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "OB",
+    "explanation": "ผู้ป่วยแสดงอาการหมัดเวลาตั้งครรภ์รุนแรง (Hyperemesis Gravidarum) ที่มีภาวะขาดน้ำและแร่ธาตุ (สีปัสสาวะเข้ม ผิวแห้ง) การตรวจปัสสาวะทั่วไปและ ketone จะช่วยยืนยันว่ามีภาวะขาดน้ำรุนแรง (specific gravity สูง ketonuria) ซึ่งสำคัญในการวินิจฉัยและประเมินความรุนแรงของ Hyperemesis Gravidarum อย่างไรก็ตาม ควรทำ electrolyte ด้วยเพราะเป็นส่วนสำคัญของการประเมินสมดุลของรางกาย แต่ตัวเลือก B เป็นคำตอบหลักในการวินิจฉัยเบื้องต้น",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "เด็กอายุ 1 วัน คลอดยากติดไหล่ มารดาสังเกตว่าแขนซ้ายเด็กไม่ขยับ การตรวจร่างกาย: แขนขวาสามารถหมุนเข้า (internal rotate) ขยับและหันเท่าได้ปกติ แต่แขนซ้ายอยู่ในท่า extension and pronation ไม่สามารถยกขึ้นได้ จงวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Erb's palsy (C5-C6 nerve root injury)"
+      },
+      {
+        "label": "B",
+        "text": "Klumpke's palsy (C8-T1 nerve root injury)"
+      },
+      {
+        "label": "C",
+        "text": "Horner's syndrome"
+      },
+      {
+        "label": "D",
+        "text": "Phrenic nerve injury"
+      },
+      {
+        "label": "E",
+        "text": "Complete brachial plexus injury (Duchenne-Erb)"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": "Erb's palsy เป็นการบาดเจ็บของเส้นประสาท C5-C6 ที่เกิดจากการดึงไหล่ขณะคลอด ลักษณะคือ arm extension and pronation (waiter's tip position) ไม่สามารถยกแขนขึ้นได้ ขาดการหมุนเข้า เนื่องจากความเสียหายของสัญญาณประสาทจาก suprascapular nerve, axillary nerve และ musculocutaneous nerve",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ทารกคลอดทางช่องคลอด แพทย์ไม่สามารถคลอดได้ สงสัยภาวะคลอดติดไหล่ (Shoulder Dystocia) การกระทาข้อใดอันตรายมากที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ดึงศีรษะของทารกด้วยแรงมากเพื่อให้คลอดเร็ว"
+      },
+      {
+        "label": "B",
+        "text": "ทำการคลำและดันไหล่ด้านหน้า (Anterior shoulder) ลงหลังจากความเห็นระหว่างแยกขา"
+      },
+      {
+        "label": "C",
+        "text": "ทำการข้อเข่าของมารดาขึ้นสูงและดันพื้นที่หนีบ (McRoberts maneuver)"
+      },
+      {
+        "label": "D",
+        "text": "หมุนลำตัวทารกเพื่อเลื่อนไหล่ไปแนวถูกต้อง (Rotational maneuvers)"
+      },
+      {
+        "label": "E",
+        "text": "เรียกการช่วยเหลือและเตรียมการผ่าตัดฉุกเฉินหากสามารถจัดการได้ภายในเวลา"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": "การดึงศีรษะด้วยแรงมากในภาวะคลอดติดไหล่เป็นการกระทาที่อันตรายมากที่สุด เนื่องจากอาจทำให้เกิดการสูญหายของเส้นประสาท (Brachial plexus injury) หรือการหักกระดูกสันหลัง ในขณะที่การจัดการที่ถูกต้องคือการใช้ McRoberts maneuver ดันไหล่ด้านหน้า หรือการหมุนตัว แล้วเรียกความช่วยเหลือหากจำเป็น",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "สตรีมีครรภ์อายุ 32 สัปดาห์ มาด้วยการตั้งครรภ์นอกมดลูก (ectopic pregnancy) ที่เปิดตัว (ruptured) พบการเровิดเลือดอย่างรุนแรง ผู้ช่วยแพทย์ต้องการทำการรักษาด้วยการผ่าตัด ข้อใดคือการจัดการแผลหลังการผ่าตัดที่เหมาะสมที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เปิดแผลให้กว้าง ตัดฝีเย็บยาวมากขึ้น เพื่อให้สามารถควบคุมเลือดได้อย่างรวดเร็วและเข้าถึงต่อมรังไข่"
+      },
+      {
+        "label": "B",
+        "text": "ปิดแผลด้วยการเย็บแบบ interrupted sutures ทั้งชั้นนอกและในพร้อมใช้ drain เพื่อป้องกันการสะสมของเลือด"
+      },
+      {
+        "label": "C",
+        "text": "ใช้การผ่าตัดแบบ laparoscopic ด้วยการเปิดแผลเล็ก เพื่อลดการสูญเสียเลือดและการติดแน่น"
+      },
+      {
+        "label": "D",
+        "text": "เปิดแผลให้กว้างและใหญ่มากเพื่อลบล้างตัวเอมโบลัสที่อาจมีอยู่ในหลอดเลือด"
+      },
+      {
+        "label": "E",
+        "text": "ปิดแผลด้วยการเย็บแบบ continuous sutures โดยไม่ใช้ drain เพื่อให้ผู้ป่วยหายเร็วขึ้น"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": "ในกรณีการตั้งครรภ์นอกมดลูกที่เปิดตัวมีการเровิดเลือดรุนแรง ต้องทำการผ่าตัดฉุกเฉินแบบเปิด (open surgery) โดยเปิดแผลให้กว้างและเย็บยาว เพื่อให้เข้าถึงต่อมรังไข่ได้ดี สามารถควบคุมเลือดได้อย่างรวดเร็วและประสิทธิผล ซึ่งเป็นสิ่งสำคัญที่สุดในการรักษาผู้ป่วยที่มีการเrovิดเลือดกระดึก",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงตั้งครรภ์ 38 สัปดาห์ เข้าเตียนคลอดตามธรรมชาติ ในระยะที่ 2 ของการคลอด พบว่าศีรษะของทารกค่อย ๆ ติดลงช้า ๆ ลักษณะนี้เรียกว่าอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Normal descent - การลงตัวตามปกติ"
+      },
+      {
+        "label": "B",
+        "text": "Prolonged descent - การลงตัวที่ช้าลง"
+      },
+      {
+        "label": "C",
+        "text": "Arrest of descent - การหยุดลงตัวทั้งหมด"
+      },
+      {
+        "label": "D",
+        "text": "Deep transverse arrest - ศีรษะติดอยู่ในตำแหน่งตามขวาลึก"
+      },
+      {
+        "label": "E",
+        "text": "Cephalopelvic disproportion - ศีรษะใหญ่กว่าช่องคลอด"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "OB",
+    "explanation": "Prolonged descent หมายถึงการที่ศีรษะของทารกลงตัวช้ากว่าปกติในระยะที่ 2 ของการคลอด ซึ่งติดตั้งแต่แรกเข้าเตียน แต่ลงตัวอย่างช้า ๆ โดยไม่หยุดทั้งหมด ส่วน Arrest of descent จะเป็นการหยุดลงตัวทั้งหมดซึ่งมีความหมายต่างออกไป",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "แม่ตั้งครรภ์ 36 สัปดาห์ มีค่า AFP (alpha-fetoprotein) เพิ่มขึ้นสูงกว่าค่าปกติ ควรนึกถึงโรคหรือภาวะใดต่อไปนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Down syndrome (Trisomy 21)"
+      },
+      {
+        "label": "B",
+        "text": "Open neural tube defect (Spina bifida, Anencephaly)"
+      },
+      {
+        "label": "C",
+        "text": "Abdominal wall defect (Gastroschisis, Omphalocele)"
+      },
+      {
+        "label": "D",
+        "text": "Congenital nephrotic syndrome"
+      },
+      {
+        "label": "E",
+        "text": "Intrauterine growth restriction"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "OB",
+    "explanation": "AFP เพิ่มขึ้นในช่วง second trimester นั้น associated กับ neural tube defects เป็นหลัก เช่น spina bifida และ anencephaly มากกว่าโรคอื่นๆ Open neural tube defect ทำให้ AFP จากน้ำสะอาด (amniotic fluid) และเลือดแม่เพิ่มขึ้นอย่างชัดเจน ซึ่งเป็นค่าที่ผิดปกติที่สำคัญในการคัดกรอง (screening) ในการตั้งครรภ์",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 20 ปี มีระดูครั้งสุดท้าย 2 สัปดาห์ก่อน มีสัมพันธ์ทางเพศเมื่อคืนที่ไม่ได้ใช้วิธีป้องกันการตั้งครรภ์ มาปรึกษาแพทย์เนื่องจากไม่พร้อมตั้งครรภ์ ถามว่าควรให้คำแนะนำและจัดการอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้ยาคุมเกิด levonorgestrel 1.5 mg เพียงครั้งเดียว หรือ mifepristone 10 mg ภายใน 72 ชั่วโมง"
+      },
+      {
+        "label": "B",
+        "text": "บอกให้รอดูว่าจะตั้งครรภ์หรือไม่ ไม่จำเป็นต้องรีบรับการรักษา"
+      },
+      {
+        "label": "C",
+        "text": "ให้ยาคุมเกิด levonorgestrel 0.75 mg ครั้งละครั้ง วันละ 2 ครั้ง เป็นเวลา 5 วัน"
+      },
+      {
+        "label": "D",
+        "text": "ส่งต่อให้สูตินรีแพทย์เพื่อพิจารณาทำการขัดขวางการตั้งครรภ์ตั้งแต่แรก"
+      },
+      {
+        "label": "E",
+        "text": "ให้ยาแอสไพรินและรอการตรวจครรภ์หลังจาก 1 สัปดาห์"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": "ผู้ป่วยมีอาการตั้งครรภ์โดยไม่ตั้งใจ (unplanned pregnancy) และมาปรึกษาภายในเวลาที่เหมาะสม ควรให้ยาป้องกันการตั้งครรภ์ฉุกเฉิน (Emergency Contraception) ภายใน 72 ชั่วโมง เช่น levonorgestrel 1.5 mg วนิการเดียว หรือ mifepristone 10 mg ซึ่งมีประสิทธิภาพมากกว่า 95% เมื่อให้ในเวลาที่เหมาะสม",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงสูงอายุ 35 ปี มีครรภ์ 28 สัปดาห์ มาด้วยอาการปวดท้องบ่อยครั้ง ปัสสาวะบ่อย และรู้สึกหดตัวเพิ่มขึ้น แพทย์ตัดสินใจใช้ PGE2 suppository (Dinoprostone) เพื่อป้องกันการเกิดการหดตัวก่อนกำหนด คุณสมบัติเรื่องเสถียรภาพของ PGE2 original suppository อันใดถูกต้อง",
+    "choices": [
+      {
+        "label": "A",
+        "text": "PGE2 suppository ต้องเก็บในตู้เย็น 2-8°C และสามารถเก็บได้นาน เพราะมีเสถียรภาพสูง"
+      },
+      {
+        "label": "B",
+        "text": "PGE2 suppository ต้องเก็บในตู้เย็น 2-8°C เพราะตัวยาเสื่อมได้ง่ายเมื่อเก็บที่อุณหภูมิห้อง"
+      },
+      {
+        "label": "C",
+        "text": "PGE2 suppository สามารถเก็บที่อุณหภูมิห้อง 25°C ได้เป็นระยะเวลา 24 ชั่วโมงหากเหนือสิ่งต่างๆ"
+      },
+      {
+        "label": "D",
+        "text": "PGE2 suppository ไม่จำเป็นต้องเก็บในตู้เย็น แต่ต้องเก็บห่างจากแสงแดดและความชื้น"
+      },
+      {
+        "label": "E",
+        "text": "PGE2 suppository ต้องใช้ภายใน 30 นาทีหลังนำออกจากตู้เย็น มิฉะนั้นจะเสื่อมคุณภาพ"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "OB",
+    "explanation": "PGE2 (Dinoprostone) suppository เป็นอาหารที่ไม่เสถียรและเสื่อมได้ง่าย จึงต้องเก็บในตู้เย็น (2-8°C) อย่างเคร่งครัดเพื่อรักษาเสถียรภาพ หากเก็บที่อุณหภูมิห้องจะเสื่อมตัวได้อย่างรวดเร็ว ทำให้ประสิทธิผลลดลง ยาต้องให้ความสำคัญกับการเก็บรักษาอย่างถูกต้องเพื่อให้ได้ผลการรักษาที่ดีที่สุด",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงสูงวัย 35 ปี มาพบแพทย์ขอใช้ contraceptive เร่งด่วน หลังจากมีสัมพันธ์ทางเพศโดยไม่ได้ใช้ contraception เมื่อ 24 ชั่วโมงที่แล้ว ผู้แพทย์ตัดสินใจให้ยา levonorgestrel ขนาดสูง (high dose levonorgestrel) เป็นการ emergency contraception คำถาม: High dose levonorgestrel สำหรับ emergency contraception มีกลไกการทำงานหลักอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ยับยั้งการให้ LH surge และการวึ่นไข่ (inhibit ovulation by suppressing LH surge)"
+      },
+      {
+        "label": "B",
+        "text": "ทำให้เมือกปากมดลูกหนาขึ้นเพื่อลดการเข้าถึงของสเปิร์ม (increased cervical mucus viscosity)"
+      },
+      {
+        "label": "C",
+        "text": "ทำให้เยื่อบุกระบบคลอดบางและไม่เหมาะสำหรับการ着床 (endometrial atrophy)"
+      },
+      {
+        "label": "D",
+        "text": "ฆ่าสเปิร์มโดยตรง (spermicidal effect)"
+      },
+      {
+        "label": "E",
+        "text": "อัดแน่นสารลูกหลืบ (ovarian follicle atresia)"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": "High dose levonorgestrel ใช้ effective ที่สุดเมื่อให้ก่อนการวึ่นไข่ โดยกลไกหลักคือยับยั้งการปล่อย GnRH และลด LH surge ที่จำเป็นสำหรับการวึ่นไข่ (ovulation suppression) ตัวเลือก B, C, D และ E ไม่ใช่กลไกหลักของการทำงานที่มีความสำคัญทางคลินิก",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงสูง 165 ซม. น้ำหนัก 68 กิโลกรัม มาปรึกษาเรื่องวิธีคุมกำเนิด ต้องการใช้ยาคุมกำเนิดรูปแบบยาเม็ด (Combined Oral Contraceptive Pill) วิธีการใช้ที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เริ่มใช้ในวันแรกของการเมนส์เพื่อให้มีฤทธิ์ป้องกันตั้งแต่วันแรก"
+      },
+      {
+        "label": "B",
+        "text": "กินเม็ดยาต่อเนื่องทั้ง 28 วัน โดยไม่มีช่วงหยุดเพื่อเพิ่มประสิทธิภาพ"
+      },
+      {
+        "label": "C",
+        "text": "ใช้เม็ดในแต่ละปีแล้วหยุดนาน 2-3 เดือน เพื่อให้ระบบสืบพันธุ์พักผ่อน"
+      },
+      {
+        "label": "D",
+        "text": "สามารถเริ่มใช้ในวันที่ 5 ของการเมนส์ และควรใช้วิธีป้องกันเพิ่มเติมสัปดาห์แรก"
+      },
+      {
+        "label": "E",
+        "text": "เลื่อนการเริ่มใช้จนกว่าจะแน่ใจว่าไม่ตั้งครรภ์ โดยทดสอบตัวตั้งครรภ์ก่อน"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "OB",
+    "explanation": "ยาคุมกำเนิดแบบรวม (Combined OCP) ที่เริ่มใช้ในวันที่ 1-5 ของการเมนส์จะมีฤทธิ์ป้องกันได้ทันที แต่ถ้าเริ่มหลังวันที่ 5 ต้องใช้วิธีป้องกันเพิ่มเติม (condom หรือ spermicide) เป็นเวลาอย่างน้อย 7 วัน เพื่อให้เชื่อมั่นว่าไม่มีการตั้งครรภ์จากการมีเพศสัมพันธ์ในช่วงแรก",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงตั้งครรภ์ครั้งแรก (G1P0) ในระหว่างการคลอด FHR เริ่มต้น 148 ครั้ง/นาที หลังทำ amniotomy พบเลือดปนในน้ำคร่ำ และ FHR ลดลงเหลือ 80 ครั้ง/นาที จงบอกสาเหตุที่เป็นไปได้และการจัดการที่เหมาะสม",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Umbilical cord prolapse ต้องส่งห้องผ่าตัดเพื่อ Cesarean delivery โดยด่วน"
+      },
+      {
+        "label": "B",
+        "text": "Placental abruption ต้องให้บริหารสารน้ำเหลือบรรลัง และส่งห้องผ่าตัด"
+      },
+      {
+        "label": "C",
+        "text": "Fetal distress จากการบีบอัดสายสะดือเพียงอย่างเดียว ให้เปลี่ยนท่านอนแม่ และสังเกตการณ์ต่อ"
+      },
+      {
+        "label": "D",
+        "text": "Vasa previa ที่ฝ่ายของทารก ต้องถ่ายเลือดด่วนและส่งห้องผ่าตัด"
+      },
+      {
+        "label": "E",
+        "text": "Uterine rupture ต้องให้น้ำเกลือและส่งห้องผ่าตัดทันที"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": "การปรากฏอาการที่สำคัญคือเลือดปนหลังทำ amniotomy และ FHR ลดลงอย่างรวดเร็วจาก 148 เป็น 80 ครั้ง/นาที ซึ่งเป็นลักษณะคล้ายกับ umbilical cord prolapse ที่สายสะดือหลุดออกมาและถูกบีบอัด ทำให้เกิด profound bradycardia ต้องให้การช่วยเหลือด่วน (emergency cesarean delivery) เพื่อช่วยชีวิตทารก",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ทารกแรกเกิด 2 ชั่วโมง เกิดอาการรำคาญ ขาดอ oxygen ทันทีหลังคลอด และพบเลือดสดในอุจจาระ ทำการตรวจร่างกายพบเด็กซีดและใจเต้นเร็ว ส่วนต่างๆ ของสายสะดือไม่มีปัญหา ผู้เชี่ยวชาญสงสัยว่าเป็น ruptured vasa previa คำตอบใดต่อไปนี้สอดคล้องกับการวินิจฉัยนี้มากที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "หลอดเลือดที่ไม่มีกล้ามเนื้อลำไส้และผ่านช่องเปิดในเยื่อวิสเซอรัลของสายสะดือ ขาดออกอันเนื่องมาจากการแตกของเยื่ออ่อน"
+      },
+      {
+        "label": "B",
+        "text": "การแตกของหลอดเลือดดำในสายสะดือที่ส่งเลือดกลับไปยังตับของทารก เกิดจากความตึงเครียดตามปกติขณะคลอด"
+      },
+      {
+        "label": "C",
+        "text": "การแตกของวิกเซลไลน์ (Wharton's jelly) ในสายสะดือ ทำให้เกิดการตึงเครียดกดทับหลอดเลือด"
+      },
+      {
+        "label": "D",
+        "text": "การแตกของหลอดเลือดแดงของสายสะดือ เนื่องจากการขาดอากาศระหว่างการตัดสายสะดือ"
+      },
+      {
+        "label": "E",
+        "text": "การแตกของหลอดเลือดคลอริออนในท่อส่วนประสัณฑ์ เนื่องจากการหลุดของเยื่อหุ้มสายสะดือ"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": "Vasa previa คือหลอดเลือดที่ไม่มีกล้ามเนื้อลำไส้ (unprotected fetal blood vessels) ซึ่งวิ่งผ่านช่องเปิดในเยื่อวิสเซอรัลของสายสะดือ เมื่อเยื่อถุง amnion แตกออก หลอดเลือดจะพังทลายและเกิดการ hemorrhage ของเลือดทารก ทำให้ทารกสูญเสียเลือดอย่างรวดเร็ว มักพบในการตัดสายสะดือหรือในระยะเริ่มแรกของการคลอด",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 28 ปี GA10 WK HBsAG +veตัวเดียวเท่านั้นต้องแนะนาอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "termination"
+      },
+      {
+        "label": "B",
+        "text": "C/S at term"
+      },
+      {
+        "label": "C",
+        "text": "avoid breast feeding"
+      },
+      {
+        "label": "D",
+        "text": "vaccine at birth"
+      },
+      {
+        "label": "E",
+        "text": "immunoglobulin at birth"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 25 ปี G1 GA 20 wk. U/S พบ anencephalyการปฏิบัติใดเหมาะสมที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ตรวจเลือดแม่ดู AFP"
+      },
+      {
+        "label": "B",
+        "text": "ตรวจเลือดแม่ดู triple test"
+      },
+      {
+        "label": "C",
+        "text": "ตรวจ MRI เพื่อยืนยันการวินิจฉัย"
+      },
+      {
+        "label": "D",
+        "text": "ตรวจติดตาม U/S อย่างใกล้ชิด"
+      },
+      {
+        "label": "E",
+        "text": "แนะนายุติการตั้งครรภ์"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "แม่อายุ 40 yrแต่งงานมา 10 yrไม่ได้คุมกาเนิด GA 22wkchromosome study 47+xy trisomy 21 จะแนะนาอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "บอกแม่ว่าเป็นทารกเพศชายและมีความเสี่ยงในการเกิด"
+      },
+      {
+        "label": "B",
+        "text": "ความผิดปกติ"
+      },
+      {
+        "label": "C",
+        "text": "บอกแม่ว่าผิดปกติและวางแผนร่วมกันรักษา"
+      },
+      {
+        "label": "D",
+        "text": "U/S หาความผิดปกติ"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หญิงไทยคู่อายุ 24 ปี GA 32 wksมีน้าไหลออกจากช่องคลอด3 hrก่อนมาโรงพยาบาลไม่เจ็บท้อง speculum exam พบน้า 5ml, nitrazine test positive ต้องทาอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "oxytocin iv"
+      },
+      {
+        "label": "B",
+        "text": "terbutaline iv"
+      },
+      {
+        "label": "C",
+        "text": "C/S"
+      },
+      {
+        "label": "D",
+        "text": "dexamethasone im"
+      },
+      {
+        "label": "E",
+        "text": "prostaglandin"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงไทยอายุ 24 ปี G2P1 GA 3rd trimester มาด้วยการรั่วไหลของน้าคร้าว มีการเจาะถุงน้าคร้าได้น้าใส FHR 80-90 bpm การตรวจช่องคลอดซ้ำพบ pulsatile mass ที่ปาก cervix",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Vasa previa"
+      },
+      {
+        "label": "B",
+        "text": "Prolapsed umbilical cord"
+      },
+      {
+        "label": "C",
+        "text": "Placenta previa"
+      },
+      {
+        "label": "D",
+        "text": "Velamentous cord insertion with rupture"
+      },
+      {
+        "label": "E",
+        "text": "Subchorionic hemorrhage"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "OB",
+    "explanation": "Prolapsed umbilical cord เป็นการออกมาของสายสะดือจากส่วนหลังของลูกก่อนการออกมาของตัวลูก ซึ่งมีลักษณะ pulsatile mass ที่สัมผัสได้ที่ช่องคลอด FHR ลดลง (80-90 bpm) เป็นเพราะการอัดลำเลียงของสายสะดือ ส่วน vasa previa และ velamentous cord insertion มักไม่มีการออกมาของเนื้อที่ผลิตกระบวนการเหล่านี้ placenta previa จะไม่มี pulsatile mass",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 23 ปี GA 39 Wkพบว่าลูกไม่ดิ้น 24 Hr. PE:Fundal Height .> Umbilicus, FHR 140/min ข้อใดเป็นแนวทางการรักษาที่เหมาะที่สุดในผู้ป่วยรายนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Reassure and F/U next day"
+      },
+      {
+        "label": "B",
+        "text": "Biophysical profile"
+      },
+      {
+        "label": "C",
+        "text": "Oxytocin stress test"
+      },
+      {
+        "label": "D",
+        "text": "Induction of labor"
+      },
+      {
+        "label": "E",
+        "text": "C/S"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 30 ปียังไม่มีบุตรมาตรวจร่างกายไม่มีเลือดออกผิดปกติคลาUetrus 12 wksizeU/S Uterus โต11cm, Globularshape,Multiplemyomaก้อนใหญ่สุด 2.2anterior,2.3 posterior management อย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "สังเกตอาการและ F/U 3 mo"
+      },
+      {
+        "label": "B",
+        "text": "GnRH releasing hormone"
+      },
+      {
+        "label": "C",
+        "text": "Uterine artery embolization"
+      },
+      {
+        "label": "D",
+        "text": "Myomectomy"
+      },
+      {
+        "label": "E",
+        "text": "Hysterectomy"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 65 ปี หมดประจำเดือนมา 15 ปี ไม่ได้รับฮอร์โมนทดแทน มาพบแพทย์ด้วยอาการตกเลือดผิดปกติ 5 วัน ควรทำการตรวจวินิจฉัยอะไรเป็นอันดับแรก",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Transvaginal ultrasound"
+      },
+      {
+        "label": "B",
+        "text": "Endometrial biopsy"
+      },
+      {
+        "label": "C",
+        "text": "Fractional curettage (D&C)"
+      },
+      {
+        "label": "D",
+        "text": "Hysteroscopy with biopsy"
+      },
+      {
+        "label": "E",
+        "text": "Pap smear and cervical biopsy"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": "ในผู้หญิงหลังหมดประจำเดือนที่มี AUB ควรเริ่มต้นด้วย Transvaginal ultrasound เพื่อประเมินความหนาของ endometrium และตรวจหา病变ของมดลูกและไข่ขาว หากเห็น endometrial thickness >5 mm หรือมีภาพผิดปกติ ค่อยทำ biopsy อย่างไรก็ตาม หากมีข้อสงสัยเกี่ยวกับมะเร็ง อาจพิจารณา endometrial biopsy โดยตรง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 25 ปี มาด้วย RLQ pain เป็นเวลา 2 วัน LMP 7 วันที่แล้ว PE: tender ที่ RLQ ไม่มี guarding PV: tender ที่ uterus bulging ที่ anexa การวินิจฉัยที่ถูกต้องคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ruptured ectopic pregnancy"
+      },
+      {
+        "label": "B",
+        "text": "Acute appendicitis"
+      },
+      {
+        "label": "C",
+        "text": "Pelvic Inflammatory Disease (PID)"
+      },
+      {
+        "label": "D",
+        "text": "Hemorrhagic ovarian cyst"
+      },
+      {
+        "label": "E",
+        "text": "Acute mesenteric lymphadenitis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": "โจทย์แสดงสัญญาณเตือนของ ruptured ectopic pregnancy: RLQ pain, LMP เพิ่งมา 7 วัน (ช่วงที่อาจได้รับการปฏิสนธิ), uterine tenderness, anexal mass/bulging ที่ขึ้น ขาดเครื่องหมาย peritoneal irritation (guarding/rebound) ในช่วงแรก การ bulging ที่ anexa เป็นคำสำคัญที่บ่งบอกถึงการเพิ่มขึ้นของเนื้อเยื่อที่ anexa (ถุง/เลือด) ซึ่งสอดคล้องกับ ectopic pregnancy มากกว่า appendicitis ที่ปกติจะเด่นที่ physical finding ของ peritoneal irritation มากกว่า",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงอายุ 30 ปีแต่งงานมาแล้ว 6 ปีไม่เคยคุมกาเนิดปัจจุบันไม่เคยตั้งครรภ์และมีลูกมีอาการปวดประจาเดือนพอทนได้ไม่ต้องหยุดงานตรวจร่างกายพบ normal uterine , mass cystic content at Rt. adnexa 3x4 cm. tender , cul-du-sacroughlyการวินิจฉัยที่เหมาะสมคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Endrometriosis Cyst"
+      },
+      {
+        "label": "B",
+        "text": "Functional Ovarian cyst"
+      },
+      {
+        "label": "C",
+        "text": "TOA"
+      },
+      {
+        "label": "D",
+        "text": "Appendiceal abscess"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 25 ปีคันตกขาวให้รูปมาKOH น่าจะเป็นพวกyeast รักษายังไง?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "metronidazole oral"
+      },
+      {
+        "label": "B",
+        "text": "norfloxacin oral"
+      },
+      {
+        "label": "C",
+        "text": "metronidazole suppo"
+      },
+      {
+        "label": "D",
+        "text": "clotrimazole"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 20 ปี มีเลือดออกทางช่องคลอด BP 90/70 PR 120 PE : pale ให้ fluid ใดดี (OB/GYN) (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "NSS"
+      },
+      {
+        "label": "B",
+        "text": "NSS/2 + NaCO3"
+      },
+      {
+        "label": "C",
+        "text": "5%DNSS"
+      },
+      {
+        "label": "D",
+        "text": "5%DNSS/2"
+      },
+      {
+        "label": "E",
+        "text": "HESsteril"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง อายุ 35 ปี สมส่วน GA 38 สัปดาห์ มาพบแพทย์ด้วยอาการบวมเท้า ตรวจร่างกาย พบ pitting edema ทั้งสองข้าง ปัสสาวะโปรตีน 1+ BP 160/100 mmHg ไม่มีอาการชัก ไม่มี RUQ pain ไม่มี visual disturbance ตรวจสมองส่วนลึกปกติ Management ที่เหมาะสมคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้ antihypertensive drug (เช่น nifedipine, labetalol) และ expectant management พร้อมการติดตามสัญญาณ"
+      },
+      {
+        "label": "B",
+        "text": "Induction of labor ทันที"
+      },
+      {
+        "label": "C",
+        "text": "ให้ antihypertensive drug และ glucocorticoids แล้ว plan delivery ภายใน 24-48 ชั่วโมง"
+      },
+      {
+        "label": "D",
+        "text": "Expectant management เพียงอย่างเดียว โดยไม่ให้ยา antihypertensive"
+      },
+      {
+        "label": "E",
+        "text": "ให้ magnesium sulfate IV ทันที เพื่อป้องกัน eclampsia"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": "ผู้ป่วยมีลักษณะ preeclampsia without severe features (BP 160/100, proteinuria 1+, edema แต่ไม่มี severe symptoms หรือ end-organ dysfunction) ที่ GA 38 wk การจัดการคือให้ antihypertensive เพื่อควบคุม BP และ expectant management พร้อมการติดตาม เนื่องจาก GA มากพอ และไม่มี indication สำหรับ immediate delivery นอกจากจะก้าวหน้าเป็น severe preeclampsia",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง G2P1 GA 33 wk BP 150/100 mmHg, Urineprotein 2+, Pitting edema 1+ Management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Reassure and expectant management"
+      },
+      {
+        "label": "B",
+        "text": "Antihypertensive drug"
+      },
+      {
+        "label": "C",
+        "text": "Try vaginal delivery"
+      },
+      {
+        "label": "D",
+        "text": "Cesarean section"
+      },
+      {
+        "label": "E",
+        "text": "diuretics"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง อายุ 28 ปี ท้อง 38 สัปดาห์ เข้ารับการตรวจ NST (Non-stress test) โดยนอนหงาย พบ FHR baseline 140 ครั้งต่อนาที เมื่อมี uterine contraction ระยะเวลา 20 วินาที FHR ลดลงเป็น 100 ครั้งต่อนาที ควรจัดการอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้นอนตะแคง (change maternal position to left lateral decubitus)"
+      },
+      {
+        "label": "B",
+        "text": "ให้ O2 inhalation ผ่านหน้ากากขนาด 10 L/min"
+      },
+      {
+        "label": "C",
+        "text": "ให้ IV fluid bolus และมาตรการเพื่อลดการหดตัวของมดลูก"
+      },
+      {
+        "label": "D",
+        "text": "ส่งตรวจ ultrasound เพื่อประเมิน amniotic fluid และ fetal anomaly"
+      },
+      {
+        "label": "E",
+        "text": "ทำการสัตวบาล (fetal scalp sampling) เพื่อตรวจสอบ fetal blood gas"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": "ลักษณะนี้เป็น variable deceleration ที่เกิดจากการกดของสายสะดือ (cord compression) ซึ่งเป็นแบบ benign pattern ที่พบได้บ่อยในการตรวจ NST การนอนหงายจะเพิ่มการกดของสายสะดือ การเปลี่ยนท่าเป็นตะแคง (ขวา หรือ ซ้าย) จะลดการกดของสายสะดือและปรับปรุง uteroplacental perfusion ทำให้ FHR กลับเป็นปกติ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงตั้งครรภ์ GA 36 weeks มาตรวจครรภ์ขณะนอนตรวจมีอาการหน้ามืดถาม management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "นอนตะแคงซ้าย"
+      },
+      {
+        "label": "B",
+        "text": "ให้ O2"
+      },
+      {
+        "label": "C",
+        "text": "ให้กินน้าหวาน"
+      },
+      {
+        "label": "D",
+        "text": "ให้ IV"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 25 ปี GA 25 wkปวดท้องด้านขวาและรอบๆ Umbilicus 2-3 วันวันทีh 3 ปวดท้องทางด้านขวาของUmbilicus มากขึ้นPE : Abdomen – Soft, tender at rightparaumbilicusจะ investigate อะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "CBC"
+      },
+      {
+        "label": "B",
+        "text": "Ultrasound"
+      },
+      {
+        "label": "C",
+        "text": "Acute abdominal series"
+      },
+      {
+        "label": "D",
+        "text": "CT scan"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 25 ปีมีครรภ์แรก GA 38 wkมารพ.ด้วยมีมูกเลือดออกทางช่องคลอด 1 วันก่อนมารพ. มีมดลูกบีบตัวทุกๆ10นาที PV: os 2 cm, effacement 25 % drip Syntocynonไป 6 ชมต่อมาOs 10 cm LOA position, station 0,Caput2+,molding 2+ เบ่งคลอดมา2ชม.เด็กยังไม่ออกจะทาอย่างไรต่อไป",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Close labor progression monitoring"
+      },
+      {
+        "label": "B",
+        "text": "Close electronic fetal monitoring"
+      },
+      {
+        "label": "C",
+        "text": "Vacuum extraction"
+      },
+      {
+        "label": "D",
+        "text": "Forceps extraction"
+      },
+      {
+        "label": "E",
+        "text": "Cesarean section"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง GA 38 wk G2P1 Cervix: Fully dilate, Station+1, Molding 2+, Contraction 2+ Management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Observe progress of labor"
+      },
+      {
+        "label": "B",
+        "text": "Drip Syntocinon"
+      },
+      {
+        "label": "C",
+        "text": "Vacuum extraction"
+      },
+      {
+        "label": "D",
+        "text": "Forceps extraction"
+      },
+      {
+        "label": "E",
+        "text": "C/S"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง G2P1 GA37week ปวดท้องคลอดนาน 14 ชม.PE: cervical full dilatation, cephalic, station 0, FHR 140หลังมดลูกคลายตัว 20 วินาทีมี FHR 100 นาน 20 วินาทีถามmanagement",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cesarean section"
+      },
+      {
+        "label": "B",
+        "text": "นอนตะแคงและสังเกตอาการณ์"
+      },
+      {
+        "label": "C",
+        "text": "Vacuum Extraction"
+      },
+      {
+        "label": "D",
+        "text": "PV ดันกลับเข้าไป"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงท้อง GA 39 มารพ.ด้วยเจ็บท้องมา4ชมก่อนมารพ.แรกรับCx 2 cm ต่อมาอีก4ชม PV ได้Cx 3 cm Dx",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Normal labor"
+      },
+      {
+        "label": "B",
+        "text": "prolonged latent phase"
+      },
+      {
+        "label": "C",
+        "text": "protracted active phase"
+      },
+      {
+        "label": "D",
+        "text": "arrest of descent"
+      },
+      {
+        "label": "E",
+        "text": "arrest …"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงตั้งครรภ์อายุ 20 ปีท้องแรกครบกาหนดเจ็บท้องคลอด 10 ชัhวโมงก่อนมาโรงพยาบาลต่อมารู้สึกเจ็บท้องมากขึ้น PE: BP 70/40 PR 110 FHS 180 PV: cervix fully dilated, uterine soft consistency จงบอกการวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "uterine rupture"
+      },
+      {
+        "label": "B",
+        "text": "placenta previa"
+      },
+      {
+        "label": "C",
+        "text": "ruptured vasa previa"
+      },
+      {
+        "label": "D",
+        "text": "abruptio placenta"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้หญิงอายุ35ปี G5P4 ครรภ์นี้มาด้วยมีเลือดออกทางช่องคลอด 2ชม PTA มีประวัติครรภ์ทีh 2 C/S ส่วนครรภ์ที่ 3คลอดทางช่องคลอด PE: ปกติไม่มีมดลูกบีบตัวไม่เจ็บท้อง พบทารกอยู่transverse line, FHRปกติคิดว่าเกิดจากอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Placenta previa"
+      },
+      {
+        "label": "B",
+        "text": "Ruptured Uterus"
+      },
+      {
+        "label": "C",
+        "text": "Ruptured Vasa previa"
+      },
+      {
+        "label": "D",
+        "text": "Apruptio placenta"
+      },
+      {
+        "label": "E",
+        "text": "Latent phase of labor"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "GA 8 wkมาด้วย bleeding per vagina 1 day PTA PE:Uterus 8 wk size, os close, cervical motion tendernessnegative, no adnexal mass Diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Threatened abortion"
+      },
+      {
+        "label": "B",
+        "text": "Complete abortion"
+      },
+      {
+        "label": "C",
+        "text": "Incomplete abortion"
+      },
+      {
+        "label": "D",
+        "text": "Inevitable abortion"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 30 ปีระดูขาดมา 6 สัปดาห์ปวดท้องน้อย 1 วันPE : V/S stable, Abd : mild tenderness LLQ , no reboundtenderness PV : normal external genitalia , no definite oncervical motiom , no adnexal mass TVS : no intrauterinegestational sac , no mass ควรปฏิบัติกับผู้ป่วยรายนี้อย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Serial Hct"
+      },
+      {
+        "label": "B",
+        "text": "Serum Beta HCG and repeat at 24 hr"
+      },
+      {
+        "label": "C",
+        "text": "Admit and Close observe"
+      },
+      {
+        "label": "D",
+        "text": "Methotrexate"
+      },
+      {
+        "label": "E",
+        "text": "Explore lap"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงจิตเวชกินยาHadol, Benhexolอยู่ต่อมาผู้ป่วยอยากตั้งครรภ์จึงหยุดกินยาเองขณะนี้ตั้งครรภ์ 2 เดือนต่อมาผู้ป่วยมีอาการทางจิตเวชขึ้นอีกได้ยินเสียงแว่วว่าลูกในท้อง ไม่ใช่ลูกของตนเองและสามีมาหาแพทย์เพื่อจะทาแท้งท่านจะทาอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "admit แล้วทา ECT"
+      },
+      {
+        "label": "B",
+        "text": "ทาแท้งให้เนืhองจากเป็นสิทธิของผู้ป่วย"
+      },
+      {
+        "label": "C",
+        "text": "ทาแท้งให้เนื่องจากแม่ไม่มีความสามารถในการเลี้ยงดู"
+      },
+      {
+        "label": "D",
+        "text": "ปรึกษากับสามีหาทางแก้ไข"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 20 ปี LMP 2 wkมี SI คืนเมื่อวานไม่ได้ป้องกันไม่อยากตั้งครรภ์มาพบท่านจะ manage อย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "High dose estrogen pills"
+      },
+      {
+        "label": "B",
+        "text": "High dose progesterone pills"
+      },
+      {
+        "label": "C",
+        "text": "OCP"
+      },
+      {
+        "label": "D",
+        "text": "DMPA injection"
+      },
+      {
+        "label": "E",
+        "text": "curette"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ที่ได้รับประโยชน์จากการฉีดวัคซีนHPVมากที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ด.ญ. 7 ปีแม่มีประวัติเป็น HPV"
+      },
+      {
+        "label": "B",
+        "text": "หญิง 16 ปีไม่เคยมีเพศสัมพันธ์มาก่อน"
+      },
+      {
+        "label": "C",
+        "text": "หญิง 28 ปีมาขอคาปรึกษาว่าจะแต่งงาน"
+      },
+      {
+        "label": "D",
+        "text": "ชาย 30 ปีมาขอคาปรึกษาว่าจะแต่งงาน"
+      },
+      {
+        "label": "E",
+        "text": "หญิง 32 ปีมารักษามะเร็งปากมดลูก"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 12 ปี มีประจำเดือนครั้งแรก (menarche) เมื่อ 2 เดือนที่แล้ว วนนี้มีประจำเดือนนาน 14 วัน มีปริมาณเลือดปกติ ไม่มีอาการปวดท้องรุนแรง วินิจฉัยและจัดการอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Reassure parents and observe (ให้คำปลอบประโมทผู้ปกครองและติดตามสังเกต)"
+      },
+      {
+        "label": "B",
+        "text": "Start oral contraceptive pills immediately (เริ่มยาคุมกำเนิดทางปาก ทันที)"
+      },
+      {
+        "label": "C",
+        "text": "Perform curettage (ทำการ curettage)"
+      },
+      {
+        "label": "D",
+        "text": "Prescribe tranexamic acid and iron supplement (ให้ยาต้านเส้นใยและเสริมธาตุเหล็ก)"
+      },
+      {
+        "label": "E",
+        "text": "Refer to hematology for coagulation study (ส่งให้แผนกเลือดตรวจการแข็งตัวของเลือด)"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": "ในช่วง 1-2 ปีแรกหลังเมนาร์ก เด็กหญิงมักเกิด anovulatory cycle ที่ส่งผลให้ประจำเดือนไม่สม่ำเสมอ มีระยะเวลาที่ยาว และปริมาณที่แปรปรวน ซึ่งเป็นภาวะสภาวะปกติ (dysfunctional uterine bleeding) ที่จะเรียบร้อยเองตามเวลา ดังนั้นการปลอบประโมทผู้ปกครองและติดตามผลเป็นการจัดการที่เหมาะสม หากประจำเดือนยังไม่สม่ำเสมอนาน 2 ปีหรือเลือดออกมากเกินไป ค่อยพิจารณาการรักษาเพิ่มเติม",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงอายุ42ปีตัดมดลูกเมืhอหนึ่งสัปดาห์ก่อนจากmyomaวันนี้มีไข้ปวดท้องแผลผ่าตัดบวมแดงกดเจ็บจะทาอะไรต่อ?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Observe"
+      },
+      {
+        "label": "B",
+        "text": "warm compression"
+      },
+      {
+        "label": "C",
+        "text": "Topical ATB"
+      },
+      {
+        "label": "D",
+        "text": "Oral ATB"
+      },
+      {
+        "label": "E",
+        "text": "Open wound and drain"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หญิงอายุ 40 ปี ปฏิเสธประวัติรับประทานยาใดๆเป็นประจำ มาด้วยเลือดออกกะปริบกะปรอยระหว่างรอบเดือน (intermenstrual bleeding) มา 3 เดือน สัญญาณชีพปกติ ไม่พบมวลผิดปกติในการตรวจทางคลินิก คุณจะจัดการอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ตรวจ Pap smear และ HPV test ก่อน"
+      },
+      {
+        "label": "B",
+        "text": "ส่งตรวจ Endometrial biopsy เพื่อยกเว้นโรคร้ายแรง"
+      },
+      {
+        "label": "C",
+        "text": "ให้ Fractional Curettage เพื่อวินิจฉัยและบำบัดรักษา"
+      },
+      {
+        "label": "D",
+        "text": "ให้ Combined oral contraceptive pills เพื่อควบคุมวัฏจักรเดือน"
+      },
+      {
+        "label": "E",
+        "text": "ให้ Progestin-only pills และติดตามการปรับปรุง"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "OB",
+    "explanation": "ในหญิงวัยกลางคน (40 ปี) ที่มี intermenstrual bleeding เป็นอาการใหม่ต้องยกเว้นโรคร้ายแรง เช่น มะเร็งเนื้อเยื่อเกาะหนังสัตว์โลกก่อนโดยทำ endometrial biopsy ซึ่งเป็นมาตรฐานการรักษา เพื่อหาสาเหตุแน่นอนและยืนยันวินิจฉัย ส่วน fractional curettage เป็นวิธีเก่าแล้วและใช้น้อยลง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงอายุ 24 ปี มาด้วยอาการเจ็บและคันที่อวัยวะเพศนานแล้ว 2 วัน การตรวจร่างกายพบกลุ่มของแผลเชื่อมตื้นๆ บนพื้นผิวที่มีรอยแดงที่ลิ่มชายขวา การตรวจสอบใดช่วยในการวินิจฉัยได้มากที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Dark field microscopy / Dark ground microscopy"
+      },
+      {
+        "label": "B",
+        "text": "Gram stain"
+      },
+      {
+        "label": "C",
+        "text": "KOH (Potassium Hydroxide) preparation"
+      },
+      {
+        "label": "D",
+        "text": "Wright's stain"
+      },
+      {
+        "label": "E",
+        "text": "Methylene blue stain (MAF)"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": "อาการและลักษณะแผลที่อธิบายไว้ (group of shallow erosions on erythematous base) เป็นลักษณะเฉพาะของเพศโรค (primary herpes simplex) ซึ่ง Dark field microscopy สามารถตรวจพบเซลล์ที่ติดเชื้อไวรัส (infected epithelial cells) และมีการเคลื่อนไหวโดยเฉพาะของไวรัส ได้ดีกว่าวิธีอื่นๆ นอกจากนี้การเก็บตัวอย่างจากพื้นผิวแผลสดใหม่ยังช่วยให้ได้ผลลัพธ์ที่แม่นยำมากขึ้น",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 18 ปีโดนน้าชายข่มขืน PE พบ ecchymosis และrecent hymen tear ทา cervical – vaginal discharge ส่งอะไรเพื่อยืนยัน",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Pap smear"
+      },
+      {
+        "label": "B",
+        "text": "KOH"
+      },
+      {
+        "label": "C",
+        "text": "Tzank’s smear"
+      },
+      {
+        "label": "D",
+        "text": "Acid phosphatase"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "คนไข้หญิงอายุ 28 ปี มาด้วยอาการตกขาวสีเหลืองเหม็น มีฟอง ตรวจร่างกายพบ yellowish vaginal discharge, inflamed cervix, abdomen normal สาร องค์ประกอบ: motile trophozoites",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Trichomoniasis"
+      },
+      {
+        "label": "B",
+        "text": "Cervicitis from Neisseria gonorrhoeae"
+      },
+      {
+        "label": "C",
+        "text": "Candidiasis"
+      },
+      {
+        "label": "D",
+        "text": "Bacterial vaginosis"
+      },
+      {
+        "label": "E",
+        "text": "Chlamydial cervicitis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": "Trichomoniasis ทำให้เกิด yellowish-green frothy discharge ที่มีกลิ่นเหม็น และมี motile trophozoites (ผู้ก่อการแพร่เชื้อนั่นคือ Trichomonas vaginalis) เมื่อตรวจด้วยกล้องจุลทรรศน์ ส่วนอาการอักเสบของปากมดลูก (inflamed cervix) ก็เป็นอาการทั่วไปในภาวะนี้ โรคอื่นๆ เช่น Candida ให้ discharge ขาวนำ Gonorrhea/Chlamydia มักไม่มีฟองและมี discharge ขาวหรือสีเหลืองอ่อน",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "เด็กอายุ 2 ปี มารับการตรวจด้วยอาการมีผื่นสีขาวนวลเหมือนเศษนมข้น (curd-like lesion) ในช่องปากและเนื้อเยื่อลิ้น คิดว่าเป็น Oral Candidiasis จากการติดเชื้อ Candida albicans การรักษาที่เหมาะสมคือ?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Nystatin suspension oral rinse"
+      },
+      {
+        "label": "B",
+        "text": "Ketoconazole oral tablet"
+      },
+      {
+        "label": "C",
+        "text": "Clotrimazole topical cream"
+      },
+      {
+        "label": "D",
+        "text": "Fluconazole oral suspension"
+      },
+      {
+        "label": "E",
+        "text": "Miconazole oral gel"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": "Oral Candidiasis ในเด็กมีลักษณะ curd-like white plaques ที่มองเห็นในช่องปาก การรักษาเลือกใช้ Nystatin suspension (rinse and swallow) เนื่องจากเป็น first-line treatment สำหรับ oral candidiasis ในเด็ก มี local effect โดยตรง และปลอดภัยสูง Ketoconazole และ Fluconazole จะใช้เมื่อ Nystatin ล้มเหลว",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 70 ปีปัสสาวะเล็ดเวลาไอ,จามมา 2 ปีมีลูกมา 5 คน PV : small uterus คลาได้ bulging 2/3 anteriorvaginal wall and cervix at vaginal entry ถาม dx",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Urethroceolel w/ grade 2 uterine prolapse"
+      },
+      {
+        "label": "B",
+        "text": "Urethroceolel w/ grade 3 uterine prolapse"
+      },
+      {
+        "label": "C",
+        "text": "Cystocoele w/ grade 2 uterine prolapse"
+      },
+      {
+        "label": "D",
+        "text": "Cystocoele w/ grade 3 uterine prolapse"
+      },
+      {
+        "label": "E",
+        "text": "Urethrorectoceolel w/ grade 2 uterine prolapse"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 35 ปี ได้รับผลตรวจ Pap smear แสดง H-SIL (High-grade Squamous Intraepithelial Lesion) ควรดำเนินการต่อเป็นอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Colposcopy ด้วย biopsy และรอผลพยาธิวิทยา"
+      },
+      {
+        "label": "B",
+        "text": "Conization (excisional procedure) และส่งชิ้นเนื้อให้พยาธิวิทยา"
+      },
+      {
+        "label": "C",
+        "text": "HPV testing ทันทีและวางแผนติดตามเพิ่มเติม"
+      },
+      {
+        "label": "D",
+        "text": "ทำ Repeat Pap smear ใหม่ในอีก 3 เดือน"
+      },
+      {
+        "label": "E",
+        "text": "ติดตามด้วย Liquid-based cytology ต่อเดือน"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "OB",
+    "explanation": "H-SIL บ่งชี้ถึง CIN 2-3 ที่มีความเสี่ยงสูงต่อการพัฒนาเป็นมะเร็งจำเป็นต้องทำ Excisional procedure (Conization) เพื่อได้ชิ้นเนื้อสำหรับการประเมินพยาธิวิทยาที่สมบูรณ์ และเป็นทั้งวินิจฉัยและการรักษาในขณะเดียวกัน Colposcopy กับ biopsy ถือเป็นอันดับสอง แต่ H-SIL นั้นส่วนใหญ่ต้องการการรักษาโดยการเอาเนื้อออก",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 14 ปี มาพบแพทย์ด้วยอาการปวดท้องเรื้อรัง PE: ตัวตึง HR 100 bpm มี suprapubic tenderness PV: ผิวหนังภายนอกอวัยวะเพศเป็นสีน้ำเงินม่วง พบก้อนเนื้อสัมผัสแข็งฟูตึงระหว่าง labia majora เนื้อที่บวมอาจเนื่องจากการขังเลือดประจำเดือน ลักษณ์เป็น imperforate hymen ควรดำเนินการอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cruciate incision of the hymen with drainage"
+      },
+      {
+        "label": "B",
+        "text": "Complete mass excision and suturing"
+      },
+      {
+        "label": "C",
+        "text": "Kegel exercises for pelvic floor strengthening"
+      },
+      {
+        "label": "D",
+        "text": "Hormonal therapy to suppress menstruation"
+      },
+      {
+        "label": "E",
+        "text": "Observation and pain management only"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "OB",
+    "explanation": "Imperforate hymen ที่มีการขังเลือดประจำเดือน (hematometra) ต้องรักษาโดยการผ่าตัด cruciate incision (cross-shaped incision) เพื่อให้เลือดระบายออก ไม่ควรตัดเอาเนื้อสัมผัสออกไป เนื่องจากเป็นเนื้อปกติที่มีเลือดสะสม การผ่านี้อนุรักษ์การทำงานของ hymen ส่วนที่เหลือและช่วยลดแผลเป็น",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ob_gyn",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  }
+]

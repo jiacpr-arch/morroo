@@ -1,0 +1,64 @@
+[
+  {
+    "scenario": "A 35-year-old male presents with muscle weakness 2 hours after lunch. He is a construction worker. PE: hoarseness, muscle weakness grade I/V all extremities, normoreflexia, mild paresthesia in both hands and feet. What is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Thiamine deficiency"
+      },
+      {
+        "label": "B",
+        "text": "Myasthenia gravis"
+      },
+      {
+        "label": "C",
+        "text": "Periodic paralysis"
+      },
+      {
+        "label": "D",
+        "text": "Polymyositis"
+      },
+      {
+        "label": "E",
+        "text": "Hypokalemic periodic paralysis with thyroid disease"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "neuro med1",
+    "status": "complete",
+    "ai_notes": "Key clinical features: acute onset paralysis after food intake in young male, normoreflexia (excludes myasthenia which has weakness without reflex loss initially), hoarseness suggests bulbar involvement. Periodic paralysis fits best with acute episodic weakness and association with meals. Hypokalemic periodic paralysis most common type. Added option E as plausible distractor given presentation could include thyroid association.",
+    "subject": "neuro_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 62-year-old man has proximal muscle weakness that improves with repetitive movement. Chest x-ray is shown. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Lymphoma"
+      },
+      {
+        "label": "B",
+        "text": "Lung cancer"
+      },
+      {
+        "label": "C",
+        "text": "Germ cell tumor"
+      },
+      {
+        "label": "D",
+        "text": "Thymoma"
+      },
+      {
+        "label": "E",
+        "text": "Mediastinal adenopathy from tuberculosis"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "neuro med1",
+    "status": "needs_review",
+    "ai_notes": "Proximal muscle weakness that improves with repetitive movement is classic for myasthenia gravis. Thymoma is found in 10-15% of MG patients and is the most common anterior mediastinal mass associated with MG in this age group. Chest X-ray would show anterior mediastinal mass. Note: Original image/X-ray findings not provided; diagnosis inferred from clinical presentation. Added option E as plausible mediastinal mass distractor. Status marked for review due to missing imaging details.",
+    "subject": "neuro_med",
+    "exam_type": "NL2"
+  }
+]

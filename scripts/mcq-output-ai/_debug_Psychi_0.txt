@@ -1,0 +1,252 @@
+[
+  {
+    "scenario": "เด็กชาย 3 ขวบชอบพูดเป็นคำๆ ข้อใดที่น้อยที่สุดที่สนับสนุนการวินิจฉัยออติซึ่ม",
+    "choices": [
+      {"label": "A", "text": "เขาชอบกินอาหารแบบเดียวกัน"},
+      {"label": "B", "text": "เขาไม่มีการติดตาสัมพันธ์"},
+      {"label": "C", "text": "เขาชอบให้พ่อแม่กอด"},
+      {"label": "D", "text": "เขาเลียนแบบประโยคจากโฆษณาโทรทัศน์"},
+      {"label": "E", "text": "เขามีปัญหาการพูดคุยซ้ำๆ"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "การชอบให้พ่อแม่กอดแสดงถึงการผูกพันทางอารมณ์ที่เหมาะสม ซึ่งไม่สอดคล้องกับออติซึ่ม ส่วนข้ออื่นๆ เป็นลักษณะหลักของออติซึ่ม"
+  },
+  {
+    "scenario": "เด็กหญิง 8 ขวบ ร้องไห้ตอนเช้าทุกวันถึงโรงเรียน หยุดเงียบ 30 นาที แต่ขอโทรหาแม่ทุก 1 ชั่วโมง คุณครูบอกว่าค่อนข้างเงียบ แต่เข้ากับเพื่อนได้ การวินิจฉัยคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Generalized anxiety disorder"},
+      {"label": "B", "text": "Separation anxiety disorder"},
+      {"label": "C", "text": "Normal"},
+      {"label": "D", "text": "Adjustment disorder with anxiety"},
+      {"label": "E", "text": "Social anxiety disorder"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "การร้องไห้ตอนเช้า การขอติดต่อแม่บ่อย และความเงียบเมื่อแยกจากแม่ เป็นลักษณะของ Separation anxiety disorder"
+  },
+  {
+    "scenario": "หญิงสาว 24 ขวบ พยายามฆ่าตัวตาย เพิ่งทะเลาะกับแฟนหนึ่งเดือนก่อน มีประวัติความสัมพันธ์ที่ไม่ดีในอดีต รู้สึกว่างเปล่า ใช้สารเสพติด เป็นอาจารทำร้ายตัวเอง แม้แต่ปัญหาเล็กน้อย การวินิจฉัยคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Major depressive disorder"},
+      {"label": "B", "text": "Borderline personality disorder"},
+      {"label": "C", "text": "Histrionic personality disorder"},
+      {"label": "D", "text": "Antisocial personality disorder"},
+      {"label": "E", "text": "Substance use disorder"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "ลักษณะการฆ่าตัวตาย ความสัมพันธ์ไม่เสถียร ความรู้สึกว่างเปล่า self-harm และการใช้สารเสพติด เป็นลักษณะหลักของ Borderline personality disorder"
+  },
+  {
+    "scenario": "หญิงสาว 13 ขวบ หลังการหย่าร้างของพ่อแม่ 6 เดือน บริโภคยากลุ่มแอมโนฟีนอล 20 เม็ด นำมาถึงโรงพยาบาลภายใน 1 ชั่วโมง การตรวจร่างกาย: ระคายเคืองและไม่สนใจ การวินิจฉัยที่น่าจะเป็นไปได้มากที่สุด",
+    "choices": [
+      {"label": "A", "text": "Anxiety disorder"},
+      {"label": "B", "text": "Major depressive disorder"},
+      {"label": "C", "text": "Adjustment disorder"},
+      {"label": "D", "text": "Adolescent turmoil"},
+      {"label": "E", "text": "Conduct disorder"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "พยายามฆ่าตัวตายหลังเหตุการณ์เครียด ลักษณะการหดถอนสังคม ระคายเคืองและไม่สนใจ เป็นลักษณะของ Major depressive disorder ในวัยรุ่น"
+  },
+  {
+    "scenario": "ข้อใดมีความสัมพันธ์กับ borderline personality disorder",
+    "choices": [
+      {"label": "A", "text": "เพิ่มความเสี่ยงของการตายก่อนวัยอันควร"},
+      {"label": "B", "text": "ลดความเสี่ยงในการพัฒนาอาการไซโคติก"},
+      {"label": "C", "text": "ลดความเสี่ยงในการพัฒนาความผิดปกติจากการสะเทือนจิตใจ"},
+      {"label": "D", "text": "ลดความเสี่ยงในการพัฒนาความผิดปกติของบุคลิกภาพอื่น"},
+      {"label": "E", "text": "เพิ่มความเสี่ยงในการหายจากความผิดปกติของบุคลิกภาพ"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Borderline personality disorder มีความเสี่ยงสูงต่อการพยายามฆ่าตัวตายซ้ำและการตายก่อนวัยอันควร ร้อยละ 8-10 ของผู้ป่วยกระทำฆ่าตัวตายสำเร็จ"
+  },
+  {
+    "scenario": "ชายอายุ 20 ปี หูแว่วมา 3 วัน เก็บตัวในห้องตั้งแต่เข้ามหาวิทยาลัยไม่ได้เมื่อ 2 ปีก่อน การวินิจฉัยคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Brief psychotic disorder"},
+      {"label": "B", "text": "Schizophrenia"},
+      {"label": "C", "text": "Adjustment disorder with anxiety"},
+      {"label": "D", "text": "Schizotypal personality disorder"},
+      {"label": "E", "text": "Delusional disorder"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "ระยะเวลาอาการหูแว่วเพียง 3 วัน ซึ่งสั้นกว่า 1 เดือน ถือเป็น Brief psychotic disorder ไม่ใช่ Schizophrenia"
+  },
+  {
+    "scenario": "หญิงสาว 38 ขวบ รู้สึกเบื่อ สูญเสียความสนใจ คำพูดช้า และนอนไม่หลับเป็นเวลา 1 เดือน บางครั้งได้ยินเสียงบอกให้เธอโดดลงจากหน้าต่าง การวินิจฉัยที่น่าจะเป็นไปได้มากที่สุด",
+    "choices": [
+      {"label": "A", "text": "Adjustment disorder with depressed mood"},
+      {"label": "B", "text": "Dysthymic disorder with psychotic feature"},
+      {"label": "C", "text": "Major depressive disorder with psychotic feature"},
+      {"label": "D", "text": "Schizophrenia with secondary depression"},
+      {"label": "E", "text": "Mixed anxiety depressive disorder"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "มีอาการซึมเศร้าหลัก (เบื่อ สูญเสียสนใจ นอนไม่หลับ คำพูดช้า) ระยะเวลา 1 เดือน พร้อมอาการไซโคติก (ได้ยินเสียง) ดังนั้นเป็น Major depressive disorder with psychotic feature"
+  },
+  {
+    "scenario": "หญิงสาว 50 ขวบ อารมณ์ซึมเศร้า นอนไม่หลับ ลดการกิน และมีความคิดฆ่าตัวตาย นอกจากนี้เธอยังได้ยินเสียงบอกให้เธอตายเพื่อสิ้นสุดความทุกข์ อาการเริ่มต้นหลังจากบุตรชายอายุ 25 ปีเสียชีวิต 2 เดือนที่แล้ว เธอไม่ได้ทำงานบ้านและใช้เวลาในห้องนอนเพียงลำพัง การวินิจฉัยที่น่าจะเป็นไปได้มากที่สุด",
+    "choices": [
+      {"label": "A", "text": "Grief reaction"},
+      {"label": "B", "text": "Acute stress reaction"},
+      {"label": "C", "text": "Schizoaffective disorder"},
+      {"label": "D", "text": "Major depressive disorder with psychotic feature"},
+      {"label": "E", "text": "Adjustment disorder with depressed mood"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "แม้ว่าจะมีเหตุการณ์สำคัญ แต่อาการเกินกว่า Normal grief (ตัวหนึ่ง: ลดการกิน นอนไม่หลับ ความคิดฆ่าตัวตาย ไม่ทำกิจวัตร อาการไซโคติก) Duration 2 เดือน ทำให้เป็น Major depressive disorder with psychotic feature"
+  },
+  {
+    "scenario": "นักศึกษา ร้องไห้ทุกวัน กลัวเพื่อนไม่ยอมรับ มีอาการตั้งแต่สมัยมัธยมปลาย ทำงานได้ตามปกติ การวินิจฉัยคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Dysthymia"},
+      {"label": "B", "text": "Adjustment disorder"},
+      {"label": "C", "text": "Major depressive disorder"},
+      {"label": "D", "text": "Social anxiety disorder"},
+      {"label": "E", "text": "Persistent depressive disorder"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "อาการเศร้าหลวมระยะยาว (ตั้งแต่สมัยมัธยมปลาย) สามารถทำงานได้ แต่มีความเศร้าต่อเนื่อง โดยไม่ถึงระดับ Major depressive episode เป็นลักษณะของ Dysthymia"
+  },
+  {
+    "scenario": "ชายอายุ 20 ปี ตรวจสอบล็อคประตูซ้ำๆ 20-30 ครั้ง อาการเพิ่มขึ้นใน 3 เดือน ไปทำงานช้า ไม่มีโรคประจำตัว การตรวจร่างกาย: ปกติ ไม่มีประวัติการใช้สารเสพติด การวินิจฉัยคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Phobia"},
+      {"label": "B", "text": "Generalized anxiety disorder"},
+      {"label": "C", "text": "Obsessive compulsive disorder"},
+      {"label": "D", "text": "Personality disorder"},
+      {"label": "E", "text": "Specific anxiety disorder"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "การตรวจสอบซ้ำๆ 20-30 ครั้ง เป็นคลั่งไคล้ (Compulsion) ซึ่งเป็นลักษณะของ Obsessive compulsive disorder"
+  },
+  {
+    "scenario": "หญิงสาว กังวลว่าจะเป็นโรคร้ายแรง ต่อมากังวลว่าสามีขับรถไปข้างนอกจะอันตราย การวินิจฉัยคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Generalized anxiety disorder"},
+      {"label": "B", "text": "Panic disorder"},
+      {"label": "C", "text": "Hypochondriasis"},
+      {"label": "D", "text": "Specific phobia"},
+      {"label": "E", "text": "Social anxiety disorder"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "กังวลหลากหลายเรื่อง (สุขภาพและความปลอดภัยของสามี) เป็นลักษณะของ Generalized anxiety disorder"
+  },
+  {
+    "scenario": "ชายอายุ 50 ปี มาพร้อมอาการเฟ้อง บวมหลายปี การตรวจชันสูตรหลายครั้งปกติ มีประวัติความเครียดในครอบครัว ภรรยาทำให้เขารู้สึกว่าตัวเอง ไม่สำคัญ เขากังวลว่าจะเป็นโรคร้ายแรงเมื่อมีอาการท้องไม่สบาย การวินิจฉัยคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Panic disorder"},
+      {"label": "B", "text": "Dysthymia"},
+      {"label": "C", "text": "Hypochondriasis"},
+      {"label": "D", "text": "Generalized anxiety disorder"},
+      {"label": "E", "text": "Obsessive compulsive disorder"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "โฟกัสบนสิ่งที่ผิดปกติเล็กน้อยของร่างกาย (บวมท้อง) และตีความว่าเป็นโรคร้ายแรง บริบทของความเครียดทำให้เพิ่มเติม แต่เป็นลักษณะของ Hypochondriasis"
+  },
+  {
+    "scenario": "หญิงสาว 25 ปี รู้สึกหัวใจเต้นเร็ว เหงื่อออก และกลัว ในตอนกลางคืน เป็นลูกเดียว ไม่เคยออกจากเมืองบ้านเกิด 2 เดือนที่แล้วได้รับทุนเรียนที่กรุงเทพและย้ายไปอยู่หอพัก เพื่อนคนหนึ่งถูกปล้นเมื่อ 3 วันก่อน หลังจากนั้นเธอรู้สึกไม่ปลอดภัย กลัวการอยู่คนเดียว และกลัวจะตายจากการเต้นหัวใจ การวินิจฉัยที่น่าจะเป็นไปได้มากที่สุด",
+    "choices": [
+      {"label": "A", "text": "Panic disorder"},
+      {"label": "B", "text": "Hypochondriasis"},
+      {"label": "C", "text": "Acute stress disorder"},
+      {"label": "D", "text": "Posttraumatic stress disorder"},
+      {"label": "E", "text": "Generalized anxiety disorder"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "มีเหตุการณ์เครียดรุนแรง (เพื่อนถูกปล้น 3 วันก่อน) อาการปรากฏภายใน 3 วัน รวมถึงอาการหัวใจเต้นเร็ว เหงื่อออก กลัว ไม่ปลอดภัย Duration น้อยกว่า 1 เดือน = Acute stress disorder"
+  },
+  {
+    "scenario": "ชายประท้วง มีอาการระเบิดของอารมณ์ ใจสั่น ร้อนวูบวาบ หวาดระแวง กลัวว่าจะมีคนมาทำร้าย พฤติกรรมเปลี่ยนไป 2 วันก่อนขณะเดินประท้วง มีเหตุการณ์เพื่อนร่วมเดินประท้วงโดนยิงตายต่อหน้า ลูกสาวบอกว่าไม่เคยเป็นแบบนี้มาก่อน การวินิจฉัยคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Adjustment disorder"},
+      {"label": "B", "text": "Acute stress disorder"},
+      {"label": "C", "text": "Major depressive disorder"},
+      {"label": "D", "text": "Bereavement depression"},
+      {"label": "E", "text": "Posttraumatic stress disorder"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "มีเหตุการณ์บาดเจ็บจิตใจรุนแรง (เพื่อนโดนยิงตายต่อหน้า) อาการปรากฏภายใน 2 วัน รวมถึง hyperarousal (ใจสั่น หวาดระแวง) และการเปลี่ยนแปลงพฤติกรรม Duration สั้น = Acute stress disorder"
+  },
+  {
+    "scenario": "หญิงสาว 40 ปี สูญเสียหน่วยความจำเพิ่มขึ้นเป็นเวลา 2 ปี ทำให้เพิ่มเติมความผิดพลาดในการทำงานในช่วง 6 เดือนที่ผ่านมา หัวหน้างานต้องพูดซ้ำและดังขึ้น บางครั้งเธอไม่สามารถจำเพื่อนที่พูดคุยกับเธอได้ การเขียนไม่เปลี่ยนแปลง เธอดูแลแม่เพียงคนเดียว อายุ 75 ปี ที่มีอัลไซเมอร์ระยะปลายเป็นระยะเวลา 6 ปี การวินิจฉัยคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Caregiver burden"},
+      {"label": "B", "text": "TIA (Transient Ischemic Attack)"},
+      {"label": "C", "text": "Alzheimer disease"},
+      {"label": "D", "text": "Frontotemporal dementia"},
+      {"label": "E", "text": "Vascular cognitive impairment"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "อาการเศร้าหลวม สูญเสียหน่วยความจำ ความผิดพลาดในการทำงาน แต่การเขียนยังคงปกติ บริบทของการดูแลแม่ผู้ป่วยอัลไซเมอร์เพียงคนเดียว ระบุว่านี่คือความเหนื่อยหน่ายของผู้ดูแล (Caregiver burden) ไม่ใช่โรคอัลไซเมอร์ของตัวเธอเอง"
+  },
+  {
+    "scenario": "หญิงสาว มีชีวิตการแต่งงานที่มีความสุขกับสามีเป็นเวลา 10 ปี 6 เดือนที่แล้ว เธอรู้สึกซึมเศร้า พร้อมการร้องเรียนเรื่องความเป็นชา ที่มือและเท้า มีความรุนแรงระหว่างเธอและสามี ความสัมพันธ์ของพวกเขาห่างไกลจากกัน เธอเริ่มเป็นแบบนี้หลังจากลูกชายของเธออพยพแต่งงานแล้ว ฟอกรับการวินิจฉัยว่าเป็นเลือดขาว ซึ่งหลังจากฟอกซ้ำอีกครั้ง การวินิจฉัยที่น่าจะเป็นไปได้มากที่สุดของครอบครัวนี้",
+    "choices": [
+      {"label": "A", "text": "Midlife crisis"},
+      {"label": "B", "text": "Couple violence"},
+      {"label": "C", "text": "Family of the dying"},
+      {"label": "D", "text": "Family of chronic illness"},
+      {"label": "E", "text": "Family experiencing major transition"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "ครอบครัวกำลังเผชิญกับโรครุนแรงของลูก (ลูกเลือดขาว) ซึ่งเป็นเหตุของความตึงเครียดในความสัมพันธ์สามี-ภรรยาและอาการซึมเศร้า = Family of chronic illness"
+  },
+  {
+    "scenario": "ชายอายุ 61 ปี ม่ายปลดเกษียณ มารพ.เพราะเพื่อนบ้านพบตัวขณะกำลังพยายามแขวนคอตัวเองเมื่อ 2 สัปดาห์ก่อนหน้านี้ เข้ามาพบแพทย์และได้รับการวินิจฉัยว่า Major depressive disorder ไม่เคยมีความคิดฆ่าตัวตายมาก่อน การจัดการในสถานการณ์นี้ควรเป็นอย่างไร",
+    "choices": [
+      {"label": "A", "text": "รับเข้ารพ. + ประเมินความเสี่ยงฆ่าตัวตาย"},
+      {"label": "B", "text": "บอกเพื่อนบ้านให้สังเกตอาการผิดปกติ"},
+      {"label": "C", "text": "ให้องค์การสงเคราะห์ลงพื้นที่เยี่ยมบ้านทันที"},
+      {"label": "D", "text": "ให้ยาแอมิตริปไทลีน (amitriptyline) 2 สัปดาห์"},
+      {"label": "E", "text": "ให้คำปรึกษาแก่ครอบครัว"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมีความเสี่ยงสูงต่อการฆ่าตัวตายสำเร็จ (เพิ่งพยายาม 2 สัปดาห์ที่แล้ว) ต้องรับเข้ารพ.ทั้งเพื่อความปลอดภัยและประเมินความเสี่ยงฆ่าตัวตายอย่างละเอียด"
+  },
+  {
+    "scenario": "ชายอายุ 20 ปี หวาดระแวง เป็นเวลา 1 เดือน ได้ยินเสียงคนขู่ทำร้ายเวลาอยู่คนเดียว ใช้ยาบ้า (ya-ba) มาเป็นเวลานาน และหยุดใช้เมื่อ 1 สัปดาห์ที่แล้ว วิวัฒนาการของอาการในกรณีนี้เป็นอย่างไร",
+    "choices": [
+      {"label": "A", "text": "หายบ้างแต่ไม่หมดสิ้น"},
+      {"label": "B", "text": "หายในเวลา 1 เดือน"},
+      {"label": "C", "text": "หายในเวลา 12 เดือน"},
+      {"label": "D", "text": "ยังคงอาการต่อไปตลอดชีวิต"},
+      {"label": "E", "text": "หายแต่กลับมาซ้ำในเวลา 10 เดือน"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี Stim

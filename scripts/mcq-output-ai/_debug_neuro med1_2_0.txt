@@ -1,0 +1,285 @@
+[
+  {
+    "scenario": "หญิง 15 ปี มาด้วยอาการปวดศีรษะข้างเดียว มา 4 เดือน มีอาการ เดือนละ 2-3 ครั้ง จงให้ยาป้องกัน (Prophylaxis)",
+    "choices": [
+      {"label": "A", "text": "Propranolol"},
+      {"label": "B", "text": "Sumatriptan"},
+      {"label": "C", "text": "Flunarizine"},
+      {"label": "D", "text": "Propranolol และ Sumatriptan"},
+      {"label": "E", "text": "Propranolol และ Flunarizine"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "Prophylaxis สำหรับ Migraine ที่เกิด 2-3 ครั้งต่อเดือนควรใช้ยาป้องกัน ตัวเลือก E (Propranolol และ Flunarizine) เป็นตัวเลือกที่ดี เนื่องจากทั้ง Propranolol (beta-blocker) และ Flunarizine (calcium channel blocker) เป็นยาป้องกัน migraine ชั้นแรก"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 30 ปี ปวดศีรษะมากทันที เวียนหัว คลื่นไส้อาเจียน drowsiness, BP 150/110, PR 80, RR 22, stiffness of neck, Babinski's sign ลบ, Retinal artery ไม่มีพัลส์, ไม่มี papilledema ในผู้ป่วยรายนี้น่าจะคิดถึงโรคใดมากที่สุด",
+    "choices": [
+      {"label": "A", "text": "Migraine"},
+      {"label": "B", "text": "Viral encephalitis"},
+      {"label": "C", "text": "Subarachnoid hemorrhage"},
+      {"label": "D", "text": "Bacterial meningitis"},
+      {"label": "E", "text": "Cerebral venous sinus thrombosis"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "อาการปวดศีรษะเฉพาะที่มากทันที (thunderclap headache) + neck stiffness + HTN + drowsiness ชี้ไปที่ Subarachnoid hemorrhage มากกว่า SAB มีความ necky จาก meningeal irritation และอาจเกิด vasospasm ทำให้ BP สูง ตัวเลือก E เพิ่มเติมเป็น plausible distractor"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 70 ปี มีแขนขาซ้ายอ่อนแรง และมี EKG ดังนี้ (มี ST elevate) ให้ยาใดป้องกันอาการดังกล่าว",
+    "choices": [
+      {"label": "A", "text": "Aspirin"},
+      {"label": "B", "text": "Enoxaparin"},
+      {"label": "C", "text": "Clopidogrel"},
+      {"label": "D", "text": "Warfarin"},
+      {"label": "E", "text": "Dipyridamole"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมีอาการซีกขวา + ST elevate หมายถึง acute stroke จากสาเหตุ cardiac (MI with cardioembolism) ยาป้องกันหลัก คือ Aspirin เพื่อป้องกันการเกิดลิ่มเลือดซ้ำ"
+  },
+  {
+    "scenario": "หญิงไทย 70 ปี ไม่มีโรคประจำตัว สบายดีมาตลอด มีอาการแขนซ้ายอ่อนแรง 5 นาที EKG เป็น Atrial Fibrillation ใช้ยาอะไรป้องกันอาการอ่อนแรง",
+    "choices": [
+      {"label": "A", "text": "Aspirin"},
+      {"label": "B", "text": "Warfarin"},
+      {"label": "C", "text": "Clopidogrel"},
+      {"label": "D", "text": "Enoxaparin"},
+      {"label": "E", "text": "Aspirin + Clopidogrel"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยหญิง 70 ปี (female ≥65 ปี) มี Atrial Fibrillation เป็น stroke risk factor ที่สำคัญ ควร anticoagulate ด้วย Warfarin (หรือ DOAC) มากกว่า Aspirin เพียงอย่างเดียว"
+  },
+  {
+    "scenario": "ชายอายุ 20 ปี มาจากอุบัติเหตุรถมอเตอร์ไซค์ ตรวจ CT พบ crescent shape at frontal region ในผู้ป่วยรายนี้น่าจะคิดถึงโรคใดมากที่สุด",
+    "choices": [
+      {"label": "A", "text": "Acute epidural hemorrhage"},
+      {"label": "B", "text": "Acute subdural hemorrhage"},
+      {"label": "C", "text": "Subacute epidural hemorrhage"},
+      {"label": "D", "text": "Intracerebral hemorrhage"},
+      {"label": "E", "text": "Subarachnoid hemorrhage"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "Crescent shape (ภูมิที่ bounded by dura) บน CT เป็นลักษณะของ Epidural hemorrhage ส่วน Subdural เป็น crescentic or crescent-shaped แต่ค่อนข้างแตกต่าง Epidural moreที่ bounded by dura mater"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 50 ปี ขณะดูโทรทัศน์นั่งที่โซฟา มีอาการปวดท้ายทอย ลุกเดินขึ้นมีเดินเซขวา PE: pupil 1mm ทั้งสองข้าง แขนขาอ่อนแรง ถามว่า lesion อยู่ที่ใด",
+    "choices": [
+      {"label": "A", "text": "Pontine hemorrhage"},
+      {"label": "B", "text": "Cerebellar hemorrhage"},
+      {"label": "C", "text": "Subarachnoid hemorrhage"},
+      {"label": "D", "text": "Basal ganglion hemorrhage"},
+      {"label": "E", "text": "Intraventricular hemorrhage"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "อาการ: ปวดท้ายทอย, เดินเซ, pinpoint pupils (1mm) + weakness = Pontine hemorrhage ซึ่งทำให้ pupil pinpoint เพราะหัวข้อ parasympathetic ที่ pons และ quadriplegia หรือ weakness"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 65 ปี เป็นมะเร็งปอดระยะที่ 1 ได้รับการผ่าตัดไปแล้ว หลังผ่าไม่ได้รับเคมีบาบัดหรือรังสีรักษาต่อมา มีอาการซีกขวาอ่อนแรง gr.4 ร่วมกับมีอาการชักเกร็งทั่วตัว ก่อนมา 30 นาที ชักเกร็งกระตุกจากแขนขา แล้วต่อมาชักทั่วตัว หลังชักรู้สึกตัวดี PE: good consciousness, Lung clear, scar at Lt. chest wall, tracheotomy scar จะให้ยาอะไร",
+    "choices": [
+      {"label": "A", "text": "Clonazepam"},
+      {"label": "B", "text": "Phenobarbital"},
+      {"label": "C", "text": "Phenytoin"},
+      {"label": "D", "text": "Carbamazepine"},
+      {"label": "E", "text": "Valproate"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี seizure secondary จากสมองอักเสบหรือ metastasis จากมะเร็งปอด ยาป้องกันที่ดีคือ Phenytoin (loading dose แล้ว maintenance) เพื่อป้องกัน recurrent seizure"
+  },
+  {
+    "scenario": "ชาย 20 ปี ไข้สูง ปวดหัว PE: subconjunctival hemorrhage BT 39°C, stiff neck positive, petechia and purpura on both legs จงบอก organism ที่เป็นสาเหตุ",
+    "choices": [
+      {"label": "A", "text": "Neisseria meningitidis"},
+      {"label": "B", "text": "Haemophilus influenzae"},
+      {"label": "C", "text": "Streptococcus pneumoniae"},
+      {"label": "D", "text": "Staphylococcus aureus"},
+      {"label": "E", "text": "Mycoplasma pneumoniae"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "ลักษณะ: ปวดหัว + neck stiffness + fever + petechia/purpura + subconjunctival hemorrhage เป็นลักษณะของ Meningococcal meningitis ที่เกิดจาก Neisseria meningitidis ซึ่งมีชีวิตแบบหลัก ของ meningitis ในเด็กและวัยรุ่น"
+  },
+  {
+    "scenario": "หญิง 30 ปี มีอาการปวดหัวเป็นๆ หายๆ 3-4 ครั้งต่อเดือน เป็นมา 2 ปี ตรวจร่างกายปกติดี จะให้ยาอะไรป้องกัน",
+    "choices": [
+      {"label": "A", "text": "Diazepam"},
+      {"label": "B", "text": "Amitriptyline"},
+      {"label": "C", "text": "Lorazepam"},
+      {"label": "D", "text": "CT brain"},
+      {"label": "E", "text": "Propranolol"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "หญิง 30 ปี ปวดหัวเป็นๆ 3-4 ครั้ง/เดือน เป็นลักษณะของ Migraine หรือ Tension headache ต้องให้ Amitriptyline (tricyclic antidepressant) สำหรับป้องกัน tension-type headache หรือ Propranolol สำหรับ Migraine"
+  },
+  {
+    "scenario": "ชาย 24 ปี ชัก 1 ชั่วโมง ชักตั้งแต่อายุ 15 ปี ชัก 3-4 ครั้งต่อปี ไม่ได้รักษามา 1 ปี ตอนนี้ไม่มีอาการชัก จะให้ยาอะไรป้องกัน",
+    "choices": [
+      {"label": "A", "text": "Diazepam"},
+      {"label": "B", "text": "Phenytoin"},
+      {"label": "C", "text": "Phenobarbital"},
+      {"label": "D", "text": "Midazolam"},
+      {"label": "E", "text": "Gabapentin"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยชาย 24 ปี มี epilepsy (ชัก 3-4 ครั้ง/ปี) ควรได้รับการรักษาด้วยยา antiepileptic แรก คือ Phenytoin หรือ Levetiracetam ตัวเลือก B เป็นคำตอบที่ดี"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 80 ปี มาด้วยอ่อนแรงซีกซ้าย หมดสติ 5 วัน PTA ขณะนั่งดูโทรทัศน์ PE: stupor HR 60 completely irregular RR 12 Lt. hemiparesis pupil Lt. 2 mm Rt. 4 mm upgoing Lt. plantar reflex ท่านเป็นแพทย์ที่ ER จง Manage เบื้องต้นอย่างไร",
+    "choices": [
+      {"label": "A", "text": "IV furosemide"},
+      {"label": "B", "text": "IV nitroglycerin"},
+      {"label": "C", "text": "IV heparin drip"},
+      {"label": "D", "text": "Endotracheal intubation"},
+      {"label": "E", "text": "IV dexamethasone"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยหญิง 80 ปี stupor + hemiparesis + anisocoria + AF (completely irregular) = stroke/hemorrhage with decreased GCS ต้องรักษาทางอากาศหลัก คือ Endotracheal intubation เพื่อป้องกัน aspiration"
+  },
+  {
+    "scenario": "ผู้ชายปวดหัว ปวดเบ้าตาจนต้องตื่นกลางดึก มีอาการนาน 2 เดือน แล้วหายไป ตอนนี้กลับมาเป็นใหม่มีปวดเบ้าตาซ้ายบ้างหรือเบ้าตาขวาอย่างเดียว การวินิจฉัยที่เหมาะสมคือ",
+    "choices": [
+      {"label": "A", "text": "Cluster headache"},
+      {"label": "B", "text": "Tension headache"},
+      {"label": "C", "text": "Migraine"},
+      {"label": "D", "text": "Paroxysmal hemicrania"},
+      {"label": "E", "text": "Hemiplegic migraine"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "ลักษณะ: ปวดเบ้าตาข้างเดียว (unilateral orbital pain) + ตื่นจากนอน + remission แล้วกลับมา = Cluster headache ซึ่งเป็น autonomic headache ที่เป็นซ้ำๆ"
+  },
+  {
+    "scenario": "ชาย 65 ปี เป็นมะเร็งปอดระยะที่ 1 ได้รับการผ่าตัดไปแล้ว หลังผ่าไม่ได้รับเคมีบาบัดหรือรังสีรักษาต่อ มีอาการซีกขวาอ่อนแรง gr.4 ร่วมกับมีอาการชักเกร็งทั่วตัว ก่อนมา 30 นาที ชักเกร็งกระตุกจากแขนขา แล้วต่อมาชักทั่วตัว หลังชักรู้สึกตัวดี PE: good consciousness, Lung clear, scar at Lt. chest wall, tracheotomy scar Management?",
+    "choices": [
+      {"label": "A", "text": "Clonazepam"},
+      {"label": "B", "text": "Phenobarbital"},
+      {"label": "C", "text": "Phenytoin"},
+      {"label": "D", "text": "Carbamazepine"},
+      {"label": "E", "text": "Valproate"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี brain metastasis จากมะเร็งปอด manifesting as seizure ยา first-line antiepileptic คือ Phenytoin หรือ Levetiracetam"
+  },
+  {
+    "scenario": "ชายไทยอายุ 25 ปี มีประวัติชักทั้งตัวมา 2 ครั้ง on Phenytoin 300 mg/day หลังจากนั้นไม่มีอาการชักอีก 3 วันมีไข้ ชักทั้งตัว CT: calcified 3 mm, no edema รอบๆ ถาม Management",
+    "choices": [
+      {"label": "A", "text": "Albendazole"},
+      {"label": "B", "text": "ให้ยาเดิมต่อ"},
+      {"label": "C", "text": "เปลี่ยนเป็น Sodium Valproate"},
+      {"label": "D", "text": "เพิ่ม dose Phenytoin"},
+      {"label": "E", "text": "Surgery เอา calcification ออก"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี calcified lesion 3 mm + seizure + fever = Neurocysticercosis (จากตัวอ่อน Taenia solium) ต้องให้ Albendazole หรือ Praziquantel พร้อมกับ antiepileptic ที่เดิม"
+  },
+  {
+    "scenario": "ผู้ป่วยมีอาการ Migraine ถามว่ายาใดที่ป้องกันอาการ Migraine ได้ดีสุด",
+    "choices": [
+      {"label": "A", "text": "Aspirin"},
+      {"label": "B", "text": "Propranolol"},
+      {"label": "C", "text": "Indomethacin"},
+      {"label": "D", "text": "Ergotamine"},
+      {"label": "E", "text": "Amitriptyline"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "Prophylaxis สำหรับ Migraine ยาที่มีประสิทธิภาพดีที่สุด คือ Propranolol (beta-blocker) ตามด้วย Flunarizine, Amitriptyline หรือ Topiramate"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 70 ปี มีประวัติชักอยู่เดิม วันนี้ชัก GTC seizure 30 นาที ที่บ้าน ในรถพยาบาลชักอีก 2 ครั้งได้ Diazepam IV ไป 2 ครั้ง มาถึงรพ. ชักอีก 1 ครั้ง 30 วินาที หยุดแล้ว DTX 140 จะให้ยา",
+    "choices": [
+      {"label": "A", "text": "Diazepam"},
+      {"label": "B", "text": "Clonazepam"},
+      {"label": "C", "text": "Phenytoin"},
+      {"label": "D", "text": "Phenobarbital"},
+      {"label": "E", "text": "Valproate"},
+      {"label": "F", "text": "Carbamazepine"},
+      {"label": "G", "text": "Thiamine"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยอายุ 70 ปี มี status epilepticus (ชักเกิน 30 นาที) ได้รับ benzodiazepine แล้ว 2 ครั้ง ต้องให้ antiepileptic หลัก คือ Phenytoin (IV loading dose) เพื่อควบคุมการชักต่อ"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 80 ปี มาด้วยซึมลง เรียกตื่นแล้วหลับต่อ ไม่ยอมลงจากเตียง อาเจียนเป็นอาหาร หลังให้อาหาร 1 ครั้ง PE: P 80/min ตรวจร่างกายปกติ K, Mg, PO4 อยู่ในเกณฑ์ปกติ ไม่มีอ่อนแรง จง investigate เพิ่มเติม",
+    "choices": [
+      {"label": "A", "text": "Thyroid function test"},
+      {"label": "B", "text": "CT brain"},
+      {"label": "C", "text": "EEG"},
+      {"label": "D", "text": "Chest X-ray"},
+      {"label": "E", "text": "Blood culture"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยอายุ 80 ปี ซึมลง refusal to cooperate อาเจียน = ต้องคิด stroke/hemorrhage/subdural hematoma ต้อง CT brain"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 80 ปี สุขภาพแข็งแรงดีมาตลอด ซึมลง 5 วัน PTA กินไม่ค่อยได้ เช้านี้ปลุกตื่นแล้วนอนต่อ กินข้าวแล้วอาเจียนออกมาเป็นเศษอาหาร U/D: Cardiac arrhythmia (เป็น off and on) และ DM on ยาละลายลิ่มเลือดและยาเบาหวานต่อเนื่อง PE: muscle power grade 3 all extremities, V/S stable PR 90/min regular, Electrolytes normal, Calcium normal, Magnesium normal, Glucose 65 ให้ IV glucose 50% 50 ml แล้วผู้ป่วยยังซึมอยู่ Management?",
+    "choices": [
+      {"label": "A", "text": "EKG"},
+      {"label": "B", "text": "CT Brain"},
+      {"label": "C", "text": "Thiamine IV"},
+      {"label": "D", "text": "Lumbar puncture"},
+      {"label": "E", "text": "Observe"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยอายุ 80 ปี ซึมลง 5 วัน กินไม่ได้ + muscle weakness + glucose ต่ำแล้ว หลังให้ glucose ยังซึมอยู่ = Wernicke encephalopathy จากขาด Thiamine ต้องให้ Thiamine IV ด่วน"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง อายุ 70 ปี U/D: DM, HTN 10 ปี on ยาสม่าเสมอ ตื่นนอนตอนเช้ามีอ่อนแรงแขนขาซีกขวา 6 ชั่วโมง PTA ไม่ชา พูดคุยรู้เรื่อง ลุกจากเตียงไม่ขึ้น ญาติพาส่งโรงพยาบาล PE: V/S stable BP สูงนิดๆ, CBC normal, FBS 200 mg/dL Diagnosis?",
+    "choices": [
+      {"label": "A", "text": "Lacunar infarction"},
+      {"label": "B", "text": "Frontal lobe infarction"},
+      {"label": "C", "text": "Pontine hemorrhage"},
+      {"label": "D", "text": "Cerebellar hemorrhage"},
+      {"label": "E", "text": "Parietal lobe infarction"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยหญิง 70 ปี DM, HTN มี hemiparesis กะทันหัน ไม่มีชา ไม่มี aphasia = Lacunar infarction ที่ผ่านไป capsular region"
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 30 ปี นักกีฬามาราธอน แต่งงานแล้ว ยังไม่เคยตั้งครรภ์ ปวดหัวตามัว ไม่มีประจำเดือนมา 1 ปี มีน้าสีขาวไหลมาจากเต้านมทั้งสองข้าง มีอาการตามัวมากขึ้น PE: bilateral hemianopia Diagnosis?",
+    "choices": [
+      {"label": "A", "text": "Pregnancy"},
+      {"label": "B", "text": "Hypogonadism"},
+      {"label": "C", "text": "Prolactinoma"},
+      {"label": "D", "text": "Pituitary adenoma"},
+      {"label": "E", "text": "Hypothyroidism"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "ผู้หญิง 30 ปี amenorrhea + galactorrhea + somnolence + bilateral hemianopia = Prolactinoma with mass effect ต่อ chiasm"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 70 ปี มี postural trem

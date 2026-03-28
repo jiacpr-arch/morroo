@@ -1,0 +1,830 @@
+[
+  {
+    "id": "50ce785b-5d37-428a-a86f-7fefa4826939",
+    "correct_answer": "D",
+    "explanation": "Cystocele (bulging ด้านหน้าของช่องคลอด) ร่วมกับ grade 3 uterine prolapse (มดลูกหย่อนถึง introitus) เนื่องจาก bulging ที่ 2/3 ของช่องคลอดใกล้ถึงปากช่องคลอดเทียบเท่า grade 3",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ D — Cystocele w/ grade 3 uterine prolapse เพราะ bulging อยู่ที่ 2/3 ของช่องคลอด (ใกล้ถึง introitus) และมีอาการ stress incontinence บ่งชี้ถึง cystocele",
+      "reason": "Pelvic organ prolapse grading: grade 1 = prolapse ไม่เกิน ½ ของช่องคลอด, grade 2 = ถึง introitus, grade 3 = โผล่พ้น introitus, grade 4 = complete procidentia บวมที่ด้านหน้า (anterior) ของช่องคลอดบ่งชี้ cystocele (กระเพาะปัสสาวะหย่อน) ผู้ป่วยมีอาการ stress incontinence (ปัสสาวะเล็ดเวลาไอ จาม) ซึ่งเป็น hallmark ของ cystocele Bulging ที่ 2/3 หมายความว่าโผล่ออกมาใกล้ถึง introitus แต่ยังไม่โผล่พ้น = grade 3 ตาม Thai grading convention ที่ 2/3 ≈ grade 3",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Urethrocele w/ grade 2",
+          "is_correct": false,
+          "explanation": "Urethrocele คือท่อปัสสาวะหย่อน ไม่ใช่ bulging ด้านหน้า และ grade ไม่ถูกต้อง"
+        },
+        {
+          "label": "B",
+          "text": "Urethrocele w/ grade 3",
+          "is_correct": false,
+          "explanation": "ยังเป็น urethrocele ซึ่งผิด"
+        },
+        {
+          "label": "C",
+          "text": "Cystocele w/ grade 2",
+          "is_correct": false,
+          "explanation": "Cystocele ถูก แต่ grade 2 หมายถึงถึง introitus พอดี ไม่ใช่ 2/3"
+        },
+        {
+          "label": "D",
+          "text": "Cystocele w/ grade 3",
+          "is_correct": true,
+          "explanation": "Bulging ด้านหน้า = cystocele, 2/3 ของช่องคลอด = grade 3 ถูกต้อง"
+        },
+        {
+          "label": "E",
+          "text": "Urethroectocele w/ grade 2",
+          "is_correct": false,
+          "explanation": "ไม่มี term urethroectocele ในการจำแนกมาตรฐาน"
+        }
+      ],
+      "key_takeaway": "Anterior vaginal wall bulging = cystocele; bulging ที่ 2/3 ของช่องคลอด = grade 3 uterine prolapse"
+    }
+  },
+  {
+    "id": "513cdb46-a56f-4ec4-931e-ee1f08707cf2",
+    "correct_answer": "B",
+    "explanation": "Hyperemesis gravidarum ทำให้ dehydration และ ketonuria ดังนั้นการตรวจ UA + ketone ในปัสสาวะเป็น first-line investigation ที่เหมาะสมที่สุด",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B — UA + ketone เพราะ hyperemesis gravidarum ทำให้เกิด starvation ketosis และ dehydration",
+      "reason": "Hyperemesis gravidarum คือ nausea/vomiting รุนแรงในไตรมาสแรก ทำให้ dehydration, electrolyte imbalance, และ starvation ketosis การตรวจ UA + ketone บอก severity ของ dehydration และ starvation ได้โดยตรง และช่วยตัดสินใจว่าต้อง admit หรือไม่ Electrolytes (A) ก็สำคัญแต่เป็น follow-up หลังจาก confirm diagnosis hCG + TFT (C) ทำเพื่อแยก molar pregnancy หรือ hyperthyroidism ที่ทำให้ vomiting แต่ไม่ใช่ first step CBC (D) ไม่ specific สำหรับภาวะนี้ LFT (E) ทำเมื่อสงสัย liver disease",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Electrolytes + creatinine",
+          "is_correct": false,
+          "explanation": "ทำได้แต่ไม่ใช่ first-line; UA+ketone บอก severity ได้ก่อน"
+        },
+        {
+          "label": "B",
+          "text": "UA + ketone",
+          "is_correct": true,
+          "explanation": "บอก dehydration และ starvation ketosis ซึ่งเป็น hallmark ของ hyperemesis"
+        },
+        {
+          "label": "C",
+          "text": "hCG + TFT",
+          "is_correct": false,
+          "explanation": "ทำเมื่อสงสัย molar pregnancy หรือ thyrotoxicosis แต่ไม่ใช่ first step"
+        },
+        {
+          "label": "D",
+          "text": "CBC",
+          "is_correct": false,
+          "explanation": "ไม่ specific สำหรับ hyperemesis"
+        },
+        {
+          "label": "E",
+          "text": "LFT",
+          "is_correct": false,
+          "explanation": "ทำเมื่อสงสัย AFLP หรือ hepatitis ซึ่งไม่ใช่กรณีนี้"
+        }
+      ],
+      "key_takeaway": "Hyperemesis gravidarum → ตรวจ UA + ketone เป็น first step เพื่อประเมิน dehydration/starvation"
+    }
+  },
+  {
+    "id": "538ccc93-92e9-45a1-b96d-8b9b2381640f",
+    "correct_answer": "A",
+    "explanation": "Threatened abortion คือ bleeding per vagina โดย internal os ยังปิดอยู่และมดลูกขนาดตรงกับ GA ดังนั้น os close + uterus 8wk = threatened abortion",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Threatened abortion เพราะ os ยังปิด (os close) และมดลูกขนาดตรงกับ GA 8 สัปดาห์",
+      "reason": "Types of abortion: Threatened = bleeding, os CLOSED, pregnancy still viable Inevitable = bleeding, os OPEN, cannot be saved Incomplete = os open, some products retained Complete = all products expelled Missed = fetus died, no expulsion ในกรณีนี้ os close และ uterus 8wk size ตรงกับ GA ⇒ threatened abortion Cervical motion tenderness (CMT) อาจเกิดได้ใน threatened abortion แต่ classically ใช้แยก ectopic pregnancy ซึ่งในกรณีนี้ uterus 8wk ตรงกับ GA จึง rule out ectopic",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Threatened abortion",
+          "is_correct": true,
+          "explanation": "Os closed + uterus ขนาดตรงกับ GA + bleeding = threatened abortion"
+        },
+        {
+          "label": "B",
+          "text": "Complete abortion",
+          "is_correct": false,
+          "explanation": "Complete abortion = products ออกหมดแล้ว มดลูกจะเล็กลง"
+        },
+        {
+          "label": "C",
+          "text": "Incomplete abortion",
+          "is_correct": false,
+          "explanation": "Incomplete = os open, products บางส่วนยังค้างอยู่"
+        },
+        {
+          "label": "D",
+          "text": "Inevitable abortion",
+          "is_correct": false,
+          "explanation": "Inevitable = os OPEN แต่กรณีนี้ os close"
+        }
+      ],
+      "key_takeaway": "Os CLOSED + bleeding + uterus ขนาดตรงกับ GA = Threatened abortion"
+    }
+  },
+  {
+    "id": "5898a9b7-b27d-4613-9d4c-70ab714b7ca3",
+    "correct_answer": "A",
+    "explanation": "G1P0 GA40+4 ไม่มีอาการเจ็บครรภ์ ควรทำ NST ก่อน ถ้า NST reactive ก็ reassure ได้ แต่คำตอบที่ให้คือ A (reassure) หมายความว่า fetal movement ลดลงบ้างไม่ได้หมายความว่าทารกอยู่ในอันตราย",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Reassure เพราะ decreased fetal movement เพียงอย่างเดียวโดยไม่มีอาการอื่นในครรภ์ครบกำหนดอาจ reassure ได้",
+      "reason": "Decreased fetal movement (DFM) ที่ GA 40+4 สัปดาห์ต้องประเมินอย่างระมัดระวัง หากไม่มีการเจ็บครรภ์และ fetal movement ลดลงเพียงเล็กน้อย อาจเริ่มด้วย fetal movement count ก่อน แต่ถ้าข้อสอบถามในบริบท routine ANC โดยที่ยังมีการดิ้นอยู่บ้าง การ reassure เป็นสิ่งที่เหมาะสม ในทางปฏิบัติ DFM ที่ post-term ควรทำ NST แต่คำตอบในข้อสอบนี้คือ reassure ก่อน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Reassure",
+          "is_correct": true,
+          "explanation": "ถ้า DFM เล็กน้อยและไม่มีสัญญาณอันตราย การ reassure อาจเหมาะสม"
+        },
+        {
+          "label": "B",
+          "text": "Continue fetal movement count",
+          "is_correct": false,
+          "explanation": "ควรทำควบคู่ไปด้วย แต่ไม่ใช่ primary management"
+        },
+        {
+          "label": "C",
+          "text": "Emergency C/S",
+          "is_correct": false,
+          "explanation": "รุนแรงเกินไปสำหรับ DFM ที่ไม่มีสัญญาณ distress"
+        },
+        {
+          "label": "D",
+          "text": "Induction of labor",
+          "is_correct": false,
+          "explanation": "อาจพิจารณาถ้า NST non-reactive แต่ไม่ใช่ first step"
+        },
+        {
+          "label": "E",
+          "text": "NST",
+          "is_correct": false,
+          "explanation": "ควรทำ แต่ไม่ใช่คำตอบที่ถูกในบริบทข้อสอบนี้"
+        }
+      ],
+      "key_takeaway": "DFM ที่ GA 40+4 โดยไม่มีอาการอื่น → Reassure ก่อน แต่ในทางปฏิบัติควรทำ NST"
+    }
+  },
+  {
+    "id": "5ae9bd2b-90e9-40ea-bb6a-4a79d3b29053",
+    "correct_answer": "A",
+    "explanation": "PPROM ที่ GA 30 สัปดาห์ต้องยืนยัน diagnosis ก่อนด้วย sterile speculum exam + nitrazine/fern test เพื่อดูน้ำคร่าวไหลออกจาก cervix โดยไม่ทำ digital exam เพราะเพิ่มเสี่ยงติดเชื้อ",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Sterile speculum exam + nitrazine/fern test เพราะต้องยืนยัน PPROM โดยไม่เพิ่มเสี่ยงติดเชื้อ",
+      "reason": "Preterm premature rupture of membranes (PPROM) ที่ GA 30wk ต้องยืนยัน diagnosis ก่อน โดยใช้ sterile speculum exam ดู pooling ของน้ำคร่าวใน vaginal fornix Nitrazine paper test: น้ำคร่าวเป็น alkaline (pH 7.1-7.3) → paper เปลี่ยนเป็นสีน้ำเงิน Fern test: น้ำคร่าวแห้งบน slide เห็น ferning pattern Digital exam หลีกเลี่ยงเพราะเพิ่มเสี่ยง chorioamnionitis และ cord prolapse Ultrasound (C) เพื่อ AFI ทำได้แต่ไม่ใช่ first step ในการ confirm diagnosis",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Sterile speculum + nitrazine/fern",
+          "is_correct": true,
+          "explanation": "Standard for confirming PPROM โดยไม่เพิ่มเสี่ยงติดเชื้อ"
+        },
+        {
+          "label": "B",
+          "text": "Digital exam ทันที",
+          "is_correct": false,
+          "explanation": "ห้ามทำ digital exam ใน PPROM เพราะเพิ่มเสี่ยง chorioamnionitis"
+        },
+        {
+          "label": "C",
+          "text": "Ultrasound AFI",
+          "is_correct": false,
+          "explanation": "ทำได้เป็น adjunct แต่ไม่ใช่ first step ในการ confirm"
+        },
+        {
+          "label": "D",
+          "text": "NST",
+          "is_correct": false,
+          "explanation": "ประเมิน fetal wellbeing แต่ไม่ confirm PPROM"
+        },
+        {
+          "label": "E",
+          "text": "Cervical culture",
+          "is_correct": false,
+          "explanation": "ทำหลังจาก confirm PPROM แล้ว ไม่ใช่ first step"
+        }
+      ],
+      "key_takeaway": "PPROM → ยืนยันด้วย sterile speculum + nitrazine/fern; ห้าม digital exam"
+    }
+  },
+  {
+    "id": "5b854068-f132-4972-9c63-f47718351cd8",
+    "correct_answer": "D",
+    "explanation": "Wound infection หลัง hysterectomy 1 สัปดาห์ที่มีอาการบวมแดงแต่ยังไม่มี fluctuance หรือ collection ชัดเจน ให้ oral antibiotics รักษา cellulitis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ D — Oral antibiotics เพราะเป็น surgical site infection แบบ cellulitis ที่ยังไม่มี abscess",
+      "reason": "Postoperative wound infection แบ่งเป็น: Cellulitis (superficial) = redness, warmth, swelling, pain → ให้ oral antibiotics Abscess/collection = fluctuance, pus → open wound and drain Necrotizing fasciitis = severe, rapidly spreading → emergency debridement ในกรณีนี้ แผลบวมแดงกดเจ็บหลังผ่าตัด 1 สัปดาห์ = cellulitis → oral antibiotics ครอบคลุม skin flora (S. aureus, streptococcus)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Observe",
+          "is_correct": false,
+          "explanation": "ไม่เหมาะสม เพราะมีสัญญาณติดเชื้อชัดเจน ต้องรักษา"
+        },
+        {
+          "label": "B",
+          "text": "Warm compression",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอสำหรับ wound infection ที่มีไข้"
+        },
+        {
+          "label": "C",
+          "text": "Topical antibiotic",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอสำหรับ cellulitis ที่มีไข้ ต้องใช้ systemic"
+        },
+        {
+          "label": "D",
+          "text": "Oral antibiotics",
+          "is_correct": true,
+          "explanation": "Cellulitis หลังผ่าตัด → systemic oral antibiotics ครอบคลุม S. aureus และ streptococcus"
+        },
+        {
+          "label": "E",
+          "text": "Open wound and drain",
+          "is_correct": false,
+          "explanation": "ทำเมื่อมี abscess หรือ collection แต่ไม่มีในกรณีนี้"
+        }
+      ],
+      "key_takeaway": "Post-op wound infection แบบ cellulitis (บวมแดง ไม่มี fluctuance) → Oral antibiotics"
+    }
+  },
+  {
+    "id": "5f30127c-b28e-4f18-81be-f81f9ba3016e",
+    "correct_answer": "B",
+    "explanation": "หลังคลอดลูกแฝดคนแรก เมื่อเจาะถุงน้ำคร่าวของคนที่สอง การเสียแรงดันอย่างรวดเร็วทำให้รกลอกตัวก่อนกำหนด (placental abruption) เกิดเลือดออกพร้อมปวดท้องรุนแรง",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B — Placental abruption เพราะ amniotomy ทำให้ decompression ของมดลูกอย่างรวดเร็ว ทำให้รกลอกตัว",
+      "reason": "ใน twin pregnancy หลังจากคลอดลูกคนแรกแล้ว มดลูกอาจมีขนาดใหญ่เกินไปสำหรับลูกคนที่สอง เมื่อทำ amniotomy ของ sac คนที่สอง แรงดันในมดลูกลดลงอย่างรวดเร็ว (sudden decompression) ทำให้พื้นที่รับน้ำหนักรกเปลี่ยนแปลงและเกิด placental abruption ได้ อาการ: เลือดออก + ปวดท้องรุนแรงทันทีหลัง amniotomy = classic presentation ของ abruption Vasa previa (A) = เส้นเลือดของสายสะดือผ่าน os, เลือดออกสีแดงสดหลัง ROM Cord prolapse (E) = สายสะดือโผล่ออกมา ไม่ใช่ bleeding + pain",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Vasa previa",
+          "is_correct": false,
+          "explanation": "เลือดออกหลัง ROM แต่ไม่มีปวดท้อง เลือดเป็นของทารก"
+        },
+        {
+          "label": "B",
+          "text": "Placental abruption",
+          "is_correct": true,
+          "explanation": "Sudden decompression หลัง amniotomy → รกลอกตัว → เลือดออก + ปวดท้องรุนแรง"
+        },
+        {
+          "label": "C",
+          "text": "Placenta previa",
+          "is_correct": false,
+          "explanation": "Painless bleeding ไม่ใช่ painful bleeding"
+        },
+        {
+          "label": "D",
+          "text": "Uterine rupture",
+          "is_correct": false,
+          "explanation": "มักเกิดระหว่าง labor ไม่ใช่หลัง amniotomy โดยตรง"
+        },
+        {
+          "label": "E",
+          "text": "Umbilical cord prolapse",
+          "is_correct": false,
+          "explanation": "ไม่ทำให้เลือดออก + ปวดท้อง แต่ทำให้ FHR แย่ลง"
+        }
+      ],
+      "key_takeaway": "Twin pregnancy + amniotomy → sudden decompression → Placental abruption (เลือดออก + ปวดท้อง)"
+    }
+  },
+  {
+    "id": "6006da5b-e1d8-4c2a-af66-d6af13913f5a",
+    "correct_answer": "C",
+    "explanation": "หญิง 18 ปี Tanner stage 5 สมบูรณ์แต่มี whitish discharge (galactorrhea) ให้ตรวจ prolactin เพื่อแยก hyperprolactinemia ซึ่งอาจทำให้ amenorrhea และ galactorrhea",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ C — Prolactin เพราะ whitish discharge จากหน้าอก (galactorrhea) ในหญิงวัยรุ่น Tanner 5 ที่ไม่ตั้งครรภ์บ่งชี้ hyperprolactinemia",
+      "reason": "Whitish discharge ในบริบทนี้น่าจะหมายถึง galactorrhea (น้ำนมไหลโดยไม่ตั้งครรภ์) Tanner stage 5 แสดงว่าพัฒนาการทางเพศสมบูรณ์แล้ว Hyperprolactinemia ทำให้เกิด: galactorrhea, amenorrhea/oligomenorrhea, และบางครั้ง headache/visual field defect ถ้า pituitary adenoma สาเหตุ: prolactinoma, ยา (antipsychotics, metoclopramide), hypothyroidism, PCOS การตรวจ serum prolactin เป็น first-line investigation",
+      "choices": [
+        {
+          "label": "A",
+          "text": "FSH, LH",
+          "is_correct": false,
+          "explanation": "ตรวจเมื่อสงสัย primary/secondary hypogonadism ไม่ใช่ first-line สำหรับ galactorrhea"
+        },
+        {
+          "label": "B",
+          "text": "Progesterone",
+          "is_correct": false,
+          "explanation": "ใช้ยืนยัน ovulation ไม่เกี่ยวกับ galactorrhea"
+        },
+        {
+          "label": "C",
+          "text": "Prolactin",
+          "is_correct": true,
+          "explanation": "Galactorrhea → ตรวจ prolactin เป็น first step"
+        },
+        {
+          "label": "D",
+          "text": "17-hydroxyprogesterone",
+          "is_correct": false,
+          "explanation": "ตรวจเพื่อ CAH ไม่เกี่ยวกับ galactorrhea"
+        },
+        {
+          "label": "E",
+          "text": "Chromosome study",
+          "is_correct": false,
+          "explanation": "ตรวจเมื่อสงสัย genetic condition เช่น Turner syndrome"
+        }
+      ],
+      "key_takeaway": "Galactorrhea (whitish breast discharge) → ตรวจ Serum Prolactin เพื่อแยก hyperprolactinemia"
+    }
+  },
+  {
+    "id": "60a7e64c-3409-4c75-8eb4-09c935c6f383",
+    "correct_answer": "B",
+    "explanation": "หลัง AROM น้ำคร่าวไหล เมื่อพบ bloody fluid จาก vagina ร่วมกับ urgent fetal distress ต้อง rule out prolapsed umbilical cord ซึ่งต้องรักษาฉุกเฉิน",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B — Prolapsed umbilical cord เพราะหลัง AROM พบ cord โผล่ออกมาพร้อมน้ำคร่าว ทำให้ FHR แย่ลง",
+      "reason": "Umbilical cord prolapse เป็น obstetric emergency ที่เกิดหลัง rupture of membranes โดยเฉพาะหลัง ARM เมื่อ cord โผล่ลงมาต่ำกว่า presenting part จะถูกกด → fetal hypoxia การพบ bloody fluid หลัง AROM + variable decelerations = cord prolapse จนกว่าจะ rule out Management: ยก presenting part ขึ้น, knee-chest position, emergency C/S Vasa previa (A) = เส้นเลือดของทารกผ่าน os → เลือดออกสีแดงสดหลัง ROM แต่เป็น fetal blood Velamentous cord insertion (D) ทำให้ vasa previa ได้",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Vasa previa",
+          "is_correct": false,
+          "explanation": "เลือดออกเป็น fetal blood, bright red, ไม่ใช่สายสะดือโผล่"
+        },
+        {
+          "label": "B",
+          "text": "Prolapsed umbilical cord",
+          "is_correct": true,
+          "explanation": "หลัง AROM พบ cord ออกมา → กด cord → fetal hypoxia → emergency"
+        },
+        {
+          "label": "C",
+          "text": "Placenta previa",
+          "is_correct": false,
+          "explanation": "Painless antepartum bleeding ไม่เกี่ยวกับ AROM"
+        },
+        {
+          "label": "D",
+          "text": "Velamentous cord insertion with rupture",
+          "is_correct": false,
+          "explanation": "ทำให้ vasa previa ไม่ใช่ cord prolapse"
+        },
+        {
+          "label": "E",
+          "text": "Subchorionic hemorrhage",
+          "is_correct": false,
+          "explanation": "ไม่เกิดตอน delivery"
+        }
+      ],
+      "key_takeaway": "AROM แล้วพบ cord + FHR แย่ = Umbilical cord prolapse → emergency! ยก presenting part ขึ้น + C/S"
+    }
+  },
+  {
+    "id": "62585f2f-6f5a-4772-ab16-03de78f0756a",
+    "correct_answer": "D",
+    "explanation": "Cervical cancer invasive (SCC) ที่ยืนยันด้วย biopsy ใน stage early invasive → Wertheim operation (radical hysterectomy + pelvic lymph node dissection) คือ treatment of choice",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ D — Wertheim operation เพราะ invasive cervical carcinoma ที่ยังอยู่ใน stage ที่ผ่าตัดได้ (stage IB1-IIA)",
+      "reason": "Invasive cervical cancer management ตาม stage: Stage IA1 (microinvasive) = cone biopsy หรือ simple hysterectomy Stage IA2–IIA = Wertheim operation (radical hysterectomy + pelvic LN dissection) Stage IIB+ = Chemoradiation ผู้ป่วย 59 ปี post-coital bleeding, Pap = SCC, biopsy = invasive carcinoma → Wertheim operation (D) คือ standard treatment Conization (A) ใช้สำหรับ CIN หรือ microinvasion เท่านั้น Chemoradiation (E) สำหรับ locally advanced disease",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Conization",
+          "is_correct": false,
+          "explanation": "เหมาะสำหรับ CIN หรือ stage IA1 ไม่ใช่ invasive carcinoma"
+        },
+        {
+          "label": "B",
+          "text": "Fractional curettage",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ endometrial pathology ไม่ใช่ cervical cancer"
+        },
+        {
+          "label": "C",
+          "text": "Hysterectomy (simple)",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอ ต้องการ radical hysterectomy + LN dissection"
+        },
+        {
+          "label": "D",
+          "text": "Wertheim operation",
+          "is_correct": true,
+          "explanation": "Radical hysterectomy + bilateral pelvic LN dissection = standard for invasive cervical cancer stage I-IIA"
+        },
+        {
+          "label": "E",
+          "text": "Chemoradiation",
+          "is_correct": false,
+          "explanation": "สำหรับ stage IIB+ หรือผู้ป่วยที่ผ่าตัดไม่ได้"
+        }
+      ],
+      "key_takeaway": "Invasive cervical cancer stage IB-IIA → Wertheim operation (Radical hysterectomy + pelvic LN dissection)"
+    }
+  },
+  {
+    "id": "629b1a2d-853c-4959-ac70-ed957191e19a",
+    "correct_answer": "B",
+    "explanation": "ผู้หญิงตั้งครรภ์มาตรวจ ANC ตามปกติ สิ่งที่สำคัญที่สุดคือสอน danger signs ที่ต้องมาพบแพทย์ทันที เพื่อความปลอดภัยของแม่และทารก",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B — สอน danger signs เพราะการให้ความรู้เรื่องสัญญาณอันตรายเป็น essential part ของ ANC ที่ทำให้ผู้ป่วยมาพบแพทย์ได้ทันท่วงที",
+      "reason": "ANC (antenatal care) มีเป้าหมายหลักคือการป้องกันและตรวจจับภาวะแทรกซ้อนในการตั้งครรภ์ Danger signs ที่ต้องสอน: ตกเลือดทางช่องคลอด, ปวดท้องรุนแรง, ปวดหัวรุนแรง, ตามัว, บวมมาก, ทารกดิ้นน้อยลง, ไข้สูง การสอน danger signs ทำให้ผู้ป่วยมาพบแพทย์ก่อนเกิดภาวะฉุกเฉิน ลดอัตราตายแม่และทารก เป็น WHO recommendation ที่สำคัญที่สุดใน ANC",
+      "choices": [
+        {
+          "label": "A",
+          "text": "นัดทุก 4 สัปดาห์ + วิตามิน",
+          "is_correct": false,
+          "explanation": "ทำได้ แต่ไม่ใช่สิ่งที่ประเมิน"
+        },
+        {
+          "label": "B",
+          "text": "สอน danger signs",
+          "is_correct": true,
+          "explanation": "Essential ANC content: สอนอาการที่ต้องมาพบแพทย์ทันที ลด maternal & perinatal mortality"
+        },
+        {
+          "label": "C",
+          "text": "ให้ยาเหล็ก + โฟลิก",
+          "is_correct": false,
+          "explanation": "ทำตาม routine แต่ไม่ใช่สิ่งที่ถามในบริบทนี้"
+        },
+        {
+          "label": "D",
+          "text": "ห้ามทำงานหนัก",
+          "is_correct": false,
+          "explanation": "ไม่ถูกต้อง การพักผ่อนมากเกินไปไม่จำเป็นสำหรับครรภ์ปกติ"
+        },
+        {
+          "label": "E",
+          "text": "ตรวจ STI/HIV ทันที",
+          "is_correct": false,
+          "explanation": "ทำใน ANC แรกๆ แต่ไม่ใช่สิ่งที่ถามในบริบทนี้"
+        }
+      ],
+      "key_takeaway": "ANC → สอน Danger Signs เพื่อให้มาพบแพทย์ทันที: เลือดออก, ปวดท้องรุนแรง, ปวดหัว, ตามัว, ทารกดิ้นน้อย"
+    }
+  },
+  {
+    "id": "6308de73-36e8-4270-935a-6ccc8fddc43b",
+    "correct_answer": "D",
+    "explanation": "เด็กหญิง 4 ขวบ มี vaginal discharge ที่ไม่ตอบสนองต่อ ATB หลายครั้ง ควรทำ culture เพื่อหาเชื้อที่แน่ชัด และต้อง rule out foreign body ในช่องคลอดซึ่งเป็นสาเหตุที่พบบ่อย",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ D — Culture เพราะต้องหาเชื้อก่อนที่จะให้ยาต่อ และต้อง rule out specific organism เช่น STI ที่อาจบ่งชี้ sexual abuse",
+      "reason": "Vaginal discharge ในเด็กก่อนวัยเรียนที่ไม่ตอบสนองต่อ antibiotics ต้องพิจารณา: 1) Foreign body (พบบ่อย, มักมีกลิ่นเหม็น, foul-smelling discharge) 2) Specific infection (N. gonorrhea, Chlamydia ที่บ่งชี้ sexual abuse) 3) Nonspecific vulvovaginitis Culture เพื่อหาเชื้อจำเพาะก่อน จากนั้นอาจต้องตรวจ under general anesthesia (C) ถ้าสงสัย foreign body แต่ culture เป็น step แรกที่สมเหตุสมผล",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Keep hygiene",
+          "is_correct": false,
+          "explanation": "สำคัญแต่ไม่เพียงพอสำหรับ discharge ที่ไม่ตอบสนองต่อ ATB"
+        },
+        {
+          "label": "B",
+          "text": "IV ATB",
+          "is_correct": false,
+          "explanation": "ก้าวกระโดดเกินไปโดยไม่รู้เชื้อ"
+        },
+        {
+          "label": "C",
+          "text": "Examine under GA",
+          "is_correct": false,
+          "explanation": "ทำเมื่อสงสัย foreign body อย่างมาก แต่ culture ก่อน"
+        },
+        {
+          "label": "D",
+          "text": "Culture for bacterial organism",
+          "is_correct": true,
+          "explanation": "ต้องระบุเชื้อก่อนรักษา และ STI culture ช่วย rule out sexual abuse"
+        },
+        {
+          "label": "E",
+          "text": "Work up STD",
+          "is_correct": false,
+          "explanation": "ทำได้แต่ D ครอบคลุมกว่า"
+        }
+      ],
+      "key_takeaway": "Vaginal discharge ในเด็กที่ไม่ตอบสนองต่อ ATB → ทำ Culture ก่อน (rule out STI = sexual abuse)"
+    }
+  },
+  {
+    "id": "63d99b00-67aa-4ff3-95f7-d8060b9f347c",
+    "correct_answer": "A",
+    "explanation": "Wound infection หลัง hysterectomy 1 สัปดาห์ ถ้า wound บวมแดงแต่ยังไม่มี collection/abscess และอาการเบา ให้ observe ก่อน (หรืออาจหมายถึงว่าเป็น early finding)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Observe เพราะในบริบทนี้ wound เพิ่งเริ่มมีอาการ อาจเป็น inflammatory response ปกติหลังผ่าตัด ไม่ใช่ infection จริงๆ",
+      "reason": "ข้อสอบนี้คล้ายกับข้อก่อน แต่คำตอบต่างกัน ความแตกต่างสำคัญ: ถ้า wound มีเพียงบวมแดงเล็กน้อยหลังผ่าตัด 1 สัปดาห์ อาจเป็น normal inflammatory response หรือ seroma ที่ยังไม่ต้องรักษา ให้ observe ก่อน ถ้ามีไข้สูง, purulent discharge, หรือ cellulitis ชัดเจน → ให้ oral ATB ถ้ามี fluctuance, abscess → open and drain ในกรณีนี้ context บ่งชี้ว่าเป็น early หรือ mild presentation → observe",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Observe",
+          "is_correct": true,
+          "explanation": "Early/mild post-op wound reaction อาจ resolve เองได้ใน 24-48 hr"
+        },
+        {
+          "label": "B",
+          "text": "Warm compression",
+          "is_correct": false,
+          "explanation": "ช่วยได้บ้างแต่ไม่ใช่ standard management"
+        },
+        {
+          "label": "C",
+          "text": "Topical ATB",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอถ้าเป็น infection จริง"
+        },
+        {
+          "label": "D",
+          "text": "Oral ATB",
+          "is_correct": false,
+          "explanation": "ใช้เมื่อ cellulitis ชัดเจน ไม่ใช่ early/mild case"
+        },
+        {
+          "label": "E",
+          "text": "Open wound and drain",
+          "is_correct": false,
+          "explanation": "ใช้เมื่อมี abscess หรือ collection"
+        }
+      ],
+      "key_takeaway": "Post-op wound: Observe → Oral ATB (cellulitis) → Open & drain (abscess) ตามความรุนแรง"
+    }
+  },
+  {
+    "id": "65f3c861-fa98-4b7d-86cd-5a390f265639",
+    "correct_answer": "A",
+    "explanation": "Severe preeclampsia ที่ BP 160/110 + proteinuria 3+ ต้องลด BP อย่างเร่งด่วน Nifedipine oral เป็น first-line ในหลาย guideline ส่วน Hydralazine IV และ Labetalol IV ก็ใช้ได้ แต่ Enalapril ห้ามใช้ในตั้งครรภ์",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A (Nifedipine) ซึ่งเป็น first-line สำหรับ acute severe hypertension ในตั้งครรภ์ตาม ACOG; B และ C ก็ใช้ได้ แต่ D (Enalapril) ห้ามใช้เด็ดขาด",
+      "reason": "Acute severe hypertension ในตั้งครรภ์ (BP ≥160/110): First-line: Labetalol IV, Hydralazine IV, หรือ Nifedipine oral (immediate release) Enalapril (ACE inhibitor) ห้ามใช้ในตั้งครรภ์ทุกไตรมาส เพราะทำให้ fetal renal agenesis, oligohydramnios, fetal death Nisoldipine ไม่ใช่ยาที่แนะนำในตั้งครรภ์ เป้าหมาย BP: systolic 140-155, diastolic 90-105 นอกจากนี้ต้องให้ MgSO4 เพื่อป้องกัน eclampsia และพิจารณา delivery",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Nifedipine IV/Oral",
+          "is_correct": true,
+          "explanation": "Oral nifedipine (immediate release) เป็น first-line สำหรับ acute severe HTN in pregnancy"
+        },
+        {
+          "label": "B",
+          "text": "Hydralazine IV",
+          "is_correct": true,
+          "explanation": "First-line option; IV hydralazine ใช้ได้ใน severe preeclampsia"
+        },
+        {
+          "label": "C",
+          "text": "Labetalol IV",
+          "is_correct": true,
+          "explanation": "First-line option; IV labetalol ใช้ได้และปลอดภัย"
+        },
+        {
+          "label": "D",
+          "text": "Enalapril Oral",
+          "is_correct": false,
+          "explanation": "ACE inhibitor ห้ามใช้ในตั้งครรภ์ทุก trimester เด็ดขาด"
+        },
+        {
+          "label": "E",
+          "text": "Nisoldipine IV",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ยาที่แนะนำสำหรับ HTN in pregnancy"
+        }
+      ],
+      "key_takeaway": "Severe preeclampsia → Nifedipine/Hydralazine/Labetalol ใช้ได้; ห้าม ACE inhibitor (Enalapril) ในตั้งครรภ์"
+    }
+  },
+  {
+    "id": "6873112f-92f8-42a0-9328-5a73a3603c20",
+    "correct_answer": "B",
+    "explanation": "H-SIL (high-grade squamous intraepithelial lesion) บน Pap smear ต้องทำ cervical conization เพื่อ diagnosis + treatment ในขั้นตอนเดียว",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B — Cervical conization เพราะ H-SIL ต้องการ histologic confirmation และ treatment ในขณะเดียวกัน",
+      "reason": "Management ของ abnormal Pap smear: ASC-US → HPV testing หรือ repeat Pap L-SIL → Colposcopy H-SIL (CIN 2-3) → Cervical conization (LEEP/cold knife cone) โดยตรง เพราะ high risk of progression to invasive cancer ASC-H → Colposcopy Colposcopy (A) ทำก่อนได้แต่ H-SIL ส่วนใหญ่ข้ามไป conization เลย Conization ทำทั้ง diagnostic (histology) และ therapeutic (excise CIN) ได้ในครั้งเดียว",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Colposcopy",
+          "is_correct": false,
+          "explanation": "สำหรับ L-SIL/ASC-US; H-SIL ข้ามไป conization เลยใน most guidelines"
+        },
+        {
+          "label": "B",
+          "text": "Cervical conization",
+          "is_correct": true,
+          "explanation": "H-SIL = CIN 2-3 → LEEP/cone biopsy เพื่อ diagnosis + treatment"
+        },
+        {
+          "label": "C",
+          "text": "Repeat Pap in 3 months",
+          "is_correct": false,
+          "explanation": "ไม่เหมาะสำหรับ H-SIL ซึ่ง high risk"
+        },
+        {
+          "label": "D",
+          "text": "HPV testing",
+          "is_correct": false,
+          "explanation": "สำหรับ ASC-US triage ไม่ใช่ H-SIL"
+        },
+        {
+          "label": "E",
+          "text": "Hysterectomy",
+          "is_correct": false,
+          "explanation": "รุนแรงเกินไปสำหรับ CIN; ทำเมื่อ recurrence หลัง conization"
+        }
+      ],
+      "key_takeaway": "H-SIL (CIN 2-3) → Cervical Conization (LEEP) โดยตรง ไม่ต้อง colposcopy ก่อน"
+    }
+  },
+  {
+    "id": "6b695673-0156-4322-8b22-9641076a87de",
+    "correct_answer": "A",
+    "explanation": "Purulent discharge + blood clot + cervical bleeding + แสบช่องคลอด = Cervicitis (การอักเสบของ cervix) ซึ่งมักเกิดจาก N. gonorrhoeae หรือ Chlamydia trachomatis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Cervicitis เพราะ purulent discharge + cervical friability (bleeding) + discomfort เป็น classic presentation",
+      "reason": "Cervicitis อาการ: mucopurulent cervical discharge, cervical friability (bleeding เมื่อสัมผัส), edema และ erythema ของ cervix สาเหตุหลัก: N. gonorrhoeae (gonococcal cervicitis) และ Chlamydia trachomatis (non-gonococcal) อาการแสบช่องคลอด + เลือดออกจาก cervix + purulent discharge บ่งชี้ cervicitis อย่างชัดเจน Vaginitis (B) = vaginal wall inflamed, discharge มักมีกลิ่น Urethritis (C) = dysuria, urethral discharge Bartholinitis (D) = ต่อม Bartholin บวม เจ็บ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cervicitis",
+          "is_correct": true,
+          "explanation": "Purulent cervical discharge + cervical bleeding (friability) = cervicitis classic"
+        },
+        {
+          "label": "B",
+          "text": "Vaginitis",
+          "is_correct": false,
+          "explanation": "Vaginal wall อักเสบ discharge มีกลิ่น ไม่มี cervical bleeding"
+        },
+        {
+          "label": "C",
+          "text": "Urethritis",
+          "is_correct": false,
+          "explanation": "dysuria, urethral discharge ไม่ใช่ cervical findings"
+        },
+        {
+          "label": "D",
+          "text": "Bartholinitis",
+          "is_correct": false,
+          "explanation": "ต่อม Bartholin บวมเจ็บ ไม่ใช่ cervical finding"
+        },
+        {
+          "label": "E",
+          "text": "Cystitis",
+          "is_correct": false,
+          "explanation": "dysuria, frequency ไม่มี genital discharge"
+        }
+      ],
+      "key_takeaway": "Mucopurulent cervical discharge + cervical friability (bleeding when touched) = Cervicitis → Rx: Ceftriaxone + Azithromycin"
+    }
+  },
+  {
+    "id": "6c8d21d1-b012-4a64-a28d-f86715cdab5b",
+    "correct_answer": "A",
+    "explanation": "GA 39wk ลูกดิ้นน้อย 24hr แต่ FHR 140/min ปกติ และ FH > umbilicus ปกติ → Reassure ก่อน เนื่องจาก FHR ปกติบ่งชี้ว่าทารกยังมี wellbeing อยู่",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Reassure เพราะ FHR 140/min ปกติ และ fundal height ปกติ บ่งชี้ว่าทารกยังอยู่ดี",
+      "reason": "Decreased fetal movement ที่ GA 39wk FHR 140/min = ปกติ (120-160/min) Fundal height > umbilicus = ปกติสำหรับ 39wk การวินิจฉัย fetal distress ต้องการมากกว่าแค่ DFM เช่น abnormal FHR (bradycardia <110 หรือ tachycardia >160), IUGR, oligohydramnios ถ้า FHR ปกติ ทารกส่วนใหญ่ยังมี wellbeing อยู่ การ reassure พร้อม fetal movement count เพิ่มเติมเป็นสิ่งที่เหมาะสม",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Reassure and F/U next day",
+          "is_correct": true,
+          "explanation": "FHR ปกติ + FH ปกติ → DFM อย่างเดียวไม่พอสำหรับ intervention"
+        },
+        {
+          "label": "B",
+          "text": "Biophysical profile",
+          "is_correct": false,
+          "explanation": "ทำได้แต่ไม่จำเป็นถ้า FHR ปกติและไม่มี risk factor"
+        },
+        {
+          "label": "C",
+          "text": "Oxytocin stress test",
+          "is_correct": false,
+          "explanation": "Invasive, ไม่จำเป็นในกรณีนี้"
+        },
+        {
+          "label": "D",
+          "text": "Induction of labor",
+          "is_correct": false,
+          "explanation": "ยังไม่มีข้อบ่งชี้"
+        },
+        {
+          "label": "E",
+          "text": "C/S",
+          "is_correct": false,
+          "explanation": "ไม่มี indication สำหรับ emergency C/S"
+        }
+      ],
+      "key_takeaway": "DFM แต่ FHR ปกติ (120-160) + FH ปกติ → Reassure + Fetal movement count"
+    }
+  },
+  {
+    "id": "71a7e013-a5ad-4e5f-b186-c27bc526c825",
+    "correct_answer": "E",
+    "explanation": "Wound infection หลัง hysterectomy ที่มี fluctuance หรือ collection ชัดเจน ต้อง open wound and drain เพื่อระบาย pus และ allow secondary healing",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ E — Open wound and drain เพราะ wound infection นี้มี collection/abscess ที่ต้องระบาย",
+      "reason": "เปรียบเทียบ 3 versions ของ wound infection หลัง hysterectomy: Version 1 (Q66): Oral ATB = cellulitis ไม่มี fluctuance Version 2 (Q73): Observe = early/mild inflammation Version 3 (Q78): Open wound and drain = มี abscess/collection ข้อแตกต่างที่ต้อง open/drain: มี fluctuance (ก้อนนุ่ม กดบุ๋ม), purulent discharge ออกเอง หรือ wound ขึ้นมาบวมมากขึ้นหลังให้ ATB แล้ว Management: เปิดแผล + drain + wound care + ATB ตาม culture",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Observe",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอเมื่อมี abscess ที่ต้องระบาย"
+        },
+        {
+          "label": "B",
+          "text": "Warm compression",
+          "is_correct": false,
+          "explanation": "ช่วย early inflammation แต่ไม่ใช่ primary treatment สำหรับ abscess"
+        },
+        {
+          "label": "C",
+          "text": "Topical ATB",
+          "is_correct": false,
+          "explanation": "ไม่ penetrate ลึกพอ"
+        },
+        {
+          "label": "D",
+          "text": "Oral ATB",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอถ้ามี collection ที่ต้อง drain"
+        },
+        {
+          "label": "E",
+          "text": "Open wound and drain",
+          "is_correct": true,
+          "explanation": "Abscess ต้อง incision & drainage + wound care จึงจะหายได้"
+        }
+      ],
+      "key_takeaway": "Post-op wound abscess/collection → Open wound and drain (I&D) คือ definitive treatment"
+    }
+  },
+  {
+    "id": "72dfcb1e-07b9-45aa-9cac-585ddd29a66a",
+    "correct_answer": "A",
+    "explanation": "GA 38wk fully dilated station+1 molding 2+ contraction 2+ ยังรอได้ เพราะ molding 2+ ยังไม่ถึง 3+ และ contraction ยังอ่อน อาจรอดูความก้าวหน้าของ labor ก่อน",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Observe progress of labor เพราะ molding 2+ และ contraction 2+ ยังอยู่ใน acceptable range ไม่จำเป็นต้อง intervene ทันที",
+      "reason": "Second stage of labor assessment: Station +1 = head ต่ำกว่า ischial spine 1 cm ดี Molding: 0 = ไม่มี, 1+ = ขอบกระดูกชิดกัน, 2+ = ขอบทับกันได้ลดลง, 3+ = ทับกันแน่น (CPD) Contraction 2+ = ไม่แรงมาก อาจเพิ่มด้วย syntocinon Molding 2+ + station +1 + fully dilated = ยังอยู่ใน range ที่รอได้ ถ้า molding 3+ → CPD → C/S ถ้า no progress หลัง observe → syntocinon หรือ operative delivery",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Observe progress of labor",
+          "is_correct": true,
+          "explanation": "Molding 2+ ยังไม่ถึง CPD, station +1 ดี → observe ก่อน"
+        },
+        {
+          "label": "B",
+          "text": "Syntocinon drip",
+          "is_correct": false,
+          "explanation": "อาจใช้ถ้า contraction ไม่พอและไม่มี CPD แต่ไม่ใช่ first step"
+        },
+        {
+          "label": "C",
+          "text": "Vacuum extraction",
+          "is_correct": false,
+          "explanation": "ทำเมื่อ fully dilated, station +2 หรือมากกว่า และ indication ชัดเจน"
+        },
+        {
+          "label": "D",
+          "text": "Forceps extraction",
+          "is_correct": false,
+          "explanation": "ต้องการ station ต่ำกว่า +2 และ indication ที่ชัดเจน"
+        },
+        {
+          "label": "E",
+          "text": "C/S",
+          "is_correct": false,
+          "explanation": "ยังไม่มี CPD ชัดเจน (molding 3+) ไม่ใช่ indication ณ ตอนนี้"
+        }
+      ],
+      "key_takeaway": "Molding 2+ ยังรอได้; Molding 3+ = CPD → C/S; Station +1 + fully dilated → Observe first"
+    }
+  },
+  {
+    "id": "7355563e-f7d0-4834-85ea-3417b29e4e2e",
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วยจิตเวชหยุดยาเองขณะตั้งครรภ์ 2 เดือน มีความเสี่ยงสูงที่จะ relapse และเป็นอันตราย ECT (Electroconvulsive therapy) ปลอดภัยในตั้งครรภ์และเป็น treatment of choice สำหรับ severe psychiatric condition",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Admit + ECT เพราะผู้ป่วยจิตเวชรุนแรงหยุดยาเองและตั้งครรภ์ ECT ปลอดภัยและมีประสิทธิภาพในตั้งครรภ์",
+      "reason": "ผู้ป่วยกินยา Haloperidol (antipsychotic) + Biperiden/Benzhexol (anticholinergic) → น่าจะเป็น schizophrenia หรือ psychosis รุนแรง การหยุดยาเองขณะตั้งครรภ์ = high risk for relapse ECT ในตั้งครรภ์: ปลอดภัยสำหรับทารก ประสิทธิภาพสูงสำหรับ severe psychiatric conditions เช่น severe schizophrenia, severe depression การทำแท้ง (B, C) ไม่ใช่ indication ทางการแพทย์ในกรณีนี้ โดยไม่ได้รับความยินยอม Admit ก่อนเพื่อ monitor และวางแผน ECT",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Admit + ECT",
+          "is_correct": true,
+          "explanation": "ECT ปลอดภัยในตั้งครรภ์ เหมาะสำหรับ severe psychosis ที่หยุดยา"
+        },
+        {
+          "label": "B",
+          "text": "ทำแท้งตามสิทธิผู้ป่วย",
+          "is_correct": false,
+          "explanation": "ผู้ป่วยจิตเวชอาจไม่มี decision-making capacity และไม่มี medical indication"
+        },
+        {
+          "label": "C",
+          "text": "ทำแท้งเพราะแม่เลี้ยงดูไม่ได้",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ legal indication สำหรับ termination ตามกฎหมายไทย"
+        },
+        {
+          "label": "D",
+          "text": "ปรึกษาสามี",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอสำหรับ psychiatric emergency"
+        }
+      ],
+      "key_takeaway": "Severe psychiatric condition ในตั้งครรภ์ที่หยุดยา → ECT ปลอดภัยและมีประสิทธิภาพ; ห้ามทำแท้งโดยไม่มี indication"
+    }
+  }
+]

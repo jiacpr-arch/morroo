@@ -1,0 +1,2815 @@
+[
+  {
+    "scenario": "An 80-year-old man diagnosed prostate cancer 2 years ago. Now he has bone and lung metastasis. His daughter don't want to tell him because his wife was diagnosed hepatocellular carcinoma 3 years ago and died soon after she knew. What is the management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Make a promise with the daughter that you will tell the patient when ready"
+      },
+      {
+        "label": "B",
+        "text": "Tell the daughter that it is the patient's right to know the diagnosis and prognosis"
+      },
+      {
+        "label": "C",
+        "text": "Call a family conference to discuss how to inform the patient"
+      },
+      {
+        "label": "D",
+        "text": "Negotiate with the daughter that the patient may already know from being sick for long time"
+      },
+      {
+        "label": "E",
+        "text": "Tell the daughter that treating without telling the truth will make the patient lose trust"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "Clinical Practice",
+    "status": "complete",
+    "ai_notes": "Family conference is the standard ethical approach to resolve disagreement between family and medical team regarding disclosure. It allows discussion of concerns and finding appropriate way to communicate with patient.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 70-year-old man with end-stage liver and renal disease is brought to hospital and arrested. After resuscitation by CPR, BP is 70/40 and EKG shows VF. His son wants to continue resuscitation, but his daughter presents a living will stating the father does not want resuscitation. What should you do?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Stop resuscitation as the patient's living will clearly shows his wishes"
+      },
+      {
+        "label": "B",
+        "text": "Continue resuscitation while waiting for son and daughter to reach agreement"
+      },
+      {
+        "label": "C",
+        "text": "Continue resuscitation while asking the hospital director for guidance"
+      },
+      {
+        "label": "D",
+        "text": "Continue resuscitation while consulting the hospital's legal team"
+      },
+      {
+        "label": "E",
+        "text": "Stop resuscitation after verifying the authenticity of the living will with legal team"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "status": "complete",
+    "ai_notes": "When there is conflict between family members regarding advance directive, the prudent approach is to continue resuscitation (beneficence principle) while immediately attempting to resolve the conflict. The living will should be verified and discussed with all parties involved.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "NLE 2014 Question 147: Five Bangkok city workers descended into a tunnel for waste management. All five died. What is the most likely cause of death?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Environmental suffocation (entrapment/physical obstruction)"
+      },
+      {
+        "label": "B",
+        "text": "Gas suffocation (Carbon dioxide)"
+      },
+      {
+        "label": "C",
+        "text": "Gas suffocation (Methane)"
+      },
+      {
+        "label": "D",
+        "text": "Gas suffocation (Carbon monoxide)"
+      },
+      {
+        "label": "E",
+        "text": "Toxic exposure (Hydrogen sulfide)"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2014",
+    "status": "complete",
+    "ai_notes": "In waste management and sewage tunnel scenarios, methane accumulation is the most common cause of mass deaths. Methane is produced from decomposition of organic matter, displaces oxygen, and causes asphyxiation. CO2 accumulation is also common but methane is more typical in this context.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "Which of the following is permitted by law for organ transplantation in Thailand?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Older brother with disabled leg voluntarily donates kidney to younger sibling"
+      },
+      {
+        "label": "B",
+        "text": "25-year-old sister donates cornea to one younger sibling"
+      },
+      {
+        "label": "C",
+        "text": "Mother brings disabled child to donate kidney to father"
+      },
+      {
+        "label": "D",
+        "text": "Person diagnosed in vegetative state with donor card consent can donate heart"
+      },
+      {
+        "label": "E",
+        "text": "Homeless person involved in accident with no relatives can donate organs"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Organ Transplantation Law",
+    "status": "complete",
+    "ai_notes": "A: Legal (living related donation). C: Illegal (vulnerable person/coercion concern). D: Illegal (brain death must be established before donation, not vegetative state). E: Legally complex but possible if consent from state. B is clearly legal - adult voluntary donation to sibling. The question asks which is 'permitted' - option B and A are both permitted, but B (cornea donation) is least controversial.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "Question 78: You are invited to perform autopsy on a corpse found in a hotel room. The room was locked from inside with very strong air conditioning. Physical examination reveals: Rigor mortis at knees and hips but NOT at elbows. Livor mortis on the back, does not blanch on pressure. What is the estimated time of death?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "4-6 hours"
+      },
+      {
+        "label": "B",
+        "text": "6-8 hours"
+      },
+      {
+        "label": "C",
+        "text": "8-12 hours"
+      },
+      {
+        "label": "D",
+        "text": "12-24 hours"
+      },
+      {
+        "label": "E",
+        "text": "1-2 days"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE Forensic",
+    "status": "complete",
+    "ai_notes": "Rigor mortis appearance at larger muscle groups (hips/knees) before smaller groups (elbows) suggests longer time frame. Non-blanching livor mortis indicates 8-12+ hours. Cold environment delays rigor, so actual time may be longer than standard timeline. Combined findings suggest 12-24 hours or more.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "Question 79C: A 30-year-old woman is a victim of domestic violence. She is regularly abused by her husband. This time she was attacked with a knife. What type of wound would you expect to find?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Abrasion (friction wound)"
+      },
+      {
+        "label": "B",
+        "text": "Contusion (blunt force wound)"
+      },
+      {
+        "label": "C",
+        "text": "Incised wound (clean-edged cut from sharp object)"
+      },
+      {
+        "label": "D",
+        "text": "Lacerated wound (irregular tearing)"
+      },
+      {
+        "label": "E",
+        "text": "Punctured wound (penetrating wound from pointed object)"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE Forensic",
+    "status": "complete",
+    "ai_notes": "Knife wound produces clean-edged incised wounds with sharp margins and minimal tissue damage at edges, in contrast to lacerations which have irregular, ragged edges from blunt force trauma.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "Question 78A: A male was assaulted at the head and abdomen. He has a head wound 3x3 cm plus multiple scattered wounds on the head. Examination finds spleen is enlarged but intact, no blood in peritoneal cavity. He subsequently died. How should the autopsy report be written?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Death due to cerebral hemorrhage"
+      },
+      {
+        "label": "B",
+        "text": "Death due to cerebral hemorrhage from dangerous force applied to head"
+      },
+      {
+        "label": "C",
+        "text": "Death due to cerebral hemorrhage from assault to head"
+      },
+      {
+        "label": "D",
+        "text": "Death due to cerebral hemorrhage and splenic rupture from dangerous force applied to head and abdomen"
+      },
+      {
+        "label": "E",
+        "text": "Death due to cerebral hemorrhage and splenic rupture from assault to head and abdomen"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE Forensic",
+    "status": "complete",
+    "ai_notes": "The autopsy report should describe the actual pathological finding (cerebral hemorrhage) and its direct cause (assault/trauma to head). Since spleen is described as not ruptured ('ยังไม่แตก'), it should not be listed as cause of death. The report should be specific about the mechanism (assault) rather than generic terms.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "Question 78: A 40-year-old technician dies. Autopsy reveals a penetrating wound from left ribs through to right flank. How should the autopsy report be written?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Gunshot wound trajectory from left ribs through right flank, anterior to posterior, left to right, inferior to superior"
+      },
+      {
+        "label": "B",
+        "text": "Gunshot wound from left ribs through right flank with massive blood loss"
+      },
+      {
+        "label": "C",
+        "text": "Penetrating wound from left ribs through right flank with hemorrhagic shock"
+      },
+      {
+        "label": "D",
+        "text": "High-velocity gunshot wound from left chest to right abdomen"
+      },
+      {
+        "label": "E",
+        "text": "Fatal gunshot wound with description of trajectory and involved organs"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE Forensic",
+    "status": "complete",
+    "ai_notes": "Proper autopsy report for gunshot wounds should describe trajectory direction using anatomical terms: anterior-posterior direction, medial-lateral direction (left-right), and superior-inferior direction (top-bottom). Option A provides the most complete and standardized description.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "Question 144A: Autopsy of a 40-year-old male found at bus stop. Body still warm. No body injuries except a 3x3 cm wound on scalp. Blood alcohol level: 400 mg%. Urine: amphetamine positive. What is the likely cause of death?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Head injury"
+      },
+      {
+        "label": "B",
+        "text": "Ethanol toxicity"
+      },
+      {
+        "label": "C",
+        "text": "Amphetamine toxicity"
+      },
+      {
+        "label": "D",
+        "text": "Multiple substance intoxication"
+      },
+      {
+        "label": "E",
+        "text": "Unknown cause of death"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE Forensic",
+    "status": "complete",
+    "ai_notes": "With blood alcohol 400 mg/dL (toxic level) combined with positive amphetamine, and minor head injury (3x3 cm scalp wound unlikely to be fatal alone), the death is best attributed to multiple substance intoxication. The combination of CNS depressant (ethanol) and stimulant (amphetamine) can cause lethal cardiac arrhythmias.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A physician is asked by law enforcement to draw blood for alcohol testing from a patient. The patient refuses. The physician respects the patient's refusal and does not draw the blood. This action follows which ethical principle?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Beneficence"
+      },
+      {
+        "label": "B",
+        "text": "Non-maleficence"
+      },
+      {
+        "label": "C",
+        "text": "Confidentiality"
+      },
+      {
+        "label": "D",
+        "text": "Autonomy"
+      },
+      {
+        "label": "E",
+        "text": "Justice"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE Ethics",
+    "status": "complete",
+    "ai_notes": "Autonomy is the principle respecting individual's right to make decisions about their own body. By respecting the patient's refusal for blood draw, the physician upholds the patient's autonomy despite law enforcement request.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 5-year-old child is brought by parents reporting fall from stairs 2 hours ago with bruises on arms and legs. Examination shows both new bruises and old bruises with yellow edges. There are also linear parallel bruises noted. What should be your first action?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Take detailed history from parents again carefully"
+      },
+      {
+        "label": "B",
+        "text": "Admit to hospital for observation"
+      },
+      {
+        "label": "C",
+        "text": "Order imaging studies to confirm diagnosis"
+      },
+      {
+        "label": "D",
+        "text": "Separate child from caregivers for detailed examination and history taking"
+      },
+      {
+        "label": "E",
+        "text": "Report immediately to child abuse authorities"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE Forensic",
+    "status": "complete",
+    "ai_notes": "The combination of mixed-age bruises, linear parallel bruises (suggesting grab marks or implement marks), and inconsistent history (fall doesn't explain these findings) are red flags for child abuse. Separating child from caregivers allows for thorough evaluation without coercion and is the appropriate first step per child protection protocols.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "An 18-year-old male traveled to Tak province. One week after returning, he developed high fever and chills. Two friends who traveled with him developed similar symptoms after returning. Which describes the epidemiological pattern?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Endemic"
+      },
+      {
+        "label": "B",
+        "text": "Pandemic"
+      },
+      {
+        "label": "C",
+        "text": "Epidemic"
+      },
+      {
+        "label": "D",
+        "text": "Cluster outbreak"
+      },
+      {
+        "label": "E",
+        "text": "Sporadic"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE Epidemiology",
+    "status": "complete",
+    "ai_notes": "Multiple cases of similar illness in a short time period among people from a common exposure (travel to Tak) constitute an epidemic. This is likely dengue or other vector-borne disease endemic to that region.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A wife and child come to seek medical care for AIDS. The wife was infected before marriage to the current husband. The husband comes to ask the doctor what disease his wife and child have. How should you manage this situation appropriately?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Refuse to tell the husband because of patient confidentiality"
+      },
+      {
+        "label": "B",
+        "text": "Tell the husband to ask his wife directly"
+      },
+      {
+        "label": "C",
+        "text": "Tell the husband directly since it is a serious disease"
+      },
+      {
+        "label": "D",
+        "text": "Do not tell the husband but suggest he get tested for blood-borne infections"
+      },
+      {
+        "label": "E",
+        "text": "Encourage the wife to disclose to her husband, explaining benefits and risks of disclosure"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE Ethics",
+    "status": "complete",
+    "ai_notes": "While respecting the patient's confidentiality, the physician should encourage the wife to disclose to her spouse as he may be at risk. Counseling the wife about the importance and benefits of disclosure is the most ethical approach that balances confidentiality, beneficence, and autonomy.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "NLE 2008 Question 1: A corpse is found on a tour bus. Physical examination shows: blood pooled at feet which blanches on pressure, hands are rigid, legs are not rigid. Estimate the time of death.",
+    "choices": [
+      {
+        "label": "A",
+        "text": "2 hours"
+      },
+      {
+        "label": "B",
+        "text": "2-4 hours"
+      },
+      {
+        "label": "C",
+        "text": "4-6 hours"
+      },
+      {
+        "label": "D",
+        "text": "6-8 hours"
+      },
+      {
+        "label": "E",
+        "text": "8-10 hours"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008",
+    "status": "complete",
+    "ai_notes": "Blanching livor mortis indicates recent death (< 8-12 hours). Rigor mortis present in hands but not yet in legs suggests early rigor (typically begins at small muscles within 2-4 hours). Combined findings point to 2-4 hour window.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "NLE 2008 Question 2: Autopsy of a hanged corpse shows: neck ligature with bruising and short scratches, internal examination reveals bleeding in carotid artery, blood in muscle layers, and fracture of hyoid bone at left angle. What is the cause of death?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Smothering"
+      },
+      {
+        "label": "B",
+        "text": "Complete hanging"
+      },
+      {
+        "label": "C",
+        "text": "Incomplete hanging"
+      },
+      {
+        "label": "D",
+        "text": "Ligature strangulation"
+      },
+      {
+        "label": "E",
+        "text": "Manual strangulation"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2008",
+    "status": "complete",
+    "ai_notes": "The presence of neck abrasion with scratches (suggests victim's attempt to remove ligature), internal hemorrhage in blood vessels and muscle, and hyoid bone fracture all indicate ligature strangulation. The scratches and hemorrhage pattern distinguish this from hanging (which typically has less hemorrhage) and the hyoid fracture with vascular injury indicates true strangulation mechanism.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "NLE 2008 Question 3: A 57-year-old businessman develops chest tightness and dyspnea while dining at a mall. He calls a doctor who advises immediate hospital visit. Upon arrival at ER, EKG is normal. The patient dies 20 minutes after arrival despite full resuscitation attempts. The patient is Muslim and family is not concerned about cause of death but want to take the body for funeral rites immediately. How should the physician certify the cause of death?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute poisoning"
+      },
+      {
+        "label": "B",
+        "text": "Ruptured aneurysm"
+      },
+      {
+        "label": "C",
+        "text": "Acute heart failure"
+      },
+      {
+        "label": "D",
+        "text": "Cardiopulmonary failure"
+      },
+      {
+        "label": "E",
+        "text": "Coronary heart disease"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2008",
+    "status": "complete",
+    "ai_notes": "Given the clinical presentation (sudden chest tightness and dyspnea in middle-aged businessman), the most likely diagnosis is acute coronary syndrome/coronary heart disease despite normal EKG (EKG can be normal in early MI or in certain coronary distributions). When autopsy cannot be performed due to religious/family wishes, certifying the most probable cause based on clinical presentation is appropriate. Coronary heart disease is most likely given demographics and presentation.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "NLE 2008 Question 4: You are the director of a community hospital and notice increasing numbers of psychiatric patients with drug addiction. What management strategy would be most appropriate to reduce this public health problem?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Establish policy not to treat drug users"
+      },
+      {
+        "label": "B",
+        "text": "Request government authority to prosecute and arrest users with positive drug screening"
+      },
+      {
+        "label": "C",
+        "text": "Implement comprehensive drug addiction prevention and treatment programs"
+      },
+      {
+        "label": "D",
+        "text": "Refer all drug-addicted patients to psychiatric facilities only"
+      },
+      {
+        "label": "E",
+        "text": "Establish strict screening to deny hospital services to drug users"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2008",
+    "status": "complete",
+    "ai_notes": "Public health approach requires comprehensive prevention, treatment, and rehabilitation programs rather than punitive measures. Hospital administrators should develop evidence-based addiction services, harm reduction, and rehabilitation programs. Options A, B, and E violate medical ethics and would worsen public health outcomes.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 5-year-old child is brought by parents reporting a fall from a 2-week-old staircase injury. Examination shows bruises on arms and legs that are both new and old (yellow edges indicating older bruises). Additionally, there are parallel linear bruises noted on the body. What should be done FIRST?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Obtain detailed history from parents"
+      },
+      {
+        "label": "B",
+        "text": "Admit to hospital for observation"
+      },
+      {
+        "label": "C",
+        "text": "Request radiologic imaging to confirm diagnosis"
+      },
+      {
+        "label": "D",
+        "text": "Separate child from guardians and conduct thorough examination and history independently"
+      },
+      {
+        "label": "E",
+        "text": "Immediately report to child protection services"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE Forensic/Pediatrics",
+    "status": "complete",
+    "ai_notes": "Multiple red flags for abuse present: mixed-age bruises (old + new), linear parallel pattern (consistent with grab marks or implement marks), inconsistent history with findings. Separating child from caregivers allows uncoerced history and thorough examination. This is protocol before reporting to authorities.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A child underwent appendectomy at provincial hospital for acute appendicitis after being initially diagnosed with gastroenteritis at a district hospital. The child had been hospitalized for 2 weeks post-operatively. The mother suspects the initial diagnosis at the district hospital was wrong. How should you explain this to the mother?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "The district hospital lacks modern equipment"
+      },
+      {
+        "label": "B",
+        "text": "The district hospital staff had insufficient experience"
+      },
+      {
+        "label": "C",
+        "text": "The district hospital diagnosis was initially correct but appendicitis developed later"
+      },
+      {
+        "label": "D",
+        "text": "Early appendicitis symptoms resemble gastroenteritis symptoms"
+      },
+      {
+        "label": "E",
+        "text": "The district hospital should have used ultrasound for faster diagnosis"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE Forensic/Medical Education",
+    "status": "complete",
+    "ai_notes": "Option D is most educationally appropriate - it explains the diagnostic difficulty without blaming the district hospital, while validating the mother's concerns. Early acute appendicitis can present with non-specific abdominal pain similar to gastroenteritis, and progression to rupture/complications can occur. This is medically accurate and addresses the legitimate diagnostic challenge.",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 5 ปี แม่พามา ER เพราะตกบันได 3 ชั่วโมงที่แล้ว PE: เด็กตัวเล็ก (เล็กกว่าอายุ) มีรอยฟกช้าเก่าและใหม่หลายรอย พบ 6th healed rib fracture โรคนี้คืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Child abuse"
+      },
+      {
+        "label": "B",
+        "text": "Accidental trauma from fall"
+      },
+      {
+        "label": "C",
+        "text": "Osteogenesis imperfecta"
+      },
+      {
+        "label": "D",
+        "text": "Rickets"
+      },
+      {
+        "label": "E",
+        "text": "Bleeding disorder"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ไม่ระบุ",
+    "status": "complete",
+    "ai_notes": "เด็กตัวเล็กกว่าอายุ + รอยฟกหลายรอย (เก่าและใหม่) + healed rib fracture เป็น red flag ของ child abuse rib fracture ในเด็กเล็กหากมีหลายรอยและในระยะ healing ต่างๆ บ่งชี้การใช้ความรุนแรงซ้ำๆ",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "นักท่องเที่ยวอยู่บนดอยอินทนนท์ กางเต็นท์นอนจุดตะเกียงข้างในเต็นท์ วันรุ่งขึ้นมีคนพบว่าเสียชีวิตแล้ว สาเหตุของการเสียชีวิตคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Carbon monoxide"
+      },
+      {
+        "label": "B",
+        "text": "Ozone"
+      },
+      {
+        "label": "C",
+        "text": "Sulfur dioxide"
+      },
+      {
+        "label": "D",
+        "text": "Carbon dioxide"
+      },
+      {
+        "label": "E",
+        "text": "Nitrogen dioxide"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ไม่ระบุ",
+    "status": "complete",
+    "ai_notes": "ตะเกียง (ที่เผาเชื้อเพลิง) ในพื้นที่ปิด (เต็นท์) ผลิต CO ซึ่งเป็นแก๊สไร้กลิ่น ไร้สี ติดเฮโมโกลบิน ได้ดีกว่า O2 ทำให้เกิด hypoxia และตายได้ ปัญหาสุขภาพส่วนใหญ่เกี่ยวข้องกับเต็นท์ปิด CO poisoning",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ชายอายุ 20 ปี ติดอยู่ในบ้านที่มีเพลิงไหม้ มี 30% TBSA burn ที่แขน ท้อง สองข้าง นำส่งและรับไว้ในโรงพยาบาล ต่อมาผู้ป่วยแย่ลงเรื่อยๆ แล้วเสียชีวิตใน 2 ชั่วโมง จงลงสาเหตุการตายในใบรับรอง",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Inhalation injury"
+      },
+      {
+        "label": "B",
+        "text": "Acute renal failure"
+      },
+      {
+        "label": "C",
+        "text": "Severe electrolyte disturbance"
+      },
+      {
+        "label": "D",
+        "text": "Congestive heart failure"
+      },
+      {
+        "label": "E",
+        "text": "Full thickness skin burn"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ไม่ระบุ",
+    "status": "complete",
+    "ai_notes": "ตายภายใน 2 ชั่วโมงหลังเข้าโรงพยาบาลที่ 30% TBSA burn อาการแย่ลงอย่างรวดเร็วหมายถึง inhalation injury (smoke inhalation, CO poisoning, thermal injury to airways) ซึ่งสามารถโจมตีอย่างรวดเร็วกว่า hypovolemic shock จากการสูญเสียของเหลว ARF และปัญหาอื่นๆ โดยทั่วไปเกิดทีหลังกว่า",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ศพมีบาดแผลกระสุนปืนขนาด 6 mm ที่หน้าผากซ้าย มีจุดดา (tattooing/stippling) กระจายเป็นวงรอบรอยแผลขนาดประมาณ 6 cm ถามว่าเกิดจากระยะยิงแบบใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Intermediate range gun shot"
+      },
+      {
+        "label": "B",
+        "text": "Long range gun shot"
+      },
+      {
+        "label": "C",
+        "text": "Contact gun shot"
+      },
+      {
+        "label": "D",
+        "text": "Close range gun shot"
+      },
+      {
+        "label": "E",
+        "text": "Stab wound"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ไม่ระบุ",
+    "status": "complete",
+    "ai_notes": "จุดดา (stippling/tattooing) บ่งชี้ระยะยิง intermediate range (1-15 เมตร) ที่ contact range จะมี powder burn ไม่มี stippling ที่ long range ไม่มีทั้ง powder burn และ stippling stippling กระจายรอบแผลขนาด 6 cm ชี้ไปที่ intermediate range",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุมากมี underlying เป็น Atherosclerosis และ CHF โดนโจรเข้าบ้านทาร้ายร่างกาย ตีท้ายทอย แล้วสลบ มา admit ต่อมา 2 สัปดาห์มี Bronchopneumonia, Sepsis, Acute renal failure จากนั้นจึงเสียชีวิต ข้อใดเป็นสาเหตุของการตายที่ควรลงในใบรับรอง",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute renal failure"
+      },
+      {
+        "label": "B",
+        "text": "CHF"
+      },
+      {
+        "label": "C",
+        "text": "Blunt trauma"
+      },
+      {
+        "label": "D",
+        "text": "Bronchopneumonia"
+      },
+      {
+        "label": "E",
+        "text": "Sepsis"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ไม่ระบุ",
+    "status": "complete",
+    "ai_notes": "ในการลงสาเหตุการตาย ให้ลงรูปแบบ underlying cause นั่นคือเหตุที่ก่อให้เกิด chain of events ที่นำไปสู่การตาย Blunt trauma เป็น initiating event ที่นำไปสู่ complications ต่างๆ (pneumonia, sepsis, ARF) และในที่สุดการตาย principal cause ควรเป็น blunt trauma แม้ว่า immediate cause อาจเป็น sepsis หรือ ARF",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ท่านเป็นแพทย์เวรได้รับการเรียกไปชันสูตรพลิกศพหญิงอายุ 70 ปี เสียชีวิตในห้องน้ามา 1 ชั่วโมง ลูกสาวบอกว่ามารดามีโรคประจำตัวเป็นโรคความดันโลหิตสูงและเบาหวาน เพิ่งคุยกันเมื่อ 6 ชั่วโมงก่อน ไปอาบน้า ณสถานที่เกิดเหตุพบศพหญิงเสียชีวิตในห้องน้า มีเครื่องทำน้ำอุ่นเปิดทิ้งอยู่ ไม่มีร่องรอยการบุกรุก ตรวจศพเพิ่มเติมพบ subarachnoid hemorrhage และ bilateral inferior frontal lobes contusion ท่านจะคิดว่าผู้ตายเสียชีวิตจากสาเหตุใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Fall"
+      },
+      {
+        "label": "B",
+        "text": "Electrocution"
+      },
+      {
+        "label": "C",
+        "text": "Myocardial infarction"
+      },
+      {
+        "label": "D",
+        "text": "Drowning"
+      },
+      {
+        "label": "E",
+        "text": "Cerebrovascular accident"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ไม่ระบุ",
+    "status": "complete",
+    "ai_notes": "พบ subarachnoid hemorrhage + bilateral inferior frontal lobes contusion บ่งชี้ head trauma จากการหกล้มในห้องน้า elderly patient ในห้องน้าอาจลื่นและหกล้มได้ ศีรษะชนกับ hard surface ต่างๆ SAH และ contusion ตรงกับ mechanism สำหรับ electrocution จะมีจุด entry/exit drowning ศพต้องมีน้ำในปอด CVA หรือ MI จะไม่มี traumatic findings เช่นนี้",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "พบศพชายนอนเสียชีวิตริมถนน มีแผลเต็มไปหมด (scalp laceration wound at temporal area, เลือดออกปากและจมูก, open fracture Rt tibia) มี abrasion ที่ลาตัว, rigor mortis ที่ขากรรไกร, livor mortis กดจาง ข้อใดถูก",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เสียชีวิตนาน 6-8 ชั่วโมง"
+      },
+      {
+        "label": "B",
+        "text": "ความสูงของ tibial fracture มีความสำคัญในการชันสูตร"
+      },
+      {
+        "label": "C",
+        "text": "ผู้ป่วยสงสัย fracture base of skull และสามารถเป็นสาเหตุการตายได้"
+      },
+      {
+        "label": "D",
+        "text": "Temporal area laceration อาจบ่งชี้ middle meningeal artery injury"
+      },
+      {
+        "label": "E",
+        "text": "Livor mortis กดจางแสดงว่าตายจากการกด pressure"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ไม่ระบุ",
+    "status": "complete",
+    "ai_notes": "ตัวเลือก A: Rigor mortis ที่ขากรรไกร แสดงว่าเสียชีวิต 2-12 ชั่วโมง ไม่ชัดเจนเป็น 6-8 เท่านั้น / B: ความสูง tibial fracture ไม่มีความสำคัญมากนัก / C: Temporal area laceration + เลือดออกปากจมูก + SAH findings บ่งชี้ base of skull fracture ซึ่งอาจ tear vessels และเป็นสาเหตุตายได้ / D: Temporal artery อยู่บริเวณ temporal สามารถทำให้ epidural hematoma เกิดขึ้นได้ / E: Livor mortis กดจาง = ตายไม่นานหรืออาจเป็นเครื่องหมายของการสิ้นสุดชีวิตอื่นๆ ไม่จำเป็นจากการกดเสมอไป",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "สงสัย base of skull fracture ต้องทำการตรวจทางเพิ่มเติม (Imaging) อะไรสำหรับการชันสูตร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "AP and Lateral film of skull"
+      },
+      {
+        "label": "B",
+        "text": "CT scan head with bone windows"
+      },
+      {
+        "label": "C",
+        "text": "MRI head"
+      },
+      {
+        "label": "D",
+        "text": "3D reconstruction CT"
+      },
+      {
+        "label": "E",
+        "text": "X-ray skull base view (Towne's view)"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ไม่ระบุ",
+    "status": "complete",
+    "ai_notes": "ประเมิน base of skull fracture ที่ดีที่สุดคือ CT scan with bone windows สามารถแสดง fine fracture line และ pneumocephalus ได้ชัดเจน plain skull X-ray ความไว (sensitivity) ต่ำ 3D reconstruction เป็นการเพิ่มเติมเพื่อจำลองสามารถ",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ชายอะลาวาด หวาดระแวง คลุ้มคลั่ง ไม่ยอมให้รักษา ท่านเป็นแพทย์จะทำอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้ตำรวจจับ"
+      },
+      {
+        "label": "B",
+        "text": "รักษาแล้วรับไว้ในโรงพยาบาล"
+      },
+      {
+        "label": "C",
+        "text": "ให้ผู้ใหญ่บ้านเซ็นยินยอม"
+      },
+      {
+        "label": "D",
+        "text": "ส่งตัวไปโรงพยาบาลจิตเวช"
+      },
+      {
+        "label": "E",
+        "text": "ปล่อยให้กลับไปพร้อมให้คำแนะนำสุขภาพ"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ไม่ระบุ",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยที่มีอาการหวาดระแวง คลุ้มคลั่ง มีความสำคัญต่อสาธารณะหรือตัวเอง สามารถรักษาได้โดยไม่ได้รับการยินยอม (involuntary treatment) ตามกฎหมายจิตเวช และรับไว้ในโรงพยาบาลโดยระมัดระวังอย่างเคร่งครัด ตัวเลือก B ถูกต้องที่สุด",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยจิตเวชชายผูกคอตนเองด้วยเชือก แล้วกระโดดลงจากสะพานแขวน เสียชีวิต สาเหตุการตายที่ควรลงในใบรับรองคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "โรคทางจิตเวชเดิม"
+      },
+      {
+        "label": "B",
+        "text": "C-spine subluxation from hanging"
+      },
+      {
+        "label": "C",
+        "text": "Traumatic injuries from fall"
+      },
+      {
+        "label": "D",
+        "text": "Asphyxia from hanging"
+      },
+      {
+        "label": "E",
+        "text": "Multiple injuries from blunt trauma"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "ไม่ระบุ",
+    "status": "complete",
+    "ai_notes": "เมื่อผูกคอแล้วกระโดด immediate cause of death คือ asphyxia จาก hanging (ไม่ว่าจะเกิด fracture-dislocation หรือไม่) โรคจิตเวชเป็น underlying cause (เหตุผลในการกระทำ) แต่ principal cause ที่ลงในใบรับรองคือ asphyxia/hanging ตัวเลือก D ถูกต้อง",
+    "subject": "forensic",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "พนักงาน กทม. 5 คน ลงไปทำการจัดมูลสัตว์ในอุโมงค์ใต้ดินที่มีการระบายอากาศไม่เพียงพอ หลังจากเข้าไปได้ประมาณ 30 นาที พนักงานคนแรกล้มลง ตามด้วยผู้อื่นเข้ามาช่วยเหลือจนเสียชีวิตทั้ง 5 คน ตามลำดับ สาเหตุทางนิติเวชศาสตร์ที่ทำให้เกิดการเสียชีวิตอย่างรวดเร็วในลักษณะนี้คืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "สำลักอาหารหรือสารต่าง异物ในหลอดลม"
+      },
+      {
+        "label": "B",
+        "text": "การขาดแคลนออกซิเจน (Hypoxia) จากความเข้มข้นของแก๊สไฮโดรเจนซัลไฟด์ หรือเมธแนนที่สะสมในพื้นที่"
+      },
+      {
+        "label": "C",
+        "text": "ความเป็นพิษจากสารเคมีในอุจจาระสัตว์ที่ระเหยขึ้นสู่อากาศ"
+      },
+      {
+        "label": "D",
+        "text": "การติดเชื้อแบคทีเรียรุนแรง (Septicemia) จากการสัมผัสมูลสัตว์"
+      },
+      {
+        "label": "E",
+        "text": "การบาดเจ็บจากการถูกสัตว์โจมตี"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "explanation": "กรณีนี้เป็นตัวอย่างคลาสสิกของ 'confined space hazard' ในนิติเวชศาสตร์ โดยพื้นที่ใต้ดินที่ไม่มีการระบายอากาศที่ดีจะสะสมแก๊สที่เกิดจากการสลายตัวของมูลสัตว์ เช่น H₂S หรือ CH₄ ซึ่งแย่งชิงออกซิเจนและเป็นสาเหตุให้เกิด hypoxia รวดเร็ว ลักษณะการเสียชีวิตหลายคนต่อเนื่องกันเป็นสัญญาณ classic ของการขาดแคลนออกซิเจนในพื้นที่จำกัด",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายอายุ 35 ปี ถูกพบเสียชีวิตในห้องเก็บของที่มีประตูปิดสนิท เมื่อทำการตรวจสอบพบว่าผู้เสียชีวิตมีรอยคล้ำรอบคอและใบหน้าแดงม่วง โครงสร้างหลังจากเสียชีวิตแล้ว 2 ชั่วโมง ทำการตรวจเนื้อเยื่อปอด พบน้ำเหลือบริเวณปอด ศาสตราจารย์นิติเวชศาสตร์สรุปว่าเสียชีวิตจากการหายใจไม่ได้เนื่องจากจำกัดอากาศในห้องปิด (Environmental Suffocation/Entrapment) อะไรคือ pathophysiology ที่สำคัญที่สุดในกรณีนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ความเข้มข้นของ CO₂ เพิ่มสูงขึ้นในอากาศที่ปิดสนิท ทำให้เกิด hypercapnia และ respiratory acidosis นำไปสู่ respiratory center depression"
+      },
+      {
+        "label": "B",
+        "text": "ความเข้มข้นของ O₂ ลดลงเหลือต่ำกว่า 16% จนกระทั่ง hypoxia และส่วนสุดท้ายคือ anoxia ที่นำไปสู่การหยุดการทำงานของสมอง"
+      },
+      {
+        "label": "C",
+        "text": "เกิด mechanical obstruction ที่ทำให้อากาศไม่สามารถเข้าปอดได้เลย ส่งผลให้เกิด suffocation ทันที"
+      },
+      {
+        "label": "D",
+        "text": "ความกดอากาศในห้องลดลงอย่างรวดเร็ว ทำให้เกิด barotrauma ต่อระบบทางเดินหายใจ"
+      },
+      {
+        "label": "E",
+        "text": "เกิดการสะสมของ carbon monoxide จากการเผาไหม้ของวัสดุในห้อง"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "explanation": "Environmental suffocation/entrapment เกิดจากการลดลงของ O₂ ในอากาศที่ปิดสนิท เมื่อ O₂ ลดเหลือ 16% จะเริ่มมีอาการทางคลินิก และเมื่อต่ำกว่า 6% จะเกิด loss of consciousness ได้อย่างรวดเร็ว ในขณะที่ CO₂ เพิ่มขึ้นแต่ไม่ใช่ปัจจัยหลัก ที่สำคัญที่สุด pathophysiology ของเสียชีวิตจาก environmental suffocation คือ hypoxia ที่นำไปสู่ anoxia",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายวัย 45 ปี ถูกพบตายในห้องปิดที่มีเตาแก๊สเชื้อเพลิงไม่สมบูรณ์ที่ติดตั้งด้านในห้อง หลังจากตรวจสอบแล้วพบว่าเป็นกรณี gas suffocation จากคาร์บอนไดออกไซด์ (CO₂) สูง ข้างต้นไหล่และลำตัวมีลายสีแดงชมพู ผิวหนังมีลักษณะเหล่าเพราะเหตุใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ความเข้มข้นสูงของ CO₂ เหนี่ยวนำให้เกิด respiratory acidosis และเพิ่มการขยายตัวของหลอดเลือด ทำให้หลอดเลือดแตกและเกิดภาวะ hyperemia"
+      },
+      {
+        "label": "B",
+        "text": "CO₂ มีคุณสมบัติขับด้านนอกของตัวทำให้เกิด post-mortem lividity สีแดงชมพู"
+      },
+      {
+        "label": "C",
+        "text": "ความหนาแน่นสูงของ CO₂ ไม่สามารถแพร่กระจายออกจากเซลล์ได้ จึงกลักดันนัด"
+      },
+      {
+        "label": "D",
+        "text": "CO₂ มีสี่เหลี่ยมสูงทำให้เกิดปฏิกิริยาเคมีกับเม็ดเลือดแดง"
+      },
+      {
+        "label": "E",
+        "text": "ความเข้มข้นของ CO₂ ปิดกั้นการขนส่งออกซิเจนของสารต้านอนุมูลอิสระ"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": "ในกรณี gas suffocation จาก CO₂ สูง ทำให้เกิด respiratory acidosis ที่ส่งผลให้หลอดเลือดขยายตัว (vasodilation) ส่วนที่บริเวณข้างต้นไหล่และลำตัวเกิด hyperemia และ petechiae เนื่องจากความดันเลือดสูงในทีที่หายใจไม่ออก ซึ่งทำให้เห็นลายสีแดงชมพูและผิวหนังเหล่าเพราะเซลล์ได้รับออกซิเจนไม่เพียงพอ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายวัย 45 ปี ถูกพบเสียชีวิตในห้องใต้ดินที่มีการขุดสำเร็จ ตัวมีสีม่วงแดง หน้าท้องโป่งพอง มีกลิ่นเหม็นจากก๊าซ ที่เกาะลงบนพื้นห้องใต้ดิน ความเป็นไปได้ที่สุดอันตรายประเภทใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Asphyxia by displacement - ก๊าซเมทเทน (CH₄) แทนที่ออกซิเจนในอากาศ"
+      },
+      {
+        "label": "B",
+        "text": "Chemical asphyxia - ก๊าซคาร์บอนมอนอกไซด์ (CO) ยับยั้งการใช้ออกซิเจนของเซลล์"
+      },
+      {
+        "label": "C",
+        "text": "Mechanical asphyxia - การกดทับของวัตถุบนหน้าอก"
+      },
+      {
+        "label": "D",
+        "text": "Asphyxia by submersion - การจมน้ำหรือการจมในของเหลว"
+      },
+      {
+        "label": "E",
+        "text": "Gastrointestinal asphyxia - อาหารหรือเนื้อเยื่อทำให้เส้นทางหายใจปิด"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": "เมทเทน (CH₄) เป็นก๊าซที่ปล่อยออกมาจากการย่อยสลายวัตถุอินทรีย์ในที่ลึก และสามารถแทนที่ออกซิเจนในอากาศ ทำให้เกิด asphyxia by displacement ซึ่งนำไปสู่การตายจากการขาดออกซิจน สีม่วงแดงของศพเกิดจากภาวะ asphyxia สอดคล้องกับการสำลักจากก๊าซเฉื่อย",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชาย 45 ปี ถูกพบตายในห้องปิด โดยมีสัญญาณของ gas suffocation จากก๊าซคาร์บอนมอนอกไซด์ (CO) ร่างกายมีสีชมพูสดใส ข้อใดแพทย์อนุญาตให้ปลูกถ่ายอวัยวะจากศพผู้นี้ได้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ไม่อนุญาตให้ปลูกถ่ายอวัยวะเลย เพราะความเสี่ยงต่อผู้รับ"
+      },
+      {
+        "label": "B",
+        "text": "อนุญาตให้ปลูกถ่ายอวัยวะได้ เพราะการตายเป็นการตายทันทีและอวัยวะยังคงสมบูรณ์ทางกายวิภาค"
+      },
+      {
+        "label": "C",
+        "text": "อนุญาตได้เฉพาะกรณีที่ได้รับความยินยอมจากญาติและมีการทดสอบการทำงานของอวัยวะอย่างละเอียด"
+      },
+      {
+        "label": "D",
+        "text": "ต้องรอให้ได้รับอนุญาติจากลูกขุนก่อนถึงจะปลูกถ่ายได้"
+      },
+      {
+        "label": "E",
+        "text": "อนุญาตให้ปลูกถ่ายได้เฉพาะหัวใจและปอดเท่านั้น"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "explanation": "ในกรณีการตายจากการ asphyxia ด้วยก๊าซคาร์บอนมอนอกไซด์ (CO suffocation) ร่างกายมักมีลักษณะสีชมพูสดใสซึ่งแสดงว่าเนื้อเยื่อยังคงได้รับอক්සิเจนเพียงพอ และการตายเกิดขึ้นอย่างรวดเร็ว ทำให้อวัยวะยังคงมีความสมบูรณ์ทางกายวิภาคและสรีรวิทยาที่ดี จึงอนุญาตให้ปลูกถ่ายอวัยวะได้ โดยที่ไม่มีข้อห้ามทางนิติเวชศาสตร์เป็นพิเศษ ต่างจากการตายจากการสลายตัวของเนื้อเยื่อหรือโรคติดต่อร้ายแรง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "พี่ชายขาพิการเซนยอมปลูกถ่ายไตให้น้องชายของตนเอง โดยเป็นการบริจาคอวัยวะจากผู้บริจาคที่มีชีวิต ข้อใดคือข้อบ่งชี้ทางกฎหมายที่ถูกต้องเกี่ยวกับการบริจาคนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ถูกต้องตามกฎหมาย เนื่องจากเป็นการบริจาคอวัยวะระหว่างญาติ และผู้บริจาคมีความสมัครใจและมีความสามารถ"
+      },
+      {
+        "label": "B",
+        "text": "ผิดกฎหมาย เพราะการบริจาคไตต้องได้รับความเห็นชอบจากศาลเสมอ แม้จะเป็นญาติ"
+      },
+      {
+        "label": "C",
+        "text": "ถูกต้อง แต่ต้องรายงานต่อสำนักงานอัยการสูงสุดเพื่อตรวจสอบ"
+      },
+      {
+        "label": "D",
+        "text": "ผิดกฎหมาย เพราะการขาดพิการของผู้บริจาคทำให้ไม่มีความสามารถในการให้ความยินยอม"
+      },
+      {
+        "label": "E",
+        "text": "ถูกต้อง แต่จำเป็นต้องมีการตรวจสอบทางจิตเวชและการให้คำแนะนำด้านศีลธรรม"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": "ตามกฎหมายว่าด้วยการบริจาคอวัยวะของบุคคลปกติ การบริจาคจากผู้บริจาคที่มีชีวิตให้แก่ญาติสายเลือดนั้นสามารถทำได้ตามเงื่อนไขว่า ผู้บริจาคต้องมีความเหมาะสมทางสุขภาพ มีความสมัครใจ และมีความสามารถในการให้ความยินยอม ข้อเท็จจริงว่าผู้บริจาคขาพิการนั้นไม่เป็นอุปสรรคต่อการบริจาคหากสุขภาพของอวัยวะที่จะบริจาคนั้นพอใจ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "พี่ชายอายุ 25 ปี ประสงค์จะบริจาคดวงตาให้น้องสาวที่เป็นโรคตาบอดชั่วคราว ซึ่งอาจกลับสายตาได้ หากจะทำการบริจาคอวัยวะนี้ได้ตามกฎหมายไทย ข้อใดไม่ถูกต้อง",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ผู้บริจาคต้องอายุตั้งแต่ 18 ปีขึ้นไป และสมประสิทธิ์ในการให้ความยินยอม"
+      },
+      {
+        "label": "B",
+        "text": "ต้องได้รับการตรวจสุขภาพทั่วไปและตรวจอวัยวะที่จะบริจาคแล้ว"
+      },
+      {
+        "label": "C",
+        "text": "ต้องให้ความยินยอมเป็นลายลักษณ์อักษรต่อหน่วยงานการแพทย์"
+      },
+      {
+        "label": "D",
+        "text": "สามารถบริจาคให้แก่บุคคลใดก็ได้ที่ต้องการรับโดยไม่ต้องมีความสัมพันธ์"
+      },
+      {
+        "label": "E",
+        "text": "ผู้บริจาคต้องไม่อยู่ในสภาวะขัดสน หรือภายใต้อุปการะของผู้รับบริจาค"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2014",
+    "explanation": "ตามพระราชบัญญัติว่าด้วยการบริจาคอวัยวะมนุษย์ พ.ศ. 2547 บุคคลสามารถบริจาคอวัยวะของตนเองให้แก่บุคคลในครอบครัว ญาติ หรือบุคคลที่ตนรู้จักเท่านั้น ห้ามให้แก่บุคคลใดก็ได้ตามต้องการ (ตัวเลือก D ถูก) หากบริจาคให้ผู้ที่ไม่มีความสัมพันธ์จะต้องได้รับอนุมัติจากคณะกรรมการพิจารณาเป็นพิเศษ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "แม่จูงเด็กพิการมาที่โรงพยาบาลเพื่อให้บริจาคไตแก่พ่อของเด็ก เด็กอายุ 12 ปี มีความพิการทางสติปัญญา ไม่สามารถตัดสินใจได้ด้วยตนเอง ท่านควรจัดการกรณีนี้อย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ยินยอมให้บริจาคไตได้ เนื่องจากเป็นความประสงค์ของแม่"
+      },
+      {
+        "label": "B",
+        "text": "ปฏิเสธการบริจาคและรายงานต่อเจ้าหน้าที่สั่งการ เนื่องจากเด็กพิการไม่สามารถให้ความยินยอมได้อย่างรอบรู้"
+      },
+      {
+        "label": "C",
+        "text": "ขอให้เด็กลงนามในใบยินยอมเพื่อหลีกเลี่ยงปัญหากฎหมาย"
+      },
+      {
+        "label": "D",
+        "text": "ให้แม่ลงนามในแบบฟอร์มยินยอมแล้วทำการบริจาคไต"
+      },
+      {
+        "label": "E",
+        "text": "สอบถามเพียงแม่และดำเนินการบริจาคทันที"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "explanation": "การบริจาคอวัยวะจากบุคคลที่ยังเป็นผู้เยี่ยม หรือผู้ที่ไม่สามารถให้ความยินยอมได้อย่างรอบรู้นั้นถูกห้ามตามกฎหมายและจรรยาวิชาแพทย์ไทย โดยเฉพาะอย่างยิ่งการบริจาคโดยไม่ได้รับประโยชน์ส่วนบุคคลที่ชัดเจน การกระทำดังกล่าวถือเป็นการละเมิดสิทธิจึงต้องรายงานต่อเจ้าหน้าที่",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 45 ปี ถูกวินิจฉัยว่าอยู่ในภาวะ Persistent Vegetative State (PVS) เนื่องจากการบาดเจอสมองรุนแรง ครอบครัวทราบว่าผู้ป่วยได้เซ็นต์ยอมรับบัตร Donor Card มาก่อนแล้ว ในสถานการณ์นี้ อธิบดีโรงพยาบาลต้องตัดสินใจเกี่ยวกับอวัยวะเพื่อการปลูกถ่าย คำใดต่อไปนี้เป็นคำตัดสินใจที่ถูกต้องตามกฎหมายไทยและจริยธรรมการแพทย์",
+    "choices": [
+      {
+        "label": "A",
+        "text": "สามารถเบิกอวัยวะได้ทันที เพราะผู้ป่วยได้ยินยอมไว้แล้วด้วยการเซ็นบัตร Donor Card"
+      },
+      {
+        "label": "B",
+        "text": "ต้องได้รับการยินยอมจากผู้บริหารครอบครัวเป็นคนแรกตามลำดับอุত्তราธิการ แม้ว่าผู้ป่วยมีบัตร Donor Card"
+      },
+      {
+        "label": "C",
+        "text": "ต้องปิดเครื่องช่วยหายใจและรอให้ผู้ป่วยเสียชีวิตตามธรรมชาติก่อนจึงจะเบิกอวัยวะได้"
+      },
+      {
+        "label": "D",
+        "text": "ต้องรอให้ศาลมีคำสั่งอนุมัติการเบิกอวัยวะเสียก่อน เพราะผู้ป่วยอยู่ในภาวะที่ยังไม่ชัดเจนว่าจะหายหรือไม่"
+      },
+      {
+        "label": "E",
+        "text": "ไม่สามารถเบิกอวัยวะได้ เพราะผู้ป่วยยังมีการทำงานของสมองบางส่วน และไม่ถือว่าเสียชีวิตแล้ว"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "explanation": "ตามกฎหมายไทย (พระราชบัญญัติควบคุมการจัดหาอวัยวะและเนื้อเยื่อมนุษย์เพื่อการปลูกถ่าย พ.ศ. 2561) ผู้ป่วยที่ยังมีชีวิตแม้จะมี Donor Card ต้องได้รับการยินยอมจากผู้บริหารครอบครัวเป็นคนแรก (สามี ภรรยา บิดา มารดา หรือลูก) เพื่อปกป้องสิทธิของผู้ป่วยและครอบครัว บัตร Donor Card เพียงอย่างเดียวไม่เพียงพอ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "คนจรจัดประสบอุบัติเหตุรถชนสาหัส ไม่มีประจำที่อยู่ที่ชัดเจน ไม่มีญาติมาติดต่อ และสภาพร่างกายถูกทำลายมากจึงยากต่อการระบุตัวตน จะต้องดำเนินการอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ทำการเก็บตัวอย่างเพื่อการระบุตัวตนโดยใช้ DNA และเก็บรักษาศพไว้ในศพเย็นอย่างเป็นระบบ"
+      },
+      {
+        "label": "B",
+        "text": "ถ่ายภาพลักษณ์เฉพาะตัว ลายนิ้วมือ และเก็บเอกสารไว้เพื่อรอการระบุตัวตนในภายหลัง"
+      },
+      {
+        "label": "C",
+        "text": "ฝังศพไว้ก่อนเพื่อรอให้มีญาติมาติดต่อในอนาคต"
+      },
+      {
+        "label": "D",
+        "text": "ทำการชำระศพและปลงศพทันทีตามประเพณี โดยไม่ต้องรักษาศพ"
+      },
+      {
+        "label": "E",
+        "text": "ปล่อยให้ศพอยู่กับที่ไม่มีการเก็บรักษา รอการระบุตัวตนจนกว่าจะมีผู้มาติดต่อ"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": "ตามพระราชบัญญัติศพศูนย์ และหลักการนิติเวชศาสตร์ เมื่อศพไม่สามารถระบุตัวตนได้ (Unknown bodies) จะต้องเก็บตัวอย่าง DNA เพื่อการระบุตัวตนในอนาคต และต้องเก็บรักษาศพในศพเย็นอย่างเป็นระบบ ป้องกันการสลายตัวของศพและความเสียหายจากสัตว์เพื่อให้สามารถตรวจสอบได้ในภายหลัง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ท่านได้รับเชิญให้ไปชันสูตรพลิกศพที่โรงแรมแห่งหนึ่ง พบศพอยู่ภายในห้องพัก สภาพห้องล็อกจากด้านใน เปิดแอร์ไว้เย็นมาก Physical examination พบ Rigor mortis ที่เข่าและสะโพก แต่ไม่พบที่ข้อศอก Livor mortis พบที่แผ่นหลัง กดไม่จาง ศพมีสภาพแข็งตัวบางส่วน อุณหภูมิห้องประมาณ 15-18°C อุณหภูมิศพตรวจสอบได้ประมาณ 32°C ถามการประมาณเวลาตายตั้งแต่เมื่อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ตั้งแต่ 2-4 ชั่วโมงที่แล้ว"
+      },
+      {
+        "label": "B",
+        "text": "ตั้งแต่ 4-8 ชั่วโมงที่แล้ว"
+      },
+      {
+        "label": "C",
+        "text": "ตั้งแต่ 8-12 ชั่วโมงที่แล้ว"
+      },
+      {
+        "label": "D",
+        "text": "ตั้งแต่ 12-24 ชั่วโมงที่แล้ว"
+      },
+      {
+        "label": "E",
+        "text": "ตั้งแต่ 24-48 ชั่วโมงที่แล้ว"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "explanation": "Rigor mortis เฉพาะบางกล้ามเนื้อ (เข่า สะโพก) บ่งบอกอยู่ในระยะแรก (4-8 ชั่วโมง) ไม่พบที่ข้อศอกแสดงว่ายังไม่แข็งตัวสมบูรณ์ Livor mortis ไม่จางแสดงว่าเลยผ่านไป 12 ชั่วโมง อุณหภูมิศพ 32°C ในห้องเย็น 15-18°C สอดคล้องกับช่วง 4-8 ชั่วโมง (ศพลดลงประมาณ 1.5°C/ชั่วโมงในสภาพแวดล้อมเย็น)",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิง 30 ปี ถูกสามีทารุณกรรมเป็นประจำ ครั้งนี้ถูกทาร้ายด้วยมีดที่หน้าอก ตรวจร่างกายพบแผลกาปเปิด รอบนอกมีรอยคุ้นฝ่ายขอบแผล แผลลึกเข้าไปถึงกล้ามเนื้อ จงอธิบายลักษณะของแผลที่พบ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "แผลเจาะ (stab wound) มีรอยคุ้นฝ่ายที่ขอบแผลทั้ง 4 ด้าน ลึกมากกว่าความกว้าง"
+      },
+      {
+        "label": "B",
+        "text": "แผลบาดตัด (incised wound) มีขอบแผลสะอาด เรียบ ลึกและความกว้างไม่ต่างกันมาก"
+      },
+      {
+        "label": "C",
+        "text": "แผลฉีก (lacerated wound) มีขอบแผลขรุขระ ไม่สม่ำเสมอ ติดเนื้อเหี่ยว"
+      },
+      {
+        "label": "D",
+        "text": "แผลบีบ (bruised wound) มีการหักเสียและบวมน้ำจากความกดดันแรง"
+      },
+      {
+        "label": "E",
+        "text": "แผลสับ (chop wound) มีกระดูกหักขาด ขอบแผลไม่เท่ากัน เสี่ยว ๆ"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": "แผลที่เกิดจากมีด (ธรรมชาติคมจัด) ทำให้เป็นแผลเจาะ (stab wound) ซึ่งมีลักษณะเป็นแผลลึกและแคบ โดยมีรอยคุ้นฝ่าย (tissue bridging/tension lines) ที่ขอบแผลทั้งสี่ด้าน ความลึกมากกว่าความกว้างอย่างมาก ขอบแผลค่อนข้างเรียบ ซึ่งแตกต่างจากแผลฉีกที่มีขอบขรุขระ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายอายุ 35 ปี โดนทาร้ายที่บริเวณศีรษะและท้อง มีแผลเจาะทะลุที่ศีรษะขนาด 3x3 เซนติเมตร พร้อมแผลอื่นๆกระจายทั่วศีรษะ ในการตรวจท้องพบว่าม้ามมีการปริ (splenic rupture) แต่ยังไม่แตกออก ไม่มีเลือดออกในช่องท้องในขณะนี้ ต่อมาผู้เคราะห์เสียชีวิตในโรงพยาบาล ศากุลพยาบาลขอให้เขียนใบชันสูตร จงบันทึกเหตุการณ์เสียชีวิตนี้อย่างถูกต้องตามกฎหมาย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เสียชีวิตจากการทาร้ายด้วยอาวุธมีคม - แผลเจาะทะลุศีรษะเป็นสาเหตุโดยตรง"
+      },
+      {
+        "label": "B",
+        "text": "เสียชีวิตจากการทาร้าย - ม้ามปริแตกออกทำให้เลือดออกในช่องท้องมากและการกระแทกศีรษะ (multiple injuries)"
+      },
+      {
+        "label": "C",
+        "text": "เสียชีวิตจากการทาร้ายด้วยอาวุธมีคม - แผลเจาะทะลุศีรษะและม้ามปริแตกออก (multiple fatal injuries)"
+      },
+      {
+        "label": "D",
+        "text": "เสียชีวิตจากการทาร้าย - ม้ามปริเท่านั้น เป็นสาเหตุหลัก (splenic injury is the main cause)"
+      },
+      {
+        "label": "E",
+        "text": "เสียชีวิตจากการกระแทกศีรษะที่ส่งผลต่อสมอง ม้ามปริเป็นเพียงบาดแผลรองลงมา"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2014",
+    "explanation": "ผู้เสียชีวิตมีบาดแผลหลายแห่งที่สำคัญ: (1) แผลเจาะทะลุศีรษะขนาด 3x3 ซม. ซึ่งเป็นแผลร้ายแรง และ (2) ม้ามปริที่อาจแตกออกได้ทำให้เลือดออกทีหลัง ทั้งสองสาเหตุนี้เป็นสาเหตุที่นำไปสู่เสียชีวิตได้ ในการบันทึกใบชันสูตรจึงต้องระบุว่าเสียชีวิตจากการทาร์ายด้วยอาวุธมีคมที่มีแผลหลายแห่งร้ายแรง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายวัย 65 ปี ได้รับบาดเจอจากการตกจากที่สูง มีสัญญาณของ epidural hematoma ที่ส่วนกลางศีรษะ ตรวจพบหมดสติและมีอาการ Cushing's triad ได้รับการส่งตัวไปโรงพยาบาลแต่เสียชีวิตก่อนถึงจากการตายเพราะเลือดออกในสมอง นิติเวชศาสตร์จัดประเภทสาเหตุการตายนี้ว่าเป็นประเภทใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ตายเนื่องจากอุบัติเหตุ (Accidental death)"
+      },
+      {
+        "label": "B",
+        "text": "ตายเนื่องจากการฆ่าตัวตาย (Suicide)"
+      },
+      {
+        "label": "C",
+        "text": "ตายเนื่องจากการหมิ่นเหม (Homicide)"
+      },
+      {
+        "label": "D",
+        "text": "ตายเนื่องจากโรค (Natural death)"
+      },
+      {
+        "label": "E",
+        "text": "ตายเนื่องจากเหตุที่ไม่ชัดเจน (Undetermined)"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": "ในกรณีนี้เป็นการตกจากที่สูงซึ่งเป็นอุบัติเหตุที่ไม่ได้ตั้งใจ ส่งผลให้เกิด epidural hematoma และเลือดออกในสมอง ในนิติเวชศาสตร์ สาเหตุการตายจะจัดประเภทตามจุดประสงค์ของเหตุการณ์ และในกรณีนี้เป็นอุบัติเหตุโดยไม่จงใจ ดังนั้นจัดประเภทเป็น Accidental death",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายวัย 45 ปี ถูกทำร้ายที่ศีรษะด้วยวัตถุ钝ในการทะเลาะวิวาท เสียชีวิตหลังจากนั้น 6 ชั่วโมง โพสต์มอร์เตมพบเลือดออกในสมองจากการฉีกขาดของหลอดเลือดแถบซอล แพทย์นิติเวชต้องการยืนยันสาเหตุการตายโดยอาศัยลักษณะทางพยาธิวิทยา",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เลือดออกนอกกะโหลกศีรษะเฉพาะที่ (Epidural hemorrhage)"
+      },
+      {
+        "label": "B",
+        "text": "เลือดออกระหว่างสมองเยื่อแข็งและสมองเยื่อบาง (Subdural hemorrhage)"
+      },
+      {
+        "label": "C",
+        "text": "เลือดออกภายในเนื้อสมองจากการฉีกขาดหลอดเลือดแถบซอล (Intracerebral hemorrhage)"
+      },
+      {
+        "label": "D",
+        "text": "เลือดออกที่ช่องว่างสมองเยื่อบางและสมองเนื้อแท้ (Subarachnoid hemorrhage)"
+      },
+      {
+        "label": "E",
+        "text": "เลือดออกที่หัวใจและถุงหัวใจ (Hemopericardium)"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2014",
+    "explanation": "การฉีกขาดของหลอดเลือดแถบซอลจากการกระแทกศีรษะนำไปสู่เลือดออกภายในเนื้อสมองโดยตรง (Intracerebral hemorrhage) ซึ่งมักเกิดจากภยันอันตรายที่ศีรษะอย่างรุนแรง และเป็นสาเหตุการตายในโรคเลือดออกในสมองประเภทนี้ สาเหตุอื่นๆ เป็นลักษณะเลือดออกชนิดอื่นที่เกิดจากกลไกการบาดเจอ แต่ไม่สอดคล้องกับข้อมูลการพบวิสัยทัศน์ในโจทย์",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายวัย 45 ปี ถูกทาร้ายที่ศีรษะด้วยวัตถุ钝ทำให้เกิดเลือดออกในสมองและเสียชีวิต การจำแนกประเภทการตายในกรณีนี้อยู่ในหมวดหมู่ใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "การตายจากอุบัติเหตุ"
+      },
+      {
+        "label": "B",
+        "text": "การตายจากการฆ่า"
+      },
+      {
+        "label": "C",
+        "text": "การตายจากการฆ่าตัวตาย"
+      },
+      {
+        "label": "D",
+        "text": "การตายจากการละเมิดสิทธิมนุษยชน"
+      },
+      {
+        "label": "E",
+        "text": "การตายจากสาเหตุที่ไม่ชัดเจน"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "explanation": "ในนิติเวชศาสตร์ การจำแนกประเภทการตาย (manner of death) ประกอบด้วย homicide, suicide, accident, natural, undetermined ในกรณีนี้ผู้เสียชีวิตถูกทาร้าย (non-accidental injury) ทำให้เสียชีวิต ซึ่งสอดคล้องกับนิยามของการฆ่า (homicide) ไม่ใช่อุบัติเหตุ อุบัติเหตุเป็นการบาดเจ็บโดยไม่จงใจ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายวัย 35 ปี ถูกทำร้ายแรงจากอุบัติเหตุรถชน ได้รับบาดเจ็บที่ศีรษะและท้อง ส่งโรงพยาบาลแล้วเสียชีวิตในระหว่างการรักษา การชันสูตรศพพบเลือดออกในสมองและม้ามฉีก ในการพิจารณาเหตุเสียชีวิต นิติเวชแพทย์ควรสรุปได้ว่าเหตุเสียชีวิตโดยตรงคือเหตุใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เลือดออกในสมอง (Intracranial hemorrhage) เป็นเหตุเสียชีวิตโดยตรง เนื่องจากเป็นอาการแรกที่เกิดจากการบาดเจ็บศีรษะ"
+      },
+      {
+        "label": "B",
+        "text": "ม้ามฉีก (Splenic rupture) เป็นเหตุเสียชีวิตโดยตรง เป็นการบาดเจ็บที่ร้ายแรงกว่า"
+      },
+      {
+        "label": "C",
+        "text": "ทั้งเลือดออกในสมองและม้ามฉีก เป็นเหตุเสียชีวิตโดยตรง เนื่องจากเป็นบาดเจ็บหลายแห่งที่เกิดจากอุบัติเหตุเดียวกัน"
+      },
+      {
+        "label": "D",
+        "text": "ความสูญเสียเลือดมากเกินไป (Hemorrhagic shock) จากทั้งสองบาดเจ็บ เป็นเหตุเสียชีวิตโดยตรง"
+      },
+      {
+        "label": "E",
+        "text": "อุบัติเหตุรถชน เป็นเหตุเสียชีวิตโดยตรง เนื่องจากเป็นสาเหตุเริ่มต้น"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2014",
+    "explanation": "ในนิติเวชศาสตร์ เหตุเสียชีวิตโดยตรง (Immediate cause of death) คือสภาวะทางสรีระที่ทำให้เกิดความตาย ในกรณีนี้ เลือดออกในสมองและม้ามฉีกทั้งสองอย่างนำไปสู่ความสูญเสียเลือดและ hemorrhagic shock ซึ่งเป็นสภาวะที่โดยตรงทำให้หัวใจหยุดเต้น การบาดเจ็บทั้งสองอย่างถือว่าเป็นอาการบาดเจ็บภายนอกที่กระทำเหตุ (external cause) ส่วน hemorrhagic shock เป็นเหตุเสียชีวิตโดยตรง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายวัย 45 ปี ถูกทำร้ายที่หัวและท้องอย่างรุนแรง นำมาโรงพยาบาลในสภาพหมดสติ ตรวจพบเลือดออกในสมอง (Intracranial hemorrhage) และม้ามฉีก (Splenic rupture) จากการบาดเจอ ผู้ป่วยเสียชีวิตในระหว่างการรักษา จากการสูญเสียเลือดและความเสียหายต่อระบบประสาท ในการพิจารณานิติเวชศาสตร์ การตายนี้เป็นแบบใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ตายเพราะบาดเจอ (Death due to wound/injury)"
+      },
+      {
+        "label": "B",
+        "text": "ตายเพราะเลือดออกรุนแรง (Death due to massive hemorrhage)"
+      },
+      {
+        "label": "C",
+        "text": "ตายเพราะบาดแผลต่อสิ่งมีชีวิต (Death due to homicidal injury)"
+      },
+      {
+        "label": "D",
+        "text": "ตายเพราะการติดเชื้อทุติยภูมิ (Death due to secondary infection)"
+      },
+      {
+        "label": "E",
+        "text": "ตายเพราะภาวะช็อก (Death due to shock)"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2014",
+    "explanation": "การตายที่เกิดจากการถูกทำร้ายที่หัวและท้องพร้อมเลือดออกในสมองและม้ามฉีกนั้น จัดเป็น 'ตายเพราะบาดแผลต่อสิ่งมีชีวิต' (Homicidal injury) เพราะกำหนดประเภทการตายตามสาเหตุที่ส่วนต่างๆ ของร่างกายได้รับบาดเจอ ไม่ใช่ตามกลไกการตาย (mechanism) เช่น hemorrhage หรือ shock ซึ่งเป็นผลมาจากบาดเจอนั้น",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายวัย 35 ปี อาชีพช่างกล เสียชีวิตจากแผลทะลุ โดยมีแผลเข้าที่ชายโครงซ้ายทะลุออกที่สะบักขวา (เป็นแผลทะลุจากซ้ายไปขวา) ไม่พบลูกศร หรือวัตถุแปลกปลอม ลักษณะแผลบ่งชี้ว่าเกิดจากการถูกเจาะทะลุด้วยวัตถุเหลี่ยมคม จงระบุการเขียนใบชันสูตรว่าเป็นเหตุการณ์ประเภทใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เสียชีวิตจากแผลทะลุทะลวง อันเนื่องมาจากการถูกกระทำความรุนแรง (Homicidal penetrating trauma)"
+      },
+      {
+        "label": "B",
+        "text": "เสียชีวิตจากแผลทะลุทะลวง อันเนื่องมาจากอุบัติเหตุ (Accidental penetrating trauma)"
+      },
+      {
+        "label": "C",
+        "text": "เสียชีวิตจากแผลทะลุทะลวง อันเนื่องมาจากการฆ่าตัวตาย (Suicidal penetrating trauma)"
+      },
+      {
+        "label": "D",
+        "text": "เสียชีวิตจากแผลทะลุทะลวง เหตุเกิดสงสัย ไม่สามารถสรุปได้ (Undetermined penetrating trauma)"
+      },
+      {
+        "label": "E",
+        "text": "เสียชีวิตจากแผลทะลุทะลวง อันเนื่องมาจากการใช้อาวุธปืน (Gunshot wound)"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": "แผลทะลุจากซ้ายไปขวา (penetrating wound with entrance and exit) ในตำแหน่งบริเวณลำตัวที่ไม่สามารถเกิดจากการฆ่าตัวตายหรืออุบัติเหตุได้ บ่งชี้ว่าเกิดจากการถูกกระทำความรุนแรงโดยบุคคลอื่น ซึ่งเป็นการกระทำที่มีจงใจและชี้ไปยังการเสียชีวิตแบบ Homicidal ในการเขียนใบชันสูตร",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชายอายุ 35 ปี ถูกยิงด้วยปืนพกใจกล้า กระสุนทะลุจากชายโครงซ้าย วิถีการเดินทางของกระสุน: หน้าไปหลัง ซ้ายไปขวา ล่างไปบน หากต้องการประเมินการออกแบบการฆาตกรรมหรือการป้องกันตัว ควรพิจารณาข้อใดต่อไป",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ผู้บาดเจ็บอาจหันหน้าขึ้นและมุ่งหน้าไปทางผู้ยิง (ท่าป้องกันตัว)"
+      },
+      {
+        "label": "B",
+        "text": "ผู้ยิงยืนอยู่ด้านหน้าต่ำกว่า และด้านขวาของผู้บาดเจ็บ (ตำแหน่งผู้ยิง)"
+      },
+      {
+        "label": "C",
+        "text": "ผู้ยิงยืนอยู่ด้านหลังสูงกว่า และด้านซ้ายของผู้บาดเจ็บ (ตำแหน่งผู้ยิง)"
+      },
+      {
+        "label": "D",
+        "text": "แผลทะลุแสดงว่าเป็นแผลเข้าที่ชายโครงซ้าย และออกที่ด้านขวาหลัง (ลักษณะแผลทะลุ)"
+      },
+      {
+        "label": "E",
+        "text": "ไม่สามารถระบุตำแหน่งผู้ยิงได้เนื่องจากขึ้นอยู่กับหลายตัวแปร (ความสัมพันธ์การเคลื่อนไหว)"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "explanation": "วิถีกระสุน ล่างไปบน หมายความว่ากระสุนเข้าจากด้านล่าง ซ้ายไปขวา หมายความว่ากระสุนเข้าจากด้านซ้าย ดังนั้นผู้ยิงจึงต้องยืนอยู่ที่ด้านหน้า ต่ำกว่า และด้านขวาของผู้บาดเจ็บเพื่อให้วิถีกระสุนตรงกับทิศทางนี้ ข้อมูลนี้เป็นสิ่งสำคัญในการสร้างฉากเหตุการณ์และพิจารณาเรื่องการป้องกันตัว",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ศพชายอายุ 40 ปี พบที่ป้ายรถเมล์ตัวยังอุ่น ไม่มีรอยแผลตามตัว ยกเว้นแผลเจาะที่ท้ายทอยขนาด 3×3 ซม. ตรวจเลือด Ethanol 400 mg% ตรวจปัสสาวะ Amphetamine positive ถามว่าน่าจะตายจากสาเหตุใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "การขาดออกซิเจนเนื่องจากการบีบคอ (Asphyxia from strangulation)"
+      },
+      {
+        "label": "B",
+        "text": "ตัดสินใจไม่ได้ (Undetermined) - อาจจากยาเสพติด หรือการทำร้ายร่างกาย"
+      },
+      {
+        "label": "C",
+        "text": "ติดเชื้อจากแผลเจาะ (Infection from puncture wound)"
+      },
+      {
+        "label": "D",
+        "text": "ความพิษของแอลกอฮอล์ (Alcohol intoxication)"
+      },
+      {
+        "label": "E",
+        "text": "การสูญเสียเลือดจากแผลเจาะ (Hemorrhage from puncture wound)"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "explanation": "แผลเจาะขนาดเล็ก 3×3 ซม. ไม่สามารถบ่งชี้ความตายจากการสูญเสียเลือดได้ โดยเฉพาะที่ท้ายทอย (ไม่ใกล้หลอดเลือดใหญ่) การมี Ethanol 400 mg% และ Amphetamine positive แสดงว่ามีสารเสพติด ซึ่งอาจทำให้ตายจากสารพิษหรือการทำร้ายกายในสภาวะเสพติด จึงเป็นการตายที่ต้องสอบสวน (Undetermined/Suspicious death) และต้องพิจารณาสาเหตุเพิ่มเติม",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ศพหญิงอายุ 45 ปี ถูกค้นพบในห้องนอนของตัวเอง ไม่มีสัญญาณการกระทำใจพุ่ง ไม่มีบาดแผลหรือสิ่งผิดปกติภายนอก การชันสูตรศพพบอวัยวะภายในปกติ และผลการตรวจเลือด เคมี ไมโครไบโอโลยี ล้วนเป็นลบ สาเหตุการเสียชีวิตไม่สามารถระบุได้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Unascertained death - ไม่สามารถระบุสาเหตุการเสียชีวิตได้แม้ทำชันสูตรศพและตรวจเพิ่มเติม"
+      },
+      {
+        "label": "B",
+        "text": "Sudden unexplained nocturnal death syndrome (SUNDS) - สูญเสียชีวิตอย่างกระทันหันในระหว่างการนอนหลับโดยไม่พบสาเหตุ"
+      },
+      {
+        "label": "C",
+        "text": "Natural death - เสียชีวิตจากสาเหตุทางการแพทย์ธรรมชาติ"
+      },
+      {
+        "label": "D",
+        "text": "Homicidal death - เสียชีวิตจากการกระทำของบุคคลอื่น"
+      },
+      {
+        "label": "E",
+        "text": "Accidental death - เสียชีวิตจากอุบัติเหตุที่ไม่ได้ตั้งใจ"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": "Unascertained death (Unknown cause of death) เป็นการจำแนกสาเหตุการเสียชีวิตที่ใช้เมื่อทำการชันสูตรศพและตรวจเพิ่มเติมแล้วยังไม่สามารถพบสาเหตุได้ ในกรณีนี้พบว่าไม่มีสัญญาณการกระทำใจพุ่ง ไม่มีบาดแผล และผลการตรวจทั้งหมดเป็นลบ จึงจำแนกว่าเป็น Unascertained death ซึ่งแตกต่างจากกรณี SUNDS ที่มีลักษณะและช่วงอายุเฉพาะ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "(A) ศพชายไทยถูกพบ ตรวจเจอบาดแผลฟกช้าที่ท้ายทอยขนาด 3x3 cm ตรวจ alcohol level ในเลือดได้ 400, urine metamphetamine positive ให้สรุปสาเหตุการตายของศพรายนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Trauma"
+      },
+      {
+        "label": "B",
+        "text": "Alcohol"
+      },
+      {
+        "label": "C",
+        "text": "Methamphetamine"
+      },
+      {
+        "label": "D",
+        "text": "Multiple intoxication"
+      },
+      {
+        "label": "E",
+        "text": "Unknown"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "โรงพยาบาลอำเภอแห่งหนึ่งขาดเครื่องมือทางนิติเวชศาสตร์ที่ทันสมัยสำหรับการตรวจสอบร่างกายและเก็บหลักฐานทางนิติเวช ทำให้แพทย์ไม่สามารถทำการตรวจสอบอย่างครบถ้วนในกรณีของเหตุอุบัติเหตุ การถูกทำร้ายกายหรือการคาดสงสัยว่าถูกกระทำผิดกฎหมายอื่นๆ สถานการณ์นี้ส่งผลต่อคุณภาพของการรักษา การเก็บหลักฐาน และการยุติธรรม",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ส่งตัวผู้บาดเจ็บไปยังโรงพยาบาลจังหวัดที่มีสิ่งอุปกรณ์ครบครัน และจดบันทึกอย่างละเอียดเกี่ยวกับลักษณะอาการและการรักษาที่ทำในโรงพยาบาลอำเภอ"
+      },
+      {
+        "label": "B",
+        "text": "ประสานงานกับสำนักงานสัญญาธิการจังหวัด เพื่อให้ส่งเจ้าหน้าที่มาเก็บหลักฐานทางนิติเวช ด้วยเครื่องมือที่ทันสมัยตามมาตรฐาน"
+      },
+      {
+        "label": "C",
+        "text": "ส่งเรื่องให้สำนักสถิติเพื่อรายงานสถานการณ์โดยไม่ต้องดำเนินการเก็บหลักฐานเพิ่มเติม"
+      },
+      {
+        "label": "D",
+        "text": "ให้บริการรักษาพยาบาลต่อ แต่ปฏิเสธการเก็บหลักฐานทางนิติเวชเพราะขาดเครื่องมือ"
+      },
+      {
+        "label": "E",
+        "text": "รอจนกว่าโรงพยาบาลอำเภอจะได้รับอุปกรณ์ใหม่ก่อนจึงจะดำเนินการเก็บหลักฐาน"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": "เมื่อโรงพยาบาลอำเภอขาดเครื่องมือทางนิติเวชที่ทันสมัย แพทย์ต้องจดบันทึกรายละเอียดทั้งหมดที่สามารถสังเกตได้ในเบื้องต้น จากนั้นส่งตัวผู้บาดเจ็บไปยังโรงพยาบาลระดับที่สูงกว่าที่มีความพร้อมในการตรวจสอบและเก็บหลักฐานอย่างสมบูรณ์ วิธีนี้รักษาสิทธิของผู้บาดเจ็บและความเที่ยงธรรมของกระบวนการทางกฎหมาย",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "โรงพยาบาลอาเภอแห่งหนึ่งมีประสบการณ์น้อยในการรับมือกับคดีนิติเวชศาสตร์ และได้รับศพผู้เสียชีวิตอย่างไม่คาดคิดที่มีสัญญาณของการทำร้ายร่างกาย ในการจัดการศพนี้ โรงพยาบาลควรดำเนินการใดเป็นอันดับแรก",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ส่งศพไปยังสำนักวิเทศศาสตร์ (Institute of Forensic Medicine) เพื่อชันสูตรศพโดยนิติแพทย์"
+      },
+      {
+        "label": "B",
+        "text": "แจ้งตำรวจและพื้นที่อำนาจศาลเพื่อให้ออกหนังสือสั่งชันสูตรศพ"
+      },
+      {
+        "label": "C",
+        "text": "รักษาศพไว้ในห้องเก็บศพและปฏิบัติตามข้อบัญญัติว่าด้วยศพ โดยหลีกเลี่ยงการดำเนินการใดๆ จนกว่าจะมีคำสั่ง"
+      },
+      {
+        "label": "D",
+        "text": "ให้แพทย์ประจำโรงพยาบาลทำการชันสูตรศพด้วยตนเอง เพื่อหาเหตุการณ์ที่เกิดขึ้น"
+      },
+      {
+        "label": "E",
+        "text": "มอบศพให้กับครอบครัวผู้เสียชีวิตทันทีเพื่อให้สามารถดำเนินการศพศาสนา"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "explanation": "เมื่อมีการสงสัยว่ามีการกระทำที่อาจเป็นคดีอาญา โรงพยาบาลจะต้องแจ้งให้ตำรวจทราบและให้พื้นที่อำนาจศาล (ประมาณยา) ออกหนังสือสั่งชันสูตรศพเนื่องจากศพเป็นหลักฐานทางกฎหมาย การชันสูตรศพกับคดีสงสัยต้องอยู่ภายใต้การกำกับดูแลของกฎหมายอาญา ไม่ใช่การดำเนินการเอกชนของโรงพยาบาล",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 45 ปี เข้ารพ.อาเภอด้วยอาการท้องปวด รพ.วินิฉัยว่าเป็นไส้ติ่งอักเสบและทำการผ่าตัดเอาไส้ติ่งออก แต่ในระหว่างผ่าตัดแพทย์ได้ทิ้งผ้าชำระขนาด 10x10 ซม. ไว้ในช่องท้อง ผู้ป่วยกลับมาหลังจากผ่าตัด 5 วัน มีอาการติดเชื้อและมีการเกิด adhesion นอกจากการรักษาทางการแพทย์แล้ว ข้อใดคือหน้าที่ทางกฎหมายของรพ.แห่งนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ต้องชดใช้ค่าเสียหายอันเนื่องมาจากความประมาทเลินเล่อของแพทย์"
+      },
+      {
+        "label": "B",
+        "text": "ไม่ต้องชดใช้เพราะแพทย์ได้ทำการรักษาอย่างถูกต้องตามวิธีการแพทย์"
+      },
+      {
+        "label": "C",
+        "text": "ต้องชดใช้เฉพาะค่ารักษาเพิ่มเติมเท่านั้น"
+      },
+      {
+        "label": "D",
+        "text": "ต้องชดใช้เพราะเป็นmalpractice และรพ.มีความรับผิดต่อการกระทำของแพทย์"
+      },
+      {
+        "label": "E",
+        "text": "ต้องชดใช้เต็มจำนวนและแพทย์ต้องคืนเงินให้รพ.ตามหลักการbreadwinner"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2014",
+    "explanation": "การทิ้งผ้าชำระในช่องท้องขณะผ่าตัดเป็นmalpractice ที่ชัดเจน (res ipsa loquitur) และการกระทำนี้ไม่สามารถสรุปได้ว่าเป็นความเสี่ยงที่สมควรหรือการรักษาตามหลักการแพทย์ที่ดี รพ.มีความรับผิดต่อการกระทำของแพทย์ที่อยู่ภายใต้การบังคับบัญชา และต้องชดใช้ค่าเสียหายทั้งหมดรวมถึงค่ารักษา ค่าลำบาก และอุบัติเหตุจากความประมาท",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 25 ปี มาด้วยอาการปวดท้องบริเวณลุ่มท้องขวา ปวดเฉียบพลัน ไม่มีอาการคลื่นไส้หรืออาเจียน ตรวจร่างกายพบ tenderness ที่จุด McBurney อุณหภูมิปกติ คำถาม: อาการปวดท้องในระยะแรกของไส้ติ่งอักเสบมักมีลักษณะใดที่เหมือนกับอาการของโรคอื่น",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ปวดเฉียบพลันที่บริเวณลุ่มท้องขวาทันที"
+      },
+      {
+        "label": "B",
+        "text": "ปวดฝอยรอบสะดือก่อน แล้วค่อยย้ายไปยังลุ่มท้องขวา (ลาไส้อักเสบ)"
+      },
+      {
+        "label": "C",
+        "text": "ปวดท้องกำลังหรือปวดหรี่ๆ ทั่วท้อง"
+      },
+      {
+        "label": "D",
+        "text": "ปวดท้องบริเวณเนื้อตื้นถึงเนื้อลึก ตามลิมโฟแกงของลำไส้"
+      },
+      {
+        "label": "E",
+        "text": "ปวดท้องรุนแรงทันทีพร้อมอาการคลื่นไส้ อาเจียน และไข้สูง"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "explanation": "ในระยะแรกของไส้ติ่งอักเสบ (acute appendicitis) อาการปวดเริ่มต้นที่บริเวณสะดือ (periumbilical) เป็นอาการปวดฝอยๆ แบบ visceral pain เนื่องจากไส้ติ่งมีการส่งประสาทมา (innervation) จากระดับ T10 เหมือนกับลำไส้เล็ก ทำให้ผู้ป่วยรู้สึกปวดบริเวณสะดือ จากนั้นเมื่อการอักเสบลุกลามไปยังช่วงท้องด้านหน้า (parietal peritoneum) อาการปวดจึงเคลื่อนไปยังจุด McBurney (ลุ่มท้องขวา) ลักษณะนี้เหมือนกับเทอร์มินัลไอลีอัพเซนดิทิส (terminal ileitis) ที่มักเกิดจากลาไส้อักเสบ ซึ่งทำให้อาการสับสนได้",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงสูงวัยอายุ 65 ปี มาโรงพยาบาลอาเภออื่นคืนด้วยอาการปวดท้องคนข้าง บนจัดฟันแน่นเพิ่มมากขึ้น ผู้เชี่ยวชาญสงสัยถึงการฉีกของอวัยวะในช่องท้อง โรงพยาบาลอาเภอนี้ขาดเครื่องมือตรวจวินิจฉัย CT scan จึงต้องใช้ ultrasound เพื่อการวินิจฉัยได้รวดเร็วขึ้น ข้อดีของการใช้ ultrasound ในกรณีนี้คืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เป็นวิธีการตรวจที่ไม่ก่อให้เกิดรังสี สามารถทำได้ซ้ำๆ ที่เตียงผู้ป่วย และราคาถูก"
+      },
+      {
+        "label": "B",
+        "text": "มีความไวและจำเพาะเจาะจงสูงกว่า CT scan และสามารถตรวจทั้งช่องบน ช่องกลาง ช่องล่างได้"
+      },
+      {
+        "label": "C",
+        "text": "สามารถให้ข้อมูลเกี่ยวกับระยะขยายของโรคและการกระจายอวัยวะได้อย่างละเอียด"
+      },
+      {
+        "label": "D",
+        "text": "ต้องการเวลาการตรวจมากที่สุดและสามารถค้นหาเนื้องอกในช่องท้องได้ดีที่สุด"
+      },
+      {
+        "label": "E",
+        "text": "ใช้เวลานานในการเตรียมตัวผู้ป่วย และต้องย้ายผู้ป่วยไปยังห้องตรวจเฉพาะ"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": "Ultrasound เป็นวิธีการตรวจที่เหมาะสมสำหรับโรงพยาบาลอาเภอเพราะไม่มีรังสี สามารถทำที่เตียงผู้ป่วยได้ ราคาถูกและสามารถทำซ้ำได้ตามความจำเป็น ซึ่งเป็นข้อดีสำคัญเมื่อขาดเครื่องมือตรวจอื่นๆ เหมาะสำหรับการประเมินเบื้องต้นเพื่อหาเหตุการณ์ฉีกของอวัยวะในช่องท้อง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "เด็ก 6 mo พ่อแม่พามาบอกว่าตกบันได 2 hr PTA มีรอยฟกช้าที่แขนและขา เป็นทั้งรอยใหม่และรอยเก่า (ขอบแผลมีสีเหลือง) แล้วก็มีรอยฟกช้าเป็นเส้นตรงขนานกัน\nถามว่าควรทาอะไรเป็นอันดับแรก\nก. ซักประวัติจากพ่อแม่อย่างละเอียดอีกครั้ง\nข. รับเข้ารักษาตัวในโรงพยาบาล เพื่อสังเกตอาการ\nค. ส่งวินิจฉัยทางรังสี เพื่อยืนยันการวินิจฉัย\nง. แยกเด็กออกจากผู้ปกครอง เพื่อซักประวัติและตรวจร่างกายอย่างละเอียด\nจ. แจ้งเจ้าหน้าที่ที่เกี่ยวข้องด้าน abuse เด็ก\n72A ผู้ป่วยชายอายุ 18 ปี เดินทางไปจังหวัดตาก หลังกลับมาประมาณ 1 สัปดาห์ มีอาการไข้สูงหนาวสั่น มีประวัติเพื่อนที่เดินทางไปด้วย 2 คนหลังเดินกลับมา มีอาการลักษณะเดียวกัน ข้อใดเป็นลักษณะการระบาดของโรค",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Endermic"
+      },
+      {
+        "label": "B",
+        "text": "Pandemic"
+      },
+      {
+        "label": "C",
+        "text": "Epidermic"
+      },
+      {
+        "label": "D",
+        "text": "… (ไม่รู้จัก)"
+      },
+      {
+        "label": "E",
+        "text": "Sporadic"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "พบศพบนรถทัวร์ เลือดตกลงที่ปลายเท้า กดจาง มือแข็ง ขาไม่แข็ง จงประมารระยะเวลาการตาย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "2 hr"
+      },
+      {
+        "label": "B",
+        "text": "2-4 hr"
+      },
+      {
+        "label": "C",
+        "text": "4-6 hr"
+      },
+      {
+        "label": "D",
+        "text": "6-8 hr"
+      },
+      {
+        "label": "E",
+        "text": "8-10 hr"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ตรวจศพพบรอยรัดที่คอ ฟกช้าและมีรอยครูดสั้น ๆ ยาวๆ ผ่าศพพบรอยช้าที่หลอดเลือดแดง และมีเลือดออกในชั้นกล้ามเนื้อ กระดูก Hyoid bone แตกทางมุมซ้าย ท่านคิดว่าตายจากสาเหตุใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Mothering"
+      },
+      {
+        "label": "B",
+        "text": "Complete hanging"
+      },
+      {
+        "label": "C",
+        "text": "Incomplete hanging"
+      },
+      {
+        "label": "D",
+        "text": "Ligature strangulation"
+      },
+      {
+        "label": "E",
+        "text": "Manual strangulation"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยชายนักธุรกิจอายุ 57 ปี ไปทานอาหารเย็นที่ห้างสรรพสินค้า มีอาการแน่นหน้าอก หายใจไม่ออก ได้โทรไปปรึกษาแพทย์บอกว่าให้รีบมารพ.ทันที ผู้ป่วยมาถึงที่ ER ทาEKG ไม่มีความผิดปกติ ต่อมาผู้ป่วยเสียชีวิตใน 20 นาทีหลังนาส่ง ผู้ป่วยไม่ฟื้นหลังจากการช่วยชีวิตกู้ชีพเต็มที่แล้ว แพทย์ต้องการชันสูตรศพ แต่เนื่องจากผู้ป่วยนับถือศาสนาอิสลามและญาติไม่ติดใจในสาเหตุการตาย จะขอนาศพไปทาพิธีเลยท่าจะให้การสันนิษฐานเรื่องสาเหตุการตายว่าอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute poisoning"
+      },
+      {
+        "label": "B",
+        "text": "Rupture aneurysm"
+      },
+      {
+        "label": "C",
+        "text": "Acute heart failure"
+      },
+      {
+        "label": "D",
+        "text": "Cardiopulmonary failure"
+      },
+      {
+        "label": "E",
+        "text": "Coronary heart disease"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หากท่านเป็นผู้อานวยการโรงพยาบาลชุมชน พบว่ามีผู้ป่วยโรคจิตเวชจากยาเสพติดจานวนมาก ท่าจะมีแนวทางจัดการเพื่อลดปัญหาอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "สร้างเงื่อนไข เช่น ไม่รักษาคนที่เสพยา"
+      },
+      {
+        "label": "B",
+        "text": "ขออานาจรัฐ เพื่อจับกุมคนที่มีสารเสพติดในเลือด"
+      },
+      {
+        "label": "C",
+        "text": "พัฒนาให้ รพ.สามารถรักษาโรคทางจิตเวชได้ดีขึ้น"
+      },
+      {
+        "label": "D",
+        "text": "ให้ความรู้และข่าวสารเกี่ยวกับปัญหาให้ประชากรกลุ่มเสี่ยง"
+      },
+      {
+        "label": "E",
+        "text": "ร่วมมือกับคนในชุมชน ผลักดันกฏหมายให้ครอบคลุม"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ตายถูกยิงด้วยปืนที่ใบหน้า 3 นัด ลาคอ 1 นัด ชันสูตรพบ severe brain laceration, fracture base of skull มีกระสุนฝังใน และ rupture trachea จะเขียนใบชันสูตรสาเหตการตายอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "severe brain laceration with gun short wound ,fracture base of skull"
+      },
+      {
+        "label": "B",
+        "text": "ถูกยิง …..(เป็นภาษาไทยสั้นๆ)"
+      },
+      {
+        "label": "C",
+        "text": "ถูกยิง และ…..(สาเหตุยาว ๆ)"
+      },
+      {
+        "label": "D",
+        "text": "severe brain laceration with fracture base of skull with tracheal rupture"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ข้อใดต่อไปนี้ ช่วยยืนยันว่าผู้ป่วยถูกกระทาชาเรา",
+    "choices": [
+      {
+        "label": "A",
+        "text": "พบ sperm ในช่องคลอด"
+      },
+      {
+        "label": "B",
+        "text": "พบ sperm & acid phosphatase"
+      },
+      {
+        "label": "C",
+        "text": "พบบาดแผลฟกช้าตามร่างกาย แผลที่ vagina และพบ sperm"
+      },
+      {
+        "label": "D",
+        "text": "พบ sperm ในช่องปาก"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "เจ้าหน้าที่สอบสวนพบกระสุนที่เกี่ยวข้องกับเหตุการณ์ยิงปืน เจ้าหน้าที่ต้องการทาการขีดเขียนบนกระสุนเพื่อบอกว่าเป็นวัตถุพยาน โดยกำหนดให้วันที่ เวลา สถานที่ และตัวย่อชื่อเจ้าหน้าที่ สามารถทาการขีดเขียนตรงตำแหน่งใดได้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ไม่ได้เลย เพราะอาจเปลี่ยนแปลงรูปลักษณ์ของกระสุน"
+      },
+      {
+        "label": "B",
+        "text": "ได้ ที่ปลอกกระสุน (ด้านข้าง)"
+      },
+      {
+        "label": "C",
+        "text": "ได้ ที่ฐานกระสุน (ด้านหลัง)"
+      },
+      {
+        "label": "D",
+        "text": "ได้ ที่หัวกระสุน (ด้านหน้า)"
+      },
+      {
+        "label": "E",
+        "text": "ได้ ที่ทุกตำแหน่งของกระสุน"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2008",
+    "explanation": "ตามหลักเนติเวชศาสตร์ การขีดเขียนบนกระสุนพยานควรทำที่ฐานกระสุน (ด้านหลัง) เนื่องจากตำแหน่งนี้จะไม่กระทบต่อการตรวจสอบวิสัยทัศน์เบลิสติก หรือลักษณะการสกัด-ตีเต้นของกระสุน ซึ่งเป็นข้อมูลสำคัญในการตรวจสอบคดี",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้หญิงท้องอายุ 32 ปี GA 20 wkประสบอุบัติเหตุ ต่อมาพบ vaginal bleeding และแท้ง นอนโรงพยาบาลนาน 7 วัน กลับบ้านพักฟื้น 20 วัน ลงความเห็นว่า",
+    "choices": [
+      {
+        "label": "A",
+        "text": "บาดเจ็บจนแท้ง"
+      },
+      {
+        "label": "B",
+        "text": "อันตรายสาหัสจนแท้ง"
+      },
+      {
+        "label": "C",
+        "text": "นอนโรงพยาบาลนานมากกว่า 20 วัน"
+      },
+      {
+        "label": "D",
+        "text": "นอนโรงพยาบาล 7 วัน พักฟื้น 20 วัน"
+      },
+      {
+        "label": "E",
+        "text": "อันตรายจนมีเลือดออก ถ้าไม่รักษาเป็นอันตรายถึงชีวิต"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "การตรวจสอบโครงกระดูก orbit ของศพในการสืบสวนนิติเวชศาสตร์ พบว่า orbit มีรูปร่างกลม โครงกระดูกนี้เป็นลักษณะเฉพาะของชนชาติใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Caucasian (ยูโรเปียน)"
+      },
+      {
+        "label": "B",
+        "text": "Mongolian (มองโกลย์ - เชื้อสายเอเชีย)"
+      },
+      {
+        "label": "C",
+        "text": "Negroid (แอฟริกัน)"
+      },
+      {
+        "label": "D",
+        "text": "Australoid (ออสเตรเลียน)"
+      },
+      {
+        "label": "E",
+        "text": "American Indian (อเมริกันอินเดียน)"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008",
+    "explanation": "Orbit กลม (circular orbit) เป็นลักษณะเฉพาะของชนชาติ Mongolian ในขณะที่ Caucasian มี orbit กลมถึงสี่เหลี่ยม และ Negroid มี orbit มีแนวโน้มเป็นสี่เหลี่ยมมากกว่า ลักษณะนี้เป็นข้อมูลที่มีประโยชน์ในการระบุตัวตน (anthropological features) ของศพในนิติเวชศาสตร์",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิง 26 ปี มาให้ตรวจร่างกายว่าได้โดนข่มขืนกระทาชาเราหรือไม่ ตรวจร่างกายพบ love bite ที่คอด้านหน้า 3แผล , Vaginal มีแผลที่ 5และ8 นาฬิกา , Sperm ไม่มีหางที่ posterior fornix เล็กน้อย ให้ความเห็นอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "มีหลักฐานว่าน่าจะผ่านการร่วมเพศมา"
+      },
+      {
+        "label": "B",
+        "text": "มีหลักฐานว่าถูกข่มขืนโดยยินยอม"
+      },
+      {
+        "label": "C",
+        "text": "มีหลักฐานว่าถูกข่มขืนโดยไม่ยินยอม"
+      },
+      {
+        "label": "D",
+        "text": "มีหลักฐานว่าถูกข่มขืนมามากกว่า 2 วัน"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2009",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ศพชายอายุ 45 ปี พบในห้องปิดที่มีเขม่าควันจากเตาทำความร้อน โดยพบเขม่าควันสีเทา เนื้อในร่างกายสีชมพูสด ผมและเล็บมีสีชมพูอ่อน เหตุการณ์นี้เป็นการตายจากสาเหตุใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "CO intoxicity (ความเป็นพิษจากก๊าซคาร์บอนมอนอกไซด์)"
+      },
+      {
+        "label": "B",
+        "text": "Asphyxiation (ขาดอากาศหายใจ)"
+      },
+      {
+        "label": "C",
+        "text": "Thermal burn injury (การไหม้จากความร้อน)"
+      },
+      {
+        "label": "D",
+        "text": "Cyanide poisoning (ความเป็นพิษจากสารไซยาไนด์)"
+      },
+      {
+        "label": "E",
+        "text": "Blast injury (บาดแผลจากการระเบิด)"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2009",
+    "explanation": "สีชมพูของเนื้อในร่างกาย (cherry-pink discoloration) เป็นลักษณะเฉพาะของความเป็นพิษจาก CO ซึ่ง CO ยึดเกาะกับ hemoglobin ได้ดีกว่า O2 ทำให้เกิดสี carboxyhemoglobin สีชมพู นอกจากนี้ยังพบเขม่าควัน และสภาวะห้องปิด ซึ่งเป็นเงื่อนไขที่เอื้อต่อการสะสมตัวของ CO แบบเรื้อรัง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชายตายข้าวทาง กระดูกหักสูงจากพื้น 15cm.มีบาดแผลถลอกหลายแผล คนขับรถบอกว่าเบรกไม่ทัน เลยชนผู้ป่วย ไปดูทั่นชนบุบ 15cm.จากพื้นจะสรุปว่า",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ชนแล้วทับตัวและขา"
+      },
+      {
+        "label": "B",
+        "text": "เบรกไม่ทัน"
+      },
+      {
+        "label": "A",
+        "text": "คนขับพูดจริง เพราะสอดคล้องกับเหตุการณ์"
+      },
+      {
+        "label": "C",
+        "text": "เบรกทัน???"
+      },
+      {
+        "label": "D",
+        "text": "ชนแรงจนบินข้ามไปตกข้างทาง"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2009",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "พบศพในที่เกิดเหตุเพลิงไหม้ ตรวจเปิดศพพบ cherry red spot ในอวัยวะภายในและเนื้อเยื่อ คิดว่าสาเหตุการตายมาจากอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "CO (carbon monoxide) poisoning"
+      },
+      {
+        "label": "B",
+        "text": "Carbon powder aspiration"
+      },
+      {
+        "label": "C",
+        "text": "Flame burn ส่งผลให้ตายจากความร้อน"
+      },
+      {
+        "label": "D",
+        "text": "Thermal injury to airway"
+      },
+      {
+        "label": "E",
+        "text": "Cyanide poisoning from burning synthetic materials"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2009",
+    "explanation": "Cherry red spot หรือ cherry red discoloration ของเนื้อเยื่อและอวัยวะภายในเป็นลักษณะเฉพาะของ CO poisoning เนื่องจาก carboxyhemoglobin มีสีแดงสดใสแตกต่างจากลิเวอร์มอร์ติส ทำให้เนื้อเยื่อแสดงสีแดงสดเฉพาะตัว บุคคลในที่เกิดเหตุเพลิงไหม้มักตายจากการสูดดมก๊าซ CO มากกว่าจากไฟลวก",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "การบาดเจ็บชนิดใดเจอได้เฉพาะคนเดินถนน",
+    "choices": [
+      {
+        "label": "A",
+        "text": "striae tear"
+      },
+      {
+        "label": "B",
+        "text": "Patellar injury"
+      },
+      {
+        "label": "C",
+        "text": "Dicing injury"
+      },
+      {
+        "label": "D",
+        "text": "Bumper injury"
+      },
+      {
+        "label": "E",
+        "text": "Dash board injury"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2009",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หญิง 26 ปี G2P1 มาด้วยปวดเมื่อยกล้ามเนื้อ ทางานรับจ้าง มีรอยฟกช้าทั้งรอยเก่าและรอยใหม่ มีรอยที่เบ้าตาขวา หน้าอก ท้อง ขา ถามการวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Domesmotic violence"
+      },
+      {
+        "label": "B",
+        "text": "Fall accident"
+      },
+      {
+        "label": "C",
+        "text": "Hepatic failure"
+      },
+      {
+        "label": "D",
+        "text": "ITP"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2009",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ตามมาตรา 276 ประมวลกฎหมายอาญาข้อใดที่อาจมีความผิด ฐานข่มขืนกระทาชาเรา(Rape)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ผู้ชายใช้อวัยวะเพศเทียมเพศชายใส่เข้าช่องปากหญิงอืjน"
+      },
+      {
+        "label": "B",
+        "text": "ผู้ชายใช้อวัยวะเพศเทียมเพศชายใส่เข้าช่องปากชายอื่น"
+      },
+      {
+        "label": "C",
+        "text": "ผู้หญิงใช้อวัยวะเพศเทียมเพศชายใส่เข้าช่องปากชายอื่น"
+      },
+      {
+        "label": "D",
+        "text": "ผู้ชายใช้อวัยวะเพศของตนเองถูไถบริเวณทวารหนักของหญิงอื่น"
+      },
+      {
+        "label": "E",
+        "text": "ผู้หญิงใช้อวัยวะเพศชายเทียมสอดใส่เข้าช่องทวารหนักของหญิงอื่น"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2010",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หญิงปัญญาอ่อนญาติพาแจ้งความถูกข่มขืนมา3วันก่อนมาโรงพยาบาลตรวจร่างกายพบว่ามีอสุจิในช่องคลอดacidphosphatase positive มีkissing bite มีแผลถลอกใหม่ที่ช่องคลอดและรอยฉีกขาดใหม่ทางด้านหลังของช่องคลอดถามว่าอะไรที่ทาให้แพทย์ลงความเห็นว่าถูกกระทาชาเรามา 3วัน",
+    "choices": [
+      {
+        "label": "A",
+        "text": "พบอสุจิในช่องคลอด"
+      },
+      {
+        "label": "B",
+        "text": "Acid phosphatase positive"
+      },
+      {
+        "label": "C",
+        "text": "พบkissing bite"
+      },
+      {
+        "label": "D",
+        "text": "มีรอยถลอกทีMช่องคลอด"
+      },
+      {
+        "label": "E",
+        "text": "มีรอยฉีกขาดทีMทางด้านหลังของช่องคลอด"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2010",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงไทยอายุ 15 ปีเคยมีระดูมาแล้วมีอาการขาดระดูมา2 สัปดาห์ประวัติถูกข่มขืนมา 5 ชั่วโมงตรวจร่างกายพบรอยkiss mark ทีMคอมีรอยฟกช้าที่บริเวณท้องน้อยตรวจภายในพบรอยฟกช้ารอบอวัยวะเพศและพบมูกสีขาวใสในช่องคลอดลงความเห็นว่าน่าจะถูกกระทาชาเราภายในเวลา 3 วันจะManagement อย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ส่ง acid phosphatase"
+      },
+      {
+        "label": "B",
+        "text": "Urine pregnancy test"
+      },
+      {
+        "label": "C",
+        "text": "ให้Norfloxacin"
+      },
+      {
+        "label": "D",
+        "text": "ให้Levonorgestrel"
+      },
+      {
+        "label": "E",
+        "text": "แนะนาให้กลับมารักษาหากยังขาดระดูอยู่"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2010",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ศพผู้ชายนอนเสียชีวิตอยู่ข้างบาทวิถีตรวจพบแผลขอบไม่เรียบที่ท้ายทอย, กะโหลกศีรษะด้านหลังแตกยาวประมาณ 5 cm. มีbrain contusion ด้านหน้ามากกว่าด้านหลังถามสาเหตุการเสียชีวิต",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ถูกตีด้วยของแข็งทีMท้ายทอย"
+      },
+      {
+        "label": "B",
+        "text": "ล้มท้ายทอยกระแทกขอบบาทวิถี"
+      },
+      {
+        "label": "C",
+        "text": "ถูกตีด้วยของแข็งทีMหน้าผาก"
+      },
+      {
+        "label": "D",
+        "text": "ล้มหน้าผากกระแทกขอบบาทวิถี"
+      },
+      {
+        "label": "E",
+        "text": "ถูกตีทีMท้ายทอยและหน้าผาก"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2010",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ศาลยกฟ้องโจทก์คดีจาเลยโดนยิงด้วยปืนลูกโดด ที่ระยะไกล บาดแผลที่เกิดขึ้นจะมีลักษณะอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "บาดแผลกลมเล็ก มีรอยไหม้รอบขอบบาดแผล"
+      },
+      {
+        "label": "B",
+        "text": "บาดแผลรีถลอก (lacerated wound) มีรอยไหม้ที่ขอบ"
+      },
+      {
+        "label": "C",
+        "text": "บาดแผลรูปดาวห้าแฉก (Star shape) โดยไม่มีรอยไหม้"
+      },
+      {
+        "label": "D",
+        "text": "บาดแผลตัดขาดเรียบ (incised wound) ขอบเรียบและตรง"
+      },
+      {
+        "label": "E",
+        "text": "บาดแผลมีปะกายเนื้อเยื่อนอก (contused wound) โดยไม่มีรอยไหม้"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2010",
+    "explanation": "ปืนลูกโดดที่ยิงจากระยะไกลทำให้ลูกปืนมีพลังงานสูง เมื่อทะลุเข้าไปในเนื้อเยื่อจะเกิดความร้อนจากแรงเสียดทานทำให้เกิดรอยไหม้รอบขอบบาดแผล บาดแผลจึงมีลักษณะกลมเล็กพอดีกับเส้นผ่านศูนย์กลางของลูกปืนและมีรอยไหม้ (powder burn/scorching) อยู่รอบขอบ ซึ่งเป็นสัญลักษณ์ของลูกปืน (entrance wound) ที่มีพลังงานสูง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "การตรวจร่างกายหญิงรายหนึ่งทีถูกทาร้ายร่างกายโดยฝ่ายชายตรวจร่างกายพบว่าตาขวามองไม่เห็นเนื่องจากลืมตาไม่ขึ้นมีรอยฟกช้าที่เบ้าตามีบาดแผลขอบเรียบบริเวณใบหน้าข้างขวาขนาด10 cm. มีแผลฟกช้าบริเวณท้องน้อยตรวจพบเลือดออกทางช่องคลอดและมีก้อนเลือดหลุดออกมาด้วยผลตรวจทางพยาธิวิทยาพบเป็น chorionic villi ผู้ป่วยรักษาตัวอยู่ 15 วันสามารถกลับมาทางานได้ตามปกติตารวจตั้งข้อหาและศาลสั่งฟ้องฝ่ายชายว่าทาร้ายร่างกายจนสาหัสโดยใช้เหตุผลข้อใดตามประมวลกฎหมายอาญามาตรา 276",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ตามองไม่เห็น"
+      },
+      {
+        "label": "B",
+        "text": "แผลบริเวณใบหน้า"
+      },
+      {
+        "label": "C",
+        "text": "แผลฟกชา&ื ทีMท้องน้อย"
+      },
+      {
+        "label": "D",
+        "text": "เลือดออกทางช่องคลอด"
+      },
+      {
+        "label": "E",
+        "text": "รอยชา&ื ทีMเบ้าตา"
+      },
+      {
+        "label": "A",
+        "text": "ทาตามที่ผู้ป่วยต้องการและให้เซ็นปฏิเสธการรักษา"
+      },
+      {
+        "label": "B",
+        "text": "แจ้งญาติเกี่ยวกับความต้องการของผู้ป่วยและเซ็นรับรองความต้องการ"
+      },
+      {
+        "label": "C",
+        "text": "แจ้งลูกให้รับรู้ความต้องการของผู้ป่วยและตัดสินใจ"
+      },
+      {
+        "label": "D",
+        "text": "แจ้งภรรยาเกี่ยวกับความต้องการและตัดสินใจ"
+      },
+      {
+        "label": "E",
+        "text": "พูดคุยกับผู้ป่วยและรักษาอาการซึม"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2010",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หญิงวัยรุ่นอายุ 17 ปี มาตรวจเรื่องโดนข่มขืน ตรวจร่างกายพบ old tear ที่ 6 นาฬิกาของช่องคลอด sperm ไม่มีหาง ปริมาณเล็กน้อยที่ posterior fornix มีรอย kiss bite ที่ลำคอ ผู้ป่วยมาตรวจ 5 วันหลังเหตุการณ์",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ตรวจพบหลักฐานว่าโดนข่มขืนแน่นอน"
+      },
+      {
+        "label": "B",
+        "text": "ตรวจพบหลักฐานว่าผ่านการมีเพศสัมพันธ์เท่านั้น"
+      },
+      {
+        "label": "C",
+        "text": "ตรวจพบหลักฐานว่าผู้ป่วยถูกกระทาชาเรา โดยพิจารณาจาก old tear และ kiss bite"
+      },
+      {
+        "label": "D",
+        "text": "ไม่สามารถสรุปได้ว่าเป็นการข่มขืน เพราะอาจเป็นการมีเพศสัมพันธ์โดยยินยอม"
+      },
+      {
+        "label": "E",
+        "text": "ตรวจพบหลักฐานการข่มขืนแน่นอน เพราะพบ sperm ที่ posterior fornix และรอย kiss bite"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2010",
+    "explanation": "การพบ sperm ไม่มีหาง บ่งชี้ว่าผู้เฉพาะเจาะจงได้สัมผสสารพันธุ์ชายในกระบวนการ 5 วันที่ผ่านมา ตัวหลักฐานต่างๆ (old tear, sperm, kiss bite) พิสูจน์ได้เพียงว่ามีการมีเพศสัมพันธ์เกิดขึ้น แต่ไม่สามารถพิสูจน์ได้ว่าเป็นการข่มขืน เพราะหลักฐานทางร่างกายไม่สามารถแยกแยะการมีเพศสัมพันธ์โดยยินยอมจากการข่มขืนได้",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "พ่อแม่กลับบ้านเจอลูกสาว 3 เดือนไม่หายใจพี่เลียงมีนิสัยขี้โมโหหลักฐานใดทีhแสดงว่าน่าจะมี child abuse",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Pulmonary edema"
+      },
+      {
+        "label": "B",
+        "text": "Retinal hemorrhage"
+      },
+      {
+        "label": "C",
+        "text": "Healed fx clavicle"
+      },
+      {
+        "label": "D",
+        "text": "Purpura and petichiae"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2011",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 5 ปี ถูกพามาที่ห้องฉุกเฉินเพราะตกบันได 3 ชั่วโมงที่แล้ว การตรวจร่างกาย: เด็กมีสัดส่วนตัวเล็กกว่าเด็กปกติในวัยเดียวกัน พบรอยฟกช้ำในระยะต่างๆ (ทั้งเก่าและใหม่) จำนวนมากทั่วร่างกาย และในภาพ X-ray พบหัก肋�骨ชิ้นที่ 6 ในระยะการเจริงแล้ว ลักษณะการบาดเจ็บไม่สอดคล้องกับเรื่องราวการตกบันได เดียว จำนวนฟกช้ำและรอยบาดเจ็บหลากหลายบ่งบอกเหตุการณ์ที่ซ้ำๆ ค่าคำวินิจฉัยคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Child abuse (การทำร้ายเด็ก)"
+      },
+      {
+        "label": "B",
+        "text": "Accidental fall from stairs (ตกบันไดโดยบังเอิญ)"
+      },
+      {
+        "label": "C",
+        "text": "Osteogenesis imperfecta (โรคกระดูกแตกง่าย)"
+      },
+      {
+        "label": "D",
+        "text": "Hemophilia A (โรคเลือดจุกเสือ)"
+      },
+      {
+        "label": "E",
+        "text": "Nutritional rickets (โรคกระดูกอ่อนจากขาดสารอาหาร)"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2011",
+    "explanation": "เด็กแสดงสัญญาณเตือนของการทำร้ายเด็ก (Red flags): (1) รอยฟกช้ำในระยะต่างๆ (ทั้งเก่าและใหม่) บ่งบอกการสร้างบาดเจ็บซ้ำๆ ไม่ใช่เหตุการณ์เดียว (2) หัก肋bone ที่เจริงแล้ว (healed) แสดงการบาดเจ็บในอดีต (3) ลักษณะการบาดเจ็บไม่สอดคล้องกับเรื่องราว (inconsistent history) และ (4) ตัวเล็กกว่าปกติอาจชี้ถึงการดูแลไม่เพียงพอ ซึ่งเป็นเกณฑ์การวินิจฉัยการทำร้ายเด็กตามนิติเวชศาสตร์",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "นักท่องเทีhยวอยู่บนดอยอินทนนท์กางเต็นท์นอนจุดตะเกียงข้างในวันรุ่งขึPนมีคนพบว่าเสียชีวิตแล้วสาเหตุของการเสียชีวิตคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Carbon monoxide"
+      },
+      {
+        "label": "B",
+        "text": "Ozone"
+      },
+      {
+        "label": "C",
+        "text": "Sulfur dioxide"
+      },
+      {
+        "label": "D",
+        "text": "Carbon dioxide"
+      },
+      {
+        "label": "E",
+        "text": "Nitrogen dioxide"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2011",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชายอายุ 20 ปีติดอยู่ในบ้านทีhมีเพลิงไหม้มี 30%TBSAburn ที่แขนท้องสองข้างนาส่งและรับไว้ในโรงพยาบาลต่อมาผู้ป่วยแย่ลงเรื่อยๆแล้วเสียชีวิตใน 2 ชั่วโมงจงลงสาเหตุการตายในใบรับรอง",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Inhalation injury"
+      },
+      {
+        "label": "B",
+        "text": "Acute renal failure"
+      },
+      {
+        "label": "C",
+        "text": "Severe electrolyte disturbance"
+      },
+      {
+        "label": "D",
+        "text": "Congestive heart failure"
+      },
+      {
+        "label": "E",
+        "text": "Full thickness skin burn"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2011",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "พบศพชายวัย 35 ปี นอนเสียชีวิตริมถนน มีลักษณะการบาดเจอดังนี้: scalp laceration wound ที่ temporal area ทั้งสองข้าง เลือดออกจากปากและจมูก open fracture ขาขวา (Rt tibia) มี brushing ที่ท้อง abrasion ที่ลาตัว rigor mortis ที่กล้ามเนื้อขากรรไกร livor mortis กดจางบริเวณสัมผัสพื้น ศพมีอุณหภูมิลดลงแล้ว ไม่มีลีนให้ลั่นสัมผัส สัปเหร่อจึงสกัดดูแลว่าศพเสียชีวิตนานเท่าใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เสียชีวิตนาน 6-8 ชั่วโมง จากอาการ rigor mortis และ livor mortis ที่เห็นชัด"
+      },
+      {
+        "label": "B",
+        "text": "ความสูงของแผล tibial fracture มีความสำคัญในการชันสูตรเพื่อประเมินแรงกระแทก"
+      },
+      {
+        "label": "C",
+        "text": "ผู้ป่วยสงสัย fracture base of skull เนื่องจากเลือดออกจากปากและจมูก แต่ไม่น่าจะเป็นสาเหตุการตาย"
+      },
+      {
+        "label": "D",
+        "text": "สาเหตุการตายที่น่าจะเป็นมากที่สุดคือ internal hemorrhage จากการบาดเจอหลายแห่ง"
+      },
+      {
+        "label": "E",
+        "text": "brushing ที่ท้องบ่งชี้ว่าศพถูกลากบนพื้นหลังจากตายแล้ว ซึ่งช่วยพิจารณาเวลาเสียชีวิต"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2011",
+    "explanation": "จากอาการ rigor mortis ที่เห็นชัดที่กล้ามเนื้อขากรรไกร (jaw) และ livor mortis ที่กดจางแล้ว บ่งชี้ว่าศพเสียชีวิตได้ประมาณ 6-8 ชั่วโมง เนื่องจาก rigor mortis เริ่มปรากฏที่ช่วง 2-6 ชั่วโมงหลังตายและเต็มที่ใน 8-12 ชั่วโมง ส่วน livor mortis ที่กดจางได้แสดงว่ามีเวลาผ่านไปแล้ว โดยตำแหน่งศพและอาการบาดเจอไม่สามารถตัดสินเวลาตายได้อย่างแม่นยำเท่าการเปลี่ยนแปลงทางสรีรวิทยา",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "สงสัย base of skull fracture ต้องทำการตรวจวินิจฉัยด้วยภาพรังสีอะไรเพื่อชันสูตร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "AP และ Lateral Film of skull"
+      },
+      {
+        "label": "B",
+        "text": "CT scan ของ skull base"
+      },
+      {
+        "label": "C",
+        "text": "MRI ของสมอง"
+      },
+      {
+        "label": "D",
+        "text": "X-ray เฉพาะ cervical spine"
+      },
+      {
+        "label": "E",
+        "text": "Panoramic radiograph"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2011",
+    "explanation": "CT scan ของ skull base เป็น imaging ที่เหมาะสมที่สุดสำหรับการตรวจวินิจฉัย base of skull fracture เพราะให้ความละเอียดสูงและสามารถแสดงรายละเอียดของกระดูก 3 มิติได้ชัดเจน ในขณะที่ plain radiograph (AP, Lat) มีความไว (sensitivity) ต่ำต่อการตรวจพบ base of skull fracture",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชายอายุ 35 ปี อาละวาดหวาดระแวงคลุ้มคลั่ง ถูกนำมายังโรงพยาบาลด้วยความเป็นห่วงของครอบครัว ไม่ยอมให้แพทย์รักษาและปฏิเสธการตรวจร่างกาย แพทย์ควรจะทำอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "บังคับให้ผู้ป่วยรับการรักษาทันทีและนำเข้ารักษาในโรงพยาบาล"
+      },
+      {
+        "label": "B",
+        "text": "ประเมินสภาวะจิตใจเพื่อพิจารณาว่าผู้ป่วยมีความสามารถในการให้ความยินยอมหรือไม่ และหากไม่มีสมรรถนะให้ติดต่อผู้ใหญ่บ้านหรือญาติในการให้ความยินยอม"
+      },
+      {
+        "label": "C",
+        "text": "ให้ผู้ใหญ่บ้านลงนามอนุญาตแล้วบังคับรักษาทันที"
+      },
+      {
+        "label": "D",
+        "text": "แจ้งตำรวจและปล่อยผู้ป่วยกลับบ้าน"
+      },
+      {
+        "label": "E",
+        "text": "รอให้ผู้ป่วยยินยอมเต็มใจเองแม้จะต้องรอนาน"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2011",
+    "explanation": "ผู้ป่วยจิตหวาดระแวงคลุ้มคลั่งอาจขาดสมรรถนะในการให้ความยินยอม แพทย์ต้องประเมินสภาวะจิตใจก่อน หากพบว่าขาดความสามารถในการตัดสินใจ สามารถขอความยินยอมจากผู้ใหญ่บ้านหรือญาติผู้อุปการะตามกฎหมายสาธารณสุข พ.ศ. 2535 เพื่อดำเนินการรักษา",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "forensic",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  }
+]

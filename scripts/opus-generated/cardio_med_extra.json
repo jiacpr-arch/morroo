@@ -1,0 +1,2042 @@
+[
+  {
+    "scenario": "ชายอายุ 55 ปี มาด้วยอาการเจ็บหน้าอกแบบกดทับ ร้าวไปแขนซ้าย เหงื่อออก คลื่นไส้ มา 45 นาที ความดันโลหิต 140/90 mmHg ชีพจร 95 bpm ECG พบ ST elevation ใน lead II, III, aVF การรักษาที่ต้องทำก่อนอื่นคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Aspirin 300 mg เคี้ยวทันที + Reperfusion therapy"
+      },
+      {
+        "label": "B",
+        "text": "Morphine IV เพื่อแก้ปวด"
+      },
+      {
+        "label": "C",
+        "text": "IV furosemide"
+      },
+      {
+        "label": "D",
+        "text": "Echocardiogram ก่อนรักษา"
+      },
+      {
+        "label": "E",
+        "text": "Heparin IV เพียงอย่างเดียว"
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "Inferior STEMI ต้องการ Aspirin + Reperfusion ทันที ภายใน 12 ชั่วโมง",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. Aspirin 300 mg เคี้ยวทันที + Reperfusion therapy",
+      "reason": "ผู้ป่วยมี inferior STEMI (ST elevation ใน II, III, aVF บ่งชี้ right coronary artery occlusion) ซึ่งเป็น medical emergency\n\nการรักษาทันทีตาม MONA protocol (ปัจจุบันปรับเป็น ABCS): Aspirin 300 mg เคี้ยวทันที (antiplatelet), Clopidogrel หรือ Ticagrelor, Anticoagulation (heparin), และ Reperfusion\n\nReperfusion เป็นสิ่งสำคัญที่สุด: Primary PCI (percutaneous coronary intervention) เป็น gold standard ถ้าทำได้ภายใน 90 นาที (door-to-balloon time) ถ้าไม่มี PCI หรือ delay > 120 นาที ให้ Fibrinolysis (เช่น streptokinase, alteplase) ภายใน 30 นาที (door-to-needle time) เงื่อนไข: อาการน้อยกว่า 12 ชั่วโมง\n\nAspirin ต้องให้ก่อนเสมอ เพราะลด platelet aggregation ได้รวดเร็ว ร่วมกับ P2Y12 inhibitor (dual antiplatelet)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Aspirin 300 mg เคี้ยวทันที + Reperfusion therapy",
+          "is_correct": true,
+          "explanation": "Aspirin เป็น first drug ที่ต้องให้ใน STEMI ทันที ร่วมกับ reperfusion therapy (primary PCI หรือ fibrinolysis) ภายใน 12 ชั่วโมง"
+        },
+        {
+          "label": "B",
+          "text": "Morphine IV เพื่อแก้ปวด",
+          "is_correct": false,
+          "explanation": "Morphine อาจใช้สำหรับปวดรุนแรงแต่ปัจจุบัน evidence บางส่วนแสดงว่า morphine อาจ delay P2Y12 inhibitor absorption และ worsen outcomes การให้ reperfusion therapy เร็วสำคัญกว่า"
+        },
+        {
+          "label": "C",
+          "text": "IV furosemide",
+          "is_correct": false,
+          "explanation": "Furosemide ใช้สำหรับ pulmonary edema ใน heart failure ผู้ป่วยรายนี้ไม่มีสัญญาณ pulmonary congestion การให้ diuretic ใน inferior STEMI อาจ worsen preload"
+        },
+        {
+          "label": "D",
+          "text": "Echocardiogram ก่อนรักษา",
+          "is_correct": false,
+          "explanation": "ไม่ควรรอ echo ก่อนรักษา STEMI เป็น time-sensitive condition ทุกนาทีที่ delay การ reperfusion ทำให้ myocardium ตายมากขึ้น"
+        },
+        {
+          "label": "E",
+          "text": "Heparin IV เพียงอย่างเดียว",
+          "is_correct": false,
+          "explanation": "Heparin เพียงอย่างเดียวไม่เพียงพอสำหรับ STEMI ต้องใช้ร่วมกับ antiplatelet และ reperfusion therapy"
+        }
+      ],
+      "key_takeaway": "Inferior STEMI (ST elevation II, III, aVF) → Aspirin 300 mg ทันที + Reperfusion (Primary PCI ภายใน 90 min หรือ Fibrinolysis ภายใน 30 min)"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 68 ปี มาด้วยอาการหอบเหนื่อยเมื่อออกแรง นอนราบไม่ได้ขาบวม มาหลายสัปดาห์ ตรวจพบ JVP สูง S3 gallop ปอดมี crepitations bilateral ขาบวม pitting ทั้งสองข้าง ECG: sinus tachycardia ค่า BNP 850 pg/mL การวินิจฉัยที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Pulmonary embolism"
+      },
+      {
+        "label": "B",
+        "text": "Congestive heart failure"
+      },
+      {
+        "label": "C",
+        "text": "Nephrotic syndrome"
+      },
+      {
+        "label": "D",
+        "text": "Liver cirrhosis with ascites"
+      },
+      {
+        "label": "E",
+        "text": "Pneumonia"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "JVP สูง + S3 gallop + bibasal crepitations + pitting edema + BNP สูง = Congestive heart failure",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Congestive heart failure",
+      "reason": "Congestive heart failure (CHF) มีลักษณะเฉพาะที่ผสมระหว่าง left-sided และ right-sided heart failure\n\nLeft heart failure: dyspnea on exertion, orthopnea (นอนราบไม่ได้), bibasal crepitations (pulmonary congestion), S3 gallop (volume overload)\nRight heart failure: JVP สูง (elevated central venous pressure), peripheral pitting edema\n\nBNP (B-type natriuretic peptide) สูง (>400 pg/mL ใน acute CHF) เป็น biomarker ที่สำคัญของ heart failure ค่า 850 pg/mL บ่งชี้ CHF อย่างชัดเจน\n\nการรักษา: IV furosemide (diuresis), ACE inhibitor/ARB, beta-blocker, aldosterone antagonist, และ treat underlying cause",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Pulmonary embolism",
+          "is_correct": false,
+          "explanation": "PE มี acute dyspnea, tachycardia, hypoxia แต่ไม่มี S3 gallop หรือ pitting edema เรื้อรัง BNP อาจสูงแต่ไม่มาก และ ECG มักพบ S1Q3T3 ไม่ใช่แค่ sinus tachycardia"
+        },
+        {
+          "label": "B",
+          "text": "Congestive heart failure",
+          "is_correct": true,
+          "explanation": "Classic presentation ของ CHF: dyspnea + orthopnea + JVP elevated + S3 + bibasal crepitations + bilateral pitting edema + BNP สูงมาก"
+        },
+        {
+          "label": "C",
+          "text": "Nephrotic syndrome",
+          "is_correct": false,
+          "explanation": "Nephrotic syndrome มี generalized edema และ proteinuria แต่ไม่มี S3 gallop ไม่มี pulmonary crepitations และ BNP ปกติ"
+        },
+        {
+          "label": "D",
+          "text": "Liver cirrhosis with ascites",
+          "is_correct": false,
+          "explanation": "Cirrhosis มี ascites มากกว่า peripheral edema และไม่มี S3 gallop หรือ elevated JVP มักมี signs ของ liver disease (jaundice, spider nevi, palmar erythema)"
+        },
+        {
+          "label": "E",
+          "text": "Pneumonia",
+          "is_correct": false,
+          "explanation": "Pneumonia มี fever, productive cough, focal consolidation เสียงหายใจผิดปกติ ไม่มี S3, JVP สูง หรือ bilateral pitting edema"
+        }
+      ],
+      "key_takeaway": "CHF: JVP สูง + S3 gallop + bibasal crepitations + bilateral pitting edema + BNP >400 pg/mL"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 65 ปี ตรวจพบความดันโลหิต 160/95 mmHg หลายครั้ง ไม่มีอาการ ตรวจ ECG พบ LVH ค่า Cr 1.3 mg/dL ควรเลือกยาลดความดันโลหิตตัวแรกที่เหมาะสมที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Amlodipine (Calcium Channel Blocker)"
+      },
+      {
+        "label": "B",
+        "text": "Hydrochlorothiazide (Thiazide diuretic)"
+      },
+      {
+        "label": "C",
+        "text": "Enalapril (ACE inhibitor)"
+      },
+      {
+        "label": "D",
+        "text": "Atenolol (Beta-blocker)"
+      },
+      {
+        "label": "E",
+        "text": "Doxazosin (Alpha-blocker)"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Hypertension + LVH + mild CKD → ACE inhibitor เป็น preferred first-line (cardioprotective + renoprotective)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Enalapril (ACE inhibitor)",
+      "reason": "ผู้ป่วยมี hypertension ร่วมกับ target organ damage (LVH จาก ECG, mild CKD จาก Cr 1.3) ACE inhibitor เป็น preferred first-line เพราะ:\n\n1) Cardioprotective: ลด LVH regression ได้ดีกว่า beta-blocker และ CCB ใน hypertensive heart disease\n2) Renoprotective: ลด intraglomerular pressure ช้า progression ของ CKD\n3) Reduce mortality ใน heart failure และ post-MI\n\nACE inhibitor (หรือ ARB ถ้า intolerant to ACE inhibitor เพราะไอ) เป็น standard of care สำหรับ hypertension ที่มี CKD, diabetes, หรือ heart failure\n\nข้อควรระวัง: ติดตาม Cr และ K+ หลังเริ่มยา ระวัง hyperkalemia และ acute kidney injury",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Amlodipine (Calcium Channel Blocker)",
+          "is_correct": false,
+          "explanation": "CCB เป็น first-line ที่ดีสำหรับ hypertension แต่ไม่มี renoprotective effect เท่า ACE inhibitor ในผู้ป่วยที่มี CKD"
+        },
+        {
+          "label": "B",
+          "text": "Hydrochlorothiazide (Thiazide diuretic)",
+          "is_correct": false,
+          "explanation": "Thiazide เป็น first-line ที่ดีใน uncomplicated hypertension แต่ประสิทธิภาพลดลงเมื่อ GFR <30 mL/min และไม่มี renoprotective effect"
+        },
+        {
+          "label": "C",
+          "text": "Enalapril (ACE inhibitor)",
+          "is_correct": true,
+          "explanation": "ACE inhibitor เป็น preferred choice ในผู้ป่วยที่มี hypertension + CKD + LVH มี cardioprotective และ renoprotective benefit"
+        },
+        {
+          "label": "D",
+          "text": "Atenolol (Beta-blocker)",
+          "is_correct": false,
+          "explanation": "Beta-blocker ไม่ใช่ first-line สำหรับ uncomplicated hypertension ใน current guidelines ใช้เมื่อมี compelling indication เช่น angina, post-MI, heart failure"
+        },
+        {
+          "label": "E",
+          "text": "Doxazosin (Alpha-blocker)",
+          "is_correct": false,
+          "explanation": "Alpha-blocker ไม่ใช่ first-line สำหรับ hypertension ใน current guidelines อาจใช้เมื่อมี BPH ร่วมด้วย"
+        }
+      ],
+      "key_takeaway": "Hypertension + CKD หรือ LVH → ACE inhibitor (หรือ ARB) เป็น preferred first-line"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 72 ปี มาด้วยอาการใจสั่น หัวใจเต้นไม่สม่ำเสมอ ECG พบ irregularly irregular rhythm ไม่มี P wave ชัดเจน ventricular rate 130 bpm ความดันโลหิตปกติ ไม่มีอาการหน้ามืดหรือ chest pain CHA2DS2-VASc score = 4 การจัดการที่เหมาะสมที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cardioversion ทันที"
+      },
+      {
+        "label": "B",
+        "text": "Rate control + Anticoagulation"
+      },
+      {
+        "label": "C",
+        "text": "Aspirin เพียงอย่างเดียว"
+      },
+      {
+        "label": "D",
+        "text": "Observation ไม่รักษา"
+      },
+      {
+        "label": "E",
+        "text": "Amiodarone IV ทันที"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Atrial fibrillation + rapid ventricular rate + CHA2DS2-VASc สูง → Rate control + Anticoagulation",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Rate control + Anticoagulation",
+      "reason": "ผู้ป่วยมี atrial fibrillation (AF) ที่มี rapid ventricular rate (130 bpm) ร่วมกับ CHA2DS2-VASc score = 4 ซึ่งบ่งชี้ความเสี่ยงสูงมากต่อ stroke\n\nRate control: ลด ventricular rate เป็น 60-100 bpm ด้วย beta-blocker (metoprolol) หรือ non-dihydropyridine CCB (diltiazem, verapamil) หรือ digoxin ในรายที่มี heart failure\n\nAnticoagulation: CHA2DS2-VASc ≥2 ในหญิง (หรือ ≥1 ในชาย) → ต้องให้ anticoagulation ยาเลือก: NOAC (เช่น rivaroxaban, apixaban, dabigatran) preferred over warfarin\n\nAspirin ไม่ใช่ adequate anticoagulation สำหรับ AF\n\nCardioversion ทันที ไม่แนะนำเมื่อ AF duration ไม่ทราบ (>48 ชั่วโมง risk) เพราะเสี่ยง thromboembolic event",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cardioversion ทันที",
+          "is_correct": false,
+          "explanation": "Cardioversion ทันทีเสี่ยง thromboembolic event ถ้า AF duration >48 ชั่วโมงหรือไม่ทราบ ต้องทำ TEE ก่อนหรือ anticoagulate ≥3 สัปดาห์ก่อน ยกเว้นมี hemodynamic instability"
+        },
+        {
+          "label": "B",
+          "text": "Rate control + Anticoagulation",
+          "is_correct": true,
+          "explanation": "Rate control ลด symptoms และ prevent tachycardia-induced cardiomyopathy, Anticoagulation ป้องกัน stroke ใน CHA2DS2-VASc สูง"
+        },
+        {
+          "label": "C",
+          "text": "Aspirin เพียงอย่างเดียว",
+          "is_correct": false,
+          "explanation": "Aspirin ไม่เพียงพอสำหรับ stroke prevention ใน AF ที่มี CHA2DS2-VASc สูง guidelines ปัจจุบันแนะนำ OAC ไม่ใช่ antiplatelet"
+        },
+        {
+          "label": "D",
+          "text": "Observation ไม่รักษา",
+          "is_correct": false,
+          "explanation": "ไม่ถูกต้อง AF ที่ไม่รักษามี stroke risk สูง และ rapid ventricular rate ทำให้เกิด tachycardia-induced cardiomyopathy ได้"
+        },
+        {
+          "label": "E",
+          "text": "Amiodarone IV ทันที",
+          "is_correct": false,
+          "explanation": "Amiodarone IV ใช้สำหรับ rhythm control ในกรณีที่มี hemodynamic instability ผู้ป่วยรายนี้ BP ปกติ ไม่มี indication ฉุกเฉิน"
+        }
+      ],
+      "key_takeaway": "AF + CHA2DS2-VASc ≥2 (หญิง) → Rate control + OAC (NOAC preferred) ไม่ใช้ Aspirin เพียงอย่างเดียว"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 25 ปี ไม่มีโรคประจำตัว ตรวจสุขภาพพบเสียงฟู่หัวใจ (heart murmur) grade 3/6 systolic murmur ที่ upper left sternal border ดังขึ้นเมื่อหายใจออก (expiratory accentuation) ดังขึ้นเมื่อนอน Valsalva ทำให้เสียงเบาลง การวินิจฉัยที่น่าจะเป็นมากที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Aortic stenosis"
+      },
+      {
+        "label": "B",
+        "text": "Pulmonary stenosis"
+      },
+      {
+        "label": "C",
+        "text": "Hypertrophic obstructive cardiomyopathy (HOCM)"
+      },
+      {
+        "label": "D",
+        "text": "Atrial septal defect (ASD)"
+      },
+      {
+        "label": "E",
+        "text": "Mitral regurgitation"
+      }
+    ],
+    "correct_answer": "D",
+    "explanation": "Fixed split S2 + systolic murmur ที่ upper left sternal border + Valsalva ลด murmur = ASD",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: D. Atrial septal defect (ASD)",
+      "reason": "ASD (Atrial Septal Defect) มี murmur จาก increased flow ผ่าน pulmonary valve (relative pulmonary stenosis) ตำแหน่ง upper left sternal border\n\nลักษณะสำคัญของ ASD: 1) Systolic ejection murmur ที่ ULSB 2) Wide fixed split S2 (ไม่เปลี่ยนแปลงตามการหายใจ เพราะ right heart preload คงที่จาก shunting) 3) Expiratory accentuation เพราะ venous return เพิ่มขึ้น\n\nValsalva maneuver ลด venous return ทำให้ murmur ส่วนใหญ่เบาลง ยกเว้น HOCM ซึ่งดังขึ้น\n\nASD มักไม่มีอาการในเด็กและผู้ใหญ่อายุน้อย แต่ถ้าไม่รักษาจะเกิด Eisenmenger syndrome ในระยะยาว",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Aortic stenosis",
+          "is_correct": false,
+          "explanation": "AS มี harsh systolic ejection murmur ที่ RUSB ร้าวไปที่คอ ดังขึ้นเมื่อ squatting Valsalva ทำให้เบาลง แต่ตำแหน่งไม่ใช่ upper left sternal border"
+        },
+        {
+          "label": "B",
+          "text": "Pulmonary stenosis",
+          "is_correct": false,
+          "explanation": "PS มี systolic ejection murmur ที่ ULSB คล้าย ASD แต่มี ejection click ก่อน murmur และ S2 split กว้างขึ้นตามการหายใจ (respiratory variation) ไม่ใช่ fixed split"
+        },
+        {
+          "label": "C",
+          "text": "Hypertrophic obstructive cardiomyopathy (HOCM)",
+          "is_correct": false,
+          "explanation": "HOCM มี systolic murmur ที่ LLSB/apex ดังขึ้นเมื่อ Valsalva (ลด preload ทำให้ obstruction มากขึ้น) ตรงข้ามกับ case นี้ที่ Valsalva ทำให้เบาลง"
+        },
+        {
+          "label": "D",
+          "text": "Atrial septal defect (ASD)",
+          "is_correct": true,
+          "explanation": "Systolic murmur ที่ ULSB + expiratory accentuation + Valsalva ลดเสียง + young patient without symptoms = classic ASD"
+        },
+        {
+          "label": "E",
+          "text": "Mitral regurgitation",
+          "is_correct": false,
+          "explanation": "MR มี pansystolic murmur ที่ apex ร้าวไปที่ axilla ไม่ใช่ upper left sternal border"
+        }
+      ],
+      "key_takeaway": "ASD: Systolic murmur ULSB + wide fixed split S2 + Valsalva ลด murmur (ต่างจาก HOCM ที่ดังขึ้น)"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 60 ปี มีประวัติ MI มา 3 ปี มาด้วยอาการเจ็บหน้าอกเมื่อออกแรงปานกลาง หายเองภายใน 5-10 นาที ไม่เจ็บขณะพัก ECG: ST depression 2 mm ใน lateral leads ระหว่าง exercise stress test การวินิจฉัยและการรักษาที่เหมาะสมที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "NSTEMI → รับไว้ CCU"
+      },
+      {
+        "label": "B",
+        "text": "Stable angina → Nitrate + beta-blocker + statin + aspirin"
+      },
+      {
+        "label": "C",
+        "text": "Unstable angina → Heparin + dual antiplatelet"
+      },
+      {
+        "label": "D",
+        "text": "Variant angina → Calcium channel blocker"
+      },
+      {
+        "label": "E",
+        "text": "Anxiety → Reassurance เท่านั้น"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "เจ็บหน้าอกเมื่อออกแรง หายเมื่อพัก + stress test positive = Stable angina",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Stable angina → Nitrate + beta-blocker + statin + aspirin",
+      "reason": "Stable angina มีลักษณะ: ปวดหน้าอกที่ predictable trigger (ออกแรง เครียด) หายเองในเวลาสั้น (นาทีไม่เกิน 20 นาที) หายด้วย rest หรือ nitrate ไม่มีการเปลี่ยนแปลงของ pattern\n\nผลต่างจาก Unstable angina: UA มีอาการขณะพัก หรือ frequency เพิ่มขึ้น หรือ severity แย่ลง (crescendo pattern)\n\nการรักษา Stable angina: \n1) Anti-ischemic: Short-acting nitrate (SL NTG) สำหรับ acute symptoms, Beta-blocker หรือ CCB เป็น maintenance\n2) Antiplatelet: Aspirin 75-100 mg/day\n3) Statin: ลด LDL เป้าหมาย <70 mg/dL (ประวัติ CAD)\n4) ACE inhibitor/ARB ถ้ามี LV dysfunction\n5) พิจารณา revascularization ถ้า stress test positive มาก หรือ refractory symptoms",
+      "choices": [
+        {
+          "label": "A",
+          "text": "NSTEMI → รับไว้ CCU",
+          "is_correct": false,
+          "explanation": "NSTEMI ต้องมี troponin สูง ผู้ป่วยรายนี้ไม่ได้ mention troponin abnormal และอาการ pattern เป็น stable (predictable exertional angina)"
+        },
+        {
+          "label": "B",
+          "text": "Stable angina → Nitrate + beta-blocker + statin + aspirin",
+          "is_correct": true,
+          "explanation": "Exertional chest pain ที่ predictable + relieved by rest + stress test positive = stable angina การรักษาตามแนวทาง ABCS: Antiplatelet, Beta-blocker, Cholesterol (statin), Short-acting nitrate"
+        },
+        {
+          "label": "C",
+          "text": "Unstable angina → Heparin + dual antiplatelet",
+          "is_correct": false,
+          "explanation": "UA มีอาการขณะพักหรือ crescendo pattern อาการรายนี้เป็น predictable exertional angina ไม่เปลี่ยน pattern"
+        },
+        {
+          "label": "D",
+          "text": "Variant angina → Calcium channel blocker",
+          "is_correct": false,
+          "explanation": "Variant (Prinzmetal) angina เกิดจาก coronary spasm มักเกิดขณะพัก กลางคืน ไม่ใช่เมื่อออกแรง"
+        },
+        {
+          "label": "E",
+          "text": "Anxiety → Reassurance เท่านั้น",
+          "is_correct": false,
+          "explanation": "มีหลักฐาน stress test positive ชัดเจน ต้องรักษาเป็น stable angina ไม่ใช่ anxiety"
+        }
+      ],
+      "key_takeaway": "Stable angina = predictable exertional chest pain + relieved by rest + no pattern change → รักษา ABCS: Antiplatelet + Beta-blocker + Cholesterol (statin) + Short-acting nitrate"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 45 ปี ไม่มีโรคประจำตัว ตรวจพบ BP 200/120 mmHg ปวดศีรษะรุนแรง ตรวจตาพบ papilledema ตรวจ creatinine 3.0 mg/dL (เพิ่งเพิ่มจาก baseline 1.0) การจัดการเบื้องต้นที่เหมาะสมที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ลด BP ให้ปกติโดยเร็วที่สุด ภายใน 1 ชั่วโมง"
+      },
+      {
+        "label": "B",
+        "text": "IV nicardipine/labetalol ลด BP ≤25% ภายใน 1 ชั่วโมง"
+      },
+      {
+        "label": "C",
+        "text": "Oral amlodipine แล้วติดตาม"
+      },
+      {
+        "label": "D",
+        "text": "รอ observe 24 ชั่วโมง ไม่รีบรักษา"
+      },
+      {
+        "label": "E",
+        "text": "Furosemide IV เพื่อลด intracranial pressure"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Hypertensive emergency (BP >180/120 + target organ damage) → IV antihypertensive ลด MAP ≤25% ใน 1 ชั่วโมง ไม่ลดเร็วเกินไป",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. IV nicardipine/labetalol ลด BP ≤25% ภายใน 1 ชั่วโมง",
+      "reason": "Hypertensive emergency คือ BP สูงมาก (>180/120 mmHg) ร่วมกับ acute target organ damage ซึ่งในรายนี้มี: 1) Hypertensive retinopathy (papilledema) 2) Acute kidney injury (Cr เพิ่มจาก 1.0 → 3.0)\n\nหลักการรักษา Hypertensive emergency:\n- ใช้ IV antihypertensive ที่ titrate ได้: nicardipine, labetalol, clevidipine, sodium nitroprusside\n- เป้าหมาย: ลด MAP ≤25% ใน 1 ชั่วโมงแรก\n- ระวัง: ห้ามลด BP เร็วเกินไปหรือมากเกินไป อาจทำให้ cerebral/renal ischemia เพราะ autoregulation shifted\n- ใน 2-6 ชั่วโมงต่อมา: ลดเป็น 160/100 mmHg\n- 24-48 ชั่วโมง: ค่อยๆ normalize\n\nต่างจาก Hypertensive urgency (BP สูงแต่ไม่มี organ damage) ซึ่งใช้ oral medication และ ลด BP ใน 24-48 ชั่วโมง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ลด BP ให้ปกติโดยเร็วที่สุด ภายใน 1 ชั่วโมง",
+          "is_correct": false,
+          "explanation": "การลด BP เร็วเกินไปอันตราย เพราะ autoregulation ของ cerebral และ renal blood flow shifted ไปที่ระดับสูง การลด BP เร็วๆ อาจทำให้ stroke หรือ renal ischemia"
+        },
+        {
+          "label": "B",
+          "text": "IV nicardipine/labetalol ลด BP ≤25% ภายใน 1 ชั่วโมง",
+          "is_correct": true,
+          "explanation": "Hypertensive emergency ต้องการ IV antihypertensive ที่ควบคุมได้ ลด MAP ≤25% ใน 1 ชั่วโมง ไม่เกิน ป้องกัน organ ischemia"
+        },
+        {
+          "label": "C",
+          "text": "Oral amlodipine แล้วติดตาม",
+          "is_correct": false,
+          "explanation": "Oral medication ไม่เหมาะสำหรับ hypertensive emergency ที่มี acute organ damage ต้องการ IV titrable agents"
+        },
+        {
+          "label": "D",
+          "text": "รอ observe 24 ชั่วโมง ไม่รีบรักษา",
+          "is_correct": false,
+          "explanation": "Hypertensive emergency ต้องการ IV treatment ทันที การ delay จะทำให้ organ damage รุนแรงขึ้น"
+        },
+        {
+          "label": "E",
+          "text": "Furosemide IV เพื่อลด intracranial pressure",
+          "is_correct": false,
+          "explanation": "Papilledema ในกรณีนี้เกิดจาก hypertension ไม่ใช่ primary ICP elevation การรักษาหลักคือลด BP ไม่ใช่ diuresis"
+        }
+      ],
+      "key_takeaway": "Hypertensive emergency (BP >180/120 + organ damage) → IV antihypertensive ลด MAP ≤25% ใน 1 ชั่วโมง ระวังลดเร็วเกินไป"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 30 ปี มาด้วยอาการใจสั่น หัวใจเต้นเร็วฉับพลัน ความดันโลหิต 110/70 mmHg ECG พบ narrow complex tachycardia rate 180 bpm rhythm regular ไม่มี P wave ชัดเจนก่อน QRS การรักษาเบื้องต้นที่เหมาะสมที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "DC cardioversion ทันที"
+      },
+      {
+        "label": "B",
+        "text": "Vagal maneuvers (Valsalva, carotid sinus massage)"
+      },
+      {
+        "label": "C",
+        "text": "IV amiodarone"
+      },
+      {
+        "label": "D",
+        "text": "IV beta-blocker"
+      },
+      {
+        "label": "E",
+        "text": "Digoxin IV"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Hemodynamically stable narrow complex tachycardia (SVT) → ลอง vagal maneuvers ก่อน",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Vagal maneuvers (Valsalva, carotid sinus massage)",
+      "reason": "ผู้ป่วยมี supraventricular tachycardia (SVT) ที่ hemodynamically stable (BP ปกติ ไม่มีอาการ shock) Narrow complex regular tachycardia ที่ rate ~180 bpm และไม่มี P wave ก่อน QRS บ่งชี้ AVNRT (AV nodal reentrant tachycardia) ซึ่งพบบ่อยที่สุด\n\nAlgorithm การรักษา:\n1) Stable narrow complex tachycardia: เริ่มด้วย vagal maneuvers (Valsalva maneuver, carotid sinus massage, dive reflex)\n2) ถ้าไม่ตอบสนอง: IV adenosine (6 mg bolus, ตามด้วย 12 mg ถ้าไม่ได้ผล) เป็น drug of choice\n3) ถ้า adenosine ไม่ได้ผล: IV diltiazem หรือ beta-blocker\n4) Unstable (hypotension, altered consciousness): DC cardioversion ทันที\n\nVagal maneuvers เพิ่ม vagal tone → AV node block → terminate reentrant circuit",
+      "choices": [
+        {
+          "label": "A",
+          "text": "DC cardioversion ทันที",
+          "is_correct": false,
+          "explanation": "DC cardioversion ใช้สำหรับ unstable tachyarrhythmia (hypotension, chest pain, altered consciousness) ผู้ป่วยรายนี้ stable BP ปกติ"
+        },
+        {
+          "label": "B",
+          "text": "Vagal maneuvers (Valsalva, carotid sinus massage)",
+          "is_correct": true,
+          "explanation": "Stable narrow complex SVT → เริ่มด้วย vagal maneuvers เพิ่ม vagal tone และ AV nodal block อาจ terminate SVT ได้ใน 20-25% ของกรณี ปลอดภัย ง่าย ไม่มี side effects"
+        },
+        {
+          "label": "C",
+          "text": "IV amiodarone",
+          "is_correct": false,
+          "explanation": "Amiodarone ไม่ใช่ first-line สำหรับ regular narrow complex SVT ใช้สำหรับ wide complex tachycardia หรือ AF ที่มี WPW"
+        },
+        {
+          "label": "D",
+          "text": "IV beta-blocker",
+          "is_correct": false,
+          "explanation": "IV beta-blocker เป็น second-line หลัง vagal maneuvers และ adenosine ล้มเหลว ไม่ใช่ first step"
+        },
+        {
+          "label": "E",
+          "text": "Digoxin IV",
+          "is_correct": false,
+          "explanation": "Digoxin มี slow onset และ narrow therapeutic window ไม่เหมาะสำหรับ acute termination ของ SVT"
+        }
+      ],
+      "key_takeaway": "Stable SVT (narrow complex regular) → Vagal maneuver ก่อน → ถ้าไม่ได้ผล → IV Adenosine"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 70 ปี มาด้วยอาการเป็นลม เดินแล้วหน้ามืด ตรวจพบ harsh systolic murmur grade 4/6 ที่ right upper sternal border ร้าวไปที่คอ delayed carotid upstroke Echocardiogram พบ AVA 0.7 cm2 mean gradient 55 mmHg การรักษาที่ดีที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Medical management เพียงอย่างเดียว"
+      },
+      {
+        "label": "B",
+        "text": "Aortic valve replacement (AVR)"
+      },
+      {
+        "label": "C",
+        "text": "Balloon valvuloplasty"
+      },
+      {
+        "label": "D",
+        "text": "Diuretic ลด preload"
+      },
+      {
+        "label": "E",
+        "text": "Watchful waiting ทุก 6 เดือน"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Severe AS (AVA <1.0 cm2, gradient >40 mmHg) + symptoms (syncope) = indication ผ่าตัด AVR",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Aortic valve replacement (AVR)",
+      "reason": "Aortic stenosis (AS) มีการวินิจฉัยตาม echo criteria: Severe AS = AVA <1.0 cm2 (หรือ indexed <0.6 cm2/m2) ร่วมกับ mean gradient >40 mmHg หรือ peak velocity >4 m/s\n\nผู้ป่วยรายนี้มี AVA 0.7 cm2 และ mean gradient 55 mmHg = severe AS แน่นอน\n\nIndication สำหรับ valve replacement ใน AS: 1) Severe AS ที่มีอาการ (คลาสสิก: SAD = Syncope, Angina, Dyspnea) 2) Severe AS ที่ต้องผ่าตัดหัวใจอื่นๆ 3) Severe AS ที่ EF <50%\n\nผู้ป่วยมี syncope = อาการ → เป็น class I indication ต้องทำ AVR ทันที (prognosis แย่มากถ้าไม่รักษา: median survival หลัง syncope ใน severe AS = 3 ปี)\n\nทางเลือก: SAVR (Surgical AVR) หรือ TAVR (Transcatheter AVR) ขึ้นกับ surgical risk",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Medical management เพียงอย่างเดียว",
+          "is_correct": false,
+          "explanation": "ไม่มียาที่พิสูจน์ว่าเปลี่ยน natural history ของ severe symptomatic AS การรักษาด้วยยาเพียงอย่างเดียวไม่เพียงพอ"
+        },
+        {
+          "label": "B",
+          "text": "Aortic valve replacement (AVR)",
+          "is_correct": true,
+          "explanation": "Severe AS (AVA 0.7 cm2, mean gradient 55 mmHg) + symptom (syncope) = class I indication ต้องทำ AVR"
+        },
+        {
+          "label": "C",
+          "text": "Balloon valvuloplasty",
+          "is_correct": false,
+          "explanation": "Balloon valvuloplasty ใน AS ไม่ durable restenosis เกิดเร็ว ใช้เป็น bridge ถึง AVR ในผู้ป่วยที่ hemodynamically unstable เท่านั้น"
+        },
+        {
+          "label": "D",
+          "text": "Diuretic ลด preload",
+          "is_correct": false,
+          "explanation": "Severe AS ต้องการ adequate preload เพื่อ maintain cardiac output การลด preload ด้วย diuretic อาจทำให้ cardiac output ลดและ hypotension"
+        },
+        {
+          "label": "E",
+          "text": "Watchful waiting ทุก 6 เดือน",
+          "is_correct": false,
+          "explanation": "Watchful waiting เหมาะสำหรับ asymptomatic severe AS เท่านั้น ผู้ป่วยรายนี้มี syncope = symptomatic → ต้องรักษาด้วย AVR ทันที"
+        }
+      ],
+      "key_takeaway": "Severe AS (AVA <1.0, gradient >40 mmHg) + อาการ (SAD: Syncope/Angina/Dyspnea) → AVR ทันที"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 50 ปี มีประวัติ hypertension, diabetes, hyperlipidemia มาตรวจสุขภาพ ไม่มีอาการ แพทย์คำนวณ 10-year cardiovascular risk = 18% ผู้ป่วยถามว่าควรเริ่มยาอะไรเพื่อป้องกัน การแนะนำที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Aspirin 81 mg เพื่อ primary prevention"
+      },
+      {
+        "label": "B",
+        "text": "Statin เพื่อลด LDL ร่วมกับ lifestyle modification"
+      },
+      {
+        "label": "C",
+        "text": "ไม่ต้องการยา แค่ปรับ lifestyle"
+      },
+      {
+        "label": "D",
+        "text": "Warfarin เพื่อป้องกัน thrombosis"
+      },
+      {
+        "label": "E",
+        "text": "Beta-blocker เพื่อลด cardiac workload"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "High CV risk (≥10%) + multiple risk factors → Statin เป็น cornerstone ของ primary prevention",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Statin เพื่อลด LDL ร่วมกับ lifestyle modification",
+      "reason": "ผู้ป่วยมี 10-year CV risk 18% ซึ่งเป็น high risk (≥10%) ร่วมกับ risk factors หลายอย่าง (hypertension, diabetes, hyperlipidemia)\n\nตาม ACC/AHA guidelines: Statin เป็น cornerstone ของ primary prevention ใน high-risk patients โดยเฉพาะ:\n1) Diabetes อายุ 40-75 ปี → Moderate-intensity statin\n2) 10-year risk ≥7.5% → พิจารณา statin\n3) 10-year risk ≥20% → High-intensity statin\n\nในรายนี้ 10-year risk 18% + diabetes → High-intensity statin (atorvastatin 40-80 mg หรือ rosuvastatin 20-40 mg) ร่วมกับ lifestyle modification (diet, exercise, smoking cessation)\n\nAspirin สำหรับ primary prevention: ปัจจุบัน guidelines 2022 ไม่แนะนำ aspirin สำหรับ primary prevention อายุ >60 ปี เพราะ bleeding risk มากกว่า benefit",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Aspirin 81 mg เพื่อ primary prevention",
+          "is_correct": false,
+          "explanation": "ปัจจุบัน ACC/AHA 2022 ไม่แนะนำ aspirin สำหรับ primary prevention อายุ >60 ปี เพราะ GI bleeding risk มากกว่า cardiovascular benefit ในกลุ่มนี้"
+        },
+        {
+          "label": "B",
+          "text": "Statin เพื่อลด LDL ร่วมกับ lifestyle modification",
+          "is_correct": true,
+          "explanation": "High 10-year CV risk (18%) + diabetes → Statin เป็น evidence-based primary prevention ร่วมกับ lifestyle modification"
+        },
+        {
+          "label": "C",
+          "text": "ไม่ต้องการยา แค่ปรับ lifestyle",
+          "is_correct": false,
+          "explanation": "10-year risk 18% เป็น high risk ที่ต้องการ pharmacotherapy ร่วมกับ lifestyle modification ไม่ใช่แค่ lifestyle เพียงอย่างเดียว"
+        },
+        {
+          "label": "D",
+          "text": "Warfarin เพื่อป้องกัน thrombosis",
+          "is_correct": false,
+          "explanation": "Warfarin ไม่ใช่ primary prevention สำหรับ atherosclerotic cardiovascular disease ใช้สำหรับ thromboembolic conditions เช่น AF, DVT/PE"
+        },
+        {
+          "label": "E",
+          "text": "Beta-blocker เพื่อลด cardiac workload",
+          "is_correct": false,
+          "explanation": "Beta-blocker ไม่ใช่ primary prevention สำหรับ ASCVD ใช้เมื่อมี compelling indication เช่น post-MI, heart failure, angina"
+        }
+      ],
+      "key_takeaway": "High CV risk (≥10%) + Diabetes → Statin เป็น primary prevention ที่ต้องให้ Aspirin primary prevention ไม่แนะนำอีกต่อไปในผู้อายุ >60 ปี"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 25 ปี ตั้งครรภ์ 28 สัปดาห์ ตรวจพบ BP 155/100 mmHg ซ้ำ 2 ครั้ง ห่างกัน 4 ชั่วโมง ปัสสาวะ protein 2+ ตรวจร่างกาย: ไม่มี headache ไม่มี visual disturbance ไม่มี epigastric pain ทารกเจริญเติบโตปกติ การวินิจฉัยและการจัดการที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Gestational hypertension → Observation"
+      },
+      {
+        "label": "B",
+        "text": "Preeclampsia → Labetalol + MgSO4 + Monitor"
+      },
+      {
+        "label": "C",
+        "text": "Chronic hypertension → Oral nifedipine"
+      },
+      {
+        "label": "D",
+        "text": "HELLP syndrome → Immediate delivery"
+      },
+      {
+        "label": "E",
+        "text": "Preeclampsia with severe features → Immediate delivery"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "BP ≥140/90 + proteinuria ≥ GA 20 สัปดาห์ = Preeclampsia (without severe features) → Labetalol + MgSO4 + close monitoring",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Preeclampsia → Labetalol + MgSO4 + Monitor",
+      "reason": "Preeclampsia วินิจฉัยเมื่อ BP ≥140/90 mmHg (2 ครั้ง ≥4 ชั่วโมงห่าง) + proteinuria ≥300 mg/24h (หรือ protein/creatinine ratio ≥0.3 หรือ dipstick ≥2+) หลัง GA 20 สัปดาห์\n\nรายนี้ไม่มี severe features (severe HTN ≥160/110, severe headache, visual disturbance, epigastric pain, thrombocytopenia, renal impairment, pulmonary edema) → Preeclampsia without severe features\n\nการรักษา: 1) Antihypertensive ถ้า BP ≥160/110 mmHg (รายนี้ 155/100 ยังไม่ถึง severe threshold แต่ต้อง monitor) หรือ Labetalol/Nifedipine 2) MgSO4 เพื่อ seizure prophylaxis ใน severe features หรือ consider ใน moderate 3) Monitor maternal/fetal wellbeing อย่างใกล้ชิด 4) Definitive treatment = delivery (elective delivery ที่ ≥37 สัปดาห์ หรือเร็วกว่าถ้ามี severe features)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Gestational hypertension → Observation",
+          "is_correct": false,
+          "explanation": "Gestational HTN คือ BP สูงโดยไม่มี proteinuria รายนี้มี protein 2+ = preeclampsia ต้องการการรักษามากกว่า observation"
+        },
+        {
+          "label": "B",
+          "text": "Preeclampsia → Labetalol + MgSO4 + Monitor",
+          "is_correct": true,
+          "explanation": "BP ≥140/90 + proteinuria 2+ ที่ GA 28 สัปดาห์ = preeclampsia without severe features รักษาด้วย antihypertensive + MgSO4 + close monitoring"
+        },
+        {
+          "label": "C",
+          "text": "Chronic hypertension → Oral nifedipine",
+          "is_correct": false,
+          "explanation": "Chronic HTN เกิดก่อน GA 20 สัปดาห์ หรือก่อนตั้งครรภ์ รายนี้ไม่มีประวัติ HTN ก่อนตั้งครรภ์ และมี proteinuria = preeclampsia"
+        },
+        {
+          "label": "D",
+          "text": "HELLP syndrome → Immediate delivery",
+          "is_correct": false,
+          "explanation": "HELLP syndrome ต้องมี Hemolysis + Elevated Liver enzymes + Low Platelets ไม่มีข้อมูลนี้ในรายนี้"
+        },
+        {
+          "label": "E",
+          "text": "Preeclampsia with severe features → Immediate delivery",
+          "is_correct": false,
+          "explanation": "Severe features คือ BP ≥160/110 หรือ end organ damage ผู้ป่วยรายนี้ BP 155/100 ไม่มี severe symptoms = without severe features ยังไม่ต้อง deliver ทันที"
+        }
+      ],
+      "key_takeaway": "Preeclampsia = BP ≥140/90 + proteinuria ≥2+ หลัง 20 wk → Antihypertensive + MgSO4 + Monitor; Severe features → Deliver ทันที"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 60 ปี มาด้วยอาการหน้ามืด เป็นลมชั่วคราว ตรวจ ECG พบ complete heart block (third-degree AV block) ชีพจร 38 bpm ความดันโลหิต 80/50 mmHg การรักษาเบื้องต้นที่เร่งด่วนที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "IV Atropine 0.5-1 mg"
+      },
+      {
+        "label": "B",
+        "text": "Oral digoxin"
+      },
+      {
+        "label": "C",
+        "text": "IV Amiodarone"
+      },
+      {
+        "label": "D",
+        "text": "Observation"
+      },
+      {
+        "label": "E",
+        "text": "IV Lidocaine"
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "Symptomatic bradycardia (complete heart block + hemodynamic compromise) → IV Atropine ทันที",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. IV Atropine 0.5-1 mg",
+      "reason": "Third-degree (complete) AV block มีลักษณะ P wave และ QRS ที่ dissociated อย่างสมบูรณ์ atria และ ventricle เต้นแยกกัน ventricular escape rhythm ช้า (20-40 bpm)\n\nผู้ป่วยรายนี้มี symptomatic bradycardia: HR 38 bpm + hypotension (80/50) + syncope = hemodynamic compromise\n\nAlgorithm: Symptomatic bradycardia → IV Atropine 0.5 mg IV bolus repeat ได้ทุก 3-5 นาที สูงสุด 3 mg\n- ถ้า Atropine ไม่ได้ผล: IV Dopamine/Epinephrine infusion\n- Transcutaneous pacing: ถ้า refractory\n- Transvenous pacing: definitive treatment สำหรับ complete heart block\n\nAtropine เพิ่ม sinus rate และ AV conduction โดย block vagal tone\n\nDEF: Definitive = Permanent pacemaker implantation ใน complete heart block ที่ไม่มี reversible cause",
+      "choices": [
+        {
+          "label": "A",
+          "text": "IV Atropine 0.5-1 mg",
+          "is_correct": true,
+          "explanation": "First-line สำหรับ symptomatic bradycardia ใน ACLS guidelines IV Atropine เป็นยาเร่งด่วนที่สุด"
+        },
+        {
+          "label": "B",
+          "text": "Oral digoxin",
+          "is_correct": false,
+          "explanation": "Digoxin ทำให้ AV conduction ช้าลง (vagomimetic effect) ซึ่งจะทำให้ AV block แย่ลง ห้ามใช้ใน complete heart block"
+        },
+        {
+          "label": "C",
+          "text": "IV Amiodarone",
+          "is_correct": false,
+          "explanation": "Amiodarone ใช้สำหรับ tachyarrhythmia ไม่ใช่ bradyarrhythmia อาจทำให้ AV block แย่ลงได้"
+        },
+        {
+          "label": "D",
+          "text": "Observation",
+          "is_correct": false,
+          "explanation": "Complete heart block ที่มี hemodynamic compromise ต้องการ immediate treatment ไม่ใช่แค่ observation"
+        },
+        {
+          "label": "E",
+          "text": "IV Lidocaine",
+          "is_correct": false,
+          "explanation": "Lidocaine เป็น antiarrhythmic ที่ใช้สำหรับ ventricular tachycardia ไม่มีบทบาทใน bradyarrhythmia"
+        }
+      ],
+      "key_takeaway": "Symptomatic complete heart block (HR 38 + hypotension) → IV Atropine ทันที → ถ้าไม่ได้ผล → Transcutaneous pacing → Permanent pacemaker"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 40 ปี นักกีฬา มาด้วยอาการหัวใจวายขณะออกกำลังกาย ได้รับการช่วยชีวิตสำเร็จ ECG พบ LVH มาก asymmetric septal hypertrophy จาก echo IVS 22 mm ประวัติครอบครัวมีน้องชายเสียชีวิตกะทันหันอายุ 25 ปี การรักษาระยะยาวที่สำคัญที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Beta-blocker เพียงอย่างเดียว"
+      },
+      {
+        "label": "B",
+        "text": "Implantable cardioverter defibrillator (ICD)"
+      },
+      {
+        "label": "C",
+        "text": "Surgical myectomy ทันที"
+      },
+      {
+        "label": "D",
+        "text": "ไม่ต้องการการรักษาเพิ่มเติม"
+      },
+      {
+        "label": "E",
+        "text": "Amiodarone ตลอดชีวิต"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "HCM + aborted sudden cardiac death = class I indication สำหรับ ICD implantation",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Implantable cardioverter defibrillator (ICD)",
+      "reason": "ผู้ป่วยมี Hypertrophic Cardiomyopathy (HCM) ที่แสดงออกด้วย severe LVH (IVS 22 mm), asymmetric septal hypertrophy และมีประวัติ aborted sudden cardiac death (cardiac arrest ขณะออกกำลังกาย) ร่วมกับ family history ของ sudden cardiac death ในวัยหนุ่ม\n\nIndication ของ ICD ใน HCM:\n1) Aborted sudden cardiac death (Class I) ← ผู้ป่วยรายนี้\n2) Sustained VT (Class I)\n3) Major risk factors ≥2 อย่าง (family history SCD, massive LVH ≥30mm, unexplained syncope, NSVT, abnormal BP response to exercise)\n\nICD ป้องกัน sudden death จาก malignant ventricular arrhythmia โดย shock ทันทีเมื่อเกิด VF/VT\n\nBeta-blocker ลด LVOT obstruction และอาการ แต่ไม่สามารถป้องกัน sudden death ได้อย่างน่าเชื่อถือ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Beta-blocker เพียงอย่างเดียว",
+          "is_correct": false,
+          "explanation": "Beta-blocker ลดอาการและ LVOT obstruction แต่ไม่มีหลักฐานว่าป้องกัน sudden cardiac death ในผู้ที่มี aborted SCD จำเป็นต้อง ICD"
+        },
+        {
+          "label": "B",
+          "text": "Implantable cardioverter defibrillator (ICD)",
+          "is_correct": true,
+          "explanation": "HCM + aborted SCD = Class I indication สำหรับ ICD ซึ่งเป็น most effective ใน preventing sudden death"
+        },
+        {
+          "label": "C",
+          "text": "Surgical myectomy ทันที",
+          "is_correct": false,
+          "explanation": "Septal myectomy ใช้สำหรับ obstructive HCM ที่ refractory ต่อ medical treatment แต่ ICD จำเป็นก่อน และ primary indication ในรายนี้คือ arrhythmia ไม่ใช่ obstruction"
+        },
+        {
+          "label": "D",
+          "text": "ไม่ต้องการการรักษาเพิ่มเติม",
+          "is_correct": false,
+          "explanation": "ผู้ป่วยที่มี aborted SCD มีความเสี่ยงสูงมากต่อ recurrent SCD ต้องการ ICD อย่างเร่งด่วน"
+        },
+        {
+          "label": "E",
+          "text": "Amiodarone ตลอดชีวิต",
+          "is_correct": false,
+          "explanation": "Amiodarone มี antiarrhythmic effect แต่ไม่ reliable เท่า ICD ในการป้องกัน SCD ใน HCM และมี long-term toxicity (pulmonary, thyroid, hepatic)"
+        }
+      ],
+      "key_takeaway": "HCM + aborted sudden cardiac death → ICD เป็น Class I indication ป้องกัน recurrent SCD ได้ดีที่สุด"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 35 ปี มาด้วยอาการเหนื่อยง่าย ขาบวม ตรวจพบ opening snap หลัง S2 mid-diastolic rumbling murmur ที่ apex ไม่มี S3 ชีพจรเบา ECG: P mitrale, right axis deviation Echo: mitral valve area 0.9 cm2 mean gradient 15 mmHg, LA enlarge, mild TR สาเหตุที่พบบ่อยที่สุดของภาวะนี้คือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Degenerative calcification"
+      },
+      {
+        "label": "B",
+        "text": "Rheumatic heart disease"
+      },
+      {
+        "label": "C",
+        "text": "Congenital mitral stenosis"
+      },
+      {
+        "label": "D",
+        "text": "Infective endocarditis"
+      },
+      {
+        "label": "E",
+        "text": "SLE-related valvulopathy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Mitral stenosis ในผู้หญิงอายุน้อยในประเทศกำลังพัฒนา สาเหตุที่พบบ่อยที่สุดคือ Rheumatic heart disease",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Rheumatic heart disease",
+      "reason": "Mitral stenosis (MS) มี mid-diastolic rumbling murmur + opening snap ที่ apex เป็น classic presentation ผู้ป่วยมี severe MS (MVA 0.9 cm2, mean gradient 15 mmHg)\n\nSeverity ของ MS:\n- Mild: MVA >1.5 cm2, mean gradient <5 mmHg\n- Moderate: MVA 1.0-1.5 cm2\n- Severe: MVA <1.0 cm2, mean gradient >10 mmHg\n\nRheumatic heart disease เป็นสาเหตุ 99% ของ mitral stenosis ในประเทศกำลังพัฒนา (เช่น ไทย อินเดีย อัฟริกา) เกิดจาก Group A streptococcal pharyngitis ทำให้เกิด autoimmune valvulitis\n\nMV anatomy ใน rheumatic: leaflet thickening, commissural fusion, chordae tendineae fusion และ calcification ทำให้ MVA ลดลงและ LA pressure สูง → pulmonary hypertension → right heart failure\n\nDegenerative calcification: พบในผู้สูงอายุ (>70 ปี) ใน developed countries",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Degenerative calcification",
+          "is_correct": false,
+          "explanation": "Mitral annular calcification (MAC) พบในผู้สูงอายุ มักทำให้ mild MS ผู้ป่วยอายุ 35 ปี ในประเทศกำลังพัฒนาไม่น่าเป็นสาเหตุนี้"
+        },
+        {
+          "label": "B",
+          "text": "Rheumatic heart disease",
+          "is_correct": true,
+          "explanation": "สาเหตุ 99% ของ MS ในประเทศกำลังพัฒนา ผู้หญิงอายุน้อย severe MS = classic rheumatic MS"
+        },
+        {
+          "label": "C",
+          "text": "Congenital mitral stenosis",
+          "is_correct": false,
+          "explanation": "Congenital MS พบน้อยมาก มักวินิจฉัยตั้งแต่เด็ก parachute mitral valve เป็นรูปแบบที่พบบ่อยที่สุด"
+        },
+        {
+          "label": "D",
+          "text": "Infective endocarditis",
+          "is_correct": false,
+          "explanation": "IE ทำให้เกิด mitral regurgitation มากกว่า MS จาก leaflet destruction ไม่ค่อยทำให้เกิด commissural fusion แบบ rheumatic"
+        },
+        {
+          "label": "E",
+          "text": "SLE-related valvulopathy",
+          "is_correct": false,
+          "explanation": "Libman-Sacks endocarditis ใน SLE ทำให้มี non-bacterial vegetations แต่ไม่ทำให้เกิด severe MS แบบนี้"
+        }
+      ],
+      "key_takeaway": "Mitral stenosis ในคนอายุน้อยประเทศกำลังพัฒนา = Rheumatic heart disease เกือบทั้งหมด"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 30 ปี มาด้วยอาการเจ็บหน้าอกคม บริเวณ retrosternal แย่ลงเมื่อนอนหงาย ดีขึ้นเมื่อนั่งโน้มตัวไปข้างหน้า มีไข้ 38.5°C มา 2 วัน ก่อนหน้ามีอาการคล้ายไข้หวัด ตรวจฟังหัวใจได้ friction rub การวินิจฉัยที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute myocardial infarction"
+      },
+      {
+        "label": "B",
+        "text": "Acute pericarditis"
+      },
+      {
+        "label": "C",
+        "text": "Pulmonary embolism"
+      },
+      {
+        "label": "D",
+        "text": "Aortic dissection"
+      },
+      {
+        "label": "E",
+        "text": "Esophageal spasm"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Sharp pleuritic chest pain + worse supine + better leaning forward + friction rub + post-viral = Acute pericarditis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Acute pericarditis",
+      "reason": "Acute pericarditis มีลักษณะเฉพาะ 4 อย่าง (ต้องมี ≥2 อย่างจาก 4): 1) Chest pain ลักษณะ sharp pleuritic แย่ขึ้นเมื่อนอนหงาย ดีขึ้นเมื่อนั่งเอนไปข้างหน้า 2) Pericardial friction rub 3) ECG: diffuse ST elevation (saddle-shaped), PR depression 4) New/worsening pericardial effusion ใน echo\n\nสาเหตุที่พบบ่อย: Viral (>80%): Coxsackievirus, Echovirus, Adenovirus, HIV มักเกิดหลัง upper respiratory infection 1-2 สัปดาห์\n\nการรักษา: NSAIDs (เช่น ibuprofen 600 mg TID) เป็น first-line ร่วมกับ Colchicine 0.5 mg BID เพื่อลด recurrence หลีกเลี่ยงออกกำลังกายจนกว่า CRP ปกติ\n\nภาวะแทรกซ้อน: Pericardial effusion, Cardiac tamponade, Constrictive pericarditis",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Acute myocardial infarction",
+          "is_correct": false,
+          "explanation": "AMI ปวดหน้าอกแบบกด บีบ ร้าวแขน ไม่ดีขึ้นเมื่อเปลี่ยนท่า ไม่มี friction rub ไม่มีไข้ ECG มี ST elevation เฉพาะ leads ไม่ใช่ diffuse"
+        },
+        {
+          "label": "B",
+          "text": "Acute pericarditis",
+          "is_correct": true,
+          "explanation": "Sharp pleuritic pain + worse supine + better leaning forward + pericardial friction rub + fever + post-viral = classic acute pericarditis"
+        },
+        {
+          "label": "C",
+          "text": "Pulmonary embolism",
+          "is_correct": false,
+          "explanation": "PE มี pleuritic chest pain แต่มักร่วมกับ dyspnea, tachycardia ไม่มี friction rub ไม่มี positional component ชัดเจน"
+        },
+        {
+          "label": "D",
+          "text": "Aortic dissection",
+          "is_correct": false,
+          "explanation": "Aortic dissection ปวดรุนแรงฉับพลัน tear-like ร้าวไปหลัง ไม่ positional ไม่มีไข้ ไม่มี friction rub"
+        },
+        {
+          "label": "E",
+          "text": "Esophageal spasm",
+          "is_correct": false,
+          "explanation": "Esophageal spasm ปวดหน้าอกอาจเลียนแบบ cardiac pain แต่มักมี dysphagia ไม่ positional ไม่มี friction rub ไม่มีไข้"
+        }
+      ],
+      "key_takeaway": "Acute pericarditis: Sharp pleuritic pain (worse supine/better leaning forward) + friction rub + post-viral → NSAIDs + Colchicine"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 58 ปี มาด้วยอาการเหนื่อยง่ายมา 3 เดือน ตรวจพบ EF 30% Sinus rhythm HR 85 bpm ยาที่ใช้อยู่: Enalapril 10 mg, Carvedilol 25 mg ค่า K 4.2 mEq/L, Cr 1.1 mg/dL การเพิ่มยาตัวใดจะลด mortality ได้มากที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Spironolactone 25 mg"
+      },
+      {
+        "label": "B",
+        "text": "Furosemide 40 mg"
+      },
+      {
+        "label": "C",
+        "text": "Digoxin 0.125 mg"
+      },
+      {
+        "label": "D",
+        "text": "Ivabradine 5 mg"
+      },
+      {
+        "label": "E",
+        "text": "Amlodipine 5 mg"
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "HFrEF + ACEi + beta-blocker แล้ว → เพิ่ม MRA (spironolactone) ลด mortality ต่อเนื่อง",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. Spironolactone 25 mg",
+      "reason": "ผู้ป่วยมี HFrEF (EF 30%) และได้รับ ACE inhibitor + beta-blocker แล้ว ซึ่งเป็น cornerstone of HFrEF treatment\n\nการเพิ่ม Mineralocorticoid Receptor Antagonist (MRA) เช่น Spironolactone หรือ Eplerenone ใน RALES trial ลด mortality 30% ใน severe HF (EF <35%) ที่ใช้ ACEi อยู่แล้ว\n\nSACUBITRI/VALSARTAN (Entresto) ยังลด mortality ได้ดีกว่า ACEi เดิม แต่ในตัวเลือกไม่มี\n\nIndication MRA: EF ≤35% + symptomatic HF ที่ยังมีอาการแม้ ACEi + BB + K ไม่สูงเกิน 5 mEq/L, Cr <2.5 mg/dL\n\nรายนี้ K 4.2 mEq/L, Cr 1.1 mg/dL → ปลอดภัยที่จะเพิ่ม spironolactone ต้องติดตาม K หลังเพิ่มยา",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Spironolactone 25 mg",
+          "is_correct": true,
+          "explanation": "MRA ลด mortality ใน HFrEF ที่ใช้ ACEi + BB ตาม RALES trial K ปกติ Cr ปกติ = ปลอดภัยและ evidence-based"
+        },
+        {
+          "label": "B",
+          "text": "Furosemide 40 mg",
+          "is_correct": false,
+          "explanation": "Furosemide ลดอาการ congestion แต่ไม่มีหลักฐานว่าลด mortality ใช้เมื่อมีอาการ fluid overload"
+        },
+        {
+          "label": "C",
+          "text": "Digoxin 0.125 mg",
+          "is_correct": false,
+          "explanation": "Digoxin ลดการ hospitalization แต่ไม่ลด mortality ในปัจจุบัน guideline ลด role ลงมาก"
+        },
+        {
+          "label": "D",
+          "text": "Ivabradine 5 mg",
+          "is_correct": false,
+          "explanation": "Ivabradine ลด hospitalization ใน HFrEF ที่ HR ≥70 bpm + sinus rhythm แต่ผู้ป่วยรายนี้ HR 85 bpm ยังอยู่ใน range ที่พิจารณาได้ แต่ MRA มี evidence ดีกว่าสำหรับ mortality"
+        },
+        {
+          "label": "E",
+          "text": "Amlodipine 5 mg",
+          "is_correct": false,
+          "explanation": "Amlodipine (CCB) ไม่แนะนำสำหรับ HFrEF เพราะ negative inotropic effect อาจทำให้ HF แย่ลง"
+        }
+      ],
+      "key_takeaway": "HFrEF + ACEi + BB → เพิ่ม MRA (spironolactone/eplerenone) ลด mortality ≤35% EF, K <5 mEq/L, Cr <2.5 mg/dL"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 22 ปี นักกีฬาฟุตบอล มาตรวจก่อนแข่งขัน ตรวจ ECG พบ QTc interval 510 ms ประวัติครอบครัว: แม่เสียชีวิตกะทันหันอายุ 40 ปี ขณะว่ายน้ำ การวินิจฉัยที่น่าจะเป็นมากที่สุดและข้อแนะนำที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Normal variant → ให้แข่งได้"
+      },
+      {
+        "label": "B",
+        "text": "Long QT syndrome → ห้ามแข่ง + ส่ง cardiologist"
+      },
+      {
+        "label": "C",
+        "text": "Brugada syndrome → ECG repeat"
+      },
+      {
+        "label": "D",
+        "text": "WPW syndrome → Ablation ก่อนแข่ง"
+      },
+      {
+        "label": "E",
+        "text": "Athlete's heart → ติดตามปีละครั้ง"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "QTc >500 ms + family history SCD = Long QT syndrome → ห้ามเล่นกีฬา competitive จนกว่าจะได้รับการประเมินและรักษา",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Long QT syndrome → ห้ามแข่ง + ส่ง cardiologist",
+      "reason": "Long QT syndrome (LQTS) เป็น channelopathy ที่ทำให้ QT interval ยาวผิดปกติ เพิ่มความเสี่ยง polymorphic VT (Torsades de Pointes) ซึ่งอาจ degenerate เป็น VF และ sudden cardiac death\n\nNormal QTc: ชาย <440 ms, หญิง <450 ms\nBorderline: 440-460 ms (ชาย)\nAbnormal: >470 ms (ชาย), >480 ms (หญิง)\nHigh risk for LQTS: >500 ms\n\nรายนี้ QTc 510 ms + family history SCD (แม่เสียชีวิตขณะว่ายน้ำ ซึ่ง trigger สำหรับ LQTS type 1 คือ adrenergic stimulus เช่น exercise, swimming) = Classic LQTS type 1\n\nAHA/ACC Guideline: ผู้ที่มี LQTS ที่ symptomatic หรือ QTc >500 ms ควรหลีกเลี่ยง competitive sports จนกว่าจะได้รับการรักษา (beta-blocker, ICD ถ้าจำเป็น)\n\nGenetic testing ยืนยัน KCNQ1 (LQT1), KCNH2 (LQT2), SCN5A (LQT3)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Normal variant → ให้แข่งได้",
+          "is_correct": false,
+          "explanation": "QTc 510 ms ไม่ใช่ normal variant athlete's heart ทำให้ QTc สั้นลง (increased vagal tone) ไม่ยาวขึ้น"
+        },
+        {
+          "label": "B",
+          "text": "Long QT syndrome → ห้ามแข่ง + ส่ง cardiologist",
+          "is_correct": true,
+          "explanation": "QTc >500 ms + family SCD ใน setting ที่เกี่ยวกับ adrenergic trigger = LQTS ต้องส่ง cardiologist เพื่อประเมินและรักษาก่อน clearance สำหรับ sports"
+        },
+        {
+          "label": "C",
+          "text": "Brugada syndrome → ECG repeat",
+          "is_correct": false,
+          "explanation": "Brugada มีลักษณะ coved-type ST elevation ใน V1-V3 ไม่ใช่ prolonged QTc"
+        },
+        {
+          "label": "D",
+          "text": "WPW syndrome → Ablation ก่อนแข่ง",
+          "is_correct": false,
+          "explanation": "WPW มี short PR + delta wave ไม่ใช่ prolonged QTc"
+        },
+        {
+          "label": "E",
+          "text": "Athlete's heart → ติดตามปีละครั้ง",
+          "is_correct": false,
+          "explanation": "Athlete's heart ทำให้ QTc สั้นลงได้ ไม่ทำให้ยาว 510 ms และไม่อธิบาย family SCD ได้"
+        }
+      ],
+      "key_takeaway": "QTc >500 ms + family history SCD = LQTS → ห้ามเล่นกีฬา competitive → Beta-blocker + พิจารณา ICD"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 65 ปี มาด้วยอาการ sudden severe chest pain ร้าวไปที่หลัง เริ่มฉับพลัน ความดันโลหิต แขนขวา 160/90 แขนซ้าย 120/70 mmHg (difference >20 mmHg) ชีพจร 2 ข้าง ต่างกัน ตรวจ CXR: widened mediastinum การวินิจฉัยที่น่าจะเป็นมากที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute STEMI"
+      },
+      {
+        "label": "B",
+        "text": "Aortic dissection"
+      },
+      {
+        "label": "C",
+        "text": "Pulmonary embolism"
+      },
+      {
+        "label": "D",
+        "text": "Esophageal rupture (Boerhaave)"
+      },
+      {
+        "label": "E",
+        "text": "Tension pneumothorax"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Tearing chest pain ร้าวหลัง + BP difference ระหว่างแขน + pulse deficit + widened mediastinum = Aortic dissection",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Aortic dissection",
+      "reason": "Aortic dissection คือ intimal tear ใน aortic wall ทำให้ blood เข้าไปใน media สร้าง false lumen ชนิด Type A (ascending aorta) และ Type B (descending aorta)\n\nClassic presentation: 1) Sudden severe tearing/ripping chest pain ร้าวหลัง 2) BP difference ระหว่างแขน 2 ข้าง >20 mmHg 3) Pulse deficit 4) Widened mediastinum ใน CXR (>8 cm) 5) Aortic regurgitation murmur ถ้า Type A\n\nDiagnosis: CT aortography (gold standard), TEE, MRI ห้าม delay\n\nการรักษา:\n- Type A (ascending): Emergency surgery ทันที\n- Type B (descending): Medical management → IV labetalol เพื่อลด BP และ HR (goal: SBP 100-120, HR <60) ยกเว้นมี complication → endovascular repair (TEVAR)\n\nRisk factors: Hypertension (พบบ่อยที่สุด), Marfan/Ehlers-Danlos, bicuspid aortic valve, trauma",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Acute STEMI",
+          "is_correct": false,
+          "explanation": "AMI ไม่ทำให้มี BP difference ระหว่างแขน ไม่มี widened mediastinum ปวดหน้าอกแบบ pressure/crushing ไม่ใช่ tearing"
+        },
+        {
+          "label": "B",
+          "text": "Aortic dissection",
+          "is_correct": true,
+          "explanation": "Tearing pain + BP difference >20 mmHg ระหว่างแขน + pulse deficit + widened mediastinum = classic aortic dissection"
+        },
+        {
+          "label": "C",
+          "text": "Pulmonary embolism",
+          "is_correct": false,
+          "explanation": "PE มี pleuritic chest pain, dyspnea, tachycardia ไม่มี BP difference ระหว่างแขน ไม่มี widened mediastinum"
+        },
+        {
+          "label": "D",
+          "text": "Esophageal rupture (Boerhaave)",
+          "is_correct": false,
+          "explanation": "Boerhaave มักเกิดหลังอาเจียนรุนแรง ปวดหน้าอกและหลัง CXR อาจพบ pneumomediastinum ไม่มี BP difference ระหว่างแขน"
+        },
+        {
+          "label": "E",
+          "text": "Tension pneumothorax",
+          "is_correct": false,
+          "explanation": "Tension pneumothorax มี tracheal deviation ไปฝั่งตรงข้าม absent breath sounds unilateral hypotension/obstructive shock ไม่มี BP difference ระหว่างแขน"
+        }
+      ],
+      "key_takeaway": "Aortic dissection: Tearing pain ร้าวหลัง + BP difference ระหว่างแขน >20 mmHg + widened mediastinum → CT aortography → Type A: surgery, Type B: medical"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 78 ปี มาด้วยอาการเหนื่อย ขาบวม ECG: atrial flutter 2:1 block, ventricular rate 150 bpm ความดันโลหิต 100/70 mmHg มีอาการ altered consciousness เล็กน้อย การรักษาที่เหมาะสมที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "IV Adenosine"
+      },
+      {
+        "label": "B",
+        "text": "Oral diltiazem"
+      },
+      {
+        "label": "C",
+        "text": "Synchronized DC cardioversion"
+      },
+      {
+        "label": "D",
+        "text": "IV Amiodarone 150 mg bolus"
+      },
+      {
+        "label": "E",
+        "text": "Vagal maneuvers"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Atrial flutter + hemodynamic instability (altered consciousness, hypotension) → Synchronized DC cardioversion ทันที",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Synchronized DC cardioversion",
+      "reason": "ผู้ป่วยมี atrial flutter with rapid ventricular response (150 bpm) ร่วมกับ signs ของ hemodynamic instability: altered consciousness + hypotension (100/70 mmHg) ซึ่งอาจเป็น cardiogenic shock\n\nเมื่อมี hemodynamic instability จาก tachyarrhythmia → Synchronized DC cardioversion ทันที (ACLS guideline)\n\nAtrial flutter มักตอบสนองต่อ cardioversion ได้ดีด้วย energy 50-100 J (biphasic)\nAF ต้องการ 120-200 J\n\nSynchronization สำคัญเพื่อ avoid delivering shock on T wave ซึ่งอาจทำให้เกิด VF\n\nหลัง cardioversion: Anticoagulation ตาม CHA2DS2-VASc score เหมือน AF เพราะ thromboembolic risk คล้ายกัน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "IV Adenosine",
+          "is_correct": false,
+          "explanation": "Adenosine ใช้ terminate SVT โดย block AV node ชั่วคราว ใน atrial flutter จะ slow ventricular rate ชั่วคราว (unmask flutter waves) แต่ไม่ terminate atrial flutter และผู้ป่วย hemodynamically unstable"
+        },
+        {
+          "label": "B",
+          "text": "Oral diltiazem",
+          "is_correct": false,
+          "explanation": "Oral diltiazem onset ช้าเกินไป ไม่เหมาะสำหรับ hemodynamic instability ต้องการ rapid intervention"
+        },
+        {
+          "label": "C",
+          "text": "Synchronized DC cardioversion",
+          "is_correct": true,
+          "explanation": "Unstable tachyarrhythmia (altered consciousness + hypotension) → Synchronized DC cardioversion ทันที คือ ACLS guideline"
+        },
+        {
+          "label": "D",
+          "text": "IV Amiodarone 150 mg bolus",
+          "is_correct": false,
+          "explanation": "IV Amiodarone ใช้สำหรับ VT หรือ AF/Flutter ที่ stable ใน unstable patient cardioversion เร็วกว่าและ effective กว่า"
+        },
+        {
+          "label": "E",
+          "text": "Vagal maneuvers",
+          "is_correct": false,
+          "explanation": "Vagal maneuvers ใช้สำหรับ stable SVT เท่านั้น ไม่เหมาะสำหรับ hemodynamically unstable patient"
+        }
+      ],
+      "key_takeaway": "Unstable tachyarrhythmia (hypotension, AMS) → Synchronized DC cardioversion ทันที (ไม่ว่าจะเป็น AF, Flutter, SVT, VT)"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 55 ปี ไม่มีโรคประจำตัว ตรวจสุขภาพประจำปี ผล lipid panel: TC 280, LDL 185, HDL 42, TG 180 mg/dL ความดันโลหิต 125/80 mmHg ไม่สูบบุหรี่ ไม่มีประวัติ DM 10-year ASCVD risk = 7% การแนะนำที่เหมาะสมที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เริ่ม high-intensity statin ทันที"
+      },
+      {
+        "label": "B",
+        "text": "Lifestyle modification + reassess ใน 3-6 เดือน"
+      },
+      {
+        "label": "C",
+        "text": "เพิ่ม fibrate เพื่อลด TG"
+      },
+      {
+        "label": "D",
+        "text": "ไม่ต้องทำอะไร ค่า lipid ยังไม่อันตราย"
+      },
+      {
+        "label": "E",
+        "text": "เพิ่ม Niacin เพื่อเพิ่ม HDL"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Borderline risk (5-7.5%) ที่ไม่มี risk enhancers → lifestyle modification ก่อน reassess 3-6 เดือน",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Lifestyle modification + reassess ใน 3-6 เดือน",
+      "reason": "ตาม ACC/AHA 2018 Cholesterol guideline การตัดสินใจให้ statin ขึ้นกับ 10-year ASCVD risk:\n- Low risk (<5%): Lifestyle เน้น\n- Borderline risk (5-<7.5%): Lifestyle + พิจารณา statin ถ้ามี risk enhancers\n- Intermediate risk (7.5-<20%): Moderate-intensity statin\n- High risk (≥20%): High-intensity statin\n\nรายนี้ 10-year risk 7% (borderline) ไม่มี risk enhancers ชัดเจน (ไม่มี DM, ไม่สูบบุหรี่, BP ปกติ, ไม่มี family history CAD early)\n\nจึงควรเริ่มด้วย lifestyle modification: Mediterranean diet ลด saturated fat เพิ่ม physical activity ลด TG ด้วย omega-3, ลด refined carbs แล้ว reassess ใน 3-6 เดือน ถ้า LDL ยังสูงและ risk เพิ่มขึ้น พิจารณา statin\n\nFibrate ไม่ได้ลด cardiovascular mortality ใน primary prevention TG 180 ยังไม่ถึง threshold ที่ต้องรักษาด้วยยา (>500 เสี่ยง pancreatitis)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "เริ่ม high-intensity statin ทันที",
+          "is_correct": false,
+          "explanation": "High-intensity statin เหมาะสำหรับ high risk (≥20%) หรือ established ASCVD ผู้ป่วยรายนี้ 7% borderline risk ยังไม่มี indication สำหรับ high-intensity statin"
+        },
+        {
+          "label": "B",
+          "text": "Lifestyle modification + reassess ใน 3-6 เดือน",
+          "is_correct": true,
+          "explanation": "Borderline risk (5-7.5%) ไม่มี risk enhancers → lifestyle modification ก่อน คือ standard of care ตาม ACC/AHA 2018"
+        },
+        {
+          "label": "C",
+          "text": "เพิ่ม fibrate เพื่อลด TG",
+          "is_correct": false,
+          "explanation": "TG 180 ไม่ได้อยู่ใน threshold ที่ต้องการ fibrate (TG >500 mg/dL เสี่ยง pancreatitis) และ fibrate ไม่ลด ASCVD mortality ใน primary prevention"
+        },
+        {
+          "label": "D",
+          "text": "ไม่ต้องทำอะไร ค่า lipid ยังไม่อันตราย",
+          "is_correct": false,
+          "explanation": "LDL 185 mg/dL เป็นค่าสูงที่ต้องการการจัดการ อย่างน้อย lifestyle modification"
+        },
+        {
+          "label": "E",
+          "text": "เพิ่ม Niacin เพื่อเพิ่ม HDL",
+          "is_correct": false,
+          "explanation": "Niacin ไม่ได้รับการแนะนำอีกต่อไปใน ACC/AHA guidelines เพราะ AIM-HIGH trial แสดงว่าไม่ลด ASCVD event แม้จะเพิ่ม HDL"
+        }
+      ],
+      "key_takeaway": "Borderline ASCVD risk (5-7.5%) ไม่มี risk enhancers → Lifestyle modification ก่อน reassess 3-6 เดือน ไม่ต้องรีบเริ่ม statin"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 52 ปี stable angina มา 3 เดือน ST depression 2 mm ที่ 6 METs ใน stress test Echo: EF 55% การรักษาเบื้องต้นคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Coronary angiography ทันที"
+      },
+      {
+        "label": "B",
+        "text": "Beta-blocker + aspirin + statin + nitrate PRN + lifestyle"
+      },
+      {
+        "label": "C",
+        "text": "Aspirin เดี่ยว"
+      },
+      {
+        "label": "D",
+        "text": "Emergency PCI"
+      },
+      {
+        "label": "E",
+        "text": "CABG ทันที"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Stable angina → Optimal medical therapy ก่อน: beta-blocker + aspirin + statin + NTG PRN",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Beta-blocker + aspirin + statin + nitrate PRN + lifestyle",
+      "reason": "Stable Angina → Optimal Medical Therapy (OMT):\n1. Beta-blocker: ลด HR/BP → ลด O2 demand → first-line anti-anginal\n2. Aspirin 75-100 mg: antiplatelet\n3. Statin: ลด cardiovascular events\n4. Sublingual NTG PRN: symptom relief\n5. Lifestyle: smoking cessation, exercise, diet\n\nCOURAGE trial + ISCHEMIA trial: OMT ≈ PCI/CABG สำหรับ stable angina (symptom + event rate)\nAngiography พิจารณาถ้า OMT fail หรือ high-risk (ST depression ที่ low workload < 5 METs)\nผู้ป่วย: ST+ ที่ 6 METs = intermediate risk → OMT ก่อน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Coronary angiography ทันที",
+          "is_correct": false,
+          "explanation": "Intermediate risk stable angina → OMT ก่อน; angio ถ้า OMT fail"
+        },
+        {
+          "label": "B",
+          "text": "Beta-blocker + aspirin + statin + nitrate PRN + lifestyle",
+          "is_correct": true,
+          "explanation": "OMT = first-line สำหรับ stable angina"
+        },
+        {
+          "label": "C",
+          "text": "Aspirin เดี่ยว",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอ ต้องการ anti-anginal + statin ด้วย"
+        },
+        {
+          "label": "D",
+          "text": "Emergency PCI",
+          "is_correct": false,
+          "explanation": "Emergency PCI สำหรับ STEMI/high-risk NSTEMI ไม่ใช่ stable angina"
+        },
+        {
+          "label": "E",
+          "text": "CABG ทันที",
+          "is_correct": false,
+          "explanation": "CABG พิจารณาใน left main, triple vessel, หรือ OMT fail"
+        }
+      ],
+      "key_takeaway": "Stable angina → OMT ก่อน (COURAGE/ISCHEMIA trials); PCI/CABG ถ้า OMT fail หรือ high-risk anatomy"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 55 ปี HFrEF EF 35% dyspnea + orthopnea + edema Creatinine 1.3 K 4.2 ยาใดที่ลด mortality ใน HFrEF ได้ดีที่สุดใน combination",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Furosemide + digoxin"
+      },
+      {
+        "label": "B",
+        "text": "ACEi/ARNi + beta-blocker + MRA + SGLT2i"
+      },
+      {
+        "label": "C",
+        "text": "Calcium channel blocker + diuretic"
+      },
+      {
+        "label": "D",
+        "text": "Digoxin เดี่ยว"
+      },
+      {
+        "label": "E",
+        "text": "Nitrate + hydralazine เดี่ยว"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "HFrEF → GDMT 4 pillars: ACEi/ARNi + beta-blocker + MRA + SGLT2i ลด mortality มากที่สุด",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. ACEi/ARNi + beta-blocker + MRA + SGLT2i",
+      "reason": "HFrEF (EF < 40%) GDMT 2022 — 4 pillars:\n1. ACEi/ARNi (sacubitril-valsartan): neurohormonal blockade\n2. Beta-blocker (carvedilol, metoprolol succinate, bisoprolol): ลด remodeling\n3. MRA (spironolactone/eplerenone): ลด fibrosis\n4. SGLT2i (empagliflozin/dapagliflozin): EMPEROR-Reduced → ลด HF hospitalization + CV death\n\nFurosemide: symptomatic ไม่ลด mortality\nDigoxin: ลด hospitalization เล็กน้อย ไม่ลด mortality\nCCB (diltiazem/verapamil): ห้ามใน HFrEF\nNitrate+hydralazine: สำหรับ Black patients ที่ทน RAAS ไม่ได้",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Furosemide + digoxin",
+          "is_correct": false,
+          "explanation": "Symptomatic drugs เท่านั้น ไม่ลด mortality"
+        },
+        {
+          "label": "B",
+          "text": "ACEi/ARNi + beta-blocker + MRA + SGLT2i",
+          "is_correct": true,
+          "explanation": "GDMT 4 pillars ลด mortality + hospitalization"
+        },
+        {
+          "label": "C",
+          "text": "Calcium channel blocker + diuretic",
+          "is_correct": false,
+          "explanation": "CCB (diltiazem/verapamil) ห้ามใน HFrEF"
+        },
+        {
+          "label": "D",
+          "text": "Digoxin เดี่ยว",
+          "is_correct": false,
+          "explanation": "ลด hospitalization เล็กน้อย ไม่ลด mortality"
+        },
+        {
+          "label": "E",
+          "text": "Nitrate + hydralazine เดี่ยว",
+          "is_correct": false,
+          "explanation": "สำหรับ Black ที่ทน RAAS ไม่ได้ ไม่ใช่ first-choice non-Black"
+        }
+      ],
+      "key_takeaway": "HFrEF → GDMT 4 pillars: ACEi/ARNi + beta-blocker + MRA + SGLT2i ลด mortality; furosemide/digoxin ช่วย symptoms เท่านั้น"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 48 ปี SVT narrow complex HR 180 hemodynamically stable retrograde P หลัง QRS การรักษาเบื้องต้นคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "DC cardioversion ทันที"
+      },
+      {
+        "label": "B",
+        "text": "Vagal maneuver + adenosine IV"
+      },
+      {
+        "label": "C",
+        "text": "Amiodarone IV"
+      },
+      {
+        "label": "D",
+        "text": "Digoxin IV"
+      },
+      {
+        "label": "E",
+        "text": "Heparin IV"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Stable SVT → vagal maneuver → adenosine IV (terminate ~90%)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Vagal maneuver + adenosine IV",
+      "reason": "SVT (AVNRT) hemodynamically stable:\n1. Vagal maneuver (modified Valsalva): ~43% terminate\n2. Adenosine 6 mg → 12 mg IV: blocks AV node → terminate ~90%, effect 10-30 วินาที\n3. DC cardioversion: ถ้า unstable หรือ adenosine fail\n\nห้าม: adenosine ใน pre-excitation + AF, severe asthma",
+      "choices": [
+        {
+          "label": "A",
+          "text": "DC cardioversion ทันที",
+          "is_correct": false,
+          "explanation": "สำหรับ unstable hemodynamically เท่านั้น"
+        },
+        {
+          "label": "B",
+          "text": "Vagal maneuver + adenosine IV",
+          "is_correct": true,
+          "explanation": "First-line stable SVT: vagal → adenosine → DC cardioversion"
+        },
+        {
+          "label": "C",
+          "text": "Amiodarone IV",
+          "is_correct": false,
+          "explanation": "สำหรับ VT/complex arrhythmia ไม่ใช่ first-line SVT"
+        },
+        {
+          "label": "D",
+          "text": "Digoxin IV",
+          "is_correct": false,
+          "explanation": "ช้าไม่ใช่ acute treatment"
+        },
+        {
+          "label": "E",
+          "text": "Heparin IV",
+          "is_correct": false,
+          "explanation": "ไม่มี indication สำหรับ SVT"
+        }
+      ],
+      "key_takeaway": "Stable SVT → Vagal → Adenosine IV; DC cardioversion สำหรับ unstable เท่านั้น"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 65 ปี severe AS (AVA 0.7, gradient 52) + syncope exertional + dyspnea EF 55% การรักษาที่เหมาะสมคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Medical therapy (beta-blocker)"
+      },
+      {
+        "label": "B",
+        "text": "AVR หรือ TAVR"
+      },
+      {
+        "label": "C",
+        "text": "Balloon aortic valvuloplasty เดี่ยว"
+      },
+      {
+        "label": "D",
+        "text": "Diuretics + nitrates"
+      },
+      {
+        "label": "E",
+        "text": "Watchful waiting 2 ปี"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Severe symptomatic AS (syncope) → AVR/TAVR ทันที (Class I); mortality > 50% ใน 2 ปีถ้าไม่รักษา",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. AVR หรือ TAVR",
+      "reason": "Severe AS: AVA ≤ 1.0, gradient ≥ 40 mmHg\nSAD triad symptoms: Syncope (survival 3 yr), Angina (5 yr), Dyspnea (1-2 yr)\n\nClass I indication: Severe AS + ANY symptoms → AVR/TAVR ทันที\n- TAVR: intermediate/high surgical risk\n- Surgical AVR: low risk\n\nห้าม: Nitrates/vasodilators (ลด preload → worse), diuretics ระวัง\nBAV เดี่ยว: bridge เท่านั้น recurrence สูง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Medical therapy (beta-blocker)",
+          "is_correct": false,
+          "explanation": "ไม่มี proven mortality benefit ใน severe symptomatic AS"
+        },
+        {
+          "label": "B",
+          "text": "AVR หรือ TAVR",
+          "is_correct": true,
+          "explanation": "Class I: severe AS + symptoms → AVR/TAVR ทันที"
+        },
+        {
+          "label": "C",
+          "text": "Balloon aortic valvuloplasty เดี่ยว",
+          "is_correct": false,
+          "explanation": "Bridge เท่านั้น ไม่ใช่ definitive"
+        },
+        {
+          "label": "D",
+          "text": "Diuretics + nitrates",
+          "is_correct": false,
+          "explanation": "Nitrates อันตราย: ลด preload → syncope/death ใน severe AS"
+        },
+        {
+          "label": "E",
+          "text": "Watchful waiting 2 ปี",
+          "is_correct": false,
+          "explanation": "Mortality 50% ใน 2 ปีโดยไม่รักษา ห้ามรอ"
+        }
+      ],
+      "key_takeaway": "Severe symptomatic AS → AVR/TAVR ทันที (ห้าม nitrates/vasodilators)"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 60 ปี tearing chest pain ร้าวหลัง BP arm R 160/90 L 120/70 widened mediastinum CXR ควรทำอะไรต่อไป",
+    "choices": [
+      {
+        "label": "A",
+        "text": "IV thrombolytics ทันที"
+      },
+      {
+        "label": "B",
+        "text": "CT angiography aorta + IV labetalol/esmolol"
+      },
+      {
+        "label": "C",
+        "text": "Coronary angiography"
+      },
+      {
+        "label": "D",
+        "text": "Echocardiogram เท่านั้น"
+      },
+      {
+        "label": "E",
+        "text": "IV heparin + nitrates"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Suspected aortic dissection → CTA aorta + IV labetalol (HR < 60, SBP < 120)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. CT angiography aorta + IV labetalol/esmolol",
+      "reason": "Aortic dissection: tearing pain + BP difference > 20 mmHg + widened mediastinum\n\nCTA aorta: gold standard (sensitivity > 95%)\nImmediate: IV labetalol/esmolol (HR < 60, SBP < 120) ลด shear stress\n\nType A (ascending) → Emergency surgical repair\nType B (descending) → Medical management (HR/BP control) ± TEVAR\n\nห้ามทั้งหมด: thrombolytics (rupture!), heparin (hemorrhage), nitrates เดี่ยว (reflex tachycardia)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "IV thrombolytics ทันที",
+          "is_correct": false,
+          "explanation": "ห้ามเด็ดขาด ทำให้ dissection rupture"
+        },
+        {
+          "label": "B",
+          "text": "CT angiography aorta + IV labetalol/esmolol",
+          "is_correct": true,
+          "explanation": "Confirm CTA + immediate HR/BP control"
+        },
+        {
+          "label": "C",
+          "text": "Coronary angiography",
+          "is_correct": false,
+          "explanation": "ECG ปกติ ไม่สงสัย ACS; angio อาจทำ dissection แย่ลง"
+        },
+        {
+          "label": "D",
+          "text": "Echocardiogram เท่านั้น",
+          "is_correct": false,
+          "explanation": "Echo ดีสำหรับ proximal แต่ CTA ครอบคลุมกว่า"
+        },
+        {
+          "label": "E",
+          "text": "IV heparin + nitrates",
+          "is_correct": false,
+          "explanation": "ห้าม heparin ใน aortic dissection"
+        }
+      ],
+      "key_takeaway": "Suspected aortic dissection → CTA + IV labetalol (HR < 60, SBP < 120); ห้าม thrombolytics/heparin"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 30 ปี ตั้งครรภ์ 28 สัปดาห์ BP 145/95 mmHg ซ้ำ ไม่มี proteinuria ควรจัดการอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ACE inhibitor ทันที"
+      },
+      {
+        "label": "B",
+        "text": "Observation เท่านั้น"
+      },
+      {
+        "label": "C",
+        "text": "Labetalol หรือ methyldopa + monitor for preeclampsia"
+      },
+      {
+        "label": "D",
+        "text": "Deliver ทันที"
+      },
+      {
+        "label": "E",
+        "text": "Hydrochlorothiazide"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Gestational hypertension → Labetalol/methyldopa (safe); ห้าม ACEi/ARB (fetotoxic)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Labetalol หรือ methyldopa + monitor for preeclampsia",
+      "reason": "Gestational hypertension: BP ≥ 140/90 หลัง 20 สัปดาห์ ไม่มี proteinuria\n\nยาปลอดภัย: labetalol, methyldopa, hydralazine, nifedipine LA\nห้าม: ACEi/ARB (fetotoxic: renal agenesis, stillbirth), diuretics (ลด plasma volume)\n\nTarget BP: 130-155/80-105\nMonitor preeclampsia: proteinuria, headache, visual changes, labs\nDeliver ≥ 37 สัปดาห์ uncomplicated",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ACE inhibitor ทันที",
+          "is_correct": false,
+          "explanation": "ห้ามเด็ดขาด: fetotoxic"
+        },
+        {
+          "label": "B",
+          "text": "Observation เท่านั้น",
+          "is_correct": false,
+          "explanation": "BP ≥ 140/90 ต้องการ antihypertensive"
+        },
+        {
+          "label": "C",
+          "text": "Labetalol หรือ methyldopa + monitor",
+          "is_correct": true,
+          "explanation": "Safe antihypertensives in pregnancy"
+        },
+        {
+          "label": "D",
+          "text": "Deliver ทันที",
+          "is_correct": false,
+          "explanation": "28 สัปดาห์ เร็วเกินไป; deliver ≥ 37 สัปดาห์ uncomplicated"
+        },
+        {
+          "label": "E",
+          "text": "Hydrochlorothiazide",
+          "is_correct": false,
+          "explanation": "Diuretics ลด plasma volume อาจลด placental perfusion"
+        }
+      ],
+      "key_takeaway": "Gestational hypertension → Labetalol/methyldopa; ห้าม ACEi/ARB (fetotoxic)"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 50 ปี Obstructive HCM LVOT gradient 60 mmHg + SAM + syncope exertional การรักษาคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Exercise stress test ทันที"
+      },
+      {
+        "label": "B",
+        "text": "Nitrates + diuretics"
+      },
+      {
+        "label": "C",
+        "text": "Beta-blocker หรือ disopyramide + ICD evaluation"
+      },
+      {
+        "label": "D",
+        "text": "Digoxin"
+      },
+      {
+        "label": "E",
+        "text": "Dobutamine stress test"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Obstructive HCM → Beta-blocker (ลด gradient) + ICD evaluation (SCD risk); ห้าม vasodilators/digoxin",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Beta-blocker หรือ disopyramide + ICD evaluation",
+      "reason": "HCM obstructive (LVOT ≥ 30 mmHg, SAM):\n\nFirst-line: beta-blocker (ลด HR → เพิ่ม diastolic filling + ลด LVOT gradient)\nAlternative: disopyramide (negative inotrope → ลด SAM + gradient)\nNew: mavacamten (myosin inhibitor)\n\nICD evaluation: SCD risk factors (prior arrest, syncope, FH SCD, massive LVH ≥ 30 mm, NSVT)\n\nห้ามใน obstructive HCM:\n- Vasodilators (nitrates): ลด preload → LVOT worse\n- Digoxin: positive inotrope → LVOT worse\n- Diuretics: ลด preload\n- Verapamil/diltiazem: ระวัง (อาจเพิ่ม gradient)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Exercise stress test ทันที",
+          "is_correct": false,
+          "explanation": "อันตรายใน symptomatic obstructive HCM"
+        },
+        {
+          "label": "B",
+          "text": "Nitrates + diuretics",
+          "is_correct": false,
+          "explanation": "ห้าม: ลด preload → LVOT worse → syncope/SCD"
+        },
+        {
+          "label": "C",
+          "text": "Beta-blocker หรือ disopyramide + ICD evaluation",
+          "is_correct": true,
+          "explanation": "First-line + SCD risk stratification"
+        },
+        {
+          "label": "D",
+          "text": "Digoxin",
+          "is_correct": false,
+          "explanation": "ห้าม: positive inotrope → LVOT gradient worse"
+        },
+        {
+          "label": "E",
+          "text": "Dobutamine stress test",
+          "is_correct": false,
+          "explanation": "อันตราย ทำ LVOT obstruction รุนแรงขึ้น"
+        }
+      ],
+      "key_takeaway": "Obstructive HCM → Beta-blocker/disopyramide; ห้าม vasodilators/digoxin; ICD ถ้า SCD risk"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 70 ปี STEMI anterior ST elevation V1-V4 Cardiogenic shock BP 80/50 ไม่มี PCI center ใกล้เคียง transfer 90 นาที ควรทำอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Transfer ไป PCI center โดยไม่ให้ thrombolytics"
+      },
+      {
+        "label": "B",
+        "text": "Observe + IV fluids"
+      },
+      {
+        "label": "C",
+        "text": "Pharmacoinvasive: thrombolytics ทันที + transfer for PCI 3-24 ชั่วโมง"
+      },
+      {
+        "label": "D",
+        "text": "IABP ก่อน transfer"
+      },
+      {
+        "label": "E",
+        "text": "Conservative management"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "STEMI + no PCI ≤ 120 min → Pharmacoinvasive: thrombolytics ทันที + planned PCI 3-24 ชั่วโมง",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Pharmacoinvasive: thrombolytics ทันที + transfer for PCI 3-24 ชั่วโมง",
+      "reason": "STEMI management เมื่อ PCI ไม่ได้ภายใน 120 นาที → Pharmacoinvasive strategy:\n1. IV thrombolytics ทันที (ภายใน 30 นาที)\n2. Transfer ไป PCI center\n3. Planned PCI 3-24 ชั่วโมง\n4. ถ้า thrombolytics fail (< 50% ST resolution ที่ 90 นาที) → rescue PCI ทันที\n\nCardiogenic shock: รักษาด้วย vasopressors (norepinephrine) + inotropes (dobutamine) ระหว่าง transfer\nIABP: ไม่ลด mortality ใน CS (IABP-SHOCK II trial)\nTransfer เฉย: เสียเวลา myocardium ตาย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Transfer ไป PCI center โดยไม่ให้ thrombolytics",
+          "is_correct": false,
+          "explanation": "ไม่มี reperfusion ระหว่าง transfer เสียเวลามาก"
+        },
+        {
+          "label": "B",
+          "text": "Observe + IV fluids",
+          "is_correct": false,
+          "explanation": "ไม่มี reperfusion strategy ไม่ยอมรับได้"
+        },
+        {
+          "label": "C",
+          "text": "Pharmacoinvasive: thrombolytics + transfer for PCI 3-24 ชั่วโมง",
+          "is_correct": true,
+          "explanation": "Standard เมื่อ primary PCI ไม่ได้ใน 120 นาที"
+        },
+        {
+          "label": "D",
+          "text": "IABP ก่อน transfer",
+          "is_correct": false,
+          "explanation": "IABP ไม่ลด mortality CS (IABP-SHOCK II); reperfusion สำคัญกว่า"
+        },
+        {
+          "label": "E",
+          "text": "Conservative management",
+          "is_correct": false,
+          "explanation": "ไม่มี reperfusion = ไม่ยอมรับได้สำหรับ STEMI"
+        }
+      ],
+      "key_takeaway": "STEMI ที่ PCI ไม่ได้ใน 120 นาที → Pharmacoinvasive: thrombolytics ทันที + planned PCI 3-24 ชั่วโมง"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 58 ปี post-PCI 3 เดือน on DAPT ปัสสาวะเป็นเลือด พบ peptic ulcer Rockford Ia active spurting ต้องทำ endoscopic hemostasis ควรจัดการ DAPT อย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "หยุดทั้ง aspirin และ clopidogrel ทันที"
+      },
+      {
+        "label": "B",
+        "text": "หยุด clopidogrel ชั่วคราว คง aspirin + PPI IV + hemostasis"
+      },
+      {
+        "label": "C",
+        "text": "Continue DAPT ครบ แล้ว hemostasis"
+      },
+      {
+        "label": "D",
+        "text": "Platelet transfusion ก่อน"
+      },
+      {
+        "label": "E",
+        "text": "Heparin IV แทน"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "GI bleeding post-PCI < 1 ปี → หยุด clopidogrel + คง aspirin (ป้องกัน stent thrombosis) + PPI + hemostasis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. หยุด clopidogrel ชั่วคราว + คง aspirin + PPI IV + hemostasis",
+      "reason": "GI bleeding ใน patient on DAPT post-PCI 3 เดือน:\n\nBalance: hemostasis vs stent thrombosis\n- หยุดทั้งหมด: stent thrombosis risk สูง (mortality 20-40%)\n- คง aspirin: ลด thrombosis risk\n- หยุด clopidogrel ชั่วคราว: ช่วย hemostasis\n- Resume clopidogrel เร็วที่สุดหลัง hemostasis (3-5 วัน)\n- PPI IV (esomeprazole 80 mg → 8 mg/hr): ลด acid → stabilize clot",
+      "choices": [
+        {
+          "label": "A",
+          "text": "หยุดทั้ง aspirin และ clopidogrel ทันที",
+          "is_correct": false,
+          "explanation": "Stent thrombosis risk สูงมาก (mortality 20-40%)"
+        },
+        {
+          "label": "B",
+          "text": "หยุด clopidogrel + คง aspirin + PPI + hemostasis",
+          "is_correct": true,
+          "explanation": "Balance: ลด bleeding + ป้องกัน stent thrombosis"
+        },
+        {
+          "label": "C",
+          "text": "Continue DAPT ครบ แล้ว hemostasis",
+          "is_correct": false,
+          "explanation": "Active spurting ต้องลด antiplatelet ก่อน จะ clot ได้"
+        },
+        {
+          "label": "D",
+          "text": "Platelet transfusion ก่อน",
+          "is_correct": false,
+          "explanation": "สำหรับ thrombocytopenia ไม่ใช่ antiplatelet-related bleeding"
+        },
+        {
+          "label": "E",
+          "text": "Heparin IV แทน",
+          "is_correct": false,
+          "explanation": "Heparin จะทำให้ bleeding แย่ลง"
+        }
+      ],
+      "key_takeaway": "GI bleeding post-PCI < 1 ปี → หยุด P2Y12 + คง aspirin + PPI IV + hemostasis; resume clopidogrel 3-5 วัน"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 45 ปี ไม่มีอาการ LDL 185 HDL 55 TG 140 10-year ASCVD risk 6.5% ควรเริ่ม statin หรือไม่",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ไม่ต้อง statin ดูแลอาหารอย่างเดียว"
+      },
+      {
+        "label": "B",
+        "text": "High-intensity statin ทันที"
+      },
+      {
+        "label": "C",
+        "text": "Risk discussion ± low-moderate statin (ถ้า LDL ≥ 160 หรือ risk enhancers)"
+      },
+      {
+        "label": "D",
+        "text": "Fibrate สำหรับ TG"
+      },
+      {
+        "label": "E",
+        "text": "Niacin เพื่อ raise HDL"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Borderline risk (5-7.5%) + LDL ≥ 160 = risk enhancer → Shared decision-making ± moderate statin",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Risk discussion ± low-moderate statin",
+      "reason": "ACC/AHA 2018 Primary Prevention:\n- Low risk (< 5%): lifestyle เท่านั้น\n- Borderline (5-7.5%): risk discussion ± statin ถ้า risk enhancers\n- Intermediate (7.5-20%): moderate-intensity statin\n- High (> 20%): high-intensity statin\n\n6.5% = borderline + LDL 185 (≥ 160 = risk enhancer) → shared decision-making\nถ้า uncertain: CAC score ช่วย (CAC = 0 → ชะลอ; CAC ≥ 100 → เริ่ม statin)\n\nNiacin: ไม่ลด CV events (AIM-HIGH, HPS2-THRIVE)\nFibrate: TG 140 ไม่ถึง threshold",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ไม่ต้อง statin ดูแลอาหาร",
+          "is_correct": false,
+          "explanation": "LDL 185 + borderline risk = risk discussion จำเป็น"
+        },
+        {
+          "label": "B",
+          "text": "High-intensity statin ทันที",
+          "is_correct": false,
+          "explanation": "High-intensity สำหรับ high risk > 20% หรือ established ASCVD"
+        },
+        {
+          "label": "C",
+          "text": "Risk discussion ± low-moderate statin",
+          "is_correct": true,
+          "explanation": "Borderline + risk enhancer → shared decision-making"
+        },
+        {
+          "label": "D",
+          "text": "Fibrate สำหรับ TG",
+          "is_correct": false,
+          "explanation": "TG 140 ไม่ถึง threshold (> 500 emergency; 200-500 consider)"
+        },
+        {
+          "label": "E",
+          "text": "Niacin เพื่อ raise HDL",
+          "is_correct": false,
+          "explanation": "ไม่ลด CV events แม้ raise HDL"
+        }
+      ],
+      "key_takeaway": "Borderline ASCVD risk + LDL ≥ 160 → Shared decision-making ± moderate statin; CAC score ช่วย decision"
+    },
+    "subject": "cardio_med",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  }
+]

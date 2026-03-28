@@ -1,0 +1,777 @@
+[
+  {
+    "scenario": "A 62-year-old man was injured by dirty bamboo stick at his right arm 4 days PTA. BT 39.1°C, BP 100/70, PR 100. PE: swelling, erythematous with hemorrhagic bleb at right arm. What is the most appropriate antimicrobial agent in this case?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Amoxicillin-clavulanate"
+      },
+      {
+        "label": "B",
+        "text": "Ceftazidime"
+      },
+      {
+        "label": "C",
+        "text": "Penicillin G"
+      },
+      {
+        "label": "D",
+        "text": "Metronidazole"
+      },
+      {
+        "label": "E",
+        "text": "Dicloxacillin"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Dirty bamboo stick injury suggests mixed infection including gram-positive cocci (Staphylococcus) and anaerobes. Hemorrhagic blebae are characteristic of gas gangrene or mixed aerobic-anaerobic infection. Amoxicillin-clavulanate provides broad coverage against both aerobic gram-positive and anaerobes, making it most appropriate. Ceftazidime lacks anaerobic coverage; Penicillin G has poor S. aureus coverage; Metronidazole lacks gram-positive coverage; Dicloxacillin lacks anaerobic coverage.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 30-year-old man with right ear pain and fever for 4 days, BT 38.5°C. Now he has diarrhea and pharyngitis and pneumonia at lower lung. Physical exam reveals acute otitis media. What is the most likely organism?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Legionella"
+      },
+      {
+        "label": "B",
+        "text": "Mycoplasma"
+      },
+      {
+        "label": "C",
+        "text": "Klebsiella pneumoniae"
+      },
+      {
+        "label": "D",
+        "text": "Streptococcus pneumoniae"
+      },
+      {
+        "label": "E",
+        "text": "Chlamydophila psittaci"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Classic presentation of Mycoplasma infection with multi-organ involvement: otitis media, pharyngitis, pneumonia, and gastrointestinal symptoms (diarrhea). Mycoplasma is known for respiratory tract involvement and extrapulmonary manifestations. S. pneumoniae typically causes more localized infections; Legionella presents with more severe pneumonia; Klebsiella and Chlamydophila are less likely with this constellation of findings.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 25-year-old woman presents with fever and dyspnea for 1 day. She has had cough and sore throat for 3 days. PE: BT 39.4°C, PR 110, RR 26, BP 100/70. Chest x-ray: bilateral alveolar infiltrate at lower lung. SpO2 90%. Throat swab negative for influenza virus. What is the appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Oral azithromycin"
+      },
+      {
+        "label": "B",
+        "text": "IV ceftriaxone"
+      },
+      {
+        "label": "C",
+        "text": "IV levofloxacin"
+      },
+      {
+        "label": "D",
+        "text": "IV ceftriaxone + oral oseltamivir"
+      },
+      {
+        "label": "E",
+        "text": "IV levofloxacin + oral oseltamivir"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Bilateral alveolar infiltrate with SpO2 90% indicates severe community-acquired pneumonia requiring hospitalization. Negative influenza swab rules out oseltamivir. IV ceftriaxone provides adequate coverage for common CAP pathogens (S. pneumoniae, H. influenzae) with good lung penetration. Oral azithromycin insufficient for severe CAP; levofloxacin is alternative but ceftriaxone is first-line for moderate-severe CAP.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A woman underlying chronic kidney disease and poorly controlled DM develops fever and dyspnea 3 days ago. Sputum shows slender gram-negative rod. What is the appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Piperacillin/tazobactam"
+      },
+      {
+        "label": "B",
+        "text": "Ceftazidime"
+      },
+      {
+        "label": "C",
+        "text": "Ceftriaxone"
+      },
+      {
+        "label": "D",
+        "text": "Fluoroquinolone (levofloxacin)"
+      },
+      {
+        "label": "E",
+        "text": "Amoxicillin-clavulanate"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Slender gram-negative rod in a CKD patient with DM suggests Pseudomonas aeruginosa or other gram-negative rod. Risk factors (CKD, DM) increase risk of gram-negative and resistant organisms. Piperacillin/tazobactam provides superior pseudomonal coverage compared to ceftriaxone or ceftazidime. Added choice D (fluoroquinolone) as plausible distractor.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient with dyspnea and oxygen saturation 86%. CXR shows interstitial infiltration in both lungs. What is the most likely cause?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Pneumocystis jirovecii"
+      },
+      {
+        "label": "B",
+        "text": "Cryptococcus neoformans"
+      },
+      {
+        "label": "C",
+        "text": "Mycobacterium tuberculosis"
+      },
+      {
+        "label": "D",
+        "text": "Cytomegalovirus"
+      },
+      {
+        "label": "E",
+        "text": "Aspergillus fumigatus"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Interstitial infiltration pattern is classic for PCP (Pneumocystis jirovecii pneumonia), especially with significant hypoxemia (SpO2 86%). PCP presents with bilateral interstitial or ground-glass opacities. Cryptococcus presents with nodular/consolidative pattern; TB shows upper lobe involvement; CMV and Aspergillus less common with this specific pattern. Added choices C, D, E as plausible distractors.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient with dyspnea and oxygen saturation 86%. CXR shows interstitial infiltration in both lungs. What is the etiology?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Virus"
+      },
+      {
+        "label": "B",
+        "text": "Bacteria"
+      },
+      {
+        "label": "C",
+        "text": "Fungus"
+      },
+      {
+        "label": "D",
+        "text": "Protozoa"
+      },
+      {
+        "label": "E",
+        "text": "Prion"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Interstitial infiltration pattern with significant hypoxemia strongly suggests PCP (Pneumocystis jirovecii), which is a protozoan infection. This is a duplicate question from the previous entry but asking about organism classification rather than specific pathogen.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 55-year-old female presents with high grade fever, chills, and productive cough for 3 days. Her symptoms were not improved after taking azithromycin for 2 days. She developed chest pain during inspiration. BT 39°C, PR 90 bpm, RR 20/min, BP 130/90 mmHg. What is the most appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ceftriaxone"
+      },
+      {
+        "label": "B",
+        "text": "Ciprofloxacin"
+      },
+      {
+        "label": "C",
+        "text": "Clarithromycin"
+      },
+      {
+        "label": "D",
+        "text": "Co-trimoxazole"
+      },
+      {
+        "label": "E",
+        "text": "Piperacillin-tazobactam"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Community-acquired pneumonia with pleural involvement (chest pain on inspiration) not responding to macrolide. Ceftriaxone is first-line for CAP with adequate coverage for S. pneumoniae and H. influenzae. Azithromycin failure suggests bacterial rather than atypical pathogen. Ceftriaxone provides better coverage and is standard for CAP.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A chronic alcoholic patient presents with foul-smelling purulent sputum and pneumonia at RUL. PE shows crepitation at RUL. CXR shows RUL cavity with air-fluid level. What is the appropriate antibiotic?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Azithromycin"
+      },
+      {
+        "label": "B",
+        "text": "Ceftriaxone"
+      },
+      {
+        "label": "C",
+        "text": "Trimethoprim-sulfamethoxazole"
+      },
+      {
+        "label": "D",
+        "text": "Amoxicillin-clavulanate"
+      },
+      {
+        "label": "E",
+        "text": "Anti-TB drugs"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Anaerobic lung abscess in alcoholic patient with foul-smelling sputum and cavitation. Amoxicillin-clavulanate provides excellent anaerobic coverage including beta-lactamase producing anaerobes (Bacteroides, Prevotella). The combination of aspiration risk, alcoholism, and anaerobic features (foul smell, cavity with air-fluid level) makes anaerobic coverage essential.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 20-year-old man presents with fever and dry cough for 2 weeks. BT 38°C, BP 100/70 mmHg, PR 70, pruritic popular eruption, multiple lymphadenopathy, lung crepitation, O2 sat 83%. CXR shows diffuse bilateral opacity. What is the appropriate antibiotic?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ceftriaxone"
+      },
+      {
+        "label": "B",
+        "text": "Trimethoprim-sulfamethoxazole"
+      },
+      {
+        "label": "C",
+        "text": "Azithromycin"
+      },
+      {
+        "label": "D",
+        "text": "Anti-TB drugs"
+      },
+      {
+        "label": "E",
+        "text": "Amphotericin B"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Clinical presentation suggests Pneumocystis jirovecii pneumonia (PCP): 2-week insidious onset, pruritic rash, lymphadenopathy, bilateral diffuse infiltrates, and significant hypoxemia (O2 sat 83%). Trimethoprim-sulfamethoxazole is first-line treatment for PCP. The combination of findings and immunocompromised appearance (likely HIV+ based on PCP presentation) makes TMP-SMX most appropriate.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 45-year-old man presents with watery diarrhea 8 times in 16 hours. Physical exam: BP 90/50 mmHg, PR 120/min, RR 24/min, Kussmaul breathing, BT 37°C. Stool examination reveals no WBC, no RBC. What is the most likely causative agent?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Shigella"
+      },
+      {
+        "label": "B",
+        "text": "Vibrio cholerae"
+      },
+      {
+        "label": "C",
+        "text": "Staphylococcus aureus toxin"
+      },
+      {
+        "label": "D",
+        "text": "Enteroinvasive Escherichia coli"
+      },
+      {
+        "label": "E",
+        "text": "Enterohaemorrhagic Escherichia coli"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Classic cholera presentation: severe watery diarrhea (rice-water), hypovolemic shock (BP 90/50, PR 120), metabolic acidosis (Kussmaul breathing), absence of inflammatory markers (no WBC/RBC in stool), and rapid dehydration. Vibrio cholerae causes secretory diarrhea without intestinal invasion. Shigella and EAEC cause inflammatory diarrhea with WBC/RBC; S. aureus toxin typically causes acute onset.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient admitted with hospital-acquired pneumonia was treated with an antibiotic and vancomycin for 7 days. The symptoms improved but the patient then develops diarrhea and fever again. What is the most likely cause?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Clostridium difficile"
+      },
+      {
+        "label": "B",
+        "text": "Entamoeba histolytica"
+      },
+      {
+        "label": "C",
+        "text": "Recurrent hospital-acquired pneumonia"
+      },
+      {
+        "label": "D",
+        "text": "Pseudomonas aeruginosa"
+      },
+      {
+        "label": "E",
+        "text": "Candida albicans"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Post-antibiotic diarrhea and fever after vancomycin and broad-spectrum antibiotic therapy indicates antibiotic-associated diarrhea (AAD), most commonly caused by Clostridium difficile. The timeline (after 7 days of antibiotics with subsequent recovery then relapse) is classic for C. difficile infection. Vancomycin itself can cause AAD, though it's also used to treat it. Added choices C, D, E as plausible distractors.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 20-year-old woman underlying rheumatic heart disease has low-grade fever for 1 month. BT 38°C, P 100, BP 110/70. PE: petechiae at conjunctiva and fingers, diastolic rumbling and pansystolic murmur at apex. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute leukemia"
+      },
+      {
+        "label": "B",
+        "text": "Exacerbation of rheumatic carditis"
+      },
+      {
+        "label": "C",
+        "text": "Meningococcemia"
+      },
+      {
+        "label": "D",
+        "text": "Infective endocarditis"
+      },
+      {
+        "label": "E",
+        "text": "Acute rheumatic fever"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Diagnostic criteria for infective endocarditis (IE) are met: predisposing factor (RHD), fever for >1 week, new/changing cardiac murmur (pansystolic murmur at apex = mitral regurgitation), and vascular phenomena (petechiae). The diastolic rumbling + pansystolic murmur suggests both stenosis and regurgitation. Rheumatic carditis typically presents with more acute onset and polyarthritis; meningococcemia presents with more acute illness.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 3-year-old boy presents with fatigue and low-grade fever. He had dental caries previously. PE: pansystolic murmur 3/6, no pericardial rub, mild hepatomegaly. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Viral carditis"
+      },
+      {
+        "label": "B",
+        "text": "Pericarditis"
+      },
+      {
+        "label": "C",
+        "text": "Infective endocarditis"
+      },
+      {
+        "label": "D",
+        "text": "Cardiomyopathy"
+      },
+      {
+        "label": "E",
+        "text": "Myocarditis"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Infective endocarditis in a child with predisposing factors (dental caries = portal of entry), insidious presentation (fatigue, low-grade fever), new cardiac murmur (pansystolic = mitral regurgitation), and hepatomegaly (from septic emboli/heart failure). Dental procedures/caries are common sources in pediatric endocarditis. Absence of pericardial rub excludes pericarditis; presentation not consistent with myocarditis or viral causes.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient with intravenous drug use presents with fever, mitral regurgitation, and signs of endocarditis. What is the most likely causative organism?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Enterococcus"
+      },
+      {
+        "label": "B",
+        "text": "Streptococcus species"
+      },
+      {
+        "label": "C",
+        "text": "Staphylococcus aureus"
+      },
+      {
+        "label": "D",
+        "text": "Haemophilus influenzae"
+      },
+      {
+        "label": "E",
+        "text": "Propionibacterium acnes"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Intravenous drug use (IVDU) and right-sided endocarditis (though mitral regurgitation mentioned) classically caused by Staphylococcus aureus, including methicillin-resistant strains. IVDU patients are at high risk for staph bacteremia from contaminated injection equipment. Streptococcus species more common in left-sided endocarditis with valvular disease; Enterococcus associated with GI sources; H. influenzae rare in modern era.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient presents with fever, chills, and CVA (costovertebral angle) tenderness. Diagnosis of acute pyelonephritis is confirmed. Urine culture shows gram-positive cocci in chains. What is the most appropriate antibiotic?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Amoxicillin"
+      },
+      {
+        "label": "B",
+        "text": "Ceftriaxone"
+      },
+      {
+        "label": "C",
+        "text": "Ampicillin + sulbactam"
+      },
+      {
+        "label": "D",
+        "text": "Levofloxacin"
+      },
+      {
+        "label": "E",
+        "text": "Amoxicillin-clavulanate"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Gram-positive cocci in chains suggests Enterococcus species, which commonly causes UTI/pyelonephritis. However, Ceftriaxone is standard empiric therapy for pyelonephritis covering most gram-negative organisms (E. coli, Klebsiella) which are most common (>80%). If Enterococcus confirmed, ampicillin or penicillin preferred, but initial empiric therapy with ceftriaxone is standard pending culture results. Fluoroquinolones are alternative but less preferred for severe pyelonephritis.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient living in Nontaburi presents with calf pain and fever. Lab results: Hct 38%, WBC 9,600 (N 68%, L 28%), platelet 84,000. What is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Leptospirosis"
+      },
+      {
+        "label": "B",
+        "text": "Dengue infection"
+      },
+      {
+        "label": "C",
+        "text": "Rickettsial infection"
+      },
+      {
+        "label": "D",
+        "text": "Malaria"
+      },
+      {
+        "label": "E",
+        "text": "Scrub typhus"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Dengue is endemic in Nontaburi, Thailand. Lab findings are characteristic: mild hemoconcentration (Hct 38%), relative leukopenia (WBC 9,600), and thrombocytopenia (platelet 84,000). Calf pain is common myalgias in dengue. The combination of geography and lab pattern points to dengue. Leptospirosis presents with more severe renal involvement; rickettsial infections show similar thrombocytopenia but less prominent hemoconcentration. Added choices D, E as plausible distractors.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 25-year-old nurse suffered a needle stick injury from an HIV-positive patient. The patient denied history of HIV and the nurse's anti-HIV was negative before exposure. After post-exposure prophylaxis (PEP) for 10 days, the nurse developed fever, cough, and fatigue. Which investigation is the most useful at this time?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ELISA"
+      },
+      {
+        "label": "B",
+        "text": "Qualitative PCR (HIV RNA)"
+      },
+      {
+        "label": "C",
+        "text": "Viral load"
+      },
+      {
+        "label": "D",
+        "text": "Viral culture"
+      },
+      {
+        "label": "E",
+        "text": "Western blot"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Early symptomatic infection at 10 days (acute retroviral syndrome) is during the window period before antibodies develop. Qualitative PCR detects viral RNA and is the most sensitive test at this early stage (detectable within 7-14 days of infection). ELISA and Western blot detect antibodies which may not appear until 3-4 weeks; viral culture is less practical; viral load is quantitative PCR. Qualitative PCR is the gold standard for early post-exposure diagnosis.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "An HIV patient on medication for 1 year presents with oliguria. What is the most helpful investigation in diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "CD4 count"
+      },
+      {
+        "label": "B",
+        "text": "KUB ultrasound"
+      },
+      {
+        "label": "C",
+        "text": "Intravenous pyelogram"
+      },
+      {
+        "label": "D",
+        "text": "Serum creatinine and BUN"
+      },
+      {
+        "label": "E",
+        "text": "Urinalysis and urine culture"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Oliguria in HIV patient on long-term medication requires kidney imaging to assess for obstruction, HIV-associated nephropathy, or other structural lesions. KUB ultrasound is non-invasive first-line imaging for oliguria/renal insufficiency. CD4 helps assess immune status but not diagnosis of acute oliguria; IVP is more invasive and less commonly used; serum creatinine/BUN assess function but not etiology. Added choices D, E as plausible distractors.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 30-year-old female on antiretroviral therapy (ARV) for 1 year with no other underlying disease or medications presents for annual checkup. Lab results: FBS 88 mg/dL, HCO3 17 mEq/L, Cr 2.1 mg/dL (previous year 0.8 mg/dL). Urinalysis: protein 2+, glucose 3+. Which ARV is responsible?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Zidovudine"
+      },
+      {
+        "label": "B",
+        "text": "Efavirenz"
+      },
+      {
+        "label": "C",
+        "text": "Lamivudine"
+      },
+      {
+        "label": "D",
+        "text": "Tenofovir"
+      },
+      {
+        "label": "E",
+        "text": "Nevirapine"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Tenofovir (a nucleotide reverse transcriptase inhibitor) is known for nephrotoxicity causing progressive renal dysfunction, proteinuria, and glycosuria. The patient shows: acute rise in creatinine (2.1 from 0.8), metabolic acidosis (HCO3 17), proteinuria (2+), and glycosuria (3+) - classic tenofovir-associated kidney disease. Zidovudine causes anemia/lactic acidosis; Efavirenz causes CNS effects; Lamivudine is relatively safe; Nevirapine causes hepatotoxicity.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 35-year-old HIV-positive man presents with 2 weeks of fever, 1 week of progressive right-sided weakness, headache, vomiting, and seizure 1 day ago. CT with contrast shows multiple nodular lesions at basal ganglia, thalamus, and cerebellum. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Lymphoma"
+      },
+      {
+        "label": "B",
+        "text": "Toxoplasmosis"
+      },
+      {
+        "label": "C",
+        "text": "Cryptococcosis"
+      },
+      {
+        "label": "D",
+        "text": "Progressive multifocal leukoencephalopathy"
+      },
+      {
+        "label": "E",
+        "text": "Tuberculosis meningitis"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Toxoplasma encephalitis in advanced HIV (CD4 likely <100): multiple ring-enhancing lesions in basal ganglia and thalamus on contrast CT, subacute presentation with focal neurologic signs (weakness), seizures, and fever. This is the classic imaging and clinical presentation. Cryptococcosis typically shows meningitis without mass lesions; TB meningitis shows basilar involvement; PML shows non-enhancing white matter lesions; Lymphoma less common with this imaging pattern.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 30-year-old man underlying HIV presents with runny nose with purulent discharge for 10 days without mass on examination. What is the appropriate treatment?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Amoxicillin"
+      },
+      {
+        "label": "B",
+        "text": "Amoxicillin-clavulanate"
+      },
+      {
+        "label": "C",
+        "text": "Ceftriaxone"
+      },
+      {
+        "label": "D",
+        "text": "Ciprofloxacin"
+      },
+      {
+        "label": "E",
+        "text": "Itraconazole"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Purulent rhinorrhea in HIV patient suggests bacterial sinusitis. Amoxicillin-clavulanate provides coverage for common sinusitis pathogens (S. pneumoniae, H. influenzae, and beta-lactamase producers including anaerobes). Absence of mass excludes malignancy/lymphoma. While Itraconazole might be considered for fungal infection, the clinical presentation (10 days, purulent discharge, no mass) points to bacterial etiology. Plain amoxicillin has inadequate anaerobic coverage.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 32-year-old woman underlying SLE for 2 years on prednisolone 40 mg/day develops fever with respiratory symptoms. She has had abdominal bloating with loose stools a few days ago. PE: BT 39°C, RR 22, PR 100, BP 100/70, lungs show basal crackles, abdomen shows mild generalized tenderness without organomegaly. What is the most likely cause?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Strongyloides stercoralis"
+      },
+      {
+        "label": "B",
+        "text": "Necator americanus"
+      },
+      {
+        "label": "C",
+        "text": "Opisthorchis viverrini"
+      },
+      {
+        "label": "D",
+        "text": "Capillaria philippinensis"
+      },
+      {
+        "label": "E",
+        "text": "Giardia lamblia"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Strongyloides stercoralis hyperinfection syndrome in severely immunosuppressed patient (SLE on high-dose prednisolone 40 mg/day). Presents with respiratory symptoms (hyperinfection causes pulmonary larvae migration), GI symptoms (diarrhea, abdominal pain from larvae in intestine), and fever. Risk of disseminated strongyloidiasis increases dramatically with CD4 count <200. Necator causes anemia; Opisthorchis/Capillaria cause different presentations; Giardia doesn't cause respiratory symptoms. This is endemic in Southeast Asia.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "An SLE patient on steroid therapy develops dyspnea and stool changes. What is the most likely parasitic cause?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Strongyloides stercoralis"
+      },
+      {
+        "label": "B",
+        "text": "Capillaria philippinensis"
+      },
+      {
+        "label": "C",
+        "text": "Necator americanus"
+      },
+      {
+        "label": "D",
+        "text": "Entamoeba histolytica"
+      },
+      {
+        "label": "E",
+        "text": "Ascaris lumbricoides"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Same clinical context as previous question - severe immunosuppression from SLE on steroids. Strongyloides stercoralis is the most likely cause of combined respiratory (dyspnea) and GI symptoms (stool changes). The immunocompromised state increases risk of hyperinfection and dissemination. Capillaria can cause protein-losing enteropathy but less likely to cause respiratory symptoms; Entamoeba typically causes dysentery; Ascaris causes bowel obstruction or malabsorption.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "Proper management for healthcare worker that has needle stick injury with HIV positive patient who CD4=80 and is not on ARV",
+    "choices": [
+      {
+        "label": "A",
+        "text": "AZT+3TC"
+      },
+      {
+        "label": "B",
+        "text": "AZT+3TC+Lopinavir/Ritonavir"
+      },
+      {
+        "label": "C",
+        "text": "d4T+3TC+NVP"
+      },
+      {
+        "label": "D",
+        "text": "d4T+3TC"
+      },
+      {
+        "label": "E",
+        "text": "3TC+TDF+Nelfinavir"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Post-exposure prophylaxis (PEP) สำหรับ healthcare worker หลังจาก needle stick injury จาก HIV+ patient ที่มี CD4=80 (AIDS stage) และไม่ได้รับ ARV ถือเป็นความเสี่ยงสูง (high-risk exposure) ต้องใช้ 3-drug regimen ประกอบด้วย 2 NRTIs + 1 PI (Protease inhibitor) เพื่อให้ coverage ที่ดีและลดการเกิด resistance ตัวเลือก B (AZT+3TC+Lopinavir/Ritonavir) เป็นมาตรฐาน PEP ที่เหมาะสมที่สุด",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ในการ investigate หาผู้ป่วยติดเชื้อ gram negative intracellular bacteria ที่เป็น silent case ควรทำอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Nutrient culture media"
+      },
+      {
+        "label": "B",
+        "text": "PCR"
+      },
+      {
+        "label": "C",
+        "text": "Nucleic acid amplification"
+      },
+      {
+        "label": "D",
+        "text": "DNA strain amplification"
+      },
+      {
+        "label": "E",
+        "text": "Serology testing for antibodies"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "สำหรับ silent case ของ gram-negative intracellular bacteria เช่น Chlamydia trachomatis หรือ Neisseria gonorrhoeae วิธีการตรวจที่มีความไว (sensitivity) และความจำเพาะ (specificity) สูงที่สุด คือ Nucleic acid amplification test (NAAT) เช่น PCR, TMA, SDA ซึ่งดีกว่า culture media ในการหา silent/asymptomatic case เนื่องจากเชื้อบางชนิดเป็น intracellular obligate ยากต่อการเพาะเลี้ยง ตัวเลือก C ถูกต้องที่สุด เพิ่มตัวเลือก E เป็น plausible distractor",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  }
+]

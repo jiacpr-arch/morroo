@@ -1,0 +1,818 @@
+[
+  {
+    "id": "8531b6a3-4154-4c2d-91cf-1e6be35f974d",
+    "correct_answer": "A",
+    "explanation": "HIV CD4 80 ไม่ได้รับ PCP prophylaxis มีไอ เหนื่อย CXR ground glass bilateral = PCP รักษาด้วย TMP-SMX high dose IV เป็น drug of choice",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: TMP-SMX high dose IV เป็น first-line treatment ของ PCP ในผู้ป่วย HIV CD4 <200",
+      "reason": "PCP (Pneumocystis jirovecii pneumonia) เกิดเมื่อ CD4 <200 โดยเฉพาะ CD4 80 ที่ไม่ได้รับ prophylaxis: Ground glass bilateral infiltrate คือ hallmark CXR ของ PCP รักษา: TMP-SMX 15-20 mg/kg/day (ส่วน TMP) IV หรือ oral × 21 วัน ถ้า severe (PaO2 <70 mmHg หรือ A-a gradient >35) ให้ Prednisone ร่วมด้วยเพื่อลด mortality Pentamidine ใช้เมื่อ แพ้ TMP-SMX Atovaquone ใช้สำหรับ mild-moderate PCP เท่านั้น",
+      "choices": [
+        {
+          "label": "A",
+          "text": "TMP-SMX high dose IV",
+          "is_correct": true,
+          "explanation": "First-line สำหรับ PCP ทุก severity; add steroids ถ้า severe"
+        },
+        {
+          "label": "B",
+          "text": "Pentamidine หรือ Atovaquone",
+          "is_correct": false,
+          "explanation": "Alternative เมื่อแพ้ TMP-SMX; Atovaquone เฉพาะ mild-moderate"
+        },
+        {
+          "label": "C",
+          "text": "Fluconazole oral",
+          "is_correct": false,
+          "explanation": "สำหรับ Candida ไม่ใช่ Pneumocystis"
+        },
+        {
+          "label": "D",
+          "text": "Clarithromycin + Azithromycin",
+          "is_correct": false,
+          "explanation": "สำหรับ MAC infection ไม่ใช่ PCP"
+        },
+        {
+          "label": "E",
+          "text": "Ganciclovir IV",
+          "is_correct": false,
+          "explanation": "สำหรับ CMV retinitis/pneumonitis ไม่ใช่ PCP"
+        }
+      ],
+      "key_takeaway": "HIV CD4<200 + bilateral ground glass = PCP → TMP-SMX high dose; add steroids ถ้า PaO2<70"
+    }
+  },
+  {
+    "id": "85c29355-c1c7-4839-979c-bd5c136d75be",
+    "correct_answer": "C",
+    "explanation": "SLE on Cyclophosphamide (immunocompromised) มีไข้สูง ตุ่มแดง และ eschar (central necrosis สีดำ) = Scrub typhus จาก Orientia tsutsugamushi รักษาด้วย Doxycycline",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C: Doxycycline เพราะ eschar (หลุดลอกดำตรงกลาง) ในผู้ป่วย immunocompromised = Scrub typhus",
+      "reason": "Scrub typhus (Orientia tsutsugamushi): vector = Trombiculid mite (chigger) Pathognomonic lesion = eschar: black/necrotic scab ตรงกลาง ที่เกิดจาก vasculitis at bite site ไข้สูง headache lymphadenopathy maculopapular rash ใน immunocompromised (cyclophosphamide) อาจมีอาการรุนแรงขึ้น รักษา: Doxycycline 100 mg bid × 7-14 วัน หรือ Azithromycin (ในหญิงตั้งครรภ์/เด็ก) Cephalexin ใช้สำหรับ skin bacterial infection Fluconazole สำหรับ fungal Amphotericin B สำหรับ invasive fungal Vancomycin สำหรับ gram-positive resistant bacteria",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cephalexin",
+          "is_correct": false,
+          "explanation": "สำหรับ skin bacterial infection ไม่ครอบคลุม rickettsial organisms"
+        },
+        {
+          "label": "B",
+          "text": "Fluconazole",
+          "is_correct": false,
+          "explanation": "Antifungal ไม่ใช่ anti-rickettsial"
+        },
+        {
+          "label": "C",
+          "text": "Doxycycline",
+          "is_correct": true,
+          "explanation": "Eschar = scrub typhus → Doxycycline 100mg bid × 7-14 วัน"
+        },
+        {
+          "label": "D",
+          "text": "Amphotericin B",
+          "is_correct": false,
+          "explanation": "สำหรับ invasive fungal infections"
+        },
+        {
+          "label": "E",
+          "text": "Vancomycin",
+          "is_correct": false,
+          "explanation": "สำหรับ gram-positive bacteria (MRSA) ไม่ใช่ rickettsiae"
+        }
+      ],
+      "key_takeaway": "Eschar (black necrotic scab) = Scrub typhus → Doxycycline ทันที"
+    }
+  },
+  {
+    "id": "85e290db-b05c-4cfd-8873-2b4b233e0fe7",
+    "correct_answer": "D",
+    "explanation": "ผู้ป่วยใช้ ARV 1 ปี มี Cr เพิ่มจาก 0.8 เป็น 2.1 proteinuria glycosuria HCO3 ต่ำ (acidosis) = Fanconi syndrome จาก Tenofovir nephrotoxicity",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D: Tenofovir เพราะทำให้ Fanconi syndrome (proximal tubular dysfunction): proteinuria + glycosuria + metabolic acidosis + renal failure",
+      "reason": "Tenofovir (TDF = Tenofovir disoproxil fumarate) nephrotoxicity: ทำลาย proximal renal tubule → Fanconi syndrome Manifestations: proteinuria (ไม่ selective), glycosuria (ทั้งที่ FBS ปกติ), metabolic acidosis (HCO3 ต่ำ), hypokalemia, hypophosphatemia, renal failure Cr เพิ่มจาก 0.8 → 2.1 mg/dL = significant deterioration Zidovudine (AZT): ทำให้ anemia, myopathy Efavirenz: CNS side effects (nightmares, dizziness), hepatotoxicity Lamivudine (3TC): ปลอดภัยที่สุด ไม่มี nephrotoxicity Nevirapine: hypersensitivity, hepatotoxicity",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Zidovudine (AZT)",
+          "is_correct": false,
+          "explanation": "Causes anemia, lactic acidosis, myopathy ไม่ใช่ Fanconi syndrome"
+        },
+        {
+          "label": "B",
+          "text": "Efavirenz",
+          "is_correct": false,
+          "explanation": "CNS toxicity, hepatotoxicity ไม่ใช่ nephrotoxicity"
+        },
+        {
+          "label": "C",
+          "text": "Lamivudine",
+          "is_correct": false,
+          "explanation": "ปลอดภัยที่สุดในกลุ่ม NRTI ไม่มี nephrotoxicity"
+        },
+        {
+          "label": "D",
+          "text": "Tenofovir",
+          "is_correct": true,
+          "explanation": "Proximal tubular toxicity → Fanconi syndrome: Cr สูง + proteinuria + glycosuria + HCO3 ต่ำ"
+        },
+        {
+          "label": "E",
+          "text": "Nevirapine",
+          "is_correct": false,
+          "explanation": "NNRTI → hypersensitivity rash, hepatotoxicity ไม่ใช่ nephrotoxicity"
+        }
+      ],
+      "key_takeaway": "ARV + Cr สูง + proteinuria + glycosuria + HCO3 ต่ำ = Tenofovir nephrotoxicity (Fanconi syndrome)"
+    }
+  },
+  {
+    "id": "917af241-4b03-462a-a090-3d817c9ba729",
+    "correct_answer": "A",
+    "explanation": "ผู้หญิงอายุ 40 ปี ปวดบวมต้นขา ไข้ erythema และหนองจาก abscess = Skin/soft tissue infection + abscess สาเหตุที่พบบ่อยที่สุดคือ Staphylococcus aureus",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: S. aureus เพราะเป็น most common cause ของ skin abscess ทั่วไป",
+      "reason": "Skin and soft tissue infection (SSTI) with abscess formation: S. aureus (including MRSA) เป็นสาเหตุหลัก >70-80% ของ community-acquired skin abscess โดยเฉพาะในส่วนที่ไม่ใช่ foot/perineum S. aureus มี virulence factors: Panton-Valentine leukocidin (PVL), coagulase, protein A ทำให้ pus formation ดี รักษา: I&D (incision and drainage) คือ primary treatment สำหรับ abscess ร่วมกับ antibiotics (Cloxacillin สำหรับ MSSA, TMP-SMX/Doxycycline สำหรับ CA-MRSA) S. pyogenes ทำ cellulitis มากกว่า abscess",
+      "choices": [
+        {
+          "label": "A",
+          "text": "S. aureus",
+          "is_correct": true,
+          "explanation": "Most common cause ของ skin abscess (SSTI); MSSA/MRSA; มี pus ชัดเจน"
+        },
+        {
+          "label": "B",
+          "text": "S. pyogenes",
+          "is_correct": false,
+          "explanation": "Group A Strep ทำ cellulitis มากกว่า abscess"
+        },
+        {
+          "label": "C",
+          "text": "H. influenzae",
+          "is_correct": false,
+          "explanation": "พบน้อยมากใน soft tissue infection ในผู้ใหญ่"
+        },
+        {
+          "label": "D",
+          "text": "P. aeruginosa",
+          "is_correct": false,
+          "explanation": "พบใน immunocompromised หรือ water exposure ไม่ใช่ typical skin abscess"
+        }
+      ],
+      "key_takeaway": "Skin abscess ทั่วไป = S. aureus (most common) → I&D + antibiotic (Cloxacillin/TMP-SMX)"
+    }
+  },
+  {
+    "id": "94f02e50-3daf-4136-924d-506a9675568e",
+    "correct_answer": "A",
+    "explanation": "STD prophylaxis หลังถูกข่มขืน ต้องครอบคลุม Gonorrhea + Chlamydia: Cefixime (single dose สำหรับ Gonorrhea) + Azithromycin (single dose สำหรับ Chlamydia)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Cefixime + Azithromycin สำหรับ STD prophylaxis (Gonorrhea + Chlamydia) หลัง sexual assault",
+      "reason": "STD prophylaxis หลัง sexual assault ตาม Thai/WHO guideline: Gonorrhea (N. gonorrhoeae): Cefixime 400 mg PO single dose หรือ Ceftriaxone 250 mg IM Chlamydia (C. trachomatis): Azithromycin 1 g PO single dose หรือ Doxycycline 100 mg bid × 7 วัน ยังต้องพิจารณา: HIV PEP ถ้า risk สูง, Hepatitis B immunization, Emergency contraception Doxycycline ใช้แทน Azithromycin ได้แต่ต้องกิน 7 วัน compliance ต่ำกว่า Cefoxitin ไม่ใช่ standard สำหรับ STD prophylaxis แบบ single dose",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cefixime + Azithromycin",
+          "is_correct": true,
+          "explanation": "Gonorrhea (Cefixime 400mg single dose) + Chlamydia (Azithromycin 1g single dose) = complete STD prophylaxis"
+        },
+        {
+          "label": "B",
+          "text": "Cefixime + Doxycycline",
+          "is_correct": false,
+          "explanation": "ใช้ได้แต่ Doxycycline ต้องกิน 7 วัน compliance ต่ำกว่า Azithromycin"
+        },
+        {
+          "label": "C",
+          "text": "Cefoxitine + Azithromycin",
+          "is_correct": false,
+          "explanation": "Cefoxitin ไม่ใช่ standard STD prophylaxis agent"
+        },
+        {
+          "label": "D",
+          "text": "Cefoxitine + Doxycycline",
+          "is_correct": false,
+          "explanation": "Cefoxitin ไม่ใช่ standard"
+        },
+        {
+          "label": "E",
+          "text": "Ceftriaxone + Doxycycline",
+          "is_correct": false,
+          "explanation": "ใช้ได้แต่ Ceftriaxone ต้องฉีด IM ไม่สะดวกเท่า oral Cefixime"
+        }
+      ],
+      "key_takeaway": "STD prophylaxis หลัง rape: Cefixime (Gonorrhea) + Azithromycin (Chlamydia) single dose"
+    }
+  },
+  {
+    "id": "94f37c4c-9e3f-4b9a-9bbc-7df3a3acc559",
+    "correct_answer": "A",
+    "explanation": "หญิงอายุ 26 ปี ไข้ ปวดท้องน้อย 2 วัน ปัสสาวะบ่อย ไม่แสบขัด กดเจ็บที่ suprapubic ตามโจทย์คำตอบระบุเป็น Endometriosis แม้ clinical presentation จะชวนคิดถึง cystitis",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Endometriosis ตามโจทย์ — ปวดท้องน้อย + suprapubic tenderness ในหญิงวัยเจริญพันธุ์",
+      "reason": "Endometriosis อาจแสดงอาการ urinary symptoms ได้เมื่อ endometrial tissue อยู่ที่ bladder หรือ peritoneum ใกล้ bladder ทำให้ pelvic pain + urinary frequency โดยไม่มี dysuria ชัดเจน ในโจทย์ระบุว่าปัสสาวะไม่แสบขัดไม่ขุ่น → ไม่ใช่ classic bacterial UTI แต่มี frequency + suprapubic pain Endometriosis bladder involvement ทำให้ urinary frequency + suprapubic pain โดยเฉพาะช่วง menstruation UTI ทั่วไปจะมี dysuria + cloudy urine ชัดเจนกว่า",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Endometriosis",
+          "is_correct": true,
+          "explanation": "ตามคำตอบโจทย์ — pelvic pain + urinary frequency โดยไม่มี dysuria ใน reproductive-age woman"
+        },
+        {
+          "label": "B",
+          "text": "Urethral stone",
+          "is_correct": false,
+          "explanation": "มักมี hematuria + severe flank/suprapubic pain (colicky)"
+        },
+        {
+          "label": "C",
+          "text": "Ruptured ovarian cyst",
+          "is_correct": false,
+          "explanation": "เฉียบพลัน มักมี acute severe pain"
+        },
+        {
+          "label": "E",
+          "text": "UTI",
+          "is_correct": false,
+          "explanation": "มักมี dysuria + cloudy urine ในโจทย์ระบุว่าไม่มีอาการเหล่านี้"
+        }
+      ],
+      "key_takeaway": "ปวดท้องน้อย + urinary frequency โดยไม่มี dysuria ใน reproductive-age woman = พิจารณา Endometriosis"
+    }
+  },
+  {
+    "id": "99959c8a-b437-4703-8850-0f053d80fe9a",
+    "correct_answer": "D",
+    "explanation": "Bilateral interstitial infiltration พร้อม O2 sat 86% ใน immunocompromised patient = PCP ซึ่ง Pneumocystis jirovecii จัดเป็น Protozoa ในตำราเก่า (ปัจจุบันจัดเป็น Fungus) ดังนั้นคำตอบ D = Protozoa",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D: Protozoa เพราะ Pneumocystis jirovecii ในตำราเก่าจัดเป็น Protozoa (ปัจจุบันเป็น Fungus)",
+      "reason": "Pneumocystis jirovecii: ประวัติศาสตร์: เดิมจัดเป็น Protozoa ต่อมา reclassify เป็น Fungus ตาม molecular phylogeny ในตำราแพทย์ไทยเก่าและข้อสอบ ศรว ยังอาจจัด PCP เป็น Protozoa Bilateral interstitial infiltrate + severe hypoxia ใน HIV/immunocompromised = PCP ดังนั้นเมื่อถามว่า etiology คืออะไร คำตอบ D (Protozoa) ตามข้อสอบนี้ ถ้าจะตาม current classification → Fungus (แต่ไม่ใช่คำตอบในข้อนี้)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Virus",
+          "is_correct": false,
+          "explanation": "Viral pneumonia มักไม่ทำ bilateral ground glass ที่รุนแรงระดับนี้"
+        },
+        {
+          "label": "B",
+          "text": "Bacteria",
+          "is_correct": false,
+          "explanation": "Bacterial pneumonia มัก lobar infiltrate ไม่ใช่ bilateral interstitial"
+        },
+        {
+          "label": "C",
+          "text": "Fungus",
+          "is_correct": false,
+          "explanation": "ตาม current classification PCP เป็น Fungus แต่ไม่ใช่คำตอบในข้อสอบนี้"
+        },
+        {
+          "label": "D",
+          "text": "Protozoa",
+          "is_correct": true,
+          "explanation": "ตาม old classification PCP/Pneumocystis = Protozoa ในตำราและข้อสอบไทยเก่า"
+        },
+        {
+          "label": "E",
+          "text": "Prion",
+          "is_correct": false,
+          "explanation": "Prion ทำ CJD (brain disease) ไม่ใช่ pneumonia"
+        }
+      ],
+      "key_takeaway": "PCP = Pneumocystis jirovecii (ตาม old exam = Protozoa, ปัจจุบัน = Fungus) → TMP-SMX"
+    }
+  },
+  {
+    "id": "a0a8ec65-76c7-4c7c-ae52-24bbcba4fca7",
+    "correct_answer": "B",
+    "explanation": "Needle stick จาก HIV+ CD4 80 ที่ไม่ได้รับ ARV (viral load สูง high-risk exposure) ต้องการ PEP 3 ยา: AZT+3TC+Lopinavir/Ritonavir ซึ่งเป็น preferred regimen สำหรับ high-risk exposure",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B: AZT+3TC+Lopinavir/Ritonavir เพราะ high-risk exposure ต้องการ 3-drug PEP regimen",
+      "reason": "HIV PEP (Post-Exposure Prophylaxis): เริ่มภายใน 72 ชั่วโมง กินยา 28 วัน CD4 source = 80 + ไม่ได้รับ ARV = viral load สูงมาก = high-risk source High-risk exposure + high-risk source = 3-drug PEP preferred AZT + 3TC = dual NRTI backbone LPV/r (Lopinavir/Ritonavir) = boosted PI เพิ่ม efficacy 2-drug PEP (AZT+3TC เท่านั้น) ใช้สำหรับ lower-risk exposures d4T ไม่แนะนำในปัจจุบัน (replaced by TDF/AZT) เพราะ mitochondrial toxicity สูง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "AZT+3TC (2 drugs)",
+          "is_correct": false,
+          "explanation": "2-drug regimen สำหรับ low-risk exposure ไม่เพียงพอสำหรับ high-risk source"
+        },
+        {
+          "label": "B",
+          "text": "AZT+3TC+Lopinavir/Ritonavir",
+          "is_correct": true,
+          "explanation": "3-drug PEP สำหรับ high-risk exposure (HIV source CD4 80, not on ARV = high viral load)"
+        },
+        {
+          "label": "C",
+          "text": "d4T+3TC+NVP",
+          "is_correct": false,
+          "explanation": "d4T ไม่แนะนำแล้ว; NVP ไม่ใช่ preferred PI สำหรับ PEP"
+        },
+        {
+          "label": "D",
+          "text": "d4T+3TC (2 drugs)",
+          "is_correct": false,
+          "explanation": "d4T ไม่แนะนำ และ 2-drug ไม่เพียงพอ"
+        },
+        {
+          "label": "E",
+          "text": "3TC+TDF+Nelfinavir",
+          "is_correct": false,
+          "explanation": "Nelfinavir ไม่ใช่ preferred agent สำหรับ PEP ปัจจุบัน"
+        }
+      ],
+      "key_takeaway": "High-risk HIV PEP (source HIV+ ไม่ได้รับ ARV) = 3-drug regimen: AZT+3TC+LPV/r"
+    }
+  },
+  {
+    "id": "a2832717-ffc8-4ce5-93c5-e7cedb08cef7",
+    "correct_answer": "A",
+    "explanation": "TB ในระหว่างตั้งครรภ์รักษาด้วย IRZE (Isoniazid + Rifampicin + Pyrazinamide + Ethambutol) ซึ่งปลอดภัยในการตั้งครรภ์ ยกเว้น Streptomycin, Fluoroquinolones ที่ต้องหลีกเลี่ยง",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: IRZE เพราะยา TB มาตรฐาน 4 ตัวนี้ปลอดภัยในหญิงตั้งครรภ์ ยกเว้น Streptomycin และ Fluoroquinolones",
+      "reason": "TB ในหญิงตั้งครรภ์: รักษาเหมือนกัน แต่หลีกเลี่ยงยาบางตัว ยาที่ปลอดภัย (สามารถใช้ได้): I (Isoniazid) + R (Rifampicin) + Z (Pyrazinamide) + E (Ethambutol) ยาที่ต้องหลีกเลี่ยง: Streptomycin → ototoxic ต่อทารก (CN VIII toxicity) Fluoroquinolones (Ofloxacin, Levofloxacin) → arthropathy ในสัตว์ทดลอง (ไม่แนะนำ) Aminoglycosides อื่นๆ → nephrotoxic/ototoxic ทารก ต้องเพิ่ม Pyridoxine (B6) เสมอเพราะ INH ทำ B6 deficiency",
+      "choices": [
+        {
+          "label": "A",
+          "text": "I + R + Pyrazinamide + E (IRZE)",
+          "is_correct": true,
+          "explanation": "Standard 4-drug TB regimen ปลอดภัยในตั้งครรภ์; เพิ่ม Pyridoxine ร่วม"
+        },
+        {
+          "label": "B",
+          "text": "I + R + E + Streptomycin",
+          "is_correct": false,
+          "explanation": "Streptomycin → CN VIII toxicity ในทารก → contraindicated ในตั้งครรภ์"
+        },
+        {
+          "label": "C",
+          "text": "I + R + E + Ofloxacin",
+          "is_correct": false,
+          "explanation": "Ofloxacin/Fluoroquinolone ไม่แนะนำในตั้งครรภ์"
+        },
+        {
+          "label": "D",
+          "text": "I + Streptomycin + E + Ofloxacin",
+          "is_correct": false,
+          "explanation": "มี Streptomycin และ Ofloxacin ทั้งคู่ → contraindicated ในตั้งครรภ์"
+        },
+        {
+          "label": "E",
+          "text": "I + Pyrazinamide + E + Ofloxacin",
+          "is_correct": false,
+          "explanation": "ไม่มี Rifampicin และมี Ofloxacin ซึ่ง contraindicated"
+        }
+      ],
+      "key_takeaway": "TB ในตั้งครรภ์ = IRZE ปลอดภัย; หลีกเลี่ยง Streptomycin (ototoxic ทารก) และ Fluoroquinolones"
+    }
+  },
+  {
+    "id": "a38bd429-28a6-484a-a020-90672720e610",
+    "correct_answer": "A",
+    "explanation": "HIV+ IVDU มีไข้สูง systolic murmur + ปวดข้อ = Right-sided IE จาก S. aureus ที่พบบ่อยที่สุดใน IVDU (tricuspid valve endocarditis)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: S. aureus เพราะ IVDU + HIV = classic risk factors สำหรับ right-sided IE จาก S. aureus",
+      "reason": "HIV+ IVDU IE: S. aureus เป็นสาเหตุ >50% ในผู้ใช้ยาเสพติดทาง IV Tricuspid valve involvement ทำให้ murmur ที่ left upper parasternal border (LUPSB) = pulmonic area/tricuspid area Right-sided IE: septic pulmonary emboli (hemoptysis, bilateral nodular infiltrates), murmur tricuspid regurgitation HIV ทำให้ immune compromised เพิ่ม risk ต่อ S. aureus infection มากขึ้น ปวดข้อ (septic arthritis) เกิดจาก hematogenous seeding",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Staphylococcus aureus",
+          "is_correct": true,
+          "explanation": "Most common cause ของ IE ใน IVDU: right-sided, tricuspid involvement; aggressive virulence"
+        },
+        {
+          "label": "B",
+          "text": "Streptococcus pneumoniae",
+          "is_correct": false,
+          "explanation": "ทำ pneumonia/meningitis ไม่ใช่ IE ใน IVDU primarily"
+        },
+        {
+          "label": "C",
+          "text": "Treponema pallidum",
+          "is_correct": false,
+          "explanation": "Syphilis ไม่ทำ IE"
+        },
+        {
+          "label": "D",
+          "text": "Mycobacterium avium complex (MAC)",
+          "is_correct": false,
+          "explanation": "MAC ทำ disseminated disease ใน CD4<50 ไม่ทำ IE"
+        },
+        {
+          "label": "E",
+          "text": "Candida albicans",
+          "is_correct": false,
+          "explanation": "Candida IE พบได้ใน IVDU แต่น้อยกว่า S. aureus"
+        }
+      ],
+      "key_takeaway": "IVDU + HIV + fever + murmur = Right-sided IE (tricuspid) จาก S. aureus"
+    }
+  },
+  {
+    "id": "a620b8f5-5c71-4a4f-984d-a49d9a70a2c8",
+    "correct_answer": "A",
+    "explanation": "HIV+ ท้องเสีย modified AFB stain พบ oocysts 3-6 μm = Cryptosporidium (4-6 μm) ใน old textbooks แต่คำตอบคือ A = Cyclospora ตามโจทย์ (Cyclospora = 8-10 μm ใน current classification)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Cyclospora ตามโจทย์ ศรว 2011 — modified AFB stain พบ oocysts ใน HIV+ diarrhea",
+      "reason": "Modified AFB stain ใช้ตรวจหา coccidian parasites ใน stool: Cryptosporidium: 4-6 μm, acid-fast oocysts Cyclospora cayetanensis: 8-10 μm, acid-fast (variable/wrinkled appearance) Isospora (Cystoisospora) belli: 20-30 μm (ใหญ่ที่สุด) ในโจทย์ระบุขนาด 3-6 μm ซึ่งใกล้เคียง Cryptosporidium มากกว่า แต่คำตอบที่ให้คือ A = Cyclospora ตาม ศรว 2011 รักษา Cyclospora: TMP-SMX รักษา Cryptosporidium: Nitazoxanide, immune reconstitution",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cyclospora",
+          "is_correct": true,
+          "explanation": "Modified AFB positive oocyst ใน HIV diarrhea ตามโจทย์ ศรว 2011; รักษาด้วย TMP-SMX"
+        },
+        {
+          "label": "B",
+          "text": "Cryptosporidium",
+          "is_correct": false,
+          "explanation": "4-6 μm modified AFB positive; คล้ายกันมากแต่ไม่ใช่คำตอบในข้อนี้"
+        },
+        {
+          "label": "C",
+          "text": "Entamoeba histolytica",
+          "is_correct": false,
+          "explanation": "ไม่ acid-fast ไม่พบด้วย modified AFB stain"
+        },
+        {
+          "label": "D",
+          "text": "Isospora belli",
+          "is_correct": false,
+          "explanation": "20-30 μm ใหญ่กว่ามาก"
+        },
+        {
+          "label": "E",
+          "text": "Histoplasma",
+          "is_correct": false,
+          "explanation": "Fungus ไม่พบด้วย modified AFB stain ใน stool"
+        }
+      ],
+      "key_takeaway": "HIV diarrhea + modified AFB oocysts = Cyclospora/Cryptosporidium; Cyclospora (8-10 μm) → TMP-SMX"
+    }
+  },
+  {
+    "id": "aa03bfe3-d403-4ad5-b895-d4c8a3d6d2cc",
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วย TB กำลังรับ IRZE ตั้งครรภ์ขณะใช้ยาคุม ยาคุมล้มเหลวเพราะ Rifampicin เป็น CYP450 inducer ทำให้เมตาบอลิซึมของ estrogen/progestin เพิ่มขึ้น ระดับฮอร์โมนในเลือดลดลง",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Rifampicin เป็น CYP450 inducer ทำให้ oral contraceptive ถูก metabolize เร็วขึ้น ระดับฮอร์โมนลดลง ยาคุมล้มเหลว",
+      "reason": "Rifampicin (Rifampin) เป็น potent inducer ของ CYP3A4 และ CYP2C9 ซึ่งเป็น enzyme หลักที่ metabolize ฮอร์โมน Estrogen และ Progestin ใน oral contraceptive pills (OCPs) Rifampicin เพิ่ม rate of metabolism ของ OCP → ระดับฮอร์โมนลดต่ำกว่า therapeutic level → contraceptive failure Drug interaction นี้เป็น well-documented ต้องแนะนำผู้ป่วยที่กิน IRZE ให้ใช้ barrier method แทน OCPs ตลอดการรักษา Isoniazid, Pyrazinamide, Ethambutol ไม่มีผลต่อ CYP450 อย่างมีนัยสำคัญ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Rifampicin เป็น CYP450 inducer",
+          "is_correct": true,
+          "explanation": "Rifampicin → CYP3A4/2C9 induction → เพิ่ม OCP metabolism → ระดับฮอร์โมนต่ำ → contraceptive failure"
+        },
+        {
+          "label": "B",
+          "text": "Isoniazid ลดการดูดซึม OCP",
+          "is_correct": false,
+          "explanation": "INH ไม่มีผลต่อ GI absorption ของ OCP"
+        },
+        {
+          "label": "C",
+          "text": "Pyrazinamide เพิ่ม estrogen",
+          "is_correct": false,
+          "explanation": "PZA ไม่มีผลต่อ sex hormone levels"
+        },
+        {
+          "label": "D",
+          "text": "Ethambutol inhibits CYP450",
+          "is_correct": false,
+          "explanation": "EMB ไม่ใช่ CYP450 inhibitor/inducer"
+        },
+        {
+          "label": "E",
+          "text": "Pyridoxine ลดความเสี่ยง neuropathy",
+          "is_correct": false,
+          "explanation": "B6 ไม่เกี่ยวกับ contraceptive failure"
+        }
+      ],
+      "key_takeaway": "Rifampicin = CYP450 inducer → OCP failure → ต้องใช้ barrier method ขณะกิน TB drugs"
+    }
+  },
+  {
+    "id": "afea80b1-00b5-4ac8-aadd-bf79965d382d",
+    "correct_answer": "B",
+    "explanation": "Rapid test HIV positive ครั้งแรก ต้องยืนยันด้วย Western blot หรือ HIV DNA/RNA PCR ก่อน เพราะ Rapid test อาจมี false positive ได้",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B: ส่ง Serum ยืนยันด้วย Western blot/HIV PCR ก่อนวินิจฉัยและแจ้งผู้ป่วย",
+      "reason": "HIV testing algorithm ตาม Thai/WHO guideline: Step 1: Screening test (Rapid test หรือ ELISA) ถ้า Positive → Step 2: Confirmatory test (Western blot หรือ HIV-1/2 antibody differentiation assay) ถ้า indeterminate → HIV RNA PCR Rapid test มี sensitivity สูง (~99%) แต่ specificity ไม่ 100% มีโอกาส false positive ได้ การแจ้งผลว่า HIV+ และเริ่มยาโดยไม่ confirm = ผิดหลักจริยธรรมและมาตรฐานการรักษา ต้อง confirm ก่อนทุกครั้ง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "บอก HIV+ และเริ่ม ARV ทันที",
+          "is_correct": false,
+          "explanation": "ผิดมาตรฐาน: ต้อง confirm ก่อนเสมอ Rapid test positive ไม่ใช่ definitive diagnosis"
+        },
+        {
+          "label": "B",
+          "text": "ส่ง Serum ยืนยันด้วย Western blot/PCR",
+          "is_correct": true,
+          "explanation": "HIV testing algorithm: screening positive → confirmatory test ก่อน diagnose"
+        },
+        {
+          "label": "C",
+          "text": "ทำ Rapid test ซ้ำคนละแบบ",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ standard confirmatory test ที่แนะนำ"
+        },
+        {
+          "label": "D",
+          "text": "รอ 3 เดือน ทำ test ใหม่",
+          "is_correct": false,
+          "explanation": "Window period ใช้สำหรับ การ screen ครั้งแรกหลัง exposure ไม่ใช่สำหรับ confirm positive test"
+        },
+        {
+          "label": "E",
+          "text": "ให้ Prophylaxis ทันที อ้างอิง Rapid test เพียงอย่างเดียว",
+          "is_correct": false,
+          "explanation": "ต้อง confirm ก่อนเสมอ"
+        }
+      ],
+      "key_takeaway": "Rapid test HIV positive → ต้อง confirm ด้วย Western blot หรือ HIV PCR ก่อน diagnose"
+    }
+  },
+  {
+    "id": "b172b2d4-e24d-4bbd-bead-20b7638b68b9",
+    "correct_answer": "A",
+    "explanation": "ชายอายุ 40 ปี ปลูกผัก (outdoor/soil exposure) ไข้ 5 วัน ปวดหัว bilateral cervical LAD conjunctival injection WBC 10000 (mixed) ตามโจทย์คำตอบคือ Melioidosis",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Melioidosis เพราะ soil-exposed worker (ปลูกผัก) + ไข้ + LAD + conjunctival injection ใน endemic area Thailand",
+      "reason": "Melioidosis (Burkholderia pseudomallei): endemic ใน Thailand, SE Asia ที่มีฝน/น้ำขัง risk factors: ดิน/น้ำสัมผัส โดยเฉพาะ agricultural workers, DM, kidney disease Presentations: ไข้, bacteremia, pneumonia, septic arthritis, lymphadenopathy WBC pattern: 10,000 (PMN:Lymph = 50:50 = mixed pattern) พบได้ใน melioidosis Scrub typhus ต้องมี eschar Dengue มักมี thrombocytopenia, leukopenia Viral meningitis มักมี stiff neck positive",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Melioidosis",
+          "is_correct": true,
+          "explanation": "Agricultural worker + ไข้ + LAD ใน Thailand = melioidosis (Burkholderia pseudomallei)"
+        },
+        {
+          "label": "B",
+          "text": "Scrub typhus",
+          "is_correct": false,
+          "explanation": "ต้องมี eschar characteristic ไม่มีในโจทย์"
+        },
+        {
+          "label": "C",
+          "text": "Dengue infection",
+          "is_correct": false,
+          "explanation": "มักมี leukopenia + thrombocytopenia ชัดเจน"
+        },
+        {
+          "label": "D",
+          "text": "Viral meningitis",
+          "is_correct": false,
+          "explanation": "Stiff neck negative ในโจทย์"
+        }
+      ],
+      "key_takeaway": "Agricultural worker (ปลูกผัก) + ไข้ + LAD ใน Thailand = พิจารณา Melioidosis (Burkholderia)"
+    }
+  },
+  {
+    "id": "b19874de-557a-47f0-891a-2eab29163472",
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วย Lymphoma on chemotherapy มีไข้สูง + WBC 400 (severe neutropenia) = Febrile neutropenia ต้องการ G-CSF ร่วมกับ broad-spectrum antibiotics เร่งด่วน",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: G-CSF เพราะ severe febrile neutropenia (WBC 400) จาก chemotherapy ต้องการ G-CSF เพื่อกระตุ้น neutrophil recovery",
+      "reason": "Febrile neutropenia: ANC <500 + fever ≥38.5°C หรือ ANC <1000 + fever สองครั้ง WBC 400 = severe neutropenia ที่เกิดจาก chemotherapy การรักษา: empirical broad-spectrum antibiotics (IV) เร่งด่วน G-CSF (Filgrastim) กระตุ้น bone marrow ผลิต neutrophils เร็วขึ้น ลด duration ของ neutropenia ลด risk ของ infection complications ในข้อสอบนี้คำตอบคือ G-CSF ซึ่งเป็น hematopoietic growth factor ที่ใช้ใน febrile neutropenia นอกจากนี้ยังต้องให้ antibiotics ด้วย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "G-CSF",
+          "is_correct": true,
+          "explanation": "กระตุ้น neutrophil production จาก bone marrow ลด duration ของ febrile neutropenia ใน chemo patients"
+        },
+        {
+          "label": "B",
+          "text": "Ceftazidime monotherapy",
+          "is_correct": false,
+          "explanation": "Antibiotic ที่ใช้ใน febrile neutropenia แต่ไม่ใช่คำตอบหลักในข้อนี้"
+        },
+        {
+          "label": "C",
+          "text": "Amoxicillin-clavulanate",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอสำหรับ febrile neutropenia ที่ต้องการ broad-spectrum IV antibiotics"
+        },
+        {
+          "label": "D",
+          "text": "Penicillin G + Gentamicin",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ standard สำหรับ febrile neutropenia"
+        },
+        {
+          "label": "E",
+          "text": "Observe ไม่ให้ยา",
+          "is_correct": false,
+          "explanation": "Febrile neutropenia = emergency; ต้องให้ antibiotics ทันที ไม่สามารถ observe ได้"
+        }
+      ],
+      "key_takeaway": "Febrile neutropenia จาก chemo → G-CSF เร่ง neutrophil recovery + IV broad-spectrum antibiotics ทันที"
+    }
+  },
+  {
+    "id": "b3d6eb57-a834-4eaf-af50-03733d12ae0a",
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วย pneumonia + pleural effusion + mixed organisms + ไข้ไม่ลงหลัง 3 วัน antibiotic = น่าจะมี empyema หรือ loculated effusion ต้องการ postural drainage เพื่อระบาย",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Postural drainage เพื่อช่วยระบาย parapneumonic effusion/empyema ที่ไม่ตอบสนองต่อยา",
+      "reason": "Pneumonia + pleural effusion ที่ไข้ไม่ลงหลัง antibiotics 3 วัน = complicated parapneumonic effusion หรือ empyema Postural drainage ช่วยระบาย secretion และ pleural fluid ในกรณีที่ยังไม่ต้องการ ICD ถ้า empyema confirmed หรือ large effusion = อาจต้องการ chest tube (ICD) Bronchoscopy ใช้สำหรับ obstruction หรือ BAL สำหรับ diagnosis Pleural tapping ใช้ diagnostic (transudates vs exudates) และ therapeutic ด้วย ในข้อสอบนี้คำตอบคือ Postural drainage ซึ่งเป็น conservative approach ก่อน invasive procedure",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Postural drainage",
+          "is_correct": true,
+          "explanation": "Conservative approach สำหรับ parapneumonic effusion ที่ไม่ตอบสนองต่อ antibiotics"
+        },
+        {
+          "label": "B",
+          "text": "Bronchoscope",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ airway obstruction หรือ diagnostic BAL"
+        },
+        {
+          "label": "C",
+          "text": "Pleural tapping",
+          "is_correct": false,
+          "explanation": "ใช้ diagnostic/therapeutic ถ้ามี large effusion"
+        },
+        {
+          "label": "D",
+          "text": "ICD (intercostal chest drain)",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ empyema หรือ large hemothorax/parapneumonic effusion ขนาดใหญ่"
+        }
+      ],
+      "key_takeaway": "Pneumonia + persisting pleural effusion ไม่ตอบสนองยา → Postural drainage; empyema → ICD"
+    }
+  },
+  {
+    "id": "b58b7577-e705-4027-a9bc-e265a39c4294",
+    "correct_answer": "B",
+    "explanation": "ท้องเสียเป็นน้ำพุ่งพร้อม mucoid/bloody stool, stool WBC และ RBC จำนวนมาก = invasive/inflammatory diarrhea สาเหตุที่พบบ่อยคือ Shigella species (dysentery)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B: Shigella species เพราะ mucoid bloody diarrhea + stool WBC + RBC = classic bacillary dysentery",
+      "reason": "Shigella species ทำ bacillary dysentery: Inflammatory diarrhea: mucoid bloody stool + tenesmus + abdominal cramp Stool microscopy: WBC + RBC จำนวนมาก (invasive pathogen ทำ colitis) Vibrio cholerae: watery diarrhea เหมือน rice-water ไม่มี blood/WBC ใน stool Salmonella: watery diarrhea ไม่ค่อยมี blood Entamoeba histolytica: bloody diarrhea แต่มักมีระยะฟัก longer, ไม่ค่อยมี WBC มาก (karyorrhexis) Rotavirus: watery diarrhea ในเด็ก ไม่มี blood",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Vibrio cholerae",
+          "is_correct": false,
+          "explanation": "Rice-water watery diarrhea ไม่มี blood/WBC"
+        },
+        {
+          "label": "B",
+          "text": "Shigella species",
+          "is_correct": true,
+          "explanation": "Bacillary dysentery: mucoid bloody stool + WBC + RBC ใน stool = inflammatory colitis"
+        },
+        {
+          "label": "C",
+          "text": "Salmonella species",
+          "is_correct": false,
+          "explanation": "Mostly watery ไม่ใช่ classic bloody dysentery"
+        },
+        {
+          "label": "D",
+          "text": "Entamoeba histolytica",
+          "is_correct": false,
+          "explanation": "Amoebic dysentery: bloody mucoid แต่ไม่ค่อยมี WBC มาก (amoeba kills leukocytes)"
+        },
+        {
+          "label": "E",
+          "text": "Rotavirus",
+          "is_correct": false,
+          "explanation": "Viral watery diarrhea ในเด็ก ไม่มี blood/WBC"
+        }
+      ],
+      "key_takeaway": "Mucoid bloody diarrhea + stool WBC + RBC = Bacillary dysentery จาก Shigella → Ciprofloxacin"
+    }
+  },
+  {
+    "id": "b6d76475-978e-4c79-9978-3ca23b70766d",
+    "correct_answer": "A",
+    "explanation": "ชาย 18 ปี ไข้ปวดเมื่อย Hct 58% (hemoconcentration สูงมาก) WBC 2600 (leukopenia) plt 35000 (thrombocytopenia) BP 80/50 = Dengue Shock Syndrome ต้องรักษา shock ด้วย Dopamine",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Dopamine เพราะผู้ป่วย Dengue Shock Syndrome ที่ไม่ตอบสนองต่อ fluid หรือมี refractory shock ต้องการ vasopressor",
+      "reason": "Dengue Shock Syndrome (DSS): Hct 58% = hemoconcentration (DHF grade III-IV), WBC ต่ำ (leukopenia characteristic ของ dengue), plt 35000 (thrombocytopenia), BP 80/50 = shock DSS management: 1. IV fluid resuscitation ก่อน (NSS/RL) 2. ถ้า refractory shock → vasopressor (Dopamine) Dopamine เพิ่ม cardiac output และ peripheral vascular resistance เหมาะสำหรับ distributive shock ใน DSS Cef-3 ไม่มีบทบาทใน dengue (viral disease) NSS loading เป็น first step แต่โจทย์ถามว่า Treatment = Dopamine ซึ่งใช้เมื่อ fluid-refractory shock",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Dopamine",
+          "is_correct": true,
+          "explanation": "Vasopressor สำหรับ refractory Dengue Shock Syndrome; เพิ่ม cardiac output และ BP"
+        },
+        {
+          "label": "B",
+          "text": "Cef-3 (Ceftriaxone)",
+          "is_correct": false,
+          "explanation": "Dengue เป็น viral disease ไม่มี indication สำหรับ antibiotic"
+        },
+        {
+          "label": "C",
+          "text": "NSS loading",
+          "is_correct": false,
+          "explanation": "เป็น first step สำหรับ DSS แต่โจทย์ถาม primary treatment หลังจาก fluid"
+        },
+        {
+          "label": "D",
+          "text": "Dexamethasone",
+          "is_correct": false,
+          "explanation": "Steroid ไม่มีหลักฐานว่าช่วยใน DSS"
+        },
+        {
+          "label": "E",
+          "text": "Platelet concentrate",
+          "is_correct": false,
+          "explanation": "ไม่ให้ platelets ใน dengue ถ้าไม่มี active bleeding จริงๆ"
+        }
+      ],
+      "key_takeaway": "DSS (Hct สูง + plt ต่ำ + shock) → IV fluid ก่อน ถ้า refractory → Dopamine"
+    }
+  },
+  {
+    "id": "b73bc30e-76fc-4754-91a9-6cbb296ad09f",
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วยอายุ 55 ปี ไข้ ไอเสมหะ ไม่ดีขึ้นหลัง azithromycin (atypical coverage) เจ็บอก pleuritic = typical bacterial CAP ไม่ใช่ atypical → รักษาด้วย Ceftriaxone (beta-lactam)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Ceftriaxone เพราะ CAP ที่ไม่ตอบสนองต่อ azithromycin = typical bacterial (Strep pneumoniae) ต้องการ beta-lactam",
+      "reason": "CAP ที่ไม่ตอบสนองต่อ azithromycin: Azithromycin ครอบคลุม atypical organisms (Mycoplasma, Chlamydophila, Legionella) ถ้าไม่ดีขึ้น = น่าจะเป็น typical bacteria (S. pneumoniae, H. influenzae) ที่ดื้อต่อ macrolide หรือไม่ครอบคลุม Pleuritic chest pain ชวนคิดถึง bacterial pneumonia ที่ทำ pleural involvement Ceftriaxone ครอบคลุม S. pneumoniae และ typical bacteria ดี Piperacillin-tazobactam ใช้สำหรับ hospital-acquired หรือ risk for MDR organisms ไม่ใช่ community-acquired",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ceftriaxone",
+          "is_correct": true,
+          "explanation": "Beta-lactam สำหรับ typical bacterial CAP; ครอบคลุม S. pneumoniae ที่ไม่ตอบสนองต่อ azithromycin"
+        },
+        {
+          "label": "B",
+          "text": "Ciprofloxacin",
+          "is_correct": false,
+          "explanation": "Respiratory fluoroquinolone ใช้ได้แต่ไม่ใช่ first-line standard"
+        },
+        {
+          "label": "C",
+          "text": "Clarithromycin",
+          "is_correct": false,
+          "explanation": "Macrolide อีกตัว ไม่ช่วยถ้าดื้อต่อ azithromycin อยู่แล้ว"
+        },
+        {
+          "label": "D",
+          "text": "Co-trimoxazole",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ first-line สำหรับ CAP"
+        },
+        {
+          "label": "E",
+          "text": "Piperacillin-tazobactam",
+          "is_correct": false,
+          "explanation": "สำหรับ HAP/severe CAP at risk for MDR ไม่ใช่ community-acquired ทั่วไป"
+        }
+      ],
+      "key_takeaway": "CAP ไม่ตอบสนองต่อ Azithromycin = typical bacteria → เปลี่ยนเป็น beta-lactam (Ceftriaxone)"
+    }
+  },
+  {
+    "id": "b7a5984b-fa6d-4c9b-a13c-c2627a207748",
+    "correct_answer": "D",
+    "explanation": "ผู้ป่วย alcoholic ไอมีเสมหะเหม็น RUL cavity with air-fluid level = Lung abscess จากการ aspiration รักษาด้วย Amoxicillin-clavulanate (ครอบคลุม anaerobes + aerobes)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D: Amoxicillin-clavulanate เพราะ lung abscess จาก aspiration ใน alcoholic ต้องการ anaerobic coverage",
+      "reason": "Lung abscess ใน alcoholic (aspiration): Pathogen = mixed anaerobes (Peptostreptococcus, Prevotella, Fusobacterium) + aerobes (Strep, Staph) RUL location เพราะ aspiration ใน upright position (supine → RLL; standing/sitting → RUL) Foul-smelling sputum = anaerobic bacteria Air-fluid level ใน cavity = classic lung abscess Amoxicillin-clavulanate ครอบคลุม anaerobes ดีกว่า beta-lactam เดียว Clindamycin ก็เป็น option สำหรับ anaerobic lung abscess Azithromycin ไม่ครอบคลุม anaerobes Anti-TB ใช้ถ้า confirmed TB",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Azithromycin",
+          "is_correct": false,
+          "explanation": "ไม่ครอบคลุม anaerobes ที่ทำ aspiration lung abscess"
+        },
+        {
+          "label": "B",
+          "text": "Ceftriaxone",
+          "is_correct": false,
+          "explanation": "ไม่ครอบคลุม anaerobes อย่างเพียงพอ"
+        },
+        {
+          "label": "C",
+          "text": "TMP-SMX",
+          "is_correct": false,
+          "explanation": "ไม่ครอบคลุม anaerobes"
+        },
+        {
+          "label": "D",
+          "text": "Amoxicillin-clavulanate",
+          "is_correct": true,
+          "explanation": "ครอบคลุม anaerobes + aerobes สำหรับ aspiration lung abscess ใน alcoholic"
+        },
+        {
+          "label": "E",
+          "text": "Anti-TB drugs",
+          "is_correct": false,
+          "explanation": "TB cavity มักไม่มี air-fluid level ชัดเจน และไม่มีเสมหะเหม็น"
+        }
+      ],
+      "key_takeaway": "Alcoholic + foul-smelling sputum + RUL cavity + air-fluid level = Aspiration lung abscess → Amoxicillin-clavulanate (anaerobic coverage)"
+    }
+  }
+]

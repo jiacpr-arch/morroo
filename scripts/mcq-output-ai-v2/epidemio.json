@@ -1,0 +1,653 @@
+[
+  {
+    "scenario": "นักวิจัยทำการทดลองหาความสัมพันธ์ EKG กับ CHD โดยนำคนที่ EKG ผิดปกติและไม่ผิดปกติแบ่งเป็น 2 กลุ่ม ติดตามไป 20 ปี หาคนที่เกิด CHD เป็นการศึกษาแบบใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cross sectional study"
+      },
+      {
+        "label": "B",
+        "text": "Experimental study"
+      },
+      {
+        "label": "C",
+        "text": "Concurrent cohort study"
+      },
+      {
+        "label": "D",
+        "text": "Non concurrent cohort study"
+      },
+      {
+        "label": "E",
+        "text": "Case control study"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "เป็น concurrent cohort study เพราะแบ่งกลุ่มจากสถานะ exposure (EKG ผิดปกติ) ก่อน แล้วติดตามเพื่อดูผลลัพธ์ (CHD) ในอนาคต",
+    "subject": "epidemio",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "Cross sectional study ศึกษา relationship ระหว่าง smoking and anxiety ใช้อะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Prevalence"
+      },
+      {
+        "label": "B",
+        "text": "Incidence"
+      },
+      {
+        "label": "C",
+        "text": "OR"
+      },
+      {
+        "label": "D",
+        "text": "RR"
+      },
+      {
+        "label": "E",
+        "text": "Attributable risk"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Cross-sectional study ใช้ OR (Odds Ratio) เพื่อวัด association ระหว่าง exposure และ outcome ในเวลาเดียวกัน",
+    "subject": "epidemio",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "การบันทึกข้อมูลโดยแยกตัวตอบเป็นไม่ทราบ (don't know) ไม่ตอบ (no response) และไม่เข้าข่าย (non applicable) ทำให้แยกข้อมูลได้ละเอียด ถามว่าข้อมูลไม่เข้าข่าย หมายถึงอะไร",
+    "choices": [
+      {
+        "label": "ก",
+        "text": "ข้อมูลเก็บเป็นตัวเลขไม่ได้"
+      },
+      {
+        "label": "ข",
+        "text": "ข้อมูลไม่อยู่ในกรอบการศึกษา"
+      },
+      {
+        "label": "ค",
+        "text": "ข้อมูลตอบได้หลายคำตอบ"
+      },
+      {
+        "label": "ง",
+        "text": "ข้อมูลไม่อยู่ในเงื่อนไขที่ต้องตอบคำถาม"
+      },
+      {
+        "label": "จ",
+        "text": "ข้อมูลไม่สมบูรณ์หรือขาดหาย"
+      }
+    ],
+    "correct_answer": "ง",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Non applicable หมายถึงกรณีที่คำถามนั้นไม่สามารถตอบได้เนื่องจากบุคคลหรือสถานการณ์นั้นไม่ตรงเงื่อนไขที่กำหนด เช่น ถามเรื่องการตั้งครรภ์กับผู้ชาย",
+    "subject": "epidemio",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ในปี 2011 มีผู้ป่วย DHF 1000 ราย และมีผู้เสียชีวิต 20 ราย จากประชากร 100,000 ในชุมชน A จงคำนวณ case fatality rate",
+    "choices": [
+      {
+        "label": "A",
+        "text": "20/480"
+      },
+      {
+        "label": "B",
+        "text": "20/1000"
+      },
+      {
+        "label": "C",
+        "text": "20/100000"
+      },
+      {
+        "label": "D",
+        "text": "980/100000"
+      },
+      {
+        "label": "E",
+        "text": "1000/100000"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Case fatality rate = (จำนวนผู้เสียชีวิตจากโรค / จำนวนผู้ป่วยทั้งหมด) × 100 = 20/1000",
+    "subject": "epidemio",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "นักวิจัยเปลี่ยนฐานข้อมูล เพื่อให้ผลงานวิจัยออกมาสัมพันธ์กันอย่างมีนัยสำคัญทางสถิติ ตรงกับข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Plagiarism"
+      },
+      {
+        "label": "B",
+        "text": "Fabrication"
+      },
+      {
+        "label": "C",
+        "text": "Falsification"
+      },
+      {
+        "label": "D",
+        "text": "Personal bias"
+      },
+      {
+        "label": "E",
+        "text": "Conflict of interest"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Falsification = การปลอมแปลง หรือเปลี่ยนแปลงข้อมูลเพื่อให้ได้ผลลัพธ์ตามต้องการ",
+    "subject": "epidemio",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 18 ปี เดินทางไปจังหวัดตาก หลังกลับมาประมาณ 1 สัปดาห์ มีอาการไข้สูงหนาวสั่น มีประวัติเพื่อนที่เดินทางไปด้วย 2 คนหลังเดินกลับมา มีอาการลักษณะเดียวกัน ข้อใดเป็นลักษณะการระบาดของโรค",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Endemic"
+      },
+      {
+        "label": "B",
+        "text": "Pandemic"
+      },
+      {
+        "label": "C",
+        "text": "Epidemic"
+      },
+      {
+        "label": "D",
+        "text": "Outbreak"
+      },
+      {
+        "label": "E",
+        "text": "Sporadic"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "เป็น Epidemic เพราะมีผู้ป่วยหลายคนในกลุ่มเดียวกัน (3 คน) ในระยะเวลาสั้น ๆ พร้อมกัน ที่มาจากพื้นที่เดียว (จังหวัดตาก)",
+    "subject": "epidemio",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 35 ปี ถูกส่งตัวมาจากโรงพยาบาลสังขละบุรี จังหวัดกาญจนบุรี เพื่อมารับการรักษาต่อเนื่องจากมะเร็งผิวหนัง ผู้ป่วยให้ประวัติว่าคนในหมู่บ้านบางคนมีอาการเดียวกัน แพทย์วินิจฉัยว่าเป็นมะเร็งผิวหนังไปหลายรายแล้ว ท่านจะแนะนำแพทย์/สาธารณสุขประจำอำเภอให้ตรวจสารพิษอะไรที่เป็นสาเหตุของอาการของผู้ป่วยและคนในหมู่บ้าน",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Lead"
+      },
+      {
+        "label": "B",
+        "text": "Mercury"
+      },
+      {
+        "label": "C",
+        "text": "Arsenic"
+      },
+      {
+        "label": "D",
+        "text": "Cyanic acid"
+      },
+      {
+        "label": "E",
+        "text": "Cadmium"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Arsenic เป็นสารพิษที่ก่อให้เกิดมะเร็งผิวหนังได้ และมักพบในพื้นที่มีการปนเปื้อนจากการทำเหมืองแร่หรืออุตสาหกรรม",
+    "subject": "epidemio",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "พยาบาลกะดึก (00:00-08:00) มีโอกาสเสียงถูกเข็มตำเนื่องจากเหตุใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "กล้ามเนื้อทำงานลดลง"
+      },
+      {
+        "label": "B",
+        "text": "แสงสว่างลดลง"
+      },
+      {
+        "label": "C",
+        "text": "รูม่านตาปรับตัวได้ลดลงไม่เหมือนตอนกลางวัน"
+      },
+      {
+        "label": "D",
+        "text": "ประสิทธิภาพการทำงานลดลงเนื่องจากระบบในร่างกาย"
+      },
+      {
+        "label": "E",
+        "text": "ความเมื่อยล้ากล้ามเนื้อเพิ่มขึ้นจากการทำงานนาน"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "การทำงานกะดึกส่งผลต่อจังหวะการสอบเสาะของร่างกายและลดประสิทธิภาพการทำงาน การมองเห็นใจดีขึ้นและสมาธิลดลง ความสามารถในการประสานงานลดลง",
+    "subject": "epidemio",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ทำการศึกษาความสัมพันธ์การใช้ pill กับการเกิด DVT ในสตรี 25-45 ปี พบว่าเมื่อใช้ pill มีความเสี่ยงมากกว่าคนไม่ใช้ 3 เท่า ข้อใดถูก",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ใช้จริงไม่ได้ เพราะ selective bias"
+      },
+      {
+        "label": "B",
+        "text": "ใช้จริงไม่ได้ เพราะมี surveillance bias"
+      },
+      {
+        "label": "C",
+        "text": "ใช้จริงไม่ได้ เพราะเลือกประชากรไม่เหมาะสม ไม่มีการสุ่ม"
+      },
+      {
+        "label": "D",
+        "text": "ใช้ได้เฉพาะในกลุ่มอายุนี้"
+      },
+      {
+        "label": "E",
+        "text": "ใช้ได้กับประชากรทั่วไป โดยเปรียบเทียบเพียงปัจจัยเดียว"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Selective bias เกิดจากการเลือกตัวอย่างแบบไม่สุ่ม หรือการที่ผู้ที่ใช้ pill อาจมีลักษณะเสี่ยง (เช่นอายุ BMI สูง) แตกต่างจากผู้ไม่ใช้",
+    "subject": "epidemio",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "จากตารางให้คิด Odds ratio ของกลุ่ม 60% ดังนี้: Case (negative 40%, positive 60%) vs Control (negative 100, positive 40%) เมื่อจำนวนทั้งหมด 200 ต่อกลุ่ม",
+    "choices": [
+      {
+        "label": "A",
+        "text": "0.75"
+      },
+      {
+        "label": "B",
+        "text": "1.5"
+      },
+      {
+        "label": "C",
+        "text": "2.0"
+      },
+      {
+        "label": "D",
+        "text": "2.5"
+      },
+      {
+        "label": "E",
+        "text": "3.0"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "OR = (a×d)/(b×c) = (120×100)/(80×40) = 12000/3200 = 2.0. Case: negative=40, positive=60; Control: negative=100, positive=40",
+    "subject": "epidemio",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A diagnostic test Polymerase chain reaction was compared with gold standard culture in 2000 subjects. Culture positive (PCR positive: 800, PCR negative: 200), Culture negative (PCR positive: 600, PCR negative: 400). What is the sensitivity and specificity?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Sensitivity 80%, Specificity 40%"
+      },
+      {
+        "label": "B",
+        "text": "Sensitivity 60%, Specificity 40%"
+      },
+      {
+        "label": "C",
+        "text": "Sensitivity 20%, Specificity 60%"
+      },
+      {
+        "label": "D",
+        "text": "Sensitivity 40%, Specificity 80%"
+      },
+      {
+        "label": "E",
+        "text": "Sensitivity 40%, Specificity 60%"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Sensitivity = TP/(TP+FN) = 800/(800+200) = 800/1000 = 80%. Specificity = TN/(TN+FP) = 400/(400+600) = 400/1000 = 40%",
+    "subject": "epidemio",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "If you are the doctor in the 30-bed community hospital, which intervention will you use to prevent TB infection in health-care workers?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "All suspected patients wear mask"
+      },
+      {
+        "label": "B",
+        "text": "All health care workers wear mask"
+      },
+      {
+        "label": "C",
+        "text": "PPD test in all health-care workers"
+      },
+      {
+        "label": "D",
+        "text": "Isolate TB-suspected patients to the corners of the ward"
+      },
+      {
+        "label": "E",
+        "text": "Install air conditioners to every OPD consult department"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Source control (ผู้ป่วยสวมหน้ากาก) เป็นวิธีการป้องกันที่มีประสิทธิภาพสูงสุดในการป้องกัน TB transmission ต่อผู้เข้าใกล้",
+    "subject": "epidemio",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient vomiting and diarrhea after consuming a lot of food at a party. Based on the table (Roast chicken: 12/10 cases/non-cases, Fried rice: 15/5, Papaya salad: 5/10), what is the cause?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Roast chicken"
+      },
+      {
+        "label": "B",
+        "text": "Fried rice"
+      },
+      {
+        "label": "C",
+        "text": "Papaya salad"
+      },
+      {
+        "label": "D",
+        "text": "Multiple foods"
+      },
+      {
+        "label": "E",
+        "text": "Cannot determine from data"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Fried rice มี risk ratio สูงสุด: RR = (15/20)/(5/20) = 0.75/0.25 = 3.0 ซึ่งมากกว่า roast chicken (1.2) และ papaya salad (0.5)",
+    "subject": "epidemio",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "การศึกษาในผู้หญิงที่เป็น adenocarcinoma vagina กับคนที่ไม่เป็นว่ามารดาตอนตั้งครรภ์ได้ diethylstilbestrol หรือไม่ เป็นการศึกษาชนิดใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Case-control"
+      },
+      {
+        "label": "B",
+        "text": "Concurrent cohort study"
+      },
+      {
+        "label": "C",
+        "text": "Retrospective cohort study"
+      },
+      {
+        "label": "D",
+        "text": "Cross-sectional study"
+      },
+      {
+        "label": "E",
+        "text": "Descriptive study"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Case-control study เพราะเริ่มต้นจากการเลือกกลุ่ม case (adenocarcinoma vagina) และ control (ไม่เป็น) แล้วมองย้อยกลับไปหา exposure (DES)",
+    "subject": "epidemio",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 18 ปี เดินทางไปจังหวัดตาก หลังกลับมาประมาณ 1 สัปดาห์ มีอาการไข้สูงหนาวสั่น มีประวัติเพื่อนที่เดินทางไปด้วย 2 คนหลังเดินกลับมา มีอาการลักษณะเดียวกัน ข้อใดเป็นลักษณะการระบาดของโรค (ข้อ 72A)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Endemic"
+      },
+      {
+        "label": "B",
+        "text": "Pandemic"
+      },
+      {
+        "label": "C",
+        "text": "Epidemic"
+      },
+      {
+        "label": "D",
+        "text": "Outbreak"
+      },
+      {
+        "label": "E",
+        "text": "Sporadic"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "เป็น Epidemic (หรือ Outbreak) เพราะมีผู้ป่วยหลายคน (3 คน) ในกลุ่มเดียวกัน ระยะเวลาสั้น ๆ และพื้นที่เดียว",
+    "subject": "epidemio",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "In 2011, there were 1,000 cases and 20 deaths from Dengue Hemorrhagic Fever (DHF) in community A with a total population of 100,000. What is the case fatality rate (CFR)?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "20/480"
+      },
+      {
+        "label": "B",
+        "text": "20/1,000"
+      },
+      {
+        "label": "C",
+        "text": "20/100,000"
+      },
+      {
+        "label": "D",
+        "text": "980/100,000"
+      },
+      {
+        "label": "E",
+        "text": "1,000/100,000"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "epidemio",
+    "explanation": "Case Fatality Rate (CFR) = (Number of deaths from the disease / Number of confirmed cases of the disease) × 100%. In this case: CFR = 20 deaths / 1,000 cases = 20/1,000 = 2%. The denominator must be the number of cases, not the total population, which distinguishes CFR from mortality rate.",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "นักวิจัยปรับเปลี่ยนวิธีวิเคราะห์หรือเลือกเฉพาะข้อมูลบางส่วนจากฐานข้อมูล เพื่อให้ผลลัพธ์ของการศึกษาแสดงความสัมพันธ์ที่มีนัยสาคัญทางสถิติตรงกับสมมติฐานที่ต้องการ พฤติกรรมดังกล่าวเรียกว่าข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Data dredging (การขุดค้นข้อมูล)"
+      },
+      {
+        "label": "B",
+        "text": "P-hacking (การแฮ็กค่า p-value)"
+      },
+      {
+        "label": "C",
+        "text": "HARKing (Hypothesizing After Results are Known)"
+      },
+      {
+        "label": "D",
+        "text": "Publication bias (อคติในการเผยแพร่ผลลัพธ์)"
+      },
+      {
+        "label": "E",
+        "text": "Selection bias (อคติในการเลือกกลุ่มตัวอย่าง)"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "epidemio",
+    "explanation": "P-hacking คือการเปลี่ยนแปลงวิธีการวิเคราะห์ข้อมูล การเลือกข้อมูลย่อยหรือการปรับแปลงฐานข้อมูลเพื่อให้ได้ค่า p-value ที่มีนัยสาคัญ (p < 0.05) ตามที่ต้องการ ซึ่งเป็นรูปแบบของการสูญเสียความสัจจะในการวิจัย (research misconduct) ที่ทำให้ผลลัพธ์มีความเชื่อถือได้ลดลง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "conflict of interest\n72 ผู้ป่วยชายอายุ 18 ปี เดินทางไปจังหวัดตาก หลังกลับมาประมาณ 1 สัปดาห์ มีอาการไข้สูงหนาวสั่น มีประวัติเพื่อนที่เดินทางไปด้วย 2 คนหลังเดินกลับมา มีอาการลักษณะเดียวกัน ข้อใดเป็นลักษณะการระบาดของโรค",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Endermic"
+      },
+      {
+        "label": "B",
+        "text": "Pandemic"
+      },
+      {
+        "label": "C",
+        "text": "Epidermic"
+      },
+      {
+        "label": "E",
+        "text": "Sporadic"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "epidemio",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่ วยชายอายุ 35 ปี ถูกส่งตัวมาจาก ร.พ. สังขละบุรี  จังหวัดกาญจนบุรี เพือมารับการรักษาต่อเนืองจากมะเร็ง\nผิวหนัง ผู้ป่ วยให้ประวัติว่าคนในหมู่บ้านบางคนมีอาการเดียวกัน แพทย์วินิจฉัยว่าเป็นมะเร็งผิวหนังไปหลายรายแล้ว\nท่านจะแนะนำแพทย์/สาธารณสุขประจำอำเภอ ให้ตรวจสารพิษอะไรทีเป็นสาเหตุของอาการของผู้ป่ วยและคนในหมู่บ้าน",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Lead"
+      },
+      {
+        "label": "B",
+        "text": "Mercury"
+      },
+      {
+        "label": "C",
+        "text": "Arsenic"
+      },
+      {
+        "label": "D",
+        "text": "Cyanic acid"
+      },
+      {
+        "label": "E",
+        "text": "Cadmium"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "epidemio",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "พยาบาลกะดึก (00.00-8.00) มีโอกาสเสียงถูกเข็มตำเนืองจากเหตุใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "กล้ามเนือทำงานลดลง"
+      },
+      {
+        "label": "B",
+        "text": "แสงสว่างลดลง"
+      },
+      {
+        "label": "C",
+        "text": "รูม่านตาปรับตัวได้ลดลงไม่เหมือนตอนกลางวัน"
+      },
+      {
+        "label": "D",
+        "text": "ประสิทธิภาพการทำงานลดลงเนืองจากระบบในร่างกาย"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "epidemio",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "00\nA diagnostic test Polymerase chain reaction was compared with gold standard culture in 2000 subjects.\nCulture positive\nCulture negative\nPCR positive\n800\n600\nPCR negative\n200\n400\nWhat is the sensitivity and specificity\nSensitivity\nSpecificity\n80\n40\n60\n40\n20\n60\n40\n80\n40\n60\nIf you are the doctor in the 30-bed community hospital, which intervention will you use to prevent TB infection in health-care workers\nAll suspected patients wear mask\nAll health care workers wear mask\nPPD test in all health-care workers\nIsolate TB-suspected patients to the corners of the ward\nInstall air conditioners to every OPD consult department\nA patient vomiting and diarrhea after consume a lot of food at party. What is the cause\nconsume\nDiarrhea in 20 people\nNot consume\nDiarrhea in 20 people\nRoast chicken\n12\n10\n18\n19\n10\n15\nFried rice\n15\n5\nPapaya salad\n5\n10\nRoast chicken\nFried rice\nPapaya salad\nการศึกษาในผู้หญิงที่เป็น adenocarcinoma vagina กับคนที่ไม่เป็นว่ามารดาตอนตั้งครรภ์ได้ diethylstilbestrol หรือไม่ เป็นการศึกษาชนิดใด\nCase-control\nConcurrent cohort study\nRetrospective cohort study\n72A ผู้ป่วยชายอายุ 18 ปี เดินทางไปจังหวัดตาก หลังกลับมาประมาณ 1 สัปดาห์ มีอาการไข้สูงหนาวสั่น มีประวัติเพื่อนที่เดินทางไปด้วย 2 คนหลังเดินกลับมา มีอาการลักษณะเดียวกัน ข้อใดเป็นลักษณะการระบาดของโรค",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Endermic"
+      },
+      {
+        "label": "B",
+        "text": "Pandemic"
+      },
+      {
+        "label": "C",
+        "text": "Epidermic"
+      },
+      {
+        "label": "E",
+        "text": "Sporadic"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "epidemio",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "epidemio",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  }
+]

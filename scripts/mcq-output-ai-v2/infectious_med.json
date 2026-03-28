@@ -1,0 +1,4029 @@
+[
+  {
+    "scenario": "A 62-year-old man was injured by dirty bamboo stick at his right arm 4 days PTA. BT 39.1°C, BP 100/70, PR 100. PE: swelling, erythematous with hemorrhagic bleb at right arm. What is the most appropriate antimicrobial agent in this case?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Amoxicillin-clavulanate"
+      },
+      {
+        "label": "B",
+        "text": "Ceftazidime"
+      },
+      {
+        "label": "C",
+        "text": "Penicillin G"
+      },
+      {
+        "label": "D",
+        "text": "Metronidazole"
+      },
+      {
+        "label": "E",
+        "text": "Dicloxacillin"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Dirty bamboo stick injury suggests mixed infection including gram-positive cocci (Staphylococcus) and anaerobes. Hemorrhagic blebae are characteristic of gas gangrene or mixed aerobic-anaerobic infection. Amoxicillin-clavulanate provides broad coverage against both aerobic gram-positive and anaerobes, making it most appropriate. Ceftazidime lacks anaerobic coverage; Penicillin G has poor S. aureus coverage; Metronidazole lacks gram-positive coverage; Dicloxacillin lacks anaerobic coverage.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 30-year-old man with right ear pain and fever for 4 days, BT 38.5°C. Now he has diarrhea and pharyngitis and pneumonia at lower lung. Physical exam reveals acute otitis media. What is the most likely organism?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Legionella"
+      },
+      {
+        "label": "B",
+        "text": "Mycoplasma"
+      },
+      {
+        "label": "C",
+        "text": "Klebsiella pneumoniae"
+      },
+      {
+        "label": "D",
+        "text": "Streptococcus pneumoniae"
+      },
+      {
+        "label": "E",
+        "text": "Chlamydophila psittaci"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Classic presentation of Mycoplasma infection with multi-organ involvement: otitis media, pharyngitis, pneumonia, and gastrointestinal symptoms (diarrhea). Mycoplasma is known for respiratory tract involvement and extrapulmonary manifestations. S. pneumoniae typically causes more localized infections; Legionella presents with more severe pneumonia; Klebsiella and Chlamydophila are less likely with this constellation of findings.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 25-year-old woman presents with fever and dyspnea for 1 day. She has had cough and sore throat for 3 days. PE: BT 39.4°C, PR 110, RR 26, BP 100/70. Chest x-ray: bilateral alveolar infiltrate at lower lung. SpO2 90%. Throat swab negative for influenza virus. What is the appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Oral azithromycin"
+      },
+      {
+        "label": "B",
+        "text": "IV ceftriaxone"
+      },
+      {
+        "label": "C",
+        "text": "IV levofloxacin"
+      },
+      {
+        "label": "D",
+        "text": "IV ceftriaxone + oral oseltamivir"
+      },
+      {
+        "label": "E",
+        "text": "IV levofloxacin + oral oseltamivir"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Bilateral alveolar infiltrate with SpO2 90% indicates severe community-acquired pneumonia requiring hospitalization. Negative influenza swab rules out oseltamivir. IV ceftriaxone provides adequate coverage for common CAP pathogens (S. pneumoniae, H. influenzae) with good lung penetration. Oral azithromycin insufficient for severe CAP; levofloxacin is alternative but ceftriaxone is first-line for moderate-severe CAP.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A woman underlying chronic kidney disease and poorly controlled DM develops fever and dyspnea 3 days ago. Sputum shows slender gram-negative rod. What is the appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Piperacillin/tazobactam"
+      },
+      {
+        "label": "B",
+        "text": "Ceftazidime"
+      },
+      {
+        "label": "C",
+        "text": "Ceftriaxone"
+      },
+      {
+        "label": "D",
+        "text": "Fluoroquinolone (levofloxacin)"
+      },
+      {
+        "label": "E",
+        "text": "Amoxicillin-clavulanate"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Slender gram-negative rod in a CKD patient with DM suggests Pseudomonas aeruginosa or other gram-negative rod. Risk factors (CKD, DM) increase risk of gram-negative and resistant organisms. Piperacillin/tazobactam provides superior pseudomonal coverage compared to ceftriaxone or ceftazidime. Added choice D (fluoroquinolone) as plausible distractor.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient with dyspnea and oxygen saturation 86%. CXR shows interstitial infiltration in both lungs. What is the most likely cause?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Pneumocystis jirovecii"
+      },
+      {
+        "label": "B",
+        "text": "Cryptococcus neoformans"
+      },
+      {
+        "label": "C",
+        "text": "Mycobacterium tuberculosis"
+      },
+      {
+        "label": "D",
+        "text": "Cytomegalovirus"
+      },
+      {
+        "label": "E",
+        "text": "Aspergillus fumigatus"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Interstitial infiltration pattern is classic for PCP (Pneumocystis jirovecii pneumonia), especially with significant hypoxemia (SpO2 86%). PCP presents with bilateral interstitial or ground-glass opacities. Cryptococcus presents with nodular/consolidative pattern; TB shows upper lobe involvement; CMV and Aspergillus less common with this specific pattern. Added choices C, D, E as plausible distractors.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient with dyspnea and oxygen saturation 86%. CXR shows interstitial infiltration in both lungs. What is the etiology?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Virus"
+      },
+      {
+        "label": "B",
+        "text": "Bacteria"
+      },
+      {
+        "label": "C",
+        "text": "Fungus"
+      },
+      {
+        "label": "D",
+        "text": "Protozoa"
+      },
+      {
+        "label": "E",
+        "text": "Prion"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Interstitial infiltration pattern with significant hypoxemia strongly suggests PCP (Pneumocystis jirovecii), which is a protozoan infection. This is a duplicate question from the previous entry but asking about organism classification rather than specific pathogen.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 55-year-old female presents with high grade fever, chills, and productive cough for 3 days. Her symptoms were not improved after taking azithromycin for 2 days. She developed chest pain during inspiration. BT 39°C, PR 90 bpm, RR 20/min, BP 130/90 mmHg. What is the most appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ceftriaxone"
+      },
+      {
+        "label": "B",
+        "text": "Ciprofloxacin"
+      },
+      {
+        "label": "C",
+        "text": "Clarithromycin"
+      },
+      {
+        "label": "D",
+        "text": "Co-trimoxazole"
+      },
+      {
+        "label": "E",
+        "text": "Piperacillin-tazobactam"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Community-acquired pneumonia with pleural involvement (chest pain on inspiration) not responding to macrolide. Ceftriaxone is first-line for CAP with adequate coverage for S. pneumoniae and H. influenzae. Azithromycin failure suggests bacterial rather than atypical pathogen. Ceftriaxone provides better coverage and is standard for CAP.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A chronic alcoholic patient presents with foul-smelling purulent sputum and pneumonia at RUL. PE shows crepitation at RUL. CXR shows RUL cavity with air-fluid level. What is the appropriate antibiotic?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Azithromycin"
+      },
+      {
+        "label": "B",
+        "text": "Ceftriaxone"
+      },
+      {
+        "label": "C",
+        "text": "Trimethoprim-sulfamethoxazole"
+      },
+      {
+        "label": "D",
+        "text": "Amoxicillin-clavulanate"
+      },
+      {
+        "label": "E",
+        "text": "Anti-TB drugs"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Anaerobic lung abscess in alcoholic patient with foul-smelling sputum and cavitation. Amoxicillin-clavulanate provides excellent anaerobic coverage including beta-lactamase producing anaerobes (Bacteroides, Prevotella). The combination of aspiration risk, alcoholism, and anaerobic features (foul smell, cavity with air-fluid level) makes anaerobic coverage essential.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 20-year-old man presents with fever and dry cough for 2 weeks. BT 38°C, BP 100/70 mmHg, PR 70, pruritic popular eruption, multiple lymphadenopathy, lung crepitation, O2 sat 83%. CXR shows diffuse bilateral opacity. What is the appropriate antibiotic?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ceftriaxone"
+      },
+      {
+        "label": "B",
+        "text": "Trimethoprim-sulfamethoxazole"
+      },
+      {
+        "label": "C",
+        "text": "Azithromycin"
+      },
+      {
+        "label": "D",
+        "text": "Anti-TB drugs"
+      },
+      {
+        "label": "E",
+        "text": "Amphotericin B"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Clinical presentation suggests Pneumocystis jirovecii pneumonia (PCP): 2-week insidious onset, pruritic rash, lymphadenopathy, bilateral diffuse infiltrates, and significant hypoxemia (O2 sat 83%). Trimethoprim-sulfamethoxazole is first-line treatment for PCP. The combination of findings and immunocompromised appearance (likely HIV+ based on PCP presentation) makes TMP-SMX most appropriate.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 45-year-old man presents with watery diarrhea 8 times in 16 hours. Physical exam: BP 90/50 mmHg, PR 120/min, RR 24/min, Kussmaul breathing, BT 37°C. Stool examination reveals no WBC, no RBC. What is the most likely causative agent?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Shigella"
+      },
+      {
+        "label": "B",
+        "text": "Vibrio cholerae"
+      },
+      {
+        "label": "C",
+        "text": "Staphylococcus aureus toxin"
+      },
+      {
+        "label": "D",
+        "text": "Enteroinvasive Escherichia coli"
+      },
+      {
+        "label": "E",
+        "text": "Enterohaemorrhagic Escherichia coli"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Classic cholera presentation: severe watery diarrhea (rice-water), hypovolemic shock (BP 90/50, PR 120), metabolic acidosis (Kussmaul breathing), absence of inflammatory markers (no WBC/RBC in stool), and rapid dehydration. Vibrio cholerae causes secretory diarrhea without intestinal invasion. Shigella and EAEC cause inflammatory diarrhea with WBC/RBC; S. aureus toxin typically causes acute onset.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient admitted with hospital-acquired pneumonia was treated with an antibiotic and vancomycin for 7 days. The symptoms improved but the patient then develops diarrhea and fever again. What is the most likely cause?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Clostridium difficile"
+      },
+      {
+        "label": "B",
+        "text": "Entamoeba histolytica"
+      },
+      {
+        "label": "C",
+        "text": "Recurrent hospital-acquired pneumonia"
+      },
+      {
+        "label": "D",
+        "text": "Pseudomonas aeruginosa"
+      },
+      {
+        "label": "E",
+        "text": "Candida albicans"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Post-antibiotic diarrhea and fever after vancomycin and broad-spectrum antibiotic therapy indicates antibiotic-associated diarrhea (AAD), most commonly caused by Clostridium difficile. The timeline (after 7 days of antibiotics with subsequent recovery then relapse) is classic for C. difficile infection. Vancomycin itself can cause AAD, though it's also used to treat it. Added choices C, D, E as plausible distractors.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 20-year-old woman underlying rheumatic heart disease has low-grade fever for 1 month. BT 38°C, P 100, BP 110/70. PE: petechiae at conjunctiva and fingers, diastolic rumbling and pansystolic murmur at apex. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute leukemia"
+      },
+      {
+        "label": "B",
+        "text": "Exacerbation of rheumatic carditis"
+      },
+      {
+        "label": "C",
+        "text": "Meningococcemia"
+      },
+      {
+        "label": "D",
+        "text": "Infective endocarditis"
+      },
+      {
+        "label": "E",
+        "text": "Acute rheumatic fever"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Diagnostic criteria for infective endocarditis (IE) are met: predisposing factor (RHD), fever for >1 week, new/changing cardiac murmur (pansystolic murmur at apex = mitral regurgitation), and vascular phenomena (petechiae). The diastolic rumbling + pansystolic murmur suggests both stenosis and regurgitation. Rheumatic carditis typically presents with more acute onset and polyarthritis; meningococcemia presents with more acute illness.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 3-year-old boy presents with fatigue and low-grade fever. He had dental caries previously. PE: pansystolic murmur 3/6, no pericardial rub, mild hepatomegaly. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Viral carditis"
+      },
+      {
+        "label": "B",
+        "text": "Pericarditis"
+      },
+      {
+        "label": "C",
+        "text": "Infective endocarditis"
+      },
+      {
+        "label": "D",
+        "text": "Cardiomyopathy"
+      },
+      {
+        "label": "E",
+        "text": "Myocarditis"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Infective endocarditis in a child with predisposing factors (dental caries = portal of entry), insidious presentation (fatigue, low-grade fever), new cardiac murmur (pansystolic = mitral regurgitation), and hepatomegaly (from septic emboli/heart failure). Dental procedures/caries are common sources in pediatric endocarditis. Absence of pericardial rub excludes pericarditis; presentation not consistent with myocarditis or viral causes.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient with intravenous drug use presents with fever, mitral regurgitation, and signs of endocarditis. What is the most likely causative organism?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Enterococcus"
+      },
+      {
+        "label": "B",
+        "text": "Streptococcus species"
+      },
+      {
+        "label": "C",
+        "text": "Staphylococcus aureus"
+      },
+      {
+        "label": "D",
+        "text": "Haemophilus influenzae"
+      },
+      {
+        "label": "E",
+        "text": "Propionibacterium acnes"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Intravenous drug use (IVDU) and right-sided endocarditis (though mitral regurgitation mentioned) classically caused by Staphylococcus aureus, including methicillin-resistant strains. IVDU patients are at high risk for staph bacteremia from contaminated injection equipment. Streptococcus species more common in left-sided endocarditis with valvular disease; Enterococcus associated with GI sources; H. influenzae rare in modern era.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient presents with fever, chills, and CVA (costovertebral angle) tenderness. Diagnosis of acute pyelonephritis is confirmed. Urine culture shows gram-positive cocci in chains. What is the most appropriate antibiotic?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Amoxicillin"
+      },
+      {
+        "label": "B",
+        "text": "Ceftriaxone"
+      },
+      {
+        "label": "C",
+        "text": "Ampicillin + sulbactam"
+      },
+      {
+        "label": "D",
+        "text": "Levofloxacin"
+      },
+      {
+        "label": "E",
+        "text": "Amoxicillin-clavulanate"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Gram-positive cocci in chains suggests Enterococcus species, which commonly causes UTI/pyelonephritis. However, Ceftriaxone is standard empiric therapy for pyelonephritis covering most gram-negative organisms (E. coli, Klebsiella) which are most common (>80%). If Enterococcus confirmed, ampicillin or penicillin preferred, but initial empiric therapy with ceftriaxone is standard pending culture results. Fluoroquinolones are alternative but less preferred for severe pyelonephritis.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient living in Nontaburi presents with calf pain and fever. Lab results: Hct 38%, WBC 9,600 (N 68%, L 28%), platelet 84,000. What is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Leptospirosis"
+      },
+      {
+        "label": "B",
+        "text": "Dengue infection"
+      },
+      {
+        "label": "C",
+        "text": "Rickettsial infection"
+      },
+      {
+        "label": "D",
+        "text": "Malaria"
+      },
+      {
+        "label": "E",
+        "text": "Scrub typhus"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Dengue is endemic in Nontaburi, Thailand. Lab findings are characteristic: mild hemoconcentration (Hct 38%), relative leukopenia (WBC 9,600), and thrombocytopenia (platelet 84,000). Calf pain is common myalgias in dengue. The combination of geography and lab pattern points to dengue. Leptospirosis presents with more severe renal involvement; rickettsial infections show similar thrombocytopenia but less prominent hemoconcentration. Added choices D, E as plausible distractors.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 25-year-old nurse suffered a needle stick injury from an HIV-positive patient. The patient denied history of HIV and the nurse's anti-HIV was negative before exposure. After post-exposure prophylaxis (PEP) for 10 days, the nurse developed fever, cough, and fatigue. Which investigation is the most useful at this time?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ELISA"
+      },
+      {
+        "label": "B",
+        "text": "Qualitative PCR (HIV RNA)"
+      },
+      {
+        "label": "C",
+        "text": "Viral load"
+      },
+      {
+        "label": "D",
+        "text": "Viral culture"
+      },
+      {
+        "label": "E",
+        "text": "Western blot"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Early symptomatic infection at 10 days (acute retroviral syndrome) is during the window period before antibodies develop. Qualitative PCR detects viral RNA and is the most sensitive test at this early stage (detectable within 7-14 days of infection). ELISA and Western blot detect antibodies which may not appear until 3-4 weeks; viral culture is less practical; viral load is quantitative PCR. Qualitative PCR is the gold standard for early post-exposure diagnosis.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "An HIV patient on medication for 1 year presents with oliguria. What is the most helpful investigation in diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "CD4 count"
+      },
+      {
+        "label": "B",
+        "text": "KUB ultrasound"
+      },
+      {
+        "label": "C",
+        "text": "Intravenous pyelogram"
+      },
+      {
+        "label": "D",
+        "text": "Serum creatinine and BUN"
+      },
+      {
+        "label": "E",
+        "text": "Urinalysis and urine culture"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Oliguria in HIV patient on long-term medication requires kidney imaging to assess for obstruction, HIV-associated nephropathy, or other structural lesions. KUB ultrasound is non-invasive first-line imaging for oliguria/renal insufficiency. CD4 helps assess immune status but not diagnosis of acute oliguria; IVP is more invasive and less commonly used; serum creatinine/BUN assess function but not etiology. Added choices D, E as plausible distractors.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 30-year-old female on antiretroviral therapy (ARV) for 1 year with no other underlying disease or medications presents for annual checkup. Lab results: FBS 88 mg/dL, HCO3 17 mEq/L, Cr 2.1 mg/dL (previous year 0.8 mg/dL). Urinalysis: protein 2+, glucose 3+. Which ARV is responsible?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Zidovudine"
+      },
+      {
+        "label": "B",
+        "text": "Efavirenz"
+      },
+      {
+        "label": "C",
+        "text": "Lamivudine"
+      },
+      {
+        "label": "D",
+        "text": "Tenofovir"
+      },
+      {
+        "label": "E",
+        "text": "Nevirapine"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Tenofovir (a nucleotide reverse transcriptase inhibitor) is known for nephrotoxicity causing progressive renal dysfunction, proteinuria, and glycosuria. The patient shows: acute rise in creatinine (2.1 from 0.8), metabolic acidosis (HCO3 17), proteinuria (2+), and glycosuria (3+) - classic tenofovir-associated kidney disease. Zidovudine causes anemia/lactic acidosis; Efavirenz causes CNS effects; Lamivudine is relatively safe; Nevirapine causes hepatotoxicity.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 35-year-old HIV-positive man presents with 2 weeks of fever, 1 week of progressive right-sided weakness, headache, vomiting, and seizure 1 day ago. CT with contrast shows multiple nodular lesions at basal ganglia, thalamus, and cerebellum. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Lymphoma"
+      },
+      {
+        "label": "B",
+        "text": "Toxoplasmosis"
+      },
+      {
+        "label": "C",
+        "text": "Cryptococcosis"
+      },
+      {
+        "label": "D",
+        "text": "Progressive multifocal leukoencephalopathy"
+      },
+      {
+        "label": "E",
+        "text": "Tuberculosis meningitis"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Toxoplasma encephalitis in advanced HIV (CD4 likely <100): multiple ring-enhancing lesions in basal ganglia and thalamus on contrast CT, subacute presentation with focal neurologic signs (weakness), seizures, and fever. This is the classic imaging and clinical presentation. Cryptococcosis typically shows meningitis without mass lesions; TB meningitis shows basilar involvement; PML shows non-enhancing white matter lesions; Lymphoma less common with this imaging pattern.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 30-year-old man underlying HIV presents with runny nose with purulent discharge for 10 days without mass on examination. What is the appropriate treatment?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Amoxicillin"
+      },
+      {
+        "label": "B",
+        "text": "Amoxicillin-clavulanate"
+      },
+      {
+        "label": "C",
+        "text": "Ceftriaxone"
+      },
+      {
+        "label": "D",
+        "text": "Ciprofloxacin"
+      },
+      {
+        "label": "E",
+        "text": "Itraconazole"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Purulent rhinorrhea in HIV patient suggests bacterial sinusitis. Amoxicillin-clavulanate provides coverage for common sinusitis pathogens (S. pneumoniae, H. influenzae, and beta-lactamase producers including anaerobes). Absence of mass excludes malignancy/lymphoma. While Itraconazole might be considered for fungal infection, the clinical presentation (10 days, purulent discharge, no mass) points to bacterial etiology. Plain amoxicillin has inadequate anaerobic coverage.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 32-year-old woman underlying SLE for 2 years on prednisolone 40 mg/day develops fever with respiratory symptoms. She has had abdominal bloating with loose stools a few days ago. PE: BT 39°C, RR 22, PR 100, BP 100/70, lungs show basal crackles, abdomen shows mild generalized tenderness without organomegaly. What is the most likely cause?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Strongyloides stercoralis"
+      },
+      {
+        "label": "B",
+        "text": "Necator americanus"
+      },
+      {
+        "label": "C",
+        "text": "Opisthorchis viverrini"
+      },
+      {
+        "label": "D",
+        "text": "Capillaria philippinensis"
+      },
+      {
+        "label": "E",
+        "text": "Giardia lamblia"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Strongyloides stercoralis hyperinfection syndrome in severely immunosuppressed patient (SLE on high-dose prednisolone 40 mg/day). Presents with respiratory symptoms (hyperinfection causes pulmonary larvae migration), GI symptoms (diarrhea, abdominal pain from larvae in intestine), and fever. Risk of disseminated strongyloidiasis increases dramatically with CD4 count <200. Necator causes anemia; Opisthorchis/Capillaria cause different presentations; Giardia doesn't cause respiratory symptoms. This is endemic in Southeast Asia.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "An SLE patient on steroid therapy develops dyspnea and stool changes. What is the most likely parasitic cause?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Strongyloides stercoralis"
+      },
+      {
+        "label": "B",
+        "text": "Capillaria philippinensis"
+      },
+      {
+        "label": "C",
+        "text": "Necator americanus"
+      },
+      {
+        "label": "D",
+        "text": "Entamoeba histolytica"
+      },
+      {
+        "label": "E",
+        "text": "Ascaris lumbricoides"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Same clinical context as previous question - severe immunosuppression from SLE on steroids. Strongyloides stercoralis is the most likely cause of combined respiratory (dyspnea) and GI symptoms (stool changes). The immunocompromised state increases risk of hyperinfection and dissemination. Capillaria can cause protein-losing enteropathy but less likely to cause respiratory symptoms; Entamoeba typically causes dysentery; Ascaris causes bowel obstruction or malabsorption.",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "Proper management for healthcare worker that has needle stick injury with HIV positive patient who CD4=80 and is not on ARV",
+    "choices": [
+      {
+        "label": "A",
+        "text": "AZT+3TC"
+      },
+      {
+        "label": "B",
+        "text": "AZT+3TC+Lopinavir/Ritonavir"
+      },
+      {
+        "label": "C",
+        "text": "d4T+3TC+NVP"
+      },
+      {
+        "label": "D",
+        "text": "d4T+3TC"
+      },
+      {
+        "label": "E",
+        "text": "3TC+TDF+Nelfinavir"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Post-exposure prophylaxis (PEP) สำหรับ healthcare worker หลังจาก needle stick injury จาก HIV+ patient ที่มี CD4=80 (AIDS stage) และไม่ได้รับ ARV ถือเป็นความเสี่ยงสูง (high-risk exposure) ต้องใช้ 3-drug regimen ประกอบด้วย 2 NRTIs + 1 PI (Protease inhibitor) เพื่อให้ coverage ที่ดีและลดการเกิด resistance ตัวเลือก B (AZT+3TC+Lopinavir/Ritonavir) เป็นมาตรฐาน PEP ที่เหมาะสมที่สุด",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ในการ investigate หาผู้ป่วยติดเชื้อ gram negative intracellular bacteria ที่เป็น silent case ควรทำอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Nutrient culture media"
+      },
+      {
+        "label": "B",
+        "text": "PCR"
+      },
+      {
+        "label": "C",
+        "text": "Nucleic acid amplification"
+      },
+      {
+        "label": "D",
+        "text": "DNA strain amplification"
+      },
+      {
+        "label": "E",
+        "text": "Serology testing for antibodies"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "สำหรับ silent case ของ gram-negative intracellular bacteria เช่น Chlamydia trachomatis หรือ Neisseria gonorrhoeae วิธีการตรวจที่มีความไว (sensitivity) และความจำเพาะ (specificity) สูงที่สุด คือ Nucleic acid amplification test (NAAT) เช่น PCR, TMA, SDA ซึ่งดีกว่า culture media ในการหา silent/asymptomatic case เนื่องจากเชื้อบางชนิดเป็น intracellular obligate ยากต่อการเพาะเลี้ยง ตัวเลือก C ถูกต้องที่สุด เพิ่มตัวเลือก E เป็น plausible distractor",
+    "subject": "infectious_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 35 ปี มาด้วยอาการถูกงูกัดที่แขนขวา 2 ชั่วโมงที่แล้ว เห็นรอยแววพิษ (fang mark) ชัดเจน 2 รอย พร้อมบวมและเจ็บปวด ปัจจุบันผู้ป่วยมีอาการอ่อนแรง (muscle weakness) ของกล้ามเนื้อหลายกลุ่ม และระดับ RR 10 ครั้ง/นาที ต้องการ intubation และ mechanical ventilation ต้องเตรียมอะไรก่อน",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้ Anti-snake venom (ASV) เพื่อเป็นปฏิปักษ์พิษงู และ intubation พร้อม mechanical ventilation"
+      },
+      {
+        "label": "B",
+        "text": "ให้วัคซีนป้องกันแบคทีเรีย และ antibiotics เท่านั้น"
+      },
+      {
+        "label": "C",
+        "text": "ให้เพียง oxygen และ observe อาการ โดยไม่ต้อง intubate"
+      },
+      {
+        "label": "D",
+        "text": "ให้ corticosteroids เพื่อลดการอักเสบจากพิษงู"
+      },
+      {
+        "label": "E",
+        "text": "ให้ neostigmine เพื่อปรับปรุงการส่งสัญญาณประสาท"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": "ผู้ป่วยแสดงอาการของ snake envenomation ที่มีผลต่อระบบประสาท (neurotoxic effects) ซึ่งนำไปสู่ respiratory failure (RR 10, muscle weakness) อันตรายต่อชีวิต การรักษาขั้นแรกต้องให้ Anti-snake venom (ASV) ทันทีเพื่อเป็นปฏิปักษ์พิษ และ intubation พร้อม mechanical ventilation เพื่อรักษาทางเดินหายใจและการหายใจ เนื่องจากอาการมีความรุนแรงและเสี่ยง airway compromise สูง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "คนไข้ชายอายุ 32 ปี มีประวัติใช้สารเสพติดฉีดผ่านหลอดเลือด มาด้วยไข้สูง หัวใจเต้นเร็ว และมีลิ้นหัวใจผิดปกติ ตรวจ Echocardiography พบ vegetative lesion บริเวณวาล์วหัวใจ ถามว่าเชื้อที่มีความเสี่ยงสูงที่สุดในกรณีนี้คืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Staphylococcus aureus"
+      },
+      {
+        "label": "B",
+        "text": "Streptococcus viridans"
+      },
+      {
+        "label": "C",
+        "text": "Streptococcus pyogenes"
+      },
+      {
+        "label": "D",
+        "text": "Enterococcus faecalis"
+      },
+      {
+        "label": "E",
+        "text": "Pseudomonas aeruginosa"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": "ผู้ใช้สารเสพติดฉีดผ่านหลอดเลือดมีความเสี่ยงต่อ Infective Endocarditis โดยเฉพาะจาก Staphylococcus aureus (รวมถึง MRSA) ซึ่งเป็นเชื้อที่บุกรุกหลอดเลือดโดยตรง และมักเข้าไปติดวาล์วขวา (tricuspid) ส่วน Streptococcus viridans มักเกิดจากการสะสมของฟัน ในขณะที่ Strep pyogenes นั้นเกิดจาก acute rheumatic fever",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 32 ปี HIV positive (CD4 count 80 cells/μL) มาด้วยอาการไอและเหนื่อยลมมา 3 สัปดาห์ ไม่มีไข้ เมื่อตรวจ CXR พบ bilateral interstitial infiltration แบบ ground glass appearance ผลตรวจ PCP prophylaxis ยังไม่ได้ทำ จะให้ยาใดในการรักษา",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Trimethoprim-sulfamethoxazole (TMP-SMX) high dose IV"
+      },
+      {
+        "label": "B",
+        "text": "Pentamidine isethionate IV หรือ Atovaquone"
+      },
+      {
+        "label": "C",
+        "text": "Fluconazole oral"
+      },
+      {
+        "label": "D",
+        "text": "Clarithromycin + Azithromycin"
+      },
+      {
+        "label": "E",
+        "text": "Ganciclovir IV"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": "รูปแบบการติดเชื้อใน HIV ที่ CD4 <100 cells/μL ที่พบได้บ่อยที่สุดคือ Pneumocystis jirovecii pneumonia (PCP) ซึ่งมีลักษณะ CXR เป็น bilateral interstitial infiltration แบบ ground glass appearance ยาเลือกแรก (first-line) คือ TMP-SMX ขนาดสูง IV หรือ oral ถ้าอาการไม่รุนแรง หากแพ้ TMP-SMX ให้ใช้ Pentamidine หรือ Atovaquone แทน",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 18 ปี ไข้ต่าๆ ปวดท้องทั่วๆ MP rash, liver 3 cm BRM, Hct42 WBC2,700 (มี atypical lymphocyte ด้วย) plt90,000 ถามการรักษา",
+    "choices": [
+      {
+        "label": "A",
+        "text": "prednisolone"
+      },
+      {
+        "label": "B",
+        "text": "doxycycline"
+      },
+      {
+        "label": "C",
+        "text": "cef3"
+      },
+      {
+        "label": "D",
+        "text": "ciprofloxacin"
+      },
+      {
+        "label": "E",
+        "text": "fluid replacement therapy"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หญิงวัย 28 ปี เป็นวัณโรคปอดกำลังรักษาด้วย IRZE และ pyridoxine มาแล้ว 2 สัปดาห์ ผู้ป่วยมารับประทับใจว่าตั้งท้องตั้งแต่เริ่มการรักษา พร้อมกับยาคุมเกิดความล้มเหลว เหตุใดจึงเกิดการตั้งท้องในผู้ป่วยรายนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Rifampicin เป็นตัวเหนี่ยวนำเอนไซม์ CYP450 ทำให้เมตาบอลิซึมของ oral contraceptive เพิ่มขึ้น"
+      },
+      {
+        "label": "B",
+        "text": "Isoniazid ลดการดูดซึมของ oral contraceptive ที่ระดับกรรมการทางเดินอาหาร"
+      },
+      {
+        "label": "C",
+        "text": "Pyrazinamide มีผลเพิ่มฮอร์โมนเอสโตรเจนในเลือด ขัดแย้งกับ oral contraceptive"
+      },
+      {
+        "label": "D",
+        "text": "Ethambutol มีฤทธิ์ยับยั้ง CYP450 ทำให้ระดับยาคุมเพิ่มขึ้นสูงเกินไป"
+      },
+      {
+        "label": "E",
+        "text": "Pyridoxine (Vitamin B6) ลดความเสี่ยงของ peripheral neuropathy จากยาต่างๆ"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": "Rifampicin เป็น potent inducer ของเอนไซม์ CYP3A4 ทำให้การเมตาบอลิซึมของ estrogen และ progestin ในยาคุมเพิ่มขึ้นอย่างมาก ผลจึงส่งผลให้ระดับฮอร์โมนในเลือดลดลง นำไปสู่ความล้มเหลวของการคุมเกิด ผู้ป่วยควรเลือกวิธีคุมกำเนิดอื่นหรือเพิ่มปริมาณยาคุม",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชายอายุ 35 ปี วินิจฉัยว่าเป็นวัณโรคปอด มารับการรักษา ผู้ป่วยได้รับยาต่อไปนี้: Isoniazid, Rifampicin, Pyrazinamide และ Ethambutol เป็นเวลา 2 เดือน หลังจากนั้นจะลดให้เหลือเพียง Isoniazid และ Rifampicin ต่ออีก 4 เดือน อย่างไรก็ตาม หลังจากการใช้ยา 3 สัปดาห์ ผู้ป่วยมารายงานว่ามีอาการ peripheral neuropathy ยาใดที่ควรเพิ่มเข้าไปในการรักษา",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Pyridoxine (Vitamin B6)"
+      },
+      {
+        "label": "B",
+        "text": "Thiamine (Vitamin B1)"
+      },
+      {
+        "label": "C",
+        "text": "Cyanocobalamin (Vitamin B12)"
+      },
+      {
+        "label": "D",
+        "text": "Folic acid"
+      },
+      {
+        "label": "E",
+        "text": "Ascorbic acid (Vitamin C)"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": "Isoniazid เป็นยาที่ทำให้ deficiency ของ Pyridoxine (Vitamin B6) โดยการยับยั้งการดูดซึมและการแปลงสภาพของไพริดอกซีน ส่งผลให้เกิด peripheral neuropathy ดังนั้น Pyridoxine ควรได้รับ prophylactically หรือ therapeutically เมื่อมีอาการ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงอายุ 40 ปี มีประวัติเดินทางไปตากเป็นระยะเวลา 2 สัปดาห์ มีไข้ขึ้นมา 1 สัปดาห์ ในวันที่มารพ.มีอาการซึมลงและชักกระตุกเพียง 1 ครั้ง การตรวจ PBS พบ ring form, multiple infection, accole form คำถาม: การรักษาเบื้องต้น (1st management) ที่เหมาะสมที่สุดคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Lumbar puncture (LP)"
+      },
+      {
+        "label": "B",
+        "text": "CT scan สมองก่อน LP"
+      },
+      {
+        "label": "C",
+        "text": "Ceftriaxone IV 2g/6h"
+      },
+      {
+        "label": "D",
+        "text": "Dextrose 50% IV และ Phenobarbital IV"
+      },
+      {
+        "label": "E",
+        "text": "Artesunate IV และ Quinine IV"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2014",
+    "explanation": "PBS พบ ring form, multiple infection, accole form เป็นลักษณะเฉพาะของ P. falciparum (มาลาเรียชนิดร้ายแรง) ผู้ป่วยมีอาการชัก (cerebral malaria) ซึ่งเป็นสถานการณ์ฉุกเฉินต้องให้ Artesunate IV ทันทีเป็น 1st line treatment ตามแนวทาง WHO และ NLE ไม่ควรรอผลลัพธ์ LP หรือ CT scan",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชาย 56 ปี dx เป็น lymphoma IIIB ให้ chemo ทุก3อาทิตย์ 10วันหลังให้chemoครั้งล่าสุดมีไข้สูงหนาวสั่น PE BT40 R24/min P100/min อื่นๆ unremarkable CBC Hb10.5 Hct32 WBC400 Plt70000 ถาม the most appropriate MX?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "G-CSF"
+      },
+      {
+        "label": "B",
+        "text": "Cefazolin"
+      },
+      {
+        "label": "C",
+        "text": "Ceftazidime"
+      },
+      {
+        "label": "D",
+        "text": "AmphoB"
+      },
+      {
+        "label": "E",
+        "text": "Platelet infusion"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชายอายุ 20 ปี มาพบแพทย์ด้วยอาการ exudative tonsillitis, cervical lymphadenopathy, ตับโต และไข้สูง มีอาการปวดคอและเหนื่อย เริ่มเป็นพ病มา 1 สัปดาห์ เลือด CBC แสดง atypical lymphocytes และ positive heterophile antibody test",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Scrub typhus"
+      },
+      {
+        "label": "B",
+        "text": "Infectious mononucleosis"
+      },
+      {
+        "label": "C",
+        "text": "Scarlet fever"
+      },
+      {
+        "label": "D",
+        "text": "Acute leukemia"
+      },
+      {
+        "label": "E",
+        "text": "Acute HIV infection"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "explanation": "Infectious mononucleosis (IM) ที่เกิดจาก EBV นำเสนอด้วย classic triad: exudative pharyngitis, cervical lymphadenopathy และ hepatosplenomegaly พร้อมไข้สูง การหาคำตอบช่วยได้จาก atypical lymphocytes ในเลือดและ positive heterophile antibody (monospot test) ซึ่งเป็น pathognomonic findings",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยลิมโฟมาที่ได้รับเคมีบำบัด (CMT) มาระยะหนึ่ง มีอาการไข้สูงพร้อมหนาวสั่น ตรวจ CBC พบ WBC 400 cells/μL (Severe neutropenia) ควรจัดการอย่างไรเป็นหลัก",
+    "choices": [
+      {
+        "label": "A",
+        "text": "G-CSF (Granulocyte Colony-Stimulating Factor)"
+      },
+      {
+        "label": "B",
+        "text": "Ceftazidime (monotherapy)"
+      },
+      {
+        "label": "C",
+        "text": "Amoxicillin-clavulanate"
+      },
+      {
+        "label": "D",
+        "text": "Penicillin G + Gentamicin"
+      },
+      {
+        "label": "E",
+        "text": "Observe and wait for WBC recovery without antibiotics"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": "ผู้ป่วย Severe neutropenia (WBC <500) ที่มีไข้เป็น medical emergency ต้องเริ่ม empiric broad-spectrum antibiotics (เช่น antipseudomonal β-lactam ± aminoglycoside หรือ fluoroquinolone) พร้อมกับ G-CSF เพื่อเพิ่ม neutrophil recovery ให้เร็วที่สุด โดย G-CSF ช่วยลดระยะเวลา neutropenia และเสี่ยงการติดเชื้อหนัก",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยอายุกลางคน มี ไข้ และ ไอกต้น 1 สัปดาห์ วินิจฉัยทางกายภาพพบ ตาเหลืองและขาว ผิวซีดอ่อน และน้ำเหลืองท้อง อยากทราบว่าต้องตรวจเพื่อยืนยันการติดเชื้อไวรัส Hepatitis B ข้อใด?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "HBsAg และ Anti-HBc IgM"
+      },
+      {
+        "label": "B",
+        "text": "HBeAg และ Anti-HBe"
+      },
+      {
+        "label": "C",
+        "text": "Anti-HBs เท่านั้น"
+      },
+      {
+        "label": "D",
+        "text": "Anti-HAV IgM (เพื่อยกเว้น Hepatitis A)"
+      },
+      {
+        "label": "E",
+        "text": "HBsAg, HBeAg และ Anti-HBc IgM"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": "ผู้ป่วยมีอาการ acute hepatitis (ไข้ ไอกต้น ตาเหลือง ท้องอืด) ต้องตรวจ HBsAg (marker ของการติดเชื้อปัจจุบัน) และ Anti-HBc IgM (แสดงการติดเชื้อ acute) เพื่อยืนยัน Hepatitis B acute ส่วน HBeAg บ่งชี้ระดับความติดเชื้อและ Anti-HBs บ่งชี้ภูมิคุ้มกัน ไม่ได้ใช้เพื่อวินิจฉัยเฉพาะใน phase acute",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 45 ปี มาด้วยไข้สูง คลื่นไส้อาเจียน ปวดหัว ไม่มีชัก경์ การตรวจประสาทศาสตร์พบ neck stiffness และ positive Kernig sign Blood smear แสดงพยาธิสูตร intraerythrocytic ring form (trophozoite) ขนาด 1-2 μm จำนวนมาก (≥5% parasitemia) ตัวเลือกใดเป็นการจัดการที่เหมาะสมที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ceftriaxone 2g IV q12h + Artesunate IV (ตามน้ำหนัก)"
+      },
+      {
+        "label": "B",
+        "text": "50% glucose IV bolus + Diazepam"
+      },
+      {
+        "label": "C",
+        "text": "CSF analysis (lumbar puncture) และ start empirical treatment"
+      },
+      {
+        "label": "D",
+        "text": "CT scan head ก่อนการรักษา"
+      },
+      {
+        "label": "E",
+        "text": "Chloroquine 600 mg base IM + supportive care เท่านั้น"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": "Blood smear พบ intraerythrocytic ring form parasitemia สูง (≥5%) ชี้ว่า Plasmodium falciparum cerebral malaria ซึ่งเป็น medical emergency จำเป็นต้อง: 1) รักษาด้วย Artesunate IV ทันที (ยาตัวแรกเลือก มีประสิทธิภาพมากกว่า Quinine) เพื่อลดอัตราการเสียชีวิตจากร้อยละ 19 เป็นร้อยละ 15 2) Ceftriaxone เพื่อปกป้องโรคติดเชื้อรองค่าย เนื่องจากการรักษาอาจล่าช้าก่อนได้ CSF result B50% glucose ใช้เมื่อhypoglycemia ที่พิสูจน์แล้ว D,Eไม่เพียงพอ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายวัย 68 ปี เข้ารับการรักษาด้วย STEMI หลังจากนั้น 7 วัน มีไข้ السعال ผลิตเสมหะ และหายใจลำบาก การย้อมแกรมเสมหะพบเพียงแบคทีเรียแกรมลบหลายตัว ควรให้ยาปฏิชีวนะเชิงประจักษ์ชนิดใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ampicillin-sulbactam"
+      },
+      {
+        "label": "B",
+        "text": "Fluoroquinolone (เช่น Levofloxacin)"
+      },
+      {
+        "label": "C",
+        "text": "Ceftriaxone + Azithromycin"
+      },
+      {
+        "label": "D",
+        "text": "Piperacillin-tazobactam"
+      },
+      {
+        "label": "E",
+        "text": "Amoxicillin-clavulanate"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2014",
+    "explanation": "ผู้ป่วยมีปัจจัยเสี่ยง healthcare-associated pneumonia (HCAP) จากการนอนโรงพยาบาลหลังจาก STEMI 7 วัน โดยมีแบคทีเรียแกรมลบหลายตัวในเสมหะ ต้องครอบคลุมแบคทีเรียแกรมลบ (รวม Pseudomonas aeruginosa) และแกรมบวก ยา Piperacillin-tazobactam เป็นตัวเลือกที่เหมาะสมที่สุดสำหรับ HCAP/VAP empirical coverage",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 35 ปี มาด้วยอาการท้องเสียเป็นน้ำพุ่ง มีมูกเลือด เป็นมาแล้ว 3 วัน มีประวัติกินอาหารสุกๆดิบๆ ตรวจอึก (stool) พบ WBC และ RBC เยอะมาก เกิดจากเชื้ออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Vibrio cholerae"
+      },
+      {
+        "label": "B",
+        "text": "Shigella species"
+      },
+      {
+        "label": "C",
+        "text": "Salmonella species"
+      },
+      {
+        "label": "D",
+        "text": "Entamoeba histolytica"
+      },
+      {
+        "label": "E",
+        "text": "Rotavirus"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "explanation": "Shigella เป็นเชื้อที่เจาะลึกเข้าไปในเมือกลำไส้เล็ก (invasive organism) ทำให้เกิดอาการท้องเสียเป็นน้ำพุ่งกับมูกเลือด (dysentery) และมี WBC, RBC มากในอึก Shigella มักติดต่อจากการกินอาหารปนเปื้อนหรือสุกๆดิบๆ ซึ่งตรงกับประวัติของผู้ป่วย",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 55 ปี มาพบแพทย์ด้วยอาการไอแห้งๆ บางครั้งมีเลือดปนออกมา น้ำหนักตัวลดลง 4 กิโลกรัมใน 1 เดือน ผลการตรวจ AFB ได้ผล negative 3 ครั้งติดต่อกัน ผล CXR พบ reticulonodular infiltration with cavity thickening ลักษณะ cavity ชัดเจน โรคทั่วไปไปได้รวมถึง TB pulmonary ด้วย การปฏิบัติในข้อใดต่อไปนี้น่าจะเหมาะสมกับผู้ป่วยรายนี้มากที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ไม่ต้องให้ยา TB เนื่องจาก AFB negative 3 ครั้ง รอการตรวจเพิ่มเติม"
+      },
+      {
+        "label": "B",
+        "text": "เริ่มต้นการรักษา TB ตามมาตรฐาน เนื่องจากมีอาการคลินิก CXR ที่สงสัย และ AFB negative ไม่ได้ตัดออกโรค TB"
+      },
+      {
+        "label": "C",
+        "text": "สงสัย TB ต้านทานยาจึงเลี่ยงยา first-line TB drugs และใช้ second-line TB drugs ทันที"
+      },
+      {
+        "label": "D",
+        "text": "ดำเนินการตรวจ TB culture และ drug susceptibility test เท่านั้น ไม่ต้องให้ยาไปก่อน"
+      },
+      {
+        "label": "E",
+        "text": "วินิจฉัยว่าเป็นไข้หวัดใหญ่หรือโรคปอดอื่นๆ และให้ยาตามข้อบ่งชี้"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ผู้ป่วยนี้มีอาการคลินิกสอดคล้อง (ไอ เลือดออก ลดน้ำหนัก) และ CXR ที่สงสัย TB (cavity infiltration) แม้ AFB negative 3 ครั้ง แต่ความไวของ AFB เพียง 60% ในผู้ป่วยเป็นครั้งแรก ดังนั้นต้องเริ่มรักษา TB regimen แบบ standard 2HRZE/4HR ขณานเดียวกัน ดำเนินการ TB culture และ susceptibility test เพื่อยืนยันการวินิจฉัยและเฝ้าระวัง drug resistance ต่อไป",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "เด็กชายอายุ 9 ขวบ มาโรงพยาบาลด้วยไข้สูง หายใจหอบเหนื่อย ไอ แพทย์ทาการตรวจร่างกายพบว่ามี BT= 39.0 oC, PR= 120 /min, RR = 40 /min, crepitation both lungs, decreased breath sound left lung ผู้ป่วยมีแผลตุ่มหนองและ cellulitis ที่ขาซ้าย เชื้อก่อโรค? (ศรว 2008)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Salmonella spp."
+      },
+      {
+        "label": "B",
+        "text": "S. aureus"
+      },
+      {
+        "label": "C",
+        "text": "H. influenzae"
+      },
+      {
+        "label": "D",
+        "text": "Mycoplasma pneumonia"
+      },
+      {
+        "label": "E",
+        "text": "Mycoplasma tuberculosis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชาย 18 ปีก่อนหน้านี้แข็งแรงดี ครั้งนี้ URI มาด้วยไข้ ไอ หอบ ผลจากการตรวจ CXR พบว่ามี Interstitial infiltration ATB ที่เหมาะที่สุด? (ศรว 2008)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ampicillin"
+      },
+      {
+        "label": "B",
+        "text": "Ciprofloxacin"
+      },
+      {
+        "label": "C",
+        "text": "Roxithromycin"
+      },
+      {
+        "label": "D",
+        "text": "Gentamicin"
+      },
+      {
+        "label": "E",
+        "text": "Augmentin"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชาย 30 ปี ไอมา 1 เดือน เสมหะขาวมีเลือดปนบางครั้ง ไข้ต่าๆ น้าหนักลด 3 kg, PE: normal, CXR: Reticulo-patchy infiltration with thick wall cavity, AFB sputum: neg X 3 ครั้ง ควรทาอะไรต่อ? (ศรว 2008)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bronchoscopy"
+      },
+      {
+        "label": "B",
+        "text": "FNA"
+      },
+      {
+        "label": "C",
+        "text": "Anti-TB drug"
+      },
+      {
+        "label": "D",
+        "text": "รอผล culture for TB"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชายไทย 30 ปี อาชีพขับรถ bus มีไข้ต่า ไอแห้ง น้าหนักตัวลดลง, ตรวจพบ AFB 3+, แพทย์ให้ยา TB ควรเขียนให้ลาหยุดงานนานเท่าใด (ศรว 2008)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "2 wk."
+      },
+      {
+        "label": "B",
+        "text": "1 mo."
+      },
+      {
+        "label": "C",
+        "text": "2 mo."
+      },
+      {
+        "label": "D",
+        "text": "ทีละ 1 wkจนกว่า AFB จะ neg"
+      },
+      {
+        "label": "E",
+        "text": "ไม่จาเป็นต้องหยุดงาน"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 25 ปี ไอเรื้อรัง AFB 3+ ,CXR : Cavity with surrounding granuloma Dx Pulmonary TB ได้ IRZE 2 เดือน F/U ได้ AFB 1+ ทาไรต่อ (ศรว 2008)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ลดเหลือ IR"
+      },
+      {
+        "label": "B",
+        "text": "ลดเหลือ IRE"
+      },
+      {
+        "label": "C",
+        "text": "ให้ IRZE ต่อ 1 เดือน"
+      },
+      {
+        "label": "D",
+        "text": "Add streptomycin"
+      },
+      {
+        "label": "E",
+        "text": "Add ofloxacin"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 25 ปี ไข้ ไอ เหนื่อย 5 วัน ไอเสมหะเหลือง ไปซื้อ Amoxycillin500 1×3 กินเอง 3 วัน ไม่ดีขึ้น PE: BT36.5°C,PR102,RR 26,BP135/70Lung:Dullness on percussion right lower lung and decrease breath sound and vocal resonance right lower lung รักษาอย่างไร (ศรว 2008)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เพิ่ม Amoxycillin"
+      },
+      {
+        "label": "B",
+        "text": "เพิ่ม Clarithromycin"
+      },
+      {
+        "label": "C",
+        "text": "เปลี่ยนเป็น Levofloxacin"
+      },
+      {
+        "label": "D",
+        "text": "Thoracentesis"
+      },
+      {
+        "label": "E",
+        "text": "ICD"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชายไข้ต่าๆไอหอบมา 2 วันฟังปอดมีcrepitation ด้านขวา CXR:RLL infiltration ถามเชื้อ (ศรว 2009)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "H.influenza"
+      },
+      {
+        "label": "B",
+        "text": "S.pneumonae"
+      },
+      {
+        "label": "C",
+        "text": "Mycloplasmapnemoniae"
+      },
+      {
+        "label": "D",
+        "text": "Chlamydia"
+      },
+      {
+        "label": "E",
+        "text": "S.aureus"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วย Nephrotic syndrome on high dose steroid ไอมีเลือดปน ตรวจ sputum เป็นดังรูป น่าจะเป็นตัวอะไร (ศรว 2009)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "strongiloid"
+      },
+      {
+        "label": "B",
+        "text": "ascaris"
+      },
+      {
+        "label": "C",
+        "text": "paragonimus"
+      },
+      {
+        "label": "D",
+        "text": "enterobius"
+      },
+      {
+        "label": "E",
+        "text": "necator"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงมาด้วยเหนื่อยหอบ CXR : patchy infiltration, Sputum exam : pleomorphic gram positive cocci. ได้ Augmentin มา 3 วันอาการไม่ดีขึ้น CXRซ้า พบpleural fluid ผลfluid analysis: wbc 2500 N90% LDH 900 จง ให้การรักษา (ศรว 2009)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เพิ่ม aminoglycosides"
+      },
+      {
+        "label": "B",
+        "text": "เปลียนเป็น carbapenem"
+      },
+      {
+        "label": "C",
+        "text": "ใส่ ICD และให้ ATB เดิม"
+      },
+      {
+        "label": "D",
+        "text": "Observe"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 45 ปี กินเหล้า มีไข้และเจ็บอก 1wkตรวจร่างกายพบ pleural effusion จึงเจาะปอดได้น้าสีเหลืองขาวขุ่น ย้อมแกรมได้ Gram negative bacilli, Gram positive cocci in chain , positive bacilli จะให้ยาตัวใด (ศรว 2010)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "penicillin"
+      },
+      {
+        "label": "B",
+        "text": "ceftriaxone"
+      },
+      {
+        "label": "C",
+        "text": "cotrimoxazole"
+      },
+      {
+        "label": "D",
+        "text": "clarithomycin"
+      },
+      {
+        "label": "E",
+        "text": "amoxyclav"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 70 ปี เป็น pneumonia มา 5 วัน มี underlying disease COPD ได้รับ O2 5 LPM พร้อมการรักษาด้วย Ceftriaxone + Azithromycin เป็นระยะเวลา เพียงแต่ในวันนี้อาการเหนื่อยเพิ่มขึ้นอย่างมากและมีสัญญาณซึมลง ท่านต้องรักษาอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Intubation และ mechanical ventilation"
+      },
+      {
+        "label": "B",
+        "text": "เพิ่มปริมาณ O2 เป็น 8-10 LPM และให้ CPAP/BiPAP"
+      },
+      {
+        "label": "C",
+        "text": "เปลี่ยนแปลงแนวการรักษาแอนติบায়โอติก เป็น broadspectrum (Carbapenem + Fluoroquinolone)"
+      },
+      {
+        "label": "D",
+        "text": "ให้ Diuretic และติดตามค่าไตต่อเนื่อง เพื่อตรวจสอบภาวะ septic shock"
+      },
+      {
+        "label": "E",
+        "text": "ให้ IV fluids และ Inotropic support เพื่อรักษาภาวะตกชา"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ผู้ป่วยมีอาการเหนื่อยเพิ่มขึ้น ซึมลง แสดงอาการหายใจล้มเหลว Type I ที่กำลังวิกฤต ควรเริ่มจาก non-invasive ventilation (CPAP/BiPAP) เพิ่มปริมาณ O2 เพื่อเตรียมการแทรกแgestive airway ในกรณีที่สภาวะไม่ดีขึ้น Intubation ควรเป็นขั้นตอนสุดท้ายโดยเฉพาะในผู้ป่วยสูงอายุ COPD ที่ไม่พร้อมและยังมีตัวเลือก non-invasive ventilation",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชาย 60 ปีมาอยู่ ICU Dx pneumococcal pneumonia อยู่มา 10 วันอาการดีขึ้น เมื่อวานสาลักอาหาร วันนี้มีไข้สูง มีเสมหะและไอ BT 39.5 ,BP 90/60, PR 100, RR 30 Imaging : crepitaion at Lt. lower lung, Sputum G/S : Gram neg. bipolar stain ให้ATB อะไร? (ศรว 2010)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Amikacin"
+      },
+      {
+        "label": "B",
+        "text": "Amoxy+Clav."
+      },
+      {
+        "label": "C",
+        "text": "Ciprofloxacin"
+      },
+      {
+        "label": "D",
+        "text": "Imipenem"
+      },
+      {
+        "label": "E",
+        "text": "Ceftriaxone"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่ วยชายอายุ 25 ปี ไอเรื้อรัง AFB 3+ ,CXR : Cavity with surrounding granuloma Dx Pulmonary TB ได้ IRZE 2 เดือน F/U ได้ AFB 1+ ทาไรต่อ (ศรว 2010)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ลดเหลือ IR"
+      },
+      {
+        "label": "B",
+        "text": "ลดเหลือ IRE"
+      },
+      {
+        "label": "C",
+        "text": "ให้ IRZE ต่อ 1 เดือน"
+      },
+      {
+        "label": "D",
+        "text": "Add streptomycin"
+      },
+      {
+        "label": "E",
+        "text": "Add ofloxacin"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่ วยหญิงอายุ 25 ปี ไข้ ไอ เหนื่อย 5 วัน ไอเสมหะเหลือง ไปซื้อ Amoxycillin500 1.3 กินเอง 3 วัน ไม่ดีข&ํึน PE:BT36.5.C,PR 102,RR 26,BP135/70Lung:Dullness on percussion right lower lung and decrease breath sound and vocal resonance right lower lung Tx? (ศรว 2010)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เพิม Amoxycillin"
+      },
+      {
+        "label": "B",
+        "text": "เพิม Clarithromycin"
+      },
+      {
+        "label": "C",
+        "text": "เปลียนเป็น Levofloxacin"
+      },
+      {
+        "label": "D",
+        "text": "Thoracentesis"
+      },
+      {
+        "label": "E",
+        "text": "ICD"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชายแก่ เป็น DM ไอเรื้อรัง เสมหะเหลือง นน. ลดมาหลายเดือน ตรวจ AFB 3 ครังneg CXR: BUL infiltration แพทย์ ให้ยา anti TB แต่อาการไม่ดีขึ้น CXR แย่ลงกว่าเดิม AFB อีกรอบ negจง mx (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "2nd line TB drug"
+      },
+      {
+        "label": "B",
+        "text": "meilioidosis titer"
+      },
+      {
+        "label": "C",
+        "text": "bronchoscopy"
+      },
+      {
+        "label": "D",
+        "text": "mycobacterial Ag"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชายอายุ 50 ปี มีไข้ไอเสมหะเขียวมีกลิ่นเหม็นเป็นมา 7 วันกินยาแก้อักเสบทั้ง 7วันอาการไม่ดีขึ้น\nCXR: RLLinfiltration with moderate pleural effusion, sputum & pleural fluid G/S: numerous WBC + mixed organism ให้ATB เป็นCeftriaxone + Clindamycin/ciprofloxacin? 3 วันแล้วไข้ไม่ลง Mx? (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Postural drainage"
+      },
+      {
+        "label": "B",
+        "text": "bronchoscope"
+      },
+      {
+        "label": "C",
+        "text": "Pleural tapping"
+      },
+      {
+        "label": "D",
+        "text": "ICD"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง อายุ 20 ปี มาด้วยอาการไอมีเสมหะเป็นมากตอนกลางคืน CXR แสดง RUL infiltrate Sputum AFB positive จึงได้รับการวินิจฉัยว่าเป็นวัณโรค และเริ่มรับประทานยาต้านวัณโรค ผู้ป่วยควรได้รับการแนะนำเรื่องการป้องกันการแพร่เชื้อต่ออื่นๆ อย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "นอนในห้องที่มีเครื่องปรับอากาศและปิดหน้าต่าง"
+      },
+      {
+        "label": "B",
+        "text": "ใส่หน้ากากอนามัยเมื่อสัมผัสคนอื่นเป็นระยะเวลาอย่างน้อย 2 สัปดาห์"
+      },
+      {
+        "label": "C",
+        "text": "หยุดไปโรงเรียน/ทำงานเป็นเวลา 1 เทอม"
+      },
+      {
+        "label": "D",
+        "text": "แยกห้องนอนจากคนในครอบครัว และหลีกเลี่ยงการสัมผัสใกล้ชิด"
+      },
+      {
+        "label": "E",
+        "text": "ดำเนินชีวิตตามปกติโดยไม่ต้องเตือนใคร เนื่องจากได้รับยาต้านวัณโรคแล้ว"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ผู้ป่วยวัณโรคปอดที่ AFB positive (infectious TB) ควรใส่หน้ากากอนามัยเพื่อลดการแพร่กระจายเชื้อสำหรับ 2 สัปดาห์แรกของการรักษา หลังจากนั้นหากติดตามการรักษาได้ดี ความติดต่อจะลดลงอย่างมาก แนะนำการแยกตัวในห้องปลอดเชื้ออากาศ (negative pressure room) ในโรงพยาบาล แต่ที่บ้านสามารถเว้นระยะห่างและใส่ mask ได้",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชาย อายุ 28 ปี มีไข้ ไอ หอบเหนื่อยนอนราบไม่ได้ มา5 วัน PE : BT39 PR100 RR24 BP 110/70 dyspnea Ext :multiple infection scars CXR : multiple patchy infiltrationboth lung เชื้อก่อโรคคือ(ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "S.aureus"
+      },
+      {
+        "label": "B",
+        "text": "S.pyogenes"
+      },
+      {
+        "label": "C",
+        "text": "H.influenza"
+      },
+      {
+        "label": "D",
+        "text": "Viridians Streptococcus"
+      },
+      {
+        "label": "E",
+        "text": "M.pneumoniae"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชาย 65 ปี ไข้ ไอ เสมหะเขียว 3 วันสูบบุหรี่ 20 pack-yrเสียงแหบมา 1 วัน sputum gram negative pleomorphiccoccobacilliให้ยารักษาอะไร (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Oseltamivir"
+      },
+      {
+        "label": "B",
+        "text": "Cefuroxime"
+      },
+      {
+        "label": "C",
+        "text": "Clarithromycin"
+      },
+      {
+        "label": "D",
+        "text": "Clindamycin"
+      },
+      {
+        "label": "E",
+        "text": "Doxycycline"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยตั้งครรภ์ ตรวจพบว่าเป็นTB ให้ยาอะไร? (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "I + R + Pyrazinamide + E"
+      },
+      {
+        "label": "B",
+        "text": "I + R + E +Streptomycin"
+      },
+      {
+        "label": "C",
+        "text": "I + R + E + Ofloxacin"
+      },
+      {
+        "label": "D",
+        "text": "I +Streptomycin + Ethambutol +Ofloxacin"
+      },
+      {
+        "label": "E",
+        "text": "I + Pyrazinamide + Ethambutol +Ofloxacin"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 70 ปี หลอดเลือดในสมองแตก Admit ICU ใส่ET tube 5 วันวันนี้มีไข้ BT 39 P 100/min, BP90/70 R 22/min , Lung – Crepitation at RLL, Other – normal, Sputum G/S – Numerous PMNs, Gramnegative bacilli จะให้ ATB อะไรระหว่างรอ culture (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Amikacin"
+      },
+      {
+        "label": "B",
+        "text": "Ceftriaxone"
+      },
+      {
+        "label": "C",
+        "text": "Levofloxacin"
+      },
+      {
+        "label": "D",
+        "text": "Imipenem"
+      },
+      {
+        "label": "E",
+        "text": "Vancomycin"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง อายุ 20 ปี มาด้วยอาการไอ มีเสมหะเป็นมากโดยเฉพาะตอนกลางคืน CXR แสดง RUL infiltrate และ Sputum AFB positive ได้รับการเริ่มต้นการรักษาด้วยยาต้านวัณโรค ควรให้คำแนะนำเพื่อป้องกันการแพร่เชื้อแก่ผู้ใกล้ชิด อย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "นอนในห้องที่มีเครื่องปรับอากาศและรักษาอุณหภูมิคงที่"
+      },
+      {
+        "label": "B",
+        "text": "ใส่ mask ทั้งวันทั่วไปตามปกติ เป็นเวลา 2 สัปดาห์แรกของการรักษา"
+      },
+      {
+        "label": "C",
+        "text": "หยุดการเรียนและทำกิจกรรมออกนอกบ้านเป็นระยะเวลา 1 เทอม"
+      },
+      {
+        "label": "D",
+        "text": "อยู่ในห้องแยก (isolation room) แบบ negative pressure เป็นระยะเวลา 2 สัปดาห์"
+      },
+      {
+        "label": "E",
+        "text": "ไม่จำเป็นต้องหลีกเลี่ยงการติดต่อบุคคลอื่น เนื่องจากได้รับยาต้านวัณโรคแล้ว"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ผู้ป่วยวัณโรคปอดที่เป็น AFB positive ถือว่าติดเชื้อได้ (infectious TB) ในช่วง 2 สัปดาห์แรกของการรักษาด้วยยาต้านวัณโรค หลังจากนั้นสิ่งสูญเสียติดเชื้อหลายลงอย่างมาก การใส่ mask ทั่วไปเป็นหลักแนะนำหลักในการป้องกันการแพร่เชื้อต่อผู้ใกล้ชิด ขณะที่ isolation room ในสถาบันแพทย์เท่านั้นที่จำเป็น",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายอายุ 60 ปี มาด้วยไข้ ไอ เป็นเวลา 2 เดือน สงสัยเป็นวัณโรค ภรรยาอายุ 55 ปี อาศัยอยู่ด้วยกันมานาน ควรจะต้องทำอย่างไรต่อไป",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ตรวจหาเชื้อวัณโรคจากสิ่งส่งตัวของผู้ป่วย เช่น น้ำลาย ริมฝีปาก"
+      },
+      {
+        "label": "B",
+        "text": "ทำการ Chest X-ray และตรวจ AFB sputum ผู้ป่วย ตามด้วยส่งภรรยาไปตรวจคัดกรอง (Screening) ด้วยวิธีคล้ายคลึงกัน"
+      },
+      {
+        "label": "C",
+        "text": "ให้ภรรยาได้รับการฉีดวัคซีน BCG เพื่อป้องกันการติดเชื้อวัณโรค"
+      },
+      {
+        "label": "D",
+        "text": "ส่งภรรยาไปตรวจเลือดหาภูมิคุ้มกันต่อวัณโรค (TB serology test) ในขั้นตอนแรก"
+      },
+      {
+        "label": "E",
+        "text": "รักษาผู้ป่วยด้วยยา anti-TB แล้วปล่อยให้ภรรยาต่อไปทำกิจวัตรปกติโดยไม่ตรวจ"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ในผู้ติดต่อบ้าน (household contact) ของผู้ป่วยวัณโรค ควรทำการคัดกรองโดยตรวจ Chest X-ray และหากมีอาการดำเนินการตรวจ AFB sputum จากสิ่งส่งตัวเพื่อพิสูจน์วัณโรค ตามแนวทาง WHO และกระทรวงสาธารณสุขไทย การตรวจคัดกรองควรทำให้ครอบครัวและผู้ใกล้ชิดเพื่อค้นหากรณีเฝ้าระวังตั้งแต่เนิ่นๆ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชาย อายุ 34 ปี มาด้วยไข้ และเสมหะเป็นเวลา 8 วัน เสียม 2 วันก่อนมา อาการไอมากขึ้น ตรวจร่างกายพบ BT 37.9°C PR 110/min BP 110/60 mmHg พบ white patch บนเม้าท์แล้งและลิ้น ไม่พบเสียงผิดปกติในปอด O2 saturation 88% CXR แสดง interstitial infiltration",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cytomegalovirus (CMV) pneumonia"
+      },
+      {
+        "label": "B",
+        "text": "Pneumocystis pneumonia (PCP)"
+      },
+      {
+        "label": "C",
+        "text": "Mycobacterium tuberculosis"
+      },
+      {
+        "label": "D",
+        "text": "Candida albicans esophagitis with aspiration"
+      },
+      {
+        "label": "E",
+        "text": "Community-acquired pneumonia (CAP)"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ผู้ป่วยมีลักษณะอาการดักแดน PCP ได้แก่ ไข้ ไอแห้ง hypoxemia (O2 sat 88%) และ interstitial infiltration บน CXR ร่วมกับ oral candidiasis (white patch) ซึ่งชี้ไปถึง immunocompromised state ที่เหมาะสมสำหรับ opportunistic infection นี้ PCP คือ OI ที่พบได้บ่อยที่สุดในผู้ป่วย HIV/AIDS ที่ไม่ได้รับการรักษา",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชายอายุ 65 ปี มีประวัติเบาหวาน มาด้วยอาการไข้สูง 39.5°C ไอ มีเสมหะสีเขียว-เหลือง หายใจเหนื่อย เจ็บหน้าอก และมีความสับสนจิตใจเล็กน้อย ตรวจปกติ: blood pressure 100/60 mmHg, heart rate 110/min, respiratory rate 28/min ปอดซ้ายด้านล่าง ได้ยินเสียง consolidation ถ่ายภาพ chest X-ray พบความขุ่นในหน่วยที่ 6-10 ซ้าย ผลแลบ: WBC 18,500/μL, hemoglobin 13 g/dL, platelets 280,000/μL จำแนก CURB-65 score = 3 ข้อ แล็บเชื้อเหลือบและ sputum culture ส่วนใหญ่ระเบุ Gram-positive diplococci ที่ไม่สร้างแคปซูล ผลตรวจยืนยัน Streptococcus pneumoniae ปัจจุบันอยากรู้ว่าเพื่อป้องกันการติดเชื้อ S. pneumoniae นี้ในอนาคต ควรให้วัคซีนประเภทไหน",
+    "choices": [
+      {
+        "label": "A",
+        "text": "PCV13 (Pneumococcal Conjugate Vaccine) เพียงอย่างเดียว"
+      },
+      {
+        "label": "B",
+        "text": "PPSV23 (Pneumococcal Polysaccharide Vaccine) เพียงอย่างเดียว"
+      },
+      {
+        "label": "C",
+        "text": "ให้ PCV13 ก่อน จากนั้นให้ PPSV23 ห่างกันอย่างน้อย 1 ปี"
+      },
+      {
+        "label": "D",
+        "text": "ให้ PPSV23 ก่อน จากนั้นให้ PCV13 ห่างกันอย่างน้อย 6 เดือน"
+      },
+      {
+        "label": "E",
+        "text": "ไม่ต้องให้วัคซีน เนื่องจากผู้ป่วยติดเชื้อแล้ว จะเกิด cross-reactivity"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ในผู้ใหญ่อายุ ≥65 ปี และผู้ที่มีปัจจัยเสี่ยง (เช่น เบาหวาน) ค่าแนะนำปัจจุบันคือให้ PCV13 ก่อน แล้วตามด้วย PPSV23 ห่างกัน ≥1 ปี เพื่อให้ได้การป้องกันที่ครอบคลุมทั้ง serotypes หลากหลายและความทนทาน PCV13 ให้การตอบสนองภูมิคุ้มกันที่ดีกว่า และตามด้วย PPSV23 จะเพิ่มความครอบคลุมสำหรับ serotypes อื่นๆ ที่ไม่มีใน PCV13",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "3wk ผู้ป่วยมีไข้สูง ซื้อยามาทานเอง 3 วัน ก่อนมีเจ็บคอ PE tonsil 2+ with exudate CBC hct 36% wbc 1000cell/cumm plt 250000 ควรปฏิบัติอย่างไรกับผู้ป่วย (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "amoxiclav"
+      },
+      {
+        "label": "B",
+        "text": "ceftazidine"
+      },
+      {
+        "label": "C",
+        "text": "G-CRF"
+      },
+      {
+        "label": "D",
+        "text": "corticosteroid"
+      },
+      {
+        "label": "E",
+        "text": "Cardio"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชายอายุ 23 ปีมาด้วยเจ็บอก หอบเหนื่อย นอนราบไม่ได้ Dx : CHF ต่อมาเสียชีวิต ตรวจศพพบ Lymphocyte infiltrate ที่กล้ามเนื้อหัวใจ ถามหาเชื้อ (ศรว 2008)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Influenza"
+      },
+      {
+        "label": "B",
+        "text": "Adeno virus"
+      },
+      {
+        "label": "C",
+        "text": "Coxakie B"
+      },
+      {
+        "label": "D",
+        "text": "EBV"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 23 ปีอาชีพครูโรงเรียนเด็กอนุบาล เคยป่วยเป็นRheumatic fever ตอนอายุ 15 ปี ปัจจุบันทางานทั่วไปได้ปกติ ไม่มีอาการหอบเหนื่อย ตรวจรางกายพบ pansystolic murmur grade II/VI at apex ได้รับการรักษาด้วย Penicillin V มาตลอด Tx? (ศรว 2010)",
+    "choices": [
+      {
+        "label": "B",
+        "text": "หยุดยา penicillin"
+      },
+      {
+        "label": "C",
+        "text": "ให้กินยาเฉพาะตอนทาฟัน"
+      },
+      {
+        "label": "D",
+        "text": "ให้กินยาไปจนกระทั่งอายุ 30 ปี จึงหยุด"
+      },
+      {
+        "label": "E",
+        "text": "ให้กินยาไปจนกระทั่งอายุ 50 ปี จึงหยุด"
+      },
+      {
+        "label": "E",
+        "text": "F. ให้กินยาไปตลอดชีวิต"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยชาย35ปี มีประวัติ IVDU หลายปีมีไข้มา 2 สัปดาห์ T39.3 P110 RR20 BP70/palpable systolic murmur at leftlower sterna border, hemorrhagic spot at fingernail จงบอก Mx? (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "PGS + Gentamicin"
+      },
+      {
+        "label": "B",
+        "text": "Ampicillin + Gentamicin"
+      },
+      {
+        "label": "C",
+        "text": "Cloxacillin + Gentamicin"
+      },
+      {
+        "label": "D",
+        "text": "Cefoperazone + Gentamicin"
+      },
+      {
+        "label": "E",
+        "text": "Ceftazidime+Amikin"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยมีไข้ต่าๆ มี JVD มี faint heart sound dx? (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "TB pericarditis"
+      },
+      {
+        "label": "B",
+        "text": "Heart failure"
+      },
+      {
+        "label": "C",
+        "text": "Infective endocarditis"
+      },
+      {
+        "label": "D",
+        "text": "GI"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชายอายุ 30 ปี ท้องเสีย 3 เดือน Cachexia, muscular wasting รูปไข่พยาธิคล้ายถั่วลิสง (Capillaria philipinensis) ควรมีวิธีการป้องกันอย่างไร (ศรว 2008)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "งดกินปู"
+      },
+      {
+        "label": "B",
+        "text": "งดกินหอย"
+      },
+      {
+        "label": "C",
+        "text": "งดกินผักสด"
+      },
+      {
+        "label": "D",
+        "text": "งดกินปลาน้าจืดดิบๆ"
+      },
+      {
+        "label": "E",
+        "text": "งดเดินเท้าเปล่าตามทุ่งนา"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยได้รับ penicillin มานาน ต่อมาเกิด diarrhea ตรวจ proctoscope พบลักษณะที่เข้าได้กับ antibiotic-associated colitis (AAC) การรักษาที่เหมาะสมที่สุดในผู้ป่วยรายนี้คือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Vancomycin oral 125 mg 4 เท่า/วัน"
+      },
+      {
+        "label": "B",
+        "text": "Metronidazole 400-500 mg 3 เท่า/วัน"
+      },
+      {
+        "label": "C",
+        "text": "Ciprofloxacin 500 mg 2 เท่า/วัน"
+      },
+      {
+        "label": "D",
+        "text": "Cephalexin 500 mg 4 เท่า/วัน"
+      },
+      {
+        "label": "E",
+        "text": "Clindamycin 300 mg 3 เท่า/วัน"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "Antibiotic-associated colitis (AAC) เกิดจาก Clostridioides difficile toxin โดยมักเกิดจากการใช้ penicillin, clindamycin หรือ cephalosporin นาน Vancomycin oral เป็นยาเลือกแรก (first-line) สำหรับ AAC เนื่องจากมีประสิทธิภาพสูงต่อ C. difficile และไม่ดูดซึมทางระบบประเาาะ ซึ่งให้ความเข้มข้นสูงในลำไส้ Metronidazole ใช้ได้เฉพาะกรณี mild to moderate AAC เท่านั้น",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยมีการติดเชื้อพยาธิ Opisthorchis viverrini (รูปไข่) ตามการตรวจพบในอุจจาระ ควรใช้ยาใดในการรักษา",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Praziquantel"
+      },
+      {
+        "label": "B",
+        "text": "Albendazole"
+      },
+      {
+        "label": "C",
+        "text": "Mebendazole"
+      },
+      {
+        "label": "D",
+        "text": "Niclosamide"
+      },
+      {
+        "label": "E",
+        "text": "Ivermectin"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "Praziquantel เป็นยาตัวแรกเลือกสำหรับการรักษาการติดเชื้อ Opisthorchis viverrini โดยให้ผลดีสูงสุด (cure rate >90%) เนื่องจากยานี้ออกฤทธิ์ต่อพยาธิแบบ trematode ได้อย่างมีประสิทธิภาพ ส่วน Albendazole และ Mebendazole มีประสิทธิภาพต่ำสำหรับ trematode จึงเหมาะสำหรับ nematode และ cestode มากกว่า",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "นางสาว ก.ต้องการสมัครเป็นพยาบาลจึงมาตรวจ สุขภาพ ผลปรากฎว่า HBsAg +, HBsAb – ผล liver function test ปกติ ควรทาอย่างไร มากที่สุด (ศรว 2009)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "รักษาด้วย interferon"
+      },
+      {
+        "label": "B",
+        "text": "ให้ HBV vaccine"
+      },
+      {
+        "label": "C",
+        "text": "ตรวจ US abdomen"
+      },
+      {
+        "label": "D",
+        "text": "ตรวจ AFP"
+      },
+      {
+        "label": "E",
+        "text": "ตรวจ HBsAgซ้าในอีก 6 เดือน"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "HBsAg + HBcIg M + Anti HBe g LFT normal Mx??? (ศรว 2010)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "F/U 6 mo"
+      },
+      {
+        "label": "B",
+        "text": "Start lamivudine"
+      },
+      {
+        "label": "C",
+        "text": "Viral load"
+      },
+      {
+        "label": "D",
+        "text": "Reassure"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชาย 50 ปี ได้รับการผ่าตัดช่องท้องเนื่องจากถูกแทงลาไส้ทะลุ และได้รับการรักษาต่อด้วย meropenemและ TPNทาง subclavian vein 10 วัน ต่อมามีไข้สูงขึ้ นCT abdomen: no collection UA: no WBC no RBC หลังจาก H/C แล้ว ท่านจะ ให้ empirical ATB เป็นอะไร (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cefipime"
+      },
+      {
+        "label": "B",
+        "text": "Clindamycin"
+      },
+      {
+        "label": "C",
+        "text": "Fluconazole"
+      },
+      {
+        "label": "D",
+        "text": "Metronidazole"
+      },
+      {
+        "label": "E",
+        "text": "tetracycline"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่ วยไม่มีประวัติโรคตับHBsAg –veHBeAg –ve antiHBcIgM +veantiHBcIgG +veantiHBsIgG +ve dx? (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute hepatitis B infection"
+      },
+      {
+        "label": "B",
+        "text": "Asymptomatic HBV carrier"
+      },
+      {
+        "label": "C",
+        "text": "Post immunization"
+      },
+      {
+        "label": "D",
+        "text": "Post infection"
+      },
+      {
+        "label": "E",
+        "text": "Chronic hepatitis B infection"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หญิงอายุ 65 ปี ดูแลสามีที่เป็น hepatitis B มาปรึกษาท่านว่าจะฉีดวัคซีนป้องกัน ถ้าท่านเป็นแพทย์ท่านจะแนะนาให้ฉีดอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Pneumococcal"
+      },
+      {
+        "label": "B",
+        "text": "Influenza vaccine"
+      },
+      {
+        "label": "C",
+        "text": "Hepatitis B vaccine"
+      },
+      {
+        "label": "D",
+        "text": "Neuro"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยชายวัยกลางคน ชักแบบ Generalized Tonic Clonicปฏิเสธประวัติอุบัติเหตุหรือการใช้สารเสพย์ติดผู้ป่วยไม่เคยมีอาการชักแบบนี้มาก่อน ไม่มีไข้ จากการตรวจร่างกายเบื้องต้นไม่พบ neurological deficit ใดๆแต่พบว่ามี papilledema ผล CT scan: multiple calcified cystic lesion เชื้อก่อโรค? (ศรว 2008)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Taeniasolium"
+      },
+      {
+        "label": "B",
+        "text": "Taeniasaginata"
+      },
+      {
+        "label": "C",
+        "text": "Toxocara"
+      },
+      {
+        "label": "D",
+        "text": "Toxoplasma"
+      },
+      {
+        "label": "E",
+        "text": "Gnathostoma"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 18 ปี ไปเยี่ยมสถานรับเลี้ยงเด็กมาเมื่อ 2 สัปดาห์ก่อนมาโรงพยาบาล ต่อมามีอาการอ่อนแรงของแขนขา เป็นมากขึ้นเรื่อยๆ แพทย์ทาการตรวจร่างกายพบว่ามี Upper motor power 4/5, lower 1/5, absent DTR Dx? (ศรว 2008)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Transverse myelitis"
+      },
+      {
+        "label": "B",
+        "text": "GBS"
+      },
+      {
+        "label": "C",
+        "text": "MG"
+      },
+      {
+        "label": "D",
+        "text": "Neurosyphillis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชาย 20 ปีไข้สูงปวดหัว PE: subconjunctival hemorrhage BT 39 C, stiff neck positive, petechia and purpura on both legs จงบอก organism (ศรว 2009)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "N. meningitides"
+      },
+      {
+        "label": "B",
+        "text": "K. influenzae"
+      },
+      {
+        "label": "C",
+        "text": "S. pneumoniae"
+      },
+      {
+        "label": "D",
+        "text": "S. aureus"
+      },
+      {
+        "label": "E",
+        "text": "M. pneumoniae"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชายอายุ 40 ปี ทาอาชีพปลูกผัก ไข้มา 5วัน ปวดศีรษะมาก มี LN cervical โต 2 ข้าง conjunctival injection, no jaundice, stiffneck negative CBC : WBC 10,000 PMN 50% Lymph 50% จงให้การวินิจฉัย (ศรว 2009)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "melioidosis"
+      },
+      {
+        "label": "B",
+        "text": "scrub typhus"
+      },
+      {
+        "label": "C",
+        "text": "dengue infection"
+      },
+      {
+        "label": "D",
+        "text": "viral meningitis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชายอายุ 25 ปี มาด้วยไข้ ปวดศีรษะ ชักเกร็งที่ หน้าและแขนด้านซ้าย LP WBC 12 (L 95%) protein 65 glucose 45 RBC 10-20 gram stain and india ink negative จงให้การรักษา (ศรว 2009)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "acyclovir"
+      },
+      {
+        "label": "B",
+        "text": "antifungal"
+      },
+      {
+        "label": "C",
+        "text": "antibiotics"
+      },
+      {
+        "label": "D",
+        "text": "antiTB"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ให้ผล csf : open pressure 30cmh20 protein 550 sugar 20 ผู้ป่วยมาด้วยอาการไข้ ปวดศีรษะ Dx? (ศรว 2010)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "toxoplasmosis meningitis"
+      },
+      {
+        "label": "B",
+        "text": "CMV meningitis"
+      },
+      {
+        "label": "C",
+        "text": "tubeculous meningitis"
+      },
+      {
+        "label": "A",
+        "text": "Acyclovir"
+      },
+      {
+        "label": "B",
+        "text": "Amphotericin B"
+      },
+      {
+        "label": "C",
+        "text": "Anti TB Drugs"
+      },
+      {
+        "label": "D",
+        "text": "Cef – 3"
+      },
+      {
+        "label": "E",
+        "text": "Co-trimoxazole"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 18 ปี มาด้วยไข้ปวดเมื่อยตามตัวคลืนไส้อาเจียนนาน 4 วัน วันนี้ซึมลง V/S BT 36.5 BP80/50 PR120 CBCHct 58% WBC2600 N12 L80 M6 E2 B0 plt 35000 Treatment? (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Dopamine"
+      },
+      {
+        "label": "B",
+        "text": "Cef-3"
+      },
+      {
+        "label": "C",
+        "text": "NSS loading"
+      },
+      {
+        "label": "D",
+        "text": "Dexamethasone"
+      },
+      {
+        "label": "E",
+        "text": "Pltconc"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยสูงอายุ 65 ปี มีประวัติ DM type 2 with HT มาด้วยอาการปัสสาวะเจ็บและมีไข้ 38.5°C แพทย์พบ Costovertebral angle (CVA) tenderness ทั้งสองข้าง ส่วนปัสสาวะ: WBC 5-8/lpf, bacteria present, nitrite positive ประเมินว่าเป็น Acute pyelonephritis จะให้การรักษาอย่างไร?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ceftriaxone 1-2 g IV q12h"
+      },
+      {
+        "label": "B",
+        "text": "Ceftriaxone 500 mg oral q6h"
+      },
+      {
+        "label": "C",
+        "text": "Ofloxacin 400 mg oral q12h"
+      },
+      {
+        "label": "D",
+        "text": "Trimethoprim-sulfamethoxazole (TMP-SMX) oral"
+      },
+      {
+        "label": "E",
+        "text": "Ampicillin 500 mg oral q6h"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "Acute pyelonephritis ที่มีไข้สูงและ CVA tenderness ต้องให้การรักษาด้วย broad-spectrum antibiotic IV เนื่องจากเป็นภาวะร้ายแรง Ceftriaxone IV เป็นตัวเลือกที่เหมาะสม ผู้ป่วยสูงอายุที่มี comorbidities (DM, HT) ควรต้องรับการรักษาแบบ inpatient ด้วย IV antibiotics ก่อนแล้วจึงสามารถเปลี่ยนเป็นยาทางปากได้หลังจากอาการดีขึ้น",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยใน ICU เป็น Subarachnoid Hemorrhage ใส่ ET tube และ Foley’s cath 1 wkต่อมาปัสสาวะมีสีขุ่นย้อมเป็น candida albicanการรักษาที่เหมาะสมที่สุดในผู้ป่วยรายนี้คือข้อใด (ศรว 2008)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Itraconazole"
+      },
+      {
+        "label": "B",
+        "text": "Clotrimazole"
+      },
+      {
+        "label": "C",
+        "text": "Fluconazole"
+      },
+      {
+        "label": "D",
+        "text": "Amphoterin B"
+      },
+      {
+        "label": "E",
+        "text": "ถอดสาย Foley’s cath"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 35 ปี มีไข้ต่าๆ ปวดข้อเข่าและข้อมือมา 4 วันก่อนมาโรงพยาบาล มาพบแพทย์เจาะน้าข้อเข่าตรวจพบ wbc = 89000, PMN = 90%, G/S: gram negative diplococci intracellular การรักษาข้อใดต่อไปนี้เหมาะสมที่สุด (ศรว 2008)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cloxacillin"
+      },
+      {
+        "label": "B",
+        "text": "Gantamicin"
+      },
+      {
+        "label": "C",
+        "text": "Ceftriazone"
+      },
+      {
+        "label": "D",
+        "text": "Doxycycline"
+      },
+      {
+        "label": "E",
+        "text": "Metronidazole"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 40 ปี มีอาการปวดบวมต้นขาซ้ายและมีไข้ แพทย์ทาการตรวจร่างกายพบว่ามี BT = 39 oC, erythema and tender at left upper thigh เจาะแล้วได้หนอง เชื้อก่อโรคในข้อใดต่อไปนี้น่าจะทาให้เกิดอาการใน ผู้ป่วยรายนี้มากที่สุด (ศรว 2008)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "S. aureus"
+      },
+      {
+        "label": "B",
+        "text": "S. pyogenes"
+      },
+      {
+        "label": "C",
+        "text": "H. influenzae"
+      },
+      {
+        "label": "D",
+        "text": "P. aeruginosa"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยชายปวดข้อเข่าขวา มีไข้ เจาะหนองที่เข่าได้ 1 ml ย้อม gram ได้ gram+ cocci in cluster Txด้วย Cloxacillinไม่ดีขึ้น เข่าขวาบวมมากขึ้น ควรทาอะไรต่อ (ศรว 2009)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้ NSAIDs"
+      },
+      {
+        "label": "B",
+        "text": "ให้ Ceftriaxone"
+      },
+      {
+        "label": "C",
+        "text": "เปลี่ยนยาเป็น Vancomycin"
+      },
+      {
+        "label": "D",
+        "text": "เพิ่ม dose cloxacillin"
+      },
+      {
+        "label": "E",
+        "text": "ให้ยาเดิม แต่เจาะเข่า (aspirate) หนองออกให้มากที่สุด"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชายอายุ 40 ปี มีไข้และปวดเมื่อยตามเนื้อตัวมา 3 วัน ผู้ป่วยให้ประวัติว่าที่ละแวกบ้านมีน้าดาและผู้ป่วยต้องลุยน้าออกจากบ้านทุกวัน แพทย์ทาการตรวจร่างกายพบว่ามี BP = 120/80 mmHg, PR = 110/min, RR = 24 /min, BT = 39 oC, mild jaundice, ling clear, liver 2 cm BRCM Dx? (ศรว 2008)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Enteric fever"
+      },
+      {
+        "label": "B",
+        "text": "Dengue fever"
+      },
+      {
+        "label": "C",
+        "text": "Leptospirosis"
+      },
+      {
+        "label": "D",
+        "text": "Scrub typhus"
+      },
+      {
+        "label": "E",
+        "text": "Murine typhus"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หลังจากกลับจากน้าตก มีไข้และแผลดังแสดงในรูป เชื้อก่อโรค? (ศรว 2008)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Chigger mite"
+      },
+      {
+        "label": "B",
+        "text": "Louse"
+      },
+      {
+        "label": "C",
+        "text": "Aedesegypti"
+      },
+      {
+        "label": "D",
+        "text": "Tick"
+      },
+      {
+        "label": "E",
+        "text": "Flea"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชายอายุ 8 ปี มาด้วยไข้ เจ็บคอ 3 วัน P.E.: Tonsil enlargement with greyish patch at pharynx and tonsils, anterior cervical lymph node enlargement bilateral, ตับม้ามไม่โต ในผู้ป่วยรายนี้น่าจะคิดถึงโรคใดมากที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Diphtheria"
+      },
+      {
+        "label": "B",
+        "text": "Infectious mononucleosis"
+      },
+      {
+        "label": "C",
+        "text": "Acute streptococcal pharyngitis"
+      },
+      {
+        "label": "D",
+        "text": "Acute viral pharyngitis"
+      },
+      {
+        "label": "E",
+        "text": "Adenoviral pharyngitis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "Diphtheria (โรคคอบวบ) มีลักษณะเฉพาะคือ pseudomembrane สีเทา (greyish patch) ที่ลิ้นเหงือกและคอ พร้อม anterior cervical lymphadenopathy ที่โดดเด่น ไม่มี hepatosplenomegaly ซึ่งแตกต่างจาก infectious mononucleosis ที่มักมี splenomegaly และมาก่อน",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "Blood smear, พบ multiple ring form จะรักษาอย่างไร (ศรว 2009)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "cholroquine"
+      },
+      {
+        "label": "B",
+        "text": "IV Artesunate+tetracycline"
+      },
+      {
+        "label": "C",
+        "text": "chlroquine+primaquine"
+      },
+      {
+        "label": "D",
+        "text": "artesunate+mefloquine 5 quinine"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชาย 20ปีไข้สูง5วันปวดหัวคลื่นไส้แต่ไม่อาเจียน PE : mild conjunctival injection, no jaundiceV/S : BT 39.5 C, PR 90, RR 14, BP 120/90 liver 1 FB RBCM, span 11 cm, petechia on extremities CBC :Hct 45% WBC 4,300 N50 L40 M3 atypL 7 plt 60,000 จงให้การวินิจฉัย (ศรว 2009)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "leptospirosis"
+      },
+      {
+        "label": "B",
+        "text": "DHF"
+      },
+      {
+        "label": "C",
+        "text": "scrub typhus"
+      },
+      {
+        "label": "D",
+        "text": "malaria"
+      },
+      {
+        "label": "E",
+        "text": "enteric fever"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชายอายุ 40 ปี บ้านอยู่จังหวัดนราธิวาส มีไข้มา 4 วัน ต่อมามีผื่นขึ้น 2 วันต่อมาเริ่มมีอาการปวดเข่า 2 ข้าง วันนี้มีอาการปวดข้อเท้าและข้อศอกทั้ง 2 ข้าง ตรวจร่างกาย BT 40C BP 100/80 maculopapular rash at trunk and extremities, swelling warm and tenderness with limitation of movement both knees, ankles and elbows. Hct 40% WBC 3500 (N 45% L50% AL 5%) plt. 45000 โรคใดที่ผู้ป่วยมีโอกาสเป็นมากที่สุด (ศรว 2009)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ricketsial infection"
+      },
+      {
+        "label": "B",
+        "text": "Chigunkunya infection"
+      },
+      {
+        "label": "C",
+        "text": "acute gouty arthritis"
+      },
+      {
+        "label": "D",
+        "text": "acute rheumatoid arthritis"
+      },
+      {
+        "label": "E",
+        "text": "disseminated gonococcal arthritis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หญิงอายุ 60 ปี บ้านอยู่จังหวัดกาฬสินธุ์ มีไข้ ไอ เรื้อรังมา 1 เดือน เหนื่อยง่ายขึ้นมา 2 สัปดาห์ BT 39C RR 28 PR 100 BP 140/80 pale conjunctiva, no icteric sclerae, liver just palpable, positive splenic dullness.\nLAB: glucose 260 BUN 50 Cr 4.0 CXR: patchy infiltration both lower lung field.\nUS abdomen: splenomegaly with multiple hypoechoic lesions ผู้ป่วยน่าจะเป็นโรคใดมากที่สุด (ศรว 2009)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Leptospirosis"
+      },
+      {
+        "label": "B",
+        "text": "Melioidosis"
+      },
+      {
+        "label": "C",
+        "text": "Salmonellosis"
+      },
+      {
+        "label": "D",
+        "text": "disseminated TB"
+      },
+      {
+        "label": "E",
+        "text": "amoebic liver abscess"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "นักศึกษามาปรึกษาท่านเรืองจะไปเดินป่าที่กาญจนบุรี 3วัน 2คืนต้องการป้องกันโรคมาลาเรีย จะแนะนาอย่างไร (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ไม่ต้องทาอะไร เป็นแล้วค่อยรักษา"
+      },
+      {
+        "label": "B",
+        "text": "ทายากันยุงตลอดโดยเฉพาะตอนกลางคืน"
+      },
+      {
+        "label": "C",
+        "text": "กินfansodar 3 วันก่อนเดินป่า"
+      },
+      {
+        "label": "D",
+        "text": "กิน doxy 7 วันก่อน และหลังเข้าป่า"
+      },
+      {
+        "label": "E",
+        "text": "กิน quinine 3 วันก่อนเข้าป่า และกินทุกวันขณะอยู่ในป่า"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 35 ปี มาด้วยไข้สูง ปวดศีรษะ และเจ็บกล้ามเนื้อ เข้ามาโรงพยาบาลหลังจากกลับจากเดินทางไปยังพื้นที่อพยพในพม่า Blood smear แสดงเห็น parasites มีลักษณะ double chromatin และ multiple rings ภายในเม็ดเลือดแดง ซึ่งบ่งชี้ถึง Plasmodium falciparum จงเลือกการรักษาที่เหมาะสม",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Artemether หรือ Artesunate ติดต่อกับ Mefloquine"
+      },
+      {
+        "label": "B",
+        "text": "Chloroquine เพียงอย่างเดียว"
+      },
+      {
+        "label": "C",
+        "text": "Quinine + Clindamycin"
+      },
+      {
+        "label": "D",
+        "text": "Atovaquone-Proguanil"
+      },
+      {
+        "label": "E",
+        "text": "Primaquine เพียงอย่างเดียว"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "Plasmodium falciparum เป็นสายพันธุ์มาเลเรีย ที่มีความรุนแรงสูงและมีการดื้อต่อ Chloroquine แพร่หลาย การรักษาเบื้องต้นคือ Artesunate (ถ้าเป็น cerebral malaria หรือ severe malaria ให้ใช้ Artemether/Artesunate IV) ตามด้วย Mefloquine หรือ Atovaquone-Proguanil เพื่อให้สมบูรณ์ตามแนวทาง WHO และ Thai Guidelines",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยสตรี SLE ที่มี Progressive Glomerulonephritis ได้รับการรักษาด้วย Cyclophosphamide มาแล้ว ต่อมามีไข้สูง ตุ่มแดงขึ้น และเกิดการเปลี่ยนแปลงทางผิวหนังแบบ central necrosis หรือ eschar (หลุดลอกเป็นแผ่นสีดำตรงกลาง) รักษาด้วยยาใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cephalexin"
+      },
+      {
+        "label": "B",
+        "text": "Fluconazole"
+      },
+      {
+        "label": "C",
+        "text": "Doxycycline"
+      },
+      {
+        "label": "D",
+        "text": "Amphotericin B"
+      },
+      {
+        "label": "E",
+        "text": "Vancomycin"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "อาการนี้บ่งชี้ Cutaneous anthrax (ผิวหนังแดง → เป็นหนองน้ำ → เกิด eschar สีดำ) ซึ่งเกิดจากการติดเชื้อ Bacillus anthracis ส่วนมากจากผลข้างเคียงของ Cyclophosphamide ที่ทำให้ภูมิคุ้มกันลดลง Doxycycline เป็น antibiotic ตัวเลือกแรกสำหรับ cutaneous anthrax ในผู้ป่วยที่ไม่ขัดข้อง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชาย 20 ปี มีไข้ ตัวเหลืองตาเหลือง แน่นท้อง คลื่นไส้อาเจียน เป็นอยู่นาน 2 สัปดาห์ แล้วดีขึ้นเองโดยไม่มีภาวะแทรกซ้อน ช่วงเวลาเดียวกันมีน้าท่วมหอพัก และเพื่อนที่อยู่หอพักด้วยมีอาการแบบเดียวกัน น่าจะเป็นโรคใดมากที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Hepatitis A"
+      },
+      {
+        "label": "B",
+        "text": "Hepatitis B"
+      },
+      {
+        "label": "C",
+        "text": "Hepatitis C"
+      },
+      {
+        "label": "D",
+        "text": "Leptospirosis"
+      },
+      {
+        "label": "E",
+        "text": "Typhoid fever"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "Hepatitis A เป็นโรคติดเชื้อทางเดินอาหาร (fecal-oral route) ที่แพร่ระบาดได้ง่ายในช่วงน้าท่วม ลักษณะคลิเนิก ได้แก่ ไข้ ตัวเหลือง คลื่นไส้อาเจียน แน่นท้อง และรักษาตัวเองให้หายได้ในอาการเฉียบพลัน โดยไม่มีการแปรเปลี่ยนเป็นเรื้อรัง ซึ่งตรงกับโจทย์ที่มีการแพร่ระบาดระหว่างคนในหอพัก",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ให้รูป thrombophlebitis? รอยแผลคล้าย eschar(เป็นดาๆบริเวณข้อพับแขนมีบุ๋มลงไปด้วย)? มา ผู้ป่ วยเป็น ALL ได้ chemo 2 ครั้ง 1 wk PTA แล้ววันนี้ไข้สูงมา 2 วัน BT39 BP90/70 WBC 1000 N10% L90% Hct 25% plt 50000 คาดว่าเชื้อใดทาให้เกิดโรค (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "S. aureus"
+      },
+      {
+        "label": "B",
+        "text": "S. pyogenase"
+      },
+      {
+        "label": "C",
+        "text": "P. aeruginosa"
+      },
+      {
+        "label": "D",
+        "text": "E.coli"
+      },
+      {
+        "label": "E",
+        "text": "Vibrio"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 68 ปี แพทย์ทาการตรวจร่างกายเบื้องต้นทุกอย่างปกติดี จะให้วัคซีนใด (ศรว 2008)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Rabies vaccine"
+      },
+      {
+        "label": "B",
+        "text": "Tetanus viccine"
+      },
+      {
+        "label": "C",
+        "text": "HBV vaccine"
+      },
+      {
+        "label": "D",
+        "text": "Influenza vaccine"
+      },
+      {
+        "label": "E",
+        "text": "HPV vaccine"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ในการป้องกันการแพร่ระบาดของวัณโรคปอดในบุคลากรทางสาธารณสุขที่โรงพยาบาล ข้อใดมีประสิทธิภาพที่สุด (ศรว 2010)",
+    "choices": [
+      {
+        "label": "B",
+        "text": "ให้ผู้ป่วยที่สงสัยวัณโรคสวมหนากาก"
+      },
+      {
+        "label": "C",
+        "text": "ให้บุคลากรทางการแพทย์สวมหนากากป้องกัน"
+      },
+      {
+        "label": "D",
+        "text": "ติดเครื่องปรับอากาศในหอผู้ป่วย"
+      },
+      {
+        "label": "E",
+        "text": "ย้ายเตียงผู้ป่วยวัณโรคไปอยู่ท้ายวอร์ด"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ท่านเป็นเจ้าหน้าที่สาธารณสุขในพื้นที่ที่มีน้าท่วม จะเตรียมยาใดในการออกพื้นที่ชุมชน (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Loperamide"
+      },
+      {
+        "label": "B",
+        "text": "Amoxicillin"
+      },
+      {
+        "label": "C",
+        "text": "Ciprofloxacin"
+      },
+      {
+        "label": "D",
+        "text": "Topical antifungal"
+      },
+      {
+        "label": "E",
+        "text": "cotrimoxazole"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "รพ.ชุมชนได้รับรายงานผู้ป่วย pertussis (ไอกรน) 1 ราย จากโรงเรียนอนุบาล ตำแหน่งสัตวแพทย์ท้องถิ่นควรทำการปรับปรุงสถานการณ์อย่างไรเป็นอันดับแรก",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ส่งรายงาน และ ดำเนินการ Isolation + Contact tracing + สอบหาแหล่งติดเชื้อในชุมชน"
+      },
+      {
+        "label": "B",
+        "text": "รอให้มีผู้ป่วยเพิ่มเติมอีก 5 รายจึงจะดำเนินการตามโปรแกรมควบคุมโรค"
+      },
+      {
+        "label": "C",
+        "text": "ให้ยา Azithromycin แก่ผู้ป่วย โดยไม่ต้องรายงานต่ออำเภอหรือจังหวัด"
+      },
+      {
+        "label": "D",
+        "text": "ส่งตัวอย่างสำหรับการวินิจฉัยแล้วรอผลแล็บก่อน จึงจะดำเนินการอื่นใด"
+      },
+      {
+        "label": "E",
+        "text": "ปิดโรงเรียนทั้งหมด 2 สัปดาห์เพื่อป้องกันการแพร่ระบาด"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "Pertussis เป็นโรคติดต่อที่ต้องรายงานตามกฎหมาย กรณีผู้ป่วยในสถาบัน (โรงเรียน) ต้องรายงานทันทีและดำเนินการควบคุมจากการกระจายตัว ได้แก่ Isolation ผู้ป่วย Contact tracing และ Prophylaxis ให้แก่ผู้สัมผัสใกล้ชิด เพื่อป้องกันการแพร่ระบาดเพิ่มเติม",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายวัย 35 ปี มาด้วยไข้สูง 38.5°C เจ็บคอ ไอ และเหนื่อยใจ 3 วัน ตรวจร่างกายพบ pharyngeal exudate และ lymphadenopathy ต่อมน้ำเหลืองที่คอ แพทย์ต้องการยืนยันว่าเป็นโรค streptococcal pharyngitis เพื่อพิจารณาให้ยา antibiotic ตรวจวิจัยใดที่เหมาะสมสำหรับยืนยันการเป็นโรค",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Throat culture ด้วย selective media (blood agar) และ Gram stain"
+      },
+      {
+        "label": "B",
+        "text": "Rapid antigen detection test (RAD) หรือ Rapid streptococcal test"
+      },
+      {
+        "label": "C",
+        "text": "Complete blood count (CBC) และ chest X-ray"
+      },
+      {
+        "label": "D",
+        "text": "Monospot test (heterophile antibody test)"
+      },
+      {
+        "label": "E",
+        "text": "ASO titer (Antistreptolysin O titer)"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "Rapid antigen detection test (RAD) เป็นตรวจวิจัยทั่วไปในเวชปฏิบัติเพื่อยืนยันการเป็น streptococcal pharyngitis อย่างรวดเร็ว (ผลออกมาภายใน 5-10 นาที) มีความเฉพาะเจาะจงสูง (95-98%) จึงสามารถตัดสินใจใช้ยาได้ทันที เพียงแต่ sensitivity ต่ำกว่า culture บ้าง หาก RAD ลบแต่ยังสงสัยสูง อาจทำ throat culture เพื่อ confirmation",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ในการติดตามการระบาดของโรคไอกรน (Pertussis) ในชุมชนแห่งหนึ่ง พบว่ามีผู้ป่วยจำนวนมาก ผู้วิจัยต้องการตรวจสอบสถานการณ์การระบาดโดยดูจำนวนคนที่ได้รับวัคซีน Pertussis (DPT/Tdap) ในประชากรทั้งหมด พบว่าอัตราการครอบคลุมวัคซีนอยู่ที่ 65% แต่ยังคงมีการระบาดเกิดขึ้น ข้อใดต่อไปนี้อธิบายสถานการณ์นี้ได้ดีที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "วัคซีน Pertussis มีประสิทธิภาพต่ำและต้องใช้อัตราการครอบคลุมสูงกว่า 95% เพื่อให้เกิด herd immunity"
+      },
+      {
+        "label": "B",
+        "text": "ประชากรที่ได้รับวัคซีนจำนวน 65% ยังไม่พอสำหรับ herd immunity ซึ่งต้องการ 80-90% ขึ้นไป"
+      },
+      {
+        "label": "C",
+        "text": "ผู้ป่วยส่วนใหญ่อาจเป็นคนที่ได้รับวัคซีนแต่มีภูมิคุ้มกันเพราะวัคซีนหมดอายุ"
+      },
+      {
+        "label": "D",
+        "text": "การระบาดเกิดจากการนำเข้าเชื้อจากต่างประเทศ ไม่เกี่ยวข้องกับอัตราการครอบคลุมวัคซีน"
+      },
+      {
+        "label": "E",
+        "text": "วัคซีน Pertussis ป้องกันการติดเชื้อได้ดี แต่ไม่ป้องกันการเป็นพาหะและการแพร่กระจาย"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "เพื่อให้เกิด herd immunity สำหรับโรคไอกรนจำเป็นต้องมีประชากรที่ได้รับวัคซีนไม่น้อยกว่า 80-90% เนื่องจาก R0 ของ Pertussis สูง ดังนั้นการครอบคลุมวัคซีนเพียง 65% ยังไม่เพียงพอที่จะป้องกันการระบาดในชุมชน ส่วน basic reproduction number ของโรคไอกรนอยู่ประมาณ 12-17 ตัว",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงอายุ 27 ปี มาด้วยอาการเจ็บคอเป็นเวลา 2 สัปดาห์ การตรวจร่างกายพบ white patch บริเวณคอและลิ้น ผู้ป่วยไม่มีประวัติ immunosuppression จงระบุการตรวจที่เหมาะสมที่สุดเพื่อยืนยันเหตุผลของโรค",
+    "choices": [
+      {
+        "label": "A",
+        "text": "KOH mount (Potassium Hydroxide preparation) และ Gram stain จากการขูดเนื้อเยื่อ white patch"
+      },
+      {
+        "label": "B",
+        "text": "Throat culture บน Blood agar medium เพื่อแยกเชื้อแบคทีเรีย"
+      },
+      {
+        "label": "C",
+        "text": "Viral culture และ PCR สำหรับการตรวจ Herpes simplex virus"
+      },
+      {
+        "label": "D",
+        "text": "CBC และ CD4 count เพื่อประเมินภาวะภูมิคุ้มกัน"
+      },
+      {
+        "label": "E",
+        "text": "Biopsy พร้อม histopathology examination สำหรับการตรวจเนื้อเยื่อ"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "White patch บนลิ้นและคอเป็นลักษณะของ Oral candidiasis ซึ่งเกิดจากเชื้อ Candida albicans KOH mount เป็นการตรวจชั้นแรกที่ดีที่สุดเพราะสามารถแสดงให้เห็น Candida hyphae และ pseudohyphae ขาดดาษได้อย่างชัดเจน Gram stain ก็สามารถช่วยได้โดยแสดง Gram-positive yeast ซึ่งเป็นวิธีที่ง่าย รวดเร็ว และคุ้มค่า",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ช่วยพยาบาลประจาห้องฉุกเฉินโดนเข็มตาจากการเจาะเลือดผู้ป่วยเมาสุรา มีเลือดออกเล็กน้อย ได้ทาแผลและใส่ betadineแล้ว การปฏิบัติตัวที่เหมาะสมสาหรับผู้ช่วยพยาบาลรายนี้คือข้อใด (ศรว 2010)",
+    "choices": [
+      {
+        "label": "B",
+        "text": "ขอผู้ป่วยตรวจเลือดหา AntigHIV"
+      },
+      {
+        "label": "C",
+        "text": "เริ่มกินยา Antiviral ได้ทันที"
+      },
+      {
+        "label": "D",
+        "text": "รอตรวจเลือดซ้าอีก 6 สัปดาห์"
+      },
+      {
+        "label": "E",
+        "text": "ส่งเลือดผู้ป่วยตรวจหา AntigHIV"
+      },
+      {
+        "label": "E",
+        "text": "F. แนะนาว่าโอกาสติดเชื้อน้อยมาก"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วย HIV/AIDS มา CSF examination แสดงผลดังนี้ CSF glucose ลดลง Protein เพิ่มขึ้น Cell count pleocytosis lymphocytic predominance Indian ink negative CD4 count >250 cells/µL จงวินิจฉัยสาเหตุของ meningitis",
+    "choices": [
+      {
+        "label": "A",
+        "text": "TB meningitis"
+      },
+      {
+        "label": "B",
+        "text": "Cryptococcal meningitis"
+      },
+      {
+        "label": "C",
+        "text": "Bacterial meningitis"
+      },
+      {
+        "label": "D",
+        "text": "Aseptic meningitis (Viral)"
+      },
+      {
+        "label": "E",
+        "text": "Toxoplasma encephalitis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "TB meningitis เป็นสาเหตุที่พบบ่อยที่สุดในผู้ป่วย HIV ที่มี CD4 >250 cells/µL โดยมี CSF pattern ลักษณะเป็น hypoglycorrhachia (glucose ลด) hyperproteinemia (protein เพิ่ม) และ lymphocytic pleocytosis Indian ink negative เป็นลักษณะเฉพาะ ในขณะที่ cryptococcal meningitis มักมี Indian ink positive ดังนั้น TB meningitis จึงเป็นคำตอบที่ถูกต้อง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วย HIV มีอาการท้องเสียให้สไลด์stool exam :modified AFB stain มา พบเป็น oocystขนาด 3-6 micrometer วินิจฉัย (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cyclospora"
+      },
+      {
+        "label": "B",
+        "text": "Cryptosporidium"
+      },
+      {
+        "label": "C",
+        "text": "Ehistolytica"
+      },
+      {
+        "label": "D",
+        "text": "Isosporabelli"
+      },
+      {
+        "label": "E",
+        "text": "Histoplasma"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชาย 35 ปี มี white patch ที่ลิ้นมาหลายเดือน ไม่มีอาการ ไม่มีไข้HIV: positive CD4 250 Treatment? (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Oral antifungal + Oral antiretroviral"
+      },
+      {
+        "label": "B",
+        "text": "Topical antifungal + Oral antiretroviral"
+      },
+      {
+        "label": "C",
+        "text": "Oral antifungal"
+      },
+      {
+        "label": "D",
+        "text": "Topical antifungal"
+      },
+      {
+        "label": "E",
+        "text": "Oral antiretroviral"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วย HIV+ ที่มี CD4 <50 cells/μL ได้รับการรักษา TB ด้วยยา TB standard regimen มาแล้ว 1 เดือน จากนั้นเริ่มรับ ART (GPOvir: GPO-VIR ® = TDF/FTC/EFV) ต่อเนื่องอีก 2 เดือน แล้วพบว่ามีไข้สูง น้ำหนักลด และ lymph node โตขึ้นหลายก้อน สาเหตุของการนำเสนอทางคลินิกนี้เกิดจากอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "TB treatment failure - ความต้านทาน TB หรือการปฏิบัติตามไม่ดี"
+      },
+      {
+        "label": "B",
+        "text": "Immune Reconstitution Inflammatory Syndrome (IRIS) - TB-IRIS"
+      },
+      {
+        "label": "C",
+        "text": "ART treatment failure - ความล้มเหลวในการลดไวรัส HIV"
+      },
+      {
+        "label": "D",
+        "text": "Opportunistic infection อื่น เช่น MAC หรือ CMV lymphadenitis"
+      },
+      {
+        "label": "E",
+        "text": "Immune suppression ที่รุนแรงขึ้น จาก EFV neurotoxicity"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ผู้ป่วย HIV+ ที่มี CD4 นำเข้าต่ำมาก (อาจ <50) เริ่มได้รับ TB treatment แล้ว ART อีก 2 เดือน อาการแ悪化ของ lymph node พร้อมไข้และน้ำหนักลด เป็นคลินิกทั่วไปของ TB-IRIS (Paradoxical TB-IRIS) ที่เกิดจากการฟื้นตัวของ immune function หลังจาก ART ทำให้เกิด inflammatory response ต่อ TB antigen ที่มีอยู่แล้ว",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชายอายุ 35 ปี ติดเชื้อ HIV มาประมาณ 8 ปี กำลังได้รับ antiretroviral therapy (ART) ด้วย GPOvir (zidovudine/lamivudine/nevirapine) มาแล้ว 3 เดือน ผู้ป่วยมาร้องขอค่าปรึกษาเนื่องจากมีอาการไม่พึงประสงค์ ข้อใดต่อไปนี้คือ adverse effect ที่พบได้บ่อยที่สุดจากการใช้ GPOvir",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ความเจ็บปวดของกล้ามเนื้อ (myalgia) และตับอักเสบ (hepatitis)"
+      },
+      {
+        "label": "B",
+        "text": "นิวโรพาธีบริเวณตอนปลาย (peripheral neuropathy) และตัวลุกหนาวสั่น (fever)"
+      },
+      {
+        "label": "C",
+        "text": "ท้องเสีย บ้านหมุน และเหน่อยเหนื่อย (diarrhea, dizziness, fatigue)"
+      },
+      {
+        "label": "D",
+        "text": "ผื่นแพ้ยา (rash) บางครั้งรุนแรงถึงระดับ Stevens-Johnson syndrome"
+      },
+      {
+        "label": "E",
+        "text": "โลหิตจางเฉียบพลัน (acute anemia) และเหน่อยเหนื่อย (fatigue)"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "GPOvir ประกอบด้วย zidovudine (AZT) lamivudine และ nevirapine ซึ่ง adverse effects ที่พบได้บ่อยที่สุดในช่วงเริ่มต้นคือ gastrointestinal symptoms เช่น ท้องเสีย คลื่นไส้ และ fatigue ส่วน nevirapine อาจทำให้มี rash แต่ myalgia/hepatitis และ peripheral neuropathy เป็น adverse effects ของยาตัวอื่น ส่วน acute anemia เป็น adverse effect ของ zidovudine แต่ไม่ถูกจำแนกเป็น most common",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วย HIV+ ที่เป็น IVDU นำเสนอด้วย ไข้สูง systolic murmur ที่ Left Upper Parasternal Border (LUPSB) และปวดข้อ คาดว่าเกิดจากเชื้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Staphylococcus aureus"
+      },
+      {
+        "label": "B",
+        "text": "Streptococcus pneumoniae"
+      },
+      {
+        "label": "C",
+        "text": "Treponema pallidum"
+      },
+      {
+        "label": "D",
+        "text": "Mycobacterium avium complex"
+      },
+      {
+        "label": "E",
+        "text": "Candida albicans"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ผู้ป่วย HIV+ ที่เป็น IVDU มีคลินิก Infective Endocarditis (IE) ทั่วไปคือ ไข้ murmur และ embolic phenomena (ปวดข้อจากเบาะแส arthralgia) ซึ่ง S. aureus เป็นเชื้อที่พบบ่อยที่สุดในกรณี IE ที่เกี่ยวข้องกับการใช้ยาเสพติดโดยฉีด (IVDU) มากกว่า Streptococcus viridans ที่พบใน IE แบบเรื้อรัง Treponema pallidum ทำให้เกิด aortitis ไม่ใช่ IE",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "เจ้าหน้าที่โรงบาล ถูกเข็มตาที่ปลายนิ้ว ขณะกำลังเจาะเลือดให้ผู้ป่วยชาย อายุ 30 ปี ที่มาตรวจสุขภาพ ผู้ป่วยไม่มีประวัติโรคติดเชื้อ เจ้าหน้าที่ควรทำอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ล้างแผลด้วยน้ำ ั้งแล้วรีบไปหัดเลือดและวัคซีนต่อเนื่องตามโปรแกรม (Hepatitis B, Tetanus, Rabies)"
+      },
+      {
+        "label": "B",
+        "text": "รีบให้ยาป้องกันทั้ง HIV, Hepatitis B, Hepatitis C และ Tetanus ได้ทันที่โดยไม่ต้องรอผลแคบ"
+      },
+      {
+        "label": "C",
+        "text": "ล้างแผลด้วยสบู่ และน้ำไหลไปสักครู่ จากนั้นประเมินความเสี่ยงจากแหล่งที่มาของเชื้อ แล้วตัดสินใจให้ยาป้องกันตามความเสี่ยง"
+      },
+      {
+        "label": "D",
+        "text": "ปล่อยให้มีการสกัดเลือดนิดหน่อย เพื่อลดความเสี่ยงจากเชื้อ แล้วรอผลเลือดก่อน"
+      },
+      {
+        "label": "E",
+        "text": "ไม่ต้องทำอะไร เพราะผู้ป่วยมาตรวจสุขภาพปกติ ไม่น่าจะติดเชื้อ"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "การรักษาแผลโดยเจาะเข็มใช้ (Needlestick injury) ปฐมฐานคือล้างแผลด้วยสบู่และน้ำสะอาดให้ไหลได้ดี หลังจากนั้นต้องประเมินความเสี่ยงจากอาการของผู้ป่วยแหล่งที่มา (ในที่นี้อาการปกติ) และชนิดของการบาดเจอ จึงตัดสินใจให้ยาป้องกันตามความเสี่ยง ไม่ควรให้ยาทั้งหมดโดยไม่ประเมินความเสี่ยง และไม่ควรปล่อยเพราะมี Occupational exposure",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 45 ปี มาด้วยไข้สูง (38.5°C) เป็นเวลา 1 สัปดาห์ พร้อมอาการเจ็บหัว ตัวเมื่อย และเหนื่อยลมเล็กน้อย การตรวจร่างกายพบ hepatosplenomegaly และ lymphadenopathy ผลตรวจเลือดพบ Widal test ชนิด O antigen เป็นบวก จำนวน 1:320 และ H antigen เป็นบวก จำนวน 1:640 ผู้ป่วยนี้ได้รับการวินิจฉัยว่าเป็น Enteric fever คุณควรให้คำแนะนำแก่เจ้าหน้าที่สาธารณสุขเกี่ยวกับการจัดการผู้ป่วยรายนี้เพื่อป้องกันการแพร่เชื้อในชุมชน",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ทำการแยกผู้ป่วยแบบ Contact precaution และให้ความสำคัญกับการล้างมือและสุขาภิบาล โดยเฉพาะหลังจากใช้ห้องน้ำและก่อนรับประทานอาหาร"
+      },
+      {
+        "label": "B",
+        "text": "ให้ยา Antibiotic ชนิด Ceftriaxone หรือ Fluoroquinolone แล่นเท่านั้น โดยไม่จำเป็นต้องมีการแยกผู้ป่วย"
+      },
+      {
+        "label": "C",
+        "text": "ทำการแยกผู้ป่วยแบบ Droplet precaution เนื่องจากเป็นโรคติดเชื้อทางระบบทางเดินหายใจ"
+      },
+      {
+        "label": "D",
+        "text": "ให้คำแนะนำแก่ผู้ป่วยและครอบครัวเรื่องอาหารสะอาด การจัดการมูลสัตว์ และการรักษาความสะอาดของห้องน้ำ พร้อมการฉีดวัคซีนให้บุคคลที่สัมผัสใกล้ชิด"
+      },
+      {
+        "label": "E",
+        "text": "สั่งให้ผู้ป่วยเข้ารับการรักษาในห้องแยกเพียงอย่างเดียว โดยไม่จำเป็นต้องให้คำแนะนำเพิ่มเติมแก่เจ้าหน้าที่สาธารณสุข"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "Enteric fever (typhoid fever) ส่วนใหญ่แพร่เชื้อทางหลอดอาหารและการสัมผัสอุจจาระ ดังนั้นการควบคุมการติดเชื้อจึงต้องมุ่งเน้นที่ Contact precaution พร้อมการล้างมือและสุขาภิบาลที่ดี ซึ่งสำคัญมากในการป้องกันการแพร่เชื้อในชุมชน ไม่ใช่ Droplet precaution เหมือนโรคทางระบบหายใจ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "เจ้าหน้าที่ห้องแล็บได้เจาะเลือดจากผู้ป่วยที่มีการติดเชื้อ HIV และเกิดอุบัติเหตุเข็มเจาะทะลุมือของเจ้าหน้าที่ ข้อใดคือการปฏิบัติตัวที่ถูกต้องและสำคัญที่สุดในสถานการณ์นี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ล้างบาดแผลด้วยน้ำไหลและสบู่ทันทีแล้วบีบเลือดออกมาเพื่อลดโอกาสการติดเชื้อ"
+      },
+      {
+        "label": "B",
+        "text": "นั่งรอและสังเกตอาการเพราะอุบัติเหตุจากเข็มมีความเสี่ยงต่ำในการส่งเชื้อ HIV"
+      },
+      {
+        "label": "C",
+        "text": "เข้ารับการประเมินความเสี่ยงทันทีที่ห้องแพทย์ เพื่อพิจารณาการให้ยาป้องกันหลังการสัมผัสเชื้อ (PEP) ภายใน 2 ชั่วโมง"
+      },
+      {
+        "label": "D",
+        "text": "ไม่จำเป็นต้องรับการตรวจเลือด เพราะความเสี่ยงส่วนใหญ่มาจากการผ่าตัด ไม่ใช่เจาะเลือด"
+      },
+      {
+        "label": "E",
+        "text": "เข้ารับการรักษาด้วยยา antiretroviral แบบปกติ (ART) ตั้งแต่วันแรก"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "เมื่อเกิดอุบัติเหตุเข็มโปรแกรมตอนทะลุผ่าน skin barrier ให้ปฏิบัติดังนี้: (1) ล้างบาดแผลด้วยน้ำและสบู่อย่างทันที (2) รับการประเมินความเสี่ยงจากแพทย์เพื่อพิจารณาความจำเป็นของการให้ยาป้องกัน (Post-Exposure Prophylaxis: PEP) ซึ่งต้องให้ภายใน 2 ชั่วโมง เนื่องจากความเสี่ยงการติดเชื้อ HIV จากเข็มปะเข็มประมาณ 0.3% อย่างไรก็ตาม PEP มีประสิทธิภาพสูงหากให้ทันท่วงที",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้หญิงวัย 28 ปี มาเพื่อคัดกรองโรคเอดส์ เนื่องจากมีความเสี่ยง คุณประสงค์จะทำ Rapid test HIV ให้กับผู้ป่วย ข้อใดถูกต้องเกี่ยวกับการยินยอมของผู้ป่วยในการทำ Rapid test HIV",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ไม่จำเป็นต้องขออนุญาตเพราะเป็นการคัดกรองตามนโยบายสาธารณสุข"
+      },
+      {
+        "label": "B",
+        "text": "ต้องขออนุญาตเป็นลายลักษณ์อักษรเสมอก่อนทำการตรวจ"
+      },
+      {
+        "label": "C",
+        "text": "ต้องขออนุญาตโดยการสอบถามอย่างชัดแจ้ง (informed consent) และจดบันทึกในเวชระเบียน"
+      },
+      {
+        "label": "D",
+        "text": "ขออนุญาตจากญาติของผู้ป่วยเพียงพอ ไม่จำเป็นต้องขออนุญาตจากผู้ป่วยเอง"
+      },
+      {
+        "label": "E",
+        "text": "ขออนุญาตจากหัวหน้าสาธารณสุข ไม่จำเป็นต้องขออนุญาตจากผู้ป่วย"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "การทำ Rapid test HIV ต้องได้รับความยินยอมจากผู้ป่วยเองอย่างชัดแจ้งหลังจากอธิบายข้อมูล ความเสี่ยง และประโยชน์ของการตรวจ (informed consent) และต้องบันทึกไว้ในเวชระเบียน ตามหลักการของ Medical ethics และกฎหมายว่าด้วยการตรวจเลือด HIV ของไทย",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "เจ้าหน้าที่สาธารณสุขทำ Rapid test HIV ให้ผู้ป่วยชายวัย 35 ปี ผลการทดสอบเป็น Positive ครั้งแรก เจ้าหน้าที่ควรดำเนินการอย่างไรต่อไป",
+    "choices": [
+      {
+        "label": "A",
+        "text": "บอกผู้ป่วยว่า HIV positive และเริ่มให้ยาต้านไวรัสทันที"
+      },
+      {
+        "label": "B",
+        "text": "ส่ง Serum ไปยืนยันด้วย Western blot หรือ HIV DNA/RNA PCR ก่อนการวินิจฉัยขั้นสุดท้าย"
+      },
+      {
+        "label": "C",
+        "text": "ทำ Rapid test ซ้ำอีกครั้งโดยใช้ชุดทดสอบคนละแบบ (Different brand)"
+      },
+      {
+        "label": "D",
+        "text": "ให้ผู้ป่วยรอ 3 เดือนแล้วทำ Rapid test ใหม่เพื่อให้เข้าสู่ window period"
+      },
+      {
+        "label": "E",
+        "text": "ให้ Prophylaxis ทันที และอ้างอิงจาก Rapid test result เพียงอย่างเดียว"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ผลบวกของ Rapid test HIV ครั้งแรกต้องยืนยันด้วยการทดสอบวิธีอื่นที่ความจำเพาะสูง เช่น Western blot หรือ HIV DNA/RNA PCR ก่อนการวินิจฉัยขั้นสุดท้าย เพื่อลดโอกาส false positive และให้การวินิจฉัยแม่นยำ ตามแนวทาง WHO และกระทรวงสาธารณสุข ประเทศไทย",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "เจ้าหน้าที่สาธารณสุขอายุ 28 ปี มาด้วยอาการปวดเพศศึษษะและมีสิ่งคัดหลั่งจากเพศศึษษะเป็นเวลา 5 วัน ไม่มีไข้ มีประวัติสัมพันธ์ทางเพศไม่ปลอดภัย 2 สัปดาห์ที่แล้ว ตรวจสวาบเพศศึษษะพบน้อยหน่อยจากการติดเชื้อ PCR ยืนยันเป็น Herpes Simplex Virus-2 ควรให้ยาต้านไวรัสใดแก่ผู้ป่วยคนนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acyclovir 400 mg ปากทางปกติ 5 ครั้ง/วัน เป็นเวลา 7-10 วัน"
+      },
+      {
+        "label": "B",
+        "text": "Valacyclovir 500 mg ปากทางปกติ 3 ครั้ง/วัน เป็นเวลา 7 วัน"
+      },
+      {
+        "label": "C",
+        "text": "Famciclovir 250 mg ปากทางปกติ 3 ครั้ง/วัน เป็นเวลา 7 วัน"
+      },
+      {
+        "label": "D",
+        "text": "Ganciclovir 5 mg/kg IV ทุก 12 ชั่วโมง เป็นเวลา 14-21 วัน"
+      },
+      {
+        "label": "E",
+        "text": "Foscarnet 60 mg/kg IV ทุก 8 ชั่วโมง เป็นเวลา 2-3 สัปดาห์"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "Acyclovir เป็นยากลั่นแรกสำหรับ HSV-2 genital herpes ในผู้ป่วยที่มีภูมิคุ้มกันปกติ ยาอื่นๆ เช่น Valacyclovir และ Famciclovir เป็นตัวเลือกทางเลือกที่มีประสิทธิภาพเท่าเทียมกัน แต่ Acyclovir ยังคงเป็นมาตรฐานทองคำ ส่วน Ganciclovir และ Foscarnet สำหรับผู้ป่วยภูมิคุ้มกันบกพร่องเท่านั้น",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงอายุ25ปี ไม่เคยเป็น STD มาก่อน ถูกข่มขืนโดยชาย 3คน จะprophylaxis STD ยังไง (ศรว 2011)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cefixime+Azithromycin"
+      },
+      {
+        "label": "B",
+        "text": "Cefixime+Doxycycline"
+      },
+      {
+        "label": "C",
+        "text": "Cefoxitine+Azithromycin"
+      },
+      {
+        "label": "D",
+        "text": "Cefoxitine+Doxycycline"
+      },
+      {
+        "label": "E",
+        "text": "Ceftriaxone+Doxycycline"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 26 ปี มาด้วยมีไข้ ปวดท้องน้อย 2 วันก่อนมารพ. ปัสสาวะไม่แสบขัด ไม่ขุ่น แต่มีปัสสาวะบ่อยขึ้น อุจจาระปกติ กดเจ็บบริเวณ suprapubic area จงให้การวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Endometriosis"
+      },
+      {
+        "label": "B",
+        "text": "Urethral stone"
+      },
+      {
+        "label": "C",
+        "text": "Ruptured ovarian cyst"
+      },
+      {
+        "label": "E",
+        "text": "UTI"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หญิงตั้งครรภ์ 16 สัปดาห์ ไม่มีอาการปัสสาวะแสบขัด ไม่มีไข้ ส่วน UA: RBC 0-1, WBC 1-2, PROT 1+, SUGAR 0 U/C: E. coli > 10^5 CFU/mL ควรดำเนินการอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ไม่ต้องรักษา เพราะไม่มีอาการ"
+      },
+      {
+        "label": "B",
+        "text": "ให้ยารักษาตามผลสูตรความไว (sensitivity) ของแบคทีเรีย"
+      },
+      {
+        "label": "C",
+        "text": "ติดตาม UA เป็นระยะๆ โดยไม่ให้ยา"
+      },
+      {
+        "label": "D",
+        "text": "ให้ยารักษาแล้ว follow-up U/C อีก 1-2 สัปดาห์"
+      },
+      {
+        "label": "E",
+        "text": "ปลอดปัสสาวะเข่มผ่านสายสวน (CSP) และส่งวิเคราะห์"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008-2012",
+    "explanation": "ผู้ป่วยนี้มี Asymptomatic Bacteriuria (ASB) ในตั้งครรภ์ ซึ่งมีความเสี่ยงสูงต่อการเกิด pyelonephritis และภาวะแทรกซ้อนในการตั้งครรภ์ ตามแนวทาง ACOG ทุกผู้ป่วยตั้งครรภ์ที่มี ASB ต้องได้รับการรักษาด้วยยาปฏิชีวนะที่ปลอดภัยและมีประสิทธิตามผล sensitivity เพื่อป้องกันการติดเชื้อในไตที่อาจเกิดขึ้นในช่วงตั้งครรภ์",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "infectious_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  }
+]

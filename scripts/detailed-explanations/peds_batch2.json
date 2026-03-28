@@ -1,0 +1,836 @@
+[
+  {
+    "id": "2df1b383-0000-0000-0000-000000000000",
+    "correct_answer": "B",
+    "explanation": "ทารก term C/S GA 38w respiratory distress → ให้ oxygen box ให้ O2 sat 94-98% (suspected TTN)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Oxygen via oxygen box) เพราะ term infant หลัง C/S + respiratory distress = Transient Tachypnea of Newborn (TTN) รักษาด้วย supplemental O2",
+      "reason": "TTN: term/near-term infant หลัง C/S (fluid ในปอดระบายช้า) อาการ: tachypnea, mild retractions, grunting CXR: wet lung appearance Treatment: Oxygen supplementation (O2 box) เพื่อ maintain O2 sat 94-98% หายเองใน 24-72 ชั่วโมง CPAP: ใช้ถ้า O2 ไม่เพียงพอ Intubation: สำหรับ severe RDS หรือ respiratory failure",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Keep warm เท่านั้น",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอสำหรับ respiratory distress"
+        },
+        {
+          "label": "B",
+          "text": "Oxygen via oxygen box (O2 sat 94-98%)",
+          "is_correct": true,
+          "explanation": "TTN first-line treatment: supplemental O2 ผ่าน oxygen box"
+        },
+        {
+          "label": "C",
+          "text": "Nasal CPAP 5-6 cmH2O",
+          "is_correct": false,
+          "explanation": "Second-line ถ้า O2 ไม่เพียงพอ"
+        },
+        {
+          "label": "D",
+          "text": "Oxygen via nasal cannula",
+          "is_correct": false,
+          "explanation": "O2 box ดีกว่าสำหรับทารกแรกเกิด (ให้ O2 concentration สม่ำเสมอ)"
+        },
+        {
+          "label": "E",
+          "text": "Intubation + mechanical ventilation",
+          "is_correct": false,
+          "explanation": "สำหรับ severe respiratory failure เท่านั้น"
+        }
+      ],
+      "key_takeaway": "Term infant หลัง C/S + tachypnea = TTN → Oxygen box (O2 sat 94-98%)"
+    }
+  },
+  {
+    "id": "2e1400ae-0000-0000-0000-000000000000",
+    "correct_answer": "C",
+    "explanation": "เด็ก TOF รอผ่าตัด ปวดหัว/ไข้ → Brain abscess เป็น complication ที่สำคัญของ cyanotic CHD",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C (Brain abscess) เพราะ cyanotic CHD (TOF) เป็น risk factor สำคัญสำหรับ brain abscess จาก right-to-left shunt",
+      "reason": "TOF (cyanotic CHD) + fever/headache: brain abscess เป็น complication สำคัญ Right-to-left shunt ทำให้ bacteria จาก systemic circulation ผ่านเข้า brain โดยตรง ไม่ผ่าน lung filter Brain abscess: fever + headache + focal neurological deficit CT/MRI: ring-enhancing lesion Management: antibiotics + aspiration/drainage Cardioembolism: มักเกิดในผู้ป่วยที่มี AFib หรือ valvular disease",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Meningitis",
+          "is_correct": false,
+          "explanation": "ไม่มี specific association กับ cyanotic CHD"
+        },
+        {
+          "label": "B",
+          "text": "Encephalitis",
+          "is_correct": false,
+          "explanation": "มักเกิดจาก viral infection ไม่ใช่ CHD complication"
+        },
+        {
+          "label": "C",
+          "text": "Brain abscess",
+          "is_correct": true,
+          "explanation": "R-to-L shunt ใน TOF → bacteria bypass lung → brain abscess"
+        },
+        {
+          "label": "D",
+          "text": "Subdural hematoma",
+          "is_correct": false,
+          "explanation": "ต้องมีประวัติ trauma"
+        },
+        {
+          "label": "E",
+          "text": "Stroke from cardioembolism",
+          "is_correct": false,
+          "explanation": "มักเกิดในผู้ใหญ่ที่มี AFib ไม่ใช่ cyanotic CHD ในเด็ก"
+        }
+      ],
+      "key_takeaway": "Cyanotic CHD (TOF) + fever/headache = Brain abscess (R-to-L shunt bypasses lung filter)"
+    }
+  },
+  {
+    "id": "2e84c38c-0000-0000-0000-000000000000",
+    "correct_answer": "D",
+    "explanation": "เด็ก rash + arthralgia หลัง strep → Acute rheumatic fever (ARF)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D (Acute rheumatic fever) เพราะ rash + arthralgia ในเด็กหลัง streptococcal infection = ARF",
+      "reason": "ARF Jones criteria Major: polyarthritis (migratory), carditis, chorea, erythema marginatum, subcutaneous nodules Minor: fever, elevated ESR/CRP, prolonged PR Rash (erythema marginatum) + arthralgia = ARF Lyme disease: erythema migrans + tick bite history SLE: ANA+ + multi-organ involvement Still disease: quotidian fever + salmon-colored rash + arthritis IgA vasculitis: purpura + abdominal pain",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Still disease",
+          "is_correct": false,
+          "explanation": "Quotidian fever + salmon-colored evanescent rash + arthritis ไม่ใช่ post-strep"
+        },
+        {
+          "label": "B",
+          "text": "Lyme disease",
+          "is_correct": false,
+          "explanation": "ต้องมี tick bite + erythema migrans + geographic exposure"
+        },
+        {
+          "label": "C",
+          "text": "SLE",
+          "is_correct": false,
+          "explanation": "ต้องมี malar rash, ANA positive, multi-organ involvement"
+        },
+        {
+          "label": "D",
+          "text": "Acute rheumatic fever",
+          "is_correct": true,
+          "explanation": "Post-strep rash (erythema marginatum) + migratory arthralgia = ARF"
+        },
+        {
+          "label": "E",
+          "text": "IgA vasculitis",
+          "is_correct": false,
+          "explanation": "Palpable purpura + abdominal pain + arthritis"
+        }
+      ],
+      "key_takeaway": "Rash + migratory arthralgia หลัง strep = ARF (erythema marginatum + polyarthritis)"
+    }
+  },
+  {
+    "id": "31a2ed92-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "เด็กหญิง 12 ปี vaginal moniliasis + physical signs ของ DM2 → รักษาด้วย Biguanide (Metformin) first-line",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Biguanide/Metformin) เพราะ DM2 ในเด็กอายุ 12 ปี first-line treatment คือ Metformin",
+      "reason": "Vaginal moniliasis (Candida) เป็น clinical sign ของ hyperglycemia → DM2 ในเด็กวัยรุ่น DM2 ในเด็ก: first-line = Metformin (biguanide) ลด hepatic glucose production + improve insulin sensitivity Insulin ใช้ถ้า DM1 หรือ DM2 ที่ HbA1c สูงมากหรือ ketosis Lifestyle modification เป็น adjunct ไม่เพียงพอเดี่ยว Fluid replacement สำหรับ DKA/dehydration",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Biguanide (Metformin)",
+          "is_correct": true,
+          "explanation": "First-line treatment สำหรับ DM2 ในเด็กและวัยรุ่น"
+        },
+        {
+          "label": "B",
+          "text": "Insulin",
+          "is_correct": false,
+          "explanation": "สำหรับ DM1 หรือ DM2 ที่มี severe hyperglycemia/ketosis"
+        },
+        {
+          "label": "C",
+          "text": "Biguanide + Insulin",
+          "is_correct": false,
+          "explanation": "สำหรับ DM2 ที่ไม่ตอบสนองต่อ Metformin เดี่ยว"
+        },
+        {
+          "label": "D",
+          "text": "Lifestyle modification",
+          "is_correct": false,
+          "explanation": "เป็น adjunct สำคัญแต่ไม่เพียงพอเดี่ยวสำหรับ diagnosed DM2"
+        },
+        {
+          "label": "E",
+          "text": "Fluid replacement for 5% dehydration",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ primary treatment สำหรับ DM2 ที่ stable"
+        }
+      ],
+      "key_takeaway": "DM2 ในเด็ก → Metformin (Biguanide) เป็น first-line + lifestyle modification"
+    }
+  },
+  {
+    "id": "33113a06-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "เด็ก 6 ปี ไข้ ไอ น้ำมูก + influenza confirmed → Oseltamivir 30-45 mg BID × 5 วัน",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Oseltamivir) เพราะ influenza ในเด็กที่ได้รับการยืนยัน (RDT positive) ต้องการ antiviral treatment ใน 48 ชั่วโมงแรก",
+      "reason": "Influenza treatment ในเด็ก: Oseltamivir (Tamiflu): first-line antiviral Dose ตามน้ำหนัก: ≤15 kg = 30 mg BID, 16-23 kg = 45 mg BID, 24-40 kg = 60 mg BID, >40 kg = 75 mg BID × 5 วัน Rimantadine/Amantadine: ใช้กับ influenza A บางสายพันธุ์เท่านั้น ปัจจุบันไม่แนะนำ Amoxicillin: สำหรับ bacterial infection ไม่ใช่ viral",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Oseltamivir 30-45 mg BID × 5 วัน",
+          "is_correct": true,
+          "explanation": "First-line antiviral สำหรับ influenza ในเด็ก ให้ภายใน 48 ชั่วโมง"
+        },
+        {
+          "label": "B",
+          "text": "Rimantadine 5 mg/kg/day BID × 5 วัน",
+          "is_correct": false,
+          "explanation": "ใช้กับ influenza A บางสายพันธุ์ ปัจจุบัน resistance สูง ไม่แนะนำ"
+        },
+        {
+          "label": "C",
+          "text": "Supportive care เท่านั้น",
+          "is_correct": false,
+          "explanation": "Influenza ที่ confirmed และมีอาการต้องการ antiviral"
+        },
+        {
+          "label": "D",
+          "text": "Amoxicillin-clavulanate เพื่อป้องกัน",
+          "is_correct": false,
+          "explanation": "ไม่แนะนำ prophylactic antibiotics สำหรับ viral infection"
+        },
+        {
+          "label": "E",
+          "text": "Paracetamol + รอผลการทดสอบ",
+          "is_correct": false,
+          "explanation": "ถ้า clinical diagnosis ชัดเจน ควรให้ antiviral ทันทีไม่ต้องรอผล"
+        }
+      ],
+      "key_takeaway": "Influenza ในเด็ก → Oseltamivir ภายใน 48 ชั่วโมง (dose ตามน้ำหนัก)"
+    }
+  },
+  {
+    "id": "39735ef8-0000-0000-0000-000000000000",
+    "correct_answer": "C",
+    "explanation": "เด็กตื่นตกใจ หวาดกลัว (อาจเป็น nocturnal pruritus จาก pinworm) → Scotch tape technique",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C (Scotch tape technique) เพราะ อาการคันทวารหนักตอนกลางคืน ตื่นตกใจ = suspected Enterobius vermicularis (pinworm)",
+      "reason": "Pinworm (Enterobius vermicularis): nocturnal perianal pruritus ทำให้เด็กตื่น ไม่สบาย Diagnosis: Scotch tape test (cellophane tape test) — เอา tape ติดที่ทวารหนักตอนเช้าก่อนอาบน้ำ จากนั้น microscopy ดู eggs Stool examination: sensitivity ต่ำสำหรับ pinworm เพราะ adult worm วางไข่ที่ perianal region ไม่ใช่ใน stool Treatment: Mebendazole หรือ Albendazole (ทั้งครอบครัว)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Stool examination for parasites",
+          "is_correct": false,
+          "explanation": "Sensitivity ต่ำสำหรับ pinworm เพราะ eggs อยู่ที่ perianal region"
+        },
+        {
+          "label": "B",
+          "text": "Stool culture",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ bacterial infection"
+        },
+        {
+          "label": "C",
+          "text": "Scotch tape technique",
+          "is_correct": true,
+          "explanation": "Gold standard สำหรับ pinworm diagnosis: tape perianal region ตอนเช้า → microscopy"
+        },
+        {
+          "label": "D",
+          "text": "Perianal swab culture",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ method สำหรับ pinworm"
+        },
+        {
+          "label": "E",
+          "text": "Complete blood count",
+          "is_correct": false,
+          "explanation": "eosinophilia อาจพบแต่ไม่ specific"
+        }
+      ],
+      "key_takeaway": "เด็กคันทวารหนักตอนกลางคืน = Pinworm → Scotch tape technique (perianal, ตอนเช้า)"
+    }
+  },
+  {
+    "id": "39e5fbf1-0000-0000-0000-000000000000",
+    "correct_answer": "D",
+    "explanation": "ทารก 3 เดือน delayed passing meconium + intermittent constipation → สงสัย Hirschsprung's disease → Saline irrigate rectum",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D (Saline irrigate rectum) เพราะ Hirschsprung's disease รักษาชั่วคราวด้วย rectal irrigation ก่อน definitive surgery",
+      "reason": "Hirschsprung's disease: absence of ganglion cells ใน distal colon ทำให้ chronic constipation ตั้งแต่แรกเกิด Delayed meconium passage (>48 ชั่วโมง) + intermittent obstipation = classic presentation Saline rectal irrigation: ช่วย relieve obstruction ในระยะรอผ่าตัด Diagnosis: rectal biopsy (absence of ganglion cells) + contrast enema Treatment: definitive = pullthrough surgery Laxative/enema ที่มี soap หรือ Unison อาจเป็นอันตรายสำหรับทารก",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Laxative",
+          "is_correct": false,
+          "explanation": "ไม่ address underlying aganglionosis"
+        },
+        {
+          "label": "B",
+          "text": "Soap irrigation",
+          "is_correct": false,
+          "explanation": "Soap อาจ irritate colon mucosa ในทารก"
+        },
+        {
+          "label": "C",
+          "text": "Unison enema",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ standard treatment สำหรับ Hirschsprung's ในทารก"
+        },
+        {
+          "label": "D",
+          "text": "Saline irrigate rectum",
+          "is_correct": true,
+          "explanation": "Safe และ effective สำหรับ temporary relief ใน Hirschsprung's ก่อนผ่าตัด"
+        },
+        {
+          "label": "E",
+          "text": "Rectal stool evacuation",
+          "is_correct": false,
+          "explanation": "Manual evacuation อาจบาดเจ็บ ไม่ใช่ preferred method"
+        }
+      ],
+      "key_takeaway": "Hirschsprung's disease → Saline rectal irrigation (temporizing) + definitive pullthrough surgery"
+    }
+  },
+  {
+    "id": "3a977373-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "เด็ก 6 ปี dyspnea + hoarseness + wheezing + chest tightness → Asthma",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Asthma) เพราะ recurrent dyspnea + wheezing + chest tightness ในเด็กวัยเรียน = classic asthma presentation",
+      "reason": "Asthma: recurrent wheezing, dyspnea, chest tightness, cough ที่แย่ลงตอนกลางคืน/exercise หรือ exposure triggers Hoarseness อาจมีใน asthma จาก airway hyperreactivity Spirometry: reversible obstructive pattern Treatment: inhaled SABA (salbutamol) + ICS Bacterial tracheitis: toxic-appearing child + stridor + fever Bronchiolitis: <2 ปี, RSV, wheeze + respiratory distress Pneumonia: fever + productive cough + consolidation",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Asthma",
+          "is_correct": true,
+          "explanation": "Recurrent wheeze + dyspnea + chest tightness + hoarseness ในเด็กวัยเรียน = asthma"
+        },
+        {
+          "label": "B",
+          "text": "Bacterial tracheitis",
+          "is_correct": false,
+          "explanation": "Toxic child + high fever + stridor ต้องการ intubation"
+        },
+        {
+          "label": "C",
+          "text": "Acute bronchitis",
+          "is_correct": false,
+          "explanation": "มักมี productive cough ใน older children ไม่มี recurrent wheeze"
+        },
+        {
+          "label": "D",
+          "text": "Acute bronchiolitis",
+          "is_correct": false,
+          "explanation": "พบในทารก <2 ปี จาก RSV ไม่ใช่เด็ก 6 ปี"
+        },
+        {
+          "label": "E",
+          "text": "Pneumonia",
+          "is_correct": false,
+          "explanation": "มี fever + focal consolidation ไม่ใช่ recurrent wheezing"
+        }
+      ],
+      "key_takeaway": "Recurrent wheeze + dyspnea + chest tightness ในเด็กวัยเรียน = Asthma (reversible obstruction)"
+    }
+  },
+  {
+    "id": "3ec4ca62-0000-0000-0000-000000000000",
+    "correct_answer": "D",
+    "explanation": "เด็ก 9 ปี ไข้ + productive cough 2 สัปดาห์ + สงสัย ARF → ตรวจ Antistreptolysin-O (ASO titer)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D (ASO titer) เพราะ suspected ARF หลัง streptococcal infection → ตรวจ ASO เพื่อยืนยัน recent strep exposure",
+      "reason": "ARF diagnosis ต้องการ evidence of recent strep infection: ASO titer: สูงหลัง strep pharyngitis Anti-DNase B: สูงหลัง strep skin infection (impetigo) Throat culture: confirm active infection ESR สูงใน ARF แต่ไม่ specific สำหรับ strep ASO >200 IU/mL ในเด็กถือว่าสูง CXR/Echo/EKG ใช้ประเมิน carditis ซึ่งเป็น sequelae",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Chest X ray",
+          "is_correct": false,
+          "explanation": "ประเมิน carditis (cardiomegaly) แต่ไม่ confirm strep infection"
+        },
+        {
+          "label": "B",
+          "text": "Echocardiography",
+          "is_correct": false,
+          "explanation": "ประเมิน valvular disease ใน ARF ไม่ใช่ confirm diagnosis"
+        },
+        {
+          "label": "C",
+          "text": "Electrocardiography",
+          "is_correct": false,
+          "explanation": "ดู PR prolongation ใน ARF ไม่ใช่ confirm strep"
+        },
+        {
+          "label": "D",
+          "text": "Antistreptolysin-O",
+          "is_correct": true,
+          "explanation": "ยืนยัน recent group A strep infection เป็น evidence ที่จำเป็นสำหรับ ARF diagnosis"
+        },
+        {
+          "label": "E",
+          "text": "ESR",
+          "is_correct": false,
+          "explanation": "Nonspecific inflammatory marker ไม่ specific สำหรับ ARF/strep"
+        }
+      ],
+      "key_takeaway": "Suspected ARF → ASO titer เพื่อ confirm recent strep pharyngitis"
+    }
+  },
+  {
+    "id": "3f815b6b-0000-0000-0000-000000000000",
+    "correct_answer": "E",
+    "explanation": "ทารก preterm 35 wk หลัง C/S respiratory distress → ให้ทั้ง Oxygen box + Nasal CPAP",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ E (Both B and C = O2 box + CPAP) เพราะ preterm 35 wk ที่มี respiratory distress อาจต้องการทั้ง oxygen supplementation และ CPAP support",
+      "reason": "Preterm 35 wk + RDS: oxygen box ให้ supplemental O2 CPAP ช่วย maintain airway pressure ป้องกัน atelectasis combination เหมาะสำหรับ preterm ที่มี significant respiratory distress Surfactant ใช้ถ้า intubated หรือ severe RDS IV glucose ถ้า hypoglycemia เท่านั้น",
+      "choices": [
+        {
+          "label": "A",
+          "text": "IV glucose",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ hypoglycemia ไม่ใช่ respiratory distress"
+        },
+        {
+          "label": "B",
+          "text": "Oxygen box เท่านั้น",
+          "is_correct": false,
+          "explanation": "อาจไม่เพียงพอสำหรับ preterm 35 wk ที่มี significant distress"
+        },
+        {
+          "label": "C",
+          "text": "Nasal CPAP เท่านั้น",
+          "is_correct": false,
+          "explanation": "ต้องการ O2 ร่วมด้วย"
+        },
+        {
+          "label": "D",
+          "text": "IV glucose + Oxygen box",
+          "is_correct": false,
+          "explanation": "IV glucose ไม่ใช่ indication ในกรณีนี้"
+        },
+        {
+          "label": "E",
+          "text": "Oxygen box + Nasal CPAP",
+          "is_correct": true,
+          "explanation": "Combination approach สำหรับ preterm 35 wk + respiratory distress"
+        }
+      ],
+      "key_takeaway": "Preterm 35 wk RDS → O2 box + Nasal CPAP combination"
+    }
+  },
+  {
+    "id": "4016320a-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "Newborn term ชัก 2 ชม. หลังคลอด + Apgar ต่ำ + BS ต่ำ → ให้ IV glucose ก่อน (hypoglycemic seizure)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (IV glucose) เพราะ neonatal seizure ที่มี blood sugar ต่ำ = hypoglycemic seizure ต้องแก้ hypoglycemia ก่อน",
+      "reason": "Neonatal seizure workup: ตรวจ glucose ทันที ถ้า hypoglycemia → IV glucose เป็น FIRST step ก่อนรักษาอื่น Blood sugar ต่ำในทารก = <45-50 mg/dL IV glucose 10%: 2 mL/kg (200 mg/kg) bolus ตามด้วย continuous infusion Phenobarbital: ถ้า seizure persist หลัง glucose correction Hct 63% = polycythemia ซึ่งเป็นอีก risk factor ของ hypoglycemia ใน newborn",
+      "choices": [
+        {
+          "label": "A",
+          "text": "IV glucose",
+          "is_correct": true,
+          "explanation": "Hypoglycemia เป็น treatable cause → ให้ IV glucose ก่อนเสมอในนeonatal seizure"
+        },
+        {
+          "label": "B",
+          "text": "IV atropine",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ treatment สำหรับ neonatal seizure"
+        },
+        {
+          "label": "C",
+          "text": "IV phenytoin",
+          "is_correct": false,
+          "explanation": "Antiepileptic ใช้หลังจาก correct metabolic causes แล้ว"
+        },
+        {
+          "label": "D",
+          "text": "IV phenobarbital",
+          "is_correct": false,
+          "explanation": "Second-line หลัง correct hypoglycemia แล้ว"
+        }
+      ],
+      "key_takeaway": "Neonatal seizure + hypoglycemia → IV glucose 10% (2 mL/kg) ก่อนเสมอ"
+    }
+  },
+  {
+    "id": "4064a2d0-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "เด็ก 8 ปี asthma severe attack → IV Dexamethasone เป็น systemic corticosteroid ที่ใช้ใน severe asthma",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (IV Dexamethasone) เพราะ severe asthma attack ต้องการ systemic corticosteroids + bronchodilators",
+      "reason": "Severe asthma attack management: 1. Inhaled SABA (salbutamol) nebulization — immediate bronchodilation 2. Systemic corticosteroids (IV/oral) — reduce inflammation ยาตัวเลือก: IV dexamethasone หรือ IV methylprednisolone หรือ oral prednisolone IV aminophylline: third-line ใน severe attack ที่ไม่ตอบสนอง Subcutaneous epinephrine/terbutaline: ถ้า nebulization ทำไม่ได้ IV dexamethasone ใน severe attack ก่อน nebulized albuterol เป็น correct ถ้า question ถามว่าอะไรควรทำก่อนในบริบทนี้",
+      "choices": [
+        {
+          "label": "A",
+          "text": "IV dexamethasone",
+          "is_correct": true,
+          "explanation": "Systemic corticosteroid สำหรับ severe asthma attack ลด airway inflammation"
+        },
+        {
+          "label": "B",
+          "text": "Albuterol nebulized",
+          "is_correct": false,
+          "explanation": "ให้ร่วมกันแต่ corticosteroid เป็น key treatment ใน severe attack"
+        },
+        {
+          "label": "C",
+          "text": "Subcutaneous adrenaline",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ anaphylaxis ไม่ใช่ asthma first-line"
+        },
+        {
+          "label": "D",
+          "text": "Subcutaneous terbutaline",
+          "is_correct": false,
+          "explanation": "ใช้ถ้า nebulization ทำไม่ได้"
+        },
+        {
+          "label": "E",
+          "text": "IV aminophylline",
+          "is_correct": false,
+          "explanation": "Third-line ใช้ถ้าไม่ตอบสนองต่อ SABA + corticosteroid"
+        }
+      ],
+      "key_takeaway": "Severe asthma attack → Systemic corticosteroids (IV dexamethasone) + Inhaled SABA"
+    }
+  },
+  {
+    "id": "42477217-0000-0000-0000-000000000000",
+    "correct_answer": "C",
+    "explanation": "เด็ก carbamazepine 2 สัปดาห์ + fever + widespread skin detachment >30% → Toxic Epidermal Necrolysis (TEN)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C (Toxic Epidermal Necrolysis) เพราะ drug-induced skin detachment >30% BSA = TEN (most severe DRESS/SJS/TEN spectrum)",
+      "reason": "SJS/TEN spectrum จาก drugs (carbamazepine, allopurinol, sulfonamides): SJS: skin detachment <10% BSA SJS-TEN overlap: 10-30% TEN: >30% BSA skin detachment Erythema multiforme: <10%, target lesions, มักจาก HSV infection DRESS: drug rash + eosinophilia + systemic symptoms (organ involvement) SSSS: เกิดจาก Staphylococcus exotoxin ไม่ใช่ drug TEN management: ICU/burn unit, IV immunoglobulin, cyclosporine, supportive care",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Erythema multiforme",
+          "is_correct": false,
+          "explanation": "<10% skin involvement, target lesions, มักจาก HSV ไม่ใช่ drug"
+        },
+        {
+          "label": "B",
+          "text": "Stevens-Johnson syndrome",
+          "is_correct": false,
+          "explanation": "<10% skin detachment; ถ้า >30% = TEN"
+        },
+        {
+          "label": "C",
+          "text": "Toxic epidermal necrolysis",
+          "is_correct": true,
+          "explanation": ">30% BSA skin detachment จาก drug (carbamazepine) = TEN (most severe form)"
+        },
+        {
+          "label": "D",
+          "text": "Staphylococcal scalded skin syndrome",
+          "is_correct": false,
+          "explanation": "Staphylococcal exotoxin ในทารก/เด็กเล็ก แยกได้จาก Nikolsky sign + cleavage plane"
+        },
+        {
+          "label": "E",
+          "text": "DRESS syndrome",
+          "is_correct": false,
+          "explanation": "Drug rash + eosinophilia + organ involvement ไม่มี massive skin detachment"
+        }
+      ],
+      "key_takeaway": "Drug + skin detachment >30% = TEN (ส่ง burn unit, stop drug ทันที)"
+    }
+  },
+  {
+    "id": "437a4f76-0000-0000-0000-000000000000",
+    "correct_answer": "C",
+    "explanation": "เด็ก ไข้ + เจ็บคอ + vesicles ในปาก → Hand Foot Mouth disease / Herpangina จาก Coxsackie A virus",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C (Coxsackie A) เพราะ vesicles ในปาก/咽喉 + fever ในเด็กเล็ก = Herpangina หรือ HFMD จาก Coxsackie A",
+      "reason": "Coxsackie A virus: Herpangina: vesicles/ulcers บน soft palate + uvula + anterior pillars Hand-Foot-Mouth disease (HFMD): vesicles ใน mouth + hands + feet RSV: bronchiolitis + URTI ใน infants Strep A: pharyngitis + tonsillar exudate + fever ไม่มี vesicles Influenza: systemic symptoms more prominent Herpes simplex: gingivostomatitis ใน primary infection",
+      "choices": [
+        {
+          "label": "A",
+          "text": "RSV",
+          "is_correct": false,
+          "explanation": "ทำให้ bronchiolitis ในทารก ไม่ใช่ oral vesicles"
+        },
+        {
+          "label": "B",
+          "text": "Streptococcus group A",
+          "is_correct": false,
+          "explanation": "Exudative pharyngitis ไม่มี vesicles"
+        },
+        {
+          "label": "C",
+          "text": "Coxsackie A",
+          "is_correct": true,
+          "explanation": "Herpangina/HFMD: vesicles ในปาก + fever = classic Coxsackie A presentation"
+        },
+        {
+          "label": "D",
+          "text": "Influenza virus",
+          "is_correct": false,
+          "explanation": "ไม่ทำให้ oral vesicles"
+        },
+        {
+          "label": "E",
+          "text": "Herpes virus",
+          "is_correct": false,
+          "explanation": "HSV ทำ gingivostomatitis แต่ location/pattern ต่างจาก Herpangina"
+        }
+      ],
+      "key_takeaway": "Fever + oral vesicles ในเด็ก = Herpangina/HFMD จาก Coxsackie A virus"
+    }
+  },
+  {
+    "id": "4ccf835e-0000-0000-0000-000000000000",
+    "correct_answer": "E",
+    "explanation": "นักเรียนรายหนึ่ง VZV → ให้ varicella vaccine แก่นักเรียนที่ไม่เคยได้รับวัคซีน (post-exposure prophylaxis)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ E (Varicella vaccine สำหรับผู้ที่ไม่เคยได้รับ) เพราะ post-exposure varicella vaccination ภายใน 72-120 ชั่วโมง ป้องกัน/ลด severity ของโรคได้",
+      "reason": "Varicella (chickenpox) post-exposure management ในโรงเรียน: ปิดโรงเรียน/ห้องเรียน ไม่จำเป็น ถ้าจัดการได้ Acyclovir prophylaxis: ไม่แนะนำ routine Varicella vaccine post-exposure: ให้ภายใน 72 ชั่วโมง (อาจได้ผลถึง 120 ชั่วโมง) สำหรับผู้ที่ไม่มีภูมิ ป้องกัน/ลด severity ได้ ~80-90% VZIG: สำหรับ immunocompromised patients เท่านั้น",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ปิดโรงเรียน 7 วัน",
+          "is_correct": false,
+          "explanation": "ไม่จำเป็น ถ้าสามารถ identify contacts และ vaccinate ได้"
+        },
+        {
+          "label": "B",
+          "text": "ปิดห้องเรียน 7 วัน",
+          "is_correct": false,
+          "explanation": "ไม่จำเป็น"
+        },
+        {
+          "label": "C",
+          "text": "Oral acyclovir สำหรับนักเรียนทุกคน",
+          "is_correct": false,
+          "explanation": "ไม่แนะนำ routine prophylactic acyclovir สำหรับ immunocompetent"
+        },
+        {
+          "label": "D",
+          "text": "Oral acyclovir สำหรับผู้ที่ไม่เคยรับวัคซีน",
+          "is_correct": false,
+          "explanation": "Vaccine ดีกว่า acyclovir สำหรับ post-exposure prophylaxis ใน immunocompetent"
+        },
+        {
+          "label": "E",
+          "text": "Varicella vaccine สำหรับผู้ที่ไม่เคยรับวัคซีน",
+          "is_correct": true,
+          "explanation": "Post-exposure varicella vaccine ภายใน 72-120 ชั่วโมง ป้องกัน/ลด severity"
+        }
+      ],
+      "key_takeaway": "VZV exposure ในโรงเรียน → Varicella vaccine ภายใน 72-120 ชม. สำหรับผู้ที่ไม่มีภูมิ"
+    }
+  },
+  {
+    "id": "514fd7ce-0000-0000-0000-000000000000",
+    "correct_answer": "C",
+    "explanation": "เด็ก 2 ปี hoarseness + inspiratory stridor (croup) → Inhaled corticosteroid เป็น treatment",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C (Inhaled corticosteroid) เพราะ croup (laryngotracheobronchitis) รักษาด้วย corticosteroids (oral/inhaled/IM dexamethasone)",
+      "reason": "Croup: parainfluenza virus ทำให้ subglottic edema อาการ: inspiratory stridor + barking cough + hoarseness ในเด็ก 6 เดือน-3 ปี Treatment: Dexamethasone (oral/IM) — ลด edema, ผลนาน IM/Inhaled corticosteroids Severe: Nebulized racemic epinephrine Lateral neck X-ray: ดู steeple sign (subglottic narrowing) แต่ไม่จำเป็นสำหรับ diagnosis Salbutamol/Guaifenesin ไม่ใช่ indication สำหรับ croup",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Lateral neck x-ray",
+          "is_correct": false,
+          "explanation": "ช่วย confirm แต่ไม่ใช่ treatment"
+        },
+        {
+          "label": "B",
+          "text": "Chest x-ray with neck",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ treatment"
+        },
+        {
+          "label": "C",
+          "text": "Inhaled corticosteroid",
+          "is_correct": true,
+          "explanation": "Corticosteroid ลด subglottic edema ใน croup"
+        },
+        {
+          "label": "D",
+          "text": "Salbutamol",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ asthma/bronchospasm ไม่ใช่ croup (upper airway)"
+        },
+        {
+          "label": "E",
+          "text": "Guaifenesin",
+          "is_correct": false,
+          "explanation": "Expectorant ไม่ใช่ treatment สำหรับ croup"
+        }
+      ],
+      "key_takeaway": "Croup (inspiratory stridor + barking cough) → Dexamethasone (oral/IM/inhaled)"
+    }
+  },
+  {
+    "id": "5be3b712-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "เด็ก anaphylaxis จาก food allergy + wheezing → IM epinephrine ทันทีเป็น first-line",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (IM epinephrine) เพราะ anaphylaxis = life-threatening → IM epinephrine (1:1000) คือ first-line treatment",
+      "reason": "Anaphylaxis management: First-line: IM epinephrine 0.01 mg/kg (max 0.5 mg) ที่ anterolateral thigh ทันที Epinephrine: vasoconstriction (↑BP), bronchodilation (↑FEV1), ลด mast cell degranulation Antihistamine (chlorpheniramine/diphenhydramine): adjunct เท่านั้น ไม่ใช่ first-line ช้าเกินไปสำหรับ severe anaphylaxis Methylprednisolone: ป้องกัน biphasic reaction แต่ไม่ใช่ first-line Oxygen: ให้ร่วมกันแต่ไม่ใช่ primary treatment",
+      "choices": [
+        {
+          "label": "A",
+          "text": "IM epinephrine",
+          "is_correct": true,
+          "explanation": "FIRST-LINE สำหรับ anaphylaxis ทุกราย — IM ที่ anterolateral thigh 0.01 mg/kg"
+        },
+        {
+          "label": "B",
+          "text": "IV chlorpheniramine",
+          "is_correct": false,
+          "explanation": "Antihistamine เป็น adjunct ช้าเกินไปสำหรับ acute anaphylaxis"
+        },
+        {
+          "label": "C",
+          "text": "IV antihistamine only",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอสำหรับ anaphylaxis ที่มี wheezing/hypotension"
+        },
+        {
+          "label": "D",
+          "text": "Oxygen therapy only",
+          "is_correct": false,
+          "explanation": "Oxygen ให้ร่วมกันแต่ epinephrine เป็น first-line"
+        },
+        {
+          "label": "E",
+          "text": "Methylprednisolone IV",
+          "is_correct": false,
+          "explanation": "ป้องกัน biphasic reaction แต่ไม่ใช่ first-line"
+        }
+      ],
+      "key_takeaway": "Anaphylaxis → IM Epinephrine FIRST (anterolateral thigh, 0.01 mg/kg)"
+    }
+  },
+  {
+    "id": "5d029235-0000-0000-0000-000000000000",
+    "correct_answer": "E",
+    "explanation": "ชาย 55 ปี erythematous greasy scaling ที่หน้า → Seborrheic dermatitis",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ E (Seborrheic dermatitis) เพราะ chronic erythematous greasy scaling ที่ face (nasolabial fold, eyebrow, scalp) ในผู้ชายวัยกลางคน = classic seborrheic dermatitis",
+      "reason": "Seborrheic dermatitis: Malassezia yeast overgrowth บน oily skin areas อาการ: greasy yellow scales + erythema ที่ scalp, nasolabial folds, eyebrows, beard, chest Treatment: antifungal shampoo (ketoconazole), mild topical corticosteroid Rosacea: facial flushing + telangiectasia + papulopustules ไม่มี scales Psoriasis: silvery thick scales ที่ extensor surfaces Acne: comedones + papules/pustules Tinea faciae: พบน้อยในวัยกลางคน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Rosacea",
+          "is_correct": false,
+          "explanation": "Flushing + papulopustules + telangiectasia ไม่มี greasy scales"
+        },
+        {
+          "label": "B",
+          "text": "Tinea faciae",
+          "is_correct": false,
+          "explanation": "Ringworm ที่หน้า โดยปกติไม่ greasy scaling"
+        },
+        {
+          "label": "C",
+          "text": "Acne vulgaris",
+          "is_correct": false,
+          "explanation": "Comedones + papules/pustules/cysts ไม่ใช่ greasy scaling"
+        },
+        {
+          "label": "D",
+          "text": "Psoriasis vulgaris",
+          "is_correct": false,
+          "explanation": "Silvery scales บน extensor surfaces ไม่ใช่ greasy facial scaling"
+        },
+        {
+          "label": "E",
+          "text": "Seborrheic dermatitis",
+          "is_correct": true,
+          "explanation": "Greasy erythematous scaling บน face/scalp/chest ใน sebaceous area = seborrheic dermatitis"
+        }
+      ],
+      "key_takeaway": "Greasy erythematous scaling บน face (nasolabial, eyebrow) = Seborrheic dermatitis (Malassezia)"
+    }
+  },
+  {
+    "id": "69b17a30-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "เด็ก 10 เดือน ไข้ ซึม อ้วก 5 วัน + bulging fontanelle → สงสัย meningitis → Lumbar puncture ทันที",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Lumbar puncture + CSF analysis) เพราะ suspected meningitis ในทารกต้องยืนยัน diagnosis ด้วย CSF",
+      "reason": "Bacterial meningitis ในทารก signs: fever + irritability/lethargy + bulging fontanelle + vomiting Lumbar puncture: CSF analysis (cell count, protein, glucose, culture) เป็น gold standard Blood culture ทำร่วมกันเสมอ CT brain ทำก่อน LP เฉพาะถ้ามี focal deficit/papilledema LP ก่อน CT ถ้าไม่มี contraindication เพราะรอ CT ทำให้รักษาช้า Empirical antibiotics เริ่มทันทีถ้า LP ล่าช้า",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Lumbar puncture + CSF analysis",
+          "is_correct": true,
+          "explanation": "Definitive diagnosis สำหรับ meningitis ทำทันทีถ้าไม่มี contraindication"
+        },
+        {
+          "label": "B",
+          "text": "Blood culture + CBC",
+          "is_correct": false,
+          "explanation": "ทำร่วมกันแต่ CSF เป็น definitive test"
+        },
+        {
+          "label": "C",
+          "text": "Stool culture",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ investigation สำหรับ meningitis"
+        },
+        {
+          "label": "D",
+          "text": "CXR + abdominal ultrasound",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ investigation หลักสำหรับ meningitis"
+        },
+        {
+          "label": "E",
+          "text": "Urine culture + urinalysis",
+          "is_correct": false,
+          "explanation": "ช่วย rule out UTI แต่ไม่ใช่ primary investigation สำหรับ suspected meningitis"
+        }
+      ],
+      "key_takeaway": "Suspected meningitis ในทารก → LP ทันที (CSF: WBC, protein, glucose, culture)"
+    }
+  },
+  {
+    "id": "6b7efd7e-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "ทารก 2 ชั่วโมง lip smacking + cyclic movement (neonatal seizure) → IV glucose 10% ทันที",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (IV glucose 10%) เพราะ neonatal seizure ในชั่วโมงแรกหลังคลอด ต้องตรวจและแก้ hypoglycemia ก่อนเสมอ",
+      "reason": "Neonatal seizure differential: Hypoglycemia (most treatable and common), hypocalcemia, hypoxic-ischemic encephalopathy, infection Rule: ตรวจ bedside glucose ทันที ถ้า <45-50 mg/dL → IV glucose 10% (2 mL/kg bolus) ก่อน Phenobarbital: ถ้า seizure ยังคงอยู่หลัง correct metabolic causes Ampicillin + gentamicin: ถ้า suspect infection แต่ glucose ต้องแก้ก่อน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "IV glucose 10% (2 mL/kg, 1-2 mL/min)",
+          "is_correct": true,
+          "explanation": "Treat hypoglycemia ก่อนเสมอใน neonatal seizure — most treatable cause"
+        },
+        {
+          "label": "B",
+          "text": "IV atropine 0.1 mg/kg",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ treatment สำหรับ neonatal seizure"
+        },
+        {
+          "label": "C",
+          "text": "IV diazepam 0.1-0.3 mg/kg",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ first-line ใน neonatal seizure อาจทำให้ respiratory depression"
+        },
+        {
+          "label": "D",
+          "text": "IV phenobarbital 15-20 mg/kg",
+          "is_correct": false,
+          "explanation": "หลังจาก correct metabolic causes แล้วค่อยให้"
+        },
+        {
+          "label": "E",
+          "text": "IV ampicillin + gentamicin",
+          "is_correct": false,
+          "explanation": "ให้ถ้าสงสัย infection แต่ glucose ต้องแก้ก่อน"
+        }
+      ],
+      "key_takeaway": "Neonatal seizure → IV glucose ก่อนเสมอ (hypoglycemia = most treatable cause)"
+    }
+  }
+]

@@ -1,0 +1,758 @@
+[
+  {
+    "scenario": "ชายอายุ 55 ปี เป็นเบาหวานชนิดที่ 2 มา 15 ปี ความดันโลหิต 150/95 mmHg ตรวจปัสสาวะพบ proteinuria 3+ ไม่พบเม็ดเลือดแดง BUN 35 mg/dL, Cr 2.5 mg/dL, HbA1c 9.5% การรักษาที่เหมาะสมที่สุดเพื่อชะลอการเสื่อมของไตคือ",
+    "choices": [
+      {"label": "A", "text": "Amlodipine"},
+      {"label": "B", "text": "ACE inhibitor"},
+      {"label": "C", "text": "Hydrochlorothiazide"},
+      {"label": "D", "text": "Atenolol"},
+      {"label": "E", "text": "Doxazosin"}
+    ],
+    "correct_answer": "B",
+    "explanation": "ACE inhibitor เป็นยาลดความดันที่มีผล renoprotective โดยลด intraglomerular pressure และลด proteinuria ในผู้ป่วย diabetic nephropathy",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. ACE inhibitor",
+      "reason": "ผู้ป่วยรายนี้มีลักษณะของ diabetic nephropathy ได้แก่ เบาหวานมานาน ความดันสูง proteinuria มาก และ renal insufficiency (Cr 2.5)\n\nACE inhibitor (เช่น enalapril, ramipril) หรือ ARB (เช่น losartan, valsartan) เป็น first-line treatment สำหรับ diabetic nephropathy เพราะ:\n1. ลด systemic blood pressure\n2. ลด intraglomerular pressure โดย dilate efferent arteriole มากกว่า afferent\n3. ลด proteinuria ได้อย่างมีนัยสำคัญ\n4. ชะลอการ progression ไปสู่ ESRD\n\nACE inhibitor มี renoprotective effect ที่เหนือกว่ายาลดความดันอื่นแม้จะลดความดันได้เท่ากัน เนื่องจากผลโดยตรงต่อ RAAS system ในไต\n\nข้อควรระวัง: ติดตาม K+ และ Cr หลังเริ่มยา ถ้า Cr เพิ่มขึ้น > 30% ควรหยุดยาและหาสาเหตุ (เช่น renal artery stenosis)",
+      "choices": [
+        {"label": "A", "text": "Amlodipine", "is_correct": false, "explanation": "Amlodipine เป็น dihydropyridine CCB ลดความดันได้ดีแต่ dilate afferent arteriole ทำให้ intraglomerular pressure ไม่ลดลง ไม่มีผล renoprotective เท่า ACE inhibitor ในการลด proteinuria"},
+        {"label": "B", "text": "ACE inhibitor", "is_correct": true, "explanation": "ACE inhibitor ลด angiotensin II ทำให้ efferent arteriole dilate ลด intraglomerular pressure ลด proteinuria และชะลอ progression ของ diabetic nephropathy ไปสู่ ESRD อย่างมีหลักฐานจากหลายการศึกษา"},
+        {"label": "C", "text": "Hydrochlorothiazide", "is_correct": false, "explanation": "Thiazide ลดความดันได้ดีแต่ไม่มี renoprotective effect เหมือน ACE inhibitor อาจเพิ่มน้ำตาลในเลือด ไม่เหมาะเป็น monotherapy ในผู้ป่วยเบาหวานที่มี proteinuria มาก"},
+        {"label": "D", "text": "Atenolol", "is_correct": false, "explanation": "Beta-blocker ลดความดันได้แต่ไม่มี renoprotective effect และอาจ mask hypoglycemia symptoms ในผู้ป่วยเบาหวาน ไม่ใช่ first-line สำหรับ diabetic nephropathy"},
+        {"label": "E", "text": "Doxazosin", "is_correct": false, "explanation": "Alpha-blocker ไม่ใช่ first-line สำหรับ hypertension หรือ diabetic nephropathy การศึกษา ALLHAT พบว่าเพิ่มความเสี่ยง heart failure เมื่อเทียบกับ chlorthalidone"}
+      ],
+      "key_takeaway": "ACE inhibitor หรือ ARB เป็น first-line treatment สำหรับ diabetic nephropathy ลด intraglomerular pressure ลด proteinuria และชะลอ progression ไปสู่ ESRD"
+    },
+    "subject": "nephro_med",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 30 ปี มาด้วยหน้าบวม ขาบวมกดบุ๋ม 2 สัปดาห์ ตรวจร่างกาย BP 120/80 mmHg ตรวจปัสสาวะ protein 4+ ไม่มี RBC ผล lab: serum albumin 1.8 g/dL, total cholesterol 380 mg/dL, Cr 0.9 mg/dL, 24-hr urine protein 8 g/day การวินิจฉัยที่น่าจะเป็นมากที่สุดคือ",
+    "choices": [
+      {"label": "A", "text": "Nephritic syndrome"},
+      {"label": "B", "text": "Nephrotic syndrome"},
+      {"label": "C", "text": "Acute kidney injury"},
+      {"label": "D", "text": "Chronic kidney disease stage 5"},
+      {"label": "E", "text": "Urinary tract infection"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Nephrotic syndrome ประกอบด้วย proteinuria > 3.5 g/day, hypoalbuminemia, hyperlipidemia และ edema ผู้ป่วยรายนี้มีครบทุกข้อ",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Nephrotic syndrome",
+      "reason": "ผู้ป่วยมีลักษณะครบ tetrad ของ nephrotic syndrome:\n1. Proteinuria > 3.5 g/day (24-hr urine protein = 8 g/day)\n2. Hypoalbuminemia (serum albumin 1.8 g/dL, ปกติ > 3.5)\n3. Hyperlipidemia (total cholesterol 380 mg/dL)\n4. Edema (หน้าบวม ขาบวมกดบุ๋ม)\n\nกลไก: การสูญเสียโปรตีนทางปัสสาวะจำนวนมาก → hypoalbuminemia → ลด oncotic pressure → edema ตับตอบสนองโดยสร้างโปรตีนเพิ่มรวมถึง lipoproteins → hyperlipidemia\n\nในหญิงอายุ 30 ปี สาเหตุที่พบบ่อยที่สุดคือ minimal change disease (MCD) รองลงมาคือ focal segmental glomerulosclerosis (FSGS) และ membranous nephropathy\n\nการที่ความดันปกติ ไม่มี RBC ในปัสสาวะ และ Cr ปกติ สนับสนุน nephrotic syndrome มากกว่า nephritic syndrome",
+      "choices": [
+        {"label": "A", "text": "Nephritic syndrome", "is_correct": false, "explanation": "Nephritic syndrome มีลักษณะ hematuria (RBC casts), hypertension, oliguria, mild proteinuria (< 3.5 g/day) ผู้ป่วยรายนี้ไม่มี hematuria ไม่มี hypertension มี massive proteinuria จึงเป็น nephrotic ไม่ใช่ nephritic"},
+        {"label": "B", "text": "Nephrotic syndrome", "is_correct": true, "explanation": "มีครบ tetrad: proteinuria > 3.5 g/day (8 g), hypoalbuminemia (1.8), hyperlipidemia (cholesterol 380), edema (หน้าบวม ขาบวม) ไม่มี hematuria ความดันปกติ Cr ปกติ เข้ากับ nephrotic syndrome"},
+        {"label": "C", "text": "Acute kidney injury", "is_correct": false, "explanation": "AKI มี Cr เพิ่มขึ้นอย่างรวดเร็ว ปัสสาวะออกน้อย ผู้ป่วยรายนี้ Cr 0.9 ซึ่งปกติ ไม่เข้ากับ AKI"},
+        {"label": "D", "text": "CKD stage 5", "is_correct": false, "explanation": "CKD stage 5 มี GFR < 15 mL/min ผู้ป่วยรายนี้ Cr 0.9 แสดงว่า GFR ยังปกติ ไม่เข้ากับ CKD stage 5"},
+        {"label": "E", "text": "Urinary tract infection", "is_correct": false, "explanation": "UTI มีอาการปัสสาวะแสบขัด ปัสสาวะบ่อย ตรวจพบ WBC และ bacteria ในปัสสาวะ ไม่ใช่ massive proteinuria กับ edema"}
+      ],
+      "key_takeaway": "Nephrotic syndrome tetrad: proteinuria > 3.5 g/day, hypoalbuminemia, hyperlipidemia, edema ไม่มี hematuria ความดันปกติ ต่างจาก nephritic syndrome ที่มี hematuria, hypertension, mild proteinuria"
+    },
+    "subject": "nephro_med",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 65 ปี มีโรคไตเรื้อรังระยะที่ 4 (eGFR 20 mL/min) ตรวจพบ serum K+ 6.8 mEq/L EKG พบ peaked T waves และ widened QRS complex การรักษาเร่งด่วนลำดับแรกที่ควรทำคือ",
+    "choices": [
+      {"label": "A", "text": "ให้ calcium gluconate IV"},
+      {"label": "B", "text": "ให้ insulin + glucose IV"},
+      {"label": "C", "text": "ให้ sodium polystyrene sulfonate (Kayexalate)"},
+      {"label": "D", "text": "ให้ sodium bicarbonate IV"},
+      {"label": "E", "text": "ทำ hemodialysis ทันที"}
+    ],
+    "correct_answer": "A",
+    "explanation": "Hyperkalemia ที่มี EKG changes (peaked T waves, widened QRS) เป็นภาวะฉุกเฉิน ต้องให้ calcium gluconate IV เป็นลำดับแรกเพื่อ stabilize cardiac membrane ป้องกัน arrhythmia",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. ให้ calcium gluconate IV",
+      "reason": "Severe hyperkalemia (K+ > 6.5 mEq/L) ร่วมกับ EKG changes เป็นภาวะฉุกเฉินที่อาจเกิด fatal cardiac arrhythmia ได้ การรักษาต้องทำตามลำดับ:\n\n1. Stabilize cardiac membrane: Calcium gluconate 10% 10-20 mL IV ใน 2-5 นาที → ออกฤทธิ์ภายใน 1-3 นาที ไม่ลด K+ แต่ป้องกัน arrhythmia\n\n2. Shift K+ into cells:\n   - Regular insulin 10 units + D50W 50 mL IV → ออกฤทธิ์ใน 15-30 นาที\n   - Sodium bicarbonate IV (ถ้ามี acidosis)\n   - Nebulized salbutamol 10-20 mg\n\n3. Remove K+ from body:\n   - Loop diuretics (ถ้ายังมีปัสสาวะ)\n   - Sodium polystyrene sulfonate (Kayexalate) PO/PR\n   - Hemodialysis (definitive treatment)\n\nCalcium gluconate ต้องให้เป็นลำดับแรกเพราะ EKG มี changes แล้ว ต้อง stabilize myocardium ก่อน",
+      "choices": [
+        {"label": "A", "text": "Calcium gluconate IV", "is_correct": true, "explanation": "ลำดับแรกในการรักษา hyperkalemia ที่มี EKG changes Calcium antagonize ผลของ K+ ต่อ cardiac membrane ออกฤทธิ์ภายใน 1-3 นาที ป้องกัน fatal arrhythmia ไม่ได้ลดระดับ K+ แต่ซื้อเวลา"},
+        {"label": "B", "text": "Insulin + glucose IV", "is_correct": false, "explanation": "Insulin + glucose เป็น step ที่ 2 ช่วย shift K+ เข้าเซลล์ ลด K+ ได้ 0.5-1.0 mEq/L ภายใน 15-30 นาที แต่ต้องให้ calcium ก่อนเพื่อ stabilize cardiac membrane"},
+        {"label": "C", "text": "Kayexalate", "is_correct": false, "explanation": "Kayexalate เป็น K+ exchange resin ช่วยกำจัด K+ ออกจากร่างกาย แต่ออกฤทธิ์ช้า (ชั่วโมง-วัน) ไม่เหมาะสำหรับ acute management ที่มี EKG changes"},
+        {"label": "D", "text": "Sodium bicarbonate IV", "is_correct": false, "explanation": "NaHCO3 ช่วย shift K+ เข้าเซลล์โดยเฉพาะเมื่อมี metabolic acidosis ร่วม แต่ไม่ใช่ลำดับแรก ต้อง stabilize cardiac membrane ด้วย calcium ก่อน"},
+        {"label": "E", "text": "Hemodialysis ทันที", "is_correct": false, "explanation": "Hemodialysis เป็น definitive treatment ที่ลด K+ ได้ดีที่สุด แต่ต้องใช้เวลาเตรียมตัว (30-60 นาที) ไม่ทันเวลาถ้ามี EKG changes ต้องให้ calcium ก่อนระหว่างรอ dialysis"}
+      ],
+      "key_takeaway": "Severe hyperkalemia + EKG changes: ลำดับที่ 1 = IV calcium gluconate (stabilize membrane) → ลำดับที่ 2 = insulin + glucose (shift K+ into cells) → ลำดับที่ 3 = remove K+ (dialysis, Kayexalate)"
+    },
+    "subject": "nephro_med",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 25 ปี มาด้วยปัสสาวะสีโค้ก 2 วัน หลังเป็นหวัดเจ็บคอ 1 วัน ตรวจร่างกาย BP 130/85 mmHg ขาบวมเล็กน้อย ตรวจปัสสาวะ RBC 50-100/HPF, RBC casts, protein 2+ ผล lab: C3 ปกติ, C4 ปกติ, serum IgA สูง, Cr 1.5 mg/dL การวินิจฉัยที่น่าจะเป็นมากที่สุดคือ",
+    "choices": [
+      {"label": "A", "text": "Post-streptococcal glomerulonephritis"},
+      {"label": "B", "text": "IgA nephropathy"},
+      {"label": "C", "text": "Lupus nephritis"},
+      {"label": "D", "text": "Goodpasture syndrome"},
+      {"label": "E", "text": "Membranous nephropathy"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Gross hematuria ที่เกิดพร้อมกับ (synpharyngitic) หรือ 1-2 วันหลัง upper respiratory infection, serum IgA สูง, complement ปกติ เข้ากับ IgA nephropathy (Berger's disease)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. IgA nephropathy",
+      "reason": "IgA nephropathy (Berger's disease) เป็น glomerulonephritis ที่พบบ่อยที่สุดในโลก มีลักษณะเฉพาะคือ:\n\n1. Synpharyngitic hematuria: ปัสสาวะเป็นเลือดเกิดพร้อมกับ (ภายใน 1-2 วัน) หรือไม่นานหลัง upper respiratory tract infection ต่างจาก PSGN ที่เกิดหลัง 1-3 สัปดาห์\n\n2. Serum IgA สูง (พบใน 50% ของผู้ป่วย)\n\n3. Complement (C3, C4) ปกติ ต่างจาก PSGN ที่มี C3 ต่ำ\n\n4. Pathology: mesangial IgA deposits ใน immunofluorescence\n\nผู้ป่วยรายนี้มีลักษณะ classic คือ:\n- อายุน้อย (25 ปี)\n- Gross hematuria (ปัสสาวะสีโค้ก) เกิดหลังเจ็บคอ 1 วัน (synpharyngitic)\n- RBC casts (glomerular origin)\n- Serum IgA สูง\n- Complement ปกติ",
+      "choices": [
+        {"label": "A", "text": "Post-streptococcal GN", "is_correct": false, "explanation": "PSGN เกิดหลัง streptococcal infection 1-3 สัปดาห์ (latent period) ไม่ใช่ 1-2 วัน และมี C3 ต่ำ ต่างจากผู้ป่วยรายนี้ที่มี complement ปกติ และ IgA สูง"},
+        {"label": "B", "text": "IgA nephropathy", "is_correct": true, "explanation": "Classic presentation: synpharyngitic hematuria (เกิดภายใน 1-2 วันหลังเจ็บคอ), serum IgA สูง, complement ปกติ, gross hematuria กับ RBC casts เป็น glomerulonephritis ที่พบบ่อยที่สุด"},
+        {"label": "C", "text": "Lupus nephritis", "is_correct": false, "explanation": "Lupus nephritis มักมี C3 และ C4 ต่ำ มี positive ANA และ anti-dsDNA ผู้ป่วยรายนี้ complement ปกติ ไม่มีอาการอื่นของ SLE (ผื่น ข้ออักเสบ)"},
+        {"label": "D", "text": "Goodpasture syndrome", "is_correct": false, "explanation": "Goodpasture syndrome มี anti-GBM antibody มักมี pulmonary hemorrhage ร่วม (pulmonary-renal syndrome) ผู้ป่วยรายนี้ไม่มีอาการทางปอด และ IgA สูงบ่งชี้ IgA nephropathy"},
+        {"label": "E", "text": "Membranous nephropathy", "is_correct": false, "explanation": "Membranous nephropathy มักมาด้วย nephrotic syndrome (massive proteinuria, edema) ไม่ใช่ nephritic syndrome กับ gross hematuria พบบ่อยในผู้ใหญ่อายุ 40-60 ปี"}
+      ],
+      "key_takeaway": "IgA nephropathy: synpharyngitic hematuria (เกิดพร้อมหรือ 1-2 วันหลังเจ็บคอ) + serum IgA สูง + complement ปกติ ต่างจาก PSGN ที่มี latent period 1-3 สัปดาห์ + C3 ต่ำ"
+    },
+    "subject": "nephro_med",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 70 ปี โรคไตเรื้อรังระยะที่ 5 (eGFR 8 mL/min) มีอาการคลื่นไส้ อาเจียน เบื่ออาหาร คันตามตัว ตรวจพบ BUN 120 mg/dL, Cr 10 mg/dL, K+ 5.8 mEq/L, HCO3- 14 mEq/L, Ca2+ 7.5 mg/dL, PO4 8.0 mg/dL, Hb 8.0 g/dL ข้อใดเป็นข้อบ่งชี้ในการเริ่ม renal replacement therapy (dialysis) ที่ชัดเจนที่สุด",
+    "choices": [
+      {"label": "A", "text": "Refractory hyperkalemia"},
+      {"label": "B", "text": "Severe metabolic acidosis ที่ไม่ตอบสนองต่อยา"},
+      {"label": "C", "text": "Uremic symptoms (คลื่นไส้ อาเจียน เบื่ออาหาร คัน)"},
+      {"label": "D", "text": "Fluid overload ที่ไม่ตอบสนองต่อ diuretics"},
+      {"label": "E", "text": "Anemia of CKD"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Uremic symptoms (คลื่นไส้ อาเจียน เบื่ออาหาร คันตามตัว) ร่วมกับ eGFR 8 mL/min เป็นข้อบ่งชี้ชัดเจนในการเริ่ม dialysis เพราะแสดงว่าไตไม่สามารถกำจัดของเสียได้เพียงพอ",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Uremic symptoms",
+      "reason": "ข้อบ่งชี้ในการเริ่ม renal replacement therapy จำง่ายด้วย AEIOU:\nA = Acidosis (severe metabolic acidosis refractory to treatment)\nE = Electrolyte (refractory hyperkalemia)\nI = Intoxication (dialyzable toxins)\nO = Overload (fluid overload refractory to diuretics)\nU = Uremia (uremic symptoms)\n\nในผู้ป่วยรายนี้ มี uremic symptoms ชัดเจน (คลื่นไส้ อาเจียน เบื่ออาหาร คันตามตัว) ร่วมกับ eGFR 8 mL/min และ BUN 120 mg/dL ซึ่งเป็นข้อบ่งชี้ที่ชัดเจนที่สุดในการเริ่ม dialysis\n\nUr​emic symptoms แสดงว่า uremic toxins สะสมจนร่างกายไม่สามารถทนได้ ซึ่งไม่สามารถแก้ไขด้วยยาได้ ต้องใช้ dialysis เพื่อกำจัดของเสียออก\n\nK+ = 5.8 ยังไม่ถึง severe (> 6.5) และ HCO3- = 14 ยังอาจตอบสนองต่อ NaHCO3",
+      "choices": [
+        {"label": "A", "text": "Refractory hyperkalemia", "is_correct": false, "explanation": "K+ = 5.8 ในกรณีนี้ยังไม่ถึง severe (> 6.5) และยังไม่ refractory ต่อ medical treatment (insulin+glucose, Kayexalate) จึงยังไม่ใช่ข้อบ่งชี้เร่งด่วนที่สุด"},
+        {"label": "B", "text": "Severe metabolic acidosis", "is_correct": false, "explanation": "HCO3- = 14 แสดง mild-moderate acidosis ยังอาจตอบสนองต่อ oral NaHCO3 supplementation ถ้า refractory ต่อ treatment จึงจะเป็นข้อบ่งชี้"},
+        {"label": "C", "text": "Uremic symptoms", "is_correct": true, "explanation": "อาการ uremia ที่ชัดเจน (คลื่นไส้ อาเจียน เบื่ออาหาร คัน) ร่วมกับ BUN 120, eGFR 8 เป็นข้อบ่งชี้ชัดเจนที่สุด เพราะ uremic symptoms ไม่สามารถแก้ไขด้วยยาได้ ต้อง dialysis"},
+        {"label": "D", "text": "Fluid overload refractory to diuretics", "is_correct": false, "explanation": "ผู้ป่วยรายนี้ไม่มีข้อมูลว่ามี fluid overload หรือ refractory to diuretics จึงไม่ใช่ข้อบ่งชี้ในกรณีนี้"},
+        {"label": "E", "text": "Anemia of CKD", "is_correct": false, "explanation": "Anemia ใน CKD (Hb 8.0) รักษาด้วย erythropoietin-stimulating agents (ESA) และ iron supplementation ไม่ใช่ข้อบ่งชี้ในการเริ่ม dialysis"}
+      ],
+      "key_takeaway": "ข้อบ่งชี้เริ่ม dialysis จำด้วย AEIOU: Acidosis (refractory), Electrolyte (hyperK refractory), Intoxication, Overload (fluid, refractory), Uremia (symptoms) โดย uremic symptoms เป็นข้อบ่งชี้ที่สำคัญที่สุด"
+    },
+    "subject": "nephro_med",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 45 ปี มาห้องฉุกเฉินด้วยอาการปวดท้องด้านซ้ายร้าวไปที่ขาหนีบ ปัสสาวะเป็นเลือด คลื่นไส้ อาเจียน ตรวจร่างกาย costovertebral angle tenderness ด้านซ้าย CT KUB พบ ureteral stone ขนาด 3 mm ที่ left proximal ureter ไม่มี hydronephrosis ไม่มีไข้ Cr 1.0 mg/dL การรักษาที่เหมาะสมที่สุดคือ",
+    "choices": [
+      {"label": "A", "text": "Extracorporeal shock wave lithotripsy (ESWL)"},
+      {"label": "B", "text": "Ureteroscopy with laser lithotripsy"},
+      {"label": "C", "text": "Conservative management (ดื่มน้ำมาก ยาแก้ปวด medical expulsive therapy)"},
+      {"label": "D", "text": "Open surgery"},
+      {"label": "E", "text": "Percutaneous nephrolithotomy (PCNL)"}
+    ],
+    "correct_answer": "C",
+    "explanation": "นิ่วท่อไตขนาด < 5 mm มีโอกาสหลุดเองสูง (> 90%) การรักษาแบบ conservative (ดื่มน้ำมาก ยาแก้ปวด alpha-blocker เช่น tamsulosin) เป็น first-line treatment",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Conservative management",
+      "reason": "การจัดการนิ่วท่อไตขึ้นกับขนาด ตำแหน่ง และภาวะแทรกซ้อน:\n\n1. นิ่ว < 5 mm: โอกาสหลุดเอง > 90% → conservative management\n2. นิ่ว 5-10 mm: โอกาสหลุดเอง 20-50% → พิจารณา ESWL หรือ ureteroscopy\n3. นิ่ว > 10 mm: โอกาสหลุดเองน้อย → intervention\n\nConservative management ประกอบด้วย:\n- ดื่มน้ำมาก 2-3 ลิตร/วัน\n- ยาแก้ปวด (NSAIDs เป็น first-line, opioids ถ้าไม่ตอบสนอง)\n- Medical expulsive therapy: tamsulosin (alpha-blocker) ช่วยคลาย smooth muscle ของ ureter ทำให้นิ่วหลุดง่ายขึ้น\n- ติดตามอาการ 4-6 สัปดาห์\n\nในกรณีนี้ นิ่ว 3 mm ไม่มี hydronephrosis ไม่มี infection Cr ปกติ จึง conservative management เป็น first-line",
+      "choices": [
+        {"label": "A", "text": "ESWL", "is_correct": false, "explanation": "ESWL ใช้สำหรับนิ่วไตหรือ proximal ureteral stone ขนาด > 10-20 mm นิ่ว 3 mm มีโอกาสหลุดเองสูงมาก ไม่จำเป็นต้องทำ ESWL"},
+        {"label": "B", "text": "Ureteroscopy", "is_correct": false, "explanation": "Ureteroscopy เป็น invasive procedure ใช้สำหรับนิ่วที่ไม่สามารถรักษาด้วย conservative management หรือ ESWL ไม่เหมาะเป็น first-line สำหรับนิ่ว 3 mm ที่ไม่มีภาวะแทรกซ้อน"},
+        {"label": "C", "text": "Conservative management", "is_correct": true, "explanation": "นิ่ว 3 mm มีโอกาสหลุดเอง > 90% ไม่มี hydronephrosis ไม่มี infection Cr ปกติ conservative management (ดื่มน้ำมาก ยาแก้ปวด tamsulosin) เป็น first-line ที่เหมาะสมที่สุด"},
+        {"label": "D", "text": "Open surgery", "is_correct": false, "explanation": "Open surgery แทบไม่ใช้แล้วในปัจจุบัน ใช้เฉพาะกรณีพิเศษที่ endoscopic และ minimally invasive methods ไม่สามารถทำได้"},
+        {"label": "E", "text": "PCNL", "is_correct": false, "explanation": "PCNL ใช้สำหรับนิ่วไตขนาดใหญ่ (> 20 mm) หรือ staghorn calculi ไม่เหมาะสำหรับ ureteral stone ขนาดเล็ก"}
+      ],
+      "key_takeaway": "นิ่วท่อไต < 5 mm มีโอกาสหลุดเอง > 90% รักษาด้วย conservative management: ดื่มน้ำมาก ยาแก้ปวด (NSAIDs) และ medical expulsive therapy (tamsulosin)"
+    },
+    "subject": "nephro_med",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 40 ปี ตรวจพบ serum Na+ 118 mEq/L มีอาการปวดศีรษะ คลื่นไส้ สับสน ตรวจเพิ่มเติมพบ serum osmolality 250 mOsm/kg, urine osmolality 600 mOsm/kg, urine Na+ 45 mEq/L, TSH ปกติ, cortisol ปกติ ผู้ป่วยไม่ได้รับประทานยา euvolemic ภาวะนี้น่าจะเกิดจากสาเหตุใด",
+    "choices": [
+      {"label": "A", "text": "Psychogenic polydipsia"},
+      {"label": "B", "text": "SIADH"},
+      {"label": "C", "text": "Adrenal insufficiency"},
+      {"label": "D", "text": "Hypothyroidism"},
+      {"label": "E", "text": "Heart failure"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Hyponatremia + euvolemic + low serum osmolality + inappropriately concentrated urine (Uosm > 100) + high urine Na+ (> 40) + ปกติ thyroid/adrenal function = SIADH",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. SIADH",
+      "reason": "SIADH (Syndrome of Inappropriate ADH secretion) วินิจฉัยจาก:\n1. Hyponatremia (Na+ 118 mEq/L)\n2. Low serum osmolality (250 mOsm/kg, ปกติ 275-295)\n3. Euvolemia (ไม่บวม ไม่ dehydrate)\n4. Inappropriately concentrated urine (Uosm 600 > 100 mOsm/kg)\n5. High urine Na+ (45 > 40 mEq/L)\n6. Normal thyroid function (TSH ปกติ)\n7. Normal adrenal function (cortisol ปกติ)\n8. ไม่ได้ใช้ diuretics\n\nSIADH เกิดจากการหลั่ง ADH มากเกินไปโดยไม่เหมาะสม ทำให้ไตดูดน้ำกลับมากเกินไป → dilutional hyponatremia\n\nสาเหตุที่พบบ่อย: CNS disorders, pulmonary diseases, malignancies (small cell lung cancer), drugs (SSRIs, carbamazepine, cyclophosphamide)\n\nNa+ 118 กับอาการ neurological (ปวดศีรษะ สับสน) ต้องรักษาด้วย hypertonic saline (3% NaCl) อย่างระมัดระวัง ไม่แก้ Na+ เร็วเกิน 8-10 mEq/L/24 ชม. เพื่อป้องกัน osmotic demyelination syndrome",
+      "choices": [
+        {"label": "A", "text": "Psychogenic polydipsia", "is_correct": false, "explanation": "Psychogenic polydipsia มี urine osmolality ต่ำมาก (< 100 mOsm/kg) เพราะไตขับน้ำออกได้ดี ผู้ป่วยรายนี้ Uosm = 600 ซึ่งสูง (concentrated urine) ไม่เข้ากับ polydipsia"},
+        {"label": "B", "text": "SIADH", "is_correct": true, "explanation": "ผู้ป่วยมีลักษณะครบตามเกณฑ์ SIADH: hyponatremia, low serum Osm, euvolemia, Uosm > 100, UNa > 40, TSH/cortisol ปกติ ไม่ได้ใช้ diuretics"},
+        {"label": "C", "text": "Adrenal insufficiency", "is_correct": false, "explanation": "Adrenal insufficiency ทำให้ hyponatremia ได้จาก cortisol deficiency แต่ผู้ป่วยรายนี้ cortisol ปกติ จึงตัดออก"},
+        {"label": "D", "text": "Hypothyroidism", "is_correct": false, "explanation": "Severe hypothyroidism อาจทำให้ hyponatremia ได้ แต่ TSH ปกติในผู้ป่วยรายนี้ จึงตัดออก"},
+        {"label": "E", "text": "Heart failure", "is_correct": false, "explanation": "Heart failure เป็น hypervolemic hyponatremia มี edema และ urine Na+ ต่ำ (< 20) ผู้ป่วยรายนี้ euvolemic และ UNa สูง (45) ไม่เข้ากับ HF"}
+      ],
+      "key_takeaway": "SIADH: euvolemic hyponatremia + low serum Osm + Uosm > 100 + UNa > 40 + ปกติ thyroid/adrenal ต้องตัด hypothyroidism และ adrenal insufficiency ออกก่อน"
+    },
+    "subject": "nephro_med",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 60 ปี เป็นเบาหวานมา 20 ปี ความดันสูง ตรวจพบ Cr 4.0 mg/dL (eGFR 15 mL/min) ค่า lab: Ca2+ 7.8 mg/dL, PO4 6.5 mg/dL, intact PTH 450 pg/mL (ปกติ 10-65), 25-OH Vitamin D 15 ng/mL, alkaline phosphatase สูง ภาวะนี้เรียกว่า",
+    "choices": [
+      {"label": "A", "text": "Primary hyperparathyroidism"},
+      {"label": "B", "text": "Secondary hyperparathyroidism จาก CKD"},
+      {"label": "C", "text": "Tertiary hyperparathyroidism"},
+      {"label": "D", "text": "Hypoparathyroidism"},
+      {"label": "E", "text": "Vitamin D intoxication"}
+    ],
+    "correct_answer": "B",
+    "explanation": "CKD-MBD: ไตเสื่อม → ลด phosphate excretion → hyperphosphatemia → ลด 1,25(OH)2D → hypocalcemia → กระตุ้น PTH (secondary hyperparathyroidism)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Secondary hyperparathyroidism จาก CKD",
+      "reason": "CKD-Mineral and Bone Disorder (CKD-MBD) เป็นภาวะแทรกซ้อนที่พบได้ใน advanced CKD กลไกดังนี้:\n\n1. ไตเสื่อม → ขับ phosphate ได้น้อย → hyperphosphatemia (PO4 6.5)\n2. ไตเสื่อม → สร้าง 1,25-dihydroxyvitamin D (calcitriol) ลดลง → ลดการดูดซึม Ca2+ จากลำไส้\n3. Hyperphosphatemia + ลด calcitriol → hypocalcemia (Ca2+ 7.8)\n4. Hypocalcemia กระตุ้น parathyroid gland → สร้าง PTH มาก (PTH 450)\n5. PTH สูงเป็นเวลานาน → renal osteodystrophy (ALP สูง)\n\nเป็น secondary hyperparathyroidism เพราะ:\n- PTH สูงเป็นผลจากสาเหตุอื่น (CKD) ไม่ใช่ parathyroid adenoma\n- Ca2+ ต่ำ (ใน primary จะสูง)\n- PO4 สูง (ใน primary จะต่ำ)\n\n25-OH Vitamin D = 15 ng/mL (ต่ำ) เป็น vitamin D deficiency ที่ทำให้ปัญหา severe ขึ้น",
+      "choices": [
+        {"label": "A", "text": "Primary hyperparathyroidism", "is_correct": false, "explanation": "Primary hyperparathyroidism มี Ca2+ สูง (hypercalcemia) และ PO4 ต่ำ (hypophosphatemia) จาก autonomous PTH secretion (adenoma) ผู้ป่วยรายนี้ Ca2+ ต่ำ PO4 สูง จึงไม่ใช่ primary"},
+        {"label": "B", "text": "Secondary hyperparathyroidism จาก CKD", "is_correct": true, "explanation": "CKD (eGFR 15) → hyperphosphatemia + hypocalcemia + low vitamin D → กระตุ้น PTH (450) เป็น appropriate response ของ parathyroid ต่อ hypocalcemia ALP สูงจาก renal osteodystrophy"},
+        {"label": "C", "text": "Tertiary hyperparathyroidism", "is_correct": false, "explanation": "Tertiary hyperparathyroidism เกิดหลังจาก secondary นานมาก parathyroid gland เกิด autonomous secretion ทำให้ Ca2+ สูงแม้ว่า stimulus (hypocalcemia) หายไปแล้ว มักพบหลัง renal transplant ผู้ป่วยรายนี้ Ca2+ ยังต่ำ"},
+        {"label": "D", "text": "Hypoparathyroidism", "is_correct": false, "explanation": "Hypoparathyroidism มี PTH ต่ำ ทำให้ hypocalcemia และ hyperphosphatemia ผู้ป่วยรายนี้ PTH สูงมาก (450) จึงไม่ใช่ hypoparathyroidism"},
+        {"label": "E", "text": "Vitamin D intoxication", "is_correct": false, "explanation": "Vitamin D intoxication ทำให้ Ca2+ สูง (hypercalcemia) และ PO4 สูง ผู้ป่วยรายนี้ Ca2+ ต่ำ 25-OH VitD ต่ำ (15 ng/mL) ไม่ใช่ intoxication"}
+      ],
+      "key_takeaway": "CKD-MBD/Secondary hyperparathyroidism: CKD → hyperphosphatemia + hypocalcemia + low calcitriol → compensatory PTH elevation แตกต่างจาก primary ที่มี hypercalcemia + hypophosphatemia"
+    },
+    "subject": "nephro_med",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 50 ปี มาด้วยอาการปวดข้อนิ้วหัวแม่เท้าเฉียบพลัน บวมแดง ประวัติเป็นซ้ำหลายครั้ง ตรวจพบ tophi ที่หูและข้อ ผล lab: uric acid 11.0 mg/dL, Cr 2.0 mg/dL, eGFR 35 mL/min ยาลด uric acid ที่เหมาะสมที่สุดสำหรับผู้ป่วยรายนี้คือ",
+    "choices": [
+      {"label": "A", "text": "Allopurinol ขนาดปกติ (300 mg/day)"},
+      {"label": "B", "text": "Allopurinol ขนาดต่ำ (100 mg/day) แล้วค่อยเพิ่ม"},
+      {"label": "C", "text": "Febuxostat"},
+      {"label": "D", "text": "Probenecid"},
+      {"label": "E", "text": "Colchicine ขนาดสูง"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Febuxostat เป็น xanthine oxidase inhibitor ที่ metabolize ทาง liver ไม่ต้องปรับขนาดใน CKD ต่างจาก allopurinol ที่ต้องลดขนาดและเพิ่มช้า Probenecid ไม่ควรใช้เมื่อ GFR < 50",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Febuxostat",
+      "reason": "ผู้ป่วยรายนี้มี chronic tophaceous gout กับ CKD stage 3b (eGFR 35 mL/min) ต้องการ urate-lowering therapy (ULT) แต่ต้องพิจารณาการทำงานของไตด้วย\n\nFebuxostat เป็น selective xanthine oxidase inhibitor ที่มีข้อดีในผู้ป่วย CKD:\n1. Metabolize ทาง liver เป็นหลัก ไม่ต้องปรับขนาดตาม GFR\n2. ลด uric acid ได้ดีกว่า allopurinol ในหลายการศึกษา\n3. ปลอดภัยในผู้ป่วยที่มี mild-moderate CKD\n4. เริ่มที่ 40 mg/day เพิ่มเป็น 80 mg/day ตาม uric acid level\n\nAllopurinol ต้องเริ่มขนาดต่ำ (100 mg) และเพิ่มช้า ๆ ใน CKD เนื่องจากมี active metabolite (oxypurinol) ที่ขับทางไต อาจสะสมและเกิด hypersensitivity syndrome\n\nProbenecid (uricosuric) ไม่ควรใช้เมื่อ GFR < 50 mL/min เพราะประสิทธิภาพลดลงมาก",
+      "choices": [
+        {"label": "A", "text": "Allopurinol 300 mg/day", "is_correct": false, "explanation": "ขนาด 300 mg/day เป็นขนาดปกติสำหรับคนที่ไตปกติ ใน CKD (eGFR 35) ต้องเริ่มขนาดต่ำ (50-100 mg) และเพิ่มช้า ๆ เพื่อลดความเสี่ยง allopurinol hypersensitivity syndrome"},
+        {"label": "B", "text": "Allopurinol 100 mg/day แล้วเพิ่ม", "is_correct": false, "explanation": "เป็นทางเลือกที่ยอมรับได้ แต่ต้อง titrate ช้า ๆ และอาจไม่สามารถเพิ่มถึงขนาดที่ลด uric acid ได้เพียงพอเนื่องจาก CKD Febuxostat ใช้ง่ายกว่าใน CKD"},
+        {"label": "C", "text": "Febuxostat", "is_correct": true, "explanation": "Metabolize ทาง liver ไม่ต้องปรับขนาดใน CKD ลด uric acid ได้ดี ปลอดภัยกว่า allopurinol ใน CKD เริ่ม 40 mg/day เพิ่มเป็น 80 mg ตาม target uric acid < 6 mg/dL"},
+        {"label": "D", "text": "Probenecid", "is_correct": false, "explanation": "Probenecid เป็น uricosuric agent ที่ไม่ควรใช้เมื่อ GFR < 50 mL/min เพราะประสิทธิภาพลดลง อาจเพิ่มความเสี่ยง uric acid stone และ contraindicated ในผู้ที่มีประวัติ nephrolithiasis"},
+        {"label": "E", "text": "Colchicine ขนาดสูง", "is_correct": false, "explanation": "Colchicine ใช้รักษา acute gout flare ไม่ใช่ urate-lowering therapy และต้องลดขนาดใน CKD เพราะเพิ่มความเสี่ยง toxicity (myopathy, neuropathy) ขนาดสูงเป็นอันตราย"}
+      ],
+      "key_takeaway": "Febuxostat เหมาะสำหรับ urate-lowering therapy ในผู้ป่วย CKD เพราะ metabolize ทาง liver ไม่ต้องปรับขนาด ขณะที่ allopurinol ต้องเริ่มต่ำ-เพิ่มช้า และ probenecid ห้ามใช้เมื่อ GFR < 50"
+    },
+    "subject": "nephro_med",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 35 ปี ตั้งครรภ์ 28 สัปดาห์ มาด้วยความดันโลหิต 160/110 mmHg ขาบวม ตรวจปัสสาวะ protein 3+ ผล lab: Cr 1.8 mg/dL (ก่อนตั้งครรภ์ 0.7), platelet 85,000, AST 250, LDH 800, peripheral blood smear พบ schistocytes การวินิจฉัยที่เหมาะสมที่สุดคือ",
+    "choices": [
+      {"label": "A", "text": "Gestational hypertension"},
+      {"label": "B", "text": "Preeclampsia"},
+      {"label": "C", "text": "HELLP syndrome"},
+      {"label": "D", "text": "Thrombotic thrombocytopenic purpura (TTP)"},
+      {"label": "E", "text": "Hemolytic uremic syndrome (HUS)"}
+    ],
+    "correct_answer": "C",
+    "explanation": "HELLP syndrome: Hemolysis (LDH สูง, schistocytes), Elevated Liver enzymes (AST 250), Low Platelets (85,000) ในหญิงตั้งครรภ์ที่มี preeclampsia",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. HELLP syndrome",
+      "reason": "HELLP syndrome เป็นภาวะแทรกซ้อนรุนแรงของ preeclampsia ที่ต้องวินิจฉัยและรักษาเร่งด่วน\n\nHELLP ย่อมาจาก:\nH = Hemolysis: LDH สูง (800), schistocytes ใน peripheral blood smear, indirect bilirubin อาจสูง\nEL = Elevated Liver enzymes: AST 250 (สูง)\nLP = Low Platelets: 85,000 (ปกติ > 150,000)\n\nผู้ป่วยรายนี้มีลักษณะครบ:\n- ตั้งครรภ์ 28 สัปดาห์ (มักเกิดใน 3rd trimester)\n- Hypertension รุนแรง (160/110)\n- Proteinuria (3+) → เข้ากับ preeclampsia\n- Hemolysis (LDH 800, schistocytes)\n- Elevated liver enzymes (AST 250)\n- Thrombocytopenia (platelet 85,000)\n- AKI (Cr เพิ่มจาก 0.7 เป็น 1.8)\n\nHELLP syndrome เป็นข้อบ่งชี้ในการ deliver ทารกโดยเร็วที่สุดเพื่อป้องกัน maternal complications",
+      "choices": [
+        {"label": "A", "text": "Gestational hypertension", "is_correct": false, "explanation": "Gestational hypertension มีเพียงความดันสูงหลัง 20 สัปดาห์ ไม่มี proteinuria ไม่มี organ damage ผู้ป่วยรายนี้มี proteinuria มาก และ multiorgan involvement"},
+        {"label": "B", "text": "Preeclampsia", "is_correct": false, "explanation": "Preeclampsia มี hypertension + proteinuria แต่ HELLP syndrome เป็นภาวะแทรกซ้อนที่รุนแรงกว่า มี hemolysis, elevated liver enzymes, low platelets ร่วมด้วย ซึ่งผู้ป่วยรายนี้มีครบ"},
+        {"label": "C", "text": "HELLP syndrome", "is_correct": true, "explanation": "มีครบ triad: Hemolysis (LDH 800, schistocytes), Elevated Liver enzymes (AST 250), Low Platelets (85,000) ในบริบท preeclampsia ที่ตั้งครรภ์ 28 สัปดาห์ ต้อง deliver โดยเร็ว"},
+        {"label": "D", "text": "TTP", "is_correct": false, "explanation": "TTP มี pentad: thrombocytopenia, MAHA, neurological symptoms, fever, renal impairment แต่ในบริบทตั้งครรภ์ที่มี hypertension + proteinuria HELLP syndrome เป็นการวินิจฉัยที่เหมาะสมกว่า TTP ไม่มี hypertension หรือ proteinuria เป็นลักษณะเด่น"},
+        {"label": "E", "text": "HUS", "is_correct": false, "explanation": "HUS มี triad: MAHA, thrombocytopenia, AKI มักเกิดจาก Shiga toxin (STEC) ในบริบทตั้งครรภ์ที่มี hypertension + proteinuria + elevated liver enzymes HELLP เป็นการวินิจฉัยที่ถูกต้องกว่า"}
+      ],
+      "key_takeaway": "HELLP syndrome = Hemolysis + Elevated Liver enzymes + Low Platelets ในหญิงตั้งครรภ์ที่มี preeclampsia เป็นภาวะฉุกเฉินที่ต้อง deliver ทารกโดยเร็ว"
+    },
+    "subject": "nephro_med",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 55 ปี เป็นเบาหวานชนิดที่ 2 มาพบแพทย์ตามนัด ผล lab: Na+ 140, K+ 5.0, Cl- 110, HCO3- 18 mEq/L คำนวณ anion gap ได้เท่ากับเท่าใด และเป็น metabolic acidosis ชนิดใด",
+    "choices": [
+      {"label": "A", "text": "AG = 12, Normal anion gap metabolic acidosis"},
+      {"label": "B", "text": "AG = 12, High anion gap metabolic acidosis"},
+      {"label": "C", "text": "AG = 18, High anion gap metabolic acidosis"},
+      {"label": "D", "text": "AG = 8, Normal anion gap metabolic acidosis"},
+      {"label": "E", "text": "AG = 22, High anion gap metabolic acidosis"}
+    ],
+    "correct_answer": "A",
+    "explanation": "AG = Na+ - (Cl- + HCO3-) = 140 - (110 + 18) = 12 ซึ่งเป็นค่าปกติ (8-12) ดังนั้นเป็น normal anion gap metabolic acidosis (NAGMA) เช่น renal tubular acidosis ที่พบได้ใน diabetic nephropathy",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. AG = 12, Normal anion gap metabolic acidosis",
+      "reason": "Anion gap (AG) คำนวณจาก AG = Na+ - (Cl- + HCO3-) = 140 - (110 + 18) = 12\n\nค่า AG ปกติ = 8-12 mEq/L (ถ้ารวม K+ ใน formula จะบวก 4 ได้ 12-16)\n\nในกรณีนี้ AG = 12 (ปกติ) แต่มี metabolic acidosis (HCO3- = 18 ต่ำ) จึงเป็น Normal Anion Gap Metabolic Acidosis (NAGMA) หรือ hyperchloremic metabolic acidosis (Cl- = 110 สูง)\n\nสาเหตุของ NAGMA จำด้วย HARDUPS:\nH = Hyperalimentation\nA = Acetazolamide/Adrenal insufficiency\nR = Renal tubular acidosis\nD = Diarrhea\nU = Ureteral diversion\nP = Pancreatic fistula\nS = Saline infusion (large volume)\n\nในผู้ป่วยเบาหวานที่มี CKD สาเหตุที่พบบ่อยคือ type 4 RTA (hypoaldosteronism) ซึ่งมี hyperkalemia ร่วมด้วย (K+ = 5.0)",
+      "choices": [
+        {"label": "A", "text": "AG = 12, NAGMA", "is_correct": true, "explanation": "AG = 140-(110+18) = 12 ปกติ HCO3- = 18 ต่ำแสดง metabolic acidosis Cl- = 110 สูง (hyperchloremic) เป็น NAGMA ซึ่งอาจเกิดจาก type 4 RTA ในผู้ป่วยเบาหวานที่มี CKD"},
+        {"label": "B", "text": "AG = 12, HAGMA", "is_correct": false, "explanation": "AG = 12 เป็นค่าปกติ ไม่ใช่ high anion gap HAGMA ต้องมี AG > 12 (หรือ > 16 ถ้ารวม K+)"},
+        {"label": "C", "text": "AG = 18, HAGMA", "is_correct": false, "explanation": "AG = 140-(110+18) = 12 ไม่ใช่ 18 อาจคำนวณผิดโดยไม่รวม HCO3- หรือ Cl- ในสูตร"},
+        {"label": "D", "text": "AG = 8, NAGMA", "is_correct": false, "explanation": "AG = 140-(110+18) = 12 ไม่ใช่ 8 อาจคำนวณผิดขั้นตอน แม้ 8 ยังอยู่ในช่วงปกติ (8-12)"},
+        {"label": "E", "text": "AG = 22, HAGMA", "is_correct": false, "explanation": "AG = 140-(110+18) = 12 ไม่ใช่ 22 ค่านี้ผิดจากการคำนวณ"}
+      ],
+      "key_takeaway": "AG = Na+ - (Cl- + HCO3-) ปกติ 8-12 ถ้า AG ปกติแต่มี acidosis = NAGMA (hyperchloremic) สาเหตุจำด้วย HARDUPS ในเบาหวานพบ type 4 RTA ได้บ่อย"
+    },
+    "subject": "nephro_med",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 8 ปี มาด้วยหน้าบวม ขาบวม 1 สัปดาห์ ตรวจปัสสาวะ protein 4+ ไม่มี RBC ผล lab: albumin 1.5 g/dL, cholesterol 400 mg/dL, Cr 0.5 mg/dL, complement ปกติ การรักษาเบื้องต้นที่เหมาะสมที่สุดคือ",
+    "choices": [
+      {"label": "A", "text": "Renal biopsy ก่อน"},
+      {"label": "B", "text": "Prednisolone 2 mg/kg/day"},
+      {"label": "C", "text": "Cyclophosphamide"},
+      {"label": "D", "text": "ACE inhibitor อย่างเดียว"},
+      {"label": "E", "text": "Plasmapheresis"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Nephrotic syndrome ในเด็กอายุ 2-12 ปี สาเหตุที่พบบ่อยที่สุดคือ minimal change disease (MCD) ซึ่งตอบสนองต่อ corticosteroid ได้ดีมาก (> 90%) จึงให้ empirical steroid ก่อนโดยไม่ต้อง biopsy",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Prednisolone 2 mg/kg/day",
+      "reason": "ในเด็กอายุ 2-12 ปี ที่มา nephrotic syndrome สาเหตุที่พบบ่อยที่สุด (> 80%) คือ Minimal Change Disease (MCD) ซึ่งมีลักษณะ:\n- Selective proteinuria (เฉพาะ albumin)\n- ไม่มี hematuria\n- Complement ปกติ\n- Renal function ปกติ\n\nMCD ตอบสนองต่อ corticosteroid ได้ดีมาก (> 90%) จึงเป็น standard practice ที่จะให้ empirical steroid therapy โดยไม่ต้องทำ renal biopsy ก่อน\n\nProtocol: Prednisolone 2 mg/kg/day (max 60 mg/day) × 4-6 สัปดาห์ แล้วลดเป็น alternate day × 4-6 สัปดาห์\n\nRenal biopsy ทำเมื่อ:\n- อายุ < 1 ปี หรือ > 12 ปี\n- มี hematuria, hypertension, low complement\n- ไม่ตอบสนองต่อ steroid (steroid-resistant)\n- Frequent relapses ที่ต้องพิจารณา second-line agents",
+      "choices": [
+        {"label": "A", "text": "Renal biopsy ก่อน", "is_correct": false, "explanation": "ในเด็กอายุ 2-12 ปี ที่มี typical nephrotic syndrome (no hematuria, normal complement) ไม่ต้อง biopsy ก่อน ให้ empirical steroid ได้เลย Biopsy ทำเมื่อ atypical features หรือ steroid-resistant"},
+        {"label": "B", "text": "Prednisolone 2 mg/kg/day", "is_correct": true, "explanation": "Standard treatment สำหรับ childhood nephrotic syndrome (MCD) คือ prednisolone 2 mg/kg/day (max 60 mg) × 4-6 สัปดาห์ > 90% ตอบสนองดี remission ภายใน 4 สัปดาห์"},
+        {"label": "C", "text": "Cyclophosphamide", "is_correct": false, "explanation": "Cyclophosphamide เป็น second-line agent ใช้ในกรณี frequently relapsing หรือ steroid-dependent nephrotic syndrome ไม่ใช่ first-line treatment"},
+        {"label": "D", "text": "ACE inhibitor อย่างเดียว", "is_correct": false, "explanation": "ACE inhibitor ช่วยลด proteinuria ได้บ้าง แต่ไม่ใช่ definitive treatment สำหรับ MCD ซึ่งต้องใช้ corticosteroid เป็นหลัก ACE inhibitor อาจใช้เสริมในกรณี persistent proteinuria"},
+        {"label": "E", "text": "Plasmapheresis", "is_correct": false, "explanation": "Plasmapheresis ไม่ใช่ standard treatment สำหรับ childhood nephrotic syndrome ใช้ใน rapidly progressive GN, anti-GBM disease หรือ TTP"}
+      ],
+      "key_takeaway": "Childhood nephrotic syndrome (อายุ 2-12 ปี) สาเหตุบ่อยสุดคือ MCD ให้ empirical prednisolone 2 mg/kg/day โดยไม่ต้อง biopsy ก่อน > 90% ตอบสนองต่อ steroid"
+    },
+    "subject": "nephro_med",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 40 ปี ตรวจสุขภาพประจำปี ผล lab ปกติทุกอย่าง ยกเว้น urine dipstick พบ blood 2+ แต่ microscopy ไม่พบ RBC สาเหตุที่เป็นไปได้มากที่สุดคือ",
+    "choices": [
+      {"label": "A", "text": "Glomerulonephritis"},
+      {"label": "B", "text": "Myoglobinuria"},
+      {"label": "C", "text": "Bladder cancer"},
+      {"label": "D", "text": "Urinary tract infection"},
+      {"label": "E", "text": "Renal stone"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Urine dipstick ตรวจ heme (peroxidase activity) ซึ่งให้ผลบวกได้ทั้ง hemoglobin และ myoglobin ถ้า dipstick บวกแต่ microscopy ไม่พบ RBC อาจเป็น myoglobinuria หรือ hemoglobinuria",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Myoglobinuria",
+      "reason": "Urine dipstick ตรวจ blood โดยอาศัย peroxidase activity ของ heme group ซึ่งให้ผลบวกได้ 3 กรณี:\n1. Hematuria (RBC ในปัสสาวะ) → microscopy พบ RBC\n2. Hemoglobinuria (free hemoglobin) → microscopy ไม่พบ RBC\n3. Myoglobinuria (myoglobin) → microscopy ไม่พบ RBC\n\nในกรณีนี้ dipstick blood 2+ แต่ microscopy ไม่พบ RBC หมายความว่ามี heme-containing substance ในปัสสาวะโดยไม่มี intact RBC → myoglobinuria หรือ hemoglobinuria\n\nMyoglobinuria เกิดจาก rhabdomyolysis (การสลายกล้ามเนื้อ) สาเหตุเช่น trauma, exercise, drugs, metabolic myopathies\n\nHemoglobinuria เกิดจาก intravascular hemolysis\n\nต้องตรวจเพิ่มเติม: serum CK, LDH, serum myoglobin เพื่อยืนยัน",
+      "choices": [
+        {"label": "A", "text": "Glomerulonephritis", "is_correct": false, "explanation": "GN ทำให้ hematuria (RBC ในปัสสาวะ) microscopy จะพบ dysmorphic RBC หรือ RBC casts ไม่ใช่ dipstick บวกแต่ microscopy ไม่พบ RBC"},
+        {"label": "B", "text": "Myoglobinuria", "is_correct": true, "explanation": "Myoglobin มี heme group ทำให้ dipstick ให้ผลบวก (false positive สำหรับ blood) แต่ไม่มี intact RBC ใน urine จึง microscopy ไม่พบ RBC เป็นภาวะ dipstick-microscopy discrepancy ที่ classic"},
+        {"label": "C", "text": "Bladder cancer", "is_correct": false, "explanation": "Bladder cancer ทำให้เกิด hematuria (gross หรือ microscopic) ซึ่ง microscopy จะพบ RBC ไม่ใช่ dipstick บวกอย่างเดียว"},
+        {"label": "D", "text": "Urinary tract infection", "is_correct": false, "explanation": "UTI อาจมี hematuria (RBC) ร่วมกับ WBC ใน microscopy ไม่ใช่ dipstick blood บวกแต่ microscopy ไม่พบ RBC"},
+        {"label": "E", "text": "Renal stone", "is_correct": false, "explanation": "Renal stone ทำให้เกิด hematuria จาก mucosal injury microscopy จะพบ RBC ไม่ใช่ dipstick บวกอย่างเดียว"}
+      ],
+      "key_takeaway": "Dipstick blood (+) แต่ microscopy ไม่พบ RBC = myoglobinuria หรือ hemoglobinuria เพราะ dipstick ตรวจ heme (peroxidase activity) ไม่ได้จำเพาะต่อ RBC"
+    },
+    "subject": "nephro_med",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 28 ปี มาด้วยปัสสาวะสีโค้กหลังเป็นหวัดเจ็บคอ 2 สัปดาห์ก่อน BP 150/100 mmHg ขาบวม ตรวจปัสสาวะ RBC 100/HPF, RBC casts, protein 2+ ผล lab: C3 ต่ำ, C4 ปกติ, ASO titer สูง, Cr 2.0 mg/dL การวินิจฉัยที่น่าจะเป็นมากที่สุดคือ",
+    "choices": [
+      {"label": "A", "text": "IgA nephropathy"},
+      {"label": "B", "text": "Post-streptococcal glomerulonephritis"},
+      {"label": "C", "text": "Membranoproliferative glomerulonephritis"},
+      {"label": "D", "text": "Lupus nephritis"},
+      {"label": "E", "text": "Anti-GBM disease"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Nephritic syndrome หลังเจ็บคอ 2 สัปดาห์ (latent period) + C3 ต่ำ (C4 ปกติ = alternative pathway activation) + ASO สูง = Post-streptococcal glomerulonephritis (PSGN)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Post-streptococcal glomerulonephritis",
+      "reason": "Post-streptococcal GN (PSGN) เป็น immune complex-mediated glomerulonephritis ที่เกิดหลัง Group A Streptococcal infection\n\nลักษณะเฉพาะ:\n1. Latent period 1-3 สัปดาห์ หลัง pharyngitis (หรือ 3-6 สัปดาห์หลัง skin infection)\n2. Nephritic syndrome: hematuria (cola-colored urine), RBC casts, hypertension, edema, mild proteinuria, oliguria\n3. Low C3 (alternative pathway activation), C4 ปกติ\n4. Elevated ASO titer (หลัง pharyngitis) หรือ anti-DNase B (หลัง skin infection)\n\nต่างจาก IgA nephropathy ที่:\n- Synpharyngitic (เกิดพร้อมกับหรือ 1-2 วันหลังเจ็บคอ ไม่มี latent period)\n- Complement ปกติ\n- Serum IgA สูง\n\nPSGN มักหายเองภายใน 6-8 สัปดาห์ในเด็ก พยากรณ์โรคดี แต่ในผู้ใหญ่อาจมี residual renal impairment ได้",
+      "choices": [
+        {"label": "A", "text": "IgA nephropathy", "is_correct": false, "explanation": "IgA nephropathy มี synpharyngitic hematuria (ภายใน 1-2 วัน) ไม่มี latent period complement ปกติ และ serum IgA สูง ต่างจาก PSGN ที่มี latent period 2 สัปดาห์ C3 ต่ำ ASO สูง"},
+        {"label": "B", "text": "Post-streptococcal GN", "is_correct": true, "explanation": "Classic presentation: latent period 2 สัปดาห์หลังเจ็บคอ + nephritic syndrome + C3 ต่ำ (C4 ปกติ = alternative pathway) + ASO สูง (ยืนยัน streptococcal infection)"},
+        {"label": "C", "text": "MPGN", "is_correct": false, "explanation": "MPGN มี C3 ต่ำเป็นเวลานาน (> 8 สัปดาห์) ต่างจาก PSGN ที่ C3 กลับปกติภายใน 6-8 สัปดาห์ MPGN ไม่สัมพันธ์กับ ASO titer สูง"},
+        {"label": "D", "text": "Lupus nephritis", "is_correct": false, "explanation": "Lupus nephritis มักมีทั้ง C3 และ C4 ต่ำ (classic pathway activation) มี positive ANA, anti-dsDNA ผู้ป่วยรายนี้ C4 ปกติ + ASO สูง เข้ากับ PSGN มากกว่า"},
+        {"label": "E", "text": "Anti-GBM disease", "is_correct": false, "explanation": "Anti-GBM disease (Goodpasture) มี anti-GBM antibody อาจมี pulmonary hemorrhage complement ปกติ ไม่สัมพันธ์กับ streptococcal infection หรือ ASO titer"}
+      ],
+      "key_takeaway": "PSGN: nephritic syndrome + latent period 1-3 สัปดาห์หลัง strep pharyngitis + C3 ต่ำ (C4 ปกติ) + ASO สูง ต่างจาก IgA nephropathy ที่ synpharyngitic + complement ปกติ"
+    },
+    "subject": "nephro_med",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 60 ปี เบาหวาน ความดันสูง มาด้วยอาการอ่อนแรงขา ตรวจพบ K+ 2.5 mEq/L, HCO3- 30 mEq/L (metabolic alkalosis), BP 160/100 mmHg ประวัติรับประทานยา: metformin, amlodipine, hydrochlorothiazide 25 mg/day สาเหตุของ hypokalemia ที่น่าจะเป็นมากที่สุดคือ",
+    "choices": [
+      {"label": "A", "text": "Metformin"},
+      {"label": "B", "text": "Amlodipine"},
+      {"label": "C", "text": "Hydrochlorothiazide"},
+      {"label": "D", "text": "Diabetic ketoacidosis"},
+      {"label": "E", "text": "Renal tubular acidosis type 1"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Thiazide diuretics เป็นสาเหตุที่พบบ่อยของ hypokalemia + metabolic alkalosis โดยเพิ่มการขับ Na+ และ K+ ที่ distal tubule",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Hydrochlorothiazide",
+      "reason": "Thiazide diuretics (hydrochlorothiazide) เป็นสาเหตุที่พบบ่อยที่สุดของ drug-induced hypokalemia กลไก:\n\n1. Block Na-Cl cotransporter ที่ distal convoluted tubule → เพิ่ม Na+ delivery ไป collecting duct\n2. Na+ ถูก reabsorb ที่ collecting duct ผ่าน ENaC แลกกับ K+ secretion → hypokalemia\n3. Volume contraction → กระตุ้น RAAS → aldosterone เพิ่ม → เพิ่ม K+ secretion\n4. H+ secretion เพิ่มขึ้น → metabolic alkalosis (contraction alkalosis)\n\nผู้ป่วยรายนี้ มี K+ 2.5 (ต่ำมาก) + metabolic alkalosis (HCO3- 30) ซึ่งเป็น classic pattern ของ thiazide-induced electrolyte disturbance\n\nการรักษา: เสริม KCl, พิจารณาเพิ่ม K+-sparing diuretic (spironolactone) หรือเปลี่ยนยาลดความดัน",
+      "choices": [
+        {"label": "A", "text": "Metformin", "is_correct": false, "explanation": "Metformin ไม่ทำให้ hypokalemia อาจทำให้ lactic acidosis ในกรณีที่ไตเสื่อมหรือมี tissue hypoxia ไม่มีผลต่อ potassium balance"},
+        {"label": "B", "text": "Amlodipine", "is_correct": false, "explanation": "Amlodipine เป็น CCB ไม่มีผลต่อ potassium balance โดยตรง ไม่ทำให้ hypokalemia หรือ metabolic alkalosis"},
+        {"label": "C", "text": "Hydrochlorothiazide", "is_correct": true, "explanation": "Thiazide เป็นสาเหตุที่พบบ่อยที่สุดของ drug-induced hypokalemia + metabolic alkalosis โดยเพิ่ม K+ secretion ที่ collecting duct ผ่าน RAAS activation และ increased Na+ delivery"},
+        {"label": "D", "text": "Diabetic ketoacidosis", "is_correct": false, "explanation": "DKA ทำให้ metabolic acidosis (high AG) ไม่ใช่ metabolic alkalosis K+ อาจปกติหรือสูงตอนแรก (ถึงแม้ total body K+ จะต่ำ) ผู้ป่วยรายนี้มี HCO3- 30 (alkalosis)"},
+        {"label": "E", "text": "RTA type 1", "is_correct": false, "explanation": "RTA type 1 (distal) ทำให้ hypokalemia ร่วมกับ metabolic acidosis (ไม่ใช่ alkalosis) HCO3- จะต่ำ ผู้ป่วยรายนี้ HCO3- 30 (alkalosis) จึงไม่เข้ากับ RTA type 1"}
+      ],
+      "key_takeaway": "Thiazide diuretics เป็นสาเหตุที่พบบ่อยของ hypokalemia + metabolic alkalosis ต้อง monitor K+ เป็นประจำ อาจเสริม KCl หรือ K+-sparing diuretic"
+    },
+    "subject": "nephro_med",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 72 ปี มาห้องฉุกเฉินด้วยอาการปัสสาวะไม่ออก 12 ชั่วโมง ปวดท้องน้อยมาก เดิมมีอาการปัสสาวะลำบาก ปัสสาวะไม่พุ่ง ปัสสาวะบ่อยกลางคืน ตรวจร่างกาย พบกระเพาะปัสสาวะโตตึง ใส่สายสวนปัสสาวะได้ 1,200 mL ผล lab: Cr 4.0 mg/dL (baseline 1.2), K+ 5.5 mEq/L ภาวะนี้เป็น AKI ชนิดใด",
+    "choices": [
+      {"label": "A", "text": "Pre-renal AKI"},
+      {"label": "B", "text": "Intrinsic renal AKI"},
+      {"label": "C", "text": "Post-renal AKI (obstructive)"},
+      {"label": "D", "text": "Chronic kidney disease"},
+      {"label": "E", "text": "Acute interstitial nephritis"}
+    ],
+    "correct_answer": "C",
+    "explanation": "ผู้ป่วยสูงอายุที่มีอาการ LUTS (ปัสสาวะลำบาก ไม่พุ่ง บ่อยกลางคืน) → urinary retention → distended bladder → post-renal AKI จาก bladder outlet obstruction (น่าจะ BPH)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Post-renal AKI (obstructive)",
+      "reason": "Post-renal AKI เกิดจาก urinary tract obstruction ทำให้ปัสสาวะไม่สามารถระบายได้ แรงดันย้อนกลับ (back pressure) ทำลาย renal parenchyma\n\nผู้ป่วยรายนี้มีลักษณะ classic ของ post-renal AKI:\n1. ผู้ชายสูงอายุ (72 ปี) → มีโอกาส BPH สูง\n2. ประวัติ LUTS: ปัสสาวะลำบาก ไม่พุ่ง บ่อยกลางคืน (obstructive + irritative symptoms)\n3. Acute urinary retention (ปัสสาวะไม่ออก 12 ชม.)\n4. Distended bladder → ใส่ catheter ได้ 1,200 mL\n5. Cr เพิ่มจาก baseline 1.2 เป็น 4.0 (AKI)\n\nPost-renal AKI เป็นสาเหตุที่ reversible ถ้าแก้ไข obstruction ได้เร็ว หลังใส่ catheter อาจมี post-obstructive diuresis (ปัสสาวะมากหลัง relieve obstruction) ต้อง monitor volume status และ electrolytes\n\nต้องระวัง post-obstructive diuresis ที่อาจทำให้ dehydration และ electrolyte imbalance",
+      "choices": [
+        {"label": "A", "text": "Pre-renal AKI", "is_correct": false, "explanation": "Pre-renal AKI เกิดจาก decreased renal perfusion (dehydration, shock, heart failure) ไม่มี urinary retention หรือ distended bladder ผู้ป่วยรายนี้มี bladder ตึง + retained urine 1,200 mL"},
+        {"label": "B", "text": "Intrinsic renal AKI", "is_correct": false, "explanation": "Intrinsic AKI เกิดจากพยาธิสภาพภายในไต เช่น ATN, GN, AIN ไม่มี urinary retention ผู้ป่วยรายนี้มี bladder outlet obstruction ที่ชัดเจน"},
+        {"label": "C", "text": "Post-renal AKI", "is_correct": true, "explanation": "Classic post-renal AKI จาก BPH: ผู้ชายสูงอายุ + LUTS + acute urinary retention + distended bladder + residual urine 1,200 mL + AKI (Cr เพิ่มจาก 1.2 เป็น 4.0) reversible ถ้า relieve obstruction เร็ว"},
+        {"label": "D", "text": "CKD", "is_correct": false, "explanation": "CKD เป็นภาวะเรื้อรัง (> 3 เดือน) ผู้ป่วยรายนี้ Cr baseline 1.2 เพิ่มเป็น 4.0 อย่างเฉียบพลัน เป็น AKI ไม่ใช่ CKD แม้ว่า prolonged obstruction อาจนำไปสู่ CKD ได้"},
+        {"label": "E", "text": "Acute interstitial nephritis", "is_correct": false, "explanation": "AIN มักเกิดจากยา (NSAIDs, antibiotics) มีไข้ ผื่น eosinophilia ไม่มี urinary retention หรือ distended bladder"}
+      ],
+      "key_takeaway": "Post-renal AKI: ผู้ชายสูงอายุ + LUTS + urinary retention + distended bladder = bladder outlet obstruction (BPH) ต้องใส่ catheter ทันที เป็น reversible cause ของ AKI"
+    },
+    "subject": "nephro_med",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 50 ปี เป็น SLE มานาน 10 ปี ตรวจพบ proteinuria 2.5 g/day, Cr 1.5 mg/dL, active urine sediment (RBC casts) ผล serology: anti-dsDNA สูง, C3 ต่ำ, C4 ต่ำ ทำ renal biopsy พบ wire-loop lesion และ subendothelial deposits การจัดกลุ่มตาม ISN/RPS classification เป็น class ใด",
+    "choices": [
+      {"label": "A", "text": "Class I - Minimal mesangial"},
+      {"label": "B", "text": "Class II - Mesangial proliferative"},
+      {"label": "C", "text": "Class III - Focal proliferative"},
+      {"label": "D", "text": "Class IV - Diffuse proliferative"},
+      {"label": "E", "text": "Class V - Membranous"}
+    ],
+    "correct_answer": "D",
+    "explanation": "Wire-loop lesion (thickened capillary walls จาก massive subendothelial immune deposits) เป็นลักษณะ classic ของ Class IV diffuse proliferative lupus nephritis ซึ่งเป็น class ที่รุนแรงที่สุด",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: D. Class IV - Diffuse proliferative",
+      "reason": "Lupus nephritis Class IV (Diffuse proliferative) เป็น class ที่พบบ่อยที่สุดและรุนแรงที่สุดของ lupus nephritis\n\nลักษณะเฉพาะ:\n1. Wire-loop lesion: ผนังหลอดเลือดฝอย glomerular หนาขึ้นจาก massive subendothelial immune complex deposits\n2. Subendothelial deposits เป็น hallmark ของ Class IV\n3. Involve > 50% ของ glomeruli (diffuse)\n4. มี active urine sediment (RBC casts) แสดง active nephritis\n\nClinical features:\n- Proteinuria (อาจถึง nephrotic range)\n- Active urine sediment\n- Low complement (C3, C4)\n- High anti-dsDNA\n- Renal insufficiency\n\nการรักษา: Induction therapy ด้วย high-dose corticosteroids + cyclophosphamide (NIH protocol) หรือ mycophenolate mofetil ตามด้วย maintenance therapy\n\nISN/RPS Classification:\nClass I: Minimal mesangial (ปกติ LM, IF พบ mesangial deposits)\nClass II: Mesangial proliferative\nClass III: Focal (< 50% glomeruli)\nClass IV: Diffuse (> 50% glomeruli) - รุนแรงที่สุด\nClass V: Membranous (subepithelial deposits)\nClass VI: Advanced sclerosis",
+      "choices": [
+        {"label": "A", "text": "Class I", "is_correct": false, "explanation": "Class I มี mesangial immune deposits ใน IF แต่ LM ปกติ ไม่มี wire-loop lesion หรือ subendothelial deposits ไม่มี active urine sediment ไม่มี proteinuria มาก"},
+        {"label": "B", "text": "Class II", "is_correct": false, "explanation": "Class II มี mesangial proliferation เท่านั้น ไม่มี wire-loop lesion ไม่มี subendothelial deposits อาการไม่รุนแรง มีเพียง microscopic hematuria หรือ mild proteinuria"},
+        {"label": "C", "text": "Class III", "is_correct": false, "explanation": "Class III (focal) involve < 50% ของ glomeruli อาจมี subendothelial deposits ได้แต่น้อยกว่า Class IV Wire-loop lesion เป็นลักษณะ classic ของ Class IV มากกว่า Class III"},
+        {"label": "D", "text": "Class IV", "is_correct": true, "explanation": "Wire-loop lesion + massive subendothelial deposits + active sediment + low C3/C4 + high anti-dsDNA = Class IV diffuse proliferative lupus nephritis เป็น class ที่รุนแรงที่สุด ต้อง aggressive immunosuppressive therapy"},
+        {"label": "E", "text": "Class V", "is_correct": false, "explanation": "Class V (membranous) มี subepithelial deposits (ไม่ใช่ subendothelial) มักมาด้วย nephrotic syndrome ไม่มี wire-loop lesion complement อาจปกติ"}
+      ],
+      "key_takeaway": "Lupus nephritis Class IV: wire-loop lesion + subendothelial deposits + > 50% glomeruli involved เป็น class ที่รุนแรงที่สุด ต้อง induction therapy ด้วย corticosteroids + cyclophosphamide หรือ MMF"
+    },
+    "subject": "nephro_med",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 35 ปี มาด้วยอาการบวมทั้งตัว 1 เดือน ตรวจพบ massive proteinuria 10 g/day, albumin 1.2 g/dL ทำ renal biopsy electron microscopy พบ diffuse effacement of podocyte foot processes, LM ปกติ, IF negative สาเหตุที่น่าจะเป็นมากที่สุดคือ",
+    "choices": [
+      {"label": "A", "text": "Minimal change disease"},
+      {"label": "B", "text": "Focal segmental glomerulosclerosis"},
+      {"label": "C", "text": "Membranous nephropathy"},
+      {"label": "D", "text": "IgA nephropathy"},
+      {"label": "E", "text": "Diabetic nephropathy"}
+    ],
+    "correct_answer": "A",
+    "explanation": "LM ปกติ + IF negative + EM พบ diffuse foot process effacement เป็นลักษณะ classic ของ Minimal Change Disease (MCD)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. Minimal change disease",
+      "reason": "Minimal Change Disease (MCD) เป็น glomerulopathy ที่มีลักษณะเฉพาะ:\n\n1. Light microscopy (LM): ปกติ (จึงชื่อ 'minimal change')\n2. Immunofluorescence (IF): Negative (ไม่มี immune deposits)\n3. Electron microscopy (EM): Diffuse effacement (fusion) of podocyte foot processes → เป็น hallmark\n\nMCD เป็นสาเหตุที่พบบ่อยที่สุดของ nephrotic syndrome ในเด็ก (> 80%) และพบได้ในผู้ใหญ่ (10-15%)\n\nลักษณะทางคลินิก:\n- Nephrotic syndrome รุนแรง (massive proteinuria)\n- Selective proteinuria (เฉพาะ albumin)\n- ตอบสนองต่อ corticosteroid ดีมาก (> 90%)\n- ไม่มี hematuria, hypertension\n- Renal function ปกติ\n\nPathogenesis: เชื่อว่าเกิดจาก T-cell dysfunction ที่หลั่ง circulating factor ทำลาย podocyte charge barrier",
+      "choices": [
+        {"label": "A", "text": "Minimal change disease", "is_correct": true, "explanation": "LM ปกติ + IF negative + diffuse foot process effacement ใน EM เป็น triad ที่ classic ของ MCD ซึ่งตอบสนองต่อ steroid ได้ดีมาก"},
+        {"label": "B", "text": "FSGS", "is_correct": false, "explanation": "FSGS มี segmental sclerosis ใน LM (focal = บาง glomeruli, segmental = บางส่วนของ glomerulus) ไม่ใช่ LM ปกติ IF อาจพบ IgM trapping ใน sclerotic areas"},
+        {"label": "C", "text": "Membranous nephropathy", "is_correct": false, "explanation": "Membranous nephropathy มี thickened GBM ใน LM (spike-and-dome pattern) IF พบ granular IgG/C3 along GBM EM พบ subepithelial deposits ไม่ใช่ LM ปกติ + IF negative"},
+        {"label": "D", "text": "IgA nephropathy", "is_correct": false, "explanation": "IgA nephropathy มี mesangial proliferation ใน LM IF พบ mesangial IgA deposits (dominant) ไม่ใช่ IF negative มักมาด้วย hematuria มากกว่า nephrotic syndrome"},
+        {"label": "E", "text": "Diabetic nephropathy", "is_correct": false, "explanation": "Diabetic nephropathy มี mesangial expansion, Kimmelstiel-Wilson nodules ใน LM ไม่ใช่ LM ปกติ ต้องมีประวัติเบาหวานมานาน"}
+      ],
+      "key_takeaway": "MCD triad: LM ปกติ + IF negative + EM แสดง diffuse foot process effacement พบบ่อยในเด็ก ตอบสนองต่อ steroid ดีมาก (> 90%)"
+    },
+    "subject": "nephro_med",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 68 ปี CKD stage 4 (eGFR 22 mL/min) ได้รับยา ACE inhibitor มานาน ตรวจ lab พบ Hb 8.5 g/dL, MCV 85 fL, reticulocyte count 0.5%, serum iron 60 mcg/dL, TIBC 280 mcg/dL, ferritin 250 ng/mL, transferrin saturation 21% สาเหตุของ anemia ที่น่าจะเป็นมากที่สุดคือ",
+    "choices": [
+      {"label": "A", "text": "Iron deficiency anemia"},
+      {"label": "B", "text": "Anemia of CKD จาก erythropoietin deficiency"},
+      {"label": "C", "text": "Folate deficiency"},
+      {"label": "D", "text": "Vitamin B12 deficiency"},
+      {"label": "E", "text": "Hemolytic anemia"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Normocytic normochromic anemia (MCV 85) กับ low reticulocyte count ในผู้ป่วย CKD stage 4 โดยที่ iron stores เพียงพอ (ferritin 250, TSAT 21%) เข้ากับ anemia of CKD จาก erythropoietin deficiency",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Anemia of CKD จาก erythropoietin deficiency",
+      "reason": "Anemia of CKD เกิดจากการที่ไตสร้าง erythropoietin (EPO) ลดลงตามระดับการเสื่อมของไต มักเริ่มชัดเจนเมื่อ eGFR < 30-45 mL/min\n\nลักษณะ:\n1. Normocytic normochromic anemia (MCV 85 fL ปกติ)\n2. Low reticulocyte count (0.5% ต่ำ = hypoproliferative)\n3. Iron stores เพียงพอ: ferritin 250 ng/mL (> 100), TSAT 21% (> 20%)\n4. ไม่มีหลักฐาน iron deficiency, folate/B12 deficiency, hemolysis\n\nการรักษา:\n- Erythropoiesis-stimulating agents (ESA): epoetin alfa, darbepoetin alfa\n- Target Hb 10-11.5 g/dL (ไม่ควรเกิน 13 g/dL เพราะเพิ่ม cardiovascular risk)\n- ให้ iron supplementation ถ้า ferritin < 100 หรือ TSAT < 20% ก่อนเริ่ม ESA\n\nACE inhibitor อาจทำให้ anemia เลวลงเล็กน้อยเพราะลด EPO production แต่สาเหตุหลักคือ CKD",
+      "choices": [
+        {"label": "A", "text": "Iron deficiency anemia", "is_correct": false, "explanation": "Iron deficiency จะมี MCV ต่ำ (microcytic), ferritin ต่ำ (< 30), TSAT ต่ำ (< 20%) ผู้ป่วยรายนี้ MCV ปกติ ferritin 250 TSAT 21% แสดงว่า iron stores เพียงพอ"},
+        {"label": "B", "text": "Anemia of CKD", "is_correct": true, "explanation": "CKD stage 4 (eGFR 22) + normocytic anemia + low reticulocyte + adequate iron stores = EPO deficiency ไตเสื่อมจนสร้าง EPO ไม่เพียงพอ ต้องรักษาด้วย ESA"},
+        {"label": "C", "text": "Folate deficiency", "is_correct": false, "explanation": "Folate deficiency ทำให้ macrocytic anemia (MCV > 100) ไม่ใช่ normocytic (MCV 85) ผู้ป่วยรายนี้ MCV ปกติ"},
+        {"label": "D", "text": "Vitamin B12 deficiency", "is_correct": false, "explanation": "B12 deficiency ทำให้ macrocytic anemia (MCV > 100) มี hypersegmented neutrophils ผู้ป่วยรายนี้ MCV 85 ปกติ ไม่เข้ากับ B12 deficiency"},
+        {"label": "E", "text": "Hemolytic anemia", "is_correct": false, "explanation": "Hemolytic anemia จะมี reticulocyte count สูง (> 2%) LDH สูง haptoglobin ต่ำ ผู้ป่วยรายนี้ reticulocyte ต่ำ (0.5%) แสดง hypoproliferative ไม่ใช่ hemolysis"}
+      ],
+      "key_takeaway": "Anemia of CKD: normocytic + hypoproliferative (low retic) + adequate iron stores + CKD stage 3-5 เกิดจาก EPO deficiency รักษาด้วย ESA target Hb 10-11.5 g/dL"
+    },
+    "subject": "nephro_med",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 45 ปี มาด้วยอาการอ่อนเพลีย ปัสสาวะน้อย 3 วัน หลังได้รับยา gentamicin IV 7 วัน สำหรับรักษา sepsis ตรวจพบ Cr เพิ่มจาก 1.0 เป็น 4.5 mg/dL, urine output 200 mL/day ตรวจ urine microscopy พบ muddy brown granular casts FeNa = 4% สาเหตุ AKI ที่น่าจะเป็นมากที่สุดคือ",
+    "choices": [
+      {"label": "A", "text": "Pre-renal azotemia"},
+      {"label": "B", "text": "Acute tubular necrosis (ATN)"},
+      {"label": "C", "text": "Acute interstitial nephritis"},
+      {"label": "D", "text": "Post-renal obstruction"},
+      {"label": "E", "text": "Rapidly progressive glomerulonephritis"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Aminoglycoside (gentamicin) nephrotoxicity + muddy brown granular casts + FeNa > 2% เป็น classic findings ของ Acute Tubular Necrosis (ATN)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Acute tubular necrosis (ATN)",
+      "reason": "Acute Tubular Necrosis (ATN) เป็น intrinsic renal cause ที่พบบ่อยที่สุดของ AKI แบ่งเป็น 2 สาเหตุ:\n1. Ischemic ATN: จาก prolonged hypoperfusion (shock, surgery)\n2. Nephrotoxic ATN: จาก nephrotoxic drugs (aminoglycosides, contrast dye, cisplatin)\n\nผู้ป่วยรายนี้มีลักษณะ classic ของ nephrotoxic ATN จาก gentamicin:\n1. ประวัติได้ aminoglycoside 7 วัน (nephrotoxicity มักเกิดหลัง 5-7 วัน)\n2. Cr เพิ่มจาก 1.0 เป็น 4.5 (AKI)\n3. Oliguria (200 mL/day)\n4. Muddy brown granular casts ใน urine = hallmark ของ ATN (เกิดจาก necrotic tubular epithelial cells)\n5. FeNa > 2% (4%) แสดงว่า tubule ไม่สามารถ reabsorb Na+ ได้ (ต่างจาก pre-renal ที่ FeNa < 1%)\n\nAminoglycoside nephrotoxicity เกิดจากการสะสมใน proximal tubular cells ทำให้เกิด tubular cell necrosis",
+      "choices": [
+        {"label": "A", "text": "Pre-renal azotemia", "is_correct": false, "explanation": "Pre-renal AKI มี FeNa < 1% (tubular function ยังดี ดูด Na+ กลับ) มี bland sediment ไม่มี muddy brown casts ผู้ป่วยรายนี้ FeNa 4% + muddy brown casts = intrinsic renal (ATN)"},
+        {"label": "B", "text": "Acute tubular necrosis", "is_correct": true, "explanation": "Gentamicin nephrotoxicity + muddy brown granular casts (hallmark) + FeNa > 2% (4%) + oliguria เป็น classic ATN จาก nephrotoxic drug"},
+        {"label": "C", "text": "Acute interstitial nephritis", "is_correct": false, "explanation": "AIN มักเกิดจาก allergic reaction ต่อยา (beta-lactams, NSAIDs) มี fever, rash, eosinophilia urine microscopy พบ WBC casts, eosinophiluria ไม่ใช่ muddy brown casts"},
+        {"label": "D", "text": "Post-renal obstruction", "is_correct": false, "explanation": "Post-renal AKI มี urinary tract obstruction ตรวจ ultrasound พบ hydronephrosis urine sediment มักปกติ ไม่มี muddy brown casts ไม่สัมพันธ์กับ aminoglycoside"},
+        {"label": "E", "text": "RPGN", "is_correct": false, "explanation": "RPGN มี rapidly progressive renal failure กับ nephritic syndrome (RBC casts) urine microscopy พบ RBC casts ไม่ใช่ muddy brown granular casts ไม่สัมพันธ์กับ aminoglycoside"}
+      ],
+      "key_takeaway": "ATN triad: muddy brown granular casts + FeNa > 2% + AKI จาก ischemia หรือ nephrotoxin Aminoglycoside nephrotoxicity มักเกิดหลังใช้ยา 5-7 วัน เป็น dose-dependent toxicity"
+    },
+    "subject": "nephro_med",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 55 ปี เป็น multiple myeloma มาด้วย Cr 5.0 mg/dL ตรวจปัสสาวะ protein 3+ (Bence Jones proteinuria) urine dipstick negative for albumin ทำ renal biopsy พบ eosinophilic casts ใน tubules สาเหตุของ renal failure ที่น่าจะเป็นมากที่สุดคือ",
+    "choices": [
+      {"label": "A", "text": "Diabetic nephropathy"},
+      {"label": "B", "text": "Cast nephropathy (myeloma kidney)"},
+      {"label": "C", "text": "Amyloidosis"},
+      {"label": "D", "text": "Light chain deposition disease"},
+      {"label": "E", "text": "Membranous nephropathy"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Multiple myeloma + Bence Jones proteinuria + eosinophilic casts ใน tubules = Cast nephropathy (myeloma kidney) เกิดจาก light chains ตกตะกอนใน tubules",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Cast nephropathy (myeloma kidney)",
+      "reason": "Cast nephropathy (myeloma kidney) เป็นสาเหตุ renal failure ที่พบบ่อยที่สุดใน multiple myeloma\n\nกลไก:\n1. Monoclonal free light chains ถูกกรองผ่าน glomerulus\n2. Light chains จับกับ Tamm-Horsfall protein (uromodulin) ใน distal tubule และ collecting duct\n3. เกิดเป็น obstructing casts (eosinophilic, PAS-negative) → tubular obstruction\n4. Giant cell reaction รอบ casts\n5. นำไปสู่ tubular injury และ renal failure\n\nลักษณะเฉพาะ:\n- Bence Jones proteinuria (free light chains) → dipstick negative (dipstick ตรวจ albumin เท่านั้น) แต่ sulfosalicylic acid (SSA) test positive\n- Renal biopsy: eosinophilic, fractured-appearing casts ใน tubules\n- AKI หรือ CKD\n\nปัจจัยกระตุ้น: dehydration, contrast dye, NSAIDs, hypercalcemia → ลด GFR → เพิ่ม light chain concentration → เพิ่ม cast formation",
+      "choices": [
+        {"label": "A", "text": "Diabetic nephropathy", "is_correct": false, "explanation": "Diabetic nephropathy มี Kimmelstiel-Wilson nodules, mesangial expansion ไม่มี intratubular casts ไม่เกี่ยวกับ Bence Jones proteinuria"},
+        {"label": "B", "text": "Cast nephropathy", "is_correct": true, "explanation": "Multiple myeloma + Bence Jones proteinuria (dipstick negative, protein positive) + eosinophilic intratubular casts = classic myeloma kidney Light chains ตกตะกอนจับ Tamm-Horsfall protein ใน tubules"},
+        {"label": "C", "text": "Amyloidosis", "is_correct": false, "explanation": "AL amyloidosis มี amyloid deposits (Congo red positive, apple-green birefringence) ใน glomeruli, vessels, interstitium มาด้วย nephrotic syndrome ไม่ใช่ intratubular casts"},
+        {"label": "D", "text": "LCDD", "is_correct": false, "explanation": "Light chain deposition disease มี non-amyloid light chain deposits ตาม basement membranes (GBM, TBM) pathology พบ nodular glomerulosclerosis ไม่ใช่ intratubular casts"},
+        {"label": "E", "text": "Membranous nephropathy", "is_correct": false, "explanation": "Membranous nephropathy มี thickened GBM กับ subepithelial deposits ไม่เกี่ยวกับ myeloma หรือ intratubular casts"}
+      ],
+      "key_takeaway": "Cast nephropathy (myeloma kidney): light chains + Tamm-Horsfall protein → intratubular casts → obstruction + injury Bence Jones proteinuria ตรวจด้วย dipstick ไม่พบ (ตรวจเฉพาะ albumin) ต้อง SSA test หรือ urine protein electrophoresis"
+    },
+    "subject": "nephro_med",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 22 ปี มาด้วย edema ทั่วตัว ตรวจพบ nephrotic syndrome ทำ renal biopsy LM พบ segmental sclerosis ใน glomeruli บางส่วน IF พบ IgM trapping EM พบ foot process effacement ที่ sclerotic segment สาเหตุที่น่าจะเป็นมากที่สุดคือ",
+    "choices": [
+      {"label": "A", "text": "Minimal change disease"},
+      {"label": "B", "text": "Focal segmental glomerulosclerosis (FSGS)"},
+      {"label": "C", "text": "Membranoproliferative GN"},
+      {"label": "D", "text": "IgA nephropathy"},
+      {"label": "E", "text": "Membranous nephropathy"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Segmental sclerosis ใน LM + IgM trapping + foot process effacement เป็นลักษณะของ FSGS ซึ่งเป็นสาเหตุ nephrotic syndrome ที่พบบ่อยที่สุดในผู้ใหญ่ผิวดำและพบมากขึ้นในทุกเชื้อชาติ",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Focal segmental glomerulosclerosis (FSGS)",
+      "reason": "FSGS มีลักษณะ pathology ที่เฉพาะ:\n\nLight microscopy:\n- Focal: เกี่ยวข้องเฉพาะ glomeruli บางส่วน (< 50%)\n- Segmental: เกี่ยวข้องเฉพาะบางส่วนของ glomerulus\n- Sclerosis: มี scarring/fibrosis ใน affected segments\n\nImmunofluorescence: IgM และ C3 trapping ใน sclerotic areas (non-specific)\n\nElectron microscopy: Foot process effacement โดยเฉพาะใน sclerotic segments\n\nFSGS เป็นสาเหตุที่พบบ่อยที่สุดของ nephrotic syndrome ในผู้ใหญ่ผิวดำ และเป็นสาเหตุที่มีความสำคัญมากขึ้นใน idiopathic nephrotic syndrome ของผู้ใหญ่\n\nFSGS ต่างจาก MCD:\n- LM: MCD ปกติ, FSGS มี segmental sclerosis\n- Response to steroids: MCD > 90%, FSGS 30-50%\n- Prognosis: MCD ดี, FSGS อาจ progress ไป ESRD\n\nFSGS มีหลาย variants: primary (idiopathic), secondary (HIV, heroin, obesity, reflux), genetic (APOL1, podocin mutations)",
+      "choices": [
+        {"label": "A", "text": "Minimal change disease", "is_correct": false, "explanation": "MCD มี LM ปกติ ไม่มี segmental sclerosis IF negative (ไม่มี IgM trapping) EM พบ diffuse foot process effacement ต่างจาก FSGS ที่มี sclerosis ใน LM"},
+        {"label": "B", "text": "FSGS", "is_correct": true, "explanation": "Focal segmental sclerosis ใน LM + IgM trapping ใน sclerotic areas + foot process effacement เป็น classic triad ของ FSGS ซึ่งมี steroid response ต่ำกว่า MCD"},
+        {"label": "C", "text": "MPGN", "is_correct": false, "explanation": "MPGN มี thickened capillary walls กับ mesangial interposition (double contour/tram-track appearance) ใน LM IF พบ C3 +/- IgG along capillary walls ไม่ใช่ segmental sclerosis"},
+        {"label": "D", "text": "IgA nephropathy", "is_correct": false, "explanation": "IgA nephropathy มี mesangial proliferation ใน LM IF พบ dominant IgA deposits ใน mesangium มักมาด้วย hematuria มากกว่า nephrotic syndrome"},
+        {"label": "E", "text": "Membranous nephropathy", "is_correct": false, "explanation": "Membranous มี thickened GBM (spike-and-dome) ใน LM IF พบ granular IgG/C3 along GBM EM พบ subepithelial deposits ไม่ใช่ segmental sclerosis กับ IgM trapping"}
+      ],
+      "key_takeaway": "FSGS: focal (บาง glomeruli) + segmental (บางส่วน) + sclerosis ใน LM กับ IgM trapping ใน IF ตอบสนอง steroid 30-50% อาจ progress ไป ESRD ต่างจาก MCD ที่ LM ปกติ + steroid response > 90%"
+    },
+    "subject": "nephro_med",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 58 ปี เป็นเบาหวานชนิดที่ 2 มา 10 ปี ตรวจสุขภาพประจำปี ตรวจปัสสาวะพบ microalbuminuria (urine albumin/creatinine ratio = 150 mg/g) Cr 1.0 mg/dL, eGFR 85 mL/min, BP 135/85 mmHg HbA1c 7.5% ขณะนี้ได้รับ metformin กับ glipizide ยาที่ควรเพิ่มเป็นอันดับแรกเพื่อ renoprotection คือ",
+    "choices": [
+      {"label": "A", "text": "Amlodipine"},
+      {"label": "B", "text": "SGLT2 inhibitor (empagliflozin)"},
+      {"label": "C", "text": "Hydrochlorothiazide"},
+      {"label": "D", "text": "DPP-4 inhibitor"},
+      {"label": "E", "text": "Insulin glargine"}
+    ],
+    "correct_answer": "B",
+    "explanation": "SGLT2 inhibitors (empagliflozin, dapagliflozin) มี renoprotective effect ที่ได้รับการพิสูจน์จากหลายการศึกษา (CREDENCE, DAPA-CKD) ลด albuminuria และชะลอ progression ของ diabetic kidney disease",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. SGLT2 inhibitor (empagliflozin)",
+      "reason": "SGLT2 inhibitors เป็นยาที่มีหลักฐานว่าให้ renoprotection ใน diabetic kidney disease ตามแนวทาง KDIGO 2022:\n\nกลไก renoprotection:\n1. ลด intraglomerular pressure โดย tubuloglomerular feedback (TGF) mechanism\n2. ลด Na+ reabsorption ที่ proximal tubule → เพิ่ม Na+ delivery ไป macula densa → constrict afferent arteriole → ลด glomerular hyperfiltration\n3. ลด albuminuria\n4. ลดน้ำหนัก ลดความดัน\n5. Anti-inflammatory และ anti-fibrotic effects\n\nหลักฐานจากการศึกษา:\n- CREDENCE trial: canagliflozin ลด renal outcomes 30%\n- DAPA-CKD trial: dapagliflozin ลด renal outcomes 39% (แม้ในคนไม่เป็นเบาหวาน)\n- EMPA-KIDNEY trial: empagliflozin ลด progression ของ CKD\n\nKDIGO 2022 แนะนำ: ผู้ป่วยเบาหวาน + CKD ควรได้ ACE-i/ARB + SGLT2 inhibitor + metformin เป็น first-line",
+      "choices": [
+        {"label": "A", "text": "Amlodipine", "is_correct": false, "explanation": "Amlodipine ลดความดันได้ดีแต่ไม่มี renoprotective effect เฉพาะ Dilate afferent arteriole อาจเพิ่ม intraglomerular pressure ไม่ลด albuminuria เท่า RAAS blockers หรือ SGLT2i"},
+        {"label": "B", "text": "SGLT2 inhibitor (empagliflozin)", "is_correct": true, "explanation": "SGLT2 inhibitors มีหลักฐานชัดเจนจาก CREDENCE, DAPA-CKD, EMPA-KIDNEY trials ว่าให้ renoprotection ลด albuminuria ชะลอ CKD progression แนะนำเป็น first-line ร่วมกับ ACE-i/ARB ใน KDIGO 2022"},
+        {"label": "C", "text": "Hydrochlorothiazide", "is_correct": false, "explanation": "Thiazide ลดความดันได้แต่ไม่มี specific renoprotective effect อาจเพิ่มน้ำตาลในเลือด ไม่เหมาะเป็นยาแรกสำหรับ renoprotection ในเบาหวาน"},
+        {"label": "D", "text": "DPP-4 inhibitor", "is_correct": false, "explanation": "DPP-4 inhibitors ช่วยควบคุมน้ำตาล แต่ไม่มีหลักฐาน renoprotective effect ที่ชัดเจนเท่า SGLT2 inhibitors ไม่ได้แนะนำเฉพาะเพื่อ renoprotection"},
+        {"label": "E", "text": "Insulin glargine", "is_correct": false, "explanation": "Insulin ช่วยควบคุมน้ำตาลแต่ไม่มี direct renoprotective effect เหมือน SGLT2 inhibitors HbA1c 7.5% อาจยังควบคุมได้ด้วยยากินก่อน"}
+      ],
+      "key_takeaway": "SGLT2 inhibitors เป็นยาที่มี renoprotective effect ชัดเจนใน diabetic kidney disease KDIGO 2022 แนะนำเป็น first-line ร่วมกับ ACE-i/ARB + metformin ในผู้ป่วยเบาหวาน + CKD"
+    },
+    "subject": "nephro_med",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 30 ปี มาด้วย Cola-colored urine ตรวจปัสสาวะ RBC 100/HPF, RBC casts, protein 1+ BP 145/95 mmHg Cr 1.8 mg/dL ตรวจเพิ่มเติมพบ c-ANCA positive (anti-proteinase 3) complement ปกติ CXR พบ bilateral pulmonary infiltrates ไอเป็นเลือด การวินิจฉัยที่น่าจะเป็นมากที่สุดคือ",
+    "choices": [
+      {"label": "A", "text": "Goodpasture syndrome"},
+      {"label": "B", "text": "Granulomatosis with polyangiitis (GPA)"},
+      {"label": "C", "text": "IgA nephropathy"},
+      {"label": "D", "text": "Lupus nephritis"},
+      {"label": "E", "text": "Post-streptococcal GN"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Pulmonary-renal syndrome (ไอเป็นเลือด + RPGN) + c-ANCA positive (anti-PR3) + complement ปกติ = Granulomatosis with polyangiitis (GPA, เดิมเรียก Wegener's)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Granulomatosis with polyangiitis (GPA)",
+      "reason": "GPA (Granulomatosis with Polyangiitis, เดิม Wegener's granulomatosis) เป็น ANCA-associated vasculitis ที่มีลักษณะ:\n\n1. Upper respiratory tract: sinusitis, saddle nose deformity, otitis media\n2. Lower respiratory tract: pulmonary infiltrates, hemoptysis, cavitary lesions\n3. Kidney: rapidly progressive glomerulonephritis (RPGN) → crescentic GN\n\nSerological markers:\n- c-ANCA (cytoplasmic pattern) positive\n- Anti-proteinase 3 (anti-PR3) antibody = specific marker\n- Complement ปกติ (pauci-immune GN)\n\nPathology:\n- Granulomatous inflammation + necrotizing vasculitis\n- Renal biopsy: pauci-immune crescentic GN (ไม่มีหรือมี immune deposits น้อยมาก)\n\nPulmonary-renal syndrome (ปอด + ไต) DDx:\n- GPA: c-ANCA/anti-PR3\n- Microscopic polyangiitis: p-ANCA/anti-MPO\n- Goodpasture: anti-GBM antibody\n- SLE: ANA, anti-dsDNA, low complement",
+      "choices": [
+        {"label": "A", "text": "Goodpasture syndrome", "is_correct": false, "explanation": "Goodpasture มี anti-GBM antibody (ไม่ใช่ ANCA) pathology พบ linear IgG deposits along GBM complement อาจต่ำ ผู้ป่วยรายนี้ c-ANCA positive = GPA ไม่ใช่ anti-GBM disease"},
+        {"label": "B", "text": "GPA", "is_correct": true, "explanation": "Pulmonary-renal syndrome + c-ANCA positive (anti-PR3) + complement ปกติ เป็น classic GPA มี triad: upper airway, lung, kidney involvement ต้องรักษาด้วย cyclophosphamide + corticosteroids"},
+        {"label": "C", "text": "IgA nephropathy", "is_correct": false, "explanation": "IgA nephropathy ไม่มี pulmonary involvement ไม่มี ANCA positivity IgA สูงใน serum complement ปกติ ไม่มี hemoptysis"},
+        {"label": "D", "text": "Lupus nephritis", "is_correct": false, "explanation": "Lupus nephritis มี ANA, anti-dsDNA positive complement ต่ำ (C3, C4) ไม่ใช่ ANCA positive ผู้ป่วยรายนี้ complement ปกติ + c-ANCA positive = GPA"},
+        {"label": "E", "text": "PSGN", "is_correct": false, "explanation": "PSGN มี C3 ต่ำ ASO สูง latent period หลัง streptococcal infection ไม่มี pulmonary involvement ไม่มี ANCA positivity"}
+      ],
+      "key_takeaway": "GPA: pulmonary-renal syndrome + c-ANCA/anti-PR3 + complement ปกติ + granulomatous inflammation DDx Goodpasture (anti-GBM) และ MPA (p-ANCA/anti-MPO)"
+    },
+    "subject": "nephro_med",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 65 ปี CKD stage 3 (eGFR 45 mL/min) มาพบแพทย์ตามนัด ผล lab: Cr 1.5, Ca 9.0, PO4 5.0, K 4.5, albumin 4.0 ยาที่ผู้ป่วยรายนี้ควรหลีกเลี่ยงคือ",
+    "choices": [
+      {"label": "A", "text": "Metformin"},
+      {"label": "B", "text": "Lisinopril"},
+      {"label": "C", "text": "NSAIDs ระยะยาว"},
+      {"label": "D", "text": "Atorvastatin"},
+      {"label": "E", "text": "Amlodipine"}
+    ],
+    "correct_answer": "C",
+    "explanation": "NSAIDs ควรหลีกเลี่ยงใน CKD เพราะลด renal blood flow (prostaglandin inhibition), เพิ่ม Na+/water retention, อาจทำให้ AKI, เร่ง CKD progression และเพิ่มความเสี่ยง hyperkalemia",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. NSAIDs ระยะยาว",
+      "reason": "NSAIDs (Non-Steroidal Anti-Inflammatory Drugs) ควรหลีกเลี่ยงในผู้ป่วย CKD ทุกระยะ โดยเฉพาะการใช้ระยะยาว ด้วยเหตุผลหลายประการ:\n\n1. Hemodynamic effect: NSAIDs ยับยั้ง prostaglandin synthesis ทำให้ afferent arteriole constrict → ลด renal blood flow → ลด GFR → AKI\n\n2. Sodium and water retention: ทำให้บวม ความดันสูงขึ้น\n\n3. Hyperkalemia: ลด renin secretion → ลด aldosterone → K+ retention\n\n4. Acute interstitial nephritis: ทำให้ AKI จาก allergic reaction\n\n5. Papillary necrosis: จากการใช้ระยะยาว\n\n6. เร่ง CKD progression\n\n7. Drug interaction: เพิ่ม risk เมื่อใช้ร่วมกับ ACE-i/ARB (triple whammy: NSAID + ACE-i + diuretic)\n\nMetformin สามารถใช้ได้ใน eGFR > 30 mL/min (ปรับขนาด) KDIGO guidelines อนุญาตให้ใช้",
+      "choices": [
+        {"label": "A", "text": "Metformin", "is_correct": false, "explanation": "Metformin สามารถใช้ได้ใน CKD stage 3 (eGFR 30-60) ควรลดขนาดเมื่อ eGFR 30-45 หยุดเมื่อ eGFR < 30 ผู้ป่วยรายนี้ eGFR 45 ยังใช้ได้"},
+        {"label": "B", "text": "Lisinopril", "is_correct": false, "explanation": "ACE inhibitor มี renoprotective effect ใน CKD ลด proteinuria ชะลอ progression ควรใช้ต่อไป ต้อง monitor K+ และ Cr (หยุดถ้า Cr เพิ่ม > 30%)"},
+        {"label": "C", "text": "NSAIDs ระยะยาว", "is_correct": true, "explanation": "NSAIDs ลด renal blood flow ทำให้ AKI เร่ง CKD progression เพิ่ม hyperkalemia risk ทำให้บวม/ความดันสูง ควรหลีกเลี่ยงใน CKD ทุกระยะ โดยเฉพาะการใช้ระยะยาว"},
+        {"label": "D", "text": "Atorvastatin", "is_correct": false, "explanation": "Statin ปลอดภัยใน CKD ไม่ต้องปรับขนาด ช่วยลด cardiovascular risk ซึ่งสูงใน CKD KDIGO แนะนำ statin ใน CKD stage 3-5"},
+        {"label": "E", "text": "Amlodipine", "is_correct": false, "explanation": "Amlodipine metabolize ทาง liver ปลอดภัยใน CKD ไม่ต้องปรับขนาด ช่วยลดความดันซึ่งสำคัญในการชะลอ CKD progression"}
+      ],
+      "key_takeaway": "NSAIDs ควรหลีกเลี่ยงใน CKD เพราะลด renal blood flow, เร่ง CKD progression, เพิ่ม hyperkalemia risk, ทำให้ AKI โดยเฉพาะเมื่อใช้ร่วมกับ ACE-i/ARB"
+    },
+    "subject": "nephro_med",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 48 ปี มาด้วยปัสสาวะเป็นเลือดไม่เจ็บ (painless gross hematuria) 3 วัน ไม่มีไข้ ไม่มีอาการทางเดินปัสสาวะ สูบบุหรี่ 30 pack-years ตรวจร่างกายปกติ ตรวจปัสสาวะ RBC full field ไม่มี casts protein trace CT scan ไม่พบ stone แต่พบ mass ที่ bladder wall สิ่งที่ต้องทำต่อไปคือ",
+    "choices": [
+      {"label": "A", "text": "ให้ยาปฏิชีวนะ"},
+      {"label": "B", "text": "Cystoscopy กับ biopsy"},
+      {"label": "C", "text": "Renal biopsy"},
+      {"label": "D", "text": "ให้ NSAIDs แล้วนัดติดตาม"},
+      {"label": "E", "text": "ตรวจ urine cytology อย่างเดียว"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Painless gross hematuria ในผู้ชายสูงอายุที่สูบบุหรี่ + bladder mass on CT ต้องทำ cystoscopy กับ biopsy เพื่อวินิจฉัย bladder cancer (transitional cell carcinoma)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Cystoscopy กับ biopsy",
+      "reason": "Painless gross hematuria ในผู้ใหญ่ที่มีปัจจัยเสี่ยง (สูบบุหรี่ อายุ > 40) ต้องคิดถึงมะเร็งทางเดินปัสสาวะเสมอ โดยเฉพาะ bladder cancer (transitional cell carcinoma/urothelial carcinoma)\n\nปัจจัยเสี่ยง bladder cancer:\n- สูบบุหรี่ (สำคัญที่สุด, เพิ่มเสี่ยง 4-7 เท่า)\n- สัมผัสสารเคมี (aromatic amines, aniline dyes)\n- อายุ > 40 ปี\n- เพศชาย (3-4:1)\n\nCT พบ bladder mass → ต้องทำ cystoscopy เพื่อ:\n1. ดู mass โดยตรง\n2. ทำ biopsy เพื่อ histological diagnosis\n3. ประเมิน extent (staging)\n4. ทำ transurethral resection of bladder tumor (TURBT) ทั้ง diagnostic และ therapeutic\n\nUrine cytology มี sensitivity ต่ำ (30-50%) สำหรับ low-grade tumors ไม่เพียงพอเป็น sole investigation",
+      "choices": [
+        {"label": "A", "text": "ให้ยาปฏิชีวนะ", "is_correct": false, "explanation": "ไม่มีหลักฐาน UTI (ไม่มีไข้ ไม่มี dysuria ไม่มี WBC ในปัสสาวะ) การมี bladder mass ต้องสืบค้นหา malignancy ไม่ใช่ให้ยาปฏิชีวนะ"},
+        {"label": "B", "text": "Cystoscopy กับ biopsy", "is_correct": true, "explanation": "มาตรฐานในการประเมิน bladder mass คือ cystoscopy กับ biopsy/TURBT เพื่อวินิจฉัย pathology ประเมิน staging และอาจรักษาพร้อมกัน (TURBT)"},
+        {"label": "C", "text": "Renal biopsy", "is_correct": false, "explanation": "Renal biopsy ใช้สำหรับวินิจฉัย glomerular disease ไม่ใช่ bladder mass ผู้ป่วยรายนี้มี mass ที่ bladder ไม่ใช่ปัญหาที่ไต"},
+        {"label": "D", "text": "NSAIDs แล้วนัดติดตาม", "is_correct": false, "explanation": "Bladder mass ต้องได้รับการวินิจฉัย tissue อย่างเร่งด่วน การให้ยาแก้ปวดแล้วนัดตามไม่เหมาะสม อาจทำให้ delay diagnosis ของ malignancy"},
+        {"label": "E", "text": "Urine cytology อย่างเดียว", "is_correct": false, "explanation": "Urine cytology มี sensitivity ต่ำ (30-50%) โดยเฉพาะ low-grade tumors ไม่เพียงพอเป็น sole investigation เมื่อพบ bladder mass ต้องทำ cystoscopy กับ biopsy"}
+      ],
+      "key_takeaway": "Painless gross hematuria ในผู้ใหญ่ + สูบบุหรี่ + bladder mass on imaging = ต้องทำ cystoscopy กับ biopsy/TURBT เพื่อวินิจฉัย bladder cancer"
+    },
+    "subject": "nephro_med",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 25 ปี ตั้งครรภ์ 8 สัปดาห์ มาด้วยอาการคลื่นไส้ อาเจียนรุนแรง กินอาหารไม่ได้ 5 วัน ตรวจพบ dehydration skin turgor ลดลง BP 90/60 mmHg HR 110/min ผล lab: Na+ 128 mEq/L, K+ 2.8 mEq/L, Cl- 78 mEq/L, HCO3- 36 mEq/L, BUN 30 mg/dL, Cr 1.5 mg/dL ภาวะ acid-base disorder ที่พบคือ",
+    "choices": [
+      {"label": "A", "text": "Metabolic acidosis"},
+      {"label": "B", "text": "Metabolic alkalosis"},
+      {"label": "C", "text": "Respiratory acidosis"},
+      {"label": "D", "text": "Respiratory alkalosis"},
+      {"label": "E", "text": "Mixed metabolic acidosis + alkalosis"}
+    ],
+    "correct_answer": "B",
+    "explanation": "อาเจียนรุนแรง → สูญเสีย HCl จากกระเพาะอาหาร → metabolic alkalosis (HCO3- 36 สูง) + hypokalemia (K+ 2.8 ต่ำ) + hypochloremia (Cl- 78 ต่ำ) + dehydration (contraction alkalosis)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Metabolic alkalosis",
+      "reason": "Hyperemesis gravidarum (อาเจียนรุนแรงในหญิงตั้งครรภ์) ทำให้เกิด metabolic alkalosis จากหลายกลไก:\n\n1. สูญเสีย HCl จากกระเพาะอาหาร → สูญเสีย H+ → HCO3- สูงขึ้น\n2. สูญเสีย K+ → hypokalemia (K+ 2.8) → เพิ่ม H+ secretion ที่ไต\n3. สูญเสีย Cl- → hypochloremia (Cl- 78) → chloride-responsive alkalosis\n4. Dehydration → volume contraction → กระตุ้น RAAS → เพิ่ม Na+ reabsorption แลก K+/H+ → contraction alkalosis\n\nlab ยืนยัน:\n- HCO3- 36 mEq/L สูง (ปกติ 22-26) → metabolic alkalosis\n- K+ 2.8 ต่ำ → hypokalemia\n- Cl- 78 ต่ำ → hypochloremia\n- BUN/Cr สูง → pre-renal azotemia จาก dehydration\n\nการรักษา: IV normal saline (0.9% NaCl) เพื่อ replenish volume + Cl- + KCl supplementation",
+      "choices": [
+        {"label": "A", "text": "Metabolic acidosis", "is_correct": false, "explanation": "Metabolic acidosis มี HCO3- ต่ำ (< 22) ผู้ป่วยรายนี้ HCO3- 36 สูง อาเจียนทำให้สูญเสีย H+ ไม่ใช่ HCO3- จึงเกิด alkalosis ไม่ใช่ acidosis"},
+        {"label": "B", "text": "Metabolic alkalosis", "is_correct": true, "explanation": "HCO3- 36 สูง + อาเจียนรุนแรง (สูญเสีย HCl) + hypokalemia (K+ 2.8) + hypochloremia (Cl- 78) + dehydration = metabolic alkalosis ชนิด chloride-responsive"},
+        {"label": "C", "text": "Respiratory acidosis", "is_correct": false, "explanation": "Respiratory acidosis มี pCO2 สูง จาก hypoventilation ผู้ป่วยรายนี้ปัญหาหลักคือสูญเสีย gastric acid จากอาเจียน ไม่ใช่ปัญหาระบบหายใจ"},
+        {"label": "D", "text": "Respiratory alkalosis", "is_correct": false, "explanation": "Respiratory alkalosis มี pCO2 ต่ำ จาก hyperventilation แม้ว่าอาจมี compensatory respiratory acidosis (เพิ่ม pCO2) ใน metabolic alkalosis แต่ primary disorder คือ metabolic alkalosis"},
+        {"label": "E", "text": "Mixed metabolic acidosis + alkalosis", "is_correct": false, "explanation": "ไม่มีหลักฐานของ metabolic acidosis ร่วม AG = 140 - (78+36) = 26 (elevated จาก contraction) แต่ primary disorder ชัดเจนว่าเป็น metabolic alkalosis จากอาเจียน"}
+      ],
+      "key_takeaway": "อาเจียนรุนแรง → สูญเสีย HCl → metabolic alkalosis + hypokalemia + hypochloremia + dehydration รักษาด้วย IV normal saline + KCl replacement"
+    },
+    "subject": "nephro_med",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  }
+]

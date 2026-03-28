@@ -40,10 +40,32 @@ export default function Footer() {
 
           <div>
             <h3 className="font-semibold mb-3">ติดต่อเรา</h3>
-            <ul className="space-y-2 text-sm text-white/70">
-              <li>📧 jiacpr@gmail.com</li>
+            <ul className="space-y-2 text-sm text-white/70 mb-4">
+              <li>
+                <a href="https://www.jiacpr.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  🌐 www.jiacpr.com
+                </a>
+              </li>
+              <li>
+                <a href="mailto:jiacpr@gmail.com" className="hover:text-white transition-colors">
+                  📧 jiacpr@gmail.com
+                </a>
+              </li>
               <li>📱 Line: @jiacpr</li>
+              <li>
+                <a href="tel:0885588078" className="hover:text-white transition-colors">
+                  📞 088-558-8078
+                </a>
+              </li>
             </ul>
+            <a
+              href="https://www.jiacpr.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 px-4 py-2 text-sm font-medium text-white transition-colors"
+            >
+              ติดต่อเรา →
+            </a>
           </div>
         </div>
 

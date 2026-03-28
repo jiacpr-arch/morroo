@@ -1,0 +1,1166 @@
+{
+  "filename": "Chest med",
+  "subject": "chest_med",
+  "exam_type": "NL2",
+  "stats": {
+    "total": 59,
+    "no_choices": 35,
+    "few_choices": 6,
+    "good": 18,
+    "no_scenario": 0,
+    "short_scenario": 18
+  },
+  "issues": [
+    {
+      "index": 3,
+      "question_number": 4,
+      "issues": [
+        "only_1_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยชายไทยเป็น bronchial asthma พ่นยาไม่ดีขึ้น lung : expirat Wheezing การรัก",
+      "choices_count": 1
+    },
+    {
+      "index": 6,
+      "question_number": 7,
+      "issues": [
+        "only_1_choices"
+      ],
+      "scenario_preview": "ชายวัยกลางคน มีไข้ ไอ เหนื่อย ลมหายใจมีกลิ่นเหม็น CXR :cavitary lesion with air ",
+      "choices_count": 1
+    },
+    {
+      "index": 11,
+      "question_number": 12,
+      "issues": [
+        "only_1_choices"
+      ],
+      "scenario_preview": "ชาย 70 ปี เป็น pneumonia มา 5 วัน มี U/D COPD ให้ O2 5 LPM Cef-3+azithromicin อย",
+      "choices_count": 1
+    },
+    {
+      "index": 13,
+      "question_number": 14,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชาย อายุ 60 ปี ภูมิลาเนากรงเทพมหานคร สูบบุหรี่ตั้งแต่หนุ่มๆ หยุดมา 2-3 ปี มาด้วย",
+      "choices_count": 0
+    },
+    {
+      "index": 16,
+      "question_number": 17,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยจมน้า on tube หายใจไม่เข้ากับ ventilator Management? (ให้รูปมา film เปรอะ",
+      "choices_count": 0
+    },
+    {
+      "index": 19,
+      "question_number": 20,
+      "issues": [
+        "only_2_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยหญิง อายุ 25 ปี U/D หอบหืด ครั้งนี้ มีเหนื่อยมากขึ้น มี wheezing ทา PEFR ",
+      "choices_count": 2
+    },
+    {
+      "index": 20,
+      "question_number": 21,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชาย 62 ปี ไข้ ไอ มา 2 เดือน เบื่ออาหาร น้าหนักลด 5 กิโลกรัม PE: BT37.8 RR28 HR10",
+      "choices_count": 0
+    },
+    {
+      "index": 21,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "flexible broncoscope",
+      "choices_count": 0
+    },
+    {
+      "index": 22,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "sputum cytology",
+      "choices_count": 0
+    },
+    {
+      "index": 23,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "high resolution CT chest",
+      "choices_count": 0
+    },
+    {
+      "index": 24,
+      "question_number": 22,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชาย 50 ปี มีไข้ ไอ เสมหะเขียว มา 1 เดือน ไม่สูบบุหรี่ กินเหล้าทุกวัน มีเพื่อนร่ว",
+      "choices_count": 0
+    },
+    {
+      "index": 25,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "metronidazole",
+      "choices_count": 0
+    },
+    {
+      "index": 26,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Anti-TB drugs",
+      "choices_count": 0
+    },
+    {
+      "index": 27,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Oflaxacin",
+      "choices_count": 0
+    },
+    {
+      "index": 28,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Roxithromaycin",
+      "choices_count": 0
+    },
+    {
+      "index": 29,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Bactrim+Doxycycline",
+      "choices_count": 0
+    },
+    {
+      "index": 30,
+      "question_number": 23,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชาย ประวัติ asthma ได้รับยาพ่นมาสม่าเสมอ ครั้งนี้มาด้วยไอ มีเสมหะ หายใจมีเสียงวี",
+      "choices_count": 0
+    },
+    {
+      "index": 31,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "salbutamol NB",
+      "choices_count": 0
+    },
+    {
+      "index": 32,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "salbutamol NB+ prednisolone",
+      "choices_count": 0
+    },
+    {
+      "index": 33,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Antihistamine+salbutamol NB",
+      "choices_count": 0
+    },
+    {
+      "index": 34,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "theophilline+ไม่แน่ใจว่าsalbutamol or prednisolone",
+      "choices_count": 0
+    },
+    {
+      "index": 35,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "prednisolone",
+      "choices_count": 0
+    },
+    {
+      "index": 36,
+      "question_number": 24,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชาย70ปี U/D old CVA นอนติดเตียง มาด้วยไข้หอบเหนื่อย 2วัน BT 38.5, RR 28/min, ฟัง",
+      "choices_count": 0
+    },
+    {
+      "index": 37,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Ceftazidime",
+      "choices_count": 0
+    },
+    {
+      "index": 38,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Cefazolin",
+      "choices_count": 0
+    },
+    {
+      "index": 39,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Metronidazole",
+      "choices_count": 0
+    },
+    {
+      "index": 40,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Ofloxacin",
+      "choices_count": 0
+    },
+    {
+      "index": 41,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Coamoxiclav",
+      "choices_count": 0
+    },
+    {
+      "index": 42,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "salt-pepper skin , effusion both basal lung ถ้า Dx\n1 systemic sclerosis",
+      "choices_count": 0
+    },
+    {
+      "index": 43,
+      "question_number": 4,
+      "issues": [
+        "only_1_choices"
+      ],
+      "scenario_preview": "คนไข้ asthmatic attack ใส่ tube on ventilator 2 วันต่อมาผู้ป่วยมีอาการ restless ",
+      "choices_count": 1
+    },
+    {
+      "index": 47,
+      "question_number": 8,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "ผู้หญิง sudden dyspnea มีขาบวมข้างขวา ประวัตืเหมือนเป็น PE ถาม investigate for d",
+      "choices_count": 3
+    },
+    {
+      "index": 48,
+      "question_number": 10,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ชายอายุ 50 ปี มาโรงพยาบาลชุมชน ไม่มีสติหลังจากกินหน่อไม้ปี๊บ ตรวจร่างกายไม่หา",
+      "choices_count": 0
+    },
+    {
+      "index": 49,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Recheck endotracheal tube",
+      "choices_count": 0
+    },
+    {
+      "index": 50,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ABG",
+      "choices_count": 0
+    },
+    {
+      "index": 51,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "CXR",
+      "choices_count": 0
+    },
+    {
+      "index": 52,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ECG 12 lead",
+      "choices_count": 0
+    },
+    {
+      "index": 53,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ดู botulinum level",
+      "choices_count": 0
+    },
+    {
+      "index": 54,
+      "question_number": 11,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "คนงานซ่อมท่อหมักชีวภาพ แล้วตายถามDx\n1 suffocation environment\n2 suffocation gas ",
+      "choices_count": 0
+    },
+    {
+      "index": 55,
+      "question_number": 12,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ca breast on chemo loss f/u ไป มาด้วยเหนื่อย หายใจลาบาก bp80/60 pr105 rr24 ,jvp ",
+      "choices_count": 0
+    },
+    {
+      "index": 57,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "5",
+      "choices_count": 0
+    },
+    {
+      "index": 58,
+      "question_number": 6,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "0\nLDH\n200\n400\nGlucose\n70\n100\nCongestive heart failure\nHepatic hydrothorax\nMalign",
+      "choices_count": 0
+    }
+  ],
+  "questions": [
+    {
+      "question_number": 1,
+      "scenario": "ผู้ป่วยชายอายุ 18 ปีก่อนหน้านี้สุขภาพร่างกายแข็งแรงดีไม่มีโรคประจาตัว ครั้งนี้มีอาการ Upper respiratory tract infection ผู้ป่วยมาด้วยไข้ ไอ หอบ ผลจากการตรวจ CXR พบว่ามี Interstitial infiltration ยาปฏิชีวนะใดเหมาะสมที่สุดในผู้ป่วยรายนี้ (ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ampicillin"
+        },
+        {
+          "label": "B",
+          "text": "Ciprofloxacin"
+        },
+        {
+          "label": "C",
+          "text": "Roxithromycin"
+        },
+        {
+          "label": "D",
+          "text": "Gentamicin"
+        },
+        {
+          "label": "E",
+          "text": "Augmentin"
+        }
+      ],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ผู้ป่วยชายอายุ 40 ปี มีอาการไอแห้งๆ มา 1 เดือนก่อนมาโรงพยาบาล อาการเป็นมากตอนอากาศหนาว และตอนเย็น ไอมีเสมหะสีขาว ไม่มีเลือดปน ตรวจร่างกายปกติ ผลการตรวจCXR พบว่าWNL การปฏิบัติในข้อใดต่อไปนี้น่าจะเหมาะสมกับผู้ป่วยรายนี้มากที่สุด (ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Skin test"
+        },
+        {
+          "label": "B",
+          "text": "CT chest"
+        },
+        {
+          "label": "C",
+          "text": "Sputum AFB"
+        },
+        {
+          "label": "D",
+          "text": "Bronchoscopy"
+        },
+        {
+          "label": "E",
+          "text": "PFT"
+        }
+      ],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 3,
+      "scenario": "วัยรุ่นชายอายุ 18 ปี แข็งแรงดี มีอาการหอบ หายใจลาบาก ตอนออกกาลังกาย และตอนกลางคืน มีอาการ 2-3 ครั้งในเดือนที่ผ่านมา แพทย์ทาการตรวจร่างกายเบื้องต้นพบว่าไม่มีความผิดปรกติใดๆ การรักษาที่เหมาะสมที่สุดในผู้ป่วยรายนี้คือข้อใด (ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "inhale salbutamol prn + ICS"
+        },
+        {
+          "label": "B",
+          "text": "alpha-agonist as need"
+        },
+        {
+          "label": "C",
+          "text": "oral bronchodilator"
+        },
+        {
+          "label": "D",
+          "text": "Salbutamol inhalation as needed"
+        },
+        {
+          "label": "E",
+          "text": "Long acting beta2 agonist + corticosteroid"
+        }
+      ],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 4,
+      "scenario": "ผู้ป่วยชายไทยเป็น bronchial asthma พ่นยาไม่ดีขึ้น lung : expirat Wheezing การรักษาที่เหมาะสมที่สุดในผู้ป่วยรายนี้คือข้อใด (ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "iv. Dexametazone"
+        }
+      ],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 5,
+      "scenario": "ชาย อายุ 40 ปี โรคประจาตัวเป็น Asthma เป็นหวัด 2 วัน PTA พ่นยาแล้วอาการไม่ดีขึ้นแพทย์ทาการตรวจร่างกายเบื้องต้น T 37.4 oC BP 110/90 mmHg PR 100 bpm RR 28 /min Lung: wheezing at both lower lung with accessory muscle used การรักษาที่เหมาะสมที่สุดในผู้ป่วยรายนี้คือข้อใด (ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Terbutaline Sc"
+        },
+        {
+          "label": "B",
+          "text": "IV steroid"
+        },
+        {
+          "label": "C",
+          "text": "IV dexamethasone"
+        },
+        {
+          "label": "D",
+          "text": "IV Theophyline"
+        },
+        {
+          "label": "E",
+          "text": "NB salbutamol"
+        }
+      ],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 6,
+      "scenario": "หญิง 42 ปี มาจากเชียงใหม่ มาตรวจ FU มะเร็งเต้านมที่ รพ.กรุงเทพฯ ขณะกาลังลงจากรถทัวร์ มีอาการเจ็บอกด้ายขวา และหายใจหอบเหนื่อย PE: PR 128 /min RR 30 /min lung-clear, Rt leg-Swollen & tenderness เข้ากับโรคใดมากที่สุด (ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Pleuodynia"
+        },
+        {
+          "label": "B",
+          "text": "Pneumonia"
+        },
+        {
+          "label": "C",
+          "text": "Pulmonary embolism"
+        },
+        {
+          "label": "D",
+          "text": "Acute coronary syndrome"
+        },
+        {
+          "label": "E",
+          "text": "Dissected aortic aneurism"
+        }
+      ],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 7,
+      "scenario": "ชายวัยกลางคน มีไข้ ไอ เหนื่อย ลมหายใจมีกลิ่นเหม็น CXR :cavitary lesion with air fluid level ในผู้ป่วยรายนี้น่าจะคิดถึงโรคใดมากที่สุด (ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Lung abscess"
+        }
+      ],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 8,
+      "scenario": "ชาย 30y คลาได้LN ที่คอโตทั้งสองข้าง มา 3 เดือน ก้อนโตขึ้นเรื่อยๆ 1 สัปดาห์ รู้สึกอึดอัดหายใจลาบาก เสียงดังเวลาหายใจเข้า PE : BP 140/90 RR 24 PR 100 inspiratory stridor, bilateral cervical LN enlargement 2 cm., lung clear with respiratory stridor , liver 3 cm. BRCM, spleen 8 cm. BLCM จงหาการรักษา เบื้องต้น (ศรว 2009)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Beta2 agonist inhale"
+        },
+        {
+          "label": "B",
+          "text": "Adrenaline SC"
+        },
+        {
+          "label": "C",
+          "text": "Furosemide IV"
+        },
+        {
+          "label": "D",
+          "text": "Dexamethasone IV"
+        },
+        {
+          "label": "E",
+          "text": "ET tube"
+        }
+      ],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 9,
+      "scenario": "ชายอายุ 50 ปี สูบบุหรี่วันละ 1-2 ซองมา 30 ปี สังเกตว่ามีหน้าบวม หายใจแน่นติดขัดมา 2 สัปดาห์ PE : facial swelling, superficial vein dilatation at anterior chest wall, Chest –normal, Abd-normal, Other-WNL จงให้การวินิจฉัย (ศรว 2009)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cor pulmonale"
+        },
+        {
+          "label": "B",
+          "text": "Cardiac tamponade"
+        },
+        {
+          "label": "C",
+          "text": "Nephrotic syndrome"
+        },
+        {
+          "label": "D",
+          "text": "Pulmonary TB"
+        },
+        {
+          "label": "E",
+          "text": "Bronchogenic CA"
+        }
+      ],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 10,
+      "scenario": "ชาย 30 ปี เหนื่อยมา 2 hr. สูบบุหรี่ครึ่งซอง/วัน มาเป็นเวลา15 ปี มีอาการไอ หอบ หอบเวลากลางคืน+เวลาอากาศเย็น Dx? (ศรว 2009)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Bronchiectasis"
+        },
+        {
+          "label": "B",
+          "text": "Bronchial asthma"
+        },
+        {
+          "label": "C",
+          "text": "Chronic bronchitis"
+        },
+        {
+          "label": "D",
+          "text": "Pulmonary TB"
+        },
+        {
+          "label": "E",
+          "text": "CA bronchus"
+        }
+      ],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 11,
+      "scenario": "ชายอายุ 32 ปี หอบเหนื่อยมา 3 วัน เป็นหลังไข้หวัด เป็นโรคหืดมา 20 ปี ปัจจุบันได้ inhale budesonide PE: tachypnea, decreased breath sounds at Rt. Upper lung with dullness on percussion, rhonchi both lungs, O2 saturation = 85% การตรวจทางปฎิบัติการใด ช่วยวินิจฉัยโรคของผู้ป่วยรายนี้ดีที่สุด (ศรว 2010)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Peak expiratory flow rate"
+        },
+        {
+          "label": "B",
+          "text": "Portable chest x-ray"
+        },
+        {
+          "label": "C",
+          "text": "Spiral CT angiography"
+        },
+        {
+          "label": "D",
+          "text": "Arterial blood gas"
+        },
+        {
+          "label": "E",
+          "text": "Sputum Gram stain"
+        }
+      ],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 12,
+      "scenario": "ชาย 70 ปี เป็น pneumonia มา 5 วัน มี U/D COPD ให้ O2 5 LPM Cef-3+azithromicin อยู่ๆก็เหนื่อยมากขึ้น และซึมลง Mx? (ศรว 2010)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "intubation"
+        }
+      ],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 13,
+      "scenario": "ผู้ป่วยหญิง อายุ45ปี ถูกส่งมาด้วย หมดสติ ข้างตัวพบขวดยา ASA ยาหายไป 100 เม็ด แรกรับ RR10/min ต่อมาได้รับการ ET intubation with ventilator ผล ABG ออกมาได้ดังนี้ : pH 7.1, HCO3 18, PaCo2 62, PaO2 200 จงบอกacid-base disturbance ของผู้ป่วยรายนี้ (ศรว 2011)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "acute metabolic acidosis"
+        },
+        {
+          "label": "B",
+          "text": "Acute respiratory acidosis"
+        },
+        {
+          "label": "C",
+          "text": "acute metabolic acidosis with acute respiratory acidosis"
+        },
+        {
+          "label": "D",
+          "text": "acute metabolic acidosis with acute respiratory alkalosis"
+        },
+        {
+          "label": "E",
+          "text": "acute metabolic alkalosis with acute respiratory acidosis"
+        }
+      ],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 14,
+      "scenario": "ชาย อายุ 60 ปี ภูมิลาเนากรงเทพมหานคร สูบบุหรี่ตั้งแต่หนุ่มๆ หยุดมา 2-3 ปี มาด้วยอาการไข้ ไอ หอบ เสมหะสีเหลืองเขียว ปวดเจ็บหน้าอกข้างขวา PE : decrease breath sound at RUL area CXR : RUL infiltration เขื้อใดน่าจะเป็นเชื้อก่อโรค (ศรว 2011)",
+      "choices": [],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 15,
+      "scenario": "ผู้ป่วยชาย อาชีพช่างแกะสลักหินมีอาการหอบเหนื่อย หากจะทาการ investigation จะเลือกอะไรเพื่อใช้ในการวินิจฉัยได้ดีที่สุด (ศรว 2011)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "CXR"
+        },
+        {
+          "label": "B",
+          "text": "pulmonary function test"
+        },
+        {
+          "label": "C",
+          "text": "sputum for silicon crystal"
+        },
+        {
+          "label": "D",
+          "text": "bronchoscopy"
+        },
+        {
+          "label": "E",
+          "text": "sputum cytology"
+        }
+      ],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 16,
+      "scenario": "ผู้ป่วยหญิงอายุ 40 ปี สูบบุหรี่วันละ 1 ซอง นาน 10 ปี PE :inspiratory and expiratory wheezing ชัดที่ sternum Dx? (ศรว 2011)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "COPD"
+        },
+        {
+          "label": "B",
+          "text": "Asthma"
+        },
+        {
+          "label": "C",
+          "text": "Bronchiectesis"
+        },
+        {
+          "label": "D",
+          "text": "Tracheal tumor"
+        },
+        {
+          "label": "E",
+          "text": "Pulmonary embolism"
+        }
+      ],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 17,
+      "scenario": "ผู้ป่วยจมน้า on tube หายใจไม่เข้ากับ ventilator Management? (ให้รูปมา film เปรอะ) (ศรว 2011)",
+      "choices": [],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 18,
+      "scenario": "ชายอายุ 60 ปีทางานโรงโม่หินมา 30 ปี ไอแห้งๆมา 2ปี ไม่มีเสมหะ ไม่มีเลือดปน ผอมลง ไม่มีไข้ Lung function test :\nrestrictive defect sputum AFB negative ตลอด มีรูป CXR มาให้ ไม่สูบบุหรี่ ได้ bronchodilator 3 mo ไม่ดึ้น รักษา (ศรว 2011)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "antiTB drug 6 mo"
+        },
+        {
+          "label": "B",
+          "text": "หยุดงาน"
+        },
+        {
+          "label": "C",
+          "text": "bronchodilator NB qid"
+        },
+        {
+          "label": "D",
+          "text": "steroid inhale"
+        },
+        {
+          "label": "E",
+          "text": "codeine"
+        }
+      ],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 19,
+      "scenario": "ผู้ป่วยชาย U/D asthma on budesonide 800/d วันรี้หอบเหนื่อยมากขึ้น RR26 peak flow 150 ให้ salbutamol NB *2\ndoses and Dexa iv 1 hr ต่อมาอาการดีขึ้น RR25 peak flow 300 ให้การรักษาต่อไปอย่างไร (ศรว 2011)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "D/C F/U 4 wk HM ยาเดิม"
+        },
+        {
+          "label": "B",
+          "text": "D/C HM budesonide 1600/d"
+        },
+        {
+          "label": "C",
+          "text": "Observe 1 hr record RR HR peak flow"
+        },
+        {
+          "label": "D",
+          "text": "Admit and treat with salbutamol NB"
+        }
+      ],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 20,
+      "scenario": "ผู้ป่วยหญิง อายุ 25 ปี U/D หอบหืด ครั้งนี้ มีเหนื่อยมากขึ้น มี wheezing ทา PEFR = 100 ( normal > 400) พ่น Beta blocker หลังพ่น PEFR = 100 O2 sat ดี แต่ยังเหนื่อยหายใจไม่ออก poor air entry ให้ IV Steroid ไปแล้ว ไม่ดีขึ้น ทายังไงต่อ (ศรว 2011)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Admit"
+        },
+        {
+          "label": "B",
+          "text": "Adrenaline"
+        }
+      ],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 21,
+      "scenario": "ชาย 62 ปี ไข้ ไอ มา 2 เดือน เบื่ออาหาร น้าหนักลด 5 กิโลกรัม PE: BT37.8 RR28 HR100 BP 120/80 Mild pale, mild jaundice, normal s1s2, no crepitation, hepatomegaly, sputum neg 3 day CXR: infiltration Rt lower lobe จะส่งอะไรเพิ่ม (72/ศรว 2012)",
+      "choices": [],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 1,
+      "scenario": "flexible broncoscope",
+      "choices": [],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 2,
+      "scenario": "sputum cytology",
+      "choices": [],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 3,
+      "scenario": "high resolution CT chest",
+      "choices": [],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 22,
+      "scenario": "ชาย 50 ปี มีไข้ ไอ เสมหะเขียว มา 1 เดือน ไม่สูบบุหรี่ กินเหล้าทุกวัน มีเพื่อนร่วมวงเหล้าเป็น Pul TB BT38.5, RR16, Coarse crep at RLL, cavitary lesion+air fluids level at Sup. Seg of RLL Mx? (74/ศรว 2012)",
+      "choices": [],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 1,
+      "scenario": "metronidazole",
+      "choices": [],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Anti-TB drugs",
+      "choices": [],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Oflaxacin",
+      "choices": [],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Roxithromaycin",
+      "choices": [],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 5,
+      "scenario": "Bactrim+Doxycycline",
+      "choices": [],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 23,
+      "scenario": "ชาย ประวัติ asthma ได้รับยาพ่นมาสม่าเสมอ ครั้งนี้มาด้วยไอ มีเสมหะ หายใจมีเสียงวี้ด PE: RR26, BP 120/80, generalized wheezing Initial Mx? (77/ศรว 2012)",
+      "choices": [],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 1,
+      "scenario": "salbutamol NB",
+      "choices": [],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 2,
+      "scenario": "salbutamol NB+ prednisolone",
+      "choices": [],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Antihistamine+salbutamol NB",
+      "choices": [],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 4,
+      "scenario": "theophilline+ไม่แน่ใจว่าsalbutamol or prednisolone",
+      "choices": [],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 5,
+      "scenario": "prednisolone",
+      "choices": [],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 24,
+      "scenario": "ชาย70ปี U/D old CVA นอนติดเตียง มาด้วยไข้หอบเหนื่อย 2วัน BT 38.5, RR 28/min, ฟังปอดได้ fine crepitation RLL CXR: patchy infiltration at upper segment of RLL จะให้การรักษาอย่างไร (164/ศรว 2012)",
+      "choices": [],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Ceftazidime",
+      "choices": [],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Cefazolin",
+      "choices": [],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Metronidazole",
+      "choices": [],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Ofloxacin",
+      "choices": [],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 5,
+      "scenario": "Coamoxiclav",
+      "choices": [],
+      "exam_source": "Chest med"
+    },
+    {
+      "question_number": 1,
+      "scenario": "salt-pepper skin , effusion both basal lung ถ้า Dx\n1 systemic sclerosis",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "คนไข้ asthmatic attack ใส่ tube on ventilator 2 วันต่อมาผู้ป่วยมีอาการ restless ให้ฟิมล์มาเป็น RUL atelectasis ถาม management",
+      "choices": [
+        {
+          "label": "A",
+          "text": "suction"
+        }
+      ],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "เช้า ชุดA ชาย 70 ปี underlying COPD มาด้วย COPD with acute exacerbation ,on bird ventilator ต่อมามี progressive dyspnea PE: decrease breath sound right lung, trachea shift to left side, hyperresonance on percussion rt. lung. What is the BP 90/70 proper investigation?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "CXR"
+        },
+        {
+          "label": "B",
+          "text": "ICD"
+        },
+        {
+          "label": "C",
+          "text": "NSS loading"
+        },
+        {
+          "label": "D",
+          "text": "dobutamine"
+        }
+      ],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 6,
+      "scenario": "thai female 60 yo shortness of breathing 3 mo . No underlying disease PE: จาไม่ได้ น่าจะ normal มั้ง cxr ให้ภาพมา เป็น lt lung ขาว ทั้งหมด the most appropriate investigation for dx?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "CT chest"
+        },
+        {
+          "label": "B",
+          "text": "level ..."
+        },
+        {
+          "label": "C",
+          "text": "Bronchoscopy"
+        },
+        {
+          "label": "D",
+          "text": "thoracentesis"
+        }
+      ],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 7,
+      "scenario": "หญิงอายุ 45 ปี กินยาอะไรไม่รู้มา 2 ชม. PE: T 38 P 130 BP 140/90 stupor, flushing, lung-clear, decrease bowel sound, pupil 4mm RTL",
+      "choices": [
+        {
+          "label": "A",
+          "text": "amitryptyline"
+        },
+        {
+          "label": "B",
+          "text": "amphetamine"
+        },
+        {
+          "label": "C",
+          "text": "diazepam"
+        },
+        {
+          "label": "D",
+          "text": "opioid"
+        },
+        {
+          "label": "E",
+          "text": "organophosphate"
+        }
+      ],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 8,
+      "scenario": "ผู้หญิง sudden dyspnea มีขาบวมข้างขวา ประวัตืเหมือนเป็น PE ถาม investigate for definitive diagnosis",
+      "choices": [
+        {
+          "label": "A",
+          "text": "CTA"
+        },
+        {
+          "label": "B",
+          "text": "CXR"
+        },
+        {
+          "label": "C",
+          "text": "U/S droppler"
+        }
+      ],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 10,
+      "scenario": "ผู้ชายอายุ 50 ปี มาโรงพยาบาลชุมชน ไม่มีสติหลังจากกินหน่อไม้ปี๊บ ตรวจร่างกายไม่หายใจ PR 120 BP180/100 แพทย์จึงได้ใส่ Endotracheal tube แล้ว refer มาหาท่านที่ รพ. ตรวจร่างกายพบ PR 124 BP 180/100 และ ยังใส่ ET tube c ambubag อยู่ ถามว่าถ้าท่านเป็นแพทย์จะทายังไงดีที่สุด",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Recheck endotracheal tube",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ABG",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "CXR",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "ECG 12 lead",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "ดู botulinum level",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 11,
+      "scenario": "คนงานซ่อมท่อหมักชีวภาพ แล้วตายถามDx\n1 suffocation environment\n2 suffocation gas methane\n3 asphyxia CO\n4 asphyxia cyanide",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 12,
+      "scenario": "ca breast on chemo loss f/u ไป มาด้วยเหนื่อย หายใจลาบาก bp80/60 pr105 rr24 ,jvp up to mandible, leg pitting edema2+ faint heart sound ,impalpable pmi ถามการรักษาขั้นต้น\n1 dopamine\n2 digoxin\n3 iv nss\n4 iv furosemide",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 13,
+      "scenario": "ผู้ป่วยหญิงอายุ 20 ปี มี dyspnea 15 min PTA PE ; stidor , expiratory wheezing พ่น SABA 3 dose ไม่ดีขึ้น ทาไรต่อ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "anticholinergic NB"
+        },
+        {
+          "label": "B",
+          "text": "oral corticosteroid"
+        },
+        {
+          "label": "C",
+          "text": "terbutaline NB"
+        },
+        {
+          "label": "D",
+          "text": "epinephrine NB"
+        },
+        {
+          "label": "E",
+          "text": "IV theophylline"
+        }
+      ],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "5",
+      "choices": [],
+      "exam_source": "ศรว 2015"
+    },
+    {
+      "question_number": 6,
+      "scenario": "0\nLDH\n200\n400\nGlucose\n70\n100\nCongestive heart failure\nHepatic hydrothorax\nMalignant pleural effusion\nParapneumonic effusion\nTuberculouspleuritis\nA 7-year-old child diagnosis pneumonia treat with cefotaxime 4 days but not improve. CXR: right pleural effusion. Thoracentesis profile straw color, Sp.gr 1.030, protein 3.0, sugar 49, WBC 1500 (PMN85, L15), no organism. What is the management\nAdd cloxacilin\nSwitch to imipenem\nRepeat thoracentesis\nIntercostal drainage\nSurgical decortications",
+      "choices": [],
+      "exam_source": "ศรว 2015"
+    }
+  ]
+}

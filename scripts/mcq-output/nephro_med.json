@@ -1,0 +1,366 @@
+{
+  "filename": "nephro",
+  "subject": "nephro_med",
+  "exam_type": "NL2",
+  "stats": {
+    "total": 14,
+    "no_choices": 2,
+    "few_choices": 3,
+    "good": 9,
+    "no_scenario": 0,
+    "short_scenario": 0
+  },
+  "issues": [
+    {
+      "index": 0,
+      "question_number": 1,
+      "issues": [
+        "only_2_choices"
+      ],
+      "scenario_preview": "หญิงอายุ 60 ปี สูบบุหรี่มา 30 ปี ไอมาก X-ray พบ Right upper lung mass และมี Na ใ",
+      "choices_count": 2
+    },
+    {
+      "index": 2,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ป่วย CKD มี K = 7 EKG change จงบอกการรักษาที่สาคัญที่สุดในผู้ป่วยรายนี้….[ศรว",
+      "choices_count": 0
+    },
+    {
+      "index": 3,
+      "question_number": 4,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยสูงอายุมีโรคประจาตัวเป็น DM with HT มี แพทย์ทาการตรวจร่างกายเบื้องต้น Cos",
+      "choices_count": 3
+    },
+    {
+      "index": 4,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ป่วย CKD มี K = 7 EKG change จงบอกการรักษาที่สาคัญที่สุดในผู้ป่วยรายนี้ (ศรว ",
+      "choices_count": 0
+    },
+    {
+      "index": 8,
+      "question_number": 9,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยหญิงอายุ 65 yr U/D HTN ,glaucoma ซื้อยากินเอง ญาติพบหมดสติ ไม่รุ้สึกตัว P",
+      "choices_count": 3
+    }
+  ],
+  "questions": [
+    {
+      "question_number": 1,
+      "scenario": "หญิงอายุ 60 ปี สูบบุหรี่มา 30 ปี ไอมาก X-ray พบ Right upper lung mass และมี Na ในเลือดต่า (urine osm 50) เกิดจากอะไร (ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "SIADH"
+        },
+        {
+          "label": "B",
+          "text": "Polydipsia"
+        }
+      ],
+      "exam_source": "nephro"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ในการรับน้องที่มหาวิทยาลัยแห่งหนึ่ง รุ่นพี่ได้ให้รุ่นน้องให้กินน้าเปล่าปริมาณมาก หลังจากนั้นผู้ป่วยมีอาการซึม ปวดศีรษะและ คลื่นไส้อาเจียน ข้อใดต่อไปนี้น่าจะทาให้เกิดอาการใน ผู้ป่วยรายนี้มากที่สุด (หลังจากนาข้อมูลจากแต่ละสถาบันมารวมกันแล้ว พบว่ามีจานวนตัวเลือกเกิน 5 ตัวเลือก) [ศรว 2008]",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Hypokalemia"
+        },
+        {
+          "label": "B",
+          "text": "Hyponatremia"
+        },
+        {
+          "label": "C",
+          "text": "Hypernatremia"
+        },
+        {
+          "label": "D",
+          "text": "Hypocalcemia"
+        },
+        {
+          "label": "E",
+          "text": "SIADH"
+        }
+      ],
+      "exam_source": "nephro"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ผู้ป่วย CKD มี K = 7 EKG change จงบอกการรักษาที่สาคัญที่สุดในผู้ป่วยรายนี้….[ศรว 2008]",
+      "choices": [],
+      "exam_source": "nephro"
+    },
+    {
+      "question_number": 4,
+      "scenario": "ผู้ป่วยสูงอายุมีโรคประจาตัวเป็น DM with HT มี แพทย์ทาการตรวจร่างกายเบื้องต้น Costovertebral angle tenderness การรักษาที่เหมาะสมที่สุดในผู้ป่วยรายนี้คือข้อใด [ศรว 2008]",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ceftriaxone IV"
+        },
+        {
+          "label": "B",
+          "text": "Ceftriaxone oral"
+        },
+        {
+          "label": "C",
+          "text": "Ofloxacin oral"
+        }
+      ],
+      "exam_source": "nephro"
+    },
+    {
+      "question_number": 5,
+      "scenario": "ผู้ป่วย CKD มี K = 7 EKG change จงบอกการรักษาที่สาคัญที่สุดในผู้ป่วยรายนี้ (ศรว 2009)",
+      "choices": [],
+      "exam_source": "nephro"
+    },
+    {
+      "question_number": 6,
+      "scenario": "หญิง 43y มีอาการอ่อนเพลียง่าย กล้ามเนื้อแขนขาอ่อนแรง เคยมีอาการบวมที่ขา กินHCTZ 50 mg มาตลอด อาการในผู้ป่วยรายนี้น่าจะเกิดจากอะไร ศรว [2009]",
+      "choices": [
+        {
+          "label": "A",
+          "text": "hyponatrimia"
+        },
+        {
+          "label": "B",
+          "text": "hypokalemia"
+        },
+        {
+          "label": "C",
+          "text": "hypomagnesia"
+        },
+        {
+          "label": "D",
+          "text": "hypocalcemia"
+        }
+      ],
+      "exam_source": "nephro"
+    },
+    {
+      "question_number": 7,
+      "scenario": "ชายอายุ 20 ปี มาด้วยปัสสาวะสีเข้มมา 2 วัน BP 140/100 UA RBC>100/hpf WBC 10/hpf with red cell cast protein 1+ ควรรักษาด้วยยาใด [ศรว 2009]",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Norfloxacin"
+        },
+        {
+          "label": "B",
+          "text": "Furosemide"
+        },
+        {
+          "label": "C",
+          "text": "Prednisolone"
+        },
+        {
+          "label": "D",
+          "text": "Cef-3"
+        },
+        {
+          "label": "E",
+          "text": "Sodium nitroprusside"
+        }
+      ],
+      "exam_source": "nephro"
+    },
+    {
+      "question_number": 8,
+      "scenario": "ผู้ป่ วยชายอายุ 18 ปี ดื่มน้ามาก ปัสสาวะมาก 2เดือน ปวดหัว ตามัว 1เดือน MRI brain : Suprasellar mass E’lyte : Na 145, K 3.8, Cl 110, CO2 21 fluid input/output = 5100:5800 ถาม Mx? [ศรว 2010]",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Restrict fluid"
+        },
+        {
+          "label": "B",
+          "text": "Restrict Na"
+        },
+        {
+          "label": "C",
+          "text": "Hydrocortisone"
+        },
+        {
+          "label": "D",
+          "text": "HCTZ"
+        },
+        {
+          "label": "E",
+          "text": "DDAVP"
+        }
+      ],
+      "exam_source": "nephro"
+    },
+    {
+      "question_number": 9,
+      "scenario": "ผู้ป่วยหญิงอายุ 65 yr U/D HTN ,glaucoma ซื้อยากินเอง ญาติพบหมดสติ ไม่รุ้สึกตัว PE: ซึม, BP 140/90 disorientated to time-place-person, Lab : hypoNa ,hypoK, hypoCl, CO2 35 BUN 40 Cr 1.6 ถามว่าอาการดังกล่าวเกิดจากยาตัวใด [ศรว 2010]",
+      "choices": [
+        {
+          "label": "A",
+          "text": "acetazolamide"
+        },
+        {
+          "label": "B",
+          "text": "HCTZ"
+        },
+        {
+          "label": "C",
+          "text": "Spinorolactone"
+        }
+      ],
+      "exam_source": "nephro"
+    },
+    {
+      "question_number": 10,
+      "scenario": "หญิง 55 ปี มี U/D CRF ฟอกไต 2 ครั้ง/สัปดาห์ มาด้วยหอบเหนื่อย Electrolyte : Na 138, K 6.8, BUN 60, Cr 7 รักษาอย่างไร [ศรว 2010]",
+      "choices": [
+        {
+          "label": "A",
+          "text": "NaHCO3"
+        },
+        {
+          "label": "B",
+          "text": "Insulin + น &าตาล"
+        },
+        {
+          "label": "C",
+          "text": "Dialysis"
+        },
+        {
+          "label": "D",
+          "text": "Beradual"
+        },
+        {
+          "label": "E",
+          "text": "Kayexalate"
+        }
+      ],
+      "exam_source": "nephro"
+    },
+    {
+      "question_number": 11,
+      "scenario": "Colonoscopyผู้ป่ วยชายอายุ 50 ปี มีไข้ ปวดบั&นเอวขวาร้าวไปหลังและขาหนีบ ปัสสาวะแสบขัด เป็นๆหายๆ 2 ครั้ง ไม่เคยถ่ายปัสสาวะเป็นเลือด ตรวจร่างกายปกติ UA : WBC 0-1, RBC 10-20 Investigation ที่ช่วยในการวินิจฉัย [ศรว 2010]",
+      "choices": [
+        {
+          "label": "A",
+          "text": "urine calcium"
+        },
+        {
+          "label": "B",
+          "text": "IVP"
+        },
+        {
+          "label": "C",
+          "text": "Cystoscope"
+        },
+        {
+          "label": "D",
+          "text": "u/s KUB"
+        },
+        {
+          "label": "E",
+          "text": "plain KUB"
+        }
+      ],
+      "exam_source": "nephro"
+    },
+    {
+      "question_number": 12,
+      "scenario": "ผู้ป่วยหญิงอายุ 75 ปี U/D HT on ยา HCTZ (25) 1x1 ควบคุมความดันได้ปกติ ตอนเช้าลุกจากที่นอนไม่ขึ้น ญาตินาส่งรพ.\nPE: Alert, BP 130/80 mmHg, PR 72, RR 18, BT 37 Proximal m. weakness, normal sensation and reflex อาการของผู้ป่วยน่าจะเกิดจากอะไร (Nephro) (ศรว 2010)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "HypoNa+"
+        },
+        {
+          "label": "B",
+          "text": "HypoK+"
+        },
+        {
+          "label": "C",
+          "text": "HypoMg2+"
+        },
+        {
+          "label": "D",
+          "text": "HyperCa2+"
+        },
+        {
+          "label": "E",
+          "text": "Rhabdomyolysis"
+        }
+      ],
+      "exam_source": "nephro"
+    },
+    {
+      "question_number": 13,
+      "scenario": "หญิง 25 ปี 1 wk PTA เป็น S.aureus abscess ทีhต้นขาขวา ได้รับการรักษาในโรงพยาบาล แพทย์ระบายหนอง ให้ methicillin และ paracetamol นาน 7 วัน อาการดีขึ้น กลับบ้านได้เมื่อ 2 วันก่อน วันนี้มาด้วยไข้ 1 วัน PTA PE : BT 38.1 c, Difusederythematous skin rash at trunk and extramities, UA : sp.gr 1.020 , pH 6.5, Blood 1+, Protein 1+, Glucose –ve,Ketone –ve, WBC 10-20, RBC 1-5 Diagnosis? (ศรว 2011)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "UTI"
+        },
+        {
+          "label": "B",
+          "text": "ATN"
+        },
+        {
+          "label": "C",
+          "text": "Analgasic abuse nephropathy"
+        },
+        {
+          "label": "D",
+          "text": "Drug induced interstitial nephropahy"
+        },
+        {
+          "label": "E",
+          "text": "Post-infectious glomerulonephritis"
+        }
+      ],
+      "exam_source": "nephro"
+    },
+    {
+      "question_number": 14,
+      "scenario": "ผู้ป่วยชายอายุ 30 ปี เป็น DI ยาหมดมา 3 วัน มาด้วย เหนื่อยอ่อนเพลีย PE: PR100 BP80/60 marked dry lips+tongue poor skin turgor dry skin Na160 K 3.3 Cl… HCO3-….. ควรให้สารน้าใดจึงเหมาะสม (Nephro) (ศรว 2011)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "NSS"
+        },
+        {
+          "label": "B",
+          "text": "NSS/2"
+        },
+        {
+          "label": "C",
+          "text": "NSS/3"
+        },
+        {
+          "label": "D",
+          "text": "5%DW"
+        },
+        {
+          "label": "E",
+          "text": "5%DNSS"
+        }
+      ],
+      "exam_source": "nephro"
+    }
+  ]
+}

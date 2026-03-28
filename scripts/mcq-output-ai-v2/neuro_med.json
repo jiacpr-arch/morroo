@@ -1,0 +1,1364 @@
+[
+  {
+    "scenario": "A 35-year-old male presents with muscle weakness 2 hours after lunch. He is a construction worker. PE: hoarseness, muscle weakness grade I/V all extremities, normoreflexia, mild paresthesia in both hands and feet. What is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Thiamine deficiency"
+      },
+      {
+        "label": "B",
+        "text": "Myasthenia gravis"
+      },
+      {
+        "label": "C",
+        "text": "Periodic paralysis"
+      },
+      {
+        "label": "D",
+        "text": "Polymyositis"
+      },
+      {
+        "label": "E",
+        "text": "Hypokalemic periodic paralysis with thyroid disease"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "neuro med1",
+    "status": "complete",
+    "ai_notes": "Key clinical features: acute onset paralysis after food intake in young male, normoreflexia (excludes myasthenia which has weakness without reflex loss initially), hoarseness suggests bulbar involvement. Periodic paralysis fits best with acute episodic weakness and association with meals. Hypokalemic periodic paralysis most common type. Added option E as plausible distractor given presentation could include thyroid association.",
+    "subject": "neuro_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 62-year-old man has proximal muscle weakness that improves with repetitive movement. Chest x-ray is shown. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Lymphoma"
+      },
+      {
+        "label": "B",
+        "text": "Lung cancer"
+      },
+      {
+        "label": "C",
+        "text": "Germ cell tumor"
+      },
+      {
+        "label": "D",
+        "text": "Thymoma"
+      },
+      {
+        "label": "E",
+        "text": "Mediastinal adenopathy from tuberculosis"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "neuro med1",
+    "status": "needs_review",
+    "ai_notes": "Proximal muscle weakness that improves with repetitive movement is classic for myasthenia gravis. Thymoma is found in 10-15% of MG patients and is the most common anterior mediastinal mass associated with MG in this age group. Chest X-ray would show anterior mediastinal mass. Note: Original image/X-ray findings not provided; diagnosis inferred from clinical presentation. Added option E as plausible mediastinal mass distractor. Status marked for review due to missing imaging details.",
+    "subject": "neuro_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิง 15 ปี มาด้วยอาการปวดศีรษะข้างเดียว มา 4 เดือน มีอาการ เดือนละ 2-3 ครั้ง จงให้ Prophylaxis",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Propanolol"
+      },
+      {
+        "label": "B",
+        "text": "Sumatriptan"
+      },
+      {
+        "label": "C",
+        "text": "Flunazine"
+      },
+      {
+        "label": "D",
+        "text": "A,B"
+      },
+      {
+        "label": "E",
+        "text": "A,C"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2008",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 30 yr ปวดศีรษะมากทันที เวียนหัว คลื่นไส้อาเจียน drowsiness, BP 150/110, PR 80, RR 22, stiffness of neck, Babinski’s sign - neg, Retinal a. - absence of pulse, no papilledema ในผู้ป่วยรายนี้น่าจะคิดถึงโรคใดมากที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Migraine"
+      },
+      {
+        "label": "B",
+        "text": "Viral encephalitis"
+      },
+      {
+        "label": "C",
+        "text": "Subarachnoid hemorrhage"
+      },
+      {
+        "label": "D",
+        "text": "Bacterial meningitis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2008",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 70 yr มีแขนขาซ้ายอ่อนแรง และมี EKG ดังนี้ (มี ST elevate)ให้ยาใดป้องกันอาการดังกล่าว",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Aspirin"
+      },
+      {
+        "label": "B",
+        "text": "Enoxaparin"
+      },
+      {
+        "label": "C",
+        "text": "Clopidogrel"
+      },
+      {
+        "label": "D",
+        "text": "Warfarin"
+      },
+      {
+        "label": "E",
+        "text": "Dipyramidamole"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2008",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หญิงไทย 70 ปี ไม่มีโรคประจำตัว สุขภาพดีมาตลอด มาด้วยอาการแขนซ้ายอ่อนแรงกะทันหัน 5 นาที EKG พบ Atrial Fibrillation (AF) ไม่มีความเสี่ยงสูง (CHA2DS2-VASc score ต่ำ) ควรใช้ยาใดเพื่อป้องกันภาวะ Stroke จากการเต้นหัวใจไม่สม่ำเสมอ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Aspirin (ASA) เพียงอย่างเดียว"
+      },
+      {
+        "label": "B",
+        "text": "Warfarin (INR 2-3)"
+      },
+      {
+        "label": "C",
+        "text": "Clopidogrel เพียงอย่างเดียว"
+      },
+      {
+        "label": "D",
+        "text": "Dual antiplatelet therapy (ASA + Clopidogrel)"
+      },
+      {
+        "label": "E",
+        "text": "DOAC (เช่น Dabigatran หรือ Apixaban)"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2008",
+    "explanation": "ผู้ป่วยหญิง 70 ปี AF ไม่มีปัจจัยเสี่ยง (CHA2DS2-VASc = 1) จัดเป็นความเสี่ยงต่ำ ตามแนวทาง 2019 ACC/AHA และไทยหัวใจศาสตร์ ไม่จำเป็นต้องใช้ anticoagulant (Warfarin/DOAC) แต่แนะนำ Aspirin เพื่อป้องกัน Thromboembolism อย่างไรก็ตาม ผู้ป่วยเพศหญิงอายุ 65-74 ปี AF ควร CHA2DS2-VASc = 2 ถ้านับ Female sex factor ดังนั้น Warfarin หรือ DOAC จะเป็นตัวเลือกที่เหมาะสมกว่า ตอบ B หรือ E จึงถูกต้อง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายอายุ 20 ปี ประสบอุบัติเหตุจากรถจักรยานยนตร์ ได้รับบาดเจอหน้าผากและหมดสติทันที ส่งตัวมาโรงพยาบาลโดย EMS ภายใน 2 ชั่วโมง CT หัวพบ crescent shape hematoma ที่บริเวณ frontal region ผู้ป่วยมีอาการปวดศีรษะรุนแรง ลักษณะการบาดเจอแบบ blunt trauma ข้อสอบนี้ถามว่า ควรคิดถึงโรคใดมากที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute epidural hemorrhage"
+      },
+      {
+        "label": "B",
+        "text": "Acute subdural hemorrhage"
+      },
+      {
+        "label": "C",
+        "text": "Subacute epidural hemorrhage"
+      },
+      {
+        "label": "D",
+        "text": "Intracerebral hemorrhage"
+      },
+      {
+        "label": "E",
+        "text": "Subarachnoid hemorrhage"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2008",
+    "explanation": "Crescent shape (เพียงครึ่งเดือน) ที่ชัดเจนที่บริเวณ frontal region โดยทั่วไปจะเห็นในกรณี epidural hemorrhage เนื่องจากเลือดขังอยู่ระหว่าง dura mater กับ skull ซึ่งถูกจำกัดด้วยจุดยึดของ dura จึงมีรูปร่างเป็น crescent ในขณะที่ subdural hemorrhage มักแสดงภาพ crescentic แต่กว้างและอาจครอบคลุมกว้างขึ้น Acute epidural hemorrhage มักเกิดจากการกระแทกหัวรุนแรงที่ทำให้เกิด fractured skull และเสีย middle meningeal artery ลักษณะภาพ CT ของ crescent shape ที่ frontal จึงชี้ไปยัง acute epidural hemorrhage มากที่สุด",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 50 ปี ขณะดูโทรทัศน์ ขณะดูโทรทัศน์ที่โซฟา มีอาการปวดท้ายทอย ลุกเดินขึ้นมีเดินเซขวา PE : pupil 1mm แขนขาอ่อนแรง ถามหา lesion",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Pontine hemorrhage"
+      },
+      {
+        "label": "B",
+        "text": "Cellebellar hemorrhage"
+      },
+      {
+        "label": "C",
+        "text": "Subarchnoid hemorrhage"
+      },
+      {
+        "label": "D",
+        "text": "Basal ganglion hemorrhage"
+      },
+      {
+        "label": "E",
+        "text": "Intraventricular hemorrhage"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2008",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ ป่วยชายอายุ 65 ปี เป็ นมะเร็งปอดระยะที่ 1 ได้ รับการผ่าตัดไปแล้ ว หลังผ่าไม่ ได้ รับเคมีบาบัดหรือรังสีรักษาต่อมามีอาการซีกขวาอ่อนแรง gr.4 ร่ วมกับมีอาการชักเกร็งทั่วตัว ก่อนมา 30 นาที ชักเกร็งกระตุกจากแขนขา แล้ วต่อมาชักทั่วตัว หลังชักรู้ สึกตัวดี PE : good conciousness , Lung - clear ,scar at Lt. chest wall , tracheotomy scar จะให้ ยาอะไร (ศรว 2009)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Clonazepam"
+      },
+      {
+        "label": "B",
+        "text": "Phenobarbital"
+      },
+      {
+        "label": "C",
+        "text": "Phenytoin"
+      },
+      {
+        "label": "D",
+        "text": "Carbamazepine"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2009",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชาย 20 ปี ไข้สูง ปวดหัว PE: subconjunctival hemorrhage BT 39 C, stiff neck positive, petechia and purpura on both legs จงบอก organism",
+    "choices": [
+      {
+        "label": "A",
+        "text": "N. meningitides"
+      },
+      {
+        "label": "B",
+        "text": "H. influenzae"
+      },
+      {
+        "label": "C",
+        "text": "S. pneumoniae"
+      },
+      {
+        "label": "D",
+        "text": "S. aureus"
+      },
+      {
+        "label": "E",
+        "text": "M. pneumonia"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2009",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หญิง 30 ปี มีอาการปวดหัวเป็นๆ หาย ๆ 3-4 ครั้งต่อเดือน เป็นมา 2 ปี ตรวจร่างกายปกติดี",
+    "choices": [
+      {
+        "label": "A",
+        "text": "diazepam"
+      },
+      {
+        "label": "B",
+        "text": "amitryptyline"
+      },
+      {
+        "label": "C",
+        "text": "lorazepam"
+      },
+      {
+        "label": "D",
+        "text": "CT brain"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2009",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชาย 24 ปี ชัก 1 hr ชักตั้งแต่อายุ 15 ปี ชัก 3-4 ครั้ง/ปี ไม่ได้รักษามา 1 ปี ตอนนี้ไม่มีอาการ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "diazepam"
+      },
+      {
+        "label": "B",
+        "text": "phenyltoin"
+      },
+      {
+        "label": "C",
+        "text": "phenobarb"
+      },
+      {
+        "label": "D",
+        "text": "midazolam"
+      },
+      {
+        "label": "E",
+        "text": "gabapentin"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2009",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 80 ปี มาด้วยอ่อนแรงซีกซ้าย หมดสติ 5 dayPTA ขณะนั่งดูโทรทัศน์ PE: stupor HR 60 totally irregular RR 12 Lt.hemiparesis pupil 2 mm Lt. 4 mm Rt. UpgoingLt.plantar reflex ท่านเป็นแพทย์ที่ ER จง Manage เบื้องต้นอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "IV furosemide"
+      },
+      {
+        "label": "B",
+        "text": "IV nitroglycerine"
+      },
+      {
+        "label": "C",
+        "text": "IV heparin drip"
+      },
+      {
+        "label": "D",
+        "text": "Et tube"
+      },
+      {
+        "label": "E",
+        "text": "IV Dexamethasone"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2010",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ชายอายุ 40-50 ปี มาด้วยอาการปวดหัวและปวดเบ้าตาซ้าย ปวดจนต้องตื่นกลางดึก อาการเกิดขึ้นเป็นระยะๆ มีอาการนาน 2 เดือน แล้วหายไป ตอนนี้กลับมาเป็นใหม่ มีปวดเบ้าตาซ้ายบ้างหรือเบ้าตาขวาอย่างเดียว (เฉพาะด้านหนึ่ง) มีการหยุด-เริ่มต้นใหม่ของการปวด การวินิจฉัยที่เหมาะสมคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cluster headache"
+      },
+      {
+        "label": "B",
+        "text": "Tension headache"
+      },
+      {
+        "label": "C",
+        "text": "Migraine"
+      },
+      {
+        "label": "D",
+        "text": "Trigeminal neuralgia"
+      },
+      {
+        "label": "E",
+        "text": "Medication overuse headache"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2010",
+    "explanation": "Cluster headache มีลักษณะเป็นปวดหัวรุนแรง (severe orbital/periorbital pain) ตื่นกลางดึก เฉพาะด้านเดียว (unilateral) และมีรูปแบบการปวดที่เป็นช่วงๆ (episodic) คือเป็น 2 เดือน หายไป แล้วกลับมาใหม่ ตรงกับโจทย์ทั้งหมด ส่วน tension headache เป็นปวดรองรับ migraine มักเป็นสองข้าง และ trigeminal neuralgia มีลักษณะปวดแสบเฉียบ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชาย 65 ปี เป็นมะเร็งปอดระยะที่ 1 ได้รับการผ่าตัดไปแล้ว หลังผ่าไม่ได้รับเคมีบาบัดหรือรังสีรักษาต่อมามีอาการซีกขวาอ่อนแรง gr.4 ร่วมกับมีอาการชักเกร็งทั่วตัว ก่อนมา 30 นาที ชักเกร็งกระตุกจากแขนขา แล้วต่อมาชักทั่วตัว หลังชักรู้สึกตัวดี PE : good conciousness , Lung - clear ,scar at Lt. chest wall , tracheotomy scar Mx?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Clonazepam"
+      },
+      {
+        "label": "B",
+        "text": "Phenobarbital"
+      },
+      {
+        "label": "C",
+        "text": "Phenytoin"
+      },
+      {
+        "label": "D",
+        "text": "Carbamazepine"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2010",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชายไทยอายุ 25 ปี มีประวัติชักทั้งตัวมา 2 ครั้ง on phenytoin 300 mg/day หลังจากนั้นไม่มีอาการชักอีก , 3 วันมีไข้ ชักทั้งตัว , CT : calcified 3 mm. , no edema รอบๆ ถาม Management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "albendazole"
+      },
+      {
+        "label": "B",
+        "text": "ให้ยาเดิมต่อ"
+      },
+      {
+        "label": "C",
+        "text": "เปลี่ยนเป็น Na Valproate"
+      },
+      {
+        "label": "D",
+        "text": "เปลียนยาเป็น ..."
+      },
+      {
+        "label": "E",
+        "text": "surgery เอา calcification ออก"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2010",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "มีอาการ migraine ถามว่ายาใดที่ป้องกันอาการmigraine ได้ดีสุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ASA"
+      },
+      {
+        "label": "B",
+        "text": "Propanolol"
+      },
+      {
+        "label": "C",
+        "text": "Indolmethacin"
+      },
+      {
+        "label": "D",
+        "text": "Etgotamine"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2010",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 70 ปี มีประวัติชักอยู่เดิม วันนี้ชัก GTC seizure นาน 30 นาทีที่บ้าน ในรถพยาบาลชักอีก 2 ครั้งได้ diazepam IV ไป 2 ครั้ง มาถึงรพ.ชักอีก 1 ครั้ง 30 วินาทีหยุดแล้ว ความดันโลหิต 140/90 mmHg อุณหภูมิปกติ เป็น status epilepticus ที่ยังไม่ควบคุม ต้องการให้ยารักษาต่อ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Diazepam IV เพิ่มเติม"
+      },
+      {
+        "label": "B",
+        "text": "Phenytoin IV ช้า (50 mg/min) พร้อม cardiac monitoring"
+      },
+      {
+        "label": "C",
+        "text": "Phenobarbital IV"
+      },
+      {
+        "label": "D",
+        "text": "Propofol IV infusion"
+      },
+      {
+        "label": "E",
+        "text": "Lorazepam IV และ Phenytoin IV พร้อมกัน"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2011",
+    "explanation": "ผู้ป่วยเป็น status epilepticus ที่ได้รับ benzodiazepine (diazepam) แล้ว 2 ครั้งแต่ยังไม่ควบคุม ต้องใช้ยาประเภท second-line therapy ได้แก่ phenytoin, phenobarbital หรือ valproate ให้ IV ช้า Phenytoin IV ช้า (50 mg/min) เป็นตัวเลือกแรกเพราะเป็น long-acting antiepileptic ที่มีประสิทธิภาพสูงในชักประเภท GTC และต้อง monitor cardiac arrhythmia โดยเฉพาะในผู้สูงอายุ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 80 ปี มาด้วยอาการซึมลง ตื่นแล้วหลับต่อไป ไม่ยอมลงจากเตียง อาเจียนเป็นอาหารหลังให้ feed 1 ครั้ง ชีพจร 80 ครั้ง/นาที ตรวจร่างกายปกติ ปัสสาวะปกติ ปัสสาวะสีเข้ม ตรวจแล็บ K, Mg, PO4 อยู่ในเกณฑ์ปกติ ไม่มีอ่อนแรงของกล้ามเนื้อ ไม่มีอาการของ sepsis หรือ SIRS จงเลือกการตรวจเพิ่มเติมแรกสำหรับการวินิจฉัยในผู้ป่วยราย นี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "CT head without contrast (หรือ MRI brain)"
+      },
+      {
+        "label": "B",
+        "text": "Thyroid function test (TSH, Free T4)"
+      },
+      {
+        "label": "C",
+        "text": "Blood glucose และ arterial blood gas"
+      },
+      {
+        "label": "D",
+        "text": "Chest X-ray และ urine culture"
+      },
+      {
+        "label": "E",
+        "text": "Blood cultures และ complete metabolic panel ครั้งที่ 2"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2011",
+    "explanation": "ผู้ป่วยสูงอายุ 80 ปี มีลักษณะของ altered mental status (ซึมลง ตื่นแล้วหลับต่อ) ซึ่งในผู้สูงอายุอาจมีสาเหตุหลายชนิด แต่ต้องยกเว้น stroke/TIA, subdural hematoma และปัญหา intracranial อื่นๆ ก่อนเสมอ โดย CT head หรือ MRI brain เป็นการตรวจวินิจฉัยชั้นหนึ่งที่ต้องทำก่อนเพราะเป็นสาเหตุ emergent ที่อาจขอบคุณที่มีภาวะร้ายแรง แม้ว่า thyroid function และตรวจอื่นๆ ก็มีความสำคัญ แต่ CT head ควรเป็นลำดับแรก",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 80 ปี สุขภาพแข็งแรงดีมาตลอด ซึมลง 5 วันPTA กินไม่ค่อยได้ เช้านี้ปลุกตื่นแล้วนอนต่อ กินข้าวแล้วอาเจียนออกมาเป็นเศษอาหาร U/D : Cardiac arrhythmia (เป็น off and on) และ DM on ยาละลายลิhมเลือดและยาเบาหวานต่อเนื่อง PE : muscle power grade 3 all ext., V/S-stable PR 90/min regular , E’lyte, Calcium, Magnesium : normal, Glucose 65 ให้ IV glucose 50 mg 50 ml. แล้วผู้ป่วยยังซึมอยู่ Management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "EKG"
+      },
+      {
+        "label": "B",
+        "text": "CT Brain"
+      },
+      {
+        "label": "C",
+        "text": "Thiamine IV"
+      },
+      {
+        "label": "D",
+        "text": "LP"
+      },
+      {
+        "label": "E",
+        "text": "Observe"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2011",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง อายุ 70 ปี U/D : DM, HTN 10 yr on ยาสม่าเสมอ ตื่นนอนตอนเช้ามีอ่อนแรงแขนขาซีกขวา 6 hr PTA ไม่ชา พูดคุยรู้เรื่อง ลุกจากเตียงไม่ขึ้น ญาติพาส่งโรงพยาบาลPE: V/S-stable BP สูงนิดๆ , CBC – normal, FBS 200 mg/dl Diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Lacunar infarction"
+      },
+      {
+        "label": "B",
+        "text": "Frontal lobe infarction"
+      },
+      {
+        "label": "C",
+        "text": "Pontine hemorrhage"
+      },
+      {
+        "label": "D",
+        "text": "Cerebellar hemorrhage"
+      },
+      {
+        "label": "E",
+        "text": "Parietal lobe hemorrhage"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2011",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 30 ปี นักกีฬามาราธอนแต่งงานแล้ว ยังไม่เคยตั้งครรภ์ มาด้วยปวดหัวตามัว ไม่มีประจาเดือนมา 1 ปี มีน้าสีขาวไหลมาจากเต้านมทั้งสองข้าง อาการตามัวเพิ่มขึ้นมากขึ้น และการตรวจพบ bilateral hemianopia",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Prolactinoma"
+      },
+      {
+        "label": "B",
+        "text": "Pituitary adenoma (non-functional)"
+      },
+      {
+        "label": "C",
+        "text": "Craniopharyngioma"
+      },
+      {
+        "label": "D",
+        "text": "Hypogonadism (primary)"
+      },
+      {
+        "label": "E",
+        "text": "Pregnancy"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2011",
+    "explanation": "Prolactinoma เป็นเนื้องอกที่ดีที่สุดที่สอดคล้องกับลักษณะทั้งหมด ได้แก่ galactorrhea (น้าจากเต้านม) amenorrhea (ไม่มีประจำเดือน 1 ปี) infertility และ headache ร่วมกับ bilateral hemianopia เนื่องจากเนื้องอยู่ใต้ chiasm opticus ที่อัดทับขึ้นขึ้นมา (mass effect) ทำให้เกิด bitemporal hemianopia",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 70 ปี มาร้องขออาการสั่นมือขณะเหยียดแขน (postural tremor) ที่เพิ่มขึ้นเมื่อเคลื่อนไหว ไม่มีประวัติการดื่มแอลกอฮอล์ เคยใช้ยา propranolol สำหรับความดันโลหิต ไม่มีอาการอื่นผิดปกติ จากการตรวจร่างกาย: ความเร็วความสั่น 8-12 Hz ปกติ ไม่มีอาการ rigidity หรือ bradykinesia ลักษณะการสั่นเพิ่มขึ้นเมื่อชี้ไปที่วัตถุ การวินิจฉัยที่น่าจะเป็นไปได้มากที่สุดคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Essential tremor"
+      },
+      {
+        "label": "B",
+        "text": "Parkinsonian tremor (Parkinson's disease)"
+      },
+      {
+        "label": "C",
+        "text": "Alcohol-induced tremor"
+      },
+      {
+        "label": "D",
+        "text": "Physiologic tremor"
+      },
+      {
+        "label": "E",
+        "text": "Drug-induced tremor from propranolol"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2011",
+    "explanation": "Essential tremor เป็นสาเหตุที่พบบ่อยที่สุดของ postural tremor ในผู้สูงอายุ โดยมีลักษณะเป็น action tremor ที่เพิ่มขึ้นเมื่อเคลื่อนไหว ความเร็ว 8-12 Hz และไม่มีอาการประสาทอื่น ซึ่งตรงกับคำอธิบายเรื่องไม่มี rigidity หรือ bradykinesia (ซึ่งจะพบใน Parkinson's disease)",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 40 ปี มาด้วยอาการปวดหัวมากแบบ tension type ปวด 2-3 hr ต่อครั้งกินยาพาราเซตามอลแล้วยังไม่ดีขึ้น ให้ยาอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Amitryptyline"
+      },
+      {
+        "label": "B",
+        "text": "Flunarizine"
+      },
+      {
+        "label": "C",
+        "text": "Topiramate"
+      },
+      {
+        "label": "D",
+        "text": "Propanolol"
+      },
+      {
+        "label": "E",
+        "text": "tramadal"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2011",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชายอายุ 40 ปี แข็งแรงดี วิ่งมาราธอนได้ 5-10 km(30นาที) แล้วเริ่มเหนื่อย วิ่งห่างจากคนอื่น อาเจียน ล้มลงบนพื้น เกร็งกระตุก 2 ครั้งหมดสติ ตรวจร่างกาย BT40 PR120 BP160/100 RR30 หายใจดัง อื่นๆปกติดี no focal neurological deficit ปวดหัวมาก Dx?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Heat stroke"
+      },
+      {
+        "label": "B",
+        "text": "TIA"
+      },
+      {
+        "label": "C",
+        "text": "Acute MI"
+      },
+      {
+        "label": "D",
+        "text": "Pulmonary embolism"
+      },
+      {
+        "label": "E",
+        "text": "Intracerebral hemorrhage"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2011",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 75 ปี มาด้วยอาการใจสั่น EKG พบ Atrial fibrillation มีประวัติ TIA (Transient Ischemic Attack) ในอดีต CHA₂DS₂-VASc score สูง ต้องการป้องกันการเกิด TIA ซ้ำ ยาใดมีประสิทธิภาพดีที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Warfarin (INR 2-3)"
+      },
+      {
+        "label": "B",
+        "text": "Apixaban หรือ Direct Oral Anticoagulant (DOAC) อื่นๆ"
+      },
+      {
+        "label": "C",
+        "text": "Aspirin เพียงอย่างเดียว"
+      },
+      {
+        "label": "D",
+        "text": "Clopidogrel เพียงอย่างเดียว"
+      },
+      {
+        "label": "E",
+        "text": "Combination ของ Aspirin + Clopidogrel"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2012",
+    "explanation": "ผู้ป่วย AF ที่มีประวัติ TIA/stroke ต้องได้รับ anticoagulation เต็มขนาด ซึ่ง DOAC (เช่น Apixaban, Dabigatran, Rivaroxaban, Edoxaban) มีประสิทธิภาพเท่าหรือดีกว่า Warfarin และมีข้อดีคือความสะดวก ไม่ต้องหาค่า INR เป็นประจำ และลดความเสี่ยงการตกแต่งในสมอง Aspirin/Clopidogrel เพียงอย่างเดียวไม่เพียงพอสำหรับ secondary stroke prevention ในผู้ป่วย AF",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิง อายุ 10 ปี มาด้วยอาการตาเหม่อลอย นิ่ง ไม่มีการเคี้ยวปาก น้าลายไหลออกมาเป็นระยะ ระยะละประมาณ 10 วินาที เกิดขึ้น 10-20 ครั้งต่อวัน เป็นเวลา 2-3 สัปดาห์ ประวัติแม่เป็นลมชัก การตรวจร่างกายปกติ การตรวจระบบประสาทปกติ การตรวจ MRI brain ปกติ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Generalized tonic-clonic seizure"
+      },
+      {
+        "label": "B",
+        "text": "Focal motor seizure with secondary generalization"
+      },
+      {
+        "label": "C",
+        "text": "Absence seizure (petit mal)"
+      },
+      {
+        "label": "D",
+        "text": "Oculogyric crisis from neuroleptic exposure"
+      },
+      {
+        "label": "E",
+        "text": "Benign paroxysmal tonic upgaze of infancy (BPTU) or Non-epileptic seizure"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว 2012",
+    "explanation": "อาการตาเหม่อลอยนิ่ง ระยะสั้น ไม่มีอาการกระตุก ไม่มีการเปลี่ยนแปลงสติ สอบประสาทปกติ MRI ปกติ และประวัติแม่เป็นลมชัก (suggesting genetic predisposition แต่อาการไม่ตรงกับ epilepsy ทั่วไป) บ่งชี้ว่าเป็น Non-epileptic paroxysmal event (เช่น Benign paroxysmal tonic upgaze) มากกว่า epileptic seizure ต้องยกเว้นภาวะอื่นเช่น neuroleptic exposure ที่ไม่ได้บ่งชี้ไว้ในประวัติ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายวัย 35 ปี มาร้องขอความช่วยเหลือเพราะเกิดอาการกระตุกมดลูกที่มือขวาซ้ำแล้วซ้ำเล่า ระยะเวลา 30 วินาที สติสัมปชัญญะยังคงอยู่ตลอดเหตุการณ์ และผู้ป่วยรู้ตัวว่าเกิดอะไรขึ้น ไม่มีอาการสูญเสียสติ ไม่มีการลุกขึ้นและเดิน ข้อใดต่อไปนี้อธิบายประเภทของอาการชักได้ถูกต้องที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Simple partial seizure (motor type) - สติยังอยู่และมีอาการ motor ที่จำกัดในบริเวณเดียว"
+      },
+      {
+        "label": "B",
+        "text": "Complex partial seizure - มีการสูญเสียสติและอาการไม่สัติหรือการเดินสำเร็จ"
+      },
+      {
+        "label": "C",
+        "text": "Generalized tonic-clonic seizure - มีการกระตุกทั้งตัวและการสูญเสียสติอย่างสิ้นเชิง"
+      },
+      {
+        "label": "D",
+        "text": "Jacksonian seizure - อาการกระตุกแพร่กระจายไปยังส่วนอื่นๆ ของร่างกายตามลำดับ"
+      },
+      {
+        "label": "E",
+        "text": "Absence seizure - สติหายวับ โดยไม่มีอาการกระตุกชัดเจน และมักเกิดในเด็ก"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2012",
+    "explanation": "Simple partial seizure นิยามโดยอาการชักที่จำกัดในบริเวณเดียวของร่างกาย โดยสติยังคงอยู่ตลอดเหตุการณ์ ในกรณีนี้มีเพียงการกระตุกมือขวาเท่านั้น และผู้ป่วยมีสติรู้ตัวว่าเกิดอะไรขึ้น ซึ่งแตกต่างจาก complex partial seizure ที่มีการสูญเสียสติและอาการแปลกประหลาด",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายวัย 32 ปี มาด้วยอาการชักแบบ complex partial seizure ที่เริ่มต้นจากทางกายภาพของ temporal lobe มาประมาณ 2 ปี มี aura ก่อนชักประมาณ 30 วินาที ระหว่างชักมีอาการสับสน ทำท่าชำเลืออาการหลีกหนีและไม่รู้ตัวระหว่างชัก หลังชักไป 1-2 นาที จึงกลับมาสติพร้อมกับความเหนื่อยเรื่อยๆ ควรใช้ยาต้านชักตัวแรกชนิดใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Carbamazepine หรือ Oxcarbazepine"
+      },
+      {
+        "label": "B",
+        "text": "Valproic acid"
+      },
+      {
+        "label": "C",
+        "text": "Phenytoin"
+      },
+      {
+        "label": "D",
+        "text": "Levetiracetam"
+      },
+      {
+        "label": "E",
+        "text": "Lamotrigine"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2012",
+    "explanation": "Complex partial seizure (Focal seizure with impaired awareness) ที่เริ่มจาก temporal lobe ตอบสนองดีต่อ Carbamazepine และ Oxcarbazepine ซึ่งเป็น first-line drugs สำหรับ focal onset seizures โดยเฉพาะ temporal lobe epilepsy ทั้ง Carbamazepine และ Oxcarbazepine มีประสิทธิภาพสูงและเป็นตัวเลือกแรก แม้ว่า Valproic acid, Levetiracetam และ Lamotrigine สามารถใช้ได้แต่ไม่ใช่ first-line ตัวเลือกแรก",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิง 55 ปี มาด้วยอาการปวดศีรษะเฉียบพลัน แบบแปล๊บๆ (stabbing pain) ในบริเวณหน้าซีกซ้ายโดยเฉพาะบริเวณกกหู เป็นเวลา 1 เดือน ปวดรุนแรงจนกระทบคุณภาพชีวิต ได้รับการรักษาด้วย Paracetamol แต่ไม่มีการปรับตัวดี ไม่พบการบาดเจอหรือสัญญาณเตือน (red flag) ระหว่างการตรวจร่างกาย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Amitriptyline 25-75 mg/day"
+      },
+      {
+        "label": "B",
+        "text": "Carbamazepine 400-800 mg/day"
+      },
+      {
+        "label": "C",
+        "text": "Topiramate 100-400 mg/day"
+      },
+      {
+        "label": "D",
+        "text": "Gabapentin 1800-3600 mg/day"
+      },
+      {
+        "label": "E",
+        "text": "Ibuprofen 400-600 mg QID"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2012",
+    "explanation": "อาการปวดแปล๊บๆ (stabbing/electric pain) ในบริเวณกกหู หน้าซีกเดียว เป็นเวลานาน ที่ไม่ตอบสนองต่อ simple analgesics เป็นอาการลักษณ์เฉพาะของ Trigeminal Neuralgia มักเกิดในผู้สูงอายุ Carbamazepine เป็นยาอันดับแรกในการรักษา โดยมีประสิทธิภาพในการลดการจำหน่ายประสาท (neuropathic pain) ได้ดี หากไม่ตอบสนองจึงจะพิจารณา gabapentin หรือ pregabalin เป็นตัวเลือกที่สอง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิง 45 ปี มาพร้อมประวัติชักแบบ Generalized Tonic-Clonic (GTC) เป็นครั้งแรก มี postictal phase นาน 30 นาที จากนั้นสภาพจิตสำนึกและประสาทสัมผัสกลับมาปกติ ไม่มีประวัติโรคลูกพยาธิ ไม่มีประวัติชักมาก่อน ปัจจุบันไม่ได้ใช้ยา จงสั่ง investigation ที่จำเป็นในการประเมินเพื่อหาสาเหตุของชักครั้งแรก",
+    "choices": [
+      {
+        "label": "A",
+        "text": "EEG และ Brain CT/MRI"
+      },
+      {
+        "label": "B",
+        "text": "Blood glucose, electrolytes, renal function และ liver function test เท่านั้น"
+      },
+      {
+        "label": "C",
+        "text": "EEG เท่านั้น"
+      },
+      {
+        "label": "D",
+        "text": "Brain MRI เท่านั้น"
+      },
+      {
+        "label": "E",
+        "text": "Lumbar puncture และ Brain CT"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2012",
+    "explanation": "ในผู้ป่วยชักแบบ GTC เป็นครั้งแรก ควรทำ EEG เพื่อหาหลักฐานของการผิดปกติของไฟฟ้าสมองและ Brain imaging (CT หรือ MRI ที่ดี) เพื่อตรวจหาสาเหตุที่มีโครงสร้าง เช่น종양 หรือ lesion ที่อาจเป็นสาเหตุของ seizure นอกจากนี้ควรตรวจเลือด (glucose, electrolytes, renal/liver function) เพื่อตรวจหาปัจจัยทางเคมีที่อาจทำให้ชัก",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 45 ปี มาด้วยประวัติชักประเภท GTC (generalized tonic-clonic seizure) เพียงครั้งแรกในชีวิต (first unprovoked seizure) ซึมลง 30 นาที หลังจากนั้นประสาทสัมผัสกลับเป็นปกติ ไม่มี neurological deficit PE: ทั่วไปปกติ การตรวจ neurological ปกติ Investigation ใดมีประโยชน์ต่อผู้ป่วยมากที่สุดในการประเมินครั้งแรกนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "EEG (Electroencephalogram)"
+      },
+      {
+        "label": "B",
+        "text": "MRI brain with and without contrast"
+      },
+      {
+        "label": "C",
+        "text": "CT brain without contrast"
+      },
+      {
+        "label": "D",
+        "text": "Serum electrolytes, glucose, calcium, liver function tests"
+      },
+      {
+        "label": "E",
+        "text": "Lumbar puncture with CSF analysis"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2012",
+    "explanation": "ในผู้ป่วยที่มี first unprovoked seizure ควรตรวจ neuroimaging เพื่อหาสาเหตุทางโครงสร้างของสมอง MRI brain เป็นการตรวจที่ดีที่สุดเพราะมีความไวและความจำเพาะสูงในการตรวจจับ structural lesions เช่น tumor, cortical malformation, vascular malformation, gliosis ที่อาจเป็นสาเหตุของชัก ส่วน EEG มีบทบาทในการตรวจประเภทชัก แต่ไม่ได้ตรวจสาเหตุโครงสร้าง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงอายุ 35 ปี มาด้วยอาการปวดศีรษะแบบ migraine ที่มีความถี่เพิ่มขึ้น อยากทราบว่าหากต้องการรักษาอาการเมื่อมีการเกิดอาการปวดศีรษะ (acute treatment) ควรใช้ยาใดในการรักษา",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Sumatriptan หรือ Triptan อื่นๆ"
+      },
+      {
+        "label": "B",
+        "text": "Propranolol"
+      },
+      {
+        "label": "C",
+        "text": "Amitriptyline"
+      },
+      {
+        "label": "D",
+        "text": "Topiramate"
+      },
+      {
+        "label": "E",
+        "text": "Botulinum toxin"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2012",
+    "explanation": "ยาในกลุ่ม Triptan (เช่น Sumatriptan) เป็นยาที่ใช้รักษาแบบ acute ในระหว่างมีอาการปวดศีรษะ โดยทำงานเป็น 5-HT1B/1D receptor agonist ซึ่งหดหลอดเลือดสมองและลดการปลดปล่อยสารอักเสบ ขณะที่ยาข้างต้นอื่นๆ (B, C, D, E) ใช้เพื่อ prophylaxis (ป้องกัน) การเกิดอาการมิเกรน",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิง 70 ปี ปวดหัว temporal Rt. เป็นๆหายๆ ปวดตา ปวดกรามมากเวลาเคี้ยว จงให้การวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Optic neuritis"
+      },
+      {
+        "label": "B",
+        "text": "Facial migraine"
+      },
+      {
+        "label": "C",
+        "text": "Giant cell arteritis"
+      },
+      {
+        "label": "D",
+        "text": "Carvenous venous thrombosis"
+      },
+      {
+        "label": "E",
+        "text": "Posterior communicating artery aneurysm"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "A 45 years old healthy female has headache PE reveal stiff neck+Ve CT : leptomeningeal enhancement\nLP CSF open pressure 28 cm H2O, wbc 300(L>N) , protein 400 ,sugar 25 (plasma glucose 100) no bacteria in gram stain . What is your diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "TB meningitis"
+      },
+      {
+        "label": "B",
+        "text": "Aseptic meningitis"
+      },
+      {
+        "label": "C",
+        "text": "Purulent meningitis"
+      },
+      {
+        "label": "D",
+        "text": "Lymphophilic meningitis"
+      },
+      {
+        "label": "E",
+        "text": "Cryptococcal meningitis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "A 50-year-old man had involved a vehicle accident, he didn’t wear any restraint and stuck by the windshil of his van, he didn’t loss consciousness at that time of at any time after. But 1 month ago he complain of headache, become irritable and act strangely. What is the most possible diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Epidural hematoma"
+      },
+      {
+        "label": "B",
+        "text": "Cerebral contusion"
+      },
+      {
+        "label": "C",
+        "text": "Intracerebral hematoma"
+      },
+      {
+        "label": "D",
+        "text": "Subarachnoid hemorrhage"
+      },
+      {
+        "label": "E",
+        "text": "Chronic subdural hematoma"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชาย 25 ปี มาด้วยอาการชักเกร็งกระตุกเริ่มจากหน้าและมือด้านขวา จากนั้นก้าวหน้าเป็นชักทั่วตัว ระยะเวลาชัก 2 นาที หลังจากชักหยุด มีอ่อนแรงทั้งตัว (post-ictal state) ประมาณ 6 ชั่วโมง แล้วกลับมาเป็นปกติ การตรวจเลือด: กลูโคส อิเล็กโทรไลต์ แคลเซียม ปกติทั้งหมด EEG แสดงการคายประจุอย่างไม่มีระเบียบ (disorganized discharge) ให้บำรุงรักษาเบื้องต้นสำหรับการป้องกันการชักซ้ำในผู้ป่วยลักษณะนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Phenytoin หรือ Valproate (ยาต้านชักอาจารย์)"
+      },
+      {
+        "label": "B",
+        "text": "Benzodiazepine เช่น Diazepam (สำหรับชักแบบเฉียบพลัน)"
+      },
+      {
+        "label": "C",
+        "text": "Levetiracetam (ยาต้านชักที่ใหม่กว่า)"
+      },
+      {
+        "label": "D",
+        "text": "ไม่ต้องให้ยาต้านชัก เนื่องจากเป็นครั้งแรก"
+      },
+      {
+        "label": "E",
+        "text": "Carbamazepine (ยาต้านชักสำหรับชักบางประเภท)"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว  2014",
+    "explanation": "ผู้ป่วยมีอาการชักนอกสมควร (unprovoked seizure) อย่างน้อย 2 ครั้ง ตามนิยามวินิจฉัย Epilepsy จึงควรเริ่มยาต้านชักระยะยาว Phenytoin และ Valproate เป็นยาต้านชักประโยชน์สูง บอร์ดรับรองสำหรับการรักษาแบบ first-line ส่วน Benzodiazepine ใช้สำหรับชักเฉียบพลัน ไม่ใช่ยาบำรุงรักษา",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิง 60 ปี มาด้วย abrupt onset of severe headache ครั้งแรกในชีวิต ไม่มีประวัติปวดหัวมาก่อน vital signs: อุณหภูมิปกติ BP 140/90 mmHg พบ stiff neck positive ไม่มี neurological deficit อื่นๆ ควรจะทำการตรวจวินิจฉัยอะไรเป็นลำดับแรก",
+    "choices": [
+      {
+        "label": "A",
+        "text": "CT head (non-contrast) เพื่อแ除除ออก subarachnoid hemorrhage"
+      },
+      {
+        "label": "B",
+        "text": "Lumbar puncture (LP) เพื่อหา xanthochromia และ cell count"
+      },
+      {
+        "label": "C",
+        "text": "MRI brain with contrast เพื่อประเมินการไหลเวียนเลือดในสมอง"
+      },
+      {
+        "label": "D",
+        "text": "Start empiric antibiotics สำหรับการติดเชื้อในสมอง"
+      },
+      {
+        "label": "E",
+        "text": "Antihypertensive therapy เพื่อควบคุมความดัน"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว  2014",
+    "explanation": "ผู้ป่วยมาด้วย thunderclap headache (abrupt onset severe headache ครั้งแรก) พร้อม stiff neck ทำให้ต้องสงสัย subarachnoid hemorrhage (SAH) ก่อน CT head non-contrast เป็นการตรวจ first-line imaging ที่ต้องทำเพื่อแ除ออก SAH ก่อนพิจารณาการทำ LP หรือให้ยาอื่นๆ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายอายุ 55 ปี มาด้วยอาการปวดศีรษะรุนแรงฉับพลัน เสมือนถูกตีที่ส่วนหลัง คอแข็ง และมีไข้ เอกซเรย์ CT หัวธรรมชาติ (non-contrast) พบเลือดในอวัยวะ subarachnoid space โดยเฉพาะที่ส่วน basal cistern สัญญาณ blood products ใน MRI T1 weighted image จะมีลักษณะอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Hyperintense signal (สัญญาณสว่าง) ซึ่งแสดงถึง methemoglobin ในช่วง subacute (3-7 วัน)"
+      },
+      {
+        "label": "B",
+        "text": "Hypointense signal (สัญญาณมืด) ซึ่งแสดงถึง deoxyhemoglobin ในช่วง acute (<24 ชั่วโมง)"
+      },
+      {
+        "label": "C",
+        "text": "Hyperintense signal ซึ่งแสดงถึง oxyhemoglobin ในช่วง hyperacute (<6 ชั่วโมง)"
+      },
+      {
+        "label": "D",
+        "text": "Hypointense signal ซึ่งแสดงถึง hemosiderin ในช่วง chronic (>2 สัปดาห์)"
+      },
+      {
+        "label": "E",
+        "text": "Isointense signal ซึ่งแสดงถึง fibrin clot ในช่วง acute ตั้งแต่ 12-48 ชั่วโมง"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว  2014",
+    "explanation": "ในช่วง subacute phase (3-7 วัน) ของ subarachnoid hemorrhage เม็ดเลือดแดงจะแตกตัวและปล่อย hemoglobin ออกมา ซึ่งจะถูกแปลงเป็น methemoglobin ที่มี paramagnetic property ทำให้เกิด hyperintense signal บน T1 weighted MRI ขณะที่ CT non-contrast จะแสดง hyperdensity ของเลือดสดในช่วง acute phase แรกๆ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายวัย 62 ปี ป่วยด้วยความดันโลหิตสูงมาหลายปี มาด้วยอาการปวดศีรษะรุนแรง หน้ามืด และอ่อนแรงฉับพลันในครึ่งซ้ายของกระบอก ตรวจร่างกายพบอาการชักหรือกล้ามเนื้ออ่อนแรงด้านขวา CT brain ไม่มีฉีดสารเคมี (non-contrast CT) แสดงภาพ hyperdense lesion ในแนว basal ganglia region ด้านขวา อยากทราบว่า lesion ที่พบมีลักษณะเป็นอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Intracerebral hematoma (เลือดออกในสมอง)"
+      },
+      {
+        "label": "B",
+        "text": "Acute ischemic stroke (โรคหลอดเลือดสมองตีบ)"
+      },
+      {
+        "label": "C",
+        "text": "Subdural hematoma (เลือดออกใต้จำเรียง)"
+      },
+      {
+        "label": "D",
+        "text": "Subarachnoid hemorrhage (เลือดออกในช่องระหว่างจำเรียงกับเยื่อใยแมงมุม)"
+      },
+      {
+        "label": "E",
+        "text": "Brain tumor (종양สมอง)"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว  2014",
+    "explanation": "โรคนี้มีคุณลักษณะทั้งหมดของ intracerebral hematoma ได้แก่ ผู้ป่วยมีประวัติความดันโลหิตสูง (risk factor หลัก) เริ่มป่วยเฉียบพลัน และ CT brain ไม่มีฉีดสารเคมี พบ hyperdense lesion ในสมองส่วน basal ganglia ซึ่งเป็นตำแหน่งที่พบ ICH บ่อยที่สุด (20% ของ ICH) และอาการที่มีตรงกับ motor weakness จากการบีบอัดที่บริเวณ internal capsule",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชาย u/d epilepsy กิน multiple antileptic drug วันนึงพอนอนอยุ่ในห้อง stupor pupil 2mm RR- 8/min decrease deep tendon reflect อาการอื่นๆไม่แน่ใจ ถามว่าเกิดจากยาใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "carbamazepine"
+      },
+      {
+        "label": "B",
+        "text": "phenytoin"
+      },
+      {
+        "label": "C",
+        "text": "BDZ"
+      },
+      {
+        "label": "D",
+        "text": "phenobarb"
+      },
+      {
+        "label": "E",
+        "text": "valproic acid"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว  2014",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยชายดื่มเหล้าทุกวัน วันก่อนลดปริมาณการดื่มลง มาด้วย agitation tremor และ diaphoresis แต่ neurological examination ปกติ ความดัน 145/92 mmHg ชีพจร 110 ครั้ง/นาที ไม่มีไข้ Blood glucose ปกติ ถามว่า management ที่เหมาะสมคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Thiamine และสารประกอบ B complex"
+      },
+      {
+        "label": "B",
+        "text": "Benzodiazepine (เช่น diazepam หรือ lorazepam) + thiamine"
+      },
+      {
+        "label": "C",
+        "text": "Beta-blocker เช่น propranolol เพียงอย่างเดียว"
+      },
+      {
+        "label": "D",
+        "text": "Antipsychotic เช่น haloperidol เพียงอย่างเดียว"
+      },
+      {
+        "label": "E",
+        "text": "Observation และให้สภาวะแวดล้อมปลอดภัยเท่านั้น"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว  2014",
+    "explanation": "ผู้ป่วยมีอาการ alcohol withdrawal syndrome ในระยะ impending delirium tremens (agitation tremor tachycardia hypertension) ซึ่งถือว่า moderate to severe withdrawal จำเป็นต้องให้ benzodiazepine (first-line) เพื่อป้องกัน seizure และ delirium tremens พร้อมกับ thiamine เพื่อป้องกัน Wernicke's encephalopathy จากการขาดสารอาหารในผู้ติดสุรา",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  }
+]

@@ -1,0 +1,1094 @@
+[
+  {
+    "scenario": "เด็กชายอายุ 8 ปี มาด้วยอาการไอเรื้อรัง หายใจมีเสียงหวีด โดยเฉพาะตอนกลางคืนและออกกำลังกาย มีประวัติ allergic rhinitis มารดาเป็นโรคหอบหืด ตรวจร่างกาย: BT 37°C, RR 22/min, O2sat 97%, lung: bilateral expiratory wheezing, prolonged expiratory phase สิ่งตรวจเพิ่มเติมใดที่เหมาะสมที่สุดในการวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "Chest X-ray"},
+      {"label": "B", "text": "Spirometry with bronchodilator reversibility test"},
+      {"label": "C", "text": "CT chest"},
+      {"label": "D", "text": "Sputum culture"},
+      {"label": "E", "text": "Bronchoscopy"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Spirometry ร่วมกับ bronchodilator reversibility test เป็นการตรวจมาตรฐานในการวินิจฉัยโรคหอบหืดในเด็กอายุมากกว่า 6 ปี",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Spirometry with bronchodilator reversibility test",
+      "reason": "โรคหอบหืด (asthma) เป็นโรคทางเดินหายใจเรื้อรังที่พบบ่อยที่สุดในเด็ก ลักษณะสำคัญคือ chronic airway inflammation ทำให้เกิด bronchial hyperresponsiveness และ reversible airflow obstruction ผู้ป่วยรายนี้มีอาการเข้าได้กับโรคหอบหืด ได้แก่ ไอเรื้อรัง หายใจมีเสียงหวีด โดยเฉพาะตอนกลางคืนและออกกำลังกาย ร่วมกับประวัติ atopy (allergic rhinitis) และ family history ของ asthma\n\nการวินิจฉัยโรคหอบหืดในเด็กอายุมากกว่า 6 ปี แนะนำให้ทำ spirometry ซึ่งจะแสดง obstructive pattern (FEV1/FVC < 80%) และเมื่อให้ bronchodilator (salbutamol) แล้วมี reversibility โดย FEV1 เพิ่มขึ้น >= 12% และ >= 200 mL จากค่าเดิม ถือว่ามี significant bronchodilator response\n\nในเด็กอายุน้อยกว่า 6 ปี ที่ไม่สามารถทำ spirometry ได้ การวินิจฉัยจะอาศัยอาการทางคลินิกและการตอบสนองต่อการรักษาเป็นหลัก",
+      "choices": [
+        {"label": "A", "text": "Chest X-ray", "is_correct": false, "explanation": "Chest X-ray ในผู้ป่วย asthma มักปกติหรือพบ hyperinflation ไม่ใช่การตรวจที่จำเพาะสำหรับการวินิจฉัย asthma แต่อาจมีประโยชน์ในการแยกโรคอื่น เช่น foreign body aspiration หรือ pneumonia"},
+        {"label": "B", "text": "Spirometry with bronchodilator reversibility test", "is_correct": true, "explanation": "เป็น gold standard ในการวินิจฉัย asthma ในเด็กอายุ >= 6 ปี โดยแสดง obstructive pattern ที่มี reversibility หลังให้ bronchodilator ช่วยยืนยันการวินิจฉัยและประเมินความรุนแรงของโรค"},
+        {"label": "C", "text": "CT chest", "is_correct": false, "explanation": "CT chest ไม่จำเป็นในการวินิจฉัย asthma เบื้องต้น มีค่าใช้จ่ายสูงและมี radiation exposure เหมาะสำหรับกรณีที่สงสัยความผิดปกติทางโครงสร้างหรือ complications เช่น bronchiectasis"},
+        {"label": "D", "text": "Sputum culture", "is_correct": false, "explanation": "Sputum culture มีประโยชน์ในกรณีที่สงสัยการติดเชื้อทางเดินหายใจส่วนล่าง เช่น pneumonia ไม่ใช่การตรวจที่ใช้ในการวินิจฉัย asthma"},
+        {"label": "E", "text": "Bronchoscopy", "is_correct": false, "explanation": "Bronchoscopy เป็น invasive procedure ที่ไม่จำเป็นสำหรับการวินิจฉัย asthma ใช้ในกรณีที่สงสัย foreign body aspiration, airway anomaly หรือต้องการดูทางเดินหายใจโดยตรง"}
+      ],
+      "key_takeaway": "Spirometry with bronchodilator reversibility test เป็นการตรวจมาตรฐานในการวินิจฉัย asthma ในเด็กอายุ >= 6 ปี โดยแสดง obstructive pattern ที่ reversible"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 10 ปี เป็นโรคหอบหืด ปัจจุบันใช้ low-dose ICS เป็นยาควบคุม แต่ยังมีอาการไอ หายใจหวีดตอนกลางคืน 3 ครั้ง/สัปดาห์ ใช้ SABA มากกว่า 2 ครั้ง/สัปดาห์ FEV1 75% predicted การปรับยาที่เหมาะสมที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "เพิ่มขนาด ICS เป็น medium-dose"},
+      {"label": "B", "text": "เพิ่ม LABA ร่วมกับ low-dose ICS"},
+      {"label": "C", "text": "เปลี่ยนเป็น LTRA อย่างเดียว"},
+      {"label": "D", "text": "เพิ่ม oral corticosteroid"},
+      {"label": "E", "text": "คงยาเดิมและติดตามอาการ"}
+    ],
+    "correct_answer": "B",
+    "explanation": "ผู้ป่วย asthma ที่ไม่ควบคุมอาการได้ด้วย low-dose ICS ควร step up โดยเพิ่ม LABA เป็น combination therapy",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. เพิ่ม LABA ร่วมกับ low-dose ICS",
+      "reason": "ผู้ป่วยรายนี้มีอาการ asthma ที่ไม่ควบคุมได้ (uncontrolled asthma) ตามเกณฑ์ GINA ซึ่งรวมถึง daytime symptoms > 2 ครั้ง/สัปดาห์, night waking > 1 ครั้ง/เดือน, SABA use > 2 ครั้ง/สัปดาห์ และ FEV1 < 80% predicted ทั้งหมดนี้บ่งชี้ว่า low-dose ICS อย่างเดียวไม่เพียงพอ\n\nตามแนวทาง GINA stepwise approach ขั้นตอนถัดไปจาก step 2 (low-dose ICS) คือ step 3 ซึ่งแนะนำให้ใช้ low-dose ICS/LABA combination เป็นตัวเลือกแรก (preferred option) โดย LABA เช่น formoterol หรือ salmeterol จะช่วยเสริมฤทธิ์ bronchodilation ระยะยาว ลดอาการ และลดการใช้ rescue inhaler\n\nทางเลือกอื่นของ step 3 คือ medium-dose ICS หรือ low-dose ICS + LTRA แต่ ICS/LABA combination มีหลักฐานว่าได้ผลดีกว่า",
+      "choices": [
+        {"label": "A", "text": "เพิ่มขนาด ICS เป็น medium-dose", "is_correct": false, "explanation": "การเพิ่ม ICS เป็น medium-dose เป็นทางเลือกหนึ่งของ step 3 แต่ไม่ใช่ preferred option เนื่องจากการเพิ่ม LABA มีประสิทธิภาพดีกว่าในการควบคุมอาการ และมีผลข้างเคียงจาก steroid น้อยกว่า"},
+        {"label": "B", "text": "เพิ่ม LABA ร่วมกับ low-dose ICS", "is_correct": true, "explanation": "เป็น preferred option ของ GINA step 3 ในเด็กอายุ >= 6 ปี ICS/LABA combination ช่วยเพิ่มประสิทธิภาพการควบคุมอาการ ลดการใช้ rescue inhaler และปรับปรุง lung function ได้ดีกว่าการเพิ่ม ICS อย่างเดียว"},
+        {"label": "C", "text": "เปลี่ยนเป็น LTRA อย่างเดียว", "is_correct": false, "explanation": "LTRA (เช่น montelukast) อย่างเดียวมีประสิทธิภาพด้อยกว่า ICS ในการควบคุม asthma การเปลี่ยนจาก ICS เป็น LTRA อย่างเดียวเป็นการ step down ซึ่งไม่เหมาะสมในผู้ป่วยที่ยังควบคุมอาการไม่ได้"},
+        {"label": "D", "text": "เพิ่ม oral corticosteroid", "is_correct": false, "explanation": "Oral corticosteroid ใช้ในกรณี acute exacerbation หรือ severe persistent asthma ที่ไม่ตอบสนองต่อ high-dose ICS/LABA ไม่เหมาะสำหรับการใช้เป็น controller medication ในขั้นตอนนี้ เนื่องจากมีผลข้างเคียงมาก"},
+        {"label": "E", "text": "คงยาเดิมและติดตามอาการ", "is_correct": false, "explanation": "ผู้ป่วยมี uncontrolled asthma จำเป็นต้อง step up treatment การคงยาเดิมไม่เหมาะสม เนื่องจากอาจทำให้อาการแย่ลงและเพิ่มความเสี่ยงต่อ acute exacerbation"}
+      ],
+      "key_takeaway": "ผู้ป่วย asthma ที่ uncontrolled ด้วย low-dose ICS ควร step up เป็น low-dose ICS/LABA combination ตามแนวทาง GINA step 3"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 6 ปี เป็น asthma มาที่ห้องฉุกเฉินด้วยอาการหอบเหนื่อยมาก 2 ชั่วโมง ไม่ตอบสนองต่อ salbutamol nebulization 3 ครั้ง PE: BT 37.2°C, HR 140/min, RR 40/min, BP 100/60 mmHg, O2sat 88% RA, ผู้ป่วยนั่งหายใจ พูดได้เป็นคำๆ intercostal retraction ชัดเจน lung: decreased air entry bilateral, minimal wheezing การดูแลเบื้องต้นที่สำคัญที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Salbutamol nebulization ซ้ำ"},
+      {"label": "B", "text": "IV magnesium sulfate"},
+      {"label": "C", "text": "IV aminophylline"},
+      {"label": "D", "text": "Intubation และ mechanical ventilation"},
+      {"label": "E", "text": "Subcutaneous epinephrine"}
+    ],
+    "correct_answer": "B",
+    "explanation": "ผู้ป่วย severe acute asthma ที่ไม่ตอบสนองต่อ initial treatment ควรได้รับ IV magnesium sulfate",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. IV magnesium sulfate",
+      "reason": "ผู้ป่วยรายนี้มี severe acute asthma exacerbation (life-threatening features) ได้แก่ O2sat < 90%, พูดได้เป็นคำๆ, decreased air entry ร่วมกับ minimal wheezing (silent chest แสดงถึง severe obstruction), tachycardia, tachypnea และไม่ตอบสนองต่อ initial bronchodilator therapy\n\nเมื่อผู้ป่วย severe acute asthma ไม่ตอบสนองต่อ repeated salbutamol nebulization ร่วมกับ ipratropium bromide และ systemic corticosteroid ขั้นตอนถัดไปตามแนวทาง GINA คือ IV magnesium sulfate (40-50 mg/kg, max 2 g) ซึ่งออกฤทธิ์เป็น smooth muscle relaxant ช่วย bronchodilation\n\nMagnesium sulfate ยังช่วยลดการหลั่ง acetylcholine จาก nerve endings และลดการทำงานของ mast cells ทำให้ลด bronchospasm ได้อย่างมีประสิทธิภาพ",
+      "choices": [
+        {"label": "A", "text": "Salbutamol nebulization ซ้ำ", "is_correct": false, "explanation": "ผู้ป่วยได้รับ salbutamol nebulization ไป 3 ครั้งแล้วไม่ตอบสนอง การให้ซ้ำอีกไม่น่าจะได้ผล ควร escalate therapy เป็นยาอื่นที่มี mechanism ต่างออกไป"},
+        {"label": "B", "text": "IV magnesium sulfate", "is_correct": true, "explanation": "เป็น second-line treatment สำหรับ severe acute asthma ที่ไม่ตอบสนองต่อ initial treatment ขนาด 25-75 mg/kg (max 2 g) IV drip 20 นาที ออกฤทธิ์ bronchodilation ผ่านการ relax smooth muscle และลดการหลั่ง acetylcholine"},
+        {"label": "C", "text": "IV aminophylline", "is_correct": false, "explanation": "Aminophylline เป็นทางเลือกหนึ่งแต่มี narrow therapeutic index และผลข้างเคียงมาก (arrhythmia, seizure, nausea) จึงไม่ใช่ตัวเลือกแรก ปัจจุบัน GINA แนะนำ IV magnesium sulfate ก่อน aminophylline"},
+        {"label": "D", "text": "Intubation และ mechanical ventilation", "is_correct": false, "explanation": "การใส่ท่อช่วยหายใจเป็นทางเลือกสุดท้ายเมื่อผู้ป่วย respiratory failure ไม่ตอบสนองต่อยาทั้งหมด ผู้ป่วยรายนี้ยัง conscious และยังไม่ได้รับ magnesium sulfate ควรลอง medical therapy ก่อน"},
+        {"label": "E", "text": "Subcutaneous epinephrine", "is_correct": false, "explanation": "SC epinephrine ใช้ในกรณี anaphylaxis-related bronchospasm ไม่ใช่ standard treatment สำหรับ acute asthma exacerbation ปัจจุบันไม่แนะนำเป็นทางเลือกแรก"}
+      ],
+      "key_takeaway": "IV magnesium sulfate เป็น second-line treatment ที่แนะนำสำหรับ severe acute asthma ที่ไม่ตอบสนองต่อ initial bronchodilator therapy"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 12 ปี เป็น asthma ควบคุมอาการได้ดีด้วย medium-dose ICS/LABA เป็นเวลา 3 เดือน ไม่มีอาการตอนกลางคืน ไม่ต้องใช้ rescue inhaler FEV1 92% predicted การปรับยาที่เหมาะสมคืออะไร",
+    "choices": [
+      {"label": "A", "text": "หยุดยาทั้งหมด"},
+      {"label": "B", "text": "คงยาเดิม"},
+      {"label": "C", "text": "Step down เป็น low-dose ICS/LABA"},
+      {"label": "D", "text": "เพิ่มเป็น high-dose ICS/LABA"},
+      {"label": "E", "text": "เปลี่ยนเป็น LABA อย่างเดียว"}
+    ],
+    "correct_answer": "C",
+    "explanation": "เมื่อ asthma ควบคุมได้ดีเป็นเวลาอย่างน้อย 3 เดือน ควร step down treatment",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Step down เป็น low-dose ICS/LABA",
+      "reason": "ตามแนวทาง GINA เมื่อผู้ป่วย asthma ควบคุมอาการได้ดี (well-controlled) เป็นเวลาอย่างน้อย 3 เดือน ควรพิจารณา step down treatment เพื่อหาขนาดยาต่ำสุดที่ยังควบคุมอาการได้ ซึ่งจะช่วยลดผลข้างเคียงจากยาในระยะยาว\n\nการ step down จาก medium-dose ICS/LABA ควรลดเป็น low-dose ICS/LABA ก่อน ไม่ควรลดลงมากเกินไปในครั้งเดียว เพราะอาจทำให้อาการกำเริบ หลังจาก step down ควรติดตามอาการอย่างน้อย 3 เดือนก่อนพิจารณา step down ต่อไป\n\nสำคัญมากที่ห้ามหยุด ICS ทั้งหมดทันที เพราะ airway inflammation อาจยังมีอยู่แม้ไม่มีอาการ",
+      "choices": [
+        {"label": "A", "text": "หยุดยาทั้งหมด", "is_correct": false, "explanation": "การหยุดยาทั้งหมดทันทีมีความเสี่ยงสูงที่จะเกิด exacerbation เนื่องจาก underlying airway inflammation ยังคงมีอยู่ ควร step down ทีละขั้นตอน"},
+        {"label": "B", "text": "คงยาเดิม", "is_correct": false, "explanation": "เมื่อควบคุมอาการได้ดีเป็นเวลา 3 เดือน ควร step down เพื่อลดผลข้างเคียงจากยา การคงยาเดิมทำให้ผู้ป่วยได้รับยามากเกินความจำเป็น"},
+        {"label": "C", "text": "Step down เป็น low-dose ICS/LABA", "is_correct": true, "explanation": "เป็นการ step down ที่เหมาะสม ลดขนาด ICS ลงแต่ยังคง LABA ไว้ หากอาการยังคงควบคุมได้ดีอีก 3 เดือน อาจพิจารณา step down ต่อโดยหยุด LABA และใช้ low-dose ICS อย่างเดียว"},
+        {"label": "D", "text": "เพิ่มเป็น high-dose ICS/LABA", "is_correct": false, "explanation": "ไม่มีข้อบ่งชี้ในการ step up เพราะผู้ป่วยควบคุมอาการได้ดี การเพิ่มขนาดยาโดยไม่จำเป็นเพิ่มความเสี่ยงของผลข้างเคียง เช่น growth suppression จาก corticosteroid"},
+        {"label": "E", "text": "เปลี่ยนเป็น LABA อย่างเดียว", "is_correct": false, "explanation": "LABA ห้ามใช้เป็น monotherapy ในผู้ป่วย asthma เนื่องจากเพิ่มความเสี่ยงต่อ asthma-related death ต้องใช้ร่วมกับ ICS เสมอ"}
+      ],
+      "key_takeaway": "เมื่อ asthma ควบคุมได้ดี >= 3 เดือน ควร step down treatment ทีละขั้น และห้ามใช้ LABA monotherapy"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 5 ปี มาพบแพทย์ด้วยอาการหายใจลำบาก หายใจเสียงหวีด ซ้ำๆ 4-5 ครั้งในช่วง 1 ปี มักเกิดเมื่อเป็นหวัดหรือสัมผัสฝุ่น ไม่มีอาการระหว่าง episode มารดาเป็น allergic rhinitis ตรวจร่างกายขณะนี้ปกติ การจัดการที่เหมาะสมที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "สังเกตอาการอย่างเดียว"},
+      {"label": "B", "text": "ให้ SABA เมื่อมีอาการอย่างเดียว"},
+      {"label": "C", "text": "เริ่ม low-dose ICS เป็น controller"},
+      {"label": "D", "text": "ให้ oral prednisolone ทุกวัน"},
+      {"label": "E", "text": "ส่งตรวจ bronchoscopy"}
+    ],
+    "correct_answer": "C",
+    "explanation": "เด็กอายุ < 6 ปี ที่มี recurrent wheezing >= 3 ครั้ง/ปี ร่วมกับ risk factors ของ asthma ควรเริ่ม low-dose ICS",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. เริ่ม low-dose ICS เป็น controller",
+      "reason": "ผู้ป่วยเด็กอายุ < 6 ปี ที่มี recurrent wheezing episodes (>= 3 ครั้ง/ปี) ร่วมกับ risk factors สำหรับ persistent asthma ตาม modified Asthma Predictive Index (mAPI) ได้แก่ parental history of allergic rhinitis/atopy ควรได้รับ controller therapy\n\nLow-dose ICS (เช่น fluticasone 88 mcg/day หรือ budesonide nebulization 0.5 mg/day) เป็น preferred controller ใน GINA step 2 สำหรับเด็กอายุ < 6 ปี ที่มี pattern suggestive of asthma ช่วยลด frequency และ severity ของ wheezing episodes\n\nควรประเมินการตอบสนองต่อ ICS หลังใช้ 2-3 เดือน หากอาการดีขึ้นชัดเจน สนับสนุนการวินิจฉัย asthma",
+      "choices": [
+        {"label": "A", "text": "สังเกตอาการอย่างเดียว", "is_correct": false, "explanation": "ผู้ป่วยมี recurrent wheezing 4-5 ครั้ง/ปี ร่วมกับ risk factors ของ asthma ซึ่งบ่งชี้ว่าต้องการ controller therapy ไม่ควรสังเกตอาการอย่างเดียว"},
+        {"label": "B", "text": "ให้ SABA เมื่อมีอาการอย่างเดียว", "is_correct": false, "explanation": "SABA as needed เป็น step 1 ของ GINA ซึ่งเหมาะกับเด็กที่มีอาการไม่บ่อย (< 2 ครั้ง/เดือน) ผู้ป่วยรายนี้มีอาการบ่อยกว่าจึงต้องการ controller therapy"},
+        {"label": "C", "text": "เริ่ม low-dose ICS เป็น controller", "is_correct": true, "explanation": "เหมาะสมที่สุดสำหรับเด็กอายุ < 6 ปี ที่มี recurrent wheezing pattern suggestive of asthma ร่วมกับ risk factors เช่น atopy และ family history ช่วยลด airway inflammation และป้องกัน exacerbation"},
+        {"label": "D", "text": "ให้ oral prednisolone ทุกวัน", "is_correct": false, "explanation": "Oral corticosteroid ทุกวันไม่เหมาะสมเป็น long-term controller ในเด็ก เนื่องจากผลข้างเคียงรุนแรง เช่น growth suppression, adrenal suppression, osteoporosis ใช้เฉพาะ acute exacerbation"},
+        {"label": "E", "text": "ส่งตรวจ bronchoscopy", "is_correct": false, "explanation": "Bronchoscopy ไม่จำเป็นในผู้ป่วยที่มีอาการ typical ของ recurrent wheezing/asthma ควรใช้ในกรณีที่สงสัย structural abnormality หรือ foreign body aspiration"}
+      ],
+      "key_takeaway": "เด็กอายุ < 6 ปี ที่มี recurrent wheezing >= 3 ครั้ง/ปี ร่วมกับ atopic risk factors ควรเริ่ม low-dose ICS เป็น controller"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 9 ปี เป็น asthma มาพบแพทย์ด้วยอาการหอบหืดกำเริบเฉียบพลัน ได้รับ salbutamol nebulization 3 doses ร่วมกับ ipratropium bromide และ IV dexamethasone อาการดีขึ้น O2sat 95% RA พูดเป็นประโยค RR 24/min หายใจมีเสียงหวีดเล็กน้อย การวางแผนจำหน่ายที่เหมาะสมที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "จำหน่ายโดยไม่ต้องให้ยากลับบ้าน"},
+      {"label": "B", "text": "ให้ SABA inhaler กลับบ้านอย่างเดียว"},
+      {"label": "C", "text": "ให้ SABA inhaler ร่วมกับ oral prednisolone 3-5 วัน และนัด follow-up"},
+      {"label": "D", "text": "Admit เพื่อสังเกตอาการ 48 ชั่วโมง"},
+      {"label": "E", "text": "ให้ IV antibiotics และ admit"}
+    ],
+    "correct_answer": "C",
+    "explanation": "หลัง acute asthma exacerbation ที่ตอบสนองต่อ treatment ควรให้ SABA กลับบ้าน ร่วมกับ short course oral steroid",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. ให้ SABA inhaler ร่วมกับ oral prednisolone 3-5 วัน และนัด follow-up",
+      "reason": "ผู้ป่วยมี acute asthma exacerbation ที่ตอบสนองดีต่อ initial treatment ในห้องฉุกเฉิน (good response) ตามเกณฑ์ได้แก่ O2sat >= 94%, พูดเป็นประโยคได้, RR ลดลง และ improved air entry\n\nแนวทางการจำหน่ายหลัง acute exacerbation ตาม GINA ประกอบด้วย SABA inhaler (MDI with spacer) สำหรับ rescue therapy, oral prednisolone 1-2 mg/kg/day (max 40 mg) เป็นเวลา 3-5 วัน เพื่อลด airway inflammation ที่เหลืออยู่ และนัด follow-up ภายใน 1-2 สัปดาห์เพื่อประเมินอาการและ review asthma action plan\n\nนอกจากนี้ ควรทบทวน controller medication เดิม และพิจารณา step up หากจำเป็น",
+      "choices": [
+        {"label": "A", "text": "จำหน่ายโดยไม่ต้องให้ยากลับบ้าน", "is_correct": false, "explanation": "ไม่เหมาะสม เพราะหลัง acute exacerbation ผู้ป่วยมีความเสี่ยงสูงที่จะมีอาการกำเริบซ้ำ ต้องให้ทั้ง reliever และ short course steroid กลับบ้าน"},
+        {"label": "B", "text": "ให้ SABA inhaler กลับบ้านอย่างเดียว", "is_correct": false, "explanation": "SABA อย่างเดียวไม่เพียงพอ ต้องให้ oral prednisolone ร่วมด้วยเพื่อลด airway inflammation ที่ยังคงอยู่หลัง exacerbation ซึ่งช่วยป้องกัน early relapse"},
+        {"label": "C", "text": "ให้ SABA inhaler ร่วมกับ oral prednisolone 3-5 วัน และนัด follow-up", "is_correct": true, "explanation": "เป็นแนวทางมาตรฐาน GINA สำหรับ discharge หลัง acute exacerbation Oral prednisolone 3-5 วันช่วยลด late-phase inflammation และ SABA ใช้เป็น rescue medication นัด follow-up เพื่อ reassess และ adjust long-term management"},
+        {"label": "D", "text": "Admit เพื่อสังเกตอาการ 48 ชั่วโมง", "is_correct": false, "explanation": "ผู้ป่วยมี good response ต่อ treatment (O2sat >= 94%, พูดเป็นประโยค, improved symptoms) ไม่มีข้อบ่งชี้ในการ admit ข้อบ่งชี้ admit เช่น poor response, O2sat < 92%, severe distress"},
+        {"label": "E", "text": "ให้ IV antibiotics และ admit", "is_correct": false, "explanation": "Asthma exacerbation ไม่จำเป็นต้องได้รับ antibiotics เว้นแต่มีหลักฐานชัดเจนของ bacterial infection เช่น high fever, purulent sputum ผู้ป่วยรายนี้ไม่มี signs ของ bacterial infection"}
+      ],
+      "key_takeaway": "หลัง acute asthma exacerbation ที่ตอบสนองดี ควรจำหน่ายพร้อม SABA, oral prednisolone 3-5 วัน และนัด follow-up"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกชายอายุ 4 เดือน มาด้วยอาการไอ น้ำมูกไหล 2 วัน ต่อมามีอาการหายใจเร็ว หอบเหนื่อย ดูดนมได้น้อยลง PE: BT 38.2°C, HR 160/min, RR 60/min, O2sat 91% RA, subcostal retraction, lung: bilateral fine crackles และ expiratory wheezing การวินิจฉัยที่เป็นไปได้มากที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Bronchial asthma"},
+      {"label": "B", "text": "Acute bronchiolitis"},
+      {"label": "C", "text": "Bacterial pneumonia"},
+      {"label": "D", "text": "Pertussis"},
+      {"label": "E", "text": "Congenital heart disease"}
+    ],
+    "correct_answer": "B",
+    "explanation": "ทารกอายุ < 2 ปี ที่มี URI prodrome ตามด้วย lower respiratory symptoms (wheezing, crackles) เข้าได้กับ acute bronchiolitis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Acute bronchiolitis",
+      "reason": "Acute bronchiolitis เป็นการติดเชื้อทางเดินหายใจส่วนล่างที่พบบ่อยที่สุดในทารกอายุ < 2 ปี สาเหตุที่พบบ่อยที่สุดคือ Respiratory Syncytial Virus (RSV) ประมาณ 50-80% ของผู้ป่วย\n\nอาการทั่วไปเริ่มจาก upper respiratory tract infection (ไอ น้ำมูก) 2-3 วัน ตามด้วย lower respiratory symptoms ได้แก่ tachypnea, wheezing, fine crackles, chest retraction และ feeding difficulty ร่วมกับ low-grade fever\n\nPathology เกิดจาก virus ทำให้เกิดการอักเสบและ necrosis ของ epithelium ใน small airways (bronchioles) ร่วมกับ mucus plugging และ peribronchiolar edema ทำให้เกิด airway obstruction แบบ ball-valve mechanism จึงมีทั้ง wheezing และ crackles",
+      "choices": [
+        {"label": "A", "text": "Bronchial asthma", "is_correct": false, "explanation": "Asthma มักไม่วินิจฉัยในเด็กอายุ < 6 เดือน ที่มี first episode ของ wheezing แม้จะมี wheezing เช่นกัน แต่ clinical pattern ของ URI prodrome ตามด้วย progressive lower respiratory symptoms ในทารกเข้าได้กับ bronchiolitis มากกว่า"},
+        {"label": "B", "text": "Acute bronchiolitis", "is_correct": true, "explanation": "อาการทั้งหมดเข้าได้ดี: ทารกอายุ < 1 ปี, URI prodrome 2 วันตามด้วย lower respiratory symptoms, bilateral fine crackles ร่วมกับ expiratory wheezing, low-grade fever และ feeding difficulty สาเหตุหลักคือ RSV"},
+        {"label": "C", "text": "Bacterial pneumonia", "is_correct": false, "explanation": "Bacterial pneumonia มักมี high fever, toxic appearance และ focal crackles หรือ consolidation เด็กรายนี้มี low-grade fever, bilateral crackles ร่วมกับ wheezing และเริ่มจาก viral URI prodrome ซึ่งเข้าได้กับ bronchiolitis มากกว่า"},
+        {"label": "D", "text": "Pertussis", "is_correct": false, "explanation": "Pertussis มี 3 phases: catarrhal, paroxysmal และ convalescent ลักษณะเด่นคือ paroxysmal cough ตามด้วย inspiratory whoop ไม่มี wheezing เป็นอาการหลัก ผู้ป่วยรายนี้มี wheezing ร่วมกับ crackles ไม่เข้ากับ pertussis"},
+        {"label": "E", "text": "Congenital heart disease", "is_correct": false, "explanation": "CHD ที่มี heart failure อาจมี tachypnea และ crackles แต่มักไม่มี fever หรือ URI prodrome มักมี heart murmur, hepatomegaly และ failure to thrive ร่วมด้วย"}
+      ],
+      "key_takeaway": "Acute bronchiolitis มักเกิดในทารก < 2 ปี เริ่มจาก URI prodrome 2-3 วัน ตามด้วย wheezing, crackles และ respiratory distress สาเหตุหลักคือ RSV"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกหญิงอายุ 3 เดือน มาด้วย acute bronchiolitis PE: RR 55/min, O2sat 93% RA, mild subcostal retraction ดูดนมได้ลดลงเล็กน้อย การรักษาที่เหมาะสมที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Salbutamol nebulization"},
+      {"label": "B", "text": "3% hypertonic saline nebulization ร่วมกับ supportive care"},
+      {"label": "C", "text": "Oral antibiotics"},
+      {"label": "D", "text": "Systemic corticosteroid"},
+      {"label": "E", "text": "Ribavirin inhalation"}
+    ],
+    "correct_answer": "B",
+    "explanation": "การรักษา bronchiolitis เน้น supportive care โดย hypertonic saline nebulization ช่วยลด mucus viscosity ในผู้ป่วยที่ admit",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. 3% hypertonic saline nebulization ร่วมกับ supportive care",
+      "reason": "การรักษา bronchiolitis เป็น supportive treatment เป็นหลัก ได้แก่ oxygen supplementation เมื่อ O2sat < 92-94%, hydration (oral หรือ IV) และ nasal suctioning ไม่มี specific antiviral therapy ที่แนะนำในปัจจุบัน\n\n3% hypertonic saline nebulization ได้รับการศึกษาพบว่าช่วยลดระยะเวลา hospitalization ในผู้ป่วย bronchiolitis ที่ moderate severity กลไกคือ osmotic effect ดึงน้ำเข้ามาใน airway ช่วยลด mucus viscosity ลด mucosal edema และช่วย mucociliary clearance\n\nAAP guidelines 2014 แนะนำว่าอาจพิจารณาให้ hypertonic saline ในผู้ป่วยที่ admit โดยเฉพาะ moderate severity ส่วนยา bronchodilator และ corticosteroid ไม่แนะนำเป็น routine",
+      "choices": [
+        {"label": "A", "text": "Salbutamol nebulization", "is_correct": false, "explanation": "AAP guidelines ไม่แนะนำ bronchodilator (salbutamol/albuterol) เป็น routine treatment สำหรับ bronchiolitis เนื่องจาก meta-analysis พบว่าไม่ช่วยลดระยะเวลา hospitalization หรือปรับปรุง clinical outcome"},
+        {"label": "B", "text": "3% hypertonic saline nebulization ร่วมกับ supportive care", "is_correct": true, "explanation": "Hypertonic saline อาจช่วยลดระยะเวลา hospitalization โดยเฉพาะในผู้ป่วยที่มีอาการ moderate severity ร่วมกับ supportive care ที่ดี ได้แก่ oxygen, hydration, nasal suctioning"},
+        {"label": "C", "text": "Oral antibiotics", "is_correct": false, "explanation": "Bronchiolitis เกิดจาก viral infection ไม่มีข้อบ่งชี้ในการให้ antibiotics เว้นแต่มี secondary bacterial infection ที่ชัดเจน การให้ antibiotics โดยไม่จำเป็นเพิ่ม antibiotic resistance"},
+        {"label": "D", "text": "Systemic corticosteroid", "is_correct": false, "explanation": "Systemic corticosteroid ไม่แนะนำสำหรับ bronchiolitis เนื่องจากหลายการศึกษาพบว่าไม่ช่วยปรับปรุง clinical outcome ต่างจาก asthma ที่ corticosteroid มีประโยชน์ชัดเจน"},
+        {"label": "E", "text": "Ribavirin inhalation", "is_correct": false, "explanation": "Ribavirin เป็น antiviral ที่เคยใช้รักษา severe RSV infection แต่ปัจจุบันไม่แนะนำเป็น routine เนื่องจากประสิทธิภาพไม่ชัดเจน ราคาแพง และมีผลข้างเคียง ใช้เฉพาะ immunocompromised patients เท่านั้น"}
+      ],
+      "key_takeaway": "Bronchiolitis รักษาด้วย supportive care เป็นหลัก ไม่แนะนำ routine bronchodilator หรือ corticosteroid"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกชายอายุ 6 สัปดาห์ คลอดก่อนกำหนด GA 32 สัปดาห์ มารดาพามาฉีดวัคซีน แพทย์แนะนำให้ palivizumab injection เหตุผลที่ให้ยานี้คืออะไร",
+    "choices": [
+      {"label": "A", "text": "รักษา active RSV infection"},
+      {"label": "B", "text": "ป้องกัน RSV infection ด้วย passive immunization"},
+      {"label": "C", "text": "เป็น RSV vaccine ชนิด live attenuated"},
+      {"label": "D", "text": "รักษา bronchopulmonary dysplasia"},
+      {"label": "E", "text": "ป้องกัน influenza infection"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Palivizumab เป็น monoclonal antibody ต่อ RSV F protein ใช้ป้องกัน severe RSV infection ในทารกกลุ่มเสี่ยง",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. ป้องกัน RSV infection ด้วย passive immunization",
+      "reason": "Palivizumab เป็น humanized monoclonal antibody (IgG1) ที่จับกับ F (fusion) protein บนผิวของ RSV ป้องกันไม่ให้ virus เข้าสู่ host cells จัดเป็น passive immunization เนื่องจากให้ antibody สำเร็จรูป ไม่ได้กระตุ้นให้ร่างกายสร้าง antibody เอง\n\nข้อบ่งชี้ในการให้ palivizumab ได้แก่ ทารกคลอดก่อนกำหนด (GA < 29 สัปดาห์ ที่อายุ < 12 เดือนในช่วง RSV season), ทารกที่มี hemodynamically significant CHD หรือ chronic lung disease of prematurity ที่อายุ < 24 เดือน\n\nให้ IM injection ขนาด 15 mg/kg ทุกเดือนตลอด RSV season (ประมาณ 5 doses) เริ่มให้ก่อนหรือต้น RSV season",
+      "choices": [
+        {"label": "A", "text": "รักษา active RSV infection", "is_correct": false, "explanation": "Palivizumab ใช้สำหรับ prophylaxis ไม่ใช่ treatment ไม่มีประสิทธิภาพในการรักษา active RSV infection ไม่ช่วยลด viral load หรือ duration ของอาการเมื่อติดเชื้อแล้ว"},
+        {"label": "B", "text": "ป้องกัน RSV infection ด้วย passive immunization", "is_correct": true, "explanation": "Palivizumab เป็น monoclonal antibody ให้เป็น passive immunization ป้องกัน severe RSV infection ในทารกกลุ่มเสี่ยง เช่น premature infant, CHD, chronic lung disease ลด hospitalization rate ได้ 50-55%"},
+        {"label": "C", "text": "เป็น RSV vaccine ชนิด live attenuated", "is_correct": false, "explanation": "Palivizumab ไม่ใช่ vaccine แต่เป็น monoclonal antibody (passive immunization) ไม่กระตุ้นให้ร่างกายสร้าง immunity ด้วยตนเอง จึงต้องให้ซ้ำทุกเดือนตลอด RSV season"},
+        {"label": "D", "text": "รักษา bronchopulmonary dysplasia", "is_correct": false, "explanation": "Palivizumab ไม่ใช่ยารักษา BPD แม้ทารกที่มี BPD เป็นกลุ่มเสี่ยงต่อ severe RSV infection และเป็นข้อบ่งชี้หนึ่งในการให้ palivizumab prophylaxis แต่ตัวยาไม่ได้รักษา BPD โดยตรง"},
+        {"label": "E", "text": "ป้องกัน influenza infection", "is_correct": false, "explanation": "Palivizumab จำเพาะต่อ RSV F protein เท่านั้น ไม่มีฤทธิ์ต่อ influenza virus การป้องกัน influenza ใช้ influenza vaccine ซึ่งเริ่มให้ได้ตั้งแต่อายุ 6 เดือน"}
+      ],
+      "key_takeaway": "Palivizumab เป็น anti-RSV monoclonal antibody ใช้ prophylaxis ในทารกกลุ่มเสี่ยง ให้ IM ทุกเดือนตลอด RSV season"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกชายอายุ 2 เดือน มาด้วย acute bronchiolitis มี O2sat 88% RA ให้ O2 nasal cannula 2 LPM O2sat ขึ้นมา 91% แต่ยังมี severe respiratory distress RR 70/min, significant subcostal and intercostal retraction ดูดนมไม่ได้เลย สิ่งที่ควรทำต่อไปคืออะไร",
+    "choices": [
+      {"label": "A", "text": "เพิ่ม O2 nasal cannula เป็น 4 LPM"},
+      {"label": "B", "text": "Heated humidified high-flow nasal cannula (HFNC)"},
+      {"label": "C", "text": "Nebulized epinephrine"},
+      {"label": "D", "text": "IV dexamethasone"},
+      {"label": "E", "text": "ให้กลับบ้านพร้อม home oxygen"}
+    ],
+    "correct_answer": "B",
+    "explanation": "ทารก bronchiolitis ที่มี severe respiratory distress ไม่ตอบสนองต่อ standard O2 therapy ควรพิจารณา HFNC",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Heated humidified high-flow nasal cannula (HFNC)",
+      "reason": "ผู้ป่วยรายนี้มี severe bronchiolitis ที่ไม่ตอบสนองเพียงพอต่อ standard low-flow oxygen therapy มี persistent hypoxemia, severe work of breathing และ feeding difficulty\n\nHFNC เป็น non-invasive respiratory support ที่ให้ heated humidified gas flow สูง (อัตรา 2 L/kg/min) ช่วยให้ CPAP effect เล็กน้อย ลด work of breathing, washout nasopharyngeal dead space และให้ humidified air ที่ช่วย mucociliary clearance\n\nHFNC ได้รับการพิสูจน์ว่าลดอัตราการ intubation และ ICU admission ในทารก severe bronchiolitis หลายการศึกษา รวมถึง PARIS trial พบว่า HFNC ลด escalation of care ได้อย่างมีนัยสำคัญ",
+      "choices": [
+        {"label": "A", "text": "เพิ่ม O2 nasal cannula เป็น 4 LPM", "is_correct": false, "explanation": "Standard nasal cannula มี flow limit ที่ 2 LPM ในทารกเล็ก การเพิ่ม flow ผ่าน standard NC ไม่ช่วย work of breathing และไม่สามารถให้ CPAP effect ที่จำเป็นสำหรับ severe case ได้"},
+        {"label": "B", "text": "Heated humidified high-flow nasal cannula (HFNC)", "is_correct": true, "explanation": "HFNC เป็นขั้นตอนถัดไปจาก standard O2 ในผู้ป่วย severe bronchiolitis ให้ heated humidified high-flow gas ที่ช่วย CPAP effect, washout dead space และลด work of breathing เป็น non-invasive จึงเป็น step ก่อน CPAP/intubation"},
+        {"label": "C", "text": "Nebulized epinephrine", "is_correct": false, "explanation": "Nebulized epinephrine อาจช่วยบ้างในระยะสั้นโดยลด mucosal edema แต่ไม่ได้เป็น standard treatment สำหรับ bronchiolitis และไม่ช่วยแก้ปัญหา persistent hypoxemia ที่ต้องการ respiratory support"},
+        {"label": "D", "text": "IV dexamethasone", "is_correct": false, "explanation": "Systemic corticosteroid ไม่แนะนำสำหรับ bronchiolitis ไม่มีหลักฐานว่าช่วยปรับปรุง clinical outcome ต่างจาก croup ที่ steroid มีประโยชน์ชัดเจน"},
+        {"label": "E", "text": "ให้กลับบ้านพร้อม home oxygen", "is_correct": false, "explanation": "ผู้ป่วยมี severe respiratory distress ที่ต้องการ monitoring อย่างใกล้ชิดและอาจต้อง escalate respiratory support ไม่เหมาะสำหรับการดูแลที่บ้าน"}
+      ],
+      "key_takeaway": "HFNC เป็น non-invasive respiratory support ที่เหมาะสำหรับ severe bronchiolitis ที่ไม่ตอบสนองต่อ standard O2"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกหญิงอายุ 5 เดือน คลอดก่อนกำหนด GA 28 สัปดาห์ มี chronic lung disease ต้องใช้ home oxygen มาตรวจด้วย O2sat 85% RA, RR 70/min, cough, rhinorrhea 3 วัน RSV rapid test positive จากเชื้อสาเหตุที่น่าจะเป็นคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Streptococcus pneumoniae"},
+      {"label": "B", "text": "Respiratory Syncytial Virus"},
+      {"label": "C", "text": "Mycoplasma pneumoniae"},
+      {"label": "D", "text": "Haemophilus influenzae type b"},
+      {"label": "E", "text": "Bordetella pertussis"}
+    ],
+    "correct_answer": "B",
+    "explanation": "RSV เป็นสาเหตุที่พบบ่อยที่สุดของ bronchiolitis ในทารก โดยเฉพาะทารกเกิดก่อนกำหนดที่มี chronic lung disease",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Respiratory Syncytial Virus",
+      "reason": "RSV (Respiratory Syncytial Virus) เป็นสาเหตุที่พบบ่อยที่สุดของ bronchiolitis ในทารก คิดเป็น 50-80% ของผู้ป่วย โดยเฉพาะในช่วง RSV season (ปลายฝน-ต้นหนาว) ทารกคลอดก่อนกำหนดที่มี chronic lung disease มีความเสี่ยงสูงต่อ severe RSV infection\n\nRSV rapid antigen test มี sensitivity ประมาณ 80-90% ในทารก (สูงกว่าเด็กโต) และ specificity > 90% ผล positive ในผู้ป่วยที่มี typical clinical presentation ยืนยันการวินิจฉัย\n\nRSV ติดต่อผ่าน droplets และ contact กับ contaminated surfaces มี incubation period 4-6 วัน virus จะ replicate ใน nasopharyngeal epithelium แล้วแพร่ลงสู่ lower airways",
+      "choices": [
+        {"label": "A", "text": "Streptococcus pneumoniae", "is_correct": false, "explanation": "S. pneumoniae เป็นสาเหตุของ bacterial pneumonia ไม่ใช่ bronchiolitis มักมี high fever, focal consolidation และ toxic appearance ไม่ตรงกับ presentation ของผู้ป่วยรายนี้"},
+        {"label": "B", "text": "Respiratory Syncytial Virus", "is_correct": true, "explanation": "RSV เป็นสาเหตุที่พบบ่อยที่สุดของ bronchiolitis ในทารก ร่วมกับ RSV rapid test positive ยืนยันการวินิจฉัย ทารก preterm ที่มี chronic lung disease เป็นกลุ่มเสี่ยงสูงต่อ severe disease"},
+        {"label": "C", "text": "Mycoplasma pneumoniae", "is_correct": false, "explanation": "M. pneumoniae มักพบในเด็กวัยเรียน (> 5 ปี) ทำให้เกิด atypical pneumonia ไม่ค่อยพบในทารก อีกทั้ง RSV rapid test positive ยืนยันสาเหตุแล้ว"},
+        {"label": "D", "text": "Haemophilus influenzae type b", "is_correct": false, "explanation": "H. influenzae type b ทำให้เกิด epiglottitis, meningitis, pneumonia ไม่ใช่สาเหตุของ bronchiolitis และปัจจุบันพบน้อยลงมากเนื่องจาก Hib vaccine"},
+        {"label": "E", "text": "Bordetella pertussis", "is_correct": false, "explanation": "B. pertussis ทำให้เกิด whooping cough มีลักษณะ paroxysmal cough ตามด้วย inspiratory whoop ไม่มี wheezing เป็นอาการหลัก และ RSV rapid test ก็ positive ยืนยันสาเหตุแล้ว"}
+      ],
+      "key_takeaway": "RSV เป็นสาเหตุ #1 ของ bronchiolitis ในทารก ทารก preterm ที่มี chronic lung disease เป็นกลุ่มเสี่ยงสูงต่อ severe RSV infection"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 2 ปี มาด้วยอาการไข้ต่ำ ไอเสียงก้อง (barking cough) เสียงแหบ หายใจมีเสียง stridor ขณะร้องไห้ อาการเริ่ม 1 วันก่อน PE: BT 38.0°C, RR 30/min, O2sat 97% RA, mild suprasternal retraction เฉพาะขณะร้อง lung: clear, no wheezing การวินิจฉัยและรักษาที่เหมาะสมที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Mild croup – ให้ single dose oral dexamethasone"},
+      {"label": "B", "text": "Epiglottitis – ให้ IV antibiotics ทันที"},
+      {"label": "C", "text": "Foreign body aspiration – ส่ง bronchoscopy"},
+      {"label": "D", "text": "Bacterial tracheitis – ให้ IV antibiotics"},
+      {"label": "E", "text": "Peritonsillar abscess – ส่ง incision & drainage"}
+    ],
+    "correct_answer": "A",
+    "explanation": "Barking cough, hoarseness, stridor เป็น classic triad ของ croup (laryngotracheobronchitis) ความรุนแรงน้อยให้ dexamethasone dose เดียว",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. Mild croup – ให้ single dose oral dexamethasone",
+      "reason": "Croup (acute laryngotracheobronchitis) เป็นการติดเชื้อทางเดินหายใจส่วนบนที่พบบ่อยในเด็กอายุ 6 เดือน - 3 ปี สาเหตุหลักคือ parainfluenza virus (type 1 บ่อยที่สุด) ทำให้เกิดการบวมของ subglottic area\n\nClassic triad: barking cough, hoarseness, inspiratory stridor ร่วมกับ low-grade fever ผู้ป่วยรายนี้มี mild croup (Westley score ต่ำ) เพราะ stridor มีเฉพาะขณะร้องไห้ (not at rest) และ retraction เล็กน้อย\n\nMild croup รักษาด้วย single dose oral dexamethasone (0.15-0.6 mg/kg) ซึ่งลด mucosal edema, ลดอาการ stridor และลดอัตรา revisit/admission สามารถกลับบ้านได้หลังสังเกตอาการ 2-4 ชั่วโมง",
+      "choices": [
+        {"label": "A", "text": "Mild croup – ให้ single dose oral dexamethasone", "is_correct": true, "explanation": "เป็นการวินิจฉัยและรักษาที่ถูกต้อง อาการทั้งหมด (barking cough, hoarseness, stridor ขณะร้อง) เข้ากับ mild croup Dexamethasone 0.6 mg/kg PO single dose ช่วยลด subglottic edema ได้ดีและเร็ว"},
+        {"label": "B", "text": "Epiglottitis – ให้ IV antibiotics ทันที", "is_correct": false, "explanation": "Epiglottitis มักมี high fever, toxic appearance, drooling, dysphagia, tripod position และ muffled voice (ไม่ใช่ hoarseness) ไม่มี barking cough เด็กมักไม่ยอมนอน ปัจจุบันพบน้อยมากเนื่องจาก Hib vaccine"},
+        {"label": "C", "text": "Foreign body aspiration – ส่ง bronchoscopy", "is_correct": false, "explanation": "Foreign body aspiration มักมีประวัติ choking episode เฉียบพลัน อาจมี unilateral wheeze หรือ decreased breath sounds ไม่มี fever หรือ barking cough ไม่ตรงกับ clinical presentation นี้"},
+        {"label": "D", "text": "Bacterial tracheitis – ให้ IV antibiotics", "is_correct": false, "explanation": "Bacterial tracheitis มักมี high fever, toxic appearance, purulent secretions และ poor response ต่อ croup treatment เด็กรายนี้มีอาการไม่รุนแรง low-grade fever ไม่เข้ากับ bacterial tracheitis"},
+        {"label": "E", "text": "Peritonsillar abscess – ส่ง incision & drainage", "is_correct": false, "explanation": "Peritonsillar abscess มักพบในเด็กโต/วัยรุ่น มี severe sore throat, trismus, uvula deviation, muffled voice ไม่มี barking cough หรือ stridor ไม่ตรงกับ presentation นี้"}
+      ],
+      "key_takeaway": "Croup มี classic triad: barking cough, hoarseness, stridor Mild croup รักษาด้วย single dose dexamethasone"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 18 เดือน มาด้วย severe croup PE: stridor at rest, marked sternal retraction, tachypnea, anxious ได้รับ dexamethasone 0.6 mg/kg PO แล้ว สิ่งที่ควรทำต่อไปทันทีคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Nebulized racemic epinephrine"},
+      {"label": "B", "text": "Nebulized salbutamol"},
+      {"label": "C", "text": "IV antibiotics"},
+      {"label": "D", "text": "Lateral neck X-ray"},
+      {"label": "E", "text": "Intubation"}
+    ],
+    "correct_answer": "A",
+    "explanation": "Severe croup ที่มี stridor at rest ควรได้รับ nebulized racemic epinephrine ร่วมกับ dexamethasone",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. Nebulized racemic epinephrine",
+      "reason": "Severe croup (Westley croup score >= 8) มี stridor at rest, marked retractions และ significant respiratory distress การรักษาประกอบด้วย dexamethasone (ซึ่งผู้ป่วยได้รับแล้ว) ร่วมกับ nebulized racemic epinephrine\n\nRacemic epinephrine (2.25% solution 0.5 mL diluted to 3 mL NSS) ออกฤทธิ์เป็น alpha-adrenergic agonist ทำให้เกิด vasoconstriction ของ subglottic mucosal vessels ลด edema อย่างรวดเร็ว (onset 10-30 นาที) แต่ฤทธิ์คงอยู่เพียง 1-2 ชั่วโมง จึงต้อง observe อย่างน้อย 2-4 ชั่วโมงหลังให้ยา\n\nL-epinephrine 1:1000 (5 mL) สามารถใช้ทดแทนได้หากไม่มี racemic form มีประสิทธิภาพเทียบเท่า",
+      "choices": [
+        {"label": "A", "text": "Nebulized racemic epinephrine", "is_correct": true, "explanation": "เป็น first-line treatment สำหรับ moderate-severe croup ร่วมกับ corticosteroid ออกฤทธิ์เร็ว (10-30 นาที) ลด subglottic edema ผ่าน alpha-adrenergic vasoconstriction ต้อง observe 2-4 ชั่วโมงหลังให้ยาเพราะอาจมี rebound effect"},
+        {"label": "B", "text": "Nebulized salbutamol", "is_correct": false, "explanation": "Salbutamol เป็น beta-2 agonist ออกฤทธิ์ที่ bronchial smooth muscle ไม่ได้ลด subglottic edema ซึ่งเป็น pathology หลักของ croup ไม่มีประโยชน์ในการรักษา croup"},
+        {"label": "C", "text": "IV antibiotics", "is_correct": false, "explanation": "Croup เกิดจาก viral infection ไม่ต้องการ antibiotics ยกเว้นกรณีที่สงสัย secondary bacterial infection เช่น bacterial tracheitis ซึ่งมี toxic appearance และ purulent secretions"},
+        {"label": "D", "text": "Lateral neck X-ray", "is_correct": false, "explanation": "ในกรณี severe croup การรักษาต้องมาก่อน ไม่ควรเสียเวลาส่ง X-ray Neck X-ray อาจแสดง steeple sign (subglottic narrowing) แต่ไม่จำเป็นสำหรับการวินิจฉัยและอาจทำให้เด็กร้องมากขึ้น"},
+        {"label": "E", "text": "Intubation", "is_correct": false, "explanation": "Intubation เป็นทางเลือกสุดท้ายเมื่อผู้ป่วยมี impending respiratory failure ที่ไม่ตอบสนองต่อ medical therapy ควรลอง epinephrine ก่อน เพราะส่วนใหญ่ตอบสนองดี"}
+      ],
+      "key_takeaway": "Severe croup ที่มี stridor at rest ต้องได้ nebulized racemic epinephrine ร่วมกับ dexamethasone และ observe อย่างน้อย 2-4 ชั่วโมง"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 3 ปี มาห้องฉุกเฉินด้วย acute onset stridor, high fever (40°C), drooling, dysphagia นั่งเอนตัวไปข้างหน้า (tripod position) ปฏิเสธการนอน PE: toxic appearance, muffled voice ไม่มี barking cough การจัดการเบื้องต้นที่สำคัญที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "ตรวจคอด้วย tongue depressor ทันที"},
+      {"label": "B", "text": "Lateral neck X-ray"},
+      {"label": "C", "text": "รักษา airway โดย notify anesthesiologist สำหรับ controlled intubation ใน OR"},
+      {"label": "D", "text": "Nebulized epinephrine"},
+      {"label": "E", "text": "Oral dexamethasone"}
+    ],
+    "correct_answer": "C",
+    "explanation": "อาการเข้าได้กับ acute epiglottitis ซึ่งเป็น emergency ต้อง secure airway ใน controlled setting",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. รักษา airway โดย notify anesthesiologist สำหรับ controlled intubation ใน OR",
+      "reason": "ผู้ป่วยรายนี้มีอาการ classic ของ acute epiglottitis ได้แก่ 4 D's: drooling, dysphagia, dysphonia (muffled voice) และ distressed breathing ร่วมกับ high fever, toxic appearance, tripod position และไม่มี barking cough (ซึ่งแยกจาก croup)\n\nEpiglottitis เป็น medical emergency เนื่องจากอาจเกิด complete airway obstruction ได้ทุกเมื่อ การจัดการที่สำคัญที่สุดคือ airway management โดยเตรียม controlled intubation ใน operating room โดยมี anesthesiologist และ surgeon (ENT/pediatric surgeon) พร้อม\n\nสิ่งที่ห้ามทำ: ห้ามตรวจคอ ห้ามให้เด็กนอนราบ ห้ามทำให้เด็กร้อง เพราะอาจทำให้เกิด complete obstruction ให้เด็กอยู่ในท่าที่สบาย (sitting up) จนกว่าจะพร้อม secure airway",
+      "choices": [
+        {"label": "A", "text": "ตรวจคอด้วย tongue depressor ทันที", "is_correct": false, "explanation": "ห้ามตรวจคอด้วย tongue depressor ในผู้ป่วยที่สงสัย epiglottitis เพราะอาจกระตุ้น laryngospasm และ complete airway obstruction ซึ่งเป็นอันตรายถึงชีวิต"},
+        {"label": "B", "text": "Lateral neck X-ray", "is_correct": false, "explanation": "แม้ lateral neck X-ray จะแสดง thumb sign (swollen epiglottis) แต่ไม่ควรเสียเวลาส่ง X-ray ในผู้ป่วยที่มีอาการ classic เพราะอาจเกิด airway obstruction ระหว่าง transport ควร secure airway ก่อน"},
+        {"label": "C", "text": "รักษา airway โดย notify anesthesiologist สำหรับ controlled intubation ใน OR", "is_correct": true, "explanation": "เป็นการจัดการที่สำคัญที่สุด ควร notify anesthesiologist และ ENT surgeon เตรียม intubation ใน OR ที่มี equipment พร้อม รวมถึง surgical airway (tracheostomy) เป็น backup ห้ามทำให้เด็กร้อง ให้อยู่ในท่าสบาย"},
+        {"label": "D", "text": "Nebulized epinephrine", "is_correct": false, "explanation": "Nebulized epinephrine ใช้รักษา croup ไม่ใช่ epiglottitis ใน epiglottitis การอักเสบอยู่ที่ supraglottic structure (epiglottis) ไม่ใช่ subglottic area epinephrine ไม่ช่วยลด edema ของ epiglottis"},
+        {"label": "E", "text": "Oral dexamethasone", "is_correct": false, "explanation": "Oral dexamethasone เป็นยาหลักสำหรับ croup ไม่ใช่ epiglottitis แม้ IV steroid อาจใช้ร่วมในบางแนวทาง แต่สิ่งสำคัญที่สุดคือ airway management ก่อน"}
+      ],
+      "key_takeaway": "Epiglottitis เป็น airway emergency ห้ามตรวจคอ ห้ามให้นอนราบ ต้อง secure airway ด้วย controlled intubation ใน OR"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 1 ปี มาด้วย croup ที่ไม่ตอบสนองต่อ dexamethasone และ nebulized epinephrine 3 doses ยังมี stridor at rest, retractions มากขึ้น BT 39.5°C, toxic appearance, purulent secretions จากจมูก ควรนึกถึงการวินิจฉัยใดมากที่สุด",
+    "choices": [
+      {"label": "A", "text": "Viral croup ที่รุนแรง"},
+      {"label": "B", "text": "Bacterial tracheitis"},
+      {"label": "C", "text": "Retropharyngeal abscess"},
+      {"label": "D", "text": "Subglottic hemangioma"},
+      {"label": "E", "text": "Laryngomalacia"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Croup ที่ไม่ตอบสนองต่อ standard treatment ร่วมกับ high fever, toxic appearance และ purulent secretions ต้องนึกถึง bacterial tracheitis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Bacterial tracheitis",
+      "reason": "Bacterial tracheitis (membranous croup/pseudomembranous croup) เป็น bacterial superinfection ของ trachea ที่มักเกิดตามหลัง viral croup สาเหตุที่พบบ่อยที่สุดคือ Staphylococcus aureus รองลงมาคือ Streptococcus pyogenes และ Moraxella catarrhalis\n\nลักษณะที่ช่วยแยก bacterial tracheitis จาก viral croup ได้แก่ high fever (> 39°C), toxic appearance, purulent secretions และ poor response ต่อ standard croup treatment (dexamethasone และ epinephrine) ผู้ป่วยมักแย่ลงเร็วและอาจเกิด airway obstruction จาก mucopurulent membrane\n\nการรักษาประกอบด้วย IV antibiotics (เช่น ceftriaxone + anti-staphylococcal agent), airway management (อาจต้อง intubation 50-80% ของผู้ป่วย) และ tracheal suctioning เพื่อกำจัด purulent secretions",
+      "choices": [
+        {"label": "A", "text": "Viral croup ที่รุนแรง", "is_correct": false, "explanation": "Viral croup แม้รุนแรงก็มักตอบสนองต่อ dexamethasone และ epinephrine การไม่ตอบสนองต่อ standard treatment ร่วมกับ high fever, toxic appearance และ purulent secretions ชี้ว่ามี bacterial superinfection"},
+        {"label": "B", "text": "Bacterial tracheitis", "is_correct": true, "explanation": "เป็นการวินิจฉัยที่ถูกต้อง อาการ high fever, toxic appearance, purulent secretions และ poor response ต่อ standard croup treatment เป็น hallmarks ของ bacterial tracheitis ต้องให้ IV antibiotics และเตรียม airway management"},
+        {"label": "C", "text": "Retropharyngeal abscess", "is_correct": false, "explanation": "Retropharyngeal abscess มีอาการ neck stiffness, neck swelling, dysphagia, drooling และ limited neck extension มักไม่มี barking cough หรือ croup-like presentation Lateral neck X-ray จะเห็น prevertebral soft tissue widening"},
+        {"label": "D", "text": "Subglottic hemangioma", "is_correct": false, "explanation": "Subglottic hemangioma มักแสดงอาการภายใน 6 เดือนแรก มี biphasic stridor ที่แย่ลงเรื่อยๆ อาจมี cutaneous hemangioma ร่วมด้วย ไม่มี acute onset fever หรือ toxic appearance"},
+        {"label": "E", "text": "Laryngomalacia", "is_correct": false, "explanation": "Laryngomalacia เป็นสาเหตุที่พบบ่อยที่สุดของ congenital stridor มีอาการ inspiratory stridor ที่แย่ลงเมื่อ supine หรือร้องไห้ มักหายเองภายใน 18-24 เดือน ไม่มี fever หรือ toxic appearance"}
+      ],
+      "key_takeaway": "Bacterial tracheitis ต้องสงสัยเมื่อ croup ไม่ตอบสนองต่อ standard treatment ร่วมกับ high fever, toxic appearance และ purulent secretions"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 4 เดือน มีไข้สูง 39.5°C ไอ 3 วัน หายใจเร็ว ดูดนมไม่ได้ PE: RR 65/min, O2sat 89% RA, grunting, nasal flaring, severe subcostal retraction, lung: right-sided bronchial breath sounds และ fine crackles CXR: right upper lobe consolidation with air bronchogram เชื้อก่อโรคที่พบบ่อยที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Respiratory Syncytial Virus"},
+      {"label": "B", "text": "Streptococcus pneumoniae"},
+      {"label": "C", "text": "Mycoplasma pneumoniae"},
+      {"label": "D", "text": "Staphylococcus aureus"},
+      {"label": "E", "text": "Klebsiella pneumoniae"}
+    ],
+    "correct_answer": "B",
+    "explanation": "ในเด็กอายุ 1 เดือน - 5 ปี ที่มี lobar consolidation สาเหตุ bacterial pneumonia ที่พบบ่อยที่สุดคือ Streptococcus pneumoniae",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Streptococcus pneumoniae",
+      "reason": "ผู้ป่วยรายนี้มี typical bacterial pneumonia ตาม WHO criteria ได้แก่ ไข้สูง หายใจเร็ว (tachypnea: RR > 60/min ในเด็ก < 2 เดือน ถือว่า severe) ร่วมกับ danger signs (grunting, severe retraction, inability to feed) CXR แสดง lobar consolidation with air bronchogram ซึ่งเป็น typical pattern ของ bacterial pneumonia\n\nStreptococcus pneumoniae เป็นสาเหตุที่พบบ่อยที่สุดของ bacterial pneumonia ในเด็กทุกกลุ่มอายุ (หลังช่วงแรกเกิด) มักทำให้เกิด lobar consolidation และอาจมี parapneumonic effusion ร่วมด้วย\n\nการรักษา severe pneumonia ในเด็ก ตาม WHO guidelines ให้ IV ampicillin/penicillin ร่วมกับ gentamicin หรือ IV ceftriaxone ร่วมกับ supportive care ได้แก่ oxygen, IV fluid, antipyretics",
+      "choices": [
+        {"label": "A", "text": "Respiratory Syncytial Virus", "is_correct": false, "explanation": "RSV มักทำให้เกิด bronchiolitis มากกว่า lobar pneumonia CXR ของ RSV มักแสดง hyperinflation, peribronchial thickening ไม่ใช่ lobar consolidation ที่ชัดเจน"},
+        {"label": "B", "text": "Streptococcus pneumoniae", "is_correct": true, "explanation": "เป็นสาเหตุ bacterial pneumonia ที่พบบ่อยที่สุดในเด็กหลังช่วงแรกเกิด มักทำให้เกิด lobar consolidation with air bronchogram ร่วมกับ high fever และ toxic appearance ตรงกับผู้ป่วยรายนี้"},
+        {"label": "C", "text": "Mycoplasma pneumoniae", "is_correct": false, "explanation": "M. pneumoniae มักพบในเด็กอายุ > 5 ปี ทำให้เกิด atypical pneumonia (interstitial pattern บน CXR) มีอาการค่อยเป็นค่อยไป ผู้ป่วยรายนี้อายุ 4 เดือนและมี lobar consolidation จึงไม่น่าใช่"},
+        {"label": "D", "text": "Staphylococcus aureus", "is_correct": false, "explanation": "S. aureus pneumonia มักรุนแรงและ rapidly progressive อาจมี pneumatoceles, abscess หรือ empyema แต่พบน้อยกว่า S. pneumoniae โดยเฉพาะในกรณี community-acquired pneumonia ที่มี simple lobar consolidation"},
+        {"label": "E", "text": "Klebsiella pneumoniae", "is_correct": false, "explanation": "K. pneumoniae เป็นสาเหตุที่พบบ่อยของ hospital-acquired pneumonia ในผู้ใหญ่ มักพบในผู้ป่วย immunocompromised หรือ chronic alcoholism ไม่ใช่สาเหตุที่พบบ่อยของ community-acquired pneumonia ในเด็ก"}
+      ],
+      "key_takeaway": "S. pneumoniae เป็นสาเหตุ #1 ของ bacterial pneumonia ในเด็กหลังช่วงแรกเกิด มักทำให้เกิด lobar consolidation"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 7 ปี มีไข้สูง ไอมีเสมหะ 5 วัน ได้รับ amoxicillin 3 วันแต่ไม่ดีขึ้น PE: BT 39.8°C, RR 30/min, O2sat 94% RA, lung: decreased breath sounds right lower zone, dullness to percussion CXR: right pleural effusion ควรทำอะไรเป็นลำดับถัดไป",
+    "choices": [
+      {"label": "A", "text": "เปลี่ยน antibiotics เป็น oral azithromycin"},
+      {"label": "B", "text": "Diagnostic thoracentesis"},
+      {"label": "C", "text": "CT chest with contrast"},
+      {"label": "D", "text": "Chest tube drainage ทันที"},
+      {"label": "E", "text": "Bronchoscopy"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Parapneumonic effusion ที่ไม่ตอบสนองต่อ antibiotics ควรทำ diagnostic thoracentesis เพื่อดูลักษณะ fluid",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Diagnostic thoracentesis",
+      "reason": "ผู้ป่วยมี community-acquired pneumonia ที่ไม่ตอบสนองต่อ first-line antibiotic (amoxicillin) ร่วมกับ pleural effusion ซึ่งอาจเป็น parapneumonic effusion หรือ empyema\n\nDiagnostic thoracentesis เป็นขั้นตอนที่สำคัญเพื่อวิเคราะห์ pleural fluid ประกอบด้วย cell count & differential, protein, LDH, glucose, pH, Gram stain และ culture เพื่อจำแนกว่าเป็น simple parapneumonic effusion, complicated parapneumonic effusion หรือ empyema\n\nเกณฑ์ของ complicated effusion/empyema ได้แก่ pH < 7.2, glucose < 40 mg/dL, LDH > 1000 IU/L, positive Gram stain/culture หรือ frank pus ซึ่งต้องการ chest tube drainage ร่วมกับ IV antibiotics",
+      "choices": [
+        {"label": "A", "text": "เปลี่ยน antibiotics เป็น oral azithromycin", "is_correct": false, "explanation": "การเปลี่ยน oral antibiotics อย่างเดียวไม่เพียงพอเมื่อมี pleural effusion ที่ significant ต้อง evaluate fluid ก่อนเพื่อตัดสินใจว่าต้อง drain หรือไม่"},
+        {"label": "B", "text": "Diagnostic thoracentesis", "is_correct": true, "explanation": "เป็นขั้นตอนที่เหมาะสมที่สุด ช่วยจำแนก simple vs complicated effusion/empyema ผล fluid analysis จะนำไปสู่การตัดสินใจว่าต้อง drain หรือให้ IV antibiotics อย่างเดียว"},
+        {"label": "C", "text": "CT chest with contrast", "is_correct": false, "explanation": "CT chest อาจมีประโยชน์ในการประเมิน loculated effusion หรือ lung abscess แต่ไม่ใช่ลำดับแรก ควร thoracentesis ก่อนเพื่อ analyze fluid หาก CXR แสดง significant effusion อยู่แล้ว"},
+        {"label": "D", "text": "Chest tube drainage ทันที", "is_correct": false, "explanation": "Chest tube drainage จำเป็นเฉพาะเมื่อเป็น empyema หรือ complicated parapneumonic effusion ควร diagnostic thoracentesis ก่อนเพื่อยืนยันว่า fluid มี characteristics ที่ต้องการ drainage"},
+        {"label": "E", "text": "Bronchoscopy", "is_correct": false, "explanation": "Bronchoscopy ไม่ใช่ข้อบ่งชี้สำหรับ parapneumonic effusion ใช้ในกรณีสงสัย foreign body, airway obstruction หรือ endobronchial lesion"}
+      ],
+      "key_takeaway": "Parapneumonic effusion ควรทำ diagnostic thoracentesis เพื่อจำแนก simple vs complicated effusion และวางแผนการรักษา"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 3 ปี มาห้องฉุกเฉินด้วยไข้ 38.5°C ไอ หายใจหอบ 2 วัน CXR: bilateral diffuse interstitial infiltration, hyperinflation เชื้อก่อโรคที่น่าจะเป็นมากที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Streptococcus pneumoniae"},
+      {"label": "B", "text": "Staphylococcus aureus"},
+      {"label": "C", "text": "Viral pneumonia (เช่น RSV, influenza)"},
+      {"label": "D", "text": "Mycobacterium tuberculosis"},
+      {"label": "E", "text": "Pneumocystis jirovecii"}
+    ],
+    "correct_answer": "C",
+    "explanation": "CXR ที่แสดง bilateral diffuse interstitial infiltration ร่วมกับ hyperinflation ในเด็กเล็กเข้าได้กับ viral pneumonia",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Viral pneumonia (เช่น RSV, influenza)",
+      "reason": "Viral pneumonia เป็นสาเหตุที่พบบ่อยที่สุดของ pneumonia ในเด็กอายุ < 5 ปี สาเหตุที่พบบ่อย ได้แก่ RSV, influenza, parainfluenza, adenovirus และ human metapneumovirus\n\nCXR pattern ของ viral pneumonia มักแสดง bilateral diffuse interstitial infiltration (peribronchial thickening, reticulonodular pattern), hyperinflation (flattened diaphragm, > 8 ribs visible) และอาจมี patchy atelectasis ซึ่งต่างจาก bacterial pneumonia ที่มักเป็น lobar consolidation\n\nViral pneumonia ในเด็กเล็กมักเริ่มจาก URI symptoms แล้วลุกลามลง lower respiratory tract การรักษาเป็น supportive care เป็นหลัก ยกเว้น influenza ที่อาจให้ oseltamivir",
+      "choices": [
+        {"label": "A", "text": "Streptococcus pneumoniae", "is_correct": false, "explanation": "S. pneumoniae มักทำให้เกิด lobar consolidation ไม่ใช่ diffuse bilateral interstitial pattern แม้เป็นสาเหตุ bacterial ที่พบบ่อย แต่ CXR pattern ไม่ตรงกับ bacterial pneumonia"},
+        {"label": "B", "text": "Staphylococcus aureus", "is_correct": false, "explanation": "S. aureus pneumonia มักรุนแรง มี rapidly progressive course อาจมี pneumatoceles, abscess, empyema CXR มักเป็น consolidation หรือ cavitary lesion ไม่ใช่ diffuse interstitial pattern"},
+        {"label": "C", "text": "Viral pneumonia", "is_correct": true, "explanation": "CXR pattern bilateral diffuse interstitial infiltration ร่วมกับ hyperinflation เป็น classic pattern ของ viral pneumonia ในเด็กเล็ก สาเหตุที่พบบ่อยคือ RSV, influenza, parainfluenza"},
+        {"label": "D", "text": "Mycobacterium tuberculosis", "is_correct": false, "explanation": "TB ในเด็กมักมี hilar lymphadenopathy, Ghon complex หรือ miliary pattern มักมีอาการเรื้อรังหลายสัปดาห์ ไม่ใช่ acute presentation ใน 2 วัน"},
+        {"label": "E", "text": "Pneumocystis jirovecii", "is_correct": false, "explanation": "PJP พบในผู้ป่วย immunocompromised โดยเฉพาะ HIV-infected children ที่มี CD4 ต่ำ CXR อาจแสดง bilateral ground-glass opacity ไม่มีข้อมูลว่าเด็กรายนี้ immunocompromised"}
+      ],
+      "key_takeaway": "Viral pneumonia พบบ่อยที่สุดในเด็ก < 5 ปี CXR มักแสดง bilateral interstitial infiltration ร่วมกับ hyperinflation"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 3 ปี มีไข้ต่ำ ไอมาก น้ำมูก 5 วัน ขณะรับประทานถั่วลิสง เกิดอาการสำลัก ไอรุนแรงทันที หายใจลำบาก หลังจากนั้นอาการดีขึ้นบ้าง แต่ยังมีไอเรื่อยๆ PE: RR 28/min, O2sat 95% RA, lung: decreased breath sounds right side, right-sided wheeze CXR (inspiratory-expiratory films): right lung hyperinflation with mediastinal shift to left on expiration การวินิจฉัยที่ถูกต้องคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Right-sided pneumonia"},
+      {"label": "B", "text": "Right-sided pneumothorax"},
+      {"label": "C", "text": "Foreign body aspiration ใน right bronchus"},
+      {"label": "D", "text": "Right-sided pleural effusion"},
+      {"label": "E", "text": "Bronchial asthma exacerbation"}
+    ],
+    "correct_answer": "C",
+    "explanation": "ประวัติสำลักขณะรับประทานถั่ว ร่วมกับ unilateral hyperinflation และ mediastinal shift on expiration เข้าได้กับ foreign body aspiration",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Foreign body aspiration ใน right bronchus",
+      "reason": "Foreign body aspiration (FBA) พบบ่อยในเด็กอายุ 1-3 ปี โดยเฉพาะจากอาหารเม็ดเล็กๆ เช่น ถั่วลิสง เมล็ดพืช ผู้ป่วยรายนี้มีประวัติ choking episode ขณะรับประทานถั่วลิสง ตามด้วย persistent cough\n\nRight main bronchus เป็นตำแหน่งที่พบ FBA บ่อยที่สุด (60-70%) เนื่องจาก right bronchus มีมุมตรงกว่า (less angle) กว้างกว่า และสั้นกว่า left bronchus\n\nCXR ที่สำคัญคือ inspiratory-expiratory films ซึ่งแสดง air trapping (ball-valve mechanism): ด้านที่มี foreign body จะ hyperinflated (อากาศเข้าได้แต่ออกไม่ได้) โดยเฉพาะ expiratory film จะเห็น mediastinal shift ไปฝั่งตรงข้าม การรักษาคือ rigid bronchoscopy เพื่อนำสิ่งแปลกปลอมออก",
+      "choices": [
+        {"label": "A", "text": "Right-sided pneumonia", "is_correct": false, "explanation": "Pneumonia มักแสดง consolidation หรือ infiltration ไม่ใช่ unilateral hyperinflation ผู้ป่วยรายนี้มี clear history ของ choking event และ CXR แสดง hyperinflation with air trapping"},
+        {"label": "B", "text": "Right-sided pneumothorax", "is_correct": false, "explanation": "Pneumothorax มักแสดง absent lung marking, visible pleural line ไม่ใช่ hyperinflation with mediastinal shift on expiration และไม่มีประวัติ choking ที่เกี่ยวข้อง"},
+        {"label": "C", "text": "Foreign body aspiration ใน right bronchus", "is_correct": true, "explanation": "ประวัติ choking ขณะรับประทานถั่ว ร่วมกับ unilateral decreased breath sounds, wheeze และ CXR แสดง hyperinflation with air trapping (mediastinal shift on expiration) เป็น classic presentation ของ FBA ใน right bronchus"},
+        {"label": "D", "text": "Right-sided pleural effusion", "is_correct": false, "explanation": "Pleural effusion แสดง opacity (whitening) ไม่ใช่ hyperinflation มี meniscus sign, blunting of costophrenic angle ไม่ตรงกับ CXR findings ของผู้ป่วยรายนี้"},
+        {"label": "E", "text": "Bronchial asthma exacerbation", "is_correct": false, "explanation": "Asthma มักมี bilateral wheezing ไม่ใช่ unilateral มี history ของ recurrent episodes ผู้ป่วยรายนี้มี acute onset ของ unilateral findings หลัง choking event ซึ่งเข้ากับ FBA มากกว่า"}
+      ],
+      "key_takeaway": "FBA: choking history + unilateral hyperinflation + mediastinal shift on expiration = air trapping จาก ball-valve mechanism, right bronchus พบบ่อยที่สุด"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 2 ปี มาห้องฉุกเฉินด้วย sudden onset choking, cyanosis ขณะเล่นของเล่นชิ้นเล็ก ตรวจพบ complete upper airway obstruction ไม่สามารถร้องหรือไอได้ การช่วยเหลือที่เหมาะสมที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Back blows 5 ครั้ง สลับ chest thrusts 5 ครั้ง"},
+      {"label": "B", "text": "Abdominal thrusts (Heimlich maneuver) 5 ครั้ง"},
+      {"label": "C", "text": "Finger sweep ในปาก"},
+      {"label": "D", "text": "Cricothyroidotomy ทันที"},
+      {"label": "E", "text": "Nebulized epinephrine"}
+    ],
+    "correct_answer": "A",
+    "explanation": "ในเด็กอายุ < 1 ปี ใช้ back blows สลับ chest thrusts สำหรับเด็กอายุ > 1 ปี ใช้ abdominal thrusts แต่เด็กอายุ 2 ปี ตาม AHA guidelines สามารถใช้ได้ทั้ง abdominal thrusts หรือ back blows/chest thrusts",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. Back blows 5 ครั้ง สลับ chest thrusts 5 ครั้ง",
+      "reason": "Foreign body airway obstruction (FBAO) ที่ complete (ไม่สามารถไอ ร้อง หรือหายใจได้) เป็น life-threatening emergency ต้องให้การช่วยเหลือทันที\n\nตาม AHA/PALS guidelines สำหรับเด็กอายุ < 1 ปี ให้ back blows 5 ครั้ง (ใช้ส้นมือตบระหว่าง scapulae ในท่าคว่ำหน้า ศีรษะต่ำกว่าลำตัว) สลับกับ chest thrusts 5 ครั้ง (กดที่ lower sternum เหมือน CPR) จนกว่า object จะหลุดหรือเด็กหมดสติ ห้ามทำ abdominal thrusts ในเด็กอายุ < 1 ปี เพราะเสี่ยงต่อ liver/spleen injury\n\nสำหรับเด็กอายุ > 1 ปี ใช้ abdominal thrusts (Heimlich maneuver) ได้ แต่ back blows สลับ chest thrusts ก็ยังเป็นทางเลือกที่ยอมรับได้ในเด็กเล็ก",
+      "choices": [
+        {"label": "A", "text": "Back blows 5 ครั้ง สลับ chest thrusts 5 ครั้ง", "is_correct": true, "explanation": "เป็นวิธีที่เหมาะสมสำหรับเด็กเล็ก ทำสลับกันจนกว่า object จะหลุด หรือเด็กหมดสติ (ให้เริ่ม CPR แทน) เป็น first-line management สำหรับ complete FBAO ในเด็ก"},
+        {"label": "B", "text": "Abdominal thrusts (Heimlich maneuver) 5 ครั้ง", "is_correct": false, "explanation": "Abdominal thrusts ใช้ได้ในเด็กอายุ > 1 ปี แต่ในเด็กเล็กอายุ 2 ปี back blows/chest thrusts มักแนะนำเป็นทางเลือกแรก เนื่องจาก abdominal thrusts ในเด็กเล็กเสี่ยงต่อ abdominal organ injury"},
+        {"label": "C", "text": "Finger sweep ในปาก", "is_correct": false, "explanation": "Blind finger sweep ไม่แนะนำทั้งในเด็กและผู้ใหญ่ เพราะอาจดัน foreign body เข้าไปลึกกว่าเดิม ทำได้เฉพาะเมื่อมองเห็น object ชัดเจนเท่านั้น"},
+        {"label": "D", "text": "Cricothyroidotomy ทันที", "is_correct": false, "explanation": "Cricothyroidotomy เป็นทางเลือกสุดท้ายเมื่อวิธีอื่นล้มเหลวทั้งหมด ไม่ใช่ first-line treatment ในเด็กเล็ก cricothyroidotomy มีข้อจำกัดด้านเทคนิคและอาจเกิด complications สูง"},
+        {"label": "E", "text": "Nebulized epinephrine", "is_correct": false, "explanation": "Nebulized epinephrine ใช้สำหรับ croup หรือ subglottic edema ไม่มีประโยชน์สำหรับ mechanical obstruction จาก foreign body ที่ต้องการ physical removal"}
+      ],
+      "key_takeaway": "Complete FBAO ในเด็ก: < 1 ปี ใช้ back blows/chest thrusts, > 1 ปี ใช้ abdominal thrusts ได้ ห้าม blind finger sweep"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 18 เดือน มีอาการไอเรื้อรัง 2 สัปดาห์หลังสำลักอาหาร มารดาไม่ได้พามาพบแพทย์ในตอนแรก PE: low-grade fever, right-sided wheezing ที่ไม่หายแม้ให้ bronchodilator CXR: right lower lobe collapse with compensatory hyperinflation of remaining right lung การรักษาที่เหมาะสมที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Oral antibiotics 10 วัน"},
+      {"label": "B", "text": "Inhaled corticosteroid"},
+      {"label": "C", "text": "Rigid bronchoscopy เพื่อนำสิ่งแปลกปลอมออก"},
+      {"label": "D", "text": "CT chest"},
+      {"label": "E", "text": "Chest physiotherapy"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Delayed presentation ของ foreign body aspiration ที่มี lobar collapse ต้องทำ rigid bronchoscopy เพื่อ remove foreign body",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Rigid bronchoscopy เพื่อนำสิ่งแปลกปลอมออก",
+      "reason": "ผู้ป่วยรายนี้มี delayed presentation ของ foreign body aspiration ประวัติสำลัก 2 สัปดาห์ก่อน ตามด้วยไอเรื้อรัง unilateral wheezing ที่ไม่ตอบสนองต่อ bronchodilator และ CXR แสดง lobar collapse ซึ่งเกิดจาก complete obstruction ของ bronchus โดย foreign body\n\nRigid bronchoscopy เป็น gold standard สำหรับทั้งการวินิจฉัยและรักษา foreign body aspiration ในเด็ก มี advantages ได้แก่ large working channel, better visualization, สามารถ ventilate ผู้ป่วยระหว่างทำ procedure และใช้ forceps หลายชนิดในการจับ foreign body\n\nFlexible bronchoscopy อาจใช้สำหรับ diagnosis ได้ แต่ rigid bronchoscopy เหมาะกว่าสำหรับ therapeutic removal โดยเฉพาะใน airway เล็กของเด็ก",
+      "choices": [
+        {"label": "A", "text": "Oral antibiotics 10 วัน", "is_correct": false, "explanation": "Antibiotics อย่างเดียวไม่แก้ปัญหาเพราะสาเหตุคือ mechanical obstruction จาก foreign body แม้อาจมี secondary infection แต่ต้อง remove foreign body ก่อน จึงจะรักษา infection ได้สำเร็จ"},
+        {"label": "B", "text": "Inhaled corticosteroid", "is_correct": false, "explanation": "ICS ไม่มีประโยชน์ใน foreign body aspiration เพราะ wheezing เกิดจาก mechanical obstruction ไม่ใช่ airway inflammation จาก asthma"},
+        {"label": "C", "text": "Rigid bronchoscopy เพื่อนำสิ่งแปลกปลอมออก", "is_correct": true, "explanation": "เป็น definitive treatment สำหรับ foreign body aspiration ทำภายใต้ general anesthesia rigid bronchoscopy ให้ทั้ง visualization ที่ดีและ ability ในการนำ foreign body ออก"},
+        {"label": "D", "text": "CT chest", "is_correct": false, "explanation": "CT chest อาจช่วยยืนยัน foreign body ที่ radiolucent (เช่น อาหาร) แต่ไม่ใช่ therapeutic ผู้ป่วยรายนี้มีประวัติชัดเจน ไม่ต้องเสียเวลาทำ CT ควรทำ bronchoscopy เลย"},
+        {"label": "E", "text": "Chest physiotherapy", "is_correct": false, "explanation": "Chest physiotherapy ไม่สามารถนำ foreign body ออกจาก bronchus ได้ อาจทำให้ foreign body เคลื่อนที่ไปอุดตำแหน่งอื่นที่อันตรายกว่า"}
+      ],
+      "key_takeaway": "Rigid bronchoscopy เป็น gold standard สำหรับ diagnosis และ removal ของ foreign body aspiration ในเด็ก"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 15 เดือน เล่นอยู่คนเดียว มารดากลับมาพบลูกหายใจลำบาก ไอ CXR: right upper lobe atelectasis, small coin-shaped radio-opaque object ใน right main bronchus การรักษาที่เหมาะสมที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "สังเกตอาการ รอให้ขับออกเอง"},
+      {"label": "B", "text": "Chest physiotherapy เพื่อช่วยขับออก"},
+      {"label": "C", "text": "Rigid bronchoscopy"},
+      {"label": "D", "text": "Thoracotomy"},
+      {"label": "E", "text": "Flexible bronchoscopy"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Radio-opaque foreign body ใน bronchus ต้องนำออกด้วย rigid bronchoscopy",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Rigid bronchoscopy",
+      "reason": "ผู้ป่วยมี foreign body aspiration ที่ชัดเจน CXR แสดง radio-opaque object (coin-shaped) ใน right main bronchus ร่วมกับ right upper lobe atelectasis ซึ่งเกิดจาก obstruction\n\nRigid bronchoscopy ภายใต้ general anesthesia เป็นมาตรฐานในการนำ foreign body ออกจากทางเดินหายใจในเด็ก ข้อดีของ rigid bronchoscopy เหนือ flexible bronchoscopy ได้แก่ larger working channel ที่สามารถใส่ optical forceps ขนาดใหญ่, สามารถ ventilate ระหว่างทำ procedure ได้ และควบคุม airway ได้ดีกว่า\n\nไม่ควรรอให้ขับออกเองเพราะ bronchial foreign body ไม่สามารถออกเองได้ (ต่างจาก esophageal foreign body บางชนิด) และอาจเกิด complications เช่น recurrent pneumonia, bronchiectasis, lung abscess",
+      "choices": [
+        {"label": "A", "text": "สังเกตอาการ รอให้ขับออกเอง", "is_correct": false, "explanation": "Foreign body ใน bronchus ไม่สามารถขับออกเองได้ การปล่อยไว้จะเกิด complications เช่น post-obstructive pneumonia, bronchiectasis, granulation tissue formation ต้องนำออกเสมอ"},
+        {"label": "B", "text": "Chest physiotherapy เพื่อช่วยขับออก", "is_correct": false, "explanation": "Chest physiotherapy ไม่สามารถนำ foreign body ออกจาก bronchus ได้ อาจทำให้เคลื่อนที่ไปอุดตำแหน่งอื่นหรือหลุดเข้าไปลึกกว่าเดิม ซึ่งอันตราย"},
+        {"label": "C", "text": "Rigid bronchoscopy", "is_correct": true, "explanation": "เป็น gold standard สำหรับ removal ของ tracheobronchial foreign body ในเด็ก ทำภายใต้ GA มี success rate สูง > 95% สามารถจับ foreign body ได้หลากหลายขนาดและรูปร่าง"},
+        {"label": "D", "text": "Thoracotomy", "is_correct": false, "explanation": "Thoracotomy ใช้เฉพาะกรณีที่ bronchoscopic removal ล้มเหลว หรือมี complications รุนแรง เช่น bronchial perforation ไม่ใช่ first-line treatment"},
+        {"label": "E", "text": "Flexible bronchoscopy", "is_correct": false, "explanation": "Flexible bronchoscopy มี channel เล็กกว่า ทำให้ยากในการจับ foreign body ขนาดใหญ่ (coin) และไม่สามารถ ventilate ระหว่างทำได้ดีเท่า rigid ในเด็กเล็กจึงไม่แนะนำเป็น first choice"}
+      ],
+      "key_takeaway": "Tracheobronchial foreign body ในเด็กต้องนำออกด้วย rigid bronchoscopy ห้ามรอให้ขับเอง"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 8 ปี มีประวัติไอเรื้อรังมีเสมหะ 6 เดือน ติดเชื้อทางเดินหายใจบ่อย น้ำหนักไม่ขึ้น ถ่ายเหลวมีไขมัน (steatorrhea) PE: digital clubbing, bilateral coarse crackles, nasal polyps Sweat chloride test: 78 mEq/L (สูง) การวินิจฉัยที่เป็นไปได้มากที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Bronchial asthma"},
+      {"label": "B", "text": "Primary ciliary dyskinesia"},
+      {"label": "C", "text": "Cystic fibrosis"},
+      {"label": "D", "text": "Immunodeficiency syndrome"},
+      {"label": "E", "text": "Gastroesophageal reflux disease"}
+    ],
+    "correct_answer": "C",
+    "explanation": "ไอเรื้อรัง ติดเชื้อซ้ำ steatorrhea nasal polyps ร่วมกับ sweat chloride > 60 mEq/L วินิจฉัย cystic fibrosis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Cystic fibrosis",
+      "reason": "Cystic fibrosis (CF) เป็นโรคทางพันธุกรรมแบบ autosomal recessive เกิดจาก mutation ของ CFTR gene (cystic fibrosis transmembrane conductance regulator) บน chromosome 7 ทำให้ chloride channel ทำงานผิดปกติ เกิดการสร้าง mucus ที่ข้นหนืดในหลายอวัยวะ\n\nอาการหลักของ CF ได้แก่ pulmonary manifestations (chronic productive cough, recurrent respiratory infections, bronchiectasis, digital clubbing), gastrointestinal manifestations (pancreatic insufficiency ทำให้ malabsorption, steatorrhea, failure to thrive) และ ENT manifestations (nasal polyps พบบ่อยในเด็กที่มี CF)\n\nSweat chloride test เป็น gold standard ในการวินิจฉัย CF ค่า > 60 mEq/L ถือว่า diagnostic สำหรับ CF (ค่าปกติ < 30, borderline 30-59) ผลตรวจ 78 mEq/L ของผู้ป่วยรายนี้ยืนยันการวินิจฉัย",
+      "choices": [
+        {"label": "A", "text": "Bronchial asthma", "is_correct": false, "explanation": "Asthma มีอาการหลักคือ wheezing และ reversible airflow obstruction ไม่มี steatorrhea, digital clubbing หรือ nasal polyps ในเด็ก และ sweat chloride ปกติ"},
+        {"label": "B", "text": "Primary ciliary dyskinesia", "is_correct": false, "explanation": "PCD มีอาการ chronic sinopulmonary disease คล้าย CF แต่ไม่มี pancreatic insufficiency หรือ steatorrhea อาจมี situs inversus (50%), chronic otitis media และ male infertility Sweat chloride ปกติ"},
+        {"label": "C", "text": "Cystic fibrosis", "is_correct": true, "explanation": "ผู้ป่วยมีอาการครบทั้ง pulmonary (chronic cough, recurrent infections, clubbing), GI (steatorrhea, failure to thrive) และ ENT (nasal polyps) ร่วมกับ sweat chloride 78 mEq/L ที่ diagnostic"},
+        {"label": "D", "text": "Immunodeficiency syndrome", "is_correct": false, "explanation": "Immunodeficiency อาจทำให้ recurrent infections แต่ไม่ทำให้เกิด steatorrhea, nasal polyps หรือ elevated sweat chloride"},
+        {"label": "E", "text": "Gastroesophageal reflux disease", "is_correct": false, "explanation": "GERD อาจทำให้ chronic cough จาก aspiration แต่ไม่ทำให้เกิด steatorrhea, digital clubbing, nasal polyps หรือ elevated sweat chloride"}
+      ],
+      "key_takeaway": "CF วินิจฉัยด้วย sweat chloride test > 60 mEq/L ร่วมกับ chronic pulmonary disease + pancreatic insufficiency (steatorrhea)"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 5 ปี ได้รับการวินิจฉัย cystic fibrosis เชื้อก่อโรคในปอดที่พบบ่อยที่สุดในช่วงวัยเด็กเล็กคือเชื้อใด",
+    "choices": [
+      {"label": "A", "text": "Pseudomonas aeruginosa"},
+      {"label": "B", "text": "Staphylococcus aureus"},
+      {"label": "C", "text": "Burkholderia cepacia"},
+      {"label": "D", "text": "Haemophilus influenzae"},
+      {"label": "E", "text": "Aspergillus fumigatus"}
+    ],
+    "correct_answer": "B",
+    "explanation": "S. aureus เป็นเชื้อก่อโรคในปอดที่พบบ่อยที่สุดในเด็ก CF ช่วงแรก ส่วน Pseudomonas พบมากขึ้นเมื่อโตขึ้น",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Staphylococcus aureus",
+      "reason": "ในผู้ป่วย cystic fibrosis (CF) pattern ของเชื้อก่อโรคในปอดจะเปลี่ยนตามอายุ ในช่วงวัยเด็กเล็ก (< 10 ปี) Staphylococcus aureus เป็นเชื้อที่พบบ่อยที่สุด ตามด้วย Haemophilus influenzae\n\nเมื่ออายุมากขึ้น Pseudomonas aeruginosa จะกลายเป็นเชื้อที่พบบ่อยที่สุดและสำคัญที่สุด เริ่มพบมากขึ้นหลังอายุ 10 ปี และพบในผู้ป่วย CF ผู้ใหญ่ถึง 80% Chronic Pseudomonas infection สัมพันธ์กับการเสื่อมของ lung function ที่เร็วขึ้น\n\nBurkholderia cepacia complex เป็นเชื้อที่ร้ายแรงที่สุดใน CF ผู้ป่วย ทำให้เกิด rapid decline in lung function (cepacia syndrome) แต่พบน้อยกว่า S. aureus และ Pseudomonas",
+      "choices": [
+        {"label": "A", "text": "Pseudomonas aeruginosa", "is_correct": false, "explanation": "P. aeruginosa เป็นเชื้อที่สำคัญที่สุดใน CF แต่พบบ่อยมากขึ้นเมื่อโตขึ้น (หลังอายุ 10 ปี) ในเด็กเล็ก S. aureus พบบ่อยกว่า"},
+        {"label": "B", "text": "Staphylococcus aureus", "is_correct": true, "explanation": "เป็นเชื้อที่พบบ่อยที่สุดในเด็ก CF ช่วงแรก (< 10 ปี) ทั้ง MSSA และ MRSA สามารถทำให้เกิด chronic airway infection ที่ต้องรักษาด้วย antibiotics"},
+        {"label": "C", "text": "Burkholderia cepacia", "is_correct": false, "explanation": "B. cepacia complex ทำให้เกิด severe lung disease ใน CF patients (cepacia syndrome) แต่พบน้อยกว่า S. aureus และ Pseudomonas เป็น highly antibiotic-resistant organism"},
+        {"label": "D", "text": "Haemophilus influenzae", "is_correct": false, "explanation": "H. influenzae เป็นเชื้อที่พบได้บ่อยอันดับสองรองจาก S. aureus ในเด็ก CF เล็ก มักเป็น non-typeable H. influenzae ไม่ใช่ type b"},
+        {"label": "E", "text": "Aspergillus fumigatus", "is_correct": false, "explanation": "A. fumigatus ทำให้เกิด allergic bronchopulmonary aspergillosis (ABPA) ใน CF patients ประมาณ 5-15% พบในเด็กโตและผู้ใหญ่ ไม่ใช่เชื้อ bacterial ที่พบบ่อยที่สุด"}
+      ],
+      "key_takeaway": "เชื้อในปอด CF: เด็กเล็ก = S. aureus > H. influenzae, เด็กโต/ผู้ใหญ่ = Pseudomonas aeruginosa"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 10 ปี ได้รับการวินิจฉัย cystic fibrosis มี chronic Pseudomonas aeruginosa colonization ปัจจุบันมีไข้ ไอมีเสมหะเขียวมากขึ้น FEV1 ลดลง 15% จากค่าเดิม CXR มี new infiltrate สิ่งที่ควรทำคืออะไร",
+    "choices": [
+      {"label": "A", "text": "เริ่ม IV anti-pseudomonal antibiotics (เช่น piperacillin-tazobactam + tobramycin)"},
+      {"label": "B", "text": "ให้ oral amoxicillin 7 วัน"},
+      {"label": "C", "text": "สังเกตอาการ เพิ่มความถี่ chest physiotherapy"},
+      {"label": "D", "text": "เริ่ม inhaled corticosteroid"},
+      {"label": "E", "text": "ส่ง bronchoscopy"}
+    ],
+    "correct_answer": "A",
+    "explanation": "CF exacerbation ที่มี chronic Pseudomonas colonization ต้องให้ IV anti-pseudomonal antibiotics",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. เริ่ม IV anti-pseudomonal antibiotics",
+      "reason": "ผู้ป่วย CF ที่มี pulmonary exacerbation จะมีอาการ ไข้ ไอมากขึ้น เสมหะเปลี่ยนสีหรือปริมาณมากขึ้น FEV1 ลดลง และมี new infiltrate บน CXR การรักษาต้องครอบคลุมเชื้อ Pseudomonas aeruginosa ที่ colonize อยู่\n\nMainstay ของการรักษาคือ IV anti-pseudomonal antibiotics สูตรมาตรฐานคือ combination therapy ด้วย beta-lactam ที่มีฤทธิ์ต้าน Pseudomonas (เช่น piperacillin-tazobactam, ceftazidime, meropenem) ร่วมกับ aminoglycoside (tobramycin) เป็นเวลา 14-21 วัน\n\nนอกจากนี้ต้องเพิ่ม airway clearance therapy (chest physiotherapy, percussion, postural drainage) และ monitor ด้วย serial PFT",
+      "choices": [
+        {"label": "A", "text": "เริ่ม IV anti-pseudomonal antibiotics", "is_correct": true, "explanation": "เป็น standard treatment สำหรับ CF pulmonary exacerbation ที่มี chronic Pseudomonas ใช้ combination therapy เช่น piperacillin-tazobactam + tobramycin 14-21 วัน เพื่อลด bacterial burden"},
+        {"label": "B", "text": "ให้ oral amoxicillin 7 วัน", "is_correct": false, "explanation": "Amoxicillin ไม่มีฤทธิ์ต้าน Pseudomonas aeruginosa จึงไม่เหมาะสำหรับ CF exacerbation ที่มี chronic Pseudomonas colonization"},
+        {"label": "C", "text": "สังเกตอาการ เพิ่มความถี่ chest physiotherapy", "is_correct": false, "explanation": "Chest physiotherapy อย่างเดียวไม่เพียงพอสำหรับ exacerbation ที่มี FEV1 ลดลง 15% และ new infiltrate ต้องให้ IV antibiotics ร่วมด้วย"},
+        {"label": "D", "text": "เริ่ม inhaled corticosteroid", "is_correct": false, "explanation": "ICS ไม่ใช่ treatment สำหรับ CF pulmonary exacerbation ไม่ช่วยลด bacterial infection หรือปรับปรุง outcome ใน acute exacerbation"},
+        {"label": "E", "text": "ส่ง bronchoscopy", "is_correct": false, "explanation": "Bronchoscopy ไม่จำเป็นเป็น routine ใน CF exacerbation เมื่อมี sputum culture ที่ทราบ colonizing organism อยู่แล้ว อาจพิจารณาเฉพาะกรณีที่ไม่ตอบสนองต่อ treatment"}
+      ],
+      "key_takeaway": "CF exacerbation ที่มี chronic Pseudomonas ต้องให้ IV anti-pseudomonal combination therapy 14-21 วัน"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกชายคลอดก่อนกำหนด GA 26 สัปดาห์ น้ำหนักแรกเกิด 800 กรัม ได้รับ mechanical ventilation และ surfactant อายุปัจจุบัน 2 เดือน ยังต้องใช้ O2 supplementation FiO2 0.3 CXR: bilateral diffuse haziness, fine reticular pattern ร่วมกับ areas of hyperinflation การวินิจฉัยที่เป็นไปได้มากที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Respiratory distress syndrome"},
+      {"label": "B", "text": "Bronchopulmonary dysplasia"},
+      {"label": "C", "text": "Congenital pneumonia"},
+      {"label": "D", "text": "Meconium aspiration syndrome"},
+      {"label": "E", "text": "Transient tachypnea of the newborn"}
+    ],
+    "correct_answer": "B",
+    "explanation": "ทารกเกิดก่อนกำหนดที่ต้องการ O2 supplementation หลังอายุ 28 วัน (หรือ 36 สัปดาห์ PMA) วินิจฉัย bronchopulmonary dysplasia",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Bronchopulmonary dysplasia",
+      "reason": "Bronchopulmonary dysplasia (BPD) เป็น chronic lung disease ที่พบในทารกเกิดก่อนกำหนดที่ได้รับ mechanical ventilation และ oxygen therapy นิยามตาม NICHD consensus คือ ทารกที่ต้องการ supplemental oxygen >= 28 วัน\n\nSeverity จำแนกตาม oxygen requirement ที่ 36 สัปดาห์ postmenstrual age (PMA): mild (no O2 needed), moderate (FiO2 < 0.3), severe (FiO2 >= 0.3 หรือ positive pressure)\n\nNew BPD (ที่พบในยุคที่มี antenatal steroid และ surfactant) เกิดจาก arrested alveolar development มากกว่า fibrosis CXR แสดง diffuse haziness, fine reticular pattern ร่วมกับ areas of hyperinflation (cystic changes น้อยกว่า classic BPD)\n\nRisk factors ได้แก่ extreme prematurity, prolonged mechanical ventilation, oxygen toxicity, infection และ PDA",
+      "choices": [
+        {"label": "A", "text": "Respiratory distress syndrome", "is_correct": false, "explanation": "RDS เกิดจาก surfactant deficiency มักแสดงอาการภายใน 6 ชั่วโมงหลังเกิด ผู้ป่วยรายนี้อายุ 2 เดือนแล้ว ได้รับ surfactant ไปแล้ว RDS ควรดีขึ้นหรือหายภายใน 1-2 สัปดาห์"},
+        {"label": "B", "text": "Bronchopulmonary dysplasia", "is_correct": true, "explanation": "ทารก GA 26 สัปดาห์ที่ได้รับ mechanical ventilation อายุ 2 เดือน (> 28 วัน) ยังต้องการ O2 supplementation ร่วมกับ CXR ที่แสดง chronic changes เข้าเกณฑ์วินิจฉัย BPD"},
+        {"label": "C", "text": "Congenital pneumonia", "is_correct": false, "explanation": "Congenital pneumonia แสดงอาการตั้งแต่แรกเกิดหรือภายใน 48 ชั่วโมง ไม่ใช่ chronic oxygen dependency ที่อายุ 2 เดือน"},
+        {"label": "D", "text": "Meconium aspiration syndrome", "is_correct": false, "explanation": "MAS เกิดในทารก term หรือ post-term ที่มี meconium-stained amniotic fluid ไม่พบในทารก extreme preterm (GA 26 สัปดาห์) เพราะยังไม่มี meconium passage ในครรภ์"},
+        {"label": "E", "text": "Transient tachypnea of the newborn", "is_correct": false, "explanation": "TTN เกิดจาก delayed clearance ของ fetal lung fluid หายเองภายใน 24-72 ชั่วโมง ไม่ทำให้เกิด chronic oxygen dependency"}
+      ],
+      "key_takeaway": "BPD = O2 dependency >= 28 วันในทารก preterm ที่ได้รับ mechanical ventilation, severity ประเมินที่ 36 สัปดาห์ PMA"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกหญิง GA 25 สัปดาห์ น้ำหนัก 720 กรัม ได้รับการวินิจฉัย moderate BPD อายุ 3 เดือน ยังต้องการ O2 nasal cannula 0.25 LPM การดูแลที่สำคัญที่สุดเพื่อป้องกัน BPD exacerbation คืออะไร",
+    "choices": [
+      {"label": "A", "text": "RSV prophylaxis ด้วย palivizumab"},
+      {"label": "B", "text": "Inhaled bronchodilator ทุกวัน"},
+      {"label": "C", "text": "Long-term oral corticosteroid"},
+      {"label": "D", "text": "Prophylactic antibiotics"},
+      {"label": "E", "text": "Chest physiotherapy วันละ 4 ครั้ง"}
+    ],
+    "correct_answer": "A",
+    "explanation": "ทารก BPD เป็นกลุ่มเสี่ยงสูงต่อ severe RSV infection ควรได้ palivizumab prophylaxis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. RSV prophylaxis ด้วย palivizumab",
+      "reason": "ทารกที่มี BPD เป็นกลุ่มที่มีความเสี่ยงสูงมากต่อ severe RSV infection เนื่องจาก compromised lung function RSV infection ใน BPD patients มีอัตราการ hospitalization สูง, ICU admission และ mortality สูงกว่า healthy infants\n\nPalivizumab (anti-RSV monoclonal antibody) แนะนำสำหรับทารกที่มี chronic lung disease of prematurity (BPD) อายุ < 24 เดือนที่ต้องการ medical therapy (O2, bronchodilator, diuretic, corticosteroid) ภายใน 6 เดือนก่อนเริ่ม RSV season ให้ IM 15 mg/kg ทุกเดือน 5 doses ตลอด RSV season\n\nนอกจากนี้ การดูแล BPD ยังรวมถึง adequate nutrition, immunizations ตามวัย, avoid exposure ต่อ tobacco smoke และ respiratory infections",
+      "choices": [
+        {"label": "A", "text": "RSV prophylaxis ด้วย palivizumab", "is_correct": true, "explanation": "เป็นมาตรการป้องกันที่สำคัญที่สุดสำหรับ BPD patients RSV infection ทำให้เกิด severe exacerbation และอาจถึงแก่ชีวิต palivizumab ลด RSV hospitalization ได้ 50-55%"},
+        {"label": "B", "text": "Inhaled bronchodilator ทุกวัน", "is_correct": false, "explanation": "Inhaled bronchodilator อาจใช้ as needed ในบาง BPD patients ที่มี reactive airway disease แต่ไม่ใช่ standard daily prophylaxis และไม่ได้ป้องกัน exacerbation จาก infection"},
+        {"label": "C", "text": "Long-term oral corticosteroid", "is_correct": false, "explanation": "Long-term systemic corticosteroid มีผลข้างเคียงรุนแรงในทารก เช่น neurodevelopmental impairment, growth retardation ไม่แนะนำเป็น long-term maintenance therapy"},
+        {"label": "D", "text": "Prophylactic antibiotics", "is_correct": false, "explanation": "Prophylactic antibiotics ไม่มีข้อบ่งชี้ใน BPD อาจทำให้เกิด antibiotic resistance ใช้ antibiotics เฉพาะเมื่อมี documented bacterial infection"},
+        {"label": "E", "text": "Chest physiotherapy วันละ 4 ครั้ง", "is_correct": false, "explanation": "Chest physiotherapy อาจมีประโยชน์ในบาง BPD patients ที่มี mucus retention แต่ไม่ใช่ primary prevention strategy สำหรับ exacerbation"}
+      ],
+      "key_takeaway": "BPD patients ต้องได้ palivizumab prophylaxis เพื่อป้องกัน severe RSV infection ซึ่งเป็นสาเหตุสำคัญของ exacerbation"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกชายอายุ 3 เดือน มารดาสังเกตว่ามีเสียงหายใจดัง stridor ตั้งแต่อายุ 2 สัปดาห์ เสียงดังขึ้นเมื่อร้องไห้หรือนอนหงาย แต่ดีขึ้นเมื่อนอนคว่ำ ดูดนมได้ดี น้ำหนักขึ้นปกติ PE: inspiratory stridor, no respiratory distress, O2sat 99% RA การวินิจฉัยที่เป็นไปได้มากที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Laryngomalacia"},
+      {"label": "B", "text": "Subglottic stenosis"},
+      {"label": "C", "text": "Tracheomalacia"},
+      {"label": "D", "text": "Vascular ring"},
+      {"label": "E", "text": "Vocal cord paralysis"}
+    ],
+    "correct_answer": "A",
+    "explanation": "Laryngomalacia เป็นสาเหตุที่พบบ่อยที่สุดของ congenital stridor มีอาการ inspiratory stridor ที่แย่ลงเมื่อ supine/crying ดีขึ้นเมื่อ prone",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. Laryngomalacia",
+      "reason": "Laryngomalacia เป็นสาเหตุที่พบบ่อยที่สุดของ congenital stridor (60-70% ของ congenital laryngeal anomalies) เกิดจาก supraglottic structures (epiglottis, arytenoid cartilages, aryepiglottic folds) ที่อ่อนนิ่มผิดปกติ ทำให้ยุบเข้าไปอุดทางเดินหายใจขณะหายใจเข้า\n\nอาการมักเริ่มภายใน 2 สัปดาห์หลังเกิด มี characteristic inspiratory stridor ที่แย่ลงเมื่อ supine position, crying, feeding และ agitation แต่ดีขึ้นเมื่อ prone position (เพราะ gravity ช่วยดึง supraglottic structures ออกจาก airway)\n\n80-90% ของ laryngomalacia หายเองภายในอายุ 12-18 เดือนเมื่อ cartilage แข็งแรงขึ้น เฉพาะ severe cases (10-15%) ที่มี failure to thrive, significant desaturation หรือ cor pulmonale จึงต้อง surgical intervention (supraglottoplasty)",
+      "choices": [
+        {"label": "A", "text": "Laryngomalacia", "is_correct": true, "explanation": "Classic presentation: congenital inspiratory stridor ที่แย่ขึ้นเมื่อ supine/crying ดีขึ้นเมื่อ prone ไม่มี respiratory distress, feed ได้ดี น้ำหนักขึ้นปกติ ส่วนใหญ่หายเองภายใน 18 เดือน"},
+        {"label": "B", "text": "Subglottic stenosis", "is_correct": false, "explanation": "Subglottic stenosis ทำให้เกิด biphasic stridor (ทั้ง inspiratory และ expiratory) มักรุนแรงกว่า อาจมีประวัติ previous intubation (acquired type) ไม่ดีขึ้นเมื่อเปลี่ยนท่า"},
+        {"label": "C", "text": "Tracheomalacia", "is_correct": false, "explanation": "Tracheomalacia ทำให้เกิด expiratory stridor หรือ wheezing (ไม่ใช่ inspiratory stridor) เนื่องจาก trachea collapse ขณะหายใจออก แย่ลงเมื่อ cough, cry และ Valsalva"},
+        {"label": "D", "text": "Vascular ring", "is_correct": false, "explanation": "Vascular ring ทำให้เกิด biphasic stridor ร่วมกับ dysphagia (dysphagia lusoria) จาก esophageal compression อาจมี reflex apnea ไม่ดีขึ้นเมื่อเปลี่ยนท่า"},
+        {"label": "E", "text": "Vocal cord paralysis", "is_correct": false, "explanation": "Vocal cord paralysis เป็นสาเหตุ congenital stridor อันดับ 2 มี inspiratory stridor ร่วมกับ weak cry, aspiration bilateral paralysis อาจต้อง tracheostomy ไม่มี positional improvement เหมือน laryngomalacia"}
+      ],
+      "key_takeaway": "Laryngomalacia = สาเหตุ #1 ของ congenital stridor, inspiratory stridor ที่ worse เมื่อ supine/crying, better เมื่อ prone, มักหายเองภายใน 18 เดือน"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 4 ปี มารดาพามาเนื่องจากนอนกรนดัง สังเกตว่ามี mouth breathing และบางครั้งหยุดหายใจขณะนอนหลับ ตื่นบ่อย กลางวันง่วงนอนมาก PE: adenoid facies, tonsillar hypertrophy grade 3+ bilateral การวินิจฉัยที่เป็นไปได้มากที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Obstructive sleep apnea จาก adenotonsillar hypertrophy"},
+      {"label": "B", "text": "Central sleep apnea"},
+      {"label": "C", "text": "Narcolepsy"},
+      {"label": "D", "text": "Allergic rhinitis"},
+      {"label": "E", "text": "Laryngomalacia"}
+    ],
+    "correct_answer": "A",
+    "explanation": "นอนกรน, mouth breathing, observed apnea, daytime sleepiness ร่วมกับ adenotonsillar hypertrophy เข้าได้กับ OSA",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. Obstructive sleep apnea จาก adenotonsillar hypertrophy",
+      "reason": "Obstructive sleep apnea (OSA) ในเด็กพบบ่อยที่สุดในช่วงอายุ 2-8 ปี ซึ่งเป็นช่วงที่ adenoid และ tonsils มีขนาดใหญ่ที่สุดเมื่อเทียบกับขนาดทางเดินหายใจ\n\nAdenotonsillar hypertrophy เป็นสาเหตุที่พบบ่อยที่สุดของ OSA ในเด็ก (75-80%) อาการสำคัญได้แก่ habitual snoring, observed apnea, mouth breathing, restless sleep, frequent arousal, enuresis และ daytime symptoms เช่น excessive sleepiness, behavioral problems, poor school performance\n\nAdenoid facies เป็น characteristic appearance ของเด็กที่มี chronic adenoid hypertrophy ได้แก่ elongated face, open mouth, dental malocclusion, high-arched palate\n\nGold standard ในการวินิจฉัยคือ polysomnography (PSG) การรักษา first-line คือ adenotonsillectomy",
+      "choices": [
+        {"label": "A", "text": "Obstructive sleep apnea จาก adenotonsillar hypertrophy", "is_correct": true, "explanation": "อาการทั้งหมด (snoring, observed apnea, mouth breathing, daytime sleepiness) ร่วมกับ tonsillar hypertrophy grade 3+ และ adenoid facies เข้าได้กับ OSA จาก adenotonsillar hypertrophy First-line treatment คือ adenotonsillectomy"},
+        {"label": "B", "text": "Central sleep apnea", "is_correct": false, "explanation": "Central sleep apnea เกิดจาก CNS ไม่ส่งสัญญาณหายใจ มักไม่มี snoring หรือ tonsillar hypertrophy พบในเด็กที่มี brainstem pathology, Chiari malformation หรือ neuromuscular disease"},
+        {"label": "C", "text": "Narcolepsy", "is_correct": false, "explanation": "Narcolepsy มีอาการ excessive daytime sleepiness, cataplexy, sleep paralysis, hypnagogic hallucinations ไม่มี snoring หรือ tonsillar hypertrophy ที่เด่น onset มักหลังอายุ 10 ปี"},
+        {"label": "D", "text": "Allergic rhinitis", "is_correct": false, "explanation": "Allergic rhinitis อาจทำให้นอนกรนจาก nasal congestion แต่ไม่ทำให้ observed apnea หรือ tonsillar hypertrophy grade 3+ อาจเป็น contributing factor แต่ไม่ใช่การวินิจฉัยหลัก"},
+        {"label": "E", "text": "Laryngomalacia", "is_correct": false, "explanation": "Laryngomalacia มักแสดงอาการในทารก (< 6 เดือน) มี inspiratory stridor ส่วนใหญ่หายภายใน 18 เดือน ไม่ตรงกับ presentation ของเด็กอายุ 4 ปีที่มี snoring และ tonsillar hypertrophy"}
+      ],
+      "key_takeaway": "OSA ในเด็ก: adenotonsillar hypertrophy เป็นสาเหตุ #1 วินิจฉัยด้วย PSG รักษาด้วย adenotonsillectomy"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 6 ปี มาพบแพทย์ด้วยอาการนอนกรน ง่วงกลางวัน สมาธิสั้น PE: tonsillar hypertrophy grade 4 polysomnography: AHI 15 events/hour (ปกติ < 1), lowest SpO2 82% การรักษาที่เหมาะสมที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Intranasal corticosteroid"},
+      {"label": "B", "text": "Adenotonsillectomy"},
+      {"label": "C", "text": "CPAP ขณะนอนหลับ"},
+      {"label": "D", "text": "Weight reduction"},
+      {"label": "E", "text": "Oral montelukast"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Severe OSA ในเด็กที่มี adenotonsillar hypertrophy first-line treatment คือ adenotonsillectomy",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Adenotonsillectomy",
+      "reason": "ผู้ป่วยมี severe OSA (AHI >= 10) จาก adenotonsillar hypertrophy grade 4 มี significant desaturation (lowest SpO2 82%) และ daytime symptoms (sleepiness, attention deficit)\n\nAdenotonsillectomy เป็น first-line treatment สำหรับ OSA ในเด็กที่มี adenotonsillar hypertrophy มี cure rate 75-85% หลังผ่าตัด AHI มักลดลงอย่างมีนัยสำคัญ อาการ snoring, daytime symptoms และ quality of life ดีขึ้น\n\nAAP clinical practice guidelines แนะนำ adenotonsillectomy สำหรับ OSA ที่มี PSG-confirmed abnormality โดยเฉพาะ moderate-severe cases ที่มี AHI > 5 ร่วมกับ significant symptoms และ complications",
+      "choices": [
+        {"label": "A", "text": "Intranasal corticosteroid", "is_correct": false, "explanation": "Intranasal corticosteroid (เช่น fluticasone) อาจใช้เป็น adjunctive therapy หรือ mild OSA ที่ adenoid hypertrophy ไม่มาก แต่ไม่เพียงพอสำหรับ severe OSA ที่มี grade 4 tonsillar hypertrophy"},
+        {"label": "B", "text": "Adenotonsillectomy", "is_correct": true, "explanation": "เป็น first-line definitive treatment สำหรับ childhood OSA จาก adenotonsillar hypertrophy โดยเฉพาะ severe cases ที่มี AHI >= 10 มี cure rate สูง และมีหลักฐานชัดเจนว่าช่วยปรับปรุง quality of life, behavior และ cognitive function"},
+        {"label": "C", "text": "CPAP ขณะนอนหลับ", "is_correct": false, "explanation": "CPAP เป็น second-line treatment สำหรับเด็กที่ไม่ตอบสนองต่อ adenotonsillectomy, ไม่มีข้อบ่งชี้ผ่าตัด หรือมี residual OSA หลังผ่าตัด ปัญหาคือ compliance ต่ำในเด็ก"},
+        {"label": "D", "text": "Weight reduction", "is_correct": false, "explanation": "Weight reduction สำคัญสำหรับ OSA ในเด็กอ้วน แต่ผู้ป่วยรายนี้มี adenotonsillar hypertrophy เป็นสาเหตุหลัก ไม่ได้ระบุว่าเป็นโรคอ้วน"},
+        {"label": "E", "text": "Oral montelukast", "is_correct": false, "explanation": "Montelukast อาจใช้เป็น adjunctive therapy สำหรับ mild OSA โดยลด lymphoid tissue hyperplasia แต่ไม่เพียงพอสำหรับ severe OSA ที่มี AHI 15 และ significant desaturation"}
+      ],
+      "key_takeaway": "Adenotonsillectomy เป็น first-line treatment สำหรับ childhood OSA จาก adenotonsillar hypertrophy โดยเฉพาะ moderate-severe cases"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 4 ปี สัมผัสวัณโรคจากปู่ที่เป็น sputum AFB positive Tuberculin skin test (TST): induration 18 mm CXR: right hilar lymphadenopathy ไม่มีอาการไอ ไข้ หรือน้ำหนักลด การจัดการที่เหมาะสมที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "สังเกตอาการ ไม่ต้องให้ยา"},
+      {"label": "B", "text": "Isoniazid prophylaxis 9 เดือน"},
+      {"label": "C", "text": "Anti-TB drugs 4 ตัว (HRZE) 6 เดือน"},
+      {"label": "D", "text": "BCG vaccination ซ้ำ"},
+      {"label": "E", "text": "Repeat TST ใน 3 เดือน"}
+    ],
+    "correct_answer": "C",
+    "explanation": "เด็กสัมผัส TB ที่มี TST positive ร่วมกับ CXR abnormality (hilar lymphadenopathy) ต้องรักษาเป็น TB disease แม้ไม่มีอาการ",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Anti-TB drugs 4 ตัว (HRZE) 6 เดือน",
+      "reason": "ผู้ป่วยรายนี้มี TB contact history จากปู่ที่ sputum AFB positive, TST positive (induration >= 10 mm ในเด็ก) ร่วมกับ CXR abnormality (hilar lymphadenopathy) ซึ่งจัดเป็น TB disease ไม่ใช่แค่ latent TB infection (LTBI) แม้จะไม่มีอาการ\n\nในเด็ก เมื่อมี radiographic evidence ของ TB (hilar lymphadenopathy, parenchymal infiltrate) ร่วมกับ positive TST และ known exposure ถือว่าเป็น active TB disease ที่ต้องรักษาด้วย full anti-TB regimen\n\nสูตรมาตรฐาน: intensive phase 2 เดือน ด้วย HRZE (isoniazid, rifampicin, pyrazinamide, ethambutol) ตามด้วย continuation phase 4 เดือน ด้วย HR (isoniazid, rifampicin) รวม 6 เดือน\n\nหมายเหตุ: Ethambutol ในเด็กเล็กอาจเปลี่ยนเป็น streptomycin ในบางแนวทาง เนื่องจากความยากในการ monitor visual acuity",
+      "choices": [
+        {"label": "A", "text": "สังเกตอาการ ไม่ต้องให้ยา", "is_correct": false, "explanation": "ไม่เหมาะสม เพราะผู้ป่วยมี CXR abnormality ที่เข้าได้กับ TB disease การไม่รักษาอาจทำให้โรคลุกลามเป็น progressive primary TB, miliary TB หรือ TB meningitis ในเด็กเล็ก"},
+        {"label": "B", "text": "Isoniazid prophylaxis 9 เดือน", "is_correct": false, "explanation": "Isoniazid prophylaxis ใช้สำหรับ latent TB infection (TST positive แต่ CXR ปกติ ไม่มีอาการ) ผู้ป่วยรายนี้มี CXR abnormality จึงจัดเป็น TB disease ต้องรักษาด้วย full regimen"},
+        {"label": "C", "text": "Anti-TB drugs 4 ตัว (HRZE) 6 เดือน", "is_correct": true, "explanation": "เป็น standard treatment สำหรับ pulmonary TB ในเด็ก: intensive phase 2 เดือน (HRZE) + continuation phase 4 เดือน (HR) ครอบคลุมทั้งเชื้อที่กำลัง replicate และ dormant bacilli"},
+        {"label": "D", "text": "BCG vaccination ซ้ำ", "is_correct": false, "explanation": "BCG revaccination ไม่แนะนำ ไม่มีหลักฐานว่าเพิ่ม protection อีกทั้งผู้ป่วยมี active TB disease ที่ต้องรักษาด้วย anti-TB drugs ไม่ใช่ vaccine"},
+        {"label": "E", "text": "Repeat TST ใน 3 เดือน", "is_correct": false, "explanation": "TST positive 18 mm อยู่แล้ว ไม่ต้อง repeat ร่วมกับ CXR abnormality ยืนยัน TB disease ควรเริ่มรักษาทันที การรอ 3 เดือนอาจทำให้โรคลุกลาม"}
+      ],
+      "key_takeaway": "เด็กที่มี TB contact + positive TST + abnormal CXR = TB disease ต้องรักษาด้วย full anti-TB regimen (HRZE) ไม่ใช่แค่ prophylaxis"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 3 ปี สัมผัสวัณโรคจากบิดาที่ sputum AFB positive TST: induration 12 mm ไม่มีอาการ CXR ปกติ การจัดการที่เหมาะสมที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "สังเกตอาการอย่างเดียว"},
+      {"label": "B", "text": "Isoniazid preventive therapy 9 เดือน"},
+      {"label": "C", "text": "Anti-TB drugs 4 ตัว 6 เดือน"},
+      {"label": "D", "text": "BCG vaccination"},
+      {"label": "E", "text": "Rifampicin 4 เดือน"}
+    ],
+    "correct_answer": "B",
+    "explanation": "เด็กที่มี positive TST, TB contact แต่ CXR ปกติและไม่มีอาการ = latent TB infection ให้ isoniazid preventive therapy",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Isoniazid preventive therapy 9 เดือน",
+      "reason": "ผู้ป่วยรายนี้มี latent TB infection (LTBI) ตามเกณฑ์ ได้แก่ known TB contact, positive TST (>= 10 mm ในเด็ก หรือ >= 5 mm ถ้า close contact กับ active TB), CXR ปกติ และไม่มีอาการ\n\nIsoniazid preventive therapy (IPT) เป็น standard treatment สำหรับ LTBI ในเด็ก ขนาด 10-15 mg/kg/day (max 300 mg) เป็นเวลา 9 เดือน ช่วยลดความเสี่ยงในการ progress เป็น active TB disease ได้ 60-90%\n\nในเด็กอายุ < 5 ปี ที่สัมผัส active TB ความเสี่ยงในการ progress เป็น active TB สูงมาก (40-50% ใน 2 ปี) และมีความเสี่ยงสูงต่อ severe forms เช่น miliary TB, TB meningitis จึงมีความจำเป็นต้องให้ preventive therapy",
+      "choices": [
+        {"label": "A", "text": "สังเกตอาการอย่างเดียว", "is_correct": false, "explanation": "ไม่เหมาะสม เพราะเด็กอายุ < 5 ปี ที่มี LTBI มีความเสี่ยงสูงในการ progress เป็น active TB และ severe disseminated forms ต้องให้ preventive therapy"},
+        {"label": "B", "text": "Isoniazid preventive therapy 9 เดือน", "is_correct": true, "explanation": "เป็น standard treatment สำหรับ LTBI: INH 10-15 mg/kg/day x 9 เดือน ร่วมกับ pyridoxine (vitamin B6) เพื่อป้องกัน peripheral neuropathy ลด risk ของ active TB ได้ 60-90%"},
+        {"label": "C", "text": "Anti-TB drugs 4 ตัว 6 เดือน", "is_correct": false, "explanation": "Full anti-TB regimen ใช้สำหรับ active TB disease ไม่ใช่ LTBI ผู้ป่วยรายนี้มี CXR ปกติและไม่มีอาการ จึงไม่ต้องรักษาด้วย 4 ตัว"},
+        {"label": "D", "text": "BCG vaccination", "is_correct": false, "explanation": "BCG vaccine ให้ตั้งแต่แรกเกิดในประเทศไทย ไม่ได้ป้องกัน LTBI progression เป็น active TB ไม่ใช่ treatment สำหรับ LTBI"},
+        {"label": "E", "text": "Rifampicin 4 เดือน", "is_correct": false, "explanation": "Rifampicin monotherapy 3-4 เดือน เป็นทางเลือกหนึ่งสำหรับ LTBI แต่ standard regimen ที่แนะนำโดย WHO สำหรับเด็กคือ isoniazid 9 เดือน"}
+      ],
+      "key_takeaway": "LTBI ในเด็ก (positive TST + normal CXR + no symptoms) ต้องให้ isoniazid preventive therapy 9 เดือน โดยเฉพาะเด็ก < 5 ปี"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 2 ปี มาด้วยไข้ หายใจเร็ว 1 สัปดาห์ ได้รับ antibiotics แต่ไม่ดีขึ้น มีประวัติสัมผัสยายที่ไอเรื้อรัง PE: febrile, hepatosplenomegaly, generalized lymphadenopathy CXR: bilateral miliary pattern (tiny nodules ทั่วทั้ง lung fields) การวินิจฉัยที่เป็นไปได้มากที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Viral pneumonia"},
+      {"label": "B", "text": "Miliary tuberculosis"},
+      {"label": "C", "text": "Fungal pneumonia"},
+      {"label": "D", "text": "Lymphoma"},
+      {"label": "E", "text": "Sarcoidosis"}
+    ],
+    "correct_answer": "B",
+    "explanation": "CXR miliary pattern ร่วมกับ TB contact, hepatosplenomegaly และ lymphadenopathy ในเด็กเล็กเข้าได้กับ miliary TB",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Miliary tuberculosis",
+      "reason": "Miliary TB เป็น severe disseminated form ของ TB ที่เกิดจาก hematogenous spread ของ Mycobacterium tuberculosis พบบ่อยในเด็กเล็ก (< 5 ปี) ที่มี immature immune system โดยเฉพาะหลังสัมผัส active TB\n\nCXR ที่แสดง miliary pattern (tiny 1-2 mm nodules ทั่วทั้ง lung fields) เป็น classic finding ร่วมกับ systemic symptoms ได้แก่ fever, hepatosplenomegaly, generalized lymphadenopathy ซึ่งแสดงถึง disseminated disease\n\nMiliary TB ในเด็กเป็น medical emergency เนื่องจากอาจมี TB meningitis ร่วมด้วย (20-40%) ต้องทำ lumbar puncture เพื่อตรวจ CSF และเริ่ม anti-TB treatment ทันที สูตร intensive phase ใช้ 4 drugs (HRZE) 2 เดือน ตามด้วย continuation phase (HR) 7-10 เดือน (รวม 9-12 เดือน)",
+      "choices": [
+        {"label": "A", "text": "Viral pneumonia", "is_correct": false, "explanation": "Viral pneumonia มักมี bilateral interstitial infiltration ร่วมกับ hyperinflation ไม่ใช่ miliary pattern ไม่ทำให้เกิด hepatosplenomegaly หรือ generalized lymphadenopathy"},
+        {"label": "B", "text": "Miliary tuberculosis", "is_correct": true, "explanation": "Classic presentation: เด็กเล็กที่สัมผัส TB มี CXR miliary pattern ร่วมกับ systemic dissemination (hepatosplenomegaly, lymphadenopathy) ต้องรักษาด้วย anti-TB drugs ขยายเวลา 9-12 เดือน"},
+        {"label": "C", "text": "Fungal pneumonia", "is_correct": false, "explanation": "Fungal pneumonia (เช่น histoplasmosis) อาจมี miliary pattern ได้ แต่พบน้อยมากในเด็กที่ไม่ได้ immunocompromised และไม่มี TB contact history ที่ชัดเจน"},
+        {"label": "D", "text": "Lymphoma", "is_correct": false, "explanation": "Lymphoma อาจมี mediastinal mass, lymphadenopathy แต่ CXR ไม่ใช่ miliary pattern ที่ typical มักมี large mediastinal mass หรือ pleural effusion"},
+        {"label": "E", "text": "Sarcoidosis", "is_correct": false, "explanation": "Sarcoidosis พบน้อยมากในเด็กอายุ 2 ปี มักพบในผู้ใหญ่และวัยรุ่น มี bilateral hilar lymphadenopathy แต่ไม่ใช่ miliary pattern ที่ typical"}
+      ],
+      "key_takeaway": "Miliary TB ในเด็กเล็ก: CXR miliary pattern + systemic dissemination ต้อง rule out TB meningitis และรักษาด้วย anti-TB 9-12 เดือน"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 5 ปี มีไข้สูง หายใจหอบ ไอ 5 วัน ได้รับ IV ceftriaxone 48 ชั่วโมง ไข้ยังไม่ลง PE: BT 39.2°C, RR 35/min, O2sat 93% RA, lung: decreased breath sounds right lower zone, dullness to percussion CXR: right-sided opacity suggestive of large pleural effusion with underlying consolidation Chest ultrasound: complex septated effusion การจัดการที่เหมาะสมที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "เปลี่ยน antibiotics เป็น meropenem อย่างเดียว"},
+      {"label": "B", "text": "Video-assisted thoracoscopic surgery (VATS) debridement"},
+      {"label": "C", "text": "Chest tube drainage ร่วมกับ intrapleural fibrinolytic (เช่น alteplase)"},
+      {"label": "D", "text": "Repeat thoracentesis ทุกวัน"},
+      {"label": "E", "text": "คงยาเดิมรอ 5 วัน"}
+    ],
+    "correct_answer": "C",
+    "explanation": "Complex septated parapneumonic effusion/empyema ที่ไม่ตอบสนองต่อ antibiotics ควรใส่ chest tube ร่วมกับ intrapleural fibrinolytic",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Chest tube drainage ร่วมกับ intrapleural fibrinolytic",
+      "reason": "ผู้ป่วยมี complicated parapneumonic effusion/empyema ที่ไม่ตอบสนองต่อ IV antibiotics โดย chest ultrasound แสดง complex septated effusion ซึ่งบ่งชี้ว่ามี fibrin septations ที่ทำให้ simple drainage ไม่เพียงพอ\n\nChest tube drainage ร่วมกับ intrapleural fibrinolytic (เช่น tissue plasminogen activator/alteplase หรือ urokinase) เป็นแนวทางที่ได้ผลดีในเด็ก fibrinolytic ช่วยสลาย fibrin septations ทำให้ fluid drain ออกได้มากขึ้น ลดความจำเป็นในการผ่าตัด\n\nสูตรที่ใช้บ่อย: alteplase 4 mg diluted in 10-40 mL NSS ใส่ผ่าน chest tube clamp 1-4 ชั่วโมง แล้ว unclamp ให้ drain ทำ 1-2 ครั้ง/วัน 3-7 วัน ร่วมกับ IV antibiotics",
+      "choices": [
+        {"label": "A", "text": "เปลี่ยน antibiotics เป็น meropenem อย่างเดียว", "is_correct": false, "explanation": "การเปลี่ยน antibiotics อย่างเดียวไม่เพียงพอ เมื่อมี significant loculated effusion ที่ต้องการ drainage Antibiotics penetrate poorly เข้า empyema cavity"},
+        {"label": "B", "text": "VATS debridement", "is_correct": false, "explanation": "VATS เป็นทางเลือกที่ effective แต่เป็น surgical intervention ที่ invasive กว่า ปัจจุบันแนวทางส่วนใหญ่แนะนำให้ลอง chest tube + fibrinolytic ก่อน สงวน VATS สำหรับ failure of medical management"},
+        {"label": "C", "text": "Chest tube drainage ร่วมกับ intrapleural fibrinolytic", "is_correct": true, "explanation": "เป็น preferred initial management สำหรับ complicated parapneumonic effusion/empyema ที่มี septations Fibrinolytic ช่วยสลาย fibrin septations ทำให้ drain ได้มากขึ้น มี success rate 80-90%"},
+        {"label": "D", "text": "Repeat thoracentesis ทุกวัน", "is_correct": false, "explanation": "Repeat therapeutic thoracentesis ไม่มีประสิทธิภาพเมื่อมี septated effusion เพราะ fluid จะ re-accumulate เร็วและเข็มอาจ access ได้เฉพาะบาง loculation"},
+        {"label": "E", "text": "คงยาเดิมรอ 5 วัน", "is_correct": false, "explanation": "ผู้ป่วยไม่ตอบสนองต่อ IV antibiotics 48 ชั่วโมงร่วมกับ significant effusion ต้อง escalate management ไม่ควรรอ เพราะ delay drainage เพิ่มความเสี่ยงต่อ complications"}
+      ],
+      "key_takeaway": "Complex septated parapneumonic effusion/empyema: chest tube + intrapleural fibrinolytic เป็น first-line, VATS สำหรับ failure cases"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 3 ปี มีอาการไอ หายใจมีเสียงหวีด 4 ครั้งในรอบ 6 เดือน แต่ละครั้งเกิดเมื่อเป็นหวัด ไม่มี atopic history ไม่มี family history of asthma ระหว่าง episodes ไม่มีอาการใดๆ ไม่มี eczema TST negative สิ่งที่สำคัญที่สุดในการจำแนก phenotype ของ wheezing คืออะไร",
+    "choices": [
+      {"label": "A", "text": "Spirometry"},
+      {"label": "B", "text": "ประเมิน Asthma Predictive Index (API)"},
+      {"label": "C", "text": "Serum IgE level"},
+      {"label": "D", "text": "Allergy skin prick test"},
+      {"label": "E", "text": "Chest CT scan"}
+    ],
+    "correct_answer": "B",
+    "explanation": "ในเด็กเล็กที่มี recurrent wheezing ควรประเมิน Asthma Predictive Index (API) เพื่อ predict ว่าจะเป็น asthma ในอนาคตหรือไม่",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. ประเมิน Asthma Predictive Index (API)",
+      "reason": "Recurrent wheezing ในเด็กเล็กมีหลาย phenotypes ได้แก่ transient early wheezers (หายไปก่อนอายุ 3 ปี), persistent wheezers (มีต่อไปจนเป็น asthma) และ late-onset wheezers Asthma Predictive Index (API) ช่วยทำนายว่าเด็กที่มี recurrent wheezing จะเป็น persistent asthma หรือไม่\n\nModified API (mAPI) ประกอบด้วย major criteria: parental asthma, physician-diagnosed eczema, aeroallergen sensitization และ minor criteria: food allergen sensitization, wheezing apart from colds, eosinophilia >= 4% ถ้ามี >= 1 major หรือ >= 2 minor ถือว่า positive API\n\nผู้ป่วยรายนี้ไม่มี atopic history, ไม่มี family history of asthma, ไม่มี eczema wheezing เกิดเฉพาะเมื่อเป็นหวัด ทำให้ API น่าจะ negative ซึ่ง predict ว่ามีโอกาสน้อยที่จะเป็น persistent asthma อาจเป็น episodic viral wheeze ที่จะหายไปเมื่อโตขึ้น",
+      "choices": [
+        {"label": "A", "text": "Spirometry", "is_correct": false, "explanation": "Spirometry ทำได้ยากในเด็กอายุ < 6 ปี เนื่องจากต้องการ cooperation ที่ดี จึงไม่ใช่เครื่องมือหลักในการประเมิน wheezing phenotype ในเด็กเล็ก"},
+        {"label": "B", "text": "ประเมิน Asthma Predictive Index (API)", "is_correct": true, "explanation": "API เป็นเครื่องมือที่ validated สำหรับ predict persistent asthma ในเด็กเล็กที่มี recurrent wheezing ช่วยตัดสินใจว่าควรเริ่ม controller therapy หรือไม่ โดยดูจาก risk factors ของ atopy"},
+        {"label": "C", "text": "Serum IgE level", "is_correct": false, "explanation": "Serum IgE level อาจสูงใน atopic patients แต่ไม่ specific สำหรับ asthma อาจสูงได้จากหลายสาเหตุ เช่น parasitic infection, eczema ไม่ใช่เครื่องมือหลักในการจำแนก phenotype"},
+        {"label": "D", "text": "Allergy skin prick test", "is_correct": false, "explanation": "Skin prick test อาจเป็นส่วนหนึ่งของ API assessment (aeroallergen sensitization) แต่ไม่ใช่สิ่งสำคัญที่สุดในการจำแนก phenotype ควรประเมิน API โดยรวมก่อน"},
+        {"label": "E", "text": "Chest CT scan", "is_correct": false, "explanation": "CT chest ไม่จำเป็นสำหรับ recurrent viral wheeze ที่ไม่มี atypical features ใช้เฉพาะเมื่อสงสัย structural abnormality, bronchiectasis หรือ recurrent aspiration"}
+      ],
+      "key_takeaway": "ใช้ Asthma Predictive Index (API) ในเด็กเล็กที่มี recurrent wheezing เพื่อ predict persistent asthma: positive API = high risk, negative API = likely outgrow"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 2 ปี มาด้วย recurrent wheezing 5 ครั้งในปีที่ผ่านมา ทุกครั้งเกิดหลังจากมี URI อาการระหว่าง episodes ปกติ มี eczema ตั้งแต่อายุ 6 เดือน มารดาเป็น asthma CBC: eosinophil 6% การทำนายการดำเนินโรคที่เหมาะสมที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Wheezing จะหายไปภายในอายุ 3 ปี ไม่ต้องรักษา"},
+      {"label": "B", "text": "มีความเสี่ยงสูงที่จะเป็น persistent asthma ควรเริ่ม controller"},
+      {"label": "C", "text": "อาการเกิดจาก GERD ควรรักษาด้วย PPI"},
+      {"label": "D", "text": "ต้องส่งตรวจ bronchoscopy เพื่อ rule out airway malformation"},
+      {"label": "E", "text": "เป็น cystic fibrosis ต้องส่ง sweat chloride test"}
+    ],
+    "correct_answer": "B",
+    "explanation": "เด็กที่มี recurrent wheezing ร่วมกับ positive API (parental asthma + eczema + eosinophilia) มีความเสี่ยงสูงต่อ persistent asthma",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. มีความเสี่ยงสูงที่จะเป็น persistent asthma ควรเริ่ม controller",
+      "reason": "ผู้ป่วยรายนี้มี positive modified Asthma Predictive Index (mAPI) จาก major criteria: parental asthma (มารดา), physician-diagnosed eczema และ minor criteria: eosinophilia >= 4% (eosinophil 6%) ซึ่ง predict ว่าเด็กมีความเสี่ยงสูงที่จะเป็น persistent asthma เมื่อโตขึ้น\n\nPositive API มี positive predictive value 72-77% สำหรับ active asthma ที่อายุ 6-13 ปี และ negative predictive value 85-97% เด็กที่มี positive API ร่วมกับ frequent wheezing (>= 4 episodes/ปี) ควรเริ่ม controller therapy ด้วย low-dose ICS\n\nFeedback หลังจากให้ ICS trial 2-3 เดือน ก็สำคัญ หากอาการดีขึ้นชัดเจน สนับสนุนว่าเป็น asthma",
+      "choices": [
+        {"label": "A", "text": "Wheezing จะหายไปภายในอายุ 3 ปี ไม่ต้องรักษา", "is_correct": false, "explanation": "Transient wheezers มักไม่มี atopic risk factors ผู้ป่วยรายนี้มี eczema, parental asthma, eosinophilia (positive API) จึงมีความเสี่ยงสูงที่ wheezing จะ persist ไม่ใช่ transient"},
+        {"label": "B", "text": "มีความเสี่ยงสูงที่จะเป็น persistent asthma ควรเริ่ม controller", "is_correct": true, "explanation": "Positive API (>= 1 major + any minor criteria) predict persistent asthma ร่วมกับ frequent episodes (5 ครั้ง/ปี) ควรเริ่ม low-dose ICS เป็น controller และ reassess ใน 2-3 เดือน"},
+        {"label": "C", "text": "อาการเกิดจาก GERD ควรรักษาด้วย PPI", "is_correct": false, "explanation": "GERD อาจทำให้ chronic cough/wheeze แต่ผู้ป่วยรายนี้มี pattern ที่เข้าได้กับ viral-triggered asthma ร่วมกับ atopic risk factors ไม่มีอาการบ่งชี้ GERD เช่น vomiting, feeding difficulty"},
+        {"label": "D", "text": "ต้องส่งตรวจ bronchoscopy เพื่อ rule out airway malformation", "is_correct": false, "explanation": "Bronchoscopy ไม่จำเป็นเมื่อ pattern ของ wheezing เข้าได้กับ viral-triggered asthma ในเด็กที่มี atopic predisposition พิจารณาเมื่อมี atypical features เช่น stridor, unilateral wheezing"},
+        {"label": "E", "text": "เป็น cystic fibrosis ต้องส่ง sweat chloride test", "is_correct": false, "explanation": "CF มักมี chronic productive cough, steatorrhea, failure to thrive ไม่ใช่ episodic wheezing ที่สัมพันธ์กับ URI ผู้ป่วยรายนี้มี typical atopic wheeze profile ไม่ต้อง rule out CF"}
+      ],
+      "key_takeaway": "Positive API (parental asthma + eczema + eosinophilia) ใน recurrent wheezer = high risk persistent asthma, ควรเริ่ม controller (low-dose ICS)"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 7 ปี มีไข้สูง 39°C ไอมีเสมหะ 4 วัน ปวดท้องด้านขวา PE: RR 32/min, O2sat 94% RA, lung: right lower lobe crackles, decreased breath sounds CXR: right lower lobe consolidation with small parapneumonic effusion WBC 18,000/mm3, PMN 85% การรักษาที่เหมาะสมที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Oral amoxicillin"},
+      {"label": "B", "text": "IV ampicillin หรือ IV ceftriaxone"},
+      {"label": "C", "text": "Oral azithromycin"},
+      {"label": "D", "text": "IV vancomycin"},
+      {"label": "E", "text": "สังเกตอาการ ไม่ต้องให้ antibiotics"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Bacterial pneumonia ที่มี parapneumonic effusion ถือเป็น complicated pneumonia ควรรักษาด้วย IV antibiotics",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. IV ampicillin หรือ IV ceftriaxone",
+      "reason": "ผู้ป่วยรายนี้มี community-acquired pneumonia (CAP) ที่ complicated โดยมี parapneumonic effusion ร่วมกับ high fever, significant respiratory distress (RR 32, O2sat 94%) และ leukocytosis with left shift ซึ่งบ่งชี้ bacterial etiology\n\nตาม IDSA/PIDS guidelines สำหรับ CAP ในเด็กที่ต้อง hospitalization (complicated pneumonia, hypoxemia, inability to tolerate oral medications) ยาที่แนะนำคือ IV ampicillin 150-200 mg/kg/day div q6h หรือ IV ceftriaxone 50-100 mg/kg/day เพื่อครอบคลุม S. pneumoniae ซึ่งเป็นสาเหตุที่พบบ่อยที่สุด\n\nข้อสังเกต: อาการปวดท้องด้านขวาในผู้ป่วยรายนี้เกิดจาก referred pain ของ right lower lobe pneumonia ที่ระคาย diaphragm ซึ่งเป็นอาการที่พบได้บ่อยและอาจทำให้วินิจฉัยผิดเป็น appendicitis",
+      "choices": [
+        {"label": "A", "text": "Oral amoxicillin", "is_correct": false, "explanation": "Oral amoxicillin เหมาะสำหรับ uncomplicated CAP ที่สามารถทานยาได้ ผู้ป่วยรายนี้มี complicated pneumonia (parapneumonic effusion, hypoxemia) ควรใช้ IV route"},
+        {"label": "B", "text": "IV ampicillin หรือ IV ceftriaxone", "is_correct": true, "explanation": "เป็น standard empirical IV antibiotics สำหรับ complicated CAP ในเด็กที่ hospitalized ครอบคลุม S. pneumoniae ที่เป็นสาเหตุบ่อยที่สุด ระยะเวลาให้ IV จนไข้ลงอย่างน้อย 48-72 ชั่วโมง แล้ว switch เป็น oral"},
+        {"label": "C", "text": "Oral azithromycin", "is_correct": false, "explanation": "Azithromycin ครอบคลุม atypical organisms (Mycoplasma, Chlamydia) แต่ไม่ใช่ first-line สำหรับ typical bacterial pneumonia ที่ complicated ในเด็ก S. pneumoniae บางสายพันธุ์ resistant ต่อ macrolides"},
+        {"label": "D", "text": "IV vancomycin", "is_correct": false, "explanation": "Vancomycin ใช้เมื่อสงสัย MRSA pneumonia หรือ severe necrotizing pneumonia ไม่ใช่ first-line empirical therapy สำหรับ CAP ใน community setting ที่ MRSA prevalence ต่ำ"},
+        {"label": "E", "text": "สังเกตอาการ ไม่ต้องให้ antibiotics", "is_correct": false, "explanation": "ผู้ป่วยมี clear bacterial pneumonia ที่ complicated ร่วมกับ respiratory distress ต้องรักษาด้วย IV antibiotics ทันที การไม่ให้ยาอาจทำให้เกิด empyema, lung abscess หรือ sepsis"}
+      ],
+      "key_takeaway": "Complicated bacterial CAP ในเด็ก (มี effusion/hypoxemia) ต้อง hospitalize และให้ IV antibiotics: ampicillin หรือ ceftriaxone"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกชายอายุ 6 เดือน คลอดครบกำหนด มาด้วยอาการ noisy breathing ตั้งแต่อายุ 1 เดือน เป็น biphasic stridor ที่ constant ไม่ดีขึ้นเมื่อเปลี่ยนท่า มีประวัติ intubation นาน 2 สัปดาห์หลังเกิดจาก neonatal sepsis PE: biphasic stridor, mild respiratory distress, O2sat 95% RA การวินิจฉัยที่เป็นไปได้มากที่สุดคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Laryngomalacia"},
+      {"label": "B", "text": "Acquired subglottic stenosis"},
+      {"label": "C", "text": "Tracheomalacia"},
+      {"label": "D", "text": "Vascular ring"},
+      {"label": "E", "text": "Vocal cord paralysis"}
+    ],
+    "correct_answer": "B",
+    "explanation": "ประวัติ prolonged intubation ร่วมกับ biphasic stridor ที่ constant ไม่ positional เข้าได้กับ acquired subglottic stenosis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Acquired subglottic stenosis",
+      "reason": "Subglottic stenosis เป็นการตีบของทางเดินหายใจบริเวณ subglottic region (ใต้ vocal cords) แบ่งเป็น congenital และ acquired โดย acquired type พบบ่อยกว่าและมักเกิดจาก prolonged endotracheal intubation\n\nEndotracheal tube ทำให้เกิด mucosal injury, inflammation, granulation tissue formation และ fibrosis ที่ subglottic area ซึ่งเป็นจุดที่แคบที่สุดของ pediatric airway (cricoid cartilage เป็น complete ring) ระยะเวลา intubation ที่เพิ่ม risk คือ > 7-10 วัน\n\nBiphasic stridor (ทั้ง inspiratory และ expiratory) บ่งชี้ว่า obstruction อยู่ที่ fixed point (subglottic/tracheal level) ต่างจาก laryngomalacia ที่มี inspiratory stridor อย่างเดียว Stridor ที่ไม่ดีขึ้นเมื่อเปลี่ยนท่า (non-positional) ช่วยแยกจาก laryngomalacia",
+      "choices": [
+        {"label": "A", "text": "Laryngomalacia", "is_correct": false, "explanation": "Laryngomalacia มี inspiratory stridor (ไม่ใช่ biphasic) ดีขึ้นเมื่อ prone position ไม่สัมพันธ์กับ prolonged intubation ผู้ป่วยรายนี้มี biphasic stridor ที่ non-positional จึงไม่ใช่ laryngomalacia"},
+        {"label": "B", "text": "Acquired subglottic stenosis", "is_correct": true, "explanation": "ประวัติ prolonged intubation (2 สัปดาห์) ร่วมกับ biphasic stridor ที่ constant, non-positional เป็น classic presentation ของ acquired subglottic stenosis วินิจฉัยยืนยันด้วย direct laryngoscopy/bronchoscopy"},
+        {"label": "C", "text": "Tracheomalacia", "is_correct": false, "explanation": "Tracheomalacia มี expiratory stridor หรือ wheezing (ไม่ใช่ biphasic stridor ที่ constant) เกิดจาก tracheal wall collapse ขณะหายใจออก อาจแย่ลงเมื่อ cough หรือ Valsalva"},
+        {"label": "D", "text": "Vascular ring", "is_correct": false, "explanation": "Vascular ring อาจทำให้ biphasic stridor ได้ แต่มักมี dysphagia ร่วมด้วย (esophageal compression) และไม่สัมพันธ์กับ prolonged intubation ผู้ป่วยรายนี้ไม่มี feeding difficulty"},
+        {"label": "E", "text": "Vocal cord paralysis", "is_correct": false, "explanation": "Vocal cord paralysis มี inspiratory stridor ร่วมกับ weak cry bilateral paralysis อาจเกิดหลัง cardiac surgery หรือ CNS pathology แต่ stridor มักเป็น inspiratory ไม่ใช่ biphasic"}
+      ],
+      "key_takeaway": "Acquired subglottic stenosis: prolonged intubation + biphasic non-positional stridor, subglottic area เป็นจุดที่แคบที่สุดของ pediatric airway"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกชายอายุ 4 เดือน มี BPD ใช้ home O2 เริ่มมีอาการไอ หายใจลำบาก มีเสียง expiratory wheeze RR 55/min O2sat 90% RA CXR ไม่มี new infiltrate สาเหตุที่พบบ่อยที่สุดของ BPD exacerbation ในทารกคืออะไร",
+    "choices": [
+      {"label": "A", "text": "Bacterial pneumonia"},
+      {"label": "B", "text": "Viral respiratory infection"},
+      {"label": "C", "text": "Gastroesophageal reflux"},
+      {"label": "D", "text": "Pulmonary hemorrhage"},
+      {"label": "E", "text": "Heart failure จาก pulmonary hypertension"}
+    ],
+    "correct_answer": "B",
+    "explanation": "Viral respiratory infection โดยเฉพาะ RSV เป็นสาเหตุที่พบบ่อยที่สุดของ BPD exacerbation ในทารก",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Viral respiratory infection",
+      "reason": "ทารกที่มี BPD มีปอดที่ compromised จาก arrested alveolar development, impaired mucociliary clearance และ airway hyperreactivity ทำให้ susceptible ต่อ respiratory infections มากเป็นพิเศษ\n\nViral respiratory infections โดยเฉพาะ RSV, rhinovirus, influenza, parainfluenza และ human metapneumovirus เป็นสาเหตุที่พบบ่อยที่สุดของ acute exacerbation ใน BPD ทำให้ airway inflammation เพิ่มขึ้น bronchospasm รุนแรงขึ้น และ oxygen requirement เพิ่มขึ้น\n\nRSV infection ใน BPD patients มี morbidity สูงมาก อัตรา ICU admission สูง และอาจทำให้เสียชีวิต จึงเป็นเหตุผลหลักที่แนะนำ palivizumab prophylaxis ในทารกกลุ่มนี้",
+      "choices": [
+        {"label": "A", "text": "Bacterial pneumonia", "is_correct": false, "explanation": "Bacterial pneumonia เป็นสาเหตุของ exacerbation ได้ แต่พบน้อยกว่า viral infection มักมี high fever, new infiltrate บน CXR ซึ่งผู้ป่วยรายนี้ไม่มี"},
+        {"label": "B", "text": "Viral respiratory infection", "is_correct": true, "explanation": "เป็นสาเหตุที่พบบ่อยที่สุดของ BPD exacerbation โดยเฉพาะ RSV, rhinovirus ทำให้ increased airway inflammation, bronchospasm และ worsening oxygenation จึงแนะนำ palivizumab prophylaxis"},
+        {"label": "C", "text": "Gastroesophageal reflux", "is_correct": false, "explanation": "GER พบบ่อยใน BPD patients และอาจทำให้ chronic aspiration แต่ไม่ใช่สาเหตุที่พบบ่อยที่สุดของ acute exacerbation มักทำให้เกิดอาการเรื้อรังมากกว่า"},
+        {"label": "D", "text": "Pulmonary hemorrhage", "is_correct": false, "explanation": "Pulmonary hemorrhage พบได้ใน severe BPD แต่ rare เป็น acute เมื่อเกิดจะมี hemoptysis หรือ blood-tinged secretions ไม่ใช่สาเหตุที่พบบ่อยของ exacerbation"},
+        {"label": "E", "text": "Heart failure จาก pulmonary hypertension", "is_correct": false, "explanation": "Pulmonary hypertension เป็น complication ของ severe BPD ที่ทำให้ cor pulmonale แต่เป็น chronic complication ไม่ใช่สาเหตุ acute exacerbation ที่พบบ่อยที่สุด"}
+      ],
+      "key_takeaway": "Viral respiratory infection (โดยเฉพาะ RSV) เป็นสาเหตุ #1 ของ BPD exacerbation จึงต้อง palivizumab prophylaxis"
+    },
+    "subject": "chest_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  }
+]

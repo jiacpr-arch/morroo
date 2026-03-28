@@ -1,0 +1,311 @@
+[
+  {
+    "scenario": "เด็กอายุ 1 วัน คลอดยากติดไหล่ มารดาสังเกตว่าแขนซ้ายเด็กไม่ขยับ PE: internal rotate right arm, extend & pronate forearm ด้านขวา การวินิจฉัยคือ?",
+    "choices": [
+      {"label": "A", "text": "fractured clavicle"},
+      {"label": "B", "text": "fractured humerus"},
+      {"label": "C", "text": "Erb paralysis"},
+      {"label": "D", "text": "Klumpke paralysis"},
+      {"label": "E", "text": "shoulder dislocation"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว มี.ค. 2555",
+    "status": "complete",
+    "ai_notes": "Erb paralysis (upper brachial plexus injury C5-C6) มาจากดึงแขนขณะคลอดติดไหล่ ทำให้แขนไม่สามารถ abduct และ externally rotate ได้ ซึ่งสอดคล้องกับอาการที่อธิบายไว้"
+  },
+  {
+    "scenario": "ทารกคลอดทางช่องคลอด แพทย์ไม่สามารถคลอดได้ สงสัยภาวะคลอดติดไหล่ การกระทาข้อใดอันตรายมากที่สุด?",
+    "choices": [
+      {"label": "A", "text": "ให้ผู้ช่วยกดหัวหน่าว"},
+      {"label": "B", "text": "ให้ผู้ช่วยกดยอดมดลูก"},
+      {"label": "C", "text": "ยกขาชิดอก"},
+      {"label": "D", "text": "เปิดแผลให้กว้าง ตัดฝีเย็บยาวมากขึ้น"},
+      {"label": "E", "text": "ค่อยๆ ติดศีรษะลงช้าๆ"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว มี.ค. 2555",
+    "status": "complete",
+    "ai_notes": "การกดยอดมดลูกเป็นการกระทาที่อันตรายที่สุด เพราะจะทำให้เกิด uterine rupture และ placental abruption ส่วน Zavanelli maneuver (ยกขาชิดอก/McRoberts position) เป็นขั้นแรกที่ปลอดภัยและมีประสิทธิภาพ"
+  },
+  {
+    "scenario": "แม่ตั้งครรภ์ 36 สัปดาห์ มี AFP level สูงขึ้น ควรนึกถึงความผิดปกติใด?",
+    "choices": [
+      {"label": "A", "text": "Myelomeningocele"},
+      {"label": "B", "text": "Holoprosencephaly"},
+      {"label": "C", "text": "Down's syndrome"},
+      {"label": "D", "text": "Turner's syndrome"},
+      {"label": "E", "text": "Congenital heart disease"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว มี.ค. 2555",
+    "status": "complete",
+    "ai_notes": "AFP สูงในระหว่างตั้งครรภ์สำหรับความผิดปกติที่เปิดเผย neural tube defect (เช่น myelomeningocele, anencephaly) ส่วน Down's syndrome มี AFP ต่ำ; เพิ่มตัวเลือก E เป็น distractor"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 20 ปี มีระดูครั้งสุดท้าย 2 สัปดาห์ก่อน มี sexual intercourse เมื่อคืนไม่ได้ป้องกัน มาปรึกษาแพทย์เนื่องจากไม่พร้อมตั้งครรภ์ ควรให้ยาใด?",
+    "choices": [
+      {"label": "A", "text": "PGE2 original suppository"},
+      {"label": "B", "text": "high dose levonorgestrel orally"},
+      {"label": "C", "text": "combined contraceptive pill"},
+      {"label": "D", "text": "uterine curettage"},
+      {"label": "E", "text": "mifepristone and misoprostol"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว มี.ค. 2555",
+    "status": "complete",
+    "ai_notes": "Emergency contraception ต้องให้ใน 72 ชั่วโมงหลัง intercourse ที่สูงสุด levonorgestrel (Plan B) เป็นตัวเลือกที่ดีที่สุด; เพิ่มตัวเลือก E เป็น distractor"
+  },
+  {
+    "scenario": "สตรีมีครรภ์ครั้งแรก (G1P0) FHR 148/min ทำ amniotomy ได้เลือดปน FHR ลดลงเหลือ 80/min การวินิจฉัยคือ?",
+    "choices": [
+      {"label": "A", "text": "placenta previa"},
+      {"label": "B", "text": "abruptio placenta"},
+      {"label": "C", "text": "rupture uterus"},
+      {"label": "D", "text": "ruptured vasa previa"},
+      {"label": "E", "text": "placental insufficiency"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว มี.ค. 2555",
+    "status": "complete",
+    "ai_notes": "Vasa previa เป็นเส้นเลือดจากพรembryonic tissue ที่ไม่ได้ปกคลุมด้วย Wharton's jelly ถ้า amniotomy จะเกิดการแตกและเลือดออก ส่งผลให้ FHR ลดลงอย่างรวดเร็วมาก"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 28 ปี GA 10 สัปดาห์ HBsAg positive ตัวเดียว ควรแนะนาผู้ป่วยอย่างไร?",
+    "choices": [
+      {"label": "A", "text": "termination of pregnancy"},
+      {"label": "B", "text": "Cesarean section at term"},
+      {"label": "C", "text": "avoid breast feeding"},
+      {"label": "D", "text": "give vaccine at birth to newborn"},
+      {"label": "E", "text": "give immunoglobulin at birth"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2011",
+    "status": "complete",
+    "ai_notes": "HBsAg positive ตัวเดียวหมายถึง carrier state ไม่จำเป็นต้องยุติครรภ์ ทารกต้องได้รับ hepatitis B vaccine และ HBIG ที่เกิด เพื่อป้องกันการติดเชื้อ"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 25 ปี G1 GA 20 สัปดาห์ ส่วนใหญ่ U/S พบ anencephaly การปฏิบัติใดเหมาะสมที่สุด?",
+    "choices": [
+      {"label": "A", "text": "ตรวจเลือดแม่ดู AFP"},
+      {"label": "B", "text": "ตรวจเลือดแม่ดู triple test"},
+      {"label": "C", "text": "ตรวจ MRI เพื่อยืนยันการวินิจฉัย"},
+      {"label": "D", "text": "ติดตาม U/S อย่างใกล้ชิด"},
+      {"label": "E", "text": "แนะนายุติการตั้งครรภ์"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2011",
+    "status": "complete",
+    "ai_notes": "Anencephaly ตรวจพบได้ชัดจาก U/S ที่ GA 20 weeks นี่คือความผิดปกติที่ไม่เข้ากับการมีชีวิต ควรแนะนายุติการตั้งครรภ์"
+  },
+  {
+    "scenario": "สตรีอายุ 40 ปี แต่งงานมา 10 ปี ไม่ได้ใช้วิธีคุมกาเนิด GA 22 สัปดาห์ ผลการตรวจ chromosome study 47,XY trisomy 21 ควรแนะนาอย่างไร?",
+    "choices": [
+      {"label": "A", "text": "บอกแม่ว่าเป็นทารกเพศชายและมีความเสี่ยงในการเกิดความผิดปกติ"},
+      {"label": "B", "text": "บอกแม่ว่าลูกมีความผิดปกติและการรักษาอาจจำกัด"},
+      {"label": "C", "text": "บอกแม่ว่าผิดปกติและวางแผนร่วมกันรักษา"},
+      {"label": "D", "text": "ตรวจ U/S หาความผิดปกติเพิ่มเติม"},
+      {"label": "E", "text": "แนะนายุติการตั้งครรภ์ทันที"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2011",
+    "status": "complete",
+    "ai_notes": "Down syndrome ไม่เป็นสาเหตุของการยุติการตั้งครรภ์โดยอัตโนมัติ ควรให้ counseling และตัดสินใจร่วมกับผู้ป่วยว่าจะทำอย่างไรต่อ"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 24 ปี GA 32 สัปดาห์ มีน้าไหลออกจากช่องคลอด 3 ชั่วโมงก่อนมาโรงพยาบาล ไม่เจ็บท้อง Speculum exam พบน้า 5 ml nitrazine test positive ควรให้ยาใด?",
+    "choices": [
+      {"label": "A", "text": "oxytocin iv"},
+      {"label": "B", "text": "terbutaline iv"},
+      {"label": "C", "text": "Cesarean section"},
+      {"label": "D", "text": "dexamethasone im"},
+      {"label": "E", "text": "prostaglandin"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2011",
+    "status": "complete",
+    "ai_notes": "PROM ที่ GA 32 weeks ควรให้ tocolytic (terbutaline) เพื่อหยุดการคลอด และ corticosteroid เพื่อบรรเทา RDS ของทารก ตัวเลือก D (dexamethasone) ควรให้ด้วย แต่ B เป็นขั้นแรก"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงไทยอายุ 24 ปี GA 3rd trimester เจาะถุงน้าคร้าได้เป็นน้าใส FHR 80-90 bpm PV ซ้ำพบ pulsatile mass การวินิจฉัยที่เหมาะสมคือ?",
+    "choices": [
+      {"label": "A", "text": "Vasa previa"},
+      {"label": "B", "text": "Prolapsed cord"},
+      {"label": "C", "text": "Placenta previa"},
+      {"label": "D", "text": "Umbilical cord knot"},
+      {"label": "E", "text": "Abruptio placenta"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2011",
+    "status": "complete",
+    "ai_notes": "Prolapsed cord ที่ PV ปรากฏเป็น pulsatile mass (การเต้นของเส้นเลือดในสายสะดือ) และมี FHR ต่ำ; เพิ่มตัวเลือก D และ E เป็น distractors"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 23 ปี GA 39 สัปดาห์ พบว่าลูกไม่ดิ้น 24 ชั่วโมง PE: Fundal Height > Umbilicus, FHR 140/min ข้อใดเป็นแนวทางการรักษาที่เหมาะที่สุด?",
+    "choices": [
+      {"label": "A", "text": "Reassure and follow up next day"},
+      {"label": "B", "text": "Biophysical profile"},
+      {"label": "C", "text": "Oxytocin stress test"},
+      {"label": "D", "text": "Induction of labor"},
+      {"label": "E", "text": "Cesarean section"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2011",
+    "status": "complete",
+    "ai_notes": "Decreased fetal movement at term ต้องประเมินสภาวะของทารกด้วย biophysical profile เพื่อดูความสัมพันธ์ระหว่าง fetal well-being ในขณะที่ FHR ยังปกติ"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 30 ปี ยังไม่มีบุตร มาตรวจร่างกายไม่มีเลือดออกผิดปกติ คลำได้ uterus ขนาด 12 weeks U/S: Uterus โต 11 cm shape globular multiple myoma ก้อนใหญ่สุด 2.2 cm anterior 2.3 cm posterior Management อย่างไร?",
+    "choices": [
+      {"label": "A", "text": "สังเกตอาการและติดตาม 3 เดือน"},
+      {"label": "B", "text": "GnRH releasing hormone agonist"},
+      {"label": "C", "text": "Uterine artery embolization"},
+      {"label": "D", "text": "Myomectomy"},
+      {"label": "E", "text": "Hysterectomy"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2011",
+    "status": "complete",
+    "ai_notes": "Fibroids ขนาดเล็กน้อยที่ไม่มีอาการและไม่ส่งผลต่อการตั้งครรภ์ ให้สังเกตอาการและติดตามด้วย U/S ไม่จำเป็นต้องผ่าตัดในตอนนี้"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 65 ปี หมดประจำเดือนมา 15 ปี ไม่ได้รับประทานฮอร์โมนทดแทน มารพ.ด้วย AUB 5 วัน ควร investigate อะไร?",
+    "choices": [
+      {"label": "A", "text": "Fractional curettage"},
+      {"label": "B", "text": "Endometrial biopsy"},
+      {"label": "C", "text": "Pap smear"},
+      {"label": "D", "text": "Transvaginal ultrasound"},
+      {"label": "E", "text": "Hysteroscopy"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2011",
+    "status": "complete",
+    "ai_notes": "Postmenopausal bleeding ต้องตรวจ endometrial biopsy เพื่อแยกแยะระหว่าง atrophy, hyperplasia, หรือ cancer; เพิ่มตัวเลือก C, D, E"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 25 ปี RLQ pain 2 วันก่อน LMP 7 วันที่แล้ว PE: tender at RLQ ไม่มี guarding PV: tender at uterus bulging at adnexa การวินิจฉัยที่ถูกต้องคือ?",
+    "choices": [
+      {"label": "A", "text": "Pelvic Inflammatory Disease (PID)"},
+      {"label": "B", "text": "Appendicitis"},
+      {"label": "C", "text": "Ruptured ovarian cyst"},
+      {"label": "D", "text": "Ectopic pregnancy"},
+      {"label": "E", "text": "Tubo-ovarian abscess"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2011",
+    "status": "complete",
+    "ai_notes": "PID มี RLQ pain, PV tenderness, uterine bulging from edema, adnexal tenderness หากมี guarding อาจเป็น appendicitis; เพิ่มตัวเลือก C, D"
+  },
+  {
+    "scenario": "หญิงอายุ 30 ปี แต่งงานมา 6 ปี ไม่เคยคุมกาเนิด ปัจจุบันไม่เคยตั้งครรภ์ และมีลูก มีอาการปวดประจำเดือนพอทนได้ไม่ต้องหยุดงาน ตรวจร่างกายพบ normal uterine mass cystic content at right adnexa 3x4 cm tender cul-de-sac rough การวินิจฉัยที่เหมาะสมคือ?",
+    "choices": [
+      {"label": "A", "text": "Endometriosis cyst"},
+      {"label": "B", "text": "Functional ovarian cyst"},
+      {"label": "C", "text": "Tubo-ovarian abscess (TOA)"},
+      {"label": "D", "text": "Appendiceal abscess"},
+      {"label": "E", "text": "Dermoid cyst"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2011",
+    "status": "complete",
+    "ai_notes": "ประวัติมีลูก + dysmenorrhea mild + cystic adnexal mass + rough cul-de-sac ตามลักษณะของ endometriosis; functional cyst ไม่มี dysmenorrhea ที่ชัด"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 25 ปี มีอาการคันตกขาว KOH test น่าจะเป็น yeast รักษาด้วยยาใด?",
+    "choices": [
+      {"label": "A", "text": "metronidazole oral"},
+      {"label": "B", "text": "norfloxacin oral"},
+      {"label": "C", "text": "metronidazole suppository"},
+      {"label": "D", "text": "clotrimazole"},
+      {"label": "E", "text": "fluconazole oral"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2011",
+    "status": "complete",
+    "ai_notes": "Candida vulvovaginitis ตรวจพบ yeast ด้วย KOH test ต้อง azole (clotrimazole, miconazole) ทั้ง topical และ oral; เพิ่มตัวเลือก E"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 20 ปี มีเลือดออกทางช่องคลอด BP 90/70 mmHg PR 120 PE: pale ให้ fluid ใดดี?",
+    "choices": [
+      {"label": "A", "text": "Normal saline (NSS)"},
+      {"label": "B", "text": "NSS/2 + NaHCO3"},
+      {"label": "C", "text": "5% Dextrose NSS"},
+      {"label": "D", "text": "5% Dextrose NSS/2"},
+      {"label": "E", "text": "HES starch"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "Hemorrhagic shock ต้องให้ normal saline หรือ Ringer's lactate เป็นอันดับแรก ไม่ควรให้ hypotonic solution หรือ dextrose solution ในช่วงแรก"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง GA 38 สัปดาห์ Urine protein 1+ pitting edema BP สูงไม่ชัก Management?",
+    "choices": [
+      {"label": "A", "text": "ให้ antihypertensive drug"},
+      {"label": "B", "text": "Expectant management"},
+      {"label": "C", "text": "Induction of labor"},
+      {"label": "D", "text": "Cesarean section"},
+      {"label": "E", "text": "ให้ diuretics"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2011 ชุด 2",
+    "status": "complete",
+    "ai_notes": "Preeclampsia ที่ไม่มี severe symptoms ที่ GA 38 weeks สามารถ expectant management ได้ ไม่จำเป็นให้ antihypertensive ถ้า BP ไม่สูงมาก"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง G2P1 GA 33 สัปดาห์ BP 150/100 mmHg Urine protein 2+ pitting edema 1+ Management?",
+    "choices": [
+      {"label": "A", "text": "Reassure and expectant management"},
+      {"label": "B", "text": "Antihypertensive drug"},
+      {"label": "C", "text": "Try vaginal delivery"},
+      {"label": "D", "text": "Cesarean section"},
+      {"label": "E", "text": "Diuretics"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2011 ชุด 2",
+    "status": "complete",
+    "ai_notes": "Preeclampsia ที่ GA 33 weeks มี BP สูง protein ≥2+ ต้องให้ antihypertensive และ monitoring อย่างใกล้ชิด อาจต้องพิจารณายุติการตั้งครรภ์"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง GA 38 สัปดาห์ นอนหงายทำ NST มี FHR 140/min จากนั้นมี contraction นาน 20 วินาที FHR ลดเหลือ 100/min Management?",
+    "choices": [
+      {"label": "A", "text": "ให้นอนตะแคงซ้าย"},
+      {"label": "B", "text": "ให้ oxygen"},
+      {"label": "C", "text": "ให้กินน้าหวาน"},
+      {"label": "D", "text": "ให้ IV fluid"},
+      {"label": "E", "text": "Cesarean section"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2011 ชุด 2",
+    "status": "complete",
+    "ai_notes": "Variable deceleration อาจเกิดจากการกดสายสะดือ ให้เปลี่ยนท่านอนเป็นตะแคงซ้ายเพื่อปรับ intrauterine pressure"
+  },
+  {
+    "scenario": "หญิงตั้งครรภ์ GA 36 สัปดาห์ มาตรวจครรภ์ขณะนอน ตรวจมีอาการหน้ามืด Management?",
+    "choices": [
+      {"label": "A", "text": "นอนตะแคงซ้าย"},
+      {"label": "B", "text": "ให้ oxygen"},
+      {"label": "C", "text": "ให้กินน้าหวาน"},
+      {"label": "D", "text": "ให้ IV fluid"},
+      {"label": "E", "text": "Trendelenburg position"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2011 ชุด 2",
+    "status": "complete",
+    "ai_notes": "Supine hypotensive syndrome ในครรภ์ หมู่ 3 เกิดจากการบีบอัด IVC ด้วยมดลูกที่โตขึ้น ให้นอนตะแคงซ้ายเพื่อเพิ่ม venous return"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 25 ปี GA 25 สัปดาห์ ปวดท้องด้านขวาและรอบๆ umbilicus 2-3 วัน วันที่ 3 ปวดท้องทางด้านขวา umbilicus มากขึ้น PE: Abdomen soft tender at right paraumbilicus ควร investigate อะไร?",
+    "choices": [
+      {"label": "A", "text": "CBC"},
+      {"label": "B", "text": "Ultrasound"},
+      {"label": "C", "text": "Acute abdominal series"},
+      {"label": "D", "text": "CT scan"},
+      {"label": "E", "text": "Diagnostic laparoscopy"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2011 ชุด 2",
+    "status": "complete",
+    "ai_notes": "ตรวจอาคารท้องในครรภ์ ต้อง ultrasound เป็นอันดับแรกเพื่อแยกแยะระหว่าง appendicitis, ruptured cyst, obstetric causes; เพิ่มตัวเลือก E"
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 25 ปี มีครรภ์แรก GA 38 สัปดาห์ มารพ.ด้วยมีมูกเลือดออกทางช่องคลอด 1 วันก่อนมารพ. มีมดลูกบีบตัวทุกๆ 10 นาที PV: os 2 cm effacement 25% drip Syntocinon ไป 6 ชั่วโมง ต่อมา os 10 cm LOA position station 0 caput 2+ molding 2+ เบ่งคลอดมา 2 ชั่วโมง เด็กยังไม่ออ

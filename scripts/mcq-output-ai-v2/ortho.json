@@ -1,0 +1,3933 @@
+[
+  {
+    "scenario": "Which is appropriate physical exam in dashboard injury?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "McMurray's test"
+      },
+      {
+        "label": "B",
+        "text": "Pivot shift test"
+      },
+      {
+        "label": "C",
+        "text": "Patellar gliding test"
+      },
+      {
+        "label": "D",
+        "text": "Anterior drawer test"
+      },
+      {
+        "label": "E",
+        "text": "Look for tibial sagging"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Dashboard injury causes posterior tibial sagging due to posterior capsule disruption and indicates posterior knee dislocation. Tibial sagging sign is more sensitive than other tests for this mechanism.",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 75-year-old patient with chronic neck pain for 3 years. Pain radiates from neck to right index and middle finger. PE: decrease pinprick at 1st and 2nd fingers, decrease forearm and wrist extension power. Triceps areflexia, other WNL. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ulnar nerve neuropathy"
+      },
+      {
+        "label": "B",
+        "text": "Radial nerve neuropathy"
+      },
+      {
+        "label": "C",
+        "text": "C7 radiculopathy"
+      },
+      {
+        "label": "D",
+        "text": "Median nerve neuropathy"
+      },
+      {
+        "label": "E",
+        "text": "Brachial plexopathy"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "C6 radiculopathy presents with thumb and index finger involvement. However, triceps areflexia (C7 reflex) and wrist extension weakness (C7 motor) with index/middle finger (C6-C7 dermatome) pain suggests C6-C7 level, likely C7 involvement. The answer should be C7 radiculopathy as triceps areflexia is the key finding.",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "An 18-year-old man had motorcycle accident. PE: PR 80, BP 120/80, hip in internal rotation, flexion, neovascular intact. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Fracture neck of femur"
+      },
+      {
+        "label": "B",
+        "text": "Intertrochanteric fracture"
+      },
+      {
+        "label": "C",
+        "text": "Acetabular fracture"
+      },
+      {
+        "label": "D",
+        "text": "Anterior hip dislocation"
+      },
+      {
+        "label": "E",
+        "text": "Posterior hip dislocation"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Posterior hip dislocation classically presents with hip flexion, internal rotation, and adduction (classic position). Anterior dislocation presents with external rotation and flexion.",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 30-year-old man has motorcycle accident with 2 cm laceration and contaminated wound with muscle exposed on left leg. X-ray shows segmental tibia and fibula fracture. What is the most proper management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "IV cloxacillin"
+      },
+      {
+        "label": "B",
+        "text": "Explore wound"
+      },
+      {
+        "label": "C",
+        "text": "Saline irrigation with antibiotics"
+      },
+      {
+        "label": "D",
+        "text": "Plate and screw fixation"
+      },
+      {
+        "label": "E",
+        "text": "Delayed primary closure"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "This is a Grade III open fracture (>1 cm laceration with muscle exposed and contamination). Management priority is wound exploration for debridement before other interventions. This takes precedence over antibiotics alone.",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 65-year-old woman presents with foot pain especially during push-off phase of walking. X-ray shows first metatarsophalangeal joint deformity. What is the appropriate surgical management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bunionectomy only"
+      },
+      {
+        "label": "B",
+        "text": "Bunionectomy with soft tissue procedure (chevron procedure)"
+      },
+      {
+        "label": "C",
+        "text": "Arthrotomy first tarsometatarsal joint"
+      },
+      {
+        "label": "D",
+        "text": "Arthrotomy first metatarsophalangeal joint"
+      },
+      {
+        "label": "E",
+        "text": "First ray osteotomy with fusion"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Symptomatic hallux limitus (limited first MTP joint motion) with functional pain during push-off requires both bunionectomy and soft tissue procedures (chevron or similar) to address both bone and soft tissue deformity.",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 20-year-old female ballet dancer presents with posterior heel pain for 7 months following en-pointe dancing. Conservative treatment with medication and activity limitation for 3 months has not improved symptoms. What is the next management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Os trigonum excision"
+      },
+      {
+        "label": "B",
+        "text": "Achilles tendon reconstruction"
+      },
+      {
+        "label": "C",
+        "text": "Debridement and removal of calcification of Achilles tendon"
+      },
+      {
+        "label": "D",
+        "text": "Extracorporeal shock wave therapy"
+      },
+      {
+        "label": "E",
+        "text": "Extended conservative management with physical therapy"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "En-pointe dancers with posterior heel pain that fails conservative treatment typically have os trigonum impingement syndrome. Surgical excision of the os trigonum is the definitive treatment. Added option D and E as plausible distractors.",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "An 18-month-old boy diagnosed with supracondylar fracture. After closed reduction and casting 8 hours, he cried and had pain at the casted arm. What is the appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Elevate limb"
+      },
+      {
+        "label": "B",
+        "text": "Splitting cast and padding"
+      },
+      {
+        "label": "C",
+        "text": "Fasciotomy"
+      },
+      {
+        "label": "D",
+        "text": "Remove cast and re-reduce"
+      },
+      {
+        "label": "E",
+        "text": "Monitor compartment pressure closely"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Pain after casting in first 24-48 hours may indicate compartment syndrome development. First step is to split the cast and add padding to relieve pressure. If pain continues or compartment pressure is elevated, fasciotomy is indicated.",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 70-year-old woman presents with back and knee pain, joint stiffness and pain most occurring in the morning that improves in 15 minutes and aggravates again in the evening. PE: swelling and mild tenderness at 2 to 5 distal interphalangeal joints, full range of motion, no pain, crepitation on right knee movement. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Osteoarthritis"
+      },
+      {
+        "label": "B",
+        "text": "Psoriasis arthritis"
+      },
+      {
+        "label": "C",
+        "text": "Rheumatoid arthritis"
+      },
+      {
+        "label": "D",
+        "text": "Ankylosing spondylitis"
+      },
+      {
+        "label": "E",
+        "text": "Osteoporosis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Morning stiffness lasting <15-30 minutes suggests osteoarthritis rather than rheumatoid arthritis (which lasts >1 hour). DIP joint involvement, crepitation, and improvement with activity are classic OA findings.",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient presents with numbness of the index finger and decreased function of the thumb. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Carpal tunnel syndrome"
+      },
+      {
+        "label": "B",
+        "text": "Anterior interosseous nerve syndrome"
+      },
+      {
+        "label": "C",
+        "text": "Recurrent branch compression"
+      },
+      {
+        "label": "D",
+        "text": "Pronator syndrome"
+      },
+      {
+        "label": "E",
+        "text": "Radial nerve compression"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Index finger numbness with thumb dysfunction (opposition/flexion) indicates median nerve compression at the carpal tunnel. This is the most common presentation. Added options B-E as plausible nerve compression distractors.",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient presents with pain on the radial side of the wrist immediately after delivering her child. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Wrist joint arthritis"
+      },
+      {
+        "label": "B",
+        "text": "Median nerve entrapment"
+      },
+      {
+        "label": "C",
+        "text": "DeQuervain tenosynovitis"
+      },
+      {
+        "label": "D",
+        "text": "Scaphoid fracture"
+      },
+      {
+        "label": "E",
+        "text": "First dorsal compartment syndrome"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Postpartum radial-sided wrist pain is classic for DeQuervain tenosynovitis (inflammation of abductor pollicis longus and extensor pollicis brevis tendons). Positive Finkelstein test would confirm. Common in postpartum period due to repetitive hand use and hormonal factors.",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "Which are the risk factors of developing osteoporosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Asian ethnicity, overexercise, obesity"
+      },
+      {
+        "label": "B",
+        "text": "European ethnicity, overexercise, obesity"
+      },
+      {
+        "label": "C",
+        "text": "African ethnicity, under exercise, obesity"
+      },
+      {
+        "label": "D",
+        "text": "African ethnicity, overexercise, underweight"
+      },
+      {
+        "label": "E",
+        "text": "European ethnicity, under exercise, underweight"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Risk factors for osteoporosis include: European/Caucasian ethnicity (higher risk than African), sedentary lifestyle (under exercise), and low body weight (underweight). Obesity is protective. Over-exercise can prevent bone loss.",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 2-year-old girl has delayed primary walking. At birth she had a skin defect at lower back with surgical closure at 11 months. She still cannot sit or crawl. Physical exam shows bilateral hip abduction and flexion contractures, bilateral clubfoot. What is the proper investigation?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "MRI"
+      },
+      {
+        "label": "B",
+        "text": "Lumbosacral myelography"
+      },
+      {
+        "label": "C",
+        "text": "Lumbosacral spine X-ray"
+      },
+      {
+        "label": "D",
+        "text": "Hip X-ray"
+      },
+      {
+        "label": "E",
+        "text": "Foot X-ray"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "History of lower back skin defect at birth suggests spina bifida. The neurological deficits (unable to walk, hip contractures, clubfoot) indicate cord tethering or significant spinal dysraphism. MRI is the gold standard for evaluating spinal cord abnormalities and tethering.",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient presents with comminuted fracture of right tibia and fibula. Physical exam shows pale right leg and absent dorsalis pedis pulse. What is the management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Venous angiography"
+      },
+      {
+        "label": "B",
+        "text": "Explore anterior tibial artery"
+      },
+      {
+        "label": "C",
+        "text": "Explore posterior tibial artery"
+      },
+      {
+        "label": "D",
+        "text": "Longitudinal traction"
+      },
+      {
+        "label": "E",
+        "text": "Immediate amputation"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Absent dorsalis pedis pulse indicates anterior tibial artery injury (the artery giving dorsalis pedis pulse). The pale, cold extremity suggests vascular compromise. Anterior tibial artery runs in anterior compartment and is most commonly injured in tibia/fibula fractures. Exploration and repair is indicated.",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 15-year-old boy presents after trauma with a 15 cm laceration with soil contamination, cannot palpate distal pulse, cold extremities, and comminuted fracture of right distal femur. What is the Gustilo-Anderson grade and appropriate antibiotics?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Grade IIIA with cephalosporin"
+      },
+      {
+        "label": "B",
+        "text": "Grade IIIB with cephalosporin and aminoglycoside"
+      },
+      {
+        "label": "C",
+        "text": "Grade IIIA with cephalosporin and aminoglycoside"
+      },
+      {
+        "label": "D",
+        "text": "Grade IIIC with cephalosporin, aminoglycoside, and penicillin"
+      },
+      {
+        "label": "E",
+        "text": "Grade IIIB with cephalosporin, aminoglycoside, and penicillin"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "This is Grade IIIC: >10 cm laceration, comminuted fracture, vascular injury (absent distal pulse, cold extremity), soil contamination. Grade IIIC requires triple antibiotic coverage: cephalosporin + aminoglycoside + penicillin (or high-dose clindamycin for anaerobes).",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient presents with numbness at the lateral malleolus area. Which test should be performed to determine the nerve root involvement?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Knee jerk"
+      },
+      {
+        "label": "B",
+        "text": "Ankle jerk"
+      },
+      {
+        "label": "C",
+        "text": "Ankle dorsiflexion"
+      },
+      {
+        "label": "D",
+        "text": "Great toe dorsiflexion"
+      },
+      {
+        "label": "E",
+        "text": "Plantar flexion"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Lateral malleolus area is supplied by L5 nerve root (superficial peroneal nerve). L5 motor function is tested by great toe dorsiflexion (extensor hallucis longus). L5 reflex is assessed clinically, though no specific reflex exists; ankle jerk tests S1.",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A child fell and used hand to break fall. On elbow exam, there is lateral stepping with displacement >2mm. What is the diagnosis and management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Supracondylar fracture, closed reduction"
+      },
+      {
+        "label": "B",
+        "text": "Lateral epicondylar fracture, closed reduction"
+      },
+      {
+        "label": "C",
+        "text": "Lateral epicondylar fracture, open reduction with pin fixation"
+      },
+      {
+        "label": "D",
+        "text": "Lateral epicondylar fracture, open reduction with plate and screw"
+      },
+      {
+        "label": "E",
+        "text": "Supracondylar fracture, open reduction with plate and screw"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Lateral epicondylar fracture with displacement >2mm requires open reduction. The 'lateral stepping' refers to lateral displacement at the fracture site. >2mm displacement (some sources say >4mm) in a child requires open reduction and internal fixation, typically with plate and screw or pin fixation.",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "An image shows finger deformity with PIP joint flexion and DIP joint extension. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Swan neck deformity"
+      },
+      {
+        "label": "B",
+        "text": "Boutonniere deformity"
+      },
+      {
+        "label": "C",
+        "text": "Carpal tunnel syndrome"
+      },
+      {
+        "label": "D",
+        "text": "Radial tunnel syndrome"
+      },
+      {
+        "label": "E",
+        "text": "Cubital tunnel syndrome"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Boutonniere deformity shows PIP flexion and DIP extension. Swan neck shows PIP hyperextension and DIP flexion (opposite pattern). Boutonniere results from central slip disruption allowing lateral bands to slip volar.",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "An X-ray shows the head of humerus is dislocated. Which is the least traumatic procedure for reduction?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Milch technique"
+      },
+      {
+        "label": "B",
+        "text": "Stimson technique"
+      },
+      {
+        "label": "C",
+        "text": "Hippocrate technique"
+      },
+      {
+        "label": "D",
+        "text": "Kocher technique"
+      },
+      {
+        "label": "E",
+        "text": "External rotation technique"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Stimson technique (prone hanging arm) is considered least traumatic as it uses gravity and patient's own weight for reduction without aggressive manipulation. Kocher is more traumatic with multiple steps. Milch uses gentle traction and external rotation. Stimson is gentlest overall.",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient has a fracture of the distal 1/3 of humerus. Which test should be performed to assess nerve function?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Finger flexion (DIP)"
+      },
+      {
+        "label": "B",
+        "text": "Finger extension"
+      },
+      {
+        "label": "C",
+        "text": "Thumb extension"
+      },
+      {
+        "label": "D",
+        "text": "Wrist extension"
+      },
+      {
+        "label": "E",
+        "text": "Elbow flexion"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Distal humerus fractures risk posterior interosseous nerve (PIN) injury. PIN innervates extensor muscles including extensor pollicis longus (thumb extension at IP joint). Thumb extension is the key test for PIN integrity. Finger extension (more proximal) tests posterior interosseous nerve more proximally.",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient presents with low back pain radiating to buttock and thigh to foot with positive straight leg raise test. What is the most appropriate next investigation?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "MRI lumbosacral spine"
+      },
+      {
+        "label": "B",
+        "text": "X-ray lumbosacral spine"
+      },
+      {
+        "label": "C",
+        "text": "Back exercise"
+      },
+      {
+        "label": "D",
+        "text": "CT lumbosacral spine"
+      },
+      {
+        "label": "E",
+        "text": "EMG/NCS"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "status": "complete",
+    "ai_notes": "Positive SLRT with radiculopathy symptoms (pain radiating to lower extremity) suggests nerve root compression. MRI is the imaging modality of choice for detailed visualization of disc hernia, spinal cord compression, and nerve root involvement.",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 50-year-old woman presents with shoulder pain. She has no history of trauma. After pain subsides, she complains that her shoulder is stiff and she cannot move her hand over the head. What is the proper management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Exercise range of motion"
+      },
+      {
+        "label": "B",
+        "text": "Anti-inflammatory drugs"
+      },
+      {
+        "label": "C",
+        "text": "Intra-articular steroid injection"
+      },
+      {
+        "label": "D",
+        "text": "Rest and immobilization"
+      },
+      {
+        "label": "E",
+        "text": "Surgical release"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2014",
+    "status": "complete",
+    "ai_notes": "This clinical presentation is classic for adhesive capsulitis (frozen shoulder). After the pain phase subsides, aggressive rehabilitation and intra-articular steroid injection are recommended. Immobilization would worsen stiffness. Early range of motion exercises combined with steroid injection is the standard approach.",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 22-year-old female with history of SLE on prolonged steroid therapy presents with pelvic pain during walking. What is the most appropriate investigation?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Pelvic X-ray AP view"
+      },
+      {
+        "label": "B",
+        "text": "MRI pelvis"
+      },
+      {
+        "label": "C",
+        "text": "CT pelvis"
+      },
+      {
+        "label": "D",
+        "text": "Bone scan"
+      },
+      {
+        "label": "E",
+        "text": "Physical examination only"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "status": "complete",
+    "ai_notes": "Young female with SLE on prolonged steroids presenting with pelvic pain during walking raises concern for avascular necrosis of femoral head. MRI is the most sensitive imaging for early detection of AVN. The patient likely has femoral head AVN secondary to chronic steroid use.",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A male patient was struck by a car with leg swelling and pain on passive motion. X-ray shows non-displaced tibia fracture. Physical exam shows intact dorsalis pedis pulse. What should be done next?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Doppler ultrasound"
+      },
+      {
+        "label": "B",
+        "text": "Monitor compartment pressure"
+      },
+      {
+        "label": "C",
+        "text": "Casting"
+      },
+      {
+        "label": "D",
+        "text": "Immediate open reduction and internal fixation"
+      },
+      {
+        "label": "E",
+        "text": "Angiogram"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "status": "complete",
+    "ai_notes": "Swelling with pain on passive motion in the setting of tibia fracture raises concern for compartment syndrome. Although dorsalis pedis pulse is intact, compartment syndrome can develop with intact pulses. Compartment pressure monitoring is indicated; if elevated, fasciotomy is needed.",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 50-year-old woman presents with plantar heel pain for 5 months. Pain is worse in the morning after a couple of steps of walking. Pain is aggravated by prolonged walking and standing. Physical exam shows tenderness at the medial calcaneal tubercle. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Plantar fasciitis"
+      },
+      {
+        "label": "B",
+        "text": "Achilles tendinitis"
+      },
+      {
+        "label": "C",
+        "text": "Tarsal tunnel syndrome"
+      },
+      {
+        "label": "D",
+        "text": "Heel spur syndrome"
+      },
+      {
+        "label": "E",
+        "text": "Calcaneal stress fracture"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "status": "complete",
+    "ai_notes": "Classic presentation of plantar fasciitis: morning pain with first steps (worse after rest), pain with prolonged standing/walking, tenderness at medial calcaneal tubercle (fascia origin). Heel spur is radiographic finding, not diagnosis. Achilles tendinitis causes posterior heel pain.",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 22-year-old male presents after traffic accident with hip pain. Physical exam shows flexion, abduction, and internal rotation of the right hip. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Pelvic fracture"
+      },
+      {
+        "label": "B",
+        "text": "Acetabular fracture"
+      },
+      {
+        "label": "C",
+        "text": "Fracture of femoral neck"
+      },
+      {
+        "label": "D",
+        "text": "Intertrochanteric fracture"
+      },
+      {
+        "label": "E",
+        "text": "Posterior hip dislocation"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2008",
+    "status": "complete",
+    "ai_notes": "Posterior hip dislocation presents with classic triad: flexion, adduction, and internal rotation. The flexion with internal rotation (not external rotation) is key differentiator from anterior dislocation.",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 10-year-old boy presents after motorcycle accident with right elbow pain and swelling. Physical exam shows swelling at the right elbow with loss of the triangular landmark at the elbow. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Elbow dislocation"
+      },
+      {
+        "label": "B",
+        "text": "Displaced olecranon fracture"
+      },
+      {
+        "label": "C",
+        "text": "Displaced supracondylar fracture"
+      },
+      {
+        "label": "D",
+        "text": "Lateral epicondylar fracture"
+      },
+      {
+        "label": "E",
+        "text": "Monteggia fracture"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008",
+    "status": "complete",
+    "ai_notes": "Loss of triangular landmark (formed by lateral epicondyle, medial epicondyle, and olecranon) indicates disruption of normal elbow anatomy. In posterior elbow dislocation, the olecranon moves posteriorly and the triangle landmark is lost. This is the key finding for elbow dislocation.",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงปวดข้อ 2-3 วัน Joint aspirate: Cloudy, WBC 30,000 cells มี Rhomboid shape crystal ให้ยาอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Allopurinol"
+      },
+      {
+        "label": "B",
+        "text": "Colchicine"
+      },
+      {
+        "label": "C",
+        "text": "Ceftriazone"
+      },
+      {
+        "label": "D",
+        "text": "Diclofenac"
+      },
+      {
+        "label": "E",
+        "text": "Indomethacin"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว",
+    "status": "complete",
+    "ai_notes": "Rhomboid shape crystal = Calcium Pyrophosphate Deposition (CPPD/Pseudogout) ต้องให้ Colchicine ในระยะเฉียบพลัน",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 40 ปี มีอาการปวดข้อเท้า มักเป็นตอนเช้า ต้องรอจนฟ้าสางแดดส่องจึงหาย PE symmetrical DIP joint ปวด จงวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "SLE"
+      },
+      {
+        "label": "B",
+        "text": "Rheumatoid Arthritis"
+      },
+      {
+        "label": "C",
+        "text": "Osteoarthritis"
+      },
+      {
+        "label": "D",
+        "text": "Tuberculosis"
+      },
+      {
+        "label": "E",
+        "text": "Reactive arthritis"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว",
+    "status": "complete",
+    "ai_notes": "DIP joint involvement + morning stiffness + symmetrical = Rheumatoid Arthritis (OA ปกติไม่ DIP, SLE ผ้าคล้อง, Reactive arthritis ไม่ DIP)",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยมีประวัติ RA ที่ข้อมือและนิ้ว มา 10 ปี on ยาคุมอาการได้ดี ต่อมาปวดเข่าซ้ายมาก ขยับแล้วปวด มีบวม แดง ร้อน PE: Lt. knee tender on motion, swelling, redness, no fever v/s อื่นปกติ ปวดบวมที่ DIP, rt wrist; Lt Wrist swelling; not tender, no inflammation ที่ข้อนิ้ว การตรวจเพิ่มเติมที่เหมาะสมคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Joint aspiration"
+      },
+      {
+        "label": "B",
+        "text": "X-ray knee"
+      },
+      {
+        "label": "C",
+        "text": "MRI knee"
+      },
+      {
+        "label": "D",
+        "text": "Complete blood count"
+      },
+      {
+        "label": "E",
+        "text": "ESR and CRP"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว",
+    "status": "complete",
+    "ai_notes": "ลักษณะที่เข่าโดดเด่น (แดง ร้อน บวม) ขณะที่ข้ออื่นไม่มีอาการอักเสบ ดูเหมือนมี flare หรือ superimposed infection ต้อง joint aspiration เพื่อ differentiate RA flare จาก septic arthritis",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 24 ปี on prednisolone 20 mg OD เพื่อรักษาอาการปวดข้อนาน 1 ปี จะพบความผิดปกติใดในผู้ป่วยรายนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Hypertension"
+      },
+      {
+        "label": "B",
+        "text": "Hypothyroid"
+      },
+      {
+        "label": "C",
+        "text": "Increased bone mass"
+      },
+      {
+        "label": "D",
+        "text": "Diabetes insipidus"
+      },
+      {
+        "label": "E",
+        "text": "Adipose tissue wasting"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว",
+    "status": "complete",
+    "ai_notes": "Prednisolone 20 mg OD เป็นเบาะแส 1 ปี → ข้อเสีย: hypertension (sodium retention), hyperglycemia, osteoporosis (ไม่ increased), adipose tissue ฝาง cushingoid (ไม่ wasting), hypothyroid ไม่สัมพันธ์",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 65 ปี U/D OA ต่อมามีอาการกดเจ็บบริเวณเข่าซ้าย มีปุ่มขึ้นมาบริเวณด้านหลังข้อพับ มีอาการตึงเข่า หลังตื่นนอน ตรวจร่างกายพบ mild swelling no redness no tender at medial aspect below patella 2 cm จงวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Rheumatoid Arthritis"
+      },
+      {
+        "label": "B",
+        "text": "Anserine bursitis"
+      },
+      {
+        "label": "C",
+        "text": "Prepatellar bursitis"
+      },
+      {
+        "label": "D",
+        "text": "Patellar tendinitis"
+      },
+      {
+        "label": "E",
+        "text": "Flare of OA"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว",
+    "status": "complete",
+    "ai_notes": "ตำแหน่งกดเจ็บ medial aspect below patella 2 cm = anserine bursa (รวม sartorius, gracilis, semitendinosis tendons) No redness, no fever ตัดสิน infection/septic ออก",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงปวดแขนและไหล่ขวา 3 วัน เป็นมากเวลายกมือหวีผม ตรวจร่างกายพบจุดกดเจ็บที่ Tip of rt shoulder เจ็บมากขึ้นเวลา abduction จงวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Supraspinatus tendinitis"
+      },
+      {
+        "label": "B",
+        "text": "Bicipital tendinitis"
+      },
+      {
+        "label": "C",
+        "text": "Infraspinatus tendinitis"
+      },
+      {
+        "label": "D",
+        "text": "Subscapularis tendinitis"
+      },
+      {
+        "label": "E",
+        "text": "Subacromial bursitis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว",
+    "status": "complete",
+    "ai_notes": "Pain on abduction + tenderness at tip of shoulder + lifting arm to comb hair = supraspinatus tendinitis (positive Neer test, painful arc 60-120°)",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ชายประสบอุบัติเหตุ ได้ NSAIDs แล้วอาการดีขึ้น แม่กังวลพามาพบแพทย์ PE: Loss of lumbar lordosis การจัดการเพิ่มเติมควรเป็นอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้ NSAIDs ต่อ"
+      },
+      {
+        "label": "B",
+        "text": "ให้ NSAIDs เฉพาะตอนปวด"
+      },
+      {
+        "label": "C",
+        "text": "Rehabilitation exercise ที่บ้าน"
+      },
+      {
+        "label": "D",
+        "text": "Bed rest 1-2 สัปดาห์"
+      },
+      {
+        "label": "E",
+        "text": "MRI lumbar spine"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว",
+    "status": "complete",
+    "ai_notes": "Loss of lumbar lordosis ขณะอาการเฉียบพลันดีขึ้นแล้ว ต้องฟื้นฟูด้วย exercise/physical therapy เพื่อคืนสภาพปกติ",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงไทย 50 ปี ล้มศอกยันพื้น PE: ข้อมือขวาบวมผิดรูป จงให้การวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Colles' fracture"
+      },
+      {
+        "label": "B",
+        "text": "Greenstick fracture"
+      },
+      {
+        "label": "C",
+        "text": "Fracture of both bones forearm"
+      },
+      {
+        "label": "D",
+        "text": "Wrist dislocation"
+      },
+      {
+        "label": "E",
+        "text": "Supracondylar fracture"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว",
+    "status": "complete",
+    "ai_notes": "Fall on elbow (actually fall on outstretched hand - FOOSH) + wrist swelling deformity = Colles' fracture (distal radius fracture, dorsal angulation)",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยมีอาการปวดคอร้าวลงแขน มีกล้ามเนื้อมืออ่อนแรง จึงตัดสินใจทา cervical traction 30 นาที/วัน ต่อมาอาการไม่ดีขึ้น จะทาอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้ยาลดปวด"
+      },
+      {
+        "label": "B",
+        "text": "เพิ่มน้าหนัก traction"
+      },
+      {
+        "label": "C",
+        "text": "ทา MRI"
+      },
+      {
+        "label": "D",
+        "text": "ลดระยะเวลา traction เหลือ 15 นาที"
+      },
+      {
+        "label": "E",
+        "text": "หยุด traction และปรึกษา neurosurgeon"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว มี.ค. 2555",
+    "status": "complete",
+    "ai_notes": "Cervical radiculopathy with weakness ที่ไม่ตอบสนองต่อ traction ต้องทา imaging (MRI) เพื่อ differentiate cord compression/myelopathy จาก simple radiculopathy",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ชาย 60 ปี ปวดหลังบริเวณแอวขวา แถว TL junction มีกล้ามเนื้อแข็งเกร็ง ตรวจร่างกายพบ muscle strain ที่เอวขวา จะส่งตรวจเพิ่มเติมอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "CBC"
+      },
+      {
+        "label": "B",
+        "text": "ESR"
+      },
+      {
+        "label": "C",
+        "text": "CPK"
+      },
+      {
+        "label": "D",
+        "text": "Plain film TL spine"
+      },
+      {
+        "label": "E",
+        "text": "CT abdomen and pelvis"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว มี.ค. 2555",
+    "status": "complete",
+    "ai_notes": "อายุ 60 ปี + muscle strain ที่ TL junction ต้องเอก X-ray เพื่อ rule out fracture/pathology ที่ TL spine ก่อน ESR/CPK ซึ่งเป็น non-specific",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิง 70 ปี ลื่นล้มในห้องน้า 1 สัปดาห์ที่แล้ว เจ็บที่ขาหนีบขวา เจ็บมาก เดินไม่ได้ PE: External rotation and shortening ของขาขวา จงให้การวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ischial bursitis"
+      },
+      {
+        "label": "B",
+        "text": "Trochanteric bursitis"
+      },
+      {
+        "label": "C",
+        "text": "Osteoarthritis"
+      },
+      {
+        "label": "D",
+        "text": "Avascular necrosis"
+      },
+      {
+        "label": "E",
+        "text": "Fracture neck of femur"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว มี.ค. 2555",
+    "status": "complete",
+    "ai_notes": "Fall + severe hip pain + external rotation and shortening = Fracture neck of femur (classic sign ที่เก่า)",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง collapse L-S spine จึงไปผ่าตัด จากนั้น 12 ชั่วโมง มีอาการเหนื่อยหอบ spO2 88% CXR: clear, ECG: sinus tachycardia จงวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Pulmonary embolism"
+      },
+      {
+        "label": "B",
+        "text": "Fat embolism"
+      },
+      {
+        "label": "C",
+        "text": "Acute heart failure"
+      },
+      {
+        "label": "D",
+        "text": "Pneumonia"
+      },
+      {
+        "label": "E",
+        "text": "Anaphylaxis"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว มี.ค. 2555",
+    "status": "complete",
+    "ai_notes": "Orthopedic surgery (spinal collapse/fracture repair) + 12 hr postop + hypoxia + clear CXR + tachycardia = Fat embolism (CXR ปกติในช่วงแรก, petechial rash may appear)",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "เด็ก 5 ปี fracture humerus ทา skin traction 2 วัน ต่อมามีปวดแขนด้านล่างมากขึ้น ปวดมากตอนกางนิ้วและกระดกนิ้วขึ้น จะจัดการอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เพิ่มน้าหนัก traction"
+      },
+      {
+        "label": "B",
+        "text": "ให้ยาแก้ปวด + observe"
+      },
+      {
+        "label": "C",
+        "text": "Fasciotomy"
+      },
+      {
+        "label": "D",
+        "text": "Closed reduction"
+      },
+      {
+        "label": "E",
+        "text": "Open reduction and internal fixation"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว มี.ค. 2555",
+    "status": "complete",
+    "ai_notes": "Increased pain + pain with finger extension (active motion) = compartment syndrome sign ต้อง fasciotomy เพื่อ release pressure ก่อนเกิด necrosis",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "After motorcycle accident, a young male aged 35 years presented with right groin pain. His film reveals 1 mm dislocation above right acetabulum. What is the proper management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Walk with crutch"
+      },
+      {
+        "label": "B",
+        "text": "Bed rest 6 weeks"
+      },
+      {
+        "label": "C",
+        "text": "Traction 6 hours"
+      },
+      {
+        "label": "D",
+        "text": "Open reduction with plate fixation"
+      },
+      {
+        "label": "E",
+        "text": "Closed reduction with percutaneous screw"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "1 mm dislocation (minimal displacement) = stable, can do closed reduction with percutaneous screw fixation to prevent late displacement",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "Which one is not a clinical sign of acute compartment syndrome?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Paresthesia of distal part"
+      },
+      {
+        "label": "B",
+        "text": "Absence of distal pulse"
+      },
+      {
+        "label": "C",
+        "text": "Swelling of fractured limb"
+      },
+      {
+        "label": "D",
+        "text": "Decreased temperature of distal part"
+      },
+      {
+        "label": "E",
+        "text": "Pain on passive motion of distal joint"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Acute compartment syndrome ที่ early stage อาจมี swelling, pain on passive motion, paresthesia แต่อุณหภูมิลดลงมักเกิดใน late/necrotic stage เท่านั้น หรือหากพูดถึง clinical sign อื่น absent pulse เป็น very late sign",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ตำรวจชายอายุ 30 ปี fall on his left shoulder พบไหล่ซ้ายปวดและบวม Radiograph พบ distal clavicle displace 1 mm above acromion process ถามว่า ligament ใดขาด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Coracoacromial and coracohumeral ligament"
+      },
+      {
+        "label": "B",
+        "text": "Coracohumeral and coracoclavicular ligament"
+      },
+      {
+        "label": "C",
+        "text": "Acromioclavicular and coracoacromial ligament"
+      },
+      {
+        "label": "D",
+        "text": "Coracoclavicular and coracohumeral ligament"
+      },
+      {
+        "label": "E",
+        "text": "Coracoclavicular and acromioclavicular ligament"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว",
+    "status": "complete",
+    "ai_notes": "Distal clavicle displacement above acromion = AC joint dislocation → Coracoclavicular (conoid + trapezoid) + acromioclavicular ligament tear",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ชายยกของหนัก ได้ยินเสียง pop sound ที่มือขวา ขยับแขนข้างขวาแล้วปวด มี pop eye deformity ที่ forearm ลักษณะนี้เกิดจากการขาดของ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Biceps tendon"
+      },
+      {
+        "label": "B",
+        "text": "Triceps tendon"
+      },
+      {
+        "label": "C",
+        "text": "Brachialis muscle"
+      },
+      {
+        "label": "D",
+        "text": "Brachioradialis muscle"
+      },
+      {
+        "label": "E",
+        "text": "Flexor carpi radialis tendon"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว",
+    "status": "complete",
+    "ai_notes": "Pop eye deformity at forearm = Biceps tendon rupture (belly of muscle retracts proximally, distal forearm appears flat)",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "Which is not a cause of neurological dysfunction in acute thoracolumbar injury?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Hematoma"
+      },
+      {
+        "label": "B",
+        "text": "Bony fragment"
+      },
+      {
+        "label": "C",
+        "text": "Arterial occlusion"
+      },
+      {
+        "label": "D",
+        "text": "Disc ruptured fragments"
+      },
+      {
+        "label": "E",
+        "text": "Displaced fracture of vertebrae"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "All options except arterial occlusion directly compress/damage spinal cord. Arterial occlusion → ischemia → indirect mechanism (secondary not primary)",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 55-year-old housewife has had right shoulder pain for 6 months. The pain is worsened when she hooks her bra and raises her hand above her head. PE: Trigger at upper part of shoulder, limited internal rotation and abduction. What is the likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Frozen shoulder"
+      },
+      {
+        "label": "B",
+        "text": "Subacromial bursitis"
+      },
+      {
+        "label": "C",
+        "text": "Rotator cuff arthritis"
+      },
+      {
+        "label": "D",
+        "text": "Acromioclavicular arthritis"
+      },
+      {
+        "label": "E",
+        "text": "TB of glenohumeral joint"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว",
+    "status": "complete",
+    "ai_notes": "Chronic shoulder pain (6 months) + limitation of ROM (internal rotation, abduction) + trigger at upper shoulder + functional loss = Rotator cuff tendinitis/arthritis",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ชายอายุ 75 ปี อาชีพก่อสร้าง ขณะยกของหนัก เกิดเสียง pop sound and pain at right arm. There is swelling, ecchymosis and palpable deformity on the antecubital fossa. There is pop-eye deformity. What is the correct diagnosis and complication?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Biceps tendon rupture - supination impaired"
+      },
+      {
+        "label": "B",
+        "text": "Triceps tendon rupture - extension impaired"
+      },
+      {
+        "label": "C",
+        "text": "Brachialis rupture - flexion impaired"
+      },
+      {
+        "label": "D",
+        "text": "Brachial artery injury - vascular insufficiency"
+      },
+      {
+        "label": "E",
+        "text": "Nerve injury - sensory loss"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว",
+    "status": "complete",
+    "ai_notes": "Pop eye deformity + antecubital fossa swelling = Biceps rupture → loss of supination (and weakened flexion)",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "Burst fracture of thoracolumbar spine. Which statement is incorrect?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Late kyphosis rarely occurs"
+      },
+      {
+        "label": "B",
+        "text": "It is a stable fracture"
+      },
+      {
+        "label": "C",
+        "text": "May involve cauda equina"
+      },
+      {
+        "label": "D",
+        "text": "Posterior ligamentous complex intact"
+      },
+      {
+        "label": "E",
+        "text": "Requires careful neurological assessment"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว",
+    "status": "complete",
+    "ai_notes": "Burst fracture = retropulsion + vertebral body collapse → unstable (not stable) ต้อง surgical fixation หรือ conservative management with bracing ขึ้นกับ degree of kyphosis/neurological involvement",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 50 ปี มาด้วยปวดบวมนิ้วเท้าซ้าย มีไข้ X-ray พบ cortical erosion, periostitis, tissue swelling น่าจะเป็นโรคอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bone tumor"
+      },
+      {
+        "label": "B",
+        "text": "Septic arthritis"
+      },
+      {
+        "label": "C",
+        "text": "Rheumatoid arthritis"
+      },
+      {
+        "label": "D",
+        "text": "Osteomyelitis and cellulitis"
+      },
+      {
+        "label": "E",
+        "text": "Gout"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Fever + cortical erosion + periostitis = Osteomyelitis (bacteria destructive) not RA (periostitis rare) or septic arthritis alone",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "Female 55 years present with right shoulder pain 6 months. Pain aggravated when hook her bra or abduct arm. Physical examination reveals tenderness at right upper shoulder, limited ROM when internal rotation and abduction. What is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Frozen shoulder"
+      },
+      {
+        "label": "B",
+        "text": "Milwaukee's syndrome"
+      },
+      {
+        "label": "C",
+        "text": "Rotator cuff tendinitis"
+      },
+      {
+        "label": "D",
+        "text": "Acromioclavicular joint arthritis"
+      },
+      {
+        "label": "E",
+        "text": "TB septic arthritis of glenohumeral joint"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Chronic pain + limited internal rotation and abduction + functional impairment (bra hook) = Rotator cuff tendinitis (not frozen shoulder which has global ROM loss)",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 55-year-old male patient presented with numbness and weakness. Physical examination revealed straight leg raising test: negative; motor and sensory: within normal limits. X-ray found osteophyte at lumbar spine. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Spinal stenosis"
+      },
+      {
+        "label": "B",
+        "text": "Vascular claudication"
+      },
+      {
+        "label": "C",
+        "text": "Asymptomatic spondylosis"
+      },
+      {
+        "label": "D",
+        "text": "Lumbar disc herniation"
+      },
+      {
+        "label": "E",
+        "text": "Piriformis syndrome"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Numbness and weakness but neuro exam WNL + negative SLR = asymptomatic finding (osteophyte incidental) or subclinical spondylosis, not true spinal stenosis (which would have positive neuro signs)",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 70-year-old patient had left hip pain after fall for past 3 days. Examination reveals external rotation and abduction of left hip. The left buttock and upper thigh shows ecchymosis. What is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Fracture neck of femur"
+      },
+      {
+        "label": "B",
+        "text": "Anterior hip dislocation"
+      },
+      {
+        "label": "C",
+        "text": "Posterior hip dislocation"
+      },
+      {
+        "label": "D",
+        "text": "Femoral shaft fracture"
+      },
+      {
+        "label": "E",
+        "text": "Hip joint effusion"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Elderly + fall + hip pain 3 days + external rotation + ecchymosis at buttock/thigh = Fracture neck of femur (classic presentation, not acute dislocation which present acutely)",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "Which is the most common contracture of AKA (Above-Knee Amputation)?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Hip flexion and abduction"
+      },
+      {
+        "label": "B",
+        "text": "Hip flexion and adduction"
+      },
+      {
+        "label": "C",
+        "text": "Hip extension and abduction"
+      },
+      {
+        "label": "D",
+        "text": "Hip abduction and external rotation"
+      },
+      {
+        "label": "E",
+        "text": "Hip extension and adduction"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Unknown/ORTHO",
+    "status": "complete",
+    "ai_notes": "In AKA (Above-Knee Amputation), the most common contracture is hip flexion and adduction. This occurs due to: (1) The pull of hip flexors (iliopsoas) which are stronger than extensors, (2) Adduction occurs from the stronger adductor muscles compared to abductors, and (3) Patient positioning in wheelchair/bed encourages flexion and adduction. Added option E (Hip extension and adduction) as a plausible distractor. Corrected option D spelling from 'roation IM' to 'external rotation'.",
+    "subject": "ortho",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 50 ปี มาด้วยอาการปวดไหล่ โดยไม่มีประวัติการบาดเจอ หลังจากที่อาการปวดดีขึ้น เธอพบว่าไหล่มีความแข็งตัว (stiffness) และไม่สามารถยกแขนขึ้นเหนือศีรษะได้ ซึ่งมีการจำกัดการเคลื่อนไหวในทุกระนาบ (Frozen Shoulder/Adhesive Capsulitis คาดหวัง) การจัดการที่เหมาะสมควรเป็นอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Physical therapy และ shoulder mobilization exercises ในระยะแรกพร้อม NSAIDs"
+      },
+      {
+        "label": "B",
+        "text": "Surgery (arthroscopic release) ทันทีโดยไม่รอการรักษาแบบ conservative"
+      },
+      {
+        "label": "C",
+        "text": "Intra-articular corticosteroid injection และ physical therapy ตามด้วย progressive exercises"
+      },
+      {
+        "label": "D",
+        "text": "Immobilization ด้วย sling นาน 3-4 สัปดาห์เพื่อให้เนื้อเยื่อติดแน่น"
+      },
+      {
+        "label": "E",
+        "text": "X-ray และ MRI ตามด้วย observation โดยไม่ต้องรักษา"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2014",
+    "explanation": "Frozen shoulder (Adhesive Capsulitis) เป็นภาวะที่เกิดจากการติดแน่นของ joint capsule ส่งผลให้มีความแข็งตัวและการจำกัดการเคลื่อนไหว การรักษาในระยะแรกสำหรับ symptomatic relief ประกอบด้วย intra-articular corticosteroid injection เพื่อลดการอักษมและแก้ไขอาการปวด พร้อมกับ physical therapy และ progressive ROM exercises ซึ่งเป็นมาตรฐานการรักษา ส่วน surgery (arthroscopic release) สงวนไว้สำหรับผู้ป่วยที่ไม่ตอบสนองต่อการรักษา conservative นานมากกว่า 12 เดือน",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 45 ปี มาด้วยอาการปวดไหล่ซ้ายเรื้อรัง หลังจากตรวจร่างกายพบการจำกัดการเคลื่อนไหวของข้อไหล่ แพทย์ต้องการประเมินว่าการลดลงของ range of motion เป็นเนื่องจากปัญหาที่ข้อหรือกล้ามเนื้อ ข้อใดเป็นวิธีการที่ถูกต้องในการประเมิน exercise range of motion (EROM) เพื่อให้ได้ผลที่เชื่อถือได้สูงสุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้ผู้ป่วยเคลื่อนไหวข้อของตนเองอย่างสูงสุดที่ทำได้ และวัดด้วย goniometer ในทุกระนาบการเคลื่อนไหว"
+      },
+      {
+        "label": "B",
+        "text": "แพทย์ดำเนินการเคลื่อนไหวข้อของผู้ป่วยอย่างเต็มที่ไปจนกว่าเกิดความเจ็บปวด (PROM)"
+      },
+      {
+        "label": "C",
+        "text": "ใช้การประเมินแบบการเคลื่อนไหวด้วยแรงความต้านทาน (manual muscle testing) เท่านั้น"
+      },
+      {
+        "label": "D",
+        "text": "ประเมินการเคลื่อนไหวแบบไดนามิก (dynamic ROM) โดยให้ผู้ป่วยทำการออกกำลังกายหนักๆ ก่อน"
+      },
+      {
+        "label": "E",
+        "text": "ใช้เครื่องมือวัดอื่นๆ เช่น inclinometer หรือ tape measure แทน goniometer เพราะมีความแม่นยำดีกว่า"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": "Exercise range of motion (EROM) หมายถึงการที่ผู้ป่วยเคลื่อนไหวข้อด้วยตนเอง ซึ่งจะสะท้อนความสามารถจริงของข้อและกล้ามเนื้อ การวัดด้วย goniometer ในทุกระนาบการเคลื่อนไหวจะให้ข้อมูลที่เชื่อถือได้ PROM (passive range of motion) ใช้เมื่อต้องแยกปัญหาของข้อออกจากกล้ามเนื้อ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายวัย 45 ปี เข่าข้างซ้ายบวม เจ็บปวด และลดความสามารถในการเคลื่อนไหว หลังจากทำงานหนัก 2 สัปดาห์ก่อนมา คุณต้องการให้ยา Anti-inflammatory drug ข้อใดเหมาะสมที่สุด?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acetaminophen (Paracetamol) 500 mg"
+      },
+      {
+        "label": "B",
+        "text": "Ibuprofen (NSAID) 400 mg TID"
+      },
+      {
+        "label": "C",
+        "text": "Indomethacin (NSAID) 25 mg BID"
+      },
+      {
+        "label": "D",
+        "text": "Prednisone (Corticosteroid) 20 mg daily"
+      },
+      {
+        "label": "E",
+        "text": "Aspirin (Salicylate) 300 mg QID"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "explanation": "ในกรณีอักเสบของข้อต่อเรื้อรังเช่นที่เห็นในข้อสอบนี้ NSAID เช่น Ibuprofen เป็นตัวเลือกแรกเนื่องจากมีคุณสมบัติลดอักเสบและบรรเทาปวดที่ดี มีความปลอดภัยสูงกว่า Acetaminophen ที่ไม่มีเอาต์พุตลดอักเสบที่ชัดเจน และเหมาะสมกว่า Corticosteroid ที่ใช้เมื่อเกิดแสดงระบบทั่วไป การใช้ยาขนาดปกติจำหน่ายจะลดความเสี่ยงต่อผลข้างเคียงเมื่อเทียบกับ Indomethacin ที่มีผลข้างเคียงมากขึ้น",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 55 ปี มาด้วยอาการปวดเข่าซ้ายเรื้อรังจากการเสื่อมสภาพกระดูกอักเสบ คณแพทย์ตัดสินใจทำการฉีดสเตียรอยด์เข้าข้อต่อ (Intra-articular steroid injection) เพื่อบรรเทาอาการปวด ข้อใดต่อไปนี้คือข้อห้ามสัมบูรณ์ (absolute contraindication) สำหรับการฉีดสเตียรอยด์เข้าข้อต่อ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "การติดเชื้อบริเวณข้อต่อ (Septic arthritis)"
+      },
+      {
+        "label": "B",
+        "text": "ผู้ป่วยได้รับการฉีดสเตียรอยด์เข้าข้อต่อมาแล้ว 2 เดือนที่แล้ว"
+      },
+      {
+        "label": "C",
+        "text": "ผู้ป่วยมีโรคเบาหวานไม่ได้ควบคุม"
+      },
+      {
+        "label": "D",
+        "text": "ผู้ป่วยมีอาการรักษาไม่หายด้วยยาแม่นเสบ"
+      },
+      {
+        "label": "E",
+        "text": "ผู้ป่วยมีประวัติแพ้ยา local anesthetic"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "explanation": "การติดเชื้อบริเวณข้อต่อ (Septic arthritis) เป็นข้อห้ามสัมบูรณ์สำหรับการฉีดสเตียรอยด์เข้าข้อต่อ เนื่องจากสเตียรอยด์จะกดการภูมิคุ้มกันในพื้นที่และอาจทำให้เชื้อแพร่กระจายเพิ่มขึ้น ต้องดำเนินการรักษาเชื้อก่อนพิจารณาการฉีดสเตียรอยด์ เงื่อนไขอื่นเป็นข้อห้ามสัมพัทธ์ (relative contraindication) เท่านั้น",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "Female 22 years old with SLE on prolonged steroid therapy presenting with pelvic pain during walking. Which imaging study is most appropriate to evaluate for avascular necrosis of the femoral head?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Pelvic X-ray (AP view)"
+      },
+      {
+        "label": "B",
+        "text": "MRI pelvis and hip (T1 and T2 weighted)"
+      },
+      {
+        "label": "C",
+        "text": "CT scan pelvis with contrast"
+      },
+      {
+        "label": "D",
+        "text": "Bone scan (Technetium-99m)"
+      },
+      {
+        "label": "E",
+        "text": "Ultrasound of hip joint"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "explanation": "ผู้ป่วย SLE ที่ใช้สเตอรอยด์นานเป็นกลุ่มเสี่ยงสูงต่อ avascular necrosis (AVN) ของหัวกระดูกโขก MRI เป็นการตรวจที่ดีที่สุดในการตรวจจับ AVN ในระยะแรก เนื่องจากสามารถแสดงเลสชั่นภายในกระดูก อาการศ้ายน้อยกว่า X-ray ที่ต้องใช้เมื่อเกิดการแตกหักแล้ว",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 22 ปี อุบัติเหตุ มีอาการปวดข้อสะโพกขวา ตรวจพบ flexion, abduction, internal rotation ถาม diagnosis",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Fx pelvic"
+      },
+      {
+        "label": "B",
+        "text": "Fx acetabulum"
+      },
+      {
+        "label": "C",
+        "text": "Fx neck of femur"
+      },
+      {
+        "label": "D",
+        "text": "Intertrochanteric Fx"
+      },
+      {
+        "label": "E",
+        "text": "Posterior hip dislocation"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยเด็กชายอายุ 10 ปี ประสบอุบัติเหตุรถจักรยานยนต์ มีอาการปวดข้อศอก บวมข้างขวา ขยับข้อศอกไม่ได้ PE: swelling at Rt elbow, triangle landmark at Rt elbow จงให้การวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Dislocation elbow"
+      },
+      {
+        "label": "B",
+        "text": "Displaced olecranon fracture"
+      },
+      {
+        "label": "C",
+        "text": "Displaced supracondylar fracture"
+      },
+      {
+        "label": "D",
+        "text": "Displaced lateral condylar fracture"
+      },
+      {
+        "label": "E",
+        "text": "Displaced medial condylar fracture"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หญิง 65 ปี มาด้วยอาการปวดเข่าเรื้อรัง ปวดขึ้นเมื่อขึ้นบันได มีเสียง crepitation เมื่อทำให้เข่างอและเหยียด ไม่มีประวัติการบาดเจอ การตรวจร่างกายไม่พบน้ำในเข่า เอกซเรย์เข่าแสดงการเสื่อมของกระดูกอ่อน โรคนี้คืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Osteoarthritis of the knee (โรคข้ออักเสบเสื่อมของเข่า)"
+      },
+      {
+        "label": "B",
+        "text": "Rheumatoid arthritis (โรคข้ออักเสบรูมาตอยด์)"
+      },
+      {
+        "label": "C",
+        "text": "Patellofemoral syndrome (증후군จากความไม่สมดุลของข้ออักเสบเสื่อมของข้อเข่า)"
+      },
+      {
+        "label": "D",
+        "text": "Meniscal tear (การฉีกขาดของเหมัดอ่อน)"
+      },
+      {
+        "label": "E",
+        "text": "Ligamentous injury of the knee (การบาดเจอของเอ็นที่เข่า)"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008",
+    "explanation": "ผู้ป่วยสูงอายุ (65 ปี) มีอาการปวดเข่าเรื้อรัง มีเสียง crepitation ซึ่งเกิดจากการเสื่อมและความหยาบของผิวกระดูกอ่อน นี่เป็นอาการทั่วไปของ osteoarthritis มากที่สุด โดยเสียง crepitation ในกรณี OA เกิดจากการเสียดสีระหว่างผิวกระดูกที่ไม่เรียบ ซึ่งแตกต่างจากการบาดเจอหรือโรคข้ออักเสบรูมาตอยด์",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "เด็กชาย 10 ปี มีประวัติอุบัติเหตุ(MCA) มีอาการปวดข้อศอกบวมข้างขวา และขยับข้อศอกไม่ได้ การตรวจร่างกาย: มีการบวมที่ข้อศอก และสูญเสียจุดสังเกตสามเหลี่ยม (loss of triangle landmark) ที่ข้อศอกขวา การวินิจฉัยควรจะเป็น",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Posterior elbow dislocation"
+      },
+      {
+        "label": "B",
+        "text": "Anterior elbow dislocation"
+      },
+      {
+        "label": "C",
+        "text": "Lateral epicondyle fracture"
+      },
+      {
+        "label": "D",
+        "text": "Supracondylar fracture of humerus"
+      },
+      {
+        "label": "E",
+        "text": "Elbow joint effusion only"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008",
+    "explanation": "Loss of triangle landmark (จุดสังเกตสามเหลี่ยม) ที่ข้อศอกเป็น pathognomonic sign ของ posterior elbow dislocation ในเด็กหลังจากอุบัติเหตุ ปกติจุดนี้เกิดจากการเชื่อมโยงระหว่าง olecranon และ epicondyles ทั้งสอง ซึ่งหายไปเมื่อ olecranon เคลื่อนที่ไปข้างหลัง นอกจากนี้ยังมีอาการขยับข้อศอกไม่ได้และบวมตามลักษณะการบาดเจออื่นๆ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชายอายุ 45 ปี ได้รับบาดเจอกระแทกศอก มารับการรักษาที่โรงพยาบาล เอกซเรย์แสดง Displaced olecranon fracture (displacement > 5 mm) ไม่มีการเปิดแผลหรือเสียเลือดมาก การรักษาเบื้องต้นที่ดีที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "การรักษาแบบไม่ผ่าตัด (Conservative treatment) ด้วยการพยุงแขนและบริหารสัง่สม"
+      },
+      {
+        "label": "B",
+        "text": "การลดกระดูกแบบปิด (Closed reduction) แล้วใส่ cast หรือ splint โดยไม่ต้องผ่าตัด"
+      },
+      {
+        "label": "C",
+        "text": "การผ่าตัดเปิดและการจัดเรียงกระดูกด้วย open reduction with internal fixation (ORIF) โดยใช้ plate, screws หรือ tension band wiring"
+      },
+      {
+        "label": "D",
+        "text": "การถอดกระดูก olecranon ออก (Excision of olecranon fragment) หากชิ้นกระดูกมีขนาดเล็ก"
+      },
+      {
+        "label": "E",
+        "text": "การดึงกระดูก (Skeletal traction) เพื่อรักษาภาวะการจัดตำแหน่งของกระดูก"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2008",
+    "explanation": "Displaced olecranon fracture (displacement > 5 mm) ต้องได้รับการรักษาด้วยการผ่าตัดเปิด (ORIF) เพราะกระดูก olecranon เป็นจุดยึด triceps muscle ที่สำคัญ การรักษาแบบไม่ผ่าตัดจะทำให้เกิด malunion และส่งผลต่อการขยายศอกโดยตรง Plate, screw หรือ tension band wiring เป็นวิธีการ fixation ที่นิยมในการรักษา displaced olecranon fracture",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "เด็กชาย 8 ขวบ ล้มลงบนมือที่เหยียดไปข้างหน้า เกิด Displaced supracondylar fracture ของกระดูกแขนส่วนบน ด้านหลัง (extension type) ที่มี displacement มากกว่า 50% แพทย์ต้องการรักษาด้วยการจัดกระดูก ข้อใดคือขั้นตอนการจัดกระดูกที่ถูกต้องตามลำดับ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Extension → Flexion → Adduction → Internal rotation"
+      },
+      {
+        "label": "B",
+        "text": "Flexion → Extension → Abduction → External rotation"
+      },
+      {
+        "label": "C",
+        "text": "Flexion → Adduction → Internal rotation → Extension"
+      },
+      {
+        "label": "D",
+        "text": "Extension ที่ศ肘ผ่าน 180° แล้วจึง Flexion เล็กน้อย"
+      },
+      {
+        "label": "E",
+        "text": "ผ่าตัดออกมาจัดกระดูกโดยตรง (Open reduction internal fixation)"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008",
+    "explanation": "Displaced supracondylar fracture (extension type) มีการเข้าไปของ proximal fragment ไปข้างหน้าและเข้า ขณะจัดกระดูก ต้องขยายแขนให้ยาวก่อน (extension) เพื่อดึง proximal fragment ออกมา จากนั้น Flexion เพื่อให้ distal fragment เข้าชิด Adduction และ Internal rotation ช่วยให้เกิด stability และลดการ interposition ของเนื้อเยื่อออม",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "เด็กชาย 6 ปี ล้มจากที่สูง กระแทกด้านข้างของข้อศอก วิน्तกษณ์ทั่วไป: บวมที่ด้านนอกของข้อศอก มีการเคลื่อนไหวของข้อศอกจำกัด X-ray แสดง lateral condylar fracture ที่มีการกระจัด (displaced > 2 mm) สิ่งที่สำคัญที่สุดในการจัดการอาการแรกเริ่ม คือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ผ่าตัดลอยตัวแบบเร่งด่วน (Emergent open reduction and internal fixation)"
+      },
+      {
+        "label": "B",
+        "text": "ตรวจประเมินความเสี่ยง neurovascular compromise และการสูญเสีย soft tissue perfusion"
+      },
+      {
+        "label": "C",
+        "text": "บรรจุน้ำแข็งและยาแก้ปวดทันที จากนั้นส่งต่อไปโรงพยาบาล"
+      },
+      {
+        "label": "D",
+        "text": "จำกัดการเคลื่อนไหวด้วย posterior slab splint ในสภาวะเฉพาะหน้า"
+      },
+      {
+        "label": "E",
+        "text": "ลด fracture ด้วยวิธี closed reduction และรอให้ healing ตามธรรมชาติ"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008",
+    "explanation": "Displaced lateral condylar fracture ในเด็กเป็นอาการที่เร่งด่วน เพราะเสี่ยงต่อ neurovascular compromise และการสูญเสีย soft tissue perfusion ของ condyle ขั้นตอนแรกสำคัญที่สุด คือ ประเมินสถานะ neurovascular อย่างรวดเร็ว จากนั้นจึงดำเนินการส่งต่อหรือผ่าตัดเพื่อลด fracture ภายในช่วงเวลาที่เหมาะสม (ปกติภายใน 24 ชั่วโมง)",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "เด็กชายอายุ 12 ปี ได้รับการบาดเจอในที่เล่น ส่งผลให้เกิด displaced medial epicondyle fracture ทางขวา ปัจจุบันมี pain ที่ด้านในของศอก เนื้อเยื่อบวม และเกิด deformity ที่ศอก ข้อใดเป็นการรักษาแนะนำสำหรับรอยแตกหักแบบนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Conservative treatment ด้วย sling immobilization เป็นระยะเวลา 3 สัปดาห์"
+      },
+      {
+        "label": "B",
+        "text": "Open reduction and internal fixation (ORIF) ด้วย screw or pin fixation"
+      },
+      {
+        "label": "C",
+        "text": "Closed reduction ด้วย manipulation และ posterior splint immobilization"
+      },
+      {
+        "label": "D",
+        "text": "Traction therapy โดยใช้ skeletal traction เป็นระยะเวลา 6 สัปดาห์"
+      },
+      {
+        "label": "E",
+        "text": "Observation alone พร้อม pain management เนื่องจากมักจะเกิด spontaneous reduction"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008",
+    "explanation": "Displaced medial epicondyle fractures โดยเฉพาะแบบ significantly displaced (>5 mm) ในเด็ก ส่วนใหญ่ต้องการการรักษาแบบ ORIF เนื่องจากมีความเสี่ยงของ nerve injury (especially ulnar nerve), malunion, และ functional loss หากปล่อยไว้ Sling immobilization เพียงอย่างเดียวมักไม่เพียงพอสำหรับ displaced fractures",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 25 ปี มาด้วยอุบัติเหตุรถมอเตอร์ไซค์ ลักษณะการบาดเจอ: ผลักเข่าไปข้างหน้าขณะนั่งเสีย PE: ข้างขาที่บาดเจอมีท่า Hip flexion, adduction และ internal rotation ที่โด่งชัด ร่างกายเอนตัวไปด้านข้างของขาที่ปกติ ขาติดแน่นไม่สามารถเคลื่อนไหวได้ จงวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Posterior hip dislocation"
+      },
+      {
+        "label": "B",
+        "text": "Anterior hip dislocation"
+      },
+      {
+        "label": "C",
+        "text": "Central hip dislocation"
+      },
+      {
+        "label": "D",
+        "text": "Hip fracture-dislocation (Posterior column fracture)"
+      },
+      {
+        "label": "E",
+        "text": "Femoral neck fracture"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008",
+    "explanation": "Posterior hip dislocation เป็นอุบัติเหตุที่พบบ่อยที่สุด (85-90% ของ hip dislocation) มักเกิดจากแรงกระแทกตรงเข่าไปข้างหน้าขณะนั่ง การตรวจร่างกายแสดงท่า classic triad คือ Hip flexion + adduction + internal rotation ทำให้ขาแข็งเกร็ง ในขณะที่ anterior dislocation แสดงท่า abduction และ external rotation ตรงข้าม",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 59 ปี มาด้วยอาการปวดคอ ตรวจพบความอ่อนแรงของกล้ามเนื้อ Biceps ทั้งข้างและ Biceps reflex ลดลง ข้างใดข้างหนึ่ง หรือทั้งสองข้าง พยาธิสภาพน่าจะเกิดจากการบีบอัดรากประสาทที่",
+    "choices": [
+      {
+        "label": "A",
+        "text": "C4"
+      },
+      {
+        "label": "B",
+        "text": "C5"
+      },
+      {
+        "label": "C",
+        "text": "C6"
+      },
+      {
+        "label": "D",
+        "text": "C7"
+      },
+      {
+        "label": "E",
+        "text": "C8"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008",
+    "explanation": "กล้ามเนื้อ Biceps ได้รับการควบคุมโดยรากประสาท C5 และ C6 โดยหลัก C5 เป็นราก primary ดังนั้นการอ่อนแรงของ Biceps และ Biceps reflex ลดลง บ่งชี้การบีบอัดรากประสาท C5 ซึ่งเป็นสาเหตุทั่วไปจากเอกัดดิสก์สไปนัล หรือ osteophytes ในคอ (Cervical radiculopathy)",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายอายุ 20 ปี หกล้มขณะเล่นฟุตบอล ไหล่ขวาบวม วิตกกังวล ทำ X-ray พบ fracture neck of humerus (surgical neck) ซึ่งกล้ามเนื้อใดต่อไปนี้อาจเกิดอาการอ่อนแรงได้มากที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Deltoid muscle"
+      },
+      {
+        "label": "B",
+        "text": "Supraspinatus muscle"
+      },
+      {
+        "label": "C",
+        "text": "Infraspinatus muscle"
+      },
+      {
+        "label": "D",
+        "text": "Subscapularis muscle"
+      },
+      {
+        "label": "E",
+        "text": "Pectoralis major muscle"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008",
+    "explanation": "Fracture of surgical neck of humerus มักเสียหาย axillary nerve ซึ่งผ่านพื้นที่นี้ใกล้กับ radial groove และ surgical neck นอกจากนี้ axillary nerve ให้ innervation ให้กับ deltoid muscle ซึ่งเป็นกล้ามเนื้อหลักสำหรับ abduction ของไหล่ ดังนั้นผู้ป่วยจะมีอาการอ่อนแรงขาด abduction (loss of shoulder abduction) และมีเบาะ (shoulder drop sign)",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิง 52 ปี มาด้วยอาการปวดมือขวา เกิดขึ้นตอนกลางคืน ตื่นมาสะบัดมือแล้วอาการดีขึ้น การตรวจร่างกาย: สัมผัสเหมาลือ ไม่มี萎縮กล้ามเนื้อ thenar, Phalen test เป็นบวก NCS/EMG ยังไม่ได้ทำ ควรให้การรักษาอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "อพยพ (Rest) ใส่ wrist splint ข้างคืน และ NSAID"
+      },
+      {
+        "label": "B",
+        "text": "ฉีดสเตียรอยด์เข้า carpal tunnel ทันที"
+      },
+      {
+        "label": "C",
+        "text": "ผ่าตัด carpal tunnel release ในครั้งแรก"
+      },
+      {
+        "label": "D",
+        "text": "ให้สเตียรอยด์รับประทานเป็นระยะและทำ EMG ตรวจสอบ"
+      },
+      {
+        "label": "E",
+        "text": "ส่งตรวจ MRI มือและทำ nerve conduction study ก่อนทุกอย่าง"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008",
+    "explanation": "ผู้ป่วยมีอาการ Carpal Tunnel Syndrome ระยะเริ่มแรม (ปวดกลางคืน Phalen test บวก แต่ยังไม่มี neurological deficit หรือ atrophy) การรักษาเบื้องต้นเป็น conservative treatment ได้แก่ rest, wrist splint (ยึดมือให้ตรงตอนนอน), และ NSAID เพื่อลดการบีบอัดประสาท ต้องรอผลของการรักษานี้ก่อน 4-6 สัปดาห์ ถ้าไม่ดีขึ้นจึงพิจารณาฉีด steroid หรือผ่าตัด",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชายอายุ 45 ปี มาด้วยอาการปวดหลังส่วนล่างรุนแรง ฟุ่มเฟือยลงขาซ้าย เป็นเวลา 3 สัปดาห์ ได้รับการรักษาด้วย physical therapy และ NSAIDs แต่อาการไม่ดีขึ้น ตรวจพบ positive straight leg raise test ซ้าย MRI แสดง herniated nucleus pulposus ที่ระดับ L4-L5 ที่บีบ nerve root ซ้าย แพทย์วางแผนทำ epidural steroid injection ข้อใดคือข้อบ่งชี้ที่เหมาะสมที่สุดสำหรับการฉีดสเตียรอยด์เข้าหลังของสถานที่นี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ใช้รักษาอาการปวดเนื่องจากการบีบ nerve root ที่ไม่ตอบสนองต่อการรักษาแบบอนุรักษ์เป็นเวลา 2-4 สัปดาห์"
+      },
+      {
+        "label": "B",
+        "text": "เป็นการรักษา first-line สำหรับผู้ป่วยทุกคนที่มี herniated disc โดยไม่ต้องรอการรักษาแบบอนุรักษ์ก่อน"
+      },
+      {
+        "label": "C",
+        "text": "ช่วยลดการบวมน้ำของ nerve root และลดการปวด โดยผล onset ใช้เวลา 1-2 วันแล้วสามารถหายเฉียบพลันจำหน่าย"
+      },
+      {
+        "label": "D",
+        "text": "ตัวเลือกที่ดีที่สุดสำหรับการรักษาแทนการผ่าตัด decompression ในทุกกรณี"
+      },
+      {
+        "label": "E",
+        "text": "สามารถใช้ได้กับผู้ป่วยทั้งที่มี neurological deficit และที่ไม่มี โดยไม่มีความเสี่ยงใดๆ"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008",
+    "explanation": "Epidural steroid injection เป็นการรักษา conservative ที่ใช้สำหรับปวดเนื่องจากการบีบ nerve root ที่ไม่ตอบสนองต่อการรักษาแบบอนุรักษ์ (physical therapy, NSAIDs, rest) เป็นเวลา 2-4 สัปดาห์ โดยช่วยลดการบวมน้ำและการติดไป วัตถุประสงค์คือเพื่อขยายระยะเวลาก่อนการพิจารณาการผ่าตัด ไม่ใช่การรักษา first-line หรือการทดแทนการผ่าตัดทุกกรณี",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 69 ปี มีภาวะอ้วน มาด้วยอาการปวดเข่าข้างขวา วินิจฉัยว่า Osteoarthritis ของเข่า มี genu varum ชนิดน้อย ไม่มีอาการประสาท คำแนะนำการรักษาเบื้องต้นที่เหมาะสมที่สุดคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ผ่าตัด High tibial osteotomy (HTO) ทันที"
+      },
+      {
+        "label": "B",
+        "text": "Conservative treatment: ลดน้ำหนัก ออกกำลังกาย ยา NSAIDs และ intra-articular steroid injection"
+      },
+      {
+        "label": "C",
+        "text": "ใช้ knee brace แบบ valgus force เพียงอย่างเดียว"
+      },
+      {
+        "label": "D",
+        "text": "ทำ Total knee arthroplasty (TKA) ทันที"
+      },
+      {
+        "label": "E",
+        "text": "ให้ยา Bisphosphonate เพื่อเพิ่มความหนาแน่นของกระดูก"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008",
+    "explanation": "ผู้ป่วย OA เข่าควรเริ่มด้วย conservative treatment ก่อน เนื่องจากเป็นการรักษาขั้นแรก ลดน้ำหนักและออกกำลังกายจะช่วยลดภาระบนเข่า ยา NSAIDs และ intra-articular steroid injection มีประสิทธิลดการอักเสบและปวด ส่วน surgical intervention (HTO หรือ TKA) เป็นตัวเลือกหากการรักษา conservative ไม่ได้ผล",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 35 ปี ได้รับบาดเจอ hamstring muscle เล็กน้อย ในช่วงฟื้นฟูผลจากการบาดเจอ แพทย์สั่ง isometric exercise เพื่อเพิ่ม hamstring strength ในระยะเริ่มต้น ข้อใดเป็น positioning ที่ถูกต้องสำหรับ isometric hamstring strengthening exercise",
+    "choices": [
+      {
+        "label": "A",
+        "text": "นั่งบนเก้าอี้ ขาเหยียดตรง เพิ่มการหด hamstring โดยไม่เปลี่ยนมุมเข่า ขณะที่ให้ hand resistance"
+      },
+      {
+        "label": "B",
+        "text": "นอนคว่ำ ขาเหยียด ดัดเข่า 90 องศา และให้ hand resistance ขณะพยายามเหยียดขา"
+      },
+      {
+        "label": "C",
+        "text": "นั่งขัดไม้ ขาเหยียดตรง ทำให้เกิด hamstring contraction โดยการยกส้นขึ้นอย่างต่อเนื่อง"
+      },
+      {
+        "label": "D",
+        "text": "ยืนตัวตรง ทำการดัดเข่า 45 องศา แล้วให้ resistance ที่เข่า ขณะพยายามดัดเข่า"
+      },
+      {
+        "label": "E",
+        "text": "นอนหงาย ขาเหยียดตรง ทำการดึง hamstring ด้วยการยกส้นขึ้นมาอย่างต่อเนื่อง"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008",
+    "explanation": "Isometric hamstring strengthening ที่มีประสิทธิภาพ ควรทำให้กล้าม hamstring มีการหดแน่นโดยไม่มีการเปลี่ยนแปลงมุมเข่า โดยท่าที่เหมาะสมที่สุดคือนอนคว่ำ ดัดเข่า 90 องศา พร้อม hand resistance ที่ให้แรงต้านขณะพยายามเหยียดขา ซึ่งจะทำให้ hamstring ทำงานเต็มที่โดยปลอดภัยในระยะฟื้นฟูเบื้องต้น",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 45 ปี มาด้วยอาการปวดเข่าข้างในและเดินขาเขจ นอกจากนั้นมีอาการปวดเท้าด้านใน เมื่อตรวจร่างกายพบ pes planus (flat foot) ระดับที่ 2 และ ova valga ซึ่งทำให้เกิด overload ที่ด้าน medial foot arch การรักษาแบบอนุรักษ์นิยมควรใช้การเสริมรองเท้าด้าน medial เพื่อวัตถุประสงค์ใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "สนับสนุนและยกระดับ medial arch เพื่อลดการยุบตัวของ arch และเพิ่มสภาพเสถียรของเท้า"
+      },
+      {
+        "label": "B",
+        "text": "ลดแรงกดบน lateral border ของเท้าและเพิ่มการหลั่ง pronation"
+      },
+      {
+        "label": "C",
+        "text": "เพิ่มระดับความสูงของ heel เพื่อให้เท้าอยู่ในสภาวะ supination สูงสุด"
+      },
+      {
+        "label": "D",
+        "text": "ป้องกันการเคลื่อนไหว inversion ของข้อเท้าโดยสมบูรณ์เพื่อให้เท้าเสถียร"
+      },
+      {
+        "label": "E",
+        "text": "เพิ่มแรงกดบน lateral border ของเท้าเพื่อให้เกิด supination มากขึ้น"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008",
+    "explanation": "การเสริมรองเท้าด้าน medial (medial shoe insert/medial arch support) มีวัตถุประสงค์หลักคือการสนับสนุนและยกระดับ medial longitudinal arch เพื่อลดการยุบตัวของ arch ในผู้ป่วยที่มี flat foot และ overpronation ซึ่งจะช่วยลดแรงกดบน medial soft tissues และเพิ่มความเสถียรของเท้าในการเดิน ตัวเลือก B, C, E ไม่ถูกต้องเพราะเป็นการเพิ่มปัญหา ส่วน D มีความเข้มงวดเกินไป",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 25 ปี ตรวจร่างกายพบว่ามี Fracture neck of humerus ถามว่าจะมีผลต่อกล้ามเนื้อมัดใดมากที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Brachioradialis m."
+      },
+      {
+        "label": "B",
+        "text": "Deltoid m."
+      },
+      {
+        "label": "C",
+        "text": "Brachial m."
+      },
+      {
+        "label": "D",
+        "text": "Coracobrachialis m."
+      },
+      {
+        "label": "E",
+        "text": "Biceps m."
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "เด็กชายอายุ 2 วัน เกิดจากการคลอดโดยใช้ vacuum extraction ผู้ปกครองสังเกตว่าแขนขวาอ่อนแรง ท่าแขนเหินและหมุนเข้าด้านใน (Waiter's tip position) และไม่สามารถยกแขนขึ้นได้ ถาม: Erb's palsy ที่ส่วนใหญ่เกิดจากการบาดเจ็บต่อ nerve root ระดับใดที่มากที่สุด?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "C5 – C6"
+      },
+      {
+        "label": "B",
+        "text": "C6 – C7"
+      },
+      {
+        "label": "C",
+        "text": "C8 – T1"
+      },
+      {
+        "label": "D",
+        "text": "T1 – T2"
+      },
+      {
+        "label": "E",
+        "text": "C7 – C8"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008",
+    "explanation": "Erb's palsy มักเกิดจากการบาดเจ็บของ upper trunk ของ brachial plexus ที่เกิดจากการดึงแขนเข้าด้าน ส่วนใหญ่บาดเจ็บที่ C5–C6 nerve roots (ประมาณ 50% ของ Erb's palsy) ทำให้เกิดอาการอ่อนแรงที่กล้ามเนื้อ abduction ของไหล่ (supraspinatus, infraspinatus) และ flexion ของศอก (biceps, brachialis) C8–T1 เป็นลักษณะของ Klumpke's palsy ซึ่งเกิดจาก lower trunk injury แทน",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "เด็กชาย อายุ 8 ปี ล้มจากที่สูง งอศอกไม่ได้ เจ้าหน้าที่ฉุกเฉินส่งภาพ X-ray มาให้ดู พบการหักของกระดูกแขนส่วนบน",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Supracondylar fracture ของกระดูกหัวแขนส่วนบน (Humerus)"
+      },
+      {
+        "label": "B",
+        "text": "Lateral condyle fracture ของกระดูก Humerus"
+      },
+      {
+        "label": "C",
+        "text": "Medial epicondyle fracture"
+      },
+      {
+        "label": "D",
+        "text": "Monteggia fracture ของ Radius และ Ulna"
+      },
+      {
+        "label": "E",
+        "text": "Nursemaid's elbow (Radial head subluxation)"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008",
+    "explanation": "Supracondylar fracture เป็นการหักกระดูก Humerus ที่พบบ่อยที่สุดในเด็ก (50-60% ของการหักศอกในเด็ก) มักเกิดจากการล้มทั่ว ๆ ไป ผู้ป่วยจะ flexion หรือ extension ศอกไม่ได้และมีอาการบวม ทำให้ไม่สามารถงอศอกได้ ซึ่งตรงกับการนำเสนอของคดีนี้",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "เด็กชายอายุ 7 ปี ล้มจากจักรยานและเกิดการบาดเจออพยพ ตรวจวินิจฉัยด้วย X-ray ท่า AP และ lateral พบว่า fracture line อยู่เหนือ condyles ของ humerus distal ส่วน medial collapse และ posterior displacement มีความชัด เป็นประเภท Gartland type III โปรแกรม treatment ควรเป็นอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Conservative treatment with sling and swathe immobilization for 4-6 weeks"
+      },
+      {
+        "label": "B",
+        "text": "Closed reduction and percutaneous pinning with K-wires หลังจาก reduction"
+      },
+      {
+        "label": "C",
+        "text": "Skeletal traction for 2-3 weeks จากนั้น cast immobilization"
+      },
+      {
+        "label": "D",
+        "text": "Open reduction with internal fixation and plate osteosynthesis"
+      },
+      {
+        "label": "E",
+        "text": "Observation only เนื่องจากเด็ก ๆ มีความสามารถในการสร้างมวลกระดูกใหม่ได้"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008",
+    "explanation": "Supracondylar fracture ประเภท Gartland type III (displaced with loss of cortical contact) มีความเสี่ยงต่อภาวะแทรกซ้อนเช่น vascular injury และ malunion สูง ดังนั้น closed reduction ต้องทำโดยเร็ว และ percutaneous pinning ด้วย K-wires จะช่วยให้รักษาความเสถียรของ fracture และลดการกลับไปเบี่ยงเบนใหม่ได้ดี Treatment นี้เป็น gold standard ในปัจจุบัน",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "เด็กชายอายุ 8 ขวบ ล้มลงบนแขนที่เหยียดออก (FOOSH injury) บริเวณข้อศอก มีอาการปวด บวม และมีการเคลื่อนไหวจำกัด เอกซเรย์แสดงการแตกของกระดูกรอยต่อด้านข้าง (lateral condylar fracture of humerus) โดยไม่มีการสมดุลของกระดูก ควรจัดการแบบใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "อนุรักษ์เท่านั้น ใช้ sling ประมาณ 2-3 สัปดาห์"
+      },
+      {
+        "label": "B",
+        "text": "ผ่าตัดแก้ไขด้วย internal fixation ด้วย K-wire หรือ screw"
+      },
+      {
+        "label": "C",
+        "text": "ใช้ external fixation เป็นตัวเลือกแรก"
+      },
+      {
+        "label": "D",
+        "text": "ส่งต่อเพื่อพยาธิวิทยาเนื้อเยื่อ ไม่จำเป็นต้องรักษา"
+      },
+      {
+        "label": "E",
+        "text": "ใช้ immobilization ที่ข้อศอกโค้ง 90 องศา เป็นเวลา 2 สัปดาห์แล้วรีฮาบ"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008",
+    "explanation": "Lateral condylar fracture of humerus ที่ไม่มีการสมดุลของกระดูก (displaced fracture) ในเด็กเป็นอาการบาดเจออันตรายซึ่งจำเป็นต้องผ่าตัดแก้ไขด้วย internal fixation (K-wire หรือ screw) เพื่อป้องกันภาวะแทรกซ้อนได้แก่ nonunion, malunion, avascular necrosis และ cubitus valgus deformity ซึ่งจะส่งผลต่อการทำงานในระยะยาว",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "เด็กชายอายุ 8 ปี ล้มจากการเล่น นำมือขึ้นเพื่อรับตัว เกิดอาการปวดที่ข้อศอกด้านนอก (lateral elbow pain) และบวม ตรวจวินิจฉัยด้วยรังสีพบ Lateral epicondylar fracture of humerus",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Anterior angulation deformity เพราะเป็นการบาดเจ็บที่ common extensor origin"
+      },
+      {
+        "label": "B",
+        "text": "Posterolateral angulation deformity เพราะแรงกระแทกทำให้กระดูกแหกไปด้านหลังข้างนอก"
+      },
+      {
+        "label": "C",
+        "text": "Medial displacement เพราะกล้ามเนื้อ common flexor ดึงเศษกระดูก"
+      },
+      {
+        "label": "D",
+        "text": "Pure vertical fracture line ที่ไม่มีการเบี่ยงเบนทิศทาง"
+      },
+      {
+        "label": "E",
+        "text": "Superior displacement เพราะกล้ามเนื้อ triceps มีแรงดึงเศษกระดูก"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008",
+    "explanation": "Lateral epicondylar fracture of humerus มักเกิดจากผลกระทบขณะล้มและนำมือหน้าไป ส่วนใหญ่เกิด posterolateral angulation deformity เพราะเศษกระดูกถูกดึงโดย common extensor origin ที่ติดอยู่กับเศษไปด้านหลังและด้านข้าง ข้อ A ผิดเพราะ anterior angulation ไม่ใช่ common deformity ข้อ C, D, E ไม่ใช่ลักษณะเฉพาะของการบาดเจ็บนี้",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายวัย 45 ปี มาด้วยอาการชาและเจ็บนิ้วโป้งและนิ้วชี้มือขวา ลักษณะอาการเพิ่มขึ้นตอนเช้า ส่วนดีขึ้นเมื่อเขย่ามือ ตรวจ Phalen test และ Tinel sign เป็นบวก ทำให้สงสัย Carpal Tunnel Syndrome ในการรักษา ควรให้การรักษาอะไรในเบื้องต้น",
+    "choices": [
+      {
+        "label": "A",
+        "text": "อุบัติการร้าว + แทบเล็ตลดอักเสบ + ออกกำลังกายนิ้ว"
+      },
+      {
+        "label": "B",
+        "text": "ฉีดสเตียรอยด์ที่รอบเส้นประสาท"
+      },
+      {
+        "label": "C",
+        "text": "ผ่าตัดโปรแกรมเส้นคาร์พัลลิเกเมนต์ทันที"
+      },
+      {
+        "label": "D",
+        "text": "ไฟฟ้าหูกเท่านั้น"
+      },
+      {
+        "label": "E",
+        "text": "บริหารด้วยแม่เหล็กและวิตามิน"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008",
+    "explanation": "การรักษา Carpal Tunnel Syndrome ในเบื้องต้นเป็นแบบอนุรักษ์ (Conservative treatment) ประกอบด้วย การสวมใส่อุบัติการร้าว โดยเฉพาะตอนกลางคืน ยาลดอักเสบ (NSAID) และการออกกำลังกายบริหารนิ้วมือ ถ้าไม่ดีขึ้นในระยะ 3-6 เดือนจึงพิจารณาฉีดสเตียรอยด์หรือการผ่าตัด",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "เด็กชายอายุ 6 ปี มาด้วยอาการแขนหัก หลังตกลงมาจากที่สูง ตรวจร่างกายพบ triangular landmark ที่ข้อศอกยังคงอยู่ในตำแหน่งปกติ จงวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Supracondylar fracture"
+      },
+      {
+        "label": "B",
+        "text": "Lateral condylar fracture"
+      },
+      {
+        "label": "C",
+        "text": "Medial epicondylar fracture"
+      },
+      {
+        "label": "D",
+        "text": "Olecranon fracture"
+      },
+      {
+        "label": "E",
+        "text": "Monteggia fracture"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008",
+    "explanation": "Triangular landmark (formed by olecranon, medial epicondyle, and lateral epicondyle) ยังคงปกติหมายความว่าเส้นทางจากด้านข้างไปด้านในของข้อศอกยังเป็นเส้นตรง ซึ่งบ่งชี้ว่าไม่มีการเคลื่อนตัวของกระดูกขนาดใหญ่ที่ข้อศอก Lateral condylar fracture มักเป็นการหักแบบบางเบา (undisplaced หรือ minimally displaced) ซึ่งจะรักษา triangular landmark ให้อยู่ในตำแหน่งที่ใกล้เคียงกับปกติ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 25 ปี ขับรถจักรยานยนต์มา 1 ชั่วโมง ตรวจร่างกายพบ 10 cm. laceration wound at right leg with tibial fracment exposure ทาการล้างแผลและ debridement หลังจากนั้นจะทาการรักษาอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "casting"
+      },
+      {
+        "label": "B",
+        "text": "external fixation"
+      },
+      {
+        "label": "C",
+        "text": "internal fixation"
+      },
+      {
+        "label": "D",
+        "text": "suture wound"
+      },
+      {
+        "label": "E",
+        "text": "skeletal traction"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2009",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ชายอาชีพช่างไม้ complain เรื่องปวดศอกขวา ตรวจร่างกาย tender at Rt. lateral epicondyle of humerus ควรทา test ใดเพื่อการวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Tinel test at forarm"
+      },
+      {
+        "label": "B",
+        "text": "Phalan test"
+      },
+      {
+        "label": "C",
+        "text": "resist wrist extensor test"
+      },
+      {
+        "label": "D",
+        "text": "resist pronation"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2009",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 50 ปี ตกจากที่สูง มีแขนผิดรูป มีอาการปวดแขน บวมกระดกข้อมือไม่ได้\nPE: deformity of arms with crepitus , dorsiflex grade: 0 , finger extension grade : 0 ,\ndecrease sensation at dorsum at 1st web space of hand ,\nFilm : oblique middle 1/3 fracture of right Humerus\nจง management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ใส่เฝือกแขนท่อนบนและท่อนล่าง"
+      },
+      {
+        "label": "B",
+        "text": "ทา EMG และใส่เฝือกแขนท่อนบนและ ท่อนล่าง"
+      },
+      {
+        "label": "C",
+        "text": "ผ่าตัดดามกระดูกและต่อเส้นประสาท"
+      },
+      {
+        "label": "D",
+        "text": "ผ่าตัดดามกระดูกและใส่เฝือกท่อนบน และท่อนล่าง"
+      },
+      {
+        "label": "E",
+        "text": "ผ่าตัดต่อเส้นประสาทและใส่เฝือกแขนท่อนบน"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2009",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชายปวดข้อศอกขวาด้าน lateral epicondyle of humerus จะตรวจร่างกายอะไรเพื่อยืนยันการDx",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Yegason’s test"
+      },
+      {
+        "label": "B",
+        "text": "Valgus testของข้อศอกขวา"
+      },
+      {
+        "label": "C",
+        "text": "Tinel testของทั้งแขนขวา"
+      },
+      {
+        "label": "D",
+        "text": "ทา hyperextension of Rt.wrist"
+      },
+      {
+        "label": "E",
+        "text": "ตรวจ sensory ที่ first web space"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2009",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ชาย เล่นฟุตบอล ล้ม เจ็บหัวไหล่ พบ neck of humerus fx กล้ามเนื้อใดจะเสีย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Triceps"
+      },
+      {
+        "label": "B",
+        "text": "Biceps"
+      },
+      {
+        "label": "C",
+        "text": "Deltoid"
+      },
+      {
+        "label": "D",
+        "text": "Coracobrachialis"
+      },
+      {
+        "label": "E",
+        "text": "Brachilis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2009",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชาย อายุ 63ปี มีอาการปวดสะโพกร้าวลงขา ปวดมากขึ้นเมื่อเดินได้ระยะ 300 m. ต้องพักประมาณ 5 นาที อาการดีขึ้นจึงเดินต่อได้มา 6 เดือน 1 เดือนต่ออาการเป็นมากขึ้น เดินได้ 100 m. PE : Loss lumbar lordotic มี tender at lumbar จากการ Dx คิดถึงโรคใดมากที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Spinal instability"
+      },
+      {
+        "label": "B",
+        "text": "Spinal stenosis"
+      },
+      {
+        "label": "C",
+        "text": "Spondylosis"
+      },
+      {
+        "label": "D",
+        "text": "Chronic arterial occlusion"
+      },
+      {
+        "label": "E",
+        "text": "Protuse nucleus proposus"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2009",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ชายอายุ 17 ปี ให้ประวัติว่า 1 สัปดาห์ได้รับอุบัติเหตุที่เข่าขวาจากการเล่นฟุตบอล 4 วันก่อนมารพ. มีไข้และเข่าบวม เมื่อวานปวดเข่ามากจนเดินกระเผลก จะส่ง investigation อะไรที่เหมาะสมที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ASO titer"
+      },
+      {
+        "label": "B",
+        "text": "hemoculture"
+      },
+      {
+        "label": "C",
+        "text": "X-rays"
+      },
+      {
+        "label": "D",
+        "text": "arthrocentesis"
+      },
+      {
+        "label": "E",
+        "text": "uric acid analysis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2009",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หญิงอายุ 80 ปี หกล้มในห้องน้า film พบ intertrochanteric fracture จะทาอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "surgery"
+      },
+      {
+        "label": "B",
+        "text": "long leg cast"
+      },
+      {
+        "label": "C",
+        "text": "ให้นั่งรถเข็น"
+      },
+      {
+        "label": "D",
+        "text": "traction"
+      },
+      {
+        "label": "E",
+        "text": "ประเมินสภาพผู้ป่วยก่อนเลือกวิธีการรักษา"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2009",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยชาย ปวดแขนและข้อมือขวา ตรวจร่างกาย มี weak abductor pollics brevis มีอาการชาที่ 3 นิ้วครึ่งด้าน radial side ทา Tinel test negative at wrist ควรทา test อะไรต่อ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "resist wrist extension test"
+      },
+      {
+        "label": "B",
+        "text": "resist wrist flexion test"
+      },
+      {
+        "label": "C",
+        "text": "resist pronation test"
+      },
+      {
+        "label": "D",
+        "text": "resist supination test"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2009",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "What is the most common of low back pain?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "spondylosis"
+      },
+      {
+        "label": "B",
+        "text": "spondylolysis"
+      },
+      {
+        "label": "C",
+        "text": "loss of lumbar lordosis"
+      },
+      {
+        "label": "D",
+        "text": "spinal instability"
+      },
+      {
+        "label": "E",
+        "text": "weak back muscle"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2009",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "แม่บ้านอายุ 45 ปี มาด้วยอาการปวดแขนขวา ข้อมือขวา และปวดหลัง ส่วนคอ อาการเป็นมากขึ้นตอนกลางคืนจนสะดุ้งตื่น มีอาการชาและเสียวที่นิ้วโป้ง นิ้วชี้ และนิ้วกลาง Physical exam พบอาการ Tinel's sign ที่ข้อมือบวก เวลาหรี่ไฟนอนทำให้อาการแย่ลง การรักษาระยะแรกที่เหมาะสมคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cervical traction"
+      },
+      {
+        "label": "B",
+        "text": "Steroid injection ที่ข้อมือ"
+      },
+      {
+        "label": "C",
+        "text": "Wrist splint/Night splint และ NSAIDs"
+      },
+      {
+        "label": "D",
+        "text": "Carpal tunnel release surgery"
+      },
+      {
+        "label": "E",
+        "text": "Warm pack และ ultrasound therapy"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2009",
+    "explanation": "โรคนี้เป็น Carpal Tunnel Syndrome (CTS) ตามสัญญาณทั่วไป ได้แก่ อาการชาในพื้นที่ median nerve, Tinel's sign บวก, อาการเลวขึ้นตอนกลางคืน และเมื่อหรี่ไฟนอน การรักษาระยะแรก (first-line treatment) คือการใส่ wrist splint/night splint เพื่อป้องกันการดัดงอมือตอนนอน และให้ NSAIDs เพื่อลดการอักษับและลดอาการ steroid injection เป็นตัวเลือกที่ 2 หากการรักษา conservative ไม่หายใน 3-6 เดือน",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้หญิง 63 ปี ปวดหลังร้าวลงขา 2 ข้างมา 6 เดือน เดินได้ประมาณ 300 เมตรจะเริ่มมีอาการ ต้องนั่ง ยองๆพัก อาการจะดีขึ้น อาการแย่ลงเรื่อยๆ เดิน ได้เหลือ 100 เมตรก็ต้องหยุดพัก ตรวจร่างกาย : loss of lumbar lordosis, otherwise normal จง ให้การวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "lumbar spine instability"
+      },
+      {
+        "label": "B",
+        "text": "lumbar stenosis"
+      },
+      {
+        "label": "C",
+        "text": "spondylolisthesis"
+      },
+      {
+        "label": "D",
+        "text": "arterial insufficiency"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2009",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยชาย ถูกรถชนที่หน้าแข้ง ตรวจร่างกายมี แผลขนาด 1cm คลา dorsalis pedis และposterior tibial pulse ไม่ได้ Doppler study ไม่ พบ flow X-ray พบ comminuted fracture and posterior displacement of tibia ถามว่าเป็น open fracture classใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "class I"
+      },
+      {
+        "label": "B",
+        "text": "class II"
+      },
+      {
+        "label": "C",
+        "text": "class IIIa"
+      },
+      {
+        "label": "D",
+        "text": "class IIIb"
+      },
+      {
+        "label": "E",
+        "text": "class IIIc"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2009",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่ วยหญิงอายุ 55 ปี ได้รับอุบัติเหตุที่สะโพกหลังการรักษาด้วยวิธีดึงข้อ อาการปกติดี ต่อมามีอาการปวดทีMสะโพกและเดินลาบาก ข้อใดจะช่วยในการวินิจฉัยและวางแผนการรักษามากที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Arthocentesis"
+      },
+      {
+        "label": "B",
+        "text": "Film boht hip"
+      },
+      {
+        "label": "C",
+        "text": "CT"
+      },
+      {
+        "label": "D",
+        "text": "MRI"
+      },
+      {
+        "label": "E",
+        "text": "Bone scan"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2010",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ครูพละวัย 28 ปี มีอาการท้องเสียพร้อมนักเรียนหลังงานเลี้ยงปีใหม่ทีjโรงเรียน 3 อาทิตย์ต่อมามีอาการปวดเมืjอยตามตัว โดยเฉพาะทีhเข่าซ้าย คอ และหลัง ตรวจร่างกายพบ เข่าซ้ายบวมแดงเจ็บเมืjอขยับ คอและหลังขยับได้น้อย ก้มตึง dx?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Salmonellosis"
+      },
+      {
+        "label": "B",
+        "text": "Septic arthritis"
+      },
+      {
+        "label": "C",
+        "text": "Crystal induced arthritis"
+      },
+      {
+        "label": "D",
+        "text": "Reactive arthritis"
+      },
+      {
+        "label": "E",
+        "text": "Rheumatoid arthritis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2011",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่ วยหญิงปวดข้อ 2-3 วัน Joint aspirate : Cloudy, WBC30,000 cells มี Rhomboid shape crystal ให้ยาอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Allopurinal"
+      },
+      {
+        "label": "B",
+        "text": "Colchicine"
+      },
+      {
+        "label": "C",
+        "text": "Ceftriazone"
+      },
+      {
+        "label": "D",
+        "text": "Diclofenac"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2011",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่ วยหญิง 40 ปี มีอาการปวดข้อเท้า มักเป็นตอนเช้า ต้องรอจนฟ้าสางแดดส่องจึงหาย PE symmetrical DIP joint…. Dx?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "SLE"
+      },
+      {
+        "label": "B",
+        "text": "Rheumatoid"
+      },
+      {
+        "label": "C",
+        "text": "OA"
+      },
+      {
+        "label": "D",
+        "text": "Tuberculosis"
+      },
+      {
+        "label": "E",
+        "text": "Reactive asthritis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2011",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่ วยหญิงอายุ 24 ปี on prednisolone 20 mg OD เพืhอรักษาอาการปวดข้อนาน 1 ปี จะพบความผิดปกติใด ในผู้ป่ วยรายนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "hypertension"
+      },
+      {
+        "label": "B",
+        "text": "Hypothyroid"
+      },
+      {
+        "label": "C",
+        "text": "increased bone mass"
+      },
+      {
+        "label": "D",
+        "text": "diabetes inspidus"
+      },
+      {
+        "label": "E",
+        "text": "adipose tissue wasting"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2011",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่ วยชายอายุ 65 ปี U/D OA ต่อมามีอาการกดเจ็บบริเวณเข่าซ้ายมีปุ่มขPืึนมาบริเวณด้านหลังข้อพับ มีอาการตึงเข่าหลังตืhนนอน ตรวจร่างกายพบ mild swelling no redness no tender at medial aspect below patella 2 cm dx?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "RA"
+      },
+      {
+        "label": "B",
+        "text": "Arsenic bursitis"
+      },
+      {
+        "label": "C",
+        "text": "Prepatellar bursitis"
+      },
+      {
+        "label": "D",
+        "text": "Patella tendinitis"
+      },
+      {
+        "label": "E",
+        "text": "Flare of OA"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2011",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่ วยหญิงปวดแขนและไหล่ขวา 3 วัน เป็นมากเวลายกมือหวีผม ตรวจร่างกายพบจุดกดเจ็บทีh Tip of rt shoulder เจ็บมากขPืึนเวลา abduction Dx อะไร?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Supraspinatus tendinitis"
+      },
+      {
+        "label": "B",
+        "text": "Bicipital tendinitis"
+      },
+      {
+        "label": "C",
+        "text": "Infraspinatus tendinitis"
+      },
+      {
+        "label": "D",
+        "text": "Subscapularis tendonitis"
+      },
+      {
+        "label": "E",
+        "text": "Subcacromial bursitis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2011",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่ วยหญิงไทย 50 ปี ล้มศอกยันพื้น PE: ข้อมือขวาบวมผิดรูป จงให้การวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Colles’ fracture"
+      },
+      {
+        "label": "B",
+        "text": "Greenstick fracture"
+      },
+      {
+        "label": "C",
+        "text": "Fracture both bone"
+      },
+      {
+        "label": "D",
+        "text": "Wrist dislocation"
+      },
+      {
+        "label": "E",
+        "text": "Supracondylar Fracture"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2011",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 45 ปี มาด้วยอาการปวดหลังเฉียบพลัน เนื่องจากการยกของหนัก วินิจฉัยเป็นโปรแลปส์ดิสก์ระหว่าง椎骨ส่วนเอว (L4-L5) ด้วย radiculopathy ที่กดทับประสาท ในการรักษาแบบอนุรักษ์ ถือว่าการเพิ่มน้ำหนัก traction นั้นจำเป็น เมื่อเพิ่มน้ำหนัก traction ควรเพิ่มขึ้นอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เพิ่มขึ้นทีละ 2-3 กิโลกรัม ทีละวันจนถึงน้ำหนักที่เหมาะสม"
+      },
+      {
+        "label": "B",
+        "text": "เพิ่มขึ้นทีละ 5-10 กิโลกรัมในการรักษาครั้งแรกเพื่อให้ได้ผลอย่างรวดเร็ว"
+      },
+      {
+        "label": "C",
+        "text": "เพิ่มขึ้นทีละ 10-15 กิโลกรัมทุกครั้งจนถึง 50 กิโลกรัม"
+      },
+      {
+        "label": "D",
+        "text": "เพิ่มขึ้นตามความเจ็บปวดของผู้ป่วย โดยไม่มีมาตรฐานการเพิ่ม"
+      },
+      {
+        "label": "E",
+        "text": "ควรใช้น้ำหนัก traction ตั้งแต่ 30-40 กิโลกรัม ตั้งแต่ครั้งแรกเพื่อให้เกิด decompression ต่อ nerve root"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2012",
+    "explanation": "การเพิ่มน้ำหนัก traction ในการรักษาโปรแลปส์ดิสก์ของหลังควรเพิ่มอย่างค่อยเป็นค่อยไป ทีละ 2-3 กิโลกรัม เพื่อให้ผู้ป่วยปรับตัวได้ดีและลดความเสี่ยงต่อ muscle spasm หรือภาวะแทรกซ้อน การเพิ่มน้ำหนักมากเกินไปในครั้งแรกอาจทำให้เกิดการหดตัวของกล้ามเนื้อหลังแทนที่จะเกิด decompression ที่ต้องการ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงอายุ 70 ปี ลื่นล้มในห้องน้ำเมื่อ 1 สัปดาห์ที่แล้ว เจ็บที่ขาหนีบขวา เจ็บมากและเดินไม่ได้ การตรวจร่างกาย พบ external rotation และ shortening ของขาขวา ข้อใดคือการวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "โรคแข็งตัวของสะโพกขวา (Hip osteoarthritis)"
+      },
+      {
+        "label": "B",
+        "text": "หักกระดูกสะโพกส่วนหัว (Femoral neck fracture)"
+      },
+      {
+        "label": "C",
+        "text": "บาดเจ็บเอ็นจากการหมดแรง (Muscle strain)"
+      },
+      {
+        "label": "D",
+        "text": "หากระดูกสะโพกส่วนใหญ่ (Intertrochanteric fracture)"
+      },
+      {
+        "label": "E",
+        "text": "脱臼สะโพกไปด้านหลัง (Posterior hip dislocation)"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2012",
+    "explanation": "อาการและวินิจฉัยลักษณะของหักกระดูกสะโพกส่วนหัว ได้แก่ การล้มในผู้สูงอายุ เจ็บที่ขาหนีบ เดินไม่ได้ และมีลักษณะเท้าเหลื่อม (external rotation) พร้อมขาสั้น (shortening) ซึ่งเป็นสัญลักษณ์คลาสสิก (classic signs) ของการหักกระดูกประเภทนี้",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชายวัย 45 ปี มาร้องขอความช่วยเหลือด้วยอาการปวดที่บริเวณสะโพก โดยเฉพาะด้านข้างนอก (lateral hip pain) ที่เลวร้ายขึ้นเมื่อนอนข้างเจ็บและมีอาการปวดเพิ่มขึ้นขณะขึ้นบันไดหรือเดินขึ้นเนิน ซึ่งอาการนี้เป็นเรื่องของ trochanteric bursitis ข้อใดคือการตรวจทางคลินิกที่มีความไวสูงในการวินิจฉัยโรคนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Noble compression test (ทดสอบการกดบริเวณ iliotibial band บนนูนโครงกระดูกแกนหนาม)"
+      },
+      {
+        "label": "B",
+        "text": "Trendelenburg sign (สัญญาณเสียสมดุลขณะยืนขาเดียว)"
+      },
+      {
+        "label": "C",
+        "text": "Thomas test (ทดสอบการหดตัวของกล้ามเนื้อ hip flexor)"
+      },
+      {
+        "label": "D",
+        "text": "FABER test (Flexion-ABduction-External Rotation test)"
+      },
+      {
+        "label": "E",
+        "text": "Resisted hip abduction (ทดสอบการต้านทานการหยิบขาออกด้านข้าง) และ Palpation of greater trochanter (การประเมินบริเวณนูนโครงกระดูก)"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2012",
+    "explanation": "Trochanteric bursitis มีลักษณะเป็นการอักเสบของหุ้มน้ำเหลือบริเวณ greater trochanter โดยมีอาการปวดจากการหดตัวของกล้ามเนื้อ gluteus medius และ minimus ซึ่งการทดสอบหลักคือ resisted hip abduction ที่จะกำหวัดเฉพาะอาการปวด และการ palpation โดยตรงของ greater trochanter นั้นมีความไวสูง Noble test ใช้ดำเนินการ iliotibial band syndrome ส่วน FABER และ Trendelenburg เป็นการทดสอบสำหรับปัญหาการรับน้ำหนักหรือปัญหากระดูกสะโพก",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 65 ปี มา OP ด้วยอาการปวดหลังเรื้อรัง วินิจฉัยว่าเป็น Lumbar Spondylolisthesis L4-L5 ได้รับการผ่าตัด L4-L5 Fusion เมื่อ 12 ชั่วโมงหลังผ่าตัด ผู้ป่วยมีอาการหอบเหนื่อย SpO2 88% ที่ห้องพยาบาล Chest X-ray ปกติ ECG: Sinus tachycardia ไม่มีการเปลี่ยนแปลง ST segment จงวินิจฉัยโรคนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Pulmonary Embolism (PE)"
+      },
+      {
+        "label": "B",
+        "text": "Myocardial Infarction"
+      },
+      {
+        "label": "C",
+        "text": "Pneumonia"
+      },
+      {
+        "label": "D",
+        "text": "Anaphylaxis"
+      },
+      {
+        "label": "E",
+        "text": "Atelectasis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2012",
+    "explanation": "ผู้ป่วยหลังการผ่าตัด major orthopedic surgery มีความเสี่ยงสูงต่อ VTE/PE เนื่องจากการบาดเจอ immobilization และ hypercoagulable state ลักษณะคลินิก hypoxemia (SpO2 88%) กับ tachycardia โดย CXR ปกติ และ ECG ไม่มีการเปลี่ยนแปลง ST segment นั้นคำนวณมากสำหรับ PE มากกว่าเหตุผลอื่นๆ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "เด็กชายอายุ 5 ปี ได้รับการบาดเจ็บแขนขวา เป็นการแตกกระดูกหลังมือ (fracture humerus) จึงได้รับการรักษาด้วย skin traction ครั้งแรก หลังจาก 2 วัน ผู้ปกครองรายงานว่าเด็กมีอาการปวดแขนด้านล่าง (forearm) เพิ่มขึ้นอย่างมากและปวดเมื่อใดเวลากางนิ้วมือและงัดข้อศอก ถามว่าหมอควรจัดการอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ยังคงต่อสกิน แทร็กชั่นต่อไปแต่เพิ่มน้ำหนักอย่างค่อยเป็นค่อยไป"
+      },
+      {
+        "label": "B",
+        "text": "เลิกสกิน แทร็กชั่นทันทีและเปลี่ยนเป็นระบบอื่น (หลีกเลี่ยงแทร็กชั่น)"
+      },
+      {
+        "label": "C",
+        "text": "ลดน้ำหนักของสกิน แทร็กชั่นลงครึ่งหนึ่ง"
+      },
+      {
+        "label": "D",
+        "text": "ทำการแลบวิทยาเคมี (blood test) เพื่อหาสาเหตุของปวด"
+      },
+      {
+        "label": "E",
+        "text": "ให้ยาแปลงปวดและต่อสกิน แทร็กชั่นต่อไปตามเดิม"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2012",
+    "explanation": "อาการที่อธิบายนี้สอดคล้องกับ compartment syndrome หรือ Volkmann's ischemic contracture ที่เกิดจากความดันสูงในช่องกล้ามเนื้อและ ischemia ซึ่งพบได้บ่อยในผู้ป่วยเด็กที่ใช้สกิน แทร็กชั่นในแขนขึ้นด้านบน อาการปวดรุนแรง ปวดเมื่อเคลื่อนไหวนิ้ว (pain with passive stretch) เป็นสัญญาณเตือนที่สำคัญ ต้องเลิกแทร็กชั่นทันทีและเปลี่ยนวิธีการอื่น เช่น overhead skeletal traction หรือ POP fixation เพื่อลดแรงกดและปกป้องเนื้อเยื่อจากการเสื่อมไป",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "After the motorcycle accident, a young male, aged 35 years, patient presented with right groin pain. His film reveals 1 mm dislocation above right acetabulum. What is the proper management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Walk with crutch"
+      },
+      {
+        "label": "C",
+        "text": "Retraction 6 hr"
+      },
+      {
+        "label": "D",
+        "text": "Open reduction with plate fixation"
+      },
+      {
+        "label": "E",
+        "text": "Close reduction with percutaneous screw"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ตารวจชายอายุ 30 ปี fall on his Lt. shoulder พบไหล่ซ้ายปวดและบวม Radiograph พบ distal clavicle displace 1 mm above acromion process ถามว่า ligament ใดขาด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "coracoacromial and coracohumeral lig."
+      },
+      {
+        "label": "B",
+        "text": "coracohumeral and coracoclavicular lig."
+      },
+      {
+        "label": "D",
+        "text": "coracoclavicular and coracohumeral lig."
+      },
+      {
+        "label": "E",
+        "text": "coracoclavicular and acromioclavicular lig."
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "A 55-year-old housewife presents with right shoulder pain for 6 months. Pain worsens when hooking her bras and raising her hand above her head. Physical examination reveals tenderness at the upper part of the shoulder with limited internal rotation and abduction. Which of the following is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Supraspinatus tendinitis/rotator cuff tear"
+      },
+      {
+        "label": "B",
+        "text": "Adhesive capsulitis (frozen shoulder)"
+      },
+      {
+        "label": "C",
+        "text": "Biceps tendinitis"
+      },
+      {
+        "label": "D",
+        "text": "Acromioclavicular joint osteoarthritis"
+      },
+      {
+        "label": "E",
+        "text": "Subacromial bursitis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2012",
+    "explanation": "โรค supraspinatus tendinitis/rotator cuff tear นั้นพบบ่อยที่สุดในกลุ่มอายุ 50+ ปี โดยอาการปวดเมื่อยกแขนเหนือศีรษะและยากในการทำงาน overhead activities (เช่น ขอดเสื้อชั้นใน) เป็นลักษณะเฉพาะ ซึ่งตรงกับการขอดเสื้อชั้นในและ limited abduction ที่พบในผู้ป่วยรายนี้",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชายอายุ 55 ปี มาด้วยอาการปวดไหล่ขวาเรื้อรังเป็นเวลา 6 เดือน บริเวณด้านข้างไหล่ ปวดมากเวลายกแขนขึ้น และมีอาการอ่อนแรง เอกซเรย์ไหล่ปกติ แต่ MRI แสดง tear ของ rotator cuff พบการเปลี่ยนแปลงดีจেนเนอร์เรทีฟในข้อไหล่ ข้อมูลใดต่อไปนี้แสดงถึง rotator cuff arthritis",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Fatty infiltration ของกล้ามเนื้อ rotator cuff ระดับ Goutallier stage 2-3 พร้อม osteoarthritis ข้อไหล่"
+      },
+      {
+        "label": "B",
+        "text": "Partial thickness tear ของ supraspinatus โดยไม่มี degenerative change"
+      },
+      {
+        "label": "C",
+        "text": "Acute inflammation ของ rotator cuff bursa เท่านั้น"
+      },
+      {
+        "label": "D",
+        "text": "Calcific tendinitis ของ infraspinatus ร่วมกับ subacromial impingement"
+      },
+      {
+        "label": "E",
+        "text": "Adhesive capsulitis ของข้อไหล่ โดยไม่มี rotator cuff pathology"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2012",
+    "explanation": "Rotator cuff arthritis (Cuff tear arthropathy) เป็นภาวะดีจเนอร์เรทีฟข้อไหล่ที่เกิดจากการรวมกันของ rotator cuff tear เรื้อรังกับ osteoarthritis และ fatty infiltration ของกล้ามเนื้อ (Goutallier stage 2-3) ซึ่งบ่งชี้ถึงความเสียหายเนื้อเยื่อไม่สามารถซ่อมแซมได้แล้ว อัพชั่น A รวมทั้งสามองค์ประกอบนี้ไว้ในคำตอบเดียว",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายอายุ 55 ปี มาด้วยอาการปวดไหล่ด้านบน เมื่อทำการขยับแขนข้างบนแนวตั้งฉากกับลำตัว (cross-body adduction) จะมีอาการปวดที่สุด อาการนี้มีความเฉพาะเจาะจงสูง การตรวจร่างกายพบข้อ acromioclavicular มีการเสื่อมสภาพ X-ray แสดงการเสื่อมสภาพของข้อ acromioclavicular ด้วยกาน osteophyte จากการตรวจร่างกายข้างต้น สิ่งใดถูกต้องเกี่ยวกับ acromioclavicular arthritis",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cross-body adduction test มีความเฉพาะเจาะจงสูงสำหรับ acromioclavicular arthritis"
+      },
+      {
+        "label": "B",
+        "text": "Osteophyte ที่เกิดจากข้อ acromioclavicular มีแนวโน้มที่จะบีบ rotator cuff tendons โดยเฉพาะ supraspinatus tendon"
+      },
+      {
+        "label": "C",
+        "text": "การรักษาเบื้องต้นควรเป็นการผ่าตัด acromioclavicular joint resection ทันที"
+      },
+      {
+        "label": "D",
+        "text": "ข้อ acromioclavicular arthritis มักเกิดจากการบาดเจอที่บริเวณ distal clavicle"
+      },
+      {
+        "label": "E",
+        "text": "การฉีด corticosteroid ลงในข้อ acromioclavicular ไม่มีประโยชน์ต่อการบรรเทาอาการ"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2012",
+    "explanation": "Cross-body adduction test (horizontal adduction test) เป็น maneuver ที่เคลื่อน shoulder ข้างมาข้ามลำตัวและมีความเฉพาะเจาะจงสูง (high specificity) สำหรับการวินิจฉัย acromioclavicular arthritis เนื่องจากเคลื่อนข้อ AC joint โดยตรง ทำให้เกิด pain ได้ทันที ตัวเลือก B ถูกต้องเชิงอนาโตมี แต่ไม่ใช่สิ่งที่ถูกต้องในบริบทของคำถาม ตัวเลือก C, D, E ไม่ถูกต้อง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชายอายุ 35 ปี มาด้วยอาการปวดบ่าเรื้อรัง และมีประวัติไข้เบาๆ เป็นระยะเป็นระยะ X-ray แสดงให้เห็นการทำลายกระดูกที่ข้อบ่า (glenohumeral joint) มีการสูญเสียเนื้อที่ของกระดูกหัวบ่า และเนื้อเยื่อเปื่อยบริเวณข้อต่อ การตรวจทั่วไปพบ sinus tract ที่บ่า ข้อวินิจฉัยที่น่าจะเป็นไปได้มากที่สุดคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Tuberculosis ของข้อบ่า (TB glenohumeral joint)"
+      },
+      {
+        "label": "B",
+        "text": "Bacterial arthritis จากเชื้อ Staphylococcus aureus"
+      },
+      {
+        "label": "C",
+        "text": "Fungal infection (Coccidioidomycosis)"
+      },
+      {
+        "label": "D",
+        "text": "Rheumatoid arthritis ในระยะรุนแรง"
+      },
+      {
+        "label": "E",
+        "text": "Osteoarthritis primary ของข้อบ่า"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2012",
+    "explanation": "TB ของข้อบ่าแสดงอาการและอาการทางคลินิกส์ที่รองรับการวินิจฉัยนี้ได้ดี ได้แก่ ประวัติไข้เรื้อรัง การทำลายกระดูก (bone destruction) เนื้อเยื่อเปื่อย และ sinus tract ซึ่งเป็นลักษณะเฉพาะของ chronic granulomatous infection เช่น TB TB ของข้อต่อเป็นรูปแบบหนึ่งของวัณโรค extrapulmonary ที่พบได้บ่อยในเขตที่มีความชุกของโรคสูง เอกซเรย์แสดงรูปแบบการทำลายแบบ erosive ลักษณะเฉพาะนี้แตกต่างจากข้อวินิจฉัยอื่นๆ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายอายุ 75 ปี อาชีพก่อสร้าง ขณะยกของหนัก เกิดเสียง pop sound พร้อมอาการปวดที่แขนขวา พบ swelling, ecchymosis และ palpable deformity ที่บริเวณ antecubital fossa มี pop-eye deformity ที่บริเวณต้นแขน การตรวจวัดแรงกล้ามเนื้อแสดงว่า supination ไม่ได้ การวินิจฉัยที่ถูกต้องควรเป็นอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Distal biceps tendon rupture"
+      },
+      {
+        "label": "B",
+        "text": "Proximal biceps tendon rupture"
+      },
+      {
+        "label": "C",
+        "text": "Triceps tendon rupture"
+      },
+      {
+        "label": "D",
+        "text": "Brachialis muscle rupture"
+      },
+      {
+        "label": "E",
+        "text": "Supracondylar fracture of humerus"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2012",
+    "explanation": "ลักษณะสำคัญของ distal biceps tendon rupture ได้แก่ pop sound ระหว่างการหก ecchymosis ที่ antecubital fossa pop-eye deformity (การหดตัวของกล้ามเนื้อ) และการสูญเสียแรง supination ผู้ป่วยสูงอายุที่ทำงานหนักเสี่ยงต่อการเกิดการฉีกขาดของ distal biceps tendon",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายวัย 35 ปี ได้รับบาดเจอจากการตกจากที่สูง ตรวจ CT spine พบ Burst fracture ของ Thoracolumbar spine (TL spine) ส่วนไหนต่อไปนี้ที่มักจะไม่ได้รับบาดเจอในการบาดเจอแบบนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Anterior column ของ vertebral body ถูกอัดลงมา (compression)"
+      },
+      {
+        "label": "B",
+        "text": "Posterior ligamentous complex ยังคงอยู่อย่างสมบูรณ์ (intact)"
+      },
+      {
+        "label": "C",
+        "text": "Retropulsion ของ bone fragment เข้าไปในช่องท้องของสไปนัล แคนแนล"
+      },
+      {
+        "label": "D",
+        "text": "Burst pattern แผ่กระจายไปทั้ง 4 ด้านของ vertebral body"
+      },
+      {
+        "label": "E",
+        "text": "Disruption ของ Posterior longitudinal ligament และ spinal cord injury"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2012",
+    "explanation": "Burst fracture ของ TL spine เป็น unstable fracture ที่มีการบาดเจอของ 2-3 columns ตามหลัก Denis three-column theory ซึ่งรวมถึง Posterior ligamentous complex (PLC) ที่อักษรสูง ตัวเลือก B จึงไม่ถูกต้องเพราะ PLC มักจะถูกบาดเจอเสมอในการบาดเจอแบบ burst fracture ส่วนตัวเลือก A, C, D, E เป็นลักษณะทั่วไปของ burst fracture ที่มักพบ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "Late kyphosis is rarely occurred in which of the following conditions?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Tuberculosis of the thoracic spine"
+      },
+      {
+        "label": "B",
+        "text": "Ankylosing spondylitis"
+      },
+      {
+        "label": "C",
+        "text": "Scheuermann's disease"
+      },
+      {
+        "label": "D",
+        "text": "Osteoporosis with compression fracture"
+      },
+      {
+        "label": "E",
+        "text": "Rheumatoid arthritis of the spine"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2012",
+    "explanation": "Late kyphosis (progressive kyphotic deformity occurring years after the initial injury or disease) rarely occurs in ankylosing spondylitis because the rigid ankylosis and ossification of the spine prevent progressive collapse and deformity. In contrast, TB spine, Scheuermann's disease, osteoporotic compression fractures, and RA can all lead to significant late kyphotic deformities due to vertebral body destruction, disc degeneration, or mechanical instability.",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชายอายุ 45 ปี มาด้วยอาการปวดหลังส่วนล่างและขาอย่างรุนแรง มีอาการชา ตัวอ่อนแรงในขาทั้งสองข้าง ปัสสาวะและอุจจาระค้าง ซึ่งอาจเกี่ยวข้องกับ cauda equina syndrome ข้อใดต่อไปนี้อาจอยู่ในการวินิจฉัยแยกโรค",
+    "choices": [
+      {
+        "label": "A",
+        "text": "L4-L5 disc herniation with central canal stenosis"
+      },
+      {
+        "label": "B",
+        "text": "L5-S1 disc herniation with massive central protrusion"
+      },
+      {
+        "label": "C",
+        "text": "Lumbar strain with myofascial pain"
+      },
+      {
+        "label": "D",
+        "text": "Piriformis syndrome with sciatica"
+      },
+      {
+        "label": "E",
+        "text": "Osteoarthritis of lumbar spine without neurological deficit"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2012",
+    "explanation": "Cauda equina syndrome มักเกิดจากดิสก์เคลื่อนที่ขนาดใหญ่ที่ระดับ L5-S1 ซึ่งเป็นพื้นที่ที่จุดศูนย์กลางของช่องของสไปนัลแคนัลที่แคบที่สุด การสัมผัสประสาทหลายเส้น (cauda equina) ทำให้เกิดอาการชาในบริเวณ saddle area ปัสสาวะและอุจจาระค้าง และอ่อนแรงขาทั้งสองข้าง ตัวเลือก C, D, E ไม่ได้มีอาการประสาทกลางระบบลำไส้-กระบวนการจำหน่ายหนักพอ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 45 ปี เกิดการบาดเจอที่หลังจากการตกจากความสูง มีการแตกหักของกระดูกสันหลัง L2 โดย posterior ligamentous complex ยังคงอยู่ตามเดิม (intact) ลักษณะการแตกหักประเภทใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Compression fracture - fracture ส่วนหน้าเท่านั้น ด้านหลังปกติ"
+      },
+      {
+        "label": "B",
+        "text": "Burst fracture - fracture ทั้งกระดูกลำตัว ligamentous complex ยังอยู่ตามเดิม"
+      },
+      {
+        "label": "C",
+        "text": "Flexion-distraction injury - fracture ที่มีการเสียหายของ posterior ligamentous complex"
+      },
+      {
+        "label": "D",
+        "text": "Hyperextension injury - ligamentous ด้านหน้าเสียหาย ด้านหลังอยู่ตามเดิม"
+      },
+      {
+        "label": "E",
+        "text": "Fracture-dislocation - มีการเสียหายของ posterior ligamentous complex อย่างมาก"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2012",
+    "explanation": "Burst fracture เป็นการแตกหักที่ส่วนหน้าและส่วนหลังของกระดูกลำตัว แต่ posterior ligamentous complex (PLC) ยังคงอยู่ตามเดิม ทำให้เสถียรภาพของคอลัมน์หลังยังสม่ำเสมอ แตกต่างจาก flexion-distraction injury ซึ่งเสียหาย PLC อย่างมาก ส่งผลให้ไม่เสถียร",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "Female 55 years old presents with right shoulder pain for 6 months. Pain is aggravated when hooking her bra and during arm abduction. Physical examination reveals tenderness over the right supraspinatus region, and limited ROM in internal rotation and abduction. What is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Supraspinatus tendinitis/Rotator cuff syndrome"
+      },
+      {
+        "label": "B",
+        "text": "Adhesive capsulitis (Frozen shoulder)"
+      },
+      {
+        "label": "C",
+        "text": "Acromioclavicular joint osteoarthritis"
+      },
+      {
+        "label": "D",
+        "text": "Biceps tendinitis"
+      },
+      {
+        "label": "E",
+        "text": "Shoulder dislocation"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2012",
+    "explanation": "The clinical presentation is classic for supraspinatus tendinitis: insidious onset in middle-aged female, pain with overhead activities (bra hooking) and abduction, localized tenderness at supraspinatus region, and limited abduction ROM. These findings match the painful arc syndrome pattern. Adhesive capsulitis presents with more severe global ROM limitation in all planes, while AC OA typically causes localized pain at the AC joint.",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชายอายุ 45 ปี มาด้วยอาการปวดบ่าขวาเรื้อรังมากกว่า 3 เดือน โดยเฉพาะเมื่อยกแขนขึ้นข้างบน บริเวณเหนือเดลตอยด์มีความปวด ได้รับการรักษาด้วยยา NSAIDs และ physical therapy แต่ยังไม่ดีขึ้น ประวัติการใช้แขนซ้ำๆ จากการทำงาน การตรวจร่างกายพบ positive Supraspinatus test และ Infraspinatus test ท่า Painful arc ระหว่าง 70-120 องศา สมควรเลือกการตรวจเพื่อยืนยันการวินิจฉัยในการนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "MRI shoulder (เป็นตัวเลือกมาตรฐานสำหรับการยืนยันการฉีกขาด/ปวดของ rotator cuff)"
+      },
+      {
+        "label": "B",
+        "text": "X-ray shoulder plain film (การตรวจแรกเบื้องต้นเพื่อยกเว้นข้อ fracture หรือ arthrosis)"
+      },
+      {
+        "label": "C",
+        "text": "Ultrasound shoulder (ประสิทธิผลสูงในการตรวจ rotator cuff tendinitis และการฉีกขาด และเป็นค่าใช้จ่ายต่ำกว่า MRI)"
+      },
+      {
+        "label": "D",
+        "text": "CT shoulder scan (ใช้เมื่อต้องการมองรายละเอียดของกระดูกเท่านั้น ไม่ดีต่อการตรวจ soft tissue)"
+      },
+      {
+        "label": "E",
+        "text": "Electromyography (ใช้เมื่อสงสัยเป็น nerve compression หรือ neurogenic atrophy ไม่ใช่การตรวจตัวแรก)"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2012",
+    "explanation": "Ultrasound เป็นตัวเลือกที่เหมาะสมที่สุดในสถานการณ์นี้ เพราะมีความไวสูง ราคาต่ำกว่า MRI สามารถดูสถานะของ rotator cuff tendon ได้อย่างชัดเจน และเป็นการตรวจมาตรฐาน (gold standard) ในการส่วนใหญ่ที่ NLE คาดหวัง สำหรับผู้ป่วยที่มีอาการยาวนานและต้องการการยืนยัน ในขณะที่ MRI ใช้สำหรับกรณีที่ซับซ้อนมากขึ้นหรือการวางแผนการผ่าตัด",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชายอายุ 55 ปี มาด้วยอาการปวดไหล่ด้านบน โดยเฉพาะเมื่อทำการ cross-body adduction (นำแขนข้ามไปตรงข้าง) เอกซเรย์แสดงการเสื่อมของข้อ acromioclavicular joint ด้วยการก่อตัวของ osteophyte ที่กดทับต่อ supraspinatus tendon คำตอบใดต่อไปนี้เป็นการอธิบาย pathophysiology ที่ถูกต้องที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Osteophyte ที่ inferolateral ของข้อ AC joint กดทับ supraspinatus tendon และทำให้เกิด subacromial impingement"
+      },
+      {
+        "label": "B",
+        "text": "Inflammation ของ synovium ที่ข้อ AC joint ส่งผลให้ cuff muscles ออนแอ"
+      },
+      {
+        "label": "C",
+        "text": "Hypertrophic cartilage ที่ข้อ AC joint จำกัด abduction motion ของไหล่"
+      },
+      {
+        "label": "D",
+        "text": "Lateral osteophyte growth ทำให้แคบของ subacromial space และกดทับ rotator cuff tendon"
+      },
+      {
+        "label": "E",
+        "text": "Erosion ของ distal clavicle ส่งผลให้ instability ของ AC joint"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2012",
+    "explanation": "AC joint arthritis มักเกิด osteophyte ที่ inferior surface โดยเฉพาะ lateral osteophyte ที่แคบ subacromial space และกดทับ supraspinatus tendon ทำให้เกิด subacromial impingement syndrome อาการ cross-body adduction เป็นเทสที่ positive สำหรับ AC joint pathology (O'Brien's test) ทำให้กด osteophyte ไปยัง rotator cuff",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายวัย 45 ปี มาด้วยอาการปวดไหล่ขวาเรื้อรังมาหลายเดือน พร้อมบวมและลดการเคลื่อนไหว เลือดและเอกซเรย์ไม่พบความผิดปกติ แต่การส่องกล้องไหล่พบสารหลวจำนวนมาก การตรวจชั้นหนาของเนื้อเยื่ออักเสบพบแบคทีเรียที่ได้จากการเพาะเลี้ยง โรค TB septic arthritis ของข้อไหล่ จะต้องติดตามอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ผลการเพาะเลี้ยงแบคทีเรียและการทดสอบความไว (Culture and sensitivity)"
+      },
+      {
+        "label": "B",
+        "text": "การส่องกล้องซ้ำเพื่อล้างเนื้อเยื่ออักเสบและวัดจำนวนเซลล์หลาย ๆ ครั้ง"
+      },
+      {
+        "label": "C",
+        "text": "ผลการตรวจ PCR หรือ AFB stain จากสารหลวจากข้อไหล่"
+      },
+      {
+        "label": "D",
+        "text": "ผลการถ่ายเอกซเรย์ประจำสัปดาห์เพื่อดูความคืบหน้า"
+      },
+      {
+        "label": "E",
+        "text": "ระดับ ESR และ CRP ทุก 2 สัปดาห์ในระหว่างการรักษา"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2012",
+    "explanation": "TB septic arthritis ต้องพิสูจน์ด้วยการหาเชื้อ TB โดยตรง ได้แก่ AFB stain หรือ Culture ที่มีเวลาสูงสุดถึง 6-8 สัปดาห์ หรือ PCR ที่เร็วกว่า ซึ่งเป็นมาตรฐานในการยืนยันการวินิจฉัยและเริ่มการรักษา Anti-TB drugs อย่างเหมาะสม",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "A 70 year olds patient had left hip pain after fall for past 3 days. Examination reveals external rotation and abduction of left hip. The left buttock and upper thigh is ecchimosis What is the most likely diagnosis",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Fracure neck of femur"
+      },
+      {
+        "label": "B",
+        "text": "Anterior hip dislocati"
+      },
+      {
+        "label": "C",
+        "text": "Posterior hip dislocation"
+      },
+      {
+        "label": "D",
+        "text": "intertrochanteric fracture"
+      },
+      {
+        "label": "E",
+        "text": "Fracture and dislocation of head of femur"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2012",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "ortho",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  }
+]

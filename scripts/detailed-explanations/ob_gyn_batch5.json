@@ -1,0 +1,818 @@
+[
+  {
+    "id": "7470c5fe-086c-4bd9-98ba-98ba66bd968e",
+    "correct_answer": "A",
+    "explanation": "BP 148/92 ที่ GA 24 สัปดาห์ โดยไม่มีอาการและ urine ปกติ (ไม่มี proteinuria) = Gestational hypertension (transient HTN) ไม่ใช่ preeclampsia",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Gestational (transient) hypertension เพราะ BP สูง ≥140/90 หลัง GA 20 สัปดาห์ แต่ไม่มี proteinuria",
+      "reason": "Hypertensive disorders of pregnancy: Gestational HTN = BP ≥140/90 หลัง 20wk, ไม่มี proteinuria, ไม่มีอาการ Preeclampsia = BP ≥140/90 + proteinuria ≥300mg/day หรือ severe features Chronic HTN = HTN ก่อน 20wk หรือก่อนตั้งครรภ์ ผู้ป่วยนี้ BP 120/80 ในครั้งแรก (ปกติ) → BP 148/92 ในครั้งที่สอง ไม่มี proteinuria = gestational HTN 148/92 ยังไม่ถึง severe range (160/110) จึงยัง mild gestational HTN",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Gestational (transient) hypertension",
+          "is_correct": true,
+          "explanation": "BP ≥140/90 หลัง 20wk ไม่มี proteinuria = gestational HTN"
+        },
+        {
+          "label": "B",
+          "text": "Gestational HTN with proteinuria (preeclampsia)",
+          "is_correct": false,
+          "explanation": "ต้องมี proteinuria ด้วย แต่ urine ปกติ"
+        },
+        {
+          "label": "C",
+          "text": "Chronic hypertension",
+          "is_correct": false,
+          "explanation": "Chronic HTN ต้องมี BP สูงก่อน 20wk หรือก่อนตั้งครรภ์"
+        },
+        {
+          "label": "D",
+          "text": "White coat hypertension",
+          "is_correct": false,
+          "explanation": "ต้องวัดซ้ำและ ambulatory BP monitoring"
+        },
+        {
+          "label": "E",
+          "text": "Secondary hypertension",
+          "is_correct": false,
+          "explanation": "ต้องสืบหาสาเหตุ (renal, endocrine) ไม่ใช่ first assumption"
+        }
+      ],
+      "key_takeaway": "Hypertension หลัง 20wk + ไม่มี proteinuria = Gestational HTN; + proteinuria = Preeclampsia"
+    }
+  },
+  {
+    "id": "791f1073-6730-4dba-acb1-82c81d5401db",
+    "correct_answer": "A",
+    "explanation": "การดึงศีรษะทารกด้วยแรงมากใน shoulder dystocia เป็นอันตรายที่สุด เพราะจะทำให้เกิด brachial plexus injury (Erb's palsy) และอาจทำให้คอหักได้",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — ดึงศีรษะด้วยแรงมาก เพราะทำให้ brachial plexus injury, clavicle fracture, หรือ cervical spine injury ในทารก",
+      "reason": "Shoulder dystocia คือไหล่ด้านหน้า (anterior shoulder) ติดที่ pubic symphysis หลังจาก head คลอดแล้ว Maneuvers ที่ถูก: McRoberts (C) = ยืดขาแม่, suprapubic pressure (B) = ดันไหล่ลง, Woods screw/Rubin (D) = หมุนทารก สิ่งที่ห้ามทำเด็ดขาด = ดึงศีรษะทารกลงด้วยแรง เพราะ brachial plexus (C5-C6) จะถูกยืดและฉีก → Erb's palsy การดึงแรงเกินยังทำให้ clavicle และ humerus หักได้ และในกรณีรุนแรงอาจทำให้ cervical spine injury",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ดึงศีรษะด้วยแรงมาก",
+          "is_correct": true,
+          "explanation": "อันตรายที่สุด → brachial plexus injury (Erb's palsy), cervical spine injury ห้ามทำเด็ดขาด"
+        },
+        {
+          "label": "B",
+          "text": "Suprapubic pressure",
+          "is_correct": false,
+          "explanation": "เป็น first-line maneuver ที่ถูกต้อง ดันไหล่ด้านหน้าออกจาก symphysis"
+        },
+        {
+          "label": "C",
+          "text": "McRoberts maneuver",
+          "is_correct": false,
+          "explanation": "เป็น standard first step ทำให้ pelvic inlet ขยายโดย hyper-flexion ขาแม่"
+        },
+        {
+          "label": "D",
+          "text": "Rotational maneuvers",
+          "is_correct": false,
+          "explanation": "Woods screw/Rubin เป็น second-line ที่ถูกต้อง"
+        },
+        {
+          "label": "E",
+          "text": "เรียกความช่วยเหลือ + เตรียม emergency C/S",
+          "is_correct": false,
+          "explanation": "เหมาะสมและควรทำ"
+        }
+      ],
+      "key_takeaway": "Shoulder dystocia: ห้าม! ดึงศีรษะด้วยแรง → brachial plexus injury; ทำ McRoberts + Suprapubic pressure ก่อน"
+    }
+  },
+  {
+    "id": "7baf320e-2904-4f6f-8858-a8967a7d69ed",
+    "correct_answer": "C",
+    "explanation": "PPH หลัง forceps delivery โดยมดลูกหดรัดตัวดี รกออกแล้ว แต่ยังมีเลือดไหล 800cc = genital tract laceration จากการใช้ forceps",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ C — Genital tract laceration เพราะ uterus contracted (atony ไม่ใช่), รกออกแล้ว และ forceps delivery เพิ่มเสี่ยง vaginal/cervical tear",
+      "reason": "4T's ของ PPH: Tone (atony), Trauma (laceration), Tissue (retained products), Thrombin (coagulopathy) Uterus contracted ดี → ไม่ใช่ atony (A) รกออกแล้ว → ไม่ใช่ retained placenta (B) Forceps delivery เพิ่มเสี่ยง vaginal/cervical laceration สูงมาก → Trauma (C) คือสาเหตุ การ dx: inspect vaginal walls, cervix, perineum พบ laceration → suture แก้ไข",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Uterine atony",
+          "is_correct": false,
+          "explanation": "Uterus contracted ดี → ไม่ใช่ atony"
+        },
+        {
+          "label": "B",
+          "text": "Retained placenta",
+          "is_correct": false,
+          "explanation": "รกออกครบแล้ว"
+        },
+        {
+          "label": "C",
+          "text": "Genital tract laceration",
+          "is_correct": true,
+          "explanation": "Forceps + bleeding ต่อเนื่องแม้ uterus contracted = laceration ต้อง inspect และ suture"
+        },
+        {
+          "label": "D",
+          "text": "Coagulopathy",
+          "is_correct": false,
+          "explanation": "อาจเกิดทีหลัง แต่ไม่ใช่สาเหตุหลักในกรณีนี้"
+        },
+        {
+          "label": "E",
+          "text": "Placental abruption",
+          "is_correct": false,
+          "explanation": "เกิดก่อนคลอด ไม่ใช่สาเหตุ PPH หลังคลอด"
+        }
+      ],
+      "key_takeaway": "PPH + uterus contracted + forceps delivery = Genital tract laceration → Inspect + Suture"
+    }
+  },
+  {
+    "id": "7c66192a-2184-40bb-92d7-1f0db79f1c93",
+    "correct_answer": "A",
+    "explanation": "หลังคลอด 2 วัน มีไข้ + mild lower abdominal tenderness = endometritis (โดยที่ breast engorgement เป็น normal finding หลังคลอด) ไข้หลังคลอดภายใน 2 วันที่พบบ่อยที่สุดคือ endometritis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Endometritis เพราะมีไข้ + lower abdominal tenderness หลังคลอด 2 วัน ซึ่งเป็น classic presentation",
+      "reason": "Postpartum fever (>38°C หลัง 24hr จาก delivery): วันที่ 1-2: Wind (pneumonia, atelectasis) วันที่ 2-3: Water (UTI) วันที่ 3-5: Wound (surgical site infection, endometritis) วันที่ 5+: Walking (DVT/thrombophlebitis) Endometritis: fever + uterine/lower abdominal tenderness, lochia อาจมีกลิ่น ในกรณีนี้ lower abdominal tenderness + ไข้ = endometritis Breast engorgement (B) เป็น normal physiologic finding วันที่ 2-3 หลังคลอด ไม่ทำให้ไข้สูง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Endometritis",
+          "is_correct": true,
+          "explanation": "Fever + lower abdominal tenderness หลังคลอด 2 วัน = classic endometritis"
+        },
+        {
+          "label": "B",
+          "text": "Breast engorgement",
+          "is_correct": false,
+          "explanation": "ทำให้ breast tender แต่ไม่ใช่สาเหตุหลัก; lochia ดี ไม่บ่งชี้ลงที่เต้านม"
+        },
+        {
+          "label": "C",
+          "text": "Parametritis, cystitis",
+          "is_correct": false,
+          "explanation": "อาจเป็นได้แต่ lower abdominal tenderness บ่งชี้ endometritis มากกว่า"
+        },
+        {
+          "label": "D",
+          "text": "Infected wound",
+          "is_correct": false,
+          "explanation": "Wound ดีปกติ จึงไม่ใช่"
+        }
+      ],
+      "key_takeaway": "Postpartum fever Day 2 + lower abdominal tenderness = Endometritis → Broad-spectrum IV antibiotics"
+    }
+  },
+  {
+    "id": "7d9b8c8e-88d1-4fbd-8b7d-41fd37886156",
+    "correct_answer": "A",
+    "explanation": "คำตอบที่ให้คือ A (metronidazole oral) แม้ KOH จะแสดง yeast แต่ในบริบทข้อสอบนี้อาจหมายถึงการรักษา trichomoniasis หรือ BV ที่ให้ metronidazole; อย่างไรก็ตาม candidal vaginitis รักษาด้วย clotrimazole",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องตามข้อสอบคือ A — Metronidazole oral แต่ในทางคลินิก candidal vaginitis รักษาด้วย azole เช่น clotrimazole (D)",
+      "reason": "Vaginal discharge differential: Candidal vaginitis: KOH = budding yeast/pseudohyphae, cottage cheese discharge, คัน → รักษาด้วย azole (clotrimazole, fluconazole) BV: clue cells, fishy smell → metronidazole Trichomoniasis: motile trichomonads → metronidazole ถ้า KOH แสดง yeast และคัน = candida → ควรใช้ clotrimazole (D) การที่คำตอบเป็น metronidazole (A) อาจเป็นเพราะข้อสอบถามแบบ vaginitis treatment โดยรวม หรือ BV coinfection",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Metronidazole oral",
+          "is_correct": true,
+          "explanation": "ตามข้อสอบ; ใช้สำหรับ BV และ trichomoniasis"
+        },
+        {
+          "label": "B",
+          "text": "Norfloxacin oral",
+          "is_correct": false,
+          "explanation": "antibiotic สำหรับ UTI ไม่ใช่ vaginitis"
+        },
+        {
+          "label": "C",
+          "text": "Metronidazole suppository",
+          "is_correct": false,
+          "explanation": "ใช้ได้แต่ oral ดีกว่าใน BV/trichomoniasis"
+        },
+        {
+          "label": "D",
+          "text": "Clotrimazole",
+          "is_correct": false,
+          "explanation": "ในทางคลินิกนี้คือคำตอบที่ถูกสำหรับ candidal vaginitis แต่ข้อสอบระบุ A"
+        }
+      ],
+      "key_takeaway": "Candidal vaginitis → Clotrimazole; BV/Trichomoniasis → Metronidazole; ดู KOH และ wet prep ให้ถูกต้อง"
+    }
+  },
+  {
+    "id": "7dee6c99-e7b3-4b8e-ba0a-71b81080944e",
+    "correct_answer": "B",
+    "explanation": "Tubo-ovarian abscess (TOA) รักษาด้วย Clindamycin + Gentamicin ซึ่งครอบคลุม anaerobes (clindamycin) + gram-negative rods (gentamicin) อย่างครบถ้วน",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B — Clindamycin + Gentamicin เพราะครอบคลุม polymicrobial flora ใน TOA ทั้ง anaerobes และ gram-negative organisms",
+      "reason": "TOA เกิดจาก polymicrobial infection: anaerobes (Bacteroides), gram-negative rods (E. coli), gram-positive cocci ต้อง broad-spectrum + anaerobic coverage Standard IV regimen (CDC/ACOG): Clindamycin 900mg IV q8h + Gentamicin 2mg/kg loading แล้ว 1.5mg/kg q8h (หรือ 5mg/kg once daily) Alternative: Ampicillin-sulbactam + Doxycycline Cephalosporin + Doxycycline (A) ใช้สำหรับ uncomplicated PID ไม่ใช่ TOA ที่ต้องการ anaerobic coverage มากกว่า",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cephalosporin + Doxycycline",
+          "is_correct": false,
+          "explanation": "สำหรับ uncomplicated PID แต่ TOA ต้อง anaerobic coverage มากกว่า"
+        },
+        {
+          "label": "B",
+          "text": "Clindamycin + Gentamicin",
+          "is_correct": true,
+          "explanation": "Standard regimen สำหรับ TOA ตาม CDC: Clindamycin (anaerobic coverage) + Gentamicin (gram-negative coverage)"
+        },
+        {
+          "label": "C",
+          "text": "Ciprofloxacin monotherapy",
+          "is_correct": false,
+          "explanation": "ไม่มี anaerobic coverage เพียงพอ"
+        },
+        {
+          "label": "D",
+          "text": "Metronidazole monotherapy",
+          "is_correct": false,
+          "explanation": "Anaerobic coverage อย่างเดียวไม่เพียงพอ"
+        },
+        {
+          "label": "E",
+          "text": "Cephalosporin monotherapy",
+          "is_correct": false,
+          "explanation": "ไม่มี anaerobic coverage"
+        }
+      ],
+      "key_takeaway": "TOA → Clindamycin + Gentamicin IV (Standard CDC regimen); ถ้าไม่ตอบสนอง → drainage/surgery"
+    }
+  },
+  {
+    "id": "80f1aea1-adb5-4e6f-8f9d-013502e05141",
+    "correct_answer": "A",
+    "explanation": "Retained placenta (รกไม่ออก) ที่ 30 นาทีหลังคลอด แต่ยังไม่มีเลือดออกมาก → รอดูก่อนในระยะแรก (watchful waiting) พร้อมตรวจ cord pulsation และ sign of placental separation",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Watching closely เพราะ 30 นาทีเพิ่งถึง threshold สำหรับ retained placenta และยังต้องตรวจสอบก่อน intervene",
+      "reason": "Retained placenta: นิยาม = รกไม่ออกภายใน 30 นาทีหลังคลอด Management ลำดับ: ตรวจ cord pulsation, bladder distension → ให้ oxytocin (E) พร้อม controlled cord traction → ถ้าไม่สำเร็จ → manual removal (D) ถ้าผู้ป่วยยังไม่มีเลือดออกมากและ stable → watchful waiting พร้อม oxytocin ก่อน manual removal ทำเมื่อ: เลือดออกมาก, conservative management ล้มเหลว หลีกเลี่ยง methergin (B) ใน retained placenta เพราะ tetanic uterine contraction จะทำให้ manual removal ยากขึ้น",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Watching closely",
+          "is_correct": true,
+          "explanation": "Initial management: observe + assess ก่อน intervene ถ้ายังไม่มีเลือดออกมาก"
+        },
+        {
+          "label": "B",
+          "text": "IV Methergin",
+          "is_correct": false,
+          "explanation": "Ergometrine ห้ามใช้ใน retained placenta เพราะ tetanic contraction จะขัดขวาง delivery รก"
+        },
+        {
+          "label": "C",
+          "text": "IV Nalador",
+          "is_correct": false,
+          "explanation": "Sulprostone ใช้สำหรับ PPH/atony ไม่ใช่ retained placenta"
+        },
+        {
+          "label": "D",
+          "text": "Manual removal",
+          "is_correct": false,
+          "explanation": "ทำเมื่อ conservative management ล้มเหลว หรือมีเลือดออกมาก"
+        },
+        {
+          "label": "E",
+          "text": "Oxytocin + cord traction",
+          "is_correct": false,
+          "explanation": "ควรทำ แต่ watching closely ก่อนเป็น first step ตามข้อสอบนี้"
+        }
+      ],
+      "key_takeaway": "Retained placenta 30 min → Observe + Oxytocin + Controlled cord traction → ถ้าล้มเหลว → Manual removal; ห้าม Ergometrine"
+    }
+  },
+  {
+    "id": "812d4786-0624-4958-a5fe-b6406894d346",
+    "correct_answer": "A",
+    "explanation": "Rash บริเวณฝ่ามือฝ่าเท้า + VDRL 1:128 + TPHA reactive = Secondary syphilis รักษาด้วย Benzathine penicillin G 2.4 MU IM single dose",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Benzathine penicillin G 2.4 MU IM single dose เพราะเป็น Secondary syphilis (early syphilis)",
+      "reason": "Stages of syphilis and treatment: Primary/Secondary syphilis (early <1 year): Benzathine penicillin G 2.4 MU IM single dose Tertiary/Latent >1 year/Unknown duration: Benzathine penicillin G 2.4 MU IM weekly × 3 doses Neurosyphilis: Aqueous crystalline penicillin G IV × 10-14 days ผู้ป่วยนี้: rash บริเวณฝ่ามือฝ่าเท้า = pathognomonic ของ secondary syphilis VDRL 1:128 สูง, TPHA reactive = ยืนยัน syphilis → Benzathine penicillin G single dose",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Benzathine penicillin G 2.4 MU IM single dose",
+          "is_correct": true,
+          "explanation": "Standard treatment สำหรับ primary/secondary syphilis (early)"
+        },
+        {
+          "label": "B",
+          "text": "Benzathine penicillin G 2.4 MU IM × 3 weeks",
+          "is_correct": false,
+          "explanation": "สำหรับ late latent syphilis (>1 year) หรือ unknown duration"
+        },
+        {
+          "label": "C",
+          "text": "Doxycycline 100mg BID × 28 days",
+          "is_correct": false,
+          "explanation": "Alternative ถ้าแพ้ penicillin; duration 28 days ใช้สำหรับ late latent"
+        },
+        {
+          "label": "D",
+          "text": "Ceftriaxone 1g IV single dose",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ standard treatment สำหรับ syphilis"
+        },
+        {
+          "label": "E",
+          "text": "Azithromycin × 14 days",
+          "is_correct": false,
+          "explanation": "ไม่แนะนำ เพราะมี T. pallidum resistance บางพื้นที่"
+        }
+      ],
+      "key_takeaway": "Rash ฝ่ามือฝ่าเท้า = Secondary syphilis → Benzathine penicillin G 2.4 MU IM single dose"
+    }
+  },
+  {
+    "id": "81b57fd0-e57b-408c-988d-58bb81d5ca71",
+    "correct_answer": "D",
+    "explanation": "Severe preeclampsia ที่ GA 37 สัปดาห์ (near term) ต้องส่งต่อโรงพยาบาลที่มี high-risk OB ทันที เพื่อ definitive management รวมถึงการคลอด",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ D — Refer to hospital for high-risk OB care เพราะ severe preeclampsia ที่ near term ต้อง deliver และต้องการ specialist care",
+      "reason": "ผู้ป่วย: GA 37wk, BP 160/100 (severe range), proteinuria 3+ = Severe preeclampsia Management ของ severe preeclampsia ที่ GA ≥34 สัปดาห์: Deliver! (เป็น definitive treatment) สิ่งที่ต้องทำก่อน deliver: MgSO4 สำหรับ seizure prophylaxis, antihypertensives สำหรับ BP ≥160/110 การส่งต่อโรงพยาบาล tertiary care (D) เป็น correct เพราะ clinic ไม่สามารถ manage ได้ การให้ Labetalol IV (A) ทำได้แต่ต้องทำที่โรงพยาบาล ไม่ใช่ clinic ห้ามส่งกลับบ้าน (B, E)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Labetalol IV ลด BP แล้วส่ง",
+          "is_correct": false,
+          "explanation": "Labetalol IV ต้องทำที่โรงพยาบาล ไม่ใช่ clinic"
+        },
+        {
+          "label": "B",
+          "text": "แนะนำพักบ้าน ติดตาม",
+          "is_correct": false,
+          "explanation": "Severe preeclampsia ห้ามส่งกลับบ้าน ต้อง admit"
+        },
+        {
+          "label": "C",
+          "text": "MgSO4 + Nifedipine",
+          "is_correct": false,
+          "explanation": "ทำได้แต่ไม่ใช่คำตอบที่ครอบคลุมที่สุด ต้อง refer ด้วย"
+        },
+        {
+          "label": "D",
+          "text": "Refer to high-risk OB hospital",
+          "is_correct": true,
+          "explanation": "Severe preeclampsia near term → ต้อง deliver → ต้องการ hospital level care"
+        },
+        {
+          "label": "E",
+          "text": "ตรวจ lab ปกติแล้วกลับบ้าน",
+          "is_correct": false,
+          "explanation": "อันตรายมาก severe preeclampsia ต้อง admit ไม่ใช่ return home"
+        }
+      ],
+      "key_takeaway": "Severe preeclampsia GA ≥34wk → Refer + Admit + MgSO4 + Antihypertensive + Deliver"
+    }
+  },
+  {
+    "id": "83cc3f21-ff59-4e8a-8213-55ceb8bf519e",
+    "correct_answer": "A",
+    "explanation": "G1P0 GA 38wk early labor (os 2cm, contraction q10min) ต้องติดตาม labor progression อย่างใกล้ชิดเพื่อประเมินว่า labor ดำเนินไปปกติหรือไม่",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Close labor progression monitoring เพราะเป็น early active labor ที่ต้องติดตามความก้าวหน้าของการคลอด",
+      "reason": "ผู้ป่วย G1P0 GA 38wk os 2cm = early active labor stage ก็ยังอยู่ใน latent phase ปกติ contraction q10min = mild frequency Bleeding (bloody show) = normal sign of early labor การจัดการ: admit, monitor FHR + contraction, assess cervical progress q2-4hr, hydration อย่าทำ operative delivery ก่อน failure to progress ยังไม่ถึงเวลา vacuum/forceps หรือ C/S",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Close labor progression monitoring",
+          "is_correct": true,
+          "explanation": "Early active labor = monitor progress, ยังไม่ต้อง intervene"
+        },
+        {
+          "label": "B",
+          "text": "Close electronic fetal monitoring",
+          "is_correct": false,
+          "explanation": "ทำควบคู่กันได้ แต่ไม่ใช่คำตอบหลัก; FHR monitoring ทำเสริม"
+        },
+        {
+          "label": "C",
+          "text": "Vacuum extraction",
+          "is_correct": false,
+          "explanation": "ยังไม่ fully dilated ทำไม่ได้"
+        },
+        {
+          "label": "D",
+          "text": "Forceps extraction",
+          "is_correct": false,
+          "explanation": "ยังไม่ fully dilated"
+        },
+        {
+          "label": "E",
+          "text": "Cesarean section",
+          "is_correct": false,
+          "explanation": "ไม่มี indication สำหรับ C/S ใน early normal labor"
+        }
+      ],
+      "key_takeaway": "Early active labor (os 2cm) → Monitor labor progression; อย่า intervene ก่อนเวลา"
+    }
+  },
+  {
+    "id": "84216920-c0f7-4c29-a95a-870d9d401cde",
+    "correct_answer": "C",
+    "explanation": "Emergency contraception ที่มีประสิทธิภาพภายใน 72 ชั่วโมงหลัง unprotected sex คือ Combined OCP (Yuzpe regimen) หรือ levonorgestrel แต่ในตัวเลือกนี้ C = Yuzpe regimen เป็นคำตอบ",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ C — Yuzpe regimen (Combined OCP) เพราะเป็น emergency contraception ที่ใช้ภายใน 72 ชั่วโมงหลัง unprotected sex",
+      "reason": "Emergency contraception options: Yuzpe regimen (C): Ethinyl estradiol 100μg + Levonorgestrel 0.5mg × 2 doses ห่างกัน 12 ชั่วโมง ภายใน 72 ชั่วโมง Progestin-only (levonorgestrel): ประสิทธิภาพดีกว่า Yuzpe ผล SE น้อยกว่า Copper IUD: ประสิทธิภาพสูงสุด ภายใน 5 วัน High dose estrogen (A) ไม่ใช้แล้ว SE มาก High dose progesterone (B) คือ progestin-only EC DMPA (D) เป็น contraception แต่ไม่ใช่ EC Curettage (E) ไม่ใช่ EC",
+      "choices": [
+        {
+          "label": "A",
+          "text": "High dose estrogen",
+          "is_correct": false,
+          "explanation": "ไม่ใช้แล้ว ผลข้างเคียงมาก คลื่นไส้อาเจียน"
+        },
+        {
+          "label": "B",
+          "text": "High dose progesterone",
+          "is_correct": false,
+          "explanation": "Progestin-only EC ดีกว่า Yuzpe แต่ในตัวเลือกนี้ C เป็นคำตอบ"
+        },
+        {
+          "label": "C",
+          "text": "Yuzpe regimen (Combined OCP)",
+          "is_correct": true,
+          "explanation": "Classic EC regimen ภายใน 72 ชั่วโมง; EE 100μg + LNG 0.5mg × 2 doses"
+        },
+        {
+          "label": "D",
+          "text": "DMPA injection",
+          "is_correct": false,
+          "explanation": "Depot injection ใช้เป็น regular contraception ไม่ใช่ EC"
+        },
+        {
+          "label": "E",
+          "text": "Curettage",
+          "is_correct": false,
+          "explanation": "ไม่เหมาะสม ไม่ใช่ EC"
+        }
+      ],
+      "key_takeaway": "Emergency contraception ภายใน 72 ชั่วโมง → Yuzpe (Combined OCP) หรือ Levonorgestrel only; Copper IUD ภายใน 5 วัน"
+    }
+  },
+  {
+    "id": "8a1a5994-1d84-4df1-82bb-157c39866456",
+    "correct_answer": "C",
+    "explanation": "G1P0 เข้า labor แต่ยังไม่คลอด ต้องทำ vaginal examination (V/E) ซ้ำเพื่อ assess cervical dilation, effacement, station และ progress ของ labor",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ C — Repeat V/E เพราะต้องประเมินความก้าวหน้าของ labor ก่อนตัดสินใจ management",
+      "reason": "การประเมิน progress of labor ต้องทำ V/E ซ้ำเพื่อ: ดู cervical dilation (cm), effacement (%), station ของ presenting part, membrane status เปรียบเทียบกับ V/E ครั้งก่อน → คำนวณ progress rate Friedman curve: latent phase, active phase (≥1cm/hr ใน active), deceleration phase ถ้า progress ช้า → augmentation (oxytocin) ถ้า arrest of labor → C/S พิจารณา Augmentation (B) โดยไม่ assess ก่อนเป็นการ over-intervene",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ประเมิน V/S อีกครั้ง",
+          "is_correct": false,
+          "explanation": "ทำได้แต่ไม่ตอบโจทย์การประเมิน labor progress"
+        },
+        {
+          "label": "B",
+          "text": "Augmentation ด้วย Oxytocin",
+          "is_correct": false,
+          "explanation": "ต้อง assess ก่อนว่า labor slow จริงๆ ไม่ augment โดยไม่มี indication"
+        },
+        {
+          "label": "C",
+          "text": "Repeat V/E ติดตาม labor progress",
+          "is_correct": true,
+          "explanation": "Standard: V/E ทุก 2-4hr ใน active labor เพื่อ assess progress"
+        },
+        {
+          "label": "D",
+          "text": "ส่งต่อผ่าตัดคลอด primigravida",
+          "is_correct": false,
+          "explanation": "Primigravida ไม่ใช่ indication สำหรับ C/S"
+        },
+        {
+          "label": "E",
+          "text": "Epidural แล้วรอ",
+          "is_correct": false,
+          "explanation": "ทำได้เพื่อ pain relief แต่ไม่ตอบโจทย์การ assess progress"
+        }
+      ],
+      "key_takeaway": "Labor progression assessment → Repeat vaginal examination (V/E) ทุก 2-4 ชั่วโมง"
+    }
+  },
+  {
+    "id": "8c9483f8-ee4c-40eb-b465-bf95e50e9bd4",
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วยจิตเวชหยุดยาและตั้งครรภ์ 2 เดือน มีความเสี่ยง relapse สูง ECT ปลอดภัยในตั้งครรภ์และมีประสิทธิภาพสูงสำหรับ severe psychiatric condition",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Admit + ECT เพราะ severe psychiatric condition ที่หยุดยาเองในตั้งครรภ์ ECT ปลอดภัยและมีประสิทธิภาพ",
+      "reason": "Psychiatric medications in pregnancy: Haloperidol (antipsychotic) เมื่อหยุดกะทันหัน → relapse psychosis ได้ Benztropine (anticholinergic for EPS) จาก haloperidol ECT ในตั้งครรภ์: ปลอดภัยสำหรับทารก, ประสิทธิภาพสูงสำหรับ severe depression, severe mania, severe schizophrenia การทำแท้ง (B, C): ไม่มี medical/legal indication ในกรณีนี้ ปรึกษาสามี (D) ไม่เพียงพอสำหรับ psychiatric emergency ให้ยาต่อ (E) ทำได้ แต่ถ้าอาการรุนแรงมาก ECT ดีกว่า",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Admit + ECT",
+          "is_correct": true,
+          "explanation": "ECT ปลอดภัยในตั้งครรภ์ มีประสิทธิภาพสำหรับ severe psychosis"
+        },
+        {
+          "label": "B",
+          "text": "ทำแท้งตามสิทธิ",
+          "is_correct": false,
+          "explanation": "ผู้ป่วยอาจไม่มี decision-making capacity; ไม่มี medical indication"
+        },
+        {
+          "label": "C",
+          "text": "ทำแท้งเพราะเลี้ยงลูกไม่ได้",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ legal indication ตามกฎหมาย"
+        },
+        {
+          "label": "D",
+          "text": "ปรึกษาสามี",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอสำหรับ psychiatric emergency"
+        },
+        {
+          "label": "E",
+          "text": "เสริมยาจิตเวช + ให้คำปรึกษา",
+          "is_correct": false,
+          "explanation": "ทำได้ แต่ถ้ารุนแรงมาก ECT ดีกว่า; A เป็นคำตอบที่ถูกในข้อสอบ"
+        }
+      ],
+      "key_takeaway": "Severe psychiatric + ตั้งครรภ์ + หยุดยา → ECT ปลอดภัยในตั้งครรภ์และมีประสิทธิภาพสูง"
+    }
+  },
+  {
+    "id": "8d31d65c-d698-4736-8a71-307a17e2641d",
+    "correct_answer": "A",
+    "explanation": "หญิงตั้งครรภ์ 36 สัปดาห์ หน้ามืดขณะนอนหงาย = Supine hypotension syndrome (aortocaval compression) รักษาด้วยการนอนตะแคงซ้ายทันที",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — นอนตะแคงซ้าย เพราะ supine position ทำให้มดลูกกด inferior vena cava → venous return ลดลง → BP ตก → หน้ามืด",
+      "reason": "Supine hypotension syndrome (aortocaval compression): เกิดในไตรมาสสามของตั้งครรภ์ มดลูกโตกดทับ IVC และ aorta ขณะนอนหงาย → venous return ลดลง → cardiac output ลดลง → BP ตก → หน้ามืด, คลื่นไส้ Prevention: นอนตะแคงซ้ายเสมอ Treatment: นอนตะแคงซ้ายทันที เพื่อให้มดลูกเลื่อนออกจาก IVC ไม่ต้องการ O2 (B) ยกเว้น hypoxic หรือ IV fluid (D) ถ้า BP ตกรุนแรงและไม่ตอบสนองต่อ position",
+      "choices": [
+        {
+          "label": "A",
+          "text": "นอนตะแคงซ้าย",
+          "is_correct": true,
+          "explanation": "ลด aortocaval compression → เพิ่ม venous return → แก้ hypotension ทันที"
+        },
+        {
+          "label": "B",
+          "text": "ให้ O2",
+          "is_correct": false,
+          "explanation": "ไม่จำเป็นถ้าหน้ามืดจาก positional hypotension ที่ไม่มี hypoxia"
+        },
+        {
+          "label": "C",
+          "text": "กินน้ำหวาน",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ hypoglycemia ไม่ใช่ supine hypotension"
+        },
+        {
+          "label": "D",
+          "text": "ให้ IV",
+          "is_correct": false,
+          "explanation": "ทำถ้า severe hypotension ไม่ตอบสนองต่อ position change"
+        }
+      ],
+      "key_takeaway": "หญิงตั้งครรภ์หน้ามืดขณะนอนหงาย = Supine hypotension → นอนตะแคงซ้ายทันที"
+    }
+  },
+  {
+    "id": "8db347cd-504f-4ea0-b5b2-50a469d909dc",
+    "correct_answer": "A",
+    "explanation": "P2 มีไข้ ปวดท้อง + ประวัติ IUD + cervical excitation + bilateral adnexal tenderness/mass = Tubo-ovarian abscess (TOA) ซึ่งเป็น complication ของ PID",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Tubo-ovarian abscess เพราะ IUD + PID signs + bilateral adnexal mass ที่เจ็บ = TOA",
+      "reason": "Tubo-ovarian abscess (TOA): เกิดจาก PID ที่ลุกลามไปถึง fallopian tube และ ovary สร้าง abscess ปัจจัยเสี่ยง: IUD, multiple partners, previous PID อาการ: ไข้, ปวดท้องน้อย, cervical motion tenderness (CMT), adnexal mass ที่เจ็บ Diagnosis: ultrasound (พบ complex adnexal mass), lab (WBC สูง) Management: IV antibiotics (clindamycin + gentamicin), ถ้าไม่ตอบสนอง → drainage/surgery ต้อง remove IUD หลัง treat ด้วย antibiotics แล้ว",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Tubo-ovarian abscess",
+          "is_correct": true,
+          "explanation": "IUD + PID signs + bilateral adnexal mass = TOA classic presentation"
+        },
+        {
+          "label": "B",
+          "text": "Bilateral ovarian tumor",
+          "is_correct": false,
+          "explanation": "ไม่มีไข้, ไม่มี CMT ใน tumor ปกติ"
+        },
+        {
+          "label": "C",
+          "text": "Ectopic pregnancy",
+          "is_correct": false,
+          "explanation": "P2 อาจตั้งครรภ์ได้ แต่ bilateral mass + IUD + ไข้ = TOA มากกว่า"
+        },
+        {
+          "label": "D",
+          "text": "Ruptured ovarian cyst",
+          "is_correct": false,
+          "explanation": "ไม่มีไข้, ไม่ bilateral, มักเฉียบพลัน"
+        },
+        {
+          "label": "E",
+          "text": "IUD perforation",
+          "is_correct": false,
+          "explanation": "IUD perforation ไม่ทำให้ bilateral adnexal mass"
+        }
+      ],
+      "key_takeaway": "IUD + ไข้ + CMT + Bilateral adnexal mass = TOA → IV Clindamycin + Gentamicin"
+    }
+  },
+  {
+    "id": "8e4d0753-94d6-42e8-977a-98927bdf227c",
+    "correct_answer": "A",
+    "explanation": "ด.ญ. 7 ปี ที่แม่เป็น HPV ได้รับประโยชน์มากที่สุดจากวัคซีน HPV เพราะยังอายุน้อย ยังไม่ถูก expose และจะได้รับการป้องกันระยะยาว",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — ด.ญ. 7 ปี เพราะอายุน้อยที่สุด ยังไม่ถูก expose และมี time horizon ยาวนานที่สุดในการได้รับประโยชน์จากวัคซีน",
+      "reason": "HPV vaccine ทำงานได้ดีที่สุดก่อนถูก expose กับ HPV Optimal age: 9-12 ปี (pre-exposure, immune response ดีกว่า) A (7yo): ยังไม่ expose, อายุน้อยมาก, immune response ดี, benefit ยาวนาน แม้มีประวัติแม่เป็น HPV (แต่ไม่ได้หมายความว่าลูกถูก expose) B (16yo virgin): ยังไม่ expose แต่อายุมากกว่า C (28yo ก่อนแต่ง): อาจเคย expose แล้ว D (30yo ชาย): อาจได้ประโยชน์แต่น้อยกว่า pre-teens E (32yo มะเร็งปากมดลูก): ไม่ได้ประโยชน์ เพราะเป็นโรคแล้ว",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ด.ญ. 7 ปี แม่เป็น HPV",
+          "is_correct": true,
+          "explanation": "อายุน้อยสุด ยังไม่ expose, immune response ดีที่สุด, benefit ยาวนานที่สุด"
+        },
+        {
+          "label": "B",
+          "text": "หญิง 16 ปี ไม่เคยมีเพศสัมพันธ์",
+          "is_correct": false,
+          "explanation": "ดีแต่อายุมากกว่า A; ยังได้ประโยชน์มากแต่น้อยกว่า 7 ปี"
+        },
+        {
+          "label": "C",
+          "text": "หญิง 28 ปี ก่อนแต่ง",
+          "is_correct": false,
+          "explanation": "อาจเคย expose HPV แล้ว ประโยชน์น้อยกว่า"
+        },
+        {
+          "label": "D",
+          "text": "ชาย 30 ปี ก่อนแต่ง",
+          "is_correct": false,
+          "explanation": "ชายได้ประโยชน์น้อยกว่าหญิง และอายุมากเกินไป"
+        },
+        {
+          "label": "E",
+          "text": "หญิง 32 ปี มะเร็งปากมดลูก",
+          "is_correct": false,
+          "explanation": "เป็นโรคแล้ว วัคซีนไม่รักษา เพียงป้องกัน"
+        }
+      ],
+      "key_takeaway": "HPV vaccine ประโยชน์สูงสุดใน: อายุน้อย (9-12 ปี), ยังไม่ถูก expose, pre-sexual debut"
+    }
+  },
+  {
+    "id": "8f6cc8e9-375b-412f-8187-d6474bc65e08",
+    "correct_answer": "A",
+    "explanation": "หญิงตั้งครรภ์ 25 สัปดาห์ ปวดท้องขวา periumbilical → right iliac fossa = suspected appendicitis ขณะตั้งครรภ์ การตรวจ CBC เป็น first-line เพื่อดู leukocytosis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — CBC เพราะเป็น first-line investigation สำหรับ suspected appendicitis ดู leukocytosis + neutrophilia",
+      "reason": "Appendicitis ในตั้งครรภ์: พบได้ อาการอาจ atypical เพราะ uteรที่โตขึ้นดัน appendix ขึ้น periumbilical → right side pain Migration ของ pain = classic sign of appendicitis First-line workup: CBC (A) = leukocytosis + neutrophilia (WBC >11,000) Ultrasound (B) ทำได้และปลอดภัย แต่ sensitivity ต่ำใน late pregnancy Acute abdominal series X-ray (C) ไม่แนะนำใน pregnancy CT scan (D) = radiation ไม่เหมาะสำหรับ pregnancy CBC เป็น first step ก่อน imaging",
+      "choices": [
+        {
+          "label": "A",
+          "text": "CBC",
+          "is_correct": true,
+          "explanation": "First-line: ดู leukocytosis เพื่อ confirm infection/inflammation ก่อน imaging"
+        },
+        {
+          "label": "B",
+          "text": "Ultrasound",
+          "is_correct": false,
+          "explanation": "ทำได้และปลอดภัย แต่ CBC ทำก่อนเป็น standard workup"
+        },
+        {
+          "label": "C",
+          "text": "Acute abdominal series",
+          "is_correct": false,
+          "explanation": "X-ray radiation ไม่เหมาะสำหรับตั้งครรภ์ ยกเว้นจำเป็นมาก"
+        },
+        {
+          "label": "D",
+          "text": "CT scan",
+          "is_correct": false,
+          "explanation": "Radiation สูง ไม่ควรทำใน pregnancy ยกเว้นไม่มีทางเลือก"
+        }
+      ],
+      "key_takeaway": "Suspected appendicitis in pregnancy → CBC ก่อน (leukocytosis); ถ้าต้อง imaging → Ultrasound (ปลอดภัยสุด)"
+    }
+  },
+  {
+    "id": "8f74177a-15cd-42be-a6df-c58328ad7045",
+    "correct_answer": "A",
+    "explanation": "Antepartum hemorrhage ที่ GA 32 สัปดาห์ เลือดออกมาก + ปวดท้อง = placental abruption ต้องรักษา hemodynamic instability ก่อนด้วย IV fluid + blood transfusion",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — IV fluid resuscitation + blood transfusion เพราะ hemorrhagic shock ต้องรักษา hemodynamic stability ก่อน",
+      "reason": "Antepartum hemorrhage + pain + GA 32wk = Placental abruption จนกว่าจะพิสูจน์เป็นอย่างอื่น Management priorities: Airway, Breathing, Circulation → Resuscitation ก่อน IV large bore × 2, crystalloid + blood products, O2 พร้อมกัน: FHR monitoring, prepare for emergency C/S ถ้า fetal distress C/S (B) ทำเมื่อ stable หรือ fetal distress ชัดเจน ไม่ใช่ก่อน resuscitation MgSO4 (C) สำหรับ preeclampsia/seizure prophylaxis ไม่ใช่ abruption Ergotamine (D) ห้ามใช้ใน antepartum (tonic contraction อันตราย) Expectant (E) ไม่เหมาะสำหรับ severe hemorrhage",
+      "choices": [
+        {
+          "label": "A",
+          "text": "IV fluid + blood transfusion",
+          "is_correct": true,
+          "explanation": "Hemorrhagic shock → resuscitation ก่อนเสมอ; stabilize แล้วค่อยทำ C/S"
+        },
+        {
+          "label": "B",
+          "text": "Emergency C/S ทันที",
+          "is_correct": false,
+          "explanation": "ต้อง resuscitate ก่อน ผ่าตัดขณะ hypovolemic shock อันตราย"
+        },
+        {
+          "label": "C",
+          "text": "MgSO4 IV",
+          "is_correct": false,
+          "explanation": "สำหรับ preeclampsia ไม่ใช่ abruption"
+        },
+        {
+          "label": "D",
+          "text": "Ergotamine IV",
+          "is_correct": false,
+          "explanation": "ห้ามใช้ antepartum; ใช้หลังคลอดเพื่อ uterine contraction เท่านั้น"
+        },
+        {
+          "label": "E",
+          "text": "Expectant management",
+          "is_correct": false,
+          "explanation": "ไม่เหมาะสำหรับ severe antepartum hemorrhage"
+        }
+      ],
+      "key_takeaway": "Severe antepartum hemorrhage → Resuscitate ก่อน (IV fluid + blood) แล้วค่อย C/S ถ้า fetal distress"
+    }
+  },
+  {
+    "id": "942838a2-ca75-4c12-9611-6e033eb8ebf2",
+    "correct_answer": "A",
+    "explanation": "GA 39wk Bishop score <8 (unfavorable cervix) ต้องการ cervical ripening ก่อน induction ด้วย prostaglandin analogue (misoprostol หรือ dinoprostone) เพื่อทำให้ cervix สุก",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Prostaglandin analogue (misoprostol/dinoprostone) ก่อน เพราะ cervix ยังไม่พร้อม (Bishop <8)",
+      "reason": "Bishop score ประเมิน cervical favorability: Dilation, Effacement, Station, Consistency, Position ≥8 = favorable cervix → สามารถ oxytocin ได้เลย <8 = unfavorable → ต้อง cervical ripening ก่อน Cervical ripening methods: Pharmacologic: Prostaglandin E1 (misoprostol), E2 (dinoprostone/Cervidil) Mechanical: Foley catheter, hygroscopic dilators Oxytocin dose 10 mU/min (B) เป็น high dose, ควรเริ่มต่ำ 0.5-2 mU/min C/S (E) ไม่ใช่ indication เพราะ Bishop score ต่ำเพียงอย่างเดียว รอ 1 สัปดาห์ (D) ไม่ถูก เพราะ GA 39wk ควร deliver",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Prostaglandin analogue ก่อน (cervical ripening)",
+          "is_correct": true,
+          "explanation": "Bishop <8 = unfavorable → ต้อง ripen cervix ด้วย PGE1/PGE2 ก่อน oxytocin"
+        },
+        {
+          "label": "B",
+          "text": "Oxytocin เริ่ม 10 mU/min",
+          "is_correct": false,
+          "explanation": "ไม่ถูก dose (ควรเริ่ม 0.5-2 mU/min) และยัง cervix ไม่พร้อม"
+        },
+        {
+          "label": "C",
+          "text": "Mechanical method (Foley + mechanical)",
+          "is_correct": false,
+          "explanation": "ทำได้แต่ prostaglandin เป็น preferred first-line"
+        },
+        {
+          "label": "D",
+          "text": "รออีก 1 สัปดาห์",
+          "is_correct": false,
+          "explanation": "GA 39wk ควร deliver; รอถึง 41-42wk เพิ่มเสี่ยง"
+        },
+        {
+          "label": "E",
+          "text": "C/S ทันที",
+          "is_correct": false,
+          "explanation": "Bishop score ต่ำ ≠ indication สำหรับ C/S"
+        }
+      ],
+      "key_takeaway": "Bishop score <8 + ต้อง induce → Cervical ripening ด้วย Prostaglandin ก่อน; Bishop ≥8 → Oxytocin ได้เลย"
+    }
+  },
+  {
+    "id": "97352160-c1ad-427e-839c-e45935df5504",
+    "correct_answer": "B",
+    "explanation": "หญิง 30 ปี ระดูขาด 6 สัปดาห์ + ปวดท้องน้อย + V/S stable + mild tenderness LLQ = suspected ectopic pregnancy ต้องทำ serial β-hCG เพื่อ monitor doubling time",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B — Serum β-hCG และ repeat ใน 24 ชั่วโมง เพราะ suspected ectopic pregnancy ที่ยัง stable",
+      "reason": "Ectopic pregnancy workup ใน stable patient: Serum β-hCG + transvaginal ultrasound β-hCG doubling time: Normal IUP doubles ทุก 48-72 ชั่วโมง Ectopic: เพิ่มขึ้นช้า (<66% ใน 48hr) หรือ plateau Serial β-hCG ทุก 24-48 ชั่วโมงช่วย differentiate IUP, ectopic, failed pregnancy ถ้า β-hCG > discriminatory zone (1500-2000 mIU/mL) ควรเห็น IUP ใน transvaginal US ถ้า V/S unstable → laparotomy ทันที (E) ถ้า dx confirmed → methotrexate (D) ถ้า unruptured, small",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Serial Hct",
+          "is_correct": false,
+          "explanation": "ไม่ specific ไม่ช่วย dx ectopic"
+        },
+        {
+          "label": "B",
+          "text": "Serum β-hCG + repeat 24hr",
+          "is_correct": true,
+          "explanation": "Serial β-hCG บอก doubling time ช่วย differentiate IUP vs ectopic"
+        },
+        {
+          "label": "C",
+          "text": "Admit and observe",
+          "is_correct": false,
+          "explanation": "ทำควบคู่กันได้ แต่ไม่ใช่คำตอบหลัก"
+        },
+        {
+          "label": "D",
+          "text": "Methotrexate",
+          "is_correct": false,
+          "explanation": "ให้เมื่อ dx confirmed ไม่ใช่ก่อน"
+        },
+        {
+          "label": "E",
+          "text": "Exploratory laparotomy",
+          "is_correct": false,
+          "explanation": "ทำเมื่อ V/S unstable หรือ ruptured ectopic; ผู้ป่วยยัง stable"
+        }
+      ],
+      "key_takeaway": "Suspected ectopic (stable) → Serial serum β-hCG + TVUS; β-hCG doubling <66% ใน 48hr = ectopic"
+    }
+  }
+]

@@ -1,0 +1,920 @@
+[
+  {
+    "id": "bac192d0-b26d-4fde-8043-4abbaf18dbc7",
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วยมีไข้ ปวดหัว ชักที่หน้าและแขนซ้าย (focal seizure) CSF: lymphocytosis protein สูงเล็กน้อย glucose ปกติ RBC สูง gram stain negative = HSV encephalitis รักษาด้วย Acyclovir IV",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Acyclovir เพราะ focal seizure + CSF lymphocytosis + RBC + gram stain negative = HSV encephalitis",
+      "reason": "HSV Encephalitis: ไข้ + focal neurological signs (temporal lobe involvement = focal seizure, personality change) CSF: lymphocytic pleocytosis, elevated protein, normal/low glucose, RBC (hemorrhagic encephalitis), gram stain negative PCR HSV = gold standard diagnosis รักษา: Acyclovir 10 mg/kg IV q8h × 14-21 วัน ทันที (ไม่รอผล PCR) Antifungal ใช้เมื่อ India ink positive (Cryptococcus) Antibiotics สำหรับ bacterial meningitis (PMN predominance) Anti-TB สำหรับ TBM (very high protein, very low glucose) Focal seizure + temporal lobe = hallmark ของ HSV encephalitis",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Acyclovir",
+          "is_correct": true,
+          "explanation": "HSV encephalitis: focal seizure + CSF lymphocytosis + RBC → Acyclovir IV ทันที"
+        },
+        {
+          "label": "B",
+          "text": "Antifungal",
+          "is_correct": false,
+          "explanation": "India ink negative ไม่ใช่ cryptococcal meningitis"
+        },
+        {
+          "label": "C",
+          "text": "Antibiotics",
+          "is_correct": false,
+          "explanation": "Bacterial meningitis มัก PMN predominance ใน CSF ไม่ใช่ lymphocytic"
+        },
+        {
+          "label": "D",
+          "text": "Anti-TB",
+          "is_correct": false,
+          "explanation": "TBM: protein สูงมาก glucose ต่ำมาก ไม่เหมือนใน case นี้"
+        }
+      ],
+      "key_takeaway": "Focal seizure + CSF lymphocytosis + RBC = HSV encephalitis → Acyclovir IV ทันที"
+    }
+  },
+  {
+    "id": "bc50e2c4-f721-4697-b3b7-12c6281108e7",
+    "correct_answer": "A",
+    "explanation": "HBsAg positive, HBsAb negative = chronic HBV carrier รักษาด้วย Interferon หรือ antiviral ถ้ามีข้อบ่งชี้ แต่คำตอบในโจทย์นี้คือ Interferon",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: รักษาด้วย Interferon เพราะ HBsAg+ HBsAb- = chronic HBV infection ที่อาจต้องการรักษา",
+      "reason": "HBsAg positive + HBsAb negative = ติดเชื้อ HBV (acute หรือ chronic) LFT ปกติอาจเป็น inactive carrier ขั้นตอนการประเมิน: ตรวจ HBeAg/HBeAb, HBV DNA level, liver biopsy ข้อบ่งชี้รักษา: HBV DNA สูง + ALT สูง หรือ liver fibrosis การรักษา: Interferon-alpha (pegylated IFN) หรือ Nucleoside/nucleotide analogues (Lamivudine, Tenofovir, Entecavir) คำตอบในโจทย์นี้ระบุ Interferon ซึ่งเป็น first-line option โดยเฉพาะใน HBeAg positive และอายุน้อย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "รักษาด้วย Interferon",
+          "is_correct": true,
+          "explanation": "HBsAg+ = chronic HBV → Interferon เป็น treatment option สำหรับ eligible patients"
+        },
+        {
+          "label": "B",
+          "text": "ให้ HBV vaccine",
+          "is_correct": false,
+          "explanation": "HBsAg+ แล้ว vaccine ไม่มีประโยชน์ สำหรับผู้ที่ยังไม่ติดเชื้อเท่านั้น"
+        },
+        {
+          "label": "C",
+          "text": "ตรวจ US abdomen",
+          "is_correct": false,
+          "explanation": "เป็นการตรวจ follow-up ไม่ใช่การรักษาหลัก"
+        },
+        {
+          "label": "D",
+          "text": "ตรวจ AFP",
+          "is_correct": false,
+          "explanation": "AFP สำหรับ screen HCC ระยะยาว ไม่ใช่ immediate action"
+        },
+        {
+          "label": "E",
+          "text": "ตรวจ HBsAg ซ้ำ 6 เดือน",
+          "is_correct": false,
+          "explanation": "ถ้า HBsAg+ นานกว่า 6 เดือน = chronic; การรอดูเพียงอย่างเดียวไม่เหมาะสม"
+        }
+      ],
+      "key_takeaway": "HBsAg+ HBsAb- = Chronic HBV infection → ประเมิน HBV DNA + LFT + พิจารณา Interferon/antiviral"
+    }
+  },
+  {
+    "id": "c086e110-612e-4f68-9245-a41fb63815f1",
+    "correct_answer": "A",
+    "explanation": "ชายหนุ่มอายุ 20 ปี ตัวเหลือง ตาเหลือง เป็นนาน 2 สัปดาห์แล้วหายเอง เพื่อนในหอเดียวกันมีอาการเหมือนกัน + น้ำท่วม = Hepatitis A (fecal-oral transmission, self-limiting)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Hepatitis A เพราะ cluster outbreak ในหอพัก + น้ำท่วม + self-limiting jaundice = HAV (fecal-oral route)",
+      "reason": "Hepatitis A: fecal-oral transmission ผ่านน้ำ/อาหารปนเปื้อน Epidemic ในช่วงน้ำท่วม = hallmark ของ HAV outbreak Self-limiting disease หาย 2-6 สัปดาห์โดยไม่มี chronic infection ไม่เกิด chronic hepatitis Hepatitis B/C: parenteral/sexual transmission ไม่ใช่ cluster ในหอพัก Leptospirosis: ไข้ + jaundice + renal failure + ไม่ self-limiting ง่าย Typhoid: ไข้สูง ปวดท้อง ไม่ใช่ jaundice เป็นอาการหลัก",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Hepatitis A",
+          "is_correct": true,
+          "explanation": "Fecal-oral, cluster outbreak น้ำท่วม, self-limiting jaundice 2 สัปดาห์ = HAV classic"
+        },
+        {
+          "label": "B",
+          "text": "Hepatitis B",
+          "is_correct": false,
+          "explanation": "Parenteral/sexual transmission ไม่เกิด cluster ในหอพัก"
+        },
+        {
+          "label": "C",
+          "text": "Hepatitis C",
+          "is_correct": false,
+          "explanation": "Parenteral transmission ไม่เกิด epidemic"
+        },
+        {
+          "label": "D",
+          "text": "Leptospirosis",
+          "is_correct": false,
+          "explanation": "มักมี renal failure, WBC สูง ไม่ใช่ pure jaundice self-limiting"
+        },
+        {
+          "label": "E",
+          "text": "Typhoid fever",
+          "is_correct": false,
+          "explanation": "ไข้สูง ปวดท้อง ไม่ใช่ jaundice เป็นอาการเด่น"
+        }
+      ],
+      "key_takeaway": "Cluster jaundice ในหอพักช่วงน้ำท่วม + self-limiting = Hepatitis A (fecal-oral)"
+    }
+  },
+  {
+    "id": "c2ec90ff-6a0d-428d-93af-91c7ae8db7f4",
+    "correct_answer": "A",
+    "explanation": "Capillaria philippinensis ติดจากการกินปลาน้ำจืดดิบ ดังนั้นการป้องกันคือ งดกินปลาน้ำจืดดิบๆ แต่คำตอบโจทย์ระบุว่า A = งดกินปู",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: งดกินปู ตามโจทย์ ศรว 2008 สำหรับ Capillaria philippinensis",
+      "reason": "Capillaria philippinensis: พยาธิที่ทำให้ท้องเสียเรื้อรัง malabsorption cachexia ไข่พยาธิรูปถั่วลิสง (peanut-shaped) Lifecycle: ผ่าน intermediate host = ปลาน้ำจืด (บางตำรา) หรือ crustaceans (ปู กุ้ง) มนุษย์ติดจากกินปลาน้ำจืดดิบ หรือ crustaceans ดิบ คำตอบในโจทย์ ศรว 2008 ระบุ A = งดกินปู ซึ่งน่าจะหมายถึง crustacean intermediate host รักษา: Mebendazole หรือ Albendazole",
+      "choices": [
+        {
+          "label": "A",
+          "text": "งดกินปู",
+          "is_correct": true,
+          "explanation": "ตามโจทย์ ศรว 2008: ปูเป็น intermediate host ของ Capillaria philippinensis"
+        },
+        {
+          "label": "B",
+          "text": "งดกินหอย",
+          "is_correct": false,
+          "explanation": "หอยเป็น intermediate host ของ Fasciola, Angiostrongylus ไม่ใช่ Capillaria"
+        },
+        {
+          "label": "C",
+          "text": "งดกินผักสด",
+          "is_correct": false,
+          "explanation": "ผักดิบ = Ascaris, Trichuris ไม่ใช่ Capillaria"
+        },
+        {
+          "label": "D",
+          "text": "งดกินปลาน้ำจืดดิบ",
+          "is_correct": false,
+          "explanation": "ปลาน้ำจืดดิบ = Opisthorchis, Gnathostoma; Capillaria บางสายพันธุ์ด้วย แต่ไม่ใช่คำตอบในข้อนี้"
+        },
+        {
+          "label": "E",
+          "text": "งดเดินเท้าเปล่า",
+          "is_correct": false,
+          "explanation": "Hookworm, Strongyloides ไม่ใช่ Capillaria"
+        }
+      ],
+      "key_takeaway": "Capillaria philippinensis: ไข่รูปถั่วลิสง + ท้องเสียเรื้อรัง + cachexia; ป้องกันโดยงดอาหารทะเล/ปลาดิบ"
+    }
+  },
+  {
+    "id": "c2f1a1e8-0d43-4f9e-ac33-d2d57fdcb4f0",
+    "correct_answer": "A",
+    "explanation": "เด็กอายุ 9 ปี ไข้สูง ไอ หอบ crepitation bilateral แผลตุ่มหนอง cellulitis ที่ขา + CXR: infiltration + decreased breath sound ซ้าย = Staphylococcal pneumonia (hematogenous spread จาก skin infection)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Salmonella spp. ตามโจทย์ แต่ clinical picture (skin abscess + pneumonia) ชวนคิดถึง S. aureus",
+      "reason": "โจทย์นี้มีลักษณะที่น่าสนใจ: เด็ก 9 ปี มีทั้ง skin infection (pustule + cellulitis) และ pneumonia + pleural effusion (decreased breath sound) ซึ่งคือ hematogenous seeding จาก S. aureus bacteremia ทำให้เกิด Staphylococcal pneumonia + empyema อย่างไรก็ตาม คำตอบในโจทย์ระบุ A = Salmonella spp. ซึ่งพบได้ใน SCD (Sickle cell disease) ที่มี osteomyelitis + bacteremia ในเด็กไทย S. aureus ยังเป็น classic cause ของ pneumonia + skin infection คำตอบตามโจทย์คือ A (Salmonella)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Salmonella spp.",
+          "is_correct": true,
+          "explanation": "คำตอบตามโจทย์ ศรว 2008; Salmonella bacteremia ทำ pneumonia + skin infection ได้"
+        },
+        {
+          "label": "B",
+          "text": "S. aureus",
+          "is_correct": false,
+          "explanation": "Classic cause ของ skin abscess + hematogenous pneumonia แต่ไม่ใช่คำตอบในข้อนี้"
+        },
+        {
+          "label": "C",
+          "text": "H. influenzae",
+          "is_correct": false,
+          "explanation": "พบในเด็กเล็ก <5 ปี ไม่ค่อยทำ skin infection"
+        },
+        {
+          "label": "D",
+          "text": "Mycoplasma pneumoniae",
+          "is_correct": false,
+          "explanation": "Atypical pneumonia ไม่มี skin pustule"
+        },
+        {
+          "label": "E",
+          "text": "Mycobacterium tuberculosis",
+          "is_correct": false,
+          "explanation": "TB ไม่ทำ skin pustule/cellulitis แบบ acute"
+        }
+      ],
+      "key_takeaway": "Skin infection + pneumonia + empyema ในเด็ก = Staphylococcal หรือ Salmonella bacteremia; คำตอบตามโจทย์ = Salmonella"
+    }
+  },
+  {
+    "id": "c3113bde-9b5d-4496-803a-ce1d1f6fa656",
+    "correct_answer": "C",
+    "explanation": "GPOvir (Zidovudine/Lamivudine/Nevirapine) adverse effects ที่พบบ่อยคือ: Efavirenz-like → dizziness, diarrhea, fatigue แต่ GPOvir มี NVP ซึ่งทำให้ rash (D) บ่อย และ AZT ทำให้ anemia (E) แต่คำตอบในโจทย์คือ C = diarrhea, dizziness, fatigue ซึ่งน่าจะเกิดจาก Nevirapine/Lamivudine",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C: Diarrhea, dizziness, fatigue เป็น common adverse effects ของ GPOvir (AZT/3TC/NVP) ในช่วงแรก",
+      "reason": "GPOvir = Zidovudine (AZT) + Lamivudine (3TC) + Nevirapine (NVP) Common adverse effects: AZT: anemia, neutropenia, nausea, headache, myopathy 3TC: ปลอดภัยที่สุด ไม่ค่อยมี SE NVP: rash (5-15%, รุนแรงถึง SJS), hepatotoxicity, flu-like symptoms ในช่วงแรก Overall GPOvir: GI symptoms (nausea, diarrhea), fatigue, dizziness ในช่วงแรกของการรักษาพบบ่อย Stevens-Johnson syndrome เป็น rare serious adverse effect ของ NVP แต่ไม่ใช่ most common Peripheral neuropathy เกิดจาก d4T ไม่ใช่ GPOvir",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Myalgia + hepatitis",
+          "is_correct": false,
+          "explanation": "Hepatitis พบได้จาก NVP แต่ myalgia ไม่ใช่ most common"
+        },
+        {
+          "label": "B",
+          "text": "Peripheral neuropathy + fever",
+          "is_correct": false,
+          "explanation": "Peripheral neuropathy เกิดจาก d4T ซึ่งไม่อยู่ใน GPOvir"
+        },
+        {
+          "label": "C",
+          "text": "Diarrhea, dizziness, fatigue",
+          "is_correct": true,
+          "explanation": "GI symptoms + CNS symptoms ในช่วงแรกของ AZT/3TC/NVP เป็น most common initial side effects"
+        },
+        {
+          "label": "D",
+          "text": "Rash (อาจถึง SJS)",
+          "is_correct": false,
+          "explanation": "NVP rash พบได้ 5-15% แต่ serious SJS rare; ไม่ใช่ most common"
+        },
+        {
+          "label": "E",
+          "text": "Acute anemia + fatigue",
+          "is_correct": false,
+          "explanation": "AZT ทำ anemia แต่ acute anemia ไม่ใช่ most common adverse effect"
+        }
+      ],
+      "key_takeaway": "GPOvir (AZT/3TC/NVP) common SE: GI (diarrhea, nausea), fatigue, dizziness; serious: NVP rash/SJS + AZT anemia"
+    }
+  },
+  {
+    "id": "c3893f53-12b1-4dc9-97fc-00e1ecffbe7f",
+    "correct_answer": "A",
+    "explanation": "เจ้าหน้าที่สาธารณสุขออกพื้นที่น้ำท่วม ยาที่ต้องเตรียมคือ Loperamide สำหรับควบคุมอาการท้องเสียที่พบบ่อยในน้ำท่วม",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Loperamide เพราะ flood situation → ท้องเสียจาก contaminated water เป็น most common complaint ที่ต้องจัดการเร่งด่วน",
+      "reason": "ในสถานการณ์น้ำท่วม: โรคที่พบบ่อยที่สุดคือ diarrheal diseases จากน้ำ/อาหารปนเปื้อน Loperamide ช่วยลด intestinal motility ลด diarrhea symptoms ใช้สำหรับ symptomatic relief ของ non-bloody diarrhea Amoxicillin ใช้สำหรับ bacterial infection แต่ไม่ใช่ first-line ทุก diarrhea Ciprofloxacin ใช้สำหรับ bacterial/cholera แต่ไม่จำเป็นต้องใช้ทุกราย Topical antifungal ใช้สำหรับ skin fungal infection (tinea pedis จากน้ำ) Co-trimoxazole ใช้สำหรับ specific infections",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Loperamide",
+          "is_correct": true,
+          "explanation": "น้ำท่วม → diarrheal disease พบบ่อยที่สุด → Loperamide สำหรับ symptomatic control"
+        },
+        {
+          "label": "B",
+          "text": "Amoxicillin",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ drug ที่ใช้ first-line ใน flood situations"
+        },
+        {
+          "label": "C",
+          "text": "Ciprofloxacin",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ specific bacterial/Vibrio cholera ไม่ใช่ general flood drug"
+        },
+        {
+          "label": "D",
+          "text": "Topical antifungal",
+          "is_correct": false,
+          "explanation": "สำหรับ skin infections ไม่ใช่ primary concern"
+        },
+        {
+          "label": "E",
+          "text": "Co-trimoxazole",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ first-line general flood medication"
+        }
+      ],
+      "key_takeaway": "น้ำท่วม → diarrhea most common → เตรียม Loperamide + ORS สำหรับ symptomatic treatment"
+    }
+  },
+  {
+    "id": "c3a2e03c-d883-4c1c-9747-0f8b09107855",
+    "correct_answer": "A",
+    "explanation": "บาดแผลจากไม้ไผ่สกปรก มีไข้สูง ปวดบวม erythema + hemorrhagic bleb = Necrotizing fasciitis หรือ Aeromonas infection รักษาด้วย Amoxicillin-clavulanate",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Amoxicillin-clavulanate เพราะ infected wound จากไม้ไผ่/soil + hemorrhagic bleb ต้องการ broad-spectrum coverage รวม anaerobes",
+      "reason": "บาดแผลจาก dirty bamboo/soil: organisms = mixed flora รวม Staphylococcus, Streptococcus, gram-negative bacilli, anaerobes Hemorrhagic bleb = severe soft tissue infection อาจเป็น necrotizing fasciitis หรือ Aeromonas hydrophila (จากน้ำ) Amoxicillin-clavulanate ครอบคลุม: gram-positive (Strep, Staph MSSA), gram-negative, anaerobes ได้ดี ถ้า necrotizing fasciitis → ต้องการ surgical debridement + broad-spectrum IV antibiotics Penicillin G ครอบคลุมแคบเกินไป Metronidazole ครอบคลุมเฉพาะ anaerobes Dicloxacillin เฉพาะ gram-positive MSSA",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Amoxicillin-clavulanate",
+          "is_correct": true,
+          "explanation": "Broad-spectrum coverage รวม anaerobes สำหรับ infected dirty wound + hemorrhagic bleb"
+        },
+        {
+          "label": "B",
+          "text": "Ceftazidime",
+          "is_correct": false,
+          "explanation": "ครอบคลุม gram-negative ดีแต่ไม่ครอบคลุม anaerobes"
+        },
+        {
+          "label": "C",
+          "text": "Penicillin G",
+          "is_correct": false,
+          "explanation": "Narrow spectrum ไม่ครอบคลุม Staph และ GNB"
+        },
+        {
+          "label": "D",
+          "text": "Metronidazole",
+          "is_correct": false,
+          "explanation": "เฉพาะ anaerobes ไม่ครอบคลุม aerobes"
+        },
+        {
+          "label": "E",
+          "text": "Dicloxacillin",
+          "is_correct": false,
+          "explanation": "MSSA เท่านั้น ไม่ครอบคลุม GNB หรือ anaerobes"
+        }
+      ],
+      "key_takeaway": "Infected dirty wound + hemorrhagic bleb = severe SSTI → Amoxicillin-clavulanate (broad anaerobic coverage)"
+    }
+  },
+  {
+    "id": "c4f43d52-7f1f-4757-847f-22273338df3f",
+    "correct_answer": "A",
+    "explanation": "นักศึกษาเดินป่ากาญจนบุรี 3 วัน ต้องการป้องกันมาลาเรีย ตามโจทย์คำตอบคือ A = ไม่ต้องทำอะไร เป็นแล้วค่อยรักษา (สำหรับ short trip ใน low-risk area)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: ไม่ต้องให้ prophylaxis เพราะเป็น short trip (3 วัน) และควรเน้น personal protection + รักษาเร็วถ้าเป็น",
+      "reason": "Malaria prophylaxis ใน Thailand: กาญจนบุรีมี malaria risk แต่สำหรับ short trip 3 วัน การให้ prophylaxis อาจไม่จำเป็น เน้น personal protection: insect repellent (DEET), มุ้ง, เสื้อแขนยาว แทน Thai guidelines อาจแนะนำ Doxycycline prophylaxis สำหรับ endemic area แต่โจทย์นี้คำตอบคือ A = ไม่ต้อง Fansidar (Sulfadoxine-pyrimethamine) มีความดื้อยาสูงแล้วในไทย Quinine ไม่ใช้สำหรับ prophylaxis Doxycycline (option D) ใช้สำหรับ P. falciparum endemic areas",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ไม่ต้องทำอะไร เป็นแล้วค่อยรักษา",
+          "is_correct": true,
+          "explanation": "Short trip + personal protection เพียงพอสำหรับ low-risk exposure; รักษาเร็วถ้าเกิดอาการ"
+        },
+        {
+          "label": "B",
+          "text": "ทายากันยุงตลอด",
+          "is_correct": false,
+          "explanation": "Personal protection สำคัญแต่ไม่ใช่คำตอบเดียวที่เพียงพอ"
+        },
+        {
+          "label": "C",
+          "text": "กิน Fansidar 3 วันก่อน",
+          "is_correct": false,
+          "explanation": "P. falciparum ในไทยดื้อ Fansidar แล้ว"
+        },
+        {
+          "label": "D",
+          "text": "กิน Doxy 7 วันก่อนและหลัง",
+          "is_correct": false,
+          "explanation": "Doxycycline prophylaxis ใช้ได้แต่ไม่ใช่คำตอบในโจทย์นี้"
+        },
+        {
+          "label": "E",
+          "text": "กิน Quinine ทุกวัน",
+          "is_correct": false,
+          "explanation": "Quinine ไม่ใช้สำหรับ prophylaxis มีผลข้างเคียงมาก"
+        }
+      ],
+      "key_takeaway": "Short trip malaria endemic area: เน้น personal protection (repellent, มุ้ง); ถ้าเป็น → รักษาทันที"
+    }
+  },
+  {
+    "id": "c543ee44-2150-48e2-9bca-36e6e189f0cf",
+    "correct_answer": "A",
+    "explanation": "ชายอายุ 28 ปี IVDU (multiple injection scars) ไข้ ไอ หอบ CXR multiple patchy infiltration bilateral = Right-sided IE จาก S. aureus ที่มี septic pulmonary emboli",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: S. aureus เพราะ IVDU + bilateral multiple patchy CXR = septic pulmonary emboli จาก right-sided IE",
+      "reason": "IVDU + Right-sided Infective Endocarditis (tricuspid valve): S. aureus เป็นสาเหตุหลัก Septic pulmonary emboli = multiple bilateral patchy infiltrates เกิดจาก vegetations หลุดจาก tricuspid valve เข้า pulmonary circulation ทำให้ bilateral multiple pulmonary abscesses/emboli Multiple injection scars (multiple infection scars) = IVDU evidence ไข้ + หอบ + bilateral multiple patchy = classic presentation ของ septic emboli จาก right-sided IE",
+      "choices": [
+        {
+          "label": "A",
+          "text": "S. aureus",
+          "is_correct": true,
+          "explanation": "IVDU + right-sided IE → septic pulmonary emboli = bilateral multiple patchy infiltrates"
+        },
+        {
+          "label": "B",
+          "text": "S. pyogenes",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ classic cause ของ IE ใน IVDU"
+        },
+        {
+          "label": "C",
+          "text": "H. influenzae",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ common cause ของ IE ใน IVDU"
+        },
+        {
+          "label": "D",
+          "text": "Viridans Streptococcus",
+          "is_correct": false,
+          "explanation": "มาจาก oral flora + dental procedure ไม่ใช่ IVDU"
+        },
+        {
+          "label": "E",
+          "text": "M. pneumoniae",
+          "is_correct": false,
+          "explanation": "Atypical pneumonia ไม่ทำ multiple patchy infiltrates จาก emboli"
+        }
+      ],
+      "key_takeaway": "IVDU + bilateral multiple patchy CXR = S. aureus right-sided IE → septic pulmonary emboli"
+    }
+  },
+  {
+    "id": "c6671903-cee0-4cb1-8121-820099f52d6e",
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วย ALL on chemotherapy WBC 1000 (neutropenia) รูปแผลคล้าย eschar บริเวณข้อพับแขน = catheter-related infection หรือ Ecthyma gangrenosum จาก S. aureus (ตามคำตอบในโจทย์)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: S. aureus เพราะ neutropenic patient + eschar-like lesion + septic shock ต้องการ empirical S. aureus coverage",
+      "reason": "Neutropenic fever ใน chemo patient (ALL): Organisms: gram-negative bacilli, S. aureus, fungal Eschar/necrotic lesion ที่ arm: อาจเป็น Ecthyma gangrenosum (classically from P. aeruginosa) หรือ catheter-related S. aureus infection Thrombophlebitis + necrotic lesion ที่ IV site = catheter-related BSI มักจาก S. aureus BP 90/70 = septic shock แม้ Ecthyma gangrenosum จะ classic ของ P. aeruginosa แต่คำตอบในโจทย์คือ A (S. aureus) น่าจะ emphasis ที่ catheter-related infection ในผู้ป่วย chemo",
+      "choices": [
+        {
+          "label": "A",
+          "text": "S. aureus",
+          "is_correct": true,
+          "explanation": "Catheter-related bloodstream infection + necrotic skin lesion ใน ALL chemo patient"
+        },
+        {
+          "label": "B",
+          "text": "S. pyogenes",
+          "is_correct": false,
+          "explanation": "ไม่ common ใน neutropenic fever"
+        },
+        {
+          "label": "C",
+          "text": "P. aeruginosa",
+          "is_correct": false,
+          "explanation": "Classic cause ของ Ecthyma gangrenosum แต่ไม่ใช่คำตอบในข้อนี้"
+        },
+        {
+          "label": "D",
+          "text": "E. coli",
+          "is_correct": false,
+          "explanation": "Common gram-negative ใน neutropenic fever แต่ไม่ทำ eschar-like lesion"
+        },
+        {
+          "label": "E",
+          "text": "Vibrio",
+          "is_correct": false,
+          "explanation": "Vibrio เกี่ยวกับ seafood/water exposure ไม่ใช่ neutropenic patient"
+        }
+      ],
+      "key_takeaway": "Neutropenic fever + eschar at IV site = Catheter-related S. aureus BSI; Ecthyma gangrenosum = P. aeruginosa"
+    }
+  },
+  {
+    "id": "c8d34f52-b95c-46a6-8612-9c64819d688c",
+    "correct_answer": "A",
+    "explanation": "SLE on prednisolone 40 mg/day (immunocompromised) มีไข้ respiratory symptoms และ GI symptoms (bloating, loose stools) = Strongyloides hyperinfection syndrome",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Strongyloides stercoralis เพราะ high-dose steroid (immunocompromised) + pulmonary + GI symptoms = hyperinfection",
+      "reason": "Strongyloides hyperinfection: เกิดใน immunocompromised โดยเฉพาะ high-dose steroids (prednisone 40 mg) GI symptoms: abdominal bloating + loose stools = larvae invading gut wall Respiratory: basal crackles + fever = larvae migrating through lung Strongyloides ใช้ autoinfection cycle ที่เพิ่มขึ้นใน immune suppression ทำ hyperinfection syndrome ร่วมกัน Necator americanus ไม่มี autoinfection; Opisthorchis ทำ biliary disease; Capillaria ทำ severe intestinal malabsorption; Giardia ทำ watery diarrhea ไม่มี pulmonary",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Strongyloides stercoralis",
+          "is_correct": true,
+          "explanation": "Steroid-immunocompromised + pulmonary + GI = classic hyperinfection syndrome"
+        },
+        {
+          "label": "B",
+          "text": "Necator americanus",
+          "is_correct": false,
+          "explanation": "Hookworm ไม่มี autoinfection hyperinfection syndrome"
+        },
+        {
+          "label": "C",
+          "text": "Opisthorchis viverrini",
+          "is_correct": false,
+          "explanation": "ทำ biliary/cholangitis ไม่มี pulmonary phase"
+        },
+        {
+          "label": "D",
+          "text": "Capillaria philippinensis",
+          "is_correct": false,
+          "explanation": "ทำ severe intestinal malabsorption ไม่มี pulmonary"
+        },
+        {
+          "label": "E",
+          "text": "Giardia lamblia",
+          "is_correct": false,
+          "explanation": "Watery diarrhea + malabsorption ไม่มี pulmonary phase"
+        }
+      ],
+      "key_takeaway": "High-dose steroid + pulmonary + GI symptoms = Strongyloides hyperinfection → Ivermectin ทันที"
+    }
+  },
+  {
+    "id": "c9f79fc6-8511-4d23-8500-552b8433e0ef",
+    "correct_answer": "A",
+    "explanation": "ชายอายุ 18 ปี แข็งแรงดีก่อนหน้านี้ URI แล้วมีไข้ ไอ หอบ CXR interstitial infiltration = Atypical pneumonia (Mycoplasma pneumoniae) คำตอบในโจทย์คือ A = Ampicillin แม้ macrolide จะเป็น first-line จริง",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Ampicillin ตามโจทย์ ศรว 2008 สำหรับ interstitial pneumonia ในคนหนุ่ม",
+      "reason": "Atypical pneumonia จาก Mycoplasma pneumoniae: คนหนุ่มสาวแข็งแรง, URI prodrome แล้วมี pneumonia Interstitial infiltration (bilateral) CXR = classic atypical pattern รักษา first-line ตาม evidence: Macrolides (Azithromycin/Clarithromycin/Roxithromycin) หรือ Doxycycline โจทย์นี้ คำตอบคือ A = Ampicillin ซึ่งอาจสะท้อน guideline เก่าหรือโจทย์ community-acquired pneumonia ทั่วไปที่ใช้ beta-lactam Roxithromycin (C) เป็นตัวเลือกที่สมเหตุผลกว่าสำหรับ atypical pneumonia แต่คำตอบระบุ A",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ampicillin",
+          "is_correct": true,
+          "explanation": "คำตอบตามโจทย์ ศรว 2008; beta-lactam สำหรับ community-acquired pneumonia"
+        },
+        {
+          "label": "B",
+          "text": "Ciprofloxacin",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ first-line CAP ในคนหนุ่มสาวไม่มี comorbidity"
+        },
+        {
+          "label": "C",
+          "text": "Roxithromycin",
+          "is_correct": false,
+          "explanation": "Macrolide ที่ดีสำหรับ atypical pneumonia แต่ไม่ใช่คำตอบในข้อนี้"
+        },
+        {
+          "label": "D",
+          "text": "Gentamicin",
+          "is_correct": false,
+          "explanation": "Aminoglycoside ไม่ครอบคลุม Mycoplasma"
+        },
+        {
+          "label": "E",
+          "text": "Augmentin (Amoxicillin-clavulanate)",
+          "is_correct": false,
+          "explanation": "Broad-spectrum แต่ไม่ครอบคลุม atypical organisms"
+        }
+      ],
+      "key_takeaway": "Interstitial pneumonia คนหนุ่ม + URI prodrome = Atypical (Mycoplasma) → Macrolide หรือ Doxycycline เป็น preferred"
+    }
+  },
+  {
+    "id": "cd5a9e90-30ae-41c4-881a-ba1cf05d7c81",
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วยหญิงอายุ 68 ปี ตรวจร่างกายปกติ วัคซีนที่เหมาะสมที่สุดสำหรับผู้สูงอายุในการป้องกันโรคประจำปีคือ Influenza vaccine ตามโจทย์คือ A = Rabies vaccine (อาจเป็น Influenza ตาม context หรือ Rabies ถ้ามีประวัติสัมผัสสัตว์)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Rabies vaccine ตามโจทย์ ศรว 2008 — หรืออาจเป็น Influenza vaccine ที่เหมาะสมสำหรับผู้สูงอายุ 68 ปี",
+      "reason": "ในทางคลินิก วัคซีนที่แนะนำสำหรับผู้สูงอายุ (≥65 ปี): Influenza vaccine (ทุกปี) Pneumococcal vaccine (PCV/PPSV) Herpes zoster vaccine Td booster ทุก 10 ปี Hepatitis B ถ้ายังไม่มีภูมิ คำตอบในโจทย์ระบุ A = Rabies vaccine ซึ่งอาจมีบริบทที่หายไปจาก scenario เช่น ผู้ป่วยทำงานกับสัตว์ สำหรับผู้สูงอายุ 68 ปีทั่วไป Influenza vaccine เป็นสิ่งที่แนะนำมากที่สุด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Rabies vaccine",
+          "is_correct": true,
+          "explanation": "คำตอบตามโจทย์ ศรว 2008; ใช้สำหรับ pre-exposure prophylaxis ในผู้มีความเสี่ยง"
+        },
+        {
+          "label": "B",
+          "text": "Tetanus vaccine",
+          "is_correct": false,
+          "explanation": "Td booster ทุก 10 ปี เหมาะสม แต่ไม่ใช่คำตอบในข้อนี้"
+        },
+        {
+          "label": "C",
+          "text": "HBV vaccine",
+          "is_correct": false,
+          "explanation": "เหมาะสำหรับ HBV naive ผู้สูงอายุที่ยังไม่มีภูมิ"
+        },
+        {
+          "label": "D",
+          "text": "Influenza vaccine",
+          "is_correct": false,
+          "explanation": "เหมาะที่สุดสำหรับผู้สูงอายุ ≥65 ปี ในทางคลินิกจริง แต่ไม่ใช่คำตอบในข้อสอบนี้"
+        },
+        {
+          "label": "E",
+          "text": "HPV vaccine",
+          "is_correct": false,
+          "explanation": "สำหรับอายุ 9-26 ปี ไม่เหมาะสำหรับ 68 ปี"
+        }
+      ],
+      "key_takeaway": "ผู้สูงอายุ ≥65 ปี → Influenza + Pneumococcal + Zoster vaccines; Rabies ถ้ามีประวัติสัมผัสสัตว์"
+    }
+  },
+  {
+    "id": "ce255684-4137-4598-9dd7-c3c6f7a0641a",
+    "correct_answer": "A",
+    "explanation": "IVDU ไข้ 2 สัปดาห์ BP 70/palpable (shock), systolic murmur, hemorrhagic spots นิ้ว = Infective endocarditis + septic shock รักษาด้วย PGS (Penicillin G) + Gentamicin ตามโจทย์",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: PGS + Gentamicin สำหรับ Infective endocarditis ใน IVDU",
+      "reason": "IE ใน IVDU: S. aureus เป็น most common แต่ Streptococcus + Enterococcus พบได้ PGS (Penicillin G) + Gentamicin = classic synergistic regimen สำหรับ Streptococcal/Enterococcal IE Hemorrhagic spots ที่นิ้วมือ = splinter hemorrhages, Osler's nodes, Janeway lesions = peripheral vascular phenomena ของ IE Shock + murmur + fever = septic shock จาก IE ต้องให้ IV antibiotics ทันที Cloxacillin + Gentamicin ใช้สำหรับ S. aureus IE (MSSA) Vancomycin สำหรับ MRSA",
+      "choices": [
+        {
+          "label": "A",
+          "text": "PGS + Gentamicin",
+          "is_correct": true,
+          "explanation": "Synergistic regimen สำหรับ IE; PGS ครอบคลุม Strep/Entero + Gentamicin เพิ่ม bactericidal activity"
+        },
+        {
+          "label": "B",
+          "text": "Ampicillin + Gentamicin",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ Enterococcal IE ไม่ใช่คำตอบหลักในข้อนี้"
+        },
+        {
+          "label": "C",
+          "text": "Cloxacillin + Gentamicin",
+          "is_correct": false,
+          "explanation": "สำหรับ S. aureus (MSSA) IE ไม่ใช่คำตอบในข้อนี้"
+        },
+        {
+          "label": "D",
+          "text": "Cefoperazone + Gentamicin",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ standard IE regimen"
+        },
+        {
+          "label": "E",
+          "text": "Ceftazidime + Amikacin",
+          "is_correct": false,
+          "explanation": "สำหรับ Pseudomonas infection ไม่ใช่ IE standard"
+        }
+      ],
+      "key_takeaway": "IE + shock → PGS + Gentamicin (synergistic bactericidal); Splinter hemorrhages = peripheral vascular phenomena"
+    }
+  },
+  {
+    "id": "d2c46a5f-d05e-4c1b-88a6-6735f776719e",
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วย ไข้ ไอ เสมหะเหลือง กิน Amoxycillin 3 วันไม่ดีขึ้น PE: dullness + decreased breath sound ขวา = pleural effusion ต้องการ Thoracentesis เพื่อ diagnose และ drain",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: เพิ่ม Amoxycillin ตามโจทย์ ศรว 2008 — แต่ clinical picture (pleural effusion) น่าจะต้องการ thoracentesis",
+      "reason": "Pneumonia + pleural effusion (dullness + decreased breath sound + decreased vocal resonance): ต้องการ thoracentesis เพื่อ diagnose (transudate vs exudate vs empyema) และ therapeutic drainage ถ้า large effusion Amoxycillin 500 mg ขนาดต่ำเกินไปสำหรับ complicated pneumonia + effusion แต่คำตอบในโจทย์ ศรว 2008 คือ A = เพิ่ม Amoxycillin ซึ่งอาจหมายถึง escalate dose หรือ complete treatment course ก่อน Levofloxacin เป็นตัวเลือกที่ดีกว่าสำหรับ Amoxycillin-refractory CAP",
+      "choices": [
+        {
+          "label": "A",
+          "text": "เพิ่ม Amoxycillin",
+          "is_correct": true,
+          "explanation": "คำตอบตามโจทย์ ศรว 2008"
+        },
+        {
+          "label": "B",
+          "text": "เพิ่ม Clarithromycin",
+          "is_correct": false,
+          "explanation": "Add macrolide สำหรับ atypical coverage ใช้ได้แต่ไม่ใช่คำตอบ"
+        },
+        {
+          "label": "C",
+          "text": "เปลี่ยนเป็น Levofloxacin",
+          "is_correct": false,
+          "explanation": "เหมาะสมในทางคลินิกเมื่อ beta-lactam fail แต่ไม่ใช่คำตอบ"
+        },
+        {
+          "label": "D",
+          "text": "Thoracentesis",
+          "is_correct": false,
+          "explanation": "เหมาะสม clinically สำหรับ diagnose/treat pleural effusion แต่ไม่ใช่คำตอบในโจทย์"
+        },
+        {
+          "label": "E",
+          "text": "ICD",
+          "is_correct": false,
+          "explanation": "สำหรับ empyema หรือ large effusion"
+        }
+      ],
+      "key_takeaway": "CAP ไม่ตอบสนองยา + pleural effusion → thoracentesis เพื่อ diagnose; คำตอบโจทย์ = เพิ่ม Amoxycillin"
+    }
+  },
+  {
+    "id": "d7478496-6899-4951-99dc-c073c2fe419a",
+    "correct_answer": "B",
+    "explanation": "ผู้ป่วยอายุ 30 ปี มีอาการหลายอวัยวะพร้อมกัน: otitis media + diarrhea + pharyngitis + pneumonia (lower lobe) = Mycoplasma pneumoniae ที่ทำ multi-system disease",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B: Mycoplasma pneumoniae เพราะ multi-system involvement (ear + GI + pharynx + lung) ในผู้ป่วยคนเดียว",
+      "reason": "Mycoplasma pneumoniae: atypical pathogen ที่ทำ multi-system disease Walking pneumonia: ไข้ต่ำๆ + dry cough + pharyngitis Extra-pulmonary manifestations: otitis media (bullous myringitis), diarrhea, skin rash (erythema multiforme), hemolytic anemia, cold agglutinins หลาย organ involvement พร้อมกันในคน healthy อายุน้อย-กลาง = classic Mycoplasma Legionella ทำ severe pneumonia + GI แต่ไม่ทำ otitis media Strep pneumoniae ทำ otitis media หรือ pneumonia แต่ไม่ทำ diarrhea",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Legionella",
+          "is_correct": false,
+          "explanation": "Severe CAP + GI symptoms แต่ไม่ทำ otitis media"
+        },
+        {
+          "label": "B",
+          "text": "Mycoplasma",
+          "is_correct": true,
+          "explanation": "Multi-system: otitis + pharyngitis + diarrhea + pneumonia = Mycoplasma classic extra-pulmonary manifestations"
+        },
+        {
+          "label": "C",
+          "text": "Klebsiella pneumoniae",
+          "is_correct": false,
+          "explanation": "CAP ในผู้สูงอายุ/alcoholic ไม่มี multi-system involvement แบบนี้"
+        },
+        {
+          "label": "D",
+          "text": "S. pneumoniae",
+          "is_correct": false,
+          "explanation": "ทำ otitis media หรือ pneumonia ไม่ทำ diarrhea"
+        },
+        {
+          "label": "E",
+          "text": "Chlamydophila psittaci",
+          "is_correct": false,
+          "explanation": "Psittacosis จาก bird exposure ไม่มี otitis media"
+        }
+      ],
+      "key_takeaway": "Otitis media + diarrhea + pharyngitis + pneumonia ในผู้เดียว = Mycoplasma (multi-system atypical pneumonia)"
+    }
+  },
+  {
+    "id": "d773e0da-dbca-4e8d-981b-073920c91d9e",
+    "correct_answer": "A",
+    "explanation": "รพ.ชุมชนพบผู้ป่วย pertussis 1 ราย ต้องดำเนินการทันที: รายงานโรค + isolation + contact tracing + สอบสวนแหล่งติดเชื้อในชุมชน",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: รายงาน + Isolation + Contact tracing + สอบหาแหล่งติดเชื้อ — เป็น standard outbreak response",
+      "reason": "Pertussis outbreak response (1 case): Pertussis เป็น notifiable disease ต้องรายงานทันที Isolation ผู้ป่วยจนครบ 5 วันหลังเริ่ม effective antibiotics Contact tracing: ผู้สัมผัสใกล้ชิด (household, classroom) ได้รับ post-exposure prophylaxis ด้วย Azithromycin สอบสวนแหล่งติดเชื้อเพื่อ identify chains of transmission การรอให้มีผู้ป่วยเพิ่มก่อน = ผิดหลัก outbreak response การรักษาโดยไม่รายงาน = ผิดกฎหมาย การปิดโรงเรียนทั้งหมด 2 สัปดาห์ = เกินจำเป็น",
+      "choices": [
+        {
+          "label": "A",
+          "text": "รายงาน + Isolation + Contact tracing + สอบสวน",
+          "is_correct": true,
+          "explanation": "Standard outbreak response: report → isolate → trace contacts → investigate source"
+        },
+        {
+          "label": "B",
+          "text": "รอผู้ป่วยเพิ่ม 5 รายก่อน",
+          "is_correct": false,
+          "explanation": "ผิดหลัก even 1 case = action required; pertussis highly contagious"
+        },
+        {
+          "label": "C",
+          "text": "รักษาโดยไม่รายงาน",
+          "is_correct": false,
+          "explanation": "Pertussis เป็น notifiable disease ต้องรายงานทุกกรณี"
+        },
+        {
+          "label": "D",
+          "text": "รอผลแล็บก่อน",
+          "is_correct": false,
+          "explanation": "Delay action ขณะที่ pertussis แพร่ระบาด"
+        },
+        {
+          "label": "E",
+          "text": "ปิดโรงเรียน 2 สัปดาห์",
+          "is_correct": false,
+          "explanation": "เกินจำเป็น; targeted isolation + prophylaxis เพียงพอ"
+        }
+      ],
+      "key_takeaway": "Pertussis 1 case = รายงาน + isolate + contact trace + PEP (Azithromycin) ทันที"
+    }
+  },
+  {
+    "id": "d7fe4ad1-6b65-43a0-852c-f764bbc7a785",
+    "correct_answer": "A",
+    "explanation": "ชายมีไข้ต่ำๆ ไอ หอบ crepitation ขวา CXR: RLL infiltration ถามเชื้อ คำตอบคือ A = H. influenzae ซึ่งเป็น common cause ของ community-acquired pneumonia",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: H. influenzae เป็นสาเหตุ CAP ที่พบบ่อยโดยเฉพาะใน COPD/ผู้สูงอายุ",
+      "reason": "Community-acquired pneumonia (CAP) etiology: Most common: S. pneumoniae (#1) H. influenzae (โดยเฉพาะใน COPD, smokers, elderly) Mycoplasma (atypical, คนหนุ่ม) Klebsiella (alcoholic, DM) S. aureus (post-influenza) RLL infiltration ใน case ไม่มี special features = typical bacterial CAP คำตอบโจทย์ระบุ A = H. influenzae ซึ่งเป็น common cause โดยเฉพาะถ้าผู้ป่วยมี COPD หรือ smoking history",
+      "choices": [
+        {
+          "label": "A",
+          "text": "H. influenzae",
+          "is_correct": true,
+          "explanation": "Common CAP cause โดยเฉพาะ COPD/smokers; gram-negative coccobacillus"
+        },
+        {
+          "label": "B",
+          "text": "S. pneumoniae",
+          "is_correct": false,
+          "explanation": "Most common CAP pathogen โดยรวม แต่ไม่ใช่คำตอบในข้อนี้"
+        },
+        {
+          "label": "C",
+          "text": "Mycoplasma pneumoniae",
+          "is_correct": false,
+          "explanation": "Atypical; interstitial pattern ไม่ใช่ lobar consolidation"
+        },
+        {
+          "label": "D",
+          "text": "Chlamydia",
+          "is_correct": false,
+          "explanation": "Atypical CAP ในคนหนุ่มสาว"
+        },
+        {
+          "label": "E",
+          "text": "S. aureus",
+          "is_correct": false,
+          "explanation": "Post-influenza pneumonia หรือ IVDU ไม่ใช่ typical CAP"
+        }
+      ],
+      "key_takeaway": "CAP RLL infiltration → S. pneumoniae or H. influenzae most common; H. influenzae พบบ่อยใน COPD/smokers"
+    }
+  },
+  {
+    "id": "d9ebe554-7e38-4d62-b3ea-007d2e21006b",
+    "correct_answer": "A",
+    "explanation": "กลับจากน้ำตก มีไข้ และแผลที่มีลักษณะเฉพาะ (eschar) = Scrub typhus จาก chigger mite bite ดังนั้น vector คือ A: Chigger mite (Trombiculid mite)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Chigger mite เพราะไปน้ำตก (ป่า/หญ้าสูง) + ไข้ + eschar-like lesion = Scrub typhus จาก Chigger bite",
+      "reason": "Scrub typhus (Orientia tsutsugamushi): Vector = Trombiculid mite (Chigger mite) ขนาดเล็กมาก ไม่มองเห็นด้วยตาเปล่า อาศัยในหญ้าสูง/ป่า/บริเวณน้ำตก กัดแล้วทำ eschar = painless black necrotic lesion ไข้ + eschar หลังไปป่า/น้ำตก = scrub typhus จนกว่าจะ prove otherwise Louse = epidemic typhus (R. prowazekii) Aedes egypti = Dengue/Zika/Chikungunya Tick = Rocky Mountain spotted fever, Lyme disease, Q fever Flea = Murine typhus, Plague",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Chigger mite",
+          "is_correct": true,
+          "explanation": "Vector ของ Scrub typhus; พบในป่า/หญ้า/น้ำตก; ทำ eschar at bite site"
+        },
+        {
+          "label": "B",
+          "text": "Louse",
+          "is_correct": false,
+          "explanation": "Vector ของ Epidemic typhus (R. prowazekii) ไม่ใช่ Scrub typhus"
+        },
+        {
+          "label": "C",
+          "text": "Aedes egypti",
+          "is_correct": false,
+          "explanation": "Vector ของ Dengue, Zika, Yellow fever ไม่ทำ eschar"
+        },
+        {
+          "label": "D",
+          "text": "Tick",
+          "is_correct": false,
+          "explanation": "Vector ของ RMSF, Lyme, Ehrlichia ไม่ใช่ Scrub typhus"
+        },
+        {
+          "label": "E",
+          "text": "Flea",
+          "is_correct": false,
+          "explanation": "Vector ของ Murine typhus (R. typhi), Plague ไม่ใช่ Scrub typhus"
+        }
+      ],
+      "key_takeaway": "ไปน้ำตก/ป่า + ไข้ + eschar = Scrub typhus; Vector = Chigger mite (Trombiculid mite)"
+    }
+  },
+  {
+    "id": "da601c28-16ae-4746-bbd8-c3f6b44250f4",
+    "correct_answer": "A",
+    "explanation": "Lymphoma on chemotherapy มีไข้สูง WBC 400 (febrile neutropenia) = ต้องการ G-CSF เร่งด่วนร่วมกับ empirical broad-spectrum antibiotics",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: G-CSF เพราะ febrile neutropenia จาก chemotherapy ต้องการ granulocyte colony-stimulating factor เร่ง neutrophil recovery",
+      "reason": "Febrile neutropenia (FN): ANC <500 + fever ≥38.5°C หลัง chemotherapy WBC 400 = severe neutropenia (ANC likely <100 since predominantly lymphocytes) G-CSF (Filgrastim/Pegfilgrastim): กระตุ้น bone marrow ผลิต neutrophils เร็วขึ้น ลด duration ของ neutropenia และ ลด infection-related mortality ใน chemo patients การรักษา FN: Empirical IV antibiotics (Ceftazidime หรือ Pip/Tazo) ทันที + G-CSF Ceftazidime เป็น antibiotic choice แต่ G-CSF เป็นคำตอบหลักในโจทย์ Platelet infusion ใช้เมื่อ plt <10,000 หรือ active bleeding",
+      "choices": [
+        {
+          "label": "A",
+          "text": "G-CSF",
+          "is_correct": true,
+          "explanation": "Granulocyte colony-stimulating factor ลด duration ของ neutropenia ใน chemo-induced FN"
+        },
+        {
+          "label": "B",
+          "text": "Cefazolin",
+          "is_correct": false,
+          "explanation": "1st gen cephalosporin ไม่เพียงพอสำหรับ FN ต้องการ broad-spectrum"
+        },
+        {
+          "label": "C",
+          "text": "Ceftazidime",
+          "is_correct": false,
+          "explanation": "Anti-pseudomonal antibiotic เหมาะสำหรับ FN แต่ไม่ใช่คำตอบหลักในโจทย์"
+        },
+        {
+          "label": "D",
+          "text": "Amphotericin B",
+          "is_correct": false,
+          "explanation": "Empirical antifungal ถ้า fever ไม่ดีขึ้นหลัง 4-7 วัน ไม่ใช่ first-line"
+        },
+        {
+          "label": "E",
+          "text": "Platelet infusion",
+          "is_correct": false,
+          "explanation": "Plt 70,000 ไม่ถึง threshold สำหรับ prophylactic transfusion (<10,000)"
+        }
+      ],
+      "key_takeaway": "Febrile neutropenia หลัง chemo → G-CSF + empirical IV antibiotics ทันที"
+    }
+  },
+  {
+    "id": "dc6793d9-133c-4918-9617-a69d1efd31c7",
+    "correct_answer": "A",
+    "explanation": "HIV/AIDS มี meningitis CSF: glucose ต่ำ protein สูง lymphocytic pleocytosis India ink negative CD4 >250 = TB meningitis (CD4 มากพอที่จะทำ inflammatory response)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: TB meningitis เพราะ HIV + CSF lymphocytic pleocytosis + glucose ต่ำ + protein สูง + India ink negative + CD4 >250",
+      "reason": "Differential diagnosis ของ meningitis ใน HIV: TB meningitis (CD4 ทุก level แต่พบบ่อยเมื่อ CD4 100-500): lymphocytic pleocytosis, high protein, low glucose, India ink NEGATIVE Cryptococcal meningitis (CD4 <100): India ink POSITIVE, CSF pressure สูงมาก, mild pleocytosis Bacterial meningitis: PMN predominance Viral (aseptic) meningitis: มักมี mild protein elevation, glucose ปกติ Toxoplasma encephalitis: mass lesion ไม่ใช่ pure meningitis India ink negative + CD4 >250 + full CSF profile = TB meningitis most likely",
+      "choices": [
+        {
+          "label": "A",
+          "text": "TB meningitis",
+          "is_correct": true,
+          "explanation": "HIV + India ink negative + lymphocytic + low glucose + high protein + CD4 >250 = TBM"
+        },
+        {
+          "label": "B",
+          "text": "Cryptococcal meningitis",
+          "is_correct": false,
+          "explanation": "India ink POSITIVE ใน crypto; CD4 มักน้อยกว่า 100"
+        },
+        {
+          "label": "C",
+          "text": "Bacterial meningitis",
+          "is_correct": false,
+          "explanation": "PMN predominance ไม่ใช่ lymphocytic"
+        },
+        {
+          "label": "D",
+          "text": "Viral (aseptic) meningitis",
+          "is_correct": false,
+          "explanation": "Glucose ปกติ, mild protein elevation ไม่ใช่ profile นี้"
+        },
+        {
+          "label": "E",
+          "text": "Toxoplasma encephalitis",
+          "is_correct": false,
+          "explanation": "Mass lesion ในสมอง ไม่ใช่ pure meningitis"
+        }
+      ],
+      "key_takeaway": "HIV + India ink negative + lymphocytic meningitis + low glucose = TB meningitis → Anti-TB + steroids"
+    }
+  }
+]

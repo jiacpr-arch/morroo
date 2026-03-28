@@ -1,0 +1,364 @@
+[
+  {
+    "scenario": "An 10-hour newborn, term, has jaundice. BT 37°C, marked jaundice, other normal. Hct 38%, blood type A, Rh positive, unconjugated bilirubin 10 mg/dL. Mother: O, Rh positive. Direct Coombs test weakly positive. Indirect Coombs test negative. What is the diagnosis?",
+    "choices": [
+      {"label": "A", "text": "Rh incompatibility"},
+      {"label": "B", "text": "ABO incompatibility"},
+      {"label": "C", "text": "Physiologic jaundice"},
+      {"label": "D", "text": "Neonatal hepatitis"},
+      {"label": "E", "text": "G6PD deficiency"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "ABO incompatibility: Baby is type A, mother is type O (has anti-A antibodies). Weakly positive direct Coombs test and negative indirect Coombs test is characteristic of ABO hemolytic disease. Rh incompatibility would show negative direct Coombs in first incompatibility."
+  },
+  {
+    "scenario": "เด็กเหลืองอายุ 37 weeks gestation, น้ำหนัก 2800 grams. At 18 hour of life, bilirubin 18 mg/dL, Hct normal. ควรจัดการอย่างไร?",
+    "choices": [
+      {"label": "A", "text": "Intensive phototherapy"},
+      {"label": "B", "text": "Total blood exchange transfusion"},
+      {"label": "C", "text": "Partial blood exchange transfusion"},
+      {"label": "D", "text": "Phototherapy with close monitoring"},
+      {"label": "E", "text": "Continue observation without intervention"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "At 18 hours, 37 weeks GA, bilirubin 18 mg/dL exceeds exchange transfusion threshold (approximately 14-15 mg/dL for 35-37 weeks). Total exchange transfusion is indicated."
+  },
+  {
+    "scenario": "A term male infant, normal delivery, birth weight 2 kg, APGAR 9,10, antenatal care normal, has jitteriness at 2 hours. PE: plethora, no jaundice. Hct 68%, blood sugar 30 mg/dL, hypocalcemia present. After prescribing 10% dextrose 2 ml/kg IV push with glucose infusion rate 6 mg/kg/hr and maintenance with rate 65 ml/kg/day. What is the most appropriate next step management?",
+    "choices": [
+      {"label": "A", "text": "Increase infusion rate to 90 ml/kg/day"},
+      {"label": "B", "text": "Partial exchange transfusion"},
+      {"label": "C", "text": "Total exchange transfusion"},
+      {"label": "D", "text": "10% Calcium gluconate IV"},
+      {"label": "E", "text": "Phenobarbital IV"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Jitteriness and hypocalcemia are clinical signs requiring calcium supplementation. While hypoglycemia is also present and being treated, hypocalcemia must be addressed with 10% calcium gluconate IV. This is the most critical next intervention."
+  },
+  {
+    "scenario": "A 3-day-old baby presents with jaundice and appears frustrated. Physical examination: sunken eye balls, weight 2800 g (birth weight 3000 g). Mother complains of no breast milk production, only colostrum available. Baby refusing to feed. Lab: bilirubin 12 mg/dL, others normal. What should you do?",
+    "choices": [
+      {"label": "A", "text": "Start phototherapy"},
+      {"label": "B", "text": "Increase oral fluid intake"},
+      {"label": "C", "text": "Send mother to breastfeeding teaching class"},
+      {"label": "D", "text": "Start infant formula supplementation"},
+      {"label": "E", "text": "Admit for observation and lactation support"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Signs of poor breastfeeding (weight loss, sunken eyes, inadequate milk production). Priority is breastfeeding education and lactation support. Bilirubin level (12 mg/dL at day 3) is borderline, but addressing feeding is most critical."
+  },
+  {
+    "scenario": "A 10-day-old neonatal, birth weight 3,200 g, presents with jaundice. She is exclusively breastfed and passes loose yellow stool 6-7 times per day. PE: weight 4,000 g, mild to moderate jaundice, otherwise normal. Lab: Hct 48%, unconjugated bilirubin 16 mg/dL. What is the most appropriate management?",
+    "choices": [
+      {"label": "A", "text": "Expose to sunlight in the morning"},
+      {"label": "B", "text": "Force oral fluid"},
+      {"label": "C", "text": "Switch to infant formula"},
+      {"label": "D", "text": "Continue breastfeeding"},
+      {"label": "E", "text": "Phototherapy"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "At day 10, weight gain is appropriate (4000g from 3200g birth weight), stooling is adequate (6-7 times/day), indicating good breastfeeding. However, bilirubin 16 mg/dL at day 10 exceeds phototherapy threshold (approximately 14-15 mg/dL). Continue breastfeeding with phototherapy is the answer (combination of D and E, but phototherapy is the active intervention needed)."
+  },
+  {
+    "scenario": "A 2-day-old child, gestational age 34 weeks, birth weight 2,200 g. APGAR score 2, 5 at 1, 5 minutes. Unconjugated bilirubin 16 mg/dL, treated with phototherapy. What is the most important factor for hearing screening test?",
+    "choices": [
+      {"label": "A", "text": "Birth weight"},
+      {"label": "B", "text": "APGAR score"},
+      {"label": "C", "text": "Gestational age"},
+      {"label": "D", "text": "Phototherapy exposure"},
+      {"label": "E", "text": "Bilirubin level"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Hyperbilirubinemia (unconjugated bilirubin) is an important risk factor for auditory neuropathy spectrum disorder (ANSD) and hearing loss in neonates. High bilirubin exposure is the most significant risk factor in this case. Hearing screening should be performed."
+  },
+  {
+    "scenario": "เด็กทารก Newborn เกิดมา day 3 ร้องกวน พบรอบๆสะดือออกแดงบวม PE: Vital signs BT 37°C, RR 48, PR 120. Abdomen: Periumbilical inflammation with no discharge. What is the most appropriate management?",
+    "choices": [
+      {"label": "A", "text": "Dressing and local care only"},
+      {"label": "B", "text": "Amoxicillin-Clavulanate oral"},
+      {"label": "C", "text": "Cloxacillin IV"},
+      {"label": "D", "text": "Ceftazidime IV"},
+      {"label": "E", "text": "Gentamicin IV"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Day 3 periumbilical inflammation with redness and swelling suggests early omphalitis. Systemic antibiotics required. Ceftazidime IV provides broad coverage for both gram-positive and gram-negative bacteria including Pseudomonas, appropriate for neonatal infection. Third-generation cephalosporin is preferred in neonatal omphalitis."
+  },
+  {
+    "scenario": "A 7-day-old infant delivered at home. He is irritable, feeding difficult, generalized rigidity, muscle spasm in response to stimuli. Umbilical stump normal. What is the most likely diagnosis?",
+    "choices": [
+      {"label": "A", "text": "Tetanus"},
+      {"label": "B", "text": "Meningitis"},
+      {"label": "C", "text": "Encephalitis"},
+      {"label": "D", "text": "Hypocalcemia"},
+      {"label": "E", "text": "Hypoglycemia"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Day 7, home delivery (risk of contamination), generalized rigidity and muscle spasm (characteristic risus sardonicus and opisthotonus of tetanus), normal umbilical stump. Neonatal tetanus from contaminated umbilical cord. Clinical presentation is classic for tetanus."
+  },
+  {
+    "scenario": "A 6-hour newborn has dyspnea. APGAR 7,10 at 1,5 minutes. His symptom relieved after O2 supplement. PE: inactive. He has prolonged rupture of membranes 22 hours. What is the diagnosis?",
+    "choices": [
+      {"label": "A", "text": "Respiratory distress syndrome"},
+      {"label": "B", "text": "Bacterial sepsis"},
+      {"label": "C", "text": "Cerebral hypoxia"},
+      {"label": "D", "text": "Transient tachypnea of the newborn"},
+      {"label": "E", "text": "Meconium aspiration syndrome"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "6-hour old, APGAR scores good (7-10), dyspnea responsive to oxygen, PROM 22 hours. Transient tachypnea of the newborn (TTN) presents within first 6 hours with mild hypoxemia responsive to minimal oxygen, self-limited course."
+  },
+  {
+    "scenario": "A newborn presents with internally rotated arms, pronated forearms, hands and wrist flexed bilaterally. Where is the nerve lesion?",
+    "choices": [
+      {"label": "A", "text": "C4-C5"},
+      {"label": "B", "text": "C5-C6"},
+      {"label": "C", "text": "C6-C7"},
+      {"label": "D", "text": "C7-C8"},
+      {"label": "E", "text": "C8-T1"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Claw hand position (flexed wrist and fingers) indicates Klumpke's palsy affecting lower brachial plexus nerves C8-T1 (ulnar nerve territory). This is lower brachial plexus injury, unlike Erb's palsy (C5-C6) which shows arm adduction and internal rotation with extended wrist."
+  },
+  {
+    "scenario": "A newborn with prolonged rupture of membranes reveals meconium staining. Presents with dyspnea and meconium aspiration confirmed. What is the immediate management?",
+    "choices": [
+      {"label": "A", "text": "Chest compression"},
+      {"label": "B", "text": "Orotracheal intubation and suction"},
+      {"label": "C", "text": "Bag-valve-mask ventilation"},
+      {"label": "D", "text": "Supplemental oxygen"},
+      {"label": "E", "text": "Observe and monitor"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Confirmed meconium aspiration with dyspnea requires immediate orotracheal intubation to visualize trachea and perform direct suction to remove meconium from airways. This is standard management for meconium aspiration syndrome."
+  },
+  {
+    "scenario": "Which vaccine is contraindicated in patients with egg allergy?",
+    "choices": [
+      {"label": "A", "text": "Hepatitis B vaccine"},
+      {"label": "B", "text": "Rabies vaccine"},
+      {"label": "C", "text": "Influenza vaccine"},
+      {"label": "D", "text": "Pneumococcal vaccine"},
+      {"label": "E", "text": "None of the above"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Influenza vaccines are grown in chicken eggs and contain egg proteins. Contraindicated in patients with severe egg allergy. Other vaccines listed do not contain egg proteins or are safe in egg allergy."
+  },
+  {
+    "scenario": "A 12-year-old male patient with a complete history of standard immunization: DTP×5, OPV×5, MMR×2, HBV×3, BCG×1, JE×3. What is the recommended vaccine at this time?",
+    "choices": [
+      {"label": "A", "text": "dT (booster)"},
+      {"label": "B", "text": "MMR"},
+      {"label": "C", "text": "Japanese Encephalitis"},
+      {"label": "D", "text": "Hepatitis B"},
+      {"label": "E", "text": "Pneumococcal vaccine"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "At age 12, dT booster is recommended as per standard immunization schedule. DTP series was completed (5 doses), so booster with dT (diphtheria-tetanus) is appropriate. Other vaccines are already completed to full series."
+  },
+  {
+    "scenario": "A 20-year-old woman applying to become a nursing assistant. Which vaccine is NOT in the expanded program of immunization?",
+    "choices": [
+      {"label": "A", "text": "Hepatitis B vaccine"},
+      {"label": "B", "text": "DTP"},
+      {"label": "C", "text": "MMR"},
+      {"label": "D", "text": "Japanese Encephalitis"},
+      {"label": "E", "text": "Varicella vaccine"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Thailand's Expanded Program on Immunization (EPI) includes HBV, DTP, MMR, and JE. Varicella vaccine is not part of the routine EPI schedule (though available). Note: Original question had 4 options; added varicella as plausible distractor."
+  },
+  {
+    "scenario": "An area with high prevalence of goiter (20%). Who should be screened first for iodine deficiency?",
+    "choices": [
+      {"label": "A", "text": "Preschool children"},
+      {"label": "B", "text": "Primary school children"},
+      {"label": "C", "text": "Adolescents and teenagers"},
+      {"label": "D", "text": "Pregnant women"},
+      {"label": "E", "text": "Elderly population"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "status": "complete",
+    "ai_notes": "Primary school children (ages 6-11) are the sentinel population for screening iodine deficiency disorders. They reflect the current iodine status of a population and are used for global monitoring by WHO/UNICEF."
+  },
+  {
+    "scenario": "เด็กอายุ 1 เดือน ร้องไห้มีชักเกร็งแขนขา มักเป็นช่วงเวลาเย็นของทุกวัน ขี้วันละ 2-3 ครั้ง การแยมปกติ แดกนมได้ดี ดูดนมนาน 20 นาที น้ำหนัก 4000 g แรกเกิดหนัก 3200 g เด็กโรคนี้เป็นอันใด?",
+    "choices": [
+      {"label": "A", "text": "Infantile colic"},
+      {"label": "B", "text": "Epilepsy"},
+      {"label": "C", "text": "Hypoglycemia"},
+      {"label": "D", "text": "Hypocalcemia"},
+      {"label": "E", "text": "Gastroesophageal reflux"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Classic presentation of infantile colic: 1 month old, crying with apparent cramping (arm/leg jerking), episodes in evening, normal neurologic examination, good weight gain (3200→4000g), normal feeding. Colic is benign and self-limited."
+  },
+  {
+    "scenario": "เด็กอายุ 10 เดือน มีไข้ ชักเกร็ง blood sugar 50 mg/dL อื่นๆปกติ จัดการอย่างไร?",
+    "choices": [
+      {"label": "A", "text": "Lumbar puncture (LP)"},
+      {"label": "B", "text": "CT brain"},
+      {"label": "C", "text": "10% glucose IV"},
+      {"label": "D", "text": "Anticonvulsant medication"},
+      {"label": "E", "text": "Antipyretics only"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Febrile seizure with hypoglycemia (BS 50 mg/dL). Immediate management of hypoglycemia with 10% glucose IV is critical first step. This may resolve seizure. LP and CT can follow after stabilization if seizure persists."
+  },
+  {
+    "scenario": "เด็กอายุ 10 ปี ชาปลายมือปลายเท้า 2 สัปดาห์ หอบเหนื่อย 2 วัน น้ำหนัก 70 kg สูง 150 cm กินข้าว 3 มื้อ เนื้อสัตว์บางมื้อ ผักผลไม้นิดหน่อย ไข่ 1-2 ฟอง ตรวจร่างกายมี weakness นิดหน่อย deep tendon reflex 1+ fine crackles ปอด เป็นอะไร?",
+    "choices": [
+      {"label": "A", "text": "Cardiomyopathy"},
+      {"label": "B", "text": "Myositis"},
+      {"label": "C", "text": "Thiamine deficiency"},
+      {"label": "D", "text": "Cobalamin (B12) deficiency"},
+      {"label": "E", "text": "Niacin deficiency"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Paresthesia, dyspnea, weakness, hyporeflexia, pulmonary crackles suggest cardiac involvement with neuropathy. Poor diet quality (minimal protein/animal products), chronic malnutrition. Thiamine (B1) deficiency causes wet beriberi with cardiomyopathy, peripheral neuropathy, and pulmonary edema."
+  },
+  {
+    "scenario": "เด็กชายอายุ 7 ปี มีอาการเหนื่อย นอนราบไม่ได้มา 1 สัปดาห์ ก่อนหน้านี้มีไข้ เจ็บคอเมื่อ 2 สัปดาห์ก่อน PE: systolic murmur grade III ที่ apex ต้องการวินิจฉัยว่ามี acute rheumatic heart disease ควรให้การตรวจอะไร?",
+    "choices": [
+      {"label": "A", "text": "ANA (antinuclear antibody)"},
+      {"label": "B", "text": "ASO titer (antistreptolysin O)"},
+      {"label": "C", "text": "EKG"},
+      {"label": "D", "text": "Rheumatoid factor"},
+      {"label": "E", "text": "Chest X-ray"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Classic presentation of acute rheumatic fever (ARF): history of sore throat 2 weeks ago, new cardiac murmur (mitral stenosis at apex), dyspnea, orthopnea. ASO titer confirms recent streptococcal infection, supporting diagnosis of ARF. Elevated ESR/CRP also helpful but ASO titer is most specific."
+  },
+  {
+    "scenario": "เด็กอายุ 2 เดือน ซึม กินนมน้อยลง 2 วัน ได้รับการวินิจฉัยว่าเป็น VSD ตั้งแต่อายุ 1 เดือน PE: T 37°C, RR 70, BP 70/50, PR 160, sweating present. Diffuse expiratory wheezing both lungs. Systolic ejection murmur along left parasternal border. Liver span 8 cm. วินิจฉัยตรงกับข้อใดมากที่สุด?",
+    "choices": [
+      {"label": "A", "text": "Acute bronchitis"},
+      {"label": "B", "text": "Viral pneumonia"},
+      {"label": "C", "text": "Aspiration pneumonia"},
+      {"label": "D", "text": "Acute asthmatic attack"},
+      {"label": "E", "text": "Congestive heart failure"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "2-month-old with known VSD, now with signs of cardiac decompensation: tachypnea (RR 70), tachycardia (PR 160), hypotension (70/50), sweating, hepatomegaly (8 cm), wheezing (pulmonary edema), poor feeding, lethargy. VSD shunt and decreased cardiac output causing congestive heart failure."
+  },
+  {
+    "scenario": "ทารกอายุ 8 เดือน ถูกพามาห้องฉุกเฉินด้วยอาการเขียว มารดาให้ประวัติว่าเด็กกินถั่วแล้วสาลัก PE: cyanosis, stuporous, air gasping, BT 37°C, HR 100/min, no foreign body visible in oral cavity. จงให้การปฏิบัติที่เหมาะสม?",
+    "choices": [
+      {"label": "A", "text": "Cricothyrotomy"},
+      {"label": "B", "text": "Cardiac compressions"},
+      {"label": "C", "text": "Endotracheal intubation"},
+      {"label": "D", "text": "Bag-valve-mask ventilation"},
+      {"label": "E", "text": "5 back blows - 5 chest thrusts"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "8-month-old with foreign body aspiration (peanut), presenting with cyanosis, altered consciousness, respiratory distress. No foreign body visible in mouth. Standard management for foreign body airway obstruction in infants: back blows and chest thrusts alternately (not abdominal thrusts in infants <1 year). Intubation may be needed if these fail."
+  },
+  {
+    "scenario": "เด็กอายุ 1 เดือน มักจะพึ่นนมหลังจากแต่ละครั้งที่กิน น้ำหนักแรกเกิด 3200 g ปัจจุบัน 4500 g PE: ดูแล้วสมบูรณ์",
+    "choices": [
+      {"label": "A", "text": "Overfeeding"},
+      {"label": "B", "text": "Gastritis"},
+      {"label": "C", "text": "Gastroesophageal reflux disease"},
+      {"label": "D", "text": "Hypertrophic pyloric stenosis"},
+      {"label": "E", "text": "Milk allergy"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "1 month old with regurgitation after feeding, good weight gain (3200→4500g, >25% gain), appears well. Pattern and weight gain suggest overfeeding rather than pathologic cause. Management: adjust feeding volume/frequency."
+  },
+  {
+    "scenario": "Newborn ที่มี gestational age 42 weeks น้ำหนักน้อยกว่า 3000 g APGAR score 5, 8 ที่นาที 1 และ 5 ผิวหนังที่มือและเท้ามีลักษณะเป็นซ้ำนวม (wrinkled) มีความเสี่ยงภาวะแทรกซ้อนอะไร?",
+    "choices": [
+      {"label": "A", "text": "Hypocalcemia"},
+      {"label": "B", "text": "Hypoglycemia"},
+      {"label": "C", "text": "Intrauterine growth restriction"},
+      {"label": "D", "text": "Intraventricular hemorrhage"},
+      {"label": "E", "text": "Meconium aspiration"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Post-term (42 weeks), small for gestational age (<3000g), wrinkled/peeling skin indicates intrauterine growth restriction. IUGR and post-maturity are major risk factors for hypoglycemia due to poor intrauterine nutrition and depleted glycogen stores. Requires immediate blood glucose screening and management."
+  },
+  {
+    "scenario": "Newborn มี respiratory rate 80/min หายใจมีเสียง grunting CXR แสดง: increase lung markings, fluid streak ในหิ่งห้องปอด วินิจฉัยอะไร?",
+    "choices": [
+      {"label": "A", "text": "Meconium aspiration syndrome"},
+      {"label": "B", "text": "Transient tachypnea of the newborn"},
+      {"label": "C", "text": "Respiratory distress syndrome"},
+      {"label": "D", "text": "Neonatal pneumonia"},
+      {"label": "E", "text": "Pulmonary hypoplasia"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Tachypnea (RR 80), grunting, CXR with increased lung markings and fluid in fissures (classic 'wet lungs'). This is pathognomonic for transient tachypnea of the newborn (TTN), common in term/near-term infants, especially those delivered by elective cesarean."
+  },
+  {
+    "scenario": "เด็กคลอดครบกาหนด มีอาการเหนื่อย RR 70/min PR 140 bpm BP 60/40 mmHg PE: breath sound ลดทั้งข้างซ้ายปอด CXR: air loop ในปอดซ้าย การจัดการอะไรคือที่เหมาะสม?",
+    "choices": [
+      {"label": "A", "text": "Bronchoscopy"},
+      {"label": "B", "text": "Barium enema"},
+      {"label": "C", "text": "Lateral film (left lateral decubitus)"},
+      {"label": "D", "text": "Intubation with positive pressure ventilation"},
+      {"label": "E", "text": "Needle aspiration"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Term infant with respiratory distress, air loops in left lung on CXR suggesting congenital diaphragmatic hernia (CDH). Decreased breath sounds left side, respiratory compromise requiring immediate airway management. Intubation with PPV is immediate stabilization. Bronchoscopy not indicated; surgery after stabilization."
+  },
+  {
+    "scenario": "เด็กคลอดครบกาหนด มีชักเกร็ง 2 ชั่วโมง หลังจากคลอด APGAR score 3, 5, 9 ที่นาที 1, 5, 10 Hct 63% WBC 20000 BS 50 mg/dL ให้ยาอะไร?",
+    "choices": [
+      {"label": "A", "text": "IV glucose"},
+      {"label": "B", "text": "IV atropine"},
+      {"label": "C", "text": "IV phenytoin"},
+      {"label": "D", "text": "IV phenobarbital"},
+      {"label": "E", "text": "IV calcium gluconate"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Term infant with seizures 2 hours after birth. Multiple metabolic derangements

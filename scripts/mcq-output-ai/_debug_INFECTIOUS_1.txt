@@ -1,0 +1,308 @@
+[
+  {
+    "scenario": "A 30-year-old female with underlying dyslipidemia on simvastatin presents with persistent whitish patch on her tongue. Tongue scraping and KOH preparation shows fungal elements. Which medication is the most appropriate?",
+    "choices": [
+      {"label": "A", "text": "Nystatin"},
+      {"label": "B", "text": "Gentian violet"},
+      {"label": "C", "text": "Oral griseofulvin"},
+      {"label": "D", "text": "Oral ketoconazole"},
+      {"label": "E", "text": "Systemic itraconazole"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE (unknown year)",
+    "status": "complete",
+    "ai_notes": "Oral candidiasis in an immunocompetent patient is best treated with topical Nystatin. Ketoconazole or itraconazole would be reserved for systemic or refractory cases."
+  },
+  {
+    "scenario": "A 10-week gestation pregnant woman presents with fever and chills for 2 weeks. PE: BT 39°C, BP 100/60 mmHg. Peripheral blood smear shows P. vivax. What is the appropriate management?",
+    "choices": [
+      {"label": "A", "text": "Artesunate and mefloquine"},
+      {"label": "B", "text": "Quinidine and clindamycin"},
+      {"label": "C", "text": "Chloroquine and doxycycline"},
+      {"label": "D", "text": "Chloroquine and primaquine"},
+      {"label": "E", "text": "Quinine and mefloquine"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE (unknown year)",
+    "status": "complete",
+    "ai_notes": "In pregnancy, P. vivax malaria is treated with chloroquine for acute phase. Primaquine is added for radical cure but traditionally deferred until after delivery or 3rd trimester due to G6PD concerns; however, in some guidelines it may be given in 3rd trimester. Doxycycline, artemisinin derivatives, and mefloquine are contraindicated in pregnancy."
+  },
+  {
+    "scenario": "A 20-year-old female presents with fever for 4 days. PE: Bilateral cervical lymphadenopathy, palpable liver 2 cm below right costal margin. There are lesions in her mouth as shown in the picture. What is the initial investigation?",
+    "choices": [
+      {"label": "A", "text": "Throat swab"},
+      {"label": "B", "text": "CBC"},
+      {"label": "C", "text": "Hemoculture"},
+      {"label": "D", "text": "Liver function test"},
+      {"label": "E", "text": "Anti-EBV IgM titer"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2014",
+    "status": "complete",
+    "ai_notes": "Clinical presentation suggests infectious mononucleosis (fever, cervical lymphadenopathy, hepatomegaly, oral lesions). Anti-EBV IgM is the initial diagnostic test for acute EBV infection."
+  },
+  {
+    "scenario": "ผู้ป่วยชายโดนสัตว์กัด มีรอยฟัง (fang mark) อัตราหายใจ 10 ครั้งต่อนาที มีอ่อนแรงกล้ามเนื้อ สิ่งใดที่ควรจัดการก่อนอื่น?",
+    "choices": [
+      {"label": "A", "text": "สอดท่อ endotracheal"},
+      {"label": "B", "text": "ให้ anti-venom"},
+      {"label": "C", "text": "ให้ยาต้านไข้"},
+      {"label": "D", "text": "ล้างแผลด้วยน้าบริสุทธิ์"},
+      {"label": "E", "text": "ฉีดวัคซีนพิษสุนัข"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมีอัตราหายใจต่ำ (RR 10) และอ่อนแรงกล้ามเนื้อ แสดงว่ามีภาวะหายใจล้มเหลว จำเป็นต้องรักษาทางเดินหายใจเร่งด่วน (intubation) ก่อน จึงค่อยให้ anti-venom"
+  },
+  {
+    "scenario": "คนไข้มีประวัติใช้สารเสพติดฉีดผ่านหลอดเลือด PE: สอบเคลื่อนไหวหัวใจเจอ vegetative growth บนลิ้นวาล ถามว่าเกิดจากเชื้อใด",
+    "choices": [
+      {"label": "A", "text": "Staphylococcus aureus"},
+      {"label": "B", "text": "Streptococcus viridans"},
+      {"label": "C", "text": "Streptococcus pyogenes"},
+      {"label": "D", "text": "Enterococcus faecalis"},
+      {"label": "E", "text": "Pseudomonas aeruginosa"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "status": "complete",
+    "ai_notes": "ผู้ใช้สารเสพติดฉีดผ่านหลอดเลือดมี infectious endocarditis มักเกิดจาก S. aureus (รวมทั้ง MRSA) ซึ่งเป็นเชื้อ gram-positive cocci ที่มีความรุนแรง"
+  },
+  {
+    "scenario": "ผู้หญิงเป็น HIV มาด้วยอาการเหนื่อย ให้ film และ X-ray เห็น interstitial infiltration ควรให้ยาอะไร?",
+    "choices": [
+      {"label": "A", "text": "Acyclovir"},
+      {"label": "B", "text": "Ceftriaxone"},
+      {"label": "C", "text": "Cotrimoxazole"},
+      {"label": "D", "text": "Amphotericin B"},
+      {"label": "E", "text": "Pentamidine"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2014",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วย HIV มี interstitial infiltration บ่งชี้ถึง Pneumocystis jirovecii pneumonia (PCP) โดยทั่วไป ยาเลือกสำหรับ PCP คือ Cotrimoxazole (TMP-SMX) หรือ Pentamidine"
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 18 ปี มีไข้ต่าๆ ปวดท้องทั่วๆ rash แบบ maculopapular ตับโต 3 ซม. อุ้งเชิงกราน Hct 42 WBC 2,700 (มี atypical lymphocyte) Plt 90,000 ควรใช้การรักษาอะไร?",
+    "choices": [
+      {"label": "A", "text": "Prednisolone"},
+      {"label": "B", "text": "Doxycycline"},
+      {"label": "C", "text": "Ceftriaxone"},
+      {"label": "D", "text": "Ciprofloxacin"},
+      {"label": "E", "text": "Fluid replacement therapy"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "status": "complete",
+    "ai_notes": "ลักษณะทั้งหมด (ไข้ต่าๆ, rash, hepatomegaly, lymphocytosis with atypical lymphocytes, thrombocytopenia) บ่งชี้ถึง scrub typhus ซึ่งรักษาด้วย doxycycline"
+  },
+  {
+    "scenario": "ผู้หญิงเป็น pulmonary TB อยู่ระหว่างรักษา IRZE และ pyridoxine ตั้งท้องขณะกินยาคุม สงสัยว่าเกิดจากยาใด?",
+    "choices": [
+      {"label": "A", "text": "Isoniazid"},
+      {"label": "B", "text": "Rifampicin"},
+      {"label": "C", "text": "Pyrazinamide"},
+      {"label": "D", "text": "Ethambutol"},
+      {"label": "E", "text": "Pyridoxine"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "status": "complete",
+    "ai_notes": "Rifampicin เป็นตัวเหนี่ยวนำของ cytochrome P450 ซึ่งเร่งการเผาผลาญ oral contraceptive และลดประสิทธิผล ทำให้เกิดการตั้งท้องที่ไม่คาดหวัง"
+  },
+  {
+    "scenario": "หญิงอายุ 40 ปี เดินทางไปตากได้ 2 สัปดาห์ มีไข้ขึ้นมา 1 สัปดาห์ เมื่อวานกล่อมไข้ขณะเดินทาง วันนี้เกิดชัก 1 ครั้งก่อนมาโรงพยาบาล Peripheral blood smear เห็น ring form, multiple infected RBCs, accole form ทำอะไรก่อน?",
+    "choices": [
+      {"label": "A", "text": "CT scan"},
+      {"label": "B", "text": "Ceftriaxone"},
+      {"label": "C", "text": "50% glucose IV"},
+      {"label": "D", "text": "Phenobarbital"},
+      {"label": "E", "text": "Lumbar puncture"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2014",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี cerebral malaria (ไข้มาลาเรีย + ชัก) มี ring form และ accole form บ่งชี้ P. falciparum เคลื่อนไหวมากมาย ภัยคุกคามคือ cerebral edema และ hypoglycemia จึงต้องให้ IV glucose 50% เร่งด่วน ขณะเดียวกันให้ artesunate IV"
+  },
+  {
+    "scenario": "ชายอายุ 56 ปี วินิจฉัยว่าเป็น lymphoma IIIB กำลังทำ chemotherapy ทุก 3 สัปดาห์ 10 วันหลังจากให้ chemotherapy ครั้งล่าสุด เขามีไข้สูง หนาวสั่น PE: BT 40°C, RR 24, PR 100 บิดอื่นไม่เห็นอะไรผิดปกติ CBC: Hb 10.5, Hct 32, WBC 400, Plt 70,000 การรักษาที่เหมาะสมที่สุดคืออะไร?",
+    "choices": [
+      {"label": "A", "text": "G-CSF"},
+      {"label": "B", "text": "Cefazolin"},
+      {"label": "C", "text": "Ceftazidime"},
+      {"label": "D", "text": "Amphotericin B"},
+      {"label": "E", "text": "Platelet transfusion"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2014",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี febrile neutropenia (WBC 400, BT 40°C, หนาวสั่น) หลังจากให้ chemotherapy ต้องให้ broad-spectrum antibiotic เร่งด่วน Ceftazidime (third generation cephalosporin) เป็นตัวเลือกแรกสำหรับ empiric therapy ใน neutropenic fever เพราะครอบคลุม Pseudomonas และ gram-negative organisms"
+  },
+  {
+    "scenario": "ผู้ป่วยมี exudative tonsillitis cervical lymphadenopathy และตับโต อาจเกิดจากเชื้อใด?",
+    "choices": [
+      {"label": "A", "text": "Scrub typhus"},
+      {"label": "B", "text": "Infectious mononucleosis"},
+      {"label": "C", "text": "Scarlet fever"},
+      {"label": "D", "text": "Diphtheria"},
+      {"label": "E", "text": "Acute retroviral syndrome"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "status": "complete",
+    "ai_notes": "เพิ่มตัวเลือก D และ E เพื่อให้ครบ 5 ข้อ Infectious mononucleosis (EBV) ทำให้เกิด exudative pharyngitis, cervical lymphadenopathy, hepatomegaly ซึ่งตรงกับ classic triad"
+  },
+  {
+    "scenario": "ผู้ป่วย lymphoma อยู่ระหว่างรักษาด้วย CMT มีไข้พร้อมหนาวสั่น WBC 400 การรักษาที่เหมาะสมที่สุดคืออะไร?",
+    "choices": [
+      {"label": "A", "text": "G-CSF"},
+      {"label": "B", "text": "Ceftazidime"},
+      {"label": "C", "text": "Amoxicillin-clavulanate"},
+      {"label": "D", "text": "Amphotericin B"},
+      {"label": "E", "text": "Cefepime"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "status": "complete",
+    "ai_notes": "เพิ่มตัวเลือก D และ E Febrile neutropenia ต้องให้ broad-spectrum antibiotic ceftazidime เป็นตัวเลือกมาตรฐาน"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุกลางคน มีไข้และ jaundice มาเป็นเวลา 1 สัปดาห์ PE: icteric sclerae mildly pale conjunctivae มีน้ำในช่องท้อง ควรตรวจอะไรเป็นอันดับแรก?",
+    "choices": [
+      {"label": "A", "text": "HBsAg"},
+      {"label": "B", "text": "HBeAg"},
+      {"label": "C", "text": "Anti-HBs"},
+      {"label": "D", "text": "Anti-HAV IgM"},
+      {"label": "E", "text": "Anti-HEV IgM"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี acute hepatitis (ไข้ + jaundice) ต้องตรวจ HBsAg ก่อนเพื่อยืนยัน hepatitis B หาก HBsAg ลบ ให้ตรวจ Anti-HAV IgM สำหรับ hepatitis A"
+  },
+  {
+    "scenario": "ผู้ป่วยมีไข้ คลื่นไส้ อาเจียน ไม่มีอาการทางประสาท ตรวจ blood smear เห็นพยาธิ (ดังรูป) ควรจัดการอย่างไร?",
+    "choices": [
+      {"label": "A", "text": "Ceftriaxone"},
+      {"label": "B", "text": "50% glucose IV"},
+      {"label": "C", "text": "CSF analysis"},
+      {"label": "D", "text": "CT scan"},
+      {"label": "E", "text": "Artesunate IV"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2014",
+    "status": "incomplete",
+    "ai_notes": "ไม่สามารถเห็นรูปได้ จึงยาก ต่อยอด หากเป็น uncomplicated malaria ให้ artesunate IV/IM"
+  },
+  {
+    "scenario": "ชายอายุ 68 ปี เข้ารับการรักษา STEMI หลังจาก 7 วันมีไข้ ไอที่มี sputum ขาดอากาศหายใจ Gram stain ของ sputum พบ numerous gram-negative bacilli เท่านั้น ต้องให้ยาอนุชนวน (empirical antibiotic) ใดที่เหมาะสมที่สุด?",
+    "choices": [
+      {"label": "A", "text": "Ampicillin-sulbactam"},
+      {"label": "B", "text": "Ceftriaxone"},
+      {"label": "C", "text": "Ceftazidime"},
+      {"label": "D", "text": "Levofloxacin"},
+      {"label": "E", "text": "Amikacin"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2014",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี hospital-acquired pneumonia (HAP) หลังจาก STEMI 7 วัน ที่มี gram-negative bacilli โดยเฉพาะ Pseudomonas ดังนั้น Ceftazidime (3rd generation cephalosporin ที่ cover Pseudomonas) เป็นตัวเลือก empiric therapy ที่ดี"
+  },
+  {
+    "scenario": "ผู้ป่วยมีท้องเสีย เป็นน้ำพุง มีมูกเลือด ประวัติกินอาหารสุกๆดิบๆ ตรวจสารไถ่พบ WBC และ RBC เยอะ เกิดจากเชื้ออะไร?",
+    "choices": [
+      {"label": "A", "text": "Vibrio cholerae"},
+      {"label": "B", "text": "Giardia lamblia"},
+      {"label": "C", "text": "Entamoeba histolytica"},
+      {"label": "D", "text": "Campylobacter jejuni"},
+      {"label": "E", "text": "Cryptosporidium"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2014",
+    "status": "complete",
+    "ai_notes": "ท้องเสีย เป็นน้ำพุง มีมูกเลือด พบ WBC และ RBC ในอุจจาระเป็นลักษณะของ dysenteric diarrhea ซึ่ง Entamoeba histolytica เป็นสาเหตุหลัก"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 55 ปี ไอแห้งๆ บางครั้งมีเลือดปน น้าหนักลดลง 4 กิโลกรัมใน 1 เดือน AFB negative 3 ครั้งติดต่อกัน CXR พบ reticulonodular infiltration with thick-walled cavity การปฏิบัติที่เหมาะสมที่สุดคืออะไร?",
+    "choices": [
+      {"label": "A", "text": "รอผล culture for TB"},
+      {"label": "B", "text": "เริ่มยา anti-TB"},
+      {"label": "C", "text": "Bronchoscopy"},
+      {"label": "D", "text": "Aspiration biopsy"},
+      {"label": "E", "text": "PCR for TB"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมีลักษณะทางคลินิกและ CXR ที่ชี้ว่าเป็น pulmonary TB ถึงแม้ AFB ติดลบ ในกรณีนี้ควรเริ่มยา anti-TB ทันทีเพราะความเสี่ยงสูง ไม่ควรรอ culture ที่ใช้เวลานานเนื่องจากอาจสูญเสียโอกาสรักษา"
+  },
+  {
+    "scenario": "เด็กชายอายุ 9 ปี มาโรงพยาบาลด้วยไข้สูง หายใจหอบเหนื่อย ไอ PE: BT 39.0°C, PR 120/min, RR 40/min crepitation ทั้งสองปอด เสียงหายใจลดลงปอดซ้าย มีแผลตุ่มหนองและ cellulitis ที่ขาซ้าย เชื้อก่อโรคที่เป็นได้คืออะไร?",
+    "choices": [
+      {"label": "A", "text": "Salmonella spp."},
+      {"label": "B", "text": "Staphylococcus aureus"},
+      {"label": "C", "text": "Haemophilus influenzae"},
+      {"label": "D", "text": "Mycoplasma pneumoniae"},
+      {"label": "E", "text": "Mycobacterium tuberculosis"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "เด็กมี community-acquired pneumonia ที่มี skin infection (abscess + cellulitis) ร่วมด้วย ทำให้สูงสำหรับ S. aureus ซึ่งก่อโรคพยาธิหลายแห่งพร้อมกัน"
+  },
+  {
+    "scenario": "ชายอายุ 18 ปี ก่อนหน้านี้แข็งแรงดี มี URI พร้อมไข้ ไอ หอบ CXR พบ interstitial infiltration ควรใช้ antibiotics ใด?",
+    "choices": [
+      {"label": "A", "text": "Ampicillin"},
+      {"label": "B", "text": "Ciprofloxacin"},
+      {"label": "C", "text": "Roxithromycin"},
+      {"label": "D", "text": "Gentamicin"},
+      {"label": "E", "text": "Augmentin"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยหนุ่มกับ interstitial pneumonia บ่งชี้ว่าเป็น atypical pneumonia (Mycoplasma หรือ Chlamydia) ซึ่งรักษาด้วย macrolide antibiotic เช่น roxithromycin หรือ azithromycin"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 40 ปี มีไอแห้งๆ 1 เดือน อาการรุนแรงขึ้นตอนอากาศหนาว และเย็น ไอมีเสมหะสีขาว ไม่มีเลือดปน PE ปกติ CXR ปกติ (WNL) ควรตรวจอะไร?",
+    "choices": [
+      {"label": "A", "text": "Skin test (tuberculin test)"},
+      {"label": "B", "text": "CT chest"},
+      {"label": "C", "text": "Sputum AFB"},
+      {"label": "D", "text": "Bronchoscopy"},
+      {"label": "E", "text": "PFT (pulmonary function test)"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี chronic dry cough กับอาการที่รุนแรงในอากาศหนาว ถึงแม้ CXR ปกติ ต้องสงสัย tuberculosis หรือ hypersensitivity pneumonitis ควรตรวจ tuberculin skin test ก่อน"
+  },
+  {
+    "scenario": "ชายอายุ 30 ปี ไอมา 1 เดือน เสมหะขาวมีเลือดปนบ้างครั้ง ไข้ต่าๆ น้าหนักลด 3 กิโลกรัม PE ปกติ CXR: reticulo-patchy infiltration with thick-wall cavity AFB sputum ติดลบ 3 ครั้ง ควรทำอะไรต่อ?",
+    "choices": [
+      {"label": "A", "text": "Bronchoscopy"},
+      {"label": "B", "text": "FNA (fine needle aspiration)"},
+      {"label": "C", "text": "เริ่มยา anti-TB"},
+      {"label": "D", "text": "รอผล culture for TB"},
+      {"label": "E", "text": "PCR for TB"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี clinical + radiological findings ที่ชี้ว่าเป็น TB แม้ AFB ติดลบ ความเสี่ยงสูง ควรเริ่มยา anti-TB ทันที ไม่ควรรอ culture"
+  },
+  {
+    "scenario": "ชายไทยอายุ 30 ปี อาชีพขับรถ bus มีไข้ต่าๆ ไอแห้ง น้าหนักลดลง ตรวจพบ AFB 3+ แพทย์ให้ยา TB ควรให้ลาหยุดงานนานเท่าไร?",
+    "choices": [
+      {"label": "A", "text": "2 สัปดาห์"},
+      {"label": "B", "text": "1 เดือน"},
+      {"label": "C", "text": "2 เดือน"},
+      {"label": "D", "text": "ทีละ 1 สัปดาห์จนกว่า AFB จะติดลบ"},
+      {"label": "E", "text": "ไม่จำเป็นต้องหยุดงาน"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยเป็น pulmonary TB with positive AFB มีความเสี่ยงสูงที่จะเป็นเชื้อให้ผู้อื่น โดยเฉพาะผู้ที่มีการสัมผัสใกล้ชิด (ผู้โดยสารในรถ bus) ควรหยุดงานอย่างน้อย 2 เดือน (ส่วนใหญ่คือ intensive phase IRZE) จนกว

@@ -1,0 +1,321 @@
+[
+  {
+    "scenario": "ผู้ป่วยชายอายุ 18 ปี ไปเยี่ยมสถานรับเลี้ยงเด็กมาเมื่อ 2 สัปดาห์ก่อนมาโรงพยาบาล ต่อมามีอาการอ่อนแรงของแขนขา เป็นมากขึ้นเรื่อยๆ แพทย์ทาการตรวจร่างกายพบว่ามี Upper motor power 4/5, lower 1/5, absent DTR ข้อใดคือการวินิจฉัยในผู้ป่วยรายนี้ที่เหมาะสมที่สุด",
+    "choices": [
+      {"label": "A", "text": "Transverse myelitis"},
+      {"label": "B", "text": "GBS"},
+      {"label": "C", "text": "MG"},
+      {"label": "D", "text": "Neurosyphilis"},
+      {"label": "E", "text": "Lyme disease"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "GBS มีลักษณะ ascending paralysis จาก lower extremity ขึ้นมา, absent DTR, โปรดรอม (recent infection ในที่นี่ contact กับ children), ทั้ง upper และ lower power weakness ตรงกับข้อมูล เพิ่มตัวเลือก E (Lyme disease) เป็น plausible distractor"
+  },
+  {
+    "scenario": "ผู้ป่วยชายไทย สูงอายุ ประวัติโรคประจาตัวเดิมเป็น DM, HT ครั้งนี้มาด้วยอาการชาและอ่อนแรง 1 ข้าง นาน 10 นาที จากนั้นหายเป็นปกติ ข้อใดคือการวินิจฉัยในผู้ป่วยรายนี้ที่เหมาะสมที่สุด",
+    "choices": [
+      {"label": "A", "text": "TIA"},
+      {"label": "B", "text": "Temporal lobe ischemia"},
+      {"label": "C", "text": "Cerebella ischemia"},
+      {"label": "D", "text": "Bell's palsy"},
+      {"label": "E", "text": "Hemiplegic migraine"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "TIA: transient ischemic attack มี risk factors (DM, HT), อาการหายไปใน 10 นาที (โดยนิยาม <24 ชั่วโมง), hemiparesis แบบเฉพาะด้าน เพิ่มตัวเลือก E (Hemiplegic migraine) เป็น plausible distractor"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 50 ปี มาด้วยอาการปวดแขนขา ขึ้นบันไดลาบาก ลุกจากเก้าอี้ลาบาก 4 สัปดาห์ก่อนมาโรงพยาบาล แพทย์ทาการตรวจร่างกายพบว่ามี tenderness of quadriceps muscle, purple-red discoloration over the upper forehead, eyelids and cheeks ข้อใดคือการวินิจฉัยในผู้ป่วยรายนี้ที่เหมาะสมที่สุด",
+    "choices": [
+      {"label": "A", "text": "Polymyositis"},
+      {"label": "B", "text": "Dermatomyositis"},
+      {"label": "C", "text": "Psoriasis"},
+      {"label": "D", "text": "Mixed connective tissue disease"},
+      {"label": "E", "text": "SLE"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "Dermatomyositis: proximal muscle weakness (quadriceps), muscle tenderness, heliotrope rash (purple-red discoloration of upper eyelids), facial erythema ทั้งหมดตรงกับ dermatomyositis"
+  },
+  {
+    "scenario": "หญิง 35 ปี หนังตาตกมา 4 สัปดาห์ เป็นมากขึ้นตอนบ่ายๆ ตรวจตาซ้ายพบ ptosis มี mild proximal muscle weakness, normal DTR, normal sensory จงวินิจฉัยว่าเป็นอะไร",
+    "choices": [
+      {"label": "A", "text": "Polymyositis"},
+      {"label": "B", "text": "Horner's syndrome"},
+      {"label": "C", "text": "Hyperthyroidism"},
+      {"label": "D", "text": "Myasthenia gravis"},
+      {"label": "E", "text": "CN III palsy"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "Myasthenia gravis: ptosis ที่เลวลงตอนบ่ายๆ, proximal muscle weakness (normal DTR, normal sensory), อาการเพิ่มขึ้นตามการใช้งาน ทุกอย่างตรงกับ MG"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 21 ปี อ่อนแรงขาทั้ง 2 ข้าง ต่อมาอ่อนแรงไปทั้งตัว มา 3 วัน มี total ophthalmoplegia, bilateral facial palsy, paradoxical breathing, generalized decrease motor power gr II-III/V, areflexia, loss of vibration sense ที่นิ้วมือและปลายเท้า ข้อใดคือการรักษาที่เหมาะสมที่สุด",
+    "choices": [
+      {"label": "A", "text": "Azathioprine"},
+      {"label": "B", "text": "Interferon beta 1A"},
+      {"label": "C", "text": "Cyclophosphamide"},
+      {"label": "D", "text": "Methylprednisolone"},
+      {"label": "E", "text": "Intravenous Immunoglobulin"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "GBS (Guillain-Barré Syndrome) treatment: IVIG หรือ plasmapheresis เป็นการรักษาสูงสุด กรณี severe GBS (respiratory involvement, rapidly progressive, ophthalmoplegia, ascending paralysis)"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 50 ปี ปวดแขนขามา 4 สัปดาห์ นั่งแล้วลุกขึ้นยืนลาบาก ขึ้นลงบันไดลาบาก ตรวจร่างกายพบ purple-red discoloration ที่หน้าผาก แก้มและเปลือกตา purple nodule ที่ศอกและเข่า คิดว่าคนนี้เป็นอะไร",
+    "choices": [
+      {"label": "A", "text": "Psoriasis"},
+      {"label": "B", "text": "Dermatomyositis"},
+      {"label": "C", "text": "Discoid LE"},
+      {"label": "D", "text": "SLE"},
+      {"label": "E", "text": "Mixed connective tissue disease"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "Dermatomyositis: proximal muscle weakness (difficulty standing, climbing stairs), heliotrope rash (purple-red discoloration of forehead, cheeks, eyelids), muscle tenderness, Gottron papules (purple nodules on elbows and knees)"
+  },
+  {
+    "scenario": "ชายอายุ 22 ปี หมดสติในห้องน้า ไม่มีไข้ ตรวจร่างกายพบ pulse ต่า, respiratory rate ต่า, miosis ข้อใดคือการรักษาที่เหมาะสมที่สุดในผู้ป่วยรายนี้",
+    "choices": [
+      {"label": "A", "text": "Atropine"},
+      {"label": "B", "text": "Naloxone"},
+      {"label": "C", "text": "Diazepam"},
+      {"label": "D", "text": "Flumazenil"},
+      {"label": "E", "text": "Physostigmine"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "Opioid overdose: loss of consciousness, bradycardia, bradypnea, miosis ทั้งหมดตรงกัน การรักษา Naloxone (opioid antagonist) เพิ่มตัวเลือก D (Flumazenil) และ E (Physostigmine) เป็น plausible distractors"
+  },
+  {
+    "scenario": "ผู้ป่วยชายเป็นเบาหวาน มี facial palsy ด้านเดียว เหมือน LMN (คิดว่าเป็น Bell's palsy) ค่าน้าตาลไม่สูง ข้อใดคือการรักษาที่เหมาะสม",
+    "choices": [
+      {"label": "A", "text": "Prednisolone"},
+      {"label": "B", "text": "Acyclovir"},
+      {"label": "C", "text": "Gabapentin"},
+      {"label": "D", "text": "Physical therapy only"},
+      {"label": "E", "text": "Observation only"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "Bell's palsy treatment: Prednisolone ถ้าอาการเริ่มต้นไม่นาน (ในกรณีนี้เสริมด้วย artificial tears สำหรับดูแล eye care) เพิ่มตัวเลือก B, C, D, E เป็น plausible distractors"
+  },
+  {
+    "scenario": "ผู้ป่วยให้อาการของ Myasthenia gravis คือ proximal muscle weakness, อาการเป็นมากช่วงบ่ายๆ, bilateral proptosis ถามว่าจะส่งตรวจอะไรเพื่อให้ได้การวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "Prostigmine test"},
+      {"label": "B", "text": "CT brain"},
+      {"label": "C", "text": "Electrolyte"},
+      {"label": "D", "text": "Muscle biopsy"},
+      {"label": "E", "text": "Anti-acetylcholine receptor antibody"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "Prostigmine (edrophonium) test เป็น diagnostic test ของ MG, improvement of symptoms หลังให้ยา ช่วยใน diagnosis แต่ปัจจุบัน anti-AChR antibody เป็นมาตรฐาน เพิ่มตัวเลือก E (Anti-AChR antibody)"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 75 ปี มีอาการมือสั่น เวลาถือแก้วน้าเป็นมากขึ้นเวลาโมโหหรือดื่มกาแฟ PE: postural tremor, normal muscle tone, no dysmentia, normal gait นึกถึงภาวะใดมากที่สุด",
+    "choices": [
+      {"label": "A", "text": "Normal change"},
+      {"label": "B", "text": "Parkinson disease"},
+      {"label": "C", "text": "Cerebellar dystrophy"},
+      {"label": "D", "text": "Autoimmune dysfunction"},
+      {"label": "E", "text": "Essential tremor"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "Postural tremor ที่เพิ่มขึ้นด้วย stress/caffeine, normal muscle tone, no cognitive impairment, normal gait ทั้งหมดเป็นลักษณะของ essential tremor หรือ normal aging เพิ่มตัวเลือก E (Essential tremor)"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย อ่อนแรงมากขึ้นมา 3 วัน ตรวจร่างกายพบ total ophthalmoplegia, bilateral facial palsy, paradoxical breathing, generalized muscle weakness grade II/V, areflexia, loss of proprioception ของนิ้วมือและปลายเท้า ข้อใดคือการวินิจฉัยที่ถูกต้อง",
+    "choices": [
+      {"label": "A", "text": "Multiple sclerosis"},
+      {"label": "B", "text": "Myasthenia Gravis"},
+      {"label": "C", "text": "Guillain-Barré Syndrome"},
+      {"label": "D", "text": "Acute myelopathy"},
+      {"label": "E", "text": "Botulism"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "GBS: rapid ascending paralysis (3 days), bilateral facial palsy, ophthalmoplegia, areflexia, respiratory involvement (paradoxical breathing), sensory loss"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 75 ปี มีอาการมือสั่น เพิ่มขึ้นตอนที่ถืออย่างไร ตรวจพบ resting tremor, cogwheel rigidity ข้อใดคือการรักษาที่เหมาะสม",
+    "choices": [
+      {"label": "A", "text": "Levodopa"},
+      {"label": "B", "text": "Benzhexol"},
+      {"label": "C", "text": "Amantadine"},
+      {"label": "D", "text": "Bromocriptine"},
+      {"label": "E", "text": "Benserazide"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "Parkinson disease: resting tremor, cogwheel rigidity - first line treatment คือ Levodopa (combination กับ carbidopa/benserazide)"
+  },
+  {
+    "scenario": "หญิง 40 ปี เป็นเบาหวาน ปวดหูข้างขวา ตรวจร่างกายเหมือน Herpes zoster oticus มีอาการอ่อนแรงของกล้ามเนื้อใบหน้าแบบ LMN ข้อใดคือการรักษาที่เหมาะสม",
+    "choices": [
+      {"label": "A", "text": "CT scan"},
+      {"label": "B", "text": "Anticonvulsant"},
+      {"label": "C", "text": "Prednisolone"},
+      {"label": "D", "text": "ASA"},
+      {"label": "E", "text": "Acyclovir"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "Ramsay Hunt syndrome (Herpes zoster oticus): facial palsy + ear pain/vesicles + hearing loss, treatment คือ Prednisolone + Acyclovir, เพิ่มตัวเลือก E (Acyclovir)"
+  },
+  {
+    "scenario": "ชาย 30 ปี มาด้วยอาการชาตั้งแต่หัวไหล่ไปถึงปลายเท้า ตรวจร่างกายพบ กล้ามเนื้อเดลตอยด์อ่อนแรง กล้ามเนื้อขากระตุกเกร็ง lesion อยู่ที่ใด",
+    "choices": [
+      {"label": "A", "text": "Cerebral cortex"},
+      {"label": "B", "text": "Cervical cord"},
+      {"label": "C", "text": "Cervical nerve root"},
+      {"label": "D", "text": "Anterior horn cell"},
+      {"label": "E", "text": "Brachial plexus"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "Sensory level at shoulder, deltoid weakness (C5), lower extremity spasticity ทั้งหมดชี้ว่า lesion อยู่ที่ cervical spinal cord level C5"
+  },
+  {
+    "scenario": "ผู้ป่วยชายไทย มาโรงพยาบาลด้วยอาการชาที่บริเวณต้นคอ แพทย์ทาการตรวจร่างกายพบว่ามี BP 60/30 mmHg ไม่มี sacral reflex ข้อใดคือการวินิจฉัยในผู้ป่วยรายนี้ที่เหมาะสมที่สุด",
+    "choices": [
+      {"label": "A", "text": "Cardiogenic shock"},
+      {"label": "B", "text": "Spinal shock"},
+      {"label": "C", "text": "Neurogenic shock"},
+      {"label": "D", "text": "Hypovolemic shock"},
+      {"label": "E", "text": "Septic shock"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "Neurogenic shock: sensory loss at neck level (high spinal cord injury), hypotension, loss of sacral reflex (loss of autonomic function), ต้องแยกจาก spinal shock ที่มี flaccidity และ areflexia"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย อ่อนแรงมากขึ้นมา 3 วัน ตรวจร่างกายพบ total ophthalmoplegia, bilateral facial palsy, paradoxical breathing, generalized muscle weakness grade II/V, areflexia, loss of proprioception ของนิ้วมือและปลายเท้า ข้อใดคือการวินิจฉัยที่ถูกต้อง",
+    "choices": [
+      {"label": "A", "text": "Multiple sclerosis"},
+      {"label": "B", "text": "Myasthenia Gravis"},
+      {"label": "C", "text": "Guillain-Barré Syndrome"},
+      {"label": "D", "text": "Acute myelopathy"},
+      {"label": "E", "text": "Botulism"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "GBS: rapid ascending paralysis, bilateral facial palsy, ophthalmoplegia, areflexia, respiratory involvement, sensory loss"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 75 ปี มีอาการมือสั่น เพิ่มขึ้นตอนถือแก้ว ตรวจพบ postural tremor, normal muscle tone, no dysmentia, normal gait นึกถึงภาวะใดมากที่สุด",
+    "choices": [
+      {"label": "A", "text": "Normal change"},
+      {"label": "B", "text": "Parkinson disease"},
+      {"label": "C", "text": "Cerebellar dystrophy"},
+      {"label": "D", "text": "Autoimmune dysfunction"},
+      {"label": "E", "text": "Essential tremor"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "Postural tremor, normal tone, normal cognition, normal gait ไม่ตรงกับ Parkinson ผลน้อยกว่า essential tremor แต่บริบท 'normal change' ก็เป็นไปได้"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 70 ปี อุบัติเหตุ MCA มี hyperextension ที่คอ ตรวจร่างกายทางประสาท upper extremities grade II, lower extremities grade IV, intact bowel and bladder function ข้อใดคือการวินิจฉัยที่ถูกต้อง",
+    "choices": [
+      {"label": "A", "text": "Anterior cord syndrome"},
+      {"label": "B", "text": "Brown-Séquard syndrome"},
+      {"label": "C", "text": "Central cord syndrome"},
+      {"label": "D", "text": "Cauda equina syndrome"},
+      {"label": "E", "text": "Brachial plexus injury"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2012",
+    "status": "complete",
+    "ai_notes": "Central cord syndrome: hyperextension injury, greater weakness in upper extremities than lower extremities (characteristic), intact bladder/bowel function (ต่าง anterior cord)"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 10 ปี มีประวัติหวัดทั่วไปเมื่อ 1 สัปดาห์ที่แล้ว วันนี้มาด้วยอาการอ่อนแรงสมมาตรมา 2 วัน ตรวจร่างกายพบ facial palsy, motor power II/V upper extremities, I/V lower extremities, symmetrical loss of sensory (pinprick and proprioception), DTR: areflexia ข้อใดคือการวินิจฉัยที่ถูกต้องที่สุด",
+    "choices": [
+      {"label": "A", "text": "GBS"},
+      {"label": "B", "text": "Poliomyelitis"},
+      {"label": "C", "text": "Transverse myelitis"},
+      {"label": "D", "text": "Autoimmune-induced neuropathy"},
+      {"label": "E", "text": "Intoxication"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "GBS: recent viral prodrome (1 week), symmetrical ascending paralysis, bilateral facial palsy, areflexia, sensory loss, rapid progression"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 25 ปี มาโรงพยาบาลด้วยอาการอ่อนแรง 2 ชั่วโมงก่อนมา แต่ยังสามารถกลอกตา กระพริบตา กลืนหายใจได้ปกติ เคยมีประวัติมีอาการเช่นนี้มาก่อนเมื่อ 2 ปีที่ผ่านมา โดยแต่ละครั้งอาการเกิด 4 ครั้ง ๆ ละ 1 วัน ตรวจร่างกายพบ motor power 0-1 ที่ all extremities, reflex 1+ ข้อใดคือการตรวจที่เหมาะสม",
+    "choices": [
+      {"label": "A", "text": "Acetylcholine receptor antibody"},
+      {"label": "B", "text": "EKG"},
+      {"label": "C", "text": "Nerve stimulation test"},
+      {"label": "D", "text": "EMG"},
+      {"label": "E", "text": "ANA"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "Myasthenia gravis: recurrent episodes of muscle weakness (4 times, each 1 day duration), normal eye movement and swallowing initially, normal cognition, anti-AChR antibody ช่วยใน diagnosis"
+  },
+  {
+    "scenario": "A 55-year-old man presents with progressive postural ataxia, memory impairment, and abnormal urination for 1 year. What is the most likely diagnosis?",
+    "choices": [
+      {"label": "A", "text": "Parkinson disease"},
+      {"label": "B", "text": "Alzheimer disease"},
+      {"label": "C", "text": "Vascular parkinsonism"},
+      {"label": "D", "text": "Normal pressure hydrocephalus"},
+      {"label": "E", "text": "Progressive supranuclear palsy"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Normal pressure hydrocephalus (NPH): classic triad - ataxia (gait disturbance), cognitive decline (memory), urinary incontinence, progressive course"
+  },
+  {
+    "scenario": "แขนขาอ่อนแรง เคยเป็นมา 3 ครั้งแล้ว ตัวเลือกข้างล่างคือการตรวจเพื่อวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "Thyroid function test"},
+      {"label": "B", "text": "Electrolyte"},
+      {"label": "C", "text": "Serum creatine kinase"},
+      {"label": "D", "text": "Anti-acetylcholine receptor antibody"},
+      {"label": "E", "text": "EMG/NCS"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2011",
+    "status": "incomplete",
+    "ai_notes": "โจทย์ไม่สมบูรณ์ - ขาดอาการลักษณะอื่นๆ มีโอกาสเป็น periodic paralysis (ตรวจ electrolyte), MG (ตรวจ anti-AChR), myopathy (ตรวจ CK) ตัวเลือก B ดูเป็น reasonable choice สำหรับ periodic paralysis"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 49 ปี มี left hemiparesis ตรวจ PT 12, aPTT 45 ข้อใดคือการตรวจเพิ่มเติมที่เหมาะสม",
+    "choices": [
+      {"label": "A", "text": "ANA"},
+      {"label": "B", "text": "Anti-dsDNA"},
+      {"label": "C", "text": "Anticardiolipin"},
+      {"label": "D", "text": "ANCA"},
+      {"label": "E", "text": "Anti-Ro/La"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2011",
+    "status": "complete

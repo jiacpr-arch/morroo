@@ -1,0 +1,2272 @@
+[
+  {
+    "scenario": "เด็กชายอายุ 5 ปี มาด้วยปัสสาวะบ่อย ดื่มน้ำมาก น้ำหนักลด 3 kg ใน 2 สัปดาห์ ตรวจพบ blood glucose 450 mg/dL ปัสสาวะ glucose 4+ ketone 3+ ABG: pH 7.20 HCO3 12 mEq/L การวินิจฉัยและการรักษาเร่งด่วนที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Type 2 DM -> Oral metformin"
+      },
+      {
+        "label": "B",
+        "text": "Type 1 DM -> IV fluid + insulin infusion (DKA protocol)"
+      },
+      {
+        "label": "C",
+        "text": "Diabetes insipidus -> DDAVP"
+      },
+      {
+        "label": "D",
+        "text": "Type 1 DM -> SC insulin ทันที"
+      },
+      {
+        "label": "E",
+        "text": "Hyperosmolar state -> IV fluid เพียงอย่างเดียว"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "เด็ก + glucose สูง + ketone + pH ต่ำ + HCO3 ต่ำ = DKA จาก Type 1 DM -> DKA protocol",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Type 1 DM -> IV fluid + insulin infusion (DKA protocol)",
+      "reason": "DKA criteria: glucose >250 mg/dL + pH <7.3 หรือ HCO3 <15 mEq/L + ketosis/ketonemia\n\nรายนี้ glucose 450 + pH 7.20 (severe DKA) + ketone 3+ = severe DKA\n\nDKA Protocol:\n1. IV normal saline 10-20 mL/kg bolus (resuscitation)\n2. IV regular insulin 0.1 unit/kg/hr (ห้ามให้ insulin bolus ในเด็ก เพราะเสี่ยง cerebral edema)\n3. Potassium replacement (insulin ทำให้ K เข้าเซลล์)\n4. Monitor glucose ทุก 1-2 ชั่วโมง\n\nCerebral edema เป็น complication ที่อันตรายที่สุดใน pediatric DKA มักเกิดใน 4-12 ชั่วโมงแรก",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Type 2 DM -> Oral metformin",
+          "is_correct": false,
+          "explanation": "เด็กอายุ 5 ปี + DKA = Type 1 DM เกือบแน่นอน Type 2 ไม่มี DKA รุนแรงแบบนี้"
+        },
+        {
+          "label": "B",
+          "text": "Type 1 DM -> IV fluid + insulin infusion (DKA protocol)",
+          "is_correct": true,
+          "explanation": "DKA ในเด็ก -> IV fluid bolus + insulin infusion 0.1 unit/kg/hr + K replacement"
+        },
+        {
+          "label": "C",
+          "text": "Diabetes insipidus -> DDAVP",
+          "is_correct": false,
+          "explanation": "DI มีปัสสาวะมาก ดื่มน้ำมาก แต่ glucose ปกติ ไม่มี ketone ไม่มี acidosis"
+        },
+        {
+          "label": "D",
+          "text": "Type 1 DM -> SC insulin ทันที",
+          "is_correct": false,
+          "explanation": "SC insulin ไม่เพียงพอใน severe DKA ต้องการ IV insulin infusion เพื่อ control อย่างแม่นยำ"
+        },
+        {
+          "label": "E",
+          "text": "Hyperosmolar state -> IV fluid เพียงอย่างเดียว",
+          "is_correct": false,
+          "explanation": "Hyperosmolar hyperglycemic state มีในผู้ใหญ่ Type 2 DM glucose สูงมาก แต่ไม่มี significant ketoacidosis"
+        }
+      ],
+      "key_takeaway": "Pediatric DKA: glucose >250 + pH <7.3 + ketone -> IV fluid + insulin infusion 0.1 unit/kg/hr ระวัง cerebral edema"
+    },
+    "subject": "endocrine_ped",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 8 ปี มาด้วยน้ำหนักเพิ่ม ตัวเตี้ย เหนื่อยง่าย ผมร่วง ท้องผูก ตรวจพบ pulse 55 bpm reflexes ช้า ผิวแห้ง ใบหน้าบวมพอง thyroid gland โต bone age ล้าหลัง การวินิจฉัยที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Hypothyroidism (acquired)"
+      },
+      {
+        "label": "B",
+        "text": "Growth hormone deficiency"
+      },
+      {
+        "label": "C",
+        "text": "Cushing syndrome"
+      },
+      {
+        "label": "D",
+        "text": "Obesity"
+      },
+      {
+        "label": "E",
+        "text": "Hyperthyroidism"
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "น้ำหนักเพิ่ม ตัวเตี้ย + bradycardia + reflexes ช้า + ผมร่วง ท้องผูก + myxedema face + thyroid โต = Hypothyroidism",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. Hypothyroidism (acquired)",
+      "reason": "Hypothyroidism สาเหตุที่พบบ่อยในเด็ก: Hashimoto thyroiditis (autoimmune) ทำให้ thyroid โตและ hypothyroid\n\nอาการ hypothyroidism ในเด็ก:\n- Growth: ตัวเตี้ย bone age ล้าหลัง\n- Metabolic: น้ำหนักเพิ่ม ท้องผูก bradycardia\n- Skin: ผิวแห้ง ผมร่วง myxedema\n- Neuro: reflexes ช้า เรียนช้า\n\nLabs: TSH สูง T4 ต่ำ\n\nCongenital hypothyroidism (cretinism): ตรวจพบแรกเกิดด้วย neonatal screening หายรักษาเร็วป้องกัน intellectual disability\n\nรักษา: Levothyroxine replacement",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Hypothyroidism (acquired)",
+          "is_correct": true,
+          "explanation": "น้ำหนักเพิ่ม ตัวเตี้ย + bradycardia + slow reflexes + ผมร่วง ท้องผูก + thyroid โต + bone age ล้าหลัง = classic acquired hypothyroidism"
+        },
+        {
+          "label": "B",
+          "text": "Growth hormone deficiency",
+          "is_correct": false,
+          "explanation": "GHD ทำให้ตัวเตี้ย แต่ไม่มี bradycardia thyroid โต ผมร่วง หรือ myxedema"
+        },
+        {
+          "label": "C",
+          "text": "Cushing syndrome",
+          "is_correct": false,
+          "explanation": "Cushing มีน้ำหนักเพิ่ม แต่ BP สูง moon face buffalo hump striae ไม่มี bradycardia หรือ thyroid โต"
+        },
+        {
+          "label": "D",
+          "text": "Obesity",
+          "is_correct": false,
+          "explanation": "Simple obesity ตัวสูงกว่าปกติ (ไม่เตี้ย) ไม่มี bradycardia thyroid โต หรือ bone age ล้าหลัง"
+        },
+        {
+          "label": "E",
+          "text": "Hyperthyroidism",
+          "is_correct": false,
+          "explanation": "Hyperthyroid มี tachycardia น้ำหนักลด heat intolerance ตรงข้ามกับอาการที่นำเสนอ"
+        }
+      ],
+      "key_takeaway": "Hypothyroidism ในเด็ก: น้ำหนักเพิ่ม + ตัวเตี้ย + bradycardia + slow reflexes + ผมร่วง ท้องผูก -> TSH สูง T4 ต่ำ -> Levothyroxine"
+    },
+    "subject": "endocrine_ped",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกหญิงอายุ 3 สัปดาห์ มาด้วยอาการร้องไห้งอตัว ท้องอืด อาเจียน อาการมีตั้งแต่แรกเกิด ตรวจพบ genitalia ที่ ambiguous (clitoromegaly) serum sodium 120 mEq/L potassium 7 mEq/L ความดันต่ำ การวินิจฉัยที่น่าจะเป็นมากที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Pyloric stenosis"
+      },
+      {
+        "label": "B",
+        "text": "Congenital adrenal hyperplasia (CAH) - salt wasting form"
+      },
+      {
+        "label": "C",
+        "text": "Congenital hypothyroidism"
+      },
+      {
+        "label": "D",
+        "text": "Addison disease"
+      },
+      {
+        "label": "E",
+        "text": "Turner syndrome"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Ambiguous genitalia + salt wasting (hyponatremia, hyperkalemia, hypotension) ใน newborn = CAH salt-wasting form",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Congenital adrenal hyperplasia (CAH) - salt wasting form",
+      "reason": "CAH เกิดจาก 21-hydroxylase deficiency (95% ของ CAH) ทำให้ cortisol และ aldosterone ขาด แต่ androgen สูง\n\nSalt-wasting form: ขาดทั้ง cortisol + aldosterone ทำให้:\n- Hyponatremia (Na ต่ำ): aldosterone ไม่ reabsorb Na\n- Hyperkalemia (K สูง): aldosterone ไม่ excrete K\n- Hypotension/shock: volume depletion + glucocorticoid deficiency\n- Ambiguous genitalia ในหญิง (XX): androgen สูงทำให้ virilization\n\nSalt-wasting crisis มักเกิดใน 1-4 สัปดาห์แรก\n\nรักษาเฉียบพลัน: IV normal saline + IV dextrose + IV hydrocortisone\nระยะยาว: Hydrocortisone + Fludrocortisone",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Pyloric stenosis",
+          "is_correct": false,
+          "explanation": "Pyloric stenosis มีอาเจียน projectile ใน 2-8 สัปดาห์ แต่ electrolytes ผิดปกติเป็น hyponatremia hypochloremia metabolic alkalosis ไม่ใช่ hyperkalemia"
+        },
+        {
+          "label": "B",
+          "text": "Congenital adrenal hyperplasia (CAH) - salt wasting form",
+          "is_correct": true,
+          "explanation": "Ambiguous genitalia (XX female) + hyponatremia + hyperkalemia + hypotension ใน newborn = CAH salt-wasting form"
+        },
+        {
+          "label": "C",
+          "text": "Congenital hypothyroidism",
+          "is_correct": false,
+          "explanation": "Congenital hypothyroidism ไม่มี electrolyte abnormalities ไม่มี ambiguous genitalia"
+        },
+        {
+          "label": "D",
+          "text": "Addison disease",
+          "is_correct": false,
+          "explanation": "Addison เป็น primary adrenal insufficiency ในผู้ใหญ่ ไม่มี ambiguous genitalia"
+        },
+        {
+          "label": "E",
+          "text": "Turner syndrome",
+          "is_correct": false,
+          "explanation": "Turner (45X) มี female phenotype ตัวเตี้ย coarctation of aorta ไม่มี salt-wasting หรือ ambiguous genitalia"
+        }
+      ],
+      "key_takeaway": "CAH salt-wasting: Newborn + ambiguous genitalia (XX female) + Na ต่ำ + K สูง + hypotension -> IV hydrocortisone + saline ทันที"
+    },
+    "subject": "endocrine_ped",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 12 ปี มาด้วยอาการ breast development (Tanner stage 2) + pubic hair + มีประจำเดือนแล้ว เด็กสูงกว่าเพื่อนอายุเดียวกันมาก bone age 15 ปี อายุจริง 12 ปี การวินิจฉัยที่ถูกต้องและผลที่จะตามมาถ้าไม่รักษาคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Normal puberty -> Reassurance"
+      },
+      {
+        "label": "B",
+        "text": "Precocious puberty -> ตัวเตี้ยในผู้ใหญ่ถ้าไม่รักษา"
+      },
+      {
+        "label": "C",
+        "text": "Delayed puberty -> GH treatment"
+      },
+      {
+        "label": "D",
+        "text": "Constitutional growth delay -> Observation"
+      },
+      {
+        "label": "E",
+        "text": "Adrenal tumor -> Surgery"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Puberty signs < 8 ปีในหญิง (แต่ในกรณีนี้ 12 ปีมีประจำเดือนแล้ว แต่ bone age ล้ำมาก) = precocious -> ตัวเตี้ยในอนาคต",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Precocious puberty -> ตัวเตี้ยในผู้ใหญ่ถ้าไม่รักษา",
+      "reason": "Precocious puberty ในหญิง: breast development < 8 ปี หรือ menarche <10 ปี ผู้ป่วยอายุ 12 ปีมีประจำเดือนแล้วซึ่งอาจ borderline แต่ bone age 15 ปี (ล้ำกว่า 3 ปี) บ่งชี้ advanced skeletal maturation จาก precocious puberty\n\nAชั่วคราว: สูงเร็วกว่าเพื่อน (เพราะ estrogen กระตุ้น growth plate)\nระยะยาว: ตัวเตี้ยในผู้ใหญ่ เพราะ estrogen ปิด epiphyseal plate เร็วกว่าปกติ\n\nรักษา: GnRH agonist (leuprolide acetate) ยับยั้ง HPG axis ชะลอ puberty และรักษา final height\n\nสาเหตุที่ต้องหา: CNS lesion (MRI brain) Adrenal/ovarian tumor ใน peripheral precocious puberty",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Normal puberty -> Reassurance",
+          "is_correct": false,
+          "explanation": "Bone age ล้ำ 3 ปีไม่ใช่ปกติ ต้องประเมินและรักษาเพื่อรักษา final height"
+        },
+        {
+          "label": "B",
+          "text": "Precocious puberty -> ตัวเตี้ยในผู้ใหญ่ถ้าไม่รักษา",
+          "is_correct": true,
+          "explanation": "Bone age 15 ที่อายุ 12 = advanced skeletal maturation จาก precocious puberty ไม่รักษา -> epiphysis ปิดเร็ว -> ตัวเตี้ยในผู้ใหญ่"
+        },
+        {
+          "label": "C",
+          "text": "Delayed puberty -> GH treatment",
+          "is_correct": false,
+          "explanation": "Delayed puberty คือ ไม่มี breast development ที่ >13 ปีในหญิง ผู้ป่วยรายนี้มี puberty เร็วไม่ใช่ช้า"
+        },
+        {
+          "label": "D",
+          "text": "Constitutional growth delay -> Observation",
+          "is_correct": false,
+          "explanation": "Constitutional delay คือ bone age ล้าหลัง ไม่ใช่ล้ำ"
+        },
+        {
+          "label": "E",
+          "text": "Adrenal tumor -> Surgery",
+          "is_correct": false,
+          "explanation": "Adrenal tumor ทำให้ peripheral precocious puberty (androgen excess) ไม่ใช่ central precocious puberty ต้องตรวจ hormone panel ก่อน"
+        }
+      ],
+      "key_takeaway": "Precocious puberty: Bone age ล้ำ -> epiphysis ปิดเร็ว -> ตัวเตี้ยในผู้ใหญ่ -> รักษาด้วย GnRH agonist"
+    },
+    "subject": "endocrine_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกแรกเกิดชาย 46XY มาด้วย undescended testes ทั้งสองข้าง genitalia ดูเป็นหญิง blind vaginal pouch ไม่มีมดลูก (ตรวจด้วย ultrasound) ผล testosterone สูง DHT ต่ำมาก การวินิจฉัยที่น่าจะเป็นมากที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Complete androgen insensitivity syndrome (CAIS)"
+      },
+      {
+        "label": "B",
+        "text": "5-alpha reductase deficiency"
+      },
+      {
+        "label": "C",
+        "text": "CAH (21-hydroxylase deficiency)"
+      },
+      {
+        "label": "D",
+        "text": "Turner syndrome"
+      },
+      {
+        "label": "E",
+        "text": "Klinefelter syndrome"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "46XY + female external genitalia + testosterone สูง + DHT ต่ำ + ไม่มีมดลูก = 5-alpha reductase deficiency",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. 5-alpha reductase deficiency",
+      "reason": "5-alpha reductase type 2 enzyme แปลง testosterone -> DHT DHT จำเป็นสำหรับ virilization ของ external genitalia ในทารกชาย\n\nถ้าขาด 5-alpha reductase: testosterone ปกติ/สูง (testis สร้างได้) แต่ DHT ต่ำ -> external genitalia เป็นหญิง\n\nInternal genitalia: ไม่มีมดลูก (testis สร้าง MIF ป้องกัน Mullerian structures) undescended testis\n\nในวัยเริ่มเจริญพันธุ์: testosterone สูงขึ้นมาก ทำให้ virilization เกิดขึ้น (เสียงแตก อวัยวะขยาย)\n\nAICS: testosterone สูง DHT สูง แต่ androgen receptor ไม่ตอบสนอง\n5-alpha reductase: testosterone สูง DHT ต่ำ\n\nรักษา: ขึ้นอยู่กับ gender assignment ถ้า raise as male: testosterone therapy, orchiopexy, genitoplasty",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Complete androgen insensitivity syndrome (CAIS)",
+          "is_correct": false,
+          "explanation": "CAIS: testosterone สูง DHT สูง แต่ androgen receptor ไม่ทำงาน ในรายนี้ DHT ต่ำมาก บ่งชี้ 5-alpha reductase deficiency"
+        },
+        {
+          "label": "B",
+          "text": "5-alpha reductase deficiency",
+          "is_correct": true,
+          "explanation": "46XY + female external genitalia + testosterone สูง + DHT ต่ำ + ไม่มีมดลูก = 5-alpha reductase type 2 deficiency"
+        },
+        {
+          "label": "C",
+          "text": "CAH (21-hydroxylase deficiency)",
+          "is_correct": false,
+          "explanation": "CAH ทำให้ virilization ใน 46XX female ไม่ใช่ female external genitalia ใน 46XY male"
+        },
+        {
+          "label": "D",
+          "text": "Turner syndrome",
+          "is_correct": false,
+          "explanation": "Turner syndrome = 45X (female) มีมดลูก ovarian streak ไม่มี testes"
+        },
+        {
+          "label": "E",
+          "text": "Klinefelter syndrome",
+          "is_correct": false,
+          "explanation": "Klinefelter = 47XXY มี male phenotype testis เล็ก azoospermia ไม่ใช่ female external genitalia"
+        }
+      ],
+      "key_takeaway": "5-alpha reductase deficiency: 46XY + female external genitalia + testosterone สูง + DHT ต่ำ + ไม่มีมดลูก"
+    },
+    "subject": "endocrine_ped",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 7 ปี มาด้วยอาการ polydipsia polyuria อย่างรุนแรง ดื่มน้ำ 8-10 ลิตร/วัน ปัสสาวะ 8-10 ลิตร/วัน blood glucose ปกติ serum osmolality 295 mOsm/kg urine osmolality 60 mOsm/kg (ต่ำมาก) การวินิจฉัยที่น่าจะเป็นมากที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Diabetes mellitus type 1"
+      },
+      {
+        "label": "B",
+        "text": "Diabetes insipidus"
+      },
+      {
+        "label": "C",
+        "text": "Psychogenic polydipsia"
+      },
+      {
+        "label": "D",
+        "text": "Nephrotic syndrome"
+      },
+      {
+        "label": "E",
+        "text": "Chronic kidney disease"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Polydipsia/polyuria + urine dilute (osmolality 60) + serum osmolality ปกติ/สูง + blood glucose ปกติ = Diabetes insipidus",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Diabetes insipidus",
+      "reason": "Diabetes insipidus (DI) เกิดจาก ADH ขาด (central DI) หรือ kidney ไม่ตอบสนอง ADH (nephrogenic DI)\n\nลักษณะ: Dilute urine (urine osmolality ต่ำ <150 mOsm/kg) แม้ serum osmolality สูงหรือปกติ\n\nต่างจาก DM: Blood glucose ปกติใน DI\n\nWater deprivation test: ถ้า central DI -> urine osmolality ยังต่ำ, ให้ DDAVP แล้ว urine osmolality เพิ่มขึ้นมาก\nNephrogenic DI: ให้ DDAVP แล้วไม่ตอบสนอง\n\nสาเหตุ central DI ในเด็ก: Craniopharyngioma, Langerhans cell histiocytosis, Head trauma, idiopathic\n\nรักษา central DI: Intranasal DDAVP (desmopressin)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Diabetes mellitus type 1",
+          "is_correct": false,
+          "explanation": "Type 1 DM มี blood glucose สูง urine glucose positive ในรายนี้ blood glucose ปกติ"
+        },
+        {
+          "label": "B",
+          "text": "Diabetes insipidus",
+          "is_correct": true,
+          "explanation": "Polydipsia polyuria + urine dilute (60 mOsm/kg) + blood glucose ปกติ + serum osmolality ปกติ/สูง = DI"
+        },
+        {
+          "label": "C",
+          "text": "Psychogenic polydipsia",
+          "is_correct": false,
+          "explanation": "Psychogenic polydipsia มี serum osmolality ต่ำ (dilutional hyponatremia) ไม่ใช่ปกติ/สูง urine ก็ dilute แต่ water deprivation test ต่างกัน"
+        },
+        {
+          "label": "D",
+          "text": "Nephrotic syndrome",
+          "is_correct": false,
+          "explanation": "Nephrotic syndrome มี edema proteinuria hypoalbuminemia ไม่มี massive polyuria"
+        },
+        {
+          "label": "E",
+          "text": "Chronic kidney disease",
+          "is_correct": false,
+          "explanation": "CKD ทำให้ polyuria จาก nephrogenic DI แต่มี elevated Cr BUN และ electrolyte abnormalities"
+        }
+      ],
+      "key_takeaway": "Diabetes insipidus: Dilute urine (osmolality ต่ำ) + blood glucose ปกติ + serum osmolality ปกติ/สูง -> Water deprivation test -> Central DI: DDAVP"
+    },
+    "subject": "endocrine_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 14 ปี มาด้วยอ้วน หน้าแดง มีรอยแตก (striae) สีม่วงที่หน้าท้อง ความดันสูง ผิวหนังเปราะ ช้ำง่าย ตรวจพบ buffalo hump moon face การวินิจฉัยที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Simple obesity"
+      },
+      {
+        "label": "B",
+        "text": "Cushing syndrome"
+      },
+      {
+        "label": "C",
+        "text": "Hypothyroidism"
+      },
+      {
+        "label": "D",
+        "text": "Growth hormone excess"
+      },
+      {
+        "label": "E",
+        "text": "Metabolic syndrome"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Moon face + buffalo hump + purple striae + hypertension + easy bruising = Cushing syndrome",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Cushing syndrome",
+      "reason": "Cushing syndrome เกิดจาก cortisol excess\n\nลักษณะเฉพาะ: Moon face, buffalo hump (cervicothoracic fat pad), truncal obesity + thin extremities, Purple striae (ต่างจาก simple obesity: pink/white striae), Hypertension, Osteoporosis, ผิวบาง ช้ำง่าย, Hyperglycemia, Growth retardation ในเด็ก\n\nสาเหตุในเด็ก:\n- <7 ปี: Adrenal tumor (carcinoma/adenoma) พบบ่อยกว่า\n- >7 ปี: Pituitary adenoma (Cushing disease) พบบ่อยกว่า\n\nDiagnosis: 24h urine free cortisol สูง, late-night salivary cortisol สูง, 1mg dexamethasone suppression test ไม่ suppress\n\nSimple obesity: striae สีชมพู/ขาว BP ปกติหรือสูงเล็กน้อย ไม่มี moon face buffalo hump",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Simple obesity",
+          "is_correct": false,
+          "explanation": "Simple obesity มี striae สีชมพู ไม่มี purple striae ไม่มี moon face buffalo hump BP มักปกติ"
+        },
+        {
+          "label": "B",
+          "text": "Cushing syndrome",
+          "is_correct": true,
+          "explanation": "Moon face + buffalo hump + purple striae + hypertension + easy bruising = pathognomonic Cushing syndrome"
+        },
+        {
+          "label": "C",
+          "text": "Hypothyroidism",
+          "is_correct": false,
+          "explanation": "Hypothyroid มีน้ำหนักเพิ่ม แต่ไม่มี purple striae moon face buffalo hump มี bradycardia reflexes ช้า"
+        },
+        {
+          "label": "D",
+          "text": "Growth hormone excess",
+          "is_correct": false,
+          "explanation": "GH excess ทำให้ acromegaly (ผู้ใหญ่) หรือ gigantism (เด็ก) ไม่มี Cushingoid features"
+        },
+        {
+          "label": "E",
+          "text": "Metabolic syndrome",
+          "is_correct": false,
+          "explanation": "Metabolic syndrome มี obesity hypertension dyslipidemia insulin resistance แต่ไม่มี purple striae moon face buffalo hump"
+        }
+      ],
+      "key_takeaway": "Cushing syndrome: Moon face + buffalo hump + Purple striae (สีม่วง) + Hypertension -> 24h urine cortisol สูง"
+    },
+    "subject": "endocrine_ped",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 10 ปี มาด้วยอาการปวดกระดูก ขาผิดรูป (bowing legs) ตัวเตี้ย ฟันผุ ตรวจ X-ray: widened physis metaphyseal cupping แบบ rachitic rosary calcium 7.5 mg/dL phosphorus 2.0 mg/dL ALP สูง การวินิจฉัยที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Scurvy (Vitamin C deficiency)"
+      },
+      {
+        "label": "B",
+        "text": "Nutritional rickets (Vitamin D deficiency)"
+      },
+      {
+        "label": "C",
+        "text": "Hypophosphatemia (X-linked hypophosphatemic rickets)"
+      },
+      {
+        "label": "D",
+        "text": "Renal osteodystrophy"
+      },
+      {
+        "label": "E",
+        "text": "Osteogenesis imperfecta"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Bowing legs + rachitic rosary + Ca ต่ำ + Phosphorus ต่ำ + ALP สูง + widened physis = Nutritional rickets",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Nutritional rickets (Vitamin D deficiency)",
+      "reason": "Nutritional rickets เกิดจาก Vitamin D deficiency -> impaired calcium absorption -> Ca ต่ำ -> secondary hyperparathyroidism -> phosphate wasting\n\nLabs: Ca ต่ำ + Phosphorus ต่ำ (PTH ขับ phosphate) + ALP สูง + PTH สูง\n\nX-ray: Widened physis metaphyseal cupping/fraying (rachitic changes)\n\nClinical: Bowing legs craniotabes rachitic rosary (costochondral junction) enamel defects\n\nX-linked hypophosphatemic rickets (XLH): Ca ปกติ Phosphorus ต่ำมาก PTH ปกติ (PHEX gene mutation)\n\nรักษา Nutritional rickets: Vitamin D3 + Ca supplementation",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Scurvy (Vitamin C deficiency)",
+          "is_correct": false,
+          "explanation": "Scurvy มี perifollicular hemorrhage gum bleeding periosteal hemorrhage X-ray ไม่มี widened physis"
+        },
+        {
+          "label": "B",
+          "text": "Nutritional rickets (Vitamin D deficiency)",
+          "is_correct": true,
+          "explanation": "Bowing legs + rachitic rosary + Ca ต่ำ + P ต่ำ + ALP สูง + widened physis = Vitamin D deficiency rickets"
+        },
+        {
+          "label": "C",
+          "text": "Hypophosphatemia (X-linked hypophosphatemic rickets)",
+          "is_correct": false,
+          "explanation": "XLH มี Ca ปกติ P ต่ำมาก PTH ปกติ ไม่ตอบสนองต่อ Vitamin D ขนาดปกติ"
+        },
+        {
+          "label": "D",
+          "text": "Renal osteodystrophy",
+          "is_correct": false,
+          "explanation": "Renal osteodystrophy เกิดจาก CKD มี Cr สูง metabolic acidosis Ca ต่ำ P สูง (ต่างจากรายนี้ที่ P ต่ำ)"
+        },
+        {
+          "label": "E",
+          "text": "Osteogenesis imperfecta",
+          "is_correct": false,
+          "explanation": "OI มี bone fragility fractures blue sclerae hearing loss ไม่มี widened physis หรือ rachitic changes"
+        }
+      ],
+      "key_takeaway": "Nutritional rickets: Vit D def -> Ca ต่ำ + P ต่ำ + ALP สูง + bowing legs + widened physis -> Vitamin D3 + Calcium"
+    },
+    "subject": "endocrine_ped",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กชายอายุ 3 ปี มาด้วยน้ำหนักเพิ่มช้า ตัวเตี้ยกว่าเพื่อน (-3 SD) ไม่มีอาการอื่น ตรวจร่างกาย: dysmorphic features ไม่มี midline defect ปกติ X-ray bone age ล้าหลัง 2 ปี IGF-1 ต่ำ GH stimulation test: peak GH <5 ng/mL การวินิจฉัยและการรักษาที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Constitutional growth delay -> Reassurance"
+      },
+      {
+        "label": "B",
+        "text": "Growth hormone deficiency -> GH injection"
+      },
+      {
+        "label": "C",
+        "text": "Familial short stature -> Reassurance"
+      },
+      {
+        "label": "D",
+        "text": "Hypothyroidism -> Levothyroxine"
+      },
+      {
+        "label": "E",
+        "text": "Turner syndrome -> Estrogen replacement"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Short stature + bone age ล้าหลัง + IGF-1 ต่ำ + GH stimulation test peak <10 ng/mL = GH deficiency",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Growth hormone deficiency -> GH injection",
+      "reason": "GH deficiency (GHD) วินิจฉัยด้วย GH stimulation test: peak GH <10 ng/mL (บางสถาบัน <7 ng/mL) ใน 2 test\n\nLabs: IGF-1 ต่ำ (GH stimulates liver -> IGF-1) IGFBP-3 ต่ำ Bone age ล้าหลัง (ต่างจาก familial short stature ที่ bone age ตาม chronological age)\n\nGH stimulation: ใช้ arginine, insulin, clonidine, glucagon กระตุ้น\n\nรักษา: Recombinant human GH (rhGH) injection ทุกวัน SC จนกว่า growth velocity เพียงพอ หรือ bone age ปิด\n\nConstitutional growth delay: Bone age ล้าหลัง แต่ IGF-1 ปกติ GH stimulation ปกติ มักมี family history delay",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Constitutional growth delay -> Reassurance",
+          "is_correct": false,
+          "explanation": "Constitutional delay มี IGF-1 ปกติ GH test ปกติ ผู้ป่วยนี้มี IGF-1 ต่ำ GH peak <5 ng/mL = GHD"
+        },
+        {
+          "label": "B",
+          "text": "Growth hormone deficiency -> GH injection",
+          "is_correct": true,
+          "explanation": "IGF-1 ต่ำ + GH peak <5 ng/mL (ต่ำกว่า threshold 10 ng/mL) + bone age ล้าหลัง = GHD -> rhGH injection ทุกวัน"
+        },
+        {
+          "label": "C",
+          "text": "Familial short stature -> Reassurance",
+          "is_correct": false,
+          "explanation": "Familial short stature มี bone age ตาม chronological age และ GH/IGF-1 ปกติ"
+        },
+        {
+          "label": "D",
+          "text": "Hypothyroidism -> Levothyroxine",
+          "is_correct": false,
+          "explanation": "Hypothyroidism ก็ทำให้ bone age ล้าหลัง แต่มีอาการอื่น bradycardia ท้องผูก ผมร่วง และ TSH สูง"
+        },
+        {
+          "label": "E",
+          "text": "Turner syndrome -> Estrogen replacement",
+          "is_correct": false,
+          "explanation": "Turner syndrome = 45X ในหญิง มี dysmorphic features โดยเฉพาะ ผู้ป่วยนี้เป็นชาย"
+        }
+      ],
+      "key_takeaway": "GHD: Short stature + bone age ล้าหลัง + IGF-1 ต่ำ + GH peak <10 ng/mL -> rhGH injection SC ทุกวัน"
+    },
+    "subject": "endocrine_ped",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ทารกแรกเกิดหญิง นน. 4.5 kg ต่อมน้ำตาลต่ำ 35 mg/dL ซ้ำหลายครั้ง แม่ไม่ได้เป็นเบาหวาน ตรวจพบ macroglossia umbilical hernia exomphalos ear creases ตรวจ insulin สูง C-peptide สูง การวินิจฉัยที่น่าจะเป็นมากที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Transient neonatal hypoglycemia"
+      },
+      {
+        "label": "B",
+        "text": "Congenital hyperinsulinism (HI) ร่วมกับ Beckwith-Wiedemann syndrome"
+      },
+      {
+        "label": "C",
+        "text": "GH deficiency"
+      },
+      {
+        "label": "D",
+        "text": "Hypothyroidism"
+      },
+      {
+        "label": "E",
+        "text": "IDM (Infant of diabetic mother)"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Macroglossia + exomphalos + ear creases + hypoglycemia + insulin สูง = Beckwith-Wiedemann syndrome + congenital HI",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Congenital hyperinsulinism ร่วมกับ Beckwith-Wiedemann syndrome",
+      "reason": "Beckwith-Wiedemann syndrome (BWS) เกิดจาก imprinting defect บน chromosome 11p15 มีลักษณะ:\n- Macroglossia\n- Exomphalos/umbilical hernia\n- Ear creases/pits\n- Macrosomia (LGA: large for gestational age, นน. 4.5 kg)\n- Hemihypertrophy\n- Hypoglycemia จาก Congenital Hyperinsulinism\n\nCongenital HI: insulin สูง C-peptide สูง ทำให้ hypoglycemia รุนแรงและ persistent\n\nBWS มีความเสี่ยงสูงต่อ Wilms tumor และ hepatoblastoma (ต้องติดตาม tumor surveillance)\n\nรักษา HI ใน BWS: Diazoxide (K channel opener ยับยั้ง insulin secretion) ถ้าไม่ตอบสนอง: partial pancreatectomy",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Transient neonatal hypoglycemia",
+          "is_correct": false,
+          "explanation": "Transient hypoglycemia ใน newborn หายเองภายใน 24-48h ไม่มี dysmorphic features ไม่มี insulin สูง persistent"
+        },
+        {
+          "label": "B",
+          "text": "Congenital hyperinsulinism ร่วมกับ Beckwith-Wiedemann syndrome",
+          "is_correct": true,
+          "explanation": "Macroglossia + exomphalos + ear creases + macrosomia + insulin สูง persistent = BWS + congenital HI"
+        },
+        {
+          "label": "C",
+          "text": "GH deficiency",
+          "is_correct": false,
+          "explanation": "GHD ทำให้ hypoglycemia ได้ แต่ไม่มี dysmorphic features BWS และ insulin ไม่สูง"
+        },
+        {
+          "label": "D",
+          "text": "Hypothyroidism",
+          "is_correct": false,
+          "explanation": "Congenital hypothyroidism ไม่ทำให้ insulin สูง ไม่มี dysmorphic features BWS"
+        },
+        {
+          "label": "E",
+          "text": "IDM (Infant of diabetic mother)",
+          "is_correct": false,
+          "explanation": "IDM มี macrosomia hypoglycemia (insulin สูง) แต่ไม่มี dysmorphic features BWS และแม่ต้องมี DM"
+        }
+      ],
+      "key_takeaway": "Beckwith-Wiedemann syndrome: Macroglossia + Exomphalos + Ear creases + Macrosomia + HI -> tumor surveillance + Diazoxide"
+    },
+    "subject": "endocrine_ped",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "เด็กหญิง 8 ปี มีเต้านมโตทั้ง 2 ข้าง มาตรวจ อายุกระดูก (bone age) 11 ปี ความสูงเปอร์เซ็นไทล์ที่ 95 ประจำเดือนยังไม่มา LH ตอบสนองต่อ GnRH test: LH peak 12 mIU/mL (pubertal response) MRI brain ปกติ",
+    "choices": [
+      "A: Premature adrenarche",
+      "B: Central precocious puberty (idiopathic)",
+      "C: Peripheral precocious puberty",
+      "D: McCune-Albright syndrome",
+      "E: Congenital adrenal hyperplasia"
+    ],
+    "correct_answer": "B",
+    "explanation": "Central precocious puberty: เด็กหญิง <8 ปี มีพัฒนาการ Tanner stage ≥2, bone age เร็ว, LH pubertal response, MRI ปกติ → idiopathic CPP → GnRH agonist",
+    "detailed_explanation": {
+      "summary": "Central precocious puberty (idiopathic): GnRH-dependent, bone age fast, GnRH test pubertal",
+      "reason": "CPP เด็กหญิง: Tanner B2 ก่อนอายุ 8 ปี เด็กชาย: ก่อนอายุ 9 ปี Idiopathic CPP: most common ในเด็กหญิง, MRI brain ปกติ Pubertal LH response (>5 IU/L) ยืนยัน GnRH-dependent Bone age accelerated → early epiphyseal fusion → short adult height การรักษา: GnRH agonist (leuprolide) ทุก 4 สัปดาห์ → ชะลอการเจริญเติบโตทางเพศ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Premature adrenarche",
+          "is_correct": false,
+          "explanation": "Pubic hair เท่านั้น ไม่มีเต้านม, DHEAS สูงเล็กน้อย"
+        },
+        {
+          "label": "B",
+          "text": "Idiopathic CPP",
+          "is_correct": true,
+          "explanation": "Tanner B2 ที่ 8 ปี + bone age เร็ว + LH pubertal + MRI ปกติ = idiopathic CPP"
+        },
+        {
+          "label": "C",
+          "text": "Peripheral PP",
+          "is_correct": false,
+          "explanation": "LH suppressed, GnRH-independent (ovarian cyst, CAH)"
+        },
+        {
+          "label": "D",
+          "text": "McCune-Albright",
+          "is_correct": false,
+          "explanation": "Café-au-lait spots + fibrous dysplasia + precocious puberty"
+        },
+        {
+          "label": "E",
+          "text": "CAH",
+          "is_correct": false,
+          "explanation": "Virilization, DHEAS/17-OHP สูง, ไม่ใช่ feminization"
+        }
+      ],
+      "key_takeaway": "CPP idiopathic เด็กหญิง: GnRH agonist (leuprolide) → ชะลอ puberty + ปรับปรุง adult height; MRI brain ตัด CNS lesion"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 13 ปี น้ำหนัก 72 kg สูง 160 cm BMI 28.1 kg/m² ปัสสาวะบ่อย ดื่มน้ำมาก 3 เดือน FBS 186 mg/dL HbA1c 9.2% C-peptide 1.8 ng/mL (ปกติ 0.9-7.1) Anti-GAD antibody negative",
+    "choices": [
+      "A: Type 1 DM",
+      "B: Type 2 DM",
+      "C: MODY",
+      "D: Steroid-induced DM",
+      "E: Diabetes insipidus"
+    ],
+    "correct_answer": "B",
+    "explanation": "Type 2 DM ในเด็ก: obesity + FBS > 126 + HbA1c > 6.5% + C-peptide ปกติ + Anti-GAD negative → metformin + lifestyle",
+    "detailed_explanation": {
+      "summary": "T2DM ในเด็ก: โรคอ้วน + FBS ↑ + C-peptide ปกติ + Auto-Ab negative",
+      "reason": "T2DM ในเด็กพบมากขึ้น โดยเฉพาะในวัยรุ่นที่อ้วน ต่างจาก T1DM: C-peptide ปกติ (ยังมี insulin secretion), anti-GAD negative, ไม่ DKA-prone MODY: ประวัติครอบครัว DM ≥3 generations, ผอม, C-peptide ปกติ การรักษา: Metformin + ลดน้ำหนัก (lifestyle modification); ถ้าควบคุมไม่ได้ → เพิ่ม insulin",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Type 1 DM",
+          "is_correct": false,
+          "explanation": "Anti-GAD negative, C-peptide ปกติ, obesity → ไม่ใช่ T1DM"
+        },
+        {
+          "label": "B",
+          "text": "Type 2 DM",
+          "is_correct": true,
+          "explanation": "Obesity + FBS 186 + HbA1c 9.2% + C-peptide ปกติ + Auto-Ab negative = T2DM → metformin"
+        },
+        {
+          "label": "C",
+          "text": "MODY",
+          "is_correct": false,
+          "explanation": "ไม่อ้วน, ประวัติครอบครัว DM หลาย generation, gene testing"
+        },
+        {
+          "label": "D",
+          "text": "Steroid-induced",
+          "is_correct": false,
+          "explanation": "ประวัติใช้ steroid"
+        },
+        {
+          "label": "E",
+          "text": "Diabetes insipidus",
+          "is_correct": false,
+          "explanation": "FBS ปกติ, polyuria/polydipsia + urine dilute"
+        }
+      ],
+      "key_takeaway": "T2DM เด็ก: obesity + FBS↑ + HbA1c↑ + C-peptide ปกติ + Auto-Ab negative → metformin + lifestyle; ตรวจ complications"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 14 ปี มาด้วยน้ำหนักขึ้น 8 kg ใน 3 เดือน หน้ากลม (moon face) ท้องลาย (striae) กล้ามเนื้ออ่อนแรง ความดัน 140/90 mmHg ตรวจ 24-hour urine cortisol สูงมาก MRI pituitary: พบ microadenoma 6 mm",
+    "choices": [
+      "A: Exogenous obesity",
+      "B: Cushing disease (pituitary ACTH-secreting adenoma)",
+      "C: Primary adrenal hyperplasia",
+      "D: Ectopic ACTH syndrome",
+      "E: CAH"
+    ],
+    "correct_answer": "B",
+    "explanation": "Cushing disease: moon face + striae + HTN + urine cortisol สูง + pituitary adenoma → transsphenoidal surgery",
+    "detailed_explanation": {
+      "summary": "Cushing disease: ACTH-secreting pituitary adenoma → hypercortisolism",
+      "reason": "Cushing syndrome: excess cortisol จากทุกสาเหตุ Cushing disease: ACTH excess จาก pituitary adenoma (most common endogenous cause) Clinical: central obesity, moon face, buffalo hump, striae, hypertension, proximal myopathy, hyperglycemia Workup: 24-hr urine cortisol ↑, late-night salivary cortisol ↑, ACTH dependent (ACTH ↑) MRI pituitary: adenoma การรักษา: Transsphenoidal surgery (TSS) เป็น first-line",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Exogenous obesity",
+          "is_correct": false,
+          "explanation": "ไม่มี striae, ไม่มี HTN, urine cortisol ปกติ"
+        },
+        {
+          "label": "B",
+          "text": "Cushing disease",
+          "is_correct": true,
+          "explanation": "Urine cortisol สูง + pituitary microadenoma + ACTH dependent = Cushing disease → TSS"
+        },
+        {
+          "label": "C",
+          "text": "Primary adrenal",
+          "is_correct": false,
+          "explanation": "ACTH suppressed, adrenal mass ใน CT"
+        },
+        {
+          "label": "D",
+          "text": "Ectopic ACTH",
+          "is_correct": false,
+          "explanation": "Lung/carcinoid tumor, ACTH สูงมาก, ไม่มี pituitary adenoma"
+        },
+        {
+          "label": "E",
+          "text": "CAH",
+          "is_correct": false,
+          "explanation": "Virilization, cortisol ต่ำ, androgen สูง"
+        }
+      ],
+      "key_takeaway": "Cushing disease: pituitary ACTH adenoma → transsphenoidal surgery; ยืนยันด้วย CRH stimulation test, inferior petrosal sinus sampling"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ทารกแรกเกิด 3 วัน ตรวจ newborn screening พบ TSH 85 mIU/L (ปกติ <10) T4 ต่ำ เด็กดูซึม ท้องผูก ลิ้นโต (macroglossia) ตัวบวม รกไม่คลอดช้า",
+    "choices": [
+      "A: Hypothyroidism transient",
+      "B: Congenital hypothyroidism",
+      "C: Down syndrome",
+      "D: Hypothyroidism secondary (TSH deficiency)",
+      "E: Beckwith-Wiedemann syndrome"
+    ],
+    "correct_answer": "B",
+    "explanation": "Congenital hypothyroidism: TSH สูง + T4 ต่ำ + macroglossia + ซึม + ท้องผูก → levothyroxine ทันที เพื่อป้องกัน cretinism",
+    "detailed_explanation": {
+      "summary": "Congenital hypothyroidism: TSH↑ + T4↓ → levothyroxine ทันที ป้องกัน cretinism",
+      "reason": "Congenital hypothyroidism (CH) เป็น most common preventable cause of intellectual disability ส่วนใหญ่: thyroid dysgenesis (agenesis, ectopic) Primary CH: TSH สูง + T4/fT4 ต่ำ อาการ: ซึม, macroglossia, hypotonia, umbilical hernia, prolonged jaundice, large fontanelle Newborn screening: สำคัญมาก → เริ่ม levothyroxine ทันทีก่อน 2 สัปดาห์ → พัฒนาการปกติ ถ้าไม่รักษา → cretinism (ID, short stature, deaf)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Transient hypothyroidism",
+          "is_correct": false,
+          "explanation": "TSH สูงชั่วคราว มักพบในทารกคลอดก่อนกำหนด แต่ต้องรักษาก่อน confirm transient"
+        },
+        {
+          "label": "B",
+          "text": "Congenital hypothyroidism",
+          "is_correct": true,
+          "explanation": "TSH 85 + T4↓ + macroglossia + ซึม + ท้องผูก = CH → levothyroxine ทันที"
+        },
+        {
+          "label": "C",
+          "text": "Down syndrome",
+          "is_correct": false,
+          "explanation": "Chromosomal, hypotonia แต่ TSH ปกติ (หรือ elevated ถ้ามี CH ร่วม)"
+        },
+        {
+          "label": "D",
+          "text": "Secondary hypothyroidism",
+          "is_correct": false,
+          "explanation": "TSH ต่ำหรือปกติ + T4 ต่ำ (pituitary/hypothalamic)"
+        },
+        {
+          "label": "E",
+          "text": "Beckwith-Wiedemann",
+          "is_correct": false,
+          "explanation": "Macroglossia + macrosomia + hypoglycemia, TSH ปกติ"
+        }
+      ],
+      "key_takeaway": "Congenital hypothyroidism: เริ่ม levothyroxine ก่อน 2 สัปดาห์ → พัฒนาการปกติ; ล่าช้า → cretinism ถาวร"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 2 ปี มาด้วยอาเจียน ไม่มีแรง ซึม ตรวจพบ hyperpigmentation ที่ข้อพับ เส้นฝ่ามือ และเหงือก Na 124 mEq/L, K 6.2 mEq/L, glucose 55 mg/dL Cortisol 8 am: 3.5 μg/dL (ต่ำ), ACTH สูงมาก",
+    "choices": [
+      "A: SIADH",
+      "B: Addison's disease (Primary adrenal insufficiency)",
+      "C: CAH salt-wasting",
+      "D: Hyponatremia จาก diarrhea",
+      "E: Renal tubular acidosis"
+    ],
+    "correct_answer": "B",
+    "explanation": "Primary adrenal insufficiency: hyperpigmentation + hyponatremia + hyperkalemia + hypoglycemia + cortisol ต่ำ + ACTH สูง → hydrocortisone IV ทันที",
+    "detailed_explanation": {
+      "summary": "Addison's disease: hyperpigmentation + Na↓ K↑ glucose↓ + cortisol↓ ACTH↑",
+      "reason": "Primary adrenal insufficiency: adrenal gland damage → cortisol ต่ำ → ACTH ↑ (feedback) → hyperpigmentation (MSH effect) Aldosterone ต่ำ → Na เสีย, K คั่ง Electrolytes: hyponatremia + hyperkalemia (salt-wasting) Adrenal crisis: acute decompensation → shock, vomiting, hypoglycemia การรักษา: Hydrocortisone IV (stress dose) + NS 0.9% IV + glucose",
+      "choices": [
+        {
+          "label": "A",
+          "text": "SIADH",
+          "is_correct": false,
+          "explanation": "Euvolemia, Na ต่ำ แต่ K ปกติ ไม่มี hyperpigmentation"
+        },
+        {
+          "label": "B",
+          "text": "Addison's disease",
+          "is_correct": true,
+          "explanation": "Hyperpigmentation + Na↓ K↑ glucose↓ + cortisol↓ ACTH↑ = primary adrenal insufficiency"
+        },
+        {
+          "label": "C",
+          "text": "CAH salt-wasting",
+          "is_correct": false,
+          "explanation": "ทารกแรกเกิด, virilization (เด็กหญิง), 17-OHP สูง"
+        },
+        {
+          "label": "D",
+          "text": "Hyponatremia from diarrhea",
+          "is_correct": false,
+          "explanation": "ไม่มี hyperpigmentation, K ไม่สูง, ACTH ปกติ"
+        },
+        {
+          "label": "E",
+          "text": "RTA",
+          "is_correct": false,
+          "explanation": "Acidosis, K ต่ำ (type 1/2) ไม่มี hyperpigmentation"
+        }
+      ],
+      "key_takeaway": "Addison's crisis: IV hydrocortisone 50-100 mg/m² + 0.9% NSS + glucose; ตามด้วย oral hydrocortisone maintenance + fludrocortisone"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 4 ปี ความสูงตามเส้น 3rd percentile ทั้งพ่อและแม่สูง 170 cm (พ่อ) และ 162 cm (แม่) ตรวจ: bone age 2 ปี สัดส่วนร่างกายปกติ ไม่มีอาการอื่น TSH/T4 ปกติ CBC ปกติ Growth velocity 3 cm/ปี (ต่ำ) IGF-1 ต่ำมาก ตอบสนองต่อ GH stimulation test ไม่ดี (peak GH < 10 ng/mL)",
+    "choices": [
+      "A: Familial short stature",
+      "B: Constitutional delay of growth and puberty",
+      "C: Growth hormone deficiency",
+      "D: Hypothyroidism",
+      "E: Turner syndrome"
+    ],
+    "correct_answer": "C",
+    "explanation": "GH deficiency: bone age ช้า + growth velocity ต่ำ + IGF-1 ต่ำ + GH stimulation test ผิดปกติ + mid-parental height สูง → recombinant GH",
+    "detailed_explanation": {
+      "summary": "GH deficiency: bone age ช้า + IGF-1↓ + GH stim test abnormal → rGH therapy",
+      "reason": "GH deficiency (GHD): ตรวจ IGF-1 ต่ำ + GH stimulation test peak < 10 ng/mL (2 tests) Bone age ช้ากว่า chronological age → ยังมีเวลาเติบโต Mid-parental height (MPH): (170+162)/2 + 6.5 = 172.5 cm → predicted height ควรสูงกว่า 3rd % Familial: bone age = chronological, GH ปกติ Constitutional delay: bone age ช้า แต่ GH ปกติ, catch-up puberty การรักษา: Recombinant GH (somatropin) 6 วัน/สัปดาห์",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Familial short stature",
+          "is_correct": false,
+          "explanation": "พ่อแม่สูง + bone age เท่า chronological + GH ปกติ"
+        },
+        {
+          "label": "B",
+          "text": "Constitutional delay",
+          "is_correct": false,
+          "explanation": "Bone age ช้า แต่ GH ปกติ, catch-up spontaneous"
+        },
+        {
+          "label": "C",
+          "text": "GH deficiency",
+          "is_correct": true,
+          "explanation": "MPH สูง + bone age ช้า + IGF-1↓ + GH stim peak <10 = GHD → rGH"
+        },
+        {
+          "label": "D",
+          "text": "Hypothyroidism",
+          "is_correct": false,
+          "explanation": "TSH/T4 ปกติ"
+        },
+        {
+          "label": "E",
+          "text": "Turner syndrome",
+          "is_correct": false,
+          "explanation": "เด็กหญิง แต่ karyotype 45,X ไม่มีใน scenario, มักมี webbed neck, cubitus valgus"
+        }
+      ],
+      "key_takeaway": "GH deficiency: 2 GH stim tests peak <10 + IGF-1↓ + bone age ช้า → rGH therapy จนถึง final height"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ทารกหญิงแรกเกิด 2 วัน ตรวจพบ genitalia กำกวม (ambiguous genitalia) ฝีเย็บโต clitoromegaly, labial fusion น้ำหนัก 3.2 kg ประวัติ: แม่ไม่ได้ยา steroid ระหว่างตั้งครรภ์ Na 138, K 4.2, 17-OHP (newborn screening) สูงมาก 35,000 ng/dL",
+    "choices": [
+      "A: Turner syndrome",
+      "B: Congenital adrenal hyperplasia (21-hydroxylase deficiency)",
+      "C: True hermaphroditism",
+      "D: Androgen insensitivity syndrome",
+      "E: Gonadal dysgenesis"
+    ],
+    "correct_answer": "B",
+    "explanation": "CAH 21-hydroxylase deficiency: 17-OHP สูงมาก + virilized female (XX) + ambiguous genitalia → hydrocortisone + fludrocortisone",
+    "detailed_explanation": {
+      "summary": "CAH 21-OHase: 17-OHP↑↑ + virilized female XX → hydrocortisone + fludrocortisone",
+      "reason": "21-hydroxylase deficiency เป็น most common CAH (95%) → cortisol ต่ำ + aldosterone ต่ำ + androgen สูง (precursor) เด็กหญิง (XX): virilization → clitoromegaly, labial fusion, ambiguous genitalia 17-OHP สูงมาก > 10,000 ng/dL → confirmatory Salt-wasting form: ทารกชาย ดูเหมือนปกติ → วิกฤต adrenal salt-wasting 2 สัปดาห์แรก การรักษา: Hydrocortisone (cortisol replacement) + Fludrocortisone (mineralocorticoid, salt-wasting)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Turner syndrome",
+          "is_correct": false,
+          "explanation": "45,X female, ไม่มี virilization"
+        },
+        {
+          "label": "B",
+          "text": "CAH 21-hydroxylase",
+          "is_correct": true,
+          "explanation": "17-OHP สูงมาก + virilized XX female = CAH → hydrocortisone + fludrocortisone"
+        },
+        {
+          "label": "C",
+          "text": "True hermaphroditism",
+          "is_correct": false,
+          "explanation": "Ovotestis, karyotype 46,XX หรือ 46,XY หรือ mosaic"
+        },
+        {
+          "label": "D",
+          "text": "AIS",
+          "is_correct": false,
+          "explanation": "46,XY female-appearing, ไม่มี virilization ใน complete AIS"
+        },
+        {
+          "label": "E",
+          "text": "Gonadal dysgenesis",
+          "is_correct": false,
+          "explanation": "45,X หรือ 46,XY, ไม่มี 17-OHP สูง"
+        }
+      ],
+      "key_takeaway": "CAH 21-OHase: 17-OHP↑↑ → hydrocortisone + fludrocortisone; salt-wasting crisis ในทารก → emergency"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 12 ปี มาด้วยอาการปัสสาวะบ่อยมาก ดื่มน้ำมากผิดปกติ (>5 L/วัน) ตอนกลางคืนก็ยังปัสสาวะ FBS 85 mg/dL UA: ไม่มีน้ำตาล Urine osmolality 85 mOsm/kg (dilute) Serum osmolality 298 mOsm/kg",
+    "choices": [
+      "A: DM type 1",
+      "B: Psychogenic polydipsia",
+      "C: Diabetes insipidus central",
+      "D: Nephrogenic diabetes insipidus",
+      "E: SIADH"
+    ],
+    "correct_answer": "C",
+    "explanation": "Central DI: polyuria + polydipsia + serum osmolality สูง + urine dilute (ไม่ concentrate) + FBS ปกติ + ไม่มี glycosuria → DDAVP test ยืนยัน",
+    "detailed_explanation": {
+      "summary": "Central DI: urine dilute + serum osmolality สูง + ตอบสนอง DDAVP",
+      "reason": "Diabetes insipidus: ADH deficiency (central) หรือ ADH resistance (nephrogenic) Polyuria ปริมาณมาก + urine dilute (Uosm < 200 mOsm/kg) + serum hyperosmolality FBS ปกติ + ไม่มี glycosuria → ไม่ใช่ DM Water deprivation test: ถ้า urine ไม่ concentrate → ให้ DDAVP → ถ้า urine concentrate = central DI สาเหตุ central DI ในเด็ก: idiopathic, Langerhans cell histiocytosis, craniopharyngioma, head trauma",
+      "choices": [
+        {
+          "label": "A",
+          "text": "DM type 1",
+          "is_correct": false,
+          "explanation": "FBS สูง + glycosuria → DM; ไม่ใช่ในนี้"
+        },
+        {
+          "label": "B",
+          "text": "Psychogenic polydipsia",
+          "is_correct": false,
+          "explanation": "Urine dilute แต่ serum osmolality ปกติหรือต่ำ; ตอบสนอง water deprivation"
+        },
+        {
+          "label": "C",
+          "text": "Central DI",
+          "is_correct": true,
+          "explanation": "Urine dilute + serum Osm สูง + FBS ปกติ + ไม่มี glycosuria = DI; ตอบสนอง DDAVP → central"
+        },
+        {
+          "label": "D",
+          "text": "Nephrogenic DI",
+          "is_correct": false,
+          "explanation": "ไม่ตอบสนอง DDAVP, genetic (V2R/AQP2 mutation) หรือ lithium"
+        },
+        {
+          "label": "E",
+          "text": "SIADH",
+          "is_correct": false,
+          "explanation": "Hyponatremia + urine concentrate ไม่ใช่ dilute"
+        }
+      ],
+      "key_takeaway": "Central DI: DDAVP (desmopressin) → urine concentrate → confirm central; MRI brain ดู posterior pituitary/stalk"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 13 ปี ยังไม่มีพัฒนาการ Tanner stage ใดๆ ความสูงต่ำ ตรวจพบ webbed neck cubitus valgus shield chest ได้ยิน heart murmur Karyotype: 45,X",
+    "choices": [
+      "A: Growth hormone deficiency",
+      "B: Turner syndrome",
+      "C: Gonadal dysgenesis 46,XY",
+      "D: Premature ovarian failure",
+      "E: Hypothyroidism"
+    ],
+    "correct_answer": "B",
+    "explanation": "Turner syndrome: 45,X + short stature + webbed neck + cubitus valgus + delayed puberty + cardiac defect (coarctation/bicuspid AoV) → GH + estrogen replacement",
+    "detailed_explanation": {
+      "summary": "Turner syndrome: 45,X + short stature + webbed neck + cubitus valgus + primary amenorrhea",
+      "reason": "Turner syndrome (45,X): most common sex chromosome abnormality in females Features: short stature, webbed neck (pterygium colli), cubitus valgus, shield chest, low posterior hairline, lymphedema Cardiac: coarctation of aorta (15-20%), bicuspid aortic valve Ovarian dysgenesis → primary amenorrhea, infertility Renal: horseshoe kidney Hormones: FSH/LH สูง (hypergonadotropic hypogonadism), estrogen ต่ำ การรักษา: rGH (improve height) + estrogen replacement (12-13 ปี) + เฝ้าระวัง cardiac",
+      "choices": [
+        {
+          "label": "A",
+          "text": "GH deficiency",
+          "is_correct": false,
+          "explanation": "ไม่มี webbed neck/cubitus valgus, karyotype ปกติ"
+        },
+        {
+          "label": "B",
+          "text": "Turner syndrome",
+          "is_correct": true,
+          "explanation": "45,X + webbed neck + cubitus valgus + short stature + delayed puberty = Turner"
+        },
+        {
+          "label": "C",
+          "text": "Gonadal dysgenesis 46,XY",
+          "is_correct": false,
+          "explanation": "Karyotype 46,XY ไม่ใช่ 45,X"
+        },
+        {
+          "label": "D",
+          "text": "Premature ovarian failure",
+          "is_correct": false,
+          "explanation": "Karyotype 46,XX, no Turner features"
+        },
+        {
+          "label": "E",
+          "text": "Hypothyroidism",
+          "is_correct": false,
+          "explanation": "Short stature แต่ TSH สูง ไม่มี webbed neck/karyotype abnormal"
+        }
+      ],
+      "key_takeaway": "Turner syndrome: rGH ตั้งแต่เล็ก + estrogen replacement 12-13 ปี; Echo, renal US, thyroid function ทุกปี"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 16 ปี มาด้วยน้ำหนักลด 8 kg ใน 2 เดือน กระหายน้ำมาก ปัสสาวะบ่อย อ่อนเพลีย FBS 320 mg/dL HbA1c 13.5% Urine ketone 3+ pH เลือด 7.21 bicarbonate 12 mEq/L Anti-GAD antibody positive",
+    "choices": [
+      "A: Type 2 DM",
+      "B: Type 1 DM with DKA",
+      "C: MODY",
+      "D: Steroid-induced hyperglycemia",
+      "E: Hyperglycemic hyperosmolar state"
+    ],
+    "correct_answer": "B",
+    "explanation": "T1DM + DKA: Anti-GAD positive + ketonuria + acidosis + weight loss → IV fluid + insulin infusion",
+    "detailed_explanation": {
+      "summary": "T1DM DKA: Anti-GAD+ + ketonuria + acidosis pH <7.3 → IV fluid + insulin infusion",
+      "reason": "T1DM DKA: autoimmune β-cell destruction (Anti-GAD, Anti-islet cell Ab) Absolute insulin deficiency → lipolysis → ketogenesis → ketoacidosis DKA criteria: glucose > 200, pH < 7.3, bicarbonate < 15, ketones+ การรักษา: 1) IV 0.9% NSS (fluid), 2) Insulin infusion 0.1 unit/kg/hr (เมื่อ glucose < 300 เริ่ม dextrose), 3) K replacement (ตรวจ K ก่อน insulin) ระวัง cerebral edema ในเด็ก: ลด fluid ช้า, ไม่ให้ sodium bicarbonate",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Type 2 DM",
+          "is_correct": false,
+          "explanation": "Anti-GAD negative, ไม่มี DKA ในวัยรุ่น obesity"
+        },
+        {
+          "label": "B",
+          "text": "T1DM with DKA",
+          "is_correct": true,
+          "explanation": "Anti-GAD+ + ketonuria + pH 7.21 + HCO3 12 = T1DM + DKA → IV fluid + insulin infusion"
+        },
+        {
+          "label": "C",
+          "text": "MODY",
+          "is_correct": false,
+          "explanation": "Auto-Ab negative, ประวัติครอบครัว, ไม่มี DKA"
+        },
+        {
+          "label": "D",
+          "text": "Steroid-induced",
+          "is_correct": false,
+          "explanation": "ประวัติ steroid, Auto-Ab negative"
+        },
+        {
+          "label": "E",
+          "text": "HHS",
+          "is_correct": false,
+          "explanation": "Glucose > 600, ไม่มี ketoacidosis (pH ปกติ), พบใน T2DM"
+        }
+      ],
+      "key_takeaway": "T1DM DKA: IV 0.9% NSS 10-20 mL/kg bolus → insulin 0.1 U/kg/hr; ระวัง cerebral edema: ลด fluid ช้า, K+ replacement ก่อน insulin"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 9 ปี ผอมลงเรื่อยๆ 3 เดือน ใจสั่น เหนื่อยง่าย ขี้ร้อน ถ่ายบ่อย มือสั่น ตาโปนทั้ง 2 ข้าง ชีพจร 112 ครั้ง/นาที คอพอก (goiter) diffuse TSH < 0.01 mIU/L, fT4 4.2 ng/dL (สูงมาก) TSI positive",
+    "choices": [
+      "A: Thyroid cancer",
+      "B: Graves' disease",
+      "C: Toxic multinodular goiter",
+      "D: Subacute thyroiditis",
+      "E: Hashimoto thyroiditis"
+    ],
+    "correct_answer": "B",
+    "explanation": "Graves' disease: diffuse goiter + exophthalmos + hyperthyroid symptoms + TSI positive → methimazole",
+    "detailed_explanation": {
+      "summary": "Graves' disease: TSI+ + exophthalmos + diffuse goiter + hyperthyroidism",
+      "reason": "Graves' disease: autoimmune hyperthyroidism ที่พบบ่อยที่สุดในเด็ก TSI (thyroid-stimulating immunoglobulin) → stimulate TSH receptor → hyperthyroid Triad: hyperthyroidism + diffuse goiter + exophthalmos (Graves' ophthalmopathy) การรักษา: Methimazole เป็น first-line เด็ก (ระวัง agranulocytosis) Radioiodine (RAI) ในเด็กโต Beta-blocker สำหรับ symptom relief",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Thyroid cancer",
+          "is_correct": false,
+          "explanation": "Nodule ไม่ใช่ diffuse, ไม่มี hyperthyroid symptoms ชัด"
+        },
+        {
+          "label": "B",
+          "text": "Graves' disease",
+          "is_correct": true,
+          "explanation": "TSI+ + exophthalmos + diffuse goiter + hyperthyroid = Graves' → methimazole"
+        },
+        {
+          "label": "C",
+          "text": "Toxic MNG",
+          "is_correct": false,
+          "explanation": "Multiple nodules, ไม่มี TSI, ไม่มี exophthalmos"
+        },
+        {
+          "label": "D",
+          "text": "Subacute thyroiditis",
+          "is_correct": false,
+          "explanation": "เจ็บคอ, tender thyroid, ไม่มี exophthalmos, ESR สูง"
+        },
+        {
+          "label": "E",
+          "text": "Hashimoto",
+          "is_correct": false,
+          "explanation": "Hypothyroidism, TPO Ab positive, ไม่มี exophthalmos"
+        }
+      ],
+      "key_takeaway": "Graves' disease เด็ก: Methimazole (PTU หลีกเลี่ยง <10 ปี เพราะ hepatotoxicity); beta-blocker ลด symptoms"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ทารกแรกเกิด 12 ชั่วโมง มีอาการสั่น (jitteriness) ซีดขาว เหงื่อออก CBC ปกติ Ca 9.5 mg/dL ทำ Dextrostix: < 25 mg/dL (ต่ำ) แม่เป็น gestational diabetes ควบคุมไม่ดี Insulin ทารก: 18 μIU/mL (สูง)",
+    "choices": [
+      "A: Sepsis neonatal",
+      "B: Neonatal hypoglycemia จาก hyperinsulinism",
+      "C: Inborn error of metabolism",
+      "D: Hypocalcemia neonatal",
+      "E: HIE"
+    ],
+    "correct_answer": "B",
+    "explanation": "Neonatal hypoglycemia หลัง GDM: แม่ GDM → ทารก hyperinsulinism → glucose ต่ำ → jitteriness → IV glucose 10% D/W",
+    "detailed_explanation": {
+      "summary": "Neonatal hypoglycemia หลัง GDM แม่: hyperinsulinism → IV dextrose",
+      "reason": "แม่ GDM (glucose สูง) → ทารกใน ครรภ์สร้าง insulin มาก → หลังคลอด glucose แม่หาย → ทารก insulin สูงอยู่ → hypoglycemia Symptomatic hypoglycemia: glucose < 25 (term <24 ชม.) หรือ < 40 (term > 24 ชม.) อาการ: jitteriness, poor feeding, tremors, lethargy, seizure Insulin สูง (18 μIU/mL) ยืนยัน hyperinsulinism การรักษา: IV D10W 2 mL/kg bolus → 6-8 mg/kg/min GIR",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Neonatal sepsis",
+          "is_correct": false,
+          "explanation": "ไข้/hypothermia, WBC ผิดปกติ, CRP สูง"
+        },
+        {
+          "label": "B",
+          "text": "Neonatal hypoglycemia hyperinsulinism",
+          "is_correct": true,
+          "explanation": "แม่ GDM + glucose < 25 + insulin สูง = neonatal hyperinsulinism → IV glucose"
+        },
+        {
+          "label": "C",
+          "text": "IEM",
+          "is_correct": false,
+          "explanation": "metabolic acidosis, elevated ammonia, organic acids"
+        },
+        {
+          "label": "D",
+          "text": "Hypocalcemia",
+          "is_correct": false,
+          "explanation": "Ca ปกติ 9.5 mg/dL"
+        },
+        {
+          "label": "E",
+          "text": "HIE",
+          "is_correct": false,
+          "explanation": "ประวัติ birth asphyxia, glucose อาจปกติ"
+        }
+      ],
+      "key_takeaway": "Neonatal hypoglycemia จาก GDM: D10W 2 mL/kg IV bolus → GIR 6-8 mg/kg/min; ป้องกัน GDM ควบคุมดี"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 7 ปี ตรวจคอพอก TSH ปกติ T4 ปกติ คลำพบ goiter diffuse non-tender ตรวจ: Anti-TPO antibody 1250 IU/mL (สูงมาก) Anti-Tg antibody positive ไม่มีอาการ",
+    "choices": [
+      "A: Graves' disease",
+      "B: Hashimoto thyroiditis euthyroid",
+      "C: Subacute thyroiditis",
+      "D: Simple colloid goiter",
+      "E: Thyroid lymphoma"
+    ],
+    "correct_answer": "B",
+    "explanation": "Hashimoto thyroiditis euthyroid: goiter + Anti-TPO สูงมาก + TSH/T4 ปกติ → ติดตาม TSH ทุก 6-12 เดือน",
+    "detailed_explanation": {
+      "summary": "Hashimoto thyroiditis euthyroid: goiter + Anti-TPO↑↑ → ติดตาม TSH",
+      "reason": "Hashimoto thyroiditis: autoimmune destruction ของ thyroid โดย lymphocytes + autoantibodies (Anti-TPO, Anti-Tg) เริ่มต้น: euthyroid หรือ transient hyperthyroid (hashitoxicosis) → ต่อมาเป็น hypothyroid ไม่มีอาการ euthyroid: ติดตาม TSH ทุก 6-12 เดือน เมื่อ hypothyroid → levothyroxine ไม่ต้องรักษาถ้า euthyroid",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Graves' disease",
+          "is_correct": false,
+          "explanation": "Hyperthyroid, TSI positive, exophthalmos"
+        },
+        {
+          "label": "B",
+          "text": "Hashimoto euthyroid",
+          "is_correct": true,
+          "explanation": "Goiter + Anti-TPO↑↑ + TSH/T4 ปกติ = Hashimoto euthyroid → ติดตาม TSH"
+        },
+        {
+          "label": "C",
+          "text": "Subacute thyroiditis",
+          "is_correct": false,
+          "explanation": "เจ็บคอ, ESR สูง, tender thyroid, transient"
+        },
+        {
+          "label": "D",
+          "text": "Simple colloid goiter",
+          "is_correct": false,
+          "explanation": "Anti-TPO ปกติ, ไม่มี autoimmunity"
+        },
+        {
+          "label": "E",
+          "text": "Thyroid lymphoma",
+          "is_correct": false,
+          "explanation": "Rapidly enlarging, painful, adult"
+        }
+      ],
+      "key_takeaway": "Hashimoto euthyroid: ไม่ต้องรักษา; ติดตาม TSH ทุก 6-12 เดือน; ถ้า TSH สูง → Levothyroxine"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 5 ปี ได้รับ prednisolone 2 mg/kg/day นาน 6 สัปดาห์สำหรับ nephrotic syndrome แพทย์จะ taper ยา ผู้ปกครองถามว่าทำไมต้อง taper ช้า ไม่ใช่หยุดทันที",
+    "choices": [
+      "A: เพราะ prednisolone ทำให้ติดยา (drug dependence)",
+      "B: เพราะต้องค่อยๆ ลด เพื่อป้องกัน adrenal suppression and crisis",
+      "C: เพราะ taper ช้าทำให้ nephrotic syndrome ไม่กลับเป็นซ้ำ",
+      "D: เพราะยากระตุ้น adrenal cortex ในระหว่าง taper",
+      "E: เพราะผู้ป่วยจะ rebound hypercortisol ถ้าหยุดเร็ว"
+    ],
+    "correct_answer": "B",
+    "explanation": "Long-term steroid → HPA axis suppression → adrenal atrophy → หยุดทันทีทำให้ adrenal crisis; taper ช้าให้ HPA axis ฟื้น",
+    "detailed_explanation": {
+      "summary": "Steroid taper: ป้องกัน HPA axis suppression → adrenal crisis",
+      "reason": "Exogenous glucocorticoid ระยะยาว (> 2-3 สัปดาห์) → feedback ยับยั้ง CRH/ACTH → adrenal cortex atrophy หยุด steroid ทันที → adrenal cortex ยังทำงานไม่ได้ → cortisol ต่ำ → adrenal crisis (shock, hypoglycemia, electrolyte imbalance) Taper ช้า: ให้เวลา HPA axis และ adrenal cortex ฟื้นตัว ระยะเวลาที่ต้อง taper: ขึ้นกับ dose และ duration ของ steroid",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ติดยา (drug dependence)",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ reason หลัก; เป็น physiologic ไม่ใช่ psychological dependence"
+        },
+        {
+          "label": "B",
+          "text": "ป้องกัน adrenal suppression และ crisis",
+          "is_correct": true,
+          "explanation": "Long-term steroid → HPA suppression → adrenal atrophy → taper ช้าให้ฟื้น"
+        },
+        {
+          "label": "C",
+          "text": "ป้องกัน nephrotic relapse",
+          "is_correct": false,
+          "explanation": "Taper regimen ไม่ได้มีจุดประสงค์หลักในการป้องกัน relapse"
+        },
+        {
+          "label": "D",
+          "text": "กระตุ้น adrenal",
+          "is_correct": false,
+          "explanation": "การลด steroid ช้าๆ ให้เวลา HPA axis ฟื้น ไม่ใช่กระตุ้น"
+        },
+        {
+          "label": "E",
+          "text": "Rebound hypercortisol",
+          "is_correct": false,
+          "explanation": "ไม่ถูกต้อง; จริงๆ จะเกิด relative hypocortisol ถ้าหยุดเร็ว"
+        }
+      ],
+      "key_takeaway": "Long-term steroid (>2-3 สัปดาห์): ต้อง taper ช้า เพื่อให้ HPA axis ฟื้นตัว; หยุดทันที → adrenal crisis"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 3 ปี น้ำหนัก 16 kg ชักเกร็งกระตุก 2 ครั้งในวันนี้ ระหว่างชักระดับสติไม่รู้ตัว หลังชักซึม ตรวจ: Ca 6.5 mg/dL (ต่ำมาก) P 7.2 mg/dL (สูง) PTH < 5 pg/mL (ต่ำมาก) Mg ปกติ",
+    "choices": [
+      "A: Hypomagnesemia",
+      "B: Hypoparathyroidism",
+      "C: Pseudohypoparathyroidism",
+      "D: Vitamin D deficiency rickets",
+      "E: Hungry bone syndrome"
+    ],
+    "correct_answer": "B",
+    "explanation": "Hypoparathyroidism: Ca ต่ำ + P สูง + PTH ต่ำ → IV calcium gluconate ด่วน + calcitriol + oral calcium",
+    "detailed_explanation": {
+      "summary": "Hypoparathyroidism: Ca↓ + P↑ + PTH↓ → IV calcium + calcitriol",
+      "reason": "Hypoparathyroidism: PTH ต่ำ → Ca ต่ำ (ไม่มีการดึง Ca จากกระดูก/ลำไส้) + P สูง (ไม่มี phosphaturia) Hypocalcemia severe (Ca < 7.5): ชัก, tetany, prolonged QT → emergency Spasmophilia: Chvostek sign (facial muscle twitch), Trousseau sign (carpal spasm) การรักษา: IV 10% calcium gluconate 1-2 mL/kg slow IV + calcitriol (1,25-OH-D) + oral calcium",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Hypomagnesemia",
+          "is_correct": false,
+          "explanation": "Mg ปกติ; hypoMg → secondary hypocalcemia แต่ PTH ปกติ"
+        },
+        {
+          "label": "B",
+          "text": "Hypoparathyroidism",
+          "is_correct": true,
+          "explanation": "Ca↓ + P↑ + PTH↓ = hypoparathyroidism → IV Ca gluconate + calcitriol"
+        },
+        {
+          "label": "C",
+          "text": "Pseudohypoparathyroidism",
+          "is_correct": false,
+          "explanation": "PTH สูง + Ca ต่ำ + P สูง; end-organ PTH resistance; Albright's hereditary osteodystrophy"
+        },
+        {
+          "label": "D",
+          "text": "Rickets",
+          "is_correct": false,
+          "explanation": "Ca ต่ำหรือปกติ + P ต่ำ + PTH สูง (secondary) + ALP สูง"
+        },
+        {
+          "label": "E",
+          "text": "Hungry bone",
+          "is_correct": false,
+          "explanation": "หลัง parathyroidectomy, hypocalcemia + hypophosphatemia"
+        }
+      ],
+      "key_takeaway": "Hypoparathyroidism: IV 10% Ca gluconate 1-2 mL/kg (ช้า ระวัง bradycardia) + calcitriol + oral Ca maintenance"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 4 ปี ขาโก่ง (bow legs) เดินเป็ดๆ ฟันออกช้า กระดูกซี่โครงนูน (rachitic rosary) คล้ำบ่อยๆ CBC ปกติ Ca 8.8 mg/dL P 2.1 mg/dL (ต่ำ) ALP 850 U/L (สูงมาก) 25-OH Vit D: 8 ng/mL (ต่ำ) PTH สูง",
+    "choices": [
+      "A: Hypoparathyroidism",
+      "B: Vitamin D deficiency rickets",
+      "C: X-linked hypophosphatemic rickets",
+      "D: Renal tubular acidosis",
+      "E: Celiac disease"
+    ],
+    "correct_answer": "B",
+    "explanation": "Vit D deficiency rickets: bow legs + rachitic rosary + Ca ปกติ-ต่ำ + P ต่ำ + ALP สูง + 25-OH VitD ต่ำ + PTH สูง (secondary) → Vit D + Ca",
+    "detailed_explanation": {
+      "summary": "Nutritional rickets: 25-OHD ต่ำ + P↓ + ALP↑↑ + skeletal deformity",
+      "reason": "Vitamin D deficiency rickets เป็น most common type ใน Thai children 25-OH VitD < 20 ng/mL = insufficiency; < 12 ng/mL = deficiency Secondary hyperparathyroidism: ชดเชย Ca ต่ำ → P ต่ำ + Ca อาจปกติ ALP สูงมาก (bone turnover) X-ray: widened growth plate, cupping, fraying การรักษา: Vitamin D 1000-5000 IU/วัน + Ca supplement ป้องกัน: Vit D supplement ทารกกินนมแม่",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Hypoparathyroidism",
+          "is_correct": false,
+          "explanation": "PTH ต่ำ ไม่ใช่สูง; P สูงไม่ใช่ต่ำ"
+        },
+        {
+          "label": "B",
+          "text": "Vit D deficiency rickets",
+          "is_correct": true,
+          "explanation": "25-OHD 8 + P↓ + ALP↑↑ + bow legs + rachitic rosary = nutritional rickets → Vit D + Ca"
+        },
+        {
+          "label": "C",
+          "text": "X-linked hypophosphatemia",
+          "is_correct": false,
+          "explanation": "25-OHD ปกติ, FGF23 สูง, ต้องรักษาด้วย phosphate + calcitriol"
+        },
+        {
+          "label": "D",
+          "text": "RTA",
+          "is_correct": false,
+          "explanation": "Metabolic acidosis, Ca ปกติ, Vit D ปกติ"
+        },
+        {
+          "label": "E",
+          "text": "Celiac",
+          "is_correct": false,
+          "explanation": "Malabsorption Vit D ทำให้เกิด rickets ได้แต่ต้องมี GI symptoms"
+        }
+      ],
+      "key_takeaway": "Nutritional rickets: Vit D 1000-5000 IU/day + Ca; ป้องกันด้วย Vit D supplement ทารกกินนมแม่ 400 IU/day"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 2 วัน เกิดครบกำหนด น้ำหนัก 4.5 kg (macrosomia) แม่เป็น Gravida 1 Pre-gestational DM type 1 ได้รับ insulin ตลอดการตั้งครรภ์ ทารกมีอาการหอบ cyanosis Dextrostix 2 ชม. แรก: 18 mg/dL",
+    "choices": [
+      "A: Sepsis",
+      "B: Transient tachypnea of newborn",
+      "C: Neonatal hypoglycemia + respiratory distress",
+      "D: Meconium aspiration",
+      "E: Polycythemia"
+    ],
+    "correct_answer": "C",
+    "explanation": "IDM (infant of diabetic mother): macrosomia + hypoglycemia + respiratory distress (หลัง elective CS) → IV dextrose + respiratory support",
+    "detailed_explanation": {
+      "summary": "IDM complications: macrosomia + hypoglycemia + respiratory problems",
+      "reason": "Infant of Diabetic Mother (IDM) complications: 1) Macrosomia → birth trauma, shoulder dystocia 2) Hypoglycemia (hyperinsulinism) → glucose < 25 ใน 2 ชม.แรก 3) RDS (ขาด surfactant เพราะ insulin ยับยั้ง surfactant maturation) 4) Polycythemia 5) Hypocalcemia 6) Congenital heart disease (cardiomegaly, HCM) Glucose 18 mg/dL + respiratory distress → IV D10W + O2/CPAP",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Sepsis",
+          "is_correct": false,
+          "explanation": "ไม่มีไข้, CBC ปกติ, ประวัติ IDM ชัดเจน"
+        },
+        {
+          "label": "B",
+          "text": "TTN",
+          "is_correct": false,
+          "explanation": "Transient tachypnea แต่ glucose ต่ำมากต้องรักษาก่อน"
+        },
+        {
+          "label": "C",
+          "text": "Neonatal hypoglycemia + RD",
+          "is_correct": true,
+          "explanation": "IDM + macrosomia + glucose 18 + respiratory = neonatal hypoglycemia + RDS → IV dextrose + support"
+        },
+        {
+          "label": "D",
+          "text": "Meconium aspiration",
+          "is_correct": false,
+          "explanation": "ประวัติ meconium-stained fluid, ไม่มี"
+        },
+        {
+          "label": "E",
+          "text": "Polycythemia",
+          "is_correct": false,
+          "explanation": "Hct > 65%, plethora, ไม่ใช่สาเหตุหลักที่นี่"
+        }
+      ],
+      "key_takeaway": "IDM: monitor glucose q1-2h ใน 12 ชม.แรก; glucose < 40 → ให้กินนม/IV dextrose; ระวัง macrosomia, hypoCa, polycythemia"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 15 ปี สูง 120 cm (ตั้งแต่ตรวจ 3 ปีก่อนสูง 115 cm) น้ำหนัก 45 kg ยังไม่มี pubic hair ไม่มีขนรักแร้ อัณฑะขนาดเล็ก Tanner G1 P1 Bone age 12 ปี LH/FSH ต่ำ testosterone ต่ำ MRI สมอง: พบ craniopharyngioma",
+    "choices": [
+      "A: Constitutional delay of growth and puberty",
+      "B: Hypogonadotropic hypogonadism (craniopharyngioma)",
+      "C: Primary hypogonadism (Klinefelter)",
+      "D: GH deficiency isolated",
+      "E: Anorexia nervosa"
+    ],
+    "correct_answer": "B",
+    "explanation": "Hypogonadotropic hypogonadism จาก craniopharyngioma: LH/FSH ต่ำ + testosterone ต่ำ + delayed puberty + MRI พบ tumor → neurosurgery + hormone replacement",
+    "detailed_explanation": {
+      "summary": "Craniopharyngioma → hypogonadotropic hypogonadism: LH/FSH↓ + testosterone↓",
+      "reason": "Craniopharyngioma เป็น most common suprasellar tumor ในเด็ก ทำลาย hypothalamus/pituitary → multiple pituitary hormone deficiency Hypogonadotropic hypogonadism (HH): LH/FSH ต่ำ + sex steroids ต่ำ Visual field defect (bitemporal hemianopia) + ICP signs พบบ่อย การรักษา: Neurosurgery (resection) + hormone replacement (GH, sex steroids, cortisol, thyroid, ADH)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Constitutional delay",
+          "is_correct": false,
+          "explanation": "LH/FSH/testosterone จะฟื้นเอง, ไม่มี tumor, bone age ช้าแต่ catch-up"
+        },
+        {
+          "label": "B",
+          "text": "Hypogonadotropic HH (craniopharyngioma)",
+          "is_correct": true,
+          "explanation": "LH/FSH↓ + testosterone↓ + MRI craniopharyngioma = HH organic cause → surgery + HRT"
+        },
+        {
+          "label": "C",
+          "text": "Klinefelter",
+          "is_correct": false,
+          "explanation": "47,XXY: LH/FSH สูง (primary HG), small testes, gynecomastia"
+        },
+        {
+          "label": "D",
+          "text": "Isolated GHD",
+          "is_correct": false,
+          "explanation": "Short stature แต่ puberty ปกติ หรือล่าช้าเล็กน้อย, ไม่มี tumor"
+        },
+        {
+          "label": "E",
+          "text": "Anorexia nervosa",
+          "is_correct": false,
+          "explanation": "เด็กหญิงส่วนใหญ่ ผอมมาก functional HH"
+        }
+      ],
+      "key_takeaway": "Craniopharyngioma: MRI brain หา sellar/suprasellar mass; multiple hypopituitarism → hormone replacement ทุกตัว; visual field defect"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 9 ปี ตรวจพบ goiter ทำ ultrasound: solitary nodule 2 cm lobe ขวา ตรวจ FNA: follicular cells อาจเป็น malignancy TSH ปกติ Thyroid scan: cold nodule",
+    "choices": [
+      "A: ติดตาม ultrasound ทุก 6 เดือน",
+      "B: ให้ levothyroxine suppressive therapy",
+      "C: Surgical excision (thyroid lobectomy)",
+      "D: Radioiodine ablation",
+      "E: Fine needle aspiration ซ้ำ 6 เดือน"
+    ],
+    "correct_answer": "C",
+    "explanation": "Solitary cold nodule ในเด็ก + FNA suspicious for malignancy → surgical excision (lobectomy); thyroid cancer ในเด็กมีอัตรา malignancy สูงกว่าผู้ใหญ่",
+    "detailed_explanation": {
+      "summary": "Thyroid cold nodule ในเด็ก + FNA suspicious → surgical excision",
+      "reason": "Thyroid nodule ในเด็กมีโอกาส malignancy สูงกว่าผู้ใหญ่ (26% vs 10%) Cold nodule (ไม่ดูดซับ iodine) มีโอกาส malignancy สูงกว่า hot nodule FNA cytology suspicious (Bethesda III-V) → surgical excision Most common pediatric thyroid cancer: papillary thyroid carcinoma ผ่าตัด: thyroid lobectomy ± total thyroidectomy ± RAI",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ติดตาม US",
+          "is_correct": false,
+          "explanation": "FNA suspicious → ไม่ควร watchful waiting"
+        },
+        {
+          "label": "B",
+          "text": "TSH suppression",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ standard treatment สำหรับ FNA suspicious nodule"
+        },
+        {
+          "label": "C",
+          "text": "Surgical excision",
+          "is_correct": true,
+          "explanation": "Cold nodule + FNA suspicious → lobectomy; malignancy rate ในเด็กสูง"
+        },
+        {
+          "label": "D",
+          "text": "Radioiodine",
+          "is_correct": false,
+          "explanation": "ใช้หลัง thyroidectomy สำหรับ remnant ablation ไม่ใช่ first-line"
+        },
+        {
+          "label": "E",
+          "text": "Repeat FNA",
+          "is_correct": false,
+          "explanation": "FNA suspicious → ผ่าตัดเลย ไม่ต้องรอซ้ำ"
+        }
+      ],
+      "key_takeaway": "Thyroid nodule เด็ก + cold + FNA suspicious → surgical excision; thyroid cancer เด็กมักเป็น papillary type"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 7 ปี มีอาการปวดศีรษะ ความดัน 160/100 mmHg วัดซ้ำหลายครั้ง CBC ปกติ Cr 0.7 mg/dL UA ปกติ electrolyte ปกติ ตรวจพบ urine catecholamines (VMA, metanephrine) สูงมาก CT adrenal พบ mass 4 cm",
+    "choices": [
+      "A: Essential hypertension",
+      "B: Pheochromocytoma",
+      "C: Renal artery stenosis",
+      "D: Primary hyperaldosteronism",
+      "E: Hyperthyroidism"
+    ],
+    "correct_answer": "B",
+    "explanation": "Pheochromocytoma: HTN + urine catecholamines สูง + adrenal mass → alpha-blockade ก่อน แล้ว surgical resection",
+    "detailed_explanation": {
+      "summary": "Pheochromocytoma: adrenal mass + urine catecholamines↑ → alpha-block ก่อน surgery",
+      "reason": "Pheochromocytoma: catecholamine-secreting tumor ของ adrenal medulla ในเด็กอาจเป็น bilateral, extra-adrenal, associated with MEN2/VHL/NF1 Hypertensive crisis, headache, palpitation, diaphoresis (classic triad) Diagnosis: urine/plasma metanephrine สูง + CT/MRI adrenal pre-op: alpha-blocker (phenoxybenzamine) ≥2 สัปดาห์ → ป้องกัน hypertensive crisis ระหว่างผ่าตัด แล้วให้ beta-blocker ตาม (ห้ามให้ beta-blocker ก่อน alpha)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Essential HTN",
+          "is_correct": false,
+          "explanation": "ไม่พบ secondary cause ในเด็กมักมีสาเหตุ"
+        },
+        {
+          "label": "B",
+          "text": "Pheochromocytoma",
+          "is_correct": true,
+          "explanation": "HTN + urine catecholamines↑ + adrenal mass = pheo → alpha-block + surgery"
+        },
+        {
+          "label": "C",
+          "text": "Renal artery stenosis",
+          "is_correct": false,
+          "explanation": "Renal bruit, กตรวจ renal artery doppler"
+        },
+        {
+          "label": "D",
+          "text": "Primary hyperaldosteronism",
+          "is_correct": false,
+          "explanation": "Hypokalemia, aldosterone สูง, renin ต่ำ"
+        },
+        {
+          "label": "E",
+          "text": "Hyperthyroidism",
+          "is_correct": false,
+          "explanation": "TSH ต่ำ, tachycardia, tremor, adrenal mass ไม่ใช่ thyroid"
+        }
+      ],
+      "key_takeaway": "Pheochromocytoma: alpha-blocker ≥2 สัปดาห์ก่อนผ่าตัด (ห้าม beta ก่อน alpha); surgical resection เป็น definitive treatment"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 6 ปี น้ำหนัก 28 kg (>97th percentile) ส่วนสูง 122 cm (75th percentile) ผิวหนังคล้ำบริเวณต้นคอ (acanthosis nigricans) FBS 95 mg/dL Insulin fasting 28 μIU/mL (สูง) ครอบครัว: แม่เป็น T2DM",
+    "choices": [
+      "A: Type 1 DM early",
+      "B: Insulin resistance / Pre-diabetes",
+      "C: Hypothyroidism",
+      "D: Cushing syndrome",
+      "E: MODY"
+    ],
+    "correct_answer": "B",
+    "explanation": "Insulin resistance: obesity + acanthosis nigricans + fasting insulin สูง (HOMA-IR สูง) + ครอบครัว T2DM → lifestyle modification",
+    "detailed_explanation": {
+      "summary": "Insulin resistance: obesity + acanthosis nigricans + hyperinsulinemia → lifestyle modification",
+      "reason": "Acanthosis nigricans เป็น skin marker ของ insulin resistance → insulin พยายาม stimulate keratinocytes Obesity → insulin resistance → compensatory hyperinsulinemia → เสี่ยง T2DM HOMA-IR = fasting insulin (μIU/mL) × fasting glucose (mmol/L) / 22.5 > 3.0 = insulin resistance การรักษา: Lifestyle modification (diet + exercise) เป็น first-line Metformin ถ้า pre-diabetes หรือ T2DM",
+      "choices": [
+        {
+          "label": "A",
+          "text": "T1DM early",
+          "is_correct": false,
+          "explanation": "FBS ปกติ, ไม่มี auto-antibodies, insulin สูงไม่ต่ำ"
+        },
+        {
+          "label": "B",
+          "text": "Insulin resistance / pre-diabetes",
+          "is_correct": true,
+          "explanation": "Obesity + acanthosis nigricans + insulin สูง + family T2DM = insulin resistance → lifestyle"
+        },
+        {
+          "label": "C",
+          "text": "Hypothyroidism",
+          "is_correct": false,
+          "explanation": "น้ำหนักขึ้นได้ แต่ TSH/T4 ต้องตรวจ, ไม่มี acanthosis"
+        },
+        {
+          "label": "D",
+          "text": "Cushing syndrome",
+          "is_correct": false,
+          "explanation": "Central obesity + striae + HTN + urine cortisol สูง"
+        },
+        {
+          "label": "E",
+          "text": "MODY",
+          "is_correct": false,
+          "explanation": "FBS > 126, thin, family DM ≥3 generations, auto-Ab negative"
+        }
+      ],
+      "key_takeaway": "Acanthosis nigricans ในเด็กอ้วน = insulin resistance → lifestyle modification; ถ้า HbA1c 5.7-6.4% = pre-diabetes → metformin พิจารณา"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "ทารกหญิง 4 สัปดาห์ ตัวเหลืองยังไม่หาย (prolonged jaundice) ซึม ท้องผูก ร้องน้อย อุณหภูมิต่ำ (35.8°C) กระหม่อมหน้าโต ผิวหนังแห้ง Bilirubin 15 mg/dL (unconjugated) TSH: 95 mIU/L T4: ต่ำ",
+    "choices": [
+      "A: Physiologic jaundice",
+      "B: ABO incompatibility",
+      "C: Congenital hypothyroidism",
+      "D: Biliary atresia",
+      "E: Neonatal hepatitis"
+    ],
+    "correct_answer": "C",
+    "explanation": "Congenital hypothyroidism: prolonged unconjugated jaundice + ซึม + ท้องผูก + อุณหภูมิต่ำ + TSH สูง/T4 ต่ำ → levothyroxine ทันที",
+    "detailed_explanation": {
+      "summary": "Congenital hypothyroidism: prolonged jaundice + ซึม + TSH↑ T4↓ → levothyroxine ด่วน",
+      "reason": "Prolonged unconjugated jaundice (> 2 สัปดาห์ term) ต้องตรวจ hypothyroidism เสมอ Hypothyroidism ชะลอ hepatic bilirubin conjugation + เพิ่ม bilirubin production อาการอื่น: ซึม, macroglossia, hypotonia, large anterior fontanelle, constipation, hypothermia, dry skin TSH > 40 = diagnostic ถ้า >2 สัปดาห์ → levothyroxine ทันที ก่อน 2 สัปดาห์ = ผลลัพธ์ดีที่สุด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Physiologic jaundice",
+          "is_correct": false,
+          "explanation": "หาย < 2 สัปดาห์ term ไม่มีอาการอื่น"
+        },
+        {
+          "label": "B",
+          "text": "ABO incompatibility",
+          "is_correct": false,
+          "explanation": "เกิดใน 24 ชม.แรก, DCT positive, spherocytes"
+        },
+        {
+          "label": "C",
+          "text": "Congenital hypothyroidism",
+          "is_correct": true,
+          "explanation": "Prolonged jaundice + ซึม + ท้องผูก + TSH 95 + T4↓ = CH → levothyroxine ด่วน"
+        },
+        {
+          "label": "D",
+          "text": "Biliary atresia",
+          "is_correct": false,
+          "explanation": "Conjugated hyperbilirubinemia (direct > 2 mg/dL), acholic stool"
+        },
+        {
+          "label": "E",
+          "text": "Neonatal hepatitis",
+          "is_correct": false,
+          "explanation": "Conjugated + direct bili สูง, transaminases สูง"
+        }
+      ],
+      "key_takeaway": "Prolonged unconjugated jaundice ทารก: ตรวจ TSH/T4 เสมอ; ถ้า CH → levothyroxine ทันที ก่อน 2 สัปดาห์"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 10 ปี รูปร่างอ้วน BMI 32 kg/m² ความดัน 135/85 mmHg ไขมัน TG 210 mg/dL HDL 32 mg/dL FBS 102 mg/dL รอบเอว 90 cm (>90th %ile) acanthosis nigricans ที่ต้นคอ",
+    "choices": [
+      "A: Simple obesity",
+      "B: Metabolic syndrome",
+      "C: Cushing syndrome",
+      "D: Hypothyroidism",
+      "E: Polycystic ovary syndrome"
+    ],
+    "correct_answer": "B",
+    "explanation": "Metabolic syndrome เด็ก: obesity + HTN + high TG + low HDL + impaired fasting glucose (≥3/5 criteria) → lifestyle modification + metformin",
+    "detailed_explanation": {
+      "summary": "Metabolic syndrome เด็ก: ≥3/5 criteria (obesity+HTN+TG+HDL+glucose) → lifestyle",
+      "reason": "Metabolic syndrome (IDF pediatric criteria ≥10 ปี): Central obesity (waist >90th percentile) + ≥2 ใน: TG ≥150, HDL <40 (ชาย), BP ≥130/85, FBG ≥100 ผู้ป่วยนี้: obesity + HTN + TG 210 + HDL 32 + FBG 102 = ≥3 criteria = metabolic syndrome การรักษา: Lifestyle modification เป็น first-line; Metformin ถ้า pre-DM; statins ถ้า dyslipidemia",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Simple obesity",
+          "is_correct": false,
+          "explanation": "มีหลายอาการร่วม ไม่ใช่แค่ obesity เดียว"
+        },
+        {
+          "label": "B",
+          "text": "Metabolic syndrome",
+          "is_correct": true,
+          "explanation": "≥3 criteria: obesity + HTN + TG↑ + HDL↓ + FBG 102 = metabolic syndrome"
+        },
+        {
+          "label": "C",
+          "text": "Cushing syndrome",
+          "is_correct": false,
+          "explanation": "Striae, moon face, urine cortisol สูง"
+        },
+        {
+          "label": "D",
+          "text": "Hypothyroidism",
+          "is_correct": false,
+          "explanation": "TSH สูง, T4 ต่ำ ต้องตรวจ"
+        },
+        {
+          "label": "E",
+          "text": "PCOS",
+          "is_correct": false,
+          "explanation": "เด็กหญิง, irregular menstruation, androgen สูง"
+        }
+      ],
+      "key_takeaway": "Metabolic syndrome เด็ก: lifestyle modification (diet + exercise) เป็น first-line; target BMI ลด 5-10%"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 16 ปี ประจำเดือนไม่มาตั้งแต่เริ่ม 6 เดือนก่อน น้ำหนัก 39 kg สูง 162 cm BMI 14.9 kg/m² LH/FSH ต่ำ Estradiol ต่ำ TSH ปกติ prolactin ปกติ bone density ต่ำ",
+    "choices": [
+      "A: Primary ovarian failure",
+      "B: Turner syndrome",
+      "C: Functional hypothalamic amenorrhea (eating disorder/anorexia)",
+      "D: Prolactinoma",
+      "E: Thyroid disease"
+    ],
+    "correct_answer": "C",
+    "explanation": "Functional hypothalamic amenorrhea: BMI ต่ำมาก (anorexia) → GnRH pulsatility ลด → LH/FSH ต่ำ → estrogen ต่ำ → amenorrhea + osteoporosis risk",
+    "detailed_explanation": {
+      "summary": "Functional hypothalamic amenorrhea: BMI ต่ำ (anorexia) → LH/FSH↓ → estrogen↓",
+      "reason": "Functional Hypothalamic Amenorrhea (FHA): stress, weight loss, excessive exercise → GnRH pulsatility ลด → ไม่มี LH surge → ไม่มีประจำเดือน LH/FSH ต่ำ + estrogen ต่ำ = hypogonadotropic hypogonadism functional BMI 14.9 (anorexia nervosa: BMI < 17.5) → ชัดเจน Bone density ต่ำ → osteoporosis risk การรักษา: Weight restoration (เป้าหมาย BMI > 19) + psychological support + Ca/Vit D",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Primary ovarian failure",
+          "is_correct": false,
+          "explanation": "LH/FSH สูง (hypergonadotropic) ไม่ต่ำ"
+        },
+        {
+          "label": "B",
+          "text": "Turner syndrome",
+          "is_correct": false,
+          "explanation": "FSH สูง, karyotype 45,X, ไม่มีใน scenario"
+        },
+        {
+          "label": "C",
+          "text": "Functional hypothalamic amenorrhea",
+          "is_correct": true,
+          "explanation": "BMI 14.9 + LH/FSH↓ + estrogen↓ + amenorrhea = FHA (anorexia) → weight restoration"
+        },
+        {
+          "label": "D",
+          "text": "Prolactinoma",
+          "is_correct": false,
+          "explanation": "Prolactin สูง, LH/FSH ถูก suppress"
+        },
+        {
+          "label": "E",
+          "text": "Thyroid disease",
+          "is_correct": false,
+          "explanation": "TSH ปกติ"
+        }
+      ],
+      "key_takeaway": "FHA/anorexia: weight restoration เป็น treatment หลัก; estrogen ไม่ให้ก่อน weight gain; Ca/Vit D ป้องกัน osteoporosis"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 5 ปี ตัวสั้นกว่าอายุ bone age เท่ากับ chronological age ความสูงที่ 5th percentile พ่อสูง 162 cm แม่สูง 155 cm GH stimulation test ปกติ IGF-1 ปกติ TSH/T4 ปกติ ไม่มีอาการอื่น",
+    "choices": [
+      "A: Growth hormone deficiency",
+      "B: Familial short stature",
+      "C: Constitutional delay of growth",
+      "D: Turner syndrome",
+      "E: Hypothyroidism"
+    ],
+    "correct_answer": "B",
+    "explanation": "Familial short stature: bone age = chronological age + mid-parental height ต่ำ + GH/IGF-1 ปกติ → ติดตาม ไม่ต้องรักษา",
+    "detailed_explanation": {
+      "summary": "Familial short stature: bone age = chronological + normal GH + short parents",
+      "reason": "Familial SS: พ่อแม่สั้น → คาดหวังความสูงต่ำ Mid-parental height (ชาย): (162+155+13)/2 = 165 cm (ต่ำ) Bone age = chronological → ไม่มี delay, growth rate ปกติ (5-7 cm/ปี) GH/IGF-1/TSH ปกติ → ไม่ใช่ pathologic ไม่จำเป็นต้องรักษา; ติดตาม growth velocity",
+      "choices": [
+        {
+          "label": "A",
+          "text": "GH deficiency",
+          "is_correct": false,
+          "explanation": "GH stim test ปกติ, IGF-1 ปกติ, bone age ช้า"
+        },
+        {
+          "label": "B",
+          "text": "Familial short stature",
+          "is_correct": true,
+          "explanation": "Bone age = chron + normal GH + short parents = familial SS → observe"
+        },
+        {
+          "label": "C",
+          "text": "Constitutional delay",
+          "is_correct": false,
+          "explanation": "Bone age ช้ากว่า chronological, catch-up puberty ช้า"
+        },
+        {
+          "label": "D",
+          "text": "Turner syndrome",
+          "is_correct": false,
+          "explanation": "เด็กหญิง, karyotype 45,X"
+        },
+        {
+          "label": "E",
+          "text": "Hypothyroidism",
+          "is_correct": false,
+          "explanation": "TSH ปกติ"
+        }
+      ],
+      "key_takeaway": "Familial SS: bone age = chronological + GH ปกติ + พ่อแม่สั้น → ไม่ต้องรักษา; ติดตาม growth velocity ทุก 6 เดือน"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 13 ปี ไม่มีพัฒนาการ secondary sexual characteristics เลย bone age 11 ปี ตรวจ LH/FSH ต่ำ testosterone ต่ำ Olfactory test: ไม่ได้กลิ่น (anosmia) ไม่มี tumor ใน MRI brain",
+    "choices": [
+      "A: Constitutional delay",
+      "B: Kallmann syndrome",
+      "C: Primary hypogonadism",
+      "D: Klinefelter syndrome",
+      "E: Prolactinoma"
+    ],
+    "correct_answer": "B",
+    "explanation": "Kallmann syndrome: hypogonadotropic hypogonadism + anosmia (olfactory bulb aplasia) → testosterone replacement + GnRH pulsatile (fertility)",
+    "detailed_explanation": {
+      "summary": "Kallmann syndrome: HH + anosmia → X-linked KAL1 mutation",
+      "reason": "Kallmann syndrome: GnRH neuron migration failure + olfactory bulb aplasia → HH + anosmia Features: small testes, micropenis, delayed puberty, anosmia/hyposmia Testosterone: ต่ำ, LH/FSH: ต่ำ (ต่างจาก primary HG ที่ FSH/LH สูง) MRI: olfactory bulb absent/hypoplastic การรักษา: Testosterone replacement (puberty induction) หรือ GnRH pulsatile ถ้าต้องการ fertility",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Constitutional delay",
+          "is_correct": false,
+          "explanation": "Puberty มาเองช้า, ไม่มี anosmia, LH/FSH ฟื้นเอง"
+        },
+        {
+          "label": "B",
+          "text": "Kallmann syndrome",
+          "is_correct": true,
+          "explanation": "HH (LH/FSH↓, testosterone↓) + anosmia = Kallmann syndrome"
+        },
+        {
+          "label": "C",
+          "text": "Primary hypogonadism",
+          "is_correct": false,
+          "explanation": "LH/FSH สูง (hypergonadotropic)"
+        },
+        {
+          "label": "D",
+          "text": "Klinefelter",
+          "is_correct": false,
+          "explanation": "47,XXY, FSH/LH สูง, ไม่มี anosmia"
+        },
+        {
+          "label": "E",
+          "text": "Prolactinoma",
+          "is_correct": false,
+          "explanation": "Prolactin สูง suppress GnRH, ไม่มี anosmia"
+        }
+      ],
+      "key_takeaway": "Kallmann syndrome: HH + anosmia → testosterone replacement; pulsatile GnRH ถ้าต้องการ fertility"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "hard",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 7 ปี มีอาการ polyuria, polydipsia ผอมลง FBS 280 mg/dL HbA1c 11% Anti-GAD antibody positive C-peptide < 0.1 ng/mL (ต่ำมาก) ไม่มี ketoacidosis",
+    "choices": [
+      "A: Type 2 DM",
+      "B: Type 1 DM ระยะแรก ยังไม่ DKA",
+      "C: MODY type 3",
+      "D: Neonatal DM",
+      "E: Steroid-induced DM"
+    ],
+    "correct_answer": "B",
+    "explanation": "T1DM ไม่มี DKA: Anti-GAD+ + C-peptide ต่ำมาก + เด็กผอม + FBS 280 → เริ่ม insulin ทันที",
+    "detailed_explanation": {
+      "summary": "T1DM ไม่มี DKA: Anti-GAD+ + C-peptide↓↓ → insulin therapy ทันที",
+      "reason": "T1DM: autoimmune β-cell destruction → absolute insulin deficiency ไม่ทุกคนมา DKA บางรายมาด้วย hyperglycemia ไม่ acidotic C-peptide ต่ำมาก (< 0.2 ng/mL) → β-cell function เหลือน้อยมาก Anti-GAD positive ยืนยัน autoimmune การรักษา: Multiple daily injections (MDI) หรือ insulin pump + carb counting HbA1c target < 7%",
+      "choices": [
+        {
+          "label": "A",
+          "text": "T2DM",
+          "is_correct": false,
+          "explanation": "Anti-GAD negative, C-peptide ปกติ, obesity"
+        },
+        {
+          "label": "B",
+          "text": "T1DM ไม่มี DKA",
+          "is_correct": true,
+          "explanation": "Anti-GAD+ + C-peptide↓↓ + เด็กผอม = T1DM → insulin therapy ทันที"
+        },
+        {
+          "label": "C",
+          "text": "MODY type 3",
+          "is_correct": false,
+          "explanation": "HNF1A mutation, C-peptide ปกติ, Auto-Ab negative, family DM"
+        },
+        {
+          "label": "D",
+          "text": "Neonatal DM",
+          "is_correct": false,
+          "explanation": "< 6 เดือนแรกเกิด"
+        },
+        {
+          "label": "E",
+          "text": "Steroid DM",
+          "is_correct": false,
+          "explanation": "ประวัติ steroid, Anti-GAD negative"
+        }
+      ],
+      "key_takeaway": "T1DM: เริ่ม insulin ทันทีแม้ไม่มี DKA; C-peptide < 0.2 + Anti-GAD+ ยืนยัน; MDI + SMBG + carb counting"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 12 ปี เพิ่งเริ่มมีประจำเดือน 6 เดือนก่อน สิว ขนรักแร้ ขนสาธารณะ เต้านมเริ่มโต Bone age 14 ปี ความสูงเพิ่มเร็วมาก (growth spurt) LH/FSH pubertal TSH/T4 ปกติ MRI ปกติ",
+    "choices": [
+      "A: Precocious puberty",
+      "B: Normal pubertal development",
+      "C: Delayed puberty",
+      "D: Premature adrenarche",
+      "E: Polycystic ovary syndrome"
+    ],
+    "correct_answer": "B",
+    "explanation": "Pubertal development ปกติ: เด็กหญิง 12 ปี มีประจำเดือน Tanner stage ปกติ bone age เร็ว = physiologic growth spurt → reassure",
+    "detailed_explanation": {
+      "summary": "Normal puberty เด็กหญิง: menarche 10-16 ปี, thelarche 8-13 ปี",
+      "reason": "Normal puberty เด็กหญิง: Thelarche (B2) เฉลี่ย 10-11 ปี, Menarche เฉลี่ย 12.5 ปี (range 10-16) เด็กหญิง 12 ปีมีประจำเดือน + Tanner ปกติ = ปกติ Growth spurt เกิดก่อน menarche Bone age ล้ำ = physiologic ระหว่าง puberty Precocious puberty เด็กหญิง: thelarche < 8 ปี หรือ menarche < 10 ปี",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Precocious puberty",
+          "is_correct": false,
+          "explanation": "12 ปีมีประจำเดือน = ปกติ ไม่ใช่ precocious"
+        },
+        {
+          "label": "B",
+          "text": "Normal puberty",
+          "is_correct": true,
+          "explanation": "12 ปีมีประจำเดือน + Tanner ปกติ = normal puberty → reassure"
+        },
+        {
+          "label": "C",
+          "text": "Delayed puberty",
+          "is_correct": false,
+          "explanation": "Delayed = ไม่มีประจำเดือน >16 ปี หรือ thelarche ไม่มีที่ >13 ปี"
+        },
+        {
+          "label": "D",
+          "text": "Premature adrenarche",
+          "is_correct": false,
+          "explanation": "Pubic hair < 8 ปี (หญิง) ไม่มีเต้านม ไม่มีประจำเดือน"
+        },
+        {
+          "label": "E",
+          "text": "PCOS",
+          "is_correct": false,
+          "explanation": "Irregular periods + hyperandrogenism + polycystic ovaries"
+        }
+      ],
+      "key_takeaway": "Normal puberty เด็กหญิง: thelarche 8-13 ปี → pubarche → peak growth spurt → menarche 12.5 ปี (range 10-16)"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "easy",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กชาย 14 ปี ส่วนสูงเพิ่งเริ่มขึ้น bone age 12 ปี ยังไม่มีขนรักแร้ อัณฑะ 4 mL (Tanner G2) ประวัติพ่อมีประจำเดือนครั้งแรกช้า LH/FSH ต่ำ-ปกติสำหรับอายุกระดูก testosterone ต่ำ-ปกติสำหรับ stage",
+    "choices": [
+      "A: Kallmann syndrome",
+      "B: Constitutional delay of growth and puberty (CDGP)",
+      "C: Hypogonadotropic hypogonadism",
+      "D: Primary hypogonadism",
+      "E: Klinefelter syndrome"
+    ],
+    "correct_answer": "B",
+    "explanation": "CDGP: bone age ช้า + ประวัติครอบครัว + LH/FSH ปกติสำหรับ bone age → puberty จะมาเองช้า → reassure ± short-course testosterone",
+    "detailed_explanation": {
+      "summary": "CDGP: bone age ช้า + family history + hormones ปกติ → puberty มาเองช้า",
+      "reason": "Constitutional Delay of Growth and Puberty (CDGP): most common cause of delayed puberty ในเด็กชาย Bone age ช้า 2+ ปี (อายุกระดูก 12 ที่อายุจริง 14) LH/FSH/testosterone ปกติสำหรับ bone age ประวัติครอบครัว (พ่อ/ลุงเข้าพักช้า) Prognosis ดี: puberty จะมาเอง แต่ช้ากว่าเพื่อน Short-course testosterone 3-6 เดือน ถ้า psychological distress",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Kallmann syndrome",
+          "is_correct": false,
+          "explanation": "Anosmia, ไม่มีประวัติครอบครัว, MRI olfactory bulb absent"
+        },
+        {
+          "label": "B",
+          "text": "CDGP",
+          "is_correct": true,
+          "explanation": "Bone age ช้า + family history + hormones ปกติ = CDGP → reassure ± short testosterone"
+        },
+        {
+          "label": "C",
+          "text": "Hypogonadotropic HH",
+          "is_correct": false,
+          "explanation": "LH/FSH ต่ำผิดปกติ + ไม่มี spontaneous puberty"
+        },
+        {
+          "label": "D",
+          "text": "Primary hypogonadism",
+          "is_correct": false,
+          "explanation": "LH/FSH สูงมาก, testicular failure"
+        },
+        {
+          "label": "E",
+          "text": "Klinefelter",
+          "is_correct": false,
+          "explanation": "47,XXY, small firm testes, FSH/LH สูง หลัง puberty"
+        }
+      ],
+      "key_takeaway": "CDGP: most common cause delayed puberty ชาย; bone age ช้า + family Hx + hormones ปกติ → reassure; testosterone short-course ถ้า distress"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  },
+  {
+    "scenario": "เด็กหญิง 8 ปี ตรวจพบ pubic hair Tanner P2 ไม่มีเต้านม ไม่มีประจำเดือน DHEAS สูงเล็กน้อย bone age ล้ำ 1 ปี 17-OHP ปกติ ไม่มีอาการ virilization อื่น",
+    "choices": [
+      "A: CAH 21-OHase",
+      "B: Premature adrenarche",
+      "C: Precocious puberty central",
+      "D: Adrenal tumor",
+      "E: Exogenous androgen"
+    ],
+    "correct_answer": "B",
+    "explanation": "Premature adrenarche: pubic hair เดี่ยวๆ ก่อนอายุ 8 ปี ไม่มีเต้านม DHEAS สูงเล็กน้อย 17-OHP ปกติ → benign variant ของ adrenarche",
+    "detailed_explanation": {
+      "summary": "Premature adrenarche: pubic hair เดี่ยวๆ + DHEAS เล็กน้อยสูง + 17-OHP ปกติ → benign",
+      "reason": "Adrenarche: adrenal androgen (DHEAS) เพิ่มขึ้นตามปกติ 6-8 ปี → pubic/axillary hair Premature adrenarche: adrenarche ก่อนอายุปกติ แต่ไม่มีสัญญาณ central puberty (เต้านม/ประจำเดือน) DHEAS สูงเล็กน้อย (< 200 μg/dL) 17-OHP ปกติ → ไม่ใช่ CAH Bone age ล้ำเล็กน้อย (<2 ปี) ยังปกติ Benign: reassure ติดตาม เสี่ยง PCOS ในอนาคต (เฉพาะบางราย)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "CAH 21-OHase",
+          "is_correct": false,
+          "explanation": "17-OHP สูง, virilization, electrolyte abnormal"
+        },
+        {
+          "label": "B",
+          "text": "Premature adrenarche",
+          "is_correct": true,
+          "explanation": "Pubic hair + DHEAS ↑ เล็กน้อย + 17-OHP ปกติ + ไม่มี central puberty = benign premature adrenarche"
+        },
+        {
+          "label": "C",
+          "text": "Central precocious puberty",
+          "is_correct": false,
+          "explanation": "ต้องมีเต้านม (B2) ก่อน pubic hair; LH pubertal response"
+        },
+        {
+          "label": "D",
+          "text": "Adrenal tumor",
+          "is_correct": false,
+          "explanation": "DHEAS สูงมาก (>600), rapid virilization"
+        },
+        {
+          "label": "E",
+          "text": "Exogenous androgen",
+          "is_correct": false,
+          "explanation": "ประวัติได้รับ testosterone cream/injection"
+        }
+      ],
+      "key_takeaway": "Premature adrenarche: pubic hair เดี่ยวๆ + DHEAS ↑ เล็กน้อย + 17-OHP ปกติ → benign; ติดตาม PCOS ในอนาคต"
+    },
+    "subject": "Pediatrics",
+    "exam_type": "NL",
+    "difficulty": "medium",
+    "exam_source": "opus-generated"
+  }
+]

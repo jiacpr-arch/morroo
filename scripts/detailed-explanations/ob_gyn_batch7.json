@@ -1,0 +1,1088 @@
+[
+  {
+    "id": "c56a0bdd-962a-4cc1-8f9a-f358569cc662",
+    "correct_answer": "D",
+    "explanation": "G2P1 GA 42wk post-term ต้องประเมิน fetal wellbeing ด้วย NST + amniotic fluid volume (AFI) ถ้าทั้งสองปกติให้นัดติดตามใกล้ชิด",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ D — AFI + NST ทั้งสองอย่าง เพราะ post-term pregnancy (≥42wk) ต้องประเมิน fetoplacental function ครบถ้วน",
+      "reason": "Post-term pregnancy (≥42wk) เพิ่มเสี่ยง: oligohydramnios, meconium aspiration, placental insufficiency, fetal distress Biophysical assessment: NST (Non-stress test) = ดู FHR reactivity Amniotic Fluid Index (AFI) = oligohydramnios (AFI <5cm) บ่งชี้ placental insufficiency ถ้า NST reactive + AFI ปกติ = continue surveillance อย่างใกล้ชิด ถ้า abnormal → induction of labor ทันที Options A/B ทำ NST อย่างเดียวไม่เพียงพอ ต้องประเมิน AFI ด้วย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "NST + fetal movement count",
+          "is_correct": false,
+          "explanation": "NST อย่างเดียวไม่เพียงพอ ต้องประเมิน AFI ด้วยใน post-term"
+        },
+        {
+          "label": "B",
+          "text": "NST ถ้าปกติกลับบ้าน ถ้าผิดปกติ induction",
+          "is_correct": false,
+          "explanation": "ไม่มี AFI assessment; ไม่ครบถ้วนสำหรับ post-term surveillance"
+        },
+        {
+          "label": "C",
+          "text": "Induction ทันที 42wk",
+          "is_correct": false,
+          "explanation": "ทำได้แต่ถ้า biophysical profile ปกติ อาจ observe ก่อนได้"
+        },
+        {
+          "label": "D",
+          "text": "AFI + NST ทั้งคู่ ถ้าปกตินัดติดตาม",
+          "is_correct": true,
+          "explanation": "Standard post-term surveillance: NST + AFI พร้อมกัน = complete biophysical assessment"
+        },
+        {
+          "label": "E",
+          "text": "Induction จำเป็น 42wk + prior VD",
+          "is_correct": false,
+          "explanation": "Prior vaginal delivery ไม่เป็น indication เพิ่มเติมสำหรับ immediate induction"
+        }
+      ],
+      "key_takeaway": "Post-term (≥42wk) → NST + AFI พร้อมกัน; ถ้าปกติ → นัดติดตามทุก 2-3 วัน; ถ้าผิดปกติ → Induction"
+    }
+  },
+  {
+    "id": "c612b280-417e-4b78-8810-3d1c38e8c3ac",
+    "correct_answer": "E",
+    "explanation": "เลือดออกทางช่องคลอด + size > date + os closed = Missed abortion (รกและทารกยังอยู่ในมดลูก มดลูกอาจโตกว่าปกติจาก retained products) หรืออาจเป็น molar pregnancy",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ E — Missed abortion เพราะ os closed + bleeding + size > date อาจบ่งชี้ retained products",
+      "reason": "Types of abortion: Threatened = bleeding, os closed, pregnancy viable (size = date) Inevitable = os open, pregnancy cannot be saved Incomplete = os open, products partially expelled Complete = os closed, all products gone, uterus small Missed = fetus dead, os closed, retained products (size อาจ =, >, หรือ < date) Blighted ovum: gestational sac แต่ไม่มี embryo, uterus อาจ > date Size > date + os closed + bleeding = missed abortion (retained products ทำให้ size > หรือ = date) หรืออาจ molar pregnancy (size >> date)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Threatened abortion",
+          "is_correct": false,
+          "explanation": "Threatened = size = date, pregnancy viable; size > date ไม่ตรง"
+        },
+        {
+          "label": "B",
+          "text": "Complete abortion",
+          "is_correct": false,
+          "explanation": "Complete = os closed + uterus SMALL (products หมดแล้ว)"
+        },
+        {
+          "label": "C",
+          "text": "Incomplete abortion",
+          "is_correct": false,
+          "explanation": "Incomplete = os OPEN"
+        },
+        {
+          "label": "D",
+          "text": "Inevitable abortion",
+          "is_correct": false,
+          "explanation": "Inevitable = os OPEN"
+        },
+        {
+          "label": "E",
+          "text": "Missed abortion",
+          "is_correct": true,
+          "explanation": "Os closed + bleeding + size > date = retained dead fetus/products = missed abortion"
+        }
+      ],
+      "key_takeaway": "Os closed + size > date + bleeding = Missed abortion (retained dead products); ต้องทำ US ยืนยัน"
+    }
+  },
+  {
+    "id": "c7152bf4-79c4-4fa7-8361-1eb034ee7bf5",
+    "correct_answer": "A",
+    "explanation": "Postmenopausal bleeding ใน 65 ปี ไม่กิน HRT → First-line investigation = Transvaginal ultrasound (TVUS) เพื่อวัด endometrial thickness และ rule out endometrial pathology",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Transvaginal ultrasound เพราะเป็น first-line, non-invasive investigation สำหรับ postmenopausal bleeding",
+      "reason": "Postmenopausal bleeding (PMB) workup: TVUS (A) = first-line: วัด endometrial thickness (ET) ET <4mm = low risk endometrial cancer → no further biopsy needed ET ≥4mm หรือ abnormal → proceed to biopsy/D&C Endometrial biopsy (B) ทำหลัง TVUS ถ้า ET ≥4mm หรือ inconclusive Fractional curettage (C) = gold standard แต่ invasive มากกว่า Hysteroscopy (D) = direct visualization + targeted biopsy Pap smear (E) สำหรับ cervical cancer screening ไม่ใช่ endometrial",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Transvaginal ultrasound",
+          "is_correct": true,
+          "explanation": "First-line non-invasive: วัด endometrial thickness; ET <4mm = low risk"
+        },
+        {
+          "label": "B",
+          "text": "Endometrial biopsy",
+          "is_correct": false,
+          "explanation": "ทำหลัง TVUS ถ้า ET ≥4mm หรือ inconclusive"
+        },
+        {
+          "label": "C",
+          "text": "Fractional curettage (D&C)",
+          "is_correct": false,
+          "explanation": "Invasive มากกว่า ทำหลัง TVUS ถ้า biopsy inconclusive"
+        },
+        {
+          "label": "D",
+          "text": "Hysteroscopy + biopsy",
+          "is_correct": false,
+          "explanation": "Gold standard แต่ invasive กว่า TVUS ใช้เป็น follow-up"
+        },
+        {
+          "label": "E",
+          "text": "Pap smear + cervical biopsy",
+          "is_correct": false,
+          "explanation": "สำหรับ cervical cancer ไม่ใช่ endometrial pathology"
+        }
+      ],
+      "key_takeaway": "Postmenopausal bleeding → TVUS ก่อน (ET <4mm = reassure); ET ≥4mm → Biopsy/D&C"
+    }
+  },
+  {
+    "id": "c79d6cce-aab1-4862-aa65-498c48bf169d",
+    "correct_answer": "D",
+    "explanation": "หญิง 25 ปี ให้นมบุตรโดยเฉพาะ (exclusive breastfeeding) ควรเลือก DMPA ซึ่งเป็น progestin-only method ปลอดภัยสำหรับ breastfeeding ไม่กระทบปริมาณน้ำนม",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ D — DMPA เพราะเป็น progestin-only contraception ที่ไม่มีผลต่อ milk production และปลอดภัยสำหรับทารก",
+      "reason": "Contraception ใน breastfeeding mothers: Estrogen-containing methods (Combined OCP, patch, vaginal ring) ห้ามใน breastfeeding เพราะ: ลดปริมาณน้ำนม (estrogen ลด prolactin effect), อาจส่งผลต่อทารก Progestin-only methods ปลอดภัย: DMPA (D), Minipill (E), Progestin-only implant, IUD DMPA 150mg IM ทุก 3 เดือน = preferred เพราะ compliance ดี (ไม่ต้องกินทุกวัน) Minipill (E) ก็ปลอดภัยแต่ต้องกินตรงเวลาเคร่งครัด DMPA เป็น preferred ใน breastfeeding 6 สัปดาห์หลังคลอดขึ้นไป",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Combined OCP",
+          "is_correct": false,
+          "explanation": "Estrogen ลด milk production ห้ามใน exclusive breastfeeding"
+        },
+        {
+          "label": "B",
+          "text": "Contraceptive patch",
+          "is_correct": false,
+          "explanation": "Contains estrogen → ห้ามใน breastfeeding"
+        },
+        {
+          "label": "C",
+          "text": "Vaginal ring",
+          "is_correct": false,
+          "explanation": "Contains estrogen → ห้ามใน breastfeeding"
+        },
+        {
+          "label": "D",
+          "text": "DMPA (Depot MPA)",
+          "is_correct": true,
+          "explanation": "Progestin-only ปลอดภัยสำหรับ breastfeeding; convenience ดี (ทุก 3 เดือน)"
+        },
+        {
+          "label": "E",
+          "text": "Minipill (progestin-only)",
+          "is_correct": false,
+          "explanation": "ปลอดภัยแต่ต้องกินตรงเวลาเคร่งครัด; DMPA convenient กว่า"
+        }
+      ],
+      "key_takeaway": "Breastfeeding + contraception → ห้าม estrogen; ใช้ Progestin-only: DMPA preferred (ทุก 3 เดือน, ไม่ลดน้ำนม)"
+    }
+  },
+  {
+    "id": "c7abb617-8180-4ba9-a5b2-5697796fe061",
+    "correct_answer": "D",
+    "explanation": "Anterior vaginal wall bulging ที่ 2/3 ของช่องคลอด = Cystocele + Grade 3 uterine prolapse (ตามเดิมในข้อที่ตอบมาก่อนหน้า)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ D — Cystocele with grade 3 uterine prolapse เพราะ anterior wall bulging = cystocele และ 2/3 = grade 3",
+      "reason": "Pelvic floor disorder assessment: Stress urinary incontinence (ปัสสาวะเล็ดขณะไอ จาม) = hallmark ของ cystocele Anterior vaginal wall bulging = anterior compartment defect (cystocele = กระเพาะปัสสาวะหย่อน) Uterine prolapse grading: Grade 1 = ไม่เกิน 1/2 ช่องคลอด, Grade 2 = ถึง introitus, Grade 3 = โผล่พ้น introitus, Grade 4 = total procidentia 2/3 ของช่องคลอด ≈ grade 3 ใน Thai grading convention Rectocele (E) = posterior wall bulging ไม่ใช่ anterior",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Urethrocele grade 2",
+          "is_correct": false,
+          "explanation": "Urethrocele = ท่อปัสสาวะหย่อน ไม่ใช่ bladder bulge; grade ไม่ถูก"
+        },
+        {
+          "label": "B",
+          "text": "Urethrocele grade 3",
+          "is_correct": false,
+          "explanation": "ยัง urethrocele ซึ่งผิด"
+        },
+        {
+          "label": "C",
+          "text": "Cystocele grade 2",
+          "is_correct": false,
+          "explanation": "Cystocele ถูกแต่ grade 2 = ถึง introitus พอดี ไม่ใช่ 2/3"
+        },
+        {
+          "label": "D",
+          "text": "Cystocele grade 3",
+          "is_correct": true,
+          "explanation": "Anterior bulging = cystocele; 2/3 vagina = grade 3 uterine prolapse"
+        },
+        {
+          "label": "E",
+          "text": "Rectocele grade 2",
+          "is_correct": false,
+          "explanation": "Rectocele = posterior wall; ผู้ป่วยมี stress incontinence = anterior/bladder"
+        }
+      ],
+      "key_takeaway": "Anterior wall bulging + stress incontinence = Cystocele; 2/3 vaginal length = Grade 3 prolapse"
+    }
+  },
+  {
+    "id": "cbe28efc-1a73-4516-a870-4b91606dc417",
+    "correct_answer": "A",
+    "explanation": "G1P0 GA 36wk BP 140/90 + proteinuria 1+ แต่ไม่มีอาการ = Mild preeclampsia การจัดการที่เหมาะสมคือ follow up ใกล้ชิดนอกโรงพยาบาล ไม่ต้อง admit ทันที",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Follow up นอกสถานพยาบาล เพราะ mild preeclampsia ที่ GA 36wk ไม่มี severe features ยัง outpatient management ได้",
+      "reason": "Preeclampsia classification: Mild: BP 140-159/90-109 + proteinuria, ไม่มี severe features Severe features: BP ≥160/110, severe headache, visual disturbance, pulmonary edema, oliguria, thrombocytopenia ผู้ป่วยนี้: BP 140/90 (mild) + proteinuria 1+ + ไม่มีอาการ = mild preeclampsia Management ของ mild preeclampsia: Outpatient monitoring ถ้า GA <37wk และ stable: BP 2×/wk, urine protein, fetal surveillance Antihypertensive ถ้า BP ≥160/110 MgSO4 ถ้า severe features หรือ BP ≥160/110",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Follow up ถัดไป ติดตาม BP นอกสถานพยาบาล",
+          "is_correct": true,
+          "explanation": "Mild preeclampsia stable → outpatient monitoring เหมาะสม"
+        },
+        {
+          "label": "B",
+          "text": "Labetalol IV + MgSO4 เข้ารับการรักษา",
+          "is_correct": false,
+          "explanation": "รุนแรงเกินสำหรับ mild preeclampsia ที่ไม่มี severe features"
+        },
+        {
+          "label": "C",
+          "text": "Induction of labor",
+          "is_correct": false,
+          "explanation": "Induction ถ้า GA ≥37wk หรือ severe preeclampsia; นี้ GA 36wk mild"
+        },
+        {
+          "label": "D",
+          "text": "O2 + acid-base",
+          "is_correct": false,
+          "explanation": "ไม่มี indication สำหรับ mild preeclampsia ที่ stable"
+        },
+        {
+          "label": "E",
+          "text": "Intubation เตรียม emergency delivery",
+          "is_correct": false,
+          "explanation": "รุนแรงมาก ไม่มี indication"
+        }
+      ],
+      "key_takeaway": "Mild preeclampsia (BP 140-159/90-109, ไม่มี severe features) GA 36wk → Outpatient monitoring"
+    }
+  },
+  {
+    "id": "cd78c985-e5a4-4982-84e5-17b0aecf91e2",
+    "correct_answer": "E",
+    "explanation": "Hydatidiform mole หลัง evacuation ต้องติดตาม β-hCG serial เพื่อ detect gestational trophoblastic neoplasia (GTN) ที่อาจเกิดขึ้น",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ E — ติดตาม β-hCG เพราะหลัง molar evacuation ต้องดูว่า hCG ลดลงถึง normal หรือ plateau/rise ซึ่งบ่งชี้ GTN",
+      "reason": "Complete hydatidiform mole follow-up: หลัง evacuation → serial serum β-hCG ทุก 1-2 สัปดาห์จนกว่า hCG = 0 (undetectable) × 3 ครั้งติดต่อกัน จากนั้น monthly × 6-12 เดือน ถ้า hCG plateau (ไม่ลดลง 3 สัปดาห์) หรือ rise = GTN → chemotherapy (methotrexate) ห้ามตั้งครรภ์ระหว่างติดตาม ถ้า hCG ปกติแล้ว = ตั้งครรภ์ได้ในปีต่อไป Hysterectomy (A) ทำในผู้ที่อายุมากและไม่ต้องการบุตรอีก หรือ GTN invasive",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Hysterectomy",
+          "is_correct": false,
+          "explanation": "ทำในผู้หมดบทบาทมารดาหรือ GTN invasive ไม่ใช่ standard first step"
+        },
+        {
+          "label": "B",
+          "text": "Chemotherapy",
+          "is_correct": false,
+          "explanation": "ให้เมื่อ hCG plateau/rise = GTN confirmed; ไม่ใช่ prophylactic"
+        },
+        {
+          "label": "C",
+          "text": "นัดติดตาม (ทั่วไป)",
+          "is_correct": false,
+          "explanation": "ไม่ specific พอ ต้องเน้น serial β-hCG"
+        },
+        {
+          "label": "D",
+          "text": "ดูระยะมะเร็ง",
+          "is_correct": false,
+          "explanation": "Staging ทำเมื่อ GTN confirmed (hCG plateau/rise) ไม่ใช่ทันที"
+        },
+        {
+          "label": "E",
+          "text": "ติดตาม hCG",
+          "is_correct": true,
+          "explanation": "Serial β-hCG หลัง molar evacuation คือ standard of care เพื่อ detect GTN"
+        }
+      ],
+      "key_takeaway": "Hydatidiform mole หลัง evacuation → Serial β-hCG จนเป็น 0; hCG plateau/rise = GTN → Chemotherapy"
+    }
+  },
+  {
+    "id": "cf3401a6-6b65-4b5d-9663-22fb02093ab4",
+    "correct_answer": "B",
+    "explanation": "หญิง 28 ปี GA 12wk เลือดออก + ปวดท้องน้อย ต้องการยุติการตั้งครรภ์ → Vacuum aspiration เป็นวิธีที่เหมาะสมและปลอดภัยที่สุดสำหรับ 12wk",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B — Vacuum aspiration เพราะเป็น safe, effective surgical method สำหรับ first trimester termination ที่ GA ≤12-14wk",
+      "reason": "Methods ของ first trimester termination: Medical: Misoprostol อย่างเดียว หรือ Mifepristone + Misoprostol ใช้ได้ถึง GA 10-12wk Surgical (A, B): Vacuum aspiration (MVA/EVA): ดีที่สุดสำหรับ 6-12wk, เร็ว, ปลอดภัย, effective ≥95% Surgical evacuation (D&C): ใช้ในกรณีพิเศษ GA 12wk + เลือดออกแสดงว่า incomplete abortion หรือ abortion in progress Vacuum aspiration เหมาะสมมากที่สุด: invasive น้อย, ผลข้างเคียงน้อย, effective",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Misoprostol = medical method",
+          "is_correct": false,
+          "explanation": "Medical method ใช้ได้ แต่ surgical ดีกว่าที่ GA 12wk + กำลัง bleed"
+        },
+        {
+          "label": "B",
+          "text": "Vacuum aspiration",
+          "is_correct": true,
+          "explanation": "Safe, effective surgical method สำหรับ first trimester ≤12-14wk"
+        },
+        {
+          "label": "C",
+          "text": "Surgical evacuation (major)",
+          "is_correct": false,
+          "explanation": "ใช้ใน complicated case; vacuum aspiration เพียงพอสำหรับ 12wk"
+        },
+        {
+          "label": "D",
+          "text": "Expectant management",
+          "is_correct": false,
+          "explanation": "ไม่เหมาะ ผู้ป่วยต้องการยุติการตั้งครรภ์"
+        },
+        {
+          "label": "E",
+          "text": "Methotrexate",
+          "is_correct": false,
+          "explanation": "สำหรับ ectopic pregnancy หรือ GTN ไม่ใช่ termination ของ IUP"
+        }
+      ],
+      "key_takeaway": "First trimester termination GA 12wk → Vacuum aspiration (MVA/EVA) เป็น safe, effective choice"
+    }
+  },
+  {
+    "id": "d0a1c4dc-57ab-4869-9f2c-e91c5de2969a",
+    "correct_answer": "A",
+    "explanation": "Yellow, frothy vaginal discharge + cervicitis = Trichomoniasis ซึ่งมี pathognomonic signs: frothy yellow-green discharge, strawberry cervix",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Trichomoniasis เพราะ frothy yellow discharge + inflamed cervix (strawberry cervix) เป็น hallmark",
+      "reason": "Vaginal discharge differential: Trichomoniasis (T. vaginalis): Frothy yellow-green discharge, offensive odor, strawberry cervix (punctate hemorrhages), pruritus, dysuria Candidal vaginitis: Curd-like white discharge, pruritus รุนแรง, no odor BV: Thin grey/white discharge, fishy odor, no cervicitis Gonococcal/Chlamydial cervicitis: Mucopurulent discharge, cervical friability (ไม่ frothy) Frothy discharge เป็น pathognomonic สำหรับ Trichomoniasis Diagnosis: Wet mount = motile trichomonads Treatment: Metronidazole 500mg BID × 7 days (or 2g single dose)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Trichomoniasis",
+          "is_correct": true,
+          "explanation": "Frothy yellow discharge + cervicitis = pathognomonic for T. vaginalis"
+        },
+        {
+          "label": "B",
+          "text": "Candidiasis",
+          "is_correct": false,
+          "explanation": "Curd-like white discharge, ไม่ frothy, ไม่มี cervicitis"
+        },
+        {
+          "label": "C",
+          "text": "Bacterial vaginosis",
+          "is_correct": false,
+          "explanation": "Thin grey discharge, fishy odor, ไม่มี frothy, ไม่มี cervicitis"
+        },
+        {
+          "label": "D",
+          "text": "Chlamydial cervicitis",
+          "is_correct": false,
+          "explanation": "Mucopurulent cervical discharge ไม่ใช่ frothy vaginal discharge"
+        },
+        {
+          "label": "E",
+          "text": "Gonococcal cervicitis",
+          "is_correct": false,
+          "explanation": "Purulent cervical discharge ไม่ใช่ frothy vaginal discharge"
+        }
+      ],
+      "key_takeaway": "Frothy yellow-green vaginal discharge + cervicitis = Trichomoniasis → Metronidazole"
+    }
+  },
+  {
+    "id": "d31f273c-2667-42fa-9863-ef84356981f5",
+    "correct_answer": "A",
+    "explanation": "30yo หญิง vomiting, diarrhea, RLQ pain LMP 2wk ที่แล้ว = appendicitis ซึ่งพบได้ทุกวัย และ GI symptoms (nausea, vomiting) เป็นส่วนหนึ่งของ appendicitis presentation",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Appendicitis เพราะ RLQ pain + fever + GI symptoms เป็น classic appendicitis presentation",
+      "reason": "Appendicitis presentation: Migration pain จาก periumbilical → RLQ (McBurney's point) Nausea, vomiting (GI symptoms พบใน appendicitis บ่อย) Fever, leukocytosis Rebound tenderness, Rovsing's sign LMP 2wk = ยังอยู่ใน early follicular phase ไม่น่าเป็น ectopic TOA (B) มักมีประวัติ STI + cervical excitation + bilateral adnexal tenderness Mittelschmerz (C) = mid-cycle pain ใกล้ ovulation ไม่มี GI symptoms",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Appendicitis",
+          "is_correct": true,
+          "explanation": "RLQ pain + GI symptoms (N/V) + tender RLQ = classic appendicitis"
+        },
+        {
+          "label": "B",
+          "text": "Tubo-ovarian abscess",
+          "is_correct": false,
+          "explanation": "ต้องมี STI risk + bilateral adnexal mass + cervical excitation"
+        },
+        {
+          "label": "C",
+          "text": "Mittelschmerz",
+          "is_correct": false,
+          "explanation": "Mid-cycle ovulation pain = mild, self-limited; ไม่มี N/V; LMP 2wk ไม่ตรงกับ ovulation"
+        },
+        {
+          "label": "D",
+          "text": "Colitis",
+          "is_correct": false,
+          "explanation": "ปวด diffuse หรือ LLQ ไม่ใช่ RLQ localized"
+        },
+        {
+          "label": "E",
+          "text": "Ileitis",
+          "is_correct": false,
+          "explanation": "อาจ RLQ แต่ GI symptoms มากกว่า และ chronic course"
+        }
+      ],
+      "key_takeaway": "RLQ pain + N/V + fever ในหญิงวัยเจริญพันธุ์ = Appendicitis จนกว่าจะพิสูจน์อย่างอื่น"
+    }
+  },
+  {
+    "id": "d55fc700-7b8e-4700-aedb-50b8f6687b44",
+    "correct_answer": "A",
+    "explanation": "แม่อายุ 40 ปี ทราบผล prenatal diagnosis ว่าทารก GA 22wk เป็น Down syndrome (trisomy 21 ชาย) → แนะนำว่าเป็นทารกเพศชายและมีความเสี่ยงต่อความผิดปกติทางพัฒนาการ",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — บอกแม่ว่าเป็นทารกเพศชายและมีความเสี่ยงในการเกิดความผิดปกติ เพราะผล chromosome study ต้องแจ้งให้ครบถ้วน",
+      "reason": "Chromosome 47+XY trisomy 21 = Down syndrome ในทารกเพศชาย Genetic counseling หลังผล prenatal diagnosis: แจ้งผล chromosome อย่างตรงไปตรงมา รวมถึง sex (XY = ชาย) และ trisomy 21 อธิบาย clinical features ของ Down syndrome (intellectual disability, cardiac defects, etc.) ผู้ปกครองมีสิทธิ์เลือก: ดำเนินการตั้งครรภ์ต่อ หรือ ยุติการตั้งครรภ์ (termination) ตาม legal framework การบอกเฉพาะ risk โดยไม่แจ้งเพศไม่ครบถ้วน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "บอกแม่ว่าเป็นทารกเพศชาย + มีความเสี่ยงความผิดปกติ",
+          "is_correct": true,
+          "explanation": "แจ้งผลครบ: เพศชาย (XY) + Down syndrome (trisomy 21) เพื่อ informed decision"
+        },
+        {
+          "label": "B",
+          "text": "ความผิดปกติ (ไม่สมบูรณ์)",
+          "is_correct": false,
+          "explanation": "ข้อมูลไม่ครบถ้วน"
+        },
+        {
+          "label": "C",
+          "text": "บอกว่าผิดปกติ + วางแผนรักษา",
+          "is_correct": false,
+          "explanation": "ดีกว่า B แต่ไม่ครบ ควรแจ้งเพศด้วย"
+        },
+        {
+          "label": "D",
+          "text": "U/S หาความผิดปกติ",
+          "is_correct": false,
+          "explanation": "ทำไปแล้ว chromosome study เป็น diagnostic ที่ชัดเจนกว่า"
+        }
+      ],
+      "key_takeaway": "Prenatal chromosome → แจ้ง: เพศ + diagnosis ครบ + counseling เรื่องตัวเลือก (continue/terminate)"
+    }
+  },
+  {
+    "id": "d658c724-79d5-4067-ab65-9f00174edb75",
+    "correct_answer": "B",
+    "explanation": "แต่งงาน 2 ปีไม่มีบุตร (infertility) + bilateral adnexal masses with fixed = Endometrioma (chocolate cyst) ซึ่งสัมพันธ์กับ endometriosis ที่ทำให้ infertility",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B — Endometrioma เพราะ bilateral fixed adnexal masses ใน infertile woman = endometriosis with chocolate cysts",
+      "reason": "Endometrioma (chocolate cyst): Bilateral ovarian cysts ใน premenopausal women Chocolate color จาก old hemorrhage, ectopic endometrial tissue ในรังไข่ ทำให้: chronic pelvic pain, dysmenorrhea, dyspareunia, infertility Fixed adnexal masses เพราะ endometriosis ทำให้ adhesions กับ peritoneum/uterus Bilateral = classic สำหรับ endometriosis Diagnosis: U/S = homogeneous ground-glass echotexture, CA-125 สูง Leiomyoma (A) = uterine myoma ไม่ใช่ adnexal mass Tubo-ovarian complex (D) = PID related",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Leiomyoma",
+          "is_correct": false,
+          "explanation": "Uterine fibroid ไม่ใช่ adnexal mass; infertility ได้แต่ไม่ bilateral adnexal"
+        },
+        {
+          "label": "B",
+          "text": "Endometrioma",
+          "is_correct": true,
+          "explanation": "Bilateral fixed adnexal masses + infertility = endometriosis chocolate cysts"
+        },
+        {
+          "label": "C",
+          "text": "Ovarian fibromas",
+          "is_correct": false,
+          "explanation": "Solid, usually unilateral, benign; มักไม่ทำให้ infertility"
+        },
+        {
+          "label": "D",
+          "text": "Tubo-ovarian complex",
+          "is_correct": false,
+          "explanation": "ต้องมีประวัติ PID + fever + CMT"
+        },
+        {
+          "label": "E",
+          "text": "Physiologic ovarian cysts",
+          "is_correct": false,
+          "explanation": "ไม่ fixed, ไม่ bilateral permanent, ไม่ทำให้ infertility"
+        }
+      ],
+      "key_takeaway": "Bilateral fixed adnexal masses + infertility + dysmenorrhea = Endometrioma (Endometriosis)"
+    }
+  },
+  {
+    "id": "db5694b2-ef13-4a81-95d5-906726f52e8e",
+    "correct_answer": "B",
+    "explanation": "Second stage of labor, baby descending slowly = Prolonged descent ซึ่งหมายถึง rate ของ descent ช้ากว่าปกติแต่ยังมี progress",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B — Prolonged descent เพราะ head ยังลงอยู่แต่ช้า ≠ arrest (หยุดสนิท)",
+      "reason": "Second stage abnormalities: Normal descent: >1 cm/hr ใน nullipara, >2 cm/hr ใน multipara Prolonged descent (B): ช้ากว่าปกติแต่ยังมี progress Arrest of descent (C): ไม่มี progress เลยใน 1+ ชั่วโมง Deep transverse arrest (D): head ค้างที่ transverse position CPD (E): structural mismatch ระหว่าง head และ pelvis กรณีนี้: slowly descending = ยังมี progress = prolonged (not arrest)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Normal descent",
+          "is_correct": false,
+          "explanation": "Normal rate ≥1cm/hr nullipara; slow = ไม่ปกติแต่ยัง progress"
+        },
+        {
+          "label": "B",
+          "text": "Prolonged descent",
+          "is_correct": true,
+          "explanation": "Head ลงช้ากว่าปกติแต่ยัง progress = prolonged ≠ arrest"
+        },
+        {
+          "label": "C",
+          "text": "Arrest of descent",
+          "is_correct": false,
+          "explanation": "Arrest = ไม่มี progress เลย ≥1hr; กรณีนี้ยัง descending"
+        },
+        {
+          "label": "D",
+          "text": "Deep transverse arrest",
+          "is_correct": false,
+          "explanation": "Specific diagnosis: head ค้างที่ transverse position ไม่ลงต่อ"
+        },
+        {
+          "label": "E",
+          "text": "CPD",
+          "is_correct": false,
+          "explanation": "CPD = structural; ต้องการ specific findings/imaging"
+        }
+      ],
+      "key_takeaway": "Slowly descending head (second stage) = Prolonged descent; ไม่ descent เลย = Arrest of descent"
+    }
+  },
+  {
+    "id": "dbb81269-028e-4dbf-bbba-5be098f8ad88",
+    "correct_answer": "C",
+    "explanation": "เด็กหญิง 14 ปี ถูกข่มขืน 2 วันที่แล้ว LMP 2 สัปดาห์ที่แล้ว = midcycle ช่วง ovulation ต้องการ EC → Levonorgestrel 0.75mg × 2 tablets (ภายใน 72hr)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ C — Levonorgestrel 0.75mg × 2 เพราะเป็น EC ที่ปลอดภัยและมีประสิทธิภาพ ภายใน 72 ชั่วโมง",
+      "reason": "LMP 2 สัปดาห์ที่แล้ว + cycle 28 วัน = อยู่ช่วง Day 14 = ovulation time → highest risk of pregnancy from rape 2 days ago = ยังอยู่ใน 72hr window EC ที่เหมาะสม: Levonorgestrel-only: 1.5mg single dose หรือ 0.75mg × 2 doses (C) ห่างกัน 12hr ทั้งสองวิธีมีประสิทธิภาพเท่ากัน ไม่มี contraindication ใน 14 ปี DMPA (B) ไม่ใช่ EC; เป็น regular contraception Reassure (A) ไม่เหมาะสมในช่วง high-risk ovulation",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Reassure",
+          "is_correct": false,
+          "explanation": "ไม่เหมาะสม midcycle = high risk ต้องการ EC"
+        },
+        {
+          "label": "B",
+          "text": "DMPA 150mg IM",
+          "is_correct": false,
+          "explanation": "DMPA ไม่ใช่ EC; เป็น regular contraception; ไม่ prevent ถ้า ovulation เกิดแล้ว"
+        },
+        {
+          "label": "C",
+          "text": "Levonorgestrel 0.75mg × 2 tablets",
+          "is_correct": true,
+          "explanation": "EC standard regimen ภายใน 72hr ปลอดภัยแม้แต่ในเด็ก 14 ปี"
+        },
+        {
+          "label": "D",
+          "text": "Ethyl estradiol 20mcg × 2 tablets",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ EC regimen ที่แนะนำ; dose ไม่เพียงพอ"
+        },
+        {
+          "label": "E",
+          "text": "MPA 5mg × repeat",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ standard EC regimen; MPA ไม่มีหลักฐานสนับสนุน EC"
+        }
+      ],
+      "key_takeaway": "Rape + midcycle + ภายใน 72hr → Levonorgestrel EC ทันที (0.75mg × 2 หรือ 1.5mg single)"
+    }
+  },
+  {
+    "id": "dbf4be3c-fbbc-4c59-b0e4-449c0fb91f47",
+    "correct_answer": "A",
+    "explanation": "เด็ก 14 ปี ปวดท้อง + bluish external genitalia + cystic mass bulging ที่ external genitalia = Imperforate hymen with hematocolpos → Cruciate incision",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Cruciate incision of hymen เพราะ imperforate hymen ทำให้ menstrual blood สะสมและเป็น hematocolpos",
+      "reason": "Imperforate hymen: เยื่อพรหมจรรย์ปิดสนิท ไม่มีช่องเปิด เมื่อเริ่มมีประจำเดือน เลือดไม่ออกจากร่างกายได้ → สะสมใน vagina (hematocolpos) → cervix (hematocervix) → uterus (hematometra) อาการ: cyclic pelvic pain (ทุกเดือน), ปวดท้องเฉียบพลัน, ไม่มีประจำเดือน (amenorrhea) Signs: bluish bulging membrane ที่ introitus (เลือดสีเข้มใต้เยื่อบาง), suprapubic mass Treatment: cruciate incision ของ hymen เพื่อ drain หลีกเลี่ยง excision (surgical removal) เพราะอาจทำให้ scar",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cruciate incision of hymen",
+          "is_correct": true,
+          "explanation": "Imperforate hymen → cruciate incision เพื่อ drain hematocolpos; ง่าย effective"
+        },
+        {
+          "label": "B",
+          "text": "Mass excision",
+          "is_correct": false,
+          "explanation": "ไม่เหมาะสม จะตัดเนื้อเยื่อปกติออก"
+        },
+        {
+          "label": "C",
+          "text": "Kegel exercise",
+          "is_correct": false,
+          "explanation": "ไม่เกี่ยวกับ imperforate hymen"
+        },
+        {
+          "label": "D",
+          "text": "Observation + pain management",
+          "is_correct": false,
+          "explanation": "ไม่แก้ไข obstruction; หลีกเลี่ยง delay เพราะ hematocolpos เพิ่มขึ้น"
+        },
+        {
+          "label": "E",
+          "text": "Abdominal drainage",
+          "is_correct": false,
+          "explanation": "ไม่จำเป็น cruciate incision ที่ vaginal introitus เพียงพอ"
+        }
+      ],
+      "key_takeaway": "Bluish bulging hymen + cyclic pain + hematocolpos = Imperforate hymen → Cruciate incision"
+    }
+  },
+  {
+    "id": "de4213e7-13c6-4cc6-a20e-1227110a867c",
+    "correct_answer": "A",
+    "explanation": "หญิง 20 ปี เลือดออกทางช่องคลอด + hypotension + tachycardia + pale = hypovolemic shock → IV fluid ด้วย Normal Saline (NSS) เป็น first-line",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — NSS (Normal Saline) เพราะ hypovolemic shock ต้องการ isotonic crystalloid resuscitation",
+      "reason": "Fluid resuscitation ใน hemorrhagic shock: Isotonic crystalloid = first-line: Normal Saline (0.9% NaCl) หรือ Lactated Ringer's เหตุผลที่ NSS ดีที่สุด: Isotonic, expands intravascular volume, ปลอดภัย, ราคาถูก NSS/2 + NaHCO3 (B): hypotonic ไม่เหมาะสม 5%DN/S (C): Dextrose ไม่ต้องการใน acute shock (น้ำตาลสูง, ไม่ช่วย expand volume) 5%DN/2 (D): เช่นเดียวกัน HES (E): Colloid มีผลข้างเคียงมากกว่า ไม่ใช่ first-line",
+      "choices": [
+        {
+          "label": "A",
+          "text": "NSS (Normal Saline)",
+          "is_correct": true,
+          "explanation": "Isotonic crystalloid first-line สำหรับ hypovolemic shock"
+        },
+        {
+          "label": "B",
+          "text": "NSS/2 + NaHCO3",
+          "is_correct": false,
+          "explanation": "Hypotonic ไม่เหมาะสำหรับ volume resuscitation"
+        },
+        {
+          "label": "C",
+          "text": "5%D/NSS",
+          "is_correct": false,
+          "explanation": "Dextrose ไม่จำเป็นใน acute hemorrhage; อาจทำให้ hyperglycemia"
+        },
+        {
+          "label": "D",
+          "text": "5%D/NSS half",
+          "is_correct": false,
+          "explanation": "Hypotonic + dextrose = ไม่เหมาะสม"
+        },
+        {
+          "label": "E",
+          "text": "Hydroxyethyl starch (HES)",
+          "is_correct": false,
+          "explanation": "Colloid มีผลข้างเคียง (coagulopathy, renal) ไม่ใช่ first-line"
+        }
+      ],
+      "key_takeaway": "Hypovolemic shock ใน OB/GYN → IV NSS (isotonic crystalloid) เป็น first-line fluid resuscitation"
+    }
+  },
+  {
+    "id": "dfc39b53-0587-45f9-9322-9b4fd3c98105",
+    "correct_answer": "A",
+    "explanation": "G2P1 GA 40wk fully dilated 1 ชั่วโมง แต่ไม่คลอด (arrest of second stage) EFW 3500g + แรกคลอด 3000g + presenting part ไม่ก้าวหน้า = ต้อง Cesarean section",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Cesarean section เพราะ second stage arrest ใน G2P1 + EFW 3500g ที่ fully dilated นาน 1hr ไม่ก้าวหน้า",
+      "reason": "Second stage arrest: Nullipara: ≥3hr ไม่ก้าวหน้า Multipara: ≥2hr ไม่ก้าวหน้า ในกรณีนี้ fully dilated 1hr + UC ดี แต่ presenting part ไม่ลง + EFW 3500g ใน G2P1 = suspected CPD ต้อง C/S Vacuum (B) หรือ Forceps (C) ใช้เมื่อ head อยู่ที่ low station (+2 ขึ้นไป) ถ้า head ยังสูง = ห้าม operative vaginal delivery Oxytocin drip (D) ใช้เมื่อ uterine contraction ไม่ดี แต่นี้ UC interval 2min duration 50sec = ดีแล้ว",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cesarean section",
+          "is_correct": true,
+          "explanation": "Second stage arrest + EFW 3500g + UC ดีแล้ว = CPD → C/S"
+        },
+        {
+          "label": "B",
+          "text": "Vacuum extraction",
+          "is_correct": false,
+          "explanation": "ต้องการ station +2 ขึ้นไป ถ้า head ยังสูง = ห้าม"
+        },
+        {
+          "label": "C",
+          "text": "Forceps extraction",
+          "is_correct": false,
+          "explanation": "เช่นเดียวกับ vacuum; ต้องการ station ต่ำ"
+        },
+        {
+          "label": "D",
+          "text": "Oxytocin drip",
+          "is_correct": false,
+          "explanation": "UC interval 2min duration 50sec = adequate contraction แล้ว"
+        },
+        {
+          "label": "E",
+          "text": "Observe 1 hr อีก",
+          "is_correct": false,
+          "explanation": "Second stage arrest แล้ว; รอต่อทำให้ fetal distress/maternal exhaustion"
+        }
+      ],
+      "key_takeaway": "Second stage arrest + adequate UC + EFW ใหญ่ = CPD → Cesarean section"
+    }
+  },
+  {
+    "id": "e5a055d9-6694-4838-af6c-012a310710c1",
+    "correct_answer": "B",
+    "explanation": "เด็ก curd-like lesion ในช่องคลอด = Candidal vaginitis → รักษาด้วย Clotrimazole (topical azole) เป็น first-line สำหรับ vaginal candidiasis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B — Clotrimazole เพราะ curd-like vaginal discharge = candidal vaginitis ในเด็ก topical antifungal เป็น first-line",
+      "reason": "Curd-like (cottage cheese) vaginal discharge = pathognomonic สำหรับ Candidal vaginitis Treatment: Topical azoles (first-line): Clotrimazole, Miconazole, Terconazole ใส่ vaginal cream/suppository × 3-7 วัน Oral fluconazole 150mg single dose ใช้ใน adults Nystatin topical: ใช้ได้ แต่ less effective กว่า azoles Ketoconazole oral: systemic, SE มาก, ไม่ใช่ first-line ในเด็ก Clotrimazole (B) ตรงกับ first-line recommendation สำหรับ pediatric vaginal candidiasis",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ketoconazole",
+          "is_correct": false,
+          "explanation": "Systemic antifungal มี hepatotoxicity; ไม่ใช่ first-line สำหรับ vaginal candida"
+        },
+        {
+          "label": "B",
+          "text": "Clotrimazole",
+          "is_correct": true,
+          "explanation": "Topical azole first-line สำหรับ vaginal candidiasis ปลอดภัยในเด็ก"
+        },
+        {
+          "label": "C",
+          "text": "Miconazole",
+          "is_correct": false,
+          "explanation": "ใช้ได้แต่ Clotrimazole เป็นคำตอบที่ถูกต้องในข้อสอบ"
+        },
+        {
+          "label": "D",
+          "text": "Nystatin",
+          "is_correct": false,
+          "explanation": "ใช้ได้แต่ azoles effective กว่า; Nystatin ใช้สำหรับ oral thrush มากกว่า"
+        },
+        {
+          "label": "E",
+          "text": "Fluconazole",
+          "is_correct": false,
+          "explanation": "Oral; ใช้ใน adults ไม่ใช่ first-line ในเด็กเล็ก"
+        }
+      ],
+      "key_takeaway": "Curd-like vaginal discharge (candida) → Clotrimazole topical (first-line antifungal)"
+    }
+  },
+  {
+    "id": "e61f3c32-d42b-4bd8-b3b6-d30b13aebba1",
+    "correct_answer": "A",
+    "explanation": "G5P4 ประวัติ C/S + VBAC + vaginal bleeding ไม่มีอาการเจ็บ = Placenta previa (painless antepartum bleeding) ในครรภ์ที่มี risk factors หลายอย่าง",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Placenta previa เพราะ painless vaginal bleeding ใน G5P4 + prior C/S = classic risk factors",
+      "reason": "Placenta previa risk factors: Grand multiparity (G5P4 = grand multipara) Prior uterine surgery (C/S) ทำให้ lower uterine segment ถูก damage Multiple previous pregnancies = endometrial damage Painless bright red vaginal bleeding = classic placenta previa presentation Ultrasound required to confirm; ห้ามทำ digital vaginal exam! ต้อง sterile speculum exam หรือ US เท่านั้น",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Placenta previa",
+          "is_correct": true,
+          "explanation": "Painless bleeding + grand multipara + prior C/S = classic placenta previa"
+        },
+        {
+          "label": "B",
+          "text": "Ruptured uterus",
+          "is_correct": false,
+          "explanation": "Severe pain + fetal distress + sudden loss of station"
+        },
+        {
+          "label": "C",
+          "text": "Ruptured vasa previa",
+          "is_correct": false,
+          "explanation": "Fetal blood หลัง ROM ไม่ใช่ antepartum painless bleeding"
+        },
+        {
+          "label": "D",
+          "text": "Abruption placenta",
+          "is_correct": false,
+          "explanation": "Painful bleeding + uterine tenderness"
+        },
+        {
+          "label": "E",
+          "text": "Latent phase of labor",
+          "is_correct": false,
+          "explanation": "Bloody show เล็กน้อย ไม่ใช่ significant bleeding"
+        }
+      ],
+      "key_takeaway": "Grand multipara + prior C/S + painless vaginal bleeding = Placenta previa → US confirm; ห้าม digital exam"
+    }
+  },
+  {
+    "id": "e8b1200c-4889-4f6e-92c3-2721ac385527",
+    "correct_answer": "A",
+    "explanation": "G1 GA 20wk U/S พบ anencephaly → ตรวจ maternal AFP เพื่อยืนยัน NTD (neural tube defect) ก่อนการ counseling หรือเพื่อ confirm diagnosis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — ตรวจ maternal AFP เพราะ anencephaly ทำให้ maternal serum AFP สูงมาก เป็นการ confirm NTD",
+      "reason": "Anencephaly เป็น neural tube defect ที่ไม่สามารถ survive ได้หลังคลอด Maternal serum AFP (MSAFP): สูงมากใน NTD เช่น anencephaly, spina bifida ตรวจ MSAFP เพื่อ: confirm diagnosis จาก US + เป็นหลักฐานสนับสนุน counseling เรื่อง pregnancy management Triple test (B): AFP + hCG + estriol สำหรับ Down syndrome screening ทำในไตรมาส 2 แต่ anencephaly ชัดเจนจาก US แล้ว MRI (C): ไม่จำเป็นถ้า US ยืนยันแล้ว Termination (E): ควรพิจารณาแต่ต้องตรวจยืนยันก่อน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Maternal AFP",
+          "is_correct": true,
+          "explanation": "MSAFP สูงมากใน anencephaly/NTD; ยืนยัน diagnosis + inform counseling"
+        },
+        {
+          "label": "B",
+          "text": "Triple test",
+          "is_correct": false,
+          "explanation": "สำหรับ Down syndrome screening ไม่ใช่ primary investigation สำหรับ anencephaly"
+        },
+        {
+          "label": "C",
+          "text": "MRI",
+          "is_correct": false,
+          "explanation": "U/S ยืนยัน anencephaly ได้ MRI ไม่จำเป็น"
+        },
+        {
+          "label": "D",
+          "text": "Close U/S follow up",
+          "is_correct": false,
+          "explanation": "Anencephaly = lethal; close follow up ไม่ใช่ appropriate action หลัก"
+        },
+        {
+          "label": "E",
+          "text": "ยุติการตั้งครรภ์",
+          "is_correct": false,
+          "explanation": "ควรพิจารณาแต่ต้องยืนยัน diagnosis อย่างสมบูรณ์ก่อน และเป็น patient's choice"
+        }
+      ],
+      "key_takeaway": "Anencephaly บน U/S → Maternal AFP เพื่อยืนยัน NTD; ปรึกษาหารือเรื่อง pregnancy management"
+    }
+  },
+  {
+    "id": "edeef495-d54f-445d-ae99-d48cb0689108",
+    "correct_answer": "B",
+    "explanation": "หญิง 42 ปี เลือดออกกะปริบกะปรอยระหว่างรอบเดือน = perimenopausal anovulatory DUB → ให้ Progestin pills เพื่อ control endometrium",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B — Progestin pills เพราะ anovulatory DUB ใน 42 ปี เกิดจาก estrogen dominance without progesterone → progestin ควบคุม",
+      "reason": "Perimenopausal DUB: Anovulatory cycles ทำให้ unopposed estrogen → endometrial hyperplasia → irregular bleeding Progestin (B): ควบคุม endometrium ป้องกัน hyperplasia ลด bleeding อย่างมีประสิทธิภาพ Combined OCP (A): ทำได้แต่ contraindicated ถ้ามี CV risk (42yo อาจมี HTN, smoking) Progestin-only safer ใน perimenopausal Hormonal IUD (D): ปล่อย levonorgestrel local = effective แต่ invasive กว่า Fractional curettage (C): ทำเพื่อ R/O endometrial cancer ถ้า progestin ไม่ตอบสนอง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Combined pills",
+          "is_correct": false,
+          "explanation": "ทำได้แต่ progestin-only safer ใน perimenopausal 42yo ที่อาจมี CV risks"
+        },
+        {
+          "label": "B",
+          "text": "Progestin pills",
+          "is_correct": true,
+          "explanation": "Anovulatory DUB = unopposed estrogen → Progestin ควบคุม endometrium"
+        },
+        {
+          "label": "C",
+          "text": "Fractional curettage",
+          "is_correct": false,
+          "explanation": "ทำเพื่อ R/O CA endometrium ถ้า medical treatment ล้มเหลว"
+        },
+        {
+          "label": "D",
+          "text": "Hormonal IUD",
+          "is_correct": false,
+          "explanation": "Effective แต่ invasive กว่า; ใช้เมื่อ oral treatment ไม่เพียงพอ"
+        },
+        {
+          "label": "E",
+          "text": "Endometrial ablation",
+          "is_correct": false,
+          "explanation": "Surgical; ใช้เมื่อ medical treatment ล้มเหลวทั้งหมด"
+        }
+      ],
+      "key_takeaway": "Perimenopausal DUB (anovulatory) → Progestin (first-line) เพื่อ oppose unopposed estrogen"
+    }
+  },
+  {
+    "id": "f2c6256f-0182-45fa-ad2a-5f6fd0d26da3",
+    "correct_answer": "D",
+    "explanation": "ผู้ป่วยถูกข่มขืน มี ecchymosis + recent hymen tear + cervical discharge → ส่งตรวจ Acid phosphatase เพื่อยืนยันว่ามี semen (from prostate secretion)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ D — Acid phosphatase เพราะเป็น marker ของ seminal fluid ใช้ยืนยันว่ามีการ sexual intercourse เกิดขึ้น",
+      "reason": "Forensic examination ใน rape cases: Acid phosphatase (prostatic): หลั่งมากใน seminal fluid (prostatic secretion), ค่าสูงใน vaginal secretion หลัง intercourse ยืนยัน semen presence แม้ไม่มี sperm (vasectomized attacker) ไม่ depend on sperm motility DNA profiling (E): identify attacker แต่ใช้ยืนยัน identity ไม่ใช่ confirm intercourse Pap smear (A): cervical cancer screening KOH (B): yeast identification Tzanck smear (C): herpes diagnosis",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Pap smear",
+          "is_correct": false,
+          "explanation": "Cervical cancer screening ไม่ใช่ forensic evidence"
+        },
+        {
+          "label": "B",
+          "text": "KOH",
+          "is_correct": false,
+          "explanation": "สำหรับ fungal infection ไม่ใช่ forensic evidence"
+        },
+        {
+          "label": "C",
+          "text": "Tzanck smear",
+          "is_correct": false,
+          "explanation": "สำหรับ herpetic lesion ไม่ใช่ forensic evidence สำหรับ rape"
+        },
+        {
+          "label": "D",
+          "text": "Acid phosphatase",
+          "is_correct": true,
+          "explanation": "Marker of seminal fluid → ยืนยัน semen present = evidence of sexual intercourse"
+        },
+        {
+          "label": "E",
+          "text": "DNA profiling",
+          "is_correct": false,
+          "explanation": "Identify attacker ไม่ใช่ confirm intercourse occurred"
+        }
+      ],
+      "key_takeaway": "Suspected rape → Acid phosphatase ยืนยัน semen present; DNA profiling identify attacker"
+    }
+  },
+  {
+    "id": "f3cbbc94-a7c1-4890-9997-bee1f7c1ee2a",
+    "correct_answer": "A",
+    "explanation": "หญิง 24 ปี แผลตื้นกลุ่มบนพื้นแดง เจ็บและคัน 2 วัน = Herpetic vulvovaginitis (HSV) แต่คำตอบที่ให้คือ Dark field microscopy ซึ่งใช้สำหรับ syphilis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องตามข้อสอบคือ A — Dark field microscopy แม้ว่าในทางคลินิก painful clustered ulcers น่าจะ HSV มากกว่า syphilis",
+      "reason": "Genital ulcer differential: HSV: Painful, clustered shallow ulcers, vesicular → ตรวจ Tzanck smear (multinucleated giant cells) หรือ PCR Syphilis: Painless indurated ulcer (chancre), solitary → ตรวจ Dark field microscopy (T. pallidum), RPR/VDRL Chancroid: Painful ragged ulcers → culture ข้อสอบนี้ตอบ A = Dark field microscopy ซึ่ง classic สำหรับ primary syphilis หมายเหตุ: กรณีนี้มีอาการเจ็บ คัน clustered ulcers = น่าจะ HSV มากกว่า แต่คำตอบที่ให้ตามข้อสอบคือ Dark field microscopy",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Dark field microscopy",
+          "is_correct": true,
+          "explanation": "ตามข้อสอบ; Classic สำหรับ syphilis (Treponema pallidum)"
+        },
+        {
+          "label": "B",
+          "text": "Gram stain",
+          "is_correct": false,
+          "explanation": "สำหรับ bacterial infections (gonorrhea) ไม่ใช่ viral/spirochetal ulcers"
+        },
+        {
+          "label": "C",
+          "text": "KOH",
+          "is_correct": false,
+          "explanation": "สำหรับ fungal infections ไม่ใช่ genital ulcers"
+        },
+        {
+          "label": "D",
+          "text": "Wright's stain",
+          "is_correct": false,
+          "explanation": "สำหรับ blood smear ไม่ใช่ STI diagnosis"
+        },
+        {
+          "label": "E",
+          "text": "Methylene blue (MAF)",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ standard test สำหรับ STI"
+        }
+      ],
+      "key_takeaway": "Syphilis ulcer (painless chancre) → Dark field microscopy; HSV ulcer (painful clustered) → Tzanck smear/PCR"
+    }
+  },
+  {
+    "id": "f4ea31aa-db77-4ddb-9b4f-494862cad05c",
+    "correct_answer": "B",
+    "explanation": "Yellow frothy discharge + inflamed cervix = Trichomonas vaginitis ซึ่งมี pathognomonic: frothy discharge, strawberry cervix",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B — Trichomonas vaginitis เพราะ frothy yellow discharge + cervicitis เป็น hallmark ของ T. vaginalis",
+      "reason": "Trichomoniasis (T. vaginalis): Frothy yellow-green discharge = pathognomonic Strawberry cervix = punctate hemorrhagic spots (ไม่พบในทุกราย) Pruritus, dysuria, dyspareunia Diagnosis: Wet mount = motile trichomonads (เห็น flagella เคลื่อนที่) Treatment: Metronidazole 500mg BID × 7 days หรือ 2g single dose รักษา partner ด้วย Cervicitis (A) เป็น sign ไม่ใช่ diagnosis หลัก Frothy = Trichomonas ไม่ใช่ BV (thin grey) หรือ Candida (curd-like)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cervicitis",
+          "is_correct": false,
+          "explanation": "Cervicitis เป็น complication/sign ของ Trichomonas ไม่ใช่ diagnosis หลัก"
+        },
+        {
+          "label": "B",
+          "text": "Trichomonas vaginitis",
+          "is_correct": true,
+          "explanation": "Frothy yellow discharge + inflamed cervix = T. vaginalis pathognomonic"
+        },
+        {
+          "label": "C",
+          "text": "Bacterial vaginosis",
+          "is_correct": false,
+          "explanation": "Thin grey discharge + fishy odor; ไม่ frothy; ไม่มี cervicitis"
+        },
+        {
+          "label": "D",
+          "text": "Candida vaginitis",
+          "is_correct": false,
+          "explanation": "Curd-like white discharge; ไม่ frothy; ไม่มี cervicitis"
+        },
+        {
+          "label": "E",
+          "text": "Cytolytic vaginosis",
+          "is_correct": false,
+          "explanation": "Rare; similar to yeast symptoms; ไม่มี cervicitis"
+        }
+      ],
+      "key_takeaway": "Frothy yellow-green discharge + cervicitis (strawberry cervix) = Trichomonas vaginitis → Metronidazole"
+    }
+  },
+  {
+    "id": "f963848b-4e54-4092-8368-b3fe725bf232",
+    "correct_answer": "A",
+    "explanation": "หญิง 25 ปี RLQ pain 2 วัน LMP 7 วันที่แล้ว PV: tenderness ที่ upper left corner ของ uterus = ตำแหน่ง adnexal = Ruptured ectopic pregnancy",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Ruptured ectopic pregnancy เพราะ RLQ pain + adnexal tenderness ใน reproductive age women",
+      "reason": "LMP 7 วันที่แล้ว = วันที่ 7 ของ cycle หมายความว่าอาจตั้งครรภ์จาก cycle ก่อนหน้า (ไม่ใช่ 7 วันที่ผ่านมา = สมมติว่าเป็น LMP ที่ผ่านมา cycle ก่อน) หรืออาจ irregular cycle ทำให้คำนวณยาก RLQ pain + adnexal tenderness = ectopic pregnancy จนกว่าจะ rule out ใน reproductive age PID (C): bilateral pain + fever + cervical motion tenderness Appendicitis (B): McBurney's point tenderness + GI symptoms Hemorrhagic cyst (D): อาจมี sudden pain ไม่มี adnexal motion tenderness",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ruptured ectopic pregnancy",
+          "is_correct": true,
+          "explanation": "RLQ pain + adnexal tenderness ใน reproductive age = ectopic จนกว่าจะ rule out"
+        },
+        {
+          "label": "B",
+          "text": "Acute appendicitis",
+          "is_correct": false,
+          "explanation": "RLQ pain แต่ไม่มี GI symptoms ชัดเจน; adnexal tenderness น้อยกว่า"
+        },
+        {
+          "label": "C",
+          "text": "PID",
+          "is_correct": false,
+          "explanation": "Bilateral pain + fever + cervical motion tenderness; ไม่ใช่ unilateral acute"
+        },
+        {
+          "label": "D",
+          "text": "Hemorrhagic ovarian cyst",
+          "is_correct": false,
+          "explanation": "อาจ RLQ pain แต่ adnexal tenderness ไม่รุนแรงเท่า ectopic"
+        },
+        {
+          "label": "E",
+          "text": "Mesenteric lymphadenitis",
+          "is_correct": false,
+          "explanation": "Diffuse abdominal pain มักใน children; ไม่ใช่ acute pelvic emergency"
+        }
+      ],
+      "key_takeaway": "RLQ pain + adnexal tenderness ใน reproductive age = Ectopic pregnancy จนกว่าจะ R/O → β-hCG + TVUS"
+    }
+  },
+  {
+    "id": "fb84abb7-c836-47dc-838f-23456cd321bd",
+    "correct_answer": "B",
+    "explanation": "หญิง 46 ปี มีใจสั่น เหงื่อออก หงุดหงิด วิตกกังวล heat intolerance + menstrual changes = Perimenopause (vasomotor symptoms ของ hormonal fluctuation)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B — Perimenopause เพราะ vasomotor symptoms (hot flashes, sweating) + mood changes + menstrual irregularity ที่ 46 ปีเป็น classic perimenopause",
+      "reason": "Perimenopause symptoms (classic): Hot flashes/flushes (vasomotor), night sweats Menstrual irregularity (cycle changes ก่อน cessation) Mood changes: irritability, anxiety, depression Sleep disturbance, libido changes Hyperthyroidism (C): มี symptoms คล้ายกัน แต่ต้องแยกด้วย TFT Carcinoid tumor (A): flushing, diarrhea ไม่มี menstrual changes ขนาดนี้ Anxiety disorder (E): ไม่มีอาการ vasomotor ชัดเจน อายุ 46 ปี + menstrual changes + hot flash + mood = perimenopause จนกว่าจะ rule out thyroid",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Carcinoid tumor",
+          "is_correct": false,
+          "explanation": "Flushing + diarrhea + wheezing; ไม่มี menstrual changes แบบนี้"
+        },
+        {
+          "label": "B",
+          "text": "Perimenopause",
+          "is_correct": true,
+          "explanation": "46yo + vasomotor symptoms + menstrual changes = classic perimenopause"
+        },
+        {
+          "label": "C",
+          "text": "Hyperthyroidism",
+          "is_correct": false,
+          "explanation": "Symptoms คล้าย; ต้อง R/O ด้วย TFT แต่ perimenopause most likely"
+        },
+        {
+          "label": "D",
+          "text": "Excessive caffeine",
+          "is_correct": false,
+          "explanation": "ทำให้ palpitation ได้แต่ไม่ทำให้ menstrual changes"
+        },
+        {
+          "label": "E",
+          "text": "Generalized anxiety disorder",
+          "is_correct": false,
+          "explanation": "ไม่มีอาการ heat intolerance + menstrual changes แบบ perimenopause"
+        }
+      ],
+      "key_takeaway": "หญิง 45-55 ปี + hot flashes + sweating + mood changes + menstrual irregularity = Perimenopause"
+    }
+  }
+]

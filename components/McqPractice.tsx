@@ -11,8 +11,11 @@ import {
   RotateCcw,
   ChevronDown,
   ChevronUp,
+  Lock,
+  Sparkles,
 } from "lucide-react";
 import type { McqQuestion } from "@/lib/types-mcq";
+import Link from "next/link";
 import {
   saveMcqAttempt,
   createMcqSession,
@@ -22,9 +25,17 @@ import { createClient } from "@/lib/supabase/client";
 
 interface McqPracticeProps {
   questions: McqQuestion[];
+  isPremium?: boolean;
+  freeUsedCount?: number;
+  freeLimit?: number;
 }
 
-export default function McqPractice({ questions }: McqPracticeProps) {
+export default function McqPractice({
+  questions,
+  isPremium = false,
+  freeUsedCount = 0,
+  freeLimit = 5,
+}: McqPracticeProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showResult, setShowResult] = useState(false);
@@ -32,7 +43,12 @@ export default function McqPractice({ questions }: McqPracticeProps) {
   const [stats, setStats] = useState({ correct: 0, total: 0 });
   const [userId, setUserId] = useState<string | null>(null);
   const [sessionId, setSessionId] = useState<string | null>(null);
+  const [sessionAnswered, setSessionAnswered] = useState(0);
   const questionStartTime = useRef<number>(Date.now());
+
+  // How many free questions remain (counting previous sessions + this session)
+  const freeRemaining = Math.max(0, freeLimit - freeUsedCount - sessionAnswered);
+  const isQuotaExhausted = !isPremium && freeRemaining === 0 && showResult;
 
   // Get user on mount and create session
   useEffect(() => {
@@ -79,6 +95,7 @@ export default function McqPractice({ questions }: McqPracticeProps) {
         correct: prev.correct + (isCorrect ? 1 : 0),
         total: prev.total + 1,
       }));
+      setSessionAnswered((prev) => prev + 1);
 
       // Save attempt to DB if logged in
       if (userId) {
@@ -116,6 +133,7 @@ export default function McqPractice({ questions }: McqPracticeProps) {
     setShowResult(false);
     setShowExplanation(false);
     setStats({ correct: 0, total: 0 });
+    setSessionAnswered(0);
   }, []);
 
   if (!question) {
@@ -175,6 +193,22 @@ export default function McqPractice({ questions }: McqPracticeProps) {
           }}
         />
       </div>
+
+      {/* Free quota indicator */}
+      {!isPremium && (
+        <div className="flex items-center justify-between text-xs bg-amber-50 border border-amber-200 rounded-lg px-3 py-2">
+          <span className="text-amber-700">
+            🎁 ข้อฟรีคงเหลือ:{" "}
+            <span className="font-bold">
+              {Math.max(0, freeLimit - freeUsedCount - sessionAnswered)} / {freeLimit}
+            </span>{" "}
+            ข้อ
+          </span>
+          <Link href="/pricing" className="text-brand font-medium hover:underline">
+            อัปเกรด →
+          </Link>
+        </div>
+      )}
 
       {/* Subject Badge */}
       {question.mcq_subjects && (
@@ -256,110 +290,165 @@ export default function McqPractice({ questions }: McqPracticeProps) {
       {/* Explanation */}
       {showResult && (question.detailed_explanation || question.explanation) && (
         <div>
-          <button
-            onClick={() => setShowExplanation(!showExplanation)}
-            className="flex items-center gap-2 text-sm font-medium text-brand hover:underline"
-          >
-            {showExplanation ? (
-              <ChevronUp className="h-4 w-4" />
-            ) : (
-              <ChevronDown className="h-4 w-4" />
-            )}
-            {showExplanation ? "ซ่อนคำอธิบาย" : "ดูเฉลยละเอียด"}
-          </button>
-          {showExplanation && (
-            <div className="mt-3 space-y-4">
-              {/* Detailed explanation */}
-              {question.detailed_explanation ? (
-                <>
-                  {/* Correct answer summary */}
-                  <Card className="border-green-300 bg-green-50/50">
-                    <CardContent className="p-4">
-                      <div className="flex items-start gap-2 mb-2">
-                        <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                        <h4 className="font-bold text-green-800">
-                          คำตอบที่ถูกต้อง: {question.correct_answer}
-                        </h4>
-                      </div>
-                      <p className="text-sm leading-relaxed text-green-900">
-                        {question.detailed_explanation.summary}
-                      </p>
-                    </CardContent>
-                  </Card>
+          {/* Free users: show short explanation always */}
+          {!isPremium && question.explanation && (
+            <Card className="border-brand/20 mb-3">
+              <CardContent className="p-4">
+                <p className="text-sm leading-relaxed whitespace-pre-line text-muted-foreground">
+                  {question.explanation}
+                </p>
+              </CardContent>
+            </Card>
+          )}
 
-                  {/* Detailed reason */}
-                  <Card className="border-blue-200 bg-blue-50/30">
-                    <CardContent className="p-4">
-                      <h4 className="font-bold text-blue-800 mb-2">เหตุผลโดยละเอียด</h4>
-                      <p className="text-sm leading-relaxed whitespace-pre-line text-foreground/80">
-                        {question.detailed_explanation.reason}
-                      </p>
-                    </CardContent>
-                  </Card>
+          {/* Toggle detailed explanation */}
+          {question.detailed_explanation && (
+            <>
+              <button
+                onClick={() => setShowExplanation(!showExplanation)}
+                className="flex items-center gap-2 text-sm font-medium text-brand hover:underline"
+              >
+                {showExplanation ? (
+                  <ChevronUp className="h-4 w-4" />
+                ) : (
+                  <ChevronDown className="h-4 w-4" />
+                )}
+                {isPremium
+                  ? showExplanation
+                    ? "ซ่อนเฉลยละเอียด"
+                    : "ดูเฉลยละเอียด"
+                  : showExplanation
+                    ? "ซ่อน"
+                    : "ดูเฉลยละเอียด (Premium)"}
+                {!isPremium && <Lock className="h-3 w-3 text-muted-foreground" />}
+              </button>
 
-                  {/* Each choice explanation */}
-                  <div>
-                    <h4 className="font-bold text-sm mb-3">อธิบายแต่ละตัวเลือก</h4>
-                    <div className="space-y-2">
-                      {question.detailed_explanation.choices.map((ce) => (
-                        <div
-                          key={ce.label}
-                          className={`p-3 rounded-lg border text-sm ${
-                            ce.is_correct
-                              ? "border-green-300 bg-green-50/50"
-                              : "border-border bg-muted/30"
-                          }`}
-                        >
-                          <div className="flex items-start gap-2">
-                            <span
-                              className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
+              {showExplanation && (
+                <div className="mt-3 space-y-4">
+                  {isPremium ? (
+                    <>
+                      {/* Correct answer summary */}
+                      <Card className="border-green-300 bg-green-50/50">
+                        <CardContent className="p-4">
+                          <div className="flex items-start gap-2 mb-2">
+                            <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                            <h4 className="font-bold text-green-800">
+                              คำตอบที่ถูกต้อง: {question.correct_answer}
+                            </h4>
+                          </div>
+                          <p className="text-sm leading-relaxed text-green-900">
+                            {question.detailed_explanation.summary}
+                          </p>
+                        </CardContent>
+                      </Card>
+
+                      {/* Detailed reason */}
+                      <Card className="border-blue-200 bg-blue-50/30">
+                        <CardContent className="p-4">
+                          <h4 className="font-bold text-blue-800 mb-2">เหตุผลโดยละเอียด</h4>
+                          <p className="text-sm leading-relaxed whitespace-pre-line text-foreground/80">
+                            {question.detailed_explanation.reason}
+                          </p>
+                        </CardContent>
+                      </Card>
+
+                      {/* Each choice explanation */}
+                      <div>
+                        <h4 className="font-bold text-sm mb-3">อธิบายแต่ละตัวเลือก</h4>
+                        <div className="space-y-2">
+                          {question.detailed_explanation.choices.map((ce) => (
+                            <div
+                              key={ce.label}
+                              className={`p-3 rounded-lg border text-sm ${
                                 ce.is_correct
-                                  ? "bg-green-500 text-white"
-                                  : "bg-muted text-muted-foreground"
+                                  ? "border-green-300 bg-green-50/50"
+                                  : "border-border bg-muted/30"
                               }`}
                             >
-                              {ce.label}
-                            </span>
-                            <div>
-                              <span className="font-medium">{ce.text}</span>
-                              {ce.is_correct && (
-                                <Badge className="ml-2 bg-green-100 text-green-700 text-[10px]">
-                                  ถูกต้อง
-                                </Badge>
-                              )}
-                              <p className="text-muted-foreground mt-1 leading-relaxed">
-                                {ce.explanation}
-                              </p>
+                              <div className="flex items-start gap-2">
+                                <span
+                                  className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
+                                    ce.is_correct
+                                      ? "bg-green-500 text-white"
+                                      : "bg-muted text-muted-foreground"
+                                  }`}
+                                >
+                                  {ce.label}
+                                </span>
+                                <div>
+                                  <span className="font-medium">{ce.text}</span>
+                                  {ce.is_correct && (
+                                    <Badge className="ml-2 bg-green-100 text-green-700 text-[10px]">
+                                      ถูกต้อง
+                                    </Badge>
+                                  )}
+                                  <p className="text-muted-foreground mt-1 leading-relaxed">
+                                    {ce.explanation}
+                                  </p>
+                                </div>
+                              </div>
                             </div>
-                          </div>
+                          ))}
                         </div>
-                      ))}
-                    </div>
-                  </div>
+                      </div>
 
-                  {/* Key takeaway */}
-                  {question.detailed_explanation.key_takeaway && (
-                    <Card className="border-amber-200 bg-amber-50/30">
-                      <CardContent className="p-4">
-                        <h4 className="font-bold text-amber-800 mb-1 text-sm">สรุปจุดสำคัญ</h4>
-                        <p className="text-sm leading-relaxed text-amber-900">
-                          {question.detailed_explanation.key_takeaway}
-                        </p>
-                      </CardContent>
-                    </Card>
+                      {/* Key takeaway */}
+                      {question.detailed_explanation.key_takeaway && (
+                        <Card className="border-amber-200 bg-amber-50/30">
+                          <CardContent className="p-4">
+                            <h4 className="font-bold text-amber-800 mb-1 text-sm">สรุปจุดสำคัญ</h4>
+                            <p className="text-sm leading-relaxed text-amber-900">
+                              {question.detailed_explanation.key_takeaway}
+                            </p>
+                          </CardContent>
+                        </Card>
+                      )}
+                    </>
+                  ) : (
+                    /* Free: show blurred preview + upgrade CTA */
+                    <div className="relative rounded-xl overflow-hidden">
+                      <div className="blur-sm pointer-events-none select-none space-y-3" aria-hidden>
+                        <Card className="border-green-300 bg-green-50/50">
+                          <CardContent className="p-4">
+                            <p className="text-sm">{question.detailed_explanation.summary}</p>
+                          </CardContent>
+                        </Card>
+                        <Card className="border-blue-200 bg-blue-50/30">
+                          <CardContent className="p-4">
+                            <p className="text-sm">{question.detailed_explanation.reason}</p>
+                          </CardContent>
+                        </Card>
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-b from-white/30 to-white/95 flex flex-col items-center justify-end pb-6">
+                        <div className="text-center space-y-3 px-4">
+                          <div className="mx-auto w-10 h-10 rounded-full bg-brand/10 flex items-center justify-center">
+                            <Sparkles className="h-5 w-5 text-brand" />
+                          </div>
+                          <p className="font-bold text-sm">เฉลยละเอียด + Key Points</p>
+                          <p className="text-xs text-muted-foreground">สำหรับสมาชิก Premium เท่านั้น</p>
+                          <Link href="/pricing">
+                            <button className="bg-brand hover:bg-brand/90 text-white text-sm px-5 py-2 rounded-lg font-medium">
+                              อัปเกรด ฿199/เดือน
+                            </button>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
                   )}
-                </>
-              ) : (
-                /* Fallback: simple explanation */
-                <Card className="border-brand/20">
-                  <CardContent className="p-4">
-                    <p className="text-sm leading-relaxed whitespace-pre-line text-muted-foreground">
-                      {question.explanation}
-                    </p>
-                  </CardContent>
-                </Card>
+                </div>
               )}
-            </div>
+            </>
+          )}
+
+          {/* Fallback simple explanation for premium (no detailed_explanation yet) */}
+          {isPremium && !question.detailed_explanation && question.explanation && (
+            <Card className="border-brand/20">
+              <CardContent className="p-4">
+                <p className="text-sm leading-relaxed whitespace-pre-line text-muted-foreground">
+                  {question.explanation}
+                </p>
+              </CardContent>
+            </Card>
           )}
         </div>
       )}
@@ -367,7 +456,36 @@ export default function McqPractice({ questions }: McqPracticeProps) {
       {/* Actions */}
       {showResult && (
         <div className="flex items-center gap-3">
-          {!isFinished ? (
+          {isQuotaExhausted ? (
+            /* Free quota exhausted — upgrade wall */
+            <div className="w-full">
+              <Card className="border-brand bg-brand/5">
+                <CardContent className="p-6 text-center space-y-3">
+                  <div className="mx-auto w-12 h-12 rounded-full bg-brand/10 flex items-center justify-center">
+                    <Lock className="h-6 w-6 text-brand" />
+                  </div>
+                  <h3 className="text-lg font-bold">ครบ {freeLimit} ข้อฟรีแล้ว!</h3>
+                  <p className="text-sm text-muted-foreground">
+                    อัปเกรดเพื่อทำข้อสอบต่อและดูเฉลยละเอียดทุกข้อ
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-2 justify-center">
+                    <Link href="/pricing">
+                      <button className="bg-brand hover:bg-brand/90 text-white px-6 py-2.5 rounded-lg font-medium text-sm w-full sm:w-auto">
+                        <Sparkles className="h-4 w-4 inline mr-1" />
+                        อัปเกรด ฿199/เดือน
+                      </button>
+                    </Link>
+                    <Button onClick={handleRestart} variant="outline" className="gap-2 text-sm">
+                      <RotateCcw className="h-4 w-4" /> ทำใหม่
+                    </Button>
+                  </div>
+                  <p className="text-xs text-muted-foreground">
+                    คะแนนของคุณ: {stats.correct}/{stats.total} ({percentage}%)
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          ) : !isFinished ? (
             <Button
               onClick={handleNext}
               className="bg-brand hover:bg-brand-light text-white gap-2"

@@ -1,0 +1,378 @@
+[
+  {
+    "scenario": "ผู้ป่วยชายอายุ 20 ปี หลังผ่า Appendectomy 4 วัน มีอาการปวดแผล ตรวจแผลติดกันดี มีบวมแดงที่รอยไหมเย็บ ถามการปฏิบัติที่เหมาะสม",
+    "choices": [
+      {"label": "A", "text": "Topical antibiotics"},
+      {"label": "B", "text": "Oral antibiotics"},
+      {"label": "C", "text": "IV antibiotics"},
+      {"label": "D", "text": "Stitch removal"},
+      {"label": "E", "text": "Explore wound"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "Surgery",
+    "status": "complete",
+    "ai_notes": "Early surgical site infection with mild signs (erythema at suture line). Most appropriate management is suture removal to allow drainage and prevent abscess formation. IV antibiotics not necessary for localized superficial infection."
+  },
+  {
+    "scenario": "ผู้ป่วยชายมาด้วยถ่ายเป็นเลือดมากๆ BP drop epigastric pain PR: large blood clot หลังได้ fluid resuscitation ทำไรต่อ",
+    "choices": [
+      {"label": "A", "text": "NG insertion"},
+      {"label": "B", "text": "Embolization"},
+      {"label": "C", "text": "Gastroscopy"},
+      {"label": "D", "text": "Sigmoidoscopy"},
+      {"label": "E", "text": "Colonoscopy"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "Surgery",
+    "status": "complete",
+    "ai_notes": "Clinical presentation of upper GI bleeding (hematemesis, epigastric pain, large blood clot on PR exam). After fluid resuscitation, gastroscopy is indicated for diagnosis and possible therapeutic intervention."
+  },
+  {
+    "scenario": "ผู้ป่วยชายมาด้วย gun shot wound ผ่า femoral ไป 6 ชั่วโมง ต่อมามีปวดน่องขวา ตรวจร่างกาย BT 37°C BP 120/80 absent right dorsalis pedis pulse, dorsiflex แล้วปวด จะทำอะไร",
+    "choices": [
+      {"label": "A", "text": "Observe"},
+      {"label": "B", "text": "Heparinization"},
+      {"label": "C", "text": "Angiography"},
+      {"label": "D", "text": "Emergency embolectomy"},
+      {"label": "E", "text": "Emergency fasciotomy"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "Surgery",
+    "status": "complete",
+    "ai_notes": "Acute limb ischemia with absent dorsalis pedis pulse, pain on dorsiflex (muscle pain suggesting compartment syndrome), 6 hours post-injury. Clinical signs suggest arterial thrombosis requiring emergency thrombectomy/embolectomy. Time is critical for limb salvage."
+  },
+  {
+    "scenario": "ผู้ป่วยชายตกจากบันไดลิง BP 140/90 ทำ FAST positive at retrohepatorenal area Mx ที่ควร ทำคือ?",
+    "choices": [
+      {"label": "A", "text": "Plain film abdomen"},
+      {"label": "B", "text": "CT abdomen"},
+      {"label": "C", "text": "Peritoneal lavage"},
+      {"label": "D", "text": "Explore laparotomy"},
+      {"label": "E", "text": "Observation with repeated clinical exam"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "Surgery",
+    "status": "complete",
+    "ai_notes": "FAST positive finding suggests free fluid (blood) in retrohepatorenal area from blunt trauma. CT abdomen is standard for hemodynamically stable trauma patients with positive FAST to identify specific injury and guide management."
+  },
+  {
+    "scenario": "หญิงอายุ 60 ปี มี dysphagia และ odynophagia มา 3 วัน มีประวัติรับประทานน้อย ทานยา NSAIDs เป็นเวลา 2 สัปดาห์ และทำ colectomy จากมะเร็งลำไส้ ถามว่า dysphagia/odynophagia น่าจะเกิดจากอะไร",
+    "choices": [
+      {"label": "A", "text": "Corrosive ingestion"},
+      {"label": "B", "text": "Acute ulcerative reflux esophagitis"},
+      {"label": "C", "text": "Recurrent esophageal carcinoma"},
+      {"label": "D", "text": "Pill-induced esophagitis"},
+      {"label": "E", "text": "Achalasia"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "Surgery",
+    "status": "complete",
+    "ai_notes": "Clinical presentation of acute dysphagia and odynophagia with recent NSAID use (2 weeks) is most consistent with NSAID-induced erosive esophagitis with reflux component. Pill-induced esophagitis also possible with NSAIDs."
+  },
+  {
+    "scenario": "ผู้ป่วยชายอาเจียนเป็นเลือดสด ซีดหน้า BP ตก หลังทำ fluid resuscitation ต่อมาทำอะไรต่อ?",
+    "choices": [
+      {"label": "A", "text": "NG tube insertion"},
+      {"label": "B", "text": "Gastroscopy"},
+      {"label": "C", "text": "Colonoscopy"},
+      {"label": "D", "text": "CT angiography"},
+      {"label": "E", "text": "Observe vital signs"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "Surgery",
+    "status": "complete",
+    "ai_notes": "After fluid resuscitation in acute upper GI bleeding (hematemesis), gastroscopy is indicated for diagnosis and therapeutic intervention (endoscopic hemostasis). This is standard of care for acute bleeding."
+  },
+  {
+    "scenario": "ผู้ป่วยชาย painless progressive jaundice hepatomegaly palpable gallbladder U/S: dilatation biliary tree distal CBD dilatation Management ควรเป็น?",
+    "choices": [
+      {"label": "A", "text": "CT abdomen"},
+      {"label": "B", "text": "MRI/MRCP"},
+      {"label": "C", "text": "ERCP"},
+      {"label": "D", "text": "Surgical exploration"},
+      {"label": "E", "text": "Percutaneous transhepatic cholangiography"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "Surgery",
+    "status": "complete",
+    "ai_notes": "Classic presentation of distal CBD obstruction with Courvoisier sign (palpable gallbladder with jaundice). Imaging shows distal CBD dilatation. ERCP is both diagnostic and therapeutic for distal CBD pathology (likely malignancy or stone)."
+  },
+  {
+    "scenario": "Female 45 years old left breast mass PE: 2.5 cm breast mass at upper outer quadrant irregular slightly movable palpable axillary lymph node 1.5 cm USG+mammogram breast 2.5 cm mass What is the most proper management for definite diagnosis?",
+    "choices": [
+      {"label": "A", "text": "Excisional biopsy of mass"},
+      {"label": "B", "text": "Incisional biopsy of mass"},
+      {"label": "C", "text": "Core needle biopsy of mass"},
+      {"label": "D", "text": "Core needle biopsy of lymph node"},
+      {"label": "E", "text": "Fine needle aspiration of lymph node"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "Surgery",
+    "status": "complete",
+    "ai_notes": "Suspected breast malignancy. Core needle biopsy (CNB) of the mass is the gold standard for tissue diagnosis. It provides more tissue than FNA, is less invasive than excisional biopsy, and has excellent sensitivity/specificity."
+  },
+  {
+    "scenario": "ผู้ป่วยชายหลังจากได้รับบาดเจ็บ bulbous urethra ทำ investigation อะไรเป็นอันดับแรก?",
+    "choices": [
+      {"label": "A", "text": "IVP (Intravenous pyelography)"},
+      {"label": "B", "text": "VCUG (Voiding cystourethrography)"},
+      {"label": "C", "text": "KUB ultrasound"},
+      {"label": "D", "text": "Retrograde urethrography (RUG)"},
+      {"label": "E", "text": "CT scan of pelvis"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "Surgery",
+    "status": "complete",
+    "ai_notes": "Bulbous urethra injury requires VCUG to assess for urethral stricture and extravasation. While RUG is also used, VCUG provides better visualization of voiding dynamics and bladder function."
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 35 ปี ปัสสาวะไม่พุ่งมา 8 เดือน อาการเป็นมากขึ้น เช้านี้ปวดปัสสาวะแต่ฉี่ไม่ออก PE: T 37°C RR 18 BP 140/90 palpable tense cystic mass at suprapubic area prostate 2+ Diagnosis คือ?",
+    "choices": [
+      {"label": "A", "text": "Bladder stone"},
+      {"label": "B", "text": "Benign prostatic hyperplasia"},
+      {"label": "C", "text": "Urethral stricture"},
+      {"label": "D", "text": "Neurogenic bladder"},
+      {"label": "E", "text": "Pelvic sarcoma"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "Surgery",
+    "status": "complete",
+    "ai_notes": "Progressive urinary retention over 8 months with poor flow, enlarged suprapubic mass (distended bladder), normal prostate (2+). Gradual onset suggests urethral stricture rather than acute BPH or acute retention."
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 60 ปี มาตรวจร่างกายประจำปี พบ prostate gland enlargement 2+ PSA = 4 ng/mL ถาม Management ที่เหมาะสม?",
+    "choices": [
+      {"label": "A", "text": "Observe without intervention"},
+      {"label": "B", "text": "Prostate biopsy"},
+      {"label": "C", "text": "Start α1-blocker"},
+      {"label": "D", "text": "Follow-up PSA 1 week"},
+      {"label": "E", "text": "Follow-up PSA every 6 months"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "Surgery",
+    "status": "complete",
+    "ai_notes": "PSA 4 ng/mL is in gray zone (normal <4, concern >4). With asymptomatic BPH and PSA in normal-borderline range, follow-up PSA 6-12 months is appropriate. Biopsy indicated if PSA elevated or rapidly rising."
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุน้อย ประสบอุบัติเหตุ conscious ดี PE: BP normal vital signs stable subcutaneous emphysema horseness ไม่มี stridor oxygen saturation 94% trachea in midline lung exam normal ทำไรต่อ?",
+    "choices": [
+      {"label": "A", "text": "Needle cricothyrotomy"},
+      {"label": "B", "text": "Endotracheal intubation"},
+      {"label": "C", "text": "Oxygen 10 L/min with mask and bag"},
+      {"label": "D", "text": "X-ray neck AP/lateral"},
+      {"label": "E", "text": "Observe and reassess"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "Surgery",
+    "status": "complete",
+    "ai_notes": "Subcutaneous emphysema and hoarseness suggest laryngeal injury. However, patient is stable with adequate oxygenation (94%), no stridor, trachea midline. X-ray neck is appropriate next step to assess laryngeal injury before intervention."
+  },
+  {
+    "scenario": "ผู้ป่วยชายไทยอายุ 14 ปี มาด้วยก้อนเจ็บที่ขาหนีบข้างซ้าย เคยมีประวัติ retractile testis ตอนเด็ก ผู้ป่วยรายนี้คิดถึงโรคใด?",
+    "choices": [
+      {"label": "A", "text": "Testicular torsion"},
+      {"label": "B", "text": "Acute orchitis"},
+      {"label": "C", "text": "Incarcerated inguinal hernia"},
+      {"label": "D", "text": "Epididymitis"},
+      {"label": "E", "text": "Traumatic hematocele"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "Surgery",
+    "status": "complete",
+    "ai_notes": "Young male with acute scrotal pain and history of retractile testis (risk factor for torsion). Testicular torsion is most common cause of acute scrotal pain in adolescents. Requires urgent surgical exploration."
+  },
+  {
+    "scenario": "ผู้ป่วยถูกไฟไหม้ มาด้วยแผล second degree burn 15% third degree burn 5% BW 60 kg จงให้สารน้า ตามสูตร Parkland formula ใน 24 ชั่วโมง (คำนวณสำหรับ 6 ชั่วโมงแรก)?",
+    "choices": [
+      {"label": "A", "text": "400 mL/hr"},
+      {"label": "B", "text": "300 mL/hr"},
+      {"label": "C", "text": "200 mL/hr"},
+      {"label": "D", "text": "100 mL/hr"},
+      {"label": "E", "text": "500 mL/hr"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "Surgery",
+    "status": "complete",
+    "ai_notes": "Parkland formula: 4 mL × BW(kg) × %TBSA(2nd + 3rd degree). Calculate: 4 × 60 × 20% = 4800 mL total for 24 hours. First half (2400 mL) given in first 8 hours = 300 mL/hr. For 6 hours: 2400/6 = 400 mL/hr but question asks 6-hour mark = approximately 300 mL/hr as transition rate."
+  },
+  {
+    "scenario": "ผู้ป่วยมาด้วย abdominal pain and hypotension ต้องการ investigation/management ทำไรเป็นอันดับแรก?",
+    "choices": [
+      {"label": "A", "text": "Diagnostic peritoneal lavage (DPL)"},
+      {"label": "B", "text": "Acute abdomen series (X-ray)"},
+      {"label": "C", "text": "IV fluid resuscitation"},
+      {"label": "D", "text": "Emergency exploratory laparotomy"},
+      {"label": "E", "text": "CT abdomen"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "Surgery 2012",
+    "status": "complete",
+    "ai_notes": "Hemodynamically unstable patient (hypotension) with acute abdomen requires emergency laparotomy without delay for imaging. FAST or DPL may be done at bedside but surgical exploration is priority."
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงไทยอายุ 40 ปี มีอาการ intermittent dysphagia มา 3 ปี กลืนติดทั้ง solid and liquid diet ร่วมกับมี weight loss 5 kg ใน 2 ปี Barium swallow พบ mid esophageal dilatation + smooth tapering at distal esophagus and gastroesophageal junction ข้อใดไม่ควรทำ?",
+    "choices": [
+      {"label": "A", "text": "Open cardiotomy (myotomy)"},
+      {"label": "B", "text": "Laparoscopic cardiotomy (myotomy)"},
+      {"label": "C", "text": "Proton pump inhibitor"},
+      {"label": "D", "text": "Calcium channel blocker"},
+      {"label": "E", "text": "Balloon dilatation"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "Surgery 2012",
+    "status": "complete",
+    "ai_notes": "Classic presentation of achalasia (progressive dysphagia, weight loss, barium swallow findings). PPI (proton pump inhibitor) is not appropriate for achalasia as the problem is mechanical (LES dysfunction), not acid-related. Definitive treatment is myotomy; medical options are calcium channel blockers or nitrates."
+  },
+  {
+    "scenario": "หลังจากที่ resuscitate ผู้หญิงที่เป็น Cirrhosis Child B ที่มาด้วย hematemesis แล้ว Next appropriate management คือ?",
+    "choices": [
+      {"label": "A", "text": "Liver transplantation"},
+      {"label": "B", "text": "Surgical portosystemic shunt"},
+      {"label": "C", "text": "TIPS (Transjugular intrahepatic portosystemic shunt)"},
+      {"label": "D", "text": "Nonselective beta-blocker + endoscopic ligation"},
+      {"label": "E", "text": "Splenectomy"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "Surgery 2012",
+    "status": "complete",
+    "ai_notes": "After resuscitation of variceal hemorrhage, combination of nonselective beta-blockers (prevent rebleeding) and endoscopic variceal ligation (definitive hemostasis) is standard first-line therapy. TIPS reserved for failures. Transplant considered in overall management of Child B cirrhosis."
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 15 ปี มีแม่ ป้า ยายเป็น CA breast (ป้าเป็น CA breast เมื่ออายุ 30 ปี) ถาม management screening ที่เหมาะสม?",
+    "choices": [
+      {"label": "A", "text": "MRI screening เมื่ออายุ 40 ปี"},
+      {"label": "B", "text": "Self-breast examination every month"},
+      {"label": "C", "text": "Clinical breast exam every year"},
+      {"label": "D", "text": "Screening ultrasound เมื่ออายุ 20 ปี"},
+      {"label": "E", "text": "Screening mammography ทุกปีตั้งแต่อายุ 40 ปี"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "Surgery 2012",
+    "status": "complete",
+    "ai_notes": "High-risk patient (multiple relatives with breast cancer, early onset in aunt at 30). Annual clinical breast exam is appropriate starting in adolescence. Genetic testing and MRI screening should be considered. Mammography typically starts at age 40 but may start earlier in high-risk patients."
+  },
+  {
+    "scenario": "ผู้ป่วยชาย motorcycle accident unconscious GCS 8 BP 90/60 RR 24 ข้อใดคือ first management?",
+    "choices": [
+      {"label": "A", "text": "CT abdomen"},
+      {"label": "B", "text": "CT brain"},
+      {"label": "C", "text": "Blood transfusion"},
+      {"label": "D", "text": "Endotracheal intubation"},
+      {"label": "E", "text": "Abdominal examination"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "Surgery 2012",
+    "status": "complete",
+    "ai_notes": "Severely injured patient (GCS 8, hypotensive, tachypneic) requires airway management first per ATLS. Endotracheal intubation is first priority before any imaging or other interventions."
+  },
+  {
+    "scenario": "Aortic dissection จากการได้รับบาดเจ็บแรงกระแทก (decelerated injury) เกิดตำแหน่งใดมากที่สุด?",
+    "choices": [
+      {"label": "A", "text": "Root of aorta"},
+      {"label": "B", "text": "Level of left innominate artery"},
+      {"label": "C", "text": "Level of right innominate artery"},
+      {"label": "D", "text": "Origin of left subclavian artery"},
+      {"label": "E", "text": "Distal third of descending thoracic aorta"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "Surgery 2012",
+    "status": "complete",
+    "ai_notes": "Traumatic aortic injury from decelerated trauma most commonly occurs at ligamentum arteriosum (junction of left subclavian artery and proximal descending thoracic aorta). This is the most common site (85-90% of cases)."
+  },
+  {
+    "scenario": "ชายไทยอายุ 28 ปี ถูกไฟฟ้าแรงสูงช็อตขณะทำงาน หมดสติไป 10 นาที มารพ.ตรวจร่างกายปกติดี พบแผลแดงเป็นตุ่มพุพองที่ขาขวาและก้นขวา จงให้การรักษา?",
+    "choices": [
+      {"label": "A", "text": "Admit for observation"},
+      {"label": "B", "text": "Give antibiotic then discharge home"},
+      {"label": "C", "text": "Wound dressing and discharge"},
+      {"label": "D", "text": "Wound dressing, antibiotic, and discharge"},
+      {"label": "E", "text": "Surgical exploration of wounds"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "Surgery 2012",
+    "status": "complete",
+    "ai_notes": "High voltage electrical injury with loss of consciousness (10 minutes). Despite normal initial exam, entry/exit wounds suggest deep tissue injury. Requires admission for cardiac monitoring (dysrhythmia risk), rhabdomyolysis monitoring, and observation for compartment syndrome."
+  },
+  {
+    "scenario": "Thai male 55 years old vehicle accident without seatbelt, head hit windshield, no loss of consciousness PE: mild contusion at frontal area goes home 4 weeks later with headache behavioral changes restlessness What is your diagnosis?",
+    "choices": [
+      {"label": "A", "text": "Intracerebral hematoma"},
+      {"label": "B", "text": "Cerebral contusion"},
+      {"label": "C", "text": "Epidural hematoma"},
+      {"label": "D", "text": "Subarachnoid hemorrhage"},
+      {"label": "E", "text": "Chronic subdural hematoma"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "Surgery 2012",
+    "status": "complete",
+    "ai_notes": "Delayed presentation (4 weeks post-injury) with behavioral changes and headache is classic for chronic subdural hematoma in older patients. Initial trauma may be minor. Bridging veins tear causing gradual bleeding and symptoms."
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 30 ปี มาด้วยปวด บวม แดง ที่เต้านมข้างขวา กดเจ็บ จะ manage อย่างไร?",
+    "choices": [
+      {"label": "A", "text": "Ultrasound breast"},
+      {"label": "B", "text": "Incision and drainage"},
+      {"label": "C", "text": "IV antibiotic"},
+      {"label": "D", "text": "Oral antibiotic"},
+      {"label": "E", "text": "Mammography"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "Surgery 2012",
+    "status": "complete",
+    "ai_notes": "Acute mastitis (pain, swelling, erythema, tenderness) in young woman. IV antibiotics are indicated for acute bacterial infection. If abscess develops (fluctuance), I&D needed. Imaging not necessary for diagnosis in this clinical presentation."
+  },
+  {
+    "scenario": "A male patient age 25 years came to the OPD with complaint of a mass in scrotal sac during a shower. Ultrasound revealed a solitary mass in the testicular parenchyma in right scrotal sac. What is the most likely diagnosis?",
+    "choices": [
+      {"label": "A", "text": "Seminoma"},
+      {"label": "B", "text": "Epidermal cyst"},
+      {"label": "C", "text": "Androblastoma"},
+      {"label": "D", "text": "Benign fibroma"},
+      {"label": "E", "text": "Teratocarcinoma"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "Surgery 2012",
+    "status": "complete",
+    "ai_notes": "Intratesticular mass in young male is testicular cancer until proven otherwise. Seminoma is most common testicular germ cell tumor (40% of cases). Requires radical inguinal orchiectomy for diagnosis and treatment."
+  },
+  {
+    "scenario": "อะไรไม่ใช่สาเหตุของ hemorrhagic shock?",
+    "choices": [
+      {"label": "A", "text": "Closed fracture of femur"},
+      {"label": "B", "text": "Pteryion fracture (temporal bone)"},
+      {"label": "C", "text": "Blunt abdominal trauma"},
+      {"label": "D", "text": "Pelvic fracture"},
+      {"label": "E", "text": "Rupture of spleen"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "Surgery 2012",
+    "status": "complete",
+    "ai_notes": "Pterion fracture is a temporal bone fracture that can damage the middle meningeal artery causing epidural hematoma, but this is a closed intracranial injury. Hemorrhagic shock requires massive bleeding into body cavities (femur fracture, abdominal trauma, pelvic fracture). Pterion fracture alone doesn't typically cause enough blood loss for shock."
+  },
+  {
+    "scenario": "ผู้ป่วย 20 ปี มาด้วย stab wound ที่อกซ้าย RR 32/min บ่นว่าหายใจไม่สะดวก conscious ดี BP 80/60 PR 120 PE พบ decreased breath sound left side with trachea shift to right Most appropriate management?",
+    "choices": [
+      {"label": "A", "text": "IV resuscitation only"},
+      {"label": "B", "text": "Oxygen + CXR"},
+      {"label": "C", "text": "Endotracheal intubation + ventilation support"},
+      {"label": "D", "text": "Needle thoracostomy + chest tube"},
+      {"label": "E", "text": "Observation with continuous monitoring"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "Surgery 2012",
+    "status": "complete",
+    "ai_notes": "Tension pneumothorax presentation: decreased breath sounds, tracheal deviation, hypotension, tachypnea, dyspnea. Needle thoracostomy followed by chest tube insertion is immediate life-saving intervention before other procedures."
+  },
+  {
+    "scenario": "ชายอายุ 30 ปี มีไข้ต่ามา 2 วัน ปวดอัณฑะข้างขวา จงวินิจฉัยและให้การรักษาที่เหมาะสม",
+    "choices": [
+      {"label": "A", "text": "Right orchitis treated with antibiotics"},
+      {"label": "B", "text": "Right orchitis treated with scrotal exploration"},
+      {"label": "C", "text": "Right testicular cancer treated with biopsy"},
+      {"label": "D", "text": "Right testicular cancer treated with radical orchiectomy"},
+      {"label": "E", "text": "Right epididymitis treated with anti-inflammatory"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "Surgery 2012",
+    "status": "complete",
+    "ai_notes": "Acute presentation with fever and testicular pain in adult suggests orchitis or epididymitis (infectious). Fever is key feature distinguishing from torsion (no fever) or malignancy (insidious). Antibiotics are appropriate treatment

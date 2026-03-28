@@ -1,0 +1,243 @@
+[
+  {
+    "scenario": "ผู้ป่วยชายอายุ 70 ปี ไม่มีโรคประจาตัว lipid profile TG 500 Choles 210 HDL 40 Lab อะไรผิดปกติด้วย",
+    "choices": [
+      {"label": "A", "text": "Uric acid"},
+      {"label": "B", "text": "FBS"},
+      {"label": "C", "text": "Cortisol"},
+      {"label": "D", "text": "Thyroid function test"},
+      {"label": "E", "text": "TSH"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี Triglyceride สูง 500 mg/dL ซึ่งเป็นค่าสูงมาก และ HDL ต่ำ 40 mg/dL นี่คือ dyslipidemia แบบ Hypertriglyceridemia ซึ่งมักเกี่ยวข้องกับ hyperglycemia และสามารถเป็นสัญญาณของ metabolic syndrome หรือ DM type 2 ที่ยังไม่วินิจฉัย การตรวจ FBS ถือเป็น investigation ที่สำคัญ"
+  },
+  {
+    "scenario": "หญิง 24 ปี on prednisolone 20 mg OD เพื่อรักษาปวดข้อนาน 1 ปี จะพบความผิดปกติใด ในผู้ป่วยรายนี้",
+    "choices": [
+      {"label": "A", "text": "Hypertension"},
+      {"label": "B", "text": "Hypothyroid"},
+      {"label": "C", "text": "Increased bone mass"},
+      {"label": "D", "text": "Diabetes insipidus"},
+      {"label": "E", "text": "Adipose tissue wasting"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยได้รับ prednisolone 20 mg/day นาน 1 ปี ซึ่งถือว่า high-dose steroid ผลข้างเคียงที่ธรรมชาติคือ hypertension (ผ่านกลไก sodium retention และ RAAS activation), hyperglycemia, osteoporosis (ไม่ใช่ increased bone mass), fat redistribution, และ muscle wasting ตัวเลือก A เป็นคำตอบที่ถูกต้อง"
+  },
+  {
+    "scenario": "หญิง 30 ปี นักกีฬามาราธอนแต่งงานแล้ว ยังไม่เคยตั้งครรภ์ ปวดหัวตามัว ไม่มีประจาเดือนมา 1 ปี มีนาสีขาวไหลมาจากเต้านมทั้งสองข้าง มีอาการตามัวมากขึ้น PE: bitemporal hemianopia",
+    "choices": [
+      {"label": "A", "text": "Pregnancy"},
+      {"label": "B", "text": "Hypogonadism"},
+      {"label": "C", "text": "Prolactinoma"},
+      {"label": "D", "text": "Craniopharyngioma"},
+      {"label": "E", "text": "Pituitary adenoma อื่นๆ"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "อาการ amenorrhea, galactorrhea, bitemporal hemianopia, และ headache เป็นแนวโน้มของ prolactinoma การบีบกดของเนื้อเยื่อทำให้เกิด visual field defect และอาการ hypopituitarism ที่ตามมา"
+  },
+  {
+    "scenario": "หญิง 18 ปี เป็น Grave's disease มา 1 ปี กำลังรักษา วันนี้มีปวดข้อนิ้วมือทุกนิ้ว ร่วมกับปวดข้อมือ ข้อมูลใดสนับสนุนการวินิจฉัยมากที่สุด",
+    "choices": [
+      {"label": "A", "text": "กิน NSAIDs แล้วอาการดีขึ้น พอไม่กินก็จะปวด"},
+      {"label": "B", "text": "ปวดมากหลังตื่นนอน"},
+      {"label": "C", "text": "มีประวัติปวดข้อในครอบครัว"},
+      {"label": "D", "text": "อาการปวดสัมพันธ์กับอาหาร"},
+      {"label": "E", "text": "อาการปวดสัมพันธ์กับการรักษา PTU"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยเป็น Grave's disease รักษาด้วย PTU มาปวดข้อนิ้วมือและข้อมือ ซึ่งหมายถึง PTU-induced arthralgia หรือ PTU-induced arthritis ผลข้างเคียงของ PTU ที่เกี่ยวกับข้อต่อเป็นเรื่องปกติในการรักษา Graves' disease ตัวเลือก E ที่บอกว่าเกี่ยวกับการรักษา PTU คือคำตอบที่ดีที่สุด"
+  },
+  {
+    "scenario": "หญิง 18 ปี มาด้วยอาการคอโตมา 3 เดือน TSH สูง FT3 ปกติ dx?",
+    "choices": [
+      {"label": "A", "text": "Simple goiter"},
+      {"label": "B", "text": "Hashimoto thyroiditis"},
+      {"label": "C", "text": "Grave's disease"},
+      {"label": "D", "text": "Iodine deficiency"},
+      {"label": "E", "text": "Subacute thyroiditis"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "TSH สูง FT3 ปกติ แสดงถึง primary hypothyroidism ที่ยังอยู่ในระยะเริ่มต้น (subclinical หรือ early overt hypothyroidism) คอโตมา 3 เดือนปกติในวัยรุ่นหญิงเสนอให้คิด Hashimoto thyroiditis ซึ่งเป็นสาเหตุหลักของ hypothyroidism ในประเทศที่มีไอโอดีนเพียงพอ"
+  },
+  {
+    "scenario": "หญิงตั้งครรภ์ 20 สัปดาห์ ใจสั่น ตรวจพบ T4 สูงเล็กน้อย T3 สูงเล็กน้อย TSH ปกติ จงวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "Grave's disease"},
+      {"label": "B", "text": "Molar pregnancy"},
+      {"label": "C", "text": "Gestational goiter"},
+      {"label": "D", "text": "Gestational thyrotoxicosis"},
+      {"label": "E", "text": "Toxic multinodular goiter"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "ในสัปดาห์ที่ 8-14 ของการตั้งครรภ์ beta-hCG ที่สูงมากมีการ cross-reactivity กับ TSH receptor ทำให้เกิด transient thyrotoxicosis โดยไม่มีตัวต้านทาน thyroid และ TSH ยังคงปกติ หรือต่ำเล็กน้อย ปกติจะหายไปเองตามระยะเวลา ซึ่งเรียกว่า Gestational thyrotoxicosis"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุมากรับยา Glipizide 2 mg มี Hypoglycemia และ Creatinine rising Management?",
+    "choices": [
+      {"label": "A", "text": "Metformin"},
+      {"label": "B", "text": "ลด Glipizide"},
+      {"label": "C", "text": "เปลี่ยนไปให้ Insulin"},
+      {"label": "D", "text": "ให้ Glipizide เพิ่มขึ้น"},
+      {"label": "E", "text": "ให้ Sulfonylurea ที่แตกต่าง"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี rising creatinine แสดงถึงการลดลงของ GFR (renal impairment) และมี hypoglycemia จากการใช้ Glipizide Glipizide เป็น sulfonylurea ที่ขึ้นต่อ renal clearance ในผู้ป่วยที่มี renal impairment จึงควรลดขนาดหรือหลีกเลี่ยง ตัวเลือก B คือคำตอบที่ถูกต้อง"
+  },
+  {
+    "scenario": "ชาย 60 ปี มาด้วยปวดหลังปวดกระดูกเป็นๆ หายๆ มา 6 เดือน หิวน้าบ่อย ปัสสาวะมาก ท้องผูก PE: tender at lumbosacral spine Lab: Ca 14 Phosphorous 14 BUN 35 Cr 2.5 investigate อะไรดีที่สุดเพื่อให้ได้ผลการวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "Parathyroid hormone"},
+      {"label": "B", "text": "PSA"},
+      {"label": "C", "text": "U/S KUB"},
+      {"label": "D", "text": "MRI spine"},
+      {"label": "E", "text": "Bone marrow aspiration"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "อาการปวดกระดูกเป็นๆ หายๆ, hypercalcemia (Ca 14), hyperphosphatemia (PO4 14), renal impairment (Cr 2.5), polydipsia, polyuria, constipation เป็นสัญญาณของ hypercalcemia ที่เกิดจากสาเหตุต่างๆ การวินิจฉัยแต่งแรมควรวัด PTH เพื่อแยกความแตกต่างระหว่าง primary hyperparathyroidism (PTH high) และ hypercalcemia จากสาเหตุอื่น เช่น malignancy"
+  },
+  {
+    "scenario": "หญิง 70 ปี U/D: HTN, DLP, DM on HCTZ, Thiazide, Enalapril, ASA, Simvastatin, Fenofibrate นาน 1 ปี ช่วง 6 เดือนที่ผ่านมาปวดขา 2 ข้างเป็นๆ หายๆ นวดหรือนอนพักแล้วอาการไม่ดีขึ้น มีข้อเข่าเสื่อม เดินไม่ค่อยไหว ไม่ได้รักษา PE: normal อาการดังกล่าวน่าจะมีสาเหตุมาจากยาใด",
+    "choices": [
+      {"label": "A", "text": "ASA"},
+      {"label": "B", "text": "Thiazide"},
+      {"label": "C", "text": "Enalapril"},
+      {"label": "D", "text": "Fenofibrate"},
+      {"label": "E", "text": "Simvastatin"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "อาการปวดขา 2 ข้างและความอ่อนแอแม้ว่าผู้ป่วยจะมี knee osteoarthritis สามารถอธิบายได้ว่าเป็น statin-induced myopathy โดยเฉพาะ Simvastatin ที่ขนาดสูงหรือใช้นาน มักเกิด muscle pain, weakness, และ elevation ของ CK Fenofibrate ก็สามารถเพิ่มความเสี่ยงของ myopathy เมื่อใช้ร่วมกับ statin แต่ Simvastatin เป็นสาเหตุทั่วไปที่สุด"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 22 ปี N/V อ่อนเพลียมากมา 2 วัน PE: RR 32 BP 80/60 PR 140 drowsiness sunken eye ball dry lip ที่ ER ได้ NSS 1000 mL at ward BS 850 Na 129 K 2.8 Cl 90 HCO3 10 PO 4.2 BUN 42 Cr 1.2 ควรให้สารใดเป็นอย่างแรก",
+    "choices": [
+      {"label": "A", "text": "Regular insulin"},
+      {"label": "B", "text": "NSS continue"},
+      {"label": "C", "text": "Add KCl"},
+      {"label": "D", "text": "Add KPO4"},
+      {"label": "E", "text": "ให้ NaHCO3"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี DKA (diabetic ketoacidosis) ที่แสดงโดย blood sugar 850, metabolic acidosis (HCO3 10, RR 32), dehydration, hypokalemia, hypoglycemia ตาม presentation ควรให้ Regular insulin (RI) เป็นอย่างแรกหลังจากรักษาความอากาศเปิดและ fluid resuscitation ข้อมูลหลักการรักษา DKA คือ insulin ก่อน electrolyte ในอดมใหญ่"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 30 ปี เป็น DI ยาหมดมา 3 วัน มาด้วยเหนื่อยอ่อนเพลีย PE: PR 100 BP 80/60 marked dry lips+tongue poor skin turgor dry skin Na 160 K 3.3 ควรให้สารนาใดจึงเหมาะสม",
+    "choices": [
+      {"label": "A", "text": "NSS (0.9% NaCl)"},
+      {"label": "B", "text": "NSS/2 (0.45% NaCl)"},
+      {"label": "C", "text": "NSS/3 (0.3% NaCl)"},
+      {"label": "D", "text": "5% DW"},
+      {"label": "E", "text": "5% DW in NSS"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยเป็น DI ที่ได้รับการแยกออกจากยา 3 วัน มี hypernatremia (Na 160), dehydration, hypovolemia, hypokalemia การรักษา hypernatremia ต้องช้าๆ เพื่อหลีกเลี่ยง cerebral edema ควรใช้ hypotonic fluid เช่น NSS/2 (0.45%) หรือ NSS/3 เพื่อไล่นำ sodium ออกมาทีละน้อย ตัวเลือก B ดีที่สุด"
+  },
+  {
+    "scenario": "ชาย 75 ปี U/D DM, HT, DLP มา ER ด้วยซึมไม่รู้ตัว 1 ชั่วโมง ก่อนหน้านั้นเช้ามีไข้ปวดเมือยตามตัว กินอาหารได้น้อยลง ตอนเที่ยงญาติพบไม่รู้สึกตัว PE: BT 37.8 BP 110/70 PR 100 RR 24 lung clear auscultation BS other normal oxygen sat 95% DTX 40 mg% Treatment?",
+    "choices": [
+      {"label": "A", "text": "NSS load"},
+      {"label": "B", "text": "Empirical antibiotics"},
+      {"label": "C", "text": "IV glucose push"},
+      {"label": "D", "text": "ET tube"},
+      {"label": "E", "text": "CT brain emergency"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี blood sugar ต่ำ (DTX 40 mg%) ซึ่งคำนวณได้เป็น 40 mg/dL hypoglycemia ที่ร้ายแรง ก่อให้เกิด loss of consciousness รักษาอย่างแรกคือ IV glucose push เพื่อยกระดับ blood sugar อย่างรวดเร็ว หลังจากนั้นค่อยหาสาเหตุของ infection (fever)  อาจจะเป็น hypoglycemia ที่เกิดจากการใช้ insulin หรือ sulfonylurea ในการป่วยหรือ infection"
+  },
+  {
+    "scenario": "ชาย 70 ปี สูง 170 cm หนัก 70 kg แข็งแรงดี No U/D มาตรวจสุขภาพประจาปี BP 130/85 mmHg FPG 130 mg/dL อย่างอื่นปกติ นอกจากแนะนำควบคุมอาหาร ออกกำลังกาย ควรทำอะไรอีก",
+    "choices": [
+      {"label": "A", "text": "ตรวจซ้ำอีก 1 ปี"},
+      {"label": "B", "text": "ส่ง HbA1c"},
+      {"label": "C", "text": "ตรวจ FPG ซ้ำอีก"},
+      {"label": "D", "text": "ตรวจ OGTT"},
+      {"label": "E", "text": "ให้ยาเบาหวาน"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2012",
+    "status": "complete",
+    "ai_notes": "FPG 130 mg/dL เข้าข่ายการวินิจฉัย impaired fasting glucose (IFG: 100-125 mg/dL) ตามเกณฑ์ ADA/WHO ข้อสอบนี้อาจมีความเข้าใจเดิมของเกณฑ์ IFG ซึ่งอาจเป็น 110-125 mg/dL ในเกณฑ์เก่า การตรวจ FPG ซ้ำหรือทำ OGTT เป็นขั้นตอนต่อไปเพื่อยืนยันการวินิจฉัยหรือกลั่นกรองสำหรับ DM"
+  },
+  {
+    "scenario": "ผู้ป่วย DM กินอาหารเที่ยงตรงเวลา ไม่มีใจสั่น หิวบ่อยตอนบ่าย กินน้ำหวานแล้วดีขึ้น on biphasic human insulin เช้า 30U เย็น 15U มาตรวจตามนัด FBS 200 HbA1c 8.5 Management?",
+    "choices": [
+      {"label": "A", "text": "กินข้าวเที่ยงมากขึ้น"},
+      {"label": "B", "text": "ให้กิน snack"},
+      {"label": "C", "text": "ลด insulin ตอนเช้าลง 5U"},
+      {"label": "D", "text": "เจาะ capillary glucose ตอนมีอาการ"},
+      {"label": "E", "text": "เปลี่ยน biphasic insulin"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2012",
+    "status": "complete",
+    "ai_notes": "อาการหิวบ่อยตอนบ่าย กินน้ำหวานแล้วดีขึ้น แนะนำ hypoglycemia ในช่วงบ่าย โดยเฉพาะตรวจสอบจริงๆว่าเป็น hypoglycemia หรือไม่โดยการเจาะ capillary glucose ตอนมีอาการ ส่วน FBS 200 HbA1c 8.5 บ่งชี้ว่า overall glycemic control ไม่ดี แต่ปัญหาเฉพาะตอนบ่ายนี้ต้องวินิจฉัยก่อน"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 70 ปี ซึมมา 1 วัน ก่อนหน้านี้ 3 เดือน กินน้อยลง ท้องผูก เคยผ่าตัดที่คอแต่ญาติไม่รู้ว่าผ่าอะไร BP 156/70 PR 50 BS 68 Na 120 K 3.8 Cl 88 Cr 2 T3 60 FT4 0.6 TSH 1.3 cortisol level 1 transverse surgical scar ที่คอ Management?",
+    "choices": [
+      {"label": "A", "text": "Thyroxine"},
+      {"label": "B", "text": "HCTZ"},
+      {"label": "C", "text": "Hydrocortisone"},
+      {"label": "D", "text": "50% Glucose"},
+      {"label": "E", "text": "3% NaCl"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2012",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมีสัญญาณของ panhypopituitarism จากผ่าตัดต่อมใต้สมองมา 3 เดือน (transverse surgical scar ที่คอ) แสดงด้วย: T3 60 (low) FT4 0.6 (low) TSH 1.3 (inappropriately normal) cortisol level 1 (low) hypothyroidism ที่ central hyponatremia ความดันต่ำ bradycardia อาการของ secondary hypothyroidism และ secondary adrenal insufficiency ต้องให้ hydrocortisone เป็นอย่างแรก หลังจากทำให้ cortisol กลับเข้ามา ค่อยให้ thyroxine"
+  },
+  {
+    "scenario": "หญิง 16 ปี คอโต 3 เดือน เหนื่อยง่าย ใจสั่น บางครั้ง PR 84 BP 110/70 Goiter 2+ other WNL TFT: WNL anti-thyroxin peroxidase negative Diagnosis?",
+    "choices": [
+      {"label": "A", "text": "Simple goiter"},
+      {"label": "B", "text": "Grave's disease"},
+      {"label": "C", "text": "Hashimoto's thyroiditis"},
+      {"label": "D", "text": "Subacute thyroiditis"},
+      {"label": "E", "text": "Iodine deficiency"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2012",
+    "status": "complete",
+    "ai_notes": "หญิง 16 ปี คอโต anti-TPO negative TFT ปกติ ท่า PR และ BP ปกติ อาการ fatigue และ palpitations อาจเป็นผลจากขยายตัวของต่อมฯ โดยตัวฟังก์ชัน ทำให้เกิดอาการซบเซา แต่ TFT ปกติหมายถึง simple goiter (non-toxic goiter) ไม่ใช่ Grave's หรือ Hashimoto (ซึ่งจะมี antibody)"
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 25 ปี น้ำหนัก 65 กิโลกรัม สูง 1.65 เมตร มี Triglyceride สูง มาตรวจร่างกายประจำปี ที่เหลือให้ค่า Lab ต่างๆ มากก็ปกติดี ถามทำอย่างไร",
+    "choices": [
+      {"label": "A", "text": "Reassure"},
+      {"label": "B", "text": "Weight reduction"},
+      {"label": "C", "text": "ให้ยาลดไขมัน"},
+      {"label": "D", "text": "Lifestyle modification + ตรวจซ้ำ"},
+      {"label": "E", "text": "ตรวจวินิจฉัยหาสาเหตุ secondary hypertriglyceridemia"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2012",
+    "status": "complete",
+    "ai_notes": "BMI = 65/(1.65)^2 = 23.9 kg/m^2 (ปกติ) ผู้หญิงอายุ 25 ปี มี isolated hypertriglyceridemia ค่าอื่นๆปกติ ไม่มี obesity ดังนั้น lifestyle modification และ weight reduction เป็นการแทรกแซงอย่างแรก บอก reassure ไม่ใช่เพราะ TG สูงนั้นมีความเสี่ยง หากว่า reassure คือการบอกให้ไม่เป็นห่วงและ follow up ได้"
+  },
+  {
+    "scenario": "ผู้ป่วยเบาหวานรับการตรวจวัดระยะยาว 1 เดือน best investigation is?",
+    "choices": [
+      {"label": "

@@ -1,0 +1,525 @@
+[
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 30 ปี มาด้วยหูขวาอื้อมา 1 วัน ผู้ป่วยต้องเดินทางโดยเครื่องบินบ่อยๆ และมักหูอื้อเวลาเครื่องบินขึ้นหรือลง สักพักจะหายไปเอง 2 วันก่อน ขณะเครื่องบินลงจอดที่ลาน รู้สึกหูขวาอื้อและปวดหูมาก การได้ยินลดลง เช้านี้ยังหูอื้ออยู่แต่ไม่ปวดหูแล้ว ตรวจ left ear drum: normal, right ear drum: dark blue, retracted ear drum, Weber test: localized to right, Rinne test: left AC>BC, right BC>AC จงบอกการรักษาที่เหมาะสม",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Loratadine"
+      },
+      {
+        "label": "B",
+        "text": "Pseudoephedrine"
+      },
+      {
+        "label": "C",
+        "text": "Serrapeptase"
+      },
+      {
+        "label": "D",
+        "text": "Chloramphenicol eardrop"
+      },
+      {
+        "label": "E",
+        "text": "Myringotomy"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี serous otitis media (OM with effusion) จากบาโรทรอมา (barotrauma) ของเครื่องบิน ตรวจพบ dark blue retracted ear drum และ conductive hearing loss (BC>AC) ที่หูขวา การรักษา: Pseudoephedrine เพื่อให้หลอดอุสตาคิแบบเปิด ช่วยให้น้าหลั่งออกจากกลวงหู Loratadine ใช้เมื่อมีองค์ประกอบภูมิแพ้"
+  },
+  {
+    "scenario": "หลังจากฝึกซ้อมยิงปืน หูขวาอื้อมีเสียงดังอื้อในหู ตรวจร่างกายมี ear drum: intact, Weber: no lateralization, Rinne: Rt BC>AC, Lt AC>BC จงวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acoustic trauma"
+      },
+      {
+        "label": "B",
+        "text": "Otosclerosis"
+      },
+      {
+        "label": "C",
+        "text": "Meniere disease"
+      },
+      {
+        "label": "D",
+        "text": "Steatosis"
+      },
+      {
+        "label": "E",
+        "text": "Otitis media"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "ประวัติฝึกซ้อมยิงปืน (high noise exposure) ทำให้เกิด noise-induced hearing loss ซึ่งแสดงการแผ่ BC>AC ด้านขวา (sensorineural hearing loss) Weber ไม่มี lateralization แสดง symmetric hearing loss หรือเป็นอาการรุนแรงด้านเดียว"
+  },
+  {
+    "scenario": "ผู้ป่วยเด็ก มีไข้ น้ามูกไหล ตรวจหูพบ erythematous with bulging at posterior tympanic membrane จงให้ยาใดรักษา",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Tetracycline"
+      },
+      {
+        "label": "B",
+        "text": "Amoxicillin"
+      },
+      {
+        "label": "C",
+        "text": "Erythromycin"
+      },
+      {
+        "label": "D",
+        "text": "Doxycycline"
+      },
+      {
+        "label": "E",
+        "text": "Amoxicillin-clavulanic acid"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "อาการคือ acute otitis media (ไข้ น้ามูกไหล ยับยั้งจากเยื่อบอก) โปรแกรมแรกสำหรับเด็กคือ Amoxicillin ปัญหาที่กว่างหลังไป Amoxicillin-clavulanic acid สำหรับเชื้อที่มี beta-lactamase"
+  },
+  {
+    "scenario": "เด็กชายอายุ 5 ปี มีไข้ หายใจเสียงดัง น้ามูกไหลจากจมูกทั้งสองข้าง นอนกรนมา 2 ปี น่าจะเป็นจากอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Choanal atresia"
+      },
+      {
+        "label": "B",
+        "text": "High arch palate"
+      },
+      {
+        "label": "C",
+        "text": "Hypertrophy of adenoid"
+      },
+      {
+        "label": "D",
+        "text": "Foreign body of nasal cavity"
+      },
+      {
+        "label": "E",
+        "text": "Congenital tumor of nasal cavity"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "อาการ: ไข้ (บ่งชี้การติดเชื้อ) หายใจเสียงดัง (stridor หรือ snoring) น้ามูกไหล (rhinorrhea) นอนกรน 2 ปี (chronic airway obstruction) ชี้ไป Adenoid hypertrophy ซึ่งเป็นเหตุปกติของ airway obstruction ในเด็ก Choanal atresia มักพบในทารก ไม่มี stridor นี้"
+  },
+  {
+    "scenario": "เด็กมาด้วยน้ามูกเขียวเหม็นไหลจากจมูกซ้าย ได้ยาแล้วก็ไม่หาย คิดว่าเป็นอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Nasal polyp"
+      },
+      {
+        "label": "B",
+        "text": "Foreign body in nasal cavity"
+      },
+      {
+        "label": "C",
+        "text": "Unilateral sinusitis"
+      },
+      {
+        "label": "D",
+        "text": "Choanal atresia"
+      },
+      {
+        "label": "E",
+        "text": "Nasal papilloma"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "เด็กมีน้ามูกเขียวเหม็นไหลจากจมูกข้างเดียว (unilateral) และไม่ดีขึ้นแม้ได้ยาแล้ว ลักษณะนี้เป็นเอกสิทธิ์ของ foreign body impact ในจมูก โดยเฉพาะในเด็ก โจทย์ชี้ว่า 'FB impact' อยู่แล้ว"
+  },
+  {
+    "scenario": "ชาย อายุ 45 ปี มีอาการคัดจมูกด้านซ้าย น้ามูกปนเลือด หูอื้อ มีก้อนที่คอ จงวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Carcinoma nasopharynx"
+      },
+      {
+        "label": "B",
+        "text": "Otitis media"
+      },
+      {
+        "label": "C",
+        "text": "Nasal polyposis"
+      },
+      {
+        "label": "D",
+        "text": "Unilateral sinusitis"
+      },
+      {
+        "label": "E",
+        "text": "Adenoid hypertrophy"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "อาการคัดจมูกข้างเดียว น้ามูกปนเลือด หูอื้อ (บ่งชี้การอุดตัน Eustachian tube) มีก้อนที่คอ (cervical lymphadenopathy) รวมกัน = nasopharyngeal carcinoma ซึ่งเป็น 'red flag' diagnosis ที่ต้องเสียดาย"
+  },
+  {
+    "scenario": "หญิง 25 ปี คัดจมูก มีน้ามูก และจามอยู่บ่อยๆ ไปพบแพทย์ ได้รับการวินิจฉัยว่าเป็น จมูกอักเสบจากภูมิแพ้ ได้ยาหยอดจมูก 6 เดือน อาการไม่ดีขึ้น จึ่งซื้อยามาหยอดจมูกเอง 3 เดือน อาการแย่ลง น้ามูกมากขึ้น หายใจไม่ค่อยออก จงวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Atrophic rhinitis"
+      },
+      {
+        "label": "B",
+        "text": "Vasomotor rhinitis"
+      },
+      {
+        "label": "C",
+        "text": "Chronic irritative rhinitis"
+      },
+      {
+        "label": "D",
+        "text": "Rhinitis medicamentosa"
+      },
+      {
+        "label": "E",
+        "text": "Severe allergic rhinitis with polypoid change"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยใช้ยาหยอดจมูก (สันนิษฐานว่า nasal decongestant เช่น phenylephrine หรือ xylometazoline) นาน > 7-10 วัน ส่งผลให้เกิด rebound congestion และ rhinitis medicamentosa ลักษณะการแย่ลงจาก nasal spray self-medication เป็นเอกสิทธิ์"
+  },
+  {
+    "scenario": "หญิง 28 ปีไข้ต่าๆไอมีเสมหะ มี bullous myringitis จงคิดถึงเชื้ออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Streptococcus pneumoniae"
+      },
+      {
+        "label": "B",
+        "text": "Haemophilus influenzae"
+      },
+      {
+        "label": "C",
+        "text": "Respiratory syncytial virus (RSV)"
+      },
+      {
+        "label": "D",
+        "text": "Mycoplasma pneumoniae"
+      },
+      {
+        "label": "E",
+        "text": "Influenza virus"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "Bullous myringitis เป็น otologic manifestation ของ respiratory tract infection บ่อยครั้งที่สุด เชื้อคือ Mycoplasma pneumoniae มักมาพร้อมไข้ต่าๆ ไอเรื้อรัง และเสมหะ ตัดสินได้จาก cold agglutinin test หรือ serologic test"
+  },
+  {
+    "scenario": "ผู้ป่วยมีไข้ ไอ มาตรวจพบ bullous myringitis ยาที่ใช้รักษาคือกลุ่มใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Beta-lactam (Penicillin, Cephalosporin)"
+      },
+      {
+        "label": "B",
+        "text": "Macrolide (Erythromycin, Azithromycin)"
+      },
+      {
+        "label": "C",
+        "text": "Fluoroquinolone (Levofloxacin, Ciprofloxacin)"
+      },
+      {
+        "label": "D",
+        "text": "Aminoglycoside (Gentamicin, Amikacin)"
+      },
+      {
+        "label": "E",
+        "text": "Tetracycline"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2008",
+    "status": "complete",
+    "ai_notes": "Bullous myringitis โดยมากเกิดจาก Mycoplasma pneumoniae ซึ่งไม่มี cell wall ไม่ติดต่อ beta-lactam ยาเลือก = Macrolides (Erythromycin, Azithromycin, Clarithromycin) หรือ Tetracyclines"
+  },
+  {
+    "scenario": "เด็กอายุ 8 ปี มีปวดกรามขวา อ้าปากไม่ได้ PE พบฟันกรามผุทั้งซ้ายและขวา แก้มด้านขวาปูด มีก้อนแข็งนูนออกมา จงวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Gingivitis"
+      },
+      {
+        "label": "B",
+        "text": "Dentoalveolar abscess"
+      },
+      {
+        "label": "C",
+        "text": "Dentoalveolar abscess with space infection"
+      },
+      {
+        "label": "D",
+        "text": "Periodontitis"
+      },
+      {
+        "label": "E",
+        "text": "Dental caries only"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "อาการ: ปวดกรามขวา อ้าปากไม่ได้ (limited mouth opening = trismus) มีฟันผุ แก้มปูด + ก้อนแข็งนูน ตรงนี้เป็น dentoalveolar abscess ที่แพร่ไปยัง masticator space ทำให้มี trismus ต้องรักษาแบบ aggressive ด้วยการเปิดหลวม drain and extraction"
+  },
+  {
+    "scenario": "ชาย 19 ปี มีอาการคัดจมูกเป็นๆหายๆมา 2 ปี อาการเป็นมากขึ้น บางครั้งมีน้ามูกขุ่น ไม่มีเลือดกาเดาออก การได้กลิ่นลดลง แพทย์ตรวจพบก้อนในโพรงจมูก 2 ข้าง ก้อนกลม มัน ผิวเรียบ จงวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Allergic rhinitis"
+      },
+      {
+        "label": "B",
+        "text": "Rhinosinusitis"
+      },
+      {
+        "label": "C",
+        "text": "Inverted papilloma"
+      },
+      {
+        "label": "D",
+        "text": "Nasal polyp"
+      },
+      {
+        "label": "E",
+        "text": "Angiofibroma"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "อาการเป็นๆหายๆ ก้อนกลม มัน ผิวเรียบ ทั้ง 2 ข้าง และไม่มีเลือดออก + ลดการได้กลิ่น = nasal polyp (เอกโดมา) บ่อยครั้งจากภูมิแพ้ Inverted papilloma จะ unilateral ตามปกติ angiofibroma เกิดในชายหนุ่ม แต่มักเป็นข้างเดียว"
+  },
+  {
+    "scenario": "เด็ก เป็น acute otitis media มีอาการ post nasal drip ถ้าส่ง film Caldwell view และ ? film อื่น ที่บอกว่าเป็น acute sinusitis แน่นอน จะต้องดูลักษณะใดที่สำคัญ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Thickening ethmoid sinus"
+      },
+      {
+        "label": "B",
+        "text": "Thickening frontal sinus"
+      },
+      {
+        "label": "C",
+        "text": "Haziness of maxillary sinus"
+      },
+      {
+        "label": "D",
+        "text": "Air-fluid level in maxillary sinus"
+      },
+      {
+        "label": "E",
+        "text": "Periosteal mucosa thickening > 5 mm"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "เพื่อการวินิจฉัย acute sinusitis บน X-ray ลักษณะทีชัดเจนที่สุด = air-fluid level หรือ opacification ของ maxillary sinus ในรูป Caldwell หรือ Waters view Mucosal thickening > 5 mm ก็สำคัญแต่ air-fluid level ชัดกว่า"
+  },
+  {
+    "scenario": "ชาย อายุกลางคน ไอ เสียงแหบ กลืนปกติ ไม่มีหอบเหนื่อย ไม่มีหายใจลาบาก สูบบุหรี่ วันละ 2 ซอง มา 30 ปี ตรวจร่างกายปกติ ไม่มีต่อมน้าเหลืองโต จงวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Laryngeal cancer, glottic type"
+      },
+      {
+        "label": "B",
+        "text": "Laryngeal cancer, supraglottic type"
+      },
+      {
+        "label": "C",
+        "text": "Tuberculosis of larynx"
+      },
+      {
+        "label": "D",
+        "text": "Vocal nodule"
+      },
+      {
+        "label": "E",
+        "text": "Laryngitis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2009",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี risk factor: สูบบุหรี่ 30 ปี อาการ: เสียงแหบ ไม่มี dysphagia, no respiratory symptoms บ่งชี้ว่าเป็น glottic cancer (vocal cord involvement) ที่ยังเป็น early stage (no neck nodes) Supraglottic cancer จะมี dysphagia ได้ง่ายกว่า"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 18 ปี ถูกทาร้ายร่างกาย หายใจเหนื่อย ไอเป็นเลือด เสียงแหบ มี subcutaneous emphysema at neck จงหาการรักษาที่เหมาะสม (airway management)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Intubation"
+      },
+      {
+        "label": "B",
+        "text": "CT larynx"
+      },
+      {
+        "label": "C",
+        "text": "Tracheotomy"
+      },
+      {
+        "label": "D",
+        "text": "Barium swallowing"
+      },
+      {
+        "label": "E",
+        "text": "Arterial blood gas (ABG)"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี laryngeal trauma (subcutaneous emphysema, hemoptysis, hoarseness, dyspnea) ซึ่งอาจมี airway obstruction ในอนาคต Oral intubation อาจทำให้การสูญเสีย airway แย่ลง ดังนั้น tracheotomy เป็นเลือกที่ปลอดภัยสำหรับ emergency airway management ใน laryngeal trauma"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 30 ปี ทำงานโรงงานเย็บผ้า 5 ปี หูซ้ายได้ยินลดลงเรื่อยๆมา 1 ปี ต้องรับโทรศัพท์ด้านขวา TM: intact both, Weber: lateralize to left, Rinne: right AC>BC (+), left BC>AC (-) จงวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Otosclerosis"
+      },
+      {
+        "label": "B",
+        "text": "Meniere disease"
+      },
+      {
+        "label": "C",
+        "text": "Noise-induced hearing loss"
+      },
+      {
+        "label": "D",
+        "text": "Acoustic neuroma"
+      },
+      {
+        "label": "E",
+        "text": "Cholesteatoma"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยทำงานโรงงานเย็บผ้า (noise exposure) 5 ปี ได้ยินลดลงด้านซ้ายเรื่อยๆ ตรวจ: TM intact (ไม่ใช่ conductive) Weber lateralize to left (normal hearing ear) Rinne left BC>AC (sensorineural loss) = noise-induced hearing loss เป็นเหตุ"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 5 ขวบ ไข้ ไอ เจ็บคอ มีน้ามูก ปวดหู ส่องดูเห็น ear drum แดงๆ การวินิจฉัยที่เหมาะสมคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute otitis media"
+      },
+      {
+        "label": "B",
+        "text": "Otitis externa"
+      },
+      {
+        "label": "C",
+        "text": "Serous otitis media"
+      },
+      {
+        "label": "D",
+        "text": "Mastoiditis"
+      },
+      {
+        "label": "E",
+        "text": "Otosclerosis"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "อาการคือ upper respiratory infection (ไข้ ไอ เจ็บคอ น้ามูก) + ปวดหู + erythematous ear drum = acute otitis media ซึ่งเป็น complication ทั่วไป"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 20 ปี แผลเจ็บที่ริมฝีปาก 1 cm preauricular lymph node โตกดเจ็บ จงทำการตรวจเพิ่มเติมหรือรักษาอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Observe"
+      },
+      {
+        "label": "B",
+        "text": "Fine needle aspiration (FNA)"
+      },
+      {
+        "label": "C",
+        "text": "Lymph node biopsy"
+      },
+      {
+        "label": "D",
+        "text": "Incision of wound in mouth"
+      },
+      {
+        "label": "E",
+        "text": "Excision of wound in mouth"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "มี small wound ที่ริมฝีปาก (1 cm) + preauricular LN enlargement (likely secondary to wound infection) ลักษณะนี้ reactive lymphadenopathy จาก local infection ที่ริมฝีปาก ควร observe ก่อน ส่วนใหญ่จะดีขึ้นเอง หากมี LN > 2 cm ยังคงโตไป 4-6 สัปดาห์ ค่อย consider biopsy"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 16 ปี ล่องเรือไปเที่ยวเกาะ ขณะเรือออกกลางทะเลมี คลื่นไส้ อาเจียน ใช้ยาอะไรรักษา",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Paracetamol"
+      },
+      {
+        "label": "B",
+        "text": "Dimenhydrinate"
+      },
+      {
+        "label": "C",
+        "text": "Propranolol"
+      },
+      {
+        "label": "D",
+        "text": "Tramadol"
+      },
+      {
+        "label": "E",
+        "text": "Cinnarizine"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2010",
+    "status": "complete",
+    "ai_notes": "Motion sickness จากการล่องเรือ การรักษา: Dimenhydrinate (antihistamine + anticholinergic) หรือ Cinnarizine (calcium channel blocker, better for motion sickness) ที่มีให้เลือก Dimenhydrinate เป็นตัวเลือก standard"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 40 ปี จะไปเที่ยวภูเขาหิมาลัย มาพบแพทย์เพื

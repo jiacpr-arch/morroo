@@ -1,0 +1,282 @@
+[
+  {
+    "scenario": "A 28-year-old woman, primigravidarum, GA 10 weeks, with light bleeding per vagina and bright red blood. PV: os closed, old blood clot. Ultrasound presents gestational sac, 10 week-size, normal fetal heart activity. What is the appropriate management?",
+    "choices": [
+      {"label": "A", "text": "Bed rest"},
+      {"label": "B", "text": "Cervical cerclage"},
+      {"label": "C", "text": "Estradiol"},
+      {"label": "D", "text": "Sedative and narcotic drug"},
+      {"label": "E", "text": "Inhibit with tocolytic"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Threatened abortion with closed os and normal fetal heart activity indicates viable pregnancy. Management is conservative with bed rest, pelvic rest, and follow-up ultrasound."
+  },
+  {
+    "scenario": "A 28-year-old GA 10 weeks presents with vaginal bleeding. PV: os closed, uterus 10 weeks size. Present fetal cardiac activity. What is the management?",
+    "choices": [
+      {"label": "A", "text": "Bed rest"},
+      {"label": "B", "text": "Estradiol supplement"},
+      {"label": "C", "text": "Cervical cerclage"},
+      {"label": "D", "text": "Hospitalization for observation"},
+      {"label": "E", "text": "Immediate evacuation of pregnancy"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Threatened abortion with viable fetus (normal cardiac activity, closed os). Bed rest is the standard conservative management. Estradiol and progesterone are not evidence-based for threatened abortion."
+  },
+  {
+    "scenario": "A patient GA third trimester has vaginal bleeding. She has abdominal pain and frequent contractions. Ultrasound reveals uterus at fundus, no retroplacental blood clot. What is the most likely diagnosis?",
+    "choices": [
+      {"label": "A", "text": "Vasa previa"},
+      {"label": "B", "text": "Placenta previa"},
+      {"label": "C", "text": "Uterine rupture"},
+      {"label": "D", "text": "Placenta accreta"},
+      {"label": "E", "text": "Placental abruption"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Absence of retroplacental blood clot rules out abruption. No pain suggests placenta previa rather than abruption or rupture. The absence of a clot and presence of bleeding with contractions in third trimester is most consistent with placenta previa."
+  },
+  {
+    "scenario": "A woman G2P1001 GA 38 weeks, previous low transverse cesarean section, presents with bleeding per vagina and abdominal pain. PR 120/min, BP 80/60 mmHg. Can palpable fetal part. What is the diagnosis?",
+    "choices": [
+      {"label": "A", "text": "Placenta previa"},
+      {"label": "B", "text": "Uterine rupture"},
+      {"label": "C", "text": "Placental abruption"},
+      {"label": "D", "text": "Placenta accreta"},
+      {"label": "E", "text": "Vasa previa"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Signs of uterine rupture: shock (BP 80/60, PR 120), abdominal pain, vaginal bleeding, history of previous cesarean section. Palpable fetal parts suggest fetus may be in peritoneal cavity."
+  },
+  {
+    "scenario": "A 40-year-old woman first ANC at GA 12 weeks. She has severe nausea, vomiting, dark urine. PE: fundal height 2/3 above pubic symphysis. What is the most proper investigation?",
+    "choices": [
+      {"label": "A", "text": "Serum β-hCG"},
+      {"label": "B", "text": "Ultrasound"},
+      {"label": "C", "text": "Amniocentesis"},
+      {"label": "D", "text": "Liver function test"},
+      {"label": "E", "text": "Thyroid function test"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Signs suggest hyperemesis gravidarum or molar pregnancy: severe nausea/vomiting, dark urine (dehydration), and fundal height larger than expected (2/3 above pubic symphysis at GA 12 weeks suggests molar pregnancy). Ultrasound is needed to rule out molar pregnancy and assess for hyperemesis complications."
+  },
+  {
+    "scenario": "A 35-year-old female patient primigravida GA 10 week by LMP presented with blood spotting. PE: Uterus 20 week size. Ultrasonography revealed numerous cystic appearance. What is the most appropriate management?",
+    "choices": [
+      {"label": "A", "text": "Waiting for spontaneous abortion"},
+      {"label": "B", "text": "Misoprostol vaginal suppository"},
+      {"label": "C", "text": "Suction curettage"},
+      {"label": "D", "text": "Fractional curettage"},
+      {"label": "E", "text": "Hysterectomy"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Clinical features (uterus larger than dates, cystic appearance on ultrasound) suggest molar pregnancy (hydatidiform mole). Suction curettage is the treatment of choice for molar pregnancy. Hysterectomy is reserved for older women or those with malignant features."
+  },
+  {
+    "scenario": "A 26-year-old woman primigravida GA 15 week comes for ANC. She concerns that her child might have Down syndrome since her cousin's child has Down syndrome. What is your management?",
+    "choices": [
+      {"label": "A", "text": "Reassure that there is no risk"},
+      {"label": "B", "text": "Triple/quad screening"},
+      {"label": "C", "text": "Nuchal translucency"},
+      {"label": "D", "text": "Amniocentesis"},
+      {"label": "E", "text": "Chorionic villus sampling"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "At GA 15 weeks, triple/quad screening (AFP, hCG, uE3, ± inhibin A) is appropriate for Down syndrome screening. At this gestation, nuchal translucency (11-14 weeks) is less ideal but could be done. Invasive procedures (amniocentesis, CVS) are not first-line without increased risk factors."
+  },
+  {
+    "scenario": "A 36-year-old primigravida GA 30 weeks come for ANC. PE: fundal height 1/4 above umbilicus, FHS 140/min. Ultrasound: single viable fetus, estimated fetal weight less than 10th percentile of normal average GA. Which is the best investigation for fetal surveillance?",
+    "choices": [
+      {"label": "A", "text": "Fetal movement count"},
+      {"label": "B", "text": "Non-stress test"},
+      {"label": "C", "text": "Biophysical profile"},
+      {"label": "D", "text": "Contraction stress test"},
+      {"label": "E", "text": "Umbilical artery doppler"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Intrauterine growth restriction (IUGR, EFW <10th percentile). Umbilical artery doppler is the best investigation for assessment of placental insufficiency and fetal well-being in IUGR. It helps determine timing of delivery."
+  },
+  {
+    "scenario": "A 19-year-old woman G1P0 GA 37 weeks, no ANC, fully dilated cervix, station 0. Fetal monitoring shows variable deceleration. What is the management?",
+    "choices": [
+      {"label": "A", "text": "Oxytocin augmentation"},
+      {"label": "B", "text": "Observation with maternal positioning"},
+      {"label": "C", "text": "Vacuum extraction"},
+      {"label": "D", "text": "Forceps extraction"},
+      {"label": "E", "text": "Emergency cesarean section"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Variable decelerations suggest cord compression. Initial management is intrauterine resuscitation: maternal repositioning (left lateral), oxygen supplementation, increase IV fluids, and observation. If decelerations persist or worsen, proceed to operative delivery."
+  },
+  {
+    "scenario": "Fetal monitoring shows variable deceleration. What is the management?",
+    "choices": [
+      {"label": "A", "text": "Drip oxytocin"},
+      {"label": "B", "text": "Amniotomy"},
+      {"label": "C", "text": "Observe with intrauterine resuscitation"},
+      {"label": "D", "text": "Emergency cesarean section"},
+      {"label": "E", "text": "Immediate operative vaginal delivery"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Variable decelerations (cord compression pattern) respond well to intrauterine resuscitation. Initial management includes positional changes, oxygen, IV fluid bolus, and observation. Amniotomy should be avoided as it may worsen cord compression."
+  },
+  {
+    "scenario": "A 28-year-old woman primigravida, GA 30 weeks. PE: fundal height of uterus 3/4 above umbilical. Palpable two large parts, and multiple small parts. What is the most likely cause?",
+    "choices": [
+      {"label": "A", "text": "Wrong date"},
+      {"label": "B", "text": "Polyhydramnios"},
+      {"label": "C", "text": "Fetal macrosomia"},
+      {"label": "D", "text": "Multiple pregnancy"},
+      {"label": "E", "text": "Pregnancy with myoma uteri"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Two large palpable parts (likely fetal heads/rumps) and multiple small parts (multiple limbs) suggest multiple pregnancy. This is the classic finding for multiple gestation on abdominal examination."
+  },
+  {
+    "scenario": "A woman with preterm labor with contractions. Management to inhibit labor. Which is NOT a tocolytic agent?",
+    "choices": [
+      {"label": "A", "text": "Beta-blocker"},
+      {"label": "B", "text": "Magnesium sulfate"},
+      {"label": "C", "text": "Calcium channel blocker"},
+      {"label": "D", "text": "Oxytocin receptor antagonist"},
+      {"label": "E", "text": "Prostaglandin synthetase inhibitor"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Tocolytic agents include: magnesium sulfate, calcium channel blockers (nifedipine), oxytocin receptor antagonists (atosiban), and prostaglandin synthetase inhibitors (indomethacin). Beta-blockers are NOT used as tocolytics and actually increase uterine contractions."
+  },
+  {
+    "scenario": "A 24-year-old woman twin pregnancy GA 34 weeks has watery discharge from vagina. PE: fundal height 4/4 above umbilicus, cephalic-breech presentation, FHS normal. What is the proper management?",
+    "choices": [
+      {"label": "A", "text": "Urine analysis"},
+      {"label": "B", "text": "Nitrazine paper at perineum"}},
+      {"label": "C", "text": "Speculum examination for pooling of fluid"},
+      {"label": "D", "text": "Finger examination to estimate cervical dilatation"},
+      {"label": "E", "text": "Sonography to evaluate amniotic fluid volume"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Suspected rupture of membranes (PROM). Speculum examination for pooling of amniotic fluid is the first-line test. It allows visualization of fluid pooling in the vagina and is safer than digital cervical examination which increases infection risk. Nitrazine paper and ferning test can support the diagnosis."
+  },
+  {
+    "scenario": "What is the absolute contraindication for amniotomy to induce labor?",
+    "choices": [
+      {"label": "A", "text": "Macrosomia"},
+      {"label": "B", "text": "Polyhydramnios"},
+      {"label": "C", "text": "Prematurity"},
+      {"label": "D", "text": "Transverse lie"},
+      {"label": "E", "text": "Brow presentation"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Absolute contraindications to amniotomy include abnormal fetal presentation (transverse lie, oblique lie, brow presentation). Transverse lie has high risk of cord prolapse with amniotomy. Placenta previa is also an absolute contraindication."
+  },
+  {
+    "scenario": "A 25-year-old female primigravida GA 35 week, normal previous ANC, presents with persistent headache 3 days. PE: BP 170/110 mmHg, pitting edema, DTR 3+, FHR 140, uterine contraction interval 2 min, duration 50 sec, moderate intensity, Cx dilated, effacement 50%, station 0, intact membrane, urine albumin 2+. After MgSO4 IV, BP 140/90 mmHg. What is the next proper management?",
+    "choices": [
+      {"label": "A", "text": "Amniotomy"},
+      {"label": "B", "text": "IV dexamethasone"},
+      {"label": "C", "text": "IV antihypertension agent"},
+      {"label": "D", "text": "Emergency cesarean section"},
+      {"label": "E", "text": "Continue expectant management"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Diagnosis: Severe preeclampsia with seizure risk (headache, BP 170/110, DTR 3+, proteinuria 2+, labor signs at GA 35 weeks). After MgSO4 given and BP stabilized to 140/90, the next step is delivery. At GA 35 weeks with severe preeclampsia and signs of labor, cesarean section is appropriate. IV dexamethasone for fetal lung maturity is acceptable but delivery is the definitive management."
+  },
+  {
+    "scenario": "A 20-year-old woman primigravida GA 38 weeks presents with abdominal pain. PE: BP 150/90 mmHg, puffy eyelid, pretibial edema, no uterine contraction. PV: dilated 3 cm, effacement 20%, station 0, membrane intact. Lab: urine protein 2+. What is the management?",
+    "choices": [
+      {"label": "A", "text": "Reassure and follow up twice a week"},
+      {"label": "B", "text": "Induction at GA 39 week"},
+      {"label": "C", "text": "Admit and close observation"},
+      {"label": "D", "text": "Admit and induction of labor"},
+      {"label": "E", "text": "Emergency cesarean section"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Diagnosis: Preeclampsia (BP 150/90, edema, proteinuria 2+) at GA 38 weeks. Management is delivery. Since patient is at term with preeclampsia, induction of labor is indicated. Cesarean section not immediately necessary as this is not severe preeclampsia (no severe symptoms, no lab abnormalities mentioned)."
+  },
+  {
+    "scenario": "A 20-year-old primigravida at 35 weeks of gestation had a blood pressure of 150/100 mmHg with edema of lower extremities and proteinuria 1+. She developed a generalized tonic-clonic convulsion for 2 minutes. Deep tendon reflex was 3+. Cervix os was closed. Which is the appropriate management?",
+    "choices": [
+      {"label": "A", "text": "Cesarean section immediately"},
+      {"label": "B", "text": "Order CT scan emergency and consult neurosurgery"},
+      {"label": "C", "text": "Start MgSO4 infusion then try induction with oxytocin"},
+      {"label": "D", "text": "Start MgSO4 infusion then cesarean section in 2-4 hours"},
+      {"label": "E", "text": "Start MgSO4 infusion then try induction with misoprostol"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Diagnosis: Eclampsia (seizure in preeclamptic patient: BP 150/100, proteinuria, DTR 3+). Management of eclampsia: (1) MgSO4 for seizure prophylaxis and treatment, (2) Delivery once stabilized. At GA 35 weeks with eclampsia and closed cervix, cesarean section is appropriate after stabilization and MgSO4 administration. CT scan is not indicated unless altered mental status persists after seizure control."
+  },
+  {
+    "scenario": "A patient at term, PV: cephalic presentation, prolapsed umbilical cord, fully dilated cervix, station 0. Cannot do cesarean section within 30 minutes. What is the proper management?",
+    "choices": [
+      {"label": "A", "text": "Knee chest position"},
+      {"label": "B", "text": "Forceps extraction"},
+      {"label": "C", "text": "Vacuum extraction"},
+      {"label": "D", "text": "Manual replacement of the prolapsed cord above the presenting part"},
+      {"label": "E", "text": "Insert Foley catheter into vagina"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Umbilical cord prolapse with fully dilated cervix and cephalic presentation at station 0. When immediate cesarean is not available, forceps extraction is indicated for emergency delivery. Knee chest position keeps cord from being compressed but doesn't expedite delivery. Vacuum extraction may be slower. Manual replacement risks infection and fetal compromise."
+  },
+  {
+    "scenario": "A woman G2P1 GA 40 week. PROM 12 hours, cervix dilates 3 cm, effacement 75%, irregular contraction, vertex position. What is the next management?",
+    "choices": [
+      {"label": "A", "text": "Discharge follow-up"},
+      {"label": "B", "text": "Wait for spontaneous delivery"},
+      {"label": "C", "text": "Oxytocin IV infusion"},
+      {"label": "D", "text": "Misoprostol"},
+      {"label": "E", "text": "Cesarean section"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "PROM at term (GA 40 weeks) for 12 hours with irregular contractions and favorable cervix (3 cm dilated, 75% effaced). Management includes induction of labor with oxytocin to reduce infection risk (chorioamnionitis increases with prolonged PROM). Patient is already in latent phase of labor, so augmentation is appropriate."
+  },
+  {
+    "scenario": "A woman G1P0 GA 38 weeks in labor. Second stage for 1 hour. Contraction interval 2 minutes, duration 45 seconds, station +3. What is the proper management?",
+    "choices": [
+      {"label": "A", "text": "Observe progression of labor"},
+      {"label": "B", "text": "Vacuum extraction"},
+      {"label": "C", "text": "Forceps extraction"},
+      {"label": "D", "text": "Emergency cesarean section"},
+      {"label": "E", "text": "Augment with oxytocin"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "Second stage of labor for 1 hour in a primigravida with good contractions and low station (+3). Normal second stage in primigravida can be up to 2-3 hours. Since contractions are adequate (interval 2 min, duration 45 sec) and progress is being made, observation is appropriate. Operative delivery is not yet indicated."
+  }
+]

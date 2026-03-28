@@ -1,0 +1,842 @@
+[
+  {
+    "id": "6f886d28-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "ทารก 1 เดือน ร้องไห้ + ชักเกร็งแขนขา → Infantile colic (ไม่ใช่ seizure จริง)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Infantile colic) เพราะ ทารก 1-4 เดือนร้องไห้นาน + extensional posturing = colic ไม่ใช่ pathologic seizure",
+      "reason": "Infantile colic: rule of 3s = ร้องไห้ >3 ชั่วโมง/วัน, >3 วัน/สัปดาห์, >3 สัปดาห์ Occurrence: อายุ 2-4 สัปดาห์ ถึง 3-4 เดือน ลักษณะ: arching back, pulling up legs, extended limbs ขณะร้อง Benign and self-limiting Tetanus neonatorum: ขากรรไกรแข็ง (trismus), opisthotonus ไม่ใช่ทารก 1 เดือนในปัจจุบัน Epilepsy: seizure pattern ต่าง กว่า Intracranial hemorrhage: ซึม + fontanelle โป่ง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Infantile colic",
+          "is_correct": true,
+          "explanation": "Classic: ทารก 1-3 เดือน ร้องไห้ + extensional posturing benign and self-limiting"
+        },
+        {
+          "label": "B",
+          "text": "Epilepsy",
+          "is_correct": false,
+          "explanation": "Seizure มี rhythmic jerking หรือ staring ต่างจาก colic"
+        },
+        {
+          "label": "C",
+          "text": "Intracranial hemorrhage",
+          "is_correct": false,
+          "explanation": "มี bulging fontanelle, lethargy, seizure"
+        },
+        {
+          "label": "D",
+          "text": "Tetanus neonatorum",
+          "is_correct": false,
+          "explanation": "Trismus + opisthotonus + generalized spasms ไม่ใช่ pattern นี้"
+        },
+        {
+          "label": "E",
+          "text": "Cerebral palsy",
+          "is_correct": false,
+          "explanation": "Motor disorder แต่ไม่เป็น acute episodic event"
+        }
+      ],
+      "key_takeaway": "ทารก 1-3 เดือน ร้องไห้นาน + arching back/extended limbs = Infantile colic (benign)"
+    }
+  },
+  {
+    "id": "703588d7-0000-0000-0000-000000000000",
+    "correct_answer": "C",
+    "explanation": "เด็ก 5 ปี ไข้ 2 วัน → afebrile แล้วผื่นขึ้น → Roseola infantum (HHV-6)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C (Roseola infantum) เพราะ ไข้สูง 3-5 วัน → ไข้ลด → ผื่น maculopapular ขึ้น = classic Roseola (HHV-6/7)",
+      "reason": "Roseola infantum (Exanthem subitum): HHV-6 (majority), HHV-7 ไข้สูง 3-5 วัน (38-40°C) → ไข้ลดทันที → ผื่น maculopapular ขึ้นที่ trunk แล้วกระจาย อายุ 6 เดือน - 2 ปี พบบ่อยที่สุด Measles: ไข้ + cough + coryza + Koplik spots → ผื่น maculopapular จาก face ลงมา Rubella: ไข้ต่ำ + ผื่น + lymphadenopathy Varicella: vesicular rash Enterovirus: HFMD หรือ herpangina",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Measles",
+          "is_correct": false,
+          "explanation": "Prodrome: 3C (cough, coryza, conjunctivitis) + Koplik spots ก่อนผื่น"
+        },
+        {
+          "label": "B",
+          "text": "Rubella",
+          "is_correct": false,
+          "explanation": "ไข้ต่ำ + retroauricular lymphadenopathy + fine maculopapular rash"
+        },
+        {
+          "label": "C",
+          "text": "Roseola infantum",
+          "is_correct": true,
+          "explanation": "High fever 3-5 วัน → fever breaks → maculopapular rash (HHV-6) = classic Roseola"
+        },
+        {
+          "label": "D",
+          "text": "Enterovirus",
+          "is_correct": false,
+          "explanation": "HFMD: vesicles ในปาก/มือ/เท้า ไม่ใช่ pattern นี้"
+        },
+        {
+          "label": "E",
+          "text": "Varicella",
+          "is_correct": false,
+          "explanation": "Vesicular rash ที่เริ่มจาก trunk ไม่ใช่ after defervescence"
+        }
+      ],
+      "key_takeaway": "ไข้สูง 3-5 วัน → ไข้ลด → ผื่น trunk = Roseola infantum (HHV-6)"
+    }
+  },
+  {
+    "id": "7167891f-0000-0000-0000-000000000000",
+    "correct_answer": "B",
+    "explanation": "เด็ก 2 ปี hematemesis + hypovolemic signs → Resuscitation ด้วย 0.9% NSS 20 mL/kg ก่อน",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (0.9% NSS 20 mL/kg in 30 min) เพราะ hematemesis + shock ต้องการ volume resuscitation ทันที",
+      "reason": "Upper GI bleeding ในเด็ก: ถ้า hemodynamically unstable → volume resuscitation ก่อน 0.9% NSS 20 mL/kg ใน 30 นาที เป็น initial bolus สำหรับ shock ใน pediatric PRBC ให้ถ้า Hgb ต่ำ/shock ไม่ตอบสนอง Octreotide: ใช้ถ้าสงสัย variceal bleeding (portal hypertension) Omeprazole: ให้ร่วมแต่ไม่ใช่ resuscitation Consult surgery: ถ้า bleeding uncontrolled",
+      "choices": [
+        {
+          "label": "A",
+          "text": "LPRC 20 mL/kg in 1 hour",
+          "is_correct": false,
+          "explanation": "Blood ให้ช้าเกินไปสำหรับ acute shock; crystalloid ก่อน"
+        },
+        {
+          "label": "B",
+          "text": "0.9% NSS 20 mL/kg in 30 min",
+          "is_correct": true,
+          "explanation": "Initial volume resuscitation สำหรับ hypovolemic shock ใน pediatric"
+        },
+        {
+          "label": "C",
+          "text": "Omeprazole",
+          "is_correct": false,
+          "explanation": "ให้ร่วมแต่ไม่ใช่ resuscitation"
+        },
+        {
+          "label": "D",
+          "text": "Consult surgery",
+          "is_correct": false,
+          "explanation": "Resuscitate ก่อน consult surgery"
+        },
+        {
+          "label": "E",
+          "text": "Octreotide IV 5 mg/kg",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ variceal bleeding ไม่ใช่ initial resuscitation"
+        }
+      ],
+      "key_takeaway": "Pediatric GI bleeding + shock → 0.9% NSS 20 mL/kg ก่อน (volume resuscitation)"
+    }
+  },
+  {
+    "id": "716e9ce2-0000-0000-0000-000000000000",
+    "correct_answer": "E",
+    "explanation": "Newborn term RR 70 + tachycardia + low SpO2 → ต้องการ Endotracheal tube placement",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ E (Endotracheal tube placement) เพราะ severe respiratory distress ในทารกแรกเกิดที่ SpO2 ต่ำมาก ต้องการ definitive airway + mechanical ventilation",
+      "reason": "Newborn respiratory failure: RR 70, tachycardia, low SpO2 ตั้งแต่ 1 ชั่วโมง = severe respiratory distress Indications for intubation: SpO2 ต่ำถึงแม้ O2 supplementation, apnea, severe RDS ET tube placement ให้ ventilatory support ได้โดยตรง Oxygen mask with bag: ใช้ระหว่าง resuscitation ชั่วคราว PFT/Bronchoscopy: ไม่ใช่ acute management",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Pulmonary function test",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ acute management"
+        },
+        {
+          "label": "B",
+          "text": "Observe",
+          "is_correct": false,
+          "explanation": "อันตรายมากสำหรับ severe respiratory distress"
+        },
+        {
+          "label": "C",
+          "text": "Bronchoscopy",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ emergency treatment"
+        },
+        {
+          "label": "D",
+          "text": "Oxygen mask with bag",
+          "is_correct": false,
+          "explanation": "Temporary ใช้ระหว่าง resuscitation แต่ไม่ใช่ definitive"
+        },
+        {
+          "label": "E",
+          "text": "Endotracheal tube placement",
+          "is_correct": true,
+          "explanation": "Severe respiratory failure ในทารก → intubation + mechanical ventilation"
+        }
+      ],
+      "key_takeaway": "Newborn severe respiratory failure (RR 70, low SpO2) → Endotracheal intubation"
+    }
+  },
+  {
+    "id": "75ec9de6-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "เด็ก HFMD (drooling + vesicles) → การป้องกันที่สำคัญที่สุดคือ Hand washing",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Hand washing) เพราะ HFMD (Coxsackie A) แพร่ทาง fecal-oral route และ contact → hand hygiene เป็น most effective prevention",
+      "reason": "HFMD prevention: Fecal-oral transmission: ล้างมือหลังเข้าห้องน้ำ/เปลี่ยนผ้าอ้อม Contact transmission: ล้างมือก่อนทำอาหาร ไม่มีวัคซีน routine สำหรับ Coxsackie A ในไทย Antibiotics ไม่มีประสิทธิผลกับ viral infection หน้ากาก/ถุงมือ ช่วยได้แต่ hand hygiene สำคัญที่สุด แยกผู้ป่วยเพียง 7-10 วัน แต่ hand washing เป็น primary prevention",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ล้างมือด้วยน้ำและสบู่",
+          "is_correct": true,
+          "explanation": "Most effective prevention สำหรับ HFMD (fecal-oral + contact transmission)"
+        },
+        {
+          "label": "B",
+          "text": "ให้ antibiotics เพื่อป้องกัน",
+          "is_correct": false,
+          "explanation": "HFMD เป็น viral ไม่ตอบสนองต่อ antibiotics"
+        },
+        {
+          "label": "C",
+          "text": "ใส่หน้ากากตลอด",
+          "is_correct": false,
+          "explanation": "ช่วยได้บ้างแต่ไม่ใช่ primary prevention ที่สำคัญที่สุด"
+        },
+        {
+          "label": "D",
+          "text": "แยกผู้ป่วย 10 วัน",
+          "is_correct": false,
+          "explanation": "Isolation ช่วยแต่ไม่ใช่ primary prevention strategy"
+        },
+        {
+          "label": "E",
+          "text": "ฉีดวัคซีนสมาชิกในครัวเรือน",
+          "is_correct": false,
+          "explanation": "ไม่มีวัคซีน routine สำหรับ Coxsackie A ในไทย"
+        }
+      ],
+      "key_takeaway": "HFMD prevention = Hand washing (fecal-oral route)"
+    }
+  },
+  {
+    "id": "79d5bd4d-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "Newborn term RR สูง + respiratory distress → Pulmonary function test (อาจเป็นคำตอบที่ตั้งใจให้ตรวจ evaluate)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Pulmonary function test) — ในบริบทนี้อาจหมายถึง initial assessment ของ respiratory function",
+      "reason": "Newborn respiratory distress evaluation: PFT ใน newborn สามารถประเมิน lung compliance, tidal volume, FRC ช่วย diagnose RDS vs TTN vs meconium aspiration ET tube: สำหรับ severe respiratory failure Observation: ถ้า mild symptoms Oxygen mask: supplemental O2 ไม่ใช่ definitive assessment",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Pulmonary function test",
+          "is_correct": true,
+          "explanation": "ตามคำตอบที่กำหนด — assess respiratory function ใน newborn"
+        },
+        {
+          "label": "B",
+          "text": "Observe",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอสำหรับ severe distress"
+        },
+        {
+          "label": "C",
+          "text": "Bronchoscopy",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ acute management"
+        },
+        {
+          "label": "D",
+          "text": "Oxygen mask with bag",
+          "is_correct": false,
+          "explanation": "Temporary, ไม่ใช่ assessment"
+        },
+        {
+          "label": "E",
+          "text": "ET tube",
+          "is_correct": false,
+          "explanation": "สำหรับ severe failure ที่ต้องการ ventilation"
+        }
+      ],
+      "key_takeaway": "Newborn respiratory distress workup includes pulmonary function assessment"
+    }
+  },
+  {
+    "id": "7b784c6d-0000-0000-0000-000000000000",
+    "correct_answer": "B",
+    "explanation": "เด็ก 9 ปี sudden hearing loss ซ้าย + เดินเซ + nausea → Sudden sensorineural hearing loss with vestibular dysfunction",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Sudden sensorineural hearing loss with vestibular dysfunction) เพราะ sudden unilateral SNHL + vestibular symptoms = SSNHL",
+      "reason": "Sudden SNHL: ≥30 dB loss ใน ≥3 frequencies ภายใน 72 ชั่วโมง อาจมี vestibular symptoms ร่วม (vertigo, unsteadiness) Etiology: viral (most common), vascular, autoimmune Treatment: systemic corticosteroids (high-dose prednisolone) ให้เร็วที่สุด Viral labyrinthitis: มักมี vertigo โดดเด่น hearing loss น้อยกว่า Temporal bone fracture: ต้องมี head trauma BPPV: positional vertigo ไม่มี sudden hearing loss Meningitis: fever + meningeal signs",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Viral labyrinthitis",
+          "is_correct": false,
+          "explanation": "ส่วนใหญ่ vestibular symptoms โดดเด่นกว่า hearing loss"
+        },
+        {
+          "label": "B",
+          "text": "Sudden sensorineural hearing loss with vestibular dysfunction",
+          "is_correct": true,
+          "explanation": "Sudden unilateral SNHL + vestibular symptoms = SSNHL → corticosteroids ทันที"
+        },
+        {
+          "label": "C",
+          "text": "CNS infection (meningitis)",
+          "is_correct": false,
+          "explanation": "ต้องมี fever + meningeal signs + CSF changes"
+        },
+        {
+          "label": "D",
+          "text": "Temporal bone fracture",
+          "is_correct": false,
+          "explanation": "ต้องมี head trauma history"
+        },
+        {
+          "label": "E",
+          "text": "BPPV",
+          "is_correct": false,
+          "explanation": "Positional vertigo ไม่มี sudden unilateral hearing loss"
+        }
+      ],
+      "key_takeaway": "Sudden unilateral hearing loss + vestibular symptoms = SSNHL → Corticosteroids ทันที"
+    }
+  },
+  {
+    "id": "7e0760fc-0000-0000-0000-000000000000",
+    "correct_answer": "C",
+    "explanation": "Newborn term C/S respiratory distress → Transient Tachypnea of Newborn (TTN) จาก delayed lung fluid clearance",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C (TTN) เพราะ term newborn หลัง C/S (ไม่ผ่าน vaginal canal) → fluid ในปอดระบายช้า → TTN",
+      "reason": "TTN: เกิดใน term/near-term infant หลัง C/S มากกว่า vaginal delivery ปอดไม่ถูก squeeze ผ่าน birth canal อาการ: tachypnea (>60/min), mild retractions, grunting ตั้งแต่ ชั่วโมงแรก CXR: wet lung, perihilar streaking, hyperinflation Treatment: Supplemental O2, resolves in 24-72 ชั่วโมง RDS: ใน preterm หรือ surfactant deficiency MAS: ต้องมี meconium staining",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Acute respiratory distress",
+          "is_correct": false,
+          "explanation": "ไม่ specific ไม่ใช่ diagnosis"
+        },
+        {
+          "label": "B",
+          "text": "Tetralogy of Fallot",
+          "is_correct": false,
+          "explanation": "TOF: cyanosis แต่ไม่มี respiratory distress ในทันที"
+        },
+        {
+          "label": "C",
+          "text": "Transient tachypnea of the newborn (TTN)",
+          "is_correct": true,
+          "explanation": "Term C/S + tachypnea ตั้งแต่ชั่วโมงแรก = TTN (delayed lung fluid clearance)"
+        },
+        {
+          "label": "D",
+          "text": "Meconium aspiration syndrome",
+          "is_correct": false,
+          "explanation": "ต้องมี meconium-stained amniotic fluid"
+        },
+        {
+          "label": "E",
+          "text": "Pneumonia",
+          "is_correct": false,
+          "explanation": "ต้องมี infection evidence, fever, consolidation"
+        }
+      ],
+      "key_takeaway": "Term newborn หลัง C/S + tachypnea ตั้งแต่ชั่วโมงแรก = TTN (self-limiting)"
+    }
+  },
+  {
+    "id": "7e3385c8-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "เด็ก 6 ปี wheeze + respiratory distress → ให้ O2 + SABA (salbutamol) ทางหายใจทันที",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (O2 + SABA nebulization) เพราะ acute asthma attack first-line treatment คือ oxygen + inhaled short-acting beta-2 agonist",
+      "reason": "Acute asthma attack management: Step 1: O2 เพื่อ maintain SpO2 ≥94% + Inhaled SABA (salbutamol) ทุก 20 นาที × 3 doses Step 2: Systemic corticosteroid (oral prednisolone หรือ IV) ถ้าไม่ตอบสนอง Step 3: Ipratropium bromide เพิ่ม (severe attack) Step 4: IV magnesium sulfate/aminophylline ถ้า life-threatening Oral corticosteroid เดี่ยว ไม่เพียงพอสำหรับ acute attack Theophylline IV: ไม่แนะนำ first-line เนื่องจาก narrow therapeutic window",
+      "choices": [
+        {
+          "label": "A",
+          "text": "O2 + SABA (salbutamol) nebulization",
+          "is_correct": true,
+          "explanation": "First-line: O2 (SpO2 ≥94%) + inhaled SABA = immediate bronchodilation"
+        },
+        {
+          "label": "B",
+          "text": "Oral corticosteroid เท่านั้น",
+          "is_correct": false,
+          "explanation": "ต้องการ bronchodilator ด้วย oral steroid ช้าเกินไปสำหรับ acute attack"
+        },
+        {
+          "label": "C",
+          "text": "Ipratropium bromide ก่อน",
+          "is_correct": false,
+          "explanation": "เป็น adjunct ไม่ใช่ first-line (ใช้ร่วมกับ SABA ใน severe attack)"
+        },
+        {
+          "label": "D",
+          "text": "IV Theophylline",
+          "is_correct": false,
+          "explanation": "ไม่แนะนำ first-line เนื่องจาก toxicity"
+        },
+        {
+          "label": "E",
+          "text": "EKG + Magnesium sulfate",
+          "is_correct": false,
+          "explanation": "Mg SO4 ใช้ใน severe/life-threatening attack ไม่ใช่ first-line"
+        }
+      ],
+      "key_takeaway": "Acute asthma attack → O2 + Inhaled SABA (salbutamol) ก่อน จากนั้น systemic corticosteroid"
+    }
+  },
+  {
+    "id": "8399d18f-0000-0000-0000-000000000000",
+    "correct_answer": "B",
+    "explanation": "ทารก 9 เดือน แม่จะกลับไปทำงาน เด็กร้องไห้เมื่อแยกจาก → Normal development (separation anxiety ปกติ)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Normal development) เพราะ separation anxiety เริ่มที่ 6-8 เดือน peak ที่ 10-18 เดือน เป็นพัฒนาการปกติ",
+      "reason": "Separation anxiety: พัฒนาการปกติใน infants เริ่ม 6-8 เดือน peak 10-18 เดือน เด็กรู้จัก caregiver เฉพาะ + กังวลเมื่อแยกจาก = healthy attachment บ่งบอก cognitive development (object permanence) ดี Stranger anxiety: กลัวคนแปลกหน้า ปกติ 6-9 เดือน Resistant/avoidant attachment: รูปแบบ attachment ที่ผิดปกติ Poor nourishing: ไม่เกี่ยวข้อง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Poor nourishing",
+          "is_correct": false,
+          "explanation": "ไม่เกี่ยวข้องกับ separation anxiety"
+        },
+        {
+          "label": "B",
+          "text": "Normal development",
+          "is_correct": true,
+          "explanation": "Separation anxiety ที่ 9 เดือน = healthy, normal developmental milestone"
+        },
+        {
+          "label": "C",
+          "text": "Anxiety avoidant",
+          "is_correct": false,
+          "explanation": "Avoidant attachment: เด็กไม่ร้องไห้เมื่อแยก ไม่ใช่กรณีนี้"
+        },
+        {
+          "label": "D",
+          "text": "Resistant avoidant",
+          "is_correct": false,
+          "explanation": "Mixed insecure attachment pattern"
+        },
+        {
+          "label": "E",
+          "text": "Stranger anxiety with separation anxiety",
+          "is_correct": false,
+          "explanation": "B (Normal development) ครอบคลุมและถูกต้องกว่า"
+        }
+      ],
+      "key_takeaway": "ทารก 9 เดือนร้องเมื่อแยกจากแม่ = Normal separation anxiety (developmental milestone)"
+    }
+  },
+  {
+    "id": "8477bd9c-0000-0000-0000-000000000000",
+    "correct_answer": "B",
+    "explanation": "Newborn C/S GA 38 wk respiratory distress → Oxygen box เป็น first-line (TTN)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Oxygen box) เพราะ near-term infant หลัง C/S + respiratory distress = TTN รักษาด้วย supplemental O2",
+      "reason": "TTN management: Supplemental O2 ผ่าน oxygen box/hood เพื่อ maintain O2 sat ≥94% สังเกตการณ์ + CXR ยืนยัน Resolves spontaneously 24-72 ชั่วโมง Keep warm: ไม่เพียงพอ CPAP: ถ้า O2 ไม่เพียงพอ Intubation: severe respiratory failure เท่านั้น",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Keep warm",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอสำหรับ respiratory distress"
+        },
+        {
+          "label": "B",
+          "text": "Oxygen box",
+          "is_correct": true,
+          "explanation": "TTN first-line: supplemental O2 ผ่าน oxygen box"
+        },
+        {
+          "label": "C",
+          "text": "Nasal CPAP",
+          "is_correct": false,
+          "explanation": "Second-line ถ้า O2 ไม่เพียงพอ"
+        },
+        {
+          "label": "D",
+          "text": "Observe closely with supplemental O2",
+          "is_correct": false,
+          "explanation": "B (oxygen box) เป็น active treatment ที่ specific กว่า"
+        },
+        {
+          "label": "E",
+          "text": "Intubation + mechanical ventilation",
+          "is_correct": false,
+          "explanation": "สำหรับ severe respiratory failure เท่านั้น"
+        }
+      ],
+      "key_takeaway": "TTN = Supplemental O2 (oxygen box) ก่อน CPAP ก่อน intubation"
+    }
+  },
+  {
+    "id": "86a7a2b9-0000-0000-0000-000000000000",
+    "correct_answer": "D",
+    "explanation": "เด็ก 6 ปี ไข้ ไอ น้ำมูก 2 วัน + influenza confirmed → Oseltamivir",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D (Oseltamivir) เพราะ confirmed influenza ในเด็กต้องได้ antiviral ภายใน 48 ชั่วโมง",
+      "reason": "Influenza treatment: Oseltamivir (Tamiflu) เป็น first-line antiviral สำหรับ influenza A และ B ให้ภายใน 48 ชั่วโมงหลังเริ่มอาการ ลด duration และ severity Dose ตามน้ำหนัก ระยะเวลา 5 วัน Cetirizine: antihistamine สำหรับ allergic rhinitis Amoxicillin: bacterial infection Ribavirin: RSV/Hepatitis C ไม่ใช่ influenza Azithromycin: bacterial (atypical) ไม่ใช่ influenza",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cetirizine",
+          "is_correct": false,
+          "explanation": "Antihistamine สำหรับ allergy ไม่ใช่ influenza"
+        },
+        {
+          "label": "B",
+          "text": "Amoxicillin",
+          "is_correct": false,
+          "explanation": "Antibiotic สำหรับ bacterial infection"
+        },
+        {
+          "label": "C",
+          "text": "Ribavirin",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ RSV, HCV ไม่ใช่ influenza"
+        },
+        {
+          "label": "D",
+          "text": "Oseltamivir",
+          "is_correct": true,
+          "explanation": "First-line antiviral สำหรับ influenza ให้ภายใน 48 ชั่วโมง"
+        },
+        {
+          "label": "E",
+          "text": "Azithromycin",
+          "is_correct": false,
+          "explanation": "Macrolide antibiotic สำหรับ atypical bacteria"
+        }
+      ],
+      "key_takeaway": "Confirmed influenza ในเด็ก → Oseltamivir ภายใน 48 ชั่วโมง"
+    }
+  },
+  {
+    "id": "88faf81d-0000-0000-0000-000000000000",
+    "correct_answer": "B",
+    "explanation": "Newborn Day 3 jaundice + cephalhematoma → Extravasated hemolysis from cephalhematoma เป็นสาเหตุหลัก",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Extravasated hemolysis from cephalhematoma) เพราะ cephalhematoma เป็น extravascular blood ที่สลายตัวเพิ่ม bilirubin load",
+      "reason": "Cephalhematoma: subperiosteal hematoma → extravascular RBC breakdown → เพิ่ม indirect bilirubin → jaundice Day 3 Physiologic jaundice: peak Day 3-5 ไม่มี contributing factors ABO incompatibility: มักเกิดเร็วกว่า (Day 1-2), positive direct Coombs Breast milk jaundice: ช้ากว่า (Day 7-10) ต้องใช้ clinical judgment: cephalhematoma + jaundice = extravasated hemolysis สำคัญ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ABO incompatibility",
+          "is_correct": false,
+          "explanation": "มักเกิดวันแรก-สอง, Coombs positive ต้องตรวจ blood type ก่อน"
+        },
+        {
+          "label": "B",
+          "text": "Extravasated hemolysis from cephalhematoma",
+          "is_correct": true,
+          "explanation": "Cephalhematoma → extravascular RBC breakdown → ↑ indirect bilirubin Day 3"
+        },
+        {
+          "label": "C",
+          "text": "Breast milk jaundice",
+          "is_correct": false,
+          "explanation": "มักเกิด Day 7-14 ไม่ใช่ Day 3"
+        },
+        {
+          "label": "D",
+          "text": "Rh incompatibility",
+          "is_correct": false,
+          "explanation": "ต้องมี Rh negative mother, มักรุนแรงกว่า, Coombs strongly positive"
+        },
+        {
+          "label": "E",
+          "text": "Physiologic jaundice",
+          "is_correct": false,
+          "explanation": "Cephalhematoma เป็น contributing factor ที่ต้องระบุ"
+        }
+      ],
+      "key_takeaway": "Neonatal jaundice + cephalhematoma Day 3 = Extravasated hemolysis contributing to jaundice"
+    }
+  },
+  {
+    "id": "8aa094eb-0000-0000-0000-000000000000",
+    "correct_answer": "E",
+    "explanation": "ทารก 4 สัปดาห์ non-bilious vomiting (pyloric stenosis) → Metabolic alkalosis: HCO3 สูง",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ E (Serum HCO3 35) เพราะ pyloric stenosis ทำให้ผลัก HCl ออกมาก → hypochloremic hypokalemic metabolic alkalosis",
+      "reason": "Pyloric stenosis: hypertrophy ของ pyloric muscle → gastric outlet obstruction → projectile non-bilious vomiting อาการ: อายุ 2-8 สัปดาห์, ชาย >หญิง, hungry after vomiting Metabolic changes: สูญเสีย HCl (gastric acid) → metabolic alkalosis (HCO3 สูง), hypokalemia, hypochloremia Lab: HCO3 สูง (>28 mEq/L), Cl ต่ำ, K ต่ำ, Na ปกติ/ต่ำเล็กน้อย Ultrasound: diagnostic (pyloric muscle thickness >3mm, length >14mm)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Hct 30%",
+          "is_correct": false,
+          "explanation": "Anemia ไม่ใช่ characteristic finding ของ pyloric stenosis"
+        },
+        {
+          "label": "B",
+          "text": "Serum Na 140",
+          "is_correct": false,
+          "explanation": "Na มักปกติหรือต่ำเล็กน้อย"
+        },
+        {
+          "label": "C",
+          "text": "Serum Cl 110",
+          "is_correct": false,
+          "explanation": "Cl ต่ำ ไม่ใช่สูง"
+        },
+        {
+          "label": "D",
+          "text": "Serum K 4",
+          "is_correct": false,
+          "explanation": "K ต่ำ ไม่ใช่ปกติ"
+        },
+        {
+          "label": "E",
+          "text": "Serum HCO3 35",
+          "is_correct": true,
+          "explanation": "Metabolic alkalosis: HCO3 สูง จากการสูญเสีย HCl ใน pyloric stenosis"
+        }
+      ],
+      "key_takeaway": "Pyloric stenosis → Hypochloremic hypokalemic metabolic ALKALOSIS (HCO3 สูง, Cl ต่ำ, K ต่ำ)"
+    }
+  },
+  {
+    "id": "8add8856-0000-0000-0000-000000000000",
+    "correct_answer": "B",
+    "explanation": "เด็ก 5.5 ปี diarrhea + ริมฝีปากแห้ง + severe dehydration → IV isotonic saline rapidly",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (IV isotonic saline rapidly) เพราะ severe dehydration ต้องการ IV fluid resuscitation ทันที ไม่สามารถ ORT ได้",
+      "reason": "Dehydration classification: Mild (<5%): ORT Moderate (5-10%): ORT หรือ IV ถ้าไม่ tolerant Severe (>10%): IV fluid resuscitation ทันที Sign ของ severe dehydration: dry lips/mucosa + tachycardia + poor skin turgor + decreased urine output IV isotonic saline (0.9% NSS) 20 mL/kg ใน 30 นาที จากนั้น reassess",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Oral rehydration therapy",
+          "is_correct": false,
+          "explanation": "Severe dehydration ไม่เหมาะสำหรับ ORT เพราะอาจไม่ tolerate oral"
+        },
+        {
+          "label": "B",
+          "text": "IV isotonic saline rapidly",
+          "is_correct": true,
+          "explanation": "Severe dehydration → IV resuscitation ทันที (20 mL/kg bolus)"
+        },
+        {
+          "label": "C",
+          "text": "IV hypotonic solution",
+          "is_correct": false,
+          "explanation": "Hypotonic อาจทำให้ hyponatremia ใช้ isotonic ก่อน"
+        },
+        {
+          "label": "D",
+          "text": "Check urine output first",
+          "is_correct": false,
+          "explanation": "Resuscitate ก่อน monitoring รอได้"
+        },
+        {
+          "label": "E",
+          "text": "Treat hyperkalemia",
+          "is_correct": false,
+          "explanation": "Diarrhea มักทำให้ hypokalemia ไม่ใช่ hyperkalemia"
+        }
+      ],
+      "key_takeaway": "Severe dehydration ในเด็ก → IV isotonic saline 20 mL/kg bolus ทันที"
+    }
+  },
+  {
+    "id": "8cae8bcf-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "เด็ก otitis media → dyspnea ตามมา → สงสัย mastoiditis → Ceftriaxone (IV antibiotic สำหรับ complicated otitis media)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Ceftriaxone) เพราะ otitis media ที่มี complications (mastoiditis/pneumonia) ต้องการ IV ceftriaxone",
+      "reason": "Otitis media complications: mastoiditis, meningitis, brain abscess → ต้องการ parenteral antibiotics Ceftriaxone: broad-spectrum cephalosporin ครอบคลุม Strep pneumoniae, H. influenzae, M. catarrhalis ใช้ IV/IM สำหรับ complicated otitis media หรือ severe disease Amoxicillin: first-line สำหรับ uncomplicated AOM Augmentin: สำหรับ amoxicillin-resistant cases Ciprofloxacin: ไม่แนะนำสำหรับ otitis media ใน children Cefixime: oral สำหรับ mild-moderate",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ceftriaxone",
+          "is_correct": true,
+          "explanation": "IV/IM ceftriaxone สำหรับ complicated otitis media ที่มี dyspnea (mastoiditis/empyema)"
+        },
+        {
+          "label": "B",
+          "text": "Augmentin",
+          "is_correct": false,
+          "explanation": "Oral antibiotic สำหรับ uncomplicated AOM ที่ fail amoxicillin"
+        },
+        {
+          "label": "C",
+          "text": "Ciprofloxacin",
+          "is_correct": false,
+          "explanation": "ไม่แนะนำใน children สำหรับ otitis media"
+        },
+        {
+          "label": "D",
+          "text": "Amoxicillin",
+          "is_correct": false,
+          "explanation": "First-line สำหรับ uncomplicated AOM ไม่เพียงพอสำหรับ complicated"
+        },
+        {
+          "label": "E",
+          "text": "Cefixime",
+          "is_correct": false,
+          "explanation": "Oral สำหรับ mild disease ไม่ใช่ complicated"
+        }
+      ],
+      "key_takeaway": "Complicated otitis media (mastoiditis/meningitis) → IV Ceftriaxone"
+    }
+  },
+  {
+    "id": "9035bb7d-0000-0000-0000-000000000000",
+    "correct_answer": "C",
+    "explanation": "เด็ก ulcers ที่ posterior palate (Herpangina/HFMD) → Prevention ที่ดีที่สุดคือ Wash hands",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C (Wash hands) เพราะ HFMD/Herpangina (Coxsackie A) แพร่ทาง fecal-oral → hand hygiene สำคัญที่สุด",
+      "reason": "Coxsackie A / Enterovirus transmission: fecal-oral route + respiratory droplets Hand washing: ลด fecal-oral transmission ได้มากที่สุด ไม่มีวัคซีน routine Antibiotics: ไม่มีประสิทธิผลกับ viral infection Mask: ลด respiratory droplets แต่ไม่ใช่ primary prevention",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Wear mask",
+          "is_correct": false,
+          "explanation": "ช่วยบ้างแต่ไม่ใช่ primary prevention สำหรับ fecal-oral transmission"
+        },
+        {
+          "label": "B",
+          "text": "Wear glove",
+          "is_correct": false,
+          "explanation": "ช่วยได้แต่ hand washing สำคัญกว่า"
+        },
+        {
+          "label": "C",
+          "text": "Wash hands",
+          "is_correct": true,
+          "explanation": "Most effective prevention สำหรับ fecal-oral diseases (HFMD/Herpangina)"
+        },
+        {
+          "label": "D",
+          "text": "Antibiotics",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ treatment หรือ prevention สำหรับ viral infection"
+        },
+        {
+          "label": "E",
+          "text": "Immunization",
+          "is_correct": false,
+          "explanation": "ไม่มีวัคซีน routine สำหรับ Coxsackie A ในไทย"
+        }
+      ],
+      "key_takeaway": "HFMD/Herpangina prevention = Hand washing (fecal-oral route)"
+    }
+  },
+  {
+    "id": "9327ab6f-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "เด็ก 4 ปี ไข้ 5 วัน + vesicular rash ตั้งแต่หน้า/ศีรษะ/trunk → Chickenpox (Varicella)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Chickenpox) เพราะ ไข้ + vesicular rash ที่เริ่มจาก trunk/face + หลายระยะพร้อมกัน = classic varicella",
+      "reason": "Chickenpox (VZV): vesicular rash เริ่มจาก trunk/face → กระจาย pleomorphic lesions (papule, vesicle, crust พร้อมกัน) Roseola: maculopapular rash หลังไข้ลด Rubeola (measles): maculopapular จาก face ลง + Koplik spots Rubella: fine maculopapular + lymphadenopathy Erythema infectiosum: slapped cheek rash + lacey rash แขนขา",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Chickenpox",
+          "is_correct": true,
+          "explanation": "Vesicular pleomorphic rash + fever + เริ่มจาก trunk/face = classic varicella"
+        },
+        {
+          "label": "B",
+          "text": "Roseola infantum",
+          "is_correct": false,
+          "explanation": "Maculopapular หลังไข้ลด ไม่ใช่ vesicular"
+        },
+        {
+          "label": "C",
+          "text": "Rubeola",
+          "is_correct": false,
+          "explanation": "Maculopapular จาก face ลง + Koplik spots"
+        },
+        {
+          "label": "D",
+          "text": "Rubella",
+          "is_correct": false,
+          "explanation": "Fine maculopapular + retroauricular lymphadenopathy"
+        },
+        {
+          "label": "E",
+          "text": "Erythema infectiosum",
+          "is_correct": false,
+          "explanation": "Slapped cheek + lacey rash แขนขา ไม่ใช่ vesicular"
+        }
+      ],
+      "key_takeaway": "Vesicular pleomorphic rash (หลายระยะพร้อมกัน) + fever = Chickenpox (VZV)"
+    }
+  },
+  {
+    "id": "9447bc01-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "ทารก 2 ชั่วโมง lip smacking + Hct 65% + BS ต่ำ → IV glucose ก่อน (neonatal hypoglycemic seizure)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (IV glucose) เพราะ neonatal seizure + blood sugar ต่ำ = hypoglycemia ต้องแก้ก่อน",
+      "reason": "Neonatal seizure workup priority: ตรวจ bedside glucose ทันที ถ้า hypoglycemia → IV glucose 10% 2 mL/kg ก่อน Hct 65% = polycythemia → อาจมีส่วนทำให้ hypoglycemia (increased glucose consumption) Phenobarbital ให้หลังจาก correct metabolic causes แล้ว Ampicillin + gentamicin ถ้าสงสัย infection",
+      "choices": [
+        {
+          "label": "A",
+          "text": "IV glucose",
+          "is_correct": true,
+          "explanation": "Correct hypoglycemia ก่อนเสมอใน neonatal seizure"
+        },
+        {
+          "label": "B",
+          "text": "IV atropine",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ treatment สำหรับ neonatal seizure"
+        },
+        {
+          "label": "C",
+          "text": "IV diazepam",
+          "is_correct": false,
+          "explanation": "ไม่แนะนำ first-line ใน neonatal seizure"
+        },
+        {
+          "label": "D",
+          "text": "IV phenobarbital",
+          "is_correct": false,
+          "explanation": "หลังจาก correct metabolic causes"
+        },
+        {
+          "label": "E",
+          "text": "IV ampicillin + gentamicin",
+          "is_correct": false,
+          "explanation": "ให้ถ้าสงสัย sepsis แต่ glucose แก้ก่อน"
+        }
+      ],
+      "key_takeaway": "Neonatal seizure + hypoglycemia → IV glucose 10% 2 mL/kg ก่อนเสมอ"
+    }
+  },
+  {
+    "id": "94babb41-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "เด็ก 2 ปี HFMD → Prevention ที่สำคัญที่สุดคือ Hand washing",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Hand washing) เพราะ HFMD แพร่ทาง fecal-oral + contact → hand hygiene เป็น primary prevention",
+      "reason": "HFMD (Coxsackie A): fecal-oral + respiratory droplet transmission Hand washing = most effective prevention ลด fecal-oral transmission ไม่มีวัคซีน routine สำหรับ Coxsackie A ในไทย (มีวัคซีน EV71 บางประเทศ) Antibiotics: viral disease ไม่ตอบสนอง Mask: ช่วย respiratory droplet แต่ hand washing สำคัญกว่า",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Hand washing",
+          "is_correct": true,
+          "explanation": "Primary prevention สำหรับ HFMD (fecal-oral route)"
+        },
+        {
+          "label": "B",
+          "text": "Wearing face mask",
+          "is_correct": false,
+          "explanation": "ช่วยบ้างแต่ไม่ใช่ primary"
+        },
+        {
+          "label": "C",
+          "text": "Wearing gloves",
+          "is_correct": false,
+          "explanation": "ช่วยได้แต่ hand washing สำคัญกว่า"
+        },
+        {
+          "label": "D",
+          "text": "Immunization",
+          "is_correct": false,
+          "explanation": "ไม่มีวัคซีน routine Coxsackie A"
+        },
+        {
+          "label": "E",
+          "text": "Antibiotic prophylaxis",
+          "is_correct": false,
+          "explanation": "HFMD เป็น viral ไม่มีประโยชน์จาก antibiotics"
+        }
+      ],
+      "key_takeaway": "HFMD (Coxsackie A) → Hand washing เป็น primary prevention"
+    }
+  }
+]

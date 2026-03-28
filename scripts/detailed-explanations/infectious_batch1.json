@@ -1,0 +1,830 @@
+[
+  {
+    "id": "005fe56f-5a4a-4298-abf6-0ec06265f642",
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วยรักษา HAP ด้วย antibiotics + vancomycin แล้วเกิด watery diarrhea = Clostridium difficile infection (CDI) จาก antibiotic-associated colitis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — C. difficile เพราะ antibiotic therapy → disruption of gut microbiome → C. diff overgrowth → toxin-mediated colitis",
+      "reason": "C. difficile infection (CDI): เกิดหลัง antibiotic therapy (โดยเฉพาะ broad-spectrum) เพราะ normal gut flora ถูกทำลาย C. diff overgrowth ผลิต Toxin A (enterotoxin) และ Toxin B (cytotoxin) อาการ: watery diarrhea (3+ ครั้ง/วัน), cramping, low-grade fever, leukocytosis รุนแรง: pseudomembranous colitis, toxic megacolon Diagnosis: C. diff toxin EIA หรือ NAAT (PCR) ใน stool Treatment: Oral vancomycin 125mg QID × 10 days หรือ Fidaxomicin Metronidazole เป็น alternative สำหรับ mild case",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Clostridium difficile",
+          "is_correct": true,
+          "explanation": "Watery diarrhea หลัง antibiotics = C. diff infection จนกว่าจะ prove otherwise"
+        },
+        {
+          "label": "B",
+          "text": "Entamoeba histolytica",
+          "is_correct": false,
+          "explanation": "Amoebic dysentery = bloody mucoid stool; ไม่ใช่ watery post-antibiotic diarrhea"
+        },
+        {
+          "label": "C",
+          "text": "Recurrent HAP",
+          "is_correct": false,
+          "explanation": "อาการ respiratory ไม่ใช่ diarrhea"
+        },
+        {
+          "label": "D",
+          "text": "Pseudomonas aeruginosa",
+          "is_correct": false,
+          "explanation": "Gram-negative rod; ทำให้ pneumonia/sepsis ไม่ใช่ diarrhea"
+        },
+        {
+          "label": "E",
+          "text": "Candida albicans",
+          "is_correct": false,
+          "explanation": "Oral/esophageal/vaginal infection; ไม่ใช่ watery diarrhea post-antibiotic"
+        }
+      ],
+      "key_takeaway": "Watery diarrhea หลัง antibiotic therapy = C. difficile infection → ตรวจ C. diff toxin/PCR → Oral Vancomycin"
+    }
+  },
+  {
+    "id": "0331a7d2-6ddc-43c3-ae29-c60c27160b2f",
+    "correct_answer": "C",
+    "explanation": "Needle stick injury จากผู้ป่วย HIV → ต้องไปรับการประเมินความเสี่ยงทันที เพื่อพิจารณา Post-Exposure Prophylaxis (PEP) ภายใน 72 ชั่วโมง",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ C — ไปรับการประเมินความเสี่ยงทันที เพราะ PEP ต้องเริ่มภายใน 72 ชั่วโมง (ยิ่งเร็วยิ่งดี ใน 2-4hr)",
+      "reason": "HIV needle stick exposure management: ล้างแผลด้วยสบู่ + น้ำไหลทันที ไปประเมิน HIV status ของ source (ผู้ป่วย) HIV PEP (Post-Exposure Prophylaxis): ต้องเริ่มภายใน 72hr (ยิ่งเร็วยิ่งดี ใน 2-4hr) ระยะเวลา: 28 วัน ยา: TDF + 3TC + DTG (integrase inhibitor preferred) Risk of transmission: needle stick จาก HIV+ source ≈ 0.3% ไม่ใช่แค่ล้างแผลอย่างเดียว (A) ต้องประเมินและ PEP ด้วย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ล้างแผล + บีบเลือด",
+          "is_correct": false,
+          "explanation": "ทำได้เป็น first step แต่ไม่เพียงพอ ต้องประเมิน PEP ด้วย"
+        },
+        {
+          "label": "B",
+          "text": "รอสังเกตอาการ",
+          "is_correct": false,
+          "explanation": "อันตราย! PEP ต้องเริ่มภายใน 72hr; การรอทำให้ PEP ไม่ได้ผล"
+        },
+        {
+          "label": "C",
+          "text": "ไปรับการประเมินทันที",
+          "is_correct": true,
+          "explanation": "Immediate risk assessment + พิจารณา PEP ภายใน 72hr (ยิ่งเร็วยิ่งดี)"
+        },
+        {
+          "label": "D",
+          "text": "ไม่ต้องตรวจเลือด",
+          "is_correct": false,
+          "explanation": "ผิด ต้องตรวจ baseline HIV, HBV, HCV ของ HCW และ source"
+        },
+        {
+          "label": "E",
+          "text": "เริ่ม ART ทันที",
+          "is_correct": false,
+          "explanation": "PEP ≠ ART; ART ใช้ใน HIV+ patient; PEP ใช้ใน HIV-exposed HCW"
+        }
+      ],
+      "key_takeaway": "Needle stick from HIV+ → ล้างแผล + ประเมิน risk + เริ่ม PEP ภายใน 2-4hr (ไม่เกิน 72hr)"
+    }
+  },
+  {
+    "id": "04f47766-a429-4bea-80dc-f0ef54808ae5",
+    "correct_answer": "B",
+    "explanation": "ครูอายุ 23 ปี เคยเป็น Rheumatic fever ตอน 15 ปี ปัจจุบันทำงานได้ปกติ ไม่มีหัวใจรั่ว → หยุด penicillin prophylaxis ได้ เพราะไม่มี Rheumatic heart disease และอายุถึง threshold",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B — หยุดยา penicillin เพราะ rheumatic fever without carditis → prophylaxis 5 ปีหรือจนอายุ 21 ปี (แล้วแต่อย่างไหนนานกว่า)",
+      "reason": "Rheumatic fever secondary prophylaxis duration (AHA guidelines): RF without carditis: 5 ปีหรือจนอายุ 21 ปี (แล้วแต่อย่างไหนนานกว่า) RF with carditis (mild MR): 10 ปีหรือจนอายุ 25 ปี RF with residual valvular disease (RHD): 10 ปีหรือจนอายุ 40 ปี; บางรายตลอดชีวิต ผู้ป่วยนี้: เคยเป็น RF ที่ 15 ปี ปัจจุบัน 23 ปี ไม่มี cardiac involvement = ไม่มี RHD ถ้าไม่มี carditis: prophylaxis ถึงอายุ 21 ปี และ/หรือ 5 ปีหลังจาก last attack อายุ 23 ปีผ่าน threshold แล้ว → หยุดยาได้",
+      "choices": [
+        {
+          "label": "B",
+          "text": "หยุดยา penicillin",
+          "is_correct": true,
+          "explanation": "RF without carditis → prophylaxis จนอายุ 21 ปี; ปัจจุบัน 23 ปีถึง threshold แล้ว"
+        },
+        {
+          "label": "C",
+          "text": "กินยาเฉพาะตอนทำฟัน",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ secondary prophylaxis; dental prophylaxis สำหรับ IE prevention ใน RHD"
+        },
+        {
+          "label": "D",
+          "text": "กินยาจนอายุ 30 ปี",
+          "is_correct": false,
+          "explanation": "ไม่จำเป็น ถ้าไม่มี RHD ไม่ต้องรอถึง 30"
+        },
+        {
+          "label": "E",
+          "text": "กินยาตลอดชีวิต",
+          "is_correct": false,
+          "explanation": "ตลอดชีวิตสำหรับ significant RHD เท่านั้น"
+        }
+      ],
+      "key_takeaway": "RF without carditis: หยุด penicillin prophylaxis เมื่ออายุ 21 ปีหรือ 5 ปีหลัง last attack (แล้วแต่อย่างไหนนานกว่า)"
+    }
+  },
+  {
+    "id": "0508d93a-b20b-4ba5-b750-30d248334732",
+    "correct_answer": "A",
+    "explanation": "ไข้สูง 3 สัปดาห์ เจ็บคอ tonsil 2+ with exudate = bacterial tonsillitis/pharyngitis → ให้ amoxicillin-clavulanate (amoxiclav) ครอบคลุม streptococcal infection",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Amoxicillin-clavulanate เพราะ exudative tonsillitis = bacterial pharyngitis (Group A Streptococcus) ที่ต้องรักษาด้วย antibiotic",
+      "reason": "Bacterial pharyngitis/tonsillitis (Streptococcal): Exudate, fever, lymphadenopathy, ไม่มี rhinorrhea (Centor criteria) First-line: Penicillin V หรือ Amoxicillin × 10 วัน หรือ Amoxicillin-clavulanate ถ้าสงสัย peritonsillar abscess หรือ mixed organisms CBC ผู้ป่วยนี้: WBC 1000 (leukopenia) ซึ่งผิดปกติมาก อาจบ่งชี้ EBV (infectious mononucleosis) ซึ่งทำให้ atypical lymphocytosis แต่คำตอบยัง amoxiclav สำหรับ bacterial component",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Amoxicillin-clavulanate",
+          "is_correct": true,
+          "explanation": "Bacterial tonsillitis → amoxiclav ครอบคลุม Streptococcus + beta-lactamase producers"
+        },
+        {
+          "label": "B",
+          "text": "Ceftazidime",
+          "is_correct": false,
+          "explanation": "3rd gen cephalosporin สำหรับ gram-negative/Pseudomonas; ไม่ใช่ first-line pharyngitis"
+        },
+        {
+          "label": "C",
+          "text": "G-CSF",
+          "is_correct": false,
+          "explanation": "สำหรับ neutropenia treatment ไม่ใช่ antibiotic"
+        },
+        {
+          "label": "D",
+          "text": "Corticosteroid",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ severe EBV mono หรือ airway obstruction ไม่ใช่ first-line"
+        },
+        {
+          "label": "E",
+          "text": "Cardio",
+          "is_correct": false,
+          "explanation": "ไม่เกี่ยวข้องกับ pharyngitis treatment"
+        }
+      ],
+      "key_takeaway": "Exudative tonsillitis/pharyngitis → Amoxicillin/Amoxicillin-clavulanate × 10 วัน ป้องกัน rheumatic fever"
+    }
+  },
+  {
+    "id": "06989e06-e425-4a14-896e-0228f4025d92",
+    "correct_answer": "A",
+    "explanation": "Opisthorchis viverrini (liver fluke) ในอุจจาระ → ให้ Praziquantel ซึ่งเป็น drug of choice สำหรับ trematode infections",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Praziquantel เพราะเป็น drug of choice สำหรับ Opisthorchis (liver fluke) และ trematodes ทั่วไป",
+      "reason": "Opisthorchis viverrini (พยาธิใบไม้ตับ): Endemic ในภาคอีสานไทย ติดจากการกินปลาน้ำจืดดิบ (ปลาก้อย, ปลาหมัก) ทำให้: cholangitis, cholangiocarcinoma (ภาวะแทรกซ้อนระยะยาว) Treatment: Praziquantel 25mg/kg × 3 doses (single day) Praziquantel mechanism: เพิ่ม Ca2+ permeability ของ worm → tetanic paralysis → worm ตาย Albendazole/Mebendazole (B,C): สำหรับ nematodes (roundworms) ไม่ใช่ trematodes Niclosamide (D): สำหรับ tapeworms (cestodes) Ivermectin (E): สำหรับ Strongyloides, ectoparasites",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Praziquantel",
+          "is_correct": true,
+          "explanation": "Drug of choice สำหรับ trematodes (liver fluke, blood fluke, lung fluke)"
+        },
+        {
+          "label": "B",
+          "text": "Albendazole",
+          "is_correct": false,
+          "explanation": "สำหรับ nematodes (Ascaris, hookworm, Toxocara)"
+        },
+        {
+          "label": "C",
+          "text": "Mebendazole",
+          "is_correct": false,
+          "explanation": "สำหรับ nematodes; ไม่ effective ต่อ trematodes"
+        },
+        {
+          "label": "D",
+          "text": "Niclosamide",
+          "is_correct": false,
+          "explanation": "สำหรับ tapeworms (Taenia); ไม่ใช่ trematodes"
+        },
+        {
+          "label": "E",
+          "text": "Ivermectin",
+          "is_correct": false,
+          "explanation": "สำหรับ Strongyloides, Onchocerca, scabies; ไม่ใช่ liver fluke"
+        }
+      ],
+      "key_takeaway": "Opisthorchis (liver fluke) → Praziquantel; จำ: Trematodes = Praziquantel, Nematodes = Albendazole/Mebendazole, Cestodes = Niclosamide/Praziquantel"
+    }
+  },
+  {
+    "id": "0b1bdcd8-ee0d-4d7a-b3ec-f4188349af7c",
+    "correct_answer": "A",
+    "explanation": "หญิง 35 ปี ไข้ต่ำ ปวดข้อหลายข้อ เจาะน้ำข้อ WBC 89000 (septic range) = Septic arthritis → Cloxacillin (antistaphylococcal) เป็น empiric therapy",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Cloxacillin เพราะ septic arthritis ที่พบบ่อยที่สุดเกิดจาก S. aureus → anti-staphylococcal penicillin",
+      "reason": "Septic arthritis diagnosis: Synovial WBC >50,000-100,000/μL = septic (>75% PMN) WBC 89,000 = clearly septic Causes: S. aureus (most common, all ages), Streptococcus, Gonococcus (young adults) Empiric treatment: Cloxacillin (anti-staphylococcal) หรือ oxacillin ครอบคลุม S. aureus ถ้าสงสัย MRSA → Vancomycin ถ้าสงสัย Gonococcal → Ceftriaxone นอกจาก antibiotics ต้อง: joint drainage (aspiration หรือ arthroscopic washout)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cloxacillin",
+          "is_correct": true,
+          "explanation": "Empiric anti-staphylococcal coverage สำหรับ septic arthritis"
+        },
+        {
+          "label": "B",
+          "text": "Gentamicin",
+          "is_correct": false,
+          "explanation": "Aminoglycoside; ไม่ใช่ first-line สำหรับ gram-positive septic arthritis"
+        },
+        {
+          "label": "C",
+          "text": "Ceftriaxone",
+          "is_correct": false,
+          "explanation": "สำหรับ Gonococcal arthritis (DGI) หรือ gram-negative"
+        },
+        {
+          "label": "D",
+          "text": "Doxycycline",
+          "is_correct": false,
+          "explanation": "สำหรับ Lyme arthritis หรือ atypicals; ไม่ใช่ first-line bacterial septic"
+        },
+        {
+          "label": "E",
+          "text": "Metronidazole",
+          "is_correct": false,
+          "explanation": "สำหรับ anaerobic infections; ไม่เกี่ยวกับ septic arthritis"
+        }
+      ],
+      "key_takeaway": "Septic arthritis (WBC >50,000) → Cloxacillin empirically (S. aureus coverage) + Joint drainage"
+    }
+  },
+  {
+    "id": "1621d501-8db8-4d4e-b1f7-1ca39b86f138",
+    "correct_answer": "C",
+    "explanation": "Gram-negative intracellular bacteria (Chlamydia, Neisseria) ใน silent cases → ตรวจด้วย Nucleic Acid Amplification Test (NAAT) ซึ่งมี sensitivity สูงที่สุด",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ C — Nucleic acid amplification เพราะ NAAT มี sensitivity/specificity สูงมากสำหรับ intracellular bacteria ที่ไม่สามารถ culture บน nutrient agar ได้",
+      "reason": "Gram-negative intracellular bacteria: Chlamydia trachomatis, Neisseria gonorrhoeae Characteristics: obligate intracellular (C. trachomatis) หรือ fastidious growth requirements ไม่เจริญบน regular nutrient media Investigation options: Nucleic Acid Amplification Test (NAAT/PCR) = gold standard for silent cases High sensitivity (>90%), specificity (>99%) ทำได้จาก urine, swab, cervical specimen Culture (A) ต้องการ special media (McCoy cells สำหรับ Chlamydia) Serology (E) ไม่ distinguish active vs past infection ได้ดีพอ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Nutrient culture media",
+          "is_correct": false,
+          "explanation": "Chlamydia/Neisseria ไม่เจริญบน regular nutrient agar"
+        },
+        {
+          "label": "B",
+          "text": "PCR",
+          "is_correct": false,
+          "explanation": "PCR เป็นส่วนหนึ่งของ NAAT แต่ C = NAAT ครอบคลุมกว่า"
+        },
+        {
+          "label": "C",
+          "text": "Nucleic acid amplification (NAAT)",
+          "is_correct": true,
+          "explanation": "Gold standard สำหรับ Chlamydia/Gonorrhea detection ใน silent/asymptomatic cases"
+        },
+        {
+          "label": "D",
+          "text": "DNA strain amplification",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ standard term; NAAT ครอบคลุมกว่า"
+        },
+        {
+          "label": "E",
+          "text": "Serology",
+          "is_correct": false,
+          "explanation": "ไม่ specific พอ ไม่ distinguish active vs past infection ใน silent cases"
+        }
+      ],
+      "key_takeaway": "Chlamydia/Gonorrhea screening ใน silent cases → NAAT (PCR) จาก urine หรือ swab = gold standard"
+    }
+  },
+  {
+    "id": "19173fba-8baf-48fb-822f-259ea945c1f9",
+    "correct_answer": "A",
+    "explanation": "Healthcare worker มีแผลที่ genitalia + discharge 5 วัน = Primary genital herpes (HSV) → รักษาด้วย Acyclovir 400mg 5×/วัน × 7-10 วัน",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Acyclovir 400mg ปาก 5 ครั้ง/วัน × 7-10 วัน เพราะเป็น first-line สำหรับ primary genital herpes (HSV-2)",
+      "reason": "Primary genital herpes (HSV-2) treatment: Acyclovir 400mg TID × 7-10 วัน หรือ Acyclovir 200mg 5×/day × 7-10 วัน Valacyclovir (B): 1g BID × 7-10 วัน (better bioavailability) Famciclovir (C): 250mg TID × 7-10 วัน ทั้ง 3 ตัวใช้ได้สำหรับ primary HSV แต่ Acyclovir เป็น oldest/cheapest/standard Ganciclovir (D): สำหรับ CMV ไม่ใช่ HSV Foscarnet (E): สำหรับ acyclovir-resistant HSV ใน immunocompromised",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Acyclovir 400mg 5×/วัน × 7-10 วัน",
+          "is_correct": true,
+          "explanation": "First-line standard treatment สำหรับ primary genital HSV"
+        },
+        {
+          "label": "B",
+          "text": "Valacyclovir 500mg TID × 7 วัน",
+          "is_correct": false,
+          "explanation": "ใช้ได้ แต่ dose ผิด; primary HSV ใช้ 1g BID ไม่ใช่ 500mg TID; Acyclovir เป็น standard"
+        },
+        {
+          "label": "C",
+          "text": "Famciclovir 250mg TID × 7 วัน",
+          "is_correct": false,
+          "explanation": "ใช้ได้ แต่ Acyclovir เป็น first-line standard ตามข้อสอบ"
+        },
+        {
+          "label": "D",
+          "text": "Ganciclovir IV",
+          "is_correct": false,
+          "explanation": "สำหรับ CMV infections (retinitis, colitis) ไม่ใช่ HSV"
+        },
+        {
+          "label": "E",
+          "text": "Foscarnet IV",
+          "is_correct": false,
+          "explanation": "สำหรับ acyclovir-resistant HSV/CMV ใน immunocompromised เท่านั้น"
+        }
+      ],
+      "key_takeaway": "Primary genital herpes → Acyclovir 400mg TID × 7-10 วัน (หรือ Valacyclovir 1g BID)"
+    }
+  },
+  {
+    "id": "1c7615a8-df4d-4aa5-996f-a251059f9f9a",
+    "correct_answer": "B",
+    "explanation": "TB ที่ AFB positive = infectious pulmonary TB ต้องใส่ mask เมื่อสัมผัสกับผู้อื่นเป็นเวลาอย่างน้อย 2 สัปดาห์จนกว่า AFB จะ negative หรืออาการดีขึ้น",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B — ใส่ mask เมื่อสัมผัสผู้อื่น ≥2 สัปดาห์ เพราะ pulmonary TB ที่ AFB+ = infectious อย่างน้อย 2 สัปดาห์แรกของ treatment",
+      "reason": "Pulmonary TB infectivity: AFB sputum positive = infectious ระยะ infectiousness ลดลงอย่างมากหลัง 2 สัปดาห์ของ effective treatment Standard precautions: แยกห้อง (airborne isolation) ใส่ N95 mask สำหรับ HCW Surgical mask สำหรับผู้ป่วยเมื่ออยู่นอกห้อง Discharge criteria: AFB smear negative × 3 specimens หรือ อย่างน้อย 2 สัปดาห์ treatment + clinical improvement + 3 AFB negative ห้ามดำเนินชีวิตปกติ (E) เพราะยังติดต่อได้",
+      "choices": [
+        {
+          "label": "A",
+          "text": "นอนในห้อง AC ปิดหน้าต่าง",
+          "is_correct": false,
+          "explanation": "ห้องที่ปิดสนิทเพิ่ม risk! TB ต้องการ negative pressure + good ventilation"
+        },
+        {
+          "label": "B",
+          "text": "ใส่ mask เมื่อสัมผัสคนอื่น ≥2 สัปดาห์",
+          "is_correct": true,
+          "explanation": "Standard infection control สำหรับ infectious pulmonary TB"
+        },
+        {
+          "label": "C",
+          "text": "หยุดไปโรงเรียน/ทำงาน 1 เทอม",
+          "is_correct": false,
+          "explanation": "หยุดแค่จนกว่า AFB negative/non-infectious ไม่ถึง 1 เทอม"
+        },
+        {
+          "label": "D",
+          "text": "แยกห้องนอน + หลีกเลี่ยงสัมผัส",
+          "is_correct": false,
+          "explanation": "ทำด้วยได้ แต่ B ครอบคลุมมากกว่าเมื่ออยู่นอกบ้าน"
+        },
+        {
+          "label": "E",
+          "text": "ดำเนินชีวิตปกติ",
+          "is_correct": false,
+          "explanation": "ห้ามเด็ดขาด AFB+ = ยังติดต่อได้ก่อน 2 สัปดาห์ treatment"
+        }
+      ],
+      "key_takeaway": "Pulmonary TB AFB+ = infectious → ใส่ mask ≥2 สัปดาห์แรก; ใช้ airborne precaution (N95)"
+    }
+  },
+  {
+    "id": "209b24ff-e7d2-4e0b-b94d-42996a8d5f7d",
+    "correct_answer": "A",
+    "explanation": "Anti-HBc IgM positive = acute HBV infection; HBsAg negative อาจเพราะ window period; anti-HBs positive อาจเป็น early recovery",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Acute hepatitis B เพราะ anti-HBc IgM positive = current/recent HBV infection",
+      "reason": "HBV serology interpretation: HBsAg +: active infection (acute หรือ chronic) HBsAg −, anti-HBc IgM +: acute HBV (window period - HBsAg ลงแล้วแต่ยังไม่มี anti-HBs) หรือ early acute ที่ HBsAg เพิ่งหายไป Anti-HBc IgM: marker ของ acute/recent infection (ขึ้นในช่วงแรกและค่อยหาย) Anti-HBc IgG: persists อยู่ตลอดชีวิต Anti-HBs: บ่งชี้ immunity (จาก vaccine หรือ past infection) ผู้ป่วย: HBsAg−, anti-HBc IgM+, anti-HBc IgG+, anti-HBs+ = acute resolving HBV infection (window period → early seroconversion)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Acute hepatitis B",
+          "is_correct": true,
+          "explanation": "Anti-HBc IgM positive = acute/recent infection; window period หรือ early resolving"
+        },
+        {
+          "label": "B",
+          "text": "Asymptomatic carrier",
+          "is_correct": false,
+          "explanation": "Carrier = HBsAg+ ≥6 months; ผู้ป่วยนี้ HBsAg−"
+        },
+        {
+          "label": "C",
+          "text": "Post immunization",
+          "is_correct": false,
+          "explanation": "Vaccine → เฉพาะ anti-HBs+; ไม่มี anti-HBc (เพราะไม่เคยติดเชื้อ)"
+        },
+        {
+          "label": "D",
+          "text": "Post infection",
+          "is_correct": false,
+          "explanation": "Past infection = anti-HBc IgG+, anti-HBs+, IgM− แต่นี้ IgM+ = acute"
+        },
+        {
+          "label": "E",
+          "text": "Chronic hepatitis B",
+          "is_correct": false,
+          "explanation": "Chronic = HBsAg+ ≥6 months; ผู้ป่วย HBsAg−"
+        }
+      ],
+      "key_takeaway": "Anti-HBc IgM+ = Acute HBV; Anti-HBc IgG+ only = Past infection; Anti-HBs only = Vaccinated"
+    }
+  },
+  {
+    "id": "211f1110-283b-4082-8ed4-4e91d9c2c119",
+    "correct_answer": "A",
+    "explanation": "งูกัด มีรอยแผล 2 รอย + บวม + เจ็บปวด = envenomation จากงูมีพิษ ต้องให้ Anti-snake venom (ASV) ทันที และ intubation ถ้ามีอาการ neurotoxicity",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — ASV + intubation preparation เพราะงูมีพิษในไทยอาจทำให้ neurotoxicity (cobra) หรือ coagulopathy (viper)",
+      "reason": "Snake bite management: งูมีพิษในไทย: Cobra (Elapidae) = neurotoxic; Russell's viper = hemotoxic/coagulopathic Fang marks + swelling + pain = definite envenomation → ให้ ASV Antivenom (ASV): specific IgG fragments neutralize venom Intubation: ถ้า cobra bite → neuromuscular blockade → respiratory failure Monitoring: หายใจ, ptosis, diplopia (neurological), bleeding (coagulopathy) ไม่ต้องให้ steroid (D) เพราะไม่ลด venom effect ไม่ต้อง neostigmine (E) เป็น primary treatment แต่ใช้เป็น adjunct ใน cobra bite ร่วมกับ ASV",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ASV + intubation preparation",
+          "is_correct": true,
+          "explanation": "Definite envenomation → ASV ทันที + เตรียม intubation สำหรับ neurotoxic snake"
+        },
+        {
+          "label": "B",
+          "text": "Vaccine + antibiotics เท่านั้น",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอ; ไม่มี vaccine สำหรับ snake venom"
+        },
+        {
+          "label": "C",
+          "text": "O2 + observe เท่านั้น",
+          "is_correct": false,
+          "explanation": "ไม่รักษา envenomation ต้องให้ ASV"
+        },
+        {
+          "label": "D",
+          "text": "Corticosteroids",
+          "is_correct": false,
+          "explanation": "ไม่มีหลักฐานว่าลด venom effect; ไม่ใช่ treatment of choice"
+        },
+        {
+          "label": "E",
+          "text": "Neostigmine",
+          "is_correct": false,
+          "explanation": "Adjunct ใน cobra bite (anticholinesterase) แต่ใช้ร่วม ASV ไม่ใช่แทน"
+        }
+      ],
+      "key_takeaway": "Snake bite envenomation → ASV ทันที; Cobra = เฝ้าระวัง respiratory failure → intubation ready"
+    }
+  },
+  {
+    "id": "215e9b0b-6726-4ef9-9cca-9cf50ffeb5a5",
+    "correct_answer": "B",
+    "explanation": "HIV+ CD4 <50, เริ่ม ART หลัง TB 1 เดือน แล้วอาการแย่ลง = TB-IRIS (Immune Reconstitution Inflammatory Syndrome) เกิดจาก immune restoration ที่มากเกินไป",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B — TB-IRIS เพราะการเริ่ม ART หลัง TB therapy ทำให้ immune system ฟื้นตัวและ react ต่อ TB antigens มากเกินไป",
+      "reason": "IRIS (Immune Reconstitution Inflammatory Syndrome): เกิดใน HIV patients ที่เริ่ม ART โดยมี OI (opportunistic infection) active อยู่ Immune system ที่ฟื้นตัวจาก ART → react ต่อ pathogen antigens → inflammatory response เกิน Paradoxical TB-IRIS: TB therapy กำลังดำเนินไป → เริ่ม ART → อาการแย่ลง (fever, lymphadenopathy worsening) ไม่ใช่ TB treatment failure (A) เพราะ TB ยังตอบสนองต่อยาอยู่ การจัดการ IRIS: ส่วนใหญ่ continue ART + TB treatment, NSAIDs หรือ corticosteroid ถ้ารุนแรง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "TB treatment failure",
+          "is_correct": false,
+          "explanation": "เกิดหลัง 2+ เดือน ไม่ใช่ 1 เดือนแรกหลังเริ่ม ART"
+        },
+        {
+          "label": "B",
+          "text": "TB-IRIS",
+          "is_correct": true,
+          "explanation": "Classic TB-IRIS: TB treatment กำลังดำเนินไป เริ่ม ART → immune restoration → worsening"
+        },
+        {
+          "label": "C",
+          "text": "ART treatment failure",
+          "is_correct": false,
+          "explanation": "ART failure ต้องดู viral load ไม่ใช่ clinical worsening ใน 1 เดือน"
+        },
+        {
+          "label": "D",
+          "text": "MAC/CMV lymphadenitis",
+          "is_correct": false,
+          "explanation": "อาจเป็น OI อื่น แต่ context ชัดเจนว่าเป็น IRIS จาก TB"
+        },
+        {
+          "label": "E",
+          "text": "EFV neurotoxicity",
+          "is_correct": false,
+          "explanation": "EFV ทำให้ neuropsychiatric effects ไม่ใช่ lymphadenopathy worsening"
+        }
+      ],
+      "key_takeaway": "HIV + TB เริ่ม ART → อาการแย่ลง = TB-IRIS → Continue both ART + TB Rx; Steroids ถ้ารุนแรง"
+    }
+  },
+  {
+    "id": "2635d319-b0a1-41ee-bdeb-c939affe1d74",
+    "correct_answer": "A",
+    "explanation": "ผู้หญิง 25 ปี ไข้ ไอ เหนื่อย 5 วัน ลอง amoxicillin 3 วันไม่ดีขึ้น ข้อสอบตอบ A = เพิ่ม Amoxycillin ซึ่งน่าจะหมายถึงเพิ่มยาในกลุ่มเดิมหรือ escalate ตาม clinical picture",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องตามข้อสอบคือ A — เพิ่ม Amoxicillin (ในบริบทนี้อาจหมายถึง dose escalation หรือ add-on therapy)",
+      "reason": "Community-acquired pneumonia ที่ไม่ตอบสนองต่อ amoxicillin: Possible atypical pneumonia (Mycoplasma, Chlamydophila) → ต้องการ macrolide หรือ fluoroquinolone ในทางคลินิก: ถ้า amoxicillin ไม่ดีขึ้น → เพิ่ม macrolide (clarithromycin/azithromycin) หรือเปลี่ยนเป็น respiratory fluoroquinolone คำตอบ A อาจหมายถึงในบริบทของข้อสอบที่ถามว่าทำอะไรต่อ = ไม่เปลี่ยนยาเลย แต่ escalate ด้วย amoxicillin สูตรกว่า หมายเหตุ: ในทางปฏิบัติ การเปลี่ยนเป็น levofloxacin (C) หรือเพิ่ม clarithromycin (B) น่าจะถูกต้องกว่า",
+      "choices": [
+        {
+          "label": "A",
+          "text": "เพิ่ม Amoxycillin",
+          "is_correct": true,
+          "explanation": "ตามข้อสอบ: อาจหมายถึง escalate ใน same class"
+        },
+        {
+          "label": "B",
+          "text": "เพิ่ม Clarithromycin",
+          "is_correct": false,
+          "explanation": "ในทางคลินิกนี้ถูกต้องมาก สำหรับ atypical CAP แต่ข้อสอบตอบ A"
+        },
+        {
+          "label": "C",
+          "text": "เปลี่ยนเป็น Levofloxacin",
+          "is_correct": false,
+          "explanation": "ถูกต้องในทางคลินิกสำหรับ CAP ไม่ตอบสนอง แต่ข้อสอบตอบ A"
+        },
+        {
+          "label": "D",
+          "text": "Thoracentesis",
+          "is_correct": false,
+          "explanation": "ทำเมื่อมี pleural effusion ที่ต้องตรวจหรือ drain"
+        },
+        {
+          "label": "E",
+          "text": "ICD (intercostal drain)",
+          "is_correct": false,
+          "explanation": "สำหรับ empyema หรือ large pleural effusion"
+        }
+      ],
+      "key_takeaway": "CAP ไม่ตอบสนองต่อ amoxicillin → พิจารณา atypical coverage (macrolide/fluoroquinolone); ตามข้อสอบ A"
+    }
+  },
+  {
+    "id": "28ee05c9-11c7-4739-88b8-7fd589257438",
+    "correct_answer": "A",
+    "explanation": "ชาย 60 ปี ICU 10 วัน aspirated food วันนี้ไข้สูง = Hospital-acquired/Aspiration pneumonia in ICU → ใช้ Amikacin (aminoglycoside) ครอบคลุม gram-negative rods",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Amikacin เพราะ HAP/aspiration pneumonia ใน ICU ต้องการ broad-spectrum ครอบคลุม resistant gram-negative organisms",
+      "reason": "Hospital-acquired pneumonia (HAP) ใน ICU: Organisms: Pseudomonas, Klebsiella, Acinetobacter, MRSA (มักดื้อยาใน ICU) Late-onset HAP (>5 วัน) = MDR organism probable Treatment: Anti-pseudomonal coverage + MRSA coverage Amikacin: aminoglycoside ที่ใช้สำหรับ resistant gram-negative (Pseudomonas, Klebsiella, Acinetobacter) ที่ดื้อต่อ gentamicin ในกรณีนี้ผู้ป่วยอยู่ ICU นาน 10 วัน = late-onset HAP = MDR risk สูง → Amikacin + anti-MRSA",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Amikacin",
+          "is_correct": true,
+          "explanation": "Aminoglycoside สำหรับ MDR gram-negative HAP ใน ICU; ใช้เมื่อ gentamicin ดื้อ"
+        },
+        {
+          "label": "B",
+          "text": "Amoxicillin-clavulanate",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอสำหรับ MDR HAP ใน ICU"
+        },
+        {
+          "label": "C",
+          "text": "Ciprofloxacin",
+          "is_correct": false,
+          "explanation": "ใช้ได้สำหรับ Pseudomonas แต่ ICU HAP มักดื้อ fluoroquinolones"
+        },
+        {
+          "label": "D",
+          "text": "Imipenem",
+          "is_correct": false,
+          "explanation": "Carbapenem ใช้สำหรับ ESBL/MDR แต่ Amikacin เป็นคำตอบในข้อสอบ"
+        },
+        {
+          "label": "E",
+          "text": "Ceftriaxone",
+          "is_correct": false,
+          "explanation": "ไม่ครอบคลุม Pseudomonas; ไม่เพียงพอสำหรับ late-onset HAP"
+        }
+      ],
+      "key_takeaway": "Late-onset HAP ใน ICU → Anti-pseudomonal (Amikacin/Piperacillin-tazobactam/Carbapenem) + MRSA coverage"
+    }
+  },
+  {
+    "id": "2ce3fc28-5c9f-4f27-a7d6-9b2c36e8f881",
+    "correct_answer": "A",
+    "explanation": "Septic arthritis ที่ไม่ตอบสนองต่อ Cloxacillin → ตามข้อสอบตอบ NSAIDs ซึ่งอาจใช้สำหรับ pain/inflammation management ระหว่างรอผล culture เพื่อปรับยา",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องตามข้อสอบคือ A — NSAIDs อาจใช้สำหรับ adjunct pain management ใน septic arthritis ระหว่างรอผล culture และปรับ antibiotic",
+      "reason": "Septic arthritis gram+ cocci in clusters = likely S. aureus Cloxacillin ไม่ดีขึ้น → สาเหตุ: MRSA (ดื้อ methicillin) ในทางคลินิก ควรเปลี่ยนเป็น Vancomycin (C) สำหรับ MRSA NSAIDs (A) ใช้เป็น adjunct therapy สำหรับลด inflammation/pain ไม่ใช่ definitive antibiotic treatment หมายเหตุ: คำตอบ C (Vancomycin) น่าจะถูกต้องทางคลินิกสำหรับ MRSA ที่ดื้อ cloxacillin แต่ข้อสอบตอบ A",
+      "choices": [
+        {
+          "label": "A",
+          "text": "NSAIDs",
+          "is_correct": true,
+          "explanation": "ตามข้อสอบ; NSAIDs ใช้เป็น adjunct anti-inflammatory ใน septic arthritis"
+        },
+        {
+          "label": "B",
+          "text": "Ceftriaxone",
+          "is_correct": false,
+          "explanation": "สำหรับ gram-negative; ไม่ใช่ first choice สำหรับ MRSA"
+        },
+        {
+          "label": "C",
+          "text": "Vancomycin",
+          "is_correct": false,
+          "explanation": "ถูกต้องทางคลินิกสำหรับ MRSA แต่ข้อสอบระบุ A"
+        },
+        {
+          "label": "D",
+          "text": "เพิ่ม dose Cloxacillin",
+          "is_correct": false,
+          "explanation": "ถ้าดื้อ cloxacillin = MRSA การเพิ่ม dose ไม่ช่วย"
+        },
+        {
+          "label": "E",
+          "text": "Aspirate หนองออก",
+          "is_correct": false,
+          "explanation": "สำคัญมาก! ต้อง drain เสมอใน septic arthritis แต่ข้อสอบตอบ A"
+        }
+      ],
+      "key_takeaway": "Septic arthritis ไม่ตอบสนอง Cloxacillin → สงสัย MRSA → Vancomycin; Joint drainage สำคัญ"
+    }
+  },
+  {
+    "id": "2e2384bd-a199-4344-9842-fefa0939db1d",
+    "correct_answer": "C",
+    "explanation": "เจ้าหน้าที่ถูกเข็มตาจากผู้ป่วยที่มาตรวจสุขภาพ (ไม่ทราบ HIV status) → ล้างแผลด้วยสบู่น้ำ + ประเมินความเสี่ยงจากแหล่งที่มา",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ C — ล้างแผลด้วยสบู่น้ำ + ประเมิน risk จากแหล่งที่มา เพราะต้องรู้ HIV status ของ source ก่อนตัดสินใจ PEP",
+      "reason": "Needle stick injury management: Step 1: ล้างแผลด้วยสบู่ + น้ำไหลทันที Step 2: ประเมิน HIV status ของ source patient ถ้า source HIV+: เริ่ม PEP ทันที ถ้า source HIV−: ไม่ต้องให้ PEP HIV ถ้า source ไม่ทราบ: ตรวจ HIV test ของ source ก่อน (rapid test) ผู้ป่วยนี้มาตรวจสุขภาพ = ไม่ทราบ HIV status → ต้องประเมินก่อน ไม่ต้องให้ prophylaxis ทุกอย่างทันที (B) = over-treatment และผลข้างเคียงสูง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ล้างแผล + ฉีดเลือดและวัคซีน",
+          "is_correct": false,
+          "explanation": "HBV vaccine ทำได้ถ้าไม่มีภูมิ แต่ต้องประเมิน HIV status ก่อน HIV PEP"
+        },
+        {
+          "label": "B",
+          "text": "ให้ยาป้องกันทุกโรคทันที",
+          "is_correct": false,
+          "explanation": "Over-treatment; ต้องประเมิน source status ก่อน; ผลข้างเคียงสูง"
+        },
+        {
+          "label": "C",
+          "text": "ล้างแผลด้วยสบู่น้ำ + ประเมิน risk จาก source",
+          "is_correct": true,
+          "explanation": "Standard protocol: wound care + risk assessment จาก source status"
+        },
+        {
+          "label": "D",
+          "text": "บีบเลือด + รอผลเลือด",
+          "is_correct": false,
+          "explanation": "ห้ามบีบเลือด! อาจทำให้ inoculation ลึกขึ้น"
+        },
+        {
+          "label": "E",
+          "text": "ไม่ต้องทำอะไร",
+          "is_correct": false,
+          "explanation": "อันตราย; ต้องล้างแผลและประเมินเสมอไม่ว่า source จะเป็นใคร"
+        }
+      ],
+      "key_takeaway": "Needle stick: 1) ล้างแผล (ห้ามบีบ) 2) ประเมิน HIV status ของ source 3) PEP ถ้า source HIV+ ภายใน 72hr"
+    }
+  },
+  {
+    "id": "2f01eed9-59fd-4804-a43a-be0f877b602c",
+    "correct_answer": "B",
+    "explanation": "Watery diarrhea 8×/16hr + severe hypotension + tachycardia + profound dehydration = Rice-water stool → Vibrio cholerae",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B — Vibrio cholerae เพราะ voluminous watery diarrhea + severe dehydration/shock เป็น classic presentation",
+      "reason": "Vibrio cholerae: Profuse watery diarrhea (rice-water stool), odorless ทำให้ severe dehydration รวดเร็ว (isotonic fluid loss) ไม่มีไข้, ไม่มี bloody stool, ไม่มี tenesmus Mechanism: cholera toxin → ↑ cAMP → secretory diarrhea (active Cl- secretion, passive Na+ and water) Treatment: Oral/IV rehydration (primary!) + Doxycycline (shorten duration) Shigella (A): Bloody, mucoid, fever, tenesmus Staph aureus toxin (C): Short incubation (2-6hr), vomiting >> diarrhea, foodborne EIEC (D)/EHEC (E): bloody diarrhea",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Shigella",
+          "is_correct": false,
+          "explanation": "Dysentery = bloody mucoid diarrhea + fever + tenesmus; ไม่ใช่ watery"
+        },
+        {
+          "label": "B",
+          "text": "Vibrio cholerae",
+          "is_correct": true,
+          "explanation": "Profuse watery (rice-water) stool + severe dehydration = classic cholera"
+        },
+        {
+          "label": "C",
+          "text": "Staph aureus toxin",
+          "is_correct": false,
+          "explanation": "Vomiting > diarrhea, incubation 2-6hr; ไม่ severe dehydration ขนาดนี้"
+        },
+        {
+          "label": "D",
+          "text": "EIEC",
+          "is_correct": false,
+          "explanation": "Invasive = dysentery-like, bloody stool"
+        },
+        {
+          "label": "E",
+          "text": "EHEC",
+          "is_correct": false,
+          "explanation": "Hemorrhagic colitis + HUS; ไม่ใช่ watery"
+        }
+      ],
+      "key_takeaway": "Profuse watery (rice-water) diarrhea + severe dehydration = Cholera → Aggressive IV/ORS rehydration + Doxycycline"
+    }
+  },
+  {
+    "id": "2f6a7c0f-fd33-43a8-b530-f42b12785329",
+    "correct_answer": "A",
+    "explanation": "Antibiotic-associated colitis (Pseudomembranous colitis = C. diff) หลัง penicillin → ให้ Vancomycin oral 125mg 4×/วัน เป็น first-line",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Oral Vancomycin เพราะเป็น first-line treatment สำหรับ C. difficile infection (CDI) ตาม IDSA guideline 2017",
+      "reason": "C. difficile infection (CDI) treatment: Mild-moderate: Oral Vancomycin 125mg QID × 10 วัน หรือ Fidaxomicin 200mg BID × 10 วัน Severe: Oral Vancomycin ± Metronidazole IV Fulminant: Oral Vancomycin 500mg QID + Metronidazole IV เหตุที่ Vancomycin oral ดีกว่า Metronidazole: Clinical trials แสดง vancomycin better outcomes IDSA 2017 guideline ปรับเป็น vancomycin first-line ทุก severity Vancomycin oral ไม่ถูก absorbed → ออกฤทธิ์ใน colon ที่มี C. diff",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Oral Vancomycin 125mg QID",
+          "is_correct": true,
+          "explanation": "First-line CDI treatment (IDSA 2017); local action ใน colon ไม่ absorbed systemically"
+        },
+        {
+          "label": "B",
+          "text": "Metronidazole 400-500mg TID",
+          "is_correct": false,
+          "explanation": "เคยเป็น first-line แต่ guideline ปัจจุบันแนะนำ vancomycin เป็น first-line"
+        },
+        {
+          "label": "C",
+          "text": "Ciprofloxacin 500mg BID",
+          "is_correct": false,
+          "explanation": "Fluoroquinolone ทำให้ CDI worse ไม่ใช่ treatment"
+        },
+        {
+          "label": "D",
+          "text": "Cephalexin 500mg QID",
+          "is_correct": false,
+          "explanation": "Cephalosporin ทำให้ CDI ไม่ใช่ treatment"
+        },
+        {
+          "label": "E",
+          "text": "Clindamycin 300mg TID",
+          "is_correct": false,
+          "explanation": "Clindamycin เป็นตัวทำให้เกิด CDI บ่อยที่สุด ห้ามใช้"
+        }
+      ],
+      "key_takeaway": "C. diff (antibiotic-associated colitis) → Oral Vancomycin 125mg QID × 10 วัน (ปัจจุบัน first-line)"
+    }
+  },
+  {
+    "id": "2fd4c8e0-25e2-4b5e-80f6-2aead42a5da9",
+    "correct_answer": "D",
+    "explanation": "ชาย 68 ปี STEMI 7 วัน (ICU admission) ไอ เสมหะ หายใจลำบาก = Hospital-acquired pneumonia (HAP) → ต้องการ anti-pseudomonal coverage เช่น Piperacillin-tazobactam",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ D — Piperacillin-tazobactam เพราะ HAP หลัง 7 วันใน ICU ต้องการ broad anti-pseudomonal coverage",
+      "reason": "HAP (Hospital-acquired pneumonia): เกิดหลัง ≥48hr ใน hospital ไม่ใช่ community-acquired Organisms: Pseudomonas aeruginosa, MRSA, Klebsiella, Acinetobacter (MDR organisms) Late-onset HAP (>5 วัน) = MDR probability สูง Treatment (ATS/IDSA): Anti-pseudomonal beta-lactam: Pip-tazo, Cefepime, Carbapenem + Anti-MRSA ถ้า risk factor สูง (vancomycin/linezolid) Piperacillin-tazobactam: covers gram-negative rods including Pseudomonas + anaerobes",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ampicillin-sulbactam",
+          "is_correct": false,
+          "explanation": "ไม่ครอบคลุม Pseudomonas; เหมาะสำหรับ community-acquired/mild HAP"
+        },
+        {
+          "label": "B",
+          "text": "Levofloxacin",
+          "is_correct": false,
+          "explanation": "ใช้ CAP ได้ แต่ MDR HAP ใน ICU ต้องการ anti-pseudomonal beta-lactam"
+        },
+        {
+          "label": "C",
+          "text": "Ceftriaxone + Azithromycin",
+          "is_correct": false,
+          "explanation": "CAP regimen; ไม่ครอบคลุม Pseudomonas สำหรับ HAP"
+        },
+        {
+          "label": "D",
+          "text": "Piperacillin-tazobactam",
+          "is_correct": true,
+          "explanation": "Anti-pseudomonal beta-lactam สำหรับ HAP ใน ICU; covers gram-negative + anaerobes"
+        },
+        {
+          "label": "E",
+          "text": "Amoxicillin-clavulanate",
+          "is_correct": false,
+          "explanation": "ไม่ครอบคลุม Pseudomonas; ไม่เพียงพอสำหรับ HAP ใน ICU"
+        }
+      ],
+      "key_takeaway": "HAP ใน ICU → Piperacillin-tazobactam หรือ Cefepime หรือ Carbapenem (anti-pseudomonal coverage)"
+    }
+  },
+  {
+    "id": "3032c1b9-8111-45a0-959a-82d021de3a0d",
+    "correct_answer": "A",
+    "explanation": "ชาย 30 ปี ไอ 1 เดือน เสมหะมีเลือด ไข้ต่ำ น้ำหนักลด CXR reticulo-patchy infiltration = suspected pulmonary TB → ต้องทำ Bronchoscopy เพื่อเก็บ specimen สำหรับ diagnosis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A — Bronchoscopy เพราะต้องการยืนยัน diagnosis ด้วย BAL/biopsy สำหรับ AFB smear/culture ก่อนเริ่ม anti-TB drugs",
+      "reason": "Suspected pulmonary TB diagnosis: First-line: Sputum AFB smear × 3 specimens, Sputum culture for TB (Lowenstein-Jensen) ถ้า sputum negative หรือ cannot produce sputum: Bronchoscopy + BAL ดีสำหรับ: AFB smear/culture จาก BAL, biopsy สำหรับ histology CXR: reticulo-patchy infiltration = TB pattern แต่ไม่ specific ต้องยืนยัน ไม่ควรเริ่ม anti-TB ก่อนมี confirmed diagnosis (C) ยกเว้น critically ill Anti-TB drugs (C): เริ่มหลัง confirm TB diagnosis",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Bronchoscopy",
+          "is_correct": true,
+          "explanation": "ถ้า sputum ไม่เพียงพอ → bronchoscopy + BAL สำหรับ TB culture + histology"
+        },
+        {
+          "label": "B",
+          "text": "FNA (fine needle aspiration)",
+          "is_correct": false,
+          "explanation": "สำหรับ lymph node หรือ peripheral lesion; ไม่ใช่ first step ใน pulmonary TB"
+        },
+        {
+          "label": "C",
+          "text": "Anti-TB drugs",
+          "is_correct": false,
+          "explanation": "เริ่มหลัง confirm diagnosis; empiric TB Rx ไม่ควรทำก่อนมี specimen"
+        },
+        {
+          "label": "D",
+          "text": "รอผล culture for TB",
+          "is_correct": false,
+          "explanation": "Culture ใช้เวลา 4-8 สัปดาห์ ไม่ practical; bronchoscopy เร็วกว่า"
+        }
+      ],
+      "key_takeaway": "Suspected TB + sputum insufficient → Bronchoscopy + BAL สำหรับ AFB/culture; ยืนยันก่อนเริ่ม anti-TB"
+    }
+  }
+]

@@ -1,0 +1,1267 @@
+{
+  "filename": "Ped",
+  "subject": "ped",
+  "exam_type": "NL2",
+  "stats": {
+    "total": 76,
+    "no_choices": 69,
+    "few_choices": 2,
+    "good": 5,
+    "no_scenario": 0,
+    "short_scenario": 44
+  },
+  "issues": [
+    {
+      "index": 0,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "An 8-year-old boy with asthma on inhaled steroid for 2 years. Growth chart as sh",
+      "choices_count": 0
+    },
+    {
+      "index": 1,
+      "question_number": 0,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "9% NSS 20 cc/kg/hr in 30 minutes\nOmeprazole\nConsult surgery\nOctreotide IV 5 mg/k",
+      "choices_count": 0
+    },
+    {
+      "index": 2,
+      "question_number": 7,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "5% NaHCO3\nNPH insulin\nRegular insulin\nA 12-year-old female presents with vagina ",
+      "choices_count": 0
+    },
+    {
+      "index": 3,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เด็กอายุ1เดือน ร้องไห้ มีชักเกร็งแขนขา มักเป็นช่วงเวลาเย็นของทุกวัน ขี้วันละ2-3ค",
+      "choices_count": 0
+    },
+    {
+      "index": 4,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เด็ก10เดือน ไข้ชัก bs 50อย่างอื่นnormal Mx?",
+      "choices_count": 0
+    },
+    {
+      "index": 5,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "LP",
+      "choices_count": 0
+    },
+    {
+      "index": 6,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ct brain",
+      "choices_count": 0
+    },
+    {
+      "index": 7,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "10%glucose",
+      "choices_count": 0
+    },
+    {
+      "index": 8,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เด็ก 10 ปี ชาปลายมือปลายเท้า 2 week หอบเหนื่อย 2 วัน หนัก 70kgสูง150cm กินข้าว3ม",
+      "choices_count": 0
+    },
+    {
+      "index": 9,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "cardiomyopathy",
+      "choices_count": 0
+    },
+    {
+      "index": 10,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "myositis",
+      "choices_count": 0
+    },
+    {
+      "index": 11,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "thiamine def",
+      "choices_count": 0
+    },
+    {
+      "index": 12,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "cobalamine def",
+      "choices_count": 0
+    },
+    {
+      "index": 13,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "niacin def\nCardio",
+      "choices_count": 0
+    },
+    {
+      "index": 15,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เด็ก2เดือน ซึม กินนมน้อยลง 2วันได้รับการวินิจฉัยว่าเปนVSD ตั้งแต่อายุ 1เดือน\nPE ",
+      "choices_count": 0
+    },
+    {
+      "index": 16,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Acute bronchitis",
+      "choices_count": 0
+    },
+    {
+      "index": 17,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Viral pneumonia",
+      "choices_count": 0
+    },
+    {
+      "index": 18,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Aspiration pneumonia",
+      "choices_count": 0
+    },
+    {
+      "index": 19,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Acute asthmatic attack",
+      "choices_count": 0
+    },
+    {
+      "index": 20,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Congestive heart failure",
+      "choices_count": 0
+    },
+    {
+      "index": 21,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "บ่ายชุด C ข้อ 68 ทารก 8 เดือน ถูกพามาห้องฉุกเฉินด้วยอาการเขียว มารดาให้ประวัติว่",
+      "choices_count": 0
+    },
+    {
+      "index": 22,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": ".1mo infant always regur milk after eat. Birth weight = 3,200 g now 4,500 g PE: ",
+      "choices_count": 0
+    },
+    {
+      "index": 23,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Over feeding",
+      "choices_count": 0
+    },
+    {
+      "index": 24,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Gastritis",
+      "choices_count": 0
+    },
+    {
+      "index": 25,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "GERD",
+      "choices_count": 0
+    },
+    {
+      "index": 26,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Hypertrophic pyloric stenosis",
+      "choices_count": 0
+    },
+    {
+      "index": 27,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "....",
+      "choices_count": 0
+    },
+    {
+      "index": 28,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "newborn GA 42 wk นน.น้อยกว่า3000 apgar 5,8 ผิวหนังที่มือเท้ามีอะไรซักอย่างระวัง ",
+      "choices_count": 0
+    },
+    {
+      "index": 29,
+      "question_number": 3,
+      "issues": [
+        "only_2_choices"
+      ],
+      "scenario_preview": "newborn GA? RR 80/min หายใจ grunting CXR: increase lung marking, fluid steak in ",
+      "choices_count": 2
+    },
+    {
+      "index": 32,
+      "question_number": 6,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เด็กผู้หญิง1800กรัม คลอดออกมา ตรวจพบ CLCP systolic murmur omphalocele polydactyl",
+      "choices_count": 0
+    },
+    {
+      "index": 33,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "echo",
+      "choices_count": 0
+    },
+    {
+      "index": 34,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "MRI brain",
+      "choices_count": 0
+    },
+    {
+      "index": 35,
+      "question_number": 7,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เด็กคลอดออกมาโดยใช้vacuum เนื่องจากแม่แรงเบ่งน้อย เด็กออกมาน้าหนัก3200g BP 60/35",
+      "choices_count": 0
+    },
+    {
+      "index": 36,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "meningocele?",
+      "choices_count": 0
+    },
+    {
+      "index": 37,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "cephal",
+      "choices_count": 0
+    },
+    {
+      "index": 38,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "caput",
+      "choices_count": 0
+    },
+    {
+      "index": 39,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "subgaleal",
+      "choices_count": 0
+    },
+    {
+      "index": 40,
+      "question_number": 8,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "newborn c/s ga 38 bw 2500 temp 36.2 หายใจ air entry ดี มีอกบุ๋มเลกน้อย o2sat 92\n",
+      "choices_count": 0
+    },
+    {
+      "index": 41,
+      "question_number": 9,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ทารกGA 35wk น้าหนักแรกคลอด2500 คลอดโดยcesarian หลังคลอด O2sat 90 น้าตาล 50หายใจไ",
+      "choices_count": 0
+    },
+    {
+      "index": 44,
+      "question_number": 12,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "infant 2 hr มี lip smacking, cyclic movement Hct 65, WBC20,000 ,blood glucose 50",
+      "choices_count": 0
+    },
+    {
+      "index": 45,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "5ขวบ ขี้แตกเป็นน้า10ครั้ง/วัน dry lips sunken eyeballs BP80/60 PR150 PE อื่นๆปกต",
+      "choices_count": 0
+    },
+    {
+      "index": 46,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เช้า : เด็ก 10 เดือน ไข้,ซืม,อ้วก มา 5 วัน t 39,ant.font bulging,brudzinski + ถา",
+      "choices_count": 0
+    },
+    {
+      "index": 47,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "urine exam",
+      "choices_count": 0
+    },
+    {
+      "index": 48,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "hemoculture",
+      "choices_count": 0
+    },
+    {
+      "index": 49,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ct brain",
+      "choices_count": 0
+    },
+    {
+      "index": 50,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "csf",
+      "choices_count": 0
+    },
+    {
+      "index": 51,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "u/s brain",
+      "choices_count": 0
+    },
+    {
+      "index": 52,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เช้า : girl 8 yr ปวดหูขวา 1 วัน Hx ว่ายน้าทุกเช้า PE: หูขวาบวมแดง,ขยับใบหูหรือติ",
+      "choices_count": 0
+    },
+    {
+      "index": 53,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "mastoiditis\n2Aom",
+      "choices_count": 0
+    },
+    {
+      "index": 54,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "COM",
+      "choices_count": 0
+    },
+    {
+      "index": 55,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "bullos myringitis",
+      "choices_count": 0
+    },
+    {
+      "index": 56,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "otitis externa\nเด็กชาย2ปี drooling and fever 2 day . Multiple shallow erosion at",
+      "choices_count": 0
+    },
+    {
+      "index": 57,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ล้างมือ",
+      "choices_count": 0
+    },
+    {
+      "index": 58,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "สวมหน้ากาก",
+      "choices_count": 0
+    },
+    {
+      "index": 59,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "สวมถุงมือ",
+      "choices_count": 0
+    },
+    {
+      "index": 60,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "immunization",
+      "choices_count": 0
+    },
+    {
+      "index": 61,
+      "question_number": 5,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "ATB prophylaxis\n100 เด็กคันก้น ส่งตรวจอะไร",
+      "choices_count": 3
+    },
+    {
+      "index": 62,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "oral ATB",
+      "choices_count": 0
+    },
+    {
+      "index": 63,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Topical ATB",
+      "choices_count": 0
+    },
+    {
+      "index": 64,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "oral decongestant",
+      "choices_count": 0
+    },
+    {
+      "index": 65,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "oral antihistamine",
+      "choices_count": 0
+    },
+    {
+      "index": 66,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "topical steroid\n144 เด็ก9ขวบ อาทิตย์ก่อนเป็นหวัด ตอนนี้มาด้วย Lt hearing loss + ",
+      "choices_count": 0
+    },
+    {
+      "index": 67,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "mastoiditis",
+      "choices_count": 0
+    },
+    {
+      "index": 68,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "labyrintitis",
+      "choices_count": 0
+    },
+    {
+      "index": 69,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "com",
+      "choices_count": 0
+    },
+    {
+      "index": 70,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "neuro something\n35 เด็ก6yr เดิมสุขภาพแข็งแรงดี fever cough rhinorrhea 2dPTA Nasa",
+      "choices_count": 0
+    },
+    {
+      "index": 71,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Ceterizine",
+      "choices_count": 0
+    },
+    {
+      "index": 72,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Amoxy",
+      "choices_count": 0
+    },
+    {
+      "index": 73,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Ribavirin",
+      "choices_count": 0
+    },
+    {
+      "index": 74,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Oseltamevir",
+      "choices_count": 0
+    },
+    {
+      "index": 75,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Azithro",
+      "choices_count": 0
+    }
+  ],
+  "questions": [
+    {
+      "question_number": 1,
+      "scenario": "An 8-year-old boy with asthma on inhaled steroid for 2 years. Growth chart as shown(ภาพนี้เลย). His father height 160 cm, mother 150 cm. What is the cause of delayed growth\nChronic asthma\nConstitutional growth delay\nFamilial short stature\nGrowth hormone deficiency\nChronic use of steroid\nA 9-month-old girl คุณแม่มาปรึกษาเรื่องจะกลับไปทำงานแต่ลูกพฤติกรรมเปลี่ยนไป จากเดิมร่าเริงกลายเป็นกลัวคนแปลกหน้า รวมทั้งพี่เลี้ยงด้วย What is the diagnosis\nPoor nourishing\nNormal development\nAnxiety avoidant\nResistant avoidant\nA 9-year-old boy has an acute dyspnea. He has underlying disease Tetralogy of Fallot comes with dyspnea and cyanosis  PE: central cyanosis with pan systolic murmur grade 3/6 at apex What is the appropriate management?(ทุกช๊อยเป็นยาหมดเลย)\nMorphine\nDigitalis\nEnalapril\nA 3-year-old boy has respiratory distress 2 days. He has history of nonspecific respiratory tract infection 2 weeks ago. PE: BT 37C, RR 40/min, PR 130/min, BP 90/50 mmHg, normal S1 S2, gallop, no friction rub, lung crepitation, no splenomegaly, hepatomegaly 4 cm BRCM, span 10 cm. What is the diagnosis\nPericarditis\nViral myocarditis\nInfective endocarditis\nAcute rheumatic fever\nDilated cardiomyopathy\nA 2-year-old girl presented with hoarseness and noisy breathing on inspiring for 2 days which happened after an episode of fever with cough and rhinorrhea. PE: Rhonchi both lung, no crepitation. What is the most appropriate management?\nLateral neck x-ray\nFilm chest with neck\nInhaled corticosteroid\nSalbutamol\nGuaifenesin\nA 2-month-old infant has loud breathing when sucking. The symptom improved when the infant is in pronation position. PE: BW 5 kg, RR 44, HR 144, inspiratory stridor, harsh breath sound, no wheezing both lungs. What is the most appropriate management?\nReassure\nEpinephrine NB\nSalbutamol NB\nLaryngoscopy\nTracheoscopy\nA 6-year-old presents with dyspnea, hoarseness, cough, chest tightness. History of rhinorrhea in the morning. PE: BT 37, RR 30, HR 100, lung-bilateral expiratory wheezing, rhonchi. What is the most likely diagnosis\nAsthma\nBacterial tracheitis\nBronchitis acute\nBronchiolitis acute\nPneumonia\nAn 8-year-old boy, underlying asthma, presents with severe dyspnea. He took salbutamol MDI 2 puff but not improve. PE: suprasternal and subcostal retraction, inspiratory and expiratory wheezing. What is the next management\nIV dexamethasone\nAlbuterol NB\nSubcutaneous adrenaline\nSubcutaneous terbutaline\nIV aminophylline\nเด็กกินอะไรสักอย่างแล้ว Anaphylaxis มี Wheezing .... ถามMx\nIM epinephrine\nIV CPM\nA 3-month-old boy with a history of delayed passing meconium. He has off and on abdominal distension, not pass stool for 5 days. PE: distended abdomen, not tender. What is the most appropriate management?\nLaxative\nSoap irrigation\nUnison enema\nSaline irrigate rectum\nRectal stool evacuation\nA 4-week-old infant presents with non-billous vomiting. อ้วกทุกครั้งหลัง feed. What is the most likely laboratory value\nHct 30%\nSerum Na 140\nSerum Cl 110\nSerum K 4\nSerum HCO3 35\nA 1-year-old boy had a watery diarrhea for 2 days, today he has periodic screaming, crying and also mucous-bloody diarrhea, PE: abdomen- ill defined mass can be palpated at RUQ. What is the most likely diagnosis?\nIntussusception\nMeckel's diverticulum\nAcute gastroenteritis\nMidgut volvulus\nPyloric stenosis\nA 2-year-old presents with hematemesis 4 hours PTA. Physical exams jaundice, hepatomegaly, BP 90/50 mmHg, PR 140/min. What is the next initial management\nLPRC 20 cc/kg/hr in 1 hour",
+      "choices": [],
+      "exam_source": "NLE 2015"
+    },
+    {
+      "question_number": 0,
+      "scenario": "9% NSS 20 cc/kg/hr in 30 minutes\nOmeprazole\nConsult surgery\nOctreotide IV 5 mg/kg\nA 7-year-old patient with hereditary spherocytosis and history of splenectomy comes to the clinic for regular PRBC transfusion. Patient develops severe back pain and severe irritation 2 hours in to the transfusion. What is the best initial management\nGive NSAID\nStop transfusion\nStart high dose steroid IV\nIncrease hydration to 250 ml/m2/hr\nRapid infusion to complete transfusion\nA 10-year-old girl presents with drowsiness and hyperpnea 2 hours PTA. She has polyuria and polydipsia for 1 month. PE: BT 37 C, PR 70, RR 30, BP 90/70 mmHg, capillary refill 3 sec. Lab: BS 600 mg/dl, Na 125, K 5.5, HCO3 8, Cl 98, urine ketone positive. After fluid resuscite what is the proper management\n3%NaCl\nKayexalate",
+      "choices": [],
+      "exam_source": "NLE 2015"
+    },
+    {
+      "question_number": 7,
+      "scenario": "5% NaHCO3\nNPH insulin\nRegular insulin\nA 12-year-old female presents with vagina moniliasis. Physical exams weight 60 kg, height 158 cm, BP 140/90 mmHg, PR 80/min, positive acanthosis nigrican. Lab BS 394 mg/dL, LDL 290, HDL 40, triglyceride 301. Urine glucose 4+, ketone negative. What is the most appropriate management\nBiguanide\nInsulin\nBiguanide and insulin\nLife style modification\nFluid replacement dehydration 5%\nA 10-year-old boy with positive acanthosis nigrican. Father and grandmother have diabetes type 2. What is the investigation\nChromosome study\nGlucose tolerance test\nGrowth hormone test\nDexamethasone suppression\n24-hour free cortisol test\nผู้ป่วยเด็ก จำอายุและเพศไม่ได้ ประวัติชัก Generalized tonic clonic seizure 30 min มารดาปฏิเสธประวัติอื่นทุกสิ่งอย่างไม่ว่าจะ Head injury infection trauma ครั้งนี้เป็น First episode เลย ถาม What is the most appropriate management?\nDiazepam IV\nPhenytoin IV\nPhenobarbital IV\nSodium valproate Oral\nEndotracheal tube\nA child has had otitis media. Today he develops dyspnea. What is the antibiotics\nCeftriaxone\nAugmentin\nA 4-year-old boy presents with fever for 5 days. Physical exams BT 39oC, trunk maculopapular rash with vesicle and pustule. What is the most likely diagnosis\nChickenpox\nRoseola infantum\nIn the kindergarten, one child in the classroom of 20 students was diagnosed chickenpox. What is appropriate management to prevent outbreak\nclose school for 7 days\nclose his classroom for 7 days\noral acyclovir for all student in the classroom\noral acyclovir for student who never receive varicella vaccine\ngive varicella vaccine for student who never receive varicella vaccine\nA 3-year-old child presents with fever and sore throat, multiple vesicles on palm and sole. What is the etiology\nRSV\nStreptococcus group A\nCoxsackic A\nInfluenza virus\nHerpes virus\nA child has multiple shallow ulcers at posterior palate and posterior pharynx vesicles at hands and feet. What is the most appropriate to prevent infection\nWear mask\nWear glove\nWash hands\nAntibiotics\nImmunization\nA 2-year-old boy presents with mucous bloody diarrhea 2 days PTA. He had GTC on admission, BT 40oC. What  is the most likely cause\nShigella\nRotavirus\nSalmonella spp.\nVibrio cholera\nSalmonella typhi\nA 5-year-old boy presents with fever for 2 days. Today afebrile with abrupt appear of maculopapular rash at trunk. What is the most likely diagnosis\nMeasles\nRubella\nRoseola infantum\nEnterovirus\nA 55-year-old man has chronic intermittent well-defined erythematous greasy scaly plaque at nasolabial fold, glabella, eyebrow, external ear canal. What is the diagnosis\nRosecea\nTinea faciae\nAcne vulgaris\nPsoriasis vulgaris\nSeborrheic dermatitis\nA 2-year-old boy has fever, rash, edematous hands and feet. ESR 60. What is the diagnosis(ไม่ได้บอก strawberry tongue, lymph node)\nScarlet fever\nKawasaki disease\nMeningococcal\nA 7-year-old boy presents with abdominal pain 1 day. He has had rash and arthralgia for 1 week. BT 37, Hct 38%, stool RBC positive. What is the appropriate management\nATB\nSteroid\nAntihistamine\nเด็ก มีผื่น ปวดข้อ What is the diagnosis\nStill disease\nLyme disease\nA 9-year-old girl has fever and productive cough for 2 weeks. During that period she has a swelling and tender at her right knee which relieve in 1 week. After, she has a red  and tender at her left ankle. PE: BT 38 C, RR 20, normal S1S2, left ankle red and tender with limit of motion. What is the most appropriate investigation for diagnosis\nChest X ray\nEchocardiography\nElectrocardiography\nAntistreptolysin-O\nESR\nAn 18-year-old woman presents with edema fever 2 days. She has this symptom 2 years ago. PE: pustule at leg. What is the diagnosis\nLupus nephritis\nIgA nephropathy\nPoststreptococcal glomerulonephritis\nA 6-year-old girl with rash at inside of her elbow and knee. She was treated with 0.02% TA cream. The rashes subsided, but recur with discontinuation. On physical examination, vesicles on brown hyperpigmented, erythematous skin with excoriation marks at cubital and popliteal fossa. What is the diagnosis\nPsoriasis\nAtopic dermatitis\nImpetigo contagiosum\nA child has fever and take medication. After that he develops skin desquamation at face, genitalia. What is the diagnosis\nSteven Johnson syndrome\nStaphylococcal scalded skin syndrome\nA child has history of carbamazepine for 2 weeks. He develops fever. PE: BT 38.5, bilateral conjunctivitis, target lesion at head trunk extremities. Nicolsky sign positive. Skin detachment 35% BSA. What is the most likely diagnosis\nErythema multiforme\nSteven Johnson syndrome\nToxic epidermal necrolysis\nStaphylococcal scalded skin syndrome\nA 2-month-old child with rash both cheeks, scalp 1 month on and off. Mother has allergic rhinitis. PE: dry itchy erythematous plaque with scale and yellow crust. What is the diagnosis\nAtopic dermatitis\nSeborrheic dermatitis\nTinea faceii\nContact dermatitis\nImpetigo contagiosa\nA 7-year-old boy came to the ER because Malayan pit viper bite 1 hour PTA. Physical exam fank marks, swelling. He has no dyspnea, no ptosis. Venous blood clotting at 25 min. What is the most appropriate management\nDischarge home\nRepeat venous clotting time 6 hours\nAdmit, repeat venous clotting 2 hours\nAdmit, bed rest, observe neuro signs\nAdmit, emergency antivenom and repeat venous clotting time\nA 10-year-old boy comes with his parents. His teacher told that has multiple staring, not answer the teacher for 10 seconds daily. He has no memory of what happened. PE: no neurological deficit. What is the diagnosis\nAbsence seizure\nConfusional states\nComplex partial seizures\nA 1-year-old boy on queuing list of TOF operation. He has had fever treat with ATB but not improve 2 weeks. Today he is right hemiplegia. Neck stiffness positive. What is the diagnosis\nMeningitis\nEncephalitis\nBrain abscess\nA boy fever 12 days, elbow swelling redness 5 days. Physical exams systolic murmur grade 2/6 at LPSB. Elevated ASO titer. What is the most likely diagnosis\nRheumatic fever\nRheumatoid arthritis\nInfective endocarditis\nA child with myalgia, headache and high fever. Physical exams reveals mild hepatomegaly. Lab WBC 2,000 (N40%, L30%, M20%, AL 10%), platelet 70,000. What is the next investigation\nNS-1 antigen\nเด็กกินสารอะไรบางอย่าง มีขวดตกอยู่ข้างๆ pupil 1 mm, hypersalivation, fasciculation. What is the substance\nCarbamate\nFluoxetine\nChlorpheniramine\nCarbamazepine\nWhich of the following mechanism is most likely underlie patient’s abnormality\nTrisomy\nMonosomy\nAbnormal imprinting\nChromosome deletion\nSingle gene mutation\nA 6-year-old boy brought by his mother for certificate of disability. IQ 60. What is the cause of disability\nIdiopathic\nBirth asphyxia\nChromosomal abnormalities\nCerebral palsy\nEnvironment\nA 30-year-old woman, primigravida, delivered her first child as the picture. Which of the following supplement that should be given to her to prevent the same problem in her second child\nZinc\nFolic acid\nPyridoxine\nAscorbic acid\nFerrous sulfate\nAn infant weight 1,400 g GA 31 weeks presents with dyspnea, cyanosis under FiO2 0.3 Physical exams BT 36.4oC, HR 142/min, RR 68/min, occasional grunting, nasal flaring, coarse crepitation both lung. What is your management\nIncrease FiO2, ABG\nGive surfactant\nRadient warmer. Assisted ventilation\nRadient warmer, CXR, blood sugar\nSeptic work-up, ABG\nA term male newborn ceasarean section has respiratory distress. BT 37, RR38/min, BP 90/60, PR 140/min, O2 sat 94% room air. PE: no adventitious sound, flare alar nasi, mild supraclavicular retraction. CXR: mild hyperaerate infiltrate bilateral mild effusion both lungs. What is the diagnosis\nAcute respiratory distress\nTetralogy of Fallot\nPatent ductusarteriosus\nTransient tachypnea of the newborn\nPersistent pulmonary hypertension of the newborn\nAn 10-hour newborn, term, has jaundice. BT 37 C, mark jaundice, other normal. Hct 38%,A, Rh positive, microbilirubin 10. Mother: O, Rh positive. Direct coomb test weakly positive. Indirect coomb test negative. What is the diagnosis\nRh incompatible\nAO incompatible\nPhysiologic jaundice\nNeonatal hepatitis\nG6PD deficiency\nเด็กเหลือง 37 weeks, 2800 grams. At 18 hour, bilirubin 18, Hct normal ทำอะไร\nintensive phototherapy\ntotal blood transfusion\npartial blood transfusion\nA term male infant, normal delivery, birth weight 2 kg, APGAR 9,10, ANC normal, has jitteriness at 2 hour. PE: plethora, no jaundice. Hct 68%, BS 30 mg/dL, hypocalcemia. After prescribing 10%D/W 2 ml/kg push with glucose infusion rate 6 mg/kg/hr and maintenance with rate 65 ml/kg/day. What is the most appropriate next step management\nIncrease rate to 90\nPartial exchange transfusion\nTotal exchange transfusion\n10% Calcium gluconate IV\nPhenobarbital IV\nA 3-day-old baby presents with jaundice and frustrated. Physical exams sunken eye balls weight 2800 g, birth weight 3000 g. Mother complains of no breast milk. She has only colostrums. Baby denied feeding. Lab bilirubin 12 mg/dL, others normal. What should you do\nPhototherapy\nIncrease oral fluid\nSend her to breast feeding teaching\nA 10-day-old neonatal, birth weight 3,200 g, presents with jaundice. She is exclusively breastfed and passes loose yellow stool 6-7 times per day. PE: weight 4,000 g, mild to moderate jaundice, otherwise normal. Lab: Hct 48%, microbillirubin 16 mg/dL. What is the most appropriate management\nExpose to sunlight in the morning\nForce oral fluid\nSwitch to infant formula\nContinue breastfeeding\nPhototherapy\nA 2-day-old child GA 34 weeks, birth weight 2,200 g. APGAR score 2, 5 at 1, 5 minutes. Microbilirubin 16 mg% ทำ phototherapy. What is the most important factor for hearing screening test\nBirth weight\nAPGAR score\nGestational age\nPhototherapy\nMicrobilirubin\nเด็กน้อย Newborn เกิดมา day3 ร้องกวน พบรอบๆสะดือออกแดงบวม PE: VS BT37 RR48 PR 120 Abdomen: Periumbilical inflammation with no discharge. What is the most appropriate management?\nDressing\nAmoxycillin-Clavulanate oral\nCloxacillin IV\nCeftazidime IV\nGentamicin IV\nA 7-day-old infant delivery at home. He is irritable, feeding difficult, generalized rigidity, muscle spasm to response. Umbilical stump normal. What is the most likely diagnosis\nTetanus\nMeningitis\nEncephalitis\nHypocalcemia\nHypoglycemia\nA 6-hour newborn has dyspnea. APGAR 7,10 at 1,5 minutes. His symptom relieve after O2 supplement. PE: inactive. He has PROM 22 hours. What is the diagnosis\nRespiratory distress\nBacterial sepsis\nCerebral hypoxia\nTransient tachypnea of the newborn\nA newborn presents with internal rotate arm, pronate forearm, hand and wrist flex. Where is the lesion\nC4-C5\nC5-C6\nC6-C7\nC7-C8\nC8-T1\nA newborn PROM reveal meconium. Dyspnea, meconium aspiration. What is the management\nChest compression\nOrotracheal tube and suction\nWhich vaccine is contraindicate in egg allergy\nHepatitis B\nRabies vaccine\nInfluenza vaccine\nPneumococcal vaccine\nNone of the above\nA 12-year-old male patient, with a complete history of standard immunization DTP5 OPV5 MMR2 HBV3 BCG1 JE3. What is the recommended vaccine at this time\ndT\nMMR\nJE\nHBV\nPneumococcal\nA 20-year-old woman มาสมัครเป็นผู้ช่วยพยาบาล What is not in expanded program of immunization\nHBV\nDTP\nMMR\nJapanese encephalitis\nAn area with high prevalence goiter 20%. Who should be screening first\nPreschool\nPrimary school\nTeenager\nPregnancy\nElderly\nNeuro",
+      "choices": [],
+      "exam_source": "NLE 2015"
+    },
+    {
+      "question_number": 1,
+      "scenario": "เด็กอายุ1เดือน ร้องไห้ มีชักเกร็งแขนขา มักเป็นช่วงเวลาเย็นของทุกวัน ขี้วันละ2-3ครั้ง เยี่ยวปกติ แดกนมได้. ดูดนมนาน20นาที น้าหนัก4000 แรกเกิดหนัก3200 ถามว่าเด็กเวรนี้เป็นอันใด 1infantile colic 2epilepsy",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "เด็ก10เดือน ไข้ชัก bs 50อย่างอื่นnormal Mx?",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "LP",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ct brain",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "10%glucose",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "เด็ก 10 ปี ชาปลายมือปลายเท้า 2 week หอบเหนื่อย 2 วัน หนัก 70kgสูง150cm กินข้าว3มื้อ เนื้อสัตว์บางมื้อ ผักผลไม้นิดหน่อย ไข่1-2ฟอง ตรวจร่างกายมีweakนิดหน่อย deep tendon 1+ fine crep เปนอะไร",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "cardiomyopathy",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "myositis",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "thiamine def",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "cobalamine def",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "niacin def\nCardio",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "เด็กชายอายุ 7 ปี เหนื่อย นอนราบไม่ได้มา 1 สัปดาห์ ก่อนหน้ามีไข้ เจ็บคอ เมื่อ 2 สัปดาห์ก่อน PE: systolic murmur grade III at …(จาไม่ได้ น่าจะเป็นapex) ถาม investigate for diagnosis",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ANA"
+        },
+        {
+          "label": "B",
+          "text": "ASO titer"
+        },
+        {
+          "label": "C",
+          "text": "EKG"
+        },
+        {
+          "label": "D",
+          "text": "Rheumatoid factor"
+        }
+      ],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "เด็ก2เดือน ซึม กินนมน้อยลง 2วันได้รับการวินิจฉัยว่าเปนVSD ตั้งแต่อายุ 1เดือน\nPE T37 RR 70 BP70/50 PR160sweating, Diffuse expiratory wheezing both lungs. Systolic ejection murmur along LPSB. Liver span 8 cmวินิจฉัยตรงกับข้อใดมากที่สุด",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Acute bronchitis",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Viral pneumonia",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Aspiration pneumonia",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Acute asthmatic attack",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "Congestive heart failure",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "บ่ายชุด C ข้อ 68 ทารก 8 เดือน ถูกพามาห้องฉุกเฉินด้วยอาการเขียว มารดาให้ประวัติว่ากินถั่วแล้วสาลัก pe cyanosis , stuporous , air grasping BT 37. HR 100/min no FB in oral cavity จงใหเการปฏิบัติที่เหมาะสม 1. Cricothyrotomy 2 cardiac compress 3 endothraceal tube 4. Bag- valve mask ventilation 5. 5 backblows - 5 chest trush\nNewborn",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": ".1mo infant always regur milk after eat. Birth weight = 3,200 g now 4,500 g PE: looks well",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Over feeding",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Gastritis",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "GERD",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Hypertrophic pyloric stenosis",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "....",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "newborn GA 42 wk นน.น้อยกว่า3000 apgar 5,8 ผิวหนังที่มือเท้ามีอะไรซักอย่างระวัง complication อะไร\nก. hypocalcemia\nข. hypoglycemia\nค. ...hemorrhage",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "newborn GA? RR 80/min หายใจ grunting CXR: increase lung marking, fluid steak in fissure Dx?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Meconium Aspiration"
+        },
+        {
+          "label": "B",
+          "text": "TTNB"
+        }
+      ],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "เด็กคลอดครบกาหนด เหนื่อย RR:70/min PR:140bpm bp60/40mmHg PE:decrease breath sound left lung cxr:air loop in left lung management?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "bronchoscpe"
+        },
+        {
+          "label": "B",
+          "text": "barium enema"
+        },
+        {
+          "label": "C",
+          "text": "film left lateral"
+        },
+        {
+          "label": "D",
+          "text": "Intubation with ppv"
+        }
+      ],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "เด็ก term ชัก 2ชม.หลังคลอด apgar 3,5,9 at 1,5,10 Hct 63% WBC 20000 BS 50 ให้ยาอะไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "iv glucose"
+        },
+        {
+          "label": "B",
+          "text": "iv atropine"
+        },
+        {
+          "label": "C",
+          "text": "iv phenytoin"
+        },
+        {
+          "label": "D",
+          "text": "iv phenobarbital"
+        }
+      ],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 6,
+      "scenario": "เด็กผู้หญิง1800กรัม คลอดออกมา ตรวจพบ CLCP systolic murmur omphalocele polydactyly จงบอกIxที่ช่วย 1.chromosome",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "echo",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "MRI brain",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 7,
+      "scenario": "เด็กคลอดออกมาโดยใช้vacuum เนื่องจากแม่แรงเบ่งน้อย เด็กออกมาน้าหนัก3200g BP 60/35 ตรวจพบว่ามีก้อน RT.PARIETAL LOBE 3×3cm cross midline อย่างอื่นปกติ",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "meningocele?",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "cephal",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "caput",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "subgaleal",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 8,
+      "scenario": "newborn c/s ga 38 bw 2500 temp 36.2 หายใจ air entry ดี มีอกบุ๋มเลกน้อย o2sat 92\nA keep warm\nB oxegen box\nC nasal cpap",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 9,
+      "scenario": "ทารกGA 35wk น้าหนักแรกคลอด2500 คลอดโดยcesarian หลังคลอด O2sat 90 น้าตาล 50หายใจได้มีอกบุ๋มเลกน้อย ทาอะไรต่อ\nA iv glucose\nB oxygen box\nC nasal CPAP",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 10,
+      "scenario": "เด็กแรกเกิดครบกาหนด หายใจเร็วขณะอายุ 1 hr หายใจมีิอกยุบ RR 70 HR140 BP 80/60 CXR: left air loop ท่านจะทาอย่างไรที่เหมาะสมที่สุด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "pulmonary function test"
+        },
+        {
+          "label": "B",
+          "text": "observe"
+        },
+        {
+          "label": "C",
+          "text": "bronchoscopy"
+        },
+        {
+          "label": "D",
+          "text": "oxygen mask with bag"
+        },
+        {
+          "label": "E",
+          "text": "ET tube"
+        }
+      ],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 11,
+      "scenario": "new born Term day 3 เหลือง กินนมแม่ cephalhematoma 3x4 @parietal lobe Hb 43 WBCดี, plt\nแม่ Gr. A ลูก B",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ABO incompat"
+        },
+        {
+          "label": "B",
+          "text": "extravasate hemolysis"
+        },
+        {
+          "label": "C",
+          "text": "breast milk jaundice"
+        },
+        {
+          "label": "D",
+          "text": "HS"
+        }
+      ],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 12,
+      "scenario": "infant 2 hr มี lip smacking, cyclic movement Hct 65, WBC20,000 ,blood glucose 50, ให้อะไร\n1 IV glucose\n2 IV atropine\n3 IV diazepam\n4 IV phenobarbital\n5 IV ampi genta\nInfect",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "5ขวบ ขี้แตกเป็นน้า10ครั้ง/วัน dry lips sunken eyeballs BP80/60 PR150 PE อื่นๆปกติ\nNa 132 K 6.5 Cl HCO3 12\nfirst step mx. ?",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "เช้า : เด็ก 10 เดือน ไข้,ซืม,อ้วก มา 5 วัน t 39,ant.font bulging,brudzinski + ถาม Ix",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "urine exam",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "hemoculture",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ct brain",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "csf",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "u/s brain",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "เช้า : girl 8 yr ปวดหูขวา 1 วัน Hx ว่ายน้าทุกเช้า PE: หูขวาบวมแดง,ขยับใบหูหรือติ่งหูขวา ปวดมาก DX",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "mastoiditis\n2Aom",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "COM",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "bullos myringitis",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "otitis externa\nเด็กชาย2ปี drooling and fever 2 day . Multiple shallow erosion at post. Pharynx and multiple vesicle both palm and sole จงบอกmost effective prevent spreading of this diz",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ล้างมือ",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "สวมหน้ากาก",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "สวมถุงมือ",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "immunization",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "ATB prophylaxis\n100 เด็กคันก้น ส่งตรวจอะไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Stool exam"
+        },
+        {
+          "label": "B",
+          "text": "Stool culture"
+        },
+        {
+          "label": "D",
+          "text": "Scottape technique"
+        }
+      ],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "oral ATB",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Topical ATB",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "oral decongestant",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "oral antihistamine",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "topical steroid\n144 เด็ก9ขวบ อาทิตย์ก่อนเป็นหวัด ตอนนี้มาด้วย Lt hearing loss + เดินเซ ล้มไปทางซ้าย n/v pe:neuro nl all dx?",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "mastoiditis",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "labyrintitis",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "com",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "neuro something\n35 เด็ก6yr เดิมสุขภาพแข็งแรงดี fever cough rhinorrhea 2dPTA Nasal swab H1N1+ve Mx?",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Ceterizine",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Amoxy",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Ribavirin",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Oseltamevir",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "Azithro",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    }
+  ]
+}

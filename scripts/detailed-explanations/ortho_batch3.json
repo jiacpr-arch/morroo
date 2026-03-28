@@ -1,0 +1,842 @@
+[
+  {
+    "id": "4b1ffd4c-0545-4d26-ada0-e02a09831e27",
+    "correct_answer": "C",
+    "explanation": "อาการปวดไหล่เวลายกแขนในผู้หญิงวัยกลางคนโดยไม่มีการบาดเจ็บ บ่งชี้ถึง Rotator cuff tendinitis มากที่สุด",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C (Rotator cuff tendinitis) เพราะอาการปวดไหล่เวลา abduction ในผู้หญิงวัยกลางคนที่ไม่มีประวัติ trauma เป็นลักษณะของ rotator cuff tendinitis",
+      "reason": "Rotator cuff tendinitis มักพบในผู้ใหญ่วัยกลางคน อาการปวดเกิดขึ้นขณะยกแขน (painful arc 60-120 องศา) มี tenderness ที่ greater tuberosity และ subacromial region Frozen shoulder (adhesive capsulitis) จะมีการจำกัด ROM ทุกทิศทาง Milwaukee syndrome เป็น calcium pyrophosphate deposition ที่ไหล่ในผู้สูงอายุ TB septic arthritis จะมีไข้และอาการ systemic",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Frozen shoulder",
+          "is_correct": false,
+          "explanation": "Frozen shoulder จะมี global ROM limitation ทุกทิศทาง ไม่ใช่แค่ painful arc"
+        },
+        {
+          "label": "B",
+          "text": "Milwaukee's syndrome",
+          "is_correct": false,
+          "explanation": "Milwaukee syndrome คือ calcium pyrophosphate/apatite deposition ในข้อไหล่ผู้สูงอายุ มักมีกระดูกถูกทำลายมาก"
+        },
+        {
+          "label": "C",
+          "text": "Rotator cuff tendinitis",
+          "is_correct": true,
+          "explanation": "อาการปวดเวลายกแขนในวัยกลางคน บ่งชี้ supraspinatus tendinitis/rotator cuff syndrome"
+        },
+        {
+          "label": "D",
+          "text": "Acromioclavicular joint arthritis",
+          "is_correct": false,
+          "explanation": "AC joint arthritis มักปวดที่ด้านบนไหล่ มี tenderness ที่ AC joint โดยตรง"
+        },
+        {
+          "label": "E",
+          "text": "TB septic arthritis of glenohumeral joint",
+          "is_correct": false,
+          "explanation": "TB septic arthritis จะมีไข้ ESR สูง และ gradual progressive stiffness"
+        }
+      ],
+      "key_takeaway": "ปวดไหล่เวลายกแขน painful arc 60-120° วัยกลางคน = Rotator cuff tendinitis"
+    }
+  },
+  {
+    "id": "4ebdefbb-c6fd-4073-a92c-54e742016ee0",
+    "correct_answer": "C",
+    "explanation": "Frozen shoulder ที่ไม่ตอบสนองต่อ conservative รักษาด้วย intra-articular corticosteroid injection ร่วมกับ physical therapy",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C (Intra-articular corticosteroid injection + PT) เพราะ frozen shoulder ที่ conservative ล้มเหลวแล้ว การฉีด steroid เข้าข้อร่วมกับ PT เป็น second-line ที่ได้ผลดี",
+      "reason": "Adhesive capsulitis (frozen shoulder) รักษาตามขั้นตอน: 1) NSAIDs + PT ในระยะแรก 2) หากไม่ดีขึ้น → intra-articular corticosteroid injection + progressive PT 3) ผ่าตัด arthroscopic release เฉพาะกรณีล้มเหลวทุก conservative treatment การ immobilization จะทำให้ worse เพราะ capsule จะยิ่ง contract",
+      "choices": [
+        {
+          "label": "A",
+          "text": "PT + shoulder mobilization + NSAIDs",
+          "is_correct": false,
+          "explanation": "เป็น first-line สำหรับ frozen shoulder ระยะต้น แต่โจทย์บอกว่า conservative ล้มเหลวแล้ว"
+        },
+        {
+          "label": "B",
+          "text": "Surgery ทันที",
+          "is_correct": false,
+          "explanation": "Arthroscopic release เป็น last resort หลังล้มเหลวทุก conservative options"
+        },
+        {
+          "label": "C",
+          "text": "Intra-articular corticosteroid + PT",
+          "is_correct": true,
+          "explanation": "Second-line สำหรับ frozen shoulder ที่ conservative ล้มเหลว ลด inflammation + mobilize capsule"
+        },
+        {
+          "label": "D",
+          "text": "Immobilization 3-4 สัปดาห์",
+          "is_correct": false,
+          "explanation": "Immobilization จะทำให้ capsule fibrosis รุนแรงขึ้น ห้ามทำใน frozen shoulder"
+        },
+        {
+          "label": "E",
+          "text": "X-ray/MRI + observation",
+          "is_correct": false,
+          "explanation": "Observation โดยไม่รักษาไม่เหมาะสม เพราะ frozen shoulder ต้องการ active treatment"
+        }
+      ],
+      "key_takeaway": "Frozen shoulder ล้มเหลว conservative → Intra-articular steroid + PT เป็น second-line"
+    }
+  },
+  {
+    "id": "55dabc8b-dfee-4e8b-bc06-75b61bb86465",
+    "correct_answer": "B",
+    "explanation": "ผู้ป่วย OA เข่า มีก้อนกดเจ็บบริเวณด้านในของเข่า (medial tibial plateau) บ่งชี้ Anserine bursitis",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Anserine bursitis) เพราะก้อนกดเจ็บที่ด้านในเข่า (ใต้ joint line) ในผู้ป่วย OA คือ anserine bursa อักเสบ",
+      "reason": "Anserine bursa อยู่บริเวณ medial side ของ tibia ใต้ knee joint line ตรงจุดเกาะของ sartorius, gracilis, semitendinosus (pes anserinus) มักพบร่วมกับ OA, โรคอ้วน, และเบาหวาน อาการเด่นคือปวดด้านในเข่าและก้อนกดเจ็บที่ตำแหน่งดังกล่าว Prepatellar bursitis จะอยู่หน้าลูกสะบ้า",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Rheumatoid Arthritis",
+          "is_correct": false,
+          "explanation": "RA จะมี symmetric polyarthritis, morning stiffness >1 ชั่วโมง ไม่ใช่ก้อนที่ด้านในเข่าข้างเดียว"
+        },
+        {
+          "label": "B",
+          "text": "Anserine bursitis",
+          "is_correct": true,
+          "explanation": "ก้อนกดเจ็บด้านในเข่าใต้ joint line ในผู้ป่วย OA = anserine bursitis คลาสสิก"
+        },
+        {
+          "label": "C",
+          "text": "Prepatellar bursitis",
+          "is_correct": false,
+          "explanation": "Prepatellar bursitis อยู่หน้าลูกสะบ้า พบใน 'housemaid's knee'"
+        },
+        {
+          "label": "D",
+          "text": "Patellar tendinitis",
+          "is_correct": false,
+          "explanation": "Patellar tendinitis ปวดที่ patellar tendon ใต้ลูกสะบ้า ไม่ใช่ก้อนด้านใน"
+        },
+        {
+          "label": "E",
+          "text": "Flare of OA",
+          "is_correct": false,
+          "explanation": "OA flare จะมีข้อบวม warm แต่ไม่เป็น localized lump ที่ด้านในเข่า"
+        }
+      ],
+      "key_takeaway": "OA เข่า + ก้อนกดเจ็บด้านในเข่า (ใต้ joint line) = Anserine bursitis"
+    }
+  },
+  {
+    "id": "561c64ea-9803-4532-9731-0c8225459a81",
+    "correct_answer": "B",
+    "explanation": "หลังผ่าตัด spine 12 ชม แล้วมีเหนื่อยหอบ confusion และ petechiae บ่งชี้ Fat embolism syndrome",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Fat embolism) เพราะ classic triad ของ fat embolism syndrome คือ respiratory distress + neurological changes + petechial rash หลัง bone surgery",
+      "reason": "Fat embolism syndrome (FES) เกิดหลัง long bone fracture หรือ spinal surgery โดย fat globules ปล่อยออกมาอุด pulmonary vasculature Triad: 1) hypoxia/respiratory distress 2) neurological dysfunction (confusion, drowsiness) 3) petechiae (เฉพาะ upper body) เกิดภายใน 12-72 ชั่วโมงหลังบาดเจ็บ PE จะไม่มี petechiae และ neurological signs ไม่ prominent",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Pulmonary embolism",
+          "is_correct": false,
+          "explanation": "PE ไม่มี petechiae และ confusion ไม่เด่น แต่จะมี pleuritic chest pain, hemoptysis"
+        },
+        {
+          "label": "B",
+          "text": "Fat embolism",
+          "is_correct": true,
+          "explanation": "Classic FES triad: respiratory distress + neurological changes + petechiae หลัง bone/spine surgery"
+        },
+        {
+          "label": "C",
+          "text": "Acute heart failure",
+          "is_correct": false,
+          "explanation": "AHF จะมี pulmonary edema, JVP สูง ไม่มี petechiae"
+        },
+        {
+          "label": "D",
+          "text": "Pneumonia",
+          "is_correct": false,
+          "explanation": "Pneumonia เกิดช้ากว่า 12 ชม และไม่มี petechiae หรือ confusion ทันที"
+        },
+        {
+          "label": "E",
+          "text": "Anaphylaxis",
+          "is_correct": false,
+          "explanation": "Anaphylaxis เกิดทันทีหลัง exposure ไม่ใช่ 12 ชั่วโมงหลังผ่าตัด"
+        }
+      ],
+      "key_takeaway": "หลัง bone/spine surgery + เหนื่อยหอบ + confusion + petechiae = Fat embolism syndrome"
+    }
+  },
+  {
+    "id": "57769253-6e39-4c3f-b452-61c0b76bf66a",
+    "correct_answer": "A",
+    "explanation": "Displaced supracondylar fracture ในเด็กรักษาด้วย closed reduction โดยขั้นตอน Extension → Flexion → Adduction → Internal rotation",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Extension → Flexion → Adduction → Internal rotation) เพราะเป็น Dunlop/Swann maneuver สำหรับ supracondylar fracture type extension",
+      "reason": "Supracondylar fracture of humerus type extension (พบบ่อยที่สุด) เกิดจาก FOOSH ทำให้ distal fragment เลื่อนไปด้านหลัง Closed reduction: 1) Extension ของข้อศอกก่อน (unlock fragments) 2) Flexion ข้อศอก 3) Adduction 4) Internal rotation เพื่อ lock ใน position จากนั้น K-wire fixation หรือ cast immobilization ใน flexion",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Extension → Flexion → Adduction → Internal rotation",
+          "is_correct": true,
+          "explanation": "Dunlop maneuver: extend ก่อน unlock → flex → adduct + IR เพื่อ reduce"
+        },
+        {
+          "label": "B",
+          "text": "Flexion → Extension → Abduction → External rotation",
+          "is_correct": false,
+          "explanation": "ลำดับผิด และ abduction + ER จะทำให้ fragment เลื่อนออก"
+        },
+        {
+          "label": "C",
+          "text": "Flexion → Adduction → Internal rotation → Extension",
+          "is_correct": false,
+          "explanation": "ต้อง extend ก่อนเสมอเพื่อ unlock distal fragment"
+        },
+        {
+          "label": "D",
+          "text": "Extension ผ่าน 180° แล้ว Flexion เล็กน้อย",
+          "is_correct": false,
+          "explanation": "Hyperextension ไม่ถูกต้องและเสี่ยงต่อ neurovascular injury"
+        },
+        {
+          "label": "E",
+          "text": "Open reduction internal fixation",
+          "is_correct": false,
+          "explanation": "ORIF ใช้เมื่อ closed reduction ล้มเหลวหรือมี neurovascular compromise"
+        }
+      ],
+      "key_takeaway": "Closed reduction supracondylar fracture: Extension → Flexion → Adduction → Internal rotation"
+    }
+  },
+  {
+    "id": "58784760-e596-4bc6-a5db-83eff03e2ac6",
+    "correct_answer": "C",
+    "explanation": "ปวดด้านข้าง radial ของข้อมือหลังคลอดบุตร บ่งชี้ De Quervain tenosynovitis จาก overuse ของ APL และ EPB",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C (De Quervain tenosynovitis) เพราะปวด radial side ของข้อมือหลัง delivery และ infant care เป็น classic presentation",
+      "reason": "De Quervain tenosynovitis คือการอักเสบของ tendon sheath ของ abductor pollicis longus (APL) และ extensor pollicis brevis (EPB) ใน first dorsal compartment ของข้อมือ พบบ่อยในมารดาหลังคลอดจาก repetitive pinch grip ขณะอุ้มทารก อาการ: ปวด radial side ของข้อมือ, Finkelstein's test positive, tenderness ที่ radial styloid",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Wrist joint arthritis",
+          "is_correct": false,
+          "explanation": "Wrist arthritis จะมีปวดทั่วข้อมือ ไม่ localize ที่ radial side"
+        },
+        {
+          "label": "B",
+          "text": "Median nerve entrapment",
+          "is_correct": false,
+          "explanation": "CTS มีอาการชาที่นิ้ว 1-3 ไม่ใช่ปวด radial side ของข้อมือ"
+        },
+        {
+          "label": "C",
+          "text": "DeQuervain tenosynovitis",
+          "is_correct": true,
+          "explanation": "Radial side wrist pain หลัง delivery = classic De Quervain; Finkelstein's test positive"
+        },
+        {
+          "label": "D",
+          "text": "Scaphoid fracture",
+          "is_correct": false,
+          "explanation": "Scaphoid fracture ต้องมี trauma และมี anatomical snuffbox tenderness"
+        },
+        {
+          "label": "E",
+          "text": "First dorsal compartment syndrome",
+          "is_correct": false,
+          "explanation": "De Quervain IS first dorsal compartment tenosynovitis; C คือคำตอบที่ถูกต้องกว่า"
+        }
+      ],
+      "key_takeaway": "ปวด radial side ข้อมือหลังคลอด + Finkelstein's test positive = De Quervain tenosynovitis"
+    }
+  },
+  {
+    "id": "5a883ea0-c670-4bb4-a871-4986acb355c9",
+    "correct_answer": "A",
+    "explanation": "ปวดไหล่ขวาเรื้อรัง 6 เดือน เจ็บเวลาบรรจบลำตัวด้านข้าง (impingement) บ่งชี้ Supraspinatus tendinitis/Rotator cuff syndrome",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Supraspinatus tendinitis/Rotator cuff syndrome) เพราะอาการปวดไหล่เวลา abduction และ painful arc เป็น hallmark ของ supraspinatus impingement",
+      "reason": "Supraspinatus tendon วิ่งใต้ acromion และ coracoacromial arch เวลา abduction ทำให้เกิด impingement ที่ greater tuberosity อาการ: painful arc 60-120° ของ abduction, Neer's impingement sign positive, Hawkins test positive ใน Adhesive capsulitis ROM จะลดทุกทิศทาง ไม่ใช่แค่ painful arc",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Supraspinatus tendinitis/Rotator cuff syndrome",
+          "is_correct": true,
+          "explanation": "Painful arc ที่ 60-120° เวลา abduction = classic supraspinatus impingement"
+        },
+        {
+          "label": "B",
+          "text": "Adhesive capsulitis (Frozen shoulder)",
+          "is_correct": false,
+          "explanation": "Frozen shoulder มี global ROM limitation ทุกทิศทาง (ER จำกัดมากที่สุด)"
+        },
+        {
+          "label": "C",
+          "text": "Acromioclavicular joint osteoarthritis",
+          "is_correct": false,
+          "explanation": "AC joint OA ปวดที่ข้อ AC โดยตรง และ painful arc อยู่ที่ >120°"
+        },
+        {
+          "label": "D",
+          "text": "Biceps tendinitis",
+          "is_correct": false,
+          "explanation": "Biceps tendinitis ปวดที่ bicipital groove ด้านหน้า Speed's test positive"
+        },
+        {
+          "label": "E",
+          "text": "Shoulder dislocation",
+          "is_correct": false,
+          "explanation": "Shoulder dislocation จะมี deformity ชัดเจนและ X-ray แสดงผล"
+        }
+      ],
+      "key_takeaway": "Painful arc 60-120° เวลา abduction = Supraspinatus tendinitis (Rotator cuff impingement)"
+    }
+  },
+  {
+    "id": "5b65e40c-6ca8-4b1a-b748-d171614e3800",
+    "correct_answer": "B",
+    "explanation": "Displaced lateral condyle fracture ในเด็กที่ displaced >2mm ต้องรักษาด้วย ORIF (K-wire/screw fixation)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (ORIF ด้วย K-wire/screw) เพราะ displaced lateral condyle fracture ในเด็กที่ displacement >2mm มีโอกาสสูงที่จะเกิด non-union และ cubitus valgus ถ้าไม่ผ่าตัด",
+      "reason": "Lateral condyle fracture ของเด็กต่างจาก supracondylar fracture ตรงที่ conservative treatment มักล้มเหลว เพราะ: 1) มี cartilage hinge ทำให้ X-ray underestimate displacement 2) กล้ามเนื้อ forearm ดึง fragment ออก 3) Non-union rate สูง Indication สำหรับ ORIF: displacement >2mm หรือ unstable fracture",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Conservative ด้วย sling 2-3 สัปดาห์",
+          "is_correct": false,
+          "explanation": "Conservative เหมาะสำหรับ non-displaced (<2mm) เท่านั้น"
+        },
+        {
+          "label": "B",
+          "text": "ORIF ด้วย K-wire/screw",
+          "is_correct": true,
+          "explanation": "Displaced >2mm ต้อง ORIF เพื่อป้องกัน non-union และ cubitus valgus"
+        },
+        {
+          "label": "C",
+          "text": "External fixation",
+          "is_correct": false,
+          "explanation": "External fixation ไม่ใช่ standard treatment สำหรับ lateral condyle fracture ในเด็ก"
+        },
+        {
+          "label": "D",
+          "text": "ส่งตรวจพยาธิวิทยา",
+          "is_correct": false,
+          "explanation": "Fracture ไม่ต้องตรวจ histology ในกรณีนี้"
+        },
+        {
+          "label": "E",
+          "text": "Immobilization ข้อศอก 90° 2 สัปดาห์ + rehab",
+          "is_correct": false,
+          "explanation": "Immobilization อย่างเดียวไม่เพียงพอสำหรับ displaced fracture"
+        }
+      ],
+      "key_takeaway": "Lateral condyle fracture เด็ก displacement >2mm → ORIF ด้วย K-wire/screw ป้องกัน non-union"
+    }
+  },
+  {
+    "id": "5d1e1a59-808a-405e-8caa-2ee735db1a4d",
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วย OA เข่า มีข้อเข่าบวมเฉียบพลัน ต้องแยก Rheumatoid arthritis ออกจาก septic arthritis ด้วยการตรวจ",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (RA) เพราะในบริบทผู้ป่วยที่มี background OA แต่เกิด acute flare ที่มีปุ่มด้านใน อาจบ่งชี้ว่าเป็น RA ที่ coexist กับ OA",
+      "reason": "ในผู้ป่วยสูงอายุที่มี OA อยู่แล้ว การเกิด acute joint swelling ที่มีลักษณะ inflammatory (warm, tender) ต้องพิจารณา: 1) Crystal-induced arthritis (gout/pseudogout) 2) Septic arthritis 3) RA flare ในกรณีนี้การวินิจฉัยที่ถูกต้องตาม exam คือ RA ซึ่งอาจ present ร่วมกับ OA ได้ และมีก้อนบริเวณ joint area",
+      "choices": [
+        {
+          "label": "A",
+          "text": "RA",
+          "is_correct": true,
+          "explanation": "ตาม exam คำตอบคือ RA ซึ่งอาจ coexist กับ OA และ present เป็น inflammatory arthritis"
+        },
+        {
+          "label": "B",
+          "text": "Anserine bursitis",
+          "is_correct": false,
+          "explanation": "Anserine bursitis ก็เป็น differential แต่ข้อนี้ exam ตอบ RA"
+        },
+        {
+          "label": "C",
+          "text": "Prepatellar bursitis",
+          "is_correct": false,
+          "explanation": "Prepatellar bursitis อยู่หน้าลูกสะบ้า ไม่ใช่ด้านใน"
+        },
+        {
+          "label": "D",
+          "text": "Patellar tendinitis",
+          "is_correct": false,
+          "explanation": "Patellar tendinitis ปวดที่ tendon ใต้ลูกสะบ้า"
+        },
+        {
+          "label": "E",
+          "text": "Flare of OA",
+          "is_correct": false,
+          "explanation": "OA flare ไม่มี significant warmth หรือ synovitis เด่นชัด"
+        }
+      ],
+      "key_takeaway": "OA เข่า + acute inflammatory joint findings → พิจารณา RA ที่ coexist หรือ crystal arthritis"
+    }
+  },
+  {
+    "id": "5eba54ff-1e35-4ebd-bbd8-0fb0800ed5c3",
+    "correct_answer": "A",
+    "explanation": "เด็กชาย 10 ปี มีประวัติ trauma ข้อศอกและ X-ray แสดง posterior fat pad sign บ่งชี้ Posterior elbow dislocation",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Posterior elbow dislocation) เพราะ posterior elbow dislocation พบบ่อยสุดในเด็ก และ X-ray จะแสดง posterior displacement ของ radius+ulna relative to humerus",
+      "reason": "Posterior elbow dislocation เป็น dislocation ที่พบบ่อยที่สุดที่ข้อศอก (>90%) ในเด็กมักเกิดจาก FOOSH ทำให้ radius+ulna เลื่อนไปด้านหลัง X-ray ด้าน lateral แสดง posterior displacement ชัดเจน อาการ: ข้อศอกงอได้น้อย บวม ผิดรูปด้านหลัง และ olecranon โดดเด่น ต้องตรวจ neurovascular (anterior interosseous nerve) ก่อนและหลัง reduction",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Posterior elbow dislocation",
+          "is_correct": true,
+          "explanation": "พบบ่อยสุดในเด็กหลัง FOOSH; radius+ulna เลื่อนด้านหลัง; olecranon prominent"
+        },
+        {
+          "label": "B",
+          "text": "Anterior elbow dislocation",
+          "is_correct": false,
+          "explanation": "Anterior dislocation พบน้อยมาก (<1%)"
+        },
+        {
+          "label": "C",
+          "text": "Lateral epicondyle fracture",
+          "is_correct": false,
+          "explanation": "Lateral condyle fracture จะมี tenderness specific ที่ lateral side"
+        },
+        {
+          "label": "D",
+          "text": "Supracondylar fracture of humerus",
+          "is_correct": false,
+          "explanation": "Supracondylar fracture พบบ่อยในเด็กเล็ก (5-8 ปี) มากกว่า 10 ปี"
+        },
+        {
+          "label": "E",
+          "text": "Elbow joint effusion only",
+          "is_correct": false,
+          "explanation": "Effusion only จะไม่มี deformity หรือ ROM limitation รุนแรง"
+        }
+      ],
+      "key_takeaway": "เด็ก FOOSH + ข้อศอกบวมผิดรูป olecranon โดดเด่น = Posterior elbow dislocation"
+    }
+  },
+  {
+    "id": "68166906-ae16-40e5-8aa8-89ad62c2ab5f",
+    "correct_answer": "A",
+    "explanation": "ชาย 55 ปี ปวดไหล่เรื้อรัง 6 เดือน MRI แสดง fatty infiltration Goutallier stage 2-3 ร่วมกับ OA บ่งชี้ rotator cuff tear เรื้อรังขั้นรุนแรง",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Fatty infiltration Goutallier stage 2-3 + OA) เพราะอาการเรื้อรัง 6 เดือนในชายวัยกลางคนบ่งชี้ degeneration ขั้นรุนแรงที่ MRI",
+      "reason": "Goutallier classification วัด fatty infiltration ของ rotator cuff muscles: Stage 0=ไม่มี, Stage 1=streak, Stage 2=<50%, Stage 3=>50%, Stage 4=ไม่เหลือกล้ามเนื้อ ในผู้ป่วยที่ปวดเรื้อรัง 6 เดือนและมี OA ร่วมด้วย คาดว่า MRI จะแสดง advanced degeneration Stage 2-3 ซึ่งบ่งชี้ prognosis ไม่ดีหลัง conservative treatment และอาจต้องพิจารณา surgery",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Fatty infiltration Goutallier 2-3 + OA",
+          "is_correct": true,
+          "explanation": "เรื้อรัง 6 เดือน + OA ข้อไหล่ → advanced rotator cuff degeneration stage 2-3"
+        },
+        {
+          "label": "B",
+          "text": "Partial tear ไม่มี degenerative change",
+          "is_correct": false,
+          "explanation": "Partial tear โดยไม่มี degenerative change พบใน acute injury ไม่ใช่เรื้อรัง 6 เดือน"
+        },
+        {
+          "label": "C",
+          "text": "Acute inflammation ของ bursa เท่านั้น",
+          "is_correct": false,
+          "explanation": "Acute bursitis ไม่เกิดเรื้อรัง 6 เดือน"
+        },
+        {
+          "label": "D",
+          "text": "Calcific tendinitis ของ infraspinatus",
+          "is_correct": false,
+          "explanation": "Calcific tendinitis มักพบ X-ray แสดง calcium deposit ที่ supraspinatus"
+        },
+        {
+          "label": "E",
+          "text": "Adhesive capsulitis ไม่มี rotator cuff pathology",
+          "is_correct": false,
+          "explanation": "Frozen shoulder จะมี global ROM limitation ชัดเจน"
+        }
+      ],
+      "key_takeaway": "ปวดไหล่เรื้อรัง + OA → MRI แสดง Goutallier stage 2-3 fatty infiltration of rotator cuff"
+    }
+  },
+  {
+    "id": "68617135-1596-4582-a3ad-3170035ab56e",
+    "correct_answer": "E",
+    "explanation": "Risk factors สำหรับ osteoporosis คือ European ethnicity, under exercise, และ underweight",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ E (European ethnicity + under exercise + underweight) เพราะ risk factors ที่ถูกต้องทั้งหมดรวมกันอยู่ใน choice E",
+      "reason": "Risk factors ของ osteoporosis ได้แก่: เชื้อชาติ Caucasian/European หรือ Asian (ไม่ใช่ African), น้ำหนักน้อย (underweight), ออกกำลังกายน้อย (sedentary), สูบบุหรี่, ดื่มแอลกอฮอล์, หมดประจำเดือน, ใช้ corticosteroids African descent เป็น protective factor เพราะมี bone density สูงกว่า Obesity เป็น protective factor ด้วย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Asian + overexercise + obesity",
+          "is_correct": false,
+          "explanation": "Asian เป็น RF แต่ overexercise และ obesity เป็น protective factors"
+        },
+        {
+          "label": "B",
+          "text": "European + overexercise + obesity",
+          "is_correct": false,
+          "explanation": "European เป็น RF แต่ overexercise และ obesity ไม่ใช่ RF"
+        },
+        {
+          "label": "C",
+          "text": "African + under exercise + obesity",
+          "is_correct": false,
+          "explanation": "African descent เป็น protective factor ไม่ใช่ RF"
+        },
+        {
+          "label": "D",
+          "text": "African + overexercise + underweight",
+          "is_correct": false,
+          "explanation": "African descent เป็น protective factor"
+        },
+        {
+          "label": "E",
+          "text": "European + under exercise + underweight",
+          "is_correct": true,
+          "explanation": "European + sedentary lifestyle + underweight = RF ที่ถูกต้องทั้งหมดสำหรับ osteoporosis"
+        }
+      ],
+      "key_takeaway": "Osteoporosis RF: European/Asian ethnicity + under exercise + underweight (African + obesity = protective)"
+    }
+  },
+  {
+    "id": "6c1b1533-4968-42c1-82ca-64bc5d9324c9",
+    "correct_answer": "B",
+    "explanation": "ผู้ป่วยมี leg swelling และ pain on passive motion หลัง trauma บ่งชี้ acute compartment syndrome ต้องวัด compartment pressure",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Monitor compartment pressure) เพราะ pain on passive motion + swelling หลัง trauma เป็น signs of acute compartment syndrome ต้องวัดเพื่อยืนยัน",
+      "reason": "Acute compartment syndrome (ACS) วินิจฉัยจาก 5P's: Pain (especially on passive stretch), Pressure (tight compartment), Paresthesia, Pallor, Pulselessness ในระยะแรก pain on passive motion เป็น sign แรกสุด การวัด compartment pressure >30 mmHg หรือ within 30 mmHg of diastolic BP = indication for fasciotomy ห้ามใส่ casting ก่อนวัด pressure",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Doppler ultrasound",
+          "is_correct": false,
+          "explanation": "Doppler ตรวจ arterial/venous flow แต่ ACS ไม่ได้ปิดกั้น artery ในระยะแรก"
+        },
+        {
+          "label": "B",
+          "text": "Monitor compartment pressure",
+          "is_correct": true,
+          "explanation": "Pain on passive motion = sign of ACS → วัด compartment pressure ยืนยัน"
+        },
+        {
+          "label": "C",
+          "text": "Casting",
+          "is_correct": false,
+          "explanation": "Cast จะทำให้ ACS worse โดยเพิ่ม external pressure ห้ามใส่"
+        },
+        {
+          "label": "D",
+          "text": "Immediate ORIF",
+          "is_correct": false,
+          "explanation": "ต้องวัด pressure ก่อนตัดสินใจ surgical intervention"
+        },
+        {
+          "label": "E",
+          "text": "Angiogram",
+          "is_correct": false,
+          "explanation": "Angiogram ใช้เมื่อสงสัย vascular injury ไม่ใช่ compartment syndrome"
+        }
+      ],
+      "key_takeaway": "Pain on passive motion + swelling หลัง trauma = suspect ACS → วัด compartment pressure ก่อน"
+    }
+  },
+  {
+    "id": "6db13301-6bd0-4a53-a65a-a51915571084",
+    "correct_answer": "A",
+    "explanation": "Housewife 55 ปี ปวดไหล่ขวา 6 เดือน worse with overhead activities บ่งชี้ Supraspinatus tendinitis/rotator cuff tear",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Supraspinatus tendinitis/rotator cuff tear) เพราะอาการปวดไหล่ worse with overhead activity เป็น classic impingement/rotator cuff pathology",
+      "reason": "Rotator cuff pathology พบบ่อยในวัยกลางคน อาการ: ปวดไหล่ worse with overhead activity, painful arc 60-120°, Neer's impingement sign positive, Hawkins test positive ใน advanced cases อาจมี rotator cuff tear ที่ต้องยืนยันด้วย MRI หรือ ultrasound Frozen shoulder มี global ROM limitation Biceps tendinitis ปวดที่ bicipital groove",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Supraspinatus tendinitis/rotator cuff tear",
+          "is_correct": true,
+          "explanation": "Worse with overhead activity + age 55 = supraspinatus impingement/tear คลาสสิก"
+        },
+        {
+          "label": "B",
+          "text": "Adhesive capsulitis",
+          "is_correct": false,
+          "explanation": "Frozen shoulder มี global ROM limitation ทุกทิศทาง โดยเฉพาะ ER"
+        },
+        {
+          "label": "C",
+          "text": "Biceps tendinitis",
+          "is_correct": false,
+          "explanation": "Biceps tendinitis ปวด anterior shoulder ที่ bicipital groove"
+        },
+        {
+          "label": "D",
+          "text": "AC joint osteoarthritis",
+          "is_correct": false,
+          "explanation": "AC OA ปวด superior shoulder ที่ AC joint โดยตรง"
+        },
+        {
+          "label": "E",
+          "text": "Subacromial bursitis",
+          "is_correct": false,
+          "explanation": "Subacromial bursitis เป็น differential แต่ rotator cuff pathology เป็น primary diagnosis"
+        }
+      ],
+      "key_takeaway": "ปวดไหล่ worse with overhead activity วัยกลางคน = Supraspinatus tendinitis/Rotator cuff pathology"
+    }
+  },
+  {
+    "id": "6e7de8a0-f9cb-4556-a143-d577b7d25051",
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วย RA ที่คุมอาการได้ดี แล้วเกิด acute knee swelling มีไข้ ต้องทำ joint aspiration เพื่อ rule out septic arthritis",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Joint aspiration) เพราะ acute monoarticular swelling มีไข้ในผู้ป่วย RA ต้องแยก septic arthritis ก่อนเสมอด้วย arthrocentesis",
+      "reason": "ผู้ป่วย RA ที่ immunosuppressed มีความเสี่ยงสูงต่อ septic arthritis การวินิจฉัย septic arthritis ต้องทำ joint aspiration เพื่อดู: WBC >50,000/μL (>75% PMN), gram stain, culture Septic arthritis เป็น orthopedic emergency หากปล่อยไว้จะทำลาย cartilage อย่างถาวรภายใน 24-48 ชั่วโมง X-ray จะช่วยน้อยในระยะแรก",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Joint aspiration",
+          "is_correct": true,
+          "explanation": "Acute knee swelling + ไข้ในผู้ป่วย RA = ต้อง aspirate เพื่อ rule out septic arthritis"
+        },
+        {
+          "label": "B",
+          "text": "X-ray knee",
+          "is_correct": false,
+          "explanation": "X-ray ไม่ช่วย diagnose septic arthritis ในระยะแรก"
+        },
+        {
+          "label": "C",
+          "text": "MRI knee",
+          "is_correct": false,
+          "explanation": "MRI ช้าเกินไปสำหรับ emergency; joint aspiration ทำได้ทันที"
+        },
+        {
+          "label": "D",
+          "text": "CBC",
+          "is_correct": false,
+          "explanation": "CBC บอก systemic inflammation แต่ไม่ specific เท่า synovial fluid analysis"
+        },
+        {
+          "label": "E",
+          "text": "ESR and CRP",
+          "is_correct": false,
+          "explanation": "ESR/CRP elevated ใน RA flare และ septic arthritis ไม่ช่วย differentiate"
+        }
+      ],
+      "key_takeaway": "Acute monoarticular swelling + ไข้ในผู้ป่วย RA = Joint aspiration ก่อนเสมอ rule out septic arthritis"
+    }
+  },
+  {
+    "id": "6ebcac06-25d8-45fa-b31d-2ab83707fcfc",
+    "correct_answer": "A",
+    "explanation": "อาการชานิ้วชี้และ decreased thenar function บ่งชี้ Carpal tunnel syndrome (median nerve compression)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Carpal tunnel syndrome) เพราะ numbness ที่ index finger และ thenar weakness เป็น classic median nerve entrapment ที่ carpal tunnel",
+      "reason": "CTS เกิดจาก median nerve ถูกกดใน carpal tunnel ใต้ flexor retinaculum อาการ: ชาและปวด lateral 3.5 นิ้ว (นิ้วโป้ง ชี้ กลาง และนิ้วนางด้าน radial), thenar atrophy/weakness, worse ตอนกลางคืน, Tinel's sign (+), Phalen's test (+) ต้องแยกจาก pronator syndrome (numbness เหมือนกัน แต่มี proximal forearm symptoms ด้วย)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Carpal tunnel syndrome",
+          "is_correct": true,
+          "explanation": "Index finger numbness + thenar weakness = CTS (median nerve at carpal tunnel) คลาสสิก"
+        },
+        {
+          "label": "B",
+          "text": "Anterior interosseous nerve syndrome",
+          "is_correct": false,
+          "explanation": "AIN syndrome ไม่มีอาการชา แต่มี weakness ของ FPL, FDP (index), pronator quadratus"
+        },
+        {
+          "label": "C",
+          "text": "Recurrent branch compression",
+          "is_correct": false,
+          "explanation": "Recurrent branch อยู่ distal to carpal tunnel มี thenar weakness แต่ไม่มีชา"
+        },
+        {
+          "label": "D",
+          "text": "Pronator syndrome",
+          "is_correct": false,
+          "explanation": "Pronator syndrome มีชาเหมือน CTS แต่มี proximal forearm pain ด้วย"
+        },
+        {
+          "label": "E",
+          "text": "Radial nerve compression",
+          "is_correct": false,
+          "explanation": "Radial nerve ไม่ supply thenar muscles หรือ index finger sensation"
+        }
+      ],
+      "key_takeaway": "ชานิ้วชี้ + thenar weakness = Carpal tunnel syndrome (median nerve compression)"
+    }
+  },
+  {
+    "id": "6ee27066-377b-43ff-8faf-73fb79695f3d",
+    "correct_answer": "A",
+    "explanation": "การใช้ prednisolone นาน 1 ปี ทำให้เกิด Cushing's syndrome ซึ่งมี hypertension เป็นผลข้างเคียงสำคัญ",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Hypertension) เพราะ prolonged steroid ทำให้ sodium retention และ RAAS activation ส่งผลให้ความดันโลหิตสูง",
+      "reason": "Cushing's syndrome จาก exogenous steroids มีผลข้างเคียง: Hypertension (sodium retention, RAAS), Hyperglycemia (ไม่ใช่ diabetes insipidus), Weight gain/central obesity (ไม่ใช่ wasting), Osteoporosis (bone loss ไม่ใช่ increase), Muscle wasting, Moon face, Buffalo hump ดังนั้น hypertension = hypercortisolism effect, ไม่ใช่ hypothyroidism หรือ DI",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Hypertension",
+          "is_correct": true,
+          "explanation": "Glucocorticoids ทำ Na+ retention + RAAS activation → hypertension เป็นผลข้างเคียงสำคัญ"
+        },
+        {
+          "label": "B",
+          "text": "Hypothyroid",
+          "is_correct": false,
+          "explanation": "Corticosteroids ไม่ทำให้ hypothyroidism; อาจทำให้ suppress TSH เล็กน้อย"
+        },
+        {
+          "label": "C",
+          "text": "Increased bone mass",
+          "is_correct": false,
+          "explanation": "Corticosteroids ลด bone mass ทำให้ osteoporosis ไม่ใช่เพิ่ม"
+        },
+        {
+          "label": "D",
+          "text": "Diabetes insipidus",
+          "is_correct": false,
+          "explanation": "Corticosteroids ทำให้ hyperglycemia (diabetes mellitus) ไม่ใช่ DI"
+        },
+        {
+          "label": "E",
+          "text": "Adipose tissue wasting",
+          "is_correct": false,
+          "explanation": "Corticosteroids ทำให้ fat redistribution (central obesity) ไม่ใช่ wasting"
+        }
+      ],
+      "key_takeaway": "Prolonged steroid → Cushing's: Hypertension, hyperglycemia, osteoporosis, central obesity (ไม่ใช่ wasting/DI/hypothyroid)"
+    }
+  },
+  {
+    "id": "6f1ff45e-bf66-4caa-9e01-c8fef154bfba",
+    "correct_answer": "C",
+    "explanation": "Fracture of distal 1/3 humerus ทำให้ radial nerve ถูกทำลาย ต้องทดสอบ thumb extension (EPL) เพื่อประเมิน posterior interosseous nerve",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C (Thumb extension) เพราะ radial nerve บริเวณ distal humerus ให้ innervation posterior interosseous nerve (PIN) ซึ่ง supply extensor pollicis longus",
+      "reason": "Radial nerve วิ่งใน spiral groove ของ humerus และ branch เป็น PIN ที่ lateral epicondyle Distal 1/3 humerus fracture อาจทำลาย PIN ส่งผลให้ thumb extension (EPL) และ finger extension เสีย แต่ wrist extension (ECRL) มักยังคงอยู่เพราะ ECRL ได้ nerve supply ก่อน spiral groove การทดสอบ thumb extension จึง specific สำหรับ PIN injury",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Finger flexion (DIP)",
+          "is_correct": false,
+          "explanation": "DIP flexion = FDP = median/ulnar nerve ไม่เกี่ยวกับ radial nerve"
+        },
+        {
+          "label": "B",
+          "text": "Finger extension",
+          "is_correct": false,
+          "explanation": "Finger extension ก็ test PIN แต่ thumb extension เฉพาะเจาะจงกว่า"
+        },
+        {
+          "label": "C",
+          "text": "Thumb extension",
+          "is_correct": true,
+          "explanation": "EPL = PIN function; distal humerus fracture → PIN injury → thumb extension เสีย"
+        },
+        {
+          "label": "D",
+          "text": "Wrist extension",
+          "is_correct": false,
+          "explanation": "ECRL ได้ nerve supply ก่อน PIN level จึงอาจยังทำได้แม้มี PIN injury"
+        },
+        {
+          "label": "E",
+          "text": "Elbow flexion",
+          "is_correct": false,
+          "explanation": "Elbow flexion = biceps = musculocutaneous nerve ไม่เกี่ยว"
+        }
+      ],
+      "key_takeaway": "Distal 1/3 humerus fracture → ทดสอบ thumb extension (EPL) เพื่อประเมิน PIN (radial nerve branch)"
+    }
+  },
+  {
+    "id": "736411d1-3f9b-406a-9835-3d4cf3c190e9",
+    "correct_answer": "C",
+    "explanation": "ผู้ป่วย 55 ปี มีชาและอ่อนแรงแต่ X-ray แสดงเพียง degenerative change โดยไม่มี neurological deficit ชัดเจน บ่งชี้ asymptomatic spondylosis",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C (Asymptomatic spondylosis) เพราะตาม exam context ผู้ป่วยมี spondylosis แต่ neurological signs ไม่ match กับ significant compression",
+      "reason": "Lumbar spondylosis เป็น degenerative change ของ spine ที่พบบ่อยตามอายุ หลายครั้งเป็น incidental finding ที่ไม่มี clinical significance Asymptomatic spondylosis = X-ray/imaging แสดง degenerative change แต่ symptoms ไม่ correspond กับ imaging หลักการ: treat the patient ไม่ใช่ treat the X-ray Lumbar disc herniation จะมี specific dermatomal symptoms ที่ชัดเจน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Spinal stenosis",
+          "is_correct": false,
+          "explanation": "Spinal stenosis มีอาการ neurogenic claudication เด่นชัด worse with walking"
+        },
+        {
+          "label": "B",
+          "text": "Vascular claudication",
+          "is_correct": false,
+          "explanation": "Vascular claudication ปวดน่อง worse with walking, better with rest; absent pulse"
+        },
+        {
+          "label": "C",
+          "text": "Asymptomatic spondylosis",
+          "is_correct": true,
+          "explanation": "Imaging แสดง degeneration แต่ symptoms ไม่ correspond = asymptomatic spondylosis"
+        },
+        {
+          "label": "D",
+          "text": "Lumbar disc herniation",
+          "is_correct": false,
+          "explanation": "Disc herniation มี specific radiculopathy ตาม dermatomal distribution ชัดเจน"
+        },
+        {
+          "label": "E",
+          "text": "Piriformis syndrome",
+          "is_correct": false,
+          "explanation": "Piriformis syndrome มี buttock pain ที่ขยายลงขา aggravated โดย sitting"
+        }
+      ],
+      "key_takeaway": "Imaging แสดง degenerative change แต่ symptoms ไม่ correspond = Asymptomatic spondylosis; treat patient not X-ray"
+    }
+  },
+  {
+    "id": "79907d61-604f-453d-8bac-10ab1cab3fff",
+    "correct_answer": "C",
+    "explanation": "แม่บ้าน 45 ปี ปวดข้อมือ ชามือ เป็นมากตอนกลางคืน บ่งชี้ Carpal tunnel syndrome รักษาด้วย wrist splint + NSAIDs เป็น first-line",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C (Wrist splint/Night splint + NSAIDs) เพราะ CTS ในระยะ mild-moderate รักษา conservative ก่อนด้วย night splint + NSAIDs",
+      "reason": "Carpal tunnel syndrome ในแม่บ้านที่ใช้มือทำงานมาก รักษาแบบ conservative ก่อน: 1) Wrist night splint (wrist neutral position ลด pressure ใน carpal tunnel) 2) NSAIDs ลด inflammation 3) Activity modification Steroid injection ใช้เมื่อ conservative ล้มเหลว Surgery (carpal tunnel release) ใช้เมื่อ conservative ล้มเหลวหรือมี severe motor weakness/thenar atrophy",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cervical traction",
+          "is_correct": false,
+          "explanation": "Cervical traction ใช้สำหรับ cervical radiculopathy ไม่ใช่ CTS"
+        },
+        {
+          "label": "B",
+          "text": "Steroid injection ที่ข้อมือ",
+          "is_correct": false,
+          "explanation": "Steroid injection เป็น second-line หลัง splint/NSAIDs ล้มเหลว"
+        },
+        {
+          "label": "C",
+          "text": "Wrist splint + NSAIDs",
+          "is_correct": true,
+          "explanation": "First-line conservative treatment ของ mild-moderate CTS"
+        },
+        {
+          "label": "D",
+          "text": "Carpal tunnel release surgery",
+          "is_correct": false,
+          "explanation": "Surgery เป็น last resort หลัง conservative ล้มเหลวหรือ severe motor deficit"
+        },
+        {
+          "label": "E",
+          "text": "Warm pack + ultrasound therapy",
+          "is_correct": false,
+          "explanation": "Physical modalities ไม่ใช่ first-line evidence-based treatment ของ CTS"
+        }
+      ],
+      "key_takeaway": "CTS mild-moderate → First-line: Wrist night splint + NSAIDs (ไม่ต้อง surgery ทันที)"
+    }
+  }
+]

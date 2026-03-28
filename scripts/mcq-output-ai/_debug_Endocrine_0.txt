@@ -1,0 +1,347 @@
+[
+  {
+    "scenario": "A 30-year-old man with thalassemia presents to clinic with polyuria and polydipsia. Which lab is LEAST accurate in this patient?",
+    "choices": [
+      {"label": "A", "text": "HbA1c"},
+      {"label": "B", "text": "Fructosamine"},
+      {"label": "C", "text": "Fasting blood sugar test"},
+      {"label": "D", "text": "Random blood sugar test"},
+      {"label": "E", "text": "Oral glucose tolerance test"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "HbA1c is inaccurate in thalassemia patients due to shortened RBC lifespan (10-20 days vs normal 120 days), resulting in falsely low HbA1c values. Fructosamine (reflects 2-3 week glucose control) is more reliable in this case."
+  },
+  {
+    "scenario": "A 65-year-old DM patient male was given glibenclamide for 1 year. He developed rash then he decided to stop all medication. After 6 months, he was fatigue and dyspnea. FBS 312, BUN 62, Cr 5.6. What is the most appropriate management?",
+    "choices": [
+      {"label": "A", "text": "Diet control"},
+      {"label": "B", "text": "Metformin"},
+      {"label": "C", "text": "Glibenclamide"},
+      {"label": "D", "text": "Pioglitazone"},
+      {"label": "E", "text": "Insulin injection"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Patient has severe hyperglycemia (FBS 312), renal impairment (Cr 5.6), and elevated BUN indicating kidney dysfunction. Insulin is the safest choice as it doesn't depend on renal clearance. Metformin is contraindicated in renal failure, and sulfonylureas caused adverse reaction previously."
+  },
+  {
+    "scenario": "A patient underlying diabetes, hypertension, triple vessel disease, chronic heart failure on enalapril 10 mg, metformin. Fasting blood sugar 150, HbA1c 9. What should NOT be done?",
+    "choices": [
+      {"label": "A", "text": "Add glipizide"},
+      {"label": "B", "text": "Change to sitagliptin"},
+      {"label": "C", "text": "Add pioglitazone"},
+      {"label": "D", "text": "Add GLP-1 agonist"},
+      {"label": "E", "text": "Optimize ACE inhibitor dose"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Pioglitazone should be avoided in CHF patients as it causes fluid retention and worsens heart failure. Glipizide or sitagliptin would be reasonable alternatives. Option D added as plausible choice."
+  },
+  {
+    "scenario": "A 30-year-old female comes to you to consult her abnormal values in laboratory investigation. She has no underlying disease, no family history of CAD. Her lab result is: TC 250, Triglyceride 800, HDL 20. What is the most appropriate medication?",
+    "choices": [
+      {"label": "A", "text": "Fish oil"},
+      {"label": "B", "text": "Ezetimibe"},
+      {"label": "C", "text": "Simvastatin"},
+      {"label": "D", "text": "Fenofibrate"},
+      {"label": "E", "text": "Cholecystyramine"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Very high triglycerides (800) with low HDL (20) suggests hypertriglyceridemia. Fenofibrate is first-line for severe hypertriglyceridemia. Fish oil (A) could be adjunctive but fibrate is more appropriate. Simvastatin alone would be insufficient for TG control."
+  },
+  {
+    "scenario": "A woman with hyperthyroid. T3, T4 elevated, TSH 0.01. What is the appropriate investigation?",
+    "choices": [
+      {"label": "A", "text": "Fine needle aspiration"},
+      {"label": "B", "text": "Thyroid scan and uptake"},
+      {"label": "C", "text": "Thyroid ultrasound"},
+      {"label": "D", "text": "Anti-TPO antibodies"},
+      {"label": "E", "text": "TSI (thyroid stimulating immunoglobulin)"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Thyroid scan and radioiodine uptake helps differentiate causes of hyperthyroidism: high uptake in Graves'/toxic nodule, low uptake in thyroiditis. Fine needle aspiration is for nodules/cancer. Added options C, D, E as plausible distractors."
+  },
+  {
+    "scenario": "A 32-year-old woman comes with palpitation. PE: PR 120 bpm, diffuse thyroid enlargement with tenderness. T3 5, T4 4, TSH 0.001. What is the appropriate management?",
+    "choices": [
+      {"label": "A", "text": "I131"},
+      {"label": "B", "text": "Ceftriaxone"},
+      {"label": "C", "text": "PTU"},
+      {"label": "D", "text": "Methimazole"},
+      {"label": "E", "text": "Subtotal thyroidectomy"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Tender goiter with high T3/T4 and low TSH suggests subacute thyroiditis or Graves' disease. PTU is preferred initially as it: (1) blocks thyroid hormone synthesis, (2) inhibits peripheral conversion of T4→T3 (faster symptom relief), (3) safer in pregnancy. Methimazole lacks peripheral conversion blocking. Radioactive iodine contraindicated in pregnant/nursing women."
+  },
+  {
+    "scenario": "A 55-year-old woman with hyperthyroid, on methimazole for 1 year. She was admitted with congestive heart failure. PR 110 irregular, no exophthalmos, thyroid gland 60 g, diffused enlargement. Free T3 3.2 pg/mL, free T4 2.0 ng/dL, TSH 0.05 mIU/L. What is the most appropriate long term management?",
+    "choices": [
+      {"label": "A", "text": "PTU"},
+      {"label": "B", "text": "Methimazole high dose"},
+      {"label": "C", "text": "Methimazole, lithium"},
+      {"label": "D", "text": "Thyroidectomy"},
+      {"label": "E", "text": "Radioiodine treatment"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Large goiter (60g) with failed medical management (still elevated T3/T4 after 1 year methimazole), CHF, and atrial fibrillation indicates need for definitive therapy. Thyroidectomy is preferred over radioiodine in: (1) large glands, (2) urgent control needed, (3) young patients. Radioiodine takes weeks for effect and would worsen CHF."
+  },
+  {
+    "scenario": "A 60-year-old man gain weight 3 kg in 6 months. PE: P 50, cold extremities, puffy eyelid and face, BMI 30. What is the most appropriate investigation?",
+    "choices": [
+      {"label": "A", "text": "Albumin"},
+      {"label": "B", "text": "BUN Cr"},
+      {"label": "C", "text": "Blood sugar"},
+      {"label": "D", "text": "Urinalysis"},
+      {"label": "E", "text": "Thyroid function"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Classic signs of hypothyroidism: weight gain, bradycardia (P 50), cold intolerance, myxedema (puffy face/eyelids). Thyroid function test (TSH, Free T4) is most appropriate investigation to confirm diagnosis."
+  },
+  {
+    "scenario": "A 65-year-old woman presents with fatigue, anorexia and weight loss 5 kg in 3 months. She has underlying chronic knee pain takes herbal medication. PE: obese, moon face, acanthosis nigricans at axilla. FBS 60 mg/dl, BUN 10, Cr 0.8, Na 122, K 5.1, Cl 91, HCO3 22. What is the most useful investigation?",
+    "choices": [
+      {"label": "A", "text": "Thyroid function test"},
+      {"label": "B", "text": "Serum morning cortisol"},
+      {"label": "C", "text": "Dexamethasone suppression test"},
+      {"label": "D", "text": "Aldosterone level"},
+      {"label": "E", "text": "Fractional excretion Na"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Classic Cushing syndrome signs: moon face, acanthosis nigricans, hyponatremia (Na 122), hyperkalemia (K 5.1), metabolic alkalosis (HCO3 22). Serum morning cortisol is initial screening test for Cushing syndrome. If high, proceed with dexamethasone suppression test for confirmation."
+  },
+  {
+    "scenario": "A 20-year-old woman has polyuria, fatigue. Her weight gain 10 kg in 3 weeks. BP 120/80 mmHg. PE: weight 100 kg, height 150 cm, acanthosis nigrican. UA: sugar 2+, WBC 0-1, RBC 0-1. What is the most useful investigation?",
+    "choices": [
+      {"label": "A", "text": "Repeat UA"},
+      {"label": "B", "text": "Capillary blood sugar"},
+      {"label": "C", "text": "Fasting blood sugar"},
+      {"label": "D", "text": "Oral glucose tolerance test"},
+      {"label": "E", "text": "Dexamethasone suppression test"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2015",
+    "status": "complete",
+    "ai_notes": "Rapid weight gain (10 kg/3 weeks) suggests fluid retention, possibly from new-onset diabetes with hyperglycemia and osmotic diuresis initially, then fluid retention as glucose control worsens. Acanthosis nigricans and glycosuria (2+) confirm insulin resistance/diabetes. Fasting blood sugar is appropriate to quantify hyperglycemia and diagnose diabetes."
+  },
+  {
+    "scenario": "ชาย อายุ 60 ปี BP 120/80, น้ำหนัก 65 กิโลกรัม ส่วนสูง 170 เซนติเมตร FPG 96 mg/dL ท่านจะทำอะไร?",
+    "choices": [
+      {"label": "A", "text": "Reassure"},
+      {"label": "B", "text": "ควบคุมอาหาร"},
+      {"label": "C", "text": "FPG อีกครั้ง"},
+      {"label": "D", "text": "ทำ OGTT"},
+      {"label": "E", "text": "ให้ยาเบาหวาน"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "status": "complete",
+    "ai_notes": "FPG 96 mg/dL เป็นปกติ (normal <100 mg/dL) BMI = 65/(1.7)² = 22.5 (normal) BP ปกติ ไม่มีอาการของเบาหวาน ไม่มี risk factors ที่กล่าวถึง คำตอบคือ Reassure ผู้ป่วย"
+  },
+  {
+    "scenario": "โรครายหนึ่งมีโรคไตเสื่อม 2 ปี, เบาหวาน, ความดันโลหิตสูง มา 4 ปี น้ำหนักตัว 50 กิโลกรัม BSA 1.26 มี pitting edema ทั้งสองขา ให้โปรตีนต่อวันเท่าไหร่?",
+    "choices": [
+      {"label": "A", "text": "10 g"},
+      {"label": "B", "text": "20 g"},
+      {"label": "C", "text": "30 g"},
+      {"label": "D", "text": "40 g"},
+      {"label": "E", "text": "50 g"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "status": "complete",
+    "ai_notes": "ในผู้ป่วยโรคไตเสื่อมขั้นที่ 2 (GFR 60-89) ที่มี edema แสดงว่ามี nephrotic syndrome โปรตีนควรจำกัดที่ 0.4-0.6 g/kg/day สำหรับผู้ป่วยที่มี proteinuria นี้ = 0.4 × 50 = 20 g/day"
+  },
+  {
+    "scenario": "หญิง อายุ 70 ปี เป็นเบาหวานมา 10 ปี มีไข้ ปัสสาวะขุ่น ซึมลง เจ็บสีข้างซ้ายมา 4 วัน PE: T 38°C, BP 80/50, PR 110, RR 28 ญาติหยุดยาเบาหวาน BS 900, tenderness left CVA, BUN 40, Cr 2, Electrolyte ปกติ การรักษาอันแรกคืออะไร?",
+    "choices": [
+      {"label": "A", "text": "0.9% NaCl"},
+      {"label": "B", "text": "Gentamicin IV"},
+      {"label": "C", "text": "NPH subcutaneous"},
+      {"label": "D", "text": "RI subcutaneous"},
+      {"label": "E", "text": "RI IV"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2014",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี septic shock จากการติดเชื้อระบบปัสสาวะด้านซ้าย (pyelonephritis) - CVA tenderness, fever, dysuria + shock physiology (BP 80/50, tachycardia). การรักษาอันแรกคือ fluid resuscitation ด้วย normal saline หลังจากนั้นจึง antibiotics IV. Insulin IV จำเป็นเพราะ BS 900 และ sepsis"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย Grave disease ออนยา PTU 150 mg/day มี symptoms: ไข้, เจ็บคอ CBC พบ WBC 400 cells/μL ท่านจะจัดการอย่างไร?",
+    "choices": [
+      {"label": "A", "text": "ลดขนาด PTU"},
+      {"label": "B", "text": "หยุด PTU"},
+      {"label": "C", "text": "เปลี่ยนมาใช้ Methimazole"},
+      {"label": "D", "text": "เพิ่มขนาด PTU"},
+      {"label": "E", "text": "ให้ G-CSF"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2014",
+    "status": "complete",
+    "ai_notes": "WBC 400 cells/μL (severe agranulocytosis <500) + fever + sore throat = drug-induced agranulocytosis จาก PTU ต้องหยุด PTU ทันทีและห้ามใช้ methimazole (cross reactivity ~50%) ผู้ป่วยต้องรักษา dengan supportive care และอาจพิจารณา radioactive iodine หลังฟื้นตัว"
+  },
+  {
+    "scenario": "ผู้ป่วยออน PTU มี painful mouth ulcer และไข้ นอกจากหยุดยาแล้ว ควรทำอะไรเพิ่มเติม?",
+    "choices": [
+      {"label": "A", "text": "Discharge นัด follow up"},
+      {"label": "B", "text": "Broad spectrum antibiotic IV"},
+      {"label": "C", "text": "เปลี่ยนเป็น Methimazole"},
+      {"label": "D", "text": "ให้ Supportive care และ antifungal"},
+      {"label": "E", "text": "Hospitalize สำหรับ monitoring"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008-2012 (Chulalongkorn 2007)",
+    "status": "complete",
+    "ai_notes": "PTU-induced agranulocytosis + fever + mouth ulcer = life-threatening condition ต้อง broad spectrum IV antibiotic (coverall gram +/- and anaerobes) ห้ามเปลี่ยน Methimazole เพราะมี cross-reactivity ถึง 50% ต้อง hospitalize และจัดการ sepsis"
+  },
+  {
+    "scenario": "ข้อใดเป็นเกณฑ์ metabolic syndrome ตามนิยาม?",
+    "choices": [
+      {"label": "A", "text": "Hypertension, Increased abdominal circumference, Insulin resistance"},
+      {"label": "B", "text": "Impaired fasting glucose, Hypercholesterolemia, Low HDL"},
+      {"label": "C", "text": "Hypertension, Insulin resistance, Low HDL"},
+      {"label": "D", "text": "Obesity, Hypertriglyceridemia, High fasting glucose"},
+      {"label": "E", "text": "Microalbuminuria, High blood pressure, Dyslipidemia"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008-2012 (Chulalongkorn 2007)",
+    "status": "complete",
+    "ai_notes": "Metabolic syndrome ต้องมี 3 ใน 5 criteria: central obesity, hypertension, elevated fasting glucose, elevated triglycerides, low HDL. Option A รวมสาระสำคัญ: central obesity (abdominal circumference), hypertension, insulin resistance"
+  },
+  {
+    "scenario": "หญิง มี hypertension และ Cushing appearance Lab ควรพบอะไร?",
+    "choices": [
+      {"label": "A", "text": "Increased cortisol level"},
+      {"label": "B", "text": "Decreased ACTH"},
+      {"label": "C", "text": "High aldosterone"},
+      {"label": "D", "text": "Low potassium"},
+      {"label": "E", "text": "Metabolic alkalosis"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008",
+    "status": "complete",
+    "ai_notes": "Cushing syndrome: ลักษณ์ = moon face, buffalo hump, central obesity, purple striae, hypertension ผล lab = increased cortisol (ไม่สามารถ suppress ด้วย dexamethasone ในexogenous) ACTH ขึ้นหรือลงขึ้นกับประเภท (central vs primary)"
+  },
+  {
+    "scenario": "ผู้หญิง subacute thyroiditis ให้ยาใดเพื่อลดอาการ?",
+    "choices": [
+      {"label": "A", "text": "ASA + Propranolol"},
+      {"label": "B", "text": "PTU + Prednisone"},
+      {"label": "C", "text": "Methimazole + NSAIDs"},
+      {"label": "D", "text": "Beta-blockers + Corticosteroids"},
+      {"label": "E", "text": "Antibiotics + analgesics"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008",
+    "status": "complete",
+    "ai_notes": "Subacute thyroiditis (viral) มีอาการปวดคอ ไข้ เนื่องจากการอักเสบไม่ใช่การสร้าง thyroid hormone ดังนั้นต้อง NSAIDs (ASA) + beta-blocker (propranolol) สำหรับความสบายตัวและการทำให้ระดับ thyroid hormone ลดลง ไม่ใช้ PTU/methimazole"
+  },
+  {
+    "scenario": "T4 ปกติ TSH ปกติ วินิจฉัยคืออะไร?",
+    "choices": [
+      {"label": "A", "text": "Simple Goiter"},
+      {"label": "B", "text": "Iodine deficiency"},
+      {"label": "C", "text": "Thyroid carcinoma"},
+      {"label": "D", "text": "Subacute thyroiditis"},
+      {"label": "E", "text": "Hashimoto thyroiditis (euthyroid stage)"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008",
+    "status": "complete",
+    "ai_notes": "T4 ปกติ + TSH ปกติ = euthyroid state หาก มี goiter = simple goiter (iodine sufficient แต่ enlargement มีสาเหตุอื่น) Hashimoto thyroiditis ที่ euthyroid stage อาจมี anti-TPO antibodies"
+  },
+  {
+    "scenario": "หญิง 40 ปี น้ำหนัก 80 กิโลกรัม ส่วนสูง 160 เซนติเมตร เพิ่งวินิจฉัย DM, FBG 180 mg/dL การรักษาที่เหมาะสมที่สุดคืออะไร?",
+    "choices": [
+      {"label": "A", "text": "ควบคุมอาหาร"},
+      {"label": "B", "text": "Metformin"},
+      {"label": "C", "text": "Acarbose"},
+      {"label": "D", "text": "Glibenclamide"},
+      {"label": "E", "text": "Insulin"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008",
+    "status": "complete",
+    "ai_notes": "BMI = 80/(1.6)² = 31.25 (obese) + FBG 180 (newly diagnosed DM) Metformin เป็น first-line drug ในผู้ป่วย obese DM type 2 เพราะ: weight neutral/loss, ไม่ cause hypoglycemia, improve insulin sensitivity, protect cardiovascular"
+  },
+  {
+    "scenario": "หญิง 25 ปี ใจสั่น กินจุ น้ำหนักลด มา 1 ปี PE: mild exophthalmos, generalized enlarged thyroid both lobes (Graves'), T4 elevated, T3 400, TSH <0.001 การรักษาคืออะไร?",
+    "choices": [
+      {"label": "A", "text": "Propranolol"},
+      {"label": "B", "text": "Lugol solution"},
+      {"label": "C", "text": "PTU"},
+      {"label": "D", "text": "Radioactive iodine"},
+      {"label": "E", "text": "Subtotal thyroidectomy"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2008",
+    "status": "complete",
+    "ai_notes": "Graves' disease in young woman (childbearing age) ต้อง PTU เพราะ: (1) safe in pregnancy (ไม่ cross placenta unlike methimazole), (2) blocks peripheral conversion T4→T3 (faster symptom relief), (3) has immunosuppressive effects. Propranolol สำหรับ symptom control ขณะรอ PTU effect, Lugol สำหรับ pre-operative prep เท่านั้น"
+  },
+  {
+    "scenario": "ชาย 32 ปี ใจสั่น น้ำหนักลด BP 150/100 PR 120 PE: sensory normal, muscle weak grade 1/5 (ทั้ง upper and lower extremities), reflex 2+ all, Na 136, K 2.5, Cl 102, CO2 22 ต้องส่งตรวจอะไรเพื่อหาสาเหตุของอ่อนแรง?",
+    "choices": [
+      {"label": "A", "text": "Free T4"},
+      {"label": "B", "text": "Plasma glucose"},
+      {"label": "C", "text": "CT brain"},
+      {"label": "D", "text": "CSF exam"},
+      {"label": "E", "text": "Serum osmolality"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2008",
+    "status": "complete",
+    "ai_notes": "ชาย young + palpitations + weight loss + hypertension + hypokalemia (K 2.5) + muscle weakness = thyroid storm/thyrotoxicosis ท่าทางแสดง thyroid hormone excess (tachycardia, weight loss, weakness from hypokalemia) ต้องวัด Free T4 (และ T3, TSH) เพื่อยืนยัน thyrotoxicosis"
+  },
+  {
+    "scenario": "ตรวจร่างกายประจำปี TG 210, LDL 200, HDL 30 ท่านจะให้ยาอะไร?",
+    "choices": [
+      {"label": "A", "text": "Gemfibrozil"},
+      {"label": "B", "text": "Simvastatin"},
+      {"label": "C", "text": "Fibric acid"},
+      {"label": "D", "text": "Niacin"},
+      {"label": "E", "text": "Fenofibrate"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2008",
+    "status": "complete",
+    "ai_notes": "Profile: high TG (210), high LDL (200), low HDL (30) = combined hyperlipidemia/atherogenic dyslipidemia สำหรับผู้ป่วยที่ยังไม่ได้ history ของ statin: fibrate (gemfibrozil หรือ fenofibrate) เป็น first-line สำหรับ high TG ตามหลังจากนั้นอาจเพิ่ม statin"
+  },
+  {
+    "scenario": "ปวดหัวเป็นๆ หายๆ + hypertension, Na 140, K 3.0 สาเหตุของ hypertension คืออะไร?",
+    "choices": [
+      {"label": "A", "text": "Pheochromocytoma"},
+      {"label": "B", "text": "Primary hyperaldosteronism"},
+      {"label": "C", "text": "Renal artery stenosis"},
+      {"label": "D", "text": "Cushing syndrome"},
+      {"label": "E", "text": "Thyrotoxicosis"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2008",
+    "status": "complete",
+    "ai_notes": "Paroxysmal headache + HTN + hypokalemia (K 3.0) + normal Na = primary hyperaldosteronism (Conn syndrome) ลักษณะ = hypokalemic alkalosis, hypertension, low plasma renin activity. Pheochromocytoma ให้ episodic symptoms แต่ K ปกติ"
+  },
+  {
+    "scenario": "ผู้ป่วย clinical DKA การรักษาที่เหมาะสมที่สุดคืออะไร?",
+    "choices": [
+      {"label": "A", "text": "IV insulin"},
+      {"label": "B", "text": "IV fluid"},
+      {"label": "C", "text": "IV fluid และ IV insulin"},
+      {"label": "D", "text": "IV insulin, fluid, electrolyte correction"},
+      {"label": "E", "text": "Sodium bicarbonate"}
+    ],
+    "correct_answer": "

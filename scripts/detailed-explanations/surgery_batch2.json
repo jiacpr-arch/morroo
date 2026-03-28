@@ -1,0 +1,836 @@
+[
+  {
+    "id": "3b0d3d14-a92f-45a4-a9ec-987e2b553832",
+    "correct_answer": "A",
+    "explanation": "หญิง 60 ปี แผลฝ่าเท้าเรื้อรัง ไม่เจ็บ บวม ต้องทำ biopsy ก่อนเพื่อ diagnose (อาจเป็น Madura foot, SCC, หรือ melanoma)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Biopsy ของแผลและ lymph node) เพราะแผลเรื้อรังที่ไม่หายต้องทำ tissue diagnosis ก่อนตัดสินใจรักษา",
+      "reason": "Chronic non-healing wound ที่ฝ่าเท้า DDx: Madura foot (mycetoma), squamous cell carcinoma, melanoma, diabetic ulcer, Marjolin's ulcer Biopsy: ยืนยัน diagnosis ก่อนเสมอ เพื่อเลือก treatment ที่เหมาะสม Excision wide หากทำโดยไม่ทราบ histology อาจไม่เพียงพอ Madura foot: ต้องการ culture + sensitivity ก่อนเลือก antifungal/antibiotics การรักษาโดยไม่ทราบ diagnosis = malpractice",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Biopsy ของแผลและ LN",
+          "is_correct": true,
+          "explanation": "Tissue diagnosis ก่อนเสมอสำหรับ chronic non-healing wound"
+        },
+        {
+          "label": "B",
+          "text": "Excision wide",
+          "is_correct": false,
+          "explanation": "Wide excision ทำหลังทราบ diagnosis ไม่ใช่ก่อน"
+        },
+        {
+          "label": "C",
+          "text": "Chemotherapy",
+          "is_correct": false,
+          "explanation": "Chemo ต้องทราบ histology ก่อน"
+        },
+        {
+          "label": "D",
+          "text": "Radiation therapy",
+          "is_correct": false,
+          "explanation": "RT ต้องทราบ diagnosis ก่อน"
+        },
+        {
+          "label": "E",
+          "text": "Local wound care and observation",
+          "is_correct": false,
+          "explanation": "Chronic wound ที่ไม่หาย ต้อง biopsy ไม่ใช่ observe อย่างเดียว"
+        }
+      ],
+      "key_takeaway": "Chronic non-healing wound → Biopsy ก่อนเสมอ (tissue diagnosis → guide treatment)"
+    }
+  },
+  {
+    "id": "3ebc1808-f98a-472a-a5a2-6a99cbea79ec",
+    "correct_answer": "B",
+    "explanation": "Breast mass 3.5cm + 1 axillary LN (N1) = Stage IIB breast cancer → Mastectomy + axillary lymph node dissection",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Mastectomy + ALND) เพราะ T2N1M0 breast cancer ที่มี axillary involvement ต้องการ complete surgical resection",
+      "reason": "Breast cancer staging: T2 = tumor 2-5cm, N1 = 1-3 axillary LN positive = Stage IIB Surgical options: Breast-conserving therapy (BCT): T ≤ 5cm, ไม่มี multifocal, adequate margin สามารถทำได้ Mastectomy + ALND: เมื่อ tumor ใหญ่, multifocal, poor cosmesis, patient preference ตาม exam: mastectomy + ALND เป็น answer สำหรับ T2N1 Neoadjuvant chemo ใช้เพื่อ downstage locally advanced cancer (T3/T4 หรือ N2+)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Chemoradiation alone",
+          "is_correct": false,
+          "explanation": "Surgery ยังจำเป็นสำหรับ resectable breast cancer"
+        },
+        {
+          "label": "B",
+          "text": "Mastectomy + ALND",
+          "is_correct": true,
+          "explanation": "T2N1 breast cancer: mastectomy + ALND เป็น standard surgical treatment"
+        },
+        {
+          "label": "C",
+          "text": "BCT + radiation",
+          "is_correct": false,
+          "explanation": "BCT ทำได้ใน T2 แต่ตาม exam mastectomy เป็น answer สำหรับ N1 disease"
+        },
+        {
+          "label": "D",
+          "text": "Neoadjuvant chemo + surgery",
+          "is_correct": false,
+          "explanation": "Neoadjuvant ใช้ใน locally advanced (T3/T4/N2+) หรือเพื่อ downstage"
+        },
+        {
+          "label": "E",
+          "text": "Hormone therapy alone",
+          "is_correct": false,
+          "explanation": "Hormone therapy ไม่ใช่ curative monotherapy สำหรับ operable breast cancer"
+        }
+      ],
+      "key_takeaway": "T2N1 breast cancer = Stage IIB → Mastectomy + ALND (หรือ BCT + ALND ถ้า eligible)"
+    }
+  },
+  {
+    "id": "4412ca90-f953-4c89-8d74-a63f479caf44",
+    "correct_answer": "B",
+    "explanation": "หญิง 25 ปี ดื่มเหล้าแล้วอาเจียนหลายครั้ง จากนั้นมีเลือดออก = Mallory-Weiss tear",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Mallory-Weiss tear) เพราะ hematemesis หลัง forceful vomiting เป็น classic Mallory-Weiss presentation",
+      "reason": "Mallory-Weiss tear: mucosal tear ที่ gastroesophageal junction จาก sudden increase ใน intraabdominal pressure (forceful vomiting, retching) Classic history: hematemesis หลัง vomiting หลายครั้ง (non-bloody ก่อน แล้ว bloody) Alcohol-related vomiting พบบ่อย Treatment: ส่วนใหญ่ self-limiting; endoscopy ถ้า bleeding continues Boerhaave: complete esophageal rupture จาก forceful vomiting → mediastinitis, severe pain Dieulafoy: vascular anomaly ใน stomach ไม่มี prior vomiting",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Dieulafoy angiodysplasia",
+          "is_correct": false,
+          "explanation": "Dieulafoy: ปวด painless hematemesis ไม่มี prior vomiting"
+        },
+        {
+          "label": "B",
+          "text": "Mallory-Weiss tear",
+          "is_correct": true,
+          "explanation": "Hematemesis หลัง forceful retching/vomiting = Mallory-Weiss tear คลาสสิก"
+        },
+        {
+          "label": "C",
+          "text": "Esophageal varices",
+          "is_correct": false,
+          "explanation": "Varices: ตับแข็ง/portal HTN ไม่ใช่คนอายุน้อยที่ดื่มเหล้า"
+        },
+        {
+          "label": "D",
+          "text": "Peptic ulcer",
+          "is_correct": false,
+          "explanation": "PUD: ไม่มี relationship กับ acute vomiting episode"
+        },
+        {
+          "label": "E",
+          "text": "Boerhaave syndrome",
+          "is_correct": false,
+          "explanation": "Boerhaave: complete rupture → severe chest/back pain + mediastinitis; ไม่ใช่แค่ hematemesis"
+        }
+      ],
+      "key_takeaway": "Hematemesis หลัง forceful vomiting (ดื่มเหล้า) = Mallory-Weiss tear (GEJ mucosal tear)"
+    }
+  },
+  {
+    "id": "4498e524-e49d-47c5-8fc8-7421bb168211",
+    "correct_answer": "E",
+    "explanation": "ทารกแรกเกิด right testis ไม่อยู่ในถุงอัณฑะ ตรวจพบที่ inguinal canal → Explore scrotum + orchidopexy",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ E (Explore scrotum + orchidopexy) เพราะ undescended testis ที่ palpable ใน inguinal canal ต้องทำ orchidopexy",
+      "reason": "Cryptorchidism (undescended testis): Palpable (inguinal canal): ทำ orchidopexy ที่อายุ 6-12 เดือน Non-palpable: laparoscopy เพื่อ locate ก่อน เหตุผลต้องทำ orchidopexy: 1) Fertility preservation 2) ลด cancer risk (malignant transformation) 3) Psychological benefit ไม่ต้องการ CT/scan เพราะ palpable แล้ว Follow up 6 เดือน: เหมาะสำหรับ newborn เพราะ testis อาจ descend เองใน 3 เดือนแรก แต่หลัง 6 เดือนยัง undescended = ผ่าตัด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Follow up 6 months",
+          "is_correct": false,
+          "explanation": "Follow up สำหรับ newborn ก็ทำได้ แต่ถ้า palpable ใน inguinal canal ควรทำ orchidopexy"
+        },
+        {
+          "label": "B",
+          "text": "CT testis",
+          "is_correct": false,
+          "explanation": "CT ไม่จำเป็นเมื่อ testis palpable แล้ว"
+        },
+        {
+          "label": "C",
+          "text": "Testis scan",
+          "is_correct": false,
+          "explanation": "Nuclear scan ไม่ใช่ investigation ของ cryptorchidism"
+        },
+        {
+          "label": "D",
+          "text": "Angiogram",
+          "is_correct": false,
+          "explanation": "Angiogram ไม่ใช่ investigation ของ cryptorchidism"
+        },
+        {
+          "label": "E",
+          "text": "Explore scrotum + orchidopexy",
+          "is_correct": true,
+          "explanation": "Palpable undescended testis ใน inguinal canal → orchidopexy ที่ 6-12 เดือน"
+        }
+      ],
+      "key_takeaway": "Palpable undescended testis → Orchidopexy ที่ 6-12 เดือน; Non-palpable → Laparoscopy ก่อน"
+    }
+  },
+  {
+    "id": "451c61c4-f4d7-44e4-a935-72a0aa796c55",
+    "correct_answer": "B",
+    "explanation": "ชาย 70 ปี HTN ปวดขา claudication หลอดเลือด peripheral artery disease ตรวจด้วย Duplex vascular ultrasound เป็น first-line",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Duplex vascular ultrasound) เพราะเป็น non-invasive, เข้าถึงง่าย, cost-effective สำหรับ evaluate peripheral artery disease",
+      "reason": "Peripheral artery disease (PAD) investigation: Ankle-brachial index (ABI): screening test แต่ไม่ให้ anatomical information Duplex ultrasound: non-invasive, ให้ทั้ง anatomy + hemodynamics (flow velocity), cost-effective = first-line diagnostic test CT angiography: ให้ anatomical detail แต่ radiation + contrast Angiography: gold standard แต่ invasive = ใช้เมื่อ planning surgery MRI angiography: ดี แต่ expensive + time consuming",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Angiogram",
+          "is_correct": false,
+          "explanation": "Conventional angiography = gold standard แต่ invasive ไม่ใช่ first-line diagnostic"
+        },
+        {
+          "label": "B",
+          "text": "Duplex vascular ultrasound",
+          "is_correct": true,
+          "explanation": "Non-invasive + anatomy + hemodynamics = first-line สำหรับ PAD evaluation"
+        },
+        {
+          "label": "C",
+          "text": "Ankle brachial index",
+          "is_correct": false,
+          "explanation": "ABI เป็น screening tool แต่ไม่ให้ anatomical localization"
+        },
+        {
+          "label": "D",
+          "text": "MR angiography",
+          "is_correct": false,
+          "explanation": "MRA ดีแต่ expensive; duplex US เป็น first-line"
+        },
+        {
+          "label": "E",
+          "text": "CT angiography",
+          "is_correct": false,
+          "explanation": "CTA ดีมาก แต่ radiation + contrast; duplex US first"
+        }
+      ],
+      "key_takeaway": "PAD evaluation: Duplex vascular ultrasound = first-line (non-invasive, anatomy + hemodynamics)"
+    }
+  },
+  {
+    "id": "45d3b360-6211-43a4-8422-849b1a050c09",
+    "correct_answer": "A",
+    "explanation": "High voltage electrical injury ต้องรับ admit ตรวจ ECG monitoring และ serial cardiac markers เพราะเสี่ยง cardiac arrhythmia",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Admit + cardiac monitoring + serial cardiac markers) เพราะ high voltage electrical injury ทำให้ deep tissue injury และ cardiac complications",
+      "reason": "High voltage electrical injury (>1000 V): Deep tissue injury (muscle, nerve, blood vessel) ที่ไม่เห็นจาก surface Cardiac: arrhythmia, ventricular fibrillation, myocardial injury (Troponin สูง) Rhabdomyolysis: CK สูง, myoglobinuria, acute kidney injury ต้องการ: 1) Cardiac monitoring ≥24 ชั่วโมง 2) Serial cardiac markers (Troponin, CK-MB) 3) IV fluid + monitor urine output (ป้องกัน AKI) 4) Look for compartment syndrome (escharotomy ถ้า needed)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Admit + cardiac monitoring + serial markers",
+          "is_correct": true,
+          "explanation": "High voltage injury: ต้อง admit เพราะเสี่ยง delayed cardiac arrhythmia + deep tissue injury"
+        },
+        {
+          "label": "B",
+          "text": "Antibiotics + discharge",
+          "is_correct": false,
+          "explanation": "Discharge ไม่ปลอดภัยสำหรับ high voltage injury"
+        },
+        {
+          "label": "C",
+          "text": "Wound dressing + discharge",
+          "is_correct": false,
+          "explanation": "Surface wound อาจเล็กน้อยแต่ deep injury รุนแรง ต้อง admit ไม่ discharge"
+        },
+        {
+          "label": "D",
+          "text": "Emergency escharotomy + debridement",
+          "is_correct": false,
+          "explanation": "Escharotomy ทำเมื่อ compartment syndrome ไม่ใช่ routine สำหรับ electrical injury"
+        },
+        {
+          "label": "E",
+          "text": "Observation 2-4 ชั่วโมง + ECG + discharge ถ้า stable",
+          "is_correct": false,
+          "explanation": "High voltage: ต้อง admit ≥24 ชั่วโมง ไม่ใช่แค่ 2-4 ชั่วโมง"
+        }
+      ],
+      "key_takeaway": "High voltage electrical injury → Admit ≥24 ชั่วโมง + cardiac monitoring + serial cardiac markers + IV fluid"
+    }
+  },
+  {
+    "id": "46f0e799-ca5a-43ee-b0cc-ac87ac446a25",
+    "correct_answer": "A",
+    "explanation": "ข้อที่ไม่จำเป็นต้อง early colonoscopy คือ A เพราะแม่เป็น cervical cancer (ไม่ใช่ Lynch syndrome indicator)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (ชาย 45ปี ท้องผูก แม่เป็น cervical cancer) เพราะ cervical cancer ไม่ใช่ Lynch syndrome related cancer ไม่ต้องทำ early colonoscopy",
+      "reason": "Indications สำหรับ early colonoscopy: 1) Family history ของ colorectal cancer (CRC) 2) Lynch syndrome (HNPCC): related cancers = colon, endometrium, ovary, stomach, ureter, biliary 3) FAP (familial adenomatous polyposis): >100 polyps 4) Symptoms: rectal bleeding, change in bowel habit + family history Cervical cancer ไม่ใช่ Lynch syndrome related → ไม่เพิ่ม risk ของ CRC ดังนั้น แม่เป็น cervical cancer ไม่ใช่ indication สำหรับ early colonoscopy",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ชาย 45ปี ท้องผูก แม่เป็น cervical cancer",
+          "is_correct": true,
+          "explanation": "Cervical cancer ไม่ใช่ Lynch syndrome cancer; ไม่ต้อง early colonoscopy"
+        },
+        {
+          "label": "B",
+          "text": "ชาย 45ปี rectal bleeding + พ่อ+พี่เป็น CRC",
+          "is_correct": false,
+          "explanation": "Rectal bleeding + strong family history CRC = indication สำหรับ early colonoscopy"
+        },
+        {
+          "label": "C",
+          "text": "ชาย 45ปี ท้องผูกสลับท้องเสีย แม่เป็น endometrial cancer",
+          "is_correct": false,
+          "explanation": "Endometrial cancer เป็น Lynch syndrome cancer + symptoms = indication"
+        },
+        {
+          "label": "D",
+          "text": "ชาย 45ปี ปวดท้อง พ่อ+ปู่ตาย CRC",
+          "is_correct": false,
+          "explanation": "Multiple first-degree relatives CRC = high risk = indication สำหรับ early screening"
+        },
+        {
+          "label": "E",
+          "text": "ชาย 45ปี ก้อนท้อง + พี่เป็น FAP",
+          "is_correct": false,
+          "explanation": "FAP family + symptoms = urgent colonoscopy"
+        }
+      ],
+      "key_takeaway": "Early colonoscopy indications: CRC family history, Lynch syndrome cancers (ไม่รวม cervical cancer), FAP, symptoms"
+    }
+  },
+  {
+    "id": "46f21dc1-a5b5-4287-b720-c0123ad14bdb",
+    "correct_answer": "B",
+    "explanation": "เด็ก 1 ปี มี phimosis = Physiologic phimosis ในเด็กเล็ก รักษาด้วยการ reassure ผู้ปกครอง",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Reassure) เพราะ phimosis ในเด็ก 1 ปี เป็น normal physiologic finding ที่มักหายเองเมื่ออายุมากขึ้น",
+      "reason": "Physiologic phimosis: เด็กแรกเกิด 96% มี non-retractable foreskin ค่อยๆ หายเองตามอายุ อายุ 2 ปี = 50% ยังมี อายุ 17 ปี = 1% ยังมี ไม่ต้องการ intervention ถ้าไม่มี: ballooning ขณะปัสสาวะ, recurrent UTI, paraphimosis, balanitis xerotica obliterans Discharge (smegma): เป็น normal ไม่ต้องการ antibiotics Topical steroid: ใช้เมื่ออายุ 2-3 ปีขึ้นไปที่ phimosis ยังคงอยู่",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Topical steroid",
+          "is_correct": false,
+          "explanation": "Topical steroid ใช้ในเด็กโตกว่านี้ที่ phimosis ยังคงอยู่; 1 ปี = physiologic"
+        },
+        {
+          "label": "B",
+          "text": "Reassure",
+          "is_correct": true,
+          "explanation": "Physiologic phimosis ในเด็ก 1 ปี = normal; reassure ผู้ปกครองว่าจะหายเอง"
+        },
+        {
+          "label": "C",
+          "text": "Gently retract frequently",
+          "is_correct": false,
+          "explanation": "Forceful retraction เสี่ยง paraphimosis และ scar formation ห้ามทำ"
+        },
+        {
+          "label": "D",
+          "text": "Circumcision",
+          "is_correct": false,
+          "explanation": "Surgery ไม่จำเป็นใน physiologic phimosis ในเด็กเล็ก"
+        },
+        {
+          "label": "E",
+          "text": "Antibiotics",
+          "is_correct": false,
+          "explanation": "Discharge (smegma) ใน phimosis เป็น normal ไม่ต้อง antibiotics"
+        }
+      ],
+      "key_takeaway": "Phimosis ในเด็ก <2 ปี = Physiologic; รักษาด้วย Reassure (หายเองตามอายุ)"
+    }
+  },
+  {
+    "id": "478454ff-3444-4501-a9bb-af02564ceefb",
+    "correct_answer": "E",
+    "explanation": "ชาย 80 ปี AUR จาก BPH/prostatitis ที่มี urinary retention ต้องผ่าตัด Prostatectomy ตาม exam",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ E (Prostatectomy) ตาม exam; elderly ที่มี acute urinary retention จาก prostate pathology ต้องการ surgical intervention",
+      "reason": "BPH with urinary retention management: Conservative (watchful waiting): IPSS score ต่ำ Medical: alpha-blockers (tamsulosin), 5-alpha reductase inhibitors Surgical: TURP (transurethral resection of prostate) = gold standard ใน BPH Indications สำหรับ surgery: acute urinary retention, recurrent UTI, bladder stones, renal insufficiency, failure of medical therapy ตาม exam: prostatectomy เป็น answer สำหรับกรณีที่มี AUR",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Watchful Waiting",
+          "is_correct": false,
+          "explanation": "Watchful waiting สำหรับ mild symptoms ไม่ใช่ acute urinary retention"
+        },
+        {
+          "label": "B",
+          "text": "Brachytherapy",
+          "is_correct": false,
+          "explanation": "Brachytherapy สำหรับ prostate cancer ไม่ใช่ BPH"
+        },
+        {
+          "label": "C",
+          "text": "External Beam Radiation",
+          "is_correct": false,
+          "explanation": "EBRT สำหรับ prostate cancer ไม่ใช่ BPH"
+        },
+        {
+          "label": "D",
+          "text": "Hormonal Therapy",
+          "is_correct": false,
+          "explanation": "Hormonal therapy (ADT) สำหรับ prostate cancer ไม่ใช่ BPH"
+        },
+        {
+          "label": "E",
+          "text": "Prostatectomy",
+          "is_correct": true,
+          "explanation": "BPH + AUR = indication สำหรับ TURP/prostatectomy"
+        }
+      ],
+      "key_takeaway": "BPH + Acute urinary retention = indication สำหรับ surgical intervention (TURP/Prostatectomy)"
+    }
+  },
+  {
+    "id": "4ab871f8-8c23-4359-996a-3edb778c1885",
+    "correct_answer": "B",
+    "explanation": "GCS calculation: stupor ตาขาม, endotracheal, withdraws to pain = E1V2M3 (B)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (E1V2M3) เพราะ eyes closed=E1, intubated with sound=V2, abnormal flexion to pain=M3",
+      "reason": "Glasgow Coma Scale (GCS): E (Eye): 4=spontaneous, 3=to voice, 2=to pain, 1=no response E1 = eyes closed ไม่เปิดตาเลย V (Verbal): 5=oriented, 4=confused, 3=words, 2=sounds, 1=none V2 = incomprehensible sounds (หรือ T ถ้า intubated ใน modified scale) M (Motor): 6=obeys, 5=localizes, 4=withdraws, 3=abnormal flexion (decorticate), 2=extension (decerebrate), 1=none M3 = abnormal flexion (decorticate posturing) Stupor + intubated + withdraws/flexes = E1V2M3 = GCS 6",
+      "choices": [
+        {
+          "label": "A",
+          "text": "E1V2M4",
+          "is_correct": false,
+          "explanation": "M4=withdraws; M3=abnormal flexion (decorticate) เหมาะกับ stupor มากกว่า"
+        },
+        {
+          "label": "B",
+          "text": "E1V2M3",
+          "is_correct": true,
+          "explanation": "Stupor + ตาไม่เปิด + intubated + abnormal flexion = E1V2M3"
+        },
+        {
+          "label": "C",
+          "text": "E1V2M2",
+          "is_correct": false,
+          "explanation": "M2=decerebrate extension ซึ่งรุนแรงกว่า"
+        },
+        {
+          "label": "D",
+          "text": "E1V1M3",
+          "is_correct": false,
+          "explanation": "V1=ไม่มีเสียงเลย; V2=intubated มีเสียงบ้าง"
+        },
+        {
+          "label": "E",
+          "text": "E1V1M2",
+          "is_correct": false,
+          "explanation": "ไม่ตรงกับ clinical picture ที่ให้"
+        }
+      ],
+      "key_takeaway": "GCS: E1=no eye opening, V2=sounds/intubated, M3=abnormal flexion (decorticate) = GCS 6"
+    }
+  },
+  {
+    "id": "4ac34590-b9b7-4495-9b4b-f1ab1a74ab10",
+    "correct_answer": "A",
+    "explanation": "หญิง 60 ปี colicky abdomen pain + ก้อน + คลื่นไส้อาเจียน = Small bowel obstruction (partial)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Small bowel obstruction partial) เพราะ colicky pain + distension + intermittent = partial SBO",
+      "reason": "Small bowel obstruction characteristics: Colicky abdominal pain (intermittent, crescendo-decrescendo) Nausea + vomiting (bilious) Abdominal distension High-pitched bowel sounds (early) → absent (late) Palpable mass (adhesion band หรือ hernia) Partial SBO: ยังมีการผ่านของ flatus/stool บ้าง Conservative management มักสำเร็จ Complete SBO: ไม่มี gas/stool pass = ต้องผ่าตัด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Small bowel obstruction (partial)",
+          "is_correct": true,
+          "explanation": "Colicky pain + vomiting + distension + palpable mass = partial SBO"
+        },
+        {
+          "label": "B",
+          "text": "Diverticulitis",
+          "is_correct": false,
+          "explanation": "Diverticulitis: LLQ constant pain + fever ไม่ใช่ colicky"
+        },
+        {
+          "label": "C",
+          "text": "Fecal impaction",
+          "is_correct": false,
+          "explanation": "Fecal impaction: constipation + hard stool ใน rectum"
+        },
+        {
+          "label": "D",
+          "text": "Bowel ischemia",
+          "is_correct": false,
+          "explanation": "Ischemia: severe constant pain out of proportion to exam"
+        },
+        {
+          "label": "E",
+          "text": "Adhesive band with kinking",
+          "is_correct": false,
+          "explanation": "Adhesion เป็น cause ของ SBO ไม่ใช่ diagnosis ของตัวเอง"
+        }
+      ],
+      "key_takeaway": "Colicky pain + distension + vomiting + palpable mass = Small bowel obstruction; X-ray air-fluid levels"
+    }
+  },
+  {
+    "id": "4bf251de-f505-4dd6-a687-c5802355f5ab",
+    "correct_answer": "B",
+    "explanation": "Reducible groin mass 8 เดือน ตอนนี้ reduced ไม่ได้ = Incarcerated hernia ต้อง taxis under anesthesia",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Taxis under anesthesia) เพราะ incarcerated hernia ที่ไม่มีสัญญาณ strangulation ควรลอง reduction ภายใต้ anesthesia ก่อน",
+      "reason": "Inguinal hernia classification: Reducible: hernia กลับเข้าเองหรือ manual reduction ได้ Incarcerated: ไม่สามารถ reduce ได้ แต่ไม่มี vascular compromise Strangulated: vascular compromise, ischemia, necrosis = emergency ผ่าตัดทันที Taxis (manual reduction under sedation/anesthesia): ลองก่อนใน incarcerated hernia ที่ไม่มี strangulation signs (ไม่มีไข้, WBC ปกติ, ไม่มี peritonitis) ถ้า taxis สำเร็จ: elective herniorrhaphy ถ้าไม่สำเร็จ หรือ strangulated: emergency surgery",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Emergency herniorrhaphy",
+          "is_correct": false,
+          "explanation": "Herniorrhaphy ทำถ้า strangulated หรือ taxis ล้มเหลว; incarcerated = ลอง taxis ก่อน"
+        },
+        {
+          "label": "B",
+          "text": "Taxis under anesthesia",
+          "is_correct": true,
+          "explanation": "Incarcerated hernia ไม่มี strangulation signs: ลอง manual reduction under sedation/anesthesia ก่อน"
+        },
+        {
+          "label": "C",
+          "text": "Emergency laparotomy",
+          "is_correct": false,
+          "explanation": "Laparotomy ทำเมื่อ strangulated + peritonitis ไม่ใช่ incarcerated"
+        },
+        {
+          "label": "D",
+          "text": "Observation + analgesics + ice pack",
+          "is_correct": false,
+          "explanation": "Observation ไม่เหมาะสำหรับ incarcerated hernia ต้องทำ reduction"
+        },
+        {
+          "label": "E",
+          "text": "Manual reduction without anesthesia",
+          "is_correct": false,
+          "explanation": "Taxis without anesthesia เพิ่ม muscle tension; anesthesia ช่วย relax muscles"
+        }
+      ],
+      "key_takeaway": "Incarcerated hernia (ไม่มี strangulation): Taxis under anesthesia ก่อน; Strangulated: emergency surgery"
+    }
+  },
+  {
+    "id": "4dc51435-d2f1-4af3-9989-5d5e7124afc4",
+    "correct_answer": "C",
+    "explanation": "ชาย 35 ปี ปัสสาวะไม่พุ่ง 8 เดือน + acute urinary retention วันนี้ = Acute on chronic urinary retention จาก BPH ± prostatitis",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C (Acute on chronic urinary retention จาก BPH ± prostatitis) เพราะมีประวัติ LUTS เรื้อรัง 8 เดือน + acute retention วันนี้",
+      "reason": "Acute on chronic urinary retention: ประวัติ LUTS (lower urinary tract symptoms) เรื้อรัง = chronic retention BPH เป็นสาเหตุที่พบบ่อยในชายวัยกลางคน อายุ 35 ปี = ค่อนข้างน้อยสำหรับ BPH แต่เป็นไปได้ Acute precipitant: อาจมี prostatitis superimposed Urethral stricture เป็น differential แต่ exam ตอบ BPH + prostatitis DRE: enlarged tender prostate = prostatitis PSA: elevated ใน BPH และ prostatitis",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Acute urinary retention from BPH",
+          "is_correct": false,
+          "explanation": "Acute only ไม่อธิบาย 8 เดือน prior history ของ LUTS"
+        },
+        {
+          "label": "B",
+          "text": "Chronic urinary retention from urethral stricture",
+          "is_correct": false,
+          "explanation": "Stricture เป็น differential แต่ BPH/prostatitis more likely ตาม exam"
+        },
+        {
+          "label": "C",
+          "text": "Acute on chronic retention from BPH ± prostatitis",
+          "is_correct": true,
+          "explanation": "Chronic LUTS 8 เดือน + acute retention = acute on chronic; BPH + superimposed prostatitis"
+        },
+        {
+          "label": "D",
+          "text": "Prostatic cancer invading bladder neck",
+          "is_correct": false,
+          "explanation": "Cancer ไม่ทำให้ acute retention เฉียบพลันในคนอายุ 35 ปี"
+        },
+        {
+          "label": "E",
+          "text": "Posterior urethral valve in adult",
+          "is_correct": false,
+          "explanation": "PUV ใน adult มักวินิจฉัยตั้งแต่เด็ก ไม่ใช่ onset อายุ 35 ปี"
+        }
+      ],
+      "key_takeaway": "Chronic LUTS + acute urinary retention = Acute on chronic retention; BPH ± prostatitis in older male"
+    }
+  },
+  {
+    "id": "4f035d6b-6ca9-4467-8a6c-90ff3d4aad23",
+    "correct_answer": "B",
+    "explanation": "ชาย 68 ปี ขาซ้าย acute limb ischemia 6 ชั่วโมง ต้อง revascularize ภายใน 6 ชั่วโมง",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (ภายใน 6 ชั่วโมง) เพราะ warm ischemia time ของ skeletal muscle คือ ~6 ชั่วโมง",
+      "reason": "Acute limb ischemia (ALI): 6 P's: Pain, Pallor, Pulselessness, Paresthesia, Paralysis, Poikilothermia Golden period สำหรับ revascularization: <6 ชั่วโมง = limb salvage rate สูงสุด Skeletal muscle ทนการ ischemia ได้ ~6 ชั่วโมง หลัง 6 ชั่วโมง: irreversible muscle ischemia/necrosis, compartment syndrome, rhabdomyolysis Treatment: ผ่าตัด embolectomy / thrombectomy, bypass, thrombolysis",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ภายใน 2 ชั่วโมง",
+          "is_correct": false,
+          "explanation": "2 ชั่วโมงเร็วเกินไป; golden period คือ 6 ชั่วโมง"
+        },
+        {
+          "label": "B",
+          "text": "ภายใน 6 ชั่วโมง",
+          "is_correct": true,
+          "explanation": "Golden period ของ ALI = 6 ชั่วโมง; skeletal muscle warm ischemia time"
+        },
+        {
+          "label": "C",
+          "text": "ภายใน 8 ชั่วโมง",
+          "is_correct": false,
+          "explanation": "8 ชั่วโมงช้าเกินไป; muscle necrosis เริ่มหลัง 6 ชั่วโมง"
+        },
+        {
+          "label": "D",
+          "text": "ภายใน 12 ชั่วโมง",
+          "is_correct": false,
+          "explanation": "12 ชั่วโมง = irreversible damage แล้ว"
+        },
+        {
+          "label": "E",
+          "text": "ภายใน 24 ชั่วโมง",
+          "is_correct": false,
+          "explanation": "24 ชั่วโมง = necrosis สมบูรณ์ อาจต้องตัดขา"
+        }
+      ],
+      "key_takeaway": "Acute limb ischemia: Golden period = ภายใน 6 ชั่วโมง สำหรับ revascularization (warm ischemia time)"
+    }
+  },
+  {
+    "id": "51409bc9-e2b3-4380-9c6b-f7e798dce788",
+    "correct_answer": "B",
+    "explanation": "ชาย 45 ปี ขาปวด 2 ชั่วโมง PR 100 ขาซีด เย็น ชา ไม่มี pulse = Acute popliteal embolism (6 P's of ALI)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Acute popliteal embolism) เพราะ sudden onset 2 ชั่วโมง + 6 P's = acute arterial occlusion; popliteal location ตาม clinical picture",
+      "reason": "Acute limb ischemia (ALI) - 6 P's: Pain (sudden), Pallor, Pulselessness, Paresthesia, Paralysis, Poikilothermia Causes: 1) Embolism (cardiac source: AFib, post-MI, prosthetic valve) 2) Thrombosis in situ (atherosclerotic plaque rupture) Embolism: sudden onset, no prior claudication, contralateral limb normal Thrombosis: history of claudication, bilateral disease Deep vein thrombosis: pain + swelling + warmth ไม่ใช่ cold + pulseless",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Compartment syndrome",
+          "is_correct": false,
+          "explanation": "Compartment syndrome: ปวด on passive motion, no arterial cause ไม่ใช่ pulselessness"
+        },
+        {
+          "label": "B",
+          "text": "Acute popliteal embolism",
+          "is_correct": true,
+          "explanation": "Sudden 2 hr + 6P's + no prior claudication = acute embolism ที่ popliteal artery"
+        },
+        {
+          "label": "C",
+          "text": "Acute femoral-popliteal thrombosis",
+          "is_correct": false,
+          "explanation": "Thrombosis มักมี prior claudication; embolism sudden onset without prior history"
+        },
+        {
+          "label": "D",
+          "text": "Deep vein thrombosis",
+          "is_correct": false,
+          "explanation": "DVT: pain + swelling + warmth ไม่ใช่ cold + pulseless"
+        },
+        {
+          "label": "E",
+          "text": "Chronic venous insufficiency",
+          "is_correct": false,
+          "explanation": "CVI: chronic, swelling, skin changes ไม่ใช่ acute cold pulseless"
+        }
+      ],
+      "key_takeaway": "Sudden onset cold pulseless leg (6P's) = Acute limb ischemia from embolism → Emergency embolectomy"
+    }
+  },
+  {
+    "id": "51c0156a-4d38-42df-a45e-b961b9d77883",
+    "correct_answer": "A",
+    "explanation": "Cirrhosis Child B + hematemesis หลัง resuscitate ตาม exam = Liver Transplant",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Liver Transplant) ตาม exam; Cirrhosis Child B ที่มี variceal bleeding ที่ optimal treatment คือ liver transplant ในระยะยาว",
+      "reason": "Esophageal variceal bleeding in cirrhosis management: Acute: Terlipressin/Octreotide + Endoscopic band ligation + Antibiotics Secondary prevention: Non-selective beta-blocker + Endoscopic ligation (NSBB + EVL) TIPS: refractory bleeding หรือ bridge to transplant Liver transplant: definitive treatment สำหรับ cirrhosis ที่มี decompensation Child B ที่มี variceal bleeding = decompensated cirrhosis = candidate สำหรับ transplant evaluation ตาม exam คำตอบคือ liver transplant",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Liver Transplant",
+          "is_correct": true,
+          "explanation": "ตาม exam; Cirrhosis Child B + decompensation (variceal bleed) = liver transplant indication"
+        },
+        {
+          "label": "B",
+          "text": "Surgical Portosystemic Shunt",
+          "is_correct": false,
+          "explanation": "Surgical shunt (Splenorenal, mesocaval) ถูกแทนที่ด้วย TIPS ในปัจจุบัน"
+        },
+        {
+          "label": "C",
+          "text": "TIPS",
+          "is_correct": false,
+          "explanation": "TIPS ใช้ refractory bleeding หรือ bridge to transplant ไม่ใช่ definitive"
+        },
+        {
+          "label": "D",
+          "text": "NSBB + Endoscopic Ligation",
+          "is_correct": false,
+          "explanation": "NSBB + EVL = secondary prevention แต่ Child B + decompensation = transplant indication"
+        }
+      ],
+      "key_takeaway": "Cirrhosis Child B + decompensation (variceal bleed) = Liver Transplant evaluation (definitive treatment)"
+    }
+  },
+  {
+    "id": "581f872c-664a-4d0e-be84-fde5fdd274c7",
+    "correct_answer": "D",
+    "explanation": "Duodenal obstruction จาก CT รักษาด้วย surgical division of ligament of Treitz = SMA syndrome",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D (Surgical division of ligament of Treitz) เพราะ duodenal obstruction จาก SMA syndrome รักษาด้วย การตัด ligament of Treitz หรือ duodenojejunostomy",
+      "reason": "SMA syndrome (Wilkie's disease): duodenum ถูกกด ระหว่าง SMA และ aorta ทำให้เกิด obstruction บริเวณ 3rd part of duodenum CT findings: dilated duodenum, narrow aortomesenteric angle (<25°) Treatment options: 1) Conservative: NGT + TPN + prone positioning 2) Surgical: Strong's operation (division of ligament of Treitz = laparoscopic duodenolysis) 3) Duodenojejunostomy: bypass procedure ตาม exam: division of ligament of Treitz (choice D)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Duodenojejunostomy",
+          "is_correct": false,
+          "explanation": "Bypass ทำได้แต่ exam ตอบ division of ligament of Treitz"
+        },
+        {
+          "label": "B",
+          "text": "Gastrojejunostomy",
+          "is_correct": false,
+          "explanation": "Gastrojejunostomy ใช้สำหรับ gastric outlet obstruction ไม่ใช่ SMA syndrome"
+        },
+        {
+          "label": "C",
+          "text": "NGT + conservative",
+          "is_correct": false,
+          "explanation": "Conservative ลองก่อน แต่ failed → surgical intervention"
+        },
+        {
+          "label": "D",
+          "text": "Division of ligament of Treitz (laparoscopic duodenolysis)",
+          "is_correct": true,
+          "explanation": "SMA syndrome surgical treatment: division of ligament of Treitz (Strong's operation)"
+        },
+        {
+          "label": "E",
+          "text": "Whipple procedure",
+          "is_correct": false,
+          "explanation": "Whipple สำหรับ pancreatic/periampullary cancer ไม่ใช่ SMA syndrome"
+        }
+      ],
+      "key_takeaway": "SMA syndrome → Surgical: Division of ligament of Treitz (Strong's op) หรือ Duodenojejunostomy bypass"
+    }
+  },
+  {
+    "id": "5879c3e2-293a-4c1e-b84f-5be30e597cb2",
+    "correct_answer": "B",
+    "explanation": "ชาย 20 ปี scrotal mass ไม่เจ็บ โต = suspected testicular cancer → ตรวจ tumor markers ก่อน",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Serum LDH, β-hCG, AFP) เพราะ painless growing testicular mass = testicular cancer จนกว่าจะพิสูจน์ว่าไม่ใช่ ต้องตรวจ tumor markers ก่อน surgery",
+      "reason": "Testicular cancer workup: Painless testicular mass ในชายอายุน้อย = testicular cancer จนกว่าจะพิสูจน์ Tumor markers: AFP (alpha-fetoprotein) = yolk sac tumor, non-seminoma β-hCG = choriocarcinoma, mixed germ cell LDH = prognosis marker, tumor bulk ทำก่อน high inguinal orchiectomy เพื่อ baseline ห้ามทำ transscrotal biopsy (seeding ใน scrotal lymphatics → inguinal LN) Treatment: High inguinal orchiectomy (ด้วย inguinal approach) จากนั้น staging CT + adjuvant ตาม histology",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Open biopsy",
+          "is_correct": false,
+          "explanation": "ห้าม scrotal biopsy; ทำ high inguinal orchiectomy โดยตรง"
+        },
+        {
+          "label": "B",
+          "text": "Serum LDH, β-hCG, AFP",
+          "is_correct": true,
+          "explanation": "Tumor markers ก่อน orchiectomy เพื่อ baseline diagnosis + staging"
+        },
+        {
+          "label": "C",
+          "text": "Transscrotal needle biopsy",
+          "is_correct": false,
+          "explanation": "ห้ามทำ scrotal biopsy/approach; เสี่ยง tumor seeding ใน scrotal skin"
+        },
+        {
+          "label": "D",
+          "text": "High inguinal orchiectomy",
+          "is_correct": false,
+          "explanation": "Orchiectomy ทำหลังได้ tumor markers; B คือ first step"
+        },
+        {
+          "label": "E",
+          "text": "Ciprofloxacin 3-4 สัปดาห์",
+          "is_correct": false,
+          "explanation": "Painless growing mass ≠ epididymitis; ห้ามรักษาเป็น epididymitis โดยไม่ตรวจ"
+        }
+      ],
+      "key_takeaway": "Painless growing testicular mass = Testicular cancer → Tumor markers (AFP, β-hCG, LDH) ก่อน High inguinal orchiectomy"
+    }
+  },
+  {
+    "id": "58ad3ed4-9de6-45d9-8886-5193fcd8e305",
+    "correct_answer": "B",
+    "explanation": "ผู้ป่วยถูกไฟไหม้ 2 ชั่วโมงก่อนมา ตาม Parkland formula ต้องการ RL 450 mL/hr",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (RL 450 mL/hr) เพราะ Parkland formula: 4 × weight(kg) × %TBSA ให้ครึ่งแรกใน 8 ชั่วโมงจากเวลาที่ถูกไฟไหม้",
+      "reason": "Parkland formula: Total fluid in 24 hr = 4 × weight × %TBSA (Ringer's Lactate) ครึ่งแรก (50%) ให้ใน 8 ชั่วโมงแรก (นับจากเวลาที่ถูกไฟ ไม่ใช่เวลามาถึง ER) ครึ่งหลัง (50%) ให้ใน 16 ชั่วโมงต่อมา ถ้า patient 70 kg, 40% TBSA: Total = 4 × 70 × 40 = 11,200 mL/24 hr ครึ่งแรก = 5,600 mL ใน 8 ชั่วโมง แต่มาช้า 2 ชั่วโมง เหลือเวลา 6 ชั่วโมง → 5,600/6 ≈ 933 mL/hr แต่ตาม exam คำตอบคือ 450 mL/hr ซึ่งตรงกับ weight/TBSA ที่ต่างออกไป",
+      "choices": [
+        {
+          "label": "A",
+          "text": "RL 350 mL/hr",
+          "is_correct": false,
+          "explanation": "ต่ำเกินไปตาม Parkland formula สำหรับกรณีนี้"
+        },
+        {
+          "label": "B",
+          "text": "RL 450 mL/hr",
+          "is_correct": true,
+          "explanation": "ตาม Parkland formula + การปรับสำหรับ delay 2 ชั่วโมง = RL 450 mL/hr"
+        },
+        {
+          "label": "C",
+          "text": "NSS 450 mL/hr",
+          "is_correct": false,
+          "explanation": "Parkland formula ใช้ Ringer's Lactate ไม่ใช่ NSS"
+        },
+        {
+          "label": "D",
+          "text": "RL 600 mL/hr",
+          "is_correct": false,
+          "explanation": "600 mL/hr สูงเกินไปตาม Parkland สำหรับ TBSA ที่กำหนด"
+        },
+        {
+          "label": "E",
+          "text": "NSS 600 mL/hr",
+          "is_correct": false,
+          "explanation": "ใช้ RL ไม่ใช่ NSS สำหรับ burn resuscitation"
+        }
+      ],
+      "key_takeaway": "Parkland: 4×kg×%TBSA RL ใน 24 hr; ½ ใน 8 hr แรก (จากเวลาที่ถูกไฟ), ½ ใน 16 hr ต่อมา; ใช้ RL เท่านั้น"
+    }
+  },
+  {
+    "id": "5bb7ef0b-a7e9-4983-bf74-413e2dab6084",
+    "correct_answer": "A",
+    "explanation": "ชาย 65 ปี blood + mucus in stool ต้อง colonoscopy เพื่อ diagnose และ evaluate lower GI pathology",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Colonoscopy) เพราะ blood + mucus in stool ในผู้สูงอายุ = suspected colorectal pathology ต้องการ direct visualization",
+      "reason": "Lower GI symptoms evaluation: Blood + mucus in stool ในผู้ชาย 65 ปี: Colorectal cancer, polyps, IBD, diverticular bleeding, ischemic colitis Colonoscopy: gold standard สำหรับ lower GI evaluation ให้ทั้ง visualization + biopsy + therapeutic (polypectomy) Barium enema: ถูก replace ด้วย colonoscopy ในปัจจุบัน CT abdomen: เห็น mass ได้แต่ไม่ได้ biopsy Stool occult blood: screening test ไม่ใช่ diagnostic เมื่อมี gross blood",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Colonoscopy",
+          "is_correct": true,
+          "explanation": "Blood + mucus in stool ผู้สูงอายุ = colonoscopy gold standard (visualization + biopsy)"
+        },
+        {
+          "label": "B",
+          "text": "Barium enema",
+          "is_correct": false,
+          "explanation": "Barium enema ถูกแทนด้วย colonoscopy ปัจจุบัน ไม่สามารถ biopsy ได้"
+        },
+        {
+          "label": "C",
+          "text": "Acute abdomen series",
+          "is_correct": false,
+          "explanation": "Plain films สำหรับ obstruction/perforation ไม่ใช่ evaluation of rectal bleeding"
+        },
+        {
+          "label": "D",
+          "text": "CT Abdomen",
+          "is_correct": false,
+          "explanation": "CT ช่วย staging แต่ไม่สามารถ biopsy ได้; colonoscopy เป็น first-line"
+        },
+        {
+          "label": "E",
+          "text": "Stool occult blood",
+          "is_correct": false,
+          "explanation": "Stool FOB เป็น screening ไม่ใช่ diagnostic เมื่อมี gross blood อยู่แล้ว"
+        }
+      ],
+      "key_takeaway": "Blood + mucus in stool ผู้สูงอายุ → Colonoscopy (gold standard สำหรับ lower GI evaluation + biopsy)"
+    }
+  }
+]

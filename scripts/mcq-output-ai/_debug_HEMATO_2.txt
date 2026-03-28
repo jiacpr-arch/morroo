@@ -1,0 +1,280 @@
+[
+  {
+    "scenario": "ชายอายุ 75 ปี ไม่มีโรคประจำตัว ไม่ได้รับประทานยาใดๆ รับประทานอาหารได้ ไม่มีน้ำหนักลด ท้องผูกเป็นประจำ ตรวจร่างกายพบ V/S BP 140/80 PR 84 RR 18 มีลักษณ์ซีดอ่อน สูญเสียฟันทั้งหมด มี glossitis และ koilonychiae จงวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "hypothyroid"},
+      {"label": "B", "text": "normal aging change"},
+      {"label": "C", "text": "iron deficiency anemia"},
+      {"label": "D", "text": "anemia of chronic disease"},
+      {"label": "E", "text": "autoimmune hemolytic anemia"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "HEMATO (ศรว)",
+    "status": "complete",
+    "ai_notes": "สูญเสียฟันทั้งหมด glossitis koilonychiae และซีดอ่อนเป็นลักษณะเฉพาะของ iron deficiency anemia ท้องผูกเป็นประจำ (สารดี่) อาจเกี่ยวข้องกับปัญหาด้านการดูดซึม"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงซีดอ่อนเพลีย CBC ผลเป็น iron deficiency ได้รับการรักษาด้วยยาเม็ดสีน้ำตาล หลังได้รับยาจะติดตามการรักษาด้วยวิธีใดได้เร็วที่สุด",
+    "choices": [
+      {"label": "A", "text": "Hb"},
+      {"label": "B", "text": "MCV"},
+      {"label": "C", "text": "Reticulocyte count"},
+      {"label": "D", "text": "Serum ferritin"},
+      {"label": "E", "text": "Serum haptoglobin"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "HEMATO (ศรว)",
+    "status": "complete",
+    "ai_notes": "Reticulocyte count เพิ่มขึ้นในสัปดาห์แรกของการรักษา iron deficiency anemia สะท้อนการสร้าง RBC ใหม่ได้เร็วที่สุด ขณะที่ Hb เพิ่มขึ้นช้ากว่า ferritin และ MCV ต่างเป็นตัวชี้วัดในระยะยาว"
+  },
+  {
+    "scenario": "ผู้ป่วยชายไทยมีไข้และเจ็บคอมา 1 สัปดาห์ ซื้อยามากินเอง อาการไข้ดีขึ้นแต่มีอาการอ่อนเพลียมากขึ้นมา 3 วัน ตรวจร่างกาย V/S ปกติ pale conjunctiva icteric sclera spleen 2 finger breadth below costal margin Hct 25% MCV 65 plt 400,000 WBC 9,600 N 60% L 40% จงวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "Hb H disease"},
+      {"label": "B", "text": "G6PD deficiency"},
+      {"label": "C", "text": "Hereditary spherocytosis"},
+      {"label": "D", "text": "Autoimmune hemolytic anemia"},
+      {"label": "E", "text": "Paroxysmal nocturnal hemoglobinuria"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "HEMATO (ศรว)",
+    "status": "complete",
+    "ai_notes": "G6PD deficiency: ไข้เป็นตัวเรียกเหตุการณ์ (trigger) ไซของยา ซื้อมาเอง อาจมีปฏิกิริยาการหลั่งหลาย Hemolytic episode ทำให้ซีด icteric sclera splenomegaly MCV ต่ำบ่งชี้เป็น Asian variant ของ G6PD"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 30 ปี มาด้วยอ่อนเพลีย ซีด 3 สัปดาห์ ตรวจร่างกายพบ moderate pale mild icteric sclera อื่นๆ ปกติ CBC: Hct 25% WBC 5,000 cell/mm³ N 68% L 32% plt 200,000 cell/mm³ RBC morphology: normochromic anisocytosis 2+ microspherocyte 2+ polychromasia 1+ การตรวจใดช่วยยืนยันการวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "Hb typing"},
+      {"label": "B", "text": "Coomb's test"},
+      {"label": "C", "text": "G6PD level"},
+      {"label": "D", "text": "Osmotic fragility test"},
+      {"label": "E", "text": "Hemoglobin electrophoresis"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "HEMATO (ศรว)",
+    "status": "complete",
+    "ai_notes": "Microspherocyte polychromasia และ icteric sclera บ่งชี้ hereditary spherocytosis Osmotic fragility test จะแสดง RBC ที่บอบบางกว่า (fragile) ในสภาวะ hypotonic Coomb's test เป็นลบ ซึ่งแยกจาก AIHA"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 70 ปี มีอาการอ่อนเพลีย เหนื่อย มา 4-5 เดือน ตรวจร่างกายพบ glossitis moderate pale CBC: Hct 22% WBC 3,400 N 65% L 30% Plt 80,000 ให้รูป blood smear ที่มี hypersegmented neutrophil การวินิจฉัยที่หมาะสมคือ",
+    "choices": [
+      {"label": "A", "text": "Aplastic anemia"},
+      {"label": "B", "text": "Megaloblastic anemia"},
+      {"label": "C", "text": "Iron deficiency anemia"},
+      {"label": "D", "text": "Myelodysplasia"},
+      {"label": "E", "text": "Autoimmune hemolytic anemia"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "HEMATO (ศรว)",
+    "status": "complete",
+    "ai_notes": "Glossitis + pancytopenia + hypersegmented neutrophil = megaloblastic anemia (B12 or folate deficiency) อายุ 70 ปี มีความเสี่ยงสูงต่อ pernicious anemia หรือ nutritional deficiency"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 58 ปี มีไข้สูง 3 วัน ต่อมามีหอบและซึมลง 1 วัน มีจุดจ้าเลือดตามตัว Lab: Hb 9.8 g/dL Hct 30% WBC 28,000-38,000 N 83% band 10% L 7% plt 15,000 PT 16 PTT 60 fibrinogen 105 mg/dL นึกถึงภาวะใดมากที่สุด",
+    "choices": [
+      {"label": "A", "text": "ITP"},
+      {"label": "B", "text": "TTP"},
+      {"label": "C", "text": "acquired factor VIII deficiency"},
+      {"label": "D", "text": "DIC"},
+      {"label": "E", "text": "von Willebrand disease"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "HEMATO (ศรว)",
+    "status": "complete",
+    "ai_notes": "DIC: ไข้สูง 3 วัน (sepsis) + หอบ + ซึมลง + จุดจ้าเลือด + thrombocytopenia ต่ำมาก + coagulopathy (PT ยาว PTT ยาว fibrinogen ต่ำ) + anemia คือเหตุการณ์สำหรับ DIC จาก sepsis"
+  },
+  {
+    "scenario": "ชายอายุ 38 ปี ไข้สูง 3 วัน ต่อมาซีมลง ตรวจร่างกายพบ mild pale ไม่มี jaundice ไม่มี hepatosplenomegaly petechiae and purpura ที่แขนขา CBC พบ Hct 28% WBC 28,000 N 95% L 5% Band 10% Plt 40,000 ตรวจ PBS พบ schistocytosis ตรวจ coagulogram พบ PT prolonged aPTT prolonged fibrinogen ต่ำ จงวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "Vitamin K deficiency"},
+      {"label": "B", "text": "Primary fibrinolysis"},
+      {"label": "C", "text": "DIC"},
+      {"label": "D", "text": "TTP"},
+      {"label": "E", "text": "Thalassemia with sepsis"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "HEMATO (ศรว)",
+    "status": "complete",
+    "ai_notes": "DIC: schistocytosis (ชิ้นเล็กของ RBC จาก fibrin strands) + coagulopathy (PT aPTT ยาว fibrinogen ต่ำ) + thrombocytopenia + ไข้สูง (sepsis) ทั้งหมด รองรับ DIC มากกว่า TTP ซึ่งไม่มี coagulopathy"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 5 ปี มีจุดเลือดออกตามตัว ไม่มีไข้ ตรวจร่างกายพบ generalized multiple superficial ecchymosis อื่นๆปรกติ CBC: Hct 34-37% WBC 6,000 N 60-65% L 20-27% E 12-15% Plt 200,000 Bleeding time > 15 นาที จะให้ management อะไร",
+    "choices": [
+      {"label": "A", "text": "ส่ง ANA"},
+      {"label": "B", "text": "stool occult blood"},
+      {"label": "C", "text": "Prednisone"},
+      {"label": "D", "text": "Platelet transfusion"},
+      {"label": "E", "text": "Cryoprecipitate"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "HEMATO (ศรว)",
+    "status": "complete",
+    "ai_notes": "Bleeding time ยาว > 15 min ที่ Plt ปกติ บ่งชี้ bleeding disorder ของ platelet function (ไม่ใช่ thrombocytopenia) อาจเป็น von Willebrand disease หรือ platelet function disorder การตรวจ occult blood ช่วยหาที่มาของ bleeding ซึ่งสำคัญในเด็กเพื่อ workup เบื้องต้น"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 58 ปี มีไข้สูง 3 วัน ต่อมามีหอบและซึมลง 1 วัน มีจุดจ้าเลือดตามตัว Lab: Hb 9.8 g/dL Hct 30% WBC 28,000-38,000 N 83% band 10% L 7% plt 15,000 PT 16 PTT 60 fibrinogen 105 mg/dL นึกถึงภาวะใดมากที่สุด",
+    "choices": [
+      {"label": "A", "text": "ITP"},
+      {"label": "B", "text": "TTP"},
+      {"label": "C", "text": "acquired factor VIII deficiency"},
+      {"label": "D", "text": "DIC"},
+      {"label": "E", "text": "von Willebrand disease"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2011",
+    "status": "complete",
+    "ai_notes": "ข้อนี้ซ้ำกับข้อ 8 เหมือนกัน DIC จาก sepsis ที่มี coagulopathy thrombocytopenia ต่ำมาก หลักฐาน: PT PTT ยาว fibrinogen ต่ำ"
+  },
+  {
+    "scenario": "ชายไทยอายุ 30 ปี มาด้วยซีด ตรวจร่างกาย: mild pale moderate jaundice LAB: Hct 25% Hb 8 g/dL WBC 8,500 Plt 250,000 รูปเลือดมี polychromasia microspherocyte จงให้ management",
+    "choices": [
+      {"label": "A", "text": "splenectomy"},
+      {"label": "B", "text": "IVIg"},
+      {"label": "C", "text": "corticosteroid"},
+      {"label": "D", "text": "blood transfusion"},
+      {"label": "E", "text": "observation and supportive care"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2011",
+    "status": "complete",
+    "ai_notes": "Microspherocyte + polychromasia + jaundice + hemolytic anemia = hereditary spherocytosis Splenectomy เป็น definitive treatment โดย spleen เป็นที่ที่ RBC ที่ผิดปกติถูกทำลาย IVIg และ steroid สำหรับ AIHA ไม่ใช่ HS"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง อายุ 60 ปี วินิจฉัย sepsis พบจาก blood culture เลือดออกในกระเพาะอาหาร Mildly pale jaundice petechiae ที่แขนขา CBC: Hct 30% Plt 30,000 PT 30 aPTT 60 สาเหตุที่เป็นไปได้มากที่สุดที่ทำให้เลือดออกในผู้ป่วยรายนี้คือ",
+    "choices": [
+      {"label": "A", "text": "Liver failure"},
+      {"label": "B", "text": "Factor inhibitor"},
+      {"label": "C", "text": "ITP"},
+      {"label": "D", "text": "DIC"},
+      {"label": "E", "text": "Vitamin K deficiency"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2011",
+    "status": "complete",
+    "ai_notes": "Sepsis + coagulopathy (PT aPTT ยาว) + thrombocytopenia + bleeding = DIC Liver failure ก็มี coagulopathy แต่ sepsis เป็น primary cause ของ DIC ในกรณีนี้"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 25 ปี อ่อนเพลียมา 6 เดือน มีเลือดกาเดาออกบ่อยใน 1 เดือนที่ผ่านมา ไม่ได้ใช้ยาใดประจำ ตรวจร่างกาย: Moderately pale no jaundice petechiae both legs CBC: Hb 8.5 g/dL MCV 90 Reticulocyte count 0.1% WBC 2,500 N 10% L 88% M 2% Plt 18,000 จงวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "Acute leukemia"},
+      {"label": "B", "text": "Aplastic anemia"},
+      {"label": "C", "text": "AIHA"},
+      {"label": "D", "text": "ITP"},
+      {"label": "E", "text": "Myelodysplasia"}
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE 2011",
+    "status": "complete",
+    "ai_notes": "Pancytopenia (Hb ต่ำ WBC ต่ำ Plt ต่ำ) + reticulocyte count ต่ำมาก (0.1%) บ่งชี้ bone marrow failure ไม่ใช่ destruction Aplastic anemia ที่สุด Acute leukemia มี WBC สูง MDS มี dysplastic changes"
+  },
+  {
+    "scenario": "หญิงอายุ 60 ปี ขาด menses 2 เดือน มีเลือดออกทางตา 2 สัปดาห์ มีจ้าเลือดตามตัว ตรวจร่างกาย: multiple petechiae and ecchymoses Investigation: Hb 12 g/dL Hct 35% WBC 9,000 Plt 200,000 aPTT 76 PT 12 จะทำอะไร",
+    "choices": [
+      {"label": "A", "text": "สั่ง Mix coagulogram"},
+      {"label": "B", "text": "ส่ง anticardiolipin antibody"},
+      {"label": "C", "text": "Corticosteroid"},
+      {"label": "D", "text": "IV vitamin K"},
+      {"label": "E", "text": "Lupus anticoagulant"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2011",
+    "status": "complete",
+    "ai_notes": "aPTT ยาว ที่ PT ปกติ บ่งชี้ factor deficiency หรือ inhibitor Mix coagulogram (mixing study) ช่วยแยกว่าเป็น factor deficiency (aPTT ปกติหลังผสม) หรือ inhibitor (aPTT ยังยาว)"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงมีจุดเลือดออกตามแขนและขา ตรวจร่างกายพบ ecchymosis ที่ขา ไม่มีสัญญาณของโรคตับเรื้อรัง Lab: Hb ปกติ WBC ปกติ Plt 50,000 มี jaundice เคยตัวเหลืองตาเหลือง เมื่อ 40 ปีก่อน ถาม Dx",
+    "choices": [
+      {"label": "A", "text": "Factor VIII inhibitor"},
+      {"label": "B", "text": "Vitamin K deficiency"},
+      {"label": "C", "text": "Consumptive coagulopathy"},
+      {"label": "D", "text": "von Willebrand disease"},
+      {"label": "E", "text": "Chronic liver disease"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2011",
+    "status": "complete",
+    "ai_notes": "Thrombocytopenia ต่ำมาก (50,000) + jaundice history สมควร Factor VIII inhibitor มีความน่าจะเป็นสูง โดยเฉพาะในผู้ป่วยที่เคยมี hemophilia treatment หรือ post-partum acquired factor VIII inhibitor ต้องทำ specific factor assay และ inhibitor testing"
+  },
+  {
+    "scenario": "หญิง 30 ปี มีเลือดออกตามไรฟัน ตรวจร่างกายพบ PURPURA ecchymosis CBC: Hb ปกติ Hct ปกติ WBC ปกติ Plt 30,000 จะตรวจอะไรเพิ่มเติม",
+    "choices": [
+      {"label": "A", "text": "Dengue titer"},
+      {"label": "B", "text": "Coomb's test"},
+      {"label": "C", "text": "Bleeding time"},
+      {"label": "D", "text": "Anti-HIV"},
+      {"label": "E", "text": "Bone marrow aspiration"}
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE 2011",
+    "status": "complete",
+    "ai_notes": "Thrombocytopenia (Plt 30,000) + purpura ecchymosis ในหญิงสาว ต้อง rule out ITP กับ secondary causes Bone marrow aspiration ช่วยแยกว่า bone marrow เป็นคนผลิต plt (ITP) หรือมี infiltration/suppression (leukemia/lymphoma)"
+  },
+  {
+    "scenario": "ผู้ป่วยมีอาการซีด อ่อนเพลีย มีปัสสาวะสีดาตอนเช้า ตรวจร่างกาย: moderate pale anicteric sclera no hepatosplenomegaly CBC: Hb 12 g/dL WBC N 40% L 50% E 5% Plt 250,000 คิดว่าอาการซีดเกิดจากอะไร",
+    "choices": [
+      {"label": "A", "text": "RBC enzyme defect"},
+      {"label": "B", "text": "Antibody to RBC"},
+      {"label": "C", "text": "Defect of RBC skeleton"},
+      {"label": "D", "text": "RBC sensitivity to complement"},
+      {"label": "E", "text": "RBC membrane lipid abnormality"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2011",
+    "status": "complete",
+    "ai_notes": "Dark urine (hemoglobinuria) + pale appearance + anicteric = intravascular hemolysis โดย enzyme defect เช่น G6PD ท่านที่มี episode ของ hemolysis ท่านอื่นๆ เจอ hemoglobin ใจ intravascular hemolysis enzyme defect สอดคล้อง"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงมีอาการซีด อ่อนเพลีย PBS มี B12 deficiency",
+    "choices": [
+      {"label": "A", "text": "Megaloblastic anemia"},
+      {"label": "B", "text": "Microcytic hypochromic anemia"},
+      {"label": "C", "text": "Normocytic anemia"},
+      {"label": "D", "text": "Hemolytic anemia"},
+      {"label": "E", "text": "Aplastic anemia"}
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE 2012",
+    "status": "incomplete",
+    "ai_notes": "ข้อนี้ไม่สมบูรณ์ - ขาดข้อมูล CBC และ clinical presentation ฉันเติมตัวเลือกตามเหตุผลว่า B12 deficiency → megaloblastic anemia"
+  },
+  {
+    "scenario": "ชายอายุ 18 ปี ไข้มา 5 วัน มีอาการอ่อนเพลียมา 3 วัน ตรวจร่างกายพบ pallor mild jaundice spleen just palpable อย่างอื่นปกติ CBC: Hb 7.2 g/dL MCV 90 fL WBC 4,200/cumm N 60% L 40% Plt 140,000/cumm จงให้การวินิจฉัย",
+    "choices": [
+      {"label": "A", "text": "Thalassemia HbH disease"},
+      {"label": "B", "text": "Leptospirosis"},
+      {"label": "C", "text": "Acute leukemia"},
+      {"label": "D", "text": "G6PD deficiency"},
+      {"label": "E", "text": "Hereditary spherocytosis"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2012 (ศรว. มี.ค. 2555)",
+    "status": "complete",
+    "ai_notes": "G6PD deficiency: ไข้ (trigger) + hemolytic anemia (Hb ต่ำ) + jaundice + splenomegaly + MCV normal (ไม่ใช่ thalassemia) + หนุ่ม (ชาย) อาจอื่นไปของชาติ ทั้งหมดสอดคล้องกับ G6PD deficiency acute hemolytic episode"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 60 ปี วินิจฉัย acute pyelonephritis ได้ IV antibiotics ทางท่อ heparin lock มา 7 วัน อาการทั่วไปดีขึ้น มีจ้าเลือดที่ผิวหนังมา 2 วัน ไม่มีเลือดออกที่อื่น CBC: Hb 12.0 g/dL WBC 9,900 N 75% L 25% Plt 160,000 aPTT 35 PT 20 สาเหตุของความผิดปกติของการแข็งตัวของเลือดคือ",
+    "choices": [
+      {"label": "A", "text": "Factor VIII inhibitor"},
+      {"label": "B", "text": "Vitamin K deficiency"},
+      {"label": "C", "text": "Chronic renal disease"},
+      {"label": "D", "text": "Heparin contamination/effect"},
+      {"label": "E", "text": "DIC"}
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE 2012 (ศรว. มี.ค. 2555)",
+    "status": "complete",
+    "ai_notes": "Heparin lock 7 วัน + aPTT ยาว (35) + PT ปกติ (20) + ecchymosis = heparin effect ไม่ใช่ vitamin K deficiency (ทั้ง PT และ aPTT จะยาว) DIC จะมี platelet ต่ำ fibrinogen ต่ำ"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 30 ปี ซีดเพลีย มา 1 เดือน มีเลือดออกตามไรฟันเล็กน้อย Hb 7 g/dL WBC 2,600 Plt ต่ำ พยาธิกาเนิดของ pancytopenia คือ",
+    "choices": [
+      {"label": "A", "text": "Splenic sequestration"},
+      {"label": "B", "text": "Antibody to blood cells"},
+      {"label": "C", "text": "DNA synthesis defect"},
+      {"label": "D", "text": "Stem cell deficiency"},
+      {"label": "E", "text": "Increased peripheral destruction"}
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE 2012 (ศรว. มี.ค. 2555)",
+    "status": "complete",
+    "ai_notes": "Pancytopenia + B12 deficiency sign (glossitis ไม่ระบุแต่อ้อมๆ)

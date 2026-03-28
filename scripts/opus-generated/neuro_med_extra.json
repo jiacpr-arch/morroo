@@ -1,0 +1,2042 @@
+[
+  {
+    "scenario": "ชายอายุ 65 ปี มาด้วยอาการปวดศีรษะข้างเดียวซ้ำๆ นาน 20 นาที ถึง 1 ชั่วโมง ร่วมกับตาแดง น้ำตาไหล น้ำมูกไหลด้านเดียวกัน เกิดขึ้นเป็นช่วง 6-8 สัปดาห์ แล้วหาย ลักษณะปวดแสบแบบ stabbing มาก การวินิจฉัยที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Migraine with aura"
+      },
+      {
+        "label": "B",
+        "text": "Cluster headache"
+      },
+      {
+        "label": "C",
+        "text": "Tension-type headache"
+      },
+      {
+        "label": "D",
+        "text": "Trigeminal neuralgia"
+      },
+      {
+        "label": "E",
+        "text": "Hemicrania continua"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cluster headache มีลักษณะปวดรุนแรงข้างเดียว ร่วมกับ autonomic features (ตาแดง น้ำตาไหล น้ำมูกไหล) เป็นช่วง (cluster period) 6-12 สัปดาห์",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Cluster headache",
+      "reason": "Cluster headache เป็น primary headache ในกลุ่ม trigeminal autonomic cephalalgias (TACs) มีลักษณะเฉพาะคือปวดรุนแรงมาก (worst headache of life) บริเวณรอบตาหรือขมับข้างเดียว นาน 15-180 นาที\n\nสิ่งที่ทำให้แตกต่างจาก headache ชนิดอื่นคือ ipsilateral autonomic features ได้แก่ conjunctival injection, lacrimation, rhinorrhea, nasal congestion, ptosis/miosis (partial Horner syndrome) โดยอาการเหล่านี้เกิดจาก activation ของ trigeminal-autonomic reflex\n\nการเกิดแบบ cluster period คือเกิดซ้ำทุกวัน 1-8 ครั้ง นาน 6-12 สัปดาห์ แล้วมีช่วง remission เป็นเดือนหรือปี เรียก episodic cluster headache พบในชายมากกว่าหญิง อายุ 20-40 ปี\n\nการรักษา acute attack: oxygen 100% 12 L/min นาน 15-20 นาที หรือ sumatriptan 6 mg SC การป้องกัน: verapamil เป็น first-line",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Migraine with aura",
+          "is_correct": false,
+          "explanation": "Migraine ปวดนาน 4-72 ชั่วโมง มี aura 20-60 นาที ไม่มี autonomic features ชัดเจน และไม่เกิดเป็น cluster period"
+        },
+        {
+          "label": "B",
+          "text": "Cluster headache",
+          "is_correct": true,
+          "explanation": "ถูกต้อง มีลักษณะครบ: ปวดรุนแรงข้างเดียว, autonomic features (ตาแดง น้ำตาไหล น้ำมูกไหล), เกิดเป็น cluster period 6-8 สัปดาห์"
+        },
+        {
+          "label": "C",
+          "text": "Tension-type headache",
+          "is_correct": false,
+          "explanation": "Tension headache ปวดทั้งสองข้าง ลักษณะรัดบีบ ไม่รุนแรงมาก ไม่มี autonomic features"
+        },
+        {
+          "label": "D",
+          "text": "Trigeminal neuralgia",
+          "is_correct": false,
+          "explanation": "Trigeminal neuralgia ปวดเหมือนไฟฟ้าช็อต 1-2 วินาที มี trigger (กิน พูด แปรงฟัน) ไม่มี autonomic features"
+        },
+        {
+          "label": "E",
+          "text": "Hemicrania continua",
+          "is_correct": false,
+          "explanation": "Hemicrania continua ปวดต่อเนื่องตลอดเวลา (ไม่มีช่วงปลอด) ข้างเดียว มี autonomic features แต่ตอบสนองต่อ indomethacin ดีมาก"
+        }
+      ],
+      "key_takeaway": "Cluster headache: ปวดรุนแรงข้างเดียว + autonomic features (ipsilateral) + เป็น cluster period รักษา acute: O2 100% หรือ sumatriptan SC, ป้องกัน: verapamil"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 35 ปี มาด้วยอาการแขนขาอ่อนแรง กลืนลำบาก พูดไม่ชัด อาการดีขึ้นตอนเช้าแต่แย่ลงตอนเย็น ตรวจพบ ptosis ที่ดีขึ้นหลังพักตา และ fatigable weakness ผล edrophonium test ให้ผลบวก การวินิจฉัยคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Lambert-Eaton myasthenic syndrome"
+      },
+      {
+        "label": "B",
+        "text": "Myasthenia gravis"
+      },
+      {
+        "label": "C",
+        "text": "Multiple sclerosis"
+      },
+      {
+        "label": "D",
+        "text": "Botulism"
+      },
+      {
+        "label": "E",
+        "text": "Guillain-Barré syndrome"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Myasthenia gravis มีลักษณะ fatigable weakness ที่แย่ลงตอนเย็น ptosis ที่ดีขึ้นหลังพัก และ positive edrophonium (Tensilon) test",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Myasthenia gravis",
+      "reason": "Myasthenia gravis (MG) เป็น autoimmune disease ที่มี antibody ต่อ acetylcholine receptor (AChR) ที่ neuromuscular junction ทำให้ transmission ล้มเหลว\n\nลักษณะสำคัญคือ fatigable weakness หมายถึงอ่อนแรงมากขึ้นเมื่อใช้กล้ามเนื้อซ้ำๆ และดีขึ้นหลังพัก อาการแย่ลงตอนบ่าย/เย็น ocular muscles มักเป็นแรก (ptosis, diplopia) ตามด้วย bulbar symptoms (dysphagia, dysarthria) และ limb weakness\n\nEdrophonium test (Tensilon test) ใช้ยา acetylcholinesterase inhibitor ออกฤทธิ์สั้น ถ้า MG จะแข็งแรงขึ้นชั่วคราว การตรวจ AChR antibody positive ใน 85-90% ของ generalized MG การรักษาเริ่มด้วย pyridostigmine (AChE inhibitor) และอาจต้องใช้ immunosuppressant เช่น prednisolone, azathioprine หรือทำ plasmapheresis/IVIG ในรายที่รุนแรง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Lambert-Eaton myasthenic syndrome",
+          "is_correct": false,
+          "explanation": "LEMS เกิดจาก antibody ต่อ voltage-gated calcium channel (VGCC) อ่อนแรงที่ขาก่อน ดีขึ้นหลังออกกำลัง (augmentation) autonomic dysfunction พบใน paraneoplastic SCLC"
+        },
+        {
+          "label": "B",
+          "text": "Myasthenia gravis",
+          "is_correct": true,
+          "explanation": "ถูกต้อง fatigable weakness แย่ตอนเย็น ptosis ดีขึ้นหลังพัก positive Tensilon test เป็น hallmark ของ MG"
+        },
+        {
+          "label": "C",
+          "text": "Multiple sclerosis",
+          "is_correct": false,
+          "explanation": "MS มีอาการ relapsing-remitting ไม่ใช่ fatigable within day ไม่มี positive Tensilon test และมักมีอาการทาง CNS อื่นๆ"
+        },
+        {
+          "label": "D",
+          "text": "Botulism",
+          "is_correct": false,
+          "explanation": "Botulism เกิดจาก toxin บล็อก acetylcholine release อาการเฉียบพลัน มี descending paralysis autonomic dysfunction ไม่มี fatigability ที่ดีขึ้นหลังพัก"
+        },
+        {
+          "label": "E",
+          "text": "Guillain-Barré syndrome",
+          "is_correct": false,
+          "explanation": "GBS เป็น acute demyelinating neuropathy อาการขึ้น ascending ขา → แขน → หน้า ไม่มี fatigability ไม่มี positive Tensilon test"
+        }
+      ],
+      "key_takeaway": "MG: fatigable weakness (แย่ตอนเย็น ดีหลังพัก) + ptosis + bulbar symptoms + positive Tensilon test + AChR antibody; รักษา: pyridostigmine ± immunosuppression"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 70 ปี โรคประจำตัว AF มาด้วยอาการแขนขาซีกขวาอ่อนแรงเฉียบพลัน พูดไม่ได้ เกิดขึ้นมา 2 ชั่วโมง BP 160/90 mmHg ทำ CT brain ไม่พบ hemorrhage ผู้ป่วยกินยา warfarin INR 1.2 การรักษาเร่งด่วนที่เหมาะสมที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้ aspirin 300 mg ทันที"
+      },
+      {
+        "label": "B",
+        "text": "IV rtPA (alteplase) 0.9 mg/kg"
+      },
+      {
+        "label": "C",
+        "text": "Mechanical thrombectomy ทันที"
+      },
+      {
+        "label": "D",
+        "text": "Heparin IV infusion"
+      },
+      {
+        "label": "E",
+        "text": "Observe และติดตาม neuro status"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Acute ischemic stroke ภายใน 4.5 ชั่วโมง ไม่มี hemorrhage, INR < 1.7 สามารถให้ IV rtPA ได้ ถือเป็น standard of care",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. IV rtPA (alteplase) 0.9 mg/kg",
+      "reason": "Acute ischemic stroke ภายใน 4.5 ชั่วโมง การรักษาหลักที่พิสูจน์แล้วว่าลด disability คือ IV thrombolysis ด้วย rtPA (alteplase) ขนาด 0.9 mg/kg (max 90 mg) โดย 10% ให้เป็น IV bolus แล้วที่เหลือ infusion 60 นาที\n\nข้อบ่งชี้: ischemic stroke ภายใน 4.5 ชั่วโมง ไม่มี hemorrhage ใน CT ไม่มี contraindications\n\nข้อห้าม absolute ได้แก่: INR > 1.7 (ในผู้ป่วยนี้ INR 1.2 ยังใช้ได้), platelet < 100,000, major surgery/trauma ใน 3 เดือน, prior stroke/head trauma ใน 3 เดือน, active internal bleeding\n\nBP ต้องควบคุม < 185/110 mmHg ก่อนให้ rtPA ผู้ป่วยรายนี้ BP 160/90 ซึ่งต่ำกว่าเกณฑ์ จึงให้ rtPA ได้เลย Mechanical thrombectomy พิจารณาร่วมหรือแทนในรายที่มี large vessel occlusion และ favorable imaging",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ให้ aspirin 300 mg ทันที",
+          "is_correct": false,
+          "explanation": "Aspirin ใช้ใน acute ischemic stroke แต่ไม่ควรให้ก่อน/ระหว่าง 24 ชั่วโมงหลัง rtPA เพราะเพิ่มความเสี่ยง hemorrhage; ให้ aspirin เมื่อไม่ eligible สำหรับ thrombolysis"
+        },
+        {
+          "label": "B",
+          "text": "IV rtPA (alteplase) 0.9 mg/kg",
+          "is_correct": true,
+          "explanation": "Standard of care สำหรับ acute ischemic stroke ภายใน 4.5 ชั่วโมง ไม่มี contraindication (INR 1.2 < 1.7, ไม่มี hemorrhage, BP < 185/110)"
+        },
+        {
+          "label": "C",
+          "text": "Mechanical thrombectomy ทันที",
+          "is_correct": false,
+          "explanation": "Mechanical thrombectomy เป็น first-line ร่วมกับหรือหลัง IV rtPA ในรายที่มี large vessel occlusion (ICA, MCA M1) แต่ไม่ควร delay rtPA เพื่อรอ thrombectomy"
+        },
+        {
+          "label": "D",
+          "text": "Heparin IV infusion",
+          "is_correct": false,
+          "explanation": "Heparin ไม่มีหลักฐานว่า improve outcome ใน acute ischemic stroke และเพิ่มความเสี่ยง hemorrhagic transformation"
+        },
+        {
+          "label": "E",
+          "text": "Observe และติดตาม neuro status",
+          "is_correct": false,
+          "explanation": "การ observe อย่างเดียวเป็นการ delay treatment ที่มีประสิทธิภาพ Time is brain ทุก 1 นาทีที่ล่าช้า สูญเสีย neuron ประมาณ 1.9 ล้านเซลล์"
+        }
+      ],
+      "key_takeaway": "Acute ischemic stroke ≤4.5 ชั่วโมง + ไม่มี contraindication → IV rtPA 0.9 mg/kg คือ standard of care; BP ต้องควบคุม <185/110 ก่อนให้"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 28 ปี มาด้วยอาการชาและอ่อนแรงขาทั้งสองข้างเกิดขึ้นหลายครั้ง ครั้งแรกตาพร่ามัวข้างเดียวหายเองใน 2 สัปดาห์ ปัจจุบันมีอาการชาแขนขาซีกขวาหายเองใน 1 เดือน ทำ MRI brain พบ white matter lesions หลายตำแหน่ง ทำ MRI spine พบ lesions ที่ cervical cord เกณฑ์การวินิจฉัย multiple sclerosis (McDonald criteria) ต้องการข้อมูลใดเพิ่มเติม",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Nerve conduction study"
+      },
+      {
+        "label": "B",
+        "text": "Dissemination in time and space ครบแล้ว ไม่ต้องการข้อมูลเพิ่ม"
+      },
+      {
+        "label": "C",
+        "text": "Visual evoked potential"
+      },
+      {
+        "label": "D",
+        "text": "Lumbar puncture CSF analysis"
+      },
+      {
+        "label": "E",
+        "text": "EEG"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "McDonald criteria 2017 ต้องการ dissemination in space (DIS) และ dissemination in time (DIT) ผู้ป่วยมี lesions หลายตำแหน่ง (DIS) และอาการหลายครั้งต่างเวลา (DIT) ครบแล้ว",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Dissemination in time and space ครบแล้ว ไม่ต้องการข้อมูลเพิ่ม",
+      "reason": "Multiple sclerosis (MS) วินิจฉัยตาม McDonald criteria 2017 ซึ่งต้องการ 2 เงื่อนไขหลัก:\n\n1. Dissemination in Space (DIS): lesions ≥2 ตำแหน่งใน CNS ที่เป็น characteristic areas (periventricular, cortical/juxtacortical, infratentorial, spinal cord)\n\n2. Dissemination in Time (DIT): อาการ ≥2 ครั้ง (attacks) ต่างเวลากัน หรือพบ gadolinium-enhancing lesion ร่วมกับ non-enhancing lesion\n\nผู้ป่วยรายนี้: มี lesions หลายตำแหน่งทั้งใน brain (white matter) และ cervical cord (DIS ครบ) และมีอาการอย่างน้อย 2 ครั้งต่างเวลากัน (optic neuritis + hemisensory symptoms ต่างเวลา) (DIT ครบ)\n\nดังนั้น ตาม McDonald criteria วินิจฉัย MS ได้เลย ไม่จำเป็นต้องทำ LP หรือ VEP เพิ่ม แม้ว่าจะมีประโยชน์ในกรณีที่ criteria ยังไม่ครบ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Nerve conduction study",
+          "is_correct": false,
+          "explanation": "NCS ใช้ประเมิน peripheral nervous system MS เป็นโรค CNS ดังนั้น NCS ไม่ช่วยวินิจฉัย MS"
+        },
+        {
+          "label": "B",
+          "text": "Dissemination in time and space ครบแล้ว ไม่ต้องการข้อมูลเพิ่ม",
+          "is_correct": true,
+          "explanation": "ถูกต้อง ผู้ป่วยมีทั้ง DIS (lesions หลายตำแหน่ง brain+spine) และ DIT (อาการ 2 ครั้งต่างเวลา) ตาม McDonald 2017 วินิจฉัย MS ได้เลย"
+        },
+        {
+          "label": "C",
+          "text": "Visual evoked potential",
+          "is_correct": false,
+          "explanation": "VEP ช่วยพิสูจน์ subclinical optic nerve involvement ใช้เพิ่ม DIS เมื่อ criteria ยังไม่ครบ แต่ในกรณีนี้ criteria ครบแล้ว"
+        },
+        {
+          "label": "D",
+          "text": "Lumbar puncture CSF analysis",
+          "is_correct": false,
+          "explanation": "CSF oligoclonal bands และ IgG index เป็น supportive evidence แต่ไม่จำเป็นเมื่อ clinical และ MRI criteria ครบ"
+        },
+        {
+          "label": "E",
+          "text": "EEG",
+          "is_correct": false,
+          "explanation": "EEG ไม่มีบทบาทในการวินิจฉัย MS ใช้ในการวินิจฉัย epilepsy หรือ encephalopathy"
+        }
+      ],
+      "key_takeaway": "McDonald criteria MS: DIS (≥2 characteristic CNS locations) + DIT (≥2 attacks ต่างเวลา) ถ้าครบทั้งคู่จาก clinical+MRI ไม่จำเป็นต้องทำ LP หรือ VEP เพิ่ม"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 45 ปี มาด้วยอาการปวดหลังร้าวลงขาขวาตาม L4-5 dermatome ชาที่หลังเท้าและนิ้วเท้า ตรวจ SLR positive ขวา ไม่สามารถยืนเขย่งเท้าได้ ผล MRI lumbar spine พบ disc herniation ที่ L4-5 กดทับ nerve root อาการใดที่บ่งบอกว่าต้องผ่าตัดเร่งด่วน",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ปวดขา VAS 8/10"
+      },
+      {
+        "label": "B",
+        "text": "Bladder/bowel dysfunction ร่วมกับ saddle anesthesia"
+      },
+      {
+        "label": "C",
+        "text": "SLR positive bilateral"
+      },
+      {
+        "label": "D",
+        "text": "ใช้ชีวิตประจำวันไม่ได้ > 4 สัปดาห์"
+      },
+      {
+        "label": "E",
+        "text": "อายุน้อยกว่า 50 ปี"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cauda equina syndrome (bladder/bowel dysfunction + saddle anesthesia) เป็น neurosurgical emergency ต้องผ่าตัดภายใน 24-48 ชั่วโมงเพื่อป้องกัน permanent deficit",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Bladder/bowel dysfunction ร่วมกับ saddle anesthesia",
+      "reason": "Cauda equina syndrome (CES) เป็น neurosurgical emergency เกิดจากการกดทับ cauda equina nerve roots (L2-S5) อย่างรุนแรง\n\nอาการที่บ่งบอก CES ได้แก่: saddle anesthesia (ชาบริเวณ perineum, ก้น, ต้นขาด้านใน), bladder dysfunction (urinary retention หรือ incontinence), bowel dysfunction (fecal incontinence), sexual dysfunction และ bilateral lower limb weakness\n\nCES ต้องทำผ่าตัด emergency decompression ภายใน 24-48 ชั่วโมง (บางแนวทางแนะนำ 6 ชั่วโมง) เพราะยิ่งล่าช้า โอกาสฟื้นตัวของ bladder/bowel function ยิ่งน้อย\n\nอาการอื่นๆ เช่น ปวดมาก weakness ของขา ไม่ใช่ emergency absolute indication สำหรับ urgent surgery แต่มักพิจารณา elective surgery หลังรักษา conservative 6 สัปดาห์แล้วไม่ดีขึ้น",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ปวดขา VAS 8/10",
+          "is_correct": false,
+          "explanation": "ความปวดรุนแรงเป็น indication สำหรับ pain management แต่ไม่ใช่ surgical emergency ยังสามารถ trial conservative treatment ก่อนได้"
+        },
+        {
+          "label": "B",
+          "text": "Bladder/bowel dysfunction ร่วมกับ saddle anesthesia",
+          "is_correct": true,
+          "explanation": "Cauda equina syndrome เป็น surgical emergency ต้องผ่าตัด decompression เร่งด่วนเพื่อป้องกัน permanent bladder/bowel incontinence"
+        },
+        {
+          "label": "C",
+          "text": "SLR positive bilateral",
+          "is_correct": false,
+          "explanation": "Bilateral SLR positive บ่งบอกถึง bilateral nerve root involvement แต่ไม่ใช่ emergency indication หากไม่มี CES symptoms"
+        },
+        {
+          "label": "D",
+          "text": "ใช้ชีวิตประจำวันไม่ได้ > 4 สัปดาห์",
+          "is_correct": false,
+          "explanation": "Functional limitation นาน > 4-6 สัปดาห์ที่ไม่ตอบสนองต่อ conservative treatment เป็น indication สำหรับ elective surgery ไม่ใช่ emergency"
+        },
+        {
+          "label": "E",
+          "text": "อายุน้อยกว่า 50 ปี",
+          "is_correct": false,
+          "explanation": "อายุไม่ใช่ indication สำหรับ urgent surgery; ทุกอายุที่มี CES ต้องผ่าตัดเร่งด่วน"
+        }
+      ],
+      "key_takeaway": "Cauda equina syndrome (saddle anesthesia + bladder/bowel dysfunction) = neurosurgical emergency ต้องผ่าตัด decompression ภายใน 24-48 ชั่วโมง"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 25 ปี มาด้วยอาการชักเกร็งกระตุกทั้งตัว ระหว่างชักผู้ป่วยหมดสติ หลังชัก ง่วงซึม ไม่รู้ตัว 30 นาที (post-ictal state) EEG พบ generalized spike-and-wave discharges การวินิจฉัยและการรักษาที่เหมาะสมคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Absence epilepsy รักษาด้วย ethosuximide"
+      },
+      {
+        "label": "B",
+        "text": "Generalized tonic-clonic seizure รักษาด้วย valproate"
+      },
+      {
+        "label": "C",
+        "text": "Juvenile myoclonic epilepsy รักษาด้วย levetiracetam"
+      },
+      {
+        "label": "D",
+        "text": "Focal seizure with secondary generalization รักษาด้วย carbamazepine"
+      },
+      {
+        "label": "E",
+        "text": "Psychogenic non-epileptic seizure รักษาด้วย CBT"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Generalized tonic-clonic seizure (GTCS) มีลักษณะเกร็งกระตุกทั้งตัว หมดสติ post-ictal state และ EEG generalized spike-and-wave; valproate เป็น first-line",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Generalized tonic-clonic seizure รักษาด้วย valproate",
+      "reason": "Generalized tonic-clonic seizure (GTCS) มีลักษณะ: เริ่มด้วย tonic phase (เกร็งทั้งตัว) ตามด้วย clonic phase (กระตุก) หมดสติระหว่างชัก มักมี tongue bite, incontinence หลังชักมี post-ictal confusion/drowsiness 15-30 นาที\n\nEEG แสดง generalized spike-and-wave discharges ยืนยัน generalized epilepsy\n\nValproate (valproic acid) เป็น broad-spectrum AED เป็น first-line สำหรับ generalized epilepsy ทุกชนิด (GTCS, myoclonic, absence) ออกฤทธิ์หลายกลไก: block Na+ channel, เพิ่ม GABA, block T-type Ca2+ channel\n\nข้อควรระวัง: valproate teratogenic (neural tube defects) ในหญิงวัยเจริญพันธุ์ ต้องให้ folic acid และพิจารณาเปลี่ยนยา ถ้าวางแผนตั้งครรภ์ อาจพิจารณา levetiracetam แทน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Absence epilepsy รักษาด้วย ethosuximide",
+          "is_correct": false,
+          "explanation": "Absence seizure: ชักแบบหยุดนิ่ง ตาลอย 5-30 วินาที ไม่มี post-ictal state EEG: 3 Hz spike-and-wave; ethosuximide เป็น first-line แต่ไม่ครอบคลุม GTCS"
+        },
+        {
+          "label": "B",
+          "text": "Generalized tonic-clonic seizure รักษาด้วย valproate",
+          "is_correct": true,
+          "explanation": "ถูกต้อง GTCS: เกร็งกระตุกทั้งตัว + หมดสติ + post-ictal state + generalized EEG; valproate เป็น first-line broad-spectrum AED"
+        },
+        {
+          "label": "C",
+          "text": "Juvenile myoclonic epilepsy รักษาด้วย levetiracetam",
+          "is_correct": false,
+          "explanation": "JME: myoclonic jerks ตอนเช้าหลังตื่น, GTCS, absence; อาการไม่ตรง levetiracetam ใช้ได้แต่ไม่ใช่ diagnosis ที่ถูก"
+        },
+        {
+          "label": "D",
+          "text": "Focal seizure with secondary generalization รักษาด้วย carbamazepine",
+          "is_correct": false,
+          "explanation": "Focal seizure เริ่มจากตำแหน่งเดียวแล้วกระจาย EEG จะพบ focal onset ก่อน carbamazepine ไม่เหมาะกับ generalized epilepsy อาจทำให้ absence/myoclonic แย่ลง"
+        },
+        {
+          "label": "E",
+          "text": "Psychogenic non-epileptic seizure รักษาด้วย CBT",
+          "is_correct": false,
+          "explanation": "PNES ไม่มีการเปลี่ยนแปลงใน EEG ระหว่างชัก มักไม่มี post-ictal confusion และ EEG ปกติ; ผู้ป่วยนี้มี EEG abnormal"
+        }
+      ],
+      "key_takeaway": "GTCS: เกร็งกระตุก + หมดสติ + post-ictal state + generalized spike-and-wave EEG → valproate first-line; ระวัง teratogenicity ในหญิงวัยเจริญพันธุ์"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 60 ปี มาด้วยอาการสั่นมือขวามากขึ้นเรื่อยๆ นาน 2 ปี สั่นขณะพัก (resting tremor) เดินช้า ก้าวสั้น หน้าไม่มีแสดงอาการ (masked face) กล้ามเนื้อแข็ง (rigidity) ตรวจพบ cogwheel rigidity ยาที่เหมาะสมที่สุดสำหรับผู้ป่วยรายนี้คือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Levodopa/carbidopa"
+      },
+      {
+        "label": "B",
+        "text": "Haloperidol"
+      },
+      {
+        "label": "C",
+        "text": "Propranolol"
+      },
+      {
+        "label": "D",
+        "text": "Clonazepam"
+      },
+      {
+        "label": "E",
+        "text": "Memantine"
+      }
+    ],
+    "correct_answer": "A",
+    "explanation": "Parkinson disease รักษาด้วย levodopa/carbidopa ซึ่งเป็น most effective treatment; carbidopa ป้องกัน peripheral conversion ของ levodopa",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: A. Levodopa/carbidopa",
+      "reason": "Parkinson disease (PD) เกิดจาก degeneration ของ dopaminergic neurons ใน substantia nigra ทำให้ dopamine ลดลง อาการหลักคือ TRAP: Tremor (resting), Rigidity (cogwheel/leadpipe), Akinesia/Bradykinesia, Postural instability\n\nLevodopa เป็น dopamine precursor ที่ผ่าน blood-brain barrier ได้ เปลี่ยนเป็น dopamine ใน brain ถือเป็น most effective treatment สำหรับ motor symptoms ของ PD\n\nCarbidopa เป็น peripheral decarboxylase inhibitor จับคู่กับ levodopa เพื่อลดการเปลี่ยน levodopa เป็น dopamine ที่ periphery ทำให้ levodopa เข้าสมองได้มากขึ้น และลด peripheral side effects (nausea, vomiting, orthostatic hypotension)\n\nHaloperidol เป็น dopamine blocker ทำให้อาการ PD แย่ลง ห้ามใช้ Propranolol ใช้กับ essential tremor (action/postural tremor ไม่ใช่ resting tremor)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Levodopa/carbidopa",
+          "is_correct": true,
+          "explanation": "Most effective treatment สำหรับ motor symptoms ของ PD; carbidopa ลด peripheral side effects และเพิ่ม bioavailability ของ levodopa ใน CNS"
+        },
+        {
+          "label": "B",
+          "text": "Haloperidol",
+          "is_correct": false,
+          "explanation": "Haloperidol เป็น dopamine receptor blocker ทำให้ parkinsonian symptoms แย่ลงอย่างมาก เป็น drug-induced parkinsonism ห้ามใช้ใน PD"
+        },
+        {
+          "label": "C",
+          "text": "Propranolol",
+          "is_correct": false,
+          "explanation": "Propranolol ลด essential tremor (action tremor) แต่ไม่มีประสิทธิภาพกับ resting tremor ของ PD"
+        },
+        {
+          "label": "D",
+          "text": "Clonazepam",
+          "is_correct": false,
+          "explanation": "Clonazepam ใช้ใน myoclonic jerks หรือ REM sleep behavior disorder ไม่ใช่ first-line สำหรับ motor symptoms ของ PD"
+        },
+        {
+          "label": "E",
+          "text": "Memantine",
+          "is_correct": false,
+          "explanation": "Memantine เป็น NMDA antagonist ใช้ใน Alzheimer's dementia ไม่ใช่ treatment สำหรับ motor symptoms ของ PD"
+        }
+      ],
+      "key_takeaway": "Parkinson disease: TRAP symptoms (resting tremor, rigidity, akinesia, postural instability) → levodopa/carbidopa most effective; ห้ามใช้ haloperidol (worsens PD)"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 20 ปี มาด้วยอาการปวดศีรษะรุนแรงฉับพลัน 'ปวดรุนแรงที่สุดในชีวิต' เกิดขึ้นทันทีขณะออกกำลังกาย ร่วมกับคอแข็ง ไม่มีไข้ ทำ CT brain ไม่พบความผิดปกติ ขั้นตอนถัดไปที่สำคัญที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "MRI brain with contrast"
+      },
+      {
+        "label": "B",
+        "text": "Lumbar puncture"
+      },
+      {
+        "label": "C",
+        "text": "EEG"
+      },
+      {
+        "label": "D",
+        "text": "ให้ sumatriptan และนัดติดตาม"
+      },
+      {
+        "label": "E",
+        "text": "Cerebral angiography ทันที"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Thunderclap headache + meningismus ต้องสงสัย subarachnoid hemorrhage; CT brain negative ไม่ตัด SAH ต้องทำ LP เพื่อหา xanthochromia/RBC ใน CSF",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Lumbar puncture",
+      "reason": "Thunderclap headache (TCH) คือปวดหัวรุนแรงที่สุดในชีวิต เกิดขึ้นทันทีหรือภายใน 1 วินาที ถึงไม่กี่นาที สาเหตุสำคัญที่ life-threatening คือ subarachnoid hemorrhage (SAH) จาก ruptured aneurysm\n\nCT brain sensitivity สำหรับ SAH สูงมาก (~98%) ใน 6 ชั่วโมงแรก แต่ลดลงตามเวลา ถ้า CT negative แต่ยังสงสัย SAH ต้องทำ lumbar puncture เพื่อดู: 1) xanthochromia (เหลืองจาก breakdown of RBC > 2 ชั่วโมง) 2) elevated RBC ที่ไม่ลดลงระหว่าง tube 1 และ 4\n\nLumbar puncture ควรทำ ≥ 2 ชั่วโมงหลัง onset (ให้เวลา RBC breakdown เป็น xanthochromia)\n\nหาก LP ยืนยัน SAH ต้องทำ CT angiography หรือ cerebral angiography เพื่อหา aneurysm และวางแผน treatment (coiling/clipping)\n\nห้ามให้ sumatriptan โดยไม่ตัด SAH ก่อน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "MRI brain with contrast",
+          "is_correct": false,
+          "explanation": "MRI อาจพลาด acute SAH ได้บ่อยกว่า CT ใน 24 ชั่วโมงแรก และไม่ได้ให้ข้อมูลเพิ่มในกรณีนี้ LP เป็นขั้นตอนที่ถูกต้องกว่า"
+        },
+        {
+          "label": "B",
+          "text": "Lumbar puncture",
+          "is_correct": true,
+          "explanation": "CT negative ไม่ตัด SAH CT sensitivity ลดลงตามเวลา LP จะพบ xanthochromia หรือ elevated RBC ถ้ามี SAH จริง"
+        },
+        {
+          "label": "C",
+          "text": "EEG",
+          "is_correct": false,
+          "explanation": "EEG ไม่มีบทบาทในการวินิจฉัย SAH หรือ thunderclap headache"
+        },
+        {
+          "label": "D",
+          "text": "ให้ sumatriptan และนัดติดตาม",
+          "is_correct": false,
+          "explanation": "อันตรายมาก ห้ามรักษาว่า migraine โดยไม่ตัด SAH ก่อน thunderclap headache ไม่ใช่ migraine จนกว่าจะ rule out SAH แล้ว"
+        },
+        {
+          "label": "E",
+          "text": "Cerebral angiography ทันที",
+          "is_correct": false,
+          "explanation": "Cerebral angiography ทำหลังจากยืนยัน SAH ด้วย CT หรือ LP แล้ว ไม่ใช่ขั้นตอนแรก"
+        }
+      ],
+      "key_takeaway": "Thunderclap headache + CT brain negative → ต้องทำ LP เสมอ เพื่อ rule out SAH (xanthochromia/RBC); ห้าม treat เป็น migraine จนกว่าจะ rule out SAH"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 55 ปี มาด้วยอาการมือซ้ายสั่นมากขึ้น ก้าวเดินสั้น เดินทแล้งแล้ง บางครั้งหยุดเดินกลางทางไม่ได้ (freezing of gait) ตรวจพบ masked face, cogwheel rigidity แขนซ้าย, resting tremor แขนซ้าย กินยา levodopa/carbidopa มา 5 ปี ปัจจุบันมีอาการ wearing-off phenomenon ยาที่ควรเพิ่มเติมคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เพิ่ม dose levodopa เป็น 2 เท่า"
+      },
+      {
+        "label": "B",
+        "text": "เพิ่ม dopamine agonist เช่น pramipexole"
+      },
+      {
+        "label": "C",
+        "text": "เพิ่ม MAO-B inhibitor เช่น selegiline"
+      },
+      {
+        "label": "D",
+        "text": "เพิ่ม COMT inhibitor เช่น entacapone"
+      },
+      {
+        "label": "E",
+        "text": "ข้อ C หรือ D ต่างก็เหมาะสม"
+      }
+    ],
+    "correct_answer": "E",
+    "explanation": "Wearing-off phenomenon ใน PD สามารถจัดการได้ด้วยทั้ง MAO-B inhibitor (selegiline/rasagiline) หรือ COMT inhibitor (entacapone) ซึ่งทั้งคู่ยืด duration ของ levodopa",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: E. ข้อ C หรือ D ต่างก็เหมาะสม",
+      "reason": "Wearing-off phenomenon เกิดจาก progressive neurodegeneration และ pharmacokinetic variability ของ levodopa ผู้ป่วยรู้สึกยาหมดฤทธิ์ก่อนถึงเวลากิน\n\nวิธีจัดการ wearing-off:\n1. MAO-B inhibitors (selegiline, rasagiline): บล็อกการสลาย dopamine ใน brain ยืดระยะเวลา on-state\n2. COMT inhibitors (entacapone, tolcapone): บล็อกการเปลี่ยน levodopa เป็น 3-OMD ที่ peripheral และ central ทำให้ levodopa มีระดับในเลือดและสมองนานขึ้น\n3. Dopamine agonists: ช่วย direct stimulate dopamine receptors ลด wearing-off\n4. ลด dose interval ของ levodopa หรือใช้ controlled-release formulation\n\nทั้ง selegiline และ entacapone มี evidence level I สำหรับการลด wearing-off ดังนั้นทั้งคู่เหมาะสม",
+      "choices": [
+        {
+          "label": "A",
+          "text": "เพิ่ม dose levodopa เป็น 2 เท่า",
+          "is_correct": false,
+          "explanation": "การเพิ่ม dose มากเกินไปเพิ่มความเสี่ยง dyskinesia (peak-dose dyskinesia) ซึ่งเป็นภาวะแทรกซ้อนจาก levodopa ระยะยาว"
+        },
+        {
+          "label": "B",
+          "text": "เพิ่ม dopamine agonist เช่น pramipexole",
+          "is_correct": false,
+          "explanation": "Dopamine agonist ช่วย wearing-off ได้แต่มี side effects มาก (hallucination, impulse control disorder, orthostatic hypotension) โดยเฉพาะในผู้สูงอายุ ไม่ใช่ตัวเลือกแรก"
+        },
+        {
+          "label": "C",
+          "text": "เพิ่ม MAO-B inhibitor เช่น selegiline",
+          "is_correct": false,
+          "explanation": "ถูกต้องบางส่วน แต่ตัวเลือก E ครอบคลุมมากกว่า เพราะทั้ง MAO-B และ COMT inhibitor ต่างมี evidence สำหรับ wearing-off"
+        },
+        {
+          "label": "D",
+          "text": "เพิ่ม COMT inhibitor เช่น entacapone",
+          "is_correct": false,
+          "explanation": "ถูกต้องบางส่วน แต่ตัวเลือก E ครอบคลุมมากกว่า เพราะทั้ง MAO-B และ COMT inhibitor ต่างเหมาะสม"
+        },
+        {
+          "label": "E",
+          "text": "ข้อ C หรือ D ต่างก็เหมาะสม",
+          "is_correct": true,
+          "explanation": "ทั้ง MAO-B inhibitor และ COMT inhibitor มี evidence level I สำหรับลด wearing-off phenomenon ใน PD ที่รักษาด้วย levodopa"
+        }
+      ],
+      "key_takeaway": "Wearing-off ใน PD → เพิ่ม MAO-B inhibitor (selegiline) หรือ COMT inhibitor (entacapone) ทั้งคู่ยืด duration ของ levodopa; ระวัง levodopa dose สูงเกิน → dyskinesia"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 30 ปี ตั้งครรภ์ 32 สัปดาห์ มาด้วยอาการชักเกร็งกระตุกทั้งตัว BP 170/110 mmHg Protein urine 4+ ก่อนหน้านี้ไม่มีประวัติชัก ยาที่ควรให้ทันทีเพื่อหยุดชักและป้องกันชักซ้ำคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Diazepam IV"
+      },
+      {
+        "label": "B",
+        "text": "Phenytoin IV"
+      },
+      {
+        "label": "C",
+        "text": "Magnesium sulfate IV"
+      },
+      {
+        "label": "D",
+        "text": "Levetiracetam IV"
+      },
+      {
+        "label": "E",
+        "text": "Valproate IV"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Eclampsia (ชักในหญิงตั้งครรภ์ที่มี preeclampsia) รักษาด้วย magnesium sulfate IV ซึ่งเป็น drug of choice ทั้งรักษาและป้องกันชักซ้ำ",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Magnesium sulfate IV",
+      "reason": "Eclampsia คือชักในหญิงตั้งครรภ์ที่มี preeclampsia (HTN + proteinuria) โดยไม่มีสาเหตุอื่น ถือเป็น obstetric emergency\n\nMagnesium sulfate (MgSO4) เป็น drug of choice สำหรับ eclampsia ทั้งการรักษา seizure เฉียบพลัน และป้องกัน recurrent seizure กลไก: ลด cerebral vasospasm, ลด CNS excitability ผ่าน NMDA receptor antagonism, cerebral protection\n\nProtocol Pritchard: Loading dose MgSO4 4-6 g IV slow bolus (15-20 min) + 5 g IM each buttock; Maintenance: 5 g IM q4h หรือ 1-2 g/h IV infusion\n\nติดตาม Mg toxicity: loss of patellar reflex (first sign, Mg ~5-7 mEq/L), respiratory depression (Mg ~10 mEq/L), cardiac arrest (Mg >15 mEq/L); antidote: calcium gluconate 1 g IV\n\nต้องรักษา BP ควบคู่ด้วย hydralazine หรือ labetalol และวางแผนคลอด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Diazepam IV",
+          "is_correct": false,
+          "explanation": "Diazepam ใช้หยุดชักเฉียบพลันได้แต่ไม่ได้ป้องกัน recurrent eclamptic seizure และไม่ใช่ drug of choice สำหรับ eclampsia"
+        },
+        {
+          "label": "B",
+          "text": "Phenytoin IV",
+          "is_correct": false,
+          "explanation": "Phenytoin เป็น anticonvulsant ทั่วไปแต่ inferior กว่า MgSO4 ในการป้องกัน eclamptic seizure จาก Magpie trial และ WHO guidelines แนะนำ MgSO4"
+        },
+        {
+          "label": "C",
+          "text": "Magnesium sulfate IV",
+          "is_correct": true,
+          "explanation": "Drug of choice สำหรับ eclampsia ทั้งรักษาและป้องกัน recurrent seizure มี evidence สูงสุดจาก Magpie trial และ Collaborative Eclampsia trial"
+        },
+        {
+          "label": "D",
+          "text": "Levetiracetam IV",
+          "is_correct": false,
+          "explanation": "Levetiracetam ยังมีข้อมูลไม่เพียงพอสำหรับ eclampsia ไม่ใช่ first-line"
+        },
+        {
+          "label": "E",
+          "text": "Valproate IV",
+          "is_correct": false,
+          "explanation": "Valproate teratogenic มาก (neural tube defects, fetal valproate syndrome) ห้ามใช้ในหญิงตั้งครรภ์"
+        }
+      ],
+      "key_takeaway": "Eclampsia = MgSO4 IV เสมอ (drug of choice); monitor: patellar reflex (ถ้าหาย → toxicity), RR; antidote: Ca gluconate; ต้องรักษา BP และวางแผนคลอด"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 50 ปี มาด้วยอาการอ่อนแรงขาทั้งสองข้างแบบค่อยเป็นค่อยไปนาน 3 เดือน ตรวจพบ increased tone (spasticity) ขาทั้งสองข้าง hyperreflexia, Babinski sign bilateral, ไม่มี sensory loss ไม่มีปัสสาวะ/อุจจาระผิดปกติ การวินิจฉัยที่น่าเป็นไปได้ที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Peripheral neuropathy"
+      },
+      {
+        "label": "B",
+        "text": "Cervical myelopathy"
+      },
+      {
+        "label": "C",
+        "text": "Amyotrophic lateral sclerosis (ALS)"
+      },
+      {
+        "label": "D",
+        "text": "Subacute combined degeneration"
+      },
+      {
+        "label": "E",
+        "text": "Spinal cord compression L1-2"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "ALS มีทั้ง upper motor neuron signs (spasticity, hyperreflexia, Babinski) และ lower motor neuron signs ร่วมกัน ไม่มี sensory loss เป็นลักษณะเฉพาะ",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. Amyotrophic lateral sclerosis (ALS)",
+      "reason": "ALS (Motor neuron disease) เป็นโรคที่ทำลายทั้ง upper motor neurons (UMN) และ lower motor neurons (LMN) พร้อมกัน โดยไม่มี sensory involvement\n\nUMN signs: spasticity, hyperreflexia, Babinski sign, clonus\nLMN signs: weakness, muscle wasting, fasciculations, hyporeflexia\nในผู้ป่วยรายนี้: ขาอ่อนแรง + spasticity + hyperreflexia + Babinski = UMN signs ชัดเจน ไม่มี sensory loss\n\nALS มักเริ่มที่แขนหรือขา (limb onset) หรือที่ bulbar (bulbar onset) ลุกลามแบบ progressive ผู้ป่วยมักเสียชีวิตใน 3-5 ปีจาก respiratory failure\n\nการวินิจฉัยใช้ El Escorial criteria: UMN + LMN signs ≥3 regions (bulbar, cervical, thoracic, lumbar) ไม่มี sensory loss ไม่มี sphincter involvement ในระยะต้น\n\nSubacute combined degeneration (vit B12 deficiency) มี dorsal column loss (sensory), cervical myelopathy มักมี cervical pain/radiculopathy",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Peripheral neuropathy",
+          "is_correct": false,
+          "explanation": "Peripheral neuropathy จะมี hyporeflexia/areflexia ไม่ใช่ hyperreflexia และมักมี sensory loss ลักษณะ glove-stocking"
+        },
+        {
+          "label": "B",
+          "text": "Cervical myelopathy",
+          "is_correct": false,
+          "explanation": "Cervical myelopathy ก็ให้ UMN signs ที่ขา แต่มักมี neck pain, radiculopathy แขน และ sensory level ซึ่งผู้ป่วยไม่มี"
+        },
+        {
+          "label": "C",
+          "text": "Amyotrophic lateral sclerosis (ALS)",
+          "is_correct": true,
+          "explanation": "UMN signs + ไม่มี sensory loss + progressive weakness ตรงกับ ALS มากที่สุด ต้องหา LMN signs ร่วม (fasciculations, atrophy) ด้วย EMG"
+        },
+        {
+          "label": "D",
+          "text": "Subacute combined degeneration",
+          "is_correct": false,
+          "explanation": "SCD (B12 deficiency) มี dorsal column loss → sensory ataxia, loss of vibration/proprioception + pyramidal signs ผู้ป่วยไม่มี sensory involvement"
+        },
+        {
+          "label": "E",
+          "text": "Spinal cord compression L1-2",
+          "is_correct": false,
+          "explanation": "L1-2 compression จะให้ symptoms ที่ขาแต่มักมี conus/cauda equina syndrome (bladder/bowel, saddle anesthesia) ไม่ใช่ UMN signs ล้วน"
+        }
+      ],
+      "key_takeaway": "ALS: mixed UMN + LMN signs ในหลาย regions + ไม่มี sensory loss = pathognomonic; ต้องวินิจฉัยแยกจาก cervical myelopathy (MRI), B12 deficiency (blood test)"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 16 ปี มีประวัติชักเกร็งกระตุกในช่วงวัยรุ่น มาด้วยอาการสะดุ้งกระตุกแขนทั้งสองข้างตอนเช้าหลังตื่นนอน บางครั้งทำแก้วน้ำหล่นจากมือ EEG แสดง polyspike-and-wave discharges ช่วงเช้า การวินิจฉัยที่ถูกต้องและยาที่ควรหลีกเลี่ยงคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Absence epilepsy - หลีกเลี่ยง valproate"
+      },
+      {
+        "label": "B",
+        "text": "Juvenile myoclonic epilepsy - หลีกเลี่ยง carbamazepine"
+      },
+      {
+        "label": "C",
+        "text": "Benign rolandic epilepsy - หลีกเลี่ยง phenobarbital"
+      },
+      {
+        "label": "D",
+        "text": "West syndrome - หลีกเลี่ยง valproate"
+      },
+      {
+        "label": "E",
+        "text": "Dravet syndrome - หลีกเลี่ยง lamotrigine"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Juvenile myoclonic epilepsy (JME): myoclonic jerks ตอนเช้า + GTCS + polyspike-and-wave EEG; carbamazepine/phenytoin อาจกระตุ้น myoclonus ให้แย่ลง",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Juvenile myoclonic epilepsy - หลีกเลี่ยง carbamazepine",
+      "reason": "Juvenile myoclonic epilepsy (JME) เป็น genetic generalized epilepsy เริ่มในวัยรุ่น 12-18 ปี อาการหลักคือ myoclonic jerks ตอนเช้าหลังตื่นนอน ทำของหล่นจากมือ บางครั้งมี absence และ GTCS\n\nEEG: polyspike-and-wave discharges ที่ 4-6 Hz generalized พบมากตอนเช้า และกระตุ้นด้วย photic stimulation\n\nValproate เป็น first-line ที่มีประสิทธิภาพสูงสุดสำหรับ JME ครอบคลุมทุกอาการ (myoclonic, GTCS, absence) ถ้าผู้ป่วยหญิงวัยเจริญพันธุ์ พิจารณา levetiracetam หรือ lamotrigine แทน\n\nยาที่ต้องหลีกเลี่ยงใน JME ได้แก่ carbamazepine, phenytoin, gabapentin, pregabalin, vigabatrin เพราะเป็น sodium channel blockers ที่อาจ worsen myoclonus และ absence seizure ใน generalized epilepsy",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Absence epilepsy - หลีกเลี่ยง valproate",
+          "is_correct": false,
+          "explanation": "Absence epilepsy มีแค่ absence seizures ไม่มี myoclonic jerks; valproate ใช้ได้ใน absence ไม่ต้องหลีกเลี่ยง"
+        },
+        {
+          "label": "B",
+          "text": "Juvenile myoclonic epilepsy - หลีกเลี่ยง carbamazepine",
+          "is_correct": true,
+          "explanation": "JME ถูกต้อง; carbamazepine/phenytoin ห้ามใช้ใน JME เพราะ worsen myoclonic seizures และ absence"
+        },
+        {
+          "label": "C",
+          "text": "Benign rolandic epilepsy - หลีกเลี่ยง phenobarbital",
+          "is_correct": false,
+          "explanation": "Benign rolandic epilepsy (BECTS): focal seizure กลางคืน hemisphere ข้างหนึ่ง ไม่มี myoclonic jerks อาการไม่ตรง"
+        },
+        {
+          "label": "D",
+          "text": "West syndrome - หลีกเลี่ยง valproate",
+          "is_correct": false,
+          "explanation": "West syndrome เกิดในทารก <1 ปี infantile spasms + hypsarrhythmia EEG อายุผู้ป่วยไม่ตรง"
+        },
+        {
+          "label": "E",
+          "text": "Dravet syndrome - หลีกเลี่ยง lamotrigine",
+          "is_correct": false,
+          "explanation": "Dravet syndrome: fever-triggered seizures เริ่ม <1 ปี sodium channelopathy (SCN1A); lamotrigine worsen Dravet แต่ไม่ใช่ diagnosis ในผู้ป่วยนี้"
+        }
+      ],
+      "key_takeaway": "JME: myoclonic jerks ตอนเช้า + GTCS + polyspike-wave EEG → valproate first-line; หลีกเลี่ยง carbamazepine/phenytoin/gabapentin (worsen myoclonus)"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 75 ปี มาด้วยอาการหลงลืม ทำอะไรซ้ำๆ เช่น ถามคำถามเดิม ลืมของ เริ่มมา 2 ปี ปัจจุบันจำวันที่ไม่ได้ หลงบ้านแถวบ้าน ไม่สามารถจัดการการเงินได้ ตรวจพบ MMSE 18/30 ลด orientation memory คำตอบที่ถูกต้องเกี่ยวกับการรักษาคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Donepezil ช่วยรักษาให้หายได้"
+      },
+      {
+        "label": "B",
+        "text": "Donepezil ช่วยชะลออาการได้ ไม่ได้รักษาให้หาย"
+      },
+      {
+        "label": "C",
+        "text": "Memantine ใช้ใน mild AD ดีที่สุด"
+      },
+      {
+        "label": "D",
+        "text": "Antipsychotic เป็น first-line สำหรับ behavioral symptoms"
+      },
+      {
+        "label": "E",
+        "text": "ไม่มียาที่มีประสิทธิภาพในการรักษา AD"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Donepezil (AChE inhibitor) ชะลอการดำเนินโรค Alzheimer ได้ แต่ไม่ได้รักษาให้หาย (disease-modifying) ใช้ใน mild-moderate AD",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Donepezil ช่วยชะลออาการได้ ไม่ได้รักษาให้หาย",
+      "reason": "Alzheimer's disease (AD) เป็นสาเหตุ dementia ที่พบบ่อยที่สุด (~60-70%) เกิดจาก amyloid plaques และ neurofibrillary tangles ทำให้ cholinergic neurons เสื่อม\n\nยาที่ใช้: acetylcholinesterase inhibitors (AChEI) ได้แก่ donepezil, rivastigmine, galantamine ใช้ใน mild-moderate AD (MMSE 10-26) ออกฤทธิ์เพิ่ม acetylcholine ใน synapse ช่วย cognitive function ชั่วคราว แต่ไม่หยุดยั้งการดำเนินโรค\n\nMemantine (NMDA antagonist) ใช้ใน moderate-severe AD (MMSE < 20) หรือใช้ร่วมกับ AChEI\n\nผู้ป่วยรายนี้ MMSE 18 = moderate AD เหมาะสำหรับทั้ง donepezil และ memantine\n\nBehavioral symptoms ของ dementia (agitation, aggression, psychosis) ควรรักษาด้วย non-pharmacological intervention ก่อน antipsychotic เป็น last resort เพราะเพิ่ม mortality ในผู้สูงอายุ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Donepezil ช่วยรักษาให้หายได้",
+          "is_correct": false,
+          "explanation": "ไม่มียา disease-modifying สำหรับ AD ที่ approved ในปัจจุบัน donepezil เป็นเพียง symptomatic treatment ชะลออาการเท่านั้น"
+        },
+        {
+          "label": "B",
+          "text": "Donepezil ช่วยชะลออาการได้ ไม่ได้รักษาให้หาย",
+          "is_correct": true,
+          "explanation": "ถูกต้อง donepezil เป็น symptomatic treatment ที่ชะลอการดำเนินโรคได้ประมาณ 6-12 เดือน แต่โรคยังดำเนินต่อไป"
+        },
+        {
+          "label": "C",
+          "text": "Memantine ใช้ใน mild AD ดีที่สุด",
+          "is_correct": false,
+          "explanation": "Memantine มี indication ใน moderate-severe AD (MMSE < 20) ไม่ใช่ mild; AChEI เหมาะกับ mild-moderate"
+        },
+        {
+          "label": "D",
+          "text": "Antipsychotic เป็น first-line สำหรับ behavioral symptoms",
+          "is_correct": false,
+          "explanation": "Non-pharmacological first-line เสมอ antipsychotics เพิ่ม mortality (black box warning) ใช้เฉพาะเมื่อจำเป็นจริงๆ"
+        },
+        {
+          "label": "E",
+          "text": "ไม่มียาที่มีประสิทธิภาพในการรักษา AD",
+          "is_correct": false,
+          "explanation": "AChEI และ memantine มี evidence ชัดเจนว่าช่วยชะลอ cognitive decline ใน AD แม้ไม่ใช่ disease-modifying"
+        }
+      ],
+      "key_takeaway": "AD treatment: AChEI (donepezil) mild-moderate; Memantine moderate-severe; ทั้งคู่ symptomatic ไม่ใช่ disease-modifying; behavioral sx → non-pharm first, antipsychotic last resort"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 22 ปี มาด้วยอาการปวดหัวและมีไข้ 38.5°C คอแข็ง photophobia ตรวจ Kernig sign positive, Brudzinski sign positive ทำ LP: opening pressure 280 mmH2O, WBC 1500 cells (PMN 90%), protein 150 mg/dL, glucose 25 mg/dL (serum glucose 110 mg/dL) ยาที่ต้องให้ทันทีก่อนผล culture คือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ampicillin IV"
+      },
+      {
+        "label": "B",
+        "text": "Ceftriaxone IV + dexamethasone IV"
+      },
+      {
+        "label": "C",
+        "text": "Acyclovir IV"
+      },
+      {
+        "label": "D",
+        "text": "Vancomycin IV เพียงอย่างเดียว"
+      },
+      {
+        "label": "E",
+        "text": "Metronidazole IV"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Bacterial meningitis (PMN pleocytosis, low glucose, high protein) ต้องให้ ceftriaxone IV ทันที + dexamethasone IV ลด inflammation และ hearing loss",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Ceftriaxone IV + dexamethasone IV",
+      "reason": "CSF findings บ่งบอก bacterial meningitis: WBC สูงมาก (>1000) ส่วนใหญ่เป็น PMN, protein สูง >100 mg/dL, glucose ต่ำ < 40 mg/dL หรือ CSF/serum glucose ratio < 0.3 (ในที่นี้ 25/110 = 0.23)\n\nEmpirical treatment ทันทีก่อนผล culture: Ceftriaxone 2 g IV q12h (ครอบคลุม S. pneumoniae, N. meningitidis ซึ่งเป็นสาเหตุบ่อยสุดในผู้ใหญ่)\n\nDexamethasone 0.15 mg/kg IV q6h x 4 วัน ให้ก่อนหรือพร้อม antibiotics ลด inflammatory cascade จาก cytokines ลด mortality และ hearing loss โดยเฉพาะใน pneumococcal meningitis\n\nในผู้ที่มีปัจจัยเสี่ยง Listeria (อายุ > 50, immunocompromised, ตั้งครรภ์) ต้องเพิ่ม ampicillin ด้วย\n\nAcyclovir ใช้กับ viral (HSV) encephalitis/meningitis ไม่ใช่ bacterial",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ampicillin IV",
+          "is_correct": false,
+          "explanation": "Ampicillin ใช้เพิ่มใน Listeria coverage แต่ไม่ครอบคลุม pneumococcal meningitis ซึ่งพบบ่อยในผู้ใหญ่ อายุ 22 ปียังไม่จำเป็นต้องเพิ่ม ampicillin"
+        },
+        {
+          "label": "B",
+          "text": "Ceftriaxone IV + dexamethasone IV",
+          "is_correct": true,
+          "explanation": "Standard empirical therapy สำหรับ bacterial meningitis ในผู้ใหญ่อายุน้อย ceftriaxone ครอบคลุม pneumococcus/meningococcus; dexamethasone ลด mortality และ hearing loss"
+        },
+        {
+          "label": "C",
+          "text": "Acyclovir IV",
+          "is_correct": false,
+          "explanation": "Acyclovir สำหรับ HSV encephalitis/meningitis ซึ่งมี CSF lymphocytosis ไม่ใช่ PMN predominance และ glucose ปกติหรือต่ำเล็กน้อย"
+        },
+        {
+          "label": "D",
+          "text": "Vancomycin IV เพียงอย่างเดียว",
+          "is_correct": false,
+          "explanation": "Vancomycin สำหรับ resistant pneumococcus แต่ต้องใช้ร่วมกับ ceftriaxone ไม่ใช่เดี่ยว"
+        },
+        {
+          "label": "E",
+          "text": "Metronidazole IV",
+          "is_correct": false,
+          "explanation": "Metronidazole สำหรับ anaerobes/brain abscess ไม่ใช่ bacterial meningitis"
+        }
+      ],
+      "key_takeaway": "Bacterial meningitis: CSF PMN >1000, glucose ต่ำ, protein สูง → ceftriaxone + dexamethasone ทันที; เพิ่ม ampicillin ถ้าสงสัย Listeria (>50 ปี, immunocompromised)"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 40 ปี มาด้วยอาการปวดตามแนวเอวซ้ายร้าวลงขาซ้าย ด้านหน้าต้นขาถึงหัวเข่า ตรวจพบกล้ามเนื้อ quadriceps อ่อนแรง Knee jerk ลดลงข้างซ้าย ชาด้านหน้าต้นขา Nerve root ที่ถูกกดทับน่าจะเป็นข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "L2-L3"
+      },
+      {
+        "label": "B",
+        "text": "L3-L4"
+      },
+      {
+        "label": "C",
+        "text": "L4-L5"
+      },
+      {
+        "label": "D",
+        "text": "L5-S1"
+      },
+      {
+        "label": "E",
+        "text": "S1-S2"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "L4 nerve root: quadriceps weakness, reduced knee jerk (L3-4), ชา anterior thigh/medial leg, รักษา disc herniation L3-L4",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. L3-L4",
+      "reason": "การกดทับ L4 nerve root (ที่ระดับ disc L3-L4) ทำให้เกิด:\n- Motor: quadriceps weakness (knee extension), tibialis anterior weakness (foot dorsiflexion ลดลงเล็กน้อย)\n- Reflex: patellar reflex (knee jerk) ลดลงหรือหาย เพราะ L4 เป็น efferent arc ของ patellar reflex\n- Sensory: ชาบริเวณ anterior thigh, medial lower leg\n\nเปรียบเทียบ nerve root levels:\n- L3: hip flexion weakness, anterior/medial thigh numbness, knee jerk ลดลง\n- L4: quadriceps weakness, anterior thigh/medial leg, knee jerk absent\n- L5: extensor hallucis longus weakness (big toe extension), lateral leg/dorsum foot numbness, ไม่มี reflex ที่ชัดเจน\n- S1: ankle plantar flexion weakness, lateral foot numbness, ankle jerk (Achilles reflex) ลดลง\n\nในผู้ป่วยรายนี้: quadriceps อ่อนแรง + knee jerk ลดลง + ชา anterior thigh = L4 root = disc L3-L4",
+      "choices": [
+        {
+          "label": "A",
+          "text": "L2-L3",
+          "is_correct": false,
+          "explanation": "L3 root: hip flexion/adduction weakness, anterior/medial thigh numbness, knee jerk ลดลงเล็กน้อย อาการไม่ตรงทั้งหมด"
+        },
+        {
+          "label": "B",
+          "text": "L3-L4",
+          "is_correct": true,
+          "explanation": "L4 root: quadriceps weakness + knee jerk absent + anterior thigh/medial leg numbness ตรงกับอาการผู้ป่วยทุกอย่าง"
+        },
+        {
+          "label": "C",
+          "text": "L4-L5",
+          "is_correct": false,
+          "explanation": "L5 root: extensor hallucis longus weakness (toe drop), lateral leg/dorsal foot numbness, ไม่มี reflex ที่ชัดเจนตรวจได้"
+        },
+        {
+          "label": "D",
+          "text": "L5-S1",
+          "is_correct": false,
+          "explanation": "S1 root: gastrocnemius/soleus weakness, lateral foot/sole numbness, ankle jerk ลดลง"
+        },
+        {
+          "label": "E",
+          "text": "S1-S2",
+          "is_correct": false,
+          "explanation": "S2 root: perineal/posterior thigh sensation, sphincter involvement ไม่ใช่ anterior thigh pattern"
+        }
+      ],
+      "key_takeaway": "L4 root (disc L3-L4): quadriceps weakness + knee jerk ลดลง + anterior thigh/medial leg numbness; L5 root: toe drop + lateral leg + ไม่มี clear reflex; S1: ankle jerk ลดลง + lateral foot"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 75 ปี มาด้วยอาการสับสนเฉียบพลัน ไม่รู้ว่าอยู่ที่ไหน วันเวลา ไม่สนใจสิ่งรอบข้าง เวลากลางวันง่วง กลางคืนตื่น อาการเป็น fluctuating ตลอดวัน ไม่มีไข้ ยาที่ใช้: Benzodiazepine สำหรับนอนไม่หลับ สาเหตุที่น่าจะเป็นมากที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Dementia"
+      },
+      {
+        "label": "B",
+        "text": "Delirium จาก Benzodiazepine"
+      },
+      {
+        "label": "C",
+        "text": "Psychosis"
+      },
+      {
+        "label": "D",
+        "text": "Major depression"
+      },
+      {
+        "label": "E",
+        "text": "Normal aging"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Acute confusion + fluctuating consciousness + sleep-wake reversal + ผู้สูงอายุ + benzodiazepine = Delirium",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Delirium จาก Benzodiazepine",
+      "reason": "Delirium (acute confusional state) มีลักษณะเฉพาะ 4 อย่างตาม DSM-5: 1) Disturbance of attention and awareness 2) Acute onset และ fluctuating course 3) Additional cognitive disturbance 4) ไม่ได้อธิบายได้ด้วย dementia และมีสาเหตุทางกาย\n\nสาเหตุพบบ่อยใน elderly (I WATCH DEATH mnemonic): Infections, Withdrawal, Acute metabolic, Trauma, CNS pathology, Hypoxia, Deficiencies, Endocrine, Acute vascular, Toxins/drugs, Heavy metals\n\nBenzodiazepine เป็นสาเหตุที่พบบ่อยมากของ delirium ในผู้สูงอายุ (anticholinergic load, CNS depression)\n\nการรักษา: หา และ treat underlying cause, ลดหรือหยุด offending drugs, non-pharmacologic management (reorientation, adequate lighting, mobilization), Antipsychotics ถ้าจำเป็น (Haloperidol ปริมาณน้อย)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Dementia",
+          "is_correct": false,
+          "explanation": "Dementia เป็น chronic progressive cognitive decline ไม่มี acute onset หรือ fluctuating course อย่างมีนัยสำคัญ ไม่มี attention disturbance เด่นชัดแบบ delirium"
+        },
+        {
+          "label": "B",
+          "text": "Delirium จาก Benzodiazepine",
+          "is_correct": true,
+          "explanation": "Acute onset + fluctuating course + attention disturbance + sleep-wake reversal + ผู้สูงอายุ + benzodiazepine use = classic drug-induced delirium"
+        },
+        {
+          "label": "C",
+          "text": "Psychosis",
+          "is_correct": false,
+          "explanation": "Psychosis มี hallucination, delusion โดยไม่มี altered consciousness ชัดเจน ไม่มี acute onset แบบ delirium"
+        },
+        {
+          "label": "D",
+          "text": "Major depression",
+          "is_correct": false,
+          "explanation": "Depression ทำให้ pseudodementia แต่ไม่ทำให้ acute fluctuating consciousness"
+        },
+        {
+          "label": "E",
+          "text": "Normal aging",
+          "is_correct": false,
+          "explanation": "Aging ไม่ทำให้เกิด acute confusion หรือ disorientation ต้องหาสาเหตุ medical เสมอ"
+        }
+      ],
+      "key_takeaway": "Delirium = Acute onset + Fluctuating + Attention disturbance → หาสาเหตุ (ยา, infection, metabolic) + Treat underlying cause"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 40 ปี มาด้วยอาการปวดศีรษะทุกวัน ประเมินพบว่าใช้ Ibuprofen มากกว่า 15 วันต่อเดือนมาหลายเดือน เดิมปวดศีรษะน้อยลงเมื่อได้รับยา แต่ตอนนี้ยาได้ผลน้อยลงมาก สาเหตุที่อธิบายอาการปวดที่เพิ่มขึ้นคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Brain tumor"
+      },
+      {
+        "label": "B",
+        "text": "Medication overuse headache (MOH)"
+      },
+      {
+        "label": "C",
+        "text": "New-onset migraine"
+      },
+      {
+        "label": "D",
+        "text": "Meningitis"
+      },
+      {
+        "label": "E",
+        "text": "Cerebral venous thrombosis"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Headache มากกว่า 15 วัน/เดือน + ใช้ analgesic/triptan >10-15 วัน/เดือน = Medication overuse headache",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Medication overuse headache (MOH)",
+      "reason": "Medication overuse headache (MOH) หรือ analgesic rebound headache เกิดจากการใช้ยาแก้ปวดหัวมากเกินไป โดย criteria ICHD-3:\n- Headache ≥15 วัน/เดือน (chronic daily headache)\n- ใช้ analgesics (NSAIDs, paracetamol) >15 วัน/เดือน หรือ triptans/opioids >10 วัน/เดือน มากกว่า 3 เดือน\n\nกลไก: chronic analgesic use ทำให้เกิด central sensitization และ downregulation ของ pain modulation pathways ทำให้ threshold ต่ำลง เกิด rebound headache เมื่อยาหมดฤทธิ์\n\nการรักษา: หยุดยาที่ใช้เกิน (analgesic withdrawal) ซึ่งอาจทำให้อาการชั่วคราวแย่ลง 2-10 วัน, เริ่ม preventive therapy สำหรับ primary headache disorder (เช่น topiramate, amitriptyline สำหรับ migraine)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Brain tumor",
+          "is_correct": false,
+          "explanation": "Brain tumor มักมีอาการ progressive headache แย่ลง neurological deficit focal seizures ไม่มีรูปแบบสัมพันธ์กับการใช้ยา"
+        },
+        {
+          "label": "B",
+          "text": "Medication overuse headache (MOH)",
+          "is_correct": true,
+          "explanation": "Chronic daily headache + ใช้ NSAIDs >15 วัน/เดือน เป็นเดือน + ยาได้ผลน้อยลง = classic MOH"
+        },
+        {
+          "label": "C",
+          "text": "New-onset migraine",
+          "is_correct": false,
+          "explanation": "Migraine เป็น episodic headache ไม่ใช่ daily รายนี้มีรูปแบบ daily headache ที่เพิ่งเกิดสัมพันธ์กับ analgesic overuse"
+        },
+        {
+          "label": "D",
+          "text": "Meningitis",
+          "is_correct": false,
+          "explanation": "Meningitis มีไข้ คอแข็ง photophobia เป็น acute/subacute ไม่ใช่ chronic daily pattern"
+        },
+        {
+          "label": "E",
+          "text": "Cerebral venous thrombosis",
+          "is_correct": false,
+          "explanation": "CVT มีปวดหัวเฉียบพลัน อาจมี focal deficits, seizures, papilledema ไม่ใช่ pattern เรื้อรังจาก analgesic overuse"
+        }
+      ],
+      "key_takeaway": "MOH = Chronic daily headache (≥15 วัน/เดือน) + Analgesic overuse (>15 วัน/เดือน) → หยุดยา + Preventive therapy"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL1",
+    "difficulty": "easy",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 45 ปี มาด้วยอาการชาและปวดแสบที่หน้าอกและท้องลักษณะ band-like ทั้งสองข้าง แขนอ่อนแรงทั้งสองข้าง กลั้นปัสสาวะไม่ได้ ตรวจพบ hyperreflexia ที่ขา Babinski positive bilateral sensory level ที่ T6 MRI spine พบ enhancing lesion ที่ spinal cord ระดับ C6-T2 สาเหตุที่ต้องพิจารณาก่อนอื่นคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Herniated disc"
+      },
+      {
+        "label": "B",
+        "text": "Transverse myelitis"
+      },
+      {
+        "label": "C",
+        "text": "ALS"
+      },
+      {
+        "label": "D",
+        "text": "Syringomyelia"
+      },
+      {
+        "label": "E",
+        "text": "GBS"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Band-like pain + sensory level + UMN signs + bowel/bladder dysfunction + MRI enhancing cord lesion = Transverse myelitis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Transverse myelitis",
+      "reason": "Transverse myelitis (TM) คือการอักเสบของ spinal cord ที่ครอบคลุม cross-section อย่างสมบูรณ์หรือบางส่วน\n\nลักษณะ: 1) Motor: weakness (paraparesis/tetraparesis) UMN signs (hyperreflexia, Babinski) 2) Sensory: sensory level (ชาตั้งแต่ level ใดลงล่าง), band-like sensation 3) Autonomic: bladder/bowel dysfunction\n\nMRI: T2 hyperintensity ใน cord ≥2 vertebral segments (long segment = NMO-SD), gadolinium enhancement ในระยะ acute\n\nสาเหตุ: Idiopathic, MS-related, NMOSD (AQP4 antibody), infection, post-vaccination\n\nต้องส่งตรวจ: AQP4-IgG, MOG-IgG, oligoclonal bands ใน CSF, MRI brain\n\nรักษา: High-dose IV methylprednisolone 1g/day x 5 วัน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Herniated disc",
+          "is_correct": false,
+          "explanation": "Herniated disc ทำให้มี radiculopathy (dermatomal pattern) ไม่ใช่ sensory level ทั่วทั้ง dermatome และมักไม่มี bowel/bladder dysfunction และ UMN signs"
+        },
+        {
+          "label": "B",
+          "text": "Transverse myelitis",
+          "is_correct": true,
+          "explanation": "Band-like sensation + sensory level + UMN signs + autonomous dysfunction + MRI enhancing cord lesion = classic transverse myelitis"
+        },
+        {
+          "label": "C",
+          "text": "ALS",
+          "is_correct": false,
+          "explanation": "ALS เป็น pure motor disease ไม่มี sensory level ไม่มี bowel/bladder dysfunction ใน early stage ไม่มี MRI cord enhancement"
+        },
+        {
+          "label": "D",
+          "text": "Syringomyelia",
+          "is_correct": false,
+          "explanation": "Syringomyelia มี cape-like dissociated sensory loss (pain/temperature ที่แขน แต่ proprioception ปกติ) ไม่มี complete sensory level ไม่มี cord enhancement"
+        },
+        {
+          "label": "E",
+          "text": "GBS",
+          "is_correct": false,
+          "explanation": "GBS เป็น ascending LMN flaccid paralysis + areflexia ไม่มี UMN signs (hyperreflexia, Babinski) ไม่มี sensory level ไม่มี MRI cord lesion"
+        }
+      ],
+      "key_takeaway": "Transverse myelitis = Sensory level + UMN signs + Autonomic dysfunction + MRI cord lesion → IV methylprednisolone + ตรวจ AQP4-IgG, MOG-IgG"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 15 ปี มาด้วยอาการชักเกร็งกระตุกทั้งตัวก่อนตื่นนอน และมีอาการสะดุ้งของแขนทั้งสองข้างเวลาเช้า (myoclonic jerks) โดยเฉพาะช่วง 1-2 ชั่วโมงแรกหลังตื่น EEG พบ 3-6 Hz generalized polyspike-wave discharge ไม่มีความผิดปกติทาง MRI brain การวินิจฉัยที่ถูกต้องคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Lennox-Gastaut syndrome"
+      },
+      {
+        "label": "B",
+        "text": "Juvenile myoclonic epilepsy (JME)"
+      },
+      {
+        "label": "C",
+        "text": "Absence epilepsy"
+      },
+      {
+        "label": "D",
+        "text": "Dravet syndrome"
+      },
+      {
+        "label": "E",
+        "text": "West syndrome"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Myoclonic jerks ตอนเช้า + GTCS + วัยรุ่น + EEG generalized polyspike-wave = Juvenile myoclonic epilepsy",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Juvenile myoclonic epilepsy (JME)",
+      "reason": "Juvenile myoclonic epilepsy เป็น genetic generalized epilepsy ที่พบบ่อยที่สุดในวัยรุ่น อายุ 12-18 ปี\n\nTriad ของ JME: 1) Myoclonic jerks ช่วงเช้าหลังตื่น (แขนกระตุก ทำของหล่น) 2) Generalized tonic-clonic seizure (GTCS) โดยเฉพาะช่วงเช้า 3) Absence seizure ใน 30%\n\nEEG: 3-6 Hz generalized polyspike-wave discharge ตอบสนองต่อ photic stimulation ได้บ่อย\n\nยา: Valproate เป็น most effective สำหรับ JME (ลด myoclonic, GTCS และ absence) ทางเลือกอื่น: Lamotrigine, Levetiracetam (ในผู้หญิงที่วางแผนตั้งครรภ์ หลีกเลี่ยง valproate เพราะ teratogenic)\n\nสำคัญ: ผู้ป่วย JME ต้องใช้ยาตลอดชีวิต เพราะ relapse rate สูงมากเมื่อหยุดยา",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Lennox-Gastaut syndrome",
+          "is_correct": false,
+          "explanation": "LGS เป็น severe epileptic encephalopathy มี multiple seizure types (tonic, atonic, atypical absence) EEG มี <2.5 Hz slow spike-wave ไม่ใช่ polyspike-wave 3-6 Hz"
+        },
+        {
+          "label": "B",
+          "text": "Juvenile myoclonic epilepsy (JME)",
+          "is_correct": true,
+          "explanation": "Myoclonic jerks ตอนเช้า + GTCS + วัยรุ่น + EEG polyspike-wave 3-6 Hz + MRI ปกติ = classic JME"
+        },
+        {
+          "label": "C",
+          "text": "Absence epilepsy",
+          "is_correct": false,
+          "explanation": "Typical absence epilepsy เป็น 3 Hz spike-wave ชัก staring นาน 5-30 วินาที ไม่มี myoclonic jerks เด่น พบในเด็กอายุ 4-10 ปี"
+        },
+        {
+          "label": "D",
+          "text": "Dravet syndrome",
+          "is_correct": false,
+          "explanation": "Dravet syndrome เริ่มในทารก <1 ปี มี prolonged febrile seizure SCN1A mutation EEG และ MRI อาจผิดปกติ"
+        },
+        {
+          "label": "E",
+          "text": "West syndrome",
+          "is_correct": false,
+          "explanation": "West syndrome เป็น epileptic encephalopathy ในทารก <1 ปี มี infantile spasms + hypsarrhythmia ใน EEG ไม่ใช่วัยรุ่น"
+        }
+      ],
+      "key_takeaway": "JME = วัยรุ่น + Myoclonic jerks ตอนเช้า + GTCS + EEG generalized polyspike-wave → Valproate (หรือ Levetiracetam) ต้องกินยาตลอดชีวิต"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 50 ปี มาด้วยอาการปวดหัวทุกวัน ปวดมากเวลาเช้า ตื่นมาปวด มักดีขึ้นหลังลุกออกจากเตียง ปวดแบบ pressure หรือ dull ทั้งศีรษะ ตรวจพบ papilledema ทั้งสองข้าง ไม่มี focal neurological deficit BMI 38 kg/m2 การวินิจฉัยที่น่าจะเป็นมากที่สุดคือข้อใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Migraine"
+      },
+      {
+        "label": "B",
+        "text": "Idiopathic intracranial hypertension (IIH)"
+      },
+      {
+        "label": "C",
+        "text": "Brain tumor"
+      },
+      {
+        "label": "D",
+        "text": "Hypertensive headache"
+      },
+      {
+        "label": "E",
+        "text": "Tension-type headache"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Obese patient + papilledema + daily morning headache + no focal deficit + no mass lesion = IIH",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Idiopathic intracranial hypertension (IIH)",
+      "reason": "Idiopathic intracranial hypertension (IIH) หรือ pseudotumor cerebri มีลักษณะ: opening pressure >250 mmH2O ใน CSF โดยไม่มี space-occupying lesion หรือ hydrocephalus\n\nผู้ป่วยทั่วไป: หญิงอ้วน (BMI >30) วัยเจริญพันธุ์ แต่พบในชายได้\n\nอาการ: 1) Daily headache ปวดมากเวลาเช้า (worse supine) 2) Papilledema ทั้งสองข้าง 3) Visual disturbance (transient visual obscurations) 4) Pulsatile tinnitus 5) Diplopia (CN VI palsy)\n\nDiagnosis: MRI brain (ปกติ หรืออาจเห็น empty sella, dilated optic nerve sheaths) + LP (opening pressure >250 mmH2O CSF ปกติ)\n\nรักษา: Weight loss (effective มาก), Acetazolamide (ลด CSF production), LP (therapeutic) ถ้ารุนแรง, Optic nerve sheath fenestration หรือ VP shunt ถ้าสูญเสีย vision",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Migraine",
+          "is_correct": false,
+          "explanation": "Migraine ไม่ทำให้เกิด papilledema และมักเป็น episodic ไม่ใช่ daily ไม่มี morning predominance ชัดเจน"
+        },
+        {
+          "label": "B",
+          "text": "Idiopathic intracranial hypertension (IIH)",
+          "is_correct": true,
+          "explanation": "Obese male + papilledema bilateral + daily morning headache (worse supine) + no focal deficit = classic IIH"
+        },
+        {
+          "label": "C",
+          "text": "Brain tumor",
+          "is_correct": false,
+          "explanation": "Brain tumor ทำให้ papilledema ได้ แต่มักมี focal neurological deficit และ MRI จะพบ mass lesion ผู้ป่วยรายนี้ไม่มี focal deficit"
+        },
+        {
+          "label": "D",
+          "text": "Hypertensive headache",
+          "is_correct": false,
+          "explanation": "Hypertensive headache เกิดเมื่อ BP สูงมาก >180/120 mmHg ไม่ทำให้ papilledema ยกเว้น hypertensive emergency"
+        },
+        {
+          "label": "E",
+          "text": "Tension-type headache",
+          "is_correct": false,
+          "explanation": "Tension headache ไม่มี papilledema เป็น bilateral pressure headache ที่ severity น้อยกว่า ไม่มี morning predominance"
+        }
+      ],
+      "key_takeaway": "IIH = Obese patient + Papilledema + Morning headache (worse supine) + ไม่มี mass lesion → LP (opening pressure >250) → Acetazolamide + Weight loss"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL2",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 30 ปี มาด้วย diplopia และ ptosis ข้างขวา เริ่มเมื่อ 3 สัปดาห์ก่อน บางวันดี บางวันแย่ (fatigable) ตรวจพบ ptosis ขวาเพิ่มขึ้นหลัง sustained upgaze 60 วินาที (fatigue test positive) CT chest พบ anterior mediastinal mass ขนาด 3 cm การวินิจฉัยและขั้นตอนต่อไปคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Multiple sclerosis → MRI brain"
+      },
+      {
+        "label": "B",
+        "text": "Myasthenia gravis + thymoma → AChR antibody + thymectomy"
+      },
+      {
+        "label": "C",
+        "text": "Horner syndrome → carotid CT angiography"
+      },
+      {
+        "label": "D",
+        "text": "Mitochondrial myopathy → muscle biopsy"
+      },
+      {
+        "label": "E",
+        "text": "Internuclear ophthalmoplegia → MRI brainstem"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Fatigable diplopia + ptosis + thymoma → Myasthenia gravis + thymoma → AChR antibody + thymectomy",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Myasthenia gravis + thymoma → AChR antibody + thymectomy",
+      "reason": "Myasthenia Gravis (MG): autoimmune neuromuscular junction disease\n\nFeatures:\n- Fatigable weakness: แย่ลงตามการใช้งาน ดีขึ้นพักผ่อน\n- Ptosis + diplopia (ocular MG) ที่พบบ่อยที่สุด\n- Fatigue test/ice pack test positive\n\nThymoma พบใน ~10-15% ของ MG patients\n→ CT chest ควรทำในทุก MG patient\n\nการวินิจฉัย:\n- AChR antibody (anti-acetylcholine receptor): positive ใน 85% generalized MG\n- Anti-MuSK ถ้า AChR negative\n- Repetitive nerve stimulation: decremental response\n- Single fiber EMG: gold standard (jitter)\n\nThymectomy indication: thymoma (absolute indication) + AChR+ MG อายุ < 60 ปี\n\nการรักษา MG:\n- Pyridostigmine (acetylcholinesterase inhibitor): symptom relief\n- Immunosuppression: prednisolone, azathioprine\n- Thymectomy: ลด antibody production + symptom improvement",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Multiple sclerosis → MRI brain",
+          "is_correct": false,
+          "explanation": "MS ทำให้ internuclear ophthalmoplegia ไม่ใช่ fatigable ptosis + mass"
+        },
+        {
+          "label": "B",
+          "text": "Myasthenia gravis + thymoma → AChR antibody + thymectomy",
+          "is_correct": true,
+          "explanation": "Fatigable ocular symptoms + anterior mediastinal mass = MG + thymoma"
+        },
+        {
+          "label": "C",
+          "text": "Horner syndrome → carotid CT angiography",
+          "is_correct": false,
+          "explanation": "Horner: miosis + ptosis + anhidrosis ไม่ใช่ diplopia + fatigable"
+        },
+        {
+          "label": "D",
+          "text": "Mitochondrial myopathy → muscle biopsy",
+          "is_correct": false,
+          "explanation": "Mito myopathy (CPEO): progressive ไม่ fatigable ไม่มี thymoma"
+        },
+        {
+          "label": "E",
+          "text": "Internuclear ophthalmoplegia → MRI brainstem",
+          "is_correct": false,
+          "explanation": "INO ทำให้ diplopia ไม่ fatigable + ไม่ ptosis"
+        }
+      ],
+      "key_takeaway": "Fatigable ptosis + diplopia + anterior mediastinal mass = MG + thymoma → AChR antibody + thymectomy (absolute indication สำหรับ thymoma)"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 45 ปี มาด้วย severe headache 'thunderclap' onset ที่ occiput ขณะออกกำลังกาย 2 ชั่วโมงก่อน คลื่นไส้อาเจียน CT brain ปกติ LP: xanthochromia ชัดเจน Opening pressure 32 cmH2O ขั้นตอนต่อไปที่สำคัญที่สุดคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "MRI brain + sumatriptan สำหรับ migraine"
+      },
+      {
+        "label": "B",
+        "text": "CT angiography หรือ cerebral angiography เพื่อหา aneurysm"
+      },
+      {
+        "label": "C",
+        "text": "Acetazolamide สำหรับ pseudotumor cerebri"
+      },
+      {
+        "label": "D",
+        "text": "IV dexamethasone สำหรับ meningitis"
+      },
+      {
+        "label": "E",
+        "text": "Lumbar drain สำหรับ high ICP"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Thunderclap headache + CT normal + LP xanthochromia = SAH → CTA หรือ cerebral angio เพื่อ detect aneurysm",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. CT angiography หรือ cerebral angiography เพื่อหา aneurysm",
+      "reason": "Subarachnoid Hemorrhage (SAH) diagnosis:\n- Thunderclap headache (worst headache of life) → SAH ต้องพิสูจน์ว่าไม่ใช่ก่อน\n- CT brain: sensitivity 98% ใน 6 ชั่วโมงแรก แต่ลดลงตามเวลา → CT negative ไม่ exclude SAH\n- LP xanthochromia: ยืนยัน SAH (เลือดในน้ำไขสันหลัง oxidize เป็น oxyhemoglobin/bilirubin)\n\nสาเหตุ SAH หลัก: ruptured intracranial aneurysm (~80%)\n\nขั้นตอนต่อไป:\n- **CT angiography (CTA)**: ตรวจหา aneurysm อย่างรวดเร็ว sensitivity > 90%\n- **Digital Subtraction Angiography (DSA)**: gold standard ถ้า CTA ลบแต่ยังสงสัย\n- เป้าหมาย: secure aneurysm ป้องกัน rebleeding (มรณะ 40-60% ถ้า rebleed)\n\nการรักษา secured aneurysm: endovascular coiling (preferred) หรือ surgical clipping",
+      "choices": [
+        {
+          "label": "A",
+          "text": "MRI brain + sumatriptan สำหรับ migraine",
+          "is_correct": false,
+          "explanation": "LP xanthochromia ยืนยัน SAH แล้ว ไม่ใช่ migraine"
+        },
+        {
+          "label": "B",
+          "text": "CT angiography หรือ cerebral angiography เพื่อหา aneurysm",
+          "is_correct": true,
+          "explanation": "SAH confirmed → ตรวจหา aneurysm ทันที เพื่อ secure ก่อน rebleed"
+        },
+        {
+          "label": "C",
+          "text": "Acetazolamide สำหรับ pseudotumor cerebri",
+          "is_correct": false,
+          "explanation": "PTC ไม่ทำให้ xanthochromia ไม่ใช่ diagnosis ที่ถูกต้อง"
+        },
+        {
+          "label": "D",
+          "text": "IV dexamethasone สำหรับ meningitis",
+          "is_correct": false,
+          "explanation": "Meningitis ทำให้ CSF turbid + cells ไม่ใช่ pure xanthochromia"
+        },
+        {
+          "label": "E",
+          "text": "Lumbar drain สำหรับ high ICP",
+          "is_correct": false,
+          "explanation": "Lumbar drain อาจเป็นอันตรายใน SAH; ต้อง image vascular ก่อน"
+        }
+      ],
+      "key_takeaway": "Thunderclap headache + LP xanthochromia = SAH → CTA/DSA ทันที เพื่อหาและ secure aneurysm (ป้องกัน rebleeding)"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 55 ปี DM, hypertension มาด้วย progressive weakness of left leg แล้วลามไปแขนซ้าย ใน 2 วัน ไม่มี sensory loss เด่น MRI spine ปกติ MRI brain: T2 hyperintensity ที่ right internal capsule posterior limb ขนาด 8 mm ไม่ enhance diffusion restriction ชัด การวินิจฉัยที่เหมาะสมที่สุดคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Multiple sclerosis"
+      },
+      {
+        "label": "B",
+        "text": "Pure motor lacunar stroke"
+      },
+      {
+        "label": "C",
+        "text": "Brain tumor"
+      },
+      {
+        "label": "D",
+        "text": "Transverse myelitis"
+      },
+      {
+        "label": "E",
+        "text": "Conversion disorder"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pure motor hemiplegia (แขน+ขาซ้าย ไม่มี sensory) + small lesion internal capsule = lacunar stroke",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Pure motor lacunar stroke",
+      "reason": "Lacunar infarcts คือ small deep infarcts (< 15 mm) ใน penetrating arteries\n\nLacunar syndromes ที่พบบ่อย:\n1. **Pure motor hemiplegia**: internal capsule posterior limb หรือ pons → weakness ไม่มี sensory loss\n2. Pure sensory stroke: thalamus\n3. Ataxic hemiparesis: internal capsule หรือ pons\n4. Dysarthria-clumsy hand: pons หรือ genu of IC\n5. Sensorimotor stroke: thalamo-capsular\n\nผู้ป่วยรายนี้:\n- Pure motor: แขน + ขา ซ้าย ไม่มี sensory loss\n- DWI restriction: acute infarct ยืนยัน\n- 8 mm lesion internal capsule posterior limb → lacunar infarct\n- Risk factors: DM + HTN → small vessel disease\n\nMS: multiple lesions, young, sensory + motor\nTumor: enhance, gradual onset, mass effect",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Multiple sclerosis",
+          "is_correct": false,
+          "explanation": "MS: young, multiple lesions, sensory symptoms, enhance ± relapsing-remitting"
+        },
+        {
+          "label": "B",
+          "text": "Pure motor lacunar stroke",
+          "is_correct": true,
+          "explanation": "Pure motor hemiplegia + DM/HTN + small DWI lesion internal capsule = lacunar infarct"
+        },
+        {
+          "label": "C",
+          "text": "Brain tumor",
+          "is_correct": false,
+          "explanation": "Tumor: enhance, gradual weeks-months, mass effect ไม่มี acute DWI restriction"
+        },
+        {
+          "label": "D",
+          "text": "Transverse myelitis",
+          "is_correct": false,
+          "explanation": "TM: MRI spine lesion, bladder/bowel involvement, sensory level"
+        },
+        {
+          "label": "E",
+          "text": "Conversion disorder",
+          "is_correct": false,
+          "explanation": "Conversion: ไม่มี lesion บน MRI; ผู้ป่วยนี้มี DWI restriction ชัดเจน"
+        }
+      ],
+      "key_takeaway": "Pure motor hemiplegia (arm + leg, no sensory) + DWI lesion internal capsule + DM/HTN = Lacunar stroke (pure motor type)"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 28 ปี ตั้งครรภ์ 32 สัปดาห์ มาด้วย new onset seizure generalized tonic-clonic BP 170/110 mmHg Urine protein +++  ไม่มีประวัติ epilepsy มาก่อน ยาที่ควรให้ทันทีเพื่อหยุด seizure และป้องกัน recurrence คือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "IV diazepam"
+      },
+      {
+        "label": "B",
+        "text": "IV phenytoin"
+      },
+      {
+        "label": "C",
+        "text": "IV magnesium sulfate"
+      },
+      {
+        "label": "D",
+        "text": "IV levetiracetam"
+      },
+      {
+        "label": "E",
+        "text": "IV labetalol เท่านั้น"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Eclamptic seizure (ตั้งครรภ์ + hypertension + proteinuria + seizure) → IV magnesium sulfate",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. IV magnesium sulfate",
+      "reason": "Eclampsia = Preeclampsia + seizure\n\nMagnesium sulfate ดีกว่า antiepileptic drugs ใน eclampsia เพราะ:\n1. ลด cerebral vasospasm\n2. ลด NMDA receptor activation\n3. RCT (Magpie trial): MgSO4 ลด seizure recurrence 58% vs phenytoin\n\nProtocol MgSO4:\n- Loading dose: 4-6 g IV over 20 นาที\n- Maintenance: 1-2 g/hr infusion\n- Monitor: respiratory rate (ต้อง > 12/min), deep tendon reflexes (loss = toxicity), urine output\n- Antidote (toxicity): calcium gluconate 1 g IV\n\nPhenytoin: ด้อยกว่า MgSO4 ใน eclampsia\nDiazepam: หยุด seizure ได้ แต่ MgSO4 ดีกว่าสำหรับ prevention\nLabetalol: รักษา hypertension ไม่ใช่ seizure\n\nการรักษา eclampsia สมบูรณ์: MgSO4 + antihypertensive + delivery",
+      "choices": [
+        {
+          "label": "A",
+          "text": "IV diazepam",
+          "is_correct": false,
+          "explanation": "หยุด seizure ได้แต่ MgSO4 ดีกว่าสำหรับ prevention ใน eclampsia"
+        },
+        {
+          "label": "B",
+          "text": "IV phenytoin",
+          "is_correct": false,
+          "explanation": "Magpie trial: MgSO4 ดีกว่า phenytoin อย่างมีนัยสำคัญใน eclampsia"
+        },
+        {
+          "label": "C",
+          "text": "IV magnesium sulfate",
+          "is_correct": true,
+          "explanation": "Drug of choice สำหรับ eclamptic seizure: acute + prevention recurrence"
+        },
+        {
+          "label": "D",
+          "text": "IV levetiracetam",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ first-line สำหรับ eclampsia; MgSO4 เป็น standard"
+        },
+        {
+          "label": "E",
+          "text": "IV labetalol เท่านั้น",
+          "is_correct": false,
+          "explanation": "Labetalol รักษา hypertension ไม่ใช่ seizure"
+        }
+      ],
+      "key_takeaway": "Eclampsia (ตั้งครรภ์ + preeclampsia + seizure) → IV Magnesium sulfate (drug of choice สำหรับ seizure treatment + prevention)"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 60 ปี มาด้วย progressive resting tremor ขวา, rigidity, bradykinesia มา 2 ปี เดินก้าวสั้น หยุดเดินลำบาก ตรวจ: pill-rolling tremor ขวา, masked face, stooped posture, positive pull test Levodopa/carbidopa 100/25 mg เริ่มให้แล้ว 2 เดือน ผู้ป่วยถามว่าจะเกิดอะไรขึ้นระยะยาว",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Levodopa ไม่มีผลข้างเคียงระยะยาว"
+      },
+      {
+        "label": "B",
+        "text": "Motor fluctuations (wearing off, on-off) และ dyskinesias มักเกิดหลัง 5-10 ปี"
+      },
+      {
+        "label": "C",
+        "text": "โรคจะหายได้ด้วย levodopa ระยะยาว"
+      },
+      {
+        "label": "D",
+        "text": "Dementia ไม่เกิดใน Parkinson's disease"
+      },
+      {
+        "label": "E",
+        "text": "ต้องผ่าตัด DBS ภายใน 2 ปี"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Levodopa ระยะยาว → Motor fluctuations (wearing off, on-off) + dyskinesias พบบ่อยหลัง 5-10 ปี",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Motor fluctuations (wearing off, on-off) และ dyskinesias มักเกิดหลัง 5-10 ปี",
+      "reason": "Levodopa ระยะยาวใน Parkinson's disease:\n\n**Motor fluctuations** (~50% ของผู้ป่วยหลัง 5 ปี):\n- **Wearing off**: ฤทธิ์ยาลดก่อนถึงเวลา dose ถัดไป\n- **On-off phenomenon**: สลับระหว่าง mobile (on) และ akinetic (off) อย่างรวดเร็ว\n- **Delayed on**: ยาใช้เวลานานกว่าปกติจะออกฤทธิ์\n\n**Levodopa-induced dyskinesias (LID)** (~40% หลัง 4-6 ปี):\n- Choreiform movements ขณะ on-state\n- Peak-dose dyskinesias บ่อยที่สุด\n\nการจัดการ motor fluctuations:\n- ปรับ levodopa: เพิ่มความถี่ ลด dose\n- เพิ่ม MAO-B inhibitor (rasagiline, selegiline)\n- COMT inhibitor (entacapone): ยืด levodopa duration\n- Dopamine agonist\n- Deep Brain Stimulation (DBS): สำหรับ refractory motor fluctuations\n\nParkinson's dementia (PDD): เกิดใน ~80% ใน 20 ปี แต่ไม่ใช่ข้อที่ถามตรงที่สุด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Levodopa ไม่มีผลข้างเคียงระยะยาว",
+          "is_correct": false,
+          "explanation": "Levodopa มี motor complications ระยะยาว (fluctuations + dyskinesias)"
+        },
+        {
+          "label": "B",
+          "text": "Motor fluctuations และ dyskinesias มักเกิดหลัง 5-10 ปี",
+          "is_correct": true,
+          "explanation": "Long-term levodopa complications: motor fluctuations ~50% ที่ 5 ปี, LID ~40% ที่ 4-6 ปี"
+        },
+        {
+          "label": "C",
+          "text": "โรคจะหายได้ด้วย levodopa ระยะยาว",
+          "is_correct": false,
+          "explanation": "Levodopa เป็น symptomatic treatment ไม่ disease-modifying"
+        },
+        {
+          "label": "D",
+          "text": "Dementia ไม่เกิดใน Parkinson's disease",
+          "is_correct": false,
+          "explanation": "PDD เกิดใน ~80% ในระยะยาว"
+        },
+        {
+          "label": "E",
+          "text": "ต้องผ่าตัด DBS ภายใน 2 ปี",
+          "is_correct": false,
+          "explanation": "DBS เป็น option ใน refractory motor fluctuations ไม่ใช่ early disease"
+        }
+      ],
+      "key_takeaway": "Levodopa ระยะยาว → Motor fluctuations (wearing off, on-off) ใน ~50% ที่ 5 ปี + dyskinesias ~40% ที่ 4-6 ปี"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL1",
+    "difficulty": "medium",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 35 ปี มาด้วย bilateral leg weakness และ sensory loss ระดับ T6 ลงมา ปัสสาวะคั่ง เริ่มเฉียบพลันใน 24 ชั่วโมง ไม่มีประวัติ trauma ไข้เล็กน้อย MRI spine: T6-T8 intramedullary signal change ยาวกว่า 3 vertebral segments ด้วย T2 hyperintensity การวินิจฉัยที่น่าจะเป็นที่สุดคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Guillain-Barre syndrome"
+      },
+      {
+        "label": "B",
+        "text": "Longitudinally extensive transverse myelitis (LETM) สงสัย NMOSD"
+      },
+      {
+        "label": "C",
+        "text": "Spinal cord compression จาก disc"
+      },
+      {
+        "label": "D",
+        "text": "Multiple sclerosis myelitis"
+      },
+      {
+        "label": "E",
+        "text": "Spinal cord AVM"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "LETM (≥ 3 vertebral segments T2 hyperintensity) + bilateral + acute → NMOSD (neuromyelitis optica spectrum disorder)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Longitudinally extensive transverse myelitis (LETM) สงสัย NMOSD",
+      "reason": "Transverse myelitis classification:\n\n**Short-segment TM** (< 3 segments): สงสัย MS\n**LETM** (≥ 3 segments): สงสัย NMOSD, sarcoidosis, lupus, anti-MOG\n\n**NMOSD (Neuromyelitis Optica Spectrum Disorder)**:\n- สาเหตุ: anti-AQP4 antibody (aquaporin-4 บน astrocytes)\n- Triad: severe myelitis + optic neuritis + area postrema syndrome\n- LETM + severe disability\n\nการวินิจฉัย:\n- **Anti-AQP4 antibody**: positive ใน ~73% ของ NMOSD\n- **Anti-MOG antibody**: positive ใน AQP4-seronegative NMOSD\n\nMS myelitis: short segment (< 3 cm), eccentric, posterior\nGBS: flaccid ascending + areflexia + CSF albumin-cytologic dissociation; ไม่มี sensory level/MRI lesion\n\nการรักษา NMOSD acute:\n- IV methylprednisolone 1 g/day x 5 วัน\n- Plasma exchange ถ้าไม่ตอบสนอง\n- Long-term: azathioprine, rituximab, inebilizumab",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Guillain-Barre syndrome",
+          "is_correct": false,
+          "explanation": "GBS: flaccid + ascending + areflexia; ไม่มี sensory level หรือ MRI intramedullary lesion"
+        },
+        {
+          "label": "B",
+          "text": "LETM สงสัย NMOSD",
+          "is_correct": true,
+          "explanation": "LETM ≥ 3 segments + bilateral + acute → NMOSD; test anti-AQP4 antibody"
+        },
+        {
+          "label": "C",
+          "text": "Spinal cord compression จาก disc",
+          "is_correct": false,
+          "explanation": "Disc = extramedullary compression; ไม่ใช่ intramedullary signal change ยาว 3 segments"
+        },
+        {
+          "label": "D",
+          "text": "Multiple sclerosis myelitis",
+          "is_correct": false,
+          "explanation": "MS myelitis: short segment < 3 cm, eccentric; LETM ชี้ NMOSD"
+        },
+        {
+          "label": "E",
+          "text": "Spinal cord AVM",
+          "is_correct": false,
+          "explanation": "AVM: flow voids on MRI, progressive หรือ sudden hemorrhagic onset"
+        }
+      ],
+      "key_takeaway": "LETM (≥ 3 vertebral segments) = สงสัย NMOSD → test anti-AQP4 antibody; MS มักทำให้ short segment TM"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 25 ปี มาด้วย new onset seizure ขณะนอนหลับ กระตุกแขนขาทั้งสอง ไม่รู้สึกตัว 2 นาที แล้วตื่นสับสน 15 นาที EEG: 3 Hz spike-and-wave discharge ทั่วไป ไม่มีอาการอื่น ยาที่เหมาะสมในการเริ่มรักษาคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Carbamazepine"
+      },
+      {
+        "label": "B",
+        "text": "Valproic acid"
+      },
+      {
+        "label": "C",
+        "text": "Phenytoin"
+      },
+      {
+        "label": "D",
+        "text": "Gabapentin"
+      },
+      {
+        "label": "E",
+        "text": "Lamotrigine เดี่ยว"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Generalized tonic-clonic seizure + 3 Hz generalized spike-wave = likely generalized epilepsy → Valproic acid (broad-spectrum)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Valproic acid",
+      "reason": "3 Hz generalized spike-and-wave: ชี้ Generalized Epilepsy Syndrome\n\nValproic acid เป็น broad-spectrum AED ที่ครอบคลุม:\n- Generalized tonic-clonic seizures\n- Absence seizures (3 Hz spike-wave)\n- Myoclonic seizures\n- Focal seizures (secondary)\n\nทำไม Valproate ดีที่สุดสำหรับ Generalized Epilepsy:\n- Mechanisms หลายอย่าง: Na+ channel, GABA increase, T-type Ca2+ channel\n- Broad-spectrum: ครอบคลุมทุก seizure type\n\n**ห้ามใช้ Carbamazepine/Phenytoin ใน Generalized Epilepsy**:\n- Na+ channel blockers (CBZ, PHT) อาจทำให้ absence และ myoclonic seizures แย่ลง\n- 'Paradoxical aggravation' โดยเฉพาะใน Juvenile Myoclonic Epilepsy (JME)\n\nLamotrigine: broad-spectrum แต่ใช้ด้วยความระวังใน JME (อาจกระตุ้น myoclonus)\nGabapentin: สำหรับ focal seizures ไม่ใช่ generalized",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Carbamazepine",
+          "is_correct": false,
+          "explanation": "ห้ามใน generalized epilepsy: อาจทำให้ absence/myoclonic seizures แย่ลง"
+        },
+        {
+          "label": "B",
+          "text": "Valproic acid",
+          "is_correct": true,
+          "explanation": "Broad-spectrum: เหมาะสำหรับ generalized epilepsy ทุก seizure type"
+        },
+        {
+          "label": "C",
+          "text": "Phenytoin",
+          "is_correct": false,
+          "explanation": "Na+ blocker เดี่ยว ไม่ครอบคลุม absence; อาจทำ generalized epilepsy แย่ลง"
+        },
+        {
+          "label": "D",
+          "text": "Gabapentin",
+          "is_correct": false,
+          "explanation": "สำหรับ focal seizures ไม่ใช่ generalized"
+        },
+        {
+          "label": "E",
+          "text": "Lamotrigine เดี่ยว",
+          "is_correct": false,
+          "explanation": "อาจกระตุ้น myoclonus ใน JME; Valproate preferred สำหรับ generalized"
+        }
+      ],
+      "key_takeaway": "Generalized epilepsy (3 Hz spike-wave) → Valproic acid (broad-spectrum); ห้าม carbamazepine/phenytoin (อาจทำ generalized seizures แย่ลง)"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 70 ปี ความดันโลหิตสูง atrial fibrillation on warfarin (INR 2.8) มาด้วย sudden severe headache, decreased consciousness ภายใน 1 ชั่วโมง CT brain: large right intracerebral hemorrhage 45 mL ที่ lobar parietal area with midline shift 8 mm การจัดการ anticoagulation คือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "หยุด warfarin แล้วรอ INR normalize เอง"
+      },
+      {
+        "label": "B",
+        "text": "Vitamin K IV + 4-Factor PCC (prothrombin complex concentrate) ทันที"
+      },
+      {
+        "label": "C",
+        "text": "Fresh frozen plasma (FFP) เดี่ยว"
+      },
+      {
+        "label": "D",
+        "text": "Continue warfarin (หยุดทำให้ stroke risk สูง)"
+      },
+      {
+        "label": "E",
+        "text": "Protamine sulfate"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Warfarin-related ICH → Vitamin K IV + 4-Factor PCC ทันที (reversal เร็วที่สุด)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Vitamin K IV + 4-Factor PCC (prothrombin complex concentrate) ทันที",
+      "reason": "Warfarin-associated ICH = emergency anticoagulation reversal:\n\n**Goals**: Reverse anticoagulation ทันที (INR → < 1.5) ป้องกัน hematoma expansion\n\n**4-Factor PCC (Kcentra)**:\n- ประกอบด้วย Factors II, VII, IX, X + Proteins C, S\n- Reversal ภายใน 10-20 นาที (เร็วกว่า FFP มาก)\n- INR-based dosing\n\n**Vitamin K IV** (10 mg): เพื่อ sustained reversal (PCC effect 6-12 ชั่วโมง)\n- ช้ากว่า PCC (6-12 ชั่วโมง) แต่จำเป็นเพื่อ long-term\n\n**FFP**: ช้า, volume ใหญ่, allergic reaction risk → ด้อยกว่า PCC\n\n**Recombinant Factor VIIa**: ใช้ได้แต่ thrombosis risk สูง\n\nProtamine sulfate: reversal ของ heparin ไม่ใช่ warfarin\n\nเป้าหมาย: reversal เร็วที่สุด + BP control (SBP < 140) + surgical consultation สำหรับ large ICH + midline shift",
+      "choices": [
+        {
+          "label": "A",
+          "text": "หยุด warfarin แล้วรอ INR normalize เอง",
+          "is_correct": false,
+          "explanation": "ช้าเกินไป INR normalize เอง 3-5 วัน; hematoma จะขยายตัว"
+        },
+        {
+          "label": "B",
+          "text": "Vitamin K IV + 4-Factor PCC ทันที",
+          "is_correct": true,
+          "explanation": "Fastest reversal: PCC ภายใน 10-20 นาที + Vitamin K สำหรับ sustained reversal"
+        },
+        {
+          "label": "C",
+          "text": "Fresh frozen plasma (FFP) เดี่ยว",
+          "is_correct": false,
+          "explanation": "FFP ช้า (ต้อง thaw + infuse ช้า) + volume large; PCC ดีกว่าอย่างมาก"
+        },
+        {
+          "label": "D",
+          "text": "Continue warfarin",
+          "is_correct": false,
+          "explanation": "ICH จาก warfarin ต้อง reverse ทันที ไม่ continue"
+        },
+        {
+          "label": "E",
+          "text": "Protamine sulfate",
+          "is_correct": false,
+          "explanation": "Protamine reverses heparin/LMWH ไม่ใช่ warfarin"
+        }
+      ],
+      "key_takeaway": "Warfarin-related ICH → Vitamin K IV + 4-Factor PCC ทันที (fastest reversal < 20 นาที); FFP ช้าและ volume ใหญ่กว่า"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "หญิงอายุ 32 ปี มาด้วย unilateral visual blurring + periorbital pain เมื่อขยับตา มา 5 วัน ตรวจพบ relative afferent pupillary defect (RAPD) ข้างขวา visual acuity 20/200 ขวา 20/20 ซ้าย MRI brain: optic nerve T2 enhancement ขวา ประวัติ 1 ปีก่อนมี numbness ขาซ้ายที่หายเองใน 6 สัปดาห์ การวินิจฉัยและการรักษาคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "NMOSD → anti-AQP4 antibody + plasma exchange"
+      },
+      {
+        "label": "B",
+        "text": "Multiple sclerosis → IV methylprednisolone + disease-modifying therapy"
+      },
+      {
+        "label": "C",
+        "text": "Temporal arteritis → prednisolone oral"
+      },
+      {
+        "label": "D",
+        "text": "Retinal detachment → ophthalmology referral"
+      },
+      {
+        "label": "E",
+        "text": "Optic glioma → surgical excision"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Optic neuritis + prior demyelinating episode (numbness ขา หายเอง) → MS → IV methylprednisolone + DMT",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: B. Multiple sclerosis → IV methylprednisolone + disease-modifying therapy",
+      "reason": "Multiple Sclerosis diagnosis:\n\n**Optic neuritis** (ON) คือ first presentation ของ MS ใน ~15-20%:\n- Unilateral visual loss + orbital pain + RAPD\n- T2 enhancement ของ optic nerve\n\nMcDonald criteria 2017 สำหรับ MS:\n- **Dissemination in space (DIS)**: ≥ 2 lesions ใน different CNS regions\n- **Dissemination in time (DIT)**: ≥ 2 attacks ที่ต่างเวลา (หรือ gadolinium + และ non-enhancing lesions พร้อมกัน)\n\nผู้ป่วยรายนี้:\n- Episode 1: optic neuritis ขวา (ปัจจุบัน)\n- Episode 2: numbness ขาซ้าย 1 ปีก่อน หายเอง (relapsing)\n→ DIS + DIT = MS confirmed\n\nการรักษา:\n- **Acute attack**: IV methylprednisolone 1 g/day x 3-5 วัน (เร่ง recovery ไม่ใช่ change long-term outcome)\n- **Disease-modifying therapy (DMT)**: interferon-beta, glatiramer acetate, natalizumab (ลด relapse rate)\n\nNMOSD: LETM + optic neuritis แต่ MRI spinal cord ปกติ และ optic nerve lesion ใน ON ปกติ (ไม่ยาวมาก)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "NMOSD → anti-AQP4 antibody + plasma exchange",
+          "is_correct": false,
+          "explanation": "NMOSD: optic nerve lesion ยาว + myelitis severe; MS ชัดกว่าจาก DIS + DIT"
+        },
+        {
+          "label": "B",
+          "text": "MS → IV methylprednisolone + disease-modifying therapy",
+          "is_correct": true,
+          "explanation": "McDonald criteria ชัด: DIS (optic nerve + spinal cord) + DIT (2 attacks) = MS"
+        },
+        {
+          "label": "C",
+          "text": "Temporal arteritis → prednisolone oral",
+          "is_correct": false,
+          "explanation": "GCA: > 50 ปี, ESR สูง, jaw claudication; ไม่ใช่ young woman + prior attack"
+        },
+        {
+          "label": "D",
+          "text": "Retinal detachment → ophthalmology referral",
+          "is_correct": false,
+          "explanation": "Retinal detachment: painless + floaters; RAPD + orbital pain = optic neuritis"
+        },
+        {
+          "label": "E",
+          "text": "Optic glioma → surgical excision",
+          "is_correct": false,
+          "explanation": "Optic glioma: ในเด็ก, NF1; ไม่ใช่ young adult + relapsing history"
+        }
+      ],
+      "key_takeaway": "Optic neuritis + prior demyelinating episode = MS (DIS + DIT) → IV methylprednisolone (acute) + Disease-modifying therapy (prevention)"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  },
+  {
+    "scenario": "ชายอายุ 68 ปี DM, HTN มาด้วย right-sided weakness + aphasia เฉียบพลัน 2 ชั่วโมง NIHSS 14 CT brain: ไม่พบ hemorrhage, hyperdense left MCA sign CT angiography: left M1 occlusion ผู้ป่วยอยู่ในช่วง 4.5 ชั่วโมง การรักษาที่เหมาะสมที่สุดคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "IV tPA เท่านั้น"
+      },
+      {
+        "label": "B",
+        "text": "Mechanical thrombectomy เท่านั้น"
+      },
+      {
+        "label": "C",
+        "text": "IV tPA ทันที + mechanical thrombectomy (bridging strategy)"
+      },
+      {
+        "label": "D",
+        "text": "Aspirin + clopidogrel"
+      },
+      {
+        "label": "E",
+        "text": "Heparin infusion"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Acute ischemic stroke ใน window + large vessel occlusion (LVO) → IV tPA + mechanical thrombectomy (bridging strategy = standard of care)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้อง: C. IV tPA ทันที + mechanical thrombectomy (bridging strategy)",
+      "reason": "Large Vessel Occlusion (LVO) stroke management:\n\n**IV tPA (alteplase)**:\n- Window: 0-4.5 ชั่วโมง จาก onset\n- ผู้ป่วยนี้: 2 ชั่วโมง = ใน window\n- ไม่มี contraindications ที่ชัดเจน\n- NIHSS 14 = moderate-severe stroke → benefit จาก tPA\n\n**Mechanical Thrombectomy (MT)**:\n- Window: 6-24 ชั่วโมง (บางกรณีถึง 24 ชั่วโมง ด้วย perfusion imaging)\n- LVO (M1 occlusion) = indication สำหรับ MT\n- Recanalization rate: MT ~75-85% vs tPA ~30-40%\n- NNT 2.5 สำหรับ good functional outcome\n\n**Bridging strategy** (IV tPA + MT):\n- Meta-analysis: similar to MT alone แต่ tPA ช่วย distal emboli\n- Current standard: ให้ tPA ทันที → ส่งต่อ MT ทันที (ไม่รอผล tPA)\n\nDISCLAIMER: Bridging vs direct MT debate ongoing แต่ bridging ยังเป็น standard ในหลาย guidelines 2023",
+      "choices": [
+        {
+          "label": "A",
+          "text": "IV tPA เท่านั้น",
+          "is_correct": false,
+          "explanation": "LVO = low recanalization rate กับ tPA เดี่ยว; MT ร่วมจำเป็น"
+        },
+        {
+          "label": "B",
+          "text": "Mechanical thrombectomy เท่านั้น",
+          "is_correct": false,
+          "explanation": "ผู้ป่วยยังใน tPA window → ให้ tPA ก่อน (bridging) ตาม current guidelines"
+        },
+        {
+          "label": "C",
+          "text": "IV tPA ทันที + mechanical thrombectomy",
+          "is_correct": true,
+          "explanation": "Bridging strategy = standard of care: tPA ทันที + MT for LVO"
+        },
+        {
+          "label": "D",
+          "text": "Aspirin + clopidogrel",
+          "is_correct": false,
+          "explanation": "Dual antiplatelet สำหรับ TIA/minor stroke ไม่ใช่ acute LVO"
+        },
+        {
+          "label": "E",
+          "text": "Heparin infusion",
+          "is_correct": false,
+          "explanation": "Anticoagulation ไม่ใช่ treatment สำหรับ acute ischemic stroke; เพิ่ม hemorrhage risk"
+        }
+      ],
+      "key_takeaway": "Acute ischemic stroke LVO (M1) ใน window → IV tPA ทันที + Mechanical thrombectomy (bridging strategy = standard of care)"
+    },
+    "subject": "neuro_med",
+    "exam_type": "NL1",
+    "difficulty": "hard",
+    "exam_source": "Opus Generated 2026"
+  }
+]

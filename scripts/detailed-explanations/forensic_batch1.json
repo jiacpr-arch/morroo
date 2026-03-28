@@ -1,0 +1,824 @@
+[
+  {
+    "id": "00ec9122-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "จุดตะเกียงในเต็นท์ปิด → การเผาไหม้ไม่สมบูรณ์ → Carbon monoxide (CO) poisoning",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Carbon monoxide) เพราะ การเผาไหม้เชื้อเพลิงในที่อากาศถ่ายเทไม่ดี ผลิต CO ซึ่งเป็น silent killer",
+      "reason": "CO poisoning: เกิดจากการเผาไหม้ไม่สมบูรณ์ของ carbon-based fuels (ตะเกียง, เตาถ่าน, เครื่องยนต์) CO จับกับ hemoglobin (affinity 250x > O2) → Carboxyhemoglobin → tissue hypoxia Cherry-red lividity ที่ศพ อาการ: headache, dizziness, loss of consciousness, coma สีผิว/lividity แดงสด (cherry-red) ต่างจาก CO2/N2 ที่ทำให้ขาดออกซิเจนธรรมดา",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Carbon monoxide",
+          "is_correct": true,
+          "explanation": "เผาไหม้ไม่สมบูรณ์ในที่ปิด → CO → จับ Hb → tissue hypoxia (cherry-red lividity)"
+        },
+        {
+          "label": "B",
+          "text": "Ozone",
+          "is_correct": false,
+          "explanation": "ไม่เกิดจากการเผาตะเกียง"
+        },
+        {
+          "label": "C",
+          "text": "Sulfur dioxide",
+          "is_correct": false,
+          "explanation": "เกิดจากการเผาถ่านหินมี S ไม่ใช่ตะเกียงทั่วไป"
+        },
+        {
+          "label": "D",
+          "text": "Carbon dioxide",
+          "is_correct": false,
+          "explanation": "CO2 เป็น asphyxia by displacement ไม่ใช่ chemical asphyxia"
+        },
+        {
+          "label": "E",
+          "text": "Nitrogen dioxide",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ผลผลิตจากการเผาตะเกียง"
+        }
+      ],
+      "key_takeaway": "จุดตะเกียงในที่ปิด → CO poisoning (cherry-red lividity, COHb สูง)"
+    }
+  },
+  {
+    "id": "0e739c7e-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "ศพริมถนน rigor mortis ชัด + livor mortis ชัด → เสียชีวิตนาน 6-8 ชั่วโมง",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A เพราะ rigor mortis และ livor mortis ที่เห็นชัดเจนบ่งชี้ว่าเสียชีวิตมาแล้ว 6-8 ชั่วโมง",
+      "reason": "Time of death estimation: Livor mortis (lividity): เริ่ม 1-2 ชม. หลังตาย, fixed 8-12 ชม. Rigor mortis: เริ่ม 2-4 ชม., maximum 6-12 ชม., หายไปหลัง 24-36 ชม. ถ้าทั้ง rigor และ livor ชัดเจนแต่ rigor ยังไม่ complete = 6-8 ชม. Tibial fracture height: สำคัญสำหรับ vehicle speed estimation ไม่ใช่ time of death Hemorrhage จาก internal organs: cause of death ไม่ใช่ time of death",
+      "choices": [
+        {
+          "label": "A",
+          "text": "เสียชีวิตนาน 6-8 ชั่วโมง จาก rigor + livor ชัด",
+          "is_correct": true,
+          "explanation": "Rigor mortis max 6-12 ชม. + livor fixed = 6-8 ชม. เป็น most consistent timeline"
+        },
+        {
+          "label": "B",
+          "text": "Tibial fracture height สำคัญสำหรับ force assessment",
+          "is_correct": false,
+          "explanation": "ถูกต้องสำหรับ vehicle speed ไม่ใช่ time of death"
+        },
+        {
+          "label": "C",
+          "text": "Fracture base of skull ไม่น่าเป็นสาเหตุตาย",
+          "is_correct": false,
+          "explanation": "Basilar skull fracture อาจเป็นสาเหตุตายได้"
+        },
+        {
+          "label": "D",
+          "text": "Internal hemorrhage เป็น most likely cause of death",
+          "is_correct": false,
+          "explanation": "อาจจริงแต่ไม่ใช่ specific finding ที่ถามในที่นี้"
+        },
+        {
+          "label": "E",
+          "text": "Brushing บ่งว่าศพถูกลาก",
+          "is_correct": false,
+          "explanation": "อาจจริงแต่ไม่ใช่ best answer สำหรับคำถามเรื่อง time of death"
+        }
+      ],
+      "key_takeaway": "Rigor mortis + livor mortis ชัด = เสียชีวิต 6-8+ ชั่วโมง"
+    }
+  },
+  {
+    "id": "0eb1bb2d-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "CO2 สูงในห้องปิด → respiratory acidosis + vasodilation → hyperemia ในอวัยวะ",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A เพราะ CO2 เข้มข้นสูง → respiratory acidosis → vasodilation → hyperemia ในอวัยวะ",
+      "reason": "การตายจาก CO2 (asphyxia by CO2 displacement): CO2 สูง → hypercapnia → respiratory acidosis → cerebral vasodilation → ↑ intracranial pressure + cerebral edema → loss of consciousness → death Post-mortem: อาจพบ congestion/hyperemia ในอวัยวะต่างๆ CO2 ไม่ทำให้ cherry-red lividity (นั่นคือ CO) CO2 ไม่จับกับ Hb เหมือน CO",
+      "choices": [
+        {
+          "label": "A",
+          "text": "CO2 สูง → respiratory acidosis + vasodilation → hyperemia",
+          "is_correct": true,
+          "explanation": "Hypercapnia → acidosis → cerebral vasodilation → congestion/hyperemia"
+        },
+        {
+          "label": "B",
+          "text": "CO2 ทำให้ lividity สีแดงชมพู",
+          "is_correct": false,
+          "explanation": "Cherry-red lividity เกิดจาก CO ไม่ใช่ CO2"
+        },
+        {
+          "label": "C",
+          "text": "CO2 หนาแน่นไม่แพร่กระจายออกเซลล์",
+          "is_correct": false,
+          "explanation": "ไม่ถูกต้องทางกายภาพ"
+        },
+        {
+          "label": "D",
+          "text": "CO2 ทำปฏิกิริยาเคมีกับ RBC",
+          "is_correct": false,
+          "explanation": "ไม่ถูกต้อง"
+        },
+        {
+          "label": "E",
+          "text": "CO2 ปิดกั้น antioxidant O2 transport",
+          "is_correct": false,
+          "explanation": "ไม่ถูกต้องทางสรีรวิทยา"
+        }
+      ],
+      "key_takeaway": "CO2 poisoning → hypercapnia → acidosis → vasodilation + hyperemia (ไม่ใช่ cherry-red)"
+    }
+  },
+  {
+    "id": "19902ea4-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "หญิงตั้งครรภ์ 20 wk ถูกทำร้าย → แท้ง → ข้อหา 'บาดเจ็บจนแท้ง' ตาม ป.อ. มาตรา",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (บาดเจ็บจนแท้ง) เพราะ การถูกทำร้ายทำให้แท้งบุตรเข้าข่ายผิดกฎหมายฐานทำให้แท้งโดยไม่ยินยอม",
+      "reason": "กฎหมายไทย ป.อ.: มาตรา 295-300: ทำให้บาดเจ็บ มาตรา 301-305: ทำให้แท้ง ถ้าทำร้ายหญิงมีครรภ์แล้วแท้ง = ข้อหา 'บาดเจ็บจนแท้ง' ซึ่งมีโทษหนักกว่าบาดเจ็บธรรมดา อันตรายสาหัสจนแท้ง: ต้องมีบาดเจ็บที่ถือว่า 'สาหัส' ด้วย การนอนโรงพยาบาล/พักฟื้น: เป็นเกณฑ์วัดระดับอาการบาดเจ็บ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "บาดเจ็บจนแท้ง",
+          "is_correct": true,
+          "explanation": "ทำร้ายหญิงมีครรภ์ → แท้ง = ข้อหาหลัก 'ทำให้แท้งโดยไม่ยินยอม'"
+        },
+        {
+          "label": "B",
+          "text": "อันตรายสาหัสจนแท้ง",
+          "is_correct": false,
+          "explanation": "ต้องมีบาดเจ็บที่ถือว่าสาหัส (สูญเสียอวัยวะ/ทุพพลภาพ) ด้วย"
+        },
+        {
+          "label": "C",
+          "text": "นอนโรงพยาบาล >20 วัน",
+          "is_correct": false,
+          "explanation": "เกณฑ์ระดับอาการ ไม่ใช่ข้อหาหลักในที่นี้"
+        },
+        {
+          "label": "D",
+          "text": "นอน 7 วัน พักฟื้น 20 วัน",
+          "is_correct": false,
+          "explanation": "เกณฑ์วัดระดับบาดเจ็บ"
+        },
+        {
+          "label": "E",
+          "text": "อันตรายจนมีเลือดออก เสี่ยงชีวิต",
+          "is_correct": false,
+          "explanation": "ถ้าไม่แท้ง ข้อหานี้อาจใช้ แต่เมื่อแท้งแล้ว A ถูกต้องกว่า"
+        }
+      ],
+      "key_takeaway": "ทำร้ายหญิงมีครรภ์แล้วแท้ง = ข้อหา 'บาดเจ็บจนแท้ง' (หนักกว่าบาดเจ็บธรรมดา)"
+    }
+  },
+  {
+    "id": "1d84f5aa-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "มาตรา 276 ข่มขืน: ผู้ชายใช้อวัยวะเพศเทียมชายสอดเข้าปากหญิง = ข่มขืน",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A เพราะ ตาม ป.อ. มาตรา 276 การสอดใส่อวัยวะเพศหรือวัตถุเข้าปากหรืออวัยวะเพศหรือทวารหนักของผู้อื่นโดยไม่ยินยอม = ข่มขืน",
+      "reason": "ป.อ. มาตรา 276 (แก้ไข 2550): ข่มขืน = กระทำชำเราด้วยการสอดใส่อวัยวะเพศหรือวัตถุอื่นเข้าในช่องปาก อวัยวะเพศ หรือทวารหนัก โดยไม่ได้รับความยินยอม ผู้กระทำ: ทั้งชายและหญิง เหยื่อ: ทั้งชายและหญิง A: ผู้ชายใช้อวัยวะเพศเทียมสอดเข้าปากหญิง = ใช่ (วัตถุ + ช่องปาก) B: ผู้ชายสอดเข้าปากชาย = ใช่เช่นกัน แต่ A ถูกกำหนดให้เป็นคำตอบ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ผู้ชายใช้อวัยวะเพศเทียมชายสอดปากหญิง",
+          "is_correct": true,
+          "explanation": "มาตรา 276: สอดใส่วัตถุเข้าช่องปาก/อวัยวะเพศ/ทวาร โดยไม่ยินยอม = ข่มขืน"
+        },
+        {
+          "label": "B",
+          "text": "ผู้ชายสอดปากชาย",
+          "is_correct": false,
+          "explanation": "ก็เข้าข่ายมาตรา 276 เช่นกันแต่ A เป็นคำตอบที่กำหนด"
+        },
+        {
+          "label": "C",
+          "text": "ผู้หญิงใช้วัตถุสอดปากชาย",
+          "is_correct": false,
+          "explanation": "ก็เข้าข่ายได้ แต่ไม่ใช่คำตอบ"
+        },
+        {
+          "label": "D",
+          "text": "ผู้ชายถูทวารหนักหญิง",
+          "is_correct": false,
+          "explanation": "การถูไถ ไม่ใช่การ 'สอดใส่' จึงไม่เข้ามาตรา 276"
+        },
+        {
+          "label": "E",
+          "text": "ผู้หญิงสอดทวารหนักหญิง",
+          "is_correct": false,
+          "explanation": "ก็เข้าข่ายได้แต่ไม่ใช่คำตอบที่กำหนด"
+        }
+      ],
+      "key_takeaway": "ป.อ. มาตรา 276: ข่มขืน = สอดใส่อวัยวะเพศ/วัตถุ เข้าปาก/อวัยวะเพศ/ทวาร โดยไม่ยินยอม"
+    }
+  },
+  {
+    "id": "1f78fbdd-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "สาเหตุตายในใบมรณะบัตร: ระบุ direct cause of death ที่เฉพาะเจาะจงที่สุด",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (severe brain laceration with gun shot wound + fracture base of skull) เพราะ ใบมรณะบัตรต้องระบุ direct cause of death ที่ specific",
+      "reason": "Death certificate: ต้องระบุ cause of death ที่ specific และ proximate เป็น immediate cause of death ก่อน จากนั้น underlying cause ใน format: I(a) immediate, I(b) underlying, II: contributing ในกรณีนี้: immediate = severe brain laceration, underlying = gunshot wound, fracture skull ไม่ควรระบุแค่ 'ถูกยิง' เพราะไม่เฉพาะเจาะจง ไม่ควรรวม tracheal rupture ถ้าไม่ใช่ cause of death",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Severe brain laceration with gun shot wound + fracture base of skull",
+          "is_correct": true,
+          "explanation": "Specific immediate cause of death ที่ครบถ้วน"
+        },
+        {
+          "label": "B",
+          "text": "ถูกยิง (สั้นๆ)",
+          "is_correct": false,
+          "explanation": "ไม่ specific เพียงพอ"
+        },
+        {
+          "label": "C",
+          "text": "ถูกยิงและ... (สาเหตุยาวๆ)",
+          "is_correct": false,
+          "explanation": "อาจยาวเกินไป ต้องเฉพาะเจาะจงที่ direct cause"
+        },
+        {
+          "label": "D",
+          "text": "Severe brain laceration + fracture skull + tracheal rupture",
+          "is_correct": false,
+          "explanation": "Tracheal rupture ไม่ได้พบในการชันสูตร ไม่ควรเพิ่มเอง"
+        }
+      ],
+      "key_takeaway": "Death certificate: ระบุ immediate cause of death ที่ specific (pathological finding + mechanism)"
+    }
+  },
+  {
+    "id": "2152bd8f-0000-0000-0000-000000000000",
+    "correct_answer": "D",
+    "explanation": "ชาย 35 ปี ICH + splenic rupture → Direct cause of death = Hemorrhagic shock",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D (Hemorrhagic shock) เพราะ เมื่อมี injuries หลายแห่ง (brain + spleen) direct cause of death = blood loss = hemorrhagic shock",
+      "reason": "Cause of death classification: Immediate/direct cause: กลไกที่ทำให้หัวใจหยุดเต้นโดยตรง Underlying cause: injury/disease ที่เป็นต้นเหตุ ในกรณีนี้: ICH + splenic rupture ทั้งคู่ทำให้เสียเลือด → hemorrhagic shock → cardiac arrest Hemorrhagic shock เป็น direct cause ที่ครอบคลุมทั้งสอง injuries Splenic rupture เดี่ยว/ICH เดี่ยว ไม่ครอบคลุมทั้งหมด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ICH เป็น direct cause เพียงอย่างเดียว",
+          "is_correct": false,
+          "explanation": "ไม่รวม splenic rupture ที่ก็ทำให้เสียเลือด"
+        },
+        {
+          "label": "B",
+          "text": "Splenic rupture เป็น direct cause",
+          "is_correct": false,
+          "explanation": "ไม่รวม ICH"
+        },
+        {
+          "label": "C",
+          "text": "ทั้งคู่เป็น direct cause ของ injury เดียวกัน",
+          "is_correct": false,
+          "explanation": "ต้องระบุ final pathway ที่ทำให้ตาย"
+        },
+        {
+          "label": "D",
+          "text": "Hemorrhagic shock จากทั้งสอง injuries",
+          "is_correct": true,
+          "explanation": "Final common pathway = hemorrhagic shock จากการเสียเลือดจากทั้ง ICH และ splenic rupture"
+        },
+        {
+          "label": "E",
+          "text": "อุบัติเหตุรถชนเป็น direct cause",
+          "is_correct": false,
+          "explanation": "นั่นคือ underlying/external cause ไม่ใช่ direct cause"
+        }
+      ],
+      "key_takeaway": "Multiple injuries → Hemorrhagic shock เป็น final/direct cause of death"
+    }
+  },
+  {
+    "id": "22d880a3-0000-0000-0000-000000000000",
+    "correct_answer": "B",
+    "explanation": "เสียชีวิตในห้องปิด → O2 ลดลงต่ำกว่า 16% → hypoxia → brain death",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (O2 ลดต่ำกว่า 16% → hypoxia → anoxia → brain death) เพราะ oxygen depletion ในห้องปิดเป็นกลไกหลัก",
+      "reason": "Confined space death: O2 ปกติ 21% ถ้า O2 <16%: cognitive impairment ถ้า O2 <10%: loss of consciousness ถ้า O2 <6%: death O2 ลดลงจาก cellular respiration ของผู้ที่อยู่ในห้อง → hypoxia → anoxia → brain death CO2 เพิ่มขึ้นด้วยแต่ไม่ใช่ primary mechanism การตาย (CO2 poisoning ต่างหาก) Mechanical obstruction: ไม่ใช่กรณีนี้",
+      "choices": [
+        {
+          "label": "A",
+          "text": "CO2 สูง → hypercapnia + acidosis → respiratory depression",
+          "is_correct": false,
+          "explanation": "CO2 เพิ่มด้วยแต่ไม่ใช่ primary mechanism ในห้องปิดทั่วไป"
+        },
+        {
+          "label": "B",
+          "text": "O2 <16% → hypoxia → anoxia → brain death",
+          "is_correct": true,
+          "explanation": "Primary mechanism: O2 depletion → progressive hypoxia → death"
+        },
+        {
+          "label": "C",
+          "text": "Mechanical obstruction ทำให้อากาศไม่เข้าปอด",
+          "is_correct": false,
+          "explanation": "ไม่ใช่กรณีห้องปิด"
+        },
+        {
+          "label": "D",
+          "text": "ความกดอากาศลด → barotrauma",
+          "is_correct": false,
+          "explanation": "ไม่เกิดขึ้นในห้องปิดปกติ"
+        },
+        {
+          "label": "E",
+          "text": "CO สะสมจากวัสดุในห้อง",
+          "is_correct": false,
+          "explanation": "ต้องมีการเผาไหม้ถึงจะมี CO ไม่ใช่แค่ห้องปิด"
+        }
+      ],
+      "key_takeaway": "Confined space death: O2 depletion → hypoxia → anoxia (ต่างจาก CO poisoning)"
+    }
+  },
+  {
+    "id": "247c4e58-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "หญิง 70 ปี เสียชีวิตที่บ้าน → ชันสูตรพลิกศพ → สงสัย Fall เนื่องจาก pattern ของ injury",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Fall) เพราะ ผู้สูงอายุเสียชีวิตที่บ้าน + injury pattern สอดคล้องกับการล้ม",
+      "reason": "ผู้สูงอายุ 70 ปี เสียชีวิตในบ้าน: Fall (ล้ม) พบบ่อยที่สุดในผู้สูงอายุ ต้องแยก: natural death (MI, stroke) vs accident (fall) vs homicide ลักษณะบาดแผลจาก fall: fractures, contusions ที่ presenting part Electrocution: ต้องมี current marks/entry-exit wounds Drowning: ต้องมี น้ำในปอด MI/CVA: natural death ไม่มี external injury",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Fall",
+          "is_correct": true,
+          "explanation": "ผู้สูงอายุเสียชีวิตที่บ้าน + injury pattern = suspected fall"
+        },
+        {
+          "label": "B",
+          "text": "Electrocution",
+          "is_correct": false,
+          "explanation": "ต้องมี electrical current marks/burns"
+        },
+        {
+          "label": "C",
+          "text": "Myocardial infarction",
+          "is_correct": false,
+          "explanation": "Natural death ไม่มี external injury"
+        },
+        {
+          "label": "D",
+          "text": "Drowning",
+          "is_correct": false,
+          "explanation": "ต้องมี watery environment/lungs"
+        },
+        {
+          "label": "E",
+          "text": "Cerebrovascular accident",
+          "is_correct": false,
+          "explanation": "Natural death"
+        }
+      ],
+      "key_takeaway": "ผู้สูงอายุเสียชีวิตที่บ้าน + injury pattern → สงสัย Fall (most common in elderly)"
+    }
+  },
+  {
+    "id": "291f0eea-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "ในอุโมงค์ขุดดินสีม่วงแดง + เสียชีวิตทันที → Methane (CH4) displacement asphyxia",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Asphyxia by displacement - CH4 แทนที่ O2) เพราะ methane สะสมในที่ขุดดิน displaces O2 → hypoxia",
+      "reason": "ห้องใต้ดินที่ขุดสำเร็จ: Methane (CH4) จาก organic decomposition สะสมในพื้นที่ต่ำ Asphyxia by displacement: CH4 หรือ N2 หรือ CO2 แทนที่ O2 ทำให้ O2 ต่ำ → hypoxia สีม่วงแดงของศพ: cyanosis จาก hypoxia CO (chemical asphyxia): ทำให้ cherry-red ไม่ใช่ม่วงแดง Mechanical asphyxia: ต้องมีการกดทับ Submersion: ต้องมีน้ำ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Asphyxia by displacement - CH4 แทนที่ O2",
+          "is_correct": true,
+          "explanation": "ในอุโมงค์ขุดดิน: CH4 จาก organic decomposition → O2 displacement → hypoxia → death"
+        },
+        {
+          "label": "B",
+          "text": "Chemical asphyxia - CO",
+          "is_correct": false,
+          "explanation": "CO ทำให้ cherry-red ไม่ใช่ม่วงแดง ต้องมีแหล่ง combustion"
+        },
+        {
+          "label": "C",
+          "text": "Mechanical asphyxia - chest compression",
+          "is_correct": false,
+          "explanation": "ต้องมีวัตถุกดทับ"
+        },
+        {
+          "label": "D",
+          "text": "Asphyxia by submersion",
+          "is_correct": false,
+          "explanation": "ต้องมีน้ำ"
+        },
+        {
+          "label": "E",
+          "text": "GI asphyxia",
+          "is_correct": false,
+          "explanation": "ไม่มี category นี้ใน forensic medicine"
+        }
+      ],
+      "key_takeaway": "ในที่ขุดดิน/ที่ปิด → CH4 displacement asphyxia (O2 ถูกแทนที่ → hypoxia)"
+    }
+  },
+  {
+    "id": "2d1acace-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "แผลขอบไม่เรียบที่ท้ายทอย + กะโหลกแตก + Contrecoup injury ที่หน้าผาก → ถูกตีที่ท้ายทอย",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (ถูกตีด้วยของแข็งที่ท้ายทอย) เพราะ lacerated wound ที่ท้ายทอย = coup injury, lesion ที่หน้าผาก = contrecoup",
+      "reason": "Coup-Contrecoup injury: Coup: injury ตรงจุดถูกกระแทก Contrecoup: injury ตรงข้ามจุดถูกกระแทก ถ้าแผลที่ท้ายทอย = ถูกตีที่ท้ายทอย (coup) Brain lesion ที่ frontal = contrecoup ยืนยัน ถ้าล้มหน้าผากกระแทก: แผลที่หน้าผาก, brain lesion ที่ occipital (contrecoup) Lacerated wound (ขอบไม่เรียบ): จาก blunt force",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ถูกตีด้วยของแข็งที่ท้ายทอย",
+          "is_correct": true,
+          "explanation": "Coup wound ที่ท้ายทอย + contrecoup lesion ที่หน้าผาก = ถูกตีที่ท้ายทอย"
+        },
+        {
+          "label": "B",
+          "text": "ล้มท้ายทอยกระแทกขอบบาทวิถี",
+          "is_correct": false,
+          "explanation": "ก็ทำให้ coup occipital ได้เช่นกัน แต่ lacerated wound + กะโหลกแตก บ่งชี้การถูกตีด้วยวัตถุมากกว่า"
+        },
+        {
+          "label": "C",
+          "text": "ถูกตีที่หน้าผาก",
+          "is_correct": false,
+          "explanation": "ถ้าถูกตีหน้าผาก: แผลที่หน้าผาก + brain lesion occipital"
+        },
+        {
+          "label": "D",
+          "text": "ล้มหน้าผากกระแทก",
+          "is_correct": false,
+          "explanation": "แผลที่หน้าผาก ไม่ใช่ท้ายทอย"
+        },
+        {
+          "label": "E",
+          "text": "ถูกตีทั้งท้ายทอยและหน้าผาก",
+          "is_correct": false,
+          "explanation": "ไม่ระบุว่ามีแผลที่หน้าผากด้วย"
+        }
+      ],
+      "key_takeaway": "แผลที่ท้ายทอย + brain lesion ที่ frontal = Coup-Contrecoup จากการถูกตีที่ท้ายทอย"
+    }
+  },
+  {
+    "id": "2d9e8426-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "ศพมีแผลฟกช้าท้ายทอย + alcohol positive → สาเหตุตาย = Trauma (blunt force injury)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Trauma) เพราะ แผลฟกช้าที่ท้ายทอย = physical injury เป็น proximate cause ของ death",
+      "reason": "Cause of death classification: แม้จะพบ alcohol ในเลือด แต่ถ้ามี physical injury (blunt force to occiput) → trauma เป็น primary cause Alcohol อาจเป็น contributing factor แต่ไม่ใช่ direct cause ถ้าไม่มีแผล → alcohol intoxication เป็น cause Methamphetamine positive: contributing factor เช่นกัน แต่แผลฟกช้าชัดเจน → trauma",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Trauma",
+          "is_correct": true,
+          "explanation": "Blunt force trauma ที่ occipital เป็น direct/immediate cause of death"
+        },
+        {
+          "label": "B",
+          "text": "Alcohol",
+          "is_correct": false,
+          "explanation": "Contributing factor ไม่ใช่ direct cause เมื่อมี physical injury"
+        },
+        {
+          "label": "C",
+          "text": "Methamphetamine",
+          "is_correct": false,
+          "explanation": "Contributing ไม่ใช่ direct cause"
+        },
+        {
+          "label": "D",
+          "text": "Multiple intoxication",
+          "is_correct": false,
+          "explanation": "มี trauma ชัดเจนทำให้ trauma เป็น primary cause"
+        },
+        {
+          "label": "E",
+          "text": "Unknown",
+          "is_correct": false,
+          "explanation": "มีหลักฐาน trauma ชัดเจน"
+        }
+      ],
+      "key_takeaway": "ศพมี physical injury ชัดเจน + drugs/alcohol → Trauma เป็น primary cause (drugs = contributing)"
+    }
+  },
+  {
+    "id": "3007e025-0000-0000-0000-000000000000",
+    "correct_answer": "D",
+    "explanation": "ศพในอ่าง: rigor mortis มือแข็ง + livor mortis บางส่วน → เสียชีวิต 12-24 ชั่วโมง",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D (12-24 hours) เพราะ rigor mortis generalized + early livor mortis = เสียชีวิตมาแล้ว 12-24 ชั่วโมง",
+      "reason": "Time of death estimation: Rigor mortis timeline: เริ่ม 2-4 ชม., maximum 6-12 ชม., complete generalized 12 ชม. จาก temperature, activity, muscle mass Livor mortis: เริ่ม 1-2 ชม., fixed 8-12 ชม. ถ้า rigor mortis generalized (เป็นทั่วตัว) + livor partially fixed = 12-24 ชม. อุณหภูมิน้ำอาจเปลี่ยน rate ของ rigor",
+      "choices": [
+        {
+          "label": "A",
+          "text": "4-6 hours",
+          "is_correct": false,
+          "explanation": "Rigor ยังไม่ generalized"
+        },
+        {
+          "label": "B",
+          "text": "6-8 hours",
+          "is_correct": false,
+          "explanation": "Rigor กำลังพัฒนา"
+        },
+        {
+          "label": "C",
+          "text": "8-12 hours",
+          "is_correct": false,
+          "explanation": "Rigor maximum ไม่ generalized"
+        },
+        {
+          "label": "D",
+          "text": "12-24 hours",
+          "is_correct": true,
+          "explanation": "Generalized rigor mortis = ~12+ ชม., consistent กับ 12-24 hr estimate"
+        },
+        {
+          "label": "E",
+          "text": "1-2 days",
+          "is_correct": false,
+          "explanation": "Rigor จะเริ่มหายไปที่ >24-36 ชม."
+        }
+      ],
+      "key_takeaway": "Generalized rigor mortis + partially fixed livor = เสียชีวิต 12-24 ชั่วโมง"
+    }
+  },
+  {
+    "id": "319d54bf-0000-0000-0000-000000000000",
+    "correct_answer": "B",
+    "explanation": "หญิง 17 ปี old tear hymen + kiss bite → ตรวจพบว่าผ่านการมีเพศสัมพันธ์เท่านั้น ไม่สามารถยืนยัน rape",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (ผ่านการมีเพศสัมพันธ์) เพราะ old tear = มีเพศสัมพันธ์มาก่อน แต่ไม่สามารถบอกว่า ยินยอมหรือไม่",
+      "reason": "Forensic examination ใน rape cases: Old hymenal tear: บ่งชี้ประวัติการมีเพศสัมพันธ์ (ไม่ว่าจะยินยอมหรือไม่) Kiss bite: บาดเจ็บที่บ่งชี้การถูกกัด แต่ไม่ specific สำหรับ rape Sperm ที่ posterior fornix: บ่งชี้ recent sexual contact Medical examiner สรุปได้ว่า: 'ผ่านการมีเพศสัมพันธ์' แต่ 'rape' เป็นนิยามทางกฎหมาย ไม่ใช่ทางการแพทย์",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ตรวจพบหลักฐานว่าโดนข่มขืนแน่นอน",
+          "is_correct": false,
+          "explanation": "Medical exam ไม่สามารถยืนยัน 'rape' ได้ 100%"
+        },
+        {
+          "label": "B",
+          "text": "ตรวจพบว่าผ่านการมีเพศสัมพันธ์เท่านั้น",
+          "is_correct": true,
+          "explanation": "Old tear = prior intercourse แต่ไม่บอก consent/non-consent"
+        },
+        {
+          "label": "C",
+          "text": "ถูกกระทำชำเราจาก old tear + kiss bite",
+          "is_correct": false,
+          "explanation": "ไม่สามารถ conclude ว่าไม่ยินยอมจาก findings เหล่านี้"
+        },
+        {
+          "label": "D",
+          "text": "ไม่สามารถสรุปว่า rape เพราะอาจยินยอม",
+          "is_correct": false,
+          "explanation": "B ถูกต้องกว่า เพราะตรวจพบหลักฐาน intercourse แน่นอน"
+        },
+        {
+          "label": "E",
+          "text": "พบหลักฐาน rape แน่นอนจาก sperm + kiss bite",
+          "is_correct": false,
+          "explanation": "Sperm + kiss bite ยืนยัน intercourse แต่ไม่ยืนยัน rape"
+        }
+      ],
+      "key_takeaway": "Medical exam ยืนยันได้ว่า 'ผ่านการมีเพศสัมพันธ์' แต่ 'rape' เป็นคำตัดสินทางกฎหมาย"
+    }
+  },
+  {
+    "id": "3303bdde-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "จุดตะเกียงในเต็นท์ → Carbon monoxide poisoning (same as Q1)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Carbon monoxide) เพราะ การเผาไหม้เชื้อเพลิงในที่ปิดผลิต CO ซึ่งเป็น silent killer",
+      "reason": "Carbon monoxide poisoning: เผาไหม้ไม่สมบูรณ์ → CO สะสม → จับ Hb (COHb) → ขัดขวาง O2 delivery Cherry-red lividity ที่ post-mortem CO: colorless, odorless → ไม่รู้สึกตัว ตายในขณะนอนหลับ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Carbon monoxide",
+          "is_correct": true,
+          "explanation": "เผาไหม้เชื้อเพลิงในที่ปิด → CO → COHb → tissue hypoxia"
+        },
+        {
+          "label": "B",
+          "text": "Ozone",
+          "is_correct": false,
+          "explanation": "ไม่เกิดจากการเผาตะเกียง"
+        },
+        {
+          "label": "C",
+          "text": "Sulfur dioxide",
+          "is_correct": false,
+          "explanation": "ต้องมี sulfur ในเชื้อเพลิง"
+        },
+        {
+          "label": "D",
+          "text": "Carbon dioxide",
+          "is_correct": false,
+          "explanation": "CO2 ไม่ใช่ chemical asphyxiant ระดับเดียวกับ CO"
+        },
+        {
+          "label": "E",
+          "text": "Nitrogen dioxide",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ผลผลิตจากการเผาตะเกียงทั่วไป"
+        }
+      ],
+      "key_takeaway": "ตะเกียง/เตาในที่ปิด → CO poisoning (silent killer, cherry-red lividity)"
+    }
+  },
+  {
+    "id": "3728dcc7-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "กระดูกขาหัก 15 cm จากพื้น + บาดแผลถลอก + คนขับบอกว่าชนแล้วทับ → สอดคล้องกับ 'ชนแล้วทับตัวและขา'",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (ชนแล้วทับตัวและขา) เพราะ fracture height 15 cm จากพื้น + multiple abrasions สอดคล้องกับยานพาหนะชนแล้วทับ",
+      "reason": "Vehicle-pedestrian accident forensics: Bumper fracture height: บ่งบอก type of vehicle (bumper height) 15 cm = ต่ำมาก → อาจเป็นรถบรรทุก/รถที่ยกสูง ลักษณะ 'ชนแล้วทับ': fracture + abrasion pattern สอดคล้อง ถ้าชนแรงจนบิน: บาดแผลรูปแบบต่าง ถ้าเบรกไม่ทัน: จะยังมี tire marks, skid marks",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ชนแล้วทับตัวและขา",
+          "is_correct": true,
+          "explanation": "Fracture height + abrasion pattern สอดคล้องกับ run over injury"
+        },
+        {
+          "label": "B",
+          "text": "เบรกไม่ทัน",
+          "is_correct": false,
+          "explanation": "เป็นความเห็นผู้ขับ ไม่ใช่ forensic finding"
+        },
+        {
+          "label": "C",
+          "text": "คนขับพูดจริง (ข้อ A)",
+          "is_correct": true,
+          "explanation": "หลักฐาน forensic สอดคล้องกับคำให้การ"
+        },
+        {
+          "label": "D",
+          "text": "ชนแรงจนบินข้ามไปตกข้างทาง",
+          "is_correct": false,
+          "explanation": "ถ้าบิน: แผลที่ fall site ชัดเจนกว่า ไม่ใช่ run over pattern"
+        }
+      ],
+      "key_takeaway": "Bumper fracture height + abrasion → บ่งบอก vehicle type และ mechanism (ชนแล้วทับ)"
+    }
+  },
+  {
+    "id": "3b27f05e-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "แผลจากมีดที่หน้าอก → Stab wound: ลึกมากกว่าความกว้าง มีรอยคุ้น 4 ด้าน",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Stab wound) เพราะ แผลจากมีดแทงมีลักษณะ depth > width และมี puckering ที่ขอบ",
+      "reason": "Wound classification: Stab wound: depth > width, clean edges, puckering ที่ขอบ Incised wound: length > depth, clean edges Lacerated wound: irregular edges จาก blunt force Bruised/contused wound: blunt force, no skin break Chop wound: กระดูกหัก, จาก heavy sharp object Stab wound จากมีดสองคม: ปลายทั้งสองด้านเรียว Stab wound จากมีดคมข้างเดียว: ปลายหนึ่งเรียว ปลายหนึ่งป้าน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Stab wound: ขอบไม่เรียบทั้ง 4 ด้าน, ลึก > กว้าง",
+          "is_correct": true,
+          "explanation": "Classic stab wound: depth > width, puckering ที่ margin"
+        },
+        {
+          "label": "B",
+          "text": "Incised wound: ขอบเรียบ, depth ~ width",
+          "is_correct": false,
+          "explanation": "Incised: length > depth, จาก sliding motion ของมีด"
+        },
+        {
+          "label": "C",
+          "text": "Lacerated wound: ขอบขรุขระ, tissue bridging",
+          "is_correct": false,
+          "explanation": "Laceration จาก blunt force, irregular edges, tissue bridges"
+        },
+        {
+          "label": "D",
+          "text": "Bruised wound: บวม, ไม่มีรอยฉีก",
+          "is_correct": false,
+          "explanation": "Contusion ไม่มี skin penetration"
+        },
+        {
+          "label": "E",
+          "text": "Chop wound: กระดูกหัก, ขอบไม่เท่ากัน",
+          "is_correct": false,
+          "explanation": "จาก heavy sharp object เช่น ขวาน"
+        }
+      ],
+      "key_takeaway": "Stab wound: depth > width, puckering at margins, clean edges (มีดแทง)"
+    }
+  },
+  {
+    "id": "3c0f9f02-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "ทารก 3 เดือน เสียชีวิตขณะพี่เลี้ยงดูแล พี่เลี้ยงขี้โมโห → สงสัย Shaken Baby Syndrome → หลักฐาน Pulmonary edema",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Pulmonary edema) เพราะ Shaken Baby Syndrome ทำให้ diffuse axonal injury + increased ICP → neurogenic pulmonary edema",
+      "reason": "Shaken Baby Syndrome (Non-accidental head injury): การเขย่าทารกทำให้: Subdural hematoma, Retinal hemorrhage, Diffuse axonal injury ↑ ICP → neurogenic pulmonary edema เป็น post-mortem finding ที่บ่งชี้ pulmonary edema (ไม่ใช่ specific สำหรับ shaking เพียงอย่างเดียว) Retinal hemorrhage: pathognomonic แต่ต้องตรวจตา Healed clavicle fracture: บ่งชี้ prior abuse Purpura/petechiae: bleeding disorder ต้องแยก",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Pulmonary edema",
+          "is_correct": true,
+          "explanation": "Neurogenic pulmonary edema จาก ↑ ICP ใน shaken baby syndrome"
+        },
+        {
+          "label": "B",
+          "text": "Retinal hemorrhage",
+          "is_correct": false,
+          "explanation": "Pathognomonic ของ shaken baby แต่ถ้าเป็นคำตอบที่กำหนดคือ A"
+        },
+        {
+          "label": "C",
+          "text": "Healed clavicle fracture",
+          "is_correct": false,
+          "explanation": "บ่งชี้ prior abuse แต่ไม่ใช่ primary finding"
+        },
+        {
+          "label": "D",
+          "text": "Purpura and petechiae",
+          "is_correct": false,
+          "explanation": "อาจเกิดจาก bleeding disorder ไม่ specific สำหรับ SBS"
+        }
+      ],
+      "key_takeaway": "Shaken Baby Syndrome: Subdural hematoma + retinal hemorrhage + pulmonary edema (neurogenic)"
+    }
+  },
+  {
+    "id": "3f480886-0000-0000-0000-000000000000",
+    "correct_answer": "B",
+    "explanation": "ผู้ป่วยจิตเวชอาละวาด ไม่ยอมรักษา → รับไว้รักษาโดยไม่ต้องมีความยินยอม (Involuntary admission)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (รักษาแล้วรับไว้ในโรงพยาบาล) เพราะ ผู้ป่วยจิตเวชที่เป็นอันตรายต่อตนเองหรือผู้อื่น แพทย์มีสิทธิ์รักษาโดยไม่ต้องรอความยินยอม",
+      "reason": "พ.ร.บ. สุขภาพจิต พ.ศ. 2551: ผู้ป่วยที่มีพฤติกรรมเป็นอันตรายต่อตนเองหรือผู้อื่น → involuntary admission (รับไว้ตรวจรักษาโดยไม่ยินยอม) ระยะเวลา: 48-72 ชม. เพื่อประเมิน ไม่ต้องรอตำรวจจับ ไม่ต้องให้ผู้ใหญ่บ้านเซ็น แพทย์ประเมินว่า dangerous → admit ได้",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ให้ตำรวจจับ",
+          "is_correct": false,
+          "explanation": "ไม่จำเป็น แพทย์ admit โดยตรงได้ตาม พ.ร.บ. สุขภาพจิต"
+        },
+        {
+          "label": "B",
+          "text": "รักษาแล้วรับไว้ในโรงพยาบาล",
+          "is_correct": true,
+          "explanation": "Involuntary admission สำหรับผู้ป่วยที่เป็นอันตราย ตาม พ.ร.บ. สุขภาพจิต"
+        },
+        {
+          "label": "C",
+          "text": "ให้ผู้ใหญ่บ้านเซ็น",
+          "is_correct": false,
+          "explanation": "ไม่จำเป็นสำหรับ emergency psychiatric admission"
+        },
+        {
+          "label": "D",
+          "text": "ส่งโรงพยาบาลจิตเวช",
+          "is_correct": false,
+          "explanation": "รักษาที่ รพ. ปัจจุบันก่อนได้ ไม่ต้องส่งต่อเสมอ"
+        },
+        {
+          "label": "E",
+          "text": "ปล่อยให้กลับบ้าน",
+          "is_correct": false,
+          "explanation": "อันตรายมาก ผู้ป่วยยังไม่ปลอดภัย"
+        }
+      ],
+      "key_takeaway": "ผู้ป่วยจิตเวชอันตราย → Involuntary admission ได้ตาม พ.ร.บ. สุขภาพจิต (ไม่ต้องรอความยินยอม)"
+    }
+  },
+  {
+    "id": "40b84c1a-0000-0000-0000-000000000000",
+    "correct_answer": "B",
+    "explanation": "ผู้ป่วย PVS มีบัตร Donor Card → ต้องได้ยินยอมจากผู้บริหารครอบครัวก่อนเบิกอวัยวะ",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (ต้องได้รับยินยอมจากผู้บริหารครอบครัว) เพราะ PVS ยังไม่ถือว่า 'brain dead' ตามกฎหมาย การเบิกอวัยวะต้องรอ brain death และยินยอมจากครอบครัว",
+      "reason": "กฎหมายอวัยวะไทย: เบิกอวัยวะได้เมื่อ: Brain death (ไม่ใช่ PVS) + ยินยอมจาก donor (บัตร) + ยินยอมจากครอบครัว PVS: สมองยังทำงานบางส่วน (brainstem intact) ไม่ใช่ brain death ดังนั้น: แม้มีบัตร Donor Card แต่ PVS ≠ brain dead → ต้องรอ brain death ก่อน + ครอบครัวยินยอม",
+      "choices": [
+        {
+          "label": "A",
+          "text": "เบิกได้ทันทีเพราะมีบัตร Donor Card",
+          "is_correct": false,
+          "explanation": "PVS ≠ brain death ยังไม่สามารถเบิกได้"
+        },
+        {
+          "label": "B",
+          "text": "ต้องยินยอมจากผู้บริหารครอบครัวก่อน",
+          "is_correct": true,
+          "explanation": "PVS ต้องรอ brain death + ยินยอมจากครอบครัวตามลำดับ"
+        },
+        {
+          "label": "C",
+          "text": "ต้องปิดเครื่องช่วยหายใจก่อน",
+          "is_correct": false,
+          "explanation": "ไม่ถูกต้องตามหลักจริยธรรมและกฎหมาย"
+        },
+        {
+          "label": "D",
+          "text": "ต้องรอคำสั่งศาล",
+          "is_correct": false,
+          "explanation": "ไม่จำเป็นสำหรับ routine donation"
+        },
+        {
+          "label": "E",
+          "text": "ไม่สามารถเบิกได้เลย",
+          "is_correct": false,
+          "explanation": "เบิกได้เมื่อ brain dead แล้ว"
+        }
+      ],
+      "key_takeaway": "PVS ≠ Brain death → ยังเบิกอวัยวะไม่ได้; ต้อง brain death + ยินยอมครอบครัว"
+    }
+  }
+]

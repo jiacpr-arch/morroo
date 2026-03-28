@@ -1,0 +1,842 @@
+[
+  {
+    "id": "a7db8a39-5909-4b9b-ba35-d55d57708c47",
+    "correct_answer": "A",
+    "explanation": "ชาย 17 ปี บาดเจ็บเข่าจากฟุตบอล 1 สัปดาห์ แล้วเกิด acute joint swelling ต้องตรวจ ASO titer เพื่อ rule out reactive arthritis จาก strep",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (ASO titer) เพราะ acute joint swelling หลัง trauma 1 สัปดาห์ ในคนอายุน้อยต้องแยก post-streptococcal reactive arthritis",
+      "reason": "ในเด็ก/วัยรุ่นที่มี acute joint swelling หลังบาดเจ็บ 1 สัปดาห์ ต้องพิจารณา: 1) Traumatic hemarthrosis 2) Reactive arthritis post-strep (ASO titer) 3) Septic arthritis ASO titer ใช้ confirm recent Streptococcal infection ที่อาจ trigger reactive arthritis (post-streptococcal reactive arthritis หรือ rheumatic fever) Arthrocentesis จะได้ผลหากต้องการดู synovial fluid โดยตรง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ASO titer",
+          "is_correct": true,
+          "explanation": "Acute joint swelling หลัง 1 สัปดาห์ในวัยรุ่น → rule out post-streptococcal reactive arthritis ด้วย ASO"
+        },
+        {
+          "label": "B",
+          "text": "Hemoculture",
+          "is_correct": false,
+          "explanation": "Blood culture ใช้เมื่อสงสัย septicemia/septic arthritis แต่ไม่ specific สำหรับกรณีนี้"
+        },
+        {
+          "label": "C",
+          "text": "X-rays",
+          "is_correct": false,
+          "explanation": "X-ray ช่วย rule out fracture แต่ไม่ diagnose reactive arthritis"
+        },
+        {
+          "label": "D",
+          "text": "Arthrocentesis",
+          "is_correct": false,
+          "explanation": "Arthrocentesis ทำเมื่อสงสัย septic arthritis (ไข้, ข้อบวมร้อนมาก)"
+        },
+        {
+          "label": "E",
+          "text": "Uric acid analysis",
+          "is_correct": false,
+          "explanation": "Uric acid ตรวจสำหรับ gout ซึ่งพบน้อยในวัยรุ่น"
+        }
+      ],
+      "key_takeaway": "Acute joint swelling 1 สัปดาห์หลัง trauma ในวัยรุ่น → ASO titer rule out post-streptococcal reactive arthritis"
+    }
+  },
+  {
+    "id": "a944b762-e370-4ca6-873f-ae282ebd6895",
+    "correct_answer": "E",
+    "explanation": "ชาย 22 ปี อุบัติเหตุรถ ปวดสะโพก ตรวจพบ hip in flexion + adduction + internal rotation = Posterior hip dislocation",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ E (Posterior hip dislocation) เพราะ flexion + adduction + internal rotation ของ hip เป็น pathognomonic position ของ posterior dislocation",
+      "reason": "Posterior hip dislocation: พบบ่อยที่สุด (90%) เกิดจาก dashboard injury หรือ high energy trauma Hip อยู่ใน: Flexion + Adduction + Internal rotation (FAIR) หรือจำว่า 'posterior = add + IR' Anterior hip dislocation: flexion + abduction + external rotation (FABER) Femoral neck fracture ในผู้สูงอายุ: external rotation + shortening ภาวะแทรกซ้อน: avascular necrosis ของ femoral head, sciatic nerve injury ต้องรีบ reduce ภายใน 6 ชั่วโมง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Pelvic fracture",
+          "is_correct": false,
+          "explanation": "Pelvic fracture ไม่มี specific hip position deformity"
+        },
+        {
+          "label": "B",
+          "text": "Acetabular fracture",
+          "is_correct": false,
+          "explanation": "Acetabular fracture อาจมีร่วมกับ dislocation แต่ position บ่งชี้ dislocation"
+        },
+        {
+          "label": "C",
+          "text": "Fracture neck of femur",
+          "is_correct": false,
+          "explanation": "FNF: ER + shortening ไม่ใช่ flexion+adduction+IR"
+        },
+        {
+          "label": "D",
+          "text": "Intertrochanteric fracture",
+          "is_correct": false,
+          "explanation": "IT fracture: ER + shortening ในผู้สูงอายุ"
+        },
+        {
+          "label": "E",
+          "text": "Posterior hip dislocation",
+          "is_correct": true,
+          "explanation": "Flexion + adduction + IR = classic posterior hip dislocation (FAIR position)"
+        }
+      ],
+      "key_takeaway": "Posterior hip dislocation = Flexion + Adduction + Internal Rotation (FAIR); ต้อง reduce ภายใน 6 ชั่วโมง"
+    }
+  },
+  {
+    "id": "b03074e0-bc51-4f43-8776-c9ae18964dc4",
+    "correct_answer": "E",
+    "explanation": "ชาย 18 ปี motorcycle accident, hip in internal rotation, limb shortened = Posterior hip dislocation",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ E (Posterior hip dislocation) เพราะ internal rotation + limb shortening หลัง high energy trauma เป็น hallmark ของ posterior dislocation",
+      "reason": "Posterior hip dislocation mechanism: 'dashboard injury' - femur ถูกดัน posterior เมื่อ hip อยู่ใน flexion Clinical: limb shortened, adducted, internally rotated, flexed Sciatic nerve อาจถูก injury (foot drop) ต้องทำ X-ray ยืนยันและ CT scan เพื่อดู associated acetabular fracture Urgent reduction ภายใน 6 ชั่วโมงเพื่อป้องกัน AVN ของ femoral head",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Fracture neck of femur",
+          "is_correct": false,
+          "explanation": "FNF: ER + shortening ไม่ใช่ IR ในคนอายุน้อย"
+        },
+        {
+          "label": "B",
+          "text": "Intertrochanteric fracture",
+          "is_correct": false,
+          "explanation": "IT fracture: ER + shortening ในผู้สูงอายุ"
+        },
+        {
+          "label": "C",
+          "text": "Acetabular fracture",
+          "is_correct": false,
+          "explanation": "Pure acetabular fracture ไม่ทำให้ limb shortened"
+        },
+        {
+          "label": "D",
+          "text": "Anterior hip dislocation",
+          "is_correct": false,
+          "explanation": "Anterior dislocation: ER + abduction + flexion ไม่ใช่ IR"
+        },
+        {
+          "label": "E",
+          "text": "Posterior hip dislocation",
+          "is_correct": true,
+          "explanation": "IR + shortening + high energy = posterior hip dislocation คลาสสิก"
+        }
+      ],
+      "key_takeaway": "Hip trauma: IR + shortening = Posterior dislocation; ER + shortening = FNF/IT fracture"
+    }
+  },
+  {
+    "id": "b1ac6a25-be96-4064-afba-247cb9a04db8",
+    "correct_answer": "B",
+    "explanation": "ผู้หญิง 65 ปี ปวดเท้า hallux valgus ที่รักษาได้ด้วย bunionectomy + soft tissue procedure (chevron osteotomy)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Bunionectomy + soft tissue procedure/chevron) เพราะ hallux valgus ที่มี significant deformity ต้องทำทั้ง bony และ soft tissue correction",
+      "reason": "Hallux valgus surgical treatment: Mild (<20° IMA): McBride procedure (soft tissue only) Moderate (20-40° IMA): Chevron osteotomy (distal osteotomy) + soft tissue Severe (>40° IMA): Scarf/Lapidus (proximal osteotomy/1st TMT fusion) Arthrodesis (1st MTP fusion): severe OA หรือ revision surgery การทำเพียง bunionectomy อย่างเดียวมี recurrence rate สูง ต้องทำร่วมกับ soft tissue balancing",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Bunionectomy only",
+          "is_correct": false,
+          "explanation": "Bunionectomy เพียงอย่างเดียวมี recurrence rate สูง ต้องทำ soft tissue ด้วย"
+        },
+        {
+          "label": "B",
+          "text": "Bunionectomy + soft tissue procedure (chevron)",
+          "is_correct": true,
+          "explanation": "Moderate hallux valgus: chevron distal osteotomy + soft tissue correction = standard treatment"
+        },
+        {
+          "label": "C",
+          "text": "Arthrotomy first tarsometatarsal joint",
+          "is_correct": false,
+          "explanation": "1st TMT joint arthrotomy ไม่ specific สำหรับ hallux valgus"
+        },
+        {
+          "label": "D",
+          "text": "Arthrotomy first MTP joint",
+          "is_correct": false,
+          "explanation": "MTP arthrotomy ไม่ใช่ standard treatment ของ hallux valgus"
+        },
+        {
+          "label": "E",
+          "text": "First ray osteotomy with fusion",
+          "is_correct": false,
+          "explanation": "1st ray fusion ใช้ใน severe deformity หรือ arthritis ไม่ใช่ moderate case"
+        }
+      ],
+      "key_takeaway": "Hallux valgus surgical treatment: Mild = soft tissue only; Moderate = Chevron + soft tissue; Severe = proximal osteotomy"
+    }
+  },
+  {
+    "id": "b5b0bdac-6144-434a-9542-02439a74d708",
+    "correct_answer": "A",
+    "explanation": "เด็กหญิง 2 ปี delayed walking มีผิวหนังผิดปกติตั้งแต่แรกเกิด (skin defect = spinal dysraphism) ต้องทำ MRI เพื่อดู spinal cord",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (MRI) เพราะ skin defect at birth ที่ midline back + delayed walking บ่งชี้ spinal dysraphism (tethered cord/meningomyelocele) ต้อง MRI",
+      "reason": "Skin defects ที่ midline back (hair tuft, dimple, hemangioma, lipoma) เป็น cutaneous markers ของ spinal dysraphism ในเด็ก MRI เป็น gold standard ในการ diagnose: tethered spinal cord, lipomeningomyelocele, diastematomyelia Lumbosacral X-ray อาจแสดง spina bifida occulta แต่ไม่เห็น cord pathology Myelography ปัจจุบันถูก replace ด้วย MRI",
+      "choices": [
+        {
+          "label": "A",
+          "text": "MRI",
+          "is_correct": true,
+          "explanation": "Skin defect at birth + delayed walking → spinal dysraphism → MRI gold standard ดู cord"
+        },
+        {
+          "label": "B",
+          "text": "Lumbosacral myelography",
+          "is_correct": false,
+          "explanation": "Myelography ถูกแทนด้วย MRI ปัจจุบัน; invasive ไม่ใช่ first choice"
+        },
+        {
+          "label": "C",
+          "text": "Lumbosacral spine X-ray",
+          "is_correct": false,
+          "explanation": "X-ray แสดงเฉพาะ bony defect ไม่เห็น cord หรือ soft tissue pathology"
+        },
+        {
+          "label": "D",
+          "text": "Hip X-ray",
+          "is_correct": false,
+          "explanation": "Hip X-ray ตรวจ DDH ไม่ใช่ spinal dysraphism"
+        },
+        {
+          "label": "E",
+          "text": "Foot X-ray",
+          "is_correct": false,
+          "explanation": "Foot X-ray ไม่ relevant สำหรับ delayed walking จาก spinal cause"
+        }
+      ],
+      "key_takeaway": "Skin defect midline back + delayed walking = spinal dysraphism (tethered cord) → MRI gold standard"
+    }
+  },
+  {
+    "id": "b5f50742-fb18-4536-b5eb-11fa701f9c71",
+    "correct_answer": "A",
+    "explanation": "ปวด lateral epicondyle ของ humerus (tennis elbow) ตรวจยืนยันด้วย Yegason's test ตาม exam",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Yegason's test) ตาม exam answer สำหรับ lateral epicondyle pain",
+      "reason": "Lateral epicondylitis (tennis elbow) เกิดจาก overuse ของ common extensor origin Tests สำหรับ lateral epicondylitis: Cozen's test (resisted wrist extension) Mill's test (elbow extension + wrist flexion + forearm pronation) Yegason's test ปกติใช้ตรวจ biceps tendon (resisted supination) แต่ตาม exam answer ในกรณีนี้คือ A ผลการตรวจที่ positive = ปวดที่ lateral epicondyle เวลา resisted wrist extension",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Yegason's test",
+          "is_correct": true,
+          "explanation": "ตาม exam answer สำหรับ lateral epicondyle pain"
+        },
+        {
+          "label": "B",
+          "text": "Valgus test ของข้อศอก",
+          "is_correct": false,
+          "explanation": "Valgus stress test ตรวจ MCL injury ของข้อศอก"
+        },
+        {
+          "label": "C",
+          "text": "Tinel test ของแขน",
+          "is_correct": false,
+          "explanation": "Tinel test ตรวจ nerve compression (cubital tunnel/CTS)"
+        },
+        {
+          "label": "D",
+          "text": "Hyperextension of wrist",
+          "is_correct": false,
+          "explanation": "Cozen's test (resisted wrist extension) มักใช้ตรวจ lateral epicondylitis มากกว่า"
+        },
+        {
+          "label": "E",
+          "text": "Sensory ที่ first web space",
+          "is_correct": false,
+          "explanation": "First web space sensation ตรวจ radial nerve ไม่ specific สำหรับ lateral epicondylitis"
+        }
+      ],
+      "key_takeaway": "Lateral epicondylitis (tennis elbow): Cozen's test (resisted wrist extension) = most common test; ตาม exam = Yegason's"
+    }
+  },
+  {
+    "id": "b6a3a6c0-7714-474e-830a-6a14476575cf",
+    "correct_answer": "D",
+    "explanation": "หญิง 50 ปี ปวดบวมนิ้วเท้า มีไข้ X-ray cortical erosion = Osteomyelitis and cellulitis",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D (Osteomyelitis and cellulitis) เพราะ X-ray cortical erosion + ไข้ + soft tissue swelling บ่งชี้ bone infection ร่วมกับ cellulitis",
+      "reason": "Osteomyelitis: bone infection ที่ X-ray ในระยะแรก (2 สัปดาห์แรก) อาจปกติ หลังจากนั้นเห็น cortical erosion, periosteal reaction, sequestrum, involucrum ร่วมกับ cellulitis = skin/soft tissue infection ไข้สูง, ESR/CRP สูง, WBC สูง Gout จะมี uric acid สูงและมักไม่มีไข้สูง Septic arthritis อยู่ใน joint space ไม่ใช่ cortical erosion",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Bone tumor",
+          "is_correct": false,
+          "explanation": "Bone tumor ไม่มีไข้ เว้นแต่ Ewing sarcoma; ต้องตรวจ biopsy"
+        },
+        {
+          "label": "B",
+          "text": "Septic arthritis",
+          "is_correct": false,
+          "explanation": "Septic arthritis: joint space narrowing, ไม่ใช่ cortical erosion"
+        },
+        {
+          "label": "C",
+          "text": "Rheumatoid arthritis",
+          "is_correct": false,
+          "explanation": "RA: periarticular erosion, bilateral symmetric ไม่มีไข้สูง"
+        },
+        {
+          "label": "D",
+          "text": "Osteomyelitis and cellulitis",
+          "is_correct": true,
+          "explanation": "Cortical erosion + ไข้ + soft tissue swelling = osteomyelitis + cellulitis"
+        },
+        {
+          "label": "E",
+          "text": "Gout",
+          "is_correct": false,
+          "explanation": "Gout: cortical erosion มีได้แต่ไม่มีไข้สูง uric acid สูง"
+        }
+      ],
+      "key_takeaway": "X-ray cortical erosion + ไข้ + soft tissue swelling = Osteomyelitis + Cellulitis"
+    }
+  },
+  {
+    "id": "b7217b1b-b4fb-448b-bad0-63c6912bfab6",
+    "correct_answer": "B",
+    "explanation": "Burst fracture ของ thoracolumbar spine ข้อความที่ INCORRECT คือ 'It is a stable fracture' เพราะ burst fracture เป็น unstable fracture",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (It is a stable fracture) เพราะนี่คือข้อความที่ INCORRECT; burst fracture เป็น unstable fracture",
+      "reason": "Burst fracture: anterior + posterior vertebral body fracture ด้วยแรง axial loading Late kyphosis เกิดได้บ่อย (ไม่ใช่ rarely) จาก progressive deformity Burst fracture เป็น UNSTABLE fracture เพราะ posterior vertebral body fracture ด้วย retropulsion เข้า canal อาจ involve cauda equina ถ้าเกิดที่ L-spine Posterior ligamentous complex อาจ intact หรือ injured (ขึ้นกับ subtype) Neurological assessment จำเป็นเสมอ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Late kyphosis rarely occurs",
+          "is_correct": false,
+          "explanation": "ข้อนี้ 'incorrect' ด้วย เพราะ late kyphosis พบบ่อย ไม่ใช่ rarely"
+        },
+        {
+          "label": "B",
+          "text": "It is a stable fracture",
+          "is_correct": true,
+          "explanation": "INCORRECT: Burst fracture เป็น UNSTABLE fracture ต้องการ surgical stabilization ใน most cases"
+        },
+        {
+          "label": "C",
+          "text": "May involve cauda equina",
+          "is_correct": false,
+          "explanation": "ข้อนี้ CORRECT; L-spine burst fracture อาจทำให้ cauda equina syndrome"
+        },
+        {
+          "label": "D",
+          "text": "Posterior ligamentous complex intact",
+          "is_correct": false,
+          "explanation": "ข้อนี้ CORRECT สำหรับ typical burst fracture; PLC intact ใน pure burst"
+        },
+        {
+          "label": "E",
+          "text": "Requires careful neurological assessment",
+          "is_correct": false,
+          "explanation": "ข้อนี้ CORRECT เสมอสำหรับ spinal fractures"
+        }
+      ],
+      "key_takeaway": "Burst fracture = UNSTABLE (ไม่ใช่ stable); late kyphosis พบบ่อย; อาจมี cauda equina syndrome"
+    }
+  },
+  {
+    "id": "bcd0f0c6-6664-4344-afb1-1572a1a39d77",
+    "correct_answer": "A",
+    "explanation": "หญิง 55 ปี บาดเจ็บสะโพก หลังดึงข้อแล้วอาการปวดมากขึ้น ต้องทำ arthrocentesis เพื่อ rule out septic arthritis",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Arthrocentesis) เพราะ worsening pain หลัง hip traction + อาการ inflammatory ต้องแยก septic arthritis ด้วย joint aspiration",
+      "reason": "Hip pain ที่ worse หลังการรักษาต้องพิจารณา: 1) Septic arthritis (ฉุกเฉิน) 2) Iatrogenic injury จาก traction 3) AVN early stage Arthrocentesis ของ hip ให้ synovial fluid วิเคราะห์ WBC, crystal, culture Septic hip จะมี WBC >50,000/μL PMN dominant ต้องรักษาทันทีเพื่อป้องกัน cartilage destruction",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Arthrocentesis",
+          "is_correct": true,
+          "explanation": "Worsening hip pain หลัง treatment → aspirate เพื่อ rule out septic arthritis"
+        },
+        {
+          "label": "B",
+          "text": "X-ray both hips",
+          "is_correct": false,
+          "explanation": "X-ray ช่วยน้อยในระยะแรกของ septic arthritis"
+        },
+        {
+          "label": "C",
+          "text": "CT scan",
+          "is_correct": false,
+          "explanation": "CT ดี bony detail แต่ไม่ช่วย diagnose septic arthritis"
+        },
+        {
+          "label": "D",
+          "text": "MRI",
+          "is_correct": false,
+          "explanation": "MRI ใช้เวลานาน ไม่เหมาะ emergency"
+        },
+        {
+          "label": "E",
+          "text": "Bone scan",
+          "is_correct": false,
+          "explanation": "Bone scan ไม่ specific สำหรับ acute septic vs other pathology"
+        }
+      ],
+      "key_takeaway": "Worsening hip pain หลังการรักษา → Arthrocentesis เพื่อ rule out septic arthritis (orthopedic emergency)"
+    }
+  },
+  {
+    "id": "bd18f538-370d-4d71-be43-9fdd094531c9",
+    "correct_answer": "A",
+    "explanation": "ทารกแรกเกิดหลัง vacuum extraction มีแขนขวาอ่อนแรง waiter's tip position = Erb's palsy (C5-C6 injury)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (C5-C6) เพราะ Erb's palsy เกิดจาก C5-C6 upper trunk brachial plexus injury จาก birth trauma",
+      "reason": "Erb's palsy (C5-C6): เกิดจาก traction ของ brachial plexus ขณะคลอด ในเด็กที่ใช้ vacuum/forceps หรือ shoulder dystocia Waiter's tip position: arm adducted + IR ที่ shoulder + elbow extended + pronated forearm + wrist flexed Deficits: deltoid (abduction), biceps (elbow flexion), brachioradialis, supinator Klumpke palsy (C8-T1): hand weakness/intrinsics, Horner's syndrome",
+      "choices": [
+        {
+          "label": "A",
+          "text": "C5-C6",
+          "is_correct": true,
+          "explanation": "Erb's palsy = C5-C6 injury; waiter's tip = shoulder adduction+IR, elbow extension"
+        },
+        {
+          "label": "B",
+          "text": "C6-C7",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ classic combination สำหรับ Erb's palsy"
+        },
+        {
+          "label": "C",
+          "text": "C8-T1",
+          "is_correct": false,
+          "explanation": "C8-T1 = Klumpke's palsy (hand intrinsics, ± Horner's)"
+        },
+        {
+          "label": "D",
+          "text": "T1-T2",
+          "is_correct": false,
+          "explanation": "T1-T2 injury ไม่ใช่ birth injury pattern ที่พบบ่อย"
+        },
+        {
+          "label": "E",
+          "text": "C7-C8",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ classic birth palsy pattern"
+        }
+      ],
+      "key_takeaway": "Erb's palsy = C5-C6 injury; Waiter's tip position; เกิดจาก birth trauma (vacuum/forceps)"
+    }
+  },
+  {
+    "id": "c0ca6585-2387-4d23-ae15-49c3d96e5707",
+    "correct_answer": "B",
+    "explanation": "หญิง 40 ปี ปวดข้อเท้าตอนเช้า morning stiffness นาน PE พบ MT joint subluxation = Rheumatoid Arthritis",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Rheumatoid Arthritis) เพราะ morning stiffness นาน + MTP subluxation + อายุน้อยกว่า = RA",
+      "reason": "Rheumatoid Arthritis: morning stiffness >1 ชั่วโมง, symmetric polyarthritis, small joint involvement (MCP, PIP, MTP), systemic features (fatigue, weight loss) Foot involvement ใน RA: MTP subluxation (cock-up toe deformity), hallux valgus, flat foot OA: morning stiffness <30 นาที, ผู้สูงอายุ, DIP/PIP/1st CMC involvement SLE: butterfly rash, multi-system involvement, ANA positive Reactive arthritis: asymmetric, post-infection",
+      "choices": [
+        {
+          "label": "A",
+          "text": "SLE",
+          "is_correct": false,
+          "explanation": "SLE มี multi-system involvement, butterfly rash, ANA positive"
+        },
+        {
+          "label": "B",
+          "text": "Rheumatoid Arthritis",
+          "is_correct": true,
+          "explanation": "Morning stiffness นาน + MTP subluxation ในหญิงวัยกลางคน = RA คลาสสิก"
+        },
+        {
+          "label": "C",
+          "text": "Osteoarthritis",
+          "is_correct": false,
+          "explanation": "OA morning stiffness <30 นาที, ผู้สูงอายุมากกว่า"
+        },
+        {
+          "label": "D",
+          "text": "Tuberculosis",
+          "is_correct": false,
+          "explanation": "TB ข้อมักเป็น monoarthritis ที่ weight-bearing joint"
+        },
+        {
+          "label": "E",
+          "text": "Reactive arthritis",
+          "is_correct": false,
+          "explanation": "Reactive arthritis: asymmetric, หลัง infection, อาจมี urethritis/conjunctivitis"
+        }
+      ],
+      "key_takeaway": "Morning stiffness >1 ชั่วโมง + MTP subluxation + symmetric arthritis = Rheumatoid Arthritis"
+    }
+  },
+  {
+    "id": "c13b3077-25c8-43ed-8584-7eccca1f08f0",
+    "correct_answer": "E",
+    "explanation": "ตำรวจล้มหัวไหล่ พบ AC joint dislocation complete (grade III+) เกิดจาก coracoclavicular and acromioclavicular ligaments ฉีกขาด",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ E (Coracoclavicular + Acromioclavicular ligaments) เพราะ complete AC joint dislocation (grade III) ต้องมีทั้ง CC และ AC ligaments ฉีกขาด",
+      "reason": "Acromioclavicular (AC) joint stabilizers: Primary: AC ligament (horizontal stability) + CC ligament (trapezoid + conoid; vertical stability) Secondary: deltotrapezial fascia Rockwood Grade III: ทั้ง AC + CC ligaments torn → clavicle elevates (piano key sign) ≥100% displacement Grade I: AC lig. sprain only Grade II: AC lig. torn, CC sprain Torn CC ligament = primary reason clavicle displaces superiorly",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Coracoacromial and coracohumeral lig.",
+          "is_correct": false,
+          "explanation": "Coracoacromial lig. ไม่เกี่ยวกับ AC stability โดยตรง"
+        },
+        {
+          "label": "B",
+          "text": "Coracohumeral and coracoclavicular lig.",
+          "is_correct": false,
+          "explanation": "Coracohumeral lig. อยู่ที่ shoulder joint ไม่ใช่ AC joint"
+        },
+        {
+          "label": "C",
+          "text": "Acromioclavicular and coracoacromial lig.",
+          "is_correct": false,
+          "explanation": "Coracoacromial lig. ไม่ใช่ AC joint stabilizer primary"
+        },
+        {
+          "label": "D",
+          "text": "Coracoclavicular and coracohumeral lig.",
+          "is_correct": false,
+          "explanation": "Coracohumeral lig. ไม่เกี่ยวกับ AC joint"
+        },
+        {
+          "label": "E",
+          "text": "Coracoclavicular + Acromioclavicular lig.",
+          "is_correct": true,
+          "explanation": "Grade III AC dislocation: ทั้ง AC + CC lig. torn ทำให้ clavicle displacement ≥100%"
+        }
+      ],
+      "key_takeaway": "Grade III AC joint dislocation = ทั้ง AC + CC ligaments ฉีกขาด; Piano key sign positive"
+    }
+  },
+  {
+    "id": "c185dd5d-af3f-49f0-ad1c-0ebe98087833",
+    "correct_answer": "A",
+    "explanation": "ผู้สูงอายุ 70 ปี ปวดสะโพกซ้ายหลังล้ม ตรวจพบ external rotation + shortening = Fracture neck of femur",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Fracture neck of femur) เพราะ external rotation + limb shortening ในผู้สูงอายุหลังล้มเป็น classic FNF presentation",
+      "reason": "Fracture neck of femur (FNF): พบบ่อยในผู้สูงอายุโดยเฉพาะหญิง osteoporosis หลังล้ม Clinical: ไม่สามารถเดินหรือยกขา, limb shortened + externally rotated (iliopsoas + gravity ดึง) X-ray: hip AP/lateral แสดง fracture ที่ femoral neck Garden classification I-IV Complications: AVN, non-union Treatment: Hemi/total hip arthroplasty หรือ cannulated screw ขึ้นกับ displacement",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Fracture neck of femur",
+          "is_correct": true,
+          "explanation": "ER + shortening + ผู้สูงอายุหลังล้ม = FNF classic presentation"
+        },
+        {
+          "label": "B",
+          "text": "Anterior hip dislocation",
+          "is_correct": false,
+          "explanation": "Anterior dislocation: ER + flexion + abduction ในคนอายุน้อย trauma รุนแรง"
+        },
+        {
+          "label": "C",
+          "text": "Posterior hip dislocation",
+          "is_correct": false,
+          "explanation": "Posterior: flexion + adduction + IR ไม่ใช่ ER"
+        },
+        {
+          "label": "D",
+          "text": "Femoral shaft fracture",
+          "is_correct": false,
+          "explanation": "Femoral shaft fracture: shortening + deformity แต่ไม่ specific ER"
+        },
+        {
+          "label": "E",
+          "text": "Hip joint effusion",
+          "is_correct": false,
+          "explanation": "Hip effusion ไม่ทำให้ shortening หรือ ER position"
+        }
+      ],
+      "key_takeaway": "ผู้สูงอายุล้ม + ER + shortening = Fracture neck of femur (FNF); รักษา hemi/THA"
+    }
+  },
+  {
+    "id": "c2f779fa-ca14-4256-9382-e3958838c37b",
+    "correct_answer": "B",
+    "explanation": "Comminuted tibia+fibula fracture มี absent dorsal pedis pulse ต้องทำ exploration ของ anterior tibial artery",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Explore anterior tibial artery) เพราะ absent dorsal pedis pulse บ่งชี้ anterior tibial artery injury ซึ่ง dorsalis pedis เป็น terminal branch",
+      "reason": "Dorsalis pedis pulse คือ continuation ของ anterior tibial artery ดังนั้น absent DP pulse = anterior tibial artery injury Posterior tibial artery → plantar surface ของเท้า → posterior tibial pulse ที่ ankle Vascular injury ใน tibial fracture ต้องทำ arterial exploration ทันทีเพื่อ revascularization ภายใน 6 ชั่วโมง (warm ischemia time) Angiography อาจทำก่อนหากเวลาเอื้ออำนวย แต่ถ้า limb ischemic ชัดเจน = ผ่าตัด explore ทันที",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Venous angiography",
+          "is_correct": false,
+          "explanation": "Venous angiography ไม่ relevant สำหรับ arterial injury"
+        },
+        {
+          "label": "B",
+          "text": "Explore anterior tibial artery",
+          "is_correct": true,
+          "explanation": "Absent DP pulse = anterior tibial artery injury → explore ATA ทันที"
+        },
+        {
+          "label": "C",
+          "text": "Explore posterior tibial artery",
+          "is_correct": false,
+          "explanation": "Posterior tibial artery → plantar foot; absent DP = anterior tibial injury"
+        },
+        {
+          "label": "D",
+          "text": "Longitudinal traction",
+          "is_correct": false,
+          "explanation": "Traction ไม่แก้ arterial injury"
+        },
+        {
+          "label": "E",
+          "text": "Immediate amputation",
+          "is_correct": false,
+          "explanation": "ต้องพยายาม revascularize ก่อน amputation เป็น last resort"
+        }
+      ],
+      "key_takeaway": "Absent dorsalis pedis pulse = Anterior tibial artery injury → Explore anterior tibial artery"
+    }
+  },
+  {
+    "id": "c6986ec3-b9ce-4650-9048-93edc530d5ce",
+    "correct_answer": "B",
+    "explanation": "เด็กชาย 7 ปี displaced lateral condyle fracture รักษาด้วย closed reduction + percutaneous K-wire pinning",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Closed reduction + percutaneous K-wire pinning) เพราะ displaced lateral condyle fracture ในเด็กต้องการ anatomical reduction + fixation",
+      "reason": "Lateral condyle fracture ในเด็ก: หากมี displacement ≥2mm ต้องทำ reduction + fixation เพราะ: muscle pull ทำให้ fragment เลื่อน non-union rate สูงมากถ้าไม่รักษา Minimally displaced (2-4mm): closed reduction + percutaneous K-wire ± MUA Displaced >4mm: อาจต้องทำ mini-open หรือ ORIF Conservative treatment: เฉพาะ non-displaced (<2mm)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Conservative: sling + swathe 4-6 สัปดาห์",
+          "is_correct": false,
+          "explanation": "Conservative เฉพาะ non-displaced (<2mm); displaced ต้องการ fixation"
+        },
+        {
+          "label": "B",
+          "text": "Closed reduction + K-wire pinning",
+          "is_correct": true,
+          "explanation": "Displaced lateral condyle fracture → closed reduction + percutaneous K-wire ± image intensifier"
+        },
+        {
+          "label": "C",
+          "text": "Skeletal traction 2-3 สัปดาห์",
+          "is_correct": false,
+          "explanation": "Skeletal traction ไม่ใช่ standard treatment ของ lateral condyle fracture"
+        },
+        {
+          "label": "D",
+          "text": "ORIF ด้วย plate",
+          "is_correct": false,
+          "explanation": "Open ORIF ใช้ severe displacement ที่ closed reduction ล้มเหลว"
+        },
+        {
+          "label": "E",
+          "text": "Observation เท่านั้น",
+          "is_correct": false,
+          "explanation": "Observation สำหรับ displaced fracture มี non-union rate สูงมาก"
+        }
+      ],
+      "key_takeaway": "Displaced lateral condyle fracture เด็ก → Closed reduction + K-wire pinning (ป้องกัน non-union + cubitus valgus)"
+    }
+  },
+  {
+    "id": "cf3c0caa-7692-41d9-9a5d-57eac5192ada",
+    "correct_answer": "A",
+    "explanation": "ชายยกของหนักได้ยิน pop sound ที่มือขวา มี Popeye sign ที่ upper arm = Biceps tendon rupture (distal long head)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Biceps tendon) เพราะ Popeye sign (muscle bunching ที่ upper arm) + pop sound ขณะยกของหนัก = distal biceps tendon rupture",
+      "reason": "Biceps tendon rupture: Proximal (long head): พบบ่อย, Popeye sign ที่ upper arm, elbow flexion ยังเกือบปกติ เพราะ short head ยังอยู่ Distal biceps: พบน้อยกว่า, ecchymosis antecubital fossa, loss of supination มากกว่า elbow flexion Mechanism: sudden eccentric force (heavy lifting) ขณะ elbow flexed Test: Hook test (ไม่สามารถ hook finger under biceps tendon), squeeze test negative",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Biceps tendon",
+          "is_correct": true,
+          "explanation": "Popeye sign + pop sound ขณะยกของ = biceps tendon (long head) rupture คลาสสิก"
+        },
+        {
+          "label": "B",
+          "text": "Triceps tendon",
+          "is_correct": false,
+          "explanation": "Triceps rupture: Popeye ที่ posterior arm, weak elbow extension"
+        },
+        {
+          "label": "C",
+          "text": "Brachialis muscle",
+          "is_correct": false,
+          "explanation": "Brachialis rupture พบน้อยมาก ไม่ทำให้ Popeye sign"
+        },
+        {
+          "label": "D",
+          "text": "Brachioradialis muscle",
+          "is_correct": false,
+          "explanation": "Brachioradialis อยู่ที่ forearm ไม่ทำให้ upper arm deformity"
+        },
+        {
+          "label": "E",
+          "text": "Flexor carpi radialis tendon",
+          "is_correct": false,
+          "explanation": "FCR rupture เกิดที่ wrist ไม่ใช่ upper arm"
+        }
+      ],
+      "key_takeaway": "Popeye sign + pop sound ขณะยกของหนัก = Biceps tendon (long head) rupture"
+    }
+  },
+  {
+    "id": "cfb01b01-ec32-4fd7-a5e7-b5561656f7ac",
+    "correct_answer": "A",
+    "explanation": "ชายเล่นฟุตบอล neck of humerus fracture กล้ามเนื้อที่เสียตาม exam = Triceps ตาม exam answer",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Triceps) ตาม exam answer สำหรับ neck of humerus fracture",
+      "reason": "Surgical neck of humerus fracture: โดยทั่วไป axillary nerve (C5-C6) อาจถูก injury ทำให้ deltoid อ่อนแรง อย่างไรก็ตามตาม exam answer คือ Triceps (radial nerve) ซึ่งอาจเกิดจาก radial nerve ถูก injury ที่ spiral groove หรือ humeral shaft บริเวณ neck Anatomical neck fracture อาจทำให้ radial nerve injury เมื่อ fragment หมุน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Triceps",
+          "is_correct": true,
+          "explanation": "ตาม exam answer; neck of humerus fracture อาจทำให้ radial nerve injury → triceps weakness"
+        },
+        {
+          "label": "B",
+          "text": "Biceps",
+          "is_correct": false,
+          "explanation": "Biceps innervated โดย musculocutaneous nerve ไม่ใช่ axillary/radial nerve"
+        },
+        {
+          "label": "C",
+          "text": "Deltoid",
+          "is_correct": false,
+          "explanation": "Deltoid (axillary nerve) มักเสียใน surgical neck fracture แต่ exam ตอบ triceps"
+        },
+        {
+          "label": "D",
+          "text": "Coracobrachialis",
+          "is_correct": false,
+          "explanation": "Coracobrachialis = musculocutaneous nerve ไม่เกี่ยวกับ neck fracture"
+        },
+        {
+          "label": "E",
+          "text": "Brachialis",
+          "is_correct": false,
+          "explanation": "Brachialis = musculocutaneous nerve ไม่เกี่ยวกับ humeral neck fracture"
+        }
+      ],
+      "key_takeaway": "Surgical neck humerus fracture → axillary nerve → deltoid; ตาม exam: triceps (radial nerve)"
+    }
+  },
+  {
+    "id": "d30bb579-0768-4553-8278-f7dfd2e579d4",
+    "correct_answer": "A",
+    "explanation": "ชาย 45 ปี ปวดไหล่ซ้ายเรื้อรัง ROM จำกัด ประเมิน ROM ด้วย goniometer วัด active ROM ที่ผู้ป่วยเคลื่อนไหวเอง",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (AROM ด้วย goniometer ทุกทิศทาง) เพราะการวัด active ROM ด้วย goniometer เป็น standard clinical assessment ของ shoulder",
+      "reason": "Range of Motion assessment: Active ROM (AROM): ผู้ป่วยเคลื่อนไหวเอง สะท้อน neuromuscular function + joint mobility Passive ROM (PROM): แพทย์เคลื่อนไหวให้ สะท้อน true joint mobility Goniometer: standard tool วัด ROM ใน degrees ที่แม่นยำ ใน frozen shoulder: AROM และ PROM ลดเท่ากัน (ต่างจาก rotator cuff tear ที่ PROM > AROM) การวัดทุกทิศทาง (flexion, extension, abduction, ER, IR) ให้ข้อมูลครบถ้วน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ผู้ป่วยเคลื่อนไหวเอง + goniometer ทุกระนาบ",
+          "is_correct": true,
+          "explanation": "Standard AROM assessment ด้วย goniometer = clinical standard สำหรับ shoulder evaluation"
+        },
+        {
+          "label": "B",
+          "text": "แพทย์เคลื่อนไหวให้จนเจ็บ (PROM)",
+          "is_correct": false,
+          "explanation": "PROM ใช้เสริม AROM แต่ไม่ใช่ primary assessment; force จนเจ็บไม่เหมาะสม"
+        },
+        {
+          "label": "C",
+          "text": "Manual muscle testing เท่านั้น",
+          "is_correct": false,
+          "explanation": "MMT ตรวจ muscle strength ไม่ใช่ joint ROM"
+        },
+        {
+          "label": "D",
+          "text": "Dynamic ROM หลัง heavy exercise",
+          "is_correct": false,
+          "explanation": "ไม่เหมาะสม ผู้ป่วยเจ็บอยู่แล้ว exercise ก่อนจะทำให้ worse"
+        },
+        {
+          "label": "E",
+          "text": "Inclinometer/tape measure แทน goniometer",
+          "is_correct": false,
+          "explanation": "Goniometer เป็น standard tool; inclinometer ใช้สำหรับ spinal ROM ไม่ใช่ shoulder"
+        }
+      ],
+      "key_takeaway": "Shoulder ROM assessment = Active ROM ด้วย goniometer วัดทุกทิศทาง (flexion/ext/abd/ER/IR)"
+    }
+  },
+  {
+    "id": "d31b6dbc-a63f-4911-9c98-bdfc256ca157",
+    "correct_answer": "B",
+    "explanation": "เด็กชาย 8 ปี lateral condyle fracture ของ humerus จะเห็น posterolateral angulation deformity",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Posterolateral angulation) เพราะแรงกระแทกและกล้ามเนื้อ extensor ดึง fragment ออกไป posterolateral",
+      "reason": "Lateral condyle fracture mechanism: FOOSH ทำให้ lateral condyle ถูก avulse ออกไป แรง: 1) Impact force ดัน fragment posterolateral 2) Common extensor muscles (ECRB, ECRL, EDC) ดึง fragment ออกไปด้านข้างและหลัง ทำให้เกิด posterolateral angulation/displacement Fragment มี cartilaginous hinge ด้านหน้าทำให้ X-ray ด้านหน้า underestimate displacement",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Anterior angulation จาก common extensor origin",
+          "is_correct": false,
+          "explanation": "Extensor ดึง posterolateral ไม่ใช่ anterior"
+        },
+        {
+          "label": "B",
+          "text": "Posterolateral angulation จาก impact + extensor pull",
+          "is_correct": true,
+          "explanation": "Impact + extensor muscles ดึง fragment ไป posterolateral direction"
+        },
+        {
+          "label": "C",
+          "text": "Medial displacement จาก common flexor",
+          "is_correct": false,
+          "explanation": "Common flexor อยู่ที่ medial epicondyle ไม่ใช่ lateral condyle"
+        },
+        {
+          "label": "D",
+          "text": "Pure vertical fracture ไม่มี displacement",
+          "is_correct": false,
+          "explanation": "Displaced fracture ย่อมมี angulation/displacement"
+        },
+        {
+          "label": "E",
+          "text": "Superior displacement จาก triceps",
+          "is_correct": false,
+          "explanation": "Triceps insert ที่ olecranon ไม่เกี่ยวกับ lateral condyle"
+        }
+      ],
+      "key_takeaway": "Lateral condyle fracture = posterolateral angulation จาก impact + extensor muscle pull"
+    }
+  },
+  {
+    "id": "d5618969-13d2-41c5-a14b-10602269866d",
+    "correct_answer": "B",
+    "explanation": "Hamstring injury rehabilitation: prone position, knee flexed 90°, manual resistance = specific hamstring strengthening",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (นอนคว่ำ + ดัดเข่า 90° + hand resistance) เพราะเป็น isotonic hamstring curl ที่ specific และ controlled",
+      "reason": "Hamstring strengthening exercises: Prone knee flexion (hamstring curl): นอนคว่ำ, ดัดเข่า 90°, resistance ขณะดัด = specific hamstring isolation ใช้ manual resistance หรือ resistance band/machine Nordic hamstring curl: eccentric strengthening สำหรับ prevention ใน athlete ต้องแยก biarticular effect: hamstring ทั้ง flex knee และ extend hip การนอนคว่ำ lock hip ไม่ให้ move ทำให้ isolate hamstring action ที่เข่า",
+      "choices": [
+        {
+          "label": "A",
+          "text": "นั่ง + ขาเหยียด + hand resistance",
+          "is_correct": false,
+          "explanation": "ท่านี้ทำให้ hamstring ทำงานที่ hip extension ไม่ใช่ knee flexion"
+        },
+        {
+          "label": "B",
+          "text": "นอนคว่ำ + เข่า 90° + hand resistance ขณะดัดเข่า",
+          "is_correct": true,
+          "explanation": "Prone hamstring curl = specific hamstring strengthening ที่ isolate knee flexion"
+        },
+        {
+          "label": "C",
+          "text": "นั่งขัดไม้ + ยกส้นขึ้น",
+          "is_correct": false,
+          "explanation": "การยกส้นในท่านั่งขัดไม้ไม่ใช่ specific hamstring exercise"
+        },
+        {
+          "label": "D",
+          "text": "ยืน + ดัดเข่า 45° + resistance ที่เข่า",
+          "is_correct": false,
+          "explanation": "Standing knee flexion มี balance challenge ไม่เหมาะในระยะ early rehab"
+        },
+        {
+          "label": "E",
+          "text": "นอนหงาย + ยกส้นขึ้น",
+          "is_correct": false,
+          "explanation": "Supine heel raise เป็น bridging exercise สำหรับ hip extensors ไม่ใช่ specific hamstring"
+        }
+      ],
+      "key_takeaway": "Hamstring strengthening = Prone knee curl (นอนคว่ำ + ดัดเข่า 90° + resistance) = specific isolation"
+    }
+  }
+]

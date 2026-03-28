@@ -1,0 +1,1879 @@
+{
+  "filename": "ENT",
+  "subject": "ent",
+  "exam_type": "NL2",
+  "stats": {
+    "total": 103,
+    "no_choices": 77,
+    "few_choices": 4,
+    "good": 22,
+    "no_scenario": 0,
+    "short_scenario": 33
+  },
+  "issues": [
+    {
+      "index": 0,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เลือดไหลทางจมูกไม่หยุด BP 70/50 initial management\nFluid\nAnt.+Post. Packing\nA 70",
+      "choices_count": 0
+    },
+    {
+      "index": 1,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชาย 70 ปี มาด้วยแผลที่ปากขนาด 2 cm elevated border เป็นมา 6เดือน ถามmost appropr",
+      "choices_count": 0
+    },
+    {
+      "index": 2,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "antibiotic + F/U",
+      "choices_count": 0
+    },
+    {
+      "index": 3,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "surgical debridement+tropical antibiotic",
+      "choices_count": 0
+    },
+    {
+      "index": 4,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "punch excision",
+      "choices_count": 0
+    },
+    {
+      "index": 5,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "excisinal biopsy",
+      "choices_count": 0
+    },
+    {
+      "index": 6,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "wide excisinal biopsy",
+      "choices_count": 0
+    },
+    {
+      "index": 7,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยชายอายุ 30 ปี มีประวัติ firecracker exposer(ประทัด) ตรวจร่างกายพบ TM :40%",
+      "choices_count": 0
+    },
+    {
+      "index": 8,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "observe รอให้หายเอง",
+      "choices_count": 0
+    },
+    {
+      "index": 9,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "remove clot + paint gentian violet",
+      "choices_count": 0
+    },
+    {
+      "index": 10,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "put in gel foam + ATB ear drop",
+      "choices_count": 0
+    },
+    {
+      "index": 11,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "tympanic patch",
+      "choices_count": 0
+    },
+    {
+      "index": 12,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "schedule tympanoplasty \\",
+      "choices_count": 0
+    },
+    {
+      "index": 18,
+      "question_number": 7,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เด็กมาด้วยน้ามูกเขียวเหม็นไหลจากจมูกซ้าย ได้ยาแล้วก็ไม่หาย คิดว่าเป็นอะไร น่าจ",
+      "choices_count": 0
+    },
+    {
+      "index": 19,
+      "question_number": 8,
+      "issues": [
+        "only_2_choices"
+      ],
+      "scenario_preview": "ชาย อายุ 45 ปี มีอาการคัดจมูกด้านซ้าย น้ามูกปนเลือด หูอื้อ มีก้อนที่คอ (ศรว 2008",
+      "choices_count": 2
+    },
+    {
+      "index": 22,
+      "question_number": 11,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยมีไข้ ไอ มาตรวจพบ bullous myringitis ยาที่ใช้รักษา คือ (ศรว 2008)\nกลุ่ม",
+      "choices_count": 0
+    },
+    {
+      "index": 23,
+      "question_number": 12,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เด็กอายุ 8 ปี มีปวดกรามขวา อ้าปากไม่ได้ PE พบฟันกรามผุทั้งซ้ายและขวา แก้มด้านขวา",
+      "choices_count": 0
+    },
+    {
+      "index": 24,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Gingivitis",
+      "choices_count": 0
+    },
+    {
+      "index": 25,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Dentoalveolar abscess",
+      "choices_count": 0
+    },
+    {
+      "index": 26,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Dentoalveolar abscess + space infection",
+      "choices_count": 0
+    },
+    {
+      "index": 27,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ถูกทั้ง 2+3",
+      "choices_count": 0
+    },
+    {
+      "index": 28,
+      "question_number": 13,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชาย 19 ปี มีอาการคัดจมูกเป็นๆหายๆมา 2 ปี อาการเป็นมากขึ้น บางครั้งมีน้ามูกขุ่น ไ",
+      "choices_count": 0
+    },
+    {
+      "index": 29,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Allergic rhinitis",
+      "choices_count": 0
+    },
+    {
+      "index": 30,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Rhinosinusitis",
+      "choices_count": 0
+    },
+    {
+      "index": 31,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Inverted papilloma",
+      "choices_count": 0
+    },
+    {
+      "index": 32,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Nasal polyp",
+      "choices_count": 0
+    },
+    {
+      "index": 33,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Angiofibroma",
+      "choices_count": 0
+    },
+    {
+      "index": 34,
+      "question_number": 14,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เด็ก เป็น acute otitis media มีอาการ post nasal drip ถ้าส่ง film Caldwell กับ ? ",
+      "choices_count": 0
+    },
+    {
+      "index": 35,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "thickening eyhmoidal sinus",
+      "choices_count": 0
+    },
+    {
+      "index": 36,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "thickening frontal sinus",
+      "choices_count": 0
+    },
+    {
+      "index": 37,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "haziness maxillary sinus",
+      "choices_count": 0
+    },
+    {
+      "index": 38,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "air fluid level in maxillary sinus",
+      "choices_count": 0
+    },
+    {
+      "index": 39,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Perios mucusa thick มากกว่าเท่ากับ 5mm",
+      "choices_count": 0
+    },
+    {
+      "index": 40,
+      "question_number": 15,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชาย อายุกลางคน ไอ เสียงแหบ กลืนปกติ ไม่มีหอบเหนื่อย ไม่มีหายใจลาบาก สูบบุหรี่ วั",
+      "choices_count": 0
+    },
+    {
+      "index": 41,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ca larynx glottic type",
+      "choices_count": 0
+    },
+    {
+      "index": 42,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ca larynx supraglottic type",
+      "choices_count": 0
+    },
+    {
+      "index": 43,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "TB larynx",
+      "choices_count": 0
+    },
+    {
+      "index": 44,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "vocal nocule",
+      "choices_count": 0
+    },
+    {
+      "index": 52,
+      "question_number": 25,
+      "issues": [
+        "only_1_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยชายอายุ 20 ปี มาด้วยหูซ้ายอื้อมา 1 ปี ปวดหู มีน้าใสๆไหลออกมาจากหเป็นๆหายๆ",
+      "choices_count": 1
+    },
+    {
+      "index": 53,
+      "question_number": 26,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "RLL Pneumonia + Bullous myringitis เชื้อ common คือ? (ศรว 2011)",
+      "choices_count": 3
+    },
+    {
+      "index": 54,
+      "question_number": 27,
+      "issues": [
+        "only_1_choices"
+      ],
+      "scenario_preview": "เด็กว่ายน้าเป็นประจา มีปวดหู Oto: พบหูแดงใน canal Diag? (ศรว 2011)",
+      "choices_count": 1
+    },
+    {
+      "index": 58,
+      "question_number": 31,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยแมลงเข้าหู 2 hr รู้สึกยังมีแมลงดิ้นในหู PTA PE: lived insect inside ear c",
+      "choices_count": 0
+    },
+    {
+      "index": 59,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "70% alcohol",
+      "choices_count": 0
+    },
+    {
+      "index": 60,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "3%boric acid",
+      "choices_count": 0
+    },
+    {
+      "index": 61,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Vegetable oil",
+      "choices_count": 0
+    },
+    {
+      "index": 62,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "NSS",
+      "choices_count": 0
+    },
+    {
+      "index": 63,
+      "question_number": 32,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยหญิงอายุ 55 ปี มาด้วยเรื่องอาการวิงเวียนศีรษะมา 3 วัน เป็นมากเวลาตื่นตอนเ",
+      "choices_count": 0
+    },
+    {
+      "index": 64,
+      "question_number": 33,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยหญิง 3 ปี มาด้วยอาการหูอื้อ 1 วันก่อนมารพ 2 วันก่อนมารพ ผู้ป่วยเดินทางโดย",
+      "choices_count": 0
+    },
+    {
+      "index": 65,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "loratasine",
+      "choices_count": 0
+    },
+    {
+      "index": 66,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Pseudoephedine",
+      "choices_count": 0
+    },
+    {
+      "index": 67,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "prednisolone",
+      "choices_count": 0
+    },
+    {
+      "index": 68,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "steroid + ATB ear drop",
+      "choices_count": 0
+    },
+    {
+      "index": 69,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Myringotomy",
+      "choices_count": 0
+    },
+    {
+      "index": 70,
+      "question_number": 34,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "หญิงอายุ 25 ปี ตื่นเช้ามามีใบหน้าซีกซ้ายเบี้ยว ชากระพุ้งแก้มซ้าย หลับตาไม่สนิท น",
+      "choices_count": 0
+    },
+    {
+      "index": 71,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Trigeminal neuralgia",
+      "choices_count": 0
+    },
+    {
+      "index": 72,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "idiopathic facial palsy",
+      "choices_count": 0
+    },
+    {
+      "index": 73,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Ramsay Hunt syndrome",
+      "choices_count": 0
+    },
+    {
+      "index": 74,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Ruptured cerebral aneurysm",
+      "choices_count": 0
+    },
+    {
+      "index": 75,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "cerebellopontine angle tumor",
+      "choices_count": 0
+    },
+    {
+      "index": 76,
+      "question_number": 35,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "นอนกรน + OSA ตรวจเจอ tonsil แค่ gr.2 MX? (104/ศรว. มี.ค. 2555)",
+      "choices_count": 0
+    },
+    {
+      "index": 77,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "tonsillectomy",
+      "choices_count": 0
+    },
+    {
+      "index": 78,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "uvuloplasty",
+      "choices_count": 0
+    },
+    {
+      "index": 79,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "diazepamhs",
+      "choices_count": 0
+    },
+    {
+      "index": 80,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "corticosteroidhs",
+      "choices_count": 0
+    },
+    {
+      "index": 81,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "on CPAP",
+      "choices_count": 0
+    },
+    {
+      "index": 82,
+      "question_number": 36,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยเด็กหญิงอายุ 3 ปี หนัก 15 กิโลกรัม สูง89 เซนติเมตร มีอาการนอนกรนมา 2 เดือ",
+      "choices_count": 0
+    },
+    {
+      "index": 83,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Obesity",
+      "choices_count": 0
+    },
+    {
+      "index": 84,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "adenotonsillar hypertrophy",
+      "choices_count": 0
+    },
+    {
+      "index": 85,
+      "question_number": 37,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ปวดหู 2 days เอาไม้ปั่นหู ได้เมือกเหนียวสีดา ส่องหูพบ (มีรูปสีมาให้ที่ปกหลังด้าน",
+      "choices_count": 0
+    },
+    {
+      "index": 86,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Malignant OE",
+      "choices_count": 0
+    },
+    {
+      "index": 87,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Diffuse OE",
+      "choices_count": 0
+    },
+    {
+      "index": 88,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Localized OE",
+      "choices_count": 0
+    },
+    {
+      "index": 89,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Mycotic otitis\nCOMPRE",
+      "choices_count": 0
+    },
+    {
+      "index": 90,
+      "question_number": 8,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชายอายุ 20 ปี ตอนเด็กเป็นหูน้าหนวกข้างขวาบ่อย พักหลังเป็นน้าหนวกมากขึ้น วันนี้มา",
+      "choices_count": 0
+    },
+    {
+      "index": 91,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Film mastoid",
+      "choices_count": 0
+    },
+    {
+      "index": 92,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Audiogram&tympanogram",
+      "choices_count": 0
+    },
+    {
+      "index": 93,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "IV antivertigo",
+      "choices_count": 0
+    },
+    {
+      "index": 94,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "IV ciprofloxacin admit",
+      "choices_count": 0
+    },
+    {
+      "index": 95,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Oral ciprofloxacin + F/U 2 วัน",
+      "choices_count": 0
+    },
+    {
+      "index": 98,
+      "question_number": 75,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เด็กมี earwax แข็งมาก ต้องทายังไง >> หยอดยาให้นุ่ม แล้วนัดมาเอาออก",
+      "choices_count": 0
+    },
+    {
+      "index": 101,
+      "question_number": 144,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เด็กหญิงอายุ 15 ปี มีรูที่หน้าหู ขวามาตั้งแต่เกิด 2 ปี มีน้าใสๆไหลออกมา ขณะนี้บว",
+      "choices_count": 0
+    }
+  ],
+  "questions": [
+    {
+      "question_number": 1,
+      "scenario": "เลือดไหลทางจมูกไม่หยุด BP 70/50 initial management\nFluid\nAnt.+Post. Packing\nA 70-year-old man presents with left massive epistaxis BP 180/110 mmHg เลือดไหลลงคอ anterior and posterior nasal packing can’t be done because severe deviated nasal septum to the left. Scope not seen bleeding site. After resuscitation, what is the management\nEmbolization\nSphenopalatine artery ligation\nInternal maxillary artery ligation\nAnterior ethmoidal artery cauterization\nPosterior ethmoidal artery cauterization\nA woman underlying DM has rhinorrhea for … PE: nasal discharge from middle meatus. What is the management\nRhinoscope\nA 2-year-old boy has had several episode of rhinorrhea 2 months. He has 3 course of 7 days oral ATB. The symptoms relieve after ATB but recur when stop. PE: right nose: micopurulect discharge, left normal nasal mucosa. What is the most appropriate management\nNasoscopy\nNasal discharge gram stain/ culture\nFilm paranasal sinus\nBlood for immunoglobulin\nCeftriaxone IV\nA female presents with cough, rhinorrhea for 2 years. The symptoms worsen. Physical exam reveals whitish discharge at rosenmuller fossa, nasal turbinate 4+, mucoid discharge. What is the most likely diagnosis\nAllergic rhinitis\nVasomotor rhinitis\nAcute rhinosinusitis\nChronic rhinosinusitis\nAllergic fungal rhinitis\nAn 8-year-old boy has rhinorrhea especially at night. He has itcing eyes, allergic shiner. PE: pale turbinate. What is the appropriate management\nNSS irrigate\nAntihistamine\nOral leukotriene\nNasal steroid\nTopical decongestant\nAn 18-year-old man presents with right otalgia after right ear picking for 1 day. PE: as shown. What is the most proper management\nEar toilet\nATB eardrop\nPaper patch\nTympanoplasty\nMyringoplasty\nผู้ป่วยชาย วัยกลางคน U/D : DM มาด้วย acute Rt pinna & auricle tender & redness , severe pain เมื่อโดนดึงหูถาม management\nTopical ATB\nOral ATB\nOral ATB and Topical steroid\nOral ATB and Topical ATB\nIV ATB\nเด็กชายเจ็บหู 2 ข้าง มีไข้ แพทย์ให้ ATB ทาน อีก1สัปดาห์มีอาการดีขึ้น เป็น otitis media ใกล้หายแล้ว หูซ้ายไม่เจ็บ หูขวาเหลือ mild tympanic membrane perforate, minimal purulent discharge ทำอะไร\nTopical ATB\nAntihistamine\nMastoidectomy\nA 40-year-old woman presents with progressive hearing loss in right ear. Her cousin also has same symptom of hearing loss. Physical exams normal external canal and TM both ears. Weber test lateralized to right. Rinne test left ear air conduction better than bone conduction but right ear bone conduction better than air conduction. Audiogram as shown in figure(แต่ไม่มีรูปให้). Tympanogram type A both ears. What is the most appropriate management\nDiuretics\nSodium fluoride\nStapedectomy with reconstruct…\nBone conduction hearing aid\nMyringotomy with tube\nA 6-month-old boy presents with no ears. His mother said that he can’t hear but other development aspects are normal. Physical exams no pinna and atresia of canal. TM can’t be evaluated both ears. ABR found wave V at 50 dB both ears. What is the most appropriate management\nEar prosthesis implant hearing device\nAir conduction hearing aid\nBone conduction hearing aid\nCochlear implant at 1 year old\nSurgical reconstruction ใบหู+รูปหูที่อายุ...\nAn 18-year-old man ไปซ้อมยิงปืน 2 days ago. กลับมาได้ยินเสียง tinnitus. Otoscope: normal eardrum. Tuning fork 512 Hz: Weber not lateralized, Rinne positive both ears. What is the diagnosis\nOtosclerosis\nOsteochondroma\nAcoustic trauma\nMinere disease\nOssicular chain dislocation\nA woman has tinnitus both ears. Sometimes dizziness for 1-2 days. PE: normal hearing both ears\nPsychotic\nMeniere disease\nBenign paroxysmal positional vertigo\nA female มี vertigo หลังจาก head trauma 1 week ago อาการมี spinning when lying down, look up, look down, no tinnitus. CNS normal. External acoustic canal and tympanic membrane are normal both ears. What is the most appropriate investigation\nAudiogram\nDix-Hallpike\nCT head\nMRI\nSkull x-ray\nA 6-year-old boy presents with fever, sore throat and dysphagia for 2 days. PE: BT 39, P112, bulging posterior pharyngeal wall, anterior cervical lymphadenopathy, stiffness of neck, no hepatosplenomegaly. What is the diagnosis\nAcute epiglottitis\nPeritonsillar abscess\nRetropharyngeal abscess\nInfectious mononucleosis\nLudwig angina\nA 30-year-old woman, BMI 28, presents with ตื่นตอนกลางคืนขึ้นมา 2 รอบ ร่วมกับอาการง่วงตอนกลางวัน มีหลับตอนทำงาน. What is the most likely diagnosis\nPrimary snoring\nObstructive sleep apnea\nHypoventilation syndrome\nObesity hypoventilation\nA 55-year-old man with underlying disease diabetes, hypertension, obesity presents with snoring, stop breathing at night, headache when he wake up. What is the management\nOral appliances\nUvulopalatopharyngoplasty\nContinuous positive airway pressure\nPositional therapy (avoid supine position)\nA 40-year-old woman immediately hoarsness after cholecystectomy under GA. What is the most likely diagnosis\nLaryngeal web\nVocal cord nodule\nVocal cord paralysis\nIntubation granuloma\nCricoarytenoid dislocation\nเด็กกลืน button battery x-ray พบแบตอยู่ midesophagus. What is the appropriate management\nAdministrated ipecac\nUrgent esophagoscope\nDischarge home, follow-up\nSurgery\nAdmit observe clinical",
+      "choices": [],
+      "exam_source": "NLE 2015"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ชาย 70 ปี มาด้วยแผลที่ปากขนาด 2 cm elevated border เป็นมา 6เดือน ถามmost appropriate Mx.",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "antibiotic + F/U",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "surgical debridement+tropical antibiotic",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "punch excision",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "excisinal biopsy",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "wide excisinal biopsy",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ผู้ป่วยชายอายุ 30 ปี มีประวัติ firecracker exposer(ประทัด) ตรวจร่างกายพบ TM :40% dry perforation ถาม Mx.",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "observe รอให้หายเอง",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 2,
+      "scenario": "remove clot + paint gentian violet",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 3,
+      "scenario": "put in gel foam + ATB ear drop",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 4,
+      "scenario": "tympanic patch",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 5,
+      "scenario": "schedule tympanoplasty \\",
+      "choices": [],
+      "exam_source": "NLE 2014"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ผู้หญิงอายุ 40 ปี มีไข้ เจ็บคอ กลืนเจ็บ และกลืนลาบาก ซื้อยามาทานเองไม่หาย ตรวจร่างกายพบ muffled voice film lateral neck ด้วย soft tissue technique ได้ผลการตรวจดังภาพ การวินิจฉัยใดถูกต้องมากที่สุด (ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Epiglotitis"
+        },
+        {
+          "label": "B",
+          "text": "Ludwig angina"
+        },
+        {
+          "label": "C",
+          "text": "Laryngotracheitis"
+        },
+        {
+          "label": "D",
+          "text": "Retropharyngeal abscess"
+        },
+        {
+          "label": "E",
+          "text": "Parapharyngeal abscess"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ผู้ป่วยหญิงอายุ 30 ปี มาด้วยหูขวาอื้อมา 1 วัน ผู้ป่วยต้องเดินทางโดยเครื่องบินบ่อยๆ และมักหูอื้อเวลาเครื่องบินขึ้นหรือลง สักพักจะหายไปเอง 2 วันก่อน ขณะเครื่องบินลงจอดที่ลาน รู้สึกหูขวาอื้อและปวดหูมาก การได้ยินลดลง เช้านี้ยังหูอื้ออยู่แต่ไม่ปวดหูแล้ว ตรวจ left ear drum: normal , right ear drum: dark blue, retracted ear drum,\nWeber test: localized to right, Rinne test: left AC>BC, right BC>AC จงบอกการรักษาที่เหมาะสม (ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Loratadine"
+        },
+        {
+          "label": "B",
+          "text": "Pseudoephredine"
+        },
+        {
+          "label": "C",
+          "text": "Serrtic peptidase"
+        },
+        {
+          "label": "D",
+          "text": "Chloramphenical eardrop"
+        },
+        {
+          "label": "E",
+          "text": "Myringotomy"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "หลังจากฝึกซ้อมยิงปืน หูขวาอื้อมีเสียงดังอื้อในหู ตรวจร่างกายมี ear drum : intact , Weber : no lateralization , Renne : Rt BC > AC , Lt AC>BC จงวินิจฉัย (ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Acoustic trauma"
+        },
+        {
+          "label": "B",
+          "text": "Otosclerosis"
+        },
+        {
+          "label": "C",
+          "text": "Meniere"
+        },
+        {
+          "label": "D",
+          "text": "Steatosis"
+        },
+        {
+          "label": "E",
+          "text": "Otitis media"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 5,
+      "scenario": "ผู้ป่วยเด็ก มีไข้ น้ามูกไหล ตรวจหูพบ erythematous with bulging at posterior TM จะให้ยาใดรักษา(ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Tetracycline"
+        },
+        {
+          "label": "B",
+          "text": "Amoxycillin"
+        },
+        {
+          "label": "C",
+          "text": "Erythromycin"
+        },
+        {
+          "label": "D",
+          "text": "Doxycycline"
+        },
+        {
+          "label": "E",
+          "text": "Amoxy-clavulonic"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 6,
+      "scenario": "เด็กชายอายุ 5 ปี มีไข้ หายใจเสียงดัง น้ามูกไหลจากจมูกทั้งสองข้าง นอนกรนมา 2 ปี น่าจะเป็นจากอะไร(ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Choanal atresia"
+        },
+        {
+          "label": "B",
+          "text": "High arch palate"
+        },
+        {
+          "label": "C",
+          "text": "Hypertrophy of adenoid"
+        },
+        {
+          "label": "D",
+          "text": "Foreign body of nasal cavity"
+        },
+        {
+          "label": "E",
+          "text": "Congenital tumor of nasal cavity"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 7,
+      "scenario": "เด็กมาด้วยน้ามูกเขียวเหม็นไหลจากจมูกซ้าย ได้ยาแล้วก็ไม่หาย คิดว่าเป็นอะไร น่าจะเป็น FB impact",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 8,
+      "scenario": "ชาย อายุ 45 ปี มีอาการคัดจมูกด้านซ้าย น้ามูกปนเลือด หูอื้อ มีก้อนที่คอ (ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "CA nasopharynx"
+        },
+        {
+          "label": "B",
+          "text": "otitis media"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 9,
+      "scenario": "หญิง 25 ปี คัดจมูก มีน้ามูก และจามอยู่บ่อยๆ ไปพบแพทย์ ได้รับการวินิจฉัยว่าเป็น จมูกอักเสบจากภูมิแพ้ ได้ยาหยอดจมูก 6 เดือน อาการไม่ดีขึ้น จึ่งซื้อยามาหยอดจมูกเอง 3 เดือน อาการแย่ลง น้ามูกมากขึ้น หายใจไม่ค่อยออก Dx? (ศรว 2008)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Atrophic rhinitis"
+        },
+        {
+          "label": "B",
+          "text": "Vasomotor rhinitis"
+        },
+        {
+          "label": "C",
+          "text": "Chronic irritative rhinitis"
+        },
+        {
+          "label": "D",
+          "text": "Rhinitis medicamentosa"
+        },
+        {
+          "label": "E",
+          "text": "Severe allergic rhinitis with polypoid change"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 10,
+      "scenario": "หญิง 28 ปีไข้ต่าๆไอมีเสมหะมี bullous myringitisคิดถึงเชื้ออะไร (ศรว 2009)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "S.pneumoniae"
+        },
+        {
+          "label": "B",
+          "text": "H.influenzae"
+        },
+        {
+          "label": "C",
+          "text": "RSV"
+        },
+        {
+          "label": "D",
+          "text": "Mycoplasma"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 11,
+      "scenario": "ผู้ป่วยมีไข้ ไอ มาตรวจพบ bullous myringitis ยาที่ใช้รักษา คือ (ศรว 2008)\nกลุ่ม Macrolide",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 12,
+      "scenario": "เด็กอายุ 8 ปี มีปวดกรามขวา อ้าปากไม่ได้ PE พบฟันกรามผุทั้งซ้ายและขวา แก้มด้านขวาปูด มีก้อนแข็งนูนออกมา Dx (ศรว 2009)",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Gingivitis",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Dentoalveolar abscess",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Dentoalveolar abscess + space infection",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 5,
+      "scenario": "ถูกทั้ง 2+3",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 13,
+      "scenario": "ชาย 19 ปี มีอาการคัดจมูกเป็นๆหายๆมา 2 ปี อาการเป็นมากขึ้น บางครั้งมีน้ามูกขุ่น ไม่มีเลือดกาเดาออก การได้กลิ่นลดลง แพทย์ตรวจพบก้อนในโพรงจมูก 2 ข้าง ก้อนกลม มัน ผิวเรียบ Dx.? (ศรว 2009)",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Allergic rhinitis",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Rhinosinusitis",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Inverted papilloma",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Nasal polyp",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 5,
+      "scenario": "Angiofibroma",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 14,
+      "scenario": "เด็ก เป็น acute otitis media มีอาการ post nasal drip ถ้าส่ง film Caldwell กับ ? ที่บอกว่าเป็น acute sinusitis แน่ ๆ (ศรว 2009)",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "thickening eyhmoidal sinus",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "thickening frontal sinus",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "haziness maxillary sinus",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "air fluid level in maxillary sinus",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 5,
+      "scenario": "Perios mucusa thick มากกว่าเท่ากับ 5mm",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 15,
+      "scenario": "ชาย อายุกลางคน ไอ เสียงแหบ กลืนปกติ ไม่มีหอบเหนื่อย ไม่มีหายใจลาบาก สูบบุหรี่ วันละ 2 ซอง มา 30 ปี ตรวจร่างกายปกติตัวอย่าง ไม่มีต่อมน้าเหลืองโต วินิจฉัยว่าเป็นไร (ศรว 2009)",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ca larynx glottic type",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ca larynx supraglottic type",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "TB larynx",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "vocal nocule",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 16,
+      "scenario": "ผู้ป่วยชายอายุ 18 ปี ถูกทาร้ายร่างกาย หายใจเหนื่อย ไอเป็นเลือด เสียงแหบ มี subcutaneous emphysema at neck, air hunger management คอ (ศรว 2010)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Intubation"
+        },
+        {
+          "label": "B",
+          "text": "CT larynx"
+        },
+        {
+          "label": "C",
+          "text": "Tracheotomy"
+        },
+        {
+          "label": "D",
+          "text": "barium swallowing"
+        },
+        {
+          "label": "E",
+          "text": "ABG"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 17,
+      "scenario": "ผู้ป่ วยหญิงอายุ 30ปี ทางานโรงงานเย็บผ้า 5ป หูซ้ายได้ยิน ลดลงเรื่อยๆมา 1 ปี ต้องรับโทรศัพท์ด้านขวา TM:intact both, Weber:lateral to left, Rinne: right +, left - (ศรว 2010)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Otosclerosis"
+        },
+        {
+          "label": "B",
+          "text": "Meniere"
+        },
+        {
+          "label": "C",
+          "text": "noiseginduced hearing loss"
+        },
+        {
+          "label": "D",
+          "text": "acoustic neuroma"
+        },
+        {
+          "label": "E",
+          "text": "cholesteatoma"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 18,
+      "scenario": "ผู้ป่วยชายอายุ 5 ขวบ ไข้ ไอ เจ็บคอ มีน้ามูก ปวดหู ส่องดูเห็น แดง ๆ การวินิจฉัยที่เหมาะสมคือ (ศรว 2010)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "AOM"
+        },
+        {
+          "label": "B",
+          "text": "Myringotomy"
+        },
+        {
+          "label": "C",
+          "text": "ATB ear drop"
+        },
+        {
+          "label": "D",
+          "text": "oral ATB"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 19,
+      "scenario": "ผู้ป่ วยชายอายุ 20 ปี แผลเจ็บที่ริมฝีปาก 1 cm preauricular LN โต กดเจ็บ ทาอะไร (ศรว 2010)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Observe"
+        },
+        {
+          "label": "B",
+          "text": "FNA LN"
+        },
+        {
+          "label": "C",
+          "text": "LN Bx"
+        },
+        {
+          "label": "D",
+          "text": "Incision แผลในปาก"
+        },
+        {
+          "label": "E",
+          "text": "Excision แผลในปาก"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 20,
+      "scenario": "ผู้ป่วยหญิงอายุ 16 ปีล่องเรือไปเที่ยวเกาะ ขณะเรือออกกลางทะเลมคลื่นไส้ อาเจียน ใช้ยาอะไร (ศรว 2010)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Paracetamol"
+        },
+        {
+          "label": "B",
+          "text": "Dimenhydrinate"
+        },
+        {
+          "label": "C",
+          "text": "Propanolol"
+        },
+        {
+          "label": "D",
+          "text": "tramadol"
+        },
+        {
+          "label": "E",
+          "text": "Cinnarizine"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 21,
+      "scenario": "ผู้ป่วยหญิงอายุ 40 ปี จะไปเที่ยวภูเขาหิมาลัย มาพบแพทย์เพื่อขอคาปรึกษาและยา เพื่อลดอาการคลื่นไส้\nขณะไปเที่ยว ข้อใดควรปฏิบัติมากที่สุด (ศรว 2010)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "omeprazole"
+        },
+        {
+          "label": "B",
+          "text": "Altitude acclimation"
+        },
+        {
+          "label": "C",
+          "text": "Chloroquine"
+        },
+        {
+          "label": "D",
+          "text": "Hydrochlorothiazide"
+        },
+        {
+          "label": "E",
+          "text": "Melatonin"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 24,
+      "scenario": "ผู้ป่วยชายอายุ 20 ปี ตกจากที่สูง คอซ้ายกระแทกเก้าอี้ปูนหายใจลาบาก 2 ชม. PTA RR 24/min, hoarseness, forceful inspiration, มี retraction of subcostal muscle during inspiration, anterior cervical soft tissue swelling & ecchymosis, cervical subcutaneous emphysema, diminish air entry both lung Management? (ศรว 2011)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Oxygen face mask"
+        },
+        {
+          "label": "B",
+          "text": "Nasolaryngeal airway"
+        },
+        {
+          "label": "C",
+          "text": "Nasal endotracheal intubation"
+        },
+        {
+          "label": "D",
+          "text": "Oral endotracheal intubation"
+        },
+        {
+          "label": "E",
+          "text": "Tracheostomy"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 25,
+      "scenario": "ผู้ป่วยชายอายุ 20 ปี มาด้วยหูซ้ายอื้อมา 1 ปี ปวดหู มีน้าใสๆไหลออกมาจากหเป็นๆหายๆ ตรวจพบแก้วหูทะลุที่ขอบด้านบน มีก้อนสีขาว มีน้าไหลออกมามีกลิ่นเหม็น รักษาอย่างไร (ศรว 2011)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "mastoidectomy"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 26,
+      "scenario": "RLL Pneumonia + Bullous myringitis เชื้อ common คือ? (ศรว 2011)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "S. pneumonia"
+        },
+        {
+          "label": "B",
+          "text": "Mycoplasma"
+        },
+        {
+          "label": "C",
+          "text": "H. influenza"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 27,
+      "scenario": "เด็กว่ายน้าเป็นประจา มีปวดหู Oto: พบหูแดงใน canal Diag? (ศรว 2011)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Otitis externa"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 28,
+      "scenario": "ผู้ป่ วยชายอายุ 15 ปี มีก้อนด้านหน้าคอมา 1 wk ก้อนโต ช้า ไม่เจ็บ PE: ~2 cm. anterior neck mass at thyroid level with upward movement on tongue protrude Diagnosis? (ศรว 2011)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Laryngocele"
+        },
+        {
+          "label": "B",
+          "text": "Ranular cyst"
+        },
+        {
+          "label": "C",
+          "text": "Dermoid cyst"
+        },
+        {
+          "label": "D",
+          "text": "Nodular cyst"
+        },
+        {
+          "label": "E",
+          "text": "Thyroglossal duct cyst"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 29,
+      "scenario": "ผู้ป่ วยชายอายุ 50 ปี มีอาการเสียงแหบมากขึ้นมา 3 เดือน เริ่มจากอาการเป็นหวัด แล้วอาการเสียงแหบเป็นมากขึ้นเรื่อยๆ มีหายใจลาบากมา 2 สัปดาห์ เคยใส่ท่อช่วยหายใจตอนผ่าตัดต่อมไทรอยด์เมื่อ 2 ปีก่อน เคยสูบบุหรี่ 1 ซองต่อวัน มา 20 ปี หยุดสูบแล้วหลังผ่าตัด PE : BP 140/80 mmHg, PR 84/min, RR 20/min, forceful breathing, hoarseness, no palpable neck mass, mild decreased air entry both lungs การวินิจฉัยโรคข้อใดเข้ากับผู้ป่วยรายนี้มากที่สุด (ศรว 2011)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Laryngeal web"
+        },
+        {
+          "label": "B",
+          "text": "Laryngeal cancer"
+        },
+        {
+          "label": "C",
+          "text": "Laryngeal papilloma"
+        },
+        {
+          "label": "D",
+          "text": "Intubation granuloma"
+        },
+        {
+          "label": "E",
+          "text": "PostKoperative laryngeal paralysis"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 30,
+      "scenario": "ผู้ป่วยหญิงอายุ 30 ปี รู้สึกคุยโทรศัพท์ข้างซ้ายไม่ได้ยิน Otoscopic exam ปกติ ส่งตรวจการได้ยิน pure tone audiometry : Rt. threshold 25 dB speech discrimination 100% Lt. threshold 35 dB speech discrimination 25% ส่งอะไรช่วย Dx (ศรว 2011)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Tympanometry"
+        },
+        {
+          "label": "B",
+          "text": "CT temporal lobe"
+        },
+        {
+          "label": "C",
+          "text": "Auditory brainstem response"
+        },
+        {
+          "label": "D",
+          "text": "Acoustic impedance"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 31,
+      "scenario": "ผู้ป่วยแมลงเข้าหู 2 hr รู้สึกยังมีแมลงดิ้นในหู PTA PE: lived insect inside ear canal, cant seen TM, จะทาอย่างไรต่อ (9/ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "70% alcohol",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "3%boric acid",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Vegetable oil",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "NSS",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 32,
+      "scenario": "ผู้ป่วยหญิงอายุ 55 ปี มาด้วยเรื่องอาการวิงเวียนศีรษะมา 3 วัน เป็นมากเวลาตื่นตอนเช้า และเวลาหันศีรษะไปมา มีอาการคลื่นไส้ แต่ไม่อาเจียน ตรวจร่างกาย พบ Weber’s test : normal (not lateralized) Rine’s test : positive both ear(AC>BC) การทา test อะไรเป็นการช่วยวินิจฉัยผู้ป่วยรายนี้มากที่สุด(21/ศรว. มี.ค. 2555)\nตอบ Dix Hallpike test",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 33,
+      "scenario": "ผู้ป่วยหญิง 3 ปี มาด้วยอาการหูอื้อ 1 วันก่อนมารพ 2 วันก่อนมารพ ผู้ป่วยเดินทางโดยเครื่องบิน มีอาการหูอื้อ และปวดหูมากขณะเครื่องลง ขณะนี้ ไม่ปวดหูแล้ว แต่ยังมีอาการหูอื้ออยู่ PE Lt-normal ear drum Rt dark blue , retracted ear drum Weber lateralize to Rt, Rinne Lt – AC>BC Rt – BC >AC ให้การรักษาที่เหมาะสมกับผู้ป่วยรายนี้ (22/ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "loratasine",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Pseudoephedine",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "prednisolone",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "steroid + ATB ear drop",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 5,
+      "scenario": "Myringotomy",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 34,
+      "scenario": "หญิงอายุ 25 ปี ตื่นเช้ามามีใบหน้าซีกซ้ายเบี้ยว ชากระพุ้งแก้มซ้าย หลับตาไม่สนิท น้าลายไหลมุมปากซ้าย V/S BP 110/70 mmHg PR 72 min PE : Left facial weakness , no other neuro deficit จงให้การวินิจฉัย (46/ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Trigeminal neuralgia",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "idiopathic facial palsy",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Ramsay Hunt syndrome",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Ruptured cerebral aneurysm",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 5,
+      "scenario": "cerebellopontine angle tumor",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 35,
+      "scenario": "นอนกรน + OSA ตรวจเจอ tonsil แค่ gr.2 MX? (104/ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "tonsillectomy",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "uvuloplasty",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "diazepamhs",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "corticosteroidhs",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 5,
+      "scenario": "on CPAP",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 36,
+      "scenario": "ผู้ป่วยเด็กหญิงอายุ 3 ปี หนัก 15 กิโลกรัม สูง89 เซนติเมตร มีอาการนอนกรนมา 2 เดือนก่อนมาโรงพยาบาล PE : mild swelling pale inferior nasal turbinate เด็กคนนี้มีความเสี่ยงต่อภาวะใด ?? (126/ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Obesity",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "adenotonsillar hypertrophy",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 37,
+      "scenario": "ปวดหู 2 days เอาไม้ปั่นหู ได้เมือกเหนียวสีดา ส่องหูพบ (มีรูปสีมาให้ที่ปกหลังด้านใน) (156/ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Malignant OE",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Diffuse OE",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Localized OE",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Mycotic otitis\nCOMPRE",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 8,
+      "scenario": "ชายอายุ 20 ปี ตอนเด็กเป็นหูน้าหนวกข้างขวาบ่อย พักหลังเป็นน้าหนวกมากขึ้น วันนี้มามีอาการเวียนศีรษะ จะให้การรักษาอย่างไร (คอมพรี จุฬาฯ 2012)",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Film mastoid",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Audiogram&tympanogram",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 3,
+      "scenario": "IV antivertigo",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 4,
+      "scenario": "IV ciprofloxacin admit",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 5,
+      "scenario": "Oral ciprofloxacin + F/U 2 วัน",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 69,
+      "scenario": "หญิงอายุ 20 ปีมีอาการปวดหู หูอื้อทันทีหลังจากแมลงเข้าหู เมื่อคืนนี้ วันนี้หูอื้อมาก ตรวจพบแมลงสาบขนาดเล็กตายแล้วอยู่ในหูขวา จะรักษาอย่างไร (คอมพรี จุฬาฯ 2012)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Remove by hook"
+        },
+        {
+          "label": "B",
+          "text": "Remove by prick"
+        },
+        {
+          "label": "C",
+          "text": "Remove by byonet forcep"
+        },
+        {
+          "label": "D",
+          "text": "Remove by alligator forcep"
+        },
+        {
+          "label": "E",
+          "text": "Remove by suction"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 71,
+      "scenario": "หญิงอายุ 40 ปี มี Left cervical lymphadenopathy 2 cm มา 3 wkไม่ tender ไม่มีไข้ ไม่มีอาการอื่น PE:ปกติ ENT exam normal บอก Mx (คอมพรี จุฬาฯ 2012)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "LN biopsy"
+        },
+        {
+          "label": "B",
+          "text": "LN aspiration"
+        },
+        {
+          "label": "C",
+          "text": "Tuberculin test"
+        },
+        {
+          "label": "D",
+          "text": "Bone marrow aspiration"
+        },
+        {
+          "label": "E",
+          "text": "Observe"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 75,
+      "scenario": "เด็กมี earwax แข็งมาก ต้องทายังไง >> หยอดยาให้นุ่ม แล้วนัดมาเอาออก",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 129,
+      "scenario": "ผู้ป่วยกินอาหารมีก้างปลติดคอ 1 wkPTA มีอาการกลืนแล้วเจ็บเป็นๆหายๆ มาพบแพทย์ ตรวจไม่พบก้างปลา จงให้การรักษา (คอมพรี จุฬาฯ 2012)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Oral ATBกลับบ้าน 7 วัน"
+        },
+        {
+          "label": "B",
+          "text": "Film soft tissue neck"
+        },
+        {
+          "label": "C",
+          "text": "Swab soaked Barium swallowing"
+        },
+        {
+          "label": "D",
+          "text": "Fiberoptic esophagography"
+        },
+        {
+          "label": "E",
+          "text": "แจ้งว่าทานได้ตรวจไม่พบสิ่งผิดปกติให้ผู้ป่วยสบายใจได้"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 139,
+      "scenario": "นักบาสเกตบอลถูกเพื่อนศอกที่หู มีอาการหูอื้อทันทีและมีเลือดออก ตรวจร่างกายพบ rupture 0f ear drum มี blood clot รักษาโดย remove blood clot แล้ว what is the next step management? (คอมพรี จุฬาฯ 2012)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "oral antibiotic"
+        },
+        {
+          "label": "B",
+          "text": "Antibiotic ear drop"
+        },
+        {
+          "label": "C",
+          "text": "Antihistamine"
+        },
+        {
+          "label": "D",
+          "text": "Paper patch แปะรูรั่ว"
+        },
+        {
+          "label": "E",
+          "text": "Tympanoplasty"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 144,
+      "scenario": "เด็กหญิงอายุ 15 ปี มีรูที่หน้าหู ขวามาตั้งแต่เกิด 2 ปี มีน้าใสๆไหลออกมา ขณะนี้บวมแดง ปวดมาก จง Diagnosis และ treatment (คอมพรี จุฬาฯ 2012)\nA lymphadenitis ATB\nB brachial cleft cyst Excision\nC Preauricular abscess I&D\nD infected preauricular sinus Excision",
+      "choices": [],
+      "exam_source": "NLE 2008-2012"
+    },
+    {
+      "question_number": 145,
+      "scenario": "ชายอายุ 65 ปี เสียงแหบมา 1 เดือน อาการคงที่ มีประวัติสูบบุหรี่มา 30 ปี ตรวจร่างกายเจอสายเสียงซ้ายไม่ขยับ ข้างขวาบวมเล็กน้อยขยับได้นิดหน่อย ทาไรต่อ? (คอมพรี จุฬาฯ 2012)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Chest X-Ray"
+        },
+        {
+          "label": "B",
+          "text": "Straboscope"
+        },
+        {
+          "label": "C",
+          "text": "Voice Rest"
+        },
+        {
+          "label": "D",
+          "text": "Speech Therapy"
+        },
+        {
+          "label": "E",
+          "text": "Direct Laryngoscope + Biopsy"
+        }
+      ],
+      "exam_source": "NLE 2008-2012"
+    }
+  ]
+}

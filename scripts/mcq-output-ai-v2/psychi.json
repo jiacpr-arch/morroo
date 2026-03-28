@@ -1,0 +1,1282 @@
+[
+  {
+    "scenario": "A 14-year-old boy was sent to the hospital in order to test for illicit drug usage by his father. He did not know the reason sent to the hospital, but he remember that his teacher told him of skipping class and stealing drugs. What is your initial management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Do the urine examination"
+      },
+      {
+        "label": "B",
+        "text": "Tell the boy about the reason"
+      },
+      {
+        "label": "C",
+        "text": "Ask permission from the boy"
+      },
+      {
+        "label": "D",
+        "text": "Make relationship with the boy"
+      },
+      {
+        "label": "E",
+        "text": "Ask his father to tell the boy the reason"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Initial management should establish rapport and therapeutic alliance before any investigation or confrontation. Making relationship (D) is the appropriate first step in adolescent psychiatry.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 10-year-old boy has not attended school for 1 year, likes to fight friends at school, runs away from home at night, smokes cigarettes, uses cannabis, engages in fights, and steals money from parents. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "School phobia"
+      },
+      {
+        "label": "B",
+        "text": "Oppositional defiant disorder"
+      },
+      {
+        "label": "C",
+        "text": "Conduct disorder"
+      },
+      {
+        "label": "D",
+        "text": "Impulsive disorder"
+      },
+      {
+        "label": "E",
+        "text": "Antisocial personality disorder"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Multiple behavioral problems including fighting, stealing, substance use, truancy, and running away meet criteria for Conduct Disorder. Antisocial Personality Disorder is not diagnosed before age 18.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient with delirium sees mice all over the bed. What should be done?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Haloperidol"
+      },
+      {
+        "label": "B",
+        "text": "Diazepam"
+      },
+      {
+        "label": "C",
+        "text": "Lithium"
+      },
+      {
+        "label": "D",
+        "text": "Fluoxetine"
+      },
+      {
+        "label": "E",
+        "text": "Identify and treat underlying medical cause"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Management of delirium involves treating the underlying cause first. While haloperidol can manage hallucinations, addressing etiology is primary. Added option E as primary management approach.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A female engineer with no underlying medical conditions likes to look around different rooms in her house, believing there are closed-circuit cameras installed by neighbors to spy on her. She hears voices of people telling her in her house and believes it is real. She exhibits the same behavior at work, constantly checking and making coworkers avoid her. She comes to see a doctor. What should be the treatment?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Lithium"
+      },
+      {
+        "label": "B",
+        "text": "Valium"
+      },
+      {
+        "label": "C",
+        "text": "Fluoxetine"
+      },
+      {
+        "label": "D",
+        "text": "Risperidone"
+      },
+      {
+        "label": "E",
+        "text": "Haloperidol"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "The patient has delusions (persecution, reference) and auditory hallucinations with delusional content, consistent with primary psychotic disorder (likely Paranoid Schizophrenia). Second-generation antipsychotics like Risperidone are preferred first-line treatment.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient with schizophrenia received haloperidol 20 mg for 10 years. This time he came with aggressive hallucinations. The dose was increased to 30 mg. 2 weeks later, his symptoms improved and hallucinations disappeared, but he developed muscle rigidity. What is the proper management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Increase haloperidol"
+      },
+      {
+        "label": "B",
+        "text": "Chlorpromazine"
+      },
+      {
+        "label": "C",
+        "text": "Benzodiazepine"
+      },
+      {
+        "label": "D",
+        "text": "Relaxing training"
+      },
+      {
+        "label": "E",
+        "text": "Electroconvulsive therapy"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Muscle rigidity is an extrapyramidal side effect from haloperidol. Benzodiazepines (particularly with anticholinergics) are used to manage acute EPS. Increasing haloperidol would worsen the problem.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "An adult non-elderly woman presents with chest tightness, diaphoresis, and dyspnea occurring 3 times per month, accompanied by anxiety and fear of dying. She is afraid to go anywhere alone. What medication should be prescribed?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Propranolol"
+      },
+      {
+        "label": "B",
+        "text": "Fluoxetine"
+      },
+      {
+        "label": "C",
+        "text": "Diazepam"
+      },
+      {
+        "label": "D",
+        "text": "Chlorpromazine"
+      },
+      {
+        "label": "E",
+        "text": "Lorazepam"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Clinical presentation suggests Panic Disorder with Agoraphobia. SSRIs like Fluoxetine are first-line pharmacotherapy. While benzodiazepines provide acute relief, SSRIs address long-term management and comorbid agoraphobia.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient with acute panic attack presenting with rapid breathing. What medication should be given?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Fluoxetine"
+      },
+      {
+        "label": "B",
+        "text": "Alprazolam"
+      },
+      {
+        "label": "C",
+        "text": "Haloperidol"
+      },
+      {
+        "label": "D",
+        "text": "Clonazepam"
+      },
+      {
+        "label": "E",
+        "text": "Propranolol"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "For acute panic attack symptoms, fast-acting benzodiazepines like Alprazolam are indicated. Clonazepam has longer half-life. Both are acceptable, but Alprazolam (B) provides more rapid onset for acute symptoms.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 35-year-old man admitted on day 2 post-herniorraphy develops agitation, confusion, and visual hallucinations. What is the most likely cause of his symptoms?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Head injury"
+      },
+      {
+        "label": "B",
+        "text": "Substance abuse"
+      },
+      {
+        "label": "C",
+        "text": "Stress"
+      },
+      {
+        "label": "D",
+        "text": "Delirium due to general medical condition (post-operative)"
+      },
+      {
+        "label": "E",
+        "text": "Psychiatry history in family"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Post-operative delirium is most common presentation in this context. Symptoms appear day 2 post-operation with acute confusion, agitation, and visual hallucinations. Original option 'Cognition' was unclear and replaced with proper medical diagnosis.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient with no history of alcohol use undergoes surgery. Post-operatively, he develops forgetfulness, particularly at night. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Alcohol withdrawal delirium"
+      },
+      {
+        "label": "B",
+        "text": "Dementia from drug-induced"
+      },
+      {
+        "label": "C",
+        "text": "Delirium from drug-induced"
+      },
+      {
+        "label": "D",
+        "text": "Dementia due to general medical condition"
+      },
+      {
+        "label": "E",
+        "text": "Delirium due to general medical condition"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Post-operative delirium (acute confusion, memory problems, temporal worsening) is most likely. Acute onset after surgery with worsening at night favors delirium over dementia. No alcohol history excludes withdrawal delirium.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 22-year-old female with SLE on prednisolone for 3 days presents with fever, joint pain, rash, and auditory hallucinations (hearing voices threatening her). She has never experienced this before. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Psychotic disorder due to SLE"
+      },
+      {
+        "label": "B",
+        "text": "Prednisolone-induced psychotic features"
+      },
+      {
+        "label": "C",
+        "text": "Brief psychotic disorder"
+      },
+      {
+        "label": "D",
+        "text": "Schizophreniform disorder"
+      },
+      {
+        "label": "E",
+        "text": "Delirium due to medical condition"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "SLE is known to cause psychotic symptoms directly through CNS involvement. Psychosis secondary to active SLE is more likely than medication-induced (prednisolone dose low) or primary psychiatric disorder. Temporal relationship with disease flare supports option A.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A male patient went to Full Moon Party last night. This morning he is suspicious, believes others will harm him, but is oriented to time and place. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Brief psychotic disorder"
+      },
+      {
+        "label": "B",
+        "text": "Delirium"
+      },
+      {
+        "label": "C",
+        "text": "Substance-induced psychosis"
+      },
+      {
+        "label": "D",
+        "text": "Paranoid schizophrenia"
+      },
+      {
+        "label": "E",
+        "text": "Acute stress disorder"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "Full Moon Party context suggests substance exposure. Preserved sensorium (oriented to time/place) excludes delirium. Acute onset after substance exposure with paranoid delusions is consistent with substance-induced psychosis.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 15-year-old female fears becoming overweight, binges on large amounts of food, then induces vomiting. She also uses laxatives. On examination: BMI = 19, other findings within normal limits. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bulimia nervosa"
+      },
+      {
+        "label": "B",
+        "text": "Anorexia nervosa"
+      },
+      {
+        "label": "C",
+        "text": "Somatoform disorder"
+      },
+      {
+        "label": "D",
+        "text": "Body dysmorphic disorder"
+      },
+      {
+        "label": "E",
+        "text": "Obsessive-compulsive disorder"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "Classic presentation of Bulimia Nervosa: binge eating followed by compensatory behaviors (purging, laxative abuse), normal BMI, and preoccupation with weight. Anorexia would require significantly low BMI.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 19-year-old female avoids high-calorie foods, fears becoming overweight despite weighing 30 kg with height 160 cm (BMI 11.7 - significantly underweight). She occasionally takes laxatives after eating. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Anorexia nervosa"
+      },
+      {
+        "label": "B",
+        "text": "Bulimia nervosa"
+      },
+      {
+        "label": "C",
+        "text": "Binge eating disorder"
+      },
+      {
+        "label": "D",
+        "text": "Eating disorder not otherwise specified"
+      },
+      {
+        "label": "E",
+        "text": "Normal behavior in adolescence"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "Significantly low BMI (11.7, well below normal), severe food restriction, and intense fear of weight gain meet diagnostic criteria for Anorexia Nervosa. Laxative use is secondary behavior.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A young couple comes to the hospital after a breakup. The female partner presents with rapid breathing (hyperventilation) lasting 2 hours following her being yelled at by her boyfriend. What is the appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Reassurance and breathing exercise"
+      },
+      {
+        "label": "B",
+        "text": "Re-breathing using a paper bag"
+      },
+      {
+        "label": "C",
+        "text": "Diazepam"
+      },
+      {
+        "label": "D",
+        "text": "Oxygen therapy"
+      },
+      {
+        "label": "E",
+        "text": "Intubation"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "Hyperventilation syndrome is best managed with reassurance and breathing exercises. Re-breathing (B) is acceptable but may cause anxiety. Medications are second-line if behavioral methods fail.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 49-year-old male with heavy alcohol use presents with generalized tonic-clonic seizures lasting 2 hours. 1 day ago his alcohol consumption dramatically decreased. Vital signs: RR 20/min, HR 110/min, temp 37.8°C, BP 160/100 mmHg. He is moderately agitated with tremor in both hands. Orientation to time, place, and person intact. Neurological exam unremarkable. What is the best initial management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Carbamazepine"
+      },
+      {
+        "label": "B",
+        "text": "Diazepam"
+      },
+      {
+        "label": "C",
+        "text": "Phenobarbital"
+      },
+      {
+        "label": "D",
+        "text": "Sodium valproate"
+      },
+      {
+        "label": "E",
+        "text": "Thiamine"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "Clinical presentation consistent with alcohol withdrawal seizures: recent decreased alcohol consumption, autonomic hyperactivity (tachycardia, hypertension, tremor), and seizures. Benzodiazepines (Diazepam) are first-line for alcohol withdrawal seizures. Thiamine should be given concurrently but is not primary seizure management.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "An 18-year-old female presents with rapid, deep breathing and clenched hands for 2 hours following being shouted at by her senior. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Conversion disorder"
+      },
+      {
+        "label": "B",
+        "text": "Acute stress disorder"
+      },
+      {
+        "label": "C",
+        "text": "Hyperventilation syndrome"
+      },
+      {
+        "label": "D",
+        "text": "Generalized anxiety disorder"
+      },
+      {
+        "label": "E",
+        "text": "Panic disorder"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว มี.ค. 2555 (2012)",
+    "status": "complete",
+    "ai_notes": "Acute onset rapid, deep breathing with hand clenching following psychological stressor is typical hyperventilation syndrome. Clear temporal relationship to acute stressor and specific breathing pattern distinguish this from other anxiety disorders.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 30-year-old female presents with depressed mood, hopelessness, guilt, and suicidal ideation following being fired from her job. She had never experienced this before. She was admitted for treatment and prescribed Fluoxetine. After 2 months of treatment, her symptoms are improving and returning to baseline. How should her treatment be managed?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Stop the medication"
+      },
+      {
+        "label": "B",
+        "text": "Gradually taper the medication over 1 month"
+      },
+      {
+        "label": "C",
+        "text": "Continue the medication for another 6 months"
+      },
+      {
+        "label": "D",
+        "text": "Switch to Diazepam"
+      },
+      {
+        "label": "E",
+        "text": "Switch to Amitriptyline"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว มี.ค. 2555 (2012)",
+    "status": "complete",
+    "ai_notes": "For major depressive episode, SSRIs should be continued for at least 6-12 months after remission to prevent relapse. Early discontinuation increases recurrence risk.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A male patient with depressive disorder who hears voices of others criticizing him is on Fluoxetine and Haloperidol. Today he presents with marked agitation, aggression, and yelling. What is the appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Reduce Fluoxetine"
+      },
+      {
+        "label": "B",
+        "text": "Reduce Haloperidol"
+      },
+      {
+        "label": "C",
+        "text": "Add Diazepam"
+      },
+      {
+        "label": "D",
+        "text": "Switch to typical antipsychotics"
+      },
+      {
+        "label": "E",
+        "text": "Increase Haloperidol dose"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว มี.ค. 2555 (2012)",
+    "status": "complete",
+    "ai_notes": "Current agitation and aggression likely represent either inadequately controlled auditory hallucinations or medication side effects. Adding benzodiazepine (C) provides acute behavioral management while maintaining current medications. Neither should be reduced without proper evaluation.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 20-year-old male was beaten on both legs. He is angry at the soldiers who beat him but can control his emotions. Physical examination shows motor grade I, reflexes 2+, and decreased sensation. What is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Peroneal nerve injury"
+      },
+      {
+        "label": "B",
+        "text": "Conversion disorder"
+      },
+      {
+        "label": "C",
+        "text": "Factitious disorder"
+      },
+      {
+        "label": "D",
+        "text": "Somatic symptom disorder"
+      },
+      {
+        "label": "E",
+        "text": "Malingering"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว มี.ค. 2555 (2012)",
+    "status": "complete",
+    "ai_notes": "Pattern of findings (motor grade I, decreased sensation, trauma history) is consistent with peroneal nerve injury from blunt trauma. Abnormal findings are explicable by organic pathology, not conversion or factitious disorder.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A young boy is mischievous, doesn't listen well to parents, likes to argue with them, and constantly bothers friends. What is the appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Haloperidol"
+      },
+      {
+        "label": "B",
+        "text": "Imipramine"
+      },
+      {
+        "label": "C",
+        "text": "Amitriptyline"
+      },
+      {
+        "label": "D",
+        "text": "Methylphenidate"
+      },
+      {
+        "label": "E",
+        "text": "Behavioral therapy and parent training"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว มี.ค. 2555 (2012)",
+    "status": "complete",
+    "ai_notes": "Clinical presentation (mischievousness, poor listening, argues, bothers friends) is consistent with ADHD. Methylphenidate is the most appropriate pharmacological treatment. However, original options were all medications. Option E (behavioral intervention) is more appropriate first-line but methylphenidate (D) is best among given choices.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "เด็กชาย 3 ขวบ ชอบพูดเป็นคำๆ มีอาการต่างๆ ตามรายการต่อไปนี้ ข้อใดที่น้อยที่สุดที่สนับสนุนการวินิจฉัยของโรคออติซึม",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ชอบกินอาหารเดียวกันตลอดเวลา"
+      },
+      {
+        "label": "B",
+        "text": "ไม่ติดตาเมื่อทำการสื่อสาร"
+      },
+      {
+        "label": "C",
+        "text": "ชอบให้ผู้ปกครองกอดเขา"
+      },
+      {
+        "label": "D",
+        "text": "เลียนแบบประโยคจากโฆษณาทีวี"
+      },
+      {
+        "label": "E",
+        "text": "มีความกังวลในการแยกตัวจากผู้ปกครอง"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "Psychi",
+    "explanation": "ในการวินิจฉัยออติซึม (Autism Spectrum Disorder) มาตรฐาน DSM-5 ประกอบด้วยอาการหลัก 2 กลุ่ม คือ (1) ความบกพร่องในการสื่อสารและปฏิสัมพันธ์ทางสังคม และ (2) พฤติกรรมการสนใจแบบจำกัดซ้ำๆ ตัวเลือก A, B, D เป็นลักษณะเฉพาะของออติซึม (restricted behaviors และ social communication deficits) แต่ตัวเลือก C - ชอบให้ผู้ปกครองกอดเขา แสดงว่าเด็กนั้นต้องการการติดต่อทางกายภาพและความสัมพันธ์กับผู้ดูแล ซึ่งเป็นสิ่งที่เด็กออติซึมมักจะหลีกเลี่ยง จึงเป็นข้อที่ลดความเป็นไปได้ในการวินิจฉัยออติซึมมากที่สุด",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "psychi",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ญ 22 ปี มี SLE ได้รับ prednisolone มา 3 วัน มีไข้ ปวดข้อ ผื่นขึ้น จากนั้นเกิดหูแว่ว ได้ยินเสียงใครจะมาทาร้ายตน โดยไม่เคยมีอาการจิตเวช มาก่อน หลังจากตรวจร่างกายและห้องปฏิบัติการไม่พบการติดเชื้ออื่นๆ หรือภาวะแทรกซ้อนอื่น แต่เห็นระดับ C3 ต่ำ และอักษณ์นิวเคลียร์เป็นบวก ควรวินิจฉัยว่าเป็นอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Psychotic disorder due to SLE (Psychotic disorder attributable to systemic lupus erythematosus)"
+      },
+      {
+        "label": "B",
+        "text": "Prednisolone-induced psychotic features"
+      },
+      {
+        "label": "C",
+        "text": "Brief psychotic disorder"
+      },
+      {
+        "label": "D",
+        "text": "Acute phase of SLE with delirium due to active lupus or infection"
+      },
+      {
+        "label": "E",
+        "text": "Schizophreniform disorder triggered by SLE"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "Psychi",
+    "explanation": "SLE-related psychosis เกิดจากการอักเสบของระบบประสาทกลางเนื่องจากโรค SLE (CNS lupus) มักพบในช่วงแรกของโรค ร่วมกับ active disease markers (C3 ต่ำ, ANA/anti-dsDNA+) ตัวเลือก B น้อยกว่าเพราะ prednisolone ปกติช่วยลดอาการจิตเวช ตัวเลือก C เหมาะน้อยกว่าเพราะมี underlying SLE อยู่แล้ว",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "psychi",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ชาย อายุ 25 ปี เข้ารับการตรวจ 6 ชั่วโมงหลังจากกลับจากงาน Full Moon Party เมื่อคืน มีอาการหวาดระแวง หวาดกลัวว่าคนอื่นจะมาทำร้าย ซึ่งเกิดขึ้นอย่างฉับพลัน ไม่มีอาการสับสนเวลาและสถานที่ สติสัปปุฏฐ์และความจำปกติ มีข้อสงสัยการใช้สารเสพติด ถามว่าการวินิจฉัยที่น่าจะเป็นไปได้มากที่สุดคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Substance-induced psychotic disorder"
+      },
+      {
+        "label": "B",
+        "text": "Brief psychotic disorder"
+      },
+      {
+        "label": "C",
+        "text": "Delirium"
+      },
+      {
+        "label": "D",
+        "text": "Acute stress disorder"
+      },
+      {
+        "label": "E",
+        "text": "Schizophreniform disorder"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "Psychi",
+    "explanation": "ผู้ป่วยมีอาการหลังจากเข้าร่วม Full Moon Party ซึ่งเป็นสถานที่ที่มีโอกาสสูงในการใช้สารเสพติด (เช่น MDMA, amphetamines) อาการเกิดขึ้นอย่างฉับพลัน ไม่มีอาการสับสนเวลาสถานที่ สติสัปปุฏฐ์ปกติ เป็นลักษณะของ Substance-induced psychotic disorder มากกว่า Delirium (ซึ่งมีสับสนเวลาสถานที่) หรือ Brief psychotic disorder (ไม่มีสาเหตุจากสาร)",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "psychi",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง อายุ 15 ปี กลัวว่าตนเองอ้วน รับประทานอาหารครั้งละมากๆ แล้วไปล้วงคอให้อาเจียน ร่วมกับใช้ยาระบาย ตรวจร่างกาย BMI=19 others: WNL",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bulimia"
+      },
+      {
+        "label": "B",
+        "text": "Anorexia nervosa"
+      },
+      {
+        "label": "C",
+        "text": "Somatoform"
+      },
+      {
+        "label": "D",
+        "text": "Body dysmorphic"
+      },
+      {
+        "label": "E",
+        "text": "OCD"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "Psychi",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "psychi",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 19 ปี ไม่กินอาหารแคลอรี่สูง กลัวอ้วนถึงแม้น้าหนักจะ 30 kg สูง 160 cm บางครั้งจะไปกินยาระบายหากกินข้าวมาเยอะ Dx",
+    "choices": [
+      {
+        "label": "A",
+        "text": "anorexia"
+      },
+      {
+        "label": "B",
+        "text": "bulimia"
+      },
+      {
+        "label": "C",
+        "text": "binge eating disorder"
+      },
+      {
+        "label": "D",
+        "text": "eating disorder NOS"
+      },
+      {
+        "label": "E",
+        "text": "normal behavior in puberty"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "Psychi",
+    "explanation": null,
+    "status": "complete",
+    "ai_notes": "Formatted from raw output (had good choices)",
+    "subject": "psychi",
+    "exam_type": "NL2",
+    "is_ai_enhanced": false
+  },
+  {
+    "scenario": "หนุ่มสาวสองคนมาด้วยประวัติทะเลาะกัน บอกเลิก ฝ่ายหญิงอายุ 22 ปี มีอาการหายใจเร็วและลึก (Hyperventilation) ใจสั่น ชาตามศีรษะและแขน ขัดสินใจไม่ได้ เกิดขึ้นเป็นครั้งแรก ไม่มีประวัติจิตเวช Vital signs: HR 110/min, RR 28/min, BP 140/90 mmHg การจัดการที่เหมาะสมที่สุดในช่วงแรกคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ให้ lorazepam 2 mg IV แล้วส่งตรวจจิตเวช"
+      },
+      {
+        "label": "B",
+        "text": "ให้กระดาษถุง (paper bag) ใส่จมูกปาก สอบแจง และหายใจแบบช้า ๆ อย่างลึก"
+      },
+      {
+        "label": "C",
+        "text": "ให้ propranolol 10 mg PO เพื่อลดความวิตกกังวล"
+      },
+      {
+        "label": "D",
+        "text": "ให้ diazepam 5 mg IM แล้ว monitor ไว้ 24 ชั่วโมง"
+      },
+      {
+        "label": "E",
+        "text": "ให้ oxygen 6 L/min ผ่านหน้ากาก เพื่อแก้ hypoxemia"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Psychi",
+    "explanation": "อาการ Hyperventilation Syndrome ส่วนใหญ่เกิดจาก Anxiety ซึ่งนำไปสู่การหายใจเร็วมากเกินไป ทำให้ CO2 ลดลง (Hypocapnia) และเกิด Respiratory Alkalosis ทำให้อาการแย่ลง การให้กระดาษถุงใส่จมูกปากนั้นช่วยให้ผู้ป่วยหายใจกลับเข้าไปใหม่ (Re-breathing CO2) ประกอบกับการสอบแจง (Reassurance) เป็นการรักษาแรกสำหรับกรณีนี้ ซึ่งมี Anxiety Disorder secondary ต่อเหตุการณ์ทำให้เสียใจ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "psychi",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายวัย 35 ปี มาพบแพทย์ด้วยอาการวิตกกังวล หัวใจเต้นเร็ว และหายใจลำบาก แพทย์วินิจฉัยว่าเป็น Panic Disorder ซึ่งไม่มีสาเหตุทางกายภาพ แพทย์ตัดสินใจสอนเทคนิค \"Relaxation and breathing exercise\" เป็นส่วนหนึ่งของการรักษา กลไกการทำงานของเทคนิคนี้คืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ลดการทำงานของระบบประสาทสมส่วน (Parasympathetic nervous system) ทำให้อาการวิตกกังวลลดลง"
+      },
+      {
+        "label": "B",
+        "text": "เพิ่มการทำงานของระบบประสาทสมส่วน (Parasympathetic nervous system) ทำให้ร่างกายอยู่ในสถานะ \"Rest and Digest\" เพิ่มการตอบสนองต่ออาการวิตกกังวล"
+      },
+      {
+        "label": "C",
+        "text": "บล็อกการปล่อยของสารเคมีในสมอง ทำให้ผู้ป่วยหลับไป"
+      },
+      {
+        "label": "D",
+        "text": "เพิ่มความเข้มแข็งของกล้ามเนื้อ (Muscle strength) เพื่อต้านทานอาการเครียด"
+      },
+      {
+        "label": "E",
+        "text": "ลดการไหลเวียนของเลือดไปยังสมอง เพื่อหยุดการคิดอ้วนลึก"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Psychi",
+    "explanation": "เทคนิค Relaxation and breathing exercise ทำให้ระบบประสาทสมส่วน (Parasympathetic nervous system) ทำงานมากขึ้น ซึ่งเป็นระบบที่ควบคุมการผ่อนคลาย หัวใจเต้นช้าลง และหายใจช้าลง สิ่งนี้ตรงข้ามกับระบบประสาทสัมผัส (Sympathetic) ที่ฉุนเฉียวและเป็นสาเหตุของอาการ Panic Attack ดังนั้น การเพิ่มกิจกรรมของ Parasympathetic จึงช่วยบรรเทาอาการวิตกกังวล",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "psychi",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยโรคแพนิกดิสออร์เดอร์ มีอาการหายใจเร็ว หัวใจเต้นเร็ว และรู้สึกหมดสติในระหว่างการรับบริการ แพทย์สั่ง re-breathing mask breathing (เทคนิคหายใจเข้าออกลงในถุงปิด) เป็นเทคนิคการบรรเทา ทำไมเทคนิคนี้จึงมีประสิทธิผลในการลดอาการแพนิกแอตแทค",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เพิ่มปริมาณออกซิเจนในเลือด ทำให้ระบบประสาทอารมณ์ปลอบประโลมตัวเอง"
+      },
+      {
+        "label": "B",
+        "text": "ลดอัตราการหายใจ เพิ่ม CO2 และสมดุลของ pH ในเลือด เพื่อลดอาการของ hyperventilation"
+      },
+      {
+        "label": "C",
+        "text": "เพิ่มการไหลเวียนเลือดไปยังสมอง ทำให้ความเครียดลดลง"
+      },
+      {
+        "label": "D",
+        "text": "โดยตรงเพิ่มการหลั่งของเอนโดอร์ฟินจากสมองส่วนลึก"
+      },
+      {
+        "label": "E",
+        "text": "ลดอัตราการเต้นของหัวใจโดยการกระตุ้นเส้นประสาทสำ交感ส่วนกระตุ้น"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Psychi",
+    "explanation": "ในการแพนิกแอตแทค ผู้ป่วยมักหายใจเร็วเกินไป (hyperventilation) ซึ่งทำให้ CO2 ในเลือดลดลงและ pH เพิ่มขึ้น (respiratory alkalosis) ทำให้อาการแย่ลง การหายใจเข้าออกลงในถุง (re-breathing) ส่งผลให้หายใจกลับเข้า CO2 ที่พึ่งหายใจออก จึงคืน CO2 และ pH กลับสู่สมดุล ลดอาการเวอร์ติโก จิงตัว และหายใจหนาย",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "psychi",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายอายุ 49 ปี มาด้วยอาการชักแบบ generalized tonic-clonic นาน 2 ชั่วโมง มีประวัติดื่มสุรามากเป็นประจำ แต่เลิกดื่มมา 1 วันก่อน อาการดื่นลดลงอย่างมาก ร่างกายไม่มีการบาดเจ็บ ตรวจร่างกาย R 20/นาที P 110/นาที อุณหภูมิ 37.8°C BP 160/100 mmHg พบ moderate agitation และ tremor ของมือทั้งสองข้าง สติครบถ้วน (oriented ต่อ time place person) ตรวจประสาทอื่นๆ ปกติ ควรให้ยาใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Carbamazepine"
+      },
+      {
+        "label": "B",
+        "text": "Diazepam"
+      },
+      {
+        "label": "C",
+        "text": "Phenobarbital"
+      },
+      {
+        "label": "D",
+        "text": "Sodium valproate"
+      },
+      {
+        "label": "E",
+        "text": "Thiamine"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Psychi",
+    "explanation": "ผู้ป่วยมีอาการชักทั่วไป ดื่นลดลง 震tremor และ agitation หลังเลิกดื่มสุรา 1 วัน ซึ่งเป็นลักษณะของ alcohol withdrawal seizure ที่เกิดในช่วง 6-48 ชั่วโมงหลังเลิกดื่ม Diazepam เป็นยาเลือกแรกสำหรับการป้องกันและรักษาอาการชักในกรณี alcohol withdrawal เนื่องจากมีฤทธิ์ anticonvulsant และลดอาการ withdrawal ได้ดี ยาอื่นๆ ไม่เหมาะสมในสถานการณ์นี้",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "psychi",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิง 18 ปี นักศึกษาชั้นปีที่ 1 มารับน้องในหอพักวิทยาลัย ได้รับการตะโกนใส่และดุด่าจากพี่ชั้นปีสูงกว่าเป็นเวลา 2 ชั่วโมง หลังจากนั้นประสบการณ์ดังกล่าว มีอาการหายใจเร็วและลึก (hyperventilation) มือจีบเกร็ง และอ้วกได้ นาน 2 ชั่วโมง ไม่มีประวัติทางจิตแพทย์มาก่อน การตรวจทางกายภาพและเลือดอื่นๆ ปกติ จงวินิจฉัยสภาวะนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute Stress Disorder"
+      },
+      {
+        "label": "B",
+        "text": "Hyperventilation Syndrome / Panic Attack with hyperventilation"
+      },
+      {
+        "label": "C",
+        "text": "Conversion Disorder"
+      },
+      {
+        "label": "D",
+        "text": "Tetany จากไฮโปแคลซีเมีย"
+      },
+      {
+        "label": "E",
+        "text": "Psychotic episode ที่เกิดจากความเครียด"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Psychi",
+    "explanation": "โรคนี้ประกอบด้วยอาการ hyperventilation (หายใจเร็วลึก) ที่เกิดจากความเครียดเฉียบพลัน หลังการดุด่า มือจีบเกร็ง และอ้วกเป็นผลจากการหายใจหนักทำให้ CO2 ลดลง นำไปสู่ alkalosis และ hypocalcemia ที่ชั่วคราว ซึ่งเป็นลักษณะเฉพาะของ Hyperventilation Syndrome/Panic Attack with hyperventilation ไม่ใช่ Acute Stress Disorder ที่ต้องมีอาการติดต่อกันหลายวันและอาการหลากหลายมากกว่า",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "psychi",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายวัย 28 ปี มาพบแพทย์หลังจากได้รับบาดเจ็บจากอุบัติเหตุรถชนเมื่อ 3 วันที่แล้ว เขารู้สึกตกใจ หวาดระแคงอย่างมาก มีความทรงจำซ้ำของเหตุการณ์ที่เกิดขึ้น นอนไม่หลับ และพยายามหลีกเลี่ยงการขับรถ อาการเหล่านี้เริ่มขึ้นทันทีหลังจากเหตุการณ์และยังคงอยู่จนถึงปัจจุบัน ไม่พบประวัติโรคจิตเวชมาก่อน\n\nอาการของผู้ป่วยนี้มีลักษณะเป็นอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute Stress Disorder (ASD) - มีอาการเริ่มต้นภายใน 3 วันถึง 1 เดือนหลังจากเหตุการณ์สร้างความเครียด"
+      },
+      {
+        "label": "B",
+        "text": "Post-Traumatic Stress Disorder (PTSD) - มีระยะเวลาอาการนานกว่า 1 เดือน"
+      },
+      {
+        "label": "C",
+        "text": "Adjustment Disorder - มีการตอบสนองต่อเหตุการณ์ที่สร้างความเครียดแต่ไม่รุนแรงเพียงพอสำหรับ ASD"
+      },
+      {
+        "label": "D",
+        "text": "Generalized Anxiety Disorder - มีความวิตกกังวลเรื้อรังมากกว่า 6 เดือนโดยไม่เกี่ยวข้องกับเหตุการณ์เฉพาะ"
+      },
+      {
+        "label": "E",
+        "text": "Normal stress response - อาการจะหายไปเองภายในเวลาสั้นๆ โดยไม่ต้องการการรักษา"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "Psychi",
+    "explanation": "Acute Stress Disorder (ASD) มีลักษณะเฉพาะคือการเริ่มต้นอาการภายใน 3 วันถึง 1 เดือนหลังจากเหตุการณ์สร้างความเครียด โดยมีอาการ reexperiencing, avoidance, negative mood และ hyperarousal เช่นเดียวกับ PTSD แต่ระยะเวลาสั้นกว่า ในกรณีนี้ผู้ป่วยเกิดอาการในช่วง 3 วันหลังอุบัติเหตุซึ่งตรงกับเกณฑ์ ASD ส่วน B ยังเร็วเกินไป และ E ไม่เหมาะเพราะอาการรุนแรงเพียงพอที่ต้องการการรักษา",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "psychi",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "หญิงอายุ 28 ปี มาพบแพทย์ด้วยอาการหายใจเร็ว หัวใจเต้นแรง ชาปลายมือและปลายเท้า คลื่นไส้ และกลัวว่าตัวเองจะเสียชีวิต อาการเริ่มขึ้นเมื่อ 30 นาทีที่แล้ว ผลตรวจร่างกายโดยรวมปกติ การตรวจประจำวันปกติ ข้อ X-ray หน้าอกปกติ EKG ปกติ ท่าน คิดว่า pathophysiology หลักของภาวะ hyperventilation syndrome คืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "การหายใจเร็วนำไปสู่การลดความเข้มข้นของคาร์บอนไดออกไซด์ในเลือด ทำให้เกิด alkalosis และการหาย respiratory alkalosis ซึ่งส่งผลให้เกิด hypocalcemia และอาการ paresthesia"
+      },
+      {
+        "label": "B",
+        "text": "การหายใจเร็วนำไปสู่การเพิ่มความเข้มข้นของออกซิเจนในเลือด ทำให้เกิด hyperoxemia และ vasoconstriction ของหลอดเลือดสมอง"
+      },
+      {
+        "label": "C",
+        "text": "ความวิตกกังวลทำให้เกิด autonomic hyperactivity ส่งผลให้ระบบหายใจถูกกระตุ้นทางจิตใจและนำไปสู่ hyperventilation"
+      },
+      {
+        "label": "D",
+        "text": "โรค pulmonary edema ที่ไม่ได้รับการวินิจฉัย ทำให้ผู้ป่วยต้องหายใจเร็วเพื่อชดเชยการขาดออกซิเจน"
+      },
+      {
+        "label": "E",
+        "text": "การเพิ่มปริมาณ lactate ในกล้ามเนื้อ ส่งผลให้เกิด metabolic acidosis และเป็นสาเหตุของการหายใจเร็ว"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "Psychi",
+    "explanation": "Hyperventilation syndrome เกิดจากการหายใจเร็วเกินกว่าความต้องการร่างกาย ทำให้มีการขจัด CO2 มากเกินไป นำไปสู่ respiratory alkalosis และลดความเข้มข้นของไอออนแคลเซียม (ผ่าน alkalosis ทำให้การจับตัวของแคลเซียม กับ plasma proteins เพิ่มขึ้น) ส่งผลให้เกิด tetany, paresthesia และอาการอื่นๆ ตัวเลือก A อธิบาย pathophysiology ได้ครบถ้วนและถูกต้องที่สุด",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "psychi",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง อายุ 30 ปี มีอาการเบื่อหน่าย ท้อแท้ สิ้นหวัง รู้สึกผิด และคิดอยากตายหลังถูกไล่ออกจากงาน ไม่มีประวัติการเจ็บป่วยทางจิตใจมาก่อน เข้ารับการรักษาหลังเป็น 1 เดือน ได้รับ Fluoxetine นาน 2 เดือน อาการเริ่มเป็นปกติแล้ว จะปฏิบัติต่อผู้ป่วยอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ยาสามารถหยุดได้ทันที เนื่องจากอาการดีขึ้นแล้ว"
+      },
+      {
+        "label": "B",
+        "text": "ยาสามารถหยุดได้ หากผู้ป่วยขอหยุด แม้ว่าเป็นครั้งแรกที่เจ็บป่วย"
+      },
+      {
+        "label": "C",
+        "text": "ให้ยา Fluoxetine ต่อเนื่องอย่างน้อย 6-9 เดือน เพื่อลดความเสี่ยงการกลับเป็นซ้ำ"
+      },
+      {
+        "label": "D",
+        "text": "เปลี่ยนเป็นยาต้านซึมเศร้าชนิดอื่น เนื่องจาก Fluoxetine อาจเกิดความต้านทาน"
+      },
+      {
+        "label": "E",
+        "text": "ให้ยา Fluoxetine นาน 1 ปีขึ้นไป และเพิ่ม mood stabilizer เพื่อป้องกันอาการกลับมา"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "Psychi",
+    "explanation": "สำหรับผู้ป่วยซึมเศร้าครั้งแรก ปกติควรให้ยาต้านซึมเศร้าต่อเนื่องอย่างน้อย 6-9 เดือนหลังจากที่อาการดีขึ้น เพื่อลดความเสี่ยงการเกิดการกลับเป็นซ้ำ ไม่ควรหยุดยาทันทีแม้อาการจะดีขึ้น เนื่องจากอัตราการกลับเป็นซ้ำสูง โดยการหยุดยาควรทำได้ค่อยๆ ค่อยเป็น (gradual tapering) โดยมีการติดตามอย่างใกล้ชิด",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "psychi",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายวัย 45 ปี มีประวัติการใช้สารเสพติดอยู่ 15 ปี วัน นี้ เข้ารับการรักษาที่คลินิกบำรุงรักษา แพทย์วางแผนค่อย ๆ ลดขนาดยาภายใน 1 เดือน หลังจากการประเมินและปรึกษาหารือกับผู้ป่วยแล้ว คำแนะนำใดต่อไปนี้เป็นการจัดการที่เหมาะสมที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "หยุดการให้ยาแบบเฉียบพลัน (abrupt withdrawal) เนื่องจากผู้ป่วยต้องการลดการพึ่งพา"
+      },
+      {
+        "label": "B",
+        "text": "ค่อย ๆ ลดขนาดยา (tapering) ประมาณ 5-10% ต่อสัปดาห์ เพื่อลดอาการถอนตัวและเพิ่มโอกาสสำเร็จ"
+      },
+      {
+        "label": "C",
+        "text": "เพิ่มขนาดยาก่อนจึงค่อย ๆ ลดลง เพื่อสร้างความสมดุลยาในร่างกาย"
+      },
+      {
+        "label": "D",
+        "text": "ลดยาทุก 2-3 วัน ให้เสร็จภายในเดือนเดียว เพื่อให้ผู้ป่วยรู้สึกมีความคืบหน้า"
+      },
+      {
+        "label": "E",
+        "text": "ยังคงให้ยาในปริมาณเดียวกัน เนื่องจากการลดยาของผู้ป่วยตัวเองจะเป็นอันตรายต่อการรักษา"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Psychi",
+    "explanation": "การลดยาแบบค่อย ๆ (tapering) ในอัตรา 5-10% ต่อสัปดาห์เป็นแนวทางที่ยอมรับได้ทั่วโลก เพื่อลดอาการถอนตัวที่ไม่พึงประสงค์ (withdrawal symptoms) และเพิ่มอัตราความสำเร็จในการปลดการพึ่งพา การหยุดแบบเฉียบพลันจะเพิ่มความเสี่ยงต่อการถอนตัวรุนแรง อาการร้ายแรง หรือการกลับไปใช้สารอีกครั้ง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "psychi",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 35 ปี มีโรคซึมเศร้าตั้งแต่ 2 ปีที่แล้ว ได้รับการรักษาด้วยยา SSRI (sertraline 100 mg/วัน) มีอาการดีขึ้นอย่างชัดเจน ซ้ำแล้วซ้ำเล่า 3 ครั้งหลังหยุดยา ตัดสินใจควรให้ยาต่อไปอีก 6 เดือน นอกจากเหตุผลการให้ยานั้น มีข้อพิจารณาใดที่สำคัญ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ควรลดขนาดยาค่อยๆ ลดลงตามเวลา เพื่อหลีกเลี่ยงอาการ withdrawal และการกลับเป็นซ้ำ"
+      },
+      {
+        "label": "B",
+        "text": "สามารถหยุดยาได้ทันทีเมื่อผ่านไป 6 เดือน เนื่องจากอาการดีขึ้นแล้ว"
+      },
+      {
+        "label": "C",
+        "text": "ต้องเปลี่ยนเป็นยาเกรดต่างขึ้นไป เช่น tricyclic antidepressant หลังจากผ่าน 6 เดือน"
+      },
+      {
+        "label": "D",
+        "text": "ควรเพิ่มขนาดยาถึง 200 mg/วัน เพื่อป้องกันการกลับเป็นซ้ำในอนาคต"
+      },
+      {
+        "label": "E",
+        "text": "ต้องจัดการทั้งด้านยาและจิตบำบัด เพื่อลดความเสี่ยงและควบคุมอาการได้ดีขึ้น"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "Psychi",
+    "explanation": "ผู้ป่วยมีประวัติกลับเป็นซ้ำ 3 ครั้งหลังหยุดยา แสดงว่าต้องรักษานานพอ การเลิกยาควรทำแบบค่อยๆ ลดลง (gradual tapering) เพื่อหลีกเลี่ยง discontinuation syndrome และลดความเสี่ยงการกลับเป็นซ้ำ โดยปกติในผู้ป่วยที่กลับเป็นซ้ำหลายครั้งควรพิจารณาการรักษานานขึ้น",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "psychi",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 45 ปี มีอาการซึมเศร้าเรื้อรังเป็นเวลา 8 เดือน ได้รับการรักษาด้วย SSRIs (Sertraline) มาแล้ว 3 เดือน แต่อาการไม่ดีขึ้น มีอาการนอนไม่หลับและปวดกล้ามเนื้อเรื้อรัง แพทย์ตัดสินใจเปลี่ยนยาเป็น Amitriptyline ข้อใดถูกต้องเกี่ยวกับการใช้ยานี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Amitriptyline เป็น TCA ที่มีฤทธิ์ปลายประสาทแข็งแรง เหมาะสำหรับผู้ป่วยที่มีอาการนอนไม่หลับและปวดเรื้อรัง"
+      },
+      {
+        "label": "B",
+        "text": "ควรเริ่มต้นด้วยขนาดสูง 150 mg/วัน เพื่อให้ได้ผลอย่างรวดเร็ว"
+      },
+      {
+        "label": "C",
+        "text": "ไม่มีปฏิกิริยาระหว่างยา และสามารถใช้ร่วมกับ SSRIs ได้ทั้งหมด"
+      },
+      {
+        "label": "D",
+        "text": "เป็นยาที่ไม่มีผลข้างเคียงจากระบบประสาท และปลอดภัยในผู้สูงอายุ"
+      },
+      {
+        "label": "E",
+        "text": "ควรหยุด SSRI ก่อนแล้วเริ่ม Amitriptyline ทันที เพื่อหลีกเลี่ยงการเกิด serotonin syndrome"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "Psychi",
+    "explanation": "Amitriptyline เป็น Tricyclic Antidepressant (TCA) ที่มีฤทธิ์ต้านอเซติลโคลินและปลายประสาทแข็งแรง ทำให้มีประโยชน์ในการรักษาอาการนอนไม่หลับและปวดเรื้อรัง โดยเฉพาะผู้ป่วยที่ SSRIs ไม่ได้ผล ข้อ A ถูกต้องตามหลักการเลือกใช้ยา ส่วนข้ออื่นมีข้อผิดพลาด เช่น ต้องเริ่มต้นด้วยขนาดต่ำ มีผลข้างเคียงจากระบบประสาทและต้องระมัดระวังในผู้สูงอายุ",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "psychi",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายอายุ 45 ปี มี depressive disorder พร้อม delusion (ได้ยินเสียงนินทา) ได้รับการรักษาด้วย Fluoxetine 20 mg/วัน และ Haloperidol 5 mg/วัน มา 2 สัปดาห์ วันนี้มีอาการ agitated, anxious, ก้าวร้าว และโวยวาย ความดันโลหิต 140/90 mmHg ชีพจร 105 ครั้ง/นาที อุณหภูมิ 37.8°C กล้ามเนื้อมีความตึงเครียด จะจัดการอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "เพิ่ม Haloperidol เป็น 10 mg/วัน เพื่อควบคุมอาการ agitation"
+      },
+      {
+        "label": "B",
+        "text": "หยุด Fluoxetine และ Haloperidol ทันที เนื่องอาจเป็น serotonin syndrome ให้ supportive care และ benzodiazepine (Lorazepam IV)"
+      },
+      {
+        "label": "C",
+        "text": "ลดขนาด Haloperidol ลงแล้วเปลี่ยนเป็น atypical antipsychotic เช่น Risperidone"
+      },
+      {
+        "label": "D",
+        "text": "เพิ่ม Fluoxetine เป็น 40 mg/วัน เพื่อเพิ่มประสิทธิภาพการรักษา depression"
+      },
+      {
+        "label": "E",
+        "text": "ให้ Benzodiazepine เช่น Diazepam ร่วมกับยาปัจจุบัน เพื่อความสะดวกสบายของผู้ป่วย"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Psychi",
+    "explanation": "อาการดังกล่าว (agitation, anxiousness, muscle rigidity, tachycardia, fever, hypertension) บ่งชี้ serotonin syndrome ซึ่งเป็น interaction ระหว่าง Fluoxetine (SSRI) และ Haloperidol ที่อาจเป็นอันตราย การจัดการคือหยุดยากทั้งสองชนิด ให้ benzodiazepine (Lorazepam) เพื่อลดอาการ agitation และให้ supportive care ในขณะที่ symptoms ลดลง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "psychi",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชาย อายุ 20 กว่าปี ถูกตีที่ขา 2 ข้าง ท่อนล่าง เกิดบาดแผลเปิด รู้สึกโกรธ ทหารที่ตีมากแต่สามารถระงับอารมณ์ได้ ตรวจร่างกายพบ motor grade I ส่วนล่าง reflex 2+ ลดลง sensory loss บริเวณล่าง สงสัยบาดเจ็บไขสันหลัง ควรวินิจฉัยการบาดเจ็บประเภทใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Spinal cord injury (SCI) บริเวณ thoracolumbar ระดับ complete injury"
+      },
+      {
+        "label": "B",
+        "text": "Spinal cord injury (SCI) บริเวณ lumbar ระดับ incomplete injury"
+      },
+      {
+        "label": "C",
+        "text": "Peripheral nerve injury ของสาขา lumbosacral plexus"
+      },
+      {
+        "label": "D",
+        "text": "Conversion disorder (Functional neurological symptom disorder) โดยไม่มีการบาดเจ็บเชิงกายภาพ"
+      },
+      {
+        "label": "E",
+        "text": "Acute stress disorder ที่มีอาการทางระบบประสาท"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Psychi",
+    "explanation": "ผู้ป่วยมีอาการ motor grade I (แทบไม่มีการเคลื่อนไหว) reflex ลดลง และ sensory loss ในส่วนล่าง ซึ่งสอดคล้องกับ spinal cord injury ระดับ incomplete (เนื่องจากยังมีการรับสัมผัส) บริเวณ lumbar ที่เป็นผลจากบาดเจ็บทางกายภาพ หากเป็น complete injury reflex และ sensory จะหายไปทั้งหมด ข้อ D และ E มีการบาดเจ็บกายภาพจริงจึงไม่เหมาะสม",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "psychi",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "ชายวัย 35 ปี มาพบแพทย์ด้วยอาการขาขวาอ่อนแรงและมีอาการชา ซึ่งเริ่มขึ้นหลังจากเกิดอุบัติเหตุ 2 สัปดาห์ที่แล้ว การตรวจร่างกายพบการสูญเสียการรับสัมผัสตามแนวเส้นสมมติ (stocking distribution) การสะท้อนเข่าและข้อเท้ายังคงมีปกติ การตรวจ CT หัวเข่าปกติ ผู้ป่วยมีประวัติความเครียดจากการเลิกงาน และแสดงท่าทีไม่สนใจต่อโรคของตนเอง (la belle indifference) ซึ่งข้อวินิจฉัยควรเป็นอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Peroneal nerve injury"
+      },
+      {
+        "label": "B",
+        "text": "Conversion disorder"
+      },
+      {
+        "label": "C",
+        "text": "Factitious disorder"
+      },
+      {
+        "label": "D",
+        "text": "Illness anxiety disorder"
+      },
+      {
+        "label": "E",
+        "text": "Malingering"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Psychi",
+    "explanation": "อาการไม่ตรงกับ peroneal nerve injury เพราะการสูญเสียความรู้สึกเป็นแบบ stocking distribution (ไม่ใช่การกระจายตามเส้นประสาท) และการสะท้อนเข่า-ข้อเท้ายังมีปกติ การวินิจฉัย Conversion disorder ชี้ชัด โดยอาการมีปัจจัยจิตใจก่อน (stressor) ผู้ป่วยแสดง la belle indifference ซึ่งเป็นลักษณะเฉพาะตัวของ conversion disorder เพื่อแยกจาก factitious disorder (เจตนาโดยทั่วศัยวิทยา) และ malingering (หวังผลประโยชน์เพิ่มเติม)",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "psychi",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  },
+  {
+    "scenario": "เด็กชาย อายุ 8 ขวบ ซุกซน ไม่ค่อยเชื่อฟัง ชอบเถียงพ่อแม่ บ้านและโรงเรียน กวนรบกวนเพื่อน ลุกขึ้นจากที่นั่งบ่อย ไม่สามารถรอคอยตาหมัน ลืมเรื่องหลาย ๆ อย่าง บริบทในตา มาตั้งแต่อายุ 5 ขวบ ผู้ปกครองสงสัยภาวะทางจิตเวช การรักษาควรเป็นอย่างไร (ศรว. มี.ค. 2555)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Methylphenidate ตั้งแต่ต้น เพราะอาการรุนแรง"
+      },
+      {
+        "label": "B",
+        "text": "Behavioral therapy / Parent training เป็นอันดับแรก หากไม่ดีขึ้นในอีก 4-8 สัปดาห์จึงเพิ่มยา"
+      },
+      {
+        "label": "C",
+        "text": "Antipsychotic ขนาด low-dose"
+      },
+      {
+        "label": "D",
+        "text": "Psychoeducation แล้วจบการรักษา ไม่จำเป็นต้องใช้ยา"
+      },
+      {
+        "label": "E",
+        "text": "Tricyclic antidepressant เพื่อลดการกวน"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Psychi",
+    "explanation": "อาการที่อธิบายตรงกับ ADHD (Attention-Deficit/Hyperactivity Disorder) หรือ Oppositional Defiant Disorder (ODD) ตามแนวทาง treatment guideline ของเด็กอายุ 6-11 ปี ควรเริ่มจาก behavioral intervention/parent training ก่อนที่จะพิจารณาการใช้ยากระตุ้นประสาท (stimulant medication) หากไม่มีการปรับตัวในระยะเวลาที่เหมาะสม (โดยปกติ 4-8 สัปดาห์) ทั้งนี้เพื่อให้ผู้ปกครองและครูมีทักษะการจัดการพฤติกรรมที่ถูกต้อง",
+    "status": "complete",
+    "ai_notes": "AI-enhanced from raw output",
+    "subject": "psychi",
+    "exam_type": "NL2",
+    "is_ai_enhanced": true
+  }
+]

@@ -1,0 +1,1676 @@
+[
+  {
+    "scenario": "A 60-year-old man was admitted to the hospital with acute gastroenteritis and treated with antispasmodic agent and antiemetic agent. The patient looked good initially. But 4 hours later, he was restless, had abdominal pain, BP 170/110, PR 110. Physical examination revealed a cystic mass 8 x 8 cm at suprapubic area. What is the appropriate management for this patient?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Consult surgeon"
+      },
+      {
+        "label": "B",
+        "text": "Urinary catheterization"
+      },
+      {
+        "label": "C",
+        "text": "Morphine infusion"
+      },
+      {
+        "label": "D",
+        "text": "Emergency abdominal ultrasonography"
+      },
+      {
+        "label": "E",
+        "text": "Immediate CT abdomen with contrast"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Surgery 2015",
+    "status": "complete",
+    "ai_notes": "This patient has acute urinary retention with suprapubic mass (distended bladder) presenting with restlessness and hypertension (likely from bladder distension). Urinary catheterization is the immediate management to relieve the obstruction. Added option E as plausible alternative investigation.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A man presents with reducible mass at groin for 8 months. The mass can't be reduced for 3 hours. He has no fever, no nausea/vomiting, and abdomen is normal. Physical examination shows groin mass with mild tenderness. What is the most appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Emergency herniorrhaphy"
+      },
+      {
+        "label": "B",
+        "text": "Taxis under anesthesia"
+      },
+      {
+        "label": "C",
+        "text": "Emergency laparotomy"
+      },
+      {
+        "label": "D",
+        "text": "Observation with analgesics and ice pack"
+      },
+      {
+        "label": "E",
+        "text": "Manual reduction without anesthesia"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Surgery 2015",
+    "status": "complete",
+    "ai_notes": "Incarcerated hernia without signs of strangulation (no fever, no vomiting, mild tenderness). Taxis under anesthesia is appropriate before emergency herniorrhaphy. Added options D and E as plausible distractors.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 25-year-old woman drinking whiskey vomits several times. Hematemesis occurs the last time with frank blood 200 ml. What is the likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Dieulafoy angiodysplasia"
+      },
+      {
+        "label": "B",
+        "text": "Mallory-Weiss tear"
+      },
+      {
+        "label": "C",
+        "text": "Esophageal varices"
+      },
+      {
+        "label": "D",
+        "text": "Peptic ulcer"
+      },
+      {
+        "label": "E",
+        "text": "Boerhaave syndrome"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Surgery 2015",
+    "status": "complete",
+    "ai_notes": "Young patient with history of alcohol ingestion presenting with hematemesis after repeated vomiting. Mallory-Weiss tear is the classic presentation from mucosal laceration due to forceful vomiting. Added option E (Boerhaave syndrome) as plausible distractor.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 35-year-old man developed sharp epigastric pain 1 day ago. He has had history of chronic dyspepsia for 4 years. Physical examination: BT 37°C, P 110, BP 110/70, tender epigastric pain with guarding, and loss of liver dullness. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ruptured hepatoma"
+      },
+      {
+        "label": "B",
+        "text": "Peptic ulcer perforation"
+      },
+      {
+        "label": "C",
+        "text": "Ruptured appendicitis"
+      },
+      {
+        "label": "D",
+        "text": "Ruptured sigmoid diverticulitis"
+      },
+      {
+        "label": "E",
+        "text": "Acute pancreatitis"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Surgery 2015",
+    "status": "complete",
+    "ai_notes": "History of chronic dyspepsia, acute epigastric pain with guarding and loss of liver dullness (pneumoperitoneum from perforation) suggests peptic ulcer perforation. Modified answer from 'Ruptured appendicitis' to 'Peptic ulcer perforation' and added option E as distractor.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 55-year-old man presents with progressive dysphagia for 2 months and weight loss of 5 kg. Esophagoscopy reveals squamous cell carcinoma at distal esophagus size 4 cm. Staging T2N0M0. What is the most appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Esophagectomy"
+      },
+      {
+        "label": "B",
+        "text": "Esophageal stent"
+      },
+      {
+        "label": "C",
+        "text": "Radiation therapy"
+      },
+      {
+        "label": "D",
+        "text": "Chemotherapy"
+      },
+      {
+        "label": "E",
+        "text": "Neoadjuvant chemotherapy followed by esophagectomy"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "Surgery 2015",
+    "status": "complete",
+    "ai_notes": "T2N0M0 esophageal cancer is potentially curable. Esophagectomy is the gold standard treatment for localized disease. Removed duplicate 'Esophageal stent' option and added option E as evidence-based alternative.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient presents with fever, jaundice, and right upper quadrant pain. Physical examination: BT 38°C, PR 80, jaundice, tenderness at RUQ, liver not palpable. Ultrasound reveals multiple hypoechoic cysts, largest 7 cm at right hepatic lobe. Needle aspiration reveals pus. Besides antibiotics IV, what should be done?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Laparoscopic drainage"
+      },
+      {
+        "label": "B",
+        "text": "Endoscopic drainage"
+      },
+      {
+        "label": "C",
+        "text": "Percutaneous aspiration"
+      },
+      {
+        "label": "D",
+        "text": "Percutaneous catheter drainage"
+      },
+      {
+        "label": "E",
+        "text": "Open drainage"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "Surgery 2015",
+    "status": "complete",
+    "ai_notes": "Pyogenic liver abscess with confirmed pus on aspiration. Percutaneous catheter drainage is the standard percutaneous approach for large abscesses (>5 cm) to allow continuous drainage, superior to single aspiration alone.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 50-year-old woman presents to ER with acute severe epigastric pain radiating to back for 4 hours. She couldn't eat and had multiple episodes of vomiting. Physical exam: BT 37.9°C, PR 135/min, RR 24/min, BP 80/60 mmHg, mildly tender abdomen, hypoactive bowel sounds, mild tenderness at epigastrium. Serum lipase 3000 IU/L. What is the best management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Normal saline for gastric aspirate"
+      },
+      {
+        "label": "B",
+        "text": "Adequate rehydration"
+      },
+      {
+        "label": "C",
+        "text": "Empirical antibiotics"
+      },
+      {
+        "label": "D",
+        "text": "Emergency ERCP"
+      },
+      {
+        "label": "E",
+        "text": "Observe abdominal signs without analgesics"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Surgery 2015",
+    "status": "complete",
+    "ai_notes": "Acute pancreatitis (elevated lipase, epigastric pain radiating to back, vomiting) with signs of hypovolemia (BP 80/60). Immediate adequate fluid resuscitation is the priority. Option A is inappropriate (for gastric outlet obstruction, not pancreatitis). Modified option E.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 70-year-old man with underlying hypertension well-controlled by medication and smoking history for 40 years (stopped 10 years ago) develops intermittent claudication for 2 years with non-progressive symptoms. What is the best investigation?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Angiogram"
+      },
+      {
+        "label": "B",
+        "text": "Duplex vascular ultrasound"
+      },
+      {
+        "label": "C",
+        "text": "Ankle brachial index"
+      },
+      {
+        "label": "D",
+        "text": "Magnetic resonance angiography"
+      },
+      {
+        "label": "E",
+        "text": "Computed tomography angiography"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Surgery 2015",
+    "status": "complete",
+    "ai_notes": "Stable, non-progressive intermittent claudication requires initial diagnostic workup. Duplex ultrasound is non-invasive, non-radiation, readily available first-line investigation to assess hemodynamically significant stenosis before considering intervention. Angiogram is reserved for when intervention is planned.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 29-year-old woman presents with right breast mass 1 cm at 10 o'clock position. Physical examination: smooth surface, mobile, not tender. What is the most appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Observe"
+      },
+      {
+        "label": "B",
+        "text": "Mammogram"
+      },
+      {
+        "label": "C",
+        "text": "Ultrasound"
+      },
+      {
+        "label": "D",
+        "text": "Core needle biopsy"
+      },
+      {
+        "label": "E",
+        "text": "Fine needle aspiration"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "Surgery 2015",
+    "status": "complete",
+    "ai_notes": "Young woman (29 years old) with small (1 cm), benign-appearing mobile mass. Ultrasound is the imaging of choice in young women to characterize the mass (likely fibroadenoma) before considering biopsy. Mammogram is less sensitive in dense breast tissue of young women.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient with breast mass 3.5 cm and axillary lymph node involvement (1 node). Core needle biopsy reveals invasive ductal carcinoma. What is the treatment?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Chemoradiation alone"
+      },
+      {
+        "label": "B",
+        "text": "Mastectomy with axillary lymph node dissection"
+      },
+      {
+        "label": "C",
+        "text": "Breast-conserving therapy with radiation"
+      },
+      {
+        "label": "D",
+        "text": "Neoadjuvant chemotherapy followed by surgery"
+      },
+      {
+        "label": "E",
+        "text": "Hormone therapy alone"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Surgery 2015",
+    "status": "complete",
+    "ai_notes": "Breast cancer 3.5 cm with axillary lymph node involvement (stage IIIA or higher). Mastectomy with axillary lymph node dissection is standard surgical management for node-positive disease. Added options C, D, E as plausible alternatives based on modern multimodal approach.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient with history of appendectomy presents with abdominal distension, nausea/vomiting, and inability to pass stool or flatus. What is the next step investigation?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "CT abdomen"
+      },
+      {
+        "label": "B",
+        "text": "Ultrasound abdomen"
+      },
+      {
+        "label": "C",
+        "text": "Acute abdomen series (plain films: supine, upright, lateral decubitus)"
+      },
+      {
+        "label": "D",
+        "text": "Upper GI endoscopy"
+      },
+      {
+        "label": "E",
+        "text": "Immediate surgical consultation"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "Surgery 2015",
+    "status": "complete",
+    "ai_notes": "History of abdominal surgery (appendectomy) presenting with signs of bowel obstruction. Acute abdomen series is the initial imaging to confirm mechanical obstruction and assess severity. CT is more specific but not first-line. Added options D and E as alternative management considerations.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 30-year-old woman was bitten by a stray dog on the right leg. She received a complete rabies vaccine course 2 years ago. What is the management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Booster 1 dose of vaccine"
+      },
+      {
+        "label": "B",
+        "text": "Booster 2 doses of vaccine"
+      },
+      {
+        "label": "C",
+        "text": "Complete 5 doses of vaccine"
+      },
+      {
+        "label": "D",
+        "text": "Rabies immunoglobulin alone"
+      },
+      {
+        "label": "E",
+        "text": "Complete vaccine course and immunoglobulin"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Surgery 2015",
+    "status": "complete",
+    "ai_notes": "Previously vaccinated patient (2 years ago) with animal bite. Booster vaccination schedule is 2 doses (days 0 and 3) for previously vaccinated individuals. RIG is not needed as patient has prior immunity. This follows WHO post-exposure prophylaxis guidelines.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "Which of the following patients should receive tetanus immunoglobulin?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "A 20-year-old man with dog bite who had tetanus toxoid 7 years ago"
+      },
+      {
+        "label": "B",
+        "text": "A 25-year-old man with knee scratch while playing football who never had tetanus toxoid"
+      },
+      {
+        "label": "C",
+        "text": "A 30-year-old woman with wound contamination who received tetanus toxoid during antenatal care"
+      },
+      {
+        "label": "D",
+        "text": "A 35-year-old man injured by contaminated stick who received vaccine 6 months ago"
+      },
+      {
+        "label": "E",
+        "text": "A patient with puncture wound who never completed primary tetanus vaccination series"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Surgery 2015",
+    "status": "complete",
+    "ai_notes": "Tetanus immunoglobulin (TIG) is indicated for contaminated wounds in patients with unknown vaccination history or incomplete primary series. Option B (never had tetanus toxoid) is the clearest indication. Option E also qualifies. Added clarified options for better clinical context.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 38-year-old man has right side pain for 1 hour. Physical examination: RLQ tenderness, other findings normal. Hct 38%, WBC 12,000 (N88%, L8%). Urinalysis: RBC 50-100/hpf, WBC 5-10/hpf. What is the most proper investigation?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Plain KUB"
+      },
+      {
+        "label": "B",
+        "text": "Intravenous pyelography (IVP)"
+      },
+      {
+        "label": "C",
+        "text": "Ultrasound KUB"
+      },
+      {
+        "label": "D",
+        "text": "CT non-contrast (CT KUB)"
+      },
+      {
+        "label": "E",
+        "text": "MRI"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "Surgery 2015",
+    "status": "complete",
+    "ai_notes": "RLQ pain with significant hematuria and mild leukocytosis suggests urinary pathology (likely nephrolithiasis). Differential includes appendicitis. Non-contrast CT is gold standard for detecting kidney stones and can also evaluate for appendicitis. It is superior to IVP and ultrasound for stone detection.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A man with right flank pain. Urinalysis shows RBC 5-10/hpf. Intravenous pyelography (IVP) reveals stone 0.8 cm at upper part of ureter. What is the management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ESWL (Extracorporeal shock wave lithotripsy)"
+      },
+      {
+        "label": "B",
+        "text": "Ureteroscopy with laser lithotripsy"
+      },
+      {
+        "label": "C",
+        "text": "Urine cytology"
+      },
+      {
+        "label": "D",
+        "text": "Observation with hydration and analgesics"
+      },
+      {
+        "label": "E",
+        "text": "Immediate percutaneous nephrolithotomy"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "Surgery 2015",
+    "status": "complete",
+    "ai_notes": "Small stone (0.8 cm) at upper ureter with asymptomatic or minimally symptomatic presentation. Most small ureteral stones pass spontaneously. Conservative management with hydration and analgesia is first-line. ESWL and ureteroscopy are indicated if stone does not pass or causes obstruction/infection. Corrected options C (urine cytology is not indicated for stones) and added option E.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 2-year-old boy was brought to emergency room with inability to urinate. The penile foreskin was retracted to behind the glans penis and cannot be reduced. Which of the following is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Priapism"
+      },
+      {
+        "label": "B",
+        "text": "Phimosis"
+      },
+      {
+        "label": "C",
+        "text": "Balanitis"
+      },
+      {
+        "label": "D",
+        "text": "Prostatitis"
+      },
+      {
+        "label": "E",
+        "text": "Paraphimosis"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "Surgery 2015",
+    "status": "complete",
+    "ai_notes": "Foreskin retracted behind glans and cannot be reduced is the classic presentation of paraphimosis. This is a urological emergency that can cause urinary obstruction and penile tissue damage if not promptly treated. Phimosis is inability to retract foreskin.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 63-year-old man presents with acute urinary retention. After performing Foley catheterization, yellowish urine 600 ml is obtained. He has had lower urinary tract symptoms for 1 year. Direct rectal examination reveals prostate enlargement without nodule. What is the most appropriate initial investigation?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Serum creatinine"
+      },
+      {
+        "label": "B",
+        "text": "Ultrasound (post-void residual)"
+      },
+      {
+        "label": "C",
+        "text": "Urinalysis"
+      },
+      {
+        "label": "D",
+        "text": "Cystoscopy"
+      },
+      {
+        "label": "E",
+        "text": "Urodynamic examination"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "Surgery 2015",
+    "status": "complete",
+    "ai_notes": "Acute urinary retention due to suspected benign prostatic hyperplasia (BPH). After catheterization, assessment of renal function (serum creatinine) is critical to detect post-obstructive renal dysfunction before further management. This guides treatment decisions and prognosis.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient with history of benign prostatic hyperplasia was treated with alpha antagonist but showed no improvement. Prostate measures 80 g on rectal examination. What is the next management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Transurethral resection of prostate (TURP)"
+      },
+      {
+        "label": "B",
+        "text": "Add 5α-reductase inhibitor"
+      },
+      {
+        "label": "C",
+        "text": "Radical prostatectomy"
+      },
+      {
+        "label": "D",
+        "text": "Observation and retry medical therapy"
+      },
+      {
+        "label": "E",
+        "text": "Suprapubic catheterization permanently"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Surgery 2015",
+    "status": "complete",
+    "ai_notes": "Large prostate (80 g) with failure of monotherapy (alpha antagonist alone). Adding 5α-reductase inhibitor (which reduces prostate volume, especially effective for larger glands >40g) is the next step in medical management before considering surgical intervention. Combination therapy is more effective for large glands.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 55-year-old man presents with abdominal distension. CT scan reveals large left renal mass size 8 x 7 cm with contrast enhancement, right kidney is normal, and no evidence of metastasis. What is the best next step management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "MRI left kidney"
+      },
+      {
+        "label": "B",
+        "text": "Renal cryoablation"
+      },
+      {
+        "label": "C",
+        "text": "Partial left nephrectomy"
+      },
+      {
+        "label": "D",
+        "text": "Radical left nephrectomy"
+      },
+      {
+        "label": "E",
+        "text": "Fine needle aspiration biopsy"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "Surgery 2015",
+    "status": "complete",
+    "ai_notes": "Large renal mass (8 x 7 cm) with contrast enhancement suggesting renal cell carcinoma. With normal contralateral kidney and no metastasis, radical nephrectomy is the standard treatment. Partial nephrectomy is reserved for smaller tumors, solitary kidneys, or bilateral disease. Mass is too large for ablation.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 20-year-old man who is sexually active presents with right scrotal mass that gradually enlarged over 6 months. Physical examination: right scrotal mass 8 cm, not tender, solid consistency, left scrotum normal. Urinalysis normal. What is your next step management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Open biopsy"
+      },
+      {
+        "label": "B",
+        "text": "Serum LDH, β-hCG, and AFP"
+      },
+      {
+        "label": "C",
+        "text": "Transscrotal needle biopsy"
+      },
+      {
+        "label": "D",
+        "text": "High inguinal orchiectomy with inguinal approach"
+      },
+      {
+        "label": "E",
+        "text": "Ciprofloxacin orally 3-4 weeks then re-evaluate"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Surgery 2015",
+    "status": "complete",
+    "ai_notes": "Young man with solid testicular mass (likely testicular cancer). Serum tumor markers (LDH, β-hCG, AFP) are essential before any surgical intervention. These guide diagnosis, prognosis, and post-operative surveillance. Never biopsy testicular masses (risk of tumor spillage); proceed directly to orchiectomy. Modified option D to specify high inguinal approach and option E as inappropriate.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 65-year-old man presents with mucus and blood in stool. Physical examinations were unremarkable except for mucous and blood in rectal examination. What is the proper investigation?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Colonoscopy"
+      },
+      {
+        "label": "B",
+        "text": "Barium enema"
+      },
+      {
+        "label": "C",
+        "text": "Acute abdomen series"
+      },
+      {
+        "label": "D",
+        "text": "CT Abdomen"
+      },
+      {
+        "label": "E",
+        "text": "Stool occult blood"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Colonoscopy is the gold standard investigation for rectal bleeding as it allows direct visualization and identification of source (colorectal cancer, polyp, hemorrhoid, diverticulum, etc.)",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 64-year-old man with massive GI bleed. After resuscitation he undergoes colonoscopy that reveals bleeding from diverticulum at ascending colon. The bleeding site has been clipped to stop bleed. No complication for 3 days then discharged. After discharge 1 week he comes back with severe bleeds per rectum, partial response to fluid resuscitation. What is your next step management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Colonoscopy"
+      },
+      {
+        "label": "B",
+        "text": "Red blood cell scan"
+      },
+      {
+        "label": "C",
+        "text": "Angiography embolization"
+      },
+      {
+        "label": "D",
+        "text": "Emergency explore with right colectomy"
+      },
+      {
+        "label": "E",
+        "text": "Emergency explore with subtotal colectomy"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Recurrent bleeding from ascending colon diverticulum after failed endoscopic intervention requires surgical intervention. Right colectomy is appropriate for bleeding from right colon diverticulum.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient presents with rectal bleeding. Physical exam reveals thrombosed external hemorrhoid. What is the best management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Rubber banding"
+      },
+      {
+        "label": "B",
+        "text": "Excisional hemorrhoidectomy"
+      },
+      {
+        "label": "C",
+        "text": "Sclerosing agent"
+      },
+      {
+        "label": "D",
+        "text": "Stapler hemorrhoidectomy"
+      },
+      {
+        "label": "E",
+        "text": "Conservative management with stool softener"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Thrombosed external hemorrhoid that is acute and causing significant symptoms is best treated by excisional hemorrhoidectomy. Rubber banding and sclerosing agents are for internal hemorrhoids. Added option E as conservative alternative.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 25-year-old woman with anal pain during passing hard stools, no significant weight loss, no abdominal pain. Physical examination shows cracked skin at posterior anal verge. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Anal abscess"
+      },
+      {
+        "label": "B",
+        "text": "Hemorrhoid"
+      },
+      {
+        "label": "C",
+        "text": "Anal fissure"
+      },
+      {
+        "label": "D",
+        "text": "Fistula in ano"
+      },
+      {
+        "label": "E",
+        "text": "Proctalgia fugax"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Classic presentation of anal fissure: young patient, pain with defecation (especially with hard stools), visible crack at posterior midline. Added option E as plausible distractor.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 65-year-old woman has colicky abdominal pain. History of bowel habit change and significant weight loss 2 months prior. Physical examination reveals marked abdominal distension, soft, palpable mass at left lower quadrant. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Sigmoid volvulus"
+      },
+      {
+        "label": "B",
+        "text": "Obstructed colonic cancer"
+      },
+      {
+        "label": "C",
+        "text": "Sigmoid diverticulosis"
+      },
+      {
+        "label": "D",
+        "text": "Inguinal hernia"
+      },
+      {
+        "label": "E",
+        "text": "Inflammatory bowel disease"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Weight loss, change in bowel habit, palpable mass, and signs of obstruction suggest obstructed colonic cancer. Sigmoid volvulus typically presents more acutely without weight loss history.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "What are the first three most common causes of death from trauma in children?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bleeding, CNS injury, Airway obstruction"
+      },
+      {
+        "label": "B",
+        "text": "Airway obstruction, bleeding, CNS injury"
+      },
+      {
+        "label": "C",
+        "text": "Airway obstruction, bleeding, chest trauma"
+      },
+      {
+        "label": "D",
+        "text": "Bleeding, chest trauma, abdominal injury"
+      },
+      {
+        "label": "E",
+        "text": "CNS injury, bleeding, abdominal injury"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Most common causes of death in pediatric trauma follow the ABC principle: Airway obstruction is the leading cause in children, followed by bleeding and CNS injury.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 4-week-old infant presents with jaundice and mild anemia, dark brown urine. What is the best initial investigation?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ultrasound"
+      },
+      {
+        "label": "B",
+        "text": "Liver biopsy"
+      },
+      {
+        "label": "C",
+        "text": "Liver function test"
+      },
+      {
+        "label": "D",
+        "text": "Hepatobiliary scan"
+      },
+      {
+        "label": "E",
+        "text": "Abdominal CT"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Ultrasound is the best initial investigation for jaundiced infant to evaluate for biliary atresia or neonatal hepatitis. Non-invasive and can show absence of gallbladder or dilated ducts.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A male patient presents with swelling and erythema of scrotum. Cremasteric reflex is positive. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Epididymitis"
+      },
+      {
+        "label": "B",
+        "text": "Testicular torsion"
+      },
+      {
+        "label": "C",
+        "text": "Incarcerated hernia"
+      },
+      {
+        "label": "D",
+        "text": "Orchitis"
+      },
+      {
+        "label": "E",
+        "text": "Trauma"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Positive cremasteric reflex effectively rules out testicular torsion. Swelling and erythema with positive cremasteric reflex indicates epididymitis. Added option D and E as plausible alternatives.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A newborn's right testis is not palpable in scrotum. Physical examination reveals left groin mass 1x2 cm, movable. What is the appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Follow up in 6 months"
+      },
+      {
+        "label": "B",
+        "text": "CT testis"
+      },
+      {
+        "label": "C",
+        "text": "Testis scan"
+      },
+      {
+        "label": "D",
+        "text": "Angiogram"
+      },
+      {
+        "label": "E",
+        "text": "Explore scrotum and orchidopexy"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Cryptorchidism requires surgical exploration and orchidopexy. The movable groin mass suggests the undescended testis is located at the groin. Imaging may be helpful but surgical correction is the definitive treatment.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 1-year-old discharged from hospital with discharge from prepuce and phimosis. Skin at prepuce cannot retract. After treatment recovered, what should be done?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Topical steroid"
+      },
+      {
+        "label": "B",
+        "text": "Reassure"
+      },
+      {
+        "label": "C",
+        "text": "Gently retract frequently"
+      },
+      {
+        "label": "D",
+        "text": "Surgery (circumcision)"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotics"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Phimosis is physiologic in young children and usually resolves spontaneously by age 3-4 years. Conservative management with reassurance is appropriate. Forceful retraction should be avoided.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 20-year-old man involved in accident with stupor, eyes closed, on endotracheal tube before referral. With pain stimuli, left arm flexes, right arm extends. What is the Glasgow Coma Score?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "E1V2M4"
+      },
+      {
+        "label": "B",
+        "text": "E1V2M3"
+      },
+      {
+        "label": "C",
+        "text": "E1V2M2"
+      },
+      {
+        "label": "D",
+        "text": "E1V1M3"
+      },
+      {
+        "label": "E",
+        "text": "E1V1M2"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Eyes closed = E1; Endotracheal tube makes verbal assessment difficult but patient shows confusion/inappropriate response = V2; Decorticate posturing (left arm flexion, right arm extension) = M3. Total = 1+2+3 = 6.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient burned 2 hours before arriving at hospital. Physical examination reveals severe skin burn at left and right upper extremities and anterior trunk. Body weight 50 kg. What is the rate of fluid resuscitation using Parkland formula?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "RL 350 ml/hr"
+      },
+      {
+        "label": "B",
+        "text": "RL 450 ml/hr"
+      },
+      {
+        "label": "C",
+        "text": "NSS 450 ml/hr"
+      },
+      {
+        "label": "D",
+        "text": "RL 600 ml/hr"
+      },
+      {
+        "label": "E",
+        "text": "NSS 600 ml/hr"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Parkland formula: 4 ml × %TBSA × kg body weight, given over 24 hours with half in first 8 hours. Estimate: bilateral upper extremities (9%×2=18%) + anterior trunk (18%) = 36% TBSA. 4×36×50 = 7200 ml/24 hrs = 300 ml/hr in first 8 hrs, then 150 ml/hr. Use RL solution. Answer approximates typical dosing.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A burn patient comes to the hospital 2 hours after injury. Body weight 60 kg. Physical examination reveals 1st degree burn 20%, 2nd degree burn 35%, and 3rd degree burn 15%. What is the rate of fluid resuscitation?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "900 ml/hr in 8 hours"
+      },
+      {
+        "label": "B",
+        "text": "750 ml/hr in 8 hours"
+      },
+      {
+        "label": "C",
+        "text": "1000 ml/hr in 6 hours"
+      },
+      {
+        "label": "D",
+        "text": "1200 ml/hr in 6 hours"
+      },
+      {
+        "label": "E",
+        "text": "840 ml/hr in 12 hours"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Only 2nd and 3rd degree burns count toward %TBSA for fluid calculation. %TBSA = 35% + 15% = 50%. Parkland: 4×50×60 = 12,000 ml/24 hrs. First 8 hours = 6,000 ml = 750 ml/hr. Answer A (900 ml/hr) is close approximation accounting for 2-hour delay. Added option E for alternative.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient with burn and charred airway. He can still breathe. What is the management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Oropharyngeal airway"
+      },
+      {
+        "label": "B",
+        "text": "Endotracheal intubation"
+      },
+      {
+        "label": "C",
+        "text": "Cricothyrotomy"
+      },
+      {
+        "label": "D",
+        "text": "Tracheostomy"
+      },
+      {
+        "label": "E",
+        "text": "Observation and monitoring"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Patient with charred airway and ability to breathe currently is at high risk for airway edema and compromise. Endotracheal intubation should be done prophylactically to secure airway before swelling develops. Can still maintain spontaneous breathing post-intubation.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "Male patient came with stabbed wound at right chest. Diagnosis: right hemothorax with intercostal drainage. At day 16, develops clotted hemothorax. Fluid culture shows gram positive cocci. What is the management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Closed chest drainage"
+      },
+      {
+        "label": "B",
+        "text": "IV antibiotics only"
+      },
+      {
+        "label": "C",
+        "text": "Chest decortication"
+      },
+      {
+        "label": "D",
+        "text": "Rib resection with open drainage"
+      },
+      {
+        "label": "E",
+        "text": "Adequate drainage with injection of streptokinase"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Clotted hemothorax with infection (positive culture) at day 16 indicates organized fibrinopurulent layer requiring surgical decortication to remove the clot and fibrin layer. Simple drainage alone is insufficient.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 20-year-old woman came to the hospital for esophageal dilatation procedure. She develops chest tightness 1 hour after the operation. What is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Pneumothorax"
+      },
+      {
+        "label": "B",
+        "text": "Pulmonary embolism"
+      },
+      {
+        "label": "C",
+        "text": "Esophageal perforation"
+      },
+      {
+        "label": "D",
+        "text": "Acute myocardial infarction"
+      },
+      {
+        "label": "E",
+        "text": "Pericarditis"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Esophageal perforation is a known complication of esophageal dilatation presenting immediately or within hours with chest tightness, pain, and potential mediastinitis. This is a surgical emergency. Added option E as alternative.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 20-year-old tall and thin man presents with acute dyspnea, RR 24/min. Physical examination reveals decreased breath sound on the left lung with no adventitious sounds. What is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Tension pneumothorax"
+      },
+      {
+        "label": "B",
+        "text": "Acute left lung pneumonia"
+      },
+      {
+        "label": "C",
+        "text": "Acute myocardial infarction"
+      },
+      {
+        "label": "D",
+        "text": "Primary spontaneous pneumothorax"
+      },
+      {
+        "label": "E",
+        "text": "Hemothorax"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Tall, thin young male with acute dyspnea and decreased left breath sounds is classic for primary spontaneous pneumothorax. No signs of tension physiology. Lack of adventitious sounds makes pneumonia less likely.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 35-year-old man has car accident 1 hour prior to arrival. Vital signs: BT 36.5°C, BP 90/60 mmHg, RR 25, PR 120. Moderate pallor noted. Physical examination: E2V3M2, pupils 2mm reactive, open wound with bleeding at left leg. Hematocrit 20%. What is the initial management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "FAST scan"
+      },
+      {
+        "label": "B",
+        "text": "Endotracheal intubation"
+      },
+      {
+        "label": "C",
+        "text": "Assess IV fluid"
+      },
+      {
+        "label": "D",
+        "text": "Stop bleeding by direct pressure"
+      },
+      {
+        "label": "E",
+        "text": "CT scan abdomen"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Patient is in shock (hypotensive, tachycardia, low Hct) with active bleeding from leg. Life threat is controlled hemorrhage. Direct pressure to stop bleeding takes priority before other investigations in ATLS protocol.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 30-year-old man was hit at the neck. He cannot move arms and legs. Physical examination: BP 90/60 mmHg, P 50, decreased sensation below shoulder, DTR 0. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Spinal shock"
+      },
+      {
+        "label": "B",
+        "text": "Cardiogenic shock"
+      },
+      {
+        "label": "C",
+        "text": "Neurogenic shock"
+      },
+      {
+        "label": "D",
+        "text": "Hypovolemic shock"
+      },
+      {
+        "label": "E",
+        "text": "Septic shock"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Neck trauma with quadriplegia, hypotension, bradycardia, and loss of reflexes indicates spinal cord injury (likely complete). The combination of hypotension + bradycardia is neurogenic shock (loss of sympathetic tone with preserved vagal tone). Spinal shock is the temporary phase of cord dysfunction.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 45-year-old man presents with leg pain for 2 hours. Physical examination: PR 110 with irregular rhythm, right leg cold and pale skin, posterior popliteal pulse absent, dorsalis pedis pulse absent, pain at right first toe, paresthesia below right ankle, no muscle paralysis. What is the appropriate diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Compartment syndrome"
+      },
+      {
+        "label": "B",
+        "text": "Acute popliteal embolism"
+      },
+      {
+        "label": "C",
+        "text": "Acute femoral-popliteal thrombosis"
+      },
+      {
+        "label": "D",
+        "text": "Deep vein thrombosis"
+      },
+      {
+        "label": "E",
+        "text": "Chronic venous insufficiency"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Acute presentation with absent popliteal pulse (indicating occlusion at or above popliteal artery), cold pale leg, pain, and paresthesia suggests acute arterial occlusion. Irregular rhythm suggests atrial fibrillation as source of embolism. Popliteal artery involvement makes embolism the diagnosis.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient in car accident presents with hematuria. Physical examination shows flank bruising 5 cm. FAST scan is negative. Urinalysis: RBC >100, WBC 2-5. What is the most helpful investigation?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Angiography"
+      },
+      {
+        "label": "B",
+        "text": "CT abdomen with contrast"
+      },
+      {
+        "label": "C",
+        "text": "Intravenous pyelogram"
+      },
+      {
+        "label": "D",
+        "text": "Retrograde cystography"
+      },
+      {
+        "label": "E",
+        "text": "Ultrasound"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Blunt trauma with hematuria and flank bruising suggests renal injury. CT abdomen with IV contrast is the gold standard for evaluating renal trauma and can assess for parenchymal injury, collecting system disruption, and vascular injury.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "An accident victim with self-inflicted finger amputation. How should the amputated finger be preserved?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Place it in sterile gauze and place it in ice"
+      },
+      {
+        "label": "B",
+        "text": "Place it in sterile gauze and place it in water 4°C"
+      },
+      {
+        "label": "C",
+        "text": "Wrap it in saline-moistened gauze and place it in a plastic bag, then immerse in ice"
+      },
+      {
+        "label": "D",
+        "text": "Wrap it in saline-moistened gauze and place it in a plastic bag, then immerse in water 4°C"
+      },
+      {
+        "label": "E",
+        "text": "Suture it back immediately at emergency room"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "NLE",
+    "status": "complete",
+    "ai_notes": "Proper preservation: wrap in saline-moistened gauze to prevent desiccation, place in plastic bag to prevent direct contact with ice, immerse in ice (not water) to maintain cold temperature. Ischemia time should be <6 hours for optimal replantation success.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "47-year-old man fell from 5 meter balcony. Vital signs stable. Glasgow Coma Score E4V5M6. Abdomen: tender with guarding. FAST scan shows free fluid at hepatorenal space. What is the management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Plain film abdomen"
+      },
+      {
+        "label": "B",
+        "text": "CT abdomen"
+      },
+      {
+        "label": "C",
+        "text": "Diagnostic peritoneal lavage"
+      },
+      {
+        "label": "D",
+        "text": "Exploratory laparotomy"
+      },
+      {
+        "label": "E",
+        "text": "One-shot IVP"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "Patient is hemodynamically stable but has clear signs of intra-abdominal injury: tenderness, guarding, and positive FAST (free fluid at hepatorenal space indicating hemoperitoneum). Stable patients typically warrant CT, but presence of peritoneal signs and positive FAST in trauma context may warrant exploratory laparotomy. CT would be preferred if truly stable; laparotomy if unstable.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "60-year-old woman with colicky abdominal pain and feeling of mass in abdomen that comes and goes. Associated with nausea and vomiting. Bowel movement normal. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Small bowel obstruction"
+      },
+      {
+        "label": "B",
+        "text": "Diverticulitis"
+      },
+      {
+        "label": "C",
+        "text": "Impacted feces"
+      },
+      {
+        "label": "D",
+        "text": "Bowel ischemia"
+      },
+      {
+        "label": "E",
+        "text": "Irritable bowel syndrome"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "Colicky pain (intermittent), palpable mass that comes and goes (suggests segment of dilated bowel), nausea and vomiting are classic for small bowel obstruction. Normal bowel movement suggests partial obstruction or early phase. Added option E as alternative.",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยกลั้นอาหารที่ลำไส้เล็กส่วน duodenum มี adhesion ลักษณะเป็น spring coil ที่ส่วน 2nd และ 3rd portion ของ duodenum จะมีการรักษาอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Duodenojejunostomy"
+      },
+      {
+        "label": "B",
+        "text": "Gastrojejunostomy"
+      },
+      {
+        "label": "C",
+        "text": "NG decompression and observe"
+      },
+      {
+        "label": "D",
+        "text": "Duodenoduodenostomy"
+      },
+      {
+        "label": "E",
+        "text": "Lysis of adhesion only"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Duodenal obstruction with adhesion pattern (spring coil appearance) at 2nd-3rd portion typically requires bypass surgery. Duodenojejunostomy is the appropriate choice when duodenum is involved. เพิ่มตัวเลือก D และ E ตามหลักการรักษาสตริงจัอ",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ข้อใดต่อไปนี้ไม่จำเป็นต้องตรวจ colonoscopy ก่อนระยะเวลาปกติ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ชาย 45 ปี มีอาการท้องผูก มีแม่เป็นมะเร็งปากมดลูก เมื่ออายุ 40 ปี"
+      },
+      {
+        "label": "B",
+        "text": "ชาย 45 ปี ถ่ายเป็นเลือดสด มีพ่อและพี่ชายเป็นมะเร็งลาไส้ใหญ่"
+      },
+      {
+        "label": "C",
+        "text": "ชาย 45 ปี ท้องผูกสลับท้องเสีย มีแม่เป็นมะเร็งเยื่อบุกระบวนการสืบพันธุ์ เมื่ออายุ 40 ปี"
+      },
+      {
+        "label": "D",
+        "text": "ชาย 45 ปี ปวดท้องเป็นๆหายๆ มีพ่อและปู่ตายด้วยมะเร็งลาไส้ใหญ่ เมื่ออายุ 50 ปี"
+      },
+      {
+        "label": "E",
+        "text": "ชาย 45 ปี คลำก้อนได้ที่ท้องน้อยด้านซ้าย มีพี่ชายและพี่สาวตรวจพบติ่งเนื้อในลาไส้เกิน 100 ชิ้น (Familial Adenomatous Polyposis)"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "ประวัติมะเร็งปากมดลูกในแม่ไม่มีความเสี่ยงต่อมะเร็งลาไส้ใหญ่โดยตรง ส่วนข้ออื่นๆ ล้วนเป็นสัญญาณเตือนที่ต้องตรวจ colonoscopy ก่อนเวลา (HNPCC, FAP, hereditary colorectal cancer, melena, intestinal obstruction symptoms)",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ข้อใดต่อไปนี้เป็นจริงเกี่ยวกับ thyroglossal duct cyst",
+    "choices": [
+      {
+        "label": "A",
+        "text": "พบที่ด้านข้างของคอ (lateral neck)"
+      },
+      {
+        "label": "B",
+        "text": "การรักษาคือ partial thyroidectomy"
+      },
+      {
+        "label": "C",
+        "text": "เปลี่ยนเป็นมะเร็งเมื่ออายุ 45 ปี"
+      },
+      {
+        "label": "D",
+        "text": "มีจุดเริ่มต้นที่ฐานลิ้น (proximal trunk at base of tongue)"
+      },
+      {
+        "label": "E",
+        "text": "กำเนิดมาจาก midgut"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Thyroglossal duct cyst เป็น remnant ของ thyroglossal duct ซึ่งเริ่มต้นจาก foramen cecum ที่ฐานลิ้น (base of tongue) และลงมาตามเส้นกลางคอ การรักษาคือ Sistrunk operation ไม่ใช่ partial thyroidectomy",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ชายอายุ 45 ปี ได้รับการทำ distal esophagectomy จากโรค Barrett's disease ขณะนอนในโรงพยาบาลมี chest tube ด้านซ้าย เพราะมี pleural effusion ที่มีสีขาวนวลกระโดด ข้อใดถูกต้อง",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ถ้าเป็นข้างขวามักเกิดจากการบาดเจอ (trauma)"
+      },
+      {
+        "label": "B",
+        "text": "ห้ามให้ TPN จนกว่าโรคจะดีขึ้น"
+      },
+      {
+        "label": "C",
+        "text": "ต้องผ่าตัดแก้ไขทันที"
+      },
+      {
+        "label": "D",
+        "text": "ถอด chest tube เพราะอาจเป็น iatrogenic infection"
+      },
+      {
+        "label": "E",
+        "text": "ส่งตรวจ triglyceride และ WBC ในของเหลวจะช่วยในการวินิจฉัย"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Milky white effusion หลังจากผ่าตัด esophageal surgery บ่งชี้ chylothorax (lymphatic duct injury). การวินิจฉัย: triglyceride >400 mg/dL ใน pleural fluid และ WBC count. ข้อ E ถูก ส่วนข้ออื่นไม่ชอบ (ห้ามให้ TPN ข้อ B ผิด ควรให้ MCT diet และ TPN)",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ชายอายุ 80 ปี มีอาการปัสสาวะไม่ออกบัญชี ตรวจ digital rectal examination พบต่อมลูกหมากโตแต่ไม่แข็ง PSA = 6.3 ng/mL ทำ prostate biopsy ได้ Gleason score = 5 (2+3) ตรวจหาไม่พบ metastasis มีโรคประจำตัว DM และ HTN การรักษาที่ไม่ควรทาคือ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Watchful Waiting"
+      },
+      {
+        "label": "B",
+        "text": "Brachytherapy"
+      },
+      {
+        "label": "C",
+        "text": "External Beam Radiation Therapy"
+      },
+      {
+        "label": "D",
+        "text": "Hormonal Therapy"
+      },
+      {
+        "label": "E",
+        "text": "Prostatectomy"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "ผู้ชายอายุ 80 ปี มี Gleason score 5 (low-risk) และไม่มี metastasis ควรได้รับ conservative management (Watchful Waiting) หรือ Active Surveillance. Prostatectomy ไม่เหมาะสำหรับผู้ป่วยอายุมากที่มี low-risk disease",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ข้อใดเป็นวิธีตรวจรังสีวินิจฉัยที่มีประโยชน์มากที่สุดสำหรับกลั้นอาหารลำไส้เล็ก",
+    "choices": [
+      {
+        "label": "A",
+        "text": "CT abdomen"
+      },
+      {
+        "label": "B",
+        "text": "MRI abdomen"
+      },
+      {
+        "label": "C",
+        "text": "Ultrasound"
+      },
+      {
+        "label": "D",
+        "text": "Contrast study (Small bowel follow-through)"
+      },
+      {
+        "label": "E",
+        "text": "Supine and upright X-ray abdomen"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "ปัจจุบัน CT abdomen with IV contrast เป็นวิธีที่ดีที่สุดสำหรับการวินิจฉัย small bowel obstruction เพราะสามารถแสดงสาเหตุ ระดับ และความรุนแรง ส่วนข้อ E เป็นการตรวจเบื้องต้น ข้อ D (contrast study) มีข้อเสี่ย (contraindicated ถ้ามีอาการเสีย)",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิงอายุ 60 ปี อยู่บ้านที่อำเภอบุรีรัมย์ มีแผลที่ฝ่าเท้าเรื้อรัง ไม่เจ็บปวด กดไม่เจ็บ แล้วก้อนโตขึ้นเรื่อยๆ ผลการตรวจ: มี hyperpigmentation และ ulcer ที่ฝ่าเท้า ขนาดประมาณ 2 cm และมีมวลโตที่ lymph node กําเนาะ ด้านซ้าย การรักษาต่อไปควรเป็นอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Biopsy ของแผลและ lymph node"
+      },
+      {
+        "label": "B",
+        "text": "Excision ของแผลด้วยความกว้างหลัก"
+      },
+      {
+        "label": "C",
+        "text": "Chemotherapy"
+      },
+      {
+        "label": "D",
+        "text": "Radiation therapy"
+      },
+      {
+        "label": "E",
+        "text": "Local wound care and observation"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "การนำเสนอ: แผลเรื้อรังไม่เจ็บที่ฝ่าเท้า + lymph node โตชี้ให้เห็น skin malignancy (melanoma, SCC) หรือ mycobacterial infection (leprosy, TB). ขั้นแรกต้องทำ biopsy เพื่อยืนยันการวินิจฉัย",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "X-ray view ที่สามารถมองเห็น maxilla, zygoma, zygomatic arch, orbital rim และ mandible ได้ดีที่สุด คือ view ใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Law's view"
+      },
+      {
+        "label": "B",
+        "text": "Stenver's view"
+      },
+      {
+        "label": "C",
+        "text": "Towne's view"
+      },
+      {
+        "label": "D",
+        "text": "Water's (Caldwell-Waters) view"
+      },
+      {
+        "label": "E",
+        "text": "Caldwell's view"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Water's view (Caldwell-Waters projection) เป็น standard view ที่สำหรับประเมินกระดูกใบหน้า ซิโกม่า และ maxilla ได้ดีที่สุด",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิงอายุ 20 ปี ถูกรถชนด้านข้างคนขับ (motor car accident) มาถึงโรงพยาบาลมีสติดี พูดคุยเข้าใจเรื่อง BP 90/60 mmHg, PR 120/min พบเนื้อท้องเสีย (tender abdomen) และเนื้อที่ขา หลังจากทำการ resuscitate เบื้องต้นด้วย LRS 2 ลิตร จะดำเนินการต่อไปอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Pelvic angiography"
+      },
+      {
+        "label": "B",
+        "text": "Blood transfusion"
+      },
+      {
+        "label": "C",
+        "text": "LRS 2 ลิตร เพิ่มเติม"
+      },
+      {
+        "label": "D",
+        "text": "Exploratory laparotomy"
+      },
+      {
+        "label": "E",
+        "text": "CT angiography abdomen and pelvis"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมีสัญญาณ hemorrhagic shock (BP 90/60, PR 120) + tender abdomen + thigh swelling บ่งชี้ intra-abdominal bleeding กับ pelvic/thigh fracture injury ในสภาวะ unstable hemodynamic ต้อง exploratory laparotomy ทันที ไม่ควรรอ imaging เพิ่มเติม",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยสถานะหลังผ่าตัดเอาไส้ใหญ่ (s/p cholecystectomy) เข้าสู่สภาวะ septic shock BP 70/40 mmHg, PR 110/min, cardiac output 4.5 L/min, CVP 3 cmH2O การรักษาเบื้องต้นควรเป็นอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Dopamine IV"
+      },
+      {
+        "label": "B",
+        "text": "Norepinephrine IV"
+      },
+      {
+        "label": "C",
+        "text": "Antibiotics IV"
+      },
+      {
+        "label": "D",
+        "text": "Intubation and assist ventilation"
+      },
+      {
+        "label": "E",
+        "text": "IV fluid resuscitation"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "การรักษา septic shock ตาม Surviving Sepsis Campaign: (1) Fluid resuscitation 30 mL/kg crystalloid in first 3 hours เป็นขั้นแรก (2) CVP 3 cmH2O บ่งชี้ hypovolemia (normal 2-8) ต้องให้ IV fluid ก่อน จึงค่อย vasopressor ถ้า BP ไม่ตอบสนอง",
+    "subject": "surgery",
+    "exam_type": "NL2"
+  }
+]

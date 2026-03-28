@@ -1,0 +1,561 @@
+{
+  "filename": "Psychi",
+  "subject": "psychi",
+  "exam_type": "NL2",
+  "stats": {
+    "total": 33,
+    "no_choices": 30,
+    "few_choices": 1,
+    "good": 2,
+    "no_scenario": 0,
+    "short_scenario": 12
+  },
+  "issues": [
+    {
+      "index": 0,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ตัวอย่างข้อสอบเก่า ศรว Psychiatry\n2015\nเด็กชาย 3 ขวบชอบพูดเป็นคำๆ Which of the f",
+      "choices_count": 0
+    },
+    {
+      "index": 1,
+      "question_number": 1,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "ญ 22ปี เป็น SLE on prednisolone 3วัน PTA มีไข้ ปวดข้อ ผื่นขึ้น แล้วมีหูแว่วว่าใค",
+      "choices_count": 3
+    },
+    {
+      "index": 2,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ชาย เมื่อคืนไปfull moon party วันนี้ตอนเช้าหวาดระแวง คิดว่าคนอื่นจะมาทาร้าย ไ",
+      "choices_count": 0
+    },
+    {
+      "index": 5,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "หนุ่มสาวสองคนมาด้วยประวัติทะเลาะกัน บอกเลิกฝ่ายหญิงมีอาการหายใจเร็ว (Hyperventil",
+      "choices_count": 0
+    },
+    {
+      "index": 6,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "reasure and breathing exercise",
+      "choices_count": 0
+    },
+    {
+      "index": 7,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "re-breathing mask breathing",
+      "choices_count": 0
+    },
+    {
+      "index": 8,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "diazepam",
+      "choices_count": 0
+    },
+    {
+      "index": 9,
+      "question_number": 6,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชาย 49 ปี มาด้วย ชัก generalize tonic conic 2 ชม มีประวัติดื่มสุรามาก แต่1วัน ก่",
+      "choices_count": 0
+    },
+    {
+      "index": 10,
+      "question_number": 91,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "หญิง 18 ปี หายใจเร็ว ลึก มือจีบ 2 ชม หลังรับน้องโดนพี่ตะโกนใส่ 2 ชม Dx? (ศรว. มี",
+      "choices_count": 0
+    },
+    {
+      "index": 11,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "conversion disorder",
+      "choices_count": 0
+    },
+    {
+      "index": 12,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "acute stress disorder",
+      "choices_count": 0
+    },
+    {
+      "index": 13,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "hyperventilation syndrome",
+      "choices_count": 0
+    },
+    {
+      "index": 14,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "GAD",
+      "choices_count": 0
+    },
+    {
+      "index": 15,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "panic disorder",
+      "choices_count": 0
+    },
+    {
+      "index": 16,
+      "question_number": 106,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยหญิง อายุ 30 ปี มีอาการเบื่อหน่ายท้อแท้สิ้นหวังรู้สึกผิด คิดอยากตาย หลังถ",
+      "choices_count": 0
+    },
+    {
+      "index": 17,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "หยุดยา",
+      "choices_count": 0
+    },
+    {
+      "index": 18,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ค่อย ๆ ลงยาภายใน 1 เดือน",
+      "choices_count": 0
+    },
+    {
+      "index": 19,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ให้ยาต่อไปอีก 6 เดือน",
+      "choices_count": 0
+    },
+    {
+      "index": 20,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เปลี่ยนเป็น diazepam",
+      "choices_count": 0
+    },
+    {
+      "index": 21,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เปลี่ยนยาเป็น Amityptiline",
+      "choices_count": 0
+    },
+    {
+      "index": 22,
+      "question_number": 107,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชาย เป็น depressive disorder + หูได้ยินคนนินทา on Fluoxetine + Haloperidol วันนี",
+      "choices_count": 0
+    },
+    {
+      "index": 23,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ลด fluoxetin",
+      "choices_count": 0
+    },
+    {
+      "index": 24,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "ลด hadol",
+      "choices_count": 0
+    },
+    {
+      "index": 25,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "add diazepam",
+      "choices_count": 0
+    },
+    {
+      "index": 26,
+      "question_number": 108,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชาย อายุ 20 กว่าปี ถูกตีที่ขา 2 ข้าง รู้สึกโกรธ ทหารที่ตีมาก แต่ระงับอารมณ์ได้ ต",
+      "choices_count": 0
+    },
+    {
+      "index": 27,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "peroneal N. injury 2. conversion disorder 3. fractitious disorder",
+      "choices_count": 0
+    },
+    {
+      "index": 28,
+      "question_number": 109,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เด็กชาย ซุกซน ไม่ค่อยเชื่อฟัง ชอบเถียงพ่อแม่ กวนเพื่อนตลอด Mx? (ศรว. มี.ค. 2555)",
+      "choices_count": 0
+    },
+    {
+      "index": 29,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Hadol",
+      "choices_count": 0
+    },
+    {
+      "index": 30,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Imipramine",
+      "choices_count": 0
+    },
+    {
+      "index": 31,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Amitryptyline",
+      "choices_count": 0
+    },
+    {
+      "index": 32,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Methylphenidate",
+      "choices_count": 0
+    }
+  ],
+  "questions": [
+    {
+      "question_number": 1,
+      "scenario": "ตัวอย่างข้อสอบเก่า ศรว Psychiatry\n2015\nเด็กชาย 3 ขวบชอบพูดเป็นคำๆ Which of the followings least likely support the diagnosis of autism\nHe likes to eat the same food\nHe doesn’t make eye contact\nHe likes the parent to hug him\nHe imitates the sentence from the television advertisement\nA 8-year-old girl ร้องไห้ตอนเช้าทุกวัน ถึงโรงเรียน 30 นาทีเงียบ แต่ขอโทรหาแม่ทุก 1 ชั่วโมง คุณครูบอกว่าค่อนข้างเงียบ แต่เข้ากับเพื่อนได้ What is the diagnosis\nGeneralized anxiety disorder\nSeparation anxiety\nNormal\nA 24-year-old woman committed suicide. She has just fight with her boyfriend. She has bad long term relationship with her previous boy friend. She feels empty. She has been using some substance, hurt herself even little problem. What is the diagnosis\nMajor depressive disorder\nBorderline personality disorder\nHistrionic personality disorder\nAfter 6 months of parental divorce, a 13-year-old girl ingested 20 tabs of paracetamol before she was brought to hospital 1 hour. PE: irritable and apathy. Which of the following is most likely diagnosis\nAnxiety disorder\nMajor depressive disorder\nAdolescent turmoil\nAnxiety disorder\nBorderline personality disorder\nข้อใดสัมพันธ์กับ borderline personality\nIncrease risk of premature death\nDecrease risk to develop psychotic symptom\nDecrease risk to develop traumatic stress disorder\nDecrease risk to develop other personality disorder\nIncrease chance resolving personality disorder\nA 20-year-old man หูแว่วมา 3 วัน he เก็บตัว since เข้ามหาลัยไม่ได้เมื่อ 2 ปีก่อน. What is the diagnosis\nBrief psychotic disorder\nSchizophrenia\nA 38-year-old woman has felt boring, loss of interest, slow speech, and insomnia for 1 month. Sometimes, she hears the noise telling her to jump out of the window. Which of the following is the most likely diagnosis\nAdjustment disorder with depressed mood\nDysthymic disorder with psychotic feature\nMajor depressive disorder with psychotic feature\nSchizophrenia with secondary depression\nMixed anxiety depressive disorder\nA 50-year-old woman depressed mood, insomnia, loss of appetite and suicidal idea. She also hear the voice telling her to die to end her suffering. The symptoms started after her 25 years old son died 2 months ago. She had not done any housework and spent the time alone in her room all day. Which of the following is the most likely diagnosis\nGrief reaction\nAcute stress reaction\nSchizoaffective disorder\nMajor depressive disorder with psychotic feature\nAdjustment disorder with depress mood\nUndergraduate ร้องไห้ทุกวัน กลัวเพื่อนไม่ยอมรับ มีอาการตั้งแต่ high school ทำงานได้ตามปกติ What is the diagnosis\nDysthymia\nAdjustment disorder\nMajor depressive disorder\nA 20-year-old male always repeat checking the door lock 20-30 times. The symptom progress in 3 months. He goes to work late. No underlying disease. PE: normal. No history of substance abuse. What is the diagnosis\nPhobia\nGeneralized anxiety disorder\nObsessive compulsive disorder\nPersonality disorder\nA woman กังวลว่าจะเป็นโรคร้ายแรง ต่อมากังวลว่าสามีขับรถไปข้างนอกจะอันตราย\nGeneralized anxiety disorder\nA 50-year-old man came with bloats for years. Previous investigations were normal. He has history of a stressful couple. His wife always made him feel minimal. He concerns having serious conditions when he has abdominal discomfort. What is the diagnosis\nPanic disorder\nDysthymia\nHypochondriasis\nGeneralized anxiety disorder\nObsessive compulsive disorder\nA 25-year-old woman feels rapid heartbeat, sweating and fearful at night. She is an only child and never leaves her hometown. Two months ago she got a scholarship to study in Bangkok and move to stay in the dormitory. One of her friend had been robbed 3 days ago. After that she felt insecure and have symptoms. She is scared to be alone and afraid to die from heart attack. What is the most likely diagnosis\nPanic disorder\nHypochondriasis\nAcute stress disorder\nPosttraumatic stress disorder\nGeneralized anxiety disorder\nA protester man มีอาการ burst of emotion ใจสั่น ร้อนวูบวาบ หวาดระแวงกลัวว่าจะมีคนมาทำร้าย พฤติกรรมเปลี่ยนไป โดยเมื่อ 2 วันก่อนขณะตอนเดินประท้วงมีเหตุการณ์เพื่อนร่วมเดินประท้วงโดนยิงตายต่อหน้า ลูกสาวบอกว่าไม่เคยเป็นแบบนี้มาก่อน\nAdjustment disorder\nAcute stress disorder\nMajor depressive disorder\nBereavement depression\nPost traumatic disorder\nA 40-year-old women progressive memory loss for 2 years. It increases mistake in working last 6 months.Her boss must repeat over and loudly, sometimes she can't remember her friends who taking to her. Her hand writing not change. She is a lone care giver of her mother 75 years old with terminal dementia for 6 years. What is the diagnosis\nCare giver burden\nTIA\nAlzheimer disease\nFrontal dementia\nWork place hard time\nA woman has a happy married life with her husband for 10 years.  Six months prior, she seemed depressed with complaining numbness at her hands and feet. There was violence between her and her husband.  Their relationship became distant. She started to be like this after her only child was diagnosed with leukemia which relapses after chemotherapy. What is the most likely diagnosis of this family?\nMidlife crisis\nCouple violence\nFamily of the dying\nFamily of chronic illness\nFamily of morphogenesis\nA 61-year-old man ม่ายปลดเกษียณ มารพ.เพราะเพื่อนบ้านไปเจอขณะกำลังพยายามแขวนคอตัวเอง 2 wk ก่อนหน้านี้เพิ่งไปพบแพทย์ ได้รับการวินิจฉัย Major depressive disorder ไม่เคยมี suicidal idea มาก่อน ถามการ manage ในครั้งนี้\nAdmit + ประเมิน suicidal risk\nบอกเพื่อนบ้านให้ช่วยสังเกตอาการผิดปกติ\nให้สังคมสงเคราะห์เข้าเยี่ยมบ้านทันที\nให้ amitriptyline 2 weeks\nA 20-year-old man paranoid for 1 month ได้ยินเสียงคนขู่ทำร้ายเวลาอยู่คนเดียว He used ya-ba for year and stop 1 week. What is the course of symptom\nPartially disappear\nDisappear within 1 month\nDisappear within 12 months\nPersist lifelong\nDisappear but recurrent in 10 months\nA 14-year-old boy was sent to the hospital in order to test for illicit drug usage by his father. He did not know the reason sent to the hospital, but he remember that his teacher told him of skipping class and stealing drugs. What is your initial management\nDo the urine examination\nTell the boy about the reason\nAsk permission from the boy\nMake relationship with the boy\nAsk his father to tell the boy the reason\nA 10-year-old boy ไม่ไปโรงเรียน1ปี ชอบชกต่อยเพื่อนที่รร หนีออกจากบ้านตอนกลางคืน สูบบุหรี่ กัญชา มีเรื่องชกต่อย ขโมยเงินพ่อแม่. What is the diagnosis\nSchool phobia\nOppositional defiant disorder\nConduct disorder\nImpulsive disorder\nAntisocial personality disorder\nคนไข้ delirium เห็นหนูเต็มเตียง ทำไง\nHaloperidol\nDiazepam\nLithium\nผู้หญิงอาชีพวิศวกร no underlying ชอบดูตามห้องต่างๆในบ้านของตนคิดว่ามีกล้องวงจรปิดของเพื่อนบ้านติดอยู่ มาแอบดูตน และเชื่อว่ามีจริงเพราะได้ยินเสียงคนบอกในบ้าน รวมทั้งมีพฤติกรรมอย่างนี้ที่ทำงานด้วยคอยเช็คตลอดจนเพื่อนร่วมงานออกห่าง มาพบแพทย์ควรรักษาด้วยอะไร\nlithium\nvalium\nfluoxetine\nrisperidone\nhaloperidol\nผู้ป่วย schizophrenia ได้ยา haloperidol 20 mg มา 10 ปี ครั้งนี้มาด้วย aggressive hallucination ได้เพิ่มยาเป็น 30 mg 2 สัปดาห์ต่อมา อาการดีขึ้น hallucination หายแล้ว แต่มีอาการตัวแข็ง What is the proper management\nIncrease haloperidol\nChlorpromazine\nBenzodiazepine\nRelaxing training\nElectroconvulsive therapy\nผู้หญิง ผู้ใหญ่ ไม่แก่ อาการแน่นหน้าอก เหงื่อแตก หายใจไม่ออก3ครั้ง/เดือน กังวล กลัวตาย ไม่กล้าออกไปไหนคนเดียว จะให้ยาอะไร\nPropanolol\nFluoxetin\nDiazepam\nChlorpromazine\nผู้ป่วยมีอาการหอบหายใจเร็ว acute panic attack ให้ยาอะไร\nFluoxetine\nAlprazolam\nHaloperidol\nClonazepam\nA 35-year-old man admitted day 2 for herniorhaphy. He develops agitation, confusion, visual hallucination. What is the most likely cause of his symptom\nHead injury\nSubstance abuse\nStress\nCognition\nPsychiatry in family\nคนไข้ไม่เคยดื่มเหล้า admit ผ่าตัด หลังผ่าตัดมีอาการหลงลืม โดยเฉพาะตอนกลางคืน เป็นอะไร\nAlcohol withdrawal delirium\nDementia from drug-induced\nDelirium from drug induced\nDementia due to general medical condition\nDelirium due to general medical condition\n2014",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ญ 22ปี เป็น SLE on prednisolone 3วัน PTA มีไข้ ปวดข้อ ผื่นขึ้น แล้วมีหูแว่วว่าใครจะมาทาร้ายตน โดยไม่เคยเป็นมาก่อน Dx",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Psychotic disorder due to SLE"
+        },
+        {
+          "label": "B",
+          "text": "Prednisolone induce psychotic feature"
+        },
+        {
+          "label": "C",
+          "text": "Brief psychotic disorder"
+        }
+      ],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ผู้ชาย เมื่อคืนไปfull moon party วันนี้ตอนเช้าหวาดระแวง คิดว่าคนอื่นจะมาทาร้าย ไม่สับสนเวลาและสถานที่ ถามว่าเป็นอะไร\nก. brief psycotic disorder\nข.delirium\nค. substance induced psychosis",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ผู้ป่วยหญิง อายุ 15 ปี กลัวว่าตนเองอ้วน รับประทานอาหารครั้งละมากๆ แล้วไปล้วงคอให้อาเจียน ร่วมกับใช้ยาระบาย ตรวจร่างกาย BMI=19 others: WNL",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Bulimia"
+        },
+        {
+          "label": "B",
+          "text": "Anorexia nervosa"
+        },
+        {
+          "label": "C",
+          "text": "Somatoform"
+        },
+        {
+          "label": "D",
+          "text": "Body dysmorphic"
+        },
+        {
+          "label": "E",
+          "text": "OCD"
+        }
+      ],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 4,
+      "scenario": "ผู้หญิงอายุ 19 ปี ไม่กินอาหารแคลอรี่สูง กลัวอ้วนถึงแม้น้าหนักจะ 30 kg สูง 160 cm บางครั้งจะไปกินยาระบายหากกินข้าวมาเยอะ Dx",
+      "choices": [
+        {
+          "label": "A",
+          "text": "anorexia"
+        },
+        {
+          "label": "B",
+          "text": "bulimia"
+        },
+        {
+          "label": "C",
+          "text": "binge eating disorder"
+        },
+        {
+          "label": "D",
+          "text": "eating disorder NOS"
+        },
+        {
+          "label": "E",
+          "text": "normal behavior in puberty"
+        }
+      ],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 5,
+      "scenario": "หนุ่มสาวสองคนมาด้วยประวัติทะเลาะกัน บอกเลิกฝ่ายหญิงมีอาการหายใจเร็ว (Hyperventilation) ถาม manage",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 1,
+      "scenario": "reasure and breathing exercise",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 2,
+      "scenario": "re-breathing mask breathing",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 3,
+      "scenario": "diazepam",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 6,
+      "scenario": "ชาย 49 ปี มาด้วย ชัก generalize tonic conic 2 ชม มีประวัติดื่มสุรามาก แต่1วัน ก่อนมีอาการดื่นลดลงมาก no U/D PE R20/min P110/min BT37.8 BP 160/100 moderate agitate tremor both hand orientation to time place person neuro unremarkable MX? A.carbamazepine.B.diazepam C.phenobarbital D.sodium valproate E.thiamine\n2012",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 91,
+      "scenario": "หญิง 18 ปี หายใจเร็ว ลึก มือจีบ 2 ชม หลังรับน้องโดนพี่ตะโกนใส่ 2 ชม Dx? (ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 1,
+      "scenario": "conversion disorder",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 2,
+      "scenario": "acute stress disorder",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 3,
+      "scenario": "hyperventilation syndrome",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 4,
+      "scenario": "GAD",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 5,
+      "scenario": "panic disorder",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 106,
+      "scenario": "ผู้ป่วยหญิง อายุ 30 ปี มีอาการเบื่อหน่ายท้อแท้สิ้นหวังรู้สึกผิด คิดอยากตาย หลังถูกไล่ออกจากงาน ก่อนหน้านี้ ไม่เคยมีอาการ เข้ารับการรักษาหลังเป็น 1 เดือน ได้Fluoxetine นาน 2 เดือน ตอนนี้อาการเริ่มเป็นปกติ จะปฏิบัติต่อผู้ป่วยอย่างไร (ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 1,
+      "scenario": "หยุดยา",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ค่อย ๆ ลงยาภายใน 1 เดือน",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ให้ยาต่อไปอีก 6 เดือน",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 4,
+      "scenario": "เปลี่ยนเป็น diazepam",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 5,
+      "scenario": "เปลี่ยนยาเป็น Amityptiline",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 107,
+      "scenario": "ชาย เป็น depressive disorder + หูได้ยินคนนินทา on Fluoxetine + Haloperidol วันนี้มีอาการ โวยวาย agitate ก้าวร้าว จะMx?? (ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ลด fluoxetin",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ลด hadol",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 3,
+      "scenario": "add diazepam",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 108,
+      "scenario": "ชาย อายุ 20 กว่าปี ถูกตีที่ขา 2 ข้าง รู้สึกโกรธ ทหารที่ตีมาก แต่ระงับอารมณ์ได้ ตรวจร่างกาย motor grade I reflex 2+ decrease sensation (ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 1,
+      "scenario": "peroneal N. injury 2. conversion disorder 3. fractitious disorder",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 109,
+      "scenario": "เด็กชาย ซุกซน ไม่ค่อยเชื่อฟัง ชอบเถียงพ่อแม่ กวนเพื่อนตลอด Mx? (ศรว. มี.ค. 2555)",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Hadol",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Imipramine",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Amitryptyline",
+      "choices": [],
+      "exam_source": "Psychi"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Methylphenidate",
+      "choices": [],
+      "exam_source": "Psychi"
+    }
+  ]
+}

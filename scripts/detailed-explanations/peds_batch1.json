@@ -1,0 +1,830 @@
+[
+  {
+    "id": "00fff64f-0000-0000-0000-000000000000",
+    "correct_answer": "B",
+    "explanation": "เด็กชาย 10 ปี acanthosis nigricans + FHx DM2 → Glucose tolerance test (OGTT) เพื่อ screen DM2/prediabetes",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Glucose tolerance test) เพราะ acanthosis nigricans เป็น skin marker ของ insulin resistance → ต้อง screen DM2",
+      "reason": "Acanthosis nigricans: hyperpigmented velvety skin at neck/axilla/groin = sign ของ insulin resistance Family history DM2 + acanthosis nigricans ในเด็ก → สงสัย prediabetes/DM2 OGTT (75g glucose): ยืนยัน glucose metabolism disorder Chromosome study: ใช้สำหรับ genetic syndromes GH test: ใช้สำหรับ growth disorders Dexamethasone suppression: สำหรับ Cushing's syndrome 24-hr cortisol: สำหรับ hypercortisolism",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Chromosome study",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ indication ในกรณีนี้"
+        },
+        {
+          "label": "B",
+          "text": "Glucose tolerance test",
+          "is_correct": true,
+          "explanation": "OGTT screen insulin resistance/DM2 ในเด็กที่มี acanthosis nigricans + FHx DM2"
+        },
+        {
+          "label": "C",
+          "text": "Growth hormone test",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ indication ในกรณีนี้"
+        },
+        {
+          "label": "D",
+          "text": "Dexamethasone suppression test",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ suspected Cushing's syndrome"
+        },
+        {
+          "label": "E",
+          "text": "24-hour free cortisol test",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ Cushing's syndrome"
+        }
+      ],
+      "key_takeaway": "Acanthosis nigricans + FHx DM2 ในเด็ก → OGTT เพื่อ screen insulin resistance/DM2"
+    }
+  },
+  {
+    "id": "05af0279-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "สาเหตุที่พบบ่อยที่สุดของ intellectual disability ในเด็กคือ Idiopathic (ไม่ทราบสาเหตุ)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Idiopathic) เพราะ ในเด็กที่มี intellectual disability ส่วนใหญ่ไม่พบสาเหตุชัดเจน (~50%)",
+      "reason": "Intellectual disability (ID) สาเหตุ: Idiopathic (~50%) เป็น most common Genetic/chromosomal (Down syndrome, fragile X): ~30% Prenatal (alcohol, toxin, infection): ~10% Perinatal (birth asphyxia): ~10% Postnatal (meningitis, trauma): น้อย Cerebral palsy เป็น motor disorder ไม่ใช่ intellectual disability เสมอ Environmental factors เป็นส่วนน้อย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Idiopathic",
+          "is_correct": true,
+          "explanation": "Most common cause (~50%) ของ intellectual disability ในเด็ก"
+        },
+        {
+          "label": "B",
+          "text": "Birth asphyxia",
+          "is_correct": false,
+          "explanation": "เป็นสาเหตุหนึ่งแต่ไม่ใช่ most common"
+        },
+        {
+          "label": "C",
+          "text": "Chromosomal abnormalities",
+          "is_correct": false,
+          "explanation": "พบประมาณ 30% ไม่ใช่ most common"
+        },
+        {
+          "label": "D",
+          "text": "Cerebral palsy",
+          "is_correct": false,
+          "explanation": "CP เป็น motor disorder มักมี ID ร่วมแต่ไม่ใช่ most common cause of ID"
+        },
+        {
+          "label": "E",
+          "text": "Environmental factors",
+          "is_correct": false,
+          "explanation": "พบน้อยกว่า idiopathic"
+        }
+      ],
+      "key_takeaway": "Intellectual disability สาเหตุ most common = Idiopathic (~50%)"
+    }
+  },
+  {
+    "id": "06c261aa-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "เด็ก 10 ปี หยุดกลางประโยค มองลอย เป็นหลายครั้งต่อวัน ครูสังเกตเห็น → Absence seizure (Petit mal)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Absence seizure) เพราะ brief episodes ของ staring + unresponsiveness หลายครั้งต่อวัน ในเด็กวัยเรียน = classic absence seizure",
+      "reason": "Absence seizure: 5-10 วินาที staring/blank episodes, หยุดกลางประโยค, มองลอย, ไม่มี postictal state EEG: 3 Hz spike-and-wave discharge ทั่วทั้งสมอง Treatment: Ethosuximide (first-line), valproate Complex partial seizure: มี aura + automatisms + postictal confusion Generalized tonic-clonic: muscle jerking + loss of consciousness Atonic: drop attacks",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Absence seizure",
+          "is_correct": true,
+          "explanation": "Brief staring episodes หลายครั้ง/วัน ไม่มี postictal state ในเด็กวัยเรียน = classic absence"
+        },
+        {
+          "label": "B",
+          "text": "Confusional states",
+          "is_correct": false,
+          "explanation": "มักมีระยะเวลานานกว่าและมี confusion ชัดเจน"
+        },
+        {
+          "label": "C",
+          "text": "Complex partial seizures",
+          "is_correct": false,
+          "explanation": "มี aura, automatisms (lip smacking, hand movements), postictal confusion"
+        },
+        {
+          "label": "D",
+          "text": "Generalized tonic-clonic seizures",
+          "is_correct": false,
+          "explanation": "มี motor manifestations ชัดเจน (stiffening + jerking)"
+        },
+        {
+          "label": "E",
+          "text": "Atonic seizures",
+          "is_correct": false,
+          "explanation": "Sudden loss of muscle tone → drop attack"
+        }
+      ],
+      "key_takeaway": "Brief staring episodes หลายครั้ง/วัน ไม่มี postictal ในเด็กวัยเรียน = Absence seizure (EEG: 3Hz spike-wave)"
+    }
+  },
+  {
+    "id": "077da346-0000-0000-0000-000000000000",
+    "correct_answer": "B",
+    "explanation": "เด็ก 3 ปี respiratory distress หลังมี URTI → Viral myocarditis จาก viral infection ที่กระจายไปหัวใจ",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Viral myocarditis) เพราะ respiratory distress ในเด็กหลัง URTI พร้อม cardiac signs = viral myocarditis",
+      "reason": "Viral myocarditis: เกิดหลัง viral infection (Coxsackievirus B พบบ่อย) อาการ: respiratory distress, tachycardia, hepatomegaly (right heart failure), อ่อนเพลีย CXR: cardiomegaly EKG: ST changes, arrhythmia Troponin สูง Pericarditis: chest pain, friction rub, ST elevation diffuse Rheumatic fever: ต้องมี streptococcal infection + Jones criteria Dilated cardiomyopathy: อาจเป็น sequelae ของ myocarditis",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Pericarditis",
+          "is_correct": false,
+          "explanation": "มี pericardial friction rub + pleuritic chest pain ไม่ใช่ respiratory distress หลัก"
+        },
+        {
+          "label": "B",
+          "text": "Viral myocarditis",
+          "is_correct": true,
+          "explanation": "Post-viral cardiac inflammation → respiratory distress + cardiomegaly + cardiac dysfunction"
+        },
+        {
+          "label": "C",
+          "text": "Infective endocarditis",
+          "is_correct": false,
+          "explanation": "ต้องมี valvular lesion, bacteremia, Osler nodes, Janeway lesions"
+        },
+        {
+          "label": "D",
+          "text": "Acute rheumatic fever",
+          "is_correct": false,
+          "explanation": "ต้องมี group A strep infection + Jones criteria (carditis, polyarthritis, chorea, etc.)"
+        },
+        {
+          "label": "E",
+          "text": "Dilated cardiomyopathy",
+          "is_correct": false,
+          "explanation": "อาจเป็น late sequelae ของ myocarditis แต่ acute presentation = myocarditis"
+        }
+      ],
+      "key_takeaway": "Respiratory distress + cardiomegaly + post-URTI ในเด็ก = Viral myocarditis (Coxsackievirus B)"
+    }
+  },
+  {
+    "id": "08daabea-0000-0000-0000-000000000000",
+    "correct_answer": "B",
+    "explanation": "ทารก 2 เดือน VSD ซึม กินนมน้อย + respiratory distress → VSD with severe pulmonary edema and cardiogenic shock",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (VSD with severe pulmonary edema and cardiogenic shock) เพราะ large VSD ทำให้มี left-to-right shunt → pulmonary overcirculation → pulmonary edema",
+      "reason": "Large VSD: large left-to-right shunt → increased pulmonary blood flow → pulmonary edema อาการในทารก 2 เดือน: ซึม, กินนมน้อย, respiratory distress, tachycardia, hepatomegaly Cardiogenic shock: ระยะที่รุนแรง Eisenmenger ยังเกิดขึ้นไม่ได้ในทารก 2 เดือน (ต้องใช้เวลาหลายปี) Septic shock: ต้องมี infection source",
+      "choices": [
+        {
+          "label": "A",
+          "text": "VSD with acute decompensated heart failure",
+          "is_correct": false,
+          "explanation": "ใกล้เคียงแต่ B บอกถึง pulmonary edema + cardiogenic shock ที่ครอบคลุมกว่า"
+        },
+        {
+          "label": "B",
+          "text": "VSD with severe pulmonary edema and cardiogenic shock",
+          "is_correct": true,
+          "explanation": "Large VSD → massive left-to-right shunt → pulmonary edema → cardiogenic shock ในทารก"
+        },
+        {
+          "label": "C",
+          "text": "VSD with community acquired pneumonia",
+          "is_correct": false,
+          "explanation": "ไม่มี fever/infectious signs"
+        },
+        {
+          "label": "D",
+          "text": "Septic shock secondary to VSD",
+          "is_correct": false,
+          "explanation": "VSD ไม่ได้ cause septic shock โดยตรง"
+        },
+        {
+          "label": "E",
+          "text": "VSD with Eisenmenger syndrome",
+          "is_correct": false,
+          "explanation": "Eisenmenger ใช้เวลาหลายปีจึงเกิดในทารก 2 เดือนไม่ได้"
+        }
+      ],
+      "key_takeaway": "Large VSD ในทารก 2 เดือน ซึม + respiratory distress = Pulmonary edema + cardiogenic shock จาก L-to-R shunt"
+    }
+  },
+  {
+    "id": "0a6d54ea-0000-0000-0000-000000000000",
+    "correct_answer": "B",
+    "explanation": "Preterm 31 wk น้ำหนัก 1,400 g respiratory distress → Give exogenous surfactant (RDS/HMD treatment)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Give exogenous surfactant) เพราะ preterm infant 31 wk + respiratory distress = Respiratory Distress Syndrome (HMD) จาก surfactant deficiency",
+      "reason": "RDS (Hyaline Membrane Disease): premature infant (GA <34 wk) ขาด surfactant → alveolar collapse Treatment: Exogenous surfactant (intratracheal) = definitive treatment ลด surface tension ให้ alveoli ขยาย Surfactant therapy ลด mortality 40% Increase FiO2 เป็น supportive แต่ไม่ใช่ definitive Radiant warmer + assisted ventilation เป็น supportive care Septic work-up ทำร่วมกันได้แต่ไม่ใช่ primary treatment",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Increase FiO2, obtain ABG",
+          "is_correct": false,
+          "explanation": "Supportive เท่านั้น ไม่แก้ underlying surfactant deficiency"
+        },
+        {
+          "label": "B",
+          "text": "Give exogenous surfactant",
+          "is_correct": true,
+          "explanation": "Definitive treatment สำหรับ RDS ในทารก preterm ลด mortality และ complications"
+        },
+        {
+          "label": "C",
+          "text": "Radiant warmer, assisted ventilation",
+          "is_correct": false,
+          "explanation": "Supportive care ต้องให้ร่วมกับ surfactant"
+        },
+        {
+          "label": "D",
+          "text": "Radiant warmer, CXR, blood glucose monitoring",
+          "is_correct": false,
+          "explanation": "Monitoring เท่านั้น ไม่ใช่ treatment"
+        },
+        {
+          "label": "E",
+          "text": "Septic work-up, ABG",
+          "is_correct": false,
+          "explanation": "ทำร่วมได้แต่ไม่ใช่ primary treatment สำหรับ RDS"
+        }
+      ],
+      "key_takeaway": "Preterm <34 wk + respiratory distress = RDS → Exogenous surfactant (intratracheal)"
+    }
+  },
+  {
+    "id": "0f7c9e38-0000-0000-0000-000000000000",
+    "correct_answer": "D",
+    "explanation": "เด็ก 10 เดือน ไข้ซึม อ้วก 5 วัน + signs ของ meningeal irritation → Cerebrospinal fluid examination (LP)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D (CSF examination) เพราะ suspected meningitis ในทารก ต้องทำ LP เพื่อยืนยัน diagnosis",
+      "reason": "Bacterial meningitis ในทารก: fever + lethargy + vomiting ± bulging fontanelle ± neck stiffness ± seizure LP (lumbar puncture): ยืนยัน diagnosis โดย CSF analysis (WBC, protein, glucose, gram stain, culture) CT brain ทำก่อน LP เฉพาะถ้ามี papilledema, focal neurological deficits, GCS ลด Blood culture ทำร่วมกันเสมอ แต่ CSF ยืนยัน meningitis ได้โดยตรง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Urine examination",
+          "is_correct": false,
+          "explanation": "ช่วย rule out UTI ได้ แต่ไม่ยืนยัน meningitis"
+        },
+        {
+          "label": "B",
+          "text": "Blood culture",
+          "is_correct": false,
+          "explanation": "ทำร่วมกันเสมอ แต่ CSF เป็น definitive test สำหรับ meningitis"
+        },
+        {
+          "label": "C",
+          "text": "CT brain",
+          "is_correct": false,
+          "explanation": "ทำก่อน LP เฉพาะถ้า papilledema/focal deficit สงสัย herniation"
+        },
+        {
+          "label": "D",
+          "text": "Cerebrospinal fluid examination",
+          "is_correct": true,
+          "explanation": "Definitive diagnosis สำหรับ meningitis: WBC, protein, glucose, culture"
+        },
+        {
+          "label": "E",
+          "text": "Ultrasound brain",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ IVH ในทารกแรกเกิด ไม่ใช่ meningitis"
+        }
+      ],
+      "key_takeaway": "Suspected meningitis → LP (CSF examination) ทันที เว้นแต่มี contraindication (papilledema/focal deficit)"
+    }
+  },
+  {
+    "id": "11b5f1b9-0000-0000-0000-000000000000",
+    "correct_answer": "B",
+    "explanation": "เด็ก 10 ปี ชาปลายมือเท้า + หอบเหนื่อย → Beriberi (Vitamin B1/Thiamine deficiency)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Vitamin B1/Thiamine deficiency - Beriberi) เพราะ peripheral neuropathy + cardiac failure ในเด็กที่อาหารไม่สมบูรณ์ = Beriberi",
+      "reason": "Beriberi (Thiamine deficiency): Dry beriberi: peripheral neuropathy (ชาปลายมือเท้า) Wet beriberi: cardiac involvement (heart failure, เหนื่อย, บวม) Wernicke's encephalopathy: CNS involvement (ในผู้ใหญ่) Thiamine พบใน whole grain, legumes, pork ขาดในอาหารขัดสีสูง (polished rice diet) Treatment: Thiamine 100 mg IV/IM",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Protein-Energy Malnutrition",
+          "is_correct": false,
+          "explanation": "มักมี wasting, edema (kwashiorkor) ไม่ใช่ peripheral neuropathy หลัก"
+        },
+        {
+          "label": "B",
+          "text": "Thiamine deficiency (Beriberi)",
+          "is_correct": true,
+          "explanation": "Peripheral neuropathy (dry) + cardiac failure (wet) = classic Beriberi"
+        },
+        {
+          "label": "C",
+          "text": "Vitamin B12 and folate deficiency",
+          "is_correct": false,
+          "explanation": "B12 deficiency: megaloblastic anemia + subacute combined degeneration ไม่ใช่ pattern นี้"
+        },
+        {
+          "label": "D",
+          "text": "Calcium and Vitamin D deficiency",
+          "is_correct": false,
+          "explanation": "ทำให้ rickets ไม่ใช่ peripheral neuropathy"
+        },
+        {
+          "label": "E",
+          "text": "Iron deficiency",
+          "is_correct": false,
+          "explanation": "Iron deficiency: anemia ไม่ใช่ neuropathy"
+        }
+      ],
+      "key_takeaway": "Peripheral neuropathy + cardiac failure ในเด็กอาหารไม่สมบูรณ์ = Wet/Dry Beriberi (Thiamine deficiency)"
+    }
+  },
+  {
+    "id": "1255867d-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "เด็ก 1 ปี watery diarrhea + periodic crying + bloody stool (currant jelly) → Intussusception",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Intussusception) เพราะ classic triad: colicky pain (periodic crying) + vomiting + blood mucous stool (currant jelly) ในเด็กอายุ 6-24 เดือน",
+      "reason": "Intussusception: ileocolic junction เป็น most common site อายุ 6-24 เดือน พบบ่อยที่สุด Classic triad: episodic colicky pain + bilious vomiting + bloody mucoid stool (currant jelly) Sausage-shaped mass ที่ RUQ/mid-abdomen Diagnosis: Ultrasound (target sign/donut sign) Treatment: Air/hydrostatic enema reduction (non-surgical first-line) หรือ surgery ถ้าล้มเหลว Meckel's: painless massive rectal bleeding Pyloric stenosis: projectile vomiting ในทารก 2-8 สัปดาห์",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Intussusception",
+          "is_correct": true,
+          "explanation": "Classic: periodic colicky crying + currant jelly stool ในเด็ก 6-24 เดือน"
+        },
+        {
+          "label": "B",
+          "text": "Meckel's diverticulum",
+          "is_correct": false,
+          "explanation": "มักเป็น painless massive rectal bleeding ไม่มี colicky pain"
+        },
+        {
+          "label": "C",
+          "text": "Acute gastroenteritis",
+          "is_correct": false,
+          "explanation": "มี watery diarrhea แต่ไม่มี bloody mucoid stool หรือ periodic colicky pain pattern"
+        },
+        {
+          "label": "D",
+          "text": "Midgut volvulus",
+          "is_correct": false,
+          "explanation": "มักเกิดในทารกแรกเกิด bilious vomiting ฉุกเฉิน"
+        },
+        {
+          "label": "E",
+          "text": "Pyloric stenosis",
+          "is_correct": false,
+          "explanation": "Projectile non-bilious vomiting ในทารก 2-8 สัปดาห์"
+        }
+      ],
+      "key_takeaway": "เด็ก 6-24 เดือน periodic colicky cry + currant jelly stool = Intussusception → Ultrasound + enema reduction"
+    }
+  },
+  {
+    "id": "1419cf15-0000-0000-0000-000000000000",
+    "correct_answer": "C",
+    "explanation": "หญิง 18 ปี edema + fever หลัง strep throat → Poststreptococcal glomerulonephritis (PSGN)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C (PSGN) เพราะ nephritic syndrome หลัง streptococcal infection (pharyngitis/impetigo) = classic PSGN",
+      "reason": "PSGN: 1-3 สัปดาห์หลัง group A strep pharyngitis หรือ 3-6 สัปดาห์หลัง skin infection อาการ: hematuria (dark urine), edema, hypertension, oliguria ASO titer สูง, complement C3 ต่ำ Lupus nephritis: ต้องการ SLE criteria (ANA, anti-dsDNA) IgA nephropathy: hematuria พร้อม URTI ทันที (ไม่มี latent period) MPGN: chronic presentation",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Lupus nephritis",
+          "is_correct": false,
+          "explanation": "ต้องการ SLE criteria อื่นๆ (malar rash, arthritis, ANA positive)"
+        },
+        {
+          "label": "B",
+          "text": "IgA nephropathy",
+          "is_correct": false,
+          "explanation": "Hematuria เกิดพร้อม/ทันที URTI ไม่มี 1-3 wk latent period"
+        },
+        {
+          "label": "C",
+          "text": "Poststreptococcal glomerulonephritis",
+          "is_correct": true,
+          "explanation": "Nephritic syndrome 1-3 wk หลัง strep infection + complement C3 ต่ำ + ASO สูง"
+        },
+        {
+          "label": "D",
+          "text": "IgA vasculitis with renal involvement",
+          "is_correct": false,
+          "explanation": "ต้องมี purpura + abdominal pain + arthritis (HSP)"
+        },
+        {
+          "label": "E",
+          "text": "MPGN",
+          "is_correct": false,
+          "explanation": "Chronic presentation มักไม่เกิดเฉียบพลันหลัง strep"
+        }
+      ],
+      "key_takeaway": "Nephritic syndrome 1-3 wk หลัง strep throat = PSGN (C3 ต่ำ, ASO สูง, hematuria, edema, HTN)"
+    }
+  },
+  {
+    "id": "19ded852-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "เด็ก 5 ปี หายใจเหนื่อย ตัวบวม CHF → รักษาด้วย digoxin + furosemide",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Digoxin + Diuretics/Furosemide) เพราะ congestive heart failure ในเด็กรักษาด้วย digoxin (inotrope) + diuretic (ลด preload)",
+      "reason": "CHF management ในเด็ก: Digoxin: positive inotrope ลด heart rate ปรับ neurohormonal Furosemide: loop diuretic ลด pulmonary edema + peripheral edema ACE inhibitor (enalapril): ใช้ได้ในเด็กแต่มักเป็น second-line หรือร่วมกับ digoxin/furosemide ไม่ใช่ first-line เดี่ยว Glucocorticoid: ไม่ใช่ indication สำหรับ CHF Iron: สำหรับ iron deficiency anemia ไม่ใช่ CHF",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Digoxin + Furosemide",
+          "is_correct": true,
+          "explanation": "First-line treatment สำหรับ CHF ในเด็ก: inotrope + diuretic"
+        },
+        {
+          "label": "B",
+          "text": "Oxygen + digoxin เท่านั้น",
+          "is_correct": false,
+          "explanation": "ต้องการ diuretic ร่วมด้วยเพื่อลด fluid overload"
+        },
+        {
+          "label": "C",
+          "text": "ACE inhibitor เท่านั้น",
+          "is_correct": false,
+          "explanation": "ACE inhibitor เป็น adjunct ไม่ใช่ first-line เดี่ยว"
+        },
+        {
+          "label": "D",
+          "text": "Glucocorticoid",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ indication สำหรับ CHF"
+        },
+        {
+          "label": "E",
+          "text": "Iron supplementation",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ iron deficiency anemia ไม่ใช่ CHF"
+        }
+      ],
+      "key_takeaway": "CHF ในเด็ก → Digoxin + Furosemide (inotrope + diuretic)"
+    }
+  },
+  {
+    "id": "1a1fb76a-0000-0000-0000-000000000000",
+    "correct_answer": "B",
+    "explanation": "ทารก preterm 35 wk หลังคลอด respiratory distress + tachypnea → ให้ oxygen ผ่าน oxygen box เพื่อ maintain O2 sat ≥95%",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Oxygen via oxygen box) เพราะ preterm 35 wk + mild respiratory distress รักษาด้วย supplemental oxygen ก่อน",
+      "reason": "Preterm 35 wk respiratory distress: ถ้า mild → oxygen supplementation ก่อน Transient Tachypnea of Newborn (TTN) พบบ่อยหลัง C-section: หายเองใน 24-72 ชั่วโมง O2 box: ให้ oxygen concentration สม่ำเสมอในกล่อง CPAP ใช้ถ้า oxygen ไม่พอ (O2 sat <90% despite FiO2 >0.4) Surfactant ใช้สำหรับ RDS ที่รุนแรง (GA <34 wk หรือ intubated) Hypoglycemia treatment ไม่ใช่ primary issue ที่นี่",
+      "choices": [
+        {
+          "label": "A",
+          "text": "IV glucose 10% + observation",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ primary treatment สำหรับ respiratory distress"
+        },
+        {
+          "label": "B",
+          "text": "Oxygen via oxygen box (O2 sat ≥95%)",
+          "is_correct": true,
+          "explanation": "First-line สำหรับ mild respiratory distress ใน near-term infant: supplemental O2"
+        },
+        {
+          "label": "C",
+          "text": "Nasal CPAP 5-6 cmH2O",
+          "is_correct": false,
+          "explanation": "ใช้ถ้า O2 ไม่เพียงพอหรือ work of breathing สูง"
+        },
+        {
+          "label": "D",
+          "text": "Surfactant ทาง ET tube",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ intubated patients หรือ severe RDS"
+        },
+        {
+          "label": "E",
+          "text": "ส่ง NICU ติดตาม",
+          "is_correct": false,
+          "explanation": "ต้องรักษาก่อน ไม่ใช่แค่ monitoring"
+        }
+      ],
+      "key_takeaway": "Preterm near-term + mild respiratory distress → Oxygen supplementation ก่อน (oxygen box/hood)"
+    }
+  },
+  {
+    "id": "1a92fa36-0000-0000-0000-000000000000",
+    "correct_answer": "B",
+    "explanation": "เด็ก 7 ปี abdominal pain + rash (purpura) → IgA vasculitis (HSP) รักษาด้วย Steroid",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Steroid) เพราะ IgA vasculitis (Henoch-Schönlein Purpura/HSP) ที่มี abdominal pain รักษาด้วย corticosteroids",
+      "reason": "HSP (IgA vasculitis): palpable purpura (ก้นและขาส่วนล่าง), abdominal pain, arthritis, renal involvement Steroid ใช้สำหรับ significant abdominal pain, renal involvement, orchitis ลด duration และ severity ของ abdominal symptoms Antibiotics ไม่ใช่ treatment (ไม่ใช่ infection) NSAIDs ใช้สำหรับ joint pain เท่านั้น Antihistamine ไม่ใช่ indication",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Antibiotics",
+          "is_correct": false,
+          "explanation": "HSP ไม่ใช่ infection ไม่ต้องการ antibiotics"
+        },
+        {
+          "label": "B",
+          "text": "Steroid",
+          "is_correct": true,
+          "explanation": "Corticosteroids ลด inflammation ใน HSP ที่มี abdominal pain/renal involvement"
+        },
+        {
+          "label": "C",
+          "text": "Antihistamine",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ treatment สำหรับ HSP"
+        },
+        {
+          "label": "D",
+          "text": "NSAIDs",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ joint pain เท่านั้น ไม่ใช่ abdominal pain ใน HSP"
+        },
+        {
+          "label": "E",
+          "text": "Supportive care with fluid management",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอถ้ามี significant abdominal pain"
+        }
+      ],
+      "key_takeaway": "HSP (purpura + abdominal pain + arthritis) → Steroid สำหรับ significant abdominal pain/renal involvement"
+    }
+  },
+  {
+    "id": "1d21005b-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "เด็กชาย ไข้ 12 วัน + elbow swelling → Rheumatic fever (ไข้ + migratory arthritis หลัง strep)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Rheumatic fever) เพราะ prolonged fever + migratory polyarthritis ในเด็ก = classic acute rheumatic fever",
+      "reason": "Acute Rheumatic Fever: Jones criteria (major): carditis, polyarthritis (migratory), chorea, erythema marginatum, subcutaneous nodules Jones criteria (minor): fever, elevated ESR/CRP, prolonged PR interval Evidence of strep: elevated ASO titer Elbow swelling + redness + fever นาน = migratory arthritis ที่ major criterion Rheumatoid arthritis: ต้องมีนาน >6 สัปดาห์ Endocarditis: bacteremia + valvular lesion",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Rheumatic fever",
+          "is_correct": true,
+          "explanation": "Migratory polyarthritis + prolonged fever + prior strep = classic ARF"
+        },
+        {
+          "label": "B",
+          "text": "Rheumatoid arthritis",
+          "is_correct": false,
+          "explanation": "JIA ต้องมีอาการนาน >6 สัปดาห์"
+        },
+        {
+          "label": "C",
+          "text": "Infective endocarditis",
+          "is_correct": false,
+          "explanation": "ต้องมี bacteremia, valvular lesion, Osler nodes"
+        },
+        {
+          "label": "D",
+          "text": "Acute leukemia",
+          "is_correct": false,
+          "explanation": "อาการปวดกระดูก/ข้อ + pallor + hepatosplenomegaly"
+        },
+        {
+          "label": "E",
+          "text": "SLE",
+          "is_correct": false,
+          "explanation": "ต้องมี malar rash, photosensitivity, ANA positive"
+        }
+      ],
+      "key_takeaway": "Migratory arthritis + prolonged fever ในเด็กหลัง strep = ARF (Jones criteria)"
+    }
+  },
+  {
+    "id": "1df25f2e-0000-0000-0000-000000000000",
+    "correct_answer": "B",
+    "explanation": "เด็ก 6 ปี rash ที่ flexural area (inside elbow, knee) + FHx atopy → Atopic dermatitis",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Atopic dermatitis) เพราะ flexural eczema ในเด็กวัยเรียน + FHx atopy = classic atopic dermatitis",
+      "reason": "Atopic dermatitis: itch-scratch cycle, flexural distribution (antecubital, popliteal fossa), xerosis, FHx atopy Treatment: emollients + topical corticosteroids (mild-moderate), topical calcineurin inhibitors Psoriasis: silvery scales on extensor surfaces (elbow, knee) ไม่ใช่ flexural Impetigo: vesicle/pustule → honey-colored crust Contact dermatitis: ต้องมี allergen exposure history Seborrheic: cradle cap ใน scalp/face",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Psoriasis",
+          "is_correct": false,
+          "explanation": "Silver scales บน extensor surfaces ไม่ใช่ flexural"
+        },
+        {
+          "label": "B",
+          "text": "Atopic dermatitis",
+          "is_correct": true,
+          "explanation": "Flexural eczema + FHx atopy + itching ในเด็ก = classic AD"
+        },
+        {
+          "label": "C",
+          "text": "Impetigo contagiosum",
+          "is_correct": false,
+          "explanation": "Honey-colored crusted vesicles ไม่ใช่ flexural eczema"
+        },
+        {
+          "label": "D",
+          "text": "Contact dermatitis",
+          "is_correct": false,
+          "explanation": "ต้องมี specific allergen contact history"
+        },
+        {
+          "label": "E",
+          "text": "Seborrheic dermatitis",
+          "is_correct": false,
+          "explanation": "Greasy scales ที่ scalp, face, central chest"
+        }
+      ],
+      "key_takeaway": "Flexural eczema (antecubital/popliteal) + FHx atopy ในเด็ก = Atopic dermatitis"
+    }
+  },
+  {
+    "id": "1f571f08-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "Newborn Day 3 jaundice + cephalhematoma → ABO incompatibility เป็นสาเหตุที่น่าสงสัยมากที่สุด",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (ABO incompatibility) เพราะ neonatal jaundice เร็ว + cephalhematoma ใน term infant = hemolytic jaundice จาก ABO",
+      "reason": "Neonatal jaundice Day 3: ต้องแยก physiologic vs pathologic ABO incompatibility: mother O + baby A หรือ B → antibody ข้ามรก ทำให้ hemolysis Cephalhematoma: extravascular hemolysis เป็น contributing factor เพิ่ม jaundice Physiologic jaundice: ปกติ peak Day 3-5 แต่ถ้ามี contributing factors (hemolysis) จะรุนแรงกว่า Breast milk jaundice: มักช้ากว่า (Day 7-10) Hereditary spherocytosis: ต้องการ peripheral smear",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ABO incompatibility",
+          "is_correct": true,
+          "explanation": "Most common cause ของ hemolytic jaundice ใน term newborn + cephalhematoma เพิ่ม bilirubin load"
+        },
+        {
+          "label": "B",
+          "text": "Extravasate hemolysis (cephalhematoma only)",
+          "is_correct": false,
+          "explanation": "Cephalhematoma contribute แต่ ABO incompatibility มักเป็น primary cause"
+        },
+        {
+          "label": "C",
+          "text": "Breast milk jaundice",
+          "is_correct": false,
+          "explanation": "มักเกิด Day 7-10 ไม่ใช่ Day 3"
+        },
+        {
+          "label": "D",
+          "text": "Hereditary spherocytosis",
+          "is_correct": false,
+          "explanation": "ต้องการ peripheral smear + osmotic fragility test"
+        }
+      ],
+      "key_takeaway": "Neonatal jaundice Day 3 + cephalhematoma → สงสัย ABO incompatibility + extravasate hemolysis"
+    }
+  },
+  {
+    "id": "21131ec4-0000-0000-0000-000000000000",
+    "correct_answer": "B",
+    "explanation": "เด็ก 2 ปี ไข้ + rash + บวมมือเท้า ESR 60 → Kawasaki disease",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Kawasaki disease) เพราะ ไข้นาน + rash + hand/foot edema/redness ในเด็กอายุน้อย = classic Kawasaki",
+      "reason": "Kawasaki disease criteria: ไข้ ≥5 วัน + อย่างน้อย 4 ใน 5: bilateral conjunctival injection, oral changes (strawberry tongue/lip cracking), rash (polymorphous), hand/foot changes (edema/desquamation), cervical lymphadenopathy Complications: coronary artery aneurysm (15-25% ถ้าไม่รักษา) Treatment: IVIG 2g/kg + aspirin ESR/CRP สูง Scarlet fever: strep + pastia lines Meningococcal: petechial/purpuric rash + sepsis",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Scarlet fever",
+          "is_correct": false,
+          "explanation": "มี strep pharyngitis + sandpaper rash + Pastia lines ไม่มี hand/foot edema"
+        },
+        {
+          "label": "B",
+          "text": "Kawasaki disease",
+          "is_correct": true,
+          "explanation": "ไข้ + rash + hand/foot edema/erythema + ESR สูง = Kawasaki → IVIG + aspirin"
+        },
+        {
+          "label": "C",
+          "text": "Meningococcal infection",
+          "is_correct": false,
+          "explanation": "Petechial/purpuric rash + septic shock ไม่ใช่ edematous hands/feet"
+        },
+        {
+          "label": "D",
+          "text": "Acute rheumatic fever",
+          "is_correct": false,
+          "explanation": "ต้องมี strep evidence + Jones criteria"
+        },
+        {
+          "label": "E",
+          "text": "Drug hypersensitivity reaction",
+          "is_correct": false,
+          "explanation": "ต้องมีประวัติการใช้ยา"
+        }
+      ],
+      "key_takeaway": "ไข้ ≥5 วัน + rash + hand/foot edema + conjunctivitis ในเด็กเล็ก = Kawasaki → IVIG + aspirin"
+    }
+  },
+  {
+    "id": "216ff2d0-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "เด็ก 7 ปี เหนื่อย + นอนราบไม่ได้ + ไข้เจ็บคอก่อนหน้า → สงสัย ARF + carditis → ตรวจ ANA",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (ANA) — อย่างไรก็ตาม ในบริบทของ ARF การตรวจ ASO titer ดูเหมาะสมกว่า แต่คำตอบที่กำหนดคือ A (ANA)",
+      "reason": "เด็ก 7 ปี เหนื่อย + orthopnea + ไข้ + เจ็บคอ → สงสัย ARF with carditis หรือ SLE with cardiac involvement ANA: ใช้ screen SLE ซึ่งอาจแสดงเป็น pericarditis/myocarditis ASO titer: ยืนยัน recent strep infection (ARF) EKG: แสดง conduction abnormality ใน ARF Rheumatoid factor: สำหรับ JIA ในบริบทนี้คำตอบ A = ANA เพื่อ screen SLE เป็นส่วนหนึ่งของ workup",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ANA",
+          "is_correct": true,
+          "explanation": "Screen SLE ซึ่งอาจมี cardiac involvement ในเด็กหญิงอายุ 7 ปีที่มี systemic symptoms"
+        },
+        {
+          "label": "B",
+          "text": "ASO titer",
+          "is_correct": false,
+          "explanation": "ใช้ confirm ARF แต่คำตอบที่กำหนดคือ ANA"
+        },
+        {
+          "label": "C",
+          "text": "EKG",
+          "is_correct": false,
+          "explanation": "ช่วย detect conduction problems แต่ไม่ใช่ diagnositc test หลัก"
+        },
+        {
+          "label": "D",
+          "text": "Rheumatoid factor",
+          "is_correct": false,
+          "explanation": "สำหรับ JIA ไม่ใช่ primary investigation ในกรณีนี้"
+        }
+      ],
+      "key_takeaway": "เด็กมี systemic symptoms + cardiac involvement → ANA เพื่อ screen SLE"
+    }
+  },
+  {
+    "id": "26e22f64-0000-0000-0000-000000000000",
+    "correct_answer": "E",
+    "explanation": "เด็ก 7 ปี ถูก Malayan pit viper กัด + venous clotting time ผิดปกติ → Admit + emergency antivenom",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ E (Admit + emergency antivenom + repeat VCT) เพราะ Malayan pit viper ทำให้ coagulopathy → ต้องการ antivenom ทันที",
+      "reason": "Malayan pit viper (Calloselasma rhodostoma): hemotoxic venom ทำให้ coagulopathy, DIC Venous clotting time (VCT) ยาวขึ้น = systemic envenomation → antivenom indication Antivenom: monovalent (specific to Malayan pit viper) ให้ทาง IV Repeat VCT ทุก 6 ชั่วโมงหลัง antivenom เพื่อ assess response Discharge home อันตราย ถ้า VCT ผิดปกติ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Discharge home",
+          "is_correct": false,
+          "explanation": "อันตรายมาก — systemic envenomation ต้องการ monitoring"
+        },
+        {
+          "label": "B",
+          "text": "Repeat VCT 6 ชั่วโมง",
+          "is_correct": false,
+          "explanation": "ถ้า VCT ผิดปกติแล้วต้องให้ antivenom ก่อน"
+        },
+        {
+          "label": "C",
+          "text": "Admit + repeat VCT 2 ชั่วโมง",
+          "is_correct": false,
+          "explanation": "ถ้ามี coagulopathy แล้วต้องให้ antivenom ไม่ใช่รอ"
+        },
+        {
+          "label": "D",
+          "text": "Admit + bed rest + neurological signs",
+          "is_correct": false,
+          "explanation": "Malayan pit viper เป็น hemotoxic ไม่ใช่ neurotoxic ต้องการ antivenom ไม่ใช่ neuro monitoring"
+        },
+        {
+          "label": "E",
+          "text": "Admit + emergency antivenom + repeat VCT",
+          "is_correct": true,
+          "explanation": "VCT ผิดปกติ = systemic envenomation → antivenom ทันที + serial VCT monitoring"
+        }
+      ],
+      "key_takeaway": "Malayan pit viper + VCT ผิดปกติ → Antivenom ทันที (hemotoxic venom)"
+    }
+  },
+  {
+    "id": "2c074ce2-0000-0000-0000-000000000000",
+    "correct_answer": "A",
+    "explanation": "เด็กหญิง 8 ปี ว่ายน้ำทุกเช้า + ปวดหูขวา → Otitis externa (Swimmer's ear)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Otitis externa) เพราะ ประวัติว่ายน้ำ + ปวดหู + tragus tenderness = Swimmer's ear",
+      "reason": "Otitis externa (Swimmer's ear): ความชื้นในหูช่วยให้ bacteria (Pseudomonas, Staphylococcus) เจริญเติบโต อาการ: ปวดหู (ปวดมากเมื่อดึง tragus/pinna), swelling, discharge, pruritus ประวัติ water exposure เป็น classic risk factor Treatment: topical antibiotics (ciprofloxacin ear drops) + analgesic Otitis media: ปวดหู + fever + เยื่อแก้วหูแดง/ทะลุ ไม่มี tragus tenderness Mastoiditis: ปวดหูหลังหน้า + fever + swelling",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Otitis externa (Swimmer's ear)",
+          "is_correct": true,
+          "explanation": "ประวัติว่ายน้ำ + tragus tenderness + discharge = classic otitis externa"
+        },
+        {
+          "label": "B",
+          "text": "Acute otitis media",
+          "is_correct": false,
+          "explanation": "มี middle ear involvement, tympanic membrane changes, fever; tragus ไม่ tender"
+        },
+        {
+          "label": "C",
+          "text": "Mastoiditis",
+          "is_correct": false,
+          "explanation": "Complication ของ otitis media ที่ไม่ได้รักษา มี post-auricular swelling/tenderness"
+        },
+        {
+          "label": "D",
+          "text": "Herpes zoster oticus",
+          "is_correct": false,
+          "explanation": "Ramsay Hunt syndrome: vesicular rash + facial palsy"
+        },
+        {
+          "label": "E",
+          "text": "Acute suppurative lymphadenitis",
+          "is_correct": false,
+          "explanation": "Lymph node swelling ไม่ใช่ ear canal involvement"
+        }
+      ],
+      "key_takeaway": "ว่ายน้ำ + ปวดหู + tragus tenderness = Otitis externa → Topical antibiotics"
+    }
+  }
+]

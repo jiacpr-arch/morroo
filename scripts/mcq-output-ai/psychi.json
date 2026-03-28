@@ -1,0 +1,622 @@
+[
+  {
+    "scenario": "A 14-year-old boy was sent to the hospital in order to test for illicit drug usage by his father. He did not know the reason sent to the hospital, but he remember that his teacher told him of skipping class and stealing drugs. What is your initial management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Do the urine examination"
+      },
+      {
+        "label": "B",
+        "text": "Tell the boy about the reason"
+      },
+      {
+        "label": "C",
+        "text": "Ask permission from the boy"
+      },
+      {
+        "label": "D",
+        "text": "Make relationship with the boy"
+      },
+      {
+        "label": "E",
+        "text": "Ask his father to tell the boy the reason"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Initial management should establish rapport and therapeutic alliance before any investigation or confrontation. Making relationship (D) is the appropriate first step in adolescent psychiatry.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 10-year-old boy has not attended school for 1 year, likes to fight friends at school, runs away from home at night, smokes cigarettes, uses cannabis, engages in fights, and steals money from parents. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "School phobia"
+      },
+      {
+        "label": "B",
+        "text": "Oppositional defiant disorder"
+      },
+      {
+        "label": "C",
+        "text": "Conduct disorder"
+      },
+      {
+        "label": "D",
+        "text": "Impulsive disorder"
+      },
+      {
+        "label": "E",
+        "text": "Antisocial personality disorder"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Multiple behavioral problems including fighting, stealing, substance use, truancy, and running away meet criteria for Conduct Disorder. Antisocial Personality Disorder is not diagnosed before age 18.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient with delirium sees mice all over the bed. What should be done?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Haloperidol"
+      },
+      {
+        "label": "B",
+        "text": "Diazepam"
+      },
+      {
+        "label": "C",
+        "text": "Lithium"
+      },
+      {
+        "label": "D",
+        "text": "Fluoxetine"
+      },
+      {
+        "label": "E",
+        "text": "Identify and treat underlying medical cause"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Management of delirium involves treating the underlying cause first. While haloperidol can manage hallucinations, addressing etiology is primary. Added option E as primary management approach.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A female engineer with no underlying medical conditions likes to look around different rooms in her house, believing there are closed-circuit cameras installed by neighbors to spy on her. She hears voices of people telling her in her house and believes it is real. She exhibits the same behavior at work, constantly checking and making coworkers avoid her. She comes to see a doctor. What should be the treatment?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Lithium"
+      },
+      {
+        "label": "B",
+        "text": "Valium"
+      },
+      {
+        "label": "C",
+        "text": "Fluoxetine"
+      },
+      {
+        "label": "D",
+        "text": "Risperidone"
+      },
+      {
+        "label": "E",
+        "text": "Haloperidol"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "The patient has delusions (persecution, reference) and auditory hallucinations with delusional content, consistent with primary psychotic disorder (likely Paranoid Schizophrenia). Second-generation antipsychotics like Risperidone are preferred first-line treatment.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient with schizophrenia received haloperidol 20 mg for 10 years. This time he came with aggressive hallucinations. The dose was increased to 30 mg. 2 weeks later, his symptoms improved and hallucinations disappeared, but he developed muscle rigidity. What is the proper management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Increase haloperidol"
+      },
+      {
+        "label": "B",
+        "text": "Chlorpromazine"
+      },
+      {
+        "label": "C",
+        "text": "Benzodiazepine"
+      },
+      {
+        "label": "D",
+        "text": "Relaxing training"
+      },
+      {
+        "label": "E",
+        "text": "Electroconvulsive therapy"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Muscle rigidity is an extrapyramidal side effect from haloperidol. Benzodiazepines (particularly with anticholinergics) are used to manage acute EPS. Increasing haloperidol would worsen the problem.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "An adult non-elderly woman presents with chest tightness, diaphoresis, and dyspnea occurring 3 times per month, accompanied by anxiety and fear of dying. She is afraid to go anywhere alone. What medication should be prescribed?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Propranolol"
+      },
+      {
+        "label": "B",
+        "text": "Fluoxetine"
+      },
+      {
+        "label": "C",
+        "text": "Diazepam"
+      },
+      {
+        "label": "D",
+        "text": "Chlorpromazine"
+      },
+      {
+        "label": "E",
+        "text": "Lorazepam"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Clinical presentation suggests Panic Disorder with Agoraphobia. SSRIs like Fluoxetine are first-line pharmacotherapy. While benzodiazepines provide acute relief, SSRIs address long-term management and comorbid agoraphobia.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient with acute panic attack presenting with rapid breathing. What medication should be given?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Fluoxetine"
+      },
+      {
+        "label": "B",
+        "text": "Alprazolam"
+      },
+      {
+        "label": "C",
+        "text": "Haloperidol"
+      },
+      {
+        "label": "D",
+        "text": "Clonazepam"
+      },
+      {
+        "label": "E",
+        "text": "Propranolol"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "For acute panic attack symptoms, fast-acting benzodiazepines like Alprazolam are indicated. Clonazepam has longer half-life. Both are acceptable, but Alprazolam (B) provides more rapid onset for acute symptoms.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 35-year-old man admitted on day 2 post-herniorraphy develops agitation, confusion, and visual hallucinations. What is the most likely cause of his symptoms?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Head injury"
+      },
+      {
+        "label": "B",
+        "text": "Substance abuse"
+      },
+      {
+        "label": "C",
+        "text": "Stress"
+      },
+      {
+        "label": "D",
+        "text": "Delirium due to general medical condition (post-operative)"
+      },
+      {
+        "label": "E",
+        "text": "Psychiatry history in family"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Post-operative delirium is most common presentation in this context. Symptoms appear day 2 post-operation with acute confusion, agitation, and visual hallucinations. Original option 'Cognition' was unclear and replaced with proper medical diagnosis.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A patient with no history of alcohol use undergoes surgery. Post-operatively, he develops forgetfulness, particularly at night. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Alcohol withdrawal delirium"
+      },
+      {
+        "label": "B",
+        "text": "Dementia from drug-induced"
+      },
+      {
+        "label": "C",
+        "text": "Delirium from drug-induced"
+      },
+      {
+        "label": "D",
+        "text": "Dementia due to general medical condition"
+      },
+      {
+        "label": "E",
+        "text": "Delirium due to general medical condition"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "Unknown",
+    "status": "complete",
+    "ai_notes": "Post-operative delirium (acute confusion, memory problems, temporal worsening) is most likely. Acute onset after surgery with worsening at night favors delirium over dementia. No alcohol history excludes withdrawal delirium.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 22-year-old female with SLE on prednisolone for 3 days presents with fever, joint pain, rash, and auditory hallucinations (hearing voices threatening her). She has never experienced this before. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Psychotic disorder due to SLE"
+      },
+      {
+        "label": "B",
+        "text": "Prednisolone-induced psychotic features"
+      },
+      {
+        "label": "C",
+        "text": "Brief psychotic disorder"
+      },
+      {
+        "label": "D",
+        "text": "Schizophreniform disorder"
+      },
+      {
+        "label": "E",
+        "text": "Delirium due to medical condition"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "SLE is known to cause psychotic symptoms directly through CNS involvement. Psychosis secondary to active SLE is more likely than medication-induced (prednisolone dose low) or primary psychiatric disorder. Temporal relationship with disease flare supports option A.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A male patient went to Full Moon Party last night. This morning he is suspicious, believes others will harm him, but is oriented to time and place. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Brief psychotic disorder"
+      },
+      {
+        "label": "B",
+        "text": "Delirium"
+      },
+      {
+        "label": "C",
+        "text": "Substance-induced psychosis"
+      },
+      {
+        "label": "D",
+        "text": "Paranoid schizophrenia"
+      },
+      {
+        "label": "E",
+        "text": "Acute stress disorder"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "Full Moon Party context suggests substance exposure. Preserved sensorium (oriented to time/place) excludes delirium. Acute onset after substance exposure with paranoid delusions is consistent with substance-induced psychosis.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 15-year-old female fears becoming overweight, binges on large amounts of food, then induces vomiting. She also uses laxatives. On examination: BMI = 19, other findings within normal limits. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bulimia nervosa"
+      },
+      {
+        "label": "B",
+        "text": "Anorexia nervosa"
+      },
+      {
+        "label": "C",
+        "text": "Somatoform disorder"
+      },
+      {
+        "label": "D",
+        "text": "Body dysmorphic disorder"
+      },
+      {
+        "label": "E",
+        "text": "Obsessive-compulsive disorder"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "Classic presentation of Bulimia Nervosa: binge eating followed by compensatory behaviors (purging, laxative abuse), normal BMI, and preoccupation with weight. Anorexia would require significantly low BMI.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 19-year-old female avoids high-calorie foods, fears becoming overweight despite weighing 30 kg with height 160 cm (BMI 11.7 - significantly underweight). She occasionally takes laxatives after eating. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Anorexia nervosa"
+      },
+      {
+        "label": "B",
+        "text": "Bulimia nervosa"
+      },
+      {
+        "label": "C",
+        "text": "Binge eating disorder"
+      },
+      {
+        "label": "D",
+        "text": "Eating disorder not otherwise specified"
+      },
+      {
+        "label": "E",
+        "text": "Normal behavior in adolescence"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "Significantly low BMI (11.7, well below normal), severe food restriction, and intense fear of weight gain meet diagnostic criteria for Anorexia Nervosa. Laxative use is secondary behavior.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A young couple comes to the hospital after a breakup. The female partner presents with rapid breathing (hyperventilation) lasting 2 hours following her being yelled at by her boyfriend. What is the appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Reassurance and breathing exercise"
+      },
+      {
+        "label": "B",
+        "text": "Re-breathing using a paper bag"
+      },
+      {
+        "label": "C",
+        "text": "Diazepam"
+      },
+      {
+        "label": "D",
+        "text": "Oxygen therapy"
+      },
+      {
+        "label": "E",
+        "text": "Intubation"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "Hyperventilation syndrome is best managed with reassurance and breathing exercises. Re-breathing (B) is acceptable but may cause anxiety. Medications are second-line if behavioral methods fail.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 49-year-old male with heavy alcohol use presents with generalized tonic-clonic seizures lasting 2 hours. 1 day ago his alcohol consumption dramatically decreased. Vital signs: RR 20/min, HR 110/min, temp 37.8°C, BP 160/100 mmHg. He is moderately agitated with tremor in both hands. Orientation to time, place, and person intact. Neurological exam unremarkable. What is the best initial management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Carbamazepine"
+      },
+      {
+        "label": "B",
+        "text": "Diazepam"
+      },
+      {
+        "label": "C",
+        "text": "Phenobarbital"
+      },
+      {
+        "label": "D",
+        "text": "Sodium valproate"
+      },
+      {
+        "label": "E",
+        "text": "Thiamine"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว 2014",
+    "status": "complete",
+    "ai_notes": "Clinical presentation consistent with alcohol withdrawal seizures: recent decreased alcohol consumption, autonomic hyperactivity (tachycardia, hypertension, tremor), and seizures. Benzodiazepines (Diazepam) are first-line for alcohol withdrawal seizures. Thiamine should be given concurrently but is not primary seizure management.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "An 18-year-old female presents with rapid, deep breathing and clenched hands for 2 hours following being shouted at by her senior. What is the diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Conversion disorder"
+      },
+      {
+        "label": "B",
+        "text": "Acute stress disorder"
+      },
+      {
+        "label": "C",
+        "text": "Hyperventilation syndrome"
+      },
+      {
+        "label": "D",
+        "text": "Generalized anxiety disorder"
+      },
+      {
+        "label": "E",
+        "text": "Panic disorder"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว มี.ค. 2555 (2012)",
+    "status": "complete",
+    "ai_notes": "Acute onset rapid, deep breathing with hand clenching following psychological stressor is typical hyperventilation syndrome. Clear temporal relationship to acute stressor and specific breathing pattern distinguish this from other anxiety disorders.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 30-year-old female presents with depressed mood, hopelessness, guilt, and suicidal ideation following being fired from her job. She had never experienced this before. She was admitted for treatment and prescribed Fluoxetine. After 2 months of treatment, her symptoms are improving and returning to baseline. How should her treatment be managed?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Stop the medication"
+      },
+      {
+        "label": "B",
+        "text": "Gradually taper the medication over 1 month"
+      },
+      {
+        "label": "C",
+        "text": "Continue the medication for another 6 months"
+      },
+      {
+        "label": "D",
+        "text": "Switch to Diazepam"
+      },
+      {
+        "label": "E",
+        "text": "Switch to Amitriptyline"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว มี.ค. 2555 (2012)",
+    "status": "complete",
+    "ai_notes": "For major depressive episode, SSRIs should be continued for at least 6-12 months after remission to prevent relapse. Early discontinuation increases recurrence risk.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A male patient with depressive disorder who hears voices of others criticizing him is on Fluoxetine and Haloperidol. Today he presents with marked agitation, aggression, and yelling. What is the appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Reduce Fluoxetine"
+      },
+      {
+        "label": "B",
+        "text": "Reduce Haloperidol"
+      },
+      {
+        "label": "C",
+        "text": "Add Diazepam"
+      },
+      {
+        "label": "D",
+        "text": "Switch to typical antipsychotics"
+      },
+      {
+        "label": "E",
+        "text": "Increase Haloperidol dose"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว มี.ค. 2555 (2012)",
+    "status": "complete",
+    "ai_notes": "Current agitation and aggression likely represent either inadequately controlled auditory hallucinations or medication side effects. Adding benzodiazepine (C) provides acute behavioral management while maintaining current medications. Neither should be reduced without proper evaluation.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A 20-year-old male was beaten on both legs. He is angry at the soldiers who beat him but can control his emotions. Physical examination shows motor grade I, reflexes 2+, and decreased sensation. What is the most likely diagnosis?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Peroneal nerve injury"
+      },
+      {
+        "label": "B",
+        "text": "Conversion disorder"
+      },
+      {
+        "label": "C",
+        "text": "Factitious disorder"
+      },
+      {
+        "label": "D",
+        "text": "Somatic symptom disorder"
+      },
+      {
+        "label": "E",
+        "text": "Malingering"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว มี.ค. 2555 (2012)",
+    "status": "complete",
+    "ai_notes": "Pattern of findings (motor grade I, decreased sensation, trauma history) is consistent with peroneal nerve injury from blunt trauma. Abnormal findings are explicable by organic pathology, not conversion or factitious disorder.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "A young boy is mischievous, doesn't listen well to parents, likes to argue with them, and constantly bothers friends. What is the appropriate management?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Haloperidol"
+      },
+      {
+        "label": "B",
+        "text": "Imipramine"
+      },
+      {
+        "label": "C",
+        "text": "Amitriptyline"
+      },
+      {
+        "label": "D",
+        "text": "Methylphenidate"
+      },
+      {
+        "label": "E",
+        "text": "Behavioral therapy and parent training"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว มี.ค. 2555 (2012)",
+    "status": "complete",
+    "ai_notes": "Clinical presentation (mischievousness, poor listening, argues, bothers friends) is consistent with ADHD. Methylphenidate is the most appropriate pharmacological treatment. However, original options were all medications. Option E (behavioral intervention) is more appropriate first-line but methylphenidate (D) is best among given choices.",
+    "subject": "psychi",
+    "exam_type": "NL2"
+  }
+]

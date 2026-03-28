@@ -1,0 +1,1580 @@
+{
+  "filename": "Surgery",
+  "subject": "surgery",
+  "exam_type": "NL2",
+  "stats": {
+    "total": 85,
+    "no_choices": 63,
+    "few_choices": 3,
+    "good": 19,
+    "no_scenario": 0,
+    "short_scenario": 33
+  },
+  "issues": [
+    {
+      "index": 0,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "A 60-year-old man was admit in the hospital with acute gastroenteritis and treat",
+      "choices_count": 0
+    },
+    {
+      "index": 1,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "47 YO man fall from 5 m. balcony V/S stable E4V5M6 Abdomen : tender and guarding",
+      "choices_count": 0
+    },
+    {
+      "index": 2,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "หญิง 60 ปวดกลางท้อง คลาก้อนได้ที่ท้อง เปนๆหายๆ คลื่นไส้อาเจียน ขี้ปกติ เปนไร\n1 s",
+      "choices_count": 0
+    },
+    {
+      "index": 3,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยชายอายุ 20 ปี หลังผ่า Appecdectomy 4 วัน มีอาการปวดแผล ตรวจแผลติดกันดี มี",
+      "choices_count": 0
+    },
+    {
+      "index": 4,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Tropical ATB",
+      "choices_count": 0
+    },
+    {
+      "index": 5,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Oral ATB",
+      "choices_count": 0
+    },
+    {
+      "index": 6,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "IV ATB",
+      "choices_count": 0
+    },
+    {
+      "index": 7,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Stich off",
+      "choices_count": 0
+    },
+    {
+      "index": 8,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Explore wound",
+      "choices_count": 0
+    },
+    {
+      "index": 9,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผป ชายมาด้วยถ่ายเป็นเลือดมากๆ bp drop epigastric pain PR:large blood clot หลังได",
+      "choices_count": 0
+    },
+    {
+      "index": 10,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "NG insertion",
+      "choices_count": 0
+    },
+    {
+      "index": 11,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "embolization",
+      "choices_count": 0
+    },
+    {
+      "index": 12,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "gastroscope",
+      "choices_count": 0
+    },
+    {
+      "index": 13,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "sigmoidoscope",
+      "choices_count": 0
+    },
+    {
+      "index": 14,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "colonoscope",
+      "choices_count": 0
+    },
+    {
+      "index": 15,
+      "question_number": 6,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "เช้า ชายมาด้วย gun shot ผ่า femoralไป 6hr ต่อมา ปวดน่องขวา ตรวจร่างกาย BT37 BP12",
+      "choices_count": 0
+    },
+    {
+      "index": 16,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "observe",
+      "choices_count": 0
+    },
+    {
+      "index": 17,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "heparinization",
+      "choices_count": 0
+    },
+    {
+      "index": 18,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "angiograph",
+      "choices_count": 0
+    },
+    {
+      "index": 19,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "emergency embolectomy",
+      "choices_count": 0
+    },
+    {
+      "index": 20,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "emergency fasciotomy",
+      "choices_count": 0
+    },
+    {
+      "index": 25,
+      "question_number": 1,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "trauma bulbous urethra ทา investigationอะไร",
+      "choices_count": 3
+    },
+    {
+      "index": 26,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ช 35 ปี ปัสสาวะไม่พุ่งมา 8 เดือน อาการเป็นมากขึ้น เช้านีัปวดปัสสาวะแต่ฉี่ไม่ออก ",
+      "choices_count": 0
+    },
+    {
+      "index": 27,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Bladder stone",
+      "choices_count": 0
+    },
+    {
+      "index": 28,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "BPH",
+      "choices_count": 0
+    },
+    {
+      "index": 29,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "urethral stricture",
+      "choices_count": 0
+    },
+    {
+      "index": 30,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Neurogenic bladder",
+      "choices_count": 0
+    },
+    {
+      "index": 31,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Pelvic sarcoma",
+      "choices_count": 0
+    },
+    {
+      "index": 32,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชาย 35 ปี มีปัสสาวะลาบาก ฉี่ไม่พุ่ง อาการเริ่มเป็นมาประมาณ 8 เดือน วันนี้ ปวดฉี่",
+      "choices_count": 0
+    },
+    {
+      "index": 33,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "BPH",
+      "choices_count": 0
+    },
+    {
+      "index": 34,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "urethal stricture",
+      "choices_count": 0
+    },
+    {
+      "index": 35,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "neurogenic bladder",
+      "choices_count": 0
+    },
+    {
+      "index": 36,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "pelvic sarcoma",
+      "choices_count": 0
+    },
+    {
+      "index": 37,
+      "question_number": 5,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Stone",
+      "choices_count": 0
+    },
+    {
+      "index": 38,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชาย 60 ปี มาตรวจร่างกายประจาปี พบ prostate gland enlargement 2+ psa = 4\nถาม mana",
+      "choices_count": 0
+    },
+    {
+      "index": 39,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชาย อายุน้อย ประสบอุบัติเหตุ conscious ดี pe : bp ไม่ drop( vital sign ดีอยุ่) s",
+      "choices_count": 0
+    },
+    {
+      "index": 40,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Needle cricoidotomy",
+      "choices_count": 0
+    },
+    {
+      "index": 41,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Et tube",
+      "choices_count": 0
+    },
+    {
+      "index": 42,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Oxygen 10 L mask with bag",
+      "choices_count": 0
+    },
+    {
+      "index": 43,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "X-ray neck AP/lat",
+      "choices_count": 0
+    },
+    {
+      "index": 44,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยชายไทยอายุ 14 ปีมาด้วยก้อนเจ็บที่ขาหนีบข้างซ้าย เคยมีประวัติ retractile t",
+      "choices_count": 0
+    },
+    {
+      "index": 45,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Orchitis",
+      "choices_count": 0
+    },
+    {
+      "index": 46,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Incarcerated hernia",
+      "choices_count": 0
+    },
+    {
+      "index": 47,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยถูกไฟไหม้ มาด้วยมีเเผล second degree burn 15% third degree burn 5% จงให้ส",
+      "choices_count": 0
+    },
+    {
+      "index": 48,
+      "question_number": 1,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "400cc/hr",
+      "choices_count": 0
+    },
+    {
+      "index": 49,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "300cc/hr",
+      "choices_count": 0
+    },
+    {
+      "index": 50,
+      "question_number": 3,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "200",
+      "choices_count": 0
+    },
+    {
+      "index": 51,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "100\nตัวอย่างข้อสอบ Surgery 2012",
+      "choices_count": 0
+    },
+    {
+      "index": 52,
+      "question_number": 34,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยมาด้วย abdomianl pain and hypotension 1) DPL 2) acute abdomen series 3) I",
+      "choices_count": 0
+    },
+    {
+      "index": 57,
+      "question_number": 66,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Aortic dissectionจากdecelerated injury เกิดตาแหน่งใดมากที่สุด 1) root of aorta 2",
+      "choices_count": 0
+    },
+    {
+      "index": 58,
+      "question_number": 77,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "ชายไทย28 ถูกไฟฟ้าแรงสูงช็อตขณะทางาน หมดสติไป 10 นาที มารพ.ตรวจร่างกายปกติดี พบแผ",
+      "choices_count": 3
+    },
+    {
+      "index": 62,
+      "question_number": 98,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "อะไรไม่ใช่สาเหตุที่ทาให้เกิด hemorrhagic shock",
+      "choices_count": 0
+    },
+    {
+      "index": 63,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Closed fracture of femur",
+      "choices_count": 0
+    },
+    {
+      "index": 64,
+      "question_number": 2,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Pterion",
+      "choices_count": 0
+    },
+    {
+      "index": 65,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "Blunt abdominal trauma",
+      "choices_count": 0
+    },
+    {
+      "index": 66,
+      "question_number": 4,
+      "issues": [
+        "no_choices",
+        "short_scenario"
+      ],
+      "scenario_preview": "Pelvic fracture",
+      "choices_count": 0
+    },
+    {
+      "index": 68,
+      "question_number": 101,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชายอายุ 30ปี มีไข้ต่ามา 2 วัน ปวดอัณฑะข้างขวา จงวินิจฉัยและให้การรักษาที่เหมาะสม",
+      "choices_count": 0
+    },
+    {
+      "index": 69,
+      "question_number": 102,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "gut obstruction duodenum มี 2nd 3rd เป็น spring coil. Mx?\nA duodenojejunostomy\nB",
+      "choices_count": 0
+    },
+    {
+      "index": 70,
+      "question_number": 113,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ข้อใดไม่จาเป็นต้องตรวจ colonoscopyก่อนระยะเวลาปกติ",
+      "choices_count": 0
+    },
+    {
+      "index": 71,
+      "question_number": 1,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชาย45ปี ท้องผูก มีแม่เป็น CA cervix เมื่ออายุ40 ปี",
+      "choices_count": 0
+    },
+    {
+      "index": 72,
+      "question_number": 2,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชาย45ปี ถ่ายเป็นเลือดสด มีพ่อและพี่ชายเป็นCA colon",
+      "choices_count": 0
+    },
+    {
+      "index": 73,
+      "question_number": 3,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชาย45ปี ท้องผูกสลับท้องเสีย มีแม่เป็นCA endometriumเมื่ออายุ40ปี",
+      "choices_count": 0
+    },
+    {
+      "index": 74,
+      "question_number": 4,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชาย45ปี ปวดท้องเป็นๆหายๆ มีพ่อและปู่ตายด้วยมะเร็งลาไส้ใหญ่เมื่ออายุ 50ปี",
+      "choices_count": 0
+    },
+    {
+      "index": 75,
+      "question_number": 5,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "ชาย45ปี คลาก้อนได้ที่ท้องน้อยด้านซ้าย มีพี่ชายและพี่สาวตรวจพบติ่งเนื้อในลาไส้>10",
+      "choices_count": 0
+    },
+    {
+      "index": 81,
+      "question_number": 146,
+      "issues": [
+        "only_3_choices"
+      ],
+      "scenario_preview": "ผู้ป่วยหญิงคลาก้อนที่เต้านมขวาพบขอบเขตไม่ชัดเจน เป็น nodule ขนาด 3 cm ข้อใดไม่น่",
+      "choices_count": 3
+    },
+    {
+      "index": 83,
+      "question_number": 166,
+      "issues": [
+        "no_choices"
+      ],
+      "scenario_preview": "หญิง 20 ปี ถูก MCA มา รพ conscious ดีพูดคุยรู้เรื่อง BP 90/60, PR 120, พบ tender",
+      "choices_count": 0
+    }
+  ],
+  "questions": [
+    {
+      "question_number": 1,
+      "scenario": "A 60-year-old man was admit in the hospital with acute gastroenteritis and treated with antispasmodic agent and antiemetic agent, the patient look good. But 4 hours later, he was restless, abdominal pain, BP 170/110, PR 110, PE: cystic mass 8 x 8 cm at suprapubic area. What is the appropriate management for this patient\nConsult surgeon\nUrinary catheterization\nMorphine infusion\nEmergency abdominal ultrasonography\nA man presents with reducible mass at groin for 8 months. The mass can’t be reduced for 3 hours. He has no fever, no nausea/vomiting, abdomen normal. Physical examination groin mass mild tenderness. What is the most appropriate management\nEmergency herniorrhaphy\nTaxis under anesthesia\nEmergency laparotomy\nA 25-year-old woman drinking whiskey vomits several times. Hematemesis the last time with frank blood 200 ml. What is likely diagnosis\nDieulafoy angiodysplasia\nMallory-Weiss tear\nEsophageal varices\nPeptic ulcer\nA 35-year-old man developed a sharp epigastric pain 1 day. He has had history of chronic dyspepsia for 4 years. PE: BT 37 C, P 110, BP 110/70, tender epigastric pain, guarding, loss of liver dullness. What is the diagnosis\nRuptured hepatoma\nPeptic perforate\nRuptured appendicitis\nRuptured sigmoid diverticulitis\nAcute appendicitis\nA 55-year-old man presents with progressive dysphagia for 2 months, weight loss 5 kg. Esophagoscope reveals squamous cell carcinoma at distal esophagus size 4 cm. Staging T2N0M0. What is the most appropriate management\nEsophagectomy\nEsophageal stent\nEsophageal stent\nRadiation therapy\nChemotherapy\nA patient fever, jaundice, RUQ pain. PE: BT 38 C, PR 80, jaundice, tender at RUQ, liver cannot palpable. Ultrasound: multiple hypoechoic cyst, largest 7 cm at right hepatic lobe. Needle aspiration reveals pus. Moreover than antibiotics IV, what should be done\nLaparoscopic drainage\nEndoscopic drainage\nPercutaneous aspiration\nPercutaneous catheter drainage\nOpen drainage\nA 50-year-old woman presents to ER with acute severe epigastrium pain which radiates to back for 4 hours. She couldn’t eat and had multiple episode of vomiting. Physical exam vital sign BT 37.9oC, PR 135/min, RR 24/min, BP 80/60 mmHg, abdomen mildly tender, hypoactive bowel sound, mild tenderness at epigastrium, serum lipase 3000 IU/L. What is the best management\nNormal saline for gastric aspirate\nAdequate rehydration\nEmpirical antibiotics\nEmergency ERCP\nObserve abdominal sign without pain killer\nA 70-year-old underlying hypertension well-controlled by medication, smoking for 40 years but stop for 10 years. He develops intermittent claudication for 2 years, non-progressive symptom. What is the best investigation\nAngiogram\nDuplex vascular\nAnkle brachial index\nMagnetic resonance angiography\nComputed Tomography angiography\nA 29-year-old woman presents with right breast mass 1 cm at 10 o’clock. PE: smooth surface, mobile, not tender. What is the most appropriate management\nObserve\nMammogram\nUltrasound\nCore needle biopsy\nFine needle aspiration\nA patient with breast mass 3.5 cm and axillary lymph node 1 node. Core needle reveals invasive ductal carcinoma. What is the treatment\nChemoradiation\nMastectomy with axillary lymph node dissection\nA patient with history of appendectomy present with abdominal distension, nausea/vomiting, cannot pass stool or fast. What is the next step investigation\nCT abdomen\nUltrasound abdomen\nAcute abdomen series\nA 30-year-old woman bitten by stray dog at right leg. She got complete rabies vaccine 2 years ago. What is the management\nBooster 1 dose of vaccine\nBooster 2 doses of vaccine\nComplete 5 doses of vaccine\nImmunoglobulin alone\nComplete vaccine and immunoglobulin\nWho should receive tetanus immunoglobulin\nA 20-year-old man dog bite had tetanus toxoid 7 years ago\nA 25-year-old man knee scratch while playing football never had tetanus toxoid\n…เคยได้วัคซีนมาแล้ว\nA 30-year-old woman… had tetanus toxoid when antenatal care\nโดนไม้เสียบลูกชิ้นตำ เคยได้รับวัคซีนตอนอยู่โรงพยาบาล\nA 38-year-old man has right side pain for 1 hour. PE: RLQ tenderness, other normal. Hct 38%, WBC 12,000(N88, L8). UA: RBC 50-100/hpf, WBC 5-10/hpf. What is the most proper investigation\nPlain KUB\nIVP\nU/S KUB\nCT non contrast\nMRI\nA man with right flank pain. Urinalysis RBC 5-10/hpf. IVP reveals stone 0.8 cm at upper part of ureter. What is the management\nESWL\nUterogram\nUrine cytology\nA 2-year-old boy was brought to emergency room because of inability of urination. The penile foreskin was retracted to behind glan penis. Which of the following is the most likely diagnosis\nPriapism\nPhimosis\nBalanitis\nProstatitis\nParaphimosis\nA 63-year-old man present with acute urinary retention. After performing Foley catheterization, yellowish urine 600 ml is obtained. He has had lower urinary tract symptoms for 1 year. Direct rectal exam: prostate enlargement without nodule. What is the most appropriate initial investigation\nSerum creatinine\nUltrasound\nUrine analysis\nCystoscope\nUrodynamic examination\nA patient with history of benign prostatic hypertrophy. Treatment with alpha antagonist but not improve. Prostate 80 g from rectal examination. What is the next management\nTransurethral resection\nAdd 5α-reductase inhibitor\nRadical prostatectomy\nA 55-year-old man presents with abdominal distension. CT scan reveals large left renal mass size 8 x 7 cm with contrast enhancement, right kidney normal, no evidence of metastasis. What is the best next step management\nMRI left kidney\nRenal cryoablation\nPartial left nephrectomy\nRadical left nephrectomy\nFine needle aspiration\nA 20-year-old man sexually active presents with right scrotal mass gradually enlarged in 6 months. Physical examination right scrotal mass 8 cm, not tender, solid consistency, left scrotum normal, UA normal. What is your next step management\nOpen biopsy\nSerum LDH, β-hCG, AFP\nTransscrotal needle biopsy\nTransscrotal orchidectomy\nCiprofloxacin po 3-4 weeks then re-evaluate\nA 65-year-old man presents with mucus and blood in stool. Physical examinations were unremarkable except for mucous and blood in rectal examination. What is the proper investigation\nColonoscopy\nBarium enema\nAcute abdomen series\nCT Abdomen\nStool occult blood\nA 64-year-old man with massive GI bleed. After resuscitate he undergoes colonoscope that reveals bleeding from diverticulum at ascending colon. The bleeding site has been clipped to stop bleed. No complication 3 days then discharge. After discharge 1 week he come back with severe bleeds per rectum, partial response to fluid resuscitation. What is your next step management\nColonoscope\nRed blood cell scan\nAngiography embolization\nEmergency explore with right colectomy\nEmergency explore with subtotal colectomy\nA patient presents with rectal bleeding. Physical exam reveals thrombosed external hemorrhoid. What is the best management\nRubber banding\nExcisional hemorrhoidectomy\nSclerosing agent\nStapler hemorrhoidectomy\nA 25-year-old woman with anal pain during passing hard stools, no significant weight loss, no abdominal pain. PE: cracked skin at posterior\nAnal abscess\nHemorrhoid\nAnal fissure\nFistula in ano\nA 65-year-old woman has colicky abdominal pain. History of bowel habit change and significant weight loss 2 months PTA. PE: marked abdominal distension, soft, palpable mass at LLQ. What is the diagnosis\nSigmoid vulvulus\nObstructed colonic cancer\nSigmoid diverticulosis\nWhat are the first three most common cause of death from trauma in children\nBleeding, CNS injury, …\nAirway obstruction, bleeding, CNS injury\nAirway obstruction, bleeding, chest trauma\nBleeding, chest trauma, abdominal injury\nCNS injury, bleeding, abdominal injury\nCT\nA 4-week-old infant presents with jaundice and mild anemia, dark brown urine. What is the best initial investigation\nUltrasound\nLiver biopsy\nLiver function test\nHepatobiliary scan\nผู้ชาย swelling, erythema scotum, cramasteric reflex positive. What is the diagnosis\nEpididymitis\nTorsion testis\nIncaecerate hernia\nA newborn his right testis not in scrotum. PE: left groin mass 1x2 cm, movable. What is the appropriate management\nFollow up in 6 months\nCT testis\nTestis scan\nAngiogram\nExplore scrotum and orchidopexy\nA 1-year-old discharge from prepuce and … Skin at prepuce cannot retract รักษาหายดีแล้วทำอะไร\nTopical steroid\nReassure\nGently retract บ่อยๆ\nSurgery\nAntibiotics\nA 20-year-old man accident stupor, close his eyes, on endotracheal tube before refer. With pain stimuli, left arm flex, right arm extend. Evaluate the Glasglow coma score\nE1VtM4\nE1VtM3\nE1VtM2\nE1V1M3\nE1V1M2\nA patient burn 2 hours before arriving at hospital. PE reveals severe skin burn at left and right upper extremities and anterior trunk. Body weight 50 kg. What is the management\nRL… ml/hr\nRL 450 ml/hr\nNSS 450 ml/hr\nRL 600 ml/hr\nNSS 600 ml/hr\nA burn patient comes to the hospital 2 hours later. He weight 60 kg. Physical exam reveals 1st degree burn 20%, second degree 35% and 3rd degree 15%. What is the rate of fluid resuscitation\n900 ml/hr in 8 hours\n750 ml/hr in 8 hours\n1000 ml/hr in 6 hours\n1200 ml/hr in 6 hours\n… in 12 hours\nA patient burn, black airway. He can breathe. What is the management\nOropharyngeal\nEndotracheal tube\nCricothyroidotomy\nTracheostomy\nMale patient came with stabbed wound at right chest. Diagnosis right hemothorax, intercostals drainage. At day 16, develop clotted hemothorax. Fluid culture gram positive cocci. What is the management\nClosed chest drainage\nIV antibiotics\nChest decortications\nRib resection with open drainage\nAdequate drainage with injection of streptokinase and…\nA 20-year-old woman came to the hospital for dilate esophagus. Develop chest tightness after the operation 1 hour. What is the most likely diagnosis\nPneumothorax\nPulmonary embolism\nEsophageal perforation\nA 20-year-old tall and thin man presents with acute dyspnea, RR 24/min. Physical exams decrease breath sound on the left lung, no adventitious sound. What is the most likely diagnosis\nTension pneumothorax\nAcute left lung pneumonia\nAcute myocardial infarction\nPrimary spontaneous pneumothorax\nA 35-year-old man has car accident 1 hr PTA. BT 36.5 C, BP 90/60 mmHg, RR 25, PR 120, moderate pale. PE: E2V3M2 pupil 2 mm SRTL BE, open wound with bleeding at left leg. Hct 20%. What is the initial management\nFAST\nET tube\nAssess IV fluid\nStop bleeding by pressure\nA 30-year-old man was hit at neck. He cannot move arms and legs. PE: BP 90/60 mmHg, P 50, decrease sensation below shoulder. DTR 0. What is the diagnosis(มีทั้ง spinal shock, neurogenic)\nSpinal shock\nCardiogenic shock\nNeurogenic shock\nHypovolemic shock\nA 45-year-old man presents with leg pain 2 hours ago. PE: PR 110 total irregular, right leg cold and pale skin, posterior popliteal pulse absent, dorsalispedis absent, pain at right first toe, paresthesia below right ankle, no muscle paralysis. What is appropriate diagnosis\ncompartment syndrome\nacute popliteal embolism\nacute femoral-popliteal thrombosis\ndeep vein thrombosis\nA patient car accident presents with hematuria. PE: flank bruising 5 cm. FAST negative. UA: RBC>100, WBC 2-5. What is the most helpful investigation\nAngiography\nCT abdomen\nIntravenous pyelogram\nอุบัติเหตุตัดโดนนิ้วตัวเองขาด จะเก็บนิ้วอย่างไร\nPlace it in sterile gauze and place it in ice\nPlace it in sterile gauze and place it in water 4oC\nWrap it in saline-moistened gauze and place it in a plastic bag, immersed in ice\nWrap it in saline-moistened gauze and place it in a plastic bag, immersed in water 4oC\nเย็บต่อเองก่อนแล้วค่อยส่งต่อ\nตัวอย่างข้อสอบ Surgery 2014",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 1,
+      "scenario": "47 YO man fall from 5 m. balcony V/S stable E4V5M6 Abdomen : tender and guarding FAST : free fluid at hepatorenal space Management ?\nก. Plain film abdomen\nข. CT abdomen\nค. DPL\nง. Exploratory laparotomy\nจ. one shot IVP",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 2,
+      "scenario": "หญิง 60 ปวดกลางท้อง คลาก้อนได้ที่ท้อง เปนๆหายๆ คลื่นไส้อาเจียน ขี้ปกติ เปนไร\n1 small bowel ob\n2 diverticulitis\n3 impact feces\n4 bowel ischemia",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ผู้ป่วยชายอายุ 20 ปี หลังผ่า Appecdectomy 4 วัน มีอาการปวดแผล ตรวจแผลติดกันดี มีบวมแดงที่รอยไหมเย็บ ถามการปฏิบัติที่เหมาะสม",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Tropical ATB",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Oral ATB",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 3,
+      "scenario": "IV ATB",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Stich off",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 5,
+      "scenario": "Explore wound",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 5,
+      "scenario": "ผป ชายมาด้วยถ่ายเป็นเลือดมากๆ bp drop epigastric pain PR:large blood clot หลังได้fluid resus ทำไรต่อ",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 1,
+      "scenario": "NG insertion",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 2,
+      "scenario": "embolization",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 3,
+      "scenario": "gastroscope",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 4,
+      "scenario": "sigmoidoscope",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 5,
+      "scenario": "colonoscope",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 6,
+      "scenario": "เช้า ชายมาด้วย gun shot ผ่า femoralไป 6hr ต่อมา ปวดน่องขวา ตรวจร่างกาย BT37 BP120/80 absent right dorsalis pedis pulse, dorsiflex แล้วปวด จะทาอะไร",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 1,
+      "scenario": "observe",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 2,
+      "scenario": "heparinization",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 3,
+      "scenario": "angiograph",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 4,
+      "scenario": "emergency embolectomy",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 5,
+      "scenario": "emergency fasciotomy",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 7,
+      "scenario": "ชายตกจากบันไดลิง bp 140/90 ทา fast positive at retrohapatorenal mx??",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Plain film abd"
+        },
+        {
+          "label": "B",
+          "text": "CT abd"
+        },
+        {
+          "label": "C",
+          "text": "Peritoneal lavage (จาไม่ได้)"
+        },
+        {
+          "label": "D",
+          "text": "Explore lap"
+        }
+      ],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 8,
+      "scenario": "ญ 60 ปี มีdysphagia odynophagiaมา3วัน มีประวัติทานปวดข้อ ทาน NSAIDS 2 weeks และทาcolectomy จากมะเร็งลาไส้ ถามว่า dysphagia/odynophagiaน่าจะเกิดจากอะไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Corrosive ingestion"
+        },
+        {
+          "label": "B",
+          "text": "Acute ulcerative reflux esophagitis"
+        },
+        {
+          "label": "C",
+          "text": "recurrent CA"
+        },
+        {
+          "label": "D",
+          "text": "pill induced gastritis"
+        },
+        {
+          "label": "E",
+          "text": "achalasia"
+        }
+      ],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 10,
+      "scenario": "อาเจียนเป็นเลือดสด ซีด BP ตก หลังทา resus ต่อมาทาอะไรต่อ ?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "NG tube"
+        },
+        {
+          "label": "B",
+          "text": "gastroscope"
+        },
+        {
+          "label": "C",
+          "text": "colonscope"
+        },
+        {
+          "label": "A",
+          "text": "CT"
+        },
+        {
+          "label": "B",
+          "text": "MRI"
+        },
+        {
+          "label": "C",
+          "text": "ERCP"
+        }
+      ],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 12,
+      "scenario": "Female 45 yrs old, Lt breast mass. PE : 2.5 bm breast mass at upper outer quadrant, irregular, slightly movable. Palpable axillary LN 1.5 cm. USG+mammogram breast 2.5 cm mass\nWhat is the most proper mx for definite dx?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Excisional bx mass"
+        },
+        {
+          "label": "B",
+          "text": "incisional bx mass"
+        },
+        {
+          "label": "C",
+          "text": "Core needle bx mass"
+        },
+        {
+          "label": "D",
+          "text": "Core needle bx LN"
+        },
+        {
+          "label": "E",
+          "text": "FNA LN"
+        }
+      ],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 1,
+      "scenario": "trauma bulbous urethra ทา investigationอะไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ivp"
+        },
+        {
+          "label": "B",
+          "text": "vcug"
+        },
+        {
+          "label": "C",
+          "text": "kub ultrasound"
+        }
+      ],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ช 35 ปี ปัสสาวะไม่พุ่งมา 8 เดือน อาการเป็นมากขึ้น เช้านีัปวดปัสสาวะแต่ฉี่ไม่ออก PE: T37 RR18 BP 140/90 palpable tense cystic mass ar suprapubic area prostate 2+",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Bladder stone",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 2,
+      "scenario": "BPH",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 3,
+      "scenario": "urethral stricture",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Neurogenic bladder",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 5,
+      "scenario": "Pelvic sarcoma",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ชาย 35 ปี มีปัสสาวะลาบาก ฉี่ไม่พุ่ง อาการเริ่มเป็นมาประมาณ 8 เดือน วันนี้ ปวดฉี่ แต่ฉี่ไม่ออก ตรวจร่างกายพบมี cystic mass ขนาด 18 cm suprapubic area PR พบมี่ prostate 2+ ถาม dx",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 1,
+      "scenario": "BPH",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 2,
+      "scenario": "urethal stricture",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 3,
+      "scenario": "neurogenic bladder",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 4,
+      "scenario": "pelvic sarcoma",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 5,
+      "scenario": "Stone",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 5,
+      "scenario": "ชาย 60 ปี มาตรวจร่างกายประจาปี พบ prostate gland enlargement 2+ psa = 4\nถาม management\na observe\nb biopsy\nc start a1-blocker\nd F/U PSA 1 week\ne F/U PSA 6 mo",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ชาย อายุน้อย ประสบอุบัติเหตุ conscious ดี pe : bp ไม่ drop( vital sign ดีอยุ่) subcutaneous emphysema, horsness, no stridor , oxygen sat 94, trachea in midline lung exam - normal?? Mx??",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Needle cricoidotomy",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Et tube",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Oxygen 10 L mask with bag",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 4,
+      "scenario": "X-ray neck AP/lat",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ผู้ป่วยชายไทยอายุ 14 ปีมาด้วยก้อนเจ็บที่ขาหนีบข้างซ้าย เคยมีประวัติ retractile testis ตอนเด็ก ผู้ป่วยรายนี้คิดถึงโรคใด 1. Torsion testis",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Orchitis",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Incarcerated hernia",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ผู้ป่วยถูกไฟไหม้ มาด้วยมีเเผล second degree burn 15% third degree burn 5% จงให้สารน้า parkland formula ใน หกชั่มโมง BW 60 kg",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 1,
+      "scenario": "400cc/hr",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 2,
+      "scenario": "300cc/hr",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 3,
+      "scenario": "200",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 4,
+      "scenario": "100\nตัวอย่างข้อสอบ Surgery 2012",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 34,
+      "scenario": "ผู้ป่วยมาด้วย abdomianl pain and hypotension 1) DPL 2) acute abdomen series 3) IVF 4) Emer explore lap 5) CT abdomen",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 37,
+      "scenario": "ผู้ป่วยหญิงไทย อายุ40ปี มีอาการ intermittent dysphagia มา 3ปี กลืนติดทั้ง solid and liquid diet ร่วมกับมี Wt loss 5 kg ใน 2yr. ทาBarium swallowind พบ mid esophageal dilatation + smooth taping @ distal esophagus and EG junction ข้อใดไม่ควรทา",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Open cardiotomy"
+        },
+        {
+          "label": "B",
+          "text": "laparoscopic cardiotomy"
+        },
+        {
+          "label": "C",
+          "text": "PPI"
+        },
+        {
+          "label": "D",
+          "text": "CCB"
+        },
+        {
+          "label": "E",
+          "text": "Ballon dilatation"
+        }
+      ],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 38,
+      "scenario": "หลังจากที่ Resuscitate ผู้หญิงที่เป็น Cirrhosis child B ที่มาด้วย hematemesis แล้ว Next Appropriate Mx คือ?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Liver Transplant"
+        },
+        {
+          "label": "B",
+          "text": "Surgical Portosystemic Shunt"
+        },
+        {
+          "label": "C",
+          "text": "TIPS"
+        },
+        {
+          "label": "D",
+          "text": "Nonselective Betablocker + Endoscopic Ligation"
+        }
+      ],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 47,
+      "scenario": "ผู้ป่วยหญิงอายุ 15 ปี มีแม่ ป้า ยายเป็น CA breast ป้าเป็น CA breast เมื่อ 30 ปี ถาม Management ?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "MRI เมื่ออายุ 40 ปี"
+        },
+        {
+          "label": "B",
+          "text": "Self-breast exam every month"
+        },
+        {
+          "label": "C",
+          "text": "Clinical breast exam every year"
+        },
+        {
+          "label": "D",
+          "text": "Screening USG เมื่ออายุ 20 ปี"
+        },
+        {
+          "label": "E",
+          "text": "Screening mammography ทุกปีตั้งแต่อายุ 40 ปี"
+        }
+      ],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 62,
+      "scenario": "ผู้ป่วยชาย motorcycle accident, unconscious GCS 8, BP 90/60, RR 24 ข้อใดคือ first management",
+      "choices": [
+        {
+          "label": "A",
+          "text": "CT abdomen"
+        },
+        {
+          "label": "B",
+          "text": "CT brain"
+        },
+        {
+          "label": "C",
+          "text": "Blood transfusion"
+        },
+        {
+          "label": "D",
+          "text": "endotracheal and intubation"
+        }
+      ],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 66,
+      "scenario": "Aortic dissectionจากdecelerated injury เกิดตาแหน่งใดมากที่สุด 1) root of aorta 2) Level of Lt. innominate artery 3) Level of Rt. innominate artery 4) Origin of Lt.subclavian artery 5) 2/3 part of descending thoracic artery",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 77,
+      "scenario": "ชายไทย28 ถูกไฟฟ้าแรงสูงช็อตขณะทางาน หมดสติไป 10 นาที มารพ.ตรวจร่างกายปกติดี พบแผลแดงเป็นตุ่มพุพองที่ขาขวาและก้นขวา จงให้การรักษา",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Admit"
+        },
+        {
+          "label": "B",
+          "text": "ให้ ATB แล้วกลับบ้านได้"
+        },
+        {
+          "label": "C",
+          "text": "Wound dressing and D/C"
+        }
+      ],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 89,
+      "scenario": "Thai male 55 yr vehicle ไม่ได้คาดเข็มขัดนิรภัย หัวกระแทกกระจกหน้ารถ ไม่มี loss of consciousness PE: mild contusion at frontal area กลับบ้านไป 4 wkมีอาการปวดหัว พฤติกรรมเปลี่ยนแปลง restless, What is your diagnosis?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Intracerebral hematoma"
+        },
+        {
+          "label": "B",
+          "text": "Cerebral contusion"
+        },
+        {
+          "label": "C",
+          "text": "Epidural hematoma"
+        },
+        {
+          "label": "D",
+          "text": "Subarachnoid hemorrhage"
+        },
+        {
+          "label": "E",
+          "text": "Chronic subdural hematoma"
+        }
+      ],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 92,
+      "scenario": "ผู้ป่วยหญิงอายุ 30 ปี มาด้วยปวด บวม แดง ที่เต้านมข้างขวา กดเจ็บ จะ manage อย่างไร",
+      "choices": [
+        {
+          "label": "A",
+          "text": "USG"
+        },
+        {
+          "label": "B",
+          "text": "I&D"
+        },
+        {
+          "label": "C",
+          "text": "IV antibiotic"
+        },
+        {
+          "label": "D",
+          "text": "oral antibiotic"
+        },
+        {
+          "label": "E",
+          "text": "mammography"
+        }
+      ],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 95,
+      "scenario": "A male patient age 25 yr. came in to the OPD with a compliant of a mass in scrotal sac during a shower. Ultrasound revealed a solitary mass in the testicular parenchyma in Rt. Scrotal sac. What is the most likely diagnosis?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Seminoma"
+        },
+        {
+          "label": "B",
+          "text": "Ependi…."
+        },
+        {
+          "label": "C",
+          "text": "Androblastoma"
+        },
+        {
+          "label": "D",
+          "text": "Benign fibroma"
+        },
+        {
+          "label": "E",
+          "text": "Teratocarcinoma"
+        },
+        {
+          "label": "E",
+          "text": "AR"
+        }
+      ],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 98,
+      "scenario": "อะไรไม่ใช่สาเหตุที่ทาให้เกิด hemorrhagic shock",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 1,
+      "scenario": "Closed fracture of femur",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 2,
+      "scenario": "Pterion",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 3,
+      "scenario": "Blunt abdominal trauma",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 4,
+      "scenario": "Pelvic fracture",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 99,
+      "scenario": "ผู้ป่วย 20 ปี มาด้วย stab wound ที่อกซ้าย RR 32/min บ่นว่าหายใจไม่สะดวก conscious ดี BP 80/60, PR 120 PE พบ decreased breathe sound left side with trachea shift to right ถาม most appropriate management",
+      "choices": [
+        {
+          "label": "A",
+          "text": "IV resuscitation"
+        },
+        {
+          "label": "B",
+          "text": "O2+ CXR"
+        },
+        {
+          "label": "C",
+          "text": "ET+ ventilation support"
+        },
+        {
+          "label": "D",
+          "text": "needle thoracotomy+ ICD"
+        }
+      ],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 101,
+      "scenario": "ชายอายุ 30ปี มีไข้ต่ามา 2 วัน ปวดอัณฑะข้างขวา จงวินิจฉัยและให้การรักษาที่เหมาะสม\nA Right orchitis รักษาด้วย Antibiotics\nB Right orchitis รักษาด้วย Scrotal Exploration\nC Rt CA testis รักษาด้วย Biopsy\nD Rt CA testis รักษาด้วย Rt scrotal orchiectomy\nE Rt CA testis รักษาด้วย Rt radical orchiectomy",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 102,
+      "scenario": "gut obstruction duodenum มี 2nd 3rd เป็น spring coil. Mx?\nA duodenojejunostomy\nB gastrojejunostomy\nC NG conpression and observe",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 113,
+      "scenario": "ข้อใดไม่จาเป็นต้องตรวจ colonoscopyก่อนระยะเวลาปกติ",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 1,
+      "scenario": "ชาย45ปี ท้องผูก มีแม่เป็น CA cervix เมื่ออายุ40 ปี",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 2,
+      "scenario": "ชาย45ปี ถ่ายเป็นเลือดสด มีพ่อและพี่ชายเป็นCA colon",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 3,
+      "scenario": "ชาย45ปี ท้องผูกสลับท้องเสีย มีแม่เป็นCA endometriumเมื่ออายุ40ปี",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 4,
+      "scenario": "ชาย45ปี ปวดท้องเป็นๆหายๆ มีพ่อและปู่ตายด้วยมะเร็งลาไส้ใหญ่เมื่ออายุ 50ปี",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 5,
+      "scenario": "ชาย45ปี คลาก้อนได้ที่ท้องน้อยด้านซ้าย มีพี่ชายและพี่สาวตรวจพบติ่งเนื้อในลาไส้>100 ชิ้น",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 114,
+      "scenario": "Which of the following statement is true concerning thyroglossal duct cyst?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "found at lateral neck"
+        },
+        {
+          "label": "B",
+          "text": "treatment is partial thyroidectomy"
+        },
+        {
+          "label": "C",
+          "text": "turn to malignancy at age 45"
+        },
+        {
+          "label": "D",
+          "text": "proximal trunk at base of tongue"
+        },
+        {
+          "label": "E",
+          "text": "originates from midgut"
+        }
+      ],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 115,
+      "scenario": "ผู้ชายอายุ45ปีทาdistal esophagectomy จากโรค Barrett's disease ขณะนอนโรงพยาบาลใส่Lt.chest tube เพราะว่ามีeffusion ได้เป็นmilky white ข้อใดถูก",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ถ้าเป็นข้างขวามักเกิดจากtrauma"
+        },
+        {
+          "label": "B",
+          "text": "ห้ามให้TPN จนกว่าโรคจะดีขึ้น"
+        },
+        {
+          "label": "C",
+          "text": "ต้องผ่าตัดแก้ไขทันที"
+        },
+        {
+          "label": "D",
+          "text": "ถอดICD เพราะอาจเป็น iatrogenic infection"
+        },
+        {
+          "label": "E",
+          "text": "ส่งตรวจ TG & WBC ในfluid จะช่วย Dx 1"
+        }
+      ],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 22,
+      "scenario": "ชายอายุ 80 ปี มี obstructive urinary symptom, PR พบ prostateโต แต่ไม่แข็ง PSA = 6.3 prostate biopsy ได้ Gleason score=5 (2+3) ตรวจไม่พบ metastasis มี U/D DM, HTN Management ที่ไม่ควรทาคือ?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Watchful Waiting"
+        },
+        {
+          "label": "B",
+          "text": "Brachytherapy"
+        },
+        {
+          "label": "C",
+          "text": "External Radiation"
+        },
+        {
+          "label": "D",
+          "text": "Hormonal Therapy"
+        },
+        {
+          "label": "E",
+          "text": "Prostatectomy"
+        }
+      ],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 132,
+      "scenario": "The most useful diagnostic radiographic procedure for small intestine obstruction",
+      "choices": [
+        {
+          "label": "A",
+          "text": "CT"
+        },
+        {
+          "label": "B",
+          "text": "MRI"
+        },
+        {
+          "label": "C",
+          "text": "U/S"
+        },
+        {
+          "label": "D",
+          "text": "contrast study"
+        },
+        {
+          "label": "E",
+          "text": "supine and upright x-ray abdomen"
+        }
+      ],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 141,
+      "scenario": "หญิงอายุ 60ปี อยู่บุรีรีัมย์ มีแผลที่ฝ่าเท้าเรื้อรังไม่ปวด กดไม่เจ็บต่อมาก้อนโตขึ้นเรื่อยๆ PE: hyper pigmentation ulcer at foot ~2 cm, left groin mass What is the further management",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Biopsy"
+        },
+        {
+          "label": "B",
+          "text": "excision"
+        },
+        {
+          "label": "C",
+          "text": "Chemotherapy"
+        },
+        {
+          "label": "D",
+          "text": "Radiation"
+        }
+      ],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 146,
+      "scenario": "ผู้ป่วยหญิงคลาก้อนที่เต้านมขวาพบขอบเขตไม่ชัดเจน เป็น nodule ขนาด 3 cm ข้อใดไม่น่าจะพบในผู้ป่วยรายนี้",
+      "choices": [
+        {
+          "label": "B",
+          "text": "well defined soft tissue"
+        },
+        {
+          "label": "C",
+          "text": "lymph node @ neckโต"
+        },
+        {
+          "label": "E",
+          "text": "thickness of skin ที่คลุมผิว"
+        }
+      ],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 156,
+      "scenario": "X-ray view ที่ เห็น maxillary, Zygoma, zygomatic arch, orbital rim and mandible ที่สุด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Law’s view"
+        },
+        {
+          "label": "B",
+          "text": "Stenver’s view"
+        },
+        {
+          "label": "C",
+          "text": "Towne’s view"
+        },
+        {
+          "label": "D",
+          "text": "Water’s view"
+        },
+        {
+          "label": "E",
+          "text": "Caldwell’s view"
+        }
+      ],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 166,
+      "scenario": "หญิง 20 ปี ถูก MCA มา รพ conscious ดีพูดคุยรู้เรื่อง BP 90/60, PR 120, พบ tender abdomen, thigh หลัง resuscitate เบื้องต้นด้วย LRS 2 L แล้วจะทาอย่างไรต่อไป\nA pelvic angiography\nB blood transfusion\nC LRS 2 L เพิ่ม\nD explore laparotomy",
+      "choices": [],
+      "exam_source": "Surgery"
+    },
+    {
+      "question_number": 208,
+      "scenario": "ผู้ป่วย s/p cholecystectomy c septic shock BP 70/40 mmHg PR 110/min cardiac ouput 4.5 L/min CVP 3 cmH2O Initial management?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Dopamine IV"
+        },
+        {
+          "label": "B",
+          "text": "Norepinephrine IV"
+        },
+        {
+          "label": "C",
+          "text": "ATB IV"
+        },
+        {
+          "label": "D",
+          "text": "intubation and assist ventilation"
+        },
+        {
+          "label": "E",
+          "text": "IV fluid resuscitation"
+        }
+      ],
+      "exam_source": "Surgery"
+    }
+  ]
+}

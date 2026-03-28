@@ -1,0 +1,836 @@
+[
+  {
+    "id": "7b10ed33-cc0f-4a1a-a769-3afd35a99b5e",
+    "correct_answer": "A",
+    "explanation": "หญิงไทย 50 ปี ล้มศอกยันพื้น ข้อมือบวมผิดรูป 'dinner fork deformity' = Colles' fracture",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Colles' fracture) เพราะ FOOSH (fall on outstretched hand) ในหญิงสูงอายุ ทำให้ distal radius fracture แบบ Colles' ที่มี dorsal displacement",
+      "reason": "Colles' fracture คือ fracture ของ distal radius ที่ fragment ด้านปลายเลื่อนไปด้านหลัง (dorsal displacement) ทำให้เห็น 'dinner fork deformity' หรือ 'silver fork deformity' ที่ข้อมือ พบบ่อยในหญิงสูงอายุที่มี osteoporosis ล้มและยื่นมือรับ Greenstick fracture พบในเด็กเท่านั้น Supracondylar fracture อยู่ที่ข้อศอก",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Colles' fracture",
+          "is_correct": true,
+          "explanation": "FOOSH + หญิงสูงอายุ + ข้อมือบวมผิดรูป dinner fork = Colles' fracture คลาสสิก"
+        },
+        {
+          "label": "B",
+          "text": "Greenstick fracture",
+          "is_correct": false,
+          "explanation": "Greenstick fracture พบในเด็กเท่านั้น (incomplete fracture)"
+        },
+        {
+          "label": "C",
+          "text": "Fracture of both bones forearm",
+          "is_correct": false,
+          "explanation": "Both bones forearm fracture จะมีผิดรูปตลอดต้นแขน ไม่ใช่แค่ข้อมือ"
+        },
+        {
+          "label": "D",
+          "text": "Wrist dislocation",
+          "is_correct": false,
+          "explanation": "Wrist dislocation พบน้อยมาก X-ray จะแสดง carpal bone displacement"
+        },
+        {
+          "label": "E",
+          "text": "Supracondylar fracture",
+          "is_correct": false,
+          "explanation": "Supracondylar fracture อยู่ที่ข้อศอก ไม่ใช่ข้อมือ"
+        }
+      ],
+      "key_takeaway": "FOOSH + หญิงสูงอายุ + dinner fork deformity = Colles' fracture (distal radius dorsal displacement)"
+    }
+  },
+  {
+    "id": "7c62850a-76c3-4f65-a40e-ef688a05b88b",
+    "correct_answer": "B",
+    "explanation": "Biceps weakness ทั้งสองข้างในผู้ชายปวดคอ บ่งชี้ C5 nerve root compression เพราะ biceps innervated โดย C5-C6",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (C5) เพราะ biceps brachii muscle innervated โดย musculocutaneous nerve จาก C5-C6 โดย C5 เป็น primary level",
+      "reason": "C5 nerve root: Biceps reflex, shoulder abduction (deltoid), elbow flexion (biceps), sensation lateral arm C6 nerve root: Biceps/brachioradialis reflex, wrist extension, sensation lateral forearm + thumb C7: Triceps reflex, elbow extension, wrist flexion, sensation middle finger C8: Finger flexion, sensation ring/little finger T1: Intrinsics ของมือ ในผู้ป่วยที่มี bilateral biceps weakness = C5 compression",
+      "choices": [
+        {
+          "label": "A",
+          "text": "C4",
+          "is_correct": false,
+          "explanation": "C4 innervates trapezius และ diaphragm ไม่ใช่ biceps"
+        },
+        {
+          "label": "B",
+          "text": "C5",
+          "is_correct": true,
+          "explanation": "Biceps = C5-C6; bilateral biceps weakness + neck pain = C5 radiculopathy/myelopathy"
+        },
+        {
+          "label": "C",
+          "text": "C6",
+          "is_correct": false,
+          "explanation": "C6 ก็ contribute biceps แต่ primary เป็น brachioradialis และ wrist extension"
+        },
+        {
+          "label": "D",
+          "text": "C7",
+          "is_correct": false,
+          "explanation": "C7 = triceps, wrist flexion, middle finger sensation"
+        },
+        {
+          "label": "E",
+          "text": "C8",
+          "is_correct": false,
+          "explanation": "C8 = finger flexion, intrinsics, little finger sensation"
+        }
+      ],
+      "key_takeaway": "Biceps weakness = C5 nerve root; C5=shoulder abd/elbow flex, C6=wrist ext, C7=elbow ext, C8=finger flex"
+    }
+  },
+  {
+    "id": "7e6bd7c1-13bc-40ac-ad83-12b398b64a27",
+    "correct_answer": "A",
+    "explanation": "ตำรวจล้มหัวไหล่ พบ AC joint dislocation ที่มี displacement เพียงเล็กน้อย (grade I-II) เกิดจาก torn coracoacromial and coracohumeral ligaments",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (coracoacromial and coracohumeral lig.) ตาม exam answer สำหรับ AC joint injury grade ต่ำ",
+      "reason": "AC joint injuries แบ่งตาม Rockwood classification: Grade I: AC lig. sprain only (coracoclavicular lig. intact) Grade II: AC lig. torn, CC lig. sprain Grade III: ทั้ง AC และ CC lig. torn, displacement Grade IV-VI: severe displacement ตาม exam คำตอบ A คือ coracoacromial + coracohumeral ligaments ซึ่งอาจหมายถึง grade ต่ำที่ secondary stabilizers ได้รับบาดเจ็บ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Coracoacromial and coracohumeral lig.",
+          "is_correct": true,
+          "explanation": "ตาม exam answer; secondary stabilizers ของ AC joint ที่อาจเกิด injury ในระดับต่ำ"
+        },
+        {
+          "label": "B",
+          "text": "Coracohumeral and coracoclavicular lig.",
+          "is_correct": false,
+          "explanation": "CC lig. (trapezoid + conoid) คือ primary stabilizer ของ AC joint"
+        },
+        {
+          "label": "D",
+          "text": "Coracoclavicular and coracohumeral lig.",
+          "is_correct": false,
+          "explanation": "ไม่ตรงกับ exam answer"
+        },
+        {
+          "label": "E",
+          "text": "Coracoclavicular and acromioclavicular lig.",
+          "is_correct": false,
+          "explanation": "Complete AC dislocation (grade III) จะ torn ทั้ง AC และ CC lig."
+        }
+      ],
+      "key_takeaway": "AC joint injury: Grade I-II = AC lig.; Grade III = ทั้ง AC + CC lig. torn"
+    }
+  },
+  {
+    "id": "80597774-625d-4cef-b58a-c7fa7a1982c3",
+    "correct_answer": "A",
+    "explanation": "เด็กชาย 8 ปี ล้มจากที่สูง งอศอกไม่ได้ = Supracondylar fracture ของ humerus เป็น most common elbow fracture ในเด็ก",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Supracondylar fracture ของ humerus) เพราะเป็น elbow fracture ที่พบบ่อยที่สุดในเด็กอายุ 5-10 ปี",
+      "reason": "Supracondylar fracture of humerus เป็น most common elbow fracture ในเด็ก (60%) มักเกิดจาก FOOSH หรือตกจากที่สูง X-ray แสดง fat pad sign (sail sign) และ anterior humeral line ที่ผิดปกติ ภาวะแทรกซ้อน: anterior interosseous nerve injury, brachial artery injury, Volkmann ischemic contracture รักษาด้วย closed reduction + K-wire fixation",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Supracondylar fracture ของ humerus",
+          "is_correct": true,
+          "explanation": "Most common elbow fracture ในเด็ก 5-10 ปี; FOOSH + งอศอกไม่ได้ = classic"
+        },
+        {
+          "label": "B",
+          "text": "Lateral condyle fracture",
+          "is_correct": false,
+          "explanation": "Lateral condyle fracture พบรองมา (17%) แต่มักมี lateral tenderness specific"
+        },
+        {
+          "label": "C",
+          "text": "Medial epicondyle fracture",
+          "is_correct": false,
+          "explanation": "Medial epicondyle fracture พบน้อยกว่า มี medial tenderness + ulnar nerve symptoms"
+        },
+        {
+          "label": "D",
+          "text": "Monteggia fracture",
+          "is_correct": false,
+          "explanation": "Monteggia = ulnar fracture + radial head dislocation เห็นใน X-ray forearm"
+        },
+        {
+          "label": "E",
+          "text": "Nursemaid's elbow",
+          "is_correct": false,
+          "explanation": "Nursemaid's elbow เกิดจาก pulling arm ในเด็ก <5 ปี ไม่ใช่ตกจากที่สูง"
+        }
+      ],
+      "key_takeaway": "เด็ก 5-10 ปี ล้ม + งอศอกไม่ได้ = Supracondylar fracture (most common elbow fracture ในเด็ก)"
+    }
+  },
+  {
+    "id": "818294de-63f8-469f-ad35-8d69214f8a3d",
+    "correct_answer": "A",
+    "explanation": "Open fracture ที่มี laceration 10 cm จาก motorcycle accident = Grade IIIA open fracture รักษาด้วย casting หลัง wound debridement",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Casting) เพราะหลัง debridement ของ open fracture บาง type อาจใช้ casting ได้ตาม exam",
+      "reason": "Open fractures แบ่งตาม Gustilo-Anderson classification: Grade I: wound <1cm, minimal contamination Grade II: wound 1-10cm, moderate contamination Grade IIIA: wound >10cm, adequate soft tissue coverage Grade IIIB: periosteal stripping, needs flap Grade IIIC: vascular injury ในกรณีนี้ 10cm wound + motorcycle = Grade IIIA ตาม exam คำตอบคือ casting (ซึ่งอาจหมายถึงหลัง debridement + antibiotics แล้ว immobilize ด้วย cast)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Casting",
+          "is_correct": true,
+          "explanation": "ตาม exam; หลัง wound debridement ของ open fracture อาจ immobilize ด้วย cast"
+        },
+        {
+          "label": "B",
+          "text": "External fixation",
+          "is_correct": false,
+          "explanation": "External fixation ใช้ใน Grade III open fracture ที่มี severe soft tissue injury"
+        },
+        {
+          "label": "C",
+          "text": "Internal fixation",
+          "is_correct": false,
+          "explanation": "ORIF มีความเสี่ยง infection ใน contaminated open fracture"
+        },
+        {
+          "label": "D",
+          "text": "Suture wound",
+          "is_correct": false,
+          "explanation": "Open fracture ห้าม primary closure เพราะเสี่ยง anaerobic infection"
+        },
+        {
+          "label": "E",
+          "text": "Skeletal traction",
+          "is_correct": false,
+          "explanation": "Skeletal traction ไม่ใช่ primary treatment สำหรับกรณีนี้"
+        }
+      ],
+      "key_takeaway": "Open fracture management: Debridement + antibiotics + tetanus + fracture stabilization"
+    }
+  },
+  {
+    "id": "8386ce80-2116-40d3-8f75-e68b7df11b28",
+    "correct_answer": "B",
+    "explanation": "PIP joint flexion + DIP joint extension คือ Boutonniere deformity เกิดจาก central slip rupture",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Boutonniere deformity) เพราะ PIP flexion + DIP extension เป็น pathognomonic ของ boutonniere",
+      "reason": "Boutonniere deformity: Central slip ของ extensor tendon ที่ PIP joint ฉีกขาด ทำให้ lateral bands เลื่อนไปด้านหน้า ผลลัพธ์: PIP flexion + DIP hyperextension รูปร่างคล้ายปุ่มดอกไม้ที่ถูกกดผ่าน (boutonniere = buttonhole ในภาษาฝรั่งเศส) Swan neck deformity ตรงข้าม = PIP hyperextension + DIP flexion เกิดจาก intrinsic tightness หรือ volar plate injury",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Swan neck deformity",
+          "is_correct": false,
+          "explanation": "Swan neck = PIP hyperextension + DIP flexion (ตรงข้ามกับ boutonniere)"
+        },
+        {
+          "label": "B",
+          "text": "Boutonniere deformity",
+          "is_correct": true,
+          "explanation": "PIP flexion + DIP extension = boutonniere (central slip rupture ทำให้ lateral bands เลื่อน)"
+        },
+        {
+          "label": "C",
+          "text": "Carpal tunnel syndrome",
+          "is_correct": false,
+          "explanation": "CTS มีชาไม่ใช่ deformity"
+        },
+        {
+          "label": "D",
+          "text": "Radial tunnel syndrome",
+          "is_correct": false,
+          "explanation": "Radial tunnel syndrome มีปวด lateral forearm ไม่ใช่ finger deformity"
+        },
+        {
+          "label": "E",
+          "text": "Cubital tunnel syndrome",
+          "is_correct": false,
+          "explanation": "Cubital tunnel (ulnar nerve) มีชานิ้วก้อย ไม่ใช่ finger deformity แบบนี้"
+        }
+      ],
+      "key_takeaway": "PIP flexion + DIP extension = Boutonniere deformity (central slip rupture); Swan neck = ตรงข้าม"
+    }
+  },
+  {
+    "id": "85ff4f10-e351-497d-9d86-1426e6d0e6f4",
+    "correct_answer": "A",
+    "explanation": "ปวดไหล่ขวาเวลายกมือหวีผม + จุดกดเจ็บ บ่งชี้ Supraspinatus tendinitis",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Supraspinatus tendinitis) เพราะ painful arc เวลายกแขนหวีผม (abduction + IR) = supraspinatus impingement",
+      "reason": "Supraspinatus tendinitis/impingement: ปวดเวลา abduction โดยเฉพาะ painful arc 60-120°, ปวดเพิ่มเมื่อยกมือทำงาน overhead เช่น หวีผม จุดกดเจ็บที่ greater tuberosity และ subacromial region Neer's test: passive arm elevation = pain Hawkins test: IR in flexion = pain Bicipital tendinitis จะมี tenderness ที่ anterior shoulder ที่ bicipital groove",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Supraspinatus tendinitis",
+          "is_correct": true,
+          "explanation": "ปวดยกมือหวีผม (abduction) + tenderness = supraspinatus impingement คลาสสิก"
+        },
+        {
+          "label": "B",
+          "text": "Bicipital tendinitis",
+          "is_correct": false,
+          "explanation": "Bicipital tendinitis ปวด anterior shoulder บริเวณ bicipital groove"
+        },
+        {
+          "label": "C",
+          "text": "Infraspinatus tendinitis",
+          "is_correct": false,
+          "explanation": "Infraspinatus ปวดเวลา external rotation ไม่ใช่ abduction"
+        },
+        {
+          "label": "D",
+          "text": "Subscapularis tendinitis",
+          "is_correct": false,
+          "explanation": "Subscapularis ปวดเวลา internal rotation against resistance"
+        },
+        {
+          "label": "E",
+          "text": "Subacromial bursitis",
+          "is_correct": false,
+          "explanation": "Subacromial bursitis อาจเป็น concomitant diagnosis แต่ primary คือ supraspinatus tendinitis"
+        }
+      ],
+      "key_takeaway": "ปวดไหล่ยกแขน หวีผม painful arc = Supraspinatus tendinitis (impingement syndrome)"
+    }
+  },
+  {
+    "id": "890e29b7-fe53-4159-bebb-af1889f5ddb9",
+    "correct_answer": "E",
+    "explanation": "ชาย 45 ปี ปวดสะโพกด้านข้าง ตรวจด้วย resisted hip abduction + palpation ของ greater trochanter เพื่อ diagnose greater trochanteric bursitis",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ E (Resisted hip abduction + palpation of greater trochanter) เพราะ lateral hip pain ในผู้ชาย = greater trochanteric bursitis/tendinopathy",
+      "reason": "Greater trochanteric pain syndrome (GTPS) หรือ trochanteric bursitis: ปวดด้านข้างของสะโพก tender ที่ greater trochanter การตรวจที่ specific: 1) Palpation of greater trochanter (direct tenderness) 2) Resisted hip abduction (pain = gluteus medius/minimus tendinopathy) Trendelenburg sign ตรวจ gluteus medius weakness FABER test ตรวจ hip pathology หรือ SI joint Thomas test ตรวจ hip flexor contracture",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Noble compression test",
+          "is_correct": false,
+          "explanation": "Noble test ใช้ตรวจ IT band syndrome ที่เข่า ไม่ใช่ hip"
+        },
+        {
+          "label": "B",
+          "text": "Trendelenburg sign",
+          "is_correct": false,
+          "explanation": "Trendelenburg ตรวจ gluteus medius weakness/hip abductor strength"
+        },
+        {
+          "label": "C",
+          "text": "Thomas test",
+          "is_correct": false,
+          "explanation": "Thomas test ตรวจ hip flexor contracture (iliopsoas)"
+        },
+        {
+          "label": "D",
+          "text": "FABER test",
+          "is_correct": false,
+          "explanation": "FABER ตรวจ hip pathology, SI joint, อาจ positive ใน GTPS แต่ไม่ specific"
+        },
+        {
+          "label": "E",
+          "text": "Resisted hip abduction + palpation of greater trochanter",
+          "is_correct": true,
+          "explanation": "Lateral hip pain = GTPS; palpation + resisted abduction เป็น specific tests"
+        }
+      ],
+      "key_takeaway": "ปวดด้านข้างสะโพก = Greater trochanteric bursitis → ตรวจ palpation greater trochanter + resisted hip abduction"
+    }
+  },
+  {
+    "id": "89b7b153-3114-4dd1-ae9a-17cba9daec7c",
+    "correct_answer": "A",
+    "explanation": "LBP radiating to foot พร้อม neurological deficit ต้องทำ MRI lumbosacral spine เพื่อ diagnose disc herniation/stenosis",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (MRI lumbosacral spine) เพราะ radicular symptoms พร้อม neurological deficit เป็น indication สำหรับ MRI",
+      "reason": "MRI indications ในผู้ป่วย LBP: 1) Neurological deficit (weakness, numbness) 2) Radiculopathy ที่ไม่ตอบสนอง conservative >4-6 สัปดาห์ 3) Red flags (cancer, infection, cauda equina) MRI ดีกว่า CT ในการดู soft tissue structures (disc, nerve, cord) EMG/NCS ใช้เมื่อต้องการยืนยัน nerve conduction ไม่ใช่ first-line X-ray ไม่แสดง disc หรือ nerve",
+      "choices": [
+        {
+          "label": "A",
+          "text": "MRI lumbosacral spine",
+          "is_correct": true,
+          "explanation": "Radiculopathy + neurological deficit = indication สำหรับ MRI เพื่อดู disc/nerve"
+        },
+        {
+          "label": "B",
+          "text": "X-ray lumbosacral spine",
+          "is_correct": false,
+          "explanation": "X-ray ไม่แสดง disc herniation หรือ nerve compression"
+        },
+        {
+          "label": "C",
+          "text": "Back exercise",
+          "is_correct": false,
+          "explanation": "Exercise ดี แต่ต้องวินิจฉัยก่อนเพื่อ rule out serious pathology"
+        },
+        {
+          "label": "D",
+          "text": "CT lumbosacral spine",
+          "is_correct": false,
+          "explanation": "CT ดี bony detail แต่ MRI ดีกว่าสำหรับ soft tissue"
+        },
+        {
+          "label": "E",
+          "text": "EMG/NCS",
+          "is_correct": false,
+          "explanation": "EMG/NCS ใช้ยืนยัน nerve conduction ไม่ใช่ first-line imaging"
+        }
+      ],
+      "key_takeaway": "LBP + radiculopathy + neurological deficit = MRI lumbosacral spine (gold standard)"
+    }
+  },
+  {
+    "id": "8a1946a2-1fd4-4992-9628-30b7a925e325",
+    "correct_answer": "B",
+    "explanation": "ชาย 45 ปี เข่าบวมเจ็บปวด ควรรักษาด้วย Ibuprofen (NSAID) เป็น first-line สำหรับ inflammatory knee pain",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Ibuprofen 400mg TID) เพราะ NSAID เป็น first-line สำหรับ inflammatory joint pain/arthritis",
+      "reason": "สำหรับ knee pain ที่มี inflammatory component (swelling, warmth): NSAID เป็น first-line มีทั้ง analgesic และ anti-inflammatory effect Acetaminophen เป็น analgesic อย่างเดียว ไม่มี anti-inflammatory Corticosteroid oral ใช้ในระยะสั้นสำหรับ acute flare เท่านั้น ไม่ใช่ routine first-line Aspirin dose สูงมีผลข้างเคียง GI สูง Indomethacin มีผลข้างเคียงมากกว่า ibuprofen",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Acetaminophen 500 mg",
+          "is_correct": false,
+          "explanation": "Paracetamol เป็น analgesic เท่านั้น ไม่มี anti-inflammatory effect"
+        },
+        {
+          "label": "B",
+          "text": "Ibuprofen 400 mg TID",
+          "is_correct": true,
+          "explanation": "NSAID (ibuprofen) เป็น first-line สำหรับ inflammatory knee pain ทั้ง analgesic + anti-inflammatory"
+        },
+        {
+          "label": "C",
+          "text": "Indomethacin 25 mg BID",
+          "is_correct": false,
+          "explanation": "Indomethacin เป็น NSAID แต่มีผลข้างเคียง GI สูงกว่า ibuprofen ไม่ใช่ first choice"
+        },
+        {
+          "label": "D",
+          "text": "Prednisone 20 mg daily",
+          "is_correct": false,
+          "explanation": "Oral steroid ไม่ใช่ first-line สำหรับ knee arthritis routine"
+        },
+        {
+          "label": "E",
+          "text": "Aspirin 300 mg QID",
+          "is_correct": false,
+          "explanation": "Aspirin dose นี้ต่ำเกินไปสำหรับ anti-inflammatory; ใช้ antiplatelet ไม่ใช่ anti-inflammatory"
+        }
+      ],
+      "key_takeaway": "Inflammatory knee pain → First-line: NSAIDs (ibuprofen) = analgesic + anti-inflammatory"
+    }
+  },
+  {
+    "id": "8f41658b-faa2-45bc-85da-7b4fec17fbce",
+    "correct_answer": "B",
+    "explanation": "เด็กชาย 6 ปี แขนหัก ตกจากที่สูง ตรวจพบ triangular shape = Lateral condylar fracture",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Lateral condylar fracture) เพราะ triangular fragment ที่ lateral elbow ในเด็กเป็น pathognomonic ของ lateral condyle fracture",
+      "reason": "Lateral condyle fracture ของ humerus ในเด็ก: พบบ่อยรองจาก supracondylar fracture (17%) X-ray แสดง triangular bone fragment ที่ lateral side Milch classification: Type I (SH type IV, through capitellum ossification) vs Type II (SH type II) Complication หากไม่รักษา: non-union, cubitus valgus, late ulnar nerve palsy Displaced >2mm ต้อง ORIF",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Supracondylar fracture",
+          "is_correct": false,
+          "explanation": "Supracondylar fracture มี fat pad sign แต่ไม่มี triangular fragment"
+        },
+        {
+          "label": "B",
+          "text": "Lateral condylar fracture",
+          "is_correct": true,
+          "explanation": "Triangular fragment ที่ lateral elbow = lateral condyle fracture คลาสสิก"
+        },
+        {
+          "label": "C",
+          "text": "Medial epicondylar fracture",
+          "is_correct": false,
+          "explanation": "Medial epicondyle fracture มี fragment ที่ medial side"
+        },
+        {
+          "label": "D",
+          "text": "Olecranon fracture",
+          "is_correct": false,
+          "explanation": "Olecranon fracture เห็นได้ชัดที่ posterior elbow"
+        },
+        {
+          "label": "E",
+          "text": "Monteggia fracture",
+          "is_correct": false,
+          "explanation": "Monteggia = ulna fracture + radial head dislocation"
+        }
+      ],
+      "key_takeaway": "Triangular fragment ที่ lateral elbow ในเด็ก = Lateral condyle fracture (displaced >2mm → ORIF)"
+    }
+  },
+  {
+    "id": "90034a13-4ea0-468f-89ff-d3c6cb2284cb",
+    "correct_answer": "A",
+    "explanation": "ผู้หญิง 70 ปี ปวดข้อเข่าและหลัง morning stiffness สั้น ปวดมากเวลา activity = Osteoarthritis",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Osteoarthritis) เพราะ OA ปวดมาก activity worse, morning stiffness <30 นาที ในผู้สูงอายุ",
+      "reason": "Osteoarthritis characteristics: อายุ >50 ปี, ปวดมาก activity worse, rest better, morning stiffness <30 นาที, crepitus, bony enlargement (Heberden's/Bouchard's nodes), X-ray: joint space narrowing, osteophytes, subchondral sclerosis RA morning stiffness >1 ชั่วโมง, symmetric polyarthritis, systemic symptoms Ankylosing spondylitis ปวดหลังในคนอายุน้อย worse กับ inactivity Osteoporosis ปวดเมื่อกระดูกหัก ไม่ใช่ joint pain",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Osteoarthritis",
+          "is_correct": true,
+          "explanation": "70 ปี + ปวดข้อ worse activity + morning stiffness สั้น = OA คลาสสิก"
+        },
+        {
+          "label": "B",
+          "text": "Psoriasis arthritis",
+          "is_correct": false,
+          "explanation": "PsA มี skin psoriasis ร่วม และ dactylitis, nail changes"
+        },
+        {
+          "label": "C",
+          "text": "Rheumatoid arthritis",
+          "is_correct": false,
+          "explanation": "RA: morning stiffness >1 ชั่วโมง, symmetric polyarthritis, systemic features"
+        },
+        {
+          "label": "D",
+          "text": "Ankylosing spondylitis",
+          "is_correct": false,
+          "explanation": "AS: ปวดหลังในคนหนุ่ม worse กับ inactivity/morning, better กับ exercise"
+        },
+        {
+          "label": "E",
+          "text": "Osteoporosis",
+          "is_correct": false,
+          "explanation": "Osteoporosis ปวดเมื่อกระดูกหักหรือ vertebral collapse ไม่ใช่ chronic joint pain"
+        }
+      ],
+      "key_takeaway": "OA: ผู้สูงอายุ + ปวดข้อ worse activity + morning stiffness <30 นาที + crepitus"
+    }
+  },
+  {
+    "id": "9242d760-597e-410e-8000-493c91ed98f4",
+    "correct_answer": "A",
+    "explanation": "Most common cause of low back pain คือ Spondylosis (degenerative disc disease/facet arthropathy)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Spondylosis) เพราะ degenerative spondylosis เป็นสาเหตุที่พบบ่อยที่สุดของ chronic low back pain",
+      "reason": "Low back pain etiology: ที่พบบ่อยสุด = Degenerative/mechanical (spondylosis, muscle strain) >85% Spondylosis = degenerative changes ของ disc, facet joints, vertebral bodies Spondylolysis = fracture ของ pars interarticularis (พบในนักกีฬา gymnastics) Loss of lumbar lordosis = secondary to muscle spasm, not primary cause Spinal instability และ weak back muscle เป็น contributing factors ไม่ใช่ most common primary cause",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Spondylosis",
+          "is_correct": true,
+          "explanation": "Degenerative spondylosis = most common cause of chronic LBP (disc + facet degeneration)"
+        },
+        {
+          "label": "B",
+          "text": "Spondylolysis",
+          "is_correct": false,
+          "explanation": "Spondylolysis (pars fracture) พบในนักกีฬา gymnastics/football ไม่ใช่ most common"
+        },
+        {
+          "label": "C",
+          "text": "Loss of lumbar lordosis",
+          "is_correct": false,
+          "explanation": "Loss of lordosis เป็น secondary finding ไม่ใช่ primary cause"
+        },
+        {
+          "label": "D",
+          "text": "Spinal instability",
+          "is_correct": false,
+          "explanation": "Spinal instability อาจเกิดจาก spondylolysis/spondylolisthesis ไม่ใช่ most common"
+        },
+        {
+          "label": "E",
+          "text": "Weak back muscle",
+          "is_correct": false,
+          "explanation": "Weak muscles เป็น contributing factor ไม่ใช่ primary pathological cause"
+        }
+      ],
+      "key_takeaway": "Most common cause of LBP = Spondylosis (degenerative disc disease + facet arthropathy)"
+    }
+  },
+  {
+    "id": "942a3575-71af-43b8-8aec-65219cf30be3",
+    "correct_answer": "A",
+    "explanation": "ครูพละมีท้องเสียหลังงานเลี้ยงพร้อมนักเรียน บ่งชี้ food poisoning จาก Salmonella ซึ่งต่อมาอาจเกิด reactive arthritis",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Salmonellosis) เพราะ food poisoning outbreak หลังงานเลี้ยง + joint symptoms 3 สัปดาห์ต่อมา = Salmonella ทำให้ reactive arthritis",
+      "reason": "Reactive arthritis (Reiter syndrome) เกิดหลัง GI infection (Salmonella, Shigella, Campylobacter, Yersinia) หรือ urogenital infection (Chlamydia) ประมาณ 1-4 สัปดาห์ ในกรณีนี้ outbreak หลังงานเลี้ยง = Salmonella food poisoning ที่พบบ่อย การวินิจฉัยของ GI cause = Salmonellosis ซึ่ง triggered reactive arthritis ต่อมา",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Salmonellosis",
+          "is_correct": true,
+          "explanation": "Food poisoning outbreak หลังงานเลี้ยง = Salmonella; เป็น trigger ของ reactive arthritis"
+        },
+        {
+          "label": "B",
+          "text": "Septic arthritis",
+          "is_correct": false,
+          "explanation": "Septic arthritis เป็น direct bacterial infection ของ joint ไม่ใช่ reactive"
+        },
+        {
+          "label": "C",
+          "text": "Crystal induced arthritis",
+          "is_correct": false,
+          "explanation": "Crystal arthritis (gout/pseudogout) ไม่เกี่ยวกับ GI infection"
+        },
+        {
+          "label": "D",
+          "text": "Reactive arthritis",
+          "is_correct": false,
+          "explanation": "Reactive arthritis เป็น consequence ของ Salmonella ไม่ใช่ initial cause"
+        },
+        {
+          "label": "E",
+          "text": "Rheumatoid arthritis",
+          "is_correct": false,
+          "explanation": "RA ไม่มี relationship กับ food poisoning outbreak"
+        }
+      ],
+      "key_takeaway": "Food poisoning outbreak + joint pain 1-4 สัปดาห์ต่อมา = Salmonella (trigger ของ reactive arthritis)"
+    }
+  },
+  {
+    "id": "9561c366-b6e3-4d26-900e-09059677a08f",
+    "correct_answer": "A",
+    "explanation": "ชาย 22 ปี อุบัติเหตุ ปวดข้อสะโพก ตรวจพบ flexion, abduction, external rotation บ่งชี้ Pelvic fracture ตาม exam",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Fracture pelvis) ตาม exam answer; อุบัติเหตุรุนแรง + hip pain + abnormal position",
+      "reason": "ในอุบัติเหตุรุนแรง (MVC) ที่มี hip pain การตรวจพบ hip in flexion + abduction + ER อาจสะท้อน anterior hip dislocation หรือ pelvic fracture ตาม exam คำตอบคือ pelvic fracture ซึ่งพบได้บ่อยใน high energy trauma Posterior hip dislocation จะอยู่ใน flexion + adduction + IR ส่วน anterior hip dislocation อยู่ใน flexion + abduction + ER",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Fracture pelvis",
+          "is_correct": true,
+          "explanation": "ตาม exam; high energy trauma + hip pain = pelvic fracture ต้องพิจารณา"
+        },
+        {
+          "label": "B",
+          "text": "Fracture acetabulum",
+          "is_correct": false,
+          "explanation": "Acetabular fracture อาจมี hip pain แต่ exam ตอบ pelvic fracture"
+        },
+        {
+          "label": "C",
+          "text": "Fracture neck of femur",
+          "is_correct": false,
+          "explanation": "FNF มักพบในผู้สูงอายุ ไม่ใช่ชาย 22 ปี trauma"
+        },
+        {
+          "label": "D",
+          "text": "Intertrochanteric fracture",
+          "is_correct": false,
+          "explanation": "IT fracture พบในผู้สูงอายุ"
+        },
+        {
+          "label": "E",
+          "text": "Posterior hip dislocation",
+          "is_correct": false,
+          "explanation": "Posterior dislocation = flexion + adduction + IR ไม่ใช่ ER"
+        }
+      ],
+      "key_takeaway": "Posterior hip dislocation = flexion+adduction+IR; Anterior hip dislocation = flexion+abduction+ER"
+    }
+  },
+  {
+    "id": "9f70225a-91d6-44f0-aa0b-9a3cd9939832",
+    "correct_answer": "A",
+    "explanation": "ชาย 45 ปี ชานิ้วโป้งและชี้มือขวา มากตอนกลางคืน สะบัดแล้วดีขึ้น = CTS รักษา conservative ก่อน",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Conservative: wrist splint + NSAIDs + finger exercises) เพราะ CTS mild-moderate ต้องรักษา conservative ก่อนผ่าตัด",
+      "reason": "Carpal tunnel syndrome: ชานิ้ว 1-3.5 มากตอนกลางคืน สะบัดมือแล้วดีขึ้น (Flick sign) = classic CTS Conservative treatment: 1) Wrist night splint 2) NSAIDs 3) Activity modification ± finger exercises ก่อนทำ steroid injection หรือ surgery NCS/EMG ใช้ confirm diagnosis และประเมิน severity ไม่ใช่ทำก่อนทุกอย่าง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Conservative: wrist splint + NSAIDs + finger exercises",
+          "is_correct": true,
+          "explanation": "CTS mild-moderate → conservative first: splint + NSAIDs ± exercises"
+        },
+        {
+          "label": "B",
+          "text": "ฉีดสเตียรอยด์รอบเส้นประสาท",
+          "is_correct": false,
+          "explanation": "Steroid injection เป็น second-line หลัง conservative ล้มเหลว"
+        },
+        {
+          "label": "C",
+          "text": "ผ่าตัด carpal tunnel release ทันที",
+          "is_correct": false,
+          "explanation": "Surgery เป็น last resort หรือสำหรับ severe motor deficit/thenar atrophy"
+        },
+        {
+          "label": "D",
+          "text": "ไฟฟ้าหูก (TENS) เท่านั้น",
+          "is_correct": false,
+          "explanation": "TENS ไม่ใช่ standard first-line treatment ของ CTS"
+        },
+        {
+          "label": "E",
+          "text": "แม่เหล็กและวิตามิน",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ evidence-based treatment"
+        }
+      ],
+      "key_takeaway": "CTS: ชานิ้ว 1-3 มากกลางคืน สะบัดดีขึ้น → First-line: Wrist splint + NSAIDs"
+    }
+  },
+  {
+    "id": "a1238ed7-5e3d-4d15-8c66-7d27d2dedf61",
+    "correct_answer": "C",
+    "explanation": "ผู้ป่วยทำ cervical traction แล้วอาการ worse (อ่อนแรงมากขึ้น) ต้องทำ MRI ก่อนเพิ่มน้ำหนักหรือดำเนินการต่อ",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C (ทำ MRI) เพราะ cervical traction ที่ทำให้อาการ worse หรือ neurological deficit เพิ่ม ต้องหยุดและทำ MRI เพื่อ rule out contraindications",
+      "reason": "Contraindications ของ cervical traction: 1) Cervical instability 2) Myelopathy 3) Vertebral artery insufficiency 4) RA ที่ C-spine 5) Tumor/infection หาก traction ทำให้ symptoms worse หรือมี neurological deterioration ต้องหยุดทันทีและทำ MRI เพื่อ rule out: disc herniation ขนาดใหญ่, instability, myelopathy ที่อาจ worsen ด้วย traction",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ให้ยาลดปวด",
+          "is_correct": false,
+          "explanation": "ยาลดปวดไม่แก้ปัญหาพื้นฐาน และ mask symptoms ที่ต้อง evaluate"
+        },
+        {
+          "label": "B",
+          "text": "เพิ่มน้ำหนัก traction",
+          "is_correct": false,
+          "explanation": "ห้ามเพิ่มน้ำหนักเมื่ออาการ worse อาจทำให้ cord injury รุนแรงขึ้น"
+        },
+        {
+          "label": "C",
+          "text": "ทำ MRI",
+          "is_correct": true,
+          "explanation": "Traction ทำให้ worse → หยุด + ทำ MRI เพื่อ rule out contraindications (instability/myelopathy)"
+        },
+        {
+          "label": "D",
+          "text": "ลดระยะเวลา traction",
+          "is_correct": false,
+          "explanation": "ลดเวลาไม่พอ ต้องหยุดและ investigate ก่อน"
+        },
+        {
+          "label": "E",
+          "text": "หยุด traction + ปรึกษา neurosurgeon",
+          "is_correct": false,
+          "explanation": "ควรทำ MRI ก่อน จากนั้นค่อยปรึกษา neurosurgeon ตาม exam คำตอบคือ MRI"
+        }
+      ],
+      "key_takeaway": "Cervical traction ทำให้ neurological symptoms worse → หยุดทันทีและทำ MRI"
+    }
+  },
+  {
+    "id": "a1c8e8b8-80ef-462f-9c2a-aa19ae7c263a",
+    "correct_answer": "C",
+    "explanation": "ชาย 45 ปี displaced olecranon fracture รักษาด้วย ORIF (tension band wiring หรือ plate + screws)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C (ORIF ด้วย plate/screws/tension band wiring) เพราะ displaced olecranon fracture ต้องผ่าตัดเพื่อ restore elbow extension mechanism",
+      "reason": "Displaced olecranon fracture: triceps ดึง proximal fragment ขึ้น ทำให้ fracture gap เพิ่ม Conservative treatment ล้มเหลวเพราะ muscle pull Indication สำหรับ ORIF: displacement >2mm, intra-articular fracture Techniques: 1) Tension band wiring (small fragments) 2) Plate and screws (comminuted/displaced) 3) Fragment excision + triceps advancement (elderly, small fragment) Conservative เหมาะเฉพาะ non-displaced fractures",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Conservative treatment",
+          "is_correct": false,
+          "explanation": "Conservative ใช้เฉพาะ non-displaced olecranon fracture เท่านั้น"
+        },
+        {
+          "label": "B",
+          "text": "Closed reduction + cast",
+          "is_correct": false,
+          "explanation": "Closed reduction ไม่ได้ผลเพราะ triceps ดึง fragment ออกตลอดเวลา"
+        },
+        {
+          "label": "C",
+          "text": "ORIF ด้วย plate/screws/tension band wiring",
+          "is_correct": true,
+          "explanation": "Displaced olecranon fracture → ORIF เพื่อ restore triceps mechanism และ elbow extension"
+        },
+        {
+          "label": "D",
+          "text": "Excision ของ fragment",
+          "is_correct": false,
+          "explanation": "Excision ใช้เฉพาะในผู้สูงอายุที่มี small fragment หรือ comminuted fracture"
+        },
+        {
+          "label": "E",
+          "text": "Skeletal traction",
+          "is_correct": false,
+          "explanation": "Skeletal traction ไม่ใช่ standard treatment สำหรับ olecranon fracture"
+        }
+      ],
+      "key_takeaway": "Displaced olecranon fracture → ORIF (tension band wiring/plate) เพราะ triceps ดึง fragment ตลอดเวลา"
+    }
+  },
+  {
+    "id": "a2b88ce9-4c42-4e70-a6e6-d77bfd17c6cc",
+    "correct_answer": "B",
+    "explanation": "ผู้ป่วยตกจากที่สูง มี burst fracture ของกระดูกสันหลัง PLC intact = ยังคง stable มากกว่า flexion-distraction injury",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Burst fracture: fracture ทั้งกระดูก, PLC intact) เพราะ burst fracture มีลักษณะ vertebral body comminution แต่ posterior ligamentous complex ยังคงอยู่",
+      "reason": "Thoracolumbar fractures (AO/TLICS classification): Compression fracture: anterior column only Burst fracture: anterior + posterior vertebral body, PLC intact; retropulsion เข้า canal Flexion-distraction (Chance fracture): posterior injury + possible fracture Fracture-dislocation: all columns disrupted, highly unstable Burst fracture: มี posterior cortex fracture + retropulsion of bone into canal แต่ PLC (posterior ligamentous complex: supraspinous, interspinous, PLL) intact",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Compression fracture: anterior column only",
+          "is_correct": false,
+          "explanation": "Compression fracture มี anterior column injury เท่านั้น posterior intact"
+        },
+        {
+          "label": "B",
+          "text": "Burst fracture: ทั้งกระดูก, PLC intact",
+          "is_correct": true,
+          "explanation": "Burst fracture = anterior + posterior vertebral body fracture แต่ PLC intact"
+        },
+        {
+          "label": "C",
+          "text": "Flexion-distraction: posterior ligament injury",
+          "is_correct": false,
+          "explanation": "Flexion-distraction (Chance) มี posterior column disruption (PLC torn)"
+        },
+        {
+          "label": "D",
+          "text": "Hyperextension: anterior ligament injury",
+          "is_correct": false,
+          "explanation": "Hyperextension ทำให้ anterior ligament injury (ALL, disc)"
+        },
+        {
+          "label": "E",
+          "text": "Fracture-dislocation: severe PLC injury",
+          "is_correct": false,
+          "explanation": "Fracture-dislocation มี all column disruption รุนแรงที่สุด"
+        }
+      ],
+      "key_takeaway": "Burst fracture = anterior + posterior vertebral body fracture, PLC intact, ± retropulsion ใน canal"
+    }
+  },
+  {
+    "id": "a3a78d06-182a-430e-b5f9-d4b223cc164e",
+    "correct_answer": "D",
+    "explanation": "Decreased temperature ของ distal part ไม่ใช่ clinical sign ของ acute compartment syndrome เพราะ ACS ไม่ได้ปิดกั้น arterial flow ในระยะแรก",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D (Decreased temperature) เพราะ ACS เกิดจาก increased tissue pressure ที่ไม่ได้ปิดกั้น arterial pulse ในระยะแรก",
+      "reason": "Acute compartment syndrome - 6 P's: Pain (on passive stretch = most sensitive early sign), Paresthesia, Paralysis, Pallor, Pulselessness (late sign), Pressure (tight compartment) Decreased skin temperature เกิดจาก arterial occlusion ซึ่งเป็น vascular emergency ไม่ใช่ compartment syndrome ใน ACS ระยะแรก pulse และ temperature ยังปกติ เพราะ pressure ยัง<arterial pressure",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Paresthesia of distal part",
+          "is_correct": false,
+          "explanation": "Paresthesia เป็น early sign ของ ACS จาก nerve ischemia"
+        },
+        {
+          "label": "B",
+          "text": "Absence of distal pulse",
+          "is_correct": false,
+          "explanation": "Pulselessness เป็น late sign ของ ACS (เกิดเมื่อ pressure > arterial pressure)"
+        },
+        {
+          "label": "C",
+          "text": "Swelling of fractured limb",
+          "is_correct": false,
+          "explanation": "Swelling เป็น feature ของ ACS เพราะ compartment content เพิ่มขึ้น"
+        },
+        {
+          "label": "D",
+          "text": "Decreased temperature",
+          "is_correct": true,
+          "explanation": "Decreased temperature = arterial occlusion (vascular injury) ไม่ใช่ sign เฉพาะของ ACS"
+        },
+        {
+          "label": "E",
+          "text": "Pain on passive motion",
+          "is_correct": false,
+          "explanation": "Pain on passive stretch เป็น most sensitive early sign ของ ACS"
+        }
+      ],
+      "key_takeaway": "ACS 6P's: Pain on passive stretch, Paresthesia, Paralysis, Pallor, Pulselessness, Pressure; Decreased temperature = vascular injury ไม่ใช่ ACS specific"
+    }
+  }
+]

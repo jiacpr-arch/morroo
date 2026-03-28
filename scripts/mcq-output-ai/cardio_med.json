@@ -1,0 +1,312 @@
+[
+  {
+    "scenario": "60 ปี U/D DM HT มาด้วย TIA พบ idiopathic atrial fibrillation ควรทำอย่างไรเพื่อป้องกัน stroke",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Warfarin"
+      },
+      {
+        "label": "B",
+        "text": "Aspirin"
+      },
+      {
+        "label": "C",
+        "text": "Clopidogrel"
+      },
+      {
+        "label": "D",
+        "text": "Dabigatran"
+      },
+      {
+        "label": "E",
+        "text": "ไม่ต้องให้ยาต้านการไหลของเลือด"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว 2015",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วย AF ที่มี TIA (prior stroke) ต้องได้รับ anticoagulation (Warfarin หรือ DOAC) เพื่อป้องกัน stroke ซ้ำ เนื่องจาก CHA2DS2-VASc score สูง เลือกตัวเลือก D (DOAC) เพื่อให้เป็นทางเลือกสมัยใหม่",
+    "subject": "cardio_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "50 ปี ชายมาด้วย chest discomfort เฉียบพลัน 3 วัน บิดาเสียชีวิตจาก MI ตอนอายุ 45 ปี PE: normal S1 S2, S3 gallop EKG: ST depression ที่ lead II, III, aVF Troponin T 0.12 ng/mL การวินิจฉัยที่ถูกต้องคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute unstable angina"
+      },
+      {
+        "label": "B",
+        "text": "Non ST elevation myocardial infarction (NSTEMI)"
+      },
+      {
+        "label": "C",
+        "text": "Acute myocarditis"
+      },
+      {
+        "label": "D",
+        "text": "Recent transmural infarction"
+      },
+      {
+        "label": "E",
+        "text": "Prinzmetal angina"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว (ไม่ระบุปี)",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี ST depression ที่ inferior leads, S3 gallop (heart failure) และ elevated troponin T → NSTEMI ได้หรือ unstable angina แต่ troponin T ยกขึ้น → NSTEMI เป็นคำตอบที่ถูกต้องที่สุด",
+    "subject": "cardio_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ชายมีอาการเจ็บหน้าอก เหนื่อยเวลาขึ้นบันไดประมาณ 3 ชั้นทุกครั้ง มาโรงพยาบาลทำ EKG normal การตรวจเพิ่มเติมที่เหมาะสมต่อไปคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Treadmill exercise testing (EKG stress test)"
+      },
+      {
+        "label": "B",
+        "text": "Coronary CT angiography"
+      },
+      {
+        "label": "C",
+        "text": "Transthoracic echocardiography"
+      },
+      {
+        "label": "D",
+        "text": "24-hour Holter monitoring"
+      },
+      {
+        "label": "E",
+        "text": "Chest X-ray"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว (ไม่ระบุปี)",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี stable exertional chest pain (CCS class II) และ normal baseline EKG → Treadmill stress test เป็นขั้นตอนแรกในการประเมินผู้ป่วยเพื่อตรวจสอบ inducible ischemia",
+    "subject": "cardio_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "60 ปี ชายมาด้วย chest pain substernal 60 นาที BP 80/50 mmHg EKG: ST elevation ที่ lead II, III, aVF การจัดการที่เหมาะสมคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Dobutamine IV"
+      },
+      {
+        "label": "B",
+        "text": "IV fluid"
+      },
+      {
+        "label": "C",
+        "text": "Nitrate sublingual"
+      },
+      {
+        "label": "D",
+        "text": "Primary PCI"
+      },
+      {
+        "label": "E",
+        "text": "Thrombolytic therapy"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว (ไม่ระบุปี)",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วย ST elevation MI (inferior wall) ที่มา 60 นาที พบ hypotension (BP 80/50) ซึ่งอาจเป็น cardiogenic shock → Primary PCI เป็นการจัดการที่เหมาะสม ไม่ควรให้ Nitrate เพราะ hypotensive แล้ว",
+    "subject": "cardio_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "70 ปี ผู้ป่วยมาด้วย dyspnea progressive 2 เดือน PE: regular HR 80/min, carotid pulse เล็กและ delayed upstroke, S2 ลดลง, paradoxical split S2, cardiac auscultation พบ SEM grade 3/5 ที่ aortic valve area การรักษาที่เหมาะสมที่สุดคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Diuretics"
+      },
+      {
+        "label": "B",
+        "text": "ACE inhibitor"
+      },
+      {
+        "label": "C",
+        "text": "Digitalis"
+      },
+      {
+        "label": "D",
+        "text": "Exercise stress test"
+      },
+      {
+        "label": "E",
+        "text": "Aortic valve replacement"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว (ไม่ระบุปี)",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมีอาการและเครื่องหมาย moderate to severe aortic stenosis (SEM grade 3/5, delayed carotid upstroke, paradoxical split S2, dyspnea) ที่กำลังสมดุล → Aortic valve replacement เป็นคำตอบที่ถูกต้องที่สุด",
+    "subject": "cardio_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "60 ปี ชายมาด้วย acute chest pain radiated to back มี DM, HT, dyslipidemia PE: agitation, PR 110, RR 30, BP 160/100 (left), BP 90/60 (right), EKG: tachycardia การวินิจฉัยคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Aortic dissection"
+      },
+      {
+        "label": "B",
+        "text": "Takayasu arteritis"
+      },
+      {
+        "label": "C",
+        "text": "Coarctation of aorta"
+      },
+      {
+        "label": "D",
+        "text": "Acute coronary syndrome"
+      },
+      {
+        "label": "E",
+        "text": "Pulmonary embolism"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "ศรว (ไม่ระบุปี)",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี chest pain radiating to back + hypertension + ความแตกต่างของ BP ระหว่างแขน (160/100 vs 90/60) → Aortic dissection เป็นคำตอบที่ถูกต้องที่สุด ต้องสงสัยและประเมินด้วย CT angiography โดยเร็ว",
+    "subject": "cardio_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "55 ปี ชายมี underlying disease คือ hypertension, dyslipidemia, coronary artery disease รับประทานยาเป็นประจำ EKG พบ QT 0.55 วินาที (prolonged QT) สาเหตุของการผิดปกติของ QT interval นี้คืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Atenolol"
+      },
+      {
+        "label": "B",
+        "text": "Verapamil"
+      },
+      {
+        "label": "C",
+        "text": "Amiodarone"
+      },
+      {
+        "label": "D",
+        "text": "Gemfibrozil"
+      },
+      {
+        "label": "E",
+        "text": "Simvastatin"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว (ไม่ระบุปี)",
+    "status": "complete",
+    "ai_notes": "Amiodarone เป็นยาที่มีผลต่อการนำกระแสไฟฟ้าของหัวใจและเป็นสาเหตุ QT prolongation ที่พบบ่อยที่สุด Atenolol และ Verapamil ไม่ค่อยทำให้ QT prolongation; Gemfibrozil และ Simvastatin ไม่ทำให้ QT prolongation",
+    "subject": "cardio_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "60 ปี ชายเกิด syncope ขณะอาบน้ำ มี underlying disease คือ well-controlled HT และ dyslipidemia เป็นเวลา 5 ปี PE: delayed carotid upstroke, SEM grade III ที่ right และ left UPSB, neurological exam: normal, others: unremarkable การวินิจฉัยที่น่าจะเป็นไปได้มากที่สุดคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Transient ischemic attack"
+      },
+      {
+        "label": "B",
+        "text": "Mitral valve prolapse"
+      },
+      {
+        "label": "C",
+        "text": "Aortic stenosis"
+      },
+      {
+        "label": "D",
+        "text": "Sick sinus syndrome"
+      },
+      {
+        "label": "E",
+        "text": "Vasovagal attack"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว (ไม่ระบุปี)",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี syncope + delayed carotid upstroke + SEM (systolic ejection murmur) grade III ที่ aortic area → Aortic stenosis เป็นคำตอบที่ถูกต้องที่สุด syncope เกิดจาก decreased cerebral perfusion ในผู้ป่วย severe AS",
+    "subject": "cardio_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "20 ปี หญิงมี underlying rheumatic heart disease มา low grade fever 1 เดือน BT 38°C, P 100, BP 110/70 PE: petechiae ที่ conjunctiva และ finger, diastolic rumbling และ pansystolic murmur ที่ apex การวินิจฉัยคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Acute leukemia"
+      },
+      {
+        "label": "B",
+        "text": "Exacerbated rheumatic carditis"
+      },
+      {
+        "label": "C",
+        "text": "Meningococcemia"
+      },
+      {
+        "label": "D",
+        "text": "Infective endocarditis"
+      },
+      {
+        "label": "E",
+        "text": "Acute pericarditis"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว (ไม่ระบุปี)",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี rheumatic heart disease + fever + petechiae + new/changing cardiac murmurs (diastolic rumbling + pansystolic) → Infective endocarditis เป็นคำตอบที่ถูกต้องที่สุด ตรงกับเกณฑ์ Duke criteria",
+    "subject": "cardio_med",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "3 ปี เด็กชายมาด้วย fatigue และมี low-grade fever มีประวัติ dental carries เมื่อเร็วๆ นี้ PE: pansystolic murmur 3/6 ไม่พบ pericardial rub, mild hepatomegaly การวินิจฉัยคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Viral carditis"
+      },
+      {
+        "label": "B",
+        "text": "Pericarditis"
+      },
+      {
+        "label": "C",
+        "text": "Infective endocarditis"
+      },
+      {
+        "label": "D",
+        "text": "Cardiomyopathy"
+      },
+      {
+        "label": "E",
+        "text": "Myocarditis"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว (ไม่ระบุปี)",
+    "status": "complete",
+    "ai_notes": "เด็กมา fever + fatigue + ประวัติ dental carries (source of infection) + pansystolic murmur (VSD หรือ MR จาก vegetation) + hepatomegaly (heart failure) → Infective endocarditis เป็นคำตอบที่ถูกต้อง เด็กอายุ 3 ปี ติดเชื้อได้จาก dental procedures",
+    "subject": "cardio_med",
+    "exam_type": "NL2"
+  }
+]

@@ -1,0 +1,710 @@
+[
+  {
+    "id": "d563f22a-1988-40d3-889d-6e257389406b",
+    "correct_answer": "B",
+    "explanation": "ทารก 18 เดือน supracondylar fracture หลัง closed reduction ใส่ cast แล้วบวมมากขึ้น ต้องทำ splitting cast เพื่อลด compartment pressure",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Splitting cast and padding) เพราะ post-cast swelling ที่มีความเสี่ยง compartment syndrome ต้อง bivalve/split cast ทันที",
+      "reason": "หลังใส่ cast สำหรับ fracture หากเกิด significant swelling: Cast กด circumferentially ทำให้ compartment pressure เพิ่ม ต้อง: 1) Split cast (bivalve) ทันที 2) เพิ่ม padding 3) Elevate limb ป้องกัน Volkmann ischemic contracture (permanent flexion contracture จาก forearm muscle ischemia) ในเด็กเล็กตรวจยาก ต้อง monitor วิธีทำ: ตัด cast ตามยาวทั้งสองด้าน + ตัด cotton padding ทั้งหมด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Elevate limb",
+          "is_correct": false,
+          "explanation": "Elevation ช่วยได้แต่ไม่เพียงพอ; ต้อง split cast ด้วย"
+        },
+        {
+          "label": "B",
+          "text": "Splitting cast and padding",
+          "is_correct": true,
+          "explanation": "Post-cast swelling → split cast + padding ทันที ป้องกัน ACS/Volkmann contracture"
+        },
+        {
+          "label": "C",
+          "text": "Fasciotomy",
+          "is_correct": false,
+          "explanation": "Fasciotomy เป็น definitive treatment ของ ACS แต่ split cast ทำก่อน"
+        },
+        {
+          "label": "D",
+          "text": "Remove cast and re-reduce",
+          "is_correct": false,
+          "explanation": "Re-reduce ไม่ใช่ immediate response ต่อ post-cast swelling"
+        },
+        {
+          "label": "E",
+          "text": "Monitor compartment pressure",
+          "is_correct": false,
+          "explanation": "Split cast ก่อน ค่อย monitor; ไม่รอ monitor ก่อน"
+        }
+      ],
+      "key_takeaway": "Post-cast swelling หลัง fracture reduction → Split cast + padding ทันที ป้องกัน Volkmann contracture"
+    }
+  },
+  {
+    "id": "d78a9fcf-4e90-48ac-9e2b-b1052c760281",
+    "correct_answer": "A",
+    "explanation": "หญิง 65 ปี หลังผ่าตัด Lumbar Spondylolisthesis เกิด acute respiratory distress = Pulmonary embolism",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Pulmonary Embolism) เพราะ PE เป็น most common serious post-operative complication หลัง spinal/orthopedic surgery",
+      "reason": "DVT/PE เป็น major complication หลัง spinal surgery โดยเฉพาะผู้สูงอายุ Risk factors: prolonged surgery, immobilization, old age, obesity Timing: มักเกิด 3-7 วันหลังผ่าตัด Clinical: sudden dyspnea, tachycardia, hypoxia, pleuritic chest pain Wells score + D-dimer → CT pulmonary angiography (CTPA) ยืนยัน Prevention: early mobilization, compression stockings, LMWH",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Pulmonary Embolism",
+          "is_correct": true,
+          "explanation": "Acute dyspnea หลัง orthopedic surgery ผู้สูงอายุ = PE จนกว่าจะพิสูจน์ว่าไม่ใช่"
+        },
+        {
+          "label": "B",
+          "text": "Myocardial Infarction",
+          "is_correct": false,
+          "explanation": "MI ไม่ใช่ primary complication หลัง spinal surgery เฉพาะเจาะจง"
+        },
+        {
+          "label": "C",
+          "text": "Pneumonia",
+          "is_correct": false,
+          "explanation": "Pneumonia เกิดช้ากว่าและมี fever, productive cough"
+        },
+        {
+          "label": "D",
+          "text": "Anaphylaxis",
+          "is_correct": false,
+          "explanation": "Anaphylaxis เกิดทันทีขณะ surgery ไม่ใช่ days หลัง"
+        },
+        {
+          "label": "E",
+          "text": "Atelectasis",
+          "is_correct": false,
+          "explanation": "Atelectasis พบบ่อยแต่ไม่ severe ขนาด acute respiratory distress"
+        }
+      ],
+      "key_takeaway": "Acute dyspnea หลัง orthopedic surgery ผู้สูงอายุ = Pulmonary Embolism (ต้อง CTPA ยืนยัน)"
+    }
+  },
+  {
+    "id": "db4f47f0-efc0-4787-ac38-a8a8091bea09",
+    "correct_answer": "A",
+    "explanation": "หญิง 52 ปี ปวดมือขวาตอนกลางคืน สะบัดมือแล้วดีขึ้น = CTS รักษา conservative: wrist splint กลางคืน + NSAIDs",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Rest + wrist splint กลางคืน + NSAIDs) เพราะ classic CTS ในวัยกลางคน ต้องรักษา conservative ก่อน",
+      "reason": "Carpal tunnel syndrome (CTS): ชา/ปวดนิ้ว 1-3.5 มากตอนกลางคืน สะบัดแล้วดีขึ้น (Flick sign) เกิดจาก median nerve กดใน carpal tunnel Conservative: Wrist night splint (neutral position), NSAIDs, activity modification Steroid injection: second-line หลัง conservative ล้มเหลว Surgery (CTR): severe CTS, thenar atrophy, NCS severe, conservative ล้มเหลว NCS/EMG: ยืนยัน diagnosis ไม่ต้องทำในทุกราย",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Rest + wrist splint กลางคืน + NSAIDs",
+          "is_correct": true,
+          "explanation": "First-line conservative treatment ของ mild-moderate CTS"
+        },
+        {
+          "label": "B",
+          "text": "ฉีดสเตียรอยด์เข้า carpal tunnel ทันที",
+          "is_correct": false,
+          "explanation": "Steroid injection = second-line หลัง conservative ล้มเหลว"
+        },
+        {
+          "label": "C",
+          "text": "ผ่าตัด carpal tunnel release ครั้งแรก",
+          "is_correct": false,
+          "explanation": "Surgery เป็น last resort ไม่ใช่ first visit"
+        },
+        {
+          "label": "D",
+          "text": "สเตียรอยด์รับประทาน + EMG",
+          "is_correct": false,
+          "explanation": "Oral steroid ไม่ใช่ first-line; EMG ทำเมื่อ diagnosis ไม่ชัดเจน"
+        },
+        {
+          "label": "E",
+          "text": "MRI + NCS ก่อนทุกอย่าง",
+          "is_correct": false,
+          "explanation": "Clinical diagnosis เพียงพอสำหรับเริ่ม conservative treatment; MRI ไม่ routine"
+        }
+      ],
+      "key_takeaway": "CTS: ปวด/ชามือกลางคืน + Flick sign → First-line: Wrist night splint + NSAIDs"
+    }
+  },
+  {
+    "id": "ddd91a79-efbe-4e82-a054-aa221057a38d",
+    "correct_answer": "A",
+    "explanation": "หญิง 80 ปี intertrochanteric fracture รักษาด้วยการผ่าตัด (DHS/PFNA) เพราะ conservative treatment มีผลลัพธ์แย่กว่า",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Surgery) เพราะ intertrochanteric fracture ในผู้สูงอายุมี mortality สูงจาก immobilization complications ถ้าไม่ผ่าตัด",
+      "reason": "Intertrochanteric fracture ในผู้สูงอายุ: Conservative (traction/bed rest) มี mortality 30-50% ใน 1 ปี จาก complications (PE, pneumonia, pressure sore) Surgery (DHS = Dynamic Hip Screw หรือ PFNA = Proximal Femoral Nail Anti-rotation) ช่วยให้ early mobilization mortality ลดลงอย่างมีนัยสำคัญ Principle: ไม่มี absolute contraindication ต่อ surgery ใน IT fracture ควร optimize medical condition แล้ว operate ภายใน 24-48 ชั่วโมง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Surgery (DHS/PFNA)",
+          "is_correct": true,
+          "explanation": "IT fracture ผู้สูงอายุ → Surgery เพื่อ early mobilization ลด mortality จาก immobilization"
+        },
+        {
+          "label": "B",
+          "text": "Long leg cast",
+          "is_correct": false,
+          "explanation": "Cast ทำให้ complete immobilization = complications สูงมาก ไม่ใช่ treatment"
+        },
+        {
+          "label": "C",
+          "text": "ให้นั่งรถเข็น",
+          "is_correct": false,
+          "explanation": "รถเข็นโดยไม่ fix fracture ทำให้ปวดมาก ไม่ได้ fix alignment"
+        },
+        {
+          "label": "D",
+          "text": "Traction",
+          "is_correct": false,
+          "explanation": "Traction ใช้เป็น temporary ก่อน surgery เท่านั้น ไม่ใช่ definitive treatment ผู้สูงอายุ"
+        },
+        {
+          "label": "E",
+          "text": "ประเมินก่อนเลือก",
+          "is_correct": false,
+          "explanation": "ประเมินก็จำเป็น แต่ standard of care คือ surgery สำหรับ IT fracture"
+        }
+      ],
+      "key_takeaway": "IT fracture ผู้สูงอายุ → Surgery (DHS/PFNA) เพื่อ early mobilization ลด immobilization mortality"
+    }
+  },
+  {
+    "id": "e1858eec-3e4b-4bfd-8230-975a39201776",
+    "correct_answer": "A",
+    "explanation": "ชายหนุ่ม 35 ปี motorcycle accident มี stable injury รักษาด้วยการเดินด้วย crutch",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Walk with crutch) เพราะ stable fracture/injury ที่ไม่ต้องการ surgical fixation สามารถ weight bearing ได้ด้วย crutch support",
+      "reason": "สำหรับ stable lower extremity injuries (stable fracture, non-displaced, soft tissue injury) การ mobilize ด้วย crutch เพื่อ partial/non-weight bearing ช่วยให้: 1) Early mobilization ลด DVT 2) Maintain muscle strength 3) Better functional recovery Crutch walking = conservative management สำหรับ stable injuries ที่ไม่จำเป็นต้องผ่าตัด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Walk with crutch",
+          "is_correct": true,
+          "explanation": "Stable injury → conservative management ด้วย crutch walking"
+        },
+        {
+          "label": "C",
+          "text": "Retraction 6 hr",
+          "is_correct": false,
+          "explanation": "ไม่ใช่ standard treatment (อาจหมายถึง traction แต่ไม่เหมาะกรณีนี้)"
+        },
+        {
+          "label": "D",
+          "text": "Open reduction with plate fixation",
+          "is_correct": false,
+          "explanation": "ORIF ใช้สำหรับ unstable/displaced fractures"
+        },
+        {
+          "label": "E",
+          "text": "Closed reduction with percutaneous screw",
+          "is_correct": false,
+          "explanation": "Percutaneous screw ใช้สำหรับ specific fractures ที่ต้องการ fixation"
+        }
+      ],
+      "key_takeaway": "Stable injury หลัง trauma → Conservative: Walk with crutch (partial weight bearing)"
+    }
+  },
+  {
+    "id": "e2b33d9c-fccb-4c49-bb6f-2b6097702822",
+    "correct_answer": "C",
+    "explanation": "ชาย 75 ปี ปวดคอร้าวลงนิ้วชี้+กลาง triceps อ่อนแรง brachioradialis reflex ลด = C7 radiculopathy",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C (C7 radiculopathy) เพราะ triceps weakness + ชานิ้วชี้+กลาง + brachioradialis reflex ลด = C7 nerve root involvement",
+      "reason": "C7 nerve root: Motor: triceps (elbow extension), wrist flexors Reflex: triceps reflex (บางตำราก็ brachioradialis) Sensory: middle finger (dermatome C7), index finger (shared C6-C7) C6: biceps/BR reflex, wrist extension, thumb+index finger sensation C7: triceps reflex, elbow extension, middle finger C8: finger flexion, ring+little finger ในผู้ป่วย: triceps weak + brachioradialis reflex ลด + index+middle finger numbness = C7",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ulnar nerve neuropathy",
+          "is_correct": false,
+          "explanation": "Ulnar nerve: ring+little finger numbness, intrinsic weakness, claw hand"
+        },
+        {
+          "label": "B",
+          "text": "Radial nerve neuropathy",
+          "is_correct": false,
+          "explanation": "Radial nerve: wrist drop, sensory dorsal hand/thumb"
+        },
+        {
+          "label": "C",
+          "text": "C7 radiculopathy",
+          "is_correct": true,
+          "explanation": "Triceps weak + BR reflex ลด + index/middle finger numbness = C7 root"
+        },
+        {
+          "label": "D",
+          "text": "Median nerve neuropathy",
+          "is_correct": false,
+          "explanation": "Median nerve: thenar weakness, lateral 3.5 finger numbness ไม่มี triceps weakness"
+        },
+        {
+          "label": "E",
+          "text": "Brachial plexopathy",
+          "is_correct": false,
+          "explanation": "Brachial plexopathy มี multi-level deficits ไม่ใช่ single root level"
+        }
+      ],
+      "key_takeaway": "C7: Triceps weakness + triceps reflex ลด + middle finger numbness; C6: Biceps/BR reflex + thumb/index"
+    }
+  },
+  {
+    "id": "e5d74fdd-6b64-43dc-aebb-fdd1209cef6d",
+    "correct_answer": "A",
+    "explanation": "เด็กชาย 10 ปี motorcycle accident ปวดข้อศอกขวา บวม fat pad sign = Elbow dislocation",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Elbow dislocation) เพราะ fat pad sign + pain + swelling หลัง MCA trauma ในเด็กอายุ 10 ปี",
+      "reason": "Posterior elbow dislocation เป็น most common elbow dislocation X-ray ด้าน lateral แสดง: posterior fat pad sign (sail sign) = effusion ใน joint บ่งชี้ intra-articular pathology เด็กอายุ 10 ปี มักเกิด dislocation มากกว่า supracondylar fracture (ซึ่งพบบ่อยในอายุ 5-8 ปี) Reduction method: gentle traction + flexion under sedation แล้ว check neurovascular status",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Elbow dislocation",
+          "is_correct": true,
+          "explanation": "เด็ก 10 ปี trauma + fat pad sign + swelling = posterior elbow dislocation"
+        },
+        {
+          "label": "B",
+          "text": "Displaced olecranon fracture",
+          "is_correct": false,
+          "explanation": "Olecranon fracture มีชัดเจนที่ posterior elbow ใน X-ray AP/lateral"
+        },
+        {
+          "label": "C",
+          "text": "Displaced supracondylar fracture",
+          "is_correct": false,
+          "explanation": "Supracondylar fracture พบบ่อยในอายุ 5-8 ปี น้อยกว่าใน 10 ปี"
+        },
+        {
+          "label": "D",
+          "text": "Lateral epicondylar fracture",
+          "is_correct": false,
+          "explanation": "Lateral epicondyle fracture พบน้อยกว่าและมี specific lateral tenderness"
+        },
+        {
+          "label": "E",
+          "text": "Monteggia fracture",
+          "is_correct": false,
+          "explanation": "Monteggia = ulna fracture + radial head dislocation X-ray forearm abnormal"
+        }
+      ],
+      "key_takeaway": "เด็ก 10 ปี trauma + posterior fat pad sign = Elbow dislocation (posterior); ต้อง reduce + check neurovascular"
+    }
+  },
+  {
+    "id": "e949549c-7a37-4262-8d2e-5c0bc351f878",
+    "correct_answer": "B",
+    "explanation": "หญิง 69 ปี อ้วน OA เข่าขวา ควรรักษาด้วย conservative treatment ก่อน: ลดน้ำหนัก + ออกกำลังกาย + NSAIDs + steroid injection",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Conservative: ลดน้ำหนัก + exercise + NSAIDs + steroid injection) เพราะ OA เข่า first-line คือ conservative treatment เสมอ",
+      "reason": "Knee OA management guidelines (OARSI/ACR): Non-pharmacological: weight loss, exercise (strengthen quadriceps), physical therapy Pharmacological: NSAIDs (topical/oral), acetaminophen, intra-articular corticosteroid injection Surgery: TKA เมื่อ severe OA + failure of conservative treatment >3-6 เดือน ในผู้ป่วยอ้วน น้ำหนักเป็น major modifiable risk factor การลดน้ำหนัก 1 kg ลด knee load 4 kg",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ผ่าตัด HTO ทันที",
+          "is_correct": false,
+          "explanation": "HTO ใช้ใน varus malalignment + younger patients ไม่ใช่ elderly obese"
+        },
+        {
+          "label": "B",
+          "text": "Conservative: ลดน้ำหนัก + exercise + NSAIDs + steroid",
+          "is_correct": true,
+          "explanation": "First-line OA knee: conservative treatment เสมอ; surgery เมื่อ conservative ล้มเหลว"
+        },
+        {
+          "label": "C",
+          "text": "Valgus knee brace เพียงอย่างเดียว",
+          "is_correct": false,
+          "explanation": "Brace อาจช่วยแต่ไม่เพียงพอ ต้องทำ comprehensive conservative program"
+        },
+        {
+          "label": "D",
+          "text": "TKA ทันที",
+          "is_correct": false,
+          "explanation": "TKA เป็น last resort หลัง conservative ล้มเหลว"
+        },
+        {
+          "label": "E",
+          "text": "Bisphosphonate เพิ่ม bone density",
+          "is_correct": false,
+          "explanation": "Bisphosphonate ใช้ osteoporosis ไม่ใช่ OA"
+        }
+      ],
+      "key_takeaway": "Knee OA first-line = Conservative: ลดน้ำหนัก + quadriceps exercise + NSAIDs + intra-articular steroid"
+    }
+  },
+  {
+    "id": "eadba228-1844-4a6e-9b3f-5026a177e086",
+    "correct_answer": "A",
+    "explanation": "ชาย 35 ปี ปวดบ่าเรื้อรัง มีไข้เบาๆ X-ray bone erosion + ประวัติ TB exposure = TB glenohumeral joint",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (TB glenohumeral joint) เพราะ chronic monoarthritis + ไข้ต่ำ + bone erosion + TB risk area = TB septic arthritis",
+      "reason": "TB arthritis (extra-pulmonary TB): ปวดข้อเรื้อรัง ไข้ต่ำ น้ำหนักลด X-ray: bone erosion, osteoporosis periarticular, joint space narrowing (late) ESR สูงมาก Synovial fluid: cloudy, WBC 10,000-50,000/μL lymphocyte predominant Diagnosis: culture, PCR, synovial biopsy Treatment: ATT (anti-TB therapy) 9-12 เดือน พบบ่อยที่ spine (Pott's disease), hip, knee",
+      "choices": [
+        {
+          "label": "A",
+          "text": "TB glenohumeral joint",
+          "is_correct": true,
+          "explanation": "Chronic monoarthritis + low-grade fever + bone erosion + TB risk = TB arthritis"
+        },
+        {
+          "label": "B",
+          "text": "Bacterial arthritis (S. aureus)",
+          "is_correct": false,
+          "explanation": "Bacterial septic arthritis มีไข้สูง ESR สูง onset เฉียบพลัน ไม่ใช่เรื้อรัง"
+        },
+        {
+          "label": "C",
+          "text": "Fungal infection",
+          "is_correct": false,
+          "explanation": "Fungal arthritis พบน้อยมากในผู้ที่ไม่ immunocompromised"
+        },
+        {
+          "label": "D",
+          "text": "RA รุนแรง",
+          "is_correct": false,
+          "explanation": "RA มักเป็น symmetric polyarthritis มี RF/anti-CCP positive"
+        },
+        {
+          "label": "E",
+          "text": "Primary OA ของข้อบ่า",
+          "is_correct": false,
+          "explanation": "Primary glenohumeral OA ไม่มีไข้ ไม่มี bone erosion แบบนี้"
+        }
+      ],
+      "key_takeaway": "Chronic monoarthritis + low-grade fever + bone erosion + TB risk = TB arthritis; รักษาด้วย ATT 9-12 เดือน"
+    }
+  },
+  {
+    "id": "ecf576f0-0f06-4a58-9a3b-7188c8c15041",
+    "correct_answer": "B",
+    "explanation": "เด็กชาย 12 ปี displaced medial epicondyle fracture รักษาด้วย ORIF (screw/pin fixation)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (ORIF ด้วย screw/pin) เพราะ displaced medial epicondyle fracture ที่มี significant displacement ต้องการ surgical fixation",
+      "reason": "Medial epicondyle fracture ในเด็ก: อาจเกิดร่วมกับ elbow dislocation Indication สำหรับ ORIF: 1) Displacement >5mm 2) Elbow instability (valgus) 3) Ulnar nerve symptoms 4) Incarcerated fragment ใน joint Conservative (sling) ใช้เฉพาะ non/minimally displaced (<5mm) Complication: ulnar nerve injury (พบบ่อย ตรวจ ring+little finger sensation + intrinsics)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Conservative sling 3 สัปดาห์",
+          "is_correct": false,
+          "explanation": "Conservative เฉพาะ non-displaced (<5mm); displaced ต้องการ ORIF"
+        },
+        {
+          "label": "B",
+          "text": "ORIF ด้วย screw/pin",
+          "is_correct": true,
+          "explanation": "Displaced medial epicondyle fracture → ORIF เพื่อ restore stability และป้องกัน ulnar nerve injury"
+        },
+        {
+          "label": "C",
+          "text": "Closed reduction + posterior splint",
+          "is_correct": false,
+          "explanation": "Closed reduction ไม่เพียงพอสำหรับ displaced medial epicondyle"
+        },
+        {
+          "label": "D",
+          "text": "Skeletal traction 6 สัปดาห์",
+          "is_correct": false,
+          "explanation": "Skeletal traction ไม่ใช่ standard treatment ของกรณีนี้"
+        },
+        {
+          "label": "E",
+          "text": "Observation + pain management",
+          "is_correct": false,
+          "explanation": "Displaced fracture ไม่สามารถ observe อย่างเดียว เสี่ยง non-union + instability"
+        }
+      ],
+      "key_takeaway": "Displaced medial epicondyle fracture → ORIF; ตรวจ ulnar nerve (ring+little finger) ก่อนและหลัง treatment"
+    }
+  },
+  {
+    "id": "edcd34e0-de40-40dd-aab3-773953112898",
+    "correct_answer": "C",
+    "explanation": "เด็ก 5 ปี skin traction 2 วัน แล้วปวดแขนล่างมากขึ้น ปวดเวลากระดิก = acute compartment syndrome ต้อง fasciotomy",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C (Fasciotomy) เพราะ pain on passive motion (ปวดเวลากระดิก) หลัง traction = ACS ต้อง fasciotomy ทันที",
+      "reason": "Acute compartment syndrome ในเด็กที่ใส่ skin traction: Pain on passive motion = most sensitive early sign ของ ACS ต้องทำ fasciotomy ทันที (ไม่รอ) โดยเฉพาะในเด็กเล็กที่ตรวจยาก ไม่แน่ใจ compartment pressure ก็ให้ทำ fasciotomy เลยหากสงสัยสูง Volkmann ischemic contracture เป็น feared complication ถ้าปล่อยไว้ Compartment pressure >30 mmHg หรือ within 30 mmHg of diastolic BP = absolute indication",
+      "choices": [
+        {
+          "label": "A",
+          "text": "เพิ่มน้ำหนัก traction",
+          "is_correct": false,
+          "explanation": "เพิ่ม traction weight ทำให้ compartment pressure เพิ่มขึ้น อันตรายมาก"
+        },
+        {
+          "label": "B",
+          "text": "ยาแก้ปวด + observe",
+          "is_correct": false,
+          "explanation": "ห้าม mask pain ด้วยยาแก้ปวดใน suspected ACS; ต้อง treat ทันที"
+        },
+        {
+          "label": "C",
+          "text": "Fasciotomy",
+          "is_correct": true,
+          "explanation": "Pain on passive motion + traction = ACS → Fasciotomy ทันทีป้องกัน Volkmann contracture"
+        },
+        {
+          "label": "D",
+          "text": "Closed reduction",
+          "is_correct": false,
+          "explanation": "Closed reduction ไม่แก้ compartment syndrome"
+        },
+        {
+          "label": "E",
+          "text": "ORIF",
+          "is_correct": false,
+          "explanation": "ORIF ไม่ใช่ immediate treatment สำหรับ ACS"
+        }
+      ],
+      "key_takeaway": "Pain on passive motion (ปวดเวลากระดิก) หลัง traction/cast = ACS → Fasciotomy ทันที"
+    }
+  },
+  {
+    "id": "ee924e89-0378-4d5e-a996-a73782f5f2d1",
+    "correct_answer": "A",
+    "explanation": "ชาย 25 ปี motorcycle accident ผลักเข่าไปข้างหน้า (dashboard injury mechanism) = Posterior hip dislocation",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Posterior hip dislocation) เพราะ dashboard injury mechanism (เข่ากระทบ dashboard ขณะ hip flexed) = classic posterior hip dislocation",
+      "reason": "Dashboard injury mechanism: ผู้โดยสารนั่ง (hip flexed 90°) เข่ากระทบ dashboard แรงส่งผ่าน femur ไปด้านหลัง → posterior hip dislocation Clinical: hip flexed + adducted + internally rotated, limb shortened Sciatic nerve injury ใน 10-20% (foot drop, L4-S3 distribution) ต้อง reduce ภายใน 6 ชั่วโมง ป้องกัน AVN ของ femoral head",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Posterior hip dislocation",
+          "is_correct": true,
+          "explanation": "Dashboard injury = posterior hip dislocation (flexion + adduction + IR position)"
+        },
+        {
+          "label": "B",
+          "text": "Anterior hip dislocation",
+          "is_correct": false,
+          "explanation": "Anterior dislocation: abduction + ER force ไม่ใช่ dashboard mechanism"
+        },
+        {
+          "label": "C",
+          "text": "Central hip dislocation",
+          "is_correct": false,
+          "explanation": "Central dislocation = acetabular fracture + medial displacement; lateral compression"
+        },
+        {
+          "label": "D",
+          "text": "Hip fracture-dislocation",
+          "is_correct": false,
+          "explanation": "อาจมี acetabular fracture ร่วมด้วยได้ แต่ primary diagnosis คือ posterior dislocation"
+        },
+        {
+          "label": "E",
+          "text": "Femoral neck fracture",
+          "is_correct": false,
+          "explanation": "FNF: ER + shortening ไม่ใช่ IR; mechanism ต่างกัน"
+        }
+      ],
+      "key_takeaway": "Dashboard injury (เข่ากระทบ + hip flexed) = Posterior hip dislocation; reduce ภายใน 6 ชั่วโมง"
+    }
+  },
+  {
+    "id": "ef2bc662-bd0c-4c98-a328-fe2201cc99ce",
+    "correct_answer": "A",
+    "explanation": "เด็กชาย 10 ปี motorcycle accident ปวดข้อศอก fat pad sign = Elbow dislocation (posterior)",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Elbow dislocation) เพราะ fat pad sign + swelling + trauma ในเด็ก 10 ปี = elbow dislocation",
+      "reason": "เหมือนกับ Q107 (e5d74fdd) ซึ่งเป็นโจทย์คล้ายกัน Posterior elbow dislocation: เด็ก 10 ปี trauma + fat pad sign = dislocation X-ray ด้าน lateral: posterior fat pad (sail sign) แสดง joint effusion radius + ulna เลื่อนไปด้านหลัง ต้อง check anterior interosseous nerve (AIN) และ brachial artery ก่อน/หลัง reduction",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Elbow dislocation",
+          "is_correct": true,
+          "explanation": "เด็ก 10 ปี trauma + fat pad sign = posterior elbow dislocation"
+        },
+        {
+          "label": "B",
+          "text": "Displaced olecranon fracture",
+          "is_correct": false,
+          "explanation": "Olecranon fracture: posterior elbow prominent, X-ray แสดง fracture ชัดเจน"
+        },
+        {
+          "label": "C",
+          "text": "Displaced supracondylar fracture",
+          "is_correct": false,
+          "explanation": "Supracondylar fracture พบบ่อยในอายุ 5-8 ปี มากกว่า 10 ปี"
+        },
+        {
+          "label": "D",
+          "text": "Displaced lateral condylar fracture",
+          "is_correct": false,
+          "explanation": "Lateral condyle: triangular fragment ที่ lateral side"
+        },
+        {
+          "label": "E",
+          "text": "Displaced medial condylar fracture",
+          "is_correct": false,
+          "explanation": "Medial condyle fracture พบน้อยมากในเด็ก"
+        }
+      ],
+      "key_takeaway": "เด็ก trauma + posterior fat pad sign + swelling = Posterior elbow dislocation; ต้อง gentle reduction"
+    }
+  },
+  {
+    "id": "f375d851-0c7d-4574-b5b9-c239a2bc913e",
+    "correct_answer": "D",
+    "explanation": "ชาย 60 ปี ปวดหลัง TL junction กล้ามเนื้อแข็งเกร็ง ไม่มี neuro deficit ต้องทำ Plain film TL spine ก่อน",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ D (Plain film TL spine) เพราะ back pain บริเวณ TL junction ไม่มี neuro deficit = X-ray เป็น first-line investigation",
+      "reason": "Back pain evaluation: ไม่มี red flags + ไม่มี neurological deficit → X-ray เป็น first-line (cheap, available) Red flags ที่ต้องการ MRI ทันที: neurological deficit, cancer history, infection, osteoporosis + fracture, trauma รุนแรง TL junction (T12-L1) เป็น stress point ของ spine X-ray TL spine: ดู alignment, fracture, tumor, deformity ESR, CBC ใช้สำหรับ infection/tumor workup CT abdomen ใช้หาก intra-abdominal pathology",
+      "choices": [
+        {
+          "label": "A",
+          "text": "CBC",
+          "is_correct": false,
+          "explanation": "CBC ใช้เมื่อสงสัย infection หรือ hematological malignancy"
+        },
+        {
+          "label": "B",
+          "text": "ESR",
+          "is_correct": false,
+          "explanation": "ESR ใช้เมื่อสงสัย inflammatory/infection/malignancy"
+        },
+        {
+          "label": "C",
+          "text": "CPK",
+          "is_correct": false,
+          "explanation": "CPK ใช้สำหรับ muscle disease ไม่ใช่ back pain workup routine"
+        },
+        {
+          "label": "D",
+          "text": "Plain film TL spine",
+          "is_correct": true,
+          "explanation": "TL back pain + muscle spasm ไม่มี neuro deficit → X-ray TL spine เป็น first-line"
+        },
+        {
+          "label": "E",
+          "text": "CT abdomen and pelvis",
+          "is_correct": false,
+          "explanation": "CT abdomen ใช้เมื่อสงสัย intra-abdominal pathology เป็น cause ของ back pain"
+        }
+      ],
+      "key_takeaway": "TL back pain ไม่มี red flags/neuro deficit → Plain film TL spine เป็น first-line"
+    }
+  },
+  {
+    "id": "f9fcf2ef-a811-481b-8825-9704a83d7b80",
+    "correct_answer": "B",
+    "explanation": "ชาย 30 ปี motorcycle accident มี 2cm laceration contaminated wound + tibia fracture = open fracture ต้อง explore wound",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B (Explore wound) เพราะ open fracture management = debridement + exploration ของ wound เป็นขั้นตอนแรก",
+      "reason": "Open fracture management (Gustilo-Anderson): 2cm contaminated wound + tibia fracture = Grade II open fracture Steps: 1) Wound exploration + debridement (ล้าง + ตัด devitalized tissue) 2) IV antibiotics (cephalosporin ± aminoglycoside) 3) Tetanus prophylaxis 4) Fracture stabilization (external fixation หรือ IM nail) 5) Wound closure (delayed primary closure 48-72 ชั่วโมง) ห้าม primary closure contaminated wound",
+      "choices": [
+        {
+          "label": "A",
+          "text": "IV cloxacillin",
+          "is_correct": false,
+          "explanation": "Antibiotics สำคัญแต่ไม่ใช่ first step; exploration + debridement ก่อน"
+        },
+        {
+          "label": "B",
+          "text": "Explore wound",
+          "is_correct": true,
+          "explanation": "Open fracture → Exploration + debridement เป็น first step ก่อน antibiotic/fixation"
+        },
+        {
+          "label": "C",
+          "text": "Saline irrigation with antibiotics",
+          "is_correct": false,
+          "explanation": "Irrigation เป็นส่วนหนึ่งของ debridement แต่ต้อง explore ก่อน"
+        },
+        {
+          "label": "D",
+          "text": "Plate and screw fixation",
+          "is_correct": false,
+          "explanation": "ORIF ใน contaminated wound เสี่ยง deep infection สูง; external fixation ดีกว่า"
+        },
+        {
+          "label": "E",
+          "text": "Delayed primary closure",
+          "is_correct": false,
+          "explanation": "Delayed closure เป็น step หลัง debridement ไม่ใช่ first action"
+        }
+      ],
+      "key_takeaway": "Open fracture → Explore + Debride wound เป็น first step; ห้าม primary closure; ใช้ external fixation"
+    }
+  },
+  {
+    "id": "fec28b9e-20cd-4ccf-b262-1e8fad67ba4b",
+    "correct_answer": "A",
+    "explanation": "หญิงปวดแขนไหล่ขวา 3 วัน มากเวลายกมือหวีผม จุดกดเจ็บ = Supraspinatus tendinitis",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (Supraspinatus tendinitis) เพราะอาการปวดไหล่เวลา overhead activity เป็น classic supraspinatus impingement",
+      "reason": "Supraspinatus tendinitis: ปวดไหล่ worse เวลา overhead activity (หวีผม, แต่งตัว) Painful arc 60-120° abduction Tenderness ที่ greater tuberosity และ subacromial area Neer's sign positive (passive arm elevation), Hawkins test positive (IR in flexion) Treatment: NSAIDs, physical therapy, subacromial corticosteroid injection",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Supraspinatus tendinitis",
+          "is_correct": true,
+          "explanation": "ปวดไหล่ยกมือหวีผม + tenderness = supraspinatus tendinitis/impingement"
+        },
+        {
+          "label": "B",
+          "text": "Bicipital tendinitis",
+          "is_correct": false,
+          "explanation": "Bicipital tendinitis ปวด anterior shoulder ที่ bicipital groove"
+        },
+        {
+          "label": "C",
+          "text": "Infraspinatus tendinitis",
+          "is_correct": false,
+          "explanation": "Infraspinatus ปวดเวลา external rotation"
+        },
+        {
+          "label": "D",
+          "text": "Subscapularis tendonitis",
+          "is_correct": false,
+          "explanation": "Subscapularis ปวดเวลา internal rotation against resistance"
+        },
+        {
+          "label": "E",
+          "text": "Subacromial bursitis",
+          "is_correct": false,
+          "explanation": "Subacromial bursitis มักเกิดร่วมกับ supraspinatus pathology แต่ primary diagnosis คือ tendinitis"
+        }
+      ],
+      "key_takeaway": "ปวดไหล่ยกแขน overhead + painful arc 60-120° = Supraspinatus tendinitis (impingement)"
+    }
+  },
+  {
+    "id": "ff48d20c-d70d-467a-b512-756e934727d9",
+    "correct_answer": "A",
+    "explanation": "หญิง 40 ปี ปวดข้อเท้าตอนเช้า ต้องรอแดดส่อง (morning stiffness นาน) = ตาม exam answer คือ SLE",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A (SLE) ตาม exam answer; morning stiffness นานในหญิงวัยเจริญพันธุ์ต้องพิจารณา SLE และ RA",
+      "reason": "SLE (Systemic Lupus Erythematosus): พบบ่อยในหญิงวัยเจริญพันธุ์ อาการข้อในSLE: migratory polyarthritis, morning stiffness นาน ANA positive, anti-dsDNA positive, butterfly rash, photosensitivity ข้อใน SLE: non-erosive arthritis RA: erosive arthritis, RF/anti-CCP positive ทั้งสองมี morning stiffness นาน ตาม exam คำตอบคือ SLE ซึ่งอาจบ่งชี้ว่าโจทย์มี context เพิ่มเติมที่บ่งชี้ SLE มากกว่า RA",
+      "choices": [
+        {
+          "label": "A",
+          "text": "SLE",
+          "is_correct": true,
+          "explanation": "ตาม exam; morning stiffness นาน + หญิงวัยเจริญพันธุ์ = SLE ต้องพิจารณา"
+        },
+        {
+          "label": "B",
+          "text": "Rheumatoid",
+          "is_correct": false,
+          "explanation": "RA ก็มี morning stiffness นาน แต่ exam ตอบ SLE; ต้องดู ANA ยืนยัน"
+        },
+        {
+          "label": "C",
+          "text": "OA",
+          "is_correct": false,
+          "explanation": "OA morning stiffness <30 นาที ผู้สูงอายุ"
+        },
+        {
+          "label": "D",
+          "text": "Tuberculosis",
+          "is_correct": false,
+          "explanation": "TB monoarthritis ไม่มี morning stiffness ลักษณะนี้"
+        },
+        {
+          "label": "E",
+          "text": "Reactive arthritis",
+          "is_correct": false,
+          "explanation": "Reactive arthritis หลัง infection, asymmetric, ไม่ใช่ chronic morning stiffness"
+        }
+      ],
+      "key_takeaway": "Morning stiffness นาน ในหญิงวัยเจริญพันธุ์ → SLE (ANA) หรือ RA (RF/anti-CCP); ตาม exam = SLE"
+    }
+  }
+]

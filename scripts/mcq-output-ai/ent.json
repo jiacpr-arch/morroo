@@ -1,0 +1,498 @@
+[
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 30 ปี รู้สึกคุยโทรศัพท์ข้างซ้ายไม่ได้ยิน Otoscopic exam ปกติ ส่งตรวจการได้ยิน pure tone audiometry : Rt. threshold 25 dB speech discrimination 100% Lt. threshold 35 dB speech discrimination 25% ข้อใดช่วยในการวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Tympanometry"
+      },
+      {
+        "label": "B",
+        "text": "CT temporal lobe"
+      },
+      {
+        "label": "C",
+        "text": "Auditory brainstem response"
+      },
+      {
+        "label": "D",
+        "text": "Acoustic impedance"
+      },
+      {
+        "label": "E",
+        "text": "MRI brain with contrast"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว 2011",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี sensorineural hearing loss ด้านซ้ายที่มี poor speech discrimination (25%) ซึ่งบ่งชี้ปัญหาที่ส่วนกลาง Auditory brainstem response (ABR) เป็นการตรวจที่ดีในการตรวจสอบการได้ยินระดับ brainstem และสามารถตรวจหา retrocochlear pathology เช่น acoustic neuroma หรือ lesion ที่ CNS ได้ดีที่สุด",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยแมลงเข้าหู 2 ชั่วโมง รู้สึกยังมีแมลงดิ้นในหูขรุขระ Physical examination พบมีแมลงจริงในช่องหูชั่วคราว ยังมองเห็นแมบอลแดรม ควรทาอะไรก่อน",
+    "choices": [
+      {
+        "label": "A",
+        "text": "70% alcohol"
+      },
+      {
+        "label": "B",
+        "text": "3% boric acid"
+      },
+      {
+        "label": "C",
+        "text": "Vegetable oil"
+      },
+      {
+        "label": "D",
+        "text": "Normal saline"
+      },
+      {
+        "label": "E",
+        "text": "Ether"
+      }
+    ],
+    "correct_answer": "C",
+    "exam_source": "ศรว มีนาคม 2555",
+    "status": "complete",
+    "ai_notes": "การหยอด vegetable oil ช่วยในการทำให้แมลงตายและลดการเคลื่อนไหว โดยจะเข้าไปในการหายใจของแมลง ทำให้สามารถนำออกได้ง่าย ควรหยอดแล้วรอ 10-15 นาทีจึงดำเนินการนำออก",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 55 ปี มาด้วยเรื่องอาการวิงเวียนศีรษะมา 3 วัน เป็นมากเวลาตื่นตอนเช้า และเวลาหันศีรษะไปมา มีอาการคลื่นไส้ แต่ไม่อาเจียน ตรวจร่างกาย Weber's test ปกติ (ไม่มี lateralization) Rinne's test บวกทั้งสองหู (AC>BC) การทาการทดสอบใดเป็นการช่วยวินิจฉัยผู้ป่วยรายนี้มากที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Romberg test"
+      },
+      {
+        "label": "B",
+        "text": "Dix Hallpike test"
+      },
+      {
+        "label": "C",
+        "text": "Unterberger test"
+      },
+      {
+        "label": "D",
+        "text": "Caloric test"
+      },
+      {
+        "label": "E",
+        "text": "Nystagmus assessment"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว มีนาคม 2555",
+    "status": "complete",
+    "ai_notes": "อาการวิงเวียนที่เพิ่มขึ้นเมื่อหันศีรษะและตื่นในตอนเช้า เป็นลักษณะของ Benign Paroxysmal Positional Vertigo (BPPV) Dix Hallpike test เป็นการทดสอบที่เหมาะสมที่สุดสำหรับการวินิจฉัย BPPV",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 3 ปี มาด้วยอาการหูอื้อ 1 วันก่อนมาโรงพยาบาล 2 วันก่อนมาโรงพยาบาล ผู้ป่วยเดินทางโดยเครื่องบิน มีอาการหูอื้อ และปวดหูมากขณะเครื่องลง ขณะนี้ ไม่ปวดหูแล้ว แต่ยังมีอาการหูอื้ออยู่ Physical examination: หูซ้ายปกติ หูขวาแดรมสีเข้มน้ำเงินและหดเข้า Weber lateralize ไปขวา Rinne ซ้าย AC>BC ขวา BC>AC ให้การรักษาที่เหมาะสมกับผู้ป่วยรายนี้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Loratadine"
+      },
+      {
+        "label": "B",
+        "text": "Pseudoephedrine"
+      },
+      {
+        "label": "C",
+        "text": "Prednisolone"
+      },
+      {
+        "label": "D",
+        "text": "Steroid + antibiotic ear drop"
+      },
+      {
+        "label": "E",
+        "text": "Myringotomy"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว มีนาคม 2555",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมี serous otitis media (otitis media with effusion) หลังจากการเดินทางด้วยเครื่องบิน ที่สำคัญคือการแก้ไขปัญหาการอักเสบและความหนาแน่นในช่องหูตรงกลาง Pseudoephedrine เป็นยา decongestant ที่ช่วยในการลดการอักเสบและการหลั่งของหนาแน่นในหลอดอุสตาเคียน ซึ่งเหมาะสมที่สุดในกรณีนี้",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิงอายุ 25 ปี ตื่นเช้ามามีใบหน้าซีกซ้ายเบี้ยว ชากระพุ้งแก้มซ้าย หลับตาไม่สนิท น้าลายไหลมุมปากซ้าย Vital signs BP 110/70 mmHg PR 72 ครั้ง/นาที Physical examination พบ weakness ของมดลูกด้านซ้าย ไม่มีข้อบกพร่องของระบบประสาทอื่น จงให้การวินิจฉัย",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Trigeminal neuralgia"
+      },
+      {
+        "label": "B",
+        "text": "Idiopathic facial palsy (Bell's palsy)"
+      },
+      {
+        "label": "C",
+        "text": "Ramsay Hunt syndrome"
+      },
+      {
+        "label": "D",
+        "text": "Ruptured cerebral aneurysm"
+      },
+      {
+        "label": "E",
+        "text": "Cerebellopontine angle tumor"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "ศรว มีนาคม 2555",
+    "status": "complete",
+    "ai_notes": "โดยทั่วไปแล้ว Bell's palsy (idiopathic facial palsy) เป็นสาเหตุสำคัญที่สุดของ acute facial palsy คิดเป็น 60-75% ของกรณีทั้งหมด ผู้ป่วยนี้ไม่มีอาการที่บ่งชี้ถึง Ramsay Hunt (ไม่มี vesicles ในหู) ไม่มีอาการของ CVA หรือ tumor",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยนอนกรนมีประวัติ OSA ตรวจเจอ tonsil แค่ grade 2 การรักษาที่เหมาะสมคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Tonsillectomy"
+      },
+      {
+        "label": "B",
+        "text": "Uvuloplasty"
+      },
+      {
+        "label": "C",
+        "text": "Diazepam"
+      },
+      {
+        "label": "D",
+        "text": "Corticosteroid"
+      },
+      {
+        "label": "E",
+        "text": "CPAP therapy"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "ศรว มีนาคม 2555",
+    "status": "complete",
+    "ai_notes": "Tonsil grade 2 ไม่ใหญ่พอที่จะเป็นสาเหตุหลักของ OSA จึงไม่มีข้อบ่งชี้ในการทำ tonsillectomy CPAP therapy เป็นการรักษาของเลือกสำหรับ OSA",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยเด็กหญิงอายุ 3 ปี หนัก 15 กิโลกรัม สูง 89 เซนติเมตร มีอาการนอนกรนมา 2 เดือน Physical examination พบการบวมเล็กน้อยของท่อไขสวนซ้ายและมีสีซีด เด็กคนนี้มีความเสี่ยงต่อภาวะใด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Obesity"
+      },
+      {
+        "label": "B",
+        "text": "Adenotonsillar hypertrophy"
+      },
+      {
+        "label": "C",
+        "text": "Cor pulmonale"
+      },
+      {
+        "label": "D",
+        "text": "Pulmonary hypertension"
+      },
+      {
+        "label": "E",
+        "text": "Growth retardation"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว มีนาคม 2555",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมีการบวมของท่อไขสวน (turbinate) ซึ่งเป็นอาการของการอักเสบ นอนกรนมา 2 เดือน บ่งชี้ว่าอาจมี sleep apnea ซึ่งทำให้เกิด hypoxemia ส่งผลต่อ pulmonary vasculature ซึ่งสามารถนำไปสู่ pulmonary hypertension ได้ ค่อนข้างเสี่ยง",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยมาพบแพทย์ด้วยปวดหู 2 วัน เอาไม้หูมาทำให้ได้เมือกเหนียวสีดำ ส่องหูพบภาพการอักเสบ (ตามรูปสีที่ให้ไว้) ผู้ป่วยนี้ได้รับการวินิจฉัยว่าเป็นอะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Malignant otitis externa"
+      },
+      {
+        "label": "B",
+        "text": "Diffuse otitis externa"
+      },
+      {
+        "label": "C",
+        "text": "Localized otitis externa (furuncle)"
+      },
+      {
+        "label": "D",
+        "text": "Mycotic otitis externa"
+      },
+      {
+        "label": "E",
+        "text": "Chronic suppurative otitis media"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "ศรว มีนาคม 2555",
+    "status": "complete",
+    "ai_notes": "การพบเมือกเหนียวสีดำ (black necrotic eschar) เป็นลักษณะที่อาจชี้ไปยัง mycotic otitis externa หรือ malignant otitis externa อย่างไรก็ตาม mycotic otitis จะมีการหลั่งของเมือกเหนียวสีดำเป็นอาการทั่วไป",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ชายอายุ 20 ปี ตอนเด็กเป็นหูน้าหนวกข้างขวาบ่อย พักหลังเป็นหูน้าหนวกมากขึ้น วันนี้มามีอาการวิงเวียนศีรษะ จะให้การรักษาอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Film mastoid"
+      },
+      {
+        "label": "B",
+        "text": "Audiogram & tympanogram"
+      },
+      {
+        "label": "C",
+        "text": "IV antivertigo drugs"
+      },
+      {
+        "label": "D",
+        "text": "IV ciprofloxacin admit"
+      },
+      {
+        "label": "E",
+        "text": "Oral ciprofloxacin + follow-up 2 วัน"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "คอมพรี จุฬาลงกรณ์มหาวิทยาลัย 2012",
+    "status": "complete",
+    "ai_notes": "ประวัติหูน้าหนวกซ้ำๆ ร่วมกับวิงเวียนศีรษะใหม่บ่งชี้ว่า อาจเกิดจากการติดเชื้อของหูขวาที่ร้ายแรง หรือแม้แต่ mastoiditis ที่สามารถนำไปสู่ labyrinthitis IV ciprofloxacin พร้อมการรับปรึกษาจำเป็นเพื่อการรักษาที่เหมาะสม",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิงอายุ 20 ปี มีอาการปวดหู หูอื้อทันทีหลังจากแมลงเข้าหู เมื่อคืนนี้ วันนี้หูอื้อมาก ตรวจพบแมลงสาบขนาดเล็กตายแล้วอยู่ในหูขวา จะรักษาอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Remove by hook"
+      },
+      {
+        "label": "B",
+        "text": "Remove by prick"
+      },
+      {
+        "label": "C",
+        "text": "Remove by bayonet forceps"
+      },
+      {
+        "label": "D",
+        "text": "Remove by alligator forceps"
+      },
+      {
+        "label": "E",
+        "text": "Remove by suction"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "คอมพรี จุฬาลงกรณ์มหาวิทยาลัย 2012",
+    "status": "complete",
+    "ai_notes": "Alligator forceps เป็นเครื่องมือที่ดีที่สุดสำหรับการนำแมลงออก เพราะสามารถจับแมลงได้อย่างแน่นหนา ลดการสูญเสียส่วนของแมลงและเนื้อเยื่อในช่องหูชั่วคราว",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "หญิงอายุ 40 ปี มี left cervical lymphadenopathy ขนาด 2 เซนติเมตร มา 3 สัปดาห์ ไม่มีความปวด ไม่มีไข้ ไม่มีอาการอื่น Physical examination ปกติ ENT examination ปกติ ข้อใดควรทำเป็นอันดับแรก",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Lymph node biopsy"
+      },
+      {
+        "label": "B",
+        "text": "Lymph node fine needle aspiration"
+      },
+      {
+        "label": "C",
+        "text": "Tuberculin test (Mantoux)"
+      },
+      {
+        "label": "D",
+        "text": "Bone marrow aspiration"
+      },
+      {
+        "label": "E",
+        "text": "Observe and follow-up"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "คอมพรี จุฬาลงกรณ์มหาวิทยาลัย 2012",
+    "status": "complete",
+    "ai_notes": "Lymphadenopathy ขนาด 2 เซนติเมตร ในผู้ป่วยที่ไม่มีอาการอื่น ไม่มีไข้ ไม่มีความปวด อาจเป็นขนาดปกติหรือมาจากการติดเชื้อเล็กน้อย การสังเกตและติดตามผลการรักษาจึงเป็นตัวเลือกที่เหมาะสม หากยังคงอยู่หรือเพิ่มขึ้นอาจต้องทำ biopsy",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "เด็กมี earwax แข็งมาก ต้องทำอย่างไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Immediate removal with instrument"
+      },
+      {
+        "label": "B",
+        "text": "Instill oil drops and schedule removal appointment"
+      },
+      {
+        "label": "C",
+        "text": "Instill ceruminolytic agent and immediate removal"
+      },
+      {
+        "label": "D",
+        "text": "Use hydrogen peroxide only"
+      },
+      {
+        "label": "E",
+        "text": "Referral to ENT without intervention"
+      }
+    ],
+    "correct_answer": "B",
+    "exam_source": "คอมพรี จุฬาลงกรณ์มหาวิทยาลัย 2012",
+    "status": "complete",
+    "ai_notes": "Earwax แข็งมาก ควรหยอดน้ามันหรือ ceruminolytic agent เพื่อให้นุ่มก่อน แล้วจึงนัดมากลับเพื่อนำออก การพยายามนำออกโดยเครื่องมืออาจเกิดอันตรายต่อช่องหูชั่วคราวและแดรม",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ผู้ป่วยกินอาหารมีก้างปลาติดคอ 1 สัปดาห์ก่อนมาพบแพทย์ มีอาการกลืนแล้วเจ็บเป็นๆหายๆ มาพบแพทย์ ตรวจไม่พบก้างปลา จงให้การรักษา",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Oral antibiotic 7 วัน กลับบ้าน"
+      },
+      {
+        "label": "B",
+        "text": "Soft tissue neck film"
+      },
+      {
+        "label": "C",
+        "text": "Barium swallow"
+      },
+      {
+        "label": "D",
+        "text": "Fiberoptic esophagoscopy"
+      },
+      {
+        "label": "E",
+        "text": "Reassure patient that no foreign body found, provide symptomatic relief"
+      }
+    ],
+    "correct_answer": "E",
+    "exam_source": "คอมพรี จุฬาลงกรณ์มหาวิทยาลัย 2012",
+    "status": "complete",
+    "ai_notes": "หลังจากตรวจไม่พบก้างปลาและอาการเจ็บเป็นๆหายๆ แสดงว่าก้างปลาอาจเคลื่อนตัวไปแล้วหรือสม่อมอยู่ในจุดที่ไม่เป็นอันตราย การให้ความมั่นใจและแนะนำการรักษาอาการเป็นการจัดการที่เหมาะสม",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "นักบาสเกตบอลถูกเพื่อนศอกที่หู มีอาการหูอื้อทันทีและมีเลือดออก ตรวจร่างกายพบ rupture of eardrum มี blood clot การรักษาโดยนำเลือดออก แล้ว step ต่อไปคืออะไร",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Oral antibiotic"
+      },
+      {
+        "label": "B",
+        "text": "Antibiotic ear drop"
+      },
+      {
+        "label": "C",
+        "text": "Antihistamine"
+      },
+      {
+        "label": "D",
+        "text": "Paper patch over the perforation"
+      },
+      {
+        "label": "E",
+        "text": "Immediate tympanoplasty"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "คอมพรี จุฬาลงกรณ์มหาวิทยาลัย 2012",
+    "status": "complete",
+    "ai_notes": "Traumatic perforation of tympanum สามารถหายได้เอง หลังจากนำ blood clot ออกแล้ว ควรแปะ paper patch เพื่อปกป้องแดรมและช่วยให้หายเร็วขึ้น การทำ tympanoplasty ควรรอสักเวลาหากแดรมไม่หาย",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 15 ปี มีรูที่หน้าหู ขวามาตั้งแต่เกิด 2 ปี มีน้าใสๆไหลออกมา ขณะนี้บวมแดง ปวดมาก จงให้การวินิจฉัยและการรักษา",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Lymphadenitis treated with antibiotic"
+      },
+      {
+        "label": "B",
+        "text": "Branchial cleft cyst treated with excision"
+      },
+      {
+        "label": "C",
+        "text": "Preauricular abscess treated with incision and drainage"
+      },
+      {
+        "label": "D",
+        "text": "Infected preauricular sinus treated with excision"
+      },
+      {
+        "label": "E",
+        "text": "Preauricular cyst treated with observation"
+      }
+    ],
+    "correct_answer": "D",
+    "exam_source": "คอมพรี จุฬาลงกรณ์มหาวิทยาลัย 2012",
+    "status": "complete",
+    "ai_notes": "รูที่หน้าหู (pit) มาตั้งแต่เกิด เป็นสัญลักษณ์ของ preauricular sinus หรือ preauricular pit ที่มักติดเชื้อได้ การไหลของน้าใสๆและการบวมแดงปวดแสดงว่ามีการติดเชื้อ การรักษาในกรณีติดเชื้อคือ incision and drainage หรือ excision ของสิ่งที่อักเสบ",
+    "subject": "ent",
+    "exam_type": "NL2"
+  },
+  {
+    "scenario": "ชายอายุ 65 ปี เสียงแหบมา 1 เดือน อาการคงที่ มีประวัติสูบบุหรี่มา 30 ปี ตรวจร่างกายเจอสายเสียงซ้ายไม่ขยับ ข้างขวาบวมเล็กน้อยขยับได้นิดหน่อย ทำอะไรต่อ",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Chest X-Ray"
+      },
+      {
+        "label": "B",
+        "text": "Stroboscope"
+      },
+      {
+        "label": "C",
+        "text": "Voice rest"
+      },
+      {
+        "label": "D",
+        "text": "Speech therapy"
+      },
+      {
+        "label": "E",
+        "text": "Direct laryngoscope with biopsy"
+      }
+    ],
+    "correct_answer": "A",
+    "exam_source": "คอมพรี จุฬาลงกรณ์มหาวิทยาลัย 2012",
+    "status": "complete",
+    "ai_notes": "ผู้ป่วยมีประวัติสูบบุหรี่นาน 30 ปี เสียงแหบมา 1 เดือน และพบ vocal cord palsy (left vocal cord immobile) บ่งชี้ว่า recurrent laryngeal nerve อาจถูกบีบอัด ดังนั้นต้องทำ Chest X-Ray เพื่อตรวจสอบว่ามี lung cancer หรือ mediastinal pathology ที่อาจบีบอัด RLN หรือไม่ ซึ่งมีความเสี่ยงสูงในผู้สูบบุหรี่ยาวนาน",
+    "subject": "ent",
+    "exam_type": "NL2"
+  }
+]

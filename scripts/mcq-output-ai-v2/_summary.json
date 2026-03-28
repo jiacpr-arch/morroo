@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-03-26T11:09:57.828Z",
+  "original_raw": 1225,
+  "original_ai": 461,
+  "debug_recovered": 0,
+  "missing_found": 699,
+  "skipped_short": 449,
+  "formatted": 287,
+  "ai_enhanced": 395,
+  "failed": 17,
+  "total_saved": 1143
+}

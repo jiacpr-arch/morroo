@@ -1,0 +1,836 @@
+[
+  {
+    "id": "55a3d351-8552-4360-b3d7-2511ff3f0af8",
+    "correct_answer": "C",
+    "explanation": "การตรวจ HIV ต้องได้รับ informed consent จากผู้ป่วยโดยตรงอย่างชัดเจน และบันทึกในเวชระเบียน ไม่สามารถขอจากญาติหรือเจ้าหน้าที่สาธารณสุขแทนได้",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C: ต้องขออนุญาตโดย informed consent อย่างชัดแจ้งและบันทึกในเวชระเบียน",
+      "reason": "การตรวจ HIV เป็นการตรวจที่มีผลกระทบสำคัญต่อผู้ป่วย ทั้งด้านจิตใจ สังคม และกฎหมาย ดังนั้น จึงต้องได้รับ voluntary informed consent จากผู้ป่วยเองโดยตรง หลักการ 3 C's: Counselling (ให้คำปรึกษา), Consent (ยินยอม), Confidentiality (รักษาความลับ) การตรวจโดยไม่ได้รับอนุญาตถือเป็นการละเมิดสิทธิผู้ป่วยและผิดจริยธรรม ญาติไม่มีอำนาจในการยินยอมแทนผู้ป่วยผู้ใหญ่ที่มีสติสัมปชัญญะ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ไม่จำเป็นต้องขออนุญาต",
+          "is_correct": false,
+          "explanation": "ผิด - การตรวจ HIV ต้องการ informed consent เสมอ"
+        },
+        {
+          "label": "B",
+          "text": "ต้องขออนุญาตเป็นลายลักษณ์อักษรเสมอ",
+          "is_correct": false,
+          "explanation": "Verbal informed consent ก็เพียงพอในบางกรณี ไม่จำเป็นต้องเป็นลายลักษณ์อักษรเสมอ"
+        },
+        {
+          "label": "C",
+          "text": "ต้องขออนุญาตโดย informed consent อย่างชัดแจ้ง",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: 3 C's principle - Counselling + Consent + Confidentiality บันทึกในเวชระเบียน"
+        },
+        {
+          "label": "D",
+          "text": "ขออนุญาตจากญาติเพียงพอ",
+          "is_correct": false,
+          "explanation": "ญาติไม่มีอำนาจยินยอมแทนผู้ป่วยผู้ใหญ่ที่มีสติ"
+        },
+        {
+          "label": "E",
+          "text": "ขออนุญาตจากหัวหน้าสาธารณสุข",
+          "is_correct": false,
+          "explanation": "ผิดอย่างสิ้นเชิง ต้องขอจากผู้ป่วยเท่านั้น"
+        }
+      ],
+      "key_takeaway": "HIV testing: ต้องได้ Voluntary Informed Consent (3 C's) จากผู้ป่วยโดยตรงเท่านั้น"
+    }
+  },
+  {
+    "id": "55fc7649-1780-4002-873e-8c16aebccd91",
+    "correct_answer": "B",
+    "explanation": "ผู้ป่วย severe CAP (bilateral infiltrates, SpO2 90%, RR 26, BP 100/70) และ throat swab negative for influenza ควรรักษาด้วย IV Ceftriaxone เป็น empirical treatment สำหรับ typical bacterial pneumonia",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B: IV Ceftriaxone เพราะ severe CAP ที่ throat swab negative for influenza ควรรักษาด้วย beta-lactam IV ก่อน",
+      "reason": "Severe CAP criteria (CURB-65 หรือ PSI): RR>30, BP<90/60 = severe → ต้องการ IV antibiotics CAP ที่ throat swab negative for influenza แสดงว่าไม่ได้เป็น influenza pneumonia ดังนั้นรักษาด้วย antibiotic เพียงอย่างเดียว Ceftriaxone IV ครอบคลุม Streptococcus pneumoniae, H. influenzae, gram-negatives ถ้า throat swab positive for influenza ควร add oseltamivir ด้วย Oseltamivir ไม่จำเป็นเมื่อ influenza ถูก ruled out แล้ว",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Oral azithromycin",
+          "is_correct": false,
+          "explanation": "Mild-moderate outpatient CAP เท่านั้น ไม่เพียงพอสำหรับ severe CAP"
+        },
+        {
+          "label": "B",
+          "text": "IV ceftriaxone",
+          "is_correct": true,
+          "explanation": "Severe CAP + influenza negative = beta-lactam IV เป็น appropriate empirical treatment"
+        },
+        {
+          "label": "C",
+          "text": "IV levofloxacin",
+          "is_correct": false,
+          "explanation": "ใช้ได้แต่ไม่ใช่ first-line standard treatment สำหรับ CAP ตาม guideline"
+        },
+        {
+          "label": "D",
+          "text": "IV ceftriaxone + oral oseltamivir",
+          "is_correct": false,
+          "explanation": "Oseltamivir ไม่จำเป็นเมื่อ influenza ถูก ruled out แล้ว"
+        },
+        {
+          "label": "E",
+          "text": "IV levofloxacin + oral oseltamivir",
+          "is_correct": false,
+          "explanation": "Oseltamivir ไม่จำเป็น และ levofloxacin ไม่ใช่ first-line"
+        }
+      ],
+      "key_takeaway": "Severe CAP + influenza negative → IV Ceftriaxone; ไม่ต้องใช้ oseltamivir ถ้า influenza ruled out"
+    }
+  },
+  {
+    "id": "57b55a97-3933-4816-863d-cde1fc4e7d27",
+    "correct_answer": "B",
+    "explanation": "Acute pyelonephritis ที่ urine culture พบ gram-positive cocci in chains (Enterococcus หรือ Streptococcus) รักษาด้วย Ceftriaxone ซึ่งครอบคลุม Streptococcus ที่ทำ UTI",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B: Ceftriaxone เพราะ gram-positive cocci in chains ใน UTI มักเป็น Streptococcus ที่ตอบสนองต่อ cephalosporin",
+      "reason": "Gram-positive cocci in chains ใน urine = Enterococcus หรือ Streptococcus agalactiae (GBS) สำหรับ pyelonephritis ที่ต้องการ IV treatment Ceftriaxone ครอบคลุม Streptococcus species ดี อย่างไรก็ตาม Enterococcus บางสายพันธุ์ดื้อต่อ cephalosporin ในทางปฏิบัติ Ampicillin หรือ Ampicillin-sulbactam ครอบคลุม Enterococcus ได้ดีกว่า แต่คำตอบในข้อนี้ระบุ Ceftriaxone ซึ่งเป็นตัวเลือกสำหรับ acute pyelonephritis ทั่วไป",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Amoxicillin",
+          "is_correct": false,
+          "explanation": "Oral agent ไม่เหมาะสำหรับ acute pyelonephritis ที่ต้องการ IV"
+        },
+        {
+          "label": "B",
+          "text": "Ceftriaxone",
+          "is_correct": true,
+          "explanation": "IV beta-lactam สำหรับ acute pyelonephritis ครอบคลุม streptococcal UTI"
+        },
+        {
+          "label": "C",
+          "text": "Ampicillin + sulbactam",
+          "is_correct": false,
+          "explanation": "ดีสำหรับ Enterococcus แต่ไม่ใช่คำตอบในข้อนี้"
+        },
+        {
+          "label": "D",
+          "text": "Levofloxacin",
+          "is_correct": false,
+          "explanation": "Alternative treatment แต่ไม่ใช่ first-line ตามโจทย์"
+        },
+        {
+          "label": "E",
+          "text": "Amoxicillin-clavulanate",
+          "is_correct": false,
+          "explanation": "Oral agent ไม่เหมาะสำหรับ acute pyelonephritis"
+        }
+      ],
+      "key_takeaway": "Gram-positive cocci in chains (UTI/pyelonephritis) → Ceftriaxone IV เป็น treatment of choice"
+    }
+  },
+  {
+    "id": "5a9e17e8-cf95-4070-860f-89b16a3cc8de",
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วย ICU ใส่ ET tube 5 วัน มีไข้ ความดันต่ำ และ sputum แสดง GNB (gram-negative bacilli) → HAP/VAP จาก GNB ให้ Amikacin (aminoglycoside) เพื่อครอบคลุม MDR GNB ขณะรอ culture",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Amikacin เพราะ VAP ที่เกิดหลัง 5 วัน (late-onset) มีความเสี่ยงสูงต่อ MDR GNB ต้องการ broad-spectrum coverage",
+      "reason": "Hospital-Acquired Pneumonia (HAP) / Ventilator-Associated Pneumonia (VAP) หลัง 5 วัน = late-onset HAP มีความเสี่ยงสูงต่อ MDR organisms: Pseudomonas aeruginosa, MRSA, Acinetobacter, ESBL GNB ขณะรอ culture ควรให้ empirical broad-spectrum coverage Amikacin ครอบคลุม MDR gram-negative organisms รวมถึง Pseudomonas Ceftriaxone ไม่เพียงพอสำหรับ MDR GNB Imipenem ก็เป็นตัวเลือกแต่ amikacin เป็นคำตอบในข้อนี้",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Amikacin",
+          "is_correct": true,
+          "explanation": "Aminoglycoside ครอบคลุม MDR GNB รวมถึง Pseudomonas ใน late-onset HAP/VAP"
+        },
+        {
+          "label": "B",
+          "text": "Ceftriaxone",
+          "is_correct": false,
+          "explanation": "ไม่เพียงพอสำหรับ MDR GNB ใน HAP"
+        },
+        {
+          "label": "C",
+          "text": "Levofloxacin",
+          "is_correct": false,
+          "explanation": "อาจมี resistance สูงใน ICU GNB"
+        },
+        {
+          "label": "D",
+          "text": "Imipenem",
+          "is_correct": false,
+          "explanation": "Carbapenem เป็น option แต่ไม่ใช่คำตอบในข้อนี้"
+        },
+        {
+          "label": "E",
+          "text": "Vancomycin",
+          "is_correct": false,
+          "explanation": "ครอบคลุม gram-positive (MRSA) ไม่ใช่ GNB"
+        }
+      ],
+      "key_takeaway": "VAP/HAP late-onset + GNB ใน GS → Amikacin (ครอบคลุม MDR GNB ขณะรอ culture)"
+    }
+  },
+  {
+    "id": "5b7ac970-0381-49c1-a1f9-4d076daed250",
+    "correct_answer": "B",
+    "explanation": "การยืนยัน streptococcal pharyngitis ที่เร็วและแม่นยำที่สุดคือ Rapid antigen detection test (RADT) สำหรับ Group A Streptococcus ให้ผลภายใน 5-10 นาที",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B: Rapid antigen detection test (RADT) เพราะให้ผลเร็ว specific สำหรับ GAS pharyngitis และใช้กำหนดการรักษา",
+      "reason": "Streptococcal pharyngitis (Group A Streptococcus): RADT มี specificity >95% sensitivity ~70-90% ผลใน 5-10 นาที เหมาะสำหรับ bedside decision making ถ้า RADT negative ควร confirm ด้วย throat culture (gold standard) Throat culture ใช้เวลา 24-48 ชั่วโมง แม้ accurate กว่า ASO titer บอก past infection ไม่ใช่ acute ใช้ติดตาม ARF CBC ไม่ specific สำหรับ bacterial vs viral pharyngitis Monospot test สำหรับ EBV (infectious mononucleosis) ไม่ใช่ Strep",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Throat culture + Gram stain",
+          "is_correct": false,
+          "explanation": "Gold standard แต่ใช้เวลา 24-48 ชั่วโมง ไม่เหมาะสำหรับ immediate decision"
+        },
+        {
+          "label": "B",
+          "text": "Rapid antigen detection test (RADT)",
+          "is_correct": true,
+          "explanation": "Quick, specific >95% ให้ผลใน 5-10 นาที สำหรับ bedside diagnosis ของ GAS pharyngitis"
+        },
+        {
+          "label": "C",
+          "text": "CBC + CXR",
+          "is_correct": false,
+          "explanation": "ไม่ specific สำหรับ Strep pharyngitis"
+        },
+        {
+          "label": "D",
+          "text": "Monospot test",
+          "is_correct": false,
+          "explanation": "สำหรับ EBV/infectious mononucleosis ไม่ใช่ Strep"
+        },
+        {
+          "label": "E",
+          "text": "ASO titer",
+          "is_correct": false,
+          "explanation": "บอก past Strep infection ไม่ใช่ acute; ใช้ติดตาม ARF"
+        }
+      ],
+      "key_takeaway": "Strep pharyngitis diagnosis = Rapid antigen detection test (RADT); ถ้า negative → throat culture"
+    }
+  },
+  {
+    "id": "5e8665e1-a90c-4605-ab79-01f40e1ec321",
+    "correct_answer": "A",
+    "explanation": "ชายอายุ 40 ปี มีไข้ ปวดเมื่อย น้ำท่วม ลุยน้ำทุกวัน ตัวเหลือง ตับโต ในโจทย์นี้คำตอบระบุว่า Enteric fever แม้ clinical picture จะชวนคิดถึง Leptospirosis",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Enteric fever ตามโจทย์ (ศรว 2008)",
+      "reason": "Enteric fever (Typhoid fever จาก Salmonella typhi): ไข้สูง ปวดเมื่อย ตับโต ม้ามโต อาจมี jaundice ได้ มักมีประวัติสัมผัสอาหาร/น้ำปนเปื้อน อย่างไรก็ตาม clinical picture ในโจทย์นี้ (น้ำท่วม ลุยน้ำ ตัวเหลือง ตับโต) มีความคล้ายกับ Leptospirosis มาก แต่คำตอบที่ให้มาคือ Enteric fever ซึ่งน่าจะพิจารณาจาก exam year 2008 ที่อาจมี clinical context เพิ่มเติม Leptospirosis: มักมี WBC สูง, icterus, renal failure, calf tenderness, history of water exposure",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Enteric fever",
+          "is_correct": true,
+          "explanation": "คำตอบตามโจทย์ ศรว 2008; ไข้สูง ปวดเมื่อย ตับโต"
+        },
+        {
+          "label": "B",
+          "text": "Dengue fever",
+          "is_correct": false,
+          "explanation": "ไม่มี thrombocytopenia ชัดเจนในโจทย์"
+        },
+        {
+          "label": "C",
+          "text": "Leptospirosis",
+          "is_correct": false,
+          "explanation": "Clinical picture คล้ายแต่ไม่ใช่คำตอบในโจทย์นี้"
+        },
+        {
+          "label": "D",
+          "text": "Scrub typhus",
+          "is_correct": false,
+          "explanation": "ต้องมี eschar characteristic"
+        },
+        {
+          "label": "E",
+          "text": "Murine typhus",
+          "is_correct": false,
+          "explanation": "มักมี rash, flea exposure"
+        }
+      ],
+      "key_takeaway": "Enteric fever: ไข้ + ตับโต + ปวดเมื่อย; สัมผัสน้ำ + ตัวเหลือง + ตับโต ก็คิดถึง Leptospirosis"
+    }
+  },
+  {
+    "id": "5fc0bf6e-4a8d-45cf-b957-39148afe2394",
+    "correct_answer": "B",
+    "explanation": "ชายอายุ 20 ปี exudative tonsillitis + lymphadenopathy + hepatomegaly + atypical lymphocytes + positive heterophile antibody = Infectious mononucleosis จาก EBV",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B: Infectious mononucleosis เพราะ clinical triad (tonsillitis + LAD + hepatomegaly) + atypical lymphocytes + positive monospot",
+      "reason": "Infectious mononucleosis (IM) จาก EBV: classic triad = pharyngitis/tonsillitis, lymphadenopathy, hepatosplenomegaly CBC = lymphocytosis with atypical lymphocytes (Downey cells = reactive T cells) Heterophile antibody test (Monospot) = positive ใน ~85% ของ IM ในผู้ใหญ่ Scrub typhus มี eschar, rash Scarlet fever มี sandpaper rash, strawberry tongue, Strep infection Acute leukemia: ไม่ค่อยมี positive monospot Acute HIV infection: acute retroviral syndrome อาจคล้าย IM แต่ monospot negative",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Scrub typhus",
+          "is_correct": false,
+          "explanation": "ต้องมี eschar, rural exposure, ไม่มี positive heterophile antibody"
+        },
+        {
+          "label": "B",
+          "text": "Infectious mononucleosis",
+          "is_correct": true,
+          "explanation": "EBV: tonsillitis + LAD + hepatomegaly + atypical lymphocytes + positive monospot = classic IM"
+        },
+        {
+          "label": "C",
+          "text": "Scarlet fever",
+          "is_correct": false,
+          "explanation": "Sandpaper rash, strawberry tongue, Strep pharyngitis, ไม่มี hepatomegaly หรือ atypical lymphocytes"
+        },
+        {
+          "label": "D",
+          "text": "Acute leukemia",
+          "is_correct": false,
+          "explanation": "ไม่มี positive heterophile antibody test"
+        },
+        {
+          "label": "E",
+          "text": "Acute HIV infection",
+          "is_correct": false,
+          "explanation": "คล้าย IM แต่ heterophile antibody negative, HIV RNA positive"
+        }
+      ],
+      "key_takeaway": "Tonsillitis + LAD + hepatomegaly + atypical lymphocytes + positive monospot = EBV Infectious mononucleosis"
+    }
+  },
+  {
+    "id": "6074a9dc-1343-4df1-9c45-3e63d789eafb",
+    "correct_answer": "B",
+    "explanation": "ผู้ป่วยสงสัย TB และมีคู่สมรสที่อาศัยร่วมกัน ต้องตรวจยืนยัน TB ในผู้ป่วยก่อน (CXR + AFB) แล้วส่ง contact tracing ให้ภรรยา (close contact) ไปตรวจคัดกรองด้วยวิธีเดียวกัน",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B: ตรวจ CXR + AFB ผู้ป่วย จากนั้น screen ภรรยาที่เป็น close contact ด้วย CXR + tuberculin test",
+      "reason": "TB contact investigation: ผู้ป่วยสงสัย TB → ตรวจ sputum AFB และ CXR ยืนยัน close contacts (household contacts) ที่อาศัยร่วมกัน ≥8 ชม/วัน ต้องได้รับการ screening: CXR + tuberculin skin test (TST) หรือ IGRA BCG vaccination ไม่มีประโยชน์ในผู้ใหญ่ที่เป็น close contact TB serology ไม่มีประโยชน์ (ไม่ได้รับการรับรอง) การรักษาผู้ป่วยเพียงอย่างเดียวโดยไม่ screen contact = miss ผู้ป่วยรายอื่นที่อาจติดเชื้อ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ตรวจหาเชื้อจากน้ำลาย/ริมฝีปาก",
+          "is_correct": false,
+          "explanation": "Sputum AFB เป็น standard ไม่ใช่น้ำลาย/ริมฝีปาก"
+        },
+        {
+          "label": "B",
+          "text": "CXR + AFB sputum ผู้ป่วย จากนั้น screen ภรรยา",
+          "is_correct": true,
+          "explanation": "Standard contact investigation: ยืนยัน index case → screen household contacts"
+        },
+        {
+          "label": "C",
+          "text": "ให้ภรรยาฉีด BCG",
+          "is_correct": false,
+          "explanation": "BCG ไม่มีประสิทธิภาพในผู้ใหญ่ที่ exposed แล้ว"
+        },
+        {
+          "label": "D",
+          "text": "ตรวจเลือด TB serology ภรรยา",
+          "is_correct": false,
+          "explanation": "TB serology ไม่ได้รับการรับรองทางการแพทย์ ไม่ reliable"
+        },
+        {
+          "label": "E",
+          "text": "รักษาผู้ป่วยแล้วปล่อยภรรยาต่อไป",
+          "is_correct": false,
+          "explanation": "ขาด contact tracing ทำให้พลาด secondary cases"
+        }
+      ],
+      "key_takeaway": "TB contact tracing: ยืนยัน index case (CXR + AFB) → screen household contacts ด้วย CXR + TST/IGRA"
+    }
+  },
+  {
+    "id": "63dbf6fc-a5f5-469c-8416-b1e6e406a574",
+    "correct_answer": "C",
+    "explanation": "เด็กอายุ 3 ปี ประวัติ dental caries (predisposing factor) มีไข้ต่ำๆ pansystolic murmur และ hepatomegaly = Infective endocarditis จากการกระจายของเชื้อจากฟันผุ",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ C: Infective endocarditis เพราะ dental caries เป็น predisposing factor สำหรับ IE และมี pansystolic murmur + hepatomegaly + fever",
+      "reason": "Infective endocarditis (IE) ใน children: predisposing factors = congenital heart disease, dental procedures, dental caries (Streptococcus viridans จาก oral flora เข้า bloodstream) Duke criteria: murmur (valvular involvement) + fever + predisposing condition (dental caries) = possible IE Pansystolic murmur อาจเกิดจาก valve damage จาก infection Hepatomegaly บ่งชี้ systemic infection/heart failure Viral carditis ไม่มีประวัติ dental caries Cardiomyopathy ไม่มีไข้",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Viral carditis",
+          "is_correct": false,
+          "explanation": "ไม่มีประวัติ viral prodrome ชัดเจน ไม่มี dental caries relation"
+        },
+        {
+          "label": "B",
+          "text": "Pericarditis",
+          "is_correct": false,
+          "explanation": "มักมี pericardial rub + chest pain โจทย์ระบุ no pericardial rub"
+        },
+        {
+          "label": "C",
+          "text": "Infective endocarditis",
+          "is_correct": true,
+          "explanation": "Dental caries (bacteremia source) + fever + murmur + hepatomegaly = IE; Strep viridans common cause"
+        },
+        {
+          "label": "D",
+          "text": "Cardiomyopathy",
+          "is_correct": false,
+          "explanation": "ไม่อธิบายไข้และ dental caries"
+        },
+        {
+          "label": "E",
+          "text": "Myocarditis",
+          "is_correct": false,
+          "explanation": "Viral myocarditis ไม่เกี่ยวกับ dental caries"
+        }
+      ],
+      "key_takeaway": "Dental caries (oral bacteremia) + fever + murmur = Infective endocarditis; Strep viridans most common"
+    }
+  },
+  {
+    "id": "6ad4e260-0144-4393-bc8d-93a4704e5d37",
+    "correct_answer": "B",
+    "explanation": "HIV positive มีไข้ 2 สัปดาห์ อ่อนแรงด้านขวา ชัก CT พบ multiple ring-enhancing lesions ที่ basal ganglia/thalamus/cerebellum = Toxoplasmosis ซึ่งพบบ่อยใน HIV patients",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B: Toxoplasmosis เพราะ HIV + multiple ring-enhancing lesions ที่ basal ganglia เป็น classic presentation",
+      "reason": "Toxoplasma gondii เป็น most common cause ของ intracranial mass lesion ใน HIV patients (CD4 <100) CT/MRI: multiple ring-enhancing lesions เฉพาะที่ basal ganglia, thalamus ทำให้ focal neurological deficits, seizure, fever การวินิจฉัย: empirical treatment ด้วย Pyrimethamine + Sulfadiazine หรือ TMP-SMX หาก response ดี = confirm Toxoplasma Lymphoma (CNS lymphoma): มักมี solitary lesion, EBV-associated ใน AIDS Cryptococcosis: meningitis มากกว่า mass lesion PML: progressive weakness ไม่มี enhancement ใน MRI TB meningitis: leptomeningeal enhancement ไม่ใช่ parenchymal mass",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Lymphoma",
+          "is_correct": false,
+          "explanation": "CNS lymphoma: มักมี solitary periventricular lesion ไม่ใช่ multiple basal ganglia"
+        },
+        {
+          "label": "B",
+          "text": "Toxoplasmosis",
+          "is_correct": true,
+          "explanation": "HIV + CD4 low + multiple ring-enhancing basal ganglia lesions + focal deficits = classic Toxoplasma"
+        },
+        {
+          "label": "C",
+          "text": "Cryptococcosis",
+          "is_correct": false,
+          "explanation": "Cryptococcal meningitis: diffuse meningitis, India ink positive ใน CSF ไม่ใช่ mass lesion"
+        },
+        {
+          "label": "D",
+          "text": "PML",
+          "is_correct": false,
+          "explanation": "Progressive multifocal leukoencephalopathy: white matter lesion ไม่มี ring enhancement"
+        },
+        {
+          "label": "E",
+          "text": "TB meningitis",
+          "is_correct": false,
+          "explanation": "Leptomeningeal disease ไม่ใช่ parenchymal mass lesion"
+        }
+      ],
+      "key_takeaway": "HIV + multiple ring-enhancing lesions (basal ganglia) = Toxoplasmosis → empirical Pyrimethamine + Sulfadiazine"
+    }
+  },
+  {
+    "id": "709404ae-f0fe-4427-8c60-a57d192b76c4",
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วย SLE on steroid (immunocompromised) มีหายใจเหนื่อยและ stool changes = Strongyloides hyperinfection syndrome ซึ่งเกิดใน immunosuppressed patients",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Strongyloides stercoralis เพราะ immunocompromised (steroid) + pulmonary + GI symptoms = hyperinfection",
+      "reason": "Strongyloides hyperinfection syndrome: เกิดในผู้ที่ immune suppressed (steroids, anti-TNF, HIV) Larva filariform มีจำนวนมากขึ้นในลำไส้ → penetrate gut wall → bloodstream → ปอด (pulmonary: dyspnea, hemoptysis) → ลำไส้ (GI: diarrhea, stool changes) อาจนำ GNB เข้า bloodstream ทำให้ gram-negative bacteremia ด้วย รักษาด้วย Ivermectin ไม่มีการ hyperinfection ใน Ascaris, Necator, Capillaria แบบเดียวกัน Entamoeba ทำ colitis ไม่มี pulmonary phase",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Strongyloides stercoralis",
+          "is_correct": true,
+          "explanation": "Autoinfection cycle ทำ hyperinfection ใน immunocompromised: steroid → ปอด + GI ร่วมกัน"
+        },
+        {
+          "label": "B",
+          "text": "Capillaria philippinensis",
+          "is_correct": false,
+          "explanation": "Intestinal capillariasis: watery diarrhea, malabsorption ไม่มี pulmonary"
+        },
+        {
+          "label": "C",
+          "text": "Necator americanus",
+          "is_correct": false,
+          "explanation": "Hookworm: anemia, ไม่มี hyperinfection syndrome"
+        },
+        {
+          "label": "D",
+          "text": "Entamoeba histolytica",
+          "is_correct": false,
+          "explanation": "Amoebic colitis/liver abscess ไม่มี pulmonary phase"
+        },
+        {
+          "label": "E",
+          "text": "Ascaris lumbricoides",
+          "is_correct": false,
+          "explanation": "มี pulmonary phase แต่ไม่มี hyperinfection ใน immunocompromised"
+        }
+      ],
+      "key_takeaway": "SLE on steroid + pulmonary + GI symptoms = Strongyloides hyperinfection → Ivermectin"
+    }
+  },
+  {
+    "id": "70a8fb02-9a84-4254-9818-abc39a01c41d",
+    "correct_answer": "A",
+    "explanation": "ชายหนุ่ม ไข้สูง ปวดหัว stiff neck + positive Kernig + petechiae/purpura ที่ขา + subconjunctival hemorrhage = Meningococcemia จาก Neisseria meningitidis",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: N. meningitidis เพราะ meningococcemia classic presentation: purpuric rash + meningismus ในคนหนุ่มสาว",
+      "reason": "Neisseria meningitidis: gram-negative diplococcus, มี polysaccharide capsule เป็น predisposing ต่อ asplenic patients Meningococcemia: ไข้สูงเฉียบพลัน + purpuric/petechial rash ที่ขา (DIC จาก endotoxin) + meningismus (stiff neck, Kernig) Waterhouse-Friderichsen syndrome: bilateral adrenal hemorrhage ใน severe cases Subconjunctival hemorrhage เกิดจาก systemic vasculitis N. meningitidis เป็น most common cause ของ bacterial meningitis ในวัยรุ่น/คนหนุ่มสาว รักษาด้วย Penicillin G หรือ Ceftriaxone IV stat",
+      "choices": [
+        {
+          "label": "A",
+          "text": "N. meningitidis",
+          "is_correct": true,
+          "explanation": "Purpuric rash + meningismus ในคนหนุ่มสาว = meningococcemia; gram-negative diplococcus"
+        },
+        {
+          "label": "B",
+          "text": "K. influenzae",
+          "is_correct": false,
+          "explanation": "Haemophilus influenzae พบในเด็กเล็ก (unvaccinated) ไม่มี purpuric rash characteristic"
+        },
+        {
+          "label": "C",
+          "text": "S. pneumoniae",
+          "is_correct": false,
+          "explanation": "พบในผู้สูงอายุ/asplenic ไม่มี purpuric rash characteristic"
+        },
+        {
+          "label": "D",
+          "text": "S. aureus",
+          "is_correct": false,
+          "explanation": "Staph meningitis พบน้อย มักมาจาก hematogenous spread"
+        },
+        {
+          "label": "E",
+          "text": "M. pneumoniae",
+          "is_correct": false,
+          "explanation": "ทำ atypical pneumonia ไม่ใช่ meningitis พร้อม purpura"
+        }
+      ],
+      "key_takeaway": "ไข้สูง + purpuric rash + meningismus ในวัยรุ่น = N. meningitidis → Ceftriaxone IV stat"
+    }
+  },
+  {
+    "id": "71bad490-3496-4712-a67a-4dba453660cb",
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วย TB ได้ Isoniazid (INH) เกิด peripheral neuropathy หลัง 3 สัปดาห์ INH ทำให้ขาด Vitamin B6 (Pyridoxine) ต้องเพิ่ม Pyridoxine 25-50 mg/day",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Pyridoxine (Vitamin B6) เพราะ INH ทำให้ขาด B6 โดยการ competitive inhibition ทำให้ peripheral neuropathy",
+      "reason": "Isoniazid (INH) mechanism of toxicity: INH เป็น hydrazide สามารถ chelate และ inactivate Pyridoxine (Vitamin B6) ทำให้ขาด B6 B6 เป็น cofactor ใน synthesis ของ neurotransmitters (GABA, serotonin) ขาด B6 ทำให้ peripheral neuropathy (sensorimotor), pellagra-like syndrome Pyridoxine 25-50 mg/day ให้ preventively โดยเฉพาะใน risk groups: alcoholics, elderly, malnourished, HIV, DM, CKD, pregnant Thiamine (B1) ขาดทำ Wernicke's encephalopathy, beriberi B12 ขาดทำ subacute combined degeneration",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Pyridoxine (Vitamin B6)",
+          "is_correct": true,
+          "explanation": "INH → ขาด B6 → peripheral neuropathy; รักษาและป้องกันด้วย Pyridoxine 25-50 mg/day"
+        },
+        {
+          "label": "B",
+          "text": "Thiamine (Vitamin B1)",
+          "is_correct": false,
+          "explanation": "B1 ขาดทำ Wernicke's/beriberi ไม่เกี่ยวกับ INH"
+        },
+        {
+          "label": "C",
+          "text": "Cyanocobalamin (Vitamin B12)",
+          "is_correct": false,
+          "explanation": "B12 ขาดทำ subacute combined degeneration ไม่เกี่ยวกับ INH"
+        },
+        {
+          "label": "D",
+          "text": "Folic acid",
+          "is_correct": false,
+          "explanation": "Folic acid ขาดทำ megaloblastic anemia ไม่ใช่ peripheral neuropathy"
+        },
+        {
+          "label": "E",
+          "text": "Ascorbic acid (Vitamin C)",
+          "is_correct": false,
+          "explanation": "Vitamin C ขาดทำ scurvy ไม่เกี่ยวกับ INH"
+        }
+      ],
+      "key_takeaway": "INH → peripheral neuropathy จากขาด Pyridoxine (B6) → ให้ Pyridoxine 25-50 mg/day"
+    }
+  },
+  {
+    "id": "73467de0-0c85-4b8d-a8dd-c53740fffc4d",
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วยสูงอายุ DM+HT มี acute pyelonephritis (CVA tenderness, ไข้, urine WBC) ต้องการ IV antibiotic Ceftriaxone 1-2g IV เพราะผู้ป่วยมี comorbidities และอาการรุนแรง",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Ceftriaxone 1-2g IV q12h เพราะ complicated pyelonephritis ในผู้สูงอายุ DM ต้องการ IV treatment",
+      "reason": "Acute pyelonephritis ใน elderly + DM + HT = complicated UTI ต้องการ IV antibiotics: Ceftriaxone 1-2g IV q12-24h ครอบคลุม gram-negative bacilli (E. coli, Klebsiella) DM เพิ่มความเสี่ยง emphysematous pyelonephritis, bacteremia ผู้สูงอายุมี altered pharmacokinetics → oral absorption ไม่สม่ำเสมอ Oral agents ไม่เหมาะสำหรับ complicated/severe pyelonephritis TMP-SMX อาจมี resistance สูงใน community-acquired UTI Ampicillin มี resistance >50% ใน E. coli",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ceftriaxone 1-2g IV q12h",
+          "is_correct": true,
+          "explanation": "Complicated pyelonephritis (elderly + DM) = IV cephalosporin เป็น first-line"
+        },
+        {
+          "label": "B",
+          "text": "Ceftriaxone 500mg oral q6h",
+          "is_correct": false,
+          "explanation": "Ceftriaxone ไม่มีรูปแบบ oral และ dose ผิด"
+        },
+        {
+          "label": "C",
+          "text": "Ofloxacin 400mg oral q12h",
+          "is_correct": false,
+          "explanation": "Fluoroquinolone resistance เพิ่มขึ้น ไม่เหมาะสำหรับ elderly DM ที่อาการรุนแรง"
+        },
+        {
+          "label": "D",
+          "text": "TMP-SMX oral",
+          "is_correct": false,
+          "explanation": "Resistance >20% ใน community E. coli ไม่ใช่ empirical choice สำหรับ severe cases"
+        },
+        {
+          "label": "E",
+          "text": "Ampicillin 500mg oral q6h",
+          "is_correct": false,
+          "explanation": "E. coli ดื้อ ampicillin มากกว่า 50%"
+        }
+      ],
+      "key_takeaway": "Complicated pyelonephritis (elderly/DM/HT) → Ceftriaxone IV; ไม่ใช้ oral agents สำหรับ severe cases"
+    }
+  },
+  {
+    "id": "7d749c0c-76ec-49e9-ad3d-1b9f96409047",
+    "correct_answer": "B",
+    "explanation": "ชายอายุ 20 ปี ไข้ ไอแห้ง 2 สัปดาห์ pruritic rash lymphadenopathy O2 83% CXR bilateral diffuse opacity = PCP (Pneumocystis jirovecii pneumonia) ใน HIV patient → TMP-SMX",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ B: TMP-SMX เพราะ bilateral diffuse infiltrate + severe hypoxia + young patient without predisposing history = PCP ใน AIDS",
+      "reason": "PCP (Pneumocystis jirovecii pneumonia): classic presentation ใน HIV/AIDS (CD4 <200) ไข้ + dry cough + progressive dyspnea CXR: bilateral diffuse interstitial opacity ('ground glass' appearance) SpO2 83% = severe PCP (ต้องใช้ adjunct steroids ด้วย) Rash ใน AIDS อาจเกี่ยวกับ HIV-related dermatitis Treatment: TMP-SMX 15-20 mg/kg/day (trimethoprim component) × 21 วัน + Prednisone ถ้า PaO2 <70 mmHg TMP-SMX ยังเป็น drug of choice ทั้ง treatment และ prophylaxis",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ceftriaxone",
+          "is_correct": false,
+          "explanation": "สำหรับ typical bacterial CAP ไม่ครอบคลุม Pneumocystis"
+        },
+        {
+          "label": "B",
+          "text": "TMP-SMX",
+          "is_correct": true,
+          "explanation": "Drug of choice สำหรับ PCP: 15-20 mg/kg/day × 21 วัน; add steroids ถ้า severe"
+        },
+        {
+          "label": "C",
+          "text": "Azithromycin",
+          "is_correct": false,
+          "explanation": "สำหรับ atypical pneumonia (Mycoplasma, Chlamydia) ไม่ใช่ PCP"
+        },
+        {
+          "label": "D",
+          "text": "Anti-TB drugs",
+          "is_correct": false,
+          "explanation": "สำหรับ pulmonary TB ไม่ใช่ PCP (แม้ TB และ PCP อาจเกิดร่วมกันใน AIDS)"
+        },
+        {
+          "label": "E",
+          "text": "Amphotericin B",
+          "is_correct": false,
+          "explanation": "สำหรับ cryptococcal meningitis, severe fungal infections ไม่ใช่ PCP"
+        }
+      ],
+      "key_takeaway": "Bilateral diffuse opacity + severe hypoxia + young = PCP ใน HIV → TMP-SMX (+ steroids ถ้า severe)"
+    }
+  },
+  {
+    "id": "7ecf7765-8ba9-4ae5-a205-70848eba5797",
+    "correct_answer": "A",
+    "explanation": "เด็กอายุ 8 ปี ไข้ เจ็บคอ greyish patch ที่ pharynx + tonsils (pseudomembrane) = Diphtheria จาก Corynebacterium diphtheriae ซึ่งมีลักษณะเฉพาะคือ grey pseudomembrane ที่ลอกออกยาก",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Diphtheria เพราะ greyish patch/pseudomembrane ที่คอและทอนซิลในเด็ก = pathognomonic ของ diphtheria",
+      "reason": "Diphtheria จาก Corynebacterium diphtheriae: grey pseudomembrane ที่ pharynx/tonsils (ลอกออกแล้วมีเลือดออก) + bilateral anterior cervical lymphadenopathy (bull neck appearance) + ไข้ ตับม้ามไม่โต (ต่างจาก IM) Complications: diphtheria toxin → myocarditis, peripheral neuropathy, palatal palsy Infectious mononucleosis มี exudates แต่สีขาว-เหลือง + ตับม้ามโต + atypical lymphocytes Acute streptococcal pharyngitis: exudates + ตับม้ามไม่โต แต่ไม่มี grey pseudomembrane รักษา diphtheria: Antitoxin ทันที + Penicillin/Erythromycin",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Diphtheria",
+          "is_correct": true,
+          "explanation": "Grey pseudomembrane ที่ pharynx/tonsils + bilateral cervical LAD = classic diphtheria"
+        },
+        {
+          "label": "B",
+          "text": "Infectious mononucleosis",
+          "is_correct": false,
+          "explanation": "IM มี white exudate + hepatosplenomegaly + atypical lymphocytes ไม่มี grey pseudomembrane"
+        },
+        {
+          "label": "C",
+          "text": "Acute streptococcal pharyngitis",
+          "is_correct": false,
+          "explanation": "มี white/yellow exudates ไม่มี grey pseudomembrane"
+        },
+        {
+          "label": "D",
+          "text": "Acute viral pharyngitis",
+          "is_correct": false,
+          "explanation": "ไม่มี exudates ที่เด่นชัด ไม่มี pseudomembrane"
+        },
+        {
+          "label": "E",
+          "text": "Adenoviral pharyngitis",
+          "is_correct": false,
+          "explanation": "Adenovirus มี pharyngoconjunctival fever ไม่มี grey pseudomembrane"
+        }
+      ],
+      "key_takeaway": "Grey pseudomembrane ที่ pharynx/tonsils ในเด็ก = Diphtheria → Antitoxin + Penicillin ทันที"
+    }
+  },
+  {
+    "id": "80f46a85-669d-4b36-ad9a-6314cdeecb2b",
+    "correct_answer": "E",
+    "explanation": "Severe P. falciparum malaria (ring form + multiple infection + accole form) ร่วมกับ altered consciousness และชัก = cerebral malaria ต้องการ IV Artesunate + IV Quinine เร่งด่วน",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ E: Artesunate IV + Quinine IV เพราะ severe/cerebral falciparum malaria ต้องการ combination IV anti-malarial",
+      "reason": "Severe P. falciparum malaria criteria: altered consciousness, seizure, high parasitemia, respiratory failure PBS features: ring form + multiple infection + accole form (appliqué form) = P. falciparum specific การรักษา: IV Artesunate เป็น first-line สำหรับ severe malaria ลด mortality ดีกว่า IV Quinine IV Quinine ร่วมด้วยเพิ่ม efficacy ใน severe cases LP ต้องรอ treat malaria ก่อน เพราะ altered consciousness อาจเป็น raised ICP Dextrose 50% ใช้เมื่อ hypoglycemia (common in severe malaria แต่ไม่ใช่ first priority ทีนี้)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Lumbar puncture",
+          "is_correct": false,
+          "explanation": "Risk ใน raised ICP; ต้อง treat malaria ก่อน"
+        },
+        {
+          "label": "B",
+          "text": "CT scan ก่อน LP",
+          "is_correct": false,
+          "explanation": "Delay life-saving anti-malarial treatment"
+        },
+        {
+          "label": "C",
+          "text": "Ceftriaxone IV",
+          "is_correct": false,
+          "explanation": "ไม่ครอบคลุม malaria"
+        },
+        {
+          "label": "D",
+          "text": "50% glucose + Phenobarbital",
+          "is_correct": false,
+          "explanation": "Symptomatic only ไม่ใช่ definitive treatment ของ cerebral malaria"
+        },
+        {
+          "label": "E",
+          "text": "Artesunate IV + Quinine IV",
+          "is_correct": true,
+          "explanation": "Severe/cerebral malaria = IV Artesunate (first-line) + Quinine IV combination"
+        }
+      ],
+      "key_takeaway": "Cerebral malaria (accole form + altered consciousness) → IV Artesunate + IV Quinine ทันที"
+    }
+  },
+  {
+    "id": "81fd6aee-de58-4245-9ed9-1500515ef4ed",
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วยมี dyspnea O2 sat 86% CXR bilateral interstitial infiltration ใน immunocompromised patient = PCP (Pneumocystis jirovecii) ซึ่งเป็น most common cause ของ bilateral interstitial infiltration ใน AIDS",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Pneumocystis jirovecii เพราะ bilateral interstitial pattern + severe hypoxia ใน immunocompromised = PCP",
+      "reason": "PCP hallmark: bilateral symmetric interstitial infiltrates ('bat-wing' or 'ground glass' pattern), progressive hypoxia, dry cough ใน AIDS CD4 < 200 ในทางคลินิก: O2 sat ต่ำมากอาจไม่สมดุลกับ CXR ที่ไม่รุนแรงมาก (pulmonary function worse than CXR appears) Cryptococcus: meningitis, focal pulmonary lesion ไม่ใช่ bilateral interstitial M. tuberculosis: upper lobe cavitation, nodular infiltrate Cytomegalovirus: retinitis มากกว่า CMV pneumonitis Aspergillus: nodular/cavitary lesion ใน severely immunocompromised",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Pneumocystis jirovecii",
+          "is_correct": true,
+          "explanation": "Bilateral interstitial infiltration + severe hypoxia ใน AIDS = PCP classic presentation"
+        },
+        {
+          "label": "B",
+          "text": "Cryptococcus neoformans",
+          "is_correct": false,
+          "explanation": "Crypto มักทำ meningitis หรือ focal pulmonary lesion ไม่ใช่ bilateral interstitial"
+        },
+        {
+          "label": "C",
+          "text": "Mycobacterium tuberculosis",
+          "is_correct": false,
+          "explanation": "TB มักมี upper lobe infiltrate + cavitation ไม่ใช่ bilateral lower interstitial"
+        },
+        {
+          "label": "D",
+          "text": "Cytomegalovirus",
+          "is_correct": false,
+          "explanation": "CMV retinitis พบบ่อย CMV pneumonitis พบน้อยกว่า PCP"
+        },
+        {
+          "label": "E",
+          "text": "Aspergillus fumigatus",
+          "is_correct": false,
+          "explanation": "Invasive aspergillosis: nodular/cavitary ใน severe neutropenic patients ไม่ใช่ bilateral interstitial"
+        }
+      ],
+      "key_takeaway": "Bilateral interstitial infiltration + severe hypoxia ใน HIV = PCP → TMP-SMX + steroids"
+    }
+  },
+  {
+    "id": "821bccf1-d037-45c5-98fb-ddedb7a17ce5",
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วยมีไข้ต่ำๆ JVD (jugular venous distension) และ faint heart sound (muffled) = Beck's triad ของ cardiac tamponade จาก TB pericarditis ซึ่งพบบ่อยใน TB",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: TB pericarditis เพราะ ไข้ต่ำๆ + JVD + faint/muffled heart sounds = pericardial effusion จาก TB",
+      "reason": "TB pericarditis: ไข้ต่ำๆ (subacute), pericardial effusion ทำให้ muffled heart sounds, JVD เกิดจาก cardiac tamponade physiology Beck's triad: 1) muffled heart sounds, 2) JVD, 3) hypotension Pulsus paradoxus: BP ลดลง >10 mmHg ขณะหายใจเข้า TB เป็น common cause ของ pericardial effusion/constrictive pericarditis ในประเทศกำลังพัฒนา การวินิจฉัย: Echo (pericardial effusion), pericardiocentesis (exudative fluid, ADA สูง) รักษา: Anti-TB + corticosteroids (ลด constriction)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "TB pericarditis",
+          "is_correct": true,
+          "explanation": "ไข้ต่ำๆ (TB subacute) + JVD + faint heart sounds = pericardial effusion/tamponade จาก TB"
+        },
+        {
+          "label": "B",
+          "text": "Heart failure",
+          "is_correct": false,
+          "explanation": "Heart failure มี JVD แต่ heart sound ปกติหรือ S3 gallop ไม่ใช่ faint/muffled"
+        },
+        {
+          "label": "C",
+          "text": "Infective endocarditis",
+          "is_correct": false,
+          "explanation": "IE มี murmur + fever แต่ไม่มี muffled heart sounds"
+        },
+        {
+          "label": "D",
+          "text": "GI",
+          "is_correct": false,
+          "explanation": "ไม่เกี่ยวข้องกับ JVD และ muffled heart sounds"
+        }
+      ],
+      "key_takeaway": "ไข้ต่ำๆ + JVD + faint heart sounds = TB pericarditis (cardiac tamponade) → Echo + Anti-TB + steroids"
+    }
+  },
+  {
+    "id": "833a7939-b7eb-430b-bb79-81cc589affca",
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วย CKD + DM มีไข้ หายใจเหนื่อย สปุตัมพบ slender GNR = น่าจะเป็น Burkholderia pseudomallei (Melioidosis) หรือ Pseudomonas → รักษาด้วย Piperacillin/tazobactam",
+    "detailed_explanation": {
+      "summary": "คำตอบคือ A: Piperacillin/tazobactam เพราะ slender GNR ใน DM + CKD = likely Burkholderia/Pseudomonas ต้องการ broad anti-pseudomonal coverage",
+      "reason": "Slender gram-negative rod ใน DM patient: Melioidosis (Burkholderia pseudomallei) พบบ่อยใน DM patients ในประเทศไทย/SE Asia DM เป็น strongest risk factor สำหรับ melioidosis Piperacillin/tazobactam ครอบคลุม Pseudomonas, Burkholderia และ GNB อื่นๆ ที่อาจดื้อต่อ cephalosporins Ceftazidime ก็ใช้ได้สำหรับ Burkholderia/Pseudomonas แต่ pip/tazo ครอบคลุมกว้างกว่า Ceftriaxone ไม่ครอบคลุม Pseudomonas หรือ Burkholderia pseudomallei อย่างเพียงพอ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Piperacillin/tazobactam",
+          "is_correct": true,
+          "explanation": "Anti-pseudomonal beta-lactam ครอบคลุม Burkholderia (melioidosis) + Pseudomonas ใน DM+CKD"
+        },
+        {
+          "label": "B",
+          "text": "Ceftazidime",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ Pseudomonas/Burkholderia ได้แต่ไม่ใช่คำตอบในข้อนี้"
+        },
+        {
+          "label": "C",
+          "text": "Ceftriaxone",
+          "is_correct": false,
+          "explanation": "ไม่ครอบคลุม Pseudomonas หรือ Burkholderia อย่างเพียงพอ"
+        },
+        {
+          "label": "D",
+          "text": "Fluoroquinolone (levofloxacin)",
+          "is_correct": false,
+          "explanation": "Alternative แต่ไม่ใช่ first-line สำหรับ DM + slender GNR"
+        },
+        {
+          "label": "E",
+          "text": "Amoxicillin-clavulanate",
+          "is_correct": false,
+          "explanation": "ไม่ครอบคลุม Pseudomonas/Burkholderia อย่างเพียงพอ"
+        }
+      ],
+      "key_takeaway": "DM + slender GNR ใน sputum = Melioidosis/Pseudomonas → Piperacillin/tazobactam"
+    }
+  }
+]

@@ -1,0 +1,824 @@
+[
+  {
+    "id": "3a999524-624a-4ab7-8cf3-b4e17154d8da",
+    "correct_answer": "E",
+    "explanation": "Dyspareunia จาก vaginal atrophy ในวัยหมดประจำเดือน → รักษาด้วย vaginal estrogen cream เฉพาะที่ ปลอดภัยกว่า systemic",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ E. Vaginal estrogen cream เพราะรักษา local atrophic vaginitis ได้โดยตรง โดยไม่มี systemic effects",
+      "reason": "Genitourinary syndrome of menopause (GSM): estrogen ต่ำ → vaginal atrophy → dyspareunia, dryness, recurrent UTI การรักษา: (1) First-line: Vaginal estrogen (cream, ring, tablet) → local effect, systemic absorption น้อยมาก ปลอดภัยแม้ใน breast cancer survivors (2) Systemic estrogen (oral/transdermal) → มี systemic effects, เหมาะเมื่อมีอาการ vasomotor ร่วมด้วย (3) Ospemifene (SERM) → oral option ถ้าไม่ต้องการ estrogen Vaginal lubricants เป็น non-hormonal option",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Reassure",
+          "is_correct": false,
+          "explanation": "Dyspareunia จาก atrophic vaginitis ต้องการการรักษา ไม่ใช่แค่ reassure"
+        },
+        {
+          "label": "B",
+          "text": "Pelvic floor exercise",
+          "is_correct": false,
+          "explanation": "Kegel exercises ช่วย urinary incontinence และ pelvic floor strength แต่ไม่รักษา vaginal atrophy หรือ dyspareunia"
+        },
+        {
+          "label": "C",
+          "text": "Oral estrogen",
+          "is_correct": false,
+          "explanation": "Systemic estrogen มี side effects มากกว่า; ใช้เมื่อมี vasomotor symptoms ร่วมด้วย ไม่ใช่ first-line สำหรับ local vaginal symptoms"
+        },
+        {
+          "label": "D",
+          "text": "Transdermal estrogen",
+          "is_correct": false,
+          "explanation": "Transdermal เป็น systemic route เช่นกัน เหมาะสำหรับ menopausal symptoms ทั้งหมด ไม่ใช่เฉพาะ vaginal"
+        },
+        {
+          "label": "E",
+          "text": "Vaginal estrogen cream",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Local vaginal estrogen → รักษา atrophic vaginitis โดยตรง systemic absorption น้อยมาก ปลอดภัย efficacy สูง"
+        }
+      ],
+      "key_takeaway": "Atrophic vaginitis / GSM → Vaginal estrogen (cream/ring/tablet) เป็น first-line | ปลอดภัยกว่า systemic estrogen | Systemic เมื่อมี vasomotor symptoms ร่วม"
+    }
+  },
+  {
+    "id": "3aa380b0-2470-4202-9c2f-02f2153667bd",
+    "correct_answer": "B",
+    "explanation": "HPV vaccine ให้ประโยชน์สูงสุดในผู้ที่ยังไม่เคยมีเพศสัมพันธ์และไม่เคยสัมผัส HPV โดยหญิงอายุ 16 ปีที่ไม่เคยมีเพศสัมพันธ์คือกลุ่มที่ได้ประโยชน์มากที่สุด",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B. หญิง 16 ปีที่ไม่เคยมีเพศสัมพันธ์ เพราะ HPV vaccine เป็น preventive ไม่ใช่ therapeutic ได้ผลดีสุดก่อนสัมผัสเชื้อ",
+      "reason": "HPV vaccine (Gardasil 9, Cervarix): ออกฤทธิ์เป็น prophylaxis ป้องกัน HPV types 6, 11, 16, 18 (และอีก 5 types ใน Gardasil 9) ไม่มีประโยชน์ถ้าติดเชื้อ HPV แล้ว กลุ่มเป้าหมายสูงสุด: (1) Pre-adolescent/adolescent ก่อนเริ่มมีเพศสัมพันธ์ (9-14 ปี optimal) (2) ยังไม่เคยสัมผัส HPV สายพันธุ์ที่วัคซีนป้องกัน ผู้ที่ได้ประโยชน์น้อย: มีประวัติ H-SIL, หรือมีเพศสัมพันธ์มาแล้วหลายปี (อาจติดเชื้อแล้ว)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "ด.ญ. 7 ปี แม่มีประวัติ HPV",
+          "is_correct": false,
+          "explanation": "อายุ 7 ปีเล็กเกินไป แนะนำ 9-14 ปี แม้ FDA approve ตั้งแต่ 9 ปี แต่ 16 ปีที่ virgin ได้ประโยชน์สูงสุดเพราะสภาพ immune response ดีกว่า"
+        },
+        {
+          "label": "B",
+          "text": "หญิง 16 ปี ไม่เคยมีเพศสัมพันธ์",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: อายุ 16 ปี + virgin = ยังไม่สัมผัส HPV → วัคซีน prophylactic ได้ผลสูงสุด"
+        },
+        {
+          "label": "C",
+          "text": "หญิง 28 ปี จะแต่งงาน",
+          "is_correct": false,
+          "explanation": "28 ปี อาจเคยมีเพศสัมพันธ์แล้ว โอกาสสัมผัส HPV แล้วสูง วัคซีนได้ประโยชน์น้อยกว่า"
+        },
+        {
+          "label": "D",
+          "text": "ชาย 30 ปี จะแต่งงาน",
+          "is_correct": false,
+          "explanation": "ชายก็รับวัคซีนได้ แต่ 30 ปีน่าจะสัมผัส HPV แล้ว ได้ประโยชน์น้อยกว่า"
+        },
+        {
+          "label": "E",
+          "text": "หญิง 32 ปี มะเร็งปากมดลูก",
+          "is_correct": false,
+          "explanation": "วัคซีน HPV เป็น preventive ไม่ใช่ therapeutic ไม่ช่วยรักษา cervical cancer ที่เป็นอยู่แล้ว"
+        }
+      ],
+      "key_takeaway": "HPV vaccine = PREVENTIVE ไม่ใช่ therapeutic | ได้ผลสูงสุดก่อนมีเพศสัมพันธ์ (9-14 ปี optimal) | ยังให้ได้ถึง 45 ปี แต่ประสิทธิภาพลดลงถ้าสัมผัส HPV แล้ว"
+    }
+  },
+  {
+    "id": "3b1bb307-3395-43c4-b6b7-395d89c651e5",
+    "correct_answer": "A",
+    "explanation": "Imperforate hymen + hematocolpos ในวัยรุ่น → Cruciate incision of hymen with drainage เป็น definitive treatment",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. Cruciate incision เพื่อ drain hematocolpos ที่สะสมจาก imperforate hymen",
+      "reason": "เคสนี้เป็น imperforate hymen ใน menarche โดย blood สะสมใน vagina (hematocolpos) มีอาการ cyclic abdominal pain + purple bulging mass at introitus รักษาด้วย cruciate incision ใน OR ภายใต้ anesthesia เพื่อสร้าง opening ให้ hematocolpos ออก หลังระบายแล้ว อาการจะดีขึ้นทันที และ future fertility ปกติ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cruciate incision with drainage",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Definitive treatment = ผ่า hymen (+) และ drain hematocolpos ทำใน OR ปลอดภัย อาการดีขึ้นทันที"
+        },
+        {
+          "label": "B",
+          "text": "Complete mass excision and suturing",
+          "is_correct": false,
+          "explanation": "ไม่เหมาะ ไม่ต้อง excise hymen ทั้งหมด cruciate incision เพียงพอ"
+        },
+        {
+          "label": "C",
+          "text": "Kegel exercises",
+          "is_correct": false,
+          "explanation": "ไม่มี indication สำหรับ structural obstruction ที่ต้องการ surgical drainage"
+        },
+        {
+          "label": "D",
+          "text": "Hormonal therapy",
+          "is_correct": false,
+          "explanation": "ยาฮอร์โมนไม่แก้ obstruction ทางกายภาพ"
+        },
+        {
+          "label": "E",
+          "text": "Observation only",
+          "is_correct": false,
+          "explanation": "Hematocolpos ที่ไม่ได้รับการรักษาอาจ progress เป็น hematometra และ hematosalpinx ทำให้ infertility และ infection"
+        }
+      ],
+      "key_takeaway": "Imperforate hymen + Cyclic pain + Hematocolpos = Cruciate incision ใน OR | ห้าม bedside drainage | Confirm ด้วย U/S | Future fertility ปกติหลังรักษา"
+    }
+  },
+  {
+    "id": "3b677153-5971-4db8-8b43-3339cfa6f44e",
+    "correct_answer": "A",
+    "explanation": "แม่รักษาด้วย erythromycin 2 สัปดาห์ก่อนคลอด → ถ้า erythromycin รักษาสำเร็จและมีหลักฐาน decreasing titer → reassure ทารก",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. Reassure ถ้าแม่รักษาครบ 2 สัปดาห์และมีหลักฐาน serological response (titer ลดลง)",
+      "reason": "กรณีนี้ต่างจากข้อก่อน: แม่รักษาด้วย erythromycin 2 สัปดาห์ก่อนคลอด (ไม่ใช่ระหว่างตั้งครรภ์ทั้งหมด) ถ้า erythromycin รักษาสำเร็จ (titer ลดลง 4 เท่า) ก็ reassure ได้ แต่ถ้ามีข้อสงสัยเรื่อง adequate treatment → ต้องทำ penicillin ให้ทารก ข้อนี้ให้ reassure เพราะ erythromycin ในระยะนี้อาจเพียงพอ โดยเฉพาะถ้า titer ลดลง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Reassure",
+          "is_correct": true,
+          "explanation": "ตามที่ข้อสอบระบุ: ถ้า erythromycin รักษาครบ 2 สัปดาห์ก่อนคลอดและ serological response ดี → reassure ทารก"
+        },
+        {
+          "label": "B",
+          "text": "IV penicillin",
+          "is_correct": false,
+          "explanation": "IV penicillin ใช้เมื่อ inadequate maternal treatment หรือ evidence of congenital syphilis"
+        },
+        {
+          "label": "C",
+          "text": "IV ceftriaxone",
+          "is_correct": false,
+          "explanation": "Ceftriaxone ไม่ใช่ standard สำหรับ congenital syphilis ใน newborn"
+        },
+        {
+          "label": "D",
+          "text": "Cessation of breastfeeding",
+          "is_correct": false,
+          "explanation": "Syphilis ไม่ใช่ contraindication สำหรับ breastfeeding ยกเว้นมี active lesion ที่เต้านม"
+        }
+      ],
+      "key_takeaway": "Maternal syphilis: Penicillin G = gold standard | Erythromycin = alternative แต่ไม่ผ่านรกได้ดีเท่า | ถ้ารักษาด้วย erythromycin → ต้องติดตาม neonatal titer ± penicillin"
+    }
+  },
+  {
+    "id": "3c4dbf31-f91c-4c6f-910c-d3871412d530",
+    "correct_answer": "A",
+    "explanation": "GA 32 สัปดาห์ preterm labor (UC ทุก 5 นาที, cervix dilated) ต้องให้ corticosteroids (dexamethasone/betamethasone) เพื่อ fetal lung maturation ก่อน",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องตามข้อสอบคือ A. IV syntocinon แต่ในทางคลินิกที่ถูกต้องคือ dexamethasone เพื่อ fetal lung maturity",
+      "reason": "Preterm labor ที่ GA 32 สัปดาห์ การจัดการ: (1) Tocolysis ชั่วคราว: terbutaline, nifedipine, indomethacin เพื่อยืดเวลาให้ steroids ออกฤทธิ์ (48 ชั่วโมง) (2) Corticosteroids: betamethasone 12 mg IM q24h x2 หรือ dexamethasone IM เพื่อ fetal lung maturation (3) Antibiotics: ถ้ามี GBS risk IV Syntocinon (oxytocin) ในโจทย์นี้เป็น preterm labor GA 32 สัปดาห์ ซึ่งควรยับยั้ง ไม่ใช่เร่ง คำตอบ A ดูขัดแย้ง แต่ตามที่ข้อสอบระบุ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "IV syntocinon",
+          "is_correct": true,
+          "explanation": "ตามข้อสอบ: อาจหมายถึง tocolysis ล้มเหลวแล้วและต้องการ augment labor หรือมี context เพิ่มเติมในโจทย์เดิม"
+        },
+        {
+          "label": "B",
+          "text": "IV terbutaline",
+          "is_correct": false,
+          "explanation": "Terbutaline เป็น tocolytic ที่ใช้ชั่วคราว เพื่อ delay delivery 48 ชั่วโมงให้ steroids ออกฤทธิ์"
+        },
+        {
+          "label": "C",
+          "text": "IV dexamethasone",
+          "is_correct": false,
+          "explanation": "Dexamethasone IM (ไม่ใช่ IV) เป็น corticosteroid สำหรับ fetal lung maturity ใน preterm < 34 สัปดาห์"
+        },
+        {
+          "label": "D",
+          "text": "IV prostaglandin",
+          "is_correct": false,
+          "explanation": "Prostaglandin ใช้ ripen cervix/induce labor ไม่เหมาะสำหรับ preterm labor ที่ต้องการ tocolysis"
+        }
+      ],
+      "key_takeaway": "Preterm labor < 34 สัปดาห์: Tocolysis (ชั่วคราว) + Corticosteroids (IM betamethasone/dexamethasone) เพื่อ fetal lung maturity + Antibiotics (GBS prophylaxis)"
+    }
+  },
+  {
+    "id": "3cb5fe99-3ccc-440b-96d9-ef826791a34f",
+    "correct_answer": "A",
+    "explanation": "GA 33 สัปดาห์ preeclampsia without severe features (BP 150/100, proteinuria 2+) → expectant management + monitoring ปลอดภัยกว่า immediate delivery",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. Expectant management เพราะ preeclampsia without severe features ที่ GA < 37 สัปดาห์ → รอเพื่อ fetal maturity",
+      "reason": "Preeclampsia without severe features ที่ GA < 37 สัปดาห์: (1) Expectant management: ติดตาม BP, labs, fetal wellbeing (2) Antihypertensive ถ้า BP ≥160/110 (3) Deliver เมื่อ GA ≥37 สัปดาห์ หรือเมื่อ maternal/fetal deterioration ในเคสนี้ BP 150/100 = not severe (< 160/110) + GA 33 สัปดาห์ → expectant management (ยังไม่ถึง indication deliver) เปรียบเทียบ: Severe features → deliver promptly แม้ preterm",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Expectant management",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Preeclampsia without severe features + GA 33 สัปดาห์ → rexpectant management รอ fetal maturity จนถึง 37 สัปดาห์"
+        },
+        {
+          "label": "B",
+          "text": "Antihypertensive drug",
+          "is_correct": false,
+          "explanation": "Antihypertensive ใช้เมื่อ BP ≥160/110 (severe threshold) ในเคสนี้ BP 150/100 ยังไม่ถึง threshold สำหรับ antihypertensive"
+        },
+        {
+          "label": "C",
+          "text": "Vaginal delivery",
+          "is_correct": false,
+          "explanation": "ยังไม่มี indication deliver ที่ GA 33 สัปดาห์ใน non-severe preeclampsia"
+        },
+        {
+          "label": "D",
+          "text": "Cesarean section",
+          "is_correct": false,
+          "explanation": "ไม่มี indication C/S ใน GA 33 สัปดาห์ที่ non-severe; expectant management ดีกว่า"
+        },
+        {
+          "label": "E",
+          "text": "Diuretics",
+          "is_correct": false,
+          "explanation": "Diuretics เพิ่มความเสี่ยง IUGR ใน preeclampsia ไม่แนะนำ ยกเว้น pulmonary edema"
+        }
+      ],
+      "key_takeaway": "Preeclampsia without severe features < 37 สัปดาห์ → Expectant management | Severe features (BP≥160/110 หรือ organ dysfunction) → Delivery | Antihypertensive เมื่อ BP≥160/110"
+    }
+  },
+  {
+    "id": "3e320c16-3ce7-4a9f-bb0b-e85152386ced",
+    "correct_answer": "A",
+    "explanation": "Curd-like lesion = oral candidiasis → รักษาด้วย Ketoconazole ตามที่ข้อสอบระบุ (แม้ทางคลินิก Nystatin เป็น first-line)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องตามข้อสอบคือ A. Ketoconazole แต่ในทางคลินิก Nystatin suspension เป็น first-line ที่ปลอดภัยกว่า",
+      "reason": "Oral candidiasis (thrush) ในเด็ก: First-line: Nystatin oral suspension (100,000 IU/mL) ปลอดภัย systemic absorption น้อย Alternatives: Fluconazole (refractory cases), Clotrimazole troches Ketoconazole มี hepatotoxicity risk สูง FDA เตือนว่าไม่ควรใช้เป็น first-line ใน superficial candidiasis อย่างไรก็ตามตามที่ข้อสอบระบุคำตอบคือ Ketoconazole",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ketoconazole",
+          "is_correct": true,
+          "explanation": "ตามที่ข้อสอบระบุ แต่ทางคลินิกปัจจุบัน Nystatin ปลอดภัยและมีประสิทธิภาพกว่า Ketoconazole มี hepatotoxicity risk"
+        },
+        {
+          "label": "B",
+          "text": "Clotrimazole",
+          "is_correct": false,
+          "explanation": "Clotrimazole cream ใช้ topical สำหรับ skin/vaginal candidiasis ไม่ใช่ oral form standard"
+        },
+        {
+          "label": "C",
+          "text": "Metronidazole",
+          "is_correct": false,
+          "explanation": "Metronidazole รักษา bacterial infections (BV, trichomoniasis, anaerobes) ไม่ใช่ fungal infection"
+        },
+        {
+          "label": "D",
+          "text": "Doxycycline",
+          "is_correct": false,
+          "explanation": "Antibiotic ไม่มี antifungal properties"
+        },
+        {
+          "label": "E",
+          "text": "Ceftriaxone",
+          "is_correct": false,
+          "explanation": "Antibiotic ไม่มี antifungal properties และอาจทำให้ candidiasis แย่ลงด้วยซ้ำ"
+        }
+      ],
+      "key_takeaway": "Oral candidiasis: Nystatin suspension = first-line (ปลอดภัย) | Fluconazole = refractory/immunocompromised | Ketoconazole = ไม่แนะนำ first-line (hepatotoxicity)"
+    }
+  },
+  {
+    "id": "3e45d6b8-4aa0-4837-ba9f-dd2f81829c02",
+    "correct_answer": "A",
+    "explanation": "แม่ BMI 35 น้ำหนักขึ้น 25 kg ใน GA 36 สัปดาห์ = excessive gestational weight gain → ทารกเสี่ยง macrosomia สูงสุด",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. Macrosomia เพราะ maternal obesity + excessive weight gain → fetal macrosomia (birthweight > 4000 g)",
+      "reason": "Maternal obesity (BMI 35) + excessive gestational weight gain (25 kg ใน 36 สัปดาห์ >> แนะนำ 5-9 kg สำหรับ obese) → ทารกเสี่ยง: (1) Macrosomia (fetal overgrowth) - พบบ่อยที่สุด (2) Gestational diabetes → insulin resistance (3) Shoulder dystocia ขณะคลอด Macrosomia (birthweight ≥4000-4500 g) เกิดจาก maternal hyperglycemia → fetal hyperinsulinemia → fetal fat deposition",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Macrosomia",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Maternal obesity + excessive weight gain = เพิ่มความเสี่ยง macrosomia สูงสุดใน options นี้"
+        },
+        {
+          "label": "B",
+          "text": "Hypertension",
+          "is_correct": false,
+          "explanation": "Maternal obesity เพิ่มความเสี่ยง gestational HT แต่ไม่ใช่ risk ของทารกโดยตรงจาก weight gain"
+        },
+        {
+          "label": "C",
+          "text": "Cleft lip & Cleft palate",
+          "is_correct": false,
+          "explanation": "Cleft lip/palate สัมพันธ์กับ folic acid deficiency, teratogens ไม่ใช่ maternal obesity"
+        },
+        {
+          "label": "D",
+          "text": "Spontaneous abortion",
+          "is_correct": false,
+          "explanation": "Spontaneous abortion มักเกิดใน T1 obesity เพิ่มความเสี่ยงแต่ที่ GA 36 สัปดาห์ไม่ใช่ primary concern"
+        },
+        {
+          "label": "E",
+          "text": "IUGR",
+          "is_correct": false,
+          "explanation": "IUGR (small for gestational age) เกิดใน undernutrition, placental insufficiency ไม่ใช่ maternal obesity + excessive weight gain"
+        }
+      ],
+      "key_takeaway": "Maternal obesity + excessive weight gain → Macrosomia, GDM, Shoulder dystocia | Recommended weight gain: Obese (BMI≥30) = 5-9 kg | Normal BMI = 11.5-16 kg"
+    }
+  },
+  {
+    "id": "41bf7e98-42cf-4577-ae07-a2b537c8862f",
+    "correct_answer": "C",
+    "explanation": "LMP 2 เดือน + urine hCG positive + hemodynamic instability + CMT + adnexal mass 4 cm = Ectopic pregnancy (ruptured)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ C. Ectopic pregnancy เพราะมี classic triad: missed period + positive hCG + adnexal mass + hemodynamic instability",
+      "reason": "Ectopic pregnancy ลักษณะ: (1) Amenorrhea / missed LMP (2 เดือน) (2) Positive pregnancy test (urine hCG +) (3) Pelvic/abdominal pain (4) Adnexal mass (5) Hemodynamic instability ถ้า ruptured (P 110, BP 90/60 = shock) (6) CMT (cervical motion tenderness) Rupture ectopic: generalized guarding + suprapubic pain = hemoperitoneum → Emergency surgery",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ruptured ovarian cyst",
+          "is_correct": false,
+          "explanation": "Ruptured cyst: positive peritoneal signs ได้ แต่ hCG positive บ่งชี้ pregnancy, adnexal mass 4 cm และ missed period ชี้ไปที่ ectopic"
+        },
+        {
+          "label": "B",
+          "text": "Acute appendicitis",
+          "is_correct": false,
+          "explanation": "Appendicitis: RLQ pain, McBurney's point, fever แต่ไม่มี missed period หรือ positive hCG หรือ CMT"
+        },
+        {
+          "label": "C",
+          "text": "Ectopic pregnancy",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: LMP 2 เดือน + hCG + + shock + CMT + adnexal mass = Ectopic pregnancy (ruptured) → Emergency salpingectomy"
+        },
+        {
+          "label": "D",
+          "text": "Torsion ovary",
+          "is_correct": false,
+          "explanation": "Ovarian torsion: pain + adnexal mass แต่ hCG + ไม่จำเป็น และมักไม่มี missed LMP"
+        },
+        {
+          "label": "E",
+          "text": "TOA",
+          "is_correct": false,
+          "explanation": "TOA: bilateral CMT + inflammatory mass + fever แต่ hCG + ไม่สนับสนุน TOA"
+        }
+      ],
+      "key_takeaway": "Ectopic pregnancy: Amenorrhea + hCG + + Adnexal mass + CMT | Ruptured = hemodynamic instability → Emergency salpingectomy | Stable = Salpingostomy/Methotrexate (unruptured)"
+    }
+  },
+  {
+    "id": "4257518e-fa2a-44e0-a22c-edba1a918b30",
+    "correct_answer": "A",
+    "explanation": "Preeclampsia with severe features (BP 160/100) ที่ GA 38 สัปดาห์ → antihypertensive + expectant management พร้อมติดตาม",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. Antihypertensive + expectant management เพราะ GA 38 สัปดาห์ และยังไม่มี severe features อื่น",
+      "reason": "ในเคสนี้: BP 160/100 + proteinuria 1+ + GA 38 สัปดาห์ ไม่มี severe symptoms (ไม่มี severe headache, visual symptoms, RUQ pain) แนวทาง: (1) Antihypertensive (nifedipine หรือ labetalol) เพื่อ control BP และป้องกัน stroke (2) Expectant management + monitor ใกล้ชิด (NST, labs) (3) Plan delivery เมื่อ cervix ripens หรือ GA ≥37 สัปดาห์ (ครบแล้ว) MgSO4 (E) ใช้ป้องกัน eclampsia ใน severe features เท่านั้น ในเคสนี้ยังไม่มี severe features อื่น",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Antihypertensive + expectant management",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: GA 38 สัปดาห์ + BP 160/100 → ให้ antihypertensive control BP + monitor ใกล้ชิด"
+        },
+        {
+          "label": "B",
+          "text": "Induction of labor ทันที",
+          "is_correct": false,
+          "explanation": "Induction เป็น option แต่ไม่ต้องเร่งทันที ถ้าไม่มี severe features และ cervix ยังไม่ ripened"
+        },
+        {
+          "label": "C",
+          "text": "Antihypertensive + glucocorticoids + deliver 24-48h",
+          "is_correct": false,
+          "explanation": "Glucocorticoids ใช้ใน preterm < 34 สัปดาห์; GA 38 สัปดาห์ fetal lungs mature แล้ว ไม่จำเป็น"
+        },
+        {
+          "label": "D",
+          "text": "Expectant management อย่างเดียว ไม่ให้ยา",
+          "is_correct": false,
+          "explanation": "BP 160/100 เกิน severe threshold ต้องให้ antihypertensive เพื่อป้องกัน maternal stroke"
+        },
+        {
+          "label": "E",
+          "text": "MgSO4 IV ทันที",
+          "is_correct": false,
+          "explanation": "MgSO4 เป็น seizure prophylaxis สำหรับ severe preeclampsia ในเคสนี้ยังไม่มี indication ชัดเจน"
+        }
+      ],
+      "key_takeaway": "Preeclampsia BP≥160/110 → Antihypertensive (nifedipine/labetalol) | MgSO4 → Severe features หรือ eclampsia | Glucocorticoids → Preterm < 34 สัปดาห์เท่านั้น"
+    }
+  },
+  {
+    "id": "4388203b-e8e3-443c-bc0a-8a5ecb483e10",
+    "correct_answer": "B",
+    "explanation": "IUD + PID → ถอด IUD ออก + ให้ oral antibiotics เป็น standard management",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B. Remove IUD + oral antibiotics เพราะ IUD เป็น foreign body ที่เพิ่ม infection risk และควรถอดออกเมื่อ PID confirmed",
+      "reason": "PID ใน IUD users: แนวทาง CDC: (1) ถ้า PID ไม่รุนแรง → Remove IUD หลังให้ antibiotics 24-48 ชั่วโมง (2) ถ้ารุนแรง/TOA → Remove IUD + IV antibiotics (3) Oral antibiotics regimen: Ceftriaxone 500mg IM + Doxycycline + Metronidazole 14 วัน IUD เป็น risk factor สำหรับ upper tract spread ของ infection การถอดออกช่วย resolution ของ infection",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Remove IUD only",
+          "is_correct": false,
+          "explanation": "ต้องให้ antibiotics ด้วย การถอด IUD เพียงอย่างเดียวไม่รักษา established infection"
+        },
+        {
+          "label": "B",
+          "text": "Remove IUD + oral antibiotics",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: CDC guideline: PID + IUD → remove IUD + antibiotics (outpatient สำหรับ mild-moderate PID)"
+        },
+        {
+          "label": "C",
+          "text": "Remove IUD + insert new IUD + antibiotics",
+          "is_correct": false,
+          "explanation": "ห้ามใส่ IUD ใหม่ในขณะที่มี active infection ต้องรอให้หายก่อน"
+        },
+        {
+          "label": "D",
+          "text": "Keep IUD + oral antibiotics",
+          "is_correct": false,
+          "explanation": "IUD เป็น foreign body ที่ขัดขวาง antibiotic response ควรถอดออก"
+        },
+        {
+          "label": "E",
+          "text": "Keep IUD + IV antibiotics",
+          "is_correct": false,
+          "explanation": "IV antibiotics ใช้ใน severe PID/TOA แต่ยังคง IUD ไว้ไม่เหมาะสม"
+        }
+      ],
+      "key_takeaway": "PID + IUD → Remove IUD + Antibiotics | Mild-moderate = Oral (ceftriaxone IM + doxycycline + metronidazole) | Severe/TOA = IV antibiotics + Remove IUD"
+    }
+  },
+  {
+    "id": "43d839d1-a409-4936-8bcb-8f130cb59334",
+    "correct_answer": "A",
+    "explanation": "Severe preeclampsia GA 37 สัปดาห์ NST reactive → amniotomy เพื่อ induce labor เป็น definitive treatment (deliver)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. Amniotomy เพราะ severe preeclampsia ที่ GA 37 สัปดาห์ + NST reactive → ต้อง deliver โดย amniotomy ร่วมกับ MgSO4",
+      "reason": "Severe preeclampsia (BP 160/100 + proteinuria 3+) ที่ GA 37 สัปดาห์: Indication deliver ทันที (≥37 สัปดาห์) cervix: 1 cm dilated, soft, 25% effaced → ยังไม่ favorable มาก → amniotomy + oxytocin เพื่อ augment/induce labor ต้องให้ MgSO4 ด้วยเพื่อ seizure prophylaxis NST: reactive (FHR 140 + accelerations 2 ครั้ง/10 นาที) = reassuring fetal status",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Amniotomy",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Severe PE + GA 37 สัปดาห์ + NST reactive → deliver; amniotomy ร่วมกับ oxytocin เพื่อ induction of labor"
+        },
+        {
+          "label": "B",
+          "text": "IV oxytocin",
+          "is_correct": false,
+          "explanation": "IV oxytocin มักให้หลัง amniotomy ไม่ใช่ก่อน หรือให้ร่วมกัน"
+        },
+        {
+          "label": "C",
+          "text": "PGE1 vaginal suppository",
+          "is_correct": false,
+          "explanation": "Misoprostol ใช้ ripening cervix unfavorable แต่ในเคสนี้ cervix already 1 cm + effaced บ้าง → amniotomy เพียงพอ"
+        },
+        {
+          "label": "D",
+          "text": "MgSO4 IV",
+          "is_correct": false,
+          "explanation": "MgSO4 ต้องให้ด้วย (seizure prophylaxis) แต่ไม่ใช่ answer เดียวสำหรับ management; amniotomy เป็น definitive step"
+        },
+        {
+          "label": "E",
+          "text": "Cesarean section",
+          "is_correct": false,
+          "explanation": "C/S ไม่ใช่ first choice สำหรับ PE ที่ NST reactive + favorable cervix ต้องลอง induction ก่อน"
+        }
+      ],
+      "key_takeaway": "Severe PE ≥ 37 สัปดาห์ → Deliver + MgSO4 prophylaxis | NST reactive + cervix favorable → Induction (amniotomy ± oxytocin) | NST non-reassuring หรือ unfavorable → C/S"
+    }
+  },
+  {
+    "id": "446683a9-2afc-453a-9317-e8f4d465104d",
+    "correct_answer": "C",
+    "explanation": "หญิง 20 ปี RLQ pain ไข้ 38.5°C ต้องแยก appendicitis กับ ectopic → U/S abdomen เป็น first-line investigation",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ C. U/S abdomen เพราะเป็น first-line imaging สำหรับ RLQ pain ในหญิงวัยเจริญพันธุ์",
+      "reason": "หญิงวัยเจริญพันธุ์ที่มี RLQ pain: ต้องแยก appendicitis, ectopic pregnancy, ovarian pathology (cyst, torsion), PID การตรวจที่เหมาะสม: (1) U/S abdomen/pelvis: ดู appendix, ovary, uterus, free fluid → First-line เพราะ radiation-free (2) hCG ตรวจก่อนเสมอ (3) CT scan ถ้า U/S inconclusive RLQ pain + adnexal tenderness ในหญิงอายุน้อย → U/S ก่อน CT",
+      "choices": [
+        {
+          "label": "A",
+          "text": "CT abdomen",
+          "is_correct": false,
+          "explanation": "CT มี radiation exposure; ใช้เมื่อ U/S inconclusive หรือ clinical picture complex; ไม่ใช่ first-line ในหญิงวัยเจริญพันธุ์"
+        },
+        {
+          "label": "B",
+          "text": "IVP",
+          "is_correct": false,
+          "explanation": "IVP ใช้สำหรับ ureteral calculi/renal pathology ไม่ใช่ first-line สำหรับ RLQ pain + adnexal tenderness"
+        },
+        {
+          "label": "C",
+          "text": "U/S abdomen",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: First-line imaging ใน reproductive age female with pelvic pain ดู appendix, ovaries, uterus, free fluid โดยไม่มี radiation"
+        },
+        {
+          "label": "D",
+          "text": "Close observation",
+          "is_correct": false,
+          "explanation": "ไข้ 38.5°C + PR 90 + adnexal tenderness ต้องการ workup ไม่ใช่แค่ observe"
+        },
+        {
+          "label": "E",
+          "text": "Appendectomy",
+          "is_correct": false,
+          "explanation": "ไม่ทำ surgery โดยไม่มี imaging ก่อน ต้องยืนยัน diagnosis ด้วย U/S หรือ CT ก่อน"
+        }
+      ],
+      "key_takeaway": "RLQ pain ในหญิงวัยเจริญพันธุ์ → U/S ก่อนเสมอ + hCG | U/S inconclusive → CT | ห้ามทำ appendectomy โดยไม่มี imaging ยืนยัน"
+    }
+  },
+  {
+    "id": "44d88299-2b28-47c5-92b3-12837d2b6448",
+    "correct_answer": "E",
+    "explanation": "Yellow-greenish discharge + red spot at cervix and vagina (strawberry cervix) = Trichomonas vaginalis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ E. Trichomonas vaginalis เพราะ strawberry cervix + frothy yellow-green discharge เป็น pathognomonic",
+      "reason": "Trichomonas vaginalis: (1) Frothy yellow-greenish discharge (2) Strawberry cervix (colpitis macularis): erythematous spots บน cervix และ vaginal wall จาก petechial hemorrhage = pathognomonic (3) pH > 4.5 (4) Wet mount: motile trophozoites การวินิจฉัย: wet mount ใน office เห็น motile trophozoites รักษา: Metronidazole 2g PO single dose ทั้งคู่",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Candida albicans",
+          "is_correct": false,
+          "explanation": "Candida: white curd-like discharge, intense pruritus, pH < 4.5, KOH: pseudohyphae ไม่มี strawberry cervix"
+        },
+        {
+          "label": "B",
+          "text": "N. gonorrhoeae",
+          "is_correct": false,
+          "explanation": "GC: mucopurulent cervical discharge, gram-negative intracellular diplococci ไม่มี frothy discharge หรือ strawberry cervix"
+        },
+        {
+          "label": "C",
+          "text": "Hemophilus ducreyi",
+          "is_correct": false,
+          "explanation": "H. ducreyi ทำให้เกิด chancroid (painful genital ulcers) ไม่ใช่ vaginal discharge"
+        },
+        {
+          "label": "D",
+          "text": "Gardnerella vaginalis",
+          "is_correct": false,
+          "explanation": "BV (Gardnerella): grayish thin discharge + fishy odor + clue cells ไม่มี strawberry cervix หรือ frothy"
+        },
+        {
+          "label": "E",
+          "text": "Trichomonas vaginalis",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Strawberry cervix + frothy yellow-green discharge = Pathognomonic ของ Trichomonas vaginalis"
+        }
+      ],
+      "key_takeaway": "Strawberry cervix + Frothy yellow-green discharge = Trichomonas (Pathognomonic) | Wet mount: Motile trophozoites | Rx: Metronidazole 2g single dose (ทั้งคู่)"
+    }
+  },
+  {
+    "id": "466a6cfe-ede3-453a-9283-a12ea9be84f1",
+    "correct_answer": "A",
+    "explanation": "คลอดยาก ติดไหล่ + แขนซ้ายไม่ขยับ ท่า extension and pronation (waiter's tip) = Erb's palsy (C5-C6 injury)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. Erb's palsy เพราะมี classic posture: แขนอยู่ใน adduction, internal rotation, extension, pronation (waiter's tip position)",
+      "reason": "Erb's palsy (C5-C6 brachial plexus injury): เกิดจาก shoulder dystocia → lateral traction บน neck → stretch injury บน upper trunk (C5-C6) ท่าที่เห็น (Waiter's tip): (1) Arm: adduction + internal rotation (2) Elbow: extension (ไม่สามารถ flex) (3) Forearm: pronation (4) Wrist: flexion การตรวจ: Moro reflex ไม่สมมาตร, absent biceps reflex Klumpke (B): C8-T1 → hand/finger weakness + Horner syndrome รักษา: physiotherapy, passive ROM exercises, ส่วนใหญ่ recover เองภายใน 3-6 เดือน",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Erb's palsy (C5-C6)",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Shoulder dystocia → C5-C6 stretch → Waiter's tip posture: adduction, internal rotation, extension, pronation"
+        },
+        {
+          "label": "B",
+          "text": "Klumpke's palsy (C8-T1)",
+          "is_correct": false,
+          "explanation": "Klumpke: lower brachial plexus → finger/wrist flexors weak, intrinsic hand muscles weak, Horner syndrome. ไม่ใช่ท่า waiter's tip"
+        },
+        {
+          "label": "C",
+          "text": "Horner's syndrome",
+          "is_correct": false,
+          "explanation": "Horner: ptosis + miosis + anhidrosis ไม่มี arm weakness"
+        },
+        {
+          "label": "D",
+          "text": "Phrenic nerve injury",
+          "is_correct": false,
+          "explanation": "Phrenic nerve injury: respiratory distress, paradoxical breathing ไม่มี arm weakness"
+        },
+        {
+          "label": "E",
+          "text": "Complete brachial plexus injury",
+          "is_correct": false,
+          "explanation": "Complete: flaccid paralysis ทั้งแขน ไม่มีการเคลื่อนไหว ไม่ใช่ specific posture"
+        }
+      ],
+      "key_takeaway": "Erb's palsy = C5-C6 = Waiter's tip (adduction + internal rotation + extension + pronation) | สาเหตุ: Shoulder dystocia | รักษา: Physiotherapy | ส่วนใหญ่ recover 3-6 เดือน"
+    }
+  },
+  {
+    "id": "4754efd5-c125-46f4-88e4-1c83a647fbf2",
+    "correct_answer": "C",
+    "explanation": "Painful shallow erosions on erythematous base = Herpes genitalis → ยืนยันด้วย Tzanck's smear (multinucleated giant cells)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ C. Tzanck's smear เพราะ painful grouped shallow erosions = HSV genitalis และ Tzanck smear เห็น multinucleated giant cells",
+      "reason": "Herpes simplex genitalis (HSV-2 ส่วนใหญ่): painful grouped vesicles/erosions on erythematous base, pruritus, burning Tzanck's smear จาก base of lesion → multinucleated giant cells + intranuclear inclusion bodies เป็น rapid diagnostic test (sensitivity ~60-70%) Gold standard: HSV PCR > viral culture ข้อ E ผิดในโจทย์ข้อนี้ (dark field microscopy สำหรับ Treponema pallidum ซึ่งทำให้ painless ulcer) ข้อ C ถูกสำหรับ painful herpes lesion",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Gram stain",
+          "is_correct": false,
+          "explanation": "ใช้สำหรับ bacterial STI (GC: gram-negative intracellular diplococci) ไม่ใช่ viral lesion"
+        },
+        {
+          "label": "B",
+          "text": "KOH preparation",
+          "is_correct": false,
+          "explanation": "KOH ใช้ตรวจ fungal infection (Candida pseudohyphae) ไม่เหมาะกับ herpetic lesion"
+        },
+        {
+          "label": "C",
+          "text": "Tzanck's smear",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Painful erosions = HSV → Tzanck smear จาก lesion base → Multinucleated giant cells + intranuclear inclusion bodies"
+        },
+        {
+          "label": "D",
+          "text": "Acid phosphatase",
+          "is_correct": false,
+          "explanation": "Acid phosphatase ใช้ใน forensic (seminal fluid marker) ไม่ใช่ HSV diagnosis"
+        },
+        {
+          "label": "E",
+          "text": "Dark field microscopy",
+          "is_correct": false,
+          "explanation": "Dark field microscopy สำหรับ Treponema pallidum (Syphilis = painless ulcer) ไม่ใช่ HSV painful erosions"
+        }
+      ],
+      "key_takeaway": "Painful erosions + grouped vesicles = HSV → Tzanck smear (multinucleated giant cells) | Painless ulcer = Syphilis → Dark field microscopy | Gold standard HSV: PCR"
+    }
+  },
+  {
+    "id": "48e45956-c82b-46fa-b2ec-42bfe692090c",
+    "correct_answer": "B",
+    "explanation": "เด็กหญิง 8 ปีมี genital discharge + suspected sexual abuse → Condyloma acuminata (HPV warts) เป็น STI ที่พบบ่อยในกรณี sexual abuse เด็ก",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B. Condyloma acuminata เพราะเป็น STI ที่สัมพันธ์กับ sexual abuse ในเด็กและมี abnormal vaginal discharge ร่วมกัน",
+      "reason": "ใน pediatric sexual abuse: STI ที่บ่งชี้ถึง sexual abuse (ไม่สามารถเกิดเองได้): (1) N. gonorrhoeae (นอกช่วง neonatal) (2) T. pallidum (3) C. trachomatis (4) HIV (ถ้าไม่ใช่ vertical transmission) STI ที่อาจเกิดได้โดยไม่ใช่ sexual abuse: HPV (Condyloma acuminata) อาจ transmit จาก mother ขณะคลอดได้ (latent period นาน) Trichomonas ในเด็กเล็กมากอาจมาจากแม่ อย่างไรก็ตาม condyloma acuminata ใน 8 ปี ต้องสงสัย sexual abuse",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Herpes genitalis",
+          "is_correct": false,
+          "explanation": "HSV ในเด็กพบได้แต่ไม่พบบ่อยเท่า condyloma; Condyloma เป็นคำตอบในบริบทนี้"
+        },
+        {
+          "label": "B",
+          "text": "Condyloma acuminata",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: HPV warts ใน prepubertal child + discharge + suspected abuse = Condyloma acuminata; ต้อง evaluate สำหรับ sexual abuse"
+        },
+        {
+          "label": "C",
+          "text": "Bacterial vaginosis",
+          "is_correct": false,
+          "explanation": "BV พบได้ในเด็ก prepubertal แต่มักไม่ใช่ STI primary presentation; ไม่ specific สำหรับ sexual abuse"
+        },
+        {
+          "label": "D",
+          "text": "Candidiasis vaginitis",
+          "is_correct": false,
+          "explanation": "Candida ในเด็กพบได้โดยไม่ต้อง sexual abuse (เช่น antibiotic use, diaper area) ไม่ใช่ indicator สำหรับ abuse"
+        },
+        {
+          "label": "E",
+          "text": "Trichomonas vaginalis",
+          "is_correct": false,
+          "explanation": "Trichomoniasis พบน้อยมากในเด็ก prepubertal ยกเว้น sexual abuse"
+        }
+      ],
+      "key_takeaway": "STI ในเด็ก + suspected sexual abuse → ต้องตรวจ STI panel ครบ | Gonorrhea/Chlamydia = ยืนยัน abuse (ไม่มีทางอื่น) | Condyloma/HPV = สงสัยสูงแต่อาจ perinatal"
+    }
+  },
+  {
+    "id": "4a7a4d3e-88c1-4969-b40b-4d5236cefc4c",
+    "correct_answer": "A",
+    "explanation": "Menometrorrhagia + symmetric enlarged globular uterus + secretory endometrium (D&C ปกติ) + dysmenorrhea = Adenomyosis",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. Adenomyosis เพราะมี classic presentation: globular enlarged uterus + menometrorrhagia + dysmenorrhea + secretory endometrium (D&C ปกติ)",
+      "reason": "Adenomyosis คือการที่ endometrial glands/stroma เจริญเข้าไปใน myometrium ลักษณะ: (1) Dysmenorrhea (secondary, แย่ลงเรื่อยๆ) (2) Menometrorrhagia (heavy irregular bleeding) (3) Symmetric enlarged, globular, tender uterus (boggy uterus) (4) D&C ปกติ (เพราะ lesion อยู่ใน myometrium ไม่ใช่ cavity) Myoma (B): irregular nodular uterus; Endometrial hyperplasia (D) หรือ carcinoma (E): D&C จะผิดปกติ",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Adenomyosis",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Symmetric globular uterus + menometrorrhagia + dysmenorrhea + normal D&C = Adenomyosis | Confirm: MRI (junctional zone thickening ≥12mm)"
+        },
+        {
+          "label": "B",
+          "text": "Myoma uteri",
+          "is_correct": false,
+          "explanation": "Myoma: irregular nodular uterus ไม่ใช่ symmetric globular; multiple discrete masses ใน U/S"
+        },
+        {
+          "label": "C",
+          "text": "Endocervical polyp",
+          "is_correct": false,
+          "explanation": "Polyp ทำให้ spotting/intermenstrual bleeding แต่ไม่ทำให้ enlarged globular uterus"
+        },
+        {
+          "label": "D",
+          "text": "Endometrial hyperplasia",
+          "is_correct": false,
+          "explanation": "Hyperplasia: D&C จะพบ atypical glands ในเคสนี้ D&C เห็น secretory endometrium = ปกติ"
+        },
+        {
+          "label": "E",
+          "text": "Endometrial carcinoma",
+          "is_correct": false,
+          "explanation": "Cancer: D&C จะพบ malignant cells ในเคสนี้ D&C ปกติ"
+        }
+      ],
+      "key_takeaway": "Adenomyosis: Symmetric enlarged globular uterus + Heavy menstrual bleeding + Dysmenorrhea + Normal D&C (secretory endo) | Diagnosis: MRI | Treatment: Hysterectomy (definitive)"
+    }
+  },
+  {
+    "id": "4b71b58e-864c-4c8c-9fa8-673ea6a1c29e",
+    "correct_answer": "A",
+    "explanation": "PCOS + nulliparity + obesity + vaginal bleeding → สงสัย endometrial hyperplasia/cancer → ต้องทำ contraceptive pill (OCP) เพื่อ protect endometrium",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. Contraceptive pill (OCP) เพราะ PCOS ทำให้ anovulatory cycles + unopposed estrogen → endometrial hyperplasia risk → OCP ให้ progestin ป้องกัน",
+      "reason": "PCOS + nulliparity + obesity: ปัจจัยเสี่ยง endometrial hyperplasia/cancer จาก chronic anovulation → unopposed estrogen → endometrial proliferation OCP (COCP): ให้ progestin ป้องกัน endometrial hyperplasia regulate cycles ลด androgen (hirsutism, acne) อย่างไรก็ตาม คำตอบอาจเป็น fractional curettage (B) เพื่อ biopsy ก่อน ขึ้นกับ clinical context ตามที่ข้อสอบระบุ คำตอบคือ A",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Contraceptive pill",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: COCP ให้ progestin ป้องกัน endometrial hyperplasia ใน chronic anovulatory PCOS + ลด androgen + regulate cycles"
+        },
+        {
+          "label": "B",
+          "text": "Fractional curettage",
+          "is_correct": false,
+          "explanation": "Fractional curettage ใช้ diagnose endometrial pathology; ถ้ามี bleeding ควร evaluate แต่ข้อสอบเลือก OCP"
+        },
+        {
+          "label": "C",
+          "text": "Hysterectomy",
+          "is_correct": false,
+          "explanation": "Hysterectomy เป็น last resort ไม่ใช่ first-line สำหรับ 45 ปี nullipara ที่ยังไม่ confirm cancer"
+        },
+        {
+          "label": "D",
+          "text": "Progestin therapy",
+          "is_correct": false,
+          "explanation": "Progestin เพียงอย่างเดียวก็ป้องกัน endometrium ได้ แต่ OCP ให้ประโยชน์มากกว่าใน PCOS"
+        },
+        {
+          "label": "E",
+          "text": "Diagnostic hysteroscopy",
+          "is_correct": false,
+          "explanation": "Hysteroscopy diagnostic ใช้เมื่อต้องการ visualize uterine cavity ไม่ใช่ first-line treatment"
+        }
+      ],
+      "key_takeaway": "PCOS + anovulation = Unopposed estrogen → Endometrial hyperplasia risk | OCP (progestin) protect endometrium + regulate cycles + ลด androgen | Evaluate bleeding ก่อน start OCP"
+    }
+  },
+  {
+    "id": "4d0c98e9-df4b-447d-b949-c12c8565859e",
+    "correct_answer": "A",
+    "explanation": "Postpartum day 2 ไข้ + breast engorgement = Fever จาก breast engorgement เป็นสาเหตุที่พบบ่อยที่สุดใน 24-48 ชั่วโมงแรกหลังคลอด",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. Breast engorgement เพราะ postpartum day 2 + breast tender/engorged เป็น physiologic cause ของ low-grade fever",
+      "reason": "Postpartum fever causes (5 W's): (1) Wind (day 1-2): atelectasis (2) Water (day 2-3): UTI, cystitis (3) Wound (day 3-5): wound infection (episiotomy, C/S) (4) Walking (day 4-5): DVT/PE (5) Womb/breast (day 3-4): endometritis, mastitis, engorgement ในเคสนี้: day 2, breast engorged + mild tender → physiologic breast engorgement เป็นสาเหตุที่พบบ่อยที่สุดของ fever 24-48 ชั่วโมงหลังคลอด จาก lymphatic congestion ขณะ milk coming in",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Breast engorgement",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Day 2 postpartum + breast engorged tender = physiologic engorgement เมื่อ milk comes in (day 2-3) ทำให้มีไข้ได้"
+        },
+        {
+          "label": "B",
+          "text": "Episiotomy wound infection",
+          "is_correct": false,
+          "explanation": "Wound infection มักเกิด day 3-5 ในเคสนี้ wound mild tender แต่ไม่ใช่สาเหตุหลัก"
+        },
+        {
+          "label": "C",
+          "text": "Parametritis",
+          "is_correct": false,
+          "explanation": "Parametritis (uterine/pelvic infection) มักไข้สูง > 38.5°C + uterine tenderness + purulent discharge มักเกิด day 3-7"
+        },
+        {
+          "label": "D",
+          "text": "Cystitis",
+          "is_correct": false,
+          "explanation": "Cystitis: dysuria + frequency ไม่มีในประวัติ"
+        }
+      ],
+      "key_takeaway": "Postpartum fever Day 2 + breast engorged = Physiologic breast engorgement (milk coming in) | 5 W's: Wind (day1-2), Water (UTI day2-3), Wound (day3-5), Walking (DVT day4-5), Womb/Breast (day3-4)"
+    }
+  }
+]

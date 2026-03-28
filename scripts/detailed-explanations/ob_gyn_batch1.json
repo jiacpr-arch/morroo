@@ -1,0 +1,824 @@
+[
+  {
+    "id": "0135cec9-ebca-42d8-830e-a56add6619df",
+    "correct_answer": "E",
+    "explanation": "การแท้งซ้ำ 3 ครั้งในช่วงอายุครรภ์ < 12 สัปดาห์ สาเหตุที่พบบ่อยที่สุดคือ chromosomal abnormalities โดยเฉพาะ trisomy",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ E. Chromosomal abnormalities เพราะการแท้งบุตรซ้ำ (recurrent abortion) ในไตรมาสแรก < 12 สัปดาห์ สาเหตุอันดับหนึ่งคือความผิดปกติของโครโมโซม",
+      "reason": "Recurrent pregnancy loss (≥3 ครั้ง) ในช่วงต้นตั้งครรภ์มีสาเหตุจาก chromosomal abnormalities ของทารก (เช่น trisomy 16, 21) มากที่สุดถึง 50-60% ของ sporadic abortion ทั้งหมด สาเหตุอื่นๆ เช่น uterine anomaly, antiphospholipid syndrome, thrombophilia, หรือ cervical incompetence มักทำให้แท้งในไตรมาส 2 ที่อายุครรภ์มากกว่า สาเหตุโครโมโซมเป็น random error ระหว่าง meiosis ไม่ใช่สาเหตุทางกายภาพของมารดา",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Myoma uteri",
+          "is_correct": false,
+          "explanation": "Myoma มักทำให้แท้งในไตรมาส 2 หรือคลอดก่อนกำหนด โดยเฉพาะ submucous myoma ที่กดทับโพรงมดลูก ไม่ใช่สาเหตุหลักของ first-trimester abortion ซ้ำๆ"
+        },
+        {
+          "label": "B",
+          "text": "Bicornuate uterus",
+          "is_correct": false,
+          "explanation": "Uterine anomaly เช่น bicornuate uterus มักสัมพันธ์กับการแท้งในไตรมาส 2 หรือคลอดก่อนกำหนด ไม่ใช่ first-trimester recurrent abortion"
+        },
+        {
+          "label": "C",
+          "text": "Infection",
+          "is_correct": false,
+          "explanation": "การติดเชื้อ เช่น Toxoplasma, CMV อาจทำให้แท้งหรือทารกพิการได้ แต่ไม่ใช่สาเหตุหลักของ recurrent early abortion"
+        },
+        {
+          "label": "D",
+          "text": "Cervical incompetence",
+          "is_correct": false,
+          "explanation": "Cervical incompetence ทำให้ปากมดลูกเปิดโดยไม่มีอาการเจ็บท้อง มักเกิดในไตรมาส 2 (16-24 สัปดาห์) ไม่ใช่ 7-11 สัปดาห์"
+        },
+        {
+          "label": "E",
+          "text": "Chromosomal abnormalities",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: เป็นสาเหตุที่พบบ่อยที่สุดของการแท้งซ้ำในไตรมาสแรก พบใน 50-60% ของกรณี เกิดจาก random chromosomal error ระหว่าง meiosis ส่วนใหญ่เป็น trisomy"
+        }
+      ],
+      "key_takeaway": "Recurrent abortion ไตรมาสแรก → สาเหตุ #1 คือ Chromosomal abnormalities | ไตรมาส 2 → นึกถึง cervical incompetence และ uterine anomaly"
+    }
+  },
+  {
+    "id": "041a87fa-93e4-46f7-9d96-122c916a2779",
+    "correct_answer": "B",
+    "explanation": "ผล quad screen เสี่ยงสูง ต้องให้ counseling อย่างรอบด้านก่อนตัดสินใจทำ invasive testing โดยไม่ตัดสินใจแทนผู้ป่วย",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B. ให้คำปรึกษาอย่างรอบด้านและตัดสินใจร่วมกับมารดา เพราะ quad screen เป็น screening test ไม่ใช่ diagnostic test",
+      "reason": "Quad screen เป็น screening test มี false positive rate สูง การจัดการที่ถูกต้องคือ genetic counseling ก่อน อธิบายความหมายของผล ความเสี่ยงของ invasive testing เปรียบเทียบทางเลือก ได้แก่ amniocentesis, CVS, NIPT และให้มารดาตัดสินใจด้วยตนเองบนพื้นฐานข้อมูลที่ครบถ้วน (informed consent) เป็นหลักการสำคัญของจริยธรรมการแพทย์",
+      "choices": [
+        {
+          "label": "A",
+          "text": "บอกมารดาว่ามีความเสี่ยงสูงมาก แนะนำตามที่มารดาต้องการ",
+          "is_correct": false,
+          "explanation": "ไม่ครบถ้วน: ต้องให้ counseling อย่างรอบด้านก่อน ไม่ใช่แค่บอกว่าเสี่ยงสูง"
+        },
+        {
+          "label": "B",
+          "text": "ให้คำปรึกษาอย่างรอบด้านแล้วตัดสินใจร่วมกับมารดา",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: เป็นแนวทางมาตรฐาน - อธิบายความหมาย screening result, ทางเลือก, ความเสี่ยง และให้มารดาตัดสินใจเองด้วย informed consent"
+        },
+        {
+          "label": "C",
+          "text": "ส่งตรวจ amniocentesis ทันที",
+          "is_correct": false,
+          "explanation": "ผิด: ต้อง counsel ก่อนเสมอ การทำ invasive test โดยไม่ขอ consent ละเมิดสิทธิผู้ป่วย"
+        },
+        {
+          "label": "D",
+          "text": "ให้ไปหาคำปรึกษาที่สถาบันอื่น",
+          "is_correct": false,
+          "explanation": "ผิด: แพทย์มีหน้าที่ให้ counseling แก่ผู้ป่วย การส่งออกไปโดยไม่มีเหตุผลเป็นการละเลยหน้าที่"
+        },
+        {
+          "label": "E",
+          "text": "ไม่จำเป็นต้องตรวจเพิ่มเติม",
+          "is_correct": false,
+          "explanation": "ผิด: high-risk quad screen ต้องมีการ follow up และ counseling เสมอ"
+        }
+      ],
+      "key_takeaway": "High-risk screening test → Genetic counseling ก่อน → Informed consent → ผู้ป่วยตัดสินใจเอง ห้ามทำ invasive test โดยไม่ consent"
+    }
+  },
+  {
+    "id": "052ca8e9-c762-4ce2-9ee7-854330630e01",
+    "correct_answer": "A",
+    "explanation": "LeFort procedure เหมาะกับผู้หญิงสูงอายุที่ไม่ต้องการมีเพศสัมพันธ์อีก เป็น obliterative procedure สำหรับ POP ที่ดีที่สุดในกรณีนี้",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. LeFort procedure สำหรับ POP + stress incontinence ในผู้ป่วยที่ไม่ต้องการ sexual activity อีกต่อไป",
+      "reason": "LeFort colpocleisis เป็น obliterative procedure ที่ปิดช่องคลอดเพื่อรักษา uterovaginal prolapse มีอัตราสำเร็จสูงมากและ surgical risk ต่ำ เหมาะกับผู้หญิงสูงอายุที่ไม่ต้องการมีเพศสัมพันธ์ ส่วน TVT (C) รักษา SUI แต่ไม่รักษา POP โดยตรง Marshall-Marchetti-Krantz (B) เป็น retropubic urethropexy สำหรับ SUI เท่านั้น Sacrocolpopexy (D) สำหรับ vault prolapse หลังตัดมดลูก",
+      "choices": [
+        {
+          "label": "A",
+          "text": "LeFort procedure",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Obliterative colpocleisis เหมาะกับผู้สูงอายุ POP + SUI ที่ไม่ต้องการ sexual activity; อัตราสำเร็จ >90%, recovery เร็ว"
+        },
+        {
+          "label": "B",
+          "text": "Marshall-Marchetti-Krantz procedure",
+          "is_correct": false,
+          "explanation": "รักษา SUI ด้วย retropubic urethropexy แต่ไม่รักษา pelvic organ prolapse"
+        },
+        {
+          "label": "C",
+          "text": "Tension-free vaginal tape (TVT)",
+          "is_correct": false,
+          "explanation": "รักษา stress incontinence ได้ดี แต่ไม่รักษา prolapse ต้องทำร่วมกับ prolapse repair"
+        },
+        {
+          "label": "D",
+          "text": "Sacrocolpopexy",
+          "is_correct": false,
+          "explanation": "สำหรับ vaginal vault prolapse หลัง hysterectomy ไม่ใช่ uterovaginal prolapse ที่ยังมีมดลูก"
+        },
+        {
+          "label": "E",
+          "text": "Anterior colporrhaphy",
+          "is_correct": false,
+          "explanation": "รักษา anterior compartment prolapse (cystocele) แต่ไม่ comprehensive สำหรับ complete POP + SUI"
+        }
+      ],
+      "key_takeaway": "LeFort colpocleisis = POP + elderly + no sexual activity → best choice | TVT = SUI alone | Sacrocolpopexy = vault prolapse post-hysterectomy"
+    }
+  },
+  {
+    "id": "074d352b-8f74-4843-8ad7-ebd5345317e6",
+    "correct_answer": "A",
+    "explanation": "หญิงอายุ 30 ปี มีก้อนที่ adnexa ขวาแบบ cystic tender + ปวดประจำเดือน + infertility 6 ปี → Endometrioma",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. Endometriosis Cyst (Endometrioma) เพราะมีลักษณะ classic triad: dysmenorrhea + infertility + adnexal cystic mass tender",
+      "reason": "Endometrioma (\"chocolate cyst\") มีลักษณะเฉพาะคือ: (1) หญิงวัยเจริญพันธุ์, (2) dysmenorrhea แม้ไม่รุนแรง, (3) infertility ปฐมภูมิหรือทุติยภูมิ, (4) cystic adnexal mass ที่ tender, (5) cul-de-sac tenderness/nodularity จาก adhesion การที่ cul-de-sac rough บ่งชี้ถึง deep infiltrating endometriosis ด้วย Functional cyst (B) ไม่ค่อย tender และไม่มี infertility pattern, TOA (C) มักมีไข้และ signs of infection",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Endometriosis Cyst",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Classic triad = dysmenorrhea (ทนได้) + infertility + cystic tender adnexal mass + rough cul-de-sac = Endometrioma จนกว่าจะพิสูจน์เป็นอย่างอื่น"
+        },
+        {
+          "label": "B",
+          "text": "Functional Ovarian Cyst",
+          "is_correct": false,
+          "explanation": "Functional cyst มักไม่ tender ไม่สัมพันธ์กับ infertility และ resolve เองภายใน 1-2 รอบเดือน"
+        },
+        {
+          "label": "C",
+          "text": "TOA (Tubo-Ovarian Abscess)",
+          "is_correct": false,
+          "explanation": "TOA มักมีไข้สูง leukocytosis และ signs of PID (cervical motion tenderness, discharge) ซึ่งไม่มีในเคสนี้"
+        },
+        {
+          "label": "D",
+          "text": "Appendiceal abscess",
+          "is_correct": false,
+          "explanation": "อยู่ทาง right lower quadrant แต่มักมีอาการ acute และไข้ ไม่ใช่ chronic pelvic pain + infertility"
+        }
+      ],
+      "key_takeaway": "Infertility + dysmenorrhea + tender adnexal cystic mass + rough cul-de-sac = Endometrioma | Gold standard diagnosis: laparoscopy + biopsy"
+    }
+  },
+  {
+    "id": "0860b3b9-207e-4b87-b972-63b8ed30bf4e",
+    "correct_answer": "A",
+    "explanation": "Turner syndrome (45,XO) มีลักษณะ classic: short stature, webbed neck, wide nipples, cubitus valgus, coarctation of aorta, primary amenorrhea",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. Turner syndrome (45,X0) เพราะมีลักษณะครบถ้วน: short stature + webbed neck + wide nipples + cubitus valgus + coarctation of aorta + amenorrhea",
+      "reason": "Turner syndrome (45,X0 หรือ mosaic) เป็นโรคโครโมโซมในหญิงที่พบบ่อย อาการสำคัญ: (1) Short stature (ส่วนสูง < P3), (2) Primary amenorrhea (streak gonads), (3) Webbed neck, low hairline, (4) Wide-spaced nipples (shield chest), (5) Cubitus valgus, (6) Cardiac defects โดยเฉพาะ bicuspid aortic valve + coarctation of aorta, (7) Lymphedema ในทารกแรกเกิด Noonan syndrome (B) มีลักษณะคล้ายแต่ autosomal dominant พบได้ในชายและหญิง",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Turner syndrome",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: 45,X0 → classic features ครบ: short stature, webbed neck, wide nipples, cubitus valgus, coarctation of aorta, primary amenorrhea. Confirm ด้วย karyotype"
+        },
+        {
+          "label": "B",
+          "text": "Noonan syndrome",
+          "is_correct": false,
+          "explanation": "Noonan คล้าย Turner แต่ autosomal dominant, karyotype ปกติ (46,XY หรือ 46,XX), มีทั้งชายและหญิง และไม่มี coarctation of aorta เป็น feature หลัก"
+        },
+        {
+          "label": "C",
+          "text": "Klinefelter syndrome",
+          "is_correct": false,
+          "explanation": "Klinefelter (47,XXY) พบในชาย มี tall stature, small testes, gynecomastia ไม่มีใน females"
+        },
+        {
+          "label": "D",
+          "text": "Marfan syndrome",
+          "is_correct": false,
+          "explanation": "Marfan มี tall stature (ตรงข้าม), arachnodactyly, aortic root dilatation, ectopia lentis ไม่มี webbed neck หรือ short stature"
+        },
+        {
+          "label": "E",
+          "text": "Ehlers-Danlos syndrome",
+          "is_correct": false,
+          "explanation": "EDS มี joint hypermobility, skin hyperelasticity, easy bruising ไม่มี short stature หรือ webbed neck"
+        }
+      ],
+      "key_takeaway": "Turner syndrome = 45,X0 | Short stature + Webbed neck + Wide nipples + Cubitus valgus + Coarctation of aorta + Primary amenorrhea | Confirm: Karyotype"
+    }
+  },
+  {
+    "id": "095ffb06-4c0e-41f2-9c88-d539d4651f2a",
+    "correct_answer": "B",
+    "explanation": "H-SIL บน Pap smear ต้องทำ cervical conization (LEEP หรือ cold knife cone) เพื่อ diagnosis และ treatment พร้อมกัน",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B. Cervical conization เพราะ H-SIL (CIN 2-3) บน Pap smear ต้องการ definitive treatment ด้วย excisional procedure",
+      "reason": "แนวทาง H-SIL บน Pap smear: ขั้นแรกทำ colposcopy (A) เพื่อ guided biopsy confirm diagnosis → หาก biopsy confirm CIN 2-3 → ทำ excisional treatment เช่น LEEP หรือ cold knife cone (= cervical conization) อย่างไรก็ตาม คำถามถามว่า 'ให้ทำอะไรต่อ' กับ H-SIL โดยตรง ซึ่ง Pap H-SIL ในหญิงอายุ > 25 ปี → สามารถทำ colposcopy หรือ expedited treatment (conization) ได้เลย การที่คำตอบคือ B บ่งชี้ว่าโจทย์ต้องการ definitive treatment",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Colposcopy",
+          "is_correct": false,
+          "explanation": "Colposcopy เป็น step แรกสำหรับ high-risk Pap ใน guideline บางสถาบัน แต่คำถามถามถึง management สุดท้าย ซึ่ง H-SIL ต้องการ excisional treatment"
+        },
+        {
+          "label": "B",
+          "text": "Cervical conization",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: H-SIL = CIN 2-3 ต้องการ excisional procedure (LEEP/cold knife cone) เพื่อ remove transformation zone ทั้งหมด และได้ specimen สำหรับ histology"
+        },
+        {
+          "label": "C",
+          "text": "Repeat Pap smear ใน 3 เดือน",
+          "is_correct": false,
+          "explanation": "ไม่เหมาะกับ H-SIL: การ repeat Pap เฉยๆ เหมาะกับ L-SIL หรือ ASC-US ที่ความเสี่ยงต่ำ"
+        },
+        {
+          "label": "D",
+          "text": "HPV testing",
+          "is_correct": false,
+          "explanation": "HPV testing ใช้ใน co-testing กับ Pap หรือ reflex testing สำหรับ ASC-US ไม่ใช่ management หลักสำหรับ H-SIL"
+        },
+        {
+          "label": "E",
+          "text": "Observe without treatment",
+          "is_correct": false,
+          "explanation": "H-SIL มี high risk progression to invasive cancer ต้องรักษาเสมอ ห้าม observe"
+        }
+      ],
+      "key_takeaway": "H-SIL = CIN 2-3 → Cervical conization (LEEP/CKC) | L-SIL/ASC-US → Colposcopy หรือ repeat Pap | H-SIL ห้าม observe"
+    }
+  },
+  {
+    "id": "0a84c3ae-5af6-4cee-9c4c-9dc106591010",
+    "correct_answer": "A",
+    "explanation": "HBsAg positive อย่างเดียวในหญิงตั้งครรภ์ ต้องประเมินเพิ่ม แต่ตัวเลือกที่ดีที่สุดในชุดนี้เพื่อป้องกันการถ่ายทอดสู่ทารกคือ termination (ตามที่ข้อสอบระบุ)",
+    "detailed_explanation": {
+      "summary": "หมายเหตุ: คำตอบ A (termination) สำหรับ HBsAg positive เพียงอย่างเดียวนั้นผิดตามมาตรฐานสากล แต่ตามที่ข้อสอบบันทึกไว้คือ A โดยทั่วไปการจัดการที่ถูกต้องคือป้องกันทารก",
+      "reason": "มาตรฐานสากล (WHO, CDC): HBsAg positive ในหญิงตั้งครรภ์ ไม่ใช่ข้อบ่งชี้ในการยุติการตั้งครรภ์ การจัดการที่ถูกต้องคือ: (1) ตรวจ HBV DNA, HBeAg เพิ่ม (2) ถ้า viral load สูง (>200,000 IU/mL ใน T3) ให้ antiviral เช่น tenofovir (3) ทารกแรกเกิดต้องได้ HBIG + HBV vaccine ภายใน 12 ชั่วโมงหลังคลอด (4) Breastfeeding ได้ถ้าทารกได้ vaccine แล้ว",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Termination",
+          "is_correct": true,
+          "explanation": "ตามที่ข้อสอบระบุ แต่ในทางคลินิก HBsAg+ เพียงอย่างเดียวไม่ใช่ข้อบ่งชี้ในการยุติการตั้งครรภ์"
+        },
+        {
+          "label": "B",
+          "text": "C/S at term",
+          "is_correct": false,
+          "explanation": "HBsAg positive ไม่เป็น indication สำหรับ C/S: vaginal delivery ไม่ได้เพิ่มความเสี่ยงถ้าทารกได้ passive + active immunization"
+        },
+        {
+          "label": "C",
+          "text": "Avoid breast feeding",
+          "is_correct": false,
+          "explanation": "Breastfeeding ได้รับอนุญาต ถ้าทารกได้รับ HBIG + vaccine แล้วภายใน 12 ชั่วโมง"
+        },
+        {
+          "label": "D",
+          "text": "Vaccine at birth",
+          "is_correct": false,
+          "explanation": "HBV vaccine ให้แก่ทารกที่เกิดจากแม่ HBsAg+ แต่ต้องให้ร่วมกับ HBIG เพื่อ passive immunization ด้วย"
+        },
+        {
+          "label": "E",
+          "text": "Immunoglobulin at birth",
+          "is_correct": false,
+          "explanation": "HBIG เพียงอย่างเดียวไม่เพียงพอ ต้องให้ร่วมกับ HBV vaccine เสมอ"
+        }
+      ],
+      "key_takeaway": "HBsAg+ in pregnancy: ทารกต้องได้ HBIG + HBV vaccine ภายใน 12 ชั่วโมงหลังคลอด | ไม่ต้อง terminate | ไม่ต้อง C/S | ให้นมได้ถ้า vaccinate แล้ว"
+    }
+  },
+  {
+    "id": "0ba10129-bb11-4e54-8bcc-fb4671c32622",
+    "correct_answer": "B",
+    "explanation": "Gestational sac 10mm ที่ GA 7 สัปดาห์ ไม่พบ embryo อาจเป็น blighted ovum หรือ early IUP ต้อง repeat U/S ใน 2 สัปดาห์เพื่อดู viability ก่อน",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B. Repeat transvaginal U/S ใน 2 สัปดาห์ เพราะยังไม่สามารถ confirm diagnosis ได้จาก single scan ที่ GA 7 สัปดาห์",
+      "reason": "ตามเกณฑ์ TVUS: Anembryonic pregnancy (blighted ovum) วินิจฉัยได้เมื่อ mean sac diameter ≥25mm โดยไม่พบ embryo หรือ MSD ≥20mm โดยไม่พบ yolk sac ในเคสนี้ sac เพียง 10mm จึงยังเล็กเกินไปจะ confirm diagnosis ต้อง repeat U/S ใน 2 สัปดาห์เพื่อดู: (1) sac โตขึ้นปกติหรือไม่, (2) มี embryo หรือ fetal heart beat ปรากฏหรือไม่ การทำ D&C ก่อน confirm diagnosis อาจทำให้แท้ง viable pregnancy ได้",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Continue ANC",
+          "is_correct": false,
+          "explanation": "ยังไม่มีหลักฐานว่า pregnancy viable หรือไม่ ยังไม่ควร continue ANC โดยไม่ติดตาม U/S"
+        },
+        {
+          "label": "B",
+          "text": "Repeat transvaginal U/S ใน 2 สัปดาห์",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Gestational sac 10mm ใน 7 สัปดาห์ยังเล็กเกินไปจะ diagnose blighted ovum ต้อง repeat เมื่อ sac ≥25mm จึงจะ confirm anembryonic pregnancy"
+        },
+        {
+          "label": "C",
+          "text": "ให้ Progestagen",
+          "is_correct": false,
+          "explanation": "ไม่มีหลักฐานว่า progesterone ช่วยป้องกัน threatened abortion ที่เกิดจาก chromosomal abnormalities"
+        },
+        {
+          "label": "D",
+          "text": "Diagnostic laparoscopy",
+          "is_correct": false,
+          "explanation": "ไม่จำเป็น: IUP ปกติพบ sac ใน uterus แล้ว ไม่มี indication สำหรับ laparoscopy ในกรณีนี้"
+        },
+        {
+          "label": "E",
+          "text": "Dilatation and curettage",
+          "is_correct": false,
+          "explanation": "ห้ามทำ D&C ก่อน confirm diagnosis เพราะอาจ terminate viable early pregnancy"
+        }
+      ],
+      "key_takeaway": "Gestational sac <25mm ไม่พบ embryo → ยังวินิจฉัย blighted ovum ไม่ได้ → Repeat TVUS ใน 1-2 สัปดาห์ | MSD ≥25mm ไม่พบ embryo → Anembryonic pregnancy confirmed"
+    }
+  },
+  {
+    "id": "0f256bd3-92a5-444d-a5a9-30d9c0f1d6c1",
+    "correct_answer": "A",
+    "explanation": "Metromenorrhagia ในวัยรุ่นอายุ 16 ปี สาเหตุที่พบบ่อยที่สุดคือ anovulatory cycle เนื่องจาก HPO axis ยังไม่สมบูรณ์",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. Anovulation เพราะวัยรุ่นอายุ 16 ปีมีประจำเดือนมาแล้ว 3 เดือน ระบบ hypothalamic-pituitary-ovarian (HPO) axis ยังไม่สมบูรณ์",
+      "reason": "ในวัยรุ่น 2-3 ปีแรกหลัง menarche ประมาณ 50-80% ของรอบเดือนเป็น anovulatory cycles เนื่องจาก positive estrogen feedback ยังพัฒนาไม่สมบูรณ์ทำให้ไม่มี LH surge → ไม่มี ovulation → ไม่มี corpus luteum → ไม่มี progesterone → endometrium proliferates ต่อเนื่องแล้ว shed แบบ irregular = metromenorrhagia PCOS (B) เป็นสาเหตุสำคัญแต่ต้องมีอาการอื่นร่วม (hyperandrogenism, polycystic ovaries)",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Anovulation",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: สาเหตุที่พบบ่อยที่สุดของ DUB ในวัยรุ่นปีแรกๆ หลัง menarche เพราะ HPO axis ยังไม่ mature → ไม่มี LH surge → ไม่มี ovulation"
+        },
+        {
+          "label": "B",
+          "text": "PCOS",
+          "is_correct": false,
+          "explanation": "PCOS เป็น possibility แต่ต้องมี 2 ใน 3: oligo/anovulation + hyperandrogenism + polycystic ovaries. Anovulation เป็นสาเหตุที่พบบ่อยกว่าในวัยรุ่น"
+        },
+        {
+          "label": "C",
+          "text": "Thyroid dysfunction",
+          "is_correct": false,
+          "explanation": "Thyroid disease ทำให้ menstrual irregularity ได้ แต่ไม่ใช่สาเหตุที่พบบ่อยที่สุด ต้องตรวจ TSH เพิ่มเติม"
+        },
+        {
+          "label": "D",
+          "text": "Bleeding disorder",
+          "is_correct": false,
+          "explanation": "von Willebrand disease หรือ bleeding disorder ต้องนึกถึงใน heavy menstrual bleeding รุนแรงตั้งแต่ menarche แต่ไม่ใช่สาเหตุที่พบบ่อยที่สุด"
+        },
+        {
+          "label": "E",
+          "text": "Uterine fibroids",
+          "is_correct": false,
+          "explanation": "Fibroids พบน้อยมากในวัยรุ่นอายุ 16 ปี ไม่ใช่สาเหตุหลัก"
+        }
+      ],
+      "key_takeaway": "วัยรุ่น + metromenorrhagia ปีแรกๆ → Anovulatory DUB | HPO axis ยังไม่สมบูรณ์ → ไม่มี LH surge → ไม่มี progesterone → irregular bleeding"
+    }
+  },
+  {
+    "id": "111067a6-6bdf-4c17-8030-e51d44c76652",
+    "correct_answer": "A",
+    "explanation": "Oral candidiasis ในเด็ก รักษาด้วย Nystatin suspension oral rinse (swish and swallow) เป็น first-line treatment",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. Nystatin suspension เพราะเป็น first-line สำหรับ oral candidiasis ที่ไม่รุนแรงในเด็ก",
+      "reason": "Oral candidiasis (thrush) ในเด็กเล็กรักษาด้วย Nystatin suspension 100,000 IU/mL หยดในปาก swish แล้วกลืน วันละ 4 ครั้ง นาน 7-14 วัน เป็น first-line เพราะ: (1) topical action ปลอดภัยและมีประสิทธิภาพ (2) minimal systemic absorption (3) ราคาถูก Ketoconazole (B) มี hepatotoxicity ไม่แนะนำในเด็กเล็ก Clotrimazole cream (C) ใช้ผิวหนัง ไม่ใช่ oral Fluconazole (D) ใช้ใน refractory cases หรือ immunocompromised",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Nystatin suspension oral rinse",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: First-line สำหรับ oral thrush ในเด็กทั่วไป topical fungicide ไม่ดูดซึมระบบ ปลอดภัย ใช้ swish and swallow"
+        },
+        {
+          "label": "B",
+          "text": "Ketoconazole oral tablet",
+          "is_correct": false,
+          "explanation": "มี hepatotoxicity สูง FDA contraindicate ใน superficial infections ไม่แนะนำในเด็กเล็กหรือ first-line"
+        },
+        {
+          "label": "C",
+          "text": "Clotrimazole topical cream",
+          "is_correct": false,
+          "explanation": "Clotrimazole cream ใช้สำหรับ skin/vaginal candidiasis ไม่เหมาะกับ oral application ในเด็กเล็ก"
+        },
+        {
+          "label": "D",
+          "text": "Fluconazole oral suspension",
+          "is_correct": false,
+          "explanation": "Fluconazole ใช้ใน refractory oral candidiasis หรือ immunocompromised patients ไม่ใช่ first-line ใน healthy children"
+        },
+        {
+          "label": "E",
+          "text": "Miconazole oral gel",
+          "is_correct": false,
+          "explanation": "Miconazole oral gel เป็น alternative ที่ใช้ได้แต่มี drug interactions สูง และ not first choice เมื่อมี Nystatin"
+        }
+      ],
+      "key_takeaway": "Oral candidiasis ในเด็ก → Nystatin suspension (swish & swallow) 4x/day 7-14 วัน | Fluconazole สำรอง refractory/immunocompromised | Ketoconazole ห้ามใช้ first-line"
+    }
+  },
+  {
+    "id": "11e38572-c760-4fa4-bc81-7382f19350ac",
+    "correct_answer": "A",
+    "explanation": "PPROM ที่ GA 32 สัปดาห์ nitrazine positive ต้องให้ oxytocin เพื่อ induce labor ตามที่ข้อสอบระบุ (อย่างไรก็ตาม guideline ปัจจุบันแนะนำ corticosteroids + antibiotics ก่อน)",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องตามข้อสอบคือ A. Oxytocin IV สำหรับ PPROM ที่ GA 32 สัปดาห์ แต่ในทางคลินิก guideline ปัจจุบันแนะนำ corticosteroids เป็นขั้นตอนแรก",
+      "reason": "PPROM (Preterm Premature Rupture Of Membranes) ที่ GA 32 สัปดาห์: (1) ให้ corticosteroids (dexamethasone/betamethasone) เพื่อ fetal lung maturation (2) ให้ antibiotics (ampicillin + erythromycin) เพื่อยืด latency period (3) Tocolytics ชั่วคราวเพื่อให้ steroids ออกฤทธิ์ (4) Deliver เมื่อ ≥34 สัปดาห์หรือมี complications อย่างไรก็ตาม หากโจทย์ต้องการ immediate management ให้ induce อาจเพราะมี contraindication อื่นในโจทย์",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Oxytocin IV",
+          "is_correct": true,
+          "explanation": "ตามที่ข้อสอบบันทึก: ให้ induction of labor ด้วย oxytocin สำหรับ PPROM ที่ GA 32 สัปดาห์"
+        },
+        {
+          "label": "B",
+          "text": "Terbutaline IV",
+          "is_correct": false,
+          "explanation": "Tocolytics อาจใช้ชั่วคราวเพื่อให้ steroids ออกฤทธิ์ แต่ไม่ใช่ immediate management หลักสำหรับ PPROM"
+        },
+        {
+          "label": "C",
+          "text": "C/S",
+          "is_correct": false,
+          "explanation": "PPROM ไม่ใช่ indication สำหรับ C/S โดยตรง ยกเว้นมี obstetric indication อื่น"
+        },
+        {
+          "label": "D",
+          "text": "Dexamethasone IM",
+          "is_correct": false,
+          "explanation": "Corticosteroids สำคัญมากใน PPROM < 34 สัปดาห์ เพื่อ fetal lung maturity แต่ตามข้อสอบนี้ไม่ใช่คำตอบ"
+        },
+        {
+          "label": "E",
+          "text": "Prostaglandin",
+          "is_correct": false,
+          "explanation": "Prostaglandin ใช้ ripen cervix แต่ใน PPROM ที่ membranes แตกแล้ว มักใช้ oxytocin แทน"
+        }
+      ],
+      "key_takeaway": "PPROM < 34 สัปดาห์: Corticosteroids + Antibiotics (ampicillin+erythromycin) + ประเมิน gestational age | ≥34 สัปดาห์: Deliver"
+    }
+  },
+  {
+    "id": "126575c5-ce47-4707-b0c1-403403931433",
+    "correct_answer": "C",
+    "explanation": "Mastitis ในสตรีให้นมบุตร รักษาด้วย oral NSAID + ต่อให้นมลูก ยังไม่ถึงขั้น abscess จึงยังไม่ต้องผ่าตัด",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ C. Oral steroid/NSAID สำหรับ mastitis ที่ยังไม่เป็น abscess ในสตรีให้นมบุตร",
+      "reason": "Lactational mastitis ระยะแรก (tender swelling periareolar ไม่มี fluctuance): รักษาด้วย (1) Continued breastfeeding หรือ pumping เพื่อระบาย milk stasis (2) NSAID เพื่อ anti-inflammation และลดปวด (3) Warm compress ถ้ามีการตกค้างของน้ำนม (4) ถ้าไม่ดีขึ้นใน 24-48 ชั่วโมง → oral antibiotics (dicloxacillin หรือ cephalexin) เพื่อรักษา S. aureus ข้อสอบนี้ถามถึง periareolar swelling ที่ยังไม่มี fluctuance → NSAID ก่อน IV steroid หรือ antibiotics",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cold compression",
+          "is_correct": false,
+          "explanation": "Cold compress ลดปวด/บวมได้บ้าง แต่ warm compress เหมาะกว่าสำหรับ mastitis เพื่อช่วยระบาย milk duct"
+        },
+        {
+          "label": "B",
+          "text": "IV steroid/NSAID",
+          "is_correct": false,
+          "explanation": "IV treatment ไม่จำเป็นสำหรับ lactational mastitis ที่ไม่รุนแรง oral therapy เพียงพอ"
+        },
+        {
+          "label": "C",
+          "text": "Oral steroid/NSAID",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: NSAID oral เป็น first-line สำหรับ early lactational mastitis ไม่มี abscess ลดปวด/อักเสบ ร่วมกับ continued breastfeeding"
+        },
+        {
+          "label": "D",
+          "text": "Oral antibiotics",
+          "is_correct": false,
+          "explanation": "Antibiotics ใช้เมื่อ mastitis ไม่ตอบสนองต่อ conservative treatment ใน 24-48 ชั่วโมง หรือมีไข้/leukocytosis"
+        },
+        {
+          "label": "E",
+          "text": "Incision and drainage",
+          "is_correct": false,
+          "explanation": "I&D สำหรับ breast abscess (fluctuant mass) เท่านั้น ไม่ใช่ mastitis ระยะแรก"
+        }
+      ],
+      "key_takeaway": "Lactational mastitis: Continued breastfeeding + NSAID ก่อน | ถ้าไม่ดีขึ้น 24-48h → Antibiotics (dicloxacillin) | Fluctuant abscess → I&D"
+    }
+  },
+  {
+    "id": "12a8445f-87ea-44d1-a200-c2c54eee6f6a",
+    "correct_answer": "A",
+    "explanation": "Bleeding + uterus size = GA + os closed + no cervical motion tenderness + no adnexal mass = Threatened abortion",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. Threatened abortion เพราะ os ยังปิดอยู่, uterus size ตรงกับ GA, ไม่มี CMT, ไม่มี adnexal mass",
+      "reason": "Classification ของ abortion: (1) Threatened: bleeding + os CLOSED + uterus = GA size → รักษาแบบ conservative (2) Inevitable: bleeding + os OPEN (dilated) (3) Incomplete: products of conception ยังค้างอยู่ + os open (4) Complete: pregnancy expelled ทั้งหมด + uterus contracted (5) Missed: fetus ตายแต่ยังไม่ออกมา (6) Ectopic: CMT positive + adnexal mass ± peritoneal signs เคสนี้: os closed + uterus = 8 wk + no CMT + no adnexal mass = Threatened abortion",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Threatened abortion",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Bleeding + os CLOSED + uterus size = GA = Threatened abortion; รักษา: bed rest, TVUS เพื่อดู viability"
+        },
+        {
+          "label": "B",
+          "text": "Complete abortion",
+          "is_correct": false,
+          "explanation": "Complete abortion: ขับ products of conception ออกหมดแล้ว uterus จะเล็กและ firm, os อาจเปิดหรือปิดแล้ว bleeding จะลดลง"
+        },
+        {
+          "label": "C",
+          "text": "Incomplete abortion",
+          "is_correct": false,
+          "explanation": "Incomplete: os OPEN, uterus ยังโต, bleeding มาก, มี tissue คงค้าง → ต้องทำ D&C"
+        },
+        {
+          "label": "D",
+          "text": "Inevitable abortion",
+          "is_correct": false,
+          "explanation": "Inevitable: os OPEN (dilated), uterine contractions, pregnancy จะแท้งอย่างแน่นอน"
+        },
+        {
+          "label": "E",
+          "text": "Missed abortion",
+          "is_correct": false,
+          "explanation": "Missed abortion: fetus ตายแต่ไม่มี expulsion, อาจไม่มี bleeding หรือ brownish discharge เล็กน้อย, uterus ไม่โตตาม GA"
+        }
+      ],
+      "key_takeaway": "Os CLOSED + uterus = GA size + bleeding = Threatened abortion | Os OPEN = Inevitable/Incomplete | No CMT + no adnexal mass = ไม่ใช่ ectopic"
+    }
+  },
+  {
+    "id": "14f791f8-b354-4940-8b58-c3d0fe2d4d7e",
+    "correct_answer": "B",
+    "explanation": "แม่ได้รับ erythromycin สำหรับ syphilis แต่ erythromycin ไม่ผ่านรก ทารกยังอาจติดเชื้อ → ต้องให้ aqueous penicillin G IV แก่ทารกทันที",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ B. Aqueous penicillin G 50,000 unit/kg IV q12h นาน 10 วัน เพราะแม่ได้รับ erythromycin ซึ่งไม่ผ่านรกได้ดีพอ",
+      "reason": "Penicillin G เป็น drug of choice สำหรับ congenital syphilis แน่นอน Erythromycin รักษา syphilis ในแม่ได้ แต่ไม่ผ่านรกได้เพียงพอเพื่อรักษาทารกในครรภ์ → ทารกที่เกิดจากแม่ที่รักษาด้วย erythromycin ต้องถือว่ามี congenital syphilis และต้องรักษาด้วย penicillin G ทุกราย Aqueous penicillin G (ไม่ใช่ benzathine) ใช้ใน congenital syphilis เพราะผ่าน CSF ได้ดีกว่า",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Benzathine penicillin G 50,000 unit/kg IM ครั้งเดียว",
+          "is_correct": false,
+          "explanation": "Benzathine penicillin ใช้สำหรับ early syphilis ในผู้ใหญ่ แต่ใน congenital syphilis ต้องใช้ aqueous penicillin G ที่ผ่าน CSF ได้ดีกว่า นาน 10 วัน"
+        },
+        {
+          "label": "B",
+          "text": "Aqueous penicillin G 50,000 unit/kg IV q12h นาน 10 วัน",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Congenital syphilis (แม่รักษาด้วย erythromycin = inadequate treatment) → Aqueous penicillin G IV นาน 10-14 วัน เป็น standard of care"
+        },
+        {
+          "label": "C",
+          "text": "Erythromycin 12.5 mg/kg PO q6h นาน 2 สัปดาห์",
+          "is_correct": false,
+          "explanation": "Erythromycin ไม่เหมาะสำหรับ congenital syphilis ใน newborn และแม่รักษาด้วย erythromycin แล้วก็ยังต้องรักษาทารกด้วย penicillin"
+        },
+        {
+          "label": "D",
+          "text": "ไม่ต้องรักษาเพราะแม่ได้รับการรักษาแล้ว",
+          "is_correct": false,
+          "explanation": "ผิด: Erythromycin ไม่ผ่านรกอย่างเพียงพอ ทารกต้องถือว่า exposed และต้องรักษาด้วย penicillin"
+        },
+        {
+          "label": "E",
+          "text": "Observe + serology ทุก 3 เดือน",
+          "is_correct": false,
+          "explanation": "ผิด: ถ้า maternal treatment ไม่เพียงพอ (erythromycin) ต้องรักษาทารกทันที ไม่ใช่ observe"
+        }
+      ],
+      "key_takeaway": "Syphilis ในครรภ์: Drug of choice = Penicillin G เท่านั้น | Erythromycin ไม่ผ่านรกพอ → ทารกต้องได้ Aqueous penicillin G IV 10 วัน | Benzathine เฉพาะ adults early syphilis"
+    }
+  },
+  {
+    "id": "15a0208a-226b-461e-90ea-54afa39be486",
+    "correct_answer": "A",
+    "explanation": "Vasa previa rupture: หลอดเลือดทารก (fetal vessels) วิ่งข้ามปาก cervix ไม่มีป้องกัน แตกเมื่อ membranes rupture ทำให้ fetal hemorrhage รุนแรง",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. หลอดเลือดที่ไม่มีป้องกันผ่านเยื่อวิสเซอรัลของสายสะดือ ขาดออกจากการแตกของเยื่ออ่อน (vasa previa)",
+      "reason": "Vasa previa คือภาวะที่ fetal blood vessels วิ่งผ่าน fetal membranes โดยไม่มี Wharton's jelly หรือ placental tissue ปกป้อง เมื่อ membranes rupture (ทั้ง spontaneous และ artificial) หลอดเลือดเหล่านี้อาจฉีกขาดทำให้เกิด fetal hemorrhage รุนแรงและรวดเร็ว (fetal exsanguination) อาการ: painless vaginal bleeding ทันทีเมื่อ membranes rupture + fetal distress (FHR abnormal) + fetal anemia/shock ใน newborn",
+      "choices": [
+        {
+          "label": "A",
+          "text": "หลอดเลือดที่ไม่มีป้องกันผ่านเยื่อ ขาดออกจากการแตกของเยื่ออ่อน",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Vasa previa = fetal vessels อยู่ใน fetal membranes ไม่มี Wharton's jelly ป้องกัน เมื่อ membranes rupture → vessels ฉีกขาด → fetal hemorrhage"
+        },
+        {
+          "label": "B",
+          "text": "การแตกของ umbilical vein ที่ส่งเลือดกลับตับทารก",
+          "is_correct": false,
+          "explanation": "Umbilical vein rupture ใน cord นั้นหายากมาก ไม่ใช่กลไกของ vasa previa"
+        },
+        {
+          "label": "C",
+          "text": "การแตกของ Wharton's jelly ทำให้กดทับหลอดเลือด",
+          "is_correct": false,
+          "explanation": "Wharton's jelly ปกป้องหลอดเลือด ไม่ใช่สาเหตุที่ทำให้เลือดออก"
+        },
+        {
+          "label": "D",
+          "text": "การแตกของ umbilical artery จากการขาดอากาศ",
+          "is_correct": false,
+          "explanation": "ไม่ถูกกลไก umbilical artery rupture จาก asphyxia ไม่ใช่กลไกของ vasa previa"
+        },
+        {
+          "label": "E",
+          "text": "การแตกของหลอดเลือด chorionic ใน umbilical cord",
+          "is_correct": false,
+          "explanation": "ไม่ถูกกลไก vasa previa คือ vessels ใน fetal membranes ไม่ใช่ใน cord"
+        }
+      ],
+      "key_takeaway": "Vasa previa = Fetal vessels ใน fetal membranes ไม่มีป้องกัน | Bleeding เมื่อ membranes rupture → Fetal blood ออก (ไม่ใช่เลือดแม่) → Fetal exsanguination รวดเร็ว | Emergency C/S!"
+    }
+  },
+  {
+    "id": "15b411e0-c1dc-43f7-8b63-8709b3f93776",
+    "correct_answer": "A",
+    "explanation": "Asymptomatic uterine fibroids ขนาดเล็ก (<3 cm, ไม่มีอาการ) ในหญิงอายุน้อยยังไม่ต้องการบุตร → สังเกตอาการและ F/U 3 เดือน",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. สังเกตอาการและ F/U 3 เดือน เพราะ fibroid ขนาดเล็ก ไม่มีอาการ ไม่มีเลือดออกผิดปกติ",
+      "reason": "Indication สำหรับ intervention ใน uterine fibroids: (1) Symptoms: menorrhagia, pelvic pressure/pain, urinary symptoms (2) Infertility ที่สัมพันธ์กับ fibroid (3) Rapid growth (4) Uterus > 12-14 wk size with symptoms ในเคสนี้: ไม่มีอาการ, ก้อนเล็กที่สุด 2.2 cm, uterus 11 cm, ไม่มีเลือดออกผิดปกติ → Conservative management (watchful waiting + F/U 3 เดือน) เหมาะสมที่สุด",
+      "choices": [
+        {
+          "label": "A",
+          "text": "สังเกตอาการและ F/U 3 เดือน",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Asymptomatic fibroids ขนาดเล็ก = watchful waiting เป็น gold standard ไม่ต้องการ intervention ทุกราย"
+        },
+        {
+          "label": "B",
+          "text": "GnRH releasing hormone",
+          "is_correct": false,
+          "explanation": "GnRH agonist ใช้ preoperatively เพื่อ shrink fibroid ก่อนผ่าตัด หรือ temporizing ใน perimenopause ไม่ใช่ first-line สำหรับ asymptomatic"
+        },
+        {
+          "label": "C",
+          "text": "Uterine artery embolization",
+          "is_correct": false,
+          "explanation": "UAE ใช้สำหรับ symptomatic fibroid ในหญิงที่ไม่ต้องการผ่าตัดหรือมี surgical risk สูง"
+        },
+        {
+          "label": "D",
+          "text": "Myomectomy",
+          "is_correct": false,
+          "explanation": "Myomectomy ใช้ในหญิงที่ต้องการ preserve uterus และมีอาการ หรือ fibroid ที่น่าจะเป็นสาเหตุ infertility"
+        },
+        {
+          "label": "E",
+          "text": "Hysterectomy",
+          "is_correct": false,
+          "explanation": "Hysterectomy เป็น last resort สำหรับ symptomatic fibroids ไม่เหมาะกับ asymptomatic ขนาดเล็ก และไม่เหมาะกับหญิงที่ยังอยากมีบุตร"
+        }
+      ],
+      "key_takeaway": "Asymptomatic fibroids ขนาดเล็ก = Watchful waiting + F/U | มีอาการ → GnRH agonist (preop) หรือ UAE หรือ Myomectomy | ไม่แนะนำ hysterectomy ถ้ายังต้องการ fertility"
+    }
+  },
+  {
+    "id": "18decaa4-9163-490f-9c49-5c8ffac093e4",
+    "correct_answer": "C",
+    "explanation": "Primary amenorrhea + normal secondary sex characteristics + tense cystic pelvic mass + purplish bulging mass at introitus = Imperforate hymen with hematocolpos",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ C. Imperforate hymen เพราะมีลักษณะ classic: ไม่มีประจำเดือน + secondary sex char ปกติ + cystic pelvic mass + purplish/bluish bulging mass ที่ introitus (hematocolpos)",
+      "reason": "Imperforate hymen ทำให้เลือดประจำเดือนสะสมใน vagina (hematocolpos) และ uterus (hematometra) เนื่องจาก outflow obstruction อาการ: (1) Primary amenorrhea (2) Cyclic pelvic pain ทุกเดือน (3) Tense cystic pelvic mass (4) Bluish/purplish bulging mass ที่ introitus จาก old blood สะสม (5) Normal secondary sex characteristics (hormones ปกติ) การรักษา: hymenectomy แยกจาก Transverse vaginal septum (D) ซึ่งอยู่สูงกว่า introitus",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Bartholin cyst",
+          "is_correct": false,
+          "explanation": "Bartholin cyst อยู่ที่ labia majora/minora junction (5 หรือ 7 นาฬิกา) ไม่ได้ทำให้ primary amenorrhea หรือ pelvic mass"
+        },
+        {
+          "label": "B",
+          "text": "Endometriotic cyst",
+          "is_correct": false,
+          "explanation": "Endometrioma อยู่ที่ ovary ทำให้ adnexal mass + dysmenorrhea แต่ไม่ทำให้ primary amenorrhea และไม่มี bulging mass ที่ introitus"
+        },
+        {
+          "label": "C",
+          "text": "Imperforate hymen",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Primary amenorrhea + normal secondary sex char + cyclic pain + purplish bulging mass at introitus = Hematocolpos จาก imperforate hymen"
+        },
+        {
+          "label": "D",
+          "text": "Transverse vaginal septum",
+          "is_correct": false,
+          "explanation": "คล้ายกันมากแต่ septum อยู่สูงกว่า ไม่เห็น bulging mass ที่ introitus โดยตรง ต้องใช้ MRI แยก"
+        },
+        {
+          "label": "E",
+          "text": "Müllerian agenesis",
+          "is_correct": false,
+          "explanation": "Müllerian agenesis (MRKH): absent uterus + absent upper vagina, ไม่มี cyclic pain เพราะไม่มี endometrium และไม่มี pelvic mass จาก blood"
+        }
+      ],
+      "key_takeaway": "Primary amenorrhea + cyclic pain + purplish bulging at introitus = Imperforate hymen (hematocolpos) → Hymenectomy | ถ้า septum สูงกว่า = Transverse vaginal septum → MRI แยก"
+    }
+  },
+  {
+    "id": "1a396da4-d4a0-448f-bb5a-87271d950123",
+    "correct_answer": "A",
+    "explanation": "เจ็บท้องมาก + hypotension + tachycardia + FHR 180 + uterus soft = Uterine rupture ต้องผ่าตัดด่วน",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. Uterine rupture เพราะมี sudden severe pain + hemodynamic instability + fetal distress (FHR 180) + soft/non-tense uterus ซึ่งบ่งชี้ว่า uterine contents ไหลออกไปในช่องท้อง",
+      "reason": "Uterine rupture มีอาการ: (1) Sudden severe abdominal pain (contraction pain หายไปแล้วปวดตลอด) (2) Hemodynamic instability: BP ต่ำ, HR สูง (3) Fetal distress: FHR abnormal (bradycardia หรือ tachycardia) (4) Uterus soft/relaxed ผิดปกติ เพราะ contents ออกไปใน abdomen (5) Cessation of uterine contractions ในเคสนี้: ท้องแรก เจ็บท้อง 10 ชม. + BP 70/40 + PR 110 + FHR 180 + uterus soft → uterine rupture → emergency laparotomy",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Uterine rupture",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Classic signs: sudden severe pain + hypotension + tachycardia + FHR 180 + uterus soft (contents outside) = Uterine rupture → Emergency laparotomy"
+        },
+        {
+          "label": "B",
+          "text": "Placenta previa",
+          "is_correct": false,
+          "explanation": "Placenta previa: painless bright red bleeding ไม่มี hypotension รุนแรงในระยะแรก ไม่มี uterus soft sign แบบนี้"
+        },
+        {
+          "label": "C",
+          "text": "Ruptured vasa previa",
+          "is_correct": false,
+          "explanation": "Vasa previa rupture: fetal blood ออก ทำให้ fetal distress รุนแรงมากแต่แม่ไม่ shock ไม่มี uterine soft sign"
+        },
+        {
+          "label": "D",
+          "text": "Abruptio placenta",
+          "is_correct": false,
+          "explanation": "Abruptio: painful bleeding + uterine hypertonicity (board-like uterus ไม่ใช่ soft) มักไม่มี abdominal contents ไหลออก"
+        }
+      ],
+      "key_takeaway": "Uterine rupture: Sudden pain → hypotension + tachycardia + FHR abnormal + SOFT uterus = Emergency laparotomy ทันที | Risk factors: previous C/S scar, grande multipara, oxytocin overuse"
+    }
+  },
+  {
+    "id": "1a74ca84-c30a-49b1-a7d6-8e7b86ad837d",
+    "correct_answer": "A",
+    "explanation": "FHR deceleration จาก 140 เหลือ 100 นาน 20 วิ หลัง uterine contraction เป็น late deceleration บ่งชี้ fetal hypoxia → C/S ทันที",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. Cesarean section เพราะ FHR ที่เห็นเป็น late deceleration (ลดหลัง contraction) บ่งชี้ uteroplacental insufficiency และ fetal acidosis",
+      "reason": "FHR pattern ที่เห็น: FHR 140 bpm (normal) → หลัง uterine relaxation 20 วิ → FHR ลงเหลือ 100 นาน 20 วิ = Late deceleration (เริ่มและจบช้ากว่า contraction) Late deceleration บ่งชี้ uteroplacental insufficiency → fetal hypoxia → metabolic acidosis เป็น non-reassuring FHR pattern ที่ต้องการ immediate delivery ในเคสนี้: fully dilated, station 0 → ยังไม่พร้อม operative vaginal delivery → C/S เป็น definitive treatment",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Cesarean section",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: Late deceleration = non-reassuring FHR = fetal distress → Immediate delivery ด้วย C/S เพราะ station 0 ยังทำ vacuum/forceps ไม่ได้"
+        },
+        {
+          "label": "B",
+          "text": "นอนตะแคงและสังเกตอาการ",
+          "is_correct": false,
+          "explanation": "การ reposition อาจช่วย variable deceleration (cord compression) แต่ late deceleration ต้องการ immediate delivery ไม่ใช่แค่ reposition"
+        },
+        {
+          "label": "C",
+          "text": "Vacuum Extraction",
+          "is_correct": false,
+          "explanation": "Vacuum delivery ต้องการ station +2 ถึง +3 อย่างน้อย station 0 ยังไม่พร้อม"
+        },
+        {
+          "label": "D",
+          "text": "PV ดันกลับเข้าไป",
+          "is_correct": false,
+          "explanation": "การดัน presenting part กลับใช้สำหรับ cord prolapse ไม่ใช่ late deceleration"
+        }
+      ],
+      "key_takeaway": "Late deceleration = Uteroplacental insufficiency = Fetal hypoxia → Non-reassuring FHR → Immediate delivery | Station 0 → C/S | Station +3 fully dilated → Vacuum/Forceps"
+    }
+  },
+  {
+    "id": "1bec2f1e-b1fd-403f-b95f-fb9c0d628bfc",
+    "correct_answer": "A",
+    "explanation": "Migraine ในหญิงตั้งครรภ์: NSAID/Ibuprofen ปลอดภัยใน T1-T2 (หลีกเลี่ยง T3) เป็น first-line สำหรับ acute attack ที่ไม่รุนแรง",
+    "detailed_explanation": {
+      "summary": "คำตอบที่ถูกต้องคือ A. Ibuprofen สำหรับ migraine ในหญิงตั้งครรภ์ (ระยะ T1-T2) เพราะปลอดภัยและมีประสิทธิภาพ",
+      "reason": "Migraine treatment ในตั้งครรภ์: (1) Paracetamol (acetaminophen) = safest first-line ทุก trimester (2) NSAID (ibuprofen) = ปลอดภัย T1-T2 แต่หลีกเลี่ยง T3 (ทำให้ premature closure of ductus arteriosus) (3) Propranolol (B) = beta-blocker ใช้ prophylaxis แต่ risk: fetal bradycardia, IUGR (4) Aspirin (C) = ปริมาณต่ำปลอดภัย แต่ high-dose หลีกเลี่ยง (5) Ergotamine (D) = CONTRAINDICATED ในตั้งครรภ์ → uterine contraction (6) Sumatriptan (E) = ข้อมูลจำกัด ไม่ใช่ first-choice",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ibuprofen",
+          "is_correct": true,
+          "explanation": "ถูกต้อง: NSAID ปลอดภัยใน T1-T2 สำหรับ acute migraine ที่ไม่รุนแรง หลีกเลี่ยง T3 (อาจทำให้ premature ductus arteriosus closure)"
+        },
+        {
+          "label": "B",
+          "text": "Propranolol",
+          "is_correct": false,
+          "explanation": "Propranolol ใช้ migraine prophylaxis แต่ acute treatment ไม่ใช่ first-choice และมี fetal risk (IUGR, bradycardia, hypoglycemia)"
+        },
+        {
+          "label": "C",
+          "text": "Aspirin",
+          "is_correct": false,
+          "explanation": "Low-dose aspirin ปลอดภัยแต่ high-dose หลีกเลี่ยง T3; ไม่ใช่ first-choice สำหรับ acute migraine เมื่อเทียบกับ ibuprofen"
+        },
+        {
+          "label": "D",
+          "text": "Ergotamine",
+          "is_correct": false,
+          "explanation": "CONTRAINDICATED ในตั้งครรภ์เด็ดขาด! ทำให้ uterine contraction และ vasoconstriction → fetal hypoxia"
+        },
+        {
+          "label": "E",
+          "text": "Sumatriptan",
+          "is_correct": false,
+          "explanation": "Triptans: ข้อมูลความปลอดภัยจำกัดในตั้งครรภ์ ใช้เมื่อประโยชน์มากกว่าความเสี่ยง ไม่ใช่ first-line"
+        }
+      ],
+      "key_takeaway": "Migraine ในตั้งครรภ์: Paracetamol = safest | NSAID (ibuprofen) = ปลอดภัย T1-T2 | CONTRAINDICATED: Ergotamine (uterine contraction), Sumatriptan (จำกัด) | Propranolol = prophylaxis"
+    }
+  }
+]

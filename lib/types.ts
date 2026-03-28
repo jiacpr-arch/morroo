@@ -8,6 +8,62 @@ export interface Profile {
   created_at: string;
 }
 
+// ============================================================
+// Long Case Types
+// ============================================================
+export interface LongCase {
+  id: string;
+  title: string;
+  specialty: string;
+  difficulty: "easy" | "medium" | "hard";
+  week_number: number | null;
+  is_weekly: boolean;
+  is_published: boolean;
+  published_at: string;
+  patient_info: Record<string, unknown>;
+  correct_diagnosis: string;
+  created_at: string;
+}
+
+export interface LongCaseSession {
+  id: string;
+  case_id: string;
+  user_id: string;
+  phase: "history" | "pe" | "lab" | "ddx" | "management" | "examiner" | "done";
+  history_chat: { role: "user" | "assistant"; content: string }[];
+  pe_selected: string[];
+  lab_ordered: string[];
+  student_ddx: string | null;
+  student_mgmt: string | null;
+  examiner_chat: { role: "user" | "assistant"; content: string }[];
+  score_history: number | null;
+  score_pe: number | null;
+  score_lab: number | null;
+  score_ddx: number | null;
+  score_management: number | null;
+  score_examiner: number | null;
+  score_total_pct: number | null;
+  feedback: string | null;
+  started_at: string;
+  completed_at: string | null;
+  long_case?: LongCase;
+}
+
+export interface LongCaseFull extends LongCase {
+  history_script: Record<string, unknown>;
+  pe_findings: Record<string, string>;
+  lab_results: Record<string, { value: string; isAbnormal: boolean }>;
+  imaging_results: Record<string, { value: string; isAbnormal: boolean }> | null;
+  accepted_ddx: string[];
+  management_plan: string;
+  teaching_points: string[];
+  examiner_questions: { question: string; modelAnswer: string; points: number }[];
+  scoring_rubric: Record<string, number>;
+}
+
+// ============================================================
+// Exam Types
+// ============================================================
 export interface Exam {
   id: string;
   title: string;
@@ -49,9 +105,9 @@ export const PRICING_PLANS = [
     period: "",
     description: "เริ่มต้นทดลองใช้งาน",
     features: [
-      "ทำข้อสอบฟรี 2 ข้อ/เดือน",
-      "ดูโจทย์ได้ทุกข้อ",
-      "ไม่เห็นเฉลย",
+      "ทำข้อสอบฟรี 5 ข้อ/สาขา",
+      "เห็นเฉลยสั้น",
+      "ไม่มีเฉลยละเอียด",
     ],
     cta: "เริ่มต้นฟรี",
     popular: false,
@@ -83,6 +139,7 @@ export const PRICING_PLANS = [
       "เฉลยละเอียดทุกข้อ",
       "Key Points",
       "🤖 AI ตรวจคำตอบไม่จำกัด",
+      "🩺 Long Case Exam ไม่จำกัด",
       "ข้อสอบใหม่ทุกสัปดาห์",
     ],
     cta: "สมัครรายเดือน",
@@ -97,6 +154,7 @@ export const PRICING_PLANS = [
     features: [
       "ทุกอย่างในแพ็กรายเดือน",
       "🤖 AI ตรวจคำตอบไม่จำกัด",
+      "🩺 Long Case Exam ไม่จำกัด",
       "ประหยัด ฿898/ปี",
       "สิทธิ์ก่อนใคร",
     ],

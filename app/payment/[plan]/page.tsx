@@ -20,6 +20,7 @@ import {
   Loader2,
   CheckCircle,
   AlertCircle,
+  CreditCard,
 } from "lucide-react";
 import type { User } from "@supabase/supabase-js";
 
@@ -50,6 +51,18 @@ export default function PaymentPage({
   const [copied, setCopied] = useState(false);
   const [slipFile, setSlipFile] = useState<File | null>(null);
   const [slipPreview, setSlipPreview] = useState<string | null>(null);
+
+  // Payment method selection
+  const [paymentMethod, setPaymentMethod] = useState<"stripe" | "bank">("stripe");
+
+  // Invoice / tax form
+  const [wantInvoice, setWantInvoice] = useState(false);
+  const [invoiceName, setInvoiceName] = useState("");
+  const [invoiceTaxId, setInvoiceTaxId] = useState("");
+  const [invoiceAddress, setInvoiceAddress] = useState("");
+
+  // Stripe loading
+  const [stripeLoading, setStripeLoading] = useState(false);
 
   const planInfo = PLANS[plan];
 
@@ -143,6 +156,33 @@ export default function PaymentPage({
     setSubmitting(false);
   };
 
+  const handleStripeCheckout = async () => {
+    if (!user) return;
+    setStripeLoading(true);
+    setError("");
+    try {
+      const res = await fetch("/api/billing/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          planType: plan,
+          invoiceData: wantInvoice
+            ? { name: invoiceName, taxId: invoiceTaxId, address: invoiceAddress }
+            : null,
+        }),
+      });
+      const data = await res.json();
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        setError(data.error || "เกิดข้อผิดพลาด");
+      }
+    } catch {
+      setError("เกิดข้อผิดพลาด กรุณาลองใหม่");
+    }
+    setStripeLoading(false);
+  };
+
   if (!planInfo) {
     return (
       <div className="mx-auto max-w-lg px-4 py-16 text-center">
@@ -162,7 +202,7 @@ export default function PaymentPage({
     );
   }
 
-  // Success state
+  // Success state (bank transfer)
   if (submitted) {
     return (
       <div className="mx-auto max-w-lg px-4 py-16">
@@ -234,140 +274,282 @@ export default function PaymentPage({
           </CardContent>
         </Card>
 
-        {/* Bank transfer info */}
-        <Card className="border-brand/20">
-          <CardHeader>
-            <h2 className="font-semibold flex items-center gap-2">
-              <Building2 className="h-5 w-5 text-brand" />
-              ข้อมูลการโอนเงิน
-            </h2>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="rounded-lg bg-green-50 border border-green-200 p-4 space-y-3">
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-muted-foreground">ธนาคาร</span>
-                <span className="font-medium text-green-800">
-                  {BANK_INFO.bank}
-                </span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-muted-foreground">
-                  เลขที่บัญชี
-                </span>
-                <div className="flex items-center gap-2">
-                  <span className="font-mono font-bold text-lg text-green-800">
-                    {BANK_INFO.accountNumber}
-                  </span>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="h-8 w-8"
-                    onClick={copyAccountNumber}
-                  >
-                    {copied ? (
-                      <Check className="h-4 w-4 text-green-600" />
-                    ) : (
-                      <Copy className="h-4 w-4" />
-                    )}
-                  </Button>
-                </div>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-muted-foreground">ชื่อบัญชี</span>
-                <span className="font-medium text-green-800">
-                  {BANK_INFO.accountName}
-                </span>
-              </div>
-              <div className="flex items-center justify-between pt-2 border-t border-green-200">
-                <span className="text-sm font-medium text-green-700">
-                  ยอดที่ต้องโอน
-                </span>
-                <span className="text-xl font-bold text-green-800">
-                  ฿{planInfo.price.toLocaleString()}.00
-                </span>
-              </div>
-            </div>
-
-            <div className="rounded-lg bg-amber-50 border border-amber-200 p-3">
-              <p className="text-sm text-amber-800">
-                <strong>สำคัญ:</strong> กรุณาโอนเงินตามยอดที่ระบุ
-                แล้วแนบสลิปการโอนด้านล่าง
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Upload slip */}
-        <Card>
-          <CardHeader>
-            <h2 className="font-semibold flex items-center gap-2">
-              <Upload className="h-5 w-5 text-brand" />
-              แนบสลิปการโอนเงิน
-            </h2>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            {slipPreview ? (
-              <div className="space-y-3">
-                <div className="relative rounded-lg overflow-hidden border bg-muted">
-                  <img
-                    src={slipPreview}
-                    alt="สลิปการโอนเงิน"
-                    className="w-full max-h-80 object-contain"
-                  />
-                </div>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => {
-                    setSlipFile(null);
-                    setSlipPreview(null);
-                  }}
-                >
-                  เปลี่ยนรูป
-                </Button>
-              </div>
-            ) : (
-              <label className="flex flex-col items-center justify-center h-48 rounded-lg border-2 border-dashed border-muted-foreground/30 bg-muted/30 cursor-pointer hover:bg-muted/50 transition-colors">
-                <ImageIcon className="h-10 w-10 text-muted-foreground/50 mb-2" />
-                <span className="text-sm font-medium text-muted-foreground">
-                  คลิกเพื่อเลือกรูปสลิป
-                </span>
-                <span className="text-xs text-muted-foreground/60 mt-1">
-                  PNG, JPG ขนาดไม่เกิน 5MB
-                </span>
-                <input
-                  type="file"
-                  accept="image/*"
-                  className="hidden"
-                  onChange={handleFileChange}
-                />
-              </label>
-            )}
-
-            {error && (
-              <div className="flex items-center gap-2 text-sm text-destructive">
-                <AlertCircle className="h-4 w-4" />
-                {error}
-              </div>
-            )}
-
-            <Button
-              className="w-full bg-brand hover:bg-brand-light text-white"
-              size="lg"
-              disabled={!slipFile || submitting}
-              onClick={handleSubmit}
+        {/* Payment method selector */}
+        <div>
+          <h2 className="font-semibold mb-3">เลือกวิธีชำระเงิน</h2>
+          <div className="grid grid-cols-2 gap-3">
+            <button
+              type="button"
+              onClick={() => setPaymentMethod("stripe")}
+              className={`rounded-lg border-2 p-4 text-left transition-colors ${
+                paymentMethod === "stripe"
+                  ? "border-brand bg-brand/5"
+                  : "border-muted hover:border-muted-foreground/40"
+              }`}
             >
-              {submitting ? (
-                <>
-                  <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                  กำลังส่ง...
-                </>
-              ) : (
-                "ยืนยันการชำระเงิน"
+              <div className="flex items-center gap-2 mb-1">
+                <CreditCard className="h-5 w-5 text-brand" />
+                <span className="font-medium text-sm">บัตรเครดิต/เดบิต</span>
+              </div>
+              <p className="text-xs text-muted-foreground">ชำระทันที ผ่าน Stripe</p>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setPaymentMethod("bank")}
+              className={`rounded-lg border-2 p-4 text-left transition-colors ${
+                paymentMethod === "bank"
+                  ? "border-brand bg-brand/5"
+                  : "border-muted hover:border-muted-foreground/40"
+              }`}
+            >
+              <div className="flex items-center gap-2 mb-1">
+                <Building2 className="h-5 w-5 text-brand" />
+                <span className="font-medium text-sm">โอนเงิน</span>
+              </div>
+              <p className="text-xs text-muted-foreground">รออนุมัติ 1-2 ชั่วโมง</p>
+            </button>
+          </div>
+        </div>
+
+        {/* Stripe payment section */}
+        {paymentMethod === "stripe" && (
+          <Card className="border-brand/20">
+            <CardHeader>
+              <h2 className="font-semibold flex items-center gap-2">
+                <CreditCard className="h-5 w-5 text-brand" />
+                ชำระผ่านบัตรเครดิต/เดบิต
+              </h2>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {/* Optional tax invoice toggle */}
+              <div className="flex items-center gap-3">
+                <input
+                  type="checkbox"
+                  id="wantInvoice"
+                  checked={wantInvoice}
+                  onChange={(e) => setWantInvoice(e.target.checked)}
+                  className="h-4 w-4 rounded border-gray-300 text-brand"
+                />
+                <Label htmlFor="wantInvoice" className="cursor-pointer font-medium">
+                  ต้องการใบกำกับภาษี
+                </Label>
+              </div>
+
+              {wantInvoice && (
+                <div className="rounded-lg border bg-muted/30 p-4 space-y-3">
+                  <div>
+                    <Label htmlFor="invoiceName" className="text-sm">
+                      ชื่อ / บริษัท <span className="text-destructive">*</span>
+                    </Label>
+                    <Input
+                      id="invoiceName"
+                      value={invoiceName}
+                      onChange={(e) => setInvoiceName(e.target.value)}
+                      placeholder="ชื่อบุคคลหรือบริษัท"
+                      className="mt-1"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="invoiceTaxId" className="text-sm">
+                      เลขประจำตัวผู้เสียภาษี (13 หลัก) <span className="text-destructive">*</span>
+                    </Label>
+                    <Input
+                      id="invoiceTaxId"
+                      value={invoiceTaxId}
+                      onChange={(e) => setInvoiceTaxId(e.target.value)}
+                      placeholder="0-0000-00000-00-0"
+                      maxLength={13}
+                      className="mt-1"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="invoiceAddress" className="text-sm">
+                      ที่อยู่ <span className="text-destructive">*</span>
+                    </Label>
+                    <Input
+                      id="invoiceAddress"
+                      value={invoiceAddress}
+                      onChange={(e) => setInvoiceAddress(e.target.value)}
+                      placeholder="ที่อยู่สำหรับออกใบกำกับภาษี"
+                      className="mt-1"
+                    />
+                  </div>
+                </div>
               )}
-            </Button>
-          </CardContent>
-        </Card>
+
+              {error && (
+                <div className="flex items-center gap-2 text-sm text-destructive">
+                  <AlertCircle className="h-4 w-4" />
+                  {error}
+                </div>
+              )}
+
+              <Button
+                className="w-full bg-brand hover:bg-brand-light text-white"
+                size="lg"
+                disabled={stripeLoading}
+                onClick={handleStripeCheckout}
+              >
+                {stripeLoading ? (
+                  <>
+                    <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                    กำลังเชื่อมต่อ...
+                  </>
+                ) : (
+                  <>
+                    <CreditCard className="h-4 w-4 mr-2" />
+                    ชำระผ่าน Stripe ฿{planInfo.price.toLocaleString()}
+                  </>
+                )}
+              </Button>
+
+              <p className="text-xs text-center text-muted-foreground">
+                ระบบจะอัปเกรดอัตโนมัติหลังชำระเงิน • ปลอดภัยด้วย Stripe
+              </p>
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Bank transfer section */}
+        {paymentMethod === "bank" && (
+          <>
+            {/* Bank transfer info */}
+            <Card className="border-brand/20">
+              <CardHeader>
+                <h2 className="font-semibold flex items-center gap-2">
+                  <Building2 className="h-5 w-5 text-brand" />
+                  ข้อมูลการโอนเงิน
+                </h2>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="rounded-lg bg-green-50 border border-green-200 p-4 space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">ธนาคาร</span>
+                    <span className="font-medium text-green-800">
+                      {BANK_INFO.bank}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">
+                      เลขที่บัญชี
+                    </span>
+                    <div className="flex items-center gap-2">
+                      <span className="font-mono font-bold text-lg text-green-800">
+                        {BANK_INFO.accountNumber}
+                      </span>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="h-8 w-8"
+                        onClick={copyAccountNumber}
+                      >
+                        {copied ? (
+                          <Check className="h-4 w-4 text-green-600" />
+                        ) : (
+                          <Copy className="h-4 w-4" />
+                        )}
+                      </Button>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">ชื่อบัญชี</span>
+                    <span className="font-medium text-green-800">
+                      {BANK_INFO.accountName}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between pt-2 border-t border-green-200">
+                    <span className="text-sm font-medium text-green-700">
+                      ยอดที่ต้องโอน
+                    </span>
+                    <span className="text-xl font-bold text-green-800">
+                      ฿{planInfo.price.toLocaleString()}.00
+                    </span>
+                  </div>
+                </div>
+
+                <div className="rounded-lg bg-amber-50 border border-amber-200 p-3">
+                  <p className="text-sm text-amber-800">
+                    <strong>สำคัญ:</strong> กรุณาโอนเงินตามยอดที่ระบุ
+                    แล้วแนบสลิปการโอนด้านล่าง
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Upload slip */}
+            <Card>
+              <CardHeader>
+                <h2 className="font-semibold flex items-center gap-2">
+                  <Upload className="h-5 w-5 text-brand" />
+                  แนบสลิปการโอนเงิน
+                </h2>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {slipPreview ? (
+                  <div className="space-y-3">
+                    <div className="relative rounded-lg overflow-hidden border bg-muted">
+                      <img
+                        src={slipPreview}
+                        alt="สลิปการโอนเงิน"
+                        className="w-full max-h-80 object-contain"
+                      />
+                    </div>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => {
+                        setSlipFile(null);
+                        setSlipPreview(null);
+                      }}
+                    >
+                      เปลี่ยนรูป
+                    </Button>
+                  </div>
+                ) : (
+                  <label className="flex flex-col items-center justify-center h-48 rounded-lg border-2 border-dashed border-muted-foreground/30 bg-muted/30 cursor-pointer hover:bg-muted/50 transition-colors">
+                    <ImageIcon className="h-10 w-10 text-muted-foreground/50 mb-2" />
+                    <span className="text-sm font-medium text-muted-foreground">
+                      คลิกเพื่อเลือกรูปสลิป
+                    </span>
+                    <span className="text-xs text-muted-foreground/60 mt-1">
+                      PNG, JPG ขนาดไม่เกิน 5MB
+                    </span>
+                    <input
+                      type="file"
+                      accept="image/*"
+                      className="hidden"
+                      onChange={handleFileChange}
+                    />
+                  </label>
+                )}
+
+                {error && (
+                  <div className="flex items-center gap-2 text-sm text-destructive">
+                    <AlertCircle className="h-4 w-4" />
+                    {error}
+                  </div>
+                )}
+
+                <Button
+                  className="w-full bg-brand hover:bg-brand-light text-white"
+                  size="lg"
+                  disabled={!slipFile || submitting}
+                  onClick={handleSubmit}
+                >
+                  {submitting ? (
+                    <>
+                      <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                      กำลังส่ง...
+                    </>
+                  ) : (
+                    "ยืนยันการชำระเงิน"
+                  )}
+                </Button>
+              </CardContent>
+            </Card>
+          </>
+        )}
       </div>
     </div>
   );

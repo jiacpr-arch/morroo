@@ -12,6 +12,7 @@ const navLinks = [
   { href: "/", label: "หน้าแรก" },
   { href: "/exams", label: "MEQ" },
   { href: "/nl", label: "NL Exam" },
+  { href: "/longcase", label: "Long Case" },
   { href: "/pricing", label: "แพ็กเกจ" },
 ];
 

@@ -14,6 +14,7 @@ import {
   Sparkles,
   Users,
   Shield,
+  Stethoscope,
 } from "lucide-react";
 
 export const revalidate = 60; // revalidate every 60 seconds
@@ -22,7 +23,8 @@ export default async function HomePage() {
   const [allExams, partCounts] = await Promise.all([getExams(), getExamPartCounts()]);
   const exams = sortExamsAvailableFirst(allExams, partCounts);
   const latestExams = exams.slice(0, 6);
-  const dailyExam = exams[0] || null;
+  const dayIndex = Math.floor(Date.now() / (1000 * 60 * 60 * 24));
+  const dailyExam = exams.length > 0 ? exams[dayIndex % exams.length] : null;
 
   return (
     <>
@@ -32,7 +34,7 @@ export default async function HomePage() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <Badge className="mb-6 bg-white/10 text-white border-white/20 hover:bg-white/20">
-              <Sparkles className="h-3 w-3 mr-1" /> แพลตฟอร์มข้อสอบ MEQ + NL ออนไลน์
+              <Sparkles className="h-3 w-3 mr-1" /> แพลตฟอร์มข้อสอบ MEQ + NL + Long Case ออนไลน์
             </Badge>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
               เตรียมสอบแพทย์
@@ -40,8 +42,8 @@ export default async function HomePage() {
               <span className="text-brand-light">ด้วย AI ที่เข้าใจคุณ</span>
             </h1>
             <p className="mt-6 text-lg text-white/70 max-w-2xl mx-auto">
-              ข้อสอบ MEQ แบบ Progressive Case + ข้อสอบ NL ใบประกอบวิชาชีพ 1,300+ ข้อ
-              ครบทุกสาขาวิชา พร้อมเฉลยละเอียด
+              ข้อสอบ MEQ แบบ Progressive Case + ข้อสอบ NL ใบประกอบวิชาชีพ 1,300+ ข้อ +
+              ฝึกสอบ Long Case กับ AI Patient & Examiner
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/exams">
@@ -52,12 +54,20 @@ export default async function HomePage() {
                   ข้อสอบ MEQ <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
+              <Link href="/longcase">
+                <Button
+                  size="lg"
+                  className="bg-amber-500 hover:bg-amber-400 text-white px-8 text-base"
+                >
+                  Long Case Exam <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
               <Link href="/nl">
                 <Button
                   size="lg"
                   className="bg-white/10 border border-white/30 text-white hover:bg-white/20 px-8 text-base"
                 >
-                  ข้อสอบ NL Exam <ArrowRight className="ml-2 h-4 w-4" />
+                  NL Exam <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
             </div>
@@ -159,6 +169,75 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* Long Case Feature */}
+      <section className="py-16 bg-amber-50 border-y border-amber-100">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <Badge className="mb-4 bg-amber-100 text-amber-800 border-amber-300">
+                <Stethoscope className="h-3 w-3 mr-1" /> ใหม่ — Long Case Exam
+              </Badge>
+              <h2 className="text-3xl font-bold text-gray-900">
+                ฝึกสอบ Long Case
+                <br />
+                <span className="text-amber-600">กับ AI Patient & Examiner</span>
+              </h2>
+              <p className="mt-4 text-muted-foreground text-lg">
+                AI รับบทเป็นผู้ป่วย คุณซักประวัติ ตรวจร่างกาย สั่ง Lab แล้วนำเสนอต่อ AI Examiner
+                ที่ให้ feedback และคะแนนแบบสอบจริง
+              </p>
+              <div className="mt-6 grid grid-cols-2 gap-3">
+                {[
+                  { icon: "🗣️", label: "ซักประวัติ", desc: "คุยกับ AI Patient" },
+                  { icon: "🩺", label: "ตรวจร่างกาย", desc: "เลือก PE ที่จะตรวจ" },
+                  { icon: "🔬", label: "สั่ง Lab", desc: "เลือก Lab/Imaging" },
+                  { icon: "👨‍⚕️", label: "สัมภาษณ์ Examiner", desc: "รับคะแนน + Feedback" },
+                ].map((s) => (
+                  <div key={s.label} className="flex items-start gap-2 p-3 rounded-lg bg-white border border-amber-100">
+                    <span className="text-xl shrink-0">{s.icon}</span>
+                    <div>
+                      <div className="text-sm font-semibold text-gray-900">{s.label}</div>
+                      <div className="text-xs text-muted-foreground">{s.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6">
+                <Link href="/longcase">
+                  <Button className="bg-amber-500 hover:bg-amber-600 text-white gap-2">
+                    ดูเคสทั้งหมด <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            <div className="space-y-3">
+              {[
+                { specialty: "Surgery", title: "Testicular Torsion", diff: "ยาก", badge: "bg-red-100 text-red-700", weekly: true },
+                { specialty: "Cardiology", title: "Inferior STEMI", diff: "ปานกลาง", badge: "bg-rose-100 text-rose-700", weekly: false },
+                { specialty: "Obstetrics", title: "Ectopic Pregnancy", diff: "ยาก", badge: "bg-pink-100 text-pink-700", weekly: false },
+              ].map((c) => (
+                <div key={c.title} className="rounded-xl border bg-white p-4 flex items-center justify-between gap-4 shadow-sm">
+                  <div>
+                    <div className="flex gap-1.5 mb-1.5">
+                      <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${c.badge}`}>{c.specialty}</span>
+                      <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-red-100 text-red-700">{c.diff}</span>
+                      {c.weekly && <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-amber-100 text-amber-700">⭐ ประจำสัปดาห์</span>}
+                    </div>
+                    <p className="font-semibold text-sm text-gray-900">{c.title}</p>
+                    <p className="text-xs text-muted-foreground mt-0.5">ซักประวัติ + PE + Lab + Examiner · ~30 นาที</p>
+                  </div>
+                  <Link href="/longcase">
+                    <Button size="sm" variant="outline" className="shrink-0 border-amber-300 text-amber-700 hover:bg-amber-50">
+                      ลอง
+                    </Button>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* How it works */}
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -224,7 +303,7 @@ export default async function HomePage() {
             พร้อมเริ่มเตรียมสอบแล้วหรือยัง?
           </h2>
           <p className="mt-4 text-white/70 text-lg">
-            สมัครสมาชิกวันนี้ เข้าถึงข้อสอบ MEQ ครบทุกสาขา พร้อมเฉลยละเอียดจากผู้เชี่ยวชาญ
+            สมัครสมาชิกวันนี้ เข้าถึงข้อสอบ MEQ + NL + Long Case กับ AI พร้อมเฉลยละเอียดจากผู้เชี่ยวชาญ
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/register">

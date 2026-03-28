@@ -13,7 +13,7 @@ import {
   BookOpen,
   CreditCard,
   Users,
-  Plus,
+  Stethoscope,
 } from "lucide-react";
 
 export default function AdminDashboard() {
@@ -24,6 +24,7 @@ export default function AdminDashboard() {
     totalExams: 0,
     totalUsers: 0,
     pendingPayments: 0,
+    totalLongCases: 0,
   });
 
   useEffect(() => {
@@ -52,19 +53,21 @@ export default function AdminDashboard() {
       setIsAdmin(true);
 
       // Fetch stats
-      const [examsRes, usersRes, paymentsRes] = await Promise.all([
+      const [examsRes, usersRes, paymentsRes, longcasesRes] = await Promise.all([
         supabase.from("exams").select("id", { count: "exact", head: true }),
         supabase.from("profiles").select("id", { count: "exact", head: true }),
         supabase
           .from("payment_orders")
           .select("id", { count: "exact", head: true })
           .eq("status", "pending"),
+        supabase.from("long_cases").select("id", { count: "exact", head: true }),
       ]);
 
       setStats({
         totalExams: examsRes.count || 0,
         totalUsers: usersRes.count || 0,
         pendingPayments: paymentsRes.count || 0,
+        totalLongCases: longcasesRes.count || 0,
       });
 
       setLoading(false);
@@ -142,6 +145,19 @@ export default function AdminDashboard() {
             </div>
           </CardContent>
         </Card>
+        <Card>
+          <CardContent className="pt-6">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-lg bg-amber-100 flex items-center justify-center">
+                <Stethoscope className="h-6 w-6 text-amber-600" />
+              </div>
+              <div>
+                <p className="text-2xl font-bold">{stats.totalLongCases}</p>
+                <p className="text-sm text-muted-foreground">Long Cases</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
       </div>
 
       {/* Quick actions */}
@@ -195,6 +211,21 @@ export default function AdminDashboard() {
             <CardContent>
               <p className="text-sm text-muted-foreground">
                 ดูข้อมูลสมาชิก แก้ไขสมาชิกภาพ และกำหนดสิทธิ์
+              </p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/longcases">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-amber-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Stethoscope className="h-5 w-5 text-amber-600" />
+                <h3 className="font-bold">จัดการ Long Case</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                เพิ่ม แก้ไข และจัดการ Long Case Exam
               </p>
             </CardContent>
           </Card>
