@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { Suspense, useEffect, useState, useCallback } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { Loader2 } from "lucide-react";
 
-export default function InvoiceLookupPage() {
+function InvoiceLookup() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const sessionId = searchParams.get("session_id");
@@ -59,5 +59,17 @@ export default function InvoiceLookupPage() {
         </p>
       )}
     </div>
+  );
+}
+
+export default function InvoiceLookupPage() {
+  return (
+    <Suspense fallback={
+      <div className="mx-auto max-w-lg px-4 py-16 text-center">
+        <Loader2 className="h-10 w-10 animate-spin text-brand mx-auto" />
+      </div>
+    }>
+      <InvoiceLookup />
+    </Suspense>
   );
 }
