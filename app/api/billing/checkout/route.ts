@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
     }
 
     const plan = STRIPE_PLANS[planType];
-    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+    const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://morroo.com").trim();
 
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
@@ -55,10 +55,8 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ url: session.url });
   } catch (err) {
-    console.error("Stripe checkout error:", err);
-    return NextResponse.json(
-      { error: "เกิดข้อผิดพลาดในการสร้าง checkout session" },
-      { status: 500 }
-    );
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error("Stripe checkout error:", msg);
+    return NextResponse.json({ error: msg }, { status: 500 });
   }
 }
