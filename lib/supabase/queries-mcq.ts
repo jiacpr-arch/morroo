@@ -123,7 +123,7 @@ export async function getMcqNewSubjects(): Promise<Set<string>> {
     .gte("created_at", threeDaysAgo);
 
   if (error || !data) return new Set();
-  return new Set(data.map(r => r.subject_id));
+  return new Set(data.map((r: { subject_id: string }) => r.subject_id));
 }
 
 export async function getMcqUpcomingCount(): Promise<number> {
