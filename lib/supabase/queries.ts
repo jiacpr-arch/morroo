@@ -16,21 +16,21 @@ export async function getExams(): Promise<Exam[]> {
   return (data as Exam[]) || [];
 }
 
-// Sort exams: available first (has parts + publish_date passed), then coming soon by date
+// Sort exams: coming soon first (countdown), then newest first
 export function sortExamsAvailableFirst(exams: Exam[], partCounts: Record<string, number>): Exam[] {
   const now = new Date();
   return [...exams].sort((a, b) => {
-    const aAvailable = (partCounts[a.id] || 0) > 0 && (!a.publish_date || new Date(a.publish_date + "T00:00:00") <= now);
-    const bAvailable = (partCounts[b.id] || 0) > 0 && (!b.publish_date || new Date(b.publish_date + "T00:00:00") <= now);
+    const aComingSoon = (partCounts[a.id] || 0) === 0 || (a.publish_date && new Date(a.publish_date + "T00:00:00") > now);
+    const bComingSoon = (partCounts[b.id] || 0) === 0 || (b.publish_date && new Date(b.publish_date + "T00:00:00") > now);
 
-    // Available exams first
-    if (aAvailable && !bAvailable) return -1;
-    if (!aAvailable && bAvailable) return 1;
+    // Coming soon first (countdown visible)
+    if (aComingSoon && !bComingSoon) return -1;
+    if (!aComingSoon && bComingSoon) return 1;
 
-    // Within same group: sort by publish_date ascending (earliest first)
-    const aDate = a.publish_date ? new Date(a.publish_date) : new Date(a.created_at);
-    const bDate = b.publish_date ? new Date(b.publish_date) : new Date(b.created_at);
-    return aDate.getTime() - bDate.getTime();
+    // Within same group: newest first
+    const aDate = new Date(a.created_at);
+    const bDate = new Date(b.created_at);
+    return bDate.getTime() - aDate.getTime();
   });
 }
 

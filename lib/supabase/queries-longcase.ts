@@ -9,7 +9,7 @@ export async function getLongCases(): Promise<LongCase[]> {
     .select("id,title,specialty,difficulty,week_number,is_weekly,is_published,published_at,patient_info,correct_diagnosis,created_at")
     .eq("is_published", true)
     .order("is_weekly", { ascending: false })
-    .order("week_number", { ascending: false });
+    .order("created_at", { ascending: false });
 
   if (error) {
     console.error("getLongCases error:", error);

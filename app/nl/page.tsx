@@ -90,7 +90,11 @@ export default async function NLPage() {
           <h2 className="text-2xl font-bold">สาขาวิชา</h2>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-          {subjects.map((subject) => {
+          {[...subjects].sort((a, b) => {
+            const aNew = newSubjects.has(a.id) ? 1 : 0;
+            const bNew = newSubjects.has(b.id) ? 1 : 0;
+            return bNew - aNew;
+          }).map((subject) => {
             const count = counts[subject.id] || 0;
             return (
               <Link
