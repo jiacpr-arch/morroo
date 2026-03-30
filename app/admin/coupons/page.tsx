@@ -231,7 +231,7 @@ export default function AdminCouponsPage() {
                 >
                   <option value="all">ทั้งสองเว็บ</option>
                   <option value="medical">morroo.com (แพทย์)</option>
-                  <option value="pharmacy">pharma.morroo.com (เภสัช)</option>
+                  <option value="pharmacy">pharmru.com (เภสัช)</option>
                 </select>
               </div>
               <div>
