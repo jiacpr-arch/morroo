@@ -14,6 +14,8 @@ import {
   CreditCard,
   Users,
   Stethoscope,
+  Ticket,
+  Swords,
 } from "lucide-react";
 
 export default function AdminDashboard() {
@@ -226,6 +228,36 @@ export default function AdminDashboard() {
             <CardContent>
               <p className="text-sm text-muted-foreground">
                 เพิ่ม แก้ไข และจัดการ Long Case Exam
+              </p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/coupons">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-green-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Ticket className="h-5 w-5 text-green-600" />
+                <h3 className="font-bold">จัดการคูปอง</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                สร้าง แก้ไข และจัดการโค้ดคูปอง
+              </p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/challenges">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-purple-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Swords className="h-5 w-5 text-purple-600" />
+                <h3 className="font-bold">จัดการ Challenge</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                สร้างและจัดการรอบแข่งขัน Weekly / Monthly
               </p>
             </CardContent>
           </Card>

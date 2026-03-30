@@ -15,6 +15,8 @@ import {
   Sparkles,
 } from "lucide-react";
 import type { McqQuestion } from "@/lib/types-mcq";
+import DifficultyBadge from "@/components/DifficultyBadge";
+import type { DifficultyLevel } from "@/lib/types-standard";
 import Link from "next/link";
 import {
   saveMcqAttempt,
@@ -210,13 +212,20 @@ export default function McqPractice({
         </div>
       )}
 
-      {/* Subject Badge */}
-      {question.mcq_subjects && (
-        <Badge variant="secondary" className="text-xs">
-          {question.mcq_subjects.icon} {question.mcq_subjects.name_th}
-          {question.exam_source && ` • ${question.exam_source}`}
-        </Badge>
-      )}
+      {/* Subject Badge + Difficulty */}
+      <div className="flex items-center gap-2 flex-wrap">
+        {question.mcq_subjects && (
+          <Badge variant="secondary" className="text-xs">
+            {question.mcq_subjects.icon} {question.mcq_subjects.name_th}
+            {question.exam_source && ` • ${question.exam_source}`}
+          </Badge>
+        )}
+        {(question as McqQuestion & { difficulty_level?: number }).difficulty_level && (
+          <DifficultyBadge
+            level={(question as McqQuestion & { difficulty_level?: number }).difficulty_level as DifficultyLevel}
+          />
+        )}
+      </div>
 
       {/* Question */}
       <Card>
