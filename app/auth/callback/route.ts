@@ -12,7 +12,7 @@ export async function GET(request: Request) {
 
     if (!error && data.user) {
       // Upsert profile on OAuth login
-      await supabase.from("profiles").upsert(
+      await supabase.from("users").upsert(
         {
           id: data.user.id,
           email: data.user.email,

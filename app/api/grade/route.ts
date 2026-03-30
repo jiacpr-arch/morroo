@@ -19,7 +19,7 @@ export async function POST(request: Request) {
 
     // 2. Check membership — free users cannot use AI grading
     const { data: profile } = await supabase
-      .from("profiles")
+      .from("users")
       .select("membership_type, membership_expires_at")
       .eq("id", user.id)
       .single();

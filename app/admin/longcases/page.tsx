@@ -61,7 +61,7 @@ export default function AdminLongCasesPage() {
       if (!user) { router.push("/login"); return; }
 
       const { data: profile } = await supabase
-        .from("profiles")
+        .from("users")
         .select("role")
         .eq("id", user.id)
         .single();

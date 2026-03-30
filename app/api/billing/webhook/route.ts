@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
 
     // Update profile membership
     const { error: profileError } = await supabase
-      .from("profiles")
+      .from("users")
       .update({
         membership_type: planType,
         membership_expires_at: expiresAt.toISOString(),

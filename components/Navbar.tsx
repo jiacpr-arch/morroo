@@ -30,7 +30,7 @@ export default function Navbar() {
       setUser(data.user);
       if (data.user) {
         const { data: profile } = await supabase
-          .from("profiles")
+          .from("users")
           .select("role")
           .eq("id", data.user.id)
           .single();
