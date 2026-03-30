@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { ArrowRight, BookOpen, Shuffle, Target } from "lucide-react";
-import { getMcqSubjects, getMcqSubjectCounts } from "@/lib/supabase/queries-mcq";
+import { getMcqSubjects, getMcqSubjectCounts, getMcqNewSubjects } from "@/lib/supabase/queries-mcq";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,9 +14,10 @@ export const metadata: Metadata = {
 export const revalidate = 60;
 
 export default async function NLPage() {
-  const [subjects, counts] = await Promise.all([
+  const [subjects, counts, newSubjects] = await Promise.all([
     getMcqSubjects(),
     getMcqSubjectCounts(),
+    getMcqNewSubjects(),
   ]);
 
   const totalQuestions = Object.values(counts).reduce((a, b) => a + b, 0);
@@ -92,7 +93,12 @@ export default async function NLPage() {
                 key={subject.id}
                 href={`/nl/practice?subject=${subject.id}`}
               >
-                <Card className="group h-full hover:shadow-md hover:border-brand/30 transition-all cursor-pointer">
+                <Card className="group h-full hover:shadow-md hover:border-brand/30 transition-all cursor-pointer relative">
+                  {newSubjects.has(subject.id) && (
+                    <span className="absolute -top-1.5 -right-1.5 text-[10px] font-semibold px-1.5 py-0.5 rounded-full bg-red-500 text-white animate-pulse z-10">
+                      ใหม่
+                    </span>
+                  )}
                   <CardContent className="p-5 text-center">
                     <span className="text-3xl block mb-2">{subject.icon}</span>
                     <h3 className="font-medium text-sm mb-1">

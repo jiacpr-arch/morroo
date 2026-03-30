@@ -144,6 +144,7 @@ function CaseCard({ lc, hasAccess, isWeekly }: {
 }) {
   const diff = DIFFICULTY_LABEL[lc.difficulty] || DIFFICULTY_LABEL.medium;
   const specColor = SPECIALTY_COLORS[lc.specialty] || "bg-gray-100 text-gray-700";
+  const isNew = lc.created_at && (Date.now() - new Date(lc.created_at).getTime()) < 3 * 24 * 60 * 60 * 1000;
 
   return (
     <Card className={`overflow-hidden transition-all hover:shadow-md ${isWeekly ? "border-amber-300" : ""}`}>
@@ -160,6 +161,11 @@ function CaseCard({ lc, hasAccess, isWeekly }: {
           <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${diff.color}`}>
             {diff.label}
           </span>
+          {isNew && (
+            <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-red-500 text-white animate-pulse">
+              ใหม่
+            </span>
+          )}
         </div>
         <h3 className="font-semibold text-gray-900 text-base leading-snug mb-3">
           {lc.title}

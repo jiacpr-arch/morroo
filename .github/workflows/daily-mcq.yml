@@ -1,0 +1,100 @@
+name: Daily Auto-Generate MCQ (5 questions)
+
+on:
+  schedule:
+    # ทุกวัน 08:00 เวลาไทย (01:00 UTC)
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+
+jobs:
+  generate-mcq:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Get existing questions info
+        id: info
+        env:
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq postgresql-client > /dev/null 2>&1
+          DB_URL=$(echo "$SUPABASE_DB_URL" | tr -d '\n\r ' )
+
+          # Get recently used subjects (last 20 questions)
+          USED=$(psql "$DB_URL?sslmode=require" -t -A -c "SELECT string_agg(DISTINCT s.name, ', ') FROM (SELECT subject_id FROM public.mcq_questions WHERE is_ai_enhanced = true ORDER BY created_at DESC LIMIT 20) q JOIN public.mcq_subjects s ON s.id = q.subject_id;")
+          echo "used_subjects=$USED" >> $GITHUB_OUTPUT
+
+          # Get recent scenarios to avoid duplicates (last 50)
+          RECENT=$(psql "$DB_URL?sslmode=require" -t -A -c "SELECT string_agg(LEFT(scenario, 40), ' | ') FROM (SELECT scenario FROM public.mcq_questions ORDER BY created_at DESC LIMIT 50) t;")
+          echo "recent_scenarios=$RECENT" >> $GITHUB_OUTPUT
+
+          echo "Recently used subjects: $USED"
+
+      - name: Generate MCQ with Claude API
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          USED_SUBJECTS: ${{ steps.info.outputs.used_subjects }}
+          RECENT_SCENARIOS: ${{ steps.info.outputs.recent_scenarios }}
+        run: |
+          cat > prompt.json << 'PROMPT_EOF'
+          {
+            "model": "claude-sonnet-4-20250514",
+            "max_tokens": 8000,
+            "messages": [
+              {
+                "role": "user",
+                "content": "คุณเป็นอาจารย์แพทย์ สร้างโจทย์ MCQ สำหรับสอบ NL2 (National License Step 2) ของนักศึกษาแพทย์ไทย จำนวน 5 ข้อ\n\nสาขาที่ใช้ไปแล้วล่าสุด: USED_SUBS (กระจายสาขาให้หลากหลาย)\n\nหัวข้อล่าสุดที่ใช้ไป (ห้ามซ้ำ): RECENT_SCEN\n\nเลือก subject จาก: cardio_med, chest_med, ent, eye, family_med, forensic, gastro_med, hema_med, infect_med, neph_med, neuro_med, neuro_surg, obgyn, ortho, ped, pharma, prevent, psych, radio, rehab, surg, uro\n\nตอบเป็น JSON เท่านั้น format:\n{\"questions\":[{\"subject\":\"subject_name จากรายการข้างบน\",\"exam_type\":\"NL2\",\"scenario\":\"โจทย์สถานการณ์ผู้ป่วย 3-5 ประโยค ภาษาไทย ใส่อายุ เพศ อาการ ผลตรวจ\",\"choices\":[{\"label\":\"A\",\"text\":\"ตัวเลือก\"},{\"label\":\"B\",\"text\":\"ตัวเลือก\"},{\"label\":\"C\",\"text\":\"ตัวเลือก\"},{\"label\":\"D\",\"text\":\"ตัวเลือก\"},{\"label\":\"E\",\"text\":\"ตัวเลือก\"}],\"correct_answer\":\"A-E\",\"explanation\":\"อธิบายคำตอบสั้นๆ 1-2 ประโยค\",\"detailed_explanation\":{\"summary\":\"สรุปคำตอบ\",\"reason\":\"เหตุผลละเอียด\",\"choices\":[{\"label\":\"A\",\"text\":\"ตัวเลือก\",\"is_correct\":true/false,\"explanation\":\"อธิบายว่าทำไมถูก/ผิด\"},{\"label\":\"B\",\"text\":\"...\",\"is_correct\":false,\"explanation\":\"...\"},...ครบ 5 ตัวเลือก],\"key_takeaway\":\"จุดสำคัญที่ต้องจำ\"},\"difficulty\":\"easy/medium/hard\"},...ครบ 5 ข้อ]}\n\nกฎ:\n- แต่ละข้อต้องคนละสาขา (5 ข้อ 5 สาขา)\n- มีทั้ง easy, medium, hard คละกัน\n- โจทย์ต้องสมจริง เหมือนข้อสอบจริง\n- ตัวเลือกต้อง plausible ทุกข้อ\n- ห้ามซ้ำกับหัวข้อที่ให้มา\n- ใช้ภาษาไทย ยกเว้นศัพท์แพทย์"
+              }
+            ]
+          }
+          PROMPT_EOF
+
+          sed -i "s/USED_SUBS/$USED_SUBJECTS/g" prompt.json
+          sed -i "s/RECENT_SCEN/ดูรายละเอียดใน system/g" prompt.json
+
+          RESPONSE=$(curl -s https://api.anthropic.com/v1/messages \
+            -H "Content-Type: application/json" \
+            -H "x-api-key: $ANTHROPIC_API_KEY" \
+            -H "anthropic-version: 2023-06-01" \
+            -d @prompt.json)
+
+          echo "$RESPONSE" | node -e "
+            const data = JSON.parse(require('fs').readFileSync('/dev/stdin','utf8'));
+            if (data.error) { console.error('API Error:', JSON.stringify(data.error)); process.exit(1); }
+            const text = data.content[0].text;
+            const jsonMatch = text.match(/\{[\s\S]*\}/);
+            if (jsonMatch) {
+              const parsed = JSON.parse(jsonMatch[0]);
+              require('fs').writeFileSync('mcq_data.json', JSON.stringify(parsed, null, 2));
+              console.log('Generated ' + parsed.questions.length + ' MCQ questions');
+            } else {
+              console.error('No JSON found in response');
+              process.exit(1);
+            }
+          "
+
+      - name: Insert into Supabase
+        env:
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: |
+          DB_URL=$(echo "$SUPABASE_DB_URL" | tr -d '\n\r ' )
+          node scripts/build-mcq-sql.js
+          psql "$DB_URL?sslmode=require" -f insert_mcq.sql
+          echo "MCQ inserted successfully!"
+
+      - name: Save SQL file to repo
+        run: |
+          DATE=$(date +%Y%m%d)
+          cp insert_mcq.sql "supabase/mcq_seed_${DATE}.sql"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "supabase/mcq_seed_${DATE}.sql"
+          git commit -m "Auto-generate MCQ ${DATE}" || echo "No changes to commit"
+          git push || echo "Push failed, skipping"
