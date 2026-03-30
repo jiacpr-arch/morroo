@@ -14,7 +14,7 @@ VALUES (
   '${escape(exam.difficulty)}',
   'published',
   ${exam.is_free || false},
-  CURRENT_DATE,
+  CURRENT_DATE + INTERVAL '1 day',
   'ai-generated'
 );\n\n`;
 
