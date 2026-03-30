@@ -48,7 +48,9 @@ export default function AnswerClient({
   exam: Exam;
   parts: ExamPart[];
 }) {
-  const [openParts, setOpenParts] = useState<Set<number>>(new Set());
+  const [openParts, setOpenParts] = useState<Set<number>>(
+    () => new Set(parts.map((p) => p.part_number))
+  );
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(true);
   const [studentNotes, setStudentNotes] = useState<Record<number, string>>({});
