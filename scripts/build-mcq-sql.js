@@ -3,7 +3,13 @@ const data = JSON.parse(require('fs').readFileSync('mcq_data.json', 'utf8'));
 
 const escape = (s) => typeof s === 'string' ? s.replace(/'/g, "''") : s;
 
-let sql = '-- Auto-generated MCQ questions\n\n';
+// First: activate yesterday's review questions
+let sql = `-- Activate yesterday's MCQ questions
+UPDATE public.mcq_questions SET status = 'active'
+WHERE status = 'review' AND is_ai_enhanced = true
+AND created_at < NOW() - INTERVAL '12 hours';\n\n`;
+
+sql += '-- New MCQ questions (review status, will activate tomorrow)\n\n';
 
 for (const q of data.questions) {
   const choicesJSON = escape(JSON.stringify(q.choices));
@@ -22,7 +28,7 @@ VALUES (
   '${escape(q.difficulty)}',
   true,
   'auto-generated ${new Date().toISOString().split('T')[0]}',
-  'active'
+  'review'
 );\n\n`;
 }
 

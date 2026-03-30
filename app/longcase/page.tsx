@@ -4,9 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { getLongCases } from "@/lib/supabase/queries-longcase";
 import { createClient } from "@/lib/supabase/server";
-import { BookOpen, Stethoscope, Clock, Star, Lock } from "lucide-react";
+import { BookOpen, Stethoscope, Clock, Star, Lock, Hourglass } from "lucide-react";
 import type { Metadata } from "next";
 import LongCaseStartButton from "./LongCaseStartButton";
+import ComingSoonCountdown from "@/components/ComingSoonCountdown";
 
 export const metadata: Metadata = {
   title: "Long Case Exam — หมอรู้",
@@ -145,6 +146,36 @@ function CaseCard({ lc, hasAccess, isWeekly }: {
   const diff = DIFFICULTY_LABEL[lc.difficulty] || DIFFICULTY_LABEL.medium;
   const specColor = SPECIALTY_COLORS[lc.specialty] || "bg-gray-100 text-gray-700";
   const isNew = lc.created_at && (Date.now() - new Date(lc.created_at).getTime()) < 3 * 24 * 60 * 60 * 1000;
+  const isComingSoon = lc.published_at && new Date(lc.published_at).getTime() > Date.now();
+
+  if (isComingSoon) {
+    return (
+      <Card className={`overflow-hidden transition-all opacity-75 ${isWeekly ? "border-amber-300" : ""}`}>
+        {isWeekly && (
+          <div className="bg-amber-500 text-white text-xs font-semibold text-center py-1 flex items-center justify-center gap-1">
+            <Star className="h-3 w-3 fill-white" /> Case ประจำสัปดาห์ {lc.week_number ? `#${lc.week_number}` : ""}
+          </div>
+        )}
+        <CardContent className="p-5">
+          <div className="flex flex-wrap gap-1.5 mb-3">
+            <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${specColor}`}>
+              {lc.specialty}
+            </span>
+            <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${diff.color}`}>
+              {diff.label}
+            </span>
+            <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 flex items-center gap-1">
+              <Hourglass className="h-3 w-3" /> เร็วๆ นี้
+            </span>
+          </div>
+          <h3 className="font-semibold text-gray-900 text-base leading-snug mb-3">
+            {lc.title}
+          </h3>
+          <ComingSoonCountdown publishDate={lc.published_at?.split("T")[0] || null} examId={lc.id} />
+        </CardContent>
+      </Card>
+    );
+  }
 
   return (
     <Card className={`overflow-hidden transition-all hover:shadow-md ${isWeekly ? "border-amber-300" : ""}`}>

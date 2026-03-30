@@ -6,6 +6,7 @@ const jsonStr = (obj) => escape(JSON.stringify(obj));
 
 const sql = `INSERT INTO public.long_cases (
   title, specialty, difficulty, week_number, is_weekly,
+  published_at,
   patient_info, history_script, pe_findings, lab_results,
   correct_diagnosis, accepted_ddx, management_plan, teaching_points,
   examiner_questions, scoring_rubric
@@ -15,6 +16,7 @@ const sql = `INSERT INTO public.long_cases (
   '${escape(data.difficulty)}',
   ${data.week_number},
   TRUE,
+  NOW() + INTERVAL '1 day',
   '${jsonStr(data.patient_info)}',
   '${jsonStr(data.history_script)}',
   '${jsonStr(data.pe_findings)}',

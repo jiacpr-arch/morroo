@@ -125,3 +125,15 @@ export async function getMcqNewSubjects(): Promise<Set<string>> {
   if (error || !data) return new Set();
   return new Set(data.map(r => r.subject_id));
 }
+
+export async function getMcqUpcomingCount(): Promise<number> {
+  const supabase = await createClient();
+  const { count, error } = await supabase
+    .from("mcq_questions")
+    .select("id", { count: "exact", head: true })
+    .eq("status", "review")
+    .eq("is_ai_enhanced", true);
+
+  if (error) return 0;
+  return count || 0;
+}

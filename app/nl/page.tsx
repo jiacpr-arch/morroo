@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { ArrowRight, BookOpen, Shuffle, Target } from "lucide-react";
-import { getMcqSubjects, getMcqSubjectCounts, getMcqNewSubjects } from "@/lib/supabase/queries-mcq";
+import { getMcqSubjects, getMcqSubjectCounts, getMcqNewSubjects, getMcqUpcomingCount } from "@/lib/supabase/queries-mcq";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,10 +14,11 @@ export const metadata: Metadata = {
 export const revalidate = 60;
 
 export default async function NLPage() {
-  const [subjects, counts, newSubjects] = await Promise.all([
+  const [subjects, counts, newSubjects, upcomingCount] = await Promise.all([
     getMcqSubjects(),
     getMcqSubjectCounts(),
     getMcqNewSubjects(),
+    getMcqUpcomingCount(),
   ]);
 
   const totalQuestions = Object.values(counts).reduce((a, b) => a + b, 0);
@@ -29,6 +30,9 @@ export default async function NLPage() {
         <div className="flex items-center gap-2 mb-2">
           <Badge className="bg-blue-100 text-blue-700">NL Exam</Badge>
           <Badge variant="secondary">{totalQuestions} ข้อ</Badge>
+          {upcomingCount > 0 && (
+            <Badge className="bg-purple-100 text-purple-700">+{upcomingCount} ข้อใหม่พรุ่งนี้</Badge>
+          )}
         </div>
         <h1 className="text-3xl font-bold">ข้อสอบใบประกอบวิชาชีพ</h1>
         <p className="mt-2 text-muted-foreground">
