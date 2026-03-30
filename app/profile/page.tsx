@@ -7,8 +7,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
-import { User, Mail, Crown, Calendar, LogOut } from "lucide-react";
+import { User, Mail, Crown, Calendar, LogOut, Award, Ticket } from "lucide-react";
 import type { Profile } from "@/lib/types";
+import { BADGE_ICONS, type UserBadge } from "@/lib/types-standard";
 
 const membershipLabels: Record<string, string> = {
   free: "ฟรี",
@@ -29,6 +30,7 @@ export default function ProfilePage() {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(true);
   const [userEmail, setUserEmail] = useState("");
+  const [badges, setBadges] = useState<UserBadge[]>([]);
 
   useEffect(() => {
     async function loadProfile() {
@@ -51,6 +53,15 @@ export default function ProfilePage() {
         .single();
 
       setProfile(data);
+
+      // Load user badges
+      const { data: badgeData } = await supabase
+        .from("user_badges")
+        .select("*, badges(*)")
+        .eq("user_id", user.id)
+        .order("earned_at", { ascending: false });
+      setBadges((badgeData as UserBadge[]) || []);
+
       setLoading(false);
     }
     loadProfile();
@@ -137,6 +148,61 @@ export default function ProfilePage() {
                 </Button>
               </Link>
             )}
+          </CardContent>
+        </Card>
+
+        {/* Badges */}
+        <Card>
+          <CardHeader>
+            <h3 className="font-semibold flex items-center gap-2">
+              <Award className="h-5 w-5 text-yellow-500" /> เหรียญรางวัล
+            </h3>
+          </CardHeader>
+          <CardContent>
+            {badges.length === 0 ? (
+              <p className="text-sm text-muted-foreground">
+                ยังไม่มีเหรียญ — ทำข้อสอบและเข้าร่วม Challenge เพื่อสะสม!
+              </p>
+            ) : (
+              <div className="flex flex-wrap gap-3">
+                {badges.map((ub) => (
+                  <div
+                    key={ub.id}
+                    className="flex items-center gap-2 rounded-lg border px-3 py-2 bg-yellow-50"
+                  >
+                    <span className="text-xl">
+                      {ub.badges
+                        ? BADGE_ICONS[ub.badges.condition_type] || "🏅"
+                        : "🏅"}
+                    </span>
+                    <div>
+                      <p className="text-sm font-medium">
+                        {ub.badges?.name_th || "Badge"}
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        {new Date(ub.earned_at).toLocaleDateString("th-TH")}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </CardContent>
+        </Card>
+
+        {/* Coupon */}
+        <Card>
+          <CardHeader>
+            <h3 className="font-semibold flex items-center gap-2">
+              <Ticket className="h-5 w-5 text-green-600" /> คูปอง
+            </h3>
+          </CardHeader>
+          <CardContent>
+            <Link href="/redeem">
+              <Button variant="outline" className="w-full gap-2">
+                <Ticket className="h-4 w-4" /> ใช้โค้ดคูปอง
+              </Button>
+            </Link>
           </CardContent>
         </Card>
 

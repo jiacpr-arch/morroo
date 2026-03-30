@@ -13,6 +13,8 @@ const navLinks = [
   { href: "/exams", label: "MEQ" },
   { href: "/nl", label: "NL Exam" },
   { href: "/longcase", label: "Long Case" },
+  { href: "/challenges", label: "Challenge" },
+  { href: "/leaderboard", label: "Leaderboard" },
   { href: "/pricing", label: "แพ็กเกจ" },
 ];
 
