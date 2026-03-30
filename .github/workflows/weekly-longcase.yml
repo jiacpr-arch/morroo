@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Get current week number and used specialties
         id: info
@@ -25,12 +25,15 @@ jobs:
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq postgresql-client > /dev/null 2>&1
 
+          # Trim whitespace from URL
+          DB_URL=$(echo "$SUPABASE_DB_URL" | tr -d '\n\r ' )
+
           # Get next week number
-          NEXT_WEEK=$(psql "$SUPABASE_DB_URL" -t -A -c "SELECT COALESCE(MAX(week_number), 0) + 1 FROM public.long_cases;")
+          NEXT_WEEK=$(psql "$DB_URL?sslmode=require" -t -A -c "SELECT COALESCE(MAX(week_number), 0) + 1 FROM public.long_cases;")
           echo "next_week=$NEXT_WEEK" >> $GITHUB_OUTPUT
 
           # Get recently used specialties (last 5)
-          USED=$(psql "$SUPABASE_DB_URL" -t -A -c "SELECT string_agg(specialty, ', ') FROM (SELECT specialty FROM public.long_cases ORDER BY created_at DESC LIMIT 5) t;")
+          USED=$(psql "$DB_URL?sslmode=require" -t -A -c "SELECT string_agg(specialty, ', ') FROM (SELECT specialty FROM public.long_cases ORDER BY created_at DESC LIMIT 5) t;")
           echo "used_specialties=$USED" >> $GITHUB_OUTPUT
 
           echo "Next week: $NEXT_WEEK"
@@ -123,7 +126,8 @@ jobs:
           "
 
           # Run SQL
-          psql "$SUPABASE_DB_URL" -f insert.sql
+          DB_URL=$(echo "$SUPABASE_DB_URL" | tr -d '\n\r ' )
+          psql "$DB_URL?sslmode=require" -f insert.sql
           echo "Long Case inserted successfully!"
 
       - name: Save SQL file to repo
