@@ -1,9 +1,9 @@
-name: Weekly Auto-Generate Long Case
+name: Daily Auto-Generate Long Case
 
 on:
   schedule:
-    # ทุกวันจันทร์ 06:00 เวลาไทย (23:00 UTC วันอาทิตย์)
-    - cron: '0 23 * * 0'
+    # ทุกวัน 06:00 เวลาไทย (23:00 UTC วันก่อนหน้า)
+    - cron: '0 23 * * *'
   workflow_dispatch: # กดรัน manual ได้ด้วย
 
 jobs:
