@@ -7,8 +7,8 @@ import { getMcqSubjects, getMcqSubjectCounts, getMcqNewSubjects, getMcqUpcomingC
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "ข้อสอบ NL — ใบประกอบวิชาชีพเวชกรรม",
-  description: "ฝึกทำข้อสอบ National License NL1 NL2 ใบประกอบวิชาชีพเวชกรรม ครบทุกสาขา",
+  title: "MCQ — ข้อสอบปรนัย ใบประกอบวิชาชีพ",
+  description: "ฝึกทำข้อสอบ MCQ ใบประกอบวิชาชีพเวชกรรม ครบทุกสาขา",
 };
 
 export const revalidate = 60;
@@ -28,15 +28,15 @@ export default async function NLPage() {
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center gap-2 mb-2">
-          <Badge className="bg-blue-100 text-blue-700">NL Exam</Badge>
+          <Badge className="bg-blue-100 text-blue-700">MCQ</Badge>
           <Badge variant="secondary">{totalQuestions} ข้อ</Badge>
           {upcomingCount > 0 && (
             <Badge className="bg-purple-100 text-purple-700">+{upcomingCount} ข้อใหม่พรุ่งนี้</Badge>
           )}
         </div>
-        <h1 className="text-3xl font-bold">ข้อสอบใบประกอบวิชาชีพ</h1>
+        <h1 className="text-3xl font-bold">ข้อสอบ MCQ</h1>
         <p className="mt-2 text-muted-foreground">
-          ฝึกทำข้อสอบ National License แบบ MCQ ครบทุกสาขา
+          ฝึกทำข้อสอบปรนัย MCQ ครบทุกสาขา
         </p>
       </div>
 

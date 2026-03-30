@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 import MockSetup from "./MockSetup";
 
 export const metadata: Metadata = {
-  title: "จำลองสอบ NL — Mock Exam",
+  title: "จำลองสอบ MCQ — Mock Exam",
   description: "จำลองสอบ MCQ ใบประกอบวิชาชีพเวชกรรม คละทุกสาขา จับเวลา",
 };
 
