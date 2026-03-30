@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, User, LogOut } from "lucide-react";
+import { Menu, X, User, LogOut, Ticket, Shield } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import type { User as SupabaseUser } from "@supabase/supabase-js";
 
@@ -22,10 +22,21 @@ export default function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [user, setUser] = useState<SupabaseUser | null>(null);
+  const [isAdmin, setIsAdmin] = useState(false);
   const supabase = createClient();
 
   useEffect(() => {
-    supabase.auth.getUser().then(({ data }: { data: { user: SupabaseUser | null } }) => setUser(data.user));
+    supabase.auth.getUser().then(async ({ data }: { data: { user: SupabaseUser | null } }) => {
+      setUser(data.user);
+      if (data.user) {
+        const { data: profile } = await supabase
+          .from("profiles")
+          .select("role")
+          .eq("id", data.user.id)
+          .single();
+        setIsAdmin(profile?.role === "admin");
+      }
+    });
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event: string, session: { user: SupabaseUser | null } | null) => {
@@ -70,6 +81,20 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           {user ? (
             <>
+              <Link href="/redeem">
+                <Button variant="ghost" size="sm" className="gap-2 text-green-600">
+                  <Ticket className="h-4 w-4" />
+                  ใช้โค้ด
+                </Button>
+              </Link>
+              {isAdmin && (
+                <Link href="/admin">
+                  <Button variant="ghost" size="sm" className="gap-2 text-purple-600">
+                    <Shield className="h-4 w-4" />
+                    Admin
+                  </Button>
+                </Link>
+              )}
               <Link href="/profile">
                 <Button variant="ghost" size="sm" className="gap-2">
                   <User className="h-4 w-4" />
@@ -135,6 +160,22 @@ export default function Navbar() {
             <div className="border-t pt-3 mt-3 space-y-2">
               {user ? (
                 <>
+                  <Link
+                    href="/redeem"
+                    onClick={() => setMobileOpen(false)}
+                    className="block rounded-md px-3 py-2 text-sm font-medium text-green-600 hover:bg-muted"
+                  >
+                    🎟️ ใช้โค้ดคูปอง
+                  </Link>
+                  {isAdmin && (
+                    <Link
+                      href="/admin"
+                      onClick={() => setMobileOpen(false)}
+                      className="block rounded-md px-3 py-2 text-sm font-medium text-purple-600 hover:bg-muted"
+                    >
+                      🛡️ Admin Dashboard
+                    </Link>
+                  )}
                   <Link
                     href="/profile"
                     onClick={() => setMobileOpen(false)}
