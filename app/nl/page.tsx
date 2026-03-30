@@ -102,7 +102,7 @@ export default async function NLPage() {
                 href={`/nl/practice?subject=${subject.id}`}
               >
                 <Card className="group h-full hover:shadow-md hover:border-brand/30 transition-all cursor-pointer relative">
-                  {newSubjects.has(subject.id) && (
+                  {newSubjects.has(subject.id) && count > 0 && (
                     <span className="absolute -top-1.5 -right-1.5 text-[10px] font-semibold px-1.5 py-0.5 rounded-full bg-red-500 text-white animate-pulse z-10">
                       ใหม่
                     </span>
