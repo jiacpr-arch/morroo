@@ -13,7 +13,7 @@ import { createClient } from "@/lib/supabase/server";
 import type { Profile } from "@/lib/types";
 
 export const metadata: Metadata = {
-  title: "ฝึกทำข้อสอบ NL",
+  title: "ฝึกทำข้อสอบ MCQ",
   description: "ฝึกทำข้อสอบ MCQ ใบประกอบวิชาชีพเวชกรรม",
 };
 
@@ -157,9 +157,9 @@ export default async function PracticePage({
           href="/nl"
           className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-brand mb-4"
         >
-          <ArrowLeft className="h-4 w-4" /> กลับหน้า NL
+          <ArrowLeft className="h-4 w-4" /> กลับหน้า MCQ
         </Link>
-        <h1 className="text-2xl font-bold">ฝึกทำข้อสอบ NL</h1>
+        <h1 className="text-2xl font-bold">ฝึกทำข้อสอบ MCQ</h1>
         <p className="text-muted-foreground text-sm mt-1">
           เลือกตอบแล้วดูเฉลยทันที
         </p>

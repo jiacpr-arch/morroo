@@ -42,7 +42,7 @@ export default async function HomePage() {
               <span className="text-brand-light">ด้วย AI ที่เข้าใจคุณ</span>
             </h1>
             <p className="mt-6 text-lg text-white/70 max-w-2xl mx-auto">
-              ข้อสอบ MEQ แบบ Progressive Case + ข้อสอบ NL ใบประกอบวิชาชีพ 1,300+ ข้อ +
+              ข้อสอบ MEQ แบบ Progressive Case + ข้อสอบ MCQ 1,300+ ข้อ +
               ฝึกสอบ Long Case กับ AI Patient & Examiner
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -67,7 +67,7 @@ export default async function HomePage() {
                   size="lg"
                   className="bg-white/10 border border-white/30 text-white hover:bg-white/20 px-8 text-base"
                 >
-                  NL Exam <ArrowRight className="ml-2 h-4 w-4" />
+                  MCQ <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
             </div>
