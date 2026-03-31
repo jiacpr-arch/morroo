@@ -112,3 +112,28 @@ export async function getMcqSubjectCounts(): Promise<Record<string, number>> {
   }
   return counts;
 }
+
+export async function getMcqNewSubjects(): Promise<Set<string>> {
+  const supabase = await createClient();
+  const threeDaysAgo = new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString();
+  const { data, error } = await supabase
+    .from("mcq_questions")
+    .select("subject_id")
+    .eq("status", "active")
+    .gte("created_at", threeDaysAgo);
+
+  if (error || !data) return new Set();
+  return new Set(data.map((r: { subject_id: string }) => r.subject_id));
+}
+
+export async function getMcqUpcomingCount(): Promise<number> {
+  const supabase = await createClient();
+  const { count, error } = await supabase
+    .from("mcq_questions")
+    .select("id", { count: "exact", head: true })
+    .eq("status", "review")
+    .eq("is_ai_enhanced", true);
+
+  if (error) return 0;
+  return count || 0;
+}

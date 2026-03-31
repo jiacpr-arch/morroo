@@ -1,0 +1,109 @@
+name: Daily Auto-Generate Long Case
+
+on:
+  schedule:
+    # ทุกวัน 06:00 เวลาไทย (23:00 UTC วันก่อนหน้า)
+    - cron: '0 23 * * *'
+  workflow_dispatch: # กดรัน manual ได้ด้วย
+
+jobs:
+  generate-longcase:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Get current week number and used specialties
+        id: info
+        env:
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq postgresql-client > /dev/null 2>&1
+
+          # Trim whitespace from URL
+          DB_URL=$(echo "$SUPABASE_DB_URL" | tr -d '\n\r ' )
+
+          # Get next week number
+          NEXT_WEEK=$(psql "$DB_URL?sslmode=require" -t -A -c "SELECT COALESCE(MAX(week_number), 0) + 1 FROM public.long_cases;")
+          echo "next_week=$NEXT_WEEK" >> $GITHUB_OUTPUT
+
+          # Get recently used specialties (last 5)
+          USED=$(psql "$DB_URL?sslmode=require" -t -A -c "SELECT string_agg(specialty, ', ') FROM (SELECT specialty FROM public.long_cases ORDER BY created_at DESC LIMIT 5) t;")
+          echo "used_specialties=$USED" >> $GITHUB_OUTPUT
+
+          echo "Next week: $NEXT_WEEK"
+          echo "Recently used: $USED"
+
+      - name: Generate Long Case with Claude API
+        id: generate
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          NEXT_WEEK: ${{ steps.info.outputs.next_week }}
+          USED_SPECIALTIES: ${{ steps.info.outputs.used_specialties }}
+        run: |
+          cat > prompt.json << 'PROMPT_EOF'
+          {
+            "model": "claude-sonnet-4-20250514",
+            "max_tokens": 8000,
+            "messages": [
+              {
+                "role": "user",
+                "content": "คุณเป็นอาจารย์แพทย์ผู้เชี่ยวชาญ สร้างโจทย์ Long Case สำหรับสอบ OSCE ของนักศึกษาแพทย์ไทย 1 ข้อ\n\nสัปดาห์ที่: WEEK_NUM\nสาขาที่ใช้ไปแล้วล่าสุด: USED_SPECS (ห้ามซ้ำกับเหล่านี้)\n\nเลือกจากสาขา: Internal Medicine, Surgery, Pediatrics, Obstetrics, Gynecology, Orthopedics, Ophthalmology, ENT, Psychiatry, Dermatology, Emergency Medicine, Neurology, Cardiology, Pulmonology, Nephrology, Gastroenterology, Endocrinology, Hematology, Infectious Disease, Rheumatology\n\nตอบเป็น JSON เท่านั้น ห้ามมีข้อความอื่น format:\n{\"title\":\"ชาย/หญิง XX ปี อาการ\",\"specialty\":\"สาขา\",\"difficulty\":\"easy/medium/hard\",\"week_number\":WEEK_NUM,\"is_weekly\":true,\"patient_info\":{\"name\":\"ชื่อไทย\",\"age\":number,\"gender\":\"ชาย/หญิง\",\"underlying\":[],\"allergies\":[],\"vitals\":{\"bp\":\"xxx/xx\",\"hr\":number,\"rr\":number,\"temp\":number,\"o2sat\":number}},\"history_script\":{\"cc\":\"อาการสำคัญ\",\"onset\":\"การเริ่มต้น\",\"pi\":\"ประวัติปัจจุบัน ละเอียด\",\"pmh\":\"ประวัติเดิม\",\"sh\":\"ประวัติสังคม\"},\"pe_findings\":{\"GA\":\"ลักษณะทั่วไป\",\"HEENT\":\"หรือระบบที่เกี่ยวข้อง\",...ระบบอื่นๆ},\"lab_results\":{\"ชื่อ lab\":{\"value\":\"ผลละเอียด\",\"isAbnormal\":true/false},...อย่างน้อย 5 รายการ},\"correct_diagnosis\":\"การวินิจฉัยที่ถูกต้อง\",\"accepted_ddx\":[\"DDx 5-6 ข้อ\"],\"management_plan\":\"แผนการรักษาละเอียด\",\"teaching_points\":[\"จุดสำคัญ 5-7 ข้อ\"],\"examiner_questions\":[{\"question\":\"คำถาม\",\"modelAnswer\":\"คำตอบละเอียด\",\"points\":number},...4 คำถาม รวม 70 คะแนน],\"scoring_rubric\":{\"history\":20-25,\"pe\":20-25,\"lab\":20-25,\"ddx\":10-15,\"management\":20}}\n\nสร้างเคสที่สมจริง มีรายละเอียดครบถ้วน เหมือนผู้ป่วยจริงในโรงพยาบาลไทย ใช้ภาษาไทยในเนื้อหาทางคลินิก ชื่อภาษาไทย vitals สมจริง lab สมจริง"
+              }
+            ]
+          }
+          PROMPT_EOF
+
+          # Replace placeholders
+          sed -i "s/WEEK_NUM/$NEXT_WEEK/g" prompt.json
+          sed -i "s/USED_SPECS/$USED_SPECIALTIES/g" prompt.json
+
+          # Call Claude API
+          RESPONSE=$(curl -s https://api.anthropic.com/v1/messages \
+            -H "Content-Type: application/json" \
+            -H "x-api-key: $ANTHROPIC_API_KEY" \
+            -H "anthropic-version: 2023-06-01" \
+            -d @prompt.json)
+
+          # Extract the text content
+          echo "$RESPONSE" | node -e "
+            const data = JSON.parse(require('fs').readFileSync('/dev/stdin','utf8'));
+            if (data.error) { console.error('API Error:', JSON.stringify(data.error)); process.exit(1); }
+            const text = data.content[0].text;
+            // Extract JSON from response (handle potential markdown code blocks)
+            const jsonMatch = text.match(/\{[\s\S]*\}/);
+            if (jsonMatch) {
+              const parsed = JSON.parse(jsonMatch[0]);
+              require('fs').writeFileSync('case_data.json', JSON.stringify(parsed, null, 2));
+              console.log('Generated case: ' + parsed.title);
+            } else {
+              console.error('No JSON found in response');
+              process.exit(1);
+            }
+          "
+
+      - name: Insert into Supabase
+        env:
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: |
+          DB_URL=$(echo "$SUPABASE_DB_URL" | tr -d '\n\r ' )
+          node scripts/build-longcase-sql.js
+          psql "$DB_URL?sslmode=require" -f insert.sql
+          echo "Long Case inserted successfully!"
+
+      - name: Save SQL file to repo
+        env:
+          NEXT_WEEK: ${{ steps.info.outputs.next_week }}
+        run: |
+          cp insert.sql "supabase/longcase_seed_week${NEXT_WEEK}.sql"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "supabase/longcase_seed_week${NEXT_WEEK}.sql"
+          git commit -m "Auto-generate Long Case week ${NEXT_WEEK}" || echo "No changes to commit"
+          git push || echo "Push failed, skipping"

@@ -19,11 +19,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "หมอรู้ (MorRoo) — แพลตฟอร์มข้อสอบ MEQ + NL สำหรับแพทย์",
+    default: "หมอรู้ (MorRoo) — แพลตฟอร์มข้อสอบ MEQ + MCQ สำหรับแพทย์",
     template: "%s | หมอรู้ MorRoo",
   },
   description:
-    "เตรียมสอบแพทย์ด้วยข้อสอบ MEQ + NL ใบประกอบวิชาชีพ ออนไลน์ ครบทุกสาขา อายุรศาสตร์ ศัลยศาสตร์ กุมารฯ สูติฯ ออร์โธฯ จิตเวช พร้อมเฉลยละเอียด",
+    "เตรียมสอบแพทย์ด้วยข้อสอบ MEQ + MCQ ใบประกอบวิชาชีพ ออนไลน์ ครบทุกสาขา อายุรศาสตร์ ศัลยศาสตร์ กุมารฯ สูติฯ ออร์โธฯ จิตเวช พร้อมเฉลยละเอียด",
   metadataBase: new URL("https://morroo.com"),
   openGraph: {
     title: "หมอรู้ (MorRoo) — แพลตฟอร์มข้อสอบ MEQ สำหรับแพทย์",

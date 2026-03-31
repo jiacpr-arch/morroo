@@ -1,0 +1,97 @@
+name: Daily Auto-Generate MEQ
+
+on:
+  schedule:
+    # ทุกวัน 07:00 เวลาไทย (00:00 UTC) ห่างจาก Long Case 1 ชม.
+    - cron: '0 0 * * *'
+  workflow_dispatch: # กดรัน manual ได้ด้วย
+
+jobs:
+  generate-meq:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Get used categories
+        id: info
+        env:
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq postgresql-client > /dev/null 2>&1
+          DB_URL=$(echo "$SUPABASE_DB_URL" | tr -d '\n\r ' )
+
+          # Get recently used categories (last 5)
+          USED=$(psql "$DB_URL?sslmode=require" -t -A -c "SELECT string_agg(category, ', ') FROM (SELECT category FROM public.exams ORDER BY created_at DESC LIMIT 5) t;")
+          echo "used_categories=$USED" >> $GITHUB_OUTPUT
+          echo "Recently used: $USED"
+
+      - name: Generate MEQ with Claude API
+        id: generate
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          USED_CATEGORIES: ${{ steps.info.outputs.used_categories }}
+        run: |
+          cat > prompt.json << 'PROMPT_EOF'
+          {
+            "model": "claude-sonnet-4-20250514",
+            "max_tokens": 8000,
+            "messages": [
+              {
+                "role": "user",
+                "content": "คุณเป็นอาจารย์แพทย์ผู้เชี่ยวชาญ สร้างโจทย์ MEQ (Modified Essay Question) สำหรับสอบนักศึกษาแพทย์ไทย 1 ข้อ\n\nMEQ เป็นเคสที่แบ่งเป็น 6 parts ค่อยๆ เปิดเผยข้อมูลทีละส่วน เหมือนดูแลผู้ป่วยจริงตั้งแต่มาถึงจนจำหน่าย\n\nสาขาที่ใช้ไปแล้วล่าสุด: USED_CATS (ห้ามซ้ำกับเหล่านี้)\n\nเลือกจากสาขา: อายุรศาสตร์, ศัลยศาสตร์, กุมารเวชศาสตร์, สูติศาสตร์-นรีเวชวิทยา, ออร์โธปิดิกส์, จิตเวชศาสตร์, เวชศาสตร์ฉุกเฉิน, จักษุวิทยา, โสต ศอ นาสิก, ตจวิทยา\n\nตอบเป็น JSON เท่านั้น ห้ามมีข้อความอื่น format:\n{\"exam\":{\"title\":\"ชื่อเคส เช่น ชาย 55 ปี ปวดท้องเฉียบพลัน\",\"category\":\"สาขาภาษาไทย\",\"difficulty\":\"easy/medium/hard\",\"is_free\":false},\"parts\":[{\"part_number\":1,\"title\":\"ชื่อ part เช่น การซักประวัติและตรวจร่างกาย\",\"scenario\":\"สถานการณ์ผู้ป่วยละเอียด 3-5 ประโยค ภาษาไทย\",\"question\":\"คำถามที่ต้องตอบ 1-2 ประโยค\",\"answer\":\"คำตอบละเอียด 3-5 ประโยค\",\"key_points\":[\"จุดสำคัญ 3-5 ข้อ\"],\"time_minutes\":10},...ครบ 6 parts]}\n\n6 Parts ควรเป็น:\nPart 1: Initial assessment (ประวัติ + ตรวจร่างกาย)\nPart 2: Investigation (ผล lab/imaging)\nPart 3: Diagnosis & initial management\nPart 4: Complication/progression (เคสแย่ลงหรือมีปัญหาใหม่)\nPart 5: Advanced management\nPart 6: Discharge planning / prevention / counseling\n\nสร้างเคสที่สมจริง มีรายละเอียดครบถ้วน เหมือนผู้ป่วยจริงในโรงพยาบาลไทย ใช้ภาษาไทยทั้งหมดยกเว้นศัพท์แพทย์ ค่า lab สมจริง"
+              }
+            ]
+          }
+          PROMPT_EOF
+
+          # Replace placeholders
+          sed -i "s/USED_CATS/$USED_CATEGORIES/g" prompt.json
+
+          # Call Claude API
+          RESPONSE=$(curl -s https://api.anthropic.com/v1/messages \
+            -H "Content-Type: application/json" \
+            -H "x-api-key: $ANTHROPIC_API_KEY" \
+            -H "anthropic-version: 2023-06-01" \
+            -d @prompt.json)
+
+          # Extract the text content
+          echo "$RESPONSE" | node -e "
+            const data = JSON.parse(require('fs').readFileSync('/dev/stdin','utf8'));
+            if (data.error) { console.error('API Error:', JSON.stringify(data.error)); process.exit(1); }
+            const text = data.content[0].text;
+            const jsonMatch = text.match(/\{[\s\S]*\}/);
+            if (jsonMatch) {
+              const parsed = JSON.parse(jsonMatch[0]);
+              require('fs').writeFileSync('meq_data.json', JSON.stringify(parsed, null, 2));
+              console.log('Generated MEQ: ' + parsed.exam.title);
+            } else {
+              console.error('No JSON found in response');
+              process.exit(1);
+            }
+          "
+
+      - name: Insert into Supabase
+        env:
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: |
+          DB_URL=$(echo "$SUPABASE_DB_URL" | tr -d '\n\r ' )
+          node scripts/build-meq-sql.js
+          psql "$DB_URL?sslmode=require" -f insert_meq.sql
+          echo "MEQ inserted successfully!"
+
+      - name: Save SQL file to repo
+        run: |
+          DATE=$(date +%Y%m%d)
+          cp insert_meq.sql "supabase/meq_seed_${DATE}.sql"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "supabase/meq_seed_${DATE}.sql"
+          git commit -m "Auto-generate MEQ ${DATE}" || echo "No changes to commit"
+          git push || echo "Push failed, skipping"

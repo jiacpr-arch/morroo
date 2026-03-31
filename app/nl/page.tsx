@@ -2,21 +2,24 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { ArrowRight, BookOpen, Shuffle, Target } from "lucide-react";
-import { getMcqSubjects, getMcqSubjectCounts } from "@/lib/supabase/queries-mcq";
+import { ArrowRight, BookOpen, Shuffle, Target, Clock } from "lucide-react";
+import { getMcqSubjects, getMcqSubjectCounts, getMcqNewSubjects, getMcqUpcomingCount } from "@/lib/supabase/queries-mcq";
+import McqCountdown from "@/components/McqCountdown";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "ข้อสอบ NL — ใบประกอบวิชาชีพเวชกรรม",
-  description: "ฝึกทำข้อสอบ National License NL1 NL2 ใบประกอบวิชาชีพเวชกรรม ครบทุกสาขา",
+  title: "MCQ — ข้อสอบปรนัย ใบประกอบวิชาชีพ",
+  description: "ฝึกทำข้อสอบ MCQ ใบประกอบวิชาชีพเวชกรรม ครบทุกสาขา",
 };
 
 export const revalidate = 60;
 
 export default async function NLPage() {
-  const [subjects, counts] = await Promise.all([
+  const [subjects, counts, newSubjects, upcomingCount] = await Promise.all([
     getMcqSubjects(),
     getMcqSubjectCounts(),
+    getMcqNewSubjects(),
+    getMcqUpcomingCount(),
   ]);
 
   const totalQuestions = Object.values(counts).reduce((a, b) => a + b, 0);
@@ -26,14 +29,35 @@ export default async function NLPage() {
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center gap-2 mb-2">
-          <Badge className="bg-blue-100 text-blue-700">NL Exam</Badge>
+          <Badge className="bg-blue-100 text-blue-700">MCQ</Badge>
           <Badge variant="secondary">{totalQuestions} ข้อ</Badge>
+          {upcomingCount > 0 && (
+            <Badge className="bg-purple-100 text-purple-700">+{upcomingCount} ข้อใหม่พรุ่งนี้</Badge>
+          )}
         </div>
-        <h1 className="text-3xl font-bold">ข้อสอบใบประกอบวิชาชีพ</h1>
+        <h1 className="text-3xl font-bold">ข้อสอบ MCQ</h1>
         <p className="mt-2 text-muted-foreground">
-          ฝึกทำข้อสอบ National License แบบ MCQ ครบทุกสาขา
+          ฝึกทำข้อสอบปรนัย MCQ ครบทุกสาขา
         </p>
       </div>
+
+      {/* Upcoming Questions Countdown */}
+      {upcomingCount > 0 && (
+        <div className="mb-8 p-5 rounded-2xl bg-purple-50 border border-purple-100">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
+                <Clock className="h-5 w-5 text-purple-600" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-purple-900">ข้อสอบใหม่กำลังจะมา!</h3>
+                <p className="text-sm text-purple-600">+{upcomingCount} ข้อ จะเปิดให้ทำได้ใน</p>
+              </div>
+            </div>
+            <McqCountdown />
+          </div>
+        </div>
+      )}
 
       {/* Mode Selection */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
@@ -85,14 +109,23 @@ export default async function NLPage() {
           <h2 className="text-2xl font-bold">สาขาวิชา</h2>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-          {subjects.map((subject) => {
+          {[...subjects].sort((a, b) => {
+            const aNew = newSubjects.has(a.id) ? 1 : 0;
+            const bNew = newSubjects.has(b.id) ? 1 : 0;
+            return bNew - aNew;
+          }).map((subject) => {
             const count = counts[subject.id] || 0;
             return (
               <Link
                 key={subject.id}
                 href={`/nl/practice?subject=${subject.id}`}
               >
-                <Card className="group h-full hover:shadow-md hover:border-brand/30 transition-all cursor-pointer">
+                <Card className="group h-full hover:shadow-md hover:border-brand/30 transition-all cursor-pointer relative">
+                  {newSubjects.has(subject.id) && count > 0 && (
+                    <span className="absolute -top-1.5 -right-1.5 text-[10px] font-semibold px-1.5 py-0.5 rounded-full bg-red-500 text-white animate-pulse z-10">
+                      ใหม่
+                    </span>
+                  )}
                   <CardContent className="p-5 text-center">
                     <span className="text-3xl block mb-2">{subject.icon}</span>
                     <h3 className="font-medium text-sm mb-1">

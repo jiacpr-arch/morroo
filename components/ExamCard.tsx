@@ -24,6 +24,7 @@ export default function ExamCard({ exam, partCount = 0 }: { exam: Exam; partCoun
   const publishDate = exam.publish_date ? new Date(exam.publish_date + "T00:00:00") : null;
   const now = new Date();
   const isComingSoon = (publishDate && publishDate > now) || partCount === 0;
+  const isNew = exam.created_at && (Date.now() - new Date(exam.created_at).getTime()) < 3 * 24 * 60 * 60 * 1000;
 
   if (isComingSoon) {
     return (
@@ -67,6 +68,9 @@ export default function ExamCard({ exam, partCount = 0 }: { exam: Exam; partCoun
             </Badge>
             {exam.is_free && (
               <Badge className="bg-brand/10 text-brand text-xs">ฟรี</Badge>
+            )}
+            {isNew && (
+              <Badge className="bg-red-500 text-white text-xs animate-pulse">ใหม่</Badge>
             )}
           </div>
         </CardHeader>
