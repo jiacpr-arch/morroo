@@ -15,6 +15,7 @@ import {
   Copy,
   ToggleLeft,
   ToggleRight,
+  HelpCircle,
 } from "lucide-react";
 import { COUPON_TYPE_LABELS, type CouponCode } from "@/lib/types-standard";
 
@@ -34,6 +35,8 @@ export default function AdminCouponsPage() {
   const [coupons, setCoupons] = useState<CouponCode[]>([]);
   const [showForm, setShowForm] = useState(false);
   const [saving, setSaving] = useState(false);
+
+  const [showHelp, setShowHelp] = useState(false);
 
   // Form state
   const [form, setForm] = useState({
@@ -184,21 +187,54 @@ export default function AdminCouponsPage() {
       {showForm && (
         <Card className="mb-8">
           <CardHeader>
-            <h3 className="font-bold">สร้างคูปองใหม่</h3>
+            <div className="flex items-center justify-between">
+              <h3 className="font-bold">สร้างคูปองใหม่</h3>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setShowHelp(!showHelp)}
+                className="text-muted-foreground gap-1.5"
+              >
+                <HelpCircle className="h-4 w-4" />
+                {showHelp ? "ซ่อนคำอธิบาย" : "ดูคำอธิบาย"}
+              </Button>
+            </div>
           </CardHeader>
           <CardContent className="space-y-4">
+            {showHelp && (
+              <div className="rounded-lg bg-blue-50 border border-blue-200 p-4 text-sm space-y-3">
+                <p className="font-semibold text-blue-900">คู่มือสร้างคูปอง</p>
+                <div className="space-y-2 text-blue-800">
+                  <div>
+                    <span className="font-medium">ประเภทคูปอง:</span>
+                    <ul className="list-disc list-inside mt-1 ml-2 space-y-1">
+                      <li><strong>ทดลองใช้ฟรี</strong> — ให้ผู้ใช้เป็นสมาชิก Premium ชั่วคราว ใส่จำนวน &quot;วัน&quot; ที่ต้องการให้ใช้ฟรี เช่น 7 = ใช้ฟรี 7 วัน</li>
+                      <li><strong>ฟรีสมาชิก X เดือน</strong> — ให้สมาชิกฟรีตามจำนวนเดือน เช่น 1 = ฟรี 1 เดือน</li>
+                      <li><strong>ส่วนลด %</strong> — ลดราคาตอนซื้อแพ็กเกจ เช่น 20 = ลด 20%</li>
+                      <li><strong>ส่วนลดบาท</strong> — ลดราคาตอนซื้อแพ็กเกจ เช่น 50 = ลด 50 บาท</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <span className="font-medium">สร้างทีละเยอะ (Bulk):</span>
+                    <p className="ml-2 mt-1">ใส่จำนวนโค้ดที่ต้องการ + คำนำหน้า เช่น จำนวน 100, คำนำหน้า SIMSET → ได้โค้ด SIMSET-XXXXXX จำนวน 100 โค้ด (แต่ละโค้ดใช้ได้ 1 ครั้ง)</p>
+                  </div>
+                </div>
+              </div>
+            )}
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="text-sm font-medium">โค้ด (เว้นว่างเพื่อสุ่ม)</label>
+                <label className="text-sm font-medium">โค้ดคูปอง</label>
                 <Input
-                  placeholder="BOOTH-EMS2026"
+                  placeholder="เว้นว่างเพื่อสุ่มอัตโนมัติ"
                   value={form.code}
                   onChange={(e) => setForm({ ...form, code: e.target.value })}
                   className="uppercase"
                 />
+                <p className="text-xs text-muted-foreground mt-1">โค้ดที่ผู้ใช้จะกรอก เช่น BOOTH-EMS2026</p>
               </div>
               <div>
-                <label className="text-sm font-medium">ประเภท</label>
+                <label className="text-sm font-medium">ประเภทคูปอง</label>
                 <select
                   className="w-full rounded-md border px-3 py-2 text-sm"
                   value={form.coupon_type}
@@ -206,22 +242,39 @@ export default function AdminCouponsPage() {
                     setForm({ ...form, coupon_type: e.target.value as CouponCode["coupon_type"] })
                   }
                 >
-                  <option value="free_trial">ทดลองฟรี (จำนวนข้อ)</option>
-                  <option value="discount_percent">ลดเป็น %</option>
-                  <option value="discount_fixed">ลดเป็นบาท</option>
-                  <option value="free_month">ฟรี X เดือน</option>
+                  <option value="free_trial">ทดลองใช้ฟรี (กี่วัน)</option>
+                  <option value="free_month">ฟรีสมาชิก (กี่เดือน)</option>
+                  <option value="discount_percent">ส่วนลด %</option>
+                  <option value="discount_fixed">ส่วนลดบาท</option>
                 </select>
+                <p className="text-xs text-muted-foreground mt-1">
+                  {form.coupon_type === "free_trial" && "ผู้ใช้จะได้ Premium ฟรีตามจำนวนวันที่กำหนด"}
+                  {form.coupon_type === "free_month" && "ผู้ใช้จะได้สมาชิกฟรีตามจำนวนเดือน"}
+                  {form.coupon_type === "discount_percent" && "ลดราคาเป็น % ตอนซื้อแพ็กเกจ"}
+                  {form.coupon_type === "discount_fixed" && "ลดราคาเป็นบาทตอนซื้อแพ็กเกจ"}
+                </p>
               </div>
               <div>
-                <label className="text-sm font-medium">มูลค่า</label>
+                <label className="text-sm font-medium">
+                  {form.coupon_type === "free_trial" && "จำนวนวันที่ให้ใช้ฟรี"}
+                  {form.coupon_type === "free_month" && "จำนวนเดือนที่ให้ฟรี"}
+                  {form.coupon_type === "discount_percent" && "เปอร์เซ็นต์ส่วนลด"}
+                  {form.coupon_type === "discount_fixed" && "จำนวนเงินที่ลด (บาท)"}
+                </label>
                 <Input
                   type="number"
                   value={form.value}
                   onChange={(e) => setForm({ ...form, value: parseInt(e.target.value) || 0 })}
                 />
+                <p className="text-xs text-muted-foreground mt-1">
+                  {form.coupon_type === "free_trial" && `เช่น 7 = ใช้ฟรี 7 วัน, 30 = ใช้ฟรี 30 วัน`}
+                  {form.coupon_type === "free_month" && `เช่น 1 = ฟรี 1 เดือน, 3 = ฟรี 3 เดือน`}
+                  {form.coupon_type === "discount_percent" && `เช่น 20 = ลด 20%, 50 = ลด 50%`}
+                  {form.coupon_type === "discount_fixed" && `เช่น 50 = ลด 50 บาท, 100 = ลด 100 บาท`}
+                </p>
               </div>
               <div>
-                <label className="text-sm font-medium">แพลตฟอร์ม</label>
+                <label className="text-sm font-medium">ใช้ได้กับเว็บไหน</label>
                 <select
                   className="w-full rounded-md border px-3 py-2 text-sm"
                   value={form.platform}
@@ -235,63 +288,69 @@ export default function AdminCouponsPage() {
                 </select>
               </div>
               <div>
-                <label className="text-sm font-medium">จำนวนครั้งที่ใช้ได้ (เว้นว่าง = ไม่จำกัด)</label>
+                <label className="text-sm font-medium">ใช้ได้กี่ครั้ง (รวมทุกคน)</label>
                 <Input
                   type="number"
                   placeholder="ไม่จำกัด"
                   value={form.max_uses}
                   onChange={(e) => setForm({ ...form, max_uses: e.target.value })}
                 />
+                <p className="text-xs text-muted-foreground mt-1">เว้นว่าง = ไม่จำกัดจำนวนครั้ง (แต่ละคนใช้ได้ 1 ครั้ง)</p>
               </div>
               <div>
-                <label className="text-sm font-medium">หมดอายุ (วัน)</label>
+                <label className="text-sm font-medium">คูปองหมดอายุใน (วัน)</label>
                 <Input
                   type="number"
                   placeholder="30"
                   value={form.expires_days}
                   onChange={(e) => setForm({ ...form, expires_days: e.target.value })}
                 />
+                <p className="text-xs text-muted-foreground mt-1">นับจากวันที่สร้าง เช่น 30 = ใช้ได้ภายใน 30 วัน</p>
               </div>
               <div>
-                <label className="text-sm font-medium">คำอธิบาย</label>
+                <label className="text-sm font-medium">คำอธิบาย (ไม่บังคับ)</label>
                 <Input
-                  placeholder="คูปองจากงาน EMS Forum 2026"
+                  placeholder="เช่น คูปองจากงาน EMS Forum 2026"
                   value={form.description}
                   onChange={(e) => setForm({ ...form, description: e.target.value })}
                 />
+                <p className="text-xs text-muted-foreground mt-1">โน้ตสำหรับ admin ดูเอง ผู้ใช้ไม่เห็น</p>
               </div>
               <div>
-                <label className="text-sm font-medium">Source</label>
+                <label className="text-sm font-medium">แหล่งที่มา (ไม่บังคับ)</label>
                 <Input
-                  placeholder="booth_ems2026"
+                  placeholder="เช่น booth_ems2026"
                   value={form.source}
                   onChange={(e) => setForm({ ...form, source: e.target.value })}
                 />
+                <p className="text-xs text-muted-foreground mt-1">ใช้ติดตามว่าคูปองมาจากแคมเปญไหน</p>
               </div>
             </div>
 
             <div className="border-t pt-4">
-              <h4 className="text-sm font-medium mb-2">
-                Bulk Generate (สร้างหลายโค้ดพร้อมกัน)
+              <h4 className="text-sm font-medium mb-1">
+                สร้างทีละเยอะ (Bulk)
               </h4>
+              <p className="text-xs text-muted-foreground mb-3">สำหรับแจกหน้างาน/อีเวนท์ — ระบบจะสุ่มโค้ดให้อัตโนมัติ แต่ละโค้ดใช้ได้ 1 ครั้ง</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-sm text-muted-foreground">จำนวนโค้ด (เว้นว่าง = สร้างทีละ 1)</label>
+                  <label className="text-sm text-muted-foreground">จำนวนโค้ดที่ต้องการ</label>
                   <Input
                     type="number"
-                    placeholder="100"
+                    placeholder="เว้นว่าง = สร้างทีละ 1"
                     value={form.bulk_count}
                     onChange={(e) => setForm({ ...form, bulk_count: e.target.value })}
                   />
                 </div>
                 <div>
-                  <label className="text-sm text-muted-foreground">Prefix</label>
+                  <label className="text-sm text-muted-foreground">คำนำหน้าโค้ด</label>
                   <Input
-                    placeholder="BOOTH"
+                    placeholder="เช่น SIMSET, BOOTH"
                     value={form.bulk_prefix}
                     onChange={(e) => setForm({ ...form, bulk_prefix: e.target.value })}
                     className="uppercase"
                   />
+                  <p className="text-xs text-muted-foreground mt-1">โค้ดจะเป็น: คำนำหน้า-XXXXXXXX</p>
                 </div>
               </div>
             </div>
@@ -353,7 +412,7 @@ export default function AdminCouponsPage() {
                         มูลค่า: {coupon.value}
                         {coupon.coupon_type === "discount_percent" ? "%" : ""}
                         {coupon.coupon_type === "discount_fixed" ? " บาท" : ""}
-                        {coupon.coupon_type === "free_trial" ? " ข้อ" : ""}
+                        {coupon.coupon_type === "free_trial" ? " วัน" : ""}
                         {coupon.coupon_type === "free_month" ? " เดือน" : ""}
                       </span>
                       <span>
