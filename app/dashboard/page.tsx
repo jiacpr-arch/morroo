@@ -254,24 +254,24 @@ function generateStudyPlan(weakSubjects: SubjectScore[]) {
     {
       time: "วันนี้",
       tasks: [
-        ...(top3[0] ? [{ icon: top3[0].icon, task: `MCQ ${top3[0].name_th} 10 ข้อ (Easy→Medium)`, type: "weakness" as const }] : []),
-        ...(top3[1] ? [{ icon: top3[1].icon, task: `MCQ ${top3[1].name_th} 5 ข้อ`, type: "weakness" as const }] : []),
-        { icon: "🔥", task: "Daily Challenge: Mixed 5 ข้อ", type: "challenge" as const },
+        ...(top3[0] ? [{ id: "today-1", icon: top3[0].icon, task: `MCQ ${top3[0].name_th} 10 ข้อ (Easy→Medium)`, type: "weakness" as const, href: "/nl/practice" }] : []),
+        ...(top3[1] ? [{ id: "today-2", icon: top3[1].icon, task: `MCQ ${top3[1].name_th} 5 ข้อ`, type: "weakness" as const, href: "/nl/practice" }] : []),
+        { id: "today-3", icon: "🔥", task: "Daily Challenge: Mixed 5 ข้อ", type: "challenge" as const, href: "/challenges" },
       ],
     },
     {
       time: "พรุ่งนี้",
       tasks: [
-        ...(top3[2] ? [{ icon: top3[2].icon, task: `MCQ ${top3[2].name_th} 10 ข้อ`, type: "weakness" as const }] : []),
-        { icon: "📊", task: "Mock Exam: NL2 เต็มชุด (ถ้ามีเวลา)", type: "mock" as const },
+        ...(top3[2] ? [{ id: "tmr-1", icon: top3[2].icon, task: `MCQ ${top3[2].name_th} 10 ข้อ`, type: "weakness" as const, href: "/nl/practice" }] : []),
+        { id: "tmr-2", icon: "📊", task: "Mock Exam: NL2 เต็มชุด", type: "mock" as const, href: "/nl/mock" },
       ],
     },
     {
       time: "สัปดาห์นี้",
       tasks: [
-        { icon: "🎯", task: "ทำครบทุกสาขาที่อ่อน อย่างน้อยสาขาละ 20 ข้อ", type: "goal" as const },
-        { icon: "🏆", task: "เข้าร่วม Weekly Challenge", type: "challenge" as const },
-        { icon: "📋", task: "Long Case อย่างน้อย 2 เคส", type: "goal" as const },
+        { id: "week-1", icon: "🎯", task: "ทำครบทุกสาขาที่อ่อน สาขาละ 20 ข้อ", type: "goal" as const, href: "/nl/practice" },
+        { id: "week-2", icon: "🏆", task: "เข้าร่วม Weekly Challenge", type: "challenge" as const, href: "/challenges" },
+        { id: "week-3", icon: "📋", task: "Long Case อย่างน้อย 2 เคส", type: "goal" as const, href: "/longcase" },
       ],
     },
   ];
@@ -322,6 +322,7 @@ export default function DashboardPage() {
   const [quizIndex, setQuizIndex] = useState(0);
   const [quizSelected, setQuizSelected] = useState<string | null>(null);
   const [quizScore, setQuizScore] = useState(0);
+  const [completedTasks, setCompletedTasks] = useState<Set<string>>(new Set());
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
@@ -428,6 +429,26 @@ export default function DashboardPage() {
       setMicroQuiz(false);
     }
   }, [quizIndex, quizQuestions.length]);
+
+  const toggleTask = useCallback((taskId: string) => {
+    setCompletedTasks(prev => {
+      const next = new Set(prev);
+      if (next.has(taskId)) next.delete(taskId);
+      else next.add(taskId);
+      const today = new Date().toISOString().slice(0, 10);
+      try { localStorage.setItem(`morroo-plan-${today}`, JSON.stringify([...next])); } catch {}
+      return next;
+    });
+  }, []);
+
+  // Load completed tasks from localStorage
+  useEffect(() => {
+    const today = new Date().toISOString().slice(0, 10);
+    try {
+      const saved = localStorage.getItem(`morroo-plan-${today}`);
+      if (saved) setCompletedTasks(new Set(JSON.parse(saved)));
+    } catch {}
+  }, []);
 
   useEffect(() => {
     const supabase = createClient();
@@ -747,9 +768,26 @@ export default function DashboardPage() {
                 <Brain className="size-4 text-primary" />
                 แผนติว AI (สร้างจากจุดอ่อนของคุณ)
               </CardTitle>
-              <CardDescription>AI วางแผนให้อัตโนมัติ &mdash; กดทำได้เลย</CardDescription>
+              <CardDescription>
+                {(() => {
+                  const allTasks = studyPlan.flatMap(sp => sp.tasks);
+                  const done = allTasks.filter(t => completedTasks.has(t.id)).length;
+                  return `ทำแล้ว ${done}/${allTasks.length} รายการ`;
+                })()}
+              </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
+              {/* Progress bar */}
+              {(() => {
+                const allTasks = studyPlan.flatMap(sp => sp.tasks);
+                const done = allTasks.filter(t => completedTasks.has(t.id)).length;
+                const pct = allTasks.length > 0 ? Math.round((done / allTasks.length) * 100) : 0;
+                return (
+                  <div className="h-2 bg-muted rounded-full overflow-hidden">
+                    <div className="h-full bg-green-500 rounded-full transition-all duration-500" style={{ width: `${pct}%` }} />
+                  </div>
+                );
+              })()}
               {studyPlan.map((sp, si) => (
                 <div key={si}>
                   <div className={`text-xs font-bold mb-2 flex items-center gap-1.5 ${
@@ -759,26 +797,39 @@ export default function DashboardPage() {
                     {sp.time}
                   </div>
                   <div className="space-y-1.5">
-                    {sp.tasks.map((t, ti) => (
-                      <div key={ti} className="flex items-center gap-2 p-2 bg-muted rounded-lg text-sm">
-                        <span>{t.icon}</span>
-                        <span className="flex-1 text-muted-foreground">{t.task}</span>
-                        <Badge
-                          variant="secondary"
-                          className={`text-[10px] ${
-                            t.type === "weakness"
-                              ? "bg-red-100 text-red-700"
-                              : t.type === "challenge"
-                              ? "bg-purple-100 text-purple-700"
-                              : t.type === "mock"
-                              ? "bg-yellow-100 text-yellow-700"
-                              : "bg-green-100 text-green-700"
-                          }`}
-                        >
-                          {t.type === "weakness" ? "จุดอ่อน" : t.type === "challenge" ? "ท้าทาย" : t.type === "mock" ? "Mock" : "เป้าหมาย"}
-                        </Badge>
-                      </div>
-                    ))}
+                    {sp.tasks.map((t) => {
+                      const isDone = completedTasks.has(t.id);
+                      return (
+                        <div key={t.id} className={`flex items-center gap-2 p-2 rounded-lg text-sm transition-colors ${isDone ? "bg-green-50 opacity-70" : "bg-muted"}`}>
+                          <button
+                            onClick={() => toggleTask(t.id)}
+                            className={`flex-shrink-0 size-5 rounded border-2 flex items-center justify-center transition-colors cursor-pointer ${
+                              isDone ? "bg-green-500 border-green-500 text-white" : "border-muted-foreground/30 hover:border-primary"
+                            }`}
+                          >
+                            {isDone && <span className="text-xs">&#10003;</span>}
+                          </button>
+                          <span>{t.icon}</span>
+                          <Link href={t.href} className={`flex-1 hover:text-primary transition-colors ${isDone ? "line-through text-muted-foreground" : "text-muted-foreground"}`}>
+                            {t.task}
+                          </Link>
+                          <Badge
+                            variant="secondary"
+                            className={`text-[10px] ${
+                              t.type === "weakness"
+                                ? "bg-red-100 text-red-700"
+                                : t.type === "challenge"
+                                ? "bg-purple-100 text-purple-700"
+                                : t.type === "mock"
+                                ? "bg-yellow-100 text-yellow-700"
+                                : "bg-green-100 text-green-700"
+                            }`}
+                          >
+                            {t.type === "weakness" ? "จุดอ่อน" : t.type === "challenge" ? "ท้าทาย" : t.type === "mock" ? "Mock" : "เป้าหมาย"}
+                          </Badge>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               ))}
