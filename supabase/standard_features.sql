@@ -1,6 +1,6 @@
 -- ============================================
 -- Standard Features: Difficulty + Competition + Coupon
--- Migration for both morroo.com and pharma.morroo.com
+-- Migration for both morroo.com and pharmru.com
 -- ============================================
 
 -- ============================================

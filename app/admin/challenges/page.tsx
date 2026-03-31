@@ -34,7 +34,7 @@ export default function AdminChallengesPage() {
       if (!user) { router.push("/login"); return; }
 
       const { data: profile } = await supabase
-        .from("profiles").select("role").eq("id", user.id).single();
+        .from("users").select("role").eq("id", user.id).single();
       if (profile?.role !== "admin") { setLoading(false); return; }
       setIsAdmin(true);
 

@@ -60,7 +60,7 @@ export default function AdminCouponsPage() {
       if (!user) { router.push("/login"); return; }
 
       const { data: profile } = await supabase
-        .from("profiles").select("role").eq("id", user.id).single();
+        .from("users").select("role").eq("id", user.id).single();
       if (profile?.role !== "admin") { setLoading(false); return; }
       setIsAdmin(true);
 
@@ -284,7 +284,7 @@ export default function AdminCouponsPage() {
                 >
                   <option value="all">ทั้งสองเว็บ</option>
                   <option value="medical">morroo.com (แพทย์)</option>
-                  <option value="pharmacy">pharma.morroo.com (เภสัช)</option>
+                  <option value="pharmacy">pharmru.com (เภสัช)</option>
                 </select>
               </div>
               <div>

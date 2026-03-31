@@ -71,7 +71,7 @@ export default function AdminUsersPage() {
   const loadUsers = useCallback(async () => {
     const supabase = createClient();
     const { data } = await supabase
-      .from("profiles")
+      .from("users")
       .select("id, email, name, role, membership_type, membership_expires_at, created_at")
       .order("created_at", { ascending: false });
 
@@ -105,7 +105,7 @@ export default function AdminUsersPage() {
       }
 
       const { data: profile } = await supabase
-        .from("profiles")
+        .from("users")
         .select("role")
         .eq("id", user.id)
         .single();
@@ -141,7 +141,7 @@ export default function AdminUsersPage() {
     const supabase = createClient();
 
     await supabase
-      .from("profiles")
+      .from("users")
       .update({
         membership_type: edit.membership_type,
         membership_expires_at: edit.membership_expires_at

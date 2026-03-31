@@ -59,7 +59,7 @@ export default function AdminPaymentsPage() {
 
       // Check admin
       const { data: profile } = await supabase
-        .from("profiles")
+        .from("users")
         .select("role")
         .eq("id", user.id)
         .single();
@@ -82,7 +82,7 @@ export default function AdminPaymentsPage() {
         // Fetch profiles for all user_ids
         const userIds = [...new Set(ordersData.map((o: PaymentOrder) => o.user_id))];
         const { data: profilesData } = await supabase
-          .from("profiles")
+          .from("users")
           .select("id, email, name")
           .in("id", userIds);
 
@@ -137,7 +137,7 @@ export default function AdminPaymentsPage() {
       }
 
       await supabase
-        .from("profiles")
+        .from("users")
         .update({
           membership_type: planType,
           membership_expires_at: expiresAt.toISOString(),

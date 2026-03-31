@@ -87,7 +87,7 @@ export default function AnswerClient({
       } = await supabase.auth.getUser();
       if (user) {
         const { data } = await supabase
-          .from("profiles")
+          .from("users")
           .select("*")
           .eq("id", user.id)
           .single();

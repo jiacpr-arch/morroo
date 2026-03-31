@@ -47,13 +47,13 @@ export default function RegisterPage() {
     if (data.user) {
       // Create profile only if not exists (don't overwrite admin/membership)
       const { data: existing } = await supabase
-        .from("profiles")
+        .from("users")
         .select("id")
         .eq("id", data.user.id)
         .single();
 
       if (!existing) {
-        await supabase.from("profiles").insert({
+        await supabase.from("users").insert({
           id: data.user.id,
           email,
           name,

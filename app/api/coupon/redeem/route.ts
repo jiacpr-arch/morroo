@@ -4,7 +4,7 @@ import { createAdminClient } from "@/lib/supabase/admin";
 
 export const runtime = "nodejs";
 
-const PLATFORM = "medical"; // Change to "pharmacy" for pharma.morroo.com
+const PLATFORM = "medical"; // Change to "pharmacy" for pharmru.com
 
 export async function POST(request: NextRequest) {
   try {

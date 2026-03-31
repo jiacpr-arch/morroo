@@ -42,7 +42,7 @@ export default function AdminDashboard() {
       }
 
       const { data: profile } = await supabase
-        .from("profiles")
+        .from("users")
         .select("role")
         .eq("id", user.id)
         .single();
@@ -57,7 +57,7 @@ export default function AdminDashboard() {
       // Fetch stats
       const [examsRes, usersRes, paymentsRes, longcasesRes] = await Promise.all([
         supabase.from("exams").select("id", { count: "exact", head: true }),
-        supabase.from("profiles").select("id", { count: "exact", head: true }),
+        supabase.from("users").select("id", { count: "exact", head: true }),
         supabase
           .from("payment_orders")
           .select("id", { count: "exact", head: true })

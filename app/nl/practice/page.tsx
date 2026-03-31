@@ -31,7 +31,7 @@ async function PracticeContent({ subjectId }: { subjectId?: string }) {
 
   if (user) {
     const { data: profile } = await supabase
-      .from("profiles")
+      .from("users")
       .select("membership_type, membership_expires_at")
       .eq("id", user.id)
       .single();
