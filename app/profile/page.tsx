@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
-import { User, Mail, Crown, Calendar, LogOut, Award, Ticket } from "lucide-react";
+import { User, Mail, Crown, Calendar, LogOut, Award, Ticket, LayoutDashboard } from "lucide-react";
 import type { Profile } from "@/lib/types";
 import { BADGE_ICONS, type UserBadge } from "@/lib/types-standard";
 
@@ -106,6 +106,20 @@ export default function ProfilePage() {
             </div>
           </CardHeader>
         </Card>
+
+        {/* Dashboard Link */}
+        <Link href="/dashboard">
+          <Card className="cursor-pointer border-primary/20 bg-primary/5 hover:bg-primary/10 transition-colors">
+            <CardContent className="flex items-center gap-3 py-4">
+              <LayoutDashboard className="h-5 w-5 text-brand" />
+              <div className="flex-1">
+                <div className="font-semibold text-sm">Dashboard</div>
+                <div className="text-xs text-muted-foreground">ดูสถิติ คะแนน แผนติว และ Badge ของคุณ</div>
+              </div>
+              <span className="text-muted-foreground text-sm">&rarr;</span>
+            </CardContent>
+          </Card>
+        </Link>
 
         {/* Membership */}
         <Card>
