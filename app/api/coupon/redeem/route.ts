@@ -23,11 +23,11 @@ export async function POST(request: NextRequest) {
 
     const upperCode = code.toUpperCase().trim();
 
-    // Fetch coupon
+    // Fetch coupon (case-insensitive to handle legacy lowercase codes)
     const { data: coupon, error: couponError } = await supabase
       .from("coupon_codes")
       .select("*")
-      .eq("code", upperCode)
+      .ilike("code", upperCode)
       .single();
 
     if (couponError || !coupon) {

@@ -20,7 +20,7 @@ import { COUPON_TYPE_LABELS, type CouponCode } from "@/lib/types-standard";
 
 function generateCode(prefix: string, length = 6): string {
   const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-  let result = prefix ? prefix + "-" : "";
+  let result = prefix ? prefix.toUpperCase() + "-" : "";
   for (let i = 0; i < length; i++) {
     result += chars.charAt(Math.floor(Math.random() * chars.length));
   }

@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
     const { data: coupon, error } = await supabase
       .from("coupon_codes")
       .select("*")
-      .eq("code", code.toUpperCase().trim())
+      .ilike("code", code.toUpperCase().trim())
       .single();
 
     if (error || !coupon) {
