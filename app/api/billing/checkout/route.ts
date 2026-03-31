@@ -32,22 +32,30 @@ export async function POST(request: NextRequest) {
     // Apply coupon discount if provided
     if (couponCode) {
       const admin = createAdminClient();
-      const { data: redemption } = await admin
-        .from("coupon_redemptions")
-        .select("coupon_id, coupon_codes(*)")
-        .eq("user_id", user.id)
-        .ilike("coupon_codes.code", couponCode.toUpperCase().trim())
+      const { data: coupon } = await admin
+        .from("coupon_codes")
+        .select("id, coupon_type, value, is_active")
+        .ilike("code", couponCode.toUpperCase().trim())
         .single();
 
-      const coupon = redemption?.coupon_codes as Record<string, unknown> | null;
       if (coupon && coupon.is_active) {
-        if (coupon.coupon_type === "discount_percent") {
-          const discount = Math.round(finalAmount * (coupon.value as number) / 100);
-          finalAmount = Math.max(0, finalAmount - discount);
-          discountLabel = ` (ลด ${coupon.value}%)`;
-        } else if (coupon.coupon_type === "discount_fixed") {
-          finalAmount = Math.max(0, finalAmount - (coupon.value as number));
-          discountLabel = ` (ลด ${coupon.value} บาท)`;
+        // Verify user has redeemed this coupon
+        const { data: hasRedeemed } = await admin
+          .from("coupon_redemptions")
+          .select("id")
+          .eq("user_id", user.id)
+          .eq("coupon_id", coupon.id)
+          .single();
+
+        if (hasRedeemed) {
+          if (coupon.coupon_type === "discount_percent") {
+            const discount = Math.round(finalAmount * coupon.value / 100);
+            finalAmount = Math.max(0, finalAmount - discount);
+            discountLabel = ` (ลด ${coupon.value}%)`;
+          } else if (coupon.coupon_type === "discount_fixed") {
+            finalAmount = Math.max(0, finalAmount - coupon.value);
+            discountLabel = ` (ลด ${coupon.value} บาท)`;
+          }
         }
       }
     }
