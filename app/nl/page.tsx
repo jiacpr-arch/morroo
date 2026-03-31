@@ -2,8 +2,9 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { ArrowRight, BookOpen, Shuffle, Target } from "lucide-react";
+import { ArrowRight, BookOpen, Shuffle, Target, Clock } from "lucide-react";
 import { getMcqSubjects, getMcqSubjectCounts, getMcqNewSubjects, getMcqUpcomingCount } from "@/lib/supabase/queries-mcq";
+import McqCountdown from "@/components/McqCountdown";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -39,6 +40,24 @@ export default async function NLPage() {
           ฝึกทำข้อสอบปรนัย MCQ ครบทุกสาขา
         </p>
       </div>
+
+      {/* Upcoming Questions Countdown */}
+      {upcomingCount > 0 && (
+        <div className="mb-8 p-5 rounded-2xl bg-purple-50 border border-purple-100">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
+                <Clock className="h-5 w-5 text-purple-600" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-purple-900">ข้อสอบใหม่กำลังจะมา!</h3>
+                <p className="text-sm text-purple-600">+{upcomingCount} ข้อ จะเปิดให้ทำได้ใน</p>
+              </div>
+            </div>
+            <McqCountdown />
+          </div>
+        </div>
+      )}
 
       {/* Mode Selection */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">

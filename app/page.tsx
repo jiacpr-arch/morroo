@@ -15,12 +15,21 @@ import {
   Users,
   Shield,
   Stethoscope,
+  FileQuestion,
 } from "lucide-react";
+import { getMcqUpcomingCount, getMcqNewSubjects, getMcqSubjectCounts } from "@/lib/supabase/queries-mcq";
 
 export const revalidate = 60; // revalidate every 60 seconds
 
 export default async function HomePage() {
-  const [allExams, partCounts] = await Promise.all([getExams(), getExamPartCounts()]);
+  const [allExams, partCounts, mcqUpcoming, mcqNewSubjects, mcqCounts] = await Promise.all([
+    getExams(),
+    getExamPartCounts(),
+    getMcqUpcomingCount(),
+    getMcqNewSubjects(),
+    getMcqSubjectCounts(),
+  ]);
+  const mcqNewCount = [...mcqNewSubjects].filter(id => (mcqCounts[id] || 0) > 0).length;
   const exams = sortExamsAvailableFirst(allExams, partCounts);
   const latestExams = exams.slice(0, 6);
   const dayIndex = Math.floor(Date.now() / (1000 * 60 * 60 * 24));
@@ -34,7 +43,7 @@ export default async function HomePage() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <Badge className="mb-6 bg-white/10 text-white border-white/20 hover:bg-white/20">
-              <Sparkles className="h-3 w-3 mr-1" /> แพลตฟอร์มข้อสอบ MEQ + NL + Long Case ออนไลน์
+              <Sparkles className="h-3 w-3 mr-1" /> แพลตฟอร์มข้อสอบ MEQ + MCQ + Long Case ออนไลน์
             </Badge>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
               เตรียมสอบแพทย์
@@ -112,6 +121,41 @@ export default async function HomePage() {
                   </Button>
                 </Link>
               </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* MCQ Update */}
+      {(mcqUpcoming > 0 || mcqNewCount > 0) && (
+        <section className="py-8 bg-blue-50 border-b">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-5 rounded-2xl bg-white border border-blue-100">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                  <FileQuestion className="h-5 w-5 text-blue-600" />
+                </div>
+                <div>
+                  <h3 className="font-semibold">ข้อสอบ MCQ</h3>
+                  <div className="flex items-center gap-2 mt-0.5">
+                    {mcqNewCount > 0 && (
+                      <Badge className="bg-red-500 text-white text-xs animate-pulse">
+                        {mcqNewCount} สาขามีข้อใหม่
+                      </Badge>
+                    )}
+                    {mcqUpcoming > 0 && (
+                      <Badge className="bg-purple-100 text-purple-700 text-xs">
+                        +{mcqUpcoming} ข้อเพิ่มพรุ่งนี้
+                      </Badge>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <Link href="/nl">
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white gap-2">
+                  ดูข้อสอบ MCQ <ArrowRight className="h-4 w-4" />
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
@@ -303,7 +347,7 @@ export default async function HomePage() {
             พร้อมเริ่มเตรียมสอบแล้วหรือยัง?
           </h2>
           <p className="mt-4 text-white/70 text-lg">
-            สมัครสมาชิกวันนี้ เข้าถึงข้อสอบ MEQ + NL + Long Case กับ AI พร้อมเฉลยละเอียดจากผู้เชี่ยวชาญ
+            สมัครสมาชิกวันนี้ เข้าถึงข้อสอบ MEQ + MCQ + Long Case กับ AI พร้อมเฉลยละเอียดจากผู้เชี่ยวชาญ
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/register">
