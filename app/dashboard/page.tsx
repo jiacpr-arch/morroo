@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -314,6 +315,13 @@ function StatBox({ icon: Icon, label, value, color }: { icon: React.ElementType;
 export default function DashboardPage() {
   const [tab, setTab] = useState("overview");
   const [microQuiz, setMicroQuiz] = useState(false);
+  const [quizQuestions, setQuizQuestions] = useState<Array<{
+    id: string; scenario: string; choices: Array<{ label: string; text: string }>;
+    correct_answer: string; subject_name_th: string; subject_icon: string;
+  }>>([]);
+  const [quizIndex, setQuizIndex] = useState(0);
+  const [quizSelected, setQuizSelected] = useState<string | null>(null);
+  const [quizScore, setQuizScore] = useState(0);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
@@ -364,6 +372,62 @@ export default function DashboardPage() {
       }
     }
   }, [student, handleDownload]);
+
+  const startQuiz = useCallback(async () => {
+    const supabase = createClient();
+    const { data } = await supabase
+      .from("mcq_questions")
+      .select("id, scenario, choices, correct_answer, mcq_subjects!inner(name_th, icon)")
+      .eq("status", "active")
+      .limit(50);
+
+    if (!data || data.length === 0) return;
+
+    // Shuffle and pick 5
+    const shuffled = [...data].sort(() => Math.random() - 0.5).slice(0, 5);
+    setQuizQuestions(shuffled.map((q: Record<string, unknown>) => ({
+      id: q.id as string,
+      scenario: q.scenario as string,
+      choices: q.choices as Array<{ label: string; text: string }>,
+      correct_answer: q.correct_answer as string,
+      subject_name_th: (q.mcq_subjects as { name_th: string }).name_th,
+      subject_icon: (q.mcq_subjects as { icon: string }).icon,
+    })));
+    setQuizIndex(0);
+    setQuizSelected(null);
+    setQuizScore(0);
+    setMicroQuiz(true);
+  }, []);
+
+  const handleQuizAnswer = useCallback(async (label: string) => {
+    if (quizSelected) return; // already answered
+    setQuizSelected(label);
+    const q = quizQuestions[quizIndex];
+    const correct = label === q.correct_answer;
+    if (correct) setQuizScore(prev => prev + 1);
+
+    // Save attempt to Supabase
+    const supabase = createClient();
+    const { data: authData } = await supabase.auth.getUser();
+    if (authData.user) {
+      await supabase.from("mcq_attempts").insert({
+        user_id: authData.user.id,
+        question_id: q.id,
+        selected_answer: label,
+        is_correct: correct,
+        mode: "practice",
+      });
+    }
+  }, [quizSelected, quizQuestions, quizIndex]);
+
+  const handleQuizNext = useCallback(() => {
+    if (quizIndex < quizQuestions.length - 1) {
+      setQuizIndex(prev => prev + 1);
+      setQuizSelected(null);
+    } else {
+      setMicroQuiz(false);
+    }
+  }, [quizIndex, quizQuestions.length]);
 
   useEffect(() => {
     const supabase = createClient();
@@ -455,7 +519,7 @@ export default function DashboardPage() {
         <Card
           size="sm"
           className="mb-4 cursor-pointer border-primary/20 bg-primary/5 hover:bg-primary/10 transition-colors"
-          onClick={() => setMicroQuiz(true)}
+          onClick={startQuiz}
         >
           <CardContent className="flex items-center justify-between">
             <div>
@@ -463,7 +527,7 @@ export default function DashboardPage() {
                 <Stethoscope className="size-4 text-primary" />
                 Quick Quiz 5 นาที
               </div>
-              <div className="text-xs text-muted-foreground">5 ข้อ MCQ จากสาขาที่อ่อน &middot; ได้ XP + Streak</div>
+              <div className="text-xs text-muted-foreground">5 ข้อ MCQ สุ่มจากข้อสอบจริง &middot; บันทึกผลอัตโนมัติ</div>
             </div>
             <Button size="sm">
               เริ่มเลย <ChevronRight className="size-3.5" />
@@ -471,47 +535,54 @@ export default function DashboardPage() {
           </CardContent>
         </Card>
       )}
-      {microQuiz && (
+      {microQuiz && quizQuestions.length > 0 && (() => {
+        const q = quizQuestions[quizIndex];
+        return (
         <Card size="sm" className="mb-4 border-primary/20">
           <CardContent>
             <div className="flex justify-between mb-3">
               <span className="font-bold text-sm">
                 <Stethoscope className="inline size-4 mr-1" />
-                Quick Quiz &mdash; อายุรฯ ไต: Acid-Base
+                Quick Quiz &mdash; {q.subject_icon} {q.subject_name_th}
               </span>
-              <span className="text-primary font-bold text-sm flex items-center gap-1">
-                <Clock className="size-3.5" /> 4:32
+              <span className="text-xs text-muted-foreground font-semibold">
+                {quizIndex + 1}/{quizQuestions.length} &middot; ถูก {quizScore}
               </span>
             </div>
             <div className="bg-muted rounded-lg p-3 mb-3 text-sm">
-              <div className="text-xs text-muted-foreground mb-1">ข้อ 1/5 (Easy)</div>
-              ผู้ป่วยมี pH 7.28, HCO3- 14, pCO2 30 สภาวะนี้คือ?
+              <div className="text-xs text-muted-foreground mb-1">ข้อ {quizIndex + 1}/{quizQuestions.length}</div>
+              {q.scenario}
             </div>
-            {[
-              "Metabolic acidosis with respiratory compensation",
-              "Respiratory acidosis",
-              "Metabolic alkalosis",
-              "Mixed acid-base disorder",
-            ].map((c, i) => (
-              <div
-                key={i}
-                className={`p-2.5 rounded-lg mb-1.5 text-sm cursor-pointer border transition-colors ${
-                  i === 0
-                    ? "bg-primary/5 border-primary/30"
-                    : "bg-muted border-transparent hover:border-border"
-                }`}
-              >
-                {["A", "B", "C", "D"][i]}. {c}
-              </div>
-            ))}
+            {q.choices.map((c) => {
+              const isSelected = quizSelected === c.label;
+              const isCorrect = c.label === q.correct_answer;
+              let cls = "bg-muted border-transparent hover:border-border";
+              if (quizSelected) {
+                if (isCorrect) cls = "bg-green-50 border-green-400 text-green-800";
+                else if (isSelected && !isCorrect) cls = "bg-red-50 border-red-400 text-red-800";
+                else cls = "bg-muted border-transparent opacity-60";
+              }
+              return (
+                <div
+                  key={c.label}
+                  onClick={() => handleQuizAnswer(c.label)}
+                  className={`p-2.5 rounded-lg mb-1.5 text-sm cursor-pointer border transition-colors ${cls}`}
+                >
+                  {c.label}. {c.text}
+                </div>
+              );
+            })}
             <div className="text-right mt-2">
-              <Button size="sm" onClick={() => setMicroQuiz(false)}>
-                ข้อถัดไป <ChevronRight className="size-3.5" />
-              </Button>
+              {quizSelected && (
+                <Button size="sm" onClick={handleQuizNext}>
+                  {quizIndex < quizQuestions.length - 1 ? "ข้อถัดไป" : `เสร็จ (${quizScore}/${quizQuestions.length})`} <ChevronRight className="size-3.5" />
+                </Button>
+              )}
             </div>
           </CardContent>
         </Card>
-      )}
+        );
+      })()}
 
       {/* Tabs */}
       <div className="flex gap-2 mb-5 overflow-x-auto pb-1">
@@ -659,9 +730,11 @@ export default function DashboardPage() {
                     <div className="font-semibold text-sm">{w.icon} {w.name_th}</div>
                     <div className="text-xs text-muted-foreground truncate">ทำแล้ว {w.total} ข้อ &middot; แนะนำทำเพิ่มอีก 10 ข้อ</div>
                   </div>
-                  <Button size="xs" variant="ghost" className="text-primary shrink-0">
-                    ฝึกเลย <ChevronRight className="size-3" />
-                  </Button>
+                  <Link href="/nl/practice">
+                    <Button size="xs" variant="ghost" className="text-primary shrink-0">
+                      ฝึกเลย <ChevronRight className="size-3" />
+                    </Button>
+                  </Link>
                 </div>
               ))}
             </CardContent>
@@ -742,14 +815,18 @@ export default function DashboardPage() {
                 แข่งกับเพื่อนร่วมรุ่น ใครคะแนนสูงและเร็วกว่าชนะ!
               </div>
               <div className="flex gap-3 justify-center flex-wrap">
-                <Button>
-                  <Zap className="size-4" />
-                  Weekly Challenge
-                </Button>
-                <Button variant="outline">
-                  <CalendarDays className="size-4" />
-                  Monthly Challenge
-                </Button>
+                <Link href="/challenges">
+                  <Button>
+                    <Zap className="size-4" />
+                    Weekly Challenge
+                  </Button>
+                </Link>
+                <Link href="/challenges">
+                  <Button variant="outline">
+                    <CalendarDays className="size-4" />
+                    Monthly Challenge
+                  </Button>
+                </Link>
               </div>
             </CardContent>
           </Card>
