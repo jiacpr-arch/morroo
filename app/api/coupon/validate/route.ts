@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 
 export const runtime = "nodejs";
 
@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ valid: false, reason: "no_code" }, { status: 400 });
     }
 
-    const supabase = await createClient();
+    const supabase = createAdminClient();
     const { data: coupon, error } = await supabase
       .from("coupon_codes")
       .select("*")

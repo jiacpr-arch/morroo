@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 
 export const runtime = "nodejs";
 
@@ -23,8 +24,11 @@ export async function POST(request: NextRequest) {
 
     const upperCode = code.toUpperCase().trim();
 
+    // Use admin client for DB operations (bypasses RLS)
+    const admin = createAdminClient();
+
     // Fetch coupon (case-insensitive to handle legacy lowercase codes)
-    const { data: coupon, error: couponError } = await supabase
+    const { data: coupon, error: couponError } = await admin
       .from("coupon_codes")
       .select("*")
       .ilike("code", upperCode)
@@ -58,7 +62,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Check if user already used this coupon
-    const { data: existing } = await supabase
+    const { data: existing } = await admin
       .from("coupon_redemptions")
       .select("id")
       .eq("coupon_id", coupon.id)
@@ -70,7 +74,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Redeem: insert redemption + increment current_uses
-    const { error: redeemError } = await supabase
+    const { error: redeemError } = await admin
       .from("coupon_redemptions")
       .insert({
         coupon_id: coupon.id,
@@ -83,26 +87,91 @@ export async function POST(request: NextRequest) {
     }
 
     // Increment current_uses
-    await supabase
+    await admin
       .from("coupon_codes")
       .update({ current_uses: coupon.current_uses + 1 })
       .eq("id", coupon.id);
 
-    // Generate benefit description
+    // Apply benefit based on coupon type
     let benefit = "";
+
     switch (coupon.coupon_type) {
-      case "free_trial":
-        benefit = `ปลดล็อก ${coupon.value} ข้อฟรี`;
+      case "free_month": {
+        // Grant membership for X months
+        const { data: profile } = await admin
+          .from("profiles")
+          .select("membership_type, membership_expires_at")
+          .eq("id", user.id)
+          .single();
+
+        const currentExpiry = profile?.membership_expires_at
+          ? new Date(profile.membership_expires_at)
+          : null;
+        const isCurrentlyActive = currentExpiry && currentExpiry > now;
+
+        // If already active, extend from current expiry; otherwise from now
+        const baseDate = isCurrentlyActive ? currentExpiry : now;
+        const newExpiry = new Date(baseDate);
+        newExpiry.setMonth(newExpiry.getMonth() + coupon.value);
+
+        await admin
+          .from("profiles")
+          .update({
+            membership_type: profile?.membership_type === "yearly" || profile?.membership_type === "bundle"
+              ? profile.membership_type  // Don't downgrade yearly/bundle to monthly
+              : "monthly",
+            membership_expires_at: newExpiry.toISOString(),
+          })
+          .eq("id", user.id);
+
+        benefit = `ฟรีสมาชิก ${coupon.value} เดือน (ถึง ${newExpiry.toLocaleDateString("th-TH")})`;
         break;
-      case "discount_percent":
-        benefit = `ส่วนลด ${coupon.value}%`;
+      }
+
+      case "free_trial": {
+        // Grant trial access: value = number of days of premium access
+        const { data: profile } = await admin
+          .from("profiles")
+          .select("membership_type, membership_expires_at")
+          .eq("id", user.id)
+          .single();
+
+        const currentExpiry = profile?.membership_expires_at
+          ? new Date(profile.membership_expires_at)
+          : null;
+        const isCurrentlyActive = currentExpiry && currentExpiry > now;
+
+        // If already active, extend; otherwise grant from now
+        const baseDate = isCurrentlyActive ? currentExpiry : now;
+        const newExpiry = new Date(baseDate);
+        newExpiry.setDate(newExpiry.getDate() + coupon.value);
+
+        // Only upgrade if user is free (don't downgrade paid users)
+        const membershipType = profile?.membership_type === "yearly" || profile?.membership_type === "bundle"
+          ? profile.membership_type
+          : "monthly";
+
+        await admin
+          .from("profiles")
+          .update({
+            membership_type: membershipType,
+            membership_expires_at: newExpiry.toISOString(),
+          })
+          .eq("id", user.id);
+
+        benefit = `ทดลองใช้ฟรี ${coupon.value} วัน (ถึง ${newExpiry.toLocaleDateString("th-TH")})`;
         break;
-      case "discount_fixed":
-        benefit = `ส่วนลด ${coupon.value} บาท`;
+      }
+
+      case "discount_percent": {
+        benefit = `ส่วนลด ${coupon.value}% (ใช้ได้ตอนซื้อแพ็กเกจ)`;
         break;
-      case "free_month":
-        benefit = `ฟรีสมาชิก ${coupon.value} เดือน`;
+      }
+
+      case "discount_fixed": {
+        benefit = `ส่วนลด ${coupon.value} บาท (ใช้ได้ตอนซื้อแพ็กเกจ)`;
         break;
+      }
     }
 
     return NextResponse.json({
