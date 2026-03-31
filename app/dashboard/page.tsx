@@ -16,99 +16,264 @@ import {
 } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 
-// ===== Mock Data (โครงสร้างตรงกับ DB schema จริง) =====
-// TODO: Replace with real Supabase queries
+// ===== Types =====
 
-const student = {
-  name: "นพ.สมชาย",
-  rank: "Resident",
-  rankIcon: "🩺",
-  xp: 1250,
-  xpNext: 2000,
-  streak: 12,
-  totalQuestions: 847,
-  avgScore: 72,
-  membershipType: "monthly" as const,
+interface StudentData {
+  name: string;
+  rank: string;
+  rankIcon: string;
+  xp: number;
+  xpNext: number;
+  streak: number;
+  totalQuestions: number;
+  avgScore: number;
+  membershipType: string;
+}
+
+interface SubjectScore {
+  name: string;
+  name_th: string;
+  icon: string;
+  score: number;
+  total: number;
+  trend: string;
+  color: string;
+}
+
+interface WeeklyPoint {
+  day: string;
+  score: number;
+  questions: number;
+}
+
+interface BadgeData {
+  name: string;
+  icon: string;
+  earned: boolean;
+  date?: string;
+  progress?: string;
+}
+
+interface ChallengeData {
+  title: string;
+  type: "weekly" | "monthly";
+  score: number;
+  total: number;
+  correct: number;
+  rank: number;
+  time: string;
+}
+
+const CHART_COLORS = ["var(--chart-1)", "var(--chart-2)", "var(--chart-3)", "var(--chart-4)", "var(--chart-5)"];
+
+const SUBJECT_ICON_MAP: Record<string, string> = {
+  cardio_med: "❤️", chest_med: "🫁", ent: "👂", endocrine: "🦋",
+  eye: "👁️", forensic: "🔍", gi_med: "🫄", hemato_med: "🩸",
+  infectious_med: "🦠", nephro_med: "🫘", neuro_med: "🧠",
+  ob_gyn: "🤰", ortho: "🦴", ped: "👶", psychi: "🧘",
+  surgery: "🔪", epidemio: "📊", chest_ped: "🌬️", gi_ped: "👶",
+  gd_ped: "🧒", hemato_ped: "🧬", infectious_ped: "🧫",
+  uro_surgery: "💧", endocrine_ped: "⚗️",
 };
 
-const subjectScores = [
-  { name: "cardio_med", name_th: "อายุรฯ หัวใจ", icon: "❤️", score: 78, total: 50, trend: "+5", color: "var(--chart-1)" },
-  { name: "surgery", name_th: "ศัลยศาสตร์", icon: "🔪", score: 65, total: 40, trend: "+3", color: "var(--chart-2)" },
-  { name: "ped", name_th: "กุมารฯ", icon: "👶", score: 82, total: 35, trend: "+8", color: "var(--chart-3)" },
-  { name: "ob_gyn", name_th: "สูติ-นรีเวช", icon: "🤰", score: 74, total: 30, trend: "+4", color: "var(--chart-4)" },
-  { name: "psychi", name_th: "จิตเวช", icon: "🧘", score: 88, total: 25, trend: "+2", color: "var(--chart-5)" },
-  { name: "ortho", name_th: "ออร์โธปิดิกส์", icon: "🦴", score: 55, total: 20, trend: "-2", color: "var(--chart-1)" },
-  { name: "neuro_med", name_th: "ประสาทวิทยา", icon: "🧠", score: 60, total: 28, trend: "+6", color: "var(--chart-2)" },
-  { name: "infectious_med", name_th: "โรคติดเชื้อ", icon: "🦠", score: 70, total: 32, trend: "+1", color: "var(--chart-3)" },
-];
+function getRank(totalQuestions: number): { rank: string; icon: string; xp: number; xpNext: number } {
+  if (totalQuestions >= 1000) return { rank: "Specialist", icon: "👨‍⚕️", xp: totalQuestions, xpNext: 2000 };
+  if (totalQuestions >= 500) return { rank: "Resident", icon: "🩺", xp: totalQuestions, xpNext: 1000 };
+  if (totalQuestions >= 100) return { rank: "Intern", icon: "📋", xp: totalQuestions, xpNext: 500 };
+  return { rank: "Student", icon: "📖", xp: totalQuestions, xpNext: 100 };
+}
 
-const radarData = subjectScores.map((s) => ({
-  subject: s.name_th,
-  score: s.score,
-  fullMark: 100,
-}));
+// ===== Data Fetching =====
 
-const weeklyData = [
-  { day: "จ.", score: 68, questions: 25 },
-  { day: "อ.", score: 72, questions: 30 },
-  { day: "พ.", score: 65, questions: 20 },
-  { day: "พฤ.", score: 78, questions: 35 },
-  { day: "ศ.", score: 74, questions: 28 },
-  { day: "ส.", score: 82, questions: 40 },
-  { day: "อา.", score: 76, questions: 32 },
-];
+async function fetchDashboardData(supabase: ReturnType<typeof createClient>, userId: string) {
+  // Fetch profile
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("name, display_name, membership_type")
+    .eq("id", userId)
+    .single();
 
-const weakTopics = [
-  { topic: "Acid-Base Balance", subject: "อายุรฯ ไต", subjectName: "nephro_med", score: 35, priority: "high" as const, suggestion: "ทำ MCQ อีก 10 ข้อ" },
-  { topic: "EKG Interpretation", subject: "อายุรฯ หัวใจ", subjectName: "cardio_med", score: 42, priority: "high" as const, suggestion: "ทำ MEQ Case ใหม่" },
-  { topic: "Fracture Classification", subject: "ออร์โธปิดิกส์", subjectName: "ortho", score: 48, priority: "medium" as const, suggestion: "ทบทวน MCQ 5 ข้อ" },
-  { topic: "Neonatal Jaundice", subject: "กุมารฯ", subjectName: "ped", score: 52, priority: "medium" as const, suggestion: "ทำ Long Case ใหม่" },
-  { topic: "Drug Interaction", subject: "เภสัชวิทยา", subjectName: "pharmacology", score: 55, priority: "medium" as const, suggestion: "ทบทวนสูตร + MCQ 5 ข้อ" },
-];
+  // Fetch all MCQ attempts for this user with subject info
+  const { data: attempts } = await supabase
+    .from("mcq_attempts")
+    .select("is_correct, created_at, question_id, mcq_questions!inner(subject_id)")
+    .eq("user_id", userId);
 
-const studyPlan = [
-  {
-    time: "วันนี้",
-    tasks: [
-      { icon: "🫘", task: "MCQ อายุรฯ ไต: Acid-Base Balance 10 ข้อ (Easy→Medium)", type: "weakness" as const },
-      { icon: "❤️", task: "MEQ Case: EKG Interpretation 1 เคส", type: "weakness" as const },
-      { icon: "🔥", task: "Daily Challenge: Mixed 5 ข้อ", type: "challenge" as const },
-    ],
-  },
-  {
-    time: "พรุ่งนี้",
-    tasks: [
-      { icon: "🦴", task: "MCQ ออร์โธฯ: Fracture Classification 10 ข้อ", type: "weakness" as const },
-      { icon: "👶", task: "Long Case: Neonatal Jaundice", type: "weakness" as const },
-      { icon: "📊", task: "Mock Exam: NL2 เต็มชุด (ถ้ามีเวลา)", type: "mock" as const },
-    ],
-  },
-  {
-    time: "สัปดาห์นี้",
-    tasks: [
-      { icon: "🎯", task: "ทำครบทุกสาขาที่อ่อน อย่างน้อยสาขาละ 20 ข้อ", type: "goal" as const },
-      { icon: "🏆", task: "เข้าร่วม Weekly Challenge", type: "challenge" as const },
-      { icon: "📋", task: "Long Case อย่างน้อย 2 เคส", type: "goal" as const },
-    ],
-  },
-];
+  // Fetch subjects
+  const { data: subjects } = await supabase
+    .from("mcq_subjects")
+    .select("id, name, name_th, icon");
 
-const badges = [
-  { name: "Streak 7 วัน", icon: "🔥", earned: true, date: "15 มี.ค." },
-  { name: "ทำครบ 100 ข้อ", icon: "💯", earned: true, date: "22 มี.ค." },
-  { name: "Top 3 Weekly", icon: "🏆", earned: true, date: "28 มี.ค." },
-  { name: "Speed Demon", icon: "⚡", earned: true, date: "1 เม.ย." },
-  { name: "Streak 30 วัน", icon: "👑", earned: false, progress: "12/30" },
-  { name: "ทำครบ 1,000 ข้อ", icon: "🎯", earned: false, progress: "847/1000" },
-  { name: "Advanced Solver", icon: "🔬", earned: false, progress: "35/50" },
-  { name: "Perfect Score", icon: "💎", earned: false, progress: "0/1" },
-];
+  // Fetch user badges
+  const { data: userBadges } = await supabase
+    .from("user_badges")
+    .select("earned_at, badges(name, name_th, icon_url, condition_type)")
+    .eq("user_id", userId);
 
-const challengeHistory = [
-  { title: "Weekly Challenge #12", type: "weekly" as const, score: 85, total: 10, correct: 8, rank: 3, time: "2 ชม.ที่แล้ว" },
-  { title: "Monthly Challenge มี.ค.", type: "monthly" as const, score: 72, total: 20, correct: 14, rank: 15, time: "3 วันที่แล้ว" },
-  { title: "Weekly Challenge #11", type: "weekly" as const, score: 90, total: 10, correct: 9, rank: 1, time: "1 สัปดาห์ที่แล้ว" },
-];
+  // Fetch challenge submissions
+  const { data: challengeSubs } = await supabase
+    .from("challenge_submissions")
+    .select("score, total_questions, correct_answers, time_taken_seconds, submitted_at, challenges(title, challenge_type)")
+    .eq("user_id", userId)
+    .order("submitted_at", { ascending: false })
+    .limit(10);
+
+  return { profile, attempts: attempts || [], subjects: subjects || [], userBadges: userBadges || [], challengeSubs: challengeSubs || [] };
+}
+
+function processData(
+  profile: { name: string; display_name: string | null; membership_type: string } | null,
+  attempts: Array<{ is_correct: boolean; created_at: string; question_id: string; mcq_questions: { subject_id: string } }>,
+  subjects: Array<{ id: string; name: string; name_th: string; icon: string }>,
+  userBadges: Array<{ earned_at: string; badges: { name: string; name_th: string; icon_url: string | null; condition_type: string } | null }>,
+  challengeSubs: Array<{ score: number; total_questions: number; correct_answers: number; time_taken_seconds: number | null; submitted_at: string; challenges: { title: string; challenge_type: string } | null }>,
+) {
+  const totalQuestions = attempts.length;
+  const totalCorrect = attempts.filter(a => a.is_correct).length;
+  const avgScore = totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 100) : 0;
+  const rankInfo = getRank(totalQuestions);
+
+  // Calculate streak (consecutive days with attempts)
+  const daySet = new Set(attempts.map(a => a.created_at.slice(0, 10)));
+  let streak = 0;
+  const today = new Date();
+  for (let i = 0; i < 365; i++) {
+    const d = new Date(today);
+    d.setDate(d.getDate() - i);
+    const ds = d.toISOString().slice(0, 10);
+    if (daySet.has(ds)) { streak++; } else if (i > 0) { break; }
+  }
+
+  const student: StudentData = {
+    name: profile?.display_name || profile?.name || "นักศึกษาแพทย์",
+    rank: rankInfo.rank,
+    rankIcon: rankInfo.icon,
+    xp: rankInfo.xp,
+    xpNext: rankInfo.xpNext,
+    streak,
+    totalQuestions,
+    avgScore,
+    membershipType: profile?.membership_type || "free",
+  };
+
+  // Subject scores
+  const subjectMap = new Map(subjects.map(s => [s.id, s]));
+  const bySubject: Record<string, { correct: number; total: number }> = {};
+  for (const a of attempts) {
+    const sid = a.mcq_questions.subject_id;
+    if (!bySubject[sid]) bySubject[sid] = { correct: 0, total: 0 };
+    bySubject[sid].total++;
+    if (a.is_correct) bySubject[sid].correct++;
+  }
+
+  const subjectScores: SubjectScore[] = Object.entries(bySubject)
+    .map(([sid, stats], i) => {
+      const sub = subjectMap.get(sid);
+      return {
+        name: sub?.name || sid,
+        name_th: sub?.name_th || sid,
+        icon: sub?.icon || SUBJECT_ICON_MAP[sub?.name || ""] || "📝",
+        score: Math.round((stats.correct / stats.total) * 100),
+        total: stats.total,
+        trend: "", // TODO: calculate from recent vs older attempts
+        color: CHART_COLORS[i % CHART_COLORS.length],
+      };
+    })
+    .sort((a, b) => b.total - a.total);
+
+  // Weekly data (last 7 days)
+  const dayNames = ["อา.", "จ.", "อ.", "พ.", "พฤ.", "ศ.", "ส."];
+  const weeklyData: WeeklyPoint[] = [];
+  for (let i = 6; i >= 0; i--) {
+    const d = new Date(today);
+    d.setDate(d.getDate() - i);
+    const ds = d.toISOString().slice(0, 10);
+    const dayAttempts = attempts.filter(a => a.created_at.slice(0, 10) === ds);
+    const dayCorrect = dayAttempts.filter(a => a.is_correct).length;
+    weeklyData.push({
+      day: dayNames[d.getDay()],
+      score: dayAttempts.length > 0 ? Math.round((dayCorrect / dayAttempts.length) * 100) : 0,
+      questions: dayAttempts.length,
+    });
+  }
+
+  // Badges
+  const allBadgeDefs = [
+    { condition: "streak", name: "Streak 7 วัน", icon: "🔥" },
+    { condition: "total_correct", name: "ทำครบ 100 ข้อ", icon: "💯" },
+    { condition: "top_rank", name: "Top 3 Weekly", icon: "🏆" },
+    { condition: "speed", name: "Speed Demon", icon: "⚡" },
+    { condition: "challenge_complete", name: "Challenge Complete", icon: "🎯" },
+    { condition: "total_correct_advanced", name: "Advanced Solver", icon: "🔬" },
+  ];
+  const earnedSet = new Set(userBadges.map(ub => ub.badges?.condition_type));
+  const badges: BadgeData[] = allBadgeDefs.map(bd => {
+    const ub = userBadges.find(u => u.badges?.condition_type === bd.condition);
+    return {
+      name: ub?.badges?.name_th || bd.name,
+      icon: bd.icon,
+      earned: earnedSet.has(bd.condition),
+      date: ub ? new Date(ub.earned_at).toLocaleDateString("th-TH", { day: "numeric", month: "short" }) : undefined,
+    };
+  });
+
+  // Challenge history
+  const challengeHistory: ChallengeData[] = challengeSubs
+    .filter(cs => cs.challenges)
+    .map(cs => {
+      const pct = cs.total_questions > 0 ? Math.round((cs.correct_answers / cs.total_questions) * 100) : 0;
+      const submitted = new Date(cs.submitted_at);
+      const diffMs = Date.now() - submitted.getTime();
+      const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+      let time = "";
+      if (diffDays === 0) time = "วันนี้";
+      else if (diffDays === 1) time = "เมื่อวาน";
+      else if (diffDays < 7) time = `${diffDays} วันที่แล้ว`;
+      else time = `${Math.floor(diffDays / 7)} สัปดาห์ที่แล้ว`;
+
+      return {
+        title: cs.challenges!.title,
+        type: cs.challenges!.challenge_type as "weekly" | "monthly",
+        score: pct,
+        total: cs.total_questions,
+        correct: cs.correct_answers,
+        rank: 0,
+        time,
+      };
+    });
+
+  return { student, subjectScores, weeklyData, badges, challengeHistory };
+}
+
+// Study plan is generated from weak subjects (computed dynamically)
+function generateStudyPlan(weakSubjects: SubjectScore[]) {
+  const top3 = weakSubjects.slice(0, 3);
+  return [
+    {
+      time: "วันนี้",
+      tasks: [
+        ...(top3[0] ? [{ icon: top3[0].icon, task: `MCQ ${top3[0].name_th} 10 ข้อ (Easy→Medium)`, type: "weakness" as const }] : []),
+        ...(top3[1] ? [{ icon: top3[1].icon, task: `MCQ ${top3[1].name_th} 5 ข้อ`, type: "weakness" as const }] : []),
+        { icon: "🔥", task: "Daily Challenge: Mixed 5 ข้อ", type: "challenge" as const },
+      ],
+    },
+    {
+      time: "พรุ่งนี้",
+      tasks: [
+        ...(top3[2] ? [{ icon: top3[2].icon, task: `MCQ ${top3[2].name_th} 10 ข้อ`, type: "weakness" as const }] : []),
+        { icon: "📊", task: "Mock Exam: NL2 เต็มชุด (ถ้ามีเวลา)", type: "mock" as const },
+      ],
+    },
+    {
+      time: "สัปดาห์นี้",
+      tasks: [
+        { icon: "🎯", task: "ทำครบทุกสาขาที่อ่อน อย่างน้อยสาขาละ 20 ข้อ", type: "goal" as const },
+        { icon: "🏆", task: "เข้าร่วม Weekly Challenge", type: "challenge" as const },
+        { icon: "📋", task: "Long Case อย่างน้อย 2 เคส", type: "goal" as const },
+      ],
+    },
+  ];
+}
 
 const tabs = [
   { value: "overview", label: "ภาพรวม", icon: Activity },
@@ -148,23 +313,52 @@ function StatBox({ icon: Icon, label, value, color }: { icon: React.ElementType;
 export default function DashboardPage() {
   const [tab, setTab] = useState("overview");
   const [microQuiz, setMicroQuiz] = useState(false);
-  const [authLoading, setAuthLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   const router = useRouter();
+
+  const [student, setStudent] = useState<StudentData>({
+    name: "", rank: "Student", rankIcon: "📖", xp: 0, xpNext: 100, streak: 0, totalQuestions: 0, avgScore: 0, membershipType: "free",
+  });
+  const [subjectScores, setSubjectScores] = useState<SubjectScore[]>([]);
+  const [weeklyData, setWeeklyData] = useState<WeeklyPoint[]>([]);
+  const [badges, setBadges] = useState<BadgeData[]>([]);
+  const [challengeHistory, setChallengeHistory] = useState<ChallengeData[]>([]);
 
   useEffect(() => {
     const supabase = createClient();
-    supabase.auth.getUser().then(({ data }: { data: { user: unknown } }) => {
-      if (!data.user) {
+    supabase.auth.getUser().then(async ({ data: authData }: { data: { user: { id: string } | null } }) => {
+      if (!authData.user) {
         router.replace("/login");
-      } else {
-        setAuthLoading(false);
+        return;
       }
+      try {
+        const raw = await fetchDashboardData(supabase, authData.user.id);
+        const processed = processData(
+          raw.profile as Parameters<typeof processData>[0],
+          raw.attempts as Parameters<typeof processData>[1],
+          raw.subjects as Parameters<typeof processData>[2],
+          raw.userBadges as Parameters<typeof processData>[3],
+          raw.challengeSubs as Parameters<typeof processData>[4],
+        );
+        setStudent(processed.student);
+        setSubjectScores(processed.subjectScores);
+        setWeeklyData(processed.weeklyData);
+        setBadges(processed.badges);
+        setChallengeHistory(processed.challengeHistory);
+      } catch (err) {
+        console.error("Dashboard data fetch error:", err);
+      }
+      setLoading(false);
     });
   }, [router]);
 
-  const xpPct = Math.round((student.xp / student.xpNext) * 100);
+  const xpPct = student.xpNext > 0 ? Math.round((student.xp / student.xpNext) * 100) : 0;
 
-  if (authLoading) {
+  const radarData = subjectScores.slice(0, 8).map((s) => ({ subject: s.name_th, score: s.score, fullMark: 100 }));
+  const weakSubjects = subjectScores.filter(s => s.score < 70).sort((a, b) => a.score - b.score);
+  const studyPlan = generateStudyPlan(weakSubjects);
+
+  if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[60vh]">
         <Loader2 className="h-8 w-8 animate-spin text-brand" />
@@ -402,24 +596,27 @@ export default function DashboardPage() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-2">
-              {weakTopics.map((w, i) => (
+              {weakSubjects.length === 0 && (
+                <div className="text-sm text-muted-foreground text-center py-4">ยังไม่มีข้อมูล — ลองทำข้อสอบก่อนนะ!</div>
+              )}
+              {weakSubjects.slice(0, 5).map((w, i) => (
                 <div key={i} className="flex items-center gap-3 p-3 bg-muted rounded-lg">
                   <div className="relative">
                     <ProgressRing
                       pct={w.score}
                       size={44}
                       stroke={4}
-                      color={w.priority === "high" ? "var(--destructive)" : "#eab308"}
+                      color={w.score < 50 ? "var(--destructive)" : "#eab308"}
                     />
                     <div className={`absolute inset-0 flex items-center justify-center text-[10px] font-bold ${
-                      w.priority === "high" ? "text-destructive" : "text-yellow-600"
+                      w.score < 50 ? "text-destructive" : "text-yellow-600"
                     }`}>
                       {w.score}%
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="font-semibold text-sm">{w.topic}</div>
-                    <div className="text-xs text-muted-foreground truncate">{w.subject} &middot; {w.suggestion}</div>
+                    <div className="font-semibold text-sm">{w.icon} {w.name_th}</div>
+                    <div className="text-xs text-muted-foreground truncate">ทำแล้ว {w.total} ข้อ &middot; แนะนำทำเพิ่มอีก 10 ข้อ</div>
                   </div>
                   <Button size="xs" variant="ghost" className="text-primary shrink-0">
                     ฝึกเลย <ChevronRight className="size-3" />
@@ -481,7 +678,10 @@ export default function DashboardPage() {
               <div>
                 <div className="font-bold text-sm text-purple-700">AI Study Buddy แจ้งเตือน</div>
                 <div className="text-xs text-muted-foreground leading-relaxed mt-1">
-                  &ldquo;เห็นว่าสาขาอายุรฯ ไต เรื่อง Acid-Base ยังอ่อนอยู่ ถ้าทำวันนี้อีก 10 ข้อ น่าจะขึ้น 50% ได้ ลองดูไหม?&rdquo;
+                  {weakSubjects.length > 0
+                    ? `"เห็นว่าสาขา${weakSubjects[0].name_th}ยังอ่อนอยู่ (${weakSubjects[0].score}%) ถ้าทำวันนี้อีก 10 ข้อ น่าจะดีขึ้นได้ ลองดูไหม?"`
+                    : `"เก่งมาก! ทำต่อไปเรื่อยๆ แล้วจะพร้อมสอบแน่นอน!"`
+                  }
                 </div>
               </div>
             </CardContent>
@@ -522,6 +722,9 @@ export default function DashboardPage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-2">
+              {challengeHistory.length === 0 && (
+                <div className="text-sm text-muted-foreground text-center py-4">ยังไม่เคยเข้าร่วม Challenge — ลองเข้าร่วมดู!</div>
+              )}
               {challengeHistory.map((ch, i) => (
                 <div key={i} className="flex items-center gap-3 p-3 bg-muted rounded-lg">
                   <div className={`flex size-9 items-center justify-center rounded-lg text-sm font-extrabold ${
@@ -552,9 +755,9 @@ export default function DashboardPage() {
           {/* Challenge Stats */}
           <div className="grid grid-cols-3 gap-3">
             {[
-              { label: "เข้าร่วม", value: "8", color: "text-primary" },
-              { label: "คะแนนเฉลี่ย", value: "79%", color: "text-green-600" },
-              { label: "อันดับดีสุด", value: "#1", color: "text-yellow-600" },
+              { label: "เข้าร่วม", value: `${challengeHistory.length}`, color: "text-primary" },
+              { label: "คะแนนเฉลี่ย", value: challengeHistory.length > 0 ? `${Math.round(challengeHistory.reduce((a, c) => a + c.score, 0) / challengeHistory.length)}%` : "-", color: "text-green-600" },
+              { label: "คะแนนสูงสุด", value: challengeHistory.length > 0 ? `${Math.max(...challengeHistory.map(c => c.score))}%` : "-", color: "text-yellow-600" },
             ].map((s, i) => (
               <Card key={i} size="sm" className="text-center">
                 <CardContent>
