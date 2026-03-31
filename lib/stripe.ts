@@ -11,7 +11,6 @@ export function getStripe(): Stripe {
   return _stripe;
 }
 
-
 export const STRIPE_PLANS: Record<string, { amount: number; name: string }> = {
   monthly: { amount: 199, name: "MorRoo รายเดือน" },
   yearly: { amount: 1490, name: "MorRoo รายปี" },
