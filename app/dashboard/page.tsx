@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -11,8 +12,9 @@ import {
 import {
   Activity, BookOpen, Brain, Clock, Flame, GraduationCap,
   Target, Trophy, Medal, TrendingUp, ChevronRight, Stethoscope,
-  Award, Share2, CalendarDays, Zap,
+  Award, Share2, CalendarDays, Zap, Loader2,
 } from "lucide-react";
+import { createClient } from "@/lib/supabase/client";
 
 // ===== Mock Data (โครงสร้างตรงกับ DB schema จริง) =====
 // TODO: Replace with real Supabase queries
@@ -146,8 +148,29 @@ function StatBox({ icon: Icon, label, value, color }: { icon: React.ElementType;
 export default function DashboardPage() {
   const [tab, setTab] = useState("overview");
   const [microQuiz, setMicroQuiz] = useState(false);
+  const [authLoading, setAuthLoading] = useState(true);
+  const router = useRouter();
+
+  useEffect(() => {
+    const supabase = createClient();
+    supabase.auth.getUser().then(({ data }) => {
+      if (!data.user) {
+        router.replace("/login");
+      } else {
+        setAuthLoading(false);
+      }
+    });
+  }, [router]);
 
   const xpPct = Math.round((student.xp / student.xpNext) * 100);
+
+  if (authLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-[60vh]">
+        <Loader2 className="h-8 w-8 animate-spin text-brand" />
+      </div>
+    );
+  }
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-6 sm:px-6 lg:px-8">
