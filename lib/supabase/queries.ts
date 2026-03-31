@@ -16,18 +16,25 @@ export async function getExams(): Promise<Exam[]> {
   return (data as Exam[]) || [];
 }
 
-// Sort exams: coming soon first (countdown), then newest first
+// Sort exams: newly available first, then coming soon, then older
 export function sortExamsAvailableFirst(exams: Exam[], partCounts: Record<string, number>): Exam[] {
   const now = new Date();
+  const threeDaysAgo = now.getTime() - 3 * 24 * 60 * 60 * 1000;
   return [...exams].sort((a, b) => {
     const aComingSoon = (partCounts[a.id] || 0) === 0 || (a.publish_date && new Date(a.publish_date + "T00:00:00") > now);
     const bComingSoon = (partCounts[b.id] || 0) === 0 || (b.publish_date && new Date(b.publish_date + "T00:00:00") > now);
+    const aNew = !aComingSoon && new Date(a.created_at).getTime() > threeDaysAgo;
+    const bNew = !bComingSoon && new Date(b.created_at).getTime() > threeDaysAgo;
 
-    // Coming soon first (countdown visible)
+    // 1. Newly available (within 3 days, playable) first
+    if (aNew && !bNew) return -1;
+    if (!aNew && bNew) return 1;
+
+    // 2. Coming soon second
     if (aComingSoon && !bComingSoon) return -1;
     if (!aComingSoon && bComingSoon) return 1;
 
-    // Within same group: newest first
+    // 3. Within same group: newest first
     const aDate = new Date(a.created_at);
     const bDate = new Date(b.created_at);
     return bDate.getTime() - aDate.getTime();
