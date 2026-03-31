@@ -183,7 +183,7 @@ CREATE POLICY "Challenges are viewable by everyone"
 
 CREATE POLICY "Admins can manage challenges"
   ON public.challenges FOR ALL
-  USING (auth.uid() IN (SELECT id FROM public.profiles WHERE role = 'admin'));
+  USING (public.is_admin());
 
 -- Challenge submissions: user sees own, leaderboard is via view
 CREATE POLICY "Users can view own submissions"
@@ -196,7 +196,7 @@ CREATE POLICY "Users can insert own submissions"
 
 CREATE POLICY "Admins can view all submissions"
   ON public.challenge_submissions FOR SELECT
-  USING (auth.uid() IN (SELECT id FROM public.profiles WHERE role = 'admin'));
+  USING (public.is_admin());
 
 -- Badges: public read
 CREATE POLICY "Badges are viewable by everyone"
@@ -204,7 +204,7 @@ CREATE POLICY "Badges are viewable by everyone"
 
 CREATE POLICY "Admins can manage badges"
   ON public.badges FOR ALL
-  USING (auth.uid() IN (SELECT id FROM public.profiles WHERE role = 'admin'));
+  USING (public.is_admin());
 
 -- User badges: public read (for leaderboard/profile)
 CREATE POLICY "User badges are viewable by everyone"
@@ -212,7 +212,7 @@ CREATE POLICY "User badges are viewable by everyone"
 
 CREATE POLICY "Admins can manage user badges"
   ON public.user_badges FOR ALL
-  USING (auth.uid() IN (SELECT id FROM public.profiles WHERE role = 'admin'));
+  USING (public.is_admin());
 
 -- Rewards: user sees own
 CREATE POLICY "Users can view own rewards"
@@ -221,7 +221,7 @@ CREATE POLICY "Users can view own rewards"
 
 CREATE POLICY "Admins can manage rewards"
   ON public.rewards FOR ALL
-  USING (auth.uid() IN (SELECT id FROM public.profiles WHERE role = 'admin'));
+  USING (public.is_admin());
 
 -- Coupon codes: everyone can read (for validation), admin manages
 CREATE POLICY "Coupon codes are viewable by everyone"
@@ -229,7 +229,7 @@ CREATE POLICY "Coupon codes are viewable by everyone"
 
 CREATE POLICY "Admins can manage coupon codes"
   ON public.coupon_codes FOR ALL
-  USING (auth.uid() IN (SELECT id FROM public.profiles WHERE role = 'admin'));
+  USING (public.is_admin());
 
 -- Coupon redemptions: user sees own
 CREATE POLICY "Users can view own redemptions"
@@ -242,7 +242,7 @@ CREATE POLICY "Users can insert own redemptions"
 
 CREATE POLICY "Admins can view all redemptions"
   ON public.coupon_redemptions FOR SELECT
-  USING (auth.uid() IN (SELECT id FROM public.profiles WHERE role = 'admin'));
+  USING (public.is_admin());
 
 -- ============================================
 -- Seed Data: Badges
