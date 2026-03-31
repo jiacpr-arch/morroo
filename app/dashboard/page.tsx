@@ -153,7 +153,7 @@ export default function DashboardPage() {
 
   useEffect(() => {
     const supabase = createClient();
-    supabase.auth.getUser().then(({ data }) => {
+    supabase.auth.getUser().then(({ data }: { data: { user: unknown } }) => {
       if (!data.user) {
         router.replace("/login");
       } else {
