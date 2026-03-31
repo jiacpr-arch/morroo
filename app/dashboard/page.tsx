@@ -13,7 +13,7 @@ import {
 import {
   Activity, BookOpen, Brain, Clock, Flame, GraduationCap,
   Target, Trophy, Medal, TrendingUp, ChevronRight, Stethoscope,
-  Award, Share2, CalendarDays, Zap, Loader2, Crown, Users,
+  Award, Share2, CalendarDays, Zap, Loader2, Crown, Users, ClipboardList,
 } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { toPng } from "html-to-image";
@@ -344,6 +344,7 @@ function generateStudyPlan(weakSubjects: SubjectScore[]) {
 
 const tabs = [
   { value: "overview", label: "ภาพรวม", icon: Activity },
+  { value: "longcase", label: "Long Case", icon: ClipboardList },
   { value: "weakness", label: "จุดอ่อน & แผนติว", icon: Target },
   { value: "challenge", label: "Challenge", icon: Trophy },
   { value: "leaderboard", label: "Leaderboard", icon: Crown },
@@ -852,113 +853,193 @@ export default function DashboardPage() {
             </CardContent>
           </Card>
 
-          {/* Long Case Stats */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Clock className="size-4 text-primary" />
-                Long Case
-              </CardTitle>
-              <CardDescription>
-                สถิติการฝึก Long Case ของคุณ
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              {longCaseStats.completed === 0 ? (
-                <div className="text-center py-4">
-                  <div className="text-sm text-muted-foreground mb-3">ยังไม่เคยทำ Long Case — ลองฝึกดู!</div>
-                  <Link href="/longcase">
-                    <Button size="sm">
-                      <Stethoscope className="size-3.5" /> เริ่มทำ Long Case
-                    </Button>
-                  </Link>
-                </div>
-              ) : (
-                <>
-                  {/* Summary stats */}
-                  <div className="grid grid-cols-3 gap-3 mb-4">
-                    <div className="text-center p-3 bg-muted rounded-lg">
-                      <div className="text-xl font-extrabold text-primary">{longCaseStats.completed}</div>
-                      <div className="text-xs text-muted-foreground">เคสที่ทำ</div>
-                    </div>
-                    <div className="text-center p-3 bg-muted rounded-lg">
-                      <div className="text-xl font-extrabold text-green-600">{longCaseStats.avgScore}%</div>
-                      <div className="text-xs text-muted-foreground">คะแนนเฉลี่ย</div>
-                    </div>
-                    <div className="text-center p-3 bg-muted rounded-lg">
-                      <div className="text-xl font-extrabold text-yellow-600">{longCaseStats.bestScore}%</div>
-                      <div className="text-xs text-muted-foreground">คะแนนสูงสุด</div>
-                    </div>
-                  </div>
+        </div>
+      )}
 
-                  {/* Section breakdown */}
-                  <div className="text-xs font-semibold text-muted-foreground mb-2">คะแนนเฉลี่ยแยกหมวด</div>
-                  <div className="space-y-1.5 mb-4">
-                    {[
-                      { label: "ซักประวัติ", key: "history" as const, icon: "📋" },
-                      { label: "ตรวจร่างกาย", key: "pe" as const, icon: "🩺" },
-                      { label: "Lab/Investigation", key: "lab" as const, icon: "🔬" },
-                      { label: "Differential Dx", key: "ddx" as const, icon: "🧠" },
-                      { label: "การรักษา", key: "management" as const, icon: "💊" },
-                      { label: "Examiner", key: "examiner" as const, icon: "👨‍⚕️" },
-                    ].map((sec) => (
-                      <div key={sec.key} className="flex items-center gap-2">
-                        <span className="text-sm w-5 text-center">{sec.icon}</span>
-                        <span className="text-xs w-24 text-muted-foreground">{sec.label}</span>
-                        <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
-                          <div
-                            className="h-full rounded-full transition-all"
-                            style={{
-                              width: `${longCaseStats.sectionAvg[sec.key]}%`,
-                              background: longCaseStats.sectionAvg[sec.key] >= 70 ? "var(--chart-2)" : longCaseStats.sectionAvg[sec.key] >= 50 ? "var(--chart-4)" : "var(--destructive)",
-                            }}
-                          />
-                        </div>
-                        <span className={`text-xs font-bold w-10 text-right ${
-                          longCaseStats.sectionAvg[sec.key] >= 70 ? "text-green-600" : longCaseStats.sectionAvg[sec.key] >= 50 ? "text-yellow-600" : "text-destructive"
-                        }`}>
-                          {longCaseStats.sectionAvg[sec.key]}%
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Recent sessions */}
-                  {longCaseStats.sessions.length > 0 && (
-                    <>
-                      <div className="text-xs font-semibold text-muted-foreground mb-2">เคสล่าสุด</div>
-                      <div className="space-y-1.5">
-                        {longCaseStats.sessions.map((s, i) => (
-                          <div key={i} className="flex items-center gap-2 p-2 bg-muted rounded-lg text-sm">
-                            <span className="text-base">📄</span>
-                            <div className="flex-1 min-w-0">
-                              <div className="font-semibold text-xs truncate">{s.title}</div>
-                              <div className="text-[10px] text-muted-foreground">
-                                {s.specialty} &middot; {s.difficulty} &middot; {new Date(s.completedAt).toLocaleDateString("th-TH", { day: "numeric", month: "short" })}
-                              </div>
-                            </div>
-                            <span className={`text-sm font-extrabold ${
-                              s.scorePct >= 70 ? "text-green-600" : s.scorePct >= 50 ? "text-yellow-600" : "text-destructive"
-                            }`}>
-                              {s.scorePct}%
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    </>
-                  )}
-
-                  <div className="mt-3 text-center">
-                    <Link href="/longcase">
-                      <Button size="sm" variant="outline">
-                        ทำ Long Case เพิ่ม <ChevronRight className="size-3.5" />
-                      </Button>
-                    </Link>
-                  </div>
-                </>
-              )}
+      {/* TAB: Long Case */}
+      {tab === "longcase" && (
+        <div className="space-y-4">
+          {/* Hero CTA */}
+          <Card className="border-primary/20 bg-primary/5 text-center">
+            <CardContent className="py-6">
+              <ClipboardList className="mx-auto size-10 text-primary mb-3" />
+              <div className="font-extrabold text-lg mb-1">Long Case</div>
+              <div className="text-sm text-muted-foreground mb-4">
+                ฝึกซักประวัติ ตรวจร่างกาย วินิจฉัย และวางแผนการรักษา — เหมือนสอบ OSCE จริง
+              </div>
+              <Link href="/longcase">
+                <Button>
+                  <Stethoscope className="size-4" />
+                  {longCaseStats.completed > 0 ? "ทำ Long Case เพิ่ม" : "เริ่มทำ Long Case"}
+                </Button>
+              </Link>
             </CardContent>
           </Card>
+
+          {longCaseStats.completed > 0 ? (
+            <>
+              {/* Summary stats */}
+              <div className="grid grid-cols-3 gap-3">
+                <Card size="sm" className="text-center">
+                  <CardContent>
+                    <div className="text-2xl font-extrabold text-primary">{longCaseStats.completed}</div>
+                    <div className="text-xs text-muted-foreground">เคสที่ทำเสร็จ</div>
+                  </CardContent>
+                </Card>
+                <Card size="sm" className="text-center">
+                  <CardContent>
+                    <div className="text-2xl font-extrabold text-green-600">{longCaseStats.avgScore}%</div>
+                    <div className="text-xs text-muted-foreground">คะแนนเฉลี่ย</div>
+                  </CardContent>
+                </Card>
+                <Card size="sm" className="text-center">
+                  <CardContent>
+                    <div className="text-2xl font-extrabold text-yellow-600">{longCaseStats.bestScore}%</div>
+                    <div className="text-xs text-muted-foreground">คะแนนสูงสุด</div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Section breakdown radar + bars */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Brain className="size-4 text-primary" />
+                    คะแนนเฉลี่ยแยกหมวด
+                  </CardTitle>
+                  <CardDescription>
+                    ดูว่าหมวดไหนเก่ง หมวดไหนต้องฝึกเพิ่ม
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  {/* Radar chart for Long Case sections */}
+                  <ResponsiveContainer width="100%" height={240}>
+                    <RadarChart
+                      data={[
+                        { subject: "ซักประวัติ", score: longCaseStats.sectionAvg.history, fullMark: 100 },
+                        { subject: "PE", score: longCaseStats.sectionAvg.pe, fullMark: 100 },
+                        { subject: "Lab", score: longCaseStats.sectionAvg.lab, fullMark: 100 },
+                        { subject: "DDx", score: longCaseStats.sectionAvg.ddx, fullMark: 100 },
+                        { subject: "การรักษา", score: longCaseStats.sectionAvg.management, fullMark: 100 },
+                        { subject: "Examiner", score: longCaseStats.sectionAvg.examiner, fullMark: 100 },
+                      ]}
+                      cx="50%" cy="50%" outerRadius="70%"
+                    >
+                      <PolarGrid stroke="var(--border)" />
+                      <PolarAngleAxis dataKey="subject" tick={{ fill: "var(--muted-foreground)", fontSize: 11 }} />
+                      <PolarRadiusAxis angle={90} domain={[0, 100]} tick={{ fill: "var(--muted-foreground)", fontSize: 10 }} />
+                      <Radar dataKey="score" stroke="var(--chart-2)" fill="var(--chart-2)" fillOpacity={0.15} strokeWidth={2} />
+                    </RadarChart>
+                  </ResponsiveContainer>
+
+                  {/* Bar breakdown */}
+                  <div className="space-y-2 mt-4">
+                    {[
+                      { label: "ซักประวัติ (History)", key: "history" as const, icon: "📋" },
+                      { label: "ตรวจร่างกาย (PE)", key: "pe" as const, icon: "🩺" },
+                      { label: "Lab / Investigation", key: "lab" as const, icon: "🔬" },
+                      { label: "Differential Diagnosis", key: "ddx" as const, icon: "🧠" },
+                      { label: "การรักษา (Management)", key: "management" as const, icon: "💊" },
+                      { label: "Examiner Score", key: "examiner" as const, icon: "👨‍⚕️" },
+                    ].map((sec) => {
+                      const val = longCaseStats.sectionAvg[sec.key];
+                      return (
+                        <div key={sec.key} className="flex items-center gap-2">
+                          <span className="text-sm w-5 text-center">{sec.icon}</span>
+                          <span className="text-xs w-40 text-muted-foreground truncate">{sec.label}</span>
+                          <div className="flex-1 h-2.5 bg-muted rounded-full overflow-hidden">
+                            <div
+                              className="h-full rounded-full transition-all"
+                              style={{
+                                width: `${val}%`,
+                                background: val >= 70 ? "var(--chart-2)" : val >= 50 ? "var(--chart-4)" : "var(--destructive)",
+                              }}
+                            />
+                          </div>
+                          <span className={`text-xs font-bold w-10 text-right ${
+                            val >= 70 ? "text-green-600" : val >= 50 ? "text-yellow-600" : "text-destructive"
+                          }`}>
+                            {val}%
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Recent sessions */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <BookOpen className="size-4 text-primary" />
+                    เคสล่าสุด
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-2">
+                  {longCaseStats.sessions.map((s, i) => (
+                    <div key={i} className="flex items-center gap-3 p-3 bg-muted rounded-lg">
+                      <div className={`flex size-9 items-center justify-center rounded-lg text-sm font-extrabold ${
+                        s.scorePct >= 70 ? "bg-green-100 text-green-700" : s.scorePct >= 50 ? "bg-yellow-100 text-yellow-700" : "bg-red-100 text-red-700"
+                      }`}>
+                        {s.scorePct}%
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="font-semibold text-sm truncate">{s.title}</div>
+                        <div className="text-xs text-muted-foreground">
+                          {s.specialty} &middot; {s.difficulty} &middot; {new Date(s.completedAt).toLocaleDateString("th-TH", { day: "numeric", month: "short", year: "numeric" })}
+                        </div>
+                      </div>
+                      <Badge variant="secondary" className={`text-[10px] ${
+                        s.difficulty === "hard" ? "bg-red-100 text-red-700" : s.difficulty === "medium" ? "bg-yellow-100 text-yellow-700" : "bg-green-100 text-green-700"
+                      }`}>
+                        {s.difficulty}
+                      </Badge>
+                    </div>
+                  ))}
+                </CardContent>
+              </Card>
+
+              {/* Tips */}
+              <Card size="sm" className="border-purple-200 bg-purple-50/50">
+                <CardContent className="flex gap-3 items-start">
+                  <span className="text-2xl">🤖</span>
+                  <div>
+                    <div className="font-bold text-sm text-purple-700">AI Study Buddy แนะนำ</div>
+                    <div className="text-xs text-muted-foreground leading-relaxed mt-1">
+                      {(() => {
+                        const sections = [
+                          { key: "history" as const, label: "ซักประวัติ" },
+                          { key: "pe" as const, label: "ตรวจร่างกาย" },
+                          { key: "lab" as const, label: "Lab" },
+                          { key: "ddx" as const, label: "DDx" },
+                          { key: "management" as const, label: "การรักษา" },
+                          { key: "examiner" as const, label: "Examiner" },
+                        ];
+                        const weakest = sections.sort((a, b) => longCaseStats.sectionAvg[a.key] - longCaseStats.sectionAvg[b.key])[0];
+                        return `"หมวด${weakest.label}ยังอ่อนอยู่ (${longCaseStats.sectionAvg[weakest.key]}%) ลองฝึก Long Case เพิ่มอีก 2-3 เคส โฟกัสที่หมวดนี้ จะดีขึ้นแน่นอน!"`;
+                      })()}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </>
+          ) : (
+            <Card>
+              <CardContent className="text-center py-8">
+                <div className="text-4xl mb-3">📋</div>
+                <div className="font-bold text-base mb-1">ยังไม่เคยทำ Long Case</div>
+                <div className="text-sm text-muted-foreground mb-4">
+                  Long Case คือการฝึกสอบ OSCE แบบจำลอง — ซักประวัติ ตรวจร่างกาย สั่ง Lab วินิจฉัยแยกโรค และวางแผนการรักษา
+                </div>
+                <Link href="/longcase">
+                  <Button>
+                    <Stethoscope className="size-4" /> เริ่มทำ Long Case แรก
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+          )}
         </div>
       )}
 
