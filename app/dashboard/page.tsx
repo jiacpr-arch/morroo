@@ -56,6 +56,21 @@ interface BadgeData {
   progress?: string;
 }
 
+interface LongCaseStats {
+  total: number;
+  completed: number;
+  avgScore: number;
+  bestScore: number;
+  sessions: Array<{
+    title: string;
+    specialty: string;
+    difficulty: string;
+    scorePct: number;
+    completedAt: string;
+  }>;
+  sectionAvg: { history: number; pe: number; lab: number; ddx: number; management: number; examiner: number };
+}
+
 interface ChallengeData {
   title: string;
   type: "weekly" | "monthly";
@@ -120,7 +135,15 @@ async function fetchDashboardData(supabase: ReturnType<typeof createClient>, use
     .order("submitted_at", { ascending: false })
     .limit(10);
 
-  return { profile, attempts: attempts || [], subjects: subjects || [], userBadges: userBadges || [], challengeSubs: challengeSubs || [] };
+  // Fetch long case sessions
+  const { data: longCaseSessions } = await supabase
+    .from("long_case_sessions")
+    .select("id, phase, score_history, score_pe, score_lab, score_ddx, score_management, score_examiner, score_total_pct, started_at, completed_at, long_cases(title, specialty, difficulty)")
+    .eq("user_id", userId)
+    .order("started_at", { ascending: false })
+    .limit(20);
+
+  return { profile, attempts: attempts || [], subjects: subjects || [], userBadges: userBadges || [], challengeSubs: challengeSubs || [], longCaseSessions: longCaseSessions || [] };
 }
 
 function processData(
@@ -129,6 +152,7 @@ function processData(
   subjects: Array<{ id: string; name: string; name_th: string; icon: string }>,
   userBadges: Array<{ earned_at: string; badges: { name: string; name_th: string; icon_url: string | null; condition_type: string } | null }>,
   challengeSubs: Array<{ score: number; total_questions: number; correct_answers: number; time_taken_seconds: number | null; submitted_at: string; challenges: { title: string; challenge_type: string } | null }>,
+  longCaseSessions: Array<{ id: string; phase: string; score_history: number | null; score_pe: number | null; score_lab: number | null; score_ddx: number | null; score_management: number | null; score_examiner: number | null; score_total_pct: number | null; started_at: string; completed_at: string | null; long_cases: { title: string; specialty: string; difficulty: string } | null }>,
 ) {
   const totalQuestions = attempts.length;
   const totalCorrect = attempts.filter(a => a.is_correct).length;
@@ -244,7 +268,40 @@ function processData(
       };
     });
 
-  return { student, subjectScores, weeklyData, badges, challengeHistory };
+  // Long Case stats
+  const completedLC = longCaseSessions.filter(s => s.completed_at && s.score_total_pct != null);
+  const avgLCScore = completedLC.length > 0 ? Math.round(completedLC.reduce((a, s) => a + (s.score_total_pct || 0), 0) / completedLC.length) : 0;
+  const bestLCScore = completedLC.length > 0 ? Math.max(...completedLC.map(s => s.score_total_pct || 0)) : 0;
+
+  const sectionKeys = ["score_history", "score_pe", "score_lab", "score_ddx", "score_management", "score_examiner"] as const;
+  const sectionAvg = { history: 0, pe: 0, lab: 0, ddx: 0, management: 0, examiner: 0 };
+  if (completedLC.length > 0) {
+    const nameMap: Record<string, keyof typeof sectionAvg> = {
+      score_history: "history", score_pe: "pe", score_lab: "lab",
+      score_ddx: "ddx", score_management: "management", score_examiner: "examiner",
+    };
+    for (const key of sectionKeys) {
+      const vals = completedLC.filter(s => s[key] != null).map(s => s[key] as number);
+      sectionAvg[nameMap[key]] = vals.length > 0 ? Math.round(vals.reduce((a, v) => a + v, 0) / vals.length) : 0;
+    }
+  }
+
+  const longCaseStats: LongCaseStats = {
+    total: longCaseSessions.length,
+    completed: completedLC.length,
+    avgScore: avgLCScore,
+    bestScore: bestLCScore,
+    sessions: completedLC.slice(0, 5).map(s => ({
+      title: s.long_cases?.title || "Long Case",
+      specialty: s.long_cases?.specialty || "",
+      difficulty: s.long_cases?.difficulty || "",
+      scorePct: s.score_total_pct || 0,
+      completedAt: s.completed_at || s.started_at,
+    })),
+    sectionAvg,
+  };
+
+  return { student, subjectScores, weeklyData, badges, challengeHistory, longCaseStats };
 }
 
 // Study plan is generated from weak subjects (computed dynamically)
@@ -333,6 +390,7 @@ export default function DashboardPage() {
   const [weeklyData, setWeeklyData] = useState<WeeklyPoint[]>([]);
   const [badges, setBadges] = useState<BadgeData[]>([]);
   const [challengeHistory, setChallengeHistory] = useState<ChallengeData[]>([]);
+  const [longCaseStats, setLongCaseStats] = useState<LongCaseStats>({ total: 0, completed: 0, avgScore: 0, bestScore: 0, sessions: [], sectionAvg: { history: 0, pe: 0, lab: 0, ddx: 0, management: 0, examiner: 0 } });
   const badgeCardRef = useRef<HTMLDivElement>(null);
 
   const handleDownload = useCallback(async () => {
@@ -465,12 +523,14 @@ export default function DashboardPage() {
           raw.subjects as Parameters<typeof processData>[2],
           raw.userBadges as Parameters<typeof processData>[3],
           raw.challengeSubs as Parameters<typeof processData>[4],
+          raw.longCaseSessions as Parameters<typeof processData>[5],
         );
         setStudent(processed.student);
         setSubjectScores(processed.subjectScores);
         setWeeklyData(processed.weeklyData);
         setBadges(processed.badges);
         setChallengeHistory(processed.challengeHistory);
+        setLongCaseStats(processed.longCaseStats);
       } catch (err) {
         console.error("Dashboard data fetch error:", err);
       }
@@ -709,6 +769,114 @@ export default function DashboardPage() {
                   <Area type="monotone" dataKey="score" stroke="var(--primary)" fill="var(--primary)" fillOpacity={0.1} strokeWidth={2} />
                 </AreaChart>
               </ResponsiveContainer>
+            </CardContent>
+          </Card>
+
+          {/* Long Case Stats */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Clock className="size-4 text-primary" />
+                Long Case
+              </CardTitle>
+              <CardDescription>
+                สถิติการฝึก Long Case ของคุณ
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              {longCaseStats.completed === 0 ? (
+                <div className="text-center py-4">
+                  <div className="text-sm text-muted-foreground mb-3">ยังไม่เคยทำ Long Case — ลองฝึกดู!</div>
+                  <Link href="/longcase">
+                    <Button size="sm">
+                      <Stethoscope className="size-3.5" /> เริ่มทำ Long Case
+                    </Button>
+                  </Link>
+                </div>
+              ) : (
+                <>
+                  {/* Summary stats */}
+                  <div className="grid grid-cols-3 gap-3 mb-4">
+                    <div className="text-center p-3 bg-muted rounded-lg">
+                      <div className="text-xl font-extrabold text-primary">{longCaseStats.completed}</div>
+                      <div className="text-xs text-muted-foreground">เคสที่ทำ</div>
+                    </div>
+                    <div className="text-center p-3 bg-muted rounded-lg">
+                      <div className="text-xl font-extrabold text-green-600">{longCaseStats.avgScore}%</div>
+                      <div className="text-xs text-muted-foreground">คะแนนเฉลี่ย</div>
+                    </div>
+                    <div className="text-center p-3 bg-muted rounded-lg">
+                      <div className="text-xl font-extrabold text-yellow-600">{longCaseStats.bestScore}%</div>
+                      <div className="text-xs text-muted-foreground">คะแนนสูงสุด</div>
+                    </div>
+                  </div>
+
+                  {/* Section breakdown */}
+                  <div className="text-xs font-semibold text-muted-foreground mb-2">คะแนนเฉลี่ยแยกหมวด</div>
+                  <div className="space-y-1.5 mb-4">
+                    {[
+                      { label: "ซักประวัติ", key: "history" as const, icon: "📋" },
+                      { label: "ตรวจร่างกาย", key: "pe" as const, icon: "🩺" },
+                      { label: "Lab/Investigation", key: "lab" as const, icon: "🔬" },
+                      { label: "Differential Dx", key: "ddx" as const, icon: "🧠" },
+                      { label: "การรักษา", key: "management" as const, icon: "💊" },
+                      { label: "Examiner", key: "examiner" as const, icon: "👨‍⚕️" },
+                    ].map((sec) => (
+                      <div key={sec.key} className="flex items-center gap-2">
+                        <span className="text-sm w-5 text-center">{sec.icon}</span>
+                        <span className="text-xs w-24 text-muted-foreground">{sec.label}</span>
+                        <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
+                          <div
+                            className="h-full rounded-full transition-all"
+                            style={{
+                              width: `${longCaseStats.sectionAvg[sec.key]}%`,
+                              background: longCaseStats.sectionAvg[sec.key] >= 70 ? "var(--chart-2)" : longCaseStats.sectionAvg[sec.key] >= 50 ? "var(--chart-4)" : "var(--destructive)",
+                            }}
+                          />
+                        </div>
+                        <span className={`text-xs font-bold w-10 text-right ${
+                          longCaseStats.sectionAvg[sec.key] >= 70 ? "text-green-600" : longCaseStats.sectionAvg[sec.key] >= 50 ? "text-yellow-600" : "text-destructive"
+                        }`}>
+                          {longCaseStats.sectionAvg[sec.key]}%
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Recent sessions */}
+                  {longCaseStats.sessions.length > 0 && (
+                    <>
+                      <div className="text-xs font-semibold text-muted-foreground mb-2">เคสล่าสุด</div>
+                      <div className="space-y-1.5">
+                        {longCaseStats.sessions.map((s, i) => (
+                          <div key={i} className="flex items-center gap-2 p-2 bg-muted rounded-lg text-sm">
+                            <span className="text-base">📄</span>
+                            <div className="flex-1 min-w-0">
+                              <div className="font-semibold text-xs truncate">{s.title}</div>
+                              <div className="text-[10px] text-muted-foreground">
+                                {s.specialty} &middot; {s.difficulty} &middot; {new Date(s.completedAt).toLocaleDateString("th-TH", { day: "numeric", month: "short" })}
+                              </div>
+                            </div>
+                            <span className={`text-sm font-extrabold ${
+                              s.scorePct >= 70 ? "text-green-600" : s.scorePct >= 50 ? "text-yellow-600" : "text-destructive"
+                            }`}>
+                              {s.scorePct}%
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </>
+                  )}
+
+                  <div className="mt-3 text-center">
+                    <Link href="/longcase">
+                      <Button size="sm" variant="outline">
+                        ทำ Long Case เพิ่ม <ChevronRight className="size-3.5" />
+                      </Button>
+                    </Link>
+                  </div>
+                </>
+              )}
             </CardContent>
           </Card>
         </div>
