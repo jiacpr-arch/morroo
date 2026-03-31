@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 
 // ===== Mock Data (โครงสร้างตรงกับ DB schema จริง) =====
+// TODO: Replace with real Supabase queries
 
 const student = {
   name: "นพ.สมชาย",
@@ -108,10 +109,10 @@ const challengeHistory = [
 ];
 
 const tabs = [
-  { label: "ภาพรวม", icon: Activity },
-  { label: "จุดอ่อน & แผนติว", icon: Target },
-  { label: "Challenge", icon: Trophy },
-  { label: "Badge & Rank", icon: Award },
+  { value: "overview", label: "ภาพรวม", icon: Activity },
+  { value: "weakness", label: "จุดอ่อน & แผนติว", icon: Target },
+  { value: "challenge", label: "Challenge", icon: Trophy },
+  { value: "badges", label: "Badge & Rank", icon: Award },
 ];
 
 // ===== Helper Components =====
@@ -143,7 +144,7 @@ function StatBox({ icon: Icon, label, value, color }: { icon: React.ElementType;
 // ===== Main Component =====
 
 export default function DashboardPage() {
-  const [tab, setTab] = useState(0);
+  const [tab, setTab] = useState("overview");
   const [microQuiz, setMicroQuiz] = useState(false);
 
   const xpPct = Math.round((student.xp / student.xpNext) * 100);
@@ -256,12 +257,12 @@ export default function DashboardPage() {
 
       {/* Tabs */}
       <div className="flex gap-2 mb-5 overflow-x-auto pb-1">
-        {tabs.map((t, i) => (
+        {tabs.map((t) => (
           <button
-            key={i}
-            onClick={() => setTab(i)}
+            key={t.value}
+            onClick={() => setTab(t.value)}
             className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg border text-xs font-semibold whitespace-nowrap transition-colors cursor-pointer ${
-              tab === i
+              tab === t.value
                 ? "border-primary bg-primary/10 text-primary"
                 : "border-border text-muted-foreground hover:bg-muted"
             }`}
@@ -272,8 +273,8 @@ export default function DashboardPage() {
         ))}
       </div>
 
-      {/* TAB 0: Overview */}
-      {tab === 0 && (
+      {/* TAB: Overview */}
+      {tab === "overview" && (
         <div className="space-y-4">
           {/* Radar Chart */}
           <Card>
@@ -363,8 +364,8 @@ export default function DashboardPage() {
         </div>
       )}
 
-      {/* TAB 1: Weakness & Study Plan */}
-      {tab === 1 && (
+      {/* TAB: Weakness & Study Plan */}
+      {tab === "weakness" && (
         <div className="space-y-4">
           {/* AI Weakness Detector */}
           <Card className="border-destructive/20">
@@ -451,11 +452,11 @@ export default function DashboardPage() {
           </Card>
 
           {/* AI Study Buddy */}
-          <Card size="sm" className="border-accent/20 bg-accent/5">
+          <Card size="sm" className="border-purple-200 bg-purple-50/50">
             <CardContent className="flex gap-3 items-start">
               <span className="text-2xl">🤖</span>
               <div>
-                <div className="font-bold text-sm text-accent-foreground">AI Study Buddy แจ้งเตือน</div>
+                <div className="font-bold text-sm text-purple-700">AI Study Buddy แจ้งเตือน</div>
                 <div className="text-xs text-muted-foreground leading-relaxed mt-1">
                   &ldquo;เห็นว่าสาขาอายุรฯ ไต เรื่อง Acid-Base ยังอ่อนอยู่ ถ้าทำวันนี้อีก 10 ข้อ น่าจะขึ้น 50% ได้ ลองดูไหม?&rdquo;
                 </div>
@@ -465,8 +466,8 @@ export default function DashboardPage() {
         </div>
       )}
 
-      {/* TAB 2: Challenge */}
-      {tab === 2 && (
+      {/* TAB: Challenge */}
+      {tab === "challenge" && (
         <div className="space-y-4">
           {/* Active Challenge */}
           <Card className="border-primary/20 bg-primary/5 text-center">
@@ -543,8 +544,8 @@ export default function DashboardPage() {
         </div>
       )}
 
-      {/* TAB 3: Badges & Rank */}
-      {tab === 3 && (
+      {/* TAB: Badges & Rank */}
+      {tab === "badges" && (
         <div className="space-y-4">
           {/* Badges */}
           <Card>
@@ -582,7 +583,9 @@ export default function DashboardPage() {
           <Card className="border-primary/20 bg-gradient-to-br from-card to-muted text-center">
             <CardContent className="py-6">
               <div className="text-[10px] font-semibold text-primary tracking-widest mb-2">DIGITAL BADGE CARD</div>
-              <div className="text-2xl mb-1">🔥 💯 🏆 ⚡</div>
+              <div className="text-2xl mb-1">
+                {badges.filter((b) => b.earned).map((b) => b.icon).join(" ")}
+              </div>
               <div className="font-extrabold text-base">{student.name}</div>
               <div className="text-sm text-muted-foreground">
                 {student.rankIcon} {student.rank} &middot; {student.xp.toLocaleString()} XP &middot; {student.totalQuestions} ข้อ
