@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -15,6 +15,7 @@ import {
   Award, Share2, CalendarDays, Zap, Loader2,
 } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
+import { toPng } from "html-to-image";
 
 // ===== Types =====
 
@@ -323,6 +324,46 @@ export default function DashboardPage() {
   const [weeklyData, setWeeklyData] = useState<WeeklyPoint[]>([]);
   const [badges, setBadges] = useState<BadgeData[]>([]);
   const [challengeHistory, setChallengeHistory] = useState<ChallengeData[]>([]);
+  const badgeCardRef = useRef<HTMLDivElement>(null);
+
+  const handleDownload = useCallback(async () => {
+    if (!badgeCardRef.current) return;
+    try {
+      const dataUrl = await toPng(badgeCardRef.current, { pixelRatio: 3, backgroundColor: "#ffffff" });
+      const link = document.createElement("a");
+      link.download = `morroo-badge-${student.name || "card"}.png`;
+      link.href = dataUrl;
+      link.click();
+    } catch (err) {
+      console.error("Failed to export badge card:", err);
+    }
+  }, [student.name]);
+
+  const handleShare = useCallback(async () => {
+    if (!badgeCardRef.current) return;
+    try {
+      const dataUrl = await toPng(badgeCardRef.current, { pixelRatio: 3, backgroundColor: "#ffffff" });
+      const res = await fetch(dataUrl);
+      const blob = await res.blob();
+      const file = new File([blob], "morroo-badge.png", { type: "image/png" });
+
+      if (navigator.share && navigator.canShare({ files: [file] })) {
+        await navigator.share({
+          title: `${student.name} — หมอรู้ Badge Card`,
+          text: `${student.rankIcon} ${student.rank} • ${student.totalQuestions} ข้อ • หมอรู้ MorRoo`,
+          files: [file],
+        });
+      } else {
+        // Fallback: download
+        handleDownload();
+      }
+    } catch (err) {
+      if ((err as Error).name !== "AbortError") {
+        console.error("Failed to share:", err);
+        handleDownload();
+      }
+    }
+  }, [student, handleDownload]);
 
   useEffect(() => {
     const supabase = createClient();
@@ -806,23 +847,30 @@ export default function DashboardPage() {
           </Card>
 
           {/* Shareable Badge Card */}
-          <Card className="border-primary/20 bg-gradient-to-br from-card to-muted text-center">
-            <CardContent className="py-6">
-              <div className="text-[10px] font-semibold text-primary tracking-widest mb-2">DIGITAL BADGE CARD</div>
-              <div className="text-2xl mb-1">
-                {badges.filter((b) => b.earned).map((b) => b.icon).join(" ")}
-              </div>
-              <div className="font-extrabold text-base">{student.name}</div>
-              <div className="text-sm text-muted-foreground">
-                {student.rankIcon} {student.rank} &middot; {student.xp.toLocaleString()} XP &middot; {student.totalQuestions} ข้อ
-              </div>
-              <div className="text-xs text-muted-foreground mt-2">ใส่ใน Portfolio ได้!</div>
-              <Button size="sm" className="mt-4">
-                <Share2 className="size-3.5" />
-                แชร์ / ดาวน์โหลด
+          <div>
+            <Card ref={badgeCardRef} className="border-primary/20 bg-gradient-to-br from-card to-muted text-center">
+              <CardContent className="py-6">
+                <div className="text-[10px] font-semibold text-primary tracking-widest mb-2">DIGITAL BADGE CARD</div>
+                <div className="text-2xl mb-1">
+                  {badges.filter((b) => b.earned).map((b) => b.icon).join(" ") || "🩺"}
+                </div>
+                <div className="font-extrabold text-base">{student.name}</div>
+                <div className="text-sm text-muted-foreground">
+                  {student.rankIcon} {student.rank} &middot; {student.xp.toLocaleString()} XP &middot; {student.totalQuestions} ข้อ
+                </div>
+                <div className="text-[10px] text-muted-foreground mt-2">morroo.com &middot; หมอรู้ MorRoo</div>
+              </CardContent>
+            </Card>
+            <div className="flex gap-2 justify-center mt-3">
+              <Button size="sm" variant="outline" onClick={handleDownload}>
+                ดาวน์โหลด PNG
               </Button>
-            </CardContent>
-          </Card>
+              <Button size="sm" onClick={handleShare}>
+                <Share2 className="size-3.5" />
+                แชร์
+              </Button>
+            </div>
+          </div>
         </div>
       )}
 
