@@ -105,7 +105,6 @@ export const LONGCASE_PLAN_TYPES = ["monthly", "yearly", "bundle"] as const;
 
 export function hasMcqAccess(membershipType: string, expiresAt: string | null): boolean {
   if (!MCQ_PLAN_TYPES.includes(membershipType as (typeof MCQ_PLAN_TYPES)[number])) return false;
-  if (membershipType === "bundle") return true; // bundle has no expiry check here (10q)
   if (!expiresAt) return false;
   return new Date(expiresAt) > new Date();
 }
@@ -118,7 +117,6 @@ export function hasMeqAccess(membershipType: string, expiresAt: string | null): 
 
 export function hasLongCaseAccess(membershipType: string, expiresAt: string | null): boolean {
   if (!LONGCASE_PLAN_TYPES.includes(membershipType as (typeof LONGCASE_PLAN_TYPES)[number])) return false;
-  if (membershipType === "bundle") return true; // bundle has no expiry
   if (!expiresAt) return false;
   return new Date(expiresAt) > new Date();
 }
@@ -149,7 +147,7 @@ export const PRICING_PLANS = [
       "Key Points ทุกข้อ",
       "🤖 AI ตรวจคำตอบอัตโนมัติ",
       "🩺 Long Case Exam ไม่จำกัด",
-      "ไม่มีวันหมดอายุ",
+      "หมดอายุใน 30 วัน",
     ],
     cta: "ซื้อชุดข้อสอบ",
     popular: false,
