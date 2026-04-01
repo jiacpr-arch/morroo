@@ -39,6 +39,7 @@ function LongCaseSessionInner() {
   // PE
   const [peSelected, setPeSelected] = useState<string[]>([]);
   const [peRevealed, setPeRevealed] = useState<Record<string, string>>({});
+  const [specialPeInput, setSpecialPeInput] = useState("");
 
   // Lab
   const [labOrdered, setLabOrdered] = useState<string[]>([]);
@@ -53,6 +54,13 @@ function LongCaseSessionInner() {
   // Management — individual order entries
   const [mgmtOrders, setMgmtOrders] = useState<{ text: string; confirmed: boolean }[]>([{ text: "", confirmed: false }]);
   const [mgmtHints, setMgmtHints] = useState<Record<number, string>>({});
+
+  // Hint loading
+  const [hintLoading, setHintLoading] = useState(false);
+
+  // DDx reveal (after scoring)
+  const [ddxRevealed, setDdxRevealed] = useState(false);
+  const [acceptedDdx, setAcceptedDdx] = useState<string[]>([]);
 
   // Legacy state for backward compat with save
   const [studentDdx, setStudentDdx] = useState("");
@@ -231,6 +239,31 @@ function LongCaseSessionInner() {
     const revealed: Record<string, { value: string; isAbnormal: boolean }> = {};
     for (const lab of labs) revealed[lab] = results[lab] || { value: "ไม่มีผลในระบบ", isAbnormal: false };
     setLabRevealed(prev => ({ ...prev, ...revealed }));
+  }
+
+  async function fetchHint(type: "ddx" | "management", input: string) {
+    setHintLoading(true);
+    try {
+      const res = await fetch("/api/ai/longcase-hint", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ sessionId, type, input }),
+      });
+      const data = await res.json();
+      return data.hint || "";
+    } catch {
+      return "";
+    } finally {
+      setHintLoading(false);
+    }
+  }
+
+  async function fetchAcceptedDdx() {
+    const res = await fetch(`/api/longcase/session?id=${sessionId}&includeAcceptedDdx=true`);
+    const data = await res.json();
+    if (data.long_case?.accepted_ddx) {
+      setAcceptedDdx(data.long_case.accepted_ddx);
+    }
   }
 
   async function startExaminer() {
@@ -487,6 +520,68 @@ function LongCaseSessionInner() {
                 );
               })}
             </div>
+            {/* Special Examination */}
+            <div className="border-t border-gray-100 pt-3">
+              <p className="text-xs text-gray-400 font-medium mb-2">Special Examination</p>
+              <div className="flex gap-2">
+                <Input
+                  value={specialPeInput}
+                  onChange={e => setSpecialPeInput(e.target.value)}
+                  placeholder="เช่น Kernig's sign, McBurney's point, Brudzinski..."
+                  onKeyDown={async e => {
+                    if (e.key === "Enter" && specialPeInput.trim()) {
+                      const name = specialPeInput.trim();
+                      const newSelected = [...peSelected, name];
+                      setPeSelected(newSelected);
+                      setSpecialPeInput("");
+                      await revealPe([name]);
+                      await fetch("/api/longcase/session", {
+                        method: "PUT",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ sessionId, pe_selected: newSelected }),
+                      });
+                    }
+                  }}
+                  className="flex-1"
+                />
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="shrink-0"
+                  onClick={async () => {
+                    if (!specialPeInput.trim()) return;
+                    const name = specialPeInput.trim();
+                    const newSelected = [...peSelected, name];
+                    setPeSelected(newSelected);
+                    setSpecialPeInput("");
+                    await revealPe([name]);
+                    await fetch("/api/longcase/session", {
+                      method: "PUT",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({ sessionId, pe_selected: newSelected }),
+                    });
+                  }}
+                >
+                  <Plus className="h-4 w-4" />
+                </Button>
+              </div>
+              {/* Show special PE results */}
+              {peSelected.filter(s => !PE_SYSTEMS.includes(s)).length > 0 && (
+                <div className="mt-2 space-y-1">
+                  {peSelected.filter(s => !PE_SYSTEMS.includes(s)).map(s => (
+                    <div key={s} className="rounded-lg border border-amber-300 bg-amber-50 p-2 text-sm">
+                      <span className="font-medium text-gray-800">{s}</span>
+                      {peRevealed[s] && (
+                        <span className={`ml-2 text-xs ${peRevealed[s].includes("ปกติ") ? "text-gray-500" : "text-red-600 font-medium"}`}>
+                          — {peRevealed[s]}
+                        </span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
             <Button onClick={() => savePhase("lab")} disabled={peSelected.length === 0} className="w-full bg-amber-500 hover:bg-amber-600 text-white">
               เสร็จแล้ว → สั่ง Lab/Imaging <ChevronRight className="h-4 w-4 ml-1" />
             </Button>
@@ -729,6 +824,9 @@ function LongCaseSessionInner() {
                       headers: { "Content-Type": "application/json" },
                       body: JSON.stringify({ sessionId, student_ddx: ddxJson }),
                     });
+                    // Fetch hint from AI
+                    const hint = await fetchHint("ddx", validEntries.map((e, i) => `${i + 1}. ${e}`).join("\n"));
+                    if (hint) setDdxHint(hint);
                   }}
                   disabled={ddxEntries.filter(e => e.trim()).length < 3}
                   className="w-full bg-amber-500 hover:bg-amber-600 text-white"
@@ -748,6 +846,13 @@ function LongCaseSessionInner() {
                     </div>
                   ))}
                 </div>
+
+                {hintLoading && !ddxHint && (
+                  <div className="rounded-lg border border-blue-200 bg-blue-50 p-3 flex items-center gap-2">
+                    <Loader2 className="h-4 w-4 text-blue-500 animate-spin" />
+                    <p className="text-sm text-blue-600">กำลังสร้างคำแนะนำ...</p>
+                  </div>
+                )}
 
                 {ddxHint && (
                   <div className="rounded-lg border border-blue-200 bg-blue-50 p-3 flex items-start gap-2">
@@ -808,21 +913,27 @@ function LongCaseSessionInner() {
                           setMgmtOrders(updated);
                         }}
                         placeholder={idx === 0 ? "เช่น NSS 1000 mL IV drip 80 mL/hr" : "เขียน order ถัดไป..."}
-                        onKeyDown={e => {
+                        onKeyDown={async e => {
                           if (e.key === "Enter" && order.text.trim()) {
                             const updated = [...mgmtOrders];
                             updated[idx] = { ...updated[idx], confirmed: true };
                             setMgmtOrders(updated);
+                            const allOrders = updated.filter(o => o.confirmed).map(o => o.text);
+                            const hint = await fetchHint("management", allOrders.map((t, i) => `${i + 1}. ${t}`).join("\n"));
+                            if (hint) setMgmtHints(prev => ({ ...prev, [idx]: hint }));
                           }
                         }}
                         className="flex-1"
                       />
                       <Button
-                        onClick={() => {
+                        onClick={async () => {
                           if (!order.text.trim()) return;
                           const updated = [...mgmtOrders];
                           updated[idx] = { ...updated[idx], confirmed: true };
                           setMgmtOrders(updated);
+                          const allOrders = updated.filter(o => o.confirmed).map(o => o.text);
+                          const hint = await fetchHint("management", allOrders.map((t, i) => `${i + 1}. ${t}`).join("\n"));
+                          if (hint) setMgmtHints(prev => ({ ...prev, [idx]: hint }));
                         }}
                         disabled={!order.text.trim()}
                         size="sm"
@@ -842,6 +953,12 @@ function LongCaseSessionInner() {
                   )}
 
                   {/* Hint for confirmed order */}
+                  {order.confirmed && hintLoading && !mgmtHints[idx] && idx === mgmtOrders.filter(o => o.confirmed).length - 1 && (
+                    <div className="ml-6 mt-1 rounded-lg border border-blue-100 bg-blue-50 p-2 flex items-center gap-1.5">
+                      <Loader2 className="h-3.5 w-3.5 text-blue-500 animate-spin" />
+                      <p className="text-xs text-blue-600">กำลังสร้างคำแนะนำ...</p>
+                    </div>
+                  )}
                   {order.confirmed && mgmtHints[idx] && (
                     <div className="ml-6 mt-1 rounded-lg border border-blue-100 bg-blue-50 p-2 flex items-start gap-1.5">
                       <Lightbulb className="h-3.5 w-3.5 text-blue-500 mt-0.5 shrink-0" />
@@ -969,6 +1086,55 @@ function LongCaseSessionInner() {
                 </div>
               ))}
             </div>
+
+            {/* DDx Answer Reveal */}
+            {ddxEntries.filter(e => e.trim()).length > 0 && (
+              <div className="rounded-lg bg-purple-50 border border-purple-200 p-4 space-y-3">
+                <div className="flex items-center justify-between">
+                  <p className="text-sm font-semibold text-purple-800">🧠 เฉลย DDx</p>
+                  {!ddxRevealed && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={async () => {
+                        await fetchAcceptedDdx();
+                        setDdxRevealed(true);
+                      }}
+                      className="text-purple-700 border-purple-300 hover:bg-purple-100"
+                    >
+                      <Eye className="h-3.5 w-3.5 mr-1" /> ดูเฉลย
+                    </Button>
+                  )}
+                </div>
+
+                {/* Student's DDx */}
+                <div>
+                  <p className="text-xs text-gray-500 mb-1">DDx ของคุณ:</p>
+                  {ddxEntries.filter(e => e.trim()).map((entry, idx) => (
+                    <div key={idx} className="text-sm text-gray-700 flex items-center gap-1.5">
+                      <span className="font-medium text-purple-600">{idx + 1}.</span> {entry}
+                      {ddxRevealed && acceptedDdx.length > 0 && (
+                        acceptedDdx.some(a => entry.toLowerCase().includes(a.toLowerCase()) || a.toLowerCase().includes(entry.toLowerCase()))
+                          ? <CheckCircle className="h-3.5 w-3.5 text-green-500" />
+                          : <span className="text-xs text-gray-400">—</span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+
+                {/* Accepted DDx */}
+                {ddxRevealed && acceptedDdx.length > 0 && (
+                  <div className="border-t border-purple-200 pt-2">
+                    <p className="text-xs text-gray-500 mb-1">DDx ที่ยอมรับ:</p>
+                    {acceptedDdx.map((ddx, idx) => (
+                      <div key={idx} className="text-sm text-purple-700 flex items-center gap-1.5">
+                        <span className="font-medium">{idx + 1}.</span> {ddx}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
 
             {scores.feedback && (
               <div className="rounded-lg bg-blue-50 border border-blue-200 p-4">
