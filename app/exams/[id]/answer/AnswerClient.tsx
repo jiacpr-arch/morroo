@@ -66,12 +66,12 @@ export default function AnswerClient({
       const savedAiScores = localStorage.getItem(`exam-ai-scores-${exam.id}`);
       if (savedAiScores) setAiScores(JSON.parse(savedAiScores));
 
-      // Track free MEQ case views (limit 2 per month)
-      const monthKey = `meq-views-${new Date().getFullYear()}-${new Date().getMonth()}`;
-      const viewed: string[] = JSON.parse(localStorage.getItem(monthKey) || "[]");
+      // Track MEQ case views for free (2/month) and bundle (5/period) limits
+      const mKey = `meq-views-${new Date().getFullYear()}-${new Date().getMonth()}`;
+      const viewed: string[] = JSON.parse(localStorage.getItem(mKey) || "[]");
       if (!viewed.includes(exam.id)) {
         viewed.push(exam.id);
-        localStorage.setItem(monthKey, JSON.stringify(viewed));
+        localStorage.setItem(mKey, JSON.stringify(viewed));
       }
     } catch {}
   }, [exam.id]);
@@ -115,16 +115,27 @@ export default function AnswerClient({
   // hasKeyPoints: only paid MEQ members see Key Points + AI grading
   const hasKeyPoints = exam.is_free || isPaidMember;
 
-  // Free MEQ 2-case monthly limit check (localStorage)
-  const freeMonthlyLimit = 2;
-  const freeMeqViewCount = (() => {
+  const isBundle = profile?.membership_type === "bundle";
+  const isBundlePaid = isBundle && hasMeqAccess(profile!.membership_type, profile!.membership_expires_at);
+
+  // For bundle users: 5 MEQ cases per 30-day period (localStorage)
+  // For free users: 2 MEQ cases per month (localStorage)
+  const monthKey = `meq-views-${new Date().getFullYear()}-${new Date().getMonth()}`;
+  const bundleKey = `meq-bundle-views-${profile?.membership_expires_at?.slice(0, 7) ?? ""}`;
+
+  const meqViewCount = (() => {
     try {
-      const monthKey = `meq-views-${new Date().getFullYear()}-${new Date().getMonth()}`;
-      const viewed: string[] = JSON.parse(localStorage.getItem(monthKey) || "[]");
+      const key = isBundlePaid ? bundleKey : monthKey;
+      const viewed: string[] = JSON.parse(localStorage.getItem(key) || "[]");
       return viewed.length;
     } catch { return 0; }
   })();
-  const freeMeqLimitReached = !isPaidMember && !exam.is_free && freeMeqViewCount > freeMonthlyLimit;
+
+  const freeMonthlyLimit = 2;
+  const bundleLimit = 5;
+  const effectiveLimit = isBundlePaid ? bundleLimit : freeMonthlyLimit;
+  const freeMeqViewCount = meqViewCount;
+  const freeMeqLimitReached = !exam.is_free && !isPaidMember && freeMeqViewCount > effectiveLimit;
 
   const togglePart = (partNumber: number) => {
     setOpenParts((prev) => {
@@ -181,10 +192,12 @@ export default function AnswerClient({
           <div>
             <p className={`text-sm font-semibold ${freeMeqLimitReached ? "text-red-700" : "text-amber-700"}`}>
               {freeMeqLimitReached
-                ? "ครบ 2 เคสฟรีแล้วเดือนนี้ — เห็นแค่เฉลยย่อ"
-                : `ฟรี ${freeMeqViewCount}/${freeMonthlyLimit} เคสเดือนนี้ — เห็นเฉลยย่อ`}
+                ? `ครบ ${effectiveLimit} เคสแล้ว — เห็นแค่เฉลยย่อ`
+                : `${isBundlePaid ? "Bundle" : "ฟรี"} ${freeMeqViewCount}/${effectiveLimit} เคสเดือนนี้ — เห็นเฉลยย่อ`}
             </p>
-            <p className="text-xs text-muted-foreground mt-0.5">อัปเกรดเพื่อดู Key Points และ AI ตรวจคำตอบ</p>
+            <p className="text-xs text-muted-foreground mt-0.5">
+              {isBundlePaid ? "อัปเกรดเป็น MEQ plan เพื่อดูไม่จำกัด" : "อัปเกรดเพื่อดู Key Points และ AI ตรวจคำตอบ"}
+            </p>
           </div>
           <a href="/pricing" className="shrink-0 text-xs font-semibold text-amber-600 underline">ดูแพ็กเกจ →</a>
         </div>

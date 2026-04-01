@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
 import { Loader2, Send, ChevronRight, CheckCircle, MessageSquare, Stethoscope, FlaskConical, Brain, ClipboardList, Star } from "lucide-react";
 import type { LongCaseSession, LongCaseFull } from "@/lib/types";
+import { createClient } from "@/lib/supabase/client";
 
 type Phase = LongCaseSession["phase"];
 
@@ -64,20 +65,18 @@ function LongCaseSessionInner() {
 
   // Load membership
   useEffect(() => {
-    import("@/lib/supabase/client").then(({ createClient }) => {
-      const supabase = createClient();
-      supabase.auth.getUser().then(({ data: { user } }) => {
-        if (!user) return;
-        supabase.from("profiles")
-          .select("membership_type, membership_expires_at")
-          .eq("id", user.id)
-          .single()
-          .then(({ data: p }) => {
-            if (!p) return;
-            const expired = p.membership_expires_at ? new Date(p.membership_expires_at) < new Date() : true;
-            setIsPaidMember(p.membership_type !== "free" && !expired);
-          });
-      });
+    const supabase = createClient();
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      if (!user) return;
+      supabase.from("profiles")
+        .select("membership_type, membership_expires_at")
+        .eq("id", user.id)
+        .single()
+        .then(({ data: p }) => {
+          if (!p) return;
+          const expired = p.membership_expires_at ? new Date(p.membership_expires_at) < new Date() : true;
+          setIsPaidMember(p.membership_type !== "free" && !expired);
+        });
     });
   }, []);
 
