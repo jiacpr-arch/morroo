@@ -4,8 +4,9 @@ import { useState, useEffect, useRef, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Loader2, Send, ChevronRight, CheckCircle, MessageSquare, Stethoscope, FlaskConical, Brain, ClipboardList, Star } from "lucide-react";
+import { Loader2, Send, ChevronRight, CheckCircle, MessageSquare, Stethoscope, FlaskConical, Brain, ClipboardList, Star, Plus, Trash2, Lightbulb, Eye, ChevronDown, ChevronUp } from "lucide-react";
 import type { LongCaseSession, LongCaseFull } from "@/lib/types";
 
 type Phase = LongCaseSession["phase"];
@@ -34,7 +35,6 @@ function LongCaseSessionInner() {
   const [chatInput, setChatInput] = useState("");
   const [chatMessages, setChatMessages] = useState<{ role: "user" | "assistant"; content: string }[]>([]);
   const [chatLoading, setChatLoading] = useState(false);
-  const chatEndRef = useRef<HTMLDivElement>(null);
 
   // PE
   const [peSelected, setPeSelected] = useState<string[]>([]);
@@ -45,16 +45,30 @@ function LongCaseSessionInner() {
   const [labRevealed, setLabRevealed] = useState<Record<string, { value: string; isAbnormal: boolean }>>({});
   const [labKeys, setLabKeys] = useState<string[]>([]);
 
-  // DDx + Management
+  // DDx — individual ranked entries
+  const [ddxEntries, setDdxEntries] = useState<string[]>(["", "", ""]);
+  const [ddxSubmitted, setDdxSubmitted] = useState(false);
+  const [ddxHint, setDdxHint] = useState("");
+
+  // Management — individual order entries
+  const [mgmtOrders, setMgmtOrders] = useState<{ text: string; confirmed: boolean }[]>([{ text: "", confirmed: false }]);
+  const [mgmtHints, setMgmtHints] = useState<Record<number, string>>({});
+
+  // Legacy state for backward compat with save
   const [studentDdx, setStudentDdx] = useState("");
   const [studentMgmt, setStudentMgmt] = useState("");
+
+  // Lab — batch reveal mode
+  const [labPendingOrder, setLabPendingOrder] = useState<string[]>([]);
+  const [labResultsRevealed, setLabResultsRevealed] = useState(false);
+  const [showRecommended, setShowRecommended] = useState(false);
+  const [customLabInput, setCustomLabInput] = useState("");
 
   // Examiner chat
   const [examInput, setExamInput] = useState("");
   const [examMessages, setExamMessages] = useState<{ role: "user" | "assistant"; content: string }[]>([]);
   const [examLoading, setExamLoading] = useState(false);
   const [examinerStarted, setExaminerStarted] = useState(false);
-  const examEndRef = useRef<HTMLDivElement>(null);
 
   // Scores
   const [scores, setScores] = useState<Record<string, number | string> | null>(null);
@@ -74,8 +88,39 @@ function LongCaseSessionInner() {
         if (data.history_chat?.length) setChatMessages(data.history_chat);
         if (data.pe_selected?.length) setPeSelected(data.pe_selected);
         if (data.lab_ordered?.length) setLabOrdered(data.lab_ordered);
-        if (data.student_ddx) setStudentDdx(data.student_ddx);
-        if (data.student_mgmt) setStudentMgmt(data.student_mgmt);
+        if (data.student_ddx) {
+          setStudentDdx(data.student_ddx);
+          // Try parsing as JSON array; fallback to splitting by newlines
+          try {
+            const parsed = JSON.parse(data.student_ddx);
+            if (Array.isArray(parsed) && parsed.length > 0) {
+              setDdxEntries(parsed);
+              setDdxSubmitted(true);
+            }
+          } catch {
+            const lines = data.student_ddx.split("\n").map((l: string) => l.replace(/^\d+\.\s*/, "").trim()).filter(Boolean);
+            if (lines.length > 0) { setDdxEntries(lines); setDdxSubmitted(true); }
+          }
+        }
+        if (data.student_mgmt) {
+          setStudentMgmt(data.student_mgmt);
+          try {
+            const parsed = JSON.parse(data.student_mgmt);
+            if (Array.isArray(parsed) && parsed.length > 0) {
+              setMgmtOrders(parsed.map((t: string) => ({ text: t, confirmed: true })));
+            }
+          } catch {
+            const lines = data.student_mgmt.split("\n").filter((l: string) => l.trim());
+            if (lines.length > 0) {
+              setMgmtOrders(lines.map((t: string) => ({ text: t.trim(), confirmed: true })));
+            }
+          }
+        }
+        // Restore lab revealed state
+        if (data.lab_ordered?.length) {
+          setLabPendingOrder(data.lab_ordered);
+          setLabResultsRevealed(true);
+        }
         if (data.examiner_chat?.length) setExamMessages(data.examiner_chat);
         if (data.score_total_pct !== null) {
           setScores({
@@ -94,8 +139,19 @@ function LongCaseSessionInner() {
       .finally(() => setLoading(false));
   }, [sessionId]);
 
-  useEffect(() => { chatEndRef.current?.scrollIntoView({ behavior: "smooth" }); }, [chatMessages]);
-  useEffect(() => { examEndRef.current?.scrollIntoView({ behavior: "smooth" }); }, [examMessages]);
+  // Scroll within the chat container only — not the whole page
+  const chatContainerRef = useRef<HTMLDivElement>(null);
+  const examContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = chatContainerRef.current;
+    if (container) container.scrollTop = container.scrollHeight;
+  }, [chatMessages]);
+
+  useEffect(() => {
+    const container = examContainerRef.current;
+    if (container) container.scrollTop = container.scrollHeight;
+  }, [examMessages]);
 
   useEffect(() => {
     if (phase === "lab" && sessionId && labKeys.length === 0) {
@@ -364,7 +420,7 @@ function LongCaseSessionInner() {
               <MessageSquare className="h-5 w-5" /> ซักประวัติ
             </h2>
             <p className="text-sm text-gray-500">คุยกับผู้ป่วย AI ซักประวัติให้ครบถ้วน แล้วกด "เสร็จแล้ว"</p>
-            <div className="space-y-3 max-h-80 overflow-y-auto">
+            <div ref={chatContainerRef} className="space-y-3 max-h-80 overflow-y-auto">
               {chatMessages.map((m, i) => (
                 <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
                   <div className={`max-w-[80%] rounded-xl px-4 py-2.5 text-sm ${
@@ -378,7 +434,6 @@ function LongCaseSessionInner() {
                 </div>
               ))}
               {chatLoading && <div className="text-xs text-gray-400 animate-pulse">ผู้ป่วยกำลังตอบ...</div>}
-              <div ref={chatEndRef} />
             </div>
             <div className="flex gap-2">
               <Textarea
@@ -444,36 +499,59 @@ function LongCaseSessionInner() {
             <h2 className="font-bold text-amber-800 flex items-center gap-2">
               <FlaskConical className="h-5 w-5" /> สั่ง Lab / Imaging
             </h2>
-            <p className="text-sm text-gray-500">เลือกการตรวจที่ต้องการสั่ง (เห็นผลเฉพาะที่สั่ง)</p>
+            <p className="text-sm text-gray-500">
+              เลือกการตรวจที่ต้องการสั่ง แล้วกด &quot;ส่งตรวจ&quot; เพื่อดูผลทั้งหมดพร้อมกัน
+            </p>
 
-            {/* Recommended labs for this case */}
-            {labKeys.length > 0 && (
-              <div className="rounded-lg border border-blue-200 bg-blue-50 p-3 space-y-2">
-                <p className="text-xs font-semibold text-blue-700">⭐ แนะนำสำหรับเคสนี้</p>
-                <div className="flex flex-wrap gap-2">
-                  {labKeys.map(name => {
-                    const ordered = labOrdered.includes(name);
+            {/* Selected labs summary */}
+            {labPendingOrder.length > 0 && !labResultsRevealed && (
+              <div className="rounded-lg border border-amber-300 bg-amber-50 p-3">
+                <p className="text-xs font-semibold text-amber-700 mb-2">รายการที่สั่ง ({labPendingOrder.length} รายการ)</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {labPendingOrder.map(name => (
+                    <span key={name} className="inline-flex items-center gap-1 bg-amber-100 text-amber-800 text-xs px-2 py-1 rounded-full">
+                      {name}
+                      <button onClick={() => setLabPendingOrder(prev => prev.filter(n => n !== name))} className="hover:text-red-600">
+                        <Trash2 className="h-3 w-3" />
+                      </button>
+                    </span>
+                  ))}
+                </div>
+                <Button
+                  onClick={async () => {
+                    setLabOrdered(labPendingOrder);
+                    await revealLabs(labPendingOrder);
+                    await fetch("/api/longcase/session", {
+                      method: "PUT",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({ sessionId, lab_ordered: labPendingOrder }),
+                    });
+                    setLabResultsRevealed(true);
+                  }}
+                  className="mt-3 w-full bg-blue-600 hover:bg-blue-700 text-white"
+                >
+                  <Eye className="h-4 w-4 mr-1" /> ส่งตรวจ — ดูผลทั้งหมด
+                </Button>
+              </div>
+            )}
+
+            {/* Results after reveal */}
+            {labResultsRevealed && labOrdered.length > 0 && (
+              <div className="rounded-lg border border-green-300 bg-green-50 p-3 space-y-2">
+                <p className="text-xs font-semibold text-green-700">ผลการตรวจ</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {labOrdered.map(name => {
                     const res = labRevealed[name];
                     return (
-                      <div
-                        key={name}
-                        onClick={async () => {
-                          if (!ordered) {
-                            const newOrdered = [...labOrdered, name];
-                            setLabOrdered(newOrdered);
-                            await revealLabs([name]);
-                            await fetch("/api/longcase/session", {
-                              method: "PUT",
-                              headers: { "Content-Type": "application/json" },
-                              body: JSON.stringify({ sessionId, lab_ordered: newOrdered }),
-                            });
-                          }
-                        }}
-                        className={`rounded-lg border p-2.5 cursor-pointer transition-colors min-w-[100px] ${ordered ? "border-blue-400 bg-white" : "border-blue-300 bg-white hover:bg-blue-100"}`}
-                      >
-                        <div className="font-medium text-sm text-blue-800">{name}</div>
-                        {res && <p className={`text-xs mt-0.5 ${res.isAbnormal ? "text-red-600 font-medium" : "text-gray-500"}`}>{res.value}</p>}
-                        {!res && ordered && <p className="text-xs text-blue-400 mt-0.5">โหลด...</p>}
+                      <div key={name} className="rounded-lg border border-green-200 bg-white p-2.5">
+                        <div className="font-medium text-sm text-gray-800">{name}</div>
+                        {res ? (
+                          <p className={`text-xs mt-0.5 ${res.isAbnormal ? "text-red-600 font-semibold" : "text-gray-500"}`}>
+                            {res.value} {res.isAbnormal && " [ผิดปกติ]"}
+                          </p>
+                        ) : (
+                          <p className="text-xs text-gray-400 mt-0.5">รอผล...</p>
+                        )}
                       </div>
                     );
                   })}
@@ -481,43 +559,114 @@ function LongCaseSessionInner() {
               </div>
             )}
 
-            {/* All labs */}
-            <p className="text-xs text-gray-400 font-medium">การตรวจทั้งหมด</p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-              {COMMON_LABS.map(name => {
-                const ordered = labOrdered.includes(name);
-                const res = labRevealed[name];
-                const isRecommended = labKeys.includes(name);
-                return (
-                  <div key={name} className={`rounded-lg border p-3 cursor-pointer transition-colors ${
-                    ordered ? "border-blue-400 bg-blue-50"
-                    : isRecommended ? "border-blue-200 bg-blue-50/40 hover:border-blue-300"
-                    : "border-gray-200 hover:border-blue-200"
-                  }`}
-                    onClick={async () => {
-                      if (!ordered) {
-                        const newOrdered = [...labOrdered, name];
-                        setLabOrdered(newOrdered);
-                        await revealLabs([name]);
-                        await fetch("/api/longcase/session", {
-                          method: "PUT",
-                          headers: { "Content-Type": "application/json" },
-                          body: JSON.stringify({ sessionId, lab_ordered: newOrdered }),
-                        });
+            {/* Lab selection — only show when not yet revealed */}
+            {!labResultsRevealed && (
+              <>
+                {/* Hint toggle for recommended labs */}
+                {labKeys.length > 0 && (
+                  <button
+                    onClick={() => setShowRecommended(prev => !prev)}
+                    className="flex items-center gap-1.5 text-xs text-blue-600 hover:text-blue-800 transition-colors"
+                  >
+                    <Lightbulb className="h-3.5 w-3.5" />
+                    {showRecommended ? "ซ่อนคำแนะนำ" : "ดูคำแนะนำสำหรับเคสนี้"}
+                    {showRecommended ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
+                  </button>
+                )}
+
+                {showRecommended && labKeys.length > 0 && (
+                  <div className="rounded-lg border border-blue-200 bg-blue-50/50 p-3 space-y-2">
+                    <p className="text-xs text-blue-600">Lab/Imaging ที่อาจเกี่ยวข้อง (ไม่จำเป็นต้องสั่งทั้งหมด)</p>
+                    <div className="flex flex-wrap gap-2">
+                      {labKeys.map(name => {
+                        const isPending = labPendingOrder.includes(name);
+                        return (
+                          <button
+                            key={name}
+                            onClick={() => {
+                              if (!isPending) setLabPendingOrder(prev => [...prev, name]);
+                            }}
+                            disabled={isPending}
+                            className={`rounded-lg border px-3 py-1.5 text-xs font-medium transition-colors ${
+                              isPending ? "border-blue-400 bg-blue-100 text-blue-700" : "border-blue-200 bg-white text-blue-700 hover:bg-blue-50"
+                            }`}
+                          >
+                            {name} {isPending && <CheckCircle className="h-3 w-3 inline ml-1" />}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {/* All labs grid */}
+                <p className="text-xs text-gray-400 font-medium">เลือกการตรวจ</p>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                  {COMMON_LABS.map(name => {
+                    const isPending = labPendingOrder.includes(name);
+                    return (
+                      <div key={name} className={`rounded-lg border p-3 cursor-pointer transition-colors ${
+                        isPending ? "border-blue-400 bg-blue-50" : "border-gray-200 hover:border-blue-200"
+                      }`}
+                        onClick={() => {
+                          if (isPending) {
+                            setLabPendingOrder(prev => prev.filter(n => n !== name));
+                          } else {
+                            setLabPendingOrder(prev => [...prev, name]);
+                          }
+                        }}
+                      >
+                        <div className="font-medium text-sm text-gray-800 flex items-center gap-1">
+                          {isPending && <CheckCircle className="h-3.5 w-3.5 text-blue-500" />}
+                          {name}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Custom lab input */}
+                <div className="flex gap-2">
+                  <Input
+                    value={customLabInput}
+                    onChange={e => setCustomLabInput(e.target.value)}
+                    placeholder="พิมพ์ lab อื่นที่ต้องการ..."
+                    onKeyDown={e => {
+                      if (e.key === "Enter" && customLabInput.trim()) {
+                        setLabPendingOrder(prev => [...prev, customLabInput.trim()]);
+                        setCustomLabInput("");
                       }
                     }}
+                    className="flex-1"
+                  />
+                  <Button
+                    onClick={() => {
+                      if (customLabInput.trim()) {
+                        setLabPendingOrder(prev => [...prev, customLabInput.trim()]);
+                        setCustomLabInput("");
+                      }
+                    }}
+                    variant="outline"
+                    size="icon"
+                    className="shrink-0"
                   >
-                    <div className="font-medium text-sm text-gray-800 flex items-center gap-1">
-                      {name}
-                      {isRecommended && !ordered && <span className="text-blue-400 text-xs">★</span>}
-                    </div>
-                    {res && <p className={`text-xs mt-1 ${res.isAbnormal ? "text-red-600 font-medium" : "text-gray-500"}`}>{res.value}</p>}
-                  </div>
-                );
-              })}
-            </div>
-            <Button onClick={() => savePhase("ddx")} disabled={labOrdered.length === 0} className="w-full bg-amber-500 hover:bg-amber-600 text-white">
-              เสร็จแล้ว → เขียน DDx <ChevronRight className="h-4 w-4 ml-1" />
+                    <Plus className="h-4 w-4" />
+                  </Button>
+                </div>
+              </>
+            )}
+
+            <Button
+              onClick={() => savePhase("ddx")}
+              disabled={!labResultsRevealed || labOrdered.length === 0}
+              className="w-full bg-amber-500 hover:bg-amber-600 text-white"
+            >
+              {!labResultsRevealed && labPendingOrder.length > 0
+                ? "กด \"ส่งตรวจ\" เพื่อดูผลก่อน"
+                : !labResultsRevealed
+                ? "เลือก Lab แล้วกดส่งตรวจ"
+                : "เสร็จแล้ว → เขียน DDx"}
+              <ChevronRight className="h-4 w-4 ml-1" />
             </Button>
           </div>
         )}
@@ -528,28 +677,93 @@ function LongCaseSessionInner() {
             <h2 className="font-bold text-amber-800 flex items-center gap-2">
               <Brain className="h-5 w-5" /> Differential Diagnosis
             </h2>
-            <p className="text-sm text-gray-500">เขียน DDx ของคุณ (อย่างน้อย 3 ข้อ เรียงตามความน่าจะเป็น)</p>
-            <Textarea
-              rows={5}
-              value={studentDdx}
-              onChange={e => setStudentDdx(e.target.value)}
-              placeholder="1. ... (โรคที่น่าจะเป็นมากที่สุด)&#10;2. ...&#10;3. ..."
-              className="resize-none"
-            />
-            <Button
-              onClick={async () => {
-                await fetch("/api/longcase/session", {
-                  method: "PUT",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify({ sessionId, student_ddx: studentDdx }),
-                });
-                setPhase("management");
-              }}
-              disabled={!studentDdx.trim()}
-              className="w-full bg-amber-500 hover:bg-amber-600 text-white"
-            >
-              บันทึก DDx → เขียนแผนการรักษา <ChevronRight className="h-4 w-4 ml-1" />
-            </Button>
+            <p className="text-sm text-gray-500">
+              ใส่ DDx ทีละโรค เรียงจากที่น่าจะเป็น <strong>มากที่สุด</strong> ไปน้อยที่สุด (อย่างน้อย 3 ข้อ)
+            </p>
+
+            {!ddxSubmitted ? (
+              <>
+                <div className="space-y-2">
+                  {ddxEntries.map((entry, idx) => (
+                    <div key={idx} className="flex items-center gap-2">
+                      <span className="text-sm font-bold text-amber-600 w-6 text-center shrink-0">{idx + 1}.</span>
+                      <Input
+                        value={entry}
+                        onChange={e => {
+                          const updated = [...ddxEntries];
+                          updated[idx] = e.target.value;
+                          setDdxEntries(updated);
+                        }}
+                        placeholder={idx === 0 ? "โรคที่น่าจะเป็นมากที่สุด" : idx === 1 ? "โรคอันดับ 2" : `DDx อันดับ ${idx + 1}`}
+                        className="flex-1"
+                      />
+                      {ddxEntries.length > 3 && (
+                        <button
+                          onClick={() => setDdxEntries(prev => prev.filter((_, i) => i !== idx))}
+                          className="text-gray-400 hover:text-red-500 shrink-0"
+                        >
+                          <Trash2 className="h-4 w-4" />
+                        </button>
+                      )}
+                    </div>
+                  ))}
+                </div>
+
+                <Button
+                  variant="outline"
+                  onClick={() => setDdxEntries(prev => [...prev, ""])}
+                  className="w-full border-dashed border-amber-300 text-amber-700 hover:bg-amber-50"
+                >
+                  <Plus className="h-4 w-4 mr-1" /> เพิ่ม DDx
+                </Button>
+
+                <Button
+                  onClick={async () => {
+                    const validEntries = ddxEntries.filter(e => e.trim());
+                    if (validEntries.length < 3) return;
+                    const ddxJson = JSON.stringify(validEntries);
+                    setStudentDdx(ddxJson);
+                    setDdxSubmitted(true);
+                    await fetch("/api/longcase/session", {
+                      method: "PUT",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({ sessionId, student_ddx: ddxJson }),
+                    });
+                  }}
+                  disabled={ddxEntries.filter(e => e.trim()).length < 3}
+                  className="w-full bg-amber-500 hover:bg-amber-600 text-white"
+                >
+                  ยืนยัน DDx
+                </Button>
+              </>
+            ) : (
+              <>
+                {/* Show submitted DDx list */}
+                <div className="rounded-lg border border-green-200 bg-green-50 p-4 space-y-2">
+                  <p className="text-xs font-semibold text-green-700 mb-2">DDx ที่ส่งแล้ว</p>
+                  {ddxEntries.filter(e => e.trim()).map((entry, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-sm">
+                      <span className="font-bold text-green-600 w-6 text-center">{idx + 1}.</span>
+                      <span className="text-gray-800">{entry}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {ddxHint && (
+                  <div className="rounded-lg border border-blue-200 bg-blue-50 p-3 flex items-start gap-2">
+                    <Lightbulb className="h-4 w-4 text-blue-500 mt-0.5 shrink-0" />
+                    <p className="text-sm text-blue-700">{ddxHint}</p>
+                  </div>
+                )}
+
+                <Button
+                  onClick={() => setPhase("management")}
+                  className="w-full bg-amber-500 hover:bg-amber-600 text-white"
+                >
+                  ไปเขียนแผนการรักษา <ChevronRight className="h-4 w-4 ml-1" />
+                </Button>
+              </>
+            )}
           </div>
         )}
 
@@ -557,26 +771,112 @@ function LongCaseSessionInner() {
         {phase === "management" && (
           <div className="rounded-xl border border-amber-200 bg-white p-5 space-y-4">
             <h2 className="font-bold text-amber-800 flex items-center gap-2">
-              <ClipboardList className="h-5 w-5" /> แผนการรักษา
+              <ClipboardList className="h-5 w-5" /> แผนการรักษา (Orders)
             </h2>
-            <p className="text-sm text-gray-500">เขียนแผนการรักษา Immediate + Definitive + Follow-up</p>
-            <Textarea
-              rows={6}
-              value={studentMgmt}
-              onChange={e => setStudentMgmt(e.target.value)}
-              placeholder="Immediate management:&#10;...&#10;&#10;Definitive treatment:&#10;...&#10;&#10;Follow-up:&#10;..."
-              className="resize-none"
-            />
+            <p className="text-sm text-gray-500">
+              เขียน order ทีละรายการ เหมือนเขียน order จริง กด OK เพื่อยืนยันแต่ละ order
+            </p>
+
+            {/* Confirmed orders */}
+            <div className="space-y-2">
+              {mgmtOrders.map((order, idx) => (
+                <div key={idx}>
+                  {order.confirmed ? (
+                    <div className="flex items-start gap-2">
+                      <div className="flex items-center gap-2 flex-1 rounded-lg border border-green-200 bg-green-50 p-3">
+                        <CheckCircle className="h-4 w-4 text-green-500 shrink-0" />
+                        <span className="text-sm text-gray-800">{order.text}</span>
+                      </div>
+                      <button
+                        onClick={() => {
+                          const updated = [...mgmtOrders];
+                          updated[idx] = { ...updated[idx], confirmed: false };
+                          setMgmtOrders(updated);
+                        }}
+                        className="text-xs text-gray-400 hover:text-gray-600 mt-2.5"
+                      >
+                        แก้ไข
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="flex items-center gap-2">
+                      <Input
+                        value={order.text}
+                        onChange={e => {
+                          const updated = [...mgmtOrders];
+                          updated[idx] = { ...updated[idx], text: e.target.value };
+                          setMgmtOrders(updated);
+                        }}
+                        placeholder={idx === 0 ? "เช่น NSS 1000 mL IV drip 80 mL/hr" : "เขียน order ถัดไป..."}
+                        onKeyDown={e => {
+                          if (e.key === "Enter" && order.text.trim()) {
+                            const updated = [...mgmtOrders];
+                            updated[idx] = { ...updated[idx], confirmed: true };
+                            setMgmtOrders(updated);
+                          }
+                        }}
+                        className="flex-1"
+                      />
+                      <Button
+                        onClick={() => {
+                          if (!order.text.trim()) return;
+                          const updated = [...mgmtOrders];
+                          updated[idx] = { ...updated[idx], confirmed: true };
+                          setMgmtOrders(updated);
+                        }}
+                        disabled={!order.text.trim()}
+                        size="sm"
+                        className="bg-green-600 hover:bg-green-700 text-white shrink-0"
+                      >
+                        OK
+                      </Button>
+                      {mgmtOrders.length > 1 && (
+                        <button
+                          onClick={() => setMgmtOrders(prev => prev.filter((_, i) => i !== idx))}
+                          className="text-gray-400 hover:text-red-500 shrink-0"
+                        >
+                          <Trash2 className="h-4 w-4" />
+                        </button>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Hint for confirmed order */}
+                  {order.confirmed && mgmtHints[idx] && (
+                    <div className="ml-6 mt-1 rounded-lg border border-blue-100 bg-blue-50 p-2 flex items-start gap-1.5">
+                      <Lightbulb className="h-3.5 w-3.5 text-blue-500 mt-0.5 shrink-0" />
+                      <p className="text-xs text-blue-700">{mgmtHints[idx]}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Add new order — only if last order is confirmed */}
+            {mgmtOrders.length > 0 && mgmtOrders[mgmtOrders.length - 1].confirmed && (
+              <Button
+                variant="outline"
+                onClick={() => setMgmtOrders(prev => [...prev, { text: "", confirmed: false }])}
+                className="w-full border-dashed border-amber-300 text-amber-700 hover:bg-amber-50"
+              >
+                <Plus className="h-4 w-4 mr-1" /> เพิ่ม Order
+              </Button>
+            )}
+
             <Button
               onClick={async () => {
+                const confirmedOrders = mgmtOrders.filter(o => o.confirmed && o.text.trim());
+                if (confirmedOrders.length === 0) return;
+                const mgmtJson = JSON.stringify(confirmedOrders.map(o => o.text));
+                setStudentMgmt(mgmtJson);
                 await fetch("/api/longcase/session", {
                   method: "PUT",
                   headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify({ sessionId, student_mgmt: studentMgmt }),
+                  body: JSON.stringify({ sessionId, student_mgmt: mgmtJson }),
                 });
                 setPhase("examiner");
               }}
-              disabled={!studentMgmt.trim()}
+              disabled={mgmtOrders.filter(o => o.confirmed && o.text.trim()).length === 0}
               className="w-full bg-amber-500 hover:bg-amber-600 text-white"
             >
               เสร็จแล้ว → สัมภาษณ์ Examiner <ChevronRight className="h-4 w-4 ml-1" />
@@ -599,7 +899,7 @@ function LongCaseSessionInner() {
               </div>
             ) : (
               <>
-                <div className="space-y-3 max-h-80 overflow-y-auto">
+                <div ref={examContainerRef} className="space-y-3 max-h-80 overflow-y-auto">
                   {examMessages.map((m, i) => (
                     <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
                       <div className={`max-w-[85%] rounded-xl px-4 py-2.5 text-sm ${
@@ -611,7 +911,6 @@ function LongCaseSessionInner() {
                     </div>
                   ))}
                   {examLoading && <div className="text-xs text-gray-400 animate-pulse">Examiner กำลังพิมพ์...</div>}
-                  <div ref={examEndRef} />
                 </div>
                 <div className="flex gap-2">
                   <Textarea
