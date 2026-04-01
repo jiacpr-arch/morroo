@@ -58,9 +58,16 @@ function LongCaseSessionInner() {
   // Hint loading
   const [hintLoading, setHintLoading] = useState(false);
 
-  // DDx reveal (after scoring)
+  // Answer reveal (after scoring)
   const [ddxRevealed, setDdxRevealed] = useState(false);
   const [acceptedDdx, setAcceptedDdx] = useState<string[]>([]);
+  const [correctDiagnosis, setCorrectDiagnosis] = useState("");
+  const [correctMgmt, setCorrectMgmt] = useState("");
+  const [mgmtRevealed, setMgmtRevealed] = useState(false);
+  const [labReviewRevealed, setLabReviewRevealed] = useState(false);
+
+  // History summary collapsed toggle for later phases
+  const [showHistorySummary, setShowHistorySummary] = useState(false);
 
   // Legacy state for backward compat with save
   const [studentDdx, setStudentDdx] = useState("");
@@ -258,12 +265,12 @@ function LongCaseSessionInner() {
     }
   }
 
-  async function fetchAcceptedDdx() {
-    const res = await fetch(`/api/longcase/session?id=${sessionId}&includeAcceptedDdx=true`);
+  async function fetchAnswers() {
+    const res = await fetch(`/api/longcase/session?id=${sessionId}&includeAnswers=true`);
     const data = await res.json();
-    if (data.long_case?.accepted_ddx) {
-      setAcceptedDdx(data.long_case.accepted_ddx);
-    }
+    if (data.long_case?.accepted_ddx) setAcceptedDdx(data.long_case.accepted_ddx);
+    if (data.long_case?.correct_diagnosis) setCorrectDiagnosis(data.long_case.correct_diagnosis);
+    if (data.long_case?.management_plan) setCorrectMgmt(data.long_case.management_plan);
   }
 
   async function startExaminer() {
@@ -440,6 +447,32 @@ function LongCaseSessionInner() {
               <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-600">
                 {Object.entries(pi.vitals).map(([k, v]) => (
                   <span key={k}>{k}: <strong>{String(v)}</strong></span>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* History Summary — visible in later phases */}
+        {phase !== "history" && phase !== "done" && chatMessages.length > 0 && (
+          <div className="rounded-xl border border-gray-200 bg-white">
+            <button
+              onClick={() => setShowHistorySummary(prev => !prev)}
+              className="w-full flex items-center justify-between px-4 py-2.5 text-left"
+            >
+              <span className="text-xs font-semibold text-gray-500 flex items-center gap-1.5">
+                <MessageSquare className="h-3.5 w-3.5" />
+                ประวัติที่ซักได้ ({chatMessages.filter(m => m.role === "user").length} คำถาม)
+              </span>
+              {showHistorySummary ? <ChevronUp className="h-4 w-4 text-gray-400" /> : <ChevronDown className="h-4 w-4 text-gray-400" />}
+            </button>
+            {showHistorySummary && (
+              <div className="border-t border-gray-100 px-4 py-3 max-h-48 overflow-y-auto space-y-2">
+                {chatMessages.map((m, i) => (
+                  <div key={i} className={`text-xs ${m.role === "user" ? "text-amber-700" : "text-gray-600"}`}>
+                    <span className="font-semibold">{m.role === "user" ? "คุณ:" : "ผู้ป่วย:"}</span>{" "}
+                    {m.content.length > 150 ? m.content.slice(0, 150) + "..." : m.content}
+                  </div>
                 ))}
               </div>
             )}
@@ -1087,6 +1120,70 @@ function LongCaseSessionInner() {
               ))}
             </div>
 
+            {/* Lab Review */}
+            {labOrdered.length > 0 && (
+              <div className="rounded-lg bg-indigo-50 border border-indigo-200 p-4 space-y-3">
+                <div className="flex items-center justify-between">
+                  <p className="text-sm font-semibold text-indigo-800">🔬 ทบทวน Lab/Imaging</p>
+                  {!labReviewRevealed && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setLabReviewRevealed(true)}
+                      className="text-indigo-700 border-indigo-300 hover:bg-indigo-100"
+                    >
+                      <Eye className="h-3.5 w-3.5 mr-1" /> ดูรายละเอียด
+                    </Button>
+                  )}
+                </div>
+
+                {labReviewRevealed && (
+                  <>
+                    <div>
+                      <p className="text-xs text-gray-500 mb-1">Lab ที่คุณสั่ง ({labOrdered.length} รายการ):</p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {labOrdered.map(name => {
+                          const isRecommended = labKeys.includes(name);
+                          const res = labRevealed[name];
+                          return (
+                            <span key={name} className={`text-xs px-2 py-1 rounded-full ${
+                              isRecommended
+                                ? "bg-green-100 text-green-700 border border-green-300"
+                                : "bg-gray-100 text-gray-600 border border-gray-200"
+                            }`}>
+                              {name}
+                              {res?.isAbnormal && " ⚠️"}
+                              {isRecommended && " ✓"}
+                            </span>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    {labKeys.length > 0 && (
+                      <div className="border-t border-indigo-200 pt-2">
+                        <p className="text-xs text-gray-500 mb-1">Lab ที่ควรสั่งสำหรับเคสนี้:</p>
+                        <div className="flex flex-wrap gap-1.5">
+                          {labKeys.map(name => {
+                            const ordered = labOrdered.includes(name);
+                            return (
+                              <span key={name} className={`text-xs px-2 py-1 rounded-full ${
+                                ordered
+                                  ? "bg-green-100 text-green-700 border border-green-300"
+                                  : "bg-red-50 text-red-600 border border-red-200"
+                              }`}>
+                                {name} {ordered ? "✓" : "✗ ไม่ได้สั่ง"}
+                              </span>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </>
+                )}
+              </div>
+            )}
+
             {/* DDx Answer Reveal */}
             {ddxEntries.filter(e => e.trim()).length > 0 && (
               <div className="rounded-lg bg-purple-50 border border-purple-200 p-4 space-y-3">
@@ -1097,7 +1194,7 @@ function LongCaseSessionInner() {
                       variant="outline"
                       size="sm"
                       onClick={async () => {
-                        await fetchAcceptedDdx();
+                        await fetchAnswers();
                         setDdxRevealed(true);
                       }}
                       className="text-purple-700 border-purple-300 hover:bg-purple-100"
@@ -1133,6 +1230,52 @@ function LongCaseSessionInner() {
                     ))}
                   </div>
                 )}
+              </div>
+            )}
+
+            {/* Management Answer Reveal */}
+            {mgmtOrders.filter(o => o.confirmed && o.text.trim()).length > 0 && (
+              <div className="rounded-lg bg-teal-50 border border-teal-200 p-4 space-y-3">
+                <div className="flex items-center justify-between">
+                  <p className="text-sm font-semibold text-teal-800">📋 เฉลย Management</p>
+                  {!mgmtRevealed && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={async () => {
+                        if (!correctMgmt) await fetchAnswers();
+                        setMgmtRevealed(true);
+                      }}
+                      className="text-teal-700 border-teal-300 hover:bg-teal-100"
+                    >
+                      <Eye className="h-3.5 w-3.5 mr-1" /> ดูเฉลย
+                    </Button>
+                  )}
+                </div>
+
+                <div>
+                  <p className="text-xs text-gray-500 mb-1">Orders ของคุณ:</p>
+                  {mgmtOrders.filter(o => o.confirmed && o.text.trim()).map((order, idx) => (
+                    <div key={idx} className="text-sm text-gray-700">
+                      <span className="font-medium text-teal-600">{idx + 1}.</span> {order.text}
+                    </div>
+                  ))}
+                </div>
+
+                {mgmtRevealed && correctMgmt && (
+                  <div className="border-t border-teal-200 pt-2">
+                    <p className="text-xs text-gray-500 mb-1">แผนการรักษาที่ถูกต้อง:</p>
+                    <p className="text-sm text-teal-700 whitespace-pre-wrap">{correctMgmt}</p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Correct Diagnosis */}
+            {ddxRevealed && correctDiagnosis && (
+              <div className="rounded-lg bg-green-50 border border-green-300 p-4">
+                <p className="text-sm font-semibold text-green-800 mb-1">🎯 การวินิจฉัยที่ถูกต้อง</p>
+                <p className="text-base font-bold text-green-700">{correctDiagnosis}</p>
               </div>
             )}
 
