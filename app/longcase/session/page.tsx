@@ -66,8 +66,14 @@ function LongCaseSessionInner() {
   const [mgmtRevealed, setMgmtRevealed] = useState(false);
   const [labReviewRevealed, setLabReviewRevealed] = useState(false);
 
-  // History summary collapsed toggle for later phases
+  // Collapsible summaries for later phases
   const [showHistorySummary, setShowHistorySummary] = useState(false);
+  const [showPeSummary, setShowPeSummary] = useState(false);
+  const [showLabSummary, setShowLabSummary] = useState(false);
+
+  // Notes scratchpad
+  const [notes, setNotes] = useState("");
+  const [showNotes, setShowNotes] = useState(false);
 
   // Legacy state for backward compat with save
   const [studentDdx, setStudentDdx] = useState("");
@@ -474,6 +480,97 @@ function LongCaseSessionInner() {
                     {m.content.length > 150 ? m.content.slice(0, 150) + "..." : m.content}
                   </div>
                 ))}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* PE Findings Summary — visible in lab/ddx/management/examiner phases */}
+        {["lab", "ddx", "management", "examiner"].includes(phase) && peSelected.length > 0 && (
+          <div className="rounded-xl border border-gray-200 bg-white">
+            <button
+              onClick={() => setShowPeSummary(prev => !prev)}
+              className="w-full flex items-center justify-between px-4 py-2.5 text-left"
+            >
+              <span className="text-xs font-semibold text-gray-500 flex items-center gap-1.5">
+                <Stethoscope className="h-3.5 w-3.5" />
+                PE ที่ตรวจ ({peSelected.length} ระบบ)
+              </span>
+              {showPeSummary ? <ChevronUp className="h-4 w-4 text-gray-400" /> : <ChevronDown className="h-4 w-4 text-gray-400" />}
+            </button>
+            {showPeSummary && (
+              <div className="border-t border-gray-100 px-4 py-3 max-h-48 overflow-y-auto space-y-1.5">
+                {peSelected.map(sys => (
+                  <div key={sys} className="text-xs">
+                    <span className="font-semibold text-gray-700">{sys}:</span>{" "}
+                    <span className={peRevealed[sys]?.includes("ปกติ") ? "text-gray-500" : "text-red-600 font-medium"}>
+                      {peRevealed[sys] || "รอผล"}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Lab Results Summary — visible in ddx/management/examiner phases */}
+        {["ddx", "management", "examiner"].includes(phase) && labOrdered.length > 0 && (
+          <div className="rounded-xl border border-gray-200 bg-white">
+            <button
+              onClick={() => setShowLabSummary(prev => !prev)}
+              className="w-full flex items-center justify-between px-4 py-2.5 text-left"
+            >
+              <span className="text-xs font-semibold text-gray-500 flex items-center gap-1.5">
+                <FlaskConical className="h-3.5 w-3.5" />
+                Lab/Imaging ที่สั่ง ({labOrdered.length} รายการ)
+              </span>
+              {showLabSummary ? <ChevronUp className="h-4 w-4 text-gray-400" /> : <ChevronDown className="h-4 w-4 text-gray-400" />}
+            </button>
+            {showLabSummary && (
+              <div className="border-t border-gray-100 px-4 py-3 max-h-48 overflow-y-auto space-y-1.5">
+                {labOrdered.map(name => {
+                  const res = labRevealed[name];
+                  return (
+                    <div key={name} className="text-xs">
+                      <span className="font-semibold text-gray-700">{name}:</span>{" "}
+                      {res ? (
+                        <span className={res.isAbnormal ? "text-red-600 font-medium" : "text-gray-500"}>
+                          {res.value}{res.isAbnormal && " [ผิดปกติ]"}
+                        </span>
+                      ) : (
+                        <span className="text-gray-400">ไม่มีผล</span>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Notes Scratchpad — available in all active phases */}
+        {phase !== "done" && (
+          <div className="rounded-xl border border-gray-200 bg-white">
+            <button
+              onClick={() => setShowNotes(prev => !prev)}
+              className="w-full flex items-center justify-between px-4 py-2.5 text-left"
+            >
+              <span className="text-xs font-semibold text-gray-500 flex items-center gap-1.5">
+                <ClipboardList className="h-3.5 w-3.5" />
+                โน้ตส่วนตัว
+                {notes.trim() && <span className="bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded-full text-[10px]">มีบันทึก</span>}
+              </span>
+              {showNotes ? <ChevronUp className="h-4 w-4 text-gray-400" /> : <ChevronDown className="h-4 w-4 text-gray-400" />}
+            </button>
+            {showNotes && (
+              <div className="border-t border-gray-100 px-4 py-3">
+                <Textarea
+                  rows={4}
+                  value={notes}
+                  onChange={e => setNotes(e.target.value)}
+                  placeholder="จดบันทึก, สรุปข้อมูล, ข้อสังเกต..."
+                  className="text-xs resize-none"
+                />
               </div>
             )}
           </div>
