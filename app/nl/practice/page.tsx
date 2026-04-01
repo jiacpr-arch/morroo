@@ -11,6 +11,7 @@ import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
 import { createClient } from "@/lib/supabase/server";
 import type { Profile } from "@/lib/types";
+import { hasMcqAccess } from "@/lib/types";
 
 export const metadata: Metadata = {
   title: "ฝึกทำข้อสอบ MCQ",
@@ -38,15 +39,7 @@ async function PracticeContent({ subjectId }: { subjectId?: string }) {
 
     const p = profile as Pick<Profile, "membership_type" | "membership_expires_at"> | null;
     if (p) {
-      const isExpired =
-        p.membership_expires_at
-          ? new Date(p.membership_expires_at) < new Date()
-          : false;
-      isPremium =
-        (p.membership_type === "monthly" ||
-          p.membership_type === "yearly" ||
-          p.membership_type === "bundle") &&
-        !isExpired;
+      isPremium = hasMcqAccess(p.membership_type, p.membership_expires_at);
     }
 
     if (!isPremium) {

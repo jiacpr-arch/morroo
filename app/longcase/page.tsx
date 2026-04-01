@@ -8,6 +8,7 @@ import { BookOpen, Stethoscope, Clock, Star, Lock, Hourglass } from "lucide-reac
 import type { Metadata } from "next";
 import LongCaseStartButton from "./LongCaseStartButton";
 import ComingSoonCountdown from "@/components/ComingSoonCountdown";
+import { hasLongCaseAccess } from "@/lib/types";
 
 export const metadata: Metadata = {
   title: "Long Case Exam — หมอรู้",
@@ -44,9 +45,7 @@ export default async function LongCasePage() {
       .select("membership_type, membership_expires_at")
       .eq("id", user.id)
       .single();
-    const now = new Date();
-    const expires = profile?.membership_expires_at ? new Date(profile.membership_expires_at) : null;
-    hasAccess = profile?.membership_type !== "free" && !!expires && expires > now;
+    hasAccess = profile ? hasLongCaseAccess(profile.membership_type, profile.membership_expires_at) : false;
   }
 
   const cases = await getLongCases();

@@ -46,10 +46,10 @@ export async function POST(request: NextRequest) {
     // Calculate membership expiry
     const now = new Date();
     let expiresAt: Date;
-    if (planType === "monthly") {
+    if (planType === "monthly" || planType === "mcq_monthly" || planType === "meq_monthly") {
       expiresAt = new Date(now);
       expiresAt.setMonth(expiresAt.getMonth() + 1);
-    } else if (planType === "yearly") {
+    } else if (planType === "yearly" || planType === "mcq_yearly" || planType === "meq_yearly") {
       expiresAt = new Date(now);
       expiresAt.setFullYear(expiresAt.getFullYear() + 1);
     } else {
