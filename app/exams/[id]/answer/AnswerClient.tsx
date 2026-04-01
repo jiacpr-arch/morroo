@@ -99,12 +99,16 @@ export default function AnswerClient({
     loadProfile();
   }, []);
 
-  const hasAccess =
-    exam.is_free ||
-    (profile && hasMeqAccess(profile.membership_type, profile.membership_expires_at));
-
+  // Free users can view answer (short) but not Key Points
+  // Paid MEQ members see everything
   const isPaidMember =
     !!profile && hasMeqAccess(profile.membership_type, profile.membership_expires_at);
+
+  // hasAccess: can see the answer text (free users too, exam.is_free or always for basic answer)
+  const hasAccess = true;
+
+  // hasKeyPoints: only paid MEQ members see Key Points + AI grading
+  const hasKeyPoints = exam.is_free || isPaidMember;
 
   const togglePart = (partNumber: number) => {
     setOpenParts((prev) => {
@@ -260,7 +264,6 @@ export default function AnswerClient({
 
                   {openParts.has(part.part_number) && (
                     <CardContent className="pt-0 space-y-4">
-                      <ProtectedContent hasAccess={!!hasAccess}>
                         {/* Student's note */}
                         {studentNotes[part.part_number - 1]?.trim() && (
                           <div className="rounded-lg bg-blue-50 border border-blue-200 p-4">
@@ -276,63 +279,57 @@ export default function AnswerClient({
                           </div>
                         )}
 
-                        {/* Answer */}
+                        {/* Answer — free users see short version */}
                         <div className="rounded-lg bg-green-50 border border-green-200 p-4">
                           <div className="flex items-center gap-2 mb-3">
                             <CheckCircle className="h-5 w-5 text-green-600" />
-                            <h3 className="font-semibold text-green-800">
-                              เฉลย
-                            </h3>
+                            <h3 className="font-semibold text-green-800">เฉลย</h3>
+                            {!isPaidMember && !exam.is_free && (
+                              <span className="ml-auto text-xs text-muted-foreground">ฉบับย่อ</span>
+                            )}
                           </div>
                           <div className="text-sm leading-relaxed whitespace-pre-line text-green-900">
-                            {part.answer}
+                            {isPaidMember || exam.is_free
+                              ? part.answer
+                              : part.answer.split("\n").slice(0, 3).join("\n") + (part.answer.split("\n").length > 3 ? "\n..." : "")}
                           </div>
                         </div>
 
-                        {/* Key Points */}
+                        {/* Key Points — paid only */}
                         {part.key_points.length > 0 && (
-                          <div className="rounded-lg bg-amber-50 border border-amber-200 p-4">
-                            <div className="flex items-center gap-2 mb-3">
-                              <Lightbulb className="h-5 w-5 text-amber-600" />
-                              <h3 className="font-semibold text-amber-800">
-                                Key Points
-                              </h3>
+                          <ProtectedContent hasAccess={hasKeyPoints}>
+                            <div className="rounded-lg bg-amber-50 border border-amber-200 p-4">
+                              <div className="flex items-center gap-2 mb-3">
+                                <Lightbulb className="h-5 w-5 text-amber-600" />
+                                <h3 className="font-semibold text-amber-800">Key Points</h3>
+                              </div>
+                              <ul className="space-y-2">
+                                {part.key_points.map((point, i) => (
+                                  <li key={i} className="flex items-start gap-2 text-sm text-amber-900">
+                                    <span className="font-bold text-amber-600 mt-0.5">•</span>
+                                    {point}
+                                  </li>
+                                ))}
+                              </ul>
                             </div>
-                            <ul className="space-y-2">
-                              {part.key_points.map((point, i) => (
-                                <li
-                                  key={i}
-                                  className="flex items-start gap-2 text-sm text-amber-900"
-                                >
-                                  <span className="font-bold text-amber-600 mt-0.5">
-                                    •
-                                  </span>
-                                  {point}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
+                          </ProtectedContent>
                         )}
 
-                        {/* Self-assessment scoring */}
-                        <div className="rounded-lg bg-purple-50 border border-purple-200 p-4">
-                          <div className="flex items-center gap-2 mb-3">
-                            <Star className="h-5 w-5 text-purple-600" />
-                            <h3 className="font-semibold text-purple-800">
-                              ประเมินคะแนนตัวเอง
-                            </h3>
-                          </div>
-                          <p className="text-xs text-purple-600 mb-3">
-                            เปรียบเทียบคำตอบของคุณกับเฉลย แล้วให้คะแนน 1-10
-                          </p>
-                          <div className="flex flex-wrap gap-2">
-                            {SCORE_LABELS.filter((s) => s.score > 0).map(
-                              (item) => (
+                        {/* Self-assessment + AI — paid members only */}
+                        <ProtectedContent hasAccess={hasKeyPoints}>
+                          <div className="rounded-lg bg-purple-50 border border-purple-200 p-4">
+                            <div className="flex items-center gap-2 mb-3">
+                              <Star className="h-5 w-5 text-purple-600" />
+                              <h3 className="font-semibold text-purple-800">ประเมินคะแนนตัวเอง</h3>
+                            </div>
+                            <p className="text-xs text-purple-600 mb-3">
+                              เปรียบเทียบคำตอบของคุณกับเฉลย แล้วให้คะแนน 1-10
+                            </p>
+                            <div className="flex flex-wrap gap-2">
+                              {SCORE_LABELS.filter((s) => s.score > 0).map((item) => (
                                 <button
                                   key={item.score}
-                                  onClick={() =>
-                                    setScore(part.part_number, item.score)
-                                  }
+                                  onClick={() => setScore(part.part_number, item.score)}
                                   className={`w-10 h-10 rounded-lg text-sm font-bold transition-all ${
                                     partScore === item.score
                                       ? `${item.color} ring-2 ring-purple-400 scale-110`
@@ -341,40 +338,36 @@ export default function AnswerClient({
                                 >
                                   {item.label}
                                 </button>
-                              )
+                              ))}
+                            </div>
+                            {hasScore && (
+                              <p className="mt-3 text-sm font-medium text-purple-800">
+                                คุณให้คะแนนตอนนี้:{" "}
+                                <span className="text-lg font-bold">{partScore}/10</span>
+                                {partScore >= 8 && " — ดีมาก! 🎉"}
+                                {partScore >= 5 && partScore < 8 && " — พอใช้ได้ 👍"}
+                                {partScore < 5 && " — ทบทวนเพิ่มเติม 📖"}
+                              </p>
                             )}
                           </div>
-                          {hasScore && (
-                            <p className="mt-3 text-sm font-medium text-purple-800">
-                              คุณให้คะแนนตอนนี้:{" "}
-                              <span className="text-lg font-bold">
-                                {partScore}/10
-                              </span>
-                              {partScore >= 8 && " — ดีมาก! 🎉"}
-                              {partScore >= 5 && partScore < 8 && " — พอใช้ได้ 👍"}
-                              {partScore < 5 && " — ทบทวนเพิ่มเติม 📖"}
-                            </p>
-                          )}
-                        </div>
 
-                        {/* AI Grade Button — paid members only */}
-                        {isPaidMember && studentNotes[part.part_number - 1]?.trim() && (
-                          <AIGradeButton
-                            studentAnswer={studentNotes[part.part_number - 1]}
-                            correctAnswer={part.answer}
-                            keyPoints={part.key_points}
-                            question={part.question}
-                            partNumber={part.part_number}
-                            examId={exam.id}
-                            onGraded={(result) => {
-                              setAiScores((prev) => ({
-                                ...prev,
-                                [part.part_number]: result.score,
-                              }));
-                            }}
-                          />
-                        )}
-                      </ProtectedContent>
+                          {isPaidMember && studentNotes[part.part_number - 1]?.trim() && (
+                            <AIGradeButton
+                              studentAnswer={studentNotes[part.part_number - 1]}
+                              correctAnswer={part.answer}
+                              keyPoints={part.key_points}
+                              question={part.question}
+                              partNumber={part.part_number}
+                              examId={exam.id}
+                              onGraded={(result) => {
+                                setAiScores((prev) => ({
+                                  ...prev,
+                                  [part.part_number]: result.score,
+                                }));
+                              }}
+                            />
+                          )}
+                        </ProtectedContent>
                     </CardContent>
                   )}
                 </Card>

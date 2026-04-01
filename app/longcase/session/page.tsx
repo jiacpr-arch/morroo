@@ -60,6 +60,26 @@ function LongCaseSessionInner() {
   const [scores, setScores] = useState<Record<string, number | string> | null>(null);
   const [teachingPoints, setTeachingPoints] = useState<string[]>([]);
   const [scoringLoading, setScoringLoading] = useState(false);
+  const [isPaidMember, setIsPaidMember] = useState(false);
+
+  // Load membership
+  useEffect(() => {
+    import("@/lib/supabase/client").then(({ createClient }) => {
+      const supabase = createClient();
+      supabase.auth.getUser().then(({ data: { user } }) => {
+        if (!user) return;
+        supabase.from("profiles")
+          .select("membership_type, membership_expires_at")
+          .eq("id", user.id)
+          .single()
+          .then(({ data: p }) => {
+            if (!p) return;
+            const expired = p.membership_expires_at ? new Date(p.membership_expires_at) < new Date() : true;
+            setIsPaidMember(p.membership_type !== "free" && !expired);
+          });
+      });
+    });
+  }, []);
 
   // Load session
   useEffect(() => {
@@ -655,39 +675,49 @@ function LongCaseSessionInner() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {[
-                { label: "ซักประวัติ", key: "score_history" },
-                { label: "ตรวจร่างกาย", key: "score_pe" },
-                { label: "Lab/Imaging", key: "score_lab" },
-                { label: "DDx", key: "score_ddx" },
-                { label: "Management", key: "score_management" },
-                { label: "Examiner", key: "score_examiner" },
-              ].map(({ label, key }) => (
-                <div key={key} className="rounded-lg bg-gray-50 p-3 text-center">
-                  <div className="text-2xl font-bold text-gray-800">{scores[key] ?? "-"}</div>
-                  <div className="text-xs text-gray-500 mt-0.5">{label}</div>
-                </div>
-              ))}
-            </div>
-
-            {scores.feedback && (
-              <div className="rounded-lg bg-blue-50 border border-blue-200 p-4">
-                <p className="text-sm font-semibold text-blue-800 mb-1">💬 Feedback จาก Examiner</p>
-                <p className="text-sm text-blue-700">{String(scores.feedback)}</p>
-              </div>
-            )}
-
-            {teachingPoints.length > 0 && (
-              <div className="rounded-lg bg-amber-50 border border-amber-200 p-4">
-                <p className="text-sm font-semibold text-amber-800 mb-2">📚 Teaching Points</p>
-                <ul className="space-y-1">
-                  {teachingPoints.map((pt, i) => (
-                    <li key={i} className="text-sm text-amber-700 flex items-start gap-2">
-                      <span className="text-amber-500">•</span> {pt}
-                    </li>
+            {isPaidMember ? (
+              <>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  {[
+                    { label: "ซักประวัติ", key: "score_history" },
+                    { label: "ตรวจร่างกาย", key: "score_pe" },
+                    { label: "Lab/Imaging", key: "score_lab" },
+                    { label: "DDx", key: "score_ddx" },
+                    { label: "Management", key: "score_management" },
+                    { label: "Examiner", key: "score_examiner" },
+                  ].map(({ label, key }) => (
+                    <div key={key} className="rounded-lg bg-gray-50 p-3 text-center">
+                      <div className="text-2xl font-bold text-gray-800">{scores[key] ?? "-"}</div>
+                      <div className="text-xs text-gray-500 mt-0.5">{label}</div>
+                    </div>
                   ))}
-                </ul>
+                </div>
+
+                {scores.feedback && (
+                  <div className="rounded-lg bg-blue-50 border border-blue-200 p-4">
+                    <p className="text-sm font-semibold text-blue-800 mb-1">💬 Feedback จาก Examiner</p>
+                    <p className="text-sm text-blue-700">{String(scores.feedback)}</p>
+                  </div>
+                )}
+
+                {teachingPoints.length > 0 && (
+                  <div className="rounded-lg bg-amber-50 border border-amber-200 p-4">
+                    <p className="text-sm font-semibold text-amber-800 mb-2">📚 Teaching Points</p>
+                    <ul className="space-y-1">
+                      {teachingPoints.map((pt, i) => (
+                        <li key={i} className="text-sm text-amber-700 flex items-start gap-2">
+                          <span className="text-amber-500">•</span> {pt}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </>
+            ) : (
+              <div className="rounded-lg border border-amber-200 bg-amber-50 p-4 text-center space-y-2">
+                <p className="text-sm font-semibold text-amber-800">🔒 คะแนนรายละเอียดและ Feedback สำหรับ Premium</p>
+                <p className="text-xs text-amber-700">อัปเกรดเพื่อดูคะแนนแต่ละหัวข้อ, Feedback จาก Examiner และ Teaching Points</p>
+                <a href="/pricing" className="inline-block mt-1 text-xs font-semibold text-amber-600 underline">ดูแพ็กเกจ →</a>
               </div>
             )}
 
