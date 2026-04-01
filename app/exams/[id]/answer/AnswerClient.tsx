@@ -65,6 +65,14 @@ export default function AnswerClient({
       if (savedScores) setScores(JSON.parse(savedScores));
       const savedAiScores = localStorage.getItem(`exam-ai-scores-${exam.id}`);
       if (savedAiScores) setAiScores(JSON.parse(savedAiScores));
+
+      // Track free MEQ case views (limit 2 per month)
+      const monthKey = `meq-views-${new Date().getFullYear()}-${new Date().getMonth()}`;
+      const viewed: string[] = JSON.parse(localStorage.getItem(monthKey) || "[]");
+      if (!viewed.includes(exam.id)) {
+        viewed.push(exam.id);
+        localStorage.setItem(monthKey, JSON.stringify(viewed));
+      }
     } catch {}
   }, [exam.id]);
 
@@ -104,11 +112,19 @@ export default function AnswerClient({
   const isPaidMember =
     !!profile && hasMeqAccess(profile.membership_type, profile.membership_expires_at);
 
-  // hasAccess: can see the answer text (free users too, exam.is_free or always for basic answer)
-  const hasAccess = true;
-
   // hasKeyPoints: only paid MEQ members see Key Points + AI grading
   const hasKeyPoints = exam.is_free || isPaidMember;
+
+  // Free MEQ 2-case monthly limit check (localStorage)
+  const freeMonthlyLimit = 2;
+  const freeMeqViewCount = (() => {
+    try {
+      const monthKey = `meq-views-${new Date().getFullYear()}-${new Date().getMonth()}`;
+      const viewed: string[] = JSON.parse(localStorage.getItem(monthKey) || "[]");
+      return viewed.length;
+    } catch { return 0; }
+  })();
+  const freeMeqLimitReached = !isPaidMember && !exam.is_free && freeMeqViewCount > freeMonthlyLimit;
 
   const togglePart = (partNumber: number) => {
     setOpenParts((prev) => {
@@ -158,6 +174,21 @@ export default function AnswerClient({
           )}
         </div>
       </div>
+
+      {/* Free MEQ limit banner */}
+      {!loading && !isPaidMember && !exam.is_free && (
+        <div className={`mb-6 rounded-lg border p-4 flex items-center justify-between gap-4 ${freeMeqLimitReached ? "border-red-200 bg-red-50" : "border-amber-200 bg-amber-50"}`}>
+          <div>
+            <p className={`text-sm font-semibold ${freeMeqLimitReached ? "text-red-700" : "text-amber-700"}`}>
+              {freeMeqLimitReached
+                ? "ครบ 2 เคสฟรีแล้วเดือนนี้ — เห็นแค่เฉลยย่อ"
+                : `ฟรี ${freeMeqViewCount}/${freeMonthlyLimit} เคสเดือนนี้ — เห็นเฉลยย่อ`}
+            </p>
+            <p className="text-xs text-muted-foreground mt-0.5">อัปเกรดเพื่อดู Key Points และ AI ตรวจคำตอบ</p>
+          </div>
+          <a href="/pricing" className="shrink-0 text-xs font-semibold text-amber-600 underline">ดูแพ็กเกจ →</a>
+        </div>
+      )}
 
       {loading ? (
         <div className="text-center py-16 text-muted-foreground">
