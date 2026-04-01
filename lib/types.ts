@@ -102,7 +102,7 @@ export const CATEGORIES = [
 // Access control helpers
 // ============================================================
 export const MCQ_PLAN_TYPES = ["monthly", "yearly", "bundle", "mcq_monthly", "mcq_yearly"] as const;
-export const MEQ_PLAN_TYPES = ["monthly", "yearly", "meq_monthly", "meq_yearly"] as const;
+export const MEQ_PLAN_TYPES = ["monthly", "yearly", "bundle", "meq_monthly", "meq_yearly"] as const;
 export const LONGCASE_PLAN_TYPES = ["monthly", "yearly", "bundle", "longcase_monthly", "longcase_yearly"] as const;
 
 export function hasMcqAccess(membershipType: string, expiresAt: string | null): boolean {
@@ -144,19 +144,19 @@ export const FREE_PLAN = {
 };
 
 export const BUNDLE_PLAN = {
-  name: "Bundle MCQ",
+  name: "Bundle",
   price: 99,
   originalPrice: null as number | null,
   period: "/ 30 วัน",
-  description: "ทดลอง MCQ ก่อนสมัคร",
+  description: "ลองครบทุกอย่างก่อนสมัคร",
   features: [
-    "MCQ เลือกข้อสอบ 10 ข้อ",
-    "เฉลยละเอียด + Key Points",
+    "MCQ 20 ข้อที่เลือกเอง (เฉลยละเอียด)",
+    "MEQ 5 เคส (เฉลยละเอียด + Key Points)",
+    "🩺 Long Case 2 เคส",
     "🤖 AI ตรวจคำตอบ",
-    "🩺 Long Case ไม่จำกัด",
     "หมดอายุใน 30 วัน",
   ],
-  cta: "ซื้อ Bundle",
+  cta: "ซื้อ Bundle ฿99",
   popular: false,
   type: "bundle" as const,
 };

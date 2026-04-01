@@ -88,11 +88,11 @@ export default function PricingPage() {
               <td>—</td>
             </tr>
             <tr>
-              <td className="text-left py-3 pr-4 font-medium">Bundle MCQ</td>
+              <td className="text-left py-3 pr-4 font-medium">Bundle</td>
               <td>฿99</td>
-              <td>10 ข้อ</td>
-              <td>❌</td>
-              <td>✅</td>
+              <td>20 ข้อ</td>
+              <td>5 เคส</td>
+              <td>2 เคส</td>
               <td>30 วัน</td>
             </tr>
             <tr className="bg-muted/30">
