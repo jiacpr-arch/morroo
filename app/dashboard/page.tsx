@@ -317,28 +317,27 @@ type StudyTask = { id: string; icon: string; task: string; type: "weakness" | "c
 // Study plan is generated from weak subjects (computed dynamically)
 function generateStudyPlan(weakSubjects: SubjectScore[]): { time: string; tasks: StudyTask[] }[] {
   const top3 = weakSubjects.slice(0, 3);
+
+  const todayTasks: StudyTask[] = [
+    { id: "today-3", icon: "🔥", task: "Daily Challenge: Mixed 5 ข้อ", type: "challenge", href: "/challenges" },
+  ];
+  if (top3[0]) todayTasks.unshift({ id: "today-1", icon: top3[0].icon, task: `MCQ ${top3[0].name_th} 10 ข้อ (Easy→Medium)`, type: "weakness", href: "/nl/practice" });
+  if (top3[1]) todayTasks.splice(1, 0, { id: "today-2", icon: top3[1].icon, task: `MCQ ${top3[1].name_th} 5 ข้อ`, type: "weakness", href: "/nl/practice" });
+
+  const tomorrowTasks: StudyTask[] = [
+    { id: "tmr-2", icon: "📊", task: "Mock Exam: NL2 เต็มชุด", type: "mock", href: "/nl/mock" },
+  ];
+  if (top3[2]) tomorrowTasks.unshift({ id: "tmr-1", icon: top3[2].icon, task: `MCQ ${top3[2].name_th} 10 ข้อ`, type: "weakness", href: "/nl/practice" });
+
   return [
-    {
-      time: "วันนี้",
-      tasks: [
-        ...(top3[0] ? [{ id: "today-1", icon: top3[0].icon, task: `MCQ ${top3[0].name_th} 10 ข้อ (Easy→Medium)`, type: "weakness" as const, href: "/nl/practice" }] : []),
-        ...(top3[1] ? [{ id: "today-2", icon: top3[1].icon, task: `MCQ ${top3[1].name_th} 5 ข้อ`, type: "weakness" as const, href: "/nl/practice" }] : []),
-        { id: "today-3", icon: "🔥", task: "Daily Challenge: Mixed 5 ข้อ", type: "challenge" as const, href: "/challenges" },
-      ],
-    },
-    {
-      time: "พรุ่งนี้",
-      tasks: [
-        ...(top3[2] ? [{ id: "tmr-1", icon: top3[2].icon, task: `MCQ ${top3[2].name_th} 10 ข้อ`, type: "weakness" as const, href: "/nl/practice" }] : []),
-        { id: "tmr-2", icon: "📊", task: "Mock Exam: NL2 เต็มชุด", type: "mock" as const, href: "/nl/mock" },
-      ],
-    },
+    { time: "วันนี้", tasks: todayTasks },
+    { time: "พรุ่งนี้", tasks: tomorrowTasks },
     {
       time: "สัปดาห์นี้",
       tasks: [
-        { id: "week-1", icon: "🎯", task: "ทำครบทุกสาขาที่อ่อน สาขาละ 20 ข้อ", type: "goal" as const, href: "/nl/practice" },
-        { id: "week-2", icon: "🏆", task: "เข้าร่วม Weekly Challenge", type: "challenge" as const, href: "/challenges" },
-        { id: "week-3", icon: "📋", task: "Long Case อย่างน้อย 2 เคส", type: "goal" as const, href: "/longcase" },
+        { id: "week-1", icon: "🎯", task: "ทำครบทุกสาขาที่อ่อน สาขาละ 20 ข้อ", type: "goal", href: "/nl/practice" },
+        { id: "week-2", icon: "🏆", task: "เข้าร่วม Weekly Challenge", type: "challenge", href: "/challenges" },
+        { id: "week-3", icon: "📋", task: "Long Case อย่างน้อย 2 เคส", type: "goal", href: "/longcase" },
       ],
     },
   ];
