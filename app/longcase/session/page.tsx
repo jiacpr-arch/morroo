@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Loader2, Send, ChevronRight, CheckCircle, MessageSquare, Stethoscope, FlaskConical, Brain, ClipboardList, Star, Plus, Trash2, Lightbulb, Eye, ChevronDown, ChevronUp } from "lucide-react";
+import { Loader2, Send, ChevronRight, CheckCircle, MessageSquare, Stethoscope, FlaskConical, Brain, ClipboardList, Star, Plus, Trash2, Lightbulb, Eye, ChevronDown, ChevronUp, Timer, FileText } from "lucide-react";
 import type { LongCaseSession, LongCaseFull } from "@/lib/types";
 
 type Phase = LongCaseSession["phase"];
@@ -74,6 +74,16 @@ function LongCaseSessionInner() {
   // Notes scratchpad
   const [notes, setNotes] = useState("");
   const [showNotes, setShowNotes] = useState(false);
+
+  // Timer
+  const [elapsedSeconds, setElapsedSeconds] = useState(0);
+  const [timerActive, setTimerActive] = useState(true);
+
+  // PE review in scoring
+  const [peReviewRevealed, setPeReviewRevealed] = useState(false);
+
+  // Case summary toggle
+  const [showCaseSummary, setShowCaseSummary] = useState(false);
 
   // Legacy state for backward compat with save
   const [studentDdx, setStudentDdx] = useState("");
@@ -188,6 +198,35 @@ function LongCaseSessionInner() {
         .catch(() => {});
     }
   }, [phase, sessionId, labKeys.length]);
+
+  // Timer — counts up while case is active
+  useEffect(() => {
+    if (phase === "done" || !timerActive) return;
+    const interval = setInterval(() => setElapsedSeconds(s => s + 1), 1000);
+    return () => clearInterval(interval);
+  }, [phase, timerActive]);
+
+  // Calculate elapsed from session start
+  useEffect(() => {
+    if (session?.started_at) {
+      const start = new Date(session.started_at).getTime();
+      const now = Date.now();
+      setElapsedSeconds(Math.floor((now - start) / 1000));
+    }
+  }, [session?.started_at]);
+
+  // Stop timer when done
+  useEffect(() => {
+    if (phase === "done") setTimerActive(false);
+  }, [phase]);
+
+  function formatTime(seconds: number) {
+    const h = Math.floor(seconds / 3600);
+    const m = Math.floor((seconds % 3600) / 60);
+    const s = seconds % 60;
+    if (h > 0) return `${h}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+    return `${m}:${String(s).padStart(2, "0")}`;
+  }
 
   async function savePhase(newPhase: Phase, extra?: Record<string, unknown>) {
     await fetch("/api/longcase/session", {
@@ -395,6 +434,12 @@ function LongCaseSessionInner() {
           </span>
         </div>
         <div className="flex items-center gap-2">
+          {phase !== "done" && (
+            <span className="flex items-center gap-1 text-xs font-mono text-gray-500 bg-gray-100 px-2 py-1 rounded-md">
+              <Timer className="h-3 w-3" />
+              {formatTime(elapsedSeconds)}
+            </span>
+          )}
           <Badge className="bg-amber-100 text-amber-800">{lc?.specialty}</Badge>
           <Badge variant="outline" className="text-xs capitalize">{lc?.difficulty}</Badge>
         </div>
@@ -1217,6 +1262,59 @@ function LongCaseSessionInner() {
               ))}
             </div>
 
+            {/* Time taken */}
+            {session?.started_at && session?.completed_at && (
+              <div className="text-center text-sm text-gray-500">
+                เวลาที่ใช้: {formatTime(Math.floor((new Date(session.completed_at).getTime() - new Date(session.started_at).getTime()) / 1000))}
+              </div>
+            )}
+
+            {/* PE Review */}
+            {peSelected.length > 0 && (
+              <div className="rounded-lg bg-orange-50 border border-orange-200 p-4 space-y-3">
+                <div className="flex items-center justify-between">
+                  <p className="text-sm font-semibold text-orange-800">🩺 ทบทวน PE</p>
+                  {!peReviewRevealed && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setPeReviewRevealed(true)}
+                      className="text-orange-700 border-orange-300 hover:bg-orange-100"
+                    >
+                      <Eye className="h-3.5 w-3.5 mr-1" /> ดูรายละเอียด
+                    </Button>
+                  )}
+                </div>
+
+                {peReviewRevealed && (
+                  <div className="space-y-1.5">
+                    <p className="text-xs text-gray-500">ระบบที่ตรวจ ({peSelected.length}/{PE_SYSTEMS.length + peSelected.filter(s => !PE_SYSTEMS.includes(s)).length}):</p>
+                    {peSelected.map(sys => (
+                      <div key={sys} className="text-sm flex items-start gap-2">
+                        <span className="font-medium text-orange-700 w-24 shrink-0">{sys}</span>
+                        <span className={peRevealed[sys]?.includes("ปกติ") ? "text-gray-500" : "text-red-600 font-medium"}>
+                          {peRevealed[sys] || "-"}
+                        </span>
+                      </div>
+                    ))}
+                    {/* Show systems NOT examined */}
+                    {PE_SYSTEMS.filter(s => !peSelected.includes(s)).length > 0 && (
+                      <div className="border-t border-orange-200 pt-2 mt-2">
+                        <p className="text-xs text-gray-400 mb-1">ระบบที่ไม่ได้ตรวจ:</p>
+                        <div className="flex flex-wrap gap-1.5">
+                          {PE_SYSTEMS.filter(s => !peSelected.includes(s)).map(sys => (
+                            <span key={sys} className="text-xs px-2 py-0.5 rounded-full bg-gray-100 text-gray-500">
+                              {sys}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+
             {/* Lab Review */}
             {labOrdered.length > 0 && (
               <div className="rounded-lg bg-indigo-50 border border-indigo-200 p-4 space-y-3">
@@ -1395,6 +1493,102 @@ function LongCaseSessionInner() {
                 </ul>
               </div>
             )}
+
+            {/* Complete Case Summary */}
+            <div className="rounded-lg border border-gray-200 bg-gray-50">
+              <button
+                onClick={() => setShowCaseSummary(prev => !prev)}
+                className="w-full flex items-center justify-between px-4 py-3 text-left"
+              >
+                <span className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                  <FileText className="h-4 w-4" />
+                  ดูสรุปเคสทั้งหมด
+                </span>
+                {showCaseSummary ? <ChevronUp className="h-4 w-4 text-gray-400" /> : <ChevronDown className="h-4 w-4 text-gray-400" />}
+              </button>
+              {showCaseSummary && (
+                <div className="border-t border-gray-200 px-4 py-4 space-y-4 text-sm">
+                  {/* History */}
+                  {chatMessages.length > 0 && (
+                    <div>
+                      <p className="font-semibold text-gray-700 mb-1">📝 ประวัติที่ซัก</p>
+                      <div className="space-y-1 max-h-40 overflow-y-auto">
+                        {chatMessages.map((m, i) => (
+                          <div key={i} className={`text-xs ${m.role === "user" ? "text-amber-700" : "text-gray-600"}`}>
+                            <span className="font-medium">{m.role === "user" ? "ถาม:" : "ตอบ:"}</span> {m.content}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* PE */}
+                  {peSelected.length > 0 && (
+                    <div>
+                      <p className="font-semibold text-gray-700 mb-1">🩺 PE</p>
+                      <div className="space-y-0.5">
+                        {peSelected.map(sys => (
+                          <div key={sys} className="text-xs">
+                            <span className="font-medium">{sys}:</span>{" "}
+                            <span className={peRevealed[sys]?.includes("ปกติ") ? "text-gray-500" : "text-red-600"}>
+                              {peRevealed[sys] || "-"}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Labs */}
+                  {labOrdered.length > 0 && (
+                    <div>
+                      <p className="font-semibold text-gray-700 mb-1">🔬 Lab/Imaging</p>
+                      <div className="space-y-0.5">
+                        {labOrdered.map(name => {
+                          const res = labRevealed[name];
+                          return (
+                            <div key={name} className="text-xs">
+                              <span className="font-medium">{name}:</span>{" "}
+                              <span className={res?.isAbnormal ? "text-red-600" : "text-gray-500"}>
+                                {res?.value || "ไม่มีผล"}{res?.isAbnormal && " [ผิดปกติ]"}
+                              </span>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* DDx */}
+                  {ddxEntries.filter(e => e.trim()).length > 0 && (
+                    <div>
+                      <p className="font-semibold text-gray-700 mb-1">🧠 DDx</p>
+                      {ddxEntries.filter(e => e.trim()).map((e, i) => (
+                        <div key={i} className="text-xs text-gray-700">{i + 1}. {e}</div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Management */}
+                  {mgmtOrders.filter(o => o.confirmed && o.text.trim()).length > 0 && (
+                    <div>
+                      <p className="font-semibold text-gray-700 mb-1">📋 Management Orders</p>
+                      {mgmtOrders.filter(o => o.confirmed && o.text.trim()).map((o, i) => (
+                        <div key={i} className="text-xs text-gray-700">{i + 1}. {o.text}</div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Notes */}
+                  {notes.trim() && (
+                    <div>
+                      <p className="font-semibold text-gray-700 mb-1">📒 โน้ต</p>
+                      <p className="text-xs text-gray-600 whitespace-pre-wrap">{notes}</p>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
 
             <Button onClick={() => router.push("/longcase")} className="w-full" variant="outline">
               กลับไปเลือกเคสใหม่
