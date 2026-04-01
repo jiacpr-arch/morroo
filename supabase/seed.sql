@@ -8,7 +8,7 @@ create table if not exists public.profiles (
   email text,
   name text,
   role text default 'user' check (role in ('user', 'admin')),
-  membership_type text default 'free' check (membership_type in ('free', 'monthly', 'yearly', 'bundle')),
+  membership_type text default 'free' check (membership_type in ('free', 'bundle', 'monthly', 'yearly', 'mcq_monthly', 'mcq_yearly', 'meq_monthly', 'meq_yearly', 'longcase_monthly', 'longcase_yearly')),
   membership_expires_at timestamptz,
   created_at timestamptz default now()
 );

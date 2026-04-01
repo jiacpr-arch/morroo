@@ -2,7 +2,7 @@
 create table if not exists public.payment_orders (
   id uuid primary key default gen_random_uuid(),
   user_id uuid references auth.users not null,
-  plan_type text not null check (plan_type in ('monthly', 'yearly', 'bundle')),
+  plan_type text not null check (plan_type in ('bundle', 'monthly', 'yearly', 'mcq_monthly', 'mcq_yearly', 'meq_monthly', 'meq_yearly', 'longcase_monthly', 'longcase_yearly')),
   amount numeric not null,
   status text default 'pending' check (status in ('pending', 'approved', 'rejected')),
   slip_url text,
