@@ -14,7 +14,7 @@ export function getStripe(): Stripe {
 export const STRIPE_PLANS: Record<string, { amount: number; name: string }> = {
   monthly: { amount: 199, name: "MorRoo Full รายเดือน" },
   yearly: { amount: 1490, name: "MorRoo Full รายปี" },
-  bundle: { amount: 99, name: "MorRoo Bundle MCQ 10 ข้อ" },
+  bundle: { amount: 99, name: "MorRoo Bundle (MCQ 20q + MEQ 5 เคส + Long Case 2 เคส)" },
   mcq_monthly: { amount: 99, name: "MorRoo MCQ รายเดือน" },
   mcq_yearly: { amount: 990, name: "MorRoo MCQ รายปี" },
   meq_monthly: { amount: 99, name: "MorRoo MEQ รายเดือน" },
