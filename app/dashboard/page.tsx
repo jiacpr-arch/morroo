@@ -312,8 +312,10 @@ function processData(
   return { student, subjectScores, weeklyData, badges, challengeHistory, longCaseStats };
 }
 
+type StudyTask = { id: string; icon: string; task: string; type: "weakness" | "challenge" | "mock" | "goal"; href: string };
+
 // Study plan is generated from weak subjects (computed dynamically)
-function generateStudyPlan(weakSubjects: SubjectScore[]) {
+function generateStudyPlan(weakSubjects: SubjectScore[]): { time: string; tasks: StudyTask[] }[] {
   const top3 = weakSubjects.slice(0, 3);
   return [
     {
