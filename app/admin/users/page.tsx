@@ -36,16 +36,28 @@ interface Profile {
 
 const membershipLabels: Record<string, string> = {
   free: "ฟรี",
-  monthly: "รายเดือน",
-  yearly: "รายปี",
-  bundle: "ชุดข้อสอบ",
+  bundle: "Bundle",
+  monthly: "Full รายเดือน",
+  yearly: "Full รายปี",
+  mcq_monthly: "MCQ รายเดือน",
+  mcq_yearly: "MCQ รายปี",
+  meq_monthly: "MEQ รายเดือน",
+  meq_yearly: "MEQ รายปี",
+  longcase_monthly: "Long Case รายเดือน",
+  longcase_yearly: "Long Case รายปี",
 };
 
 const membershipColors: Record<string, string> = {
   free: "bg-gray-100 text-gray-700",
-  monthly: "bg-blue-100 text-blue-700",
-  yearly: "bg-purple-100 text-purple-700",
-  bundle: "bg-brand/10 text-brand",
+  bundle: "bg-blue-100 text-blue-700",
+  monthly: "bg-brand/10 text-brand",
+  yearly: "bg-amber-100 text-amber-700",
+  mcq_monthly: "bg-green-100 text-green-700",
+  mcq_yearly: "bg-green-100 text-green-700",
+  meq_monthly: "bg-purple-100 text-purple-700",
+  meq_yearly: "bg-purple-100 text-purple-700",
+  longcase_monthly: "bg-rose-100 text-rose-700",
+  longcase_yearly: "bg-rose-100 text-rose-700",
 };
 
 export default function AdminUsersPage() {
@@ -379,9 +391,15 @@ export default function AdminUsersPage() {
                           }
                         >
                           <option value="free">ฟรี</option>
-                          <option value="monthly">รายเดือน</option>
-                          <option value="yearly">รายปี</option>
-                          <option value="bundle">ชุดข้อสอบ</option>
+                          <option value="bundle">Bundle</option>
+                          <option value="mcq_monthly">MCQ รายเดือน</option>
+                          <option value="mcq_yearly">MCQ รายปี</option>
+                          <option value="meq_monthly">MEQ รายเดือน</option>
+                          <option value="meq_yearly">MEQ รายปี</option>
+                          <option value="longcase_monthly">Long Case รายเดือน</option>
+                          <option value="longcase_yearly">Long Case รายปี</option>
+                          <option value="monthly">Full รายเดือน</option>
+                          <option value="yearly">Full รายปี</option>
                         </select>
                       </div>
                       <div className="flex-1 min-w-[160px]">

@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Loader2, Send, ChevronRight, CheckCircle, MessageSquare, Stethoscope, FlaskConical, Brain, ClipboardList, Star, Plus, Trash2, Lightbulb, Eye, ChevronDown, ChevronUp, Timer, FileText } from "lucide-react";
 import type { LongCaseSession, LongCaseFull } from "@/lib/types";
+import { createClient } from "@/lib/supabase/client";
 
 type Phase = LongCaseSession["phase"];
 
@@ -105,6 +106,24 @@ function LongCaseSessionInner() {
   const [scores, setScores] = useState<Record<string, number | string> | null>(null);
   const [teachingPoints, setTeachingPoints] = useState<string[]>([]);
   const [scoringLoading, setScoringLoading] = useState(false);
+  const [isPaidMember, setIsPaidMember] = useState(false);
+
+  // Load membership
+  useEffect(() => {
+    const supabase = createClient();
+    supabase.auth.getUser().then(({ data: { user } }: { data: { user: { id: string } | null } }) => {
+      if (!user) return;
+      supabase.from("profiles")
+        .select("membership_type, membership_expires_at")
+        .eq("id", user.id)
+        .single()
+        .then(({ data: p }: { data: { membership_type: string; membership_expires_at: string | null } | null }) => {
+          if (!p) return;
+          const expired = p.membership_expires_at ? new Date(p.membership_expires_at) < new Date() : true;
+          setIsPaidMember(p.membership_type !== "free" && !expired);
+        });
+    });
+  }, []);
 
   // Load session
   useEffect(() => {
@@ -1263,70 +1282,72 @@ function LongCaseSessionInner() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {[
-                { label: "ซักประวัติ", key: "score_history" },
-                { label: "ตรวจร่างกาย", key: "score_pe" },
-                { label: "Lab/Imaging", key: "score_lab" },
-                { label: "DDx", key: "score_ddx" },
-                { label: "Management", key: "score_management" },
-                { label: "Examiner", key: "score_examiner" },
-              ].map(({ label, key }) => (
-                <div key={key} className="rounded-lg bg-gray-50 p-3 text-center">
-                  <div className="text-2xl font-bold text-gray-800">{scores[key] ?? "-"}</div>
-                  <div className="text-xs text-gray-500 mt-0.5">{label}</div>
-                </div>
-              ))}
-            </div>
-
-            {/* Time taken */}
-            {session?.started_at && session?.completed_at && (
-              <div className="text-center text-sm text-gray-500">
-                เวลาที่ใช้: {formatTime(Math.floor((new Date(session.completed_at).getTime() - new Date(session.started_at).getTime()) / 1000))}
-              </div>
-            )}
-
-            {/* PE Review */}
-            {peSelected.length > 0 && (
-              <div className="rounded-lg bg-orange-50 border border-orange-200 p-4 space-y-3">
-                <div className="flex items-center justify-between">
-                  <p className="text-sm font-semibold text-orange-800">🩺 ทบทวน PE</p>
-                  {!peReviewRevealed && (
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => setPeReviewRevealed(true)}
-                      className="text-orange-700 border-orange-300 hover:bg-orange-100"
-                    >
-                      <Eye className="h-3.5 w-3.5 mr-1" /> ดูรายละเอียด
-                    </Button>
-                  )}
+            {isPaidMember ? (
+              <>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  {[
+                    { label: "ซักประวัติ", key: "score_history" },
+                    { label: "ตรวจร่างกาย", key: "score_pe" },
+                    { label: "Lab/Imaging", key: "score_lab" },
+                    { label: "DDx", key: "score_ddx" },
+                    { label: "Management", key: "score_management" },
+                    { label: "Examiner", key: "score_examiner" },
+                  ].map(({ label, key }) => (
+                    <div key={key} className="rounded-lg bg-gray-50 p-3 text-center">
+                      <div className="text-2xl font-bold text-gray-800">{scores[key] ?? "-"}</div>
+                      <div className="text-xs text-gray-500 mt-0.5">{label}</div>
+                    </div>
+                  ))}
                 </div>
 
-                {peReviewRevealed && (
-                  <div className="space-y-1.5">
-                    <p className="text-xs text-gray-500">ระบบที่ตรวจ ({peSelected.length}/{PE_SYSTEMS.length + peSelected.filter(s => !PE_SYSTEMS.includes(s)).length}):</p>
-                    {peSelected.map(sys => (
-                      <div key={sys} className="text-sm flex items-start gap-2">
-                        <span className="font-medium text-orange-700 w-24 shrink-0">{sys}</span>
-                        <span className={peRevealed[sys]?.includes("ปกติ") ? "text-gray-500" : "text-red-600 font-medium"}>
-                          {peRevealed[sys] || "-"}
-                        </span>
-                      </div>
-                    ))}
-                    {/* Show systems NOT examined */}
-                    {PE_SYSTEMS.filter(s => !peSelected.includes(s)).length > 0 && (
-                      <div className="border-t border-orange-200 pt-2 mt-2">
-                        <p className="text-xs text-gray-400 mb-1">ระบบที่ไม่ได้ตรวจ:</p>
-                        <div className="flex flex-wrap gap-1.5">
-                          {PE_SYSTEMS.filter(s => !peSelected.includes(s)).map(sys => (
-                            <span key={sys} className="text-xs px-2 py-0.5 rounded-full bg-gray-100 text-gray-500">
-                              {sys}
+                {/* Time taken */}
+                {session?.started_at && session?.completed_at && (
+                  <div className="text-center text-sm text-gray-500">
+                    เวลาที่ใช้: {formatTime(Math.floor((new Date(session.completed_at).getTime() - new Date(session.started_at).getTime()) / 1000))}
+                  </div>
+                )}
+
+                {/* PE Review */}
+                {peSelected.length > 0 && (
+                  <div className="rounded-lg bg-orange-50 border border-orange-200 p-4 space-y-3">
+                    <div className="flex items-center justify-between">
+                      <p className="text-sm font-semibold text-orange-800">🩺 ทบทวน PE</p>
+                      {!peReviewRevealed && (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={() => setPeReviewRevealed(true)}
+                          className="text-orange-700 border-orange-300 hover:bg-orange-100"
+                        >
+                          <Eye className="h-3.5 w-3.5 mr-1" /> ดูรายละเอียด
+                        </Button>
+                      )}
+                    </div>
+
+                    {peReviewRevealed && (
+                      <div className="space-y-1.5">
+                        <p className="text-xs text-gray-500">ระบบที่ตรวจ ({peSelected.length}/{PE_SYSTEMS.length + peSelected.filter(s => !PE_SYSTEMS.includes(s)).length}):</p>
+                        {peSelected.map(sys => (
+                          <div key={sys} className="text-sm flex items-start gap-2">
+                            <span className="font-medium text-orange-700 w-24 shrink-0">{sys}</span>
+                            <span className={peRevealed[sys]?.includes("ปกติ") ? "text-gray-500" : "text-red-600 font-medium"}>
+                              {peRevealed[sys] || "-"}
                             </span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
+                          </div>
+                        ))}
+                        {/* Show systems NOT examined */}
+                        {PE_SYSTEMS.filter(s => !peSelected.includes(s)).length > 0 && (
+                          <div className="border-t border-orange-200 pt-2 mt-2">
+                            <p className="text-xs text-gray-400 mb-1">ระบบที่ไม่ได้ตรวจ:</p>
+                            <div className="flex flex-wrap gap-1.5">
+                              {PE_SYSTEMS.filter(s => !peSelected.includes(s)).map(sys => (
+                                <span key={sys} className="text-xs px-2 py-0.5 rounded-full bg-gray-100 text-gray-500">
+                                  {sys}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
                   </div>
                 )}
               </div>
@@ -1498,16 +1519,24 @@ function LongCaseSessionInner() {
               </div>
             )}
 
-            {teachingPoints.length > 0 && (
-              <div className="rounded-lg bg-amber-50 border border-amber-200 p-4">
-                <p className="text-sm font-semibold text-amber-800 mb-2">📚 Teaching Points</p>
-                <ul className="space-y-1">
-                  {teachingPoints.map((pt, i) => (
-                    <li key={i} className="text-sm text-amber-700 flex items-start gap-2">
-                      <span className="text-amber-500">•</span> {pt}
-                    </li>
-                  ))}
-                </ul>
+                {teachingPoints.length > 0 && (
+                  <div className="rounded-lg bg-amber-50 border border-amber-200 p-4">
+                    <p className="text-sm font-semibold text-amber-800 mb-2">📚 Teaching Points</p>
+                    <ul className="space-y-1">
+                      {teachingPoints.map((pt, i) => (
+                        <li key={i} className="text-sm text-amber-700 flex items-start gap-2">
+                          <span className="text-amber-500">•</span> {pt}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </>
+            ) : (
+              <div className="rounded-lg border border-amber-200 bg-amber-50 p-4 text-center space-y-2">
+                <p className="text-sm font-semibold text-amber-800">🔒 คะแนนรายละเอียดและ Feedback สำหรับ Premium</p>
+                <p className="text-xs text-amber-700">อัปเกรดเพื่อดูคะแนนแต่ละหัวข้อ, Feedback จาก Examiner และ Teaching Points</p>
+                <a href="/pricing" className="inline-block mt-1 text-xs font-semibold text-amber-600 underline">ดูแพ็กเกจ →</a>
               </div>
             )}
 

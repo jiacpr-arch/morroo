@@ -25,9 +25,15 @@ import {
 import type { User } from "@supabase/supabase-js";
 
 const PLANS: Record<string, { name: string; price: number; period: string }> = {
-  monthly: { name: "รายเดือน", price: 199, period: "/ เดือน" },
-  yearly: { name: "รายปี", price: 1490, period: "/ ปี" },
-  bundle: { name: "ชุดข้อสอบ 10 ข้อ", price: 299, period: "" },
+  monthly: { name: "Full รายเดือน", price: 199, period: "/ เดือน" },
+  yearly: { name: "Full รายปี", price: 1490, period: "/ ปี" },
+  bundle: { name: "Bundle MCQ 10 ข้อ", price: 99, period: "/ 30 วัน" },
+  mcq_monthly: { name: "MCQ รายเดือน", price: 99, period: "/ เดือน" },
+  mcq_yearly: { name: "MCQ รายปี", price: 990, period: "/ ปี" },
+  meq_monthly: { name: "MEQ รายเดือน", price: 99, period: "/ เดือน" },
+  meq_yearly: { name: "MEQ รายปี", price: 990, period: "/ ปี" },
+  longcase_monthly: { name: "Long Case รายเดือน", price: 99, period: "/ เดือน" },
+  longcase_yearly: { name: "Long Case รายปี", price: 990, period: "/ ปี" },
 };
 
 const BANK_INFO = {

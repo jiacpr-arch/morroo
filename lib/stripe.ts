@@ -12,7 +12,13 @@ export function getStripe(): Stripe {
 }
 
 export const STRIPE_PLANS: Record<string, { amount: number; name: string }> = {
-  monthly: { amount: 199, name: "MorRoo รายเดือน" },
-  yearly: { amount: 1490, name: "MorRoo รายปี" },
-  bundle: { amount: 299, name: "MorRoo ชุดข้อสอบ 10 ข้อ" },
+  monthly: { amount: 199, name: "MorRoo Full รายเดือน" },
+  yearly: { amount: 1490, name: "MorRoo Full รายปี" },
+  bundle: { amount: 99, name: "MorRoo Bundle MCQ 10 ข้อ" },
+  mcq_monthly: { amount: 99, name: "MorRoo MCQ รายเดือน" },
+  mcq_yearly: { amount: 990, name: "MorRoo MCQ รายปี" },
+  meq_monthly: { amount: 99, name: "MorRoo MEQ รายเดือน" },
+  meq_yearly: { amount: 990, name: "MorRoo MEQ รายปี" },
+  longcase_monthly: { amount: 99, name: "MorRoo Long Case รายเดือน" },
+  longcase_yearly: { amount: 990, name: "MorRoo Long Case รายปี" },
 };

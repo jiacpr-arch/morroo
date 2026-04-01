@@ -11,6 +11,7 @@ import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
 import { createClient } from "@/lib/supabase/server";
 import type { Profile } from "@/lib/types";
+import { hasMcqAccess } from "@/lib/types";
 
 export const metadata: Metadata = {
   title: "ฝึกทำข้อสอบ MCQ",
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
 };
 
 const FREE_LIMIT = 5;
+const BUNDLE_LIMIT = 20;
 
 async function PracticeContent({ subjectId }: { subjectId?: string }) {
   const supabase = await createClient();
@@ -28,6 +30,7 @@ async function PracticeContent({ subjectId }: { subjectId?: string }) {
   // Check premium status
   let isPremium = false;
   let freeUsedCount = 0;
+  let freeLimit = FREE_LIMIT;
 
   if (user) {
     const { data: profile } = await supabase
@@ -38,19 +41,20 @@ async function PracticeContent({ subjectId }: { subjectId?: string }) {
 
     const p = profile as Pick<Profile, "membership_type" | "membership_expires_at"> | null;
     if (p) {
-      const isExpired =
-        p.membership_expires_at
-          ? new Date(p.membership_expires_at) < new Date()
-          : false;
-      isPremium =
-        (p.membership_type === "monthly" ||
-          p.membership_type === "yearly" ||
-          p.membership_type === "bundle") &&
-        !isExpired;
+      const isBundle = p.membership_type === "bundle";
+      const hasMcq = hasMcqAccess(p.membership_type, p.membership_expires_at);
+
+      if (isBundle && hasMcq) {
+        // Bundle: limited to 20 questions (counted across all subjects)
+        freeLimit = BUNDLE_LIMIT;
+        isPremium = false;
+      } else {
+        isPremium = hasMcq;
+      }
     }
 
     if (!isPremium) {
-      freeUsedCount = await getFreeAttemptsCount(user.id, subjectId);
+      freeUsedCount = await getFreeAttemptsCount(user.id, undefined); // count all subjects for bundle
     }
   }
 
@@ -123,8 +127,8 @@ async function PracticeContent({ subjectId }: { subjectId?: string }) {
         <McqPractice
           questions={questions}
           isPremium={isPremium}
-          freeUsedCount={Math.min(freeUsedCount, FREE_LIMIT)}
-          freeLimit={FREE_LIMIT}
+          freeUsedCount={Math.min(freeUsedCount, freeLimit)}
+          freeLimit={freeLimit}
         />
       ) : (
         <div className="text-center py-16 text-muted-foreground">

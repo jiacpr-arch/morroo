@@ -24,6 +24,7 @@ import {
   updateMcqSession,
 } from "@/lib/supabase/mutations-mcq";
 import { createClient } from "@/lib/supabase/client";
+import McqAiChat from "@/components/McqAiChat";
 
 interface McqPracticeProps {
   questions: McqQuestion[];
@@ -93,6 +94,10 @@ export default function McqPractice({
       setShowResult(true);
 
       const isCorrect = label === question.correct_answer;
+      // Auto-expand explanation when correct so students can learn more
+      if (isCorrect) {
+        setShowExplanation(true);
+      }
       setStats((prev) => ({
         correct: prev.correct + (isCorrect ? 1 : 0),
         total: prev.total + 1,
@@ -460,6 +465,11 @@ export default function McqPractice({
             </Card>
           )}
         </div>
+      )}
+
+      {/* AI Chat - ask questions about this MCQ */}
+      {showResult && (
+        <McqAiChat question={question} selectedAnswer={selectedAnswer} />
       )}
 
       {/* Actions */}

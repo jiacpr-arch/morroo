@@ -17,6 +17,7 @@ import {
   AlertTriangle,
 } from "lucide-react";
 import type { McqQuestion } from "@/lib/types-mcq";
+import McqAiChat from "@/components/McqAiChat";
 
 interface McqMockProps {
   questions: McqQuestion[];
@@ -419,7 +420,8 @@ export default function McqMock({ questions, timeLimitMinutes }: McqMockProps) {
             onClick={() => {
               setPhase("review");
               setReviewIndex(0);
-              setShowExplanation(false);
+              // Auto-expand explanation when first question was answered correctly
+              setShowExplanation(answers[0] === questions[0]?.correct_answer);
             }}
             className="bg-brand hover:bg-brand-light text-white gap-2"
           >
@@ -438,6 +440,7 @@ export default function McqMock({ questions, timeLimitMinutes }: McqMockProps) {
     const reviewQuestion = questions[reviewIndex];
     const userAnswer = answers[reviewIndex];
     const isCorrect = userAnswer === reviewQuestion.correct_answer;
+
 
     return (
       <div className="space-y-6">
@@ -634,12 +637,17 @@ export default function McqMock({ questions, timeLimitMinutes }: McqMockProps) {
           </div>
         )}
 
+        {/* AI Chat - ask questions about this MCQ */}
+        <McqAiChat question={reviewQuestion} selectedAnswer={userAnswer ?? null} />
+
         {/* Review Navigation */}
         <div className="flex items-center justify-between">
           <Button
             onClick={() => {
-              setReviewIndex((prev) => prev - 1);
-              setShowExplanation(false);
+              const nextIdx = reviewIndex - 1;
+              setReviewIndex(nextIdx);
+              // Auto-expand explanation when navigated question was answered correctly
+              setShowExplanation(answers[nextIdx] === questions[nextIdx]?.correct_answer);
             }}
             variant="outline"
             disabled={reviewIndex === 0}
@@ -660,8 +668,10 @@ export default function McqMock({ questions, timeLimitMinutes }: McqMockProps) {
             {reviewIndex < questions.length - 1 && (
               <Button
                 onClick={() => {
-                  setReviewIndex((prev) => prev + 1);
-                  setShowExplanation(false);
+                  const nextIdx = reviewIndex + 1;
+                  setReviewIndex(nextIdx);
+                  // Auto-expand explanation when navigated question was answered correctly
+                  setShowExplanation(answers[nextIdx] === questions[nextIdx]?.correct_answer);
                 }}
                 className="bg-brand hover:bg-brand-light text-white gap-2"
               >
