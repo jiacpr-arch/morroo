@@ -3,7 +3,7 @@ export interface Profile {
   email: string;
   name: string;
   role: "user" | "admin";
-  membership_type: "free" | "monthly" | "yearly" | "bundle" | "mcq_monthly" | "mcq_yearly" | "meq_monthly" | "meq_yearly";
+  membership_type: "free" | "monthly" | "yearly" | "bundle" | "mcq_monthly" | "mcq_yearly" | "meq_monthly" | "meq_yearly" | "longcase_monthly" | "longcase_yearly";
   membership_expires_at: string | null;
   created_at: string;
 }
@@ -98,10 +98,12 @@ export const CATEGORIES = [
   { name: "จิตเวชศาสตร์", icon: "🧠", slug: "psychiatry" },
 ] as const;
 
+// ============================================================
 // Access control helpers
+// ============================================================
 export const MCQ_PLAN_TYPES = ["monthly", "yearly", "bundle", "mcq_monthly", "mcq_yearly"] as const;
 export const MEQ_PLAN_TYPES = ["monthly", "yearly", "meq_monthly", "meq_yearly"] as const;
-export const LONGCASE_PLAN_TYPES = ["monthly", "yearly", "bundle"] as const;
+export const LONGCASE_PLAN_TYPES = ["monthly", "yearly", "bundle", "longcase_monthly", "longcase_yearly"] as const;
 
 export function hasMcqAccess(membershipType: string, expiresAt: string | null): boolean {
   if (!MCQ_PLAN_TYPES.includes(membershipType as (typeof MCQ_PLAN_TYPES)[number])) return false;
@@ -121,136 +123,133 @@ export function hasLongCaseAccess(membershipType: string, expiresAt: string | nu
   return new Date(expiresAt) > new Date();
 }
 
-export const PRICING_PLANS = [
+// ============================================================
+// Pricing Plans
+// ============================================================
+
+export const FREE_PLAN = {
+  name: "ฟรี",
+  price: 0,
+  originalPrice: null as number | null,
+  period: "",
+  description: "ทดลองทุกประเภทก่อนตัดสินใจ",
+  features: [
+    "MCQ 5 ข้อ/สาขา (เฉลยสั้น)",
+    "MEQ 2 เคส (feedback สั้น)",
+    "Long Case 1 เคส (ไม่เห็นคะแนนละเอียด)",
+  ],
+  cta: "เริ่มต้นฟรี",
+  popular: false,
+  type: "free" as const,
+};
+
+export const BUNDLE_PLAN = {
+  name: "Bundle MCQ",
+  price: 99,
+  originalPrice: null as number | null,
+  period: "/ 30 วัน",
+  description: "ทดลอง MCQ ก่อนสมัคร",
+  features: [
+    "MCQ เลือกข้อสอบ 10 ข้อ",
+    "เฉลยละเอียด + Key Points",
+    "🤖 AI ตรวจคำตอบ",
+    "🩺 Long Case ไม่จำกัด",
+    "หมดอายุใน 30 วัน",
+  ],
+  cta: "ซื้อ Bundle",
+  popular: false,
+  type: "bundle" as const,
+};
+
+export const SINGLE_PLANS = [
   {
-    name: "ฟรี",
-    price: 0,
-    period: "",
-    description: "เริ่มต้นทดลองใช้งาน",
+    name: "MCQ",
+    price: 99,
+    originalPrice: 149 as number | null,
+    period: "/ เดือน",
+    description: "เตรียมสอบ MCQ โดยเฉพาะ",
     features: [
-      "ทำข้อสอบฟรี 5 ข้อ/สาขา",
-      "เห็นเฉลยสั้น",
-      "ไม่มีเฉลยละเอียด",
+      "MCQ ไม่จำกัดทุกสาขา",
+      "เฉลยละเอียด + Key Points",
+      "🤖 AI ตรวจคำตอบไม่จำกัด",
+      "ไม่รวม MEQ และ Long Case",
     ],
-    cta: "เริ่มต้นฟรี",
+    cta: "สมัคร MCQ",
     popular: false,
-    type: "free" as const,
+    type: "mcq_monthly" as const,
   },
   {
-    name: "ซื้อเป็นชุด",
-    price: 299,
-    period: "/ 10 ข้อ",
-    description: "เหมาะกับการทดลองก่อนสมัคร",
+    name: "MEQ",
+    price: 99,
+    originalPrice: 149 as number | null,
+    period: "/ เดือน",
+    description: "เตรียมสอบ MEQ โดยเฉพาะ",
     features: [
-      "MCQ เลือกข้อสอบ 10 ข้อ",
-      "ดูเฉลยละเอียด",
-      "Key Points ทุกข้อ",
-      "🤖 AI ตรวจคำตอบอัตโนมัติ",
-      "🩺 Long Case Exam ไม่จำกัด",
-      "หมดอายุใน 30 วัน",
+      "MEQ ไม่จำกัดทุกข้อ",
+      "🤖 AI ตรวจคำตอบไม่จำกัด",
+      "เฉลยละเอียด + Key Points",
+      "ไม่รวม MCQ และ Long Case",
     ],
-    cta: "ซื้อชุดข้อสอบ",
+    cta: "สมัคร MEQ",
     popular: false,
-    type: "bundle" as const,
+    type: "meq_monthly" as const,
   },
   {
-    name: "รายเดือน (ครบ)",
+    name: "Long Case",
+    price: 99,
+    originalPrice: 149 as number | null,
+    period: "/ เดือน",
+    description: "เตรียมสอบ Long Case โดยเฉพาะ",
+    features: [
+      "🩺 Long Case ไม่จำกัด",
+      "AI รับบทผู้ป่วยและกรรมการ",
+      "คะแนนและ feedback ละเอียด",
+      "ไม่รวม MCQ และ MEQ",
+    ],
+    cta: "สมัคร Long Case",
+    popular: false,
+    type: "longcase_monthly" as const,
+  },
+] as const;
+
+export const FULL_PLANS = [
+  {
+    name: "Full รายเดือน",
     price: 199,
+    originalPrice: 299 as number | null,
     period: "/ เดือน",
     description: "MCQ + MEQ + Long Case ครบ",
     features: [
-      "MCQ ไม่จำกัด + เฉลยละเอียด",
-      "MEQ ทุกข้อไม่จำกัด",
-      "🩺 Long Case Exam ไม่จำกัด",
+      "MCQ ไม่จำกัดทุกสาขา",
+      "MEQ ไม่จำกัดทุกข้อ",
+      "🩺 Long Case ไม่จำกัด",
       "🤖 AI ตรวจคำตอบไม่จำกัด",
       "ข้อสอบใหม่ทุกสัปดาห์",
     ],
-    cta: "สมัครรายเดือน",
+    cta: "สมัคร Full รายเดือน",
     popular: true,
     type: "monthly" as const,
   },
   {
-    name: "รายปี (ครบ)",
+    name: "Full รายปี",
     price: 1490,
+    originalPrice: 2388 as number | null,
     period: "/ ปี",
     description: "ประหยัดกว่า 38%",
     features: [
       "MCQ + MEQ + Long Case ครบ",
       "🤖 AI ตรวจคำตอบไม่จำกัด",
-      "🩺 Long Case Exam ไม่จำกัด",
-      "ประหยัด ฿898/ปี",
+      "ข้อสอบใหม่ทุกสัปดาห์",
       "สิทธิ์ก่อนใคร",
+      `ประหยัด ฿${(2388 - 1490).toLocaleString()}/ปี`,
     ],
-    cta: "สมัครรายปี",
+    cta: "สมัคร Full รายปี",
     popular: false,
     type: "yearly" as const,
   },
 ] as const;
 
-export const MCQ_ONLY_PLANS = [
-  {
-    name: "MCQ รายเดือน",
-    price: 129,
-    period: "/ เดือน",
-    description: "ข้อสอบ MCQ เท่านั้น",
-    features: [
-      "MCQ ไม่จำกัดทุกสาขา",
-      "เฉลยละเอียดทุกข้อ",
-      "Key Points",
-      "ไม่รวม MEQ และ Long Case",
-    ],
-    cta: "สมัคร MCQ รายเดือน",
-    popular: false,
-    type: "mcq_monthly" as const,
-  },
-  {
-    name: "MCQ รายปี",
-    price: 990,
-    period: "/ ปี",
-    description: "ประหยัดกว่ารายเดือน 36%",
-    features: [
-      "MCQ ไม่จำกัดทุกสาขา",
-      "เฉลยละเอียดทุกข้อ",
-      "Key Points",
-      "ประหยัด ฿558/ปี",
-      "ไม่รวม MEQ และ Long Case",
-    ],
-    cta: "สมัคร MCQ รายปี",
-    popular: false,
-    type: "mcq_yearly" as const,
-  },
-] as const;
-
-export const MEQ_ONLY_PLANS = [
-  {
-    name: "MEQ รายเดือน",
-    price: 129,
-    period: "/ เดือน",
-    description: "ข้อสอบ MEQ เท่านั้น",
-    features: [
-      "MEQ ไม่จำกัดทุกข้อ",
-      "🤖 AI ตรวจคำตอบไม่จำกัด",
-      "เฉลยและ Key Points",
-      "ไม่รวม MCQ และ Long Case",
-    ],
-    cta: "สมัคร MEQ รายเดือน",
-    popular: false,
-    type: "meq_monthly" as const,
-  },
-  {
-    name: "MEQ รายปี",
-    price: 990,
-    period: "/ ปี",
-    description: "ประหยัดกว่ารายเดือน 36%",
-    features: [
-      "MEQ ไม่จำกัดทุกข้อ",
-      "🤖 AI ตรวจคำตอบไม่จำกัด",
-      "เฉลยและ Key Points",
-      "ประหยัด ฿558/ปี",
-      "ไม่รวม MCQ และ Long Case",
-    ],
-    cta: "สมัคร MEQ รายปี",
-    popular: false,
-    type: "meq_yearly" as const,
-  },
-] as const;
+// Legacy export for backward compat
+export const PRICING_PLANS = [FREE_PLAN, BUNDLE_PLAN, ...FULL_PLANS] as const;
+export const MCQ_ONLY_PLANS = [SINGLE_PLANS[0]] as const;
+export const MEQ_ONLY_PLANS = [SINGLE_PLANS[1]] as const;
