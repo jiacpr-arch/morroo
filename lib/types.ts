@@ -35,6 +35,7 @@ export interface LongCaseSession {
   lab_ordered: string[];
   student_ddx: string | null;
   student_mgmt: string | null;
+  student_notes: string | null;
   examiner_chat: { role: "user" | "assistant"; content: string }[];
   score_history: number | null;
   score_pe: number | null;

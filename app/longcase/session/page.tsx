@@ -147,6 +147,7 @@ function LongCaseSessionInner() {
             }
           }
         }
+        if (data.student_notes) setNotes(data.student_notes);
         // Restore lab revealed state
         if (data.lab_ordered?.length) {
           setLabPendingOrder(data.lab_ordered);
@@ -219,6 +220,21 @@ function LongCaseSessionInner() {
   useEffect(() => {
     if (phase === "done") setTimerActive(false);
   }, [phase]);
+
+  // Auto-save notes with debounce
+  const notesTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => {
+    if (!sessionId || !notes) return;
+    if (notesTimerRef.current) clearTimeout(notesTimerRef.current);
+    notesTimerRef.current = setTimeout(() => {
+      fetch("/api/longcase/session", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ sessionId, student_notes: notes }),
+      });
+    }, 1500);
+    return () => { if (notesTimerRef.current) clearTimeout(notesTimerRef.current); };
+  }, [notes, sessionId]);
 
   function formatTime(seconds: number) {
     const h = Math.floor(seconds / 3600);
@@ -613,9 +629,10 @@ function LongCaseSessionInner() {
                   rows={4}
                   value={notes}
                   onChange={e => setNotes(e.target.value)}
-                  placeholder="จดบันทึก, สรุปข้อมูล, ข้อสังเกต..."
+                  placeholder="จดบันทึก, สรุปข้อมูล, ข้อสังเกต... (บันทึกอัตโนมัติ)"
                   className="text-xs resize-none"
                 />
+                <p className="text-[10px] text-gray-400 mt-1 text-right">บันทึกอัตโนมัติ</p>
               </div>
             )}
           </div>
