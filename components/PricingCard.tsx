@@ -7,6 +7,7 @@ import { Check } from "lucide-react";
 interface PricingCardProps {
   name: string;
   price: number;
+  originalPrice?: number | null;
   period: string;
   description: string;
   features: readonly string[];
@@ -18,6 +19,7 @@ interface PricingCardProps {
 export default function PricingCard({
   name,
   price,
+  originalPrice,
   period,
   description,
   features,
@@ -43,9 +45,21 @@ export default function PricingCard({
       </CardHeader>
       <CardContent className="text-center flex-1">
         <div className="my-4">
-          <span className="text-4xl font-bold">
-            {price === 0 ? "ฟรี" : `฿${price.toLocaleString()}`}
-          </span>
+          {originalPrice != null && originalPrice > price && (
+            <p className="text-sm text-muted-foreground line-through mb-0.5">
+              ฿{originalPrice.toLocaleString()}
+            </p>
+          )}
+          <div className="flex items-center justify-center gap-2">
+            <span className="text-4xl font-bold">
+              {price === 0 ? "ฟรี" : `฿${price.toLocaleString()}`}
+            </span>
+            {originalPrice != null && originalPrice > price && price > 0 && (
+              <Badge className="bg-red-100 text-red-600 text-xs font-semibold">
+                -{Math.round((1 - price / originalPrice) * 100)}%
+              </Badge>
+            )}
+          </div>
           {period && (
             <span className="text-muted-foreground text-sm"> {period}</span>
           )}
