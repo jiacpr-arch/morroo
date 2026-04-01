@@ -13,6 +13,8 @@ export async function GET(request: NextRequest) {
   const includePe = searchParams.get("includePe") === "true";
   const includeLab = searchParams.get("includeLab") === "true";
   const includeLabKeys = searchParams.get("includeLabKeys") === "true";
+  const includeAcceptedDdx = searchParams.get("includeAcceptedDdx") === "true";
+  const includeAnswers = searchParams.get("includeAnswers") === "true";
 
   if (!sessionId) return NextResponse.json({ error: "Missing id" }, { status: 400 });
 
@@ -38,8 +40,15 @@ export async function GET(request: NextRequest) {
   }
   // Never expose history_script to client
   delete (caseData as Record<string, unknown>).history_script;
-  delete (caseData as Record<string, unknown>).correct_diagnosis;
-  delete (caseData as Record<string, unknown>).accepted_ddx;
+  // Only expose answers after scoring is done
+  const isDone = session.phase === "done";
+  if (!includeAnswers || !isDone) {
+    delete (caseData as Record<string, unknown>).correct_diagnosis;
+    delete (caseData as Record<string, unknown>).management_plan;
+  }
+  if ((!includeAcceptedDdx && !includeAnswers) || !isDone) {
+    delete (caseData as Record<string, unknown>).accepted_ddx;
+  }
   delete (caseData as Record<string, unknown>).examiner_questions;
   delete (caseData as Record<string, unknown>).scoring_rubric;
 

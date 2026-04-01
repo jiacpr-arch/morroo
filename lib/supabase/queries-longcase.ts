@@ -83,6 +83,7 @@ export async function updateLongCaseSession(
     lab_ordered: LongCaseSession["lab_ordered"];
     student_ddx: string;
     student_mgmt: string;
+    student_notes: string;
     examiner_chat: LongCaseSession["examiner_chat"];
     score_history: number;
     score_pe: number;
