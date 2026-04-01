@@ -20,6 +20,7 @@ import {
   RotateCcw,
 } from "lucide-react";
 import type { Exam, ExamPart, Profile } from "@/lib/types";
+import { hasMeqAccess } from "@/lib/types";
 
 const SCORE_LABELS = [
   { score: 0, label: "ไม่ได้ตอบ", color: "bg-gray-200 text-gray-600" },
@@ -100,16 +101,10 @@ export default function AnswerClient({
 
   const hasAccess =
     exam.is_free ||
-    (profile &&
-      profile.membership_type !== "free" &&
-      (!profile.membership_expires_at ||
-        new Date(profile.membership_expires_at) > new Date()));
+    (profile && hasMeqAccess(profile.membership_type, profile.membership_expires_at));
 
   const isPaidMember =
-    !!profile &&
-    profile.membership_type !== "free" &&
-    (!profile.membership_expires_at ||
-      new Date(profile.membership_expires_at) > new Date());
+    !!profile && hasMeqAccess(profile.membership_type, profile.membership_expires_at);
 
   const togglePart = (partNumber: number) => {
     setOpenParts((prev) => {

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { getLongCaseFull, startLongCaseSession } from "@/lib/supabase/queries-longcase";
+import { hasLongCaseAccess } from "@/lib/types";
 
 export async function POST(request: NextRequest) {
   const supabase = await createClient();
@@ -18,8 +19,7 @@ export async function POST(request: NextRequest) {
     .single();
 
   const now = new Date();
-  const expires = profile?.membership_expires_at ? new Date(profile.membership_expires_at) : null;
-  const hasActivePlan = profile?.membership_type !== "free" && expires && expires > now;
+  const hasActivePlan = profile ? hasLongCaseAccess(profile.membership_type, profile.membership_expires_at) : false;
 
   // Free users get 1 Long Case per month
   if (!hasActivePlan) {
