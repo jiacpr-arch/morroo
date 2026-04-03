@@ -14,6 +14,30 @@ export async function POST(request: NextRequest) {
       status: 401,
     });
 
+  // Check membership — free users cannot use AI chat
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("membership_type, membership_expires_at")
+    .eq("id", user.id)
+    .single();
+
+  if (!profile || profile.membership_type === "free") {
+    return new Response(
+      JSON.stringify({ error: "premium_required" }),
+      { status: 403 }
+    );
+  }
+
+  if (
+    profile.membership_expires_at &&
+    new Date(profile.membership_expires_at) < new Date()
+  ) {
+    return new Response(
+      JSON.stringify({ error: "membership_expired" }),
+      { status: 403 }
+    );
+  }
+
   const {
     question,
     userMessage,

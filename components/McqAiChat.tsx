@@ -11,7 +11,9 @@ import {
   ChevronUp,
   Bot,
   User,
+  Crown,
 } from "lucide-react";
+import Link from "next/link";
 import type { McqQuestion } from "@/lib/types-mcq";
 
 interface McqAiChatProps {
@@ -39,6 +41,7 @@ export default function McqAiChat({
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const lastAssistantMsgRef = useRef<HTMLDivElement | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   // Reset chat when question changes
@@ -49,11 +52,6 @@ export default function McqAiChat({
     setIsLoading(false);
   }, [question.id]);
 
-  // Scroll to bottom on new messages
-  useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
-
   const sendMessage = async (text: string) => {
     if (!text.trim() || isLoading) return;
 
@@ -61,6 +59,11 @@ export default function McqAiChat({
     setMessages((prev) => [...prev, userMsg]);
     setInput("");
     setIsLoading(true);
+
+    // Scroll to bottom so user sees the loading spinner
+    setTimeout(() => {
+      messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, 50);
 
     try {
       const res = await fetch("/api/ai/mcq-chat", {
@@ -78,15 +81,23 @@ export default function McqAiChat({
         }),
       });
 
-      if (!res.ok) {
-        throw new Error("Failed to get response");
-      }
-
       const data = await res.json();
-      setMessages((prev) => [
-        ...prev,
-        { role: "assistant", content: data.reply },
-      ]);
+
+      if (res.status === 403) {
+        const errorCode = data.error;
+        const content =
+          errorCode === "membership_expired"
+            ? "__MEMBERSHIP_EXPIRED__"
+            : "__PREMIUM_REQUIRED__";
+        setMessages((prev) => [...prev, { role: "assistant", content }]);
+      } else if (!res.ok) {
+        throw new Error("Failed to get response");
+      } else {
+        setMessages((prev) => [
+          ...prev,
+          { role: "assistant", content: data.reply },
+        ]);
+      }
     } catch {
       setMessages((prev) => [
         ...prev,
@@ -97,6 +108,13 @@ export default function McqAiChat({
       ]);
     } finally {
       setIsLoading(false);
+      // Scroll to show the start of the new AI message
+      setTimeout(() => {
+        lastAssistantMsgRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 50);
     }
   };
 
@@ -179,32 +197,72 @@ export default function McqAiChat({
             {/* Chat messages */}
             {messages.length > 0 && (
               <div className="max-h-64 overflow-y-auto space-y-3 pr-1">
-                {messages.map((msg, i) => (
-                  <div
-                    key={i}
-                    className={`flex gap-2 ${msg.role === "user" ? "justify-end" : "justify-start"}`}
-                  >
-                    {msg.role === "assistant" && (
-                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center mt-1">
-                        <Bot className="h-3.5 w-3.5 text-purple-600" />
-                      </div>
-                    )}
+                {messages.map((msg, i) => {
+                  const isLastAssistant =
+                    msg.role === "assistant" && i === messages.length - 1;
+                  const isPremiumRequired =
+                    msg.content === "__PREMIUM_REQUIRED__";
+                  const isMembershipExpired =
+                    msg.content === "__MEMBERSHIP_EXPIRED__";
+
+                  return (
                     <div
-                      className={`max-w-[85%] rounded-lg px-3 py-2 text-sm leading-relaxed ${
-                        msg.role === "user"
-                          ? "bg-brand text-white"
-                          : "bg-white border border-purple-100"
-                      }`}
+                      key={i}
+                      ref={
+                        isLastAssistant
+                          ? (el) => {
+                              lastAssistantMsgRef.current = el;
+                            }
+                          : undefined
+                      }
+                      className={`flex gap-2 ${msg.role === "user" ? "justify-end" : "justify-start"}`}
                     >
-                      <p className="whitespace-pre-line">{msg.content}</p>
+                      {msg.role === "assistant" && (
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center mt-1">
+                          <Bot className="h-3.5 w-3.5 text-purple-600" />
+                        </div>
+                      )}
+                      {isPremiumRequired || isMembershipExpired ? (
+                        <div className="max-w-[85%] rounded-lg px-3 py-3 text-sm bg-amber-50 border border-amber-200">
+                          <div className="flex items-center gap-1.5 mb-1.5 text-amber-700 font-medium">
+                            <Crown className="h-4 w-4" />
+                            {isMembershipExpired
+                              ? "สมาชิกของคุณหมดอายุแล้ว"
+                              : "ฟีเจอร์นี้สำหรับสมาชิก Premium"}
+                          </div>
+                          <p className="text-amber-600 text-xs mb-2">
+                            {isMembershipExpired
+                              ? "ต่ออายุสมาชิกเพื่อใช้งาน AI ถามตอบต่อ"
+                              : "อัปเกรดเป็น Premium เพื่อถาม AI ได้ไม่จำกัด พร้อมคำอธิบายเชิงลึก"}
+                          </p>
+                          <Link href="/pricing">
+                            <Button
+                              size="sm"
+                              className="bg-amber-500 hover:bg-amber-600 text-white text-xs h-7 px-3"
+                            >
+                              ดูแพ็กเกจ
+                            </Button>
+                          </Link>
+                        </div>
+                      ) : (
+                        <div
+                          className={`max-w-[85%] rounded-lg px-3 py-2 text-sm leading-relaxed ${
+                            msg.role === "user"
+                              ? "bg-brand text-white"
+                              : "bg-white border border-purple-100"
+                          }`}
+                        >
+                          <p className="whitespace-pre-line">{msg.content}</p>
+                        </div>
+                      )}
+                      {msg.role === "user" && (
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full bg-brand/10 flex items-center justify-center mt-1">
+                          <User className="h-3.5 w-3.5 text-brand" />
+                        </div>
+                      )}
                     </div>
-                    {msg.role === "user" && (
-                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-brand/10 flex items-center justify-center mt-1">
-                        <User className="h-3.5 w-3.5 text-brand" />
-                      </div>
-                    )}
-                  </div>
-                ))}
+                  );
+                })}
                 {isLoading && (
                   <div className="flex gap-2">
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center mt-1">
