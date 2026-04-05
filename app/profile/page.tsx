@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
 import { User, Mail, Crown, Calendar, LogOut } from "lucide-react";
 import type { Profile } from "@/lib/types";
+import ReferralCard from "@/components/ReferralCard";
 
 const membershipLabels: Record<string, string> = {
   free: "ฟรี",
@@ -139,6 +140,9 @@ export default function ProfilePage() {
             )}
           </CardContent>
         </Card>
+
+        {/* Referral */}
+        {profile && <ReferralCard userId={profile.id} />}
 
         {/* Logout */}
         <Button

@@ -32,6 +32,7 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold mb-3">เกี่ยวกับ</h3>
             <ul className="space-y-2 text-sm text-white/70">
+              <li><Link href="/blog" className="hover:text-white transition-colors">บทความ</Link></li>
               <li><Link href="/pricing" className="hover:text-white transition-colors">แพ็กเกจราคา</Link></li>
               <li><Link href="/login" className="hover:text-white transition-colors">เข้าสู่ระบบ</Link></li>
               <li><Link href="/register" className="hover:text-white transition-colors">สมัครสมาชิก</Link></li>

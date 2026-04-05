@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { sendReceiptEmail } from "@/lib/email/send";
 import Stripe from "stripe";
 
 export const runtime = "nodejs";
@@ -124,6 +125,24 @@ export async function POST(request: NextRequest) {
 
     if (invoiceError) {
       console.error("Failed to create invoice:", invoiceError);
+    }
+
+    // Send receipt email
+    const { data: profile } = await supabase
+      .from("profiles")
+      .select("email, name")
+      .eq("id", userId)
+      .single();
+
+    if (profile?.email) {
+      sendReceiptEmail({
+        name: profile.name ?? "คุณ",
+        email: profile.email,
+        packageType: planType as "bundle" | "monthly" | "yearly",
+        amount: totalAmount,
+        expiresAt: expiresAt.toISOString(),
+        chargeId: session.id,
+      }).catch((err) => console.error("Failed to send receipt email:", err));
     }
   }
 

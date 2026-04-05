@@ -1,16 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
+import { isValidReferralCode } from "@/lib/referral";
 
 export default function RegisterPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const refCode = searchParams.get("ref") ?? "";
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -61,6 +64,15 @@ export default function RegisterPage() {
           membership_type: "free",
         });
       }
+
+      // Track referral if valid code present
+      if (refCode && isValidReferralCode(refCode)) {
+        fetch("/api/referral/use", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ referredUserId: data.user.id, referralCode: refCode }),
+        }).catch(() => {});
+      }
     }
 
     setSuccess(true);
@@ -69,10 +81,14 @@ export default function RegisterPage() {
 
   const handleGoogleSignUp = async () => {
     const supabase = createClient();
+    const callbackUrl = new URL(`${window.location.origin}/auth/callback`);
+    if (refCode && isValidReferralCode(refCode)) {
+      callbackUrl.searchParams.set("ref", refCode);
+    }
     await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: `${window.location.origin}/auth/callback`,
+        redirectTo: callbackUrl.toString(),
       },
     });
   };
