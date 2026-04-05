@@ -1,6 +1,8 @@
 import Link from "next/link";
-import { blogPosts } from "@/lib/blog";
+import { getBlogPosts } from "@/lib/blog";
 import type { Metadata } from "next";
+
+export const revalidate = 3600; // revalidate every hour
 
 export const metadata: Metadata = {
   title: "บทความเตรียมสอบแพทย์ — MEQ, MCQ, NL Step 3",
@@ -21,11 +23,8 @@ const categoryColors: Record<string, string> = {
   "เทคนิคสอบ": "bg-orange-100 text-orange-700",
 };
 
-export default function BlogPage() {
-  const sorted = [...blogPosts].sort(
-    (a, b) =>
-      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-  );
+export default async function BlogPage() {
+  const posts = await getBlogPosts();
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
@@ -38,42 +37,46 @@ export default function BlogPage() {
         </p>
       </div>
 
-      <div className="space-y-6">
-        {sorted.map((post) => (
-          <Link key={post.slug} href={`/blog/${post.slug}`}>
-            <article className="group rounded-xl border border-border bg-card p-6 transition-shadow hover:shadow-md">
-              <div className="mb-3 flex items-center gap-3">
-                <span
-                  className={`rounded-full px-3 py-0.5 text-xs font-medium ${
-                    categoryColors[post.category] ?? "bg-gray-100 text-gray-600"
-                  }`}
-                >
-                  {post.category}
-                </span>
-                <span className="text-xs text-muted-foreground">
-                  {new Date(post.publishedAt).toLocaleDateString("th-TH", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                </span>
-                <span className="text-xs text-muted-foreground">
-                  อ่าน {post.readingTime} นาที
-                </span>
-              </div>
-              <h2 className="text-xl font-semibold text-foreground group-hover:text-brand transition-colors">
-                {post.title}
-              </h2>
-              <p className="mt-2 text-muted-foreground line-clamp-2">
-                {post.description}
-              </p>
-              <div className="mt-4 text-sm font-medium text-brand">
-                อ่านต่อ →
-              </div>
-            </article>
-          </Link>
-        ))}
-      </div>
+      {posts.length === 0 ? (
+        <p className="text-muted-foreground">กำลังโหลดบทความ...</p>
+      ) : (
+        <div className="space-y-6">
+          {posts.map((post) => (
+            <Link key={post.slug} href={`/blog/${post.slug}`}>
+              <article className="group rounded-xl border border-border bg-card p-6 transition-shadow hover:shadow-md">
+                <div className="mb-3 flex items-center gap-3">
+                  <span
+                    className={`rounded-full px-3 py-0.5 text-xs font-medium ${
+                      categoryColors[post.category] ?? "bg-gray-100 text-gray-600"
+                    }`}
+                  >
+                    {post.category}
+                  </span>
+                  <span className="text-xs text-muted-foreground">
+                    {new Date(post.publishedAt).toLocaleDateString("th-TH", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </span>
+                  <span className="text-xs text-muted-foreground">
+                    อ่าน {post.readingTime} นาที
+                  </span>
+                </div>
+                <h2 className="text-xl font-semibold text-foreground group-hover:text-brand transition-colors">
+                  {post.title}
+                </h2>
+                <p className="mt-2 text-muted-foreground line-clamp-2">
+                  {post.description}
+                </p>
+                <div className="mt-4 text-sm font-medium text-brand">
+                  อ่านต่อ →
+                </div>
+              </article>
+            </Link>
+          ))}
+        </div>
+      )}
 
       <div className="mt-12 rounded-xl bg-brand/10 border border-brand/20 p-6 text-center">
         <h2 className="text-lg font-semibold">พร้อมฝึกสอบแล้วใช่ไหม?</h2>

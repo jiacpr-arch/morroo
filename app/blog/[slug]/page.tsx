@@ -1,10 +1,11 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getBlogPost, getAllSlugs, blogPosts } from "@/lib/blog";
+import { getBlogPost, getBlogPosts, getAllSlugs } from "@/lib/blog";
 import type { Metadata } from "next";
 
-export function generateStaticParams() {
-  return getAllSlugs().map((slug) => ({ slug }));
+export async function generateStaticParams() {
+  const slugs = await getAllSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -13,7 +14,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = getBlogPost(slug);
+  const post = await getBlogPost(slug);
   if (!post) return { title: "ไม่พบบทความ" };
   return {
     title: post.title,
@@ -35,7 +36,7 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = getBlogPost(slug);
+  const [post, allPosts] = await Promise.all([getBlogPost(slug), getBlogPosts()]);
   if (!post) notFound();
 
   const articleSchema = {
@@ -57,7 +58,7 @@ export default async function BlogPostPage({
     inLanguage: "th",
   };
 
-  const related = blogPosts.filter((p) => p.slug !== slug).slice(0, 2);
+  const related = allPosts.filter((p) => p.slug !== slug).slice(0, 2);
 
   return (
     <>

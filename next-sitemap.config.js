@@ -1,6 +1,4 @@
 /** @type {import('next-sitemap').IConfig} */
-const { getAllSlugs } = require("./lib/blog");
-
 module.exports = {
   siteUrl: "https://www.morroo.com",
   generateRobotsTxt: true,
@@ -15,11 +13,25 @@ module.exports = {
     ],
   },
   additionalPaths: async (config) => {
-    const blogSlugs = getAllSlugs();
-    return blogSlugs.map((slug) => ({
-      loc: `/blog/${slug}`,
-      changefreq: "weekly",
-      priority: 0.8,
-    }));
+    try {
+      // Fetch blog slugs directly from Supabase REST API (no Next.js context needed)
+      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+      const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+      if (!supabaseUrl || !supabaseKey) return [];
+
+      const res = await fetch(
+        `${supabaseUrl}/rest/v1/blog_posts?select=slug`,
+        { headers: { apikey: supabaseKey, Authorization: `Bearer ${supabaseKey}` } }
+      );
+      if (!res.ok) return [];
+      const rows = await res.json();
+      return rows.map((r) => ({
+        loc: `/blog/${r.slug}`,
+        changefreq: "weekly",
+        priority: 0.8,
+      }));
+    } catch {
+      return [];
+    }
   },
 };
