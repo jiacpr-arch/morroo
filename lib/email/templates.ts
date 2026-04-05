@@ -201,17 +201,46 @@ export function receiptEmail({
 </html>`;
 }
 
+export interface NewsletterPost {
+  title: string;
+  slug: string;
+  category: string;
+  readingTime: number;
+  description: string;
+}
+
 export function weeklyNewsletterEmail({
   name,
   newExamCount,
   tipTitle,
   tipContent,
+  latestPosts = [],
 }: {
   name: string;
   newExamCount: number;
   tipTitle: string;
   tipContent: string;
+  latestPosts?: NewsletterPost[];
 }): string {
+  const postsHtml = latestPosts.length > 0
+    ? `<div style="margin: 0 0 24px;">
+        <h3 style="color: ${DARK_COLOR}; margin: 0 0 12px; font-size: 16px;">📝 บทความล่าสุดจากหมอรู้</h3>
+        ${latestPosts.map((p) => `
+          <a href="https://www.morroo.com/blog/${p.slug}" style="display: block; text-decoration: none;
+             border: 1px solid #e5e7eb; border-radius: 8px; padding: 14px 16px; margin-bottom: 10px;
+             background: #ffffff;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+              <span style="background: ${BRAND_COLOR}20; color: ${BRAND_COLOR}; font-size: 11px;
+                           font-weight: 600; padding: 2px 8px; border-radius: 20px;">${p.category}</span>
+              <span style="color: #9ca3af; font-size: 12px;">อ่าน ${p.readingTime} นาที</span>
+            </div>
+            <p style="color: #111827; font-size: 14px; font-weight: 600; margin: 0 0 4px;">${p.title}</p>
+            <p style="color: #6b7280; font-size: 13px; margin: 0; overflow: hidden; display: -webkit-box;
+                      -webkit-line-clamp: 2; -webkit-box-orient: vertical;">${p.description}</p>
+          </a>`).join("")}
+      </div>`
+    : "";
+
   return `<!DOCTYPE html>
 <html lang="th">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
@@ -230,6 +259,8 @@ export function weeklyNewsletterEmail({
         มีข้อสอบ MEQ ใหม่ <strong>${newExamCount} เคส</strong> เพิ่มเข้ามาแล้ว!
       </p>
     </div>
+
+    ${postsHtml}
 
     <div style="background: #fefce8; border: 1px solid #fef08a; border-radius: 8px; padding: 20px; margin: 0 0 24px;">
       <h3 style="color: #854d0e; margin: 0 0 8px; font-size: 16px;">💡 เทคนิคประจำสัปดาห์</h3>

@@ -6,6 +6,7 @@ import { welcomeEmail, receiptEmail, weeklyNewsletterEmail } from "./templates";
 import type {
   WelcomeEmailProps,
   ReceiptEmailProps,
+  NewsletterPost,
 } from "./templates";
 
 const FROM_ADDRESS = "หมอรู้ <noreply@morroo.com>";
@@ -64,11 +65,13 @@ export async function sendWeeklyNewsletter({
   newExamCount,
   tipTitle,
   tipContent,
+  latestPosts = [],
 }: {
   subscribers: Array<{ name: string; email: string }>;
   newExamCount: number;
   tipTitle: string;
   tipContent: string;
+  latestPosts?: NewsletterPost[];
 }) {
   const results = await Promise.allSettled(
     subscribers.map((s) =>
@@ -80,6 +83,7 @@ export async function sendWeeklyNewsletter({
           newExamCount,
           tipTitle,
           tipContent,
+          latestPosts,
         }),
       })
     )

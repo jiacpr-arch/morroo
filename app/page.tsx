@@ -6,6 +6,7 @@ import PricingCard from "@/components/PricingCard";
 import DailyCountdown from "@/components/DailyCountdown";
 import { CATEGORIES, PRICING_PLANS } from "@/lib/types";
 import { getExams, getExamPartCounts, sortExamsAvailableFirst } from "@/lib/supabase/queries";
+import { getBlogPosts } from "@/lib/blog";
 import {
   BookOpen,
   Clock,
@@ -20,7 +21,11 @@ import {
 export const revalidate = 60; // revalidate every 60 seconds
 
 export default async function HomePage() {
-  const [allExams, partCounts] = await Promise.all([getExams(), getExamPartCounts()]);
+  const [allExams, partCounts, blogPosts] = await Promise.all([
+    getExams(),
+    getExamPartCounts(),
+    getBlogPosts(),
+  ]);
   const exams = sortExamsAvailableFirst(allExams, partCounts);
   const latestExams = exams.slice(0, 6);
   const dayIndex = Math.floor(Date.now() / (1000 * 60 * 60 * 24));
@@ -295,6 +300,44 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Blog */}
+      {blogPosts.length > 0 && (
+        <section className="py-16">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between mb-8">
+              <div>
+                <h2 className="text-3xl font-bold">บทความล่าสุด</h2>
+                <p className="mt-1 text-muted-foreground">ความรู้และเทคนิคเตรียมสอบแพทย์</p>
+              </div>
+              <Link href="/blog">
+                <Button variant="outline" className="gap-2">
+                  ดูทั้งหมด <ArrowRight className="h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {blogPosts.slice(0, 3).map((post) => (
+                <Link key={post.slug} href={`/blog/${post.slug}`}>
+                  <article className="group rounded-xl border border-border bg-card p-6 h-full flex flex-col transition-shadow hover:shadow-md">
+                    <div className="mb-3 flex items-center gap-2">
+                      <span className="rounded-full bg-brand/10 px-3 py-0.5 text-xs font-medium text-brand">
+                        {post.category}
+                      </span>
+                      <span className="text-xs text-muted-foreground">อ่าน {post.readingTime} นาที</span>
+                    </div>
+                    <h3 className="font-semibold text-foreground group-hover:text-brand transition-colors line-clamp-2 flex-1">
+                      {post.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-muted-foreground line-clamp-2">{post.description}</p>
+                    <div className="mt-4 text-sm font-medium text-brand">อ่านต่อ →</div>
+                  </article>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="py-20 bg-brand-dark text-white">
