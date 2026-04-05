@@ -5,8 +5,9 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
+import { ActivityHeatmap } from "@/components/ActivityHeatmap";
 import {
   Shield,
   Loader2,
@@ -14,7 +15,15 @@ import {
   CreditCard,
   Users,
   Stethoscope,
+  BarChart3,
+  ClipboardList,
 } from "lucide-react";
+
+interface HeatmapCell {
+  day_of_week: number;
+  hour_of_day: number;
+  attempt_count: number;
+}
 
 export default function AdminDashboard() {
   const router = useRouter();
@@ -26,42 +35,28 @@ export default function AdminDashboard() {
     pendingPayments: 0,
     totalLongCases: 0,
   });
+  const [heatmap, setHeatmap] = useState<HeatmapCell[]>([]);
 
   useEffect(() => {
     async function load() {
       const supabase = createClient();
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-
-      if (!user) {
-        router.push("/login");
-        return;
-      }
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) { router.push("/login"); return; }
 
       const { data: profile } = await supabase
-        .from("profiles")
-        .select("role")
-        .eq("id", user.id)
-        .single();
-
-      if (profile?.role !== "admin") {
-        setLoading(false);
-        return;
-      }
+        .from("profiles").select("role").eq("id", user.id).single();
+      if (profile?.role !== "admin") { setLoading(false); return; }
 
       setIsAdmin(true);
 
-      // Fetch stats
-      const [examsRes, usersRes, paymentsRes, longcasesRes] = await Promise.all([
-        supabase.from("exams").select("id", { count: "exact", head: true }),
-        supabase.from("profiles").select("id", { count: "exact", head: true }),
-        supabase
-          .from("payment_orders")
-          .select("id", { count: "exact", head: true })
-          .eq("status", "pending"),
-        supabase.from("long_cases").select("id", { count: "exact", head: true }),
-      ]);
+      const [examsRes, usersRes, paymentsRes, longcasesRes, heatmapRes] =
+        await Promise.all([
+          supabase.from("exams").select("id", { count: "exact", head: true }),
+          supabase.from("profiles").select("id", { count: "exact", head: true }),
+          supabase.from("payment_orders").select("id", { count: "exact", head: true }).eq("status", "pending"),
+          supabase.from("long_cases").select("id", { count: "exact", head: true }),
+          supabase.rpc("get_admin_activity_heatmap"),
+        ]);
 
       setStats({
         totalExams: examsRes.count || 0,
@@ -69,7 +64,7 @@ export default function AdminDashboard() {
         pendingPayments: paymentsRes.count || 0,
         totalLongCases: longcasesRes.count || 0,
       });
-
+      setHeatmap((heatmapRes.data as HeatmapCell[]) || []);
       setLoading(false);
     }
     load();
@@ -88,24 +83,20 @@ export default function AdminDashboard() {
       <div className="mx-auto max-w-lg px-4 py-16 text-center">
         <Shield className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
         <h1 className="text-2xl font-bold">ไม่มีสิทธิ์เข้าถึง</h1>
-        <p className="text-muted-foreground mt-2">
-          หน้านี้สำหรับผู้ดูแลระบบเท่านั้น
-        </p>
+        <p className="text-muted-foreground mt-2">หน้านี้สำหรับผู้ดูแลระบบเท่านั้น</p>
       </div>
     );
   }
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
-      <div className="flex items-center justify-between mb-8">
-        <div>
-          <h1 className="text-2xl font-bold">Admin Dashboard</h1>
-          <p className="text-muted-foreground mt-1">จัดการระบบหมอรู้</p>
-        </div>
+      <div className="mb-8">
+        <h1 className="text-2xl font-bold">Admin Dashboard</h1>
+        <p className="text-muted-foreground mt-1">จัดการระบบหมอรู้</p>
       </div>
 
       {/* Stats */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
         <Card>
           <CardContent className="pt-6">
             <div className="flex items-center gap-3">
@@ -114,7 +105,7 @@ export default function AdminDashboard() {
               </div>
               <div>
                 <p className="text-2xl font-bold">{stats.totalExams}</p>
-                <p className="text-sm text-muted-foreground">ข้อสอบทั้งหมด</p>
+                <p className="text-sm text-muted-foreground">ข้อสอบ</p>
               </div>
             </div>
           </CardContent>
@@ -160,6 +151,18 @@ export default function AdminDashboard() {
         </Card>
       </div>
 
+      {/* Activity Heatmap */}
+      {heatmap.length > 0 && (
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle className="text-base">Activity Heatmap (90 วันล่าสุด)</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ActivityHeatmap data={heatmap} />
+          </CardContent>
+        </Card>
+      )}
+
       {/* Quick actions */}
       <h2 className="text-lg font-bold mb-4">จัดการ</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -172,9 +175,20 @@ export default function AdminDashboard() {
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">
-                เพิ่ม แก้ไข ลบข้อสอบ และตอนย่อย
-              </p>
+              <p className="text-sm text-muted-foreground">เพิ่ม แก้ไข ลบข้อสอบ MEQ และตอนย่อย</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/mcq">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-brand/30">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <ClipboardList className="h-5 w-5 text-brand" />
+                <h3 className="font-bold">จัดการข้อสอบ MCQ/NL</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">เพิ่ม แก้ไข ลบ และจัดการสถานะข้อสอบ MCQ</p>
             </CardContent>
           </Card>
         </Link>
@@ -194,9 +208,7 @@ export default function AdminDashboard() {
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">
-                ตรวจสอบสลิปและอนุมัติสมาชิก
-              </p>
+              <p className="text-sm text-muted-foreground">ตรวจสอบสลิปและอนุมัติสมาชิก</p>
             </CardContent>
           </Card>
         </Link>
@@ -209,9 +221,20 @@ export default function AdminDashboard() {
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">
-                ดูข้อมูลสมาชิก แก้ไขสมาชิกภาพ และกำหนดสิทธิ์
-              </p>
+              <p className="text-sm text-muted-foreground">ดูข้อมูลสมาชิก แก้ไขสมาชิกภาพ และกำหนดสิทธิ์</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/students">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-purple-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <BarChart3 className="h-5 w-5 text-purple-600" />
+                <h3 className="font-bold">ติดตามนักเรียน</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">ดูสถิติ ผลการเรียน และจุดอ่อนของนักเรียนแต่ละคน</p>
             </CardContent>
           </Card>
         </Link>
@@ -224,9 +247,7 @@ export default function AdminDashboard() {
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">
-                เพิ่ม แก้ไข และจัดการ Long Case Exam
-              </p>
+              <p className="text-sm text-muted-foreground">เพิ่ม แก้ไข และจัดการ Long Case Exam</p>
             </CardContent>
           </Card>
         </Link>
