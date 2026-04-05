@@ -7,15 +7,35 @@ export async function createClient() {
 
   if (!url || url === "your-supabase-url" || !key || key === "your-supabase-anon-key") {
     // Return a mock server client when Supabase is not configured
+    // Chainable query builder that always resolves to empty data
+    const emptyResult = { data: null, error: null };
+    const emptyList = { data: [], error: null };
+    function mockQuery(isSingle = false): Record<string, unknown> {
+      const q: Record<string, unknown> = {
+        select: (cols?: string) => {
+          void cols;
+          return mockQuery(false);
+        },
+        eq: () => mockQuery(isSingle),
+        neq: () => mockQuery(isSingle),
+        order: () => mockQuery(isSingle),
+        limit: () => mockQuery(isSingle),
+        single: () => mockQuery(true),
+        insert: () => mockQuery(false),
+        upsert: () => mockQuery(false),
+        update: () => mockQuery(false),
+        delete: () => mockQuery(false),
+        then: (resolve: (v: unknown) => unknown) =>
+          Promise.resolve(resolve(isSingle ? emptyResult : emptyList)),
+      };
+      return q;
+    }
     return {
       auth: {
         getUser: async () => ({ data: { user: null }, error: null }),
         exchangeCodeForSession: async () => ({ data: { user: null, session: null }, error: { message: "Supabase not configured" } }),
       },
-      from: () => ({
-        select: () => ({ eq: () => ({ single: async () => ({ data: null, error: null }) }) }),
-        upsert: async () => ({ data: null, error: null }),
-      }),
+      from: () => mockQuery(),
     } as unknown as ReturnType<typeof createServerClient>;
   }
 
