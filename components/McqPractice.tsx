@@ -13,10 +13,10 @@ import {
   ChevronUp,
   Lock,
   Sparkles,
-  Send,
-  Bot,
 } from "lucide-react";
 import type { McqQuestion } from "@/lib/types-mcq";
+import DifficultyBadge from "@/components/DifficultyBadge";
+import type { DifficultyLevel } from "@/lib/types-standard";
 import Link from "next/link";
 import {
   saveMcqAttempt,
@@ -24,6 +24,7 @@ import {
   updateMcqSession,
 } from "@/lib/supabase/mutations-mcq";
 import { createClient } from "@/lib/supabase/client";
+import McqAiChat from "@/components/McqAiChat";
 
 interface McqPracticeProps {
   questions: McqQuestion[];
@@ -47,12 +48,6 @@ export default function McqPractice({
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [sessionAnswered, setSessionAnswered] = useState(0);
   const questionStartTime = useRef<number>(Date.now());
-
-  // AI Chat state
-  const [showChat, setShowChat] = useState(false);
-  const [chatInput, setChatInput] = useState("");
-  const [chatHistory, setChatHistory] = useState<{ role: "user" | "assistant"; content: string }[]>([]);
-  const [chatLoading, setChatLoading] = useState(false);
 
   // How many free questions remain (counting previous sessions + this session)
   const freeRemaining = Math.max(0, freeLimit - freeUsedCount - sessionAnswered);
@@ -85,12 +80,9 @@ export default function McqPractice({
     init();
   }, [questions.length]);
 
-  // Reset question timer + chat when question changes
+  // Reset question timer when question changes
   useEffect(() => {
     questionStartTime.current = Date.now();
-    setShowChat(false);
-    setChatHistory([]);
-    setChatInput("");
   }, [currentIndex]);
 
   const question = questions[currentIndex];
@@ -102,6 +94,10 @@ export default function McqPractice({
       setShowResult(true);
 
       const isCorrect = label === question.correct_answer;
+      // Auto-expand explanation when correct so students can learn more
+      if (isCorrect) {
+        setShowExplanation(true);
+      }
       setStats((prev) => ({
         correct: prev.correct + (isCorrect ? 1 : 0),
         total: prev.total + 1,
@@ -146,35 +142,6 @@ export default function McqPractice({
     setStats({ correct: 0, total: 0 });
     setSessionAnswered(0);
   }, []);
-
-  async function handleSendChat() {
-    if (!chatInput.trim() || chatLoading) return;
-    const msg = chatInput.trim();
-    setChatInput("");
-    setChatLoading(true);
-    const newHistory = [...chatHistory, { role: "user" as const, content: msg }];
-    setChatHistory(newHistory);
-
-    try {
-      const res = await fetch("/api/ai/mcq-chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          question,
-          userMessage: msg,
-          chatHistory: chatHistory,
-        }),
-      });
-      const data = await res.json();
-      if (data.reply) {
-        setChatHistory([...newHistory, { role: "assistant", content: data.reply }]);
-      }
-    } catch {
-      // silent fail
-    } finally {
-      setChatLoading(false);
-    }
-  }
 
   if (!question) {
     return (
@@ -250,13 +217,20 @@ export default function McqPractice({
         </div>
       )}
 
-      {/* Subject Badge */}
-      {question.mcq_subjects && (
-        <Badge variant="secondary" className="text-xs">
-          {question.mcq_subjects.icon} {question.mcq_subjects.name_th}
-          {question.exam_source && ` • ${question.exam_source}`}
-        </Badge>
-      )}
+      {/* Subject Badge + Difficulty */}
+      <div className="flex items-center gap-2 flex-wrap">
+        {question.mcq_subjects && (
+          <Badge variant="secondary" className="text-xs">
+            {question.mcq_subjects.icon} {question.mcq_subjects.name_th}
+            {question.exam_source && ` • ${question.exam_source}`}
+          </Badge>
+        )}
+        {(question as McqQuestion & { difficulty_level?: number }).difficulty_level && (
+          <DifficultyBadge
+            level={(question as McqQuestion & { difficulty_level?: number }).difficulty_level as DifficultyLevel}
+          />
+        )}
+      </div>
 
       {/* Question */}
       <Card>
@@ -493,84 +467,9 @@ export default function McqPractice({
         </div>
       )}
 
-      {/* AI Chat Section */}
+      {/* AI Chat - ask questions about this MCQ */}
       {showResult && (
-        <div className="mt-2">
-          {isPremium ? (
-            /* Premium: ถามได้จริง */
-            <div className="rounded-xl border border-brand/20 bg-brand/5 overflow-hidden">
-              <button
-                onClick={() => setShowChat(!showChat)}
-                className="w-full flex items-center gap-2 px-4 py-3 text-sm font-medium text-brand hover:bg-brand/10 transition-colors"
-              >
-                <Bot className="h-4 w-4" />
-                {showChat ? "ซ่อนช่องถาม AI" : "ถาม AI อาจารย์"}
-                <ChevronDown className={`h-4 w-4 ml-auto transition-transform ${showChat ? "rotate-180" : ""}`} />
-              </button>
-              {showChat && (
-                <div className="border-t border-brand/10 bg-white">
-                  {/* Chat history */}
-                  {chatHistory.length > 0 && (
-                    <div className="px-4 py-3 space-y-3 max-h-64 overflow-y-auto">
-                      {chatHistory.map((msg, i) => (
-                        <div key={i} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
-                          <div className={`max-w-[80%] rounded-2xl px-3 py-2 text-sm ${
-                            msg.role === "user"
-                              ? "bg-brand text-white rounded-br-sm"
-                              : "bg-muted text-foreground rounded-bl-sm"
-                          }`}>
-                            {msg.content}
-                          </div>
-                        </div>
-                      ))}
-                      {chatLoading && (
-                        <div className="flex justify-start">
-                          <div className="bg-muted rounded-2xl rounded-bl-sm px-3 py-2 text-sm text-muted-foreground">
-                            กำลังคิด...
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  )}
-                  {/* Input */}
-                  <div className="flex items-center gap-2 px-3 py-2 border-t border-brand/10">
-                    <input
-                      value={chatInput}
-                      onChange={(e) => setChatInput(e.target.value)}
-                      onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); handleSendChat(); } }}
-                      placeholder="พิมพ์คำถามที่สงสัย..."
-                      className="flex-1 text-sm bg-transparent outline-none placeholder:text-muted-foreground"
-                      disabled={chatLoading}
-                    />
-                    <button
-                      onClick={handleSendChat}
-                      disabled={!chatInput.trim() || chatLoading}
-                      className="w-8 h-8 rounded-full bg-brand text-white flex items-center justify-center disabled:opacity-40 hover:bg-brand/90 transition-colors shrink-0"
-                    >
-                      <Send className="h-3.5 w-3.5" />
-                    </button>
-                  </div>
-                </div>
-              )}
-            </div>
-          ) : (
-            /* Free / ไม่ login: CTA อัปเกรด */
-            <div className="rounded-xl border border-dashed border-brand/30 bg-gradient-to-r from-brand/5 to-purple-50 p-4 flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-brand/10 flex items-center justify-center shrink-0">
-                <Bot className="h-5 w-5 text-brand" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-semibold text-brand">ถาม AI อาจารย์ได้ทุกข้อ</p>
-                <p className="text-xs text-muted-foreground">สมาชิก Premium ถามได้ไม่จำกัด รับคำอธิบายเพิ่มเติมจาก AI</p>
-              </div>
-              <Link href="/pricing" className="shrink-0">
-                <button className="bg-brand hover:bg-brand/90 text-white text-xs px-3 py-1.5 rounded-lg font-medium whitespace-nowrap">
-                  ฿199/เดือน
-                </button>
-              </Link>
-            </div>
-          )}
-        </div>
+        <McqAiChat question={question} selectedAnswer={selectedAnswer} isPremium={isPremium} />
       )}
 
       {/* Actions */}
