@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { sendWeeklyNewsletter } from "@/lib/email/send";
+import { generateUnsubscribeUrl } from "@/app/api/newsletter/unsubscribe/route";
 
 // Weekly tips pool — rotates by week number
 const TIPS = [
@@ -46,11 +47,12 @@ export async function POST(request: Request) {
 
   const supabase = await createClient();
 
-  // Get all subscribed users (membership_type != free OR created recently)
+  // Get all users who haven't opted out
   const { data: users } = await supabase
     .from("profiles")
-    .select("name, email")
-    .neq("email", null);
+    .select("id, name, email")
+    .neq("email", null)
+    .eq("newsletter_opted_out", false);
 
   if (!users || users.length === 0) {
     return NextResponse.json({ message: "No subscribers found" });
@@ -89,11 +91,13 @@ export async function POST(request: Request) {
     description: p.description,
   }));
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com";
   const subscribers = users
-    .filter((u: { name: string | null; email: string | null }) => u.email)
-    .map((u: { name: string | null; email: string }) => ({
+    .filter((u: { id: string; name: string | null; email: string | null }) => u.email)
+    .map((u: { id: string; name: string | null; email: string }) => ({
       name: u.name ?? "คุณ",
       email: u.email,
+      unsubscribeUrl: generateUnsubscribeUrl(u.id, siteUrl),
     }));
 
   const result = await sendWeeklyNewsletter({

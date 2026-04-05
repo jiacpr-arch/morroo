@@ -67,7 +67,7 @@ export async function sendWeeklyNewsletter({
   tipContent,
   latestPosts = [],
 }: {
-  subscribers: Array<{ name: string; email: string }>;
+  subscribers: Array<{ name: string; email: string; unsubscribeUrl?: string }>;
   newExamCount: number;
   tipTitle: string;
   tipContent: string;
@@ -84,6 +84,7 @@ export async function sendWeeklyNewsletter({
           tipTitle,
           tipContent,
           latestPosts,
+          unsubscribeUrl: s.unsubscribeUrl,
         }),
       })
     )

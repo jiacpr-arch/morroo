@@ -45,6 +45,28 @@ const footerHtml = `
   </div>
 `;
 
+function newsletterFooterHtml(unsubscribeUrl?: string): string {
+  const unsubLine = unsubscribeUrl
+    ? `<p style="color: #9ca3af; font-size: 11px; margin: 6px 0 0;">
+        ไม่ต้องการรับอีเมลนี้?
+        <a href="${unsubscribeUrl}" style="color: #9ca3af;">ยกเลิกการรับข่าวสาร</a>
+      </p>`
+    : "";
+  return `
+  <div style="background: #f8f9fa; padding: 20px 32px; text-align: center; border-top: 1px solid #e9ecef;">
+    <p style="color: #6c757d; font-size: 12px; margin: 0 0 6px;">
+      © ${new Date().getFullYear()} หมอรู้ (MorRoo) — สงวนลิขสิทธิ์
+    </p>
+    <p style="color: #6c757d; font-size: 12px; margin: 0;">
+      <a href="https://www.morroo.com/privacy" style="color: ${BRAND_COLOR};">นโยบายความเป็นส่วนตัว</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.morroo.com" style="color: ${BRAND_COLOR};">morroo.com</a>
+    </p>
+    ${unsubLine}
+  </div>
+`;
+}
+
 const PACKAGE_LABELS: Record<string, string> = {
   bundle: "Bundle Pack (30 วัน) — ฿99",
   monthly: "Full รายเดือน — ฿199/เดือน",
@@ -215,12 +237,14 @@ export function weeklyNewsletterEmail({
   tipTitle,
   tipContent,
   latestPosts = [],
+  unsubscribeUrl,
 }: {
   name: string;
   newExamCount: number;
   tipTitle: string;
   tipContent: string;
   latestPosts?: NewsletterPost[];
+  unsubscribeUrl?: string;
 }): string {
   const postsHtml = latestPosts.length > 0
     ? `<div style="margin: 0 0 24px;">
@@ -282,7 +306,7 @@ export function weeklyNewsletterEmail({
       </a>
     </div>
   </div>
-  ${footerHtml}
+  ${newsletterFooterHtml(unsubscribeUrl)}
 </div>
 </body>
 </html>`;

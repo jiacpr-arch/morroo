@@ -2,7 +2,7 @@ import Link from "next/link";
 import { getBlogPosts } from "@/lib/blog";
 import type { Metadata } from "next";
 
-export const revalidate = 3600; // revalidate every hour
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "บทความเตรียมสอบแพทย์ — MEQ, MCQ, NL Step 3",
@@ -11,11 +11,12 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://www.morroo.com/blog" },
   openGraph: {
     title: "บทความเตรียมสอบแพทย์ — หมอรู้",
-    description:
-      "บทความ MEQ, MCQ, NL Step 3 และเทคนิคการสอบจากผู้เชี่ยวชาญ",
+    description: "บทความ MEQ, MCQ, NL Step 3 และเทคนิคการสอบจากผู้เชี่ยวชาญ",
     url: "https://www.morroo.com/blog",
   },
 };
+
+const CATEGORIES = ["ทั้งหมด", "ความรู้ทั่วไป", "เตรียมสอบ", "เทคนิคสอบ"];
 
 const categoryColors: Record<string, string> = {
   "ความรู้ทั่วไป": "bg-blue-100 text-blue-700",
@@ -23,22 +24,48 @@ const categoryColors: Record<string, string> = {
   "เทคนิคสอบ": "bg-orange-100 text-orange-700",
 };
 
-export default async function BlogPage() {
-  const posts = await getBlogPosts();
+export default async function BlogPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ cat?: string }>;
+}) {
+  const { cat } = await searchParams;
+  const allPosts = await getBlogPosts();
+  const posts = cat && cat !== "ทั้งหมด"
+    ? allPosts.filter((p) => p.category === cat)
+    : allPosts;
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
-      <div className="mb-10">
-        <h1 className="text-3xl font-bold text-foreground">
-          บทความเตรียมสอบแพทย์
-        </h1>
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold text-foreground">บทความเตรียมสอบแพทย์</h1>
         <p className="mt-2 text-muted-foreground">
           ความรู้ เทคนิค และแนวทางสำหรับสอบ NL Step 3
         </p>
       </div>
 
+      {/* Category filter */}
+      <div className="mb-8 flex flex-wrap gap-2">
+        {CATEGORIES.map((c) => {
+          const active = (c === "ทั้งหมด" && !cat) || cat === c;
+          return (
+            <Link
+              key={c}
+              href={c === "ทั้งหมด" ? "/blog" : `/blog?cat=${encodeURIComponent(c)}`}
+              className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
+                active
+                  ? "bg-brand text-white"
+                  : "bg-muted text-muted-foreground hover:bg-brand/10 hover:text-brand"
+              }`}
+            >
+              {c}
+            </Link>
+          );
+        })}
+      </div>
+
       {posts.length === 0 ? (
-        <p className="text-muted-foreground">กำลังโหลดบทความ...</p>
+        <p className="text-muted-foreground py-12 text-center">ยังไม่มีบทความในหมวดนี้</p>
       ) : (
         <div className="space-y-6">
           {posts.map((post) => (
@@ -59,19 +86,13 @@ export default async function BlogPage() {
                       day: "numeric",
                     })}
                   </span>
-                  <span className="text-xs text-muted-foreground">
-                    อ่าน {post.readingTime} นาที
-                  </span>
+                  <span className="text-xs text-muted-foreground">อ่าน {post.readingTime} นาที</span>
                 </div>
                 <h2 className="text-xl font-semibold text-foreground group-hover:text-brand transition-colors">
                   {post.title}
                 </h2>
-                <p className="mt-2 text-muted-foreground line-clamp-2">
-                  {post.description}
-                </p>
-                <div className="mt-4 text-sm font-medium text-brand">
-                  อ่านต่อ →
-                </div>
+                <p className="mt-2 text-muted-foreground line-clamp-2">{post.description}</p>
+                <div className="mt-4 text-sm font-medium text-brand">อ่านต่อ →</div>
               </article>
             </Link>
           ))}
@@ -84,16 +105,10 @@ export default async function BlogPage() {
           ลองทำข้อสอบ MEQ + MCQ ฟรีได้เลย ไม่ต้องใส่บัตรเครดิต
         </p>
         <div className="mt-4 flex justify-center gap-3">
-          <Link
-            href="/exams"
-            className="rounded-lg bg-brand px-5 py-2 text-sm font-medium text-white hover:bg-brand/90 transition-colors"
-          >
+          <Link href="/exams" className="rounded-lg bg-brand px-5 py-2 text-sm font-medium text-white hover:bg-brand/90 transition-colors">
             ทำข้อสอบ MEQ
           </Link>
-          <Link
-            href="/nl"
-            className="rounded-lg border border-brand px-5 py-2 text-sm font-medium text-brand hover:bg-brand/10 transition-colors"
-          >
+          <Link href="/nl" className="rounded-lg border border-brand px-5 py-2 text-sm font-medium text-brand hover:bg-brand/10 transition-colors">
             ทำข้อสอบ MCQ
           </Link>
         </div>
