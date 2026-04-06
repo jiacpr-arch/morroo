@@ -112,3 +112,45 @@ export async function getMcqSubjectCounts(): Promise<Record<string, number>> {
   }
   return counts;
 }
+
+/** Get count + metadata of AI-generated questions added today */
+export async function getTodayNewQuestions(): Promise<{
+  count: number;
+  subjectId: string | null;
+  subjectNameTh: string | null;
+  subjectIcon: string | null;
+}> {
+  const supabase = await createClient();
+  const todayStart = new Date();
+  todayStart.setHours(0, 0, 0, 0);
+
+  const { data, error } = await supabase
+    .from("mcq_questions")
+    .select("subject_id, mcq_subjects(name_th, icon)")
+    .eq("status", "active")
+    .eq("exam_source", "AI-generated-daily")
+    .gte("created_at", todayStart.toISOString())
+    .limit(1);
+
+  if (error || !data || data.length === 0) {
+    return { count: 0, subjectId: null, subjectNameTh: null, subjectIcon: null };
+  }
+
+  // Get total count
+  const { count } = await supabase
+    .from("mcq_questions")
+    .select("id", { count: "exact", head: true })
+    .eq("status", "active")
+    .eq("exam_source", "AI-generated-daily")
+    .gte("created_at", todayStart.toISOString());
+
+  const first = data[0] as McqQuestion;
+  const subject = first.mcq_subjects;
+
+  return {
+    count: count ?? 0,
+    subjectId: first.subject_id,
+    subjectNameTh: subject?.name_th ?? null,
+    subjectIcon: subject?.icon ?? null,
+  };
+}

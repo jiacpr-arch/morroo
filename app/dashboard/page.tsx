@@ -22,6 +22,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { AccuracyTrendChart } from "@/components/AccuracyTrendChart";
+import NewQuestionsCountdown from "@/components/NewQuestionsCountdown";
 
 interface SubjectStat {
   subject_id: string;
@@ -86,6 +87,12 @@ export default function DashboardPage() {
   const [dailyGoal, setDailyGoal] = useState(20);
   const [todayCount, setTodayCount] = useState(0);
   const [lineLinked, setLineLinked] = useState(false);
+  const [newQuestions, setNewQuestions] = useState<{
+    count: number;
+    subjectId: string | null;
+    subjectNameTh: string | null;
+    subjectIcon: string | null;
+  }>({ count: 0, subjectId: null, subjectNameTh: null, subjectIcon: null });
   const [dailyMcq, setDailyMcq] = useState<{
     id: string;
     scenario: string;
@@ -145,6 +152,36 @@ export default function DashboardPage() {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const dailyRow = (dailyRes.data as any[])?.[0];
       if (dailyRow) setDailyMcq(dailyRow);
+
+      // Fetch today's new AI-generated questions
+      const todayStart = new Date();
+      todayStart.setHours(0, 0, 0, 0);
+      const { data: newQData } = await supabase
+        .from("mcq_questions")
+        .select("subject_id, mcq_subjects(name_th, icon)")
+        .eq("status", "active")
+        .eq("exam_source", "AI-generated-daily")
+        .gte("created_at", todayStart.toISOString())
+        .limit(1);
+
+      if (newQData && newQData.length > 0) {
+        const { count: newCount } = await supabase
+          .from("mcq_questions")
+          .select("id", { count: "exact", head: true })
+          .eq("status", "active")
+          .eq("exam_source", "AI-generated-daily")
+          .gte("created_at", todayStart.toISOString());
+
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const first = newQData[0] as any;
+        setNewQuestions({
+          count: newCount ?? 0,
+          subjectId: first.subject_id,
+          subjectNameTh: first.mcq_subjects?.name_th ?? null,
+          subjectIcon: first.mcq_subjects?.icon ?? null,
+        });
+      }
+
       setLoading(false);
     }
     load();
@@ -178,6 +215,14 @@ export default function DashboardPage() {
   if (totalAttempts === 0) {
     return (
       <div className="mx-auto max-w-2xl px-4 py-12">
+        <div className="mb-8">
+          <NewQuestionsCountdown
+            newTodayCount={newQuestions.count}
+            todaySubject={newQuestions.subjectNameTh ?? undefined}
+            todaySubjectIcon={newQuestions.subjectIcon ?? undefined}
+            todaySubjectId={newQuestions.subjectId ?? undefined}
+          />
+        </div>
         {dailyMcq && (
           <Card className="mb-8 border-brand/40 bg-gradient-to-r from-brand/5 to-amber-50/60">
             <CardContent className="py-5 px-5">
@@ -229,6 +274,16 @@ export default function DashboardPage() {
         <p className="text-muted-foreground mt-1">
           ติดตามความก้าวหน้าและจุดที่ต้องปรับปรุง
         </p>
+      </div>
+
+      {/* New Questions Countdown */}
+      <div className="mb-4">
+        <NewQuestionsCountdown
+          newTodayCount={newQuestions.count}
+          todaySubject={newQuestions.subjectNameTh ?? undefined}
+          todaySubjectIcon={newQuestions.subjectIcon ?? undefined}
+          todaySubjectId={newQuestions.subjectId ?? undefined}
+        />
       </div>
 
       {/* Daily Question Banner */}
