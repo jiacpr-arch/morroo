@@ -23,10 +23,11 @@ const SUBJECTS_ROTATION = [
   { name: "epidemio", name_th: "ระบาดวิทยา" },
 ];
 
-// Batch config: Haiku for easy+medium, Sonnet for hard
+// 30 questions/day — 20% easy, 50% medium, 30% hard (เหมือนสอบจริง)
+// Haiku: easy+medium (21 ข้อ), Sonnet: hard (9 ข้อ)
 const BATCH_CONFIG = {
-  easyMedium: { count: 7, model: "claude-haiku-4-5-20251001", maxTokens: 12000 },
-  hard: { count: 3, model: "claude-sonnet-4-6-20250514", maxTokens: 8000 },
+  easyMedium: { count: 21, model: "claude-haiku-4-5-20251001", maxTokens: 32000 },
+  hard: { count: 9, model: "claude-sonnet-4-6-20250514", maxTokens: 24000 },
 };
 
 interface GeneratedQuestion {
@@ -181,8 +182,8 @@ export async function POST(request: Request) {
   const existing = existingCount ?? 0;
 
   // Generate both batches in parallel:
-  // - Haiku: 7 easy+medium questions (3 easy, 4 medium)
-  // - Sonnet: 3 hard questions (deep clinical reasoning)
+  // - Haiku: 21 easy+medium questions (6 easy, 15 medium)
+  // - Sonnet: 9 hard questions (deep clinical reasoning)
   const [easyMediumResult, hardResult] = await Promise.allSettled([
     callClaude(
       anthropicApiKey,
@@ -191,7 +192,7 @@ export async function POST(request: Request) {
       buildPrompt(
         todaySubject.name_th,
         BATCH_CONFIG.easyMedium.count,
-        "สร้างข้อง่าย 3 ข้อ และข้อปานกลาง 4 ข้อ — เน้น recall, ความรู้พื้นฐาน, first-line treatment ที่ต้องรู้",
+        "สร้างข้อง่าย (easy) 6 ข้อ และข้อปานกลาง (medium) 15 ข้อ — ข้อง่ายเน้น recall ความรู้พื้นฐาน definition, ข้อปานกลางเน้น first-line treatment, investigation of choice, การวินิจฉัยจาก presentation ทั่วไป",
         existing,
       ),
     ),
@@ -202,7 +203,7 @@ export async function POST(request: Request) {
       buildPrompt(
         todaySubject.name_th,
         BATCH_CONFIG.hard.count,
-        "สร้างเฉพาะข้อยาก 3 ข้อ — เน้น clinical reasoning ซับซ้อน, differential diagnosis ที่ต้องแยกโรคที่ใกล้เคียงกัน, management ของ case ซับซ้อน, interpretation ของ lab/imaging ที่ต้องวิเคราะห์หลายขั้นตอน เหมือนข้อสอบจริงที่คนส่วนใหญ่ทำผิด",
+        "สร้างเฉพาะข้อยาก (hard) 9 ข้อ — เน้น clinical reasoning ซับซ้อน, differential diagnosis ที่ต้องแยกโรคที่ใกล้เคียงกัน, management ของ case ซับซ้อนที่มี comorbidity, interpretation ของ lab/imaging ที่ต้องวิเคราะห์หลายขั้นตอน, ethical dilemma ทางการแพทย์ เหมือนข้อสอบจริงที่คนส่วนใหญ่ทำผิด",
         existing,
       ),
     ),

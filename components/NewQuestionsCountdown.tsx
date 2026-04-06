@@ -10,9 +10,17 @@ import { Button } from "@/components/ui/button";
 // Daily generation happens at 02:00 UTC (09:00 ICT)
 const GENERATION_HOUR_UTC = 2;
 
+interface DifficultyBreakdown {
+  easy: number;
+  medium: number;
+  hard: number;
+}
+
 interface NewQuestionsCountdownProps {
   /** Number of new questions added today (0 = not yet generated) */
   newTodayCount: number;
+  /** Breakdown by difficulty */
+  difficulty?: DifficultyBreakdown;
   /** Subject name of today's batch */
   todaySubject?: string;
   /** Subject icon */
@@ -42,8 +50,56 @@ function formatTimeLeft(diff: number) {
   };
 }
 
+function CountdownTimer({ timeLeft, color }: { timeLeft: { hours: number; minutes: number; seconds: number }; color: "emerald" | "blue" }) {
+  const colors = {
+    emerald: { bg: "bg-emerald-700", text: "text-emerald-500", sep: "text-emerald-400" },
+    blue: { bg: "bg-blue-700", text: "text-blue-500", sep: "text-blue-400" },
+  }[color];
+
+  return (
+    <div className="flex items-center gap-1">
+      {[
+        { value: timeLeft.hours, label: "ชม." },
+        { value: timeLeft.minutes, label: "น." },
+        { value: timeLeft.seconds, label: "วิ." },
+      ].map((item, i) => (
+        <span key={i} className="flex items-center gap-0.5">
+          <span className={`${colors.bg} text-white rounded px-1.5 py-0.5 font-mono text-xs font-bold tabular-nums min-w-[1.5rem] text-center`}>
+            {String(item.value).padStart(2, "0")}
+          </span>
+          <span className={`text-[10px] ${colors.text}`}>{item.label}</span>
+          {i < 2 && <span className={`${colors.sep} font-bold mx-0.5 text-xs`}>:</span>}
+        </span>
+      ))}
+    </div>
+  );
+}
+
+function DifficultyBadges({ difficulty }: { difficulty: DifficultyBreakdown }) {
+  return (
+    <div className="flex items-center gap-1.5 flex-wrap">
+      {difficulty.easy > 0 && (
+        <Badge className="bg-green-100 text-green-700 text-[10px] px-1.5 py-0">
+          ง่าย {difficulty.easy}
+        </Badge>
+      )}
+      {difficulty.medium > 0 && (
+        <Badge className="bg-yellow-100 text-yellow-700 text-[10px] px-1.5 py-0">
+          ปานกลาง {difficulty.medium}
+        </Badge>
+      )}
+      {difficulty.hard > 0 && (
+        <Badge className="bg-red-100 text-red-700 text-[10px] px-1.5 py-0">
+          ยาก {difficulty.hard}
+        </Badge>
+      )}
+    </div>
+  );
+}
+
 export default function NewQuestionsCountdown({
   newTodayCount,
+  difficulty,
   todaySubject,
   todaySubjectIcon,
   todaySubjectId,
@@ -80,11 +136,12 @@ export default function NewQuestionsCountdown({
                   +{newTodayCount} ข้อ
                 </Badge>
               </div>
-              <p className="text-sm text-emerald-800">
+              <p className="text-sm text-emerald-800 mb-2">
                 {todaySubjectIcon && <span className="mr-1">{todaySubjectIcon}</span>}
                 เพิ่มข้อสอบ{todaySubject ? ` ${todaySubject}` : ""} {newTodayCount} ข้อใหม่
                 พร้อมให้ฝึกแล้ว!
               </p>
+              {difficulty && <DifficultyBadges difficulty={difficulty} />}
             </div>
             {todaySubjectId ? (
               <Link href={`/nl/practice?subject=${todaySubjectId}`} className="shrink-0">
@@ -105,21 +162,7 @@ export default function NewQuestionsCountdown({
           <div className="mt-3 pt-3 border-t border-emerald-200/60 flex items-center gap-2">
             <Clock className="h-3.5 w-3.5 text-emerald-500" />
             <span className="text-xs text-emerald-600">ชุดถัดไปอีก</span>
-            <div className="flex items-center gap-1">
-              {[
-                { value: timeLeft.hours, label: "ชม." },
-                { value: timeLeft.minutes, label: "น." },
-                { value: timeLeft.seconds, label: "วิ." },
-              ].map((item, i) => (
-                <span key={i} className="flex items-center gap-0.5">
-                  <span className="bg-emerald-700 text-white rounded px-1.5 py-0.5 font-mono text-xs font-bold tabular-nums min-w-[1.5rem] text-center">
-                    {String(item.value).padStart(2, "0")}
-                  </span>
-                  <span className="text-[10px] text-emerald-500">{item.label}</span>
-                  {i < 2 && <span className="text-emerald-400 font-bold mx-0.5 text-xs">:</span>}
-                </span>
-              ))}
-            </div>
+            <CountdownTimer timeLeft={timeLeft} color="emerald" />
           </div>
         </CardContent>
       </Card>
@@ -138,9 +181,10 @@ export default function NewQuestionsCountdown({
                 ข้อสอบใหม่กำลังจะมา
               </span>
             </div>
-            <p className="text-sm text-blue-700">
-              ข้อสอบชุดใหม่จะเข้าระบบอัตโนมัติทุกวัน 09:00 น.
+            <p className="text-sm text-blue-700 mb-2">
+              ข้อสอบชุดใหม่ 30 ข้อจะเข้าระบบอัตโนมัติทุกวัน 09:00 น.
             </p>
+            <DifficultyBadges difficulty={{ easy: 6, medium: 15, hard: 9 }} />
           </div>
           <div className="flex items-center gap-1 shrink-0">
             {[

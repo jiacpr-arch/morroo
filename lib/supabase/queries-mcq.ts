@@ -113,9 +113,10 @@ export async function getMcqSubjectCounts(): Promise<Record<string, number>> {
   return counts;
 }
 
-/** Get count + metadata of AI-generated questions added today */
+/** Get count + metadata + difficulty breakdown of AI-generated questions added today */
 export async function getTodayNewQuestions(): Promise<{
   count: number;
+  difficulty: { easy: number; medium: number; hard: number };
   subjectId: string | null;
   subjectNameTh: string | null;
   subjectIcon: string | null;
@@ -126,29 +127,36 @@ export async function getTodayNewQuestions(): Promise<{
 
   const { data, error } = await supabase
     .from("mcq_questions")
-    .select("subject_id, mcq_subjects(name_th, icon)")
-    .eq("status", "active")
-    .eq("exam_source", "AI-generated-daily")
-    .gte("created_at", todayStart.toISOString())
-    .limit(1);
-
-  if (error || !data || data.length === 0) {
-    return { count: 0, subjectId: null, subjectNameTh: null, subjectIcon: null };
-  }
-
-  // Get total count
-  const { count } = await supabase
-    .from("mcq_questions")
-    .select("id", { count: "exact", head: true })
+    .select("subject_id, difficulty, mcq_subjects(name_th, icon)")
     .eq("status", "active")
     .eq("exam_source", "AI-generated-daily")
     .gte("created_at", todayStart.toISOString());
+
+  if (error || !data || data.length === 0) {
+    return {
+      count: 0,
+      difficulty: { easy: 0, medium: 0, hard: 0 },
+      subjectId: null,
+      subjectNameTh: null,
+      subjectIcon: null,
+    };
+  }
+
+  // Count by difficulty
+  const difficulty = { easy: 0, medium: 0, hard: 0 };
+  for (const row of data) {
+    const d = (row as { difficulty: string }).difficulty;
+    if (d === "easy") difficulty.easy++;
+    else if (d === "hard") difficulty.hard++;
+    else difficulty.medium++;
+  }
 
   const first = data[0] as McqQuestion;
   const subject = first.mcq_subjects;
 
   return {
-    count: count ?? 0,
+    count: data.length,
+    difficulty,
     subjectId: first.subject_id,
     subjectNameTh: subject?.name_th ?? null,
     subjectIcon: subject?.icon ?? null,

@@ -49,6 +49,7 @@ export default async function NLPage() {
       <div className="mb-8">
         <NewQuestionsCountdown
           newTodayCount={todayNew.count}
+          difficulty={todayNew.difficulty}
           todaySubject={todayNew.subjectNameTh ?? undefined}
           todaySubjectIcon={todayNew.subjectIcon ?? undefined}
           todaySubjectId={todayNew.subjectId ?? undefined}
