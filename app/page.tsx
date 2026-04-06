@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import ExamCard from "@/components/ExamCard";
 import PricingCard from "@/components/PricingCard";
 import DailyCountdown from "@/components/DailyCountdown";
+import AllExamsCountdown from "@/components/AllExamsCountdown";
 import { CATEGORIES, PRICING_PLANS } from "@/lib/types";
 import { getExams, getExamPartCounts, sortExamsAvailableFirst } from "@/lib/supabase/queries";
 import { getBlogPosts } from "@/lib/blog";
@@ -72,7 +73,7 @@ export default async function HomePage() {
                   size="lg"
                   className="bg-white/10 border border-white/30 text-white hover:bg-white/20 px-8 text-base"
                 >
-                  NL Exam <ArrowRight className="ml-2 h-4 w-4" />
+                  MCQ <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
             </div>
@@ -88,6 +89,13 @@ export default async function HomePage() {
               </span>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* All Exams Countdown */}
+      <section className="py-8 bg-white border-b">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <AllExamsCountdown />
         </div>
       </section>
 

@@ -57,7 +57,7 @@ export default function TermsPage() {
                   {
                     name: "แพ็กเกจ Bundle",
                     price: "฿299 / เดือน",
-                    features: ["ข้อสอบ MEQ + NL Exam", "Long Case ฝึกซ้อม", "เข้าถึงทุกเนื้อหา"],
+                    features: ["ข้อสอบ MEQ + MCQ", "Long Case ฝึกซ้อม", "เข้าถึงทุกเนื้อหา"],
                   },
                 ].map((pkg) => (
                   <div key={pkg.name} className="border border-gray-200 rounded-xl p-4">
