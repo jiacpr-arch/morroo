@@ -1,4 +1,4 @@
-import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 
 export interface BlogPost {
   slug: string;
@@ -32,7 +32,7 @@ function mapRow(row: {
 }
 
 export async function getBlogPosts(): Promise<BlogPost[]> {
-  const supabase = await createClient();
+  const supabase = createAdminClient();
   const { data, error } = await supabase
     .from("blog_posts")
     .select("slug, title, description, published_at, category, reading_time, content")
@@ -43,7 +43,7 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
 }
 
 export async function getBlogPost(slug: string): Promise<BlogPost | null> {
-  const supabase = await createClient();
+  const supabase = createAdminClient();
   const { data, error } = await supabase
     .from("blog_posts")
     .select("slug, title, description, published_at, category, reading_time, content")
@@ -55,7 +55,7 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
 }
 
 export async function getAllSlugs(): Promise<string[]> {
-  const supabase = await createClient();
+  const supabase = createAdminClient();
   const { data } = await supabase.from("blog_posts").select("slug");
   return (data ?? []).map((r: { slug: string }) => r.slug);
 }
