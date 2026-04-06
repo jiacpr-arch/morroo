@@ -12,17 +12,13 @@ export async function GET(request: Request) {
 
     if (!error && data.user) {
       // Upsert profile on OAuth login
+      const name =
+        data.user.user_metadata?.full_name ||
+        data.user.user_metadata?.name ||
+        data.user.email;
+
       await supabase.from("profiles").upsert(
-        {
-          id: data.user.id,
-          email: data.user.email,
-          name:
-            data.user.user_metadata?.full_name ||
-            data.user.user_metadata?.name ||
-            data.user.email,
-          role: "user",
-          membership_type: "free",
-        },
+        { id: data.user.id, email: data.user.email, name, role: "user", membership_type: "free" },
         { onConflict: "id", ignoreDuplicates: true }
       );
 

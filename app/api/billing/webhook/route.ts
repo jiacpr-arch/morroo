@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { sendLineMessage } from "@/lib/line";
+import { sendPurchaseConfirmationEmail, sendReferralRewardEmail } from "@/lib/email";
 import Stripe from "stripe";
 
 export const runtime = "nodejs";
@@ -170,10 +171,10 @@ export async function POST(request: NextRequest) {
           .update({ status: "rewarded", rewarded_at: new Date().toISOString() })
           .eq("id", pendingReferral.id);
 
-        // Notify referrer via LINE
+        // Notify referrer via LINE + Email
         const { data: referrerProfile } = await supabase
           .from("profiles")
-          .select("line_user_id")
+          .select("line_user_id, email, name")
           .eq("id", pendingReferral.referrer_id)
           .single();
 
@@ -183,26 +184,44 @@ export async function POST(request: NextRequest) {
             text: `🎉 เพื่อนของคุณสมัครสมาชิก MorRoo แล้ว!\n\nคุณได้รับสิทธิ์ใช้งานเพิ่ม ${pendingReferral.reward_days ?? 30} วันทันที ✨`,
           }]);
         }
+        if (referrerProfile?.email) {
+          await sendReferralRewardEmail(
+            referrerProfile.email,
+            referrerProfile.name ?? "",
+            pendingReferral.reward_days ?? 30
+          );
+        }
       }
     }
 
-    // Notify buyer via LINE
+    // Notify buyer via LINE + Email
     const { data: buyerProfile } = await supabase
       .from("profiles")
-      .select("line_user_id")
+      .select("line_user_id, email, name")
       .eq("id", userId)
       .single();
 
+    const planLabel: Record<string, string> = {
+      monthly: "MorRoo รายเดือน",
+      yearly: "MorRoo รายปี",
+      bundle: "MorRoo ชุดข้อสอบ",
+    };
+
     if (buyerProfile?.line_user_id) {
-      const planLabel: Record<string, string> = {
-        monthly: "รายเดือน",
-        yearly: "รายปี",
-        bundle: "ชุดข้อสอบ",
-      };
       await sendLineMessage(buyerProfile.line_user_id, [{
         type: "text",
-        text: `✅ ชำระเงินสำเร็จ!\n\nแพ็กเกจ: MorRoo ${planLabel[planType] ?? planType}\nหมดอายุ: ${expiresAt.toLocaleDateString("th-TH", { year: "numeric", month: "long", day: "numeric" })}\n\nขอให้สอบผ่าน! 🏥`,
+        text: `✅ ชำระเงินสำเร็จ!\n\nแพ็กเกจ: ${planLabel[planType] ?? planType}\nหมดอายุ: ${expiresAt.toLocaleDateString("th-TH", { year: "numeric", month: "long", day: "numeric" })}\n\nขอให้สอบผ่าน! 🏥`,
       }]);
+    }
+    if (buyerProfile?.email) {
+      await sendPurchaseConfirmationEmail(
+        buyerProfile.email,
+        buyerProfile.name ?? "",
+        planLabel[planType] ?? planType,
+        expiresAt,
+        invoiceNumber,
+        totalAmount
+      );
     }
   }
 

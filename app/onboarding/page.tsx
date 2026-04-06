@@ -51,6 +51,18 @@ export default function OnboardingPage() {
       weak_subjects: weakSubjects.length > 0 ? weakSubjects : null,
     }).eq("id", user.id);
 
+    // Send welcome email
+    const { data: { session } } = await supabase.auth.getSession();
+    if (user.email) {
+      await fetch("/api/email/welcome", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${session?.access_token}`,
+        },
+      });
+    }
+
     router.push("/dashboard");
   };
 
