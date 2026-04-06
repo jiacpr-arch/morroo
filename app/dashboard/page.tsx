@@ -85,6 +85,7 @@ export default function DashboardPage() {
   const [comparison, setComparison] = useState<SubjectComparison[]>([]);
   const [dailyGoal, setDailyGoal] = useState(20);
   const [todayCount, setTodayCount] = useState(0);
+  const [lineLinked, setLineLinked] = useState(false);
   const [dailyMcq, setDailyMcq] = useState<{
     id: string;
     scenario: string;
@@ -124,7 +125,7 @@ export default function DashboardPage() {
           supabase.rpc("get_user_accuracy_trend", { p_user_id: user.id }),
           supabase.rpc("get_user_streak", { p_user_id: user.id }),
           supabase.rpc("get_user_vs_global_avg", { p_user_id: user.id }),
-          supabase.from("profiles").select("daily_goal").eq("id", user.id).single(),
+          supabase.from("profiles").select("daily_goal, line_user_id").eq("id", user.id).single(),
           supabase.from("mcq_attempts")
             .select("id", { count: "exact", head: true })
             .eq("user_id", user.id)
@@ -139,6 +140,7 @@ export default function DashboardPage() {
       setStreak((streakRes.data as number) ?? 0);
       setComparison((compRes.data as SubjectComparison[]) || []);
       setDailyGoal(profileRes.data?.daily_goal ?? 20);
+      setLineLinked(!!profileRes.data?.line_user_id);
       setTodayCount(todayRes.count ?? 0);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const dailyRow = (dailyRes.data as any[])?.[0];
@@ -310,6 +312,23 @@ export default function DashboardPage() {
           </Card>
         );
       })()}
+
+      {/* LINE Add Friend Banner */}
+      {!lineLinked && (
+        <a
+          href="https://line.me/R/ti/p/@508srmcr"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3 mb-6 rounded-xl bg-[#06C755]/10 border border-[#06C755]/30 px-4 py-3 hover:bg-[#06C755]/15 transition-colors"
+        >
+          <span className="text-2xl shrink-0">💬</span>
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-semibold text-green-800">รับข้อสอบทุกเช้าผ่าน LINE</p>
+            <p className="text-xs text-green-700">กด Add Friend LINE OA @508srmcr แล้วรับโจทย์ประจำวันทุก 7 โมงเช้า</p>
+          </div>
+          <span className="text-xs font-semibold text-[#06C755] shrink-0 whitespace-nowrap">เพิ่มเพื่อน →</span>
+        </a>
+      )}
 
       {/* Summary Cards */}
       <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-8">

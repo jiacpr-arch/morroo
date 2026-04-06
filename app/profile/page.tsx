@@ -270,22 +270,34 @@ export default function ProfilePage() {
               <MessageSquare className="h-5 w-5 text-green-600" /> เชื่อมต่อ LINE
             </h3>
             <p className="text-sm text-muted-foreground mt-1">
-              รับการแจ้งเตือนจาก MorRoo ผ่าน LINE ได้เลย
+              รับข้อสอบประจำวัน + การแจ้งเตือนจาก MorRoo ผ่าน LINE
             </p>
           </CardHeader>
-          <CardContent>
+          <CardContent className="space-y-3">
+            {/* Add Friend — always visible */}
+            <a
+              href="https://line.me/R/ti/p/@508srmcr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full rounded-lg bg-[#06C755] hover:bg-[#05b34c] text-white font-semibold py-2.5 px-4 text-sm transition-colors"
+            >
+              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.02 2 11c0 3.39 1.9 6.35 4.75 8.07L6 22l3.29-1.72C10.15 20.73 11.06 21 12 21c5.52 0 10-4.02 10-9S17.52 2 12 2z"/>
+              </svg>
+              เพิ่มเพื่อน LINE OA (@508srmcr)
+            </a>
+
+            {/* Linking status */}
             {lineLinked ? (
               <div className="flex items-center gap-2 text-green-700 bg-green-50 rounded-lg px-4 py-3">
                 <Link2 className="h-4 w-4 shrink-0" />
-                <span className="text-sm font-medium">เชื่อมต่อ LINE แล้ว ✓</span>
+                <span className="text-sm font-medium">เชื่อมต่อ LINE แล้ว ✓ — รับข้อสอบทุกเช้า 7 โมง</span>
               </div>
             ) : lineCode ? (
-              <div className="space-y-3">
-                <p className="text-sm text-muted-foreground">
-                  เพิ่ม LINE OA ของ MorRoo เป็นเพื่อน แล้วส่งรหัสนี้:
-                </p>
+              <div className="space-y-2 rounded-lg border border-green-200 bg-green-50/50 p-3">
+                <p className="text-sm font-medium text-green-800">ขั้นตอนที่ 2 — ส่งรหัสนี้ใน LINE OA:</p>
                 <div className="flex items-center gap-2">
-                  <code className="flex-1 bg-muted px-3 py-2 rounded-lg text-sm font-mono font-bold tracking-widest text-center">
+                  <code className="flex-1 bg-white px-3 py-2 rounded-lg text-sm font-mono font-bold tracking-widest text-center border">
                     {lineCode}
                   </code>
                   <Button size="sm" variant="outline" onClick={handleCopyLineCode} className="shrink-0 gap-1">
@@ -298,14 +310,15 @@ export default function ProfilePage() {
               <Button
                 onClick={handleGenerateLine}
                 disabled={generatingLine}
-                className="w-full bg-green-600 hover:bg-green-700 text-white gap-2"
+                variant="outline"
+                className="w-full gap-2 border-green-300 text-green-700 hover:bg-green-50"
               >
                 {generatingLine ? (
                   <Loader2 className="h-4 w-4 animate-spin" />
                 ) : (
-                  <MessageSquare className="h-4 w-4" />
+                  <Link2 className="h-4 w-4" />
                 )}
-                สร้างรหัสเชื่อมต่อ LINE
+                สร้างรหัสเชื่อมต่อบัญชี (ขั้นตอนที่ 2)
               </Button>
             )}
           </CardContent>
