@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -7,9 +8,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           {/* Brand */}
           <div className="space-y-3">
-            <div className="flex items-center gap-2 text-lg font-bold">
-              <span className="text-2xl">🩺</span>
-              <span>หมอรู้</span>
+            <div className="flex items-center">
+              <Image
+                src="/logo.png"
+                alt="Morroo.com ติวสอบแพทย์"
+                width={120}
+                height={44}
+                className="h-9 w-auto object-contain brightness-0 invert"
+              />
             </div>
             <p className="text-sm text-white/70">
               แพลตฟอร์มข้อสอบ MEQ ออนไลน์
