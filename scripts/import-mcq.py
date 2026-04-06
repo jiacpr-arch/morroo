@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Import MCQ questions from .docx files
-1. Parse all .docx files from NL exam folders
+1. Parse all .docx files from MCQ folders
 2. Use AI (Claude) to clean up, fix, and enhance questions
 3. Export to JSON for review before inserting into Supabase
 """
