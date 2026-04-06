@@ -19,6 +19,7 @@ import {
   ArrowRight,
   Flame,
   Users,
+  Sparkles,
 } from "lucide-react";
 import { AccuracyTrendChart } from "@/components/AccuracyTrendChart";
 
@@ -84,6 +85,15 @@ export default function DashboardPage() {
   const [comparison, setComparison] = useState<SubjectComparison[]>([]);
   const [dailyGoal, setDailyGoal] = useState(20);
   const [todayCount, setTodayCount] = useState(0);
+  const [dailyMcq, setDailyMcq] = useState<{
+    id: string;
+    scenario: string;
+    difficulty: string;
+    subject_id: string;
+    subject_name_th: string;
+    subject_icon: string;
+    exam_type: string;
+  } | null>(null);
 
   useEffect(() => {
     async function load() {
@@ -100,7 +110,7 @@ export default function DashboardPage() {
       const todayStart = new Date();
       todayStart.setHours(0, 0, 0, 0);
 
-      const [statsRes, sessionsRes, weakRes, trendRes, streakRes, compRes, profileRes, todayRes] =
+      const [statsRes, sessionsRes, weakRes, trendRes, streakRes, compRes, profileRes, todayRes, dailyRes] =
         await Promise.all([
           supabase.rpc("get_user_subject_stats", { p_user_id: user.id }),
           supabase.rpc("get_user_recent_sessions", {
@@ -119,6 +129,7 @@ export default function DashboardPage() {
             .select("id", { count: "exact", head: true })
             .eq("user_id", user.id)
             .gte("created_at", todayStart.toISOString()),
+          supabase.rpc("get_daily_mcq"),
         ]);
 
       setSubjectStats((statsRes.data as SubjectStat[]) || []);
@@ -129,6 +140,9 @@ export default function DashboardPage() {
       setComparison((compRes.data as SubjectComparison[]) || []);
       setDailyGoal(profileRes.data?.daily_goal ?? 20);
       setTodayCount(todayRes.count ?? 0);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const dailyRow = (dailyRes.data as any[])?.[0];
+      if (dailyRow) setDailyMcq(dailyRow);
       setLoading(false);
     }
     load();
@@ -161,17 +175,47 @@ export default function DashboardPage() {
 
   if (totalAttempts === 0) {
     return (
-      <div className="mx-auto max-w-4xl px-4 py-16 text-center">
-        <BarChart3 className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-        <h1 className="text-2xl font-bold mb-2">ยังไม่มีข้อมูลการเรียน</h1>
-        <p className="text-muted-foreground mb-6">
-          เริ่มทำข้อสอบเพื่อดูสถิติและจุดอ่อนของคุณ
-        </p>
-        <Link href="/nl">
-          <Button className="bg-brand hover:bg-brand-light text-white">
-            เริ่มทำข้อสอบ
-          </Button>
-        </Link>
+      <div className="mx-auto max-w-2xl px-4 py-12">
+        {dailyMcq && (
+          <Card className="mb-8 border-brand/40 bg-gradient-to-r from-brand/5 to-amber-50/60">
+            <CardContent className="py-5 px-5">
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Sparkles className="h-4 w-4 text-brand shrink-0" />
+                    <span className="text-xs font-semibold text-brand uppercase tracking-wide">
+                      โจทย์ประจำวันนี้
+                    </span>
+                    <span className="text-sm">{dailyMcq.subject_icon}</span>
+                    <span className="text-xs text-muted-foreground">{dailyMcq.subject_name_th}</span>
+                  </div>
+                  <p className="text-sm text-gray-700 line-clamp-2 leading-relaxed">
+                    {dailyMcq.scenario.length > 150
+                      ? dailyMcq.scenario.slice(0, 150) + "…"
+                      : dailyMcq.scenario}
+                  </p>
+                </div>
+                <Link href={`/nl/practice?subject=${dailyMcq.subject_id}`} className="shrink-0">
+                  <Button size="sm" className="bg-brand hover:bg-brand-light text-white gap-1.5 whitespace-nowrap">
+                    ทำเลย <ArrowRight className="h-3.5 w-3.5" />
+                  </Button>
+                </Link>
+              </div>
+            </CardContent>
+          </Card>
+        )}
+        <div className="text-center">
+          <BarChart3 className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
+          <h1 className="text-2xl font-bold mb-2">ยังไม่มีข้อมูลการเรียน</h1>
+          <p className="text-muted-foreground mb-6">
+            เริ่มทำข้อสอบเพื่อดูสถิติและจุดอ่อนของคุณ
+          </p>
+          <Link href="/nl">
+            <Button className="bg-brand hover:bg-brand-light text-white">
+              เริ่มทำข้อสอบ
+            </Button>
+          </Link>
+        </div>
       </div>
     );
   }
@@ -184,6 +228,51 @@ export default function DashboardPage() {
           ติดตามความก้าวหน้าและจุดที่ต้องปรับปรุง
         </p>
       </div>
+
+      {/* Daily Question Banner */}
+      {dailyMcq && (
+        <Card className="mb-4 border-brand/40 bg-gradient-to-r from-brand/5 to-amber-50/60 overflow-hidden">
+          <CardContent className="py-4 px-5">
+            <div className="flex items-start justify-between gap-4">
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-2">
+                  <Sparkles className="h-4 w-4 text-brand shrink-0" />
+                  <span className="text-xs font-semibold text-brand uppercase tracking-wide">
+                    โจทย์ประจำวันนี้
+                  </span>
+                  <span className="text-sm">{dailyMcq.subject_icon}</span>
+                  <span className="text-xs text-muted-foreground">{dailyMcq.subject_name_th}</span>
+                  <span className={`text-xs font-medium px-1.5 py-0.5 rounded-full ${
+                    dailyMcq.difficulty === "easy"
+                      ? "bg-green-100 text-green-700"
+                      : dailyMcq.difficulty === "hard"
+                      ? "bg-red-100 text-red-700"
+                      : "bg-yellow-100 text-yellow-700"
+                  }`}>
+                    {dailyMcq.difficulty === "easy" ? "ง่าย" : dailyMcq.difficulty === "hard" ? "ยาก" : "ปานกลาง"}
+                  </span>
+                </div>
+                <p className="text-sm text-gray-700 line-clamp-2 leading-relaxed">
+                  {dailyMcq.scenario.length > 150
+                    ? dailyMcq.scenario.slice(0, 150) + "…"
+                    : dailyMcq.scenario}
+                </p>
+              </div>
+              <Link
+                href={`/nl/practice?subject=${dailyMcq.subject_id}`}
+                className="shrink-0"
+              >
+                <Button
+                  size="sm"
+                  className="bg-brand hover:bg-brand-light text-white gap-1.5 whitespace-nowrap"
+                >
+                  ทำเลย <ArrowRight className="h-3.5 w-3.5" />
+                </Button>
+              </Link>
+            </div>
+          </CardContent>
+        </Card>
+      )}
 
       {/* Daily Goal Progress */}
       {(() => {
