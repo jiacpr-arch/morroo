@@ -9,8 +9,16 @@ import type { Metadata } from "next";
 import LongCaseStartButton from "./LongCaseStartButton";
 
 export const metadata: Metadata = {
-  title: "Long Case Exam — หมอรู้",
-  description: "ฝึกสอบ Long Case กับ AI รับบท Patient + Examiner ข้อสอบใหม่ทุกสัปดาห์ เหมาะสำหรับ Intern และ Extern",
+  title: "ฝึกสอบ Long Case กับ AI Patient & Examiner",
+  description:
+    "ฝึก Long Case ออนไลน์ ซักประวัติ ตรวจร่างกาย สั่ง Lab นำเสนอต่อ AI Examiner ที่ให้คะแนนแบบสอบจริง เหมาะสำหรับ Intern และ Extern",
+  alternates: { canonical: "https://www.morroo.com/longcase" },
+  openGraph: {
+    title: "ฝึกสอบ Long Case กับ AI — หมอรู้",
+    description:
+      "ฝึก Long Case ออนไลน์ ซักประวัติ ตรวจร่างกาย สั่ง Lab นำเสนอต่อ AI Examiner ที่ให้คะแนนแบบสอบจริง",
+    url: "https://www.morroo.com/longcase",
+  },
 };
 
 export const revalidate = 300;

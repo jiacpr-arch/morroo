@@ -7,8 +7,37 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "ข้อสอบทั้งหมด",
-  description: "รวมข้อสอบ MEQ ทุกสาขาวิชา อายุรศาสตร์ ศัลยศาสตร์ กุมารฯ สูติฯ ออร์โธฯ จิตเวช",
+  title: "ข้อสอบ MEQ ออนไลน์ — ฝึกสอบแพทย์ Progressive Case",
+  description:
+    "ฝึกทำข้อสอบ MEQ แบบ Progressive Case 6 ตอน ครอบคลุม 6 สาขาหลัก อายุรศาสตร์ ศัลยศาสตร์ กุมารฯ สูติฯ ออร์โธฯ จิตเวช พร้อมเฉลยละเอียดและ AI ตรวจคำตอบ",
+  alternates: { canonical: "https://www.morroo.com/exams" },
+  openGraph: {
+    title: "ข้อสอบ MEQ ออนไลน์ — หมอรู้",
+    description:
+      "ฝึกทำข้อสอบ MEQ แบบ Progressive Case 6 ตอน ครอบคลุม 6 สาขาหลัก พร้อมเฉลยละเอียดและ AI ตรวจคำตอบ",
+    url: "https://www.morroo.com/exams",
+  },
+};
+
+const courseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  name: "ข้อสอบ MEQ ออนไลน์ — หมอรู้",
+  description:
+    "ข้อสอบ MEQ แบบ Progressive Case สำหรับเตรียมสอบใบประกอบวิชาชีพแพทย์",
+  provider: {
+    "@type": "EducationalOrganization",
+    name: "หมอรู้ (MorRoo)",
+    url: "https://www.morroo.com",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "199",
+    priceCurrency: "THB",
+    availability: "https://schema.org/InStock",
+  },
+  educationalLevel: "Medical Student / Physician",
+  inLanguage: "th",
 };
 
 async function ExamsList({
@@ -70,6 +99,11 @@ export default async function ExamsPage({
   ];
 
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }}
+      />
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold">ข้อสอบทั้งหมด</h1>
@@ -226,5 +260,6 @@ export default async function ExamsPage({
         <ExamsList category={category} difficulty={difficulty} isFree={free} />
       </Suspense>
     </div>
+    </>
   );
 }

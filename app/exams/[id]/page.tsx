@@ -11,9 +11,17 @@ export async function generateMetadata({
   const { id } = await params;
   const exam = await getExam(id);
   if (!exam) return { title: "ไม่พบข้อสอบ" };
+  const title = `${exam.title} — ข้อสอบ MEQ ${exam.category}`;
+  const description = `ฝึกทำข้อสอบ MEQ แบบ Progressive Case: ${exam.title} สาขา${exam.category} 6 ตอน พร้อมเฉลยละเอียดและ AI ตรวจคำตอบ`;
   return {
-    title: exam.title,
-    description: `ข้อสอบ MEQ: ${exam.title} - ${exam.category} - 6 ตอน`,
+    title,
+    description,
+    alternates: { canonical: `https://www.morroo.com/exams/${id}` },
+    openGraph: {
+      title,
+      description,
+      url: `https://www.morroo.com/exams/${id}`,
+    },
   };
 }
 
