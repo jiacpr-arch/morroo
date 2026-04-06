@@ -3,8 +3,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { ArrowRight, BookOpen, Shuffle, Target } from "lucide-react";
-import { getMcqSubjects, getMcqSubjectCounts, getTodayNewQuestions } from "@/lib/supabase/queries-mcq";
-import NewQuestionsCountdown from "@/components/NewQuestionsCountdown";
+import { getMcqSubjects, getMcqSubjectCounts } from "@/lib/supabase/queries-mcq";
+import AllExamsCountdown from "@/components/AllExamsCountdown";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -23,10 +23,9 @@ export const metadata: Metadata = {
 export const revalidate = 60;
 
 export default async function NLPage() {
-  const [subjects, counts, todayNew] = await Promise.all([
+  const [subjects, counts] = await Promise.all([
     getMcqSubjects(),
     getMcqSubjectCounts(),
-    getTodayNewQuestions(),
   ]);
 
   const totalQuestions = Object.values(counts).reduce((a, b) => a + b, 0);
@@ -45,15 +44,9 @@ export default async function NLPage() {
         </p>
       </div>
 
-      {/* New Questions Countdown */}
+      {/* All Exams Countdown */}
       <div className="mb-8">
-        <NewQuestionsCountdown
-          newTodayCount={todayNew.count}
-          difficulty={todayNew.difficulty}
-          todaySubject={todayNew.subjectNameTh ?? undefined}
-          todaySubjectIcon={todayNew.subjectIcon ?? undefined}
-          todaySubjectId={todayNew.subjectId ?? undefined}
-        />
+        <AllExamsCountdown />
       </div>
 
       {/* Mode Selection */}

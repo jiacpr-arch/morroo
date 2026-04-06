@@ -3,6 +3,7 @@ import ExamCard from "@/components/ExamCard";
 import { Badge } from "@/components/ui/badge";
 import { getExams, getExamPartCounts, sortExamsAvailableFirst } from "@/lib/supabase/queries";
 import { CATEGORIES } from "@/lib/types";
+import AllExamsCountdown from "@/components/AllExamsCountdown";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -110,6 +111,11 @@ export default async function ExamsPage({
         <p className="mt-2 text-muted-foreground">
           เลือกข้อสอบที่ต้องการฝึก
         </p>
+      </div>
+
+      {/* Exam Countdown */}
+      <div className="mb-8">
+        <AllExamsCountdown />
       </div>
 
       {/* Filters */}

@@ -22,7 +22,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { AccuracyTrendChart } from "@/components/AccuracyTrendChart";
-import NewQuestionsCountdown from "@/components/NewQuestionsCountdown";
+import AllExamsCountdown from "@/components/AllExamsCountdown";
 
 interface SubjectStat {
   subject_id: string;
@@ -155,8 +155,6 @@ export default function DashboardPage() {
       if (dailyRow) setDailyMcq(dailyRow);
 
       // Fetch today's new AI-generated questions with difficulty breakdown
-      const todayStart = new Date();
-      todayStart.setHours(0, 0, 0, 0);
       const { data: newQData } = await supabase
         .from("mcq_questions")
         .select("subject_id, difficulty, mcq_subjects(name_th, icon)")
@@ -219,12 +217,7 @@ export default function DashboardPage() {
     return (
       <div className="mx-auto max-w-2xl px-4 py-12">
         <div className="mb-8">
-          <NewQuestionsCountdown
-            newTodayCount={newQuestions.count}
-            todaySubject={newQuestions.subjectNameTh ?? undefined}
-            todaySubjectIcon={newQuestions.subjectIcon ?? undefined}
-            todaySubjectId={newQuestions.subjectId ?? undefined}
-          />
+          <AllExamsCountdown />
         </div>
         {dailyMcq && (
           <Card className="mb-8 border-brand/40 bg-gradient-to-r from-brand/5 to-amber-50/60">
@@ -281,13 +274,7 @@ export default function DashboardPage() {
 
       {/* New Questions Countdown */}
       <div className="mb-4">
-        <NewQuestionsCountdown
-          newTodayCount={newQuestions.count}
-          difficulty={newQuestions.difficulty}
-          todaySubject={newQuestions.subjectNameTh ?? undefined}
-          todaySubjectIcon={newQuestions.subjectIcon ?? undefined}
-          todaySubjectId={newQuestions.subjectId ?? undefined}
-        />
+        <AllExamsCountdown />
       </div>
 
       {/* Daily Question Banner */}
