@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { sendReceiptEmail } from "@/lib/email/send";
+import { sendLineMessage } from "@/lib/line";
 import Stripe from "stripe";
 
 export const runtime = "nodejs";
@@ -127,22 +127,82 @@ export async function POST(request: NextRequest) {
       console.error("Failed to create invoice:", invoiceError);
     }
 
-    // Send receipt email
-    const { data: profile } = await supabase
+    // Referral reward: extend referrer membership by 30 days
+    const { data: buyer } = await supabase
       .from("profiles")
-      .select("email, name")
+      .select("referred_by, membership_expires_at")
       .eq("id", userId)
       .single();
 
-    if (profile?.email) {
-      sendReceiptEmail({
-        name: profile.name ?? "คุณ",
-        email: profile.email,
-        packageType: planType as "bundle" | "monthly" | "yearly",
-        amount: totalAmount,
-        expiresAt: expiresAt.toISOString(),
-        chargeId: session.id,
-      }).catch((err) => console.error("Failed to send receipt email:", err));
+    if (buyer?.referred_by) {
+      const { data: pendingReferral } = await supabase
+        .from("referrals")
+        .select("id, referrer_id, reward_days")
+        .eq("referred_id", userId)
+        .eq("code", buyer.referred_by)
+        .eq("status", "pending")
+        .single();
+
+      if (pendingReferral) {
+        // Extend referrer's membership
+        const { data: referrer } = await supabase
+          .from("profiles")
+          .select("membership_expires_at, membership_type")
+          .eq("id", pendingReferral.referrer_id)
+          .single();
+
+        if (referrer) {
+          const base =
+            referrer.membership_expires_at && new Date(referrer.membership_expires_at) > new Date()
+              ? new Date(referrer.membership_expires_at)
+              : new Date();
+          base.setDate(base.getDate() + (pendingReferral.reward_days ?? 30));
+
+          await supabase
+            .from("profiles")
+            .update({ membership_expires_at: base.toISOString() })
+            .eq("id", pendingReferral.referrer_id);
+        }
+
+        // Mark referral as rewarded
+        await supabase
+          .from("referrals")
+          .update({ status: "rewarded", rewarded_at: new Date().toISOString() })
+          .eq("id", pendingReferral.id);
+
+        // Notify referrer via LINE
+        const { data: referrerProfile } = await supabase
+          .from("profiles")
+          .select("line_user_id")
+          .eq("id", pendingReferral.referrer_id)
+          .single();
+
+        if (referrerProfile?.line_user_id) {
+          await sendLineMessage(referrerProfile.line_user_id, [{
+            type: "text",
+            text: `🎉 เพื่อนของคุณสมัครสมาชิก MorRoo แล้ว!\n\nคุณได้รับสิทธิ์ใช้งานเพิ่ม ${pendingReferral.reward_days ?? 30} วันทันที ✨`,
+          }]);
+        }
+      }
+    }
+
+    // Notify buyer via LINE
+    const { data: buyerProfile } = await supabase
+      .from("profiles")
+      .select("line_user_id")
+      .eq("id", userId)
+      .single();
+
+    if (buyerProfile?.line_user_id) {
+      const planLabel: Record<string, string> = {
+        monthly: "รายเดือน",
+        yearly: "รายปี",
+        bundle: "ชุดข้อสอบ",
+      };
+      await sendLineMessage(buyerProfile.line_user_id, [{
+        type: "text",
+        text: `✅ ชำระเงินสำเร็จ!\n\nแพ็กเกจ: MorRoo ${planLabel[planType] ?? planType}\nหมดอายุ: ${expiresAt.toLocaleDateString("th-TH", { year: "numeric", month: "long", day: "numeric" })}\n\nขอให้สอบผ่าน! 🏥`,
+      }]);
     }
   }
 
