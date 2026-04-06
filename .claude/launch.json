@@ -4,7 +4,7 @@
     {
       "name": "morroo-dev",
       "runtimeExecutable": "/Users/apple/.nvm/versions/node/v24.14.0/bin/node",
-      "runtimeArgs": ["/Users/apple/Desktop/morroo/.claude/worktrees/nice-leakey/scripts/dev-server.mjs"],
+      "runtimeArgs": ["/Users/apple/Desktop/morroo/.claude/worktrees/nice-leakey/scripts/start-dev.cjs"],
       "port": 3000
     }
   ]
