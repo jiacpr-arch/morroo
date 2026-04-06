@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { sendLineMessage } from "@/lib/line";
 import Stripe from "stripe";
 
 export const runtime = "nodejs";
@@ -168,7 +169,40 @@ export async function POST(request: NextRequest) {
           .from("referrals")
           .update({ status: "rewarded", rewarded_at: new Date().toISOString() })
           .eq("id", pendingReferral.id);
+
+        // Notify referrer via LINE
+        const { data: referrerProfile } = await supabase
+          .from("profiles")
+          .select("line_user_id")
+          .eq("id", pendingReferral.referrer_id)
+          .single();
+
+        if (referrerProfile?.line_user_id) {
+          await sendLineMessage(referrerProfile.line_user_id, [{
+            type: "text",
+            text: `🎉 เพื่อนของคุณสมัครสมาชิก MorRoo แล้ว!\n\nคุณได้รับสิทธิ์ใช้งานเพิ่ม ${pendingReferral.reward_days ?? 30} วันทันที ✨`,
+          }]);
+        }
       }
+    }
+
+    // Notify buyer via LINE
+    const { data: buyerProfile } = await supabase
+      .from("profiles")
+      .select("line_user_id")
+      .eq("id", userId)
+      .single();
+
+    if (buyerProfile?.line_user_id) {
+      const planLabel: Record<string, string> = {
+        monthly: "รายเดือน",
+        yearly: "รายปี",
+        bundle: "ชุดข้อสอบ",
+      };
+      await sendLineMessage(buyerProfile.line_user_id, [{
+        type: "text",
+        text: `✅ ชำระเงินสำเร็จ!\n\nแพ็กเกจ: MorRoo ${planLabel[planType] ?? planType}\nหมดอายุ: ${expiresAt.toLocaleDateString("th-TH", { year: "numeric", month: "long", day: "numeric" })}\n\nขอให้สอบผ่าน! 🏥`,
+      }]);
     }
   }
 

@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
-import { User, Mail, Crown, Calendar, LogOut, Gift, Copy, Check, Users } from "lucide-react";
+import { User, Mail, Crown, Calendar, LogOut, Gift, Copy, Check, Users, MessageSquare, Link2, Loader2 } from "lucide-react";
 import type { Profile } from "@/lib/types";
 
 const membershipLabels: Record<string, string> = {
@@ -33,6 +33,10 @@ export default function ProfilePage() {
   const [referralStats, setReferralStats] = useState({ total: 0, rewarded: 0 });
   const [copied, setCopied] = useState(false);
   const [generatingCode, setGeneratingCode] = useState(false);
+  const [lineLinked, setLineLinked] = useState(false);
+  const [lineCode, setLineCode] = useState<string | null>(null);
+  const [lineCopied, setLineCopied] = useState(false);
+  const [generatingLine, setGeneratingLine] = useState(false);
 
   useEffect(() => {
     async function loadProfile() {
@@ -53,6 +57,7 @@ export default function ProfilePage() {
         .single();
 
       setProfile(data);
+      if (data?.line_user_id) setLineLinked(true);
       if (data?.referral_code) {
         setReferralCode(data.referral_code);
         // fetch stats
@@ -89,6 +94,28 @@ export default function ProfilePage() {
       }
     }
     setGeneratingCode(false);
+  };
+
+  const handleGenerateLine = async () => {
+    setGeneratingLine(true);
+    const supabase = createClient();
+    const { data: { session } } = await supabase.auth.getSession();
+    const res = await fetch("/api/line/generate-code", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${session?.access_token}` },
+    });
+    if (res.ok) {
+      const { code } = await res.json();
+      setLineCode(code);
+    }
+    setGeneratingLine(false);
+  };
+
+  const handleCopyLineCode = async () => {
+    if (!lineCode) return;
+    await navigator.clipboard.writeText(lineCode);
+    setLineCopied(true);
+    setTimeout(() => setLineCopied(false), 2000);
   };
 
   const handleCopy = async () => {
@@ -232,6 +259,54 @@ export default function ProfilePage() {
                   {generatingCode ? "กำลังสร้าง..." : "สร้างรหัสชวนเพื่อน"}
                 </Button>
               </div>
+            )}
+          </CardContent>
+        </Card>
+
+        {/* LINE Notification */}
+        <Card>
+          <CardHeader>
+            <h3 className="font-semibold flex items-center gap-2">
+              <MessageSquare className="h-5 w-5 text-green-600" /> เชื่อมต่อ LINE
+            </h3>
+            <p className="text-sm text-muted-foreground mt-1">
+              รับการแจ้งเตือนจาก MorRoo ผ่าน LINE ได้เลย
+            </p>
+          </CardHeader>
+          <CardContent>
+            {lineLinked ? (
+              <div className="flex items-center gap-2 text-green-700 bg-green-50 rounded-lg px-4 py-3">
+                <Link2 className="h-4 w-4 shrink-0" />
+                <span className="text-sm font-medium">เชื่อมต่อ LINE แล้ว ✓</span>
+              </div>
+            ) : lineCode ? (
+              <div className="space-y-3">
+                <p className="text-sm text-muted-foreground">
+                  เพิ่ม LINE OA ของ MorRoo เป็นเพื่อน แล้วส่งรหัสนี้:
+                </p>
+                <div className="flex items-center gap-2">
+                  <code className="flex-1 bg-muted px-3 py-2 rounded-lg text-sm font-mono font-bold tracking-widest text-center">
+                    {lineCode}
+                  </code>
+                  <Button size="sm" variant="outline" onClick={handleCopyLineCode} className="shrink-0 gap-1">
+                    {lineCopied ? <Check className="h-4 w-4 text-green-600" /> : <Copy className="h-4 w-4" />}
+                  </Button>
+                </div>
+                <p className="text-xs text-muted-foreground">รหัสหมดอายุใน 24 ชั่วโมง</p>
+              </div>
+            ) : (
+              <Button
+                onClick={handleGenerateLine}
+                disabled={generatingLine}
+                className="w-full bg-green-600 hover:bg-green-700 text-white gap-2"
+              >
+                {generatingLine ? (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                ) : (
+                  <MessageSquare className="h-4 w-4" />
+                )}
+                สร้างรหัสเชื่อมต่อ LINE
+              </Button>
             )}
           </CardContent>
         </Card>
