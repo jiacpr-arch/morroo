@@ -19,10 +19,12 @@ function RegisterForm() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [isLineBrowser, setIsLineBrowser] = useState(false);
 
   useEffect(() => {
     const ref = searchParams.get("ref");
     if (ref) setRefCode(ref.toUpperCase());
+    setIsLineBrowser(/Line/i.test(navigator.userAgent));
   }, [searchParams]);
 
   const handleRegister = async (e: React.FormEvent) => {
@@ -118,7 +120,14 @@ function RegisterForm() {
 
   return (
     <div className="flex items-center justify-center min-h-[calc(100vh-12rem)] px-4 py-8">
-      <Card className="w-full max-w-md">
+      {isLineBrowser && (
+        <div className="fixed top-0 left-0 right-0 z-50 bg-yellow-400 text-yellow-900 px-4 py-3 text-sm text-center font-medium shadow-md">
+          ⚠️ กรุณาเปิดเว็บในเบราว์เซอร์ Chrome หรือ Safari เพื่อใช้งาน Login ด้วย Google
+          <br />
+          <span className="text-xs font-normal">กด ··· แล้วเลือก "เปิดใน Chrome" หรือ "เปิดใน Safari"</span>
+        </div>
+      )}
+      <Card className={`w-full max-w-md${isLineBrowser ? " mt-16" : ""}`}>
         <CardHeader className="text-center space-y-2">
           <div className="text-4xl">🩺</div>
           <h1 className="text-2xl font-bold">สมัครสมาชิก</h1>
