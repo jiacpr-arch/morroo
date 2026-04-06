@@ -7,6 +7,7 @@ import { createClient } from "@/lib/supabase/server";
 import { BookOpen, Stethoscope, Clock, Star, Lock } from "lucide-react";
 import type { Metadata } from "next";
 import LongCaseStartButton from "./LongCaseStartButton";
+import AllExamsCountdown from "@/components/AllExamsCountdown";
 
 export const metadata: Metadata = {
   title: "ฝึกสอบ Long Case กับ AI Patient & Examiner",
@@ -73,6 +74,11 @@ export default async function LongCasePage() {
           AI รับบทเป็นผู้ป่วย คุณซักประวัติ ตรวจร่างกาย สั่ง Lab แล้วนำเสนอต่อ AI Examiner
           ที่ให้ feedback และคะแนนแบบสอบจริง
         </p>
+      </div>
+
+      {/* Exam Countdown */}
+      <div className="mb-8">
+        <AllExamsCountdown />
       </div>
 
       {/* How it works */}
