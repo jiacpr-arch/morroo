@@ -34,7 +34,7 @@ export default async function NLPage() {
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center gap-2 mb-2">
-          <Badge className="bg-blue-100 text-blue-700">NL Exam</Badge>
+          <Badge className="bg-blue-100 text-blue-700">MCQ</Badge>
           <Badge variant="secondary">{totalQuestions} ข้อ</Badge>
         </div>
         <h1 className="text-3xl font-bold">ข้อสอบใบประกอบวิชาชีพ</h1>
