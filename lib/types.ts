@@ -6,6 +6,12 @@ export interface Profile {
   membership_type: "free" | "monthly" | "yearly" | "bundle";
   membership_expires_at: string | null;
   created_at: string;
+  onboarding_done: boolean;
+  daily_goal: number;
+  target_exam: "NL1" | "NL2" | "both" | null;
+  weak_subjects: string[] | null;
+  referral_code: string | null;
+  referred_by: string | null;
 }
 
 // ============================================================

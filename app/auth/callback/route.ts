@@ -26,7 +26,19 @@ export async function GET(request: Request) {
         { onConflict: "id", ignoreDuplicates: true }
       );
 
-      return NextResponse.redirect(`${origin}${next}`);
+      // Check if user needs onboarding
+      const { data: profile } = await supabase
+        .from("profiles")
+        .select("onboarding_done")
+        .eq("id", data.user.id)
+        .single();
+
+      const destination =
+        profile && profile.onboarding_done === false
+          ? "/onboarding"
+          : next;
+
+      return NextResponse.redirect(`${origin}${destination}`);
     }
   }
 

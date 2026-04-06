@@ -82,6 +82,8 @@ export default function DashboardPage() {
   const [trend, setTrend] = useState<AccuracyTrend[]>([]);
   const [streak, setStreak] = useState(0);
   const [comparison, setComparison] = useState<SubjectComparison[]>([]);
+  const [dailyGoal, setDailyGoal] = useState(20);
+  const [todayCount, setTodayCount] = useState(0);
 
   useEffect(() => {
     async function load() {
@@ -95,7 +97,10 @@ export default function DashboardPage() {
         return;
       }
 
-      const [statsRes, sessionsRes, weakRes, trendRes, streakRes, compRes] =
+      const todayStart = new Date();
+      todayStart.setHours(0, 0, 0, 0);
+
+      const [statsRes, sessionsRes, weakRes, trendRes, streakRes, compRes, profileRes, todayRes] =
         await Promise.all([
           supabase.rpc("get_user_subject_stats", { p_user_id: user.id }),
           supabase.rpc("get_user_recent_sessions", {
@@ -109,6 +114,11 @@ export default function DashboardPage() {
           supabase.rpc("get_user_accuracy_trend", { p_user_id: user.id }),
           supabase.rpc("get_user_streak", { p_user_id: user.id }),
           supabase.rpc("get_user_vs_global_avg", { p_user_id: user.id }),
+          supabase.from("profiles").select("daily_goal").eq("id", user.id).single(),
+          supabase.from("mcq_attempts")
+            .select("id", { count: "exact", head: true })
+            .eq("user_id", user.id)
+            .gte("created_at", todayStart.toISOString()),
         ]);
 
       setSubjectStats((statsRes.data as SubjectStat[]) || []);
@@ -117,6 +127,8 @@ export default function DashboardPage() {
       setTrend((trendRes.data as AccuracyTrend[]) || []);
       setStreak((streakRes.data as number) ?? 0);
       setComparison((compRes.data as SubjectComparison[]) || []);
+      setDailyGoal(profileRes.data?.daily_goal ?? 20);
+      setTodayCount(todayRes.count ?? 0);
       setLoading(false);
     }
     load();
@@ -166,12 +178,49 @@ export default function DashboardPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
-      <div className="mb-8">
+      <div className="mb-6">
         <h1 className="text-2xl font-bold">ผลการเรียน</h1>
         <p className="text-muted-foreground mt-1">
           ติดตามความก้าวหน้าและจุดที่ต้องปรับปรุง
         </p>
       </div>
+
+      {/* Daily Goal Progress */}
+      {(() => {
+        const pct = Math.min(100, Math.round((todayCount / dailyGoal) * 100));
+        const done = todayCount >= dailyGoal;
+        return (
+          <Card className={`mb-6 ${done ? "border-green-400" : "border-brand/30"}`}>
+            <CardContent className="py-4">
+              <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center gap-2">
+                  <span className="text-lg">{done ? "✅" : "🎯"}</span>
+                  <span className="font-semibold text-sm">
+                    {done ? "ครบเป้าวันนี้แล้ว!" : "เป้าหมายวันนี้"}
+                  </span>
+                </div>
+                <span className="text-sm font-medium text-muted-foreground">
+                  {todayCount} / {dailyGoal} ข้อ
+                </span>
+              </div>
+              <div className="w-full bg-muted rounded-full h-3 overflow-hidden">
+                <div
+                  className={`h-3 rounded-full transition-all ${done ? "bg-green-500" : "bg-brand"}`}
+                  style={{ width: `${pct}%` }}
+                />
+              </div>
+              {!done && (
+                <p className="text-xs text-muted-foreground mt-2">
+                  อีก {dailyGoal - todayCount} ข้อจะครบเป้า —{" "}
+                  <Link href="/nl" className="text-brand hover:underline font-medium">
+                    ทำต่อเลย
+                  </Link>
+                </p>
+              )}
+            </CardContent>
+          </Card>
+        );
+      })()}
 
       {/* Summary Cards */}
       <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-8">

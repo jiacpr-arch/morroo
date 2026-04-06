@@ -17,6 +17,7 @@ import {
   Trash2,
   Eye,
   EyeOff,
+  Pencil,
 } from "lucide-react";
 
 interface LongCaseRow {
@@ -236,6 +237,13 @@ function CaseRow({
         </div>
 
         <div className="flex items-center gap-2 shrink-0">
+          {/* Edit */}
+          <Link href={`/admin/longcases/${c.id}`}>
+            <Button variant="ghost" size="sm" title="แก้ไขเคส">
+              <Pencil className="h-3.5 w-3.5" />
+            </Button>
+          </Link>
+
           {/* Toggle Weekly */}
           <Button
             variant="ghost"

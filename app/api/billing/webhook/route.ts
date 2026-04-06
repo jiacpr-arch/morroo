@@ -125,6 +125,51 @@ export async function POST(request: NextRequest) {
     if (invoiceError) {
       console.error("Failed to create invoice:", invoiceError);
     }
+
+    // Referral reward: extend referrer membership by 30 days
+    const { data: buyer } = await supabase
+      .from("profiles")
+      .select("referred_by, membership_expires_at")
+      .eq("id", userId)
+      .single();
+
+    if (buyer?.referred_by) {
+      const { data: pendingReferral } = await supabase
+        .from("referrals")
+        .select("id, referrer_id, reward_days")
+        .eq("referred_id", userId)
+        .eq("code", buyer.referred_by)
+        .eq("status", "pending")
+        .single();
+
+      if (pendingReferral) {
+        // Extend referrer's membership
+        const { data: referrer } = await supabase
+          .from("profiles")
+          .select("membership_expires_at, membership_type")
+          .eq("id", pendingReferral.referrer_id)
+          .single();
+
+        if (referrer) {
+          const base =
+            referrer.membership_expires_at && new Date(referrer.membership_expires_at) > new Date()
+              ? new Date(referrer.membership_expires_at)
+              : new Date();
+          base.setDate(base.getDate() + (pendingReferral.reward_days ?? 30));
+
+          await supabase
+            .from("profiles")
+            .update({ membership_expires_at: base.toISOString() })
+            .eq("id", pendingReferral.referrer_id);
+        }
+
+        // Mark referral as rewarded
+        await supabase
+          .from("referrals")
+          .update({ status: "rewarded", rewarded_at: new Date().toISOString() })
+          .eq("id", pendingReferral.id);
+      }
+    }
   }
 
   return NextResponse.json({ received: true }, { status: 200 });
