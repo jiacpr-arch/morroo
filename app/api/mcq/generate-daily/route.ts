@@ -66,7 +66,7 @@ export async function POST(request: Request) {
     .eq("subject_id", subjectRow.id)
     .eq("status", "active");
 
-  // Generate MCQ questions with Claude
+  // Generate MCQ questions with Claude — includes detailed_explanation
   const prompt = `คุณเป็นอาจารย์แพทย์ผู้เชี่ยวชาญด้าน ${todaySubject.name_th} สำหรับสอบใบประกอบวิชาชีพ (National License Exam - NL Step 2)
 
 สร้างข้อสอบ MCQ จำนวน ${QUESTIONS_PER_BATCH} ข้อ สาขา ${todaySubject.name_th}
@@ -75,7 +75,7 @@ export async function POST(request: Request) {
 1. แต่ละข้อต้องมี scenario (โจทย์สถานการณ์) ที่มีรายละเอียดเพียงพอ เช่น อายุ เพศ อาการ ผลตรวจ
 2. ตัวเลือก 5 ข้อ (A-E) ที่เป็น plausible ทั้งหมด ไม่มีตัวเลือกมั่วๆ
 3. คำตอบถูกต้องต้องอิง evidence-based medicine
-4. คำอธิบายเฉลยต้องอธิบายว่าทำไมคำตอบนั้นถูก และทำไมตัวเลือกอื่นผิด
+4. คำอธิบายเฉลยต้องละเอียด อธิบายว่าทำไมคำตอบนั้นถูก และทำไมตัวเลือกอื่นผิดทีละข้อ
 5. ความยากคละกัน: 3 ข้อง่าย, 4 ข้อปานกลาง, 3 ข้อยาก
 6. ห้ามซ้ำกับข้อสอบเดิม (ปัจจุบันมี ${existingCount ?? 0} ข้อในระบบ)
 7. เขียนเป็นภาษาไทยหรืออังกฤษก็ได้ตามความเหมาะสมของเนื้อหาทางการแพทย์
@@ -87,7 +87,19 @@ export async function POST(request: Request) {
     "scenario": "โจทย์...",
     "choices": [{"label": "A", "text": "..."}, {"label": "B", "text": "..."}, {"label": "C", "text": "..."}, {"label": "D", "text": "..."}, {"label": "E", "text": "..."}],
     "correct_answer": "A",
-    "explanation": "คำอธิบายเฉลย...",
+    "explanation": "สรุปสั้นๆ ว่าทำไมคำตอบนี้ถูก",
+    "detailed_explanation": {
+      "summary": "สรุปคำตอบที่ถูกต้อง 1-2 ประโยค",
+      "reason": "อธิบายเหตุผลทางการแพทย์อย่างละเอียดว่าทำไมข้อนี้ถูก (2-4 ประโยค) อิง guideline หรือ pathophysiology",
+      "choices": [
+        {"label": "A", "text": "ตัวเลือก A...", "is_correct": true, "explanation": "ถูกต้อง เพราะ..."},
+        {"label": "B", "text": "ตัวเลือก B...", "is_correct": false, "explanation": "ผิด เพราะ..."},
+        {"label": "C", "text": "ตัวเลือก C...", "is_correct": false, "explanation": "ผิด เพราะ..."},
+        {"label": "D", "text": "ตัวเลือก D...", "is_correct": false, "explanation": "ผิด เพราะ..."},
+        {"label": "E", "text": "ตัวเลือก E...", "is_correct": false, "explanation": "ผิด เพราะ..."}
+      ],
+      "key_takeaway": "ข้อควรจำ/หลักสำคัญจากข้อนี้ที่ควรนำไปใช้สอบ"
+    },
     "difficulty": "easy|medium|hard"
   }
 ]`;
@@ -101,7 +113,7 @@ export async function POST(request: Request) {
     },
     body: JSON.stringify({
       model: "claude-haiku-4-5-20251001",
-      max_tokens: 8000,
+      max_tokens: 16000,
       messages: [{ role: "user", content: prompt }],
     }),
   });
@@ -124,6 +136,12 @@ export async function POST(request: Request) {
     choices: Array<{ label: string; text: string }>;
     correct_answer: string;
     explanation: string;
+    detailed_explanation?: {
+      summary: string;
+      reason: string;
+      choices: Array<{ label: string; text: string; is_correct: boolean; explanation: string }>;
+      key_takeaway: string;
+    };
     difficulty: string;
   }>;
 
@@ -169,6 +187,7 @@ export async function POST(request: Request) {
       choices: q.choices,
       correct_answer: q.correct_answer,
       explanation: q.explanation || null,
+      detailed_explanation: q.detailed_explanation || null,
       difficulty: ["easy", "medium", "hard"].includes(q.difficulty) ? q.difficulty : "medium",
       is_ai_enhanced: true,
       ai_notes: `Auto-generated on ${now.toISOString().split("T")[0]}`,
