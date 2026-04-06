@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { stripe } from "@/lib/stripe";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { sendPurchaseConfirmationEmail } from "@/lib/email";
 import Stripe from "stripe";
 
 export const runtime = "nodejs";
@@ -124,6 +125,30 @@ export async function POST(request: NextRequest) {
 
     if (invoiceError) {
       console.error("Failed to create invoice:", invoiceError);
+    }
+
+    // Send purchase confirmation email
+    const { data: buyerProfile } = await supabase
+      .from("profiles")
+      .select("email, name")
+      .eq("id", userId)
+      .single();
+
+    if (buyerProfile?.email) {
+      const planLabels: Record<string, string> = {
+        monthly: "รายเดือน (1 เดือน)",
+        yearly: "รายปี (1 ปี)",
+        bundle: "ตลอดชีพ",
+      };
+      const planLabel = planLabels[planType] ?? planType;
+      await sendPurchaseConfirmationEmail(
+        buyerProfile.email,
+        buyerProfile.name ?? "",
+        planLabel,
+        expiresAt,
+        invoiceNumber,
+        totalAmount
+      );
     }
   }
 
