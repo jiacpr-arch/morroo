@@ -40,18 +40,25 @@ export default function OnboardingPage() {
 
   const handleFinish = async () => {
     setSaving(true);
-    const supabase = createClient();
-    const { data: { user } } = await supabase.auth.getUser();
-    if (!user) { router.push("/login"); return; }
+    try {
+      const supabase = createClient();
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) { router.push("/login"); return; }
 
-    await supabase.from("profiles").update({
-      onboarding_done: true,
-      daily_goal: dailyGoal ?? 20,
-      target_exam: targetExam ?? "both",
-      weak_subjects: weakSubjects.length > 0 ? weakSubjects : null,
-    }).eq("id", user.id);
+      const { error } = await supabase.from("profiles").update({
+        onboarding_done: true,
+        daily_goal: dailyGoal ?? 20,
+        target_exam: targetExam ?? "both",
+        weak_subjects: weakSubjects.length > 0 ? weakSubjects : null,
+      }).eq("id", user.id);
 
-    router.push("/dashboard");
+      if (error) throw error;
+
+      // Hard navigation so middleware reads fresh onboarding_done value
+      window.location.href = "/dashboard";
+    } catch {
+      setSaving(false);
+    }
   };
 
   const canNext = () => {
