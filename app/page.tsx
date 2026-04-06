@@ -73,7 +73,7 @@ export default async function HomePage() {
                   size="lg"
                   className="bg-white/10 border border-white/30 text-white hover:bg-white/20 px-8 text-base"
                 >
-                  NL Exam <ArrowRight className="ml-2 h-4 w-4" />
+                  MCQ <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
             </div>
