@@ -16,15 +16,14 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Missing stripe-signature" }, { status: 400 });
   }
 
+  const whSecret = process.env.STRIPE_WEBHOOK_SECRET ?? "";
+  console.log("[webhook] secret:", whSecret.slice(0, 25), "sig:", signature?.slice(0, 30));
+
   let event: Stripe.Event;
   try {
-    event = stripe.webhooks.constructEvent(
-      body,
-      signature,
-      process.env.STRIPE_WEBHOOK_SECRET!
-    );
+    event = stripe.webhooks.constructEvent(body, signature, whSecret);
   } catch (err) {
-    console.error("Webhook signature verification failed:", err);
+    console.error("[webhook] sig failed:", String(err).slice(0, 100));
     return NextResponse.json({ error: "Invalid signature" }, { status: 400 });
   }
 
