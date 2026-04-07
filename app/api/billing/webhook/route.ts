@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { stripe, STRIPE_PLANS } from "@/lib/stripe";
+import { STRIPE_PLANS } from "@/lib/stripe";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { sendLineMessage } from "@/lib/line";
 import { createCashInvoice } from "@/lib/flowaccount";
@@ -7,6 +7,9 @@ import { lineNotifyNewOrder, emailReceipt } from "@/lib/notifications";
 import Stripe from "stripe";
 
 export const runtime = "nodejs";
+
+// Direct instance for webhook verification — avoids Proxy binding issues
+const stripeForWebhook = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
 export async function POST(request: NextRequest) {
   const body = await request.text();
@@ -16,20 +19,14 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Missing stripe-signature" }, { status: 400 });
   }
 
-  const whSecret = process.env.STRIPE_WEBHOOK_SECRET ?? "";
-  console.log("[webhook] secret:", whSecret.slice(0, 25), "sig:", signature?.slice(0, 30));
+  const whSecret = (process.env.STRIPE_WEBHOOK_SECRET ?? "").trim();
 
   let event: Stripe.Event;
   try {
-    event = stripe.webhooks.constructEvent(body, signature, whSecret);
+    event = stripeForWebhook.webhooks.constructEvent(body, signature, whSecret);
   } catch (err) {
     console.error("[webhook] sig failed:", String(err).slice(0, 100));
-    return NextResponse.json({
-      error: "Invalid signature",
-      _sec: whSecret.slice(0, 20),
-      _bodyLen: body.length,
-      _sigFull: signature,
-    }, { status: 400 });
+    return NextResponse.json({ error: "Invalid signature" }, { status: 400 });
   }
 
   if (event.type === "checkout.session.completed") {
