@@ -28,8 +28,7 @@ export async function POST(request: NextRequest) {
       error: "Invalid signature",
       _sec: whSecret.slice(0, 20),
       _bodyLen: body.length,
-      _body: body.slice(0, 30),
-      _bodyCodes: Array.from(body.slice(0, 15)).map(c => c.charCodeAt(0)),
+      _sigFull: signature,
     }, { status: 400 });
   }
 
