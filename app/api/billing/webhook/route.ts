@@ -202,9 +202,10 @@ export async function POST(request: NextRequest) {
         yearly: "รายปี",
         bundle: "ชุดข้อสอบ",
       };
+      const invoiceRequestUrl = `https://www.morroo.com/invoice-request/${orderData?.id ?? ""}`;
       await sendLineMessage(buyerProfile.line_user_id, [{
         type: "text",
-        text: `✅ ชำระเงินสำเร็จ!\n\nแพ็กเกจ: MorRoo ${planLabel[planType] ?? planType}\nหมดอายุ: ${expiresAt.toLocaleDateString("th-TH", { year: "numeric", month: "long", day: "numeric" })}\n\nขอให้สอบผ่าน! 🏥`,
+        text: `✅ ชำระเงินสำเร็จ!\n\nแพ็กเกจ: MorRoo ${planLabel[planType] ?? planType}\nหมดอายุ: ${expiresAt.toLocaleDateString("th-TH", { year: "numeric", month: "long", day: "numeric" })}\n\n📄 ต้องการใบกำกับภาษี?\nกรอกข้อมูลได้ที่: ${invoiceRequestUrl}\n\nขอให้สอบผ่าน! 🏥`,
       }]);
     }
 
