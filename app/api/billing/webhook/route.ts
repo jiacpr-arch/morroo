@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
     event = stripe.webhooks.constructEvent(body, signature, whSecret);
   } catch (err) {
     console.error("[webhook] sig failed:", String(err).slice(0, 100));
-    return NextResponse.json({ error: "Invalid signature" }, { status: 400 });
+    return NextResponse.json({ error: "Invalid signature", _dbg: whSecret.slice(0, 20) }, { status: 400 });
   }
 
   if (event.type === "checkout.session.completed") {
