@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getStripe } from "@/lib/stripe";
+import { getStripe, STRIPE_PLANS } from "@/lib/stripe";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { createCashInvoice } from "@/lib/flowaccount";
+import { lineNotifyNewOrder, emailReceipt } from "@/lib/notifications";
 import Stripe from "stripe";
 
 export const runtime = "nodejs";
@@ -125,6 +127,47 @@ export async function POST(request: NextRequest) {
     if (invoiceError) {
       console.error("Failed to create invoice:", invoiceError);
     }
+
+    const publishedOn = now.toISOString().slice(0, 10);
+    const planName = STRIPE_PLANS[planType]?.name ?? planType;
+
+    // แจ้งเตือน LINE + ส่ง email ใบเสร็จ (non-blocking)
+    Promise.all([
+      lineNotifyNewOrder({ planName, totalAmount, invoiceNumber, buyerEmail: invoiceEmail }),
+      emailReceipt({
+        toEmail: invoiceEmail,
+        planName,
+        invoiceNumber,
+        totalAmount,
+        vatAmount,
+        amountBeforeVat,
+        buyerName: invoiceName || undefined,
+        buyerTaxId: invoiceTaxId || undefined,
+        publishedOn,
+      }),
+    ]).catch((err) => console.error("[Notify] error:", err));
+
+    // สร้างใบกำกับภาษี/ใบเสร็จใน FlowAccount (non-blocking — ไม่กระทบ webhook)
+
+    createCashInvoice({
+      planType,
+      totalAmount,
+      invoiceNumber,
+      stripeSessionId: session.id,
+      buyerName: invoiceName || undefined,
+      buyerTaxId: invoiceTaxId || undefined,
+      buyerAddress: invoiceAddress || undefined,
+      buyerEmail: invoiceEmail || undefined,
+      publishedOn,
+    }).then((result) => {
+      if (result.ok) {
+        console.log(`[FlowAccount] สร้างเอกสาร ${result.documentNumber} สำเร็จ (${invoiceNumber})`);
+      } else {
+        console.error(`[FlowAccount] สร้างเอกสารไม่สำเร็จ (${invoiceNumber}): ${result.error}`);
+      }
+    }).catch((err) => {
+      console.error("[FlowAccount] error:", err);
+    });
   }
 
   return NextResponse.json({ received: true }, { status: 200 });
