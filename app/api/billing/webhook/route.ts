@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-import { stripe } from "@/lib/stripe";
+import { stripe, STRIPE_PLANS } from "@/lib/stripe";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { sendLineMessage } from "@/lib/line";
+import { createCashInvoice } from "@/lib/flowaccount";
+import { lineNotifyNewOrder, emailReceipt } from "@/lib/notifications";
 import Stripe from "stripe";
 
 export const runtime = "nodejs";
@@ -186,7 +188,7 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Notify buyer via LINE
+    // Notify buyer via LINE (personal account)
     const { data: buyerProfile } = await supabase
       .from("profiles")
       .select("line_user_id")
@@ -204,6 +206,46 @@ export async function POST(request: NextRequest) {
         text: `✅ ชำระเงินสำเร็จ!\n\nแพ็กเกจ: MorRoo ${planLabel[planType] ?? planType}\nหมดอายุ: ${expiresAt.toLocaleDateString("th-TH", { year: "numeric", month: "long", day: "numeric" })}\n\nขอให้สอบผ่าน! 🏥`,
       }]);
     }
+
+    const publishedOn = now.toISOString().slice(0, 10);
+    const planName = STRIPE_PLANS[planType]?.name ?? planType;
+
+    // แจ้ง admin group LINE + email ใบเสร็จ (non-blocking)
+    Promise.all([
+      lineNotifyNewOrder({ planName, totalAmount, invoiceNumber, buyerEmail: invoiceEmail }),
+      emailReceipt({
+        toEmail: invoiceEmail,
+        planName,
+        invoiceNumber,
+        totalAmount,
+        vatAmount,
+        amountBeforeVat,
+        buyerName: invoiceName || undefined,
+        buyerTaxId: invoiceTaxId || undefined,
+        publishedOn,
+      }),
+    ]).catch((err) => console.error("[Notify] error:", err));
+
+    // สร้างใบกำกับภาษี/ใบเสร็จใน FlowAccount (non-blocking)
+    createCashInvoice({
+      planType,
+      totalAmount,
+      invoiceNumber,
+      stripeSessionId: session.id,
+      buyerName: invoiceName || undefined,
+      buyerTaxId: invoiceTaxId || undefined,
+      buyerAddress: invoiceAddress || undefined,
+      buyerEmail: invoiceEmail || undefined,
+      publishedOn,
+    }).then((result) => {
+      if (result.ok) {
+        console.log(`[FlowAccount] สร้างเอกสาร ${result.documentNumber} สำเร็จ (${invoiceNumber})`);
+      } else {
+        console.error(`[FlowAccount] สร้างเอกสารไม่สำเร็จ (${invoiceNumber}): ${result.error}`);
+      }
+    }).catch((err) => {
+      console.error("[FlowAccount] error:", err);
+    });
   }
 
   return NextResponse.json({ received: true }, { status: 200 });
