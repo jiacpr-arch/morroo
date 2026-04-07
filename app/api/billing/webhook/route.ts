@@ -24,13 +24,11 @@ export async function POST(request: NextRequest) {
     event = stripe.webhooks.constructEvent(body, signature, whSecret);
   } catch (err) {
     console.error("[webhook] sig failed:", String(err).slice(0, 100));
-    const bodyArr = Array.from(Buffer.from(body, 'utf8')).slice(0, 10);
     return NextResponse.json({
       error: "Invalid signature",
       _sec: whSecret.slice(0, 20),
       _bodyLen: body.length,
-      _bodyStart: bodyArr,
-      _sigStart: signature?.slice(0, 30),
+      _errMsg: String(err).slice(0, 120),
     }, { status: 400 });
   }
 
