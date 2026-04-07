@@ -24,7 +24,14 @@ export async function POST(request: NextRequest) {
     event = stripe.webhooks.constructEvent(body, signature, whSecret);
   } catch (err) {
     console.error("[webhook] sig failed:", String(err).slice(0, 100));
-    return NextResponse.json({ error: "Invalid signature", _dbg: whSecret.slice(0, 20) }, { status: 400 });
+    const bodyArr = Array.from(Buffer.from(body, 'utf8')).slice(0, 10);
+    return NextResponse.json({
+      error: "Invalid signature",
+      _sec: whSecret.slice(0, 20),
+      _bodyLen: body.length,
+      _bodyStart: bodyArr,
+      _sigStart: signature?.slice(0, 30),
+    }, { status: 400 });
   }
 
   if (event.type === "checkout.session.completed") {
