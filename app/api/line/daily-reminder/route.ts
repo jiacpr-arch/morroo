@@ -1,27 +1,8 @@
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { broadcastLineMessages } from "@/lib/line";
 
 export const runtime = "nodejs";
-
-async function broadcast(message: string): Promise<{ ok: boolean; error?: string }> {
-  const token = process.env.LINE_CHANNEL_ACCESS_TOKEN;
-  if (!token) return { ok: false, error: "LINE_CHANNEL_ACCESS_TOKEN not set" };
-
-  const res = await fetch("https://api.line.me/v2/bot/message/broadcast", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-    body: JSON.stringify({ messages: [{ type: "text", text: message }] }),
-  });
-
-  if (!res.ok) {
-    const err = await res.text();
-    return { ok: false, error: err };
-  }
-  return { ok: true };
-}
 
 export async function POST(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -43,13 +24,24 @@ export async function POST(request: Request) {
   const diffMap: Record<string, string> = { easy: "ง่าย", medium: "ปานกลาง", hard: "ยาก" };
   const diff = diffMap[q.difficulty] ?? q.difficulty;
 
+  // Count new questions added in last 24 hours
+  const { count: newCount } = await supabase
+    .from("mcq_questions")
+    .select("id", { count: "exact", head: true })
+    .gte("created_at", new Date(Date.now() - 86400_000).toISOString())
+    .eq("status", "active");
+
+  const newLine = newCount && newCount > 0
+    ? `\n🆕 เพิ่มข้อสอบใหม่ ${newCount} ข้อวันนี้!\n`
+    : "";
+
   const message = [
     `📚 ข้อสอบ MCQ ประจำวัน`,
     ``,
     `${q.subject_icon ?? "🩺"} ${q.subject_name_th ?? ""}  |  ระดับ: ${diff}`,
     ``,
     `${preview}${q.scenario?.length > 120 ? "..." : ""}`,
-    ``,
+    `${newLine}`,
     `👉 ทำข้อนี้เลย`,
     `https://www.morroo.com/nl/practice`,
     ``,
@@ -57,7 +49,7 @@ export async function POST(request: Request) {
     `หมอรู้ — เตรียมสอบแพทย์ด้วย AI`,
   ].join("\n");
 
-  const result = await broadcast(message);
+  const result = await broadcastLineMessages([{ type: "text", text: message }]);
 
   return NextResponse.json({ ok: result.ok, error: result.error });
 }

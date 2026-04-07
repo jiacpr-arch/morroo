@@ -1,7 +1,8 @@
 import crypto from "crypto";
 
 type LineTextMessage = { type: "text"; text: string };
-type LineMessage = LineTextMessage;
+type LineFlexMessage = { type: "flex"; altText: string; contents: Record<string, unknown> };
+export type LineMessage = LineTextMessage | LineFlexMessage;
 
 export async function sendLineMessage(
   lineUserId: string,
@@ -20,6 +21,28 @@ export async function sendLineMessage(
   });
 
   return res.ok;
+}
+
+export async function broadcastLineMessages(
+  messages: LineMessage[]
+): Promise<{ ok: boolean; error?: string }> {
+  const token = process.env.LINE_CHANNEL_ACCESS_TOKEN;
+  if (!token) return { ok: false, error: "LINE_CHANNEL_ACCESS_TOKEN not set" };
+
+  const res = await fetch("https://api.line.me/v2/bot/message/broadcast", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ messages }),
+  });
+
+  if (!res.ok) {
+    const err = await res.text();
+    return { ok: false, error: err };
+  }
+  return { ok: true };
 }
 
 export function verifyLineSignature(body: string, signature: string): boolean {
