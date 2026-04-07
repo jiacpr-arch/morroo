@@ -122,7 +122,7 @@ export async function createCashInvoice(input: FlowAccountInvoiceInput): Promise
     ],
     // บันทึกรับชำระพร้อมกัน
     documentPaymentStructureType: "InlineDocumentWithPaymentReceivingCash",
-    paymentMethod: 3,                 // 3 = บัตรเครดิต/เดบิต (Stripe)
+    paymentMethod: 1,                 // 1 = เงินสด (รับชำระผ่าน Stripe แต่บันทึกเป็นเงินสด)
     paymentDate: input.publishedOn,
     collected: grandTotal,
     paymentDeductionType: 1,
