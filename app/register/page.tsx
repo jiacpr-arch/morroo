@@ -127,6 +127,17 @@ function RegisterForm() {
           </p>
         </CardHeader>
         <CardContent className="space-y-4">
+          {/* LINE Login */}
+          <a
+            href="/api/auth/line?mode=register"
+            className="inline-flex items-center justify-center gap-2 w-full rounded-md border border-input bg-[#06C755] hover:bg-[#05b34c] text-white font-medium py-2 px-4 text-sm transition-colors"
+          >
+            <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.02 2 11c0 3.39 1.9 6.35 4.75 8.07L6 22l3.29-1.72C10.15 20.73 11.06 21 12 21c5.52 0 10-4.02 10-9S17.52 2 12 2z"/>
+            </svg>
+            สมัครด้วย LINE
+          </a>
+
           {/* Google */}
           <Button
             variant="outline"
