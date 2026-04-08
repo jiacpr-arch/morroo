@@ -518,27 +518,6 @@ export default function AclsEmrDetailPage({
         </div>
       </div>
 
-      {/* Print styles */}
-      <style jsx global>{`
-        @media print {
-          body > *:not(main),
-          nav,
-          footer,
-          .print\\:hidden {
-            display: none !important;
-          }
-          main {
-            padding: 0 !important;
-          }
-          .print\\:block {
-            display: block !important;
-          }
-          @page {
-            margin: 15mm;
-            size: A4;
-          }
-        }
-      `}</style>
     </>
   );
 }
