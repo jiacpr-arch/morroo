@@ -50,8 +50,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:jiacpr@gmail.com" className="hover:text-white transition-colors">
-                  📧 jiacpr@gmail.com
+                <a href="mailto:Jiacpr@gmail.com" className="hover:text-white transition-colors">
+                  📧 Jiacpr@gmail.com
                 </a>
               </li>
               <li>📱 Line: @jiacpr</li>
@@ -59,7 +59,13 @@ export default function Footer() {
                 <a href="tel:0885588078" className="hover:text-white transition-colors">
                   📞 088-558-8078
                 </a>
+                {" / "}
+                <a href="tel:021211669" className="hover:text-white transition-colors">
+                  02-121-1669
+                </a>
               </li>
+              <li>📍 JIA TRAINER CENTER, The Street Ratchada ชั้น 3</li>
+              <li>🕐 เวลาทำการ 11.00 น. - 20.00 น.</li>
             </ul>
             <a
               href="https://www.jiacpr.com"

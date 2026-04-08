@@ -28,9 +28,12 @@ export default function TermsPage() {
               </h2>
               <div className="bg-gray-50 rounded-xl p-4 text-sm space-y-1">
                 <p><span className="font-semibold">ชื่อบริการ:</span> หมอรู้ (MorRoo)</p>
-                <p><span className="font-semibold">ดำเนินงานโดย:</span> Morroo</p>
+                <p><span className="font-semibold">ดำเนินงานโดย:</span> บจก. เจี่ยรักษา</p>
+                <p><span className="font-semibold">ที่อยู่:</span> JIA TRAINER CENTER, The Street Ratchada ชั้น 3</p>
                 <p><span className="font-semibold">เว็บไซต์:</span> morroo.com</p>
-                <p><span className="font-semibold">อีเมล:</span> jiacpr@gmail.com</p>
+                <p><span className="font-semibold">อีเมล:</span> Jiacpr@gmail.com</p>
+                <p><span className="font-semibold">โทร:</span> 088-558-8078 / 02-121-1669</p>
+                <p><span className="font-semibold">เวลาทำการ:</span> 11.00 น. - 20.00 น.</p>
                 <p><span className="font-semibold">Line:</span> @jiacpr</p>
               </div>
             </section>
@@ -228,9 +231,11 @@ export default function TermsPage() {
               </h2>
               <div className="bg-emerald-50 border border-emerald-100 rounded-xl p-4 text-sm space-y-1">
                 <p className="font-semibold text-emerald-900">หมอรู้ (MorRoo) Customer Support</p>
-                <p>📧 <a href="mailto:jiacpr@gmail.com" className="text-blue-600 hover:underline">jiacpr@gmail.com</a></p>
+                <p>📧 <a href="mailto:Jiacpr@gmail.com" className="text-blue-600 hover:underline">Jiacpr@gmail.com</a></p>
+                <p>📞 088-558-8078 / 02-121-1669</p>
                 <p>📱 Line: @jiacpr</p>
-                <p className="text-gray-500 text-xs mt-2">เวลาทำการ: วันจันทร์–ศุกร์ 09:00–18:00 น.</p>
+                <p>📍 JIA TRAINER CENTER, The Street Ratchada ชั้น 3</p>
+                <p className="text-gray-500 text-xs mt-2">เวลาทำการ: 11.00 น. - 20.00 น.</p>
               </div>
             </section>
 
