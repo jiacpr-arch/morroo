@@ -27,7 +27,7 @@ export default function PrivacyPage() {
                 ข้อมูลทั่วไป
               </h2>
               <p>
-                หมอรู้ (MorRoo) ดำเนินงานโดย <strong>Morroo</strong> ให้ความสำคัญกับการคุ้มครองข้อมูลส่วนบุคคลของท่าน
+                หมอรู้ (MorRoo) ดำเนินงานโดย <strong>บจก. เจี่ยรักษา</strong> ให้ความสำคัญกับการคุ้มครองข้อมูลส่วนบุคคลของท่าน
                 นโยบายฉบับนี้จัดทำขึ้นตาม <strong>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 (PDPA)</strong>
                 เพื่อแจ้งให้ท่านทราบถึงวิธีการที่เราเก็บรวบรวม ใช้ และเปิดเผยข้อมูลส่วนบุคคลของท่าน
               </p>
@@ -198,8 +198,9 @@ export default function PrivacyPage() {
               </h2>
               <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 text-sm space-y-1">
                 <p className="font-semibold text-blue-900">เจ้าหน้าที่คุ้มครองข้อมูลส่วนบุคคล (DPO)</p>
-                <p>หมอรู้ (MorRoo) / Morroo</p>
-                <p>📧 <a href="mailto:jiacpr@gmail.com" className="text-blue-600 hover:underline">jiacpr@gmail.com</a></p>
+                <p>หมอรู้ (MorRoo) / บจก. เจี่ยรักษา</p>
+                <p>📧 <a href="mailto:Jiacpr@gmail.com" className="text-blue-600 hover:underline">Jiacpr@gmail.com</a></p>
+                <p>📞 088-558-8078 / 02-121-1669</p>
                 <p>📱 Line: @jiacpr</p>
               </div>
             </section>
