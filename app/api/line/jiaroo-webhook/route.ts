@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import crypto from "crypto";
+import { createAdminClient } from "@/lib/supabase/admin";
 
 export const runtime = "nodejs";
 
@@ -29,20 +30,24 @@ async function pushMessage(userId: string, text: string) {
   });
 }
 
-// Store registrations in-memory + log to console (will move to DB later)
-const registrations: Record<string, string> = {};
-
+// GET — ดูรายชื่อที่ลงทะเบียนแล้ว
 export async function GET() {
-  return NextResponse.json({ registrations, count: Object.keys(registrations).length });
+  const supabase = createAdminClient();
+  const { data } = await supabase
+    .from("jiaroo_sales_line")
+    .select("*")
+    .order("registered_at", { ascending: false });
+
+  return NextResponse.json({ registrations: data ?? [], count: data?.length ?? 0 });
 }
 
+// POST — รับ webhook จาก LINE
 export async function POST(request: NextRequest) {
   const body = await request.text();
   const signature = request.headers.get("x-line-signature") ?? "";
 
-  if (!verifySignature(body, signature)) {
-    console.log("[JiaRoo Webhook] Invalid signature, skipping verification in dev");
-    // In production, uncomment: return NextResponse.json({ error: "Invalid signature" }, { status: 401 });
+  if (JIAROO_CHANNEL_SECRET && !verifySignature(body, signature)) {
+    return NextResponse.json({ error: "Invalid signature" }, { status: 401 });
   }
 
   const { events } = JSON.parse(body) as {
@@ -50,9 +55,10 @@ export async function POST(request: NextRequest) {
       type: string;
       source?: { userId?: string };
       message?: { type: string; text?: string };
-      replyToken?: string;
     }>;
   };
+
+  const supabase = createAdminClient();
 
   for (const event of events) {
     const userId = event.source?.userId;
@@ -74,13 +80,21 @@ export async function POST(request: NextRequest) {
 
       if (match) {
         const salesName = match[1].trim();
-        registrations[salesName] = userId;
+
+        // Upsert to Supabase
+        await supabase
+          .from("jiaroo_sales_line")
+          .upsert({
+            sales_name: salesName,
+            line_user_id: userId,
+            registered_at: new Date().toISOString(),
+          }, { onConflict: "sales_name" });
+
         console.log(`[JiaRoo] ✅ Registered: ${salesName} → ${userId}`);
 
         await pushMessage(userId,
           `✅ ลงทะเบียนสำเร็จ!\n\n` +
-          `ชื่อ: ${salesName}\n` +
-          `LINE ID: ${userId}\n\n` +
+          `ชื่อ: ${salesName}\n\n` +
           `ระบบจะแจ้งเตือนคุณเรื่อง:\n` +
           `📋 ใบเสนอราคาใกล้หมดอายุ\n` +
           `👤 ลูกค้ายังไม่ตัดสินใจ\n` +
