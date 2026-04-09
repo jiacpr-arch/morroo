@@ -10,15 +10,15 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Timeout guard — don't let Supabase hang the entire request
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 5000);
+  // Race against a 5s timeout so slow Supabase never blocks page loads
+  const timeout = new Promise<NextResponse>((resolve) =>
+    setTimeout(() => resolve(NextResponse.next()), 5000)
+  );
+
   try {
-    return await updateSession(request);
+    return await Promise.race([updateSession(request), timeout]);
   } catch {
     return NextResponse.next();
-  } finally {
-    clearTimeout(timeout);
   }
 }
 
