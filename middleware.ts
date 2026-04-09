@@ -9,7 +9,17 @@ export async function middleware(request: NextRequest) {
   ) {
     return NextResponse.next();
   }
-  return await updateSession(request);
+
+  // Timeout guard — don't let Supabase hang the entire request
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 5000);
+  try {
+    return await updateSession(request);
+  } catch {
+    return NextResponse.next();
+  } finally {
+    clearTimeout(timeout);
+  }
 }
 
 export const config = {
