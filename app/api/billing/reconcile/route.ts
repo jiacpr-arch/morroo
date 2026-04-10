@@ -11,14 +11,15 @@
  * email, FlowAccount) are fired inline because there is no end-user HTTP
  * response to block — cron callers only care about the summary.
  *
- * Trigger this once or twice a day from whatever cron runner the project
- * already uses (Vercel Cron, external cron, etc.) with:
+ * Authentication (either works):
+ *   1) Query string  — `?secret=$BLOG_GENERATE_SECRET`
+ *      Matches the existing cron pattern in this codebase and is easy
+ *      for external cron runners (cron-job.org, n8n, GitHub Actions).
+ *   2) Bearer header — `Authorization: Bearer $CRON_SECRET`
+ *      This is how Vercel Cron authenticates automatically — it injects
+ *      the header for you when you configure a cron in vercel.json.
  *
- *     POST /api/billing/reconcile?secret=$BLOG_GENERATE_SECRET
- *
- * Protected by the same shared secret as the other cron endpoints in
- * this codebase (see app/api/mcq/generate-daily/route.ts,
- * app/api/exams/generate-weekly/route.ts).
+ * Supports BOTH GET (Vercel Cron sends GET) and POST (external runners).
  */
 
 import { NextResponse } from "next/server";
@@ -39,15 +40,27 @@ const LOOKBACK_SECONDS = 2 * 24 * 60 * 60;
 // Cap total sessions scanned per run so a bad run can't spin forever.
 const MAX_SESSIONS_PER_RUN = 200;
 
-export async function POST(request: Request) {
+function isAuthorized(request: Request): boolean {
+  // 1) Query string secret — matches existing cron endpoints.
   const { searchParams } = new URL(request.url);
   const secret = searchParams.get("secret");
-  if (secret !== process.env.BLOG_GENERATE_SECRET) {
+  if (secret && secret === process.env.BLOG_GENERATE_SECRET) return true;
+
+  // 2) Bearer token — Vercel Cron injects this automatically.
+  const auth = request.headers.get("authorization");
+  if (auth && process.env.CRON_SECRET && auth === `Bearer ${process.env.CRON_SECRET}`) {
+    return true;
+  }
+
+  return false;
+}
+
+async function runReconciliation(request: Request) {
+  if (!isAuthorized(request)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
   const since = Math.floor(Date.now() / 1000) - LOOKBACK_SECONDS;
-  const supabase = createAdminClient();
 
   const summary = {
     scanned: 0,
@@ -59,6 +72,11 @@ export async function POST(request: Request) {
   const recoveredSessionIds: string[] = [];
 
   try {
+    // Instantiate the admin client inside the try block — if env vars
+    // are misconfigured this would otherwise bubble out as an
+    // unstructured 500 instead of a JSON error response.
+    const supabase = createAdminClient();
+
     // Page through checkout sessions created in the lookback window.
     let startingAfter: string | undefined = undefined;
     let keepGoing = true;
@@ -141,4 +159,14 @@ export async function POST(request: Request) {
       { status: 500 }
     );
   }
+}
+
+// Vercel Cron sends GET. External cron runners typically send POST.
+// Both entry points do exactly the same thing.
+export async function GET(request: Request) {
+  return runReconciliation(request);
+}
+
+export async function POST(request: Request) {
+  return runReconciliation(request);
 }
