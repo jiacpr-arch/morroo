@@ -30,15 +30,18 @@ import { sendFulfillmentNotifications } from "@/lib/billing/send-fulfillment-not
 import type Stripe from "stripe";
 
 export const runtime = "nodejs";
-// Reconciling many sessions can take a while — give Vercel headroom.
-export const maxDuration = 300;
+// Reconciling many sessions can take a while. 60s is the cap on Vercel
+// Hobby plan; Pro/Enterprise can go higher but 60s is plenty for the
+// volume we expect (see MAX_SESSIONS_PER_RUN below).
+export const maxDuration = 60;
 
 // Look back this far when listing Stripe sessions. 2 days gives us
 // plenty of slack for a daily cron without returning giant pages.
 const LOOKBACK_SECONDS = 2 * 24 * 60 * 60;
 
-// Cap total sessions scanned per run so a bad run can't spin forever.
-const MAX_SESSIONS_PER_RUN = 200;
+// Cap total sessions scanned per run so a bad run can't spin forever,
+// and so we comfortably fit inside the 60s Vercel Hobby budget.
+const MAX_SESSIONS_PER_RUN = 100;
 
 function isAuthorized(request: Request): boolean {
   // 1) Query string secret — matches existing cron endpoints.
