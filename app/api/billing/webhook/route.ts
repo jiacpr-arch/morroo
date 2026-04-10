@@ -8,8 +8,21 @@ import Stripe from "stripe";
 
 export const runtime = "nodejs";
 
-// Direct instance for webhook verification — avoids Proxy binding issues
-const stripeForWebhook = new Stripe(process.env.STRIPE_SECRET_KEY!);
+// Lazy-initialize Stripe so module load never touches
+// process.env.STRIPE_SECRET_KEY. Stripe v21 throws at construction when
+// the key is missing (see stripe.core.js: "Neither apiKey nor
+// config.authenticator provided"), and Next.js imports every route
+// module at build time to analyze it. If the Preview environment in
+// Vercel doesn't have the secret set (common when a key is rotated in
+// Production only), an eager `new Stripe(...)` at the top of this file
+// would crash the entire build before webpack even starts compiling.
+let _stripeForWebhook: Stripe | null = null;
+function getStripeForWebhook(): Stripe {
+  if (!_stripeForWebhook) {
+    _stripeForWebhook = new Stripe(process.env.STRIPE_SECRET_KEY!);
+  }
+  return _stripeForWebhook;
+}
 
 export async function POST(request: NextRequest) {
   const body = await request.text();
@@ -23,7 +36,7 @@ export async function POST(request: NextRequest) {
 
   let event: Stripe.Event;
   try {
-    event = stripeForWebhook.webhooks.constructEvent(body, signature, whSecret);
+    event = getStripeForWebhook().webhooks.constructEvent(body, signature, whSecret);
   } catch (err) {
     console.error("[webhook] sig failed:", String(err).slice(0, 100));
     return NextResponse.json({ error: "Invalid signature" }, { status: 400 });
