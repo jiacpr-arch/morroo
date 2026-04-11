@@ -8,10 +8,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
-import { useTranslation } from "@/lib/i18n/context";
 
 export default function LoginPage() {
-  const { t } = useTranslation();
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -53,9 +51,9 @@ export default function LoginPage() {
       <Card className="w-full max-w-md">
         <CardHeader className="text-center space-y-2">
           <div className="text-4xl">🩺</div>
-          <h1 className="text-2xl font-bold">{t.login.title}</h1>
+          <h1 className="text-2xl font-bold">เข้าสู่ระบบ</h1>
           <p className="text-sm text-muted-foreground">
-            {t.login.welcome}
+            ยินดีต้อนรับกลับมา
           </p>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -67,7 +65,7 @@ export default function LoginPage() {
             <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2C6.48 2 2 6.02 2 11c0 3.39 1.9 6.35 4.75 8.07L6 22l3.29-1.72C10.15 20.73 11.06 21 12 21c5.52 0 10-4.02 10-9S17.52 2 12 2z"/>
             </svg>
-            {t.login.lineLogin}
+            เข้าสู่ระบบด้วย LINE
           </a>
 
           {/* Google OAuth */}
@@ -94,7 +92,7 @@ export default function LoginPage() {
                 fill="#EA4335"
               />
             </svg>
-            {t.login.googleLogin}
+            เข้าสู่ระบบด้วย Google
           </Button>
 
           <div className="relative">
@@ -103,7 +101,7 @@ export default function LoginPage() {
             </div>
             <div className="relative flex justify-center text-xs uppercase">
               <span className="bg-card px-2 text-muted-foreground">
-                {t.login.or}
+                หรือ
               </span>
             </div>
           </div>
@@ -111,7 +109,7 @@ export default function LoginPage() {
           {/* Email login */}
           <form onSubmit={handleEmailLogin} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="email">{t.login.email}</Label>
+              <Label htmlFor="email">อีเมล</Label>
               <Input
                 id="email"
                 type="email"
@@ -122,7 +120,7 @@ export default function LoginPage() {
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="password">{t.login.password}</Label>
+              <Label htmlFor="password">รหัสผ่าน</Label>
               <Input
                 id="password"
                 type="password"
@@ -140,18 +138,18 @@ export default function LoginPage() {
               className="w-full bg-brand hover:bg-brand-light text-white"
               disabled={loading}
             >
-              {loading ? t.login.loading : t.login.submit}
+              {loading ? "กำลังเข้าสู่ระบบ..." : "เข้าสู่ระบบ"}
             </Button>
           </form>
         </CardContent>
         <CardFooter className="justify-center">
           <p className="text-sm text-muted-foreground">
-            {t.login.noAccount}{" "}
+            ยังไม่มีบัญชี?{" "}
             <Link
               href="/register"
               className="text-brand font-medium hover:underline"
             >
-              {t.login.registerLink}
+              สมัครสมาชิก
             </Link>
           </p>
         </CardFooter>

@@ -7,28 +7,25 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, User, LogOut } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import type { User as SupabaseUser } from "@supabase/supabase-js";
-import { useTranslation } from "@/lib/i18n/context";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
+
+const navLinks = [
+  { href: "/", label: "หน้าแรก" },
+  { href: "/exams", label: "MEQ" },
+  { href: "/nl", label: "MCQ" },
+  { href: "/longcase", label: "Long Case" },
+  { href: "/blog", label: "บทความ" },
+  { href: "/pricing", label: "แพ็กเกจ" },
+];
+
+const authNavLinks = [
+  { href: "/dashboard", label: "ผลการเรียน" },
+];
 
 export default function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [user, setUser] = useState<SupabaseUser | null>(null);
   const supabase = createClient();
-  const { t } = useTranslation();
-
-  const navLinks = [
-    { href: "/", label: t.nav.home },
-    { href: "/exams", label: t.nav.meq },
-    { href: "/nl", label: t.nav.mcq },
-    { href: "/longcase", label: t.nav.longCase },
-    { href: "/blog", label: t.nav.blog },
-    { href: "/pricing", label: t.nav.pricing },
-  ];
-
-  const authNavLinks = [
-    { href: "/dashboard", label: t.nav.dashboard },
-  ];
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data }: { data: { user: SupabaseUser | null } }) => setUser(data.user));
@@ -52,7 +49,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-bold text-lg">
           <span className="text-2xl">🩺</span>
-          <span className="text-brand-dark">{t.nav.brand}</span>
+          <span className="text-brand-dark">หมอรู้</span>
         </Link>
 
         {/* Desktop nav */}
@@ -92,7 +89,7 @@ export default function Navbar() {
               <Link href="/profile">
                 <Button variant="ghost" size="sm" className="gap-2">
                   <User className="h-4 w-4" />
-                  {t.nav.profile}
+                  โปรไฟล์
                 </Button>
               </Link>
               <Button
@@ -102,14 +99,14 @@ export default function Navbar() {
                 className="gap-2"
               >
                 <LogOut className="h-4 w-4" />
-                {t.nav.logout}
+                ออกจากระบบ
               </Button>
             </>
           ) : (
             <>
               <Link href="/login">
                 <Button variant="ghost" size="sm">
-                  {t.nav.login}
+                  เข้าสู่ระบบ
                 </Button>
               </Link>
               <Link href="/register">
@@ -117,12 +114,11 @@ export default function Navbar() {
                   size="sm"
                   className="bg-brand hover:bg-brand-light text-white"
                 >
-                  {t.nav.register}
+                  สมัครสมาชิก
                 </Button>
               </Link>
             </>
           )}
-          <LanguageSwitcher />
         </div>
 
         {/* Mobile menu button */}
@@ -174,13 +170,13 @@ export default function Navbar() {
                     onClick={() => setMobileOpen(false)}
                     className="block rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted"
                   >
-                    {t.nav.profile}
+                    โปรไฟล์
                   </Link>
                   <button
                     onClick={handleLogout}
                     className="block w-full text-left rounded-md px-3 py-2 text-sm font-medium text-destructive hover:bg-muted"
                   >
-                    {t.nav.logout}
+                    ออกจากระบบ
                   </button>
                 </>
               ) : (
@@ -190,20 +186,17 @@ export default function Navbar() {
                     onClick={() => setMobileOpen(false)}
                     className="block rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted"
                   >
-                    {t.nav.login}
+                    เข้าสู่ระบบ
                   </Link>
                   <Link
                     href="/register"
                     onClick={() => setMobileOpen(false)}
                     className="block rounded-md bg-brand px-3 py-2 text-center text-sm font-medium text-white"
                   >
-                    {t.nav.register}
+                    สมัครสมาชิก
                   </Link>
                 </>
               )}
-            </div>
-            <div className="border-t pt-3 mt-3 px-3">
-              <LanguageSwitcher />
             </div>
           </div>
         </div>

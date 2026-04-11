@@ -1,10 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useTranslation } from "@/lib/i18n/context";
 
 export default function DailyCountdown() {
-  const { t: _t } = useTranslation();
   const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
@@ -29,9 +27,9 @@ export default function DailyCountdown() {
   return (
     <div className="flex items-center gap-2">
       {[
-        { value: timeLeft.hours, label: _t.time.hours },
-        { value: timeLeft.minutes, label: _t.time.minutes },
-        { value: timeLeft.seconds, label: _t.time.seconds },
+        { value: timeLeft.hours, label: "ชม." },
+        { value: timeLeft.minutes, label: "นาที" },
+        { value: timeLeft.seconds, label: "วินาที" },
       ].map((item, i) => (
         <div key={i} className="flex items-center gap-1">
           <span className="bg-brand-dark text-white rounded-md px-2 py-1 font-mono text-lg font-bold tabular-nums min-w-[2.5rem] text-center">

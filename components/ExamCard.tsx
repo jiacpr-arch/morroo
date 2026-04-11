@@ -6,7 +6,6 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Clock, ArrowRight, Hourglass } from "lucide-react";
 import type { Exam } from "@/lib/types";
 import ComingSoonCountdown from "@/components/ComingSoonCountdown";
-import { useTranslation } from "@/lib/i18n/context";
 
 const difficultyColors = {
   easy: "bg-green-100 text-green-700",
@@ -14,9 +13,13 @@ const difficultyColors = {
   hard: "bg-red-100 text-red-700",
 };
 
+const difficultyLabels = {
+  easy: "ง่าย",
+  medium: "ปานกลาง",
+  hard: "ยาก",
+};
+
 export default function ExamCard({ exam, partCount = 0 }: { exam: Exam; partCount?: number }) {
-  const { t } = useTranslation();
-  const difficultyLabels = { easy: t.dashboard.easy, medium: t.dashboard.medium, hard: t.dashboard.hard };
   // Coming soon if publish_date is in the future OR no parts yet
   const publishDate = exam.publish_date ? new Date(exam.publish_date + "T00:00:00") : null;
   const now = new Date();
@@ -35,7 +38,7 @@ export default function ExamCard({ exam, partCount = 0 }: { exam: Exam; partCoun
               {difficultyLabels[exam.difficulty]}
             </Badge>
             <Badge className="bg-purple-100 text-purple-700 text-xs gap-1">
-              <Hourglass className="h-3 w-3" /> Coming soon
+              <Hourglass className="h-3 w-3" /> เร็วๆ นี้
             </Badge>
           </div>
         </CardHeader>
@@ -63,7 +66,7 @@ export default function ExamCard({ exam, partCount = 0 }: { exam: Exam; partCoun
               {difficultyLabels[exam.difficulty]}
             </Badge>
             {exam.is_free && (
-              <Badge className="bg-brand/10 text-brand text-xs">{t.home.free}</Badge>
+              <Badge className="bg-brand/10 text-brand text-xs">ฟรี</Badge>
             )}
           </div>
         </CardHeader>
@@ -74,10 +77,10 @@ export default function ExamCard({ exam, partCount = 0 }: { exam: Exam; partCoun
         </CardContent>
         <CardFooter className="pt-0 text-sm text-muted-foreground flex items-center justify-between">
           <span className="flex items-center gap-1">
-            <Clock className="h-3.5 w-3.5" />{partCount} {t.home.parts}
+            <Clock className="h-3.5 w-3.5" />{partCount} ตอน
           </span>
           <span className="flex items-center gap-1 text-brand opacity-0 group-hover:opacity-100 transition-opacity">
-            {t.home.startExam} <ArrowRight className="h-3.5 w-3.5" />
+            เริ่มทำข้อสอบ <ArrowRight className="h-3.5 w-3.5" />
           </span>
         </CardFooter>
       </Card>
