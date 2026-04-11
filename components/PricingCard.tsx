@@ -1,8 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Check } from "lucide-react";
+import { useTranslation } from "@/lib/i18n/context";
 
 interface PricingCardProps {
   name: string;
@@ -25,6 +28,7 @@ export default function PricingCard({
   popular,
   type,
 }: PricingCardProps) {
+  const { t } = useTranslation();
   const href = type === "free" ? "/register" : `/payment/${type}`;
   return (
     <Card
@@ -34,7 +38,7 @@ export default function PricingCard({
     >
       {popular && (
         <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand text-white px-4 z-10">
-          แนะนำ
+          {t.pricing.recommended}
         </Badge>
       )}
       <CardHeader className="text-center pb-2">
@@ -44,7 +48,7 @@ export default function PricingCard({
       <CardContent className="text-center flex-1">
         <div className="my-4">
           <span className="text-4xl font-bold">
-            {price === 0 ? "ฟรี" : `฿${price.toLocaleString()}`}
+            {price === 0 ? t.pricing.freeLabel : `฿${price.toLocaleString()}`}
           </span>
           {period && (
             <span className="text-muted-foreground text-sm"> {period}</span>

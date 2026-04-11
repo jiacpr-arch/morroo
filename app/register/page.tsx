@@ -8,8 +8,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
+import { useTranslation } from "@/lib/i18n/context";
 
 function RegisterForm() {
+  const { t } = useTranslation();
   const router = useRouter();
   const searchParams = useSearchParams();
   const [name, setName] = useState("");
@@ -31,7 +33,7 @@ function RegisterForm() {
     setLoading(true);
 
     if (password.length < 6) {
-      setError("รหัสผ่านต้องมีอย่างน้อย 6 ตัวอักษร");
+      setError(t.register.passwordError);
       setLoading(false);
       return;
     }
@@ -97,18 +99,18 @@ function RegisterForm() {
         <Card className="w-full max-w-md text-center">
           <CardHeader>
             <div className="text-5xl mb-2">✉️</div>
-            <h1 className="text-2xl font-bold">ตรวจสอบอีเมลของคุณ</h1>
+            <h1 className="text-2xl font-bold">{t.register.checkEmail}</h1>
           </CardHeader>
           <CardContent>
             <p className="text-muted-foreground">
-              เราส่งลิงก์ยืนยันไปที่ <strong>{email}</strong>
+              {t.register.emailSent} <strong>{email}</strong>
               <br />
-              กรุณาตรวจสอบอีเมลเพื่อยืนยันการสมัคร
+              {t.register.pleaseVerify}
             </p>
           </CardContent>
           <CardFooter className="justify-center">
             <Link href="/login">
-              <Button variant="outline">ไปหน้าเข้าสู่ระบบ</Button>
+              <Button variant="outline">{t.register.goToLogin}</Button>
             </Link>
           </CardFooter>
         </Card>
@@ -121,9 +123,9 @@ function RegisterForm() {
       <Card className="w-full max-w-md">
         <CardHeader className="text-center space-y-2">
           <div className="text-4xl">🩺</div>
-          <h1 className="text-2xl font-bold">สมัครสมาชิก</h1>
+          <h1 className="text-2xl font-bold">{t.register.title}</h1>
           <p className="text-sm text-muted-foreground">
-            เริ่มต้นเตรียมสอบแพทย์กับหมอรู้
+            {t.register.subtitle}
           </p>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -135,7 +137,7 @@ function RegisterForm() {
             <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2C6.48 2 2 6.02 2 11c0 3.39 1.9 6.35 4.75 8.07L6 22l3.29-1.72C10.15 20.73 11.06 21 12 21c5.52 0 10-4.02 10-9S17.52 2 12 2z"/>
             </svg>
-            สมัครด้วย LINE
+            {t.register.lineRegister}
           </a>
 
           {/* Google */}
@@ -150,7 +152,7 @@ function RegisterForm() {
               <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05" />
               <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
             </svg>
-            สมัครด้วย Google
+            {t.register.googleRegister}
           </Button>
 
           <div className="relative">
@@ -158,25 +160,25 @@ function RegisterForm() {
               <div className="w-full border-t" />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-card px-2 text-muted-foreground">หรือ</span>
+              <span className="bg-card px-2 text-muted-foreground">{t.register.or}</span>
             </div>
           </div>
 
           {/* Form */}
           <form onSubmit={handleRegister} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="name">ชื่อ-นามสกุล</Label>
+              <Label htmlFor="name">{t.register.name}</Label>
               <Input
                 id="name"
                 type="text"
-                placeholder="นพ.สมชาย ใจดี"
+                placeholder={t.register.namePlaceholder}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="email">อีเมล</Label>
+              <Label htmlFor="email">{t.register.email}</Label>
               <Input
                 id="email"
                 type="email"
@@ -187,11 +189,11 @@ function RegisterForm() {
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="password">รหัสผ่าน</Label>
+              <Label htmlFor="password">{t.register.password}</Label>
               <Input
                 id="password"
                 type="password"
-                placeholder="อย่างน้อย 6 ตัวอักษร"
+                placeholder={t.register.passwordPlaceholder}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
@@ -200,13 +202,13 @@ function RegisterForm() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="refCode" className="flex items-center gap-1">
-                รหัสผู้แนะนำ
-                <span className="text-xs text-muted-foreground font-normal">(ถ้ามี)</span>
+                {t.register.refCode}
+                <span className="text-xs text-muted-foreground font-normal">{t.register.refOptional}</span>
               </Label>
               <Input
                 id="refCode"
                 type="text"
-                placeholder="เช่น MR-ABC123"
+                placeholder={t.register.refPlaceholder}
                 value={refCode}
                 onChange={(e) => setRefCode(e.target.value.toUpperCase())}
                 className="font-mono tracking-wider"
@@ -218,15 +220,15 @@ function RegisterForm() {
               className="w-full bg-brand hover:bg-brand-light text-white"
               disabled={loading}
             >
-              {loading ? "กำลังสมัคร..." : "สมัครสมาชิก"}
+              {loading ? t.register.loading : t.register.submit}
             </Button>
           </form>
         </CardContent>
         <CardFooter className="justify-center">
           <p className="text-sm text-muted-foreground">
-            มีบัญชีอยู่แล้ว?{" "}
+            {t.register.hasAccount}{" "}
             <Link href="/login" className="text-brand font-medium hover:underline">
-              เข้าสู่ระบบ
+              {t.register.loginLink}
             </Link>
           </p>
         </CardFooter>

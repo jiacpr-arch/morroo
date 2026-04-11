@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Sparkles, Clock, ArrowRight, BookOpen, Stethoscope, FileText } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "@/lib/i18n/context";
 
 // Schedule: MCQ daily 02:00 UTC (09:00 ICT), MEQ Mon+Thu 03:00 UTC (10:00 ICT), Long Case Sun 04:00 UTC (11:00 ICT)
 interface ScheduleItem {
@@ -80,41 +81,43 @@ function formatTimeLeft(diff: number) {
   };
 }
 
-const SCHEDULES: ScheduleItem[] = [
-  {
-    type: "mcq",
-    label: "MCQ ใหม่",
-    icon: <FileText className="h-4 w-4" />,
-    frequency: "30 ข้อ/วัน",
-    color: "text-blue-700",
-    bgColor: "bg-blue-50",
-    borderColor: "border-blue-200",
-    href: "/nl",
-    getNextTime: getNextMcqTime,
-  },
-  {
-    type: "meq",
-    label: "MEQ ใหม่",
-    icon: <BookOpen className="h-4 w-4" />,
-    frequency: "2 ข้อ/สัปดาห์",
-    color: "text-purple-700",
-    bgColor: "bg-purple-50",
-    borderColor: "border-purple-200",
-    href: "/exams",
-    getNextTime: getNextMeqTime,
-  },
-  {
-    type: "longcase",
-    label: "Long Case ใหม่",
-    icon: <Stethoscope className="h-4 w-4" />,
-    frequency: "1 ข้อ/สัปดาห์",
-    color: "text-amber-700",
-    bgColor: "bg-amber-50",
-    borderColor: "border-amber-200",
-    href: "/longcase",
-    getNextTime: getNextLongCaseTime,
-  },
-];
+function getSchedules(t: ReturnType<typeof useTranslation>["t"]): ScheduleItem[] {
+  return [
+    {
+      type: "mcq",
+      label: t.countdown.mcqNew,
+      icon: <FileText className="h-4 w-4" />,
+      frequency: t.countdown.mcqFreq,
+      color: "text-blue-700",
+      bgColor: "bg-blue-50",
+      borderColor: "border-blue-200",
+      href: "/nl",
+      getNextTime: getNextMcqTime,
+    },
+    {
+      type: "meq",
+      label: t.countdown.meqNew,
+      icon: <BookOpen className="h-4 w-4" />,
+      frequency: t.countdown.meqFreq,
+      color: "text-purple-700",
+      bgColor: "bg-purple-50",
+      borderColor: "border-purple-200",
+      href: "/exams",
+      getNextTime: getNextMeqTime,
+    },
+    {
+      type: "longcase",
+      label: t.countdown.longCaseNew,
+      icon: <Stethoscope className="h-4 w-4" />,
+      frequency: t.countdown.longCaseFreq,
+      color: "text-amber-700",
+      bgColor: "bg-amber-50",
+      borderColor: "border-amber-200",
+      href: "/longcase",
+      getNextTime: getNextLongCaseTime,
+    },
+  ];
+}
 
 function CountdownUnit({ value, label, color }: { value: number; label: string; color: string }) {
   const bgMap: Record<string, string> = {
@@ -133,6 +136,8 @@ function CountdownUnit({ value, label, color }: { value: number; label: string; 
 }
 
 export default function AllExamsCountdown() {
+  const { t } = useTranslation();
+  const SCHEDULES = getSchedules(t);
   const [timers, setTimers] = useState<Record<string, ReturnType<typeof formatTimeLeft>>>({});
   const [mounted, setMounted] = useState(false);
 
@@ -159,15 +164,15 @@ export default function AllExamsCountdown() {
         <div className="flex items-center gap-2 mb-4">
           <Sparkles className="h-4 w-4 text-brand" />
           <span className="text-sm font-bold text-gray-900">
-            ข้อสอบใหม่เข้าระบบอัตโนมัติ
+            {t.countdown.title}
           </span>
           <Badge className="bg-green-100 text-green-700 text-[10px]">LIVE</Badge>
         </div>
 
         <div className="space-y-3">
           {SCHEDULES.map((s) => {
-            const t = timers[s.type];
-            if (!t) return null;
+            const timer = timers[s.type];
+            if (!timer) return null;
 
             return (
               <div
@@ -185,17 +190,17 @@ export default function AllExamsCountdown() {
                 <div className="flex items-center gap-2 shrink-0">
                   <div className="flex items-center gap-1">
                     <Clock className="h-3 w-3 text-gray-400" />
-                    {t.days > 0 && (
+                    {timer.days > 0 && (
                       <>
-                        <CountdownUnit value={t.days} label="ว." color={s.color} />
+                        <CountdownUnit value={timer.days} label={t.time.daysShort} color={s.color} />
                         <span className="text-gray-300 text-xs">:</span>
                       </>
                     )}
-                    <CountdownUnit value={t.hours} label="ชม." color={s.color} />
+                    <CountdownUnit value={timer.hours} label={t.time.hoursShort} color={s.color} />
                     <span className="text-gray-300 text-xs">:</span>
-                    <CountdownUnit value={t.minutes} label="น." color={s.color} />
+                    <CountdownUnit value={timer.minutes} label={t.time.minutesShort} color={s.color} />
                     <span className="text-gray-300 text-xs">:</span>
-                    <CountdownUnit value={t.seconds} label="วิ." color={s.color} />
+                    <CountdownUnit value={timer.seconds} label={t.time.secondsShort} color={s.color} />
                   </div>
                   <Link href={s.href}>
                     <Button size="sm" variant="ghost" className={`h-7 w-7 p-0 ${s.color}`}>

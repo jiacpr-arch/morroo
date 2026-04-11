@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import { AccuracyTrendChart } from "@/components/AccuracyTrendChart";
 import AllExamsCountdown from "@/components/AllExamsCountdown";
+import { useTranslation } from "@/lib/i18n/context";
 
 interface SubjectStat {
   subject_id: string;
@@ -77,6 +78,7 @@ interface SubjectComparison {
 
 export default function DashboardPage() {
   const router = useRouter();
+  const { t } = useTranslation();
   const [loading, setLoading] = useState(true);
   const [subjectStats, setSubjectStats] = useState<SubjectStat[]>([]);
   const [recentSessions, setRecentSessions] = useState<RecentSession[]>([]);
@@ -227,7 +229,7 @@ export default function DashboardPage() {
                   <div className="flex items-center gap-2 mb-2">
                     <Sparkles className="h-4 w-4 text-brand shrink-0" />
                     <span className="text-xs font-semibold text-brand uppercase tracking-wide">
-                      โจทย์ประจำวันนี้
+                      {t.dashboard.dailyQuestion}
                     </span>
                     <span className="text-sm">{dailyMcq.subject_icon}</span>
                     <span className="text-xs text-muted-foreground">{dailyMcq.subject_name_th}</span>
@@ -240,7 +242,7 @@ export default function DashboardPage() {
                 </div>
                 <Link href={`/nl/practice?subject=${dailyMcq.subject_id}`} className="shrink-0">
                   <Button size="sm" className="bg-brand hover:bg-brand-light text-white gap-1.5 whitespace-nowrap">
-                    ทำเลย <ArrowRight className="h-3.5 w-3.5" />
+                    {t.dashboard.doIt} <ArrowRight className="h-3.5 w-3.5" />
                   </Button>
                 </Link>
               </div>
@@ -249,13 +251,13 @@ export default function DashboardPage() {
         )}
         <div className="text-center">
           <BarChart3 className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-          <h1 className="text-2xl font-bold mb-2">ยังไม่มีข้อมูลการเรียน</h1>
+          <h1 className="text-2xl font-bold mb-2">{t.dashboard.noData}</h1>
           <p className="text-muted-foreground mb-6">
-            เริ่มทำข้อสอบเพื่อดูสถิติและจุดอ่อนของคุณ
+            {t.dashboard.noDataDesc}
           </p>
           <Link href="/nl">
             <Button className="bg-brand hover:bg-brand-light text-white">
-              เริ่มทำข้อสอบ
+              {t.dashboard.startExam}
             </Button>
           </Link>
         </div>
@@ -266,9 +268,9 @@ export default function DashboardPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
       <div className="mb-6">
-        <h1 className="text-2xl font-bold">ผลการเรียน</h1>
+        <h1 className="text-2xl font-bold">{t.dashboard.title}</h1>
         <p className="text-muted-foreground mt-1">
-          ติดตามความก้าวหน้าและจุดที่ต้องปรับปรุง
+          {t.dashboard.subtitle}
         </p>
       </div>
 
@@ -286,7 +288,7 @@ export default function DashboardPage() {
                 <div className="flex items-center gap-2 mb-2">
                   <Sparkles className="h-4 w-4 text-brand shrink-0" />
                   <span className="text-xs font-semibold text-brand uppercase tracking-wide">
-                    โจทย์ประจำวันนี้
+                    {t.dashboard.dailyQuestion}
                   </span>
                   <span className="text-sm">{dailyMcq.subject_icon}</span>
                   <span className="text-xs text-muted-foreground">{dailyMcq.subject_name_th}</span>
@@ -297,7 +299,7 @@ export default function DashboardPage() {
                       ? "bg-red-100 text-red-700"
                       : "bg-yellow-100 text-yellow-700"
                   }`}>
-                    {dailyMcq.difficulty === "easy" ? "ง่าย" : dailyMcq.difficulty === "hard" ? "ยาก" : "ปานกลาง"}
+                    {dailyMcq.difficulty === "easy" ? t.dashboard.easy : dailyMcq.difficulty === "hard" ? t.dashboard.hard : t.dashboard.medium}
                   </span>
                 </div>
                 <p className="text-sm text-gray-700 line-clamp-2 leading-relaxed">
@@ -314,7 +316,7 @@ export default function DashboardPage() {
                   size="sm"
                   className="bg-brand hover:bg-brand-light text-white gap-1.5 whitespace-nowrap"
                 >
-                  ทำเลย <ArrowRight className="h-3.5 w-3.5" />
+                  {t.dashboard.doIt} <ArrowRight className="h-3.5 w-3.5" />
                 </Button>
               </Link>
             </div>
@@ -333,11 +335,11 @@ export default function DashboardPage() {
                 <div className="flex items-center gap-2">
                   <span className="text-lg">{done ? "✅" : "🎯"}</span>
                   <span className="font-semibold text-sm">
-                    {done ? "ครบเป้าวันนี้แล้ว!" : "เป้าหมายวันนี้"}
+                    {done ? t.dashboard.goalDone : t.dashboard.goalTitle}
                   </span>
                 </div>
                 <span className="text-sm font-medium text-muted-foreground">
-                  {todayCount} / {dailyGoal} ข้อ
+                  {todayCount} / {dailyGoal} {t.dashboard.goalQuestions}
                 </span>
               </div>
               <div className="w-full bg-muted rounded-full h-3 overflow-hidden">
@@ -348,9 +350,9 @@ export default function DashboardPage() {
               </div>
               {!done && (
                 <p className="text-xs text-muted-foreground mt-2">
-                  อีก {dailyGoal - todayCount} ข้อจะครบเป้า —{" "}
+                  {t.dashboard.goalRemaining.replace("{n}", String(dailyGoal - todayCount))}{" "}
                   <Link href="/nl" className="text-brand hover:underline font-medium">
-                    ทำต่อเลย
+                    {t.dashboard.goalContinue}
                   </Link>
                 </p>
               )}
@@ -369,10 +371,10 @@ export default function DashboardPage() {
         >
           <span className="text-2xl shrink-0">💬</span>
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-semibold text-green-800">รับข้อสอบทุกเช้าผ่าน LINE</p>
-            <p className="text-xs text-green-700">กด Add Friend LINE OA @508srmcr แล้วรับโจทย์ประจำวันทุก 7 โมงเช้า</p>
+            <p className="text-sm font-semibold text-green-800">{t.dashboard.lineAdd}</p>
+            <p className="text-xs text-green-700">{t.dashboard.lineDesc}</p>
           </div>
-          <span className="text-xs font-semibold text-[#06C755] shrink-0 whitespace-nowrap">เพิ่มเพื่อน →</span>
+          <span className="text-xs font-semibold text-[#06C755] shrink-0 whitespace-nowrap">{t.dashboard.lineAddFriend}</span>
         </a>
       )}
 
@@ -386,7 +388,7 @@ export default function DashboardPage() {
               </div>
               <div>
                 <p className="text-2xl font-bold">{totalAttempts}</p>
-                <p className="text-xs text-muted-foreground">ข้อที่ทำแล้ว</p>
+                <p className="text-xs text-muted-foreground">{t.dashboard.totalAttempts}</p>
               </div>
             </div>
           </CardContent>
@@ -399,7 +401,7 @@ export default function DashboardPage() {
               </div>
               <div>
                 <p className="text-2xl font-bold">{overallAccuracy}%</p>
-                <p className="text-xs text-muted-foreground">ถูกต้องรวม</p>
+                <p className="text-xs text-muted-foreground">{t.dashboard.accuracy}</p>
               </div>
             </div>
           </CardContent>
@@ -412,7 +414,7 @@ export default function DashboardPage() {
               </div>
               <div>
                 <p className="text-2xl font-bold">{streak}</p>
-                <p className="text-xs text-muted-foreground">วันติดต่อกัน</p>
+                <p className="text-xs text-muted-foreground">{t.dashboard.streak}</p>
               </div>
             </div>
           </CardContent>
@@ -427,7 +429,7 @@ export default function DashboardPage() {
                 <p className="text-lg font-bold truncate">
                   {bestSubject?.subject_icon} {bestSubject?.accuracy ?? 0}%
                 </p>
-                <p className="text-xs text-muted-foreground">เก่งที่สุด</p>
+                <p className="text-xs text-muted-foreground">{t.dashboard.best}</p>
               </div>
             </div>
           </CardContent>
@@ -440,7 +442,7 @@ export default function DashboardPage() {
               </div>
               <div>
                 <p className="text-2xl font-bold">{avgTime}s</p>
-                <p className="text-xs text-muted-foreground">เวลาเฉลี่ย/ข้อ</p>
+                <p className="text-xs text-muted-foreground">{t.dashboard.avgTime}</p>
               </div>
             </div>
           </CardContent>
@@ -453,7 +455,7 @@ export default function DashboardPage() {
           <CardHeader className="pb-3">
             <CardTitle className="text-base flex items-center gap-2 text-red-700">
               <AlertTriangle className="h-5 w-5" />
-              ควรทบทวน — สาขาที่ถูกต้อง &lt; 60%
+              {t.dashboard.weakTopics}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -470,13 +472,13 @@ export default function DashboardPage() {
                         {topic.subject_name_th}
                       </p>
                       <p className="text-xs text-red-600">
-                        {topic.accuracy}% ({topic.wrong_count} ข้อผิด)
+                        {topic.accuracy}% ({topic.wrong_count} {t.dashboard.wrongCount})
                       </p>
                     </div>
                   </div>
                   <Link href={`/nl/practice?subject=${topic.subject_id}`}>
                     <Button size="sm" variant="outline" className="text-xs gap-1">
-                      ฝึกเพิ่ม <ArrowRight className="h-3 w-3" />
+                      {t.dashboard.practiceMore} <ArrowRight className="h-3 w-3" />
                     </Button>
                   </Link>
                 </div>
@@ -492,7 +494,7 @@ export default function DashboardPage() {
           <CardHeader>
             <CardTitle className="text-base flex items-center gap-2">
               <Users className="h-5 w-5 text-muted-foreground" />
-              เปรียบเทียบกับ avg ผู้ใช้ทั้งหมด
+              {t.dashboard.vsGlobal}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -536,7 +538,7 @@ export default function DashboardPage() {
         <Card className="mb-8">
           <CardHeader>
             <CardTitle className="text-base">
-              แนวโน้มความถูกต้องรายสัปดาห์
+              {t.dashboard.trendTitle}
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -548,7 +550,7 @@ export default function DashboardPage() {
       {/* Subject Performance Table */}
       <Card className="mb-8">
         <CardHeader>
-          <CardTitle className="text-base">สถิติแยกตามสาขา</CardTitle>
+          <CardTitle className="text-base">{t.dashboard.subjectStats}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
@@ -610,7 +612,7 @@ export default function DashboardPage() {
       {recentSessions.length > 0 && (
         <Card>
           <CardHeader>
-            <CardTitle className="text-base">เซสชันล่าสุด</CardTitle>
+            <CardTitle className="text-base">{t.dashboard.recentSessions}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-2">
@@ -625,7 +627,7 @@ export default function DashboardPage() {
                     </span>
                     <div>
                       <p className="text-sm font-medium">
-                        {session.subject_name_th || "หลายสาขา"}
+                        {session.subject_name_th || t.dashboard.multiSubject}
                       </p>
                       <p className="text-xs text-muted-foreground">
                         {new Date(session.created_at).toLocaleDateString(
