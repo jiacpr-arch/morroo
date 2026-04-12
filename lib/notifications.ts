@@ -2,6 +2,7 @@
  * Notification service สำหรับ morroo.com
  * - LINE: แจ้ง admin group เมื่อมีออเดอร์ใหม่
  * - Email: ส่งใบเสร็จให้ลูกค้าอัตโนมัติ
+ * - Email: แจ้ง admin เมื่อมีออเดอร์ใหม่ (backup ของ LINE)
  */
 
 import { Resend } from "resend";
@@ -10,6 +11,7 @@ const LINE_TOKEN  = process.env.LINE_CHANNEL_TOKEN ?? "";
 const LINE_TARGET = process.env.LINE_TARGET_ID     ?? "";
 const RESEND_KEY  = process.env.RESEND_API_KEY     ?? "";
 const FROM_EMAIL  = process.env.MAIL_FROM          ?? "noreply@morroo.com";
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL        ?? "";
 
 // ─── LINE ────────────────────────────────────────────────────────────────────
 
@@ -43,7 +45,62 @@ export async function lineNotifyNewOrder(params: {
   }
 }
 
-// ─── Email ───────────────────────────────────────────────────────────────────
+// ─── Email Admin ─────────────────────────────────────────────────────────────
+
+export async function emailNotifyAdmin(params: {
+  planName: string;
+  totalAmount: number;
+  invoiceNumber: string;
+  buyerEmail: string;
+  buyerName?: string;
+  publishedOn: string;
+}): Promise<void> {
+  if (!RESEND_KEY || !ADMIN_EMAIL) return;
+
+  const resend = new Resend(RESEND_KEY);
+  const fmt = (n: number) => n.toLocaleString("th-TH", { minimumFractionDigits: 2 });
+
+  try {
+    await resend.emails.send({
+      from: `MorRoo <${FROM_EMAIL}>`,
+      to: ADMIN_EMAIL.split(",").map((e) => e.trim()),
+      subject: `🛒 ออเดอร์ใหม่ — ${params.planName} ฿${fmt(params.totalAmount)}`,
+      html: `<!DOCTYPE html>
+<html lang="th">
+<head><meta charset="utf-8"></head>
+<body style="margin:0;padding:0;background:#f4f4f4;font-family:sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0">
+    <tr><td align="center" style="padding:32px 16px;">
+      <table width="480" cellpadding="0" cellspacing="0" style="background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.1);">
+        <tr><td style="background:#0ea5e9;padding:20px 24px;">
+          <p style="margin:0;font-size:18px;font-weight:700;color:#fff;">🛒 ออเดอร์ใหม่ — MorRoo</p>
+        </td></tr>
+        <tr><td style="padding:24px;">
+          <table width="100%" cellpadding="0" cellspacing="0" style="font-size:14px;color:#374151;">
+            <tr><td style="padding:6px 0;color:#6b7280;">แพ็กเกจ</td><td style="padding:6px 0;font-weight:600;">${params.planName}</td></tr>
+            <tr><td style="padding:6px 0;color:#6b7280;">จำนวนเงิน</td><td style="padding:6px 0;font-weight:600;">฿${fmt(params.totalAmount)}</td></tr>
+            <tr><td style="padding:6px 0;color:#6b7280;">เลขที่ใบเสร็จ</td><td style="padding:6px 0;">${params.invoiceNumber}</td></tr>
+            <tr><td style="padding:6px 0;color:#6b7280;">อีเมลลูกค้า</td><td style="padding:6px 0;">${params.buyerEmail}</td></tr>
+            ${params.buyerName ? `<tr><td style="padding:6px 0;color:#6b7280;">ชื่อลูกค้า</td><td style="padding:6px 0;">${params.buyerName}</td></tr>` : ""}
+            <tr><td style="padding:6px 0;color:#6b7280;">วันที่</td><td style="padding:6px 0;">${params.publishedOn}</td></tr>
+          </table>
+          <p style="margin:20px 0 0;font-size:12px;color:#9ca3af;">
+            <a href="https://dashboard.stripe.com" style="color:#0ea5e9;">Stripe Dashboard</a> ·
+            <a href="https://www.morroo.com/admin/users" style="color:#0ea5e9;">Admin Users</a>
+          </p>
+        </td></tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>`,
+    });
+  } catch (err) {
+    console.error("[Email Admin] send error:", err);
+  }
+}
+
+// ─── Email Receipt ──────────────────────────────────────────────────────────
 
 function receiptHtml(params: {
   planName: string;
