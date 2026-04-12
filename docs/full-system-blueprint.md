@@ -301,6 +301,8 @@ User B จ่ายเงิน
 | Expiry warning | ทุกวัน 09:00 ICT | LINE แจ้งเตือนหมดอายุ |
 | Weekly summary | อาทิตย์ 10:00 ICT | LINE สรุปผลสัปดาห์ |
 | Payment reconcile | ทุกวัน 10:00 ICT | กู้คืน payment ที่ตกหล่น |
+| Blog generate | อังคาร+ศุกร์ 02:00 ICT | AI สร้างบทความ + รูปปก + โพสต์ FB |
+| Abandoned checkout | ทุกวัน | Scan expired Stripe sessions, LINE แจ้ง |
 
 ---
 
@@ -460,7 +462,87 @@ CREATE TABLE long_cases (
 
 ---
 
-## 7. ENVIRONMENT VARIABLES
+## 7. AUTO BLOG + FACEBOOK AUTO-POST
+
+### 7.1 AI Blog Generator (Cron 2x/week)
+
+```
+Cron อังคาร + ศุกร์ 02:00 ICT (19:00 UTC วันก่อน)
+POST /api/blog/generate?secret=$BLOG_GENERATE_SECRET
+
+Flow:
+1. Fetch existing titles (avoid duplicates)
+2. Claude Sonnet picks topic + writes article as JSON
+   { title, slug, description, image_prompt, content (HTML) }
+3. Together AI FLUX.1-schnell-Free generates cover image (1200×630)
+4. Upload image to Supabase Storage (public-assets/blog-covers/)
+5. Save to blog_posts table
+6. after() → postToFacebook()
+```
+
+**Files:**
+- `app/api/blog/generate/route.ts` — Full auto blog pipeline
+- `lib/blog.ts` — getBlogPosts(), getBlogPost(), getAllSlugs()
+- `lib/facebook.ts` — postToFacebook() with auto-refresh token
+
+**AI Prompt Pattern:**
+```
+คุณเป็น [ผู้เชี่ยวชาญ] สำหรับเว็บ [ชื่อเว็บ]
+หมวดหมู่: [random category]
+บทความที่เขียนไปแล้ว (ห้ามซ้ำ): [list]
+สร้างบทความ 1 บทความ ตอบเป็น JSON
+{ title, slug, description, image_prompt, content (HTML 600-900 คำ) }
+```
+
+### 7.2 Facebook Auto-Post (with Token Auto-Refresh)
+
+```
+postToFacebook() flow:
+1. Get latest User Token (Supabase app_settings → fallback env var)
+2. Exchange for fresh long-lived token (60 days)
+3. Save refreshed token to Supabase (auto-refresh cycle)
+4. Get Page Token from User Token
+5. POST to /{PAGE_ID}/photos (with cover) or /feed (link only)
+```
+
+**Token never expires** — as long as cron runs once every 60 days (runs 2x/week)
+
+**Database:**
+```sql
+CREATE TABLE app_settings (
+  key text PRIMARY KEY,
+  value text NOT NULL,
+  updated_at timestamptz DEFAULT now()
+);
+
+CREATE TABLE blog_posts (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  slug text UNIQUE NOT NULL,
+  title text NOT NULL,
+  description text,
+  category text,
+  reading_time int DEFAULT 3,
+  content text NOT NULL,
+  cover_image text,
+  published_at timestamptz DEFAULT now()
+);
+```
+
+### 7.3 Revenue Dashboard (Admin)
+
+```
+/admin/revenue — Revenue dashboard with:
+- Total revenue, orders, new members (by period 7d/30d/90d)
+- Daily bar chart
+- Plan breakdown (monthly/yearly/bundle)
+- Admin-only access (profile.role = 'admin')
+```
+
+**File:** `app/admin/revenue/page.tsx`
+
+---
+
+## 8. ENVIRONMENT VARIABLES
 
 ```bash
 # === Supabase ===
@@ -496,6 +578,15 @@ ADMIN_EMAIL=admin@yourdomain.com
 
 # === AI ===
 ANTHROPIC_API_KEY=sk-ant-...
+
+# === Image Generation ===
+TOGETHER_API_KEY=...             # Together AI for blog cover images
+
+# === Facebook Auto-Post ===
+FACEBOOK_PAGE_ID=...             # Facebook Page numeric ID
+FACEBOOK_APP_ID=...              # Facebook App ID
+FACEBOOK_APP_SECRET=...          # Facebook App Secret
+FACEBOOK_USER_TOKEN=...          # Long-lived User Token (auto-refreshes)
 
 # === Cron ===
 BLOG_GENERATE_SECRET=...
@@ -537,6 +628,8 @@ app/
 │   │   ├── generate-code/      # Link code generation
 │   │   ├── expiry-warning/     # Membership expiry LINE push
 │   │   └── weekly-summary/     # Weekly stats LINE push
+│   ├── blog/
+│   │   └── generate/route.ts   # AI blog + Together AI images + FB post
 │   └── referral/
 │       ├── generate/route.ts   # Generate referral code
 │       └── apply/route.ts      # Apply referral code
@@ -550,6 +643,7 @@ app/
 ├── admin/
 │   ├── users/page.tsx          # User/membership management
 │   ├── payments/page.tsx       # Payment orders
+│   ├── revenue/page.tsx        # Revenue dashboard (bar chart + plan breakdown)
 │   └── mcq/                    # Question management
 └── profile/page.tsx            # Profile + LINE linking
 
@@ -566,6 +660,8 @@ lib/
 ├── line.ts                     # LINE messaging + signature verify
 ├── flowaccount.ts              # FlowAccount API
 ├── notifications.ts            # LINE admin + email admin + email receipt
+├── facebook.ts                 # Facebook auto-post + token auto-refresh
+├── blog.ts                     # Blog queries (getBlogPosts, getBlogPost)
 └── types.ts                    # Profile, Exam types
 
 middleware.ts                   # Auth guard (Next.js 16 → proxy.ts)
