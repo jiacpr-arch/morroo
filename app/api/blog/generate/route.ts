@@ -1,88 +1,67 @@
+/**
+ * Auto Blog Generator — AI คิดหัวข้อเอง + Together AI สร้างรูป cover
+ *
+ * Cron: อังคาร + ศุกร์ 02:00 ICT (19:00 UTC วันก่อน)
+ * POST /api/blog/generate?secret=$BLOG_GENERATE_SECRET
+ */
+
 import { NextResponse } from "next/server";
-import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 
-// Topic pool — Claude picks one that hasn't been written yet
-const TOPIC_POOL = [
-  { title: "Long Case Exam คืออะไร และวิธีเตรียมตัวให้พร้อม", category: "ความรู้ทั่วไป", keywords: "Long Case, OSCE, AI Patient, NL Step 3" },
-  { title: "10 โรค Must-Know สำหรับสอบ NL Step 3 ที่ออกสอบทุกปี", category: "เตรียมสอบ", keywords: "NL Step 3, โรคที่ออกสอบ, MEQ, MCQ" },
-  { title: "Differential Diagnosis คืออะไร และวิธีคิด DD ให้เป็นระบบ", category: "ความรู้ทั่วไป", keywords: "Differential Diagnosis, DD, clinical reasoning, MEQ" },
-  { title: "เทคนิค Time Management ในห้องสอบแพทย์ — ไม่ตกเวลา ทุกข้อ", category: "เทคนิคสอบ", keywords: "time management, สอบแพทย์, MEQ, MCQ, NL" },
-  { title: "MCQ NL แตกต่างจาก MEQ อย่างไร เลือกเตรียมแบบไหนดี?", category: "ความรู้ทั่วไป", keywords: "MCQ, MEQ, NL Step 3, ความแตกต่าง" },
-  { title: "สาขาไหนออกสอบเยอะที่สุดใน NL Step 3 — วิเคราะห์จากข้อสอบจริง", category: "เตรียมสอบ", keywords: "อายุรศาสตร์, ศัลยศาสตร์, กุมาร, สูติ, NL Step 3" },
-  { title: "วิธีอ่านผล ECG เบื้องต้นสำหรับสอบแพทย์ — Step-by-Step", category: "ความรู้ทั่วไป", keywords: "ECG, EKG, อ่านผล, สอบแพทย์, Cardiology" },
-  { title: "Acute Abdomen — การวินิจฉัยแยกโรคที่ต้องรู้ก่อนสอบ", category: "ความรู้ทั่วไป", keywords: "Acute abdomen, DD, ศัลยศาสตร์, สอบแพทย์" },
-  { title: "เทคนิคซักประวัติแบบ OLDCART สำหรับ Long Case และ MEQ", category: "เทคนิคสอบ", keywords: "OLDCART, ซักประวัติ, Long Case, MEQ, clinical" },
-  { title: "Fluid Management พื้นฐาน — สิ่งที่ต้องตอบได้ในสอบ NL", category: "ความรู้ทั่วไป", keywords: "Fluid, IV fluid, hydration, NL Step 3, MEQ" },
-];
+export const runtime = "nodejs";
+export const maxDuration = 60;
 
-function slugify(title: string): string {
-  // Convert Thai title to ASCII slug using index-based approach
-  const idx = TOPIC_POOL.findIndex((t) => t.title === title);
-  const slugs = [
-    "what-is-long-case-exam",
-    "10-must-know-diseases-nl-step3",
-    "differential-diagnosis-guide",
-    "time-management-medical-exam",
-    "mcq-vs-meq-nl-step3",
-    "which-subjects-appear-most-nl",
-    "ecg-reading-basics-for-doctors",
-    "acute-abdomen-differential-diagnosis",
-    "oldcart-history-taking-technique",
-    "fluid-management-basics-nl",
-  ];
-  return slugs[idx] ?? `article-${Date.now()}`;
-}
+const CATEGORIES = ["ความรู้ทั่วไป", "เตรียมสอบ", "เทคนิคสอบ"];
 
 export async function POST(request: Request) {
-  // Verify secret to prevent unauthorized calls
   const { searchParams } = new URL(request.url);
-  const secret = searchParams.get("secret");
-  if (secret !== process.env.BLOG_GENERATE_SECRET) {
+  if (searchParams.get("secret") !== process.env.BLOG_GENERATE_SECRET) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const supabase = await createClient();
-
-  // Find a topic that hasn't been published yet
-  const { data: existingSlugs } = await supabase
-    .from("blog_posts")
-    .select("slug");
-
-  const usedSlugs = new Set((existingSlugs ?? []).map((r: { slug: string }) => r.slug));
-  const available = TOPIC_POOL.filter((t) => {
-    const slug = slugify(t.title);
-    return !usedSlugs.has(slug);
-  });
-
-  if (available.length === 0) {
-    return NextResponse.json({ message: "All topics already published" });
-  }
-
-  // Pick first available topic
-  const topic = available[0];
-  const slug = slugify(topic.title);
-
-  // Call Claude API to generate article
   const anthropicApiKey = process.env.ANTHROPIC_API_KEY;
+  const togetherApiKey = process.env.TOGETHER_API_KEY;
   if (!anthropicApiKey) {
     return NextResponse.json({ error: "ANTHROPIC_API_KEY not set" }, { status: 500 });
   }
 
-  const prompt = `คุณเป็นแพทย์ผู้เชี่ยวชาญและนักเขียนบทความการแพทย์สำหรับเว็บไซต์เตรียมสอบแพทย์ "หมอรู้" (morroo.com)
+  const supabase = createAdminClient();
 
-เขียนบทความ SEO ภาษาไทยในหัวข้อ: "${topic.title}"
-Keywords สำคัญ: ${topic.keywords}
+  // Step 1: Get existing titles to avoid duplicates
+  const { data: existing } = await supabase
+    .from("blog_posts")
+    .select("title, slug")
+    .order("published_at", { ascending: false })
+    .limit(50);
 
-กฎ:
-- เขียน HTML เท่านั้น (ไม่ต้องมี <html>, <head>, <body>)
-- ใช้ <h2>, <h3>, <p>, <ul>, <ol>, <li>, <strong>, <em>, <table>, <thead>, <tbody>, <tr>, <th>, <td>
-- ความยาว 600-900 คำ (ภาษาไทย)
-- ใส่ internal link ไปที่ /exams หรือ /nl หรือ /longcase หรือ /pricing อย่างน้อย 1 จุด
-- เนื้อหาต้องถูกต้องทางการแพทย์ เขียนแบบ evidence-based
-- ใช้ภาษากึ่งทางการ เข้าใจง่าย เหมาะกับนักศึกษาแพทย์และแพทย์ทั่วไป
-- ห้ามมี markdown (เครื่องหมาย ** หรือ ## หรือ \`)
+  const existingTitles = (existing ?? []).map((p: { title: string }) => p.title);
+  const category = CATEGORIES[Math.floor(Math.random() * CATEGORIES.length)];
 
-ส่งกลับเฉพาะ HTML content เท่านั้น ไม่ต้องมี comment หรือ explanation`;
+  // Step 2: AI picks a new topic + writes the article + generates slug
+  const topicPrompt = `คุณเป็นแพทย์ผู้เชี่ยวชาญและนักเขียนบทความ SEO สำหรับเว็บไซต์เตรียมสอบแพทย์ "หมอรู้" (morroo.com)
+
+หมวดหมู่: ${category}
+
+บทความที่เขียนไปแล้ว (ห้ามซ้ำ):
+${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
+
+สร้างบทความใหม่ 1 บทความ ตอบเป็น JSON เท่านั้น:
+{
+  "title": "หัวข้อภาษาไทย (SEO friendly, 40-80 ตัวอักษร)",
+  "slug": "english-slug-with-dashes (ไม่มีภาษาไทย)",
+  "description": "คำอธิบายสั้น 120-160 ตัวอักษร สำหรับ meta description",
+  "keywords": "keyword1, keyword2, keyword3",
+  "image_prompt": "English prompt for generating a medical illustration cover image, clean modern style, no text, suitable as blog cover",
+  "content": "เนื้อหา HTML (ใช้ <h2>, <h3>, <p>, <ul>, <ol>, <li>, <strong>, <table>) ความยาว 600-900 คำ"
+}
+
+กฎเนื้อหา:
+- HTML เท่านั้น ไม่มี markdown
+- ใส่ internal link ไปที่ /nl/practice หรือ /exams หรือ /longcase หรือ /pricing อย่างน้อย 1 จุด
+- เนื้อหาถูกต้องทางการแพทย์ evidence-based
+- ภาษากึ่งทางการ เข้าใจง่าย เหมาะกับนักศึกษาแพทย์
+
+ตอบ JSON เท่านั้น ไม่มี markdown code block`;
 
   const claudeRes = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
@@ -92,9 +71,9 @@ Keywords สำคัญ: ${topic.keywords}
       "content-type": "application/json",
     },
     body: JSON.stringify({
-      model: "claude-haiku-4-5-20251001",
-      max_tokens: 2048,
-      messages: [{ role: "user", content: prompt }],
+      model: "claude-sonnet-4-6-20250514",
+      max_tokens: 4096,
+      messages: [{ role: "user", content: topicPrompt }],
     }),
   });
 
@@ -104,41 +83,128 @@ Keywords สำคัญ: ${topic.keywords}
   }
 
   const claudeData = await claudeRes.json();
-  const content: string = claudeData.content?.[0]?.text ?? "";
+  const rawText: string = claudeData.content?.[0]?.text ?? "";
 
-  if (!content) {
-    return NextResponse.json({ error: "Empty content from Claude" }, { status: 500 });
+  let article: {
+    title: string;
+    slug: string;
+    description: string;
+    keywords: string;
+    image_prompt: string;
+    content: string;
+  };
+
+  try {
+    // Try direct parse, then regex extraction
+    try {
+      article = JSON.parse(rawText);
+    } catch {
+      const match = rawText.match(/\{[\s\S]*\}/);
+      if (!match) throw new Error("No JSON found in response");
+      article = JSON.parse(match[0]);
+    }
+  } catch (err) {
+    console.error("[blog-generate] JSON parse failed:", rawText.slice(0, 200));
+    return NextResponse.json({ error: "Failed to parse article JSON", raw: rawText.slice(0, 500) }, { status: 500 });
   }
 
-  // Estimate reading time (Thai: ~200 words/min, strip HTML tags for word count)
-  const textOnly = content.replace(/<[^>]+>/g, " ");
+  if (!article.title || !article.slug || !article.content) {
+    return NextResponse.json({ error: "Incomplete article data", article }, { status: 500 });
+  }
+
+  // Ensure slug is unique
+  const { data: slugCheck } = await supabase
+    .from("blog_posts")
+    .select("slug")
+    .eq("slug", article.slug)
+    .maybeSingle();
+
+  if (slugCheck) {
+    article.slug = `${article.slug}-${Date.now().toString(36)}`;
+  }
+
+  // Step 3: Generate cover image with Together AI
+  let coverImageUrl: string | null = null;
+
+  if (togetherApiKey && article.image_prompt) {
+    try {
+      const imageRes = await fetch("https://api.together.xyz/v1/images/generations", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${togetherApiKey}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          model: "black-forest-labs/FLUX.1-schnell-Free",
+          prompt: article.image_prompt,
+          width: 1200,
+          height: 630,
+          n: 1,
+        }),
+      });
+
+      if (imageRes.ok) {
+        const imageData = await imageRes.json();
+        const b64 = imageData.data?.[0]?.b64_json;
+        const imageUrl = imageData.data?.[0]?.url;
+
+        if (b64) {
+          // Upload base64 image to Supabase Storage
+          const buffer = Buffer.from(b64, "base64");
+          const filePath = `blog-covers/${article.slug}.webp`;
+
+          const { error: uploadError } = await supabase.storage
+            .from("public-assets")
+            .upload(filePath, buffer, {
+              contentType: "image/webp",
+              upsert: true,
+            });
+
+          if (!uploadError) {
+            const { data: publicUrl } = supabase.storage
+              .from("public-assets")
+              .getPublicUrl(filePath);
+            coverImageUrl = publicUrl.publicUrl;
+          } else {
+            console.error("[blog-generate] storage upload error:", uploadError);
+          }
+        } else if (imageUrl) {
+          coverImageUrl = imageUrl;
+        }
+      } else {
+        console.error("[blog-generate] Together API error:", await imageRes.text());
+      }
+    } catch (err) {
+      console.error("[blog-generate] image generation error:", err);
+      // Continue without image — article is still valuable
+    }
+  }
+
+  // Step 4: Calculate reading time
+  const textOnly = article.content.replace(/<[^>]+>/g, " ");
   const wordCount = textOnly.split(/\s+/).filter(Boolean).length;
   const readingTime = Math.max(3, Math.round(wordCount / 200));
 
-  // Derive description from first <p> tag
-  const firstPMatch = content.match(/<p[^>]*>([\s\S]*?)<\/p>/);
-  const description = firstPMatch
-    ? firstPMatch[1].replace(/<[^>]+>/g, "").slice(0, 160)
-    : topic.title;
-
-  // Save to Supabase
-  const { data, error } = await supabase
+  // Step 5: Save to Supabase
+  const { data: saved, error: saveError } = await supabase
     .from("blog_posts")
     .insert({
-      slug,
-      title: topic.title,
-      description,
-      category: topic.category,
+      slug: article.slug,
+      title: article.title,
+      description: article.description,
+      category,
       reading_time: readingTime,
-      content,
+      content: article.content,
+      cover_image: coverImageUrl,
       published_at: new Date().toISOString(),
     })
-    .select("slug, title")
+    .select("slug, title, cover_image")
     .single();
 
-  if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+  if (saveError) {
+    return NextResponse.json({ error: saveError.message }, { status: 500 });
   }
 
-  return NextResponse.json({ success: true, post: data });
+  console.log(`[blog-generate] published: "${saved.title}" (${saved.slug}) cover: ${saved.cover_image ? "yes" : "no"}`);
+  return NextResponse.json({ success: true, post: saved });
 }
