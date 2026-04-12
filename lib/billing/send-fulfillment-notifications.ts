@@ -10,7 +10,7 @@
 import { STRIPE_PLANS } from "@/lib/stripe";
 import { sendLineMessage } from "@/lib/line";
 import { createCashInvoice } from "@/lib/flowaccount";
-import { lineNotifyNewOrder, emailReceipt } from "@/lib/notifications";
+import { lineNotifyNewOrder, emailReceipt, emailNotifyAdmin } from "@/lib/notifications";
 import type { FulfillmentResult } from "./fulfill-checkout";
 
 type NotifyPayload = NonNullable<FulfillmentResult["notify"]>;
@@ -43,7 +43,7 @@ export async function sendFulfillmentNotifications(data: NotifyPayload): Promise
     }
   }
 
-  // Admin group LINE + email receipt
+  // Admin group LINE + admin email + buyer email receipt
   try {
     await Promise.all([
       lineNotifyNewOrder({
@@ -51,6 +51,14 @@ export async function sendFulfillmentNotifications(data: NotifyPayload): Promise
         totalAmount: data.totalAmount,
         invoiceNumber: data.invoiceNumber,
         buyerEmail: data.invoiceEmail,
+      }),
+      emailNotifyAdmin({
+        planName,
+        totalAmount: data.totalAmount,
+        invoiceNumber: data.invoiceNumber,
+        buyerEmail: data.invoiceEmail,
+        buyerName: data.invoiceName || undefined,
+        publishedOn: data.publishedOn,
       }),
       emailReceipt({
         toEmail: data.invoiceEmail,
