@@ -8,6 +8,7 @@ export interface BlogPost {
   category: string;
   readingTime: number;
   content: string;
+  coverImage: string | null;
 }
 
 // Map DB row → BlogPost shape
@@ -19,6 +20,7 @@ function mapRow(row: {
   category: string;
   reading_time: number;
   content: string;
+  cover_image?: string | null;
 }): BlogPost {
   return {
     slug: row.slug,
@@ -28,6 +30,7 @@ function mapRow(row: {
     category: row.category,
     readingTime: row.reading_time,
     content: row.content,
+    coverImage: row.cover_image ?? null,
   };
 }
 
@@ -35,7 +38,7 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
   const supabase = createAdminClient();
   const { data, error } = await supabase
     .from("blog_posts")
-    .select("slug, title, description, published_at, category, reading_time, content")
+    .select("slug, title, description, published_at, category, reading_time, content, cover_image")
     .order("published_at", { ascending: false });
 
   if (error || !data) return [];
@@ -46,7 +49,7 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
   const supabase = createAdminClient();
   const { data, error } = await supabase
     .from("blog_posts")
-    .select("slug, title, description, published_at, category, reading_time, content")
+    .select("slug, title, description, published_at, category, reading_time, content, cover_image")
     .eq("slug", slug)
     .single();
 
