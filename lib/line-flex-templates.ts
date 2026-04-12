@@ -121,15 +121,83 @@ export function buildExpiryWarningMessage(data: ExpiryWarningData): LineMessage 
   const daysLeft = Math.ceil(
     (data.expiresAt.getTime() - Date.now()) / (1000 * 60 * 60 * 24)
   );
+  const renewPath = data.membershipType === "bundle" ? "bundle" : data.membershipType;
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com";
 
   return {
-    type: "text",
-    text: [
-      `สมาชิก MorRoo ${planLabel} ของคุณจะหมดอายุใน ${daysLeft} วัน`,
-      `(${dateStr})`,
-      ``,
-      `ต่ออายุเพื่อฝึกทำข้อสอบต่อเนื่อง`,
-      `https://www.morroo.com/pricing`,
-    ].join("\n"),
+    type: "flex",
+    altText: `สมาชิก MorRoo ${planLabel} จะหมดอายุใน ${daysLeft} วัน`,
+    contents: {
+      type: "bubble",
+      size: "kilo",
+      header: {
+        type: "box",
+        layout: "vertical",
+        backgroundColor: daysLeft <= 3 ? "#E74C3C" : "#F39C12",
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: daysLeft <= 3 ? "⚠️ ใกล้หมดอายุแล้ว!" : "⏰ แจ้งเตือนหมดอายุ",
+            color: "#FFFFFF",
+            weight: "bold",
+            size: "lg",
+          },
+          {
+            type: "text",
+            text: "MorRoo Membership",
+            color: "#FDEBD0",
+            size: "xs",
+          },
+        ],
+      },
+      body: {
+        type: "box",
+        layout: "vertical",
+        spacing: "md",
+        paddingAll: "lg",
+        contents: [
+          statRow("แพ็กเกจ", `MorRoo ${planLabel}`),
+          statRow("หมดอายุ", dateStr),
+          statRow("เหลืออีก", `${daysLeft} วัน`),
+          { type: "separator" as const, margin: "md" as const },
+          {
+            type: "text" as const,
+            text: "ต่ออายุเพื่อฝึกทำข้อสอบต่อเนื่อง ไม่พลาดข้อสอบใหม่ทุกวัน!",
+            size: "sm" as const,
+            color: "#666666",
+            wrap: true,
+            margin: "md" as const,
+          },
+        ],
+      },
+      footer: {
+        type: "box",
+        layout: "vertical",
+        spacing: "sm",
+        paddingAll: "md",
+        contents: [
+          {
+            type: "button",
+            action: {
+              type: "uri",
+              label: "🔄 ต่ออายุเลย",
+              uri: `${siteUrl}/payment/${renewPath}`,
+            },
+            style: "primary",
+            color: "#0EA5E9",
+          },
+          {
+            type: "button",
+            action: {
+              type: "uri",
+              label: "ดูแพ็กเกจทั้งหมด",
+              uri: `${siteUrl}/pricing`,
+            },
+            style: "secondary",
+          },
+        ],
+      },
+    },
   };
 }
