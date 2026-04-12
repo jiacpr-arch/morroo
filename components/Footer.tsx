@@ -36,6 +36,8 @@ export default function Footer() {
               <li><Link href="/pricing" className="hover:text-white transition-colors">แพ็กเกจราคา</Link></li>
               <li><Link href="/login" className="hover:text-white transition-colors">เข้าสู่ระบบ</Link></li>
               <li><Link href="/register" className="hover:text-white transition-colors">สมัครสมาชิก</Link></li>
+              <li><Link href="/guide" className="hover:text-white transition-colors">คู่มือการใช้งาน</Link></li>
+              <li><Link href="/feedback" className="hover:text-white transition-colors">ส่ง Feedback</Link></li>
               <li><Link href="/privacy" className="hover:text-white transition-colors">นโยบายความเป็นส่วนตัว</Link></li>
               <li><Link href="/terms" className="hover:text-white transition-colors">นโยบายการซื้อสินค้า</Link></li>
             </ul>

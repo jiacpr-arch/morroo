@@ -15,6 +15,7 @@ const navLinks = [
   { href: "/longcase", label: "Long Case" },
   { href: "/blog", label: "บทความ" },
   { href: "/pricing", label: "แพ็กเกจ" },
+  { href: "/guide", label: "คู่มือ" },
 ];
 
 const authNavLinks = [
