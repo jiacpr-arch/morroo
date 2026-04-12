@@ -5,8 +5,9 @@
  * POST /api/blog/generate?secret=$BLOG_GENERATE_SECRET
  */
 
-import { NextResponse } from "next/server";
+import { NextResponse, after } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { postToFacebook } from "@/lib/facebook";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -206,5 +207,16 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
   }
 
   console.log(`[blog-generate] published: "${saved.title}" (${saved.slug}) cover: ${saved.cover_image ? "yes" : "no"}`);
+
+  // Step 6: Post to Facebook in background (non-blocking)
+  after(async () => {
+    await postToFacebook({
+      title: saved.title,
+      description: article.description,
+      slug: saved.slug,
+      coverImage: saved.cover_image ?? null,
+    });
+  });
+
   return NextResponse.json({ success: true, post: saved });
 }
