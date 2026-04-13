@@ -15,6 +15,14 @@ export const maxDuration = 60;
 const CATEGORIES = ["ความรู้ทั่วไป", "เตรียมสอบ", "เทคนิคสอบ"];
 
 export async function POST(request: Request) {
+  return handleGenerate(request);
+}
+
+export async function GET(request: Request) {
+  return handleGenerate(request);
+}
+
+async function handleGenerate(request: Request) {
   const { searchParams } = new URL(request.url);
   if (searchParams.get("secret") !== process.env.BLOG_GENERATE_SECRET) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
