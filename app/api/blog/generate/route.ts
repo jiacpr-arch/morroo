@@ -53,14 +53,16 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
   "description": "คำอธิบายสั้น 120-160 ตัวอักษร สำหรับ meta description",
   "keywords": "keyword1, keyword2, keyword3",
   "image_prompt": "English prompt for generating a medical illustration cover image, clean modern style, no text, suitable as blog cover",
-  "content": "เนื้อหา HTML (ใช้ <h2>, <h3>, <p>, <ul>, <ol>, <li>, <strong>, <table>) ความยาว 600-900 คำ"
+  "content": "เนื้อหา HTML (ใช้ <h2>, <h3>, <p>, <ul>, <ol>, <li>, <strong>, <table>) ความยาว 1,500-2,000 คำ"
 }
 
 กฎเนื้อหา:
 - HTML เท่านั้น ไม่มี markdown
-- ใส่ internal link ไปที่ /nl/practice หรือ /exams หรือ /longcase หรือ /pricing อย่างน้อย 1 จุด
+- ใส่ internal link ไปที่ /nl/practice หรือ /exams หรือ /longcase หรือ /pricing อย่างน้อย 2 จุด
 - เนื้อหาถูกต้องทางการแพทย์ evidence-based
 - ภาษากึ่งทางการ เข้าใจง่าย เหมาะกับนักศึกษาแพทย์
+- เนื้อหาต้องลงลึก มีตัวอย่างประกอบ มีหัวข้อย่อยอย่างน้อย 5 หัวข้อ
+- ใส่ตาราง หรือ bullet points ให้อ่านง่าย
 
 ตอบ JSON เท่านั้น ไม่มี markdown code block`;
 
@@ -73,7 +75,7 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
     },
     body: JSON.stringify({
       model: "claude-sonnet-4-6-20250514",
-      max_tokens: 4096,
+      max_tokens: 8192,
       messages: [{ role: "user", content: topicPrompt }],
     }),
   });
