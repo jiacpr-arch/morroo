@@ -82,7 +82,7 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
       "content-type": "application/json",
     },
     body: JSON.stringify({
-      model: "claude-sonnet-4-6-20250514",
+      model: "claude-3-7-sonnet-20250219",
       max_tokens: 8192,
       messages: [{ role: "user", content: topicPrompt }],
     }),
