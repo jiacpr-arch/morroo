@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
-import { User, Mail, Crown, Calendar, LogOut, Gift, Copy, Check, Users, MessageSquare, Link2, Loader2 } from "lucide-react";
+import { User, Mail, Crown, Calendar, LogOut, Gift, Copy, Check, Users, MessageSquare, Link2, Loader2, Flag } from "lucide-react";
 import type { Profile } from "@/lib/types";
 
 const membershipLabels: Record<string, string> = {
@@ -196,6 +196,30 @@ export default function ProfilePage() {
                 </Button>
               </Link>
             )}
+          </CardContent>
+        </Card>
+
+        {/* Bug Hunter / reporter points */}
+        <Card>
+          <CardHeader>
+            <h3 className="font-semibold flex items-center gap-2">
+              <Flag className="h-5 w-5 text-amber-600" /> Bug Hunter — ช่วยตรวจเฉลย
+            </h3>
+            <p className="text-sm text-muted-foreground mt-1">
+              เจอข้อสอบที่เฉลยไม่ตรง หรือโจทย์กำกวม? กดปุ่ม
+              <span className="inline-flex items-center gap-1 mx-1 px-1.5 rounded bg-amber-100 text-amber-800 text-xs">
+                <Flag className="h-3 w-3" /> เฉลยไม่ถูก?
+              </span>
+              ใต้เฉลยแต่ละข้อ รับ +1 คะแนนทันที และ +10 คะแนนเมื่อแอดมินยืนยัน
+            </p>
+          </CardHeader>
+          <CardContent>
+            <div className="flex items-center justify-between rounded-lg bg-amber-50 border border-amber-200 p-4">
+              <span className="text-sm text-amber-800">คะแนน Bug Hunter ของคุณ</span>
+              <span className="text-2xl font-bold text-amber-700">
+                {profile?.reporter_points ?? 0}
+              </span>
+            </div>
           </CardContent>
         </Card>
 

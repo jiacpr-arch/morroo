@@ -12,6 +12,7 @@ export interface Profile {
   weak_subjects: string[] | null;
   referral_code: string | null;
   referred_by: string | null;
+  reporter_points: number;
 }
 
 // ============================================================
