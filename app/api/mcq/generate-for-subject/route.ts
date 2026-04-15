@@ -1,6 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 
+// Vercel Hobby caps serverless functions at 60s.
+// Without this export the route silently times out — which is why large
+// Sonnet-only fills used to leave the tail subjects empty.
+export const runtime = "nodejs";
+export const maxDuration = 60;
+
 // All known subjects — keep in sync with mcq_schema.sql
 const ALL_SUBJECTS: { name: string; name_th: string }[] = [
   { name: "cardio_med", name_th: "อายุรศาสตร์หัวใจ" },
@@ -50,28 +56,23 @@ interface GeneratedQuestion {
 
 function buildPrompt(
   subjectNameTh: string,
-  easyCount: number,
-  mediumCount: number,
-  hardCount: number,
+  count: number,
+  difficultyInstruction: string,
   existingCount: number
 ): string {
-  const total = easyCount + mediumCount + hardCount;
   return `คุณเป็นอาจารย์แพทย์ผู้เชี่ยวชาญด้าน ${subjectNameTh} สำหรับสอบใบประกอบวิชาชีพ (National License Exam - NL Step 2)
 
-สร้างข้อสอบ MCQ จำนวน ${total} ข้อ สาขา ${subjectNameTh}
-แบ่งเป็น:
-- Easy ${easyCount} ข้อ: เน้น recall ความรู้พื้นฐาน definition
-- Medium ${mediumCount} ข้อ: first-line treatment, investigation of choice, การวินิจฉัยจาก typical presentation
-- Hard ${hardCount} ข้อ: clinical reasoning ซับซ้อน, differential diagnosis, management ของ case ที่มี comorbidity
+สร้างข้อสอบ MCQ จำนวน ${count} ข้อ สาขา ${subjectNameTh}
 
 กฎ:
 1. แต่ละข้อมี scenario ที่มีรายละเอียดเพียงพอ (อายุ เพศ อาการ ผลตรวจ)
 2. ตัวเลือก 5 ข้อ (A-E) plausible ทั้งหมด
 3. คำตอบถูกต้องอิง evidence-based medicine
 4. คำอธิบายเฉลยละเอียด อธิบายทุกตัวเลือก
-5. ห้ามซ้ำกับข้อสอบเดิม (ปัจจุบันมี ${existingCount} ข้อในระบบ)
-6. เขียนภาษาไทยหรืออังกฤษตามความเหมาะสมของเนื้อหาทางการแพทย์
-7. ทุกข้อเหมาะสำหรับ NL Step 2
+5. ${difficultyInstruction}
+6. ห้ามซ้ำกับข้อสอบเดิม (ปัจจุบันมี ${existingCount} ข้อในระบบ)
+7. เขียนภาษาไทยหรืออังกฤษตามความเหมาะสมของเนื้อหาทางการแพทย์
+8. ทุกข้อเหมาะสำหรับ NL Step 2
 
 ตอบเป็น JSON array เท่านั้น ไม่ต้องมี markdown code block:
 [
@@ -95,6 +96,65 @@ function buildPrompt(
     "difficulty": "easy|medium|hard"
   }
 ]`;
+}
+
+// Extract as many complete top-level objects as possible from a JSON array
+// response — tolerating truncation at max_tokens, trailing commas, or a missing
+// closing bracket. Used as a fallback when strict JSON.parse fails.
+function extractQuestionsLenient(raw: string): GeneratedQuestion[] {
+  const results: GeneratedQuestion[] = [];
+  const start = raw.indexOf("[");
+  if (start < 0) return results;
+
+  let i = start + 1;
+  const len = raw.length;
+
+  while (i < len) {
+    // Skip whitespace + commas between objects
+    while (i < len && /[\s,]/.test(raw[i])) i++;
+    if (i >= len || raw[i] === "]") break;
+    if (raw[i] !== "{") {
+      i++;
+      continue;
+    }
+
+    // Scan a balanced JSON object starting at `{`.
+    const objStart = i;
+    let depth = 0;
+    let inStr = false;
+    let esc = false;
+    let objEnd = -1;
+    for (let j = i; j < len; j++) {
+      const ch = raw[j];
+      if (inStr) {
+        if (esc) esc = false;
+        else if (ch === "\\") esc = true;
+        else if (ch === '"') inStr = false;
+        continue;
+      }
+      if (ch === '"') inStr = true;
+      else if (ch === "{") depth++;
+      else if (ch === "}") {
+        depth--;
+        if (depth === 0) {
+          objEnd = j;
+          break;
+        }
+      }
+    }
+
+    if (objEnd < 0) break; // truncated mid-object — stop
+
+    const slice = raw.slice(objStart, objEnd + 1);
+    try {
+      results.push(JSON.parse(slice) as GeneratedQuestion);
+    } catch {
+      /* skip unparseable object */
+    }
+    i = objEnd + 1;
+  }
+
+  return results;
 }
 
 async function callClaude(
@@ -131,19 +191,18 @@ async function callClaude(
     cleaned = cleaned.replace(/^```\w*\n?/, "").replace(/\n?```$/, "");
   }
 
+  // Strict parse first.
   try {
     const parsed = JSON.parse(cleaned);
     if (Array.isArray(parsed)) return parsed;
   } catch {
-    const match = rawContent.match(/\[[\s\S]*\]/);
-    if (match) {
-      try {
-        return JSON.parse(match[0]);
-      } catch {
-        /* fall through */
-      }
-    }
+    /* fall through */
   }
+
+  // Lenient fallback — salvages complete questions from a truncated response.
+  const salvaged = extractQuestionsLenient(cleaned);
+  if (salvaged.length > 0) return salvaged;
+
   throw new Error(`Failed to parse JSON from ${model}`);
 }
 
@@ -152,8 +211,10 @@ async function callClaude(
 // Body: { subject_name?: string, fill_empty?: boolean, count?: number }
 //
 // subject_name  — generate for one specific subject
-// fill_empty    — generate for ALL subjects with 0 questions (ignores subject_name)
-// count         — questions per subject (default 30)
+// fill_empty    — generate for the FIRST empty subject (one per invocation so
+//                 the whole run stays within the 60s Vercel Hobby budget).
+//                 Response includes `remaining` so the caller can loop.
+// count         — total questions for the subject (default 30)
 export async function POST(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const secret = searchParams.get("secret");
@@ -184,14 +245,16 @@ export async function POST(request: NextRequest) {
 
   const admin = createAdminClient();
 
-  // Determine which subjects to process
-  let targets: { name: string; name_th: string }[] = [];
+  // Pick target subject(s). For fill_empty we only handle ONE subject per
+  // invocation; callers should re-hit the endpoint until `remaining` is 0.
+  let target: { name: string; name_th: string } | null = null;
+  const emptyRemaining: { name: string; name_th: string }[] = [];
 
   if (body.fill_empty) {
-    // Find subjects with 0 active questions
     const { data: subjectRows } = await admin
       .from("mcq_subjects")
-      .select("name, name_th, id");
+      .select("name, name_th, id")
+      .order("name");
 
     if (!subjectRows) {
       return NextResponse.json({ error: "Cannot fetch subjects" }, { status: 500 });
@@ -204,16 +267,19 @@ export async function POST(request: NextRequest) {
         .eq("subject_id", row.id)
         .eq("status", "active");
       if ((count ?? 0) === 0) {
-        targets.push({ name: row.name, name_th: row.name_th });
+        emptyRemaining.push({ name: row.name, name_th: row.name_th });
       }
     }
 
-    if (targets.length === 0) {
+    if (emptyRemaining.length === 0) {
       return NextResponse.json({
         success: true,
         message: "ทุกสาขามีข้อสอบแล้ว ไม่มีสาขาว่าง",
+        remaining: 0,
       });
     }
+
+    target = emptyRemaining.shift() ?? null;
   } else if (body.subject_name) {
     const found = ALL_SUBJECTS.find((s) => s.name === body.subject_name);
     if (!found) {
@@ -225,126 +291,182 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
-    targets = [found];
+    target = found;
   } else {
     return NextResponse.json(
       {
-        error:
-          'ต้องระบุ subject_name หรือ fill_empty:true ใน body',
+        error: 'ต้องระบุ subject_name หรือ fill_empty:true ใน body',
       },
       { status: 400 }
     );
   }
 
-  // Generate for each target subject sequentially (avoid rate-limit)
-  const results: Record<
-    string,
-    { inserted: number; errors: string[] } | { error: string }
-  > = {};
-
-  for (const subject of targets) {
-    // Get subject row
-    const { data: subjectRow } = await admin
-      .from("mcq_subjects")
-      .select("id")
-      .eq("name", subject.name)
-      .single();
-
-    if (!subjectRow) {
-      results[subject.name] = { error: "Subject not found in DB" };
-      continue;
-    }
-
-    const { count: existingCount } = await admin
-      .from("mcq_questions")
-      .select("id", { count: "exact", head: true })
-      .eq("subject_id", subjectRow.id)
-      .eq("status", "active");
-
-    const existing = existingCount ?? 0;
-
-    // Split: 20% easy, 50% medium, 30% hard
-    const easyCount = Math.round(perSubjectCount * 0.2);
-    const hardCount = Math.round(perSubjectCount * 0.3);
-    const mediumCount = perSubjectCount - easyCount - hardCount;
-
-    const errors: string[] = [];
-    let questions: GeneratedQuestion[] = [];
-
-    try {
-      questions = await callClaude(
-        apiKey,
-        "claude-sonnet-4-6-20250514", // Use Sonnet for quality on initial fill
-        32000,
-        buildPrompt(subject.name_th, easyCount, mediumCount, hardCount, existing)
-      );
-    } catch (err) {
-      errors.push(String(err));
-      results[subject.name] = { error: String(err) };
-      continue;
-    }
-
-    const now = new Date();
-    const validQuestions = questions
-      .filter(
-        (q) =>
-          q.scenario &&
-          Array.isArray(q.choices) &&
-          q.choices.length >= 4 &&
-          q.correct_answer &&
-          ["A", "B", "C", "D", "E"].includes(q.correct_answer)
-      )
-      .map((q) => ({
-        subject_id: subjectRow.id,
-        exam_type: "NL2" as const,
-        exam_source: "AI-generated-fill",
-        scenario: q.scenario,
-        choices: q.choices,
-        correct_answer: q.correct_answer,
-        explanation: q.explanation || null,
-        detailed_explanation: q.detailed_explanation || null,
-        difficulty: ["easy", "medium", "hard"].includes(q.difficulty)
-          ? q.difficulty
-          : "medium",
-        is_ai_enhanced: true,
-        ai_notes: `Auto-fill on ${now.toISOString().split("T")[0]} | sonnet`,
-        status: "active" as const,
-      }));
-
-    if (validQuestions.length === 0) {
-      results[subject.name] = { error: "No valid questions after validation" };
-      continue;
-    }
-
-    const { data: inserted, error: insertError } = await admin
-      .from("mcq_questions")
-      .insert(validQuestions)
-      .select("id");
-
-    if (insertError) {
-      results[subject.name] = { error: insertError.message };
-      continue;
-    }
-
-    // Update question_count
-    const { count: newTotal } = await admin
-      .from("mcq_questions")
-      .select("id", { count: "exact", head: true })
-      .eq("subject_id", subjectRow.id)
-      .eq("status", "active");
-
-    await admin
-      .from("mcq_subjects")
-      .update({ question_count: newTotal ?? 0 })
-      .eq("id", subjectRow.id);
-
-    results[subject.name] = { inserted: inserted?.length ?? 0, errors };
+  if (!target) {
+    return NextResponse.json({ error: "No target subject resolved" }, { status: 500 });
   }
+
+  // Get subject row
+  const { data: subjectRow } = await admin
+    .from("mcq_subjects")
+    .select("id")
+    .eq("name", target.name)
+    .single();
+
+  if (!subjectRow) {
+    return NextResponse.json(
+      { error: `Subject "${target.name}" not found in DB` },
+      { status: 500 }
+    );
+  }
+
+  const { count: existingCountRaw } = await admin
+    .from("mcq_questions")
+    .select("id", { count: "exact", head: true })
+    .eq("subject_id", subjectRow.id)
+    .eq("status", "active");
+
+  const existing = existingCountRaw ?? 0;
+
+  // Split: 20% easy, 50% medium, 30% hard.
+  // Haiku handles easy+medium (fast, fits comfortably in 60s).
+  // Sonnet handles hard only (9-ish questions is the sweet spot it can finish
+  // in parallel with Haiku within the budget).
+  const easyCount = Math.round(perSubjectCount * 0.2);
+  const hardCount = Math.round(perSubjectCount * 0.3);
+  const mediumCount = perSubjectCount - easyCount - hardCount;
+  const easyMediumCount = easyCount + mediumCount;
+
+  const [easyMediumResult, hardResult] = await Promise.allSettled([
+    callClaude(
+      apiKey,
+      "claude-haiku-4-5-20251001",
+      32000,
+      buildPrompt(
+        target.name_th,
+        easyMediumCount,
+        `สร้างข้อง่าย (easy) ${easyCount} ข้อ และข้อปานกลาง (medium) ${mediumCount} ข้อ — ข้อง่ายเน้น recall ความรู้พื้นฐาน definition, ข้อปานกลางเน้น first-line treatment, investigation of choice, การวินิจฉัยจาก typical presentation`,
+        existing
+      )
+    ),
+    callClaude(
+      apiKey,
+      "claude-sonnet-4-6-20250514",
+      24000,
+      buildPrompt(
+        target.name_th,
+        hardCount,
+        `สร้างเฉพาะข้อยาก (hard) ${hardCount} ข้อ — เน้น clinical reasoning ซับซ้อน, differential diagnosis, management ของ case ที่มี comorbidity, interpretation ของ lab/imaging ที่ต้องวิเคราะห์หลายขั้นตอน`,
+        existing
+      )
+    ),
+  ]);
+
+  const allQuestions: GeneratedQuestion[] = [];
+  const errors: string[] = [];
+
+  if (easyMediumResult.status === "fulfilled") {
+    allQuestions.push(...easyMediumResult.value);
+  } else {
+    errors.push(`Haiku batch failed: ${easyMediumResult.reason}`);
+  }
+
+  if (hardResult.status === "fulfilled") {
+    allQuestions.push(...hardResult.value);
+  } else {
+    errors.push(`Sonnet batch failed: ${hardResult.reason}`);
+  }
+
+  if (allQuestions.length === 0) {
+    return NextResponse.json(
+      {
+        error: "All batches failed",
+        subject: target.name,
+        details: errors,
+        remaining: emptyRemaining.length + 1, // this one still empty
+      },
+      { status: 500 }
+    );
+  }
+
+  const now = new Date();
+  const validQuestions = allQuestions
+    .filter(
+      (q) =>
+        q.scenario &&
+        Array.isArray(q.choices) &&
+        q.choices.length >= 4 &&
+        q.correct_answer &&
+        ["A", "B", "C", "D", "E"].includes(q.correct_answer)
+    )
+    .map((q) => ({
+      subject_id: subjectRow.id,
+      exam_type: "NL2" as const,
+      exam_source: "AI-generated-fill",
+      scenario: q.scenario,
+      choices: q.choices,
+      correct_answer: q.correct_answer,
+      explanation: q.explanation || null,
+      detailed_explanation: q.detailed_explanation || null,
+      difficulty: ["easy", "medium", "hard"].includes(q.difficulty)
+        ? q.difficulty
+        : "medium",
+      is_ai_enhanced: true,
+      ai_notes: `Auto-fill on ${now.toISOString().split("T")[0]} | ${q.difficulty === "hard" ? "sonnet" : "haiku"}`,
+      status: "active" as const,
+    }));
+
+  if (validQuestions.length === 0) {
+    return NextResponse.json(
+      {
+        error: "No valid questions after validation",
+        subject: target.name,
+        details: errors,
+        remaining: emptyRemaining.length + 1,
+      },
+      { status: 500 }
+    );
+  }
+
+  const { data: inserted, error: insertError } = await admin
+    .from("mcq_questions")
+    .insert(validQuestions)
+    .select("id");
+
+  if (insertError) {
+    return NextResponse.json(
+      {
+        error: insertError.message,
+        subject: target.name,
+        remaining: emptyRemaining.length + 1,
+      },
+      { status: 500 }
+    );
+  }
+
+  // Update question_count
+  const { count: newTotal } = await admin
+    .from("mcq_questions")
+    .select("id", { count: "exact", head: true })
+    .eq("subject_id", subjectRow.id)
+    .eq("status", "active");
+
+  await admin
+    .from("mcq_subjects")
+    .update({ question_count: newTotal ?? 0 })
+    .eq("id", subjectRow.id);
 
   return NextResponse.json({
     success: true,
-    subjects_processed: targets.length,
-    results,
+    subject: target.name,
+    subject_th: target.name_th,
+    inserted: inserted?.length ?? 0,
+    total_in_subject: newTotal ?? 0,
+    batches: {
+      haiku: easyMediumResult.status === "fulfilled" ? easyMediumResult.value.length : 0,
+      sonnet: hardResult.status === "fulfilled" ? hardResult.value.length : 0,
+    },
+    ...(errors.length > 0 ? { warnings: errors } : {}),
+    ...(body.fill_empty ? { remaining: emptyRemaining.length } : {}),
   });
 }
 
