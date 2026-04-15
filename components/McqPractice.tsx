@@ -25,6 +25,7 @@ import {
 } from "@/lib/supabase/mutations-mcq";
 import { createClient } from "@/lib/supabase/client";
 import McqAiChat from "@/components/McqAiChat";
+import ReportErrorButton from "@/components/ReportErrorButton";
 
 interface McqPracticeProps {
   questions: McqQuestion[];
@@ -464,6 +465,16 @@ export default function McqPractice({
               </CardContent>
             </Card>
           )}
+        </div>
+      )}
+
+      {/* Report wrong answer — any student can flag mistakes & earn Bug Hunter points */}
+      {showResult && userId && (
+        <div className="pt-1">
+          <ReportErrorButton
+            questionId={question.id}
+            choiceLabels={question.choices.map((c) => c.label)}
+          />
         </div>
       )}
 

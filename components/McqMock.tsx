@@ -17,6 +17,7 @@ import {
   AlertTriangle,
 } from "lucide-react";
 import type { McqQuestion } from "@/lib/types-mcq";
+import ReportErrorButton from "@/components/ReportErrorButton";
 
 interface McqMockProps {
   questions: McqQuestion[];
@@ -633,6 +634,14 @@ export default function McqMock({ questions, timeLimitMinutes }: McqMockProps) {
             )}
           </div>
         )}
+
+        {/* Report wrong answer */}
+        <div className="pt-1">
+          <ReportErrorButton
+            questionId={reviewQuestion.id}
+            choiceLabels={reviewQuestion.choices.map((c) => c.label)}
+          />
+        </div>
 
         {/* Review Navigation */}
         <div className="flex items-center justify-between">

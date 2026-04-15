@@ -21,6 +21,15 @@ const SUBJECTS_ROTATION = [
   { name: "forensic", name_th: "นิติเวชศาสตร์" },
   { name: "ent", name_th: "โสต ศอ นาสิก" },
   { name: "epidemio", name_th: "ระบาดวิทยา" },
+  // สาขาที่เพิ่มเข้ามา — ทุกสาขาหมุนเวียนเท่ากัน
+  { name: "eye", name_th: "จักษุวิทยา" },
+  { name: "uro_surgery", name_th: "ศัลยศาสตร์ระบบทางเดินปัสสาวะ" },
+  { name: "gi_ped", name_th: "กุมารเวช ทางเดินอาหาร" },
+  { name: "gd_ped", name_th: "กุมารเวช พัฒนาการ" },
+  { name: "hemato_ped", name_th: "กุมารเวช โลหิตวิทยา" },
+  { name: "infectious_ped", name_th: "กุมารเวช โรคติดเชื้อ" },
+  { name: "chest_ped", name_th: "กุมารเวช ทรวงอก" },
+  { name: "endocrine_ped", name_th: "กุมารเวช ต่อมไร้ท่อ" },
 ];
 
 // 30 questions/day — 20% easy, 50% medium, 30% hard (เหมือนสอบจริง)
