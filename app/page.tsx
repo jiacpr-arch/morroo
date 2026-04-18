@@ -99,6 +99,18 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* Goody Widget */}
+      <section className="py-8 bg-white border-b">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <iframe
+            src="https://goody-bay.vercel.app/?site=morroo"
+            style={{ width: "100%", maxWidth: "900px", height: "420px", border: 0, display: "block", margin: "0 auto" }}
+            loading="lazy"
+            title="วันดีๆ ที่ควรรู้"
+          />
+        </div>
+      </section>
+
       {/* Daily Exam */}
       {dailyExam && (
         <section className="py-12 bg-white border-b">
