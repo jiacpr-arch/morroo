@@ -4,6 +4,8 @@ import { Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { BetaProvider } from "@/components/beta/BetaProvider";
+import BetaWelcomeModal from "@/components/beta/BetaWelcomeModal";
 import "./globals.css";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
@@ -147,9 +149,12 @@ export default function RootLayout({
             </Script>
           </>
         )}
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <BetaProvider>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <BetaWelcomeModal />
+        </BetaProvider>
       </body>
     </html>
   );

@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, User, LogOut } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import type { User as SupabaseUser } from "@supabase/supabase-js";
+import BetaHeaderCounter from "@/components/beta/BetaHeaderCounter";
 
 const navLinks = [
   { href: "/", label: "หน้าแรก" },
@@ -72,6 +73,7 @@ export default function Navbar() {
 
         {/* Auth buttons */}
         <div className="hidden md:flex items-center gap-3">
+          {user && <BetaHeaderCounter />}
           {user ? (
             <>
               {authNavLinks.map((link) => (
@@ -123,12 +125,12 @@ export default function Navbar() {
         </div>
 
         {/* Mobile menu button */}
-        <button
-          className="md:hidden"
-          onClick={() => setMobileOpen(!mobileOpen)}
-        >
-          {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        <div className="md:hidden flex items-center gap-2">
+          {user && <BetaHeaderCounter />}
+          <button onClick={() => setMobileOpen(!mobileOpen)}>
+            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile nav */}

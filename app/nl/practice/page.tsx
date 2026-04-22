@@ -11,6 +11,7 @@ import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
 import { createClient } from "@/lib/supabase/server";
 import type { Profile } from "@/lib/types";
+import { computeBetaStatus } from "@/lib/beta";
 
 export const metadata: Metadata = {
   title: "ฝึกทำข้อสอบ NL",
@@ -32,7 +33,9 @@ async function PracticeContent({ subjectId }: { subjectId?: string }) {
   if (user) {
     const { data: profile } = await supabase
       .from("profiles")
-      .select("membership_type, membership_expires_at")
+      .select(
+        "membership_type, membership_expires_at, beta_enrolled_via, beta_started_at, beta_expires_at, beta_questions_used, beta_questions_limit, has_seen_beta_welcome, beta_coupon_code, beta_coupon_issued_at"
+      )
       .eq("id", user.id)
       .single();
 
@@ -50,7 +53,15 @@ async function PracticeContent({ subjectId }: { subjectId?: string }) {
     }
 
     if (!isPremium) {
-      freeUsedCount = await getFreeAttemptsCount(user.id, subjectId);
+      // Beta testers get a 25-question quota tracked on the profile row
+      // (DB trigger). The legacy per-subject 5-free cap only applies to
+      // plain-free users.
+      const beta = computeBetaStatus(profile as Partial<Profile> as Profile | null);
+      if (beta.isBeta) {
+        freeUsedCount = 0;
+      } else {
+        freeUsedCount = await getFreeAttemptsCount(user.id, subjectId);
+      }
     }
   }
 
