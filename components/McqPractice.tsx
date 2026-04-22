@@ -26,6 +26,10 @@ import {
 import { createClient } from "@/lib/supabase/client";
 import McqAiChat from "@/components/McqAiChat";
 import ReportErrorButton from "@/components/ReportErrorButton";
+import { useBeta } from "@/components/beta/BetaProvider";
+import BetaCheckpointSurvey from "@/components/beta/BetaCheckpointSurvey";
+import BetaExitSurvey from "@/components/beta/BetaExitSurvey";
+import BetaPaywall from "@/components/beta/BetaPaywall";
 
 interface McqPracticeProps {
   questions: McqQuestion[];
@@ -40,6 +44,20 @@ export default function McqPractice({
   freeUsedCount = 0,
   freeLimit = 5,
 }: McqPracticeProps) {
+  const { status: betaStatus, recordAttempt, refresh: refreshBeta } = useBeta();
+  const isBeta = betaStatus?.isBeta ?? false;
+  // Beta users get their own quota (from DB). Non-beta free users keep the
+  // legacy 5-question/free cap.
+  const effectiveLimit = isBeta
+    ? betaStatus!.questionsLimit
+    : freeLimit;
+  const effectiveUsedBaseline = isBeta
+    ? betaStatus!.questionsUsed
+    : freeUsedCount;
+  const [checkpointKind, setCheckpointKind] = useState<
+    "checkpoint_10" | "checkpoint_25" | null
+  >(null);
+  const shownCheckpoints = useRef<Set<number>>(new Set());
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showResult, setShowResult] = useState(false);
@@ -51,8 +69,13 @@ export default function McqPractice({
   const questionStartTime = useRef<number>(Date.now());
 
   // How many free questions remain (counting previous sessions + this session)
-  const freeRemaining = Math.max(0, freeLimit - freeUsedCount - sessionAnswered);
-  const isQuotaExhausted = !isPremium && freeRemaining === 0 && showResult;
+  const freeRemaining = Math.max(
+    0,
+    effectiveLimit - effectiveUsedBaseline - sessionAnswered
+  );
+  const isBetaExpired = isBeta && (betaStatus?.isExpired ?? false);
+  const isQuotaExhausted =
+    !isPremium && showResult && (freeRemaining === 0 || isBetaExpired);
 
   // Get user on mount and create session
   useEffect(() => {
@@ -121,9 +144,38 @@ export default function McqPractice({
         }).catch(() => {
           // Silently fail — don't block UI
         });
+
+        // Beta: optimistic counter bump + checkpoint survey triggers.
+        if (isBeta) {
+          recordAttempt();
+          const newTotalUsed = effectiveUsedBaseline + sessionAnswered + 1;
+          if (
+            newTotalUsed === 10 &&
+            !shownCheckpoints.current.has(10)
+          ) {
+            shownCheckpoints.current.add(10);
+            setCheckpointKind("checkpoint_10");
+          } else if (
+            newTotalUsed === effectiveLimit &&
+            !shownCheckpoints.current.has(effectiveLimit)
+          ) {
+            shownCheckpoints.current.add(effectiveLimit);
+            setCheckpointKind("checkpoint_25");
+          }
+        }
       }
     },
-    [showResult, question, userId, sessionId]
+    [
+      showResult,
+      question,
+      userId,
+      sessionId,
+      isBeta,
+      recordAttempt,
+      effectiveUsedBaseline,
+      sessionAnswered,
+      effectiveLimit,
+    ]
   );
 
   const handleNext = useCallback(() => {
@@ -202,8 +254,8 @@ export default function McqPractice({
         />
       </div>
 
-      {/* Free quota indicator */}
-      {!isPremium && (
+      {/* Quota indicator (hidden on beta — header counter covers it) */}
+      {!isPremium && !isBeta && (
         <div className="flex items-center justify-between text-xs bg-amber-50 border border-amber-200 rounded-lg px-3 py-2">
           <span className="text-amber-700">
             🎁 ข้อฟรีคงเหลือ:{" "}
@@ -487,33 +539,47 @@ export default function McqPractice({
       {showResult && (
         <div className="flex items-center gap-3">
           {isQuotaExhausted ? (
-            /* Free quota exhausted — upgrade wall */
+            /* Quota exhausted — beta users see BetaPaywall (coupon-aware),
+               everyone else sees the legacy free-tier upsell. */
             <div className="w-full">
-              <Card className="border-brand bg-brand/5">
-                <CardContent className="p-6 text-center space-y-3">
-                  <div className="mx-auto w-12 h-12 rounded-full bg-brand/10 flex items-center justify-center">
-                    <Lock className="h-6 w-6 text-brand" />
-                  </div>
-                  <h3 className="text-lg font-bold">ครบ {freeLimit} ข้อฟรีแล้ว!</h3>
-                  <p className="text-sm text-muted-foreground">
-                    อัปเกรดเพื่อทำข้อสอบต่อและดูเฉลยละเอียดทุกข้อ
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-2 justify-center">
-                    <Link href="/pricing">
-                      <button className="bg-brand hover:bg-brand/90 text-white px-6 py-2.5 rounded-lg font-medium text-sm w-full sm:w-auto">
-                        <Sparkles className="h-4 w-4 inline mr-1" />
-                        อัปเกรด ฿199/เดือน
-                      </button>
-                    </Link>
-                    <Button onClick={handleRestart} variant="outline" className="gap-2 text-sm">
-                      <RotateCcw className="h-4 w-4" /> ทำใหม่
-                    </Button>
-                  </div>
-                  <p className="text-xs text-muted-foreground">
-                    คะแนนของคุณ: {stats.correct}/{stats.total} ({percentage}%)
-                  </p>
-                </CardContent>
-              </Card>
+              {isBeta && betaStatus ? (
+                <BetaPaywall
+                  status={betaStatus}
+                  reason={isBetaExpired ? "expired" : "quota"}
+                />
+              ) : (
+                <Card className="border-brand bg-brand/5">
+                  <CardContent className="p-6 text-center space-y-3">
+                    <div className="mx-auto w-12 h-12 rounded-full bg-brand/10 flex items-center justify-center">
+                      <Lock className="h-6 w-6 text-brand" />
+                    </div>
+                    <h3 className="text-lg font-bold">
+                      ครบ {freeLimit} ข้อฟรีแล้ว!
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      อัปเกรดเพื่อทำข้อสอบต่อและดูเฉลยละเอียดทุกข้อ
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-2 justify-center">
+                      <Link href="/pricing">
+                        <button className="bg-brand hover:bg-brand/90 text-white px-6 py-2.5 rounded-lg font-medium text-sm w-full sm:w-auto">
+                          <Sparkles className="h-4 w-4 inline mr-1" />
+                          อัปเกรด ฿199/เดือน
+                        </button>
+                      </Link>
+                      <Button
+                        onClick={handleRestart}
+                        variant="outline"
+                        className="gap-2 text-sm"
+                      >
+                        <RotateCcw className="h-4 w-4" /> ทำใหม่
+                      </Button>
+                    </div>
+                    <p className="text-xs text-muted-foreground">
+                      คะแนนของคุณ: {stats.correct}/{stats.total} ({percentage}%)
+                    </p>
+                  </CardContent>
+                </Card>
+              )}
             </div>
           ) : !isFinished ? (
             <Button
@@ -550,6 +616,24 @@ export default function McqPractice({
             </div>
           )}
         </div>
+      )}
+
+      {/* Beta checkpoint surveys — fire after the 10th / 25th attempt */}
+      {isBeta && checkpointKind && (
+        <BetaCheckpointSurvey
+          kind={checkpointKind}
+          open
+          onDismiss={() => setCheckpointKind(null)}
+          onSubmitted={() => {
+            setCheckpointKind(null);
+            refreshBeta();
+          }}
+        />
+      )}
+
+      {/* Beta exit survey — only after 3+ attempts in a session */}
+      {isBeta && (
+        <BetaExitSurvey attemptsInSession={sessionAnswered} />
       )}
     </div>
   );

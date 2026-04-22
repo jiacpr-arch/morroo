@@ -74,6 +74,13 @@ function RegisterForm() {
           body: JSON.stringify({ code: refCode.trim(), userId: data.user.id }),
         });
       }
+
+      // Beta enrollment — no-op if promo window has closed.
+      try {
+        await fetch("/api/beta/enroll", { method: "POST" });
+      } catch {
+        /* non-fatal */
+      }
     }
 
     setSuccess(true);

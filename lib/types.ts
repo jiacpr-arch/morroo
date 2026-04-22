@@ -13,6 +13,14 @@ export interface Profile {
   referral_code: string | null;
   referred_by: string | null;
   reporter_points: number;
+  beta_enrolled_via: "existing_user_upgrade" | "new_signup" | null;
+  beta_started_at: string | null;
+  beta_expires_at: string | null;
+  beta_questions_used: number;
+  beta_questions_limit: number;
+  has_seen_beta_welcome: boolean;
+  beta_coupon_code: string | null;
+  beta_coupon_issued_at: string | null;
 }
 
 // ============================================================
