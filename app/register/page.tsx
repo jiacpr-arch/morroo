@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
+import BetaPromoBanner from "@/components/beta/BetaPromoBanner";
 
 function RegisterForm() {
   const router = useRouter();
@@ -134,6 +135,7 @@ function RegisterForm() {
           </p>
         </CardHeader>
         <CardContent className="space-y-4">
+          <BetaPromoBanner variant="inline" />
           {/* LINE Login */}
           <a
             href="/api/auth/line?mode=register"
