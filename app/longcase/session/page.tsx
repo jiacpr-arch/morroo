@@ -5,8 +5,9 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
-import { Loader2, Send, ChevronRight, CheckCircle, MessageSquare, Stethoscope, FlaskConical, Brain, ClipboardList, Star } from "lucide-react";
+import { Loader2, Send, ChevronRight, CheckCircle, MessageSquare, Stethoscope, FlaskConical, Brain, ClipboardList, Star, Coins } from "lucide-react";
 import type { LongCaseSession, LongCaseFull } from "@/lib/types";
+import FeedbackCard from "./FeedbackCard";
 
 type Phase = LongCaseSession["phase"];
 
@@ -61,6 +62,15 @@ function LongCaseSessionInner() {
   const [teachingPoints, setTeachingPoints] = useState<string[]>([]);
   const [scoringLoading, setScoringLoading] = useState(false);
 
+  // Rewards + feedback state
+  const [coinsInfo, setCoinsInfo] = useState<{
+    base: number;
+    bonus: number;
+    total_awarded: number;
+    balance: number | null;
+  } | null>(null);
+  const [feedbackSubmitted, setFeedbackSubmitted] = useState(false);
+
   // Load session
   useEffect(() => {
     if (!sessionId) return;
@@ -96,6 +106,16 @@ function LongCaseSessionInner() {
 
   useEffect(() => { chatEndRef.current?.scrollIntoView({ behavior: "smooth" }); }, [chatMessages]);
   useEffect(() => { examEndRef.current?.scrollIntoView({ behavior: "smooth" }); }, [examMessages]);
+
+  // When the session is already completed (page reload), fetch whether the
+  // user has already submitted feedback so we don't show the form twice.
+  useEffect(() => {
+    if (!sessionId || phase !== "done") return;
+    fetch(`/api/longcase/feedback?sessionId=${sessionId}`)
+      .then(r => r.json())
+      .then(data => { if (data?.submitted) setFeedbackSubmitted(true); })
+      .catch(() => {});
+  }, [sessionId, phase]);
 
   useEffect(() => {
     if (phase === "lab" && sessionId && labKeys.length === 0) {
@@ -258,6 +278,7 @@ function LongCaseSessionInner() {
       if (data.error) { setError(data.error); return; }
       setScores(data);
       setTeachingPoints(data.teaching_points || []);
+      if (data.coins) setCoinsInfo(data.coins);
       setPhase("done");
     } catch {
       setError("ไม่สามารถประเมินคะแนนได้");
@@ -640,6 +661,35 @@ function LongCaseSessionInner() {
           </div>
         )}
 
+        {/* === REWARDS BANNER === */}
+        {(phase === "done" || scores !== null) && scores && coinsInfo && (
+          <div className="rounded-xl border-2 border-amber-400 bg-gradient-to-r from-amber-50 to-yellow-50 p-5">
+            <div className="flex items-center gap-4">
+              <div className="shrink-0 rounded-full bg-amber-100 p-3">
+                <Coins className="h-8 w-8 text-amber-600" />
+              </div>
+              <div className="flex-1">
+                <p className="text-sm text-amber-700">คุณได้รับรางวัล!</p>
+                <p className="text-2xl font-bold text-amber-800">
+                  +{coinsInfo.total_awarded} coins
+                </p>
+                <p className="text-xs text-amber-700 mt-0.5">
+                  ทำเคสจบ +{coinsInfo.base}
+                  {coinsInfo.bonus > 0 && ` · คะแนน ≥70% +${coinsInfo.bonus}`}
+                </p>
+              </div>
+              {coinsInfo.balance !== null && (
+                <div className="text-right shrink-0">
+                  <p className="text-xs text-amber-700">ยอดรวม</p>
+                  <p className="text-lg font-bold text-amber-800">
+                    {coinsInfo.balance}
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
         {/* === SCORES === */}
         {(phase === "done" || scores !== null) && scores && (
           <div className="rounded-xl border-2 border-green-400 bg-white p-6 space-y-5">
@@ -695,6 +745,20 @@ function LongCaseSessionInner() {
               กลับไปเลือกเคสใหม่
             </Button>
           </div>
+        )}
+
+        {/* === POST-EXAM FEEDBACK === */}
+        {(phase === "done" || scores !== null) && scores && sessionId && (
+          <FeedbackCard
+            sessionId={sessionId}
+            initialSubmitted={feedbackSubmitted}
+            onSubmitted={(_, balance) => {
+              setFeedbackSubmitted(true);
+              if (balance !== null && coinsInfo) {
+                setCoinsInfo({ ...coinsInfo, balance });
+              }
+            }}
+          />
         )}
       </div>
     </div>
