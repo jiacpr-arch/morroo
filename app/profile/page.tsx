@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
-import { User, Mail, Crown, Calendar, LogOut, Gift, Copy, Check, Users, MessageSquare, Link2, Loader2, Flag } from "lucide-react";
+import { User, Mail, Crown, Calendar, LogOut, Gift, Copy, Check, Users, MessageSquare, Link2, Loader2, Flag, Coins } from "lucide-react";
 import type { Profile } from "@/lib/types";
 
 const membershipLabels: Record<string, string> = {
@@ -196,6 +196,26 @@ export default function ProfilePage() {
                 </Button>
               </Link>
             )}
+          </CardContent>
+        </Card>
+
+        {/* MEQ Coins — earned from long case exams */}
+        <Card>
+          <CardHeader>
+            <h3 className="font-semibold flex items-center gap-2">
+              <Coins className="h-5 w-5 text-amber-600" /> MEQ Coins — รางวัลจากการฝึก Long Case
+            </h3>
+            <p className="text-sm text-muted-foreground mt-1">
+              ทำ Long Case จบ +20 · คะแนน ≥70% +10 · ส่ง feedback +10
+            </p>
+          </CardHeader>
+          <CardContent>
+            <div className="flex items-center justify-between rounded-lg bg-amber-50 border border-amber-200 p-4">
+              <span className="text-sm text-amber-800">เหรียญสะสมของคุณ</span>
+              <span className="text-2xl font-bold text-amber-700">
+                {profile?.meq_coins ?? 0}
+              </span>
+            </div>
           </CardContent>
         </Card>
 

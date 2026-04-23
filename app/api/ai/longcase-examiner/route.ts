@@ -128,7 +128,26 @@ ${examinerChat.map(m => `${m.role === "user" ? "นักศึกษา" : "Exa
         completed_at: new Date().toISOString(),
       });
 
-      return new Response(JSON.stringify({ ...scores, score_total_pct: pct, teaching_points: scores.teaching_points }), {
+      // Coins awarded by DB trigger — surface the breakdown to the UI
+      const coin_base = 20;
+      const coin_bonus = pct >= 70 ? 10 : 0;
+      const { data: profile } = await supabase
+        .from("profiles")
+        .select("meq_coins")
+        .eq("id", user.id)
+        .single();
+
+      return new Response(JSON.stringify({
+        ...scores,
+        score_total_pct: pct,
+        teaching_points: scores.teaching_points,
+        coins: {
+          base: coin_base,
+          bonus: coin_bonus,
+          total_awarded: coin_base + coin_bonus,
+          balance: profile?.meq_coins ?? null,
+        },
+      }), {
         headers: { "Content-Type": "application/json" },
       });
     } catch (err) {
