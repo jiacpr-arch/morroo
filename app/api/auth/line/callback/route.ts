@@ -2,6 +2,35 @@ import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { createAdminClient } from "@/lib/supabase/admin";
 
+type AdminClient = ReturnType<typeof createAdminClient>;
+
+/**
+ * Paginated scan of auth.users for a matching email. Used as a fallback when
+ * the `profiles` table lookup misses (e.g. the user signed up via a provider
+ * that didn't populate `profiles.email`). Capped to avoid runaway cost.
+ */
+async function findAuthUserIdByEmail(
+  supabase: AdminClient,
+  email: string
+): Promise<string | null> {
+  const perPage = 1000;
+  const maxPages = 20;
+  for (let page = 1; page <= maxPages; page++) {
+    const { data, error } = await supabase.auth.admin.listUsers({
+      page,
+      perPage,
+    });
+    if (error) {
+      console.error("listUsers failed during LINE email fallback:", error);
+      return null;
+    }
+    const match = data?.users?.find((u) => u.email === email);
+    if (match) return match.id;
+    if (!data?.users || data.users.length < perPage) break;
+  }
+  return null;
+}
+
 /**
  * GET /api/auth/line/callback
  *
@@ -136,9 +165,7 @@ export async function GET(request: Request) {
     // Already linked — just sign them in
     userId = existingByLine.id;
   } else {
-    // Look up any existing profile with the target email. Querying `profiles`
-    // directly avoids pulling the entire auth.users table via listUsers()
-    // (which is paginated and would miss users past the first page).
+    // Fast path: look up an existing profile with the target email.
     const { data: profileByEmail, error: emailLookupError } = await supabase
       .from("profiles")
       .select("id")
@@ -150,27 +177,73 @@ export async function GET(request: Request) {
       return NextResponse.redirect(`${origin}/login?error=line_lookup_failed`);
     }
 
-    if (profileByEmail) {
-      // Link LINE to existing account
-      userId = profileByEmail.id;
-      const { error: updateError } = await supabase
-        .from("profiles")
-        .update({
-          line_user_id: lineProfile.userId,
-          line_linked_at: new Date().toISOString(),
-        })
-        .eq("id", userId);
+    // Fallback: profiles may be missing or have a NULL email for users who
+    // signed up via Google/email before profile syncing existed. Scan
+    // auth.users so we can link instead of trying to re-create the account.
+    const existingAuthUserId =
+      profileByEmail?.id ??
+      (await findAuthUserIdByEmail(supabase, targetEmail));
 
-      if (updateError) {
-        console.error("Failed to link LINE to profile:", updateError);
+    if (existingAuthUserId) {
+      userId = existingAuthUserId;
+
+      // Ensure a profile row exists and carry over the LINE link without
+      // overwriting name/role on existing profiles.
+      const { data: existingProfile, error: existingProfileError } =
+        await supabase
+          .from("profiles")
+          .select("id")
+          .eq("id", userId)
+          .maybeSingle();
+
+      if (existingProfileError) {
+        console.error(
+          "Failed to inspect existing profile for LINE link:",
+          existingProfileError
+        );
         return NextResponse.redirect(
-          `${origin}/login?error=line_link_failed`
+          `${origin}/login?error=line_lookup_failed`
         );
       }
+
+      if (existingProfile) {
+        const { error: updateError } = await supabase
+          .from("profiles")
+          .update({
+            line_user_id: lineProfile.userId,
+            line_linked_at: new Date().toISOString(),
+          })
+          .eq("id", userId);
+
+        if (updateError) {
+          console.error("Failed to link LINE to profile:", updateError);
+          return NextResponse.redirect(
+            `${origin}/login?error=line_link_failed`
+          );
+        }
+      } else {
+        const { error: insertError } = await supabase.from("profiles").insert({
+          id: userId,
+          email: targetEmail,
+          name: lineProfile.displayName,
+          role: "user",
+          membership_type: "free",
+          line_user_id: lineProfile.userId,
+          line_linked_at: new Date().toISOString(),
+        });
+
+        if (insertError) {
+          console.error(
+            "Failed to create missing profile during LINE link:",
+            insertError
+          );
+          return NextResponse.redirect(
+            `${origin}/login?error=line_link_failed`
+          );
+        }
+      }
     } else {
-      // Create a new Supabase user. Use a deterministic ID-less flow and
-      // rely on the unique email constraint at the DB to prevent duplicates
-      // from concurrent requests (createUser will surface a conflict error).
+      // Truly new user — create in auth.users then insert the profile.
       const tempPassword = `line_${crypto.randomUUID()}`;
       const { data: newUser, error: createError } =
         await supabase.auth.admin.createUser({
