@@ -46,10 +46,24 @@ export async function broadcastLineMessages(
 }
 
 export function verifyLineSignature(body: string, signature: string): boolean {
-  const secret = process.env.LINE_CHANNEL_SECRET ?? "";
-  const hash = crypto
+  const secret = process.env.LINE_CHANNEL_SECRET;
+  if (!secret) {
+    // Fail closed if the webhook secret isn't configured.
+    console.error("LINE_CHANNEL_SECRET is not set; rejecting webhook");
+    return false;
+  }
+  const expected = crypto
     .createHmac("sha256", secret)
     .update(body)
-    .digest("base64");
-  return hash === signature;
+    .digest();
+
+  let received: Buffer;
+  try {
+    received = Buffer.from(signature, "base64");
+  } catch {
+    return false;
+  }
+
+  if (received.length !== expected.length) return false;
+  return crypto.timingSafeEqual(received, expected);
 }
