@@ -42,11 +42,16 @@ export async function POST(request: NextRequest) {
 
       if (!text.startsWith("MORROO-")) continue;
 
-      const { data: linkCode } = await supabase
+      const { data: linkCode, error: codeError } = await supabase
         .from("line_link_codes")
         .select("user_id, expires_at")
         .eq("code", text)
-        .single();
+        .maybeSingle();
+
+      if (codeError) {
+        console.error("LINE link code lookup failed:", codeError);
+        continue;
+      }
 
       if (!linkCode) {
         await sendLineMessage(lineUserId, [
@@ -69,11 +74,16 @@ export async function POST(request: NextRequest) {
       }
 
       // Check this LINE user isn't already linked to another account
-      const { data: existing } = await supabase
+      const { data: existing, error: existingError } = await supabase
         .from("profiles")
         .select("id")
         .eq("line_user_id", lineUserId)
-        .single();
+        .maybeSingle();
+
+      if (existingError) {
+        console.error("LINE existing-link lookup failed:", existingError);
+        continue;
+      }
 
       if (existing && existing.id !== linkCode.user_id) {
         await sendLineMessage(lineUserId, [
@@ -86,7 +96,7 @@ export async function POST(request: NextRequest) {
       }
 
       // Link LINE user to profile
-      await supabase
+      const { error: linkError } = await supabase
         .from("profiles")
         .update({
           line_user_id: lineUserId,
@@ -94,8 +104,27 @@ export async function POST(request: NextRequest) {
         })
         .eq("id", linkCode.user_id);
 
+      if (linkError) {
+        console.error("Failed to link LINE user to profile:", linkError);
+        await sendLineMessage(lineUserId, [
+          {
+            type: "text",
+            text: "❌ เกิดข้อผิดพลาดระหว่างเชื่อมต่อ กรุณาลองใหม่อีกครั้ง",
+          },
+        ]);
+        continue;
+      }
+
       // Delete used code
-      await supabase.from("line_link_codes").delete().eq("code", text);
+      const { error: deleteError } = await supabase
+        .from("line_link_codes")
+        .delete()
+        .eq("code", text);
+
+      if (deleteError) {
+        // Linking succeeded — log but don't fail the flow.
+        console.error("Failed to delete used LINE link code:", deleteError);
+      }
 
       await sendLineMessage(lineUserId, [
         {
