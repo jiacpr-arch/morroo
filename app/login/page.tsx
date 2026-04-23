@@ -1,19 +1,40 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
 
-export default function LoginPage() {
+const LINE_ERROR_MESSAGES: Record<string, string> = {
+  line_denied: "คุณได้ยกเลิกการเข้าสู่ระบบด้วย LINE",
+  line_missing_params: "ข้อมูลจาก LINE ไม่ครบถ้วน กรุณาลองใหม่",
+  line_invalid_state: "เซสชันหมดอายุหรือไม่ถูกต้อง กรุณาลองใหม่",
+  line_not_configured: "ระบบ LINE ยังไม่พร้อมใช้งาน กรุณาติดต่อผู้ดูแล",
+  line_token_failed: "ไม่สามารถยืนยันตัวตนกับ LINE ได้ กรุณาลองใหม่",
+  line_profile_failed: "ไม่สามารถดึงข้อมูลโปรไฟล์จาก LINE ได้",
+  line_lookup_failed: "เกิดข้อผิดพลาดในระบบ กรุณาติดต่อผู้ดูแล",
+  line_link_failed: "ไม่สามารถเชื่อม LINE กับบัญชีของคุณได้",
+  line_create_failed: "ไม่สามารถสร้างบัญชีจาก LINE ได้ กรุณาลองใหม่",
+  line_session_failed: "ไม่สามารถเริ่มเซสชันได้ กรุณาลองใหม่",
+  line_no_email: "บัญชีนี้ไม่มีอีเมล กรุณาติดต่อผู้ดูแล",
+  auth: "การยืนยันตัวตนล้มเหลว กรุณาลองใหม่",
+};
+
+function LoginForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const queryError = searchParams.get("error");
+  const initialError = queryError
+    ? LINE_ERROR_MESSAGES[queryError] ?? `เกิดข้อผิดพลาด (${queryError})`
+    : "";
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [error, setError] = useState(initialError);
   const [loading, setLoading] = useState(false);
 
   const handleEmailLogin = async (e: React.FormEvent) => {
@@ -57,6 +78,11 @@ export default function LoginPage() {
           </p>
         </CardHeader>
         <CardContent className="space-y-4">
+          {initialError && (
+            <div className="rounded-md border border-destructive/50 bg-destructive/10 p-3 text-sm text-destructive">
+              {initialError}
+            </div>
+          )}
           {/* LINE Login */}
           <a
             href="/api/auth/line?mode=login"
@@ -155,5 +181,13 @@ export default function LoginPage() {
         </CardFooter>
       </Card>
     </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={null}>
+      <LoginForm />
+    </Suspense>
   );
 }
