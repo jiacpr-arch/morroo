@@ -31,7 +31,8 @@ export async function GET(request: Request) {
   // Verify CSRF state
   const cookieStore = await cookies();
   const storedValue = cookieStore.get("line_oauth_state")?.value ?? "";
-  const [storedState, mode] = storedValue.split(":");
+  const [storedState, rawMode] = storedValue.split(":");
+  const mode: "login" | "register" = rawMode === "register" ? "register" : "login";
 
   // Clear the cookie
   cookieStore.delete("line_oauth_state");
@@ -40,8 +41,12 @@ export async function GET(request: Request) {
     return NextResponse.redirect(`${origin}/login?error=line_invalid_state`);
   }
 
-  const channelId = process.env.LINE_LOGIN_CHANNEL_ID!;
-  const channelSecret = process.env.LINE_LOGIN_CHANNEL_SECRET!;
+  const channelId = process.env.LINE_LOGIN_CHANNEL_ID;
+  const channelSecret = process.env.LINE_LOGIN_CHANNEL_SECRET;
+  if (!channelId || !channelSecret) {
+    console.error("LINE login env vars missing");
+    return NextResponse.redirect(`${origin}/login?error=line_not_configured`);
+  }
   const redirectUri = `${origin}/api/auth/line/callback`;
 
   // ── Step 1: Exchange code for tokens ──────────────────────────
@@ -107,41 +112,69 @@ export async function GET(request: Request) {
   // ── Step 4: Find or create Supabase user ──────────────────────
   const supabase = createAdminClient();
 
-  // Check if a profile already has this LINE user ID linked
-  const { data: existingByLine } = await supabase
+  // Check if a profile already has this LINE user ID linked.
+  // `maybeSingle()` returns null when no rows match but still surfaces an
+  // error if the query is ambiguous (e.g. duplicate line_user_id rows).
+  const { data: existingByLine, error: lookupError } = await supabase
     .from("profiles")
     .select("id, email")
     .eq("line_user_id", lineProfile.userId)
-    .single();
+    .maybeSingle();
+
+  if (lookupError) {
+    console.error("LINE profile lookup failed:", lookupError);
+    return NextResponse.redirect(`${origin}/login?error=line_lookup_failed`);
+  }
+
+  // Placeholder email for LINE accounts that didn't grant email scope.
+  const targetEmail =
+    lineEmail ?? `line_${lineProfile.userId}@line.morroo.com`;
 
   let userId: string;
 
   if (existingByLine) {
     // Already linked — just sign them in
     userId = existingByLine.id;
-  } else if (lineEmail) {
-    // Check if there's a Supabase user with this email
-    const { data: existingUsers } = await supabase.auth.admin.listUsers();
-    const matchingUser = existingUsers?.users?.find(
-      (u) => u.email === lineEmail
-    );
+  } else {
+    // Look up any existing profile with the target email. Querying `profiles`
+    // directly avoids pulling the entire auth.users table via listUsers()
+    // (which is paginated and would miss users past the first page).
+    const { data: profileByEmail, error: emailLookupError } = await supabase
+      .from("profiles")
+      .select("id")
+      .eq("email", targetEmail)
+      .maybeSingle();
 
-    if (matchingUser) {
+    if (emailLookupError) {
+      console.error("LINE email lookup failed:", emailLookupError);
+      return NextResponse.redirect(`${origin}/login?error=line_lookup_failed`);
+    }
+
+    if (profileByEmail) {
       // Link LINE to existing account
-      userId = matchingUser.id;
-      await supabase
+      userId = profileByEmail.id;
+      const { error: updateError } = await supabase
         .from("profiles")
         .update({
           line_user_id: lineProfile.userId,
           line_linked_at: new Date().toISOString(),
         })
         .eq("id", userId);
+
+      if (updateError) {
+        console.error("Failed to link LINE to profile:", updateError);
+        return NextResponse.redirect(
+          `${origin}/login?error=line_link_failed`
+        );
+      }
     } else {
-      // Create new user
+      // Create a new Supabase user. Use a deterministic ID-less flow and
+      // rely on the unique email constraint at the DB to prevent duplicates
+      // from concurrent requests (createUser will surface a conflict error).
       const tempPassword = `line_${crypto.randomUUID()}`;
       const { data: newUser, error: createError } =
         await supabase.auth.admin.createUser({
-          email: lineEmail,
+          email: targetEmail,
           password: tempPassword,
           email_confirm: true,
           user_metadata: {
@@ -160,11 +193,10 @@ export async function GET(request: Request) {
 
       userId = newUser.user.id;
 
-      // Create profile
-      await supabase.from("profiles").upsert(
+      const { error: upsertError } = await supabase.from("profiles").upsert(
         {
           id: userId,
-          email: lineEmail,
+          email: targetEmail,
           name: lineProfile.displayName,
           role: "user",
           membership_type: "free",
@@ -173,63 +205,13 @@ export async function GET(request: Request) {
         },
         { onConflict: "id", ignoreDuplicates: true }
       );
-    }
-  } else {
-    // No email from LINE — create user with a placeholder email
-    // LINE users without email scope get: line_{userId}@line.morroo.com
-    const placeholderEmail = `line_${lineProfile.userId}@line.morroo.com`;
 
-    // Check if we already have a user with this placeholder
-    const { data: existingUsers } = await supabase.auth.admin.listUsers();
-    const matchingUser = existingUsers?.users?.find(
-      (u) => u.email === placeholderEmail
-    );
-
-    if (matchingUser) {
-      userId = matchingUser.id;
-      // Ensure LINE is linked
-      await supabase
-        .from("profiles")
-        .update({
-          line_user_id: lineProfile.userId,
-          line_linked_at: new Date().toISOString(),
-        })
-        .eq("id", userId);
-    } else {
-      const tempPassword = `line_${crypto.randomUUID()}`;
-      const { data: newUser, error: createError } =
-        await supabase.auth.admin.createUser({
-          email: placeholderEmail,
-          password: tempPassword,
-          email_confirm: true,
-          user_metadata: {
-            name: lineProfile.displayName,
-            avatar_url: lineProfile.pictureUrl,
-            provider: "line",
-          },
-        });
-
-      if (createError || !newUser.user) {
-        console.error("Failed to create LINE user:", createError);
+      if (upsertError) {
+        console.error("Failed to upsert profile for LINE user:", upsertError);
         return NextResponse.redirect(
           `${origin}/login?error=line_create_failed`
         );
       }
-
-      userId = newUser.user.id;
-
-      await supabase.from("profiles").upsert(
-        {
-          id: userId,
-          email: placeholderEmail,
-          name: lineProfile.displayName,
-          role: "user",
-          membership_type: "free",
-          line_user_id: lineProfile.userId,
-          line_linked_at: new Date().toISOString(),
-        },
-        { onConflict: "id", ignoreDuplicates: true }
-      );
     }
   }
 
@@ -238,11 +220,16 @@ export async function GET(request: Request) {
   // through the auth callback with the token
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || origin;
 
-  const { data: existingProfile } = await supabase
+  const { data: existingProfile, error: profileError } = await supabase
     .from("profiles")
     .select("email")
     .eq("id", userId)
-    .single();
+    .maybeSingle();
+
+  if (profileError) {
+    console.error("Failed to load profile after LINE login:", profileError);
+    return NextResponse.redirect(`${origin}/login?error=line_session_failed`);
+  }
 
   const userEmail = existingProfile?.email;
   if (!userEmail) {
@@ -263,7 +250,11 @@ export async function GET(request: Request) {
 
   // Build the Supabase auth verification URL
   // The hashed_token is used with the /auth/v1/verify endpoint
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  if (!supabaseUrl) {
+    console.error("NEXT_PUBLIC_SUPABASE_URL is not configured");
+    return NextResponse.redirect(`${origin}/login?error=line_session_failed`);
+  }
   const verifyUrl = new URL(`${supabaseUrl}/auth/v1/verify`);
   verifyUrl.searchParams.set("token", linkData.properties.hashed_token);
   verifyUrl.searchParams.set("type", "magiclink");
