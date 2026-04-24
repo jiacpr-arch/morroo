@@ -7,11 +7,13 @@ import {
 import McqPractice from "@/components/McqPractice";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Sparkles } from "lucide-react";
 import type { Metadata } from "next";
 import { createClient } from "@/lib/supabase/server";
 import type { Profile } from "@/lib/types";
 import { computeBetaStatus } from "@/lib/beta";
+import { getRecommendedQuestions } from "@/lib/mcq-recommendation";
+import type { McqQuestion } from "@/lib/types-mcq";
 
 export const metadata: Metadata = {
   title: "ฝึกทำข้อสอบ NL",
@@ -20,7 +22,13 @@ export const metadata: Metadata = {
 
 const FREE_LIMIT = 5;
 
-async function PracticeContent({ subjectId }: { subjectId?: string }) {
+async function PracticeContent({
+  subjectId,
+  recommended,
+}: {
+  subjectId?: string;
+  recommended?: boolean;
+}) {
   const supabase = await createClient();
   const {
     data: { user },
@@ -65,15 +73,30 @@ async function PracticeContent({ subjectId }: { subjectId?: string }) {
     }
   }
 
-  const [subjects, questions] = await Promise.all([
-    getMcqSubjects(),
-    getMcqQuestions({
+  // Recommended mode requires a signed-in user with history. Fall back
+  // to the normal random pool otherwise.
+  const useRecommended = recommended && !!user;
+
+  const subjects = await getMcqSubjects();
+
+  let questions: McqQuestion[];
+  let recBreakdown: Awaited<ReturnType<typeof getRecommendedQuestions>>["breakdown"] | null = null;
+
+  if (useRecommended && user) {
+    const rec = await getRecommendedQuestions(supabase, user.id, {
+      examType: "NL2",
+      limit: 20,
+    });
+    questions = rec.questions;
+    recBreakdown = rec.breakdown;
+  } else {
+    questions = await getMcqQuestions({
       subjectId,
       examType: "NL2",
       limit: 200,
       randomize: true,
-    }),
-  ]);
+    });
+  }
 
   const currentSubject = subjectId
     ? subjects.find((s) => s.id === subjectId)
@@ -81,45 +104,104 @@ async function PracticeContent({ subjectId }: { subjectId?: string }) {
 
   return (
     <div>
-      {/* Subject Filter */}
-      <div className="mb-6">
-        <h3 className="text-sm font-medium mb-2 text-muted-foreground">
-          เลือกสาขา
-        </h3>
-        <div className="flex flex-wrap gap-2">
-          <Link href="/nl/practice">
+      {/* Recommended banner */}
+      {useRecommended && recBreakdown && (
+        <div className="mb-6 rounded-xl border border-brand/30 bg-gradient-to-r from-brand/5 to-amber-50/60 px-4 py-3">
+          <div className="flex items-center gap-2 mb-1">
+            <Sparkles className="h-4 w-4 text-brand" />
+            <span className="text-sm font-semibold text-brand">
+              โหมดแนะนำ — จัดชุดให้ตามผลการเรียนของคุณ
+            </span>
+          </div>
+          <p className="text-xs text-muted-foreground">
+            {recBreakdown.review > 0 && <>ทบทวนข้อที่เคยผิด {recBreakdown.review} ข้อ · </>}
+            {recBreakdown.weak > 0 && <>สาขาที่ควรเสริม {recBreakdown.weak} ข้อ · </>}
+            ข้อใหม่ {recBreakdown.filler} ข้อ
+          </p>
+          {recBreakdown.weakSubjects.length > 0 && (
+            <div className="mt-2 flex flex-wrap gap-1.5">
+              {recBreakdown.weakSubjects.slice(0, 4).map((s) => (
+                <span
+                  key={s.subject_id}
+                  className="inline-flex items-center gap-1 rounded-full bg-red-50 text-red-700 text-xs px-2 py-0.5 border border-red-100"
+                >
+                  {s.icon} {s.name_th} {s.accuracy}%
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Mode toggle */}
+      {user && (
+        <div className="mb-4 flex flex-wrap gap-2">
+          <Link href="/nl/practice?mode=recommended">
             <Badge
-              variant={!subjectId ? "default" : "secondary"}
-              className={`cursor-pointer ${
-                !subjectId ? "bg-brand text-white" : "hover:bg-brand/10"
+              variant={useRecommended ? "default" : "secondary"}
+              className={`cursor-pointer gap-1 ${
+                useRecommended ? "bg-brand text-white" : "hover:bg-brand/10"
               }`}
             >
-              คละทุกสาขา
+              <Sparkles className="h-3 w-3" /> แนะนำให้คุณ
             </Badge>
           </Link>
-          {subjects.map((subject) => (
-            <Link
-              key={subject.id}
-              href={`/nl/practice?subject=${subject.id}`}
+          <Link href="/nl/practice">
+            <Badge
+              variant={!useRecommended ? "default" : "secondary"}
+              className={`cursor-pointer ${
+                !useRecommended ? "bg-brand text-white" : "hover:bg-brand/10"
+              }`}
             >
+              เลือกเอง
+            </Badge>
+          </Link>
+        </div>
+      )}
+
+      {/* Subject Filter — hidden in recommended mode */}
+      {!useRecommended && (
+        <div className="mb-6">
+          <h3 className="text-sm font-medium mb-2 text-muted-foreground">
+            เลือกสาขา
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            <Link href="/nl/practice">
               <Badge
-                variant={subjectId === subject.id ? "default" : "secondary"}
+                variant={!subjectId ? "default" : "secondary"}
                 className={`cursor-pointer ${
-                  subjectId === subject.id
-                    ? "bg-brand text-white"
-                    : "hover:bg-brand/10"
+                  !subjectId ? "bg-brand text-white" : "hover:bg-brand/10"
                 }`}
               >
-                {subject.icon} {subject.name_th}
+                คละทุกสาขา
               </Badge>
             </Link>
-          ))}
+            {subjects.map((subject) => (
+              <Link
+                key={subject.id}
+                href={`/nl/practice?subject=${subject.id}`}
+              >
+                <Badge
+                  variant={subjectId === subject.id ? "default" : "secondary"}
+                  className={`cursor-pointer ${
+                    subjectId === subject.id
+                      ? "bg-brand text-white"
+                      : "hover:bg-brand/10"
+                  }`}
+                >
+                  {subject.icon} {subject.name_th}
+                </Badge>
+              </Link>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Info */}
       <div className="mb-6 text-sm text-muted-foreground">
-        {currentSubject ? (
+        {useRecommended ? (
+          <span>ชุดแนะนำ — {questions.length} ข้อ</span>
+        ) : currentSubject ? (
           <span>
             {currentSubject.icon} {currentSubject.name_th} — {questions.length}{" "}
             ข้อ
@@ -155,10 +237,11 @@ async function PracticeContent({ subjectId }: { subjectId?: string }) {
 export default async function PracticePage({
   searchParams,
 }: {
-  searchParams: Promise<{ subject?: string }>;
+  searchParams: Promise<{ subject?: string; mode?: string }>;
 }) {
   const params = await searchParams;
-  const { subject } = params;
+  const { subject, mode } = params;
+  const recommended = mode === "recommended";
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
@@ -179,7 +262,7 @@ export default async function PracticePage({
       <Suspense
         fallback={<div className="text-center py-8">กำลังโหลดข้อสอบ...</div>}
       >
-        <PracticeContent subjectId={subject} />
+        <PracticeContent subjectId={subject} recommended={recommended} />
       </Suspense>
     </div>
   );

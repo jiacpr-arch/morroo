@@ -447,6 +447,32 @@ export default function DashboardPage() {
         </Card>
       </div>
 
+      {/* Smart Practice — personalised recommendation */}
+      {totalAttempts >= 5 && (
+        <Card className="border-brand/40 bg-gradient-to-br from-brand/5 to-amber-50/40 mb-8">
+          <CardContent className="py-5 px-5">
+            <div className="flex items-start justify-between gap-4">
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-1">
+                  <Sparkles className="h-4 w-4 text-brand shrink-0" />
+                  <span className="text-sm font-semibold text-brand">
+                    ชุดแนะนำให้คุณ
+                  </span>
+                </div>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  จัดชุด 20 ข้อให้เอง — ทบทวนข้อที่เคยผิด + เสริมสาขาที่คะแนนยังต่ำ
+                </p>
+              </div>
+              <Link href="/nl/practice?mode=recommended" className="shrink-0">
+                <Button size="sm" className="bg-brand hover:bg-brand-light text-white gap-1.5 whitespace-nowrap">
+                  เริ่มฝึก <ArrowRight className="h-3.5 w-3.5" />
+                </Button>
+              </Link>
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
       {/* Weak Topics — ควรทบทวน */}
       {weakTopics.length > 0 && (
         <Card className="border-red-200 bg-red-50/50 mb-8">
