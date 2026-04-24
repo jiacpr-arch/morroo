@@ -24,6 +24,7 @@ import {
 import { AccuracyTrendChart } from "@/components/AccuracyTrendChart";
 import AllExamsCountdown from "@/components/AllExamsCountdown";
 import LeaderboardCard from "@/components/LeaderboardCard";
+import OnboardingChecklist from "@/components/OnboardingChecklist";
 
 interface SubjectStat {
   subject_id: string;
@@ -275,6 +276,9 @@ export default function DashboardPage() {
           ติดตามความก้าวหน้าและจุดที่ต้องปรับปรุง
         </p>
       </div>
+
+      {/* Onboarding checklist */}
+      {userId && <OnboardingChecklist userId={userId} />}
 
       {/* New Questions Countdown */}
       <div className="mb-4">
