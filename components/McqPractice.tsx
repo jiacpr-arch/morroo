@@ -36,6 +36,7 @@ interface McqPracticeProps {
   isPremium?: boolean;
   freeUsedCount?: number;
   freeLimit?: number;
+  viaRecommendation?: boolean;
 }
 
 export default function McqPractice({
@@ -43,6 +44,7 @@ export default function McqPractice({
   isPremium = false,
   freeUsedCount = 0,
   freeLimit = 5,
+  viaRecommendation = false,
 }: McqPracticeProps) {
   const { status: betaStatus, recordAttempt, refresh: refreshBeta } = useBeta();
   const isBeta = betaStatus?.isBeta ?? false;
@@ -141,6 +143,7 @@ export default function McqPractice({
           time_spent_seconds: timeSpent,
           mode: "practice",
           session_id: sessionId,
+          via_recommendation: viaRecommendation,
         }).catch(() => {
           // Silently fail — don't block UI
         });

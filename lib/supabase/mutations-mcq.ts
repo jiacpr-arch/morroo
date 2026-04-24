@@ -11,6 +11,7 @@ export async function saveMcqAttempt(attempt: {
   time_spent_seconds?: number | null;
   mode: "practice" | "mock";
   session_id?: string | null;
+  via_recommendation?: boolean;
 }): Promise<McqAttempt | null> {
   const supabase = createClient();
   const { data, error } = await supabase
@@ -23,6 +24,7 @@ export async function saveMcqAttempt(attempt: {
       time_spent_seconds: attempt.time_spent_seconds ?? null,
       mode: attempt.mode,
       session_id: attempt.session_id ?? null,
+      via_recommendation: attempt.via_recommendation ?? false,
     })
     .select()
     .single();
