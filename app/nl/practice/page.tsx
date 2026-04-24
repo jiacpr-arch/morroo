@@ -218,6 +218,7 @@ async function PracticeContent({
           isPremium={isPremium}
           freeUsedCount={Math.min(freeUsedCount, FREE_LIMIT)}
           freeLimit={FREE_LIMIT}
+          viaRecommendation={useRecommended}
         />
       ) : (
         <div className="text-center py-16 text-muted-foreground">

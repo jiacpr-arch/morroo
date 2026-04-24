@@ -54,6 +54,7 @@ export interface McqAttempt {
   time_spent_seconds: number | null;
   mode: "practice" | "mock";
   session_id: string | null;
+  via_recommendation: boolean;
   created_at: string;
 }
 
