@@ -311,3 +311,89 @@ export function weeklyNewsletterEmail({
 </body>
 </html>`;
 }
+
+// Weekly digest — personalised per-user stats for the last 7 days.
+export interface WeeklyDigestProps {
+  name: string;
+  totalAttempts: number;
+  correctCount: number;
+  accuracy: number;
+  streak: number;
+  bestSubject: { name: string; icon: string; accuracy: number } | null;
+  weakSubject: { name: string; icon: string; accuracy: number } | null;
+  unsubscribeUrl?: string;
+}
+
+export function weeklyDigestEmail({
+  name,
+  totalAttempts,
+  correctCount,
+  accuracy,
+  streak,
+  bestSubject,
+  weakSubject,
+  unsubscribeUrl,
+}: WeeklyDigestProps): string {
+  const statCard = (label: string, value: string, color = BRAND_COLOR) => `
+    <td style="padding: 8px; text-align: center; background: #ffffff; border: 1px solid #e9ecef; border-radius: 10px;">
+      <p style="color: #6c757d; font-size: 12px; margin: 0 0 4px;">${label}</p>
+      <p style="color: ${color}; font-size: 22px; font-weight: 700; margin: 0;">${value}</p>
+    </td>
+  `;
+
+  const subjectRow = (title: string, subject: { name: string; icon: string; accuracy: number } | null, color: string) =>
+    subject
+      ? `<div style="background: #ffffff; border: 1px solid #e9ecef; border-radius: 10px; padding: 14px 16px; margin-bottom: 10px;">
+          <p style="color: #6c757d; font-size: 12px; margin: 0 0 4px;">${title}</p>
+          <p style="font-size: 16px; margin: 0; color: #111827;">
+            <span style="margin-right: 6px;">${subject.icon}</span>
+            <strong>${subject.name}</strong>
+            <span style="color: ${color}; margin-left: 8px;">${subject.accuracy}%</span>
+          </p>
+        </div>`
+      : "";
+
+  return `<!DOCTYPE html>
+<html lang="th">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body style="margin:0;padding:0;background:#f4f4f4;">
+<div style="${baseStyle}">
+  ${headerHtml}
+  <div style="padding: 28px 32px;">
+    <h2 style="color: ${DARK_COLOR}; font-size: 22px; margin: 0 0 6px;">สรุปสัปดาห์ที่ผ่านมา 📊</h2>
+    <p style="color: #374151; font-size: 16px; margin: 0 0 20px;">
+      สวัสดีคุณ <strong>${name}</strong> — นี่คือผลการฝึก 7 วันล่าสุดของคุณ
+    </p>
+
+    <table style="width: 100%; border-collapse: separate; border-spacing: 8px; margin: 0 -8px 20px;">
+      <tr>
+        ${statCard("ข้อที่ทำ", String(totalAttempts))}
+        ${statCard("ถูกต้อง", `${accuracy}%`)}
+        ${statCard("วันติดต่อ", String(streak), "#f97316")}
+      </tr>
+    </table>
+
+    ${subjectRow("สาขาที่เก่งที่สุด", bestSubject, "#16a34a")}
+    ${subjectRow("สาขาที่ควรเสริม", weakSubject, "#dc2626")}
+
+    <div style="text-align: center; margin: 24px 0 8px;">
+      <a href="https://www.morroo.com/nl/practice?mode=recommended"
+         style="display: inline-block; background: ${BRAND_COLOR}; color: #ffffff; text-decoration: none;
+                padding: 13px 28px; border-radius: 8px; font-size: 16px; font-weight: 600;">
+        ทำชุดแนะนำให้คุณ →
+      </a>
+    </div>
+
+    <p style="color: #6c757d; font-size: 13px; text-align: center; margin: 16px 0 0;">
+      ${totalAttempts === 0
+        ? "สัปดาห์นี้ยังไม่ได้ฝึก — เริ่มเลยเพื่อเก็บ streak!"
+        : correctCount >= 20
+        ? "ขยันมาก! สู้ๆ นะครับ 💪"
+        : "ฝึกเพิ่มอีกนิด แล้วคุณจะพร้อมสอบแน่นอน"}
+    </p>
+  </div>
+  ${newsletterFooterHtml(unsubscribeUrl)}
+</div>
+</body>
+</html>`;
+}
