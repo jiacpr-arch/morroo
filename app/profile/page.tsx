@@ -61,7 +61,7 @@ export default function ProfilePage() {
       if (data?.referral_code) {
         setReferralCode(data.referral_code);
         // fetch stats
-        const res = await fetch(`/api/referral/apply?userId=${user.id}`);
+        const res = await fetch(`/api/referral/apply`);
         if (res.ok) {
           const stats = await res.json();
           setReferralStats(stats);
@@ -86,12 +86,8 @@ export default function ProfilePage() {
       const { code } = await res.json();
       setReferralCode(code);
       // fetch stats after generating
-      const supabase = createClient();
-      const { data: { user } } = await supabase.auth.getUser();
-      if (user) {
-        const statsRes = await fetch(`/api/referral/apply?userId=${user.id}`);
-        if (statsRes.ok) setReferralStats(await statsRes.json());
-      }
+      const statsRes = await fetch(`/api/referral/apply`);
+      if (statsRes.ok) setReferralStats(await statsRes.json());
     }
     setGeneratingCode(false);
   };

@@ -120,11 +120,15 @@ export async function fulfillCheckoutSession(
     console.error("[fulfill] failed to create payment order:", orderError);
   }
 
-  // Generate invoice number: INV-YYYY-NNNN
+  // Generate invoice number: INV-YYYY-NNNN, scoped to the current year
   const year = now.getFullYear();
+  const yearStart = `${year}-01-01T00:00:00Z`;
+  const yearEnd = `${year + 1}-01-01T00:00:00Z`;
   const { count: invoiceCount } = await supabase
     .from("invoices")
-    .select("id", { count: "exact", head: true });
+    .select("id", { count: "exact", head: true })
+    .gte("issued_at", yearStart)
+    .lt("issued_at", yearEnd);
 
   const sequence = ((invoiceCount ?? 0) + 1).toString().padStart(4, "0");
   const invoiceNumber = `INV-${year}-${sequence}`;
@@ -160,7 +164,7 @@ export async function fulfillCheckoutSession(
     .from("profiles")
     .select("referred_by, membership_expires_at")
     .eq("id", userId)
-    .single();
+    .maybeSingle();
 
   let referrerLineUserId: string | null = null;
   let referrerRewardDays = 30;
@@ -172,7 +176,7 @@ export async function fulfillCheckoutSession(
       .eq("referred_id", userId)
       .eq("code", buyer.referred_by)
       .eq("status", "pending")
-      .single();
+      .maybeSingle();
 
     if (pendingReferral) {
       // Extend referrer's membership
@@ -180,7 +184,7 @@ export async function fulfillCheckoutSession(
         .from("profiles")
         .select("membership_expires_at, membership_type")
         .eq("id", pendingReferral.referrer_id)
-        .single();
+        .maybeSingle();
 
       if (referrer) {
         const base =
@@ -205,7 +209,7 @@ export async function fulfillCheckoutSession(
         .from("profiles")
         .select("line_user_id")
         .eq("id", pendingReferral.referrer_id)
-        .single();
+        .maybeSingle();
 
       referrerLineUserId = referrerProfile?.line_user_id ?? null;
       referrerRewardDays = pendingReferral.reward_days ?? 30;
@@ -217,7 +221,7 @@ export async function fulfillCheckoutSession(
     .from("profiles")
     .select("line_user_id")
     .eq("id", userId)
-    .single();
+    .maybeSingle();
 
   const publishedOn = now.toISOString().slice(0, 10);
   const planLabels: Record<string, string> = {

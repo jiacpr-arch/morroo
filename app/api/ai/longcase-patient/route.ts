@@ -4,6 +4,9 @@ import { createClient } from "@/lib/supabase/server";
 import { getLongCaseSession, updateLongCaseSession } from "@/lib/supabase/queries-longcase";
 import { checkRateLimit, rateLimitResponse, RATE_LIMITS } from "@/lib/rate-limit";
 
+export const runtime = "nodejs";
+export const maxDuration = 60;
+
 const SONNET_MODEL = "claude-sonnet-4-6";
 
 export async function POST(request: NextRequest) {
