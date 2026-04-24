@@ -3,8 +3,11 @@ import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase/server";
 import { getLongCaseSession, updateLongCaseSession } from "@/lib/supabase/queries-longcase";
 
+export const runtime = "nodejs";
+export const maxDuration = 60;
+
 const SONNET_MODEL = "claude-sonnet-4-6";
-const OPUS_MODEL = "claude-opus-4-6";
+const OPUS_MODEL = "claude-opus-4-7";
 
 export async function POST(request: NextRequest) {
   const supabase = await createClient();

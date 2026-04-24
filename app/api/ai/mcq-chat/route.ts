@@ -2,6 +2,9 @@ import { NextRequest } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase/server";
 
+export const runtime = "nodejs";
+export const maxDuration = 60;
+
 const MODEL = "claude-sonnet-4-6";
 
 export async function POST(request: NextRequest) {
