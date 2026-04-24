@@ -453,7 +453,7 @@ export default function DashboardPage() {
 
       {/* Smart Practice — personalised recommendation */}
       {totalAttempts >= 5 && (
-        <Card className="border-brand/40 bg-gradient-to-br from-brand/5 to-amber-50/40 mb-8">
+        <Card className="border-brand/40 bg-gradient-to-br from-brand/5 to-amber-50/40 mb-4">
           <CardContent className="py-5 px-5">
             <div className="flex items-start justify-between gap-4">
               <div className="flex-1 min-w-0">
@@ -476,6 +476,30 @@ export default function DashboardPage() {
           </CardContent>
         </Card>
       )}
+
+      {/* Study Plan CTA */}
+      <Card className="border-brand/30 mb-8">
+        <CardContent className="py-5 px-5">
+          <div className="flex items-start justify-between gap-4">
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2 mb-1">
+                <Sparkles className="h-4 w-4 text-brand shrink-0" />
+                <span className="text-sm font-semibold text-brand">
+                  แผนอ่านหนังสือของคุณ
+                </span>
+              </div>
+              <p className="text-sm text-gray-700 leading-relaxed">
+                ตั้งวันสอบ → AI วางแผนรายสัปดาห์ให้ตามจุดอ่อนของคุณ
+              </p>
+            </div>
+            <Link href="/study-plan" className="shrink-0">
+              <Button size="sm" variant="outline" className="gap-1.5 whitespace-nowrap">
+                เปิดแผน <ArrowRight className="h-3.5 w-3.5" />
+              </Button>
+            </Link>
+          </div>
+        </CardContent>
+      </Card>
 
       {/* Weak Topics — ควรทบทวน */}
       {weakTopics.length > 0 && (
