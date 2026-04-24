@@ -25,6 +25,7 @@ import { AccuracyTrendChart } from "@/components/AccuracyTrendChart";
 import AllExamsCountdown from "@/components/AllExamsCountdown";
 import LeaderboardCard from "@/components/LeaderboardCard";
 import OnboardingChecklist from "@/components/OnboardingChecklist";
+import ShareToEarnCard from "@/components/ShareToEarnCard";
 
 interface SubjectStat {
   subject_id: string;
@@ -546,6 +547,17 @@ export default function DashboardPage() {
 
       {/* Leaderboard */}
       {userId && totalAttempts >= 5 && <LeaderboardCard currentUserId={userId} />}
+
+      {/* Share to earn */}
+      {userId && totalAttempts >= 5 && (
+        <ShareToEarnCard
+          userId={userId}
+          correctCount={totalCorrect}
+          totalAttempts={totalAttempts}
+          accuracy={overallAccuracy}
+          streak={streak}
+        />
+      )}
 
       {/* Comparison vs Global Average */}
       {comparison.length > 0 && (
