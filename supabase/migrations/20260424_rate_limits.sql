@@ -16,6 +16,9 @@ CREATE INDEX IF NOT EXISTS idx_api_rate_limits_window
 ALTER TABLE public.api_rate_limits ENABLE ROW LEVEL SECURITY;
 
 -- No direct client access — the RPC is SECURITY DEFINER and takes care of writes.
+-- Postgres has no `CREATE POLICY IF NOT EXISTS`, so drop-and-recreate for
+-- idempotent re-runs.
+DROP POLICY IF EXISTS "no direct access" ON public.api_rate_limits;
 CREATE POLICY "no direct access"
   ON public.api_rate_limits FOR ALL
   USING (false)
