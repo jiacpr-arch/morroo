@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import { AccuracyTrendChart } from "@/components/AccuracyTrendChart";
 import AllExamsCountdown from "@/components/AllExamsCountdown";
+import LeaderboardCard from "@/components/LeaderboardCard";
 
 interface SubjectStat {
   subject_id: string;
@@ -78,6 +79,7 @@ interface SubjectComparison {
 export default function DashboardPage() {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
+  const [userId, setUserId] = useState<string | null>(null);
   const [subjectStats, setSubjectStats] = useState<SubjectStat[]>([]);
   const [recentSessions, setRecentSessions] = useState<RecentSession[]>([]);
   const [weakTopics, setWeakTopics] = useState<WeakTopic[]>([]);
@@ -115,6 +117,8 @@ export default function DashboardPage() {
         router.push("/login");
         return;
       }
+
+      setUserId(user.id);
 
       const todayStart = new Date();
       todayStart.setHours(0, 0, 0, 0);
@@ -511,6 +515,9 @@ export default function DashboardPage() {
           </CardContent>
         </Card>
       )}
+
+      {/* Leaderboard */}
+      {userId && totalAttempts >= 5 && <LeaderboardCard currentUserId={userId} />}
 
       {/* Comparison vs Global Average */}
       {comparison.length > 0 && (
