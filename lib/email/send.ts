@@ -2,11 +2,12 @@
 // Requires: RESEND_API_KEY in .env.local
 // Requires: npm install resend
 
-import { welcomeEmail, receiptEmail, weeklyNewsletterEmail } from "./templates";
+import { welcomeEmail, receiptEmail, weeklyNewsletterEmail, weeklyDigestEmail } from "./templates";
 import type {
   WelcomeEmailProps,
   ReceiptEmailProps,
   NewsletterPost,
+  WeeklyDigestProps,
 } from "./templates";
 
 const FROM_ADDRESS = "หมอรู้ <noreply@morroo.com>";
@@ -95,4 +96,18 @@ export async function sendWeeklyNewsletter({
     console.error(`[email] ${failed.length}/${subscribers.length} emails failed`);
   }
   return { sent: results.length - failed.length, failed: failed.length };
+}
+
+export async function sendWeeklyDigest(
+  props: WeeklyDigestProps & { email: string }
+) {
+  const subject =
+    props.totalAttempts > 0
+      ? `📊 สรุปสัปดาห์นี้ของคุณ — ${props.correctCount}/${props.totalAttempts} ข้อ (${props.accuracy}%)`
+      : `📚 กลับมาฝึกกันเถอะ — หมอรู้คิดถึงคุณ`;
+  return sendEmail({
+    to: props.email,
+    subject,
+    html: weeklyDigestEmail(props),
+  });
 }
