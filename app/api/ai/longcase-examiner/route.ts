@@ -2,6 +2,7 @@ import { NextRequest } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase/server";
 import { getLongCaseSession, updateLongCaseSession } from "@/lib/supabase/queries-longcase";
+import { checkRateLimit, rateLimitResponse, RATE_LIMITS } from "@/lib/rate-limit";
 
 const SONNET_MODEL = "claude-sonnet-4-6";
 const OPUS_MODEL = "claude-opus-4-6";
@@ -10,6 +11,10 @@ export async function POST(request: NextRequest) {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) return new Response(JSON.stringify({ error: "Unauthorized" }), { status: 401 });
+
+  const rl = await checkRateLimit(supabase, user.id, "ai:longcase-examiner", RATE_LIMITS.aiChat);
+  const rlResp = rateLimitResponse(rl, RATE_LIMITS.aiChat);
+  if (rlResp) return rlResp;
 
   const { sessionId, messages = [], action = "chat" }: {
     sessionId: string;

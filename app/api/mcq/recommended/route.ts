@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { getRecommendedQuestions } from "@/lib/mcq-recommendation";
+import { checkRateLimit, rateLimitResponse, RATE_LIMITS } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 
@@ -16,6 +17,10 @@ export async function GET(request: NextRequest) {
   if (!user) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
+
+  const rl = await checkRateLimit(supabase, user.id, "mcq:recommended", RATE_LIMITS.mcqRecommended);
+  const rlResp = rateLimitResponse(rl, RATE_LIMITS.mcqRecommended);
+  if (rlResp) return rlResp;
 
   const url = new URL(request.url);
   const examTypeParam = url.searchParams.get("examType");

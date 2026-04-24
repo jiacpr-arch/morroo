@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { checkRateLimit, rateLimitResponse, RATE_LIMITS } from "@/lib/rate-limit";
 
 // Accepted reasons — must stay in sync with the CHECK constraint on
 // public.mcq_question_reports.reason (see migration
@@ -60,6 +61,10 @@ export async function POST(request: NextRequest) {
       { status: 401 }
     );
   }
+
+  const rl = await checkRateLimit(supabase, user.id, "mcq:report-error", RATE_LIMITS.reportError);
+  const rlResp = rateLimitResponse(rl, RATE_LIMITS.reportError);
+  if (rlResp) return rlResp;
 
   // Use the admin client to bypass RLS and let the trigger update profile points.
   const admin = createAdminClient();

@@ -1,6 +1,7 @@
 import { NextRequest } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase/server";
+import { checkRateLimit, rateLimitResponse, RATE_LIMITS } from "@/lib/rate-limit";
 
 const MODEL = "claude-sonnet-4-6";
 
@@ -13,6 +14,10 @@ export async function POST(request: NextRequest) {
     return new Response(JSON.stringify({ error: "Unauthorized" }), {
       status: 401,
     });
+
+  const rl = await checkRateLimit(supabase, user.id, "ai:mcq-chat", RATE_LIMITS.aiChat);
+  const rlResp = rateLimitResponse(rl, RATE_LIMITS.aiChat);
+  if (rlResp) return rlResp;
 
   const {
     question,
