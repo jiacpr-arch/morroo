@@ -77,7 +77,7 @@ async function PracticeContent({
   // to the normal random pool otherwise.
   const useRecommended = recommended && !!user;
 
-  const subjects = await getMcqSubjects();
+  const subjects = await getMcqSubjects("NL2");
 
   let questions: McqQuestion[];
   let recBreakdown: Awaited<ReturnType<typeof getRecommendedQuestions>>["breakdown"] | null = null;
@@ -159,14 +159,13 @@ async function PracticeContent({
         </div>
       )}
 
-      {/* Subject Filter — hidden in recommended mode, collapsed by default */}
+      {/* Subject Filter — hidden in recommended mode */}
       {!useRecommended && (
-        <details className="group mb-6" open={!!subjectId}>
-          <summary className="cursor-pointer list-none inline-flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground">
+        <div className="mb-6">
+          <h3 className="text-sm font-medium mb-2 text-muted-foreground">
             เลือกสาขา
-            <span className="text-xs group-open:rotate-180 transition-transform">▼</span>
-          </summary>
-          <div className="mt-2 flex flex-wrap gap-2">
+          </h3>
+          <div className="flex flex-wrap gap-2">
             <Link href="/nl/practice">
               <Badge
                 variant={!subjectId ? "default" : "secondary"}
@@ -195,7 +194,7 @@ async function PracticeContent({
               </Link>
             ))}
           </div>
-        </details>
+        </div>
       )}
 
       {/* Info */}
