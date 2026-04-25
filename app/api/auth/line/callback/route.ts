@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { createClient as createServerSupabaseClient } from "@/lib/supabase/server";
 
 /**
  * GET /api/auth/line/callback
@@ -237,23 +238,26 @@ export async function GET(request: Request) {
     }
   }
 
-  // ── Step 5: Generate a Supabase magic link to sign them in ────
-  // We use admin.generateLink to create a magic link, then redirect
-  // through the auth callback with the token
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || origin;
+  // ── Step 5: Sign the user in by verifying the OTP server-side ─
+  // The previous flow redirected to Supabase's /auth/v1/verify endpoint,
+  // which (for admin-generated magic links) returns session tokens in the URL
+  // fragment. Server routes can't read the fragment, so the session was lost
+  // and the user landed back on the home page unauthenticated. Calling
+  // verifyOtp through the SSR server client sets the auth cookies on the app
+  // domain directly.
+  const { data: profileForSignIn, error: profileForSignInError } =
+    await supabase
+      .from("profiles")
+      .select("email")
+      .eq("id", userId)
+      .maybeSingle();
 
-  const { data: existingProfile, error: profileError } = await supabase
-    .from("profiles")
-    .select("email")
-    .eq("id", userId)
-    .maybeSingle();
-
-  if (profileError) {
-    console.error("Failed to load profile after LINE login:", profileError);
+  if (profileForSignInError) {
+    console.error("Failed to load profile for sign-in:", profileForSignInError);
     return NextResponse.redirect(`${origin}/login?error=line_session_failed`);
   }
 
-  const userEmail = existingProfile?.email;
+  const userEmail = profileForSignIn?.email;
   if (!userEmail) {
     return NextResponse.redirect(`${origin}/login?error=line_no_email`);
   }
@@ -262,7 +266,7 @@ export async function GET(request: Request) {
     await supabase.auth.admin.generateLink({
       type: "magiclink",
       email: userEmail,
-      options: { redirectTo: `${siteUrl}/auth/callback` },
+      options: { redirectTo: `${origin}/auth/callback` },
     });
 
   if (linkError || !linkData?.properties?.hashed_token) {
@@ -270,20 +274,17 @@ export async function GET(request: Request) {
     return NextResponse.redirect(`${origin}/login?error=line_session_failed`);
   }
 
-  // Build the Supabase auth verification URL
-  // The hashed_token is used with the /auth/v1/verify endpoint
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  if (!supabaseUrl) {
-    console.error("NEXT_PUBLIC_SUPABASE_URL is not configured");
+  const supabaseServer = await createServerSupabaseClient();
+  const { error: verifyError } = await supabaseServer.auth.verifyOtp({
+    type: "magiclink",
+    token_hash: linkData.properties.hashed_token,
+  });
+
+  if (verifyError) {
+    console.error("Failed to verify magic link OTP:", verifyError);
     return NextResponse.redirect(`${origin}/login?error=line_session_failed`);
   }
-  const verifyUrl = new URL(`${supabaseUrl}/auth/v1/verify`);
-  verifyUrl.searchParams.set("token", linkData.properties.hashed_token);
-  verifyUrl.searchParams.set("type", "magiclink");
-  verifyUrl.searchParams.set(
-    "redirect_to",
-    `${siteUrl}/auth/callback${mode === "register" ? "?next=/onboarding" : ""}`
-  );
 
-  return NextResponse.redirect(verifyUrl.toString());
+  const destination = mode === "register" ? "/onboarding" : "/profile";
+  return NextResponse.redirect(`${origin}${destination}`);
 }
