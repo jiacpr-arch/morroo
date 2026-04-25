@@ -159,13 +159,14 @@ async function PracticeContent({
         </div>
       )}
 
-      {/* Subject Filter — hidden in recommended mode */}
+      {/* Subject Filter — hidden in recommended mode, collapsed by default */}
       {!useRecommended && (
-        <div className="mb-6">
-          <h3 className="text-sm font-medium mb-2 text-muted-foreground">
+        <details className="group mb-6" open={!!subjectId}>
+          <summary className="cursor-pointer list-none inline-flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground">
             เลือกสาขา
-          </h3>
-          <div className="flex flex-wrap gap-2">
+            <span className="text-xs group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <div className="mt-2 flex flex-wrap gap-2">
             <Link href="/nl/practice">
               <Badge
                 variant={!subjectId ? "default" : "secondary"}
@@ -194,7 +195,7 @@ async function PracticeContent({
               </Link>
             ))}
           </div>
-        </div>
+        </details>
       )}
 
       {/* Info */}
