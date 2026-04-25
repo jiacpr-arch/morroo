@@ -63,8 +63,30 @@ export async function GET(request: Request) {
   });
 
   if (!tokenRes.ok) {
-    console.error("LINE token exchange failed:", await tokenRes.text());
-    return NextResponse.redirect(`${origin}/login?error=line_token_failed`);
+    const rawBody = await tokenRes.text();
+    console.error("LINE token exchange failed:", rawBody);
+
+    // Surface LINE's actual error code/description in the redirect URL so the
+    // login page can show it. LINE returns JSON like
+    // {"error":"invalid_grant","error_description":"..."} on 4xx.
+    let reason = "";
+    let detail = "";
+    try {
+      const parsed = JSON.parse(rawBody) as {
+        error?: string;
+        error_description?: string;
+      };
+      reason = parsed.error ?? "";
+      detail = parsed.error_description ?? "";
+    } catch {
+      detail = rawBody;
+    }
+
+    const params = new URLSearchParams({ error: "line_token_failed" });
+    if (reason) params.set("reason", reason);
+    if (detail) params.set("detail", detail.slice(0, 200));
+    params.set("redirect_uri", redirectUri);
+    return NextResponse.redirect(`${origin}/login?${params.toString()}`);
   }
 
   const tokenData = (await tokenRes.json()) as {
