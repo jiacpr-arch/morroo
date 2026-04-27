@@ -40,6 +40,8 @@ const EXAM_TOOL = {
       title: { type: "string", description: "ชื่อ case เช่น 'ชาย 55 ปี อาเจียนเป็นเลือด'" },
       parts: {
         type: "array",
+        minItems: 6,
+        maxItems: 6,
         items: {
           type: "object",
           properties: {
@@ -125,7 +127,10 @@ async function run() {
 
   const exam = toolUse.input;
   if (!exam.title || !Array.isArray(exam.parts) || exam.parts.length < 4) {
-    console.error("Invalid exam structure");
+    console.error("Invalid exam structure:");
+    console.error(`  title: ${exam.title ?? "(missing)"}`);
+    console.error(`  parts: ${Array.isArray(exam.parts) ? `${exam.parts.length} items` : typeof exam.parts}`);
+    console.error(`  raw input keys: ${Object.keys(exam).join(", ")}`);
     process.exit(1);
   }
 
