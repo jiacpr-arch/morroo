@@ -1,0 +1,39 @@
+name: Generate Blog Article
+
+on:
+  schedule:
+    # ทุกวัน 02:00 ICT (= 19:00 UTC วันก่อน)
+    - cron: "0 19 * * *"
+  workflow_dispatch:
+    inputs:
+      count:
+        description: "Number of articles to generate"
+        required: false
+        default: "1"
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Generate blog article(s)
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY }}
+          SITE_URL: ${{ secrets.SITE_URL }}
+          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+          FACEBOOK_ACCESS_TOKEN: ${{ secrets.FACEBOOK_ACCESS_TOKEN }}
+          ARTICLE_COUNT: ${{ github.event.inputs.count || '1' }}
+        run: node scripts/generate-blog.mjs
