@@ -106,7 +106,10 @@ async function run() {
     },
     body: JSON.stringify({
       model: "claude-sonnet-4-6",
-      max_tokens: 8000,
+      // 6 parts × (scenario + question + detailed answer + key_points) blows
+      // through 8k tokens; we hit max_tokens mid-output and only "title"
+      // came back. 32k matches the MCQ Sonnet batch.
+      max_tokens: 32000,
       tools: [EXAM_TOOL],
       tool_choice: { type: "tool", name: "submit_meq_exam" },
       messages: [{ role: "user", content: prompt }],
@@ -119,6 +122,7 @@ async function run() {
   }
 
   const data = await res.json();
+  console.log(`Claude stop_reason: ${data.stop_reason} (usage: in=${data.usage?.input_tokens} out=${data.usage?.output_tokens})`);
   const toolUse = (data.content ?? []).find((b) => b.type === "tool_use");
   if (!toolUse?.input) {
     console.error("No tool_use in response");
