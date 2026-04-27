@@ -210,7 +210,9 @@ async function generateCoverImage(slug, imagePrompt) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "black-forest-labs/FLUX.1-schnell-Free",
+        // Paid endpoint (~$0.003/image) — no rate limits, faster than -Free.
+        // Account has credits topped up; -Free's rate limit was making runs unreliable.
+        model: "black-forest-labs/FLUX.1-schnell",
         prompt: imagePrompt,
         width: 1200,
         height: 630,
