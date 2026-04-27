@@ -6,6 +6,15 @@ const nextConfig: NextConfig = {
     // next/og types are missing in Next 16.2.1 — runtime works fine
     ignoreBuildErrors: true,
   },
+  images: {
+    remotePatterns: [
+      // Supabase Storage (blog cover images uploaded by generator)
+      { protocol: "https", hostname: "*.supabase.co", pathname: "/storage/v1/object/public/**" },
+      // Together AI direct URLs (fallback when Storage upload fails)
+      { protocol: "https", hostname: "api.together.xyz" },
+      { protocol: "https", hostname: "api.together.ai" },
+    ],
+  },
 };
 
 // Only wrap with Sentry's build plugin when SENTRY_DSN is configured. This

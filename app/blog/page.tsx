@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { getBlogPosts } from "@/lib/blog";
 import type { Metadata } from "next";
@@ -70,29 +71,42 @@ export default async function BlogPage({
         <div className="space-y-6">
           {posts.map((post) => (
             <Link key={post.slug} href={`/blog/${post.slug}`}>
-              <article className="group rounded-xl border border-border bg-card p-6 transition-shadow hover:shadow-md">
-                <div className="mb-3 flex items-center gap-3">
-                  <span
-                    className={`rounded-full px-3 py-0.5 text-xs font-medium ${
-                      categoryColors[post.category] ?? "bg-gray-100 text-gray-600"
-                    }`}
-                  >
-                    {post.category}
-                  </span>
-                  <span className="text-xs text-muted-foreground">
-                    {new Date(post.publishedAt).toLocaleDateString("th-TH", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
-                  </span>
-                  <span className="text-xs text-muted-foreground">อ่าน {post.readingTime} นาที</span>
+              <article className="group overflow-hidden rounded-xl border border-border bg-card transition-shadow hover:shadow-md sm:flex">
+                {post.coverImage && (
+                  <div className="relative aspect-[16/9] overflow-hidden bg-muted sm:aspect-auto sm:w-56 sm:flex-shrink-0">
+                    <Image
+                      src={post.coverImage}
+                      alt={post.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 224px"
+                      className="object-cover transition-transform group-hover:scale-105"
+                    />
+                  </div>
+                )}
+                <div className="flex-1 p-6">
+                  <div className="mb-3 flex flex-wrap items-center gap-3">
+                    <span
+                      className={`rounded-full px-3 py-0.5 text-xs font-medium ${
+                        categoryColors[post.category] ?? "bg-gray-100 text-gray-600"
+                      }`}
+                    >
+                      {post.category}
+                    </span>
+                    <span className="text-xs text-muted-foreground">
+                      {new Date(post.publishedAt).toLocaleDateString("th-TH", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </span>
+                    <span className="text-xs text-muted-foreground">อ่าน {post.readingTime} นาที</span>
+                  </div>
+                  <h2 className="text-xl font-semibold text-foreground group-hover:text-brand transition-colors">
+                    {post.title}
+                  </h2>
+                  <p className="mt-2 text-muted-foreground line-clamp-2">{post.description}</p>
+                  <div className="mt-4 text-sm font-medium text-brand">อ่านต่อ →</div>
                 </div>
-                <h2 className="text-xl font-semibold text-foreground group-hover:text-brand transition-colors">
-                  {post.title}
-                </h2>
-                <p className="mt-2 text-muted-foreground line-clamp-2">{post.description}</p>
-                <div className="mt-4 text-sm font-medium text-brand">อ่านต่อ →</div>
               </article>
             </Link>
           ))}

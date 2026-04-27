@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 import { getBlogPost, getBlogPosts } from "@/lib/blog";
 import type { Metadata } from "next";
@@ -23,7 +24,11 @@ export async function generateMetadata({
       url: `https://www.morroo.com/blog/${slug}`,
       type: "article",
       publishedTime: post.publishedAt,
+      ...(post.coverImage ? { images: [{ url: post.coverImage, width: 1200, height: 630 }] } : {}),
     },
+    twitter: post.coverImage
+      ? { card: "summary_large_image", images: [post.coverImage] }
+      : undefined,
   };
 }
 
@@ -92,7 +97,7 @@ export default async function BlogPostPage({
             <span>·</span>
             <span>อ่าน {post.readingTime} นาที</span>
           </div>
-          <h1 className="text-3xl font-bold leading-snug text-foreground">
+          <h1 className="text-3xl font-bold leading-snug text-foreground sm:text-4xl">
             {post.title}
           </h1>
           <p className="mt-3 text-lg text-muted-foreground">
@@ -100,17 +105,33 @@ export default async function BlogPostPage({
           </p>
         </header>
 
+        {/* Cover image */}
+        {post.coverImage && (
+          <div className="mb-10 overflow-hidden rounded-xl border border-border">
+            <Image
+              src={post.coverImage}
+              alt={post.title}
+              width={1200}
+              height={630}
+              priority
+              className="h-auto w-full"
+            />
+          </div>
+        )}
+
         {/* Content */}
         <article
           className="prose prose-lg max-w-none
-            prose-headings:font-bold prose-headings:text-foreground
-            prose-p:text-foreground/80 prose-p:leading-relaxed
-            prose-a:text-brand prose-a:no-underline hover:prose-a:underline
-            prose-li:text-foreground/80
+            prose-headings:scroll-mt-20 prose-headings:font-semibold prose-headings:text-foreground
+            prose-h2:mt-10 prose-h2:mb-4 prose-h2:text-2xl
+            prose-h3:mt-6 prose-h3:mb-3 prose-h3:text-xl
+            prose-p:leading-8 prose-p:text-foreground/85
+            prose-a:text-brand prose-a:font-medium prose-a:no-underline hover:prose-a:underline
+            prose-li:my-1 prose-li:text-foreground/85
             prose-strong:text-foreground
-            prose-table:text-sm
-            prose-th:bg-muted prose-th:p-2
-            prose-td:p-2 prose-td:border"
+            prose-table:my-6 prose-table:text-sm
+            prose-th:bg-muted prose-th:p-2 prose-th:text-left prose-th:font-semibold
+            prose-td:border prose-td:border-border prose-td:p-2"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
 
