@@ -120,24 +120,49 @@ async function generateArticle(existingTitles) {
 บทความที่เขียนไปแล้ว (ห้ามซ้ำ):
 ${existingTitles.slice(0, 20).map((t) => `- ${t}`).join("\n")}
 
-สร้างบทความใหม่ 1 บทความ ตอบเป็น JSON เท่านั้น:
-{
-  "title": "หัวข้อภาษาไทย (SEO friendly, 40-80 ตัวอักษร)",
-  "slug": "english-slug-with-dashes (ไม่มีภาษาไทย)",
-  "description": "คำอธิบายสั้น 120-160 ตัวอักษร สำหรับ meta description",
-  "image_prompt": "English prompt for generating a medical illustration cover image, clean modern style, no text, suitable as blog cover",
-  "content": "เนื้อหา HTML (ใช้ <h2>, <h3>, <p>, <ul>, <ol>, <li>, <strong>, <table>) ความยาว 1,500-2,000 คำ"
-}
+สร้างบทความใหม่ 1 บทความ แล้วเรียก tool publish_article พร้อมข้อมูลครบถ้วน
 
 กฎเนื้อหา:
-- HTML เท่านั้น ไม่มี markdown
+- field "content" เป็น HTML (ใช้ <h2>, <h3>, <p>, <ul>, <ol>, <li>, <strong>, <table>) ความยาว 1,500-2,000 คำ ไม่มี markdown
 - ใส่ internal link ไปที่ /nl/practice หรือ /exams หรือ /longcase หรือ /pricing อย่างน้อย 2 จุด
 - เนื้อหาถูกต้องทางการแพทย์ evidence-based
 - ภาษากึ่งทางการ เข้าใจง่าย เหมาะกับนักศึกษาแพทย์
-- เนื้อหาต้องลงลึก มีตัวอย่างประกอบ มีหัวข้อย่อยอย่างน้อย 5 หัวข้อ
-- ใส่ตาราง หรือ bullet points ให้อ่านง่าย
+- ลงลึก มีตัวอย่างประกอบ มีหัวข้อย่อยอย่างน้อย 5 หัวข้อ
+- ใส่ตาราง หรือ bullet points ให้อ่านง่าย`;
 
-ตอบ JSON เท่านั้น ไม่มี markdown code block`;
+  const tools = [
+    {
+      name: "publish_article",
+      description: "Publish a blog article on morroo.com",
+      input_schema: {
+        type: "object",
+        properties: {
+          title: {
+            type: "string",
+            description: "หัวข้อภาษาไทย (SEO friendly, 40-80 ตัวอักษร)",
+          },
+          slug: {
+            type: "string",
+            description: "english-slug-with-dashes (ไม่มีภาษาไทย)",
+          },
+          description: {
+            type: "string",
+            description: "Meta description ภาษาไทย 120-160 ตัวอักษร",
+          },
+          image_prompt: {
+            type: "string",
+            description:
+              "English prompt for medical illustration cover image, clean modern style, no text",
+          },
+          content: {
+            type: "string",
+            description: "HTML body 1,500-2,000 words (no markdown)",
+          },
+        },
+        required: ["title", "slug", "description", "image_prompt", "content"],
+      },
+    },
+  ];
 
   const res = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
@@ -149,6 +174,8 @@ ${existingTitles.slice(0, 20).map((t) => `- ${t}`).join("\n")}
     body: JSON.stringify({
       model: "claude-sonnet-4-6",
       max_tokens: 8192,
+      tools,
+      tool_choice: { type: "tool", name: "publish_article" },
       messages: [{ role: "user", content: prompt }],
     }),
   });
@@ -159,17 +186,12 @@ ${existingTitles.slice(0, 20).map((t) => `- ${t}`).join("\n")}
   }
 
   const data = await res.json();
-  const rawText = data.content?.[0]?.text ?? "";
-
-  let article;
-  try {
-    article = JSON.parse(rawText);
-  } catch {
-    const match = rawText.match(/\{[\s\S]*\}/);
-    if (!match) throw new Error("No JSON found in Claude response");
-    article = JSON.parse(match[0]);
+  const toolUse = (data.content ?? []).find((b) => b.type === "tool_use");
+  if (!toolUse?.input) {
+    throw new Error(`No tool_use in Claude response: ${JSON.stringify(data).slice(0, 300)}`);
   }
 
+  const article = toolUse.input;
   if (!article.title || !article.slug || !article.content) {
     throw new Error(`Incomplete article data: ${JSON.stringify(article).slice(0, 200)}`);
   }
