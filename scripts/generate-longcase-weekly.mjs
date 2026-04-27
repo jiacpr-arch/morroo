@@ -124,7 +124,7 @@ async function run() {
       "content-type": "application/json",
     },
     body: JSON.stringify({
-      model: "claude-sonnet-4-6-20250514",
+      model: "claude-sonnet-4-6",
       max_tokens: 8000,
       tools: [LONG_CASE_TOOL],
       tool_choice: { type: "tool", name: "submit_long_case" },

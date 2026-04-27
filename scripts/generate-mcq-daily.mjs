@@ -196,7 +196,7 @@ async function run() {
   console.log("Calling Haiku (21q) + Sonnet (9q) in parallel...");
   const [haikuResult, sonnetResult] = await Promise.allSettled([
     callClaude("claude-haiku-4-5-20251001", 32000, haikuPrompt),
-    callClaude("claude-sonnet-4-6-20250514", 24000, sonnetPrompt),
+    callClaude("claude-sonnet-4-6", 24000, sonnetPrompt),
   ]);
 
   const allQuestions = [];
