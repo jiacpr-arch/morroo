@@ -214,8 +214,10 @@ async function generateCoverImage(slug, imagePrompt) {
         // Account has credits topped up; -Free's rate limit was making runs unreliable.
         model: "black-forest-labs/FLUX.1-schnell",
         prompt: imagePrompt,
+        // FLUX requires both dimensions to be multiples of 16.
+        // 1200=16*75 ✓ ; 640=16*40 ✓ (closest legal value to the 630 OG card height).
         width: 1200,
-        height: 630,
+        height: 640,
         n: 1,
       }),
     });
