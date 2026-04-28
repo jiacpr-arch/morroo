@@ -146,10 +146,13 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          model: "black-forest-labs/FLUX.1-schnell-Free",
+          // Paid endpoint — no rate limits, faster than -Free.
+          model: "black-forest-labs/FLUX.1-schnell",
           prompt: article.image_prompt,
+          // FLUX requires both dimensions to be multiples of 16.
+          // 1200=16*75 ✓ ; 640=16*40 ✓ (closest legal value to OG card height 630).
           width: 1200,
-          height: 630,
+          height: 640,
           n: 1,
         }),
       });
@@ -157,10 +160,10 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
       if (imageRes.ok) {
         const imageData = await imageRes.json();
         const b64 = imageData.data?.[0]?.b64_json;
-        const imageUrl = imageData.data?.[0]?.url;
 
         if (b64) {
-          // Upload base64 image to Supabase Storage
+          // Together AI's `url` field is a temporary signed URL that expires
+          // within ~1 hour — only persist URLs from our own Storage bucket.
           const buffer = Buffer.from(b64, "base64");
           const filePath = `blog-covers/${article.slug}.webp`;
 
@@ -179,8 +182,6 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
           } else {
             console.error("[blog-generate] storage upload error:", uploadError);
           }
-        } else if (imageUrl) {
-          coverImageUrl = imageUrl;
         }
       } else {
         console.error("[blog-generate] Together API error:", await imageRes.text());
