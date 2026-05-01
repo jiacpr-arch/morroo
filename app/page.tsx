@@ -5,6 +5,7 @@ import ExamCard from "@/components/ExamCard";
 import PricingCard from "@/components/PricingCard";
 import DailyCountdown from "@/components/DailyCountdown";
 import AllExamsCountdown from "@/components/AllExamsCountdown";
+import GoodyEmbed from "@/components/GoodyEmbed";
 import { CATEGORIES, PRICING_PLANS } from "@/lib/types";
 import { getExams, getExamPartCounts, sortExamsAvailableFirst } from "@/lib/supabase/queries";
 import { getBlogPosts } from "@/lib/blog";
@@ -346,6 +347,32 @@ export default async function HomePage() {
           </div>
         </section>
       )}
+
+      {/* Health News */}
+      <section className="py-16 bg-muted/30 border-y">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-8">
+            <h2 className="text-3xl font-bold">ข่าวสุขภาพ</h2>
+            <p className="mt-1 text-muted-foreground">อัปเดตข่าวสารวงการแพทย์และสุขภาพ</p>
+          </div>
+          <div className="rounded-xl border bg-card overflow-hidden">
+            <GoodyEmbed site="health" type="news" title="ข่าวสุขภาพ" />
+          </div>
+        </div>
+      </section>
+
+      {/* Wandee */}
+      <section className="py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-6 text-center">
+            <h2 className="text-2xl font-bold">วันดีประจำวัน</h2>
+            <p className="mt-1 text-sm text-muted-foreground">เกร็ดผ่อนคลายระหว่างอ่านหนังสือ</p>
+          </div>
+          <div className="rounded-xl border bg-card overflow-hidden">
+            <GoodyEmbed site="jiacpr" type="wandee" title="วันดี" />
+          </div>
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="py-20 bg-brand-dark text-white">
