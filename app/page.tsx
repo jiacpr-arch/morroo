@@ -309,6 +309,17 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* Goody Bay Embed */}
+      <section className="py-8 bg-white border-b">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <iframe
+            src="https://goody-bay.vercel.app/?site=morroo"
+            style={{ width: '100%', height: 200, border: 0, display: 'block' }}
+            loading="lazy"
+          />
+        </div>
+      </section>
+
       {/* Blog */}
       {blogPosts.length > 0 && (
         <section className="py-16">
