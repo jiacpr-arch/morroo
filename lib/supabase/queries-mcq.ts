@@ -99,16 +99,19 @@ export async function getFreeAttemptsCount(
 
 export async function getMcqSubjectCounts(): Promise<Record<string, number>> {
   const supabase = await createClient();
-  const { data, error } = await supabase
-    .from("mcq_questions")
-    .select("subject_id")
-    .eq("status", "active");
-
-  if (error || !data) return {};
-
   const counts: Record<string, number> = {};
-  for (const row of data) {
-    counts[row.subject_id] = (counts[row.subject_id] || 0) + 1;
+  const CHUNK = 1000;
+  for (let from = 0; ; from += CHUNK) {
+    const { data, error } = await supabase
+      .from("mcq_questions")
+      .select("subject_id")
+      .eq("status", "active")
+      .range(from, from + CHUNK - 1);
+    if (error || !data || data.length === 0) break;
+    for (const row of data) {
+      counts[row.subject_id] = (counts[row.subject_id] || 0) + 1;
+    }
+    if (data.length < CHUNK) break;
   }
   return counts;
 }
