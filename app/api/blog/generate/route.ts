@@ -231,7 +231,10 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
             const { data: publicUrl } = supabase.storage
               .from("public-assets")
               .getPublicUrl(filePath);
-            coverImageUrl = publicUrl.publicUrl;
+            // Append a cache-bust query so Next.js Image / Vercel CDN /
+            // browser caches don't keep serving the old bytes when we
+            // upsert a new PNG to the same Storage path.
+            coverImageUrl = `${publicUrl.publicUrl}?v=${Date.now()}`;
           } else {
             console.error("[blog-generate] storage upload error:", uploadError);
           }

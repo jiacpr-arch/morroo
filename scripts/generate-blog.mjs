@@ -300,7 +300,9 @@ async function generateCoverImage(slug, { headline, subtitle, scene }) {
     }
 
     const { data: publicUrl } = supabase.storage.from("public-assets").getPublicUrl(filePath);
-    return publicUrl.publicUrl;
+    // Cache-bust so Next.js Image / Vercel CDN / browser don't keep serving
+    // the old bytes when we upsert a new PNG to the same Storage path.
+    return `${publicUrl.publicUrl}?v=${Date.now()}`;
   } catch (err) {
     console.error("[image] error:", err.message);
     return null;
