@@ -7,7 +7,7 @@
  *   ANTHROPIC_API_KEY
  *
  * Optional:
- *   TOGETHER_API_KEY         — cover image via FLUX (skipped if absent)
+ *   OPENAI_API_KEY           — cover image via gpt-image-1 (skipped if absent)
  *   SITE_URL                 — default https://www.morroo.com
  *   FACEBOOK_PAGE_ID
  *   FACEBOOK_ACCESS_TOKEN    — long-lived Page Access Token
@@ -21,7 +21,7 @@ import { createClient } from "@supabase/supabase-js";
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
-const TOGETHER_API_KEY = process.env.TOGETHER_API_KEY;
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 const SITE_URL = process.env.SITE_URL ?? "https://www.morroo.com";
 const FACEBOOK_PAGE_ID = process.env.FACEBOOK_PAGE_ID;
 const FACEBOOK_ACCESS_TOKEN = process.env.FACEBOOK_ACCESS_TOKEN;
@@ -200,55 +200,48 @@ ${existingTitles.slice(0, 20).map((t) => `- ${t}`).join("\n")}
 }
 
 async function generateCoverImage(slug, imagePrompt) {
-  if (!TOGETHER_API_KEY || !imagePrompt) return null;
+  if (!OPENAI_API_KEY || !imagePrompt) return null;
 
   try {
-    const res = await fetch("https://api.together.xyz/v1/images/generations", {
+    const res = await fetch("https://api.openai.com/v1/images/generations", {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${TOGETHER_API_KEY}`,
+        Authorization: `Bearer ${OPENAI_API_KEY}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        // Paid endpoint (~$0.003/image) — no rate limits, faster than -Free.
-        // Account has credits topped up; -Free's rate limit was making runs unreliable.
-        model: "black-forest-labs/FLUX.1-schnell",
+        model: "gpt-image-1",
         prompt: imagePrompt,
-        // FLUX requires both dimensions to be multiples of 16.
-        // 1200=16*75 ✓ ; 640=16*40 ✓ (closest legal value to the 630 OG card height).
-        width: 1200,
-        height: 640,
+        // 1536x1024 is the closest landscape size gpt-image-1 supports to our
+        // 1200x640 OG card. Crops cleanly inside the 16:9 thumbnail.
+        size: "1536x1024",
         n: 1,
       }),
     });
 
     if (!res.ok) {
-      console.error("[image] Together API error:", await res.text());
+      console.error("[image] OpenAI image API error:", await res.text());
       return null;
     }
 
     const data = await res.json();
     const b64 = data.data?.[0]?.b64_json;
-    const imageUrl = data.data?.[0]?.url;
+    if (!b64) return null;
 
-    if (b64) {
-      const buffer = Buffer.from(b64, "base64");
-      const filePath = `blog-covers/${slug}.webp`;
+    const buffer = Buffer.from(b64, "base64");
+    const filePath = `blog-covers/${slug}.png`;
 
-      const { error: uploadError } = await supabase.storage
-        .from("public-assets")
-        .upload(filePath, buffer, { contentType: "image/webp", upsert: true });
+    const { error: uploadError } = await supabase.storage
+      .from("public-assets")
+      .upload(filePath, buffer, { contentType: "image/png", upsert: true });
 
-      if (uploadError) {
-        console.error("[image] upload error:", uploadError.message);
-        return null;
-      }
-
-      const { data: publicUrl } = supabase.storage.from("public-assets").getPublicUrl(filePath);
-      return publicUrl.publicUrl;
+    if (uploadError) {
+      console.error("[image] upload error:", uploadError.message);
+      return null;
     }
 
-    return imageUrl ?? null;
+    const { data: publicUrl } = supabase.storage.from("public-assets").getPublicUrl(filePath);
+    return publicUrl.publicUrl;
   } catch (err) {
     console.error("[image] error:", err.message);
     return null;
