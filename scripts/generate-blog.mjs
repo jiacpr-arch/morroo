@@ -149,17 +149,35 @@ ${existingTitles.slice(0, 20).map((t) => `- ${t}`).join("\n")}
             type: "string",
             description: "Meta description ภาษาไทย 120-160 ตัวอักษร",
           },
+          cover_headline_en: {
+            type: "string",
+            description:
+              'BIG BOLD UPPERCASE 2-3 word English headline that captures the article hook (e.g. "DERMATOLOGY LESIONS", "ACID-BASE 5 MIN"). Will be rendered as the main title on the cover image.',
+          },
+          cover_subtitle_th: {
+            type: "string",
+            description:
+              'ข้อความไทยสั้นๆ ≤ 10 คำ ดึงดูดให้คลิก (e.g. "ดูผื่นให้เป็น ใน 5 นาที"). จะแสดงเป็น subtitle ใต้ headline บน cover',
+          },
           image_prompt: {
             type: "string",
             description:
-              "English prompt for medical illustration cover image, clean modern style, no text",
+              "English description of the central VISUAL SCENE only (photo or illustration) — NO text, NO typography, NO logo. e.g. \"a doctor in white coat examining a patient's skin with a dermatoscope, soft natural lighting\"",
           },
           content: {
             type: "string",
             description: "HTML body 1,500-2,000 words (no markdown)",
           },
         },
-        required: ["title", "slug", "description", "image_prompt", "content"],
+        required: [
+          "title",
+          "slug",
+          "description",
+          "cover_headline_en",
+          "cover_subtitle_th",
+          "image_prompt",
+          "content",
+        ],
       },
     },
   ];
@@ -199,8 +217,45 @@ ${existingTitles.slice(0, 20).map((t) => `- ${t}`).join("\n")}
   return { article, category };
 }
 
-async function generateCoverImage(slug, imagePrompt) {
-  if (!OPENAI_API_KEY || !imagePrompt) return null;
+function slugToHeadline(slug) {
+  return slug.split("-").slice(0, 2).join(" ").toUpperCase();
+}
+
+function buildCoverPrompt({ headline, subtitle, scene }) {
+  return `Modern educational medical infographic poster, square 1:1 cover for a Thai medical-exam blog ("หมอรู้").
+
+VISUAL SCENE (left side, ~1/3 width):
+${scene}
+
+TYPOGRAPHY (render text exactly as written, large and clearly readable, good kerning):
+- Top-right: BIG BOLD UPPERCASE English headline — "${headline}"
+- Below the headline: smaller Thai subtitle — "${subtitle}"
+- Bottom-right corner: small CTA badge "หมอรู้ · morroo.com"
+
+LAYOUT RULES:
+- Place ALL text AND the CTA inside the central 60% vertical band of the canvas (top 20% and bottom 20% must contain only background / decorative shapes), so a 16:9 center-crop on a blog card preserves the headline, subtitle, and CTA.
+- Photo or illustration on the left third; right two-thirds reserved for typography and supporting accents (subtle icons, ribbon shapes, soft circles).
+- Generous whitespace; clear visual hierarchy; modern sans-serif feel.
+
+STYLE:
+- Designer-quality flat infographic; pastel backgrounds; subtle decorative shapes; professional medical study-card aesthetic.
+- Choose a cohesive 3-color palette appropriate for the topic.
+- Crisp, legible Thai vowels and tone marks (no broken Thai glyphs).
+
+DO NOT:
+- Misspell "morroo.com" or "หมอรู้".
+- Add other URLs, fake brand marks, or watermarks.
+- Render more than ~12 visible words of text total — stay readable at thumbnail size.`;
+}
+
+async function generateCoverImage(slug, { headline, subtitle, scene }) {
+  if (!OPENAI_API_KEY || !scene) return null;
+
+  const fullPrompt = buildCoverPrompt({
+    headline: headline || slugToHeadline(slug),
+    subtitle: subtitle || "",
+    scene,
+  });
 
   try {
     const res = await fetch("https://api.openai.com/v1/images/generations", {
@@ -211,10 +266,11 @@ async function generateCoverImage(slug, imagePrompt) {
       },
       body: JSON.stringify({
         model: "gpt-image-1",
-        prompt: imagePrompt,
-        // 1536x1024 is the closest landscape size gpt-image-1 supports to our
-        // 1200x640 OG card. Crops cleanly inside the 16:9 thumbnail.
-        size: "1536x1024",
+        prompt: fullPrompt,
+        // Square works for IG feed natively + FB photo posts. Blog card
+        // center-crops to 16:9; buildCoverPrompt() instructs the model to
+        // keep all critical text inside the central 60% vertical band.
+        size: "1024x1024",
         n: 1,
       }),
     });
@@ -281,7 +337,11 @@ async function run() {
       }
 
       // Generate cover image
-      const coverImage = await generateCoverImage(article.slug, article.image_prompt);
+      const coverImage = await generateCoverImage(article.slug, {
+        headline: article.cover_headline_en,
+        subtitle: article.cover_subtitle_th,
+        scene: article.image_prompt,
+      });
       console.log(`Cover image: ${coverImage ? "yes" : "no"}`);
 
       // Calculate reading time

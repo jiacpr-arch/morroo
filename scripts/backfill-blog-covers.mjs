@@ -1,22 +1,25 @@
 /**
- * One-shot backfill: regenerate cover images for every blog post that's
- * missing a Supabase-hosted cover (null, expired Together AI URL, etc.).
+ * One-shot backfill: regenerate cover images for blog posts.
  *
  * For each affected post:
- *   1. Ask Claude for an English image_prompt derived from title/description.
- *   2. Call OpenAI gpt-image-1 (1536x1024) for the image.
+ *   1. Ask Claude for cover headline (EN), subtitle (TH), and visual scene
+ *      derived from title/description/category.
+ *   2. Call OpenAI gpt-image-1 (1024x1024) with a structured prompt that
+ *      renders the typography + "หมอรู้ · morroo.com" CTA.
  *   3. Upload PNG bytes to public-assets/blog-covers/{slug}.png.
  *   4. Update blog_posts.cover_image to the new public URL.
  *
- * Usage (run once after merge):
- *   SUPABASE_URL=... \
- *   SUPABASE_SERVICE_ROLE_KEY=... \
- *   ANTHROPIC_API_KEY=... \
- *   OPENAI_API_KEY=... \
- *   node scripts/backfill-blog-covers.mjs
+ * Required env vars:
+ *   SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, ANTHROPIC_API_KEY, OPENAI_API_KEY
  *
- * Idempotent: re-running only touches rows whose cover_image is still not
- * pointing at our Storage bucket.
+ * Optional control env vars:
+ *   LIMIT  — process at most N rows (default unlimited)
+ *   FORCE  — when "1"/"true", regenerate every row regardless of current
+ *            cover_image. Default: only rows whose cover_image is null or
+ *            not on Supabase Storage.
+ *
+ * Usage:
+ *   node scripts/backfill-blog-covers.mjs
  */
 
 import { createClient } from "@supabase/supabase-js";
@@ -25,6 +28,8 @@ const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+const LIMIT = parseInt(process.env.LIMIT ?? "", 10);
+const FORCE = ["1", "true", "TRUE", "yes"].includes(process.env.FORCE ?? "");
 
 if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
   console.error("Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY");
@@ -51,14 +56,49 @@ function isSupabaseStorageUrl(url) {
   }
 }
 
-async function deriveImagePrompt({ title, description, category }) {
-  const userPrompt = `บทความเตรียมสอบแพทย์หัวข้อ: "${title}"
+function slugToHeadline(slug) {
+  return slug.split("-").slice(0, 2).join(" ").toUpperCase();
+}
+
+function buildCoverPrompt({ headline, subtitle, scene }) {
+  return `Modern educational medical infographic poster, square 1:1 cover for a Thai medical-exam blog ("หมอรู้").
+
+VISUAL SCENE (left side, ~1/3 width):
+${scene}
+
+TYPOGRAPHY (render text exactly as written, large and clearly readable, good kerning):
+- Top-right: BIG BOLD UPPERCASE English headline — "${headline}"
+- Below the headline: smaller Thai subtitle — "${subtitle}"
+- Bottom-right corner: small CTA badge "หมอรู้ · morroo.com"
+
+LAYOUT RULES:
+- Place ALL text AND the CTA inside the central 60% vertical band of the canvas (top 20% and bottom 20% must contain only background / decorative shapes), so a 16:9 center-crop on a blog card preserves the headline, subtitle, and CTA.
+- Photo or illustration on the left third; right two-thirds reserved for typography and supporting accents (subtle icons, ribbon shapes, soft circles).
+- Generous whitespace; clear visual hierarchy; modern sans-serif feel.
+
+STYLE:
+- Designer-quality flat infographic; pastel backgrounds; subtle decorative shapes; professional medical study-card aesthetic.
+- Choose a cohesive 3-color palette appropriate for the topic.
+- Crisp, legible Thai vowels and tone marks (no broken Thai glyphs).
+
+DO NOT:
+- Misspell "morroo.com" or "หมอรู้".
+- Add other URLs, fake brand marks, or watermarks.
+- Render more than ~12 visible words of text total — stay readable at thumbnail size.`;
+}
+
+async function deriveCoverFields({ title, description, category }) {
+  const userPrompt = `บทความเตรียมสอบแพทย์
+หัวข้อ: "${title}"
 หมวดหมู่: ${category}
 คำอธิบาย: ${description}
 
-เขียน English image prompt สั้นๆ (1-2 ประโยค) สำหรับสร้างภาพ cover บทความ
-สไตล์: medical illustration, clean modern style, no text, suitable as blog cover.
-ตอบเฉพาะ prompt ภาษาอังกฤษ ไม่ต้องมีคำอธิบายเพิ่ม`;
+ตอบเป็น JSON เท่านั้น (ไม่มี code block, ไม่มีคำอธิบายเพิ่ม):
+{
+  "headline_en": "BIG BOLD UPPERCASE 2-3 word English headline (e.g. \\"DERMATOLOGY LESIONS\\", \\"ACID-BASE 5 MIN\\")",
+  "subtitle_th": "ข้อความไทยสั้นๆ ≤ 10 คำ ดึงดูดให้คลิก",
+  "scene": "English description of the central visual scene only — photo or illustration. NO text, NO typography, NO logo. 1-2 sentences."
+}`;
 
   const res = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
@@ -69,7 +109,7 @@ async function deriveImagePrompt({ title, description, category }) {
     },
     body: JSON.stringify({
       model: "claude-sonnet-4-6",
-      max_tokens: 256,
+      max_tokens: 512,
       messages: [{ role: "user", content: userPrompt }],
     }),
   });
@@ -79,12 +119,21 @@ async function deriveImagePrompt({ title, description, category }) {
   }
 
   const data = await res.json();
-  const text = data.content?.[0]?.text?.trim();
-  if (!text) throw new Error("Empty image prompt from Claude");
-  return text;
+  const text = data.content?.[0]?.text?.trim() ?? "";
+  const match = text.match(/\{[\s\S]*\}/);
+  if (!match) throw new Error(`No JSON in Claude response: ${text.slice(0, 200)}`);
+
+  const parsed = JSON.parse(match[0]);
+  if (!parsed.scene) throw new Error("Claude response missing 'scene'");
+
+  return {
+    headline_en: parsed.headline_en?.toString().trim() || "",
+    subtitle_th: parsed.subtitle_th?.toString().trim() || "",
+    scene: parsed.scene.toString().trim(),
+  };
 }
 
-async function generateAndUpload(slug, imagePrompt) {
+async function generateAndUpload(slug, fullPrompt) {
   const res = await fetch("https://api.openai.com/v1/images/generations", {
     method: "POST",
     headers: {
@@ -93,8 +142,8 @@ async function generateAndUpload(slug, imagePrompt) {
     },
     body: JSON.stringify({
       model: "gpt-image-1",
-      prompt: imagePrompt,
-      size: "1536x1024",
+      prompt: fullPrompt,
+      size: "1024x1024",
       n: 1,
     }),
   });
@@ -133,8 +182,17 @@ async function run() {
     process.exit(1);
   }
 
-  const targets = (posts ?? []).filter((p) => !isSupabaseStorageUrl(p.cover_image));
-  console.log(`Found ${targets.length}/${posts?.length ?? 0} posts needing a fresh cover.`);
+  let targets = (posts ?? []).filter((p) =>
+    FORCE ? true : !isSupabaseStorageUrl(p.cover_image)
+  );
+  if (Number.isFinite(LIMIT) && LIMIT > 0) {
+    targets = targets.slice(0, LIMIT);
+  }
+  console.log(
+    `Found ${targets.length}/${posts?.length ?? 0} posts to backfill (FORCE=${FORCE}${
+      Number.isFinite(LIMIT) && LIMIT > 0 ? `, LIMIT=${LIMIT}` : ""
+    }).`
+  );
 
   let okCount = 0;
   let failCount = 0;
@@ -142,10 +200,18 @@ async function run() {
   for (const post of targets) {
     console.log(`\n→ ${post.slug}`);
     try {
-      const imagePrompt = await deriveImagePrompt(post);
-      console.log(`  prompt: ${imagePrompt.slice(0, 80)}${imagePrompt.length > 80 ? "…" : ""}`);
+      const fields = await deriveCoverFields(post);
+      console.log(`  headline: ${fields.headline_en}`);
+      console.log(`  subtitle: ${fields.subtitle_th}`);
+      console.log(`  scene:    ${fields.scene.slice(0, 80)}${fields.scene.length > 80 ? "…" : ""}`);
 
-      const publicUrl = await generateAndUpload(post.slug, imagePrompt);
+      const fullPrompt = buildCoverPrompt({
+        headline: fields.headline_en || slugToHeadline(post.slug),
+        subtitle: fields.subtitle_th,
+        scene: fields.scene,
+      });
+
+      const publicUrl = await generateAndUpload(post.slug, fullPrompt);
 
       const { error: updateError } = await supabase
         .from("blog_posts")

@@ -6,6 +6,15 @@ name: Backfill Blog Covers
 
 on:
   workflow_dispatch:
+    inputs:
+      limit:
+        description: "Max rows to process (blank = no limit)"
+        required: false
+        default: ""
+      force:
+        description: "Regenerate even rows already on Supabase Storage"
+        type: boolean
+        default: false
 
 jobs:
   backfill:
@@ -28,4 +37,6 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          LIMIT: ${{ github.event.inputs.limit }}
+          FORCE: ${{ github.event.inputs.force }}
         run: node scripts/backfill-blog-covers.mjs
