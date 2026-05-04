@@ -144,6 +144,8 @@ async function generateAndUpload(slug, fullPrompt) {
       model: "gpt-image-1",
       prompt: fullPrompt,
       size: "1024x1024",
+      // ~$0.042/image at medium vs ~$0.167 at high — fine for blog covers.
+      quality: "medium",
       n: 1,
     }),
   });

@@ -203,6 +203,9 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
           // center-crops to 16:9; buildCoverPrompt() instructs the model to
           // keep all critical text inside the central 60% vertical band.
           size: "1024x1024",
+          // "medium" keeps text/typography legible at ~$0.042/image vs
+          // ~$0.167 for the default high tier — fine for blog/social covers.
+          quality: "medium",
           n: 1,
         }),
       });
