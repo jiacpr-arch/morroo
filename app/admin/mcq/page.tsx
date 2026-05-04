@@ -52,6 +52,8 @@ export default function AdminMcqPage() {
   const [subjectFilter, setSubjectFilter] = useState("all");
   const [statusFilter, setStatusFilter] = useState("all");
   const [difficultyFilter, setDifficultyFilter] = useState("all");
+  const [page, setPage] = useState(1);
+  const PAGE_SIZE = 100;
 
   useEffect(() => {
     async function load() {
@@ -65,16 +67,22 @@ export default function AdminMcqPage() {
 
       setIsAdmin(true);
 
-      const [qRes, sRes] = await Promise.all([
-        supabase
+      const CHUNK = 1000;
+      const all: McqQuestion[] = [];
+      for (let from = 0; ; from += CHUNK) {
+        const { data, error } = await supabase
           .from("mcq_questions")
           .select("id, subject_id, exam_type, scenario, correct_answer, difficulty, status, topic, created_at, mcq_subjects(name_th, icon)")
           .order("created_at", { ascending: false })
-          .limit(500),
-        supabase.from("mcq_subjects").select("id, name_th, icon").order("name_th"),
-      ]);
+          .range(from, from + CHUNK - 1);
+        if (error || !data || data.length === 0) break;
+        all.push(...(data as unknown as McqQuestion[]));
+        if (data.length < CHUNK) break;
+      }
 
-      setQuestions((qRes.data as McqQuestion[]) || []);
+      const sRes = await supabase.from("mcq_subjects").select("id, name_th, icon").order("name_th");
+
+      setQuestions(all);
       setSubjects((sRes.data as McqSubject[]) || []);
       setLoading(false);
     }
@@ -101,6 +109,13 @@ export default function AdminMcqPage() {
     if (difficultyFilter !== "all") list = list.filter((x) => x.difficulty === difficultyFilter);
     return list;
   }, [questions, search, subjectFilter, statusFilter, difficultyFilter]);
+
+  useEffect(() => { setPage(1); }, [search, subjectFilter, statusFilter, difficultyFilter]);
+
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const currentPage = Math.min(page, totalPages);
+  const pageStart = (currentPage - 1) * PAGE_SIZE;
+  const pageItems = filtered.slice(pageStart, pageStart + PAGE_SIZE);
 
   if (loading) return <div className="flex items-center justify-center min-h-[60vh]"><Loader2 className="h-8 w-8 animate-spin text-brand" /></div>;
 
@@ -165,7 +180,22 @@ export default function AdminMcqPage() {
         </select>
       </div>
 
-      <p className="text-xs text-muted-foreground mb-3">แสดง {filtered.length} / {questions.length} ข้อ</p>
+      <div className="flex items-center justify-between mb-3">
+        <p className="text-xs text-muted-foreground">
+          แสดง {filtered.length === 0 ? 0 : pageStart + 1}–{pageStart + pageItems.length} จาก {filtered.length} ข้อ (ทั้งหมด {questions.length})
+        </p>
+        {totalPages > 1 && (
+          <div className="flex items-center gap-2">
+            <Button size="sm" variant="outline" disabled={currentPage <= 1} onClick={() => setPage((p) => Math.max(1, p - 1))}>
+              ก่อนหน้า
+            </Button>
+            <span className="text-xs text-muted-foreground">หน้า {currentPage} / {totalPages}</span>
+            <Button size="sm" variant="outline" disabled={currentPage >= totalPages} onClick={() => setPage((p) => Math.min(totalPages, p + 1))}>
+              ถัดไป
+            </Button>
+          </div>
+        )}
+      </div>
 
       {/* Table */}
       <Card>
@@ -183,7 +213,7 @@ export default function AdminMcqPage() {
                 </tr>
               </thead>
               <tbody>
-                {filtered.map((q) => (
+                {pageItems.map((q) => (
                   <tr key={q.id} className="border-b last:border-0 hover:bg-muted/20">
                     <td className="p-3 max-w-xs">
                       <p className="text-sm line-clamp-2">{q.scenario}</p>
@@ -245,7 +275,7 @@ export default function AdminMcqPage() {
                     </td>
                   </tr>
                 ))}
-                {filtered.length === 0 && (
+                {pageItems.length === 0 && (
                   <tr><td colSpan={6} className="p-8 text-center text-muted-foreground">ไม่พบข้อสอบ</td></tr>
                 )}
               </tbody>
@@ -253,6 +283,18 @@ export default function AdminMcqPage() {
           </div>
         </CardContent>
       </Card>
+
+      {totalPages > 1 && (
+        <div className="flex items-center justify-end gap-2 mt-3">
+          <Button size="sm" variant="outline" disabled={currentPage <= 1} onClick={() => setPage((p) => Math.max(1, p - 1))}>
+            ก่อนหน้า
+          </Button>
+          <span className="text-xs text-muted-foreground">หน้า {currentPage} / {totalPages}</span>
+          <Button size="sm" variant="outline" disabled={currentPage >= totalPages} onClick={() => setPage((p) => Math.min(totalPages, p + 1))}>
+            ถัดไป
+          </Button>
+        </div>
+      )}
     </div>
   );
 }
