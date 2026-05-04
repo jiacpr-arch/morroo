@@ -2,9 +2,9 @@
  * Facebook Page posting helper — with auto-refreshing token
  *
  * Required env vars:
- *   FACEBOOK_PAGE_ID     – your Page's numeric ID
- *   FACEBOOK_APP_ID      – jiacpr App ID
- *   FACEBOOK_APP_SECRET  – jiacpr App Secret
+ *   FACEBOOK_PAGE_ID     – morroo Page's numeric ID
+ *   FACEBOOK_APP_ID      – morroo App ID (developers.facebook.com)
+ *   FACEBOOK_APP_SECRET  – morroo App Secret
  *   FACEBOOK_USER_TOKEN  – initial long-lived User Access Token (60 days)
  *   NEXT_PUBLIC_SITE_URL – e.g. https://morroo.com
  *
@@ -12,6 +12,9 @@
  * exchanges the current User Token for a fresh 60-day token and
  * stores it in Supabase. As long as the cron runs at least once
  * every 60 days (it runs 2x/week), the token never expires.
+ *
+ * IMPORTANT: when switching to a new FB Page, delete the cached token:
+ *   DELETE FROM app_settings WHERE key = 'facebook_user_token';
  */
 
 import { createAdminClient } from "@/lib/supabase/admin";
@@ -75,20 +78,19 @@ export async function postToFacebook(post: {
   description: string;
   slug: string;
   coverImage: string | null;
-}): Promise<void> {
+  hook?: string;
+}): Promise<string> {
   const pageId = process.env.FACEBOOK_PAGE_ID;
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://morroo.com";
 
   if (!pageId) {
-    console.log("[facebook] FACEBOOK_PAGE_ID not set — skipping");
-    return;
+    throw new Error("FACEBOOK_PAGE_ID not set");
   }
 
   // Step 1: Get latest User Token (from Supabase or env)
   const currentToken = await getLatestUserToken();
   if (!currentToken) {
-    console.log("[facebook] no user token found — skipping");
-    return;
+    throw new Error("No Facebook user token found");
   }
 
   // Step 2: Refresh token (extends 60 days from now)
@@ -99,11 +101,15 @@ export async function postToFacebook(post: {
 
   // Step 3: Get Page Token
   const pageToken = await getPageToken(pageId, freshToken ?? currentToken);
-  if (!pageToken) return;
+  if (!pageToken) {
+    throw new Error("Failed to obtain Facebook Page token");
+  }
 
   // Step 4: Post to Facebook
   const articleUrl = `${siteUrl}/blog/${post.slug}`;
-  const message = `📚 ${post.title}\n\n${post.description}\n\nอ่านต่อ → ${articleUrl}`;
+  const body_text = post.hook
+    ? `${post.hook}\n\nอ่านต่อ → ${articleUrl}`
+    : `📚 ${post.title}\n\n${post.description}\n\nอ่านต่อ → ${articleUrl}`;
 
   let endpoint: string;
   let body: Record<string, string>;
@@ -112,13 +118,13 @@ export async function postToFacebook(post: {
     endpoint = `https://graph.facebook.com/v24.0/${pageId}/photos`;
     body = {
       url: post.coverImage,
-      caption: message,
+      caption: body_text,
       access_token: pageToken,
     };
   } else {
     endpoint = `https://graph.facebook.com/v24.0/${pageId}/feed`;
     body = {
-      message,
+      message: body_text,
       link: articleUrl,
       access_token: pageToken,
     };
@@ -134,7 +140,10 @@ export async function postToFacebook(post: {
 
   if (!res.ok || data.error) {
     console.error("[facebook] post failed:", JSON.stringify(data));
-  } else {
-    console.log(`[facebook] posted: id=${data.id ?? data.post_id} slug=${post.slug}`);
+    throw new Error(data.error?.message ?? `HTTP ${res.status}`);
   }
+
+  const postId: string = data.id ?? data.post_id ?? "";
+  console.log(`[facebook] posted: id=${postId} slug=${post.slug}`);
+  return postId;
 }
