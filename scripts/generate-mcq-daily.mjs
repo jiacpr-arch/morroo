@@ -147,9 +147,31 @@ async function callClaude(model, maxTokens, prompt) {
   const data = await res.json();
   const toolUse = (data.content ?? []).find((b) => b.type === "tool_use");
   if (!toolUse?.input?.questions) {
-    throw new Error(`No tool_use questions in response (${model})`);
+    const blockTypes = (data.content ?? []).map((b) => b.type).join(",") || "(empty)";
+    throw new Error(
+      `No tool_use questions in response (${model}) — stop_reason=${data.stop_reason} blocks=[${blockTypes}] usage=${JSON.stringify(data.usage)}`
+    );
+  }
+  if (data.stop_reason === "max_tokens") {
+    console.warn(`[${model}] hit max_tokens (${maxTokens}); got ${toolUse.input.questions.length} questions, may be truncated`);
   }
   return toolUse.input.questions;
+}
+
+async function callClaudeWithRetry(label, model, maxTokens, prompt) {
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    try {
+      return await callClaude(model, maxTokens, prompt);
+    } catch (err) {
+      const msg = err?.message ?? String(err);
+      if (attempt === 2) {
+        console.error(`[${label}] failed after retry: ${msg}`);
+        throw err;
+      }
+      console.warn(`[${label}] attempt ${attempt} failed, retrying: ${msg}`);
+      await new Promise((r) => setTimeout(r, 2000));
+    }
+  }
 }
 
 async function run() {
@@ -180,10 +202,16 @@ async function run() {
   const existing = existingCount ?? 0;
   console.log(`Existing questions in this subject: ${existing}`);
 
-  const haikuPrompt = buildPrompt(
+  const haikuEasyPrompt = buildPrompt(
     todaySubject.name_th,
-    21,
-    "สร้างข้อง่าย (easy) 6 ข้อ และข้อปานกลาง (medium) 15 ข้อ — ข้อง่ายเน้น recall ความรู้พื้นฐาน, ข้อปานกลางเน้น first-line treatment, investigation of choice",
+    6,
+    "สร้างเฉพาะข้อง่าย (easy) 6 ข้อ — เน้น recall ความรู้พื้นฐาน, definition, classic presentation",
+    existing,
+  );
+  const haikuMediumPrompt = buildPrompt(
+    todaySubject.name_th,
+    15,
+    "สร้างเฉพาะข้อปานกลาง (medium) 15 ข้อ — เน้น first-line treatment, investigation of choice, differential ระดับกลาง",
     existing,
   );
   const sonnetPrompt = buildPrompt(
@@ -193,24 +221,25 @@ async function run() {
     existing,
   );
 
-  console.log("Calling Haiku (21q) + Sonnet (9q) in parallel...");
-  const [haikuResult, sonnetResult] = await Promise.allSettled([
-    callClaude("claude-haiku-4-5-20251001", 32000, haikuPrompt),
-    callClaude("claude-sonnet-4-6", 24000, sonnetPrompt),
+  console.log("Calling Haiku-easy (6q) + Haiku-medium (15q) + Sonnet-hard (9q) in parallel...");
+  const [haikuEasyResult, haikuMediumResult, sonnetResult] = await Promise.allSettled([
+    callClaudeWithRetry("haiku-easy", "claude-haiku-4-5-20251001", 16000, haikuEasyPrompt),
+    callClaudeWithRetry("haiku-medium", "claude-haiku-4-5-20251001", 32000, haikuMediumPrompt),
+    callClaudeWithRetry("sonnet-hard", "claude-sonnet-4-6", 24000, sonnetPrompt),
   ]);
 
   const allQuestions = [];
-  if (haikuResult.status === "fulfilled") {
-    console.log(`Haiku: ${haikuResult.value.length} questions`);
-    allQuestions.push(...haikuResult.value);
-  } else {
-    console.error(`Haiku batch failed: ${haikuResult.reason?.message ?? haikuResult.reason}`);
-  }
-  if (sonnetResult.status === "fulfilled") {
-    console.log(`Sonnet: ${sonnetResult.value.length} questions`);
-    allQuestions.push(...sonnetResult.value);
-  } else {
-    console.error(`Sonnet batch failed: ${sonnetResult.reason?.message ?? sonnetResult.reason}`);
+  for (const [label, result] of [
+    ["haiku-easy", haikuEasyResult],
+    ["haiku-medium", haikuMediumResult],
+    ["sonnet-hard", sonnetResult],
+  ]) {
+    if (result.status === "fulfilled") {
+      console.log(`${label}: ${result.value.length} questions`);
+      allQuestions.push(...result.value);
+    } else {
+      console.error(`${label} batch failed: ${result.reason?.message ?? result.reason}`);
+    }
   }
 
   if (allQuestions.length === 0) {
