@@ -14,6 +14,47 @@ export const maxDuration = 60;
 
 const CATEGORIES = ["ความรู้ทั่วไป", "เตรียมสอบ", "เทคนิคสอบ"];
 
+function slugToHeadline(slug: string): string {
+  // Fallback when Claude omits cover_headline_en — take first 2-3 segments
+  // of the slug, uppercased. e.g. "dermatology-lesions-exam" → "DERMATOLOGY LESIONS"
+  return slug.split("-").slice(0, 2).join(" ").toUpperCase();
+}
+
+function buildCoverPrompt({
+  headline,
+  subtitle,
+  scene,
+}: {
+  headline: string;
+  subtitle: string;
+  scene: string;
+}): string {
+  return `Modern educational medical infographic poster, square 1:1 cover for a Thai medical-exam blog ("หมอรู้").
+
+VISUAL SCENE (left side, ~1/3 width):
+${scene}
+
+TYPOGRAPHY (render text exactly as written, large and clearly readable, good kerning):
+- Top-right: BIG BOLD UPPERCASE English headline — "${headline}"
+- Below the headline: smaller Thai subtitle — "${subtitle}"
+- Bottom-right corner: small CTA badge "หมอรู้ · morroo.com"
+
+LAYOUT RULES:
+- Place ALL text AND the CTA inside the central 60% vertical band of the canvas (top 20% and bottom 20% must contain only background / decorative shapes), so a 16:9 center-crop on a blog card preserves the headline, subtitle, and CTA.
+- Photo or illustration on the left third; right two-thirds reserved for typography and supporting accents (subtle icons, ribbon shapes, soft circles).
+- Generous whitespace; clear visual hierarchy; modern sans-serif feel.
+
+STYLE:
+- Designer-quality flat infographic; pastel backgrounds; subtle decorative shapes; professional medical study-card aesthetic.
+- Choose a cohesive 3-color palette appropriate for the topic.
+- Crisp, legible Thai vowels and tone marks (no broken Thai glyphs).
+
+DO NOT:
+- Misspell "morroo.com" or "หมอรู้".
+- Add other URLs, fake brand marks, or watermarks.
+- Render more than ~12 visible words of text total — stay readable at thumbnail size.`;
+}
+
 export async function POST(request: Request) {
   return handleGenerate(request);
 }
@@ -60,7 +101,9 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
   "slug": "english-slug-with-dashes (ไม่มีภาษาไทย)",
   "description": "คำอธิบายสั้น 120-160 ตัวอักษร สำหรับ meta description",
   "keywords": "keyword1, keyword2, keyword3",
-  "image_prompt": "English prompt for generating a medical illustration cover image, clean modern style, no text, suitable as blog cover",
+  "cover_headline_en": "BIG BOLD UPPERCASE 2-3 word English headline (e.g. \\"DERMATOLOGY LESIONS\\", \\"ACID-BASE 5 MIN\\")",
+  "cover_subtitle_th": "ข้อความไทยสั้นๆ ≤10 คำ ดึงดูดให้คลิก (e.g. \\"ดูผื่นให้เป็น ใน 5 นาที\\")",
+  "image_prompt": "English description of the central visual scene only — NO text, NO typography, just the photo/illustration. e.g. \\"a doctor in white coat examining a patient's skin with a dermatoscope, soft natural lighting\\"",
   "content": "เนื้อหา HTML (ใช้ <h2>, <h3>, <p>, <ul>, <ol>, <li>, <strong>, <table>) ความยาว 1,500-2,000 คำ"
 }
 
@@ -101,6 +144,8 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
     slug: string;
     description: string;
     keywords: string;
+    cover_headline_en: string;
+    cover_subtitle_th: string;
     image_prompt: string;
     content: string;
   };
@@ -138,6 +183,12 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
   let coverImageUrl: string | null = null;
 
   if (openaiApiKey && article.image_prompt) {
+    const fullImagePrompt = buildCoverPrompt({
+      headline: article.cover_headline_en || slugToHeadline(article.slug),
+      subtitle: article.cover_subtitle_th || article.title,
+      scene: article.image_prompt,
+    });
+
     try {
       const imageRes = await fetch("https://api.openai.com/v1/images/generations", {
         method: "POST",
@@ -147,10 +198,11 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
         },
         body: JSON.stringify({
           model: "gpt-image-1",
-          prompt: article.image_prompt,
-          // 1536x1024 is the closest landscape size gpt-image-1 supports to
-          // our 1200x640 OG card. Crops cleanly inside the 16:9 thumbnail.
-          size: "1536x1024",
+          prompt: fullImagePrompt,
+          // Square works for IG feed natively + FB photo posts. Blog card
+          // center-crops to 16:9; buildCoverPrompt() instructs the model to
+          // keep all critical text inside the central 60% vertical band.
+          size: "1024x1024",
           n: 1,
         }),
       });
