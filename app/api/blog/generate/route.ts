@@ -29,7 +29,7 @@ async function handleGenerate(request: Request) {
   }
 
   const anthropicApiKey = process.env.ANTHROPIC_API_KEY;
-  const togetherApiKey = process.env.TOGETHER_API_KEY;
+  const openaiApiKey = process.env.OPENAI_API_KEY;
   if (!anthropicApiKey) {
     return NextResponse.json({ error: "ANTHROPIC_API_KEY not set" }, { status: 500 });
   }
@@ -134,25 +134,23 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
     article.slug = `${article.slug}-${Date.now().toString(36)}`;
   }
 
-  // Step 3: Generate cover image with Together AI
+  // Step 3: Generate cover image with OpenAI gpt-image-1
   let coverImageUrl: string | null = null;
 
-  if (togetherApiKey && article.image_prompt) {
+  if (openaiApiKey && article.image_prompt) {
     try {
-      const imageRes = await fetch("https://api.together.xyz/v1/images/generations", {
+      const imageRes = await fetch("https://api.openai.com/v1/images/generations", {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${togetherApiKey}`,
+          Authorization: `Bearer ${openaiApiKey}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          // Paid endpoint — no rate limits, faster than -Free.
-          model: "black-forest-labs/FLUX.1-schnell",
+          model: "gpt-image-1",
           prompt: article.image_prompt,
-          // FLUX requires both dimensions to be multiples of 16.
-          // 1200=16*75 ✓ ; 640=16*40 ✓ (closest legal value to OG card height 630).
-          width: 1200,
-          height: 640,
+          // 1536x1024 is the closest landscape size gpt-image-1 supports to
+          // our 1200x640 OG card. Crops cleanly inside the 16:9 thumbnail.
+          size: "1536x1024",
           n: 1,
         }),
       });
@@ -162,15 +160,15 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
         const b64 = imageData.data?.[0]?.b64_json;
 
         if (b64) {
-          // Together AI's `url` field is a temporary signed URL that expires
-          // within ~1 hour — only persist URLs from our own Storage bucket.
+          // gpt-image-1 always returns PNG bytes as b64_json. Persist to our
+          // own Storage bucket so the URL never expires.
           const buffer = Buffer.from(b64, "base64");
-          const filePath = `blog-covers/${article.slug}.webp`;
+          const filePath = `blog-covers/${article.slug}.png`;
 
           const { error: uploadError } = await supabase.storage
             .from("public-assets")
             .upload(filePath, buffer, {
-              contentType: "image/webp",
+              contentType: "image/png",
               upsert: true,
             });
 
@@ -184,7 +182,7 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
           }
         }
       } else {
-        console.error("[blog-generate] Together API error:", await imageRes.text());
+        console.error("[blog-generate] OpenAI image API error:", await imageRes.text());
       }
     } catch (err) {
       console.error("[blog-generate] image generation error:", err);
