@@ -6,8 +6,13 @@
  */
 
 import { NextResponse, after } from "next/server";
+import sharp from "sharp";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { postToFacebook } from "@/lib/facebook";
+import { broadcastLineMessages } from "@/lib/line";
+import { buildBlogAnnounceFlex } from "@/lib/line-flex-templates";
+import { pickAutopostFormat, categoryHashtag } from "@/lib/autopost-format";
+import { generateHook } from "@/lib/autopost-copy";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -181,6 +186,7 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
 
   // Step 3: Generate cover image with OpenAI gpt-image-1
   let coverImageUrl: string | null = null;
+  let coverImageLineUrl: string | null = null;
 
   if (openaiApiKey && article.image_prompt) {
     const fullImagePrompt = buildCoverPrompt({
@@ -238,6 +244,33 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
           } else {
             console.error("[blog-generate] storage upload error:", uploadError);
           }
+
+          // Generate LINE-compatible variant: JPEG 1024×536 (LINE Flex hero max 1024px, JPEG/PNG only)
+          try {
+            const lineBuffer = await sharp(buffer)
+              .resize(1024, 536, { fit: "cover" })
+              .jpeg({ quality: 85 })
+              .toBuffer();
+
+            const lineFilePath = `blog-covers/${article.slug}-line.jpg`;
+            const { error: lineUploadError } = await supabase.storage
+              .from("public-assets")
+              .upload(lineFilePath, lineBuffer, {
+                contentType: "image/jpeg",
+                upsert: true,
+              });
+
+            if (!lineUploadError) {
+              const { data: linePublicUrl } = supabase.storage
+                .from("public-assets")
+                .getPublicUrl(lineFilePath);
+              coverImageLineUrl = linePublicUrl.publicUrl;
+            } else {
+              console.error("[blog-generate] line image upload error:", lineUploadError);
+            }
+          } catch (err) {
+            console.error("[blog-generate] line image resize error:", err);
+          }
         }
       } else {
         console.error("[blog-generate] OpenAI image API error:", await imageRes.text());
@@ -264,9 +297,10 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
       reading_time: readingTime,
       content: article.content,
       cover_image: coverImageUrl,
+      cover_image_line: coverImageLineUrl,
       published_at: new Date().toISOString(),
     })
-    .select("slug, title, cover_image")
+    .select("slug, title, cover_image, cover_image_line")
     .single();
 
   if (saveError) {
@@ -275,14 +309,68 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
 
   console.log(`[blog-generate] published: "${saved.title}" (${saved.slug}) cover: ${saved.cover_image ? "yes" : "no"}`);
 
-  // Step 6: Post to Facebook in background (non-blocking)
+  // Step 6: Post to Facebook + LINE in background (non-blocking)
   after(async () => {
-    await postToFacebook({
+    const supabaseAsync = createAdminClient();
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://morroo.com";
+    const articleUrl = `${siteUrl}/blog/${saved.slug}`;
+    const format = pickAutopostFormat(saved.slug);
+    const hook = await generateHook({
       title: saved.title,
       description: article.description,
-      slug: saved.slug,
-      coverImage: saved.cover_image ?? null,
+      apiKey: anthropicApiKey,
     });
+
+    // Build hashtags for cover_caption format
+    const hashtags = `#เตรียมสอบแพทย์ #หมอรู้ #${categoryHashtag(category)}`;
+    const fullCaption = `${hook}\n\n${hashtags}`;
+
+    // Determine cover image for FB based on format
+    const coverForFb =
+      format === "cover_caption"
+        ? (saved.cover_image ?? null)
+        : format === "quote_card"
+          ? `${siteUrl}/api/og/quote?slug=${saved.slug}`
+          : null; // link_only — FB renders OG card from blog page
+
+    // FB autopost
+    try {
+      const fbId = await postToFacebook({
+        title: saved.title,
+        description: article.description,
+        slug: saved.slug,
+        coverImage: coverForFb,
+        hook: format === "cover_caption" ? fullCaption : hook,
+      });
+      await supabaseAsync.from("blog_posts").update({
+        fb_post_id: fbId,
+        fb_posted_at: new Date().toISOString(),
+        fb_last_error: null,
+        autopost_format: format,
+      }).eq("slug", saved.slug);
+    } catch (err) {
+      console.error("[blog-generate] facebook post error:", err);
+      await supabaseAsync.from("blog_posts").update({
+        fb_last_error: String(err).slice(0, 500),
+        autopost_format: format,
+      }).eq("slug", saved.slug);
+    }
+
+    // LINE broadcast (opt-in via env flag — quota: 1 broadcast = 1 msg × N followers)
+    if (process.env.LINE_AUTOPOST_ENABLED === "true") {
+      const flex = buildBlogAnnounceFlex({
+        title: saved.title,
+        description: article.description,
+        url: articleUrl,
+        coverImage: saved.cover_image_line ?? null,
+      });
+      const result = await broadcastLineMessages([flex]);
+      await supabaseAsync.from("blog_posts").update(
+        result.ok
+          ? { line_broadcast_at: new Date().toISOString(), line_last_error: null }
+          : { line_last_error: (result.error ?? "unknown").slice(0, 500) }
+      ).eq("slug", saved.slug);
+    }
   });
 
   return NextResponse.json({ success: true, post: saved });

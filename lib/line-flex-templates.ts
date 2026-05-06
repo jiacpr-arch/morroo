@@ -99,6 +99,82 @@ function statRow(label: string, value: string) {
   };
 }
 
+interface BlogAnnounceData {
+  title: string;
+  description: string;
+  url: string;
+  coverImage: string | null;
+}
+
+export function buildBlogAnnounceFlex(data: BlogAnnounceData): LineMessage {
+  const desc =
+    data.description.length > 60
+      ? data.description.slice(0, 57).trimEnd() + "…"
+      : data.description;
+
+  return {
+    type: "flex",
+    altText: `บทความใหม่: ${data.title}`,
+    contents: {
+      type: "bubble",
+      size: "kilo",
+      ...(data.coverImage
+        ? {
+            hero: {
+              type: "image",
+              // cover_image_line: JPEG 1024×536 ≤1024px per LINE Flex v2 spec
+              url: data.coverImage,
+              size: "full",
+              aspectRatio: "1.91:1",
+              aspectMode: "cover",
+              action: { type: "uri", uri: data.url },
+            },
+          }
+        : {}),
+      body: {
+        type: "box",
+        layout: "vertical",
+        spacing: "sm",
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: data.title,
+            weight: "bold",
+            size: "md",
+            wrap: true,
+          },
+          {
+            type: "text",
+            text: desc,
+            size: "sm",
+            color: "#666666",
+            wrap: true,
+            margin: "md",
+          },
+        ],
+      },
+      footer: {
+        type: "box",
+        layout: "vertical",
+        paddingAll: "md",
+        contents: [
+          {
+            type: "button",
+            style: "primary",
+            color: "#16A085",
+            action: {
+              type: "uri",
+              label: "อ่านบทความ",
+              uri: data.url,
+            },
+          },
+        ],
+      },
+    },
+  };
+}
+
 interface ExpiryWarningData {
   name: string;
   expiresAt: Date;
