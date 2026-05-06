@@ -1,5 +1,5 @@
 /**
- * Auto Blog Generator — AI คิดหัวข้อเอง + Together AI สร้างรูป cover
+ * Auto Blog Generator — AI คิดหัวข้อเอง + OpenAI gpt-image-1 สร้างรูป cover
  *
  * Cron: อังคาร + ศุกร์ 02:00 ICT (19:00 UTC วันก่อน)
  * POST /api/blog/generate?secret=$BLOG_GENERATE_SECRET
@@ -24,35 +24,60 @@ function buildCoverPrompt({
   headline,
   subtitle,
   scene,
+  category,
 }: {
   headline: string;
   subtitle: string;
   scene: string;
+  category?: string;
 }): string {
-  return `Modern educational medical infographic poster, square 1:1 cover for a Thai medical-exam blog ("หมอรู้").
+  const categoryHint =
+    category === "เทคนิคสอบ"
+      ? "Mood: focused, strategic, motivational — like a premium exam-prep brand campaign."
+      : category === "เตรียมสอบ"
+      ? "Mood: serious-but-approachable academic; reassuring and confidence-building."
+      : "Mood: clean, intelligent, calm-confident editorial.";
 
-VISUAL SCENE (left side, ~1/3 width):
+  return `Premium designer-quality cover for a Thai medical-exam blog ("หมอรู้", morroo.com). Square 1:1, social-media-ready (Facebook / Instagram feed).
+
+CREATIVE DIRECTION:
+- Photorealistic medical advertising photography crossed with editorial infographic — feels premium, trustworthy, modern.
+- Reference aesthetic: high-end pharma campaign, modern medical-school brochure, Apple-clean editorial layout.
+- Audience: Thai medical students preparing for licensing exams (ศรว. / NL).
+- ${categoryHint}
+
+VISUAL SCENE (anchored on left ~1/3 of canvas):
 ${scene}
 
-TYPOGRAPHY (render text exactly as written, large and clearly readable, good kerning):
+COMPOSITION:
+- Strict rule-of-thirds: subject anchored at the left-third intersection; right two-thirds reserved for typography and breathing room.
+- Generous negative space around the headline — no clutter or busy texture behind text.
+- Clear single focal point with shallow depth of field on photographic subjects (background softly blurred, bokeh).
+- Visual hierarchy in scan order: subject → headline → subtitle → CTA badge.
+- Place ALL text AND the CTA inside the central 60% vertical band (top 20% and bottom 20% contain only background / decorative shapes), so a 16:9 center-crop on a blog card preserves the headline, subtitle, and CTA.
+
+LIGHTING & ATMOSPHERE:
+- Cinematic soft natural lighting; key light from upper-left at ~45°; gentle fill; soft shadow falloff.
+- Crisp highlights without blown-out skin; controlled shadows; subtle ambient occlusion for depth.
+- Photorealistic look as if shot on a 50mm lens at f/2.8; sharp focus on the subject's eyes / hands / instrument.
+
+COLOR & MATERIAL:
+- Cohesive 3-color palette appropriate for the topic — one calm primary (teal / navy / sage), one warm accent, one neutral background.
+- Pastel, low-saturation backgrounds; balanced editorial color grading; print-quality contrast.
+- Ultra-realistic skin texture, accurate Thai / Southeast-Asian features, natural fabric and material rendering, anatomically correct hands.
+
+TYPOGRAPHY (render text exactly as written, large, well-kerned, designer-grade):
 - Top-right: BIG BOLD UPPERCASE English headline — "${headline}"
 - Below the headline: smaller Thai subtitle — "${subtitle}"
 - Bottom-right corner: small CTA badge "หมอรู้ · morroo.com"
+- Modern geometric sans-serif feel; crisp, legible Thai vowels and tone marks (no broken or stacked Thai glyphs).
 
-LAYOUT RULES:
-- Place ALL text AND the CTA inside the central 60% vertical band of the canvas (top 20% and bottom 20% must contain only background / decorative shapes), so a 16:9 center-crop on a blog card preserves the headline, subtitle, and CTA.
-- Photo or illustration on the left third; right two-thirds reserved for typography and supporting accents (subtle icons, ribbon shapes, soft circles).
-- Generous whitespace; clear visual hierarchy; modern sans-serif feel.
-
-STYLE:
-- Designer-quality flat infographic; pastel backgrounds; subtle decorative shapes; professional medical study-card aesthetic.
-- Choose a cohesive 3-color palette appropriate for the topic.
-- Crisp, legible Thai vowels and tone marks (no broken Thai glyphs).
-
-DO NOT:
+DO NOT (negative direction — must avoid):
+- Distorted or extra fingers, malformed hands, asymmetric eyes, melted faces, plastic / waxy skin.
+- Blurry text, garbled letters, fake logos, fake URLs, watermarks, stock-photo signatures, QR codes.
 - Misspell "morroo.com" or "หมอรู้".
-- Add other URLs, fake brand marks, or watermarks.
-- Render more than ~12 visible words of text total — stay readable at thumbnail size.`;
+- Harsh on-camera flash, oversaturated neon colors, cluttered or noisy backgrounds, amateur clip-art look, AI-generated kitsch.
+- More than ~12 visible words of text total — must stay readable at thumbnail size.`;
 }
 
 export async function POST(request: Request) {
@@ -103,7 +128,7 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
   "keywords": "keyword1, keyword2, keyword3",
   "cover_headline_en": "BIG BOLD UPPERCASE 2-3 word English headline (e.g. \\"DERMATOLOGY LESIONS\\", \\"ACID-BASE 5 MIN\\")",
   "cover_subtitle_th": "ข้อความไทยสั้นๆ ≤10 คำ ดึงดูดให้คลิก (e.g. \\"ดูผื่นให้เป็น ใน 5 นาที\\")",
-  "image_prompt": "English description of the central visual scene only — NO text, NO typography, just the photo/illustration. e.g. \\"a doctor in white coat examining a patient's skin with a dermatoscope, soft natural lighting\\"",
+  "image_prompt": "Detailed English description of the central visual scene only (no text, no typography). MUST include: (1) subject + action, (2) environment, (3) lighting style, (4) camera/lens hint, (5) mood. Aim for cinematic, premium, photorealistic. e.g. \\"a Thai female doctor in a crisp white coat carefully examining a patient's skin lesion with a dermatoscope, modern hospital interior softly blurred behind, cinematic soft window light from upper-left, shot on 50mm lens at f/2.8, calm and trustworthy mood\\"",
   "content": "เนื้อหา HTML (ใช้ <h2>, <h3>, <p>, <ul>, <ol>, <li>, <strong>, <table>) ความยาว 1,500-2,000 คำ"
 }
 
@@ -187,6 +212,7 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
       headline: article.cover_headline_en || slugToHeadline(article.slug),
       subtitle: article.cover_subtitle_th || article.title,
       scene: article.image_prompt,
+      category,
     });
 
     try {
@@ -203,9 +229,10 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
           // center-crops to 16:9; buildCoverPrompt() instructs the model to
           // keep all critical text inside the central 60% vertical band.
           size: "1024x1024",
-          // "medium" keeps text/typography legible at ~$0.042/image vs
-          // ~$0.167 for the default high tier — fine for blog/social covers.
-          quality: "medium",
+          // "high" gives noticeably better composition, lighting, and Thai
+          // typography rendering vs "medium". ~$0.167/image — at 2 covers/week
+          // (~$17/yr) the quality lift is worth it for blog/social covers.
+          quality: "high",
           n: 1,
         }),
       });
