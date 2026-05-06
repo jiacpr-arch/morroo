@@ -186,7 +186,7 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
 
   // Step 3: Generate cover image with OpenAI gpt-image-1
   let coverImageUrl: string | null = null;
-  let coverImageLineUrl: string | null = null;
+  let coverBuffer: Buffer | null = null;
 
   if (openaiApiKey && article.image_prompt) {
     const fullImagePrompt = buildCoverPrompt({
@@ -224,6 +224,7 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
           // gpt-image-1 always returns PNG bytes as b64_json. Persist to our
           // own Storage bucket so the URL never expires.
           const buffer = Buffer.from(b64, "base64");
+          coverBuffer = buffer; // captured by after() for LINE variant generation
           const filePath = `blog-covers/${article.slug}.png`;
 
           const { error: uploadError } = await supabase.storage
@@ -243,33 +244,6 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
             coverImageUrl = `${publicUrl.publicUrl}?v=${Date.now()}`;
           } else {
             console.error("[blog-generate] storage upload error:", uploadError);
-          }
-
-          // Generate LINE-compatible variant: JPEG 1024×536 (LINE Flex hero max 1024px, JPEG/PNG only)
-          try {
-            const lineBuffer = await sharp(buffer)
-              .resize(1024, 536, { fit: "cover" })
-              .jpeg({ quality: 85 })
-              .toBuffer();
-
-            const lineFilePath = `blog-covers/${article.slug}-line.jpg`;
-            const { error: lineUploadError } = await supabase.storage
-              .from("public-assets")
-              .upload(lineFilePath, lineBuffer, {
-                contentType: "image/jpeg",
-                upsert: true,
-              });
-
-            if (!lineUploadError) {
-              const { data: linePublicUrl } = supabase.storage
-                .from("public-assets")
-                .getPublicUrl(lineFilePath);
-              coverImageLineUrl = linePublicUrl.publicUrl;
-            } else {
-              console.error("[blog-generate] line image upload error:", lineUploadError);
-            }
-          } catch (err) {
-            console.error("[blog-generate] line image resize error:", err);
           }
         }
       } else {
@@ -297,10 +271,9 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
       reading_time: readingTime,
       content: article.content,
       cover_image: coverImageUrl,
-      cover_image_line: coverImageLineUrl,
       published_at: new Date().toISOString(),
     })
-    .select("slug, title, cover_image, cover_image_line")
+    .select("slug, title, cover_image")
     .single();
 
   if (saveError) {
@@ -309,12 +282,46 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
 
   console.log(`[blog-generate] published: "${saved.title}" (${saved.slug}) cover: ${saved.cover_image ? "yes" : "no"}`);
 
-  // Step 6: Post to Facebook + LINE in background (non-blocking)
+  // Step 6: Generate LINE variant + post to FB + LINE in background (non-blocking)
   after(async () => {
     const supabaseAsync = createAdminClient();
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://morroo.com";
     const articleUrl = `${siteUrl}/blog/${saved.slug}`;
     const format = pickAutopostFormat(saved.slug);
+
+    // Generate LINE-compatible variant: JPEG 1024×536 (LINE Flex hero max 1024px, JPEG/PNG only)
+    let coverImageLineUrl: string | null = null;
+    if (coverBuffer) {
+      try {
+        const lineBuffer = await sharp(coverBuffer)
+          .resize(1024, 536, { fit: "cover" })
+          .jpeg({ quality: 85 })
+          .toBuffer();
+
+        const lineFilePath = `blog-covers/${saved.slug}-line.jpg`;
+        const { error: lineUploadError } = await supabaseAsync.storage
+          .from("public-assets")
+          .upload(lineFilePath, lineBuffer, {
+            contentType: "image/jpeg",
+            upsert: true,
+          });
+
+        if (!lineUploadError) {
+          const { data: linePublicUrl } = supabaseAsync.storage
+            .from("public-assets")
+            .getPublicUrl(lineFilePath);
+          coverImageLineUrl = linePublicUrl.publicUrl;
+          await supabaseAsync.from("blog_posts")
+            .update({ cover_image_line: coverImageLineUrl })
+            .eq("slug", saved.slug);
+        } else {
+          console.error("[blog-generate] line image upload error:", lineUploadError);
+        }
+      } catch (err) {
+        console.error("[blog-generate] line image resize error:", err);
+      }
+    }
+
     const hook = await generateHook({
       title: saved.title,
       description: article.description,
@@ -362,7 +369,7 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
         title: saved.title,
         description: article.description,
         url: articleUrl,
-        coverImage: saved.cover_image_line ?? null,
+        coverImage: coverImageLineUrl,
       });
       const result = await broadcastLineMessages([flex]);
       await supabaseAsync.from("blog_posts").update(
