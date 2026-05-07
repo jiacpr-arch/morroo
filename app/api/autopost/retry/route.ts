@@ -73,7 +73,10 @@ export async function GET(request: Request) {
   const doLine = platform === "line" || platform === "both";
 
   const supabase = createAdminClient();
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://morroo.com";
+  // Force canonical www domain — LINE Flex action URI strict-validates scheme
+  // and rejects empty/relative URLs. `||` falls back when env var is empty too.
+  const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.morroo.com";
+  const siteUrl = rawSiteUrl.replace(/^https:\/\/morroo\.com/, "https://www.morroo.com");
 
   // Build query for unposted articles
   let query = supabase
