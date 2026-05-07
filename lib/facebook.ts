@@ -141,14 +141,16 @@ export async function postToFacebook(post: {
       body: fd,
     });
   } else {
-    // No cover: post with explicit `link` param so FB scrapes OG meta and
-    // renders a link card preview (more prominent than autolink).
+    // No cover: post as text-only (no `link` param). FB Page posting via API
+    // with `link` returns "url invalid" unless the domain is registered in
+    // App Domains under FB Developer Console — relying on autolinker is more
+    // reliable. URL is on its own line in body_text → FB autolinks + renders
+    // an OG card preview when it can fetch the page.
     res = await fetch(`https://graph.facebook.com/v24.0/${pageId}/feed`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         message: body_text,
-        link: articleUrl,
         access_token: pageToken,
       }),
     });
