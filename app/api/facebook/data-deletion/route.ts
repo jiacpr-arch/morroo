@@ -4,6 +4,11 @@ import crypto from "crypto";
 
 export const runtime = "nodejs";
 
+/** GET — Meta pings this URL to verify it's reachable before accepting it in the dashboard. */
+export function GET() {
+  return NextResponse.json({ status: "ok" });
+}
+
 /**
  * Parses and verifies a Facebook signed_request.
  * Format: base64url(HMAC-SHA256(payload, appSecret)).base64url(payload)
