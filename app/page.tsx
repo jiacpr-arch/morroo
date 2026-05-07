@@ -6,6 +6,7 @@ import PricingCard from "@/components/PricingCard";
 import DailyCountdown from "@/components/DailyCountdown";
 import AllExamsCountdown from "@/components/AllExamsCountdown";
 import GoodyEmbed from "@/components/GoodyEmbed";
+import { SocialButtonsRow } from "@/components/SocialLinks";
 import { CATEGORIES, PRICING_PLANS } from "@/lib/types";
 import { getExams, getExamPartCounts, sortExamsAvailableFirst } from "@/lib/supabase/queries";
 import { getBlogPosts } from "@/lib/blog";
@@ -371,6 +372,17 @@ export default async function HomePage() {
           <div className="rounded-xl border bg-card overflow-hidden">
             <GoodyEmbed site="jiacpr" type="wandee" title="วันดี" />
           </div>
+        </div>
+      </section>
+
+      {/* Social */}
+      <section className="py-12 bg-white border-y">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold">ติดตามหมอรู้</h2>
+          <p className="mt-2 text-muted-foreground">
+            แอด LINE, Facebook, Instagram เพื่อรับข่าวสารและเทคนิคเตรียมสอบใหม่ๆ
+          </p>
+          <SocialButtonsRow className="mt-6" />
         </div>
       </section>
 

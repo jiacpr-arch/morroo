@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SocialIconsRow } from "@/components/SocialLinks";
 
 export default function Footer() {
   return (
@@ -16,6 +17,7 @@ export default function Footer() {
               <br />
               เตรียมสอบแพทย์ด้วย AI ที่เข้าใจคุณ
             </p>
+            <SocialIconsRow className="pt-2" />
           </div>
 
           {/* Links */}
