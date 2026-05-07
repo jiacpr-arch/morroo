@@ -184,83 +184,13 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
     article.slug = `${article.slug}-${Date.now().toString(36)}`;
   }
 
-  // Step 3: Generate cover image with OpenAI gpt-image-1
-  let coverImageUrl: string | null = null;
-  let coverBuffer: Buffer | null = null;
-
-  if (openaiApiKey && article.image_prompt) {
-    const fullImagePrompt = buildCoverPrompt({
-      headline: article.cover_headline_en || slugToHeadline(article.slug),
-      subtitle: article.cover_subtitle_th || article.title,
-      scene: article.image_prompt,
-    });
-
-    try {
-      const imageRes = await fetch("https://api.openai.com/v1/images/generations", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${openaiApiKey}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          model: "gpt-image-1",
-          prompt: fullImagePrompt,
-          // Square works for IG feed natively + FB photo posts. Blog card
-          // center-crops to 16:9; buildCoverPrompt() instructs the model to
-          // keep all critical text inside the central 60% vertical band.
-          size: "1024x1024",
-          // "medium" keeps text/typography legible at ~$0.042/image vs
-          // ~$0.167 for the default high tier — fine for blog/social covers.
-          quality: "medium",
-          n: 1,
-        }),
-      });
-
-      if (imageRes.ok) {
-        const imageData = await imageRes.json();
-        const b64 = imageData.data?.[0]?.b64_json;
-
-        if (b64) {
-          // gpt-image-1 always returns PNG bytes as b64_json. Persist to our
-          // own Storage bucket so the URL never expires.
-          const buffer = Buffer.from(b64, "base64");
-          coverBuffer = buffer; // captured by after() for LINE variant generation
-          const filePath = `blog-covers/${article.slug}.png`;
-
-          const { error: uploadError } = await supabase.storage
-            .from("public-assets")
-            .upload(filePath, buffer, {
-              contentType: "image/png",
-              upsert: true,
-            });
-
-          if (!uploadError) {
-            const { data: publicUrl } = supabase.storage
-              .from("public-assets")
-              .getPublicUrl(filePath);
-            // Append a cache-bust query so Next.js Image / Vercel CDN /
-            // browser caches don't keep serving the old bytes when we
-            // upsert a new PNG to the same Storage path.
-            coverImageUrl = `${publicUrl.publicUrl}?v=${Date.now()}`;
-          } else {
-            console.error("[blog-generate] storage upload error:", uploadError);
-          }
-        }
-      } else {
-        console.error("[blog-generate] OpenAI image API error:", await imageRes.text());
-      }
-    } catch (err) {
-      console.error("[blog-generate] image generation error:", err);
-      // Continue without image — article is still valuable
-    }
-  }
-
-  // Step 4: Calculate reading time
+  // Step 3: Calculate reading time
   const textOnly = article.content.replace(/<[^>]+>/g, " ");
   const wordCount = textOnly.split(/\s+/).filter(Boolean).length;
   const readingTime = Math.max(3, Math.round(wordCount / 200));
 
-  // Step 5: Save to Supabase
+  // Step 4: Save to Supabase WITHOUT cover_image — image gen happens in after()
+  // (Claude article gen alone is ~30-50s; OpenAI gpt-image-1 adds 15-25s, pushing past 60s limit)
   const { data: saved, error: saveError } = await supabase
     .from("blog_posts")
     .insert({
@@ -270,24 +200,93 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
       category,
       reading_time: readingTime,
       content: article.content,
-      cover_image: coverImageUrl,
+      cover_image: null,
       published_at: new Date().toISOString(),
     })
-    .select("slug, title, cover_image")
+    .select("slug, title")
     .single();
 
   if (saveError) {
     return NextResponse.json({ error: saveError.message }, { status: 500 });
   }
 
-  console.log(`[blog-generate] published: "${saved.title}" (${saved.slug}) cover: ${saved.cover_image ? "yes" : "no"}`);
+  console.log(`[blog-generate] published: "${saved.title}" (${saved.slug}) — cover + autopost in background`);
 
-  // Step 6: Generate LINE variant + post to FB + LINE in background (non-blocking)
+  // Step 5: Generate cover image + LINE variant + post to FB + LINE in background (non-blocking)
   after(async () => {
     const supabaseAsync = createAdminClient();
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://morroo.com";
     const articleUrl = `${siteUrl}/blog/${saved.slug}`;
     const format = pickAutopostFormat(saved.slug);
+
+    // Generate cover image with OpenAI gpt-image-1
+    let coverImageUrl: string | null = null;
+    let coverBuffer: Buffer | null = null;
+
+    if (openaiApiKey && article.image_prompt) {
+      const fullImagePrompt = buildCoverPrompt({
+        headline: article.cover_headline_en || slugToHeadline(article.slug),
+        subtitle: article.cover_subtitle_th || article.title,
+        scene: article.image_prompt,
+      });
+
+      try {
+        const imageRes = await fetch("https://api.openai.com/v1/images/generations", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${openaiApiKey}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            model: "gpt-image-1",
+            prompt: fullImagePrompt,
+            // Square works for IG feed natively + FB photo posts. Blog card
+            // center-crops to 16:9; buildCoverPrompt() instructs the model to
+            // keep all critical text inside the central 60% vertical band.
+            size: "1024x1024",
+            // "medium" keeps text/typography legible at ~$0.042/image vs
+            // ~$0.167 for the default high tier — fine for blog/social covers.
+            quality: "medium",
+            n: 1,
+          }),
+        });
+
+        if (imageRes.ok) {
+          const imageData = await imageRes.json();
+          const b64 = imageData.data?.[0]?.b64_json;
+
+          if (b64) {
+            const buffer = Buffer.from(b64, "base64");
+            coverBuffer = buffer;
+            const filePath = `blog-covers/${saved.slug}.png`;
+
+            const { error: uploadError } = await supabaseAsync.storage
+              .from("public-assets")
+              .upload(filePath, buffer, {
+                contentType: "image/png",
+                upsert: true,
+              });
+
+            if (!uploadError) {
+              const { data: publicUrl } = supabaseAsync.storage
+                .from("public-assets")
+                .getPublicUrl(filePath);
+              // Cache-bust query so caches don't keep serving an older PNG at the same path.
+              coverImageUrl = `${publicUrl.publicUrl}?v=${Date.now()}`;
+              await supabaseAsync.from("blog_posts")
+                .update({ cover_image: coverImageUrl })
+                .eq("slug", saved.slug);
+            } else {
+              console.error("[blog-generate] storage upload error:", uploadError);
+            }
+          }
+        } else {
+          console.error("[blog-generate] OpenAI image API error:", await imageRes.text());
+        }
+      } catch (err) {
+        console.error("[blog-generate] image generation error:", err);
+      }
+    }
 
     // Generate LINE-compatible variant: JPEG 1024×536 (LINE Flex hero max 1024px, JPEG/PNG only)
     let coverImageLineUrl: string | null = null;
@@ -335,7 +334,7 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
     // Determine cover image for FB based on format
     const coverForFb =
       format === "cover_caption"
-        ? (saved.cover_image ?? null)
+        ? coverImageUrl
         : format === "quote_card"
           ? `${siteUrl}/api/og/quote?slug=${saved.slug}`
           : null; // link_only — FB renders OG card from blog page
