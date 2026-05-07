@@ -1,11 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { sendLineMessage, verifyLineSignature } from "@/lib/line";
+import { sendLineMessage, verifyLineSignature, type LineMessage } from "@/lib/line";
 import {
   generateChatbotReply,
   trimHistory,
   type ChatMessage,
 } from "@/lib/chatbot";
+import { buildChatbotCard } from "@/lib/line-flex-templates";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -198,7 +199,12 @@ async function handleChatbotReply(
     ? result.reply
     : "ขอโทษครับ ขณะนี้ระบบมีปัญหาชั่วคราว ลองใหม่อีกครั้งนะครับ 🙏";
 
-  await sendLineMessage(lineUserId, [{ type: "text", text: replyText }]);
+  const messages: LineMessage[] = [{ type: "text", text: replyText }];
+  if (result.ok && result.card) {
+    messages.push(buildChatbotCard(result.card));
+  }
+
+  await sendLineMessage(lineUserId, messages);
 
   await supabase.from("chat_messages").insert([
     {
