@@ -1,6 +1,9 @@
 export type AutopostFormat = "cover_caption" | "quote_card" | "link_only";
 
-const FORMATS: AutopostFormat[] = ["cover_caption", "quote_card", "link_only"];
+// link_only ใช้ /feed + link param ซึ่ง FB reject ด้วย "url invalid"
+// (App Domains + fb:app_id meta ยังไม่ช่วย — น่าจะต้อง business verification)
+// ตัดออกชั่วคราว เหลือ 2 format ที่ใช้ /photos endpoint (มีรูปแน่นอน)
+const FORMATS: AutopostFormat[] = ["cover_caption", "quote_card"];
 
 /**
  * Deterministic format selection by slug hash — same slug always yields the
