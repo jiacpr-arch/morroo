@@ -17,7 +17,6 @@
  *   DELETE FROM app_settings WHERE key = 'facebook_user_token';
  */
 
-import crypto from "node:crypto";
 import sharp from "sharp";
 import { createAdminClient } from "@/lib/supabase/admin";
 
@@ -113,17 +112,12 @@ export async function postToFacebook(post: {
 
   // Step 4: Post to Facebook
   const articleUrl = `${siteUrl}/blog/${post.slug}`;
-  // FB caption auto-linker ตัด path ของ long URL (กดได้แค่ domain → homepage)
-  // แก้โดยใช้ short URL `/p/[hash]` ที่สั้นพอจน FB auto-link เต็มทั้ง URL
-  const slugHash = crypto
-    .createHash("md5")
-    .update(post.slug)
-    .digest("hex")
-    .slice(0, 6);
-  const shortUrl = `${siteUrl}/p/${slugHash}`;
+  // FB caption auto-link ตัด path ของ URL ทุกความยาว — กด URL ได้แค่ domain
+  // แก้โดยใส่ navigation hint ให้ user ไปต่อหา "บทความ" เมนูเองที่ homepage
+  const navHint = `📖 อ่านบทความเต็มที่ ${siteUrl} → เมนู "บทความ"`;
   const photo_caption = post.hook
-    ? `${post.hook}\n\n${shortUrl}`
-    : `📚 ${post.title}\n\n${post.description}\n\n${shortUrl}`;
+    ? `${post.hook}\n\n${navHint}`
+    : `📚 ${post.title}\n\n${post.description}\n\n${navHint}`;
   const feed_message = post.hook
     ? `${post.hook}\n\n${articleUrl}`
     : `📚 ${post.title}\n\n${post.description}\n\n${articleUrl}`;
