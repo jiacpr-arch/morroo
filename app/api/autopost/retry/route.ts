@@ -146,8 +146,10 @@ export async function GET(request: Request) {
       result.fb = "already_posted";
     }
 
-    // LINE retry
-    if (doLine && !post.line_broadcast_at) {
+    // LINE retry — gated by LINE_AUTOPOST_ENABLED to match /api/blog/generate behavior
+    // (LINE broadcast quota = 1 msg × N followers, so opt-in only)
+    const lineEnabled = process.env.LINE_AUTOPOST_ENABLED === "true";
+    if (doLine && !post.line_broadcast_at && lineEnabled) {
       // Generate cover_image_line on demand if missing (script-generated posts skip it)
       const lineCover =
         post.cover_image_line
@@ -166,6 +168,8 @@ export async function GET(request: Request) {
           : { line_last_error: (lineResult.error ?? "unknown").slice(0, 500) }
       ).eq("slug", post.slug);
       result.line = lineResult.ok ? "sent" : `error:${lineResult.error?.slice(0, 100)}`;
+    } else if (doLine && !lineEnabled) {
+      result.line = "skipped:LINE_AUTOPOST_ENABLED!=true";
     } else if (doLine) {
       result.line = "already_sent";
     }
