@@ -167,7 +167,31 @@ export async function postToFacebook(post: {
     throw new Error(data.error?.message ?? `HTTP ${res.status}`);
   }
 
-  const postId: string = data.id ?? data.post_id ?? "";
+  // For /photos: data.post_id = feed story ID, data.id = photo ID
+  // For /feed: data.id = post ID
+  const postId: string = data.post_id ?? data.id ?? "";
+
+  // Photo posts: add URL as first comment — FB caption auto-linker clips
+  // long URL paths (only domain is clickable), but comments auto-link full URLs
+  if (post.coverImage && data.post_id) {
+    try {
+      const commentRes = await fetch(
+        `https://graph.facebook.com/v24.0/${data.post_id}/comments`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: articleUrl, access_token: pageToken }),
+        }
+      );
+      if (!commentRes.ok) {
+        const errData = await commentRes.json();
+        console.warn("[facebook] add comment failed:", JSON.stringify(errData));
+      }
+    } catch (err) {
+      console.warn("[facebook] add comment error:", err);
+    }
+  }
+
   console.log(`[facebook] posted: id=${postId} slug=${post.slug}`);
   return postId;
 }
