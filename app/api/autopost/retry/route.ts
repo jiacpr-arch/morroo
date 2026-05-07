@@ -11,6 +11,7 @@
  */
 
 import { NextResponse } from "next/server";
+import sharp from "sharp";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { postToFacebook } from "@/lib/facebook";
 import { broadcastLineMessages } from "@/lib/line";
@@ -20,6 +21,43 @@ import { generateHook } from "@/lib/autopost-copy";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
+
+/**
+ * Generate LINE-compatible JPEG variant (1024×536, ≤1MB) from an existing
+ * cover image URL. LINE Flex hero requires JPEG/PNG ≤1024px wide;
+ * gpt-image-1 PNG at 1024×1024 sometimes exceeds 1MB and uses 1:1 aspect.
+ */
+async function ensureLineCover(
+  supabase: ReturnType<typeof createAdminClient>,
+  slug: string,
+  coverImage: string,
+): Promise<string | null> {
+  try {
+    const res = await fetch(coverImage);
+    if (!res.ok) return null;
+    const buffer = Buffer.from(await res.arrayBuffer());
+    const lineBuffer = await sharp(buffer)
+      .resize(1024, 536, { fit: "cover" })
+      .jpeg({ quality: 85 })
+      .toBuffer();
+
+    const filePath = `blog-covers/${slug}-line.jpg`;
+    const { error: uploadError } = await supabase.storage
+      .from("public-assets")
+      .upload(filePath, lineBuffer, { contentType: "image/jpeg", upsert: true });
+    if (uploadError) {
+      console.error("[autopost-retry] line cover upload error:", uploadError);
+      return null;
+    }
+    const { data: pub } = supabase.storage.from("public-assets").getPublicUrl(filePath);
+    const url = pub.publicUrl;
+    await supabase.from("blog_posts").update({ cover_image_line: url }).eq("slug", slug);
+    return url;
+  } catch (err) {
+    console.error("[autopost-retry] line cover gen error:", err);
+    return null;
+  }
+}
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -110,11 +148,16 @@ export async function GET(request: Request) {
 
     // LINE retry
     if (doLine && !post.line_broadcast_at) {
+      // Generate cover_image_line on demand if missing (script-generated posts skip it)
+      const lineCover =
+        post.cover_image_line
+        ?? (post.cover_image ? await ensureLineCover(supabase, post.slug, post.cover_image) : null);
+
       const flex = buildBlogAnnounceFlex({
         title: post.title,
         description: post.description,
         url: articleUrl,
-        coverImage: post.cover_image_line ?? null,
+        coverImage: lineCover,
       });
       const lineResult = await broadcastLineMessages([flex]);
       await supabase.from("blog_posts").update(

@@ -1,18 +1,19 @@
 /**
  * Blog article generator — runs on GitHub Actions (no Vercel timeout)
  *
+ * After inserting the blog post, calls /api/autopost/retry?slug=X to trigger
+ * Facebook + LINE autopost (which handles format rotation, hook gen,
+ * cover_image_line resize, and state tracking in DB).
+ *
  * Required env vars:
  *   SUPABASE_URL
  *   SUPABASE_SERVICE_ROLE_KEY
  *   ANTHROPIC_API_KEY
+ *   BLOG_GENERATE_SECRET     — auth for /api/autopost/retry
  *
  * Optional:
  *   OPENAI_API_KEY           — cover image via gpt-image-1 (skipped if absent)
  *   SITE_URL                 — default https://www.morroo.com
- *   FACEBOOK_PAGE_ID
- *   FACEBOOK_ACCESS_TOKEN    — long-lived Page Access Token
- *   FACEBOOK_APP_ID
- *   FACEBOOK_APP_SECRET
  *   ARTICLE_COUNT            — how many articles to generate (default 1)
  */
 
@@ -23,10 +24,7 @@ const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 const SITE_URL = process.env.SITE_URL ?? "https://www.morroo.com";
-const FACEBOOK_PAGE_ID = process.env.FACEBOOK_PAGE_ID;
-const FACEBOOK_ACCESS_TOKEN = process.env.FACEBOOK_ACCESS_TOKEN;
-const FACEBOOK_APP_ID = process.env.FACEBOOK_APP_ID;
-const FACEBOOK_APP_SECRET = process.env.FACEBOOK_APP_SECRET;
+const BLOG_GENERATE_SECRET = process.env.BLOG_GENERATE_SECRET;
 const ARTICLE_COUNT = Math.max(1, parseInt(process.env.ARTICLE_COUNT ?? "1", 10));
 
 const CATEGORIES = ["ความรู้ทั่วไป", "เตรียมสอบ", "เทคนิคสอบ"];
@@ -42,71 +40,22 @@ if (!ANTHROPIC_API_KEY) {
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
-/** Refresh Page Access Token if app credentials are available */
-async function refreshPageToken(currentToken) {
-  if (!FACEBOOK_APP_ID || !FACEBOOK_APP_SECRET) return currentToken;
-  try {
-    const res = await fetch(
-      `https://graph.facebook.com/v24.0/oauth/access_token?grant_type=fb_exchange_token&client_id=${FACEBOOK_APP_ID}&client_secret=${FACEBOOK_APP_SECRET}&fb_exchange_token=${currentToken}`
-    );
-    const data = await res.json();
-    if (data.access_token) {
-      console.log("[facebook] token refreshed, expires in", data.expires_in, "s");
-      // Persist refreshed token to app_settings
-      await supabase
-        .from("app_settings")
-        .upsert({ key: "facebook_access_token", value: data.access_token, updated_at: new Date().toISOString() });
-      return data.access_token;
-    }
-  } catch (err) {
-    console.error("[facebook] token refresh failed:", err.message);
-  }
-  return currentToken;
-}
-
-async function getPageToken() {
-  // Prefer stored token in Supabase over env var
-  const { data } = await supabase
-    .from("app_settings")
-    .select("value")
-    .eq("key", "facebook_access_token")
-    .maybeSingle();
-  return data?.value ?? FACEBOOK_ACCESS_TOKEN ?? null;
-}
-
-async function postToFacebook(title, description, slug, coverImage) {
-  if (!FACEBOOK_PAGE_ID) return;
-
-  let token = await getPageToken();
-  if (!token) {
-    console.log("[facebook] no token — skipping post");
+async function triggerAutopost(slug) {
+  if (!BLOG_GENERATE_SECRET) {
+    console.log("[autopost] BLOG_GENERATE_SECRET not set — skipping");
     return;
   }
-
-  token = await refreshPageToken(token);
-
-  const articleUrl = `${SITE_URL}/blog/${slug}`;
-  const message = `📚 ${title}\n\n${description}\n\nอ่านต่อ → ${articleUrl}`;
-
-  let endpoint, body;
-  if (coverImage) {
-    endpoint = `https://graph.facebook.com/v24.0/${FACEBOOK_PAGE_ID}/photos`;
-    body = { url: coverImage, caption: message, access_token: token };
-  } else {
-    endpoint = `https://graph.facebook.com/v24.0/${FACEBOOK_PAGE_ID}/feed`;
-    body = { message, link: articleUrl, access_token: token };
-  }
-
-  const res = await fetch(endpoint, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(body),
-  });
-  const data = await res.json();
-  if (!res.ok || data.error) {
-    console.error("[facebook] post failed:", JSON.stringify(data));
-  } else {
-    console.log(`[facebook] posted: ${slug}`);
+  try {
+    const url = `${SITE_URL}/api/autopost/retry?secret=${encodeURIComponent(BLOG_GENERATE_SECRET)}&slug=${encodeURIComponent(slug)}&platform=both`;
+    const res = await fetch(url);
+    const data = await res.json();
+    if (!res.ok) {
+      console.error("[autopost] failed:", JSON.stringify(data));
+    } else {
+      console.log("[autopost] result:", JSON.stringify(data));
+    }
+  } catch (err) {
+    console.error("[autopost] error:", err.message);
   }
 }
 
@@ -377,8 +326,8 @@ async function run() {
       console.log(`Saved: "${saved.title}" (${saved.slug})`);
       existingTitles.unshift(saved.title);
 
-      // Post to Facebook
-      await postToFacebook(saved.title, article.description, saved.slug, saved.cover_image);
+      // Trigger autopost via Vercel route (FB + LINE + state tracking)
+      await triggerAutopost(saved.slug);
     } catch (err) {
       console.error(`Error generating article ${i + 1}:`, err.message);
     }
