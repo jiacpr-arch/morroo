@@ -108,9 +108,11 @@ export async function postToFacebook(post: {
 
   // Step 4: Post to Facebook
   const articleUrl = `${siteUrl}/blog/${post.slug}`;
+  // URL ต้องอยู่บรรทัดของตัวเอง ไม่มีอักขระพิเศษนำหน้า
+  // ไม่งั้น FB autolinker ตัดที่ .com ไม่รวม path → คลิกไปแค่หน้า home
   const body_text = post.hook
-    ? `${post.hook}\n\nอ่านต่อ → ${articleUrl}`
-    : `📚 ${post.title}\n\n${post.description}\n\nอ่านต่อ → ${articleUrl}`;
+    ? `${post.hook}\n\n${articleUrl}`
+    : `📚 ${post.title}\n\n${post.description}\n\n${articleUrl}`;
 
   let res: Response;
 
