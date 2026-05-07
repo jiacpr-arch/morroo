@@ -137,12 +137,14 @@ export async function postToFacebook(post: {
       body: fd,
     });
   } else {
+    // No cover: post as text-only — URL ใน body_text จะถูก auto-rendered
+    // เป็น OG card preview. ไม่ใช้ `link` field เพราะ FB Graph v22+ deprecate
+    // ("The url you supplied is invalid" สำหรับ Page posts ตั้งแต่ปลายปี 2025)
     res = await fetch(`https://graph.facebook.com/v24.0/${pageId}/feed`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         message: body_text,
-        link: articleUrl,
         access_token: pageToken,
       }),
     });
