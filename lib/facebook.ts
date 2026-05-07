@@ -82,7 +82,11 @@ export async function postToFacebook(post: {
   hook?: string;
 }): Promise<string> {
   const pageId = process.env.FACEBOOK_PAGE_ID;
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://morroo.com";
+  // Force canonical www domain — `morroo.com` redirects to `www.morroo.com`,
+  // and FB's URL validator/scraper rejects URLs that 301 (link param fails,
+  // autolinker truncates at `.com`).
+  const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com";
+  const siteUrl = rawSiteUrl.replace(/^https:\/\/morroo\.com/, "https://www.morroo.com");
 
   if (!pageId) {
     throw new Error("FACEBOOK_PAGE_ID not set");
@@ -137,14 +141,14 @@ export async function postToFacebook(post: {
       body: fd,
     });
   } else {
-    // No cover: post as text-only — URL ใน body_text จะถูก auto-rendered
-    // เป็น OG card preview. ไม่ใช้ `link` field เพราะ FB Graph v22+ deprecate
-    // ("The url you supplied is invalid" สำหรับ Page posts ตั้งแต่ปลายปี 2025)
+    // No cover: post with explicit `link` param so FB scrapes OG meta and
+    // renders a link card preview (more prominent than autolink).
     res = await fetch(`https://graph.facebook.com/v24.0/${pageId}/feed`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         message: body_text,
+        link: articleUrl,
         access_token: pageToken,
       }),
     });
