@@ -112,9 +112,13 @@ export async function postToFacebook(post: {
 
   // Step 4: Post to Facebook
   const articleUrl = `${siteUrl}/blog/${post.slug}`;
-  // URL ต้องอยู่บรรทัดของตัวเอง ไม่มีอักขระพิเศษนำหน้า
-  // ไม่งั้น FB autolinker ตัดที่ .com ไม่รวม path → คลิกไปแค่หน้า home
-  const body_text = post.hook
+  // Photo posts: caption ไม่ใส่ URL เพราะ FB auto-linker ใน caption ตัด path ออก
+  // (แสดงแค่ https://www.morroo.com, path หายไป) — ใช้ `link` param แทนให้รูปเอง link ไปบทความ
+  // Feed posts (no cover): ใส่ URL ไว้ใน message เพราะไม่มีรูปให้กด
+  const photo_caption = post.hook
+    ? post.hook
+    : `📚 ${post.title}\n\n${post.description}`;
+  const feed_message = post.hook
     ? `${post.hook}\n\n${articleUrl}`
     : `📚 ${post.title}\n\n${post.description}\n\n${articleUrl}`;
 
@@ -133,7 +137,8 @@ export async function postToFacebook(post: {
 
     const fd = new FormData();
     fd.append("source", new Blob([new Uint8Array(jpegBuffer)], { type: "image/jpeg" }), "cover.jpg");
-    fd.append("caption", body_text);
+    fd.append("caption", photo_caption);
+    fd.append("link", articleUrl);
     fd.append("access_token", pageToken);
 
     res = await fetch(`https://graph.facebook.com/v24.0/${pageId}/photos`, {
@@ -148,7 +153,7 @@ export async function postToFacebook(post: {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        message: body_text,
+        message: feed_message,
         link: articleUrl,
         access_token: pageToken,
       }),
