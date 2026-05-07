@@ -105,7 +105,10 @@ export async function GET(request: Request) {
 
   for (const post of posts) {
     const result: { slug: string; fb?: string; line?: string } = { slug: post.slug };
-    const articleUrl = `${siteUrl}/blog/${post.slug}`;
+    // Hardcode canonical URL — env-derived siteUrl gave LINE "invalid uri scheme"
+    // even with || + replace fallbacks, so something in env is malformed/empty.
+    const articleUrl = `https://www.morroo.com/blog/${post.slug}`;
+    console.log("[autopost-retry]", post.slug, "articleUrl=", articleUrl);
     const format = (post.autopost_format as "cover_caption" | "quote_card" | "link_only" | null)
       ?? pickAutopostFormat(post.slug);
 
