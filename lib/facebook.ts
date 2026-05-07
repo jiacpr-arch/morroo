@@ -17,6 +17,7 @@
  *   DELETE FROM app_settings WHERE key = 'facebook_user_token';
  */
 
+import crypto from "node:crypto";
 import sharp from "sharp";
 import { createAdminClient } from "@/lib/supabase/admin";
 
@@ -112,12 +113,17 @@ export async function postToFacebook(post: {
 
   // Step 4: Post to Facebook
   const articleUrl = `${siteUrl}/blog/${post.slug}`;
-  // Photo posts: caption ไม่ใส่ URL เพราะ FB auto-linker ใน caption ตัด path ออก
-  // (แสดงแค่ https://www.morroo.com, path หายไป) — ใช้ `link` param แทนให้รูปเอง link ไปบทความ
-  // Feed posts (no cover): ใส่ URL ไว้ใน message เพราะไม่มีรูปให้กด
+  // FB caption auto-linker ตัด path ของ long URL (กดได้แค่ domain → homepage)
+  // แก้โดยใช้ short URL `/p/[hash]` ที่สั้นพอจน FB auto-link เต็มทั้ง URL
+  const slugHash = crypto
+    .createHash("md5")
+    .update(post.slug)
+    .digest("hex")
+    .slice(0, 6);
+  const shortUrl = `${siteUrl}/p/${slugHash}`;
   const photo_caption = post.hook
-    ? post.hook
-    : `📚 ${post.title}\n\n${post.description}`;
+    ? `${post.hook}\n\n${shortUrl}`
+    : `📚 ${post.title}\n\n${post.description}\n\n${shortUrl}`;
   const feed_message = post.hook
     ? `${post.hook}\n\n${articleUrl}`
     : `📚 ${post.title}\n\n${post.description}\n\n${articleUrl}`;
@@ -138,7 +144,6 @@ export async function postToFacebook(post: {
     const fd = new FormData();
     fd.append("source", new Blob([new Uint8Array(jpegBuffer)], { type: "image/jpeg" }), "cover.jpg");
     fd.append("caption", photo_caption);
-    fd.append("link", articleUrl);
     fd.append("access_token", pageToken);
 
     res = await fetch(`https://graph.facebook.com/v24.0/${pageId}/photos`, {
@@ -167,31 +172,7 @@ export async function postToFacebook(post: {
     throw new Error(data.error?.message ?? `HTTP ${res.status}`);
   }
 
-  // For /photos: data.post_id = feed story ID, data.id = photo ID
-  // For /feed: data.id = post ID
   const postId: string = data.post_id ?? data.id ?? "";
-
-  // Photo posts: add URL as first comment — FB caption auto-linker clips
-  // long URL paths (only domain is clickable), but comments auto-link full URLs
-  if (post.coverImage && data.post_id) {
-    try {
-      const commentRes = await fetch(
-        `https://graph.facebook.com/v24.0/${data.post_id}/comments`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ message: articleUrl, access_token: pageToken }),
-        }
-      );
-      if (!commentRes.ok) {
-        const errData = await commentRes.json();
-        console.warn("[facebook] add comment failed:", JSON.stringify(errData));
-      }
-    } catch (err) {
-      console.warn("[facebook] add comment error:", err);
-    }
-  }
-
   console.log(`[facebook] posted: id=${postId} slug=${post.slug}`);
   return postId;
 }
