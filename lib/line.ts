@@ -9,7 +9,10 @@ export async function sendLineMessage(
   messages: LineMessage[]
 ): Promise<boolean> {
   const token = process.env.LINE_CHANNEL_ACCESS_TOKEN;
-  if (!token) return false;
+  if (!token) {
+    console.error("[line] LINE_CHANNEL_ACCESS_TOKEN not set");
+    return false;
+  }
 
   const res = await fetch("https://api.line.me/v2/bot/message/push", {
     method: "POST",
@@ -19,6 +22,11 @@ export async function sendLineMessage(
     },
     body: JSON.stringify({ to: lineUserId, messages }),
   });
+
+  if (!res.ok) {
+    const errText = await res.text().catch(() => "<no body>");
+    console.error(`[line] push failed status=${res.status} body=${errText}`);
+  }
 
   return res.ok;
 }
