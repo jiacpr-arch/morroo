@@ -1,9 +1,9 @@
 import { cn } from "@/lib/utils";
 
 export const SOCIAL_LINKS = {
-  line: "https://line.me/R/ti/p/@508srmcr",
-  facebook: "https://www.facebook.com/morroo",
-  instagram: "https://www.instagram.com/morroo",
+  line: "https://line.me/R/ti/p/%40901nmwcd",
+  facebook: "https://www.facebook.com/profile.php?id=61589444333781",
+  instagram: "https://www.instagram.com/morroodee/",
 } as const;
 
 type Variant = "section" | "footer";
