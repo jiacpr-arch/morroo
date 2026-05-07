@@ -15,6 +15,14 @@ export interface ReceiptEmailProps {
   chargeId: string;
 }
 
+export interface RedeemCodeEmailProps {
+  name: string;
+  email: string;
+  code: string;
+  rewardType: "monthly_1m" | "bundle_10q";
+  expiresAt: string; // ISO date string — when the *code* expires (7 days)
+}
+
 const BRAND_COLOR = "#16A085";
 const DARK_COLOR = "#1A2F23";
 
@@ -393,6 +401,90 @@ export function weeklyDigestEmail({
     </p>
   </div>
   ${newsletterFooterHtml(unsubscribeUrl)}
+</div>
+</body>
+</html>`;
+}
+
+const REWARD_LABEL_TH: Record<string, string> = {
+  monthly_1m: "Premium รายเดือน — ฟรี 30 วัน (มูลค่า ฿199)",
+  bundle_10q: "Bundle ชุด 10 ข้อ — ใช้ได้ตลอดชีวิต (มูลค่า ฿299)",
+};
+
+const REWARD_BENEFITS: Record<string, string[]> = {
+  monthly_1m: [
+    "MEQ + MCQ + Long Case ไม่จำกัด 30 วัน",
+    "AI ตรวจคำตอบทุกข้อ",
+    "ข้อสอบใหม่ทุกสัปดาห์",
+  ],
+  bundle_10q: [
+    "เลือกข้อสอบ 10 ข้อ ตามต้องการ",
+    "เฉลยละเอียด + Key Points",
+    "🤖 AI ตรวจคำตอบ",
+  ],
+};
+
+export function redeemCodeEmail({
+  name,
+  code,
+  rewardType,
+  expiresAt,
+}: RedeemCodeEmailProps): string {
+  const rewardLabel = REWARD_LABEL_TH[rewardType] ?? rewardType;
+  const benefits = REWARD_BENEFITS[rewardType] ?? [];
+  const expireDate = new Date(expiresAt).toLocaleDateString("th-TH", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+  const benefitsHtml = benefits
+    .map(
+      (b) =>
+        `<li style="color: #374151; font-size: 15px; line-height: 1.8;">${b}</li>`
+    )
+    .join("");
+  const redeemUrl = `https://www.morroo.com/redeem/${encodeURIComponent(code)}`;
+
+  return `<!DOCTYPE html>
+<html lang="th">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body style="margin:0;padding:0;background:#f4f4f4;">
+<div style="${baseStyle}">
+  ${headerHtml}
+  <div style="padding: 32px;">
+    <h2 style="color: ${DARK_COLOR}; font-size: 22px; margin: 0 0 12px;">โค้ดของคุณพร้อมแล้ว 🎁</h2>
+    <p style="color: #374151; font-size: 16px; line-height: 1.6; margin: 0 0 20px;">
+      สวัสดีคุณ <strong>${name}</strong>, ขอบคุณที่สนใจหมอรู้!
+    </p>
+    <p style="color: #374151; font-size: 16px; line-height: 1.6; margin: 0 0 20px;">
+      รางวัลของคุณ: <strong>${rewardLabel}</strong>
+    </p>
+
+    <div style="border: 2px dashed ${BRAND_COLOR}; border-radius: 8px; padding: 20px; margin: 24px 0; text-align: center; background: #f0fdf4;">
+      <p style="color: #6b7280; font-size: 13px; margin: 0 0 8px;">โค้ดของคุณ</p>
+      <p style="color: ${DARK_COLOR}; font-size: 24px; font-weight: 700; margin: 0; font-family: monospace; letter-spacing: 2px;">${code}</p>
+      <p style="color: #6b7280; font-size: 12px; margin: 8px 0 0;">หมดอายุ ${expireDate}</p>
+    </div>
+
+    <div style="text-align: center; margin: 28px 0;">
+      <a href="${redeemUrl}"
+         style="display: inline-block; background: ${BRAND_COLOR}; color: #ffffff; text-decoration: none;
+                padding: 14px 32px; border-radius: 8px; font-size: 16px; font-weight: 600;">
+        กดรับสิทธิ์ทันที →
+      </a>
+    </div>
+
+    <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 20px; margin: 20px 0;">
+      <h3 style="color: ${DARK_COLOR}; margin: 0 0 12px; font-size: 16px;">สิทธิ์ที่คุณจะได้รับ</h3>
+      <ul style="margin: 0; padding-left: 20px;">${benefitsHtml}</ul>
+    </div>
+
+    <p style="color: #6b7280; font-size: 13px; line-height: 1.6; margin: 20px 0 0;">
+      วิธีใช้: คลิกปุ่มด้านบน หรือเปิด ${redeemUrl} แล้วเข้าสู่ระบบเพื่อรับสิทธิ์
+      <br/>โค้ด 1 รหัสใช้ได้ 1 บัญชีเท่านั้น
+    </p>
+  </div>
+  ${footerHtml}
 </div>
 </body>
 </html>`;
