@@ -15,7 +15,10 @@ import { pickAutopostFormat, categoryHashtag } from "@/lib/autopost-format";
 import { generateHook } from "@/lib/autopost-copy";
 
 export const runtime = "nodejs";
-export const maxDuration = 60;
+// Total budget covers sync body (Claude article ~30-50s) + after() block
+// (OpenAI image ~15-25s + sharp ~3s + Claude Haiku hook ~5s + FB API ~3s).
+// 60s ตัด after() กลางคัน — autopost ไม่ทำงาน. 300s = Vercel Pro plan max.
+export const maxDuration = 300;
 
 const CATEGORIES = ["ความรู้ทั่วไป", "เตรียมสอบ", "เทคนิคสอบ"];
 
