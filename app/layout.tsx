@@ -74,6 +74,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.morroo.com",
   },
+  // FB requires fb:app_id meta on all pages that should be shareable via
+  // Graph API `link` param — without it FB rejects with "url is invalid".
+  other: {
+    "fb:app_id": "1524889459310260",
+  },
 };
 
 const organizationSchema = {
