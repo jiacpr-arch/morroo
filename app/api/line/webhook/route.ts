@@ -1,8 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { sendLineMessage, verifyLineSignature } from "@/lib/line";
+import {
+  generateChatbotReply,
+  trimHistory,
+  type ChatMessage,
+} from "@/lib/chatbot";
 
 export const runtime = "nodejs";
+export const maxDuration = 60;
 
 export async function POST(request: NextRequest) {
   const body = await request.text();
@@ -36,11 +42,18 @@ export async function POST(request: NextRequest) {
       ]);
     }
 
-    // User sent a message — check if it's a link code
+    // User sent a text message
     if (event.type === "message" && event.message?.type === "text") {
-      const text = (event.message.text ?? "").trim().toUpperCase();
+      const rawText = (event.message.text ?? "").trim();
+      if (!rawText) continue;
 
-      if (!text.startsWith("MORROO-")) continue;
+      const text = rawText.toUpperCase();
+
+      // Non-link-code messages → fall through to the chatbot.
+      if (!text.startsWith("MORROO-")) {
+        await handleChatbotReply(supabase, lineUserId, rawText);
+        continue;
+      }
 
       const { data: linkCode, error: codeError } = await supabase
         .from("line_link_codes")
@@ -136,4 +149,69 @@ export async function POST(request: NextRequest) {
   }
 
   return NextResponse.json({ ok: true });
+}
+
+/** Cap user messages per LINE user per hour to keep AI cost predictable. */
+const LINE_RATE_LIMIT_PER_HOUR = 30;
+
+async function handleChatbotReply(
+  supabase: ReturnType<typeof createAdminClient>,
+  lineUserId: string,
+  userMessage: string
+): Promise<void> {
+  const sinceIso = new Date(Date.now() - 3600_000).toISOString();
+  const { count: recentCount } = await supabase
+    .from("chat_messages")
+    .select("id", { count: "exact", head: true })
+    .eq("channel", "line")
+    .eq("channel_user_id", lineUserId)
+    .eq("role", "user")
+    .gte("created_at", sinceIso);
+
+  if ((recentCount ?? 0) >= LINE_RATE_LIMIT_PER_HOUR) {
+    await sendLineMessage(lineUserId, [
+      {
+        type: "text",
+        text: "ขอโทษครับ น้องส่งข้อความเยอะเกินไปในชั่วโมงนี้ 😅 ลองใหม่อีกที่หลังนะครับ",
+      },
+    ]);
+    return;
+  }
+
+  const { data: rows } = await supabase
+    .from("chat_messages")
+    .select("role, content")
+    .eq("channel", "line")
+    .eq("channel_user_id", lineUserId)
+    .order("created_at", { ascending: false })
+    .limit(20);
+
+  const history: ChatMessage[] = (rows ?? [])
+    .reverse()
+    .map((r) => ({ role: r.role as "user" | "assistant", content: r.content }));
+
+  history.push({ role: "user", content: userMessage });
+
+  const result = await generateChatbotReply(trimHistory(history), "line");
+
+  const replyText = result.ok
+    ? result.reply
+    : "ขอโทษครับ ขณะนี้ระบบมีปัญหาชั่วคราว ลองใหม่อีกครั้งนะครับ 🙏";
+
+  await sendLineMessage(lineUserId, [{ type: "text", text: replyText }]);
+
+  await supabase.from("chat_messages").insert([
+    {
+      channel: "line",
+      channel_user_id: lineUserId,
+      role: "user",
+      content: userMessage,
+    },
+    {
+      channel: "line",
+      channel_user_id: lineUserId,
+      role: "assistant",
+      content: replyText,
+    },
+  ]);
 }

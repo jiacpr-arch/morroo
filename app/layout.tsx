@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import { BetaProvider } from "@/components/beta/BetaProvider";
 import BetaWelcomeModal from "@/components/beta/BetaWelcomeModal";
 import BetaPromoBanner from "@/components/beta/BetaPromoBanner";
+import ChatWidget from "@/components/ChatWidget";
 import "./globals.css";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
@@ -161,6 +162,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <BetaWelcomeModal />
+          <ChatWidget />
         </BetaProvider>
       </body>
     </html>
