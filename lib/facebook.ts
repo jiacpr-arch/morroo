@@ -17,6 +17,7 @@
  *   DELETE FROM app_settings WHERE key = 'facebook_user_token';
  */
 
+import sharp from "sharp";
 import { createAdminClient } from "@/lib/supabase/admin";
 
 /** Exchange current User Token for a fresh long-lived one (60 days) */
@@ -111,30 +112,39 @@ export async function postToFacebook(post: {
     ? `${post.hook}\n\nอ่านต่อ → ${articleUrl}`
     : `📚 ${post.title}\n\n${post.description}\n\nอ่านต่อ → ${articleUrl}`;
 
-  let endpoint: string;
-  let body: Record<string, string>;
+  let res: Response;
 
   if (post.coverImage) {
-    endpoint = `https://graph.facebook.com/v24.0/${pageId}/photos`;
-    body = {
-      url: post.coverImage,
-      caption: body_text,
-      access_token: pageToken,
-    };
-  } else {
-    endpoint = `https://graph.facebook.com/v24.0/${pageId}/feed`;
-    body = {
-      message: body_text,
-      link: articleUrl,
-      access_token: pageToken,
-    };
-  }
+    // Download cover and convert to JPEG before upload — FB sometimes
+    // rejects fetching from Supabase Storage URLs with cache-bust query
+    // strings, and gpt-image-1 PNGs occasionally have format quirks.
+    const imgRes = await fetch(post.coverImage);
+    if (!imgRes.ok) {
+      throw new Error(`Failed to fetch cover image: HTTP ${imgRes.status}`);
+    }
+    const rawBuffer = Buffer.from(await imgRes.arrayBuffer());
+    const jpegBuffer = await sharp(rawBuffer).jpeg({ quality: 90 }).toBuffer();
 
-  const res = await fetch(endpoint, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(body),
-  });
+    const fd = new FormData();
+    fd.append("source", new Blob([new Uint8Array(jpegBuffer)], { type: "image/jpeg" }), "cover.jpg");
+    fd.append("caption", body_text);
+    fd.append("access_token", pageToken);
+
+    res = await fetch(`https://graph.facebook.com/v24.0/${pageId}/photos`, {
+      method: "POST",
+      body: fd,
+    });
+  } else {
+    res = await fetch(`https://graph.facebook.com/v24.0/${pageId}/feed`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        message: body_text,
+        link: articleUrl,
+        access_token: pageToken,
+      }),
+    });
+  }
 
   const data = await res.json();
 
