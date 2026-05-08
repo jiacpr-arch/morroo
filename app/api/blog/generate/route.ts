@@ -325,39 +325,6 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
       }
     }
 
-    // Generate IG-compatible variant: JPEG 1080×1080 square (IG Graph API rejects PNG)
-    let coverImageIgUrl: string | null = null;
-    if (coverBuffer) {
-      try {
-        const igBuffer = await sharp(coverBuffer)
-          .resize(1080, 1080, { fit: "cover" })
-          .jpeg({ quality: 88 })
-          .toBuffer();
-
-        const igFilePath = `blog-covers/${saved.slug}-ig.jpg`;
-        const { error: igUploadError } = await supabaseAsync.storage
-          .from("public-assets")
-          .upload(igFilePath, igBuffer, {
-            contentType: "image/jpeg",
-            upsert: true,
-          });
-
-        if (!igUploadError) {
-          const { data: igPublicUrl } = supabaseAsync.storage
-            .from("public-assets")
-            .getPublicUrl(igFilePath);
-          coverImageIgUrl = igPublicUrl.publicUrl;
-          await supabaseAsync.from("blog_posts")
-            .update({ cover_image_ig: coverImageIgUrl })
-            .eq("slug", saved.slug);
-        } else {
-          console.error("[blog-generate] ig image upload error:", igUploadError);
-        }
-      } catch (err) {
-        console.error("[blog-generate] ig image resize error:", err);
-      }
-    }
-
     const hook = await generateHook({
       title: saved.title,
       description: article.description,
@@ -415,15 +382,16 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
       ).eq("slug", saved.slug);
     }
 
-    // IG autopost (opt-in via env flag while we validate token perms / rate limits)
-    if (process.env.INSTAGRAM_AUTOPOST_ENABLED === "true" && coverImageIgUrl) {
-      // IG strips URL clickability in captions — direct readers via bio link.
+    // IG autopost (opt-in via env flag while we validate token perms / rate limits).
+    // Send the original PNG cover (1024×1024, square) — IG accepts PNG via the
+    // container endpoint and source quality looks better than a downscaled JPEG.
+    if (process.env.INSTAGRAM_AUTOPOST_ENABLED === "true" && coverImageUrl) {
       const igNavHint = `📖 อ่านบทความเต็มที่ลิงก์ใน bio (${siteUrl.replace(/^https?:\/\//, "")})`;
       const igCaption = `${hook}\n\n${igNavHint}\n\n${hashtags}`;
 
       try {
         const igId = await postToInstagram({
-          imageUrl: coverImageIgUrl,
+          imageUrl: coverImageUrl,
           caption: igCaption,
         });
         await supabaseAsync.from("blog_posts").update({

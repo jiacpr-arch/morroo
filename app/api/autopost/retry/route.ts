@@ -60,43 +60,6 @@ async function ensureLineCover(
   }
 }
 
-/**
- * Generate IG-compatible JPEG variant (1080×1080 square) from an existing
- * cover. IG Graph API requires JPEG; PNGs frequently fail with "Media format
- * not supported". Square fits IG feed natively without center-crop surprises.
- */
-async function ensureIgCover(
-  supabase: ReturnType<typeof createAdminClient>,
-  slug: string,
-  coverImage: string,
-): Promise<string | null> {
-  try {
-    const res = await fetch(coverImage);
-    if (!res.ok) return null;
-    const buffer = Buffer.from(await res.arrayBuffer());
-    const igBuffer = await sharp(buffer)
-      .resize(1080, 1080, { fit: "cover" })
-      .jpeg({ quality: 88 })
-      .toBuffer();
-
-    const filePath = `blog-covers/${slug}-ig.jpg`;
-    const { error: uploadError } = await supabase.storage
-      .from("public-assets")
-      .upload(filePath, igBuffer, { contentType: "image/jpeg", upsert: true });
-    if (uploadError) {
-      console.error("[autopost-retry] ig cover upload error:", uploadError);
-      return null;
-    }
-    const { data: pub } = supabase.storage.from("public-assets").getPublicUrl(filePath);
-    const url = pub.publicUrl;
-    await supabase.from("blog_posts").update({ cover_image_ig: url }).eq("slug", slug);
-    return url;
-  } catch (err) {
-    console.error("[autopost-retry] ig cover gen error:", err);
-    return null;
-  }
-}
-
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
 
@@ -122,7 +85,7 @@ export async function GET(request: Request) {
   let query = supabase
     .from("blog_posts")
     .select(
-      "slug, title, description, category, cover_image, cover_image_line, cover_image_ig, fb_post_id, line_broadcast_at, ig_post_id, autopost_format",
+      "slug, title, description, category, cover_image, cover_image_line, fb_post_id, line_broadcast_at, ig_post_id, autopost_format",
     )
     .order("published_at", { ascending: false });
 
@@ -228,17 +191,13 @@ export async function GET(request: Request) {
     // and Page→IG link in production; flip to "true" once first post succeeds.
     const igEnabled = process.env.INSTAGRAM_AUTOPOST_ENABLED === "true";
     if (doIg && !post.ig_post_id && igEnabled) {
-      // Resolve format-specific cover; quote_card uses the OG render which is
-      // already JPEG via next/og, but we still pass through ensureIgCover so
-      // dimensions land at 1080×1080 and IG's container call doesn't reject it.
-      const sourceCover =
+      // Use the original 1024×1024 PNG cover — IG accepts PNG via the
+      // container endpoint and the resized JPEG variant looked muddy compared
+      // to the source. quote_card still uses the OG render (PNG via next/og).
+      const igCover =
         post.autopost_format === "quote_card" || (!post.autopost_format && pickAutopostFormat(post.slug) === "quote_card")
           ? `${siteUrl}/api/og/quote?slug=${post.slug}`
           : post.cover_image;
-
-      const igCover = sourceCover
-        ? (post.cover_image_ig ?? await ensureIgCover(supabase, post.slug, sourceCover))
-        : null;
 
       if (!igCover) {
         result.ig = "skipped:no_cover";
