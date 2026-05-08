@@ -123,7 +123,6 @@ export default function ExamPlayer({ exam, parts }: ExamPlayerProps) {
       {currentPart >= 0 && (
         <div className="space-y-4">
           {parts.map((part, index) => {
-            const isActive = index === currentPart;
             const isCompleted = index < currentPart;
             const isLocked = index > currentPart;
 

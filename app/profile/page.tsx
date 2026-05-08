@@ -282,7 +282,7 @@ export default function ProfilePage() {
                     </Button>
                   </div>
                   <p className="text-xs text-muted-foreground mt-2">
-                    กด "คัดลอกลิงก์" เพื่อแชร์ลิงก์สมัครที่ฝังรหัสไว้แล้ว
+                    กด &ldquo;คัดลอกลิงก์&rdquo; เพื่อแชร์ลิงก์สมัครที่ฝังรหัสไว้แล้ว
                   </p>
                 </div>
               </>

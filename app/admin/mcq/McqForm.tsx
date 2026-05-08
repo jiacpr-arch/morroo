@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
 import { createMcqQuestion, updateMcqQuestion } from "@/lib/supabase/mutations-mcq-admin";
 import { ChevronLeft, Save, Loader2 } from "lucide-react";
 

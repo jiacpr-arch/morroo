@@ -30,14 +30,15 @@ export default function Navbar() {
   const supabase = createClient();
 
   useEffect(() => {
-    supabase.auth.getUser().then(({ data }: { data: { user: SupabaseUser | null } }) => setUser(data.user));
+    const auth = supabase.auth;
+    auth.getUser().then(({ data }: { data: { user: SupabaseUser | null } }) => setUser(data.user));
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event: string, session: { user: SupabaseUser | null } | null) => {
+    } = auth.onAuthStateChange((_event: string, session: { user: SupabaseUser | null } | null) => {
       setUser(session?.user ?? null);
     }) as { data: { subscription: { unsubscribe: () => void } } };
     return () => subscription.unsubscribe();
-  }, []);
+  }, [supabase.auth]);
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
