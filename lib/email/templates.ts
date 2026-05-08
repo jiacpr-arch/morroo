@@ -6,6 +6,14 @@ export interface WelcomeEmailProps {
   email: string;
 }
 
+export interface RedeemCodeEmailProps {
+  name: string;
+  code: string;
+  rewardLabel: string;
+  expiresAt: string; // ISO
+  redeemUrl: string;
+}
+
 export interface ReceiptEmailProps {
   name: string;
   email: string;
@@ -393,6 +401,59 @@ export function weeklyDigestEmail({
     </p>
   </div>
   ${newsletterFooterHtml(unsubscribeUrl)}
+</div>
+</body>
+</html>`;
+}
+
+export function redeemCodeEmail({
+  name,
+  code,
+  rewardLabel,
+  expiresAt,
+  redeemUrl,
+}: RedeemCodeEmailProps): string {
+  const expiresLabel = new Date(expiresAt).toLocaleDateString("th-TH", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+  return `<!DOCTYPE html>
+<html lang="th">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body style="margin:0;padding:0;background:#f4f4f4;">
+<div style="${baseStyle}">
+  ${headerHtml}
+  <div style="padding: 32px;">
+    <h2 style="color: ${DARK_COLOR}; font-size: 22px; margin: 0 0 12px;">โค้ดของคุณพร้อมแล้ว 🎁</h2>
+    <p style="color: #374151; font-size: 16px; line-height: 1.6; margin: 0 0 16px;">
+      สวัสดีคุณ <strong>${name}</strong>,
+    </p>
+    <p style="color: #374151; font-size: 16px; line-height: 1.6; margin: 0 0 24px;">
+      ขอบคุณที่ลงทะเบียน — รับ <strong>${rewardLabel}</strong> ฟรีจากหมอรู้ได้เลย
+    </p>
+
+    <div style="background: #f0fdf4; border: 2px dashed ${BRAND_COLOR}; border-radius: 12px; padding: 24px; text-align: center; margin: 24px 0;">
+      <p style="color: #6b7280; font-size: 13px; margin: 0 0 8px;">โค้ดของคุณ</p>
+      <p style="color: ${DARK_COLOR}; font-family: 'Courier New', monospace; font-size: 24px; font-weight: 700; letter-spacing: 2px; margin: 0;">
+        ${code}
+      </p>
+      <p style="color: #6b7280; font-size: 12px; margin: 12px 0 0;">หมดอายุ ${expiresLabel}</p>
+    </div>
+
+    <div style="text-align: center; margin: 28px 0;">
+      <a href="${redeemUrl}"
+         style="display: inline-block; background: ${BRAND_COLOR}; color: #ffffff; text-decoration: none;
+                padding: 14px 32px; border-radius: 8px; font-size: 16px; font-weight: 600;">
+        รับสิทธิ์ทันที →
+      </a>
+    </div>
+
+    <p style="color: #6b7280; font-size: 13px; line-height: 1.6; margin: 24px 0 0;">
+      โค้ดใช้ได้ครั้งเดียว ภายใน 7 วัน หากมีคำถามตอบกลับอีเมลนี้ได้เลยครับ
+    </p>
+  </div>
+  ${footerHtml}
 </div>
 </body>
 </html>`;
