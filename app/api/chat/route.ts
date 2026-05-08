@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient } from "@/lib/supabase/server";
 import {
-  generateChatbotReply,
+  streamChatbotReply,
   trimHistory,
   type ChatMessage,
 } from "@/lib/chatbot";
@@ -12,6 +12,8 @@ export const maxDuration = 60;
 
 const RATE_LIMIT_PER_HOUR = 30;
 const MAX_USER_MESSAGE_LEN = 2000;
+// Regex to strip any trailing [CARD:*] markers (LINE-only; not shown on web)
+const CARD_MARKER_RE = /\[CARD:(pricing|register|longcase|meq)\]\s*$/i;
 
 export async function POST(request: NextRequest) {
   const body = (await request.json().catch(() => null)) as {
@@ -31,8 +33,6 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Message too long" }, { status: 400 });
   }
 
-  // sessionId is a client-generated uuid stored in localStorage. We pair it with
-  // the auth user id when available so logged-in users get continuity across devices.
   const ssrClient = await createClient();
   const { data: { user } } = await ssrClient.auth.getUser();
 
@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
 
   const admin = createAdminClient();
 
-  // Cheap per-conversation rate limit: count user messages in last hour.
+  // Rate limit: count user messages in the last hour
   const sinceIso = new Date(Date.now() - 3600_000).toISOString();
   const { count: recentCount } = await admin
     .from("chat_messages")
@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // Load recent history for this conversation (chronological).
+  // Load recent history (chronological)
   const { data: rows } = await admin
     .from("chat_messages")
     .select("role, content")
@@ -75,33 +75,59 @@ export async function POST(request: NextRequest) {
 
   history.push({ role: "user", content: message });
 
-  const result = await generateChatbotReply(trimHistory(history), "web");
+  const encoder = new TextEncoder();
+  let fullReply = "";
 
-  if (!result.ok) {
-    console.error("[api/chat] chatbot failed:", result.error);
-    return NextResponse.json(
-      { error: "ขอโทษครับ ขณะนี้ระบบมีปัญหาชั่วคราว ลองใหม่อีกครั้งนะครับ" },
-      { status: 500 }
-    );
-  }
+  const stream = new ReadableStream({
+    async start(controller) {
+      try {
+        for await (const chunk of streamChatbotReply(trimHistory(history), "web")) {
+          fullReply += chunk;
+          controller.enqueue(encoder.encode(chunk));
+        }
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : String(err);
+        console.error("[api/chat] stream error:", msg);
+        // Send a fallback message so the widget shows something
+        const fallback = "ขอโทษครับ ขณะนี้ระบบมีปัญหาชั่วคราว ลองใหม่อีกครั้งนะครับ";
+        controller.enqueue(encoder.encode(fallback));
+        fullReply = fallback;
+      } finally {
+        controller.close();
 
-  // Persist both turns. Use service role; RLS is locked down.
-  await admin.from("chat_messages").insert([
-    {
-      channel: "web",
-      channel_user_id: channelUserId,
-      user_id: user?.id ?? null,
-      role: "user",
-      content: message,
+        // Strip any LINE-only card markers that leaked into the web reply
+        const cleanReply = fullReply.replace(CARD_MARKER_RE, "").trimEnd();
+
+        // Persist both turns after stream ends (best-effort)
+        admin.from("chat_messages").insert([
+          {
+            channel: "web",
+            channel_user_id: channelUserId,
+            user_id: user?.id ?? null,
+            role: "user",
+            content: message,
+          },
+          {
+            channel: "web",
+            channel_user_id: channelUserId,
+            user_id: user?.id ?? null,
+            role: "assistant",
+            content: cleanReply || fullReply,
+          },
+        ]).then(({ error }) => {
+          if (error) console.error("[api/chat] persist failed:", error.message);
+        });
+      }
     },
-    {
-      channel: "web",
-      channel_user_id: channelUserId,
-      user_id: user?.id ?? null,
-      role: "assistant",
-      content: result.reply,
-    },
-  ]);
+  });
 
-  return NextResponse.json({ reply: result.reply });
+  return new Response(stream, {
+    headers: {
+      "Content-Type": "text/plain; charset=utf-8",
+      "X-Content-Type-Options": "nosniff",
+      // Prevent buffering on some proxies/CDNs
+      "Cache-Control": "no-cache",
+      "Transfer-Encoding": "chunked",
+    },
+  });
 }

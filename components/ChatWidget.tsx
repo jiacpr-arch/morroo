@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { MessageCircle, X, Send, Stethoscope } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-type Msg = { role: "user" | "assistant"; content: string };
+type Msg = { role: "user" | "assistant"; content: string; streaming?: boolean };
 
 const STORAGE_KEY = "morroo-chat";
 const SESSION_KEY = "morroo-chat-session";
@@ -36,33 +36,41 @@ function loadHistory(): Msg[] {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return [GREETING];
-    const parsed = JSON.parse(raw) as Msg[];
+    // Strip streaming flag from persisted messages
+    const parsed = (JSON.parse(raw) as Msg[]).map(({ streaming: _s, ...m }) => m);
     return Array.isArray(parsed) && parsed.length > 0 ? parsed : [GREETING];
   } catch {
     return [GREETING];
   }
 }
 
-/** Render text with auto-linked URLs. Splits on whitespace; safe for our short bot replies. */
-function renderContent(text: string) {
+/** Render text with auto-linked URLs. */
+function renderContent(text: string, streaming?: boolean) {
   const urlRegex = /(https?:\/\/[^\s]+)/g;
   const parts = text.split(urlRegex);
-  return parts.map((part, i) => {
-    if (urlRegex.test(part)) {
-      return (
-        <a
-          key={i}
-          href={part}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline underline-offset-2 hover:opacity-80"
-        >
-          {part}
-        </a>
-      );
-    }
-    return <span key={i}>{part}</span>;
-  });
+  return (
+    <>
+      {parts.map((part, i) => {
+        if (urlRegex.test(part)) {
+          return (
+            <a
+              key={i}
+              href={part}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:opacity-80"
+            >
+              {part}
+            </a>
+          );
+        }
+        return <span key={i}>{part}</span>;
+      })}
+      {streaming && (
+        <span className="ml-0.5 inline-block h-4 w-0.5 animate-pulse bg-current align-middle opacity-80" />
+      )}
+    </>
+  );
 }
 
 export default function ChatWidget() {
@@ -80,9 +88,14 @@ export default function ChatWidget() {
     setMessages(loadHistory());
   }, []);
 
+  // Persist history and auto-scroll (skip streaming messages to avoid thrash)
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
+    const hasStreaming = messages.some((m) => m.streaming);
+    if (!hasStreaming && typeof window !== "undefined") {
+      localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(messages.map(({ streaming: _s, ...m }) => m))
+      );
     }
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
@@ -104,29 +117,69 @@ export default function ChatWidget() {
     setInput("");
     setSending(true);
 
+    // Add an empty streaming placeholder for the assistant reply
+    setMessages((m) => [...m, { role: "assistant", content: "", streaming: true }]);
+
     try {
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: text, sessionId: sessionIdRef.current }),
       });
-      const data = (await res.json()) as { reply?: string; error?: string };
 
-      const reply =
-        data.reply ??
-        data.error ??
-        "ขอโทษครับ ขณะนี้ระบบมีปัญหาชั่วคราว ลองใหม่อีกครั้งนะครับ";
+      if (!res.ok || !res.body) {
+        const data = await res.json().catch(() => ({})) as { error?: string };
+        const errMsg =
+          data.error ?? "ขอโทษครับ ขณะนี้ระบบมีปัญหาชั่วคราว ลองใหม่อีกครั้งนะครับ";
+        setMessages((m) => {
+          const updated = [...m];
+          updated[updated.length - 1] = { role: "assistant", content: errMsg };
+          return updated;
+        });
+        if (!open) setUnread(true);
+        return;
+      }
 
-      setMessages((m) => [...m, { role: "assistant", content: reply }]);
+      // Stream tokens into the last message
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        const chunk = decoder.decode(value, { stream: true });
+        setMessages((m) => {
+          const updated = [...m];
+          const last = updated[updated.length - 1];
+          updated[updated.length - 1] = {
+            ...last,
+            content: last.content + chunk,
+            streaming: true,
+          };
+          return updated;
+        });
+      }
+
+      // Mark streaming complete
+      setMessages((m) => {
+        const updated = [...m];
+        updated[updated.length - 1] = {
+          ...updated[updated.length - 1],
+          streaming: false,
+        };
+        return updated;
+      });
+
       if (!open) setUnread(true);
     } catch {
-      setMessages((m) => [
-        ...m,
-        {
+      setMessages((m) => {
+        const updated = [...m];
+        updated[updated.length - 1] = {
           role: "assistant",
           content: "เชื่อมต่อไม่ได้ครับ เช็กอินเทอร์เน็ตแล้วลองใหม่นะ",
-        },
-      ]);
+        };
+        return updated;
+      });
     } finally {
       setSending(false);
     }
@@ -138,6 +191,8 @@ export default function ChatWidget() {
       send();
     }
   }
+
+  const isStreaming = messages.some((m) => m.streaming);
 
   return (
     <>
@@ -192,7 +247,7 @@ export default function ChatWidget() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-300 opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
               </span>
-              ออนไลน์ • ตอบทันที
+              {isStreaming ? "กำลังตอบ…" : "ออนไลน์ • ตอบทันที"}
             </div>
           </div>
           <button
@@ -226,20 +281,19 @@ export default function ChatWidget() {
                     : "rounded-bl-md bg-background text-foreground"
                 )}
               >
-                {renderContent(m.content)}
+                {/* Show typing dots only while waiting for first token */}
+                {m.streaming && m.content === "" ? (
+                  <span className="flex items-center gap-1 py-0.5">
+                    <span className="h-2 w-2 animate-bounce rounded-full bg-muted-foreground/60 [animation-delay:-0.3s]" />
+                    <span className="h-2 w-2 animate-bounce rounded-full bg-muted-foreground/60 [animation-delay:-0.15s]" />
+                    <span className="h-2 w-2 animate-bounce rounded-full bg-muted-foreground/60" />
+                  </span>
+                ) : (
+                  renderContent(m.content, m.streaming)
+                )}
               </div>
             </div>
           ))}
-
-          {sending && (
-            <div className="flex justify-start">
-              <div className="flex items-center gap-1 rounded-2xl rounded-bl-md bg-background px-4 py-3 shadow-sm">
-                <span className="h-2 w-2 animate-bounce rounded-full bg-muted-foreground/60 [animation-delay:-0.3s]" />
-                <span className="h-2 w-2 animate-bounce rounded-full bg-muted-foreground/60 [animation-delay:-0.15s]" />
-                <span className="h-2 w-2 animate-bounce rounded-full bg-muted-foreground/60" />
-              </div>
-            </div>
-          )}
 
           {/* Quick replies — only show on the very first turn */}
           {messages.length === 1 && !sending && (
@@ -274,7 +328,7 @@ export default function ChatWidget() {
             <button
               type="button"
               onClick={() => send()}
-              disabled={!input.trim() || sending}
+              disabled={!input.trim() || sending || isStreaming}
               aria-label="ส่ง"
               className={cn(
                 "flex h-10 w-10 items-center justify-center rounded-xl text-white transition-all",
