@@ -21,7 +21,7 @@ import sharp from "sharp";
 import { createAdminClient } from "@/lib/supabase/admin";
 
 /** Exchange current User Token for a fresh long-lived one (60 days) */
-async function refreshUserToken(currentToken: string): Promise<string | null> {
+export async function refreshUserToken(currentToken: string): Promise<string | null> {
   const appId = process.env.FACEBOOK_APP_ID;
   const appSecret = process.env.FACEBOOK_APP_SECRET;
   if (!appId || !appSecret) return currentToken; // can't refresh, use as-is
@@ -39,7 +39,7 @@ async function refreshUserToken(currentToken: string): Promise<string | null> {
 }
 
 /** Get the latest User Token — check Supabase first, fallback to env var */
-async function getLatestUserToken(): Promise<string | null> {
+export async function getLatestUserToken(): Promise<string | null> {
   const supabase = createAdminClient();
   const envToken = process.env.FACEBOOK_USER_TOKEN;
 
@@ -54,7 +54,7 @@ async function getLatestUserToken(): Promise<string | null> {
 }
 
 /** Save refreshed token to Supabase for next use */
-async function saveUserToken(token: string): Promise<void> {
+export async function saveUserToken(token: string): Promise<void> {
   const supabase = createAdminClient();
   await supabase
     .from("app_settings")
@@ -62,7 +62,7 @@ async function saveUserToken(token: string): Promise<void> {
 }
 
 /** Get Page Access Token from User Token */
-async function getPageToken(pageId: string, userToken: string): Promise<string | null> {
+export async function getPageToken(pageId: string, userToken: string): Promise<string | null> {
   const res = await fetch(
     `https://graph.facebook.com/v24.0/${pageId}?fields=access_token&access_token=${userToken}`
   );
