@@ -292,6 +292,39 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
       }
     }
 
+    // Generate IG-compatible variant: JPEG at original 1024×1024, alpha flattened.
+    // gpt-image-1 PNG → IG container rejects with "Only photo or video can be
+    // accepted as media type" (alpha channel). Flatten + JPEG fixes it; keep
+    // full resolution + quality 95 so typography stays crisp.
+    let coverImageIgUrl: string | null = null;
+    if (coverBuffer) {
+      try {
+        const igBuffer = await sharp(coverBuffer)
+          .flatten({ background: "#ffffff" })
+          .jpeg({ quality: 95 })
+          .toBuffer();
+
+        const igFilePath = `blog-covers/${saved.slug}-ig.jpg`;
+        const { error: igUploadError } = await supabaseAsync.storage
+          .from("public-assets")
+          .upload(igFilePath, igBuffer, {
+            contentType: "image/jpeg",
+            upsert: true,
+          });
+
+        if (!igUploadError) {
+          const { data: igPublicUrl } = supabaseAsync.storage
+            .from("public-assets")
+            .getPublicUrl(igFilePath);
+          coverImageIgUrl = igPublicUrl.publicUrl;
+        } else {
+          console.error("[blog-generate] ig image upload error:", igUploadError);
+        }
+      } catch (err) {
+        console.error("[blog-generate] ig image flatten error:", err);
+      }
+    }
+
     // Generate LINE-compatible variant: JPEG 1024×536 (LINE Flex hero max 1024px, JPEG/PNG only)
     let coverImageLineUrl: string | null = null;
     if (coverBuffer) {
@@ -383,15 +416,15 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
     }
 
     // IG autopost (opt-in via env flag while we validate token perms / rate limits).
-    // Send the original PNG cover (1024×1024, square) — IG accepts PNG via the
-    // container endpoint and source quality looks better than a downscaled JPEG.
-    if (process.env.INSTAGRAM_AUTOPOST_ENABLED === "true" && coverImageUrl) {
+    // Use the flattened JPEG variant — IG container endpoint rejects PNG with
+    // alpha channel ("Only photo or video can be accepted as media type").
+    if (process.env.INSTAGRAM_AUTOPOST_ENABLED === "true" && coverImageIgUrl) {
       const igNavHint = `📖 อ่านบทความเต็มที่ลิงก์ใน bio (${siteUrl.replace(/^https?:\/\//, "")})`;
       const igCaption = `${hook}\n\n${igNavHint}\n\n${hashtags}`;
 
       try {
         const igId = await postToInstagram({
-          imageUrl: coverImageUrl,
+          imageUrl: coverImageIgUrl,
           caption: igCaption,
         });
         await supabaseAsync.from("blog_posts").update({
