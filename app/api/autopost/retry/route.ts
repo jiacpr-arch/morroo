@@ -24,6 +24,42 @@ export const runtime = "nodejs";
 export const maxDuration = 60;
 
 /**
+ * Generate IG-compatible JPEG at original 1024×1024. IG's container endpoint
+ * rejects PNGs from gpt-image-1 ("Only photo or video can be accepted as
+ * media type") — likely because of the alpha channel. Flatten + JPEG handles
+ * both. Quality 95 to keep typography crisp.
+ */
+async function ensureIgCover(
+  supabase: ReturnType<typeof createAdminClient>,
+  slug: string,
+  coverImage: string,
+): Promise<string | null> {
+  try {
+    const res = await fetch(coverImage);
+    if (!res.ok) return null;
+    const buffer = Buffer.from(await res.arrayBuffer());
+    const igBuffer = await sharp(buffer)
+      .flatten({ background: "#ffffff" })
+      .jpeg({ quality: 95 })
+      .toBuffer();
+
+    const filePath = `blog-covers/${slug}-ig.jpg`;
+    const { error: uploadError } = await supabase.storage
+      .from("public-assets")
+      .upload(filePath, igBuffer, { contentType: "image/jpeg", upsert: true });
+    if (uploadError) {
+      console.error("[autopost-retry] ig cover upload error:", uploadError);
+      return null;
+    }
+    const { data: pub } = supabase.storage.from("public-assets").getPublicUrl(filePath);
+    return pub.publicUrl;
+  } catch (err) {
+    console.error("[autopost-retry] ig cover gen error:", err);
+    return null;
+  }
+}
+
+/**
  * Generate LINE-compatible JPEG variant (1024×536, ≤1MB) from an existing
  * cover image URL. LINE Flex hero requires JPEG/PNG ≤1024px wide;
  * gpt-image-1 PNG at 1024×1024 sometimes exceeds 1MB and uses 1:1 aspect.
@@ -191,13 +227,15 @@ export async function GET(request: Request) {
     // and Page→IG link in production; flip to "true" once first post succeeds.
     const igEnabled = process.env.INSTAGRAM_AUTOPOST_ENABLED === "true";
     if (doIg && !post.ig_post_id && igEnabled) {
-      // Use the original 1024×1024 PNG cover — IG accepts PNG via the
-      // container endpoint and the resized JPEG variant looked muddy compared
-      // to the source. quote_card still uses the OG render (PNG via next/og).
-      const igCover =
+      // Source cover URL by format. cover_image is a 1024×1024 PNG; quote_card
+      // is rendered via next/og (also PNG). IG rejects both as PNG, so we
+      // flatten to JPEG via ensureIgCover before posting (full resolution,
+      // q=95 — quality is preserved, no downscale).
+      const sourceCover =
         post.autopost_format === "quote_card" || (!post.autopost_format && pickAutopostFormat(post.slug) === "quote_card")
           ? `${siteUrl}/api/og/quote?slug=${post.slug}`
           : post.cover_image;
+      const igCover = sourceCover ? await ensureIgCover(supabase, post.slug, sourceCover) : null;
 
       if (!igCover) {
         result.ig = "skipped:no_cover";
