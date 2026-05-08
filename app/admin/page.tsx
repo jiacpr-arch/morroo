@@ -18,6 +18,7 @@ import {
   BarChart3,
   ClipboardList,
   Sparkles,
+  MessageCircle,
 } from "lucide-react";
 
 interface HeatmapCell {
@@ -262,6 +263,19 @@ export default function AdminDashboard() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">เปรียบเทียบ accuracy ของชุดแนะนำ vs เลือกเอง</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/chatbot">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-teal-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <MessageCircle className="h-5 w-5 text-teal-600" />
+                <h3 className="font-bold">Chatbot Analytics</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">สถิติพี่หมอรู้ — ข้อความ ผู้ใช้ และ trend แต่ละ channel</p>
             </CardContent>
           </Card>
         </Link>
