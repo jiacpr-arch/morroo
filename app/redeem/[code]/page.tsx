@@ -6,7 +6,7 @@ import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { CheckCircle, Gift, Loader2, AlertCircle } from "lucide-react";
+import { CheckCircle, Gift, Loader2, AlertCircle, MessageCircle } from "lucide-react";
 import type { User } from "@supabase/supabase-js";
 
 type Phase = "loading" | "preview" | "redeeming" | "success" | "error";
@@ -57,7 +57,6 @@ export default function RedeemPage({
       }
       setResult({ rewardType: data.rewardType, expiresAt: data.expiresAt });
       setPhase("success");
-      setTimeout(() => router.push("/dashboard?welcome=redeem"), 2500);
     } catch (e) {
       setErrorMsg(e instanceof Error ? e.message : "เกิดข้อผิดพลาด");
       setPhase("error");
@@ -140,9 +139,30 @@ export default function RedeemPage({
               <p className="text-xs text-gray-500">
                 ใช้งานได้ถึง {new Date(result.expiresAt).toLocaleDateString("th-TH")}
               </p>
-              <p className="pt-2 text-xs text-gray-400">
-                กำลังพาไปหน้าหลัก...
-              </p>
+
+              <div className="mt-4 rounded-lg border border-emerald-200 bg-emerald-50 p-4 text-left">
+                <div className="mb-2 flex items-center gap-2 text-emerald-800">
+                  <MessageCircle className="h-4 w-4" />
+                  <span className="text-sm font-semibold">รับเตือนข้อสอบใหม่ทาง LINE</span>
+                </div>
+                <p className="mb-3 text-xs text-gray-700">
+                  ติดตามหมอรู้บน LINE — รับข้อสอบใหม่ทุกสัปดาห์ + แจ้งเตือนเมื่อโค้ดใกล้หมดอายุ
+                </p>
+                <Button asChild className="w-full bg-[#06C755] hover:bg-[#05b34c]">
+                  <a href="/api/line/oauth/start">
+                    <MessageCircle className="mr-2 h-4 w-4" />
+                    เชื่อมต่อ LINE (1 คลิก)
+                  </a>
+                </Button>
+              </div>
+
+              <Button
+                variant="outline"
+                className="mt-3 w-full"
+                onClick={() => router.push("/dashboard?welcome=redeem")}
+              >
+                ข้ามไปก่อน → เริ่มทำข้อสอบ
+              </Button>
             </>
           )}
 
