@@ -13,7 +13,7 @@ import { createClient } from "@/lib/supabase/server";
 import type { Profile } from "@/lib/types";
 import { computeBetaStatus } from "@/lib/beta";
 import { getRecommendedQuestions } from "@/lib/mcq-recommendation";
-import type { McqQuestion } from "@/lib/types-mcq";
+import type { McqQuestion, McqSubject } from "@/lib/types-mcq";
 
 export const metadata: Metadata = {
   title: "ฝึกทำข้อสอบ NL",
@@ -22,11 +22,30 @@ export const metadata: Metadata = {
 
 const FREE_LIMIT = 5;
 
+// Default-visible chips are the 4 หมวดหลัก of NL2: เด็ก / ศัลย์ / สูติ /
+// อายุรกรรม. The first three map to a single mcq_subjects row;
+// "อายุรกรรม" is a virtual category that bundles the internal-medicine
+// sub-specialty rows (no umbrella row exists in the table).
+const MAIN_SUBJECT_NAMES = ["ped", "surgery", "ob_gyn"] as const;
+const INTERNAL_MED_SUBJECT_NAMES = [
+  "cardio_med",
+  "chest_med",
+  "gi_med",
+  "nephro_med",
+  "hemato_med",
+  "infectious_med",
+  "neuro_med",
+  "endocrine",
+] as const;
+const INTERNAL_MED_CATEGORY = "internal_med";
+
 async function PracticeContent({
   subjectId,
+  category,
   recommended,
 }: {
   subjectId?: string;
+  category?: string;
   recommended?: boolean;
 }) {
   const supabase = await createClient();
@@ -77,7 +96,26 @@ async function PracticeContent({
   // to the normal random pool otherwise.
   const useRecommended = recommended && !!user;
 
-  const subjects = await getMcqSubjects("NL2");
+  const allNl2Subjects = await getMcqSubjects("NL2");
+  // Hide subjects that have no questions yet — there's nothing to practice
+  // and an empty selection just confuses the user.
+  const subjects = allNl2Subjects.filter((s) => s.question_count > 0);
+  const mainSingles = MAIN_SUBJECT_NAMES.map((name) =>
+    subjects.find((s) => s.name === name)
+  ).filter((s): s is McqSubject => !!s);
+  const mainSingleIds = new Set(mainSingles.map((s) => s.id));
+  const internalMedSubjects = subjects.filter((s) =>
+    (INTERNAL_MED_SUBJECT_NAMES as readonly string[]).includes(s.name)
+  );
+  const internalMedIds = internalMedSubjects.map((s) => s.id);
+  const otherSubjects = subjects.filter(
+    (s) =>
+      !mainSingleIds.has(s.id) &&
+      !(INTERNAL_MED_SUBJECT_NAMES as readonly string[]).includes(s.name)
+  );
+  const isInternalMed = category === INTERNAL_MED_CATEGORY;
+  const otherSelected =
+    !!subjectId && otherSubjects.some((s) => s.id === subjectId);
 
   let questions: McqQuestion[];
   let recBreakdown: Awaited<ReturnType<typeof getRecommendedQuestions>>["breakdown"] | null = null;
@@ -89,6 +127,13 @@ async function PracticeContent({
     });
     questions = rec.questions;
     recBreakdown = rec.breakdown;
+  } else if (isInternalMed) {
+    questions = await getMcqQuestions({
+      subjectIds: internalMedIds,
+      examType: "NL2",
+      limit: 200,
+      randomize: true,
+    });
   } else {
     questions = await getMcqQuestions({
       subjectId,
@@ -99,7 +144,7 @@ async function PracticeContent({
   }
 
   const currentSubject = subjectId
-    ? subjects.find((s) => s.id === subjectId)
+    ? allNl2Subjects.find((s) => s.id === subjectId)
     : null;
 
   return (
@@ -168,15 +213,19 @@ async function PracticeContent({
           <div className="flex flex-wrap gap-2">
             <Link href="/nl/practice">
               <Badge
-                variant={!subjectId ? "default" : "secondary"}
+                variant={
+                  !subjectId && !isInternalMed ? "default" : "secondary"
+                }
                 className={`cursor-pointer ${
-                  !subjectId ? "bg-brand text-white" : "hover:bg-brand/10"
+                  !subjectId && !isInternalMed
+                    ? "bg-brand text-white"
+                    : "hover:bg-brand/10"
                 }`}
               >
                 คละทุกสาขา
               </Badge>
             </Link>
-            {subjects.map((subject) => (
+            {mainSingles.map((subject) => (
               <Link
                 key={subject.id}
                 href={`/nl/practice?subject=${subject.id}`}
@@ -193,7 +242,50 @@ async function PracticeContent({
                 </Badge>
               </Link>
             ))}
+            {internalMedIds.length > 0 && (
+              <Link href={`/nl/practice?category=${INTERNAL_MED_CATEGORY}`}>
+                <Badge
+                  variant={isInternalMed ? "default" : "secondary"}
+                  className={`cursor-pointer ${
+                    isInternalMed ? "bg-brand text-white" : "hover:bg-brand/10"
+                  }`}
+                >
+                  🩺 อายุรกรรม
+                </Badge>
+              </Link>
+            )}
           </div>
+          {otherSubjects.length > 0 && (
+            <details className="mt-2 group" open={otherSelected}>
+              <summary className="cursor-pointer list-none text-sm text-brand hover:underline inline-flex items-center gap-1 select-none">
+                <span className="group-open:hidden">
+                  + ดูสาขาอื่น ๆ ({otherSubjects.length})
+                </span>
+                <span className="hidden group-open:inline">− ซ่อนสาขาอื่น</span>
+              </summary>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {otherSubjects.map((subject) => (
+                  <Link
+                    key={subject.id}
+                    href={`/nl/practice?subject=${subject.id}`}
+                  >
+                    <Badge
+                      variant={
+                        subjectId === subject.id ? "default" : "secondary"
+                      }
+                      className={`cursor-pointer ${
+                        subjectId === subject.id
+                          ? "bg-brand text-white"
+                          : "hover:bg-brand/10"
+                      }`}
+                    >
+                      {subject.icon} {subject.name_th}
+                    </Badge>
+                  </Link>
+                ))}
+              </div>
+            </details>
+          )}
         </div>
       )}
 
@@ -201,6 +293,8 @@ async function PracticeContent({
       <div className="mb-6 text-sm text-muted-foreground">
         {useRecommended ? (
           <span>ชุดแนะนำ — {questions.length} ข้อ</span>
+        ) : isInternalMed ? (
+          <span>🩺 อายุรกรรม — {questions.length} ข้อ</span>
         ) : currentSubject ? (
           <span>
             {currentSubject.icon} {currentSubject.name_th} — {questions.length}{" "}
@@ -238,10 +332,14 @@ async function PracticeContent({
 export default async function PracticePage({
   searchParams,
 }: {
-  searchParams: Promise<{ subject?: string; mode?: string }>;
+  searchParams: Promise<{
+    subject?: string;
+    category?: string;
+    mode?: string;
+  }>;
 }) {
   const params = await searchParams;
-  const { subject, mode } = params;
+  const { subject, category, mode } = params;
   const recommended = mode === "recommended";
 
   return (
@@ -263,7 +361,11 @@ export default async function PracticePage({
       <Suspense
         fallback={<div className="text-center py-8">กำลังโหลดข้อสอบ...</div>}
       >
-        <PracticeContent subjectId={subject} recommended={recommended} />
+        <PracticeContent
+          subjectId={subject}
+          category={category}
+          recommended={recommended}
+        />
       </Suspense>
     </div>
   );

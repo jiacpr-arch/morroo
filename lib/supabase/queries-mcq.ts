@@ -26,6 +26,7 @@ export async function getMcqSubjects(
 
 export async function getMcqQuestions(options?: {
   subjectId?: string;
+  subjectIds?: string[];
   examType?: string;
   limit?: number;
   randomize?: boolean;
@@ -38,6 +39,8 @@ export async function getMcqQuestions(options?: {
 
   if (options?.subjectId) {
     query = query.eq("subject_id", options.subjectId);
+  } else if (options?.subjectIds && options.subjectIds.length > 0) {
+    query = query.in("subject_id", options.subjectIds);
   }
   if (options?.examType) {
     query = query.eq("exam_type", options.examType);
