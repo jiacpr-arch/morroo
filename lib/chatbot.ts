@@ -142,3 +142,36 @@ export function trimHistory(history: ChatMessage[], maxTurns = 10): ChatMessage[
   const max = maxTurns * 2;
   return history.slice(-max);
 }
+
+/**
+ * Streaming variant — yields raw text deltas from the model.
+ * Use this for the web chat API so the widget can show tokens as they arrive.
+ * Card markers are web-irrelevant; strip from the accumulated reply server-side.
+ */
+export async function* streamChatbotReply(
+  history: ChatMessage[],
+  channel: ChatChannel
+): AsyncGenerator<string, void, unknown> {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) throw new Error("ANTHROPIC_API_KEY not configured");
+  if (history.length === 0) throw new Error("Empty conversation");
+
+  const client = new Anthropic({ apiKey });
+  const system = `${SYSTEM_PROMPT}\n\n${CHANNEL_HINTS[channel]}`;
+
+  const stream = client.messages.stream({
+    model: MODEL,
+    max_tokens: MAX_TOKENS,
+    system,
+    messages: history.map((m) => ({ role: m.role, content: m.content })),
+  });
+
+  for await (const event of stream) {
+    if (
+      event.type === "content_block_delta" &&
+      event.delta.type === "text_delta"
+    ) {
+      yield event.delta.text;
+    }
+  }
+}
