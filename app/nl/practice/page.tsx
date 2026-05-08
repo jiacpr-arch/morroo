@@ -77,7 +77,7 @@ async function PracticeContent({
   // to the normal random pool otherwise.
   const useRecommended = recommended && !!user;
 
-  const subjects = await getMcqSubjects();
+  const subjects = await getMcqSubjects("NL2");
 
   let questions: McqQuestion[];
   let recBreakdown: Awaited<ReturnType<typeof getRecommendedQuestions>>["breakdown"] | null = null;

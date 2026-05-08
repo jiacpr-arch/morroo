@@ -1,12 +1,21 @@
 import { createClient } from "./server";
 import type { McqSubject, McqQuestion } from "../types-mcq";
 
-export async function getMcqSubjects(): Promise<McqSubject[]> {
+export async function getMcqSubjects(
+  examType?: "NL1" | "NL2"
+): Promise<McqSubject[]> {
   const supabase = await createClient();
-  const { data, error } = await supabase
+  let query = supabase
     .from("mcq_subjects")
     .select("*")
     .order("name_th", { ascending: true });
+
+  // exam_type column allows 'NL1' | 'NL2' | 'both' — include 'both' when filtering
+  if (examType) {
+    query = query.in("exam_type", [examType, "both"]);
+  }
+
+  const { data, error } = await query;
 
   if (error) {
     console.error("Error fetching MCQ subjects:", error);
