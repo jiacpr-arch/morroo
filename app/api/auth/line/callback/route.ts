@@ -216,6 +216,11 @@ export async function GET(request: Request) {
 
       userId = newUser.user.id;
 
+      // The auth.users INSERT trigger (handle_new_user) auto-creates a
+      // profile row with default fields but no line_* columns. Upsert with
+      // merge-on-conflict (ignoreDuplicates left at the default of false) so
+      // the trigger-created row gets the LINE identity backfilled, and the
+      // path still works if the trigger is ever removed.
       const { error: upsertError } = await supabase.from("profiles").upsert(
         {
           id: userId,
@@ -226,7 +231,7 @@ export async function GET(request: Request) {
           line_user_id: lineProfile.userId,
           line_linked_at: new Date().toISOString(),
         },
-        { onConflict: "id", ignoreDuplicates: true }
+        { onConflict: "id" }
       );
 
       if (upsertError) {
