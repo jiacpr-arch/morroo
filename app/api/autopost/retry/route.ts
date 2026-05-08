@@ -1,9 +1,9 @@
 /**
- * Retry autopost for articles where FB or LINE delivery failed.
+ * Retry autopost for articles where FB, LINE, or IG delivery failed.
  *
- * GET /api/autopost/retry?secret=…&platform=fb|line|both&slug=…&limit=1
+ * GET /api/autopost/retry?secret=…&platform=fb|line|ig|both|all&slug=…&limit=1
  *   slug    – retry a specific article (optional; omit to pick unposted ones)
- *   platform – fb | line | both (default: both)
+ *   platform – fb | line | ig | both (= fb+line) | all (= fb+line+ig). Default: both
  *   limit    – max articles to process per invocation (default: 1, max: 10)
  *
  * Posts one article per invocation to stay within Vercel maxDuration.
@@ -14,6 +14,7 @@ import { NextResponse } from "next/server";
 import sharp from "sharp";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { postToFacebook } from "@/lib/facebook";
+import { postToInstagram } from "@/lib/instagram";
 import { broadcastLineMessages } from "@/lib/line";
 import { buildBlogAnnounceFlex } from "@/lib/line-flex-templates";
 import { pickAutopostFormat, categoryHashtag } from "@/lib/autopost-format";
@@ -59,6 +60,43 @@ async function ensureLineCover(
   }
 }
 
+/**
+ * Generate IG-compatible JPEG variant (1080×1080 square) from an existing
+ * cover. IG Graph API requires JPEG; PNGs frequently fail with "Media format
+ * not supported". Square fits IG feed natively without center-crop surprises.
+ */
+async function ensureIgCover(
+  supabase: ReturnType<typeof createAdminClient>,
+  slug: string,
+  coverImage: string,
+): Promise<string | null> {
+  try {
+    const res = await fetch(coverImage);
+    if (!res.ok) return null;
+    const buffer = Buffer.from(await res.arrayBuffer());
+    const igBuffer = await sharp(buffer)
+      .resize(1080, 1080, { fit: "cover" })
+      .jpeg({ quality: 88 })
+      .toBuffer();
+
+    const filePath = `blog-covers/${slug}-ig.jpg`;
+    const { error: uploadError } = await supabase.storage
+      .from("public-assets")
+      .upload(filePath, igBuffer, { contentType: "image/jpeg", upsert: true });
+    if (uploadError) {
+      console.error("[autopost-retry] ig cover upload error:", uploadError);
+      return null;
+    }
+    const { data: pub } = supabase.storage.from("public-assets").getPublicUrl(filePath);
+    const url = pub.publicUrl;
+    await supabase.from("blog_posts").update({ cover_image_ig: url }).eq("slug", slug);
+    return url;
+  } catch (err) {
+    console.error("[autopost-retry] ig cover gen error:", err);
+    return null;
+  }
+}
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
 
@@ -67,10 +105,12 @@ export async function GET(request: Request) {
   }
 
   const targetSlug = searchParams.get("slug");
-  const platform = (searchParams.get("platform") ?? "both") as "fb" | "line" | "both";
+  const platform = (searchParams.get("platform") ?? "both") as
+    | "fb" | "line" | "ig" | "both" | "all";
   const limit = Math.min(10, parseInt(searchParams.get("limit") ?? "1", 10));
-  const doFb = platform === "fb" || platform === "both";
-  const doLine = platform === "line" || platform === "both";
+  const doFb = platform === "fb" || platform === "both" || platform === "all";
+  const doLine = platform === "line" || platform === "both" || platform === "all";
+  const doIg = platform === "ig" || platform === "all";
 
   const supabase = createAdminClient();
   // Force canonical www domain — LINE Flex action URI strict-validates scheme
@@ -81,17 +121,21 @@ export async function GET(request: Request) {
   // Build query for unposted articles
   let query = supabase
     .from("blog_posts")
-    .select("slug, title, description, category, cover_image, cover_image_line, fb_post_id, line_broadcast_at, autopost_format")
+    .select(
+      "slug, title, description, category, cover_image, cover_image_line, cover_image_ig, fb_post_id, line_broadcast_at, ig_post_id, autopost_format",
+    )
     .order("published_at", { ascending: false });
 
   if (targetSlug) {
     query = query.eq("slug", targetSlug);
-  } else {
-    // Pick articles missing at least one platform
-    if (doFb && !doLine) query = query.is("fb_post_id", null);
-    else if (doLine && !doFb) query = query.is("line_broadcast_at", null);
-    // for "both": pick any unposted (we'll skip per-platform based on existing values below)
+  } else if (doIg && !doFb && !doLine) {
+    query = query.is("ig_post_id", null);
+  } else if (doFb && !doLine && !doIg) {
+    query = query.is("fb_post_id", null);
+  } else if (doLine && !doFb && !doIg) {
+    query = query.is("line_broadcast_at", null);
   }
+  // multi-platform: pick any rows; per-platform skip checks happen below
 
   const { data: posts, error } = await query.limit(limit);
   if (error) {
@@ -101,10 +145,10 @@ export async function GET(request: Request) {
     return NextResponse.json({ message: "No unposted articles found" });
   }
 
-  const results: Array<{ slug: string; fb?: string; line?: string }> = [];
+  const results: Array<{ slug: string; fb?: string; line?: string; ig?: string }> = [];
 
   for (const post of posts) {
-    const result: { slug: string; fb?: string; line?: string } = { slug: post.slug };
+    const result: { slug: string; fb?: string; line?: string; ig?: string } = { slug: post.slug };
     // Hardcode canonical URL — env-derived siteUrl gave LINE "invalid uri scheme"
     // even with || + replace fallbacks, so something in env is malformed/empty.
     const articleUrl = `https://www.morroo.com/blog/${post.slug}`;
@@ -178,6 +222,56 @@ export async function GET(request: Request) {
       result.line = "skipped:LINE_AUTOPOST_ENABLED!=true";
     } else if (doLine) {
       result.line = "already_sent";
+    }
+
+    // IG retry — gated by INSTAGRAM_AUTOPOST_ENABLED while we validate token perms
+    // and Page→IG link in production; flip to "true" once first post succeeds.
+    const igEnabled = process.env.INSTAGRAM_AUTOPOST_ENABLED === "true";
+    if (doIg && !post.ig_post_id && igEnabled) {
+      // Resolve format-specific cover; quote_card uses the OG render which is
+      // already JPEG via next/og, but we still pass through ensureIgCover so
+      // dimensions land at 1080×1080 and IG's container call doesn't reject it.
+      const sourceCover =
+        post.autopost_format === "quote_card" || (!post.autopost_format && pickAutopostFormat(post.slug) === "quote_card")
+          ? `${siteUrl}/api/og/quote?slug=${post.slug}`
+          : post.cover_image;
+
+      const igCover = sourceCover
+        ? (post.cover_image_ig ?? await ensureIgCover(supabase, post.slug, sourceCover))
+        : null;
+
+      if (!igCover) {
+        result.ig = "skipped:no_cover";
+      } else {
+        const hook = await generateHook({
+          title: post.title,
+          description: post.description,
+          apiKey: process.env.ANTHROPIC_API_KEY,
+        });
+        const hashtags = `#เตรียมสอบแพทย์ #หมอรู้ #${categoryHashtag(post.category)}`;
+        // IG strips URL clickability in captions — direct readers via bio link.
+        const navHint = `📖 อ่านบทความเต็มที่ลิงก์ใน bio (${siteUrl.replace(/^https?:\/\//, "")})`;
+        const caption = `${hook}\n\n${navHint}\n\n${hashtags}`;
+
+        try {
+          const igId = await postToInstagram({ imageUrl: igCover, caption });
+          await supabase.from("blog_posts").update({
+            ig_post_id: igId,
+            ig_posted_at: new Date().toISOString(),
+            ig_last_error: null,
+          }).eq("slug", post.slug);
+          result.ig = `posted:${igId}`;
+        } catch (err) {
+          await supabase.from("blog_posts").update({
+            ig_last_error: String(err).slice(0, 500),
+          }).eq("slug", post.slug);
+          result.ig = `error:${String(err).slice(0, 100)}`;
+        }
+      }
+    } else if (doIg && !igEnabled) {
+      result.ig = "skipped:INSTAGRAM_AUTOPOST_ENABLED!=true";
+    } else if (doIg) {
+      result.ig = "already_posted";
     }
 
     results.push(result);
