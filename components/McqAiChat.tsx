@@ -12,7 +12,6 @@ import {
   Bot,
   User,
   Sparkles,
-  Lock,
 } from "lucide-react";
 import Link from "next/link";
 import type { McqQuestion } from "@/lib/types-mcq";

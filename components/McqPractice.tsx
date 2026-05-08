@@ -178,6 +178,7 @@ export default function McqPractice({
       effectiveUsedBaseline,
       sessionAnswered,
       effectiveLimit,
+      viaRecommendation,
     ]
   );
 
@@ -199,14 +200,6 @@ export default function McqPractice({
     setSessionAnswered(0);
   }, []);
 
-  if (!question) {
-    return (
-      <div className="text-center py-16">
-        <p className="text-lg text-muted-foreground">ไม่มีข้อสอบ</p>
-      </div>
-    );
-  }
-
   const isFinished = showResult && currentIndex === questions.length - 1;
   const percentage =
     stats.total > 0 ? Math.round((stats.correct / stats.total) * 100) : 0;
@@ -222,6 +215,14 @@ export default function McqPractice({
       }).catch(() => {});
     }
   }, [isFinished, sessionId, stats.correct]);
+
+  if (!question) {
+    return (
+      <div className="text-center py-16">
+        <p className="text-lg text-muted-foreground">ไม่มีข้อสอบ</p>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">

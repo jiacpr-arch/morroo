@@ -5,7 +5,6 @@ import { use } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -496,6 +495,7 @@ export default function PaymentPage({
                 {slipPreview ? (
                   <div className="space-y-3">
                     <div className="relative rounded-lg overflow-hidden border bg-muted">
+                      {/* eslint-disable-next-line @next/next/no-img-element -- preview of user-uploaded blob URL, not suitable for next/image optimizer */}
                       <img
                         src={slipPreview}
                         alt="สลิปการโอนเงิน"

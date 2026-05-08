@@ -16,7 +16,6 @@ import {
   Clock,
   TrendingUp,
   AlertTriangle,
-  ArrowRight,
 } from "lucide-react";
 import { AccuracyTrendChart } from "@/components/AccuracyTrendChart";
 

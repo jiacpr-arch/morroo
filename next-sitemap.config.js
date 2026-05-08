@@ -12,7 +12,7 @@ module.exports = {
       { userAgent: "*", disallow: ["/admin", "/api", "/payment", "/auth", "/invoice"] },
     ],
   },
-  additionalPaths: async (config) => {
+  additionalPaths: async (_config) => {
     try {
       // Fetch blog slugs directly from Supabase REST API (no Next.js context needed)
       const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;

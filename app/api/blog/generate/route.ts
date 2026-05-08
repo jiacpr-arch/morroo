@@ -168,7 +168,7 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
       if (!match) throw new Error("No JSON found in response");
       article = JSON.parse(match[0]);
     }
-  } catch (err) {
+  } catch {
     console.error("[blog-generate] JSON parse failed:", rawText.slice(0, 200));
     return NextResponse.json({ error: "Failed to parse article JSON", raw: rawText.slice(0, 500) }, { status: 500 });
   }

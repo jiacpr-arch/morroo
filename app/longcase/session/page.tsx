@@ -25,7 +25,7 @@ function LongCaseSessionInner() {
   const router = useRouter();
   const sessionId = searchParams.get("id");
 
-  const [session, setSession] = useState<LongCaseSession | null>(null);
+  const [, setSession] = useState<LongCaseSession | null>(null);
   const [lc, setLc] = useState<Partial<LongCaseFull> | null>(null);
   const [phase, setPhase] = useState<Phase>("history");
   const [loading, setLoading] = useState(true);
@@ -384,7 +384,7 @@ function LongCaseSessionInner() {
             <h2 className="font-bold text-amber-800 flex items-center gap-2">
               <MessageSquare className="h-5 w-5" /> ซักประวัติ
             </h2>
-            <p className="text-sm text-gray-500">คุยกับผู้ป่วย AI ซักประวัติให้ครบถ้วน แล้วกด "เสร็จแล้ว"</p>
+            <p className="text-sm text-gray-500">คุยกับผู้ป่วย AI ซักประวัติให้ครบถ้วน แล้วกด &ldquo;เสร็จแล้ว&rdquo;</p>
             <div className="space-y-3 max-h-80 overflow-y-auto">
               {chatMessages.map((m, i) => (
                 <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>

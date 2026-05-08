@@ -72,7 +72,7 @@ export async function GET(req: NextRequest) {
           }}
         >
           <div style={{ fontSize: "22px", color: "rgba(255,255,255,0.45)", fontWeight: 700 }}>
-            "
+            &ldquo;
           </div>
           <div
             style={{

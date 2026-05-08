@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { getLongCases } from "@/lib/supabase/queries-longcase";
 import { createClient } from "@/lib/supabase/server";
-import { BookOpen, Stethoscope, Clock, Star, Lock } from "lucide-react";
+import { BookOpen, Stethoscope, Clock, Star } from "lucide-react";
 import type { Metadata } from "next";
 import LongCaseStartButton from "./LongCaseStartButton";
 import AllExamsCountdown from "@/components/AllExamsCountdown";

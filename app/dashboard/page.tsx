@@ -12,7 +12,6 @@ import {
   Target,
   Clock,
   TrendingUp,
-  TrendingDown,
   AlertTriangle,
   BookOpen,
   BarChart3,
@@ -91,7 +90,7 @@ export default function DashboardPage() {
   const [dailyGoal, setDailyGoal] = useState(20);
   const [todayCount, setTodayCount] = useState(0);
   const [lineLinked, setLineLinked] = useState(false);
-  const [newQuestions, setNewQuestions] = useState<{
+  const [, setNewQuestions] = useState<{
     count: number;
     difficulty: { easy: number; medium: number; hard: number };
     subjectId: string | null;

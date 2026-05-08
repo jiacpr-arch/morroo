@@ -6,36 +6,42 @@ export async function createClient() {
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
   if (!url || url === "your-supabase-url" || !key || key === "your-supabase-anon-key") {
-    // Return a mock server client when Supabase is not configured
-    // Chainable query builder that always resolves to empty data
-    const emptyResult = { data: null, error: null };
-    const emptyList = { data: [], error: null };
-    function mockQuery(isSingle = false): Record<string, unknown> {
-      const q: Record<string, unknown> = {
-        select: (cols?: string) => {
-          void cols;
-          return mockQuery(false);
+    // Return a mock server client when Supabase is not configured.
+    // Use a Proxy so any postgrest chain method (range, gte, in, ...) is supported.
+    const makeQuery = (isSingle: boolean, isCountHead: boolean) => {
+      const result = isCountHead
+        ? { data: null, error: null, count: 0 }
+        : isSingle
+          ? { data: null, error: null }
+          : { data: [], error: null, count: 0 };
+      const handler: ProxyHandler<Record<string, unknown>> = {
+        get(_target, prop) {
+          if (prop === "then") {
+            return (resolve: (v: unknown) => unknown) =>
+              Promise.resolve(resolve(result));
+          }
+          if (prop === "single" || prop === "maybeSingle") {
+            return () => makeQuery(true, false);
+          }
+          if (prop === "select") {
+            return (
+              _cols?: string,
+              opts?: { count?: string; head?: boolean }
+            ) => makeQuery(isSingle, !!opts?.head);
+          }
+          // Default: return chainable function for any postgrest filter/modifier
+          return () => makeQuery(isSingle, isCountHead);
         },
-        eq: () => mockQuery(isSingle),
-        neq: () => mockQuery(isSingle),
-        order: () => mockQuery(isSingle),
-        limit: () => mockQuery(isSingle),
-        single: () => mockQuery(true),
-        insert: () => mockQuery(false),
-        upsert: () => mockQuery(false),
-        update: () => mockQuery(false),
-        delete: () => mockQuery(false),
-        then: (resolve: (v: unknown) => unknown) =>
-          Promise.resolve(resolve(isSingle ? emptyResult : emptyList)),
       };
-      return q;
-    }
+      return new Proxy({}, handler);
+    };
     return {
       auth: {
         getUser: async () => ({ data: { user: null }, error: null }),
         exchangeCodeForSession: async () => ({ data: { user: null, session: null }, error: { message: "Supabase not configured" } }),
       },
-      from: () => mockQuery(),
+      from: () => makeQuery(false, false),
+      rpc: () => makeQuery(false, false),
     } as unknown as ReturnType<typeof createServerClient>;
   }
 

@@ -15,9 +15,7 @@ import {
   Trash2,
   Loader2,
   Shield,
-  BookOpen,
   ArrowLeft,
-  Eye,
   FileText,
 } from "lucide-react";
 
