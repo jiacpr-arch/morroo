@@ -8,6 +8,7 @@ import {
   weeklyNewsletterEmail,
   weeklyDigestEmail,
   redeemCodeEmail,
+  leadFollowupEmail,
 } from "./templates";
 import type {
   WelcomeEmailProps,
@@ -15,6 +16,7 @@ import type {
   NewsletterPost,
   WeeklyDigestProps,
   RedeemCodeEmailProps,
+  LeadFollowupEmailProps,
 } from "./templates";
 
 const FROM_ADDRESS = "หมอรู้ <noreply@morroo.com>";
@@ -126,5 +128,21 @@ export async function sendRedeemCodeEmail(
     to: props.email,
     subject: `🎁 โค้ดของคุณพร้อมแล้ว — ${props.code}`,
     html: redeemCodeEmail(props),
+  });
+}
+
+export async function sendLeadFollowupEmail(
+  props: LeadFollowupEmailProps & { email: string }
+) {
+  const subject =
+    props.day === 1
+      ? `อย่าลืม! โค้ด ${props.code} ของคุณยังพร้อมใช้งาน`
+      : props.day === 3
+        ? `⏳ เหลืออีก ${props.daysRemaining} วัน — โค้ด ${props.code} กำลังจะหมดอายุ`
+        : `🚨 วันสุดท้าย — โค้ด ${props.code} หมดอายุพรุ่งนี้`;
+  return sendEmail({
+    to: props.email,
+    subject,
+    html: leadFollowupEmail(props),
   });
 }
