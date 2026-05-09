@@ -42,6 +42,13 @@ type Code = {
   created_at: string;
 };
 
+type MessageSent = {
+  lead_id: string;
+  day: number;
+  channel: string;
+  sent_at: string;
+};
+
 const STAGE_LABEL: Record<string, string> = {
   new: "ใหม่",
   contacted: "ติดต่อแล้ว",
@@ -76,8 +83,12 @@ export default function AdminLeadsPage() {
   const [isAdmin, setIsAdmin] = useState(false);
   const [leads, setLeads] = useState<Lead[]>([]);
   const [codesByLead, setCodesByLead] = useState<Record<string, Code[]>>({});
+  const [messagesByLead, setMessagesByLead] = useState<
+    Record<string, MessageSent[]>
+  >({});
   const [stageFilter, setStageFilter] = useState<string>("all");
   const [sourceFilter, setSourceFilter] = useState<string>("all");
+  const [dateRange, setDateRange] = useState<"7" | "30" | "90" | "all">("30");
   const [search, setSearch] = useState("");
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [busyId, setBusyId] = useState<string | null>(null);
@@ -85,13 +96,22 @@ export default function AdminLeadsPage() {
 
   const loadData = useCallback(async () => {
     const supabase = createClient();
-    const { data: leadsData, error: leadsErr } = await supabase
+    let query = supabase
       .from("leads")
       .select(
         "id, source, campaign, email, phone, name, status_year, exam_target, reward_choice, stage, created_at, user_id"
       )
       .order("created_at", { ascending: false })
       .limit(500);
+
+    if (dateRange !== "all") {
+      const days = parseInt(dateRange, 10);
+      const cutoff = new Date(
+        Date.now() - days * 24 * 60 * 60 * 1000
+      ).toISOString();
+      query = query.gte("created_at", cutoff);
+    }
+    const { data: leadsData, error: leadsErr } = await query;
 
     if (leadsErr) {
       console.error("Failed to load leads:", leadsErr);
@@ -101,18 +121,36 @@ export default function AdminLeadsPage() {
 
     if ((leadsData?.length ?? 0) > 0) {
       const ids = (leadsData as Lead[]).map((l) => l.id);
-      const { data: codes } = await supabase
-        .from("redeem_codes")
-        .select("code, reward_type, lead_id, redeemed_at, expires_at, created_at")
-        .in("lead_id", ids);
-      const grouped: Record<string, Code[]> = {};
-      for (const c of (codes ?? []) as Code[]) {
+      const [codesRes, messagesRes] = await Promise.all([
+        supabase
+          .from("redeem_codes")
+          .select("code, reward_type, lead_id, redeemed_at, expires_at, created_at")
+          .in("lead_id", ids),
+        supabase
+          .from("lead_messages_sent")
+          .select("lead_id, day, channel, sent_at")
+          .in("lead_id", ids),
+      ]);
+      const codesGrouped: Record<string, Code[]> = {};
+      for (const c of (codesRes.data ?? []) as Code[]) {
         if (!c.lead_id) continue;
-        (grouped[c.lead_id] ??= []).push(c);
+        (codesGrouped[c.lead_id] ??= []).push(c);
       }
-      setCodesByLead(grouped);
+      const messagesGrouped: Record<string, MessageSent[]> = {};
+      for (const m of (messagesRes.data ?? []) as MessageSent[]) {
+        (messagesGrouped[m.lead_id] ??= []).push(m);
+      }
+      // Sort each lead's messages by sent_at desc for nicer display.
+      for (const k of Object.keys(messagesGrouped)) {
+        messagesGrouped[k].sort(
+          (a, b) =>
+            new Date(b.sent_at).getTime() - new Date(a.sent_at).getTime()
+        );
+      }
+      setCodesByLead(codesGrouped);
+      setMessagesByLead(messagesGrouped);
     }
-  }, []);
+  }, [dateRange]);
 
   async function issueNewCode(leadId: string) {
     setBusyId(leadId);
@@ -156,6 +194,11 @@ export default function AdminLeadsPage() {
     }
   }
 
+  // Reload when date range changes (after admin auth confirmed).
+  useEffect(() => {
+    if (isAdmin) loadData();
+  }, [isAdmin, loadData]);
+
   useEffect(() => {
     async function init() {
       const supabase = createClient();
@@ -176,11 +219,10 @@ export default function AdminLeadsPage() {
         return;
       }
       setIsAdmin(true);
-      await loadData();
       setLoading(false);
     }
     init();
-  }, [router, loadData]);
+  }, [router]);
 
   if (loading) {
     return (
@@ -310,6 +352,18 @@ export default function AdminLeadsPage() {
               </option>
             ))}
           </select>
+          <select
+            value={dateRange}
+            onChange={(e) =>
+              setDateRange(e.target.value as "7" | "30" | "90" | "all")
+            }
+            className="rounded-md border bg-background px-3 py-2 text-sm"
+          >
+            <option value="7">7 วัน</option>
+            <option value="30">30 วัน</option>
+            <option value="90">90 วัน</option>
+            <option value="all">ทั้งหมด</option>
+          </select>
         </div>
         <div className="relative ml-auto">
           <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
@@ -322,6 +376,9 @@ export default function AdminLeadsPage() {
         </div>
         <Button variant="outline" onClick={loadData}>
           Refresh
+        </Button>
+        <Button variant="outline" onClick={() => exportCsv(filtered, codesByLead)}>
+          Export CSV
         </Button>
       </section>
 
@@ -472,6 +529,39 @@ export default function AdminLeadsPage() {
                             </div>
                           </div>
 
+                          <div>
+                            <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                              Follow-up messages
+                            </div>
+                            <div className="mt-2 space-y-1 text-xs">
+                              {(messagesByLead[l.id] ?? []).length === 0 && (
+                                <div className="text-muted-foreground">
+                                  ยังไม่ส่งข้อความติดตาม
+                                </div>
+                              )}
+                              {(messagesByLead[l.id] ?? []).map((m) => (
+                                <div
+                                  key={`${m.day}-${m.channel}-${m.sent_at}`}
+                                  className="flex items-center gap-3"
+                                >
+                                  <Badge variant="outline" className="text-[10px]">
+                                    D{m.day}
+                                  </Badge>
+                                  <span>{m.channel}</span>
+                                  <span className="text-muted-foreground">
+                                    {new Date(m.sent_at).toLocaleString("th-TH", {
+                                      year: "2-digit",
+                                      month: "short",
+                                      day: "numeric",
+                                      hour: "2-digit",
+                                      minute: "2-digit",
+                                    })}
+                                  </span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
                           <div
                             className="flex flex-wrap items-center gap-2"
                             onClick={(e) => e.stopPropagation()}
@@ -522,6 +612,82 @@ export default function AdminLeadsPage() {
       </Card>
     </div>
   );
+}
+
+function exportCsv(rows: Lead[], codesByLead: Record<string, Code[]>) {
+  const headers = [
+    "id",
+    "created_at",
+    "source",
+    "campaign",
+    "ad_set",
+    "stage",
+    "name",
+    "email",
+    "phone",
+    "status_year",
+    "exam_target",
+    "reward_choice",
+    "active_code",
+    "code_status",
+    "code_expires_at",
+  ];
+  const cells: string[][] = [headers];
+  for (const l of rows) {
+    const codes = codesByLead[l.id] ?? [];
+    const active = codes.find((c) => !c.redeemed_at) ?? codes[0];
+    const expired = active && new Date(active.expires_at) < new Date();
+    const codeStatus = !active
+      ? ""
+      : active.redeemed_at
+        ? "used"
+        : expired
+          ? "expired"
+          : "active";
+    cells.push([
+      l.id,
+      l.created_at,
+      l.source,
+      l.campaign ?? "",
+      // ad_set lives only in DB, not on the page; leave blank rather than over-fetch.
+      "",
+      l.stage,
+      l.name ?? "",
+      l.email ?? "",
+      l.phone ?? "",
+      l.status_year ?? "",
+      l.exam_target ?? "",
+      l.reward_choice ?? "",
+      active?.code ?? "",
+      codeStatus,
+      active?.expires_at ?? "",
+    ]);
+  }
+
+  // RFC-4180-style escape: wrap fields containing comma/quote/newline in
+  // double quotes and double any inner quotes.
+  const csv = cells
+    .map((row) =>
+      row
+        .map((v) => {
+          const s = String(v ?? "");
+          if (/[",\n\r]/.test(s)) return `"${s.replace(/"/g, '""')}"`;
+          return s;
+        })
+        .join(",")
+    )
+    .join("\n");
+
+  // BOM so Excel opens the UTF-8 Thai characters correctly.
+  const blob = new Blob(["﻿" + csv], { type: "text/csv;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `morroo-leads-${new Date().toISOString().slice(0, 10)}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
 }
 
 function FunnelCard({
