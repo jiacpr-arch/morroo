@@ -12,7 +12,7 @@
  *   BLOG_GENERATE_SECRET     — auth for /api/autopost/retry
  *
  * Optional:
- *   OPENAI_API_KEY           — cover image via gpt-image-1 (skipped if absent)
+ *   TOGETHER_API_KEY         — cover image via FLUX.1.1-pro (skipped if absent)
  *   SITE_URL                 — default https://www.morroo.com
  *   ARTICLE_COUNT            — how many articles to generate (default 1)
  */
@@ -22,7 +22,7 @@ import { createClient } from "@supabase/supabase-js";
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+const TOGETHER_API_KEY = process.env.TOGETHER_API_KEY;
 const SITE_URL = process.env.SITE_URL ?? "https://www.morroo.com";
 const BLOG_GENERATE_SECRET = process.env.BLOG_GENERATE_SECRET;
 const ARTICLE_COUNT = Math.max(1, parseInt(process.env.ARTICLE_COUNT ?? "1", 10));
@@ -198,7 +198,7 @@ DO NOT:
 }
 
 async function generateCoverImage(slug, { headline, subtitle, scene }) {
-  if (!OPENAI_API_KEY || !scene) return null;
+  if (!TOGETHER_API_KEY || !scene) return null;
 
   const fullPrompt = buildCoverPrompt({
     headline: headline || slugToHeadline(slug),
@@ -207,28 +207,27 @@ async function generateCoverImage(slug, { headline, subtitle, scene }) {
   });
 
   try {
-    const res = await fetch("https://api.openai.com/v1/images/generations", {
+    const res = await fetch("https://api.together.xyz/v1/images/generations", {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${OPENAI_API_KEY}`,
+        Authorization: `Bearer ${TOGETHER_API_KEY}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "gpt-image-1",
+        model: "black-forest-labs/FLUX.1.1-pro",
         prompt: fullPrompt,
         // Square works for IG feed natively + FB photo posts. Blog card
         // center-crops to 16:9; buildCoverPrompt() instructs the model to
         // keep all critical text inside the central 60% vertical band.
-        size: "1024x1024",
-        // "medium" keeps text/typography legible at ~$0.042/image vs
-        // ~$0.167 for the default high tier — fine for blog/social covers.
-        quality: "medium",
+        width: 1024,
+        height: 1024,
         n: 1,
+        response_format: "b64_json",
       }),
     });
 
     if (!res.ok) {
-      console.error("[image] OpenAI image API error:", await res.text());
+      console.error("[image] Together image API error:", await res.text());
       return null;
     }
 
