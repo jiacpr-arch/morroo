@@ -14,6 +14,16 @@ export interface RedeemCodeEmailProps {
   redeemUrl: string;
 }
 
+export interface LeadFollowupEmailProps {
+  name: string;
+  code: string;
+  rewardLabel: string;
+  redeemUrl: string;
+  daysRemaining: number;
+  /** Day of the reminder schedule (1, 3, or 6) — selects copy variant. */
+  day: 1 | 3 | 6;
+}
+
 export interface ReceiptEmailProps {
   name: string;
   email: string;
@@ -451,6 +461,80 @@ export function redeemCodeEmail({
 
     <p style="color: #6b7280; font-size: 13px; line-height: 1.6; margin: 24px 0 0;">
       โค้ดใช้ได้ครั้งเดียว ภายใน 7 วัน หากมีคำถามตอบกลับอีเมลนี้ได้เลยครับ
+    </p>
+  </div>
+  ${footerHtml}
+</div>
+</body>
+</html>`;
+}
+
+export function leadFollowupEmail({
+  name,
+  code,
+  rewardLabel,
+  redeemUrl,
+  daysRemaining,
+  day,
+}: LeadFollowupEmailProps): string {
+  // Copy varies by reminder day — gentle nudge → urgency → final call.
+  const variant =
+    day === 1
+      ? {
+          headline: "อย่าลืมรับสิทธิ์ของคุณ 🎁",
+          subhead: `โค้ด ${rewardLabel} ของคุณยังพร้อมใช้งาน — เหลืออีก ${daysRemaining} วันก่อนหมดอายุ`,
+          ctaLabel: "รับสิทธิ์ทันที",
+          accent: BRAND_COLOR,
+        }
+      : day === 3
+        ? {
+            headline: "เหลืออีก 4 วันเท่านั้น ⏳",
+            subhead: `โค้ดของคุณกำลังจะหมดอายุ — รับ ${rewardLabel} ก่อนสายเกินไป`,
+            ctaLabel: "รับสิทธิ์ก่อนหมดเวลา",
+            accent: "#D97706",
+          }
+        : {
+            headline: "วันสุดท้าย! โค้ดหมดอายุพรุ่งนี้ 🚨",
+            subhead: `นี่คือโอกาสสุดท้ายในการรับ ${rewardLabel} ฟรี อย่าพลาด`,
+            ctaLabel: "รับสิทธิ์เดี๋ยวนี้",
+            accent: "#DC2626",
+          };
+
+  return `<!DOCTYPE html>
+<html lang="th">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body style="margin:0;padding:0;background:#f4f4f4;">
+<div style="${baseStyle}">
+  ${headerHtml}
+  <div style="padding: 32px;">
+    <h2 style="color: ${DARK_COLOR}; font-size: 22px; margin: 0 0 12px;">${variant.headline}</h2>
+    <p style="color: #374151; font-size: 16px; line-height: 1.6; margin: 0 0 16px;">
+      สวัสดีคุณ <strong>${name}</strong>,
+    </p>
+    <p style="color: #374151; font-size: 16px; line-height: 1.6; margin: 0 0 24px;">
+      ${variant.subhead}
+    </p>
+
+    <div style="background: #f0fdf4; border: 2px dashed ${variant.accent}; border-radius: 12px; padding: 24px; text-align: center; margin: 24px 0;">
+      <p style="color: #6b7280; font-size: 13px; margin: 0 0 8px;">โค้ดของคุณ</p>
+      <p style="color: ${DARK_COLOR}; font-family: 'Courier New', monospace; font-size: 24px; font-weight: 700; letter-spacing: 2px; margin: 0;">
+        ${code}
+      </p>
+      <p style="color: ${variant.accent}; font-size: 13px; font-weight: 600; margin: 12px 0 0;">
+        เหลือเวลา ${daysRemaining} วัน
+      </p>
+    </div>
+
+    <div style="text-align: center; margin: 28px 0;">
+      <a href="${redeemUrl}"
+         style="display: inline-block; background: ${variant.accent}; color: #ffffff; text-decoration: none;
+                padding: 14px 32px; border-radius: 8px; font-size: 16px; font-weight: 600;">
+        ${variant.ctaLabel} →
+      </a>
+    </div>
+
+    <p style="color: #6b7280; font-size: 13px; line-height: 1.6; margin: 24px 0 0;">
+      ใช้ได้ครั้งเดียวต่อบัญชี หากมีคำถามตอบกลับอีเมลนี้ได้เลยครับ
     </p>
   </div>
   ${footerHtml}
