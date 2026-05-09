@@ -4,13 +4,13 @@
  * For each affected post:
  *   1. Ask Claude for cover headline (EN), subtitle (TH), and visual scene
  *      derived from title/description/category.
- *   2. Call OpenAI gpt-image-1 (1024x1024) with a structured prompt that
+ *   2. Call Together FLUX.1.1-pro (1024x1024) with a structured prompt that
  *      renders the typography + "หมอรู้ · morroo.com" CTA.
  *   3. Upload PNG bytes to public-assets/blog-covers/{slug}.png.
  *   4. Update blog_posts.cover_image to the new public URL.
  *
  * Required env vars:
- *   SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, ANTHROPIC_API_KEY, OPENAI_API_KEY
+ *   SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, ANTHROPIC_API_KEY, TOGETHER_API_KEY
  *
  * Optional control env vars:
  *   LIMIT  — process at most N rows (default unlimited)
@@ -27,7 +27,7 @@ import { createClient } from "@supabase/supabase-js";
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+const TOGETHER_API_KEY = process.env.TOGETHER_API_KEY;
 const LIMIT = parseInt(process.env.LIMIT ?? "", 10);
 const FORCE = ["1", "true", "TRUE", "yes"].includes(process.env.FORCE ?? "");
 
@@ -39,8 +39,8 @@ if (!ANTHROPIC_API_KEY) {
   console.error("Missing ANTHROPIC_API_KEY");
   process.exit(1);
 }
-if (!OPENAI_API_KEY) {
-  console.error("Missing OPENAI_API_KEY");
+if (!TOGETHER_API_KEY) {
+  console.error("Missing TOGETHER_API_KEY");
   process.exit(1);
 }
 
@@ -134,29 +134,29 @@ async function deriveCoverFields({ title, description, category }) {
 }
 
 async function generateAndUpload(slug, fullPrompt) {
-  const res = await fetch("https://api.openai.com/v1/images/generations", {
+  const res = await fetch("https://api.together.xyz/v1/images/generations", {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${OPENAI_API_KEY}`,
+      Authorization: `Bearer ${TOGETHER_API_KEY}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      model: "gpt-image-1",
+      model: "black-forest-labs/FLUX.1.1-pro",
       prompt: fullPrompt,
-      size: "1024x1024",
-      // ~$0.042/image at medium vs ~$0.167 at high — fine for blog covers.
-      quality: "medium",
+      width: 1024,
+      height: 1024,
       n: 1,
+      response_format: "b64_json",
     }),
   });
 
   if (!res.ok) {
-    throw new Error(`OpenAI image API error: ${await res.text()}`);
+    throw new Error(`Together image API error: ${await res.text()}`);
   }
 
   const data = await res.json();
   const b64 = data.data?.[0]?.b64_json;
-  if (!b64) throw new Error("No b64_json in OpenAI response");
+  if (!b64) throw new Error("No b64_json in Together response");
 
   const buffer = Buffer.from(b64, "base64");
   const filePath = `blog-covers/${slug}.png`;
