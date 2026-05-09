@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, Fragment } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -79,6 +79,9 @@ export default function AdminLeadsPage() {
   const [stageFilter, setStageFilter] = useState<string>("all");
   const [sourceFilter, setSourceFilter] = useState<string>("all");
   const [search, setSearch] = useState("");
+  const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [busyId, setBusyId] = useState<string | null>(null);
+  const [toast, setToast] = useState<string>("");
 
   const loadData = useCallback(async () => {
     const supabase = createClient();
@@ -110,6 +113,48 @@ export default function AdminLeadsPage() {
       setCodesByLead(grouped);
     }
   }, []);
+
+  async function issueNewCode(leadId: string) {
+    setBusyId(leadId);
+    setToast("");
+    try {
+      const res = await fetch(`/api/admin/leads/${leadId}/issue-code`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: "{}",
+      });
+      const json = (await res.json()) as { code?: string; error?: string };
+      if (!res.ok) {
+        setToast(`ออกโค้ดไม่สำเร็จ: ${json.error ?? "unknown"}`);
+        return;
+      }
+      setToast(`ออกโค้ด ${json.code} + ส่งอีเมลแล้ว`);
+      await loadData();
+    } finally {
+      setBusyId(null);
+    }
+  }
+
+  async function changeStage(leadId: string, stage: string) {
+    setBusyId(leadId);
+    setToast("");
+    try {
+      const res = await fetch(`/api/admin/leads/${leadId}/stage`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ stage }),
+      });
+      const json = (await res.json()) as { error?: string };
+      if (!res.ok) {
+        setToast(`เปลี่ยน stage ไม่สำเร็จ: ${json.error ?? "unknown"}`);
+        return;
+      }
+      setToast(`เปลี่ยน stage เป็น "${STAGE_LABEL[stage] ?? stage}"`);
+      await loadData();
+    } finally {
+      setBusyId(null);
+    }
+  }
 
   useEffect(() => {
     async function init() {
@@ -280,6 +325,12 @@ export default function AdminLeadsPage() {
         </Button>
       </section>
 
+      {toast && (
+        <div className="mt-3 rounded-md border border-teal-200 bg-teal-50 px-3 py-2 text-sm text-teal-800">
+          {toast}
+        </div>
+      )}
+
       <Card className="mt-4">
         <CardHeader>
           <CardTitle className="text-base">
@@ -303,8 +354,15 @@ export default function AdminLeadsPage() {
                 const codes = codesByLead[l.id] ?? [];
                 const activeCode =
                   codes.find((c) => !c.redeemed_at) ?? codes[0];
+                const isExpanded = expandedId === l.id;
                 return (
-                  <tr key={l.id} className="border-b hover:bg-muted/20">
+                  <Fragment key={l.id}>
+                  <tr
+                    className="cursor-pointer border-b hover:bg-muted/20"
+                    onClick={() =>
+                      setExpandedId((prev) => (prev === l.id ? null : l.id))
+                    }
+                  >
                     <td className="px-4 py-3 text-xs text-muted-foreground">
                       {new Date(l.created_at).toLocaleDateString("th-TH", {
                         year: "2-digit",
@@ -368,6 +426,84 @@ export default function AdminLeadsPage() {
                       )}
                     </td>
                   </tr>
+                  {isExpanded && (
+                    <tr className="border-b bg-muted/10">
+                      <td colSpan={6} className="px-4 py-4">
+                        <div className="space-y-3">
+                          <div>
+                            <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                              Codes
+                            </div>
+                            <div className="mt-2 space-y-1 font-mono text-xs">
+                              {codes.length === 0 && (
+                                <div className="text-muted-foreground">
+                                  ยังไม่มีโค้ดสำหรับ lead นี้
+                                </div>
+                              )}
+                              {codes.map((c) => {
+                                const expired =
+                                  new Date(c.expires_at) < new Date();
+                                const status = c.redeemed_at
+                                  ? "✓ used"
+                                  : expired
+                                    ? "expired"
+                                    : "active";
+                                return (
+                                  <div
+                                    key={c.code}
+                                    className="flex items-center gap-3"
+                                  >
+                                    <span>{c.code}</span>
+                                    <Badge variant="outline" className="text-[10px]">
+                                      {c.reward_type === "monthly_1m"
+                                        ? "1 เดือน"
+                                        : "Bundle 10"}
+                                    </Badge>
+                                    <span className="text-muted-foreground">
+                                      {status}
+                                    </span>
+                                    <span className="text-muted-foreground">
+                                      หมดอายุ{" "}
+                                      {new Date(c.expires_at).toLocaleDateString("th-TH")}
+                                    </span>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </div>
+
+                          <div
+                            className="flex flex-wrap items-center gap-2"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              disabled={busyId === l.id}
+                              onClick={() => issueNewCode(l.id)}
+                            >
+                              {busyId === l.id ? "กำลังออกโค้ด..." : "ออกโค้ดใหม่ + ส่งอีเมล"}
+                            </Button>
+                            <select
+                              value={l.stage}
+                              disabled={busyId === l.id}
+                              onChange={(e) =>
+                                changeStage(l.id, e.target.value)
+                              }
+                              className="rounded-md border bg-background px-2 py-1 text-xs"
+                            >
+                              {Object.entries(STAGE_LABEL).map(([k, v]) => (
+                                <option key={k} value={k}>
+                                  {v}
+                                </option>
+                              ))}
+                            </select>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  )}
+                  </Fragment>
                 );
               })}
               {filtered.length === 0 && (
