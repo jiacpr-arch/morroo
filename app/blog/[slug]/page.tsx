@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { getBlogPost, getBlogPosts, getAllSlugs } from "@/lib/blog";
+import JsonLd from "@/components/JsonLd";
+import { article, breadcrumbList } from "@/lib/seo";
 import type { Metadata } from "next";
 
 // ISR — revalidate 60s. Static HTML is served from Vercel's edge cache,
@@ -51,33 +53,25 @@ export default async function BlogPostPage({
   const [post, allPosts] = await Promise.all([getBlogPost(slug), getBlogPosts()]);
   if (!post) notFound();
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
+  const articleSchema = article({
     headline: post.title,
     description: post.description,
+    url: `/blog/${slug}`,
+    image: post.coverImage ?? undefined,
     datePublished: post.publishedAt,
-    author: {
-      "@type": "Organization",
-      name: "หมอรู้ (MorRoo)",
-      url: "https://www.morroo.com",
-    },
-    publisher: {
-      "@type": "EducationalOrganization",
-      name: "หมอรู้ (MorRoo)",
-      url: "https://www.morroo.com",
-    },
-    inLanguage: "th",
-  };
+  });
+  const breadcrumb = breadcrumbList([
+    { name: "หน้าแรก", path: "/" },
+    { name: "บทความ", path: "/blog" },
+    { name: post.title, path: `/blog/${slug}` },
+  ]);
 
   const related = allPosts.filter((p) => p.slug !== slug).slice(0, 2);
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
+      <JsonLd data={articleSchema} />
+      <JsonLd data={breadcrumb} />
       <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
         <nav className="mb-6 text-sm text-muted-foreground">

@@ -65,6 +65,12 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       status: "ok",
       alreadyProcessed: result.alreadyProcessed,
+      purchase: {
+        transactionId: session.id,
+        value: (session.amount_total ?? 0) / 100,
+        currency: (session.currency ?? "thb").toUpperCase(),
+        planType: session.metadata?.planType ?? null,
+      },
     });
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);

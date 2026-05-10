@@ -14,6 +14,7 @@
 
 import type Stripe from "stripe";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { uploadOfflineConversion } from "@/lib/google-ads-server";
 
 export interface FulfillmentResult {
   alreadyProcessed: boolean;
@@ -112,6 +113,12 @@ export async function fulfillCheckoutSession(
       status: "approved",
       payment_method: "stripe",
       stripe_session_id: session.id,
+      gclid: metadata.gclid ?? null,
+      gbraid: metadata.gbraid ?? null,
+      wbraid: metadata.wbraid ?? null,
+      utm_source: metadata.utm_source ?? null,
+      utm_medium: metadata.utm_medium ?? null,
+      utm_campaign: metadata.utm_campaign ?? null,
     })
     .select("id")
     .single();
@@ -229,6 +236,34 @@ export async function fulfillCheckoutSession(
     yearly: "รายปี",
     bundle: "ชุดข้อสอบ",
   };
+
+  // Fire-and-forget offline purchase conversion to Google Ads. Same pattern
+  // as leads — guarded by env config, never blocks fulfillment.
+  const gclid = metadata.gclid;
+  const gbraid = metadata.gbraid;
+  const wbraid = metadata.wbraid;
+  if (gclid || gbraid || wbraid) {
+    uploadOfflineConversion({
+      type: "purchase",
+      gclid: gclid ?? null,
+      gbraid: gbraid ?? null,
+      wbraid: wbraid ?? null,
+      conversionValue: totalAmount,
+      currencyCode: (session.currency ?? "thb").toUpperCase(),
+      orderId: session.id,
+      email: invoiceEmail || session.customer_details?.email || null,
+      phone: session.customer_details?.phone ?? null,
+    })
+      .then(async (result) => {
+        if (result.ok && orderData?.id) {
+          await supabase
+            .from("payment_orders")
+            .update({ conv_uploaded_at: new Date().toISOString() })
+            .eq("id", orderData.id);
+        }
+      })
+      .catch((e) => console.error("[fulfill] offline conversion upload failed:", e));
+  }
 
   return {
     alreadyProcessed: false,

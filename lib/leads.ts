@@ -1,10 +1,23 @@
 import { createAdminClient } from "@/lib/supabase/admin";
 import { issueRedeemCode, type RewardType, type RedeemSource } from "@/lib/redeem";
 import { sendRedeemCodeEmail } from "@/lib/email/send";
+import { uploadOfflineConversion } from "@/lib/google-ads-server";
 
 const REWARD_LABEL: Record<RewardType, string> = {
   monthly_1m: "สมาชิกรายเดือน 1 เดือน",
   bundle_10q: "Bundle 10 ข้อ",
+};
+
+export type AdsAttribution = {
+  gclid?: string;
+  gbraid?: string;
+  wbraid?: string;
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+  utm_term?: string;
+  utm_content?: string;
+  landing_page?: string;
 };
 
 export type CreateLeadArgs = {
@@ -20,6 +33,7 @@ export type CreateLeadArgs = {
   rewardChoice: RewardType;
   consentPdpa: boolean;
   rawPayload?: Record<string, unknown>;
+  attribution?: AdsAttribution;
 };
 
 export type CreateLeadResult =
@@ -87,6 +101,15 @@ export async function createLead(
       consent_pdpa: args.consentPdpa,
       consent_at: new Date().toISOString(),
       raw_payload: args.rawPayload ?? null,
+      gclid: args.attribution?.gclid ?? null,
+      gbraid: args.attribution?.gbraid ?? null,
+      wbraid: args.attribution?.wbraid ?? null,
+      utm_source: args.attribution?.utm_source ?? null,
+      utm_medium: args.attribution?.utm_medium ?? null,
+      utm_campaign: args.attribution?.utm_campaign ?? null,
+      utm_term: args.attribution?.utm_term ?? null,
+      utm_content: args.attribution?.utm_content ?? null,
+      landing_page: args.attribution?.landing_page ?? null,
     })
     .select("id")
     .single();
@@ -121,6 +144,32 @@ export async function createLead(
   } catch (e) {
     console.error("createLead issueRedeemCode failed:", e);
     return { ok: false, error: "db_error" };
+  }
+
+  // Fire-and-forget offline conversion upload to Google Ads. No-op when the
+  // server-side credentials aren't configured. We don't await — the lead is
+  // already saved, and conversion latency shouldn't block the API response.
+  if (args.attribution?.gclid || args.attribution?.gbraid || args.attribution?.wbraid) {
+    uploadOfflineConversion({
+      type: "lead",
+      gclid: args.attribution.gclid ?? null,
+      gbraid: args.attribution.gbraid ?? null,
+      wbraid: args.attribution.wbraid ?? null,
+      conversionValue: args.rewardChoice === "monthly_1m" ? 199 : 50,
+      currencyCode: "THB",
+      orderId: lead.id,
+      email,
+      phone: args.phone,
+    })
+      .then(async (result) => {
+        if (result.ok) {
+          await supabase
+            .from("leads")
+            .update({ conv_uploaded_at: new Date().toISOString() })
+            .eq("id", lead.id);
+        }
+      })
+      .catch((e) => console.error("[leads] offline conversion upload failed:", e));
   }
 
   return { ok: true, leadId: lead.id, code, isDuplicate: false };

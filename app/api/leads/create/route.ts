@@ -26,7 +26,33 @@ type Body = {
   consent_pdpa?: unknown;
   campaign?: unknown;
   ad_set?: unknown;
+  attribution?: unknown;
 };
+
+const ATTRIBUTION_KEYS = [
+  "gclid",
+  "gbraid",
+  "wbraid",
+  "utm_source",
+  "utm_medium",
+  "utm_campaign",
+  "utm_term",
+  "utm_content",
+  "landing_page",
+] as const;
+
+function pickAttribution(input: unknown) {
+  if (!input || typeof input !== "object") return undefined;
+  const src = input as Record<string, unknown>;
+  const out: Record<string, string> = {};
+  for (const k of ATTRIBUTION_KEYS) {
+    const v = src[k];
+    if (typeof v === "string" && v.length > 0 && v.length < 1024) {
+      out[k] = v;
+    }
+  }
+  return Object.keys(out).length > 0 ? out : undefined;
+}
 
 const VALID_REWARDS: RewardType[] = ["monthly_1m", "bundle_10q"];
 const VALID_EXAM_TARGETS = ["NL1", "NL2", "both", "unknown"] as const;
@@ -69,6 +95,7 @@ export async function POST(request: Request) {
     rewardChoice: reward,
     consentPdpa: consent,
     rawPayload: body as Record<string, unknown>,
+    attribution: pickAttribution(body.attribution),
   });
 
   if (!result.ok) {

@@ -22,6 +22,7 @@ import {
   CreditCard,
 } from "lucide-react";
 import type { User } from "@supabase/supabase-js";
+import { trackConversion, trackEvent, getStoredAttribution } from "@/lib/gtag";
 
 const PLANS: Record<string, { name: string; price: number; period: string }> = {
   monthly: { name: "รายเดือน", price: 199, period: "/ เดือน" },
@@ -161,6 +162,15 @@ export default function PaymentPage({
     setStripeLoading(true);
     setError("");
     try {
+      const attribution = getStoredAttribution() ?? undefined;
+      const value = planInfo?.price ?? 0;
+      trackEvent("begin_checkout", {
+        currency: "THB",
+        value,
+        items: [{ item_id: plan, item_name: planInfo?.name ?? plan, price: value, quantity: 1 }],
+      });
+      trackConversion("beginCheckout", { currency: "THB", value });
+
       const res = await fetch("/api/billing/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -169,6 +179,7 @@ export default function PaymentPage({
           invoiceData: wantInvoice
             ? { name: invoiceName, taxId: invoiceTaxId, address: invoiceAddress }
             : null,
+          attribution,
         }),
       });
       const data = await res.json();

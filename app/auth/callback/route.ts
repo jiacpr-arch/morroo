@@ -16,6 +16,15 @@ export async function GET(request: Request) {
     const { data, error } = await supabase.auth.exchangeCodeForSession(code);
 
     if (!error && data.user) {
+      // Distinguish new signup vs returning user so we can fire a Google
+      // Ads "sign_up" conversion on the next page only on the first login.
+      const { data: existingProfile } = await supabase
+        .from("profiles")
+        .select("id")
+        .eq("id", data.user.id)
+        .maybeSingle();
+      const isNewSignup = !existingProfile;
+
       // Upsert profile on OAuth login
       await supabase.from("profiles").upsert(
         {
@@ -73,7 +82,9 @@ export async function GET(request: Request) {
           ? "/onboarding"
           : next;
 
-      return NextResponse.redirect(`${origin}${destination}`);
+      const url = new URL(`${origin}${destination}`);
+      if (isNewSignup) url.searchParams.set("signup", "1");
+      return NextResponse.redirect(url.toString());
     }
   }
 

@@ -14,10 +14,31 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { planType, invoiceData } = body as {
+    const { planType, invoiceData, attribution } = body as {
       planType: string;
       invoiceData?: { name: string; taxId: string; address: string } | null;
+      attribution?: Record<string, string> | null;
     };
+
+    // Stripe metadata only accepts string values <= 500 chars and 50 keys
+    // total, so trim and only forward what we'll need server-side later.
+    const ATTRIBUTION_KEYS = [
+      "gclid",
+      "gbraid",
+      "wbraid",
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+    ] as const;
+    const adsMeta: Record<string, string> = {};
+    if (attribution && typeof attribution === "object") {
+      for (const k of ATTRIBUTION_KEYS) {
+        const v = attribution[k];
+        if (typeof v === "string" && v.length > 0 && v.length < 480) {
+          adsMeta[k] = v;
+        }
+      }
+    }
 
     if (!planType || !STRIPE_PLANS[planType]) {
       return NextResponse.json({ error: "ประเภทแพ็กเกจไม่ถูกต้อง" }, { status: 400 });
@@ -50,6 +71,7 @@ export async function POST(request: NextRequest) {
         invoiceTaxId: invoiceData?.taxId ?? "",
         invoiceAddress: invoiceData?.address ?? "",
         invoiceEmail: user.email ?? "",
+        ...adsMeta,
       },
     });
 
