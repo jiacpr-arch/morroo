@@ -11,6 +11,7 @@ import {
   trimHistory,
   type ChatMessage,
 } from "@/lib/chatbot";
+import { getOrCreateLeadFromChannel } from "@/lib/lead-channel";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -147,16 +148,23 @@ async function handleChatbotReply(
   await sendFbTyping(psid, false);
   await sendFbMessage(psid, replyText);
 
+  const leadId = await getOrCreateLeadFromChannel({
+    channel: "facebook",
+    channelUserId: psid,
+  });
+
   await supabase.from("chat_messages").insert([
     {
       channel: "facebook",
       channel_user_id: psid,
+      lead_id: leadId,
       role: "user",
       content: userMessage,
     },
     {
       channel: "facebook",
       channel_user_id: psid,
+      lead_id: leadId,
       role: "assistant",
       content: replyText,
     },

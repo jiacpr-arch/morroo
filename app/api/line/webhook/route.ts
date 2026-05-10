@@ -7,6 +7,7 @@ import {
   type ChatMessage,
 } from "@/lib/chatbot";
 import { buildChatbotCard } from "@/lib/line-flex-templates";
+import { getOrCreateLeadFromChannel } from "@/lib/lead-channel";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -206,16 +207,23 @@ async function handleChatbotReply(
 
   await sendLineMessage(lineUserId, messages);
 
+  const leadId = await getOrCreateLeadFromChannel({
+    channel: "line",
+    channelUserId: lineUserId,
+  });
+
   await supabase.from("chat_messages").insert([
     {
       channel: "line",
       channel_user_id: lineUserId,
+      lead_id: leadId,
       role: "user",
       content: userMessage,
     },
     {
       channel: "line",
       channel_user_id: lineUserId,
+      lead_id: leadId,
       role: "assistant",
       content: replyText,
     },
