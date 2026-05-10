@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { track } from "@/lib/tiktok-pixel";
 
 type Reward = "monthly_1m" | "bundle_10q";
 
@@ -78,6 +79,11 @@ export default function LeadForm({
         setSubmitting(false);
         return;
       }
+      track("CompleteRegistration", {
+        content_name: reward,
+        value: reward === "monthly_1m" ? 199 : 299,
+        currency: "THB",
+      });
       setSuccess({ code: json.code ?? "" });
     } catch (e) {
       setErrorMsg(e instanceof Error ? e.message : "ลองใหม่อีกครั้ง");

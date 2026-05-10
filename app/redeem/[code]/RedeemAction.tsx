@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { track } from "@/lib/tiktok-pixel";
 
 type Props = {
   code: string;
@@ -35,6 +36,11 @@ export default function RedeemAction({ code, rewardType }: Props) {
         setSubmitting(false);
         return;
       }
+      track("Subscribe", {
+        content_name: rewardType,
+        value: rewardType === "monthly_1m" ? 199 : 299,
+        currency: "THB",
+      });
       router.push("/dashboard?welcome=redeem");
     } catch (e) {
       setErrorMsg(e instanceof Error ? e.message : "ลองใหม่อีกครั้ง");
