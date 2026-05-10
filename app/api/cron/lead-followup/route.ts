@@ -17,6 +17,8 @@
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { sendLeadFollowupEmail } from "@/lib/email/send";
+import { sendLineMessage } from "@/lib/line";
+import { sendFbMessage } from "@/lib/facebook-messenger";
 import type { RewardType } from "@/lib/redeem";
 
 export const runtime = "nodejs";
@@ -56,7 +58,32 @@ type CodeRow = {
   expires_at: string;
 };
 
+type LeadDmRow = {
+  id: string;
+  fb_psid: string | null;
+  line_user_id: string | null;
+  name: string | null;
+};
+
+type CodeDmRow = {
+  code: string;
+  reward_type: RewardType;
+  expires_at: string;
+  lead_id: string | null;
+};
+
+const DM_MESSAGES: Record<ReminderDay, (code: string, daysRemaining: number) => string> = {
+  1: (code, days) =>
+    `สวัสดีครับ! โค้ดทดลองใช้ MorRoo ของน้องยังรอน้องอยู่นะครับ 🩺\n\nโค้ด: ${code}\n\nกรอกได้ที่ morroo.com/register ได้เลยครับ (เหลือ ${days} วัน)`,
+  3: (code, days) =>
+    `น้องยังไม่ได้ใช้โค้ดเลยนะครับ! ยังมีเวลาอีก ${days} วัน 😊\n\nโค้ด: ${code}\n\nmorroo.com/register รอน้องอยู่ครับ`,
+  6: (code) =>
+    `⚠️ โค้ดของน้องจะหมดอายุพรุ่งนี้แล้ว! อย่าพลาดนะครับ\n\nโค้ด: ${code}\n\nmorroo.com/register`,
+};
+
 type Summary = Record<`d${ReminderDay}_sent` | `d${ReminderDay}_skipped`, number> & {
+  dm_sent: number;
+  dm_skipped: number;
   errors: number;
 };
 
@@ -69,6 +96,8 @@ async function run(): Promise<Summary> {
     d3_skipped: 0,
     d6_sent: 0,
     d6_skipped: 0,
+    dm_sent: 0,
+    dm_skipped: 0,
     errors: 0,
   };
 
@@ -153,6 +182,103 @@ async function run(): Promise<Summary> {
         summary[`d${day}_sent` as const]++;
       } catch (e) {
         console.error("[lead-followup] failed for lead", lead.id, e);
+        summary.errors++;
+      }
+    }
+  }
+
+  // ─── DM reminders (LINE / Messenger) ─────────────────────────────────────
+  // Anchored on redeem_codes.created_at so timing is accurate regardless of
+  // how many times the lead row's updated_at was touched by the chatbot.
+  const nowIso = new Date().toISOString();
+
+  for (const day of REMINDER_DAYS) {
+    const upper = new Date(Date.now() - day * 24 * 60 * 60 * 1000).toISOString();
+    const lower = new Date(Date.now() - (day + 1) * 24 * 60 * 60 * 1000).toISOString();
+
+    const { data: codes, error: codesError } = await supabase
+      .from("redeem_codes")
+      .select("code, reward_type, expires_at, lead_id")
+      .eq("campaign", "bot_intent_trial")
+      .is("redeemed_at", null)
+      .gt("expires_at", nowIso)
+      .not("lead_id", "is", null)
+      .gte("created_at", lower)
+      .lt("created_at", upper);
+
+    if (codesError) {
+      console.error("[lead-followup] dm codes query failed:", codesError);
+      summary.errors++;
+      continue;
+    }
+    if (!codes?.length) continue;
+
+    const leadIds = (codes as CodeDmRow[]).map((c) => c.lead_id!);
+
+    const { data: leads, error: leadsError } = await supabase
+      .from("leads")
+      .select("id, fb_psid, line_user_id, name")
+      .in("id", leadIds)
+      .eq("stage", "code_issued");
+
+    if (leadsError) {
+      console.error("[lead-followup] dm leads query failed:", leadsError);
+      summary.errors++;
+      continue;
+    }
+
+    const leadMap = new Map(
+      ((leads ?? []) as LeadDmRow[]).map((l) => [l.id, l])
+    );
+
+    for (const codeRow of codes as CodeDmRow[]) {
+      const lead = leadMap.get(codeRow.lead_id!);
+      if (!lead) continue;
+
+      // Prefer LINE; fall back to Messenger.
+      const channel: "line" | "messenger" = lead.line_user_id
+        ? "line"
+        : "messenger";
+      const channelId = lead.line_user_id ?? lead.fb_psid;
+      if (!channelId) continue;
+
+      try {
+        const { data: alreadySent } = await supabase
+          .from("lead_messages_sent")
+          .select("lead_id")
+          .eq("lead_id", lead.id)
+          .eq("day", day)
+          .eq("channel", channel)
+          .maybeSingle();
+
+        if (alreadySent) {
+          summary.dm_skipped++;
+          continue;
+        }
+
+        const expiresAt = new Date(codeRow.expires_at);
+        const daysRemaining = Math.max(
+          0,
+          Math.ceil((expiresAt.getTime() - Date.now()) / 86400_000)
+        );
+        const text = DM_MESSAGES[day](codeRow.code, daysRemaining);
+
+        if (channel === "line") {
+          await sendLineMessage(channelId, [{ type: "text", text }]);
+        } else {
+          await sendFbMessage(channelId, text);
+        }
+
+        const { error: insertError } = await supabase
+          .from("lead_messages_sent")
+          .insert({ lead_id: lead.id, day, channel });
+        if (insertError && insertError.code !== "23505") {
+          console.error("[lead-followup] dm dedupe insert failed:", insertError);
+        }
+
+        summary.dm_sent++;
+      } catch (e) {
+        console.error("[lead-followup] dm failed for lead", lead.id, e);
         summary.errors++;
       }
     }
