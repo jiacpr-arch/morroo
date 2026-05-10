@@ -5,6 +5,7 @@ export type RewardType = "monthly_1m" | "bundle_10q";
 export type RedeemSource =
   | "fb_leadgen_form"
   | "fb_messenger"
+  | "line_oa"
   | "landing"
   | "organic"
   | "admin";

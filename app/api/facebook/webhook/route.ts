@@ -12,6 +12,7 @@ import {
   type ChatMessage,
 } from "@/lib/chatbot";
 import { getOrCreateLeadFromChannel } from "@/lib/lead-channel";
+import { handleBotIntent, handleEmailCapture } from "@/lib/bot-intent";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -107,6 +108,24 @@ async function handleChatbotReply(
   // Show "seen" + typing while we generate so the user knows we got the message.
   await Promise.all([sendFbReadReceipt(psid), sendFbTyping(psid, true)]);
 
+  // Resolve lead early — needed for email capture and intent handling.
+  const leadId = await getOrCreateLeadFromChannel({
+    channel: "facebook",
+    channelUserId: psid,
+  });
+
+  // If the user sent a bare email address, save it and acknowledge.
+  const emailAck = await handleEmailCapture(leadId, userMessage);
+  if (emailAck) {
+    await sendFbTyping(psid, false);
+    await sendFbMessage(psid, emailAck);
+    await supabase.from("chat_messages").insert([
+      { channel: "facebook", channel_user_id: psid, lead_id: leadId, role: "user", content: userMessage },
+      { channel: "facebook", channel_user_id: psid, lead_id: leadId, role: "assistant", content: emailAck },
+    ]);
+    return;
+  }
+
   const sinceIso = new Date(Date.now() - 3600_000).toISOString();
   const { count: recentCount } = await supabase
     .from("chat_messages")
@@ -145,13 +164,17 @@ async function handleChatbotReply(
     ? result.reply
     : "ขอโทษครับ ขณะนี้ระบบมีปัญหาชั่วคราว ลองใหม่อีกครั้งนะครับ 🙏";
 
+  // Issue a free trial code when the AI detected purchase intent.
+  const intentMsg =
+    result.ok && result.intent && leadId
+      ? await handleBotIntent(leadId, result.intent, "facebook")
+      : null;
+
   await sendFbTyping(psid, false);
   await sendFbMessage(psid, replyText);
-
-  const leadId = await getOrCreateLeadFromChannel({
-    channel: "facebook",
-    channelUserId: psid,
-  });
+  if (intentMsg) {
+    await sendFbMessage(psid, intentMsg);
+  }
 
   await supabase.from("chat_messages").insert([
     {
@@ -166,7 +189,7 @@ async function handleChatbotReply(
       channel_user_id: psid,
       lead_id: leadId,
       role: "assistant",
-      content: replyText,
+      content: intentMsg ? `${replyText}\n\n${intentMsg}` : replyText,
     },
   ]);
 }

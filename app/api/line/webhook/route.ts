@@ -8,6 +8,7 @@ import {
 } from "@/lib/chatbot";
 import { buildChatbotCard } from "@/lib/line-flex-templates";
 import { getOrCreateLeadFromChannel } from "@/lib/lead-channel";
+import { handleBotIntent, handleEmailCapture } from "@/lib/bot-intent";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -161,6 +162,23 @@ async function handleChatbotReply(
   lineUserId: string,
   userMessage: string
 ): Promise<void> {
+  // Resolve lead early — needed for email capture and intent handling.
+  const leadId = await getOrCreateLeadFromChannel({
+    channel: "line",
+    channelUserId: lineUserId,
+  });
+
+  // If the user sent a bare email address, save it and acknowledge.
+  const emailAck = await handleEmailCapture(leadId, userMessage);
+  if (emailAck) {
+    await sendLineMessage(lineUserId, [{ type: "text", text: emailAck }]);
+    await supabase.from("chat_messages").insert([
+      { channel: "line", channel_user_id: lineUserId, lead_id: leadId, role: "user", content: userMessage },
+      { channel: "line", channel_user_id: lineUserId, lead_id: leadId, role: "assistant", content: emailAck },
+    ]);
+    return;
+  }
+
   const sinceIso = new Date(Date.now() - 3600_000).toISOString();
   const { count: recentCount } = await supabase
     .from("chat_messages")
@@ -205,12 +223,16 @@ async function handleChatbotReply(
     messages.push(buildChatbotCard(result.card));
   }
 
-  await sendLineMessage(lineUserId, messages);
+  // Issue a free trial code when the AI detected purchase intent.
+  const intentMsg =
+    result.ok && result.intent && leadId
+      ? await handleBotIntent(leadId, result.intent, "line")
+      : null;
+  if (intentMsg) {
+    messages.push({ type: "text", text: intentMsg });
+  }
 
-  const leadId = await getOrCreateLeadFromChannel({
-    channel: "line",
-    channelUserId: lineUserId,
-  });
+  await sendLineMessage(lineUserId, messages);
 
   await supabase.from("chat_messages").insert([
     {
@@ -225,7 +247,7 @@ async function handleChatbotReply(
       channel_user_id: lineUserId,
       lead_id: leadId,
       role: "assistant",
-      content: replyText,
+      content: intentMsg ? `${replyText}\n\n${intentMsg}` : replyText,
     },
   ]);
 }
