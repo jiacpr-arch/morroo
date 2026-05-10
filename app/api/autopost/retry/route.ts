@@ -163,19 +163,12 @@ export async function GET(request: Request) {
         apiKey: process.env.ANTHROPIC_API_KEY,
       });
       const hashtags = `#เตรียมสอบแพทย์ #หมอรู้ #${categoryHashtag(post.category)}`;
-      const coverForFb =
-        format === "cover_caption"
-          ? (post.cover_image ?? null)
-          : format === "quote_card"
-            ? `${siteUrl}/api/og/quote?slug=${post.slug}`
-            : null;
 
       try {
         const fbId = await postToFacebook({
           title: post.title,
           description: post.description,
           slug: post.slug,
-          coverImage: coverForFb,
           hook: format === "cover_caption" ? `${hook}\n\n${hashtags}` : hook,
         });
         await supabase.from("blog_posts").update({

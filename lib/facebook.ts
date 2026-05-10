@@ -17,7 +17,6 @@
  *   DELETE FROM app_settings WHERE key = 'facebook_user_token';
  */
 
-import sharp from "sharp";
 import { createAdminClient } from "@/lib/supabase/admin";
 
 /** Exchange current User Token for a fresh long-lived one (60 days) */
@@ -78,7 +77,6 @@ export async function postToFacebook(post: {
   title: string;
   description: string;
   slug: string;
-  coverImage: string | null;
   hook?: string;
 }): Promise<string> {
   const pageId = process.env.FACEBOOK_PAGE_ID;
@@ -110,54 +108,26 @@ export async function postToFacebook(post: {
     throw new Error("Failed to obtain Facebook Page token");
   }
 
-  // Step 4: Post to Facebook
+  // Step 4: Post to Facebook as a feed post with `link` param. FB scrapes
+  // OG meta from the article page to render the link preview card, and the
+  // full URL in the message body remains clickable to the exact path
+  // (photo posts truncate caption autolinks to the domain). Requires the
+  // host to be registered under FB App Settings → Basic → App Domains, and
+  // the article page must expose absolute og:image / og:title / og:description.
   const articleUrl = `${siteUrl}/blog/${post.slug}`;
-  // FB caption auto-link ตัด path ของ URL ทุกความยาว — กด URL ได้แค่ domain
-  // แก้โดยใส่ navigation hint ให้ user ไปต่อหา "บทความ" เมนูเองที่ homepage
-  const navHint = `📖 อ่านบทความเต็มที่ ${siteUrl} → เมนู "บทความ"`;
-  const photo_caption = post.hook
-    ? `${post.hook}\n\n${navHint}`
-    : `📚 ${post.title}\n\n${post.description}\n\n${navHint}`;
-  const feed_message = post.hook
+  const message = post.hook
     ? `${post.hook}\n\n${articleUrl}`
     : `📚 ${post.title}\n\n${post.description}\n\n${articleUrl}`;
 
-  let res: Response;
-
-  if (post.coverImage) {
-    // Download cover and convert to JPEG before upload — FB sometimes
-    // rejects fetching from Supabase Storage URLs with cache-bust query
-    // strings, and gpt-image-1 PNGs occasionally have format quirks.
-    const imgRes = await fetch(post.coverImage);
-    if (!imgRes.ok) {
-      throw new Error(`Failed to fetch cover image: HTTP ${imgRes.status}`);
-    }
-    const rawBuffer = Buffer.from(await imgRes.arrayBuffer());
-    const jpegBuffer = await sharp(rawBuffer).jpeg({ quality: 90 }).toBuffer();
-
-    const fd = new FormData();
-    fd.append("source", new Blob([new Uint8Array(jpegBuffer)], { type: "image/jpeg" }), "cover.jpg");
-    fd.append("caption", photo_caption);
-    fd.append("access_token", pageToken);
-
-    res = await fetch(`https://graph.facebook.com/v24.0/${pageId}/photos`, {
-      method: "POST",
-      body: fd,
-    });
-  } else {
-    // No cover: post with explicit `link` param so FB scrapes OG meta and
-    // renders a rich link card preview. Requires the domain to be registered
-    // under FB App Settings → Basic → App Domains.
-    res = await fetch(`https://graph.facebook.com/v24.0/${pageId}/feed`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        message: feed_message,
-        link: articleUrl,
-        access_token: pageToken,
-      }),
-    });
-  }
+  const res = await fetch(`https://graph.facebook.com/v24.0/${pageId}/feed`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      message,
+      link: articleUrl,
+      access_token: pageToken,
+    }),
+  });
 
   const data = await res.json();
 
