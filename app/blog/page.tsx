@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getBlogPosts } from "@/lib/blog";
 import type { Metadata } from "next";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "บทความเตรียมสอบแพทย์ — MEQ, MCQ, NL Step 3",

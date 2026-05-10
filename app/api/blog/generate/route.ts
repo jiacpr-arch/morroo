@@ -368,21 +368,13 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
     const hashtags = `#เตรียมสอบแพทย์ #หมอรู้ #${categoryHashtag(category)}`;
     const fullCaption = `${hook}\n\n${hashtags}`;
 
-    // Determine cover image for FB based on format
-    const coverForFb =
-      format === "cover_caption"
-        ? coverImageUrl
-        : format === "quote_card"
-          ? `${siteUrl}/api/og/quote?slug=${saved.slug}`
-          : null; // link_only — FB renders OG card from blog page
-
-    // FB autopost
+    // FB autopost — feed post with `link` param; FB scrapes OG card from
+    // the blog page so no per-format cover override is needed here.
     try {
       const fbId = await postToFacebook({
         title: saved.title,
         description: article.description,
         slug: saved.slug,
-        coverImage: coverForFb,
         hook: format === "cover_caption" ? fullCaption : hook,
       });
       await supabaseAsync.from("blog_posts").update({

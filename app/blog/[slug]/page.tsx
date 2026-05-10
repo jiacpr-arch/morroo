@@ -1,10 +1,20 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { getBlogPost, getBlogPosts } from "@/lib/blog";
+import { getBlogPost, getBlogPosts, getAllSlugs } from "@/lib/blog";
 import type { Metadata } from "next";
 
-export const dynamic = "force-dynamic";
+// ISR — revalidate 60s. Static HTML is served from Vercel's edge cache,
+// which (1) bypasses serverless function rate limits that the FB scraper
+// kept tripping into 403, (2) gives FB instant scrape latency, (3) keeps
+// content fresh enough that newly-published posts appear within a minute.
+export const revalidate = 60;
+export const dynamicParams = true;
+
+export async function generateStaticParams() {
+  const slugs = await getAllSlugs();
+  return slugs.map((slug) => ({ slug }));
+}
 
 export async function generateMetadata({
   params,
