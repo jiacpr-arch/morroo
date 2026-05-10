@@ -9,6 +9,7 @@ import {
   weeklyDigestEmail,
   redeemCodeEmail,
   leadFollowupEmail,
+  trialExpiryEmail,
 } from "./templates";
 import type {
   WelcomeEmailProps,
@@ -17,6 +18,7 @@ import type {
   WeeklyDigestProps,
   RedeemCodeEmailProps,
   LeadFollowupEmailProps,
+  TrialExpiryEmailProps,
 } from "./templates";
 
 const FROM_ADDRESS = "หมอรู้ <noreply@morroo.com>";
@@ -144,5 +146,19 @@ export async function sendLeadFollowupEmail(
     to: props.email,
     subject,
     html: leadFollowupEmail(props),
+  });
+}
+
+export async function sendTrialExpiryEmail(
+  props: TrialExpiryEmailProps & { email: string }
+) {
+  const subject =
+    props.daysBeforeExpiry === 3
+      ? "⏳ เหลือ 3 วัน — สมาชิกหมอรู้ของคุณกำลังจะหมดอายุ"
+      : "🚨 พรุ่งนี้หมดอายุ — ต่ออายุสมาชิกหมอรู้";
+  return sendEmail({
+    to: props.email,
+    subject,
+    html: trialExpiryEmail(props),
   });
 }

@@ -24,6 +24,14 @@ export interface LeadFollowupEmailProps {
   day: 1 | 3 | 6;
 }
 
+export interface TrialExpiryEmailProps {
+  name: string;
+  expiresAt: string; // ISO
+  pricingUrl: string;
+  /** Days remaining (3 or 1) — selects copy variant. */
+  daysBeforeExpiry: 3 | 1;
+}
+
 export interface ReceiptEmailProps {
   name: string;
   email: string;
@@ -535,6 +543,86 @@ export function leadFollowupEmail({
 
     <p style="color: #6b7280; font-size: 13px; line-height: 1.6; margin: 24px 0 0;">
       ใช้ได้ครั้งเดียวต่อบัญชี หากมีคำถามตอบกลับอีเมลนี้ได้เลยครับ
+    </p>
+  </div>
+  ${footerHtml}
+</div>
+</body>
+</html>`;
+}
+
+export function trialExpiryEmail({
+  name,
+  expiresAt,
+  pricingUrl,
+  daysBeforeExpiry,
+}: TrialExpiryEmailProps): string {
+  const expiresLabel = new Date(expiresAt).toLocaleDateString("th-TH", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
+  const variant =
+    daysBeforeExpiry === 3
+      ? {
+          headline: "เหลืออีก 3 วัน — ต่ออายุก่อนพลาด ⏳",
+          subhead:
+            "สมาชิกรายเดือนของคุณกำลังจะหมดอายุ — ต่อเลยเพื่อใช้งาน MEQ + MCQ + Long Case ไม่จำกัดต่อ",
+          ctaLabel: "ต่ออายุสมาชิก",
+          accent: "#D97706",
+        }
+      : {
+          headline: "พรุ่งนี้หมดอายุ! 🚨",
+          subhead:
+            "อย่าเสียโมเมนตัมการอ่านที่สั่งสมไว้ — ต่ออายุภายในวันนี้เพื่อใช้งานต่อเนื่อง",
+          ctaLabel: "ต่ออายุเดี๋ยวนี้",
+          accent: "#DC2626",
+        };
+
+  return `<!DOCTYPE html>
+<html lang="th">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body style="margin:0;padding:0;background:#f4f4f4;">
+<div style="${baseStyle}">
+  ${headerHtml}
+  <div style="padding: 32px;">
+    <h2 style="color: ${DARK_COLOR}; font-size: 22px; margin: 0 0 12px;">${variant.headline}</h2>
+    <p style="color: #374151; font-size: 16px; line-height: 1.6; margin: 0 0 16px;">
+      สวัสดีคุณ <strong>${name}</strong>,
+    </p>
+    <p style="color: #374151; font-size: 16px; line-height: 1.6; margin: 0 0 24px;">
+      ${variant.subhead}
+    </p>
+
+    <div style="background: #f9fafb; border-left: 4px solid ${variant.accent}; padding: 16px 20px; margin: 24px 0;">
+      <p style="color: #6b7280; font-size: 13px; margin: 0 0 4px;">สมาชิกของคุณหมดอายุ</p>
+      <p style="color: ${DARK_COLOR}; font-size: 18px; font-weight: 600; margin: 0;">
+        ${expiresLabel}
+      </p>
+    </div>
+
+    <div style="text-align: center; margin: 28px 0;">
+      <a href="${pricingUrl}"
+         style="display: inline-block; background: ${variant.accent}; color: #ffffff; text-decoration: none;
+                padding: 14px 32px; border-radius: 8px; font-size: 16px; font-weight: 600;">
+        ${variant.ctaLabel} →
+      </a>
+    </div>
+
+    <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 18px 20px; margin: 24px 0;">
+      <p style="color: ${DARK_COLOR}; font-size: 14px; line-height: 1.6; margin: 0 0 8px; font-weight: 600;">
+        สิ่งที่คุณจะเสียถ้าไม่ต่อ
+      </p>
+      <ul style="color: #374151; font-size: 14px; line-height: 1.8; margin: 0; padding-left: 20px;">
+        <li>MEQ + MCQ + Long Case ไม่จำกัด → กลับไปใช้ quota ฟรี</li>
+        <li>AI feedback แบบละเอียด → ใช้ได้แค่ข้อตัวอย่าง</li>
+        <li>ข้อสอบใหม่ทุกสัปดาห์ → ไม่ได้รับ</li>
+      </ul>
+    </div>
+
+    <p style="color: #6b7280; font-size: 13px; line-height: 1.6; margin: 24px 0 0;">
+      มีคำถามตอบกลับอีเมลนี้ได้เลยครับ — ทีมหมอรู้พร้อมช่วย
     </p>
   </div>
   ${footerHtml}
