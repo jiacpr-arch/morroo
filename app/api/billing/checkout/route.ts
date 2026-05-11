@@ -50,6 +50,8 @@ export async function POST(request: NextRequest) {
         invoiceTaxId: invoiceData?.taxId ?? "",
         invoiceAddress: invoiceData?.address ?? "",
         invoiceEmail: user.email ?? "",
+        ttclid: request.cookies.get("ttclid")?.value ?? "",
+        ttp: request.cookies.get("_ttp")?.value ?? "",
       },
     });
 
