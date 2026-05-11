@@ -4,7 +4,15 @@ import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MessageCircle, Users, ArrowLeft, Globe, Smartphone, Facebook } from "lucide-react";
+import { MessageCircle, Users, ArrowLeft, Globe, Smartphone } from "lucide-react";
+
+function FacebookIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+    </svg>
+  );
+}
 import type { Metadata } from "next";
 
 export const metadata: Metadata = { title: "Chatbot Analytics | Admin" };
@@ -15,7 +23,7 @@ type Channel = "web" | "line" | "facebook";
 const CHANNEL_META: Record<Channel, { label: string; color: string; bg: string; icon: React.ReactNode }> = {
   web:      { label: "Web",      color: "text-teal-700",  bg: "bg-teal-50",   icon: <Globe className="h-5 w-5 text-teal-600" /> },
   line:     { label: "LINE",     color: "text-green-700", bg: "bg-green-50",  icon: <Smartphone className="h-5 w-5 text-green-600" /> },
-  facebook: { label: "Facebook", color: "text-blue-700",  bg: "bg-blue-50",   icon: <Facebook className="h-5 w-5 text-blue-600" /> },
+  facebook: { label: "Facebook", color: "text-blue-700",  bg: "bg-blue-50",   icon: <FacebookIcon className="h-5 w-5 text-blue-600" /> },
 };
 
 function fmt(n: number) {
