@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse, after } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { sendLineMessage, verifyLineSignature, type LineMessage } from "@/lib/line";
 import {
@@ -9,6 +9,7 @@ import {
 import { buildChatbotCard } from "@/lib/line-flex-templates";
 import { getOrCreateLeadFromChannel } from "@/lib/lead-channel";
 import { handleBotIntent, handleEmailCapture } from "@/lib/bot-intent";
+import { enqueueWebhook, markWebhookDone, markWebhookFailed } from "@/lib/webhook-queue";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -21,7 +22,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Invalid signature" }, { status: 401 });
   }
 
-  const { events } = JSON.parse(body) as {
+  const parsed = JSON.parse(body) as {
     events: Array<{
       type: string;
       source?: { userId?: string };
@@ -29,6 +30,31 @@ export async function POST(request: NextRequest) {
     }>;
   };
 
+  // Persist to queue first, then process after the 200 is sent.
+  // LINE requires a response within 30s — processing via after() prevents timeouts.
+  const eventId = await enqueueWebhook("line", parsed as Record<string, unknown>);
+
+  after(async () => {
+    try {
+      await processLinePayload(parsed);
+      if (eventId) await markWebhookDone(eventId);
+    } catch (err) {
+      console.error("[line-webhook] processing error:", err);
+      if (eventId) await markWebhookFailed(eventId, String(err));
+    }
+  });
+
+  return NextResponse.json({ ok: true });
+}
+
+async function processLinePayload(parsed: {
+  events: Array<{
+    type: string;
+    source?: { userId?: string };
+    message?: { type: string; text?: string };
+  }>;
+}): Promise<void> {
+  const { events } = parsed;
   const supabase = createAdminClient();
 
   for (const event of events) {
@@ -150,8 +176,6 @@ export async function POST(request: NextRequest) {
       ]);
     }
   }
-
-  return NextResponse.json({ ok: true });
 }
 
 /** Cap user messages per LINE user per hour to keep AI cost predictable. */
