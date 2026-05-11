@@ -160,6 +160,14 @@ export default function PaymentPage({
     if (!user) return;
     setStripeLoading(true);
     setError("");
+    const planPrice: Record<string, number> = { monthly: 199, yearly: 1490, bundle: 299 };
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (window as any).ttq?.track("InitiateCheckout", {
+      value: planPrice[plan] ?? 0,
+      currency: "THB",
+      content_id: plan,
+      content_type: "subscription",
+    });
     try {
       const res = await fetch("/api/billing/checkout", {
         method: "POST",
