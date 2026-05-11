@@ -1,6 +1,6 @@
 import { createHash, randomUUID } from "node:crypto";
 
-const PIXEL_ID = "D80UTR3C77UEO91IVCV0";
+const PIXEL_ID = process.env.TIKTOK_PIXEL_ID ?? "D80UTR3C77UEO91IVCV0";
 const ENDPOINT = "https://business-api.tiktok.com/open_api/v1.3/event/track/";
 
 type TikTokEventName =
@@ -39,7 +39,7 @@ function sha256(value: string): string {
 }
 
 export async function sendTikTokEvent(input: TikTokEventInput): Promise<void> {
-  const token = process.env.TIKTOK_ACCESS_TOKEN;
+  const token = process.env.TIKTOK_EVENTS_API_TOKEN ?? process.env.TIKTOK_ACCESS_TOKEN;
   if (!token) return;
 
   const user: Record<string, string> = {};

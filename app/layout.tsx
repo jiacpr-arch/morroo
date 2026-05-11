@@ -11,7 +11,7 @@ import ChatWidget from "@/components/ChatWidget";
 import "./globals.css";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
-const TIKTOK_PIXEL_ID = "D80UTR3C77UEO91IVCV0";
+const TIKTOK_PIXEL_ID = process.env.NEXT_PUBLIC_TIKTOK_PIXEL_ID ?? "D80UTR3C77UEO91IVCV0";
 
 const sarabun = Sarabun({
   variable: "--font-sarabun",
