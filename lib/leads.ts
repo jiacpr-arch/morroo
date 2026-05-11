@@ -1,6 +1,8 @@
 import { createAdminClient } from "@/lib/supabase/admin";
 import { issueRedeemCode, type RewardType, type RedeemSource } from "@/lib/redeem";
 import { sendRedeemCodeEmail } from "@/lib/email/send";
+import { sendMetaLead } from "@/lib/meta-capi";
+import { sendTikTokLead } from "@/lib/tiktok-events";
 
 const REWARD_LABEL: Record<RewardType, string> = {
   monthly_1m: "สมาชิกรายเดือน 1 เดือน",
@@ -122,6 +124,13 @@ export async function createLead(
     console.error("createLead issueRedeemCode failed:", e);
     return { ok: false, error: "db_error" };
   }
+
+  // Fire server-side Lead events (non-blocking)
+  const capiUser = { email, phone: args.phone };
+  Promise.all([
+    sendMetaLead({ user: capiUser }),
+    sendTikTokLead({ user: capiUser }),
+  ]).catch((e) => console.error("[CAPI] lead event error:", e));
 
   return { ok: true, leadId: lead.id, code, isDuplicate: false };
 }

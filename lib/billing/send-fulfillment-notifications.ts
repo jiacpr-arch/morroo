@@ -11,6 +11,8 @@ import { STRIPE_PLANS } from "@/lib/stripe";
 import { sendLineMessage } from "@/lib/line";
 import { createCashInvoice } from "@/lib/flowaccount";
 import { lineNotifyNewOrder, emailReceipt, emailNotifyAdmin } from "@/lib/notifications";
+import { sendMetaPurchase } from "@/lib/meta-capi";
+import { sendTikTokPurchase } from "@/lib/tiktok-events";
 import type { FulfillmentResult } from "./fulfill-checkout";
 
 type NotifyPayload = NonNullable<FulfillmentResult["notify"]>;
@@ -74,6 +76,26 @@ export async function sendFulfillmentNotifications(data: NotifyPayload): Promise
     ]);
   } catch (err) {
     console.error("[Notify] error:", err);
+  }
+
+  // Fire server-side conversion events (Meta CAPI + TikTok Events API)
+  try {
+    const capiUser = {
+      email: data.invoiceEmail || undefined,
+      externalId: data.userId,
+    };
+    const purchasePayload = {
+      value: data.totalAmount,
+      currency: "THB",
+      orderId: data.orderId ?? undefined,
+      user: capiUser,
+    };
+    await Promise.all([
+      sendMetaPurchase(purchasePayload),
+      sendTikTokPurchase(purchasePayload),
+    ]);
+  } catch (err) {
+    console.error("[CAPI] purchase event error:", err);
   }
 
   // Create tax invoice/receipt in FlowAccount

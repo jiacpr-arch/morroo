@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse, after } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import {
   sendFbMessage,
@@ -13,6 +13,7 @@ import {
 } from "@/lib/chatbot";
 import { getOrCreateLeadFromChannel } from "@/lib/lead-channel";
 import { handleBotIntent, handleEmailCapture } from "@/lib/bot-intent";
+import { enqueueWebhook, markWebhookDone, markWebhookFailed } from "@/lib/webhook-queue";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -65,8 +66,8 @@ type FbWebhookBody = {
 };
 
 /**
- * POST = message events from users. Verify signature, then for each text message
- * route to the shared chatbot brain and reply via Send API.
+ * POST = message events from users. Verify signature, persist to queue,
+ * then process via after() so Meta gets a fast 200 (no retry).
  */
 export async function POST(request: NextRequest) {
   const rawBody = await request.text();
@@ -81,6 +82,22 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ ok: true });
   }
 
+  const eventId = await enqueueWebhook("facebook", body as Record<string, unknown>);
+
+  after(async () => {
+    try {
+      await processFacebookPayload(body);
+      if (eventId) await markWebhookDone(eventId);
+    } catch (err) {
+      console.error("[fb-webhook] processing error:", err);
+      if (eventId) await markWebhookFailed(eventId, String(err));
+    }
+  });
+
+  return NextResponse.json({ ok: true });
+}
+
+async function processFacebookPayload(body: FbWebhookBody): Promise<void> {
   const supabase = createAdminClient();
 
   for (const entry of body.entry ?? []) {
@@ -88,16 +105,11 @@ export async function POST(request: NextRequest) {
       const senderPsid = event.sender?.id;
       const text = event.message?.text?.trim();
 
-      // Ignore: messages without text (stickers/attachments), echoes from our own page,
-      // delivery/read receipts that arrive without a `message` field.
       if (!senderPsid || !text || event.message?.is_echo) continue;
 
       await handleChatbotReply(supabase, senderPsid, text);
     }
   }
-
-  // Always 200 so Meta doesn't retry.
-  return NextResponse.json({ ok: true });
 }
 
 async function handleChatbotReply(

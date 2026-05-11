@@ -18,6 +18,8 @@ import {
   ClipboardList,
   Sparkles,
   MessageCircle,
+  TrendingUp,
+  Tag,
 } from "lucide-react";
 
 interface HeatmapCell {
@@ -288,6 +290,32 @@ export default function AdminDashboard() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">สถิติพี่หมอรู้ — ข้อความ ผู้ใช้ และ trend แต่ละ channel</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/crm">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-indigo-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <TrendingUp className="h-5 w-5 text-indigo-600" />
+                <h3 className="font-bold">CRM Dashboard</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">Funnel, conversion rate, และ lead ตามแหล่งที่มา</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/coupons">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-orange-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Tag className="h-5 w-5 text-orange-600" />
+                <h3 className="font-bold">Coupons</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">สร้างและจัดการโค้ดส่วนลดสำหรับแพ็กเกจต่างๆ</p>
             </CardContent>
           </Card>
         </Link>
