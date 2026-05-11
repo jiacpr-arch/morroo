@@ -57,12 +57,16 @@ export async function POST(request: NextRequest) {
 
         const buyerEmail =
           session.customer_details?.email ?? session.customer_email ?? null;
+        const ttclid = session.metadata?.ttclid || null;
+        const ttp = session.metadata?.ttp || null;
         after(() =>
           sendTikTokEvent({
             event: "Subscribe",
             eventId: session.id,
             email: buyerEmail,
             externalId: notify.userId,
+            ttclid,
+            ttp,
             value: notify.totalAmount,
             currency: (session.currency ?? "thb").toUpperCase(),
             contentId: notify.planType,
