@@ -2,6 +2,7 @@ import { NextRequest, NextResponse, after } from "next/server";
 import Stripe from "stripe";
 import { fulfillCheckoutSession } from "@/lib/billing/fulfill-checkout";
 import { sendFulfillmentNotifications } from "@/lib/billing/send-fulfillment-notifications";
+import { sendTikTokEvent } from "@/lib/tiktok/events-api";
 
 export const runtime = "nodejs";
 
@@ -53,6 +54,22 @@ export async function POST(request: NextRequest) {
         // can no longer cause Stripe to mark the delivery as failed.
         const notify = result.notify;
         after(() => sendFulfillmentNotifications(notify));
+
+        const buyerEmail =
+          session.customer_details?.email ?? session.customer_email ?? null;
+        after(() =>
+          sendTikTokEvent({
+            event: "Subscribe",
+            eventId: session.id,
+            email: buyerEmail,
+            externalId: notify.userId,
+            value: notify.totalAmount,
+            currency: (session.currency ?? "thb").toUpperCase(),
+            contentId: notify.planType,
+            contentName: notify.planLabel,
+            contentType: "subscription",
+          })
+        );
       }
     }
   } catch (err) {
