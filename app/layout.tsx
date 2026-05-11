@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
 import { Sarabun } from "next/font/google";
 import { Geist_Mono } from "next/font/google";
-import Script from "next/script";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BetaProvider } from "@/components/beta/BetaProvider";
 import BetaWelcomeModal from "@/components/beta/BetaWelcomeModal";
 import BetaPromoBanner from "@/components/beta/BetaPromoBanner";
 import ChatWidget from "@/components/ChatWidget";
+import AnalyticsScripts from "@/components/AnalyticsScripts";
+import FacebookPixel from "@/components/FacebookPixel";
+import AdsAttributionTracker from "@/components/AdsAttributionTracker";
+import SignupConversionTracker from "@/components/SignupConversionTracker";
 import "./globals.css";
-
-const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 const sarabun = Sarabun({
   variable: "--font-sarabun",
@@ -93,6 +94,22 @@ const organizationSchema = {
   sameAs: ["https://www.facebook.com/morroo"],
 };
 
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "หมอรู้ (MorRoo)",
+  url: "https://www.morroo.com",
+  inLanguage: "th-TH",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: "https://www.morroo.com/blog?q={search_term_string}",
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -141,21 +158,18 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       </head>
       <body className="min-h-full flex flex-col">
-        {GA_ID && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-              strategy="afterInteractive"
-            />
-            <Script id="ga4-init" strategy="afterInteractive">
-              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`}
-            </Script>
-          </>
-        )}
+        <AnalyticsScripts />
+        <FacebookPixel />
+        <AdsAttributionTracker />
+        <SignupConversionTracker />
         <BetaProvider>
           <BetaPromoBanner variant="sticky-top" />
           <Navbar />

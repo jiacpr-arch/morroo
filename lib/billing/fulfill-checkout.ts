@@ -14,6 +14,9 @@
 
 import type Stripe from "stripe";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { sendCapiEvent } from "@/lib/facebook-capi";
+import { sha256Norm, normalizePhoneTH } from "@/lib/facebook-pixel";
+import { uploadOfflineConversion } from "@/lib/google-ads-server";
 
 export interface FulfillmentResult {
   alreadyProcessed: boolean;
@@ -112,9 +115,60 @@ export async function fulfillCheckoutSession(
       status: "approved",
       payment_method: "stripe",
       stripe_session_id: session.id,
+      gclid: metadata.gclid ?? null,
+      gbraid: metadata.gbraid ?? null,
+      wbraid: metadata.wbraid ?? null,
+      fbclid: metadata.fbclid ?? null,
+      fbc: metadata.fbc ?? null,
+      fbp: metadata.fbp ?? null,
+      fb_event_id: metadata.fb_event_id_purchase ?? null,
+      utm_source: metadata.utm_source ?? null,
+      utm_medium: metadata.utm_medium ?? null,
+      utm_campaign: metadata.utm_campaign ?? null,
     })
     .select("id")
     .single();
+
+  // Fire-and-forget Meta CAPI Purchase. We're inside the !existingOrder
+  // branch so the existing idempotency check guarantees this fires exactly
+  // once even when both the webhook and /verify race to fulfill.
+  if (metadata.fb_event_id_purchase) {
+    const buyerEmail = session.customer_details?.email ?? metadata.invoiceEmail;
+    const buyerPhone = session.customer_details?.phone ?? undefined;
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com";
+
+    sendCapiEvent({
+      eventName: "Purchase",
+      eventId: metadata.fb_event_id_purchase,
+      actionSource: "website",
+      eventSourceUrl: `${siteUrl}/payment/success`,
+      userData: {
+        em: buyerEmail ? sha256Norm(buyerEmail) : undefined,
+        ph: buyerPhone
+          ? sha256Norm(normalizePhoneTH(buyerPhone).replace(/^\+/, ""))
+          : undefined,
+        fbc: metadata.fbc || undefined,
+        fbp: metadata.fbp || undefined,
+        external_id: userId,
+      },
+      customData: {
+        value: totalAmount,
+        currency: (session.currency ?? "thb").toUpperCase(),
+        content_ids: [planType],
+        content_name: planType,
+        content_type: "product",
+      },
+    })
+      .then(async (result) => {
+        if (result.ok && orderData?.id) {
+          await supabase
+            .from("payment_orders")
+            .update({ fb_capi_uploaded_at: new Date().toISOString() })
+            .eq("id", orderData.id);
+        }
+      })
+      .catch((e) => console.error("[fulfill] CAPI Purchase failed:", e));
+  }
 
   if (orderError) {
     console.error("[fulfill] failed to create payment order:", orderError);
@@ -229,6 +283,34 @@ export async function fulfillCheckoutSession(
     yearly: "รายปี",
     bundle: "ชุดข้อสอบ",
   };
+
+  // Fire-and-forget offline purchase conversion to Google Ads. Same pattern
+  // as leads — guarded by env config, never blocks fulfillment.
+  const gclid = metadata.gclid;
+  const gbraid = metadata.gbraid;
+  const wbraid = metadata.wbraid;
+  if (gclid || gbraid || wbraid) {
+    uploadOfflineConversion({
+      type: "purchase",
+      gclid: gclid ?? null,
+      gbraid: gbraid ?? null,
+      wbraid: wbraid ?? null,
+      conversionValue: totalAmount,
+      currencyCode: (session.currency ?? "thb").toUpperCase(),
+      orderId: session.id,
+      email: invoiceEmail || session.customer_details?.email || null,
+      phone: session.customer_details?.phone ?? null,
+    })
+      .then(async (result) => {
+        if (result.ok && orderData?.id) {
+          await supabase
+            .from("payment_orders")
+            .update({ conv_uploaded_at: new Date().toISOString() })
+            .eq("id", orderData.id);
+        }
+      })
+      .catch((e) => console.error("[fulfill] offline conversion upload failed:", e));
+  }
 
   return {
     alreadyProcessed: false,

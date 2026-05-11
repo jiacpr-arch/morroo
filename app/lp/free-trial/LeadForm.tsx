@@ -5,6 +5,12 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { trackConversion, trackEvent, getStoredAttribution } from "@/lib/gtag";
+import {
+  trackFbEvent,
+  getStoredFbAttribution,
+  newClientEventId,
+} from "@/lib/fb-browser";
 
 type Reward = "monthly_1m" | "bundle_10q";
 
@@ -57,6 +63,13 @@ export default function LeadForm({
     setSubmitting(true);
     setErrorMsg("");
     try {
+      // Merge Google + FB attribution into one blob the server will persist.
+      const googleAttr = getStoredAttribution() ?? {};
+      const fbAttr = getStoredFbAttribution() ?? {};
+      const attribution = { ...googleAttr, ...fbAttr };
+      const fbEventId = newClientEventId();
+      const value = reward === "monthly_1m" ? 199 : 50;
+
       const res = await fetch("/api/leads/create", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -70,6 +83,8 @@ export default function LeadForm({
           consent_pdpa: consent,
           campaign,
           ad_set: adSet,
+          attribution,
+          fb_event_id: fbEventId,
         }),
       });
       const json = (await res.json()) as { error?: string; code?: string };
@@ -78,6 +93,21 @@ export default function LeadForm({
         setSubmitting(false);
         return;
       }
+      trackEvent("generate_lead", {
+        currency: "THB",
+        value,
+        reward_choice: reward,
+      });
+      trackConversion("lead", {
+        currency: "THB",
+        value,
+        transactionId: json.code,
+      });
+      trackFbEvent(
+        "Lead",
+        { value, currency: "THB", content_name: "free_trial" },
+        fbEventId
+      );
       setSuccess({ code: json.code ?? "" });
     } catch (e) {
       setErrorMsg(e instanceof Error ? e.message : "ลองใหม่อีกครั้ง");

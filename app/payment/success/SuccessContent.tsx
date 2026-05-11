@@ -1,11 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Loader2, AlertCircle } from "lucide-react";
+import { trackConversion, trackEvent } from "@/lib/gtag";
+import { trackFbEvent } from "@/lib/fb-browser";
 
 type VerifyStatus = "verifying" | "ok" | "pending" | "error";
 
@@ -18,6 +20,7 @@ export default function SuccessContent() {
     sessionId ? "verifying" : "ok"
   );
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const conversionFired = useRef(false);
 
   // Self-healing fallback: call /api/billing/verify on mount. This
   // guarantees the user gets their membership even if the Stripe webhook
@@ -38,6 +41,13 @@ export default function SuccessContent() {
         const data = (await res.json()) as {
           status?: string;
           error?: string;
+          purchase?: {
+            transactionId: string;
+            value: number;
+            currency: string;
+            planType: string | null;
+            fbEventId: string | null;
+          };
         };
         if (cancelled) return;
 
@@ -51,6 +61,33 @@ export default function SuccessContent() {
           setStatus("pending");
         } else {
           setStatus("ok");
+          if (data.purchase && !conversionFired.current) {
+            conversionFired.current = true;
+            const p = data.purchase;
+            trackEvent("purchase", {
+              transaction_id: p.transactionId,
+              value: p.value,
+              currency: p.currency,
+              items: p.planType
+                ? [{ item_id: p.planType, item_name: p.planType, price: p.value, quantity: 1 }]
+                : undefined,
+            });
+            trackConversion("purchase", {
+              transactionId: p.transactionId,
+              value: p.value,
+              currency: p.currency,
+            });
+            trackFbEvent(
+              "Purchase",
+              {
+                value: p.value,
+                currency: p.currency,
+                content_ids: p.planType ? [p.planType] : undefined,
+                content_type: "product",
+              },
+              p.fbEventId ?? undefined
+            );
+          }
         }
       } catch (err) {
         if (cancelled) return;

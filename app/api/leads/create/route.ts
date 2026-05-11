@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { createLead } from "@/lib/leads";
 import type { RewardType } from "@/lib/redeem";
+import { getClientIp, getClientUserAgent } from "@/lib/facebook-capi";
 
 /**
  * POST /api/leads/create
@@ -26,7 +27,37 @@ type Body = {
   consent_pdpa?: unknown;
   campaign?: unknown;
   ad_set?: unknown;
+  attribution?: unknown;
+  fb_event_id?: unknown;
 };
+
+const ATTRIBUTION_KEYS = [
+  "gclid",
+  "gbraid",
+  "wbraid",
+  "fbclid",
+  "fbc",
+  "fbp",
+  "utm_source",
+  "utm_medium",
+  "utm_campaign",
+  "utm_term",
+  "utm_content",
+  "landing_page",
+] as const;
+
+function pickAttribution(input: unknown) {
+  if (!input || typeof input !== "object") return undefined;
+  const src = input as Record<string, unknown>;
+  const out: Record<string, string> = {};
+  for (const k of ATTRIBUTION_KEYS) {
+    const v = src[k];
+    if (typeof v === "string" && v.length > 0 && v.length < 1024) {
+      out[k] = v;
+    }
+  }
+  return Object.keys(out).length > 0 ? out : undefined;
+}
 
 const VALID_REWARDS: RewardType[] = ["monthly_1m", "bundle_10q"];
 const VALID_EXAM_TARGETS = ["NL1", "NL2", "both", "unknown"] as const;
@@ -57,6 +88,11 @@ export async function POST(request: Request) {
       ? (body.exam_target as (typeof VALID_EXAM_TARGETS)[number])
       : undefined;
 
+  const fbEventId =
+    typeof body.fb_event_id === "string" && body.fb_event_id.length > 0
+      ? body.fb_event_id
+      : undefined;
+
   const result = await createLead({
     source: "landing",
     campaign: typeof body.campaign === "string" ? body.campaign : undefined,
@@ -69,6 +105,10 @@ export async function POST(request: Request) {
     rewardChoice: reward,
     consentPdpa: consent,
     rawPayload: body as Record<string, unknown>,
+    attribution: pickAttribution(body.attribution),
+    fbEventId,
+    clientIp: getClientIp(request.headers),
+    clientUserAgent: getClientUserAgent(request.headers),
   });
 
   if (!result.ok) {

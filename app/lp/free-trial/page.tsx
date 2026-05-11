@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import LeadForm from "./LeadForm";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbList, faqPage } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
@@ -9,7 +11,28 @@ export const metadata: Metadata = {
   description:
     "ลงทะเบียนรับสิทธิ์ทดลองใช้หมอรู้ฟรี เลือกระหว่าง 1 เดือนเต็ม หรือ Bundle 10 ข้อ",
   alternates: { canonical: "https://www.morroo.com/lp/free-trial" },
+  openGraph: {
+    title: "ทดลองใช้หมอรู้ฟรี",
+    description: "รับสิทธิ์ทดลองใช้ MEQ + MCQ + Long Case กับ AI ฟรี",
+    url: "https://www.morroo.com/lp/free-trial",
+  },
+  robots: { index: true, follow: true },
 };
+
+const TRIAL_FAQ = [
+  {
+    q: "ทดลองใช้ฟรีต้องใส่บัตรเครดิตไหม?",
+    a: "ไม่ต้องครับ แค่กรอกอีเมลและยืนยัน PDPA เราจะส่งโค้ดไปให้ทันที",
+  },
+  {
+    q: "โค้ดทดลองใช้ได้นานเท่าไหร่?",
+    a: "สมาชิกรายเดือนใช้ได้ 30 วันเต็ม หรือเลือก Bundle 10 ข้อใช้ได้โดยไม่มีวันหมดอายุ",
+  },
+  {
+    q: "หลังหมดทดลองคิดเงินอัตโนมัติไหม?",
+    a: "ไม่คิดครับ เป็นโค้ดที่ใช้ครั้งเดียว ไม่มีการเรียกเก็บเงินหลังหมดอายุ",
+  },
+];
 
 type SearchParams = Promise<{
   campaign?: string;
@@ -26,6 +49,11 @@ export default async function FreeTrialLanding({
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-teal-50 to-white">
+      <JsonLd data={breadcrumbList([
+        { name: "หน้าแรก", path: "/" },
+        { name: "ทดลองใช้ฟรี", path: "/lp/free-trial" },
+      ])} />
+      <JsonLd data={faqPage(TRIAL_FAQ)} />
       <div className="mx-auto max-w-3xl px-4 py-12 md:py-20">
         <header className="text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-teal-600">

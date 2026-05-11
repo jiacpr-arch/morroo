@@ -22,6 +22,12 @@ import {
   CreditCard,
 } from "lucide-react";
 import type { User } from "@supabase/supabase-js";
+import { trackConversion, trackEvent, getStoredAttribution } from "@/lib/gtag";
+import {
+  trackFbEvent,
+  getStoredFbAttribution,
+  newClientEventId,
+} from "@/lib/fb-browser";
 
 const PLANS: Record<string, { name: string; price: number; period: string }> = {
   monthly: { name: "รายเดือน", price: 199, period: "/ เดือน" },
@@ -161,6 +167,24 @@ export default function PaymentPage({
     setStripeLoading(true);
     setError("");
     try {
+      const googleAttr = getStoredAttribution() ?? {};
+      const fbAttr = getStoredFbAttribution() ?? {};
+      const attribution = { ...googleAttr, ...fbAttr };
+      const value = planInfo?.price ?? 0;
+      const fbEventIdIc = newClientEventId();
+
+      trackEvent("begin_checkout", {
+        currency: "THB",
+        value,
+        items: [{ item_id: plan, item_name: planInfo?.name ?? plan, price: value, quantity: 1 }],
+      });
+      trackConversion("beginCheckout", { currency: "THB", value });
+      trackFbEvent(
+        "InitiateCheckout",
+        { value, currency: "THB", content_ids: [plan], content_name: planInfo?.name },
+        fbEventIdIc
+      );
+
       const res = await fetch("/api/billing/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -169,6 +193,8 @@ export default function PaymentPage({
           invoiceData: wantInvoice
             ? { name: invoiceName, taxId: invoiceTaxId, address: invoiceAddress }
             : null,
+          attribution,
+          fb_event_id_ic: fbEventIdIc,
         }),
       });
       const data = await res.json();

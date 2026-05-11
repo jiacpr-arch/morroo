@@ -5,6 +5,8 @@ import {
   BETA_QUESTION_LIMIT,
   isPromoActive,
 } from "@/lib/beta";
+import { sendCapiEvent, getClientIp, getClientUserAgent } from "@/lib/facebook-capi";
+import { sha256Norm, newEventId } from "@/lib/facebook-pixel";
 
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url);
@@ -16,6 +18,15 @@ export async function GET(request: Request) {
     const { data, error } = await supabase.auth.exchangeCodeForSession(code);
 
     if (!error && data.user) {
+      // Distinguish new signup vs returning user so we can fire a Google
+      // Ads "sign_up" conversion on the next page only on the first login.
+      const { data: existingProfile } = await supabase
+        .from("profiles")
+        .select("id")
+        .eq("id", data.user.id)
+        .maybeSingle();
+      const isNewSignup = !existingProfile;
+
       // Upsert profile on OAuth login
       await supabase.from("profiles").upsert(
         {
@@ -73,7 +84,32 @@ export async function GET(request: Request) {
           ? "/onboarding"
           : next;
 
-      return NextResponse.redirect(`${origin}${destination}`);
+      const url = new URL(`${origin}${destination}`);
+      if (isNewSignup) {
+        // Mint a UUID the success page tracker reuses as the Pixel eventID,
+        // so this server-side CAPI fire and the browser-side Pixel fire are
+        // deduped by Meta within the 48h window.
+        const fbe = newEventId();
+        url.searchParams.set("signup", "1");
+        url.searchParams.set("fbe", fbe);
+
+        sendCapiEvent({
+          eventName: "CompleteRegistration",
+          eventId: fbe,
+          actionSource: "website",
+          eventSourceUrl: url.toString(),
+          userData: {
+            em: data.user.email ? sha256Norm(data.user.email) : undefined,
+            client_ip_address: getClientIp(request.headers),
+            client_user_agent: getClientUserAgent(request.headers),
+            external_id: data.user.id,
+          },
+          customData: { content_name: "oauth_signup" },
+        }).catch((e) =>
+          console.error("[auth/callback] CAPI CompleteRegistration failed:", e)
+        );
+      }
+      return NextResponse.redirect(url.toString());
     }
   }
 

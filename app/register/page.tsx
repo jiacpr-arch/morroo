@@ -9,6 +9,8 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
 import BetaPromoBanner from "@/components/beta/BetaPromoBanner";
+import { trackConversion, trackEvent } from "@/lib/gtag";
+import { trackFbEvent, newClientEventId } from "@/lib/fb-browser";
 
 const LINE_LOGIN_ENABLED = process.env.NEXT_PUBLIC_LINE_LOGIN_ENABLED === "true";
 
@@ -83,6 +85,14 @@ function RegisterForm() {
       } catch {
         /* non-fatal */
       }
+
+      trackEvent("sign_up", { method: "email" });
+      trackConversion("signup");
+      trackFbEvent(
+        "CompleteRegistration",
+        { content_name: "email_signup" },
+        newClientEventId()
+      );
     }
 
     setSuccess(true);

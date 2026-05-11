@@ -6,10 +6,12 @@ import PricingCard from "@/components/PricingCard";
 import DailyCountdown from "@/components/DailyCountdown";
 import AllExamsCountdown from "@/components/AllExamsCountdown";
 import GoodyEmbed from "@/components/GoodyEmbed";
+import JsonLd from "@/components/JsonLd";
 import { SocialButtonsRow } from "@/components/SocialLinks";
 import { CATEGORIES, PRICING_PLANS } from "@/lib/types";
 import { getExams, getExamPartCounts, sortExamsAvailableFirst } from "@/lib/supabase/queries";
 import { getBlogPosts } from "@/lib/blog";
+import { course } from "@/lib/seo";
 import {
   BookOpen,
   Clock,
@@ -36,6 +38,14 @@ export default async function HomePage() {
 
   return (
     <>
+      <JsonLd
+        data={course({
+          name: "เตรียมสอบใบประกอบวิชาชีพแพทย์ (NL Step 1, 2, 3) — หมอรู้",
+          description:
+            "หลักสูตรเตรียมสอบ MEQ + MCQ + Long Case ครอบคลุม 6 สาขา (Med, Surg, Ped, OB-Gyn, Psych, Family) พร้อม AI ตรวจคำตอบและให้ feedback",
+          url: "/",
+        })}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-brand-dark via-brand-dark to-brand py-20 sm:py-28">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgMGg2MHY2MEgweiIgZmlsbD0ibm9uZSIvPjxjaXJjbGUgY3g9IjMwIiBjeT0iMzAiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZykiLz48L3N2Zz4=')] opacity-40" />
