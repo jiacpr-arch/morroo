@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { createLead } from "@/lib/leads";
 import type { RewardType } from "@/lib/redeem";
+import { getClientIp, getClientUserAgent } from "@/lib/facebook-capi";
 
 /**
  * POST /api/leads/create
@@ -27,12 +28,16 @@ type Body = {
   campaign?: unknown;
   ad_set?: unknown;
   attribution?: unknown;
+  fb_event_id?: unknown;
 };
 
 const ATTRIBUTION_KEYS = [
   "gclid",
   "gbraid",
   "wbraid",
+  "fbclid",
+  "fbc",
+  "fbp",
   "utm_source",
   "utm_medium",
   "utm_campaign",
@@ -83,6 +88,11 @@ export async function POST(request: Request) {
       ? (body.exam_target as (typeof VALID_EXAM_TARGETS)[number])
       : undefined;
 
+  const fbEventId =
+    typeof body.fb_event_id === "string" && body.fb_event_id.length > 0
+      ? body.fb_event_id
+      : undefined;
+
   const result = await createLead({
     source: "landing",
     campaign: typeof body.campaign === "string" ? body.campaign : undefined,
@@ -96,6 +106,9 @@ export async function POST(request: Request) {
     consentPdpa: consent,
     rawPayload: body as Record<string, unknown>,
     attribution: pickAttribution(body.attribution),
+    fbEventId,
+    clientIp: getClientIp(request.headers),
+    clientUserAgent: getClientUserAgent(request.headers),
   });
 
   if (!result.ok) {

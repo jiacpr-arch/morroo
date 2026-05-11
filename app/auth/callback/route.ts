@@ -5,6 +5,8 @@ import {
   BETA_QUESTION_LIMIT,
   isPromoActive,
 } from "@/lib/beta";
+import { sendCapiEvent, getClientIp, getClientUserAgent } from "@/lib/facebook-capi";
+import { sha256Norm, newEventId } from "@/lib/facebook-pixel";
 
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url);
@@ -83,7 +85,30 @@ export async function GET(request: Request) {
           : next;
 
       const url = new URL(`${origin}${destination}`);
-      if (isNewSignup) url.searchParams.set("signup", "1");
+      if (isNewSignup) {
+        // Mint a UUID the success page tracker reuses as the Pixel eventID,
+        // so this server-side CAPI fire and the browser-side Pixel fire are
+        // deduped by Meta within the 48h window.
+        const fbe = newEventId();
+        url.searchParams.set("signup", "1");
+        url.searchParams.set("fbe", fbe);
+
+        sendCapiEvent({
+          eventName: "CompleteRegistration",
+          eventId: fbe,
+          actionSource: "website",
+          eventSourceUrl: url.toString(),
+          userData: {
+            em: data.user.email ? sha256Norm(data.user.email) : undefined,
+            client_ip_address: getClientIp(request.headers),
+            client_user_agent: getClientUserAgent(request.headers),
+            external_id: data.user.id,
+          },
+          customData: { content_name: "oauth_signup" },
+        }).catch((e) =>
+          console.error("[auth/callback] CAPI CompleteRegistration failed:", e)
+        );
+      }
       return NextResponse.redirect(url.toString());
     }
   }

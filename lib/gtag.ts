@@ -69,6 +69,9 @@ export type AdsAttribution = {
   gclid?: string;
   gbraid?: string;
   wbraid?: string;
+  fbclid?: string;
+  fbc?: string;
+  fbp?: string;
   utm_source?: string;
   utm_medium?: string;
   utm_campaign?: string;

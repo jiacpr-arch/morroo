@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { stripe, STRIPE_PLANS } from "@/lib/stripe";
+import { sendCapiEvent, getClientIp, getClientUserAgent } from "@/lib/facebook-capi";
+import { sha256Norm, newEventId } from "@/lib/facebook-pixel";
 
 export const runtime = "nodejs";
 
@@ -14,18 +16,24 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { planType, invoiceData, attribution } = body as {
+    const { planType, invoiceData, attribution, fb_event_id_ic } = body as {
       planType: string;
       invoiceData?: { name: string; taxId: string; address: string } | null;
       attribution?: Record<string, string> | null;
+      fb_event_id_ic?: string;
     };
 
-    // Stripe metadata only accepts string values <= 500 chars and 50 keys
-    // total, so trim and only forward what we'll need server-side later.
+    // Stripe metadata: 50 keys / 500 chars per value. Per-key layout (vs.
+    // a single packed JSON blob) keeps backward-compat with sessions
+    // created before this deploy. ~14 attribution keys + ~5 invoice keys
+    // is well under the cap.
     const ATTRIBUTION_KEYS = [
       "gclid",
       "gbraid",
       "wbraid",
+      "fbclid",
+      "fbc",
+      "fbp",
       "utm_source",
       "utm_medium",
       "utm_campaign",
@@ -46,6 +54,12 @@ export async function POST(request: NextRequest) {
 
     const plan = STRIPE_PLANS[planType];
     const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://morroo.com").trim();
+
+    // Pre-mint the Purchase event_id here so both the webhook-driven and
+    // /verify-driven fulfillment paths use the same id (they read it from
+    // session.metadata) — the success page client also reads it from the
+    // /verify response so its Pixel fire dedups against the CAPI fire.
+    const fbEventIdPurchase = newEventId();
 
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
@@ -71,9 +85,39 @@ export async function POST(request: NextRequest) {
         invoiceTaxId: invoiceData?.taxId ?? "",
         invoiceAddress: invoiceData?.address ?? "",
         invoiceEmail: user.email ?? "",
+        fb_event_id_purchase: fbEventIdPurchase,
         ...adsMeta,
       },
     });
+
+    // Fire-and-forget Meta CAPI InitiateCheckout. The browser-side Pixel
+    // fire from `/payment/[plan]/page.tsx` uses the same fb_event_id_ic
+    // for dedup.
+    if (fb_event_id_ic) {
+      const fbAttr = attribution && typeof attribution === "object" ? attribution : {};
+      sendCapiEvent({
+        eventName: "InitiateCheckout",
+        eventId: fb_event_id_ic,
+        actionSource: "website",
+        eventSourceUrl: `${siteUrl}/payment/${planType}`,
+        userData: {
+          em: user.email ? sha256Norm(user.email) : undefined,
+          fbc: fbAttr.fbc,
+          fbp: fbAttr.fbp,
+          client_ip_address: getClientIp(request.headers),
+          client_user_agent: getClientUserAgent(request.headers),
+          external_id: user.id,
+        },
+        customData: {
+          value: plan.amount,
+          currency: "THB",
+          content_ids: [planType],
+          content_name: plan.name,
+        },
+      }).catch((e) =>
+        console.error("[checkout] CAPI InitiateCheckout failed:", e)
+      );
+    }
 
     return NextResponse.json({ url: session.url });
   } catch (err) {

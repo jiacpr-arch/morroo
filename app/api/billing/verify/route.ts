@@ -70,6 +70,7 @@ export async function POST(request: NextRequest) {
         value: (session.amount_total ?? 0) / 100,
         currency: (session.currency ?? "thb").toUpperCase(),
         planType: session.metadata?.planType ?? null,
+        fbEventId: session.metadata?.fb_event_id_purchase ?? null,
       },
     });
   } catch (err) {

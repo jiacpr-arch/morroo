@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Loader2, AlertCircle } from "lucide-react";
 import { trackConversion, trackEvent } from "@/lib/gtag";
+import { trackFbEvent } from "@/lib/fb-browser";
 
 type VerifyStatus = "verifying" | "ok" | "pending" | "error";
 
@@ -45,6 +46,7 @@ export default function SuccessContent() {
             value: number;
             currency: string;
             planType: string | null;
+            fbEventId: string | null;
           };
         };
         if (cancelled) return;
@@ -75,6 +77,16 @@ export default function SuccessContent() {
               value: p.value,
               currency: p.currency,
             });
+            trackFbEvent(
+              "Purchase",
+              {
+                value: p.value,
+                currency: p.currency,
+                content_ids: p.planType ? [p.planType] : undefined,
+                content_type: "product",
+              },
+              p.fbEventId ?? undefined
+            );
           }
         }
       } catch (err) {

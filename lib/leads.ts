@@ -2,6 +2,8 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { issueRedeemCode, type RewardType, type RedeemSource } from "@/lib/redeem";
 import { sendRedeemCodeEmail } from "@/lib/email/send";
 import { uploadOfflineConversion } from "@/lib/google-ads-server";
+import { sendCapiEvent } from "@/lib/facebook-capi";
+import { sha256Norm, normalizePhoneTH, newEventId } from "@/lib/facebook-pixel";
 
 const REWARD_LABEL: Record<RewardType, string> = {
   monthly_1m: "สมาชิกรายเดือน 1 เดือน",
@@ -12,6 +14,9 @@ export type AdsAttribution = {
   gclid?: string;
   gbraid?: string;
   wbraid?: string;
+  fbclid?: string;
+  fbc?: string;
+  fbp?: string;
   utm_source?: string;
   utm_medium?: string;
   utm_campaign?: string;
@@ -34,6 +39,13 @@ export type CreateLeadArgs = {
   consentPdpa: boolean;
   rawPayload?: Record<string, unknown>;
   attribution?: AdsAttribution;
+  /** UUID minted client-side for Pixel/CAPI dedup. When omitted (e.g. webhook
+   *  paths) the helper falls back to a fresh UUID for CAPI-only Lead events. */
+  fbEventId?: string;
+  /** First-hop client IP — required for high Event Match Quality. */
+  clientIp?: string;
+  /** Browser user-agent — required for high Event Match Quality. */
+  clientUserAgent?: string;
 };
 
 export type CreateLeadResult =
@@ -104,6 +116,10 @@ export async function createLead(
       gclid: args.attribution?.gclid ?? null,
       gbraid: args.attribution?.gbraid ?? null,
       wbraid: args.attribution?.wbraid ?? null,
+      fbclid: args.attribution?.fbclid ?? null,
+      fbc: args.attribution?.fbc ?? null,
+      fbp: args.attribution?.fbp ?? null,
+      fb_event_id: args.fbEventId ?? null,
       utm_source: args.attribution?.utm_source ?? null,
       utm_medium: args.attribution?.utm_medium ?? null,
       utm_campaign: args.attribution?.utm_campaign ?? null,
@@ -171,6 +187,48 @@ export async function createLead(
       })
       .catch((e) => console.error("[leads] offline conversion upload failed:", e));
   }
+
+  // Fire-and-forget Meta CAPI Lead. The same event_id was already fired
+  // browser-side by the form (or, for FB Instant Form leads, fb_lead_id
+  // doubles as event_id since there's no browser context).
+  const capiEventId =
+    args.fbEventId ?? (args.fbLeadId ? `fb_lead_${args.fbLeadId}` : newEventId());
+  const actionSource = args.fbLeadId ? "system_generated" : "website";
+  const eventSourceUrl = args.fbLeadId
+    ? "https://www.facebook.com"
+    : args.attribution?.landing_page
+      ? `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com"}${args.attribution.landing_page}`
+      : process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com";
+
+  sendCapiEvent({
+    eventName: "Lead",
+    eventId: capiEventId,
+    actionSource,
+    eventSourceUrl,
+    userData: {
+      em: sha256Norm(email),
+      ph: args.phone ? sha256Norm(normalizePhoneTH(args.phone).replace(/^\+/, "")) : undefined,
+      fbc: args.attribution?.fbc,
+      fbp: args.attribution?.fbp,
+      client_ip_address: args.clientIp,
+      client_user_agent: args.clientUserAgent,
+      external_id: lead.id,
+    },
+    customData: {
+      value: args.rewardChoice === "monthly_1m" ? 199 : 50,
+      currency: "THB",
+      content_name: "free_trial",
+    },
+  })
+    .then(async (result) => {
+      if (result.ok) {
+        await supabase
+          .from("leads")
+          .update({ fb_capi_uploaded_at: new Date().toISOString() })
+          .eq("id", lead.id);
+      }
+    })
+    .catch((e) => console.error("[leads] CAPI Lead upload failed:", e));
 
   return { ok: true, leadId: lead.id, code, isDuplicate: false };
 }

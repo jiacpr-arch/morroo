@@ -8,6 +8,7 @@ import BetaWelcomeModal from "@/components/beta/BetaWelcomeModal";
 import BetaPromoBanner from "@/components/beta/BetaPromoBanner";
 import ChatWidget from "@/components/ChatWidget";
 import AnalyticsScripts from "@/components/AnalyticsScripts";
+import FacebookPixel from "@/components/FacebookPixel";
 import AdsAttributionTracker from "@/components/AdsAttributionTracker";
 import SignupConversionTracker from "@/components/SignupConversionTracker";
 import "./globals.css";
@@ -166,6 +167,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col">
         <AnalyticsScripts />
+        <FacebookPixel />
         <AdsAttributionTracker />
         <SignupConversionTracker />
         <BetaProvider>
