@@ -6,6 +6,7 @@ import {
   isPromoActive,
 } from "@/lib/beta";
 import { sendTikTokEvent } from "@/lib/tiktok/events-api";
+import { sendMetaEvent } from "@/lib/meta/events-api";
 
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url);
@@ -83,10 +84,22 @@ export async function GET(request: Request) {
         const userAgent = request.headers.get("user-agent");
         const forwardedFor = request.headers.get("x-forwarded-for");
         const ip = forwardedFor?.split(",")[0]?.trim() ?? null;
+        const signupEventId = `signup:${data.user!.id}`;
         after(() =>
           sendTikTokEvent({
             event: "CompleteRegistration",
-            eventId: `signup:${data.user!.id}`,
+            eventId: signupEventId,
+            email: data.user!.email ?? null,
+            externalId: data.user!.id,
+            ip,
+            userAgent,
+            contentName: "signup",
+          })
+        );
+        after(() =>
+          sendMetaEvent({
+            event: "CompleteRegistration",
+            eventId: signupEventId,
             email: data.user!.email ?? null,
             externalId: data.user!.id,
             ip,

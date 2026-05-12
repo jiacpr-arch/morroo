@@ -3,6 +3,7 @@ import Stripe from "stripe";
 import { fulfillCheckoutSession } from "@/lib/billing/fulfill-checkout";
 import { sendFulfillmentNotifications } from "@/lib/billing/send-fulfillment-notifications";
 import { sendTikTokEvent } from "@/lib/tiktok/events-api";
+import { sendMetaEvent } from "@/lib/meta/events-api";
 
 export const runtime = "nodejs";
 
@@ -59,6 +60,7 @@ export async function POST(request: NextRequest) {
           session.customer_details?.email ?? session.customer_email ?? null;
         const ttclid = session.metadata?.ttclid || null;
         const ttp = session.metadata?.ttp || null;
+        const currency = (session.currency ?? "thb").toUpperCase();
         after(() =>
           sendTikTokEvent({
             event: "Subscribe",
@@ -68,10 +70,28 @@ export async function POST(request: NextRequest) {
             ttclid,
             ttp,
             value: notify.totalAmount,
-            currency: (session.currency ?? "thb").toUpperCase(),
+            currency,
             contentId: notify.planType,
             contentName: notify.planLabel,
             contentType: "subscription",
+          })
+        );
+
+        const fbc = session.metadata?.fbc || null;
+        const fbp = session.metadata?.fbp || null;
+        after(() =>
+          sendMetaEvent({
+            event: "Purchase",
+            eventId: session.id,
+            email: buyerEmail,
+            externalId: notify.userId,
+            fbc,
+            fbp,
+            value: notify.totalAmount,
+            currency,
+            contentIds: [notify.planType],
+            contentName: notify.planLabel,
+            contentType: "product",
           })
         );
       }
