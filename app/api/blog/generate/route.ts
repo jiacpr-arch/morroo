@@ -333,7 +333,9 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
     let coverImageStoryUrl: string | null = null;
     if (coverBuffer) {
       try {
-        const storyBuffer = await composeStoryImage(coverBuffer);
+        const storyBuffer = await composeStoryImage(coverBuffer, {
+          headline: saved.title,
+        });
         const storyFilePath = `blog-covers/${saved.slug}-story.jpg`;
         const { error: storyUploadError } = await supabaseAsync.storage
           .from("public-assets")
