@@ -4,8 +4,9 @@
  * FACEBOOK_STORY_AUTOPOST_ENABLED / INSTAGRAM_STORY_AUTOPOST_ENABLED on.
  *
  * GET /api/autopost/story-preview?secret=…&slug=…
- *   slug       – blog_posts.slug; pulls cover_image from Supabase
+ *   slug       – blog_posts.slug; pulls cover_image + title from Supabase
  *   coverUrl   – alternative: bypass DB and compose from a direct URL
+ *   headline   – override CTA bar headline (defaults to article title or static fallback)
  *
  * No DB writes, no Supabase Storage uploads, no FB/IG calls. Safe to hit repeatedly.
  */
@@ -26,8 +27,10 @@ export async function GET(request: Request) {
 
   const slug = searchParams.get("slug");
   const coverUrlParam = searchParams.get("coverUrl");
+  const headlineParam = searchParams.get("headline") ?? undefined;
 
   let coverUrl: string | null = coverUrlParam;
+  let headline: string | undefined = headlineParam;
   if (!coverUrl) {
     if (!slug) {
       return NextResponse.json(
@@ -38,7 +41,7 @@ export async function GET(request: Request) {
     const supabase = createAdminClient();
     const { data, error } = await supabase
       .from("blog_posts")
-      .select("cover_image")
+      .select("cover_image, title")
       .eq("slug", slug)
       .maybeSingle();
     if (error) {
@@ -51,6 +54,7 @@ export async function GET(request: Request) {
       );
     }
     coverUrl = data.cover_image;
+    headline = headline ?? data.title;
   }
 
   const fetchRes = await fetch(coverUrl);
@@ -64,7 +68,7 @@ export async function GET(request: Request) {
 
   let storyBuffer: Buffer;
   try {
-    storyBuffer = await composeStoryImage(buffer);
+    storyBuffer = await composeStoryImage(buffer, { headline });
   } catch (err) {
     return NextResponse.json(
       { error: `Compose failed: ${String(err).slice(0, 200)}` },

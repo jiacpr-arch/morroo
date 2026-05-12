@@ -70,12 +70,13 @@ async function ensureStoryCover(
   supabase: ReturnType<typeof createAdminClient>,
   slug: string,
   coverImage: string,
+  headline?: string,
 ): Promise<string | null> {
   try {
     const res = await fetch(coverImage);
     if (!res.ok) return null;
     const buffer = Buffer.from(await res.arrayBuffer());
-    const storyBuffer = await composeStoryImage(buffer);
+    const storyBuffer = await composeStoryImage(buffer, { headline });
 
     const filePath = `blog-covers/${slug}-story.jpg`;
     const { error: uploadError } = await supabase.storage
@@ -324,7 +325,7 @@ export async function GET(request: Request) {
     const needStoryCover = (doFbStory && !post.fb_story_id) || (doIgStory && !post.ig_story_id);
     const storyCover = needStoryCover
       ? (post.cover_image_story
-        ?? (post.cover_image ? await ensureStoryCover(supabase, post.slug, post.cover_image) : null))
+        ?? (post.cover_image ? await ensureStoryCover(supabase, post.slug, post.cover_image, post.title) : null))
       : null;
 
     const fbStoryEnabled = process.env.FACEBOOK_STORY_AUTOPOST_ENABLED === "true";
