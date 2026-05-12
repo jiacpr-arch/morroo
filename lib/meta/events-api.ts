@@ -73,7 +73,7 @@ export async function sendMetaEvent(input: MetaEventInput): Promise<void> {
   if (Object.keys(customData).length) eventData.custom_data = customData;
 
   const payload: Record<string, unknown> = { data: [eventData] };
-  const testCode = process.env.META_CAPI_TEST_EVENT_CODE?.trim();
+  const testCode = process.env.META_TEST_EVENT_CODE?.trim();
   if (testCode) payload.test_event_code = testCode;
 
   const endpoint = `https://graph.facebook.com/${API_VERSION}/${PIXEL_ID}/events?access_token=${encodeURIComponent(token)}`;
