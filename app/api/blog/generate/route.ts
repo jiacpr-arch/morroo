@@ -14,6 +14,7 @@ import { broadcastLineMessages } from "@/lib/line";
 import { buildBlogAnnounceFlex } from "@/lib/line-flex-templates";
 import { pickAutopostFormat, categoryHashtag } from "@/lib/autopost-format";
 import { generateHook } from "@/lib/autopost-copy";
+import { composeStoryImage } from "@/lib/autopost-story-image";
 
 export const runtime = "nodejs";
 // Total budget covers sync body (Claude article ~30-50s) + after() block
@@ -332,20 +333,7 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
     let coverImageStoryUrl: string | null = null;
     if (coverBuffer) {
       try {
-        const bg = await sharp(coverBuffer)
-          .resize(1080, 1920, { fit: "cover" })
-          .blur(40)
-          .modulate({ brightness: 0.7 })
-          .toBuffer();
-        const square = await sharp(coverBuffer)
-          .resize(1000, 1000, { fit: "cover" })
-          .toBuffer();
-        const storyBuffer = await sharp(bg)
-          .composite([{ input: square, gravity: "center" }])
-          .flatten({ background: "#ffffff" })
-          .jpeg({ quality: 90 })
-          .toBuffer();
-
+        const storyBuffer = await composeStoryImage(coverBuffer);
         const storyFilePath = `blog-covers/${saved.slug}-story.jpg`;
         const { error: storyUploadError } = await supabaseAsync.storage
           .from("public-assets")

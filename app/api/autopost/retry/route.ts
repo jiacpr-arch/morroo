@@ -20,6 +20,7 @@ import { broadcastLineMessages } from "@/lib/line";
 import { buildBlogAnnounceFlex } from "@/lib/line-flex-templates";
 import { pickAutopostFormat, categoryHashtag } from "@/lib/autopost-format";
 import { generateHook } from "@/lib/autopost-copy";
+import { composeStoryImage } from "@/lib/autopost-story-image";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -74,19 +75,7 @@ async function ensureStoryCover(
     const res = await fetch(coverImage);
     if (!res.ok) return null;
     const buffer = Buffer.from(await res.arrayBuffer());
-    const bg = await sharp(buffer)
-      .resize(1080, 1920, { fit: "cover" })
-      .blur(40)
-      .modulate({ brightness: 0.7 })
-      .toBuffer();
-    const square = await sharp(buffer)
-      .resize(1000, 1000, { fit: "cover" })
-      .toBuffer();
-    const storyBuffer = await sharp(bg)
-      .composite([{ input: square, gravity: "center" }])
-      .flatten({ background: "#ffffff" })
-      .jpeg({ quality: 90 })
-      .toBuffer();
+    const storyBuffer = await composeStoryImage(buffer);
 
     const filePath = `blog-covers/${slug}-story.jpg`;
     const { error: uploadError } = await supabase.storage
