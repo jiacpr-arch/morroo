@@ -46,25 +46,39 @@ export async function postToInstagram(post: {
     throw new Error("No Facebook user token found");
   }
 
-  // Step 1: Create media container
-  const containerRes = await fetch(
-    `https://graph.facebook.com/v24.0/${igAccountId}/media`,
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        image_url: post.imageUrl,
-        caption: post.caption.slice(0, 2200),
-        access_token: token,
-      }),
-    },
-  );
-  const containerData = await containerRes.json();
-  if (!containerRes.ok || containerData.error || !containerData.id) {
+  // Step 1: Create media container — retry on FB error 100 ("does not exist")
+  // since the Supabase Storage CDN sometimes hasn't propagated the upload when
+  // IG's server-side fetcher first hits the URL.
+  let containerId: string | null = null;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    const containerRes = await fetch(
+      `https://graph.facebook.com/v24.0/${igAccountId}/media`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          image_url: post.imageUrl,
+          caption: post.caption.slice(0, 2200),
+          access_token: token,
+        }),
+      },
+    );
+    const containerData = await containerRes.json();
+    if (containerRes.ok && containerData.id) {
+      containerId = containerData.id;
+      break;
+    }
+    const code = containerData.error?.code;
+    if (code === 100 && attempt < 2) {
+      await new Promise((r) => setTimeout(r, (attempt + 1) * 3000));
+      continue;
+    }
     console.error("[instagram] container create failed:", JSON.stringify(containerData));
     throw new Error(containerData.error?.message ?? `HTTP ${containerRes.status}`);
   }
-  const containerId: string = containerData.id;
+  if (!containerId) {
+    throw new Error("Instagram container creation exhausted retries");
+  }
 
   // Step 2: Publish the container
   // IG docs note containers may take a few seconds to be ready for publish on
@@ -120,24 +134,42 @@ export async function postStoryToInstagram(post: {
     throw new Error("No Facebook user token found");
   }
 
-  const containerRes = await fetch(
-    `https://graph.facebook.com/v24.0/${igAccountId}/media`,
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        media_type: "STORIES",
-        image_url: post.imageUrl,
-        access_token: token,
-      }),
-    },
-  );
-  const containerData = await containerRes.json();
-  if (!containerRes.ok || containerData.error || !containerData.id) {
+  // Container creation has a transient race with Supabase Storage CDN
+  // propagation — IG's server-side fetcher occasionally reports "The requested
+  // resource does not exist" (FB error code 100) when it polls the image URL
+  // before the upload has finished propagating. Short retry with backoff fixes it.
+  let containerId: string | null = null;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    const containerRes = await fetch(
+      `https://graph.facebook.com/v24.0/${igAccountId}/media`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          media_type: "STORIES",
+          image_url: post.imageUrl,
+          access_token: token,
+        }),
+      },
+    );
+    const containerData = await containerRes.json();
+    if (containerRes.ok && containerData.id) {
+      containerId = containerData.id;
+      break;
+    }
+    const code = containerData.error?.code;
+    // 100 = "does not exist" (image URL fetch failed); retry once with backoff.
+    // Anything else is a real error — fail fast.
+    if (code === 100 && attempt < 2) {
+      await new Promise((r) => setTimeout(r, (attempt + 1) * 3000));
+      continue;
+    }
     console.error("[instagram] story container create failed:", JSON.stringify(containerData));
     throw new Error(containerData.error?.message ?? `HTTP ${containerRes.status}`);
   }
-  const containerId: string = containerData.id;
+  if (!containerId) {
+    throw new Error("Instagram story container creation exhausted retries");
+  }
 
   for (let attempt = 0; attempt < 3; attempt++) {
     const publishRes = await fetch(
