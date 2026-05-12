@@ -12,7 +12,7 @@ import "./globals.css";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 const TIKTOK_PIXEL_ID = "D80UTR3C77UEO91IVCV0";
-const FB_PIXEL_ID = "1524889459310260";
+const FB_PIXEL_ID = "966371002896288";
 const GTM_ID = "GTM-5VGNTDV3";
 
 const sarabun = Sarabun({
