@@ -95,3 +95,72 @@ export async function postToInstagram(post: {
 
   throw new Error("Instagram publish exhausted retries");
 }
+
+/**
+ * Publish an Instagram Story image via the Graph API.
+ *
+ * Same 2-step container/publish flow as feed posts, with `media_type=STORIES`.
+ *
+ * IG Story constraints:
+ *   - 9:16 portrait (1080×1920 recommended); other ratios are letterboxed
+ *   - JPEG/PNG ≤ 8 MB, served over HTTPS
+ *   - Stories do not accept captions — text overlays must be baked into the image
+ *   - Token requires `instagram_content_publish` permission
+ */
+export async function postStoryToInstagram(post: {
+  imageUrl: string;
+}): Promise<string> {
+  const igAccountId = process.env.INSTAGRAM_BUSINESS_ACCOUNT_ID;
+  if (!igAccountId) {
+    throw new Error("INSTAGRAM_BUSINESS_ACCOUNT_ID not set");
+  }
+
+  const token = await getUserToken();
+  if (!token) {
+    throw new Error("No Facebook user token found");
+  }
+
+  const containerRes = await fetch(
+    `https://graph.facebook.com/v24.0/${igAccountId}/media`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        media_type: "STORIES",
+        image_url: post.imageUrl,
+        access_token: token,
+      }),
+    },
+  );
+  const containerData = await containerRes.json();
+  if (!containerRes.ok || containerData.error || !containerData.id) {
+    console.error("[instagram] story container create failed:", JSON.stringify(containerData));
+    throw new Error(containerData.error?.message ?? `HTTP ${containerRes.status}`);
+  }
+  const containerId: string = containerData.id;
+
+  for (let attempt = 0; attempt < 3; attempt++) {
+    const publishRes = await fetch(
+      `https://graph.facebook.com/v24.0/${igAccountId}/media_publish`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ creation_id: containerId, access_token: token }),
+      },
+    );
+    const publishData = await publishRes.json();
+    if (publishRes.ok && publishData.id) {
+      console.log(`[instagram] story posted: id=${publishData.id} container=${containerId}`);
+      return publishData.id;
+    }
+    const code = publishData.error?.code;
+    if (code === 9007 && attempt < 2) {
+      await new Promise((r) => setTimeout(r, (attempt + 1) * 3000));
+      continue;
+    }
+    console.error("[instagram] story publish failed:", JSON.stringify(publishData));
+    throw new Error(publishData.error?.message ?? `HTTP ${publishRes.status}`);
+  }
+
+  throw new Error("Instagram story publish exhausted retries");
+}
