@@ -4,8 +4,9 @@
  * For each affected post:
  *   1. Ask Claude for cover headline (EN), subtitle (TH), and visual scene
  *      derived from title/description/category.
- *   2. Call Together FLUX.1.1-pro (1024x1024) with a structured prompt that
- *      renders the typography + "หมอรู้ · morroo.com" CTA.
+ *   2. Call Together FLUX.1.1-pro (1024x1024) for a text-free illustration,
+ *      then burn EN headline + Thai subtitle + CTA on top via sharp using
+ *      bundled Inter Black + Sarabun Bold fonts (Thai glyphs stay crisp).
  *   3. Upload PNG bytes to public-assets/blog-covers/{slug}.png.
  *   4. Update blog_posts.cover_image to the new public URL.
  *
@@ -23,6 +24,7 @@
  */
 
 import { createClient } from "@supabase/supabase-js";
+import { composeCoverWithText } from "./lib/cover-compose.mjs";
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -60,31 +62,24 @@ function slugToHeadline(slug) {
   return slug.split("-").slice(0, 2).join(" ").toUpperCase();
 }
 
-function buildCoverPrompt({ headline, subtitle, scene }) {
-  return `Modern educational medical infographic poster, square 1:1 cover for a Thai medical-exam blog ("หมอรู้").
+function buildCoverPrompt({ scene }) {
+  return `Modern editorial medical illustration for a Thai medical-education blog ("หมอรู้"). Square 1:1 composition, 1024x1024.
 
-VISUAL SCENE (left side, ~1/3 width):
+SCENE (main subject occupies left 35-45% of canvas):
 ${scene}
 
-TYPOGRAPHY (render text exactly as written, large and clearly readable, good kerning):
-- Top-right: BIG BOLD UPPERCASE English headline — "${headline}"
-- Below the headline: smaller Thai subtitle — "${subtitle}"
-- Bottom-right corner: small CTA badge "หมอรู้ · morroo.com"
+COMPOSITION:
+- Subject illustration anchored on the left side.
+- Right 55-65% of canvas: clean, low-detail area — gradient, soft abstract shapes, or quiet background (typography will be composited on top in post-processing; do NOT render any text yourself).
+- Generous whitespace; designer-quality flat or semi-flat illustration; subtle decorative shapes (soft circles, blobs, dotted accents).
+- Cohesive 3-color palette appropriate for the topic; lean toward medical professional tones (deep teal, navy, soft cyan, warm clinical neutrals).
 
-LAYOUT RULES:
-- Place ALL text AND the CTA inside the central 60% vertical band of the canvas (top 20% and bottom 20% must contain only background / decorative shapes), so a 16:9 center-crop on a blog card preserves the headline, subtitle, and CTA.
-- Photo or illustration on the left third; right two-thirds reserved for typography and supporting accents (subtle icons, ribbon shapes, soft circles).
-- Generous whitespace; clear visual hierarchy; modern sans-serif feel.
+ABSOLUTE RULES — DO NOT:
+- Render ANY text, letters, words, numbers, captions, labels, watermarks, signatures, URLs, brand marks, signs, charts, graphs, anatomical labels, callouts, or typography of ANY kind.
+- Add diagonal banners, ribbons with text, or decorative scripts.
+- Place the subject on the right side — keep right 55-65% reserved for clean negative space.
 
-STYLE:
-- Designer-quality flat infographic; pastel backgrounds; subtle decorative shapes; professional medical study-card aesthetic.
-- Choose a cohesive 3-color palette appropriate for the topic.
-- Crisp, legible Thai vowels and tone marks (no broken Thai glyphs).
-
-DO NOT:
-- Misspell "morroo.com" or "หมอรู้".
-- Add other URLs, fake brand marks, or watermarks.
-- Render more than ~12 visible words of text total — stay readable at thumbnail size.`;
+The output must be a pure illustration with no characters or glyphs visible anywhere.`;
 }
 
 async function deriveCoverFields({ title, description, category }) {
@@ -133,7 +128,7 @@ async function deriveCoverFields({ title, description, category }) {
   };
 }
 
-async function generateAndUpload(slug, fullPrompt) {
+async function generateAndUpload(slug, fullPrompt, { headline, subtitle }) {
   const res = await fetch("https://api.together.xyz/v1/images/generations", {
     method: "POST",
     headers: {
@@ -158,7 +153,8 @@ async function generateAndUpload(slug, fullPrompt) {
   const b64 = data.data?.[0]?.b64_json;
   if (!b64) throw new Error("No b64_json in Together response");
 
-  const buffer = Buffer.from(b64, "base64");
+  const rawBuffer = Buffer.from(b64, "base64");
+  const buffer = await composeCoverWithText(rawBuffer, { headline, subtitle });
   const filePath = `blog-covers/${slug}.png`;
 
   const { error: uploadError } = await supabase.storage
@@ -209,13 +205,12 @@ async function run() {
       console.log(`  subtitle: ${fields.subtitle_th}`);
       console.log(`  scene:    ${fields.scene.slice(0, 80)}${fields.scene.length > 80 ? "…" : ""}`);
 
-      const fullPrompt = buildCoverPrompt({
+      const fullPrompt = buildCoverPrompt({ scene: fields.scene });
+
+      const publicUrl = await generateAndUpload(post.slug, fullPrompt, {
         headline: fields.headline_en || slugToHeadline(post.slug),
         subtitle: fields.subtitle_th,
-        scene: fields.scene,
       });
-
-      const publicUrl = await generateAndUpload(post.slug, fullPrompt);
 
       const { error: updateError } = await supabase
         .from("blog_posts")
