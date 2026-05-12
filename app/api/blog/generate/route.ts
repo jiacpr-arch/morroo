@@ -8,12 +8,13 @@
 import { NextResponse, after } from "next/server";
 import sharp from "sharp";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { postToFacebook } from "@/lib/facebook";
-import { postToInstagram } from "@/lib/instagram";
+import { postToFacebook, postStoryToFacebook } from "@/lib/facebook";
+import { postToInstagram, postStoryToInstagram } from "@/lib/instagram";
 import { broadcastLineMessages } from "@/lib/line";
 import { buildBlogAnnounceFlex } from "@/lib/line-flex-templates";
 import { pickAutopostFormat, categoryHashtag } from "@/lib/autopost-format";
 import { generateHook } from "@/lib/autopost-copy";
+import { composeStoryImage } from "@/lib/autopost-story-image";
 
 export const runtime = "nodejs";
 // Total budget covers sync body (Claude article ~30-50s) + after() block
@@ -325,6 +326,38 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
       }
     }
 
+    // Generate Story-compatible variant: JPEG 1080×1920 (9:16 portrait), square
+    // cover centered on a blurred-cover background fill. FB Stories + IG Stories
+    // both share this asset. Stories don't render captions, so the square cover
+    // already carries the headline/subtitle baked in by gpt-image-1.
+    let coverImageStoryUrl: string | null = null;
+    if (coverBuffer) {
+      try {
+        const storyBuffer = await composeStoryImage(coverBuffer);
+        const storyFilePath = `blog-covers/${saved.slug}-story.jpg`;
+        const { error: storyUploadError } = await supabaseAsync.storage
+          .from("public-assets")
+          .upload(storyFilePath, storyBuffer, {
+            contentType: "image/jpeg",
+            upsert: true,
+          });
+
+        if (!storyUploadError) {
+          const { data: storyPublicUrl } = supabaseAsync.storage
+            .from("public-assets")
+            .getPublicUrl(storyFilePath);
+          coverImageStoryUrl = storyPublicUrl.publicUrl;
+          await supabaseAsync.from("blog_posts")
+            .update({ cover_image_story: coverImageStoryUrl })
+            .eq("slug", saved.slug);
+        } else {
+          console.error("[blog-generate] story image upload error:", storyUploadError);
+        }
+      } catch (err) {
+        console.error("[blog-generate] story image compose error:", err);
+      }
+    }
+
     // Generate LINE-compatible variant: JPEG 1024×536 (LINE Flex hero max 1024px, JPEG/PNG only)
     let coverImageLineUrl: string | null = null;
     if (coverBuffer) {
@@ -428,6 +461,41 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
         console.error("[blog-generate] instagram post error:", err);
         await supabaseAsync.from("blog_posts").update({
           ig_last_error: String(err).slice(0, 500),
+        }).eq("slug", saved.slug);
+      }
+    }
+
+    // FB Story autopost (opt-in via env flag). Stories carry no caption — all
+    // text comes from the baked-in headline/subtitle on the cover image.
+    if (process.env.FACEBOOK_STORY_AUTOPOST_ENABLED === "true" && coverImageStoryUrl) {
+      try {
+        const fbStoryId = await postStoryToFacebook({ imageUrl: coverImageStoryUrl });
+        await supabaseAsync.from("blog_posts").update({
+          fb_story_id: fbStoryId,
+          fb_story_posted_at: new Date().toISOString(),
+          fb_story_last_error: null,
+        }).eq("slug", saved.slug);
+      } catch (err) {
+        console.error("[blog-generate] facebook story error:", err);
+        await supabaseAsync.from("blog_posts").update({
+          fb_story_last_error: String(err).slice(0, 500),
+        }).eq("slug", saved.slug);
+      }
+    }
+
+    // IG Story autopost (opt-in via env flag). Same 9:16 asset as FB Story.
+    if (process.env.INSTAGRAM_STORY_AUTOPOST_ENABLED === "true" && coverImageStoryUrl) {
+      try {
+        const igStoryId = await postStoryToInstagram({ imageUrl: coverImageStoryUrl });
+        await supabaseAsync.from("blog_posts").update({
+          ig_story_id: igStoryId,
+          ig_story_posted_at: new Date().toISOString(),
+          ig_story_last_error: null,
+        }).eq("slug", saved.slug);
+      } catch (err) {
+        console.error("[blog-generate] instagram story error:", err);
+        await supabaseAsync.from("blog_posts").update({
+          ig_story_last_error: String(err).slice(0, 500),
         }).eq("slug", saved.slug);
       }
     }

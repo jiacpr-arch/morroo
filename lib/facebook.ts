@@ -140,3 +140,70 @@ export async function postToFacebook(post: {
   console.log(`[facebook] posted: id=${postId} slug=${post.slug}`);
   return postId;
 }
+
+/**
+ * Publish a Facebook Page photo story via the Graph API.
+ *
+ * Two-step flow per FB docs:
+ *   1. POST {page-id}/photos with published=false → photo_id
+ *   2. POST {page-id}/photo_stories with photo_id → story post id
+ *
+ * Story image constraints:
+ *   - 9:16 portrait, 1080×1920 recommended
+ *   - JPEG/PNG; max ~4 MB
+ *   - Page token must include `pages_manage_posts` + `pages_read_engagement`
+ */
+export async function postStoryToFacebook(post: {
+  imageUrl: string;
+}): Promise<string> {
+  const pageId = process.env.FACEBOOK_PAGE_ID;
+  if (!pageId) {
+    throw new Error("FACEBOOK_PAGE_ID not set");
+  }
+
+  const currentToken = await getLatestUserToken();
+  if (!currentToken) {
+    throw new Error("No Facebook user token found");
+  }
+
+  const pageToken = await getPageToken(pageId, currentToken);
+  if (!pageToken) {
+    throw new Error("Failed to obtain Facebook Page token");
+  }
+
+  // Step 1: Upload as unpublished photo to get a photo_id.
+  const photoRes = await fetch(`https://graph.facebook.com/v24.0/${pageId}/photos`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      url: post.imageUrl,
+      published: false,
+      access_token: pageToken,
+    }),
+  });
+  const photoData = await photoRes.json();
+  if (!photoRes.ok || photoData.error || !photoData.id) {
+    console.error("[facebook] story photo upload failed:", JSON.stringify(photoData));
+    throw new Error(photoData.error?.message ?? `HTTP ${photoRes.status}`);
+  }
+  const photoId: string = photoData.id;
+
+  // Step 2: Publish the photo as a story.
+  const storyRes = await fetch(`https://graph.facebook.com/v24.0/${pageId}/photo_stories`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      photo_id: photoId,
+      access_token: pageToken,
+    }),
+  });
+  const storyData = await storyRes.json();
+  if (!storyRes.ok || storyData.error) {
+    console.error("[facebook] story publish failed:", JSON.stringify(storyData));
+    throw new Error(storyData.error?.message ?? `HTTP ${storyRes.status}`);
+  }
+
+  const storyId: string = storyData.post_id ?? storyData.id ?? photoId;
+  console.log(`[facebook] story posted: id=${storyId} photo=${photoId}`);
+  return storyId;
+}

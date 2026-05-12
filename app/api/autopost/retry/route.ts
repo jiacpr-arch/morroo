@@ -1,9 +1,10 @@
 /**
- * Retry autopost for articles where FB, LINE, or IG delivery failed.
+ * Retry autopost for articles where FB, LINE, IG, or Story delivery failed.
  *
- * GET /api/autopost/retry?secret=…&platform=fb|line|ig|both|all&slug=…&limit=1
+ * GET /api/autopost/retry?secret=…&platform=fb|line|ig|fb_story|ig_story|stories|both|all&slug=…&limit=1
  *   slug    – retry a specific article (optional; omit to pick unposted ones)
- *   platform – fb | line | ig | both (= fb+line) | all (= fb+line+ig). Default: both
+ *   platform – fb | line | ig | fb_story | ig_story | stories (= fb_story+ig_story)
+ *              | both (= fb+line) | all (= fb+line+ig+fb_story+ig_story). Default: both
  *   limit    – max articles to process per invocation (default: 1, max: 10)
  *
  * Posts one article per invocation to stay within Vercel maxDuration.
@@ -13,12 +14,13 @@
 import { NextResponse } from "next/server";
 import sharp from "sharp";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { postToFacebook } from "@/lib/facebook";
-import { postToInstagram } from "@/lib/instagram";
+import { postToFacebook, postStoryToFacebook } from "@/lib/facebook";
+import { postToInstagram, postStoryToInstagram } from "@/lib/instagram";
 import { broadcastLineMessages } from "@/lib/line";
 import { buildBlogAnnounceFlex } from "@/lib/line-flex-templates";
 import { pickAutopostFormat, categoryHashtag } from "@/lib/autopost-format";
 import { generateHook } from "@/lib/autopost-copy";
+import { composeStoryImage } from "@/lib/autopost-story-image";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -55,6 +57,40 @@ async function ensureIgCover(
     return pub.publicUrl;
   } catch (err) {
     console.error("[autopost-retry] ig cover gen error:", err);
+    return null;
+  }
+}
+
+/**
+ * Generate Story-compatible JPEG variant (1080×1920, 9:16 portrait). Square
+ * cover is centered over a blurred-cover background; FB Stories + IG Stories
+ * share this asset. Stories don't render captions so all text must be on-image.
+ */
+async function ensureStoryCover(
+  supabase: ReturnType<typeof createAdminClient>,
+  slug: string,
+  coverImage: string,
+): Promise<string | null> {
+  try {
+    const res = await fetch(coverImage);
+    if (!res.ok) return null;
+    const buffer = Buffer.from(await res.arrayBuffer());
+    const storyBuffer = await composeStoryImage(buffer);
+
+    const filePath = `blog-covers/${slug}-story.jpg`;
+    const { error: uploadError } = await supabase.storage
+      .from("public-assets")
+      .upload(filePath, storyBuffer, { contentType: "image/jpeg", upsert: true });
+    if (uploadError) {
+      console.error("[autopost-retry] story cover upload error:", uploadError);
+      return null;
+    }
+    const { data: pub } = supabase.storage.from("public-assets").getPublicUrl(filePath);
+    const url = pub.publicUrl;
+    await supabase.from("blog_posts").update({ cover_image_story: url }).eq("slug", slug);
+    return url;
+  } catch (err) {
+    console.error("[autopost-retry] story cover gen error:", err);
     return null;
   }
 }
@@ -105,11 +141,13 @@ export async function GET(request: Request) {
 
   const targetSlug = searchParams.get("slug");
   const platform = (searchParams.get("platform") ?? "both") as
-    | "fb" | "line" | "ig" | "both" | "all";
+    | "fb" | "line" | "ig" | "fb_story" | "ig_story" | "stories" | "both" | "all";
   const limit = Math.min(10, parseInt(searchParams.get("limit") ?? "1", 10));
   const doFb = platform === "fb" || platform === "both" || platform === "all";
   const doLine = platform === "line" || platform === "both" || platform === "all";
   const doIg = platform === "ig" || platform === "all";
+  const doFbStory = platform === "fb_story" || platform === "stories" || platform === "all";
+  const doIgStory = platform === "ig_story" || platform === "stories" || platform === "all";
 
   const supabase = createAdminClient();
   // Force canonical www domain — LINE Flex action URI strict-validates scheme
@@ -121,18 +159,22 @@ export async function GET(request: Request) {
   let query = supabase
     .from("blog_posts")
     .select(
-      "slug, title, description, category, cover_image, cover_image_line, fb_post_id, line_broadcast_at, ig_post_id, autopost_format",
+      "slug, title, description, category, cover_image, cover_image_line, cover_image_story, fb_post_id, line_broadcast_at, ig_post_id, fb_story_id, ig_story_id, autopost_format",
     )
     .order("published_at", { ascending: false });
 
   if (targetSlug) {
     query = query.eq("slug", targetSlug);
-  } else if (doIg && !doFb && !doLine) {
+  } else if (doIg && !doFb && !doLine && !doFbStory && !doIgStory) {
     query = query.is("ig_post_id", null);
-  } else if (doFb && !doLine && !doIg) {
+  } else if (doFb && !doLine && !doIg && !doFbStory && !doIgStory) {
     query = query.is("fb_post_id", null);
-  } else if (doLine && !doFb && !doIg) {
+  } else if (doLine && !doFb && !doIg && !doFbStory && !doIgStory) {
     query = query.is("line_broadcast_at", null);
+  } else if (doFbStory && !doFb && !doLine && !doIg && !doIgStory) {
+    query = query.is("fb_story_id", null);
+  } else if (doIgStory && !doFb && !doLine && !doIg && !doFbStory) {
+    query = query.is("ig_story_id", null);
   }
   // multi-platform: pick any rows; per-platform skip checks happen below
 
@@ -144,10 +186,24 @@ export async function GET(request: Request) {
     return NextResponse.json({ message: "No unposted articles found" });
   }
 
-  const results: Array<{ slug: string; fb?: string; line?: string; ig?: string }> = [];
+  const results: Array<{
+    slug: string;
+    fb?: string;
+    line?: string;
+    ig?: string;
+    fb_story?: string;
+    ig_story?: string;
+  }> = [];
 
   for (const post of posts) {
-    const result: { slug: string; fb?: string; line?: string; ig?: string } = { slug: post.slug };
+    const result: {
+      slug: string;
+      fb?: string;
+      line?: string;
+      ig?: string;
+      fb_story?: string;
+      ig_story?: string;
+    } = { slug: post.slug };
     // Hardcode canonical URL — env-derived siteUrl gave LINE "invalid uri scheme"
     // even with || + replace fallbacks, so something in env is malformed/empty.
     const articleUrl = `https://www.morroo.com/blog/${post.slug}`;
@@ -262,6 +318,65 @@ export async function GET(request: Request) {
       result.ig = "skipped:INSTAGRAM_AUTOPOST_ENABLED!=true";
     } else if (doIg) {
       result.ig = "already_posted";
+    }
+
+    // FB / IG Story retries share the same 9:16 asset. Generate on demand if missing.
+    const needStoryCover = (doFbStory && !post.fb_story_id) || (doIgStory && !post.ig_story_id);
+    const storyCover = needStoryCover
+      ? (post.cover_image_story
+        ?? (post.cover_image ? await ensureStoryCover(supabase, post.slug, post.cover_image) : null))
+      : null;
+
+    const fbStoryEnabled = process.env.FACEBOOK_STORY_AUTOPOST_ENABLED === "true";
+    if (doFbStory && !post.fb_story_id && fbStoryEnabled) {
+      if (!storyCover) {
+        result.fb_story = "skipped:no_cover";
+      } else {
+        try {
+          const fbStoryId = await postStoryToFacebook({ imageUrl: storyCover });
+          await supabase.from("blog_posts").update({
+            fb_story_id: fbStoryId,
+            fb_story_posted_at: new Date().toISOString(),
+            fb_story_last_error: null,
+          }).eq("slug", post.slug);
+          result.fb_story = `posted:${fbStoryId}`;
+        } catch (err) {
+          await supabase.from("blog_posts").update({
+            fb_story_last_error: String(err).slice(0, 500),
+          }).eq("slug", post.slug);
+          result.fb_story = `error:${String(err).slice(0, 100)}`;
+        }
+      }
+    } else if (doFbStory && !fbStoryEnabled) {
+      result.fb_story = "skipped:FACEBOOK_STORY_AUTOPOST_ENABLED!=true";
+    } else if (doFbStory) {
+      result.fb_story = "already_posted";
+    }
+
+    const igStoryEnabled = process.env.INSTAGRAM_STORY_AUTOPOST_ENABLED === "true";
+    if (doIgStory && !post.ig_story_id && igStoryEnabled) {
+      if (!storyCover) {
+        result.ig_story = "skipped:no_cover";
+      } else {
+        try {
+          const igStoryId = await postStoryToInstagram({ imageUrl: storyCover });
+          await supabase.from("blog_posts").update({
+            ig_story_id: igStoryId,
+            ig_story_posted_at: new Date().toISOString(),
+            ig_story_last_error: null,
+          }).eq("slug", post.slug);
+          result.ig_story = `posted:${igStoryId}`;
+        } catch (err) {
+          await supabase.from("blog_posts").update({
+            ig_story_last_error: String(err).slice(0, 500),
+          }).eq("slug", post.slug);
+          result.ig_story = `error:${String(err).slice(0, 100)}`;
+        }
+      }
+    } else if (doIgStory && !igStoryEnabled) {
+      result.ig_story = "skipped:INSTAGRAM_STORY_AUTOPOST_ENABLED!=true";
+    } else if (doIgStory) {
+      result.ig_story = "already_posted";
     }
 
     results.push(result);
