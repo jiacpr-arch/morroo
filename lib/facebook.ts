@@ -80,11 +80,9 @@ export async function postToFacebook(post: {
   hook?: string;
 }): Promise<string> {
   const pageId = process.env.FACEBOOK_PAGE_ID;
-  // Force canonical www domain — `morroo.com` redirects to `www.morroo.com`,
-  // and FB's URL validator/scraper rejects URLs that 301 (link param fails,
-  // autolinker truncates at `.com`).
-  const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com";
-  const siteUrl = rawSiteUrl.replace(/^https:\/\/morroo\.com/, "https://www.morroo.com");
+  // Hardcode canonical URL — env-derived siteUrl gave FB "url invalid" on /feed
+  // (matches the same workaround in app/api/autopost/retry/route.ts:209 for LINE).
+  const siteUrl = "https://www.morroo.com";
 
   if (!pageId) {
     throw new Error("FACEBOOK_PAGE_ID not set");
@@ -135,7 +133,7 @@ export async function postToFacebook(post: {
   const data = await res.json();
 
   if (!res.ok || data.error) {
-    console.error("[facebook] post failed:", JSON.stringify(data));
+    console.error("[facebook] post failed:", JSON.stringify({ articleUrl, status: res.status, response: data }));
     throw new Error(data.error?.message ?? `HTTP ${res.status}`);
   }
 
