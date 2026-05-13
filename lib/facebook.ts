@@ -114,10 +114,13 @@ export async function postToFacebook(post: {
   // (photo posts truncate caption autolinks to the domain). Requires the
   // host to be registered under FB App Settings → Basic → App Domains, and
   // the article page must expose absolute og:image / og:title / og:description.
+  //
+  // Trailing "🔗 <url>" gives readers a second clickable touchpoint after the
+  // body copy + matches the rich-caption template assembled by buildFbCaption.
   const articleUrl = `${siteUrl}/blog/${post.slug}`;
   const message = post.hook
-    ? `${post.hook}\n\n${articleUrl}`
-    : `📚 ${post.title}\n\n${post.description}\n\n${articleUrl}`;
+    ? `${post.hook}\n\n🔗 ${articleUrl}`
+    : `📚 ${post.title}\n\n${post.description}\n\n🔗 ${articleUrl}`;
 
   const res = await fetch(`https://graph.facebook.com/v24.0/${pageId}/feed`, {
     method: "POST",

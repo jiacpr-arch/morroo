@@ -19,7 +19,7 @@ import { postToInstagram, postStoryToInstagram } from "@/lib/instagram";
 import { broadcastLineMessages } from "@/lib/line";
 import { buildBlogAnnounceFlex } from "@/lib/line-flex-templates";
 import { pickAutopostFormat, categoryHashtag } from "@/lib/autopost-format";
-import { generateHook } from "@/lib/autopost-copy";
+import { generateHook, buildFbCaption, buildIgCaption } from "@/lib/autopost-copy";
 import { composeStoryImage } from "@/lib/autopost-story-image";
 
 export const runtime = "nodejs";
@@ -214,19 +214,24 @@ export async function GET(request: Request) {
 
     // FB retry
     if (doFb && !post.fb_post_id) {
-      const hook = await generateHook({
+      const hookParts = await generateHook({
         title: post.title,
         description: post.description,
         apiKey: process.env.ANTHROPIC_API_KEY,
       });
       const hashtags = `#เตรียมสอบแพทย์ #หมอรู้ #${categoryHashtag(post.category)}`;
+      const fbCaption = buildFbCaption({
+        ...hookParts,
+        articleUrl,
+        hashtags,
+      });
 
       try {
         const fbId = await postToFacebook({
           title: post.title,
           description: post.description,
           slug: post.slug,
-          hook: format === "cover_caption" ? `${hook}\n\n${hashtags}` : hook,
+          hook: fbCaption,
         });
         await supabase.from("blog_posts").update({
           fb_post_id: fbId,
@@ -290,15 +295,17 @@ export async function GET(request: Request) {
       if (!igCover) {
         result.ig = "skipped:no_cover";
       } else {
-        const hook = await generateHook({
+        const hookParts = await generateHook({
           title: post.title,
           description: post.description,
           apiKey: process.env.ANTHROPIC_API_KEY,
         });
         const hashtags = `#เตรียมสอบแพทย์ #หมอรู้ #${categoryHashtag(post.category)}`;
-        // IG strips URL clickability in captions — direct readers via bio link.
-        const navHint = `📖 อ่านบทความเต็มที่ลิงก์ใน bio (${siteUrl.replace(/^https?:\/\//, "")})`;
-        const caption = `${hook}\n\n${navHint}\n\n${hashtags}`;
+        const caption = buildIgCaption({
+          ...hookParts,
+          siteHost: siteUrl.replace(/^https?:\/\//, ""),
+          hashtags,
+        });
 
         try {
           const igId = await postToInstagram({ imageUrl: igCover, caption });
