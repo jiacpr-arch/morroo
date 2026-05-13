@@ -1,8 +1,10 @@
+// "link_only" stays in the type union for back-compat with rows that already
+// recorded it before the format catalog was trimmed — picker no longer emits it.
 export type AutopostFormat = "cover_caption" | "quote_card" | "link_only";
 
-// link_only ใช้ /feed + link param ซึ่ง FB reject ด้วย "url invalid"
-// (App Domains + fb:app_id meta ยังไม่ช่วย — น่าจะต้อง business verification)
-// ตัดออกชั่วคราว เหลือ 2 format ที่ใช้ /photos endpoint (มีรูปแน่นอน)
+// All formats now post via /feed + `link` (see lib/facebook.ts) so every
+// autopost renders as a clickable link card. The format only chooses which
+// cover variant to use (designed cover with text vs. quote card from /api/og).
 const FORMATS: AutopostFormat[] = ["cover_caption", "quote_card"];
 
 /**
