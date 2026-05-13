@@ -4,6 +4,7 @@ import {
   sendFbMessage,
   sendFbReadReceipt,
   sendFbTyping,
+  takeThreadControl,
   verifyFbSignature,
 } from "@/lib/facebook-messenger";
 import {
@@ -43,26 +44,66 @@ export async function GET(request: NextRequest) {
   return NextResponse.json({ error: "Forbidden" }, { status: 403 });
 }
 
+type FbReferral = {
+  // ref param set on the ad (m.me link param). May be empty for some CTM ads.
+  ref?: string;
+  // ADS = clicked a Click-to-Messenger ad; SHORTLINK = m.me link; CUSTOMER_CHAT_PLUGIN; etc.
+  source?: string;
+  type?: string;
+  ad_id?: string;
+};
+
 type FbMessagingEvent = {
   sender?: { id?: string };
   recipient?: { id?: string };
+  timestamp?: number;
   message?: {
     mid?: string;
     text?: string;
     is_echo?: boolean; // true when the message is from the page itself — ignore
+    quick_reply?: { payload?: string };
   };
+  postback?: {
+    mid?: string;
+    title?: string;
+    payload?: string;
+    referral?: FbReferral;
+  };
+  referral?: FbReferral;
 };
 
 type FbEntry = {
   id?: string;
   time?: number;
   messaging?: FbMessagingEvent[];
+  /** Mirrored events for apps that are NOT the primary thread receiver.
+   *  Common for Click-to-Messenger ads when Page Inbox is the primary receiver. */
+  standby?: FbMessagingEvent[];
 };
 
 type FbWebhookBody = {
   object?: string;
   entry?: FbEntry[];
 };
+
+/** Extract the best human-readable user input from a webhook event:
+ *  - plain text message
+ *  - postback title (button label the user saw)
+ *  - postback payload (only if title is missing) */
+function extractUserInput(event: FbMessagingEvent): string | null {
+  const text = event.message?.text?.trim();
+  if (text) return text;
+
+  const postbackTitle = event.postback?.title?.trim();
+  if (postbackTitle) return postbackTitle;
+
+  // Fallback for postbacks without a title (rare — e.g. programmatic m.me links).
+  // Skip payloads that look like internal IDs (UPPER_SNAKE_CASE).
+  const payload = event.postback?.payload?.trim();
+  if (payload && !/^[A-Z0-9_]+$/.test(payload)) return payload;
+
+  return null;
+}
 
 /**
  * POST = message events from users. Verify signature, then for each text message
@@ -85,19 +126,93 @@ export async function POST(request: NextRequest) {
 
   for (const entry of body.entry ?? []) {
     for (const event of entry.messaging ?? []) {
-      const senderPsid = event.sender?.id;
-      const text = event.message?.text?.trim();
+      await handleMessagingEvent(supabase, event);
+    }
 
-      // Ignore: messages without text (stickers/attachments), echoes from our own page,
-      // delivery/read receipts that arrive without a `message` field.
-      if (!senderPsid || !text || event.message?.is_echo) continue;
-
-      await handleChatbotReply(supabase, senderPsid, text);
+    // Standby channel — Page Inbox (or another app) is currently the primary
+    // receiver. Common for CTM ads when handover routing isn't configured.
+    // We only try to take control for ad-initiated threads to avoid hijacking
+    // conversations a human agent is handling via Page Inbox.
+    for (const event of entry.standby ?? []) {
+      await handleStandbyEvent(supabase, event);
     }
   }
 
   // Always 200 so Meta doesn't retry.
   return NextResponse.json({ ok: true });
+}
+
+async function handleMessagingEvent(
+  supabase: ReturnType<typeof createAdminClient>,
+  event: FbMessagingEvent
+): Promise<void> {
+  const senderPsid = event.sender?.id;
+  if (!senderPsid) return;
+
+  // Echo of our own outbound message — ignore to avoid reply loops.
+  if (event.message?.is_echo) return;
+
+  // CTM ad click without an accompanying text/postback. Log it so we know the
+  // ad fired; the user's first typed message will arrive as a separate event.
+  if (event.referral && !event.message && !event.postback) {
+    console.log(
+      `[fb-webhook] ad referral psid=${senderPsid} source=${event.referral.source} ` +
+        `ad_id=${event.referral.ad_id ?? "?"} ref=${event.referral.ref ?? "?"}`
+    );
+    return;
+  }
+
+  const userInput = extractUserInput(event);
+  if (!userInput) return;
+
+  await handleChatbotReply(supabase, senderPsid, userInput);
+}
+
+async function handleStandbyEvent(
+  supabase: ReturnType<typeof createAdminClient>,
+  event: FbMessagingEvent
+): Promise<void> {
+  const senderPsid = event.sender?.id;
+  if (!senderPsid) return;
+
+  // Only attempt to claim threads that originated from a Click-to-Messenger ad.
+  // Other standby events are intentionally being handled by another receiver
+  // (human agent via Page Inbox, another bot app) — don't hijack those.
+  const referral = event.referral ?? event.postback?.referral;
+  const isAdInitiated = referral?.source === "ADS";
+
+  if (!isAdInitiated) {
+    console.log(
+      `[fb-webhook] standby ignored (not ad-initiated) psid=${senderPsid} ` +
+        `hasMessage=${!!event.message} hasPostback=${!!event.postback} hasReferral=${!!referral}`
+    );
+    return;
+  }
+
+  console.log(
+    `[fb-webhook] standby ad-initiated, taking thread control psid=${senderPsid} ` +
+      `ad_id=${referral.ad_id ?? "?"}`
+  );
+
+  const claimed = await takeThreadControl(senderPsid);
+  if (!claimed) {
+    // Couldn't take control — the Page may not have configured handover protocol
+    // with our app as a secondary receiver, or the primary receiver isn't releasing.
+    // The customer won't get a bot reply for this conversation; surface that in logs.
+    console.error(
+      `[fb-webhook] take_thread_control failed psid=${senderPsid} — check App Dashboard → ` +
+        `Messenger → Settings → Advanced Messaging Features → Handover Protocol`
+    );
+    return;
+  }
+
+  // Take effect is async on Meta's side — subsequent user messages should arrive
+  // as regular `messaging` events. If the standby event itself included content,
+  // try to respond now so the user isn't kept waiting for their next message.
+  const userInput = extractUserInput(event);
+  if (userInput) {
+    await handleChatbotReply(supabase, senderPsid, userInput);
+  }
 }
 
 async function handleChatbotReply(
