@@ -37,6 +37,11 @@ interface McqPracticeProps {
   freeUsedCount?: number;
   freeLimit?: number;
   viaRecommendation?: boolean;
+  /** Session metadata — defaults to student/NL2 for backward compatibility */
+  sessionAudience?: "student" | "board";
+  sessionExamType?: "NL1" | "NL2" | null;
+  sessionBoardSpecialty?: string | null;
+  sessionBoardSection?: string | null;
 }
 
 export default function McqPractice({
@@ -45,6 +50,10 @@ export default function McqPractice({
   freeUsedCount = 0,
   freeLimit = 5,
   viaRecommendation = false,
+  sessionAudience = "student",
+  sessionExamType = "NL2",
+  sessionBoardSpecialty = null,
+  sessionBoardSection = null,
 }: McqPracticeProps) {
   const { status: betaStatus, recordAttempt, refresh: refreshBeta } = useBeta();
   const isBeta = betaStatus?.isBeta ?? false;
@@ -92,7 +101,10 @@ export default function McqPractice({
           const session = await createMcqSession({
             user_id: user.id,
             mode: "practice",
-            exam_type: "NL2",
+            exam_type: sessionAudience === "student" ? sessionExamType ?? "NL2" : null,
+            audience: sessionAudience,
+            board_specialty: sessionBoardSpecialty,
+            board_section: sessionBoardSection,
             total_questions: questions.length,
           });
           if (session) {

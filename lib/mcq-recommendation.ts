@@ -50,8 +50,9 @@ export async function getRecommendedQuestions(
 
   const { data: attemptsRaw } = await supabase
     .from("mcq_attempts")
-    .select("question_id, is_correct, created_at, mcq_questions!inner(subject_id)")
+    .select("question_id, is_correct, created_at, mcq_questions!inner(subject_id, audience)")
     .eq("user_id", userId)
+    .eq("mcq_questions.audience", "student")
     .order("created_at", { ascending: false })
     .limit(5000);
 
@@ -159,7 +160,8 @@ async function fetchQuestionsByIds(
     .from("mcq_questions")
     .select("*, mcq_subjects(name, name_th, icon)")
     .in("id", ids)
-    .eq("status", "active");
+    .eq("status", "active")
+    .eq("audience", "student");
   return (data as McqQuestion[] | null) ?? [];
 }
 
@@ -176,6 +178,7 @@ async function fetchUnseenQuestions(
     .from("mcq_questions")
     .select("*, mcq_subjects(name, name_th, icon)")
     .eq("status", "active")
+    .eq("audience", "student")
     .eq("exam_type", examType)
     .limit(fetchLimit);
 

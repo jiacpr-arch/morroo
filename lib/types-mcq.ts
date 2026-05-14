@@ -1,9 +1,14 @@
+export type McqAudience = "student" | "board";
+
 export interface McqSubject {
   id: string;
   name: string;
   name_th: string;
   icon: string;
-  exam_type: "NL1" | "NL2" | "both";
+  exam_type: "NL1" | "NL2" | "both" | null;
+  audience: McqAudience;
+  board_specialty: string | null;
+  board_subspecialty: string | null;
   question_count: number;
   created_at: string;
 }
@@ -23,7 +28,7 @@ export interface McqChoiceExplanation {
 export interface McqQuestion {
   id: string;
   subject_id: string;
-  exam_type: "NL1" | "NL2";
+  exam_type: "NL1" | "NL2" | null;
   exam_source: string | null;
   question_number: number | null;
   scenario: string;
@@ -40,6 +45,15 @@ export interface McqQuestion {
   is_ai_enhanced: boolean;
   ai_notes: string | null;
   status: "active" | "review" | "disabled";
+  // board exam columns (null for student audience)
+  audience: McqAudience;
+  board_specialty: string | null;
+  board_subspecialty: string | null;
+  board_section: string | null;
+  board_topic: string | null;
+  board_age_group: "peds" | "adult" | "mixed" | null;
+  board_level: number | null;
+  reference_source: string | null;
   created_at: string;
   // joined
   mcq_subjects?: McqSubject;
@@ -62,8 +76,11 @@ export interface McqSession {
   id: string;
   user_id: string;
   mode: "practice" | "mock";
-  exam_type: "NL1" | "NL2";
+  exam_type: "NL1" | "NL2" | null;
   subject_id: string | null;
+  audience: McqAudience;
+  board_specialty: string | null;
+  board_section: string | null;
   total_questions: number;
   correct_count: number;
   time_limit_minutes: number | null;
