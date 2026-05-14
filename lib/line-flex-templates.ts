@@ -157,12 +157,22 @@ export function buildBlogAnnounceFlex(data: BlogAnnounceData): LineMessage {
       footer: {
         type: "box",
         layout: "vertical",
+        spacing: "sm",
         paddingAll: "md",
         contents: [
           {
             type: "button",
             style: "primary",
             color: "#16A085",
+            action: {
+              type: "uri",
+              label: "สมัครฟรี",
+              uri: "https://www.morroo.com/register",
+            },
+          },
+          {
+            type: "button",
+            style: "secondary",
             action: {
               type: "uri",
               label: "อ่านบทความ",
