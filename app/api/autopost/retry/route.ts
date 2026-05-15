@@ -278,10 +278,8 @@ export async function GET(request: Request) {
       result.line = "already_sent";
     }
 
-    // IG retry — gated by INSTAGRAM_AUTOPOST_ENABLED while we validate token perms
-    // and Page→IG link in production; flip to "true" once first post succeeds.
-    const igEnabled = process.env.INSTAGRAM_AUTOPOST_ENABLED === "true";
-    if (doIg && !post.ig_post_id && igEnabled) {
+    // IG retry
+    if (doIg && !post.ig_post_id) {
       // Source cover URL by format. cover_image is a 1024×1024 PNG; quote_card
       // is rendered via next/og (also PNG). IG rejects both as PNG, so we
       // flatten to JPEG via ensureIgCover before posting (full resolution,
@@ -322,8 +320,6 @@ export async function GET(request: Request) {
           result.ig = `error:${String(err).slice(0, 100)}`;
         }
       }
-    } else if (doIg && !igEnabled) {
-      result.ig = "skipped:INSTAGRAM_AUTOPOST_ENABLED!=true";
     } else if (doIg) {
       result.ig = "already_posted";
     }
@@ -361,8 +357,7 @@ export async function GET(request: Request) {
       result.fb_story = "already_posted";
     }
 
-    const igStoryEnabled = process.env.INSTAGRAM_STORY_AUTOPOST_ENABLED === "true";
-    if (doIgStory && !post.ig_story_id && igStoryEnabled) {
+    if (doIgStory && !post.ig_story_id) {
       if (!storyCover) {
         result.ig_story = "skipped:no_cover";
       } else {
@@ -381,8 +376,6 @@ export async function GET(request: Request) {
           result.ig_story = `error:${String(err).slice(0, 100)}`;
         }
       }
-    } else if (doIgStory && !igStoryEnabled) {
-      result.ig_story = "skipped:INSTAGRAM_STORY_AUTOPOST_ENABLED!=true";
     } else if (doIgStory) {
       result.ig_story = "already_posted";
     }
