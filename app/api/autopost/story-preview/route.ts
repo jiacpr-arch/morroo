@@ -1,7 +1,7 @@
 /**
  * Story image preview — composes the 9:16 Story variant on the fly and streams
  * it back as JPEG. Use to eyeball the framing before flipping
- * FACEBOOK_STORY_AUTOPOST_ENABLED / INSTAGRAM_STORY_AUTOPOST_ENABLED on.
+ * FACEBOOK_STORY_AUTOPOST_ENABLED on.
  *
  * GET /api/autopost/story-preview?secret=…&slug=…
  *   slug       – blog_posts.slug; pulls cover_image + title from Supabase

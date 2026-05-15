@@ -445,10 +445,9 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
       ).eq("slug", saved.slug);
     }
 
-    // IG autopost (opt-in via env flag while we validate token perms / rate limits).
-    // Use the flattened JPEG variant — IG container endpoint rejects PNG with
-    // alpha channel ("Only photo or video can be accepted as media type").
-    if (process.env.INSTAGRAM_AUTOPOST_ENABLED === "true" && coverImageIgUrl) {
+    // IG autopost. Use the flattened JPEG variant — IG container endpoint rejects
+    // PNG with alpha channel ("Only photo or video can be accepted as media type").
+    if (coverImageIgUrl) {
       const igCaption = buildIgCaption({
         ...hookParts,
         siteHost: siteUrl.replace(/^https?:\/\//, ""),
@@ -491,8 +490,8 @@ ${existingTitles.slice(0, 20).map((t: string) => `- ${t}`).join("\n")}
       }
     }
 
-    // IG Story autopost (opt-in via env flag). Same 9:16 asset as FB Story.
-    if (process.env.INSTAGRAM_STORY_AUTOPOST_ENABLED === "true" && coverImageStoryUrl) {
+    // IG Story autopost. Same 9:16 asset as FB Story.
+    if (coverImageStoryUrl) {
       try {
         const igStoryId = await postStoryToInstagram({ imageUrl: coverImageStoryUrl });
         await supabaseAsync.from("blog_posts").update({
