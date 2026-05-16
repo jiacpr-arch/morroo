@@ -4,15 +4,13 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { Loader2, Shield } from "lucide-react";
-import { McqForm } from "../McqForm";
-
-interface McqSubject { id: string; name_th: string; icon: string; }
+import { McqForm, type AdminMcqSubject } from "../McqForm";
 
 export default function NewMcqPage() {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [isAdmin, setIsAdmin] = useState(false);
-  const [subjects, setSubjects] = useState<McqSubject[]>([]);
+  const [subjects, setSubjects] = useState<AdminMcqSubject[]>([]);
 
   useEffect(() => {
     async function load() {
@@ -26,8 +24,10 @@ export default function NewMcqPage() {
 
       setIsAdmin(true);
       const { data } = await supabase
-        .from("mcq_subjects").select("id, name_th, icon").order("name_th");
-      setSubjects((data as McqSubject[]) || []);
+        .from("mcq_subjects")
+        .select("id, name_th, icon, audience, board_specialty, board_subspecialty")
+        .order("name_th");
+      setSubjects((data as AdminMcqSubject[]) || []);
       setLoading(false);
     }
     load();

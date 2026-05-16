@@ -17,17 +17,20 @@ import {
 interface McqQuestion {
   id: string;
   subject_id: string;
-  exam_type: string;
+  exam_type: string | null;
   scenario: string;
   correct_answer: string;
   difficulty: string;
   status: string;
   topic: string | null;
+  audience: "student" | "board";
+  board_specialty: string | null;
+  board_section: string | null;
   created_at: string;
   mcq_subjects: { name_th: string; icon: string } | null;
 }
 
-interface McqSubject { id: string; name_th: string; icon: string; }
+interface McqSubject { id: string; name_th: string; icon: string; audience: "student" | "board"; }
 
 const STATUS_COLORS: Record<string, string> = {
   active: "bg-green-100 text-green-700",
@@ -52,6 +55,7 @@ export default function AdminMcqPage() {
   const [subjectFilter, setSubjectFilter] = useState("all");
   const [statusFilter, setStatusFilter] = useState("all");
   const [difficultyFilter, setDifficultyFilter] = useState("all");
+  const [audienceFilter, setAudienceFilter] = useState<"all" | "student" | "board">("all");
   const [page, setPage] = useState(1);
   const PAGE_SIZE = 100;
 
@@ -72,7 +76,7 @@ export default function AdminMcqPage() {
       for (let from = 0; ; from += CHUNK) {
         const { data, error } = await supabase
           .from("mcq_questions")
-          .select("id, subject_id, exam_type, scenario, correct_answer, difficulty, status, topic, created_at, mcq_subjects(name_th, icon)")
+          .select("id, subject_id, exam_type, scenario, correct_answer, difficulty, status, topic, audience, board_specialty, board_section, created_at, mcq_subjects(name_th, icon)")
           .order("created_at", { ascending: false })
           .range(from, from + CHUNK - 1);
         if (error || !data || data.length === 0) break;
@@ -80,7 +84,7 @@ export default function AdminMcqPage() {
         if (data.length < CHUNK) break;
       }
 
-      const sRes = await supabase.from("mcq_subjects").select("id, name_th, icon").order("name_th");
+      const sRes = await supabase.from("mcq_subjects").select("id, name_th, icon, audience").order("name_th");
 
       setQuestions(all);
       setSubjects((sRes.data as McqSubject[]) || []);
@@ -100,6 +104,7 @@ export default function AdminMcqPage() {
 
   const filtered = useMemo(() => {
     let list = questions;
+    if (audienceFilter !== "all") list = list.filter((x) => x.audience === audienceFilter);
     if (search) {
       const q = search.toLowerCase();
       list = list.filter((x) => x.scenario.toLowerCase().includes(q) || x.topic?.toLowerCase().includes(q));
@@ -108,9 +113,25 @@ export default function AdminMcqPage() {
     if (statusFilter !== "all") list = list.filter((x) => x.status === statusFilter);
     if (difficultyFilter !== "all") list = list.filter((x) => x.difficulty === difficultyFilter);
     return list;
-  }, [questions, search, subjectFilter, statusFilter, difficultyFilter]);
+  }, [questions, search, subjectFilter, statusFilter, difficultyFilter, audienceFilter]);
 
-  useEffect(() => { setPage(1); }, [search, subjectFilter, statusFilter, difficultyFilter]);
+  // Filter subject options by current audience filter to reduce noise
+  const subjectsForFilter = useMemo(
+    () =>
+      audienceFilter === "all"
+        ? subjects
+        : subjects.filter((s) => s.audience === audienceFilter),
+    [subjects, audienceFilter]
+  );
+
+  useEffect(() => { setPage(1); }, [search, subjectFilter, statusFilter, difficultyFilter, audienceFilter]);
+  useEffect(() => {
+    // Reset subject filter if it no longer matches the audience scope
+    if (audienceFilter !== "all" && subjectFilter !== "all") {
+      const stillValid = subjectsForFilter.some((s) => s.id === subjectFilter);
+      if (!stillValid) setSubjectFilter("all");
+    }
+  }, [audienceFilter, subjectFilter, subjectsForFilter]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const currentPage = Math.min(page, totalPages);
@@ -151,12 +172,21 @@ export default function AdminMcqPage() {
           <Input placeholder="ค้นหาคำถาม / topic..." value={search} onChange={(e) => setSearch(e.target.value)} className="pl-9 h-9" />
         </div>
         <select
+          value={audienceFilter}
+          onChange={(e) => setAudienceFilter(e.target.value as "all" | "student" | "board")}
+          className="border rounded-md px-3 py-1.5 text-sm bg-white"
+        >
+          <option value="all">ทั้งหมด (นศพ. + Board)</option>
+          <option value="student">นศพ. (NL)</option>
+          <option value="board">Board</option>
+        </select>
+        <select
           value={subjectFilter}
           onChange={(e) => setSubjectFilter(e.target.value)}
           className="border rounded-md px-3 py-1.5 text-sm bg-white"
         >
           <option value="all">ทุกสาขา</option>
-          {subjects.map((s) => <option key={s.id} value={s.id}>{s.icon} {s.name_th}</option>)}
+          {subjectsForFilter.map((s) => <option key={s.id} value={s.id}>{s.icon} {s.name_th}</option>)}
         </select>
         <select
           value={statusFilter}
@@ -217,7 +247,19 @@ export default function AdminMcqPage() {
                   <tr key={q.id} className="border-b last:border-0 hover:bg-muted/20">
                     <td className="p-3 max-w-xs">
                       <p className="text-sm line-clamp-2">{q.scenario}</p>
-                      <p className="text-xs text-muted-foreground mt-0.5">{q.exam_type} · ตอบ {q.correct_answer}</p>
+                      <div className="flex items-center gap-1.5 mt-0.5">
+                        {q.audience === "board" ? (
+                          <span className="text-[10px] px-1.5 py-0.5 rounded bg-purple-100 text-purple-700 font-medium">
+                            Board · {q.board_specialty}
+                            {q.board_section ? ` · ${q.board_section}` : ""}
+                          </span>
+                        ) : (
+                          <span className="text-[10px] px-1.5 py-0.5 rounded bg-blue-100 text-blue-700 font-medium">
+                            {q.exam_type ?? "นศพ."}
+                          </span>
+                        )}
+                        <span className="text-xs text-muted-foreground">ตอบ {q.correct_answer}</span>
+                      </div>
                     </td>
                     <td className="p-3 hidden sm:table-cell">
                       <span className="text-sm">
