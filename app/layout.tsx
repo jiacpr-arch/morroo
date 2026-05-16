@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Sarabun } from "next/font/google";
 import { Geist_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
