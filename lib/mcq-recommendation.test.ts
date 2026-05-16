@@ -85,6 +85,14 @@ function mkQuestion(id: string, subjectId: string): McqQuestion {
     is_ai_enhanced: false,
     ai_notes: null,
     status: "active",
+    audience: "student",
+    board_specialty: null,
+    board_subspecialty: null,
+    board_section: null,
+    board_topic: null,
+    board_age_group: null,
+    board_level: null,
+    reference_source: null,
     created_at: new Date().toISOString(),
   };
 }

@@ -1,18 +1,27 @@
 import { createClient } from "./server";
-import type { McqSubject, McqQuestion } from "../types-mcq";
+import type { McqSubject, McqQuestion, McqAudience } from "../types-mcq";
 
 export async function getMcqSubjects(
-  examType?: "NL1" | "NL2"
+  examType?: "NL1" | "NL2",
+  opts?: { audience?: McqAudience; boardSpecialty?: string }
 ): Promise<McqSubject[]> {
   const supabase = await createClient();
+  // Default to student audience — board callers must opt in explicitly via
+  // queries-board.ts. This keeps existing /nl pages 100% backward-compatible.
+  const audience = opts?.audience ?? "student";
   let query = supabase
     .from("mcq_subjects")
     .select("*")
+    .eq("audience", audience)
     .order("name_th", { ascending: true });
 
-  // exam_type column allows 'NL1' | 'NL2' | 'both' — include 'both' when filtering
-  if (examType) {
+  if (audience === "student" && examType) {
+    // exam_type column allows 'NL1' | 'NL2' | 'both' — include 'both' when filtering
     query = query.in("exam_type", [examType, "both"]);
+  }
+
+  if (audience === "board" && opts?.boardSpecialty) {
+    query = query.eq("board_specialty", opts.boardSpecialty);
   }
 
   const { data, error } = await query;
@@ -30,20 +39,34 @@ export async function getMcqQuestions(options?: {
   examType?: string;
   limit?: number;
   randomize?: boolean;
+  audience?: McqAudience;
+  boardSpecialty?: string;
+  boardSection?: string;
+  boardTopic?: string;
+  boardAgeGroup?: "peds" | "adult" | "mixed";
 }): Promise<McqQuestion[]> {
   const supabase = await createClient();
+  // Default audience filter — guards /nl flows from picking up board rows
+  const audience = options?.audience ?? "student";
   let query = supabase
     .from("mcq_questions")
     .select("*, mcq_subjects(name, name_th, icon)")
-    .eq("status", "active");
+    .eq("status", "active")
+    .eq("audience", audience);
 
   if (options?.subjectId) {
     query = query.eq("subject_id", options.subjectId);
   } else if (options?.subjectIds && options.subjectIds.length > 0) {
     query = query.in("subject_id", options.subjectIds);
   }
-  if (options?.examType) {
+  if (audience === "student" && options?.examType) {
     query = query.eq("exam_type", options.examType);
+  }
+  if (audience === "board") {
+    if (options?.boardSpecialty) query = query.eq("board_specialty", options.boardSpecialty);
+    if (options?.boardSection) query = query.eq("board_section", options.boardSection);
+    if (options?.boardTopic) query = query.eq("board_topic", options.boardTopic);
+    if (options?.boardAgeGroup) query = query.eq("board_age_group", options.boardAgeGroup);
   }
 
   const limit = options?.limit || 50;
@@ -66,13 +89,18 @@ export async function getMcqQuestions(options?: {
   return questions;
 }
 
-export async function getMcqQuestion(id: string): Promise<McqQuestion | null> {
+export async function getMcqQuestion(
+  id: string,
+  opts?: { audience?: McqAudience }
+): Promise<McqQuestion | null> {
   const supabase = await createClient();
+  const audience = opts?.audience ?? "student";
   const { data, error } = await supabase
     .from("mcq_questions")
     .select("*, mcq_subjects(name, name_th, icon)")
     .eq("id", id)
     .eq("status", "active")
+    .eq("audience", audience)
     .single();
 
   if (error) {
@@ -109,8 +137,11 @@ export async function getFreeAttemptsCount(
   return count ?? 0;
 }
 
-export async function getMcqSubjectCounts(): Promise<Record<string, number>> {
+export async function getMcqSubjectCounts(
+  opts?: { audience?: McqAudience }
+): Promise<Record<string, number>> {
   const supabase = await createClient();
+  const audience = opts?.audience ?? "student";
   const counts: Record<string, number> = {};
   const CHUNK = 1000;
   for (let from = 0; ; from += CHUNK) {
@@ -118,6 +149,7 @@ export async function getMcqSubjectCounts(): Promise<Record<string, number>> {
       .from("mcq_questions")
       .select("subject_id")
       .eq("status", "active")
+      .eq("audience", audience)
       .range(from, from + CHUNK - 1);
     if (error || !data || data.length === 0) break;
     for (const row of data) {

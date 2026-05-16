@@ -39,19 +39,26 @@ export async function saveMcqAttempt(attempt: {
 export async function createMcqSession(session: {
   user_id: string;
   mode: "practice" | "mock";
-  exam_type: "NL1" | "NL2";
+  exam_type?: "NL1" | "NL2" | null;
   subject_id?: string | null;
   total_questions: number;
   time_limit_minutes?: number | null;
+  audience?: "student" | "board";
+  board_specialty?: string | null;
+  board_section?: string | null;
 }): Promise<McqSession | null> {
   const supabase = createClient();
+  const audience = session.audience ?? "student";
   const { data, error } = await supabase
     .from("mcq_sessions")
     .insert({
       user_id: session.user_id,
       mode: session.mode,
-      exam_type: session.exam_type,
+      exam_type: audience === "student" ? session.exam_type ?? "NL2" : null,
       subject_id: session.subject_id ?? null,
+      audience,
+      board_specialty: session.board_specialty ?? null,
+      board_section: session.board_section ?? null,
       total_questions: session.total_questions,
       correct_count: 0,
       time_limit_minutes: session.time_limit_minutes ?? null,
