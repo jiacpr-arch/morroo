@@ -1,0 +1,29 @@
+name: Generate Daily Board MCQ
+
+on:
+  schedule:
+    # ทุกวัน 02:30 ICT (= 19:30 UTC วันก่อน) — offset 30 นาทีจาก generate-mcq
+    - cron: "30 19 * * *"
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Generate 30 board MCQ questions
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/generate-board-daily.mjs
