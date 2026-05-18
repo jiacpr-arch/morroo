@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter, useParams } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { Loader2, Shield } from "lucide-react";
-import { McqForm, type AdminMcqSubject } from "../McqForm";
+import { McqForm, type AdminMcqSubject, type AdminBoardTopic } from "../McqForm";
 
 export default function EditMcqPage() {
   const router = useRouter();
@@ -14,6 +14,7 @@ export default function EditMcqPage() {
   const [loading, setLoading] = useState(true);
   const [isAdmin, setIsAdmin] = useState(false);
   const [subjects, setSubjects] = useState<AdminMcqSubject[]>([]);
+  const [boardTopics, setBoardTopics] = useState<AdminBoardTopic[]>([]);
   const [initial, setInitial] = useState<Record<string, unknown> | null>(null);
 
   useEffect(() => {
@@ -28,7 +29,7 @@ export default function EditMcqPage() {
 
       setIsAdmin(true);
 
-      const [qRes, sRes] = await Promise.all([
+      const [qRes, sRes, tRes] = await Promise.all([
         supabase
           .from("mcq_questions")
           .select("id, subject_id, exam_type, exam_source, scenario, choices, correct_answer, explanation, difficulty, topic, status, audience, board_section, board_topic, board_age_group, board_level, reference_source")
@@ -38,10 +39,15 @@ export default function EditMcqPage() {
           .from("mcq_subjects")
           .select("id, name_th, icon, audience, board_specialty, board_subspecialty")
           .order("name_th"),
+        supabase
+          .from("board_topic_categories")
+          .select("slug, name_th, peds_count, adult_count, other_count, board_exam_blueprints!inner(specialty_slug, section_code)")
+          .order("display_order"),
       ]);
 
       setInitial(qRes.data as Record<string, unknown> | null);
       setSubjects((sRes.data as AdminMcqSubject[]) || []);
+      setBoardTopics(flattenTopics(tRes.data));
       setLoading(false);
     }
     load();
@@ -66,6 +72,7 @@ export default function EditMcqPage() {
   return (
     <McqForm
       subjects={subjects}
+      boardTopics={boardTopics}
       initial={{
         id: initial.id as string,
         subject_id: initial.subject_id as string,
@@ -89,4 +96,33 @@ export default function EditMcqPage() {
       }}
     />
   );
+}
+
+function flattenTopics(rows: unknown): AdminBoardTopic[] {
+  if (!Array.isArray(rows)) return [];
+  return rows.flatMap((r) => {
+    const row = r as {
+      slug: string;
+      name_th: string;
+      peds_count: number;
+      adult_count: number;
+      other_count: number;
+      board_exam_blueprints:
+        | { specialty_slug: string; section_code: string }
+        | { specialty_slug: string; section_code: string }[]
+        | null;
+    };
+    const bp = row.board_exam_blueprints;
+    if (!bp) return [];
+    const bps = Array.isArray(bp) ? bp : [bp];
+    return bps.map((b) => ({
+      specialty_slug: b.specialty_slug,
+      section_code: b.section_code,
+      slug: row.slug,
+      name_th: row.name_th,
+      peds_count: row.peds_count,
+      adult_count: row.adult_count,
+      other_count: row.other_count,
+    }));
+  });
 }

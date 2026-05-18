@@ -19,6 +19,16 @@ export interface AdminMcqSubject {
   board_subspecialty: string | null;
 }
 
+export interface AdminBoardTopic {
+  specialty_slug: string;
+  section_code: string;
+  slug: string;
+  name_th: string;
+  peds_count: number;
+  adult_count: number;
+  other_count: number;
+}
+
 interface FormData {
   id?: string;
   subject_id: string;
@@ -68,9 +78,11 @@ const EMPTY_FORM: FormData = {
 export function McqForm({
   initial,
   subjects,
+  boardTopics = [],
 }: {
   initial?: Partial<FormData> & { id?: string };
   subjects: AdminMcqSubject[];
+  boardTopics?: AdminBoardTopic[];
 }) {
   const router = useRouter();
   const [form, setForm] = useState<FormData>({ ...EMPTY_FORM, ...initial });
@@ -82,6 +94,23 @@ export function McqForm({
     [subjects, form.subject_id]
   );
   const isBoard = selectedSubject?.audience === "board";
+
+  // Topic suggestions: filtered by selected specialty + section
+  const topicSuggestions = useMemo(() => {
+    if (!isBoard || !selectedSubject?.board_specialty || !form.board_section) {
+      return [];
+    }
+    return boardTopics.filter(
+      (t) =>
+        t.specialty_slug === selectedSubject.board_specialty &&
+        t.section_code === form.board_section
+    );
+  }, [isBoard, selectedSubject, form.board_section, boardTopics]);
+
+  const topicMatch = useMemo(
+    () => topicSuggestions.find((t) => t.slug === form.board_topic) ?? null,
+    [topicSuggestions, form.board_topic]
+  );
 
   // Group subjects in dropdown: student first, then board grouped by specialty
   const grouped = useMemo(() => {
@@ -312,13 +341,34 @@ export function McqForm({
                   Topic Category (slug)
                 </label>
                 <Input
+                  list="board-topic-suggestions"
                   value={form.board_topic}
                   onChange={(e) => setField("board_topic", e.target.value)}
-                  placeholder="เช่น cardiovascular, trauma, toxicology"
+                  placeholder={
+                    topicSuggestions.length > 0
+                      ? `เช่น ${topicSuggestions[0].slug}`
+                      : "เลือก section ก่อนเพื่อดูตัวเลือก"
+                  }
                 />
-                <p className="text-xs text-muted-foreground mt-1">
-                  ใช้ slug จากตาราง blueprint
-                </p>
+                <datalist id="board-topic-suggestions">
+                  {topicSuggestions.map((t) => (
+                    <option key={t.slug} value={t.slug}>
+                      {t.name_th}
+                    </option>
+                  ))}
+                </datalist>
+                {topicMatch ? (
+                  <p className="text-xs text-emerald-700 mt-1">
+                    ✓ {topicMatch.name_th} (เด็ก {topicMatch.peds_count} / ผู้ใหญ่{" "}
+                    {topicMatch.adult_count} / อื่น {topicMatch.other_count})
+                  </p>
+                ) : (
+                  <p className="text-xs text-muted-foreground mt-1">
+                    {topicSuggestions.length > 0
+                      ? `${topicSuggestions.length} หัวข้อใน blueprint — เลือกจาก dropdown หรือใส่ slug ใหม่`
+                      : "ยังไม่มี blueprint สำหรับ section นี้ — พิมพ์ slug ได้เลย"}
+                  </p>
+                )}
               </div>
               <div>
                 <label className="text-sm font-medium mb-1.5 block">
