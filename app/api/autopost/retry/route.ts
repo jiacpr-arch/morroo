@@ -9,6 +9,10 @@
  *
  * Posts one article per invocation to stay within Vercel maxDuration.
  * For backfill, call repeatedly with limit=1 and sleep 10min between calls.
+ *
+ * The core loop is exported as `runAutopostRetry()` so the Vercel cron handler
+ * (`/api/cron/autopost-ig`) and the session-gated admin retry endpoint can
+ * reuse the same logic without passing BLOG_GENERATE_SECRET around.
  */
 
 import { NextResponse } from "next/server";
@@ -133,17 +137,40 @@ async function ensureLineCover(
   }
 }
 
-export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url);
+export type AutopostPlatform =
+  | "fb"
+  | "line"
+  | "ig"
+  | "fb_story"
+  | "ig_story"
+  | "stories"
+  | "both"
+  | "all";
 
-  if (searchParams.get("secret") !== process.env.BLOG_GENERATE_SECRET) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+export interface AutopostRetryResult {
+  slug: string;
+  fb?: string;
+  line?: string;
+  ig?: string;
+  fb_story?: string;
+  ig_story?: string;
+}
 
-  const targetSlug = searchParams.get("slug");
-  const platform = (searchParams.get("platform") ?? "both") as
-    | "fb" | "line" | "ig" | "fb_story" | "ig_story" | "stories" | "both" | "all";
-  const limit = Math.min(10, parseInt(searchParams.get("limit") ?? "1", 10));
+export interface AutopostRetryResponse {
+  processed: number;
+  results: AutopostRetryResult[];
+  message?: string;
+}
+
+export async function runAutopostRetry(opts: {
+  platform: AutopostPlatform;
+  limit?: number;
+  slug?: string | null;
+}): Promise<AutopostRetryResponse> {
+  const { platform } = opts;
+  const targetSlug = opts.slug ?? null;
+  const limit = Math.min(10, Math.max(1, opts.limit ?? 1));
+
   const doFb = platform === "fb" || platform === "both" || platform === "all";
   const doLine = platform === "line" || platform === "both" || platform === "all";
   const doIg = platform === "ig" || platform === "all";
@@ -156,7 +183,6 @@ export async function GET(request: Request) {
   const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.morroo.com";
   const siteUrl = rawSiteUrl.replace(/^https:\/\/morroo\.com/, "https://www.morroo.com");
 
-  // Build query for unposted articles
   let query = supabase
     .from("blog_posts")
     .select(
@@ -177,34 +203,19 @@ export async function GET(request: Request) {
   } else if (doIgStory && !doFb && !doLine && !doIg && !doFbStory) {
     query = query.is("ig_story_id", null);
   }
-  // multi-platform: pick any rows; per-platform skip checks happen below
 
   const { data: posts, error } = await query.limit(limit);
   if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    throw new Error(error.message);
   }
   if (!posts?.length) {
-    return NextResponse.json({ message: "No unposted articles found" });
+    return { processed: 0, results: [], message: "No unposted articles found" };
   }
 
-  const results: Array<{
-    slug: string;
-    fb?: string;
-    line?: string;
-    ig?: string;
-    fb_story?: string;
-    ig_story?: string;
-  }> = [];
+  const results: AutopostRetryResult[] = [];
 
   for (const post of posts) {
-    const result: {
-      slug: string;
-      fb?: string;
-      line?: string;
-      ig?: string;
-      fb_story?: string;
-      ig_story?: string;
-    } = { slug: post.slug };
+    const result: AutopostRetryResult = { slug: post.slug };
     // Hardcode canonical URL — env-derived siteUrl gave LINE "invalid uri scheme"
     // even with || + replace fallbacks, so something in env is malformed/empty.
     const articleUrl = `https://www.morroo.com/blog/${post.slug}`;
@@ -254,7 +265,6 @@ export async function GET(request: Request) {
     // (LINE broadcast quota = 1 msg × N followers, so opt-in only)
     const lineEnabled = process.env.LINE_AUTOPOST_ENABLED === "true";
     if (doLine && !post.line_broadcast_at && lineEnabled) {
-      // Generate cover_image_line on demand if missing (script-generated posts skip it)
       const lineCover =
         post.cover_image_line
         ?? (post.cover_image ? await ensureLineCover(supabase, post.slug, post.cover_image) : null);
@@ -280,10 +290,6 @@ export async function GET(request: Request) {
 
     // IG retry
     if (doIg && !post.ig_post_id) {
-      // Source cover URL by format. cover_image is a 1024×1024 PNG; quote_card
-      // is rendered via next/og (also PNG). IG rejects both as PNG, so we
-      // flatten to JPEG via ensureIgCover before posting (full resolution,
-      // q=95 — quality is preserved, no downscale).
       const sourceCover =
         post.autopost_format === "quote_card" || (!post.autopost_format && pickAutopostFormat(post.slug) === "quote_card")
           ? `${siteUrl}/api/og/quote?slug=${post.slug}`
@@ -383,5 +389,28 @@ export async function GET(request: Request) {
     results.push(result);
   }
 
-  return NextResponse.json({ processed: results.length, results });
+  return { processed: results.length, results };
 }
+
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url);
+
+  if (searchParams.get("secret") !== process.env.BLOG_GENERATE_SECRET) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  const platform = (searchParams.get("platform") ?? "both") as AutopostPlatform;
+  const limit = Math.min(10, parseInt(searchParams.get("limit") ?? "1", 10));
+  const slug = searchParams.get("slug");
+
+  try {
+    const result = await runAutopostRetry({ platform, limit, slug });
+    if (result.message && result.processed === 0) {
+      return NextResponse.json({ message: result.message });
+    }
+    return NextResponse.json(result);
+  } catch (err) {
+    return NextResponse.json({ error: String(err) }, { status: 500 });
+  }
+}
+

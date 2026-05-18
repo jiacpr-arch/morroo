@@ -3,9 +3,11 @@
  *
  * Required env vars:
  *   INSTAGRAM_BUSINESS_ACCOUNT_ID — IG Business Account ID linked to the FB Page
- *   FACEBOOK_USER_TOKEN           — same long-lived token used for FB posting;
- *                                   must include `instagram_basic` and
+ *   META_SYSTEM_USER_TOKEN        — preferred; Business Portfolio system user
+ *                                   token with `instagram_basic` +
  *                                   `instagram_content_publish` permissions.
+ *   FACEBOOK_USER_TOKEN           — legacy fallback, same priority chain as
+ *                                   `lib/facebook.ts` (see getLatestUserToken).
  *
  * IG-specific constraints:
  *   - image_url must be a public JPEG/PNG (no webp); IG fetches it server-side
@@ -14,23 +16,7 @@
  *   - one publish per day per account is the soft rate limit; 25/day hard cap
  */
 
-import { createAdminClient } from "@/lib/supabase/admin";
-
-/**
- * Reuse the same Supabase-cached User Token as `lib/facebook.ts`. We don't
- * refresh here because postToFacebook() runs first in every flow and already
- * extends the token; calling fb_exchange_token twice in one cron tick would
- * just churn cache for no benefit.
- */
-async function getUserToken(): Promise<string | null> {
-  const supabase = createAdminClient();
-  const { data } = await supabase
-    .from("app_settings")
-    .select("value")
-    .eq("key", "facebook_user_token")
-    .maybeSingle();
-  return data?.value ?? process.env.FACEBOOK_USER_TOKEN ?? null;
-}
+import { getLatestUserToken } from "@/lib/facebook";
 
 export async function postToInstagram(post: {
   imageUrl: string;
@@ -41,7 +27,7 @@ export async function postToInstagram(post: {
     throw new Error("INSTAGRAM_BUSINESS_ACCOUNT_ID not set");
   }
 
-  const token = await getUserToken();
+  const token = await getLatestUserToken();
   if (!token) {
     throw new Error("No Facebook user token found");
   }
@@ -129,7 +115,7 @@ export async function postStoryToInstagram(post: {
     throw new Error("INSTAGRAM_BUSINESS_ACCOUNT_ID not set");
   }
 
-  const token = await getUserToken();
+  const token = await getLatestUserToken();
   if (!token) {
     throw new Error("No Facebook user token found");
   }
