@@ -1,23 +1,36 @@
 /**
- * Facebook Page posting helper — with auto-refreshing token
+ * Facebook Page posting helper.
+ *
+ * Token priority chain (getLatestUserToken):
+ *   1. META_SYSTEM_USER_TOKEN — Business Portfolio system user, never expires.
+ *      When set, refresh + cache are skipped (fb_exchange_token rejects system
+ *      user tokens with code 190). Preferred for production.
+ *   2. app_settings.facebook_user_token — Supabase-cached refreshed user token
+ *   3. FACEBOOK_USER_TOKEN — initial long-lived user token (60-day)
  *
  * Required env vars:
- *   FACEBOOK_PAGE_ID     – morroo Page's numeric ID
- *   FACEBOOK_APP_ID      – morroo App ID (developers.facebook.com)
- *   FACEBOOK_APP_SECRET  – morroo App Secret
- *   FACEBOOK_USER_TOKEN  – initial long-lived User Access Token (60 days)
- *   NEXT_PUBLIC_SITE_URL – e.g. https://morroo.com
+ *   FACEBOOK_PAGE_ID            – morroo Page's numeric ID
+ *   META_SYSTEM_USER_TOKEN      – preferred; never-expiring system user token
+ *   FACEBOOK_APP_ID             – only needed for legacy user-token refresh
+ *   FACEBOOK_APP_SECRET         – only needed for legacy user-token refresh
+ *   FACEBOOK_USER_TOKEN         – legacy fallback (60-day user token)
+ *   NEXT_PUBLIC_SITE_URL        – e.g. https://morroo.com
  *
- * Token auto-refresh: every time the blog cron runs, the code
- * exchanges the current User Token for a fresh 60-day token and
- * stores it in Supabase. As long as the cron runs at least once
- * every 60 days (it runs 2x/week), the token never expires.
+ * Legacy user-token refresh: every time the blog cron runs, the code
+ * exchanges the current User Token for a fresh 60-day token and stores
+ * it in Supabase. As long as the cron runs at least once every 60 days
+ * it never expires. Skipped under META_SYSTEM_USER_TOKEN.
  *
  * IMPORTANT: when switching to a new FB Page, delete the cached token:
  *   DELETE FROM app_settings WHERE key = 'facebook_user_token';
  */
 
 import { createAdminClient } from "@/lib/supabase/admin";
+
+/** True when a Meta Business Portfolio system user token is configured. */
+export function isSystemUserTokenActive(): boolean {
+  return Boolean(process.env.META_SYSTEM_USER_TOKEN);
+}
 
 /** Exchange current User Token for a fresh long-lived one (60 days) */
 export async function refreshUserToken(currentToken: string): Promise<string | null> {
@@ -37,19 +50,26 @@ export async function refreshUserToken(currentToken: string): Promise<string | n
   return data.access_token;
 }
 
-/** Get the latest User Token — check Supabase first, fallback to env var */
+/**
+ * Resolve the access token to use for Graph API calls.
+ *
+ * Priority: META_SYSTEM_USER_TOKEN → Supabase-cached user token → FACEBOOK_USER_TOKEN.
+ * System user token short-circuits the DB lookup because it never expires
+ * and Vercel env is its single source of truth.
+ */
 export async function getLatestUserToken(): Promise<string | null> {
-  const supabase = createAdminClient();
-  const envToken = process.env.FACEBOOK_USER_TOKEN;
+  if (process.env.META_SYSTEM_USER_TOKEN) {
+    return process.env.META_SYSTEM_USER_TOKEN;
+  }
 
-  // Try to get stored token from Supabase
+  const supabase = createAdminClient();
   const { data } = await supabase
     .from("app_settings")
     .select("value")
     .eq("key", "facebook_user_token")
     .maybeSingle();
 
-  return data?.value ?? envToken ?? null;
+  return data?.value ?? process.env.FACEBOOK_USER_TOKEN ?? null;
 }
 
 /** Save refreshed token to Supabase for next use */
@@ -94,14 +114,20 @@ export async function postToFacebook(post: {
     throw new Error("No Facebook user token found");
   }
 
-  // Step 2: Refresh token (extends 60 days from now)
-  const freshToken = await refreshUserToken(currentToken);
-  if (freshToken && freshToken !== currentToken) {
-    await saveUserToken(freshToken);
+  // Step 2: Refresh long-lived user token (extends 60 days). Skip under the
+  // system user token — fb_exchange_token returns code 190 on system user
+  // credentials and there is nothing to refresh (never-expiring).
+  let activeToken = currentToken;
+  if (!isSystemUserTokenActive()) {
+    const freshToken = await refreshUserToken(currentToken);
+    if (freshToken && freshToken !== currentToken) {
+      await saveUserToken(freshToken);
+      activeToken = freshToken;
+    }
   }
 
   // Step 3: Get Page Token
-  const pageToken = await getPageToken(pageId, freshToken ?? currentToken);
+  const pageToken = await getPageToken(pageId, activeToken);
   if (!pageToken) {
     throw new Error("Failed to obtain Facebook Page token");
   }

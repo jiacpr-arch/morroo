@@ -18,6 +18,7 @@ import {
   ClipboardList,
   Sparkles,
   MessageCircle,
+  Camera,
 } from "lucide-react";
 
 interface HeatmapCell {
@@ -288,6 +289,19 @@ export default function AdminDashboard() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">สถิติพี่หมอรู้ — ข้อความ ผู้ใช้ และ trend แต่ละ channel</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/autopost">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-pink-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Camera className="h-5 w-5 text-pink-600" />
+                <h3 className="font-bold">IG Autopost</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">ดูสถานะการโพสต์ Instagram และกด retry บทความที่ failed</p>
             </CardContent>
           </Card>
         </Link>
