@@ -348,9 +348,12 @@ async function run() {
   console.log(
     "Calling Haiku-easy (6q) + Haiku-medium (15q) + Sonnet-hard (9q) in parallel..."
   );
+  // Board questions carry richer detail (guideline refs, age stratification,
+  // 5-choice deep explanation) than NL Step 2, so the medium batch needs
+  // more headroom — 32k truncates ~12 questions in; 48k clears 15.
   const [easyResult, mediumResult, hardResult] = await Promise.allSettled([
     callClaudeWithRetry("haiku-easy", "claude-haiku-4-5-20251001", 16000, easyPrompt),
-    callClaudeWithRetry("haiku-medium", "claude-haiku-4-5-20251001", 32000, mediumPrompt),
+    callClaudeWithRetry("haiku-medium", "claude-haiku-4-5-20251001", 48000, mediumPrompt),
     callClaudeWithRetry("sonnet-hard", "claude-sonnet-4-6", 24000, hardPrompt),
   ]);
 
