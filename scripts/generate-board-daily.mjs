@@ -33,9 +33,50 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
 // Subject name pattern: each section of each specialty has its own mcq_subject row.
 // e.g. emergency_medicine + clinical_decision → "em_clinical_decision"
-// We map specialty_slug → subject name prefix for now (matches seed).
+// Prefix used as the mcq_subjects.name prefix (must match the seed migrations).
 const SUBJECT_NAME_PREFIX = {
   emergency_medicine: "em",
+  internal_medicine: "im",
+  surgery: "surg",
+  pediatrics: "peds",
+  ob_gyn: "obgyn",
+  orthopedics: "ortho",
+  psychiatry: "psych",
+  anesthesiology: "anes",
+  radiology: "rad",
+  family_medicine: "fm",
+  pathology: "path",
+  rehab_medicine: "rehab",
+};
+
+// Per-specialty reference textbook + Thai context — fed into the prompt so
+// Claude grounds questions in the right primary source instead of defaulting
+// to whatever it knows best (which is usually Tintinalli for everything).
+const SPECIALTY_REFERENCE = {
+  emergency_medicine:
+    "Tintinalli's Emergency Medicine 9e + AHA/ACEP guidelines ปัจจุบัน",
+  internal_medicine:
+    "Harrison's Principles of Internal Medicine 21e + guideline ของสมาคมที่เกี่ยวข้อง (AHA, ADA, KDIGO ฯลฯ)",
+  surgery:
+    "Schwartz's Principles of Surgery 11e / Sabiston Textbook of Surgery 21e + NCCN guidelines",
+  pediatrics:
+    "Nelson Textbook of Pediatrics 22e + AAP guidelines + แนวทางราชวิทยาลัยกุมารแพทย์ฯ",
+  ob_gyn:
+    "Williams Obstetrics 26e / Williams Gynecology 4e + ACOG / RCOG guidelines",
+  orthopedics:
+    "Campbell's Operative Orthopedics 14e / Rockwood and Green's Fractures 9e + AAOS guidelines",
+  psychiatry:
+    "Kaplan & Sadock's Synopsis of Psychiatry 12e + DSM-5-TR + APA practice guidelines",
+  anesthesiology:
+    "Miller's Anesthesia 9e + Stoelting's Anesthesia and Co-Existing Disease 8e + ASA guidelines",
+  radiology:
+    "Brant and Helms' Fundamentals of Diagnostic Radiology 5e / Radiology Review Manual 9e + ACR appropriateness criteria",
+  family_medicine:
+    "Williams Manual of Family Medicine + USPSTF recommendations + AAFP guidelines",
+  pathology:
+    "Robbins and Cotran Pathologic Basis of Disease 10e + Rosai and Ackerman's Surgical Pathology 11e + WHO classifications",
+  rehab_medicine:
+    "DeLisa's Physical Medicine and Rehabilitation 6e + Braddom's Physical Medicine and Rehabilitation 6e",
 };
 
 const QUESTION_TOOL = {
@@ -113,6 +154,7 @@ const QUESTION_TOOL = {
 
 function buildPrompt({
   specialtyNameTh,
+  specialtySlug,
   sectionLabelTh,
   topicNameTh,
   topicSlug,
@@ -124,12 +166,16 @@ function buildPrompt({
 }) {
   const peds = Math.round(count * pedsRatio);
   const adult = count - peds;
+  const reference =
+    SPECIALTY_REFERENCE[specialtySlug] ??
+    "ตำราหลักของสาขา + guideline ปัจจุบันที่เกี่ยวข้อง";
   return `คุณเป็นอาจารย์แพทย์ผู้เชี่ยวชาญด้าน${specialtyNameTh} ระดับ board (วุฒิบัตร / Diplomate of Thai Board)
 
 สร้างข้อสอบ MCQ จำนวน ${count} ข้อ ระดับ board สำหรับสาขา${specialtyNameTh}
 หมวด: ${sectionLabelTh}
 หัวข้อ: ${topicNameTh} (${topicSlug})
 อายุของเคส: เด็ก ~${peds} ข้อ / ผู้ใหญ่ ~${adult} ข้อ (ตาม blueprint จริง)
+แหล่งอ้างอิงหลัก: ${reference}
 
 แล้วเรียก tool submit_board_questions
 
@@ -137,10 +183,10 @@ function buildPrompt({
 1. แต่ละข้อต้องเป็นโจทย์ระดับ board — ซับซ้อนกว่า NL Step 2 มาก เน้น clinical decision making จริงๆ ที่อาจารย์อาวุโสจะถามในห้องสอบ
 2. Scenario มีรายละเอียดครบ: vitals, exam findings, lab/imaging values ที่ specific
 3. ตัวเลือก 5 ข้อ (A-E) plausible — distractor ที่ดีมาจาก guideline หรือ pitfall ทางคลินิก
-4. คำตอบถูกต้องอิง guideline ปัจจุบัน (Tintinalli 9e, AHA, ACEP) หรือ landmark trial
+4. คำตอบถูกต้องอิงตำราหลักด้านบน หรือ landmark trial / guideline ปัจจุบัน
 5. detailed_explanation: อธิบายทุกตัวเลือก ใส่ pathophysiology + clinical pearl + reference
 6. age_group ใส่ตามเคส (peds=≤18 ปี, adult=>18 ปี, mixed=ครอบครัวหรือไม่ระบุชัด)
-7. reference ใส่ตำรา/ guideline ที่อ้างอิงได้จริง
+7. reference ใส่ตำรา/ guideline ที่อ้างอิงได้จริง (อ้างอิง chapter หรือ section ในตำราหลักด้านบนถ้าทำได้)
 8. ${difficultyInstruction}
 9. ห้ามซ้ำกับข้อสอบเดิม (ปัจจุบันมี ${existingCount} ข้อในหัวข้อนี้)
 10. ภาษาไทยหรืออังกฤษตามความเหมาะสม — case scenario ภาษาไทย, ศัพท์ทางการแพทย์ภาษาอังกฤษ`;
@@ -201,11 +247,14 @@ async function callClaudeWithRetry(label, model, maxTokens, prompt) {
 }
 
 async function loadRotation() {
-  // Fetch all topic categories for published specialties, ordered deterministically
+  // Fetch all topic categories joined with their blueprint + specialty.
+  // We use `is_active=true` (not `is_published`) so that scaffolded specialties
+  // accumulate content in the background while still hidden from /board.
+  // Public visibility is gated separately by the `is_published` flag.
   const { data, error } = await supabase
     .from("board_topic_categories")
     .select(
-      "slug, name_th, peds_count, adult_count, other_count, display_order, board_exam_blueprints!inner(specialty_slug, exam_year, section_code, section_label_th, board_specialties!inner(name_th, is_published))"
+      "slug, name_th, peds_count, adult_count, other_count, display_order, board_exam_blueprints!inner(specialty_slug, exam_year, section_code, section_label_th, board_specialties!inner(name_th, is_active))"
     )
     .order("display_order", { ascending: true });
 
@@ -222,7 +271,7 @@ async function loadRotation() {
     const sp = Array.isArray(bp.board_specialties)
       ? bp.board_specialties[0]
       : bp.board_specialties;
-    if (!sp?.is_published) continue;
+    if (!sp?.is_active) continue;
 
     rotation.push({
       specialty_slug: bp.specialty_slug,
@@ -310,6 +359,7 @@ async function run() {
 
   const easyPrompt = buildPrompt({
     specialtyNameTh: today.specialty_name_th,
+    specialtySlug: today.specialty_slug,
     sectionLabelTh: today.section_label_th,
     topicNameTh: today.topic_name_th,
     topicSlug: today.topic_slug,
@@ -322,6 +372,7 @@ async function run() {
   });
   const mediumPrompt = buildPrompt({
     specialtyNameTh: today.specialty_name_th,
+    specialtySlug: today.specialty_slug,
     sectionLabelTh: today.section_label_th,
     topicNameTh: today.topic_name_th,
     topicSlug: today.topic_slug,
@@ -334,6 +385,7 @@ async function run() {
   });
   const hardPrompt = buildPrompt({
     specialtyNameTh: today.specialty_name_th,
+    specialtySlug: today.specialty_slug,
     sectionLabelTh: today.section_label_th,
     topicNameTh: today.topic_name_th,
     topicSlug: today.topic_slug,
