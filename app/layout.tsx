@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Sarabun } from "next/font/google";
 import { Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BetaProvider } from "@/components/beta/BetaProvider";
@@ -203,6 +205,7 @@ export default function RootLayout({
           <BetaWelcomeModal />
           <ChatWidget />
         </BetaProvider>
+        <Analytics />
       </body>
     </html>
   );
