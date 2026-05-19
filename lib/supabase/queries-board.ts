@@ -5,7 +5,7 @@ import type {
   BoardTopicCategory,
   BlueprintWithTopics,
 } from "../types-board";
-import type { McqSubject } from "../types-mcq";
+import type { McqSubject, McqQuestion } from "../types-mcq";
 
 export async function getBoardSpecialties(): Promise<BoardSpecialty[]> {
   const supabase = await createClient();
@@ -114,4 +114,113 @@ export async function getBoardQuestionStats(
     bySection[key] = (bySection[key] || 0) + 1;
   }
   return { total: data.length, bySection };
+}
+
+export interface BoardMockSample {
+  questions: McqQuestion[];
+  totalTarget: number;
+  totalAvailable: number;
+  bySection: Array<{
+    section_code: string;
+    section_label_th: string;
+    target: number;
+    available: number;
+    topics: Array<{
+      slug: string;
+      name_th: string;
+      target: number;
+      available: number;
+    }>;
+  }>;
+}
+
+/** Sample MCQ questions for a specialty according to the latest blueprint's
+ *  section/topic distribution. Falls back gracefully when the DB has fewer
+ *  questions than the blueprint targets (returns whatever is available and
+ *  reports the gap so the UI can warn the user). */
+export async function sampleBoardMock(
+  specialtySlug: string
+): Promise<BoardMockSample> {
+  const supabase = await createClient();
+  const blueprints = await getBoardBlueprint(specialtySlug);
+  if (blueprints.length === 0) {
+    return { questions: [], totalTarget: 0, totalAvailable: 0, bySection: [] };
+  }
+
+  const collected: McqQuestion[] = [];
+  const seenIds = new Set<string>();
+  const bySection: BoardMockSample["bySection"] = [];
+  let totalTarget = 0;
+
+  for (const bp of blueprints) {
+    const sectionStats = {
+      section_code: bp.section_code,
+      section_label_th: bp.section_label_th,
+      target: bp.question_count,
+      available: 0,
+      topics: [] as BoardMockSample["bySection"][number]["topics"],
+    };
+    totalTarget += bp.question_count;
+
+    if (bp.topics.length === 0) {
+      // No topic_categories — sample at section level
+      const { data } = await supabase
+        .from("mcq_questions")
+        .select("*, mcq_subjects(name, name_th, icon)")
+        .eq("status", "active")
+        .eq("audience", "board")
+        .eq("board_specialty", specialtySlug)
+        .eq("board_section", bp.section_code)
+        .limit(Math.max(bp.question_count * 4, 50));
+      const rows = (data as McqQuestion[] | null) ?? [];
+      const shuffled = rows.sort(() => Math.random() - 0.5).slice(0, bp.question_count);
+      for (const q of shuffled) {
+        if (!seenIds.has(q.id)) {
+          seenIds.add(q.id);
+          collected.push(q);
+        }
+      }
+      sectionStats.available = shuffled.length;
+    } else {
+      // Sample per topic according to blueprint counts
+      for (const topic of bp.topics) {
+        const target = topic.total_count;
+        const { data } = await supabase
+          .from("mcq_questions")
+          .select("*, mcq_subjects(name, name_th, icon)")
+          .eq("status", "active")
+          .eq("audience", "board")
+          .eq("board_specialty", specialtySlug)
+          .eq("board_section", bp.section_code)
+          .eq("board_topic", topic.slug)
+          .limit(Math.max(target * 4, 20));
+        const rows = (data as McqQuestion[] | null) ?? [];
+        const shuffled = rows.sort(() => Math.random() - 0.5).slice(0, target);
+        for (const q of shuffled) {
+          if (!seenIds.has(q.id)) {
+            seenIds.add(q.id);
+            collected.push(q);
+          }
+        }
+        sectionStats.available += shuffled.length;
+        sectionStats.topics.push({
+          slug: topic.slug,
+          name_th: topic.name_th,
+          target,
+          available: shuffled.length,
+        });
+      }
+    }
+    bySection.push(sectionStats);
+  }
+
+  // Final shuffle so adjacent questions aren't all from the same topic
+  const finalQuestions = collected.sort(() => Math.random() - 0.5);
+
+  return {
+    questions: finalQuestions,
+    totalTarget,
+    totalAvailable: finalQuestions.length,
+    bySection,
+  };
 }
