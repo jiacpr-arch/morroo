@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, ArrowRight, GraduationCap, Lock } from "lucide-react";
+import { ArrowLeft, ArrowRight, GraduationCap, Lock, Timer } from "lucide-react";
 import {
   getBoardSpecialty,
   getBoardBlueprint,
@@ -113,12 +113,32 @@ export default async function BoardSpecialtyPage({
         <div className="mb-8">
           <h2 className="text-xl font-bold mb-3">เริ่มฝึก</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <Link href={`/board/${specialty}/mock`}>
+              <Card className="hover:shadow-md hover:border-purple-300 transition-all h-full border-purple-200 bg-purple-50/30">
+                <CardContent className="pt-5">
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-1.5">
+                        <Timer className="h-4 w-4 text-purple-700" />
+                        <span className="font-bold">จำลองสอบ (Mock)</span>
+                      </div>
+                      <div className="text-xs text-muted-foreground mt-0.5">
+                        {s.total_mcq_count
+                          ? `${s.total_mcq_count} ข้อ × ${Math.round(s.total_mcq_count * 1.2)} นาที ตาม Blueprint`
+                          : "ตาม Blueprint จริง"}
+                      </div>
+                    </div>
+                    <ArrowRight className="h-5 w-5 text-purple-700 shrink-0" />
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
             <Link href={`/board/${specialty}/practice`}>
               <Card className="hover:shadow-md hover:border-brand/30 transition-all h-full">
                 <CardContent className="pt-5">
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="font-bold">คละทุกหมวด</div>
+                      <div className="font-bold">ฝึกคละทุกหมวด</div>
                       <div className="text-xs text-muted-foreground mt-0.5">
                         {stats.total > 0
                           ? `${stats.total} ข้อในคลัง`
