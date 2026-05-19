@@ -18,6 +18,47 @@
 
 import { getLatestUserToken } from "@/lib/facebook";
 
+/**
+ * Best-effort check whether IG actually published a post we just attempted.
+ *
+ * The publish API occasionally returns a failure response (rate-limit hit
+ * after the side-effect, transient network blip) even though IG accepted the
+ * media. Without this check the row stays `ig_post_id IS NULL`, the cron
+ * picks it up the next day, and we get a duplicate on the account.
+ *
+ * Feed: match by caption prefix within the last 15 minutes.
+ * Story: caption isn't supported, so we take the most recent active story
+ *        within the window — the publish call we just made is almost
+ *        certainly it.
+ */
+async function findRecentlyPublishedMedia(
+  igAccountId: string,
+  token: string,
+  match: { captionPrefix?: string; story?: boolean },
+): Promise<string | null> {
+  const edge = match.story ? "stories" : "media";
+  try {
+    const res = await fetch(
+      `https://graph.facebook.com/v24.0/${igAccountId}/${edge}?fields=id,caption,timestamp&limit=5&access_token=${encodeURIComponent(token)}`,
+    );
+    const data = await res.json();
+    if (!res.ok || !Array.isArray(data.data)) return null;
+    const cutoff = Date.now() - 15 * 60 * 1000;
+    for (const m of data.data as Array<{ id: string; caption?: string; timestamp?: string }>) {
+      const ts = m.timestamp ? new Date(m.timestamp).getTime() : NaN;
+      if (!Number.isFinite(ts) || ts < cutoff) continue;
+      if (match.captionPrefix) {
+        if (m.caption && m.caption.startsWith(match.captionPrefix)) return m.id;
+      } else {
+        return m.id;
+      }
+    }
+  } catch (err) {
+    console.warn("[instagram] verification fetch failed:", err);
+  }
+  return null;
+}
+
 export async function postToInstagram(post: {
   imageUrl: string;
   caption: string;
@@ -69,7 +110,8 @@ export async function postToInstagram(post: {
   // Step 2: Publish the container
   // IG docs note containers may take a few seconds to be ready for publish on
   // larger images — short retry loop with backoff handles transient "not ready".
-  for (let attempt = 0; attempt < 3; attempt++) {
+  let publishError: Error | null = null;
+  publish: for (let attempt = 0; attempt < 3; attempt++) {
     const publishRes = await fetch(
       `https://graph.facebook.com/v24.0/${igAccountId}/media_publish`,
       {
@@ -90,10 +132,24 @@ export async function postToInstagram(post: {
       continue;
     }
     console.error("[instagram] publish failed:", JSON.stringify(publishData));
-    throw new Error(publishData.error?.message ?? `HTTP ${publishRes.status}`);
+    publishError = new Error(publishData.error?.message ?? `HTTP ${publishRes.status}`);
+    break publish;
   }
 
-  throw new Error("Instagram publish exhausted retries");
+  // Publish reported failure — but IG may have accepted the post anyway
+  // (rate-limit response returned after the side-effect, network blip).
+  // Verify before throwing; otherwise the next cron run picks up the same
+  // row (ig_post_id IS NULL) and creates a duplicate.
+  const recovered = await findRecentlyPublishedMedia(igAccountId, token, {
+    captionPrefix: post.caption.slice(0, 80),
+  });
+  if (recovered) {
+    console.warn(
+      `[instagram] publish errored but post found on account: id=${recovered} container=${containerId} err=${publishError?.message}`,
+    );
+    return recovered;
+  }
+  throw publishError ?? new Error("Instagram publish exhausted retries");
 }
 
 /**
@@ -157,7 +213,8 @@ export async function postStoryToInstagram(post: {
     throw new Error("Instagram story container creation exhausted retries");
   }
 
-  for (let attempt = 0; attempt < 3; attempt++) {
+  let publishError: Error | null = null;
+  publish: for (let attempt = 0; attempt < 3; attempt++) {
     const publishRes = await fetch(
       `https://graph.facebook.com/v24.0/${igAccountId}/media_publish`,
       {
@@ -177,8 +234,18 @@ export async function postStoryToInstagram(post: {
       continue;
     }
     console.error("[instagram] story publish failed:", JSON.stringify(publishData));
-    throw new Error(publishData.error?.message ?? `HTTP ${publishRes.status}`);
+    publishError = new Error(publishData.error?.message ?? `HTTP ${publishRes.status}`);
+    break publish;
   }
 
-  throw new Error("Instagram story publish exhausted retries");
+  // Same false-negative recovery as feed: check active stories before throwing
+  // so the next cron doesn't republish the same image.
+  const recovered = await findRecentlyPublishedMedia(igAccountId, token, { story: true });
+  if (recovered) {
+    console.warn(
+      `[instagram] story publish errored but story found on account: id=${recovered} container=${containerId} err=${publishError?.message}`,
+    );
+    return recovered;
+  }
+  throw publishError ?? new Error("Instagram story publish exhausted retries");
 }
