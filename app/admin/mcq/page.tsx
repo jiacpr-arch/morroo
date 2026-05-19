@@ -11,7 +11,7 @@ import { createClient } from "@/lib/supabase/client";
 import { updateMcqQuestionStatus } from "@/lib/supabase/mutations-mcq-admin";
 import {
   Shield, Loader2, ChevronLeft, Plus, Search,
-  Pencil, Eye, EyeOff, AlertCircle, CheckCircle,
+  Pencil, Eye, EyeOff, AlertCircle, CheckCircle, Upload,
 } from "lucide-react";
 
 interface McqQuestion {
@@ -158,11 +158,18 @@ export default function AdminMcqPage() {
           <h1 className="text-2xl font-bold">จัดการข้อสอบ MCQ/NL</h1>
           <p className="text-muted-foreground mt-1">เพิ่ม แก้ไข และจัดการสถานะข้อสอบ</p>
         </div>
-        <Link href="/admin/mcq/new">
-          <Button className="bg-brand hover:bg-brand-light text-white gap-2">
-            <Plus className="h-4 w-4" />เพิ่มข้อสอบ
-          </Button>
-        </Link>
+        <div className="flex items-center gap-2">
+          <Link href="/admin/board/import">
+            <Button variant="outline" className="gap-2">
+              <Upload className="h-4 w-4" />Bulk import (board)
+            </Button>
+          </Link>
+          <Link href="/admin/mcq/new">
+            <Button className="bg-brand hover:bg-brand-light text-white gap-2">
+              <Plus className="h-4 w-4" />เพิ่มข้อสอบ
+            </Button>
+          </Link>
+        </div>
       </div>
 
       {/* Filters */}
