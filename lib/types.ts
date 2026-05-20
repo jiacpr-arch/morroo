@@ -39,6 +39,8 @@ export interface LongCase {
   patient_info: Record<string, unknown>;
   correct_diagnosis: string;
   created_at: string;
+  audience: "student" | "board";
+  board_specialty: string | null;
 }
 
 export interface LongCaseSession {
