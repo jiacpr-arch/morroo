@@ -19,6 +19,8 @@ const ALLOWED_PLATFORMS: AutopostPlatform[] = [
   "ig",
   "fb_story",
   "ig_story",
+  "ig_carousel",
+  "ig_reel",
   "stories",
   "both",
   "all",

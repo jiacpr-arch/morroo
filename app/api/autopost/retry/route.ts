@@ -19,12 +19,18 @@ import { NextResponse } from "next/server";
 import sharp from "sharp";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { postToFacebook, postStoryToFacebook } from "@/lib/facebook";
-import { postToInstagram, postStoryToInstagram } from "@/lib/instagram";
+import {
+  postToInstagram,
+  postStoryToInstagram,
+  postCarouselToInstagram,
+  postReelToInstagram,
+} from "@/lib/instagram";
 import { broadcastLineMessages } from "@/lib/line";
 import { buildBlogAnnounceFlex } from "@/lib/line-flex-templates";
 import { pickAutopostFormat, categoryHashtag } from "@/lib/autopost-format";
 import { generateHook, buildFbCaption, buildIgCaption } from "@/lib/autopost-copy";
 import { composeStoryImage } from "@/lib/autopost-story-image";
+import { composeCarouselSlides } from "@/lib/autopost-carousel-image";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -101,6 +107,50 @@ async function ensureStoryCover(
 }
 
 /**
+ * Render carousel slides, upload each to Supabase Storage, return their
+ * public URLs. Same pattern as ensureIgCover/ensureStoryCover: produces a
+ * stable per-slide path so retries are idempotent.
+ */
+async function ensureCarouselSlides(
+  supabase: ReturnType<typeof createAdminClient>,
+  slug: string,
+  input: {
+    hook: string;
+    title: string;
+    bullets: string[];
+    articleUrl: string;
+  },
+): Promise<string[] | null> {
+  try {
+    const slides = await composeCarouselSlides(input);
+    const urls: string[] = [];
+    for (let i = 0; i < slides.length; i++) {
+      const filePath = `blog-covers/${slug}-carousel-${i + 1}.jpg`;
+      const { error: uploadError } = await supabase.storage
+        .from("public-assets")
+        .upload(filePath, slides[i], { contentType: "image/jpeg", upsert: true });
+      if (uploadError) {
+        console.error(
+          `[autopost-retry] carousel slide ${i + 1} upload error:`,
+          uploadError,
+        );
+        return null;
+      }
+      const { data: pub } = supabase.storage.from("public-assets").getPublicUrl(filePath);
+      urls.push(pub.publicUrl);
+    }
+    await supabase
+      .from("blog_posts")
+      .update({ ig_carousel_slide_urls: urls })
+      .eq("slug", slug);
+    return urls;
+  } catch (err) {
+    console.error("[autopost-retry] carousel compose error:", err);
+    return null;
+  }
+}
+
+/**
  * Generate LINE-compatible JPEG variant (1024×536, ≤1MB) from an existing
  * cover image URL. LINE Flex hero requires JPEG/PNG ≤1024px wide;
  * gpt-image-1 PNG at 1024×1024 sometimes exceeds 1MB and uses 1:1 aspect.
@@ -143,6 +193,8 @@ export type AutopostPlatform =
   | "ig"
   | "fb_story"
   | "ig_story"
+  | "ig_carousel"
+  | "ig_reel"
   | "stories"
   | "both"
   | "all";
@@ -154,6 +206,8 @@ export interface AutopostRetryResult {
   ig?: string;
   fb_story?: string;
   ig_story?: string;
+  ig_carousel?: string;
+  ig_reel?: string;
 }
 
 export interface AutopostRetryResponse {
@@ -176,6 +230,8 @@ export async function runAutopostRetry(opts: {
   const doIg = platform === "ig" || platform === "all";
   const doFbStory = platform === "fb_story" || platform === "stories" || platform === "all";
   const doIgStory = platform === "ig_story" || platform === "stories" || platform === "all";
+  const doIgCarousel = platform === "ig_carousel" || platform === "all";
+  const doIgReel = platform === "ig_reel"; // never auto-run from "all" — needs an admin-supplied video URL
 
   const supabase = createAdminClient();
   // Force canonical www domain — LINE Flex action URI strict-validates scheme
@@ -186,22 +242,27 @@ export async function runAutopostRetry(opts: {
   let query = supabase
     .from("blog_posts")
     .select(
-      "slug, title, description, category, cover_image, cover_image_line, cover_image_story, fb_post_id, line_broadcast_at, ig_post_id, fb_story_id, ig_story_id, autopost_format",
+      "slug, title, description, category, cover_image, cover_image_line, cover_image_story, fb_post_id, line_broadcast_at, ig_post_id, fb_story_id, ig_story_id, ig_carousel_id, ig_reel_id, ig_reel_video_url, ig_carousel_slide_urls, autopost_format",
     )
     .order("published_at", { ascending: false });
 
   if (targetSlug) {
     query = query.eq("slug", targetSlug);
-  } else if (doIg && !doFb && !doLine && !doFbStory && !doIgStory) {
+  } else if (doIg && !doFb && !doLine && !doFbStory && !doIgStory && !doIgCarousel && !doIgReel) {
     query = query.is("ig_post_id", null);
-  } else if (doFb && !doLine && !doIg && !doFbStory && !doIgStory) {
+  } else if (doFb && !doLine && !doIg && !doFbStory && !doIgStory && !doIgCarousel && !doIgReel) {
     query = query.is("fb_post_id", null);
-  } else if (doLine && !doFb && !doIg && !doFbStory && !doIgStory) {
+  } else if (doLine && !doFb && !doIg && !doFbStory && !doIgStory && !doIgCarousel && !doIgReel) {
     query = query.is("line_broadcast_at", null);
-  } else if (doFbStory && !doFb && !doLine && !doIg && !doIgStory) {
+  } else if (doFbStory && !doFb && !doLine && !doIg && !doIgStory && !doIgCarousel && !doIgReel) {
     query = query.is("fb_story_id", null);
-  } else if (doIgStory && !doFb && !doLine && !doIg && !doFbStory) {
+  } else if (doIgStory && !doFb && !doLine && !doIg && !doFbStory && !doIgCarousel && !doIgReel) {
     query = query.is("ig_story_id", null);
+  } else if (doIgCarousel && !doFb && !doLine && !doIg && !doFbStory && !doIgStory && !doIgReel) {
+    query = query.is("ig_carousel_id", null);
+  } else if (doIgReel && !doFb && !doLine && !doIg && !doFbStory && !doIgStory && !doIgCarousel) {
+    // Reels only retry rows that already have a video URL queued by the admin
+    query = query.is("ig_reel_id", null).not("ig_reel_video_url", "is", null);
   }
 
   const { data: posts, error } = await query.limit(limit);
@@ -368,7 +429,13 @@ export async function runAutopostRetry(opts: {
         result.ig_story = "skipped:no_cover";
       } else {
         try {
-          const igStoryId = await postStoryToInstagram({ imageUrl: storyCover });
+          // Attach link sticker pointing at the article so the Story has a
+          // tappable "open article" target. lib/instagram.ts retries without
+          // the sticker if the account turns out to be ineligible.
+          const igStoryId = await postStoryToInstagram({
+            imageUrl: storyCover,
+            linkUrl: articleUrl,
+          });
           await supabase.from("blog_posts").update({
             ig_story_id: igStoryId,
             ig_story_posted_at: new Date().toISOString(),
@@ -384,6 +451,106 @@ export async function runAutopostRetry(opts: {
       }
     } else if (doIgStory) {
       result.ig_story = "already_posted";
+    }
+
+    // IG Carousel — 5 slides assembled from cover + hook + 3 bullets + CTA card.
+    // The final slide visually mimics a link-preview card with the article URL,
+    // since IG strips clickable URLs from captions.
+    if (doIgCarousel && !post.ig_carousel_id) {
+      const hookParts = await generateHook({
+        title: post.title,
+        description: post.description,
+        apiKey: process.env.ANTHROPIC_API_KEY,
+      });
+      const existingSlides = Array.isArray(post.ig_carousel_slide_urls)
+        ? (post.ig_carousel_slide_urls as string[])
+        : null;
+      const slideUrls =
+        existingSlides && existingSlides.length >= 2 && existingSlides.length <= 10
+          ? existingSlides
+          : await ensureCarouselSlides(supabase, post.slug, {
+              hook: hookParts.hook,
+              title: post.title,
+              bullets: hookParts.bullets,
+              articleUrl,
+            });
+
+      if (!slideUrls) {
+        result.ig_carousel = "skipped:compose_failed";
+      } else {
+        const hashtags = `#เตรียมสอบแพทย์ #หมอรู้ #${categoryHashtag(post.category)}`;
+        const caption = buildIgCaption({
+          ...hookParts,
+          siteHost: siteUrl.replace(/^https?:\/\//, ""),
+          hashtags,
+        });
+        try {
+          const carouselId = await postCarouselToInstagram({
+            imageUrls: slideUrls,
+            caption,
+          });
+          await supabase
+            .from("blog_posts")
+            .update({
+              ig_carousel_id: carouselId,
+              ig_carousel_posted_at: new Date().toISOString(),
+              ig_carousel_last_error: null,
+            })
+            .eq("slug", post.slug);
+          result.ig_carousel = `posted:${carouselId}`;
+        } catch (err) {
+          await supabase
+            .from("blog_posts")
+            .update({ ig_carousel_last_error: String(err).slice(0, 500) })
+            .eq("slug", post.slug);
+          result.ig_carousel = `error:${String(err).slice(0, 100)}`;
+        }
+      }
+    } else if (doIgCarousel) {
+      result.ig_carousel = "already_posted";
+    }
+
+    // IG Reel — needs ig_reel_video_url pre-set by admin (no auto video gen).
+    if (doIgReel && !post.ig_reel_id) {
+      if (!post.ig_reel_video_url) {
+        result.ig_reel = "skipped:no_video_url";
+      } else {
+        const hookParts = await generateHook({
+          title: post.title,
+          description: post.description,
+          apiKey: process.env.ANTHROPIC_API_KEY,
+        });
+        const hashtags = `#เตรียมสอบแพทย์ #หมอรู้ #${categoryHashtag(post.category)}`;
+        const caption = buildIgCaption({
+          ...hookParts,
+          siteHost: siteUrl.replace(/^https?:\/\//, ""),
+          hashtags,
+        });
+        try {
+          const reelId = await postReelToInstagram({
+            videoUrl: post.ig_reel_video_url,
+            caption,
+            shareToFeed: true,
+          });
+          await supabase
+            .from("blog_posts")
+            .update({
+              ig_reel_id: reelId,
+              ig_reel_posted_at: new Date().toISOString(),
+              ig_reel_last_error: null,
+            })
+            .eq("slug", post.slug);
+          result.ig_reel = `posted:${reelId}`;
+        } catch (err) {
+          await supabase
+            .from("blog_posts")
+            .update({ ig_reel_last_error: String(err).slice(0, 500) })
+            .eq("slug", post.slug);
+          result.ig_reel = `error:${String(err).slice(0, 100)}`;
+        }
+      }
+    } else if (doIgReel) {
+      result.ig_reel = "already_posted";
     }
 
     results.push(result);
