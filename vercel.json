@@ -25,6 +25,18 @@
       "schedule": "0 12 * * *"
     },
     {
+      "path": "/api/cron/autopost-ig-carousel",
+      "schedule": "30 12 * * *"
+    },
+    {
+      "path": "/api/cron/autopost-scheduled",
+      "schedule": "*/15 * * * *"
+    },
+    {
+      "path": "/api/cron/ig-insights",
+      "schedule": "0 4 * * *"
+    },
+    {
       "path": "/api/cron/admin-digest",
       "schedule": "0 1 * * *"
     }
