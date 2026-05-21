@@ -350,7 +350,7 @@ export default async function HomePage() {
       )}
 
       {/* Health News */}
-      <section className="py-16 bg-muted/30 border-y">
+      <section className="py-16 bg-muted/30 border-b">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
             <h2 className="text-3xl font-bold">ข่าวสุขภาพ</h2>
@@ -376,7 +376,7 @@ export default async function HomePage() {
       </section>
 
       {/* Social */}
-      <section className="py-12 bg-white border-y">
+      <section className="py-12 bg-white border-b">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold">ติดตามหมอรู้</h2>
           <p className="mt-2 text-muted-foreground">
