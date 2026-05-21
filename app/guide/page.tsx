@@ -98,7 +98,7 @@ const sections = [
       },
       {
         subtitle: "วิธีเชื่อมต่อ",
-        text: "(1) เพิ่มเพื่อน LINE OA @508srmcr (2) ไปหน้า Profile กดสร้างรหัสเชื่อมต่อ (3) ส่งรหัสในแชท LINE OA (4) ระบบจะแจ้ง \"เชื่อมต่อสำเร็จ\"",
+        text: "(1) เพิ่มเพื่อน LINE OA @901nmwcd (2) ไปหน้า Profile กดสร้างรหัสเชื่อมต่อ (3) ส่งรหัสในแชท LINE OA (4) ระบบจะแจ้ง \"เชื่อมต่อสำเร็จ\"",
       },
     ],
   },
@@ -134,7 +134,7 @@ const faqs = [
   { q: "สมาชิกฟรีทำอะไรได้บ้าง?", a: "MCQ 5 ข้อ/เดือน/วิชา, MEQ 2 ข้อ/เดือน, Long Case 1 ครั้ง/เดือน ทดลองใช้งานได้ทุกฟีเจอร์" },
   { q: "ซื้อแล้วยกเลิกได้ไหม?", a: "แพ็กเกจเป็นแบบจ่ายครั้งเดียว ไม่ต่ออัตโนมัติ ไม่มี recurring charge ใช้ได้ตามจำนวนวันที่ซื้อ" },
   { q: "หมดอายุแล้วข้อมูลหายไหม?", a: "ไม่หาย ประวัติการทำข้อสอบ คะแนน สถิติ ยังอยู่ครบ แค่จำกัดจำนวนข้อที่ทำได้ต่อเดือน" },
-  { q: "ชำระเงินแล้วยังไม่ได้ Premium?", a: "ระบบเปิดอัตโนมัติ ถ้ายังไม่ได้: รีเฟรชหน้าเว็บ → รอ 5 นาที → ติดต่อ LINE OA @508srmcr" },
+  { q: "ชำระเงินแล้วยังไม่ได้ Premium?", a: "ระบบเปิดอัตโนมัติ ถ้ายังไม่ได้: รีเฟรชหน้าเว็บ → รอ 5 นาที → ติดต่อ LINE OA @901nmwcd" },
   { q: "ข้อสอบมาจากไหน?", a: "ข้อสอบสร้างโดย AI (Claude) ที่มี medical knowledge ระดับ evidence-based เพิ่มข้อสอบใหม่ทุกวัน" },
   { q: "Long Case ต่างจาก MEQ ยังไง?", a: "MEQ เป็นข้อเขียน 6 ตอน ส่วน Long Case จำลอง OSCE จริง — ซักประวัติ AI คนไข้ ตรวจร่างกาย สั่ง Lab แล้วนำเสนอเคสกับ AI กรรมการ" },
 ];
@@ -218,12 +218,12 @@ export default function GuidePage() {
         </p>
         <div className="flex justify-center gap-3 flex-wrap">
           <a
-            href="https://line.me/R/ti/p/@508srmcr"
+            href="https://line.me/R/ti/p/@901nmwcd"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-lg bg-[#06C755] px-5 py-2 text-sm font-medium text-white hover:opacity-90 transition-opacity"
           >
-            LINE OA @508srmcr
+            LINE OA @901nmwcd
           </a>
           <Link
             href="/feedback"

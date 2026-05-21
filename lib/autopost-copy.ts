@@ -15,7 +15,7 @@ export type HookParts = {
   bullets: string[];  // 3 ✅ key takeaways (each ≤ 80 chars)
 };
 
-const MORROO_LINE_HANDLE = "@508srmcr";
+const MORROO_LINE_HANDLE = "@901nmwcd";
 
 function fallbackParts(title: string, description: string): HookParts {
   return {

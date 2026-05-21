@@ -153,13 +153,13 @@ export default async function InvoicePage({
           <div>
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200">
+                <tr className="border-b border-border">
                   <th className="text-left py-2 font-semibold text-gray-700">รายการ</th>
                   <th className="text-right py-2 font-semibold text-gray-700 w-32">จำนวนเงิน</th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b border-gray-100">
+                <tr className="border-b border-border">
                   <td className="py-3 text-gray-800">{planName}</td>
                   <td className="py-3 text-right text-gray-800">
                     ฿{inv.amount.toLocaleString("th-TH", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
@@ -178,7 +178,7 @@ export default async function InvoicePage({
                 <span>ภาษีมูลค่าเพิ่ม 7%</span>
                 <span>฿{inv.vat_amount.toLocaleString("th-TH", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
               </div>
-              <div className="flex justify-between font-bold text-base border-t border-gray-200 pt-2">
+              <div className="flex justify-between font-bold text-base border-t border-border pt-2">
                 <span>รวมทั้งสิ้น</span>
                 <span className="text-brand">
                   ฿{inv.total_amount.toLocaleString("th-TH", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
@@ -200,7 +200,7 @@ export default async function InvoicePage({
           </div>
 
           {/* Footer note */}
-          <div className="border-t pt-4 text-center text-xs text-gray-400">
+          <div className="border-t border-border pt-4 text-center text-xs text-gray-400">
             <p>ใบเสร็จนี้ออกโดย {sellerName}</p>
             {hasTaxId && (
               <p className="mt-1">
