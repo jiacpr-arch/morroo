@@ -370,7 +370,7 @@ export default function DashboardPage() {
       {/* LINE Add Friend Banner */}
       {!lineLinked && (
         <a
-          href="https://line.me/R/ti/p/@508srmcr"
+          href="https://line.me/R/ti/p/@901nmwcd"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-3 mb-6 rounded-xl bg-[#06C755]/10 border border-[#06C755]/30 px-4 py-3 hover:bg-[#06C755]/15 transition-colors"
@@ -378,7 +378,7 @@ export default function DashboardPage() {
           <span className="text-2xl shrink-0">💬</span>
           <div className="flex-1 min-w-0">
             <p className="text-sm font-semibold text-green-800">รับข้อสอบทุกเช้าผ่าน LINE</p>
-            <p className="text-xs text-green-700">กด Add Friend LINE OA @508srmcr แล้วรับโจทย์ประจำวันทุก 7 โมงเช้า</p>
+            <p className="text-xs text-green-700">กด Add Friend LINE OA @901nmwcd แล้วรับโจทย์ประจำวันทุก 7 โมงเช้า</p>
           </div>
           <span className="text-xs font-semibold text-[#06C755] shrink-0 whitespace-nowrap">เพิ่มเพื่อน →</span>
         </a>
