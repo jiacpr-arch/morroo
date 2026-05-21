@@ -20,7 +20,7 @@ export interface Profile {
   created_at: string;
   onboarding_done: boolean;
   daily_goal: number;
-  target_exam: "NL1" | "NL2" | "both" | null;
+  target_exam: "NL1" | "NL2" | "both" | "board" | null;
   weak_subjects: string[] | null;
   referral_code: string | null;
   referred_by: string | null;

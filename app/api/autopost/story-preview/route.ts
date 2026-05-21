@@ -57,6 +57,10 @@ export async function GET(request: Request) {
     headline = headline ?? data.title;
   }
 
+  if (!coverUrl) {
+    return NextResponse.json({ error: "No cover URL resolved" }, { status: 500 });
+  }
+
   const fetchRes = await fetch(coverUrl);
   if (!fetchRes.ok) {
     return NextResponse.json(

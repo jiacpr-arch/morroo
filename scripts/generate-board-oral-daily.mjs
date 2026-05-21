@@ -11,6 +11,7 @@
  */
 
 import { createClient } from "@supabase/supabase-js";
+import { notifyCronFailure, notifyCronSuccess } from "./cron-notify.mjs";
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -356,12 +357,13 @@ async function run() {
     process.exit(1);
   }
 
-  console.log(
-    `Inserted oral case ${inserted?.[0]?.id}: "${inserted?.[0]?.title}" (${today.slug}/${difficulty})`
-  );
+  const summary = `${today.slug}/${difficulty} — "${inserted?.[0]?.title}"`;
+  console.log(`Inserted oral case ${inserted?.[0]?.id}: ${summary}`);
+  await notifyCronSuccess("generate-board-oral-daily", summary);
 }
 
-run().catch((err) => {
+run().catch(async (err) => {
   console.error("Fatal:", err);
+  await notifyCronFailure("generate-board-oral-daily", err);
   process.exit(1);
 });
