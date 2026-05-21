@@ -17,6 +17,7 @@
  */
 
 import { createClient } from "@supabase/supabase-js";
+import { notifyCronFailure, notifyCronSuccess } from "./cron-notify.mjs";
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -520,17 +521,16 @@ async function run() {
   const medium = validQuestions.filter((q) => q.difficulty === "medium").length;
   const hard = validQuestions.filter((q) => q.difficulty === "hard").length;
 
-  console.log(
-    `Inserted ${
-      inserted?.length ?? 0
-    } board questions: easy=${easy} medium=${medium} hard=${hard}`
-  );
-  console.log(
-    `Total in subject "${subjectRow.name_th}": ${newTotal ?? 0}`
-  );
+  const summaryLine = `${today.specialty_slug}/${today.section_code}/${today.topic_slug} — inserted ${
+    inserted?.length ?? 0
+  } (easy=${easy} medium=${medium} hard=${hard}); subject total ${newTotal ?? 0}`;
+  console.log(`Inserted ${inserted?.length ?? 0} board questions: easy=${easy} medium=${medium} hard=${hard}`);
+  console.log(`Total in subject "${subjectRow.name_th}": ${newTotal ?? 0}`);
+  await notifyCronSuccess("generate-board-daily", summaryLine);
 }
 
-run().catch((err) => {
+run().catch(async (err) => {
   console.error("Fatal:", err);
+  await notifyCronFailure("generate-board-daily", err);
   process.exit(1);
 });
