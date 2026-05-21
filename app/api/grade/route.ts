@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 import { sendLineMessage } from "@/lib/line";
 import { buildExamResultFlex } from "@/lib/line-flex-templates";
 import { getUserWeakTopics } from "@/lib/supabase/queries-analytics";
@@ -122,6 +123,11 @@ ${studentAnswer}
     const jsonMatch = responseText.match(/\{[\s\S]*\}/);
     if (!jsonMatch) {
       console.error("Failed to parse AI response:", responseText);
+      void logAiGradeError({
+        userId: user.id,
+        stage: "parse",
+        message: responseText.slice(0, 500),
+      });
       return NextResponse.json(
         { error: "ไม่สามารถวิเคราะห์คำตอบจาก AI ได้ กรุณาลองใหม่" },
         { status: 500 }
@@ -161,10 +167,33 @@ ${studentAnswer}
     });
   } catch (error) {
     console.error("AI grading error:", error);
+    void logAiGradeError({
+      stage: "unknown",
+      message: error instanceof Error ? error.message : String(error),
+    });
     return NextResponse.json(
       { error: "เกิดข้อผิดพลาดในการตรวจคำตอบ กรุณาลองใหม่" },
       { status: 500 }
     );
+  }
+}
+
+async function logAiGradeError(params: {
+  userId?: string;
+  stage: "parse" | "anthropic" | "validation" | "unknown";
+  message: string;
+  httpStatus?: number;
+}): Promise<void> {
+  try {
+    const admin = createAdminClient();
+    await admin.from("_ai_grade_errors").insert({
+      user_id: params.userId ?? null,
+      stage: params.stage,
+      error_message: params.message,
+      http_status: params.httpStatus ?? null,
+    });
+  } catch (err) {
+    console.error("[ai-grade-errors] log insert failed:", err);
   }
 }
 
