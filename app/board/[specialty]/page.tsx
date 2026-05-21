@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, ArrowRight, GraduationCap, Lock, Timer } from "lucide-react";
+import { ArrowLeft, ArrowRight, GraduationCap, Lock, Mic, Timer } from "lucide-react";
 import {
   getBoardSpecialty,
   getBoardBlueprint,
@@ -146,6 +146,24 @@ export default async function BoardSpecialtyPage({
                       </div>
                     </div>
                     <ArrowRight className="h-5 w-5 text-brand" />
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link href={`/board/${specialty}/oral`}>
+              <Card className="hover:shadow-md hover:border-rose-300 transition-all h-full border-rose-200 bg-rose-50/30">
+                <CardContent className="pt-5">
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-1.5">
+                        <Mic className="h-4 w-4 text-rose-700" />
+                        <span className="font-bold">สอบปากเปล่า (Oral)</span>
+                      </div>
+                      <div className="text-xs text-muted-foreground mt-0.5">
+                        ฝึก long case กับ อ.บอร์ด AI
+                      </div>
+                    </div>
+                    <ArrowRight className="h-5 w-5 text-rose-700 shrink-0" />
                   </div>
                 </CardContent>
               </Card>

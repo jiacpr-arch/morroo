@@ -3,6 +3,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase/server";
 import { getLongCaseSession, updateLongCaseSession } from "@/lib/supabase/queries-longcase";
 import { checkRateLimit, rateLimitResponse, RATE_LIMITS } from "@/lib/rate-limit";
+import { getBoardReference } from "@/lib/board-references";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -84,16 +85,24 @@ ${Object.entries(rubric).map(([k, v]) => `- ${k}: ${v} คะแนน`).join("\
 `;
 
   if (action === "score") {
-    // Opus scores the student
+    // Opus scores the student/candidate
+    const isBoardCase = (lc as { audience?: string }).audience === "board";
+    const role = isBoardCase ? "candidate (แพทย์ที่กำลังจะจบเฉพาะทาง)" : "นักศึกษาแพทย์";
+    const standard = isBoardCase
+      ? "ใช้มาตรฐานสอบบอร์ดราชวิทยาลัยฯ — ผ่านคือ defend management decision ด้วย evidence ได้, จับ edge case ได้, รู้ contraindication"
+      : "ใช้มาตรฐานนักศึกษาแพทย์ปี extern/intern";
     const scorePrompt = `${caseContext}
+
+**ผู้ถูกประเมิน:** ${role}
+**มาตรฐานการให้คะแนน:** ${standard}
 
 **คำถามที่ถามและคำตอบต้นฉบับ:**
 ${examinerQs.map((q, i) => `Q${i + 1}: ${q.question}\nModel Answer: ${q.modelAnswer}`).join("\n\n")}
 
 **การสัมภาษณ์ที่เกิดขึ้น:**
-${examinerChat.map(m => `${m.role === "user" ? "นักศึกษา" : "Examiner"}: ${m.content}`).join("\n")}
+${examinerChat.map(m => `${m.role === "user" ? (isBoardCase ? "Candidate" : "นักศึกษา") : "Examiner"}: ${m.content}`).join("\n")}
 
-ให้คะแนนนักศึกษาและตอบเป็น JSON เท่านั้น:
+ให้คะแนน${isBoardCase ? "candidate" : "นักศึกษา"}และตอบเป็น JSON เท่านั้น:
 {
   "score_history": <0-${rubric.history || 25}>,
   "score_pe": <0-${rubric.pe || 20}>,
@@ -163,23 +172,41 @@ ${examinerChat.map(m => `${m.role === "user" ? "นักศึกษา" : "Exa
     }
   }
 
-  // Chat mode (start or continue)
+  // Chat mode (start or continue) — persona depends on audience
+  const lcRow = lc as { audience?: string; board_specialty?: string | null };
+  const isBoard = lcRow.audience === "board";
+  const boardRef = isBoard ? getBoardReference(lcRow.board_specialty ?? null) : "";
+
+  const examinerPersona = isBoard
+    ? `คุณเป็น "อ.บอร์ด" (อาจารย์ผู้สอบบอร์ดราชวิทยาลัยฯ) ที่เข้มงวด สอบประเมินแพทย์ที่กำลังจะจบเฉพาะทาง
+- พูดด้วยน้ำเสียง academic เป็นทางการ ใช้ศัพท์แพทย์เต็มที่
+- อ้างอิงตำราหลัก: ${boardRef}
+- เมื่อ candidate ตอบ ต้อง challenge เสมอ เช่น "แน่ใจหรือ?", "evidence ที่ใช้คืออะไร?", "ถ้าเคสเปลี่ยน X จะเป็นอย่างไร?"
+- ถาม follow-up เชิงลึก: pathophysiology, evidence-based management, edge cases, contraindications
+- ไม่บอกเฉลย/feedback ระหว่างสอบ — เก็บไว้ตอนคิดคะแนน
+- ผู้สอบที่ดีต้องสามารถ defend management decision ด้วย rationale + reference ได้`
+    : `คุณเป็น Examiner (อาจารย์ผู้ตรวจข้อสอบ Long Case) ที่มีประสบการณ์ — โทนเป็นมิตรแต่ professional`;
+
   const systemPrompt = action === "start"
-    ? `คุณเป็น Examiner (อาจารย์ผู้ตรวจข้อสอบ Long Case) ที่มีประสบการณ์
+    ? `${examinerPersona}
 ${caseContext}
 
-เริ่มต้นด้วยการให้นักศึกษา Present Case และถามคำถามตาม examiner_questions ทีละข้อ
-ทักทายสั้นๆ และขอให้นักศึกษา Present the case
+เริ่มต้นด้วยการให้${isBoard ? "candidate" : "นักศึกษา"} Present Case และถามคำถามตาม examiner_questions ทีละข้อ
+${isBoard
+  ? "ทักทายแบบ formal สั้นๆ แล้วขอให้ candidate present case โดยย่อ (HPI + impression)"
+  : "ทักทายสั้นๆ และขอให้นักศึกษา Present the case"}
 
 คำถามที่ต้องถาม:
 ${examinerQs.map((q, i) => `${i + 1}. ${q.question}`).join("\n")}`
-    : `คุณเป็น Examiner ที่กำลังสัมภาษณ์นักศึกษา ถามคำถามต่อจากที่ค้างอยู่
+    : `${examinerPersona}
 ${caseContext}
 
 คำถามที่ต้องถาม:
 ${examinerQs.map((q, i) => `${i + 1}. ${q.question}`).join("\n")}
 
-ตอบสนองต่อคำตอบของนักศึกษาอย่างมืออาชีพ และถามคำถามถัดไป`;
+${isBoard
+  ? "Challenge คำตอบของ candidate ด้วย follow-up เชิงลึก (evidence/edge case/contraindication) ก่อนไปคำถามถัดไป"
+  : "ตอบสนองต่อคำตอบของนักศึกษาอย่างมืออาชีพ และถามคำถามถัดไป"}`;
 
   const allMessages = [
     ...examinerChat,

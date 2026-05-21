@@ -48,6 +48,8 @@ const PLAN_PRODUCT: Record<string, { code: string; name: string }> = {
   meq_yearly:       { code: "MORROO-MEQ-YR",  name: "MorRoo MEQ รายปี" },
   longcase_monthly: { code: "MORROO-LC-MO",   name: "MorRoo Long Case รายเดือน" },
   longcase_yearly:  { code: "MORROO-LC-YR",   name: "MorRoo Long Case รายปี" },
+  board_monthly:    { code: "MORROO-BOARD-MO",name: "MorRoo Board รายเดือน (MCQ บอร์ด + Oral Exam)" },
+  board_yearly:     { code: "MORROO-BOARD-YR",name: "MorRoo Board รายปี (MCQ บอร์ด + Oral Exam)" },
 };
 
 export interface FlowAccountInvoiceInput {

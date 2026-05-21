@@ -324,9 +324,38 @@ async function run() {
     return;
   }
 
-  const today = rotation[dayOfYear % rotation.length];
+  // Deficit-aware pick: load active MCQ count per (specialty, section, topic)
+  // and weight rotation toward topics with the least existing content. Goal is
+  // to flatten content across all 12 specialties faster than pure round-robin
+  // would, especially during early bootstrap when most specialties have 0 q.
+  //
+  // Algorithm:
+  //   1. Bucket topics by content count
+  //   2. Pick from the lowest-count bucket
+  //   3. Within bucket, use day-of-year as deterministic tiebreaker (so two
+  //      runs on the same day pick the same topic — idempotency)
+  const { data: counts } = await supabase
+    .from("mcq_questions")
+    .select("board_specialty, board_section, board_topic")
+    .eq("audience", "board")
+    .eq("status", "active");
+
+  const countByKey = new Map();
+  for (const r of counts ?? []) {
+    const key = `${r.board_specialty}::${r.board_section}::${r.board_topic}`;
+    countByKey.set(key, (countByKey.get(key) ?? 0) + 1);
+  }
+
+  const withCounts = rotation.map((t) => ({
+    ...t,
+    existing: countByKey.get(`${t.specialty_slug}::${t.section_code}::${t.topic_slug}`) ?? 0,
+  }));
+
+  const minCount = Math.min(...withCounts.map((t) => t.existing));
+  const candidates = withCounts.filter((t) => t.existing === minCount);
+  const today = candidates[dayOfYear % candidates.length];
   console.log(
-    `Today (day ${dayOfYear}): ${today.specialty_name_th} · ${today.section_label_th} · ${today.topic_name_th} (${today.topic_slug})`
+    `Today (day ${dayOfYear}): ${today.specialty_name_th} · ${today.section_label_th} · ${today.topic_name_th} (${today.topic_slug}) — picked from ${candidates.length} topics tied at ${minCount} existing q`
   );
 
   const subjectRow = await findSubjectForSection(
@@ -340,18 +369,8 @@ async function run() {
     return;
   }
 
-  // Count existing board questions for this topic
-  const { count: existingCount } = await supabase
-    .from("mcq_questions")
-    .select("id", { count: "exact", head: true })
-    .eq("audience", "board")
-    .eq("board_specialty", today.specialty_slug)
-    .eq("board_section", today.section_code)
-    .eq("board_topic", today.topic_slug)
-    .eq("status", "active");
-
-  const existing = existingCount ?? 0;
-  console.log(`Existing board questions in this topic: ${existing}`);
+  // Already computed by the deficit-aware picker above
+  const existing = today.existing;
 
   const totalCount = today.peds_count + today.adult_count + today.other_count;
   const pedsRatio = totalCount > 0 ? today.peds_count / totalCount : 0.2;
