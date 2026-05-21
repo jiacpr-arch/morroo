@@ -27,6 +27,8 @@ const PLANS: Record<string, { name: string; price: number; period: string }> = {
   monthly: { name: "รายเดือน", price: 199, period: "/ เดือน" },
   yearly: { name: "รายปี", price: 1490, period: "/ ปี" },
   bundle: { name: "ชุดข้อสอบ 10 ข้อ", price: 299, period: "" },
+  board_monthly: { name: "Board รายเดือน", price: 499, period: "/ เดือน" },
+  board_yearly: { name: "Board รายปี", price: 4990, period: "/ ปี" },
 };
 
 const BANK_INFO = {

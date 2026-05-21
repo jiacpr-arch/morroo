@@ -11,6 +11,7 @@ import {
 import { getMcqQuestions, getFreeAttemptsCount } from "@/lib/supabase/queries-mcq";
 import McqPractice from "@/components/McqPractice";
 import { computeBetaStatus } from "@/lib/beta";
+import { hasBoardAccess, hasFullStudentAccess } from "@/lib/membership";
 import { BOARD_SECTIONS } from "@/lib/types-board";
 import type { Profile } from "@/lib/types";
 import type { Metadata } from "next";
@@ -69,16 +70,10 @@ async function PracticeContent({
       .eq("id", user.id)
       .single();
     const p = profile as Pick<Profile, "membership_type" | "membership_expires_at"> | null;
-    if (p) {
-      const isExpired = p.membership_expires_at
-        ? new Date(p.membership_expires_at) < new Date()
-        : false;
-      isPremium =
-        (p.membership_type === "monthly" ||
-          p.membership_type === "yearly" ||
-          p.membership_type === "bundle") &&
-        !isExpired;
-    }
+    // Board practice = unlocked by board tier OR full student tier (legacy
+    // grandfathering — student-tier holders who used board before launch
+    // keep access for the remainder of their subscription).
+    isPremium = hasBoardAccess(p) || hasFullStudentAccess(p);
     if (!isPremium) {
       const beta = computeBetaStatus(profile as Partial<Profile> as Profile | null);
       if (beta.isBeta) {

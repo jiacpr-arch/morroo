@@ -3,7 +3,19 @@ export interface Profile {
   email: string;
   name: string;
   role: "user" | "admin";
-  membership_type: "free" | "monthly" | "yearly" | "bundle";
+  membership_type:
+    | "free"
+    | "monthly"
+    | "yearly"
+    | "bundle"
+    | "mcq_monthly"
+    | "mcq_yearly"
+    | "meq_monthly"
+    | "meq_yearly"
+    | "longcase_monthly"
+    | "longcase_yearly"
+    | "board_monthly"
+    | "board_yearly";
   membership_expires_at: string | null;
   created_at: string;
   onboarding_done: boolean;
@@ -179,5 +191,44 @@ export const PRICING_PLANS = [
     cta: "สมัครรายปี",
     popular: false,
     type: "yearly" as const,
+  },
+] as const;
+
+/**
+ * Board exam pricing — separate from student pricing because the target
+ * audience and AI cost profile is different (oral examiner uses Sonnet
+ * heavily, plus Opus scoring per session).
+ */
+export const BOARD_PRICING_PLANS = [
+  {
+    name: "Board รายเดือน",
+    price: 499,
+    period: "/ เดือน",
+    description: "เตรียมสอบบอร์ดราชวิทยาลัยฯ ครบทุกสาขา",
+    features: [
+      "📚 MCQ บอร์ดทุกสาขาไม่จำกัด",
+      "🎙️ Oral Exam (Long Case) กับ อ.บอร์ด AI ไม่จำกัด",
+      "📊 จำลองสอบจริง (Mock) ตาม Blueprint",
+      "ข้อสอบใหม่ทุกวัน",
+      "อ้างอิงตำราหลักของสาขา (Tintinalli/Harrison/ฯลฯ)",
+    ],
+    cta: "สมัคร Board รายเดือน",
+    popular: true,
+    type: "board_monthly" as const,
+  },
+  {
+    name: "Board รายปี",
+    price: 4990,
+    period: "/ ปี",
+    description: "ประหยัดกว่า 17% — เหมาะกับเตรียมสอบ 1 รอบเต็ม",
+    features: [
+      "ทุกอย่างในแพ็ก Board รายเดือน",
+      "ประหยัด ฿998/ปี",
+      "ใช้เตรียมสอบทั้งปีไม่จำกัด",
+      "สิทธิ์ทดลอง feature ใหม่ก่อนใคร",
+    ],
+    cta: "สมัคร Board รายปี",
+    popular: false,
+    type: "board_yearly" as const,
   },
 ] as const;

@@ -8,6 +8,7 @@ import {
 } from "@/lib/supabase/queries-board";
 import { getBoardOralCases } from "@/lib/supabase/queries-longcase";
 import { createClient } from "@/lib/supabase/server";
+import { hasBoardAccess } from "@/lib/membership";
 import LongCaseStartButton from "@/app/longcase/LongCaseStartButton";
 import { BOARD_SPECIALTY_SLUGS } from "@/lib/types-board";
 import type { Metadata } from "next";
@@ -58,11 +59,10 @@ export default async function BoardOralPage({
       if (!user) return { hasAccess: false };
       const { data: profile } = await supabase
         .from("profiles")
-        .select("membership_type")
+        .select("membership_type, membership_expires_at")
         .eq("id", user.id)
         .single();
-      const m = profile?.membership_type;
-      return { hasAccess: m === "monthly" || m === "yearly" || m === "bundle" };
+      return { hasAccess: hasBoardAccess(profile) };
     })(),
   ]);
 
@@ -105,16 +105,16 @@ export default async function BoardOralPage({
             <Lock className="h-5 w-5 text-amber-600 mt-0.5" />
             <div className="text-sm flex-1">
               <div className="font-semibold text-amber-900">
-                สอบ oral ต้องอัปเกรดสมาชิก
+                สอบ oral ต้องสมาชิก Board
               </div>
               <p className="text-amber-700 mt-0.5">
-                แต่ละเคสใช้ AI examiner — สำหรับสมาชิกรายเดือน/ปี/Bundle
+                แพ็ก Board รายเดือน ฿499 หรือรายปี ฿4,990 — รวม MCQ บอร์ดทุกสาขา + Oral Exam ไม่จำกัด
               </p>
               <Link
                 href="/pricing"
                 className="inline-block mt-2 text-amber-900 font-medium hover:underline"
               >
-                ดูแพ็กเกจ →
+                ดูแพ็กเกจ Board →
               </Link>
             </div>
           </CardContent>
