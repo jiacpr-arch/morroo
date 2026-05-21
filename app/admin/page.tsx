@@ -19,6 +19,7 @@ import {
   Sparkles,
   MessageCircle,
   Camera,
+  GraduationCap,
 } from "lucide-react";
 
 interface HeatmapCell {
@@ -263,6 +264,19 @@ export default function AdminDashboard() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">เพิ่ม แก้ไข และจัดการ Long Case Exam</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/board">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-purple-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <GraduationCap className="h-5 w-5 text-purple-700" />
+                <h3 className="font-bold">Board content</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">Stats MCQ + Oral ต่อสาขา + ปุ่ม publish</p>
             </CardContent>
           </Card>
         </Link>
