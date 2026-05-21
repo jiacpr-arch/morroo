@@ -158,8 +158,8 @@ export async function GET(request: Request) {
 
   const ok = await sendLineMessage(adminLineId, [flex]);
 
-  // Diagnostic: re-attempt the push directly so we can surface the LINE
-  // error body in the JSON response when something goes wrong.
+  // Diagnostic: re-push the SAME flex so we can capture the LINE
+  // error body in the JSON response.
   let lineDiagnostic: Record<string, unknown> | undefined;
   if (!ok) {
     const token = process.env.LINE_CHANNEL_ACCESS_TOKEN;
@@ -169,20 +169,13 @@ export async function GET(request: Request) {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        to: adminLineId,
-        messages: [{ type: "text", text: "diag" }],
-      }),
+      body: JSON.stringify({ to: adminLineId, messages: [flex] }),
     });
     const body = await res.text().catch(() => "<no body>");
     lineDiagnostic = {
       status: res.status,
       body,
-      adminLineIdLength: adminLineId.length,
-      adminLineIdPrefix: adminLineId.slice(0, 3),
-      adminLineIdSuffix: adminLineId.slice(-3),
-      tokenSet: Boolean(token),
-      tokenLength: token?.length ?? 0,
+      flexPayload: flex,
     };
   }
 
