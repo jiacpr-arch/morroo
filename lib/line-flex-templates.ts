@@ -208,7 +208,7 @@ export function buildExpiryWarningMessage(data: ExpiryWarningData): LineMessage 
     (data.expiresAt.getTime() - Date.now()) / (1000 * 60 * 60 * 24)
   );
   const renewPath = data.membershipType === "bundle" ? "bundle" : data.membershipType;
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com";
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com").trim();
 
   return {
     type: "flex",
@@ -305,7 +305,7 @@ interface ExamResultData {
 export function buildExamResultFlex(data: ExamResultData): LineMessage {
   const pct = Math.round((data.score / data.maxScore) * 100);
   const { headerColor, badge } = scoreBand(data.score);
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com";
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com").trim();
 
   const preview =
     data.questionPreview.length > 80
@@ -477,7 +477,7 @@ interface AdminDigestData {
 }
 
 export function buildAdminDigestFlex(data: AdminDigestData): LineMessage {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com";
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com").trim();
   const accuracyText =
     data.avgAccuracyToday != null
       ? `${data.avgAccuracyToday}%`

@@ -158,30 +158,8 @@ export async function GET(request: Request) {
 
   const ok = await sendLineMessage(adminLineId, [flex]);
 
-  // Diagnostic: re-push the SAME flex so we can capture the LINE
-  // error body in the JSON response.
-  let lineDiagnostic: Record<string, unknown> | undefined;
-  if (!ok) {
-    const token = process.env.LINE_CHANNEL_ACCESS_TOKEN;
-    const res = await fetch("https://api.line.me/v2/bot/message/push", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ to: adminLineId, messages: [flex] }),
-    });
-    const body = await res.text().catch(() => "<no body>");
-    lineDiagnostic = {
-      status: res.status,
-      body,
-      flexPayload: flex,
-    };
-  }
-
   return NextResponse.json({
     ok,
-    lineDiagnostic,
     snapshot: {
       dateLabel,
       attemptsToday,
