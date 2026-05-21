@@ -10,6 +10,8 @@ import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { sendWeeklyDigest } from "@/lib/email/send";
 import { generateUnsubscribeUrl } from "@/lib/newsletter-unsubscribe";
+import { sendLineMessage } from "@/lib/line";
+import { buildWeeklySummaryFlex } from "@/lib/line-flex-templates";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -43,7 +45,7 @@ async function handle(request: Request) {
   // Fetch opt-in users with an email.
   const { data: profiles, error: profilesError } = await supabase
     .from("profiles")
-    .select("id, name, email")
+    .select("id, name, email, line_user_id")
     .eq("weekly_digest_opt_in", true)
     .neq("email", "");
 
@@ -51,10 +53,11 @@ async function handle(request: Request) {
     return NextResponse.json({ error: profilesError.message }, { status: 500 });
   }
 
-  const candidates = (profiles as Array<{ id: string; name: string | null; email: string | null }> | null) ?? [];
+  const candidates = (profiles as Array<{ id: string; name: string | null; email: string | null; line_user_id: string | null }> | null) ?? [];
   let sent = 0;
   let skipped = 0;
   let failed = 0;
+  let linePushed = 0;
 
   for (const p of candidates) {
     if (!p.email) {
@@ -122,6 +125,36 @@ async function handle(request: Request) {
       console.error(`[weekly-digest] failed for ${p.id}:`, err);
       failed++;
     }
+
+    // Also push to LINE if the user linked their account.
+    if (p.line_user_id) {
+      const { data: weakRows } = await supabase.rpc("get_user_weak_topics", {
+        p_user_id: p.id,
+        p_threshold: 60,
+      });
+      const weakTopics: string[] = Array.isArray(weakRows)
+        ? (weakRows as Array<{ subject_name_th: string; subject_icon: string }>)
+            .slice(0, 2)
+            .map((w) => `${w.subject_icon ?? ""} ${w.subject_name_th}`.trim())
+        : [];
+
+      const flex = buildWeeklySummaryFlex({
+        totalQuestions: row.total_attempts ?? 0,
+        correctCount: row.correct_count ?? 0,
+        accuracy: row.accuracy ?? 0,
+        bestSubject: row.best_subject_name ?? "—",
+        bestSubjectIcon: row.best_subject_icon ?? "",
+        streak: row.streak ?? 0,
+        weakTopics,
+      });
+
+      try {
+        const ok = await sendLineMessage(p.line_user_id, [flex]);
+        if (ok) linePushed++;
+      } catch (err) {
+        console.error(`[weekly-digest] LINE push failed for ${p.id}:`, err);
+      }
+    }
   }
 
   return NextResponse.json({
@@ -129,5 +162,6 @@ async function handle(request: Request) {
     sent,
     skipped,
     failed,
+    linePushed,
   });
 }
