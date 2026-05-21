@@ -274,9 +274,28 @@ async function run() {
     (now.getTime() - new Date(now.getFullYear(), 0, 0).getTime()) /
       (1000 * 60 * 60 * 24)
   );
-  const today = specialties[dayOfYear % specialties.length];
+
+  // Deficit-aware pick: prefer specialties with fewest oral cases
+  const { data: caseCounts } = await supabase
+    .from("long_cases")
+    .select("board_specialty")
+    .eq("audience", "board")
+    .eq("is_published", true);
+
+  const countBySlug = new Map();
+  for (const r of caseCounts ?? []) {
+    countBySlug.set(r.board_specialty, (countBySlug.get(r.board_specialty) ?? 0) + 1);
+  }
+
+  const withCounts = specialties.map((s) => ({
+    ...s,
+    existing: countBySlug.get(s.slug) ?? 0,
+  }));
+  const minCount = Math.min(...withCounts.map((s) => s.existing));
+  const candidates = withCounts.filter((s) => s.existing === minCount);
+  const today = candidates[dayOfYear % candidates.length];
   console.log(
-    `Day ${dayOfYear}: generating oral case for ${today.name_th} (${today.slug})`
+    `Day ${dayOfYear}: generating oral case for ${today.name_th} (${today.slug}) — picked from ${candidates.length} specialties tied at ${minCount} cases`
   );
 
   // Difficulty rotation: 50% medium, 33% hard, 17% easy
