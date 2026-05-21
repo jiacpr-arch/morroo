@@ -34,7 +34,6 @@ export async function POST(request: NextRequest) {
   for (const event of events) {
     const lineUserId = event.source?.userId;
     if (!lineUserId) continue;
-    console.log(`[line/webhook] event=${event.type} userId=${lineUserId}`);
 
     // User added the OA
     if (event.type === "follow") {
