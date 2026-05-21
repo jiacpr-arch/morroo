@@ -461,6 +461,128 @@ function scoreBand(score: number): { headerColor: string; badge: string } {
 }
 
 // ----------------------------------------------------------------------------
+// Admin daily digest — pushed to the admin's LINE every morning.
+
+interface AdminDigestData {
+  dateLabel: string;
+  attemptsToday: number;
+  activeUsersToday: number;
+  newUsersToday: number;
+  avgAccuracyToday: number | null;
+  totalStudents: number;
+  activeUsers7d: number;
+  weakestSubject: string | null;
+  aiGradeFails24h: number;
+  revenueTodayThb: number | null;
+}
+
+export function buildAdminDigestFlex(data: AdminDigestData): LineMessage {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com";
+  const accuracyText =
+    data.avgAccuracyToday != null
+      ? `${data.avgAccuracyToday}%`
+      : "—";
+  const revenueText =
+    data.revenueTodayThb != null
+      ? `฿${data.revenueTodayThb.toLocaleString("th-TH")}`
+      : "—";
+
+  return {
+    type: "flex",
+    altText: `MorRoo Daily ${data.dateLabel} — ${data.activeUsersToday} active, ${data.attemptsToday} ข้อ`,
+    contents: {
+      type: "bubble",
+      size: "kilo",
+      header: {
+        type: "box",
+        layout: "vertical",
+        backgroundColor: "#0EA5E9",
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: "📊 MorRoo Daily",
+            color: "#FFFFFF",
+            weight: "bold",
+            size: "lg",
+          },
+          {
+            type: "text",
+            text: data.dateLabel,
+            color: "#E0F2FE",
+            size: "xs",
+          },
+        ],
+      },
+      body: {
+        type: "box",
+        layout: "vertical",
+        spacing: "md",
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: "วันนี้",
+            size: "xs",
+            color: "#888888",
+            weight: "bold",
+          },
+          statRow("Active users", `${data.activeUsersToday} คน`),
+          statRow("ข้อสอบที่ทำ", `${data.attemptsToday} ข้อ`),
+          statRow("คะแนนเฉลี่ย", accuracyText),
+          statRow("สมาชิกใหม่", `${data.newUsersToday} คน`),
+          statRow("รายได้", revenueText),
+          { type: "separator", margin: "md" },
+          {
+            type: "text",
+            text: "ภาพรวม",
+            size: "xs",
+            color: "#888888",
+            weight: "bold",
+            margin: "md",
+          },
+          statRow("นักเรียนทั้งหมด", `${data.totalStudents} คน`),
+          statRow("Active 7 วัน", `${data.activeUsers7d} คน`),
+          ...(data.weakestSubject
+            ? [statRow("วิชาที่อ่อนสุด", data.weakestSubject)]
+            : []),
+          ...(data.aiGradeFails24h > 0
+            ? [
+                { type: "separator" as const, margin: "md" as const },
+                {
+                  type: "text" as const,
+                  text: `⚠️ AI grading fail 24 ชม.: ${data.aiGradeFails24h} ครั้ง`,
+                  size: "sm" as const,
+                  color: "#E74C3C",
+                  wrap: true,
+                  margin: "md" as const,
+                },
+              ]
+            : []),
+        ],
+      },
+      footer: {
+        type: "box",
+        layout: "vertical",
+        paddingAll: "md",
+        contents: [
+          {
+            type: "button",
+            action: {
+              type: "uri",
+              label: "เปิด Admin Dashboard",
+              uri: `${siteUrl}/admin`,
+            },
+            style: "primary",
+            color: "#0EA5E9",
+          },
+        ],
+      },
+    },
+  };
+}
+
+// ----------------------------------------------------------------------------
 // Chatbot CTA cards — appended after a chatbot text reply in LINE
 // when the AI emits a [CARD:*] marker.
 
