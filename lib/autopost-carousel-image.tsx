@@ -7,7 +7,7 @@ import { ImageResponse } from "next/og";
  *
  * Returns 5 square (1080×1080) JPEG buffers:
  *   1. Branded cover slide — hook + title
- *   2-4. One bullet per slide with big ✅ + sub-text + "เลื่อนต่อ →"
+ *   2-4. One bullet per slide with big ✓ + sub-text + "เลื่อนต่อ →"
  *   5. CTA "card link" slide — visually mimics a link preview card with
  *      site favicon-style mark, the article URL, and "Link in bio"
  *
@@ -17,6 +17,14 @@ import { ImageResponse } from "next/og";
  * Rendering pipeline matches lib/autopost-story-image.tsx: next/og (Satori)
  * for the layout + sharp for the final JPEG flatten. Sharp's librsvg path
  * can't render Thai glyphs in this Vercel runtime — Satori can.
+ *
+ * Satori gotchas this file has hit:
+ *   - Multi-child JSX text (`KEY POINT {index}`) renders as separate children
+ *     and trips Satori's "parent must have display:flex" rule. We pre-compute
+ *     all interpolated strings via template literals so each text-bearing div
+ *     has a single string child.
+ *   - `text-transform`, negative `letter-spacing`, and complex `box-shadow`
+ *     are spotty in Satori — kept the design clean of those.
  */
 
 const SLIDE_W = 1080;
@@ -26,7 +34,7 @@ const BRAND_DARK = "#1A2F23";
 const BRAND_INK = "#0F172A";
 const BRAND_MUTED = "#475569";
 
-function brandWordmark(): React.ReactElement {
+function BrandWordmark(): React.ReactElement {
   return (
     <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
       <div
@@ -45,10 +53,10 @@ function brandWordmark(): React.ReactElement {
       </div>
       <div
         style={{
+          display: "flex",
           fontSize: "26px",
           fontWeight: 800,
           color: BRAND_INK,
-          letterSpacing: "-0.3px",
         }}
       >
         หมอรู้
@@ -57,13 +65,18 @@ function brandWordmark(): React.ReactElement {
   );
 }
 
-async function renderSlide(node: React.ReactElement): Promise<Buffer> {
-  const response = new ImageResponse(node, { width: SLIDE_W, height: SLIDE_H });
-  // ImageResponse emits PNG. Convert to JPEG so IG accepts it — IG's container
-  // endpoint rejects PNGs from some renderers ("Only photo or video can be
-  // accepted as media type"); see lib/autopost-retry route for the same flatten.
-  const png = Buffer.from(await response.arrayBuffer());
-  return sharp(png).flatten({ background: "#ffffff" }).jpeg({ quality: 92 }).toBuffer();
+async function renderSlide(node: React.ReactElement, label: string): Promise<Buffer> {
+  // Surface the actual Satori / sharp error to the caller — the catch-all in
+  // ensureCarouselSlides only logs the wrapped error and Vercel truncates
+  // multi-line stacks, so we annotate with which slide threw.
+  try {
+    const response = new ImageResponse(node, { width: SLIDE_W, height: SLIDE_H });
+    const png = Buffer.from(await response.arrayBuffer());
+    return await sharp(png).flatten({ background: "#ffffff" }).jpeg({ quality: 92 }).toBuffer();
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    throw new Error(`[carousel] slide "${label}" render failed: ${msg}`);
+  }
 }
 
 function CoverSlide({ hook, title }: { hook: string; title: string }): React.ReactElement {
@@ -83,9 +96,18 @@ function CoverSlide({ hook, title }: { hook: string; title: string }): React.Rea
       }}
     >
       <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
-        <div style={{ fontSize: "38px" }}>🩺</div>
-        <div style={{ fontSize: "30px", fontWeight: 800, color: "#ffffff" }}>หมอรู้</div>
-        <div style={{ fontSize: "18px", color: "rgba(255,255,255,0.6)", marginTop: "4px" }}>
+        <div style={{ display: "flex", fontSize: "38px" }}>🩺</div>
+        <div style={{ display: "flex", fontSize: "30px", fontWeight: 800, color: "#ffffff" }}>
+          หมอรู้
+        </div>
+        <div
+          style={{
+            display: "flex",
+            fontSize: "18px",
+            color: "rgba(255,255,255,0.7)",
+            marginTop: "4px",
+          }}
+        >
           · เตรียมสอบแพทย์
         </div>
       </div>
@@ -98,24 +120,23 @@ function CoverSlide({ hook, title }: { hook: string; title: string }): React.Rea
       >
         <div
           style={{
+            display: "flex",
             fontSize: "60px",
             fontWeight: 900,
             color: "#ffffff",
             lineHeight: 1.15,
-            letterSpacing: "-1px",
             maxWidth: "920px",
-            display: "flex",
           }}
         >
           {truncatedHook}
         </div>
         <div
           style={{
+            display: "flex",
             fontSize: "26px",
-            color: "rgba(255,255,255,0.75)",
+            color: "rgba(255,255,255,0.8)",
             lineHeight: 1.4,
             maxWidth: "880px",
-            display: "flex",
           }}
         >
           {truncatedTitle}
@@ -130,13 +151,22 @@ function CoverSlide({ hook, title }: { hook: string; title: string }): React.Rea
       >
         <div
           style={{
+            display: "flex",
             fontSize: "22px",
             color: "rgba(255,255,255,0.6)",
           }}
         >
           เลื่อนดูทั้งหมด →
         </div>
-        <div style={{ fontSize: "20px", color: "rgba(255,255,255,0.45)" }}>1 / 5</div>
+        <div
+          style={{
+            display: "flex",
+            fontSize: "20px",
+            color: "rgba(255,255,255,0.45)",
+          }}
+        >
+          1 / 5
+        </div>
       </div>
     </div>
   );
@@ -152,6 +182,11 @@ function BulletSlide({
   total: number;
 }): React.ReactElement {
   const truncated = bullet.length > 140 ? `${bullet.slice(0, 137).trimEnd()}…` : bullet;
+  // Pre-compute interpolated strings so each text div has a single child —
+  // Satori treats `KEY POINT {index}` as 2 children and demands display:flex
+  // on the parent of multi-child text. Easier to enforce single-child.
+  const keyPointLabel = `KEY POINT ${index}`;
+  const pageLabel = `${index + 1} / ${total}`;
   return (
     <div
       style={{
@@ -165,7 +200,7 @@ function BulletSlide({
         fontFamily: "sans-serif",
       }}
     >
-      {brandWordmark()}
+      <BrandWordmark />
       <div
         style={{
           display: "flex",
@@ -199,23 +234,23 @@ function BulletSlide({
           </div>
           <div
             style={{
+              display: "flex",
               fontSize: "22px",
               color: BRAND_MUTED,
               fontWeight: 700,
               letterSpacing: "2px",
             }}
           >
-            KEY POINT {index}
+            {keyPointLabel}
           </div>
         </div>
         <div
           style={{
+            display: "flex",
             fontSize: "52px",
             fontWeight: 800,
             color: BRAND_INK,
             lineHeight: 1.3,
-            letterSpacing: "-0.5px",
-            display: "flex",
           }}
         >
           {truncated}
@@ -228,9 +263,11 @@ function BulletSlide({
           justifyContent: "space-between",
         }}
       >
-        <div style={{ fontSize: "22px", color: BRAND_MUTED }}>เลื่อนต่อ →</div>
-        <div style={{ fontSize: "20px", color: "#94A3B8" }}>
-          {index + 1} / {total}
+        <div style={{ display: "flex", fontSize: "22px", color: BRAND_MUTED }}>
+          เลื่อนต่อ →
+        </div>
+        <div style={{ display: "flex", fontSize: "20px", color: "#94A3B8" }}>
+          {pageLabel}
         </div>
       </div>
     </div>
@@ -248,10 +285,11 @@ function CtaCardSlide({
 }): React.ReactElement {
   const hostPath = articleUrl.replace(/^https?:\/\//, "");
   const truncatedTitle = title.length > 80 ? `${title.slice(0, 77).trimEnd()}…` : title;
-  // Visually mimic a Facebook/Messenger link preview card: white card,
-  // colored top "image" strip, big title, gray subline with the URL. Since IG
-  // strips clickable URLs from captions, the card needs to *look* tappable so
-  // viewers screenshot/copy the URL — or follow the "link in bio".
+  const lineLine = `หรือ DM LINE ${lineHandle} เพื่อรับลิงก์`;
+  // Visually mimic a link preview card: white card with a colored top strip,
+  // big title, brand-green URL. IG strips clickable URLs from captions so the
+  // card needs to *look* tappable — viewers screenshot/copy the URL or follow
+  // "link in bio".
   return (
     <div
       style={{
@@ -266,13 +304,12 @@ function CtaCardSlide({
       }}
     >
       <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
-        <div style={{ fontSize: "32px" }}>📖</div>
-        <div style={{ fontSize: "28px", fontWeight: 800, color: "#ffffff" }}>
+        <div style={{ display: "flex", fontSize: "32px" }}>📖</div>
+        <div style={{ display: "flex", fontSize: "28px", fontWeight: 800, color: "#ffffff" }}>
           อ่านบทความเต็มได้ที่
         </div>
       </div>
 
-      {/* Card */}
       <div
         style={{
           display: "flex",
@@ -280,7 +317,7 @@ function CtaCardSlide({
           background: "#ffffff",
           borderRadius: "24px",
           overflow: "hidden",
-          boxShadow: "0 24px 60px rgba(0,0,0,0.4)",
+          border: "2px solid rgba(255,255,255,0.15)",
         }}
       >
         <div
@@ -293,8 +330,17 @@ function CtaCardSlide({
             gap: "20px",
           }}
         >
-          <div style={{ fontSize: "60px" }}>🩺</div>
-          <div style={{ fontSize: "44px", fontWeight: 900, color: "#ffffff" }}>morroo.com</div>
+          <div style={{ display: "flex", fontSize: "60px" }}>🩺</div>
+          <div
+            style={{
+              display: "flex",
+              fontSize: "44px",
+              fontWeight: 900,
+              color: "#ffffff",
+            }}
+          >
+            morroo.com
+          </div>
         </div>
         <div
           style={{
@@ -306,33 +352,32 @@ function CtaCardSlide({
         >
           <div
             style={{
-              fontSize: "11px",
+              display: "flex",
+              fontSize: "14px",
               fontWeight: 700,
               letterSpacing: "2px",
               color: "#94A3B8",
-              textTransform: "uppercase",
-              display: "flex",
             }}
           >
             BLOG · MORROO.COM
           </div>
           <div
             style={{
+              display: "flex",
               fontSize: "30px",
               fontWeight: 800,
               color: BRAND_INK,
               lineHeight: 1.25,
-              display: "flex",
             }}
           >
             {truncatedTitle}
           </div>
           <div
             style={{
+              display: "flex",
               fontSize: "20px",
               color: BRAND_GREEN,
               fontWeight: 600,
-              display: "flex",
             }}
           >
             {hostPath}
@@ -350,22 +395,22 @@ function CtaCardSlide({
       >
         <div
           style={{
+            display: "flex",
             fontSize: "26px",
             color: "#ffffff",
             fontWeight: 700,
-            display: "flex",
           }}
         >
           👉 แตะ Link in bio
         </div>
         <div
           style={{
-            fontSize: "18px",
-            color: "rgba(255,255,255,0.6)",
             display: "flex",
+            fontSize: "18px",
+            color: "rgba(255,255,255,0.7)",
           }}
         >
-          หรือ DM LINE {lineHandle} เพื่อรับลิงก์
+          {lineLine}
         </div>
       </div>
     </div>
@@ -388,11 +433,17 @@ export async function composeCarouselSlides(input: CarouselSlideInput): Promise<
 
   const total = 5;
   const slides: Buffer[] = [];
-  slides.push(await renderSlide(<CoverSlide hook={input.hook} title={input.title} />));
+  slides.push(
+    await renderSlide(
+      <CoverSlide hook={input.hook} title={input.title} />,
+      "cover",
+    ),
+  );
   for (let i = 0; i < 3; i++) {
     slides.push(
       await renderSlide(
         <BulletSlide bullet={bullets[i]} index={i + 1} total={total} />,
+        `bullet-${i + 1}`,
       ),
     );
   }
@@ -403,6 +454,7 @@ export async function composeCarouselSlides(input: CarouselSlideInput): Promise<
         articleUrl={input.articleUrl}
         lineHandle={lineHandle}
       />,
+      "cta",
     ),
   );
   return slides;
