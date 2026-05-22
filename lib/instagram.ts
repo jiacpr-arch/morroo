@@ -34,9 +34,10 @@ export async function postToInstagram(post: {
 
   // Step 1: Create media container — retry on FB error 100 ("does not exist")
   // since the Supabase Storage CDN sometimes hasn't propagated the upload when
-  // IG's server-side fetcher first hits the URL.
+  // IG's server-side fetcher first hits the URL. Rate limit errors fail fast
+  // (daily quota — retrying within minutes wastes more calls and can't recover).
   let containerId: string | null = null;
-  for (let attempt = 0; attempt < 3; attempt++) {
+  for (let attempt = 0; attempt < 4; attempt++) {
     const containerRes = await fetch(
       `https://graph.facebook.com/v24.0/${igAccountId}/media`,
       {
@@ -55,12 +56,19 @@ export async function postToInstagram(post: {
       break;
     }
     const code = containerData.error?.code;
-    if (code === 100 && attempt < 2) {
-      await new Promise((r) => setTimeout(r, (attempt + 1) * 3000));
+    const msg = containerData.error?.message ?? `HTTP ${containerRes.status}`;
+    if (isRateLimitError(msg)) {
+      console.error("[instagram] container hit daily rate limit, aborting:", msg);
+      throw new Error(`Meta daily rate limit reached — cron will retry next day: ${msg}`);
+    }
+    if (code === 100 && attempt < 3) {
+      const delay = (attempt + 1) * 3000;
+      console.log(`[instagram] container retry after ${delay}ms: ${msg}`);
+      await new Promise((r) => setTimeout(r, delay));
       continue;
     }
     console.error("[instagram] container create failed:", JSON.stringify(containerData));
-    throw new Error(containerData.error?.message ?? `HTTP ${containerRes.status}`);
+    throw new Error(msg);
   }
   if (!containerId) {
     throw new Error("Instagram container creation exhausted retries");
@@ -69,7 +77,7 @@ export async function postToInstagram(post: {
   // Step 2: Publish the container
   // IG docs note containers may take a few seconds to be ready for publish on
   // larger images — short retry loop with backoff handles transient "not ready".
-  for (let attempt = 0; attempt < 3; attempt++) {
+  for (let attempt = 0; attempt < 4; attempt++) {
     const publishRes = await fetch(
       `https://graph.facebook.com/v24.0/${igAccountId}/media_publish`,
       {
@@ -84,13 +92,20 @@ export async function postToInstagram(post: {
       return publishData.id;
     }
     const code = publishData.error?.code;
+    const msg = publishData.error?.message ?? `HTTP ${publishRes.status}`;
+    if (isRateLimitError(msg)) {
+      console.error("[instagram] publish hit daily rate limit, aborting:", msg);
+      throw new Error(`Meta daily rate limit reached — cron will retry next day: ${msg}`);
+    }
     // 9007 = "Media ID is not available" — container still processing
-    if (code === 9007 && attempt < 2) {
-      await new Promise((r) => setTimeout(r, (attempt + 1) * 3000));
+    if (code === 9007 && attempt < 3) {
+      const delay = (attempt + 1) * 3000;
+      console.log(`[instagram] publish retry after ${delay}ms: ${msg}`);
+      await new Promise((r) => setTimeout(r, delay));
       continue;
     }
     console.error("[instagram] publish failed:", JSON.stringify(publishData));
-    throw new Error(publishData.error?.message ?? `HTTP ${publishRes.status}`);
+    throw new Error(msg);
   }
 
   throw new Error("Instagram publish exhausted retries");
@@ -143,7 +158,7 @@ export async function postStoryToInstagram(post: {
 
   let containerId: string | null = null;
   let stickerEligible = Boolean(post.linkUrl);
-  for (let attempt = 0; attempt < 3; attempt++) {
+  for (let attempt = 0; attempt < 4; attempt++) {
     const containerRes = await fetch(
       `https://graph.facebook.com/v24.0/${igAccountId}/media`,
       {
@@ -175,19 +190,26 @@ export async function postStoryToInstagram(post: {
       stickerEligible = false;
       continue;
     }
-    // 100 = "does not exist" (image URL fetch failed); retry once with backoff.
-    if (code === 100 && attempt < 2) {
-      await new Promise((r) => setTimeout(r, (attempt + 1) * 3000));
+    // Rate limit is daily quota — abort fast so we don't burn more calls.
+    if (isRateLimitError(message)) {
+      console.error("[instagram] story container hit daily rate limit, aborting:", message);
+      throw new Error(`Meta daily rate limit reached — cron will retry next day: ${message}`);
+    }
+    // 100 = "does not exist" (image URL fetch failed); retry with backoff.
+    if (code === 100 && attempt < 3) {
+      const delay = (attempt + 1) * 3000;
+      console.log(`[instagram] story container retry after ${delay}ms: ${message}`);
+      await new Promise((r) => setTimeout(r, delay));
       continue;
     }
     console.error("[instagram] story container create failed:", JSON.stringify(containerData));
-    throw new Error(containerData.error?.message ?? `HTTP ${containerRes.status}`);
+    throw new Error(message || `HTTP ${containerRes.status}`);
   }
   if (!containerId) {
     throw new Error("Instagram story container creation exhausted retries");
   }
 
-  for (let attempt = 0; attempt < 3; attempt++) {
+  for (let attempt = 0; attempt < 4; attempt++) {
     const publishRes = await fetch(
       `https://graph.facebook.com/v24.0/${igAccountId}/media_publish`,
       {
@@ -202,12 +224,19 @@ export async function postStoryToInstagram(post: {
       return publishData.id;
     }
     const code = publishData.error?.code;
-    if (code === 9007 && attempt < 2) {
-      await new Promise((r) => setTimeout(r, (attempt + 1) * 3000));
+    const msg = publishData.error?.message ?? `HTTP ${publishRes.status}`;
+    if (isRateLimitError(msg)) {
+      console.error("[instagram] story publish hit daily rate limit, aborting:", msg);
+      throw new Error(`Meta daily rate limit reached — cron will retry next day: ${msg}`);
+    }
+    if (code === 9007 && attempt < 3) {
+      const delay = (attempt + 1) * 3000;
+      console.log(`[instagram] story publish retry after ${delay}ms: ${msg}`);
+      await new Promise((r) => setTimeout(r, delay));
       continue;
     }
     console.error("[instagram] story publish failed:", JSON.stringify(publishData));
-    throw new Error(publishData.error?.message ?? `HTTP ${publishRes.status}`);
+    throw new Error(msg);
   }
 
   throw new Error("Instagram story publish exhausted retries");
@@ -231,7 +260,19 @@ export async function postStoryToInstagram(post: {
  *
  * Same FB error code 100 / 9007 retry handling as feed posts since the
  * Supabase Storage propagation race + container-not-ready race apply here too.
+ * Rate limit errors ("Application request limit reached") FAIL FAST — these are
+ * daily quotas (reset at midnight UTC) and retrying within minutes both wastes
+ * more API calls and can't recover. The cron will retry next day naturally.
  */
+function isRateLimitError(errorMsg: string): boolean {
+  return (
+    errorMsg.includes("Application request limit reached") ||
+    errorMsg.includes("rate limit") ||
+    errorMsg.includes("quota") ||
+    errorMsg.toLowerCase().includes("temporarily unavailable")
+  );
+}
+
 export async function postCarouselToInstagram(post: {
   imageUrls: string[];
   caption: string;
@@ -251,10 +292,12 @@ export async function postCarouselToInstagram(post: {
 
   // Step 1: create one child container per image with is_carousel_item=true.
   // Run sequentially so we can attribute "which slide failed" cleanly in logs.
+  // If we hit the daily rate limit on ANY slide, abort the whole carousel —
+  // continuing to retry just burns more of tomorrow's quota.
   const childIds: string[] = [];
   for (let i = 0; i < post.imageUrls.length; i++) {
     let childId: string | null = null;
-    for (let attempt = 0; attempt < 3; attempt++) {
+    for (let attempt = 0; attempt < 4; attempt++) {
       const childRes = await fetch(
         `https://graph.facebook.com/v24.0/${igAccountId}/media`,
         {
@@ -273,17 +316,27 @@ export async function postCarouselToInstagram(post: {
         break;
       }
       const code = childData.error?.code;
-      if (code === 100 && attempt < 2) {
-        await new Promise((r) => setTimeout(r, (attempt + 1) * 3000));
+      const msg = childData.error?.message ?? `HTTP ${childRes.status}`;
+      if (isRateLimitError(msg)) {
+        console.error(
+          `[instagram] carousel child[${i}] hit daily rate limit, aborting:`,
+          msg,
+        );
+        throw new Error(
+          `Meta daily rate limit reached on carousel slide ${i + 1} — cron will retry next day: ${msg}`,
+        );
+      }
+      if (code === 100 && attempt < 3) {
+        const delay = (attempt + 1) * 3000;
+        console.log(`[instagram] carousel child[${i}] retry after ${delay}ms: ${msg}`);
+        await new Promise((r) => setTimeout(r, delay));
         continue;
       }
       console.error(
         `[instagram] carousel child[${i}] create failed:`,
         JSON.stringify(childData),
       );
-      throw new Error(
-        childData.error?.message ?? `HTTP ${childRes.status} on slide ${i + 1}`,
-      );
+      throw new Error(msg + (msg.includes("slide") ? "" : ` on slide ${i + 1}`));
     }
     if (!childId) {
       throw new Error(`Carousel slide ${i + 1} container creation exhausted retries`);
@@ -293,7 +346,7 @@ export async function postCarouselToInstagram(post: {
 
   // Step 2: create the carousel parent container.
   let parentId: string | null = null;
-  for (let attempt = 0; attempt < 3; attempt++) {
+  for (let attempt = 0; attempt < 4; attempt++) {
     const parentRes = await fetch(
       `https://graph.facebook.com/v24.0/${igAccountId}/media`,
       {
@@ -313,19 +366,26 @@ export async function postCarouselToInstagram(post: {
       break;
     }
     const code = parentData.error?.code;
-    if (code === 100 && attempt < 2) {
-      await new Promise((r) => setTimeout(r, (attempt + 1) * 3000));
+    const msg = parentData.error?.message ?? `HTTP ${parentRes.status}`;
+    if (isRateLimitError(msg)) {
+      console.error("[instagram] carousel parent hit daily rate limit, aborting:", msg);
+      throw new Error(`Meta daily rate limit reached on carousel parent — cron will retry next day: ${msg}`);
+    }
+    if (code === 100 && attempt < 3) {
+      const delay = (attempt + 1) * 3000;
+      console.log(`[instagram] carousel parent retry after ${delay}ms: ${msg}`);
+      await new Promise((r) => setTimeout(r, delay));
       continue;
     }
     console.error("[instagram] carousel parent create failed:", JSON.stringify(parentData));
-    throw new Error(parentData.error?.message ?? `HTTP ${parentRes.status}`);
+    throw new Error(msg);
   }
   if (!parentId) {
     throw new Error("Instagram carousel parent creation exhausted retries");
   }
 
   // Step 3: publish the parent container.
-  for (let attempt = 0; attempt < 3; attempt++) {
+  for (let attempt = 0; attempt < 4; attempt++) {
     const publishRes = await fetch(
       `https://graph.facebook.com/v24.0/${igAccountId}/media_publish`,
       {
@@ -342,12 +402,19 @@ export async function postCarouselToInstagram(post: {
       return publishData.id;
     }
     const code = publishData.error?.code;
-    if (code === 9007 && attempt < 2) {
-      await new Promise((r) => setTimeout(r, (attempt + 1) * 3000));
+    const msg = publishData.error?.message ?? `HTTP ${publishRes.status}`;
+    if (isRateLimitError(msg)) {
+      console.error("[instagram] carousel publish hit daily rate limit, aborting:", msg);
+      throw new Error(`Meta daily rate limit reached on carousel publish — cron will retry next day: ${msg}`);
+    }
+    if (code === 9007 && attempt < 3) {
+      const delay = (attempt + 1) * 3000;
+      console.log(`[instagram] carousel publish retry after ${delay}ms: ${msg}`);
+      await new Promise((r) => setTimeout(r, delay));
       continue;
     }
     console.error("[instagram] carousel publish failed:", JSON.stringify(publishData));
-    throw new Error(publishData.error?.message ?? `HTTP ${publishRes.status}`);
+    throw new Error(msg);
   }
 
   throw new Error("Instagram carousel publish exhausted retries");
