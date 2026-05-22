@@ -145,7 +145,15 @@ async function ensureCarouselSlides(
       .eq("slug", slug);
     return urls;
   } catch (err) {
-    console.error("[autopost-retry] carousel compose error:", err);
+    // Persist the underlying error so the admin dashboard can surface it
+    // alongside the slug — Vercel's log viewer truncates long stack traces,
+    // so we mirror the message into ig_carousel_last_error too.
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error(`[autopost-retry] carousel compose error slug=${slug}:`, msg);
+    await supabase
+      .from("blog_posts")
+      .update({ ig_carousel_last_error: `compose_failed: ${msg}`.slice(0, 500) })
+      .eq("slug", slug);
     return null;
   }
 }
