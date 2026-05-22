@@ -784,3 +784,121 @@ function ctaFooter(buttons: { label: string; uri: string; style: "primary" | "se
     })),
   };
 }
+
+// ─── Weekly analytics digest ─────────────────────────────────────────────
+export interface AnalyticsDigestData {
+  rangeLabel: string;       // e.g. "15–21 พ.ค. 2026"
+  pageViews: number;
+  uniqueVisitors: number;
+  signups: number;
+  examStarts: number;
+  checkoutClicks: number;
+  socialLineClicks: number;
+  topPath: { path: string; count: number } | null;
+  topReferrer: { ref: string; count: number } | null;
+  signupConversion: number | null;  // signups / unique visitors %
+  checkoutConversion: number | null; // checkouts / signups %
+}
+
+export function buildAnalyticsDigestFlex(data: AnalyticsDigestData): LineMessage {
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com").trim();
+  const topPathText = data.topPath
+    ? `${data.topPath.path} (${data.topPath.count.toLocaleString()})`
+    : "—";
+  const topRefText = data.topReferrer
+    ? `${data.topReferrer.ref} (${data.topReferrer.count.toLocaleString()})`
+    : "—";
+  const signupConvText =
+    data.signupConversion != null ? `${data.signupConversion.toFixed(1)}%` : "—";
+  const checkoutConvText =
+    data.checkoutConversion != null ? `${data.checkoutConversion.toFixed(1)}%` : "—";
+
+  return {
+    type: "flex",
+    altText: `MorRoo Weekly ${data.rangeLabel} — ${data.uniqueVisitors} visitors, ${data.signups} signups`,
+    contents: {
+      type: "bubble",
+      size: "kilo",
+      header: {
+        type: "box",
+        layout: "vertical",
+        backgroundColor: "#7C3AED",
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: "📈 MorRoo Weekly",
+            color: "#FFFFFF",
+            weight: "bold",
+            size: "lg",
+          },
+          {
+            type: "text",
+            text: data.rangeLabel,
+            color: "#EDE9FE",
+            size: "xs",
+          },
+        ],
+      },
+      body: {
+        type: "box",
+        layout: "vertical",
+        spacing: "md",
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: "ผู้ใช้ 7 วัน",
+            size: "xs",
+            color: "#888888",
+            weight: "bold",
+          },
+          statRow("Visitors", data.uniqueVisitors.toLocaleString()),
+          statRow("Page views", data.pageViews.toLocaleString()),
+          { type: "separator", margin: "md" },
+          {
+            type: "text",
+            text: "Funnel",
+            size: "xs",
+            color: "#888888",
+            weight: "bold",
+            margin: "md",
+          },
+          statRow("Signups", `${data.signups.toLocaleString()} (${signupConvText})`),
+          statRow("Exam starts", data.examStarts.toLocaleString()),
+          statRow("Checkout clicks", `${data.checkoutClicks.toLocaleString()} (${checkoutConvText})`),
+          statRow("LINE adds", data.socialLineClicks.toLocaleString()),
+          { type: "separator", margin: "md" },
+          {
+            type: "text",
+            text: "Top",
+            size: "xs",
+            color: "#888888",
+            weight: "bold",
+            margin: "md",
+          },
+          statRow("Page", topPathText),
+          statRow("Referrer", topRefText),
+        ],
+      },
+      footer: {
+        type: "box",
+        layout: "vertical",
+        paddingAll: "md",
+        contents: [
+          {
+            type: "button",
+            style: "primary",
+            color: "#7C3AED",
+            height: "sm",
+            action: {
+              type: "uri",
+              label: "เปิด /admin/analytics",
+              uri: `${siteUrl}/admin/analytics`,
+            },
+          },
+        ],
+      },
+    },
+  };
+}

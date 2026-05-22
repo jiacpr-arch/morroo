@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { track } from "@vercel/analytics";
+import { track } from "@/lib/analytics";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";

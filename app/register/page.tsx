@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
-import { track } from "@vercel/analytics";
+import { track } from "@/lib/analytics";
 import BetaPromoBanner from "@/components/beta/BetaPromoBanner";
 
 const LINE_LOGIN_ENABLED = process.env.NEXT_PUBLIC_LINE_LOGIN_ENABLED === "true";

@@ -1,6 +1,6 @@
 "use client";
 
-import { track } from "@vercel/analytics";
+import { track } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 export const SOCIAL_LINKS = {
