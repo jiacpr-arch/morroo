@@ -130,18 +130,17 @@ async function ensureCarouselSlides(
         .from("public-assets")
         .upload(filePath, slides[i], { contentType: "image/jpeg", upsert: true });
       if (uploadError) {
-        console.error(
-          `[autopost-retry] carousel slide ${i + 1} upload error:`,
-          uploadError,
-        );
-        return null;
+        // Throw so the outer catch persists the error into
+        // ig_carousel_last_error — otherwise the retry surfaces only
+        // "skipped:compose_failed" with no detail.
+        throw new Error(`slide ${i + 1} upload failed: ${uploadError.message}`);
       }
       const { data: pub } = supabase.storage.from("public-assets").getPublicUrl(filePath);
       urls.push(pub.publicUrl);
     }
     await supabase
       .from("blog_posts")
-      .update({ ig_carousel_slide_urls: urls })
+      .update({ ig_carousel_slide_urls: urls, ig_carousel_last_error: null })
       .eq("slug", slug);
     return urls;
   } catch (err) {
