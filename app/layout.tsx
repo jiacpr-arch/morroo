@@ -3,6 +3,7 @@ import { Sarabun } from "next/font/google";
 import { Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BetaProvider } from "@/components/beta/BetaProvider";
@@ -206,6 +207,7 @@ export default function RootLayout({
           <ChatWidget />
         </BetaProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

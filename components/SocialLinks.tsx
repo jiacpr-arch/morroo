@@ -1,3 +1,6 @@
+"use client";
+
+import { track } from "@vercel/analytics";
 import { cn } from "@/lib/utils";
 
 export const SOCIAL_LINKS = {
@@ -62,6 +65,7 @@ export function SocialButtonsRow({ className }: { className?: string }) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={s.aria}
+          onClick={() => track("social_click", { platform: s.key, surface: "buttons" })}
           className={cn(
             "inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-all",
             s.bg,
@@ -86,6 +90,7 @@ export function SocialIconsRow({ className }: { className?: string }) {
           rel="noopener noreferrer"
           aria-label={s.aria}
           title={s.label}
+          onClick={() => track("social_click", { platform: s.key, surface: "icons" })}
           className={cn(
             "inline-flex h-9 w-9 items-center justify-center rounded-full text-white transition-all",
             s.bg,

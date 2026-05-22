@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
+import { track } from "@vercel/analytics";
 import BetaPromoBanner from "@/components/beta/BetaPromoBanner";
 
 const LINE_LOGIN_ENABLED = process.env.NEXT_PUBLIC_LINE_LOGIN_ENABLED === "true";
@@ -83,6 +84,8 @@ function RegisterForm() {
       } catch {
         /* non-fatal */
       }
+
+      track("signup_submit", { method: "email", hasRef: Boolean(refCode.trim()) });
     }
 
     setSuccess(true);
@@ -90,6 +93,7 @@ function RegisterForm() {
   };
 
   const handleGoogleSignUp = async () => {
+    track("signup_submit", { method: "google", hasRef: Boolean(refCode.trim()) });
     const supabase = createClient();
     const ref = refCode.trim() || searchParams.get("ref") || "";
     await supabase.auth.signInWithOAuth({

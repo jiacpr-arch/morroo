@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { track } from "@vercel/analytics";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Clock, ArrowRight, Hourglass } from "lucide-react";
@@ -55,7 +56,17 @@ export default function ExamCard({ exam, partCount = 0 }: { exam: Exam; partCoun
   }
 
   return (
-    <Link href={`/exams/${exam.id}`}>
+    <Link
+      href={`/exams/${exam.id}`}
+      onClick={() =>
+        track("exam_start_click", {
+          examId: exam.id,
+          category: exam.category,
+          difficulty: exam.difficulty,
+          isFree: Boolean(exam.is_free),
+        })
+      }
+    >
       <Card className="group h-full transition-all hover:shadow-lg hover:border-brand/30">
         <CardHeader className="pb-3">
           <div className="flex items-center gap-2 flex-wrap">

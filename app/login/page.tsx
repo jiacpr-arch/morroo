@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
+import { track } from "@vercel/analytics";
 
 const LINE_LOGIN_ENABLED = process.env.NEXT_PUBLIC_LINE_LOGIN_ENABLED === "true";
 
@@ -64,12 +65,14 @@ function LoginForm() {
       setError(error.message);
       setLoading(false);
     } else {
+      track("login_success", { method: "email" });
       router.push("/profile");
       router.refresh();
     }
   };
 
   const handleGoogleLogin = async () => {
+    track("login_attempt", { method: "google" });
     const supabase = createClient();
     await supabase.auth.signInWithOAuth({
       provider: "google",
