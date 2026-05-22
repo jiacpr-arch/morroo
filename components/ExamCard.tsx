@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { track } from "@vercel/analytics";
+import { track } from "@/lib/analytics";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Clock, ArrowRight, Hourglass } from "lucide-react";

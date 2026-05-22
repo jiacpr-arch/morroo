@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { track } from "@vercel/analytics";
+import { track } from "@/lib/analytics";
 import { Lock, Loader2, PlayCircle } from "lucide-react";
 
 export default function LongCaseStartButton({ caseId, hasAccess }: {

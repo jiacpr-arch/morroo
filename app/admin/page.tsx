@@ -254,6 +254,19 @@ export default function AdminDashboard() {
             </CardContent>
           </Card>
         </Link>
+        <Link href="/admin/analytics">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-purple-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <BarChart3 className="h-5 w-5 text-purple-600" />
+                <h3 className="font-bold">Web Analytics</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">Funnel & conversion จาก Vercel Analytics (mirror)</p>
+            </CardContent>
+          </Card>
+        </Link>
         <Link href="/admin/longcases">
           <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-amber-200">
             <CardHeader className="pb-2">

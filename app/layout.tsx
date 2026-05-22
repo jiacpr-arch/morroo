@@ -4,6 +4,8 @@ import { Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Suspense } from "react";
+import AnalyticsPageviewTracker from "@/components/AnalyticsPageviewTracker";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BetaProvider } from "@/components/beta/BetaProvider";
@@ -208,6 +210,9 @@ export default function RootLayout({
         </BetaProvider>
         <Analytics />
         <SpeedInsights />
+        <Suspense fallback={null}>
+          <AnalyticsPageviewTracker />
+        </Suspense>
       </body>
     </html>
   );

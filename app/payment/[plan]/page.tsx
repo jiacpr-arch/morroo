@@ -9,7 +9,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { createClient } from "@/lib/supabase/client";
-import { track } from "@vercel/analytics";
+import { track } from "@/lib/analytics";
 import {
   ArrowLeft,
   Building2,
