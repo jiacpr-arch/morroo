@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { track } from "@vercel/analytics";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -60,7 +63,11 @@ export default function PricingCard({
         </ul>
       </CardContent>
       <CardFooter>
-        <Link href={href} className="w-full">
+        <Link
+          href={href}
+          className="w-full"
+          onClick={() => track("plan_selected", { plan: type, price })}
+        >
           <Button
             className={`w-full ${
               popular

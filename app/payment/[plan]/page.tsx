@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { createClient } from "@/lib/supabase/client";
+import { track } from "@vercel/analytics";
 import {
   ArrowLeft,
   Building2,
@@ -163,13 +164,15 @@ export default function PaymentPage({
     setStripeLoading(true);
     setError("");
     const planPrice: Record<string, number> = { monthly: 199, yearly: 1490, bundle: 299 };
+    const price = planPrice[plan] ?? 0;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (window as any).ttq?.track("InitiateCheckout", {
-      value: planPrice[plan] ?? 0,
+      value: price,
       currency: "THB",
       content_id: plan,
       content_type: "subscription",
     });
+    track("stripe_checkout_click", { plan, price, wantInvoice });
     try {
       const res = await fetch("/api/billing/checkout", {
         method: "POST",
