@@ -6,9 +6,13 @@ import {
   trimHistory,
   type ChatMessage,
 } from "@/lib/chatbot";
-import { buildChatbotCard } from "@/lib/line-flex-templates";
+import {
+  buildChatbotCard,
+  buildAdsMergeConfirmFlex,
+} from "@/lib/line-flex-templates";
 import { getOrCreateLeadFromChannel } from "@/lib/lead-channel";
 import { handleBotIntent, handleEmailCapture } from "@/lib/bot-intent";
+import { handleAdsAutofixPostback } from "@/lib/ads-autofix-line";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -26,6 +30,7 @@ export async function POST(request: NextRequest) {
       type: string;
       source?: { userId?: string };
       message?: { type: string; text?: string };
+      postback?: { data?: string };
     }>;
   };
 
@@ -35,6 +40,18 @@ export async function POST(request: NextRequest) {
     const lineUserId = event.source?.userId;
     if (!lineUserId) continue;
     console.log(`[line/webhook] event=${event.type} userId=${lineUserId}`);
+
+    // Postback: ads-autofix merge / dismiss buttons (admin only)
+    if (event.type === "postback" && event.postback?.data) {
+      const reply = await handleAdsAutofixPostback(
+        supabase,
+        lineUserId,
+        event.postback.data,
+        buildAdsMergeConfirmFlex
+      );
+      if (reply) await sendLineMessage(lineUserId, reply);
+      continue;
+    }
 
     // User added the OA
     if (event.type === "follow") {
