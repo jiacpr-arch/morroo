@@ -902,3 +902,486 @@ export function buildAnalyticsDigestFlex(data: AnalyticsDigestData): LineMessage
     },
   };
 }
+
+// ─── Ads diagnostics digest ──────────────────────────────────────────────
+export interface AdsDiagnosticsData {
+  pagesScanned: number;
+  adsScanned: number;
+  critical: number;
+  warn: number;
+  actionsTaken: number;
+  topFindings: {
+    label: string;
+    category: string;
+    recommendation: string;
+    autoActioned: boolean;
+  }[];
+}
+
+export function buildAdsDiagnosticsFlex(data: AdsDiagnosticsData): LineMessage {
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com").trim();
+  const headerColor = data.critical > 0 ? "#DC2626" : "#F59E0B";
+
+  const findingBlocks =
+    data.topFindings.length === 0
+      ? [
+          {
+            type: "text" as const,
+            text: "ไม่มี critical findings",
+            size: "sm" as const,
+            color: "#16A085" as const,
+          },
+        ]
+      : data.topFindings.map((f) => ({
+          type: "box" as const,
+          layout: "vertical" as const,
+          margin: "md" as const,
+          contents: [
+            {
+              type: "text" as const,
+              text: `${f.autoActioned ? "⏸ " : "⚠ "}${f.label}`,
+              size: "sm" as const,
+              weight: "bold" as const,
+              color: "#222222",
+              wrap: true,
+            },
+            {
+              type: "text" as const,
+              text: f.recommendation,
+              size: "xs" as const,
+              color: "#666666",
+              wrap: true,
+            },
+          ],
+        }));
+
+  return {
+    type: "flex",
+    altText: `Ads autofix — ${data.critical} critical, ${data.actionsTaken} actions taken`,
+    contents: {
+      type: "bubble",
+      size: "kilo",
+      header: {
+        type: "box",
+        layout: "vertical",
+        backgroundColor: headerColor,
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: "🛠 Ads Autofix",
+            color: "#FFFFFF",
+            weight: "bold",
+            size: "lg",
+          },
+          {
+            type: "text",
+            text: `${data.critical} critical · ${data.warn} warn`,
+            color: "#FFFFFF",
+            size: "xs",
+          },
+        ],
+      },
+      body: {
+        type: "box",
+        layout: "vertical",
+        spacing: "sm",
+        paddingAll: "lg",
+        contents: [
+          statRow("Pages scanned", data.pagesScanned.toLocaleString()),
+          statRow("Ads scanned", data.adsScanned.toLocaleString()),
+          statRow("Auto-paused", data.actionsTaken.toLocaleString()),
+          { type: "separator", margin: "md" },
+          {
+            type: "text",
+            text: "Top issues",
+            size: "xs",
+            color: "#888888",
+            weight: "bold",
+            margin: "md",
+          },
+          ...findingBlocks,
+        ],
+      },
+      footer: {
+        type: "box",
+        layout: "vertical",
+        paddingAll: "md",
+        contents: [
+          {
+            type: "button",
+            style: "primary",
+            color: headerColor,
+            height: "sm",
+            action: {
+              type: "uri",
+              label: "ดู /admin/ads-diagnostics",
+              uri: `${siteUrl}/admin/ads-diagnostics`,
+            },
+          },
+        ],
+      },
+    },
+  };
+}
+
+// ─── Ads suggest PR ──────────────────────────────────────────────────────
+export interface AdsSuggestData {
+  pagePath: string;
+  recommendation: string;
+  severity: string;
+  prNumber: number;
+  prUrl: string;
+  baseline: Record<string, number | string | null>;
+}
+
+const ADS_BOT_REPO = (process.env.GITHUB_REPO ?? "jiacpr-arch/morroo").trim();
+
+export function buildAdsSuggestFlex(data: AdsSuggestData): LineMessage {
+  const severityColor =
+    data.severity === "critical" ? "#DC2626" : "#F59E0B";
+  const baselineLines = Object.entries(data.baseline)
+    .filter(([k]) => k !== "captured_at")
+    .slice(0, 4)
+    .map(([k, v]) => ({
+      type: "text" as const,
+      text: `${k}: ${v ?? "—"}`,
+      size: "xs" as const,
+      color: "#666666",
+      wrap: true,
+    }));
+
+  return {
+    type: "flex",
+    altText: `AI suggest แก้หน้า ${data.pagePath} — PR #${data.prNumber}`,
+    contents: {
+      type: "bubble",
+      size: "kilo",
+      header: {
+        type: "box",
+        layout: "vertical",
+        backgroundColor: severityColor,
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: "🤖 AI Suggest แก้หน้า",
+            color: "#FFFFFF",
+            weight: "bold",
+            size: "md",
+          },
+          {
+            type: "text",
+            text: data.pagePath,
+            color: "#FFFFFF",
+            size: "xs",
+            wrap: true,
+          },
+        ],
+      },
+      body: {
+        type: "box",
+        layout: "vertical",
+        spacing: "sm",
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: data.recommendation,
+            size: "sm",
+            color: "#222222",
+            wrap: true,
+          },
+          { type: "separator", margin: "md" },
+          {
+            type: "text",
+            text: "Baseline metrics",
+            size: "xs",
+            color: "#888888",
+            weight: "bold",
+            margin: "md",
+          },
+          ...baselineLines,
+        ],
+      },
+      footer: {
+        type: "box",
+        layout: "vertical",
+        spacing: "sm",
+        paddingAll: "md",
+        contents: [
+          {
+            type: "button",
+            style: "primary",
+            color: severityColor,
+            height: "sm",
+            action: {
+              type: "postback",
+              label: "Merge ✓",
+              data: `action=merge_pr&pr=${data.prNumber}`,
+              displayText: `Merge PR #${data.prNumber}`,
+            },
+          },
+          {
+            type: "box",
+            layout: "horizontal",
+            spacing: "sm",
+            contents: [
+              {
+                type: "button",
+                style: "secondary",
+                height: "sm",
+                action: {
+                  type: "uri",
+                  label: "ดู PR",
+                  uri: data.prUrl,
+                },
+              },
+              {
+                type: "button",
+                style: "secondary",
+                height: "sm",
+                action: {
+                  type: "postback",
+                  label: "Dismiss 30d",
+                  data: `action=dismiss_pr&pr=${data.prNumber}`,
+                  displayText: `Dismiss PR #${data.prNumber}`,
+                },
+              },
+            ],
+          },
+        ],
+      },
+    },
+  };
+}
+
+export function buildAdsMergeConfirmFlex(args: {
+  prNumber: number;
+  prUrl: string;
+  pagePath: string;
+}): LineMessage {
+  return {
+    type: "flex",
+    altText: `ยืนยัน merge PR #${args.prNumber}?`,
+    contents: {
+      type: "bubble",
+      size: "micro",
+      body: {
+        type: "box",
+        layout: "vertical",
+        spacing: "sm",
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: "ยืนยัน merge?",
+            weight: "bold",
+            color: "#DC2626",
+            size: "md",
+          },
+          {
+            type: "text",
+            text: `PR #${args.prNumber}`,
+            size: "xs",
+            color: "#666666",
+          },
+          {
+            type: "text",
+            text: args.pagePath,
+            size: "xs",
+            color: "#666666",
+            wrap: true,
+          },
+        ],
+      },
+      footer: {
+        type: "box",
+        layout: "vertical",
+        spacing: "sm",
+        paddingAll: "md",
+        contents: [
+          {
+            type: "button",
+            style: "primary",
+            color: "#DC2626",
+            height: "sm",
+            action: {
+              type: "postback",
+              label: "ใช่, merge เลย",
+              data: `action=merge_pr_confirm&pr=${args.prNumber}`,
+              displayText: `Confirm merge #${args.prNumber}`,
+            },
+          },
+          {
+            type: "button",
+            style: "secondary",
+            height: "sm",
+            action: {
+              type: "postback",
+              label: "ยกเลิก",
+              data: `action=cancel&pr=${args.prNumber}`,
+              displayText: "Cancel",
+            },
+          },
+        ],
+      },
+    },
+  };
+}
+
+export function buildAdsPostMergeAlertFlex(args: {
+  pagePath: string;
+  prNumber: number;
+  baselineRate: number;
+  currentRate: number;
+  revertPrNumber: number | null;
+  revertPrUrl: string | null;
+}): LineMessage {
+  const siteUrl = `https://github.com/${ADS_BOT_REPO}`;
+  const buttons: Array<Record<string, unknown>> = [
+    {
+      type: "button",
+      style: "primary",
+      color: "#DC2626",
+      height: "sm",
+      action: {
+        type: "uri",
+        label: "ดู PR เดิม",
+        uri: `${siteUrl}/pull/${args.prNumber}`,
+      },
+    },
+  ];
+  if (args.revertPrNumber) {
+    buttons.push({
+      type: "button",
+      style: "secondary",
+      height: "sm",
+      action: {
+        type: "uri",
+        label: `Revert PR #${args.revertPrNumber}`,
+        uri: args.revertPrUrl ?? `${siteUrl}/pull/${args.revertPrNumber}`,
+      },
+    });
+  }
+
+  return {
+    type: "flex",
+    altText: `Conversion ตก ${args.pagePath} — เปิด revert PR ให้แล้ว`,
+    contents: {
+      type: "bubble",
+      size: "kilo",
+      header: {
+        type: "box",
+        layout: "vertical",
+        backgroundColor: "#DC2626",
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: "⚠️ Conversion ตก",
+            color: "#FFFFFF",
+            weight: "bold",
+            size: "md",
+          },
+          {
+            type: "text",
+            text: args.pagePath,
+            color: "#FFFFFF",
+            size: "xs",
+            wrap: true,
+          },
+        ],
+      },
+      body: {
+        type: "box",
+        layout: "vertical",
+        spacing: "sm",
+        paddingAll: "lg",
+        contents: [
+          statRow("Baseline", `${args.baselineRate.toFixed(2)}%`),
+          statRow("ตอนนี้", `${args.currentRate.toFixed(2)}%`),
+          { type: "separator", margin: "md" },
+          {
+            type: "text",
+            text: args.revertPrNumber
+              ? `เปิด revert PR #${args.revertPrNumber} ให้แล้ว — กด merge ที่ GitHub`
+              : "ไม่สามารถเปิด revert PR ได้ — กรุณา revert ด้วยมือ",
+            size: "xs",
+            color: "#666666",
+            wrap: true,
+          },
+        ],
+      },
+      footer: {
+        type: "box",
+        layout: "vertical",
+        spacing: "sm",
+        paddingAll: "md",
+        contents: buttons,
+      },
+    },
+  };
+}
+
+export function buildAdsPostMergeResolvedFlex(args: {
+  pagePath: string;
+  prNumber: number;
+  baselineRate: number;
+  currentRate: number;
+  outcome: "improved" | "flat";
+}): LineMessage {
+  const color = args.outcome === "improved" ? "#16A085" : "#6B7280";
+  const headline =
+    args.outcome === "improved"
+      ? `✅ Conversion ขึ้น ${args.pagePath}`
+      : `➡️ ${args.pagePath} ไม่เปลี่ยนแปลง`;
+
+  return {
+    type: "flex",
+    altText: headline,
+    contents: {
+      type: "bubble",
+      size: "kilo",
+      header: {
+        type: "box",
+        layout: "vertical",
+        backgroundColor: color,
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: headline,
+            color: "#FFFFFF",
+            weight: "bold",
+            size: "md",
+            wrap: true,
+          },
+          {
+            type: "text",
+            text: `PR #${args.prNumber} ครบ 7 วันแล้ว`,
+            color: "#FFFFFF",
+            size: "xs",
+          },
+        ],
+      },
+      body: {
+        type: "box",
+        layout: "vertical",
+        spacing: "sm",
+        paddingAll: "lg",
+        contents: [
+          statRow("Baseline", `${args.baselineRate.toFixed(2)}%`),
+          statRow("ตอนนี้", `${args.currentRate.toFixed(2)}%`),
+          statRow(
+            "เปลี่ยนแปลง",
+            `${args.baselineRate > 0
+              ? (((args.currentRate - args.baselineRate) / args.baselineRate) * 100).toFixed(1)
+              : "—"
+            }%`
+          ),
+        ],
+      },
+    },
+  };
+}
