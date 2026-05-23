@@ -267,6 +267,19 @@ export default function AdminDashboard() {
             </CardContent>
           </Card>
         </Link>
+        <Link href="/admin/ads-diagnostics">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-red-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Sparkles className="h-5 w-5 text-red-600" />
+                <h3 className="font-bold">Ads Autofix</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">Auto-diagnose landing pages + Meta ads · auto-pause underperformers</p>
+            </CardContent>
+          </Card>
+        </Link>
         <Link href="/admin/longcases">
           <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-amber-200">
             <CardHeader className="pb-2">

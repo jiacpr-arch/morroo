@@ -902,3 +902,125 @@ export function buildAnalyticsDigestFlex(data: AnalyticsDigestData): LineMessage
     },
   };
 }
+
+// ─── Ads diagnostics digest ──────────────────────────────────────────────
+export interface AdsDiagnosticsData {
+  pagesScanned: number;
+  adsScanned: number;
+  critical: number;
+  warn: number;
+  actionsTaken: number;
+  topFindings: {
+    label: string;
+    category: string;
+    recommendation: string;
+    autoActioned: boolean;
+  }[];
+}
+
+export function buildAdsDiagnosticsFlex(data: AdsDiagnosticsData): LineMessage {
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com").trim();
+  const headerColor = data.critical > 0 ? "#DC2626" : "#F59E0B";
+
+  const findingBlocks =
+    data.topFindings.length === 0
+      ? [
+          {
+            type: "text" as const,
+            text: "ไม่มี critical findings",
+            size: "sm" as const,
+            color: "#16A085" as const,
+          },
+        ]
+      : data.topFindings.map((f) => ({
+          type: "box" as const,
+          layout: "vertical" as const,
+          margin: "md" as const,
+          contents: [
+            {
+              type: "text" as const,
+              text: `${f.autoActioned ? "⏸ " : "⚠ "}${f.label}`,
+              size: "sm" as const,
+              weight: "bold" as const,
+              color: "#222222",
+              wrap: true,
+            },
+            {
+              type: "text" as const,
+              text: f.recommendation,
+              size: "xs" as const,
+              color: "#666666",
+              wrap: true,
+            },
+          ],
+        }));
+
+  return {
+    type: "flex",
+    altText: `Ads autofix — ${data.critical} critical, ${data.actionsTaken} actions taken`,
+    contents: {
+      type: "bubble",
+      size: "kilo",
+      header: {
+        type: "box",
+        layout: "vertical",
+        backgroundColor: headerColor,
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: "🛠 Ads Autofix",
+            color: "#FFFFFF",
+            weight: "bold",
+            size: "lg",
+          },
+          {
+            type: "text",
+            text: `${data.critical} critical · ${data.warn} warn`,
+            color: "#FFFFFF",
+            size: "xs",
+          },
+        ],
+      },
+      body: {
+        type: "box",
+        layout: "vertical",
+        spacing: "sm",
+        paddingAll: "lg",
+        contents: [
+          statRow("Pages scanned", data.pagesScanned.toLocaleString()),
+          statRow("Ads scanned", data.adsScanned.toLocaleString()),
+          statRow("Auto-paused", data.actionsTaken.toLocaleString()),
+          { type: "separator", margin: "md" },
+          {
+            type: "text",
+            text: "Top issues",
+            size: "xs",
+            color: "#888888",
+            weight: "bold",
+            margin: "md",
+          },
+          ...findingBlocks,
+        ],
+      },
+      footer: {
+        type: "box",
+        layout: "vertical",
+        paddingAll: "md",
+        contents: [
+          {
+            type: "button",
+            style: "primary",
+            color: headerColor,
+            height: "sm",
+            action: {
+              type: "uri",
+              label: "ดู /admin/ads-diagnostics",
+              uri: `${siteUrl}/admin/ads-diagnostics`,
+            },
+          },
+        ],
+      },
+    },
+  };
+}
