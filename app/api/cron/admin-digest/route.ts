@@ -16,6 +16,7 @@ import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { sendLineMessage } from "@/lib/line";
 import { buildAdminDigestFlex } from "@/lib/line-flex-templates";
+import { buildMarketingSnapshot } from "@/lib/marketing-digest";
 
 export const runtime = "nodejs";
 export const maxDuration = 30;
@@ -143,6 +144,15 @@ export async function GET(request: Request) {
       ? `${overall.weakest_subject_icon ?? ""} ${overall.weakest_subject_name_th}`.trim()
       : null;
 
+  // Marketing snapshot — yesterday's Bangkok day vs the day before.
+  // Failures here shouldn't block the student digest, so swallow errors.
+  let marketing = null;
+  try {
+    marketing = await buildMarketingSnapshot(supabase, now);
+  } catch (err) {
+    console.error("[admin-digest] marketing snapshot failed:", err);
+  }
+
   const flex = buildAdminDigestFlex({
     dateLabel,
     attemptsToday,
@@ -154,6 +164,7 @@ export async function GET(request: Request) {
     weakestSubject,
     aiGradeFails24h,
     revenueTodayThb: revenueTodayThb > 0 ? revenueTodayThb : null,
+    marketing,
   });
 
   const ok = await sendLineMessage(adminLineId, [flex]);
@@ -171,6 +182,7 @@ export async function GET(request: Request) {
       activeUsers7d: Number(overall?.active_students_7d ?? 0),
       weakestSubject,
       aiGradeFails24h,
+      marketing,
     },
   });
 }
