@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { getExams, getExamPartCounts, sortExamsAvailableFirst } from "@/lib/supabase/queries";
 import { CATEGORIES } from "@/lib/types";
 import AllExamsCountdown from "@/components/AllExamsCountdown";
+import InternalAdsBanner from "@/components/InternalAdsBanner";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -117,6 +118,8 @@ export default async function ExamsPage({
       <div className="mb-8">
         <AllExamsCountdown />
       </div>
+
+      <InternalAdsBanner placement="exams-top" className="mb-8" />
 
       {/* Filters */}
       <div className="mb-8 space-y-4">

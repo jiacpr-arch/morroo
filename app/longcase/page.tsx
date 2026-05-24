@@ -8,6 +8,7 @@ import { BookOpen, Stethoscope, Clock, Star } from "lucide-react";
 import type { Metadata } from "next";
 import LongCaseStartButton from "./LongCaseStartButton";
 import AllExamsCountdown from "@/components/AllExamsCountdown";
+import InternalAdsBanner from "@/components/InternalAdsBanner";
 
 export const metadata: Metadata = {
   title: "ฝึกสอบ Long Case กับ AI Patient & Examiner",
@@ -80,6 +81,8 @@ export default async function LongCasePage() {
       <div className="mb-8">
         <AllExamsCountdown />
       </div>
+
+      <InternalAdsBanner placement="longcase-top" className="mb-8" />
 
       {/* How it works */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">

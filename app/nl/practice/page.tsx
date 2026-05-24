@@ -5,6 +5,7 @@ import {
   getFreeAttemptsCount,
 } from "@/lib/supabase/queries-mcq";
 import McqPractice from "@/components/McqPractice";
+import InternalAdsBanner from "@/components/InternalAdsBanner";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { ArrowLeft, Sparkles } from "lucide-react";
@@ -149,6 +150,8 @@ async function PracticeContent({
 
   return (
     <div>
+      <InternalAdsBanner placement="practice-top" className="mb-4" />
+
       {/* Recommended banner */}
       {useRecommended && recBreakdown && (
         <div className="mb-6 rounded-xl border border-brand/30 bg-gradient-to-r from-brand/5 to-amber-50/60 px-4 py-3">
