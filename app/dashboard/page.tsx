@@ -25,6 +25,7 @@ import AllExamsCountdown from "@/components/AllExamsCountdown";
 import LeaderboardCard from "@/components/LeaderboardCard";
 import OnboardingChecklist from "@/components/OnboardingChecklist";
 import ShareToEarnCard from "@/components/ShareToEarnCard";
+import InternalAdsBanner from "@/components/InternalAdsBanner";
 
 interface SubjectStat {
   subject_id: string;
@@ -284,6 +285,8 @@ export default function DashboardPage() {
       <div className="mb-4">
         <AllExamsCountdown />
       </div>
+
+      <InternalAdsBanner placement="dashboard-top" className="mb-4" />
 
       {/* Daily Question Banner */}
       {dailyMcq && (
