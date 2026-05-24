@@ -6,6 +6,8 @@ import PricingCard from "@/components/PricingCard";
 import DailyCountdown from "@/components/DailyCountdown";
 import AllExamsCountdown from "@/components/AllExamsCountdown";
 import GoodyEmbed from "@/components/GoodyEmbed";
+import HeroAB from "@/components/HeroAB";
+import PricingViewTracker from "@/components/PricingViewTracker";
 import { SocialButtonsRow } from "@/components/SocialLinks";
 import { CATEGORIES, PRICING_PLANS } from "@/lib/types";
 import { getExams, getExamPartCounts, sortExamsAvailableFirst } from "@/lib/supabase/queries";
@@ -15,9 +17,6 @@ import {
   Clock,
   CheckCircle,
   ArrowRight,
-  Sparkles,
-  Users,
-  Shield,
   Stethoscope,
 } from "lucide-react";
 
@@ -36,63 +35,7 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-dark via-brand-dark to-brand py-20 sm:py-28">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgMGg2MHY2MEgweiIgZmlsbD0ibm9uZSIvPjxjaXJjbGUgY3g9IjMwIiBjeT0iMzAiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZykiLz48L3N2Zz4=')] opacity-40" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <Badge className="mb-6 bg-white/10 text-white border-white/20 hover:bg-white/20">
-              <Sparkles className="h-3 w-3 mr-1" /> แพลตฟอร์มข้อสอบ MEQ + NL + Long Case ออนไลน์
-            </Badge>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-              เตรียมสอบแพทย์
-              <br />
-              <span className="text-brand-light">ด้วย AI ที่เข้าใจคุณ</span>
-            </h1>
-            <p className="mt-6 text-lg text-white/70 max-w-2xl mx-auto">
-              ข้อสอบ MEQ แบบ Progressive Case + ข้อสอบ NL ใบประกอบวิชาชีพ 1,300+ ข้อ +
-              ฝึกสอบ Long Case กับ AI Patient & Examiner
-            </p>
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/exams">
-                <Button
-                  size="lg"
-                  className="bg-brand hover:bg-brand-light text-white px-8 text-base"
-                >
-                  ข้อสอบ MEQ <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-              <Link href="/longcase">
-                <Button
-                  size="lg"
-                  className="bg-amber-500 hover:bg-amber-400 text-white px-8 text-base"
-                >
-                  Long Case Exam <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-              <Link href="/nl">
-                <Button
-                  size="lg"
-                  className="bg-white/10 border border-white/30 text-white hover:bg-white/20 px-8 text-base"
-                >
-                  MCQ <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-            </div>
-            <div className="mt-10 flex items-center justify-center gap-8 text-sm text-white/60">
-              <span className="flex items-center gap-1.5">
-                <Users className="h-4 w-4" /> 1,000+ แพทย์ใช้งาน
-              </span>
-              <span className="flex items-center gap-1.5">
-                <BookOpen className="h-4 w-4" /> 1,300+ ข้อสอบ
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Shield className="h-4 w-4" /> เฉลยจากผู้เชี่ยวชาญ
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroAB />
 
       {/* All Exams Countdown */}
       <section className="py-8 bg-white border-b">
@@ -303,6 +246,7 @@ export default async function HomePage() {
             <h2 className="text-3xl font-bold">แพ็กเกจราคา</h2>
             <p className="mt-2 text-muted-foreground">เลือกแพ็กเกจที่เหมาะกับคุณ</p>
           </div>
+          <PricingViewTracker surface="home" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
             {PRICING_PLANS.map((plan) => (
               <PricingCard key={plan.name} {...plan} />

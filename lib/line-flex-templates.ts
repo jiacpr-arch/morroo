@@ -1,4 +1,5 @@
 import type { LineMessage } from "./line";
+import type { MarketingSnapshot } from "./marketing-digest";
 
 interface WeeklySummaryData {
   totalQuestions: number;
@@ -474,6 +475,145 @@ interface AdminDigestData {
   weakestSubject: string | null;
   aiGradeFails24h: number;
   revenueTodayThb: number | null;
+  marketing?: MarketingSnapshot | null;
+}
+
+function deltaText(value: number | null): string {
+  if (value == null) return "";
+  if (value === 0) return " ±0%";
+  const sign = value > 0 ? "+" : "";
+  return ` ${sign}${value.toFixed(0)}%`;
+}
+
+function marketingSection(m: MarketingSnapshot) {
+  const visitorsText = `${m.visitors}${deltaText(m.visitorsDelta)}`;
+  const bounceText =
+    m.bounceRate != null
+      ? `${m.bounceRate.toFixed(1)}% (engaged ${m.engagedSessions})`
+      : "—";
+  const lineClicksText = m.visitors > 0
+    ? `${m.lineClicks} (${((m.lineClicks / m.visitors) * 100).toFixed(1)}%)${deltaText(m.lineClicksDelta)}`
+    : `${m.lineClicks}${deltaText(m.lineClicksDelta)}`;
+  const conversionText =
+    m.conversionRate != null
+      ? `${m.formSubmits}/${m.visitors} (${m.conversionRate.toFixed(1)}%)`
+      : `${m.formSubmits}`;
+  const pricingViewText =
+    m.pricingViewRate != null
+      ? `${m.pricingViewers} (${m.pricingViewRate.toFixed(0)}% ของ visitor)`
+      : `${m.pricingViewers}`;
+
+  const heroLines: { type: "text"; text: string; size: "xs"; color: string; wrap?: boolean }[] = [
+    {
+      type: "text",
+      text: `A: ${m.heroAB.a.converts}/${m.heroAB.a.views} (${
+        m.heroAB.a.rate != null ? m.heroAB.a.rate.toFixed(1) + "%" : "—"
+      })`,
+      size: "xs",
+      color: "#555555",
+    },
+    {
+      type: "text",
+      text: `B: ${m.heroAB.b.converts}/${m.heroAB.b.views} (${
+        m.heroAB.b.rate != null ? m.heroAB.b.rate.toFixed(1) + "%" : "—"
+      })`,
+      size: "xs",
+      color: "#555555",
+    },
+  ];
+
+  const sourceLines = m.topSources.length
+    ? m.topSources.map((s) => ({
+        type: "text" as const,
+        text: `${s.name}: 💬${s.clicks} 📋${s.forms}${s.conv > 0 ? " 🔥" : ""}`,
+        size: "xs" as const,
+        color: "#555555" as const,
+      }))
+    : [
+        {
+          type: "text" as const,
+          text: "ยังไม่มีข้อมูล source",
+          size: "xs" as const,
+          color: "#888888",
+        },
+      ];
+
+  const alertLines = m.alerts.map((a) => ({
+    type: "text" as const,
+    text: `🚨 ${a}`,
+    size: "xs" as const,
+    color: "#E74C3C",
+    wrap: true,
+  }));
+
+  return [
+    { type: "separator" as const, margin: "md" as const },
+    {
+      type: "text" as const,
+      text: `📊 สรุปเว็บ ${m.dateLabel}`,
+      size: "xs" as const,
+      color: "#888888",
+      weight: "bold" as const,
+      margin: "md" as const,
+    },
+    statRow("👥 Visitors", visitorsText),
+    statRow("💸 Bounce", bounceText),
+    statRow("💬 LINE clicks", lineClicksText),
+    statRow("📝 Conversion", conversionText),
+    statRow("👁 เห็นราคา", pricingViewText),
+    {
+      type: "box" as const,
+      layout: "vertical" as const,
+      margin: "sm" as const,
+      spacing: "xs" as const,
+      contents: [
+        {
+          type: "text" as const,
+          text: "🧪 A/B Hero",
+          size: "xs" as const,
+          color: "#888888",
+          weight: "bold" as const,
+        },
+        ...heroLines,
+      ],
+    },
+    {
+      type: "box" as const,
+      layout: "vertical" as const,
+      margin: "sm" as const,
+      spacing: "xs" as const,
+      contents: [
+        {
+          type: "text" as const,
+          text: `🌐 By source (top ${Math.min(4, m.topSources.length || 4)})`,
+          size: "xs" as const,
+          color: "#888888",
+          weight: "bold" as const,
+        },
+        ...sourceLines,
+      ],
+    },
+    ...(alertLines.length
+      ? [
+          {
+            type: "box" as const,
+            layout: "vertical" as const,
+            margin: "sm" as const,
+            spacing: "xs" as const,
+            contents: [
+              {
+                type: "text" as const,
+                text: "🚨 Alerts",
+                size: "xs" as const,
+                color: "#E74C3C",
+                weight: "bold" as const,
+              },
+              ...alertLines,
+            ],
+          },
+        ]
+      : []),
+  ];
 }
 
 export function buildAdminDigestFlex(data: AdminDigestData): LineMessage {
@@ -559,6 +699,7 @@ export function buildAdminDigestFlex(data: AdminDigestData): LineMessage {
                 },
               ]
             : []),
+          ...(data.marketing ? marketingSection(data.marketing) : []),
         ],
       },
       footer: {
