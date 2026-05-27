@@ -41,14 +41,20 @@ function trackHeroCta(variant: Variant | null, cta: string) {
   });
 }
 
-export default function HeroAB() {
-  const [variant, setVariant] = useState<Variant | null>(null);
+export default function HeroAB({ forced = null }: { forced?: Variant | null }) {
+  const [variant, setVariant] = useState<Variant | null>(forced);
 
   useEffect(() => {
+    // `forced` is set by the autopilot once an A/B winner is locked in; skip
+    // randomisation but keep logging views so we can still watch performance.
+    if (forced) {
+      track("hero_variant_view", { variant: forced });
+      return;
+    }
     const v = getVariant(EXPERIMENT);
     setVariant(v);
     if (v) track("hero_variant_view", { variant: v });
-  }, []);
+  }, [forced]);
 
   const copy = COPY[variant ?? "A"];
 

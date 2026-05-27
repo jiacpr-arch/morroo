@@ -88,6 +88,20 @@ describe("diagnosePages", () => {
     expect(f.some((x) => x.category === "page_low_line_cta")).toBe(false);
   });
 
+  it("flags page_low_checkout when there are signups but zero checkouts", () => {
+    const f = diagnosePages([
+      makePage({ sessions: 300, signups: 4, checkouts: 0 }),
+    ]);
+    expect(f.some((x) => x.category === "page_low_checkout")).toBe(true);
+  });
+
+  it("does not flag page_low_checkout when checkouts exist", () => {
+    const f = diagnosePages([
+      makePage({ sessions: 300, signups: 4, checkouts: 2 }),
+    ]);
+    expect(f.some((x) => x.category === "page_low_checkout")).toBe(false);
+  });
+
   it("does not flag page_low_line_cta on a zero-conversion page (short-circuits)", () => {
     // page_no_conversion fires and continues, so we don't double-report.
     const f = diagnosePages([

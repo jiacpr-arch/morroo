@@ -36,6 +36,7 @@ export const THRESHOLDS = {
   pageLowSignupRatePct: 1.0,             // signup_submit / sessions, %
   pageHighBounceRatePct: 80,             // 1-event-only sessions / sessions
   pageLineCtaMinSessions: 200,           // need this much traffic to call a dead LINE CTA
+  pageLowCheckoutMinSessions: 150,       // signed up but nobody reaches checkout
 
   // Ad-level, rolling window
   adWindowDays: 3,
@@ -58,6 +59,7 @@ export type FindingCategory =
   | "page_low_signup"
   | "page_high_bounce"
   | "page_low_line_cta"
+  | "page_low_checkout"
   | "ad_high_cpl"
   | "ad_low_ctr"
   | "ad_no_lead_high_spend"
@@ -430,6 +432,23 @@ export function diagnosePages(pages: PageStats[]): Finding[] {
           `หน้า ${p.path} มี ${p.sessions} sessions แต่ไม่มีใครกดปุ่ม LINE เลย — ` +
           `เพิ่ม/ดันปุ่มแอดเพื่อน LINE OA (https://line.me/R/ti/p/@901nmwcd) ให้เด่นเหนือ fold ` +
           `พร้อม benefit ชัดๆ เช่น "แอด LINE รับข้อสอบฟรีทุกเช้า"`,
+      });
+    }
+
+    if (
+      p.sessions >= THRESHOLDS.pageLowCheckoutMinSessions &&
+      p.signups > 0 &&
+      p.checkouts === 0
+    ) {
+      findings.push({
+        severity: "warn",
+        category: "page_low_checkout",
+        entityType: "page",
+        entityId: p.path,
+        metricSnapshot: snapshot,
+        recommendation:
+          `หน้า ${p.path}: มีคนสมัคร ${p.signups} แต่ยังไม่มีใคร checkout เลย — ` +
+          `เน้นปุ่มซื้อ/อัปเกรดให้ชัด, โชว์ราคา/ส่วนลด หรือ social proof ใกล้ปุ่มซื้อ`,
       });
     }
   }

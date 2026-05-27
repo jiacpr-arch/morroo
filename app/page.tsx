@@ -12,6 +12,8 @@ import { SocialButtonsRow, LineCtaButton } from "@/components/SocialLinks";
 import { CATEGORIES, PRICING_PLANS } from "@/lib/types";
 import { getExams, getExamPartCounts, sortExamsAvailableFirst } from "@/lib/supabase/queries";
 import { getBlogPosts } from "@/lib/blog";
+import { createAdminClient } from "@/lib/supabase/admin";
+import { getHeroForcedVariant } from "@/lib/site-config";
 import {
   BookOpen,
   Clock,
@@ -23,10 +25,11 @@ import {
 export const revalidate = 60; // revalidate every 60 seconds
 
 export default async function HomePage() {
-  const [allExams, partCounts, blogPosts] = await Promise.all([
+  const [allExams, partCounts, blogPosts, forcedHero] = await Promise.all([
     getExams(),
     getExamPartCounts(),
     getBlogPosts(),
+    getHeroForcedVariant(createAdminClient()),
   ]);
   const exams = sortExamsAvailableFirst(allExams, partCounts);
   const latestExams = exams.slice(0, 6);
@@ -35,7 +38,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <HeroAB />
+      <HeroAB forced={forcedHero} />
 
       {/* LINE add-friend strip — high-visibility CTA above the fold */}
       <section className="bg-[#06C755]/10 border-b border-[#06C755]/20">

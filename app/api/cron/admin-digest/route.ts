@@ -18,6 +18,7 @@ import { sendLineMessage } from "@/lib/line";
 import { buildAdminDigestFlex } from "@/lib/line-flex-templates";
 import { buildMarketingSnapshot } from "@/lib/marketing-digest";
 import { runLineCtaAutopilot } from "@/lib/line-cta-config";
+import { runHeroAutopilot } from "@/lib/site-config";
 
 export const runtime = "nodejs";
 export const maxDuration = 30;
@@ -194,9 +195,27 @@ export async function GET(request: Request) {
     }
   }
 
+  // Hero A/B autopilot — lock in a winner only once there's enough data
+  // (guardrails live in decideHeroWinner). Reversible config-only change.
+  let heroAutopilot: { previous: string | null; forced: string | null; changed: boolean; reason: string } | null = null;
+  if (marketing) {
+    try {
+      const { previous, decision } = await runHeroAutopilot(supabase, marketing.heroAB);
+      heroAutopilot = { previous, ...decision };
+      if (decision.changed) {
+        await sendLineMessage(adminLineId, [
+          { type: "text", text: `🧪 Hero A/B autopilot: ${decision.reason}` },
+        ]);
+      }
+    } catch (err) {
+      console.error("[admin-digest] hero autopilot failed:", err);
+    }
+  }
+
   return NextResponse.json({
     ok,
     lineCtaAutopilot,
+    heroAutopilot,
     snapshot: {
       dateLabel,
       attemptsToday,
