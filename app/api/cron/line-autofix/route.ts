@@ -6,7 +6,9 @@
  * back down once it recovers. Fully reversible — the prior level is kept in
  * app_settings and every change is announced to the admin's LINE.
  *
- * Schedule: 01:30 BKK-ish, just after the daily admin-digest.
+ * Driven daily by the admin-digest report (which calls runLineCtaAutopilot
+ * inline). This route stays as a manual / on-demand trigger — no separate
+ * Vercel cron schedule.
  * Auth: dual-mode, matches every other cron route in this repo.
  */
 
@@ -14,11 +16,7 @@ import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { sendLineMessage } from "@/lib/line";
 import { buildMarketingSnapshot } from "@/lib/marketing-digest";
-import {
-  decideLineCtaLevel,
-  getLineCtaLevel,
-  setLineCtaLevel,
-} from "@/lib/line-cta-config";
+import { runLineCtaAutopilot } from "@/lib/line-cta-config";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -37,18 +35,15 @@ export async function GET(request: Request) {
 
   const supabase = createAdminClient();
   const snapshot = await buildMarketingSnapshot(supabase);
-  const currentLevel = await getLineCtaLevel(supabase);
-  const decision = decideLineCtaLevel(snapshot, currentLevel);
+  const { previousLevel, decision } = await runLineCtaAutopilot(supabase, snapshot);
 
   if (decision.changed) {
-    await setLineCtaLevel(supabase, currentLevel, decision.level);
-
     const adminLineId = process.env.ADMIN_LINE_USER_ID;
     if (adminLineId) {
-      const arrow = decision.level > currentLevel ? "⬆️ ดันขึ้น" : "⬇️ ลดลง";
+      const arrow = decision.level > previousLevel ? "⬆️ ดันขึ้น" : "⬇️ ลดลง";
       const text =
         `🤖 LINE CTA autopilot (${snapshot.dateLabel})\n` +
-        `${arrow} level ${currentLevel} → ${decision.level}\n` +
+        `${arrow} level ${previousLevel} → ${decision.level}\n` +
         `${decision.reason}\n` +
         `(visitors ${snapshot.visitors}, LINE clicks ${snapshot.lineClicks})`;
       await sendLineMessage(adminLineId, [{ type: "text", text }]);
@@ -57,7 +52,7 @@ export async function GET(request: Request) {
 
   return NextResponse.json({
     ok: true,
-    currentLevel,
+    previousLevel,
     decision,
     snapshot: {
       dateLabel: snapshot.dateLabel,

@@ -384,13 +384,20 @@ export async function pickFindingsToSuggest(
 
   if (!findings || findings.length === 0) return [];
 
-  const ids = findings.map((f) => f.id);
+  // Block by finding id AND by page path. A daily diagnose run inserts a fresh
+  // finding row for the same (page, issue) every day, so de-duping on
+  // finding_id alone would let the daily suggest cron reopen a PR for a page
+  // that already has one. One open/merged suggest PR per page at a time.
   const { data: openPrs } = await supabase
     .from("ad_suggest_prs")
-    .select("finding_id")
-    .in("status", ["open", "merged"])
-    .in("finding_id", ids);
-  const blockedFindingIds = new Set((openPrs ?? []).map((r) => r.finding_id as number));
+    .select("finding_id, page_path")
+    .in("status", ["open", "merged"]);
+  const blockedFindingIds = new Set<number>();
+  const blockedPaths = new Set<string>();
+  for (const r of openPrs ?? []) {
+    if (r.finding_id != null) blockedFindingIds.add(r.finding_id as number);
+    if (r.page_path) blockedPaths.add(r.page_path as string);
+  }
 
   const nowIso = new Date().toISOString();
   const { data: snoozes } = await supabase
@@ -405,6 +412,7 @@ export async function pickFindingsToSuggest(
   for (const f of findings) {
     if (picked.length >= limit) break;
     if (blockedFindingIds.has(f.id)) continue;
+    if (blockedPaths.has(f.entity_id)) continue;
     if (snoozedKeys.has(`${f.entity_id}::${f.category}`)) continue;
     if (!findPageFile(f.entity_id)) continue;
     picked.push({

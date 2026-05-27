@@ -111,3 +111,26 @@ export function decideLineCtaLevel(
     reason: `LINE CTR ${ctr.toFixed(1)}% — คงระดับ ${currentLevel}`,
   };
 }
+
+export interface AutopilotResult {
+  previousLevel: LineCtaLevel;
+  decision: LineCtaDecision;
+}
+
+/**
+ * Read the level in effect, decide, and apply the change if any. Used both by
+ * the standalone /api/cron/line-autofix route and inline from the daily
+ * admin-digest so the fix is bound to the report. Notification is left to the
+ * caller so it can be folded into whatever message it already sends.
+ */
+export async function runLineCtaAutopilot(
+  supabase: SupabaseClient,
+  snapshot: Pick<MarketingSnapshot, "visitors" | "lineClicks">
+): Promise<AutopilotResult> {
+  const previousLevel = await getLineCtaLevel(supabase);
+  const decision = decideLineCtaLevel(snapshot, previousLevel);
+  if (decision.changed) {
+    await setLineCtaLevel(supabase, previousLevel, decision.level);
+  }
+  return { previousLevel, decision };
+}

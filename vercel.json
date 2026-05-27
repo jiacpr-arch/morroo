@@ -41,10 +41,6 @@
       "schedule": "0 1 * * *"
     },
     {
-      "path": "/api/cron/line-autofix",
-      "schedule": "30 1 * * *"
-    },
-    {
       "path": "/api/cron/streak-nudge",
       "schedule": "0 12 * * *"
     },
@@ -58,7 +54,7 @@
     },
     {
       "path": "/api/cron/ads-autofix-suggest",
-      "schedule": "0 21 * * 0"
+      "schedule": "0 23 * * *"
     },
     {
       "path": "/api/cron/ads-postmerge-watch",
