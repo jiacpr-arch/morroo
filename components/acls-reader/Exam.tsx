@@ -57,7 +57,7 @@ export default function Exam({
       try {
         const key = `acls-reader-exam-${setId}`;
         const prev = Number(localStorage.getItem(key) ?? "0");
-        if (pct > prev) localStorage.setItem(key, String(pct));
+        localStorage.setItem(key, String(Math.max(prev, pct)));
       } catch {
         /* ignore */
       }

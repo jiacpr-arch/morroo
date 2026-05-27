@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { getAssessmentSets } from "@/lib/acls-reader/assessment";
+import { preCourseLessons } from "@/lib/acls-reader/precourse";
+import { PostTestGate } from "@/components/acls-reader/PostTestLock";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
 export const revalidate = 600;
@@ -55,7 +57,14 @@ export default async function TestIndex() {
       ) : (
         <>
           <Section title="ก่อนเรียน (Pre-test)" items={pretests} />
-          <Section title="หลังเรียน (Post-test)" items={posttests} />
+          <PostTestGate
+            items={posttests}
+            pretestIds={pretests.map((p) => p.id)}
+            lessons={preCourseLessons.map((l) => ({
+              id: l.id,
+              passingScore: l.passingScore,
+            }))}
+          />
           <Section title="อื่นๆ" items={others} />
         </>
       )}
