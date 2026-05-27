@@ -1,9 +1,11 @@
 /**
- * Weekly cron — generates AI rewrite suggestions for the worst open
+ * Daily cron — generates AI rewrite suggestions for the worst open
  * landing-page findings. Each suggestion is opened as a draft PR and
  * posted to LINE with merge / dismiss postback buttons.
  *
- * Schedule: Monday 04:00 BKK (= 21:00 UTC Sunday)
+ * Schedule: 06:00 BKK (= 23:00 UTC), after the daily ads diagnose (22:00 UTC).
+ * pickFindingsToSuggest de-dupes per page, so a persistent finding won't
+ * reopen a PR for a page that already has an open/merged one.
  *
  * Never merges anything itself. Merging happens via:
  *   - GitHub web UI, or

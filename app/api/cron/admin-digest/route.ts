@@ -17,6 +17,8 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { sendLineMessage } from "@/lib/line";
 import { buildAdminDigestFlex } from "@/lib/line-flex-templates";
 import { buildMarketingSnapshot } from "@/lib/marketing-digest";
+import { runLineCtaAutopilot } from "@/lib/line-cta-config";
+import { runHeroAutopilot } from "@/lib/site-config";
 
 export const runtime = "nodejs";
 export const maxDuration = 30;
@@ -169,8 +171,51 @@ export async function GET(request: Request) {
 
   const ok = await sendLineMessage(adminLineId, [flex]);
 
+  // Tier-1 LINE-CTA autopilot — react to the same snapshot we just reported,
+  // so the fix is bound to the daily report. Reversible config-only change;
+  // failures must not affect the digest result.
+  let lineCtaAutopilot: { previousLevel: number; level: number; changed: boolean; reason: string } | null = null;
+  if (marketing) {
+    try {
+      const { previousLevel, decision } = await runLineCtaAutopilot(supabase, marketing);
+      lineCtaAutopilot = { previousLevel, ...decision };
+      if (decision.changed) {
+        const arrow = decision.level > previousLevel ? "⬆️ ดันขึ้น" : "⬇️ ลดลง";
+        await sendLineMessage(adminLineId, [
+          {
+            type: "text",
+            text:
+              `🤖 LINE CTA autopilot: ${arrow} level ${previousLevel} → ${decision.level}\n` +
+              `${decision.reason}`,
+          },
+        ]);
+      }
+    } catch (err) {
+      console.error("[admin-digest] line-cta autopilot failed:", err);
+    }
+  }
+
+  // Hero A/B autopilot — lock in a winner only once there's enough data
+  // (guardrails live in decideHeroWinner). Reversible config-only change.
+  let heroAutopilot: { previous: string | null; forced: string | null; changed: boolean; reason: string } | null = null;
+  if (marketing) {
+    try {
+      const { previous, decision } = await runHeroAutopilot(supabase, marketing.heroAB);
+      heroAutopilot = { previous, ...decision };
+      if (decision.changed) {
+        await sendLineMessage(adminLineId, [
+          { type: "text", text: `🧪 Hero A/B autopilot: ${decision.reason}` },
+        ]);
+      }
+    } catch (err) {
+      console.error("[admin-digest] hero autopilot failed:", err);
+    }
+  }
+
   return NextResponse.json({
     ok,
+    lineCtaAutopilot,
+    heroAutopilot,
     snapshot: {
       dateLabel,
       attemptsToday,

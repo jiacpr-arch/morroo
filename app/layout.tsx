@@ -12,6 +12,7 @@ import { BetaProvider } from "@/components/beta/BetaProvider";
 import BetaWelcomeModal from "@/components/beta/BetaWelcomeModal";
 import BetaPromoBanner from "@/components/beta/BetaPromoBanner";
 import ChatWidget from "@/components/ChatWidget";
+import FloatingLineCta from "@/components/FloatingLineCta";
 import "./globals.css";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
@@ -207,6 +208,9 @@ export default function RootLayout({
           <Footer />
           <BetaWelcomeModal />
           <ChatWidget />
+          <Suspense fallback={null}>
+            <FloatingLineCta />
+          </Suspense>
         </BetaProvider>
         <Analytics />
         <SpeedInsights />

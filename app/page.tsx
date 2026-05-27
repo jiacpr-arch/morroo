@@ -8,10 +8,12 @@ import AllExamsCountdown from "@/components/AllExamsCountdown";
 import GoodyEmbed from "@/components/GoodyEmbed";
 import HeroAB from "@/components/HeroAB";
 import PricingViewTracker from "@/components/PricingViewTracker";
-import { SocialButtonsRow } from "@/components/SocialLinks";
+import { SocialButtonsRow, LineCtaButton } from "@/components/SocialLinks";
 import { CATEGORIES, PRICING_PLANS } from "@/lib/types";
 import { getExams, getExamPartCounts, sortExamsAvailableFirst } from "@/lib/supabase/queries";
 import { getBlogPosts } from "@/lib/blog";
+import { createAdminClient } from "@/lib/supabase/admin";
+import { getHeroForcedVariant } from "@/lib/site-config";
 import {
   BookOpen,
   Clock,
@@ -23,10 +25,11 @@ import {
 export const revalidate = 60; // revalidate every 60 seconds
 
 export default async function HomePage() {
-  const [allExams, partCounts, blogPosts] = await Promise.all([
+  const [allExams, partCounts, blogPosts, forcedHero] = await Promise.all([
     getExams(),
     getExamPartCounts(),
     getBlogPosts(),
+    getHeroForcedVariant(createAdminClient()),
   ]);
   const exams = sortExamsAvailableFirst(allExams, partCounts);
   const latestExams = exams.slice(0, 6);
@@ -35,7 +38,17 @@ export default async function HomePage() {
 
   return (
     <>
-      <HeroAB />
+      <HeroAB forced={forcedHero} />
+
+      {/* LINE add-friend strip — high-visibility CTA above the fold */}
+      <section className="bg-[#06C755]/10 border-b border-[#06C755]/20">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-3 px-4 py-4 text-center sm:flex-row sm:gap-5 sm:py-3 sm:text-left">
+          <p className="text-sm font-medium text-foreground sm:text-base">
+            📩 รับข้อสอบฟรีทุกเช้า 7 โมง + เทคนิคเตรียมสอบ ผ่าน LINE
+          </p>
+          <LineCtaButton surface="home_hero" label="แอด LINE ฟรี" className="shrink-0" />
+        </div>
+      </section>
 
       {/* All Exams Countdown */}
       <section className="py-8 bg-white border-b">

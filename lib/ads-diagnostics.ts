@@ -35,6 +35,8 @@ export const THRESHOLDS = {
   pageNoConversionMinSessions: 250,      // criteria for the harshest finding
   pageLowSignupRatePct: 1.0,             // signup_submit / sessions, %
   pageHighBounceRatePct: 80,             // 1-event-only sessions / sessions
+  pageLineCtaMinSessions: 200,           // need this much traffic to call a dead LINE CTA
+  pageLowCheckoutMinSessions: 150,       // signed up but nobody reaches checkout
 
   // Ad-level, rolling window
   adWindowDays: 3,
@@ -56,6 +58,8 @@ export type FindingCategory =
   | "page_no_conversion"
   | "page_low_signup"
   | "page_high_bounce"
+  | "page_low_line_cta"
+  | "page_low_checkout"
   | "ad_high_cpl"
   | "ad_low_ctr"
   | "ad_no_lead_high_spend"
@@ -90,6 +94,7 @@ export interface PageStats {
   signups: number;
   examStarts: number;
   checkouts: number;
+  lineClicks: number;
 }
 
 export interface AdInsight {
@@ -116,6 +121,7 @@ type RawEventRow = {
   event_name: string;
   session_id: string | null;
   path: string | null;
+  properties: Record<string, unknown> | null;
 };
 
 const FUNNEL_EVENTS = new Set([
@@ -123,6 +129,7 @@ const FUNNEL_EVENTS = new Set([
   "signup_submit",
   "exam_start_click",
   "stripe_checkout_click",
+  "social_click",
 ]);
 
 /** Top-level path bucket (`/lp/foo/bar` → `/lp/foo`). Keeps cardinality sane. */
@@ -140,7 +147,7 @@ export async function fetchPageStats(
 ): Promise<PageStats[]> {
   const { data, error } = await supabase
     .from("analytics_events")
-    .select("event_name, session_id, path")
+    .select("event_name, session_id, path, properties")
     .gte("created_at", sinceIso)
     .in("event_name", Array.from(FUNNEL_EVENTS))
     .limit(100000);
@@ -154,6 +161,7 @@ export async function fetchPageStats(
     signups: number;
     examStarts: number;
     checkouts: number;
+    lineClicks: number;
     sessionEventCount: Map<string, number>;
   };
   const buckets = new Map<string, Bucket>();
@@ -170,6 +178,7 @@ export async function fetchPageStats(
         signups: 0,
         examStarts: 0,
         checkouts: 0,
+        lineClicks: 0,
         sessionEventCount: new Map(),
       };
       buckets.set(bucket, entry);
@@ -194,6 +203,9 @@ export async function fetchPageStats(
       case "stripe_checkout_click":
         entry.checkouts += 1;
         break;
+      case "social_click":
+        if (row.properties?.platform === "line") entry.lineClicks += 1;
+        break;
     }
   }
 
@@ -210,6 +222,7 @@ export async function fetchPageStats(
       signups: b.signups,
       examStarts: b.examStarts,
       checkouts: b.checkouts,
+      lineClicks: b.lineClicks,
     };
   });
 }
@@ -358,6 +371,7 @@ export function diagnosePages(pages: PageStats[]): Finding[] {
       pageViews: p.pageViews,
       signups: p.signups,
       checkouts: p.checkouts,
+      lineClicks: p.lineClicks,
       signupRatePct: Number(signupRate.toFixed(2)),
       bounceRatePct: Number(bounceRate.toFixed(2)),
     };
@@ -401,6 +415,40 @@ export function diagnosePages(pages: PageStats[]): Finding[] {
         metricSnapshot: snapshot,
         recommendation:
           `Bounce ~${bounceRate.toFixed(0)}% — โหลดช้า / hero ไม่ตรง intent ของโฆษณา?`,
+      });
+    }
+
+    if (
+      p.sessions >= THRESHOLDS.pageLineCtaMinSessions &&
+      p.lineClicks === 0
+    ) {
+      findings.push({
+        severity: "warn",
+        category: "page_low_line_cta",
+        entityType: "page",
+        entityId: p.path,
+        metricSnapshot: snapshot,
+        recommendation:
+          `หน้า ${p.path} มี ${p.sessions} sessions แต่ไม่มีใครกดปุ่ม LINE เลย — ` +
+          `เพิ่ม/ดันปุ่มแอดเพื่อน LINE OA (https://line.me/R/ti/p/@901nmwcd) ให้เด่นเหนือ fold ` +
+          `พร้อม benefit ชัดๆ เช่น "แอด LINE รับข้อสอบฟรีทุกเช้า"`,
+      });
+    }
+
+    if (
+      p.sessions >= THRESHOLDS.pageLowCheckoutMinSessions &&
+      p.signups > 0 &&
+      p.checkouts === 0
+    ) {
+      findings.push({
+        severity: "warn",
+        category: "page_low_checkout",
+        entityType: "page",
+        entityId: p.path,
+        metricSnapshot: snapshot,
+        recommendation:
+          `หน้า ${p.path}: มีคนสมัคร ${p.signups} แต่ยังไม่มีใคร checkout เลย — ` +
+          `เน้นปุ่มซื้อ/อัปเกรดให้ชัด, โชว์ราคา/ส่วนลด หรือ social proof ใกล้ปุ่มซื้อ`,
       });
     }
   }
