@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Loader2, AlertCircle } from "lucide-react";
+import { trackPurchase } from "@/lib/analytics/conversions";
 
 type VerifyStatus = "verifying" | "ok" | "pending" | "error";
 
@@ -29,6 +30,7 @@ export default function SuccessContent() {
     let cancelled = false;
 
     async function verify() {
+      if (!sessionId) return;
       try {
         const res = await fetch("/api/billing/verify", {
           method: "POST",
@@ -38,6 +40,8 @@ export default function SuccessContent() {
         const data = (await res.json()) as {
           status?: string;
           error?: string;
+          amount?: number;
+          currency?: string;
         };
         if (cancelled) return;
 
@@ -51,6 +55,21 @@ export default function SuccessContent() {
           setStatus("pending");
         } else {
           setStatus("ok");
+          // Fire the purchase conversion once per checkout session. The guard
+          // stops a page refresh (which re-runs verify) from double-counting.
+          const firedKey = `purchase_tracked:${sessionId}`;
+          if (
+            typeof data.amount === "number" &&
+            data.currency &&
+            sessionStorage.getItem(firedKey) === null
+          ) {
+            sessionStorage.setItem(firedKey, "1");
+            trackPurchase({
+              transactionId: sessionId,
+              value: data.amount,
+              currency: data.currency,
+            });
+          }
         }
       } catch (err) {
         if (cancelled) return;

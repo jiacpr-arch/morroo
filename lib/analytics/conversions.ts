@@ -1,0 +1,42 @@
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+    fbq?: (...args: unknown[]) => void;
+    ttq?: {
+      track: (
+        event: string,
+        params?: Record<string, unknown>,
+        options?: Record<string, unknown>
+      ) => void;
+    };
+  }
+}
+
+export function trackPurchase(opts: {
+  transactionId: string;
+  value: number;
+  currency: string;
+}): void {
+  if (typeof window === "undefined") return;
+  const { transactionId, value, currency } = opts;
+
+  window.gtag?.("event", "purchase", {
+    transaction_id: transactionId,
+    value,
+    currency,
+  });
+
+  // eventID/event_id must equal the Stripe session id used by the server-side
+  // CAPI events in app/api/billing/webhook so Meta/TikTok dedupe the
+  // browser+server pair. TikTok's event name must also match the API's
+  // ("Subscribe", not "CompletePayment") or dedup won't trigger.
+  window.fbq?.("track", "Purchase", { value, currency }, { eventID: transactionId });
+  window.ttq?.track("Subscribe", { value, currency }, { event_id: transactionId });
+}
+
+export function trackSignup(): void {
+  if (typeof window === "undefined") return;
+  // GA4 only. Meta/TikTok CompleteRegistration is already sent server-side
+  // (app/auth/callback) and we lack its eventId here to dedupe a browser copy.
+  window.gtag?.("event", "sign_up", { method: "oauth" });
+}

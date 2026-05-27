@@ -8,6 +8,7 @@ import { BetaProvider } from "@/components/beta/BetaProvider";
 import BetaWelcomeModal from "@/components/beta/BetaWelcomeModal";
 import BetaPromoBanner from "@/components/beta/BetaPromoBanner";
 import ChatWidget from "@/components/ChatWidget";
+import SignupConversion from "@/components/analytics/SignupConversion";
 import "./globals.css";
 
 const GA_ID = "G-D7FX2CK8JY";
@@ -203,6 +204,7 @@ export default function RootLayout({
           <Footer />
           <BetaWelcomeModal />
           <ChatWidget />
+          <SignupConversion />
         </BetaProvider>
       </body>
     </html>
