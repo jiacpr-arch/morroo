@@ -65,6 +65,8 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       status: "ok",
       alreadyProcessed: result.alreadyProcessed,
+      amount: (session.amount_total ?? 0) / 100,
+      currency: (session.currency ?? "thb").toUpperCase(),
     });
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);

@@ -109,7 +109,10 @@ export async function GET(request: Request) {
         );
       }
 
-      return NextResponse.redirect(`${origin}${destination}`);
+      const dest = isNewSignup
+        ? `${destination}${destination.includes("?") ? "&" : "?"}signup=1`
+        : destination;
+      return NextResponse.redirect(`${origin}${dest}`);
     }
   }
 
