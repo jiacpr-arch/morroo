@@ -1,7 +1,9 @@
-import { NextResponse } from "next/server";
+import { NextResponse, after } from "next/server";
 import { cookies } from "next/headers";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient as createServerSupabaseClient } from "@/lib/supabase/server";
+import { sendTikTokEvent } from "@/lib/tiktok/events-api";
+import { sendMetaEvent } from "@/lib/meta/events-api";
 
 /**
  * GET /api/auth/line/callback
@@ -154,6 +156,7 @@ export async function GET(request: Request) {
     lineEmail ?? `line_${lineProfile.userId}@line.morroo.com`;
 
   let userId: string;
+  let isNewSignup = false;
 
   if (existingByLine) {
     // Already linked — just sign them in
@@ -215,6 +218,7 @@ export async function GET(request: Request) {
       }
 
       userId = newUser.user.id;
+      isNewSignup = true;
 
       // The auth.users INSERT trigger (handle_new_user) auto-creates a
       // profile row with default fields but no line_* columns. Upsert with
@@ -290,6 +294,39 @@ export async function GET(request: Request) {
     return NextResponse.redirect(`${origin}/login?error=line_session_failed`);
   }
 
+  if (isNewSignup) {
+    const userAgent = request.headers.get("user-agent");
+    const forwardedFor = request.headers.get("x-forwarded-for");
+    const ip = forwardedFor?.split(",")[0]?.trim() ?? null;
+    const signupEventId = `signup:${userId}`;
+    after(() =>
+      sendTikTokEvent({
+        event: "CompleteRegistration",
+        eventId: signupEventId,
+        email: lineEmail,
+        externalId: userId,
+        ip,
+        userAgent,
+        contentName: "signup",
+      })
+    );
+    after(() =>
+      sendMetaEvent({
+        event: "CompleteRegistration",
+        eventId: signupEventId,
+        email: lineEmail,
+        externalId: userId,
+        ip,
+        userAgent,
+        contentName: "signup",
+      })
+    );
+  }
+
   const destination = mode === "register" ? "/onboarding" : "/profile";
-  return NextResponse.redirect(`${origin}${destination}`);
+  // ?signup=1 makes the browser fire the GA4 sign_up event (see
+  // components/analytics/SignupConversion); the CAPI events above cover
+  // Meta/TikTok, matching the Google OAuth path in app/auth/callback.
+  const dest = isNewSignup ? `${destination}?signup=1` : destination;
+  return NextResponse.redirect(`${origin}${dest}`);
 }
