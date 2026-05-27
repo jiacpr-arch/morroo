@@ -1,21 +1,73 @@
 import Link from "next/link";
 import { getChapters } from "@/lib/acls-reader/content";
+import { getAssessmentSets } from "@/lib/acls-reader/assessment";
+import { preCourseLessons } from "@/lib/acls-reader/precourse";
+import ReaderProgress from "@/components/acls-reader/ReaderProgress";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
 export const revalidate = 600;
 
+const tools = [
+  {
+    href: "/acls-reader/learn",
+    icon: "🎓",
+    title: "บทเรียน Pre-course",
+    desc: "13 บทแบบอ่าน-ควิซ พร้อมเฉลย",
+  },
+  {
+    href: "/acls-reader/test",
+    icon: "📝",
+    title: "แบบทดสอบ",
+    desc: "Pre-test / Post-test พร้อมเฉลยทุกข้อ",
+  },
+  {
+    href: "/acls-reader/ekg",
+    icon: "💓",
+    title: "ฝึกอ่าน EKG",
+    desc: "ดูคลื่นแล้วเลือกจังหวะที่ถูกต้อง",
+  },
+  {
+    href: "/acls-reader/qa-deep",
+    icon: "💬",
+    title: "Q&A เชิงลึก",
+    desc: "คำถาม-คำตอบประกอบ infographic",
+  },
+];
+
 export default async function AclsReaderHome() {
-  const chapters = await getChapters();
+  const [chapters, sets] = await Promise.all([getChapters(), getAssessmentSets()]);
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
       <header className="mb-10 text-center">
         <h1 className="text-3xl font-bold sm:text-4xl">คู่มือทบทวน ACLS</h1>
         <p className="mt-3 text-lg text-muted-foreground">
-          เลือกบทเรียนเพื่อเริ่มอ่าน
+          อ่านเป็นบท · เรียน pre-course · ทำแบบทดสอบ · ฝึกอ่าน EKG
         </p>
       </header>
 
+      <ReaderProgress
+        lessons={preCourseLessons.map((l) => ({ id: l.id, passingScore: l.passingScore }))}
+        testSets={sets.map((s) => ({ id: s.id, title: s.title }))}
+      />
+
+      <div className="mb-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {tools.map((t) => (
+          <Link key={t.href} href={t.href} className="block">
+            <Card className="h-full transition-shadow hover:shadow-md hover:ring-brand/30">
+              <CardHeader>
+                <span className="text-3xl">{t.icon}</span>
+                <CardTitle className="text-base">{t.title}</CardTitle>
+                <CardDescription>{t.desc}</CardDescription>
+              </CardHeader>
+            </Card>
+          </Link>
+        ))}
+      </div>
+
+      <h2 className="mb-4 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+        อ่านเป็นบท
+      </h2>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {chapters.map((c) => (
           <Link key={c.id} href={`/acls-reader/chapter/${c.id}`} className="block">
@@ -28,19 +80,6 @@ export default async function AclsReaderHome() {
             </Card>
           </Link>
         ))}
-      </div>
-
-      <div className="mt-12 rounded-xl border border-brand/20 bg-brand/10 p-6 text-center">
-        <h2 className="text-lg font-semibold">Q&A ACLS เชิงลึก</h2>
-        <p className="mt-1 text-sm text-muted-foreground">
-          คำถาม-คำตอบเชิงลึกประกอบ infographic สำหรับทบทวน
-        </p>
-        <Link
-          href="/acls-reader/qa-deep"
-          className="mt-4 inline-block rounded-lg bg-brand px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-brand/90"
-        >
-          ดูคำถาม-คำตอบเชิงลึก
-        </Link>
       </div>
     </div>
   );
