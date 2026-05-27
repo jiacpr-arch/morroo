@@ -14,6 +14,7 @@ const navLinks = [
   { href: "/exams", label: "MEQ" },
   { href: "/nl", label: "MCQ" },
   { href: "/longcase", label: "Long Case" },
+  { href: "/acls-reader", label: "ACLS" },
   { href: "/board", label: "Board" },
   { href: "/blog", label: "บทความ" },
   { href: "/pricing", label: "แพ็กเกจ" },
