@@ -1,5 +1,7 @@
+import { Suspense } from "react";
 import PricingCard from "@/components/PricingCard";
 import PricingViewTracker from "@/components/PricingViewTracker";
+import PricingPromo from "@/components/PricingPromo";
 import { LineCtaButton } from "@/components/SocialLinks";
 import { PRICING_PLANS, BOARD_PRICING_PLANS } from "@/lib/types";
 import { GraduationCap, Mic } from "lucide-react";
@@ -22,6 +24,9 @@ export default function PricingPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
       <PricingViewTracker surface="pricing_page" />
+      <Suspense fallback={null}>
+        <PricingPromo />
+      </Suspense>
       <div className="text-center mb-12">
         <h1 className="text-3xl sm:text-4xl font-bold">แพ็กเกจราคา</h1>
         <p className="mt-3 text-lg text-muted-foreground max-w-xl mx-auto">
