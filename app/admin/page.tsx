@@ -18,6 +18,8 @@ import {
   ClipboardList,
   Sparkles,
   MessageCircle,
+  Camera,
+  GraduationCap,
 } from "lucide-react";
 
 interface HeatmapCell {
@@ -252,6 +254,32 @@ export default function AdminDashboard() {
             </CardContent>
           </Card>
         </Link>
+        <Link href="/admin/analytics">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-purple-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <BarChart3 className="h-5 w-5 text-purple-600" />
+                <h3 className="font-bold">Web Analytics</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">Funnel & conversion จาก Vercel Analytics (mirror)</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/ads-diagnostics">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-red-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Sparkles className="h-5 w-5 text-red-600" />
+                <h3 className="font-bold">Ads Autofix</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">Auto-diagnose landing pages + Meta ads · auto-pause underperformers</p>
+            </CardContent>
+          </Card>
+        </Link>
         <Link href="/admin/longcases">
           <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-amber-200">
             <CardHeader className="pb-2">
@@ -262,6 +290,19 @@ export default function AdminDashboard() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">เพิ่ม แก้ไข และจัดการ Long Case Exam</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/board">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-purple-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <GraduationCap className="h-5 w-5 text-purple-700" />
+                <h3 className="font-bold">Board content</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">Stats MCQ + Oral ต่อสาขา + ปุ่ม publish</p>
             </CardContent>
           </Card>
         </Link>
@@ -288,6 +329,19 @@ export default function AdminDashboard() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">สถิติพี่หมอรู้ — ข้อความ ผู้ใช้ และ trend แต่ละ channel</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/autopost">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-pink-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Camera className="h-5 w-5 text-pink-600" />
+                <h3 className="font-bold">IG Autopost</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">ดูสถานะการโพสต์ Instagram และกด retry บทความที่ failed</p>
             </CardContent>
           </Card>
         </Link>

@@ -1,4 +1,5 @@
 import type { LineMessage } from "./line";
+import type { MarketingSnapshot } from "./marketing-digest";
 
 interface WeeklySummaryData {
   totalQuestions: number;
@@ -208,7 +209,7 @@ export function buildExpiryWarningMessage(data: ExpiryWarningData): LineMessage 
     (data.expiresAt.getTime() - Date.now()) / (1000 * 60 * 60 * 24)
   );
   const renewPath = data.membershipType === "bundle" ? "bundle" : data.membershipType;
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com";
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com").trim();
 
   return {
     type: "flex",
@@ -281,6 +282,440 @@ export function buildExpiryWarningMessage(data: ExpiryWarningData): LineMessage 
               uri: `${siteUrl}/pricing`,
             },
             style: "secondary",
+          },
+        ],
+      },
+    },
+  };
+}
+
+// ----------------------------------------------------------------------------
+// Exam grading result — pushed to LINE after AI grades an MEQ answer.
+
+interface ExamResultData {
+  score: number;
+  maxScore: number;
+  subjectLabel: string;
+  questionPreview: string;
+  feedback: string;
+  matchedCount: number;
+  totalKeyPoints: number;
+  weakTopics: string[];
+}
+
+export function buildExamResultFlex(data: ExamResultData): LineMessage {
+  const pct = Math.round((data.score / data.maxScore) * 100);
+  const { headerColor, badge } = scoreBand(data.score);
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com").trim();
+
+  const preview =
+    data.questionPreview.length > 80
+      ? data.questionPreview.slice(0, 77).trimEnd() + "…"
+      : data.questionPreview;
+
+  const feedback =
+    data.feedback.length > 220
+      ? data.feedback.slice(0, 217).trimEnd() + "…"
+      : data.feedback;
+
+  return {
+    type: "flex",
+    altText: `ผลตรวจข้อสอบ: ${data.score}/${data.maxScore} (${pct}%)`,
+    contents: {
+      type: "bubble",
+      size: "kilo",
+      header: {
+        type: "box",
+        layout: "vertical",
+        backgroundColor: headerColor,
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: `${badge} ผลตรวจข้อสอบ`,
+            color: "#FFFFFF",
+            weight: "bold",
+            size: "lg",
+          },
+          {
+            type: "text",
+            text: data.subjectLabel,
+            color: "#FFFFFF",
+            size: "xs",
+          },
+        ],
+      },
+      body: {
+        type: "box",
+        layout: "vertical",
+        spacing: "md",
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "box",
+            layout: "baseline",
+            contents: [
+              {
+                type: "text",
+                text: `${data.score}`,
+                size: "xxl",
+                weight: "bold",
+                color: headerColor,
+                flex: 0,
+              },
+              {
+                type: "text",
+                text: ` / ${data.maxScore}  (${pct}%)`,
+                size: "md",
+                color: "#666666",
+                flex: 0,
+                margin: "sm",
+              },
+            ],
+          },
+          statRow(
+            "Key Points",
+            `${data.matchedCount}/${data.totalKeyPoints} ข้อ`
+          ),
+          { type: "separator", margin: "md" },
+          {
+            type: "text",
+            text: "โจทย์",
+            size: "xs",
+            color: "#888888",
+            margin: "md",
+          },
+          {
+            type: "text",
+            text: preview,
+            size: "sm",
+            color: "#444444",
+            wrap: true,
+          },
+          { type: "separator", margin: "md" },
+          {
+            type: "text",
+            text: "วิเคราะห์",
+            size: "xs",
+            color: "#888888",
+            margin: "md",
+          },
+          {
+            type: "text",
+            text: feedback,
+            size: "sm",
+            color: "#444444",
+            wrap: true,
+          },
+          ...(data.weakTopics.length > 0
+            ? [
+                { type: "separator" as const, margin: "md" as const },
+                {
+                  type: "text" as const,
+                  text: `ควรฝึกเพิ่ม: ${data.weakTopics.slice(0, 3).join(", ")}`,
+                  size: "sm" as const,
+                  color: "#E74C3C",
+                  wrap: true,
+                  margin: "md" as const,
+                },
+              ]
+            : []),
+        ],
+      },
+      footer: {
+        type: "box",
+        layout: "vertical",
+        spacing: "sm",
+        paddingAll: "md",
+        contents: [
+          {
+            type: "button",
+            action: {
+              type: "uri",
+              label: "ดู Dashboard",
+              uri: `${siteUrl}/dashboard`,
+            },
+            style: "primary",
+            color: "#16A085",
+          },
+          {
+            type: "button",
+            action: {
+              type: "uri",
+              label: "ทำข้อสอบต่อ",
+              uri: `${siteUrl}/exams`,
+            },
+            style: "secondary",
+          },
+        ],
+      },
+    },
+  };
+}
+
+function scoreBand(score: number): { headerColor: string; badge: string } {
+  if (score >= 9) return { headerColor: "#16A085", badge: "🏆" };
+  if (score >= 7) return { headerColor: "#27AE60", badge: "✅" };
+  if (score >= 5) return { headerColor: "#F39C12", badge: "📘" };
+  if (score >= 3) return { headerColor: "#E67E22", badge: "⚠️" };
+  return { headerColor: "#E74C3C", badge: "🔁" };
+}
+
+// ----------------------------------------------------------------------------
+// Admin daily digest — pushed to the admin's LINE every morning.
+
+interface AdminDigestData {
+  dateLabel: string;
+  attemptsToday: number;
+  activeUsersToday: number;
+  newUsersToday: number;
+  avgAccuracyToday: number | null;
+  totalStudents: number;
+  activeUsers7d: number;
+  weakestSubject: string | null;
+  aiGradeFails24h: number;
+  revenueTodayThb: number | null;
+  marketing?: MarketingSnapshot | null;
+}
+
+function deltaText(value: number | null): string {
+  if (value == null) return "";
+  if (value === 0) return " ±0%";
+  const sign = value > 0 ? "+" : "";
+  return ` ${sign}${value.toFixed(0)}%`;
+}
+
+function marketingSection(m: MarketingSnapshot) {
+  const visitorsText = `${m.visitors}${deltaText(m.visitorsDelta)}`;
+  const bounceText =
+    m.bounceRate != null
+      ? `${m.bounceRate.toFixed(1)}% (engaged ${m.engagedSessions})`
+      : "—";
+  const lineClicksText = m.visitors > 0
+    ? `${m.lineClicks} (${((m.lineClicks / m.visitors) * 100).toFixed(1)}%)${deltaText(m.lineClicksDelta)}`
+    : `${m.lineClicks}${deltaText(m.lineClicksDelta)}`;
+  const conversionText =
+    m.conversionRate != null
+      ? `${m.formSubmits}/${m.visitors} (${m.conversionRate.toFixed(1)}%)`
+      : `${m.formSubmits}`;
+  const pricingViewText =
+    m.pricingViewRate != null
+      ? `${m.pricingViewers} (${m.pricingViewRate.toFixed(0)}% ของ visitor)`
+      : `${m.pricingViewers}`;
+
+  const heroLines: { type: "text"; text: string; size: "xs"; color: string; wrap?: boolean }[] = [
+    {
+      type: "text",
+      text: `A: ${m.heroAB.a.converts}/${m.heroAB.a.views} (${
+        m.heroAB.a.rate != null ? m.heroAB.a.rate.toFixed(1) + "%" : "—"
+      })`,
+      size: "xs",
+      color: "#555555",
+    },
+    {
+      type: "text",
+      text: `B: ${m.heroAB.b.converts}/${m.heroAB.b.views} (${
+        m.heroAB.b.rate != null ? m.heroAB.b.rate.toFixed(1) + "%" : "—"
+      })`,
+      size: "xs",
+      color: "#555555",
+    },
+  ];
+
+  const sourceLines = m.topSources.length
+    ? m.topSources.map((s) => ({
+        type: "text" as const,
+        text: `${s.name}: 💬${s.clicks} 📋${s.forms}${s.conv > 0 ? " 🔥" : ""}`,
+        size: "xs" as const,
+        color: "#555555" as const,
+      }))
+    : [
+        {
+          type: "text" as const,
+          text: "ยังไม่มีข้อมูล source",
+          size: "xs" as const,
+          color: "#888888",
+        },
+      ];
+
+  const alertLines = m.alerts.map((a) => ({
+    type: "text" as const,
+    text: `🚨 ${a}`,
+    size: "xs" as const,
+    color: "#E74C3C",
+    wrap: true,
+  }));
+
+  return [
+    { type: "separator" as const, margin: "md" as const },
+    {
+      type: "text" as const,
+      text: `📊 สรุปเว็บ ${m.dateLabel}`,
+      size: "xs" as const,
+      color: "#888888",
+      weight: "bold" as const,
+      margin: "md" as const,
+    },
+    statRow("👥 Visitors", visitorsText),
+    statRow("💸 Bounce", bounceText),
+    statRow("💬 LINE clicks", lineClicksText),
+    statRow("📝 Conversion", conversionText),
+    statRow("👁 เห็นราคา", pricingViewText),
+    {
+      type: "box" as const,
+      layout: "vertical" as const,
+      margin: "sm" as const,
+      spacing: "xs" as const,
+      contents: [
+        {
+          type: "text" as const,
+          text: "🧪 A/B Hero",
+          size: "xs" as const,
+          color: "#888888",
+          weight: "bold" as const,
+        },
+        ...heroLines,
+      ],
+    },
+    {
+      type: "box" as const,
+      layout: "vertical" as const,
+      margin: "sm" as const,
+      spacing: "xs" as const,
+      contents: [
+        {
+          type: "text" as const,
+          text: `🌐 By source (top ${Math.min(4, m.topSources.length || 4)})`,
+          size: "xs" as const,
+          color: "#888888",
+          weight: "bold" as const,
+        },
+        ...sourceLines,
+      ],
+    },
+    ...(alertLines.length
+      ? [
+          {
+            type: "box" as const,
+            layout: "vertical" as const,
+            margin: "sm" as const,
+            spacing: "xs" as const,
+            contents: [
+              {
+                type: "text" as const,
+                text: "🚨 Alerts",
+                size: "xs" as const,
+                color: "#E74C3C",
+                weight: "bold" as const,
+              },
+              ...alertLines,
+            ],
+          },
+        ]
+      : []),
+  ];
+}
+
+export function buildAdminDigestFlex(data: AdminDigestData): LineMessage {
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com").trim();
+  const accuracyText =
+    data.avgAccuracyToday != null
+      ? `${data.avgAccuracyToday}%`
+      : "—";
+  const revenueText =
+    data.revenueTodayThb != null
+      ? `฿${data.revenueTodayThb.toLocaleString("th-TH")}`
+      : "—";
+
+  return {
+    type: "flex",
+    altText: `MorRoo Daily ${data.dateLabel} — ${data.activeUsersToday} active, ${data.attemptsToday} ข้อ`,
+    contents: {
+      type: "bubble",
+      size: "kilo",
+      header: {
+        type: "box",
+        layout: "vertical",
+        backgroundColor: "#0EA5E9",
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: "📊 MorRoo Daily",
+            color: "#FFFFFF",
+            weight: "bold",
+            size: "lg",
+          },
+          {
+            type: "text",
+            text: data.dateLabel,
+            color: "#E0F2FE",
+            size: "xs",
+          },
+        ],
+      },
+      body: {
+        type: "box",
+        layout: "vertical",
+        spacing: "md",
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: "วันนี้",
+            size: "xs",
+            color: "#888888",
+            weight: "bold",
+          },
+          statRow("Active users", `${data.activeUsersToday} คน`),
+          statRow("ข้อสอบที่ทำ", `${data.attemptsToday} ข้อ`),
+          statRow("คะแนนเฉลี่ย", accuracyText),
+          statRow("สมาชิกใหม่", `${data.newUsersToday} คน`),
+          statRow("รายได้", revenueText),
+          { type: "separator", margin: "md" },
+          {
+            type: "text",
+            text: "ภาพรวม",
+            size: "xs",
+            color: "#888888",
+            weight: "bold",
+            margin: "md",
+          },
+          statRow("นักเรียนทั้งหมด", `${data.totalStudents} คน`),
+          statRow("Active 7 วัน", `${data.activeUsers7d} คน`),
+          ...(data.weakestSubject
+            ? [statRow("วิชาที่อ่อนสุด", data.weakestSubject)]
+            : []),
+          ...(data.aiGradeFails24h > 0
+            ? [
+                { type: "separator" as const, margin: "md" as const },
+                {
+                  type: "text" as const,
+                  text: `⚠️ AI grading fail 24 ชม.: ${data.aiGradeFails24h} ครั้ง`,
+                  size: "sm" as const,
+                  color: "#E74C3C",
+                  wrap: true,
+                  margin: "md" as const,
+                },
+              ]
+            : []),
+          ...(data.marketing ? marketingSection(data.marketing) : []),
+        ],
+      },
+      footer: {
+        type: "box",
+        layout: "vertical",
+        paddingAll: "md",
+        contents: [
+          {
+            type: "button",
+            action: {
+              type: "uri",
+              label: "เปิด Admin Dashboard",
+              uri: `${siteUrl}/admin`,
+            },
+            style: "primary",
+            color: "#0EA5E9",
           },
         ],
       },
@@ -488,5 +923,606 @@ function ctaFooter(buttons: { label: string; uri: string; style: "primary" | "se
       style: b.style,
       ...(b.style === "primary" ? { color: PRIMARY } : {}),
     })),
+  };
+}
+
+// ─── Weekly analytics digest ─────────────────────────────────────────────
+export interface AnalyticsDigestData {
+  rangeLabel: string;       // e.g. "15–21 พ.ค. 2026"
+  pageViews: number;
+  uniqueVisitors: number;
+  signups: number;
+  examStarts: number;
+  checkoutClicks: number;
+  socialLineClicks: number;
+  topPath: { path: string; count: number } | null;
+  topReferrer: { ref: string; count: number } | null;
+  signupConversion: number | null;  // signups / unique visitors %
+  checkoutConversion: number | null; // checkouts / signups %
+}
+
+export function buildAnalyticsDigestFlex(data: AnalyticsDigestData): LineMessage {
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com").trim();
+  const topPathText = data.topPath
+    ? `${data.topPath.path} (${data.topPath.count.toLocaleString()})`
+    : "—";
+  const topRefText = data.topReferrer
+    ? `${data.topReferrer.ref} (${data.topReferrer.count.toLocaleString()})`
+    : "—";
+  const signupConvText =
+    data.signupConversion != null ? `${data.signupConversion.toFixed(1)}%` : "—";
+  const checkoutConvText =
+    data.checkoutConversion != null ? `${data.checkoutConversion.toFixed(1)}%` : "—";
+
+  return {
+    type: "flex",
+    altText: `MorRoo Weekly ${data.rangeLabel} — ${data.uniqueVisitors} visitors, ${data.signups} signups`,
+    contents: {
+      type: "bubble",
+      size: "kilo",
+      header: {
+        type: "box",
+        layout: "vertical",
+        backgroundColor: "#7C3AED",
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: "📈 MorRoo Weekly",
+            color: "#FFFFFF",
+            weight: "bold",
+            size: "lg",
+          },
+          {
+            type: "text",
+            text: data.rangeLabel,
+            color: "#EDE9FE",
+            size: "xs",
+          },
+        ],
+      },
+      body: {
+        type: "box",
+        layout: "vertical",
+        spacing: "md",
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: "ผู้ใช้ 7 วัน",
+            size: "xs",
+            color: "#888888",
+            weight: "bold",
+          },
+          statRow("Visitors", data.uniqueVisitors.toLocaleString()),
+          statRow("Page views", data.pageViews.toLocaleString()),
+          { type: "separator", margin: "md" },
+          {
+            type: "text",
+            text: "Funnel",
+            size: "xs",
+            color: "#888888",
+            weight: "bold",
+            margin: "md",
+          },
+          statRow("Signups", `${data.signups.toLocaleString()} (${signupConvText})`),
+          statRow("Exam starts", data.examStarts.toLocaleString()),
+          statRow("Checkout clicks", `${data.checkoutClicks.toLocaleString()} (${checkoutConvText})`),
+          statRow("LINE adds", data.socialLineClicks.toLocaleString()),
+          { type: "separator", margin: "md" },
+          {
+            type: "text",
+            text: "Top",
+            size: "xs",
+            color: "#888888",
+            weight: "bold",
+            margin: "md",
+          },
+          statRow("Page", topPathText),
+          statRow("Referrer", topRefText),
+        ],
+      },
+      footer: {
+        type: "box",
+        layout: "vertical",
+        paddingAll: "md",
+        contents: [
+          {
+            type: "button",
+            style: "primary",
+            color: "#7C3AED",
+            height: "sm",
+            action: {
+              type: "uri",
+              label: "เปิด /admin/analytics",
+              uri: `${siteUrl}/admin/analytics`,
+            },
+          },
+        ],
+      },
+    },
+  };
+}
+
+// ─── Ads diagnostics digest ──────────────────────────────────────────────
+export interface AdsDiagnosticsData {
+  pagesScanned: number;
+  adsScanned: number;
+  critical: number;
+  warn: number;
+  actionsTaken: number;
+  topFindings: {
+    label: string;
+    category: string;
+    recommendation: string;
+    autoActioned: boolean;
+  }[];
+}
+
+export function buildAdsDiagnosticsFlex(data: AdsDiagnosticsData): LineMessage {
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com").trim();
+  const headerColor = data.critical > 0 ? "#DC2626" : "#F59E0B";
+
+  const findingBlocks =
+    data.topFindings.length === 0
+      ? [
+          {
+            type: "text" as const,
+            text: "ไม่มี critical findings",
+            size: "sm" as const,
+            color: "#16A085" as const,
+          },
+        ]
+      : data.topFindings.map((f) => ({
+          type: "box" as const,
+          layout: "vertical" as const,
+          margin: "md" as const,
+          contents: [
+            {
+              type: "text" as const,
+              text: `${f.autoActioned ? "⏸ " : "⚠ "}${f.label}`,
+              size: "sm" as const,
+              weight: "bold" as const,
+              color: "#222222",
+              wrap: true,
+            },
+            {
+              type: "text" as const,
+              text: f.recommendation,
+              size: "xs" as const,
+              color: "#666666",
+              wrap: true,
+            },
+          ],
+        }));
+
+  return {
+    type: "flex",
+    altText: `Ads autofix — ${data.critical} critical, ${data.actionsTaken} actions taken`,
+    contents: {
+      type: "bubble",
+      size: "kilo",
+      header: {
+        type: "box",
+        layout: "vertical",
+        backgroundColor: headerColor,
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: "🛠 Ads Autofix",
+            color: "#FFFFFF",
+            weight: "bold",
+            size: "lg",
+          },
+          {
+            type: "text",
+            text: `${data.critical} critical · ${data.warn} warn`,
+            color: "#FFFFFF",
+            size: "xs",
+          },
+        ],
+      },
+      body: {
+        type: "box",
+        layout: "vertical",
+        spacing: "sm",
+        paddingAll: "lg",
+        contents: [
+          statRow("Pages scanned", data.pagesScanned.toLocaleString()),
+          statRow("Ads scanned", data.adsScanned.toLocaleString()),
+          statRow("Auto-paused", data.actionsTaken.toLocaleString()),
+          { type: "separator", margin: "md" },
+          {
+            type: "text",
+            text: "Top issues",
+            size: "xs",
+            color: "#888888",
+            weight: "bold",
+            margin: "md",
+          },
+          ...findingBlocks,
+        ],
+      },
+      footer: {
+        type: "box",
+        layout: "vertical",
+        paddingAll: "md",
+        contents: [
+          {
+            type: "button",
+            style: "primary",
+            color: headerColor,
+            height: "sm",
+            action: {
+              type: "uri",
+              label: "ดู /admin/ads-diagnostics",
+              uri: `${siteUrl}/admin/ads-diagnostics`,
+            },
+          },
+        ],
+      },
+    },
+  };
+}
+
+// ─── Ads suggest PR ──────────────────────────────────────────────────────
+export interface AdsSuggestData {
+  pagePath: string;
+  recommendation: string;
+  severity: string;
+  prNumber: number;
+  prUrl: string;
+  baseline: Record<string, number | string | null>;
+}
+
+const ADS_BOT_REPO = (process.env.GITHUB_REPO ?? "jiacpr-arch/morroo").trim();
+
+export function buildAdsSuggestFlex(data: AdsSuggestData): LineMessage {
+  const severityColor =
+    data.severity === "critical" ? "#DC2626" : "#F59E0B";
+  const baselineLines = Object.entries(data.baseline)
+    .filter(([k]) => k !== "captured_at")
+    .slice(0, 4)
+    .map(([k, v]) => ({
+      type: "text" as const,
+      text: `${k}: ${v ?? "—"}`,
+      size: "xs" as const,
+      color: "#666666",
+      wrap: true,
+    }));
+
+  return {
+    type: "flex",
+    altText: `AI suggest แก้หน้า ${data.pagePath} — PR #${data.prNumber}`,
+    contents: {
+      type: "bubble",
+      size: "kilo",
+      header: {
+        type: "box",
+        layout: "vertical",
+        backgroundColor: severityColor,
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: "🤖 AI Suggest แก้หน้า",
+            color: "#FFFFFF",
+            weight: "bold",
+            size: "md",
+          },
+          {
+            type: "text",
+            text: data.pagePath,
+            color: "#FFFFFF",
+            size: "xs",
+            wrap: true,
+          },
+        ],
+      },
+      body: {
+        type: "box",
+        layout: "vertical",
+        spacing: "sm",
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: data.recommendation,
+            size: "sm",
+            color: "#222222",
+            wrap: true,
+          },
+          { type: "separator", margin: "md" },
+          {
+            type: "text",
+            text: "Baseline metrics",
+            size: "xs",
+            color: "#888888",
+            weight: "bold",
+            margin: "md",
+          },
+          ...baselineLines,
+        ],
+      },
+      footer: {
+        type: "box",
+        layout: "vertical",
+        spacing: "sm",
+        paddingAll: "md",
+        contents: [
+          {
+            type: "button",
+            style: "primary",
+            color: severityColor,
+            height: "sm",
+            action: {
+              type: "postback",
+              label: "Merge ✓",
+              data: `action=merge_pr&pr=${data.prNumber}`,
+              displayText: `Merge PR #${data.prNumber}`,
+            },
+          },
+          {
+            type: "box",
+            layout: "horizontal",
+            spacing: "sm",
+            contents: [
+              {
+                type: "button",
+                style: "secondary",
+                height: "sm",
+                action: {
+                  type: "uri",
+                  label: "ดู PR",
+                  uri: data.prUrl,
+                },
+              },
+              {
+                type: "button",
+                style: "secondary",
+                height: "sm",
+                action: {
+                  type: "postback",
+                  label: "Dismiss 30d",
+                  data: `action=dismiss_pr&pr=${data.prNumber}`,
+                  displayText: `Dismiss PR #${data.prNumber}`,
+                },
+              },
+            ],
+          },
+        ],
+      },
+    },
+  };
+}
+
+export function buildAdsMergeConfirmFlex(args: {
+  prNumber: number;
+  prUrl: string;
+  pagePath: string;
+}): LineMessage {
+  return {
+    type: "flex",
+    altText: `ยืนยัน merge PR #${args.prNumber}?`,
+    contents: {
+      type: "bubble",
+      size: "micro",
+      body: {
+        type: "box",
+        layout: "vertical",
+        spacing: "sm",
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: "ยืนยัน merge?",
+            weight: "bold",
+            color: "#DC2626",
+            size: "md",
+          },
+          {
+            type: "text",
+            text: `PR #${args.prNumber}`,
+            size: "xs",
+            color: "#666666",
+          },
+          {
+            type: "text",
+            text: args.pagePath,
+            size: "xs",
+            color: "#666666",
+            wrap: true,
+          },
+        ],
+      },
+      footer: {
+        type: "box",
+        layout: "vertical",
+        spacing: "sm",
+        paddingAll: "md",
+        contents: [
+          {
+            type: "button",
+            style: "primary",
+            color: "#DC2626",
+            height: "sm",
+            action: {
+              type: "postback",
+              label: "ใช่, merge เลย",
+              data: `action=merge_pr_confirm&pr=${args.prNumber}`,
+              displayText: `Confirm merge #${args.prNumber}`,
+            },
+          },
+          {
+            type: "button",
+            style: "secondary",
+            height: "sm",
+            action: {
+              type: "postback",
+              label: "ยกเลิก",
+              data: `action=cancel&pr=${args.prNumber}`,
+              displayText: "Cancel",
+            },
+          },
+        ],
+      },
+    },
+  };
+}
+
+export function buildAdsPostMergeAlertFlex(args: {
+  pagePath: string;
+  prNumber: number;
+  baselineRate: number;
+  currentRate: number;
+  revertPrNumber: number | null;
+  revertPrUrl: string | null;
+}): LineMessage {
+  const siteUrl = `https://github.com/${ADS_BOT_REPO}`;
+  const buttons: Array<Record<string, unknown>> = [
+    {
+      type: "button",
+      style: "primary",
+      color: "#DC2626",
+      height: "sm",
+      action: {
+        type: "uri",
+        label: "ดู PR เดิม",
+        uri: `${siteUrl}/pull/${args.prNumber}`,
+      },
+    },
+  ];
+  if (args.revertPrNumber) {
+    buttons.push({
+      type: "button",
+      style: "secondary",
+      height: "sm",
+      action: {
+        type: "uri",
+        label: `Revert PR #${args.revertPrNumber}`,
+        uri: args.revertPrUrl ?? `${siteUrl}/pull/${args.revertPrNumber}`,
+      },
+    });
+  }
+
+  return {
+    type: "flex",
+    altText: `Conversion ตก ${args.pagePath} — เปิด revert PR ให้แล้ว`,
+    contents: {
+      type: "bubble",
+      size: "kilo",
+      header: {
+        type: "box",
+        layout: "vertical",
+        backgroundColor: "#DC2626",
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: "⚠️ Conversion ตก",
+            color: "#FFFFFF",
+            weight: "bold",
+            size: "md",
+          },
+          {
+            type: "text",
+            text: args.pagePath,
+            color: "#FFFFFF",
+            size: "xs",
+            wrap: true,
+          },
+        ],
+      },
+      body: {
+        type: "box",
+        layout: "vertical",
+        spacing: "sm",
+        paddingAll: "lg",
+        contents: [
+          statRow("Baseline", `${args.baselineRate.toFixed(2)}%`),
+          statRow("ตอนนี้", `${args.currentRate.toFixed(2)}%`),
+          { type: "separator", margin: "md" },
+          {
+            type: "text",
+            text: args.revertPrNumber
+              ? `เปิด revert PR #${args.revertPrNumber} ให้แล้ว — กด merge ที่ GitHub`
+              : "ไม่สามารถเปิด revert PR ได้ — กรุณา revert ด้วยมือ",
+            size: "xs",
+            color: "#666666",
+            wrap: true,
+          },
+        ],
+      },
+      footer: {
+        type: "box",
+        layout: "vertical",
+        spacing: "sm",
+        paddingAll: "md",
+        contents: buttons,
+      },
+    },
+  };
+}
+
+export function buildAdsPostMergeResolvedFlex(args: {
+  pagePath: string;
+  prNumber: number;
+  baselineRate: number;
+  currentRate: number;
+  outcome: "improved" | "flat";
+}): LineMessage {
+  const color = args.outcome === "improved" ? "#16A085" : "#6B7280";
+  const headline =
+    args.outcome === "improved"
+      ? `✅ Conversion ขึ้น ${args.pagePath}`
+      : `➡️ ${args.pagePath} ไม่เปลี่ยนแปลง`;
+
+  return {
+    type: "flex",
+    altText: headline,
+    contents: {
+      type: "bubble",
+      size: "kilo",
+      header: {
+        type: "box",
+        layout: "vertical",
+        backgroundColor: color,
+        paddingAll: "lg",
+        contents: [
+          {
+            type: "text",
+            text: headline,
+            color: "#FFFFFF",
+            weight: "bold",
+            size: "md",
+            wrap: true,
+          },
+          {
+            type: "text",
+            text: `PR #${args.prNumber} ครบ 7 วันแล้ว`,
+            color: "#FFFFFF",
+            size: "xs",
+          },
+        ],
+      },
+      body: {
+        type: "box",
+        layout: "vertical",
+        spacing: "sm",
+        paddingAll: "lg",
+        contents: [
+          statRow("Baseline", `${args.baselineRate.toFixed(2)}%`),
+          statRow("ตอนนี้", `${args.currentRate.toFixed(2)}%`),
+          statRow(
+            "เปลี่ยนแปลง",
+            `${args.baselineRate > 0
+              ? (((args.currentRate - args.baselineRate) / args.baselineRate) * 100).toFixed(1)
+              : "—"
+            }%`
+          ),
+        ],
+      },
+    },
   };
 }

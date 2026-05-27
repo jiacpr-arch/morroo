@@ -5,7 +5,8 @@ import type { McqChoice } from "../types-mcq";
 
 export interface McqQuestionInput {
   subject_id: string;
-  exam_type: "NL1" | "NL2";
+  // Student-only — null for board questions
+  exam_type?: "NL1" | "NL2" | null;
   exam_source?: string | null;
   question_number?: number | null;
   scenario: string;
@@ -15,6 +16,15 @@ export interface McqQuestionInput {
   difficulty: "easy" | "medium" | "hard";
   topic?: string | null;
   status: "active" | "review" | "disabled";
+  // Board fields — set when audience='board'
+  audience?: "student" | "board";
+  board_specialty?: string | null;
+  board_subspecialty?: string | null;
+  board_section?: string | null;
+  board_topic?: string | null;
+  board_age_group?: "peds" | "adult" | "mixed" | null;
+  board_level?: number | null;
+  reference_source?: string | null;
 }
 
 export async function createMcqQuestion(

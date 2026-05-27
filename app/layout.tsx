@@ -2,12 +2,17 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Sarabun } from "next/font/google";
 import { Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Suspense } from "react";
+import AnalyticsPageviewTracker from "@/components/AnalyticsPageviewTracker";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BetaProvider } from "@/components/beta/BetaProvider";
 import BetaWelcomeModal from "@/components/beta/BetaWelcomeModal";
 import BetaPromoBanner from "@/components/beta/BetaPromoBanner";
 import ChatWidget from "@/components/ChatWidget";
+import FloatingLineCta from "@/components/FloatingLineCta";
 import SignupConversion from "@/components/analytics/SignupConversion";
 import "./globals.css";
 
@@ -204,8 +209,16 @@ export default function RootLayout({
           <Footer />
           <BetaWelcomeModal />
           <ChatWidget />
+          <Suspense fallback={null}>
+            <FloatingLineCta />
+          </Suspense>
           <SignupConversion />
         </BetaProvider>
+        <Analytics />
+        <SpeedInsights />
+        <Suspense fallback={null}>
+          <AnalyticsPageviewTracker />
+        </Suspense>
       </body>
     </html>
   );

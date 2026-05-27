@@ -15,6 +15,50 @@
     {
       "path": "/api/cron/trial-expiry",
       "schedule": "30 2 * * *"
+    },
+    {
+      "path": "/api/cron/autopost-ig",
+      "schedule": "0 13 * * *"
+    },
+    {
+      "path": "/api/cron/autopost-ig-story",
+      "schedule": "0 12 * * *"
+    },
+    {
+      "path": "/api/cron/autopost-ig-carousel",
+      "schedule": "0 2 * * 1,3,5"
+    },
+    {
+      "path": "/api/cron/autopost-scheduled",
+      "schedule": "*/15 * * * *"
+    },
+    {
+      "path": "/api/cron/ig-insights",
+      "schedule": "0 4 * * *"
+    },
+    {
+      "path": "/api/cron/admin-digest",
+      "schedule": "0 1 * * *"
+    },
+    {
+      "path": "/api/cron/streak-nudge",
+      "schedule": "0 12 * * *"
+    },
+    {
+      "path": "/api/cron/analytics-digest",
+      "schedule": "0 2 * * 1"
+    },
+    {
+      "path": "/api/cron/ads-autofix",
+      "schedule": "0 22 * * *"
+    },
+    {
+      "path": "/api/cron/ads-autofix-suggest",
+      "schedule": "0 23 * * *"
+    },
+    {
+      "path": "/api/cron/ads-postmerge-watch",
+      "schedule": "30 21 * * *"
     }
   ]
 }

@@ -85,7 +85,7 @@ export default function OnboardingChecklist({ userId }: Props) {
           id: "line",
           label: "เพิ่มเพื่อน LINE เพื่อรับโจทย์ประจำวัน",
           done: !!p?.line_user_id,
-          href: "https://line.me/R/ti/p/@508srmcr",
+          href: "https://line.me/R/ti/p/@901nmwcd",
           cta: "เพิ่มเพื่อน",
         },
       ]);

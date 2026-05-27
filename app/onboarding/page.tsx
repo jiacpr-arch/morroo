@@ -8,12 +8,13 @@ import { createClient } from "@/lib/supabase/client";
 import { CATEGORIES } from "@/lib/types";
 import { CheckCircle2, ChevronRight, Loader2 } from "lucide-react";
 
-type TargetExam = "NL1" | "NL2" | "both";
+type TargetExam = "NL1" | "NL2" | "both" | "board";
 
 const EXAM_OPTIONS: { value: TargetExam; label: string; desc: string; icon: string }[] = [
   { value: "NL1", label: "NL1", desc: "ขั้นตอนที่ 1 — ข้อสอบเนื้อหา", icon: "📝" },
   { value: "NL2", label: "NL2", desc: "ขั้นตอนที่ 2 — ข้อสอบทักษะทางคลินิก", icon: "🩺" },
-  { value: "both", label: "ทั้งสอง", desc: "เตรียมทุกขั้นตอนพร้อมกัน", icon: "🎯" },
+  { value: "both", label: "ทั้งสอง (NL1 + NL2)", desc: "เตรียมทุกขั้นตอนพร้อมกัน", icon: "🎯" },
+  { value: "board", label: "Board เฉพาะทาง", desc: "สอบวุฒิบัตรราชวิทยาลัยฯ", icon: "🎓" },
 ];
 
 const DAILY_GOALS = [
@@ -54,8 +55,10 @@ export default function OnboardingPage() {
 
       if (error) throw error;
 
-      // Hard navigation so middleware reads fresh onboarding_done value
-      window.location.href = "/dashboard";
+      // Hard navigation so middleware reads fresh onboarding_done value.
+      // Board users land on /board where the specialty grid is the right
+      // first action; NL users land on /dashboard with their study plan.
+      window.location.href = targetExam === "board" ? "/board" : "/dashboard";
     } catch {
       setSaving(false);
     }

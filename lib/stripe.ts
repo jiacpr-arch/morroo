@@ -19,4 +19,6 @@ export const STRIPE_PLANS: Record<string, { amount: number; name: string }> = {
   monthly: { amount: 199, name: "MorRoo รายเดือน" },
   yearly: { amount: 1490, name: "MorRoo รายปี" },
   bundle: { amount: 299, name: "MorRoo ชุดข้อสอบ 10 ข้อ" },
+  board_monthly: { amount: 499, name: "MorRoo Board รายเดือน" },
+  board_yearly: { amount: 4990, name: "MorRoo Board รายปี" },
 };

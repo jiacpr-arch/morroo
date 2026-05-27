@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import { track } from "@/lib/analytics";
 import { Lock, Loader2, PlayCircle } from "lucide-react";
 
 export default function LongCaseStartButton({ caseId, hasAccess }: {
@@ -25,6 +26,7 @@ export default function LongCaseStartButton({ caseId, hasAccess }: {
   async function handleStart() {
     setLoading(true);
     setError("");
+    track("longcase_start", { caseId });
     try {
       const res = await fetch("/api/longcase/start", {
         method: "POST",

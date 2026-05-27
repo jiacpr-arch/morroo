@@ -100,7 +100,7 @@ export default function PrivacyPage() {
                       <th className="text-left p-3 font-semibold rounded-tr-lg">ฐานทางกฎหมาย</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-gray-100">
+                  <tbody className="divide-y divide-border">
                     {[
                       ["ให้บริการและจัดการบัญชีผู้ใช้", "การปฏิบัติตามสัญญา"],
                       ["วิเคราะห์ผลการเรียนและติดตามนักเรียน", "การปฏิบัติตามสัญญา / ประโยชน์อันชอบด้วยกฎหมาย"],

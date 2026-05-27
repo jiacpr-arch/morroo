@@ -6,28 +6,30 @@ import PricingCard from "@/components/PricingCard";
 import DailyCountdown from "@/components/DailyCountdown";
 import AllExamsCountdown from "@/components/AllExamsCountdown";
 import GoodyEmbed from "@/components/GoodyEmbed";
-import { SocialButtonsRow } from "@/components/SocialLinks";
+import HeroAB from "@/components/HeroAB";
+import PricingViewTracker from "@/components/PricingViewTracker";
+import { SocialButtonsRow, LineCtaButton } from "@/components/SocialLinks";
 import { CATEGORIES, PRICING_PLANS } from "@/lib/types";
 import { getExams, getExamPartCounts, sortExamsAvailableFirst } from "@/lib/supabase/queries";
 import { getBlogPosts } from "@/lib/blog";
+import { createAdminClient } from "@/lib/supabase/admin";
+import { getHeroForcedVariant } from "@/lib/site-config";
 import {
   BookOpen,
   Clock,
   CheckCircle,
   ArrowRight,
-  Sparkles,
-  Users,
-  Shield,
   Stethoscope,
 } from "lucide-react";
 
 export const revalidate = 60; // revalidate every 60 seconds
 
 export default async function HomePage() {
-  const [allExams, partCounts, blogPosts] = await Promise.all([
+  const [allExams, partCounts, blogPosts, forcedHero] = await Promise.all([
     getExams(),
     getExamPartCounts(),
     getBlogPosts(),
+    getHeroForcedVariant(createAdminClient()),
   ]);
   const exams = sortExamsAvailableFirst(allExams, partCounts);
   const latestExams = exams.slice(0, 6);
@@ -36,61 +38,15 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-dark via-brand-dark to-brand py-20 sm:py-28">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgMGg2MHY2MEgweiIgZmlsbD0ibm9uZSIvPjxjaXJjbGUgY3g9IjMwIiBjeT0iMzAiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZykiLz48L3N2Zz4=')] opacity-40" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <Badge className="mb-6 bg-white/10 text-white border-white/20 hover:bg-white/20">
-              <Sparkles className="h-3 w-3 mr-1" /> แพลตฟอร์มข้อสอบ MEQ + NL + Long Case ออนไลน์
-            </Badge>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-              เตรียมสอบแพทย์
-              <br />
-              <span className="text-brand-light">ด้วย AI ที่เข้าใจคุณ</span>
-            </h1>
-            <p className="mt-6 text-lg text-white/70 max-w-2xl mx-auto">
-              ข้อสอบ MEQ แบบ Progressive Case + ข้อสอบ NL ใบประกอบวิชาชีพ 1,300+ ข้อ +
-              ฝึกสอบ Long Case กับ AI Patient & Examiner
-            </p>
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/exams">
-                <Button
-                  size="lg"
-                  className="bg-brand hover:bg-brand-light text-white px-8 text-base"
-                >
-                  ข้อสอบ MEQ <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-              <Link href="/longcase">
-                <Button
-                  size="lg"
-                  className="bg-amber-500 hover:bg-amber-400 text-white px-8 text-base"
-                >
-                  Long Case Exam <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-              <Link href="/nl">
-                <Button
-                  size="lg"
-                  className="bg-white/10 border border-white/30 text-white hover:bg-white/20 px-8 text-base"
-                >
-                  MCQ <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-            </div>
-            <div className="mt-10 flex items-center justify-center gap-8 text-sm text-white/60">
-              <span className="flex items-center gap-1.5">
-                <Users className="h-4 w-4" /> 1,000+ แพทย์ใช้งาน
-              </span>
-              <span className="flex items-center gap-1.5">
-                <BookOpen className="h-4 w-4" /> 1,300+ ข้อสอบ
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Shield className="h-4 w-4" /> เฉลยจากผู้เชี่ยวชาญ
-              </span>
-            </div>
-          </div>
+      <HeroAB forced={forcedHero} />
+
+      {/* LINE add-friend strip — high-visibility CTA above the fold */}
+      <section className="bg-[#06C755]/10 border-b border-[#06C755]/20">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-3 px-4 py-4 text-center sm:flex-row sm:gap-5 sm:py-3 sm:text-left">
+          <p className="text-sm font-medium text-foreground sm:text-base">
+            📩 รับข้อสอบฟรีทุกเช้า 7 โมง + เทคนิคเตรียมสอบ ผ่าน LINE
+          </p>
+          <LineCtaButton surface="home_hero" label="แอด LINE ฟรี" className="shrink-0" />
         </div>
       </section>
 
@@ -253,6 +209,46 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* ACLS Reader — free study tool */}
+      <section className="py-16 bg-emerald-50 border-y border-emerald-100">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <Badge className="mb-4 bg-emerald-100 text-emerald-800 border-emerald-300">
+              ฟรี — ไม่ต้องสมัครสมาชิก
+            </Badge>
+            <h2 className="text-3xl font-bold text-gray-900">คู่มือทบทวน ACLS</h2>
+            <p className="mt-3 text-muted-foreground text-lg">
+              อ่านเป็นบท เรียน pre-course ทำแบบทดสอบ และฝึกอ่าน EKG — อ้างอิง ILCOR 2025
+            </p>
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { href: "/acls-reader/learn", icon: "🎓", label: "บทเรียน", desc: "13 บท อ่าน-ควิซ" },
+              { href: "/acls-reader/test", icon: "📝", label: "แบบทดสอบ", desc: "Pre / Post-test" },
+              { href: "/acls-reader/ekg", icon: "💓", label: "ฝึกอ่าน EKG", desc: "อ่านจังหวะคลื่น" },
+              { href: "/acls-reader", icon: "📖", label: "อ่านเป็นบท", desc: "13 บทเต็ม" },
+            ].map((t) => (
+              <Link
+                key={t.href}
+                href={t.href}
+                className="group flex flex-col items-center gap-2 rounded-xl border border-emerald-100 bg-white p-6 text-center transition-all hover:shadow-md hover:border-emerald-300"
+              >
+                <span className="text-4xl group-hover:scale-110 transition-transform">{t.icon}</span>
+                <span className="text-sm font-semibold text-gray-900">{t.label}</span>
+                <span className="text-xs text-muted-foreground">{t.desc}</span>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Link href="/acls-reader">
+              <Button className="bg-emerald-600 hover:bg-emerald-700 text-white gap-2">
+                เปิดคู่มือ ACLS <ArrowRight className="h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* How it works */}
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -303,6 +299,7 @@ export default async function HomePage() {
             <h2 className="text-3xl font-bold">แพ็กเกจราคา</h2>
             <p className="mt-2 text-muted-foreground">เลือกแพ็กเกจที่เหมาะกับคุณ</p>
           </div>
+          <PricingViewTracker surface="home" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
             {PRICING_PLANS.map((plan) => (
               <PricingCard key={plan.name} {...plan} />
@@ -350,7 +347,7 @@ export default async function HomePage() {
       )}
 
       {/* Health News */}
-      <section className="py-16 bg-muted/30 border-y">
+      <section className="py-16 bg-muted/30 border-b">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
             <h2 className="text-3xl font-bold">ข่าวสุขภาพ</h2>
@@ -376,7 +373,7 @@ export default async function HomePage() {
       </section>
 
       {/* Social */}
-      <section className="py-12 bg-white border-y">
+      <section className="py-12 bg-white border-b">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold">ติดตามหมอรู้</h2>
           <p className="mt-2 text-muted-foreground">

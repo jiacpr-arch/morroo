@@ -1,18 +1,37 @@
 import { createClient } from "./server";
 import type { LongCase, LongCaseFull, LongCaseSession } from "../types";
 
-// Get all published Long Cases (list view — no sensitive data)
+// Get all published student Long Cases (list view — no sensitive data)
 export async function getLongCases(): Promise<LongCase[]> {
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("long_cases")
-    .select("id,title,specialty,difficulty,week_number,is_weekly,is_published,published_at,patient_info,correct_diagnosis,created_at")
+    .select("id,title,specialty,difficulty,week_number,is_weekly,is_published,published_at,patient_info,correct_diagnosis,created_at,audience,board_specialty")
     .eq("is_published", true)
+    .eq("audience", "student")
     .order("is_weekly", { ascending: false })
     .order("week_number", { ascending: false });
 
   if (error) {
     console.error("getLongCases error:", error);
+    return [];
+  }
+  return (data as LongCase[]) || [];
+}
+
+// Get published Board Oral cases for a specialty
+export async function getBoardOralCases(specialty: string): Promise<LongCase[]> {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("long_cases")
+    .select("id,title,specialty,difficulty,week_number,is_weekly,is_published,published_at,patient_info,correct_diagnosis,created_at,audience,board_specialty")
+    .eq("is_published", true)
+    .eq("audience", "board")
+    .eq("board_specialty", specialty)
+    .order("published_at", { ascending: false });
+
+  if (error) {
+    console.error("getBoardOralCases error:", error);
     return [];
   }
   return (data as LongCase[]) || [];

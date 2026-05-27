@@ -1,7 +1,7 @@
 /**
  * Auto Blog Generator — AI คิดหัวข้อเอง + Together AI สร้างรูป cover
  *
- * Cron: อังคาร + ศุกร์ 02:00 ICT (19:00 UTC วันก่อน)
+ * Cron: daily 12:00 UTC (19:00 ICT) — see supabase/migrations/20260516_blog_cron_daily.sql
  * POST /api/blog/generate?secret=$BLOG_GENERATE_SECRET
  */
 

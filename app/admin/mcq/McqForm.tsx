@@ -1,19 +1,40 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
 import { createMcqQuestion, updateMcqQuestion } from "@/lib/supabase/mutations-mcq-admin";
-import { ChevronLeft, Save, Loader2 } from "lucide-react";
+import { ChevronLeft, Save, Loader2, GraduationCap } from "lucide-react";
+import { BOARD_SECTIONS } from "@/lib/types-board";
 
-interface McqSubject { id: string; name_th: string; icon: string; }
+export interface AdminMcqSubject {
+  id: string;
+  name_th: string;
+  icon: string;
+  audience: "student" | "board";
+  board_specialty: string | null;
+  board_subspecialty: string | null;
+}
+
+export interface AdminBoardTopic {
+  specialty_slug: string;
+  section_code: string;
+  slug: string;
+  name_th: string;
+  peds_count: number;
+  adult_count: number;
+  other_count: number;
+}
 
 interface FormData {
   id?: string;
   subject_id: string;
+  // student-only
   exam_type: "NL1" | "NL2";
+  // common
   exam_source: string;
   scenario: string;
   choices: { label: string; text: string }[];
@@ -22,6 +43,12 @@ interface FormData {
   difficulty: "easy" | "medium" | "hard";
   topic: string;
   status: "active" | "review" | "disabled";
+  // board-only
+  board_section: string;
+  board_topic: string;
+  board_age_group: "peds" | "adult" | "mixed" | "";
+  board_level: "" | "1" | "2" | "3";
+  reference_source: string;
 }
 
 const EMPTY_FORM: FormData = {
@@ -41,19 +68,63 @@ const EMPTY_FORM: FormData = {
   difficulty: "medium",
   topic: "",
   status: "active",
+  board_section: "",
+  board_topic: "",
+  board_age_group: "",
+  board_level: "",
+  reference_source: "",
 };
 
 export function McqForm({
   initial,
   subjects,
+  boardTopics = [],
 }: {
   initial?: Partial<FormData> & { id?: string };
-  subjects: McqSubject[];
+  subjects: AdminMcqSubject[];
+  boardTopics?: AdminBoardTopic[];
 }) {
   const router = useRouter();
   const [form, setForm] = useState<FormData>({ ...EMPTY_FORM, ...initial });
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const selectedSubject = useMemo(
+    () => subjects.find((s) => s.id === form.subject_id) ?? null,
+    [subjects, form.subject_id]
+  );
+  const isBoard = selectedSubject?.audience === "board";
+
+  // Topic suggestions: filtered by selected specialty + section
+  const topicSuggestions = useMemo(() => {
+    if (!isBoard || !selectedSubject?.board_specialty || !form.board_section) {
+      return [];
+    }
+    return boardTopics.filter(
+      (t) =>
+        t.specialty_slug === selectedSubject.board_specialty &&
+        t.section_code === form.board_section
+    );
+  }, [isBoard, selectedSubject, form.board_section, boardTopics]);
+
+  const topicMatch = useMemo(
+    () => topicSuggestions.find((t) => t.slug === form.board_topic) ?? null,
+    [topicSuggestions, form.board_topic]
+  );
+
+  // Group subjects in dropdown: student first, then board grouped by specialty
+  const grouped = useMemo(() => {
+    const student = subjects.filter((s) => s.audience === "student");
+    const boardBySpecialty = new Map<string, AdminMcqSubject[]>();
+    for (const s of subjects) {
+      if (s.audience !== "board") continue;
+      const key = s.board_specialty ?? "_unknown";
+      const list = boardBySpecialty.get(key) ?? [];
+      list.push(s);
+      boardBySpecialty.set(key, list);
+    }
+    return { student, boardBySpecialty };
+  }, [subjects]);
 
   function setField<K extends keyof FormData>(key: K, value: FormData[K]) {
     setForm((prev) => ({ ...prev, [key]: value }));
@@ -66,16 +137,28 @@ export function McqForm({
   }
 
   async function handleSave() {
-    if (!form.subject_id) { setError("กรุณาเลือกสาขา"); return; }
-    if (!form.scenario.trim()) { setError("กรุณาใส่โจทย์"); return; }
-    if (form.choices.some((c) => !c.text.trim())) { setError("กรุณาใส่ตัวเลือกให้ครบ 5 ข้อ"); return; }
+    if (!form.subject_id || !selectedSubject) {
+      setError("กรุณาเลือกสาขา");
+      return;
+    }
+    if (!form.scenario.trim()) {
+      setError("กรุณาใส่โจทย์");
+      return;
+    }
+    if (form.choices.some((c) => !c.text.trim())) {
+      setError("กรุณาใส่ตัวเลือกให้ครบ 5 ข้อ");
+      return;
+    }
+    if (isBoard && !form.board_section) {
+      setError("กรุณาเลือก Section ของ Board");
+      return;
+    }
 
     setSaving(true);
     setError(null);
 
-    const payload = {
+    const commonPayload = {
       subject_id: form.subject_id,
-      exam_type: form.exam_type,
       exam_source: form.exam_source || null,
       scenario: form.scenario.trim(),
       choices: form.choices,
@@ -86,12 +169,46 @@ export function McqForm({
       status: form.status,
     };
 
+    const payload = isBoard
+      ? {
+          ...commonPayload,
+          audience: "board" as const,
+          exam_type: null,
+          board_specialty: selectedSubject.board_specialty,
+          board_subspecialty: selectedSubject.board_subspecialty,
+          board_section: form.board_section,
+          board_topic: form.board_topic || null,
+          board_age_group: form.board_age_group || null,
+          board_level: form.board_level ? Number(form.board_level) : null,
+          reference_source: form.reference_source || null,
+        }
+      : {
+          ...commonPayload,
+          audience: "student" as const,
+          exam_type: form.exam_type,
+          board_specialty: null,
+          board_subspecialty: null,
+          board_section: null,
+          board_topic: null,
+          board_age_group: null,
+          board_level: null,
+          reference_source: null,
+        };
+
     if (form.id) {
       const ok = await updateMcqQuestion(form.id, payload);
-      if (!ok) { setError("บันทึกไม่สำเร็จ กรุณาลองใหม่"); setSaving(false); return; }
+      if (!ok) {
+        setError("บันทึกไม่สำเร็จ กรุณาลองใหม่");
+        setSaving(false);
+        return;
+      }
     } else {
       const row = await createMcqQuestion(payload);
-      if (!row) { setError("เพิ่มข้อสอบไม่สำเร็จ กรุณาลองใหม่"); setSaving(false); return; }
+      if (!row) {
+        setError("เพิ่มข้อสอบไม่สำเร็จ กรุณาลองใหม่");
+        setSaving(false);
+        return;
+      }
     }
 
     router.push("/admin/mcq");
@@ -102,14 +219,25 @@ export function McqForm({
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
       <div className="flex items-center gap-2 mb-6">
         <Link href="/admin/mcq">
-          <Button variant="ghost" size="sm"><ChevronLeft className="h-4 w-4 mr-1" />รายการข้อสอบ</Button>
+          <Button variant="ghost" size="sm">
+            <ChevronLeft className="h-4 w-4 mr-1" />
+            รายการข้อสอบ
+          </Button>
         </Link>
       </div>
 
-      <h1 className="text-2xl font-bold mb-6">{form.id ? "แก้ไขข้อสอบ" : "เพิ่มข้อสอบใหม่"}</h1>
+      <h1 className="text-2xl font-bold mb-2">
+        {form.id ? "แก้ไขข้อสอบ" : "เพิ่มข้อสอบใหม่"}
+      </h1>
+      {isBoard && (
+        <Badge className="bg-purple-100 text-purple-700 gap-1 mb-4">
+          <GraduationCap className="h-3 w-3" />
+          Board Exam · {selectedSubject?.board_specialty}
+        </Badge>
+      )}
 
       <div className="space-y-6">
-        {/* Meta */}
+        {/* Subject + (exam_type or board section) */}
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label className="text-sm font-medium mb-1.5 block">สาขา *</label>
@@ -119,43 +247,202 @@ export function McqForm({
               className="w-full border rounded-md px-3 py-2 text-sm bg-white"
             >
               <option value="">-- เลือกสาขา --</option>
-              {subjects.map((s) => (
-                <option key={s.id} value={s.id}>{s.icon} {s.name_th}</option>
-              ))}
+              {grouped.student.length > 0 && (
+                <optgroup label="นศพ. (NL)">
+                  {grouped.student.map((s) => (
+                    <option key={s.id} value={s.id}>
+                      {s.icon} {s.name_th}
+                    </option>
+                  ))}
+                </optgroup>
+              )}
+              {Array.from(grouped.boardBySpecialty.entries()).map(
+                ([specialty, items]) => (
+                  <optgroup key={specialty} label={`Board · ${specialty}`}>
+                    {items.map((s) => (
+                      <option key={s.id} value={s.id}>
+                        {s.icon} {s.name_th}
+                      </option>
+                    ))}
+                  </optgroup>
+                )
+              )}
             </select>
           </div>
-          <div>
-            <label className="text-sm font-medium mb-1.5 block">ประเภทสอบ</label>
-            <select
-              value={form.exam_type}
-              onChange={(e) => setField("exam_type", e.target.value as "NL1" | "NL2")}
-              className="w-full border rounded-md px-3 py-2 text-sm bg-white"
-            >
-              <option value="NL1">NL1</option>
-              <option value="NL2">NL2</option>
-            </select>
-          </div>
+
+          {isBoard ? (
+            <div>
+              <label className="text-sm font-medium mb-1.5 block">
+                Section (Board) *
+              </label>
+              <select
+                value={form.board_section}
+                onChange={(e) => setField("board_section", e.target.value)}
+                className="w-full border rounded-md px-3 py-2 text-sm bg-white"
+              >
+                <option value="">-- เลือก section --</option>
+                {BOARD_SECTIONS.map((s) => (
+                  <option key={s.code} value={s.code}>
+                    {s.label_th}
+                  </option>
+                ))}
+              </select>
+            </div>
+          ) : (
+            <div>
+              <label className="text-sm font-medium mb-1.5 block">ประเภทสอบ</label>
+              <select
+                value={form.exam_type}
+                onChange={(e) =>
+                  setField("exam_type", e.target.value as "NL1" | "NL2")
+                }
+                className="w-full border rounded-md px-3 py-2 text-sm bg-white"
+              >
+                <option value="NL1">NL1</option>
+                <option value="NL2">NL2</option>
+              </select>
+            </div>
+          )}
+
           <div>
             <label className="text-sm font-medium mb-1.5 block">แหล่งที่มา</label>
             <Input
               value={form.exam_source}
               onChange={(e) => setField("exam_source", e.target.value)}
-              placeholder="เช่น ศรว 2010, NL2-CU 2558"
+              placeholder={
+                isBoard ? "เช่น TCEP 2566, EM Board 2567" : "เช่น ศรว 2010, NL2-CU 2558"
+              }
             />
           </div>
           <div>
-            <label className="text-sm font-medium mb-1.5 block">Topic (ย่อย)</label>
+            <label className="text-sm font-medium mb-1.5 block">
+              Topic (ย่อย / free text)
+            </label>
             <Input
               value={form.topic}
               onChange={(e) => setField("topic", e.target.value)}
-              placeholder="เช่น HF, Sepsis, ACS"
+              placeholder={isBoard ? "เช่น STEMI, Pediatric trauma" : "เช่น HF, Sepsis, ACS"}
             />
           </div>
         </div>
 
+        {/* Board-only fields */}
+        {isBoard && (
+          <div className="rounded-lg border border-purple-200 bg-purple-50/50 p-4">
+            <div className="flex items-center gap-2 mb-3">
+              <GraduationCap className="h-4 w-4 text-purple-700" />
+              <span className="text-sm font-medium text-purple-900">
+                ข้อมูล Board (ตาม Blueprint)
+              </span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className="text-sm font-medium mb-1.5 block">
+                  Topic Category (slug)
+                </label>
+                <Input
+                  list="board-topic-suggestions"
+                  value={form.board_topic}
+                  onChange={(e) => setField("board_topic", e.target.value)}
+                  placeholder={
+                    topicSuggestions.length > 0
+                      ? `เช่น ${topicSuggestions[0].slug}`
+                      : "เลือก section ก่อนเพื่อดูตัวเลือก"
+                  }
+                />
+                <datalist id="board-topic-suggestions">
+                  {topicSuggestions.map((t) => (
+                    <option key={t.slug} value={t.slug}>
+                      {t.name_th}
+                    </option>
+                  ))}
+                </datalist>
+                {topicMatch ? (
+                  <p className="text-xs text-emerald-700 mt-1">
+                    ✓ {topicMatch.name_th} (เด็ก {topicMatch.peds_count} / ผู้ใหญ่{" "}
+                    {topicMatch.adult_count} / อื่น {topicMatch.other_count})
+                  </p>
+                ) : (
+                  <p className="text-xs text-muted-foreground mt-1">
+                    {topicSuggestions.length > 0
+                      ? `${topicSuggestions.length} หัวข้อใน blueprint — เลือกจาก dropdown หรือใส่ slug ใหม่`
+                      : "ยังไม่มี blueprint สำหรับ section นี้ — พิมพ์ slug ได้เลย"}
+                  </p>
+                )}
+              </div>
+              <div>
+                <label className="text-sm font-medium mb-1.5 block">
+                  อายุของเคส
+                </label>
+                <div className="flex gap-2">
+                  {([
+                    { value: "", label: "ไม่ระบุ" },
+                    { value: "peds", label: "เด็ก" },
+                    { value: "adult", label: "ผู้ใหญ่" },
+                    { value: "mixed", label: "ผสม" },
+                  ] as const).map((opt) => (
+                    <button
+                      key={opt.value || "none"}
+                      type="button"
+                      onClick={() =>
+                        setField(
+                          "board_age_group",
+                          opt.value as FormData["board_age_group"]
+                        )
+                      }
+                      className={`px-3 py-1.5 rounded-md text-xs font-medium border transition-colors ${
+                        form.board_age_group === opt.value
+                          ? "bg-purple-600 text-white border-purple-600"
+                          : "bg-white text-muted-foreground border-gray-200 hover:bg-muted"
+                      }`}
+                    >
+                      {opt.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <label className="text-sm font-medium mb-1.5 block">
+                  ระดับ (Level 1-3)
+                </label>
+                <div className="flex gap-2">
+                  {(["", "1", "2", "3"] as const).map((lv) => (
+                    <button
+                      key={lv || "none"}
+                      type="button"
+                      onClick={() =>
+                        setField("board_level", lv as FormData["board_level"])
+                      }
+                      className={`px-3 py-1.5 rounded-md text-xs font-medium border transition-colors ${
+                        form.board_level === lv
+                          ? "bg-purple-600 text-white border-purple-600"
+                          : "bg-white text-muted-foreground border-gray-200 hover:bg-muted"
+                      }`}
+                    >
+                      {lv === "" ? "ไม่ระบุ" : `Level ${lv}`}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <label className="text-sm font-medium mb-1.5 block">
+                  อ้างอิง (Reference)
+                </label>
+                <Input
+                  value={form.reference_source}
+                  onChange={(e) => setField("reference_source", e.target.value)}
+                  placeholder="เช่น Tintinalli 8e Ch.34"
+                />
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Scenario */}
         <div>
-          <label className="text-sm font-medium mb-1.5 block">โจทย์ (Scenario) *</label>
+          <label className="text-sm font-medium mb-1.5 block">
+            โจทย์ (Scenario) *
+          </label>
           <textarea
             value={form.scenario}
             onChange={(e) => setField("scenario", e.target.value)}
@@ -193,13 +480,16 @@ export function McqForm({
             ))}
           </div>
           <p className="text-xs text-muted-foreground mt-2">
-            คลิกที่วงกลมตัวอักษรเพื่อเลือกเป็นคำตอบที่ถูกต้อง (ปัจจุบัน: <strong>{form.correct_answer}</strong>)
+            คลิกที่วงกลมตัวอักษรเพื่อเลือกเป็นคำตอบที่ถูกต้อง (ปัจจุบัน:{" "}
+            <strong>{form.correct_answer}</strong>)
           </p>
         </div>
 
         {/* Explanation */}
         <div>
-          <label className="text-sm font-medium mb-1.5 block">เฉลย (Explanation)</label>
+          <label className="text-sm font-medium mb-1.5 block">
+            เฉลย (Explanation)
+          </label>
           <textarea
             value={form.explanation}
             onChange={(e) => setField("explanation", e.target.value)}
@@ -221,8 +511,10 @@ export function McqForm({
                   onClick={() => setField("difficulty", d)}
                   className={`px-3 py-1.5 rounded-md text-xs font-medium border transition-colors ${
                     form.difficulty === d
-                      ? d === "easy" ? "bg-blue-500 text-white border-blue-500"
-                        : d === "medium" ? "bg-orange-500 text-white border-orange-500"
+                      ? d === "easy"
+                        ? "bg-blue-500 text-white border-blue-500"
+                        : d === "medium"
+                        ? "bg-orange-500 text-white border-orange-500"
                         : "bg-red-500 text-white border-red-500"
                       : "bg-white text-muted-foreground border-gray-200 hover:bg-muted"
                   }`}
@@ -242,8 +534,10 @@ export function McqForm({
                   onClick={() => setField("status", s)}
                   className={`px-3 py-1.5 rounded-md text-xs font-medium border transition-colors ${
                     form.status === s
-                      ? s === "active" ? "bg-green-500 text-white border-green-500"
-                        : s === "review" ? "bg-yellow-500 text-white border-yellow-500"
+                      ? s === "active"
+                        ? "bg-green-500 text-white border-green-500"
+                        : s === "review"
+                        ? "bg-yellow-500 text-white border-yellow-500"
                         : "bg-gray-400 text-white border-gray-400"
                       : "bg-white text-muted-foreground border-gray-200 hover:bg-muted"
                   }`}
@@ -270,7 +564,11 @@ export function McqForm({
             disabled={saving}
             className="bg-brand hover:bg-brand-light text-white gap-2"
           >
-            {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
+            {saving ? (
+              <Loader2 className="h-4 w-4 animate-spin" />
+            ) : (
+              <Save className="h-4 w-4" />
+            )}
             บันทึก
           </Button>
         </div>

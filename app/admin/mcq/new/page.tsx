@@ -4,15 +4,14 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { Loader2, Shield } from "lucide-react";
-import { McqForm } from "../McqForm";
-
-interface McqSubject { id: string; name_th: string; icon: string; }
+import { McqForm, type AdminMcqSubject, type AdminBoardTopic } from "../McqForm";
 
 export default function NewMcqPage() {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [isAdmin, setIsAdmin] = useState(false);
-  const [subjects, setSubjects] = useState<McqSubject[]>([]);
+  const [subjects, setSubjects] = useState<AdminMcqSubject[]>([]);
+  const [boardTopics, setBoardTopics] = useState<AdminBoardTopic[]>([]);
 
   useEffect(() => {
     async function load() {
@@ -25,9 +24,18 @@ export default function NewMcqPage() {
       if (profile?.role !== "admin") { setLoading(false); return; }
 
       setIsAdmin(true);
-      const { data } = await supabase
-        .from("mcq_subjects").select("id, name_th, icon").order("name_th");
-      setSubjects((data as McqSubject[]) || []);
+      const [sRes, tRes] = await Promise.all([
+        supabase
+          .from("mcq_subjects")
+          .select("id, name_th, icon, audience, board_specialty, board_subspecialty")
+          .order("name_th"),
+        supabase
+          .from("board_topic_categories")
+          .select("slug, name_th, peds_count, adult_count, other_count, board_exam_blueprints!inner(specialty_slug, section_code)")
+          .order("display_order"),
+      ]);
+      setSubjects((sRes.data as AdminMcqSubject[]) || []);
+      setBoardTopics(flattenTopics(tRes.data));
       setLoading(false);
     }
     load();
@@ -42,5 +50,34 @@ export default function NewMcqPage() {
     </div>
   );
 
-  return <McqForm subjects={subjects} />;
+  return <McqForm subjects={subjects} boardTopics={boardTopics} />;
+}
+
+function flattenTopics(rows: unknown): AdminBoardTopic[] {
+  if (!Array.isArray(rows)) return [];
+  return rows.flatMap((r) => {
+    const row = r as {
+      slug: string;
+      name_th: string;
+      peds_count: number;
+      adult_count: number;
+      other_count: number;
+      board_exam_blueprints:
+        | { specialty_slug: string; section_code: string }
+        | { specialty_slug: string; section_code: string }[]
+        | null;
+    };
+    const bp = row.board_exam_blueprints;
+    if (!bp) return [];
+    const bps = Array.isArray(bp) ? bp : [bp];
+    return bps.map((b) => ({
+      specialty_slug: b.specialty_slug,
+      section_code: b.section_code,
+      slug: row.slug,
+      name_th: row.name_th,
+      peds_count: row.peds_count,
+      adult_count: row.adult_count,
+      other_count: row.other_count,
+    }));
+  });
 }
