@@ -1,12 +1,13 @@
 import { createClient } from "@supabase/supabase-js";
 
-// Reuses the existing ACLS Supabase project. These are public client-side
-// values (same as the original acls-emr app) with hardcoded fallbacks so the
-// app runs without a .env.local. Read-only, anonymous access only.
+// Dedicated read-only client for the EXISTING ACLS content project.
+// Hardcoded public anon values on purpose: do NOT read morroo's own
+// NEXT_PUBLIC_SUPABASE_* env vars — those point at a different (morroo)
+// project that has no acls_* tables. Allow an ACLS-specific override.
 const url =
-  process.env.NEXT_PUBLIC_SUPABASE_URL ?? "https://elyyijlcjfvhxbpzscnv.supabase.co";
+  process.env.NEXT_PUBLIC_ACLS_SUPABASE_URL ?? "https://elyyijlcjfvhxbpzscnv.supabase.co";
 const anonKey =
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ??
+  process.env.NEXT_PUBLIC_ACLS_SUPABASE_ANON_KEY ??
   "sb_publishable_ie9hrnsxONcotMSqcQF_Og_zXj-8sIp";
 
 export const supabase = createClient(url, anonKey, {
