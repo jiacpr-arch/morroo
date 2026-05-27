@@ -1,5 +1,6 @@
 import PricingCard from "@/components/PricingCard";
 import PricingViewTracker from "@/components/PricingViewTracker";
+import { LineCtaButton } from "@/components/SocialLinks";
 import { PRICING_PLANS, BOARD_PRICING_PLANS } from "@/lib/types";
 import { GraduationCap, Mic } from "lucide-react";
 import type { Metadata } from "next";
@@ -65,6 +66,15 @@ export default function PricingPage() {
           * แพ็ก นศพ. ไม่รวมเนื้อหา Board และในทางกลับกัน — เลือกแพ็กให้ตรงกับเป้าหมายสอบ
         </p>
       </section>
+
+      {/* Still deciding? — capture hesitant visitors via LINE */}
+      <div className="max-w-2xl mx-auto mb-16 rounded-2xl border border-[#06C755]/30 bg-[#06C755]/5 p-6 text-center">
+        <h2 className="text-xl font-bold">ยังไม่แน่ใจว่าแพ็กไหนเหมาะ?</h2>
+        <p className="mt-2 text-sm text-muted-foreground">
+          แอด LINE มาปรึกษาได้เลย เราช่วยแนะนำแพ็กที่ตรงกับเป้าหมายสอบของคุณ + รับข้อสอบฟรีทุกเช้า
+        </p>
+        <LineCtaButton surface="pricing" className="mt-4" />
+      </div>
 
       {/* FAQ */}
       <div className="max-w-3xl mx-auto">

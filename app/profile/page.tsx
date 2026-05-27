@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
+import { track } from "@/lib/analytics";
 import { User, Mail, Crown, Calendar, LogOut, Gift, Copy, Check, Users, MessageSquare, Link2, Loader2, Flag, Coins } from "lucide-react";
 import type { Profile } from "@/lib/types";
 
@@ -319,6 +320,7 @@ export default function ProfilePage() {
               href="https://line.me/R/ti/p/@901nmwcd"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => track("social_click", { platform: "line", surface: "profile" })}
               className="flex items-center justify-center gap-2 w-full rounded-lg bg-[#06C755] hover:bg-[#05b34c] text-white font-semibold py-2.5 px-4 text-sm transition-colors"
             >
               <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
