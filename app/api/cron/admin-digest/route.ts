@@ -18,7 +18,7 @@ import { sendLineMessage } from "@/lib/line";
 import { buildAdminDigestFlex } from "@/lib/line-flex-templates";
 import { buildMarketingSnapshot } from "@/lib/marketing-digest";
 import { runLineCtaAutopilot } from "@/lib/line-cta-config";
-import { runHeroAutopilot } from "@/lib/site-config";
+import { runHeroAutopilot, runPricingPromoAutopilot } from "@/lib/site-config";
 
 export const runtime = "nodejs";
 export const maxDuration = 30;
@@ -212,10 +212,29 @@ export async function GET(request: Request) {
     }
   }
 
+  // Pricing promo autopilot — turn the reassurance bar on/off based on how
+  // pricing viewers convert. Reversible config-only change.
+  let pricingPromoAutopilot: { previous: number; level: number; changed: boolean; reason: string } | null = null;
+  if (marketing) {
+    try {
+      const { previous, decision } = await runPricingPromoAutopilot(supabase, marketing);
+      pricingPromoAutopilot = { previous, ...decision };
+      if (decision.changed) {
+        const state = decision.level === 1 ? "เปิด" : "ปิด";
+        await sendLineMessage(adminLineId, [
+          { type: "text", text: `🏷️ Pricing promo autopilot: ${state} — ${decision.reason}` },
+        ]);
+      }
+    } catch (err) {
+      console.error("[admin-digest] pricing promo autopilot failed:", err);
+    }
+  }
+
   return NextResponse.json({
     ok,
     lineCtaAutopilot,
     heroAutopilot,
+    pricingPromoAutopilot,
     snapshot: {
       dateLabel,
       attemptsToday,
