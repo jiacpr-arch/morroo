@@ -1,7 +1,5 @@
 import Link from "next/link";
 import { getQaDeep, getQaDeepChapters } from "@/lib/acls-reader/qa-deep";
-import Markdown from "@/components/acls-reader/Markdown";
-import Figure from "@/components/acls-reader/Figure";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
 export const revalidate = 600;
@@ -46,23 +44,27 @@ export default async function QaDeepIndex() {
       )}
 
       {ungrouped.length > 0 && (
-        <div className="mt-10 space-y-12">
-          {ungrouped.map((it) => (
-            <article key={it.id} className="scroll-mt-20">
-              <h2 className="mb-4 text-2xl font-semibold">{it.question}</h2>
-              {it.cover && (
-                <Figure
-                  src={it.cover.src}
-                  alt={it.cover.alt}
-                  caption={it.cover.caption}
-                />
-              )}
-              <Markdown>{it.answer}</Markdown>
-              {it.infographics.map((img, i) => (
-                <Figure key={i} src={img.src} alt={img.alt} caption={img.caption} />
-              ))}
-            </article>
-          ))}
+        <div className="mt-10">
+          {groupedChapters.length > 0 && (
+            <h2 className="mb-4 text-lg font-semibold">คำถามทั่วไป</h2>
+          )}
+          <ol className="space-y-3">
+            {ungrouped.map((it, i) => (
+              <li key={it.id}>
+                <Link
+                  href={`/acls-reader/qa-deep/q/${it.id}`}
+                  className="group flex items-start gap-3 rounded-xl border border-border p-4 transition-colors hover:border-brand/40 hover:bg-muted/40"
+                >
+                  <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-muted text-sm font-semibold text-muted-foreground">
+                    {i + 1}
+                  </span>
+                  <span className="font-medium group-hover:text-brand">
+                    {it.question}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ol>
         </div>
       )}
     </div>
