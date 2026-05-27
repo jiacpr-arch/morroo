@@ -10,7 +10,7 @@ import BetaPromoBanner from "@/components/beta/BetaPromoBanner";
 import ChatWidget from "@/components/ChatWidget";
 import "./globals.css";
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+const GA_ID = "G-D7FX2CK8JY";
 const TIKTOK_PIXEL_ID = "D80UTR3C77UEO91IVCV0";
 const FB_PIXEL_ID = "966371002896288";
 const GTM_ID = "GTM-5VGNTDV3";
