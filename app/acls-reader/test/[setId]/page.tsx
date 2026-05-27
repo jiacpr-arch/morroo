@@ -1,6 +1,9 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getExamQuestions } from "@/lib/acls-reader/assessment";
+import { getExamQuestions, getAssessmentSets } from "@/lib/acls-reader/assessment";
+import { preCourseLessons } from "@/lib/acls-reader/precourse";
+import { isPostTestSet } from "@/lib/acls-reader/prereqs";
+import { PrereqGuard } from "@/components/acls-reader/PostTestLock";
 import Exam from "@/components/acls-reader/Exam";
 
 // Per-request so pool-based tests draw a fresh set each attempt.
@@ -25,6 +28,19 @@ export default async function ExamPage({
   const { set, questions } = await getExamQuestions(setId);
   if (!set) notFound();
 
+  const gated = isPostTestSet(set.id);
+  const pretestIds = gated
+    ? (await getAssessmentSets())
+        .filter((s) => s.id.startsWith("pretest"))
+        .map((s) => s.id)
+    : [];
+  const lessons = preCourseLessons.map((l) => ({
+    id: l.id,
+    passingScore: l.passingScore,
+  }));
+
+  const exam = <Exam questions={questions} setId={set.id} />;
+
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
       <nav className="mb-6 text-sm text-muted-foreground">
@@ -46,7 +62,13 @@ export default async function ExamPage({
         </p>
       </header>
 
-      <Exam questions={questions} setId={set.id} />
+      {gated ? (
+        <PrereqGuard pretestIds={pretestIds} lessons={lessons}>
+          {exam}
+        </PrereqGuard>
+      ) : (
+        exam
+      )}
     </div>
   );
 }
