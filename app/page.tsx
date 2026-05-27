@@ -20,10 +20,6 @@ import {
   CheckCircle,
   ArrowRight,
   Stethoscope,
-  HeartPulse,
-  Activity,
-  FileText,
-  Brain,
 } from "lucide-react";
 
 export const revalidate = 60; // revalidate every 60 seconds
@@ -213,45 +209,40 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ACLS Feature */}
-      <section className="py-16 bg-rose-50 border-y border-rose-100">
+      {/* ACLS Reader — free study tool */}
+      <section className="py-16 bg-emerald-50 border-y border-emerald-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <Badge className="mb-4 bg-rose-100 text-rose-800 border-rose-300">
-              <HeartPulse className="h-3 w-3 mr-1" /> ใหม่ — ACLS
+            <Badge className="mb-4 bg-emerald-100 text-emerald-800 border-emerald-300">
+              ฟรี — ไม่ต้องสมัครสมาชิก
             </Badge>
-            <h2 className="text-3xl font-bold text-gray-900">
-              ทบทวน ACLS แบบครบวงจร
-            </h2>
-            <p className="mt-3 mx-auto max-w-2xl text-muted-foreground text-lg">
-              อ่านเนื้อหา ACLS, ฝึกอ่าน EKG, ทำแบบทดสอบ และ Q&amp;A เชิงลึกพร้อม infographic
-              สำหรับทบทวนก่อนสอบ
+            <h2 className="text-3xl font-bold text-gray-900">คู่มือทบทวน ACLS</h2>
+            <p className="mt-3 text-muted-foreground text-lg">
+              อ่านเป็นบท เรียน pre-course ทำแบบทดสอบ และฝึกอ่าน EKG — อ้างอิง ILCOR 2025
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { href: "/acls-reader", icon: BookOpen, title: "เนื้อหา ACLS", desc: "บทเรียนทบทวนแยกตามหัวข้อ" },
-              { href: "/acls-reader/ekg", icon: Activity, title: "ฝึกอ่าน EKG", desc: "ฝึกแปลผลคลื่นไฟฟ้าหัวใจ" },
-              { href: "/acls-reader/test", icon: FileText, title: "แบบทดสอบ", desc: "ทดสอบความรู้ก่อนสอบจริง" },
-              { href: "/acls-reader/qa-deep", icon: Brain, title: "Q&A เชิงลึก", desc: "คำถาม-คำตอบประกอบ infographic" },
-            ].map((f) => (
+              { href: "/acls-reader/learn", icon: "🎓", label: "บทเรียน", desc: "13 บท อ่าน-ควิซ" },
+              { href: "/acls-reader/test", icon: "📝", label: "แบบทดสอบ", desc: "Pre / Post-test" },
+              { href: "/acls-reader/ekg", icon: "💓", label: "ฝึกอ่าน EKG", desc: "อ่านจังหวะคลื่น" },
+              { href: "/acls-reader", icon: "📖", label: "อ่านเป็นบท", desc: "13 บทเต็ม" },
+            ].map((t) => (
               <Link
-                key={f.href}
-                href={f.href}
-                className="group flex flex-col gap-3 rounded-xl border border-rose-100 bg-white p-5 transition-all hover:shadow-md hover:border-rose-300"
+                key={t.href}
+                href={t.href}
+                className="group flex flex-col items-center gap-2 rounded-xl border border-emerald-100 bg-white p-6 text-center transition-all hover:shadow-md hover:border-emerald-300"
               >
-                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-rose-100 text-rose-600 group-hover:scale-110 transition-transform">
-                  <f.icon className="h-5 w-5" />
-                </div>
-                <div className="font-semibold text-gray-900">{f.title}</div>
-                <p className="text-sm text-muted-foreground">{f.desc}</p>
+                <span className="text-4xl group-hover:scale-110 transition-transform">{t.icon}</span>
+                <span className="text-sm font-semibold text-gray-900">{t.label}</span>
+                <span className="text-xs text-muted-foreground">{t.desc}</span>
               </Link>
             ))}
           </div>
           <div className="mt-8 text-center">
             <Link href="/acls-reader">
-              <Button className="bg-rose-500 hover:bg-rose-600 text-white gap-2">
-                เริ่มทบทวน ACLS <ArrowRight className="h-4 w-4" />
+              <Button className="bg-emerald-600 hover:bg-emerald-700 text-white gap-2">
+                เปิดคู่มือ ACLS <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>
           </div>
