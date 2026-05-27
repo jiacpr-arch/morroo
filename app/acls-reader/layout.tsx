@@ -51,6 +51,12 @@ export default function AclsReaderLayout({
             >
               ฝึก EKG
             </Link>
+            <Link
+              href="/acls-reader/learn"
+              className="rounded-lg px-3 py-1.5 font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              บทเรียน
+            </Link>
           </div>
         </div>
       </div>
