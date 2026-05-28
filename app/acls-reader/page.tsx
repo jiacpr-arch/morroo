@@ -3,6 +3,7 @@ import { getChapters } from "@/lib/acls-reader/content";
 import { getAssessmentSets } from "@/lib/acls-reader/assessment";
 import { preCourseLessons } from "@/lib/acls-reader/precourse";
 import ReaderProgress from "@/components/acls-reader/ReaderProgress";
+import LandingPageTracker from "@/components/LandingPageTracker";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
 export const revalidate = 600;
@@ -39,6 +40,7 @@ export default async function AclsReaderHome() {
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
+      <LandingPageTracker event="acls_reader_view" />
       <header className="mb-10 text-center">
         <h1 className="text-3xl font-bold sm:text-4xl">คู่มือทบทวน ACLS</h1>
         <p className="mt-3 text-lg text-muted-foreground">

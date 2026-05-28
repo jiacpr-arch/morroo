@@ -8,6 +8,7 @@ import AllExamsCountdown from "@/components/AllExamsCountdown";
 import GoodyEmbed from "@/components/GoodyEmbed";
 import HeroAB from "@/components/HeroAB";
 import PricingViewTracker from "@/components/PricingViewTracker";
+import SocialProofSection from "@/components/SocialProofSection";
 import { SocialButtonsRow, LineCtaButton } from "@/components/SocialLinks";
 import { CATEGORIES, PRICING_PLANS } from "@/lib/types";
 import { getExams, getExamPartCounts, sortExamsAvailableFirst } from "@/lib/supabase/queries";
@@ -291,6 +292,9 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Social Proof — testimonials + stats above pricing decision */}
+      <SocialProofSection />
 
       {/* Pricing */}
       <section className="py-16 bg-muted/30" id="pricing">

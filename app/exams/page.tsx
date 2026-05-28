@@ -6,6 +6,7 @@ import { CATEGORIES } from "@/lib/types";
 import AllExamsCountdown from "@/components/AllExamsCountdown";
 import InternalAdsBanner from "@/components/InternalAdsBanner";
 import { LineCtaButton } from "@/components/SocialLinks";
+import LandingPageTracker from "@/components/LandingPageTracker";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -108,6 +109,7 @@ export default async function ExamsPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }}
       />
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <LandingPageTracker event="exams_list_view" />
       <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-3xl font-bold">ข้อสอบทั้งหมด</h1>
