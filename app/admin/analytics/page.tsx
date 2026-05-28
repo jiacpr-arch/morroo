@@ -32,10 +32,15 @@ type Summary = {
   examStarts: number;
   checkoutClicks: number;
   socialLineClicks: number;
+  freeTrialCtaClicks: number;
+  exitIntentShows: number;
+  exitIntentCtaClicks: number;
+  landingViews: { surface: string; count: number }[];
   topPaths: { path: string; count: number }[];
   topReferrers: { ref: string; count: number }[];
   signupConv: number | null;
   checkoutConv: number | null;
+  ctaToSignupConv: number | null;
 };
 
 const RANGES = [
@@ -181,8 +186,47 @@ export default function AdminAnalyticsPage() {
                 : null
             }
           />
+          <FunnelRow
+            from="Free-trial CTA clicks"
+            to="Signups"
+            fromValue={summary.freeTrialCtaClicks}
+            toValue={summary.signups}
+            conv={summary.ctaToSignupConv}
+          />
+          <FunnelRow
+            from="Exit-intent popup shows"
+            to="Exit-intent CTA clicks"
+            fromValue={summary.exitIntentShows}
+            toValue={summary.exitIntentCtaClicks}
+            conv={
+              summary.exitIntentShows > 0
+                ? (summary.exitIntentCtaClicks / summary.exitIntentShows) * 100
+                : null
+            }
+          />
         </CardContent>
       </Card>
+
+      {summary.landingViews.length > 0 && (
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-base">Landing page entries</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul className="space-y-2">
+              {summary.landingViews.map((l) => (
+                <li
+                  key={l.surface}
+                  className="flex justify-between items-center text-sm border-b pb-1"
+                >
+                  <span className="font-mono text-xs">{l.surface}</span>
+                  <Badge variant="secondary">{l.count.toLocaleString()}</Badge>
+                </li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+      )}
 
       <div className="grid md:grid-cols-2 gap-4">
         <Card>
@@ -298,18 +342,42 @@ function FunnelRow({
   );
 }
 
+// Landing-page entry events fired by components/LandingPageTracker. Mapping
+// gives the dashboard a friendly surface label without hard-coding it in two
+// places.
+const LANDING_VIEW_EVENTS: Record<string, string> = {
+  nl_practice_view: "nl_practice",
+  longcase_view: "longcase",
+  acls_reader_view: "acls_reader",
+  exams_list_view: "exams",
+};
+
 function aggregate(rows: EventRow[]): Summary {
   let pageViews = 0;
   let signups = 0;
   let examStarts = 0;
   let checkoutClicks = 0;
   let socialLineClicks = 0;
+  let freeTrialCtaClicks = 0;
+  let exitIntentShows = 0;
+  let exitIntentCtaClicks = 0;
   const sessions = new Set<string>();
   const pathCounts = new Map<string, number>();
   const refCounts = new Map<string, number>();
+  const landingCounts = new Map<string, number>();
 
   for (const r of rows) {
     if (r.session_id) sessions.add(r.session_id);
+
+    const landingSurface = LANDING_VIEW_EVENTS[r.event_name];
+    if (landingSurface) {
+      landingCounts.set(
+        landingSurface,
+        (landingCounts.get(landingSurface) ?? 0) + 1
+      );
+      continue;
+    }
+
     switch (r.event_name) {
       case "pageview":
         pageViews++;
@@ -331,6 +399,15 @@ function aggregate(rows: EventRow[]): Summary {
       case "social_click":
         socialLineClicks++;
         break;
+      case "free_trial_cta_click":
+        freeTrialCtaClicks++;
+        break;
+      case "exit_intent_show":
+        exitIntentShows++;
+        break;
+      case "exit_intent_cta_click":
+        exitIntentCtaClicks++;
+        break;
     }
   }
 
@@ -346,10 +423,19 @@ function aggregate(rows: EventRow[]): Summary {
     examStarts,
     checkoutClicks,
     socialLineClicks,
+    freeTrialCtaClicks,
+    exitIntentShows,
+    exitIntentCtaClicks,
+    landingViews: toSorted(landingCounts).map(([surface, count]) => ({
+      surface,
+      count,
+    })),
     topPaths: toSorted(pathCounts).map(([path, count]) => ({ path, count })),
     topReferrers: toSorted(refCounts).map(([ref, count]) => ({ ref, count })),
     signupConv: sessions.size > 0 ? (signups / sessions.size) * 100 : null,
     checkoutConv: signups > 0 ? (checkoutClicks / signups) * 100 : null,
+    ctaToSignupConv:
+      freeTrialCtaClicks > 0 ? (signups / freeTrialCtaClicks) * 100 : null,
   };
 }
 
