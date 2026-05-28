@@ -17,6 +17,10 @@
       "schedule": "30 2 * * *"
     },
     {
+      "path": "/api/cron/signup-drip",
+      "schedule": "45 2 * * *"
+    },
+    {
       "path": "/api/cron/autopost-ig",
       "schedule": "0 13 * * *"
     },
