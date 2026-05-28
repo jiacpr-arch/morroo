@@ -10,6 +10,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { createClient } from "@/lib/supabase/client";
 import { track } from "@/lib/analytics";
+import LandingPageTracker from "@/components/LandingPageTracker";
+import PaymentTrustSignals from "@/components/PaymentTrustSignals";
 import {
   ArrowLeft,
   Building2,
@@ -250,6 +252,10 @@ export default function PaymentPage({
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6">
+      <LandingPageTracker
+        event="payment_view"
+        properties={{ plan }}
+      />
       <Link
         href="/pricing"
         className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-brand mb-6"
@@ -286,6 +292,8 @@ export default function PaymentPage({
             </div>
           </CardContent>
         </Card>
+
+        <PaymentTrustSignals />
 
         {/* Payment method selector */}
         <div>

@@ -10,6 +10,8 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { createClient } from "@/lib/supabase/client";
 import { track } from "@/lib/analytics";
 import BetaPromoBanner from "@/components/beta/BetaPromoBanner";
+import LandingPageTracker from "@/components/LandingPageTracker";
+import RegisterValueProps from "@/components/RegisterValueProps";
 
 const LINE_LOGIN_ENABLED = process.env.NEXT_PUBLIC_LINE_LOGIN_ENABLED === "true";
 
@@ -130,8 +132,13 @@ function RegisterForm() {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-[calc(100vh-12rem)] px-4 py-8">
-      <Card className="w-full max-w-md">
+    <div className="flex items-start justify-center min-h-[calc(100vh-12rem)] px-4 py-8">
+      <LandingPageTracker event="register_view" />
+      <div className="w-full max-w-md md:max-w-4xl grid gap-6 md:grid-cols-[1fr_minmax(0,28rem)]">
+        <div className="hidden md:block">
+          <RegisterValueProps />
+        </div>
+      <Card className="w-full">
         <CardHeader className="text-center space-y-2">
           <div className="text-4xl">🩺</div>
           <h1 className="text-2xl font-bold">สมัครสมาชิก</h1>
@@ -246,6 +253,7 @@ function RegisterForm() {
           </p>
         </CardFooter>
       </Card>
+      </div>
     </div>
   );
 }
