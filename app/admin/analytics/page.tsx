@@ -350,6 +350,8 @@ const LANDING_VIEW_EVENTS: Record<string, string> = {
   longcase_view: "longcase",
   acls_reader_view: "acls_reader",
   exams_list_view: "exams",
+  register_view: "register",
+  payment_view: "payment",
 };
 
 function aggregate(rows: EventRow[]): Summary {
