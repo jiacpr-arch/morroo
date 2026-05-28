@@ -6,6 +6,8 @@ import {
 } from "@/lib/supabase/queries-mcq";
 import McqPractice from "@/components/McqPractice";
 import InternalAdsBanner from "@/components/InternalAdsBanner";
+import LandingPageTracker from "@/components/LandingPageTracker";
+import FreeTrialBanner from "@/components/FreeTrialBanner";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { ArrowLeft, Sparkles } from "lucide-react";
@@ -150,6 +152,8 @@ async function PracticeContent({
 
   return (
     <div>
+      <LandingPageTracker event="nl_practice_view" />
+      {!user && <FreeTrialBanner surface="nl_practice" />}
       <InternalAdsBanner placement="practice-top" className="mb-4" />
 
       {/* Recommended banner */}

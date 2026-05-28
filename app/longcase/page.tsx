@@ -9,6 +9,8 @@ import type { Metadata } from "next";
 import LongCaseStartButton from "./LongCaseStartButton";
 import AllExamsCountdown from "@/components/AllExamsCountdown";
 import InternalAdsBanner from "@/components/InternalAdsBanner";
+import LandingPageTracker from "@/components/LandingPageTracker";
+import FreeTrialBanner from "@/components/FreeTrialBanner";
 
 export const metadata: Metadata = {
   title: "ฝึกสอบ Long Case กับ AI Patient & Examiner",
@@ -64,6 +66,8 @@ export default async function LongCasePage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <LandingPageTracker event="longcase_view" />
+      {!user && <FreeTrialBanner surface="longcase" />}
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center gap-2 mb-3">
