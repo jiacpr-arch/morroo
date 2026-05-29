@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ExamCard from "@/components/ExamCard";
 import PricingCard from "@/components/PricingCard";
+import PricingFaq from "@/components/PricingFaq";
 import DailyCountdown from "@/components/DailyCountdown";
 import AllExamsCountdown from "@/components/AllExamsCountdown";
 import GoodyEmbed from "@/components/GoodyEmbed";
@@ -308,6 +309,9 @@ export default async function HomePage() {
             {PRICING_PLANS.map((plan) => (
               <PricingCard key={plan.name} {...plan} />
             ))}
+          </div>
+          <div className="mt-16">
+            <PricingFaq surface="home_pricing" />
           </div>
         </div>
       </section>
