@@ -231,6 +231,140 @@ export const GUIDES: Guide[] = [
       { href: "/exams", label: "ข้อสอบ MEQ Progressive Case" },
     ],
   },
+  {
+    slug: "mcq-nl-strategy",
+    title: "เทคนิคทำข้อสอบ MCQ NL — พิชิตคะแนนเต็มแม้ไม่รู้ทุกข้อ",
+    metaTitle:
+      "เทคนิคทำข้อสอบ MCQ สอบ NL — กลยุทธ์ตัดข้อ + บริหารเวลา",
+    metaDescription:
+      "เคล็ดลับทำข้อสอบ MCQ ใบประกอบวิชาชีพแพทย์ NL Step 2/3 ตั้งแต่วิธีตัดตัวเลือก เทคนิคจำ pharma วิธีจัดเวลาในห้องสอบ และข้อสอบฟรีให้ลองทำ",
+    intro:
+      "MCQ ในสอบ NL Step 2/3 ไม่ได้ทดสอบเฉพาะความรู้ แต่ทดสอบกระบวนการตัดสินใจในเวลาจำกัด ผู้สอบที่ใช้เทคนิคถูกต้องสามารถได้คะแนนสูงกว่าผู้ที่อ่านมาก แต่บริหารเวลาไม่เป็น คู่มือนี้รวมเทคนิคจริงจากผู้สอบผ่าน",
+    keywords: [
+      "MCQ แพทย์",
+      "ข้อสอบ MCQ NL",
+      "เทคนิคทำ MCQ",
+      "ตัดข้อ MCQ",
+    ],
+    publishedAt: "2026-05-28",
+    readingMinutes: 6,
+    sections: [
+      {
+        heading: "บริหารเวลา 1 ข้อต่อนาที — ไม่นานเกิน",
+        body: [
+          "MCQ NL Step 3 มาตรฐานคือ 1 นาทีต่อข้อ ผู้สอบที่ตกค้างมักเสียเวลากับข้อยากๆ ตอนต้น แล้วทำข้อสุดท้ายไม่ทัน",
+        ],
+        bullets: [
+          "รอบแรก: ทำข้อง่ายให้หมด — ข้ามข้อที่ใช้เวลานานเกิน 90 วินาที",
+          "รอบสอง: กลับมาทำข้อที่ข้าม — มีเวลาคิดเต็มที่",
+          "รอบสาม (10 นาทีสุดท้าย): เดาทุกข้อที่ว่าง — ไม่เว้นเด็ดขาด",
+        ],
+      },
+      {
+        heading: "เทคนิคตัดตัวเลือก — จาก 4 เหลือ 2",
+        body: [
+          "ถ้าไม่รู้ทันที ให้ตัดตัวเลือกที่ผิดแน่ก่อน ลด probability การเดาผิดจาก 75% เป็น 50% ทำให้คะแนนรวมขึ้นชัดเจน",
+        ],
+        bullets: [
+          "ตัดตัวเลือกที่มี 'absolute words' เช่น always, never — ในการแพทย์ใช้ไม่ได้กับเกือบทุกกรณี",
+          "ตัดตัวเลือก dose ที่ผิดชัดเจน เช่น metformin 2,000 mg single dose",
+          "ตัดตัวเลือกที่ contradict ข้อมูลใน stem",
+          "ถ้าเหลือ 2 ตัวเลือก ดู nuance ของ stem — มี hint บ่อยครั้ง",
+        ],
+      },
+      {
+        heading: "วิชาที่มาออก MCQ บ่อยที่สุด 5 อันดับ",
+        body: [
+          "จากการรวบรวมข้อสอบย้อนหลัง 3 ปี วิชาเหล่านี้ออกในสัดส่วนสูง — ควรเน้นทบทวน",
+        ],
+        bullets: [
+          "Internal Medicine (35%) — เฉพาะ Cardio, Endo, Renal, ID",
+          "Surgery (15%) — Acute abdomen, Trauma management",
+          "Pediatrics (15%) — Developmental milestones, Common infections",
+          "OB-Gyn (15%) — Antenatal care, Obstetric emergencies",
+          "อื่นๆ (20%) — Psychiatry, Ortho, จิตเวช, ฉุกเฉิน",
+        ],
+      },
+      {
+        heading: "ฝึก MCQ 1,300+ ข้อฟรี — ลองได้ทันที",
+        body: [
+          "หมอรู้มี MCQ NL 1,300+ ข้อแบ่งตามสาขา พร้อมเฉลยพร้อมคำอธิบายทุกข้อ ใช้ AI วิเคราะห์จุดอ่อนและแนะนำข้อที่ควรทบทวน — ทดลองฟรี 5 ข้อต่อสาขาไม่ต้องใส่บัตรเครดิต",
+        ],
+      },
+    ],
+    relatedLinks: [
+      { href: "/nl/practice", label: "เริ่มทำ MCQ NL ฟรี" },
+      { href: "/learn/sob-nl-step-3", label: "ตารางอ่านเตรียมสอบ NL Step 3" },
+      { href: "/learn/meq-progressive-case", label: "เทคนิคทำ MEQ Progressive Case" },
+    ],
+  },
+  {
+    slug: "clinical-reasoning",
+    title: "Clinical Reasoning สำหรับสอบแพทย์ — คิดยังไงให้กรรมการให้คะแนน",
+    metaTitle:
+      "Clinical Reasoning สำหรับสอบแพทย์ — Framework + ตัวอย่างเคส",
+    metaDescription:
+      "เรียนรู้กระบวนการ Clinical Reasoning ที่กรรมการสอบ NL Step 3 ใช้ให้คะแนน ตั้งแต่การตั้ง differential diagnosis ไปจนถึงการวาง plan อย่างมีตรรกะ",
+    intro:
+      "Clinical Reasoning คือทักษะที่แยกระหว่างผู้สอบผ่านกับผู้สอบตก — กรรมการให้คะแนนตามคุณภาพของกระบวนการคิด ไม่ใช่จำนวนคำตอบที่ถูก ผู้สอบจำนวนมากตอบถูกแต่ได้คะแนนต่ำเพราะอธิบาย rationale ไม่ดีพอ",
+    keywords: [
+      "Clinical Reasoning",
+      "Differential Diagnosis",
+      "วิธีคิดเคส",
+      "เทคนิคสอบแพทย์",
+    ],
+    publishedAt: "2026-05-28",
+    readingMinutes: 7,
+    sections: [
+      {
+        heading: "Framework: Illness Script — มาตรฐานในการคิดเคส",
+        body: [
+          "Illness Script คือรูปแบบในการจำโรคที่มีโครงสร้าง 4 ส่วน ช่วยให้ดึงข้อมูลออกมาได้เร็วและไม่ตกหล่น",
+        ],
+        bullets: [
+          "Epidemiology — ใครเป็น (อายุ เพศ ปัจจัยเสี่ยง)",
+          "Pathophysiology — กลไกที่เกิดโรค",
+          "Clinical Features — อาการ + การตรวจร่างกาย",
+          "Investigation & Management — การยืนยัน + การรักษา",
+        ],
+      },
+      {
+        heading: "ตั้ง Differential อย่างไรให้กรรมการพอใจ",
+        body: [
+          "Differential ที่ดีไม่ใช่ list ยาวๆ แต่เป็น list ที่สมเหตุสมผลกับข้อมูลที่มี — กรรมการดู 3 อย่างคือความครอบคลุม ลำดับความน่าจะเป็น และเหตุผลของแต่ละข้อ",
+        ],
+        bullets: [
+          "ใส่ 3-5 ข้อ — ไม่น้อยเกินจนตกข้อสำคัญ ไม่มากเกินจนดู scatter",
+          "เรียงตามความน่าจะเป็น — most likely → less likely",
+          "ต้องมีอย่างน้อย 1 'can't miss' diagnosis (ที่ถ้าพลาดอาจเสียชีวิต)",
+          "อธิบาย rationale 1-2 ประโยคต่อข้อ ไม่ลอกตำรา",
+        ],
+      },
+      {
+        heading: "Plan management ที่ดี — Specific + Justified",
+        body: [
+          "Plan ที่ได้คะแนนเต็มต้องบอกได้ว่าทำอะไร ทำที่ไหน ทำกับใคร แล้วอธิบายว่าทำไม",
+        ],
+        bullets: [
+          "Specific dose + route + frequency — ไม่ใช่ 'antibiotic'",
+          "Disposition — admit/discharge/refer พร้อมเหตุผล",
+          "Monitoring — vital signs/labs ที่ต้องตามและความถี่",
+          "Counseling — สิ่งที่บอกผู้ป่วย/ครอบครัว",
+        ],
+      },
+      {
+        heading: "ฝึก Clinical Reasoning ด้วยเคสจริง",
+        body: [
+          "ทักษะนี้ฝึกได้ด้วยการทำเคสจริงเท่านั้น MEQ Progressive Case + Long Case ของหมอรู้ออกแบบมาเพื่อฝึก reasoning ตามขั้นโดยตรง พร้อม AI feedback เทียบกับ approach มาตรฐาน",
+        ],
+      },
+    ],
+    relatedLinks: [
+      { href: "/exams", label: "ฝึก MEQ Progressive Case ฟรี" },
+      { href: "/longcase", label: "ฝึก Long Case กับ AI Patient" },
+      { href: "/learn/meq-progressive-case", label: "เทคนิคทำ MEQ Progressive Case" },
+    ],
+  },
 ];
 
 export function getGuide(slug: string): Guide | null {

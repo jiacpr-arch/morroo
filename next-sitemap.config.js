@@ -20,6 +20,8 @@ module.exports = {
       "sob-nl-step-3",
       "meq-progressive-case",
       "long-case-ai-practice",
+      "mcq-nl-strategy",
+      "clinical-reasoning",
     ];
     const paths = [
       { loc: "/learn", changefreq: "weekly", priority: 0.7 },
