@@ -352,6 +352,7 @@ const LANDING_VIEW_EVENTS: Record<string, string> = {
   exams_list_view: "exams",
   register_view: "register",
   payment_view: "payment",
+  guide_view: "learn_guide",
 };
 
 function aggregate(rows: EventRow[]): Summary {
