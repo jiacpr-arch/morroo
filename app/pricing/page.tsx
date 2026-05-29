@@ -2,10 +2,22 @@ import { Suspense } from "react";
 import PricingCard from "@/components/PricingCard";
 import PricingViewTracker from "@/components/PricingViewTracker";
 import PricingPromo from "@/components/PricingPromo";
+import PricingFaq from "@/components/PricingFaq";
+import { PRICING_FAQ_ITEMS } from "@/lib/pricing-faq";
 import { LineCtaButton } from "@/components/SocialLinks";
 import { PRICING_PLANS, BOARD_PRICING_PLANS } from "@/lib/types";
 import { GraduationCap, Mic } from "lucide-react";
 import type { Metadata } from "next";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: PRICING_FAQ_ITEMS.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
 
 export const metadata: Metadata = {
   title: "แพ็กเกจราคา — เริ่มต้นฟรี",
@@ -23,6 +35,10 @@ export const metadata: Metadata = {
 export default function PricingPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <PricingViewTracker surface="pricing_page" />
       <Suspense fallback={null}>
         <PricingPromo />
@@ -81,45 +97,7 @@ export default function PricingPage() {
         <LineCtaButton surface="pricing" className="mt-4" />
       </div>
 
-      {/* FAQ */}
-      <div className="max-w-3xl mx-auto">
-        <h2 className="text-2xl font-bold text-center mb-8">
-          คำถามที่พบบ่อย
-        </h2>
-        <div className="space-y-6">
-          {[
-            {
-              q: "แพ็ก นศพ. และ Board ต่างกันยังไง?",
-              a: "แพ็ก นศพ. เหมาะกับ extern/intern ที่เตรียมสอบ NL Step 2 มีคลัง MCQ NL + MEQ + Long Case แพ็ก Board เหมาะกับแพทย์ที่กำลังสอบวุฒิบัตรเฉพาะทาง มีคลัง MCQ ตาม Blueprint ของราชวิทยาลัยฯ + Oral Exam แบบสอบจริง",
-            },
-            {
-              q: "ซื้อทั้ง 2 แพ็กได้ไหม?",
-              a: "ได้เลย ระบบรองรับการถือสมาชิกหลายแพ็กพร้อมกัน เหมาะกับช่วงเปลี่ยนผ่าน intern → ก่อนสอบบอร์ด",
-            },
-            {
-              q: "ข้อสอบฟรีดูเฉลยได้ไหม?",
-              a: "ข้อสอบที่ระบุว่าฟรี สามารถดูทั้งโจทย์และเฉลยได้โดยไม่ต้องสมัครสมาชิก แต่จำกัดจำนวน 2 ข้อต่อเดือน",
-            },
-            {
-              q: "สมัครแล้วยกเลิกได้ไหม?",
-              a: "ได้เลย คุณสามารถยกเลิกได้ทุกเมื่อ สมาชิกจะยังคงใช้งานได้จนกว่าจะหมดรอบบิล",
-            },
-            {
-              q: "Oral Exam คือยังไง?",
-              a: "เป็นการ present long case ต่อ AI examiner (อ.บอร์ด) ที่จำลองสไตล์อาจารย์สอบจริง challenge ด้วยคำถาม follow-up เชิงลึก อ้างอิงตำราหลักของสาขา (Tintinalli/Harrison/Nelson/Williams/ฯลฯ) แล้วให้คะแนน",
-            },
-            {
-              q: "มีข้อสอบเพิ่มบ่อยแค่ไหน?",
-              a: "เราเพิ่มข้อสอบ MCQ ใหม่ทุกวันผ่าน AI generator + เคส Oral ใหม่ทุกวันหมุนเวียนทุกสาขา",
-            },
-          ].map((faq) => (
-            <div key={faq.q} className="border rounded-lg p-5">
-              <h3 className="font-semibold">{faq.q}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{faq.a}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+      <PricingFaq surface="pricing_page" />
     </div>
   );
 }
