@@ -4,6 +4,7 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { createClient as createServerSupabaseClient } from "@/lib/supabase/server";
 import { sendTikTokEvent } from "@/lib/tiktok/events-api";
 import { sendMetaEvent } from "@/lib/meta/events-api";
+import { sendWelcomeEmail } from "@/lib/email/send";
 
 /**
  * GET /api/auth/line/callback
@@ -321,6 +322,19 @@ export async function GET(request: Request) {
         contentName: "signup",
       })
     );
+
+    // Welcome email — only when LINE returned a real email (the placeholder
+    // line_<uid>@line.morroo.com would bounce at Resend).
+    if (lineEmail) {
+      const welcomeName = lineProfile.displayName || "คุณหมอ";
+      after(() =>
+        sendWelcomeEmail({ email: lineEmail, name: welcomeName }).catch(
+          (err) => {
+            console.error("[line] welcome email failed:", err);
+          }
+        )
+      );
+    }
   }
 
   const destination = mode === "register" ? "/onboarding" : "/profile";

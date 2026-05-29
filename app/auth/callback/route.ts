@@ -7,6 +7,7 @@ import {
 } from "@/lib/beta";
 import { sendTikTokEvent } from "@/lib/tiktok/events-api";
 import { sendMetaEvent } from "@/lib/meta/events-api";
+import { sendWelcomeEmail } from "@/lib/email/send";
 
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url);
@@ -107,6 +108,23 @@ export async function GET(request: Request) {
             contentName: "signup",
           })
         );
+
+        const welcomeEmail = data.user!.email;
+        const welcomeName =
+          data.user!.user_metadata?.full_name ||
+          data.user!.user_metadata?.name ||
+          welcomeEmail ||
+          "คุณหมอ";
+        if (welcomeEmail) {
+          after(() =>
+            sendWelcomeEmail({
+              email: welcomeEmail,
+              name: typeof welcomeName === "string" ? welcomeName : "คุณหมอ",
+            }).catch((err) => {
+              console.error("[auth] welcome email failed:", err);
+            })
+          );
+        }
       }
 
       const dest = isNewSignup
