@@ -5,6 +5,9 @@ import type {
   SchoolQuiz,
   SchoolSystem,
   SchoolTopic,
+  SchoolConcept,
+  SchoolCase,
+  SchoolCaseStage,
 } from "../types-school";
 
 export async function getSchoolSystems(): Promise<SchoolSystem[]> {
@@ -377,4 +380,120 @@ export async function getDueCount(userId: string): Promise<number> {
     .eq("user_id", userId)
     .lte("due_at", new Date().toISOString());
   return count ?? 0;
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Phase 5 — Concepts (cross-subject tags)
+// ────────────────────────────────────────────────────────────────────────────
+
+export async function getSchoolConcepts(): Promise<SchoolConcept[]> {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("school_concepts")
+    .select("*")
+    .order("name_en");
+  if (error) {
+    console.error("Error fetching concepts:", error);
+    return [];
+  }
+  return (data as SchoolConcept[]) ?? [];
+}
+
+export async function getSchoolConceptBySlug(
+  slug: string
+): Promise<SchoolConcept | null> {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("school_concepts")
+    .select("*")
+    .eq("slug", slug)
+    .maybeSingle();
+  if (error) {
+    console.error("Error fetching concept:", error);
+    return null;
+  }
+  return (data as SchoolConcept) ?? null;
+}
+
+interface LinkedUnit {
+  unit_type: "flashcard" | "quiz" | "lesson" | "case_stage";
+  unit_id: string;
+}
+
+export async function getConceptLinkedUnits(
+  conceptId: string
+): Promise<LinkedUnit[]> {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("school_concept_links")
+    .select("unit_type, unit_id")
+    .eq("concept_id", conceptId);
+  if (error) return [];
+  return (data as LinkedUnit[]) ?? [];
+}
+
+export async function getConceptsForUnit(
+  unitType: "flashcard" | "quiz" | "lesson" | "case_stage",
+  unitId: string
+): Promise<SchoolConcept[]> {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("school_concept_links")
+    .select("school_concepts(*)")
+    .eq("unit_type", unitType)
+    .eq("unit_id", unitId);
+  if (error || !data) return [];
+  type Row = { school_concepts: SchoolConcept | null };
+  return (data as Row[])
+    .map((r) => r.school_concepts)
+    .filter((c): c is SchoolConcept => !!c);
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Phase 5 — Integrated Cases
+// ────────────────────────────────────────────────────────────────────────────
+
+export async function getSchoolCases(): Promise<SchoolCase[]> {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("school_cases")
+    .select("*, school_systems(*)")
+    .eq("status", "active")
+    .order("title");
+  if (error) {
+    console.error("Error fetching cases:", error);
+    return [];
+  }
+  return (data as SchoolCase[]) ?? [];
+}
+
+export async function getSchoolCase(id: string): Promise<SchoolCase | null> {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("school_cases")
+    .select("*, school_systems(*)")
+    .eq("id", id)
+    .eq("status", "active")
+    .maybeSingle();
+  if (error) {
+    console.error("Error fetching case:", error);
+    return null;
+  }
+  return (data as SchoolCase) ?? null;
+}
+
+export async function getSchoolCaseStages(
+  caseId: string
+): Promise<SchoolCaseStage[]> {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("school_case_stages")
+    .select("*")
+    .eq("case_id", caseId)
+    .order("stage_order");
+  if (error) {
+    console.error("Error fetching case stages:", error);
+    return [];
+  }
+  return (data as SchoolCaseStage[]) ?? [];
 }

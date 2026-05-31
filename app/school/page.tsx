@@ -16,6 +16,9 @@ import {
   Trophy,
   Award,
   Zap,
+  Bot,
+  Network,
+  Stethoscope,
 } from "lucide-react";
 import { xpToLevel } from "@/lib/school/xp";
 import {
@@ -276,6 +279,27 @@ export default async function SchoolPage() {
             color: "yellow",
             title: "Leaderboard",
             desc: "อันดับ XP",
+          },
+          {
+            href: "/school/tutor",
+            icon: Bot,
+            color: "indigo",
+            title: "AI Tutor",
+            desc: "ถามได้ตลอด",
+          },
+          {
+            href: "/school/concepts",
+            icon: Network,
+            color: "cyan",
+            title: "Concepts",
+            desc: "เชื่อมข้ามวิชา",
+          },
+          {
+            href: "/school/cases",
+            icon: Stethoscope,
+            color: "orange",
+            title: "Cases",
+            desc: "Y1→Y6 walk-through",
           },
         ].map((m) => (
           <Link key={m.href} href={m.href}>
