@@ -96,34 +96,15 @@ export default async function YearPage({ params }: PageProps) {
                               <BookOpen className="h-3 w-3" /> {qz} ข้อ
                             </span>
                           </div>
-                          <div className="flex gap-2">
-                            <Link
-                              href={`/school/flashcards?topic=${t.id}`}
-                              className="flex-1"
+                          <Link href={`/school/topic/${t.id}`}>
+                            <Button
+                              size="sm"
+                              className="w-full bg-brand hover:bg-brand-light text-white"
+                              disabled={fc === 0 && qz === 0}
                             >
-                              <Button
-                                variant="outline"
-                                size="sm"
-                                className="w-full"
-                                disabled={fc === 0}
-                              >
-                                Flashcards
-                              </Button>
-                            </Link>
-                            <Link
-                              href={`/school/quiz?topic=${t.id}`}
-                              className="flex-1"
-                            >
-                              <Button
-                                variant="outline"
-                                size="sm"
-                                className="w-full"
-                                disabled={qz === 0}
-                              >
-                                Quiz
-                              </Button>
-                            </Link>
-                          </div>
+                              เปิด Topic
+                            </Button>
+                          </Link>
                         </CardContent>
                       </Card>
                     );

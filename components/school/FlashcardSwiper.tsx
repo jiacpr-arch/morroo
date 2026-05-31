@@ -12,6 +12,7 @@ import { nextSrsState } from "@/lib/school/srs";
 import { applyStreak } from "@/lib/school/streak";
 import SelfExplainModal from "./SelfExplainModal";
 import ElaborateModal from "./ElaborateModal";
+import { XP, awardXp, awardBadge } from "@/lib/school/xp";
 
 interface Props {
   cards: SchoolFlashcard[];
@@ -93,6 +94,18 @@ export default function FlashcardSwiper({
     } catch {
       // Non-blocking
     }
+
+    // XP + badges
+    const xpAmount =
+      outcome === "again"
+        ? XP.flashcardAgain
+        : outcome === "hard"
+          ? XP.flashcardHard
+          : outcome === "good"
+            ? XP.flashcardGood
+            : XP.flashcardEasy;
+    await awardXp(xpAmount, `flashcard:${outcome}`);
+    if (seen === 0) await awardBadge("first_card");
 
     setFlipped(false);
     setIndex((i) => i + 1);

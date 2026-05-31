@@ -13,7 +13,11 @@ import {
   Flame,
   Calendar,
   Target,
+  Trophy,
+  Award,
+  Zap,
 } from "lucide-react";
+import { xpToLevel } from "@/lib/school/xp";
 import {
   getSchoolSystems,
   getSchoolTopicsByYear,
@@ -52,20 +56,28 @@ export default async function SchoolPage() {
   let dailyGoal = 20;
   let dailyDone = 0;
   let currentYear: number | null = null;
+  let xp = 0;
+  let badgeCount = 0;
   if (user) {
-    const [s, due, profileRes] = await Promise.all([
+    const [s, due, profileRes, badgesRes] = await Promise.all([
       getSchoolStreak(user.id),
       getDueCount(user.id),
       supabase
         .from("profiles")
-        .select("current_year, school_daily_goal")
+        .select("current_year, school_daily_goal, school_xp")
         .eq("id", user.id)
         .maybeSingle(),
+      supabase
+        .from("school_user_badges")
+        .select("badge_id", { count: "exact", head: true })
+        .eq("user_id", user.id),
     ]);
     streak = s;
     dueCount = due;
     dailyGoal = profileRes.data?.school_daily_goal ?? 20;
     currentYear = profileRes.data?.current_year ?? null;
+    xp = profileRes.data?.school_xp ?? 0;
+    badgeCount = badgesRes.count ?? 0;
     // Count units done today
     const startOfDay = new Date();
     startOfDay.setHours(0, 0, 0, 0);
@@ -105,6 +117,39 @@ export default async function SchoolPage() {
 
       {user && (
         <>
+          {/* XP / Level banner */}
+          {(() => {
+            const lvl = xpToLevel(xp);
+            return (
+              <Card className="mb-4 border-amber-200 bg-gradient-to-r from-amber-50 to-yellow-50">
+                <CardContent className="p-4">
+                  <div className="flex items-center gap-3 mb-2">
+                    <Zap className="h-8 w-8 text-amber-600" />
+                    <div className="flex-1">
+                      <p className="text-xs text-muted-foreground">
+                        Level {lvl.level} · {xp} XP · {badgeCount} badges
+                      </p>
+                      <p className="font-bold text-amber-700">
+                        ถัดไป Level {lvl.level + 1} ({lvl.nextAt - xp} XP)
+                      </p>
+                    </div>
+                    <Link href="/school/leaderboard">
+                      <Button variant="outline" size="sm" className="gap-1">
+                        <Trophy className="h-4 w-4" /> Leaderboard
+                      </Button>
+                    </Link>
+                  </div>
+                  <div className="h-2 bg-amber-100 rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-amber-500 transition-all"
+                      style={{ width: `${lvl.progress}%` }}
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })()}
+
           {/* Streak + Daily goal */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
             <Card className="border-orange-200 bg-orange-50/50">
@@ -173,8 +218,8 @@ export default async function SchoolPage() {
         </>
       )}
 
-      {/* Mode selection — 6 modes */}
-      <div className="grid grid-cols-2 lg:grid-cols-6 gap-3 mb-12">
+      {/* Mode selection — 8 modes */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-12">
         {[
           {
             href: "/school/daily",
@@ -217,6 +262,20 @@ export default async function SchoolPage() {
             color: "indigo",
             title: "Progress",
             desc: "Mastery + ปลดล็อก",
+          },
+          {
+            href: "/school/badges",
+            icon: Award,
+            color: "amber",
+            title: "Badges",
+            desc: "เหรียญรางวัล",
+          },
+          {
+            href: "/school/leaderboard",
+            icon: Trophy,
+            color: "yellow",
+            title: "Leaderboard",
+            desc: "อันดับ XP",
           },
         ].map((m) => (
           <Link key={m.href} href={m.href}>
