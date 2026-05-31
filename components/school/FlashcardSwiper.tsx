@@ -12,6 +12,7 @@ import { nextSrsState } from "@/lib/school/srs";
 import { applyStreak } from "@/lib/school/streak";
 import SelfExplainModal from "./SelfExplainModal";
 import ElaborateModal from "./ElaborateModal";
+import RelatedConcepts from "./RelatedConcepts";
 import { XP, awardXp, awardBadge } from "@/lib/school/xp";
 
 interface Props {
@@ -212,6 +213,7 @@ export default function FlashcardSwiper({
                     ที่มา: {card.source}
                   </p>
                 )}
+                <RelatedConcepts unitType="flashcard" unitId={card.id} />
               </div>
             )}
           </div>

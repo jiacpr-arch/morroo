@@ -71,3 +71,36 @@ export type SchoolProgressOutcome =
   | "easy"
   | "correct"
   | "wrong";
+
+export interface SchoolConcept {
+  id: string;
+  slug: string;
+  name_th: string;
+  name_en: string;
+  description: string | null;
+  icon: string;
+}
+
+export interface SchoolCase {
+  id: string;
+  slug: string;
+  title: string;
+  presentation: string;
+  difficulty: SchoolDifficulty;
+  audience_years: number[];
+  primary_system_id: string | null;
+  school_systems?: SchoolSystem;
+}
+
+export interface SchoolCaseStage {
+  id: string;
+  case_id: string;
+  stage_order: number;
+  layer: SchoolLayer;
+  title: string;
+  body_md: string;
+  mini_quiz_stem: string | null;
+  mini_quiz_choices: { label: string; text: string }[] | null;
+  mini_quiz_answer: string | null;
+  mini_quiz_explanation: string | null;
+}
