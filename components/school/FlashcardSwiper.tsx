@@ -15,7 +15,8 @@ import ElaborateModal from "./ElaborateModal";
 import RelatedConcepts from "./RelatedConcepts";
 import BookmarkButton from "./BookmarkButton";
 import NoteEditor from "./NoteEditor";
-import { XP, awardXp, awardBadge } from "@/lib/school/xp";
+import AudioPlayer from "./AudioPlayer";
+import { XP, awardXp, awardBadge, detectBadges } from "@/lib/school/xp";
 
 interface Props {
   cards: SchoolFlashcard[];
@@ -109,6 +110,7 @@ export default function FlashcardSwiper({
             : XP.flashcardEasy;
     await awardXp(xpAmount, `flashcard:${outcome}`);
     if (seen === 0) await awardBadge("first_card");
+    if ((seen + 1) % 25 === 0) await detectBadges();
 
     setFlipped(false);
     setIndex((i) => i + 1);
@@ -190,6 +192,7 @@ export default function FlashcardSwiper({
             >
               <EyeOff className="h-3 w-3" /> Cloze
             </button>
+            <AudioPlayer text={flipped ? card.back : card.front} />
             <BookmarkButton unitType="flashcard" unitId={card.id} />
           </div>
 

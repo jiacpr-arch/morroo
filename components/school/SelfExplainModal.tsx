@@ -38,6 +38,14 @@ export default function SelfExplainModal({ concept, onClose }: Props) {
       }
       const data = (await res.json()) as Feedback;
       setResult(data);
+      // Award XP + detect feynman_5 badge
+      try {
+        const { awardXp, detectBadges } = await import("@/lib/school/xp");
+        await awardXp(15, "feynman:complete");
+        await detectBadges({ feynmanCompleted: true });
+      } catch {
+        // Non-blocking
+      }
     } catch (e) {
       setError(e instanceof Error ? e.message : "Error");
     } finally {

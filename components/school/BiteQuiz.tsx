@@ -10,7 +10,7 @@ import type { SchoolQuiz } from "@/lib/types-school";
 import { createClient } from "@/lib/supabase/client";
 import { nextSrsState } from "@/lib/school/srs";
 import { applyStreak } from "@/lib/school/streak";
-import { XP, awardXp } from "@/lib/school/xp";
+import { XP, awardXp, detectBadges } from "@/lib/school/xp";
 
 interface Props {
   quizzes: SchoolQuiz[];
@@ -101,6 +101,7 @@ export default function BiteQuiz({
           : XP.quizMedium
       : XP.quizWrong;
     await awardXp(xp, `quiz:${quiz.difficulty}:${correct ? "right" : "wrong"}`);
+    if ((score.total + 1) % 10 === 0) await detectBadges();
   }
 
   function next() {

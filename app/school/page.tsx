@@ -23,6 +23,8 @@ import {
   Bookmark,
   GitCompare,
   Database,
+  Route,
+  Settings as SettingsIcon,
 } from "lucide-react";
 import { xpToLevel } from "@/lib/school/xp";
 import {
@@ -337,6 +339,20 @@ export default async function SchoolPage() {
             color: "amber",
             title: "Saved",
             desc: "Bookmarks + Notes",
+          },
+          {
+            href: "/school/tracks",
+            icon: Route,
+            color: "lime",
+            title: "Tracks",
+            desc: "Curated bundles",
+          },
+          {
+            href: "/school/settings",
+            icon: SettingsIcon,
+            color: "slate",
+            title: "Settings",
+            desc: "เปลี่ยน goal / year",
           },
         ].map((m) => (
           <Link key={m.href} href={m.href}>

@@ -11,6 +11,7 @@ import { createClient } from "@/lib/supabase/client";
 import { nextSrsState } from "@/lib/school/srs";
 import { applyStreak } from "@/lib/school/streak";
 import RewardBadge from "./RewardBadge";
+import { awardXp, XP, detectBadges } from "@/lib/school/xp";
 
 interface Props {
   cards: SchoolFlashcard[];
@@ -113,6 +114,12 @@ export default function DailyLessonStepper({ cards, quizzes }: Props) {
   if (done) {
     const total = steps.length;
     const pct = total ? Math.round((correctCount / total) * 100) : 0;
+    // Fire-and-forget badge detection on completion
+    if (typeof window !== "undefined") {
+      awardXp(XP.dailyComplete, "daily:complete").then(() =>
+        detectBadges({ perfectDaily: pct === 100 })
+      );
+    }
     return (
       <Card>
         <CardContent className="p-8 text-center space-y-4">
