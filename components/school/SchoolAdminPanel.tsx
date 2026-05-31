@@ -6,8 +6,10 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Loader2, Check, AlertCircle } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
+import ImportPanel from "./ImportPanel";
 
 type Tab =
+  | "import"
   | "topic"
   | "lesson"
   | "flashcard"
@@ -31,7 +33,7 @@ interface Props {
 const LAYERS = ["foundation", "anatomy", "physio", "biochem", "path", "pharm", "clinical"];
 
 export default function SchoolAdminPanel({ systems, concepts, topics }: Props) {
-  const [tab, setTab] = useState<Tab>("topic");
+  const [tab, setTab] = useState<Tab>("import");
   const [status, setStatus] = useState<{ kind: "ok" | "err"; msg: string } | null>(null);
   const [busy, setBusy] = useState(false);
 
@@ -45,6 +47,7 @@ export default function SchoolAdminPanel({ systems, concepts, topics }: Props) {
       <div className="flex flex-wrap gap-1 border-b">
         {(
           [
+            ["import", "✨ Import (AI)"],
             ["topic", "Topic"],
             ["lesson", "Lesson"],
             ["flashcard", "Flashcard"],
@@ -81,6 +84,7 @@ export default function SchoolAdminPanel({ systems, concepts, topics }: Props) {
         </div>
       )}
 
+      {tab === "import" && <ImportPanel topics={topics} />}
       {tab === "topic" && (
         <TopicForm systems={systems} busy={busy} setBusy={setBusy} notify={notify} />
       )}
