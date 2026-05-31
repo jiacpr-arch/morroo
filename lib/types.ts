@@ -15,11 +15,15 @@ export interface Profile {
     | "longcase_monthly"
     | "longcase_yearly"
     | "board_monthly"
-    | "board_yearly";
+    | "board_yearly"
+    | "school_monthly"
+    | "school_yearly";
   membership_expires_at: string | null;
   created_at: string;
   onboarding_done: boolean;
   daily_goal: number;
+  current_year: 1 | 2 | 3 | 4 | 5 | 6 | null;
+  school_daily_goal: number;
   target_exam: "NL1" | "NL2" | "both" | "board" | null;
   weak_subjects: string[] | null;
   referral_code: string | null;
