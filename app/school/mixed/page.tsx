@@ -22,7 +22,7 @@ export default async function MixedPage() {
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("current_year, membership_type, membership_expires_at")
+    .select("current_year, weak_subjects, membership_type, membership_expires_at")
     .eq("id", user.id)
     .maybeSingle();
   if (!profile?.current_year) redirect("/school/onboarding");
@@ -31,6 +31,7 @@ export default async function MixedPage() {
   const cards = await getMixedFlashcards({
     userId: user.id,
     year: profile.current_year,
+    weakSystemIds: profile.weak_subjects ?? [],
     limit: 30,
   });
 

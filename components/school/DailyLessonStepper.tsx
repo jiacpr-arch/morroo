@@ -4,12 +4,13 @@ import { useMemo, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Trophy, ArrowLeft, ArrowRight, Flame } from "lucide-react";
+import { Trophy, ArrowRight, Flame } from "lucide-react";
 import Link from "next/link";
 import type { SchoolFlashcard, SchoolQuiz } from "@/lib/types-school";
 import { createClient } from "@/lib/supabase/client";
 import { nextSrsState } from "@/lib/school/srs";
 import { applyStreak } from "@/lib/school/streak";
+import RewardBadge from "./RewardBadge";
 
 interface Props {
   cards: SchoolFlashcard[];
@@ -125,6 +126,9 @@ export default function DailyLessonStepper({ cards, quizzes }: Props) {
               <Flame className="h-5 w-5" /> Streak {streak} วันติด
             </div>
           )}
+          <div>
+            <RewardBadge />
+          </div>
           <div className="flex gap-3 justify-center pt-2">
             <Link href="/school/review">
               <Button variant="outline">ทบทวน Due cards</Button>
