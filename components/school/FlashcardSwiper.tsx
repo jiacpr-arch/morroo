@@ -13,6 +13,8 @@ import { applyStreak } from "@/lib/school/streak";
 import SelfExplainModal from "./SelfExplainModal";
 import ElaborateModal from "./ElaborateModal";
 import RelatedConcepts from "./RelatedConcepts";
+import BookmarkButton from "./BookmarkButton";
+import NoteEditor from "./NoteEditor";
 import { XP, awardXp, awardBadge } from "@/lib/school/xp";
 
 interface Props {
@@ -188,6 +190,7 @@ export default function FlashcardSwiper({
             >
               <EyeOff className="h-3 w-3" /> Cloze
             </button>
+            <BookmarkButton unitType="flashcard" unitId={card.id} />
           </div>
 
           <div className="flex-1 flex flex-col items-center justify-center text-center min-h-[180px]">
@@ -214,6 +217,7 @@ export default function FlashcardSwiper({
                   </p>
                 )}
                 <RelatedConcepts unitType="flashcard" unitId={card.id} />
+                <NoteEditor unitType="flashcard" unitId={card.id} />
               </div>
             )}
           </div>
