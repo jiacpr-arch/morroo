@@ -1,5 +1,6 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import remarkBreaks from "remark-breaks";
 
 import { cn } from "@/lib/utils";
 
@@ -33,7 +34,12 @@ export default function Markdown({
 }) {
   return (
     <div className={cn(PROSE, className)}>
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>{children}</ReactMarkdown>
+      {/* remarkBreaks: honor single newlines in the source so plain-text
+          answers (which use single line breaks rather than markdown markup)
+          don't collapse into one run-on paragraph. */}
+      <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]}>
+        {children}
+      </ReactMarkdown>
     </div>
   );
 }
