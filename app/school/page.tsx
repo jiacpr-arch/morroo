@@ -111,7 +111,7 @@ export default async function SchoolPage() {
             return (
               <Link
                 key={y}
-                href={disabled ? "#" : `/school/y${y}`}
+                href={disabled ? "#" : `/school/${y}`}
                 aria-disabled={disabled}
                 className={disabled ? "pointer-events-none" : ""}
               >
