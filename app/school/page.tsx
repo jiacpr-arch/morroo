@@ -173,8 +173,8 @@ export default async function SchoolPage() {
         </>
       )}
 
-      {/* Mode selection — 5 modes */}
-      <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 mb-12">
+      {/* Mode selection — 6 modes */}
+      <div className="grid grid-cols-2 lg:grid-cols-6 gap-3 mb-12">
         {[
           {
             href: "/school/daily",
@@ -210,6 +210,13 @@ export default async function SchoolPage() {
             color: "rose",
             title: "Review",
             desc: "ใกล้ลืม — SRS",
+          },
+          {
+            href: "/school/progress",
+            icon: GraduationCap,
+            color: "indigo",
+            title: "Progress",
+            desc: "Mastery + ปลดล็อก",
           },
         ].map((m) => (
           <Link key={m.href} href={m.href}>
@@ -304,6 +311,30 @@ export default async function SchoolPage() {
           <div>
             <p className="font-semibold mb-1">✓ Self-explanation (Feynman)</p>
             <p className="text-muted-foreground">อธิบายให้คนอื่นฟัง → AI ตรวจให้คะแนน + บอกที่ขาด</p>
+          </div>
+          <div>
+            <p className="font-semibold mb-1">✓ Elaborative Interrogation</p>
+            <p className="text-muted-foreground">AI ตั้งคำถาม "ทำไม / อย่างไร?" บังคับคิดถึงกลไก — Dunlosky 2013</p>
+          </div>
+          <div>
+            <p className="font-semibold mb-1">✓ Generation Effect (Cloze)</p>
+            <p className="text-muted-foreground">ปิดคำตอบบางส่วน — บังคับเดา/สร้างคำตอบ — Slamecka & Graf 1978</p>
+          </div>
+          <div>
+            <p className="font-semibold mb-1">✓ Mastery Learning (Bloom)</p>
+            <p className="text-muted-foreground">ปลดล็อก topic ถัดไปเมื่อได้ 80%+ — bloom 1968</p>
+          </div>
+          <div>
+            <p className="font-semibold mb-1">✓ Adaptive / Weak-subject bias</p>
+            <p className="text-muted-foreground">ระบบหยิบ topic ที่คุณไม่ถนัดมาฝึกบ่อยขึ้น — Vygotsky ZPD</p>
+          </div>
+          <div>
+            <p className="font-semibold mb-1">✓ Variable Reward</p>
+            <p className="text-muted-foreground">รางวัลสุ่มหลังจบ session — Skinner box, dopamine loop</p>
+          </div>
+          <div>
+            <p className="font-semibold mb-1">✓ Dual Coding</p>
+            <p className="text-muted-foreground">คำ + ภาพ — แสดง diagram บน flashcard (ถ้ามี) — Paivio</p>
           </div>
           <div>
             <p className="font-semibold mb-1">✓ Microlearning + Streak</p>

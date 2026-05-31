@@ -170,11 +170,14 @@ export async function getSchoolTopicBySlug(
 /**
  * Return cards mixed across topics for an "Interleaved" session. If the user
  * has reviewed cards before, prioritise due ones; otherwise random fresh.
+ * Adaptive: cards from `weak_subjects` (systems the user said they struggle
+ * with) are over-sampled.
  */
 export async function getMixedFlashcards(opts: {
   userId: string;
   year?: number;
   limit?: number;
+  weakSystemIds?: string[];
 }): Promise<SchoolFlashcard[]> {
   const supabase = await createClient();
   const limit = opts.limit ?? 20;
@@ -203,7 +206,7 @@ export async function getMixedFlashcards(opts: {
     cards.push(...((data as SchoolFlashcard[]) ?? []));
   }
 
-  // Step 2 — fill with fresh (not yet reviewed) cards
+  // Step 2 — fill with fresh (not yet reviewed) cards, biased toward weak systems
   if (cards.length < limit) {
     const { data: seenRows } = await supabase
       .from("school_progress")
@@ -215,16 +218,31 @@ export async function getMixedFlashcards(opts: {
     );
     let q = supabase
       .from("school_flashcards")
-      .select("*, school_topics!inner(year)")
+      .select("*, school_topics!inner(year, system_id)")
       .eq("status", "active")
-      .limit(limit * 3);
+      .limit(limit * 4);
     if (opts.year) q = q.eq("school_topics.year", opts.year);
     const { data: pool } = await q;
-    const fresh = ((pool as SchoolFlashcard[]) ?? []).filter(
+    type RowWithTopic = SchoolFlashcard & { school_topics?: { system_id?: string } };
+    const fresh = ((pool as RowWithTopic[]) ?? []).filter(
       (c) => !seenIds.has(c.id)
     );
-    fresh.sort(() => Math.random() - 0.5);
-    cards.push(...fresh.slice(0, limit - cards.length));
+    // Bias: weak system cards get duplicated weight in shuffling
+    const weakSet = new Set(opts.weakSystemIds ?? []);
+    const weighted: SchoolFlashcard[] = [];
+    for (const c of fresh) {
+      const inWeak = weakSet.size && c.school_topics?.system_id && weakSet.has(c.school_topics.system_id);
+      weighted.push(c);
+      if (inWeak) weighted.push(c); // bias 2x
+    }
+    weighted.sort(() => Math.random() - 0.5);
+    const seen = new Set(cards.map((c) => c.id));
+    for (const c of weighted) {
+      if (cards.length >= limit) break;
+      if (seen.has(c.id)) continue;
+      cards.push(c);
+      seen.add(c.id);
+    }
   }
 
   // Interleave by shuffling

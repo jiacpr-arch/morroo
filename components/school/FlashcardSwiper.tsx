@@ -4,13 +4,14 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { RotateCw, Trophy, ArrowLeft, ArrowRight, Sparkles } from "lucide-react";
+import { RotateCw, Trophy, ArrowLeft, ArrowRight, Sparkles, HelpCircle, EyeOff } from "lucide-react";
 import Link from "next/link";
 import type { SchoolFlashcard } from "@/lib/types-school";
 import { createClient } from "@/lib/supabase/client";
 import { nextSrsState } from "@/lib/school/srs";
 import { applyStreak } from "@/lib/school/streak";
 import SelfExplainModal from "./SelfExplainModal";
+import ElaborateModal from "./ElaborateModal";
 
 interface Props {
   cards: SchoolFlashcard[];
@@ -38,6 +39,8 @@ export default function FlashcardSwiper({
   const [seen, setSeen] = useState(0);
   const [knew, setKnew] = useState(0);
   const [explainOpen, setExplainOpen] = useState(false);
+  const [elaborateOpen, setElaborateOpen] = useState(false);
+  const [clozeMode, setClozeMode] = useState(false);
 
   const effectiveCards = isPremium ? cards : cards.slice(0, freeLimit);
   const card = effectiveCards[index];
@@ -156,12 +159,32 @@ export default function FlashcardSwiper({
             <Badge variant="outline" className="text-xs">
               {card.difficulty}
             </Badge>
-            <span className="ml-auto text-xs text-muted-foreground">
-              แตะการ์ดเพื่อเปิดเฉลย
-            </span>
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setClozeMode((m) => !m);
+              }}
+              className={`ml-auto text-xs flex items-center gap-1 px-2 py-1 rounded transition-colors ${
+                clozeMode
+                  ? "bg-indigo-100 text-indigo-700"
+                  : "text-muted-foreground hover:bg-muted"
+              }`}
+              title="Cloze — ปิดคำตอบบางส่วน บังคับเดา"
+            >
+              <EyeOff className="h-3 w-3" /> Cloze
+            </button>
           </div>
 
-          <div className="flex-1 flex items-center justify-center text-center min-h-[180px]">
+          <div className="flex-1 flex flex-col items-center justify-center text-center min-h-[180px]">
+            {card.image_url && (
+              <img
+                src={card.image_url}
+                alt=""
+                className="max-h-40 mb-3 rounded"
+                aria-hidden
+              />
+            )}
             {!flipped ? (
               <p className="text-lg sm:text-xl font-medium whitespace-pre-wrap">
                 {card.front}
@@ -169,7 +192,7 @@ export default function FlashcardSwiper({
             ) : (
               <div className="space-y-3">
                 <p className="text-base sm:text-lg whitespace-pre-wrap">
-                  {card.back}
+                  {clozeMode ? maskCloze(card.back) : card.back}
                 </p>
                 {card.source && (
                   <p className="text-xs text-muted-foreground italic">
@@ -218,14 +241,24 @@ export default function FlashcardSwiper({
               ง่าย
             </Button>
           </div>
-          <Button
-            onClick={() => setExplainOpen(true)}
-            variant="ghost"
-            size="sm"
-            className="w-full text-violet-700 hover:bg-violet-50 gap-2"
-          >
-            <Sparkles className="h-4 w-4" /> ลองอธิบายให้คนอื่นฟัง (AI ตรวจ)
-          </Button>
+          <div className="grid grid-cols-2 gap-2">
+            <Button
+              onClick={() => setExplainOpen(true)}
+              variant="ghost"
+              size="sm"
+              className="text-violet-700 hover:bg-violet-50 gap-2"
+            >
+              <Sparkles className="h-4 w-4" /> Feynman
+            </Button>
+            <Button
+              onClick={() => setElaborateOpen(true)}
+              variant="ghost"
+              size="sm"
+              className="text-amber-700 hover:bg-amber-50 gap-2"
+            >
+              <HelpCircle className="h-4 w-4" /> ทำไม / อย่างไร
+            </Button>
+          </div>
         </div>
       )}
 
@@ -235,6 +268,28 @@ export default function FlashcardSwiper({
           onClose={() => setExplainOpen(false)}
         />
       )}
+      {elaborateOpen && (
+        <ElaborateModal
+          concept={`${card.front} → ${card.back}`}
+          onClose={() => setElaborateOpen(false)}
+        />
+      )}
     </div>
   );
+}
+
+/**
+ * Cloze deletion — masks roughly every 3rd content word with [...].
+ * Forces the learner to generate (generation effect, Slamecka & Graf 1978).
+ */
+function maskCloze(text: string): string {
+  const words = text.split(/(\s+)/);
+  let nth = 0;
+  return words
+    .map((w) => {
+      if (/^\s+$/.test(w) || w.length < 4) return w;
+      nth += 1;
+      return nth % 3 === 0 ? "▢▢▢" : w;
+    })
+    .join("");
 }

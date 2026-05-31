@@ -25,14 +25,19 @@ export default async function DailyPage() {
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("current_year, school_daily_goal, membership_type, membership_expires_at")
+    .select("current_year, school_daily_goal, weak_subjects, membership_type, membership_expires_at")
     .eq("id", user.id)
     .maybeSingle();
   if (!profile?.current_year) redirect("/school/onboarding");
 
   const isPremium = hasSchoolAccess(profile);
   const [cards, quizzes] = await Promise.all([
-    getMixedFlashcards({ userId: user.id, year: profile.current_year, limit: 5 }),
+    getMixedFlashcards({
+      userId: user.id,
+      year: profile.current_year,
+      weakSystemIds: profile.weak_subjects ?? [],
+      limit: 5,
+    }),
     getMixedQuizzes({ userId: user.id, year: profile.current_year, limit: 3 }),
   ]);
 
