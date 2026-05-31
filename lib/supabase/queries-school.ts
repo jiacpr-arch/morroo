@@ -143,6 +143,20 @@ export async function getSchoolLesson(id: string): Promise<SchoolLesson | null> 
   return (data as SchoolLesson) ?? null;
 }
 
+export async function getSchoolTopic(id: string): Promise<SchoolTopic | null> {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("school_topics")
+    .select("*, school_systems(*)")
+    .eq("id", id)
+    .maybeSingle();
+  if (error) {
+    console.error("Error fetching school topic:", error);
+    return null;
+  }
+  return (data as SchoolTopic) ?? null;
+}
+
 export async function getSchoolTopicBySlug(
   systemSlug: string,
   year: number,

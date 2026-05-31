@@ -10,6 +10,7 @@ import type { SchoolQuiz } from "@/lib/types-school";
 import { createClient } from "@/lib/supabase/client";
 import { nextSrsState } from "@/lib/school/srs";
 import { applyStreak } from "@/lib/school/streak";
+import { XP, awardXp } from "@/lib/school/xp";
 
 interface Props {
   quizzes: SchoolQuiz[];
@@ -90,6 +91,16 @@ export default function BiteQuiz({
     } catch {
       // Non-blocking
     }
+
+    // XP based on difficulty
+    const xp = correct
+      ? quiz.difficulty === "hard"
+        ? XP.quizHard
+        : quiz.difficulty === "easy"
+          ? XP.quizEasy
+          : XP.quizMedium
+      : XP.quizWrong;
+    await awardXp(xp, `quiz:${quiz.difficulty}:${correct ? "right" : "wrong"}`);
   }
 
   function next() {
