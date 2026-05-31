@@ -75,9 +75,16 @@ export default async function QaDeepItemPage({
       </nav>
 
       <article>
-        <h1 className="mb-6 text-2xl font-bold leading-snug sm:text-3xl">
-          {item.question}
-        </h1>
+        <header className="mb-8 rounded-2xl border border-brand/15 bg-gradient-to-br from-brand/10 to-transparent p-6 sm:p-8">
+          {chapter && (
+            <span className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-brand/10 px-3 py-1 text-xs font-semibold text-brand">
+              {chapter.icon ?? "❓"} {chapter.title}
+            </span>
+          )}
+          <h1 className="text-2xl font-extrabold leading-snug text-brand-dark sm:text-3xl">
+            {item.question}
+          </h1>
+        </header>
         {item.cover && (
           <Figure
             src={item.cover.src}
