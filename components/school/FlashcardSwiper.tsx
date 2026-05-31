@@ -4,10 +4,13 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { RotateCw, Trophy, ArrowLeft, ArrowRight } from "lucide-react";
+import { RotateCw, Trophy, ArrowLeft, ArrowRight, Sparkles } from "lucide-react";
 import Link from "next/link";
 import type { SchoolFlashcard } from "@/lib/types-school";
 import { createClient } from "@/lib/supabase/client";
+import { nextSrsState } from "@/lib/school/srs";
+import { applyStreak } from "@/lib/school/streak";
+import SelfExplainModal from "./SelfExplainModal";
 
 interface Props {
   cards: SchoolFlashcard[];
@@ -34,26 +37,54 @@ export default function FlashcardSwiper({
   const [flipped, setFlipped] = useState(false);
   const [seen, setSeen] = useState(0);
   const [knew, setKnew] = useState(0);
+  const [explainOpen, setExplainOpen] = useState(false);
 
   const effectiveCards = isPremium ? cards : cards.slice(0, freeLimit);
   const card = effectiveCards[index];
   const done = !card;
 
-  async function rate(outcome: "again" | "good" | "easy") {
+  async function rate(outcome: "again" | "hard" | "good" | "easy") {
     if (!card) return;
     setSeen((s) => s + 1);
     if (outcome !== "again") setKnew((k) => k + 1);
 
-    // Fire-and-forget progress write. Anonymous users skip.
     try {
       const supabase = createClient();
       const { data: { user } } = await supabase.auth.getUser();
       if (user) {
+        // 1. Compute next SRS state from existing progress
+        const { data: prev } = await supabase
+          .from("school_progress")
+          .select("ease_factor, interval_days")
+          .eq("user_id", user.id)
+          .eq("unit_type", "flashcard")
+          .eq("unit_id", card.id)
+          .order("reviewed_at", { ascending: false })
+          .limit(1)
+          .maybeSingle();
+        const next = nextSrsState(prev, outcome);
         await supabase.from("school_progress").insert({
           user_id: user.id,
           unit_type: "flashcard",
           unit_id: card.id,
           outcome,
+          ease_factor: next.ease_factor,
+          interval_days: next.interval_days,
+          due_at: next.due_at.toISOString(),
+        });
+
+        // 2. Update streak
+        const { data: streak } = await supabase
+          .from("school_streaks")
+          .select("*")
+          .eq("user_id", user.id)
+          .maybeSingle();
+        const nextStreak = applyStreak(
+          streak ?? { current_streak: 0, longest_streak: 0, last_active_date: null }
+        );
+        await supabase.from("school_streaks").upsert({
+          user_id: user.id,
+          ...nextStreak,
         });
       }
     } catch {
@@ -156,29 +187,53 @@ export default function FlashcardSwiper({
           เปิดเฉลย <ArrowRight className="h-4 w-4" />
         </Button>
       ) : (
-        <div className="grid grid-cols-3 gap-2">
+        <div className="space-y-2">
+          <div className="grid grid-cols-4 gap-2">
+            <Button
+              onClick={() => rate("again")}
+              variant="outline"
+              className="border-rose-200 text-rose-700 hover:bg-rose-50"
+            >
+              ลืม
+            </Button>
+            <Button
+              onClick={() => rate("hard")}
+              variant="outline"
+              className="border-amber-200 text-amber-700 hover:bg-amber-50"
+            >
+              ยาก
+            </Button>
+            <Button
+              onClick={() => rate("good")}
+              variant="outline"
+              className="border-sky-200 text-sky-700 hover:bg-sky-50"
+            >
+              จำได้
+            </Button>
+            <Button
+              onClick={() => rate("easy")}
+              variant="outline"
+              className="border-emerald-200 text-emerald-700 hover:bg-emerald-50"
+            >
+              ง่าย
+            </Button>
+          </div>
           <Button
-            onClick={() => rate("again")}
-            variant="outline"
-            className="border-rose-200 text-rose-700 hover:bg-rose-50"
+            onClick={() => setExplainOpen(true)}
+            variant="ghost"
+            size="sm"
+            className="w-full text-violet-700 hover:bg-violet-50 gap-2"
           >
-            ลืม
-          </Button>
-          <Button
-            onClick={() => rate("good")}
-            variant="outline"
-            className="border-sky-200 text-sky-700 hover:bg-sky-50"
-          >
-            จำได้
-          </Button>
-          <Button
-            onClick={() => rate("easy")}
-            variant="outline"
-            className="border-emerald-200 text-emerald-700 hover:bg-emerald-50"
-          >
-            ง่ายมาก
+            <Sparkles className="h-4 w-4" /> ลองอธิบายให้คนอื่นฟัง (AI ตรวจ)
           </Button>
         </div>
+      )}
+
+      {explainOpen && (
+        <SelfExplainModal
+          concept={`${card.front}\n\nคำตอบที่ถูก: ${card.back}`}
+          onClose={() => setExplainOpen(false)}
+        />
       )}
     </div>
   );
