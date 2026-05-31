@@ -27,7 +27,9 @@ export type MembershipType =
   | "longcase_monthly"
   | "longcase_yearly"
   | "board_monthly"
-  | "board_yearly";
+  | "board_yearly"
+  | "school_monthly"
+  | "school_yearly";
 
 const FULL_STUDENT_TIERS = new Set<MembershipType>([
   "monthly",
@@ -36,6 +38,15 @@ const FULL_STUDENT_TIERS = new Set<MembershipType>([
 ]);
 
 const BOARD_TIERS = new Set<MembershipType>(["board_monthly", "board_yearly"]);
+
+// School tier unlocks unlimited flashcards, quizzes, daily lessons, SRS review.
+// Full student tiers (monthly/yearly) also include school access as a benefit.
+const SCHOOL_TIERS = new Set<MembershipType>([
+  "school_monthly",
+  "school_yearly",
+  "monthly",
+  "yearly",
+]);
 
 const ANY_PAID_TIERS = new Set<MembershipType>([
   "bundle",
@@ -49,6 +60,8 @@ const ANY_PAID_TIERS = new Set<MembershipType>([
   "longcase_yearly",
   "board_monthly",
   "board_yearly",
+  "school_monthly",
+  "school_yearly",
 ]);
 
 interface MembershipLike {
@@ -82,6 +95,13 @@ export function hasBoardAccess(
   profile: MembershipLike | null | undefined
 ): boolean {
   return hasTier(profile, BOARD_TIERS);
+}
+
+/** School mode (Y1–Y6 micro-learning) — unlimited flashcards / quizzes / SRS review */
+export function hasSchoolAccess(
+  profile: MembershipLike | null | undefined
+): boolean {
+  return hasTier(profile, SCHOOL_TIERS);
 }
 
 /** Any paid plan, used for some UI affordances */

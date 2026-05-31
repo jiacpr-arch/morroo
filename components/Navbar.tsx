@@ -11,6 +11,7 @@ import BetaHeaderCounter from "@/components/beta/BetaHeaderCounter";
 
 const navLinks = [
   { href: "/", label: "หน้าแรก" },
+  { href: "/school", label: "School" },
   { href: "/exams", label: "MEQ" },
   { href: "/nl", label: "MCQ" },
   { href: "/longcase", label: "Long Case" },
