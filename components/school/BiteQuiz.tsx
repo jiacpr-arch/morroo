@@ -8,6 +8,8 @@ import { CheckCircle, XCircle, Trophy, ArrowRight, ArrowLeft } from "lucide-reac
 import Link from "next/link";
 import type { SchoolQuiz } from "@/lib/types-school";
 import { createClient } from "@/lib/supabase/client";
+import { nextSrsState } from "@/lib/school/srs";
+import { applyStreak } from "@/lib/school/streak";
 
 interface Props {
   quizzes: SchoolQuiz[];
@@ -53,11 +55,36 @@ export default function BiteQuiz({
       const supabase = createClient();
       const { data: { user } } = await supabase.auth.getUser();
       if (user) {
+        const { data: prev } = await supabase
+          .from("school_progress")
+          .select("ease_factor, interval_days")
+          .eq("user_id", user.id)
+          .eq("unit_type", "quiz")
+          .eq("unit_id", quiz.id)
+          .order("reviewed_at", { ascending: false })
+          .limit(1)
+          .maybeSingle();
+        const next = nextSrsState(prev, correct ? "correct" : "wrong");
         await supabase.from("school_progress").insert({
           user_id: user.id,
           unit_type: "quiz",
           unit_id: quiz.id,
           outcome: correct ? "correct" : "wrong",
+          ease_factor: next.ease_factor,
+          interval_days: next.interval_days,
+          due_at: next.due_at.toISOString(),
+        });
+        const { data: streak } = await supabase
+          .from("school_streaks")
+          .select("*")
+          .eq("user_id", user.id)
+          .maybeSingle();
+        const nextStreak = applyStreak(
+          streak ?? { current_streak: 0, longest_streak: 0, last_active_date: null }
+        );
+        await supabase.from("school_streaks").upsert({
+          user_id: user.id,
+          ...nextStreak,
         });
       }
     } catch {
