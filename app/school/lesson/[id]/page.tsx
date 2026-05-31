@@ -3,10 +3,11 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, BookOpen } from "lucide-react";
 import { notFound } from "next/navigation";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import { getSchoolLesson, getSchoolQuizzes } from "@/lib/supabase/queries-school";
-import BiteQuiz from "@/components/school/BiteQuiz";
+import {
+  getSchoolLesson,
+  getSchoolQuizzes,
+} from "@/lib/supabase/queries-school";
+import LessonReader from "@/components/school/LessonReader";
 
 export const revalidate = 60;
 
@@ -34,10 +35,12 @@ export default async function LessonPage({ params }: PageProps) {
 
   const allTopicQuizzes = await getSchoolQuizzes({
     topicId: lesson.topic_id,
-    limit: 5,
+    limit: 20,
     randomize: true,
   });
-  const quizzes = allTopicQuizzes.filter((q) => q.layer === lesson.layer).slice(0, 5);
+  const quizzes = allTopicQuizzes
+    .filter((q) => q.layer === lesson.layer)
+    .slice(0, 10);
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
@@ -55,24 +58,12 @@ export default async function LessonPage({ params }: PageProps) {
         <BookOpen className="h-7 w-7 text-teal-600" /> {lesson.title}
       </h1>
 
-      <article className="prose prose-slate dark:prose-invert max-w-none mb-10">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>{lesson.body_md}</ReactMarkdown>
-      </article>
+      <LessonReader lesson={lesson} miniQuizzes={quizzes} />
 
       {lesson.source && (
-        <p className="text-xs text-muted-foreground italic mb-8">
+        <p className="text-xs text-muted-foreground italic mt-6">
           ที่มา: {lesson.source}
         </p>
-      )}
-
-      {quizzes.length > 0 && (
-        <div className="border-t pt-8">
-          <h2 className="text-xl font-bold mb-4">เช็คความเข้าใจ</h2>
-          <p className="text-sm text-muted-foreground mb-4">
-            Retrieval practice — ดึงสิ่งที่เพิ่งอ่านออกมาทดสอบความเข้าใจ
-          </p>
-          <BiteQuiz quizzes={quizzes} isPremium freeLimit={5} />
-        </div>
       )}
     </div>
   );

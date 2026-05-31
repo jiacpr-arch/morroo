@@ -19,6 +19,10 @@ import {
   Bot,
   Network,
   Stethoscope,
+  Search,
+  Bookmark,
+  GitCompare,
+  Database,
 } from "lucide-react";
 import { xpToLevel } from "@/lib/school/xp";
 import {
@@ -61,13 +65,14 @@ export default async function SchoolPage() {
   let currentYear: number | null = null;
   let xp = 0;
   let badgeCount = 0;
+  let isAdmin = false;
   if (user) {
     const [s, due, profileRes, badgesRes] = await Promise.all([
       getSchoolStreak(user.id),
       getDueCount(user.id),
       supabase
         .from("profiles")
-        .select("current_year, school_daily_goal, school_xp")
+        .select("current_year, school_daily_goal, school_xp, role")
         .eq("id", user.id)
         .maybeSingle(),
       supabase
@@ -81,6 +86,7 @@ export default async function SchoolPage() {
     currentYear = profileRes.data?.current_year ?? null;
     xp = profileRes.data?.school_xp ?? 0;
     badgeCount = badgesRes.count ?? 0;
+    isAdmin = profileRes.data?.role === "admin";
     // Count units done today
     const startOfDay = new Date();
     startOfDay.setHours(0, 0, 0, 0);
@@ -202,6 +208,16 @@ export default async function SchoolPage() {
             </Card>
           </div>
 
+          {isAdmin && (
+            <div className="mb-4">
+              <Link href="/admin/school">
+                <Button variant="outline" size="sm" className="gap-2">
+                  <Database className="h-4 w-4" /> Admin · Manage content
+                </Button>
+              </Link>
+            </div>
+          )}
+
           {/* Onboarding prompt */}
           {!currentYear && (
             <Card className="mb-6 border-violet-200 bg-violet-50/50">
@@ -300,6 +316,27 @@ export default async function SchoolPage() {
             color: "orange",
             title: "Cases",
             desc: "Y1→Y6 walk-through",
+          },
+          {
+            href: "/school/compare",
+            icon: GitCompare,
+            color: "pink",
+            title: "Compare",
+            desc: "Side-by-side AI",
+          },
+          {
+            href: "/school/search",
+            icon: Search,
+            color: "slate",
+            title: "Search",
+            desc: "ค้นทุกอย่าง",
+          },
+          {
+            href: "/school/saved",
+            icon: Bookmark,
+            color: "amber",
+            title: "Saved",
+            desc: "Bookmarks + Notes",
           },
         ].map((m) => (
           <Link key={m.href} href={m.href}>
