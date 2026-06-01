@@ -49,6 +49,57 @@ export const dynamic = "force-dynamic";
 
 const YEARS = [1, 2, 3, 4, 5, 6] as const;
 
+// โหมดทั้งหมด จัดเป็นหมวดหมู่ให้ไม่งง — เรียงจาก "เริ่มที่นี่" ไปเครื่องมือเสริม
+const MODE_GROUPS = [
+  {
+    title: "เรียนประจำวัน",
+    desc: "ทำทุกวันเพื่อสร้าง streak",
+    items: [
+      { href: "/school/daily", icon: Calendar, color: "violet", title: "Daily Lesson", desc: "บทเรียน 5 นาที/วัน" },
+      { href: "/school/review", icon: Clock, color: "rose", title: "Review", desc: "ใกล้ลืม — SRS" },
+      { href: "/school/mixed", icon: Shuffle, color: "fuchsia", title: "Mixed", desc: "Interleaved practice" },
+    ],
+  },
+  {
+    title: "ฝึก & ทบทวน",
+    desc: "เลือกฝึกเองตามใจ",
+    items: [
+      { href: "/school/flashcards", icon: Layers, color: "sky", title: "Flashcards", desc: "ทบทวนทีละการ์ด" },
+      { href: "/school/quiz", icon: Brain, color: "emerald", title: "Quiz", desc: "ข้อสอบสั้น + เฉลย" },
+      { href: "/school/cases", icon: Stethoscope, color: "orange", title: "Cases", desc: "Y1→Y6 walk-through" },
+    ],
+  },
+  {
+    title: "ผู้ช่วย AI",
+    desc: "ถาม-อธิบาย-เทียบ ด้วย AI",
+    items: [
+      { href: "/school/tutor", icon: Bot, color: "indigo", title: "AI Tutor", desc: "ถามได้ตลอด" },
+      { href: "/school/concepts", icon: Network, color: "cyan", title: "Concepts", desc: "เชื่อมข้ามวิชา" },
+      { href: "/school/compare", icon: GitCompare, color: "pink", title: "Compare", desc: "Side-by-side AI" },
+      { href: "/school/visuals", icon: ImageIcon, color: "fuchsia", title: "Visuals", desc: "รูปสรุป + ช็อตโน้ต" },
+    ],
+  },
+  {
+    title: "ความก้าวหน้า & แรงจูงใจ",
+    desc: "ดูพัฒนาการและรางวัล",
+    items: [
+      { href: "/school/progress", icon: GraduationCap, color: "indigo", title: "Progress", desc: "Mastery + ปลดล็อก" },
+      { href: "/school/badges", icon: Award, color: "amber", title: "Badges", desc: "เหรียญรางวัล" },
+      { href: "/school/leaderboard", icon: Trophy, color: "yellow", title: "Leaderboard", desc: "อันดับ XP" },
+      { href: "/school/tracks", icon: Route, color: "lime", title: "Tracks", desc: "Curated bundles" },
+    ],
+  },
+  {
+    title: "เครื่องมือ & ตั้งค่า",
+    desc: "ค้นหา บันทึก ปรับค่า",
+    items: [
+      { href: "/school/search", icon: Search, color: "slate", title: "Search", desc: "ค้นทุกอย่าง" },
+      { href: "/school/saved", icon: Bookmark, color: "amber", title: "Saved", desc: "Bookmarks + Notes" },
+      { href: "/school/settings", icon: SettingsIcon, color: "slate", title: "Settings", desc: "เปลี่ยน goal / year" },
+    ],
+  },
+] as const;
+
 export default async function SchoolPage() {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
@@ -114,7 +165,7 @@ export default async function SchoolPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-      <div className="mb-8">
+      <div className="mb-6">
         <div className="flex items-center gap-2 mb-2">
           <Badge className="bg-indigo-100 text-indigo-700">โหมดใหม่</Badge>
           <Badge variant="secondary">{totalFlashcards} flashcards</Badge>
@@ -122,9 +173,89 @@ export default async function SchoolPage() {
         </div>
         <h1 className="text-3xl font-bold">School — เรียนแพทย์ Y1–Y6</h1>
         <p className="mt-2 text-muted-foreground max-w-2xl">
-          Evidence-based micro-learning: Spaced Repetition, Interleaving, Active Recall,
-          Self-explanation, Daily Lesson + Streak — เหมือน Anki + Duolingo สำหรับนักศึกษาแพทย์
+          ติวแพทย์ตั้งแต่ปี 1 ถึงปี 6 แบบวันละนิด — flashcard + quiz + AI ช่วยติว
+          พร้อมระบบทบทวนอัตโนมัติและ streak ให้เรียนต่อเนื่องเหมือน Duolingo
         </p>
+      </div>
+
+      {/* เริ่มยังไง — 3 ขั้น (ภาพรวมว่าหน้านี้ใช้ทำอะไร) */}
+      <Card className="mb-8 border-brand/20 bg-brand/5">
+        <CardContent className="p-4 sm:p-5">
+          <p className="font-semibold mb-3 flex items-center gap-2">
+            <Sparkles className="h-4 w-4 text-brand" /> เริ่มยังไง? ทำตาม 3 ขั้น
+          </p>
+          <div className="grid gap-3 sm:grid-cols-3 text-sm">
+            <div className="flex items-start gap-3">
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand text-white text-xs font-bold">1</span>
+              <div>
+                <p className="font-medium">เลือกชั้นปีของคุณ</p>
+                <p className="text-muted-foreground text-xs mt-0.5">บอกระบบว่าคุณอยู่ Y1–Y6</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand text-white text-xs font-bold">2</span>
+              <div>
+                <p className="font-medium">ทำ Daily Lesson</p>
+                <p className="text-muted-foreground text-xs mt-0.5">วันละ 5 นาทีก็พอ</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand text-white text-xs font-bold">3</span>
+              <div>
+                <p className="font-medium">กลับมา Review</p>
+                <p className="text-muted-foreground text-xs mt-0.5">ระบบเตือนตอนใกล้ลืม</p>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* เลือกชั้นปี — จุดเริ่มต้น ยกขึ้นมาบนสุด */}
+      <div className="mb-8">
+        <div className="flex items-center gap-2 mb-1">
+          <GraduationCap className="h-5 w-5 text-brand" />
+          <h2 className="text-2xl font-bold">1. เลือกชั้นปีของคุณ</h2>
+        </div>
+        <p className="text-sm text-muted-foreground mb-4">
+          แตะปีที่คุณกำลังเรียน เพื่อดูหัวข้อทั้งหมดของปีนั้น
+        </p>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+          {YEARS.map((y) => {
+            const topicCount = topicsByYear[y]?.length ?? 0;
+            const disabled = topicCount === 0;
+            const isCurrent = y === currentYear;
+            return (
+              <Link
+                key={y}
+                href={disabled ? "#" : `/school/${y}`}
+                aria-disabled={disabled}
+                className={disabled ? "pointer-events-none" : ""}
+              >
+                <Card
+                  className={[
+                    "h-full transition-all relative",
+                    disabled
+                      ? "opacity-50"
+                      : "hover:shadow-md hover:border-brand/30 cursor-pointer",
+                    isCurrent ? "border-brand border-2 bg-brand/5" : "",
+                  ].join(" ")}
+                >
+                  <CardContent className="p-4 text-center">
+                    {isCurrent && (
+                      <Badge className="absolute -top-2 left-1/2 -translate-x-1/2 bg-brand text-white text-[10px] px-2">
+                        ชั้นปีของคุณ
+                      </Badge>
+                    )}
+                    <p className="text-2xl font-bold text-brand">Y{y}</p>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      {topicCount > 0 ? `${topicCount} หัวข้อ` : "เร็วๆ นี้"}
+                    </p>
+                  </CardContent>
+                </Card>
+              </Link>
+            );
+          })}
+        </div>
       </div>
 
       {user && (
@@ -240,180 +371,68 @@ export default async function SchoolPage() {
         </>
       )}
 
-      {/* Mode selection — 8 modes */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-12">
-        {[
-          {
-            href: "/school/daily",
-            icon: Calendar,
-            color: "violet",
-            title: "Daily Lesson",
-            desc: "บทเรียน 5 นาที/วัน",
-          },
-          {
-            href: "/school/flashcards",
-            icon: Layers,
-            color: "sky",
-            title: "Flashcards",
-            desc: "ทบทวนทีละการ์ด",
-          },
-          {
-            href: "/school/quiz",
-            icon: Brain,
-            color: "emerald",
-            title: "Quiz",
-            desc: "ข้อสอบสั้น + เฉลย",
-          },
-          {
-            href: "/school/mixed",
-            icon: Shuffle,
-            color: "fuchsia",
-            title: "Mixed",
-            desc: "Interleaved practice",
-          },
-          {
-            href: "/school/review",
-            icon: Clock,
-            color: "rose",
-            title: "Review",
-            desc: "ใกล้ลืม — SRS",
-          },
-          {
-            href: "/school/progress",
-            icon: GraduationCap,
-            color: "indigo",
-            title: "Progress",
-            desc: "Mastery + ปลดล็อก",
-          },
-          {
-            href: "/school/badges",
-            icon: Award,
-            color: "amber",
-            title: "Badges",
-            desc: "เหรียญรางวัล",
-          },
-          {
-            href: "/school/leaderboard",
-            icon: Trophy,
-            color: "yellow",
-            title: "Leaderboard",
-            desc: "อันดับ XP",
-          },
-          {
-            href: "/school/tutor",
-            icon: Bot,
-            color: "indigo",
-            title: "AI Tutor",
-            desc: "ถามได้ตลอด",
-          },
-          {
-            href: "/school/concepts",
-            icon: Network,
-            color: "cyan",
-            title: "Concepts",
-            desc: "เชื่อมข้ามวิชา",
-          },
-          {
-            href: "/school/visuals",
-            icon: ImageIcon,
-            color: "fuchsia",
-            title: "Visuals",
-            desc: "รูปสรุป + ช็อตโน้ต",
-          },
-          {
-            href: "/school/cases",
-            icon: Stethoscope,
-            color: "orange",
-            title: "Cases",
-            desc: "Y1→Y6 walk-through",
-          },
-          {
-            href: "/school/compare",
-            icon: GitCompare,
-            color: "pink",
-            title: "Compare",
-            desc: "Side-by-side AI",
-          },
-          {
-            href: "/school/search",
-            icon: Search,
-            color: "slate",
-            title: "Search",
-            desc: "ค้นทุกอย่าง",
-          },
-          {
-            href: "/school/saved",
-            icon: Bookmark,
-            color: "amber",
-            title: "Saved",
-            desc: "Bookmarks + Notes",
-          },
-          {
-            href: "/school/tracks",
-            icon: Route,
-            color: "lime",
-            title: "Tracks",
-            desc: "Curated bundles",
-          },
-          {
-            href: "/school/settings",
-            icon: SettingsIcon,
-            color: "slate",
-            title: "Settings",
-            desc: "เปลี่ยน goal / year",
-          },
-        ].map((m) => (
-          <Link key={m.href} href={m.href}>
-            <Card className="group h-full hover:shadow-md hover:border-brand/30 transition-all cursor-pointer">
-              <CardContent className="p-4 text-center">
-                <div
-                  className={`w-10 h-10 rounded-full bg-${m.color}-100 flex items-center justify-center mb-2 mx-auto`}
-                >
-                  <m.icon className={`h-5 w-5 text-${m.color}-600`} />
-                </div>
-                <h3 className="font-bold text-sm">{m.title}</h3>
-                <p className="text-xs text-muted-foreground mt-1">{m.desc}</p>
-              </CardContent>
-            </Card>
-          </Link>
-        ))}
+      {/* ปุ่มหลัก — กดอันนี้ก่อนเพื่อเริ่มเรียน */}
+      <div className="mb-8">
+        <div className="flex items-center gap-2 mb-1">
+          <Calendar className="h-5 w-5 text-brand" />
+          <h2 className="text-2xl font-bold">2. เริ่มเรียนวันนี้</h2>
+        </div>
+        <p className="text-sm text-muted-foreground mb-4">
+          ไม่รู้จะเริ่มตรงไหน? แตะปุ่มนี้ — ระบบจัดบทเรียนวันนี้ให้พร้อมเลย
+        </p>
+        <Link href="/school/daily">
+          <Card className="group border-violet-200 bg-gradient-to-r from-violet-50 to-fuchsia-50 hover:shadow-md hover:border-violet-300 transition-all cursor-pointer">
+            <CardContent className="p-5 flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full bg-violet-100 flex items-center justify-center shrink-0">
+                <Calendar className="h-6 w-6 text-violet-600" />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-bold text-lg">Daily Lesson</h3>
+                <p className="text-sm text-muted-foreground">บทเรียน 5 นาที/วัน — แนะนำให้เริ่มที่นี่</p>
+              </div>
+              <Button className="gap-2 shrink-0">
+                เริ่มเลย <ArrowRight className="h-4 w-4" />
+              </Button>
+            </CardContent>
+          </Card>
+        </Link>
       </div>
 
-      {/* Year overview */}
-      <div className="mb-8">
-        <div className="flex items-center gap-2 mb-6">
-          <GraduationCap className="h-5 w-5 text-brand" />
-          <h2 className="text-2xl font-bold">เลือกชั้นปี</h2>
+      {/* โหมดทั้งหมด จัดเป็นหมวดหมู่ */}
+      <div className="mb-12">
+        <div className="flex items-center gap-2 mb-1">
+          <Layers className="h-5 w-5 text-brand" />
+          <h2 className="text-2xl font-bold">3. เครื่องมือทั้งหมด</h2>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-          {YEARS.map((y) => {
-            const topicCount = topicsByYear[y]?.length ?? 0;
-            const disabled = topicCount === 0;
-            return (
-              <Link
-                key={y}
-                href={disabled ? "#" : `/school/${y}`}
-                aria-disabled={disabled}
-                className={disabled ? "pointer-events-none" : ""}
-              >
-                <Card
-                  className={[
-                    "h-full transition-all",
-                    disabled
-                      ? "opacity-50"
-                      : "hover:shadow-md hover:border-brand/30 cursor-pointer",
-                  ].join(" ")}
-                >
-                  <CardContent className="p-4 text-center">
-                    <p className="text-2xl font-bold text-brand">Y{y}</p>
-                    <p className="text-xs text-muted-foreground mt-1">
-                      {topicCount > 0 ? `${topicCount} หัวข้อ` : "เร็วๆ นี้"}
-                    </p>
-                  </CardContent>
-                </Card>
-              </Link>
-            );
-          })}
+        <p className="text-sm text-muted-foreground mb-6">
+          เลือกใช้ตามใจ — จัดเป็นหมวดหมู่ให้หาง่าย
+        </p>
+        <div className="space-y-6">
+          {MODE_GROUPS.map((g) => (
+            <div key={g.title}>
+              <div className="mb-3">
+                <h3 className="font-bold text-base">{g.title}</h3>
+                <p className="text-xs text-muted-foreground">{g.desc}</p>
+              </div>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                {g.items.map((m) => (
+                  <Link key={m.href} href={m.href}>
+                    <Card className="group h-full hover:shadow-md hover:border-brand/30 transition-all cursor-pointer">
+                      <CardContent className="p-4 text-center">
+                        <div
+                          className={`w-10 h-10 rounded-full bg-${m.color}-100 flex items-center justify-center mb-2 mx-auto`}
+                        >
+                          <m.icon className={`h-5 w-5 text-${m.color}-600`} />
+                        </div>
+                        <h3 className="font-bold text-sm">{m.title}</h3>
+                        <p className="text-xs text-muted-foreground mt-1">{m.desc}</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
