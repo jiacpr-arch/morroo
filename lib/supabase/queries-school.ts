@@ -8,6 +8,8 @@ import type {
   SchoolConcept,
   SchoolCase,
   SchoolCaseStage,
+  SchoolBook,
+  SchoolBookChapter,
 } from "../types-school";
 
 export async function getSchoolSystems(): Promise<SchoolSystem[]> {
@@ -144,6 +146,62 @@ export async function getSchoolLesson(id: string): Promise<SchoolLesson | null> 
     return null;
   }
   return (data as SchoolLesson) ?? null;
+}
+
+/** Full-text book for a topic (one per topic), with chapters ordered. */
+export async function getSchoolBookByTopic(
+  topicId: string
+): Promise<{ book: SchoolBook; chapters: SchoolBookChapter[] } | null> {
+  const supabase = await createClient();
+  const { data: book, error } = await supabase
+    .from("school_books")
+    .select("*")
+    .eq("topic_id", topicId)
+    .eq("status", "active")
+    .maybeSingle();
+  if (error) {
+    console.error("Error fetching school book:", error);
+    return null;
+  }
+  if (!book) return null;
+  const chapters = await getSchoolBookChapters((book as SchoolBook).id);
+  return { book: book as SchoolBook, chapters };
+}
+
+/** A single book by id + its chapters. Returns null if not found/active. */
+export async function getSchoolBook(
+  id: string
+): Promise<{ book: SchoolBook; chapters: SchoolBookChapter[] } | null> {
+  const supabase = await createClient();
+  const { data: book, error } = await supabase
+    .from("school_books")
+    .select("*")
+    .eq("id", id)
+    .eq("status", "active")
+    .maybeSingle();
+  if (error) {
+    console.error("Error fetching school book:", error);
+    return null;
+  }
+  if (!book) return null;
+  const chapters = await getSchoolBookChapters((book as SchoolBook).id);
+  return { book: book as SchoolBook, chapters };
+}
+
+async function getSchoolBookChapters(
+  bookId: string
+): Promise<SchoolBookChapter[]> {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("school_book_chapters")
+    .select("*")
+    .eq("book_id", bookId)
+    .order("sort_order");
+  if (error) {
+    console.error("Error fetching school book chapters:", error);
+    return [];
+  }
+  return (data as SchoolBookChapter[]) ?? [];
 }
 
 export async function getSchoolTopic(id: string): Promise<SchoolTopic | null> {

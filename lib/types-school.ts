@@ -64,6 +64,23 @@ export interface SchoolLesson {
   source: string | null;
 }
 
+export interface SchoolBook {
+  id: string;
+  topic_id: string;
+  title: string;
+  description: string | null;
+  source: string | null;
+}
+
+export interface SchoolBookChapter {
+  id: string;
+  book_id: string;
+  sort_order: number;
+  title: string;
+  body_md: string;
+  source: string | null;
+}
+
 export type SchoolProgressOutcome =
   | "again"
   | "hard"
