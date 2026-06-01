@@ -104,3 +104,18 @@ export interface SchoolCaseStage {
   mini_quiz_answer: string | null;
   mini_quiz_explanation: string | null;
 }
+
+export interface SchoolVisual {
+  id: string;
+  topic_id: string;
+  layer: SchoolLayer;
+  title: string;
+  image_url: string | null;
+  caption: string | null;
+  notes_md: string | null;
+  check_questions: { q: string; a: string }[];
+  linked_flashcard_ids: string[];
+  source: string | null;
+  sort_order: number;
+  school_topics?: SchoolTopic;
+}

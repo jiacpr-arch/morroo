@@ -20,7 +20,9 @@ import {
   getSchoolFlashcards,
   getSchoolQuizzes,
   getSchoolMasteryByTopic,
+  getSchoolVisuals,
 } from "@/lib/supabase/queries-school";
+import VisualCard from "@/components/school/VisualCard";
 
 export const dynamic = "force-dynamic";
 
@@ -46,10 +48,11 @@ export default async function TopicPage({ params }: PageProps) {
   const topic = await getSchoolTopic(id);
   if (!topic) notFound();
 
-  const [lessons, cards, quizzes] = await Promise.all([
+  const [lessons, cards, quizzes, visuals] = await Promise.all([
     getSchoolLessons({ topicId: id }),
     getSchoolFlashcards({ topicId: id, limit: 100 }),
     getSchoolQuizzes({ topicId: id, limit: 100 }),
+    getSchoolVisuals({ topicId: id }),
   ]);
 
   // Personalised mastery + read status
@@ -120,6 +123,20 @@ export default async function TopicPage({ params }: PageProps) {
 
       {/* Sections */}
       <div className="space-y-4">
+        {/* 0. Visual Summaries — เด็กอ่านสรุปก่อน */}
+        {visuals.length > 0 && (
+          <div>
+            <p className="text-xs font-bold uppercase text-fuchsia-700 mb-2">
+              🖼️ Visual Summary ({visuals.length})
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              {visuals.map((v) => (
+                <VisualCard key={v.id} visual={v} />
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* 1. Learn */}
         <SectionCard
           step={1}
