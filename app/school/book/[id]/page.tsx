@@ -78,7 +78,11 @@ export default async function BookPage({ params }: PageProps) {
           ยังไม่มีเนื้อหาในหนังสือเล่มนี้
         </p>
       ) : (
-        <BookReader chapters={chapters} readChapterIds={readChapterIds} />
+        <BookReader
+          topicId={book.topic_id}
+          chapters={chapters}
+          readChapterIds={readChapterIds}
+        />
       )}
 
       {book.source && (

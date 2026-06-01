@@ -10,8 +10,10 @@ import { CheckCircle2, Circle, List } from "lucide-react";
 import type { SchoolBookChapter } from "@/lib/types-school";
 import { createClient } from "@/lib/supabase/client";
 import { XP, awardXp } from "@/lib/school/xp";
+import AskMore from "./AskMore";
 
 interface Props {
+  topicId: string;
   chapters: SchoolBookChapter[];
   readChapterIds: string[];
 }
@@ -23,7 +25,7 @@ interface Props {
  * (unit_type 'book_chapter'). Distinct from LessonReader, which is the gated
  * micro-learning + retrieval loop.
  */
-export default function BookReader({ chapters, readChapterIds }: Props) {
+export default function BookReader({ topicId, chapters, readChapterIds }: Props) {
   const [read, setRead] = useState<Set<string>>(new Set(readChapterIds));
 
   async function markRead(chapterId: string) {
@@ -120,6 +122,8 @@ export default function BookReader({ chapters, readChapterIds }: Props) {
           </CardContent>
         </Card>
       ))}
+
+      <AskMore topicId={topicId} />
     </div>
   );
 }

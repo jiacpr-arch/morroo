@@ -81,6 +81,18 @@ export interface SchoolBookChapter {
   source: string | null;
 }
 
+export interface SchoolQuestion {
+  id: string;
+  user_id: string | null;
+  topic_id: string;
+  chapter_id: string | null;
+  question: string;
+  ai_answer: string | null;
+  status: "open" | "processed" | "dismissed";
+  processed_at: string | null;
+  created_at: string;
+}
+
 export type SchoolProgressOutcome =
   | "again"
   | "hard"

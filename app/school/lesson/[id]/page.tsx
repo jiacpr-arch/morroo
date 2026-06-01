@@ -8,6 +8,7 @@ import {
   getSchoolQuizzes,
 } from "@/lib/supabase/queries-school";
 import LessonReader from "@/components/school/LessonReader";
+import AskMore from "@/components/school/AskMore";
 
 export const revalidate = 60;
 
@@ -59,6 +60,10 @@ export default async function LessonPage({ params }: PageProps) {
       </h1>
 
       <LessonReader lesson={lesson} miniQuizzes={quizzes} />
+
+      <div className="mt-6">
+        <AskMore topicId={lesson.topic_id} />
+      </div>
 
       {lesson.source && (
         <p className="text-xs text-muted-foreground italic mt-6">

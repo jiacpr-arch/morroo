@@ -9,6 +9,7 @@
  *   quiz wrong                   = 1 (consolation)
  *   lesson completed             = 10
  *   book chapter read            = 5
+ *   ask a question               = 3
  *   daily lesson completed       = 20
  *   topic mastered (first time)  = 100
  *   challenge passed (>=80%)     = 150
@@ -27,6 +28,7 @@ export const XP = {
   quizHard: 12,
   lessonRead: 10,
   bookChapterRead: 5,
+  askQuestion: 3,
   dailyComplete: 20,
   topicMastered: 100,
   challengePassed: 150,
