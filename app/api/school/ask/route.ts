@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase/server";
+import { loadBookContext } from "@/lib/school/book-context";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -48,28 +49,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Ground on the topic's full-text book (if any).
-    const { data: book } = await supabase
-      .from("school_books")
-      .select("id")
-      .eq("topic_id", topicId)
-      .eq("status", "active")
-      .maybeSingle();
-
-    let context = "";
-    if (book) {
-      const { data: chapters } = await supabase
-        .from("school_book_chapters")
-        .select("title, body_md")
-        .eq("book_id", (book as { id: string }).id)
-        .order("sort_order");
-      context = (chapters ?? [])
-        .map(
-          (c: { title: string; body_md: string }) =>
-            `## ${c.title}\n${c.body_md}`
-        )
-        .join("\n\n")
-        .slice(0, MAX_CONTEXT_CHARS);
-    }
+    const context = await loadBookContext(supabase, topicId, MAX_CONTEXT_CHARS);
 
     const client = new Anthropic({ apiKey });
     const response = await client.messages.create({
@@ -98,14 +78,18 @@ Rules:
       .map((b) => (b as { type: "text"; text: string }).text)
       .join("\n");
 
-    // Persist (non-blocking on failure so the student still gets the answer).
-    await supabase.from("school_questions").insert({
+    // Persist (non-blocking on failure so the student still gets the answer,
+    // but log it — a lost question never reaches the enrich loop).
+    const { error: persistErr } = await supabase.from("school_questions").insert({
       user_id: user.id,
       topic_id: topicId,
       chapter_id: chapterId ?? null,
       question,
       ai_answer: answer,
     });
+    if (persistErr) {
+      console.error("school/ask persist failed", persistErr.message);
+    }
 
     return NextResponse.json({ answer });
   } catch (err) {

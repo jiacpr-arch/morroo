@@ -15,6 +15,7 @@
 import { NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { loadBookContext } from "@/lib/school/book-context";
 
 export const runtime = "nodejs";
 export const maxDuration = 300;
@@ -162,33 +163,14 @@ async function enrichTopic(
   topicId: string,
   questions: QuestionRow[]
 ) {
-  // Topic meta (slug for source tag) + grounding context + existing units.
-  const { data: topic } = await supabase
-    .from("school_topics")
-    .select("slug")
-    .eq("id", topicId)
-    .maybeSingle();
+  // Topic slug (for source tag) + book context (for grounding) — independent.
+  const [{ data: topic }, context] = await Promise.all([
+    supabase.from("school_topics").select("slug").eq("id", topicId).maybeSingle(),
+    loadBookContext(supabase, topicId, MAX_CONTEXT_CHARS),
+  ]);
   const slug = (topic as { slug?: string } | null)?.slug ?? topicId;
 
-  const { data: book } = await supabase
-    .from("school_books")
-    .select("id")
-    .eq("topic_id", topicId)
-    .maybeSingle();
-
-  let context = "";
   let layer = "foundation";
-  if (book) {
-    const { data: chapters } = await supabase
-      .from("school_book_chapters")
-      .select("title, body_md")
-      .eq("book_id", (book as { id: string }).id)
-      .order("sort_order");
-    context = (chapters ?? [])
-      .map((c: { title: string; body_md: string }) => `## ${c.title}\n${c.body_md}`)
-      .join("\n\n")
-      .slice(0, MAX_CONTEXT_CHARS);
-  }
 
   const [{ data: fcRows }, { data: qzRows }] = await Promise.all([
     supabase.from("school_flashcards").select("front, layer").eq("topic_id", topicId).limit(200),
@@ -213,8 +195,13 @@ async function enrichTopic(
   });
 
   const tool = response.content.find((b) => b.type === "tool_use");
-  const input = (tool as { input?: { flashcards?: unknown[]; quizzes?: unknown[] } } | undefined)
-    ?.input;
+  if (!tool) {
+    // No tool call (refusal / truncation). Leave questions 'open' so the next
+    // run retries them instead of silently dropping them as processed.
+    throw new Error("Claude returned no tool_use block");
+  }
+  const input = (tool as { input?: { flashcards?: unknown[]; quizzes?: unknown[] } })
+    .input;
   const flashcards = (input?.flashcards ?? []) as {
     front: string;
     back: string;
