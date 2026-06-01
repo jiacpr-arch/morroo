@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Loader2, Check, AlertCircle } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
+import { normalizeImageUrl } from "@/lib/school/image-url";
 import ImportPanel from "./ImportPanel";
 
 type Tab =
@@ -401,11 +402,11 @@ function FlashcardForm({ topics, busy, setBusy, notify }: { topics: Props["topic
             className="w-full border rounded p-2 text-sm min-h-[80px]"
           />
         </Field>
-        <Field label="Image URL (dual coding)">
+        <Field label="Image URL (dual coding) — วางลิงก์ Drive ได้เลย ระบบแปลงให้อัตโนมัติ">
           <input
             value={imageUrl}
-            onChange={(e) => setImageUrl(e.target.value)}
-            placeholder="https://..."
+            onChange={(e) => setImageUrl(normalizeImageUrl(e.target.value))}
+            placeholder="วางลิงก์ Drive / Cloudinary ที่นี่ — https://..."
             className="w-full border rounded p-2 text-sm"
           />
         </Field>
@@ -962,12 +963,12 @@ function VisualForm({ topics, busy, setBusy, notify }: { topics: Props["topics"]
             placeholder="เช่น Cardiac Cycle Overview"
           />
         </Field>
-        <Field label="Image URL (optional — paste Drive / IG / Cloudinary URL)">
+        <Field label="Image URL (optional — วางลิงก์ Drive / IG / Cloudinary ระบบแปลงให้อัตโนมัติ)">
           <input
             value={imageUrl}
-            onChange={(e) => setImageUrl(e.target.value)}
+            onChange={(e) => setImageUrl(normalizeImageUrl(e.target.value))}
             className="w-full border rounded p-2 text-sm"
-            placeholder="https://..."
+            placeholder="วางลิงก์ Drive ปกติได้เลย — https://..."
           />
         </Field>
         <Field label="Caption (1 line)">
