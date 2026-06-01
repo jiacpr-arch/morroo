@@ -497,3 +497,67 @@ export async function getSchoolCaseStages(
   }
   return (data as SchoolCaseStage[]) ?? [];
 }
+
+// ────────────────────────────────────────────────────────────────────────────
+// Phase 9 — Visual Summaries
+// ────────────────────────────────────────────────────────────────────────────
+
+export async function getSchoolVisuals(opts: {
+  topicId?: string;
+  year?: number;
+  limit?: number;
+}): Promise<SchoolVisual[]> {
+  const supabase = await createClient();
+  let query = supabase
+    .from("school_visuals")
+    .select("*, school_topics!inner(year, name_th, name_en)")
+    .eq("status", "active")
+    .order("sort_order");
+  if (opts.topicId) query = query.eq("topic_id", opts.topicId);
+  if (opts.year) query = query.eq("school_topics.year", opts.year);
+  if (opts.limit) query = query.limit(opts.limit);
+  const { data, error } = await query;
+  if (error) {
+    console.error("Error fetching school visuals:", error);
+    return [];
+  }
+  return (data as SchoolVisual[]) ?? [];
+}
+
+export async function getSchoolVisual(
+  id: string
+): Promise<SchoolVisual | null> {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("school_visuals")
+    .select("*, school_topics(*, school_systems(*))")
+    .eq("id", id)
+    .eq("status", "active")
+    .maybeSingle();
+  if (error) {
+    console.error("Error fetching school visual:", error);
+    return null;
+  }
+  return (data as SchoolVisual) ?? null;
+}
+
+export async function getFlashcardsByIds(
+  ids: string[]
+): Promise<SchoolFlashcard[]> {
+  if (!ids.length) return [];
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("school_flashcards")
+    .select("*")
+    .in("id", ids)
+    .eq("status", "active");
+  if (error) {
+    console.error("Error fetching flashcards by ids:", error);
+    return [];
+  }
+  // Preserve order of `ids`
+  const map = new Map<string, SchoolFlashcard>(
+    ((data as SchoolFlashcard[]) ?? []).map((c) => [c.id, c])
+  );
+  return ids.map((id) => map.get(id)).filter((x): x is SchoolFlashcard => !!x);
+}

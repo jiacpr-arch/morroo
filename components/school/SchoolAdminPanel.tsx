@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -14,6 +14,7 @@ type Tab =
   | "lesson"
   | "flashcard"
   | "quiz"
+  | "visual"
   | "case"
   | "concept_link"
   | "bulk";
@@ -52,6 +53,7 @@ export default function SchoolAdminPanel({ systems, concepts, topics }: Props) {
             ["lesson", "Lesson"],
             ["flashcard", "Flashcard"],
             ["quiz", "Quiz"],
+            ["visual", "🖼️ Visual"],
             ["case", "Case"],
             ["concept_link", "Tag concept"],
             ["bulk", "Bulk JSON"],
@@ -96,6 +98,9 @@ export default function SchoolAdminPanel({ systems, concepts, topics }: Props) {
       )}
       {tab === "quiz" && (
         <QuizForm topics={topics} busy={busy} setBusy={setBusy} notify={notify} />
+      )}
+      {tab === "visual" && (
+        <VisualForm topics={topics} busy={busy} setBusy={setBusy} notify={notify} />
       )}
       {tab === "case" && (
         <CaseForm systems={systems} busy={busy} setBusy={setBusy} notify={notify} />
@@ -831,5 +836,238 @@ function TopicPicker({
         </option>
       ))}
     </select>
+  );
+}
+
+function VisualForm({ topics, busy, setBusy, notify }: { topics: Props["topics"] } & CommonProps) {
+  const [topicId, setTopicId] = useState(topics[0]?.id ?? "");
+  const [layer, setLayer] = useState("foundation");
+  const [title, setTitle] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
+  const [caption, setCaption] = useState("");
+  const [notesMd, setNotesMd] = useState("");
+  const [source, setSource] = useState("");
+  const [checks, setChecks] = useState<{ q: string; a: string }[]>([{ q: "", a: "" }]);
+  const [linkedCardsText, setLinkedCardsText] = useState("");
+  const [availableCards, setAvailableCards] = useState<
+    { id: string; front: string }[]
+  >([]);
+
+  // Load flashcards for the chosen topic
+  useEffect(() => {
+    if (!topicId) {
+      setAvailableCards([]);
+      return;
+    }
+    let cancelled = false;
+    (async () => {
+      const supabase = createClient();
+      const { data } = await supabase
+        .from("school_flashcards")
+        .select("id, front")
+        .eq("topic_id", topicId)
+        .eq("status", "active")
+        .limit(100);
+      if (!cancelled) {
+        setAvailableCards(
+          (data as { id: string; front: string }[] | null) ?? []
+        );
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [topicId]);
+
+  function setCheck(i: number, k: "q" | "a", v: string) {
+    const c = [...checks];
+    c[i] = { ...c[i], [k]: v };
+    setChecks(c);
+  }
+  function addCheck() {
+    setChecks([...checks, { q: "", a: "" }]);
+  }
+  function removeCheck(i: number) {
+    if (checks.length <= 1) return;
+    setChecks(checks.filter((_, x) => x !== i));
+  }
+
+  async function save() {
+    if (!topicId || !title) {
+      notify("err", "ขาด topic หรือ title");
+      return;
+    }
+    const cleanChecks = checks.filter((c) => c.q.trim() && c.a.trim());
+    const linkedIds = linkedCardsText
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean);
+    setBusy(true);
+    try {
+      const supabase = createClient();
+      const { error } = await supabase.from("school_visuals").insert({
+        topic_id: topicId,
+        layer,
+        title,
+        image_url: imageUrl || null,
+        caption: caption || null,
+        notes_md: notesMd || null,
+        check_questions: cleanChecks,
+        linked_flashcard_ids: linkedIds,
+        source: source || null,
+      });
+      if (error) throw error;
+      notify("ok", `เพิ่ม visual "${title}" สำเร็จ`);
+      setTitle("");
+      setImageUrl("");
+      setCaption("");
+      setNotesMd("");
+      setSource("");
+      setChecks([{ q: "", a: "" }]);
+      setLinkedCardsText("");
+    } catch (e) {
+      notify("err", e instanceof Error ? e.message : "เกิดข้อผิดพลาด");
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  return (
+    <Card>
+      <CardContent className="p-4 space-y-3">
+        <h3 className="font-bold">เพิ่ม Visual Summary</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <Field label="Topic">
+            <TopicPicker topics={topics} value={topicId} onChange={setTopicId} />
+          </Field>
+          <Field label="Layer">
+            <select
+              value={layer}
+              onChange={(e) => setLayer(e.target.value)}
+              className="w-full border rounded p-2 text-sm"
+            >
+              {LAYERS.map((l) => (
+                <option key={l} value={l}>
+                  {l}
+                </option>
+              ))}
+            </select>
+          </Field>
+        </div>
+        <Field label="Title">
+          <input
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            className="w-full border rounded p-2 text-sm"
+            placeholder="เช่น Cardiac Cycle Overview"
+          />
+        </Field>
+        <Field label="Image URL (optional — paste Drive / IG / Cloudinary URL)">
+          <input
+            value={imageUrl}
+            onChange={(e) => setImageUrl(e.target.value)}
+            className="w-full border rounded p-2 text-sm"
+            placeholder="https://..."
+          />
+        </Field>
+        <Field label="Caption (1 line)">
+          <input
+            value={caption}
+            onChange={(e) => setCaption(e.target.value)}
+            className="w-full border rounded p-2 text-sm"
+            placeholder="สรุปสั้นใต้รูป"
+          />
+        </Field>
+        <Field label="Short notes (Markdown bullets)">
+          <textarea
+            value={notesMd}
+            onChange={(e) => setNotesMd(e.target.value)}
+            className="w-full border rounded p-2 text-sm min-h-[120px] font-mono"
+            placeholder={"- จุดสำคัญที่ 1\n- จุดสำคัญที่ 2\n- ..."}
+          />
+        </Field>
+        <Field label="Quick check questions (เด็กกดเปิดเฉลย)">
+          <div className="space-y-2">
+            {checks.map((c, i) => (
+              <div key={i} className="flex items-start gap-2">
+                <span className="text-xs font-bold w-6 mt-2">Q{i + 1}.</span>
+                <div className="flex-1 space-y-1">
+                  <input
+                    value={c.q}
+                    onChange={(e) => setCheck(i, "q", e.target.value)}
+                    placeholder="คำถาม"
+                    className="w-full border rounded p-2 text-sm"
+                  />
+                  <input
+                    value={c.a}
+                    onChange={(e) => setCheck(i, "a", e.target.value)}
+                    placeholder="คำตอบ"
+                    className="w-full border rounded p-2 text-sm bg-muted/30"
+                  />
+                </div>
+                {checks.length > 1 && (
+                  <button
+                    onClick={() => removeCheck(i)}
+                    className="text-muted-foreground hover:text-rose-600 mt-2"
+                  >
+                    <AlertCircle className="h-4 w-4" />
+                  </button>
+                )}
+              </div>
+            ))}
+            <Button size="sm" variant="outline" onClick={addCheck}>
+              + เพิ่ม
+            </Button>
+          </div>
+        </Field>
+        <Field label={`Linked flashcards (comma-separated UUIDs จาก topic นี้ — มี ${availableCards.length} ใบให้เลือก)`}>
+          <textarea
+            value={linkedCardsText}
+            onChange={(e) => setLinkedCardsText(e.target.value)}
+            className="w-full border rounded p-2 text-xs min-h-[60px] font-mono"
+            placeholder="uuid1, uuid2, uuid3"
+          />
+          {availableCards.length > 0 && (
+            <details className="mt-2 text-xs">
+              <summary className="cursor-pointer text-muted-foreground">
+                ดู UUIDs ที่มี ({availableCards.length})
+              </summary>
+              <ul className="mt-1 space-y-0.5 max-h-32 overflow-y-auto bg-muted/30 rounded p-2">
+                {availableCards.map((c) => (
+                  <li key={c.id} className="font-mono text-[10px] truncate">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setLinkedCardsText(
+                          linkedCardsText
+                            ? `${linkedCardsText}, ${c.id}`
+                            : c.id
+                        )
+                      }
+                      className="text-brand hover:underline"
+                    >
+                      + {c.id}
+                    </button>{" "}
+                    — {c.front.slice(0, 50)}
+                  </li>
+                ))}
+              </ul>
+            </details>
+          )}
+        </Field>
+        <Field label="Source (optional)">
+          <input
+            value={source}
+            onChange={(e) => setSource(e.target.value)}
+            className="w-full border rounded p-2 text-sm"
+            placeholder="Robbins Pathology fig 9.2 / Sketchy CVS / Anki deck"
+          />
+        </Field>
+        <Button onClick={save} disabled={busy}>
+          {busy && <Loader2 className="h-4 w-4 mr-2 animate-spin" />}
+          บันทึก
+        </Button>
+      </CardContent>
+    </Card>
   );
 }

@@ -25,6 +25,7 @@ import {
   Database,
   Route,
   Settings as SettingsIcon,
+  Image as ImageIcon,
 } from "lucide-react";
 import { xpToLevel } from "@/lib/school/xp";
 import {
@@ -311,6 +312,13 @@ export default async function SchoolPage() {
             color: "cyan",
             title: "Concepts",
             desc: "เชื่อมข้ามวิชา",
+          },
+          {
+            href: "/school/visuals",
+            icon: ImageIcon,
+            color: "fuchsia",
+            title: "Visuals",
+            desc: "รูปสรุป + ช็อตโน้ต",
           },
           {
             href: "/school/cases",
