@@ -74,11 +74,22 @@ export default async function YearPage({ params }: PageProps) {
                   {list.map((t) => {
                     const fc = counts.flashcards[t.id] ?? 0;
                     const qz = counts.quizzes[t.id] ?? 0;
+                    const empty = fc === 0 && qz === 0;
                     return (
                       <Card key={t.id} className="h-full">
                         <CardContent className="p-5 space-y-3">
                           <div>
-                            <h3 className="font-semibold">{t.name_th}</h3>
+                            <div className="flex items-start justify-between gap-2">
+                              <h3 className="font-semibold">{t.name_th}</h3>
+                              {empty && (
+                                <Badge
+                                  variant="secondary"
+                                  className="shrink-0 text-[10px]"
+                                >
+                                  เร็วๆ นี้
+                                </Badge>
+                              )}
+                            </div>
                             <p className="text-xs text-muted-foreground mt-1">
                               {t.name_en}
                             </p>
@@ -96,15 +107,25 @@ export default async function YearPage({ params }: PageProps) {
                               <BookOpen className="h-3 w-3" /> {qz} ข้อ
                             </span>
                           </div>
-                          <Link href={`/school/topic/${t.id}`}>
+                          {empty ? (
                             <Button
                               size="sm"
-                              className="w-full bg-brand hover:bg-brand-light text-white"
-                              disabled={fc === 0 && qz === 0}
+                              variant="outline"
+                              className="w-full"
+                              disabled
                             >
-                              เปิด Topic
+                              เนื้อหาเร็วๆ นี้
                             </Button>
-                          </Link>
+                          ) : (
+                            <Link href={`/school/topic/${t.id}`}>
+                              <Button
+                                size="sm"
+                                className="w-full bg-brand hover:bg-brand-light text-white"
+                              >
+                                เปิด Topic
+                              </Button>
+                            </Link>
+                          )}
                         </CardContent>
                       </Card>
                     );
