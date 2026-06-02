@@ -69,6 +69,44 @@ describe("normalizeAnswer", () => {
     expect(out).not.toContain("## 1.");
   });
 
+  it("turns a 'เช่น:' lead-in plus short lines into a bullet list", () => {
+    const raw = [
+      "ทักษะที่เหมาะกับ RCDP เช่น:",
+      "การกดหน้าอกคุณภาพสูง",
+      "การใช้เครื่อง AED / Manual Defibrillator",
+      "การจัดการทางเดินหายใจ",
+    ].join("\n");
+    const out = normalizeAnswer(raw);
+    expect(out).toContain("- การกดหน้าอกคุณภาพสูง");
+    expect(out).toContain("- การใช้เครื่อง AED / Manual Defibrillator");
+    expect(out).toContain("- การจัดการทางเดินหายใจ");
+  });
+
+  it("ends a cued list before a wrap-up heading that owns a long paragraph", () => {
+    const raw = [
+      "ตัวอย่างได้แก่:",
+      "ข้อหนึ่ง",
+      "ข้อสอง",
+      "สรุปเชิงลึก",
+      "นี่คือย่อหน้าสรุปที่ยาวมากเกินเกณฑ์ความยาวของบรรทัดปกติเพื่อให้ถือเป็นเนื้อหาพารากราฟจริงๆ ไม่ใช่ไอเทมของลิสต์",
+    ].join("\n");
+    const out = normalizeAnswer(raw);
+    expect(out).toContain("- ข้อหนึ่ง");
+    expect(out).toContain("- ข้อสอง");
+    expect(out).not.toContain("- สรุปเชิงลึก");
+  });
+
+  it("does not bullet label lines after a 'ต่อไปนี้:' cue", () => {
+    const raw = [
+      "พบผลลัพธ์เชิงบวกในด้านต่อไปนี้:",
+      "คุณภาพการกดหน้าอก (CPR Quality): อัตราที่ถูกต้อง",
+      "เวลาในการช็อก (Time to Defibrillation): เร็วขึ้น",
+    ].join("\n");
+    const out = normalizeAnswer(raw);
+    expect(out).toContain("**คุณภาพการกดหน้าอก (CPR Quality):** อัตราที่ถูกต้อง");
+    expect(out).not.toContain("- คุณภาพการกดหน้าอก");
+  });
+
   it("leaves already-structured Markdown (headings) untouched", () => {
     const raw = "### หัวข้อ\nให้ **Epinephrine 1 mg** ทันที";
     expect(normalizeAnswer(raw)).toBe(raw);
