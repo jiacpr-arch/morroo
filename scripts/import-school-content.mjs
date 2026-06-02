@@ -19,8 +19,12 @@
  *   }
  *
  * For each lecture body, calls Claude to extract flashcards + quizzes via tool
- * use, then inserts them under the resolved topic. Run with --dry-run to print
- * generated content without inserting.
+ * use, then inserts them under the resolved topic. The full lecture text is
+ * ALSO stored as a readable book (school_books + school_book_chapters) so
+ * students can read the หนังสือฉบับเต็ม; pass --skip-book to skip that.
+ * Generated counts are checked against the lesson-design template
+ * (docs/school-lesson-template.md). Run with --dry-run to print generated
+ * content without inserting.
  */
 
 import { createClient } from "@supabase/supabase-js";
@@ -31,9 +35,18 @@ const { values } = parseArgs({
   options: {
     manifest: { type: "string" },
     "dry-run": { type: "boolean", default: false },
+    "skip-book": { type: "boolean", default: false },
     model: { type: "string", default: "claude-sonnet-4-6" },
   },
 });
+
+// Lesson-design template ranges (see docs/school-lesson-template.md).
+const TEMPLATE = {
+  flashcardsMin: 10,
+  flashcardsMax: 20,
+  quizzesMin: 5,
+  quizzesMax: 10,
+};
 
 if (!values.manifest) {
   console.error("Missing --manifest <path>");
@@ -167,13 +180,69 @@ async function resolveTopicId(systemSlug, year, topicSlug) {
 
   const { data: topic } = await supabase
     .from("school_topics")
-    .select("id")
+    .select("id, name_th, name_en")
     .eq("system_id", sys.id)
     .eq("year", year)
     .eq("slug", topicSlug)
     .maybeSingle();
   if (!topic) throw new Error(`Topic not found: ${systemSlug}/${year}/${topicSlug}`);
-  return topic.id;
+  return topic;
+}
+
+/**
+ * Store the full lecture text as a readable book for this topic. Upserts one
+ * school_books row per topic, then replaces its chapters with the manifest
+ * lectures verbatim (idempotent re-runs). Returns the inserted chapter count.
+ */
+async function storeBook(topicId, bookTitle, lectures) {
+  const { data: existing } = await supabase
+    .from("school_books")
+    .select("id")
+    .eq("topic_id", topicId)
+    .maybeSingle();
+
+  let bookId = existing?.id;
+  if (!bookId) {
+    const { data: created, error } = await supabase
+      .from("school_books")
+      .insert({ topic_id: topicId, title: bookTitle })
+      .select("id")
+      .single();
+    if (error) throw new Error(`Book insert error: ${error.message}`);
+    bookId = created.id;
+  } else {
+    // Refresh chapters on re-import
+    await supabase.from("school_book_chapters").delete().eq("book_id", bookId);
+  }
+
+  const chapterRows = lectures.map((lec, i) => ({
+    book_id: bookId,
+    sort_order: i,
+    title: lec.title,
+    body_md: lec.body,
+    source: lec.source ?? lec.title,
+  }));
+  const { error: chErr } = await supabase
+    .from("school_book_chapters")
+    .insert(chapterRows);
+  if (chErr) throw new Error(`Book chapters insert error: ${chErr.message}`);
+  return chapterRows.length;
+}
+
+/** Warn when generated counts fall outside the lesson-design template. */
+function checkTemplate(title, units) {
+  const fc = units.flashcards.length;
+  const qz = units.quizzes.length;
+  if (fc < TEMPLATE.flashcardsMin || fc > TEMPLATE.flashcardsMax) {
+    console.warn(
+      `  ⚠ "${title}": ${fc} flashcards (template ${TEMPLATE.flashcardsMin}-${TEMPLATE.flashcardsMax})`
+    );
+  }
+  if (qz < TEMPLATE.quizzesMin || qz > TEMPLATE.quizzesMax) {
+    console.warn(
+      `  ⚠ "${title}": ${qz} quizzes (template ${TEMPLATE.quizzesMin}-${TEMPLATE.quizzesMax})`
+    );
+  }
 }
 
 async function main() {
@@ -181,9 +250,18 @@ async function main() {
   const { system_slug, year, topic_slug, layer, lectures } = manifest;
 
   let topicId = null;
+  let topicMeta = null;
   if (!values["dry-run"]) {
-    topicId = await resolveTopicId(system_slug, year, topic_slug);
+    topicMeta = await resolveTopicId(system_slug, year, topic_slug);
+    topicId = topicMeta.id;
     console.log(`Resolved topic: ${topicId}`);
+
+    // Store the full lecture text as a readable book (หนังสือฉบับเต็ม).
+    if (!values["skip-book"]) {
+      const bookTitle = topicMeta.name_th || topicMeta.name_en || topic_slug;
+      const chapters = await storeBook(topicId, bookTitle, lectures);
+      console.log(`  📖 stored full-text book: ${chapters} chapters`);
+    }
   }
 
   let totalFc = 0;
@@ -193,6 +271,7 @@ async function main() {
     console.log(`\n→ Extracting: ${lec.title}`);
     const units = await extractWithClaude(lec.title, lec.body);
     console.log(`  flashcards: ${units.flashcards.length}, quizzes: ${units.quizzes.length}`);
+    checkTemplate(lec.title, units);
 
     if (values["dry-run"]) {
       console.log(JSON.stringify(units, null, 2).slice(0, 800) + "...");

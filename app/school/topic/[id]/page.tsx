@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import {
   ArrowLeft,
   BookOpen,
+  BookOpenText,
   Layers,
   Brain,
   TrendingUp,
@@ -21,6 +22,7 @@ import {
   getSchoolQuizzes,
   getSchoolMasteryByTopic,
   getSchoolVisuals,
+  getSchoolBookByTopic,
 } from "@/lib/supabase/queries-school";
 import VisualCard from "@/components/school/VisualCard";
 
@@ -48,12 +50,15 @@ export default async function TopicPage({ params }: PageProps) {
   const topic = await getSchoolTopic(id);
   if (!topic) notFound();
 
-  const [lessons, cards, quizzes, visuals] = await Promise.all([
+  const [lessons, cards, quizzes, visuals, bookResult] = await Promise.all([
     getSchoolLessons({ topicId: id }),
     getSchoolFlashcards({ topicId: id, limit: 100 }),
     getSchoolQuizzes({ topicId: id, limit: 100 }),
     getSchoolVisuals({ topicId: id }),
+    getSchoolBookByTopic(id),
   ]);
+  const book = bookResult?.book ?? null;
+  const bookChapterCount = bookResult?.chapters.length ?? 0;
 
   // Personalised mastery + read status
   const supabase = await createClient();
@@ -120,6 +125,30 @@ export default async function TopicPage({ params }: PageProps) {
           </Link>
         </CardContent>
       </Card>
+
+      {/* Full-text book (reference) — อ่านได้อิสระ ไม่ gating */}
+      {book && bookChapterCount > 0 && (
+        <Card className="mb-8 border-amber-200 bg-amber-50/50">
+          <CardContent className="p-5 flex items-center justify-between gap-4">
+            <div>
+              <p className="font-semibold text-amber-700 flex items-center gap-2">
+                <BookOpenText className="h-4 w-4" /> อ่านหนังสือฉบับเต็ม (Reference)
+              </p>
+              <p className="text-sm text-muted-foreground">
+                เนื้อหาฉบับเต็ม {bookChapterCount} บท แบบอ่านต่อเนื่อง + สารบัญ — เปิดอ่านได้อิสระ
+              </p>
+            </div>
+            <Link href={`/school/book/${book.id}`}>
+              <Button
+                variant="outline"
+                className="border-amber-300 text-amber-700 hover:bg-amber-100"
+              >
+                เปิดอ่าน
+              </Button>
+            </Link>
+          </CardContent>
+        </Card>
+      )}
 
       {/* Sections */}
       <div className="space-y-4">
