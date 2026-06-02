@@ -7,8 +7,10 @@ import {
   getMixedFlashcards,
   getMixedQuizzes,
   getMixedLessons,
+  getSchoolTopicsByYear,
 } from "@/lib/supabase/queries-school";
 import DailyLessonStepper from "@/components/school/DailyLessonStepper";
+import SubjectFilter from "@/components/school/SubjectFilter";
 import { hasSchoolAccess } from "@/lib/membership";
 import { redirect } from "next/navigation";
 
@@ -19,7 +21,12 @@ export const metadata = {
   description: "บทเรียน 5 นาทีต่อวัน — Mix flashcard + quiz ของชั้นปีคุณ",
 };
 
-export default async function DailyPage() {
+interface PageProps {
+  searchParams: Promise<{ subject?: string }>;
+}
+
+export default async function DailyPage({ searchParams }: PageProps) {
+  const { subject } = await searchParams;
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) redirect("/login?next=/school/daily");
@@ -31,21 +38,35 @@ export default async function DailyPage() {
     .maybeSingle();
   if (!profile?.current_year) redirect("/school/onboarding");
 
+  // Subjects (รายวิชา) of the student's year. The subject filter is optional:
+  // none selected → random mix across the whole year; one selected → that
+  // subject only. Ignore an unknown/foreign subject id.
+  const topics = await getSchoolTopicsByYear(profile.current_year);
+  const activeTopic = subject ? topics.find((t) => t.id === subject) : undefined;
+  const topicId = activeTopic?.id;
+
   const isPremium = hasSchoolAccess(profile);
   const [lessons, cards, quizzes] = await Promise.all([
     getMixedLessons({
       userId: user.id,
       year: profile.current_year,
+      topicId,
       weakSystemIds: profile.weak_subjects ?? [],
       limit: 2,
     }),
     getMixedFlashcards({
       userId: user.id,
       year: profile.current_year,
+      topicId,
       weakSystemIds: profile.weak_subjects ?? [],
       limit: 5,
     }),
-    getMixedQuizzes({ userId: user.id, year: profile.current_year, limit: 3 }),
+    getMixedQuizzes({
+      userId: user.id,
+      year: profile.current_year,
+      topicId,
+      limit: 3,
+    }),
   ]);
 
   return (
@@ -58,7 +79,11 @@ export default async function DailyPage() {
       <div className="mb-6 flex items-center gap-2">
         <Badge className="bg-violet-100 text-violet-700">Daily Lesson</Badge>
         <Badge variant="outline">ปี {profile.current_year}</Badge>
-        <Badge variant="outline">~5 นาที</Badge>
+        {activeTopic ? (
+          <Badge variant="outline">{activeTopic.name_th}</Badge>
+        ) : (
+          <Badge variant="outline">~5 นาที</Badge>
+        )}
       </div>
       <h1 className="text-2xl font-bold mb-2 flex items-center gap-2">
         <Sparkles className="h-6 w-6 text-violet-600" /> บทเรียนประจำวัน
@@ -67,9 +92,17 @@ export default async function DailyPage() {
         อ่านเนื้อหาสั้น ๆ + flashcard + quiz — ใช้ Spaced Repetition + Interleaving
       </p>
 
+      <SubjectFilter
+        basePath="/school/daily"
+        topics={topics}
+        activeTopicId={topicId}
+      />
+
       {lessons.length + cards.length + quizzes.length === 0 ? (
         <div className="border rounded-lg p-8 text-center text-muted-foreground">
-          ยังไม่มีเนื้อหาสำหรับชั้นปีของคุณ — ลองเปลี่ยนชั้นปีที่ Onboarding
+          {activeTopic
+            ? "ยังไม่มีเนื้อหาในรายวิชานี้ — ลองเลือกวิชาอื่น หรือกด “ทุกวิชา (สุ่ม)”"
+            : "ยังไม่มีเนื้อหาสำหรับชั้นปีของคุณ — ลองเปลี่ยนชั้นปีที่ Onboarding"}
         </div>
       ) : (
         <DailyLessonStepper
