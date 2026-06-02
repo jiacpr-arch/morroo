@@ -97,8 +97,9 @@ export default function LessonReader({ lesson, miniQuizzes }: Props) {
             </CardContent>
           </Card>
 
-          {/* Mini-quiz gate between sections */}
-          {idx < totalGates && idx < step && miniQuizzes[idx] && (
+          {/* Mini-quiz gate between sections — shown on the current part too
+              so the reader can answer it and unlock the Continue button */}
+          {idx < totalGates && idx <= step && miniQuizzes[idx] && (
             <MiniQuizCard
               quiz={miniQuizzes[idx]}
               picked={picks[idx] ?? null}
