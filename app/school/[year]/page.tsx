@@ -3,10 +3,11 @@ import { notFound } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, BookOpen, Layers } from "lucide-react";
+import { ArrowLeft, BookOpen, BookOpenText, Layers } from "lucide-react";
 import {
   getSchoolTopicsByYear,
   getSchoolTopicCounts,
+  getSchoolBookMap,
 } from "@/lib/supabase/queries-school";
 
 export const revalidate = 60;
@@ -28,9 +29,10 @@ export default async function YearPage({ params }: PageProps) {
   const yearNum = Number(year);
   if (!Number.isInteger(yearNum) || yearNum < 1 || yearNum > 6) notFound();
 
-  const [topics, counts] = await Promise.all([
+  const [topics, counts, bookMap] = await Promise.all([
     getSchoolTopicsByYear(yearNum),
     getSchoolTopicCounts(),
+    getSchoolBookMap(),
   ]);
 
   // Group topics by system
@@ -74,6 +76,7 @@ export default async function YearPage({ params }: PageProps) {
                   {list.map((t) => {
                     const fc = counts.flashcards[t.id] ?? 0;
                     const qz = counts.quizzes[t.id] ?? 0;
+                    const bookId = bookMap[t.id];
                     return (
                       <Card key={t.id} className="h-full">
                         <CardContent className="p-5 space-y-3">
@@ -96,6 +99,17 @@ export default async function YearPage({ params }: PageProps) {
                               <BookOpen className="h-3 w-3" /> {qz} ข้อ
                             </span>
                           </div>
+                          {bookId && (
+                            <Link href={`/school/book/${bookId}`}>
+                              <Button
+                                size="sm"
+                                variant="outline"
+                                className="w-full gap-2 border-amber-300 text-amber-700 hover:bg-amber-50"
+                              >
+                                <BookOpenText className="h-4 w-4" /> อ่านหนังสือฉบับเต็ม
+                              </Button>
+                            </Link>
+                          )}
                           <Link href={`/school/topic/${t.id}`}>
                             <Button
                               size="sm"

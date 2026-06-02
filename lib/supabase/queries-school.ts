@@ -204,6 +204,24 @@ async function getSchoolBookChapters(
   return (data as SchoolBookChapter[]) ?? [];
 }
 
+/** Map of topic_id → book_id for every active book (for "read book" shortcuts). */
+export async function getSchoolBookMap(): Promise<Record<string, string>> {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("school_books")
+    .select("id, topic_id")
+    .eq("status", "active");
+  if (error) {
+    console.error("Error fetching school book map:", error);
+    return {};
+  }
+  const map: Record<string, string> = {};
+  for (const r of (data as { id: string; topic_id: string }[]) ?? []) {
+    map[r.topic_id] = r.id;
+  }
+  return map;
+}
+
 export async function getSchoolTopic(id: string): Promise<SchoolTopic | null> {
   const supabase = await createClient();
   const { data, error } = await supabase
