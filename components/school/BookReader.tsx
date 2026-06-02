@@ -10,6 +10,7 @@ import { CheckCircle2, Circle, List } from "lucide-react";
 import type { SchoolBookChapter } from "@/lib/types-school";
 import { createClient } from "@/lib/supabase/client";
 import { XP, awardXp } from "@/lib/school/xp";
+import { formatChapterBody } from "@/lib/school/format-book";
 import AskMore from "./AskMore";
 
 interface Props {
@@ -98,10 +99,27 @@ export default function BookReader({ topicId, chapters, readChapterIds }: Props)
                 </Badge>
               )}
             </div>
-            <h2 className="mb-4 text-2xl font-bold">{ch.title}</h2>
-            <article className="prose prose-slate dark:prose-invert max-w-none">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                {ch.body_md}
+            <h2 className="mb-5 text-2xl font-bold">{ch.title}</h2>
+            <article
+              className="prose prose-slate prose-lg max-w-[68ch] dark:prose-invert
+                prose-p:leading-8 prose-p:text-foreground/85
+                prose-li:my-1 prose-li:leading-7 prose-li:text-foreground/85
+                prose-strong:text-foreground prose-strong:font-semibold"
+            >
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  // The source text encodes section titles as ALL-CAPS / Title-case
+                  // labels; formatChapterBody promotes them to h3 so they render as
+                  // clearly distinct, scannable section heads instead of more body text.
+                  h3: ({ children }) => (
+                    <h3 className="mt-8 mb-2 border-l-4 border-brand/60 pl-3 text-base font-bold uppercase tracking-wide text-brand first:mt-0">
+                      {children}
+                    </h3>
+                  ),
+                }}
+              >
+                {formatChapterBody(ch.body_md)}
               </ReactMarkdown>
             </article>
             {ch.source && (
