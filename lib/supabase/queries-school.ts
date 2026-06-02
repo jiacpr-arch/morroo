@@ -319,6 +319,67 @@ export async function getMixedQuizzes(opts: {
   return quizzes.sort(() => Math.random() - 0.5);
 }
 
+/**
+ * Pick a few short lessons for the Daily Lesson reading steps. Prefers lessons
+ * the user hasn't read yet, biases toward weak systems, and stays within the
+ * user's year. These are shown as bite-sized "read first, then practice"
+ * concept snippets at the start of the daily session.
+ */
+export async function getMixedLessons(opts: {
+  userId: string;
+  year?: number;
+  limit?: number;
+  weakSystemIds?: string[];
+}): Promise<SchoolLesson[]> {
+  const supabase = await createClient();
+  const limit = opts.limit ?? 2;
+
+  const { data: seenRows } = await supabase
+    .from("school_progress")
+    .select("unit_id")
+    .eq("user_id", opts.userId)
+    .eq("unit_type", "lesson");
+  const seenIds = new Set(
+    (seenRows ?? []).map((r: { unit_id: string }) => r.unit_id)
+  );
+
+  let q = supabase
+    .from("school_lessons")
+    .select("*, school_topics!inner(year, system_id)")
+    .eq("status", "active")
+    .order("estimated_min", { ascending: true })
+    .limit(limit * 6);
+  if (opts.year) q = q.eq("school_topics.year", opts.year);
+  const { data: pool } = await q;
+
+  type RowWithTopic = SchoolLesson & { school_topics?: { system_id?: string } };
+  const all = (pool as RowWithTopic[]) ?? [];
+  // Prefer unread lessons; fall back to any if everything has been read.
+  const candidates = all.filter((l) => !seenIds.has(l.id));
+  const source = candidates.length ? candidates : all;
+
+  // Bias: weak-system lessons get duplicated weight before shuffling.
+  const weakSet = new Set(opts.weakSystemIds ?? []);
+  const weighted: SchoolLesson[] = [];
+  for (const l of source) {
+    const inWeak =
+      weakSet.size && l.school_topics?.system_id && weakSet.has(l.school_topics.system_id);
+    weighted.push(l);
+    if (inWeak) weighted.push(l);
+  }
+  weighted.sort(() => Math.random() - 0.5);
+
+  const out: SchoolLesson[] = [];
+  const seen = new Set<string>();
+  for (const l of weighted) {
+    if (out.length >= limit) break;
+    if (seen.has(l.id)) continue;
+    out.push(l);
+    seen.add(l.id);
+  }
+  return out;
+}
+
 export interface SchoolStreak {
   user_id: string;
   current_streak: number;

@@ -4,9 +4,11 @@ import { useMemo, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Trophy, ArrowRight, Flame } from "lucide-react";
+import { Trophy, ArrowRight, Flame, BookOpen } from "lucide-react";
 import Link from "next/link";
-import type { SchoolFlashcard, SchoolQuiz } from "@/lib/types-school";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import type { SchoolFlashcard, SchoolQuiz, SchoolLesson } from "@/lib/types-school";
 import { createClient } from "@/lib/supabase/client";
 import { nextSrsState } from "@/lib/school/srs";
 import { applyStreak } from "@/lib/school/streak";
@@ -14,26 +16,37 @@ import RewardBadge from "./RewardBadge";
 import { awardXp, XP, detectBadges } from "@/lib/school/xp";
 
 interface Props {
+  lessons?: SchoolLesson[];
   cards: SchoolFlashcard[];
   quizzes: SchoolQuiz[];
   isPremium?: boolean;
 }
 
 type Step =
+  | { kind: "reading"; lesson: SchoolLesson }
   | { kind: "flashcard"; card: SchoolFlashcard }
   | { kind: "quiz"; quiz: SchoolQuiz };
 
-export default function DailyLessonStepper({ cards, quizzes }: Props) {
-  // Interleave: alternate flashcard, quiz, flashcard, ...
+export default function DailyLessonStepper({
+  lessons = [],
+  cards,
+  quizzes,
+}: Props) {
+  // Read first, then practice: lead with bite-sized lesson snippets, then
+  // interleave flashcard, quiz, flashcard, ...
   const steps = useMemo<Step[]>(() => {
     const out: Step[] = [];
+    for (const lesson of lessons) out.push({ kind: "reading", lesson });
     const maxLen = Math.max(cards.length, quizzes.length);
     for (let i = 0; i < maxLen; i++) {
       if (i < cards.length) out.push({ kind: "flashcard", card: cards[i] });
       if (i < quizzes.length) out.push({ kind: "quiz", quiz: quizzes[i] });
     }
     return out;
-  }, [cards, quizzes]);
+  }, [lessons, cards, quizzes]);
+
+  // Only flashcards + quizzes count toward the accuracy score.
+  const gradeableTotal = cards.length + quizzes.length;
 
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
@@ -45,7 +58,7 @@ export default function DailyLessonStepper({ cards, quizzes }: Props) {
   const done = !step;
 
   async function persist(
-    unitType: "flashcard" | "quiz",
+    unitType: "flashcard" | "quiz" | "lesson",
     unitId: string,
     outcome: "again" | "hard" | "good" | "easy" | "correct" | "wrong"
   ) {
@@ -90,6 +103,12 @@ export default function DailyLessonStepper({ cards, quizzes }: Props) {
     }
   }
 
+  async function finishReading() {
+    if (step?.kind !== "reading") return;
+    await persist("lesson", step.lesson.id, "good");
+    advance();
+  }
+
   async function rateFlashcard(outcome: "again" | "hard" | "good" | "easy") {
     if (step?.kind !== "flashcard") return;
     await persist("flashcard", step.card.id, outcome);
@@ -112,7 +131,7 @@ export default function DailyLessonStepper({ cards, quizzes }: Props) {
   }
 
   if (done) {
-    const total = steps.length;
+    const total = gradeableTotal;
     const pct = total ? Math.round((correctCount / total) * 100) : 0;
     // Fire-and-forget badge detection on completion
     if (typeof window !== "undefined") {
@@ -158,7 +177,34 @@ export default function DailyLessonStepper({ cards, quizzes }: Props) {
         <span>ถูกแล้ว {correctCount}</span>
       </div>
 
-      {step.kind === "flashcard" ? (
+      {step.kind === "reading" ? (
+        <>
+          <Card className="border-violet-200 bg-violet-50/30">
+            <CardContent className="p-6 space-y-3">
+              <div className="flex items-center gap-2">
+                <Badge variant="outline" className="text-xs gap-1">
+                  <BookOpen className="h-3 w-3" /> อ่านก่อนฝึก · {step.lesson.layer}
+                </Badge>
+              </div>
+              <h3 className="text-lg font-semibold">{step.lesson.title}</h3>
+              <article className="prose prose-slate dark:prose-invert prose-sm max-w-none">
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {readingExcerpt(step.lesson.body_md)}
+                </ReactMarkdown>
+              </article>
+              <Link
+                href={`/school/lesson/${step.lesson.id}`}
+                className="inline-block text-xs text-violet-700 underline underline-offset-2"
+              >
+                อ่านบทเต็ม →
+              </Link>
+            </CardContent>
+          </Card>
+          <Button onClick={finishReading} className="w-full gap-2">
+            อ่านจบแล้ว ไปฝึกต่อ <ArrowRight className="h-4 w-4" />
+          </Button>
+        </>
+      ) : step.kind === "flashcard" ? (
         <>
           <Card
             className="min-h-[260px] cursor-pointer select-none transition-shadow hover:shadow-md"
@@ -246,4 +292,22 @@ export default function DailyLessonStepper({ cards, quizzes }: Props) {
       )}
     </div>
   );
+}
+
+const MINI_QUIZ_MARKER = /^##\s*⏸\s*Mini Quiz.*$/m;
+const MAX_EXCERPT_CHARS = 700;
+
+/**
+ * Keep the reading snippet bite-sized: take the lesson's first section (before
+ * the first Mini Quiz marker) and cap it so the daily session stays ~5 min.
+ * The full lesson is one tap away via the "อ่านบทเต็ม" link.
+ */
+function readingExcerpt(md: string): string {
+  if (!md) return "";
+  const firstSection = md.split(MINI_QUIZ_MARKER)[0].trim();
+  if (firstSection.length <= MAX_EXCERPT_CHARS) return firstSection;
+  const truncated = firstSection.slice(0, MAX_EXCERPT_CHARS);
+  // Avoid cutting mid-word.
+  const lastBreak = truncated.lastIndexOf(" ");
+  return `${(lastBreak > 0 ? truncated.slice(0, lastBreak) : truncated).trim()} …`;
 }
