@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { ArrowRight, BookOpen, Shuffle, Target } from "lucide-react";
 import { getMcqSubjects, getMcqSubjectCounts } from "@/lib/supabase/queries-mcq";
 import AllExamsCountdown from "@/components/AllExamsCountdown";
+import SectionUpdatesBadge from "@/components/SectionUpdatesBadge";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -42,6 +43,7 @@ export default async function NLPage() {
         <p className="mt-2 text-muted-foreground">
           ฝึกทำข้อสอบ National License แบบ MCQ ครบทุกสาขา
         </p>
+        <SectionUpdatesBadge section="nl" className="mt-3" />
       </div>
 
       {/* All Exams Countdown */}
