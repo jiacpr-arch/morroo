@@ -129,13 +129,16 @@ export default function PaymentPage({
         .upload(fileName, slipFile);
 
       if (uploadError) {
-        // If storage not set up, save order without slip URL
-        console.warn("Storage upload failed:", uploadError.message);
+        // Never create an order without a real slip — the admin would have
+        // nothing to verify and the customer is left thinking they paid.
+        // Surface the error so the user can retry instead of silently failing.
+        console.error("Slip upload failed:", uploadError.message);
+        setError(
+          "อัปโหลดสลิปไม่สำเร็จ กรุณาลองใหม่อีกครั้ง หากยังไม่สำเร็จกรุณาติดต่อแอดมิน"
+        );
+        setSubmitting(false);
+        return;
       }
-
-      const slipUrl = uploadError
-        ? `pending-upload-${Date.now()}`
-        : fileName;
 
       // Create payment order
       const { error: orderError } = await supabase
@@ -144,7 +147,7 @@ export default function PaymentPage({
           user_id: user.id,
           plan_type: plan,
           amount: planInfo.price,
-          slip_url: slipUrl,
+          slip_url: fileName,
           status: "pending",
         });
 
