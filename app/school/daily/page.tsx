@@ -6,6 +6,7 @@ import { createClient } from "@/lib/supabase/server";
 import {
   getMixedFlashcards,
   getMixedQuizzes,
+  getMixedLessons,
 } from "@/lib/supabase/queries-school";
 import DailyLessonStepper from "@/components/school/DailyLessonStepper";
 import { hasSchoolAccess } from "@/lib/membership";
@@ -31,7 +32,13 @@ export default async function DailyPage() {
   if (!profile?.current_year) redirect("/school/onboarding");
 
   const isPremium = hasSchoolAccess(profile);
-  const [cards, quizzes] = await Promise.all([
+  const [lessons, cards, quizzes] = await Promise.all([
+    getMixedLessons({
+      userId: user.id,
+      year: profile.current_year,
+      weakSystemIds: profile.weak_subjects ?? [],
+      limit: 2,
+    }),
     getMixedFlashcards({
       userId: user.id,
       year: profile.current_year,
@@ -57,15 +64,16 @@ export default async function DailyPage() {
         <Sparkles className="h-6 w-6 text-violet-600" /> บทเรียนประจำวัน
       </h1>
       <p className="text-sm text-muted-foreground mb-6">
-        Mix flashcard + quiz — ใช้ Spaced Repetition + Interleaving
+        อ่านเนื้อหาสั้น ๆ + flashcard + quiz — ใช้ Spaced Repetition + Interleaving
       </p>
 
-      {cards.length + quizzes.length === 0 ? (
+      {lessons.length + cards.length + quizzes.length === 0 ? (
         <div className="border rounded-lg p-8 text-center text-muted-foreground">
           ยังไม่มีเนื้อหาสำหรับชั้นปีของคุณ — ลองเปลี่ยนชั้นปีที่ Onboarding
         </div>
       ) : (
         <DailyLessonStepper
+          lessons={lessons}
           cards={cards}
           quizzes={quizzes}
           isPremium={isPremium}
