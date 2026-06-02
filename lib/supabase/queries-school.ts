@@ -269,6 +269,7 @@ export async function getSchoolTopicBySlug(
 export async function getMixedFlashcards(opts: {
   userId: string;
   year?: number;
+  topicId?: string;
   limit?: number;
   weakSystemIds?: string[];
 }): Promise<SchoolFlashcard[]> {
@@ -294,6 +295,7 @@ export async function getMixedFlashcards(opts: {
       .select("*, school_topics!inner(year)")
       .eq("status", "active")
       .in("id", dueIds);
+    if (opts.topicId) q = q.eq("topic_id", opts.topicId);
     if (opts.year) q = q.eq("school_topics.year", opts.year);
     const { data } = await q;
     cards.push(...((data as SchoolFlashcard[]) ?? []));
@@ -314,6 +316,7 @@ export async function getMixedFlashcards(opts: {
       .select("*, school_topics!inner(year, system_id)")
       .eq("status", "active")
       .limit(limit * 4);
+    if (opts.topicId) q = q.eq("topic_id", opts.topicId);
     if (opts.year) q = q.eq("school_topics.year", opts.year);
     const { data: pool } = await q;
     type RowWithTopic = SchoolFlashcard & { school_topics?: { system_id?: string } };
@@ -345,6 +348,7 @@ export async function getMixedFlashcards(opts: {
 export async function getMixedQuizzes(opts: {
   userId: string;
   year?: number;
+  topicId?: string;
   limit?: number;
 }): Promise<SchoolQuiz[]> {
   const supabase = await createClient();
@@ -372,6 +376,7 @@ export async function getMixedQuizzes(opts: {
       .select("*, school_topics!inner(year)")
       .eq("status", "active")
       .in("id", wrongIds);
+    if (opts.topicId) q = q.eq("topic_id", opts.topicId);
     if (opts.year) q = q.eq("school_topics.year", opts.year);
     const { data } = await q;
     quizzes.push(...((data as SchoolQuiz[]) ?? []));
@@ -383,6 +388,7 @@ export async function getMixedQuizzes(opts: {
       .select("*, school_topics!inner(year)")
       .eq("status", "active")
       .limit(limit * 3);
+    if (opts.topicId) q = q.eq("topic_id", opts.topicId);
     if (opts.year) q = q.eq("school_topics.year", opts.year);
     const { data: pool } = await q;
     const fresh = ((pool as SchoolQuiz[]) ?? []).filter(
@@ -404,6 +410,7 @@ export async function getMixedQuizzes(opts: {
 export async function getMixedLessons(opts: {
   userId: string;
   year?: number;
+  topicId?: string;
   limit?: number;
   weakSystemIds?: string[];
 }): Promise<SchoolLesson[]> {
@@ -425,6 +432,7 @@ export async function getMixedLessons(opts: {
     .eq("status", "active")
     .order("estimated_min", { ascending: true })
     .limit(limit * 6);
+  if (opts.topicId) q = q.eq("topic_id", opts.topicId);
   if (opts.year) q = q.eq("school_topics.year", opts.year);
   const { data: pool } = await q;
 
