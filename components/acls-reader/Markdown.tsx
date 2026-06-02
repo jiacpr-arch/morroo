@@ -3,6 +3,7 @@ import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
 
 import { cn } from "@/lib/utils";
+import { normalizeAnswer } from "@/lib/acls-reader/format-answer";
 
 // Prose classes tuned for the ACLS Q&A reading experience: clear headings,
 // comfortable type sizes, and brand-colored accents.
@@ -32,13 +33,19 @@ export default function Markdown({
   children: string;
   className?: string;
 }) {
+  // Daily-generated answers arrive as flat plain text. normalizeAnswer lifts
+  // them into sectioned Markdown (headings, bold labels, real lists, separated
+  // paragraphs) so every upload reads like the hand-formatted content; it
+  // leaves already-structured Markdown untouched.
+  const content = normalizeAnswer(children);
+
   return (
     <div className={cn(PROSE, className)}>
       {/* remarkBreaks: honor single newlines in the source so plain-text
           answers (which use single line breaks rather than markdown markup)
           don't collapse into one run-on paragraph. */}
       <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]}>
-        {children}
+        {content}
       </ReactMarkdown>
     </div>
   );
