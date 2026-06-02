@@ -141,7 +141,7 @@ export default function PaymentPage({
       }
 
       // Create payment order
-      const { error: orderError } = await supabase
+      const { data: orderRow, error: orderError } = await supabase
         .from("payment_orders")
         .insert({
           user_id: user.id,
@@ -149,12 +149,24 @@ export default function PaymentPage({
           amount: planInfo.price,
           slip_url: fileName,
           status: "pending",
-        });
+        })
+        .select("id")
+        .single();
 
       if (orderError) {
         setError("เกิดข้อผิดพลาด: " + orderError.message);
         setSubmitting(false);
         return;
+      }
+
+      // Notify admin via LINE so they can review the slip right away.
+      // Fire-and-forget — never block the success screen on this.
+      if (orderRow?.id) {
+        fetch("/api/payment/notify-admin", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ orderId: orderRow.id }),
+        }).catch(() => {});
       }
 
       setSubmitted(true);
