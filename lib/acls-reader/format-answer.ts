@@ -34,14 +34,14 @@ const ITEM_MAX = 90;
 const PARAGRAPH_LEN = 80;
 
 /**
- * True when the source already carries block-level Markdown structure
- * (headings, tables, fenced code). Such content is author-formatted — we
- * must not re-flow it, only tidy spacing.
+ * True when the source already carries block-level Markdown structure we must
+ * not re-flow: ATX headings or fenced code. (Tables are handled inline by
+ * classify(), so a plain-text answer that contains one Markdown table still
+ * gets its prose sectioned.)
  */
 function alreadyStructured(text: string): boolean {
   return (
     /^\s*#{1,6}\s+\S/m.test(text) || // ATX heading
-    /^\s*\|.*\|\s*$/m.test(text) || // table row
     /```/.test(text) // fenced code
   );
 }
@@ -54,6 +54,7 @@ type Block =
   | { kind: "heading"; text: string }
   | { kind: "para"; text: string }
   | { kind: "hr" }
+  | { kind: "table"; rows: string[] }
   | { kind: "ul"; items: string[] }
   | { kind: "ol"; items: string[] };
 
@@ -91,6 +92,16 @@ function classify(raw: string): string {
     if (HR_LINE.test(trimmed)) {
       bulletMode = false;
       blocks.push({ kind: "hr" });
+      return;
+    }
+
+    // Markdown table rows ("| a | b |", incl. the "| --- |" separator) are
+    // kept verbatim and grouped so an embedded table renders as a table.
+    if (/^\|.*\|$/.test(trimmed)) {
+      bulletMode = false;
+      const last = blocks[blocks.length - 1];
+      if (last?.kind === "table") last.rows.push(trimmed);
+      else blocks.push({ kind: "table", rows: [trimmed] });
       return;
     }
 
@@ -154,6 +165,8 @@ function classify(raw: string): string {
         return `## ${b.text}`;
       case "hr":
         return "---";
+      case "table":
+        return b.rows.join("\n");
       case "ul":
         return b.items.map((i) => `- ${i}`).join("\n");
       case "ol":

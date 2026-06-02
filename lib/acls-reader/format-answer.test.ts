@@ -107,6 +107,21 @@ describe("normalizeAnswer", () => {
     expect(out).not.toContain("- คุณภาพการกดหน้าอก");
   });
 
+  it("keeps an embedded Markdown table while still sectioning the prose", () => {
+    const raw = [
+      "ใจความหลัก: ทดสอบ",
+      "1. หัวข้อแรก",
+      "เนื้อหาของหัวข้อแรกที่อธิบายรายละเอียดยาวพอสมควรเพื่อให้เป็นพารากราฟจริง",
+      "| ลักษณะ | แบบเดิม | แบบใหม่ |",
+      "| --- | --- | --- |",
+      "| ความเร็ว | ช้า | เร็ว |",
+    ].join("\n");
+    const out = normalizeAnswer(raw);
+    expect(out).toContain("**ใจความหลัก:** ทดสอบ");
+    expect(out).toContain("## 1. หัวข้อแรก");
+    expect(out).toContain("| ลักษณะ | แบบเดิม | แบบใหม่ |\n| --- | --- | --- |\n| ความเร็ว | ช้า | เร็ว |");
+  });
+
   it("leaves already-structured Markdown (headings) untouched", () => {
     const raw = "### หัวข้อ\nให้ **Epinephrine 1 mg** ทันที";
     expect(normalizeAnswer(raw)).toBe(raw);
