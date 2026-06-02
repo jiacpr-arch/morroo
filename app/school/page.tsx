@@ -36,6 +36,7 @@ import {
   getDueCount,
 } from "@/lib/supabase/queries-school";
 import { createClient } from "@/lib/supabase/server";
+import SectionUpdatesBadge from "@/components/SectionUpdatesBadge";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -176,6 +177,7 @@ export default async function SchoolPage() {
           ติวแพทย์ตั้งแต่ปี 1 ถึงปี 6 แบบวันละนิด — flashcard + quiz + AI ช่วยติว
           พร้อมระบบทบทวนอัตโนมัติและ streak ให้เรียนต่อเนื่องเหมือน Duolingo
         </p>
+        <SectionUpdatesBadge section="school" className="mt-3" />
       </div>
 
       {/* เริ่มยังไง — 3 ขั้น (ภาพรวมว่าหน้านี้ใช้ทำอะไร) */}

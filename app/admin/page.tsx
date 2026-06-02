@@ -20,6 +20,7 @@ import {
   MessageCircle,
   Camera,
   GraduationCap,
+  Newspaper,
 } from "lucide-react";
 
 interface HeatmapCell {
@@ -329,6 +330,19 @@ export default function AdminDashboard() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">สถิติพี่หมอรู้ — ข้อความ ผู้ใช้ และ trend แต่ละ channel</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/news">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-violet-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Newspaper className="h-5 w-5 text-violet-600" />
+                <h3 className="font-bold">จัดการข่าว / อัปเดต</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">โพสต์ product update และข่าวสอบให้แสดงที่ /news</p>
             </CardContent>
           </Card>
         </Link>

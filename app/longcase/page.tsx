@@ -11,6 +11,7 @@ import AllExamsCountdown from "@/components/AllExamsCountdown";
 import InternalAdsBanner from "@/components/InternalAdsBanner";
 import LandingPageTracker from "@/components/LandingPageTracker";
 import FreeTrialBanner from "@/components/FreeTrialBanner";
+import SectionUpdatesBadge from "@/components/SectionUpdatesBadge";
 
 export const metadata: Metadata = {
   title: "ฝึกสอบ Long Case กับ AI Patient & Examiner",
@@ -79,6 +80,7 @@ export default async function LongCasePage() {
           AI รับบทเป็นผู้ป่วย คุณซักประวัติ ตรวจร่างกาย สั่ง Lab แล้วนำเสนอต่อ AI Examiner
           ที่ให้ feedback และคะแนนแบบสอบจริง
         </p>
+        <SectionUpdatesBadge section="longcase" className="mt-3" />
       </div>
 
       {/* Exam Countdown */}

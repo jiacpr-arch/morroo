@@ -7,6 +7,7 @@ import AllExamsCountdown from "@/components/AllExamsCountdown";
 import InternalAdsBanner from "@/components/InternalAdsBanner";
 import { LineCtaButton } from "@/components/SocialLinks";
 import LandingPageTracker from "@/components/LandingPageTracker";
+import SectionUpdatesBadge from "@/components/SectionUpdatesBadge";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -116,6 +117,7 @@ export default async function ExamsPage({
           <p className="mt-2 text-muted-foreground">
             เลือกข้อสอบที่ต้องการฝึก
           </p>
+          <SectionUpdatesBadge section="exams" className="mt-3" />
         </div>
         <LineCtaButton
           surface="exams"

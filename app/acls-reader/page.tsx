@@ -4,6 +4,7 @@ import { getAssessmentSets } from "@/lib/acls-reader/assessment";
 import { preCourseLessons } from "@/lib/acls-reader/precourse";
 import ReaderProgress from "@/components/acls-reader/ReaderProgress";
 import LandingPageTracker from "@/components/LandingPageTracker";
+import SectionUpdatesBadge from "@/components/SectionUpdatesBadge";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
 export const revalidate = 600;
@@ -46,6 +47,9 @@ export default async function AclsReaderHome() {
         <p className="mt-3 text-lg text-muted-foreground">
           อ่านเป็นบท · เรียน pre-course · ทำแบบทดสอบ · ฝึกอ่าน EKG
         </p>
+        <div className="mt-3 flex justify-center">
+          <SectionUpdatesBadge section="acls" />
+        </div>
       </header>
 
       <ReaderProgress
