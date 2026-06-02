@@ -40,6 +40,35 @@ describe("normalizeAnswer", () => {
     expect(normalizeAnswer(raw)).toBe("- หนึ่ง\n- สอง\n- สาม");
   });
 
+  it("promotes a standalone numbered item with sub-content to a numbered heading", () => {
+    const raw = "1. กลไกการทำงาน\nรายละเอียดของกลไก";
+    expect(normalizeAnswer(raw)).toBe("## 1. กลไกการทำงาน\n\nรายละเอียดของกลไก");
+  });
+
+  it("keeps section numbers (no '1. … 1.') across an outline with sub-content", () => {
+    const raw = [
+      "1. กลไกการทำงาน",
+      "รายละเอียดของกลไก",
+      "2. เหตุผลเชิงจิตวิทยา",
+      "คำอธิบายเหตุผล",
+      "3. หลักฐานสนับสนุน",
+      "ผลการศึกษา",
+    ].join("\n");
+    const out = normalizeAnswer(raw);
+    expect(out).toContain("## 1. กลไกการทำงาน");
+    expect(out).toContain("## 2. เหตุผลเชิงจิตวิทยา");
+    expect(out).toContain("## 3. หลักฐานสนับสนุน");
+    expect(out).not.toContain("## 1. เหตุผล");
+  });
+
+  it("still treats a tight numbered run as a single renumbered list", () => {
+    const raw = "ประโยชน์ที่พบ:\n1. ทักษะดีขึ้น\n2. ภาระงานดีขึ้น\nสรุปต่อไป";
+    const out = normalizeAnswer(raw);
+    expect(out).toContain("## ประโยชน์ที่พบ");
+    expect(out).toContain("1. ทักษะดีขึ้น\n2. ภาระงานดีขึ้น");
+    expect(out).not.toContain("## 1.");
+  });
+
   it("leaves already-structured Markdown (headings) untouched", () => {
     const raw = "### หัวข้อ\nให้ **Epinephrine 1 mg** ทันที";
     expect(normalizeAnswer(raw)).toBe(raw);
