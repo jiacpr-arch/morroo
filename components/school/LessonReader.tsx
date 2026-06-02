@@ -10,6 +10,7 @@ import remarkGfm from "remark-gfm";
 import type { SchoolLesson, SchoolQuiz } from "@/lib/types-school";
 import { createClient } from "@/lib/supabase/client";
 import { XP, awardXp } from "@/lib/school/xp";
+import { splitLessonParts, type InlineQuiz } from "@/lib/school/lesson-parts";
 import BookmarkButton from "./BookmarkButton";
 import NoteEditor from "./NoteEditor";
 import RelatedConcepts from "./RelatedConcepts";
@@ -21,14 +22,24 @@ interface Props {
 
 /**
  * Reader with mini-quiz interleaving. Authors split lesson body_md into
- * sections using a marker line `## ⏸ Mini Quiz` — the reader injects one
- * randomly-picked quiz from miniQuizzes between sections. Reaching the end
- * marks the lesson as read (XP awarded) and reveals a final retrieval quiz
- * tail.
+ * sections using a marker line `## ⏸ Mini Quiz`, and author the quiz for each
+ * gate inline right after its marker so it always matches the part above. The
+ * reader shows that inline quiz between sections, falling back to a quiz from
+ * the topic pool (`miniQuizzes`) only for lessons not yet migrated to inline.
+ * Reaching the end marks the lesson as read (XP awarded) and reveals a final
+ * retrieval quiz tail.
  */
 export default function LessonReader({ lesson, miniQuizzes }: Props) {
-  const sections = useMemo(() => splitByMarker(lesson.body_md), [lesson.body_md]);
+  const { sections, gateQuizzes } = useMemo(() => {
+    const parsed = splitLessonParts(lesson.body_md);
+    return { sections: parsed.parts, gateQuizzes: parsed.gateQuizzes };
+  }, [lesson.body_md]);
   const totalGates = sections.length - 1;
+
+  // The quiz shown after part `idx`: inline quiz if authored, else fall back to
+  // the legacy topic pool so un-migrated lessons keep working.
+  const quizForGate = (idx: number): InlineQuiz | null =>
+    gateQuizzes[idx] ?? miniQuizzes[idx] ?? null;
 
   const [step, setStep] = useState(0); // sections[step] currently visible
   const [completed, setCompleted] = useState(false);
@@ -99,9 +110,9 @@ export default function LessonReader({ lesson, miniQuizzes }: Props) {
 
           {/* Mini-quiz gate between sections — shown on the current part too
               so the reader can answer it and unlock the Continue button */}
-          {idx < totalGates && idx <= step && miniQuizzes[idx] && (
+          {idx < totalGates && idx <= step && quizForGate(idx) && (
             <MiniQuizCard
-              quiz={miniQuizzes[idx]}
+              quiz={quizForGate(idx)!}
               picked={picks[idx] ?? null}
               onPick={(l) => pickAt(idx, l)}
             />
@@ -111,7 +122,7 @@ export default function LessonReader({ lesson, miniQuizzes }: Props) {
           {idx === step && step + 1 < sections.length && (
             <Button
               onClick={nextSection}
-              disabled={idx < totalGates && miniQuizzes[idx] && !picks[idx]}
+              disabled={idx < totalGates && !!quizForGate(idx) && !picks[idx]}
               className="w-full mt-3 gap-2"
             >
               Part ถัดไป <ArrowRight className="h-4 w-4" />
@@ -147,7 +158,7 @@ function MiniQuizCard({
   picked,
   onPick,
 }: {
-  quiz: SchoolQuiz;
+  quiz: InlineQuiz;
   picked: string | null;
   onPick: (label: string) => void;
 }) {
@@ -223,10 +234,3 @@ function FinalQuiz({ quizzes }: { quizzes: SchoolQuiz[] }) {
   );
 }
 
-const MARKER_RE = /^##\s*⏸\s*Mini Quiz.*$/m;
-
-function splitByMarker(md: string): string[] {
-  if (!md) return [""];
-  const parts = md.split(MARKER_RE).map((s) => s.trim()).filter(Boolean);
-  return parts.length ? parts : [md];
-}
