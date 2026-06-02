@@ -1,18 +1,22 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Loader2, Check, AlertCircle } from "lucide-react";
+import { Loader2, Check, AlertCircle, ImagePlus, Eye } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { normalizeImageUrl } from "@/lib/school/image-url";
 import ImportPanel from "./ImportPanel";
+import ImageUploader from "./ImageUploader";
 
 type Tab =
   | "import"
   | "topic"
   | "lesson"
+  | "edit"
   | "flashcard"
   | "quiz"
   | "visual"
@@ -52,6 +56,7 @@ export default function SchoolAdminPanel({ systems, concepts, topics }: Props) {
             ["import", "✨ Import (AI)"],
             ["topic", "Topic"],
             ["lesson", "Lesson"],
+            ["edit", "✏️ แก้ไข + รูป"],
             ["flashcard", "Flashcard"],
             ["quiz", "Quiz"],
             ["visual", "🖼️ Visual"],
@@ -94,6 +99,9 @@ export default function SchoolAdminPanel({ systems, concepts, topics }: Props) {
       {tab === "lesson" && (
         <LessonForm topics={topics} busy={busy} setBusy={setBusy} notify={notify} />
       )}
+      {tab === "edit" && (
+        <ContentEditor topics={topics} busy={busy} setBusy={setBusy} notify={notify} />
+      )}
       {tab === "flashcard" && (
         <FlashcardForm topics={topics} busy={busy} setBusy={setBusy} notify={notify} />
       )}
@@ -111,6 +119,215 @@ export default function SchoolAdminPanel({ systems, concepts, topics }: Props) {
       )}
       {tab === "bulk" && <BulkImport busy={busy} setBusy={setBusy} notify={notify} />}
     </div>
+  );
+}
+
+type EditKind = "lesson" | "book_chapter";
+interface EditItem {
+  id: string;
+  title: string;
+  body_md: string;
+  sort_order: number;
+}
+
+/**
+ * Edit the markdown body of an EXISTING lesson or book chapter, with inline
+ * image upload + insert at the cursor. Fills the gap where the other tabs can
+ * only create new rows, not edit content already in the database.
+ */
+function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topics"] } & CommonProps) {
+  const [topicId, setTopicId] = useState(topics[0]?.id ?? "");
+  const [kind, setKind] = useState<EditKind>("lesson");
+  const [items, setItems] = useState<EditItem[]>([]);
+  const [selectedId, setSelectedId] = useState("");
+  const [body, setBody] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [preview, setPreview] = useState(false);
+  const taRef = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    async function load() {
+      if (!topicId) return;
+      setLoading(true);
+      setItems([]);
+      setSelectedId("");
+      setBody("");
+      try {
+        const supabase = createClient();
+        let rows: EditItem[] = [];
+        if (kind === "lesson") {
+          const { data } = await supabase
+            .from("school_lessons")
+            .select("id, title, body_md, sort_order")
+            .eq("topic_id", topicId)
+            .order("sort_order");
+          rows = (data as EditItem[]) ?? [];
+        } else {
+          const { data: book } = await supabase
+            .from("school_books")
+            .select("id")
+            .eq("topic_id", topicId)
+            .maybeSingle();
+          if (book) {
+            const { data } = await supabase
+              .from("school_book_chapters")
+              .select("id, title, body_md, sort_order")
+              .eq("book_id", (book as { id: string }).id)
+              .order("sort_order");
+            rows = (data as EditItem[]) ?? [];
+          }
+        }
+        if (!cancelled) {
+          setItems(rows);
+          if (rows[0]) {
+            setSelectedId(rows[0].id);
+            setBody(rows[0].body_md);
+          }
+        }
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    }
+    load();
+    return () => {
+      cancelled = true;
+    };
+  }, [topicId, kind]);
+
+  function selectItem(id: string) {
+    setSelectedId(id);
+    const item = items.find((i) => i.id === id);
+    setBody(item?.body_md ?? "");
+    setPreview(false);
+  }
+
+  function insertAtCursor(text: string) {
+    const ta = taRef.current;
+    if (!ta) {
+      setBody((b) => b + text);
+      return;
+    }
+    const start = ta.selectionStart ?? body.length;
+    const end = ta.selectionEnd ?? body.length;
+    const next = body.slice(0, start) + text + body.slice(end);
+    setBody(next);
+    requestAnimationFrame(() => {
+      ta.focus();
+      const pos = start + text.length;
+      ta.setSelectionRange(pos, pos);
+    });
+  }
+
+  async function save() {
+    if (!selectedId) return notify("err", "ยังไม่ได้เลือกบท");
+    setBusy(true);
+    try {
+      const supabase = createClient();
+      const table = kind === "lesson" ? "school_lessons" : "school_book_chapters";
+      const { error } = await supabase
+        .from(table)
+        .update({ body_md: body })
+        .eq("id", selectedId);
+      if (error) throw error;
+      setItems((prev) =>
+        prev.map((i) => (i.id === selectedId ? { ...i, body_md: body } : i))
+      );
+      notify("ok", "บันทึกเนื้อหาแล้ว");
+    } catch (e) {
+      notify("err", e instanceof Error ? e.message : "เกิดข้อผิดพลาด");
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  return (
+    <Card>
+      <CardContent className="p-4 space-y-3">
+        <h3 className="font-bold">แก้ไขเนื้อหา + แทรกรูป</h3>
+        <p className="text-xs text-muted-foreground">
+          เลือกบทเรียน/บทในหนังสือ → กด &quot;อัปโหลด + แทรกรูป&quot; เพื่อวางรูปตรงเคอร์เซอร์
+          (แทนที่บรรทัด <code>🖼️ รูปแนะนำ</code> ที่ AI ใส่ไว้) แล้วบันทึก
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <Field label="Topic">
+            <TopicPicker topics={topics} value={topicId} onChange={setTopicId} />
+          </Field>
+          <Field label="ชนิด">
+            <select
+              value={kind}
+              onChange={(e) => setKind(e.target.value as EditKind)}
+              className="w-full border rounded p-2 text-sm"
+            >
+              <option value="lesson">Lesson (Concept Reader)</option>
+              <option value="book_chapter">หนังสือ — บท</option>
+            </select>
+          </Field>
+          <Field label={loading ? "กำลังโหลด…" : `เลือกบท (${items.length})`}>
+            <select
+              value={selectedId}
+              onChange={(e) => selectItem(e.target.value)}
+              className="w-full border rounded p-2 text-sm"
+              disabled={loading || items.length === 0}
+            >
+              {items.length === 0 && <option value="">— ไม่มี —</option>}
+              {items.map((i) => (
+                <option key={i.id} value={i.id}>
+                  {i.sort_order + 1}. {i.title}
+                </option>
+              ))}
+            </select>
+          </Field>
+        </div>
+
+        {selectedId && (
+          <>
+            <div className="flex flex-wrap items-center gap-2">
+              <ImageUploader
+                onUploaded={(url) => insertAtCursor(`\n\n![](${url})\n\n`)}
+                label="อัปโหลด + แทรกรูป"
+              />
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                className="gap-2"
+                onClick={() => insertAtCursor("\n\n![](วางลิงก์รูปที่นี่)\n\n")}
+              >
+                <ImagePlus className="h-4 w-4" /> แทรกช่องรูป (วาง URL เอง)
+              </Button>
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                className="gap-2"
+                onClick={() => setPreview((p) => !p)}
+              >
+                <Eye className="h-4 w-4" /> {preview ? "แก้ไข" : "ดูตัวอย่าง"}
+              </Button>
+            </div>
+
+            {preview ? (
+              <div className="rounded border p-4 prose prose-sm prose-slate dark:prose-invert max-w-none min-h-[200px]">
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>{body}</ReactMarkdown>
+              </div>
+            ) : (
+              <textarea
+                ref={taRef}
+                value={body}
+                onChange={(e) => setBody(e.target.value)}
+                className="w-full border rounded p-2 text-sm min-h-[320px] font-mono"
+              />
+            )}
+
+            <Button onClick={save} disabled={busy}>
+              {busy && <Loader2 className="h-4 w-4 mr-2 animate-spin" />}
+              บันทึก
+            </Button>
+          </>
+        )}
+      </CardContent>
+    </Card>
   );
 }
 
@@ -402,13 +619,16 @@ function FlashcardForm({ topics, busy, setBusy, notify }: { topics: Props["topic
             className="w-full border rounded p-2 text-sm min-h-[80px]"
           />
         </Field>
-        <Field label="Image URL (dual coding) — วางลิงก์ Drive ได้เลย ระบบแปลงให้อัตโนมัติ">
+        <Field label="Image URL (dual coding) — วางลิงก์ Drive หรืออัปโหลดไฟล์">
           <input
             value={imageUrl}
             onChange={(e) => setImageUrl(normalizeImageUrl(e.target.value))}
             placeholder="วางลิงก์ Drive / Cloudinary ที่นี่ — https://..."
             className="w-full border rounded p-2 text-sm"
           />
+          <div className="mt-1">
+            <ImageUploader onUploaded={setImageUrl} label="หรืออัปโหลดรูป" />
+          </div>
         </Field>
         <Field label="Source">
           <input
@@ -963,13 +1183,16 @@ function VisualForm({ topics, busy, setBusy, notify }: { topics: Props["topics"]
             placeholder="เช่น Cardiac Cycle Overview"
           />
         </Field>
-        <Field label="Image URL (optional — วางลิงก์ Drive / IG / Cloudinary ระบบแปลงให้อัตโนมัติ)">
+        <Field label="Image URL (optional — วางลิงก์ Drive / IG / Cloudinary หรืออัปโหลดไฟล์)">
           <input
             value={imageUrl}
             onChange={(e) => setImageUrl(normalizeImageUrl(e.target.value))}
             className="w-full border rounded p-2 text-sm"
             placeholder="วางลิงก์ Drive ปกติได้เลย — https://..."
           />
+          <div className="mt-1">
+            <ImageUploader onUploaded={setImageUrl} label="หรืออัปโหลดรูป" />
+          </div>
         </Field>
         <Field label="Caption (1 line)">
           <input
