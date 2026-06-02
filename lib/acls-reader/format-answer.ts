@@ -25,6 +25,13 @@ const LABEL_INLINE = /^([^:]{2,60}):\s+(\S.*)$/;
 const UL_ITEM = /^\s*[-*•]\s+/;
 const OL_ITEM = /^\s*\d+[.)]\s+/;
 const HR_LINE = /^\s*[-–—_]{3,}\s*$/;
+// Thai "for example / as follows / namely" cues that introduce a list. When a
+// line ends with one of these, the short lines that follow are list items.
+const LIST_CUE = /(?:เช่น|ได้แก่|ดังนี้|ต่อไปนี้|อาทิ)\s*[:：]?\s*$/;
+/** A list item may be fairly long (a phrase with parentheticals) … */
+const ITEM_MAX = 90;
+/** … but a line this long is body prose / a section that owns what follows. */
+const PARAGRAPH_LEN = 80;
 
 /**
  * True when the source already carries block-level Markdown structure
@@ -69,9 +76,20 @@ function classify(raw: string): string {
   );
 
   const blocks: Block[] = [];
+  // Turns on right after a line ending in a list cue ("…เช่น:"); while on, the
+  // short lines that follow are gathered into a bullet list. Kept narrow on
+  // purpose so it never touches table-like runs (which have no cue before them).
+  let bulletMode = false;
+
+  const isItemish = (s: string) =>
+    s.length <= ITEM_MAX && !s.includes(":") && !s.includes("：");
+  // A short line that owns a long following paragraph is a heading, not an
+  // item — this is how the list terminates before a wrap-up section.
+  const ownsParagraph = (i: number) => (lines[i + 1]?.length ?? 0) >= PARAGRAPH_LEN;
 
   lines.forEach((trimmed, i) => {
     if (HR_LINE.test(trimmed)) {
+      bulletMode = false;
       blocks.push({ kind: "hr" });
       return;
     }
@@ -85,6 +103,7 @@ function classify(raw: string): string {
     }
 
     if (numbered[i]) {
+      bulletMode = false;
       if (inRun[i]) {
         const item = trimmed.replace(OL_ITEM, "");
         const last = blocks[blocks.length - 1];
@@ -98,11 +117,22 @@ function classify(raw: string): string {
       return;
     }
 
+    // Inside a cued list: short, label-free lines become bullets. A line that
+    // is long or owns a following paragraph ends the list and falls through.
+    if (bulletMode && isItemish(trimmed) && !ownsParagraph(i)) {
+      const last = blocks[blocks.length - 1];
+      if (last?.kind === "ul") last.items.push(trimmed);
+      else blocks.push({ kind: "ul", items: [trimmed] });
+      return;
+    }
+    bulletMode = false;
+
     // Already-bold lines pass through untouched (keeps us idempotent).
     if (!trimmed.includes("**")) {
       const colon = HEADING_COLON.exec(trimmed);
       if (colon) {
         blocks.push({ kind: "heading", text: colon[1].trim() });
+        bulletMode = LIST_CUE.test(trimmed);
         return;
       }
 
@@ -115,6 +145,7 @@ function classify(raw: string): string {
     }
 
     blocks.push({ kind: "para", text: trimmed });
+    bulletMode = LIST_CUE.test(trimmed);
   });
 
   const out = blocks.map((b) => {
