@@ -21,7 +21,9 @@ const EXTRACT_TOOL: Anthropic.Tool = {
           body_md: {
             type: "string",
             description:
-              "Markdown lesson, split into parts by `## ⏸ Mini Quiz` markers. Each part should be 2-4 short paragraphs.",
+              "Markdown lesson split into 2-4 parts. Between consecutive parts put a `## ⏸ Mini Quiz` marker line, and immediately after each marker embed ONE quiz that tests the part just above it, as a fenced ```quiz block containing JSON: " +
+              '{ "stem": string, "choices": [{ "label": "A"|"B"|"C"|"D", "text": string }], "correct_answer": "A"|"B"|"C"|"D", "explanation": string }. ' +
+              "The inline quiz MUST be answerable from the part directly above it. Each part should be 2-4 short paragraphs.",
           },
           layer: {
             type: "string",
@@ -79,9 +81,9 @@ const EXTRACT_TOOL: Anthropic.Tool = {
 const SYSTEM_PROMPT = `You are a medical educator extracting micro-learning units from source material for Thai medical school students.
 
 Output via submit_extracted_content:
-1. lesson — markdown body split into 2-4 parts using \`## ⏸ Mini Quiz\` marker between parts so the reader can interleave mini-quizzes. Keep each part under 200 words.
+1. lesson — markdown body split into 2-4 parts using \`## ⏸ Mini Quiz\` marker between parts. Immediately after each marker, embed ONE inline quiz that tests the part directly above it, as a fenced \`\`\`quiz block of JSON ({ stem, choices:[{label,text}], correct_answer, explanation }). The inline quiz must be answerable from the part above. Keep each part under 200 words.
 2. flashcards — 10-20 atomic concept cards. Front = concept/question (under 100 chars). Back = concise answer (1-3 sentences, under 300 chars).
-3. quizzes — 5-10 MCQs with 4-5 options + correct answer + 1-2 sentence explanation.
+3. quizzes — 5-10 MCQs with 4-5 options + correct answer + 1-2 sentence explanation. These feed the topic question bank and end-of-lesson retrieval (separate from the inline mini-quizzes above).
 
 Rules:
 - Use Thai mixed with English medical terms (Thai med students study in mixed language).
