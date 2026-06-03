@@ -336,7 +336,7 @@ async function critiqueQuestion(
   try {
     const out = (await callClaude(
       apiKey,
-      "claude-sonnet-4-6",
+      "claude-haiku-4-5-20251001",
       1500,
       buildCritiquePrompt(q, specialtyTh),
       false
