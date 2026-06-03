@@ -31,6 +31,28 @@ function isAuthorized(request: NextRequest): boolean {
 async function processOne() {
   const admin = createAdminClient();
 
+  // Stuck-row reaper: Vercel kills functions at maxDuration (60s) without
+  // updating the row, leaving it forever in `running`. Reset anything
+  // running > 90s back to `queued` so the next tick re-picks it. After
+  // 3 attempts mark `error` permanently so we don't loop forever.
+  const stuckCutoff = new Date(Date.now() - 90_000).toISOString();
+  await admin
+    .from("board_gen_jobs")
+    .update({
+      status: "error",
+      error: "stuck in running > 90s for 3+ attempts (likely Vercel timeout)",
+      completed_at: new Date().toISOString(),
+    })
+    .eq("status", "running")
+    .lt("started_at", stuckCutoff)
+    .gte("attempts", 3);
+  await admin
+    .from("board_gen_jobs")
+    .update({ status: "queued", started_at: null })
+    .eq("status", "running")
+    .lt("started_at", stuckCutoff)
+    .lt("attempts", 3);
+
   // Atomic-ish claim: pick oldest queued, flip to running.
   // Race condition: if two cron invocations overlap, the second will pick
   // the next row — acceptable for our throughput.
