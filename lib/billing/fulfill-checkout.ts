@@ -14,6 +14,7 @@
 
 import type Stripe from "stripe";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { enqueueBoardGenJobs } from "@/lib/board/enqueue";
 
 export interface FulfillmentResult {
   alreadyProcessed: boolean;
@@ -213,6 +214,23 @@ export async function fulfillCheckoutSession(
 
       referrerLineUserId = referrerProfile?.line_user_id ?? null;
       referrerRewardDays = pendingReferral.reward_days ?? 30;
+    }
+  }
+
+  // Board subscription → enqueue AI MCQ generation jobs (one row per
+  // under-target specialty). Cron processes them ≤ 1 specialty/min.
+  // Failure here must not block fulfillment.
+  if (planType === "board_monthly" || planType === "board_yearly") {
+    try {
+      await enqueueBoardGenJobs({
+        admin: supabase,
+        userId,
+        stripeSessionId: session.id,
+        targetCount: 30,
+        trigger: "subscription",
+      });
+    } catch (err) {
+      console.error("[fulfill] board gen enqueue failed:", err);
     }
   }
 

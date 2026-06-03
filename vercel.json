@@ -71,6 +71,10 @@
     {
       "path": "/api/cron/school-enrich",
       "schedule": "0 18 * * *"
+    },
+    {
+      "path": "/api/cron/board-gen",
+      "schedule": "* * * * *"
     }
   ]
 }
