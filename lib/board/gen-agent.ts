@@ -228,19 +228,38 @@ async function callClaude(
   prompt: string,
   expectArray: boolean
 ): Promise<unknown> {
-  const res = await fetch(ANTHROPIC_API, {
-    method: "POST",
-    headers: {
-      "x-api-key": apiKey,
-      "anthropic-version": "2023-06-01",
-      "content-type": "application/json",
-    },
-    body: JSON.stringify({
-      model,
-      max_tokens: maxTokens,
-      messages: [{ role: "user", content: prompt }],
-    }),
-  });
+  // Per-call timeout so a single slow Anthropic response can't eat the
+  // whole 60s function budget. 45s gives enough room for a single-call
+  // section gen; parallel section gen + insert must still fit in 60s.
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 45_000);
+  const callStart = Date.now();
+  let res: Response;
+  try {
+    res = await fetch(ANTHROPIC_API, {
+      method: "POST",
+      headers: {
+        "x-api-key": apiKey,
+        "anthropic-version": "2023-06-01",
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        model,
+        max_tokens: maxTokens,
+        messages: [{ role: "user", content: prompt }],
+      }),
+      signal: controller.signal,
+    });
+  } catch (err) {
+    clearTimeout(timeoutId);
+    const elapsed = Date.now() - callStart;
+    if ((err as Error).name === "AbortError") {
+      throw new Error(`Claude ${model} timeout after ${elapsed}ms`);
+    }
+    throw err;
+  }
+  clearTimeout(timeoutId);
+  console.log(`[board-gen] ${model} ${res.status} in ${Date.now() - callStart}ms`);
 
   if (!res.ok) {
     throw new Error(`Claude ${model} ${res.status}: ${(await res.text()).slice(0, 200)}`);
@@ -274,58 +293,18 @@ async function generateOneSection(
   apiKey: string,
   args: Parameters<typeof buildGenPrompt>[0]
 ): Promise<GeneratedQuestion[]> {
-  // Split per-section count between Haiku (easy/medium) and Sonnet (hard) when count >= 5,
-  // otherwise everything to Sonnet for higher quality on small batches.
-  const totalCount = args.count;
-  if (totalCount < 5) {
-    const out = await callClaude(
-      apiKey,
-      "claude-sonnet-4-6-20250514",
-      8000,
-      buildGenPrompt(args),
-      true
-    );
-    return Array.isArray(out) ? (out as GeneratedQuestion[]) : [];
-  }
-
-  const hardCount = Math.max(1, Math.round(totalCount * 0.4));
-  const easyMedCount = totalCount - hardCount;
-
-  const [easyMed, hard] = await Promise.allSettled([
-    callClaude(
-      apiKey,
-      "claude-haiku-4-5-20251001",
-      16000,
-      buildGenPrompt({
-        ...args,
-        count: easyMedCount,
-        difficultyHint:
-          "ความยาก: easy 30% (recall definition, classic presentation) + medium 70% (first-line management, investigation of choice, การวินิจฉัย typical case)",
-      }),
-      true
-    ),
-    callClaude(
-      apiKey,
-      "claude-sonnet-4-6-20250514",
-      12000,
-      buildGenPrompt({
-        ...args,
-        count: hardCount,
-        difficultyHint:
-          "ความยาก: hard ทั้งหมด — clinical reasoning ซับซ้อน, differential diagnosis, management ของ case ที่มี comorbidity, lab/imaging interpretation หลายขั้น, ethical/system-based question",
-      }),
-      true
-    ),
-  ]);
-
-  const out: GeneratedQuestion[] = [];
-  if (easyMed.status === "fulfilled" && Array.isArray(easyMed.value)) {
-    out.push(...(easyMed.value as GeneratedQuestion[]));
-  }
-  if (hard.status === "fulfilled" && Array.isArray(hard.value)) {
-    out.push(...(hard.value as GeneratedQuestion[]));
-  }
-  return out;
+  // Single Haiku call per section — keeps concurrent API load at 4 calls max
+  // (one per section) rather than 8, which was causing systematic 35s timeouts.
+  // max_tokens scaled to actual output size: ~450 tokens per Thai MCQ question.
+  const maxTokens = Math.min(6000, Math.max(2000, args.count * 450));
+  const out = await callClaude(
+    apiKey,
+    "claude-haiku-4-5-20251001",
+    maxTokens,
+    buildGenPrompt(args),
+    true
+  );
+  return Array.isArray(out) ? (out as GeneratedQuestion[]) : [];
 }
 
 async function critiqueQuestion(
@@ -336,7 +315,7 @@ async function critiqueQuestion(
   try {
     const out = (await callClaude(
       apiKey,
-      "claude-sonnet-4-6-20250514",
+      "claude-haiku-4-5-20251001",
       1500,
       buildCritiquePrompt(q, specialtyTh),
       false
@@ -375,6 +354,10 @@ export async function runBoardGenAgent(args: {
   targetCount: number;
 }): Promise<AgentRunResult> {
   const { admin, apiKey, specialtySlug, targetCount } = args;
+  const t0 = Date.now();
+  const trace = (label: string) =>
+    console.log(`[board-gen] ${specialtySlug} ${label} +${Date.now() - t0}ms`);
+  trace("start");
   const result: AgentRunResult = {
     specialty_slug: specialtySlug,
     total_generated: 0,
@@ -411,8 +394,9 @@ export async function runBoardGenAgent(args: {
 
   const blueprint = await loadBlueprint(admin, specialtySlug);
   const distribution = distributePerSection(blueprint, need);
+  trace(`gen-start (${distribution.length} sections, need=${need})`);
 
-  // Gen sections in parallel (each section is itself a parallel Haiku+Sonnet split)
+  // Gen sections in parallel (one Haiku call per section)
   const sectionResults = await Promise.allSettled(
     distribution.map((d) => {
       const sectionMeta = BOARD_SECTIONS.find((s) => s.code === d.section_code);
@@ -438,6 +422,7 @@ export async function runBoardGenAgent(args: {
       result.errors.push(`section ${distribution[idx].section_code}: ${r.reason}`);
     }
   });
+  trace(`gen-done (got ${allQuestions.length}, errors ${result.errors.length})`);
 
   result.total_generated = allQuestions.length;
   const valid = allQuestions.filter(isValidQuestion);
@@ -447,20 +432,7 @@ export async function runBoardGenAgent(args: {
     return result;
   }
 
-  // Critique in parallel (capped to limit concurrent API)
-  const CRITIQUE_CONCURRENCY = 5;
-  const critiques: CritiqueResult[] = new Array(valid.length);
-  for (let i = 0; i < valid.length; i += CRITIQUE_CONCURRENCY) {
-    const batch = valid.slice(i, i + CRITIQUE_CONCURRENCY);
-    const results = await Promise.all(
-      batch.map((q) => critiqueQuestion(apiKey, q, specialty.name_th))
-    );
-    results.forEach((c, j) => {
-      critiques[i + j] = c;
-    });
-  }
-
-  // Map subject_id per section: lookup existing mcq_subjects rows for this specialty
+  // Map subject_id per section
   const { data: subjectRows } = await admin
     .from("mcq_subjects")
     .select("id, name")
@@ -469,61 +441,107 @@ export async function runBoardGenAgent(args: {
 
   const subjectBySection = new Map<string, string>();
   for (const s of subjectRows ?? []) {
-    const code = (s.name as string).split("_").slice(-2).join("_");
-    if (!subjectBySection.has(code)) subjectBySection.set(code, s.id);
     BOARD_SECTIONS.forEach((sec) => {
       if ((s.name as string).endsWith(sec.code)) subjectBySection.set(sec.code, s.id);
     });
   }
-  // Fallback: pick any subject row for this specialty
   const fallbackSubjectId = subjectRows?.[0]?.id ?? null;
 
-  const insertRows: Record<string, unknown>[] = [];
-  valid.forEach((q, i) => {
-    const c = critiques[i];
-    if (c.confidence < 0.5) {
-      result.dropped++;
-      return;
-    }
-    const status = c.confidence >= 0.85 ? "active" : "review";
-    const subjectId = subjectBySection.get(q.board_section) ?? fallbackSubjectId;
-    if (!subjectId) {
-      result.dropped++;
-      return;
-    }
-    insertRows.push({
-      subject_id: subjectId,
-      audience: "board",
-      exam_type: null,
-      scenario: q.scenario,
-      choices: q.choices,
-      correct_answer: q.correct_answer,
-      explanation: q.explanation || null,
-      detailed_explanation: q.detailed_explanation ?? null,
-      difficulty: ["easy", "medium", "hard"].includes(q.difficulty) ? q.difficulty : "medium",
-      topic: q.board_topic || null,
-      status,
-      board_specialty: specialtySlug,
-      board_section: q.board_section,
-      board_topic: q.board_topic || "general",
-      board_age_group: q.board_age_group ?? null,
-      reference_source: q.reference_source ?? null,
-      exam_source: "AI-generated-board",
-      is_ai_enhanced: true,
-      ai_notes: `confidence=${c.confidence.toFixed(2)}${c.issues.length ? ` | issues: ${c.issues.join("; ").slice(0, 300)}` : ""}`,
-    });
-    if (status === "active") result.inserted_active++;
-    else result.inserted_review++;
-  });
+  // INSERT FIRST as status='review' so generation work is committed even if
+  // the function times out mid-critique. Critique then promotes
+  // high-confidence rows to 'active' best-effort below.
+  type InsertPair = { q: GeneratedQuestion; row: Record<string, unknown> };
+  const insertRows: InsertPair[] = valid
+    .map((q): InsertPair | null => {
+      const subjectId = subjectBySection.get(q.board_section) ?? fallbackSubjectId;
+      if (!subjectId) return null;
+      return {
+        q,
+        row: {
+          subject_id: subjectId,
+          audience: "board",
+          exam_type: null,
+          scenario: q.scenario,
+          choices: q.choices,
+          correct_answer: q.correct_answer,
+          explanation: q.explanation || null,
+          detailed_explanation: q.detailed_explanation ?? null,
+          difficulty: ["easy", "medium", "hard"].includes(q.difficulty)
+            ? q.difficulty
+            : "medium",
+          topic: q.board_topic || null,
+          status: "review" as const,
+          board_specialty: specialtySlug,
+          board_section: q.board_section,
+          board_topic: q.board_topic || "general",
+          board_age_group: q.board_age_group ?? null,
+          reference_source: q.reference_source ?? null,
+          exam_source: "AI-generated-board",
+          is_ai_enhanced: true,
+          ai_notes: "awaiting critique",
+        },
+      };
+    })
+    .filter((x): x is InsertPair => x !== null);
 
-  if (insertRows.length > 0) {
-    const { error: insertErr } = await admin.from("mcq_questions").insert(insertRows);
-    if (insertErr) {
-      result.errors.push(`insert failed: ${insertErr.message}`);
-      // Reset counters since insert failed
-      result.inserted_active = 0;
-      result.inserted_review = 0;
-    }
+  result.dropped += valid.length - insertRows.length;
+
+  if (insertRows.length === 0) return result;
+
+  const { data: inserted, error: insertErr } = await admin
+    .from("mcq_questions")
+    .insert(insertRows.map((x) => x.row))
+    .select("id");
+
+  if (insertErr || !inserted) {
+    result.errors.push(`insert failed: ${insertErr?.message ?? "no rows returned"}`);
+    return result;
+  }
+
+  result.inserted_review = inserted.length;
+  trace(`insert-done (${inserted.length} rows)`);
+
+  // Critique inline best-effort: promote high-confidence rows to 'active'.
+  // If the function times out here, rows stay 'review' (still saved).
+  const CRITIQUE_CONCURRENCY = 5;
+  const pairs = inserted.map((row, idx) => ({
+    id: row.id as string,
+    q: insertRows[idx].q,
+  }));
+
+  for (let i = 0; i < pairs.length; i += CRITIQUE_CONCURRENCY) {
+    const batch = pairs.slice(i, i + CRITIQUE_CONCURRENCY);
+    const critiques = await Promise.all(
+      batch.map((p) => critiqueQuestion(apiKey, p.q, specialty.name_th))
+    );
+    await Promise.all(
+      critiques.map(async (c, j) => {
+        const pair = batch[j];
+        const notes = `confidence=${c.confidence.toFixed(2)}${c.issues.length ? ` | issues: ${c.issues.join("; ").slice(0, 300)}` : ""}`;
+        if (c.confidence < 0.5) {
+          // Quality too low — disable so it doesn't clutter review queue
+          await admin
+            .from("mcq_questions")
+            .update({ status: "disabled", ai_notes: notes })
+            .eq("id", pair.id);
+          result.inserted_review--;
+          result.dropped++;
+        } else if (c.confidence >= 0.85) {
+          await admin
+            .from("mcq_questions")
+            .update({ status: "active", ai_notes: notes })
+            .eq("id", pair.id);
+          result.inserted_review--;
+          result.inserted_active++;
+        } else {
+          // 0.5 <= confidence < 0.85 — keep as 'review', just update notes
+          await admin
+            .from("mcq_questions")
+            .update({ ai_notes: notes })
+            .eq("id", pair.id);
+        }
+      })
+    );
   }
 
   return result;
