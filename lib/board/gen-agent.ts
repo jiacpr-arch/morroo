@@ -2,8 +2,8 @@
 //
 // One specialty per invocation:
 //   1. Read blueprint topics + section weights
-//   2. Fan-out gen calls across sections (parallel, one Haiku call per section)
-//   3. Self-critique each question with Haiku → confidence 0..1 + issues
+//   2. Fan-out gen calls across sections (parallel, Haiku for easy/medium, Sonnet for hard)
+//   3. Self-critique each question with Sonnet → confidence 0..1 + issues
 //   4. Map confidence → mcq_questions.status: 'active' | 'review' | drop
 //
 // Tuning targets (per spec from product):
@@ -192,7 +192,7 @@ ${JSON.stringify(q, null, 2)}
 3. distractor plausible ทุกตัว (ไม่ใช่ตัวเลือก fillter)
 4. scenario สมจริง มีรายละเอียดครบ (อายุ เพศ vital signs, lab ที่เกี่ยวข้อง)
 5. reference_source ระบุจริง สามารถตรวจสอบได้
-6. explanation อธิบายทุกตัวเลือก
+6. คำอธิบายเฉลยถูก + อธิบายทุกตัวเลือก
 7. เลียนแบบสไตล์ข้อสอบบอร์ดจริง ไม่ใช่ข้อสอบ NL
 
 ตอบเป็น JSON เท่านั้น:
@@ -281,12 +281,13 @@ async function generateOneSection(
   apiKey: string,
   args: Parameters<typeof buildGenPrompt>[0]
 ): Promise<GeneratedQuestion[]> {
-  // Single Haiku call per section — keeps concurrent API load at 4 calls max
-  // (one per section) rather than 8, which was causing systematic timeouts.
-  // Without detailed_explanation, each Thai MCQ is ~500 tokens (scenario +
-  // 5 choices + 4-sentence explanation + metadata). Cap at 10000 so a
-  // 20-question clinical_decision section stays well under 45s.
-  const maxTokens = Math.min(10000, Math.max(3000, args.count * 500));
+  // Single Haiku call per section. Thai MCQ questions are ~700 tokens each
+  // (scenario with vitals/labs + 5 choices + 3-sentence explanation).
+  // Floor 5000 ensures small sections (1-3 qs) don't get truncated.
+  // Cap 8000 keeps the call under 45s even for the largest section.
+  // Combined with MAX_QUESTIONS_PER_RUN=10 in the caller, clinical_decision
+  // receives at most 6 questions → ~4200 tokens → completes in ~8-12s.
+  const maxTokens = Math.min(8000, Math.max(5000, args.count * 700));
   const out = await callClaude(
     apiKey,
     "claude-haiku-4-5-20251001",
@@ -365,7 +366,12 @@ export async function runBoardGenAgent(args: {
     .eq("board_specialty", specialtySlug)
     .in("status", ["active", "review"]);
 
-  const need = Math.max(0, targetCount - (existingCount ?? 0));
+  // Generate at most 10 questions per cron tick. Haiku at 4 concurrent
+  // calls can reliably deliver 6-10 questions per call in ~10-15s each;
+  // larger batches (20+ questions) consistently hit the 45s abort.
+  // Subsequent job runs (new subscriptions) accumulate toward targetCount.
+  const MAX_QUESTIONS_PER_RUN = 10;
+  const need = Math.min(MAX_QUESTIONS_PER_RUN, Math.max(0, targetCount - (existingCount ?? 0)));
   if (need === 0) {
     return result;
   }
