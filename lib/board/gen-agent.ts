@@ -152,7 +152,7 @@ ${topicList}
 2. ${args.difficultyHint}
 3. ตัวเลือก 5 ข้อ (A–E) — distractor ต้อง plausible ทุกตัว ห้ามมี "เห็นปุ๊บรู้ปั๊บ"
 4. คำตอบถูก อิง evidence-based และ standard textbook/guideline จริง (Harrison, Sabiston, Nelson, Williams, Tintinalli, ATLS, ACS, AHA ฯลฯ — ระบุใน reference_source)
-5. คำอธิบายเฉลย: ทำไมตัวเลือกที่ถูกถูก + ทำไมแต่ละ distractor ผิด
+5. explanation ครอบคลุม: ทำไมตัวเลือกที่ถูกถูก + ทำไมแต่ละ distractor ผิด (3-5 ประโยค)
 6. ห้าม leak คำตอบใน stem (เช่น "ผู้ป่วยที่เป็น septic shock" แล้วถามว่าวินิจฉัยอะไร)
 7. ใช้ภาษาไทยเป็นหลัก ผสมศัพท์การแพทย์อังกฤษตามมาตรฐาน
 8. ระบุ board_topic ตรงกับ slug ใน blueprint (ถ้ามี) หรือสร้าง slug ใหม่ที่สอดคล้อง
@@ -169,19 +169,7 @@ ${topicList}
       {"label":"E","text":"..."}
     ],
     "correct_answer": "A",
-    "explanation": "เฉลยสั้น 1-2 ประโยค",
-    "detailed_explanation": {
-      "summary": "...",
-      "reason": "...",
-      "choices": [
-        {"label":"A","text":"...","is_correct":true,"explanation":"..."},
-        {"label":"B","text":"...","is_correct":false,"explanation":"..."},
-        {"label":"C","text":"...","is_correct":false,"explanation":"..."},
-        {"label":"D","text":"...","is_correct":false,"explanation":"..."},
-        {"label":"E","text":"...","is_correct":false,"explanation":"..."}
-      ],
-      "key_takeaway": "..."
-    },
+    "explanation": "เฉลย 3-5 ประโยค: ทำไมตัวเลือกที่ถูกถูก + ทำไมแต่ละ distractor ผิด",
     "difficulty": "easy|medium|hard",
     "board_section": "${args.sectionCode}",
     "board_topic": "slug-ของหัวข้อ",
@@ -294,9 +282,11 @@ async function generateOneSection(
   args: Parameters<typeof buildGenPrompt>[0]
 ): Promise<GeneratedQuestion[]> {
   // Single Haiku call per section — keeps concurrent API load at 4 calls max
-  // (one per section) rather than 8, which was causing systematic 35s timeouts.
-  // max_tokens scaled to actual output size: ~450 tokens per Thai MCQ question.
-  const maxTokens = Math.min(6000, Math.max(2000, args.count * 450));
+  // (one per section) rather than 8, which was causing systematic timeouts.
+  // Without detailed_explanation, each Thai MCQ is ~500 tokens (scenario +
+  // 5 choices + 4-sentence explanation + metadata). Cap at 10000 so a
+  // 20-question clinical_decision section stays well under 45s.
+  const maxTokens = Math.min(10000, Math.max(3000, args.count * 500));
   const out = await callClaude(
     apiKey,
     "claude-haiku-4-5-20251001",
