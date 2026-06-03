@@ -228,19 +228,38 @@ async function callClaude(
   prompt: string,
   expectArray: boolean
 ): Promise<unknown> {
-  const res = await fetch(ANTHROPIC_API, {
-    method: "POST",
-    headers: {
-      "x-api-key": apiKey,
-      "anthropic-version": "2023-06-01",
-      "content-type": "application/json",
-    },
-    body: JSON.stringify({
-      model,
-      max_tokens: maxTokens,
-      messages: [{ role: "user", content: prompt }],
-    }),
-  });
+  // Per-call timeout so a single slow Anthropic response can't eat the
+  // whole 60s function budget. 35s leaves ~25s for the other section
+  // calls + critique + DB writes.
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 35_000);
+  const callStart = Date.now();
+  let res: Response;
+  try {
+    res = await fetch(ANTHROPIC_API, {
+      method: "POST",
+      headers: {
+        "x-api-key": apiKey,
+        "anthropic-version": "2023-06-01",
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        model,
+        max_tokens: maxTokens,
+        messages: [{ role: "user", content: prompt }],
+      }),
+      signal: controller.signal,
+    });
+  } catch (err) {
+    clearTimeout(timeoutId);
+    const elapsed = Date.now() - callStart;
+    if ((err as Error).name === "AbortError") {
+      throw new Error(`Claude ${model} timeout after ${elapsed}ms`);
+    }
+    throw err;
+  }
+  clearTimeout(timeoutId);
+  console.log(`[board-gen] ${model} ${res.status} in ${Date.now() - callStart}ms`);
 
   if (!res.ok) {
     throw new Error(`Claude ${model} ${res.status}: ${(await res.text()).slice(0, 200)}`);
@@ -375,6 +394,10 @@ export async function runBoardGenAgent(args: {
   targetCount: number;
 }): Promise<AgentRunResult> {
   const { admin, apiKey, specialtySlug, targetCount } = args;
+  const t0 = Date.now();
+  const trace = (label: string) =>
+    console.log(`[board-gen] ${specialtySlug} ${label} +${Date.now() - t0}ms`);
+  trace("start");
   const result: AgentRunResult = {
     specialty_slug: specialtySlug,
     total_generated: 0,
@@ -411,6 +434,7 @@ export async function runBoardGenAgent(args: {
 
   const blueprint = await loadBlueprint(admin, specialtySlug);
   const distribution = distributePerSection(blueprint, need);
+  trace(`gen-start (${distribution.length} sections, need=${need})`);
 
   // Gen sections in parallel (each section is itself a parallel Haiku+Sonnet split)
   const sectionResults = await Promise.allSettled(
@@ -438,6 +462,7 @@ export async function runBoardGenAgent(args: {
       result.errors.push(`section ${distribution[idx].section_code}: ${r.reason}`);
     }
   });
+  trace(`gen-done (got ${allQuestions.length}, errors ${result.errors.length})`);
 
   result.total_generated = allQuestions.length;
   const valid = allQuestions.filter(isValidQuestion);
@@ -514,6 +539,7 @@ export async function runBoardGenAgent(args: {
   }
 
   result.inserted_review = inserted.length;
+  trace(`insert-done (${inserted.length} rows)`);
 
   // Critique inline best-effort: promote high-confidence rows to 'active'.
   // If the function times out here, rows stay 'review' (still saved).
