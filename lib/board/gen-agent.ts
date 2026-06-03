@@ -229,10 +229,10 @@ async function callClaude(
   expectArray: boolean
 ): Promise<unknown> {
   // Per-call timeout so a single slow Anthropic response can't eat the
-  // whole 60s function budget. 35s leaves ~25s for the other section
-  // calls + critique + DB writes.
+  // whole 60s function budget. 45s gives enough room for a single-call
+  // section gen; parallel section gen + insert must still fit in 60s.
   const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 35_000);
+  const timeoutId = setTimeout(() => controller.abort(), 45_000);
   const callStart = Date.now();
   let res: Response;
   try {
@@ -293,58 +293,18 @@ async function generateOneSection(
   apiKey: string,
   args: Parameters<typeof buildGenPrompt>[0]
 ): Promise<GeneratedQuestion[]> {
-  // Split per-section count between Haiku (easy/medium) and Sonnet (hard) when count >= 5,
-  // otherwise everything to Sonnet for higher quality on small batches.
-  const totalCount = args.count;
-  if (totalCount < 5) {
-    const out = await callClaude(
-      apiKey,
-      "claude-haiku-4-5-20251001",
-      8000,
-      buildGenPrompt(args),
-      true
-    );
-    return Array.isArray(out) ? (out as GeneratedQuestion[]) : [];
-  }
-
-  const hardCount = Math.max(1, Math.round(totalCount * 0.4));
-  const easyMedCount = totalCount - hardCount;
-
-  const [easyMed, hard] = await Promise.allSettled([
-    callClaude(
-      apiKey,
-      "claude-haiku-4-5-20251001",
-      16000,
-      buildGenPrompt({
-        ...args,
-        count: easyMedCount,
-        difficultyHint:
-          "ความยาก: easy 30% (recall definition, classic presentation) + medium 70% (first-line management, investigation of choice, การวินิจฉัย typical case)",
-      }),
-      true
-    ),
-    callClaude(
-      apiKey,
-      "claude-haiku-4-5-20251001",
-      12000,
-      buildGenPrompt({
-        ...args,
-        count: hardCount,
-        difficultyHint:
-          "ความยาก: hard ทั้งหมด — clinical reasoning ซับซ้อน, differential diagnosis, management ของ case ที่มี comorbidity, lab/imaging interpretation หลายขั้น, ethical/system-based question",
-      }),
-      true
-    ),
-  ]);
-
-  const out: GeneratedQuestion[] = [];
-  if (easyMed.status === "fulfilled" && Array.isArray(easyMed.value)) {
-    out.push(...(easyMed.value as GeneratedQuestion[]));
-  }
-  if (hard.status === "fulfilled" && Array.isArray(hard.value)) {
-    out.push(...(hard.value as GeneratedQuestion[]));
-  }
-  return out;
+  // Single Haiku call per section — keeps concurrent API load at 4 calls max
+  // (one per section) rather than 8, which was causing systematic 35s timeouts.
+  // max_tokens scaled to actual output size: ~450 tokens per Thai MCQ question.
+  const maxTokens = Math.min(6000, Math.max(2000, args.count * 450));
+  const out = await callClaude(
+    apiKey,
+    "claude-haiku-4-5-20251001",
+    maxTokens,
+    buildGenPrompt(args),
+    true
+  );
+  return Array.isArray(out) ? (out as GeneratedQuestion[]) : [];
 }
 
 async function critiqueQuestion(
@@ -436,7 +396,7 @@ export async function runBoardGenAgent(args: {
   const distribution = distributePerSection(blueprint, need);
   trace(`gen-start (${distribution.length} sections, need=${need})`);
 
-  // Gen sections in parallel (each section is itself a parallel Haiku+Sonnet split)
+  // Gen sections in parallel (one Haiku call per section)
   const sectionResults = await Promise.allSettled(
     distribution.map((d) => {
       const sectionMeta = BOARD_SECTIONS.find((s) => s.code === d.section_code);
