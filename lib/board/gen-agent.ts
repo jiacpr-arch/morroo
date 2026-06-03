@@ -2,8 +2,8 @@
 //
 // One specialty per invocation:
 //   1. Read blueprint topics + section weights
-//   2. Fan-out gen calls across sections (parallel, Haiku for easy/medium, Sonnet for hard)
-//   3. Self-critique each question with Sonnet → confidence 0..1 + issues
+//   2. Fan-out gen calls across sections (parallel, one Haiku call per section)
+//   3. Self-critique each question with Haiku → confidence 0..1 + issues
 //   4. Map confidence → mcq_questions.status: 'active' | 'review' | drop
 //
 // Tuning targets (per spec from product):
@@ -281,12 +281,12 @@ async function generateOneSection(
   apiKey: string,
   args: Parameters<typeof buildGenPrompt>[0]
 ): Promise<GeneratedQuestion[]> {
-  // Single Haiku call per section — keeps concurrent API load at 4 calls max
-  // (one per section) rather than 8, which was causing systematic timeouts.
-  // Without detailed_explanation, each Thai MCQ is ~500 tokens (scenario +
-  // 5 choices + 4-sentence explanation + metadata). Cap at 10000 so a
-  // 20-question clinical_decision section stays well under 45s.
-  const maxTokens = Math.min(10000, Math.max(3000, args.count * 500));
+  // Single Haiku call per section. Thai board MCQs are ~900 tokens each
+  // (long clinical scenario + 5 plausible distractors + 3-5 sentence explanation).
+  // With MAX_QUESTIONS_PER_RUN=5, clinical_decision gets 2 questions after
+  // reconcile → ~1800 tokens → completes in ~5-10s well under the 45s abort.
+  // Floor 5000 ensures even 1-question sections have headroom.
+  const maxTokens = Math.min(8000, Math.max(5000, args.count * 900));
   const out = await callClaude(
     apiKey,
     "claude-haiku-4-5-20251001",
@@ -365,7 +365,13 @@ export async function runBoardGenAgent(args: {
     .eq("board_specialty", specialtySlug)
     .in("status", ["active", "review"]);
 
-  const need = Math.max(0, targetCount - (existingCount ?? 0));
+  // 5 questions per cron tick: with blueprint weights (clinical_decision=65%,
+  // basic_science=15%, ems_mgmt=10%, integrative=10%), the reconcile loop
+  // yields clinical_decision=2, others=1 each. 2 Thai board MCQs = ~1800
+  // tokens, well within the 45s per-call abort. Running 6 questions per tick
+  // caused clinical_decision to consistently timeout at 45s.
+  const MAX_QUESTIONS_PER_RUN = 5;
+  const need = Math.min(MAX_QUESTIONS_PER_RUN, Math.max(0, targetCount - (existingCount ?? 0)));
   if (need === 0) {
     return result;
   }
