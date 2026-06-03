@@ -280,7 +280,7 @@ async function generateOneSection(
   if (totalCount < 5) {
     const out = await callClaude(
       apiKey,
-      "claude-sonnet-4-6",
+      "claude-haiku-4-5-20251001",
       8000,
       buildGenPrompt(args),
       true
@@ -306,7 +306,7 @@ async function generateOneSection(
     ),
     callClaude(
       apiKey,
-      "claude-sonnet-4-6",
+      "claude-haiku-4-5-20251001",
       12000,
       buildGenPrompt({
         ...args,
