@@ -447,20 +447,7 @@ export async function runBoardGenAgent(args: {
     return result;
   }
 
-  // Critique in parallel (capped to limit concurrent API)
-  const CRITIQUE_CONCURRENCY = 5;
-  const critiques: CritiqueResult[] = new Array(valid.length);
-  for (let i = 0; i < valid.length; i += CRITIQUE_CONCURRENCY) {
-    const batch = valid.slice(i, i + CRITIQUE_CONCURRENCY);
-    const results = await Promise.all(
-      batch.map((q) => critiqueQuestion(apiKey, q, specialty.name_th))
-    );
-    results.forEach((c, j) => {
-      critiques[i + j] = c;
-    });
-  }
-
-  // Map subject_id per section: lookup existing mcq_subjects rows for this specialty
+  // Map subject_id per section
   const { data: subjectRows } = await admin
     .from("mcq_subjects")
     .select("id, name")
@@ -469,61 +456,106 @@ export async function runBoardGenAgent(args: {
 
   const subjectBySection = new Map<string, string>();
   for (const s of subjectRows ?? []) {
-    const code = (s.name as string).split("_").slice(-2).join("_");
-    if (!subjectBySection.has(code)) subjectBySection.set(code, s.id);
     BOARD_SECTIONS.forEach((sec) => {
       if ((s.name as string).endsWith(sec.code)) subjectBySection.set(sec.code, s.id);
     });
   }
-  // Fallback: pick any subject row for this specialty
   const fallbackSubjectId = subjectRows?.[0]?.id ?? null;
 
-  const insertRows: Record<string, unknown>[] = [];
-  valid.forEach((q, i) => {
-    const c = critiques[i];
-    if (c.confidence < 0.5) {
-      result.dropped++;
-      return;
-    }
-    const status = c.confidence >= 0.85 ? "active" : "review";
-    const subjectId = subjectBySection.get(q.board_section) ?? fallbackSubjectId;
-    if (!subjectId) {
-      result.dropped++;
-      return;
-    }
-    insertRows.push({
-      subject_id: subjectId,
-      audience: "board",
-      exam_type: null,
-      scenario: q.scenario,
-      choices: q.choices,
-      correct_answer: q.correct_answer,
-      explanation: q.explanation || null,
-      detailed_explanation: q.detailed_explanation ?? null,
-      difficulty: ["easy", "medium", "hard"].includes(q.difficulty) ? q.difficulty : "medium",
-      topic: q.board_topic || null,
-      status,
-      board_specialty: specialtySlug,
-      board_section: q.board_section,
-      board_topic: q.board_topic || "general",
-      board_age_group: q.board_age_group ?? null,
-      reference_source: q.reference_source ?? null,
-      exam_source: "AI-generated-board",
-      is_ai_enhanced: true,
-      ai_notes: `confidence=${c.confidence.toFixed(2)}${c.issues.length ? ` | issues: ${c.issues.join("; ").slice(0, 300)}` : ""}`,
-    });
-    if (status === "active") result.inserted_active++;
-    else result.inserted_review++;
-  });
+  // INSERT FIRST as status='review' so generation work is committed even if
+  // the function times out mid-critique. Critique then promotes
+  // high-confidence rows to 'active' best-effort below.
+  type InsertPair = { q: GeneratedQuestion; row: Record<string, unknown> };
+  const insertRows: InsertPair[] = valid
+    .map((q): InsertPair | null => {
+      const subjectId = subjectBySection.get(q.board_section) ?? fallbackSubjectId;
+      if (!subjectId) return null;
+      return {
+        q,
+        row: {
+          subject_id: subjectId,
+          audience: "board",
+          exam_type: null,
+          scenario: q.scenario,
+          choices: q.choices,
+          correct_answer: q.correct_answer,
+          explanation: q.explanation || null,
+          detailed_explanation: q.detailed_explanation ?? null,
+          difficulty: ["easy", "medium", "hard"].includes(q.difficulty)
+            ? q.difficulty
+            : "medium",
+          topic: q.board_topic || null,
+          status: "review" as const,
+          board_specialty: specialtySlug,
+          board_section: q.board_section,
+          board_topic: q.board_topic || "general",
+          board_age_group: q.board_age_group ?? null,
+          reference_source: q.reference_source ?? null,
+          exam_source: "AI-generated-board",
+          is_ai_enhanced: true,
+          ai_notes: "awaiting critique",
+        },
+      };
+    })
+    .filter((x): x is InsertPair => x !== null);
 
-  if (insertRows.length > 0) {
-    const { error: insertErr } = await admin.from("mcq_questions").insert(insertRows);
-    if (insertErr) {
-      result.errors.push(`insert failed: ${insertErr.message}`);
-      // Reset counters since insert failed
-      result.inserted_active = 0;
-      result.inserted_review = 0;
-    }
+  result.dropped += valid.length - insertRows.length;
+
+  if (insertRows.length === 0) return result;
+
+  const { data: inserted, error: insertErr } = await admin
+    .from("mcq_questions")
+    .insert(insertRows.map((x) => x.row))
+    .select("id");
+
+  if (insertErr || !inserted) {
+    result.errors.push(`insert failed: ${insertErr?.message ?? "no rows returned"}`);
+    return result;
+  }
+
+  result.inserted_review = inserted.length;
+
+  // Critique inline best-effort: promote high-confidence rows to 'active'.
+  // If the function times out here, rows stay 'review' (still saved).
+  const CRITIQUE_CONCURRENCY = 5;
+  const pairs = inserted.map((row, idx) => ({
+    id: row.id as string,
+    q: insertRows[idx].q,
+  }));
+
+  for (let i = 0; i < pairs.length; i += CRITIQUE_CONCURRENCY) {
+    const batch = pairs.slice(i, i + CRITIQUE_CONCURRENCY);
+    const critiques = await Promise.all(
+      batch.map((p) => critiqueQuestion(apiKey, p.q, specialty.name_th))
+    );
+    await Promise.all(
+      critiques.map(async (c, j) => {
+        const pair = batch[j];
+        const notes = `confidence=${c.confidence.toFixed(2)}${c.issues.length ? ` | issues: ${c.issues.join("; ").slice(0, 300)}` : ""}`;
+        if (c.confidence < 0.5) {
+          // Quality too low — disable so it doesn't clutter review queue
+          await admin
+            .from("mcq_questions")
+            .update({ status: "disabled", ai_notes: notes })
+            .eq("id", pair.id);
+          result.inserted_review--;
+          result.dropped++;
+        } else if (c.confidence >= 0.85) {
+          await admin
+            .from("mcq_questions")
+            .update({ status: "active", ai_notes: notes })
+            .eq("id", pair.id);
+          result.inserted_review--;
+          result.inserted_active++;
+        } else {
+          // 0.5 <= confidence < 0.85 — keep as 'review', just update notes
+          await admin
+            .from("mcq_questions")
+            .update({ ai_notes: notes })
+            .eq("id", pair.id);
+        }
+      })
+    );
   }
 
   return result;
