@@ -518,6 +518,69 @@ export async function getSchoolMasteryByTopic(
 }
 
 /**
+ * Activity metrics for the current ISO week, used to drive the weekly quests.
+ * `focusSlug` (optional) scopes the quiz-correct count to one body system for
+ * the specialty-tied quest.
+ */
+export async function getWeeklyQuestMetrics(
+  userId: string,
+  focusSlug: string | null
+): Promise<{ activeDays: number; xpThisWeek: number; systemQuizCorrect: number }> {
+  const supabase = await createClient();
+  const start = new Date();
+  start.setHours(0, 0, 0, 0);
+  start.setDate(start.getDate() - ((start.getDay() + 6) % 7)); // Monday
+  const startIso = start.toISOString();
+
+  const [progressRes, xpRes, quizRes] = await Promise.all([
+    supabase
+      .from("school_progress")
+      .select("reviewed_at")
+      .eq("user_id", userId)
+      .gte("reviewed_at", startIso),
+    supabase
+      .from("school_xp_events")
+      .select("amount")
+      .eq("user_id", userId)
+      .gte("created_at", startIso),
+    focusSlug
+      ? supabase
+          .from("school_progress")
+          .select(
+            "outcome, school_quizzes:unit_id(school_topics(school_systems(slug)))"
+          )
+          .eq("user_id", userId)
+          .eq("unit_type", "quiz")
+          .eq("outcome", "correct")
+          .gte("reviewed_at", startIso)
+      : Promise.resolve({ data: [] as unknown[] }),
+  ]);
+
+  const days = new Set<string>();
+  for (const r of (progressRes.data ?? []) as { reviewed_at: string }[]) {
+    if (r.reviewed_at) days.add(r.reviewed_at.slice(0, 10));
+  }
+
+  const xpThisWeek = ((xpRes.data ?? []) as { amount: number }[]).reduce(
+    (sum, r) => sum + (r.amount ?? 0),
+    0
+  );
+
+  type QuizRow = {
+    school_quizzes?: { school_topics?: { school_systems?: { slug?: string } | null } | null } | null;
+  };
+  let systemQuizCorrect = 0;
+  if (focusSlug) {
+    for (const r of (quizRes.data ?? []) as QuizRow[]) {
+      const slug = r.school_quizzes?.school_topics?.school_systems?.slug;
+      if (slug === focusSlug) systemQuizCorrect += 1;
+    }
+  }
+
+  return { activeDays: days.size, xpThisWeek, systemQuizCorrect };
+}
+
+/**
  * Per-system "power" score (0–100) for the specialty radar — aggregates the
  * per-topic quiz mastery up to each school_systems.slug. Systems the student
  * has not touched are simply absent (treated as 0 by callers).

@@ -22,10 +22,17 @@ import {
   getSchoolStreak,
   getDueCount,
   getSchoolMasteryByTopic,
+  getWeeklyQuestMetrics,
 } from "@/lib/supabase/queries-school";
 import { getUnlockState } from "@/lib/school/journey";
+import {
+  buildWeeklyQuests,
+  topSystemSlugFor,
+  type Quest,
+} from "@/lib/school/quests";
 import JourneyBanner from "@/components/school/JourneyBanner";
 import ToolGrid from "@/components/school/ToolGrid";
+import WeeklyQuests from "@/components/school/WeeklyQuests";
 import { createClient } from "@/lib/supabase/server";
 import SectionUpdatesBadge from "@/components/SectionUpdatesBadge";
 import type { Metadata } from "next";
@@ -62,13 +69,15 @@ export default async function SchoolPage() {
   let badgeCount = 0;
   let isAdmin = false;
   let masteredCount = 0;
+  let targetSpecialty: string | null = null;
+  let quests: Quest[] = [];
   if (user) {
     const [s, due, profileRes, badgesRes, mastery] = await Promise.all([
       getSchoolStreak(user.id),
       getDueCount(user.id),
       supabase
         .from("profiles")
-        .select("current_year, school_daily_goal, school_xp, role")
+        .select("current_year, school_daily_goal, school_xp, role, target_specialty")
         .eq("id", user.id)
         .maybeSingle(),
       supabase
@@ -84,19 +93,39 @@ export default async function SchoolPage() {
     xp = profileRes.data?.school_xp ?? 0;
     badgeCount = badgesRes.count ?? 0;
     isAdmin = profileRes.data?.role === "admin";
+    targetSpecialty = profileRes.data?.target_specialty ?? null;
     // A topic counts as "mastered" once seen >= 5 quizzes and >= 80% correct
     masteredCount = Object.values(mastery).filter(
       (m) => m.seen >= 5 && m.pct >= 80
     ).length;
-    // Count units done today
-    const startOfDay = new Date();
-    startOfDay.setHours(0, 0, 0, 0);
-    const { count } = await supabase
-      .from("school_progress")
-      .select("id", { count: "exact", head: true })
-      .eq("user_id", user.id)
-      .gte("reviewed_at", startOfDay.toISOString());
-    dailyDone = count ?? 0;
+
+    // Weekly quests — one tied to the student's target specialty.
+    const focusSlug = topSystemSlugFor(targetSpecialty);
+    const focusSystem = focusSlug
+      ? systems.find((sy) => sy.slug === focusSlug) ?? null
+      : null;
+    const [metrics, todayCount] = await Promise.all([
+      getWeeklyQuestMetrics(user.id, focusSlug),
+      supabase
+        .from("school_progress")
+        .select("id", { count: "exact", head: true })
+        .eq("user_id", user.id)
+        .gte(
+          "reviewed_at",
+          (() => {
+            const d = new Date();
+            d.setHours(0, 0, 0, 0);
+            return d.toISOString();
+          })()
+        ),
+    ]);
+    dailyDone = todayCount.count ?? 0;
+    quests = buildWeeklyQuests(metrics, {
+      targetSpecialtyId: targetSpecialty,
+      focusSystem: focusSystem
+        ? { slug: focusSystem.slug, name_th: focusSystem.name_th }
+        : null,
+    });
   }
 
   // Progressive-disclosure unlock state for the tool grid + journey banner.
@@ -302,6 +331,9 @@ export default async function SchoolPage() {
               </CardContent>
             </Card>
           )}
+
+          {/* Weekly quests — รวมเป้าหมายของสัปดาห์ไว้ที่เดียว */}
+          {quests.length > 0 && <WeeklyQuests quests={quests} />}
         </>
       )}
 
