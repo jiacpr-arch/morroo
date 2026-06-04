@@ -4734,5 +4734,965 @@
     "board_topic": "neurology",
     "board_age_group": "adult",
     "reference_source": "Giacino NEJM; FOCUS; AAN"
+  },
+  {
+    "scenario": "ASIA/ISNCSCI classification — components + clinical implication",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single exam at 1 yr only"
+      },
+      {
+        "label": "B",
+        "text": "ASIA/ISNCSCI Examination: (1) **Purpose**: standardized neurologic exam for SCI — communication, prognosis, research; revised periodically (2019 update); (2) **Components**: - **Motor**: 10 key muscles each side (C5-T1 UE + L2-S1 LE) graded 0-5; - **Sensory**: 28 key dermatomes each side, light touch + pinprick graded 0-2; - **Anorectal exam**: voluntary anal contraction (VAC) + deep anal pressure (DAP) — for sacral sparing classification; (3) **Key levels**: - **Neurologic Level of Injury (NLI)**: most caudal segment w/ intact motor + sensory bilaterally; - **Motor Level**: most caudal level w/ motor grade ≥ 3 (intact level above); - **Sensory Level**: most caudal w/ normal LT + PP; (4) **AIS Grade**: - **A — Complete**: no motor or sensory in sacral S4-5 + no VAC + no DAP; - **B — Sensory Incomplete**: sensory but not motor preserved below NLI, including sacral; no motor > 3 levels below; - **C — Motor Incomplete**: motor preserved below + > half key muscles below grade < 3; - **D — Motor Incomplete**: motor preserved below + ≥ half key muscles below grade ≥ 3; - **E — Normal**: all motor + sensory normal in patient w/ prior deficits; (5) **Zone of Partial Preservation (ZPP)**: in AIS A — most caudal segment w/ any preservation; (6) **Recovery prognostication**: - AIS A: 10-15% conversion (often C5-6 motor recovery); - AIS B: ~50% convert to motor incomplete; - AIS C: most → D; - AIS D: most achieve community ambulation; - LEMS (lower extremity motor score) predictive ambulation; (7) **Timing**: serial exams (acute → 72h → 1 mo → 3 mo → 1 yr) — most improvement first 6 mo; (8) **Pitfalls**: spinal shock initial, sedation/intubation, polytrauma; (9) **Application**: rehab planning + research + outcomes; **Modern**: standardized + electronic + integrated outcomes"
+      },
+      {
+        "label": "C",
+        "text": "Motor exam only"
+      },
+      {
+        "label": "D",
+        "text": "Subjective grading"
+      },
+      {
+        "label": "E",
+        "text": "No clinical use"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "ASIA/ISNCSCI: motor (10 key muscles) + sensory (28 dermatomes LT+PP) + anorectal. NLI, Motor + Sensory levels. AIS A-E grades. ZPP. Recovery prognostic — AIS conversion patterns. Serial exams.",
+    "difficulty": "hard",
+    "board_section": "basic_science",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "ISNCSCI 2019"
+  },
+  {
+    "scenario": "FIM (Functional Independence Measure) — components + use",
+    "choices": [
+      {
+        "label": "A",
+        "text": "20-100 scale"
+      },
+      {
+        "label": "B",
+        "text": "FIM Instrument: (1) **Functional Independence Measure**: most widely used functional assessment in inpatient rehab; (2) **18 items, 7-point scale each (1-7)**: total 18-126; - **Motor (13 items)**: self-care (eating, grooming, bathing, dressing upper, dressing lower, toileting), sphincter (bladder, bowel), transfers (bed/chair/wheelchair, toilet, tub/shower), locomotion (walk/wheelchair, stairs); - **Cognitive (5 items)**: communication (comprehension, expression), social cognition (social interaction, problem-solving, memory); (3) **Rating scale**: 7 = complete independence; 6 = modified independence (device); 5 = supervision; 4 = minimal assist (75%+ patient); 3 = moderate assist (50-74%); 2 = maximal (25-49%); 1 = total assist (< 25%); (4) **Use**: - Admission + discharge in IRF (USA — required); - Outcome measurement; - Insurance + payment; - Research; - Goal-setting + progress tracking; (5) **Strengths**: widely used, reliable, validated, established norms; (6) **Limitations**: ceiling/floor effects (mild + severe), single dimension (cannot distinguish e.g. why low score), training required, time to administer; (7) **Alternatives + complement**: Barthel Index (simpler 10-item), Quality Indicators (CMS IRF-PAI section GG since 2018 — replaced FIM in payment), DASH/PROMIS for specific domains; (8) **Pediatric**: WeeFIM (similar items adapted ages 6 mo-7 yr); (9) **Application**: standardized communication across team + facility + payers; **Modern**: transitioning to GG codes (USA) + PROs + technology-enabled assessment"
+      },
+      {
+        "label": "C",
+        "text": "Single domain"
+      },
+      {
+        "label": "D",
+        "text": "No reliability"
+      },
+      {
+        "label": "E",
+        "text": "Only motor"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "FIM: 18 items, 7-point scale (1-7). Motor 13 + Cognitive 5. IRF standard outcome. Admission + DC. Strengths reliable + standardized. Limits ceiling/floor. Pediatric WeeFIM. Transitioning to GG codes.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "UDSMR FIM"
+  },
+  {
+    "scenario": "GMFCS — Gross Motor Function Classification System in cerebral palsy",
+    "choices": [
+      {
+        "label": "A",
+        "text": "10 levels"
+      },
+      {
+        "label": "B",
+        "text": "GMFCS for Cerebral Palsy: (1) **Purpose**: standardized classification of gross motor function severity in CP — communication, prognosis, intervention planning, research; widely adopted; (2) **5 levels** (age-specific descriptions): - **Level I**: walks without limitations; - **Level II**: walks with limitations (long distances, terrain, balance); - **Level III**: walks using hand-held mobility device; community uses wheels; - **Level IV**: self-mobility w/ limitations; may use powered mobility; - **Level V**: transported in manual w/c; (3) **Age bands**: < 2 yr, 2-4, 4-6, 6-12, 12-18 — each age band has specific descriptors; (4) **Stability**: GMFCS level is stable over time after age 2 (predictive for life); permits prognostic discussions; (5) **GMFM (Gross Motor Function Measure)**: separate — performance measure (88 items GMFM-88 or 66-item GMFM-66) — tracks change over time; complementary to GMFCS; (6) **Hip surveillance** by GMFCS: - GMFCS I: less frequent radiograph; - GMFCS II-V: regular hip surveillance (especially III-V) — risk subluxation/dislocation; programs (e.g., Australian, Swedish CPUP) reduce dislocation; (7) **Other classifications**: - **MACS** (Manual Ability Classification System) — UE function; - **CFCS** (Communication Function); - **EDACS** (Eating + Drinking Ability); (8) **Application**: clinical care + research + family communication + transition planning; (9) **Modern**: stratified care + outcome-tracking + integrated multidisciplinary CP care"
+      },
+      {
+        "label": "C",
+        "text": "Changes daily"
+      },
+      {
+        "label": "D",
+        "text": "Same for all ages"
+      },
+      {
+        "label": "E",
+        "text": "Not standardized"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "GMFCS: 5 levels CP gross motor severity. Age bands. Stable after age 2 → prognostic. GMFM performance measure complementary. Hip surveillance by level. MACS/CFCS/EDACS additional. Stratified care.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "neurology",
+    "board_age_group": "pediatric",
+    "reference_source": "Palisano GMFCS"
+  },
+  {
+    "scenario": "ICF — International Classification of Functioning, Disability, Health — framework",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single body function only"
+      },
+      {
+        "label": "B",
+        "text": "ICF Framework (WHO 2001): (1) **Purpose**: biopsychosocial framework — common language for functioning + disability + health across health professions + research + policy; complement ICD; (2) **Components**: - **Body Functions + Structures**: physiological functions (b-codes) + anatomical parts (s-codes); impairments are problems; - **Activities**: execution of tasks/actions (d-codes); activity limitations; - **Participation**: involvement in life situations (d-codes shared with activities); restrictions; - **Contextual Factors**: - **Environmental**: physical + social + attitudinal (e-codes); - **Personal**: age, gender, race, lifestyle, coping, education (not classified); (3) **Qualifiers**: severity (0-4) for each code; (4) **Bio-psycho-social model**: disability not solely individual but interaction person + environment; (5) **Application rehabilitation**: - Holistic assessment + goal setting; - Documentation + communication; - Outcome measurement; - Research + policy; - Education; (6) **Core sets**: ICF-based standardized profiles for specific conditions (stroke, SCI, LBP, RA, etc.) — facilitate documentation; (7) **ICF-CY**: children + youth version; (8) **Outcome measures linked to ICF**: many — multidimensional approach; (9) **Strengths**: universal + comprehensive + biopsychosocial + non-discriminatory; (10) **Limitations**: complex + time to learn + documentation burden + need for tools; (11) **Modern application**: e-rehabilitation + interdisciplinary team common framework + person-centered + value-based care; (12) **Examples**: - Body function: range of motion, strength, cognition; - Activity: walking, dressing, communication; - Participation: work, recreation, social roles; - Environmental: family support, ramps, attitudes, services; - Personal: motivation, coping"
+      },
+      {
+        "label": "C",
+        "text": "Replaces ICD"
+      },
+      {
+        "label": "D",
+        "text": "Medical-only model"
+      },
+      {
+        "label": "E",
+        "text": "Not used"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "ICF: WHO biopsychosocial framework. Components: Body Functions/Structures + Activities + Participation + Contextual (Environmental + Personal). Application: holistic assessment + outcomes + research. Core sets. ICF-CY pediatric. Person-centered.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "all_ages",
+    "reference_source": "WHO ICF 2001"
+  },
+  {
+    "scenario": "Biomechanics — joint reaction forces + lever systems in rehab",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No effect on rehab"
+      },
+      {
+        "label": "B",
+        "text": "Biomechanics of Joint Forces: (1) **Levers + classes**: - **Class 1**: fulcrum between effort + load (atlanto-occipital, scissors); - **Class 2**: load between effort + fulcrum (calf raise — distal foot fulcrum, gastroc effort, body load); - **Class 3** (most musculoskeletal): effort between fulcrum + load (elbow flexion — elbow fulcrum, biceps effort, hand load) — emphasizes speed/range over force; mechanical disadvantage; (2) **Joint reaction force** = sum of forces at joint = applied forces + muscle forces (often dominant); muscle force amplified due to short moment arms; (3) **Hip joint reaction force** (Pauwels): - Single-leg stance: hip JRF ~3× body weight (BW) — small abductor moment arm vs long body weight moment; - Walking: 3-5× BW; - Running: 6-10× BW; - Cane in contralateral hand: reduces JRF ~30% (longer moment arm); same hand only ~10%; ipsilateral hand on affected side counter-productive; (4) **Knee JRF**: walking 3-4× BW; stairs/squat 5-8× BW; running 7-12×; (5) **Implications for rehab**: - Cane (contralateral) for hip arthroplasty/arthritis — reduces JRF; - Weight reduction major (each lb hip JRF ~3-4 lb); - Strengthening adjacent (abductors, quadriceps); - Activity modification (avoid deep squat, jumps for joint-protected); - Footwear, surface (concrete > grass); - Bone density (Wolff's law — bone adapts to load); - Cartilage — needs loading for nutrition but pathology w/ overload; (6) **Tendon mechanics**: stress, strain, viscoelastic; loading + recovery cycle; (7) **Posture + alignment**: static + dynamic — affects forces; (8) **Application**: orthoses, assistive devices, exercise progression, activity modification, gait analysis, surgical planning; **Modern**: musculoskeletal modeling + 3D gait analysis + finite element + personalized biomechanics"
+      },
+      {
+        "label": "C",
+        "text": "Same force regardless position"
+      },
+      {
+        "label": "D",
+        "text": "Always class 1"
+      },
+      {
+        "label": "E",
+        "text": "No lever effect"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Biomechanics levers: class 1, 2, 3 (most MSK). JRF = applied + muscle forces; muscle dominates. Hip 3× BW single-leg, walking 3-5× BW; cane contralateral reduces 30%. Knee 3-4× BW walking. Application: assistive devices + weight + activity modification.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "Pauwels; Inman"
+  },
+  {
+    "scenario": "Bone remodeling + osteoporosis pathophysiology — fracture prevention",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bone is static"
+      },
+      {
+        "label": "B",
+        "text": "Bone Biology + Osteoporosis: (1) **Bone cells**: - **Osteoblasts** (bone formation, from MSCs); - **Osteocytes** (terminal — mechano-sensing); - **Osteoclasts** (bone resorption, from monocyte lineage); (2) **Bone remodeling cycle**: activation (osteoclasts) → resorption → reversal → formation (osteoblasts) → mineralization; ~10% bone remodeled annually; coupled — coordinated; (3) **Regulation**: RANK/RANKL/OPG (osteoclastogenesis), sclerostin (Wnt inhibition), PTH, calcitriol (vit D), calcitonin, estrogen + testosterone (anti-resorptive), mechanical loading (Wolff's law); (4) **Bone density measurement**: - **DXA** (gold standard): T-score (vs young adult — postmenopausal/men ≥ 50; osteoporosis T ≤ -2.5, osteopenia -1 to -2.5); Z-score (age-matched — pre-menopausal); - **CT, US, MRI**: research/alternative; (5) **Osteoporosis pathophysiology**: imbalance — resorption > formation (postmenopausal estrogen decline ↑ resorption; age-related ↓ formation); (6) **Fracture risk assessment** (FRAX): 10-yr probability major osteoporotic + hip fx — clinical factors + DXA; (7) **Treatment**: - **First-line**: bisphosphonates (alendronate, risedronate, IV zoledronate — anti-resorptive); - **Denosumab** (Prolia — RANKL inhibitor — anti-resorptive); rebound on cessation; - **Anabolic** (teriparatide, abaloparatide — PTH analogs; romosozumab — anti-sclerostin) for severe; sequential — anabolic → anti-resorptive; - **Estrogen, raloxifene** (SERM); - **Ca + Vit D** baseline; (8) **Lifestyle + nutrition**: protein, Ca, vit D, weight-bearing exercise, fall prevention, smoking + alcohol moderation; (9) **Fracture liaison service (FLS)**: post-fragility fracture — reduces subsequent fractures ~50%; (10) **Rehab integration**: bone health post-fx + post-immobilization + post-SCI/stroke (high osteoporosis); fall prevention; **Modern**: targeted + sequential therapy + FLS integration"
+      },
+      {
+        "label": "C",
+        "text": "Single cell type"
+      },
+      {
+        "label": "D",
+        "text": "No regulation"
+      },
+      {
+        "label": "E",
+        "text": "Treatment ineffective"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Bone: osteoblast/osteocyte/osteoclast remodeling cycle. Regulation RANKL/OPG + PTH + vit D + estrogen + mechanical. DXA T-score. Osteoporosis = resorption > formation. Tx: bisphosphonates + denosumab + anabolic (teriparatide). FLS. Rehab integration.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "AACE/ACE; ASBMR"
+  },
+  {
+    "scenario": "Pain neuroscience — peripheral + central + descending modulation",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single pathway"
+      },
+      {
+        "label": "B",
+        "text": "Pain Neuroscience: (1) **Nociception pathway**: stimulus → nociceptor (Aδ + C fibers) → DRG → dorsal horn → spinothalamic (lateral) → thalamus → cortex (S1, S2, insula, ACC); (2) **Peripheral**: TRPV1, TRPA1, Nav1.7/8 channels, prostaglandins, bradykinin, CGRP, substance P; targets for analgesics (NSAID — COX; topical capsaicin — TRPV1); (3) **Spinal cord**: dorsal horn — lamina I + II (substantia gelatinosa) — modulation site; gate theory (Wall & Melzack) — Aβ activation inhibits C fiber (basis for TENS, rubbing); (4) **Ascending tracts**: spinothalamic (pain + temp), spinoreticular (arousal), spinomesencephalic (PAG modulation), spinohypothalamic (autonomic), DCML (vibration + proprioception, NOT pain primarily); (5) **Cortical**: discrimination (S1, S2) + affective (insula, ACC) + cognitive-emotional (PFC); pain is multidimensional experience; (6) **Descending modulation**: - **PAG → RVM → dorsal horn**: serotonergic + noradrenergic + opioid — basis for SNRI/TCA + opioids analgesia; - **DNIC/CPM** (conditioned pain modulation) — diffuse noxious inhibitory control; impaired in chronic pain; (7) **Central sensitization**: - Spinal — wind-up (NMDA), LTP-like, glia activation; - Supraspinal — cortical reorganization; - **Manifestations**: hyperalgesia (↑ response noxious), allodynia (pain non-noxious), expansion receptive fields; chronic pain + fibromyalgia + central pain; (8) **Neuropathic pain mechanisms**: peripheral (neuroma, ectopic), central (CNS lesion — central post-stroke, SCI), sensitization, ion channel changes (Nav1.7), neuro-immune; (9) **Targets — analgesics**: - NSAIDs (COX), acetaminophen (TRPV1 selected), opioids (μ-receptor → presynaptic + postsynaptic), local anesthetics (Nav), gabapentinoids (α2δ Ca channel), TCA/SNRI (descending), ketamine (NMDA), cannabinoids (CB1, CB2), topical (capsaicin, lidocaine); (10) **Non-pharm**: TENS (gate + endogenous opioid), exercise (descending modulation, BDNF, endorphins), CBT/mindfulness (cortical), placebo (endogenous opioid PAG); (11) **Pain neuroscience education (PNE)**: changes pain understanding + experience; **Modern**: targeted molecular + biopsychosocial + central sensitization framework"
+      },
+      {
+        "label": "C",
+        "text": "No modulation"
+      },
+      {
+        "label": "D",
+        "text": "Peripheral only"
+      },
+      {
+        "label": "E",
+        "text": "No CNS role"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pain: peripheral nociceptor (Aδ, C, TRP) → spinal (dorsal horn, gate theory) → ascending (STT) → cortex multidimensional. Descending PAG-RVM (5HT, NE, opioid — SNRI/TCA basis). Central sensitization. Mechanisms guide pharm + non-pharm.",
+    "difficulty": "hard",
+    "board_section": "basic_science",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "IASP; Melzack"
+  },
+  {
+    "scenario": "Electrodiagnosis — NCS + EMG principles + clinical application",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single test"
+      },
+      {
+        "label": "B",
+        "text": "Electrodiagnostic Testing: (1) **Components**: nerve conduction studies (NCS) + needle electromyography (EMG) + late responses (F-waves, H-reflexes); (2) **NCS — motor**: stimulate nerve → record from muscle; measures: - Distal motor latency (DML) — onset to peak/onset; - Amplitude (CMAP — compound muscle AP); - Conduction velocity; - Late responses (F-wave); (3) **NCS — sensory**: stimulate digit/nerve → record from nerve; measures: - Onset/peak latency; - Sensory NAP amplitude; - Sensory conduction velocity; (4) **EMG needle exam**: assesses motor unit electrical activity; - **Spontaneous activity**: fibrillations + positive sharp waves (denervation, myopathy), fasciculations (motor neuron, irritation), myotonia (myotonic dystrophy, hyperK PP, etc.), complex repetitive discharges (chronic neurogenic); - **Motor unit AP (MUAP)** morphology: amplitude + duration + phases; reinnervation → large polyphasic long-duration; myopathy → small short polyphasic; - **Recruitment**: reduced (neurogenic) vs early/full (myopathic); (5) **Localization (KEY for diagnosis)**: - **Demyelinating**: prolonged latencies, slowed velocities, conduction block (segmental); (e.g., GBS, CIDP, CMT1); - **Axonal**: decreased amplitudes, eventual denervation, reinnervation MUAPs; (e.g., DM neuropathy, ALS, GBS-AMAN); - **NMJ disorders**: repetitive nerve stim — decrement (myasthenia), increment (LEMS); jitter (single-fiber EMG); - **Myopathy**: short polyphasic MUAPs, early recruitment, ± fibrillations (inflammatory); (6) **Common indications**: radiculopathy, plexopathy, mononeuropathy (CTS, ulnar, peroneal), polyneuropathy (DM, etc.), motor neuron disease (ALS), myopathy, NMJ; (7) **Pearls**: temperature affects (warm 32-34°C limb), age + height, timing (denervation changes 2-3 wk post-injury), clinical correlation; (8) **Limitations**: technical, sampling, interpretation skill, patient cooperation; (9) **Reporting standards** (AANEM): complete + clinical correlation + localization + Tx implications; **Modern**: US adjunctive + standardized protocols + integrated clinical exam"
+      },
+      {
+        "label": "C",
+        "text": "No clinical use"
+      },
+      {
+        "label": "D",
+        "text": "Painless always"
+      },
+      {
+        "label": "E",
+        "text": "Replaces clinical exam"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "EDX: NCS (motor + sensory) + EMG needle + late responses. Demyelinating (latency/velocity/block) vs axonal (amplitude/denervation/reinnervation). NMJ (decrement/increment). Myopathy (small polyphasic). Localization + Dx. Temperature + timing matters.",
+    "difficulty": "hard",
+    "board_section": "basic_science",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AANEM EDX"
+  },
+  {
+    "scenario": "Ultrasound in PM&R — musculoskeletal + nerve + intervention",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Replaces all imaging"
+      },
+      {
+        "label": "B",
+        "text": "Musculoskeletal Ultrasound: (1) **Advantages**: real-time + dynamic + high resolution superficial + no radiation + accessible + low-cost + portable + comparison side-to-side + interventional guidance; (2) **Probe selection**: linear high-frequency (10-18 MHz) for superficial MSK; curved/low for deep; (3) **MSK applications**: - **Joints**: effusion, synovitis, erosions; - **Tendons**: tendinopathy (thickening, hypoechoic, hyperemia w/ Doppler), tears (partial vs full), calcification; rotator cuff, Achilles, patellar, common extensor; - **Ligaments**: tears, sprains; - **Muscles**: tears, hematoma, atrophy; - **Bursae**: bursitis; - **Bone**: cortical irregularity, periosteum, fracture (rib, sternum); - **Cartilage** limited; (4) **Nerve US (neuromuscular)**: - Median (CTS — cross-sectional area > 10-12 mm² at carpal tunnel suggestive); ulnar (cubital, wrist); peroneal; sciatic; brachial plexus; - Detects enlargement (entrapment, neuropathy), masses, anatomic variation; complementary to EDX; (5) **Interventional US-guidance** (preferred over landmark/blind for accuracy + safety): - Joint injections: subacromial, AC, GH, hip, knee, ankle, SI, facet; - Tendon: peritendinous (avoid intratendinous steroid); - Bursae; - Nerve blocks: peripheral (ulnar, radial, sciatic, femoral, etc.), genicular (knee neurolysis), suprascapular; - Botulinum toxin injections (spasticity, dystonia); - Hydrodissection nerve; - PRP, prolotherapy, viscosupplementation; (6) **Advantages vs fluoro**: no radiation, soft tissue, real-time needle visualization; (7) **Training + certification**: structured curriculum (AAPM&R, AIUM, fellowship); (8) **Limitations**: operator-dependent, depth, bone (acoustic shadow), training time; (9) **Documentation**: images + report standards; (10) **Modern**: POCUS in PM&R growing + high-resolution emerging + AI-assisted"
+      },
+      {
+        "label": "C",
+        "text": "No interventional use"
+      },
+      {
+        "label": "D",
+        "text": "Single application"
+      },
+      {
+        "label": "E",
+        "text": "Requires radiation"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "MSK US: advantages real-time + dynamic + accessible + no radiation. Apps: joints, tendons (tendinopathy, tears), ligaments, muscle, nerve (CTS), interventional (joint, peripheral nerve, BoNT injections). US-guided > blind. Training required. Modern: POCUS + AI.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "AIUM; AAPM&R"
+  },
+  {
+    "scenario": "Outcome measurement — PROs + clinical scales in rehab — PROMIS",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No outcomes needed"
+      },
+      {
+        "label": "B",
+        "text": "Outcome Measurement in Rehab: (1) **Categories**: - **Clinician-rated**: FIM, GMFM, Barthel, Berg Balance, 10MWT, 6MWT, TUG; - **Patient-reported outcomes (PROs)**: SF-36, PROMIS, condition-specific (e.g., ODI for back, KOOS for knee, DASH for arm, PDQ-39 for PD, MSIS-29 for MS, BCTQ for CTS); - **Performance-based**: handheld dynamometry, gait analysis, hop tests; (2) **PROMIS** (Patient-Reported Outcomes Measurement Information System) — NIH-developed: - Standardized + IRT-based; - Multi-domain: physical (function, pain, fatigue), mental (depression, anxiety), social, global; - Short forms + CAT (computer adaptive testing) — fewer items same precision; - T-score 50 = US population mean + 10 SD = 1 SD; - Translation + cross-cultural; - Universal + condition-agnostic; (3) **Properties to consider**: - Validity (content, construct, criterion); - Reliability (test-retest, internal); - Responsiveness (sensitivity to change); - Minimal clinically important difference (MCID); - Floor/ceiling; - Burden + acceptability; - Translation/cultural; (4) **Standardized core sets** for conditions (ICF-based): - Stroke (mRS, NIHSS, FAC, BI/FIM); - SCI (ASIA, SCIM, WISCI-II); - TBI (DRS, GOS-E); - LBP (ODI, RMDQ, NRS, GROC); - Common: PROMIS, EQ-5D, SF-36; (5) **Performance vs capability vs perception**: triangulate; (6) **Goal Attainment Scaling (GAS)**: individualized goals + standardized scoring; (7) **Use**: clinical (goal-setting + progress + decisions) + research + quality + payment; (8) **CMS IRF-PAI Section GG** (USA): standardized functional + cognitive items at admit + DC — replaced FIM for payment 2018+; (9) **Electronic capture**: EHR + apps + remote; (10) **Modern**: PROMIS + ICF core sets + GAS + technology + value-based care"
+      },
+      {
+        "label": "C",
+        "text": "Single measure for everything"
+      },
+      {
+        "label": "D",
+        "text": "Subjective only"
+      },
+      {
+        "label": "E",
+        "text": "Not validated"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Rehab outcomes: clinician-rated (FIM, scales, performance) + PROs (PROMIS, SF-36, condition-specific) + performance. PROMIS IRT-based multi-domain + CAT. Properties (validity, reliability, responsiveness, MCID). Core sets. GAS. CMS GG codes. Modern: tech + value-based.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "PROMIS; CMS IRF-PAI"
+  },
+  {
+    "scenario": "Cardiopulmonary exercise testing (CPET) — interpretation + rehab application",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single variable"
+      },
+      {
+        "label": "B",
+        "text": "CPET — Cardiopulmonary Exercise Testing: (1) **Setup**: incremental exercise (treadmill or cycle) w/ continuous gas exchange (VO2, VCO2, VE) + ECG + BP + SpO2 + symptoms; (2) **Key variables**: - **VO2 peak**: max O2 uptake at exercise peak — overall functional capacity; - **VO2max**: \"true\" max — plateau or RER > 1.1, age-predicted; - **Anaerobic threshold (AT/VT1)**: lactate threshold inferred — V-slope, RER 1.0, ventilatory equivalents; - **VT2/RCP** (respiratory compensation point); - **VE/VCO2 slope** + intercept: ventilatory efficiency (elevated in HF, pulm HTN, PAH); - **Heart rate response, HR reserve, HRR (HR recovery 1 min)**; - **O2 pulse** (VO2/HR — surrogate stroke volume); - **Breathing reserve**; - **Peak RER** (effort indicator); - **Workload + duration**; (3) **Indications**: - **Pre-rehab prescription** (intensity zones); - **Functional limitation evaluation** (cardiac vs pulm vs deconditioning vs other); - **Pre-op risk stratification** (thoracic, abdominal, transplant); - **Prognosis** in HF (VO2 < 14 mL/kg/min — transplant candidacy); - **Pulmonary HTN, PAH** (prognosis); - **CPET-guided rehab in cancer, organ transplant**; (4) **Exercise prescription from CPET**: - Aerobic intensity at AT/VT1 (long endurance) or between VT1-VT2 (moderate-high); - HIIT can use peak workload intervals; (5) **Submaximal alternatives** when CPET unavailable: 6MWT, ISWT, Bruce treadmill; less precise but useful; (6) **Special populations**: - Denervated heart (transplant): RPE > HR; - Pacemaker/rate-fixed: VO2 + workload; - β-blocker: HR blunted — use RPE/workload; - Hypoxic populations: SpO2 monitor + O2 supplementation; (7) **Risks**: rare — arrhythmia, ischemia, MSK; pre-test screening; (8) **Multidisciplinary interpretation**: cardiology + pulm + physiatry + exercise physiologist; **Modern**: precision prescription + integrated outcome"
+      },
+      {
+        "label": "C",
+        "text": "No exercise prescription role"
+      },
+      {
+        "label": "D",
+        "text": "Painful always"
+      },
+      {
+        "label": "E",
+        "text": "Not validated"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "CPET: VO2 peak + AT/VT1 + VE/VCO2 slope + HR/O2 pulse + RER. Indications: prescription + functional eval + prognosis + pre-op. AT-based intensity. Submax alternatives (6MWT). Special populations adjustments. Modern: precision exercise.",
+    "difficulty": "hard",
+    "board_section": "basic_science",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "ATS/ERS CPET; ESC"
+  },
+  {
+    "scenario": "Spinal cord — anatomy + tracts + clinical localization",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single tract"
+      },
+      {
+        "label": "B",
+        "text": "Spinal Cord Anatomy + Tracts: (1) **Gross**: 31 segments (8C, 12T, 5L, 5S, 1Co); cord ends conus medullaris ~L1-L2 adult; cauda equina below; enlargements C5-T1 (UE) + L2-S3 (LE); (2) **Gray matter (H-shaped)**: - Anterior horn — motor neurons; - Posterior horn — sensory; - Lateral horn (T1-L2) — sympathetic; sacral (S2-4) — parasympathetic; (3) **White matter tracts**: - **Ascending sensory**: - **Dorsal columns** (DCML): fasciculus gracilis (LE, medial) + cuneatus (UE, lateral); fine touch, vibration, proprioception, 2-pt discrimination; ipsilateral until medulla nuclei → decussate; - **Spinothalamic** (lateral + anterior): pain + temp + crude touch; decussate immediately at entry level (within 1-2 segments) → contralateral; - **Spinocerebellar** (dorsal + ventral): proprioception to cerebellum (ipsilateral unconscious); - **Descending motor**: - **Lateral corticospinal**: 90% — decussated in medulla pyramids; distal limb fine motor; - **Anterior corticospinal**: 10% — uncrossed; trunk + proximal; - **Rubrospinal, reticulospinal, vestibulospinal, tectospinal**: postural + reflexive; (4) **Common SCI syndromes**: - **Complete transection** below: motor + sensory lost; - **Central cord** (older, hyperextension): UE > LE weakness, sacral sparing; - **Anterior cord** (ASA infarct): motor + pain/temp lost below; DCML preserved; poor prognosis; - **Posterior cord** rare: DCML lost; motor + ST preserved; - **Brown-Séquard** (hemicord — penetrating): ipsilateral motor + DCML loss; contralateral pain/temp loss (1-2 segments below); - **Conus medullaris**: mixed UMN/LMN, sacral, sudden + symmetric; - **Cauda equina**: LMN, multiple roots, asymmetric, radicular, slowly progressive (less commonly sudden — surgical emergency); (5) **Blood supply**: anterior spinal artery (anterior 2/3) + 2 posterior spinal (posterior 1/3); radicular contributors (Adamkiewicz T9-T12 — vulnerable); (6) **Cord vs vertebral level mismatch**: cord ends L1-L2 — discrepancy increases caudally (e.g., T10 vertebra ≈ L1 cord); (7) **Application clinical**: precise localization + injury patterns + prognosis + rehab; **Modern**: imaging + clinical exam + emerging therapeutics"
+      },
+      {
+        "label": "C",
+        "text": "No clinical relevance"
+      },
+      {
+        "label": "D",
+        "text": "All decussate medulla"
+      },
+      {
+        "label": "E",
+        "text": "No blood supply"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cord: gray (anterior motor, posterior sensory, lateral autonomic). White tracts — DCML (ipsi → medulla decussation; fine touch, vibration, proprio) + spinothalamic (immediate decussation; pain/temp) + corticospinal (medullary decussation). Syndromes localize. Blood supply (Adamkiewicz). Modern integrated.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "Netter; ISNCSCI"
+  },
+  {
+    "scenario": "Peripheral nerve anatomy + classification of injury (Seddon, Sunderland)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single grade"
+      },
+      {
+        "label": "B",
+        "text": "Peripheral Nerve Injury Classification: (1) **Anatomy**: axon + Schwann cell (myelin) + endoneurium → fascicle (perineurium) → epineurium; vascular supply (vasa nervorum); fascicular pattern intraneural; (2) **Seddon (1943) — physiologic**: - **Neuropraxia**: temporary conduction block (segmental demyelination); axon intact; recovery weeks-months without intervention; - **Axonotmesis**: axon disruption but endoneurium intact (axonal injury, Wallerian degeneration distal); recovery via axonal regrowth ~1 mm/day; - **Neurotmesis**: complete nerve disruption (including connective tissue); requires surgical repair; (3) **Sunderland (1951) — anatomic 5 degrees**: - **I**: neuropraxia (demyelinating block); recovery days-wks; - **II**: axon disrupted, endoneurium intact (axonotmesis); recovery weeks-months 1 mm/d; - **III**: axon + endoneurium disrupted, perineurium intact; incomplete recovery; - **IV**: axon + endo + perineurium disrupted, epineurium intact; poor recovery → surgical; - **V**: complete nerve disruption (neurotmesis); surgical repair; - **VI** (Mackinnon — mixed injury): combination grades in different fascicles; (4) **Wallerian degeneration**: distal axon degeneration starts day 2-3 post-axonal injury; complete by 2-3 weeks; (5) **Reinnervation**: 1 mm/d (1 inch/mo) regeneration rate; collateral sprouting from intact axons (recovery 2-6 mo); axonal regrowth slower (months-yr); (6) **Clinical signs**: motor + sensory + autonomic deficit; Tinel sign advances distally w/ regeneration; recovery pattern follows nerve distribution; (7) **EDX timing**: 2-3 wk post-injury for denervation potentials + assessment severity; serial; (8) **Imaging adjunct**: MRI, US (visualize nerve + lesion); (9) **Treatment**: - Conservative (compression, mild): rest + PT + therapy; - Surgical (transection, severe, plateau recovery): repair (epineurial, perineurial, fascicular), graft (sural nerve), nerve transfer (faster — bypass denervation time), TMR; - Rehab: ROM + splint (prevent contracture) + sensory re-education + functional + adaptive; (10) **Outcomes**: motor recovery, sensory return, function, EDX, PROs; **Modern**: nerve transfer + advanced grafting + biologics + selective neurectomy/TMR"
+      },
+      {
+        "label": "C",
+        "text": "All require surgery"
+      },
+      {
+        "label": "D",
+        "text": "No recovery possible"
+      },
+      {
+        "label": "E",
+        "text": "Immediate full recovery"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Nerve injury: Seddon (neuropraxia, axonotmesis, neurotmesis); Sunderland I-V (+ VI Mackinnon). Wallerian degeneration distal. Recovery 1 mm/d. Conservative vs surgical (repair, graft, nerve transfer, TMR). Rehab. Modern: nerve transfer.",
+    "difficulty": "hard",
+    "board_section": "basic_science",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "Seddon; Sunderland; Mackinnon"
+  },
+  {
+    "scenario": "Rehabilitation pharmacology — managing spasticity systematically",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single drug for all"
+      },
+      {
+        "label": "B",
+        "text": "Spasticity Pharmacology Systematic Review: (1) **Definition**: velocity-dependent increase in tonic stretch reflex (UMN); component of UMN syndrome (also weakness, slowness, fatigability, dyssynergia); (2) **Tx ladder**: address contributors + non-pharm → focal → systemic → invasive; (3) **Oral antispasticity**: - **Baclofen**: GABA-B agonist; titrate 5 mg TID → 80 mg/d max; SE — sedation, weakness, confusion; do NOT abruptly stop (withdrawal — fever, severe spasticity, seizure, rhabdo); renal dosing; - **Tizanidine**: α2-agonist; 2 mg → 36 mg/d max; SE — sedation, hypotension, dry mouth, LFT (monitor); preferred when spasms; - **Benzodiazepines** (clonazepam, diazepam): GABA-A; SE — sedation, dependence, cognition; useful spasms at night; - **Dantrolene**: peripheral (ryanodine receptor — Ca release); useful in cerebral spasticity less in spinal; SE — hepatotoxicity (monitor LFT), weakness systemic; - **Gabapentin/pregabalin**: GABA analog; useful for spasticity + neuropathic pain; SE — sedation, edema, dizziness; - **Cyproheptadine**: 5HT antagonist; selected spasms; - **Cannabinoids** (nabiximols/Sativex): MS spasticity evidence (where available); (4) **Focal**: - **BoNT-A** (target muscles, dose by weight + clinical, US/EMG-guided, q3-4 mo, adjunct PT/casting); - **Phenol/alcohol** motor point or nerve block (longer duration, technical, dysesthesia risk); (5) **Invasive**: - **ITB pump**: refractory generalized; trial → implant; risks (withdrawal/overdose); 24/7 emergency; - **SDR** (selected pediatric/adult — ambulatory CP/spastic diplegia); - **Surgical** orthopaedic (tendon lengthening/transfer) for established contracture; (6) **Multidisciplinary** + goal-setting (GAS) essential; (7) **Outcomes**: Ashworth, Tardieu, function, ROM, ADL, GAS, PROs; (8) **Address contributors** FIRST (UTI, constipation, pain, skin, infection — exacerbate); **Modern**: integrated ladder + goal-directed + US-guided focal + technology"
+      },
+      {
+        "label": "C",
+        "text": "Surgery first-line"
+      },
+      {
+        "label": "D",
+        "text": "Bedrest only"
+      },
+      {
+        "label": "E",
+        "text": "No treatment needed"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Spasticity Rx ladder: address contributors → non-pharm → focal (BoNT, phenol) → systemic (baclofen, tizanidine, benzo, dantrolene, gabapentinoid, cannabinoid) → invasive (ITB, SDR, surgery). Goal-directed multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AAPM&R; AANEM; AAN"
+  },
+  {
+    "scenario": "Wheelchair seating + pressure injury prevention biomechanics",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single cushion for all"
+      },
+      {
+        "label": "B",
+        "text": "Wheelchair Seating + Pressure Injury Prevention: (1) **Pressure injury risk** in W/C users: insensate (SCI), prolonged sitting, friction/shear, moisture, malnutrition, age, deformity; (2) **Pressure-redistribution principles**: - **Reduce peak pressures** under bony prominences (ischial tuberosities, sacrum, greater trochanter, heel); - **Maximize contact area** (immersion in soft surface); - **Pressure-mapping** to optimize; (3) **Cushion types**: - **Foam** (basic, light, moderate redistribution); - **Gel** (good redistribution); - **Air** (ROHO — adjustable, maximum redistribution, requires adherence); - **Hybrid** (best of multiple); - **Custom contoured** for complex needs; - **Specialized** (alternating air, etc.); (4) **Pressure relief activities** (KEY for insensate): - **Push-ups** (lift) every 15-30 min for ~30 sec — high UE strain in SCI; - **Lateral lean / forward lean** alternative; - **Power tilt-in-space** for those unable to do active relief (KEY for high tetraplegic); - **Recline** (less effective alone — shear); (5) **Wheelchair fit**: - Seat width (1-2 cm clearance each side); - Seat depth (clearance behind knee 2-4 cm); - Seat height (footrest clears floor); - Backrest height (function-dependent); - Armrest height (90° elbow flex); - Tilt + recline; (6) **Postural support**: lateral supports + headrest + chest harness + abductor + heel loops; (7) **Skin care**: daily inspection (mirror), hygiene, moisturize, avoid maceration, address incontinence; (8) **Education + adherence**: critical — patient + caregiver; pressure-relief reminders (timers, smartwatch); (9) **Equipment maintenance**: cushion inflation (ROHO), wear check, replacement (3-5 yr typical); (10) **Multidisciplinary**: OT/PT seating clinic + supplier + physiatry + WOCN + patient; (11) **Outcomes**: pressure injury occurrence/recurrence, comfort, function, satisfaction; **Modern**: smart cushions + pressure-mapping + reminders + integrated WOCN"
+      },
+      {
+        "label": "C",
+        "text": "Bedrest only"
+      },
+      {
+        "label": "D",
+        "text": "No relief needed"
+      },
+      {
+        "label": "E",
+        "text": "Pressure unrelated"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "W/C seating + PrI prevention: cushions (foam → gel → air → hybrid). Pressure relief (push-up, lean, tilt) q15-30 min. W/C fit. Postural support. Skin care daily. Education adherence. Multidisciplinary seating clinic. Modern: smart + pressure-mapping.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "RESNA; PVA; NPIAP"
+  },
+  {
+    "scenario": "Pediatric motor development milestones + assessment",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single milestone"
+      },
+      {
+        "label": "B",
+        "text": "Pediatric Motor Development: (1) **Cephalocaudal + proximal-to-distal** progression; (2) **Gross motor milestones** (typical ranges; concern if exceed upper): - 2 mo: lifts head prone; - 4 mo: rolls front to back; supports head; - 6 mo: sits supported, rolls both directions; - 9 mo: sits independently, crawls, pulls to stand; - 12 mo: walks w/ support, takes first steps (range 9-18 mo); - 15-18 mo: walks well, climbs stairs (assistance); - 2 yr: runs, kicks ball, walks up stairs; - 3 yr: jumps, pedals tricycle, stands on one foot briefly; - 4 yr: hops, alternates stairs reciprocally; - 5 yr: skips, balances 10 sec; (3) **Fine motor**: - 4 mo: brings hands to midline, grasps; - 6 mo: transfers objects; - 9 mo: pincer grasp emerging; - 12 mo: refined pincer, releases voluntarily; - 18 mo: tower 3-4 blocks; - 2 yr: tower 6 blocks; - 3 yr: copies circle; - 4 yr: copies cross + square; - 5 yr: triangle, draws person 6 parts; (4) **Other domains**: language, social, cognitive — assess all; (5) **Red flags** for further evaluation: - Persistent fisting > 3 mo (CP risk); - Asymmetry (hemiplegic CP); - Lost milestones (regression — autism, neurodegenerative); - Hand preference < 18-24 mo (often pathologic in young — CP); - Not walking by 18 mo; - Not running by 2 yr; - Not stairs by 3 yr; - Hypertonia + hypotonia outside normal range; - Persistent primitive reflexes; - Toe-walking persistent (DMD R/o); (6) **Standardized assessments**: AIMS (Alberta Infant Motor Scale), Bayley III, PDMS-2 (Peabody), BOT-2, Mullen, GMFM (CP); (7) **Workup developmental delay**: history (prenatal, perinatal, family), exam (dysmorphology, neuro), hearing + vision, developmental testing, etiologic workup (genetic — CMA first-tier, FXS, WES selected; metabolic selected; neuroimaging selected); (8) **Early intervention**: Part C (USA <3 yr) + school-based (3+); family-centered; (9) **Multidisciplinary**: peds + dev-behavioral + neurology + PT + OT + SLP + family; **Modern**: validated tools + early identification + intervention + neuroplasticity"
+      },
+      {
+        "label": "C",
+        "text": "No assessment"
+      },
+      {
+        "label": "D",
+        "text": "Pathologic regression normal"
+      },
+      {
+        "label": "E",
+        "text": "No early intervention"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Peds motor dev: cephalocaudal + proximal-distal. Gross (head ctrl → roll → sit → crawl → stand → walk → run/jump/skip) + fine (grasp → pincer → block tower → drawing). Red flags (regression, asymmetry, persistent reflexes). Tools AIMS/Bayley/PDMS/GMFM. EI.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "neurology",
+    "board_age_group": "pediatric",
+    "reference_source": "AAP; Bayley"
+  },
+  {
+    "scenario": "Spinal cord injury — neuroanatomy of bladder + bowel control",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single innervation"
+      },
+      {
+        "label": "B",
+        "text": "Neurogenic Bladder + Bowel Neuroanatomy: (1) **Bladder innervation**: - **Sympathetic** (T11-L2 → hypogastric plexus → β3 detrusor relaxation + α1 internal sphincter contraction): storage; - **Parasympathetic** (S2-4 → pelvic nerve → muscarinic M3 detrusor contraction): emptying; - **Somatic** (S2-4 → pudendal nerve → external sphincter): voluntary control; - **Coordinated by pontine micturition center (PMC)** w/ cortical input (frontal); (2) **Lesion-based bladder pattern**: - **Suprapontine** (stroke, MS, dementia): detrusor overactivity, coordinated sphincter (synergic); urge incontinence; - **Spinal — UMN (above conus, T12-L1)**: detrusor overactivity + detrusor-sphincter dyssynergia (DSD) — high storage pressure, incomplete emptying, upper tract risk; - **LMN (conus/cauda equina)**: areflexic detrusor + atonic sphincter — overflow incontinence + retention; (3) **Bowel innervation**: - **Sympathetic** (T11-L2): inhibits motility; relaxes ileocecal; contracts internal anal sphincter; - **Parasympathetic** (S2-4 + vagus): stimulates motility; relaxes internal sphincter for defecation; - **Somatic** (S2-4 pudendal): external anal sphincter voluntary; (4) **Neurogenic bowel patterns**: - **UMN (above conus)**: spastic bowel — retains stool, intact reflexes (gastrocolic) for stimulated defecation; suppositories + digital stimulation effective; - **LMN (conus/cauda)**: areflexic + flaccid; no reflex defecation; manual evacuation primary; risk constipation + incontinence; (5) **Sexual function**: - Erection: psychogenic (T11-L2) + reflexogenic (S2-4); UMN preserves reflexogenic; LMN affects reflexogenic; - Ejaculation: sympathetic; often impaired; - Lubrication + orgasm similar; (6) **Sacral reflexes**: bulbocavernosus + anal wink — assess sacral integrity (intact in UMN, absent acute spinal shock + LMN); (7) **Spinal shock**: areflexic state acute SCI; days-weeks → emergence of reflexes; (8) **Clinical assessment**: PVR + urodynamics + rectal exam + sacral reflexes + bladder/bowel diary; (9) **Management aligned w/ pattern**: UMN — CIC + anticholinergic + bowel program w/ stim; LMN — CIC + manual; (10) **Application**: targeted therapy + complications prevention (renal, skin, UTI, dysreflexia); **Modern**: urodynamics + targeted + multidisciplinary"
+      },
+      {
+        "label": "C",
+        "text": "No sympathetic role"
+      },
+      {
+        "label": "D",
+        "text": "Conus same as suprapontine"
+      },
+      {
+        "label": "E",
+        "text": "No reflex"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Bladder: symp (T11-L2, storage) + parasymp (S2-4, emptying) + somatic (pudendal, voluntary). PMC coordinates. UMN (DSD, overactive), LMN (areflexic). Bowel parallel. Sexual function. Sacral reflexes. Targeted Tx by pattern.",
+    "difficulty": "hard",
+    "board_section": "basic_science",
+    "board_topic": "renal_gu",
+    "board_age_group": "adult",
+    "reference_source": "Consortium SCI; AUA"
+  },
+  {
+    "scenario": "Theoretical models of motor learning + skill acquisition",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single stage"
+      },
+      {
+        "label": "B",
+        "text": "Motor Learning Theory + Application: (1) **Fitts & Posner — 3 stages**: - **Cognitive** (early): \"what to do\" — high errors + variable; explicit instruction + slowed; demonstration helpful; - **Associative** (intermediate): refining + correcting errors; less variable; awareness of errors; - **Autonomous** (late): automatic + low cognitive load; consistent; can dual-task; (2) **Practice variables**: - **Distribution**: massed vs distributed (rest between) — distributed better for learning + retention; - **Variability**: constant vs variable practice — variable better for transfer; - **Schedule**: blocked vs random (different skills interleaved) — random worse acquisition but BETTER retention + transfer (\"contextual interference\"); - **Whole vs part**: depends on skill complexity + integration; - **Mental practice**: imagery — effective complement; - **Observational learning** (modeling): demonstration + video; (3) **Feedback**: - **Knowledge of results (KR)**: outcome feedback; - **Knowledge of performance (KP)**: how performed; - **Frequency**: less frequent better retention (\"guidance hypothesis\" — too much feedback dependent); - **Bandwidth feedback**: only when error exceeds threshold; - **Self-controlled** feedback better than imposed; (4) **Motivational + attentional**: - **External focus** (on outcome/object) better than internal (on body part) for performance + learning; - **Autonomy support**; - **Enhanced expectancies**; (5) **Motor learning principles applied to rehab**: - Task-specific + meaningful; - Intensive + repetitive (consistent w/ neuroplasticity); - Variable practice for transfer; - Random practice schedule; - Appropriate feedback (KR, KP, frequency); - External focus; - Sufficient challenge — \"just right\"; - Goal-directed; (6) **OPTIMAL theory** (Wulf & Lewthwaite): autonomy + enhanced expectancies + external focus enhance motor learning; (7) **CIMT, mass practice, task-specific training, robotics, virtual reality**: applications; (8) **Adjuncts**: tDCS, BCI, FES paired w/ training; **Modern**: integration motor learning + neuroplasticity + technology"
+      },
+      {
+        "label": "C",
+        "text": "More feedback always better"
+      },
+      {
+        "label": "D",
+        "text": "No practice variation needed"
+      },
+      {
+        "label": "E",
+        "text": "Passive only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Motor learning: Fitts/Posner cognitive → associative → autonomous. Practice: distributed + variable + random (contextual interference). Feedback: KR/KP — less frequent better retention. External focus + autonomy + expectancies (OPTIMAL). Task-specific + meaningful. Modern integrated.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "Fitts/Posner; Wulf/Lewthwaite OPTIMAL"
+  },
+  {
+    "scenario": "Inpatient Rehabilitation Facility (IRF) criteria + admission decision-making",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Anyone qualifies"
+      },
+      {
+        "label": "B",
+        "text": "IRF Admission Criteria + Decision-Making: (1) **Medicare IRF criteria (US)** — broadly applicable framework: - Patient requires + benefits from intensive multidisciplinary rehabilitation; - Tolerates + participates in 3 hours of therapy per day, 5 days per week (or 15 hours/week); - Requires physician supervision/face-to-face visits at least 3 days/week + ongoing medical oversight; - Requires nursing 24/7; - Requires intensive multidisciplinary rehabilitation w/ 2+ disciplines (PT + OT + SLP); - Pre-admission screen by qualified clinician; (2) **60% rule** (CMS): ≥ 60% of IRF admissions must have ≥ 1 of 13 qualifying conditions (stroke, SCI, congenital deformity, amputation, major MJ trauma, hip fx, brain injury, neurological disorders, burns, etc.); (3) **Levels of post-acute care**: - **IRF**: most intensive — high therapy + medical complexity; - **SNF (skilled nursing)**: less intensive — chronic, lower-tolerance, slower-paced; - **LTACH** (long-term acute care): medically complex w/ prolonged need; - **Home health + outpatient**: lower-intensity outpatient when ready; (4) **Pre-admission screening (PAS)** — comprehensive; documents IRF appropriateness; (5) **Admission process**: PAS → physician concurrence → admission; (6) **During stay**: weekly interdisciplinary team conferences; FIM/section GG documentation; ongoing assessment; (7) **Discharge planning** from day 1: integrate; family + community; (8) **Section GG (CMS IRF-PAI)**: standardized functional + cognitive items at admit + DC — payment + quality; (9) **Patient-centered + value-based care**: outcomes + cost considerations; (10) **Equity**: access disparities — address; (11) **International variation**: different criteria + systems but similar principles — intensive multidisciplinary rehabilitation for selected patients; (12) **Multidisciplinary leadership**: physiatrist + rehab nursing + PT/OT/SLP + social work + case management + family; **Modern**: outcome-driven + value-based + integrated continuum"
+      },
+      {
+        "label": "C",
+        "text": "No screening"
+      },
+      {
+        "label": "D",
+        "text": "Single discipline OK"
+      },
+      {
+        "label": "E",
+        "text": "Discharge home all"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "IRF: intensive multidisciplinary rehab. Medicare criteria: 3h/d therapy x 5d/wk + physician + 24/7 nursing + 2+ disciplines + PAS. 60% rule. Section GG. Other levels: SNF/LTACH/home. Discharge planning day 1. Outcomes + value-based.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "CMS IRF; CARF"
+  },
+  {
+    "scenario": "Rehabilitation team structure + interdisciplinary vs multidisciplinary",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single discipline always"
+      },
+      {
+        "label": "B",
+        "text": "Rehab Team Models: (1) **Multidisciplinary**: each discipline separate, parallel evaluations + goals + treatments; minimal coordination; report individually; (2) **Interdisciplinary** (preferred rehab model): - Shared goals + integrated plan of care; - Regular team conferences (typically weekly); - Coordinated team interventions w/ overlap; - Patient + family as core team members; - Disciplines learn from each other; (3) **Transdisciplinary**: roles blur — members cross discipline boundaries; advanced model; (4) **Core team members**: - **Physiatrist** (team leader medical + functional); - **Rehab nursing** (24/7 medical + skin + bladder/bowel + medication + education + carry over therapy); - **Physical therapy (PT)** — mobility, gait, strength, balance, transfers; - **Occupational therapy (OT)** — ADLs, fine motor, cognition, home safety, adaptive equipment, return to work; - **Speech-language pathology (SLP)** — communication, swallow, cognitive-communication; - **Social work + case management** — discharge, resources, advocacy, family; - **Psychology/neuropsychology** — mood, cognition, behavioral; - **Recreation therapy** — leisure + community reintegration; - **Dietitian** — nutrition; - **Pharmacy** — medication review; (5) **Extended team**: orthotist/prosthetist, vocational, peer mentors, chaplain, physician specialists (neurology, ortho, urology, etc.), patient + family; (6) **Team meeting** (interdisciplinary conference): patient progress + goals + barriers + plan + DC; weekly typically; documented; (7) **Communication**: standardized tools (FIM, ICF-based, SBAR), EHR; (8) **Patient-centered**: patient + family as core; (9) **Outcomes**: standardized + tracked + reported; (10) **Quality + safety**: team training, root cause analysis, continuous improvement; (11) **Leadership**: physician + nursing + administrative; (12) **Modern**: technology-enabled + tele + value-based + patient-centered"
+      },
+      {
+        "label": "C",
+        "text": "No coordination"
+      },
+      {
+        "label": "D",
+        "text": "No team conferences"
+      },
+      {
+        "label": "E",
+        "text": "Patient not on team"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Rehab team: multidisciplinary (parallel) → interdisciplinary (shared goals + team conferences — preferred) → transdisciplinary (role blur). Core: physiatrist + rehab RN + PT/OT/SLP + SW + psych + recreation + dietitian + pharmacy + family. Weekly meetings. Patient-centered.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "all_ages",
+    "reference_source": "ACRM; AAPM&R"
+  },
+  {
+    "scenario": "Discharge planning + transitions of care in rehab",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge day before — no planning"
+      },
+      {
+        "label": "B",
+        "text": "Discharge Planning + Transitions: (1) **Start day 1** of admission — integrate throughout; (2) **Comprehensive assessment**: - Medical stability + ongoing needs; - Functional status + safety; - Cognitive + mood + behavioral; - Home environment + accessibility (OT home evaluation); - Family + caregiver capacity + training; - Community resources + transportation; - Financial + insurance + DME coverage; - Patient + family preferences + goals; (3) **Discharge destinations** (continuum): - Home (independent or w/ family/caregiver) + outpatient or home health; - Home w/ home health (PT/OT/SLP/nursing visits); - SNF (continued rehab less intensive); - LTACH (medically complex); - Assisted living + nursing home; - Hospice; (4) **DME (durable medical equipment) needs**: wheelchair, walker, commode, hospital bed, lifts, oxygen, etc.; assessment + funding (Medicare/insurance/charity); pre-discharge fitting + delivery; (5) **Home modifications**: ramps, grab bars, widened doors, lowered counters, accessible bathroom — OT assessment + funding; (6) **Medication reconciliation**: thorough review + family education + pillbox + simplify regimen; (7) **Patient + family education**: condition, meds, signs/symptoms + when to call, equipment use, exercise + activity program, follow-up; teach-back method; written materials; (8) **Follow-up appointments**: physiatry, specialists, primary care, therapy continuation; (9) **Community referrals**: support groups, peer mentors, advocacy organizations, social services; (10) **Transportation planning**: accessible vehicle, paratransit; (11) **Address SDOH** (social determinants of health): housing, food, financial; (12) **Re-admission prevention**: identified high-risk + targeted intervention; (13) **Documentation + handoff**: thorough — receiving providers; (14) **Outcomes**: ED visits, re-admissions, function, satisfaction; **Modern**: integrated transitions + technology + community-based + value-based"
+      },
+      {
+        "label": "C",
+        "text": "No family involvement"
+      },
+      {
+        "label": "D",
+        "text": "No follow-up"
+      },
+      {
+        "label": "E",
+        "text": "No home assessment"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Discharge planning: start day 1. Assess medical + function + home + family + community + financial. Destinations spectrum. DME + home mods + meds + education + follow-up + community resources + transportation + SDOH. Multidisciplinary. Modern: integrated transitions.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "all_ages",
+    "reference_source": "TJC; CMS Transitions"
+  },
+  {
+    "scenario": "Quality + outcomes measurement — quality indicators + benchmarking in rehab",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No measurement needed"
+      },
+      {
+        "label": "B",
+        "text": "Quality + Outcomes in Rehab: (1) **Quality measurement domains** (IOM/STEEEP): Safe, Timely, Effective, Efficient, Equitable, Patient-centered; (2) **Outcome measures in IRF**: - **Functional outcomes**: FIM/GG codes, change scores, LOS efficiency; - **Discharge destination**: home vs SNF rate; - **Adverse events**: falls, pressure injuries, infections (CAUTI, CLABSI), DVT, re-admissions; - **Patient experience**: HCAHPS-equivalent; - **Mortality + complications**; - **Process measures**: assessment timely, evidence-based care; (3) **Benchmarking**: - **UDSMR** (Uniform Data System for Medical Rehab): national database for IRFs; - **eRehabData**; - **CARF accredited**; - **CMS Compare** (Care Compare); - **Internal year-over-year**; (4) **Quality improvement (QI) frameworks**: - **PDSA cycles** (Plan-Do-Study-Act); - **Lean** (waste reduction); - **Six Sigma** (variation reduction); - **Root cause analysis** for adverse events; - **Failure mode + effects analysis (FMEA)** — proactive; (5) **Patient safety**: just culture, near-miss reporting, incident review, evidence-based bundles (CAUTI bundle, falls bundle, pressure injury bundle); (6) **Specific bundles in rehab**: - **Falls prevention**: assessment, environment, education, supervision, technology; - **Pressure injury prevention**: skin assessment, surface, mobility, nutrition; - **CAUTI prevention**: indications, removal early, sterile technique; - **VTE prophylaxis** post-acute appropriate; (7) **Equity + disparities**: address race, ethnicity, language, SES, geography, disability access — disparities documented; (8) **Patient-centered outcomes** (PROs) integration; (9) **Value-based care** (CMS): bundle payments, IRF VBP, quality + cost linkage; (10) **Continuous learning culture**: leadership, training, transparency, just culture; **Modern**: data-driven + value-based + equity + patient-centered"
+      },
+      {
+        "label": "C",
+        "text": "Single metric"
+      },
+      {
+        "label": "D",
+        "text": "Only adverse events"
+      },
+      {
+        "label": "E",
+        "text": "No improvement"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Rehab quality: IOM STEEEP domains. Outcomes: functional (FIM/GG) + discharge dest + adverse events + experience + process. Benchmarking (UDSMR). QI (PDSA, Lean). Safety bundles (falls, PrI, CAUTI). Equity. PROs. Value-based. Modern: data + equity.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "all_ages",
+    "reference_source": "IOM; CMS IRF QRP; CARF"
+  },
+  {
+    "scenario": "Telerehabilitation — applications + evidence + implementation",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No evidence"
+      },
+      {
+        "label": "B",
+        "text": "Telerehabilitation: (1) **Definition**: rehab services delivered remotely via telecommunications technology — video + phone + apps + wearables + remote monitoring; (2) **Modalities**: - **Synchronous** (real-time video — like in-person session); - **Asynchronous** (recorded exercises + monitoring); - **Hybrid**; - **mHealth** (apps, wearables, sensors); - **VR / AR** for engagement + assessment; (3) **Applications**: - Cardiac + pulm rehab — strong evidence non-inferior to in-person for selected; - Stroke rehab (motor, cognitive); - Vestibular rehab; - MSK (LBP, OA); - Pain management; - Cognitive rehab; - Speech therapy + AAC; - PT/OT home programs; - Group therapy; - Pediatric (early intervention); - Geriatric (frailty, falls prevention); (4) **Advantages**: - Access (rural, mobility-limited, transportation barriers); - Convenience + adherence; - Cost (potentially lower); - Pandemic continuity (COVID-19 expanded); - Integration into home + life context; (5) **Limitations**: - Some hands-on therapy difficult; - Technology access/literacy (digital divide — equity); - Safety assessment limited; - Reimbursement variability; - Privacy + security (HIPAA); - Licensure (state lines USA); (6) **Evidence**: meta-analyses + RCTs — non-inferior or beneficial vs in-person for many; cost-effective; high satisfaction; (7) **Hybrid model** likely future: in-person + tele; (8) **Implementation**: - Selection (appropriate patient + condition); - Technology + training (patient + provider); - Safety planning; - Workflow integration + EHR; - Outcome measurement; - Reimbursement navigation; - Continuous improvement; (9) **Wearables + remote monitoring**: gait, activity, falls, heart rate; AI-assisted; (10) **Patient + family + provider education**; (11) **Multidisciplinary integration**; (12) **Equity considerations**: digital access; address disparities; **Modern**: hybrid + tech-enabled + AI + integrated value-based"
+      },
+      {
+        "label": "C",
+        "text": "Only in-person works"
+      },
+      {
+        "label": "D",
+        "text": "Same as in-person all"
+      },
+      {
+        "label": "E",
+        "text": "Replaces all in-person"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Telerehab: synchronous + async + mHealth + VR. Applications wide (cardiac/pulm strong evidence, stroke, vestib, MSK, peds, geri). Advantages access + convenience. Limits hands-on + digital divide + privacy + licensure. Evidence supportive. Hybrid future. Modern: integrated.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "all_ages",
+    "reference_source": "ACRM Telerehab; ATA"
+  },
+  {
+    "scenario": "Ethics in rehabilitation — informed consent + autonomy + capacity",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No consent needed"
+      },
+      {
+        "label": "B",
+        "text": "Rehab Ethics — Autonomy + Capacity: (1) **Core principles**: - **Autonomy** (self-determination + informed consent); - **Beneficence** (do good); - **Nonmaleficence** (avoid harm); - **Justice** (fair distribution + equity); - **Confidentiality + dignity**; (2) **Informed consent**: - Diagnosis + prognosis disclosure; - Treatment options + benefits + risks + alternatives + no treatment option; - Patient understanding (teach-back); - Voluntary; - Documented; - Decision-specific (consent for specific intervention not blanket); (3) **Capacity assessment**: - Decision-specific (capacity for specific decision); - 4 elements (Appelbaum): understanding info, appreciating situation, reasoning, expressing choice; - Sliding scale based on risk; - Tools: ACE (Aid to Capacity Evaluation), MacCAT; - Not synonymous w/ \"competence\" (legal) or cognitive impairment alone; - Reversible factors (delirium, depression, sedation) address; (4) **Surrogate decision-making**: when patient lacks capacity — advance directive (living will + healthcare POA), surrogate hierarchy (state laws), best interest standard if no surrogate; (5) **Common ethical issues in rehab**: - **Withholding/withdrawing rehab** (futility — disagreements); - **Goals of care conflict** (between patient + family or team); - **Discharge decisions** (safe vs preferred); - **Refusing rehab**; - **Mandatory participation issues**; - **Adolescent decision-making + assent**; - **Cognitive impairment + dementia**; - **Resource allocation + equity**; - **Cultural + religious considerations**; - **Truth-telling + prognosis**; (6) **Resolution strategies**: - Communication + clarification; - Family meetings + interdisciplinary; - Ethics consultation; - Mediation + counseling; - Time-limited trials; - Re-evaluation; (7) **Special populations**: pediatric + adolescent (assent + parents), dementia, severe TBI (DoC), mental illness; (8) **Cultural humility + shared decision-making**; (9) **End-of-life + palliative integration**: GoC discussions; (10) **Documentation**: thorough; (11) **Education + training** team in ethics; **Modern**: shared decision-making + cultural humility + ethics integration"
+      },
+      {
+        "label": "C",
+        "text": "Single decision-maker"
+      },
+      {
+        "label": "D",
+        "text": "No capacity assessment"
+      },
+      {
+        "label": "E",
+        "text": "No ethics in rehab"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Rehab ethics: autonomy + beneficence + nonmal + justice. Informed consent (Dx + options + risks + understanding). Capacity decision-specific (4 elements). Surrogate hierarchy + advance directives. Common dilemmas. Resolution strategies. Cultural humility. Modern: shared decision-making.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "psych_behavior",
+    "board_age_group": "all_ages",
+    "reference_source": "ASBH; AAPM&R Ethics"
+  },
+  {
+    "scenario": "Documentation + coding in rehab — physiatry billing essentials",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No documentation"
+      },
+      {
+        "label": "B",
+        "text": "Rehab Documentation + Coding: (1) **Documentation principles**: - **History**: presenting complaint, history of present illness, ROS, PMH, meds, allergies, social, family, functional, prior functional level; - **Examination**: vital signs, general, system-based, focused MSK + neuro (motor, sensory, reflexes, coordination, gait, balance), cognitive + mental, function; - **Assessment + plan**: diagnoses (ICD-10), goals (SMART), interventions, prognosis, expected outcomes; - **Functional documentation**: status, change, barriers, goals; (2) **E/M codes (CPT)** — outpatient + inpatient: - **2021 updates** outpatient: time- or MDM-based; - History + exam appropriate, not points; - **Time-based**: total time on day (face-to-face + non-face-to-face on date) — pre-counseling, examination, ordering, documentation, communication; - **MDM-based**: complexity of problems + amount of data + risk of management; (3) **Common codes**: - 99211-99215 (established office); - 99201-99205 (new — being replaced); - 99221-99223 (inpatient initial); - 99231-99233 (subsequent); - 99238-99239 (DC); - Critical care 99291-99292; - Prolonged service codes; - 99417 (prolonged outpatient w/ E/M); (4) **Procedural codes**: injections (joint, trigger point, BoNT, nerve blocks), EMG/NCS; (5) **ICD-10 diagnoses**: specific codes for conditions + functional status modifiers; (6) **Modifiers**: 25 (significant E/M same day as procedure), 59 (distinct procedural), KX, etc.; (7) **Coverage + payers**: Medicare, Medicaid, commercial — specific requirements; (8) **Compliance**: avoid up-coding, document medical necessity, avoid copy-paste w/o updating, accurate; (9) **Quality reporting**: MIPS (Merit-based Incentive Payment System) — quality + cost + improvement; (10) **EHR proficiency**: templates careful (compliance), efficiency, communication; (11) **Multidisciplinary documentation integration**; **Modern**: AI-assisted + outcomes-linked + value-based payment"
+      },
+      {
+        "label": "C",
+        "text": "Single template all"
+      },
+      {
+        "label": "D",
+        "text": "Up-code OK"
+      },
+      {
+        "label": "E",
+        "text": "Copy-paste fine"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Documentation: thorough Hx + exam + A/P + functional + goals + ICD-10. E/M 2021 outpatient time/MDM. Procedural codes (injections, EMG/NCS). Modifiers. Compliance + medical necessity. MIPS quality. EHR proficiency. Modern: AI + value-based.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "all_ages",
+    "reference_source": "CMS; CPT; AAPM&R Coding"
+  },
+  {
+    "scenario": "Multidisciplinary team leadership — physiatrist roles",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single role"
+      },
+      {
+        "label": "B",
+        "text": "Physiatrist Leadership in Rehab Team: (1) **Medical lead** of multidisciplinary team: ultimate medical responsibility + decision-making; (2) **Roles**: - **Diagnostician**: comprehensive medical + functional + diagnostic; rule out + manage medical complications; - **Treatment planner**: develop + supervise comprehensive rehab plan; - **Procedural**: EMG/NCS, US-guided + landmark-based injections (joint, BoNT, trigger point, nerve blocks), interventional spine selected, prosthetic prescription; - **Pharmacotherapist**: spasticity, pain, mood, sleep, neurogenic bladder/bowel, comorbidities; - **Communicator**: w/ patient + family + team + referring physicians + payers; - **Educator**: patient + family + team + trainees; - **Advocate**: patient + community + policy; - **Researcher**: contribute to evidence; - **Administrator**: program development, quality, finance; (3) **Team leadership skills**: - Clear vision + goals; - Communication (active listening, conflict resolution); - Empowerment + trust + recognition; - Decision-making + delegation; - Conflict resolution; - Cultural humility + DEI; - Continuous improvement orientation; (4) **Team building**: - Regular meetings (interdisciplinary conferences); - Shared mission + values; - Role clarity + respect; - Education + cross-training; - Outcome focus + accountability; - Recognition + appreciation; - Conflict resolution; - Wellness + burnout prevention; (5) **System leadership**: - Programmatic development; - Quality + outcomes; - Resource allocation; - Strategic planning; - Stakeholder engagement; (6) **Advocacy + policy**: at institutional + national levels for patient + profession; (7) **Mentorship + development**: of team + trainees + colleagues; (8) **Self-care + burnout prevention**: critical for sustainability; (9) **Ethical foundation**: professionalism + integrity; (10) **Continuous learning + adaptability**; (11) **Lifelong development + leadership growth**; **Modern**: distributed leadership + dyad models (physician + administrative/nursing) + value-based + patient-centered"
+      },
+      {
+        "label": "C",
+        "text": "No team interaction"
+      },
+      {
+        "label": "D",
+        "text": "Not a leader"
+      },
+      {
+        "label": "E",
+        "text": "No procedures"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Physiatrist leadership: medical lead — diagnostician + planner + procedural + pharmaco + communicator + educator + advocate + researcher + admin. Team building. System + advocacy + mentorship + self-care + ethics. Modern: distributed + dyad + value-based.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "all_ages",
+    "reference_source": "AAPM&R; ACGME"
+  },
+  {
+    "scenario": "Reimbursement + payment models — IRF + value-based care",
+    "choices": [
+      {
+        "label": "A",
+        "text": "FFS only"
+      },
+      {
+        "label": "B",
+        "text": "Rehab Payment Models: (1) **Traditional fee-for-service (FFS)**: payment per service — incentive volume; (2) **IRF Prospective Payment System (PPS)** USA (Medicare): - Bundled payment per case based on CMG (Case Mix Group) determined by functional status (was FIM → now GG codes) + tier (motor + cognitive) + comorbidities + age; - Per-discharge bundled rate covers all services; - Outliers payments for high-cost; - **Incentivizes efficient care + outcomes**; (3) **SNF PPS**: PDPM (Patient Driven Payment Model) — replaced RUG-IV — based on patient characteristics not therapy minutes; reduces over-utilization; (4) **Home health PPS**: PDGM (Patient-Driven Groupings Model); (5) **Bundled payments for episodes**: e.g., joint replacement bundle — pre + intra + post-acute combined — shared accountability; (6) **Accountable Care Organizations (ACOs)**: provider groups accountable for cost + quality of population — shared savings/losses; (7) **MIPS + APMs** (US): quality reporting + alternative payment models; (8) **IRF Quality Reporting Program (QRP)**: required reporting — payment penalty for non-compliance; (9) **IRF Value-Based Purchasing (VBP)**: emerging — payment tied to outcomes; (10) **Hospital Outpatient + Physician Fee Schedule**: outpatient PM&R; (11) **DMEPOS** (Durable Medical Equipment, Prosthetics, Orthotics, Supplies): separate Medicare fee schedule; (12) **Coverage variation by payer**: Medicare, Medicaid (state-variable), commercial; advocacy needed for coverage gaps (cognitive rehab, complex equipment); (13) **Global trends**: value-based, population health, bundled, transparency; (14) **Equity in payment + access**; (15) **Patient out-of-pocket** + financial toxicity considerations; **Modern**: outcome-driven + bundled + value-based + transparency + equity"
+      },
+      {
+        "label": "C",
+        "text": "No bundled payments"
+      },
+      {
+        "label": "D",
+        "text": "No quality measurement"
+      },
+      {
+        "label": "E",
+        "text": "Same payment all settings"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Rehab payment: FFS → bundled/value-based. IRF PPS (CMG, GG codes, comorbidity, tiers). SNF PDPM. HH PDGM. Bundles (joint replacement). ACO. MIPS/APM. IRF QRP/VBP. DMEPOS. Coverage variability. Equity. Modern: outcome-driven.",
+    "difficulty": "hard",
+    "board_section": "ems_mgmt",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "all_ages",
+    "reference_source": "CMS IRF PPS; MedPAC"
+  },
+  {
+    "scenario": "Quality improvement project — root cause analysis + interventions",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Blame individuals"
+      },
+      {
+        "label": "B",
+        "text": "QI in Rehab — RCA + Improvement: (1) **QI cycle** (PDSA): - Plan (problem ID + analysis + intervention design); - Do (small-scale test); - Study (data analysis); - Act (scale + standardize or revise); (2) **Tools**: - **Fishbone (Ishikawa) diagram**: cause categories — people, process, equipment, environment, materials, methods, management; - **5 Whys**: drill down to root cause; - **Pareto chart**: 80/20 — focus on vital few; - **Process map / value stream mapping**: visualize workflow; - **Control charts** (SPC): track variation; - **FMEA** (Failure Mode and Effects Analysis): proactive risk; - **A3 problem-solving**: structured one-page; (3) **Adverse event analysis**: - **Root cause analysis (RCA)**: post-event systematic + non-punitive (just culture) + identify systems factors + corrective actions + tracking; - **\"Sharp end\" (proximal — clinician)** vs **\"blunt end\" (latent — system)**: address both; - **Hindsight bias** beware; (4) **High-reliability organization (HRO) principles**: - Preoccupation w/ failure; - Reluctance to simplify; - Sensitivity to operations; - Commitment to resilience; - Deference to expertise; (5) **Improvement methodologies**: - **Lean** (waste reduction: defects, overproduction, waiting, non-utilized talent, transportation, inventory, motion, extra-processing — DOWNTIME); - **Six Sigma** (DMAIC — Define, Measure, Analyze, Improve, Control); - **Hybrid Lean Six Sigma**; - **Theory of constraints**; (6) **Rehab-specific applications**: - Reducing falls; - Pressure injury prevention; - Sepsis recognition + treatment; - Hospital-acquired conditions; - Discharge efficiency + planning; - Re-admission reduction; - Patient experience improvement; - Throughput + flow; - Team communication; (7) **Patient + family involvement**: co-design; (8) **Data + measurement**: pre/post + control + sustainability; (9) **Sustainability**: standardization, training, monitoring, leadership; (10) **Spread** + scaling successful interventions; (11) **Culture**: just + learning + psychological safety; **Modern**: data-driven + AI-enabled + co-designed + sustainable"
+      },
+      {
+        "label": "C",
+        "text": "No analysis needed"
+      },
+      {
+        "label": "D",
+        "text": "Single intervention"
+      },
+      {
+        "label": "E",
+        "text": "No measurement"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "QI: PDSA cycle. Tools (fishbone, 5 Whys, Pareto, process map, FMEA, A3). RCA non-punitive (just culture) — sharp + blunt end. HRO principles. Lean (DOWNTIME) + Six Sigma (DMAIC). Apps falls/PrI/sepsis/DC. Patient involvement. Sustainability. Modern: data-driven.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "all_ages",
+    "reference_source": "IHI; AHRQ"
+  },
+  {
+    "scenario": "Healthcare disparities + equity in rehabilitation",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No disparities exist"
+      },
+      {
+        "label": "B",
+        "text": "Rehab Equity + Disparities: (1) **Disparities documented**: - **Access**: rural, rural, racial/ethnic minorities, lower SES, Medicaid, uninsured, language barriers, disabilities, LGBTQ+ — less likely to receive IRF, intensive rehab; - **Outcomes**: poorer functional gains, longer LOS, higher complications; - **Specific conditions**: stroke, SCI, TBI, hip fx; (2) **Social Determinants of Health (SDOH)**: housing, food security, transportation, employment, education, social support, environment, healthcare access — major drivers; (3) **Structural racism + systemic factors**: historical + ongoing; healthcare embedded; (4) **Frameworks**: - **Healthy People 2030** SDOH focus; - **IHI Triple Aim + Quadruple Aim** + Health Equity (Quintuple); - **CMS Office of Minority Health**; - **WHO Commission Social Determinants**; (5) **Interventions to reduce disparities in rehab**: - **Screen for SDOH** routinely (CMS now requires hospitals); - **Address language** (interpreters, translated materials, bilingual staff); - **Cultural humility + competency training**; - **Workforce diversity**; - **Community partnerships**: CHWs (community health workers), peer mentors, faith-based; - **Telehealth + technology** w/ digital equity considerations; - **Mobile + community-based rehab**; - **Insurance navigation + financial assistance**; - **Transportation programs**: paratransit + ride-share; - **Universal design + accessibility**; - **Advocacy + policy**: insurance coverage, ADA enforcement, accessibility; (6) **Quality measurement disaggregated** by race/ethnicity/language/disability/insurance — track + address disparities; (7) **Patient + family voice + co-design**: lived experience input; (8) **Disability community**: \"nothing about us without us\" — incorporating disability community perspectives + leadership; (9) **Inclusive research**: representation in clinical trials + outcomes; (10) **Continuous learning + improvement**: equity as core quality dimension; (11) **Funding + resources** advocacy: voc rehab, Medicaid, DME, durable medical equipment, long-term services + supports; **Modern**: integrated SDOH + equity + community-centered + policy advocacy"
+      },
+      {
+        "label": "C",
+        "text": "Equity not relevant rehab"
+      },
+      {
+        "label": "D",
+        "text": "No interventions possible"
+      },
+      {
+        "label": "E",
+        "text": "Single solution"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Rehab equity: documented disparities (access, outcomes — racial/SES/rural/disability). SDOH drivers. Frameworks (Healthy People 2030, Quintuple Aim, equity). Interventions: SDOH screening + language + cultural humility + community + telehealth equitable + policy. Disaggregated measurement. Disability community voice. Modern: integrated equity.",
+    "difficulty": "hard",
+    "board_section": "ems_mgmt",
+    "board_topic": "psych_behavior",
+    "board_age_group": "all_ages",
+    "reference_source": "Healthy People 2030; IHI Quintuple"
+  },
+  {
+    "scenario": "Disaster + emergency preparedness — rehab services + considerations",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No preparedness needed"
+      },
+      {
+        "label": "B",
+        "text": "Disaster + Emergency Preparedness Rehab: (1) **Rehab populations vulnerable**: SCI, TBI, stroke, MS, ALS, ventilator-dependent, complex equipment users — disproportionate impact; (2) **Preparedness planning**: - **Patient-level**: emergency plan + supplies (medications 14+ d, equipment, batteries, oxygen, formula, manual W/C backup, caregiver info, evacuation plan + accessibility), medical ID, registries (disability + medical needs); - **Facility-level**: emergency operations plan, mass casualty, evacuation, sheltering in place, business continuity, surge capacity, supply chain, mutual aid; - **System-level**: regional coordination, AHRQ, state HSPD, ESF-8 (Health + Medical); (3) **Common disasters**: natural (hurricane, flood, earthquake, wildfire, tornado), pandemic, mass casualty (mass shooting, bombing, MVC), infrastructure failure (power, water), cyber; (4) **Specific rehab considerations**: - Medication access (anticonvulsants, anti-spasmodics, baclofen pump — withdrawal emergency, antibiotics, autonomic medications); - Equipment continuity (W/C charging, ventilator, oxygen, suction, feeding pump, ITB pump); - Sheltering accessibility (ADA-compliant); - Transportation accessibility; - Communication needs (AAC, sign language, accessible alert systems); - Caregiver support; (5) **Mass casualty rehab response**: - Acute → rehab integration (e.g., post-Boston Marathon bombing amputees + burns + blast); - Surge in IRF, SNF, community rehab needs; - Mental health (PTSD, acute stress); - Community rehabilitation; (6) **Pandemic-specific (COVID-19 lessons)**: - PPE + infection control; - Telerehab expansion; - Post-acute COVID rehab needs (PASC); - ICU-AW + PICS surge; - Healthcare workforce wellness; - Health equity disparities amplified; (7) **Recovery + resilience**: long-term mental health + community + economic + functional impacts; rehab essential in recovery phase; (8) **Workforce preparedness + training**: emergency response training; (9) **Equity in disaster**: disabilities + minority + elderly + poor disproportionately impacted — explicit equity planning; (10) **International + humanitarian rehab**: post-conflict, refugees, displaced — capacity building (WHO, Handicap International, ICRC); **Modern**: integrated emergency + climate change adaptation + equity-focused"
+      },
+      {
+        "label": "C",
+        "text": "Single facility only"
+      },
+      {
+        "label": "D",
+        "text": "No equipment continuity"
+      },
+      {
+        "label": "E",
+        "text": "Ignore disabilities"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Disaster prep rehab: vulnerable populations. Patient + facility + system levels. Medication + equipment continuity (baclofen pump withdrawal!). Accessibility shelter + transport + comm. Mass casualty surge. Pandemic lessons. Equity. International. Modern: integrated.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "all_ages",
+    "reference_source": "AAPM&R; HHS ASPR"
   }
 ]
