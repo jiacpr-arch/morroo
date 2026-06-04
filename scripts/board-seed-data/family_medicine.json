@@ -1918,5 +1918,965 @@
     "board_topic": "msk_nontrauma",
     "board_age_group": "adult",
     "reference_source": "ACP LBP; AANS Cauda Equina"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 25 ปี — เจ็บคอ × 2 d, fever 38.8, tonsillar exudate, anterior cervical LN tenderness, no cough, no coryza; Centor 4",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Empiric antibiotic for all sore throats"
+      },
+      {
+        "label": "B",
+        "text": "Acute Pharyngitis — Strep Workup + Treatment (IDSA + AAP): (1) **Centor/McIsaac score**: fever > 38, no cough, anterior cervical LN, tonsillar exudate, age (3-14 +1, > 45 -1); score ≥ 2-3 → test; (2) **Testing**: **RADT (rapid antigen detection test)** first; if negative + Centor ≥ 3 in adolescents/children → throat culture; ในผู้ใหญ่ negative RADT มัก reliable; PCR available; (3) **Don't treat empirically without test** unless contraindications testing; (4) **Treatment if positive GAS**: - **Penicillin V 500 mg BID/TID × 10 d** first-line (gold standard); - **Amoxicillin 1g daily × 10 d** alternative (better taste pediatric); - **PCN allergy**: cephalexin (low cross-reactivity if no anaphylaxis), azithromycin × 5 d, clindamycin; resistance increasing; (5) **Goals of treatment**: reduce duration symptoms 1-2 d, reduce transmission, prevent acute rheumatic fever (rare in resourced settings), prevent suppurative complications (PTA, lymphadenitis), reduce post-strep GN (limited); (6) **Symptomatic**: NSAIDs/acetaminophen, hydration, throat lozenge, saltwater gargle; (7) **Return to school/work**: 24 h after antibiotic + afebrile; (8) **Recurrent pharyngitis**: consider carrier vs true infection; tonsillectomy criteria (Paradise — ≥ 7 episodes in 1 yr, ≥ 5/yr × 2 yr, ≥ 3/yr × 3 yr); (9) **Complications watch**: PTA (peritonsillar abscess) — needs drainage; scarlet fever, post-strep GN, rheumatic fever; (10) **Multidisciplinary**: PCP + ENT if recurrent"
+      },
+      {
+        "label": "C",
+        "text": "Skip test — clinical alone"
+      },
+      {
+        "label": "D",
+        "text": "Fluoroquinolone first-line"
+      },
+      {
+        "label": "E",
+        "text": "No treatment if positive"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pharyngitis: Centor + RADT (culture if negative children). Positive GAS → penicillin V × 10 d (amox alternative). Pen allergy: cephalosporin/macrolide. Reduces sx duration + transmission + complications. Symptomatic care. Recurrent: tonsillectomy criteria.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "IDSA Pharyngitis 2012"
+  },
+  {
+    "scenario": "เด็กชาย 2 ปี — fever 39.0 + ear pain + bulging TM with effusion; severe symptoms",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No treatment ever"
+      },
+      {
+        "label": "B",
+        "text": "Acute Otitis Media Pediatric (AAP 2013 + 2022 Update): (1) **Diagnostic criteria**: middle ear effusion + signs of inflammation (bulging TM, otorrhea not from external) + moderate-severe symptoms; (2) **Severe AOM**: T > 39, severe otalgia ≥ 48 h, otorrhea, bilateral (< 2 yo); (3) **Treatment decision**: - **< 6 mo**: always treat; - **6 mo - 2 yo**: treat if certain diagnosis + bilateral or severe; observation option if non-severe + unilateral + reliable follow-up; - **≥ 2 yo**: observation option × 48-72 h with rescue Rx prescription (SNAP — Safety Net Antibiotic Prescription) if non-severe; treat if severe; - ผู้ป่วยนี้: 2 yo + severe → **treat**; (4) **Antibiotic of choice**: - **Amoxicillin high-dose 80-90 mg/kg/d divided BID × 10 d** first-line; (≤ 5 yo or severe — 10 d; > 6 yo non-severe — 5-7 d); - **Amoxicillin-clavulanate** if recent abx (90 d), concurrent purulent conjunctivitis (likely H. influenzae), treatment failure 48-72 h; - **PCN allergy**: cefdinir, cefuroxime, cefpodoxime (low cross-reactivity); macrolide (azithromycin × 5 d) — increasing resistance; ceftriaxone IM × 1-3 d severe; (5) **Symptomatic**: ibuprofen/acetaminophen for pain; **avoid topical analgesics in unperforated TM** (controversial); (6) **Follow-up**: improvement 48-72 h; if not → reassess + change abx; (7) **Recurrent AOM** (≥ 3 in 6 mo or ≥ 4 in 12 mo): consider tympanostomy tubes; (8) **Prevention**: pneumococcal + flu vaccine, breastfeeding, avoid tobacco smoke, daycare considerations, no bottle while supine; (9) **Multidisciplinary**: PCP + ENT if recurrent/persistent effusion"
+      },
+      {
+        "label": "C",
+        "text": "Topical drops only for AOM"
+      },
+      {
+        "label": "D",
+        "text": "Long-term prophylactic antibiotic routine"
+      },
+      {
+        "label": "E",
+        "text": "Immediate tympanostomy for first episode"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pediatric AOM: criteria (effusion + inflammation + sx). Treat < 6 mo, severe, bilateral young. Observation option non-severe + reliable F/U. **Amoxicillin high-dose** first-line × 10 d; amox-clav if treatment failure/recent abx. Vaccines for prevention.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "peds",
+    "reference_source": "AAP AOM 2013 + 2022"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 40 ปี — nasal congestion + facial pain × 12 d, ไม่ดีขึ้น, purulent rhinorrhea เพิ่ม + fever กลับมา; no severe sx initially",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Antibiotic for any sinusitis < 10 days"
+      },
+      {
+        "label": "B",
+        "text": "Acute Sinusitis (IDSA + AAFP 2012 + ICAR 2021): (1) **Acute bacterial rhinosinusitis (ABRS) criteria** — any 1 of: - **Persistent** symptoms ≥ 10 d without improvement; - **Severe** symptoms (T > 39, purulent + facial pain ≥ 3-4 d at onset); - **Worsening** after initial improvement (double-sickening — this patient); (2) **No imaging** for uncomplicated; CT only for complications, surgical, or recurrent/chronic; (3) **Common pathogens**: S. pneumoniae, H. influenzae, M. catarrhalis; (4) **Antibiotic first-line**: - **Amoxicillin-clavulanate** standard adult dose 875/125 BID × 5-7 d (or 5-10 d kids); IDSA prefers amox-clav over amox alone for better H. flu coverage + beta-lactamase; - **PCN allergy**: doxycycline (adult), respiratory fluoroquinolone (levofloxacin) — reserve; pediatric — cefuroxime, cefpodoxime, cefdinir, clindamycin + cefixime combo; - Macrolides + TMP-SMX — high resistance, NOT recommended empirically; (5) **High-dose amox-clav (2g/125 BID)** if: severe, > 65 yo, recent hospitalization, recent antibiotics, immunocompromised, daycare; (6) **Symptomatic adjuncts**: saline irrigation (good evidence), intranasal steroid (modest), decongestants (limit < 3 d, rebound), analgesics; (7) **Reassess 48-72 h**: if no improvement → change abx (amox-clav high-dose, FQ); (8) **Complications watch** (rare but serious): orbital cellulitis, cavernous sinus thrombosis, meningitis, brain abscess, Pott's puffy tumor — urgent CT + ENT/neurosurgery + IV abx; (9) **Chronic sinusitis (> 12 wk)**: different management, ENT referral, intranasal steroids, irrigation, possibly endoscopic surgery; (10) **Multidisciplinary**: PCP + ENT chronic/complications"
+      },
+      {
+        "label": "C",
+        "text": "No antibiotic ever — always viral"
+      },
+      {
+        "label": "D",
+        "text": "CT imaging for every case"
+      },
+      {
+        "label": "E",
+        "text": "Steroid burst alone"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "ABRS criteria: persistent ≥ 10 d, severe ≥ 3-4 d at onset, or worsening (double-sickening). Amox-clav first-line. Saline irrigation + intranasal steroid. Reassess 48-72 h. Watch complications. Chronic sinusitis — ENT.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "IDSA Sinusitis 2012; ICAR 2021"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 8 ปี — bilateral red eye + watery discharge × 2 d, no pain, no vision change; URI symptoms; ไม่มี contact lens",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Topical antibiotic for all conjunctivitis"
+      },
+      {
+        "label": "B",
+        "text": "Conjunctivitis Differential + Management (AAO + AAFP): (1) **Differentiate by features**: - **Viral** (most common — adenovirus): watery discharge, often URI + preauricular LN, bilateral progression, highly contagious; - **Bacterial**: purulent thick discharge, usually unilateral start, sticky lids; - **Allergic**: itching prominent, bilateral, watery, often other atopy; - **Gonococcal/chlamydial**: severe purulent, sexually active, neonatal; - **Herpes simplex/zoster**: vesicles, dendritic ulcer, severe — refer urgent; (2) **Red flags requiring ophthalmology**: severe pain, vision loss, photophobia (vs comfort), contact lens use (Pseudomonas, Acanthamoeba), corneal involvement, herpes suspected, hyperacute purulent (gonococcal), failure to improve; (3) **Viral conjunctivitis**: - Supportive: cool compress, artificial tears, hand hygiene, separate towels, no shared items; - Contagious 10-14 d; school/work return when discharge resolved (controversial); - No antibiotic effective; (4) **Bacterial conjunctivitis**: - Most self-limited; abx shortens duration; - **Topical**: erythromycin ointment, polymyxin-trimethoprim, gentamicin, fluoroquinolone (moxifloxacin, ofloxacin) — reserve for contact lens or severe; - Avoid neomycin (allergy), gentamicin can be corneal-toxic; - Pediatric concurrent otitis (H. flu) → systemic abx; (5) **Allergic**: topical antihistamine-mast cell stabilizer (olopatadine, ketotifen), cold compress, allergen avoidance; oral antihistamine; severe — topical steroid by ophthalmology; (6) **STI-related** (gonococcal/chlamydial): adult + sexual exposure → IM ceftriaxone + oral azithromycin/doxy + ophthalmology; neonatal → admit + IV abx; (7) **Multidisciplinary**: PCP + ophthalmology referral red flags; STI + public health if relevant"
+      },
+      {
+        "label": "C",
+        "text": "Topical steroid first-line"
+      },
+      {
+        "label": "D",
+        "text": "Patch eye for treatment"
+      },
+      {
+        "label": "E",
+        "text": "Ignore vision change"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Conjunctivitis: differentiate viral (watery, URI, preauricular LN) vs bacterial (purulent) vs allergic (itchy) vs HSV/gonococcal (urgent). Red flags → ophthalmology. Viral — supportive. Bacterial — topical abx selective. Allergic — topical antihistamine.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "peds",
+    "reference_source": "AAO Conjunctivitis 2018"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 30 ปี — acute watery diarrhea 6-8 ครั้ง/d + cramping × 2 d, no fever, no blood, no recent travel/abx, mild dehydration",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Broad-spectrum antibiotic empirically"
+      },
+      {
+        "label": "B",
+        "text": "Acute Infectious Gastroenteritis (IDSA 2017 + WHO): (1) **Most acute diarrhea = viral self-limited** (norovirus, rotavirus, adenovirus); no abx needed; (2) **Severity assessment**: dehydration (vital signs, mucous membranes, skin turgor, urine output, mental status, weight loss); (3) **Oral rehydration therapy (ORT) first-line** — WHO ORS or commercial; preferred over IV for mild-moderate; small frequent sips; (4) **Diet**: resume regular diet ASAP (BRAT diet outdated); avoid lactose if intolerance, sugary drinks alone, alcohol; (5) **Anti-motility (loperamide)** — OK for non-bloody, non-febrile adult diarrhea; reduce duration + frequency; avoid in suspected invasive (fever, bloody) — risk megacolon, HUS extension (e.g., EHEC, C. diff); (6) **Antiemetic**: ondansetron for nausea; (7) **Antibiotic indications limited**: - Severe/persistent symptoms; - Immunocompromised; - Suspected/confirmed specific pathogens (Shigella, Salmonella severe, Campylobacter severe, traveler's, cholera, C. diff); - Sepsis features; - **Empiric** ciprofloxacin/azithromycin not routinely recommended without specific indication; - **Avoid in suspected EHEC** (Shiga toxin) — increases HUS risk; (8) **Workup**: usually not needed if mild; stool studies (culture, O&P, C. diff PCR, viral PCR) for severe, prolonged > 7 d, bloody, immunocompromised, recent abx (C. diff), hospitalized, travel, outbreak; (9) **C. diff considerations**: recent abx, hospitalization, age > 65 — PCR/EIA stool toxin; treat oral vanco or fidaxomicin; (10) **Public health**: report outbreaks; food-handler exclusions; (11) **Prevention**: hand hygiene, food safety, water safety, vaccines (rotavirus pediatric, cholera selected, typhoid travel); (12) **Multidisciplinary**: PCP + ID + public health"
+      },
+      {
+        "label": "C",
+        "text": "IV fluids only — no oral"
+      },
+      {
+        "label": "D",
+        "text": "Strict BRAT diet × 1 week"
+      },
+      {
+        "label": "E",
+        "text": "Anti-motility for bloody diarrhea"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Acute GE: mostly viral self-limited. ORT first. Resume diet ASAP. Loperamide for non-bloody adult OK; avoid invasive/EHEC. Antibiotic targeted not empiric. Workup for severe/prolonged/bloody/immunocompromised. C. diff considerations.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "IDSA Diarrhea 2017"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 45 ปี — insomnia × 6 mo, difficulty initiating sleep + frequent awakenings + daytime fatigue; ขอ benzodiazepine",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Long-term benzodiazepine daily"
+      },
+      {
+        "label": "B",
+        "text": "Chronic Insomnia Management (AASM 2017 + ACP): (1) **Diagnosis chronic insomnia disorder**: difficulty initiating/maintaining sleep ≥ 3x/wk × ≥ 3 mo + daytime impairment + not better explained by other; (2) **Comprehensive evaluation**: - Sleep diary 1-2 wk; - Comorbidity screen: depression, anxiety, OSA (STOP-BANG), RLS, chronic pain, medications (caffeine, alcohol, decongestant, BB, steroid), substances; - Medical: thyroid, menopause, prostate, CV; - Lifestyle: screen time, shift work, naps; (3) **First-line: CBT-I (Cognitive Behavioral Therapy for Insomnia)** — gold standard (ACP strong recommendation): - Stimulus control, sleep restriction, cognitive restructuring, sleep hygiene, relaxation; - In-person, group, digital (CBT-I apps — SHUTi, Sleepio, Somryst FDA-approved); - More effective than meds long-term + no SE; (4) **Sleep hygiene** important adjunct: regular schedule, dark cool bedroom, limit caffeine/alcohol/screens before bed, exercise (not late), bed for sleep + sex only; (5) **Pharmacotherapy if CBT-I unavailable/inadequate** — short-term + targeted: - **Newer agents preferred**: ramelteon (melatonin agonist), doxepin low-dose (sleep maintenance), suvorexant + lemborexant (DORAs — dual orexin receptor antagonists — newer + safer); - **Z-drugs** (zolpidem, eszopiclone) — short-term; risks: complex sleep behavior, falls elderly, dependence; - **Benzodiazepines AVOID** in chronic insomnia: addiction, falls, cognition, MV accidents, mortality (Beers criteria PIM); (6) **Avoid** OTC antihistamines (diphenhydramine — anticholinergic, tolerance, Beers); (7) **Address comorbidity**: depression (SSRI), pain, OSA (CPAP); (8) **Mindfulness, exercise, light therapy** evidence-based adjuncts; (9) **Patient education + non-stigmatizing**; (10) **Multidisciplinary**: PCP + behavioral health/sleep psychology + sleep medicine if refractory"
+      },
+      {
+        "label": "C",
+        "text": "Diphenhydramine nightly"
+      },
+      {
+        "label": "D",
+        "text": "Ignore — just need sleep"
+      },
+      {
+        "label": "E",
+        "text": "Increase caffeine to function"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Chronic insomnia: CBT-I first-line (ACP). Sleep hygiene. Pharmacotherapy short-term — DORAs/ramelteon/doxepin preferred; avoid benzo + diphenhydramine (Beers). Address comorbidity. Digital CBT-I accessible. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "AASM Insomnia 2017; ACP"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 28 ปี — recurrent unexpected panic attacks (chest tightness, palpitation, choking, fear of dying) + persistent worry; medical workup negative",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Long-term benzodiazepine daily"
+      },
+      {
+        "label": "B",
+        "text": "Panic Disorder Management (APA + AAFP): (1) **Diagnosis DSM-5**: recurrent unexpected panic attacks + ≥ 1 mo of persistent worry about attacks or maladaptive behavior change + not attributable to other; (2) **Medical workup**: TSH, EKG, electrolytes, CBC; ECG for chest sx; rule out cardiac, thyroid, pheochromocytoma (selected), substance use; (3) **First-line treatment** — combination preferred: - **SSRI** (sertraline, escitalopram, paroxetine FDA-approved) or SNRI (venlafaxine) — start LOW (e.g., sertraline 12.5-25 mg) to avoid initial activation; titrate weekly; full effect 4-6 wk; continue 1-2 yr after remission; - **CBT** for panic disorder — interoceptive exposure, cognitive restructuring, breathing retraining; equally effective as SSRI, more durable; - Combination CBT + SSRI most effective severe; (4) **Avoid long-term benzodiazepines**: short-term bridge OK (alprazolam, clonazepam) for severe acute, but addiction + tolerance + rebound; preferred short-acting low-dose; (5) **Lifestyle**: exercise, sleep, caffeine reduction, alcohol avoidance, mindfulness; (6) **Acute panic attack**: breathing techniques, grounding (5-4-3-2-1), reassurance, safe place; do not avoid; (7) **Comorbidity**: depression (high), other anxiety, substance use — screen + treat; (8) **Patient education**: panic not dangerous, sensations explained, avoidance maintains anxiety; (9) **Telehealth + apps** options for CBT (Woebot, Calm, Headspace, NICE-recommended digital CBT); (10) **Multidisciplinary**: PCP + behavioral health/psychiatry if complex + Collaborative Care"
+      },
+      {
+        "label": "C",
+        "text": "Ignore — panic harmless"
+      },
+      {
+        "label": "D",
+        "text": "Cardiac workup repeated indefinitely"
+      },
+      {
+        "label": "E",
+        "text": "Avoidance behavior — stay home"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Panic disorder: SSRI/SNRI + CBT first-line. Avoid long-term benzo (bridge only). Lifestyle (caffeine, exercise). Education + breathing. Comorbidity. Digital CBT + Collaborative Care. Effective treatment widely available.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "APA Panic Disorder; AAFP"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 30 ปี — chronic inattention + disorganization + impulsivity ตั้งแต่เด็ก + ส่งผลต่อ work + relationships",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ignore — childhood condition only"
+      },
+      {
+        "label": "B",
+        "text": "Adult ADHD Diagnosis + Treatment (DIVA + ACEM + APA): (1) **DSM-5 criteria adult**: ≥ 5 of 9 inattention or hyperactivity-impulsivity symptoms persistent ≥ 6 mo + onset before age 12 + multiple settings + functional impairment + not better explained by other; (2) **Diagnostic workup**: clinical interview (DIVA-5 structured), self-report scales (ASRS), collateral history (parent, partner), school records if available; rule out mood, anxiety, sleep, substance use, hearing, thyroid; (3) **Comorbidity common** (~ 70%): depression, anxiety, substance use, learning disability, sleep disorder, autism spectrum; treat concurrently; (4) **Pharmacotherapy first-line**: - **Stimulants** (most effective) — methylphenidate (Ritalin, Concerta — long-acting preferred adult), amphetamine (Adderall, Vyvanse); start low + titrate; side effects (appetite, sleep, BP, HR, anxiety, rebound, abuse potential — Schedule II); BP/HR monitoring; - **Non-stimulants**: **atomoxetine** (Strattera — SNRI, non-controlled), **viloxazine** (Qelbree — newer), alpha-2 agonists (guanfacine, clonidine); useful if stimulant contraindicated, substance use risk, comorbidity (anxiety); - **Bupropion** off-label option; (5) **Behavioral interventions**: CBT for ADHD (specialized), coaching, executive function strategies, environmental modifications, mindfulness; (6) **Workplace/educational accommodations**: ADA; quiet space, breaks, written instructions; (7) **Cardiovascular evaluation** before stimulants: HR, BP, family/personal cardiac history; ECG if concerns; (8) **Substance use** screen + monitor (extended-release stimulants + non-stimulants if risk); (9) **Driving safety** counseling; (10) **Adult ADHD undertreated** — significant functional + QOL impact; (11) **Multidisciplinary**: PCP + psychiatry/psychology + ADHD coach + workplace/school + family + Collaborative Care"
+      },
+      {
+        "label": "C",
+        "text": "Long-term opioid for focus"
+      },
+      {
+        "label": "D",
+        "text": "Random antidepressant without workup"
+      },
+      {
+        "label": "E",
+        "text": "Avoid all medications"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Adult ADHD: DSM-5 + structured interview + collateral. Stimulants first-line (long-acting preferred); non-stimulants (atomoxetine, viloxazine, alpha-2) alternatives. CBT + accommodations. Comorbidity. CV evaluation. Underdiagnosed adult.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "DIVA-5; APA ADHD"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 50 ปี — drinks 6-8 drinks/d × 10 yr, wants to cut down; AUDIT-C 8; LFT mild elevation",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ignore alcohol use"
+      },
+      {
+        "label": "B",
+        "text": "Alcohol Use Disorder (AUD) Primary Care Management (USPSTF + APA + SAMHSA): (1) **Screening**: USPSTF — all adults; AUDIT-C (3-item, ≥ 4 men, ≥ 3 women positive) or AUDIT (10-item, ≥ 8 risky); single-item NIAAA (heavy drinking day in past year); (2) **Brief intervention** (SBIRT framework) effective in primary care: - Personalized feedback, motivational interviewing, goal-setting, follow-up; - Even brief counseling reduces consumption; (3) **AUD diagnosis DSM-5**: ≥ 2 of 11 criteria over 12 mo; mild (2-3), moderate (4-5), severe (≥ 6); (4) **Pharmacotherapy (underused — only ~ 2% AUD treated with meds)**: - **Naltrexone** (oral 50 mg daily or **monthly injection Vivitrol**) — reduces cravings + heavy drinking; first-line; CI in opioid use; - **Acamprosate** — for abstinence maintenance; CI severe renal; - **Disulfiram** — aversion (vomiting with alcohol); requires motivation + supervision; - **Off-label**: topiramate, gabapentin, baclofen; (5) **Behavioral therapy**: CBT, motivational enhancement, 12-step facilitation (AA), group therapy, contingency management; combination meds + therapy best; (6) **Withdrawal management**: CIWA assessment; mild-moderate outpatient with benzodiazepine taper (e.g., chlordiazepoxide, lorazepam) + thiamine + folate + magnesium; severe / risk DTs / seizure history / pregnancy → inpatient; (7) **Address comorbidity**: depression (high), anxiety, PTSD, other substance use, chronic pain; (8) **Medical complications screen**: LFTs, hepatitis (HCV common), peripheral neuropathy, thiamine deficiency (Wernicke prevention), pancreatitis, cardiomyopathy, cancers, falls; (9) **Vaccinations**: HAV, HBV, pneumococcal; (10) **Recovery support**: AA, SMART Recovery, recovery housing, peer support specialists; (11) **Multidisciplinary**: PCP + behavioral health + addiction medicine + hepatology + social work"
+      },
+      {
+        "label": "C",
+        "text": "Long-term benzodiazepine maintenance"
+      },
+      {
+        "label": "D",
+        "text": "Single intervention — no follow-up"
+      },
+      {
+        "label": "E",
+        "text": "Cold-turkey withdrawal at home for severe AUD"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "AUD: USPSTF screening (AUDIT-C). SBIRT brief intervention. **Naltrexone** first-line pharmacotherapy (underused). Acamprosate, disulfiram options. Behavioral therapy combo best. Withdrawal management. Comorbidity + complications. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "USPSTF AUD; APA AUD 2018"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 35 ปี — chronic opioid use, wants to stop; tolerance + withdrawal; +urine drug screen positive opioids",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Detoxification alone — no medication"
+      },
+      {
+        "label": "B",
+        "text": "Opioid Use Disorder (OUD) Treatment (SAMHSA + ASAM): (1) **Diagnosis DSM-5**: ≥ 2 of 11 criteria over 12 mo; severity mild/moderate/severe; (2) **Medications for OUD (MOUD)** — gold standard, life-saving; > 50% reduction in mortality vs no medication: - **Buprenorphine** (sublingual, mono or with naloxone — Suboxone) — partial mu agonist; ceiling effect (safer); X-waiver REMOVED 2023 — any DEA-licensed prescriber can prescribe (MAJOR access expansion); start when in withdrawal (avoid precipitated); - **Methadone** — full mu agonist; opioid treatment programs (OTPs) only currently in US; effective; - **Naltrexone** (Vivitrol monthly injection) — opioid antagonist; requires 7-14 d abstinence first; less effective adherence-dependent; (3) **Choose based on**: patient preference, prior treatment, severity, comorbidity, access, pregnancy (methadone or buprenorphine preferred); (4) **Behavioral therapy adjunct**: CBT, contingency management, MI; but MOUD alone reduces mortality — don't withhold for lack of therapy access; (5) **Harm reduction**: - **Naloxone** prescription/distribution — universal for opioid users + close contacts; intranasal Narcan, IM; OTC approved 2023; - Syringe service programs; - Drug checking (fentanyl test strips); - Safe consumption sites (limited US); (6) **Address comorbidity**: HIV, HCV (treat as Tx as P!), pain, mental health (depression, anxiety, PTSD), social (housing, employment); (7) **Pregnancy**: MOUD preferred (buprenorphine, methadone) over abstinence (relapse risk); manage neonatal opioid withdrawal; (8) **Avoid**: detoxification alone without MOUD (high relapse + mortality), shaming, stigma; (9) **Stigma reduction**: language matters (person-first, 'person with OUD' not 'addict'); (10) **Multidisciplinary**: PCP + addiction medicine + behavioral health + ID + OB if pregnant + social work + recovery community"
+      },
+      {
+        "label": "C",
+        "text": "Long taper without MOUD"
+      },
+      {
+        "label": "D",
+        "text": "Refuse to treat — moral failing"
+      },
+      {
+        "label": "E",
+        "text": "Single-modality detox"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "OUD: MOUD = buprenorphine (X-waiver removed 2023 — major access expansion), methadone (OTP), naltrexone — life-saving. Naloxone universal harm reduction. Behavioral adjunct. Pregnancy MOUD preferred. Address comorbidity + stigma. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "SAMHSA TIP 63; ASAM 2020"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 30 ปี G1P1 postpartum 4 wk — sadness + tearfulness + insomnia + difficulty bonding with baby; EPDS 16; ไม่มี thoughts harming baby",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Wait — should resolve naturally"
+      },
+      {
+        "label": "B",
+        "text": "Postpartum Depression (PPD) (ACOG + AAP + USPSTF): (1) **Universal screening** — pregnancy + postpartum + well-child visits (mother) — USPSTF recommendation; **EPDS (Edinburgh Postnatal Depression Scale)** ≥ 10 positive screen, ≥ 13 likely depression; PHQ-9 alternative; (2) **Assess safety**: suicidal ideation (especially passive; suicide leading cause of postpartum mortality), thoughts of harming baby (postpartum psychosis emergency — different from PPD); (3) **Differential**: postpartum blues (transient < 2 wk), PPD, postpartum anxiety, postpartum OCD, postpartum PTSD, postpartum psychosis (rare 0.1% — emergency, psychiatric admission), bipolar (mood disorder may present postpartum); rule out medical (thyroid, anemia, sleep deprivation); (4) **Treatment**: - **Mild-moderate**: psychotherapy first-line (CBT, IPT); group, telehealth options; - **Moderate-severe**: SSRI + therapy combination: - **Sertraline first-line** in lactation (minimal breast milk transfer); - Other options: escitalopram, paroxetine; - **Brexanolone** (Zulresso) IV infusion — FDA-approved for PPD severe; - **Zuranolone** (Zurzuvae) — oral; FDA-approved 2023; faster onset; - Continue medications already taking effective (don't stop SSRI for breastfeeding — risks of untreated depression > minimal medication effects); (5) **Lifestyle support**: sleep (challenging), exercise, social support, baby care help; (6) **Address SDOH**: childcare, financial, partner support, IPV; (7) **Lactation support** + breastfeeding continuation (safe with most SSRIs); (8) **Father postpartum depression** also common — screen; (9) **Postpartum visit comprehensive** — ACOG 2018 — ongoing care for 12 wk + transition; (10) **Multidisciplinary**: family medicine + OB + pediatrics + behavioral health + lactation + social work + family + peer support"
+      },
+      {
+        "label": "C",
+        "text": "Stop SSRI — unsafe for breastfeeding"
+      },
+      {
+        "label": "D",
+        "text": "Single visit — no follow-up"
+      },
+      {
+        "label": "E",
+        "text": "Ignore screening — too sensitive"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "PPD: universal screening (EPDS). Assess safety + rule out psychosis. Mild-mod — psychotherapy; mod-severe — SSRI (sertraline first-line lactation) + therapy; brexanolone/zuranolone severe new options. SDOH + lactation + father screening. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "ACOG PPD 2018; USPSTF"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 30 ปี G2P2 — 4 wk postpartum, breastfeeding, ต้องการคุมกำเนิด; HTN + DM history",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Combined OCP first-line postpartum < 21 days"
+      },
+      {
+        "label": "B",
+        "text": "Postpartum Contraception (CDC US MEC + ACOG): (1) **Counseling**: discuss prenatal + postpartum + at first postpartum visit; LARC (long-acting reversible contraception) most effective; interpregnancy spacing 18-24 mo for best outcomes; (2) **Lactational Amenorrhea Method (LAM)** — exclusively breastfeeding + amenorrhea + < 6 mo postpartum → ~ 98% effective; but limited applicability; (3) **CDC US MEC categories**: 1 (no restriction), 2 (advantages > risks), 3 (risks > advantages — usually avoid), 4 (unacceptable risk); breastfeeding + postpartum + medical conditions affect choice; (4) **Options by timing**: - **Immediate postpartum (post-placental — within 10 min)**: IUD (Cu or LNG) — OK (slight ↑ expulsion); permanent (BTL); - **0-21 days postpartum**: avoid combined hormonal (estrogen) — VTE risk; **progestin-only OK** (POPs, DMPA, implant, LNG-IUD); (5) **3-6 wk postpartum**: combined hormonal contraception OK if no VTE risk + breastfeeding OK (concern milk supply less now); (6) **Permanent contraception**: BTL postpartum, salpingectomy, vasectomy partner; (7) **For this patient (HTN + DM history, breastfeeding)**: - **LARC preferred**: LNG-IUD (Mirena, Liletta, Kyleena, Skyla) or Cu-IUD or etonogestrel implant (Nexplanon); - Avoid combined hormonal (HTN US MEC 3-4 depending severity); - POPs OK; DMPA OK but consider DM (variable glucose effect); - Discuss permanent if family complete; (8) **Address barriers**: cost (most covered Medicaid + ACA), access, partner involvement; (9) **STI screening + condom use** for prevention; (10) **Future fertility planning**; (11) **Multidisciplinary**: family medicine + OB + pediatrics + nursing + family planning specialist if complex"
+      },
+      {
+        "label": "C",
+        "text": "No contraception until breastfeeding stops"
+      },
+      {
+        "label": "D",
+        "text": "Surgery only option"
+      },
+      {
+        "label": "E",
+        "text": "Same as pre-pregnancy regardless"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Postpartum contraception: LARC preferred. CDC US MEC. Immediate postpartum IUD OK. 0-21 d avoid combined hormonal (VTE); progestin OK. HTN history → avoid combined; LARC, POPs OK. Counseling prenatal + postpartum.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "CDC US MEC; ACOG Postpartum Contraception"
+  },
+  {
+    "scenario": "ทารกอายุ 2 mo — first well-baby visit หลังคลอด, breastfed + thriving",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Skip vaccines at 2 mo"
+      },
+      {
+        "label": "B",
+        "text": "2-Month Well-Baby Visit (AAP Bright Futures): (1) **Growth + nutrition**: weight, length, HC plotted; breastfeeding adequacy (8-12 feeds/d, wet diapers, weight gain); supplementation: vitamin D 400 IU/d breastfed (or partially), iron consider 4 mo; (2) **Vaccinations 2 mo (CDC schedule)**: - DTaP, IPV, Hib, PCV15/20, RV (rotavirus), HepB #2; - 4-6 simultaneous injections OK + recommended; combination vaccines available; - Pre-vaccination counseling: side effects (low-grade fever, irritability, local), benefit, schedule; acetaminophen pre-medication not recommended (may blunt immune response); (3) **Developmental surveillance**: social smile, cooing, head control improving, tracks; (4) **Anticipatory guidance**: - Sleep (back to sleep — SIDS prevention, no co-sleeping in same bed, safe sleep environment), - Feeding (continue breast or formula), - Safety (car seat rear-facing, smoke-free home, water temperature, hand hygiene), - Tummy time, - Reading + interaction, - Maternal mental health screening (PPD); (5) **Screen for**: maternal depression (EPDS/PHQ-9), domestic violence, smoking household, food/housing insecurity (SDOH); (6) **Newborn screen results** review (hearing, metabolic, CCHD); (7) **Bilirubin** post-discharge if not done; (8) **Dental + oral health** education early; first dental visit by age 1; (9) **Address concerns**: colic, reflux, sleep, behavior; reassurance + guidance; (10) **Schedule next**: 4 mo visit; sick visit education + when to call; (11) **Multidisciplinary**: PCP + lactation + maternal mental health + early intervention + social work as needed"
+      },
+      {
+        "label": "C",
+        "text": "No anticipatory guidance"
+      },
+      {
+        "label": "D",
+        "text": "Discharge — return age 1"
+      },
+      {
+        "label": "E",
+        "text": "Solid food starting 2 mo"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "2-mo WCV: growth + nutrition (vit D supplementation breastfed). Vaccines per CDC (DTaP, IPV, Hib, PCV, RV, HepB). Developmental surveillance. Anticipatory guidance (safe sleep, car seat). Maternal mental health + SDOH screening.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "peds",
+    "reference_source": "AAP Bright Futures"
+  },
+  {
+    "scenario": "เด็กชายอายุ 24 mo — ยังไม่พูด 2-word phrase, vocab < 20 คำ, no joint attention, limited eye contact",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Wait and see — boys talk later"
+      },
+      {
+        "label": "B",
+        "text": "Developmental Delay + Autism Screening (AAP + AAFP): (1) **Surveillance + screening**: developmental surveillance every WCV; **formal screening** at 9, 18, 30 mo (ASQ, PEDS); **autism-specific M-CHAT-R/F** at 18 + 24 mo; (2) **Red flags this child**: language delay (< 50 words age 2 + no 2-word phrases) + social communication concerns (joint attention, eye contact) — high autism concern; (3) **Workup approach**: - **Refer simultaneously** (don't wait for evaluation to complete): - **Early Intervention (EI — Part C of IDEA)** — free under age 3, comprehensive evaluation, therapies (speech, OT, PT, ABA, family training); - **Audiology** — rule out hearing loss; - **Developmental-behavioral pediatrics or autism specialist** — formal evaluation with ADOS-2, ADI-R; - **Vision** evaluation if concerns; (4) **Medical workup**: comprehensive history + exam (dysmorphic features, neurological); selectively: - **Genetic**: chromosomal microarray (CMA — first-line), Fragile X testing; whole exome if specific features; - **Metabolic**: targeted if regression, dysmorphic, family history; - **Lead level** if exposure risk; - **TSH**; - **EEG** if seizures or regression; - **MRI brain** selected (microcephaly, neuro deficits); (5) **Family support**: education, resources, advocacy (CDC Learn the Signs); (6) **Address comorbidities**: GI, sleep, feeding issues, behavior (sensory, self-injury), anxiety; (7) **Don't say wait-and-see** for delays at this age — early intervention has best evidence for outcomes; (8) **School transition** age 3 → Part B (IDEA) school services + IEP; (9) **Multidisciplinary**: PCP + EI team + DBP + speech-language pathologist + OT + audiology + genetics + family + community resources"
+      },
+      {
+        "label": "C",
+        "text": "MRI brain immediately for all"
+      },
+      {
+        "label": "D",
+        "text": "No intervention until school age"
+      },
+      {
+        "label": "E",
+        "text": "Single workup test only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Developmental delay + autism concern: don't wait. Refer EI + audiology + DBP simultaneously. Workup: CMA + Fragile X + targeted. M-CHAT-R/F screening 18 + 24 mo. Family support + comorbidity. Early intervention critical. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "peds",
+    "reference_source": "AAP Autism Screening 2020"
+  },
+  {
+    "scenario": "เด็กชาย 8 ปี — ครูสังเกตเห็น inattention + impulsivity + hyperactivity at school + home; school performance ลดลง; symptoms ≥ 6 mo",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Medication alone — no behavior therapy"
+      },
+      {
+        "label": "B",
+        "text": "Pediatric ADHD Diagnosis + Treatment (AAP 2019 + AACAP): (1) **DSM-5 criteria pediatric (< 17 yo)**: ≥ 6 of 9 inattention or hyperactivity-impulsivity symptoms × ≥ 6 mo + onset < age 12 + ≥ 2 settings + functional impairment; (2) **Diagnostic process**: clinical interview + standardized scales from multiple settings (Vanderbilt, Conners — parent + teacher); medical + developmental + behavioral history; observation; (3) **Rule out / co-occurring**: hearing, vision, sleep (OSA — adenoidectomy may help), iron deficiency, thyroid, lead, learning disability, anxiety, depression, trauma, autism spectrum, oppositional defiant, conduct, tic disorder; (4) **Age-based treatment AAP 2019**: - **4-5 yo**: **Behavioral therapy FIRST-LINE** (parent training in behavior management); methylphenidate only if behavioral inadequate + significant impairment; - **6-11 yo (this patient)**: **FDA-approved medication + behavioral therapy** + school accommodations; - **≥ 12 yo**: medication + behavioral + school; (5) **Medications**: - **Stimulants first-line** (methylphenidate or amphetamine) — extended-release preferred for adherence + diversion reduction; titrate to optimal; - **Non-stimulants**: atomoxetine, viloxazine, alpha-2 agonists (guanfacine ER, clonidine ER); for non-responders, side effects, comorbidity; (6) **Behavioral therapy**: parent training (Triple P, Incredible Years, PCIT), CBT older children, social skills, school-based; (7) **School**: 504 plan or IEP; accommodations (preferred seating, breaks, extended time, modified assignments); (8) **Monitor**: response, side effects, growth (height + weight every visit on stimulants), BP/HR, sleep, mood; (9) **Family support + education**: psychoeducation, parent training, family therapy as needed; (10) **Vision/hearing** evaluation; (11) **Multidisciplinary**: PCP + pediatric psychiatry/psychology + school (teachers, counselors) + family + community resources"
+      },
+      {
+        "label": "C",
+        "text": "Avoid all medication"
+      },
+      {
+        "label": "D",
+        "text": "Single visit without school input"
+      },
+      {
+        "label": "E",
+        "text": "Send to special school only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pediatric ADHD: DSM-5 + multi-setting scales (Vanderbilt, Conners). 4-5 yo behavioral first; 6+ yo medication + behavioral + school. Stimulants first-line (ER preferred). Monitor growth, BP, mood. School accommodations. Family training. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "AAP ADHD 2019"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 28 ปี G1P0 GA 10 wk — severe nausea + vomiting × 3 wk, weight loss 4 kg, dehydration",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ignore — pregnancy resolves it"
+      },
+      {
+        "label": "B",
+        "text": "Hyperemesis Gravidarum vs Common NV in Pregnancy (ACOG): (1) **NV of pregnancy (NVP)**: ~ 70-80% pregnancies, peak 6-12 wk, usually self-limited; (2) **Hyperemesis gravidarum (HG)**: severe NV + weight loss > 5% pregravid + dehydration + electrolyte/acid-base/ketones; affects 0.5-3%; (3) **PUQE score** (Pregnancy-Unique Quantification of Emesis) — assess severity, guide treatment; (4) **Workup**: vital signs, urine ketones, electrolytes, LFT, TSH (HCG cross-reactivity → hyperthyroid mimic), pregnancy US (rule out molar, multifetal); (5) **Stepwise treatment ACOG**: - **Lifestyle**: small frequent meals, bland/cold foods, ginger (effective), avoid triggers, hydration; - **Pyridoxine (B6) 10-25 mg q 6-8 h** first-line; - **+ doxylamine (combination Diclegis/Bonjesta)** FDA-approved pregnancy; - **Antihistamine**: dimenhydrinate, diphenhydramine; - **Dopamine antagonist**: promethazine, metoclopramide (Reglan — caution prolonged use); - **5HT3 antagonist**: ondansetron — effective but small ↑ risk birth defects (CHD, oral cleft) data mixed; use after others, after 10 wk preferred; - **Corticosteroid** (methylprednisolone) — severe refractory; avoid 1st trimester (oral cleft); - **IV hydration + electrolyte correction** + thiamine (Wernicke prevention) when dehydrated; - **Inpatient** if dehydration, electrolyte imbalance, weight loss not responding; (6) **Nutrition**: enteral tube feeding or TPN rarely needed; (7) **Comorbidity**: depression, anxiety screening; (8) **Antiemetics avoid**: ergot derivatives; phenothiazines selective; (9) **Multidisciplinary**: family medicine + OB + nutrition + behavioral health if needed"
+      },
+      {
+        "label": "C",
+        "text": "Anti-anxiety only"
+      },
+      {
+        "label": "D",
+        "text": "Termination of pregnancy"
+      },
+      {
+        "label": "E",
+        "text": "Long-term corticosteroid in 1st trimester"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pregnancy NV: stepwise. B6 + doxylamine first-line. Antihistamine + promethazine/metoclopramide. Ondansetron after others. IV hydration + thiamine if dehydrated. HG (> 5% weight loss) admit if needed. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG NV Pregnancy 2018"
+  },
+  {
+    "scenario": "ผู้ป่วย G1P1 — 5 d postpartum — sore cracked nipples + low milk supply concerns + considering formula",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Switch to formula immediately"
+      },
+      {
+        "label": "B",
+        "text": "Breastfeeding Support + Common Issues (USBC + AAP + ABM): (1) **Universal counseling pregnancy + postpartum**: exclusive breastfeeding 6 mo + continued through 1-2 yr + complementary foods (WHO + AAP); benefits maternal + infant (decrease infection, allergy, obesity, SIDS, BC + ovarian CA); (2) **Common early issues**: - **Latch problems** — most common cause of nipple pain + low supply; lactation consultant urgent referral; correct latch + positioning; - **Engorgement** — frequent feeding, warm before, cold after, massage, no tight bra; - **Sore/cracked nipples** — latch correction (root cause), lanolin, expressed milk on nipples, brief drying, hydrogel pads; - **Tongue tie (ankyloglossia)** — assessment, frenotomy if functional; - **Mastitis** — pain + redness + warmth + fever; continue feeding (won't harm baby), warm compress, anti-inflammatories, abx (dicloxacillin/cephalexin) if no improvement 12-24 h or systemic; rule out abscess; - **Plugged duct** — massage, warm, feed/pump; - **Low supply** — increase frequency, hydration, address latch + emptying, galactagogues (fenugreek limited evidence, domperidone outside US); rule out: insufficient glandular tissue, retained placenta, thyroid; (3) **Lactation consultant (IBCLC)** referral early; (4) **Workplace support**: pumping breaks, refrigeration, ACA workplace protections; (5) **Family education**: partner support, household help, realistic expectations; (6) **Maternal medications**: most safe (LactMed reference); avoid pseudoephedrine (decreases supply), some psych meds need consideration (sertraline preferred), chemotherapy CI; (7) **Special situations**: relactation, induced lactation (adoption), milk donation/banks; (8) **Maternal mental health**: postpartum depression affects breastfeeding + vice versa; treat both; (9) **Avoid early supplementation** unless medically indicated (decreases supply, nipple confusion); (10) **Multidisciplinary**: family medicine + OB + pediatrics + IBCLC + WIC + peer support (La Leche)"
+      },
+      {
+        "label": "C",
+        "text": "No lactation support — figure it out"
+      },
+      {
+        "label": "D",
+        "text": "Stop all medications"
+      },
+      {
+        "label": "E",
+        "text": "Single visit advice — no follow-up"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Lactation: latch + positioning most common cause of pain/low supply. IBCLC early. Mastitis: continue feeding + abx if needed. Workplace support. Most meds safe (LactMed). Avoid early supplementation. Address PPD. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "AAP Breastfeeding 2022; ABM"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 80 ปี — fall × 2 in past 6 mo, gait unsteady, on multiple medications, vision changes",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bed rest to prevent falls"
+      },
+      {
+        "label": "B",
+        "text": "Geriatric Falls Assessment + Prevention (CDC STEADI + AGS): (1) **Falls leading cause of injury death** > 65 yo + significant morbidity; (2) **Screening** annually all ≥ 65 yo: fall in past year, fear of falling, gait/balance problem; (3) **Assessment if positive**: - **Gait + balance**: Timed Up and Go (TUG) > 12 sec, 30-sec chair stand, 4-stage balance; - **Medications** (FRIDs — Fall Risk-Increasing Drugs): benzodiazepines, opioids, anticholinergics, antihypertensives, antidepressants, antipsychotics, sleep aids; deprescribe (Beers, STOPP); - **Vision** (cataract, refractive, glaucoma); - **Feet + footwear**; - **Postural BP** (orthostatic hypotension); - **Cognitive** screen (MoCA, Mini-Cog); - **Comorbidity**: cardiac (arrhythmia, syncope), Parkinson's, peripheral neuropathy, anemia, alcohol, depression; - **Home safety** assessment (lighting, rugs, stairs, bathroom — grab bars, raised seat); - **Vitamin D** (deficiency contributes); (4) **Multifactorial intervention** — most effective: - **Exercise** (strength, balance — tai chi, Otago, multifactorial PT programs); - Medication review + deprescribe; - Vision correction; - Home modification (OT home assessment); - Vitamin D supplementation if deficient; - Treat underlying conditions; (5) **Bone health**: DXA + osteoporosis treatment to prevent fracture from falls (fracture risk = falls × bone fragility); (6) **Assistive devices** appropriately (cane, walker — PT fit); avoid premature wheelchair (decreases mobility); (7) **Fear of falling** addressed (CBT, exercise programs); (8) **Post-fall syndrome** prevention; (9) **Caregiver education** + family involvement; (10) **Documentation in EHR + community resources** (senior centers, SilverSneakers); (11) **Multidisciplinary**: PCP + PT + OT + pharmacy + ophthalmology + community fall prevention programs (CDC STEADI implementation)"
+      },
+      {
+        "label": "C",
+        "text": "Single intervention only"
+      },
+      {
+        "label": "D",
+        "text": "Restrict all activity"
+      },
+      {
+        "label": "E",
+        "text": "Ignore — falls expected age"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Geriatric falls: STEADI screening. Multifactorial assessment (gait, meds, vision, BP, cognition, home, vit D). Multifactorial intervention (exercise — tai chi, deprescribe, vision, home mods). Bone health. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "CDC STEADI; AGS Falls 2010"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 78 ปี — family concerns about memory + repetition × 1 yr, missed appointments, gets lost in familiar areas; ADL ลดลง",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No workup — old age"
+      },
+      {
+        "label": "B",
+        "text": "Dementia Workup Primary Care (AAN + Alzheimer's Association): (1) **Cognitive assessment**: - **Brief screening**: Mini-Cog (3-word recall + clock draw, ~ 3 min), MoCA (Montreal Cognitive Assessment, 30-pt, more sensitive than MMSE for MCI), MMSE; - **Formal neuropsychology** for unclear or specific subtype; (2) **Functional assessment**: ADL (Katz), IADL (Lawton) — IADL impaired before ADL; (3) **History from collateral source** essential (family, friend); insight often impaired; (4) **Diagnostic workup** rule out reversible causes (~10% — actually contributing more often, less commonly fully reversible): - **Labs**: TSH, B12, CBC, CMP, RPR (selected), HIV (selected); - **Imaging**: MRI brain (or CT) — rule out NPH (normal pressure hydrocephalus — gait, urinary, cognition triad), tumor, stroke, hematoma; structural; - **Depression screening** (pseudodementia mimics); - **Medication review** — anticholinergics, sedatives, opioids worsen cognition; - **Sleep apnea** screen; alcohol/substance; (5) **Subtype evaluation**: Alzheimer's most common (insidious, memory predominant), vascular (stepwise, vascular risk), Lewy body (visual hallucinations, parkinsonism, REM behavior, fluctuations), frontotemporal (younger, behavior/language), mixed common; (6) **Newer biomarkers** (specialist): - CSF Aβ42, p-tau, t-tau; - Amyloid PET (rarely covered); - **Blood-based biomarkers** emerging (p-tau217 — very promising) — primary care use coming; (7) **Disclosure of diagnosis** to patient + family + planning; (8) **Treatment**: - **Cholinesterase inhibitors** (donepezil, rivastigmine, galantamine) — modest symptomatic benefit AD/Lewy; - **NMDA antagonist** memantine — moderate-severe AD; - **Anti-amyloid antibodies** (lecanemab Leqembi, donanemab) — disease-modifying for early AD with confirmed amyloid; specialist + monitoring (ARIA — amyloid-related imaging abnormalities); access + cost barriers; - **Non-pharmacologic**: cognitive engagement, exercise, social, music, environment, sleep, caregiver education; - **BPSD (behavioral + psychological symptoms)**: address triggers + non-pharm first; antipsychotic LAST resort (Black Box mortality); SSRI for depression; (9) **Caregiver support** essential — counseling, support groups, respite, education (REACH, Savvy Caregiver); (10) **Advance care planning + legal**: POA, advance directive, driving safety, financial planning; (11) **Safety**: driving evaluation, home safety, wandering (MedicAlert + Safe Return), medication safety; (12) **Multidisciplinary**: PCP + neurology/geriatrics + neuropsychology + social work + occupational therapy + caregiver + community (Alzheimer's Association)"
+      },
+      {
+        "label": "C",
+        "text": "MMSE alone — sufficient"
+      },
+      {
+        "label": "D",
+        "text": "Single visit referral to nursing home"
+      },
+      {
+        "label": "E",
+        "text": "Antipsychotic first-line for BPSD"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Dementia workup: cognitive (Mini-Cog/MoCA) + functional (ADL/IADL) + collateral. Rule out reversible (TSH, B12, MRI, depression, meds). Subtype matters. Treatment: ChEI/memantine; new anti-amyloid early AD. Non-pharm + caregiver support + advance care planning. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AAN Dementia 2018"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 82 ปี — acute change in mental status × 3 d, fluctuating, inattention, disorganized thinking; baseline mild MCI",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Benzodiazepine first-line for agitation"
+      },
+      {
+        "label": "B",
+        "text": "Delirium Recognition + Management (American Geriatrics Society + CAM): (1) **CAM (Confusion Assessment Method)** for diagnosis: - 1. Acute onset + fluctuating course (required); - 2. Inattention (required); - 3. Disorganized thinking OR 4. Altered LOC; - 1+2 + (3 or 4) = delirium; (2) **Subtypes**: hyperactive (agitated — easier to recognize), hypoactive (lethargic — often missed, worse prognosis), mixed; (3) **Identify cause(s) — usually multifactorial**: - **DELIRIUMS mnemonic** / common: - **Drugs** (anticholinergic, sedatives, opioids, polypharmacy, withdrawal — alcohol, benzo); - **Electrolyte** (Na, Ca, glucose); - **Lack of drugs** (withdrawal); - **Infection** (UTI, pneumonia, sepsis — most common in elderly!); - **Reduced sensory input** (vision, hearing — provide aids); - **Intracranial** (stroke, hemorrhage, mass, meningitis); - **Urinary retention / fecal impaction**; - **Myocardial / metabolic** (MI, hypoxia, CO2 retention, thyroid); - **Sleep deprivation**; (4) **Workup** (targeted): vital signs + O2 + glucose, CBC, CMP, urinalysis + culture, CXR, EKG, TSH, B12; selected (CT head, LP, blood culture, drug levels); (5) **Non-pharmacologic FIRST + ALWAYS**: - **HELP (Hospital Elder Life Program)** + ABCDEF bundle; - Reorientation (clock, calendar, family); - Sensory aids (glasses, hearing aids); - Mobility + PT; - Sleep hygiene (minimize nighttime disruptions); - Hydration + nutrition; - Familiar caregivers + family at bedside; - Avoid restraints (worsen delirium); - Minimize tubes/lines; (6) **Pharmacologic LAST resort** for severe agitation + safety: - **Low-dose antipsychotic** (haloperidol 0.25-0.5 mg, risperidone, quetiapine) — short-term only; Black Box dementia mortality; QTc monitoring; - **Avoid benzodiazepines** (worsen delirium) EXCEPT alcohol/benzo withdrawal; (7) **Treat underlying cause**; (8) **Prognosis**: ~ 50% mortality 1 yr; functional decline; persistent cognitive impairment; (9) **Prevention** more important than treatment — multicomponent (HELP); (10) **Family education + caregiver support**; (11) **Multidisciplinary**: PCP + geriatrics + nursing + PT/OT + pharmacy + behavioral health + family"
+      },
+      {
+        "label": "C",
+        "text": "Restrain patient"
+      },
+      {
+        "label": "D",
+        "text": "No workup — confusion expected"
+      },
+      {
+        "label": "E",
+        "text": "Antipsychotic monotherapy long-term"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Delirium: CAM diagnosis. Hyperactive vs hypoactive (often missed). Multifactorial — identify causes (UTI, drugs, electrolyte, sensory). Non-pharm FIRST (HELP, ABCDEF, reorient, mobility, sleep). Antipsychotic LAST resort. Avoid benzo (except withdrawal). Prognosis serious. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AGS Delirium 2015"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 28 ปี MSM — multiple partners + condomless anal sex × 6 mo; ขอ STI screening",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Annual screening only"
+      },
+      {
+        "label": "B",
+        "text": "MSM STI Screening + Prevention (CDC STI Treatment Guidelines 2021 + USPHS): (1) **Screening interval q 3-6 mo** if multiple/anonymous partners + condomless sex: - **HIV**: + 4th gen Ag/Ab; q 3-6 mo high-risk; - **Syphilis**: serology q 3-6 mo; - **Chlamydia + gonorrhea**: NAAT all anatomical sites where sex occurs (oropharyngeal, rectal, urethral); ~ 80% of asymptomatic infection at non-urethral sites; - **Hepatitis A + B + C**: HCV q 6-12 mo if HIV+ or PrEP user; vaccinate HAV/HBV if not immune; HCV more frequent if HIV +; - **HPV**: anal pap selective; (2) **PrEP (Pre-Exposure Prophylaxis)** for HIV — strongly recommend high-risk MSM: - **Daily oral** tenofovir-emtricitabine (Truvada or Descovy); - **On-demand** 2-1-1 dosing (PROUD/IPERGAY) — alternative for MSM; - **LAI cabotegravir** (Apretude) — bimonthly injection — FDA-approved 2021; better adherence; - 99% effective if adherent; - Screening before + during (HIV, renal, HBV, STI); - Counseling, condoms, partner services; (3) **DoxyPEP (doxycycline post-exposure prophylaxis)** — 200 mg within 72 h of condomless sex — reduces syphilis + chlamydia + gonorrhea ~ 60-80% (DoxyPEP, IPERGAY studies); CDC guideline 2024 — recommend selected MSM/TGW; (4) **HPV vaccination** through age 26 (catch-up 27-45 shared decision); (5) **Mpox (monkeypox) vaccination** — Jynneos for high-risk; (6) **Behavioral interventions**: condom use, partner notification + EPT where legal, harm reduction; (7) **Hepatitis A/B vaccination** if not immune; (8) **Substance use screening** + connect care; (9) **Mental health screen** + connect care; (10) **Stigma-free environment + competent care**: training, intake forms (sexual orientation, gender identity, partners, practices), confidentiality; (11) **Multidisciplinary**: PCP + ID/HIV + sexual health clinic + behavioral health + community + public health"
+      },
+      {
+        "label": "C",
+        "text": "Refuse to discuss sexual practices"
+      },
+      {
+        "label": "D",
+        "text": "PrEP not needed for MSM"
+      },
+      {
+        "label": "E",
+        "text": "Urethral only NAAT"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "MSM STI screening: q 3-6 mo HIV + syphilis + GC/CT NAAT all sites + HCV q 6-12. PrEP strongly recommended (daily, 2-1-1, LAI cabotegravir). DoxyPEP. HPV, HepA/B, Mpox vaccination. Stigma-free competent care. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "CDC STI 2021; CDC PrEP 2021; CDC DoxyPEP 2024"
+  },
+  {
+    "scenario": "วัยรุ่นอายุ 16 ปี — moderate inflammatory acne + comedones บนหน้า + chest + back × 1 yr, fail OTC benzoyl peroxide",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Oral antibiotic alone long-term"
+      },
+      {
+        "label": "B",
+        "text": "Acne Vulgaris Stepwise Management (AAD 2024): (1) **Severity assessment**: mild (comedonal, few inflammatory), moderate (extensive comedonal + inflammatory papulopustules), severe (nodulocystic, scarring); psychosocial impact assessment important; (2) **Stepwise approach AAD**: - **Mild**: topical retinoid (adapalene OTC, tretinoin Rx, tazarotene) ± benzoyl peroxide (BP); topical antibiotic (clindamycin, erythromycin — always combine with BP to reduce resistance); azelaic acid; - **Moderate (this patient)**: combination topical retinoid + BP + topical antibiotic; or add **oral antibiotic** (doxycycline 100 mg BID or minocycline) × 3-4 mo + topical regimen; combined oral contraceptive (women) — estrogen-containing approved for acne; spironolactone (women — anti-androgen, off-label common); - **Severe / nodulocystic / scarring / refractory**: refer dermatology for **isotretinoin (Accutane)**; iPLEDGE program (US); pregnancy test + 2 forms contraception (severe teratogen); monitor LFT, lipids, mood; (3) **Cycle through topicals**: 3-month trial each combination before escalating; (4) **Avoid**: topical antibiotic monotherapy (resistance), oral antibiotic monotherapy long-term (resistance), aggressive scrubbing, picking, excessive sun exposure with retinoid; (5) **Adjuncts**: gentle skincare, non-comedogenic cosmetics, mineral SPF (sun protection — many acne meds photosensitize); (6) **Procedural**: comedone extraction, chemical peels, light therapy (limited evidence); (7) **Psychosocial impact**: anxiety, depression, body image — screen + address; (8) **Scarring management**: prevention primary, treatment after acne controlled (laser, microneedling, fillers, surgery — dermatology); (9) **Hormonal evaluation** if signs androgen excess (irregular menses, hirsutism, alopecia) — PCOS workup; (10) **Pregnancy considerations** if applicable; (11) **Multidisciplinary**: PCP + dermatology (especially isotretinoin) + mental health if affected"
+      },
+      {
+        "label": "C",
+        "text": "Topical antibiotic monotherapy long-term"
+      },
+      {
+        "label": "D",
+        "text": "Aggressive scrub + drying agents"
+      },
+      {
+        "label": "E",
+        "text": "No treatment — will outgrow"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Acne: stepwise. Mild — topical retinoid ± BP ± topical abx (combined w/ BP). Moderate — combination + oral doxycycline + OCP/spironolactone (women). Severe — isotretinoin (dermatology + iPLEDGE). Avoid abx monotherapy. Psychosocial + adjuncts. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "dermatology",
+    "board_age_group": "adult",
+    "reference_source": "AAD Acne 2024"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี fair skin + history sunburns + family history melanoma; new asymmetric, irregular, dark pigmented lesion 8 mm",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No biopsy — observe"
+      },
+      {
+        "label": "B",
+        "text": "Suspicious Skin Lesion + Melanoma Approach (AAD + NCCN): (1) **ABCDE criteria** for melanoma: - **A**symmetry; - **B**order irregular; - **C**olor variegated; - **D**iameter > 6 mm; - **E**volving (changes); - This patient: multiple criteria present + risk factors → **biopsy**; (2) **High-risk features**: fair skin, sunburns, family history (CDKN2A, BRCA, BAP1), personal history melanoma/NMSC, atypical nevi, > 50 nevi, immunosuppression, age, occupational/recreational UV; (3) **Biopsy approach**: - **Excisional biopsy with narrow margin (1-3 mm)** preferred for suspicious pigmented lesions — accurate staging; - **Punch biopsy through deepest part** if large; - Avoid shave (may miss depth/Breslow); - Avoid partial sampling if possible; - Document location, photo; (4) **Histopathology features**: Breslow depth (most important prognostic), ulceration, mitotic rate, regression, lymphovascular invasion, margins; (5) **Staging if melanoma confirmed**: dermatology + onc — wide local excision (margins depend on Breslow), SLNB (sentinel lymph node biopsy) if T1b+ (Breslow > 0.8 mm or ulceration); imaging (CT, PET, brain MRI) for stage III+; LDH; (6) **Treatment**: - Local: wide excision; - Adjuvant systemic stage III: immunotherapy (anti-PD-1 nivolumab/pembrolizumab), targeted (BRAF + MEK if BRAF V600 mutant); - Metastatic: immunotherapy (combo nivo + ipilimumab), BRAF/MEK inhibitors, novel; - LAG-3 inhibitor (relatlimab); (7) **NMSC (BCC, SCC)**: more common, less deadly; biopsy + excision/Mohs + topicals selected; (8) **Sun protection counseling**: SPF 30+, broad-spectrum, reapply, shade, protective clothing, sunglasses, avoid tanning beds; (9) **Self-skin exam** monthly; **professional full skin exam** annually for high-risk; (10) **Genetic counseling** if hereditary risk; (11) **Multidisciplinary**: PCP + dermatology + dermatopathology + surgical oncology + medical oncology + radiation oncology + cancer center"
+      },
+      {
+        "label": "C",
+        "text": "Shave biopsy only"
+      },
+      {
+        "label": "D",
+        "text": "Refer in 3 months"
+      },
+      {
+        "label": "E",
+        "text": "Topical steroid trial"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Suspicious pigmented lesion: ABCDE + risk factors → biopsy. Excisional with narrow margin preferred (not shave). Breslow depth key. Staging + treatment if melanoma (WLE + SLNB + adjuvant). Sun protection + screening. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "dermatology",
+    "board_age_group": "adult",
+    "reference_source": "AAD Melanoma; NCCN Melanoma 2024"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 45 ปี — overhead worker — shoulder pain + weakness × 2 mo; positive impingement signs; no trauma",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Long-term opioid"
+      },
+      {
+        "label": "B",
+        "text": "Rotator Cuff Tendinopathy / Subacromial Impingement (AAOS + Cochrane): (1) **Diagnosis clinical**: pain with overhead activity, lateral arm pain, night pain; Neer + Hawkins-Kennedy + Empty Can + Drop Arm tests; (2) **Imaging**: not routine for initial; X-ray if no improvement (rule out arthritis, calcific tendonitis, AC joint); **MRI or US** for: persistent symptoms > 4-6 wk, suspected tear (sudden weakness, trauma, age), pre-surgical planning; US increasingly used in primary care; (3) **Conservative management first-line (4-6 wk)**: - **Activity modification** (avoid overhead aggravators); - **Physical therapy** — gold standard: rotator cuff strengthening, scapular stabilization, posture, manual therapy, stretching; - **NSAIDs** short-course; - **Acetaminophen**; - **Topical analgesics**; - **Ice/heat**; - **Home exercise program** + education; (4) **Subacromial corticosteroid injection** if persistent: - Modest short-term benefit, repeated injections cumulative risk (tendon weakening, rupture); maximum 2-3/year; - US-guided improves accuracy; (5) **Refractory cases**: orthopedic referral for further imaging, possible arthroscopic decompression or rotator cuff repair (full-thickness tear, especially acute traumatic younger; degenerative ≥ 60 yo conservative often successful); (6) **Adjuncts (variable evidence)**: PRP (platelet-rich plasma), prolotherapy, dry needling, acupuncture; (7) **Workplace considerations**: ergonomics, work hardening, return-to-work planning; (8) **Risk factor modification**: smoking (impairs tendon healing), DM (worse outcomes), obesity; (9) **Bilateral / refractory** — consider systemic: spondyloarthritis, polymyalgia rheumatica, diabetes-related; (10) **Multidisciplinary**: PCP + PT + orthopedics + occupational/sports medicine + workplace"
+      },
+      {
+        "label": "C",
+        "text": "Immediate surgery for all"
+      },
+      {
+        "label": "D",
+        "text": "Bed rest with sling × 6 weeks"
+      },
+      {
+        "label": "E",
+        "text": "MRI for all initial cases"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Shoulder impingement / RC tendinopathy: clinical diagnosis. Conservative first (4-6 wk) — PT gold standard + NSAIDs + activity mod. Subacromial steroid if persistent. Surgery for refractory or specific tears. Workplace + risk factors. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "AAOS Rotator Cuff 2019"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 50 ปี runner — heel pain (medial calcaneal) worst with first steps morning + after rest × 3 mo",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Surgery first-line"
+      },
+      {
+        "label": "B",
+        "text": "Plantar Fasciitis (APTA + AAOS): (1) **Clinical diagnosis**: heel pain medial calcaneal, worst first steps morning + after rest (post-static dyskinesia), insertion of plantar fascia; (2) **Differential**: heel pad atrophy, tarsal tunnel, calcaneal stress fracture (point tender, swelling), nerve entrapment (Baxter's), seronegative arthropathy, infection; (3) **Imaging usually not needed** initial; X-ray if persistent (rule out fracture, heel spur — spur common in normal, not cause); MRI/US for refractory; (4) **Risk factors**: overuse, weight (obesity), tight Achilles/calf, pes planus or cavus, occupation standing, inappropriate footwear, sudden activity increase, age 40-60; (5) **Conservative management first-line (90%+ resolve within 1 yr)**: - **Stretching**: plantar fascia-specific (toe extension) + Achilles + calf — most evidence; - **Activity modification**: reduce impact, cross-train, return gradually; - **Footwear**: supportive with cushioning, avoid going barefoot/flat; - **OTC arch support / orthotic** (custom usually not needed); - **NSAIDs** short-term; - **Ice massage** after activity; - **Night splints** for refractory (dorsiflexion to maintain stretch); - **PT** — manual therapy, taping, exercise; (6) **Weight loss** if BMI elevated; (7) **Second-line if persistent ≥ 6-12 mo**: - **Corticosteroid injection** US-guided (modest short-term, risk fascia rupture + heel pad atrophy — limit); - **PRP** (platelet-rich plasma) — modest evidence, increasing use; - **ESWT (extracorporeal shock wave)** — moderate evidence; - **Botulinum toxin** — emerging; (8) **Surgery rare** (< 5%): plantar fascia release (open or endoscopic) — only after exhaustive conservative; (9) **Address contributors**: ergonomics, training schedule (runner), shoes; (10) **Patient education + expectations**: 6-18 months recovery common; (11) **Multidisciplinary**: PCP + PT + sports medicine + podiatry + orthopedics if refractory"
+      },
+      {
+        "label": "C",
+        "text": "Long-term opioid"
+      },
+      {
+        "label": "D",
+        "text": "Immobilization in cast × 6 wks"
+      },
+      {
+        "label": "E",
+        "text": "No treatment — ignore"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Plantar fasciitis: clinical diagnosis. Conservative first (90%+ resolve): stretching + footwear + activity mod + NSAIDs + PT. Refractory — steroid injection (limit), ESWT, PRP. Surgery rare. Weight, training, ergonomics. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "APTA Plantar Fasciitis 2014"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี BMI 33 — bilateral knee pain + crepitus + morning stiffness < 30 min × 1 yr, X-ray joint space narrowing",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Long-term opioid"
+      },
+      {
+        "label": "B",
+        "text": "Knee OA Management Primary Care (AAOS 2021 + ACR/AF 2019 + OARSI): (1) **Diagnosis**: clinical + X-ray (joint space narrowing, osteophytes, subchondral sclerosis); MRI usually not needed; rule out inflammatory (RA — symmetric, prolonged morning stiffness, systemic); (2) **Non-pharmacologic FOUNDATION (essential for all)**: - **Weight loss** ≥ 5-10% — each pound reduces 4 lb knee load; most impactful intervention; - **Exercise** (aerobic + strengthening — quadriceps especially) — strong evidence; supervised PT > home alone; aquatic for severe; Tai chi; - **Education** + self-management programs (ACPA, Arthritis Foundation); - **Cane/walking aid** opposite hand; - **Bracing** (medial unloader); - **Footwear** modifications; (3) **Pharmacologic stepwise**: - **Topical NSAIDs** (diclofenac gel) — first-line (less systemic SE, especially elderly + comorbidity); - **Oral NSAIDs** — short course; cautious renal, GI (PPI co-Rx high-risk), CV; consider celecoxib if needed; - **Acetaminophen** — limited efficacy (NEJM, BMJ), but safe adjunct; - **Duloxetine** — chronic OA pain (evidence in chronic MSK pain); - **Capsaicin topical**; - **Avoid opioids** for chronic OA (CDC + ACR/AF 2019 strong against — minimal benefit, significant harm); - **Glucosamine + chondroitin** — controversial, ACR/AF strongly against; - **Hyaluronate intra-articular** — controversial, AAOS recommends against, ACR/AF conditional against; (4) **Intra-articular corticosteroid injection** — modest short-term benefit; ACR/AF strong support; conflicting (small meta-analysis cartilage concern); maximum 3-4/yr; avoid if planning surgery soon; (5) **Surgery** (refractory + significant impairment): - **Total knee arthroplasty (TKA)** — highly effective; eligibility based on symptoms + function not just imaging; bilateral simultaneous vs staged; - Arthroscopic debridement / partial meniscectomy NOT recommended for OA without mechanical symptoms (multiple RCTs negative); (6) **Multimodal**: PT, weight, lifestyle, medication; (7) **Mental health screening** — chronic pain comorbidity; (8) **Multidisciplinary**: PCP + PT/OT + orthopedics + behavioral health + nutritional + community exercise programs"
+      },
+      {
+        "label": "C",
+        "text": "Arthroscopic debridement for all OA"
+      },
+      {
+        "label": "D",
+        "text": "Rest only — avoid exercise"
+      },
+      {
+        "label": "E",
+        "text": "Single intervention"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Knee OA: weight loss + exercise FOUNDATION. Topical NSAIDs first-line; oral NSAIDs caution; duloxetine + capsaicin; AVOID opioids. Intra-articular steroid short-term. TKA for refractory + impairment. Arthroscopy for OA NOT recommended. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "AAOS Knee OA 2021; ACR/AF OA 2019"
+  },
+  {
+    "scenario": "เด็กอายุ 4 ปี — chronic itchy + dry rash + flexural surfaces + family history atopy; failing OTC moisturizers",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Long-term high-potency steroid daily"
+      },
+      {
+        "label": "B",
+        "text": "Atopic Dermatitis Stepwise (AAD 2014 + AAAAI 2023): (1) **Diagnosis clinical**: chronic relapsing, pruritus, typical distribution (flexural older), personal/family atopy, age-related distribution; (2) **Severity assessment**: EASI, SCORAD; impact (sleep, school, mental health); (3) **Stepwise approach**: - **Foundation for all**: - **Emollients** — apply liberally + frequently (within 3 min after bath); thick creams/ointments preferred over lotions; - **Bathing**: daily warm short, mild non-soap cleanser, moisturize immediately; bleach baths for recurrent infections (¼ cup bleach in tub); - **Trigger avoidance**: irritants (wool, fragrance, harsh soap), allergens (dust mite, pet, food selective), stress, sweat, climate; - **Education**: chronic condition, flares, written action plan; - **Mild**: low-potency topical steroid (hydrocortisone 1-2.5% face/groin/young children); topical calcineurin inhibitor (tacrolimus, pimecrolimus) — steroid-sparing; - **Moderate (this patient)**: mid-potency topical steroid (triamcinolone 0.1%) extremities + low-potency face; topical calcineurin alternate or maintenance; **proactive therapy** (intermittent 2x/wk steroid/calcineurin to prevent flare); - **Severe / refractory**: - **Topical PDE-4 inhibitor** (crisaborole, roflumilast); - **Topical JAK inhibitor** (ruxolitinib); - **Phototherapy** (NBUVB); - **Systemic** (refer dermatology): - **Dupilumab** (IL-4/13 antibody) — FDA approved ≥ 6 mo; highly effective + safety profile; - Other biologics: tralokinumab (IL-13); nemolizumab (IL-31); - **Oral JAK inhibitors**: abrocitinib, upadacitinib (≥ 12 yo); monitoring; - Cyclosporine, methotrexate, mycophenolate (less used now with biologics); (4) **Treat secondary infection**: bacterial (Staph — topical mupirocin, oral cephalexin), viral (HSV eczema herpeticum — emergency, IV acyclovir), fungal; (5) **Address comorbidity**: asthma, allergic rhinitis, food allergy (referral if severe), mental health (sleep, anxiety, depression), school impact; (6) **Avoid**: chronic high-potency steroid (atrophy, striae), systemic steroid for chronic (rebound), oral antihistamine routinely (limited efficacy beyond sedation); (7) **Allergy testing** selective for moderate-severe; (8) **Multidisciplinary**: PCP + dermatology + allergy + mental health + school nurse"
+      },
+      {
+        "label": "C",
+        "text": "Oral steroid burst chronic"
+      },
+      {
+        "label": "D",
+        "text": "No moisturizer needed"
+      },
+      {
+        "label": "E",
+        "text": "Avoid bathing entirely"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Atopic dermatitis: emollient foundation + bathing routine + trigger avoidance. Stepwise topical (low/mid/high potency steroid + calcineurin inhibitor proactive). Severe: dupilumab + JAK + phototherapy. Treat secondary infection. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "dermatology",
+    "board_age_group": "peds",
+    "reference_source": "AAD Atopic Dermatitis 2014; AAAAI 2023"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 35 ปี planning trip ไป sub-Saharan Africa × 4 wk — safari, urban, rural; ไม่ได้ฉีดวัคซีน travel มาก่อน",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No preparation needed — wing it"
+      },
+      {
+        "label": "B",
+        "text": "Travel Medicine Pre-Travel Visit (CDC Yellow Book + ISTM): (1) **Pre-travel assessment ideally 4-6 wk prior**: itinerary (countries, regions, urban/rural, duration, season, accommodations, activities), traveler factors (age, comorbidity, pregnancy, immunosuppression, medications, prior travel, vaccines); (2) **Vaccines** (CDC destination-specific): - **Routine update**: Tdap, MMR, polio booster, flu, COVID; - **Required (entry conditions)**: yellow fever (sub-Saharan + S America — single dose lifelong, ICVP certificate; 10-d wait); meningococcal (ACWY for Hajj/Umrah, meningitis belt during dry season); polio (some countries); - **Recommended**: typhoid (oral or injectable, areas with poor sanitation), hepatitis A + B (most travelers), rabies (high-risk activity rural), Japanese encephalitis (rural Asia), cholera (selected — newer Vaxchora oral); (3) **Malaria prevention** (chemoprophylaxis + bite avoidance critical): - Region-specific resistance pattern; CDC malaria map; - **Atovaquone-proguanil** (Malarone) — daily, 1-2 d before + 1 wk after; - **Doxycycline** — daily, cheap, also tick-borne prophylaxis; - **Mefloquine** — weekly; neuropsychiatric SE; - **Chloroquine** (only chloroquine-sensitive areas, increasingly rare); - **Tafenoquine** (Krintafel/Arakoda) — single-dose presumptive therapy + radical cure; - **Primaquine + tafenoquine** — radical cure P. vivax/ovale (G6PD test required first); - **Bite avoidance**: DEET 20-30% / picaridin / IR3535 (apply skin) + permethrin (clothing) + bed nets (permethrin-treated) + air-conditioned/screened rooms; (4) **Traveler's diarrhea**: food + water safety education (Boil it, cook it, peel it, or forget it); self-treatment kit with antibiotic (azithromycin 500 mg × 1-3 d) + loperamide (mild); avoid FQ in many regions (resistance); ORT; (5) **Other infections**: schistosomiasis (avoid fresh water in Africa), Zika/dengue/chikungunya (mosquito-borne, daytime + nighttime), STIs (condoms), HIV PrEP/PEP, leishmaniasis, tick-borne; (6) **Altitude sickness** (acetazolamide if high altitude travel); (7) **DVT prevention** long flights (mobilization, hydration); (8) **Insurance** travel + medical evacuation; (9) **Personal medications** — letter from physician, original containers, sufficient supply; (10) **Mental health, sun, road safety**; (11) **Post-travel evaluation** if symptoms (fever, diarrhea, rash); (12) **Multidisciplinary**: PCP + travel medicine specialist + pharmacy + CDC Travel website"
+      },
+      {
+        "label": "C",
+        "text": "Single vaccine for all destinations"
+      },
+      {
+        "label": "D",
+        "text": "Antibiotic prophylaxis prevent malaria"
+      },
+      {
+        "label": "E",
+        "text": "Avoid all vaccines abroad"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Travel medicine: pre-travel 4-6 wk. Routine + required (yellow fever, meningococcal) + recommended (typhoid, HepA/B, rabies, JE) vaccines. Malaria chemoprophylaxis + bite avoidance. Traveler's diarrhea self-Rx + food safety. Other risks. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "CDC Yellow Book 2024; ISTM"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 40 ปี construction worker — acute LBP after lifting at work; ขอใบลา + workers' compensation",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Total disability — no return to work"
+      },
+      {
+        "label": "B",
+        "text": "Workplace Injury + Occupational Medicine: (1) **Initial assessment**: thorough history (mechanism, prior injuries, work demands), full exam, red flags (cauda equina, fracture); X-ray only if red flags or significant trauma; (2) **Workers' Compensation system understanding**: - Documentation: mechanism + work-relatedness + functional impact + impairment; - Maximum medical improvement (MMI), impairment rating, return-to-work status; - State-specific regulations + insurance carriers; - Communication with employer + insurer; (3) **Treatment LBP** per ACP (similar to non-occupational): - Activity modification (modified duty better than total off); - NSAIDs; - Heat; - Exercise + PT (early); - Education (favorable prognosis); - Avoid opioids (CDC + ACOEM); - Avoid prolonged bed rest; - Acupuncture, manipulation acceptable; (4) **Return-to-work (RTW) approach**: - **Modified duty / restricted work** preferred over total disability (faster recovery + return); - Specific restrictions (lifting limit, posture, frequency); - Graded RTW progression; - Functional capacity evaluation (FCE) if persistent; - Vocational rehab if cannot return to original job; (5) **Workplace assessment**: ergonomic evaluation, training, prevention of recurrence; OSHA + employer responsibility; (6) **Psychosocial assessment** — Yellow Flags for chronicity: belief work harmful, fear-avoidance, depression, distress, job dissatisfaction, secondary gain, system distrust, prolonged disability; CBT for chronic; (7) **Workers' comp + disability** specific considerations + advocacy; (8) **Coordination with employer**: confidentiality (limited in WC), education, accommodations, return-to-work planning; (9) **Prevention**: ergonomics, training, lifting techniques, equipment, regular health surveillance; (10) **Other occupational considerations**: hearing conservation, respiratory protection, ergonomics, mental health, shift work, toxic exposures, infection control (healthcare); (11) **Multidisciplinary**: PCP + occupational medicine + PT + ergonomist + employer + insurance + behavioral health (if yellow flags) + vocational rehab"
+      },
+      {
+        "label": "C",
+        "text": "Long-term opioid for pain"
+      },
+      {
+        "label": "D",
+        "text": "Imaging immediately for all"
+      },
+      {
+        "label": "E",
+        "text": "Ignore workers' comp"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Workplace LBP: same evidence-based treatment as non-occupational — early activity + PT + NSAIDs, avoid opioids. **Modified duty + RTW** preferred. Functional restrictions. Address yellow flags (chronicity). Workers' comp documentation. Ergonomic prevention. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "ACOEM Guidelines; ACP LBP"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 50 ปี smoker 30 pack-years — past failed attempts NRT patch + cold turkey; ขอ med ที่ effective ที่สุด",
+    "choices": [
+      {
+        "label": "A",
+        "text": "NRT patch alone — same as before"
+      },
+      {
+        "label": "B",
+        "text": "Smoking Cessation Pharmacotherapy Selection (USPSTF + AAFP + EAGLES): (1) **Combination most effective**: pharmacotherapy + behavioral; both individually ↑ cessation but combination doubles; (2) **First-line pharmacotherapy options**: - **Varenicline (Chantix)** — most effective single agent + (a4b2 nicotinic partial agonist); start 1 wk before quit date; titrate up over 1 wk; continue 12-24 wk; **EAGLES trial** — cardiovascular + neuropsychiatric safety reaffirmed (Black Box warning removed); FDA reapproved 2016; recently temporarily off market (nitrosamine impurity 2021) — now available again; - **NRT (Nicotine Replacement Therapy)**: combination patch (long-acting baseline) + short-acting (gum, lozenge, inhaler, spray for cravings) — more effective than single; OTC; safer than smoking; - **Bupropion (Zyban/Wellbutrin SR)** 150 mg BID; start 1-2 wk before quit; dual benefit if depression; CI seizure disorder, eating disorder; - **Combination varenicline + NRT** — emerging evidence; - **Combination bupropion + NRT** — also effective; (3) **Second-line / alternatives**: nortriptyline, clonidine (off-label); (4) **Cytisine** — partial agonist (like varenicline); cheaper; available in some countries; (5) **E-cigarettes**: mixed evidence; UK NICE supports as cessation aid; US position more cautious (FDA not approved as cessation); some evidence (~ 18% vs 9.9% NRT cessation in Cochrane review); youth concerns, EVALI risk; (6) **Behavioral support critical**: brief counseling at every visit (5As); quitline 1-800-QUIT-NOW; text-based (SmokefreeTXT); apps; in-person counseling; group programs; (7) **Address triggers**: stress (mindfulness, CBT), alcohol, social, mental health (depression high comorbidity); (8) **Relapse common — multiple attempts typical**; don't discourage; (9) **Special populations**: pregnant (behavioral first; NRT if needed; varenicline + bupropion limited data), cardiovascular (varenicline + NRT safe per EAGLES + meta-analyses), mental health (varenicline + bupropion safety reaffirmed EAGLES), opioid/methadone, adolescents (limited pharm — behavioral + NRT cautious); (10) **Cost**: many insurance covers; generic; manufacturer assistance; (11) **Multidisciplinary**: PCP + pharmacy + tobacco treatment specialist + quitline + behavioral health"
+      },
+      {
+        "label": "C",
+        "text": "Long-term opioid for cravings"
+      },
+      {
+        "label": "D",
+        "text": "Single counseling session"
+      },
+      {
+        "label": "E",
+        "text": "No medication ever"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Smoking cessation: combination > monotherapy. Varenicline most effective single (EAGLES safe). Combination NRT (patch + short-acting). Bupropion + NRT also effective. Behavioral critical. Address triggers + comorbidity. Multiple attempts common.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "USPSTF Tobacco 2021; EAGLES"
   }
 ]
