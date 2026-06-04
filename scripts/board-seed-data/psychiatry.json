@@ -2878,5 +2878,965 @@
     "board_topic": "psych_behavior",
     "board_age_group": "adult",
     "reference_source": "Linehan DBT; ASAM Dual Diagnosis"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 22 ปี × 3 ปี — recurrent binge eating (large quantity + loss of control) + compensatory behaviors (self-induced vomiting, laxatives) ≥ 1×/wk × 6 เดือน; weight: BMI 22 (normal); shape + weight overly influence self-evaluation\n\nLab: K 3.0, mild metabolic alkalosis, dental erosion, parotid swelling, Russell's sign (knuckle calluses)\nNo binge/purge during AN episode",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bupropion first-line"
+      },
+      {
+        "label": "B",
+        "text": "Bulimia Nervosa (DSM-5: binge + inappropriate compensatory ≥ 1×/wk × 3 mo + self-evaluation overly influenced + not exclusively during AN): (1) **CBT-E (Enhanced CBT) for eating disorders** = first-line — gold standard for BN; (2) **Fluoxetine 60 mg/day** — FDA-approved for BN; higher dose than depression; reduces binge + purge frequency; (3) **Combination CBT + fluoxetine** for severe/incomplete response; (4) IPT alternative — slower onset; DBT for emotion regulation; (5) Nutritional rehabilitation + regular eating pattern; reduce dietary restriction → reduces binge cycle; (6) Address medical complications: - Electrolytes (hypokalemia → cardiac arrhythmia); - Dental erosion + parotitis (acid exposure); - Esophagitis, Mallory-Weiss tears; - Ipecac toxicity (cardiomyopathy historical); - Laxative abuse → bowel dysfunction; (7) Comorbidity high: depression, anxiety, substance use, BPD, OCD, PTSD; (8) Family-based treatment (FBT) for adolescents — also effective; (9) AVOID: bupropion (seizure risk in eating disorders); benzodiazepine; (10) Long-term: 50-70% recovery; relapse common; maintenance + relapse prevention; (11) Multidisciplinary: psychiatry, eating disorder specialist therapist, dietitian, primary care, dental"
+      },
+      {
+        "label": "C",
+        "text": "No treatment"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Bulimia Nervosa: binge + compensatory + body image. CBT-E first-line. Fluoxetine 60mg FDA approved. Combination for severe. Address electrolytes + dental. AVOID bupropion (seizure). Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "APA Eating Disorders 2023; CBT-E Fairburn"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 38 ปี × 5 ปี — recurrent binge eating (large quantity + loss of control + eats rapidly, until uncomfortably full, when not hungry, alone due to embarrassment, disgust after) ≥ 1×/wk × 6 เดือน — NO compensatory behaviors\n\nBMI 35 (obese), comorbid HTN, dyslipidemia, T2DM\nShame + distress about binges",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bariatric surgery without treatment"
+      },
+      {
+        "label": "B",
+        "text": "Binge Eating Disorder (DSM-5: recurrent binge + ≥ 3 features + ≥ 1×/wk × 3 mo + marked distress + NO compensatory behaviors): (1) **CBT-E** for BED = first-line; reduces binge frequency + improves comorbidity; (2) **Lisdexamfetamine (Vyvanse) 30-70 mg/day** — FDA approved for BED (only stimulant approved); reduces binge episodes; monitor CV, abuse potential; (3) **Topiramate** — reduces binges + weight; cognitive side effects + kidney stones; (4) **SSRI** — modest benefit; for comorbid depression/anxiety; (5) Behavioral weight loss programs combined with CBT-BED (vs alone); (6) IPT, DBT alternatives; (7) Address obesity comorbidity: T2DM, HTN, dyslipidemia, OSA, MASLD; weight loss medications considered (semaglutide, etc. — emerging evidence with BED); bariatric surgery requires careful BED screening (BED is NOT contraindication but requires treatment + ongoing monitoring); (8) Comorbidity: depression, anxiety, substance use, ADHD (common — addressed by lisdexamfetamine partially); (9) Group therapy + support; (10) Long-term: chronic with relapses; maintenance; (11) Distinguish from BN (no compensatory) + obesity without binge eating; (12) Multidisciplinary: psychiatry, dietitian, primary care, possibly bariatric, exercise specialist"
+      },
+      {
+        "label": "C",
+        "text": "No treatment"
+      },
+      {
+        "label": "D",
+        "text": "Long-term benzodiazepine"
+      },
+      {
+        "label": "E",
+        "text": "Bupropion first-line"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Binge Eating Disorder: binge + distress + NO compensatory. CBT-E first-line. Lisdexamfetamine FDA approved. Topiramate. Treat obesity comorbidity. BED screening before bariatric surgery. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "APA Eating Disorders 2023; FDA lisdexamfetamine BED"
+  },
+  {
+    "scenario": "เด็กชายอายุ 11 ปี — significant weight loss + failure to gain expected weight × 18 เดือน + nutritional deficiency (iron, vitamin D) + dependence on supplements — restriction based on sensory characteristics (texture, smell — only eats white foods, soft textures) + lack of interest in eating, NOT due to body image concerns\n\nNo body image disturbance, no fear of weight gain\nAutism spectrum traits present\nNo medical cause identified",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Force feeding"
+      },
+      {
+        "label": "B",
+        "text": "Avoidant/Restrictive Food Intake Disorder (ARFID — DSM-5 2013 new dx; food avoidance/restriction → weight loss / nutritional deficiency / feeding tube dependence / psychosocial impairment + NOT due to body image or AN/BN): (1) Multidisciplinary treatment essential — pediatrics, child psychiatry, dietitian, feeding therapist, OT, family therapy; (2) Subtypes: - Sensory (texture, taste, smell aversion — common with autism); - Lack of interest (low appetite/drive); - Fear of aversive consequences (choking, vomiting fear after event); (3) Feeding therapy / behavioral: - Sensory-based exposure (graduated exposure to new textures/flavors); - Systematic desensitization; - Positive reinforcement; - Parent training + meal structure; - Family-based treatment adapted for ARFID; (4) CBT for ARFID (older children + adolescents); (5) Address comorbidity: anxiety (very common), autism spectrum (common), ADHD, OCD; (6) Medication: limited evidence; SSRI for comorbid anxiety/OCD; mirtazapine appetite stimulation off-label; cyproheptadine appetite stimulation; (7) Nutritional rehabilitation + supplementation; (8) Long-term: chronic course with sensory subtype + autism; gradual broadening of diet; (9) Distinguish from picky eating (normal developmental, no medical/psychosocial impairment); (10) Address feeding tube weaning if applicable"
+      },
+      {
+        "label": "C",
+        "text": "No treatment"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "ARFID (DSM-5 2013): food restriction NOT due to body image → weight/nutrition/psychosocial impairment. Subtypes: sensory, lack of interest, fear of consequences. Multidisciplinary feeding therapy + behavioral. Address comorbid autism/anxiety. Distinguish from picky eating.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "DSM-5-TR; Thomas ARFID"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 6 ปี + autism spectrum + intellectual disability — eating non-nutritive substances (dirt, paint chips, fabric, hair) × 1 ปี — developmentally inappropriate; mother concerned; recent elevated blood lead level\n\nLab: Hgb 9 (low — iron deficient), Pb 22 μg/dL (elevated)\nDental damage\nNo evidence of malnutrition",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No treatment"
+      },
+      {
+        "label": "B",
+        "text": "Pica (DSM-5: persistent eating non-nutritive non-food substances ≥ 1 mo + developmentally inappropriate + not culturally sanctioned): (1) Medical evaluation + treatment: - **Lead poisoning workup + treatment** (chelation if severe — succimer, EDTA per Pb level + age); environmental abatement; - Iron deficiency (often comorbid — may drive pica per 'iron deficiency hypothesis'); supplement; - Parasitic infection (geophagia → helminthiasis); - Dental injury, intestinal obstruction/perforation, electrolyte imbalance, infections; (2) Behavioral interventions: - Functional analysis (sensory, attention, escape, automatic); - Environment management (remove access to ingested substances); - Differential reinforcement (preferred items contingent on not eating non-food); - Response interruption + redirection; - Pediatric/developmental behavioral specialists; (3) Comorbidity: autism, intellectual disability, schizophrenia, OCD, trichophagia/trichobezoar; (4) Common in pregnancy (geophagia, ice — pagophagia) — usually transient + benign if not toxic substance; (5) Iron + zinc supplementation in some cases; (6) Family education + safety; (7) Long-term: often resolves in childhood; persistent with autism/ID; (8) Multidisciplinary: pediatrics, child psychiatry, behavioral therapist, developmental specialist, family"
+      },
+      {
+        "label": "C",
+        "text": "Punishment"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "SSRI alone"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pica: persistent non-food ingestion. Medical eval (lead, iron, parasites, GI). Behavioral functional analysis. Common with autism/ID. Iron deficiency may drive (hypothesis). Pregnancy variant. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "DSM-5-TR"
+  },
+  {
+    "scenario": "ทารกอายุ 14 เดือน — repeated regurgitation of food (without nausea, retching) followed by re-chewing + re-swallowing × 4 เดือน, weight loss, failure to thrive\n\nNo GERD per workup\nNo gastrointestinal disorder identified\nMother + infant interaction: mother appears withdrawn, postpartum depression",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No treatment"
+      },
+      {
+        "label": "B",
+        "text": "Rumination Disorder (DSM-5: repeated regurgitation ≥ 1 mo + not due to medical condition + not exclusively during ARFID/AN/BN/BED): (1) Medical workup first — rule out GERD, eosinophilic esophagitis, pyloric stenosis, neurologic, metabolic; (2) Infants — feeding interaction + caregiver assessment essential (maternal depression here): - Treat postpartum depression (SSRI — sertraline preferred; CBT/IPT; social support); - Improve mother-infant bonding (parent-infant psychotherapy, attachment-focused); - Feeding practices (positioning, post-feeding handling); - Sensory input + alternative stimulation; (3) Behavioral interventions for older children/adults: - Diaphragmatic breathing (most effective — competing response — first-line for adults/older children); - Habit reversal; - Functional analysis (sensory, self-stimulatory, attention); - Differential reinforcement; (4) Nutritional support — adequate caloric intake; (5) Comorbidity assessment: anxiety, depression, intellectual disability, autism; (6) Family + caregiver support + education; (7) Multidisciplinary: pediatrics, child psychiatry, GI, behavioral therapist, social work, lactation; (8) Distinguish from: GERD, cyclic vomiting, bulimia (deliberate self-induced), anorexia"
+      },
+      {
+        "label": "C",
+        "text": "Fundoplication surgery first"
+      },
+      {
+        "label": "D",
+        "text": "PPI alone"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Rumination Disorder: regurgitation + re-chewing/swallowing. Medical rule-out first. Infants: address caregiver + bonding (postpartum depression here). Older: diaphragmatic breathing first-line. Distinguish from GERD + bulimia. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "DSM-5-TR; Rome Criteria"
+  },
+  {
+    "scenario": "ชายไทยอายุ 30 ปี — chronic difficulty with attention, organization, time management, procrastination, missed deadlines × adulthood, but more apparent since starting graduate school; reports similar issues since childhood (forgetful, lost things, restless) — confirmed by mother + school records\n\nNo medical cause, no other psychiatric, no substance use\nASRS-v1.1 elevated\nDSM-5 ADHD criteria met (≥ 5 sx adult; onset < 12 yo)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No treatment — adults don't have ADHD"
+      },
+      {
+        "label": "B",
+        "text": "Adult ADHD — Combined Type (DSM-5 — onset before 12, ≥ 5 sx in adults inattention or hyperactive-impulsive, ≥ 2 settings, impairment): (1) Combination treatment most effective: medication + behavioral; (2) **Medication first-line**: - **Stimulants** (methylphenidate, amphetamine — long-acting preferred — Concerta, Vyvanse) — 70% response rate; controlled substance — diversion monitoring; - **Non-stimulants**: atomoxetine (Strattera — SNRI), guanfacine ER, clonidine ER — slower onset but useful with substance use hx, comorbid anxiety, contraindication to stimulant; (3) **Behavioral interventions**: - CBT for ADHD (Safren) — executive function strategies, organization, time management, distraction control; - Coaching; - Mindfulness; - Skills training; (4) Address comorbidity (75% adults have at least one): depression, anxiety, substance use, learning disorders, sleep, ASD; (5) Accommodations: workplace + academic (extended time, quiet environment, written instructions); (6) Lifestyle: structure + routine, exercise, sleep, limit distractions, time management tools; (7) Couples therapy if relational impact; (8) Medication monitoring: BP, HR (stimulants), height/weight (children less issue adults), cardiac if risk factors, mental health; (9) Misuse + diversion screening — abuse potential of stimulants; (10) Long-term: chronic; gradual learning of skills; medication often continued; (11) Multidisciplinary"
+      },
+      {
+        "label": "C",
+        "text": "Long-term benzodiazepine"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Adult ADHD: onset < 12, ≥ 5 sx adults, ≥ 2 settings, impairment. Combination medication + behavioral. Stimulants 70% response. Non-stimulants for comorbidity/abuse risk. CBT for ADHD. High comorbidity. Workplace accommodations.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "AAP/AACAP; CADDRA"
+  },
+  {
+    "scenario": "วัยรุ่นชายอายุ 15 ปี — pattern × 18 เดือน — aggression to people + animals (bullies, fights, weapons), destruction of property (setting fires, vandalism), deceitfulness/theft (stolen items, lying), serious violation of rules (curfew, truancy, runaway) — onset 12 yo\n\nFamily: chaotic, parental DV, low SES\nNo substance use disorder\nNo psychotic disorder\nNo intellectual disability\nDSM-5 conduct disorder criteria met — adolescent-onset",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Punishment alone"
+      },
+      {
+        "label": "B",
+        "text": "Conduct Disorder, Adolescent-Onset (DSM-5: ≥ 3 of 15 criteria in 12 mo + ≥ 1 in past 6 mo; pattern violating rights or major norms; adolescent-onset = no criteria before 10 yo, better prognosis than childhood-onset): (1) **Multimodal evidence-based interventions**: - **Multisystemic Therapy (MST)** — intensive family + community-based; reduces recidivism + out-of-home placement; - **Functional Family Therapy (FFT)** — family-focused; - **Multidimensional Treatment Foster Care (MTFC)** — for severe; - Parent Management Training; - CBT — anger management, problem-solving; (2) Address comorbidity high: ADHD (50%), depression, anxiety, substance use, learning disorders, trauma (often); (3) ADHD treatment improves conduct sx — stimulants for comorbid; (4) Medication targets specific sx: - Atypical antipsychotic (risperidone) for severe aggression — last-line, side effects; - Mood stabilizer for aggression; - SSRI for comorbid depression/anxiety; - AVOID benzodiazepine + stimulants in misuse risk; (5) School + community involvement; address truancy; alternative educational programs; (6) Social services + child welfare — address abuse/neglect if present; family support; (7) Juvenile justice coordination; restorative justice approaches; (8) Long-term prognosis: - Adolescent-onset — often resolves into adulthood (better); - Childhood-onset — progress to ASPD (~ 40%); (9) Multidisciplinary: child + adolescent psychiatry, family therapy, school, juvenile justice, social work, primary care"
+      },
+      {
+        "label": "C",
+        "text": "Incarceration only"
+      },
+      {
+        "label": "D",
+        "text": "No treatment"
+      },
+      {
+        "label": "E",
+        "text": "Surgery"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Conduct Disorder: ≥ 3/15 criteria. Adolescent-onset (no criteria < 10) better prognosis. MST/FFT/MTFC evidence-based. CBT + parent training. Address ADHD + trauma + family. Medication targets sx. Adolescent-onset often resolves; childhood-onset → 40% ASPD.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "AACAP Conduct Disorder; MST Henggeler"
+  },
+  {
+    "scenario": "เด็กชายอายุ 8 ปี × 12 เดือน — frequent loss of temper, easily annoyed, angry/resentful, argues with adults, defies adult requests, deliberately annoys, blames others, spiteful/vindictive × 2-3 episodes/wk — pattern at home + school + with peers\n\nNo aggression to people/animals + no destruction of property + no theft (would suggest conduct disorder)\nNot during depressive/psychotic episode\nDSM-5 ODD criteria met",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Punishment only"
+      },
+      {
+        "label": "B",
+        "text": "Oppositional Defiant Disorder (DSM-5: pattern of angry/irritable mood + argumentative/defiant behavior + vindictiveness ≥ 6 mo + ≥ 4 of 8 sx + functional impairment): (1) Behavioral parent training first-line — PCIT (Parent-Child Interaction Therapy, age 2-7), Triple P, Incredible Years, Defiant Children program; (2) CBT — problem-solving, anger management; (3) Family therapy + school-based interventions; (4) Address comorbidity (high): - ADHD (very common — treat to reduce ODD sx); - Depression, anxiety; - Learning disorders; - DMDD (chronic irritability); (5) Medication adjunctive for severe + comorbidity: - Stimulants for ADHD comorbidity → ODD improves; - SSRI for depression/anxiety; - Atypical antipsychotic for severe aggression (last-line — risperidone, aripiprazole); - AVOID benzodiazepine; (6) School-based: behavioral plan, 504/IEP if needed; (7) Distinguish: - Conduct disorder (more severe — aggression to people/animals, property destruction, theft); - DMDD (chronic irritability + severe outbursts); - Normal developmental defiance; (8) Long-term: 30% progress to conduct disorder; ODD predicts adult depression, anxiety, substance use; (9) Multidisciplinary: child psychiatry, behavioral therapist, school, family"
+      },
+      {
+        "label": "C",
+        "text": "Long-term benzodiazepine"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "No treatment"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "ODD: angry/irritable + argumentative/defiant + vindictive ≥ 6 mo. Parent training first-line (PCIT, Triple P). Address ADHD comorbidity (very common). Distinguish from conduct disorder (more severe) + DMDD (chronic irritability). 30% progress to conduct disorder.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "AACAP ODD; PCIT Eyberg"
+  },
+  {
+    "scenario": "เด็กชายอายุ 7 ปี — developmental delay since infancy, IQ 55 (mild intellectual disability), adaptive functioning impaired (conceptual, social, practical), school behind grade level; parents seeking comprehensive plan; family hx: maternal cousin with similar issues; Fragile X testing pending\n\nNo seizures, normal hearing/vision\nBehavioral issues: occasional tantrums, social difficulties",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No intervention"
+      },
+      {
+        "label": "B",
+        "text": "Intellectual Disability (Intellectual Developmental Disorder), Mild (DSM-5: deficits in intellectual + adaptive functioning + onset during developmental period; severity based on adaptive functioning, not IQ alone): (1) Comprehensive evaluation: - **Etiologic workup**: chromosomal microarray (first-line), Fragile X testing (most common inherited cause), targeted gene panel if features, WES emerging, metabolic if features, neuroimaging if exam abnormal, lead if pica/risk; - Hearing/vision; - Medical comorbidities; (2) Educational supports: - **IEP/504 special education** — IDEA Part B; - Adaptive functioning focus + life skills; - Inclusion when possible with supports; - Vocational training (transition planning starting at 14-16 yo); (3) Behavioral interventions for behavioral issues; applied behavior analysis; positive behavioral supports; (4) Speech-language therapy + OT/PT as needed; (5) Address comorbid psychiatric disorders (high rates — 30-50%): ADHD, anxiety, depression, autism, psychotic disorders; treatment same as general population but lower medication doses + sensitive to side effects; (6) **Family support + education + genetic counseling**; reproductive recurrence risk; respite care; sibling support; (7) Transition planning to adulthood: guardianship (vs supported decision-making — modern approach), residential, vocational, healthcare, social security; (8) Sexuality + relationship education adapted; (9) Address discrimination + advocacy; (10) Multidisciplinary: developmental pediatrics, child psychiatry, neurology, genetics, school, OT/PT/SLP, social work, family"
+      },
+      {
+        "label": "C",
+        "text": "Institutionalization"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Punishment"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Intellectual Disability (DSM-5 IDD): intellectual + adaptive deficit + developmental onset. Etiologic workup (chromosomal microarray, Fragile X). Educational supports (IEP). Behavioral interventions. Address comorbid psychiatric (high). Family + genetic counseling. Multidisciplinary lifelong.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "DSM-5-TR; AAIDD"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 9 ปี grade 3 — persistent difficulty with reading (slow, inaccurate, effortful word reading; poor comprehension despite adequate instruction × 18 เดือน) — IQ normal (95), no sensory impairment, no neurologic disorder, attended school regularly\n\nFamily hx: father had reading difficulty\nFrustrated, beginning school avoidance, mild anxiety",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Punishment for poor reading"
+      },
+      {
+        "label": "B",
+        "text": "Specific Learning Disorder, with impairment in reading (Dyslexia) — DSM-5: difficulties learning + using academic skills ≥ 6 mo despite intervention + below age-expected + not better explained by ID, sensory, neurologic, lack of instruction): (1) **Educational intervention first-line**: - Evidence-based reading instruction — **structured literacy** (Orton-Gillingham, Wilson, LiPS) — explicit, systematic phonics-based; - **IEP/504** with specific reading goals + accommodations (extended time, text-to-speech, audiobooks, modified assignments); - Intensity matters — 1:1 or small group, frequent; - Special education or reading specialist; (2) Comprehensive evaluation: - Psychoeducational testing (academic + cognitive); - Language assessment; - Hearing/vision; - Rule out other learning disorders + comorbidity; (3) Address comorbidity: ADHD (very common — 30-40%), anxiety, depression (especially school avoidance), other SLDs; (4) Treat comorbid ADHD with medication if present (improves attention + learning capacity); (5) Address anxiety + self-esteem — reading difficulty stigma; CBT if significant; (6) Family education + advocacy (parents' rights under IDEA + ADA); (7) Long-term: persistent challenge; compensatory strategies improve; technology (text-to-speech, audiobooks) for lifelong support; many achieve academic + occupational success; (8) Multidisciplinary: psychology, special education, reading specialist, speech-language, primary care, child psychiatry if comorbid; (9) Subtypes (specifiers): reading, written expression, mathematics (dyscalculia)"
+      },
+      {
+        "label": "C",
+        "text": "No intervention — wait"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Lower expectations"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Specific Learning Disorder (Dyslexia): persistent reading difficulty despite instruction + intact IQ. Structured literacy (Orton-Gillingham) evidence-based. IEP/504 + accommodations. Address ADHD comorbidity (30-40%). Long-term — compensatory + technology. Family advocacy.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "DSM-5-TR; IDA; IDEA"
+  },
+  {
+    "scenario": "เด็กชายอายุ 7 ปี — nocturnal bedwetting ≥ 2×/wk × 6 เดือน, no daytime symptoms (primary nocturnal enuresis — never been dry for 6 mo); developing self-esteem impact + missing sleepovers\n\nNo UTI, no DM, no structural anomaly\nNeurologic exam normal, no constipation\nFamily hx: father had bedwetting until age 9",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Punishment"
+      },
+      {
+        "label": "B",
+        "text": "Primary Nocturnal Enuresis (DSM-5: repeated voiding into bed or clothes ≥ 2×/wk × 3 mo + chronologic age ≥ 5 yo + functional impairment + not due to medical condition): (1) Education + reassurance — common (15% age 5, 5% age 10), often familial, usually outgrown; reduce blame + shame; (2) Behavioral first-line: - **Enuresis alarm** = most effective long-term (cure rate 60-70%); requires motivation + consistency × 8-16 weeks; relapse rate low; - Fluid restriction evening; - Scheduled bathroom; - Reward system (star chart); - Constipation treatment (often comorbid); (3) **Medication** if alarm fails or short-term need (sleepovers, camp): - **Desmopressin (DDAVP)** — oral or sublingual; mimics ADH; effective acutely but high relapse on discontinuation; risk hyponatremia (limit fluids); - **Imipramine (TCA)** — historical; cardiotoxicity in overdose; less preferred; (4) Address comorbidity: constipation, ADHD (high comorbid), psychological/family stress; (5) Distinguish: - Primary (never dry) vs secondary (regression after 6 mo dryness) — secondary suggests stressor, abuse, medical (DM, UTI, OSA, neurologic); - Monosymptomatic (nocturnal only) vs polysymptomatic (urgency, frequency, daytime); (6) Workup: UA + culture, evaluate for constipation, OSA screening; further if secondary or atypical; (7) Family support + education; (8) Long-term: spontaneous resolution common; treatment hastens; (9) Multidisciplinary if complex: pediatrics, pediatric urology, child psychiatry if behavioral/family"
+      },
+      {
+        "label": "C",
+        "text": "Long-term TCA only"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Diaper indefinitely"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Primary Nocturnal Enuresis: common, often familial, usually outgrown. Education + reassurance. Enuresis alarm = most effective long-term. Desmopressin for short-term/refractory. Address constipation + ADHD comorbidity. Distinguish primary vs secondary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "AAP Enuresis; ICCS"
+  },
+  {
+    "scenario": "เด็กชายอายุ 6 ปี × 8 เดือน — repeated involuntary passage of feces into clothing ≥ 1×/mo, often hard stools followed by leakage of looser stool (overflow incontinence); history of constipation + painful BM × 1 ปี; stool withholding behavior; social distress\n\nPhysical exam: palpable fecal mass abdomen, normal anus + neuro\nNo medical disease",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Punishment"
+      },
+      {
+        "label": "B",
+        "text": "Functional Encopresis with Constipation + Overflow Incontinence (DSM-5: repeated passage of feces in inappropriate places ≥ 1×/mo × 3 mo + age ≥ 4 yo + not due to medical or substance): (1) **Medical disimpaction first** — clear stool retention before maintenance; options: - Oral PEG (polyethylene glycol — Miralax) — high-dose × 3-5 days; well-tolerated; - Enema (saline, mineral oil) if oral fails; - Manual disimpaction rarely; (2) **Maintenance laxative** for 6 mo+ (often 1-2 yr): - PEG daily (titrate to soft daily BM); - Lactulose alternative; - Continue until pattern stable + child's confidence restored; (3) **Behavioral interventions**: - Scheduled toilet sitting after meals (gastrocolic reflex); - Reward system (star chart); - Education about anatomy + reassurance (it's not their fault); - Reduce shame + blame; (4) Dietary: fiber, fluids; not primary intervention but supportive; (5) Address psychological component: anxiety, school avoidance, family stress, abuse if suggested by secondary onset; (6) Distinguish: - Primary (never trained) vs secondary (regression — consider stressor); - With/without constipation; - Behavioral retention (toilet phobia, withholding); (7) Education key — sustained treatment often needed; relapse common if treatment stopped early; (8) Multidisciplinary: pediatrics, pediatric GI if refractory, child psychiatry if behavioral, OT/behavioral specialist; (9) Long-term: most resolve with sustained treatment; gradual normalization; (10) Family support + education"
+      },
+      {
+        "label": "C",
+        "text": "Single dose laxative only"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "No treatment"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Functional Encopresis: usually with constipation + overflow. Medical disimpaction → maintenance laxative (months-years) + behavioral (scheduled toileting, reward, education). Address shame + blame. Relapse common if stopped early. Distinguish primary vs secondary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "NASPGHAN; DSM-5-TR"
+  },
+  {
+    "scenario": "เด็กชายอายุ 4 ปี — adopted at age 2 จาก orphanage (institutionalized 0-2 yo, neglected) — pattern of inhibited + emotionally withdrawn behavior toward caregivers, minimal seeking of comfort when distressed, minimal response to comfort, minimal positive affect, episodes of unexplained irritability, sadness; insufficient care history confirmed\n\nNot meeting autism criteria\nDevelopmental milestones delayed but improving\nAdoptive family loving + committed",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Punishment"
+      },
+      {
+        "label": "B",
+        "text": "Reactive Attachment Disorder (DSM-5: pattern of inhibited + emotionally withdrawn behavior toward caregivers + minimal social-emotional responsiveness + insufficient care history; before age 5; developmental age ≥ 9 mo): (1) **Stable, sensitive, responsive caregiving = primary 'treatment'** — child needs sustained, predictable, attuned caregiver; (2) **Attachment-based therapies** — evidence-based: - **Attachment + Biobehavioral Catch-up (ABC)** — coaches caregivers in following child's lead, nurturance; - **Child-Parent Psychotherapy (CPP)** — dyadic; - **Parent-Child Interaction Therapy (PCIT) adapted**; - AVOID coercive 'attachment therapies' (rebirthing, holding therapy — harmful, not evidence-based, deaths reported); (3) Trauma-focused CBT if old enough + indicated; (4) Address developmental delays — early intervention services, speech, OT, PT; (5) Address caregiver capacity + support — caregiver education, mental health support for adoptive parents, respite care; (6) Distinguish: - Autism (social communication deficits across all settings vs RAD specific to attachment + improves with caregiver); - Depression; - Disinhibited Social Engagement Disorder (DSED — overly familiar with strangers — different presentation of similar history of insufficient care); (7) Long-term: improvement with stable caregiving but may have residual attachment difficulties + risk of psychiatric disorders; (8) Educational + social support; (9) Multidisciplinary: child psychiatry, child psychologist, pediatrics, social work, school, family"
+      },
+      {
+        "label": "C",
+        "text": "Coercive attachment therapy (rebirthing)"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Return to institution"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Reactive Attachment Disorder: inhibited + withdrawn + insufficient care history. Stable responsive caregiving = primary. Attachment-based therapies (ABC, CPP). AVOID coercive 'attachment therapies' (harmful). Distinguish from autism (across all settings). Long-term improvement possible.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "DSM-5-TR; Zeanah Attachment"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 5 ปี — adopted at 3 จาก orphanage (institutionalized 0-3 yo) — overly familiar with unfamiliar adults (will go with strangers without hesitation, hugs strangers, lacks normal stranger anxiety) + reduced reticence; persists 2 ปี post-adoption\n\nNot meeting autism criteria\nDevelopmentally appropriate other areas",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Reinforce indiscriminate friendliness"
+      },
+      {
+        "label": "B",
+        "text": "Disinhibited Social Engagement Disorder (DSED — DSM-5: pattern of overly familiar behavior with unfamiliar adults + insufficient care history; developmental age ≥ 9 mo): (1) Stable + consistent caregiving — same as RAD; (2) Safety priority — child at risk going with strangers, abduction risk — caregiver vigilance, education on safety boundaries; (3) Behavioral interventions teaching appropriate social boundaries — physical proximity, who is family/friend, stranger awareness; (4) Attachment-based interventions: ABC, CPP, PCIT adapted; (5) Address comorbid developmental delays, ADHD (high comorbidity); (6) AVOID coercive attachment therapies; (7) Distinguish from: - RAD (inhibited/withdrawn — both reflect insufficient care, different presentations); - ADHD impulsivity (treat both if present); - Autism (social communication deficits broader, restricted interests); - Williams syndrome (excessive friendliness — genetic); (8) Long-term: may persist into adolescence + adulthood with continued indiscriminate friendliness, attention-seeking, difficulty with intimate relationships; ongoing intervention helpful; (9) Educational + social skills training; (10) Multidisciplinary: child psychiatry, child psychologist, pediatrics, special education, social work, family"
+      },
+      {
+        "label": "C",
+        "text": "No intervention"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Punishment"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Disinhibited Social Engagement Disorder: overly familiar with strangers + insufficient care history. Safety priority (stranger danger). Stable caregiving + behavioral teaching boundaries. Attachment-based. Distinguish RAD (inhibited) vs DSED (disinhibited) vs autism vs ADHD vs Williams.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "DSM-5-TR; Zeanah"
+  },
+  {
+    "scenario": "ชายไทยอายุ 72 ปี × 18 เดือน — progressive cognitive decline with fluctuating attention/alertness, prominent visual hallucinations (small animals, children — well-formed), parkinsonism (bradykinesia, rest tremor, rigidity), REM sleep behavior disorder (acting out dreams), severe sensitivity to antipsychotics tried for hallucinations (developed severe parkinsonism with risperidone)\n\nMMSE 22\nDAT scan abnormal (low striatal uptake)\nNo stroke, no major depression",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Haloperidol for hallucinations"
+      },
+      {
+        "label": "B",
+        "text": "Dementia with Lewy Bodies (DLB) — DSM-5 Major Neurocognitive Disorder due to Lewy body disease (core features: fluctuating cognition, visual hallucinations, parkinsonism, REM sleep behavior disorder; supportive: severe neuroleptic sensitivity, DAT scan abnormality, autonomic dysfunction): (1) **Cholinesterase inhibitor** — rivastigmine (best evidence) or donepezil — may improve cognition + reduce hallucinations + behavior; (2) **AVOID typical antipsychotics + most atypicals** (severe neuroleptic sensitivity → worsen parkinsonism, NMS, sudden death): - If absolutely needed for severe psychosis — **quetiapine** lowest dose or **pimavanserin** (5-HT2A inverse agonist — FDA approved Parkinson's psychosis, used off-label DLB); - Clozapine low-dose alternative; (3) **REM sleep behavior disorder**: melatonin 3-12 mg HS first-line; clonazepam alternative; (4) **Parkinsonism**: carbidopa-levodopa cautious (may worsen psychosis); lower dose than PD; (5) Non-pharmacologic for behaviors: structured environment, address triggers; (6) Autonomic dysfunction: orthostasis (compression stockings, fluid, salt, midodrine, droxidopa), constipation, urinary; (7) Caregiver education + support — DLB different from AD; (8) Distinguish: - Parkinson's disease dementia (PDD — same pathology, dementia > 1 yr after motor sx; DLB — cognitive onset before or within 1 yr of motor); - Alzheimer's (less hallucinations, less parkinsonism, less fluctuation); - Vascular dementia; - FTD; (9) Multidisciplinary: neurology, psychiatry, sleep medicine, primary care, family; (10) Long-term: progressive; survival often 5-8 yr"
+      },
+      {
+        "label": "C",
+        "text": "Typical antipsychotic"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Dementia with Lewy Bodies: fluctuating cognition + visual hallucinations + parkinsonism + RBD. Cholinesterase inhibitor (rivastigmine). AVOID typical/most atypical antipsychotics (severe neuroleptic sensitivity). Quetiapine/pimavanserin if essential. Melatonin for RBD. Levodopa cautious.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "McKeith DLB Consortium 2017"
+  },
+  {
+    "scenario": "ชายไทยอายุ 68 ปี — stepwise cognitive decline × 2 ปี (sudden worsening then plateaus, repeated 3 ครั้ง) — executive dysfunction prominent (planning, organization), gait disturbance (small-stepped, magnetic), urinary incontinence; history of multiple TIAs, HTN, DM, hyperlipidemia, smoker\n\nMMSE 21 (frontal-subcortical pattern: poor word generation, set-shifting)\nMRI: multiple lacunar infarcts + extensive periventricular white matter disease",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ignore vascular risk factors"
+      },
+      {
+        "label": "B",
+        "text": "Vascular Dementia / Vascular Cognitive Impairment (DSM-5 Major Neurocognitive Disorder due to vascular disease): (1) **Vascular risk factor modification = mainstay** (prevents progression): - **BP control** (target < 130/80 generally; individualize elderly); - **Glycemic control** in DM; - **Lipid management** (statin); - **Antiplatelet** (aspirin) for secondary prevention if applicable; - **Anticoagulation** if AFib (CHA2DS2-VASc); - **Smoking cessation**; - **Exercise + diet + weight + sleep**; (2) Cholinesterase inhibitor — modest benefit (less evidence than AD); donepezil, galantamine; memantine modest; (3) Treat depression (vascular depression common — frontal subcortical pattern); SSRI; (4) Non-pharmacologic: cognitive stimulation, structured routine, physical activity; (5) Address comorbid AD pathology (mixed dementia very common — most 'pure' vascular has AD component); (6) Fall prevention (gait, urinary urgency); (7) Caregiver education + support; (8) Advance planning + safety + driving assessment; (9) Long-term: progressive — stepwise (vascular events) or gradual (small vessel disease); (10) Multidisciplinary: neurology, primary care, geriatric, PT/OT, social work, caregiver; (11) Distinguish: Alzheimer's (insidious, episodic memory prominent); DLB (hallucinations, parkinsonism, fluctuations); FTD (behavioral/language)"
+      },
+      {
+        "label": "C",
+        "text": "Discharge no treatment"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Vascular Dementia: stepwise + risk factors. Vascular risk factor modification mainstay. Cholinesterase inhibitor modest. Treat vascular depression. Mixed dementia (AD + vascular) very common. Distinguish from AD/DLB/FTD.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AHA/ASA Vascular Cognitive Impairment"
+  },
+  {
+    "scenario": "ชายไทยอายุ 60 ปี × 2 ปี — early behavioral changes (disinhibition, socially inappropriate behavior, loss of empathy, apathy, perseveration, hyperorality — overeating sweets + new dietary preferences); memory + visuospatial relatively preserved early; family describes 'personality change'\n\nMMSE 25 (memory preserved early)\nMRI: frontotemporal atrophy\nNo stroke, no major depression",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cholinesterase inhibitor (donepezil)"
+      },
+      {
+        "label": "B",
+        "text": "Frontotemporal Dementia (FTD) — DSM-5 Major Neurocognitive Disorder due to FTD (behavioral variant — bvFTD: disinhibition, apathy, loss of empathy, perseveration/compulsions, dietary changes, executive dysfunction; primary progressive aphasia variants — semantic + non-fluent): (1) Confirm diagnosis: clinical + MRI/PET (frontotemporal atrophy/hypometabolism) + neuropsych testing + rule out psychiatric disorders (often misdiagnosed as depression, BP, OCD initially); (2) **NO disease-modifying treatment** — symptomatic only; (3) Symptomatic medication: - **SSRI** for behavioral symptoms (disinhibition, compulsive behaviors, irritability) — first-line; - **Trazodone** for behavior + sleep; - **Atypical antipsychotic** for severe behavioral (last-line — black box mortality elderly dementia); - **AVOID cholinesterase inhibitors** (not effective, may worsen) and **memantine** (not effective for FTD — unlike AD); (4) Non-pharmacologic: behavioral + environmental management (structure, routine, addressing triggers, redirecting), caregiver coaching; (5) Caregiver support essential — behavioral changes very challenging; FTD caregivers high burnout; FTD Association resources; (6) Safety: driving cessation (often impulsive), financial protection (impaired judgment), supervision, wandering; (7) Speech-language therapy for PPA variants; (8) Advance planning urgent — younger onset, rapid progression; capacity assessment; (9) Genetic counseling (30-50% familial — C9orf72, GRN, MAPT genes); (10) Multidisciplinary: behavioral neurology, psychiatry, speech-language, social work, caregiver support; (11) Long-term: progressive 5-10 yr; some forms shorter (ALS-FTD)"
+      },
+      {
+        "label": "C",
+        "text": "Memantine"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "No treatment"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Frontotemporal Dementia: behavioral variant (disinhibition, apathy, perseveration, hyperorality) or PPA. NO disease-modifying. SSRI/trazodone for behavior. AVOID cholinesterase inhibitor + memantine (not effective). Caregiver support critical. Genetic counseling (30-50% familial).",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "Rascovsky bvFTD criteria; Mesulam PPA"
+  },
+  {
+    "scenario": "ชายไทยอายุ 75 ปี Parkinson's disease × 8 ปี on carbidopa-levodopa + pramipexole — ขณะนี้มี visual hallucinations (sees people in house at night, recognizes them not real — minor hallucinations initially, progressing) + paranoid ideation (someone stealing things)\n\nMMSE 24 (mild cognitive impairment)\nNo delirium, no infection, no recent medication changes\nNo depression",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Haloperidol IM"
+      },
+      {
+        "label": "B",
+        "text": "Parkinson's Disease Psychosis (PDP — common in PD with cognitive impairment + dopaminergic therapy): (1) **Rule out delirium first** — infection, electrolytes, urinary retention, dehydration, polypharmacy; (2) **Medication review** — reduce or stop most likely offenders in this order: anticholinergics → amantadine → dopamine agonists (pramipexole, ropinirole) → MAO-B inhibitors → COMT inhibitors → minimize levodopa last (essential for motor); (3) **Optimize cognition**: cholinesterase inhibitor (rivastigmine — FDA approved PDD; reduces hallucinations + improves cognition); (4) **Antipsychotic only if essential**: - **Pimavanserin** (5-HT2A inverse agonist) — FDA approved for PDP — does NOT worsen motor — first-line; - **Quetiapine** low-dose alternative; - **Clozapine** low-dose effective but monitoring requirements; - **AVOID** typical antipsychotics + risperidone + olanzapine + most atypicals (worsen parkinsonism); (5) Non-pharmacologic: lighting (reduce shadows), simple environment, reassurance, caregiver education; (6) Comorbid: PDD (Parkinson's disease dementia — overlap with DLB pathology); depression (40-50% PD); anxiety; RBD; (7) Multidisciplinary: neurology (movement disorders), psychiatry, primary care; (8) Caregiver support; (9) Long-term: progressive; psychosis predicts nursing home placement"
+      },
+      {
+        "label": "C",
+        "text": "Stop carbidopa-levodopa"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Risperidone"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Parkinson's Disease Psychosis: rule out delirium → reduce offending medications in order → optimize cognition (rivastigmine) → antipsychotic only if essential (pimavanserin first-line, quetiapine/clozapine; AVOID typical/most atypical — worsen motor).",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "MDS PD Psychosis; Pimavanserin FDA"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 78 ปี recently widowed (6 mo ago) — depressed mood, anhedonia, fatigue, sleep disturbance, decreased appetite + weight loss 5kg, somatic complaints (pain, GI), social withdrawal, complaints of memory + concentration; passive SI\n\nNo prior psychiatric history\nMedical: HTN, DM (on metformin), mild CKD\nMMSE 26 (mild cognitive concerns)\nNo psychotic features\nGDS 12 (severe)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No treatment — natural grief"
+      },
+      {
+        "label": "B",
+        "text": "Late-Life Depression (MDD in elderly — often presents with somatic complaints, cognitive complaints — 'pseudodementia', anhedonia more than sadness): (1) Comprehensive workup: - Medical (TSH, B12, folate, electrolytes, CBC, renal/hepatic, vitamin D, medication review — many cause depression); - Cognitive assessment (depression can cause pseudodementia — reversible — but also coexist with dementia); - Distinguish from grief; (2) **SSRI first-line** — sertraline, escitalopram, mirtazapine (insomnia + weight loss bonus elderly); avoid paroxetine (anticholinergic) + citalopram > 20mg (QT, hyponatremia, elderly cap); SNRI also; bupropion alternative; **Start LOW, GO SLOW**; full effect 6-12 wk in elderly (longer than adult); (3) Psychotherapy — IPT (especially for late-life grief + role transition), CBT, problem-solving therapy, behavioral activation; effective for elderly (despite stereotypes); (4) ECT highly effective + safe in elderly + first-line for severe + suicidal + psychotic + medical instability; (5) Address comorbid medical conditions; treat pain; (6) Suicide risk **HIGH in elderly** (especially older men) — assess; (7) Social interventions: connection, peer support, senior centers; (8) Hyponatremia risk with SSRI in elderly (SIADH) — monitor Na; (9) Fall risk monitoring (SSRI, sedating meds); (10) Multidisciplinary: geriatric psychiatry, primary care, social work; (11) Long-term: maintenance often longer than younger adults; relapse high"
+      },
+      {
+        "label": "C",
+        "text": "TCA monotherapy"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Long-term benzodiazepine"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Late-Life Depression: often somatic + cognitive complaints + anhedonia. Comprehensive workup. SSRI first-line — start LOW, go SLOW. Watch hyponatremia, fall risk, anticholinergic. ECT very effective elderly. Suicide risk HIGH. Psychotherapy effective. Distinguish from dementia (can coexist).",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "APA Geriatric Depression"
+  },
+  {
+    "scenario": "ชายไทยอายุ 75 ปี recently retired, wife died 1 ปี ago, social isolation, chronic pain (osteoarthritis), declining health (recent CHF diagnosis), beginning cognitive concerns — มา OPD ตามที่ลูกพา; ผู้ป่วยกล่าว 'I'm a burden, family would be better off without me'; firearm in home\n\nPHQ-9: 18, GDS-15: 12\nNo specific plan but passive SI present",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge home without intervention"
+      },
+      {
+        "label": "B",
+        "text": "Elderly Suicide Risk — Multiple Risk Factors (older men HIGHEST suicide rate of any demographic; firearms predominant method): (1) **Comprehensive risk assessment** — protective + risk factors: - **Risk**: prior attempts, depression, chronic illness, pain, cognitive decline, social isolation, recent loss, hopelessness, burden perception, access to means (firearm here); - **Protective**: family connections (engage), purpose, religious beliefs, treatment engagement; (2) **Means restriction** = most evidence-based — **remove firearm from home** immediately (have family member temporarily store, gun safe with combination by other person, voluntary surrender to law enforcement); medication storage; (3) **Treat depression aggressively**: SSRI first-line + psychotherapy (IPT, CBT); ECT for severe; (4) **Address chronic pain**: integrative pain management, physical therapy, non-opioid medications, psychological strategies; (5) **Address social isolation**: senior community programs, family engagement, peer support, meaningful activities, volunteer; (6) **Address medical decline**: optimize care, palliative care if appropriate, advance care planning; (7) **Reduce burden perception**: family communication, find meaningful role, life review; (8) **Caregiver involvement**: education on warning signs, communication, removal of means; (9) **Safety planning** (Stanley-Brown): warning signs, internal coping, social distractions, contacts, professionals, means restriction; (10) **Frequent follow-up**; (11) Hospitalize if active ideation + plan + access; (12) **Address pain + dignity + autonomy** — palliative + hospice if terminal; (13) **Multidisciplinary**: geriatric psychiatry, primary care, social work, family, palliative care, pain medicine"
+      },
+      {
+        "label": "C",
+        "text": "Allow firearm in home"
+      },
+      {
+        "label": "D",
+        "text": "No follow-up"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Elderly Suicide: older men HIGHEST rate. Firearms predominant. Means restriction (remove firearm) most evidence-based. Treat depression aggressively (SSRI, ECT). Address pain, isolation, burden perception. Safety planning. Multidisciplinary. Caregiver involvement.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "USPSTF Suicide; CDC Suicide Elderly"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 75 ปี — chronic generalized anxiety × 2 ปี — excessive worry about health, family, finances; somatic sx (palpitations, GI, headache); poor sleep; PCP started alprazolam 0.5 mg TID 6 เดือนก่อน — ขณะนี้มี fall × 2, fracture wrist, cognitive complaints, family concerned\n\nGAD-7: 14\nMMSE 26 (mild)\nNo MDD criteria met\nBeers criteria flag benzodiazepine in elderly",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue alprazolam at higher dose"
+      },
+      {
+        "label": "B",
+        "text": "Generalized Anxiety + Inappropriate Benzodiazepine in Elderly (Beers Criteria — avoid BZD in elderly: falls, cognitive impairment, dependence): (1) **Taper benzodiazepine gradually** — long-term BZD in elderly increases falls, fractures, cognitive impairment, motor vehicle accidents, dependence; gradual taper 10-25% reduction every 2 weeks (longer if longer use); (2) **CBT for anxiety** in elderly — modified for cognitive + sensory needs; effective; (3) **SSRI/SNRI** as alternative — escitalopram, sertraline (lower fall risk, no dependence); start LOW go SLOW; (4) Buspirone alternative — no dependence, no sedation; slower onset; (5) Pregabalin alternative; (6) Address sleep — CBT-I; melatonin agonist; trazodone low-dose; AVOID Z-drugs (zolpidem — same risks as BZD in elderly); (7) Address underlying contributors: pain, medical conditions, medications causing anxiety (steroids, decongestants, caffeine), social isolation; (8) Lifestyle: exercise (gentle — tai chi, yoga, walking), relaxation, social engagement; (9) Comorbidity: depression (40%), cognitive impairment (anxiety can mimic + coexist), other anxiety disorders; (10) Family education + support; (11) Multidisciplinary: geriatric psychiatry, primary care, physical therapy (fall prevention), social work; (12) Long-term: chronic but treatable; avoid lifelong BZD"
+      },
+      {
+        "label": "C",
+        "text": "Long-term Z-drug"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "No treatment"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Geriatric Anxiety + inappropriate BZD: Beers criteria avoid BZD elderly (falls, cognition, dependence). Taper gradually. CBT + SSRI/SNRI/buspirone alternatives. CBT-I for sleep (AVOID Z-drugs same risks). Multidisciplinary including fall prevention.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "AGS Beers 2023; Cochrane"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 82 ปี Alzheimer's dementia (MMSE 14) ใน nursing home — recent escalation in agitation: yelling, hitting staff during care (bathing, dressing), wandering at night, pacing; family + staff requesting management\n\nNo acute medical change (UA negative, no constipation, no pain identified, no medication change recent)\nNo psychosis acutely",
+    "choices": [
+      {
+        "label": "A",
+        "text": "First-line haloperidol IM"
+      },
+      {
+        "label": "B",
+        "text": "Behavioral + Psychological Symptoms of Dementia (BPSD) — Non-Pharmacologic First-Line: (1) **Comprehensive assessment**: - **Medical**: rule out delirium (infection, electrolytes, urinary retention, pain, constipation, medication side effects, dehydration); - **Functional**: triggers (care procedures, time of day — sundowning, environment, sensory); - **Psychiatric**: depression (often presents as agitation in dementia), psychosis, anxiety; - **DICE algorithm**: Describe, Investigate, Create, Evaluate; (2) **Non-pharmacologic = first-line** (essential; reduces medication use): - **Address triggers** — care procedures gentle, predictable, explain, choice when possible; - **Environmental**: lighting (day/night cycle), noise reduction, familiar objects, structure; - **Music therapy** (personalized — strong evidence); - **Reminiscence**, art, pet therapy; - **Exercise**, walking, gardening; - **Caregiver training** — communication, validation, redirection; - **Sleep hygiene** (sundowning); (3) Address pain (often missed in dementia — assess + treat scheduled if suspected); (4) Address depression (SSRI — citalopram CitAD trial); (5) **Pharmacologic only if severe + non-pharmacologic insufficient + danger** (NEVER first-line): - **SSRI** (citalopram — modest evidence); - **Trazodone** for sleep + agitation; - **Atypical antipsychotic** (risperidone, olanzapine, quetiapine) for severe — **BLACK BOX warning increased mortality elderly with dementia** — risk-benefit + family discussion + lowest dose + shortest time + reassess; - **Brexpiprazole** FDA approved 2023 specifically for AD agitation; - **AVOID benzodiazepines** (worsen cognition, falls, paradoxical agitation); - **AVOID anticholinergics**; (6) Caregiver support + education + respite; (7) Multidisciplinary: geriatric psychiatry, primary care, nursing, OT, social work, family"
+      },
+      {
+        "label": "C",
+        "text": "Long-term benzodiazepine"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Restraints"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "BPSD: non-pharmacologic FIRST (rule out delirium, address triggers, environment, music therapy, caregiver training, treat pain). Pharmacologic only if essential — atypical antipsychotic black box mortality. Brexpiprazole FDA approved 2023 AD agitation. AVOID BZD + anticholinergic.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "CitAD trial; APA BPSD; DICE"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 22 ปี — subacute onset (3 wk) ของ psychiatric symptoms (psychosis, agitation, mood changes, catatonia) + neurological symptoms (seizures, dyskinesias, autonomic instability — BP fluctuations, hyperthermia, dysautonomia) + cognitive decline; admitted with diagnosis of 'first episode psychosis'\n\nMRI brain: mild abnormalities or normal\nLP: mild lymphocytic pleocytosis; CSF anti-NMDA receptor antibodies POSITIVE\nPelvic US: ovarian teratoma identified",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Antipsychotic monotherapy without immunotherapy"
+      },
+      {
+        "label": "B",
+        "text": "Anti-NMDA Receptor Encephalitis — Autoimmune Encephalitis Mimicking Psychiatric Disorder (young women predominantly, often paraneoplastic — ovarian teratoma; treatable): (1) **Tumor removal** — ovarian teratoma resection is curative + diagnostic confirmation in paraneoplastic cases; full search (transvaginal US, CT/MRI pelvis); (2) **Immunotherapy first-line**: - **IV methylprednisolone** 1g × 5 days; - **IVIG** 2g/kg over 5 days; - **Plasmapheresis** alternative; - first-line usually combined with steroid; (3) **Second-line if first-line fails (50%)**: rituximab, cyclophosphamide; (4) Long-term: mycophenolate, azathioprine; (5) **Symptomatic management**: - Antipsychotic for psychosis (BUT severe sensitivity to neuroleptics + NMS risk — careful, lowest dose, often quetiapine); - Benzodiazepine for catatonia + seizures; - Anti-epileptic for seizures; - Supportive ICU for autonomic instability; (6) **Diagnostic workup** all young patients with new-onset psychosis + neurological features: - Anti-NMDA antibodies (CSF more sensitive than serum); - Other autoimmune encephalitis antibodies; - LP, MRI, EEG; - Tumor workup (pelvic in women); (7) Recovery: prolonged (months-years); ~ 75% substantial recovery with treatment; (8) Multidisciplinary: neurology, psychiatry, ICU, gynecology, oncology; (9) Education: psychiatric sx can be initial presentation of organic disease"
+      },
+      {
+        "label": "C",
+        "text": "Discharge with first episode psychosis dx"
+      },
+      {
+        "label": "D",
+        "text": "Surgery only without immunotherapy"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Anti-NMDA Receptor Encephalitis: autoimmune; young women, often paraneoplastic (ovarian teratoma). Tumor removal + immunotherapy (steroid + IVIG/plasmapheresis). Second-line rituximab. Neuroleptic sensitivity. Workup young psychosis with neuro features. 75% recover.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "Graus Anti-NMDA criteria"
+  },
+  {
+    "scenario": "ชายไทยอายุ 42 ปี — father had Huntington's disease (died age 55); patient genetic test confirmed HD (CAG 45) — มาด้วย early psychiatric symptoms (depression, irritability, impulsivity, executive dysfunction) + early motor (subtle chorea) + cognitive complaints; family history of suicide (father attempted)\n\nNo current SI\nMMSE 27 (early)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No psychiatric treatment"
+      },
+      {
+        "label": "B",
+        "text": "Huntington's Disease — Early Psychiatric + Motor Presentation (autosomal dominant CAG repeat HTT gene; psychiatric sx often precede motor; high suicide rate): (1) **Comprehensive multidisciplinary care**: - **Neurology** (HD specialist); - **Psychiatry** (psychiatric sx mainstay of QoL impact); - Primary care, social work, OT/PT/SLP, genetic counseling, palliative; (2) **Psychiatric management**: - **Depression**: SSRI (sertraline, escitalopram); - **Anxiety**: SSRI; - **Irritability + aggression**: SSRI, mood stabilizer (valproate), atypical antipsychotic (risperidone, olanzapine — also helps chorea); - **Psychosis**: atypical antipsychotic (also chorea benefit); - **OCD**: SSRI (high dose); - **Sleep**: trazodone, melatonin; - **Suicide risk EXTREMELY HIGH** (× 5-10 general — particularly at diagnosis + early disease + just before disability) — assess frequently + safety planning + means restriction + family education + protective hospitalization if needed; (3) **Chorea**: tetrabenazine + deutetrabenazine + valbenazine (VMAT2 — FDA approved); also benefit some psychiatric sx; SE: depression, sedation, parkinsonism; (4) **Cognitive decline**: no specific treatment; supportive; (5) **Genetic counseling**: family planning (50% offspring risk autosomal dominant); pre-symptomatic testing protocols; (6) **Family support**: HDSA resources; sibling at risk; (7) **Advance planning**: while capacity preserved — POA, advance directives, financial; (8) **Palliative care** integration; (9) **Long-term**: progressive 15-20 yr; supportive care + symptom-focused; (10) **Address comorbid alcohol use**, common; (11) Patient + family education"
+      },
+      {
+        "label": "C",
+        "text": "Discharge no follow-up"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Punishment"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Huntington's Disease: AD CAG repeat HTT; psychiatric sx precede motor often. Multidisciplinary. SSRI for depression/anxiety, atypical antipsychotic for psychosis/aggression + chorea, tetrabenazine for chorea. SUICIDE RISK × 5-10. Genetic counseling. Advance planning.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "HSG; Walker Huntington's"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 60 ปี post-stroke (left hemisphere) 8 เดือนก่อน — sudden episodes of laughing or crying disproportionate to mood, triggered by minimal stimuli, distressing socially, not voluntary, mood between episodes essentially normal (not persistent depression)\n\nMRI: old left MCA infarct\nNot meeting MDD criteria\nDistinguish from depression (mood persistent vs episodic emotional outburst)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "SSRI for depression dose long course"
+      },
+      {
+        "label": "B",
+        "text": "Pseudobulbar Affect (PBA — involuntary emotional expression disorder; underlying neurologic injury — stroke, MS, ALS, TBI, dementia, PD): (1) **Dextromethorphan + quinidine (Nuedexta)** — FDA approved 2010 for PBA; quinidine inhibits CYP2D6 → increases dextromethorphan levels; reduces episodes 50%; monitor QT; (2) **SSRI/SNRI alternative** — sertraline, citalopram, fluoxetine; venlafaxine; lower doses than depression often effective; works rapidly (days-weeks unlike depression); (3) **TCA** (nortriptyline, amitriptyline) historical alternative; (4) Patient + family education: distinguishing PBA from depression — important for treatment + reducing stigma + social embarrassment; (5) Distinguish from: - Depression (persistent mood vs episodic outbursts); - Mania; - Anxiety; - Personality change; - Delirium; (6) Address underlying neurologic condition (stroke prevention, MS management, etc.); (7) Counseling for social impact + relationship effects; (8) Workplace/social accommodations if functional impact; (9) Multidisciplinary: neurology, psychiatry, primary care, speech-language (associated dysarthria), social work; (10) Long-term: chronic if underlying condition persists; treatment continues; spontaneous improvement variable"
+      },
+      {
+        "label": "C",
+        "text": "No treatment"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pseudobulbar Affect (PBA): involuntary episodic emotional expression disproportionate to mood, neurologic injury. Dextromethorphan + quinidine (Nuedexta) FDA approved. SSRI/SNRI alternative — rapid effect lower dose. Distinguish from depression (persistent vs episodic). Education + family.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "FDA Nuedexta; PRISM trial"
+  },
+  {
+    "scenario": "ชายไทยอายุ 70 ปี dementia (MMSE 20) admitted for sepsis from pneumonia — family wants ฟ ER tube + ICU; ผู้ป่วยปฏิเสธ medical care, says 'leave me alone, I want to go home'; medical team questioning capacity to refuse treatment\n\nMSE: oriented x1 (person), some confusion, can verbalize basic wishes but cannot recall information about treatment, cannot weigh risks/benefits",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Accept patient refusal without assessment"
+      },
+      {
+        "label": "B",
+        "text": "Decision-Making Capacity Assessment (capacity = specific decision, not global; can lack capacity for some decisions + retain for others; capacity may fluctuate): (1) **Four standards** (Appelbaum + Grisso): - **Understanding** — comprehends information about condition + treatment (this patient impaired); - **Appreciation** — recognizes how applies to own situation; - **Reasoning** — weighs risks + benefits + alternatives (impaired here); - **Express a choice** — communicates a stable preference; (2) **Capacity is decision-specific + situation-specific**: this patient may lack capacity to refuse life-saving treatment now but may have capacity for simpler decisions; (3) **Address modifiable factors**: - Treat delirium (sepsis here — patient delirious from medical illness); - Pain management; - Hearing/vision aids; - Family presence; - Simplify language; - Cultural + linguistic adaptation; - Reassess after these; (4) **Surrogate decision-making** if persistently lacks capacity: - **Advance directive** (if exists); - **Healthcare proxy / POA** if designated; - **Substituted judgment** — what would patient choose if able? (preferred standard if known); - **Best interest** standard if unknown; - Family hierarchy varies by jurisdiction; - Ethics consultation if conflict; (5) **Beneficence + autonomy balance**: respect patient values + best interest; (6) **Document carefully**: capacity assessment process, conclusions, surrogate decision-maker; (7) **Multidisciplinary**: psychiatry consultation typical, ethics, palliative care if appropriate; (8) **Court involvement** rare — for guardianship if family conflict, no surrogate, contested"
+      },
+      {
+        "label": "C",
+        "text": "Override patient against family"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Capacity Assessment: decision-specific + situation-specific. Four standards (understanding, appreciation, reasoning, express choice). Address modifiable (delirium, pain, sensory). Surrogate if lacks capacity (advance directive > POA > substituted judgment > best interest). Document. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "Appelbaum NEJM; APA"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 70 ปี — subjective + objective cognitive complaints × 1 ปี — mild memory difficulties, minor word-finding, no functional impairment in ADL/IADL (still drives, manages finances, takes medications correctly); seeking opinion + intervention\n\nMMSE 27 (mild)\nMoCA 24 (mild impairment)\nNeuropsychological testing: mild memory below age expected, other domains intact\nMRI: mild bilateral hippocampal atrophy, no stroke",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Diagnose dementia + start anti-amyloid without workup"
+      },
+      {
+        "label": "B",
+        "text": "Mild Cognitive Impairment (Mild Neurocognitive Disorder — DSM-5: modest cognitive decline + preserved functional independence + not delirium or other psychiatric — distinct from dementia which has functional impairment): (1) **Workup for reversible/treatable causes**: - **Medical**: TSH, B12, folate, vitamin D, syphilis/HIV if risk, metabolic, depression screen, medication review (anticholinergic burden!); - **Imaging**: MRI brain; - **Biomarkers** if appropriate: amyloid PET, CSF tau/Aβ, blood-based emerging — important for AD vs other; - Genetic testing (APOE) — controversial, mostly research; (2) **Treat reversible**: depression, thyroid, B12, sleep apnea, medications; (3) **Disease-specific treatment if AD biomarker positive**: - **Anti-amyloid mAb** (lecanemab, donanemab — FDA approved early AD with amyloid; slow progression modestly + ARIA risk — careful patient selection); - Cholinesterase inhibitors NOT generally recommended in MCI (not approved, not effective at MCI stage); (4) **Non-pharmacologic**: - **Exercise** (aerobic) — best evidence for cognition; - **Cognitive engagement** + stimulation; - **Mediterranean/MIND diet**; - **Social engagement**; - **Sleep optimization**; - **Manage cardiovascular risk factors** (BP, lipids, glucose, smoking); - **Hearing aids if hearing loss** (modifiable risk per Lancet Commission); - **Limit alcohol**; (5) **Follow longitudinally** — ~ 10-15%/yr progress to dementia; some remain stable or revert; (6) **Advance planning** while capacity preserved: POA, advance directive, financial planning, driving assessment plan; (7) **Family education**; (8) **Multidisciplinary**: primary care, neurology, geriatrics; (9) **Avoid medications worsening cognition**: anticholinergics (TCA, oxybutynin, diphenhydramine, benztropine), benzodiazepines, opioids high-dose"
+      },
+      {
+        "label": "C",
+        "text": "No intervention"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Discharge without follow-up"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Mild Cognitive Impairment: cognitive decline + preserved function. Workup reversible. Biomarkers for AD vs other. Anti-amyloid mAb selected early AD with amyloid+. NO cholinesterase at MCI. Lifestyle (exercise, diet, sleep, social, CV risk). Follow longitudinally. Avoid anticholinergics.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "Lancet Commission 2024; FDA Lecanemab"
+  },
+  {
+    "scenario": "ชายไทยอายุ 50 ปี TRD × 2 ปี — fatigue prominent, daytime sleepiness, morning headache, partner reports loud snoring + observed apneas; BMI 32, neck circumference 17 inch, HTN; depression failed 3 antidepressants\n\nEpworth Sleepiness Scale 18 (severe)\nSTOP-BANG: 6 (high risk OSA)\nPolysomnography: severe OSA, AHI 45",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue antidepressant alone — ignore OSA"
+      },
+      {
+        "label": "B",
+        "text": "Treatment-Resistant Depression with Underlying Severe Obstructive Sleep Apnea — Address Comorbidity (OSA contributes to depression, treatment resistance, cognition, CV risk): (1) **CPAP therapy** — first-line for severe OSA; titrate; improves depression (effect size moderate), cognition, daytime function, BP, CV outcomes; (2) **Address sleep apnea before/during depression treatment** — TRD may resolve or respond better to antidepressant with OSA treated; (3) **Weight loss** — multimodal (diet, exercise, behavioral) — modest OSA improvement; bariatric surgery for severe obesity; GLP-1 agonists (semaglutide) — emerging evidence improves OSA + weight; (4) **Alternative OSA treatments if CPAP-intolerant**: - Oral appliance (mild-moderate); - Hypoglossal nerve stimulation (Inspire); - Positional therapy (positional OSA); - Surgical (uvulopalatopharyngoplasty — limited efficacy; maxillomandibular advancement effective); (5) **Avoid CNS depressants**: benzodiazepines, opioids, alcohol — worsen OSA + respiratory drive; (6) **Continue antidepressant** — once OSA treated may respond better; consider activating antidepressant (bupropion); (7) **Address comorbid**: HTN, T2DM, CV — high overlap; (8) **Screen all TRD + chronic fatigue patients for OSA** — common + reversible contributor; (9) **Multidisciplinary**: sleep medicine, psychiatry, primary care, ENT/oral surgery if surgical option; (10) Lifestyle: sleep hygiene, exercise, weight"
+      },
+      {
+        "label": "C",
+        "text": "Benzodiazepine for sleep"
+      },
+      {
+        "label": "D",
+        "text": "Surgery (UPPP) first-line"
+      },
+      {
+        "label": "E",
+        "text": "No treatment"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "OSA + TRD: address OSA — CPAP first-line. Improves depression + cognition + CV. Weight loss adjunct. Alternatives (oral appliance, Inspire). AVOID CNS depressants. Screen TRD/chronic fatigue for OSA. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "AASM CPAP; Edwards Sleep"
+  },
+  {
+    "scenario": "ชายไทยอายุ 25 ปี × 3 ปี — excessive daytime sleepiness despite adequate night sleep, sudden sleep attacks, episodes of bilateral muscle weakness triggered by laughter/strong emotion (cataplexy — knees buckle, jaw drops, falls), occasional sleep paralysis on waking + hypnagogic hallucinations\n\nEpworth Sleepiness Scale 18\nPSG + MSLT: sleep onset REM periods × 3, mean sleep latency 6 min (< 8) — diagnostic\nCSF hypocretin-1 low — confirms type 1",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No treatment — naps only"
+      },
+      {
+        "label": "B",
+        "text": "Narcolepsy Type 1 (with cataplexy; hypocretin/orexin deficiency — autoimmune destruction of hypothalamic orexin neurons): (1) **Stimulants for daytime sleepiness**: - **Modafinil/armodafinil** — first-line; less abuse potential than amphetamine; - **Stimulants** (methylphenidate, amphetamine — Vyvanse, Adderall) — effective, controlled substance; - **Solriamfetol** — newer DAT/NET inhibitor; - **Pitolisant** — histamine H3 inverse agonist (also helps cataplexy); (2) **Cataplexy treatment**: - **Sodium oxybate (Xyrem) / oxybate** — GHB derivative; FDA approved for cataplexy + EDS; nocturnal dosing; controlled substance, abuse potential; expensive; - **SNRI** (venlafaxine, atomoxetine), **SSRI** (fluoxetine) — REM-suppressing, reduce cataplexy + sleep paralysis + hallucinations; - **TCA** alternative; - **Pitolisant** also; (3) **Scheduled naps** (15-20 min, 1-2×/d) — non-pharmacologic adjunct; (4) **Sleep hygiene** + adequate night sleep; (5) **Driving safety counseling** — sleep attacks + cataplexy risk; legal implications; (6) **Address comorbidity**: depression (common — chronic illness + neurobiology), obesity (high — orexin role in metabolism), CV risk; (7) **Education + support**: Narcolepsy Network; school/workplace accommodations (504/ADA); (8) **Distinguish**: idiopathic hypersomnia, OSA, REM sleep disorders, insufficient sleep, mood disorders; (9) **Multidisciplinary**: sleep medicine, psychiatry, primary care; (10) **Long-term**: chronic; treatment improves QoL substantially; (11) **Pregnancy planning** — medication adjustments needed"
+      },
+      {
+        "label": "C",
+        "text": "Long-term benzodiazepine"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Narcolepsy Type 1: cataplexy + EDS + hypocretin deficiency. Stimulants/modafinil/pitolisant/solriamfetol for EDS. Oxybate or SNRI/SSRI/TCA for cataplexy. Scheduled naps. Driving safety. Multidisciplinary. Chronic.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "AASM Narcolepsy"
+  },
+  {
+    "scenario": "ชายไทยอายุ 65 ปี × 2 ปี — bed partner reports patient acting out dreams during sleep (punching, kicking, yelling, falling out of bed) — injuries to self + partner; complex motor behaviors during REM\n\nPSG: REM sleep without atonia + dream enactment behaviors — diagnostic\nNo recent medication changes\nFamily noting subtle motor slowing recently\nDAT scan abnormal",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No treatment — let dream out"
+      },
+      {
+        "label": "B",
+        "text": "REM Sleep Behavior Disorder (RBD — DSM-5; loss of REM atonia → dream enactment; major prodrome of synucleinopathy — Parkinson's, DLB, MSA): (1) **Safety measures essential** — partner injury risk + falls + injuries: - **Bedroom safety** — soft objects around bed, padded floor, mattress on floor, remove sharp objects + weapons from room; - **Separate beds/rooms** if injuries; - Bed rails (carefully — can cause more injury); (2) **Medication**: - **Melatonin 3-12 mg HS** — first-line in many guidelines now; safer profile; effective; - **Clonazepam 0.25-2 mg HS** — historically first-line; effective; risks elderly (falls, sedation, cognition); - **Other**: pramipexole limited; rivastigmine (especially with synucleinopathy); (3) **Discontinue contributors**: SSRI, SNRI, MAOI, beta-blockers (worsen RBD); discuss risk-benefit if psychiatric indication strong; (4) **Disclose synucleinopathy risk** — RBD precedes Parkinson's/DLB/MSA in ≥ 80% of idiopathic RBD over 10-15 yr; sensitive conversation + counseling + lifestyle modifications + monitoring; (5) **Monitor for parkinsonism + cognitive decline** — annual neurologic + cognitive exam; (6) **Address comorbidity**: anxiety/depression, OSA (frequent), sleep hygiene; (7) **Distinguish**: NREM parasomnia (sleepwalking — first half of night, no dream recall), nocturnal seizure, sleep terror, psychogenic; PSG diagnostic; (8) **Multidisciplinary**: sleep medicine, neurology, psychiatry; (9) **Patient + family education**; (10) **Long-term**: chronic; management of behaviors + monitoring for evolving neurodegenerative disease"
+      },
+      {
+        "label": "C",
+        "text": "Long-term high-dose benzodiazepine ignoring elderly risk"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "REM Sleep Behavior Disorder: dream enactment, loss of REM atonia, PSG diagnostic. Safety measures essential. Melatonin (now often first-line) or clonazepam. Discontinue SSRI/SNRI contributors. Major synucleinopathy prodrome (Parkinson's, DLB, MSA — 80% in 10-15 yr). Monitor.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AASM RBD; Schenck RBD"
   }
 ]
