@@ -2878,5 +2878,965 @@
     "board_topic": "msk_nontrauma",
     "board_age_group": "adult",
     "reference_source": "AOSSM Hamstring; AAOS"
+  },
+  {
+    "scenario": "ชายไทยอายุ 64 ปี ปวด hip ขวา 5 ปี ค่อย ๆ แย่ลง ปวดมาก + ขัด + ขยับยาก, FAILED 12 เดือน conservative (PT, NSAIDs, weight loss, intra-articular steroid)\n\nBMI 28, no major comorbidity\nPE: groin pain, internal rotation severely limited, Trendelenburg gait\n\nX-ray hip: severe hip OA — joint space obliterated, subchondral cyst, osteophyte, sclerosis, no AVN, no acetabular dysplasia",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue NSAIDs indefinitely"
+      },
+      {
+        "label": "B",
+        "text": "Advanced Primary Hip OA Failed Conservative — Total Hip Arthroplasty (THA): (1) **primary THA gold standard** — \"operation of the century\" — excellent pain relief + function + > 95% 10-year survival; (2) preoperative optimization: medical comorbidities (HbA1c < 7.5-8, smoking cessation 4 weeks, BMI < 40 ideal), dental evaluation, MRSA screening, anemia optimization; (3) **surgical approach** — posterior (most common, higher dislocation), direct anterior (faster early recovery, learning curve, LFCN injury), direct lateral (low dislocation, abductor weakness limp); no clear superiority long-term; (4) **bearing surfaces**: ceramic-on-cross-linked polyethylene most common modern; metal-on-metal largely abandoned (ALVAL, ARMD); ceramic-on-ceramic (squeaking 1-3%, fracture rare); (5) cementless femoral + acetabular fixation (modern standard for most), cemented for severely osteoporotic elderly; (6) post-op rehab: WBAT same day, PT, ambulation; (7) hip precautions for posterior approach 6-12 weeks (avoid flexion > 90°, adduction, internal rotation); (8) DVT prophylaxis (aspirin, LMWH, DOAC); (9) infection prevention (antibiotic prophylaxis cefazolin within 1 hour, TXA reduces transfusion); (10) long-term: dislocation 1-3%, infection 1%, aseptic loosening, periprosthetic fracture, ALTR — counsel; (11) FDA implant tracking; (12) follow-up X-ray to monitor wear/loosening"
+      },
+      {
+        "label": "C",
+        "text": "Hip arthrodesis first"
+      },
+      {
+        "label": "D",
+        "text": "Hemiarthroplasty preferred over THA in healthy 64"
+      },
+      {
+        "label": "E",
+        "text": "Bedrest"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Primary THA: gold standard advanced hip OA failed conservative. > 95% 10-yr survival. Optimize medical comorbidities preop (HbA1c, BMI, smoking, MRSA, dental). Modern bearing: ceramic-on-XLPE. Cementless fixation standard. Posterior most common (dislocation risk). TXA + DVT prophylaxis. Long-term complications counseled. \"Operation of the century\".",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "AAHKS; AAOS; Learmonth Lancet 2007"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 72 ปี s/p left THA 15 ปีก่อน เริ่มปวดต้นขา + groin 1 ปี ปวดมากขึ้นเมื่อ weight bear + standing up, ไม่ตอบสนอง NSAIDs\n\nPE: groin + thigh pain, antalgic gait, no warmth, no draining sinus\n\nX-ray hip: cementless femoral stem with radiolucency Gruen zones 1, 2, 7, 5, calcar resorption, distal stem subsidence 4 mm vs prior X-ray — aseptic loosening femoral component, acetabular cup intact\nLab: CRP 5 (normal), ESR 18 (normal), aspiration negative for infection",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue NSAIDs no surgery"
+      },
+      {
+        "label": "B",
+        "text": "Aseptic Femoral Loosening Post-THA (15 ปี — late) — Revision Femoral Component: (1) **rule out infection first** — ALL painful THA must have CRP + ESR + hip aspiration before assuming aseptic (MSIS criteria) — done: negative; (2) workup: bilateral hip X-ray with comparison to immediate post-op, CT to assess bone stock + cup version; metal-ion levels if MoM; (3) **revision THA — femoral component** with options based on remaining bone stock: (a) **proximally porous-coated stem** (if bone stock adequate), (b) **distally fixed extended stem (Wagner SL, Restoration Modular, fluted tapered stem)** for proximal bone deficiency, (c) impaction grafting + cemented stem (rarely used), (d) custom stem for severe deficiency; (4) Paprosky femoral defect classification guides; (5) extended trochanteric osteotomy (ETO) often needed to remove well-fixed stem; (6) cup assessment intra-op — revise if loose, malpositioned, or worn; (7) cells with abductor mechanism + soft tissue evaluation; (8) higher risk of complications vs primary (infection 3-5%, dislocation 5-10%, fracture, instability); (9) post-op restrictions + protected WB; (10) physical therapy"
+      },
+      {
+        "label": "C",
+        "text": "Bedrest indefinitely"
+      },
+      {
+        "label": "D",
+        "text": "Cast immobilization"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotics empirically without workup"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Painful THA: ALWAYS rule out infection first (CRP + ESR + aspiration — MSIS). Aseptic femoral loosening → revision. Paprosky classification guides. Distally fixed stem for proximal bone loss. ETO often needed. Higher complication rate vs primary. Cup assessed concurrently. Modern revision good outcomes but inferior to primary.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "AAHKS; Paprosky Classification"
+  },
+  {
+    "scenario": "ชายไทยอายุ 68 ปี s/p right TKA 8 weeks ago เริ่มปวด + บวม + แดง ข้อเข่าขวา 5 วัน + ไข้ต่ำ 37.8°C + drainage from incision\n\nPE: warmth + erythema knee, mild effusion, tender, draining sinus, no neurologic deficit\nLab: WBC 13,000, CRP 145, ESR 88\nKnee aspiration: WBC 28,000 (PMN 92%), gram stain negative, culture pending\n\nMSIS criteria: 1 major (sinus tract communicating with prosthesis) + minor criteria meet — periprosthetic joint infection (PJI), acute postoperative (< 3 months)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Oral antibiotics outpatient discharge"
+      },
+      {
+        "label": "B",
+        "text": "Acute Postoperative Periprosthetic Joint Infection (PJI < 3 months from surgery) — Confirmed MSIS: (1) **debridement, antibiotics, and implant retention (DAIR)** — appropriate for acute postoperative (< 4-6 weeks from index surgery, or acute hematogenous with < 3 weeks symptoms) — well-fixed implants + susceptible organism + viable soft tissue: open thorough debridement + irrigation + **polyethylene liner exchange** + retention of metal components + 6-week IV organism-specific antibiotic (after intra-op cultures) → followed by oral suppression; success 50-70%; (2) **2-stage revision** — gold standard for chronic PJI (> 4-6 wk from surgery or chronic symptoms > 3 wk) or failed DAIR: (a) remove all components + thorough debridement + antibiotic-loaded cement spacer (articulating preferred for knee), (b) IV antibiotic 6 weeks, (c) antibiotic-free interval + verify eradication (normalized CRP/ESR, negative aspiration), (d) reimplantation; success 85-95%; (3) 1-stage revision — gaining favor in selected cases with low-virulence organism + healthy host; (4) hold antibiotic until intra-op cultures (unless septic); empiric vancomycin + cefepime/ceftriaxone; (5) chronic suppression for non-revisable patient; (6) infectious disease consult; (7) optimize host (DM, nutrition, smoking)"
+      },
+      {
+        "label": "C",
+        "text": "Long-term opioid no surgery"
+      },
+      {
+        "label": "D",
+        "text": "Discharge no antibiotics"
+      },
+      {
+        "label": "E",
+        "text": "Single-stage replacement always in chronic PJI"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "PJI: orthopedic emergency. MSIS criteria diagnosis. ACUTE postoperative (< 4-6 wk) or acute hematogenous (< 3 wk symptoms) + well-fixed implant → DAIR (irrigation + poly exchange + retention + 6 wk IV abx). CHRONIC or failed DAIR → 2-stage revision (gold standard). Hold antibiotics until cultures. ID consult. Host optimization.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "MSIS; IDSA PJI 2013"
+  },
+  {
+    "scenario": "ชายไทยอายุ 58 ปี active เล่นกอล์ฟ ปวดเข่าด้านในขวา 2 ปี ดีขึ้นน้อยกับ conservative\n\nBMI 27, ROM 0-130°, no significant instability\nPE: tender medial joint line, varus 5°, intact ACL, full ROM, no flexion contracture, no lateral compartment pain, no patellofemoral symptoms\n\nX-ray standing knee + Rosenberg + Skyline: isolated medial compartment OA — joint space obliterated medial, preserved lateral + patellofemoral, mild osteophytes",
+    "choices": [
+      {
+        "label": "A",
+        "text": "TKA always preferred"
+      },
+      {
+        "label": "B",
+        "text": "Isolated Medial Compartment OA + Active Patient + Specific Criteria — Unicompartmental Knee Arthroplasty (UKA): (1) UKA candidate criteria (Kozinn + Scott + modern criteria): (a) isolated medial (or lateral) compartment OA confirmed clinically + radiographically + intra-operatively, (b) intact ACL (anterior stability essential), (c) correctable varus deformity (< 10-15°), (d) ROM > 90° flexion, (e) flexion contracture < 10°, (f) no significant patellofemoral OA (mild patellofemoral OK), (g) BMI no longer absolute contraindication; activity level no longer contraindication (modern evidence allows active patients); age — modern UKA performed across age spectrum; (2) **advantages vs TKA**: more bone preservation, preserves cruciates → more native kinematics + proprioception, smaller incision, less blood loss, faster recovery, more \"natural\" feel, lower transfusion, lower cardiopulmonary risk; (3) **disadvantages**: higher revision rate at 10-15 years (5-10% vs 3-5% TKA), revision to TKA easier than failed TKA revision; (4) **TKA alternative** for multicompartmental, deformity, instability, advanced patellofemoral; (5) high tibial osteotomy (HTO) alternative for younger patients (< 50-55) with isolated medial + correctable malalignment + want to preserve native joint; (6) outcome optimization: high-volume surgeon, modern implant design, robotic-assisted (controversial benefit)"
+      },
+      {
+        "label": "C",
+        "text": "Knee arthrodesis"
+      },
+      {
+        "label": "D",
+        "text": "Bedrest 6 weeks"
+      },
+      {
+        "label": "E",
+        "text": "Long-term opioid"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "UKA: isolated single-compartment OA with intact cruciates + correctable deformity + ROM preserved. Better functional outcome + faster recovery vs TKA but higher revision rate at 10-15 yr. HTO alternative for young (< 55) + isolated medial + correctable. TKA for multicompartmental, instability, severe deformity. Patient selection key. Modern criteria more inclusive.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "AAHKS; Kozinn Scott"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 75 ปี ปวด + อ่อนแรงไหล่ขวา ยกแขนเหนือศีรษะไม่ได้ 5 ปี (chronic massive rotator cuff tear → cuff tear arthropathy)\n\nPE: pseudoparalysis (active elevation < 90° but full passive ROM), positive impingement, drop arm, weakness external rotation, no infection signs\n\nX-ray shoulder: superior migration of humeral head (acromiohumeral distance 4 mm — normal > 7 mm), Hamada IV (acetabularization acromion), glenohumeral OA — cuff tear arthropathy",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Anatomic TSA without cuff"
+      },
+      {
+        "label": "B",
+        "text": "Cuff Tear Arthropathy with Pseudoparalysis — Reverse Total Shoulder Arthroplasty (rTSA): (1) **reverse TSA indicated** — revolutionized treatment of cuff tear arthropathy: (a) reverses normal shoulder anatomy — semi-constrained ball-on-socket at glenoid + cup on humerus, (b) shifts center of rotation medially + distally + tensions deltoid, (c) deltoid replaces cuff function for elevation, (d) does NOT require functional cuff (unlike anatomic TSA which requires intact cuff); (2) **indications**: cuff tear arthropathy, irreparable massive cuff tear with pseudoparalysis, failed rotator cuff repair with cuff arthropathy, complex proximal humerus fracture in elderly (no tuberosity healing concern), revision arthroplasty, **chronic locked dislocation**, rheumatoid arthritis with cuff deficiency; (3) prerequisites: functional deltoid, intact axillary nerve, adequate bone stock glenoid (or augmented baseplate), acceptable infection workup; (4) **outcomes**: predictable pain relief + improved elevation (typically 120-150° from baseline pseudoparalysis), external rotation less predictable (consider latissimus dorsi transfer for ER deficiency), better than hemiarthroplasty for cuff arthropathy; (5) **complications**: instability (1-5%), infection (Cutibacterium acnes — \"propi\"), scapular notching (less with newer designs), acromial stress fracture (5-10%), neurologic, periprosthetic fracture; (6) post-op: sling, gradual deltoid activation + ROM; (7) age previously > 70 ปี, modern indications expanding to younger active patients selectively; (8) prosthesis survival > 90% at 10 years"
+      },
+      {
+        "label": "C",
+        "text": "Hemiarthroplasty preferred for cuff arthropathy"
+      },
+      {
+        "label": "D",
+        "text": "Conservative no surgery indefinite"
+      },
+      {
+        "label": "E",
+        "text": "Arthrodesis shoulder"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Reverse TSA: revolutionary for cuff tear arthropathy + pseudoparalysis. Doesn't need cuff — uses deltoid. Indications expanded: massive irreparable cuff tear, proximal humerus fracture in elderly, revision, locked dislocation, RA. Predictable elevation. Complications: notching, instability, fracture, infection (P. acnes). > 90% 10-yr survival. Age limits relaxing.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "ASES; AAOS Shoulder Arthroplasty"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 78 ปี s/p left THA 10 ปีก่อน หกล้มในห้องน้ำ ปวด thigh + hip ซ้าย เดินไม่ได้\n\nPE: shortening + external rotation left leg, palpable crepitation thigh, NV intact\n\nX-ray femur: spiral periprosthetic femur fracture around tip of cementless femoral stem, stem appears loose (subsidence, radiolucency), no acetabular fracture — **Vancouver B2** (fracture around stem with loose stem, adequate bone stock)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cast immobilization 12 weeks"
+      },
+      {
+        "label": "B",
+        "text": "Vancouver B2 Periprosthetic Femoral Fracture (around stem, loose stem, adequate bone stock) — Revision Surgery: (1) **operative revision** — Vancouver B2 mandates revision of loose stem + fracture fixation: (a) **revision to long-stemmed femoral implant** (modular tapered fluted stem — Wagner SL, Restoration Modular) that bypasses fracture by ≥ 2 cortical diameters + obtains distal fixation in intact bone; (b) cerclage cables/wires for fracture reduction; (c) consider strut allograft augmentation for cortical defects; (2) Vancouver classification: **A**(trochanteric — non-op for AG; ORIF for AL with avulsion of vastus origin), **B1** (around stem, stable stem, good bone — ORIF with locked plate ± cerclage, retain stem), **B2** (around stem, loose stem, good bone — revise long stem), **B3** (around stem, loose stem, poor bone — revise long stem + augmentation/allograft/proximal femoral replacement); **C** (distal to stem — ORIF locked plate, retain stem); (3) pre-op assessment: stem fixation (subsidence, radiolucency, calcar resorption), bone stock, soft tissue, host comorbidities; (4) DVT prophylaxis; (5) post-op WB depends on fixation; (6) PT + multidisciplinary geriatric care; (7) osteoporosis treatment; (8) fall prevention; (9) mortality + complications high in elderly (similar to hip fracture)"
+      },
+      {
+        "label": "C",
+        "text": "Discharge home with crutches"
+      },
+      {
+        "label": "D",
+        "text": "ORIF without revising loose stem"
+      },
+      {
+        "label": "E",
+        "text": "Above-knee amputation"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Periprosthetic femur fracture post-THA: Vancouver classification (B is most common — at stem). B1 stable stem = ORIF + retain. B2 loose stem + good bone = revise to long stem. B3 loose + poor bone = revise + augmentation/proximal femur replacement. C distal to stem = ORIF. Bypass fracture 2 cortical diameters. High complication + mortality similar to hip fracture.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "Vancouver Classification; AAOS"
+  },
+  {
+    "scenario": "ชายไทยอายุ 42 ปี อดีตนักรักบี้ ปวด hip ซ้าย 3 ปี (advanced OA secondary to old acetabular fracture) ต้องการกลับมาเล่นกีฬา active, ผู้ป่วยตัวสูง 180 cm bone stock ดี\n\nDiscussion of options THA vs hip resurfacing\n\nX-ray hip: end-stage OA, adequate femoral head + neck bone stock, no significant cysts, no severe deformity",
+    "choices": [
+      {
+        "label": "A",
+        "text": "THA only option for any patient"
+      },
+      {
+        "label": "B",
+        "text": "Young Active Male with Advanced Hip OA + Adequate Bone Stock — Hip Resurfacing as Option: (1) **discuss THA vs hip resurfacing arthroplasty (HRA)** with patient — shared decision; (2) **hip resurfacing advantages**: (a) preserves femoral head + neck bone stock (revision-friendly), (b) larger head + lower dislocation rate vs THA, (c) more natural hip biomechanics + restoration of hip offset, (d) potentially better function for high-demand activity (some studies — equivalent return to sport), (e) easier revision to THA if needed; (3) **hip resurfacing disadvantages/risks**: (a) **metal-on-metal bearing** — adverse local tissue reaction (ALTR), pseudotumor, metal ion elevation (cobalt, chromium), ALVAL, raised concern in females + small components → most series report better outcomes in **males with larger femoral head** (> 50 mm); (b) femoral neck fracture (1-2% within first year); (c) limited implants on market (recalls — DePuy ASR, Birmingham hip exception remains); (d) require pre-op bone density adequate; (4) **patient selection criteria (Birmingham hip)**: male > female, age < 65 ปี typically, large femoral head (> 50 mm component), good bone density (no severe osteoporosis), no severe femoral head deformity/cysts, no metal allergy, no renal impairment; (5) **modern trend** — declining HRA use globally + favoring THA with cross-linked polyethylene + ceramic-on-ceramic in young active patients (less concern with metal ions, similar functional outcomes); (6) discuss with patient + informed consent + metal ion monitoring"
+      },
+      {
+        "label": "C",
+        "text": "Hip arthrodesis"
+      },
+      {
+        "label": "D",
+        "text": "Conservative indefinitely"
+      },
+      {
+        "label": "E",
+        "text": "Steroid injection only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Hip resurfacing arthroplasty: bone-preserving option for young active males with large femoral head. Birmingham hip remaining major implant. Risks: ALTR, pseudotumor, metal ion elevation, femoral neck fracture. Modern trend → declining use, favoring THA with XLPE/ceramic-on-ceramic. Strict patient selection (male, large head, no osteoporosis). Shared decision-making.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "AAHKS; Birmingham Hip Resurfacing"
+  },
+  {
+    "scenario": "ชายไทยอายุ 55 ปี s/p right THA 6 เดือนก่อน ปวด + ยับยั้ง ROM ของ hip ขวา (loss of flexion to 80° from prior 110°) — ankylosing trend\n\nPE: marked decreased ROM, palpable mass around hip\n\nX-ray hip: extensive heterotopic ossification around hip (Brooker grade III — bone islands with < 1 cm between bone surfaces), implants well-fixed",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Immediate aggressive excision without delay"
+      },
+      {
+        "label": "B",
+        "text": "Heterotopic Ossification (HO) Post-THA Brooker Grade III + Functional ROM Restriction: (1) **observation initially** — HO progression usually slows by 6-12 months; bone scan to assess metabolic activity (\"hot\" bone scan = active formation, not ready for excision); (2) **prophylaxis at index surgery** to prevent — high risk patients (male, prior HO, ankylosing spondylitis, DISH, post-traumatic, posterior approach): (a) **indomethacin 25 mg TID × 6 weeks** post-op (NSAID — inhibits osteoblast differentiation), or selective COX-2; (b) **single-fraction radiation therapy** 6-8 Gy within 72 hours post-op (alternative — equivalent efficacy, avoids GI/renal effects of NSAIDs); (3) **surgical excision** considered for symptomatic HO causing functional limitation: (a) wait until HO mature (12-18 months) — bone scan shows decreased activity + serum alkaline phosphatase normalized → reduces recurrence; (b) wide excision + capsulotomy + restore ROM; (c) **prophylaxis post-excision** essential (otherwise recurrence near 100%) — indomethacin or single-dose radiation 6-8 Gy within 24-72 hours; (4) physical therapy for ROM restoration; (5) screen for ankylosing spondylitis, DISH, neurogenic causes (SCI, TBI) when severe/recurrent; (6) **acute traumatic HO** (post-burn, brain injury, SCI) — etidronate historic, indomethacin, radiation; modern bisphosphonate + radiation"
+      },
+      {
+        "label": "C",
+        "text": "No further treatment ever"
+      },
+      {
+        "label": "D",
+        "text": "Total joint revision"
+      },
+      {
+        "label": "E",
+        "text": "Above-knee amputation"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Heterotopic ossification post-THA: more common in male, posterior approach, prior HO, AS, DISH. Prophylaxis: indomethacin 6 weeks OR single-dose radiation 6-8 Gy < 72h — for high-risk patients. Excision delayed 12-18 months until mature (bone scan, alk phos). MUST give prophylaxis post-excision (otherwise recurs near 100%). PT for ROM.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "AAOS; Brooker Classification"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 70 ปี ปวดเข่าทั้ง 2 ข้าง 8 ปี ค่อย ๆ แย่ลง ปวดตอนเดิน + ขึ้นบันได, BMI 35, FAILED conservative > 2 ปี (PT, NSAIDs, weight loss, steroid injection)\n\nPE: bilateral varus deformity 12°, flexion contracture 10°, ROM 10-100°, crepitation, no instability\nHbA1c 7.2%, no significant cardiac/renal disease\n\nX-ray standing: severe bilateral tricompartmental OA (medial > lateral > patellofemoral) — Kellgren-Lawrence IV",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue conservative indefinitely"
+      },
+      {
+        "label": "B",
+        "text": "Bilateral End-Stage Tricompartmental Knee OA Failed Conservative — Total Knee Arthroplasty (TKA): (1) **TKA indicated** — proven excellent pain relief + function + > 90% 15-year survival; (2) preoperative optimization: HbA1c < 7.5-8 (some centers strict < 7), BMI consideration (some centers BMI > 40 require weight loss but evidence evolving — Obesity Society + AAHKS — BMI not absolute contraindication but increased complication risk), MRSA screening, smoking cessation, dental clearance, medical clearance; (3) **staged vs simultaneous bilateral TKA**: staged (8-12 weeks apart) safer profile (lower mortality + complications); simultaneous in selected healthy patient with adequate support; (4) **surgical technique**: standard PCL-substituting (posterior-stabilized) vs cruciate-retaining design (similar outcomes), patellar resurfacing (controversial), tourniquet + TXA (reduces transfusion 30%), antibiotic prophylaxis cefazolin within 1 hour, periarticular injection (multimodal — reduces opioid); (5) post-op rehabilitation: early WBAT + PT same day (rapid recovery protocols / enhanced recovery after surgery — ERAS), CPM controversial; (6) DVT prophylaxis (aspirin, LMWH, DOAC); (7) multimodal pain management (avoid opioid-only); (8) **outcomes** — excellent pain relief + function in 85-90% (10-15% with persistent unexplained pain — counsel); (9) complications: PJI (1%), DVT/PE, periprosthetic fracture, aseptic loosening, instability, polyethylene wear; (10) **patient education + expectation management** key"
+      },
+      {
+        "label": "C",
+        "text": "Bilateral simultaneous TKA always preferred"
+      },
+      {
+        "label": "D",
+        "text": "Knee arthrodesis first"
+      },
+      {
+        "label": "E",
+        "text": "Long-term opioid"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Primary TKA: gold standard end-stage knee OA failed conservative. > 90% 15-yr survival. Optimize preop (HbA1c, BMI, smoking, MRSA, dental). Staged > simultaneous bilateral generally. PCL-substituting vs cruciate-retaining similar. TXA + tourniquet + multimodal pain + ERAS. 10-15% with persistent unexplained pain — manage expectations.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "AAHKS; AAOS TKA"
+  },
+  {
+    "scenario": "ชายไทยอายุ 52 ปี ปวดเข่าด้านหน้าซ้าย 4 ปี (isolated patellofemoral OA — post-traumatic from prior patellar fracture) ปวดตอนขึ้นบันได + เดินลงทางลาด + นั่งนาน, FAILED conservative 2 ปี\n\nPE: tender patellofemoral joint + retropatellar crepitation, mild Q-angle, no tibiofemoral pain, no instability\n\nX-ray + skyline + MRI: isolated patellofemoral OA, preserved tibiofemoral compartments, severe patellofemoral cartilage loss + osteophyte",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Total patellectomy always best"
+      },
+      {
+        "label": "B",
+        "text": "Isolated Patellofemoral Arthritis Failed Conservative — Treatment Options: (1) continued conservative (PT — VMO + hip strengthening + flexibility, NSAIDs, brace, taping, weight loss, activity modification, steroid injection); (2) **arthroscopic debridement** — NOT effective for isolated OA without mechanical symptoms (USPSTF + OARSI against); (3) **patellofemoral arthroplasty (PFA)** — modern indication: isolated patellofemoral OA without tibiofemoral or significant trochlear dysplasia in younger patient; preserves tibiofemoral compartments + cruciate ligaments + meniscus; modern onlay designs (vs older inlay) have better outcomes; (4) **tibial tubercle osteotomy (TTO) — anteromedialization (Fulkerson)** — improves patellofemoral kinematics if maltracking + cartilage damage lateral facet; (5) **TKA** — definitive if isolated PF OA progresses or for older patients (PF OA component of OA); better long-term predictability; (6) **avoid total patellectomy** — historic procedure with poor outcomes (loss of extensor mechanism leverage, persistent pain + weakness); (7) cartilage restoration (microfracture, OATS, ACI/MACI) — selective for focal defects in young; (8) shared decision-making + counsel; (9) patient age + activity level + tibiofemoral status + obesity all factor"
+      },
+      {
+        "label": "C",
+        "text": "Arthroscopic debridement first for isolated OA"
+      },
+      {
+        "label": "D",
+        "text": "Conservative indefinitely regardless of symptoms"
+      },
+      {
+        "label": "E",
+        "text": "Bedrest 6 weeks"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Isolated patellofemoral OA: options vary. PFA — modern indication for isolated PF OA in younger active patient (preserves rest of joint). TTO anteromedialization for maltracking. TKA definitive for older or progressing OA. AVOID total patellectomy (poor outcomes). Arthroscopic debridement ineffective for pure OA. Cartilage restoration for focal defects.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "AAOS; Fulkerson PFA"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 50 ปี พิมพ์งานมาก ปวด + ชาฝ่ามือ + นิ้วโป้ง + ชี้ + กลาง โดยเฉพาะตอนกลางคืน 6 เดือน ตื่นมาสะบัดมือดีขึ้น\n\nPE: positive Tinel + Phalen + carpal compression test, normal pinch, no significant thenar atrophy yet, normal sensation 5th finger\n\nNCS: median nerve conduction slowed at carpal tunnel — distal motor latency > 4.5 ms + sensory latency abnormal — moderate CTS",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Long-term oral steroid"
+      },
+      {
+        "label": "B",
+        "text": "Moderate Carpal Tunnel Syndrome (CTS) Without Severe Atrophy: (1) **conservative first-line trial** for mild-moderate CTS without thenar atrophy or severe NCS findings: (a) **night splinting** in neutral wrist (most effective conservative — moderate evidence — 12-week trial), (b) activity modification + ergonomic adjustments, (c) **corticosteroid injection** (short-term relief 6-12 weeks — useful diagnostic-therapeutic), (d) NSAIDs (limited evidence), (e) PT — nerve gliding exercises, tendon gliding (limited evidence), (f) hand therapy; (2) **avoid prolonged oral steroids** + ineffective treatments (B6, ultrasound, laser — weak/no evidence per AAOS); (3) **surgical carpal tunnel release** indicated: (a) failure of 6-12 weeks conservative + significant symptoms affecting QoL, (b) thenar atrophy + weakness (urgent — irreversible if delayed), (c) severe CTS on NCS (axonal loss), (d) acute CTS (trauma, burns, pregnancy) — urgent release; (4) **surgical options**: open carpal tunnel release (gold standard, longer scar, equivalent outcomes), **endoscopic CTR** (faster early recovery, slightly higher transient nerve injury, equivalent long-term outcomes), mini-incision; (5) post-op: early ROM, return to light activity 1-2 weeks, heavy 4-6 weeks; (6) outcomes excellent > 90% symptomatic relief; (7) screen comorbidities (DM, hypothyroid, RA, amyloidosis, pregnancy, obesity)"
+      },
+      {
+        "label": "C",
+        "text": "Discharge no treatment"
+      },
+      {
+        "label": "D",
+        "text": "Wrist arthrodesis"
+      },
+      {
+        "label": "E",
+        "text": "B6 supplementation high dose as primary treatment"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "CTS: most common upper extremity compression neuropathy. Conservative — night splinting most effective, steroid injection short-term, activity modification. Surgery (CTR) for failed conservative, thenar atrophy (urgent), severe NCS, acute. Open vs endoscopic similar long-term. Screen comorbidities (DM, hypothyroid, RA, amyloid). Outcomes > 90%.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AAOS CTS CPG 2016"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 55 ปี DM2 underlying ปวดนิ้วกลางขวา + ติดขัด 4 เดือน เริ่มมี locking + popping ตอนงอ + เหยียดนิ้ว ตอนนี้บางครั้งต้องใช้มืออีกข้างช่วยเหยียด\n\nPE: palpable nodule volar A1 pulley level metacarpal head 3rd finger, painful triggering on flexion-extension, mild flexion contracture beginning\n\nDx: stenosing flexor tenosynovitis (trigger finger) right middle finger — Quinnell grade III (locked, requires passive extension)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Always surgical release first line"
+      },
+      {
+        "label": "B",
+        "text": "Trigger Finger Quinnell Grade III in Diabetic: (1) **corticosteroid injection** into flexor tendon sheath (A1 pulley level) — first-line for most trigger fingers (60-90% resolution; less effective in diabetics — 50-60%; consider up to 2-3 injections); (2) **splinting** — MCP extension splint (PIP/DIP free) for 6-8 weeks effective for mild cases — moderate evidence; (3) NSAIDs + activity modification; (4) **surgical A1 pulley release** indicated: failure of 2-3 steroid injections + splinting, severe locking, persistent symptoms, multiple fingers, diabetic (lower steroid response): (a) **open A1 pulley release** (gold standard, small incision, excellent outcomes > 95%), (b) percutaneous needle release (faster, alternative — less common in Thailand); (5) **diabetic considerations**: lower steroid injection response, higher recurrence, may need earlier surgery; control HbA1c; (6) **screen other tendinopathies** common in DM (CTS, Dupuytren, frozen shoulder, stiff hand syndrome — \"cheiroarthropathy\"); (7) post-op: immediate motion + scar management; (8) **pediatric trigger thumb** (Notta's nodule, flexion contracture IP joint) — many resolve spontaneously by age 1-3; surgical release at age 1-3 if persistent"
+      },
+      {
+        "label": "C",
+        "text": "Discharge no treatment"
+      },
+      {
+        "label": "D",
+        "text": "Long-term oral steroid"
+      },
+      {
+        "label": "E",
+        "text": "Cast immobilization 12 weeks"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Trigger finger (stenosing flexor tenosynovitis): A1 pulley constriction. Steroid injection first-line (60-90% — lower in diabetics 50-60%, up to 2-3 injections). Splinting moderate evidence. Surgery (open A1 release) for failed injection — > 95% success. Diabetics need earlier surgery + screen other diabetic tendinopathies. Pediatric trigger thumb — observe to age 1-3.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "AAOS; Quinnell Grading"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 32 ปี postpartum 3 เดือน ปวดด้านนอกข้อมือซ้ายโคนนิ้วโป้ง 6 สัปดาห์ ปวดมากขึ้นเมื่ออุ้มลูก + บีบ + ยกของ\n\nPE: tender + swelling first dorsal compartment (over radial styloid), positive Finkelstein test (passive ulnar deviation of wrist with thumb in fist reproduces pain), no neurologic deficit\n\nDx: De Quervain tenosynovitis (\"new mother thumb\") — APL + EPB tenosynovitis",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Surgical release first line for all"
+      },
+      {
+        "label": "B",
+        "text": "De Quervain Tenosynovitis Postpartum (\"Mother Thumb\"): (1) **conservative first-line**: (a) **thumb spica splint** (radial gutter spica including IP free) 4-6 weeks — moderate evidence; (b) activity modification (avoid repetitive thumb abduction + ulnar wrist deviation, reposition baby holding), (c) NSAIDs (caution if breastfeeding — ibuprofen safest), (d) ice; (2) **corticosteroid injection** into first dorsal compartment — highly effective (60-90% resolution); cautions: skin atrophy, depigmentation, fat necrosis (postpartum patients more sensitive); subsheath of EPB may need separate injection (anatomical variant — septum between APL + EPB in 30-60%); (3) **surgical release of first dorsal compartment** for failure of 2 injections + splinting: open release, identify + protect superficial radial nerve, release ALL subcompartments including any EPB subsheath (failure to release subsheath = surgical failure); (4) **postpartum cases** often resolve when stop nursing (hormonal contribution); (5) **bilateral involvement common** postpartum; (6) screen RA + inflammatory arthritis if atypical; (7) outcomes excellent > 90% with adequate treatment"
+      },
+      {
+        "label": "C",
+        "text": "Long-term oral steroid"
+      },
+      {
+        "label": "D",
+        "text": "Discharge no treatment"
+      },
+      {
+        "label": "E",
+        "text": "Cast immobilization 12 weeks long-arm"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "De Quervain: APL + EPB tenosynovitis. Postpartum/mothers common (\"mother thumb\"). Conservative: thumb spica splint + NSAIDs (caution breastfeeding). Steroid injection highly effective (60-90%) — beware EPB subsheath separate compartment in 30-60%. Surgery for failed conservative — release ALL subcompartments, protect superficial radial nerve. Often resolves spontaneously postpartum.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "AAOS; Green's Hand Surgery"
+  },
+  {
+    "scenario": "ชายไทยอายุ 65 ปี Nordic descent ค่อย ๆ เกิดก้อนแข็งฝ่ามือ + นิ้วงอเข้าหาฝ่ามือ 2 ปี ตอนนี้ไม่สามารถวางมือราบบนโต๊ะได้\n\nPE: palpable longitudinal cords ฝ่ามือ → 4th + 5th finger MCP + PIP flexion contracture: 4th MCP 30°, 5th MCP 40° + PIP 30°, positive **Hueston tabletop test**, no skin breakdown\n\nDx: Dupuytren contracture (palmar fibromatosis) — MCP > 30° + PIP contracture",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Always observation regardless of severity"
+      },
+      {
+        "label": "B",
+        "text": "Dupuytren Contracture with Positive Hueston Tabletop Test — Intervention Indicated: (1) **observation acceptable** for early/mild without functional impairment (nodules only, no significant cord, no contracture, contracture < 30°); (2) **intervention indicated** when: (a) positive tabletop test (cannot lay hand flat), (b) MCP contracture > 30°, (c) any PIP contracture > 15-20° (PIP harder to correct, residual deformity common — earlier intervention), (d) functional impairment + patient desire; (3) **treatment options**: (a) **needle aponeurotomy/fasciotomy (NA — percutaneous)** — minimally invasive, lower morbidity, faster return, higher recurrence (50-65% at 5 years); good for MCP > PIP, cords > nodules, single cord; outpatient procedure; (b) **collagenase Clostridium histolyticum (CCH) injection** — Xiaflex — injection of collagenase into cord + manipulation 24-48h later; equivalent results to NA; not available in all settings; (c) **open limited fasciectomy** — gold standard — better long-term outcomes, lower recurrence (20-30% at 5 yr), more morbidity, longer recovery; (d) **dermofasciectomy + skin graft** — recurrent disease or aggressive Dupuytren diathesis; (e) **PIP arthroplasty/amputation** — end-stage with non-functional finger; (4) **Dupuytren diathesis** (younger onset, bilateral, ectopic — Ledderhose plantar, Peyronie's, knuckle pads, family history, ethnic — Nordic) → higher recurrence; (5) post-op: splinting, hand therapy, ROM; (6) recurrence universal — counsel patients; (7) avoid surgery if not significantly limiting function"
+      },
+      {
+        "label": "C",
+        "text": "Total hand arthrodesis"
+      },
+      {
+        "label": "D",
+        "text": "Long-term steroid injection palm"
+      },
+      {
+        "label": "E",
+        "text": "Above-elbow amputation"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Dupuytren contracture: palmar fibromatosis. Intervention for positive tabletop test, MCP > 30°, PIP > 15-20°. Options: NA (minimally invasive, higher recurrence), collagenase, open fasciectomy (gold standard, lower recurrence). PIP harder to correct — earlier intervention. Dupuytren diathesis (Nordic, young, bilateral, ectopic) → higher recurrence. Splint + hand therapy post-op.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "ASSH; Hueston"
+  },
+  {
+    "scenario": "ชายไทยอายุ 28 ปี โดนคมมีดบาดฝ่ามือซ้าย 4 ชั่วโมงก่อน volar surface นิ้วชี้ — wound 1.5 cm มี active bleeding\n\nPE: wound volar PIP joint level (Zone II — \"no man's land\" — between A1 pulley + FDS insertion), inability to flex DIP (FDP cut) + inability to flex PIP with adjacent fingers held (FDS cut), normal sensation digital nerves both sides, capillary refill 2 s\n\nDx: complete flexor tendon laceration (both FDS + FDP) Zone II + intact digital nerves + adequate vascular supply",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Suture skin only no tendon repair"
+      },
+      {
+        "label": "B",
+        "text": "Flexor Tendon Laceration Zone II (Both FDS + FDP) — Operative Repair: (1) **operative primary repair within 24-72 hours preferred** (acute) or delayed primary 1-2 weeks (subacute) — better outcomes; > 4-6 weeks requires staged reconstruction (silicone Hunter rod → tendon graft); (2) **surgical technique**: bring proximal cut end down (often retracted to palm — must retrieve carefully), repair with core suture (modified Kessler, Strickland, 4-strand or 6-strand cruciate/Tang) + epitendinous running suture, preserve pulleys A2 + A4 (functional — sliding fulcrum); repair FDS + FDP both (preserves intrinsic strength of FDS); (3) **digital nerve repair** if cut concurrently (microsurgical 8-0 or 9-0 nylon epineural); (4) **post-op rehabilitation critical** — early protected motion (Duran passive, Kleinert active extension with passive flexion via rubber band traction, or **modern early active motion protocols**) under expert hand therapy → reduces adhesions + improves tendon glide; (5) **avoid total immobilization** > 3 weeks (causes adhesions); (6) **avoid full active grasp** × 6 weeks (rupture risk); (7) **antibiotic prophylaxis** (single dose cefazolin); (8) **tetanus update**; (9) **fight bite/animal bite** specific (amoxicillin-clavulanate, debridement); (10) **complications**: tendon rupture (5-10%), adhesions requiring tenolysis, stiffness, neuroma; (11) outcomes Strickland classification post-op; (12) Zone II historically poor outcomes — \"no man's land\" — modern early motion + suture techniques improved"
+      },
+      {
+        "label": "C",
+        "text": "Discharge no surgery"
+      },
+      {
+        "label": "D",
+        "text": "Cast immobilization 12 weeks no motion protocol"
+      },
+      {
+        "label": "E",
+        "text": "Amputation finger"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Flexor tendon Zone II laceration: \"no man's land\". Primary repair < 24-72h optimal. Core suture (Kessler/Strickland 4-strand or modern 6-strand) + epitendinous + preserve A2/A4 pulleys + repair both FDS + FDP. Early protected motion (modern early active) prevents adhesions. Antibiotic + tetanus. Outcomes improving. Hand therapy critical post-op.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "ASSH; Tang Hand Surgery"
+  },
+  {
+    "scenario": "ชายไทยอายุ 24 ปี ประตูปิดทับปลายนิ้วกลางขวา ปวด + บวม + เลือดออกใต้เล็บ + เล็บแยกออก partial 50% lacerated nail + visible subungual hematoma 70%\n\nPE: nail plate avulsed partial, nail bed laceration visible, tuft fracture distal phalanx on X-ray, intact NV, no flexor tendon injury\n\nX-ray: small tuft fracture distal phalanx (open — communicates with nail bed laceration)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge no treatment hematoma"
+      },
+      {
+        "label": "B",
+        "text": "Nail Bed Laceration + Subungual Hematoma + Tuft Fracture (Open Distal Phalanx): (1) **digital block anesthesia**; (2) **remove nail plate** (carefully with Freer elevator) ถ้า nail bed laceration apparent + > 50% subungual hematoma — historically advised, modern evidence challenges nail removal for intact nail with isolated hematoma; (3) **trephination** of small (< 50%) hematoma with intact nail using heated paper clip or electrocautery for analgesia (no advantage to drainage with intact nail per recent evidence); (4) **nail bed laceration repair** using **6-0 absorbable suture (chromic gut, Vicryl Rapide)** under loupe magnification — meticulous approximation; alternative — dermabond (skin glue) for simple lacerations (comparable outcomes — faster, less painful); (5) **replace nail or substitute** (foil, Reston foam, silicone) into nail fold as **eponychial stent** to prevent synechiae + maintain eponychial fold; (6) **tuft fracture management**: open fracture (communicating with nail bed) → antibiotic prophylaxis cefazolin/cephalexin 24 hours; usually stable + nail bed repair sufficient; pinning rarely needed; (7) **tetanus update**; (8) splint distal IP × 2 weeks; (9) follow-up 7-14 days; (10) counseling: nail regrowth 3-6 months, may grow abnormally (ridges, deformity, hooked); (11) avoid prolonged antibiotics + extensive debridement; (12) **Seymour fracture** (pediatric — Salter-Harris I/II of distal phalanx with nail bed injury, mistaken for mallet) — emergent reduction + nail bed repair + pin (high infection risk if missed)"
+      },
+      {
+        "label": "C",
+        "text": "Long-term antibiotic 2 weeks oral"
+      },
+      {
+        "label": "D",
+        "text": "Amputation finger"
+      },
+      {
+        "label": "E",
+        "text": "Cast forearm 12 weeks long-arm"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Nail bed injury: digital block → remove nail → repair laceration with 6-0 absorbable (or dermabond) → eponychial stent (nail or substitute) → splint. Open tuft fracture (communicating) — short course antibiotics. Modern evidence — intact nail with subungual hematoma trephination alone sufficient. Pediatric Seymour fracture: emergent reduction + nail bed repair + pin. Nail regrowth 3-6 months.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "ASSH"
+  },
+  {
+    "scenario": "ชายไทยอายุ 35 ปี s/p ORIF both-bone forearm fracture 24 ชั่วโมงก่อน เริ่มปวดมากขึ้นใน cast + ชาปลายนิ้ว + ปวดมากเมื่อ passive extension นิ้ว\n\nPE: cast tight + opens → forearm tense + extremely tender, severe pain with passive finger extension (stretch of compartment), paresthesia median + ulnar distribution, finger pulses palpable, capillary refill 3 s\nCompartment pressure forearm: 50 mmHg, BP 110/70 (DBP 70 — perfusion pressure = 70-50 = 20 mmHg — critical)\n\nDx: forearm acute compartment syndrome post-ORIF",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge with cast looser"
+      },
+      {
+        "label": "B",
+        "text": "Acute Forearm Compartment Syndrome — Emergent Fasciotomy: (1) **immediate cast/dressing removal** + bandage release; (2) limb at heart level (NOT elevated — reduces perfusion); (3) IV fluid + maintain BP; (4) pain control; (5) **emergent forearm fasciotomy** within hours (irreversible after 6-8 hours): (a) **volar fasciotomy** (Henry approach) — curvilinear incision from medial epicondyle across antecubital fossa (S-shape lacertus + bicipital aponeurosis release) extending to wrist → carpal tunnel release; release superficial + deep flexor compartments + mobile wad (brachioradialis, ECRL/ECRB); (b) **dorsal fasciotomy** — straight incision dorsal forearm releasing extensor compartment (often required); (c) consider mobile wad release; (6) **leave wounds open + VAC dressing** — secondary closure or skin grafting 5-7 days later; (7) **treat underlying cause** (fracture stabilization, hematoma evacuation); (8) **monitor rhabdomyolysis** (CK, myoglobinuria) → IV fluid + bicarbonate + mannitol; AKI risk; (9) **tetanus** prophylaxis; (10) **long-term complications**: Volkmann's ischemic contracture (claw hand from FDP + FPL fibrosis), nerve injury (median > ulnar), CRPS, chronic pain; (11) **Volkmann's contracture treatment** chronic: tendon lengthening, infarct excision, free functional muscle transfer (gracilis); (12) multidisciplinary: ortho + hand + plastic + ICU"
+      },
+      {
+        "label": "C",
+        "text": "Elevate limb high above heart"
+      },
+      {
+        "label": "D",
+        "text": "Diuretics IV"
+      },
+      {
+        "label": "E",
+        "text": "Above-elbow amputation"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Forearm compartment syndrome: clinical diagnosis. Pain out of proportion + passive stretch pain key. Pressure > 30 mmHg or ΔP < 30 mmHg → emergent fasciotomy. Volar + dorsal release + mobile wad + carpal tunnel. Open wounds + VAC + delayed closure. Volkmann's contracture sequel if missed (claw hand). Rhabdo + AKI screen. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "ASSH; AAOS"
+  },
+  {
+    "scenario": "ชายไทยอายุ 30 ปี โรงงาน เครื่องตัดนิ้วโป้งซ้ายขาดที่ระดับ proximal phalanx (clean cut) นำส่งรพ. ภายใน 2 ชั่วโมง พร้อม amputated thumb เก็บถูกต้อง (gauze ชุ่มน้ำเกลือ + ถุงพลาสติก + แช่น้ำแข็ง — ไม่แตะน้ำแข็งโดยตรง)\n\nPE: clean amputation thumb proximal phalanx level, bleeding controlled with pressure + tourniquet, no other injuries, distal hand viable, healthy patient no comorbidity, non-smoker\n\nIschemia time: warm 2h, then cold preservation 2h",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge with revision amputation always"
+      },
+      {
+        "label": "B",
+        "text": "Acute Traumatic Thumb Amputation — Replantation Strongly Indicated: (1) **thumb replantation indication very strong** เพราะ thumb essential for hand function (40% of hand function) — replant for nearly all thumb amputations even with marginal candidacy; (2) **other strong indications**: multiple digit, pediatric (any level), forearm/wrist/palm-level amputation, sharp/clean amputation, motivated patient; (3) **relative contraindications**: single finger distal to FDS insertion (poor functional gain — except thumb), severe crush/avulsion, prolonged warm ischemia (> 6h digit, > 12h hand), severe systemic illness, mental health prohibiting compliance, smokers (relative — counsel cessation), self-inflicted; (4) **transport**: amputated part — wrap in saline-moistened gauze → seal in plastic bag → place on ice (NOT direct ice — cold injury); cold ischemia tolerance: digit 12-24 hours, hand/forearm 6-12 hours; (5) **operative**: bone shortening + fixation (K-wire, screw), tendon repair (flexor + extensor), arterial anastomosis (1-2 arteries — vein graft if needed), 2 dorsal vein anastomoses, nerve repair, skin closure (loose, may need graft); microsurgical anastomosis with operating microscope; (6) post-op: anticoagulation (aspirin, heparin, dextran), warming, no caffeine/nicotine, leech therapy for venous congestion, monitoring (color, capillary refill, temperature, doppler); (7) survival rates: thumb 70-90%, multiple digit 65-85%, single non-thumb 50-80%; (8) revision amputation alternative if not replantable (preserve length, optimal stump, prosthesis); (9) hand therapy 3-12 months"
+      },
+      {
+        "label": "C",
+        "text": "Replant after 24 hours warm ischemia"
+      },
+      {
+        "label": "D",
+        "text": "Discard amputated part"
+      },
+      {
+        "label": "E",
+        "text": "Above-elbow amputation"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Thumb amputation: strong indication for replantation (40% of hand function). Transport amputated part: saline gauze → plastic bag → on ice (not direct). Cold ischemia 12-24h digit, 6-12h hand. Replantation: bone fixation → tendon → 1-2 artery → 2 veins → nerve. Post-op anticoagulation + leech + monitoring. Survival 70-90% thumb. Hand therapy 3-12 months.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "ASSH; Replantation"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 28 ปี ก้อนที่หลังข้อมือขวา 6 เดือน ค่อย ๆ โตขึ้น ไม่ค่อยปวด แต่กังวล cosmesis + ปวดเล็กน้อยเมื่อทำงาน\n\nPE: 2 cm soft mobile mass over dorsal wrist (scapholunate region), well-defined, transilluminate + (light passes through), not pulsatile, no neurologic deficit, no overlying skin changes\n\nUS: anechoic cystic structure 2 cm with no internal vascular flow communicating with dorsal scapholunate joint — dorsal ganglion cyst",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Immediate excision all ganglion cysts"
+      },
+      {
+        "label": "B",
+        "text": "Dorsal Wrist Ganglion Cyst — Mostly Conservative: (1) **reassurance + observation** — most common: ganglion cysts may resolve spontaneously (50% in adults, even higher in children); benign, no malignant potential, may fluctuate in size; counsel; (2) **aspiration with large-bore needle + steroid injection** — moderate success (cure 30-50%, recurrence common 50-70%); useful for symptomatic relief temporarily, diagnostic; cellular components reveal clear gelatinous fluid (mucopolysaccharide); (3) **avoid \"home remedies\"** — striking with book (Bible therapy) — outdated, can cause iatrogenic injury; (4) **surgical excision** indicated for: (a) persistent symptomatic ganglion (pain, weakness, limitation of activities), (b) cosmetic concern after counseling, (c) failed aspiration with recurrence + symptoms, (d) atypical features suggesting other diagnosis; (5) **surgical technique**: complete excision including capsular attachment (often scapholunate ligament — dorsal — or palmar carpal ligaments); arthroscopic excision modern alternative (smaller scar, similar recurrence ~10-20%); open ~5-15% recurrence; (6) **occult dorsal ganglion** — small intraosseous or intra-articular — may cause wrist pain without palpable mass; MRI diagnosis; (7) ulnar-side wrist pain workup if atypical — TFCC, ECU; (8) **mucous cyst** (DIP joint, associated with Heberden node OA) — surgical excision + osteophyte removal; (9) counsel — recurrence even after surgery 5-20%"
+      },
+      {
+        "label": "C",
+        "text": "Strike with book (Bible therapy)"
+      },
+      {
+        "label": "D",
+        "text": "Long-term oral steroid"
+      },
+      {
+        "label": "E",
+        "text": "Amputation finger"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Ganglion cyst: most common hand mass. Benign. 50% spontaneous resolution in adults. Observation primary management. Aspiration + steroid for symptomatic (high recurrence). Avoid Bible therapy. Surgery for persistent symptomatic or cosmesis — excise capsular attachment. Recurrence 5-20% surgery. Mucous cyst (DIP OA) different. Atypical → other workup.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "ASSH"
+  },
+  {
+    "scenario": "ชายไทยอายุ 50 ปี ปวด + ชาด้านในข้อศอกขวา + นิ้วก้อย + ครึ่ง 4th finger ulnar side 6 เดือน อาการแย่ลง เริ่มมีความอ่อนแรง grip + hand intrinsics\n\nPE: positive Tinel at cubital tunnel, positive elbow flexion test, decreased sensation small finger + ulnar 4th finger, weakness FDI + DI + adductor pollicis (positive Froment sign), beginning hypothenar atrophy, no claw hand yet\n\nNCS: ulnar nerve conduction velocity slowed at elbow < 50 m/s (normal > 60), motor latency prolonged, evidence axonal loss",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Long-term steroid injection cubital tunnel"
+      },
+      {
+        "label": "B",
+        "text": "Cubital Tunnel Syndrome (Ulnar Neuropathy at Elbow) Moderate-Severe with Weakness + Atrophy: (1) **conservative trial 3-6 months** for mild without significant motor deficit: (a) activity modification (avoid prolonged elbow flexion + leaning on elbow), (b) **night splinting** in extension (block elbow flexion > 45°), (c) padding ulnar nerve, (d) NSAIDs; (2) **avoid corticosteroid injection at cubital tunnel** — high risk nerve injury, limited efficacy; (3) **surgical decompression** indicated: (a) failure of 3-6 months conservative + persistent symptoms, (b) **motor weakness, atrophy, severe NCS findings** — earlier surgery (irreversible damage if delayed > 6-12 months with axonal loss), (c) severe pain affecting QoL; (4) **surgical options**: (a) **in situ decompression (simple decompression)** — open or endoscopic — modern preferred for most cases (similar outcomes vs transposition with less morbidity per multiple RCTs and meta-analyses), (b) **anterior transposition** (subcutaneous, intramuscular, submuscular) — historic gold standard, reserved for: subluxating ulnar nerve, prior surgery with kinking, Cubitus valgus deformity, post-traumatic deformity, (c) **medial epicondylectomy** — alternative, less common; (5) post-op: early ROM, return to activity progressively; (6) **outcomes** — better with mild-moderate; advanced with atrophy may not recover fully despite surgery — counsel realistic expectations; (7) screen DM + thyroid + nerve disorders (CMT)"
+      },
+      {
+        "label": "C",
+        "text": "Immediate transposition all patients"
+      },
+      {
+        "label": "D",
+        "text": "Discharge no treatment"
+      },
+      {
+        "label": "E",
+        "text": "Cast immobilization extension 12 weeks"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cubital tunnel: 2nd most common compression neuropathy. Conservative (splinting, activity mod) for mild. Surgery for failed conservative + severe (weakness, atrophy). Avoid steroid injection (nerve risk). In situ decompression preferred over transposition (similar outcomes, less morbidity). Transposition for subluxating nerve, deformity. Severe + atrophy → may not fully recover.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AAOS Ulnar Neuropathy Elbow"
+  },
+  {
+    "scenario": "เด็กหญิงแรกเกิด 2 สัปดาห์ คลอด breech, มี family history DDH (mother) ตรวจในคลินิกเด็ก\n\nPE: positive Ortolani test (relocation \"clunk\" of dislocated hip into acetabulum on abduction) + positive Barlow test (provokes posterior dislocation with adduction + posterior pressure) ของ left hip, asymmetric thigh skin folds, no leg length discrepancy obvious yet\n\nUS hip (preferred imaging < 4-6 months, before ossification): left hip with alpha angle 50° (normal > 60°), beta angle 65° (normal < 55°), femoral head coverage < 50% — DDH (Graf type IIIa)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Observation no treatment"
+      },
+      {
+        "label": "B",
+        "text": "Newborn DDH Graf Type IIIa with Positive Ortolani: (1) **immediate Pavlik harness** (dynamic abduction-flexion orthosis) — gold standard for newborns + infants < 6 months with dislocated/dislocatable hip: (a) maintains hip in flexion 100-110° + abduction 50-70° (allows physiologic motion within \"safe zone\" of Ramsey to encourage acetabular development), (b) prevents extension/adduction; (2) **wear 23-24 hours/day** initially → gradual weaning when reduced + acetabulum developing; (3) **monitor with US** every 1-2 weeks; (4) **success rate Pavlik 85-95% for Graf II-III, lower for type IV (irreducible — 50-60%)**; (5) **avoid Pavlik in older infants** (> 6 months — femoral nerve palsy, AVN with rigid fixation), severe dislocations with high femoral head (IV), neuromuscular conditions; (6) **complications of Pavlik**: AVN of femoral head (1-5%), femoral nerve palsy (if too much flexion > 110°), Pavlik disease (residual acetabular dysplasia if used too long > 3-4 weeks without progress); (7) **risk factors** for DDH (mnemonic — \"6 F's\"): Female, First-born, Family history, Frank breech, fluid (oligohydramnios), Foot (calcaneovalgus, metatarsus adductus); (8) **screening**: US for risk factors at 6 weeks; AAP — clinical exam at every visit; (9) **if Pavlik fails** (> 3-4 weeks no reduction): closed reduction + spica cast under GA, or open reduction; (10) older infants 6-18 months: closed reduction + spica; > 18 months: open reduction + femoral/pelvic osteotomy; (11) educate parents"
+      },
+      {
+        "label": "C",
+        "text": "Triple-diaper technique only"
+      },
+      {
+        "label": "D",
+        "text": "Spica cast in extension"
+      },
+      {
+        "label": "E",
+        "text": "Total hip arthroplasty in newborn"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Newborn DDH: Pavlik harness gold standard < 6 months. 23-24h/day initially. US monitoring. Success 85-95% for Graf II-III. Risk factors (6 F's): Female, First-born, Family, Frank breech, Fluid, Foot. Complications: AVN, femoral nerve palsy. Beyond 6 months: closed/open reduction + spica/osteotomy. Don't continue Pavlik > 3-4 weeks if no progress (Pavlik disease).",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "peds",
+    "reference_source": "AAOS DDH; AAP Screening"
+  },
+  {
+    "scenario": "เด็กชายอายุ 7 ปี ปวด groin + thigh ขวา + เดินกระเผลก 6 สัปดาห์, no trauma, ไม่มี fever\n\nPE: limited internal rotation + abduction right hip, Trendelenburg gait, no swelling/effusion, leg length difference < 1 cm\n\nLab: WBC + ESR + CRP normal (rules out septic arthritis)\nX-ray hip: small dense fragmented right femoral epiphysis with crescent sign + lateral pillar lateral height < 50% — Catterall III, Herring (lateral pillar) B → Legg-Calvé-Perthes disease",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Total hip arthroplasty in child"
+      },
+      {
+        "label": "B",
+        "text": "Legg-Calvé-Perthes Disease Lateral Pillar B in 7-year-old: (1) **idiopathic AVN of femoral head** in children 4-10 years — self-limited but residual deformity affects long-term outcome; (2) **principles** — \"containment\" — keep femoral head contained within acetabulum during fragmentation/reossification → preserves spherical shape + congruency; (3) **treatment based on age + Herring lateral pillar classification + sphericity**: (a) **observation + symptomatic** — age < 6 ปี OR Herring A (lateral pillar height > 50%): expected good outcome with non-op; PT, NSAIDs, activity modification, avoid impact; (b) **containment treatment** — age 6-8 ปี + Herring B/B-C border + femoral head at risk: options bracing (Atlanta, Toronto, Scottish-Rite) — limited evidence; **femoral varus osteotomy** OR **innominate (Salter) osteotomy** — restores containment + sphericity; (c) **older children > 8 ปี + Herring B/C** — surgical containment (femoral or pelvic osteotomy) — improved outcomes (Herring multicenter RCT); (d) **Herring C** (lateral pillar < 50%) — poor prognosis regardless of treatment; salvage procedures (valgus extension osteotomy) for residual deformity; (4) ROM maintenance + abduction key — physical therapy; (5) avoid weight-bearing if severe pain; (6) follow long-term — early hip OA risk → eventual THA in 4th-6th decade for severe; (7) Stulberg classification at maturity predicts outcome (I-II good, III-V hip OA); (8) screen secondary causes if bilateral simultaneous (rule out skeletal dysplasia, hypothyroid)"
+      },
+      {
+        "label": "C",
+        "text": "Bedrest indefinitely"
+      },
+      {
+        "label": "D",
+        "text": "Long-term oral steroid"
+      },
+      {
+        "label": "E",
+        "text": "Discharge no treatment"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Perthes: idiopathic pediatric AVN. Self-limited but residual deformity → adult hip OA. Containment principle. Treatment: age + Herring lateral pillar guide. < 6 yr or Herring A → observation. 6-8 yr + Herring B/border → containment (osteotomy or brace). > 8 yr + B/C → surgical containment (better outcomes Herring trial). Stulberg outcome at maturity. Eventual THA possible.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "peds",
+    "reference_source": "Herring Perthes Multicenter Study"
+  },
+  {
+    "scenario": "เด็กชายอายุ 5 ปี ปวด hip ซ้าย + ไม่ยอม weight bear 2 วัน + ไข้ 38.5°C; เคยมี URI 2 สัปดาห์ก่อน\n\nV/S: BP 100/60, HR 130, Temp 38.7°C\nPE: hip held flexed-abducted-externally rotated, severe pain ROM especially internal rotation, refuses to bear weight\n\nLab: WBC 14,500 (PMN 80%), CRP 65, ESR 50, blood culture pending\nUS hip: joint effusion left hip 6 mm\nKocher criteria: fever > 38.5 (+), non-weight bearing (+), ESR > 40 (+), WBC > 12,000 (+) = 4/4 criteria → 99% probability septic arthritis\n\nHip aspiration: WBC 110,000 (PMN 92%) — septic arthritis",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Oral antibiotics outpatient"
+      },
+      {
+        "label": "B",
+        "text": "Pediatric Septic Arthritis of Hip (Kocher 4/4 + Aspiration Confirmatory): (1) **Kocher criteria** for septic vs transient synovitis: fever > 38.5°C, non-weight bearing, ESR > 40, WBC > 12,000; 0 = 0.2%, 1 = 3%, 2 = 40%, 3 = 93%, 4 = 99% probability septic arthritis; modified add CRP > 2 mg/dL; (2) **emergent hip aspiration** under fluoroscopy/US — diagnostic + therapeutic decompression; cell count > 50,000 PMN > 75% suggestive; (3) **emergent arthrotomy + irrigation + debridement** of hip joint within 24 hours — surgical emergency (vs arthroscopy which is acceptable in select centers); (4) **empirical IV antibiotic** after aspiration cultures: (a) **age 3 months - 5 years**: cefazolin or clindamycin (S. aureus most common; consider MRSA empirically if local prevalence); add ceftriaxone if Kingella suspected (\"hip pain less ill child\"); (b) age < 3 months: vancomycin + cefotaxime (cover GBS, gram-negative, S. aureus); (c) **adolescent + sexually active**: add ceftriaxone (N. gonorrhoeae); (d) sickle cell: cover Salmonella; (5) **IV antibiotic 2-4 weeks then transition oral** with normalized CRP + clinical improvement; total 4-6 weeks; (6) **screen concurrent osteomyelitis** (femoral proximal — common adjacent in hip septic arthritis) — MRI if persistent symptoms; (7) repeat I&D if persistent fever, WBC, CRP; (8) physical therapy; (9) long-term: AVN, growth disturbance, joint damage — counsel; (10) **Kingella kingae** increasingly recognized (PCR diagnostic) in 6-36 months — \"less ill\" presentation"
+      },
+      {
+        "label": "C",
+        "text": "Discharge with NSAIDs"
+      },
+      {
+        "label": "D",
+        "text": "No aspiration just CT scan"
+      },
+      {
+        "label": "E",
+        "text": "Bedrest only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pediatric septic arthritis hip: emergency. Kocher criteria differentiate from transient synovitis (4/4 = 99% septic). Aspiration + arthrotomy + IV antibiotic. S. aureus most common; consider MRSA, Kingella (PCR, 6-36 mo), Salmonella (SCD), gonococcus (adolescent). 4-6 wk antibiotic. Screen concurrent osteomyelitis (MRI). Long-term AVN/growth risk.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "peds",
+    "reference_source": "Kocher Criteria; AAOS"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 8 ปี ตกจักรยานเอามือยันพื้น ปวดข้อมือซ้าย 1 วัน, mild swelling\n\nPE: tenderness distal radius, mild swelling, no obvious deformity, NV intact, no open wound\n\nX-ray wrist: cortical buckle/wrinkle distal radius metaphysis dorsal cortex (no displacement, no angulation) — buckle (torus) fracture pediatric",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Long-arm cast 12 weeks"
+      },
+      {
+        "label": "B",
+        "text": "Pediatric Buckle (Torus) Fracture of Distal Radius — Low-Risk Stable Fracture: (1) **simple removable splint** for 3-4 weeks — modern evidence (FORCE trial Lancet 2022, multiple meta-analyses) — buckle fractures are inherently stable + heal reliably: **removable splint or soft cast non-inferior to rigid casting**; reduces clinic visits + improves QoL + parent satisfaction; (2) **no reduction needed** (no displacement); (3) **WB allowed**; (4) educate parents — wear splint for activities, can remove for bathing/sleeping after first week; symptoms resolve over weeks; (5) **no routine follow-up X-ray** required (low risk displacement); discharge to PCP follow-up; (6) avoid prolonged casting (deconditioning, costs); (7) NSAIDs for pain (controversial bone healing — limited concern in buckle); (8) **green-stick fracture** (incomplete fracture with cortical disruption of one side + bend of other side) — more unstable than buckle, may need closed reduction + cast 4-6 weeks; (9) **complete fracture** with displacement — reduction + cast 4-6 weeks; (10) **Salter-Harris classification** if physis involved (SH I-V): SH I-II typically closed reduction + cast 4-6 weeks; SH III-IV intra-articular often need anatomic reduction (closed or open) + fixation; SH V poor prognosis growth arrest; (11) growth arrest screening f/u"
+      },
+      {
+        "label": "C",
+        "text": "Surgery same day"
+      },
+      {
+        "label": "D",
+        "text": "Discharge no immobilization"
+      },
+      {
+        "label": "E",
+        "text": "Steroid injection"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pediatric buckle (torus) fracture distal radius: inherently stable. Modern evidence: removable splint or soft cast equivalent to rigid cast (FORCE trial). 3-4 weeks. No reduction. WB allowed. No routine follow-up X-ray. Parent education. Differentiate from greenstick (incomplete with displacement — more unstable, needs cast). Salter-Harris classification for physeal injury.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "peds",
+    "reference_source": "AAOS; FORCE Trial Lancet 2022"
+  },
+  {
+    "scenario": "ชายไทยอายุ 14 ปี นักฟุตบอล ปวดเข่าซ้าย + บวมเป็น ๆ หาย ๆ 4 เดือน บางครั้งรู้สึก locking + catching, ไม่มี trauma ชัดเจน\n\nPE: mild effusion, positive Wilson test (pain on internal rotation tibia with knee flexion 90° → 30°, relief with external rotation — classic for medial femoral condyle OCD), no significant ligamentous laxity\n\nMRI knee: osteochondral lesion lateral aspect of medial femoral condyle (classic location), subchondral edema, intact overlying cartilage, no displaced fragment, no fluid behind fragment (stable lesion) — juvenile OCD stage I",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Total knee arthroplasty in child"
+      },
+      {
+        "label": "B",
+        "text": "Juvenile Osteochondritis Dissecans (OCD) of Medial Femoral Condyle — Skeletally Immature with Stable Lesion: (1) **non-operative trial 3-6 months** preferred for juvenile OCD with **open physes + stable lesion** (no fluid behind, intact cartilage): (a) activity modification — restrict impact, running, jumping, contact sports for 3-6 months, (b) non-weight bearing with crutches initially, advance to WB in unloader brace selective, (c) PT — maintain ROM, avoid impact, (d) repeat MRI 3-6 months — healing common in skeletally immature (60-90% heal non-op); (2) **prognosis better in skeletally immature** (open physes) vs adolescent/adult — \"adult OCD\" (closed physes) has poor non-op outcomes; (3) **surgical treatment** indicated: (a) failure of 3-6 months conservative, (b) unstable lesion (fluid behind fragment on MRI, separation), (c) loose body causing locking, (d) skeletally mature with adult OCD, (e) displaced fragment; (4) **surgical options**: (a) **retrograde drilling** (transarticular or extra-articular) — stable in situ lesion + intact cartilage + skeletally immature; promotes healing; (b) **fixation** (bioabsorbable screws/anchors, Herbert screws) — unstable but salvageable hinged fragment; (c) **removal + cartilage restoration** (microfracture, OATS — osteochondral autograft transfer, ACI/MACI) — irreparable fragment or chronic; (5) post-op: protected WB 6-8 weeks, gradual return to sport 4-6 months; (6) prevention of long-term sequelae (early OA); (7) workup bilateral (15-30%) + screen for OCD elsewhere (capitellum — gymnasts, talus — basketball)"
+      },
+      {
+        "label": "C",
+        "text": "Continue contact sports immediately"
+      },
+      {
+        "label": "D",
+        "text": "Long-term opioid"
+      },
+      {
+        "label": "E",
+        "text": "Cast in extension 12 weeks then return to sport"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Juvenile OCD knee: medial femoral condyle classic (lateral aspect). Wilson test sensitive. Skeletally immature + stable lesion → non-op 3-6 months (60-90% heal). Surgery for unstable, failed conservative, adult OCD. Retrograde drilling, fixation, cartilage restoration. Better prognosis in open physes vs adult. Bilateral 15-30% — screen. Late OA risk.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "peds",
+    "reference_source": "ROCK Study Group; AAOS"
+  },
+  {
+    "scenario": "เด็กชายอายุ 13 ปี Tanner stage III นักฟุตบอล ปวด anterior knee + tender tibial tubercle 3 เดือน ปวดมากขึ้นเวลาวิ่ง + กระโดด + climb stairs ดีขึ้นเมื่อพัก\n\nPE: prominent tender tibial tubercle bilateral, pain on resisted knee extension, no effusion, full ROM, hamstring tightness\n\nX-ray knee lateral: irregularity + fragmentation tibial tubercle apophysis (Osgood-Schlatter changes), no avulsion fragment displacement",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Long-term oral steroid"
+      },
+      {
+        "label": "B",
+        "text": "Osgood-Schlatter Disease (Apophysitis of Tibial Tubercle) in Adolescent Athlete: (1) **conservative management always — self-limited** condition resolves with skeletal maturity (closure of tibial tubercle apophysis): (a) activity modification (reduce impact activity, modify training during symptomatic period — total rest NOT required), (b) **PT** — hamstring + quadriceps stretching + eccentric strengthening, hip flexor flexibility, biomechanics, (c) ice after activity, (d) NSAIDs short course for pain, (e) infrapatellar strap/sleeve (counterforce — limited evidence), (f) reassurance + education on natural history; (2) **avoid immobilization** (atrophy + deconditioning) except in severe acute exacerbation; (3) **avoid corticosteroid injection** (risk of patellar tendon damage, fat pad atrophy); (4) **uncommon need for surgery** — reserved for: (a) symptomatic ossicle that persists beyond skeletal maturity (10-15%) — excision of ossicle, (b) tibial tubercle avulsion fracture (Ogden classification — separate entity, surgical reduction + fixation); (5) educate patient + family — symptoms intermittent for 12-24 months typically, resolve with maturity; participation in sport modified but allowed; (6) **return to sport** when pain tolerable; (7) **related apophysitis**: Sinding-Larsen-Johansson (inferior pole of patella — apophysitis), Sever's disease (calcaneal apophysitis), Iselin disease (5th metatarsal base), Little league elbow (medial epicondyle apophysitis) — all similar principles"
+      },
+      {
+        "label": "C",
+        "text": "Cast extension 12 weeks total immobilization"
+      },
+      {
+        "label": "D",
+        "text": "Surgical excision tubercle all patients"
+      },
+      {
+        "label": "E",
+        "text": "Discharge sports prohibition until 18 years"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Osgood-Schlatter: tibial tubercle apophysitis in adolescent athletes. Self-limited — resolves with skeletal maturity. Conservative: activity modification + PT (hamstring/quadriceps) + ice + NSAIDs. AVOID steroid injection. Surgery rare — only for persistent symptomatic ossicle post-maturity or tubercle avulsion fracture. Education on natural history. Similar to other apophyses (Sinding-Larsen, Sever, Iselin).",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "peds",
+    "reference_source": "AAOS Pediatric"
+  },
+  {
+    "scenario": "ทารกแรกเกิด อายุ 3 วัน ตรวจพบ bilateral clubfoot (talipes equinovarus — CTEV): foot in equinus + cavus + adduction + varus, rigid, idiopathic, no syndromic features, full-term, healthy\n\nPirani score 5.5 (severe rigid deformity)\nNo neurological deficit, normal hip exam (rule out concurrent DDH)\nNo other anomalies",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Extensive posteromedial release first"
+      },
+      {
+        "label": "B",
+        "text": "Idiopathic Bilateral Clubfoot (CTEV) — Ponseti Method First-Line Treatment: (1) **Ponseti method gold standard worldwide** — non-operative serial manipulation + casting + percutaneous tenotomy + bracing — > 95% success: (a) **weekly serial long-leg casting** (above-knee, knee 90° flexion) correcting deformities in order — cavus first → adduction → varus → equinus last (using CAVE mnemonic — Cavus, Adductus, Varus, Equinus); each cast incrementally improves position over 4-8 weeks (5-7 casts typical), (b) **percutaneous Achilles tenotomy** at end of casting (in ~80% of cases to correct residual equinus) — done in clinic or minor procedure, (c) post-tenotomy cast 3 weeks in maximum dorsiflexion + abduction; (2) **Denis Browne / Mitchell foot abduction brace** — **23 hours/day × 3 months** → **night + nap brace until age 4-5** — critical for preventing relapse (most common cause of treatment failure = brace non-compliance, family education essential); (3) **relapse rate 20-40%** — manage with re-casting + repeat tenotomy + bracing; **tibialis anterior tendon transfer (TATT)** for dynamic supination (recurrent dynamic deformity in ambulating child > 2 ปี); (4) **avoid extensive soft tissue release** (historic — PMR posteromedial release) — worse long-term outcomes (stiffness, pain, OA); only for severe atypical/syndromic cases that fail Ponseti; (5) **screen DDH + spinal dysraphism** (associated); (6) syndromic clubfoot (arthrogryposis, myelomeningocele) — modified Ponseti, more difficult, higher relapse"
+      },
+      {
+        "label": "C",
+        "text": "No treatment self-resolves"
+      },
+      {
+        "label": "D",
+        "text": "Bilateral amputation"
+      },
+      {
+        "label": "E",
+        "text": "Cast in equinus first to align"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Clubfoot (CTEV): Ponseti method gold standard, > 95% success. Weekly serial casting (correct CAVE order) + percutaneous Achilles tenotomy (80%) + Denis Browne abduction brace (23h × 3 mo then nights until 4-5 yr). Relapse 20-40% — recasting, repeat tenotomy, TATT (dynamic deformity > 2 yr). AVOID extensive soft tissue release. Screen DDH + spinal dysraphism. Syndromic harder.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "peds",
+    "reference_source": "Ponseti Method"
+  },
+  {
+    "scenario": "เด็กชายอายุ 11 ปี นักฟุตบอล ปวดส้นเท้าทั้ง 2 ข้าง 6 สัปดาห์ ปวดมากเวลาวิ่ง + กระโดด ดีขึ้นเมื่อพัก ไม่มีปวดตอนกลางคืน\n\nPE: tender medial + lateral aspect calcaneal apophysis bilateral, positive Sever sign (pain on medio-lateral compression of calcaneus), tight Achilles, normal ROM, no swelling, no erythema\n\nX-ray heel: irregular fragmentation calcaneal apophysis (normal variant — NOT diagnostic; clinical diagnosis)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Long-term oral steroid"
+      },
+      {
+        "label": "B",
+        "text": "Sever's Disease (Calcaneal Apophysitis) in Adolescent Athlete — Self-Limited: (1) **conservative management** — Sever's resolves with closure of calcaneal apophysis (typically age 14-16): (a) activity modification (reduce running/jumping during symptomatic phase; total rest unnecessary), (b) **Achilles + calf stretching** + hamstring flexibility, (c) **heel cushion** (gel cup) or heel lift bilateral — reduces strain on apophysis, (d) appropriate supportive footwear, (e) ice after activity, (f) NSAIDs short course; (2) **PT** — eccentric strengthening when acute pain settled, biomechanics, gait; (3) **reassurance + education** — benign self-limited condition, no long-term sequelae; (4) **screen overtraining + training error** (rapid increase in volume/intensity); (5) **avoid immobilization** (cast) except severe — causes deconditioning; (6) **avoid corticosteroid injection** (apophyseal injection risk); (7) **differential**: stress fracture calcaneus (older + persistent pain — MRI), plantar fasciitis (less common in children), Achilles tendinopathy, infection (rare); (8) related apophyseal injuries: Osgood-Schlatter, Sinding-Larsen-Johansson, Iselin, Little league elbow — similar principles; (9) **return to sport** when pain tolerable"
+      },
+      {
+        "label": "C",
+        "text": "Cast immobilization 12 weeks long-leg"
+      },
+      {
+        "label": "D",
+        "text": "Surgical excision apophysis"
+      },
+      {
+        "label": "E",
+        "text": "Sports prohibition until 18 years"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Sever's disease: calcaneal apophysitis in adolescent athletes. Self-limited — resolves with apophyseal closure (age 14-16). Conservative: activity modification + Achilles stretching + heel cushion + supportive shoes + NSAIDs. AVOID steroid injection + prolonged immobilization. Reassurance — no long-term sequelae. Rule out stress fracture if persistent. Similar to other apophysitis.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "peds",
+    "reference_source": "AAOS Pediatric"
+  },
+  {
+    "scenario": "เด็กชายอายุ 18 เดือน เริ่มไม่ยอมเดิน + กระเผลก 2 วัน parents ไม่เห็น clear trauma history ไม่มี fever, ไม่มี erythema\n\nPE: refuses to bear weight on right leg, mild tenderness mid-tibial shaft + holds leg slightly externally rotated, no overt swelling/deformity, normal hip exam + knee exam, no skin signs\n\nX-ray tibia: subtle oblique non-displaced fracture distal third tibia (spiral) — toddler fracture (childhood accidental fracture from minor twisting)\nNo metaphyseal corner fractures or other suspicious signs",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge no follow-up"
+      },
+      {
+        "label": "B",
+        "text": "Toddler Fracture (CAST — Childhood Accidental Spiral Tibial Fracture) — Benign Isolated Injury: (1) **brief diagnostic + therapeutic immobilization** — long-leg cast or **above-knee posterior splint** 3-4 weeks (some advocate short-leg cast or even no immobilization in select cases — boot/CAM walker emerging evidence — but long-leg cast remains standard); (2) **non-weight bearing initially**, gradual return as comfortable; (3) **child will heal completely** — toddler fractures uncomplicated; (4) **important — rule out non-accidental trauma (NAT/child abuse)** especially: (a) history doesn't match injury, (b) delayed presentation, (c) multiple fractures different ages on skeletal survey, (d) metaphyseal corner fractures (\"bucket handle\" — pathognomonic for NAT), (e) rib fractures (especially posterior), (f) bilateral, (g) child < 12 months (very rare cause of fracture from accidental walking), (h) other suspicious signs (bruising, scalds, withdrawal); (5) **mandatory reporting** if NAT suspicion to child protective services + social work; (6) **skeletal survey** if suspicion (multiple fractures, child < 2 ปี with suspicious fracture); (7) **classic isolated toddler tibial fracture in walking child (12-36 months) with appropriate history** — benign; (8) follow-up X-ray 2-3 weeks to confirm healing; (9) **differential**: occult infection (osteomyelitis), transient synovitis hip (referred pain), septic arthritis, leukemia (atypical limp without fracture)"
+      },
+      {
+        "label": "C",
+        "text": "Surgery same day"
+      },
+      {
+        "label": "D",
+        "text": "Above-knee amputation"
+      },
+      {
+        "label": "E",
+        "text": "Long-term opioid"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Toddler fracture: spiral tibia in toddler 12-36 mo. Long-leg cast 3-4 weeks. Excellent healing. CRITICAL — rule out NAT especially atypical history, multiple fractures, metaphyseal corner, posterior rib, < 12 mo, bilateral. Mandatory reporting + skeletal survey if suspicious. Classic isolated case with witnessed/typical mechanism — benign. Always think of child abuse in pediatric fractures.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "peds",
+    "reference_source": "AAOS Pediatric"
+  },
+  {
+    "scenario": "ทารกแรกเกิด ตรวจพบ extra digit (postaxial polydactyly) นิ้วก้อยข้างขวา + นิ้วเสริมเชื่อมต่อบาง ๆ ผ่าน skin pedicle เท่านั้น (no bony connection, no functional structures)\nPolydactyly type B (pedunculated)\n\nFamily history: father had similar finding removed\nNo other anomalies, no syndromic features",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Wait until age 18 to decide"
+      },
+      {
+        "label": "B",
+        "text": "Postaxial Polydactyly Type B (Pedunculated) — Newborn: (1) **simple ligation/clip** at base of pedicle in newborn (vascular clip applied to pedicle) — historical method — concern with bleb stump + neuroma; (2) **modern preferred — surgical excision at base in clinic OR** — better cosmetic outcome with elimination of stump/neuroma + sutured closure; can be done in clinic with local anesthesia in newborns (no need for GA); (3) **timing** — early excision (within first weeks or months) reduces psychological + cosmetic issues; (4) **Type A postaxial polydactyly** (with bone + nail + functional digit) — formal surgical removal under GA — typically 12-24 months old, more complex (skin, bone, joint, ligament, tendon, neurovascular reconstruction); (5) **preaxial (radial-sided, thumb)** polydactyly — Wassel classification, more complex reconstructive (preserve dominant thumb or combine — Bilhaut-Cloquet, on-top plasty) at 12-24 months; (6) **screen syndromic** if multiple anomalies, atypical, family history — Bardet-Biedl, trisomy 13, Down syndrome — refer genetics; (7) **isolated postaxial polydactyly** — often familial (AD with variable penetrance), more common in African populations, otherwise unremarkable; (8) parental counseling + reassurance"
+      },
+      {
+        "label": "C",
+        "text": "Amputation entire hand"
+      },
+      {
+        "label": "D",
+        "text": "Long-term steroid"
+      },
+      {
+        "label": "E",
+        "text": "Discharge no treatment ever"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Polydactyly: postaxial type B (pedunculated) → simple excision at base (modern preferred over ligation/clip — better cosmetic). Done in clinic with local. Type A (functional digit) and preaxial (thumb) — formal surgical reconstruction at 12-24 months (Wassel classification, Bilhaut-Cloquet). Screen syndromic if atypical/multiple anomalies. Common AD familial isolated case — reassurance.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "procedures",
+    "board_age_group": "peds",
+    "reference_source": "ASSH; Wassel Classification"
   }
 ]
