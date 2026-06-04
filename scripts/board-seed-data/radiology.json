@@ -1528,5 +1528,498 @@
     "board_topic": "cardiovascular",
     "board_age_group": "adult",
     "reference_source": "ACC/AHA HF 2022; ESC HF 2021"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี acute severe abdominal pain + peritoneal signs + sepsis — CXR upright พบ subdiaphragmatic free air",
+    "choices": [
+      { "label": "A", "text": "Discharge" },
+      { "label": "B", "text": "Hollow viscus perforation — pneumoperitoneum: (1) **Imaging features**: - **Upright CXR**: free air under right hemidiaphragm (most sensitive view — left obscured by gastric bubble); detects as little as 1-2 mL; - **Left lateral decubitus** alternative for unable-to-stand patient; - **CT abdomen-pelvis with IV contrast**: most sensitive — tiny pneumoperitoneum (extraluminal gas adjacent to perforation), focal bowel wall thickening + discontinuity, focal fat stranding, fluid collections, contrast extravasation; (2) **Etiology**: peptic ulcer perforation (anterior duodenal — most common; gastric), diverticulitis perforation, malignancy perforation, ischemic bowel, foreign body, post-procedure (post-endoscopy/colonoscopy, post-laparoscopy retained air normal up to several days), trauma, iatrogenic; (3) **Localizing signs CT**: - Foregut perforation — air anterior/around stomach/duodenum; - Mid/hindgut — pericolic abscess + free air; - Retroperitoneal perforation — retroperitoneal air (duodenal D2-3, sigmoid posterior); (4) **Sealed vs free perforation**: contained (small focal collection — may manage conservatively in selected — peptic ulcer, diverticulitis), gross peritonitis → emergent surgery; (5) **Management**: - **Resuscitation** — IV fluids, broad-spectrum antibiotics (piperacillin-tazobactam, meropenem for severe; cover Gram-negative + anaerobes), NG decompression, NPO; - **Emergent surgical consultation** — laparotomy / laparoscopy for definitive repair; - **Selective non-operative** — contained perforation (sealed) + clinically stable + appropriate antibiotic coverage + close monitoring (e.g., contained diverticulitis Hinchey I-II, contained peptic perforation with no peritonitis); - **Image-guided drainage** for abscess (Hinchey II); (6) **Multidisciplinary**: ED + general surgery + radiology + IR + critical care" },
+      { "label": "C", "text": "X-ray sufficient diagnosis alone" },
+      { "label": "D", "text": "Observation always" },
+      { "label": "E", "text": "Single specialty" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Hollow viscus perforation: upright CXR free air under right hemidiaphragm. CT for source + extent. Surgical + IR + IDD management. Selective non-operative for contained. Resuscitate + broad-spectrum antibiotics. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "WSES Guidelines; ACS Surgery"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 25 ปี RLQ pain + fever + N/V + leukocytosis — acute appendicitis suspected\n\nคำถาม: imaging modality choice",
+    "choices": [
+      { "label": "A", "text": "Always CT every patient" },
+      { "label": "B", "text": "Acute appendicitis imaging — ACR Appropriateness: (1) **Adult**: - **CT abdomen-pelvis with IV contrast** — first-line, sensitivity + specificity > 95%; findings: dilated appendix > 6 mm, wall thickening + enhancement, fat stranding, appendicolith, abscess, free air (perforation); - **US** alternative in young/thin/pregnant — operator-dependent, sensitivity ~ 80% (less sensitive than CT); positive findings: non-compressible blind-ending tubular structure > 6-7 mm, target sign on cross-section, periappendiceal fat echogenic; (2) **Pregnant women**: **US first** (no radiation); if non-diagnostic → **MRI without gadolinium** (sensitive + no radiation); CT only if MRI not available + clinical concern high; (3) **Pediatric**: **US first** (no radiation, often diagnostic in thin patients); MRI alternative; CT reserved for non-diagnostic US + persistent clinical concern; (4) **Alvarado score** (clinical decision tool) — pre-test probability; high (≥ 7) — surgery without imaging may be appropriate, intermediate — image, low — observe / alternative diagnosis; (5) **Complications imaging**: perforation, abscess (image-guided drainage), peritonitis; (6) **Management**: - **Appendectomy** — laparoscopic preferred (lower wound infection, shorter LOS); - **Antibiotics-first strategy** — controversial but supported by recent trials (CODA, APPAC) for uncomplicated appendicitis — selected patients, with awareness of higher recurrence + appendectomy at 1 year ~ 25-40%; informed shared decision-making; - **Interval appendectomy** after percutaneous drainage of large abscess (Hinchey-like — phlegmon/abscess > 3-4 cm) — usual practice though increasingly questioned by recent data; (7) **Multidisciplinary**: ED + surgery + radiology + pediatrics if children" },
+      { "label": "C", "text": "X-ray sufficient" },
+      { "label": "D", "text": "Discharge" },
+      { "label": "E", "text": "Bone scan" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Appendicitis: ACR — adult CT first-line; pregnant US first then MRI; pediatric US first. Surgery laparoscopic standard. Antibiotics-first emerging for uncomplicated (CODA trial). Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "ACR Appropriateness; CODA Trial NEJM"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 70 ปี abdominal distension + bilious vomiting + obstipation — CT พบ dilated small bowel loops with transition point + decompressed distal bowel + adhesive band",
+    "choices": [
+      { "label": "A", "text": "X-ray sufficient" },
+      { "label": "B", "text": "Small bowel obstruction (SBO) imaging + management: (1) **Imaging findings CT**: dilated proximal small bowel (> 2.5-3 cm) with collapsed distal — transition point identification critical; etiology — adhesions (most common, no mass — bands), hernia (always check ventral + groin), tumor (intussusception in adults often pathologic — mass at lead point), gallstone ileus (pneumobilia + ectopic gallstone — Rigler triad), volvulus (whirl sign — twisted mesentery), foreign body, internal hernia (post-gastric bypass — important DDx); (2) **Severity findings (closed-loop, strangulation, perforation)**: - **Closed-loop obstruction** — radial distribution of dilated loops + whirl sign + mesenteric edema; - **Strangulation** (compromised blood supply) — bowel wall thickening + wall enhancement decreased or absent (key — compare to non-affected loops), pneumatosis intestinalis, portal venous gas, mesenteric edema/haziness, ascites; - **Perforation** — extraluminal gas, focal contrast leak; (3) **CT vs other modalities**: CT IV contrast — gold standard; oral contrast not necessary (delays + may not be tolerated); plain X-ray screen only (limited); US selective; (4) **Management**: - **Stable + uncomplicated (adhesions)** — initial conservative: NG decompression, IV fluids, NPO, electrolyte correction, monitor; ~ 60-80% resolve with conservative care in 24-72 h; **Gastrografin challenge** (water-soluble contrast) — both diagnostic + therapeutic (may resolve adhesive SBO); - **Closed-loop / strangulation / perforation / failure of conservative ≥ 72 h** → emergent surgery; - **Hernia** with incarceration → reduction + repair; - **Tumor / cancer-related** — depends on stage (palliative bypass, stenting in colon, resection); (5) **Large bowel obstruction differs**: most often colon cancer (left-sided) — imaging often CT + colonic decompression via tube/stent often bridge to surgery; sigmoid volvulus (coffee bean sign on X-ray) — decompression via endoscopy + elective surgery; cecal volvulus — surgical (no endoscopic option); (6) **Multidisciplinary**: ED + surgery + radiology + critical care" },
+      { "label": "C", "text": "Discharge" },
+      { "label": "D", "text": "Always surgery first" },
+      { "label": "E", "text": "Single specialty" }
+    ],
+    "correct_answer": "B",
+    "explanation": "SBO: CT shows transition point + etiology + complications (closed-loop, strangulation). Conservative for stable adhesive (NG, fluids, gastrografin). Surgery for closed-loop/strangulation/failed conservative. LBO often cancer — stent then surgery. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "WSES SBO Guidelines; ASCRS"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี F + obese + acute RUQ pain + fever + Murphy sign + leukocytosis — acute cholecystitis suspected",
+    "choices": [
+      { "label": "A", "text": "Discharge" },
+      { "label": "B", "text": "Acute cholecystitis — imaging + management: (1) **US (first-line per ACR + Tokyo Guidelines)**: gallstones, gallbladder wall thickening > 3 mm, pericholecystic fluid, sonographic Murphy sign (focal tenderness over GB on probe — specific), GB distension, sometimes wall hyperemia on Doppler; sensitivity ~ 88%, specificity ~ 80%; (2) **HIDA scan (cholescintigraphy)**: non-visualization of GB at 4 hours = acute cholecystitis (cystic duct obstruction blocks tracer); sensitivity > 95%; useful when US equivocal or acalculous cholecystitis suspected; (3) **CT** — less sensitive than US but identifies complications + alternative diagnoses (perforation, abscess, gangrenous, emphysematous, mass causing obstruction, Mirizzi syndrome — stone in cystic duct compressing CHD); (4) **MRI/MRCP** — high resolution + non-invasive evaluation of biliary tree; for complications or alternative diagnoses; (5) **Tokyo Guidelines 2018 (TG18)** severity grading: - Grade I (mild) — uncomplicated, healthy patient — early laparoscopic cholecystectomy preferred; - Grade II (moderate) — local complications (gangrene, abscess, peritonitis, > 72h symptoms, marked leukocytosis); - Grade III (severe) — organ dysfunction — antibiotics + drainage (percutaneous cholecystostomy by IR if poor surgical candidate), delayed cholecystectomy; (6) **Management**: NPO + IV fluids + antibiotics (ceftriaxone + metronidazole or piperacillin-tazobactam); early laparoscopic cholecystectomy (within 72 hours — ChoCo, ACDC trials); percutaneous cholecystostomy alternative for high-risk surgical candidates; (7) **Complications**: gangrene, perforation, emphysematous cholecystitis (diabetes — clostridial), Mirizzi syndrome, cholecystoenteric fistula → gallstone ileus; (8) **Acalculous cholecystitis** — critically ill, elderly, post-op, fasting — HIDA helpful; high mortality — percutaneous cholecystostomy often initial; (9) **Multidisciplinary**: ED + surgery + radiology + IR + GI" },
+      { "label": "C", "text": "X-ray sufficient" },
+      { "label": "D", "text": "Delayed surgery weeks later" },
+      { "label": "E", "text": "Single specialty" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Acute cholecystitis: US first-line. HIDA when equivocal/acalculous. CT for complications. Tokyo Guidelines severity grading. Early laparoscopic cholecystectomy (< 72h). Percutaneous cholecystostomy by IR for high-risk. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "Tokyo Guidelines 2018; ACR Appropriateness"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 60 ปี jaundice + RUQ pain + dilated CBD on US + elevated bilirubin — choledocholithiasis suspected — MRCP confirms",
+    "choices": [
+      { "label": "A", "text": "X-ray sufficient" },
+      { "label": "B", "text": "Choledocholithiasis + biliary obstruction imaging: (1) **Imaging algorithm per ASGE risk stratification**: - **High probability** (CBD stone visualized on US, cholangitis, bilirubin > 4 mg/dL with CBD > 6 mm) — ERCP directly for diagnosis + therapy; - **Intermediate probability** — MRCP or EUS first → ERCP if positive; - **Low probability** — imaging or operative cholangiography during cholecystectomy; (2) **Modalities**: - **US** — initial: gallstones, CBD dilation (> 6 mm post-cholecystectomy normal, > 8 mm elderly, > 4-6 mm typical reference); stones may not be visible in CBD (overlying bowel gas); - **MRCP (magnetic resonance cholangiopancreatography)** — non-invasive: T2-weighted thick-slab images of biliary + pancreatic ducts; high sensitivity for stones (~ 90%); excellent anatomic detail; - **EUS (endoscopic ultrasound)** — sensitive for distal CBD stones, ampullary lesions, small stones (< 5 mm); - **ERCP** — diagnostic + therapeutic (stone extraction via sphincterotomy + balloon/basket); risks — pancreatitis (5-10%, mitigated by rectal indomethacin), bleeding, perforation, cholangitis; (3) **Cholangitis** (Charcot triad — fever + jaundice + RUQ pain; Reynolds pentad adds hypotension + AMS) — surgical emergency: emergent ERCP for biliary decompression (within 24h, sooner if Reynolds pentad); broad-spectrum antibiotics; resuscitation; (4) **Cholecystocholedocholithiasis** — stones in both GB + CBD: ERCP first to clear CBD + sphincterotomy, then laparoscopic cholecystectomy (preferably same admission per Lancet Cholgate trial); alternative: laparoscopic cholecystectomy + intraoperative cholangiogram + CBD exploration; (5) **Mirizzi syndrome** — stone impacted in cystic duct/Hartmann pouch compressing CHD — variable management (open conversion may be needed); (6) **Multidisciplinary**: GI + surgery + radiology + IR (when ERCP fails — percutaneous transhepatic cholangiography PTC drainage)" },
+      { "label": "C", "text": "Discharge" },
+      { "label": "D", "text": "Surgery always before ERCP" },
+      { "label": "E", "text": "Single specialty" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Choledocholithiasis: US first; MRCP or EUS for intermediate risk; ERCP for high risk (Dx + therapy). Cholangitis = emergency — ERCP < 24h + antibiotics. Cholecystocholedocholithiasis = ERCP + cholecystectomy same admission. PTC if ERCP fails.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "ASGE Guidelines; ESGE"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 50 ปี severe epigastric pain radiating to back + N/V + elevated lipase 5× ULN — acute pancreatitis confirmed clinically + lab\n\nคำถาม: role of imaging",
+    "choices": [
+      { "label": "A", "text": "Always CT on admission" },
+      { "label": "B", "text": "Acute pancreatitis — Atlanta 2012 + imaging: (1) **Atlanta 2012 classification**: - **Interstitial edematous pancreatitis (80%)**: parenchymal enhancement preserved, peripancreatic edema/fat stranding, no necrosis; - **Necrotizing pancreatitis (20%)**: non-enhancing pancreatic tissue ± peripancreatic necrosis; **higher complication + mortality**; - **Complications**: acute peripancreatic fluid collection (APFC < 4 weeks, no wall), pseudocyst (> 4 weeks, defined wall, no solid debris), acute necrotic collection (ANC < 4 wks, heterogeneous), walled-off necrosis (WON > 4 wks, encapsulated necrosis); (2) **CT timing**: - **NOT routine on admission** — diagnosis is clinical + lab (lipase > 3× ULN); CT on day 1 may underestimate necrosis; - **CT abdomen-pelvis with IV contrast at 72 hours (or earlier if clinical deterioration)** — accurate necrosis assessment, complications, CTSI (CT severity index — Balthazar), Modified CTSI; - **Earlier CT if alternative diagnosis suspected** or unclear; - **MRCP** in selected (biliary pancreatitis with persistent obstruction); (3) **US** — initial workup for **etiology** — gallstones (most common cause acute pancreatitis worldwide), CBD dilation; (4) **Etiology workup**: gallstones (US — most common), alcohol (history), hypertriglyceridemia (> 1000 mg/dL — TGs trigger), hypercalcemia, post-ERCP, drugs (azathioprine, valproate, GLP-1 agonists controversial), trauma, autoimmune (AIP — IgG4), genetic (PRSS1, SPINK1), idiopathic; (5) **Severity assessment**: BISAP, APACHE II, Atlanta severity (mild, moderate, severe with persistent organ failure > 48h); (6) **Management**: - **Aggressive fluid resuscitation** initially (recent evidence — moderate not aggressive may be better per WATERFALL trial 2022 — Ringer lactate 1.5 mL/kg/h after bolus); - **Pain control**, antiemetics, early enteral feeding (within 72h — no NPO unless severe ileus); - **Gallstone pancreatitis** — ERCP for cholangitis or persistent obstruction within 24-72h; cholecystectomy same admission for mild gallstone pancreatitis; - **Antibiotics ONLY for infected necrosis** (NOT prophylactic — no benefit); diagnosis by FNA culture or clinical deterioration; - **Infected necrosis** — step-up approach (percutaneous drainage → minimally invasive necrosectomy → open) — PANTER trial; endoscopic transluminal drainage emerging; - **Pseudocyst** — drain if symptomatic, infected, > 5-6 cm persistent — endoscopic (EUS-guided) preferred; (7) **Multidisciplinary**: GI + general surgery + IR + radiology + critical care + nutrition + endocrinology (post-pancreatitis DM)" },
+      { "label": "C", "text": "Discharge" },
+      { "label": "D", "text": "Antibiotics for all" },
+      { "label": "E", "text": "Single specialty" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Acute pancreatitis: clinical + lab Dx. CT at 72h for necrosis (not admission). MRCP for biliary. Aggressive (moderate) fluids. ERCP for gallstone + cholangitis. Antibiotics ONLY infected necrosis. Step-up approach for necrosis. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "Atlanta 2012; AGA Acute Pancreatitis Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี LLQ pain + fever + leukocytosis — CT พบ sigmoid wall thickening + pericolic fat stranding + small pericolic abscess 2 cm — diverticulitis with abscess (Hinchey Ib)",
+    "choices": [
+      { "label": "A", "text": "X-ray sufficient" },
+      { "label": "B", "text": "Acute diverticulitis — Hinchey classification + imaging: (1) **CT** — gold standard: sigmoid wall thickening, pericolic fat stranding, diverticula, abscess, free air, free fluid, distant complications; (2) **Hinchey classification**: - **I**: pericolic abscess (Ia phlegmon, Ib < 4 cm); - **II**: pelvic/distant abscess (≥ 4 cm); - **III**: purulent peritonitis; - **IV**: feculent peritonitis; (3) **Modified Hinchey + radiologic classification (Wasvary)**: more granular for treatment decisions; (4) **Management by severity**: - **Uncomplicated (Hinchey 0/Ia phlegmon)** — outpatient management trial in selected (per AGA 2015) — antibiotics may not be required (DIABOLO + AVOD trials in Europe showed no benefit of antibiotics for uncomplicated — paradigm shift); - **Complicated**: - Ib (abscess < 4 cm) — IV antibiotics, often resolves; - II (abscess ≥ 4 cm) — IV antibiotics + percutaneous drainage by IR; - III-IV — emergency surgery (Hartmann's procedure or laparoscopic lavage in selected, primary anastomosis with diverting ileostomy increasingly); (5) **Antibiotics** when used: cover gram-negative + anaerobes (ciprofloxacin + metronidazole outpatient; piperacillin-tazobactam inpatient); (6) **Follow-up colonoscopy** — 6-8 weeks after acute episode in selected (rule out cancer — incidence ~ 1-2%) — recent evidence — selective (not all patients per ASCRS); (7) **Elective surgery** for: recurrent (≥ 2 episodes traditionally, now individualized — quality of life, complications, immunocompromised), complicated (fistula, stenosis, persistent abscess); (8) **Complications**: fistulae (colovesical — pneumaturia, fecaluria; colovaginal — vaginal discharge), stricture, perforation, bleeding; (9) **Right-sided diverticulitis** more common in Asian populations — often Mecillinam-treated; (10) **Multidisciplinary**: ED + surgery + radiology + IR + GI" },
+      { "label": "C", "text": "Discharge no follow-up" },
+      { "label": "D", "text": "Always surgery" },
+      { "label": "E", "text": "Single specialty" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Diverticulitis: CT + Hinchey classification. Uncomplicated — antibiotics may not be needed (DIABOLO/AVOD). Abscess > 4 cm — IR drainage. Peritonitis — surgery. Colonoscopy 6-8 wks selectively. Elective surgery individualized. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "ASCRS Diverticulitis Guidelines; AGA"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 75 ปี AFib not on anticoagulant + acute severe abdominal pain out of proportion to exam + lactic acidosis — acute mesenteric ischemia (AMI) suspected",
+    "choices": [
+      { "label": "A", "text": "Discharge" },
+      { "label": "B", "text": "Acute mesenteric ischemia (AMI) — high mortality + delayed diagnosis common: (1) **Etiologies** (Brunt classification): - **Arterial embolic (50%)**: AFib, recent MI (mural thrombus), endocarditis — typically SMA mid-segment; sudden onset, severe pain out of proportion; - **Arterial thrombotic (15-25%)**: atherosclerotic plaque rupture, usually history of chronic mesenteric ischemia symptoms (postprandial pain, weight loss, food fear); - **Non-occlusive mesenteric ischemia (NOMI) (20-30%)**: low-flow state (shock, sepsis, cardiac failure, vasoconstrictors); - **Venous thrombosis (5-15%)**: hypercoagulable, portal HTN, malignancy, pancreatitis, inflammatory; (2) **Imaging**: - **CT angiography (CTA) — first-line**: arterial occlusion / thrombus, bowel wall changes (early — thickening with hyperemia; late — pneumatosis intestinalis, portal venous gas, lack of mucosal enhancement, hypoperfusion, bowel dilation), mesenteric edema, ascites, infarction signs; - **MR angiography** alternative; - **DSA** for selected — diagnostic + therapeutic; - Lab — lactic acidosis (late), D-dimer elevated (non-specific); (3) **Management — time-critical**: - **Resuscitation** — aggressive fluids, correct acidosis, hemodynamic support; - **Heparin anticoagulation**; - **Broad-spectrum antibiotics**; - **Emergent surgery** for peritonitis, infarction, perforation — explore + resect non-viable bowel, second-look laparotomy if borderline; - **Endovascular therapy** for arterial occlusions: catheter thrombolysis, mechanical thrombectomy, stenting (SMA); selected — early without peritonitis; - **NOMI** — improve hemodynamics + intra-arterial papaverine infusion (vasodilator); - **Venous thrombosis** — anticoagulation primary; surgery if peritonitis; (4) **Outcomes** — early diagnosis + revascularization (< 6 hours from onset) critical; mortality 50-80% historically, improved with endovascular era; (5) **Chronic mesenteric ischemia (CMI)** — chronic atherosclerosis of mesenteric arteries — postprandial pain, weight loss; CTA + DSA; revascularization (stenting preferred over open bypass for most); (6) **Multidisciplinary**: vascular surgery + IR + general surgery + GI + critical care + radiology" },
+      { "label": "C", "text": "X-ray sufficient" },
+      { "label": "D", "text": "Observation only" },
+      { "label": "E", "text": "Single specialty" }
+    ],
+    "correct_answer": "B",
+    "explanation": "AMI: pain out of proportion + lactic acidosis + AFib. CTA first-line. Heparin + resuscitation + emergent surgery for peritonitis; endovascular for selected without peritonitis. Time-critical (< 6h). NOMI — improve hemodynamics. Multidisciplinary.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "AGA AMI Guidelines; ESVS"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี cirrhosis HCV + AFP rising — surveillance MRI พบ 3 cm hyperenhancing arterial-phase nodule with washout in portal venous + capsule — LI-RADS classification",
+    "choices": [
+      { "label": "A", "text": "Biopsy mandatory before treatment" },
+      { "label": "B", "text": "HCC — LI-RADS classification + management: (1) **LI-RADS** standardized reporting for HCC: - **LR-1**: definitely benign; - **LR-2**: probably benign; - **LR-3**: intermediate probability; - **LR-4**: probably HCC; - **LR-5**: **DEFINITELY HCC** (≥ 10 mm, arterial-phase hyperenhancement + ≥ 1 of: washout, capsule, threshold growth) — pathognomonic in cirrhotic context, biopsy NOT required; - **LR-M**: malignant non-HCC (e.g., cholangiocarcinoma); - **LR-TIV**: tumor in vein; (2) **Major imaging features for HCC**: - Arterial-phase hyperenhancement (APHE) — non-rim hyperenhancement; - Washout — relative hypoenhancement compared to liver in portal venous or delayed phase; - Capsule — peripheral rim of enhancement; - Threshold growth — ≥ 50% increase in 6 months or new ≥ 10 mm; (3) **Surveillance**: cirrhotic + high-risk chronic HBV (Asian males > 40, Asian females > 50, African > 20, family history HCC) — US ± AFP q6 months; CT/MRI if US inadequate (obese, fatty liver); (4) **Staging**: BCLC (Barcelona Clinic Liver Cancer): - 0/A — early — curative options (resection, transplant, ablation); - B — intermediate — TACE; - C — advanced (vascular invasion or extrahepatic spread) — systemic; - D — terminal — best supportive care; (5) **Treatment options**: - **Resection** — well-compensated cirrhosis (Child-Pugh A), no portal HTN, single tumor; - **Transplant** — within Milan criteria (single < 5 cm or up to 3 lesions all < 3 cm, no vascular invasion) — only definitive cure for cirrhosis + HCC; UCSF + downstaging expanding criteria; - **Locoregional therapies**: ablation (RFA, MWA) for ≤ 3 cm; **TACE** (transarterial chemoembolization) for intermediate stage; **TARE** (Y-90 radioembolization) — also for selected; - **Systemic**: atezolizumab + bevacizumab (IMbrave150 — improved OS vs sorafenib first-line); pembrolizumab + lenvatinib; lenvatinib; sorafenib; tremelimumab + durvalumab (HIMALAYA); (6) **Multidisciplinary HCC tumor board**: hepatology + transplant surgery + medical oncology + IR + radiation oncology + radiology + pathology + nursing + palliative care" },
+      { "label": "C", "text": "Discharge" },
+      { "label": "D", "text": "Single specialty" },
+      { "label": "E", "text": "X-ray sufficient" }
+    ],
+    "correct_answer": "B",
+    "explanation": "HCC: LI-RADS LR-5 in cirrhotic context = HCC, no biopsy needed. Arterial enhancement + washout + capsule + threshold growth. BCLC staging guides treatment (resection, transplant Milan, ablation, TACE, systemic). Atezo + bev first-line systemic. Multidisciplinary tumor board.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "ACR LI-RADS v2018; AASLD HCC 2023"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี colorectal cancer + liver mets on staging CT — workup + management",
+    "choices": [
+      { "label": "A", "text": "Hospice immediately" },
+      { "label": "B", "text": "Colorectal liver metastases (CRLM) — multimodal: (1) **Imaging**: - **CT chest-abdomen-pelvis with IV contrast (portal venous phase)** — staging modality of choice for CRC; - **MRI liver with hepatocyte-specific contrast (Eovist/Primovist, gadoxetate)** — superior for detecting + characterizing liver lesions, distinguishing FNH/adenoma/HCC/mets, in steatotic liver; recommended for surgical planning of liver mets resection (changes management ~ 20-30%); - **PET/CT** — when extra-hepatic disease changes management (pre-resection of CRLM); not sensitive for small or mucinous mets; (2) **Resectability assessment**: - Sufficient future liver remnant (FLR) > 25-30% normal liver, > 30-40% chemo-injured, > 40% cirrhotic; - Adequate vascular inflow + outflow; - Negative margins achievable; - Acceptable performance status; - Synchronous primary — concurrent vs staged resection (multidisciplinary decision); (3) **Multidisciplinary tumor board** essential — paradigm change with effective systemic therapy + advanced techniques; many initially 'unresectable' downstaged to resectable; (4) **Resectability conversion strategies**: - **Chemotherapy** (FOLFOX/FOLFIRI ± biologics) — convert ~ 15-20% to resectable; - **Portal vein embolization (PVE) by IR** — induces FLR hypertrophy ~ 30% in 4-6 weeks before extended resection; - **ALPPS** (associating liver partition + portal vein ligation for staged hepatectomy) — selected; - **Ablation** for unresectable small lesions; - **Hepatic arterial infusion chemotherapy (HAIC)** — pump-based, selected centers; (5) **Locoregional therapies for unresectable CRLM**: ablation (RFA, MWA) for small (< 3 cm); TARE (Y-90 radioembolization); HAIC; (6) **Systemic therapy**: - First-line FOLFOX or FOLFIRI; biologics — bevacizumab (anti-VEGF — for all) vs anti-EGFR (cetuximab, panitumumab — only RAS/BRAF wild-type left-sided); - Second-line crossover; immunotherapy for MSI-H (pembrolizumab, ipi-nivo); KRAS G12C inhibitors emerging; (7) **Survival in resected CRLM** — 5-year ~ 40-50% (~ 25-30% cured); vs 20% with chemotherapy alone — multimodal critical; (8) **Multidisciplinary**: hepatobiliary surgery + medical oncology + IR + radiation oncology + radiology + pathology + nursing + palliative care" },
+      { "label": "C", "text": "Single specialty" },
+      { "label": "D", "text": "Discharge" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "CRLM: CT staging + MRI liver hepatocyte-specific contrast for surgical planning. PET/CT selectively. Resectability assessment FLR. PVE/ALPPS to enlarge FLR. Convert with chemo. Ablation + TARE for selected. 5-yr survival 40-50% in resected. Multidisciplinary tumor board.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "NCCN Colorectal; ACR Appropriateness"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี painless jaundice + weight loss — CT พบ pancreatic head mass + double duct sign (dilated CBD + pancreatic duct) + biliary obstruction",
+    "choices": [
+      { "label": "A", "text": "Discharge" },
+      { "label": "B", "text": "Pancreatic ductal adenocarcinoma (PDAC): (1) **Imaging features**: - **CT abdomen with pancreas protocol (multiphase IV contrast, pancreatic arterial + portal venous phases)** — first-line: hypoenhancing mass in pancreas (typically head — 60-70%), upstream pancreatic duct + CBD dilation ('double duct sign'), atrophy of distal pancreas, contour deformity, vascular involvement assessment (SMA, celiac, portal vein, SMV — critical for resectability); - **MRI/MRCP** — adjunct: characterization, isoattenuating tumors on CT not seen, biliary tree, branch-duct IPMN differential; - **EUS** — gold standard for small tumors + tissue diagnosis (FNA biopsy); - **PET/CT** — distant mets, indeterminate lesions; - **Diagnostic laparoscopy** — peritoneal mets assessment before major resection; (2) **Resectability classification (NCCN)**: - **Resectable**: no involvement of celiac, SMA; SMV/PV ≤ 180° contact reconstructible; - **Borderline resectable**: contact with celiac/SMA but not encasement (≤ 180° SMA, ≤ 180° celiac); SMV/PV > 180° contact or short-segment occlusion; - **Locally advanced (LAPC)**: > 180° encasement of celiac/SMA; long-segment SMV/PV occlusion not reconstructible; - **Metastatic**: distant mets; (3) **Treatment**: - **Resectable** — surgery (Whipple for head, distal pancreatectomy for body/tail, total pancreatectomy rarely) + adjuvant chemotherapy (mFOLFIRINOX — PRODIGE; or gemcitabine + capecitabine); increasingly neoadjuvant chemo even for resectable (ALLIANCE A021806, PREOPANC); - **Borderline resectable + LAPC** — neoadjuvant chemo (mFOLFIRINOX, gemcitabine + nab-paclitaxel) ± RT, then restage + consider surgery; - **Metastatic** — palliative chemo (FOLFIRINOX first-line if performance status good, gemcitabine + nab-paclitaxel alternative); BRCA + PARPi (olaparib — POLO); MSI-H — pembrolizumab; KRAS G12C/G12D emerging; (4) **Palliation**: - **Biliary obstruction** — endoscopic stenting (metal preferred for unresectable, plastic if going to OR), PTC if ERCP fails; - **Gastric outlet obstruction** — endoscopic stent or gastrojejunostomy; - **Pain** — celiac plexus block by IR/EUS for refractory pancreatic cancer pain; (5) **5-year survival** poor: ~ 10% overall, ~ 25% after R0 resection + adjuvant chemo; (6) **Multidisciplinary tumor board**: hepatobiliary/pancreatic surgery + medical oncology + radiation oncology + GI + IR + radiology + pathology + nutrition + palliative care" },
+      { "label": "C", "text": "Always inoperable - hospice" },
+      { "label": "D", "text": "Single specialty" },
+      { "label": "E", "text": "X-ray sufficient" }
+    ],
+    "correct_answer": "B",
+    "explanation": "PDAC: CT pancreas protocol + MRI/MRCP + EUS biopsy. Resectability classification (NCCN). Whipple ± adjuvant. Increasingly neoadjuvant chemo. Borderline/LAPC — neoadjuvant. Metastatic — FOLFIRINOX. Palliation (stenting, celiac block). Poor prognosis. Multidisciplinary.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "NCCN Pancreatic; AGA"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 30 ปี chronic diarrhea + weight loss + abdominal pain + perianal disease — MR enterography พบ skip lesions terminal ileum + mural thickening + fat creeping",
+    "choices": [
+      { "label": "A", "text": "Single specialty" },
+      { "label": "B", "text": "Crohn disease imaging — MR enterography (MRE) preferred: (1) **MRE features Crohn**: - **Skip lesions** (discontinuous involvement) — key DDx from UC (continuous from rectum); - **Terminal ileum involvement** (~ 80% of Crohn) — wall thickening, mucosal enhancement, mural T2 hyperintensity (acute inflammation/edema); - **Mesenteric (creeping) fat** — proliferation of fat around inflamed bowel — characteristic; - **Strictures** — fibrotic (low signal T2, less enhancement) vs inflammatory (high T2 + enhancement) — treatment implications; - **Fistulas + sinus tracts** — bowel-bowel, enterovesical, enterocutaneous, perianal; - **Abscesses** — pelvic, intra-abdominal; - **Comb sign** — engorged vasa recta along inflamed bowel; - **Mesenteric adenopathy**; (2) **Modality choices**: - **MRE** — preferred for young patients (no radiation, repeatable), perianal disease assessment (MRI pelvis), pediatric; - **CT enterography (CTE)** — alternative, faster, fewer artifacts, but radiation; - **US** — emerging, no radiation, good for follow-up + acute symptoms; - **Colonoscopy + ileoscopy + biopsy** — gold standard mucosal evaluation + histology + risk of dysplasia surveillance; - **Capsule endoscopy** for small bowel disease undetected by other modalities (caution stricture); (3) **Differential UC vs Crohn**: UC — continuous from rectum, mucosal only, no skip, no perianal, no fistulas (typically), 'lead pipe' colon chronic; Crohn — discontinuous, transmural, terminal ileum + colon, perianal, fistulas; (4) **Complications imaging**: - Stricture (fibrotic — balloon dilation by GI or surgery; inflammatory — anti-TNF response); - Fistula (perianal — multidisciplinary IBD + colorectal surgery + IR + GI); - Abscess (image-guided drainage by IR, antibiotics, then biologic therapy); - Cancer surveillance (colonoscopy + biopsies q1-3 years after 8 years of pancolitis); (5) **Treatment**: - 5-ASA (UC > Crohn limited efficacy); - Corticosteroids — acute flares; budesonide for terminal ileum/right colon; - **Immunomodulators** (azathioprine, MTX); - **Biologics**: anti-TNF (infliximab, adalimumab); anti-integrin (vedolizumab); anti-IL-12/23 (ustekinumab); anti-IL-23 (risankizumab, mirikizumab); JAK inhibitors (tofacitinib, upadacitinib); selection by phenotype + risk + comorbidities; - **Surgery** for medication failure + complications (strictures, fistulas, dysplasia/cancer); (6) **Multidisciplinary IBD clinic**: GI + colorectal surgery + radiology + IR + nutrition + nursing + pharmacy + mental health + rheumatology if EIM" },
+      { "label": "C", "text": "X-ray only" },
+      { "label": "D", "text": "Discharge" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Crohn disease: MRE preferred (no radiation). Skip lesions + terminal ileum + creeping fat + transmural + perianal + fistulas. Differential UC. Complications: stricture, fistula, abscess. Biologics + selective immunomodulators + surgery. Multidisciplinary IBD clinic.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "ACG IBD; ECCO Crohn"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 60 ปี hematuria + flank pain — CT พบ 4 cm enhancing solid renal mass — incidental finding",
+    "choices": [
+      { "label": "A", "text": "Always benign — observe" },
+      { "label": "B", "text": "Renal cell carcinoma (RCC) — Bosniak + management: (1) **Imaging characterization solid renal mass**: - **CT abdomen with multiphase IV contrast** (non-contrast + corticomedullary + nephrographic + excretory) — gold standard; > 20 HU enhancement = solid enhancing mass; - **MRI** when contrast contraindicated or characterization; - Look for: enhancement, growth, fat (AML — angiomyolipoma — fat density), calcification, necrosis, vascular invasion (renal vein, IVC — surgical implication); (2) **Bosniak classification for cystic renal lesions** (for cysts, not solid masses; revised 2019): - I: simple cyst, < 5% malignancy — no follow-up; - II: minimally complex (thin septa, fine calcifications), benign; - IIF: moderately complex — surveillance imaging; - III: complex (thick irregular septa, irregular wall) — 50% malignancy — surgical exploration/biopsy; - IV: enhancing soft tissue components — > 90% malignancy — surgery; (3) **Solid enhancing renal mass approach**: - Stage with CT chest + abdomen-pelvis (or MRI), look for metastases (lung + bone most common); - Biopsy considerations: ~ 20% of small (< 4 cm) solid masses are benign (oncocytoma, AML without fat — fat-poor AML, lipid-poor); biopsy helpful for: indeterminate, comorbidities affecting surgical risk, planning ablation, advanced disease for tissue + molecular; - Solid + fat = AML (benign — surveillance unless > 4 cm or symptomatic — embolization); (4) **Renal cell carcinoma staging**: TNM 8th ed; (5) **Treatment options**: - **Partial nephrectomy (preferred for T1)** — preserve renal function, oncologically equivalent for small tumors; robotic minimally invasive standard; - **Radical nephrectomy** for larger tumors, central tumors, vascular invasion; - **Ablation (RFA, cryoablation, MWA)** by IR — small (< 3-4 cm) exophytic tumors, comorbid patients unable for surgery; - **Active surveillance** for small renal masses (≤ 4 cm) in elderly or with comorbidities — slow growth in most; - **Cytoreductive nephrectomy** controversial in metastatic (CARMENA trial — sunitinib alone non-inferior to surgery + sunitinib); (6) **Metastatic RCC systemic therapy**: combination immunotherapy + TKI now standard (pembrolizumab + axitinib, nivolumab + ipilimumab, lenvatinib + pembrolizumab, cabozantinib + nivolumab); first-line by IMDC risk; (7) **Multidisciplinary**: urology + medical oncology + radiation oncology + IR + radiology" },
+      { "label": "C", "text": "Always biopsy first" },
+      { "label": "D", "text": "Discharge" },
+      { "label": "E", "text": "Single specialty" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Renal mass: CT multiphase for enhancement + characterization. Bosniak for cysts (revised 2019). Solid + fat = AML benign. Biopsy selective. Partial nephrectomy preferred for T1. Ablation alternative for small/comorbid. Active surveillance selected. Combination IO+TKI for metastatic.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "renal_gu",
+    "board_age_group": "adult",
+    "reference_source": "Bosniak 2019; NCCN Kidney Cancer; AUA"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 40 ปี acute left flank pain + hematuria + nausea — non-contrast CT KUB พบ 5 mm stone at left ureterovesical junction + mild hydronephrosis",
+    "choices": [
+      { "label": "A", "text": "Always surgery" },
+      { "label": "B", "text": "Urolithiasis — imaging + management: (1) **Imaging modality**: - **Non-contrast CT abdomen-pelvis (CT KUB / 'stone protocol')** — gold standard: identifies stones (any composition except indinavir — drug-related rare), location, size, density (HU — higher density less likely to pass + harder to fragment), hydronephrosis, perinephric stranding; sensitivity ~ 95-100%, specificity ~ 95-100%; low-dose protocols reduce radiation; - **Ultrasound** — initial in pregnancy, pediatric, to reduce radiation; identifies hydronephrosis + larger stones; sensitivity lower than CT (~ 70-90%) — Twinkle artifact aids stone detection; - **KUB plain X-ray** — limited; only radiopaque stones (calcium); follow-up; - **IVP** — historical; (2) **Imaging-based decisions**: - Stone size + location → likelihood of spontaneous passage (< 5 mm: 80%, 5-7 mm: 60%, 7-10 mm: 50%, > 10 mm: low; distal more likely to pass); - HU density > 1000 → less likely shock wave lithotripsy success; - Anatomic factors (UPJ obstruction, horseshoe kidney, transplant kidney); (3) **Management**: - **Conservative (medical expulsive therapy)** for uncomplicated < 10 mm: hydration, analgesics (NSAIDs preferred — ketorolac IV, decreases ureteral contractility + renal capsule pressure; opioids for breakthrough), antiemetics, alpha-blocker (tamsulosin — controversial efficacy, modest benefit for distal stones 5-10 mm per SUSPEND, EAU includes); follow-up to confirm passage; - **Urgent intervention indications**: obstruction + infection (urosepsis — emergency, antibiotic + decompression — ureteral stent or percutaneous nephrostomy), acute kidney injury (especially solitary kidney), intractable pain/vomiting, large stone unlikely to pass; - **Definitive therapies**: - **ESWL (extracorporeal shock wave lithotripsy)** — non-invasive, less effective for large/dense/lower pole; - **Ureteroscopy + holmium laser lithotripsy** — most precise; - **PCNL (percutaneous nephrolithotomy)** for large kidney stones (> 2 cm); - Stent placement to relieve obstruction; (4) **Recurrence prevention**: hydration > 2.5 L/day, low salt + animal protein, moderate calcium intake (calcium binds oxalate — paradoxically reduces stone risk), citrate intake (citrus, potassium citrate Rx), based on stone composition (struvite — infection management, uric acid — alkalinization, cystine — alkalinization + thiols); 24-h urine collection for recurrent + high-risk; (5) **Multidisciplinary**: urology + ED + radiology + IR + nephrology" },
+      { "label": "C", "text": "X-ray sufficient" },
+      { "label": "D", "text": "Discharge no follow-up" },
+      { "label": "E", "text": "Single specialty" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Urolithiasis: CT KUB gold standard. US in pregnancy. Conservative for uncomplicated < 10 mm. Urgent — obstruction + infection (urosepsis), AKI, intractable. Definitive (ESWL, ureteroscopy + laser, PCNL). Recurrence prevention with hydration + diet. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "renal_gu",
+    "board_age_group": "adult",
+    "reference_source": "AUA/EAU Urolithiasis Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 70 ปี gross hematuria — cystoscopy พบ bladder mass — CT urogram for staging",
+    "choices": [
+      { "label": "A", "text": "X-ray sufficient" },
+      { "label": "B", "text": "Bladder cancer — imaging + staging: (1) **Initial evaluation**: - **Cystoscopy + biopsy** — gold standard diagnosis (urothelial carcinoma most common in West, squamous in schistosomiasis-endemic, adenocarcinoma rare); - **Urine cytology** — adjunct, low sensitivity for low-grade; - **NMP22, UroVysion FISH** — selected; (2) **Imaging**: - **CT urogram (CTU) — first-line for upper tract evaluation + hematuria workup**: multiphase IV contrast — corticomedullary, nephrographic, excretory phases — synchronous + metachronous upper tract urothelial carcinoma (~ 5%), staging local + nodal + distant; - **MRI pelvis with multiparametric protocol** — for local T-staging (depth of invasion — T1 lamina propria, T2 muscle, T3 perivesical fat, T4 adjacent organs); VI-RADS (Vesical Imaging-Reporting and Data System) for muscle invasion prediction — recent development; - **CT chest** — for muscle-invasive + distant staging; - **PET/CT** — selective for muscle-invasive + lymph node staging; - **Bone scan** — symptomatic / elevated ALP / muscle-invasive; (3) **Staging-based treatment**: - **Non-muscle invasive (Ta, T1, CIS)** (~ 75% at diagnosis): - TURBT + intravesical therapy (BCG for high-risk — most effective; mitomycin); - Surveillance cystoscopy q3-6 months × years (high recurrence rate); - Persistent CIS / BCG-refractory: pembrolizumab (KEYNOTE-057), nadofaragene (gene therapy), cystectomy; - **Muscle-invasive (T2-T4)**: - **Neoadjuvant cisplatin-based chemo (MVAC, dose-dense MVAC, gemcitabine + cisplatin) + radical cystectomy + pelvic LN dissection** — standard of care; OS benefit ~ 5-8% absolute over surgery alone; - **Bladder-sparing** trimodal therapy (TURBT + concurrent chemoradiation) — selected for smaller solitary tumors, organ preservation, patient preference; - Adjuvant immunotherapy (nivolumab — CheckMate 274 — for ypT2-4 or yN+ after neoadj chemo); - **Metastatic**: chemo (cis/carbo + gem) → immunotherapy (avelumab maintenance — JAVELIN Bladder 100, pembrolizumab); enfortumab vedotin (ADC — Nectin-4 targeting); FGFR inhibitors (erdafitinib) for FGFR-altered; (4) **Risks**: smoking (#1), occupational (aromatic amines, dyes), schistosomiasis (squamous in endemic areas), aristolochic acid; (5) **Multidisciplinary**: urology + medical oncology + radiation oncology + radiology + pathology + nursing + nutrition + palliative care + stoma nurse for cystectomy patients" },
+      { "label": "C", "text": "Discharge" },
+      { "label": "D", "text": "Always observation" },
+      { "label": "E", "text": "Single specialty" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Bladder cancer: cystoscopy + biopsy. CT urogram for staging + upper tracts. MRI VI-RADS for local T-stage. Non-muscle invasive: TURBT + BCG. Muscle-invasive: neoadj chemo + cystectomy or trimodal therapy. Nivolumab adjuvant. Enfortumab vedotin metastatic. Multidisciplinary.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "renal_gu",
+    "board_age_group": "adult",
+    "reference_source": "NCCN Bladder Cancer; AUA"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี incidental 2 cm adrenal mass on CT done for trauma — non-functioning suspected\n\nคำถาม: workup adrenal incidentaloma",
+    "choices": [
+      { "label": "A", "text": "Always biopsy" },
+      { "label": "B", "text": "Adrenal incidentaloma — Choosing Wisely approach: (1) **Definition**: incidentally discovered adrenal mass ≥ 1 cm on imaging not initially targeted at adrenals; ~ 4-7% of abdominal CTs; (2) **Two key questions**: (a) **Is it malignant?** (b) **Is it functional (hormonally active)?**; (3) **Imaging characterization for malignancy**: - **Non-contrast CT < 10 HU** = lipid-rich adenoma (benign, ~ 70% of adenomas) — no further imaging unless functional or growing; - **Adrenal CT washout protocol** for lesions ≥ 10 HU: pre-contrast + 60-second post-contrast + 15-minute delayed phase: absolute washout > 60% or relative washout > 40% = lipid-poor adenoma (benign); poor washout = potentially malignant or pheochromocytoma; - **MRI chemical shift imaging** — signal drop on out-of-phase = adenoma (lipid content); - **Heterogeneous, > 4 cm, irregular margins, central necrosis, calcifications, hemorrhage** — suspicious for malignancy (adrenocortical carcinoma, metastasis, pheochromocytoma); - **FDG-PET** — high SUV uptake suggests malignancy; (4) **Functional workup (all incidentalomas)** — biochemical screening: - **24h urine metanephrines or plasma free metanephrines** — pheochromocytoma (always rule out before biopsy or surgery — hypertensive crisis risk); - **Overnight 1 mg dexamethasone suppression test** — Cushing syndrome / autonomous cortisol secretion; - **Aldosterone-renin ratio** — primary hyperaldosteronism (if hypertensive); - **DHEA-S** — adrenal androgen excess (selected); (5) **Indications for adrenalectomy**: - Functional adenoma — pheo, primary aldosteronism (Conn), cortisol-producing (overt Cushing); - Suspicious for malignancy (size > 4 cm, suspicious imaging features, growth); - Bilateral large adrenal masses; (6) **Surveillance** for non-functioning < 4 cm with benign imaging features: - One follow-up CT/MRI at 6-12 months to confirm stability (per AACE/AAES + recent ESE guidelines; some suggest no follow-up if clearly benign on initial imaging — recent shift); - Repeat hormonal screening for cortisol q1-5 years (subclinical Cushing); (7) **Biopsy RARELY needed**: only for known extra-adrenal cancer when changes management + benign features ruled out + pheochromocytoma excluded biochemically; (8) **Multidisciplinary**: endocrinology + radiology + urology/endocrine surgery + medical oncology if metastasis" },
+      { "label": "C", "text": "Always surgery" },
+      { "label": "D", "text": "Discharge no workup" },
+      { "label": "E", "text": "Single specialty" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Adrenal incidentaloma: characterize (non-contrast HU, washout, MRI chemical shift) + functional workup (metanephrines, dex suppression, aldosterone-renin). Surgery for functional, suspicious, > 4 cm. Surveillance for benign non-functioning. Rarely biopsy. EXCLUDE pheo before biopsy/surgery. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "AACE/AAES Adrenal Incidentaloma; ESE 2023"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี elevated PSA + abnormal DRE — prostate MRI for biopsy planning",
+    "choices": [
+      { "label": "A", "text": "Biopsy first then MRI" },
+      { "label": "B", "text": "Prostate MRI + PI-RADS: (1) **Multi-parametric prostate MRI (mpMRI)** — T2W + DWI/ADC + DCE (dynamic contrast-enhanced) — standard for clinically significant prostate cancer (csPCa, Gleason ≥ 3+4) detection + localization + staging; (2) **PI-RADS v2.1 classification (peripheral zone — DWI dominant; transition zone — T2 dominant)**: - **PI-RADS 1**: very low; - **PI-RADS 2**: low; - **PI-RADS 3**: equivocal; - **PI-RADS 4**: high — biopsy recommended; - **PI-RADS 5**: very high — biopsy recommended; (3) **Use in clinical workflow**: - **Pre-biopsy MRI** (PRECISION trial — improves detection of csPCa, reduces detection of clinically insignificant) — recommended before initial biopsy in elevated PSA per EAU + many guidelines, NCCN evolving; - **Targeted MRI/US fusion biopsy** for PI-RADS 4-5 lesions + concurrent systematic biopsy; - **Active surveillance** monitoring; - **Local staging** for known cancer (extraprostatic extension, seminal vesicle invasion, lymph node staging); (4) **Other imaging in prostate cancer**: - **Bone scan / NaF PET** for high-risk staging (PSA > 20, Gleason ≥ 8, T3-4) — bone mets; - **PSMA PET/CT** — revolutionized prostate cancer imaging — biochemical recurrence (PSA rising post-treatment) with very high sensitivity (proPSMA trial — superior to conventional CT + bone scan), recently approved for staging high-risk pre-treatment + recurrence (CONDOR, OSPREY trials); guides salvage therapy + metastasis-directed therapy (MDT); - **CT abdomen-pelvis** for nodal + visceral staging; (5) **Risk-stratified treatment options**: - **Very low / low risk (Gleason 6, PSA < 10)** — active surveillance preferred (PIVOT, ProtecT, PROTECT-T trials); - **Intermediate-favorable** — surveillance or treatment; - **Intermediate-unfavorable / high risk** — surgery (robotic radical prostatectomy + pelvic LN dissection), radiation therapy (external beam + brachytherapy boost for high risk) + ADT (androgen deprivation therapy for high risk 18-36 months); - **Metastatic hormone-sensitive** — ADT + docetaxel or AR-pathway inhibitor (abiraterone, enzalutamide, apalutamide, darolutamide); triplet therapy emerging; - **Metastatic CRPC (castration-resistant)** — multiple lines (taxanes, abiraterone, enzalutamide, radium-223, PARPi for BRCA-altered, sipuleucel-T, Lu-177 PSMA radioligand therapy — VISION trial); (6) **Multidisciplinary**: urology + medical oncology + radiation oncology + radiology + pathology + nuclear medicine + nursing + palliative care" },
+      { "label": "C", "text": "Discharge" },
+      { "label": "D", "text": "Single specialty" },
+      { "label": "E", "text": "X-ray sufficient" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Prostate MRI mpMRI + PI-RADS for pre-biopsy + targeted fusion biopsy (PRECISION). PSMA PET revolutionized recurrence + high-risk staging (proPSMA). Risk-stratified treatment (AS, RP, RT + ADT, multiple systemic lines including Lu-177 PSMA). Multidisciplinary.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "renal_gu",
+    "board_age_group": "adult",
+    "reference_source": "PI-RADS v2.1; NCCN Prostate; EAU"
+  },
+  {
+    "scenario": "เด็กชายอายุ 16 ปี acute severe testicular pain × 2 ชั่วโมง — examination พบ swollen tender testicle — testicular torsion suspected",
+    "choices": [
+      { "label": "A", "text": "Conservative observation" },
+      { "label": "B", "text": "Testicular torsion — emergent: (1) **Clinical features**: sudden severe pain, swelling, high-riding testicle, transverse lie, absent cremasteric reflex, often nausea/vomiting, recent activity/trauma trigger but often spontaneous (sleep); (2) **Imaging when DOES NOT delay surgery** — if clinical certainty high → straight to OR: - **Scrotal Doppler US — first-line**: absent or markedly diminished blood flow on color/spectral Doppler in affected testicle (compare to contralateral); 'whirlpool sign' of twisted cord; testicular swelling + heterogeneous (late — necrosis); - **POCUS** at bedside if available — sensitivity high for trained operators; - **Color Doppler — sensitivity 88-90%, specificity 99%** — operator-dependent; - **Scintigraphy** historical (decreased uptake) — slow + unavailable; (3) **Time-critical**: testicular salvage rates: < 6 hours ~ 90-100%; 6-12 hours ~ 50%; > 12 hours < 20%; > 24 hours rare; (4) **Management**: - **Emergent urology consultation** before/during imaging; - **Manual detorsion attempt** in ED while waiting OR — typically rotate outward ('open like a book') — relief of pain suggests success; not definitive (must still go to OR); - **Surgical exploration + detorsion + bilateral orchiopexy** (contralateral too — prevent future); - **Non-viable testicle — orchiectomy**; (5) **Differential**: epididymitis (older, gradual, fever, dysuria, increased flow on Doppler — opposite of torsion), torsion of appendix testis (blue dot sign, less severe, often self-limited), trauma, hernia, hydrocele/varicocele complications, idiopathic scrotal edema; (6) **Pediatric considerations** — peak incidence ages 12-18, neonatal (often perinatal extravaginal — different mechanism, often non-salvageable at birth); (7) **Recurrent torsion** prevention — bilateral orchiopexy; (8) **Family communication + counseling** — testicular loss, fertility implications, follow-up; (9) **Multidisciplinary**: ED + urology + radiology + pediatric urology if pediatric" },
+      { "label": "C", "text": "Discharge" },
+      { "label": "D", "text": "Single specialty" },
+      { "label": "E", "text": "X-ray sufficient" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Testicular torsion: clinical Dx — high clinical suspicion straight to OR. Doppler US first-line — absent flow + whirlpool sign. Time-critical (< 6h best). Manual detorsion attempt + emergent surgery + bilateral orchiopexy. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "renal_gu",
+    "board_age_group": "adult",
+    "reference_source": "AUA Acute Scrotum; ACR Appropriateness"
+  },
+  {
+    "scenario": "หญิงอายุ 35 ปี incidental complex ovarian mass on imaging — O-RADS classification",
+    "choices": [
+      { "label": "A", "text": "Always benign — observe" },
+      { "label": "B", "text": "Ovarian/adnexal mass — O-RADS: (1) **O-RADS US** (lexicon + risk categories — based on IOTA-derived simple rules): - **O-RADS 0**: incomplete — additional imaging; - **O-RADS 1**: normal ovary; - **O-RADS 2**: almost certainly benign (< 1% malignancy) — simple cyst, hemorrhagic cyst < 5 cm, etc.; - **O-RADS 3**: low risk (1-10%); - **O-RADS 4**: intermediate (10-50%); - **O-RADS 5**: high (≥ 50%); (2) **O-RADS MRI** for indeterminate adnexal masses (especially O-RADS 3-4 on US) — high specificity for benign vs malignant: - 5-point scale based on signal characteristics, enhancement; - Adnexal masses with cystic components — different from solid; - Time-intensity curves on DCE-MRI (type 1 slow benign, type 2 intermediate, type 3 rapid washout malignant); (3) **Common benign masses**: simple cysts (functional), hemorrhagic cysts (T1 hyperintense, fluid-fluid level, shrinking on follow-up), endometrioma ('chocolate cyst' — T1 hyperintense, T2 shading), dermoid (mature cystic teratoma — fat content + calcifications + Rokitansky nodule), fibroma, fibrothecoma; (4) **Tumor markers + adjuncts**: - **CA-125** — limited as screening (false positives in endometriosis, fibroids, menstruation, peritonitis, etc.); useful for follow-up of known cancer; - **HE4** + CA-125 — ROMA score; - **AFP, β-hCG, LDH** — germ cell tumors in young; - **Inhibin** — sex cord-stromal; (5) **Management based on risk**: - O-RADS 1-2 → routine, follow-up only for specific entities; - O-RADS 3 → gynecologic consultation + interval follow-up; - O-RADS 4-5 → gynecologic oncology referral; (6) **Ovarian cancer staging + treatment**: - **Staging**: CT chest-abdomen-pelvis + tumor markers + diagnostic laparoscopy/laparotomy; - **Surgery** — bilateral salpingo-oophorectomy + total abdominal hysterectomy + comprehensive staging or cytoreduction (debulking) for advanced; gyn-onc subspecialty; - **Adjuvant chemo**: platinum-taxane (carboplatin + paclitaxel) standard; - **Maintenance**: PARPi (olaparib, niraparib) for BRCA-mutated + HRD; bevacizumab; - **Recurrent**: platinum-sensitive vs resistant — multiple lines; (7) **Hereditary**: BRCA1/2, Lynch syndrome — genetic counseling + risk-reducing surgery (RRSO) recommended; (8) **Multidisciplinary**: gynecologic oncology + radiology + medical oncology + radiation oncology + pathology + nursing + palliative care + genetics" },
+      { "label": "C", "text": "Always surgery" },
+      { "label": "D", "text": "Discharge" },
+      { "label": "E", "text": "Single specialty" }
+    ],
+    "correct_answer": "B",
+    "explanation": "O-RADS for ovarian/adnexal masses (US + MRI). Risk-stratified categories 0-5. MRI for indeterminate. Tumor markers (CA-125 + HE4 + ROMA + germ cell). Gyn-onc referral for O-RADS 4-5. Multidisciplinary cancer care + PARPi maintenance + genetics.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACR O-RADS US + MRI; NCCN Ovarian"
+  },
+  {
+    "scenario": "หญิงอายุ 30 ปี first-trimester pregnancy + RUQ pain — imaging considerations",
+    "choices": [
+      { "label": "A", "text": "No imaging in pregnancy ever" },
+      { "label": "B", "text": "Imaging in pregnancy — modality selection: (1) **General principles**: - Risk-benefit analysis: maternal indication usually outweighs fetal risk; - Modality preferences: US > MRI > CT (radiation); - Cumulative fetal dose ≤ 50 mGy threshold for deterministic effects per ACR + ACOG; most diagnostic CT studies far below; - Shielding minimally protective for direct beam — modern thinking; - 'Pregnant or could-be-pregnant' status checked + documented; (2) **Modality-specific**: - **US — first-line for most indications in pregnancy**: no radiation, no contrast; abdominal pain — gallstones, appendicitis (limited later); pelvic; obstetric; thrombus (DVT); musculoskeletal; - **MRI without contrast — second-line**: no radiation; gadolinium contrast generally avoided in pregnancy (NSF + fetal effects — gadolinium crosses placenta + recirculates in fetal urine) — only if essential, no alternative, after counseling; - **CT — only when necessary**: lower-dose protocols; abdominal CT typical 10-25 mGy fetal dose (below threshold but cumulative consideration); CTPA for suspected PE (low fetal dose with breast shielding — alternative V/Q scan also low dose to fetus); contrast iodinated — generally safe (fetal thyroid concerns minimal with single exposure); - **Nuclear medicine**: case-by-case; V/Q scan for PE — low fetal dose (1.4 mGy); thyroid uptake/treatment contraindicated; (3) **ACR Appropriateness for common scenarios**: - **Suspected PE in pregnancy**: D-dimer + Wells, US lower extremity if signs; if imaging needed — CTPA or V/Q (controversies — V/Q lower breast radiation, CTPA lower fetal radiation if breast shielding); CTPA preferred more recently; - **Suspected appendicitis**: US first → MRI if non-diagnostic → CT if needed; - **Cholelithiasis**: US first-line; - **Trauma**: indicated CT not deferred (mother-first principle); - **Stroke**: MRI without gadolinium first-line; CT if MRI not available; - **Headache**: MRI without contrast if needed; (4) **Patient counseling**: shared decision-making, written information, document discussion; (5) **Lactation**: most contrast (iodinated + macrocyclic gadolinium) compatible — continue breastfeeding; (6) **Multidisciplinary**: OB + radiology + ED + specialist consultants" },
+      { "label": "C", "text": "Always CT" },
+      { "label": "D", "text": "Single specialty" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Imaging in pregnancy: risk-benefit; US > MRI > CT. Fetal dose < 50 mGy threshold. Avoid gadolinium unless essential. Iodinated contrast generally safe. ACR Appropriateness for common scenarios (PE, appendicitis, etc.). Shared decision-making + documentation. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACR/ACOG Imaging in Pregnancy; ACR Manual on Contrast Media"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 50 ปี hypertension + episodic palpitations + sweating + headache — pheochromocytoma suspected",
+    "choices": [
+      { "label": "A", "text": "Beta-blocker first" },
+      { "label": "B", "text": "Pheochromocytoma — imaging + management: (1) **Diagnosis**: - **Biochemical first** (always before imaging): plasma free metanephrines + normetanephrines (high sensitivity ~ 99%, lower specificity), 24h urine fractionated metanephrines + catecholamines; **avoid** medications interfering (tricyclics, MAOIs, decongestants — discontinue before testing); - Confirmed elevation → **imaging localization**: - **CT abdomen with IV contrast** — high sensitivity for adrenal pheo (10-15 HU non-contrast typically, avid enhancement, may be heterogeneous, cystic/hemorrhagic, larger lesions); - **MRI alternative** — T2 hyperintense ('light bulb' sign — classic but not always present); - **Functional imaging** for extra-adrenal paraganglioma + metastatic + hereditary syndromes: - **MIBG scintigraphy** (I-123 MIBG) — adrenal + extra-adrenal pheo/paraganglioma + metastases; - **68Ga-DOTATATE PET/CT** — sensitive for SDHB-mutated + metastatic + paraganglioma (often outperforms MIBG, becoming first-line for some scenarios); - **FDG-PET** alternative; (2) **Hereditary syndromes (40% of pheo/PGL — genetic)**: VHL, MEN2A/B, NF1, SDHx (SDHB, SDHD — paraganglioma syndromes), TMEM127, MAX — genetic testing recommended for all; SDHB high metastatic risk; (3) **Pre-operative management**: - **Alpha-blockade first (essential)** — phenoxybenzamine (non-selective long-acting) or doxazosin (selective alpha-1, shorter acting, fewer side effects) for 10-14 days; - **Then beta-blockade** for tachycardia (NEVER beta-blocker first — unopposed alpha causes hypertensive crisis); - Liberal salt + fluids to expand intravascular volume pre-op; - Avoid medications causing release (glucagon, metoclopramide, certain anesthetics); (4) **Surgery**: laparoscopic adrenalectomy (cortical-sparing for bilateral hereditary), open for large/invasive/extra-adrenal; intra-op blood pressure swings expected; (5) **Post-op**: monitoring for hypotension (sudden withdrawal of catecholamines), hypoglycemia (rebound), surveillance metanephrines + imaging; (6) **Metastatic pheo/PGL**: I-131 MIBG radionuclide therapy, Lu-177 DOTATATE PRRT, chemo (CVD — cyclophosphamide, vincristine, dacarbazine), tyrosine kinase inhibitors (sunitinib selected); (7) **Multidisciplinary**: endocrinology + endocrine surgery + radiology + nuclear medicine + genetics + medical oncology if metastatic" },
+      { "label": "C", "text": "Surgery without alpha-blockade" },
+      { "label": "D", "text": "Discharge" },
+      { "label": "E", "text": "Single specialty" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pheochromocytoma: biochemical first (plasma free metanephrines) → CT/MRI + functional imaging (MIBG, DOTATATE). Hereditary syndromes 40% — genetic testing. Alpha-blockade FIRST then beta-blockade pre-op. Adrenalectomy. Surveillance. Multidisciplinary.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "Endocrine Society Pheo/PGL Guidelines"
+  },
+  {
+    "scenario": "Ultrasound physics + common artifacts",
+    "choices": [
+      { "label": "A", "text": "No artifacts to know" },
+      { "label": "B", "text": "Ultrasound physics + artifacts: (1) **Physics basics**: piezoelectric crystals in transducer convert electrical to mechanical (acoustic) waves + back; high-frequency probes (7-15 MHz — linear) — higher resolution + shallower penetration (superficial, vascular, MSK); low-frequency (2-5 MHz — curvilinear, phased array) — deeper penetration + lower resolution (abdomen, OB, cardiac); (2) **Modes**: B-mode (2D anatomy), M-mode (motion vs time — cardiac), color/power Doppler (flow), spectral Doppler (velocity quantification), elastography (tissue stiffness), contrast-enhanced US (microbubbles); (3) **Common artifacts**: - **Acoustic shadowing**: dense structures (stones, bone, calcifications, air) block transmission — posterior shadowing; - **Posterior acoustic enhancement**: fluid-filled (cysts) transmits more — bright behind; differentiates cyst from solid; - **Reverberation**: parallel reflectors — repeated echoes (comet tail, ring-down); 'A-lines' lung; - **Mirror image**: at strong reflector (diaphragm) — duplicate liver appearing above diaphragm; - **Edge artifact / refractive shadowing**: rounded structures (gallbladder, cysts) — shadowing at edges; - **Side lobe artifact**: false echoes from off-axis beams; - **Twinkling**: behind crystalline structures (stones) on color Doppler — aids stone detection; - **Aliasing**: Doppler exceeds Nyquist limit (PRF/2) — color reversal or wrap-around in spectral; - **B-lines** (lung): hyperechoic vertical lines extending from pleura — pulmonary edema, ILD, pneumonia; - **Lung sliding + lung pulse + lung point**: pneumothorax exclusion (presence of sliding rules out PTX at that location); (4) **Clinical applications expanding** — POCUS (lung, FAST, cardiac), nerve blocks, vascular access, dynamic imaging, pediatric (no radiation), pregnancy; (5) **Limitations**: operator-dependent, body habitus (obesity), bowel gas, depth limitations" },
+      { "label": "C", "text": "Always interpretable" },
+      { "label": "D", "text": "Discharge" },
+      { "label": "E", "text": "Single mode only" }
+    ],
+    "correct_answer": "B",
+    "explanation": "US physics: high freq superficial, low freq deep. Modes (B, M, Doppler, elastography, CEUS). Artifacts: shadowing (stones), enhancement (cysts), reverberation (A-lines, comet), mirror, twinkling (stones on Doppler), B-lines (edema). POCUS expanding. Operator-dependent.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "AIUM Standards; Radiology Physics"
+  },
+  {
+    "scenario": "MRI safety — zones + screening + projectiles",
+    "choices": [
+      { "label": "A", "text": "No screening needed" },
+      { "label": "B", "text": "MRI safety — 4 zones + screening: (1) **ACR MR Safety Zones** (4-zone access control): - **Zone I**: open public area, no restriction; - **Zone II**: interface between unscreened public + restricted, screening starts (waiting room, reception); - **Zone III**: restricted to screened personnel + patients (control room area, near scanner); - **Zone IV**: scanner room (magnet on at all times — even when 'off'); only screened + supervised; (2) **Screening — every entry**: - **Implanted devices**: pacemaker/ICD (older — contraindicated; many modern devices MR-conditional — vendor + parameters specified), cochlear implants, neurostimulators, drug pumps, aneurysm clips (older ferromagnetic vs newer non-ferromagnetic), intracranial coils, IVC filters, joint replacements (most MR-conditional or safe), penile implants, retained bullets/shrapnel, retained tattoos (rarely heating), retained metal fragments (especially in eyes — orbital X-ray screening for workers in occupations); - **Pregnancy**: first trimester relative caution — counsel + indications; - **Renal function**: if gadolinium contemplated (eGFR, NSF risk); - **Claustrophobia + sedation needs**; - **Body habitus** (bore size); - **Recent surgery / device placement** (must be confirmed safe); (3) **Projectile hazards**: - Magnet always ON — ferromagnetic objects (oxygen tanks, IV poles, scissors, keys, monitors) accelerate to high velocities, can become deadly missiles; - High-profile fatalities historically (oxygen tank case); - All equipment entering scanner room must be MR-safe (green label) or conditional (yellow); MR-unsafe (red — forbidden); - Visitor screening + escort; (4) **Heating + burns**: RF energy deposition (SAR — specific absorption rate); avoid skin-to-skin contact (loops), wires/leads (looped — induce currents + burns); ECG, pulse ox cables — MR-compatible only; (5) **Quench safety**: emergency dump of cryogens (helium → gas, displaces oxygen, frostbite) — quench button only in true emergency; ventilation; (6) **Loud noise**: > 100 dB — hearing protection mandatory; (7) **Contrast safety**: gadolinium (above question — NSF, retention); (8) **Pediatric + claustrophobic**: sedation/anesthesia in selected — full monitoring; (9) **Multidisciplinary**: radiology + MRI tech + nursing + anesthesia + medical physics + administration + safety officer; (10) **Modern**: MR-conditional devices increasingly available — check vendor specifications + manufacturer's IFU before scanning" },
+      { "label": "C", "text": "Magnet turned off between scans" },
+      { "label": "D", "text": "Discharge" },
+      { "label": "E", "text": "Single zone" }
+    ],
+    "correct_answer": "B",
+    "explanation": "MR safety: 4 zones (I-IV). Screening for implants + projectiles + pregnancy + renal function. Magnet ALWAYS ON — projectile hazards. Heating + burns from cables (no loops). Quench emergency only. MR-conditional devices increasing. Multidisciplinary safety culture.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "ACR Manual on MR Safety 2024"
+  },
+  {
+    "scenario": "PACS + DICOM + radiology informatics",
+    "choices": [
+      { "label": "A", "text": "Paper-based sufficient" },
+      { "label": "B", "text": "Radiology informatics: (1) **DICOM (Digital Imaging and Communications in Medicine)**: international standard for medical imaging — file format + network communication; metadata embedded (patient demographics, study, series, image, equipment, technique); (2) **PACS (Picture Archiving and Communication System)**: stores, retrieves, displays, distributes images; integration with RIS (Radiology Information System — orders, schedules, reports) + EHR; vendor-neutral archives (VNA) for cross-vendor; (3) **HL7 / FHIR**: standards for healthcare data exchange — orders, reports, demographics; FHIR (Fast Healthcare Interoperability Resources) — modern API-based; (4) **Speech recognition + structured reporting**: Dragon, M*Modal; templates + macros; reduces turnaround time; (5) **AI / machine learning applications**: - **Detection**: PE, ICH, stroke (LVO), nodules, fractures, pneumothorax — FDA-cleared products integrating into PACS worklists; - **Quantification**: lesion size + volume, perfusion mapping (RAPID for stroke), calcium scoring; - **Workflow**: prioritization, decision support, dose monitoring; - **Image quality + reconstruction**: deep learning-based reconstruction (faster MRI, lower-dose CT); - **Natural language processing**: structured data extraction from reports; (6) **Cybersecurity**: HIPAA compliance, encryption, access logging, ransomware mitigation, incident response; (7) **Tele-radiology**: night/weekend coverage; subspecialty consultation; equity in underserved areas; cross-border practices; licensing + credentialing considerations; (8) **Cloud computing**: scalable storage + computing; vendor-neutral; consolidation across enterprises; (9) **Reporting analytics**: turnaround time, peer review, quality metrics, dose tracking, billing; (10) **3D + advanced visualization**: post-processing workstations + AI-augmented; surgical planning, 3D printing; (11) **Quality + safety**: closed-loop critical findings, follow-up tracking (incidental findings), error reporting; (12) **Multidisciplinary**: radiology + IT + medical physics + quality + administration + clinical informatics + vendors + cybersecurity" },
+      { "label": "C", "text": "No digital integration" },
+      { "label": "D", "text": "Discharge" },
+      { "label": "E", "text": "Single system" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Radiology informatics: DICOM + PACS + RIS + HL7/FHIR. Structured reporting + AI (detection, prioritization, quantification). Cybersecurity. Tele-radiology. Cloud. 3D visualization. Quality + safety closed-loop. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "ACR Informatics Standards; HIMSS"
+  },
+  {
+    "scenario": "Body MRI sequences + applications",
+    "choices": [
+      { "label": "A", "text": "Single sequence only" },
+      { "label": "B", "text": "Body MRI sequences: (1) **T1-weighted**: anatomy, fat bright, water/CSF dark; in-phase and out-of-phase (chemical shift) — adrenal adenoma signal drop on OP suggests fat-containing; (2) **T2-weighted (with + without fat saturation)**: fluid bright, pathology generally bright (edema, cysts, fluid collections); fat-saturated T2 — pathology stands out; (3) **STIR (short tau inversion recovery)**: fat suppressed, sensitive for edema (bone marrow, soft tissue), inflammation; (4) **DWI (diffusion-weighted imaging)** + ADC map: restricted diffusion in hypercellular tumors (lymphoma, prostate cancer, hepatocellular cancer, peritoneal carcinomatosis), abscess (pus), recent stroke; high b-values better for tumor; (5) **Post-contrast T1 (with fat saturation)**: dynamic multiphase — arterial, portal venous, equilibrium, delayed; tissue characterization (HCC arterial + washout, hemangioma peripheral nodular discontinuous fill-in, FNH centripetal); (6) **Specialized sequences**: - **MRCP (cholangiopancreatography)** — heavily T2-weighted thick-slab: biliary + pancreatic ducts non-invasively; - **MR enterography (MRE)** — small bowel: oral contrast (sorbitol-polyethylene glycol) distends bowel; for Crohn disease assessment; - **MR urography** — heavily T2 + post-contrast excretory phase: collecting system; - **MR angiography (MRA)** — TOF, phase-contrast, contrast-enhanced; - **Cardiac MRI** sequences (above question 75 — cine, LGE, T1/T2/T2* mapping, perfusion); - **MR elastography** — liver stiffness for fibrosis assessment (replacing many biopsies for chronic liver disease staging); - **Breast MRI** — DCE + DWI; - **Prostate mpMRI** (above) — T2 + DWI + DCE; - **Fetal MRI** — anatomy + brain in selected pregnancies; (7) **Hepatocyte-specific contrast (gadoxetate disodium — Eovist/Primovist)**: hepatocyte uptake at 20 min (hepatobiliary phase) — FNH retains, adenoma less, HCC washout, metastases hypo; biliary excretion — biliary tree imaging; (8) **Field strength**: 1.5 T standard, 3 T higher resolution + SNR but more artifacts; 7 T research; (9) **Body MRI vs CT**: MRI better tissue characterization + no radiation; CT faster + better calcification + less motion sensitive; (10) **Multidisciplinary** — radiology subspecialties; coordination with referring providers + technologists" },
+      { "label": "C", "text": "No specialized sequences" },
+      { "label": "D", "text": "Discharge" },
+      { "label": "E", "text": "X-ray equivalent" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Body MRI: T1 (in/out phase), T2 ± fat sat, STIR, DWI + ADC, post-contrast dynamic multiphase. Specialized — MRCP, MRE, MR urography, MRA, cardiac MRI, MR elastography, breast/prostate mpMRI. Hepatocyte-specific contrast (Eovist). Field strength 1.5-3T. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "ACR MRI Standards; Body MRI Atlas"
+  },
+  {
+    "scenario": "Incidental findings management — Choosing Wisely + tracking systems",
+    "choices": [
+      { "label": "A", "text": "Discharge no follow-up" },
+      { "label": "B", "text": "Incidental findings — Choosing Wisely + closed-loop: (1) **Common incidental findings**: pulmonary nodules (Fleischner), renal cysts (Bosniak), adrenal incidentaloma, thyroid nodules (TI-RADS), liver lesions, ovarian/adnexal masses (O-RADS), pancreatic cysts (American College Gastro IPMN guidelines), aortic aneurysm, vertebral compression fractures, focal liver lesions, splenic lesions; (2) **Choosing Wisely principles** (ACR, ABR-IM, etc.): - Don't recommend follow-up imaging without clear value; - Use evidence-based guidelines (Fleischner, Bosniak, ACR White Papers, society-specific RADS); - Avoid 'incidentaloma cascade' (chain of follow-ups leading to harm); - Risk-benefit + patient-centered; (3) **ACR White Papers on Incidental Findings** — algorithmic management for many entities; (4) **Reporting standardization**: use society RADS systems, recommend specific follow-up + interval + modality, NOT vague language; (5) **Closed-loop / tracking systems** — critical for patient safety: - **EMR integration** — alerts, dashboards, work queues; - **Designated personnel** (radiology nurses, clinical pharmacists, midlevel providers) for follow-up; - **Patient communication** — direct via portals, mail; - **Audit + feedback**: measure adherence to recommended follow-up; (6) **Pitfalls when follow-up fails**: missed cancer (lung nodules), delayed treatment, increased morbidity, malpractice (failure to communicate is leading cause); (7) **Patient-centered**: clear communication, shared decision-making, written information; values + preferences (some patients prefer not to know); (8) **Documentation**: communication of findings + recommendations + acknowledgment in chart; (9) **Health system investment**: dedicated programs (e.g., 'safety net' for incidental findings); quality reporting metrics; (10) **AI + informatics**: NLP extraction of incidental findings from reports; automated tracking systems; (11) **Multidisciplinary**: radiology + primary care + specialists + IT + quality + nursing + administration + patient + family" },
+      { "label": "C", "text": "Always extensive workup" },
+      { "label": "D", "text": "Single specialty" },
+      { "label": "E", "text": "X-ray sufficient" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Incidental findings: Choosing Wisely + ACR White Papers + society RADS for evidence-based follow-up. Avoid 'incidentaloma cascade.' Closed-loop tracking systems essential — EMR alerts, designated personnel, audit. Multidisciplinary patient-centered.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "ACR Incidental Findings White Papers; Choosing Wisely"
+  },
+  {
+    "scenario": "Radiology reading room ergonomics + workflow + burnout prevention",
+    "choices": [
+      { "label": "A", "text": "Workflow unimportant" },
+      { "label": "B", "text": "Reading room ergonomics + burnout: (1) **Ergonomics** — radiologists prone to repetitive strain (mouse + dictation + sitting), neck/back pain, eye strain: - **Workstation setup**: adjustable height desk (sit-stand), proper chair (lumbar support, adjustable), monitor at eye level + arm's length, ambient lighting low + indirect (reduce glare), dimmer controls; - **Dual monitors** for high resolution + comparison; calibrated to DICOM grayscale standard display function (GSDF); - **Input devices**: ergonomic mouse, dictation foot pedal, voice recognition reduces typing; periodic rest; - **Breaks**: 20-20-20 rule (every 20 min, look 20 ft away for 20 seconds) — eye strain; standing breaks; (2) **Reading room environment**: quiet, controlled temperature, good ventilation, minimize interruptions (phone, walk-ins) — supports cognitive focus + accuracy; (3) **Workflow design**: - **Worklist prioritization** — urgent/stat first; AI-prioritized (LVO, PE, PTX detection); subspecialty assignments; - **Avoidable interruptions** reduced — protocol questions to mid-level/RN, scheduled callbacks; - **Reasonable volumes** — high volume linked to errors + burnout; - **Adequate breaks** + nutrition; - **Subspecialty support** — multidisciplinary conferences, peer consultations; (4) **Burnout prevalence in radiology**: high — emotional exhaustion + depersonalization + reduced personal accomplishment; affects quality + safety; (5) **Burnout mitigation strategies**: - **System-level**: workload management, scheduling fairness, reduced administrative burden, EMR efficiency; - **Cultural**: open communication, peer support, blame-free environment; - **Individual**: wellness programs, exercise, mindfulness, sleep, work-life integration, vacation usage; - **Leadership**: walk-arounds, listening, equity, recognition; (6) **Tele-radiology specific**: home reading flexibility but isolation concerns; (7) **Mental health**: access to mental health services (no penalty); peer support; (8) **Professional development + meaning**: subspecialty growth, research, teaching, leadership; (9) **Compensation + recognition**: fair, transparent; (10) **Multidisciplinary + organizational**: radiology + administration + IT + HR + wellness committees + physician health programs; (11) **Modern**: AI-augmented worklists reduce repetitive aspects; emphasis on physician wellness as patient safety issue" },
+      { "label": "C", "text": "Burnout not radiology issue" },
+      { "label": "D", "text": "Discharge" },
+      { "label": "E", "text": "Single specialty" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Reading room: ergonomic workstation + calibrated monitors + breaks + quiet environment. AI-prioritized worklists + subspecialty + reasonable volumes. Burnout common — system + cultural + individual strategies. AI augmentation. Multidisciplinary wellness.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "ACR Wellness; AMGA Physician Burnout"
+  },
+  {
+    "scenario": "HCC multidisciplinary care — liver transplant + IR + surgery + oncology",
+    "choices": [
+      { "label": "A", "text": "Single specialty" },
+      { "label": "B", "text": "HCC integrative multidisciplinary care: (1) **Multidisciplinary HCC tumor board**: hepatology + transplant surgery + hepatobiliary surgery + IR + medical oncology + radiation oncology + radiology + pathology + nursing + nutrition + palliative care + social work + transplant coordinator; (2) **BCLC stage-based treatment** (above LI-RADS question expanded): - **Stage 0 (very early)**: single ≤ 2 cm — resection or ablation; - **Stage A (early)**: single or ≤ 3 tumors all ≤ 3 cm — curative options (resection, transplant, ablation); - **Stage B (intermediate)**: multifocal not meeting transplant criteria — TACE; - **Stage C (advanced)**: vascular invasion or extrahepatic — systemic; - **Stage D (terminal)**: ECOG 3-4, decompensated — best supportive care; (3) **Liver transplant** — only definitive cure for HCC + cirrhosis: - **Milan criteria** (single < 5 cm or up to 3 ≤ 3 cm, no vascular invasion or extrahepatic): standard; 5-yr OS > 70%; - **Extended criteria**: UCSF, up-to-7 (Italian), downstaging protocols; - **Living donor** option in selected; - **Wait time issue** — MELD-based with HCC exception points (T2 lesions); progression on waitlist = drop-out; bridging therapies (TACE, ablation, SBRT) to prevent progression; (4) **Locoregional therapies**: - **TACE (transarterial chemoembolization)** — drug-eluting beads or Lipiodol-based — intermediate stage + bridging; - **TARE (Y-90 transarterial radioembolization)** — intermediate + advanced; less post-embolic syndrome; long-term outcomes comparable; - **Ablation** (RFA, MWA — preferred over RFA for ≥ 3 cm and adjacent to vessels — heat sink); cryoablation; for ≤ 3 cm; - **SBRT** — selected; (5) **Systemic therapy** advances: - **First-line**: atezolizumab + bevacizumab (IMbrave150 — superior to sorafenib); tremelimumab + durvalumab (HIMALAYA — STRIDE regimen); lenvatinib (REFLECT — non-inferior to sorafenib); sorafenib historical; - **Second-line + later**: regorafenib (RESORCE), cabozantinib (CELESTIAL), ramucirumab (REACH-2 — AFP > 400), nivolumab + ipilimumab (CheckMate 040, FDA accelerated approval); (6) **Comorbidity management**: underlying chronic liver disease (HCV → DAAs cure rate > 95% — game changer; HBV → tenofovir/entecavir; alcohol → cessation + counseling; MASLD/MASH → weight loss + GLP-1, semaglutide; iron overload → phlebotomy); variceal screening + surveillance; (7) **Surveillance** post-treatment: imaging q3 months × 2 years, then q6 months; AFP; (8) **Palliative care + advance care planning**: concurrent throughout journey; (9) **Family support + education**: hepatitis testing + vaccination; (10) **Multidisciplinary at every step** drives outcomes" },
+      { "label": "C", "text": "Surgery only option" },
+      { "label": "D", "text": "Discharge" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "HCC multidisciplinary: BCLC staging. Liver transplant (Milan + extended) only cure for cirrhosis + HCC. Bridging + downstaging. TACE/TARE/ablation/SBRT for locoregional. Atezo+bev first-line systemic. HCV DAAs + HBV antivirals + MASLD management. Multidisciplinary throughout.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "AASLD HCC 2023; BCLC; ASCO Hepatobiliary"
+  },
+  {
+    "scenario": "IBD chronic care — imaging integration + multidisciplinary team",
+    "choices": [
+      { "label": "A", "text": "Single specialty" },
+      { "label": "B", "text": "IBD chronic care + imaging integration: (1) **Multidisciplinary IBD team**: gastroenterology (IBD specialist) + colorectal surgery + radiology (cross-sectional imaging expert) + IR + nutrition + pharmacy + nursing + mental health + rheumatology (EIMs) + dermatology + ophthalmology + obstetrics if pregnant + pediatrics if children + social work + financial counseling + transition care to adult; (2) **Imaging in IBD chronic management**: - **MRE / CTE** — assess disease activity + complications q1-3 years or with symptom change; - **MRE preferred** in young + chronic management (no radiation); - **US** emerging — point-of-care + intestinal US increasingly used for monitoring (no radiation, repeatable, less expensive); - **MRI pelvis** — perianal disease evaluation + monitoring; - **Colonoscopy + biopsy** — gold standard mucosal + histologic activity + dysplasia surveillance (q1-3 years after 8 yrs pancolitis); - **Capsule endoscopy** — small bowel disease undetected by other modalities (caution stricture — patency capsule first if stricture concern); (3) **Treat-to-target paradigm**: clinical remission + endoscopic + radiographic + biomarker (CRP, fecal calprotectin) targets; STRIDE-II consensus; mucosal healing predicts long-term outcomes; (4) **Medication strategy by phenotype + risk + severity + comorbidities**: - 5-ASA — UC primarily; - Steroids — acute flares (budesonide for terminal ileum); - Immunomodulators (thiopurines, MTX); - **Biologics**: anti-TNF (infliximab, adalimumab, certolizumab), anti-integrin (vedolizumab — gut-specific), anti-IL-12/23 (ustekinumab), anti-IL-23 (risankizumab, mirikizumab, guselkumab), JAK inhibitors (tofacitinib, upadacitinib — UC + Crohn); - **Therapeutic drug monitoring** (TDM) — anti-TNF levels + anti-drug antibodies; - **Combination therapy** — Crohn primary; UC selective; (5) **Surgical considerations**: - Crohn — strictures (resection vs stricturoplasty), fistulae (multidisciplinary with IR + colorectal), abscess (drain by IR + biologic), cancer/dysplasia, refractory; - UC — colectomy (curative for colonic disease) — IPAA (J-pouch) vs end ileostomy; pouchitis (subsequent); (6) **EIMs (extraintestinal manifestations)**: arthritis (peripheral + axial), eye (uveitis, episcleritis), skin (erythema nodosum, pyoderma gangrenosum), liver (PSC — ↑ cholangio + colon cancer risk — annual MRCP + colonoscopy), VTE (3× risk), osteoporosis; (7) **Lifestyle + nutrition**: identify food triggers, dietary therapy (exclusive enteral nutrition in pediatric Crohn first-line per ECCO/ESPGHAN), vitamin D, B12 (terminal ileum disease), iron, calcium; smoking cessation (worsens Crohn — opposite effect on UC paradoxically); (8) **Mental health**: depression + anxiety common — screen + treat; chronic illness counseling; (9) **Pregnancy**: most biologics safe (anti-TNF, anti-integrin, IL-12/23); thiopurines + biologics generally continued; (10) **Cancer surveillance**: colonoscopy as above; cervical cancer (immunosuppression — Pap + HPV per guidelines); skin cancer; (11) **Vaccines**: live vaccines (varicella, MMR, yellow fever) BEFORE biologics; inactivated routine (flu, COVID, pneumonia, HPV, hepatitis, shingrix); (12) **Patient education + self-management** + support groups" },
+      { "label": "C", "text": "No multidisciplinary" },
+      { "label": "D", "text": "Discharge" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "IBD chronic: MRE + intestinal US + colonoscopy + biomarkers (calprotectin) for treat-to-target. Biologics + immunomodulators + JAK inhibitors + TDM. Surgery for selected. EIMs management. Lifestyle + nutrition + smoking. Mental health. Vaccines + cancer surveillance. Multidisciplinary IBD team.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "ACG IBD; ECCO; STRIDE-II Consensus"
   }
 ]
