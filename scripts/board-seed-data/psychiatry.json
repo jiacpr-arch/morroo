@@ -1918,5 +1918,965 @@
     "board_topic": "psych_behavior",
     "board_age_group": "adult",
     "reference_source": "DSM-5-TR; APA"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 30 ปี × 3 ปี — chronic auditory hallucinations + persecutory delusions present continuously even when mood stable, แต่ก่อนหน้านี้ 1 ปี มี major depressive episode × 4 เดือน + manic episode × 6 wk — ขณะนี้ stable mood แต่ psychosis ยังคงอยู่\n\nNo substance use\nMSE: prominent psychosis even when euthymic; mood currently stable",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Antidepressant monotherapy"
+      },
+      {
+        "label": "B",
+        "text": "Schizoaffective Disorder, Bipolar Type (DSM-5: uninterrupted illness with major mood episode concurrent with active phase psychosis + delusions/hallucinations ≥ 2 wk WITHOUT major mood sx + mood sx prominent majority of total illness): (1) Combination — antipsychotic + mood stabilizer (or antipsychotic alone if mood stabilized) — Paliperidone is only FDA-approved specifically for schizoaffective; (2) Mood stabilizer: lithium (bipolar type) or lamotrigine; valproate; (3) For depressive type: antidepressant cautiously + antipsychotic; (4) Clozapine for treatment-resistant + suicide risk; (5) Psychosocial — same as schizophrenia + bipolar (psychoeducation, family-focused, CBTp, supported employment); (6) Long-term maintenance medication essential; (7) Suicide risk high (between schizophrenia + bipolar); (8) Comorbidity: substance use, anxiety, metabolic; (9) Distinguish: schizophrenia with mood symptoms vs mood disorder with psychotic features vs schizoaffective (requires both — psychosis without mood + mood prominent majority of illness); (10) Multidisciplinary"
+      },
+      {
+        "label": "C",
+        "text": "No treatment"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Schizoaffective Disorder: psychosis ≥ 2 wk without mood + mood prominent majority of illness. Paliperidone only FDA-approved. Combination antipsychotic + mood stabilizer. Clozapine for refractory. Suicide risk between schizophrenia + bipolar.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "DSM-5-TR; Paliperidone schizoaffective FDA"
+  },
+  {
+    "scenario": "ชายไทยอายุ 55 ปี × 3 ปี — เชื่อว่าเพื่อนบ้านกำลังวางยาพิษอาหารเขา; ค้นบ้านบ่อย, install CCTV, complained to police × 8 ครั้ง — but otherwise functions normally at work + relationships; no hallucinations, no other psychotic sx, no mood disorder, no substance use\n\nMSE: well-groomed, employed, lucid + organized — delusion encapsulated, intense conviction\nNo cognitive impairment",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Confront the delusion directly"
+      },
+      {
+        "label": "B",
+        "text": "Delusional Disorder, Persecutory Type (DSM-5: ≥ 1 delusion ≥ 1 mo + criterion A for schizophrenia NOT met + functioning not markedly impaired apart from delusion + duration > 1 mo): (1) Therapeutic alliance is paramount — patients often poor insight, distrustful, treatment-resistant; engagement first; (2) Antipsychotic — limited evidence but considered first-line: low-dose atypical (risperidone, olanzapine, aripiprazole); response modest (50% improvement at best); (3) CBT for psychosis (CBTp) — engage gently, explore evidence + alternative explanations, NEVER directly confront delusion (ruptures alliance); (4) Address comorbid depression (50%); (5) Subtypes (DSM-5): erotomanic, grandiose, jealous, persecutory (most common), somatic, mixed; (6) Distinguish from: paranoid schizophrenia (bizarre delusions, hallucinations, negative sx), paranoid PD (long-standing trait), shared psychotic disorder (folie à deux), substance/medical; (7) Forensic considerations: stalking, violence (esp jealous + persecutory subtypes); (8) Long-term: chronic, partial response common; functional preservation is hallmark; (9) Family education + safety planning if risk to self/others"
+      },
+      {
+        "label": "C",
+        "text": "Surgery"
+      },
+      {
+        "label": "D",
+        "text": "No treatment"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Delusional Disorder: ≥ 1 non-bizarre delusion ≥ 1 mo + criterion A schizophrenia NOT met + functioning preserved apart from delusion. Antipsychotic + CBT for psychosis — never confront directly. Functional preservation is hallmark. Forensic risk (jealous, persecutory).",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "DSM-5-TR; Munro Delusional Disorder"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 25 ปี G1P0 GA 38 wk — sudden onset psychotic sx (acute delusions of being followed, brief auditory hallucinations, disorganized speech, behavioral disturbance) × 5 วัน หลัง major stressor (พ่อเสียชีวิต) — no prior psychiatric history, no substance use\n\nMSE: psychotic features, oriented x3\nWorkup: TSH normal, no metabolic, no infection, no neuro deficit",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Long-term antipsychotic immediately"
+      },
+      {
+        "label": "B",
+        "text": "Brief Psychotic Disorder (DSM-5: ≥ 1 of delusions/hallucinations/disorganized speech/grossly disorganized + 1 day - 1 mo + full return to premorbid level; specifier — with marked stressor): (1) Hospitalization usually indicated — safety, observation, evaluate course; (2) Short-term antipsychotic (atypical low-dose) + benzodiazepine for acute agitation; (3) Address precipitant — supportive psychotherapy + grief work + social support; (4) Pregnancy — coordinate OB + delivery planning; perinatal psychiatry consultation; medication safety in late pregnancy; (5) After resolution — taper antipsychotic over months (typical 1-3 mo course); some discontinue without need for maintenance; (6) Distinguish: schizophreniform (1-6 mo), schizophrenia (≥ 6 mo), postpartum psychosis (specific to postpartum), substance/medical-induced; (7) Long-term: ~ 50% have single episode + full recovery; ~ 50% progress to mood or psychotic disorder — follow longitudinally; (8) Suicide risk — assess; (9) Family education; (10) Multidisciplinary: psychiatry, OB, social work"
+      },
+      {
+        "label": "C",
+        "text": "No treatment"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Brief Psychotic Disorder (DSM-5): psychotic sx 1 day - 1 mo + full return. Stressor specifier common. Short-term antipsychotic + supportive therapy. ~ 50% single episode; ~ 50% progress. Distinguish from schizophreniform/schizophrenia by duration. Pregnancy — coordinated care.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "DSM-5-TR; Pillmann Brief Psychosis"
+  },
+  {
+    "scenario": "ชายไทยอายุ 21 ปี × 3 เดือน — persistent delusions + auditory hallucinations + negative sx (alogia, blunt affect) + functional decline — meet schizophrenia criterion A but duration 3 เดือน (1 mo - 6 mo)\n\nNo substance use, no medical cause\nMSE: prominent psychotic features",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No treatment until 6 months passes"
+      },
+      {
+        "label": "B",
+        "text": "Schizophreniform Disorder (DSM-5: criteria A, D, E ของ schizophrenia met + duration ≥ 1 mo but < 6 mo): (1) Atypical antipsychotic — same as schizophrenia (risperidone, olanzapine, aripiprazole, etc.); start low + titrate; (2) Early intervention services — first-episode psychosis (FEP) programs (Coordinated Specialty Care — CSC, OnTrackNY, EASA model) — reduce duration of untreated psychosis (DUP — predicts outcome); CBT for psychosis, supported employment/education, family education, low-dose antipsychotic, peer support, case management; (3) Family education + support (NEAP — National Alliance on Mental Illness Family-to-Family); (4) Cognitive behavioral therapy for psychosis (CBTp); (5) Address substance use comorbidity (often cannabis); (6) Workup: medical (thyroid, B12, drug screen, infectious, autoimmune — anti-NMDA receptor encephalitis in young), neuroimaging; (7) Course: - ~ 60% progress to schizophrenia; - ~ 30% recover (good prognostic — acute onset, prominent affective sx, confusion, no negative sx, return to premorbid); (8) Long-term medication often needed; (9) Multidisciplinary; (10) Suicide risk + assessment"
+      },
+      {
+        "label": "C",
+        "text": "Surgery"
+      },
+      {
+        "label": "D",
+        "text": "Antibiotic"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Schizophreniform: schizophrenia criteria but 1-6 mo duration. Treat same as schizophrenia — antipsychotic + early intervention services. Reduce DUP. ~ 60% progress to schizophrenia. Workup including anti-NMDA encephalitis in young.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "DSM-5-TR; EPPIC; OnTrackNY"
+  },
+  {
+    "scenario": "วัยรุ่นชายอายุ 17 ปี × 8 เดือน — subtle changes: social withdrawal, declining school performance, brief attenuated psychotic-like experiences (unusual perceptual phenomena, magical thinking — recognized as unusual), brief intermittent suspiciousness, sleep disturbance — but NOT meeting full psychotic disorder criteria\n\nFamily hx: uncle with schizophrenia\nSIPS positive for clinical high risk (CHR-P)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Immediate antipsychotic for prevention"
+      },
+      {
+        "label": "B",
+        "text": "Clinical High Risk for Psychosis (CHR-P; also Attenuated Psychosis Syndrome — DSM-5 Section III research): (1) Early intervention essential — reduce conversion to psychosis + functional decline; (2) Specialized CHR services where available (e.g., PACE, OASIS, NEPTUNE); (3) Psychotherapy — CBT for CHR (evidence reduces conversion + improves functioning); supportive; family work; (4) AVOID routine antipsychotic — risk-benefit unfavorable for prevention; reserve for emerging full psychosis or severe sx; some evidence for omega-3 (modest); (5) Address comorbidity — depression (60%), anxiety (40%), substance use (cannabis especially — discourage strongly, increases conversion); (6) Treat comorbid conditions — SSRI for depression/anxiety; (7) Psychoeducation + family education; (8) Monitor closely — regular follow-up; assess emerging full psychosis; (9) Cannabis cessation — major modifiable risk factor; (10) Address school + functioning + social engagement; (11) Conversion rate to full psychosis ~ 20-30% over 2-3 years; majority do NOT convert — important to convey; (12) Multidisciplinary"
+      },
+      {
+        "label": "C",
+        "text": "No intervention until psychotic"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Cannabis to relax"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Clinical High Risk for Psychosis (CHR-P): attenuated/intermittent psychotic sx, NOT full criteria. CBT first-line; AVOID routine antipsychotic. Address cannabis (modifiable risk). Treat comorbid depression/anxiety. ~ 20-30% convert over 2-3 yr. Early intervention.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "DSM-5-TR Section III; McGorry PACE; NAPLS"
+  },
+  {
+    "scenario": "ชายไทยอายุ 32 ปี schizophrenia × 10 ปี — failed adequate trials (≥ 6 wk, therapeutic dose, adherence verified) ของ risperidone, olanzapine, aripiprazole — ขณะนี้ persistent positive sx + functional impairment + 2 prior suicide attempts\n\nNo medical contraindication\nWBC + ANC normal\nNo CV disease",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Another non-clozapine antipsychotic"
+      },
+      {
+        "label": "B",
+        "text": "Treatment-Resistant Schizophrenia (TRS — failure ≥ 2 antipsychotics adequate trial) — Clozapine: (1) Clozapine is ONLY antipsychotic FDA-approved for TRS + only antipsychotic with mortality reduction + reduces suicide in schizophrenia; (2) Initiation: slow titration (12.5 → 25 → 50 → 100 mg over weeks); target 300-450 mg/day; therapeutic level 350-600 ng/mL; (3) Mandatory monitoring: - CBC with ANC weekly × 6 mo → biweekly × 6 mo → monthly thereafter (agranulocytosis ~ 0.4%, mortality if missed); REMS program (US); discontinue if ANC < 1000/μL; - rechallenge if mild neutropenia + ANC recovers; (4) Side effects: agranulocytosis, myocarditis (especially first 8 wk — check troponin, CRP, ECG, HR if symptoms), seizure (dose-related, prophylactic AED at high dose), sialorrhea (anticholinergic adjunct, glycopyrrolate, ipratropium), constipation (bowel monitoring — ileus risk, fatal), weight gain + metabolic, sedation, orthostasis, urinary retention, fever (benign vs NMS); (5) Drug interactions: smoking induces metabolism (level fluctuates), caffeine, fluvoxamine inhibits; (6) Augmentation if partial response — add another antipsychotic, ECT effective adjunct; (7) Reduces suicide attempts + completed suicide; (8) Long-term — chronic medication, lifelong; (9) Multidisciplinary"
+      },
+      {
+        "label": "C",
+        "text": "Stop all medication"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "ECT alone without medication"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Treatment-Resistant Schizophrenia: failure ≥ 2 antipsychotics. Clozapine = only FDA-approved + only antipsychotic with mortality + suicide reduction. Mandatory ANC monitoring (agranulocytosis). Watch myocarditis, seizure, ileus, metabolic. Underutilized despite evidence.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "CATIE; Tiihonen; APA Schizophrenia 2020"
+  },
+  {
+    "scenario": "ชายไทยอายุ 35 ปี newly initiated haloperidol 10 mg × 3 วัน สำหรับ psychosis — มาด้วย hyperthermia 40°C, severe muscle rigidity (lead-pipe), altered mental status, autonomic instability (BP fluctuating, tachycardia 130, diaphoresis), CK 12,500 (markedly elevated), leukocytosis 18,000\n\nNo serotonergic medications, no infection localized",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue antipsychotic"
+      },
+      {
+        "label": "B",
+        "text": "Neuroleptic Malignant Syndrome (NMS — idiopathic, life-threatening; antipsychotic — typical > atypical, rapid titration, high potency, dehydration, agitation, male, young) — EMERGENCY: (1) STOP antipsychotic immediately; ICU admission; (2) Supportive: aggressive IV fluid resuscitation, cooling, electrolyte correction, monitor for rhabdomyolysis (CK, urine output, K), DIC, renal failure, respiratory failure, VTE prophylaxis (immobility); (3) Specific: - **Dantrolene** (muscle relaxant — direct skeletal muscle Ca release); - **Bromocriptine or amantadine** (dopamine agonist — addresses D2 blockade pathophysiology); - **Benzodiazepines** for agitation + sedation; - (Mild cases — may resolve with supportive alone); (4) ECT for refractory NMS + post-NMS psychosis (cannot restart antipsychotic safely acutely); (5) Distinguish from: serotonin syndrome (hyperreflexia, clonus, recent serotonergic), malignant hyperthermia (anesthetic trigger, family hx), heat stroke, anticholinergic toxicity, septic encephalopathy, malignant catatonia (similar — overlap); (6) After resolution: wait ≥ 2 weeks before rechallenge with different (low-potency or atypical) antipsychotic; risk of recurrence; (7) Multidisciplinary: psychiatry, ICU, neurology; (8) Education + medical alert documentation"
+      },
+      {
+        "label": "C",
+        "text": "Higher dose antipsychotic"
+      },
+      {
+        "label": "D",
+        "text": "Antibiotic monotherapy"
+      },
+      {
+        "label": "E",
+        "text": "Discharge home"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Neuroleptic Malignant Syndrome: hyperthermia + rigidity + AMS + autonomic + elevated CK. Stop antipsychotic, ICU, supportive + dantrolene + bromocriptine/amantadine + BZD. ECT for refractory. Distinguish from serotonin syndrome (hyperreflexia/clonus). Wait ≥ 2 wk before rechallenge.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "Levenson NMS; Pelonero Crit Care"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 60 ปี chronic schizophrenia × 25 ปี on haloperidol long-term — ขณะนี้ มี involuntary movements: choreoathetoid movements of tongue + face (lip smacking, tongue protrusion, chewing) + occasional finger movements — present ≥ 6 เดือน, ผู้ป่วยรู้ตัว, ขัดต่อการกินอาหาร\n\nDISCUS/AIMS score elevated\nNo recent dose change",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Anticholinergic to treat TD"
+      },
+      {
+        "label": "B",
+        "text": "Tardive Dyskinesia (TD — late-onset, persistent involuntary movement after chronic antipsychotic exposure; typical > atypical, female, elderly, long duration, mood disorder, DM): (1) Reassess need for antipsychotic; switch from typical to atypical (lower TD risk) — but discontinuing antipsychotic may unmask TD initially (withdrawal dyskinesia); cautious dose reduction; (2) VMAT2 inhibitors (FDA approved 2017 — first effective TD treatment): - **Valbenazine** (Ingrezza) 40-80 mg/day; - **Deutetrabenazine** (Austedo) 24-48 mg/day; - mechanism: reversibly inhibit vesicular monoamine transporter → reduce dopamine release; side effects: somnolence, parkinsonism, depression/SI, QTc; (3) Clozapine — lower TD risk + treats TD in some patients; consider switch for severe TD + treatment-resistant schizophrenia; (4) Older agents historically: benzodiazepines, vitamin E (modest), ginkgo biloba (limited); (5) Anticholinergic — does NOT help TD (helps acute dystonia + EPS — different mechanism); may worsen TD; (6) Monitoring: AIMS scale every 6 mo on antipsychotic; (7) Prevention: lowest effective dose, atypical preference, monitor; (8) Education + informed consent before initiating long-term antipsychotic; (9) Multidisciplinary; (10) TD often irreversible — early detection + treatment important"
+      },
+      {
+        "label": "C",
+        "text": "Higher dose haloperidol"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "No treatment"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Tardive Dyskinesia: late-onset, persistent. Risk: typical, elderly, female, duration, mood. VMAT2 inhibitors (valbenazine, deutetrabenazine) FDA approved 2017. Switch to atypical/clozapine. AIMS monitoring. Anticholinergic does NOT help TD (worsens). Often irreversible.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "Caroff TD; AAN TD Guideline; FDA VMAT2"
+  },
+  {
+    "scenario": "ชายไทยอายุ 22 ปี เริ่ม haloperidol 10mg IM ใน ED สำหรับ agitation — 6 ชั่วโมงต่อมามาด้วย sudden onset painful sustained muscle contractions: torticollis + oculogyric crisis (eyes deviated upward + fixed) + jaw rigidity + slight respiratory distress\n\nVitals stable, no fever\nMSE: alert, distressed but oriented",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue haloperidol higher dose"
+      },
+      {
+        "label": "B",
+        "text": "Acute Dystonia (extrapyramidal side effect — within hours-days of antipsychotic; young male, high-potency typical, IM administration — risk factors): (1) **Benztropine 1-2 mg IM/IV** or **diphenhydramine 25-50 mg IM/IV** — rapid relief (minutes to 1 h); (2) Continue oral anticholinergic prophylaxis × several days while assessing antipsychotic adjustment; (3) Reduce dose, switch to atypical (lower EPS risk), or change route; (4) Laryngeal dystonia = airway emergency — secure airway + benztropine; (5) Distinguish from: oculogyric crisis (eye-specific dystonia), seizure, tetanus, catatonia, conversion; (6) Differential EPS: - **Acute dystonia** (hours-days, sustained contraction); - **Akathisia** (motor restlessness, urge to move — propranolol, benzodiazepine, mirtazapine, cyproheptadine; reduce antipsychotic); - **Parkinsonism** (tremor, rigidity, bradykinesia — anticholinergic, amantadine; reduce dose; switch atypical); - **Tardive dyskinesia** (late onset — see separate); (7) Education + medical alert; (8) Consider atypical for future to reduce EPS risk; (9) Multidisciplinary"
+      },
+      {
+        "label": "C",
+        "text": "No treatment"
+      },
+      {
+        "label": "D",
+        "text": "Anticonvulsant"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Acute Dystonia: hours-days post-antipsychotic. Risk: young male, high-potency typical, IM. Treatment: benztropine or diphenhydramine IM/IV — rapid response. Continue oral prophylaxis. Laryngeal = airway emergency. EPS spectrum: dystonia → akathisia → parkinsonism → TD (late).",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "APA Schizophrenia Guideline; Stahl"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 28 ปี on risperidone 4 mg × 6 เดือน สำหรับ schizophrenia — ขณะนี้ amenorrhea × 4 mo + galactorrhea + decreased libido + breast tenderness\n\nLab: prolactin 145 ng/mL (normal < 25 ในผู้หญิง); pregnancy test negative; TSH normal\nMRI pituitary normal",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Increase risperidone"
+      },
+      {
+        "label": "B",
+        "text": "Antipsychotic-Induced Hyperprolactinemia (D2 blockade in tuberoinfundibular pathway — risperidone, paliperidone, haloperidol most; aripiprazole partial agonist may LOWER): (1) Verify etiology — rule out pregnancy (must), hypothyroidism, prolactinoma (MRI), medications (other dopamine antagonists, estrogens); (2) Reduce dose if possible while maintaining efficacy; (3) Switch to prolactin-sparing antipsychotic — aripiprazole (partial agonist, often lowers prolactin), quetiapine, olanzapine (less effect), clozapine; (4) Add adjunctive aripiprazole (low-dose) to current antipsychotic — lowers prolactin without losing efficacy; evidence growing; (5) Long-term consequences: amenorrhea + hypoestrogenism → bone loss/osteoporosis (especially long-term + young women), infertility, sexual dysfunction, gynecomastia (men); (6) Bone density monitoring if chronic; calcium + vitamin D; (7) Estrogen replacement controversial — usually not first choice; (8) Reproductive counseling — restoration of fertility + need for contraception when prolactin normalizes; (9) Tamoxifen or bromocriptine NOT routinely used (dopamine agonist may worsen psychosis); (10) Multidisciplinary: psychiatry, endocrinology, gynecology"
+      },
+      {
+        "label": "C",
+        "text": "Add estrogen replacement first-line"
+      },
+      {
+        "label": "D",
+        "text": "Surgery on pituitary"
+      },
+      {
+        "label": "E",
+        "text": "No action"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Antipsychotic-induced hyperprolactinemia: D2 blockade tuberoinfundibular. Risperidone, paliperidone, haloperidol highest; aripiprazole partial agonist lowers. Switch to prolactin-sparing or add aripiprazole adjunct. Long-term: bone loss, infertility, sexual dysfunction. Rule out pregnancy, prolactinoma.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "Inder Mol Cell Endocrinol; APA"
+  },
+  {
+    "scenario": "ชายไทยอายุ 28 ปี methamphetamine use × 4 ปี (smoked) — มา ED ด้วย acute paranoid psychosis + agitation + tachycardia + hypertension; UDS positive methamphetamine; last use 8 ชั่วโมงก่อน; chronic users — weight loss, dental decay (meth mouth), poor hygiene; family wants treatment\n\nNo other substance use\nNo prior psychiatric hx",
+    "choices": [
+      {
+        "label": "A",
+        "text": "High-dose haloperidol monotherapy"
+      },
+      {
+        "label": "B",
+        "text": "Stimulant Use Disorder (Methamphetamine) + Substance-Induced Psychosis: (1) Acute management: - Safety + agitation — benzodiazepine (lorazepam) preferred (calms + reduces CV stress) ± low-dose antipsychotic for psychosis; avoid haloperidol high-dose IM only (long QT, sympathetic); - IV fluids, cooling if hyperthermic, monitor for hypertensive emergency, MI, stroke, arrhythmia; - Workup: ECG, troponin if chest pain, CT brain if focal/severe headache; (2) Withdrawal: no acute medical emergency typically; depressive sx, hypersomnia, increased appetite, anhedonia, dysphoria — supportive; suicide risk during withdrawal; (3) Long-term — NO FDA-approved medication for stimulant use disorder (active research — bupropion + naltrexone combination, contingency management most effective behavioral); (4) Behavioral: **Contingency Management** = most evidence-based for stimulant use disorder (rewards for abstinence verified by UDS); CBT, Matrix Model (integrated), motivational interviewing, 12-step (Crystal Meth Anonymous); (5) Stimulant-induced psychosis: usually resolves with abstinence within days-weeks; if persists > 1 mo think primary psychotic disorder; antipsychotic short-term if needed; (6) Comorbid: HIV (sex + injection), HCV, dental, cardiovascular, depression, anxiety; (7) Multidisciplinary: addiction medicine, psychiatry, primary care, infectious disease, dental, social work; (8) Harm reduction: safer use, naloxone if also opioid, HIV testing, fentanyl test strips"
+      },
+      {
+        "label": "C",
+        "text": "No treatment"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Stimulant Use Disorder: NO FDA-approved medication. Contingency Management = most evidence-based. CBT + Matrix Model. Acute: benzodiazepine for agitation/CV stress + low-dose antipsychotic. Comorbid HIV, HCV, dental, CV. Psychosis usually resolves with abstinence.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "ASAM Stimulant Use; SAMHSA TIP 33"
+  },
+  {
+    "scenario": "ชายไทยอายุ 32 ปี cocaine use disorder × 6 ปี — มา ED ด้วย acute chest pain + diaphoresis + agitation 1 ชั่วโมง หลัง snorting cocaine; ECG ST changes; troponin pending; BP 195/110\n\nNo prior MI, smoker\nMSE: agitated, anxious",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Beta-blocker first-line for HTN"
+      },
+      {
+        "label": "B",
+        "text": "Cocaine-Induced Chest Pain / Possible ACS + Use Disorder: (1) Acute: - **AVOID beta-blockers** (unopposed alpha agonism → worsen vasoconstriction + hypertension); historical controversy, generally avoid alone; - **Benzodiazepine** first-line for agitation + indirectly reduces cardiac strain; - **Nitroglycerin + calcium channel blocker** for chest pain + HTN (verapamil, diltiazem); - **Aspirin** standard; - **Heparin/anticoagulation** as per ACS protocol; - PCI/cath if STEMI or persistent symptoms with troponin elevation; (2) Cocaine vasospasm + accelerated atherosclerosis + thrombosis mechanisms; MI risk × 20-30 within hours of use; (3) Distinguish: ACS (often), aortic dissection (severe ripping pain, BP discrepancy — cocaine increases risk), arrhythmia, anxiety; (4) Long-term: stimulant use disorder treatment — NO FDA-approved; contingency management most effective; CBT, motivational interviewing, 12-step; (5) Behavioral: similar to methamphetamine; (6) Comorbid: cardiovascular damage (cardiomyopathy, accelerated CAD), seizure, stroke, nasal septum (snorting), HIV/HCV (if injection), other substances; (7) Cocaethylene with concurrent alcohol — more cardiotoxic; advise both stop; (8) Naloxone availability — fentanyl-contaminated cocaine increasing; (9) Multidisciplinary: cardiology, addiction medicine, psychiatry"
+      },
+      {
+        "label": "C",
+        "text": "No intervention"
+      },
+      {
+        "label": "D",
+        "text": "Surgery only"
+      },
+      {
+        "label": "E",
+        "text": "Discharge home"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cocaine ACS: AVOID beta-blockers (unopposed alpha). Benzodiazepine + nitroglycerin + CCB + aspirin + anticoagulation. MI risk × 20-30. Cocaethylene with alcohol more cardiotoxic. Long-term: no FDA medication; contingency management.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "AHA Cocaine MI; ASAM Stimulants"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 50 ปี alprazolam 2 mg QID × 5 ปี (initially for panic, escalated; obtained from multiple doctors) — abrupt cessation 2 วันที่แล้ว — มา ED ด้วย tremor, severe anxiety, insomnia, perceptual disturbance, autonomic hyperactivity (HR 115, BP 165/95, diaphoresis), brief generalized tonic-clonic seizure × 1 ใน ED\n\nNo other substance use\nUDS: positive benzodiazepine only",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Abrupt cessation continue"
+      },
+      {
+        "label": "B",
+        "text": "Benzodiazepine Use Disorder + Severe Withdrawal (seizure-life-threatening; alprazolam especially severe withdrawal — short half-life + high potency): (1) Acute: - **DO NOT** abruptly resume same agent at same dose (lost dependence partial — could overshoot); resume at appropriate equivalent dose; - **Long-acting benzodiazepine substitution** (diazepam or chlordiazepoxide) — easier taper; - Anti-seizure prophylaxis with adequate benzodiazepine; phenobarbital alternative; - ICU monitoring for severe (seizure, autonomic instability, delirium tremens-like syndrome); - IV fluids, monitor electrolytes; (2) Gradual taper — months long; 10-25% reduction every 1-2 weeks; slow at end (small doses cause disproportionate withdrawal); (3) Long-term: - CBT for anxiety + insomnia (replace function of BZD); - SSRI/SNRI for underlying anxiety/depression; - Buspirone, pregabalin alternatives; - Avoid restarting BZD; (4) Behavioral: motivational interviewing, support; (5) Address underlying anxiety/insomnia — usually inadequately treated reason for chronic BZD; (6) Multidisciplinary: addiction medicine, psychiatry, primary care; (7) Education: physiological dependence after chronic use even at therapeutic dose; (8) Beers criteria — avoid BZD elderly; (9) Long-term BZD risks: cognitive impairment, falls/fractures, dementia association (controversial), overdose with opioids (CDC warning)"
+      },
+      {
+        "label": "C",
+        "text": "Resume same dose immediately"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Benzodiazepine Withdrawal: life-threatening (seizure, DT-like). Alprazolam severe (short half-life, high potency). Long-acting substitution (diazepam) + gradual taper over months. Phenobarbital alternative. Underlying anxiety/insomnia — treat with non-BZD long-term (CBT, SSRI, buspirone).",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "ASAM Sedative Withdrawal; Ashton Manual"
+  },
+  {
+    "scenario": "วัยรุ่นชายอายุ 17 ปี cannabis daily × 2 ปี (high-potency dabs concentrate) — declining school performance, decreased motivation, social withdrawal, irritability เมื่อ cannot use; cannabis-induced anxiety + transient psychotic-like sx เกิดบางครั้ง — parents brought for evaluation\n\nNo other substance use\nNo prior psychiatric hx\nMSE: alert, somewhat amotivated, no acute psychosis",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No treatment — cannabis is harmless"
+      },
+      {
+        "label": "B",
+        "text": "Cannabis Use Disorder (DSM-5: ≥ 2/11 criteria within 12 mo) — adolescent + heavy use + high-potency: (1) NO FDA-approved medication for cannabis use disorder — supportive + behavioral; (2) **Behavioral first-line**: - Motivational Enhancement Therapy + CBT + Contingency Management combination most effective; - Adolescent-specific: Family-based (Multidimensional Family Therapy — MDFT), CRAFT, A-CRA; - 12-step (Marijuana Anonymous, NA); (3) Address comorbidity: anxiety (common — cannabis-induced + underlying), depression, ADHD (high comorbidity), other substance use, conduct disorder, learning issues, school problems; (4) Withdrawal syndrome (recognized DSM-5): irritability, anxiety, sleep disturbance, decreased appetite, restlessness, depressed mood — peaks day 2-6, resolves 1-2 weeks; supportive (sleep hygiene, exercise, hydration, distraction); off-label gabapentin, NAC studied; (5) Education: - High-potency concentrates (dabs, wax) → higher addiction + psychosis risk; - Cannabis-induced psychosis + risk of conversion to schizophrenia (especially with family hx, early use, high potency); - Adolescent brain effects (executive function, memory, motivation); - Cognitive impairment may partially reverse with abstinence; (6) Family involvement essential for adolescent; (7) School-based intervention; (8) Long-term: ~ 9% adult users develop dependence; ~ 17% if start in adolescence; (9) Multidisciplinary"
+      },
+      {
+        "label": "C",
+        "text": "Long-term benzodiazepine"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cannabis Use Disorder: NO FDA-approved medication. Behavioral (MET + CBT + Contingency Management) first-line. Adolescent: family-based (MDFT). Withdrawal syndrome real (DSM-5). High-potency concentrates ↑ psychosis + addiction. Adolescent brain effects + psychosis risk.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "ASAM Cannabis; AACAP"
+  },
+  {
+    "scenario": "ชายไทยอายุ 25 ปี acute presentation — agitated, paranoid, dissociated, hypertensive (BP 180/105), HR 110, mydriasis, vertical + horizontal nystagmus, ataxia; reports using 'crystal' (ketamine + PCP analog); intermittent violence + unpredictable behavior\n\nUDS: positive PCP\nNo trauma evident",
+    "choices": [
+      {
+        "label": "A",
+        "text": "High-dose haloperidol IM monotherapy"
+      },
+      {
+        "label": "B",
+        "text": "Phencyclidine (PCP) Intoxication — Dangerous (unpredictable violence, dissociative anesthetic, anti-NMDA): (1) Safety — staff + patient — restraint if needed, low stimulation environment ('talk down' may not work, unlike LSD); (2) Benzodiazepine first-line for agitation (lorazepam, midazolam); avoid antipsychotic acutely if possible (PCP can lower seizure threshold + extrapyramidal risk); haloperidol can be used if needed; (3) Supportive: monitor BP, cardiac, temperature (hyperthermia possible), urine output (rhabdomyolysis); IV fluids; acidification of urine NOT recommended (myoglobinuric AKI risk); (4) Workup: ECG, CK, urinalysis, electrolytes, CT head if trauma/seizure/focal; (5) Distinguishing from other agitated presentations: nystagmus (especially vertical) + dissociation + violence cluster suggests PCP/ketamine; (6) Hallucinogen use disorder: NO FDA-approved meds; behavioral + supportive; (7) Hallucinogen Persisting Perception Disorder (HPPD) — recurrent perceptual disturbances (visual snow, flashes) — rare; (8) Long-term: PCP psychotic features can persist weeks-months; address ongoing psychosis with antipsychotic; (9) Modern emerging: psilocybin + LSD therapeutic research (controlled settings) — distinguish from recreational misuse; ketamine medical use (depression, anesthesia) vs recreational; (10) Comorbidity assessment, harm reduction, multidisciplinary"
+      },
+      {
+        "label": "C",
+        "text": "Discharge home"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Beta-blocker first-line"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "PCP Intoxication: unpredictable violence + dissociation + vertical nystagmus + HTN. Benzodiazepine first-line for agitation. Low stimulation. AVOID urine acidification (rhabdo + AKI). Hallucinogen Use Disorder: no FDA medication; behavioral. HPPD rare persistent.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "ASAM Hallucinogens; UpToDate PCP"
+  },
+  {
+    "scenario": "ชายไทยอายุ 45 ปี smokes 1.5 packs/day × 25 ปี — ต้องการเลิก, prior attempts failed (relapsed within weeks); morning craving + craving with coffee + after meals strong; HSI score high; comorbid HTN, beginning COPD; ไม่มี active psychiatric disorder\n\nMotivated, family support, no contraindications",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cold turkey without support"
+      },
+      {
+        "label": "B",
+        "text": "Tobacco Use Disorder — Comprehensive Smoking Cessation: (1) Combination behavioral + pharmacotherapy = most effective; (2) **First-line pharmacotherapy** (FDA approved): - **Varenicline** (Chantix) — partial agonist α4β2 nicotinic; most effective single agent; start 1 wk before quit date, titrate to 1mg BID × 12 wk (extend if needed); side effects: nausea, vivid dreams, sleep disturbance, neuropsychiatric warning removed (EAGLES trial reassured); reduces craving + reduces reward; - **Nicotine Replacement Therapy (NRT)** — patch + short-acting (gum, lozenge, inhaler, nasal spray) combination superior to single; safe in most CV disease; can start before quit date; - **Bupropion SR** — dopaminergic + noradrenergic; effective; reduces craving + weight gain; AVOID seizure history, eating disorders; (3) Combination — varenicline + NRT OR varenicline + bupropion = superior to single (some studies); (4) **Behavioral first-line**: - Brief counseling at every healthcare visit (5As: Ask, Advise, Assess, Assist, Arrange); - Quitlines (1-800-QUIT-NOW), text messaging programs (SmokefreeTXT), apps, web programs; - Group counseling, individual; - Motivational interviewing; (5) Address triggers + replacements + coping; (6) Treatment duration ≥ 12 weeks; extended (6 mo) reduces relapse; (7) **Special populations**: - Pregnancy — NRT cautiously (preferred over smoking); behavioral primary; - Psychiatric — varenicline safe per EAGLES; address depression + anxiety; high smoking rates in mental illness (50-90%); - Adolescents — behavioral + cautious NRT; (8) Address e-cigarettes / vaping — not approved smoking cessation; harm reduction debate; nicotine-containing; respiratory effects; (9) Comorbidity: CV disease, COPD, cancer screening; (10) Multidisciplinary: primary care, pulmonology, psychiatry if comorbid"
+      },
+      {
+        "label": "C",
+        "text": "E-cigarettes as long-term replacement"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "No treatment"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Tobacco Use Disorder: combination behavioral + pharmacotherapy most effective. Varenicline most effective single agent (EAGLES safety reassured). NRT combination (patch + short-acting). Bupropion. Counseling at every visit (5As). Special: pregnancy, psychiatric (high comorbid), adolescent.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "USPSTF; Cochrane Varenicline; EAGLES"
+  },
+  {
+    "scenario": "วัยรุ่นชายอายุ 14 ปี — มา ED ด้วย sudden cardiac arrest at gathering; resuscitated; admits inhaling toluene from spray cans 'huffing' × past year; school problems, low SES, easy access to inhalants\n\nLab: hepatic enzymes elevated, mild renal dysfunction, anion gap metabolic acidosis\nMother concerned",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No treatment"
+      },
+      {
+        "label": "B",
+        "text": "Inhalant Use Disorder — High Morbidity + Mortality (Sudden Sniffing Death — cardiac arrhythmia; multi-organ toxicity): (1) Acute: monitor cardiac (arrhythmia — sensitization to catecholamines), respiratory, neurological (encephalopathy), hepatic, renal; supportive; (2) AVOID catecholamines (epinephrine sensitization with inhalants → arrhythmia) — use beta-blocker for arrhythmia in this setting (atypical from cocaine context); (3) NO FDA-approved medication; (4) Behavioral first-line: family-based + CBT + school + community intervention; address access; (5) Comorbidity: conduct disorder, ADHD, depression, substance use, trauma, low SES; (6) Long-term toxicity: leukoencephalopathy (white matter — toluene), peripheral neuropathy, cerebellar dysfunction, hepatorenal, hearing loss, bone marrow (benzene); (7) Adolescent + pediatric population predominantly; access (household products); (8) Education + prevention essential — community-level intervention; (9) Family + social work involvement; (10) Multidisciplinary: pediatrics, psychiatry, neurology, social work, school personnel; (11) Mortality reduction through harm reduction + abstinence"
+      },
+      {
+        "label": "C",
+        "text": "Catecholamines for cardiac arrest"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Inhalant Use Disorder: 'huffing' — Sudden Sniffing Death (arrhythmia). AVOID catecholamines (sensitization). Multi-organ toxicity (CNS leukoencephalopathy, hepatorenal). NO FDA medication. Adolescent — family + school + community. Address access.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "ASAM Inhalants; SAMHSA"
+  },
+  {
+    "scenario": "ชายไทยอายุ 28 ปี nyu admitted ระหว่าง legal proceedings for assault — history of multiple arrests since age 16, repeated lying, irresponsible (frequently fired), aggressive (multiple fights), reckless (DUI × 3), no remorse for harm caused — childhood: conduct disorder before 15 yo\n\nNo psychosis, no mood disorder; substance use comorbid (alcohol, cocaine)\nDSM-5 ASPD criteria met",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Punishment alone"
+      },
+      {
+        "label": "B",
+        "text": "Antisocial Personality Disorder (DSM-5: pervasive disregard for + violation of rights of others since age 15 + ≥ 3 of 7 criteria + conduct disorder before age 15 + age ≥ 18 + not solely during schizophrenia/BP): (1) Challenging to treat — limited evidence + low treatment engagement; (2) Approach realistic expectations + boundaries; (3) Treat comorbidity: substance use disorder (very high comorbid — focus often more productive), depression, anxiety; (4) Psychotherapy: - CBT for specific behaviors (anger management, impulse control); - Schema-focused therapy + MBT studied; - Therapeutic communities; - Avoid expectation of full personality change; - Focus on behavioral outcomes (reduced violence, substance use, employment); (5) Medication targets specific symptoms — no medication for ASPD itself: - SSRI for impulsivity, aggression (moderate); - Mood stabilizer for aggression; - Atypical antipsychotic for severe aggression; - AVOID benzodiazepine + stimulants (disinhibition + abuse); (6) Forensic considerations — legal involvement common; competency, sentencing, supervision; assess violence risk (HCR-20, VRAG); (7) Distinguish: - Conduct disorder (< 18); - Psychopathy (overlap, Hare PCL-R, more severe); - Narcissistic PD (lacks ASPD childhood conduct disorder); - Substance-induced (resolves with sobriety); (8) Long-term: chronic; some 'burnout' with age — reduced criminality after 40s; (9) Multidisciplinary including criminal justice + family + employment; (10) Provider safety + self-care — engagement can be exhausting"
+      },
+      {
+        "label": "C",
+        "text": "No treatment"
+      },
+      {
+        "label": "D",
+        "text": "Cure with single intervention"
+      },
+      {
+        "label": "E",
+        "text": "Surgery"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Antisocial PD: pervasive violation of rights + childhood conduct disorder. Treat comorbid substance use (often more productive). CBT for specific behaviors. Medication targets symptoms (no medication for ASPD itself). AVOID BZD + stimulants. Forensic risk assessment. Realistic expectations.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "DSM-5-TR; Hare PCL-R"
+  },
+  {
+    "scenario": "ชายไทยอายุ 45 ปี executive — มา OPD ตาม spouse's insistence; pattern × decades — grandiosity, need for admiration, lack of empathy, sense of entitlement, exploits relationships for own gain, envy + believes others envy him, arrogant; recent failures + marriage in crisis triggered moderate depression (PHQ-9 14)\n\nNo psychosis, no manic episodes",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Confront grandiosity directly"
+      },
+      {
+        "label": "B",
+        "text": "Narcissistic Personality Disorder (DSM-5: pervasive grandiosity + need for admiration + lack of empathy + ≥ 5/9 criteria): (1) Treatment engagement often poor (denial, externalization); (2) Address presenting concern (depression here) — entry point + alliance; (3) Psychotherapy long-term: - Psychodynamic (Kohut Self-Psychology, Kernberg, TFP — Transference-Focused Psychotherapy); - Schema-focused; - CBT for specific symptoms; - Mentalization-Based Treatment (MBT); - Therapeutic alliance challenging — narcissistic injury common; (4) Address: relationship pattern, work issues, anger management, empathy development, vulnerability tolerance; (5) Subtypes: - **Grandiose** (overt, exhibitionist — classical); - **Vulnerable** (covert, hypersensitive, depression, shame-prone) — more common presentation in clinical setting; (6) Comorbidity: depression (especially with life setbacks, narcissistic injury), substance use, anxiety, other PDs; (7) Medication: target symptoms (SSRI for depression, anxiety); no medication for NPD itself; (8) Suicide risk — narcissistic injury + depression elevated; (9) Couples/family therapy often helpful — relationship dimension prominent; (10) Long-term — chronic, gradual change possible; some improvement with age + maturation; (11) Provider self-awareness — countertransference (idealization → devaluation cycle)"
+      },
+      {
+        "label": "C",
+        "text": "No treatment"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Narcissistic PD: grandiosity + need for admiration + lack of empathy. Engagement through presenting concern. Long-term psychotherapy (Kohut, Kernberg, TFP, schema). Grandiose vs vulnerable subtypes. Suicide risk with injury. No specific medication. Countertransference common.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "DSM-5-TR; Kernberg; Kohut"
+  },
+  {
+    "scenario": "ชายไทยอายุ 30 ปี × lifelong — avoids social/occupational activities requiring interpersonal contact, unwilling to engage unless certain of being liked, restraint in intimate relationships, preoccupied with criticism + rejection, views self as socially inept, reluctant to take risks; functional but limited socially + occupationally — entry-level job, no close friends, single\n\nNo MDD/psychosis acute\nLongstanding pattern since teenage\nAttended counseling reluctantly",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Forced exposure without preparation"
+      },
+      {
+        "label": "B",
+        "text": "Avoidant Personality Disorder (DSM-5: pervasive social inhibition + feelings of inadequacy + hypersensitivity to negative evaluation + ≥ 4/7 criteria): (1) CBT first-line — graded exposure to feared situations (similar to social anxiety), cognitive restructuring of self-views + others' judgments, behavioral activation, social skills training; (2) Group therapy provides natural exposure; (3) Schema-focused therapy + Dialectical Behavior Therapy adaptations; (4) Mentalization-Based Treatment; (5) SSRI for comorbid social anxiety + depression — common overlap with social anxiety disorder (high; conceptual debate whether separate or severe end of social anxiety spectrum); (6) Comorbidity: social anxiety (very high overlap), depression, other anxiety, substance use; (7) Long-term — chronic; CBT shows durable improvement; (8) Distinguish from: - Social anxiety disorder (overlapping, perhaps continuum); - Schizoid PD (no desire for relationships vs avoidant desires but avoids due to fear); - Dependent PD (clings to relationships); (9) Therapeutic alliance carefully — sensitivity to perceived criticism; (10) Multidisciplinary"
+      },
+      {
+        "label": "C",
+        "text": "No treatment"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Avoidant PD: social inhibition + inadequacy + hypersensitivity to evaluation. CBT (graded exposure + cognitive restructuring) first-line. SSRI for comorbid social anxiety. Overlap with social anxiety. Distinguish from schizoid (no desire) + dependent (clings).",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "DSM-5-TR; Beck PD"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 35 ปี — pattern × adulthood — difficulty making everyday decisions without excessive advice, needs others to assume responsibility, difficulty expressing disagreement, difficulty initiating projects alone, goes to excessive lengths to obtain nurturance/support, feels helpless when alone, urgently seeks new relationship when one ends; in abusive relationship × 10 ปี, cannot leave\n\nMSE: depressed mood, low self-esteem",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue current dependence"
+      },
+      {
+        "label": "B",
+        "text": "Dependent Personality Disorder (DSM-5: pervasive + excessive need to be taken care of → submissive + clinging + fears of separation; ≥ 5/8 criteria): (1) Psychotherapy — CBT, psychodynamic, schema-focused — focus on assertiveness training, independent decision-making, building self-efficacy, identifying own preferences/values, healthy relationships; (2) Address abusive relationship — safety planning (separate issue beyond PD), domestic violence resources, gradual empowerment (often complex — patient may resist leaving abuser she depends on); (3) Group therapy provides interpersonal feedback; (4) SSRI for comorbid depression, anxiety, panic (common); (5) Comorbidity: depression, anxiety, somatic, other PDs (especially borderline, avoidant, histrionic); (6) Long-term — chronic; gradual improvement with sustained treatment; (7) Distinguish from: avoidant PD (avoids relationships due to fear vs dependent seeks them desperately), borderline PD (unstable relationships vs dependent clings), histrionic PD (attention-seeking vs nurturance-seeking); (8) Therapeutic relationship — risk of patient becoming dependent on therapist — encourage autonomy; (9) Cultural sensitivity — some interdependence is cultural norm, distinguish pathology; (10) Multidisciplinary including DV resources if applicable"
+      },
+      {
+        "label": "C",
+        "text": "No treatment"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Dependent PD: excessive need to be cared for + submissive + clinging + fear of separation. Psychotherapy — assertiveness training, decision-making, self-efficacy. Address abusive relationship (DV resources). SSRI for comorbid depression. Cultural sensitivity.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "DSM-5-TR"
+  },
+  {
+    "scenario": "ชายไทยอายุ 50 ปี high-functioning accountant — มา OPD ด้วย work stress + marital issues; pattern × decades — preoccupied with details/rules/lists, perfectionism interferes with task completion, overly conscientious + scrupulous, unable to discard worn-out objects, reluctance to delegate, miserly, rigid + stubborn — distinct from OCD (no obsessions/compulsions, ego-syntonic)\n\nNo true obsessions/compulsions\nNo significant depression/anxiety currently",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Treat as OCD with SSRI high dose + ERP"
+      },
+      {
+        "label": "B",
+        "text": "Obsessive-Compulsive Personality Disorder (DSM-5: pervasive preoccupation with orderliness, perfectionism, mental + interpersonal control at expense of flexibility, openness, efficiency; ≥ 4/8 criteria): (1) Distinct from OCD — OCPD is ego-syntonic (patient sees traits as desirable), no specific obsessions/compulsions; OCD ego-dystonic; ~ 20% comorbidity; (2) Psychotherapy: - CBT for specific issues (perfectionism, rigidity, procrastination from over-planning, work-life balance); - Psychodynamic; - Schema-focused; - Address rigidity in relationships, control issues, emotional expression; (3) Couples/family therapy — relational issues prominent; (4) Address comorbid depression (anhedonia, exhaustion from over-conscientiousness); (5) SSRI for comorbid depression/anxiety; (6) Long-term — relatively stable; high functioning often (especially in structured work — may be adaptive in some careers); (7) Distinguish: - OCD (egodystonic, obsessions/compulsions); - Narcissistic PD (entitlement vs OCPD duty-bound); - Autism (social communication deficits); (8) Approach therapeutically — patient often comes for relationship/depression rather than personality complaint; engage gradually with traits; (9) Modern view — perfectionism + control are functional in some contexts, dysfunctional when excessive; help develop flexibility"
+      },
+      {
+        "label": "C",
+        "text": "No treatment"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "OCPD: pervasive perfectionism + rigidity + control. Ego-syntonic (distinct from OCD ego-dystonic). Psychotherapy + address comorbid depression. Couples therapy. Often high-functioning. SSRI for comorbid only. Distinguish from OCD, narcissistic, autism.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "DSM-5-TR"
+  },
+  {
+    "scenario": "ชายไทยอายุ 38 ปี — chronic — odd beliefs/magical thinking (interprets coincidences as personal signs), unusual perceptual experiences (sees aura around people occasionally), suspicious + mild paranoid ideation, odd speech (vague, circumstantial), constricted affect, no close friends, social anxiety not improving — but no full psychotic episodes\n\nFamily hx: brother with schizophrenia\nFunctional but isolated",
+    "choices": [
+      {
+        "label": "A",
+        "text": "High-dose typical antipsychotic"
+      },
+      {
+        "label": "B",
+        "text": "Schizotypal Personality Disorder (DSM-5: pervasive social + interpersonal deficits + cognitive/perceptual distortions + eccentricities; ≥ 5/9 criteria; Cluster A): (1) Considered schizophrenia-spectrum — genetically related; (2) Psychotherapy: - Supportive + social skills training; - CBT for specific symptoms (paranoid ideation, social anxiety); - Avoid intense psychodynamic exploration (may worsen psychotic-like sx); (3) Low-dose atypical antipsychotic (risperidone, aripiprazole) for cognitive-perceptual sx + helps anxiety + social functioning; modest evidence; (4) SSRI for comorbid anxiety + depression — common; (5) Address comorbidity: depression, anxiety, substance use, other PDs (paranoid, schizoid); (6) Distinguish: - Schizophrenia (full psychotic episodes); - Paranoid PD (pervasive distrust but less cognitive/perceptual); - Schizoid PD (lacks interest in relationships, no cognitive/perceptual distortions); - Autism spectrum (social communication deficits, restricted interests vs schizotypal odd beliefs); (7) Long-term — chronic; ~ 25% develop schizophrenia; longitudinal monitoring; (8) Family involvement (genetic counseling, education); (9) Multidisciplinary"
+      },
+      {
+        "label": "C",
+        "text": "No treatment"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Schizotypal PD: pervasive social deficit + cognitive-perceptual distortions + eccentricities (Cluster A, schizophrenia-spectrum). Low-dose atypical antipsychotic + SSRI + supportive therapy. ~ 25% develop schizophrenia. Distinguish from schizophrenia, paranoid, schizoid PD, autism.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "DSM-5-TR; Siever Schizotypal"
+  },
+  {
+    "scenario": "ชายไทยอายุ 50 ปี — lifelong pattern of distrust + suspiciousness of others — interprets benign motives as malicious, doubts loyalty of friends/family, reluctant to confide (fears used against him), holds grudges, perceives attacks on character + reacts angrily; no psychotic episodes, no formal delusions; intact reality testing\n\nNo substance use, no other psychiatric\nMSE: guarded, suspicious of interviewer; otherwise oriented + logical",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Confront paranoid interpretations"
+      },
+      {
+        "label": "B",
+        "text": "Paranoid Personality Disorder (DSM-5: pervasive distrust + suspiciousness + interpret others' motives as malevolent; ≥ 4/7 criteria; Cluster A): (1) Treatment engagement challenging — distrust extends to providers; (2) Psychotherapy — supportive + collaborative; reliable + predictable + transparent approach; NEVER confront paranoid interpretations directly (alliance rupture); explore evidence gently with cognitive techniques; (3) Build alliance gradually; (4) Address presenting concerns (relationship issues, work conflict, depression); (5) Medication targets symptoms — SSRI for comorbid depression/anxiety; low-dose atypical antipsychotic for severe paranoid sx without psychosis (limited evidence); (6) AVOID benzodiazepine (disinhibition possible); (7) Comorbidity: depression, anxiety, substance use, other PDs (schizotypal, schizoid, narcissistic, avoidant); (8) Distinguish: - Schizophrenia paranoid type (psychosis, hallucinations, delusions); - Delusional disorder (specific delusion); - Schizotypal PD (cognitive/perceptual distortions); - Antisocial PD (different pattern); (9) Long-term — chronic + stable; gradual improvement with sustained therapy; (10) Provider self-awareness — distrust pattern may evoke defensiveness — maintain professional consistency"
+      },
+      {
+        "label": "C",
+        "text": "Long-term benzodiazepine"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "No treatment"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Paranoid PD: pervasive distrust + suspiciousness (Cluster A). Supportive + collaborative approach; NEVER confront directly. SSRI for comorbid. Build alliance gradually. AVOID BZD. Distinguish from psychosis (no hallucinations/delusions) + schizotypal.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "DSM-5-TR"
+  },
+  {
+    "scenario": "ชายไทยอายุ 40 ปี IT — มาเมื่อ employer ส่ง เนื่องจากกังวล social withdrawal — lifelong pattern of detachment from relationships, prefers solitary activities, little interest in close relationships (including family), no sexual experiences (no desire), takes pleasure in few activities, appears emotionally cold + indifferent to praise/criticism; high-functioning in independent work\n\nNo psychotic features, no cognitive/perceptual distortions\nNo depression/anxiety",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Force social engagement"
+      },
+      {
+        "label": "B",
+        "text": "Schizoid Personality Disorder (DSM-5: pervasive detachment from social relationships + restricted range of emotional expression; ≥ 4/7 criteria; Cluster A): (1) Treatment often not sought — patient may not see problem (ego-syntonic); reason for referral usually work/family concern; (2) Respect patient's preferred level of social engagement — pathologizing introversion is wrong; only intervene if functional impairment + patient distress; (3) Psychotherapy if engaged — supportive, gradual social skills exploration if patient wants; do not force social engagement against preference; (4) Address comorbidity if present (rare): depression, anxiety; (5) Medication targets specific symptoms; no medication for schizoid PD itself; (6) Distinguish: - Avoidant PD (DESIRES relationships but avoids due to fear vs schizoid lacks desire); - Schizotypal PD (cognitive/perceptual distortions); - Autism (social communication deficits, restricted interests vs schizoid emotional detachment without intent); - Normal introversion (preference vs pervasive impairment); (7) Long-term — chronic + stable pattern; (8) Modern: emphasize quality of life by patient's own values; don't pathologize introversion; (9) If work requires more interaction — career counseling; (10) Family education + support"
+      },
+      {
+        "label": "C",
+        "text": "Long-term antipsychotic"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Schizoid PD: pervasive detachment + restricted emotion (Cluster A). Often ego-syntonic, treatment limited. Respect preference; distinguish from introversion. Distinguish from avoidant (desires relationships), schizotypal (cognitive distortions), autism. No specific medication.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "DSM-5-TR"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 32 ปี actress — มา OPD ด้วย depressed mood หลัง breakup; pattern × adulthood — uncomfortable when not center of attention, sexually provocative/seductive interactions, rapidly shifting + shallow emotions, uses physical appearance to draw attention, impressionistic speech style (vague), theatrical + exaggerated emotional expression, suggestible, considers relationships more intimate than they are\n\nMSE: dramatic, flirtatious with interviewer, tearful then laughing quickly",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Reinforce attention-seeking"
+      },
+      {
+        "label": "B",
+        "text": "Histrionic Personality Disorder (DSM-5: pervasive + excessive emotionality + attention seeking; ≥ 5/8 criteria; Cluster B): (1) Psychotherapy — psychodynamic (insight into use of dramatic display, dependency), CBT (skills, more meaningful self-presentation), supportive; (2) Group therapy — interpersonal feedback; (3) Address comorbidity: depression (high — narcissistic injury, abandonment), substance use, somatic, conversion sx; (4) SSRI for comorbid depression/anxiety; (5) Therapeutic alliance — patient may seek therapist approval/attention — maintain professional boundaries; (6) Address dependency on others' attention; develop more genuine connections + self-worth not contingent on attention; (7) Distinguish: - Borderline PD (abandonment fear, identity disturbance, self-harm — overlap exists); - Narcissistic PD (grandiosity + entitlement vs histrionic centrality + attention); - Dependent PD (clings for nurturance); - Antisocial PD (manipulative for gain vs histrionic for attention); (8) Long-term — chronic; some improvement with age; (9) Cultural + gender considerations — emotional expression varies; avoid gender bias in diagnosis; (10) Multidisciplinary; (11) Modern: DSM-5 emphasizes dimensional view — overlap with borderline frequently"
+      },
+      {
+        "label": "C",
+        "text": "Long-term benzodiazepine"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Histrionic PD: excessive emotionality + attention-seeking (Cluster B). Psychotherapy (psychodynamic, CBT, supportive). Address comorbid depression. SSRI for comorbidity. Distinguish from borderline (overlap), narcissistic, dependent. Cultural + gender considerations.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "DSM-5-TR"
+  },
+  {
+    "scenario": "ชายไทยอายุ 55 ปี admitted for elective surgery; chronic heavy alcohol use × 30 ปี (5 drinks/day) — last drink 48 ชั่วโมงก่อนเข้า รพ; ขณะนี้ tremor severe, agitation, diaphoresis, HR 130, BP 175/100, fever 38.2°C, visual hallucinations (sees bugs), disorientation, brief generalized seizure × 1\n\nCIWA-Ar 28 (severe)\nLab: K 3.0, Mg 1.3, low phos\nNo head trauma, no infection",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Beta-blocker monotherapy"
+      },
+      {
+        "label": "B",
+        "text": "Alcohol Withdrawal — Severe with Delirium Tremens (mortality 5-15% if untreated) — EMERGENCY: (1) ICU monitoring — autonomic instability, seizure, arrhythmia, electrolyte; (2) **Benzodiazepine** — backbone of treatment: - Symptom-triggered (CIWA-Ar based — better outcomes vs fixed schedule); - Diazepam or chlordiazepoxide (long-acting — auto-taper) preferred; - Lorazepam IV/IM if liver impairment (no active metabolites); - Loading dose for severe; phenobarbital if BZD-refractory; - Continuous infusion lorazepam/midazolam ICU if needed; (3) **Thiamine 100mg IV BEFORE glucose** — prevent Wernicke; followed by folate, multivitamin; (4) Correct electrolytes: K, Mg, phos (refeeding-like); (5) IV fluids — maintenance + replacement (cautious — cardiac); (6) Seizure: usually BZD prevents; if active — IV BZD; phenytoin NOT effective for alcohol withdrawal seizures (use BZD); (7) Hallucinations + agitation: BZD primary; low-dose haloperidol adjunct if severely agitated (lowers seizure threshold — caution); (8) Distinguish DTs: hyperactive autonomic, severe tremor, hallucinations (often visual), delirium — peaks 48-96 h post last drink; alcoholic hallucinosis — hallucinations without delirium/autonomic; (9) After acute: AUD treatment (MAT — naltrexone, acamprosate, disulfiram; behavioral; AA); (10) Multidisciplinary: ICU/medicine, psychiatry, addiction medicine"
+      },
+      {
+        "label": "C",
+        "text": "Phenytoin for seizure prophylaxis"
+      },
+      {
+        "label": "D",
+        "text": "Discharge home"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Delirium Tremens: mortality 5-15%. ICU + symptom-triggered benzodiazepine (long-acting; lorazepam in liver disease). Thiamine BEFORE glucose. Correct K/Mg/phos. Phenytoin NOT effective for alcohol withdrawal seizure. Peak 48-96h. AUD treatment after acute.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "ASAM Alcohol Withdrawal; CIWA-Ar"
+  },
+  {
+    "scenario": "ชายไทยอายุ 60 ปี chronic AUD × 35 ปี — มา ED ด้วย ataxia (wide-based gait, falls), confusion + disorientation, ophthalmoplegia (lateral rectus weakness, nystagmus), peripheral neuropathy; over past months developed inability to form new memories + confabulation\n\nMalnourished, BMI 18\nLab: low albumin, normal B12, MCV 105\nMRI: bilateral mammillary body atrophy",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Glucose IV first"
+      },
+      {
+        "label": "B",
+        "text": "Wernicke Encephalopathy + Korsakoff Syndrome (Wernicke-Korsakoff Syndrome — thiamine deficiency; classic triad: ophthalmoplegia + ataxia + confusion — only ~ 30% have all three; Korsakoff = chronic anterograde amnesia + confabulation): (1) **Thiamine 500 mg IV TID × 2 days** — high-dose parenteral; then 250mg IV/IM daily × 5 days; then oral 100mg daily; (2) **BEFORE any IV glucose** — glucose can precipitate Wernicke in thiamine-deficient; even routine IVF dextrose dangerous; (3) Magnesium replacement (thiamine requires Mg as cofactor — coexists in AUD); (4) Multivitamin + folate; (5) Treat underlying AUD — abstinence, MAT, behavioral; (6) Recovery: Wernicke acute features often reversible with prompt thiamine; Korsakoff (chronic memory loss + confabulation) often permanent — only 20% full recovery; (7) Long-term: cognitive rehabilitation, supportive environment, social work, possible nursing home/supported living if severe; (8) Nutritional rehabilitation — broader malnutrition addressed; (9) Other AUD complications screen: liver, cardiac (alcoholic cardiomyopathy), pancreatitis, peripheral neuropathy, cerebellar atrophy, cancer; (10) Multidisciplinary: neurology, internal medicine, psychiatry, addiction medicine, PT/OT, social work, nutrition; (11) Prevention key in AUD population — high-dose thiamine in ED + admission protocols"
+      },
+      {
+        "label": "C",
+        "text": "Low-dose oral thiamine only"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Wernicke-Korsakoff: thiamine deficiency. Triad (ophthalmoplegia, ataxia, confusion) — only 30% all. HIGH-DOSE PARENTERAL thiamine BEFORE glucose (glucose precipitates Wernicke). Korsakoff (chronic memory + confabulation) often permanent. Prevention protocols in AUD.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "EFNS Wernicke; Caine criteria"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 26 ปี (known BPD, in DBT × 6 เดือน) มา ED ด้วย acute crisis หลังทะเลาะกับ partner — overdosed 20 acetaminophen 4 ชั่วโมงก่อน, brought by friend; ขณะนี้ stable medically (acetylcysteine started); ปฏิเสธ admission, wants to leave\n\nAlert, oriented, fluctuating between anger + tearfulness\nNo psychosis, no SI currently after intervention\nDistress over relationship",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge against medical advice immediately"
+      },
+      {
+        "label": "B",
+        "text": "BPD Crisis with Recent Suicide Attempt — Acute Management: (1) **Medical stabilization first** — acetaminophen overdose protocol (NAC, monitor LFT, INR, lactate; transfer to hepatology if hepatotoxicity); (2) **Capacity assessment** — current psychiatric status, impaired by recent attempt; (3) **Brief hospitalization indicated** for safety + acute crisis intervention, NOT for chronic suicidality treatment (extended hospitalization can regress BPD); (4) **DBT skills coaching crisis intervention** if DBT-trained therapist available — between-session coaching protocol; (5) **Coordinate with outpatient DBT therapist** + treatment team; do not undermine existing alliance; (6) Safety planning (Stanley-Brown) — warning signs, internal coping, social distractions, contacts, professional help, means restriction; (7) Identify precipitant (relationship conflict) + DBT skills (distress tolerance, interpersonal effectiveness); (8) Brief intervention rather than rehospitalization for chronic suicidality (long admission may worsen); (9) Outpatient follow-up within 24-48 hours; (10) Address means restriction — limit access to medications, large quantities; (11) Family/partner education + support; (12) AVOID adding new medications during crisis unless indicated; benzodiazepines avoid (disinhibition); SSRI continuation; (13) Document carefully; (14) Multidisciplinary; (15) Distinguish chronic from acute risk change — distinct intervention strategies"
+      },
+      {
+        "label": "C",
+        "text": "Long-term hospitalization"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Add benzodiazepine"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "BPD crisis: brief hospitalization for safety, NOT extended (regression). DBT coaching + coordinate outpatient therapist. Safety planning + means restriction. AVOID BZD (disinhibition). Distinguish acute change from chronic suicidality. Follow-up 24-48h.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "Linehan DBT; APA Borderline"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 30 ปี BPD + comorbid AUD + bulimia nervosa + chronic SI + history of trauma (childhood sexual abuse) — มา OPD เพื่อ comprehensive treatment planning\n\nUnstable housing, intermittent employment\nFailed standard CBT × 2 prior\nMother supportive, sister has similar issues",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single specialist treatment"
+      },
+      {
+        "label": "B",
+        "text": "Complex BPD + Comorbidities — Integrated Multidisciplinary Approach: (1) **DBT** as primary modality — addresses BPD core + SI + emotion regulation; comprehensive program (skills group + individual therapy + phone coaching + consultation team); (2) **Address trauma** — once stabilized (DBT Stage 2 — trauma-focused work after behavioral stabilization in Stage 1); PE, CPT, EMDR for PTSD; (3) **AUD** — integrated dual diagnosis treatment (separate treatment historically less effective); MAT (naltrexone particularly — affects reward + emotion regulation, FDA approved AUD); concurrent with mental health treatment; AA optional; (4) **Bulimia** — CBT-E (Enhanced) ideal; combined with DBT may be needed; SSRI fluoxetine (FDA approved); nutritional support; medical monitoring (electrolytes, dental, cardiac); (5) **Medication adjuncts**: SSRI (depression, anxiety, bulimia), low-dose mood stabilizer (lamotrigine — emotion regulation), low-dose atypical antipsychotic (severe affective + cognitive sx); AVOID benzodiazepines (disinhibition + AUD); AVOID stimulants; (6) **Social determinants**: housing (Housing First model), employment (supported employment), legal, financial; (7) **Family education + family DBT** if available; sister assessment + treatment; (8) **Trauma-informed care** throughout; (9) **Crisis planning**: ED, hotline, friends/family, therapist coaching; (10) **Long-term** — treatment is years; gradual improvement; 50% BPD remit at 10 yr; (11) Multidisciplinary: DBT therapist, psychiatrist, addiction medicine, eating disorder specialist, primary care, social work, peer support"
+      },
+      {
+        "label": "C",
+        "text": "Long-term benzodiazepine"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "No treatment"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Complex BPD: integrated treatment. DBT primary + trauma-focused (after stabilization) + integrated dual diagnosis (AUD + bulimia) + medication adjuncts + social determinants + trauma-informed. AVOID BZD + stimulants. Multidisciplinary, long-term. 50% remit at 10 yr.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "Linehan DBT; ASAM Dual Diagnosis"
   }
 ]
