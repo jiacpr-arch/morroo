@@ -46,7 +46,7 @@ export default function ImportPdfPage() {
 
   const [examType, setExamType] = useState<"NL1" | "NL2">("NL2");
   const [examSource, setExamSource] = useState("");
-  const [file, setFile] = useState<File | null>(null);
+  const [files, setFiles] = useState<File[]>([]);
 
   const [phase, setPhase] = useState<Phase>("idle");
   const [progress, setProgress] = useState("");
@@ -87,24 +87,24 @@ export default function ImportPdfPage() {
   }, [router]);
 
   function onFile(e: React.ChangeEvent<HTMLInputElement>) {
-    const f = e.target.files?.[0] ?? null;
-    setFile(f);
+    const fs = Array.from(e.target.files ?? []);
+    setFiles(fs);
     setParsed([]);
     setResult(null);
     setError(null);
-    if (f && !examSource) {
-      setExamSource(f.name.replace(/\.pdf$/i, ""));
+    if (fs.length === 1 && !examSource) {
+      setExamSource(fs[0].name.replace(/\.pdf$/i, ""));
     }
   }
 
-  async function extractPdfText(f: File): Promise<string> {
+  async function extractPdfText(f: File, prefix: string): Promise<string> {
     const pdfjs = await import("pdfjs-dist");
     pdfjs.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
     const buf = new Uint8Array(await f.arrayBuffer());
     const doc = await pdfjs.getDocument({ data: buf }).promise;
     const parts: string[] = [];
     for (let p = 1; p <= doc.numPages; p++) {
-      setProgress(`อ่านข้อความจาก PDF… หน้า ${p}/${doc.numPages}`);
+      setProgress(`${prefix}อ่านข้อความจาก PDF… หน้า ${p}/${doc.numPages}`);
       const page = await doc.getPage(p);
       const content = await page.getTextContent();
       const line = (content.items as PdfTextItem[])
@@ -116,68 +116,79 @@ export default function ImportPdfPage() {
   }
 
   async function handleProcess() {
-    if (!file) { setError("กรุณาเลือกไฟล์ PDF ก่อน"); return; }
+    if (files.length === 0) { setError("กรุณาเลือกไฟล์ PDF ก่อน"); return; }
     setError(null);
     setResult(null);
     setParsed([]);
-    setPhase("reading");
-    setProgress("กำลังโหลดไฟล์…");
+
+    // dedupe + accumulate across ALL selected files → one preview/import
+    const seen = new Set<string>();
+    const raws: RawMcqRow[] = [];
+    let failedChunks = 0;
 
     try {
-      const text = await extractPdfText(file);
-      const chunks = chunkText(text);
+      for (let fi = 0; fi < files.length; fi++) {
+        const f = files[fi];
+        const prefix = files.length > 1 ? `ไฟล์ ${fi + 1}/${files.length} · ` : "";
+        // per-file source: filename when batching; the input field when single
+        const src =
+          files.length === 1 && examSource
+            ? examSource
+            : f.name.replace(/\.pdf$/i, "");
 
-      setPhase("extracting");
-      const seen = new Set<string>();
-      const raws: RawMcqRow[] = [];
-      let failedChunks = 0;
+        setPhase("reading");
+        setProgress(`${prefix}กำลังโหลดไฟล์…`);
+        const text = await extractPdfText(f, prefix);
+        const chunks = chunkText(text);
 
-      for (let i = 0; i < chunks.length; i++) {
-        setProgress(`AI กำลังแกะข้อสอบ… ส่วน ${i + 1}/${chunks.length} (ได้แล้ว ${raws.length} ข้อ)`);
-        let questions: AiQuestion[] = [];
-        try {
-          const res = await fetch("/api/admin/mcq/extract-pdf", {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify({ text: chunks[i], exam_type: examType }),
-          });
-          const data = await res.json();
-          if (!res.ok) { failedChunks++; continue; }
-          questions = (data.questions as AiQuestion[]) ?? [];
-        } catch {
-          failedChunks++;
-          continue;
-        }
-
-        for (const q of questions) {
-          const scenario = (q.scenario ?? "").trim();
-          const choices = Array.isArray(q.choices) ? q.choices : [];
-          if (scenario.length < 5 || choices.length < 2) continue;
-          const key = scenario.toLowerCase().replace(/\s+/g, " ").slice(0, 80);
-          if (seen.has(key)) continue;
-          seen.add(key);
-
-          const byLabel: Record<string, string> = {};
-          for (const c of choices) {
-            const lab = String(c.label ?? "").trim().toUpperCase();
-            if ("ABCDE".includes(lab) && lab) byLabel[lab] = (c.text ?? "").trim();
+        setPhase("extracting");
+        for (let i = 0; i < chunks.length; i++) {
+          setProgress(`${prefix}AI กำลังแกะ… ส่วน ${i + 1}/${chunks.length} (รวมได้แล้ว ${raws.length} ข้อ)`);
+          let questions: AiQuestion[] = [];
+          try {
+            const res = await fetch("/api/admin/mcq/extract-pdf", {
+              method: "POST",
+              headers: { "content-type": "application/json" },
+              body: JSON.stringify({ text: chunks[i], exam_type: examType }),
+            });
+            const data = await res.json();
+            if (!res.ok) { failedChunks++; continue; }
+            questions = (data.questions as AiQuestion[]) ?? [];
+          } catch {
+            failedChunks++;
+            continue;
           }
-          const correct = String(q.correct ?? "").trim().toUpperCase();
-          raws.push({
-            subject: (q.subject ?? "").trim(),
-            exam_type: examType,
-            exam_source: examSource,
-            question_number: String(raws.length + 1),
-            scenario,
-            choice_a: byLabel.A ?? "",
-            choice_b: byLabel.B ?? "",
-            choice_c: byLabel.C ?? "",
-            choice_d: byLabel.D ?? "",
-            choice_e: byLabel.E ?? "",
-            correct: "ABCDE".includes(correct) ? correct : "",
-            difficulty: "medium",
-            status: "review",
-          });
+
+          for (const q of questions) {
+            const scenario = (q.scenario ?? "").trim();
+            const choices = Array.isArray(q.choices) ? q.choices : [];
+            if (scenario.length < 5 || choices.length < 2) continue;
+            const key = scenario.toLowerCase().replace(/\s+/g, " ").slice(0, 80);
+            if (seen.has(key)) continue;
+            seen.add(key);
+
+            const byLabel: Record<string, string> = {};
+            for (const c of choices) {
+              const lab = String(c.label ?? "").trim().toUpperCase();
+              if ("ABCDE".includes(lab) && lab) byLabel[lab] = (c.text ?? "").trim();
+            }
+            const correct = String(q.correct ?? "").trim().toUpperCase();
+            raws.push({
+              subject: (q.subject ?? "").trim(),
+              exam_type: examType,
+              exam_source: src,
+              question_number: String(raws.length + 1),
+              scenario,
+              choice_a: byLabel.A ?? "",
+              choice_b: byLabel.B ?? "",
+              choice_c: byLabel.C ?? "",
+              choice_d: byLabel.D ?? "",
+              choice_e: byLabel.E ?? "",
+              correct: "ABCDE".includes(correct) ? correct : "",
+              difficulty: "medium",
+              status: "review",
+            });
+          }
         }
       }
 
@@ -185,7 +196,7 @@ export default function ImportPdfPage() {
       setParsed(rows);
       setPhase("done");
       setProgress(
-        `แกะเสร็จ: ${rows.length} ข้อ` +
+        `แกะเสร็จ ${files.length} ไฟล์: ${rows.length} ข้อ` +
         (failedChunks ? ` (มี ${failedChunks} ส่วนที่ AI อ่านไม่สำเร็จ ข้ามไป)` : "")
       );
     } catch (e) {
@@ -273,16 +284,17 @@ export default function ImportPdfPage() {
 
           <div className="flex flex-wrap items-center gap-3">
             <label className="inline-flex">
-              <input type="file" accept="application/pdf,.pdf" className="hidden" onChange={onFile} disabled={busy} />
+              <input type="file" accept="application/pdf,.pdf" multiple className="hidden" onChange={onFile} disabled={busy} />
               <span className="inline-flex items-center gap-1 px-3 py-1.5 text-sm rounded-md border bg-background hover:bg-muted cursor-pointer">
-                <Upload className="h-4 w-4" /> เลือกไฟล์ PDF
+                <Upload className="h-4 w-4" /> เลือกไฟล์ PDF (เลือกหลายไฟล์ได้)
               </span>
             </label>
-            {file && <span className="text-sm text-muted-foreground">{file.name}</span>}
+            {files.length === 1 && <span className="text-sm text-muted-foreground">{files[0].name}</span>}
+            {files.length > 1 && <span className="text-sm text-muted-foreground">{files.length} ไฟล์</span>}
           </div>
 
           <div className="flex items-center gap-3">
-            <Button onClick={handleProcess} disabled={!file || busy} className="gap-2">
+            <Button onClick={handleProcess} disabled={files.length === 0 || busy} className="gap-2">
               {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <Sparkles className="h-4 w-4" />}
               แกะข้อสอบด้วย AI
             </Button>
