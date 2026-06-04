@@ -5758,5 +5758,645 @@
     "board_topic": "procedures",
     "board_age_group": "adult",
     "reference_source": "AAOS Risk Management"
+  },
+  {
+    "scenario": "**EMS/Management**\n\nผู้ป่วย polytrauma มอเตอร์ไซค์ชน ที่โรงพยาบาลชุมชน 100 km จาก trauma center หลัก — รพ. ขาด orthopedic surgeon + MRI\n\nGCS 13, BP 90/60, HR 130, open femur + abdominal injury\n\nจงอธิบาย trauma system + regionalization + transfer decisions + communication",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Keep all polytrauma patients at local hospital"
+      },
+      {
+        "label": "B",
+        "text": "Trauma System + Regional Transfer + Communication: (1) **trauma system levels** (American College of Surgeons): (a) **Level I** — comprehensive: 24/7 in-house trauma surgeon + multiple subspecialists + research + education + high volume; (b) **Level II** — initial definitive trauma care, similar to Level I but no research/education requirement; (c) **Level III** — initial assessment, resuscitation, surgery for non-complex injuries, transfer of complex; (d) **Level IV** — primarily resuscitation + stabilization + rapid transfer; (e) Thailand has trauma center designation system per Ministry of Public Health; (2) **regional trauma coordination**: (a) **inclusive trauma system** — all hospitals participate at appropriate level + transfer based on capability; (b) **field triage protocols** (CDC field triage criteria) — paramedics bypass closest hospital to go to appropriate level trauma center based on injury severity + mechanism + comorbidities; (c) **\"golden hour\"** concept — early definitive care improves outcomes; (3) **transfer criteria — when to transfer**: (a) **physiologic** — persistent hypotension, GCS < 14, RR < 10 or > 29; (b) **anatomic** — penetrating to head/neck/torso/proximal extremities, flail chest, pelvic fracture, paralysis, open/depressed skull fracture, 2+ proximal long bone fractures, mangled extremity, amputation proximal to wrist/ankle; (c) **mechanism** — high-energy MVC, falls > 20 ft, auto vs pedestrian, ejection; (d) **comorbidity** — age > 55, anticoagulation, pregnancy > 20 wk, immunosuppression, bleeding disorder; (e) **resource needs** — required services not available at current facility; (4) **transfer decision in this case**: (a) ATLS stabilization first; (b) **damage control** — IV access, fluid resuscitation, MTP if needed, control external bleeding, fracture stabilization (splint, ex-fix); (c) **secure airway** if needed; (d) **early antibiotic + tetanus** for open fracture; (e) **call trauma center directly** — speak to receiving trauma surgeon — \"sender to receiver\" conversation; (f) **transfer agreement** + documentation + records + imaging sent ahead; (g) **don't delay transfer** for excessive imaging or non-essential procedures (\"definitive care delay\" worsens outcomes); (h) **mode of transport** — ground vs helicopter — based on distance, time, weather, patient stability; (5) **communication SBAR for transfer**: (a) **S — Situation** — patient ID, vital signs, current stability; (b) **B — Background** — mechanism, injuries identified, treatments given; (c) **A — Assessment** — current clinical picture, concerns; (d) **R — Recommendation** — what you need from receiving facility, expected arrival; (e) **document time + receiving physician name**; (6) **pre-transfer preparation**: (a) airway secured + tube confirmed; (b) IV access + drips, transfusion if active; (c) NG/Foley if needed; (d) splint/immobilize; (e) wound dressed; (f) tetanus + antibiotic; (g) imaging on disc/electronic transfer; (h) records + medications + ID; (i) family notified; (j) transfer team briefed; (7) **EMTALA equivalent** — patient stabilization before transfer + receiving hospital acceptance; (8) **quality + outcomes**: (a) regional trauma system reduces mortality; (b) appropriate triage = improved survival; (c) telemedicine + tele-radiology for remote consultation; (9) **disaster preparedness** — interhospital coordination, surge capacity, mutual aid agreements"
+      },
+      {
+        "label": "C",
+        "text": "Send patient without communication or records"
+      },
+      {
+        "label": "D",
+        "text": "Refuse transfer if receiving facility busy"
+      },
+      {
+        "label": "E",
+        "text": "No need to stabilize before transfer"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Trauma system: regionalized, Levels I-IV. Transfer when injury severity exceeds capability. Field triage criteria. Stabilize per ATLS → call receiving trauma surgeon (sender-receiver) → SBAR communication → pre-transfer preparation (airway, IV, splint, antibiotic, tetanus, records, imaging) → don't delay transfer for non-essentials. Document time + receiving physician. Helicopter vs ground based on distance/time/stability. Telemedicine adjunct. Regional system reduces mortality.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "ACS Resources for Optimal Care of Trauma Patient"
+  },
+  {
+    "scenario": "**EMS/Management**\n\nผู้ป่วยอายุ 45 ปี ที่โรงพยาบาลในจังหวัดห่างไกล ปวด + บวมข้อมือ X-ray ไม่ชัดเจน — รพ. ไม่มี ortho specialist\n\nมีระบบ telemedicine + tele-radiology available\n\nจงอธิบาย role + best practices ของ telemedicine ใน orthopedics + remote consultation",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Telemedicine replaces all in-person ortho care"
+      },
+      {
+        "label": "B",
+        "text": "Telemedicine + Remote Orthopedic Consultation: (1) **roles + applications**: (a) **acute consultation** — fracture interpretation, urgent decision support, reduction guidance, transfer triage; (b) **post-op follow-up** — wound check, ROM assessment, removal of sutures planning; (c) **chronic management** — OA, rheumatologic conditions, post-arthroplasty long-term follow-up; (d) **second opinions** — complex cases; (e) **interprofessional education** — case discussions, didactic; (f) **rural + underserved care** — addresses geographic disparities; (g) **screening + triage** — appropriate referral, prioritization; (2) **modalities**: (a) **synchronous video consultation** (real-time) — patient interview + visual exam + family involvement; live discussion; (b) **store-and-forward (asynchronous)** — images, X-rays, photos, records reviewed offline; (c) **remote patient monitoring** — wearables (motion, pain), post-op tracking; (d) **tele-radiology** — image interpretation by remote radiologist (often standard already); (e) **digital health platforms** — apps, e-consult, secure messaging; (3) **best practices**: (a) **clear referral question** + clinical context + recent imaging; (b) **appropriate exam techniques** for video — guide patient through self-exam (gait, ROM, motor, sensation — limited but useful), use family/in-clinic provider as physical hands; (c) **secure platforms** — HIPAA/PDPA-compliant (encryption, authentication, audit trail); (d) **documentation** equivalent to in-person; (e) **informed consent** for telemedicine (explain modality, limitations, what cannot be done virtually); (f) **integration with EMR**; (g) **provider licensing + credentialing** across jurisdictions; (h) **rural site facilitator** (nurse, PA, physician) often invaluable for hands-on assessment; (4) **specific orthopedic applications**: (a) **fracture management** — X-ray review, classification, treatment recommendation, splinting/casting guidance; (b) **wound assessment** — post-op photos for healing, infection signs; (c) **physical therapy** + rehabilitation — remote exercise prescriptions, virtual PT sessions; (d) **sports medicine** — return-to-play decisions with remote exam; (e) **chronic pain management**; (f) **pediatric orthopedics** — gait assessment, follow-up; (5) **limitations**: (a) **hands-on exam** limited (palpation, joint stress testing, NV exam — depending on assistant); (b) **technical issues** — connectivity, equipment, training; (c) **patient-related** — technology literacy, language barriers, vision/hearing impairment; (d) **legal + reimbursement** — varies by jurisdiction + insurance; (e) **clinical equipoise** — when in-person is necessary, do not delay (e.g., suspected compartment syndrome, NV compromise, suspected open fracture, severe trauma); (6) **clinical decision** in this case: (a) review X-ray via tele-radiology + photos; (b) **remote orthopedic consult** for splinting + management; (c) **transfer criteria** if surgery needed; (d) **follow-up plan** via telemedicine + return precautions; (7) **outcomes evidence** — multiple studies show non-inferior outcomes for selected ortho conditions; high patient satisfaction; cost-effective for rural + underserved; (8) **integration with trauma system** — adjunct, not replacement for in-person care when needed; (9) **modern post-COVID expansion** — accelerated adoption + payer support; (10) **future** — AI-assisted diagnosis, VR examination, robotic-assisted procedures"
+      },
+      {
+        "label": "C",
+        "text": "Telemedicine cannot help in rural areas"
+      },
+      {
+        "label": "D",
+        "text": "HIPAA/privacy compliance unnecessary in telemedicine"
+      },
+      {
+        "label": "E",
+        "text": "Telemedicine should always be used regardless of clinical scenario"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Telemedicine in ortho: acute consultation (fracture, transfer decisions), post-op follow-up, chronic management, second opinions, rural care. Modalities: synchronous video, store-and-forward, tele-radiology, remote monitoring. Best practices: secure platform (PDPA), clear question, exam adaptation (use site facilitator), informed consent, documentation. Limitations: hands-on, technical, legal. Don't delay in-person when needed (compartment syndrome, NV). Non-inferior for selected; cost-effective for rural. Post-COVID expansion.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "AAOS Telemedicine Position"
+  },
+  {
+    "scenario": "**EMS/Management**\n\nก่อน TKA elective surgery — pre-op safety checklist, time-out, site marking — เพื่อป้องกัน wrong-site surgery + complications\n\nจงอธิบาย Universal Protocol + WHO surgical safety checklist + never events + culture of safety",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Time-out not necessary for routine cases"
+      },
+      {
+        "label": "B",
+        "text": "Operating Room Safety + Universal Protocol + WHO Surgical Safety Checklist + Never Events: (1) **wrong-site surgery + never events** — preventable adverse events that should never occur (wrong site, wrong patient, wrong procedure, retained surgical item, intraoperative death, severe complications); estimated ~ 40 wrong-site surgeries/week in US — significant ortho-relevant (high in extremity + spine surgery); (2) **Universal Protocol (Joint Commission, 2004) — 3 components**: (a) **pre-procedure verification** — patient identification, procedure, site, side, consent reviewed; check for required imaging + implants + instruments + blood products; (b) **site marking** — surgeon marks operative site with permanent marker initials + visible at incision after prep + drape; mark with patient participation (engagement reduces errors); for spine — level confirmation intra-op with radiographic + neuromonitoring; (c) **time-out** — pause immediately before incision — surgeon + anesthesia + nursing + entire team confirm: (i) correct patient identity (2 identifiers), (ii) correct site + side, (iii) correct procedure, (iv) consent valid, (v) imaging available + matches, (vi) antibiotic prophylaxis given on time, (vii) DVT prophylaxis, (viii) blood available if needed, (ix) implant availability, (x) anticipated critical events; all team members agree before proceeding; if disagreement or uncertainty → STOP; (3) **WHO Surgical Safety Checklist (2008)** — 19-item checklist proven to reduce mortality + complications (Haynes NEJM 2009 — pilot study 8 countries showed mortality 1.5% → 0.8%, complications 11% → 7%): (a) **sign in** (before anesthesia) — patient ID, site marked, anesthesia check, allergies, airway/aspiration risk, blood loss risk; (b) **time out** (before incision) — team introductions, patient + site + procedure confirmation, antibiotic timing, imaging displayed, anticipated critical events; (c) **sign out** (before patient leaves OR) — procedure performed recorded, instrument + sponge + needle count, specimen labeling, equipment problems, recovery + management concerns; (4) **specific orthopedic risks for never events**: (a) **wrong limb/side** — extremity surgery (R vs L); (b) **wrong spinal level** — multiple similar vertebrae; intra-op imaging mandatory; (c) **retained surgical item** — sponges, instruments, broken K-wires/screws — counts + radiopaque markers + intra-op X-ray if uncertain; (d) **bone cement implantation syndrome** in cemented hip — anesthesia + surgeon awareness, slow careful technique; (e) **fat embolism syndrome** during IM nailing; (f) **wrong implant size**; (g) **tourniquet over-use** + nerve injury; (5) **culture of safety**: (a) **just culture** — non-punitive for system errors, accountability for reckless behavior; (b) **psychological safety** — anyone can speak up + stop the line; (c) **debriefing** after adverse events + near-misses; (d) **root cause analysis (RCA)** — systematic investigation of errors; (e) **continuous quality improvement (CQI)** — measure + improve outcomes; (f) **simulation** for high-risk scenarios; (g) **leadership engagement**; (h) **transparency** with patients + families when errors occur (open disclosure); (6) **specific quality metrics in ortho**: (a) SSI rate, (b) DVT/PE rate, (c) readmission rate, (d) PJI rate, (e) length of stay, (f) patient-reported outcome measures (PROMs), (g) functional outcomes, (h) revision rates, (i) implant survival; (7) **reporting + transparency** — internal incident reporting, external (sentinel event reports), implant registries (Australia/Sweden/UK lead, modern global ICOR); (8) **patient + family engagement** — preoperative education + informed consent, post-op care plan, return precautions"
+      },
+      {
+        "label": "C",
+        "text": "Site marking by surgeon without patient involvement"
+      },
+      {
+        "label": "D",
+        "text": "Wrong-site surgery is acceptable rare event"
+      },
+      {
+        "label": "E",
+        "text": "Just culture means no accountability ever"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "OR safety: Universal Protocol — pre-procedure verification + site marking (with patient) + TIME-OUT (entire team confirms patient/site/procedure/consent/abx/imaging before incision). WHO Surgical Safety Checklist (sign-in/time-out/sign-out) — proven to reduce mortality + complications (Haynes NEJM). Specific ortho risks: wrong side, wrong spinal level (intra-op imaging), retained items, bone cement syndrome, fat embolism. Just culture + psychological safety + RCA + CQI. Quality metrics: SSI, DVT, PJI, PROMs, registry. Open disclosure when errors occur.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "Joint Commission Universal Protocol; WHO"
+  },
+  {
+    "scenario": "**Integrative Case**\n\nผู้ป่วยอายุ 24 ปี ขับมอเตอร์ไซค์ชนรถยนต์ — สวมหมวก แต่ระดับ moderate severe TBI (GCS 8 on arrival → intubated, GCS T7) + closed femoral shaft fracture + open tibial Gustilo II + posterior hip dislocation + concomitant pulmonary contusion + ARDS + coagulopathy from TBI\n\nVS post-intubation: BP 100/60, HR 110, ICP monitor showed 18 mmHg\n\nจงอธิบาย integrative management — ortho + neuro + trauma + ICU + multidisciplinary",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Definitive IM nail of femur within 1 hour regardless of TBI status"
+      },
+      {
+        "label": "B",
+        "text": "Polytrauma + TBI + Multiple Orthopedic Injuries — Integrative Multidisciplinary Approach: (1) **principles + competing priorities**: (a) **TBI management priorities** — maintain cerebral perfusion (CPP = MAP - ICP > 60-70 mmHg), prevent secondary brain injury (avoid hypotension SBP > 100, hypoxia SpO2 > 94, hypercarbia ETCO2 35-40, hyperthermia, hyponatremia), control ICP (head of bed 30°, sedation, mannitol/hypertonic saline, drainage if EVD); (b) **orthopedic priorities** — reduction of hip dislocation (AVN risk), stabilization of femur (reduces blood loss + fat embolism), open fracture management; (c) **balance** — orthopedic surgery causes hemodynamic instability + cytokine release + \"second hit\" that worsens TBI + ARDS; (2) **immediate priorities** (order may overlap): (a) **A** — airway secured (intubated); (b) **B** — pulmonary contusion + ARDS — lung-protective ventilation (PEEP 8-10, low TV 6 mL/kg IBW, plateau pressure < 30); (c) **C** — fluid resuscitation balanced (avoid hypotension, but cautious to avoid worsening contusion/ARDS), BT 1:1:1, TXA, MTP if active bleeding; (d) **D** — neuro — head CT, ICP monitor, neurosurgery consult; (e) **E** — exposure, warm, secondary survey; (3) **hip dislocation — reduce within 6 hours** to prevent AVN (4.8% < 6h vs 52% > 6h) — emergent closed reduction under sedation; (4) **damage control orthopedics for femur + tibia**: (a) **external fixator** for femur + tibia — quick (< 1 hour), low blood loss, less inflammatory response than IM nail; provides skeletal stability; (b) **open fracture management** — IV antibiotic + tetanus + irrigation + debridement; (c) **avoid early reamed IM nailing** in TBI + ARDS — reaming releases fat emboli → worsens lung injury (\"second hit\"); damage control approach reduces ARDS in TBI + chest injury; (d) **definitive fixation** delayed 5-14 days when patient stable, ARDS recovered, ICP controlled, coagulopathy resolved; (5) **timing reconciliation**: (a) **EPOCH + early appropriate care (EAC)** principle — definitive fixation when physiologically responsive; (b) **avoid > 24-48 hr delay** of all orthopedic care if possible (deconditioning, complications); (c) hip dislocation reduction is non-negotiable emergency; (6) **ICU management**: (a) **multidisciplinary** — trauma surgery, neurosurgery, ortho, anesthesia/critical care, pulmonary, infectious disease, nutrition, PT/OT; (b) **VTE prophylaxis** — mechanical immediately; chemical when bleeding/ICP controlled (usually 24-48h after stable); (c) **nutrition** — early enteral (within 24-48h); (d) **glycemic control** — moderate; (e) **stress ulcer prophylaxis**; (f) **delirium prevention** — minimize sedation when possible; (g) **family communication + goals of care**; (7) **TBI-specific**: (a) avoid hypotension + hypoxia (worse outcomes); (b) seizure prophylaxis 7 days; (c) prognostication delayed (don't withdraw care prematurely in young TBI); (d) repeat CT for clinical deterioration; (e) GCS + neurologic exam regularly; (8) **ortho longer-term**: (a) **plan definitive fixation** when stable; (b) hardware choice + timing — IM nail for femur once stable, IM nail or plate for tibia; (c) wound management for open fracture (VAC, debridement); (d) early PT/OT once stable to prevent contractures, joint stiffness; (e) heterotopic ossification screening + prophylaxis (common in TBI + spine injury); (9) **rehabilitation transition** — early start; coordinate orthopedic + neuro rehab; (10) **family-centered care + ethics** — communication, prognostication, decision-making; (11) **long-term outcomes** — coordinated rehab improves function + reduces disability"
+      },
+      {
+        "label": "C",
+        "text": "Delay hip dislocation reduction until 48 hours"
+      },
+      {
+        "label": "D",
+        "text": "High-dose mannitol + aggressive fluid restriction"
+      },
+      {
+        "label": "E",
+        "text": "Do not stabilize fractures until TBI fully resolved"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Polytrauma + TBI + ortho: integrative care. Priorities — maintain CPP (avoid hypotension, hypoxia, hypercarbia), reduce hip dislocation < 6h (AVN), damage control orthopedics (ex-fix for femur/tibia — avoid early reamed IM nail which releases fat emboli → worsens TBI/ARDS), open fracture (abx + tetanus + I&D), delayed definitive fixation 5-14d when stable. Multidisciplinary ICU (trauma + neuro + ortho + critical care + PT). VTE prophylaxis (mechanical immediate, chemical 24-48h). HO screening. Coordinated rehab.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "Pape; EAC; Brain Trauma Foundation"
+  },
+  {
+    "scenario": "**Integrative Case**\n\nหญิงไทยอายุ 65 ปี DM2 (HbA1c 9.5%) underlying HT + ESRD on hemodialysis + CAD s/p PCI + peripheral vascular disease (ABI 0.6) + smoker — มี non-healing diabetic foot ulcer + osteomyelitis 1st MT 1 ปี + Charcot midfoot + falls at home\n\nViable forefoot but chronic non-healing\nVS stable\n\nจงอธิบาย integrative multidisciplinary management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single specialty (orthopedics alone) sufficient"
+      },
+      {
+        "label": "B",
+        "text": "Complex Diabetic Foot — Integrative Multidisciplinary Care: (1) **complexity** — multiple chronic conditions interconnected: DM + ESRD + PVD + CAD + smoking + non-healing wound + OM + Charcot + falls; each impacts others; (2) **multidisciplinary team essential**: (a) **endocrinology** — glycemic optimization (target HbA1c < 7.5-8 individualized, balance hypoglycemia risk in ESRD), insulin titration, comorbid management; (b) **nephrology** — ESRD care, dialysis schedule, fluid + electrolyte balance, anemia management; (c) **vascular surgery** — vascular assessment (ABI, angiography), revascularization (balloon angioplasty, stenting, bypass) — improves wound healing potential; (d) **infectious disease** — antibiotic selection + duration, deep tissue/bone culture-targeted (avoid nephrotoxic in ESRD — aminoglycoside contraindicated); (e) **orthopedic surgery (foot + ankle subspecialty)** — surgical management of OM, Charcot reconstruction, amputation decisions; (f) **podiatry** — wound care, debridement, offloading, custom footwear, regular surveillance; (g) **wound care nursing** — dressing changes, VAC management, education; (h) **plastic surgery** — flap coverage, free flap when needed; (i) **cardiology** — perioperative CV risk assessment + optimization; (j) **physical therapy** — gait training, balance, fall prevention; (k) **occupational therapy** — ADL adaptation, home safety assessment; (l) **nutrition** — protein-calorie + vitamin (A, C, zinc) for wound healing; (m) **social work** — psychosocial, adherence, financial barriers, family support; (n) **diabetes educator** — self-management, foot care education; (o) **palliative care** — symptom management + goals of care discussion if applicable; (3) **principles of management**: (a) **glycemic control** — HbA1c < 8 (looser in elderly with comorbidities), continuous glucose monitoring, avoid hypoglycemia; (b) **vascular optimization first** — revascularization improves healing potential + reduces amputation; (c) **smoking cessation** — single largest modifiable factor; (d) **infection control** — culture-targeted antibiotics, surgical resection of infected bone; (e) **wound care + offloading** — total contact cast, removable boot, surgical decompression; (f) **multidisciplinary coordination** + clear communication; (4) **specific decisions**: (a) **partial 1st ray amputation** — for localized OM + offloading; (b) **transmetatarsal amputation** vs **partial foot** vs **below-knee amputation** — based on extent of disease, viability, vascular status, patient functional goals; (c) **Charcot reconstruction** (if active resolved) — stable platform, plantigrade foot — improves bracing + reduces ulceration; (5) **prevention secondary**: (a) **lifetime custom footwear** + offloading; (b) **regular podiatry visits** (every 1-3 months); (c) **patient education**: daily foot inspection, no walking barefoot, appropriate trimming, prompt attention to any wound; (d) **risk reduction**: BP, lipid, glycemic, antiplatelet, statin; (6) **falls + fragility**: (a) home safety assessment, removal of trip hazards, lighting, grab bars; (b) PT for balance + strength; (c) screen + treat osteoporosis (DEXA, calcium + vit D, bisphosphonate caution in ESRD — denosumab + caution hypocalcemia); (d) review meds — discontinue/adjust those increasing fall risk; (7) **goals of care discussion** — patient values, functional priorities, quality of life vs aggressive intervention; (8) **outcomes** — multidisciplinary care reduces amputation + mortality + cost (multiple studies); (9) **palliative + end-of-life considerations** if appropriate"
+      },
+      {
+        "label": "C",
+        "text": "Aminoglycoside is first-line antibiotic in ESRD"
+      },
+      {
+        "label": "D",
+        "text": "Smoking cessation has no impact on wound healing"
+      },
+      {
+        "label": "E",
+        "text": "Always proceed with below-knee amputation as first option"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Complex diabetic foot: multidisciplinary essential (endo + nephro + vascular + ID + ortho + podiatry + wound care + plastic + CV + PT + OT + nutrition + SW + palliative + diabetes educator). Optimize glycemic (HbA1c < 8 individualized) + revascularize + smoking cessation + culture-targeted antibiotics (no aminoglycoside ESRD) + surgical resection. Charcot reconstruction. Partial vs trans-metatarsal vs BKA based on viability + function + goals. Lifetime offloading + custom shoes + podiatry. Falls prevention. Goals of care. Multidisciplinary reduces amputation + mortality.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "IWGDF; ADA"
+  },
+  {
+    "scenario": "**Integrative Case**\n\nหญิงไทยอายุ 88 ปี frail (severe dementia, lives in care facility, bed-bound mostly), pre-fracture mRS 5 (severely disabled), underlying CKD stage 4, CHF, AF on apixaban, recurrent UTIs — หกล้มจากเตียง pulled by caregiver, displaced left intertrochanteric hip fracture\n\nFamily ต้องการ shared decision-making + considering quality vs aggressive intervention\n\nจงอธิบาย integrative geriatric ortho-palliative approach + shared decision making",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Always avoid surgery in patients > 85"
+      },
+      {
+        "label": "B",
+        "text": "Frail Elderly Hip Fracture — Integrative Geriatric-Palliative Approach + Shared Decision Making: (1) **complexity** — extreme frailty + dementia + multiple comorbidities → balance benefits of surgery vs risks, quality of life vs aggressive intervention, patient's previous values + family wishes; (2) **assessment**: (a) **frailty index** — Clinical Frailty Scale (CFS), Edmonton Frail Scale — quantify; (b) **pre-fracture function** — mRS 5 baseline (severely disabled); (c) **cognition** — dementia severity; (d) **comorbidity** burden — multiple severe; (e) **prognosis** without intervention: bed-bound pain, contractures, pressure ulcers, pneumonia, sepsis → death typically within weeks; (f) **prognosis with surgery**: 30-day mortality 10-20% in frail elderly, 1-year mortality 30-50% (higher with comorbidity), often functional decline + institutionalization; (3) **shared decision-making process**: (a) **identify decision-maker** — patient if capacity (often not in severe dementia), advance directive/living will, healthcare proxy, family consensus + caregiver input; (b) **explore patient values + goals** (prior expressed wishes, religious/cultural beliefs, what patient would have wanted); (c) **present realistic options + outcomes** transparently: (i) **surgical** — hemiarthroplasty or short cephalomedullary nail — preferred for pain control + nursing care + repositioning + avoid pressure ulcers; **even severely frail benefit from surgery** for pain + nursing care + dignity in many cases; (ii) **non-surgical (conservative)** — bedrest + traction + pain control — historically poor outcomes, severe pain, complications (pressure ulcers, pneumonia, contractures, DVT) → almost always worse than surgery for pain + comfort; reserved for: imminent death (hours-days), preference for comfort only, surgical contraindications (e.g., active untreated sepsis); (d) **palliative surgery** concept — surgery for symptom relief (pain) even with limited life expectancy; (e) **explicit goals of care** discussion — comfort, quality, function, dignity; (4) **if surgery chosen**: (a) **anesthesia evaluation** — regional anesthesia (spinal) often preferred over general (less cognitive impact); (b) **anticoagulation reversal** — apixaban — hold + delay surgery 24-48h vs andexanet alfa vs 4-factor PCC; (c) **minimal procedure** — quick stabilization (hemiarthroplasty + cephalomedullary nail), shortest OR time; (d) **multimodal pain control** — fascia iliaca block, scheduled acetaminophen, opioid sparing if possible; (e) **delirium prevention bundle** — minimize sedation, reorient, family presence, sleep hygiene, avoid restraints, early mobilization; (f) **early mobilization + transfer comfort**; (5) **if comfort care chosen**: (a) **adequate pain control** — IV/SC opioid, fascia iliaca block can be used for analgesia, regional anesthesia; (b) **positioning + pressure care** — frequent repositioning, pressure-relieving mattress; (c) **bowel + bladder care**; (d) **mouth care + hydration** (subcutaneous if not oral); (e) **family + caregiver support**; (f) **hospice referral** if applicable; (g) **DNR/DNI discussion**; (6) **multidisciplinary care**: (a) **ortho + geriatrics + palliative care + family medicine** team; (b) **consultative ethics** for difficult cases; (c) **social work + chaplain**; (d) **community + home + hospice services**; (7) **cultural sensitivity in Thai context**: (a) **family-centered decision making** (Thai culture values family consensus, often hierarchical with eldest deciding); (b) **Buddhist beliefs** — karma, suffering, acceptance; (c) **\"merit-making\" + spiritual rituals** at end of life; (d) **avoiding discussion of death** directly may be culturally preferred; (e) communication with sensitivity, indirect language when appropriate; (e) traditional healing practices respected; (f) extended family involvement; (8) **ethical principles** — beneficence, non-maleficence, autonomy, justice; substituted judgment when patient unable; best interest principle; (9) **documentation** — discussion + decisions + reasoning + parties involved; (10) **respect for patient + family + dignity** throughout"
+      },
+      {
+        "label": "C",
+        "text": "Cultural beliefs irrelevant in medical decisions"
+      },
+      {
+        "label": "D",
+        "text": "Surgery always best regardless of frailty + goals"
+      },
+      {
+        "label": "E",
+        "text": "Bedrest + traction superior to surgery in any frail patient"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Frail elderly hip fracture: assess frailty + cognition + prior function + comorbidity. Shared decision with family/proxy + patient values. Surgery (hemiarthroplasty/CMN) often preferred even in frail for PAIN control + NURSING CARE + dignity (palliative surgery concept). Comfort care for imminent death or preference. Anesthesia: regional > general. Reverse apixaban. Multimodal pain + delirium prevention. Multidisciplinary ortho-geriatric-palliative. Thai cultural sensitivity (family hierarchy, Buddhist, indirect communication). Document discussion.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "AAOS Hip Fracture; AGS"
+  },
+  {
+    "scenario": "**Integrative Case**\n\nหญิงไทยอายุ 58 ปี breast cancer s/p mastectomy + chemo 5 ปีก่อน metastatic disease (bone + liver + lung) — มี multiple bony mets ทั่ว spine + pelvis + femur + new severe back pain, neurologic decline (saddle anesthesia + LE weakness)\n\nLife expectancy ~ 6 months per oncology\n\nMRI spine: lumbar epidural metastasis L3 with cord compression\nX-ray hip: impending pathologic femoral neck fracture Mirels 11\n\nจงอธิบาย integrative oncologic ortho-palliative care",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No role for surgery in metastatic cancer"
+      },
+      {
+        "label": "B",
+        "text": "Metastatic Cancer with Spinal Cord Compression + Impending Pathologic Fracture — Integrative Oncologic + Palliative + Orthopedic Care: (1) **multidisciplinary team**: (a) **medical oncology** — primary cancer management, systemic therapy decisions; (b) **radiation oncology** — palliative radiation for bone mets + spinal cord compression; (c) **orthopedic surgery** — surgical decisions for fractures + stabilization; (d) **spine surgery (ortho or neurosurg)** — cord compression management; (e) **palliative care** — symptom management, goals of care, quality of life; (f) **pain medicine** — multimodal analgesia, regional/intrathecal options; (g) **physical therapy + occupational therapy** — function + safety; (h) **chaplain + social work** — spiritual + psychological + practical support; (i) **family + caregivers**; (2) **spinal cord compression — emergency**: (a) **urgent dexamethasone** 10 mg IV then 4 mg q 6h to reduce cord edema + improve neurologic outcome; (b) **MRI confirms diagnosis** + extent of compression; (c) **palliative surgery + radiation** — Patchell trial (Lancet 2005) — surgical decompression + stabilization + radiation superior to radiation alone for ambulation + survival in good-prognosis patients (≥ 3 months life expectancy, single lesion, neurologically symptomatic); (d) **radiation alone** for: poor prognosis (< 3 months), multilevel, paraplegia > 24-48 hours (poor neurologic recovery), unable to tolerate surgery; (e) **surgical procedure** — posterior or combined decompression + instrumented fusion; goal — restore ambulation + pain relief + spinal stability; minimum-invasive approaches reduce morbidity; (3) **impending pathologic fracture (Mirels 11)** — prophylactic fixation preferred over after-fracture: (a) **intramedullary nail (cephalomedullary)** for femoral mets — protects entire bone; (b) **embolization** considered for hypervascular mets (RCC, thyroid — less for breast); (c) **post-op radiation** to surgical site 8 Gy × 1 or 20-30 Gy in 5-10 fractions — prevents local progression + improves durability; (4) **systemic therapy considerations**: (a) **bone-modifying agents** — bisphosphonate (zoledronate) or denosumab monthly — reduces skeletal-related events (SREs), hypercalcemia, pain; monitor ONJ, AFF, hypocalcemia; (b) **systemic cancer therapy** — chemotherapy, targeted (HER2, CDK4/6), endocrine (ER+, AI, fulvestrant), immunotherapy; coordinate with surgery (hold before + restart after wound healing); (c) **hypercalcemia management** — IV fluids, bisphosphonate, calcitonin acute; (5) **pain management**: (a) **multimodal** — scheduled acetaminophen, NSAIDs (caution), opioids titrated, adjuvants (gabapentin, pregabalin for neuropathic, antidepressants for mood + pain); (b) **regional blocks** + neuraxial (epidural, intrathecal pump) for refractory; (c) **vertebroplasty/kyphoplasty** for painful vertebral mets without instability; (d) **palliative radiation** for painful bone mets — 8 Gy single fraction effective; (6) **palliative care principles**: (a) **goals of care discussion** — patient's values + priorities; (b) **prognosis communication** — honest + compassionate; (c) **symptom management** — pain, dyspnea, nausea, fatigue, anxiety, depression; (d) **quality of life** focus; (e) **spiritual + emotional support**; (f) **caregiver support**; (g) **advance care planning** — directives, DNR, hospice; (7) **shared decision making**: (a) discuss surgical + non-surgical options transparently; (b) realistic outcomes + complications; (c) patient + family values + goals; (d) cultural + religious sensitivity (Buddhist context in Thailand — karma, suffering, family); (e) document decisions; (8) **hospice + end-of-life care** — when appropriate, transition from curative-intent to comfort-focused; bereavement support for family; (9) **transition to end-of-life** — recognize signs (declining function, cachexia, multiple symptoms); ensure comfort, dignity, presence; (10) **survivorship** for those with sustained response — ongoing care + surveillance"
+      },
+      {
+        "label": "C",
+        "text": "Always proceed with maximum aggressive treatment regardless of goals"
+      },
+      {
+        "label": "D",
+        "text": "Palliative care not appropriate while undergoing surgery"
+      },
+      {
+        "label": "E",
+        "text": "Hospice means giving up on patient"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Metastatic cancer + cord compression + impending fracture: multidisciplinary (onco + RT + ortho/spine + palliative + pain + PT/OT + chaplain + SW + family). Cord compression: urgent dex + MRI + surgical decompression + stabilization + RT (Patchell trial — better ambulation + survival if good prognosis ≥ 3 mo). Impending pathologic fracture (Mirels ≥ 9): prophylactic IM nail + post-op RT. Bisphosphonate/denosumab. Pain: multimodal + regional + palliative RT (8 Gy × 1 effective). Goals of care + palliative + hospice. Cultural sensitivity. Honest prognosis. Shared decision.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "Patchell Lancet 2005; AAOS Metastatic Bone"
+  },
+  {
+    "scenario": "**Integrative Case**\n\nผู้ป่วยอายุ 28 ปี diving accident → C5 complete SCI (ASIA A) 3 weeks post-injury — paraplegia, intermittent autonomic dysreflexia, pressure ulcer beginning sacrum, neurogenic bladder + bowel, family + patient struggling psychologically\n\nจงอธิบาย integrative SCI rehabilitation + multidisciplinary care + community reintegration",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single specialty (orthopedics alone) sufficient for SCI care"
+      },
+      {
+        "label": "B",
+        "text": "Acute-Chronic SCI Rehabilitation — Integrative Multidisciplinary Care: (1) **SCI care levels** — acute (hospital) → subacute (SCI rehabilitation unit) → community/home; specialized SCI center improves outcomes (Cochrane); (2) **multidisciplinary team** essential: (a) **physiatry (PM&R)** — coordinates rehabilitation; (b) **orthopedic + spine surgery** — spine stabilization, ongoing musculoskeletal issues; (c) **neurology + neurosurgery** — for neurologic management; (d) **urology** — neurogenic bladder management; (e) **gastroenterology** — bowel program; (f) **plastic surgery + wound care** — pressure ulcer management; (g) **respiratory + pulmonary** — ventilator weaning if applicable, chest PT, sputum management (especially for high cervical); (h) **physical therapy** — mobility, transfers, wheelchair skills, ROM, strength training; (i) **occupational therapy** — ADLs, adaptive equipment, environmental modifications; (j) **speech therapy** — if applicable (swallowing, communication); (k) **psychology + psychiatry** — depression (50% in SCI), anxiety, PTSD, adjustment; (l) **social work + case management** — discharge planning, community resources, vocational; (m) **nutrition** — protein-calorie for wound healing, weight management; (n) **chaplain** — spiritual support; (o) **vocational rehabilitation** — return to work, education; (p) **peer support** — connecting with others who have SCI; (q) **family + caregivers** — education, training, support; (3) **specific medical management**: (a) **autonomic dysreflexia (AD)** — life-threatening, T6 + above injury — sudden hypertension + bradycardia + sweating above injury + flushing/pallor below from noxious stimulus (bladder distension > 75%, bowel impaction, pressure ulcer, UTI, tight clothing, ingrown nail) — **emergency**: (i) sit patient upright (orthostatic drop), (ii) loosen tight clothing, (iii) identify + remove noxious stimulus (catheterize bladder if no catheter or check existing catheter, disimpact bowel, examine skin), (iv) antihypertensive if BP > 150-160 (nifedipine 10 mg SL, nitrate spray, captopril), (v) prevention — bladder/bowel program, skin care, ingrown nail prevention; (b) **neurogenic bladder**: detrusor-sphincter dyssynergia common with C5 injury → **intermittent catheterization q 4-6h** preferred (avoids long-term indwelling catheter complications), anticholinergic (oxybutynin, mirabegron) to reduce detrusor overactivity, alpha-blocker for sphincter relaxation, Botox detrusor injection, urodynamic studies; (c) **neurogenic bowel**: scheduled bowel program (digital stimulation + suppository + manual evacuation q 1-2 days), high-fiber diet, adequate fluid, stool softeners, address constipation/impaction; (d) **pressure ulcer prevention + management**: pressure-relieving cushion + mattress, **turn q 2 hours** in bed, **weight shifts q 15 min** in wheelchair, skin inspection daily, nutrition, hydration, treat existing ulcer (debride, dress, off-load, may need flap reconstruction); (e) **VTE prophylaxis** — high risk in SCI (immobility) — LMWH + mechanical; (f) **respiratory care** — chest PT, assisted cough, monitoring for pneumonia; (g) **spasticity management** — baclofen, tizanidine, gabapentin, Botox injection, intrathecal baclofen pump for severe; (h) **pain management** — neuropathic pain common — gabapentin/pregabalin, antidepressants, opioid sparing; (i) **heterotopic ossification** — common in SCI (around hips/knees), aggressive PT, indomethacin, radiation; surgery if functional limitation; (4) **psychological + emotional**: (a) grief + adjustment to disability; (b) depression screening + treatment; (c) suicide risk assessment; (d) peer support; (e) family counseling; (f) gradual acceptance + adaptation; (5) **community reintegration**: (a) home modifications — accessible, ramps, bathroom adaptations; (b) vehicle adaptations; (c) vocational rehabilitation — return to work, education; (d) recreational activities — adaptive sports; (e) sexual function counseling + management; (f) fertility considerations; (g) durable medical equipment + power wheelchair; (h) personal care attendant + nursing if needed; (i) advocacy + disability rights; (6) **long-term complications + surveillance**: (a) UTI, urolithiasis, renal dysfunction; (b) cardiovascular disease; (c) DVT/PE; (d) pneumonia; (e) shoulder pain (overuse from wheelchair propulsion); (f) syringomyelia (late); (g) carpal tunnel (chronic); (h) accelerated aging; (i) screening + prevention; (7) **Thai context** — family support strong, may want intensive caregiver presence; cultural acceptance of disability evolving; Buddhist karma framework may help acceptance; spiritual resources"
+      },
+      {
+        "label": "C",
+        "text": "Autonomic dysreflexia treated with bedrest only"
+      },
+      {
+        "label": "D",
+        "text": "Pressure ulcers do not need prevention"
+      },
+      {
+        "label": "E",
+        "text": "Psychological support not needed for SCI patients"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "SCI rehabilitation: multidisciplinary (PM&R + ortho + uro + GI + plastic + wound + respiratory + PT + OT + psych + SW + chaplain + vocational + peer + family). Autonomic dysreflexia (T6+) = EMERGENCY: sit upright + remove stimulus (bladder distension #1) + antihypertensive. Neurogenic bladder: IC q 4-6h. Bowel program. Pressure ulcer prevention (q 2h turn, q 15 min wheelchair shift, off-load). VTE prophylaxis. Spasticity. Neuropathic pain. Heterotopic ossification. Psychological + family adjustment. Community reintegration + home modification + vocational. Long-term surveillance (UTI, CV, shoulder overuse).",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "ASIA; PVA SCI Guidelines"
+  },
+  {
+    "scenario": "**Integrative Case**\n\nเด็กชายอายุ 10 ปี cerebral palsy (spastic diplegia, GMFCS III) lower limb contractures + scoliosis 35° + hip subluxation + crouch gait + hip pain ลำบากในการเดิน + parents request improvement\n\nVS stable\n\nจงอธิบาย integrative CP management — multidisciplinary + decision tree + outcomes",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single staged surgery best in CP"
+      },
+      {
+        "label": "B",
+        "text": "Cerebral Palsy — Integrative Multidisciplinary Care + Surgical Planning: (1) **cerebral palsy** — non-progressive disorder of movement + posture from CNS lesion before, during, or shortly after birth; spectrum of severity; commonly classified by motor type (spastic, dyskinetic, ataxic, mixed) + distribution (hemiplegia, diplegia, quadriplegia) + functional level; (2) **GMFCS (Gross Motor Function Classification System)** — 5 levels: I (walks without limitation) → II (walks with limitation) → III (walks with assistive device) → IV (limited self-mobility, may use powered) → V (transported in wheelchair); useful for prognosis + planning; this patient GMFCS III; (3) **multidisciplinary team**: (a) **developmental pediatrician** — overall care coordination; (b) **physical medicine + rehabilitation** — function, equipment; (c) **pediatric orthopedic surgery** — musculoskeletal; (d) **pediatric neurology** — seizures, spasticity, baclofen; (e) **neurosurgery** — selective dorsal rhizotomy (SDR), intrathecal baclofen pump for severe spasticity; (f) **physical therapy + occupational therapy** — function, daily living; (g) **speech therapy** — feeding, communication; (h) **orthotist** — AFOs, KAFOs, custom orthoses; (i) **gastroenterology + nutrition** — feeding tube, growth; (j) **psychology + social work** — family support, education advocacy, IEP; (k) **adaptive equipment specialists** — wheelchairs, assistive devices; (l) **gait analysis lab** for surgical planning; (4) **principles of management**: (a) **goals individualized** — function, comfort, prevention of secondary deformity, family priorities, child's voice when possible; (b) **timing** — surgical interventions often best at age 6-12 (skeletal maturity, growth potential, gait pattern stable); (c) **prevention** — earlier intervention often better than late corrective surgery; (d) **multilevel + single-event multilevel surgery (SEMLS)** — modern trend — combine all needed procedures in one operation (single anesthesia, single recovery, addresses all levels simultaneously) — superior outcomes vs staged approach for CP; (5) **specific interventions**: (a) **spasticity management** — baclofen (oral), benzodiazepines, tizanidine, dantrolene; **botulinum toxin injection** for focal spasticity (gastrocnemius, hamstrings, adductors) — reduces spasticity, improves PT effectiveness, 3-6 month effect; **selective dorsal rhizotomy (SDR)** — neurosurgical procedure for spastic diplegia, age 4-8 typically, GMFCS II-III + spasticity, modest evidence for selected patients; **intrathecal baclofen pump** for severe spasticity (GMFCS IV-V); (b) **orthopedic surgery** based on specific deformity + functional need: (i) **hip surveillance + management** — annual hip X-ray (migration percentage), prevent dislocation; varus derotation osteotomy + adductor + iliopsoas lengthening, pelvic osteotomy for severe; (ii) **knee + hamstring contracture** — hamstring lengthening, distal femoral extension osteotomy for fixed flexion deformity, patellar tendon advancement for crouch; (iii) **foot + ankle** — gastrocnemius/Achilles lengthening (Strayer, Hoke), tibialis posterior lengthening, plantar release, calcaneal osteotomy; (iv) **rotational deformity** — derotational osteotomies (femoral, tibial); (v) **scoliosis** — bracing for moderate progressive (50-90°), surgical fusion for severe (> 90° + progression); (c) **AFO + orthoses** — improves gait + reduces equinus + prevents progression; (d) **assistive devices** — walker, crutches, wheelchairs; (e) **adaptive equipment** for ADLs; (6) **gait analysis** — 3D motion capture + force plate + EMG for surgical planning in CP — particularly for SEMLS planning, identifies primary vs compensatory deformities, predicts outcomes; (7) **post-op rehabilitation intensive** — PT for 6-12 months for SEMLS, gradual return to activity, prevention of recurrence; (8) **transitions of care** — adolescent → adult ortho care + adult medicine; vocational + educational + housing transition; (9) **family-centered care** — parents as partners, education, advocacy, respite, support groups; (10) **Thai context** — strong family involvement, multidisciplinary care available at university hospitals + specialty centers, some community resources"
+      },
+      {
+        "label": "C",
+        "text": "Spasticity management not needed in CP"
+      },
+      {
+        "label": "D",
+        "text": "Hip surveillance unnecessary in CP"
+      },
+      {
+        "label": "E",
+        "text": "Orthopedic surgery without rehabilitation sufficient"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "CP management: multidisciplinary (developmental peds + PM&R + peds ortho + neuro + neurosurg + PT/OT + speech + orthotist + GI + psych + SW). GMFCS classification guides. Spasticity: oral meds + Botox + SDR + intrathecal baclofen. Single-event multilevel surgery (SEMLS) age 6-12 — combine all needed procedures (hip + knee + foot + rotation). Hip surveillance (migration %) prevents dislocation. Gait analysis lab for SEMLS planning. Scoliosis bracing/fusion. Post-op intensive PT 6-12 months. Family-centered. Transitions of care. AFOs + adaptive equipment.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "neurology",
+    "board_age_group": "peds",
+    "reference_source": "Gross Motor Function Classification System"
+  },
+  {
+    "scenario": "**Integrative Case**\n\nหญิงไทยอายุ 22 ปี HbSS sickle cell disease — chronic painful crises, multiple admissions, AVN bilateral femoral heads (Steinberg III), recent painful crisis + femoral neck stress fracture\n\nจงอธิบาย integrative SCD + orthopedic management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Avoid all transfusion in SCD patients before surgery"
+      },
+      {
+        "label": "B",
+        "text": "Sickle Cell Disease + Orthopedic Manifestations — Integrative Care: (1) **multidisciplinary team**: (a) **hematology** — primary SCD management, transfusion, hydroxyurea, voxelotor, crizanlizumab, gene therapy considerations; (b) **orthopedic surgery** — AVN management, osteomyelitis, stress fracture, joint replacement timing; (c) **pain management + chronic pain** — multimodal analgesia, opioid stewardship, integrative approaches; (d) **infectious disease** — osteomyelitis (Salmonella common), septic arthritis; (e) **emergency medicine** — acute crisis management; (f) **transfusion medicine** — exchange transfusion for pre-op + crisis; (g) **anesthesiology** — perioperative SCD considerations; (h) **psychology** — chronic disease + pain + mental health; (i) **social work** — adherence, support; (j) **family medicine + primary care**; (2) **orthopedic manifestations of SCD**: (a) **avascular necrosis (AVN)** — most common — femoral head (most), humeral head, talus, knee — from vaso-occlusive microvascular obstruction; (b) **osteomyelitis** — **Salmonella** > S. aureus (SCD specific — Salmonella from gut translocation in functional asplenia + vaso-occlusion); (c) **acute crisis** — bone pain from vaso-occlusion (any site); (d) **dactylitis** — early childhood hand-foot syndrome; (e) **growth + development** — delayed; (f) **leg ulcers** — chronic; (g) **stress fractures** — from chronic anemia + osteoporosis + altered biomechanics; (3) **AVN femoral head management** — staged approach (Steinberg/Ficat classification): (a) **early (pre-collapse)** — core decompression ± bone marrow aspirate concentrate (BMAC) injection → potentially preserves head; (b) **moderate** — vascularized fibular graft + core decompression — younger patients; (c) **collapse with arthritis** — **total hip arthroplasty (THA)** — earlier than typical OA THA (often 30s-40s); higher complication rate vs general population (infection 5-10%, dislocation, revision); (d) special considerations for THA in SCD: (i) hematology optimization pre-op (transfusion to target hemoglobin S < 30%), (ii) hydration + warmth + oxygen perioperatively to prevent crisis, (iii) careful anesthesia, (iv) longer hospital stay + monitoring, (v) higher complication rate but improved QoL + function in young SCD patient; (4) **stress fracture management**: (a) protected weight-bearing + crutches; (b) MRI/CT to characterize; (c) consider surgical fixation for high-risk locations (tension-side femoral neck); (d) address underlying SCD optimization; (5) **osteomyelitis SCD-specific**: (a) **Salmonella + S. aureus** coverage — ceftriaxone + cefazolin (or vancomycin if MRSA risk); (b) surgical drainage as indicated; (c) prolonged antibiotic therapy (6+ weeks); (d) optimize SCD; (6) **perioperative SCD management** — critical to prevent crisis: (a) **hydration** — IV fluid 1.5x maintenance pre/intra/post-op; (b) **oxygenation** — SpO2 > 95%, supplemental O2 as needed; (c) **temperature** — keep warm (cold triggers crisis); (d) **transfusion** — preoperative transfusion to target Hb 10 + HbS < 30% (Bachy/TAPS trials — exchange transfusion may not be required for most surgeries; simple transfusion or selective approach); (e) **pain management** — multimodal, scheduled, may need higher opioid doses (tolerance + chronic pain), avoid undertreatment which can trigger crisis; (f) **avoid tourniquet** when possible (vaso-occlusion); (g) **monitor for crisis** — acute chest syndrome (chest pain, fever, hypoxia, infiltrate) — most feared post-op complication; (h) **VTE prophylaxis** — increased risk; (i) **multidisciplinary planning**; (7) **chronic pain management**: (a) **multimodal** — non-opioid scheduled (acetaminophen, NSAIDs cautiously), neuropathic agents (gabapentin), regional blocks for procedures; (b) **opioid stewardship** — chronic pain + tolerance challenges; structured approach; (c) **integrative** — PT, acupuncture, mindfulness, CBT; (d) **mental health** — depression + anxiety common; (8) **SCD modifying therapy**: (a) **hydroxyurea** — increases HbF, reduces crises + ACS + transfusions + mortality; standard of care; (b) **L-glutamine** — adjunct; (c) **voxelotor** — increases HbF binding to oxygen; (d) **crizanlizumab** — anti-P-selectin, reduces crises; (e) **transfusion therapy** for selected; (f) **stem cell transplant** + **gene therapy** — curative options emerging; (9) **patient + family education + self-management** — early recognition of crisis, hydration, avoiding triggers; (10) **transitions** — pediatric to adult care"
+      },
+      {
+        "label": "C",
+        "text": "Tourniquet always safe in SCD"
+      },
+      {
+        "label": "D",
+        "text": "S. aureus only osteomyelitis pathogen in SCD"
+      },
+      {
+        "label": "E",
+        "text": "Cold temperature beneficial in SCD"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "SCD + ortho: multidisciplinary (heme + ortho + pain + ID + transfusion + anesthesia + psych + SW). Orthopedic: AVN (most common — femoral head — core decompression early; THA for collapse — earlier than typical, higher complication rate), osteomyelitis (Salmonella + S. aureus), stress fracture, dactylitis. Perioperative: hydration + oxygen + warm + transfusion (Hb 10 + HbS < 30%, Bachy/TAPS — selective exchange) + multimodal pain + monitor for ACS (chest crisis). Hydroxyurea + modern SCD therapy. Chronic pain stewardship. Transitions.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "ASH SCD Guidelines"
+  },
+  {
+    "scenario": "**Integrative Case**\n\nชายไทยอายุ 32 ปี hemophilia A (severe, < 1% factor VIII), recurrent hemarthroses since childhood → chronic hemophilic arthropathy bilateral knees + ankles, target joints, on prophylactic factor VIII\n\nFailed conservative — pain + dysfunction interfering with work + family activities\n\nจงอธิบาย integrative hemophilia + ortho management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Hemophilia patients should not undergo joint replacement"
+      },
+      {
+        "label": "B",
+        "text": "Hemophilia + Orthopedic Surgery (Joint Arthroplasty) — Integrative Care: (1) **multidisciplinary team essential**: (a) **hematology + hemophilia treatment center (HTC)** — primary management, factor levels, inhibitor screening, perioperative factor replacement planning; (b) **orthopedic surgery (familiar with hemophilia)** — joint preservation procedures, arthroplasty when indicated; (c) **physical therapy** — joint preservation, post-op rehabilitation; (d) **hepatology** — many older patients have HCV from prior transfusions, ongoing surveillance + treatment; (e) **psychology + social work** — chronic disease, mental health, work + family; (f) **infectious disease** — HIV/HCV management, perioperative infection considerations; (g) **anesthesiology familiar with hemophilia**; (h) **dental + GU + medical specialties** for comorbidity; (2) **hemophilic arthropathy** — chronic disease from recurrent intra-articular hemorrhage: (a) **pathophysiology** — synovitis from iron deposition + cytokine release → cartilage damage → joint destruction → secondary OA-like changes; (b) **target joints** — joints with > 3 bleeds in 6 months — increased risk progression; (c) **common joints** — knees > ankles > elbows; (d) **Pettersson score** radiographic grading; (3) **management algorithm**: (a) **primary prevention — prophylactic factor replacement** — standard of care for severe hemophilia, reduces bleeds + arthropathy progression; modern extended half-life factor concentrates + non-factor therapy (emicizumab — bispecific antibody mimicking factor VIIIa, subQ weekly-monthly — reduces bleeds without need for factor); (b) **acute hemarthrosis**: (i) **immediate factor replacement** (target 80-100% for severe hemarthrosis), (ii) RICE, immobilization 24-48h, (iii) joint aspiration controversial — most spontaneously resolves, aspiration considered for tense painful joint not improving with factor; (c) **chronic synovitis**: (i) intensive prophylaxis, (ii) **radioactive synovectomy (radiosynoviorthesis)** — Yttrium-90, Phosphorus-32 — outpatient, effective for chronic synovitis, may reduce bleeds + slow progression, alternative to surgical synovectomy; (iii) **surgical synovectomy** (arthroscopic) for selected; (d) **end-stage arthropathy** — **total joint arthroplasty (TJA)** — when conservative measures fail + significant pain/disability + advanced radiographic disease: (i) **TKA** most common; (ii) **THA, total ankle arthroplasty (TAA), elbow arthroplasty** also performed; (iii) **outcomes** — improved pain + function comparable to non-hemophilic patients but higher complication rates; (4) **perioperative factor management — essential to prevent bleeding complications**: (a) **pre-op planning** with hematology — factor VIII/IX levels, inhibitor screen (especially severe hemophilia A — 25-30% develop inhibitors), pharmacokinetic study; (b) **factor replacement protocol** for major surgery (joint arthroplasty): (i) target 80-100% pre-op + intra-op + postop day 1-3, (ii) gradually decreasing levels 50-80% × 3-7 days, then 30-50% × additional days based on procedure; (iii) duration of replacement 10-14 days total typically (continued during rehabilitation); (iv) **continuous infusion vs intermittent bolus** options; (c) **inhibitor management** — if patient has inhibitors → bypassing agents (recombinant factor VIIa — NovoSeven; activated prothrombin complex concentrate — FEIBA); higher risk + cost + complexity; consider ITI (immune tolerance induction) before elective surgery; (d) **emicizumab patients** — modern non-factor therapy — does NOT replace factor for bleeding; still need factor for hemostasis during surgery; specific perioperative protocols; (e) **monitor factor levels** during peri-op; (5) **anesthesia considerations** — regional anesthesia (especially neuraxial) requires careful factor coverage; epidural hematoma risk; (6) **VTE prophylaxis** — controversial in hemophilia (consider mechanical only initially, selective chemical with factor replacement); (7) **post-op care**: (a) factor replacement continuation, (b) gentle PT (avoid bleeding), (c) infection monitoring (higher PJI risk in HCV+/HIV+ historically — controversial), (d) drains carefully managed; (8) **specific complications**: (a) bleeding (intra/post-op), (b) PJI (slightly higher than general population), (c) wound healing, (d) DVT/PE, (e) recurrent hemarthrosis if factor coverage inadequate; (9) **patient + family education**: bleed recognition, self-infusion if applicable, post-op management, when to seek care; (10) **modern advances** — gene therapy for hemophilia (etranacogene dezaparvovec for hemophilia B, valoctocogene roxaparvovec for hemophilia A) — curative potential"
+      },
+      {
+        "label": "C",
+        "text": "Factor replacement not needed for surgery"
+      },
+      {
+        "label": "D",
+        "text": "Inhibitor status irrelevant"
+      },
+      {
+        "label": "E",
+        "text": "Emicizumab provides complete hemostasis during surgery"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Hemophilia + arthropathy: multidisciplinary (heme/HTC + ortho + PT + anesthesia + hepatology + ID + psych). Pathophysiology: recurrent hemarthrosis → synovitis → joint destruction. Algorithm: PROPHYLACTIC factor replacement (standard) → acute hemarthrosis (factor + RICE) → chronic synovitis (radiosynovectomy/surgical) → end-stage (TJA). Perioperative factor: 80-100% pre + early, then taper × 10-14 days. INHIBITOR screen — if positive, bypassing agents (rFVIIa, FEIBA) + complexity. Emicizumab patients still need factor. Modern: gene therapy emerging.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "WFH"
+  },
+  {
+    "scenario": "**Integrative Case**\n\nหญิงไทยอายุ 28 ปี 28 weeks pregnant ตกบันได ปวดข้อมือ + back + ankle\n\nVS stable, fetal HR normal\n\nจงอธิบาย integrative considerations — pregnancy + orthopedic injury (imaging, anesthesia, medication, surgical timing)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Never image pregnant women for any indication"
+      },
+      {
+        "label": "B",
+        "text": "Pregnancy + Orthopedic Injury — Integrative Multidisciplinary Considerations: (1) **multidisciplinary team**: (a) **obstetrics** — fetal monitoring, placental abruption assessment, maternal-fetal medicine for high-risk; (b) **orthopedic surgery** — injury management; (c) **anesthesia** — pregnancy-safe agents + technique; (d) **radiology** — imaging selection + shielding; (e) **pharmacy** — pregnancy category review; (f) **family** + support; (2) **imaging considerations** — ALL emergency/necessary imaging should NOT be withheld for pregnancy concern (delayed diagnosis worse than minor radiation): (a) **X-ray** — minimal fetal exposure (single extremity X-ray < 0.01 mGy — well below 50 mGy fetal threshold); **shield abdomen + pelvis** with lead apron; informed consent + counseling; (b) **CT** — higher radiation; **abdomen/pelvis CT** ~ 25 mGy fetal exposure (below threshold); when needed (life-threatening), perform; minimize dose with low-dose protocols; (c) **MRI** — preferred for many indications (no ionizing radiation); **gadolinium contraindicated** in pregnancy (placental crossing, theoretical fetal harm), use non-contrast when possible; (d) **ultrasound** — completely safe; (e) **fluoroscopy** — minimize use during surgery, use shielding; (f) **nuclear medicine** — usually avoided; (3) **anesthesia considerations**: (a) **physiologic changes** — increased cardiac output, decreased FRC, increased aspiration risk, supine hypotension syndrome (after 20 weeks — tilt left 15° to displace gravid uterus from IVC), increased airway edema (smaller ETT), increased oxygen demand; (b) **regional anesthesia preferred** when feasible — avoids systemic medications, reduces aspiration risk; epidural/spinal commonly used for lower extremity surgery; brachial plexus block for upper extremity; (c) **general anesthesia** — rapid sequence intubation (full stomach), pre-oxygenation, avoid hypotension + hypoxia; many anesthetics safe in pregnancy when needed for maternal indication; (d) **fetal monitoring** intra-operatively if viable; obstetric backup; (e) **post-op pain management** — discussed below; (4) **medications + pregnancy**: (a) **acetaminophen** — first-line analgesic, generally safe (FDA Cat B); (b) **NSAIDs** — **avoid after 20 weeks** (third trimester) — premature ductus arteriosus closure, oligohydramnios, renal effects; short-term use early pregnancy OK; (c) **opioids** — short-term use generally safe; risks: respiratory depression neonatal if used near delivery, neonatal abstinence syndrome with chronic use; codeine + tramadol — caution (metabolizer variability); morphine acceptable; (d) **antibiotics** — generally safe: penicillins, cephalosporins, clindamycin; **avoid**: fluoroquinolones (cartilage), tetracyclines (teeth, bone), sulfonamides (third trimester — kernicterus); (e) **anticoagulation** — **LMWH preferred** (does not cross placenta); warfarin — teratogenic (warfarin embryopathy weeks 6-12, fetal hemorrhage near term); DOACs — limited data, avoid; (f) **DVT prophylaxis** — pregnancy is hypercoagulable state, LMWH if prolonged immobilization or surgery; (g) **steroids** — generally safe; betamethasone for fetal lung maturation if preterm delivery risk; (h) **tetanus toxoid** — safe in pregnancy; (i) **review FDA category** before any new medication; (5) **surgical timing**: (a) **emergent surgery** — perform regardless of trimester (maternal life > fetal); (b) **urgent surgery** — second trimester preferred when possible (lowest teratogenic + obstetric risk; first trimester — organogenesis, miscarriage; third trimester — preterm labor, technical difficulty); (c) **elective surgery** — postpone to after delivery; (d) **lateral positioning + tilt** to avoid IVC compression (after 20 weeks); (e) **fetal heart rate monitoring** before, during (if viable + practical), after surgery; (6) **DVT/VTE risk** — pregnancy hypercoagulable + immobility + trauma; mechanical + chemical prophylaxis as appropriate; (7) **trauma considerations**: (a) **fetal assessment** — fetal heart rate, biophysical profile; (b) **placental abruption screening** — Kleihauer-Betke test (fetal-maternal hemorrhage); (c) **uterine + placental** assessment; (d) **Rh immunoglobulin** if Rh-negative mother with possible fetal-maternal hemorrhage; (e) **obstetric consultation** for any trauma in pregnancy; (8) **shared decision-making + informed consent** — discuss risks/benefits with patient; sensitivity to maternal-fetal dual concerns; (9) **postpartum considerations** for definitive treatment if elective surgery deferred"
+      },
+      {
+        "label": "C",
+        "text": "Warfarin safe in pregnancy"
+      },
+      {
+        "label": "D",
+        "text": "NSAIDs first-line after 20 weeks"
+      },
+      {
+        "label": "E",
+        "text": "All elective surgery contraindicated in pregnancy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pregnancy + ortho: multidisciplinary (OB + ortho + anesthesia + radiology). Imaging: X-ray with lead shielding safe; CT when needed (single extremity OK; abdomen with thought); MRI preferred (no radiation), AVOID gadolinium. Anesthesia: regional > general (when feasible); RSI for GA (aspiration risk); lateral tilt > 20 weeks. Meds: acetaminophen safe, AVOID NSAIDs > 20 weeks (DA closure), opioids short-term OK, penicillin/ceph + clinda safe (avoid FQ, tetracycline, sulfa). Anticoagulation: LMWH preferred (warfarin teratogenic). Surgery: emergent any time; elective delay to second trimester or postpartum. Fetal monitoring. Rh Ig if needed.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "ACOG; AAOS"
+  },
+  {
+    "scenario": "**Integrative Case**\n\nชายไทยอายุ 35 ปี IV drug user, chronic homeless ปวด + บวมข้อเข่าขวา + ไข้สูง 4 วัน — septic arthritis confirmed (joint aspiration positive)\n\nConcurrent — new murmur, blood culture S. aureus, TTE shows tricuspid valve vegetation + multiple septic pulmonary emboli on CT chest\n\nจงอธิบาย integrative management — addiction + infectious + orthopedic + harm reduction",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge AMA acceptable for non-adherent IV drug users"
+      },
+      {
+        "label": "B",
+        "text": "Substance Use Disorder + Septic Arthritis + Endocarditis — Integrative Care: (1) **multidisciplinary team**: (a) **infectious disease** — antibiotic management, source control coordination; (b) **orthopedic surgery** — septic arthritis surgical management; (c) **cardiology + cardiothoracic surgery** — endocarditis management, possible valve surgery; (d) **addiction medicine** — opioid use disorder (OUD) management, harm reduction, treatment options; (e) **internal medicine/hospitalist** — overall care coordination; (f) **psychiatry** — co-occurring disorders, mental health; (g) **social work** — housing, social services, post-discharge planning; (h) **case management**; (i) **peer support** — peer recovery coaches; (j) **palliative care** for chronic illness symptom management + goals of care; (k) **public health** for HIV/HCV screening + treatment; (2) **acute medical management**: (a) **sepsis bundle** — early IV antibiotic within 1 hour, fluid resuscitation, source control, monitor for septic shock; (b) **blood culture × 2-3 sites** before antibiotics + intra-op tissue cultures; (c) **empirical antibiotic — vancomycin + ceftriaxone (or cefepime)** — cover MRSA + gram-negative + Streptococcus; modify per culture + sensitivity; **MSSA confirmed** → transition to **cefazolin or nafcillin/oxacillin** (more effective than vancomycin for MSSA); (3) **orthopedic management — septic arthritis**: (a) **emergent arthrotomy + irrigation + debridement** of knee joint within 24 hours; (b) **arthroscopic** vs **open** — both acceptable; arthroscopic less morbidity, requires expertise; (c) **repeat drainage** if persistent symptoms + WBC/CRP; (d) cultures + sensitivities → guide antibiotic; (e) **IV antibiotic 2-4 weeks then transition oral** in modern practice for total 4-6 weeks; (f) **post-treatment** — joint damage common → secondary OA + chronic pain; (4) **endocarditis management** — life-threatening: (a) **prolonged IV antibiotic** — 4-6 weeks minimum (right-sided IE — 2-6 weeks acceptable for uncomplicated MSSA per recent evidence); (b) **TEE** for definitive vegetation + complications assessment; (c) **valve surgery indications** — uncontrolled infection, heart failure, large vegetations + embolic events, persistent bacteremia, perivalvular complications — usually right-sided IE managed medically unless complications; (d) **screening for other complications** — septic emboli (chest CT done — shows pulmonary septic emboli), brain MRI for CNS emboli, abdominal imaging for splenic/renal abscess; (5) **substance use disorder management — harm reduction + treatment**: (a) **opioid use disorder (OUD)** in IV drug user — life-threatening relapse + overdose risk + ongoing infections; (b) **medications for OUD (MOUD)** — evidence-based: (i) **methadone** — full agonist, requires daily clinic visits (in Thailand — methadone clinics expanding), (ii) **buprenorphine** — partial agonist, can be initiated in hospital, increasingly accessible, (iii) **extended-release naltrexone** — opioid antagonist, post-detox; (c) **initiation in hospital + warm handoff** to outpatient program reduces relapse + readmission + mortality (low-barrier access); (d) **harm reduction** — needle exchange programs, safer use education, naloxone training + distribution, syringe access; (e) **withdrawal management** — clonidine, anti-emetics, supportive; (f) **co-occurring substance use** — alcohol, methamphetamine, others; (g) **mental health comorbidity** — depression, anxiety, PTSD, trauma history common — co-occurring treatment; (6) **infection prevention going forward**: (a) HIV + HCV screening (offer PrEP, treat HCV); (b) tetanus + Hepatitis B vaccination; (c) skin + soft tissue infection prevention education; (7) **social determinants**: (a) **homelessness** — major obstacle to recovery + treatment adherence; (b) **housing** — supportive housing referral, shelter placement, Housing First model; (c) **food security**; (d) **transportation** for ongoing care; (e) **financial** — disability assessment, public benefits; (f) **legal issues**; (g) **family/social** — connect with supports if available; (8) **stigma reduction + therapeutic alliance**: (a) **compassionate non-judgmental care** — addiction is medical disease, not moral failing; (b) build trust + therapeutic relationship; (c) avoid early discharge against medical advice (AMA) — facilitate adequate care for medical condition; (d) **provider education** on SUD reduces stigma + improves care; (9) **post-discharge planning + warm handoff** — addiction treatment program, primary care, ID follow-up, mental health, peer support, housing; (10) **ethics + dignity** — respect for patient regardless of circumstances, harm reduction philosophy"
+      },
+      {
+        "label": "C",
+        "text": "MOUD not appropriate during acute admission"
+      },
+      {
+        "label": "D",
+        "text": "Methadone + buprenorphine ineffective for OUD"
+      },
+      {
+        "label": "E",
+        "text": "Harm reduction encourages drug use"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "IV drug user + septic arthritis + endocarditis: multidisciplinary (ID + ortho + cardiology/CT surg + addiction medicine + psych + SW + peer + public health). Sepsis bundle + empirical vanc + ceftriaxone → MSSA → cefazolin. Emergent arthrotomy/arthroscopic I&D + antibiotic 4-6 wk. TEE + screen septic emboli (chest, brain, abdomen). Endocarditis Rx 4-6 wk; surgery for complications. **MOUD essential — methadone, buprenorphine (start in hospital), naltrexone** + warm handoff (reduces relapse + mortality). Harm reduction (needle exchange, naloxone). HIV/HCV screen. Housing/food/transport. Compassionate, non-judgmental.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "IDSA; SAMHSA MOUD"
+  },
+  {
+    "scenario": "**Integrative Case**\n\nผู้ป่วยอายุ 75 ปี end-stage metastatic prostate cancer (widespread bony mets), bed-bound, life expectancy weeks, ปวด chronic + acute exacerbation from pathological pelvic + spine fractures\n\nFamily wants comfort focus, declining surgery\n\nจงอธิบาย integrative end-of-life ortho-palliative care",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No role for any orthopedic intervention in end-of-life care"
+      },
+      {
+        "label": "B",
+        "text": "End-of-Life Care + Skeletal Symptoms — Integrative Palliative Approach: (1) **shift from curative to comfort-focused care** — recognize transition; principle of beneficence + autonomy + respect for patient's wishes; (2) **multidisciplinary palliative team**: (a) **palliative medicine** — symptom management, prognostication, goals of care; (b) **hospice services** — home-based or facility-based comfort care; (c) **pain medicine** — refractory pain expertise; (d) **orthopedic palliative care** — selective interventions for QOL only; (e) **radiation oncology** — palliative radiation for bone pain; (f) **chaplaincy / spiritual care** — Buddhist monk in Thai context, other traditions; (g) **social work + case management** — practical support, financial, family; (h) **psychology + counseling** — psychological support for patient + family; (i) **family + caregivers** — central + supported; (3) **goals of care discussion**: (a) **explore patient's values + wishes** — quality > quantity, comfort, dignity, presence with family, spiritual considerations; (b) **family understanding + agreement** — Thai cultural framework (family-centered decisions, eldest sibling or spouse often spokesperson); (c) **advance directives** — DNR, DNI, no aggressive intervention; (d) **document explicitly**; (e) **revisit as circumstances change**; (4) **symptom management**: (a) **pain — central focus**: (i) **WHO analgesic ladder** — acetaminophen → weak opioid (codeine, tramadol) → strong opioid (morphine, oxycodone, fentanyl); (ii) **scheduled (not PRN)** for chronic pain with breakthrough doses available; (iii) **opioid titration** — no ceiling for cancer pain; (iv) **opioid rotation** for tolerance or side effects; (v) **route**: oral preferred; SC/IV for non-oral; transdermal fentanyl for stable; PCA for self-titration; (vi) **adjuvants**: NSAIDs (caution renal/GI), corticosteroids (dexamethasone for bone pain + appetite + mood), neuropathic agents (gabapentin/pregabalin), antidepressants for mood + pain; (vii) **regional/neuraxial** — intrathecal pump or epidural for refractory pain — palliative care + anesthesia expertise; (viii) **palliative radiation** for painful bone metastasis — 8 Gy single fraction effective for pain (~ 60-80% response); (ix) **bisphosphonate/denosumab** — reduces bone pain + SREs (consider in months-life expectancy); (x) **vertebroplasty/kyphoplasty** for painful vertebral mets if expected to benefit; (b) **dyspnea**: opioid (oral or SC morphine), oxygen if hypoxic + relieves symptoms, fan to face, positioning; (c) **fatigue**: address reversible causes (anemia, depression), pacing, rest; (d) **nausea**: ondansetron, haloperidol, metoclopramide, dexamethasone; (e) **constipation** (universal with opioids): scheduled bowel regimen — senna/bisacodyl + osmotic + methylnaltrexone for opioid-induced refractory; (f) **delirium**: identify cause (medication, infection, hypercalcemia, hypoxia), haloperidol/risperidone if non-pharmacologic insufficient; benzodiazepines selectively (can worsen); (g) **oral care + secretions**; (h) **pressure ulcer prevention** — turn, pressure-relieving mattress, skin care; (5) **role of orthopedic surgery in end-of-life — highly selective**: (a) **palliative surgery** principle — symptom relief, improve dignity, allow nursing care; (b) **pathologic fracture** — fixation if expected to improve pain + comfort + allow positioning + nursing care (modified Mirels-like approach for life expectancy); even short life expectancy may benefit from fixation for pain relief; (c) **avoid major invasive surgery** with prolonged recovery if life expectancy short; (d) **simple stabilization** sometimes appropriate (e.g., IM nail for femoral mets if able to tolerate); (e) **non-operative comfort measures** for many: positioning, pressure relief, scheduled analgesia, immobilization splint for comfort; (6) **psychosocial + spiritual + emotional**: (a) presence + listening; (b) life review + legacy; (c) reconciliation + relationship attention; (d) spiritual + religious practices (Buddhist meditation, merit-making, chanting); (e) cultural rituals; (f) preparing family for loss; (g) anticipatory grief; (7) **family caregivers — central + supported**: (a) education on care techniques; (b) respite; (c) coping resources; (d) bereavement preparation; (e) post-bereavement support; (8) **dying process — recognize + support**: (a) clinical signs (decreased intake, mottling, breathing changes, decreased responsiveness); (b) communicate with family — what to expect; (c) presence + comfort; (d) honor patient's preferred place of death; (e) **comfort care orders** at end of life — stop unnecessary interventions, comfort meds prn; (9) **Thai cultural context**: (a) family hierarchy (eldest or eldest son often decision spokesperson); (b) Buddhist beliefs about death + karma + suffering + impermanence; (c) merit-making (tham boon) for the dying; (d) preference for death at home in some families; (e) Buddhist monk presence at end; (f) family being present essential; (g) communication style (indirect, respect for elders, harmonious); (h) post-death rituals (3-day, 7-day, 100-day, 1-year)"
+      },
+      {
+        "label": "C",
+        "text": "Opioids should be PRN only for chronic cancer pain"
+      },
+      {
+        "label": "D",
+        "text": "Cultural considerations not relevant in end-of-life care"
+      },
+      {
+        "label": "E",
+        "text": "Aggressive interventions always indicated until death"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "End-of-life ortho-palliative: shift to comfort focus; multidisciplinary (palliative + hospice + pain + ortho + RT + chaplain + SW + family). Goals of care discussion; document DNR/DNI/comfort. Pain: WHO ladder, scheduled opioid no ceiling for cancer, adjuvants (steroid, gabapentin), regional, palliative RT 8 Gy × 1 for bone, bisphosphonate, vertebroplasty selective. Other symptoms: dyspnea (morphine + O2), constipation, nausea, delirium. Ortho — highly selective palliative surgery for pain + dignity + nursing care (even with short life expectancy may benefit). Cultural sensitivity (Buddhist, family hierarchy, merit-making, presence). Family bereavement.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "WHO Analgesic Ladder; Palliative Care"
+  },
+  {
+    "scenario": "**Integrative Case**\n\nนักฟุตบอลอาชีพ อายุ 22 ปี ปะทะคู่แข่ง รถยนต์ชน — sustains ACL tear + concussion in same play, briefly LOC + confused 30 min, headache, dizzy, photophobia, no focal deficit\n\nจงอธิบาย integrative management of concurrent musculoskeletal + concussion + return-to-play decisions",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Same-day surgery for ACL despite concussion"
+      },
+      {
+        "label": "B",
+        "text": "Concurrent Sports Concussion + ACL Tear — Integrative Return-to-Play Decision-Making: (1) **multidisciplinary team**: (a) **sports medicine physician** — overall coordination; (b) **orthopedic + sports surgery** — ACL management; (c) **neurology / sports concussion specialist** — concussion management; (d) **neuropsychology** — cognitive testing, baseline comparison; (e) **physical therapy** — rehabilitation; (f) **athletic trainer** — daily monitoring + return-to-play protocol; (g) **psychology + mental health** — psychological + emotional support; (h) **coaching staff** — communication, transition; (2) **concussion management — TBI principles**: (a) **definition** — mild traumatic brain injury → transient neurologic dysfunction from biomechanical force; (b) **diagnosis** — clinical (Symptoms checklist, balance test, cognitive screening, history); SCAT5 (Sport Concussion Assessment Tool); (c) **acute management** — remove from play immediately if suspected (\"when in doubt, sit them out\"); medical evaluation; **CT** if concerning features (LOC > 1 min, prolonged amnesia, focal deficit, severe headache, vomiting, seizure, declining GCS) — not routinely; (d) **graduated return-to-play protocol** (international consensus — Berlin/Amsterdam Concussion in Sport): (i) **complete rest 24-48h** then symptom-limited activity; (ii) **stage 1** — symptom-limited activity (daily activities); (iii) **stage 2** — light aerobic exercise; (iv) **stage 3** — sport-specific exercise; (v) **stage 4** — non-contact training drills; (vi) **stage 5** — full-contact practice (only after medical clearance); (vii) **stage 6** — return to sport; (viii) progress one stage per 24 hours minimum; symptom recurrence → drop back; full RTP typically 1-2+ weeks for adult, longer for younger athletes (more conservative); (e) **second-impact syndrome** — rare catastrophic brain swelling from second concussion before first resolved → high mortality + morbidity; absolute contraindication to RTP with persisting symptoms; (f) **chronic traumatic encephalopathy (CTE)** — concern with repetitive impacts (NFL); long-term considerations; (g) **post-concussion syndrome** — persistent symptoms > 10-14 days; (3) **ACL management priorities**: (a) **acute** — RICE, immobilization in brace, crutches, pain control; (b) **prehabilitation** — restore ROM + reduce effusion + quadriceps activation BEFORE reconstruction (better outcomes); (c) **MRI** for ACL + associated injuries (meniscus, bone bruise, MCL, PCL); (d) **timing of ACL reconstruction** — typically delay 3-6 weeks (or longer if effusion + ROM not restored) — but concussion DEFERS this; (4) **integrative decision — concussion must be cleared before elective ACL surgery + before RTP**: (a) **delay elective surgery** until concussion resolves AND patient cleared for sport (typically 1-4 weeks delay, sometimes longer); (b) urgent surgery (open fracture, vascular injury) — proceed regardless with anesthesia awareness; (c) **anesthesia considerations** post-concussion — avoid increased ICP, careful general anesthesia; regional anesthesia preferred; consult neurology if recent significant TBI; (d) elective ACL when stable; (5) **post-ACL surgery + return to sport** — different timelines: (a) **graduated rehabilitation 6-9 months** (some say longer to reduce re-rupture risk); (b) **functional testing** — limb symmetry index (LSI) > 90% for hop tests, ROM, strength; (c) **psychological readiness** — ACL-RSI scale; many athletes psychologically unprepared at typical time; (d) **STABILITY trial** — lateral extra-articular tenodesis (LET) augmentation reduces re-rupture in young athletes; (e) **modern criteria** — comprehensive return-to-sport battery vs time-based; (f) **ACL re-rupture rate** ~ 20-30% in young athletes who return to pivoting sports; (g) **ACL prevention program** (FIFA 11+, others) reduces injury; (6) **psychological + emotional**: (a) injury + concussion = significant impact on young athlete identity; (b) anxiety, depression risk; (c) motivation for prolonged rehabilitation; (d) reframe + recovery focus; (e) peer + family support; (7) **shared decision making** — discuss with athlete + family + agent (if professional) — realistic timelines, risks, benefits; (8) **long-term sport considerations** — repeated concussion risk → career considerations; OA risk from ACL; (9) **ethical** — protect athlete from premature RTP despite pressure from team/coach/family"
+      },
+      {
+        "label": "C",
+        "text": "Return to play immediately after concussion if asymptomatic at 1 hour"
+      },
+      {
+        "label": "D",
+        "text": "Time-based return to sport (6 months) without functional testing"
+      },
+      {
+        "label": "E",
+        "text": "Concussion does not affect surgical decisions"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Concurrent concussion + ACL: multidisciplinary (sports med + ortho + neuro/concussion + PT + AT + psych). Concussion: SCAT5 dx, REMOVE from play immediately, graduated RTP protocol (1-6 stages, 24h+ per stage, full RTP 1-2+ wk adult), monitor for second-impact syndrome, CTE concern long-term. ACL: prehab → reconstruction (delay 3-6 wk minimum, longer if concussion not cleared) → 6-9 mo rehab → functional tests (LSI > 90%) + psychological readiness (ACL-RSI). LET reduces re-rupture (STABILITY). Re-rupture 20-30%. Psychological support + reframe. Protect athlete from premature RTP.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "AAOS; Berlin Concussion in Sport"
+  },
+  {
+    "scenario": "**Integrative Case**\n\nคุณเป็น orthopedic surgeon at small district hospital ในจังหวัดที่ห่างไกล — ขาด MRI + operating microscope + specialist subspecialists, basic X-ray + fluoroscopy + basic surgical capability\n\nผู้ป่วยอายุ 35 ปี — open femur fracture (Gustilo II) + suspected scaphoid fracture (snuffbox tender, X-ray negative)\n\nจงอธิบาย integrative practice + decision-making in resource-limited setting",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Same standard care available in all settings worldwide"
+      },
+      {
+        "label": "B",
+        "text": "Practicing in Resource-Limited Setting — Integrative Decision Making: (1) **principles**: (a) provide best available care while recognizing limitations; (b) appropriate referral + transfer to higher-level care when needed; (c) maximize use of available resources; (d) telemedicine + remote consultation where available; (e) clinical skills + thoughtful exam essential; (f) ethical: do no harm + maximize benefit + respect autonomy + justice; (2) **specific case approach**: (a) **open femur fracture Gustilo II**: (i) ATLS approach; (ii) **antibiotic within 1 hour** — cefazolin (available in most settings) + gentamicin if higher Gustilo; (iii) **tetanus**; (iv) **wound assessment** — irrigation with available sterile saline (large volume); sterile dressing; **DO NOT push bone back into wound**; (v) **splint** — femur traction splint (Hare/Sager) or skeletal traction (Steinmann pin in proximal tibia + traction setup) for immobilization + pain relief; (vi) **definitive management decision**: (1) if competent + equipment for **intramedullary nailing** → can be done locally — but generally requires C-arm fluoroscopy + appropriate implants; (2) **external fixator** as damage control if no IM nail capability — quick, low-tech, effective stabilization + allows transfer; (3) **transfer to higher-level center** for definitive IM nail if local capability limited — stabilize first; (b) **suspected scaphoid fracture with negative X-ray**: (i) **clinical suspicion strong** despite negative initial X-ray; (ii) **thumb spica splint/cast** for presumptive treatment; (iii) **repeat X-ray 10-14 days** when bony resorption may make fracture visible; (iv) MRI gold standard for occult — **refer for MRI** at higher-level facility if available + practical; (v) **CT** alternative — better availability + can show occult scaphoid; (vi) **bone scan** alternative if MRI/CT unavailable — sensitive but less specific; (vii) **conservative cast + serial X-ray** if no advanced imaging — pragmatic; (3) **resource-limited orthopedic principles**: (a) **emphasize clinical exam + history** — foundation of diagnosis (sometimes overlooked in modern imaging era); (b) **plain X-ray** + careful interpretation; (c) **simple effective interventions** — splinting, casting, traction; (d) **damage control orthopedics** with external fixator for unstable polytrauma → transfer; (e) **basic surgical techniques** — closed reduction, percutaneous pinning, simple ORIF for fractures within local capability; (f) **knowledge of when to transfer** — limit scope to local capability + transfer for complex; (4) **transfer + referral system**: (a) communicate with higher-level center; (b) document + send records, imaging; (c) stabilize before transfer; (d) **telemedicine consultation** if available — guidance + reassurance; (5) **education + training**: (a) continuing medical education — keep skills current; (b) telementoring for unfamiliar procedures; (c) attend conferences + workshops; (d) supervise less experienced colleagues; (6) **ethical decisions**: (a) **appropriate scope of practice** — do procedures you are competent + equipped for; (b) avoid heroic surgery beyond capability; (c) recognize limitations + refer; (d) **patient autonomy** + informed consent; (e) **prioritize most beneficial intervention** with limited resources; (7) **adaptation + improvisation** — sometimes necessary but balance with safety: (a) modify techniques for available equipment; (b) substitute when standard equipment unavailable (e.g., calcaneal pin + traction setup vs commercial traction splint); (c) document any non-standard care + rationale; (8) **community + public health perspective**: (a) **prevention** — road safety, helmet laws, occupational safety, fall prevention in elderly; (b) **rehabilitation** in community — physical therapy access; (c) **disability + reintegration** support; (d) **research** for local context; (9) **multidisciplinary in resource-limited** — may need to involve family medicine, surgery, ED colleagues for joint management; (10) **outcomes** — many ortho outcomes in resource-limited can be comparable to advanced settings with proper triage + basic care + transfer for complex; (11) **systems-level advocacy** — improve infrastructure + training + access to advanced care"
+      },
+      {
+        "label": "C",
+        "text": "Heroic surgery beyond scope always acceptable"
+      },
+      {
+        "label": "D",
+        "text": "Telemedicine never useful in remote settings"
+      },
+      {
+        "label": "E",
+        "text": "Clinical exam unnecessary if imaging is unavailable"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Resource-limited ortho: clinical exam + careful X-ray foundation. Open femur Gustilo II: antibiotic + tetanus + irrigation + splint (traction splint or Steinmann skeletal traction) → ex-fix locally as damage control + TRANSFER for IM nail if needed. Suspected scaphoid with negative X-ray: thumb spica + repeat X-ray 10-14 days, refer for MRI/CT if available, or pragmatic conservative + serial X-ray. Damage control + transfer for complex. Telemedicine if available. Know scope of practice + when to refer. Adapt + improvise within safety limits. Prevention + community + systems advocacy.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "AAOS Global Outreach"
+  },
+  {
+    "scenario": "**Integrative Case**\n\nผู้บริหารโรงพยาบาล asked you (orthopedic surgeon) ที่จะ optimize value of total joint replacement program — efficiency + cost + outcomes + access\n\nจงอธิบาย integrative approach to value-based ortho care + quality + outcomes + cost-effectiveness",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Value-based care means only reducing cost regardless of outcomes"
+      },
+      {
+        "label": "B",
+        "text": "Value-Based Orthopedic Care — Integrative Approach: (1) **value** = quality outcomes / cost — focus of modern healthcare; (2) **multidisciplinary value team**: (a) **orthopedic surgeons** — clinical decisions, surgical efficiency; (b) **hospital administration** — operations, finance; (c) **anesthesia** — perioperative management; (d) **physical therapy + rehabilitation** — optimize recovery; (e) **case management + social work** — discharge planning; (f) **nursing** — patient experience, complications; (g) **quality + safety** — measurement + improvement; (h) **finance + supply chain** — implant + supplies management; (i) **information technology** — electronic records, analytics; (j) **patient + family advisors** — patient experience perspective; (3) **dimensions of value**: (a) **quality**: (i) **clinical outcomes** — complication rates (SSI, DVT, dislocation, revision), mortality, readmissions; (ii) **patient-reported outcomes (PROMs)** — pain, function, satisfaction (KOOS, HOOS, Oxford scores, EQ-5D); (iii) **process measures** — antibiotic timing, VTE prophylaxis, multimodal pain management, mobilization same day; (iv) **patient experience** — Press-Ganey, NPS; (v) **safety** — never events, serious adverse events; (b) **efficiency + cost**: (i) **length of stay (LOS)** — modern TJA 1-2 days or outpatient/ASC; (ii) **OR efficiency** — turnover time, surgery duration, on-time starts; (iii) **implant cost** — standardize when possible, vendor negotiation; (iv) **resource utilization** — supplies, blood products, post-op imaging; (v) **bundled payment** vs fee-for-service; (vi) **readmission costs**; (vii) **post-acute care** — discharge to home vs SNF/rehab; (4) **specific value improvement strategies**: (a) **preoperative optimization** — Center for Joint Replacement model — HbA1c < 7.5-8, smoking cessation, BMI optimization, MRSA decolonization, anemia treatment, medical comorbidity → reduces complications + LOS + readmission; (b) **enhanced recovery after surgery (ERAS)** — multimodal pain (avoid opioid-only), regional anesthesia (femoral/adductor canal/spinal), TXA, multimodal antiemetic, early mobilization same day, rapid PT, oral nutrition; (c) **outpatient + ambulatory surgery center (ASC) TJA** — appropriate patient selection (younger, healthier, motivated) → comparable outcomes at lower cost (~ 30-40% reduction); careful patient selection; (d) **implant standardization + cost reduction** — formulary, vendor competition, value analysis; modern data — implant brand matters less than surgeon volume + technique; (e) **high-volume centers + surgeons** — improved outcomes + efficiency; designate centers of excellence; (f) **bundled payment models** — fixed payment for episode (90 days TJA) encourages cost-effective care + coordination; (g) **post-acute care** — home with PT > SNF (lower cost, equivalent outcomes for appropriate patients); telephone/video follow-up + home health vs frequent clinic visits; (h) **patient education + engagement** — pre-op classes, expectations, post-op planning → reduces complications + readmissions + improves satisfaction; (i) **multidisciplinary care pathway / clinical pathway** — standardized protocols reduce variation, improve outcomes; (j) **quality improvement / continuous improvement** — measure + analyze + improve; (k) **patient-reported outcomes** measurement + use in shared decision-making + benchmarking; (l) **technology — robotic-assisted, navigation, AI** — variable cost-effectiveness, may improve precision but require evidence of value; (m) **prevention of complications** — DVT prophylaxis, infection control, falls; (5) **registry data + benchmarking** — Australian Orthopaedic Association National Joint Replacement Registry (AOANJRR), UK NJR, Swedish, US AJRR — track outcomes nationally; allows benchmark comparison; identifies high-performing implants + techniques; (6) **shared decision-making** — discuss surgery vs continued non-operative; PROMs predict who benefits; reduce unnecessary surgery; (7) **equity + access**: (a) ensure access for underserved populations; (b) social determinants of health affect outcomes; (c) language + cultural barriers; (d) financial barriers — bundled payment risk-adjustment, charity care; (8) **research + innovation** — translational, clinical trials, real-world evidence; (9) **ethics in value-based care**: (a) avoid \"cherry-picking\" healthy patients to improve metrics — risk-adjustment essential; (b) avoid undertreatment to save cost; (c) patient-centered always; (d) shared decision-making respects autonomy; (10) **global comparison + Thai context** — Thailand has expanding TJA capacity, growing private sector, universal health coverage with cost constraints, need for evidence-based + value-based approach; (11) **outcomes — value-based ortho programs demonstrate**: improved outcomes + reduced costs + reduced LOS + improved satisfaction + reduced complications — clear evidence of benefit"
+      },
+      {
+        "label": "C",
+        "text": "Patient-reported outcomes are not important"
+      },
+      {
+        "label": "D",
+        "text": "Always use most expensive implants for best outcomes"
+      },
+      {
+        "label": "E",
+        "text": "Variation in care is acceptable and not addressed"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Value-based ortho: value = quality outcomes / cost. Multidisciplinary team approach. Quality (clinical outcomes, PROMs, process, experience, safety) + efficiency/cost (LOS, OR efficiency, implant cost, readmission, post-acute care). Strategies: preop optimization (HbA1c, smoking, BMI, MRSA), ERAS (multimodal pain, regional, TXA, early mobilization), outpatient/ASC selected, implant standardization, high-volume centers, bundled payments, home with PT > SNF, patient education, clinical pathways, registries (AOANJRR, NJR, AJRR), shared decision-making. Equity + access essential. Avoid cherry-picking. Patient-centered.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "Porter; AAHKS; AAOS Registry"
+  },
+  {
+    "scenario": "**Integrative Case**\n\nผู้ป่วยอายุ 70 ปี Thai-Buddhist รับประทาน traditional Thai herbs and supplements + visit traditional healer for hip pain (advanced OA), considering TKA + crystal/jewelry alternative healing, family wants involvement in all decisions, eldest son is decision-maker spokesperson\n\nจงอธิบาย integrative culturally-competent care + shared decision making",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Dismiss traditional Thai medicine as superstition"
+      },
+      {
+        "label": "B",
+        "text": "Culturally Competent Care in Thai Context — Integrative Approach: (1) **principles of cultural competence**: (a) **respect** for patient's beliefs, values, language, customs; (b) **awareness** of cultural factors affecting health behaviors + decision-making; (c) **adaptation** of care to be culturally appropriate while maintaining evidence-based standards; (d) **shared decision-making** that respects autonomy + cultural context; (e) **non-judgmental** approach to traditional + complementary practices; (f) **avoid stereotyping** — individuals vary within cultural groups; (2) **Thai cultural framework**: (a) **Buddhism** — predominant religion (95% Theravada), influences worldview: (i) **karma** — actions in past lives + present affect current circumstances; (ii) **suffering (dukkha)** — fundamental teaching, including illness as part of human condition; (iii) **acceptance + equanimity**; (iv) **impermanence (anicca)**; (v) **merit-making (tham boon)** — offerings to monks, alms, releasing animals; family often performs to benefit ill person; (vi) **meditation + chanting** as coping; (vii) sacred objects + amulets; (b) **family-centered decision-making**: (i) **hierarchy** — eldest male sibling, eldest son, or spouse often spokesperson; (ii) **collective decisions** — consensus important; (iii) **respect for elders (kreng jai)** — younger family defers; (iv) **avoiding direct confrontation** — indirect communication; (c) **traditional + alternative medicine**: (i) **Thai traditional medicine (TTM)** — herbal medicine, massage (Nuad Thai), spiritual healing — government-recognized + integrated; (ii) **TCM** influence; (iii) **religious healing** — visits to monks, temples; (iv) **amulets, holy water, blessed objects**; (v) **traditional healers (mor phaen boran)** alongside biomedical care; (d) **communication style**: (i) **politeness + respect** essential (sawaddee + wai gesture); (ii) **smile** (yim — multiple meanings, not just happiness); (iii) **indirect** expression of disagreement; (iv) **\"mai pen rai\"** (\"it's okay, no problem\") — common but may mask concerns; (v) **age + status respect** (use khun + family name); (vi) **avoid confrontation in front of others** (face-saving); (e) **interactions with healthcare**: (i) **respect for physicians** as authority figure; (ii) **trust + relationship building**; (iii) **family involvement** in clinic visits + decisions; (iv) **financial considerations** — universal health coverage but private care preferred by some; (3) **integrating traditional + biomedical**: (a) **non-judgmental inquiry** about traditional practices being used (open question — \"are you using anything else for your hip?\"); (b) **drug-herb interactions** — review traditional herbal supplements for interactions (especially with anticoagulants, analgesics): (i) some Thai herbs (e.g., Ginkgo, ginseng, garlic, ginger) may increase bleeding risk; (ii) some may affect blood pressure or glucose; (iii) **stop most herbal supplements 1-2 weeks pre-op** to be safe; (c) **complementary practices** that don't interfere with treatment — encourage if patient finds comforting (meditation, chanting, prayer, family presence); (d) **referral to integrative medicine** if available; (4) **shared decision making**: (a) **identify decision-makers** — patient + family hierarchy; (b) **invite family** to discussions if patient wishes; (c) **interpret medical information** in culturally accessible language; (d) **respect collective decision process** — may not get immediate answer; (e) **address values + concerns** — what does patient value? merit-making, dignity, family roles, work, religious practice; (f) **discuss risks + benefits realistically**; (g) **discuss alternatives** including continued conservative + complementary; (h) **multiple visits** for complex decisions; (i) **documentation** of decision-making process; (5) **specific TKA decision in this case**: (a) **explore patient's understanding** of TKA + alternatives; (b) **explain procedure + outcomes + recovery** clearly with visual aids; (c) **address concerns** — karmic implications, ability to perform religious practices (kneeling, prostrating, walking — modify post-TKA); (d) **discuss timing** — religious holidays, family events, Buddhist Lent (no surgery if possible during Lent); (e) **involve family** in decision; (f) **respect ultimate decision** of patient/family — including delaying surgery; (6) **logistics + accommodations**: (a) **language** — Thai, possibly regional dialect (Northern, Southern, Isan/Northeastern); use professional interpreter if needed; (b) **food** — Buddhist may abstain from meat selectively; offer choices; (c) **gender preferences** — preference for same-gender provider for sensitive examinations; (d) **modesty** during examinations; (e) **family presence** during examinations + procedures (when possible); (f) **religious observances** — accommodate prayer, meditation; (g) **end-of-life specific** — monk visits, chanting at bedside; (7) **provider self-awareness**: (a) recognize own cultural biases; (b) avoid ethnocentrism; (c) ongoing education + humility; (8) **systemic** — culturally adapted health education materials, diverse workforce, community partnerships"
+      },
+      {
+        "label": "C",
+        "text": "Refuse to discuss alternative treatments with patient"
+      },
+      {
+        "label": "D",
+        "text": "Bypass family in decision-making for adult patient"
+      },
+      {
+        "label": "E",
+        "text": "Insist on Western communication style with all patients"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Culturally competent care Thai context: respect Buddhist worldview (karma, suffering, merit-making), family-centered hierarchical decision-making (eldest son/spouse spokesperson, collective consensus, kreng jai), traditional medicine (Thai TTM, herbs — screen interactions, stop 1-2 wk pre-op if bleeding risk), polite indirect communication, face-saving, smile/mai pen rai may mask. Integrative — non-judgmental inquiry about traditional practices; encourage complementary if doesn't interfere (meditation, chanting). Shared decision: identify decision-makers, invite family, multiple visits, respect ultimate decision. Religious accommodation. Modesty + same-gender provider. Provider self-awareness + cultural humility.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "Cross Cultural Health"
+  },
+  {
+    "scenario": "**Integrative Case**\n\nเด็กชายอายุ 18 เดือน นำมาห้องฉุกเฉินด้วย — multiple bruises various stages of healing on torso, posterior rib fracture + bilateral femur fractures on skeletal survey, parents inconsistent history (\"baby fell off bed\")\n\nMother seems withdrawn, baby thin + below growth chart\n\nจงอธิบาย integrative non-accidental trauma evaluation + management + reporting + protection",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge home with parents without further evaluation"
+      },
+      {
+        "label": "B",
+        "text": "Non-Accidental Trauma (NAT/Child Abuse) — Integrative Multidisciplinary Care: (1) **principles**: (a) **NAT is preventable cause of death + disability in children** — under-recognized; (b) **clinical suspicion** essential — pattern recognition; (c) **mandatory reporting** legal + ethical; (d) **child safety priority**; (e) multidisciplinary protective approach; (2) **multidisciplinary team**: (a) **pediatric orthopedic surgery** — fracture management; (b) **pediatric / pediatric emergency medicine** — overall medical care; (c) **child protective services (CPS)** — investigation, safety planning; (d) **forensic pediatrician** (if available) — expert evaluation; (e) **social work** — psychosocial assessment, family support, resources; (f) **child psychiatry / psychology** — trauma assessment + treatment; (g) **law enforcement** — criminal investigation; (h) **legal — child advocate** — protection in court; (i) **nursing** — ongoing assessment, observation; (j) **hospital child abuse team** if available; (3) **red flags for NAT**: (a) **history inconsistencies** — story changes, doesn't match injury pattern, delayed presentation, no history of trauma in young infant; (b) **specific fracture patterns** — **\"classic metaphyseal lesion\"** (CML, bucket-handle/corner fractures — pathognomonic for NAT); **posterior rib fractures** (especially in infants — squeezing during forceful violent shaking); **multiple fractures different stages of healing**; **bilateral** fractures; **spiral fractures of long bones in non-ambulatory children** (suspicious — toddler fracture only in walking children); **subdural hematoma + retinal hemorrhages in infants** (abusive head trauma — shaken baby syndrome); (c) **soft tissue findings** — bruises in non-bony prominent areas (torso, ear, neck, buttocks), patterned bruises (handprint, belt, cord), various stages of healing, burns in patterned (immersion, cigarette), bite marks, oral injuries; (d) **delayed presentation** for significant injury; (e) **caregiver behaviors** — flat affect, avoidance, anger at staff, defensive, blames child; (f) **child behaviors** — fear, withdrawal, no stranger anxiety in infant; (g) **growth + nutrition** — failure to thrive, malnutrition; (h) **prior episodes** or CPS involvement; (i) **environmental** — substance abuse, domestic violence, mental illness, poverty, single parent, very young parents (risk factors but not deterministic); (4) **evaluation**: (a) **detailed history** — separately from caregivers if possible; (b) **complete physical exam** — head to toe with attention to skin, mucous membranes, genitals, neurologic; (c) **fundoscopic exam** by ophthalmology for retinal hemorrhages in head injury; (d) **skeletal survey** mandatory for any suspicion in child < 2 years (radiographic series of entire skeleton — 19 views minimum) — identifies occult fractures + healing fractures; **repeat skeletal survey in 2 weeks** to identify additional fractures not initially visible; (e) **head imaging** — CT or MRI for any concern; (f) **abdominal imaging** if abdominal trauma suspected; (g) **laboratory** — CBC, coagulation, LFTs, electrolytes, urinalysis; toxicology; (h) **photographic documentation** of injuries; (i) **growth chart + nutritional assessment**; (j) **developmental assessment**; (5) **MANDATORY REPORTING** — legal obligation: (a) **report to CPS + law enforcement** as required by Thai law (Child Protection Act); (b) **clinical suspicion sufficient** — no need for certainty; (c) **immune from liability** for good-faith report (in most jurisdictions); (d) **failure to report** — legal + ethical consequences; (e) **document carefully** — observations + history + concerns; (f) **report can be made by any healthcare provider**; (6) **child safety + protection**: (a) **admit to hospital** for safety + further evaluation when NAT suspected; (b) **avoid releasing child** to potentially abusive caregivers; (c) **CPS involvement** for placement decisions; (d) **safety planning**; (e) **siblings** — must be assessed for safety (often at risk); (7) **medical management**: (a) **fracture treatment** as clinically indicated; (b) **multidisciplinary care** for complex injuries; (c) **support during hospitalization** — comfort, attention, normalcy as possible; (d) **psychological support** for older children with awareness; (8) **family-centered considerations**: (a) **non-judgmental** initial approach (avoid premature conclusions); (b) **assessment of family stressors** + needs; (c) **family preservation when safe** — services may allow safe reunification; (d) **alternative care arrangements** when not safe — foster care, relatives; (9) **provider role**: (a) advocate for child; (b) report; (c) document objectively; (d) testify if needed; (e) coordinate with multidisciplinary team; (10) **prevention**: (a) **education** for parents — coping with stress, child development, support; (b) **home visiting programs** for at-risk; (c) **community resources** — childcare, mental health, substance abuse, parenting classes; (d) **identification of at-risk families** + intervention; (11) **long-term outcomes** — abused children have increased risk of physical + mental health problems, developmental delays, behavioral issues, future violence (perpetration + victimization); early intervention + safety + nurturing relationships can mitigate"
+      },
+      {
+        "label": "C",
+        "text": "Reporting is optional in suspected NAT"
+      },
+      {
+        "label": "D",
+        "text": "Posterior rib fractures are common in accidental trauma"
+      },
+      {
+        "label": "E",
+        "text": "Skeletal survey not needed if X-ray of fracture site is normal"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "NAT (child abuse) evaluation: red flags = inconsistent history, posterior rib fractures, metaphyseal corner fractures (\"bucket handle\" — PATHOGNOMONIC), multiple fractures different ages, bilateral, non-ambulatory child with spiral, head injury with retinal hemorrhages (shaken baby), patterned bruises, FTT. EVAL: skeletal survey (mandatory < 2 yr suspicion, repeat 2 wk later), head imaging, fundoscopy, labs, photo doc. MANDATORY REPORTING (Thai Child Protection Act) — suspicion sufficient. ADMIT + protect (don't release to abuser). Multidisciplinary (ortho + peds + SW + CPS + law enforcement + child psych + legal). Siblings at risk — assess. Prevention + family services.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "trauma",
+    "board_age_group": "peds",
+    "reference_source": "Child Protection Act Thailand; AAP"
+  },
+  {
+    "scenario": "**Integrative Case**\n\nคุณเป็น ortho department head — ต้องการพัฒนา department + improve patient outcomes + train residents + contribute to global orthopedic health\n\nจงอธิบาย integrative vision + leadership + research + education + global orthopedic health + future of orthopedic surgery",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Technology adoption without evidence evaluation"
+      },
+      {
+        "label": "B",
+        "text": "Integrative Vision for Modern Orthopedic Practice + Future: (1) **comprehensive department development**: (a) **clinical excellence** — evidence-based care, subspecialty coverage, multidisciplinary teams, value-based care, patient safety culture; (b) **education + training** — residency + fellowship, continuing medical education, simulation, mentorship; (c) **research + innovation** — clinical research, translational, registries, quality improvement; (d) **patient + community engagement** — health promotion, prevention, advocacy; (e) **multidisciplinary collaboration** — across specialties; (f) **technology adoption + critical evaluation**; (2) **leadership principles**: (a) **shared vision + culture**; (b) **psychological safety** — speak up, learn from errors; (c) **continuous improvement**; (d) **diversity + inclusion**; (e) **work-life integration + wellness** — burnout prevention; (f) **succession planning** + mentorship; (g) **transparent communication**; (h) **patient-first focus**; (3) **education + training**: (a) **competency-based residency** — defined milestones; (b) **simulation training** — surgical skills, communication; (c) **multidisciplinary teaching**; (d) **research mentorship** + scholarly activity; (e) **global health rotations** — exposure to international + resource-limited care; (f) **wellness + mental health** support for trainees; (g) **continuing education** — annual courses, conferences, webinars; (h) **lifelong learning** culture; (4) **research priorities**: (a) **clinical research** — RCTs, comparative effectiveness, real-world evidence; (b) **translational** — bench-to-bedside (cartilage regeneration, gene therapy, stem cells); (c) **patient-reported outcomes** + qualitative research; (d) **health services research** — value, access, equity; (e) **registry-based** — large-scale outcomes data; (f) **AI + machine learning** — diagnostic, predictive, surgical planning; (g) **implant + biomaterial** innovation; (h) **multi-institution collaboration**; (i) **funding** — NIH, industry partnerships, foundations; (5) **technology + innovation**: (a) **robotic-assisted surgery** — precision, learning curve, value evaluation; (b) **navigation systems** — preoperative planning, intra-op guidance; (c) **3D printing** — patient-specific implants, surgical planning models; (d) **augmented reality / virtual reality** — surgical visualization, training simulation; (e) **artificial intelligence** — diagnostic interpretation (fractures, OA, scoliosis), predictive analytics (outcomes, complications), workflow optimization, surgical decision support; (f) **wearables + remote monitoring** — patient tracking, rehabilitation; (g) **telemedicine + telehealth** — access expansion; (h) **gene therapy + biologics** — emerging cartilage restoration, hemophilia, others; (i) **regenerative medicine** — stem cells, scaffolds, growth factors; (j) **precision medicine** — genomics-guided treatment; (6) **global orthopedic health**: (a) **disparities** — high vs low income countries; rural vs urban; (b) **WHO Global Surgical Disability** — 5+ billion lack timely surgical care; (c) **trauma is leading cause of death + disability** globally — road traffic, falls, violence; (d) **musculoskeletal disorders** — major cause of disability worldwide (Global Burden of Disease); (e) **strategies**: (i) **capacity building** — training local providers, fellowship + visiting scholar programs; (ii) **infrastructure** — equipment, supplies, OR facilities; (iii) **research + evidence** for resource-limited contexts; (iv) **prevention** — road safety, fall prevention, occupational health, helmet laws; (v) **mobile clinics + outreach**; (vi) **partnerships** — university, NGO, government; (vii) **technology transfer** — appropriate technology; (viii) **advocacy** — World Health Assembly resolutions on trauma + musculoskeletal disorders; (ix) **disability inclusion** — rights, rehabilitation; (x) **ethical considerations** — avoid \"surgical colonialism\"; sustainable partnership; (7) **future of orthopedic surgery**: (a) **personalized + precision medicine** — biomarkers, genomics, AI-guided care; (b) **minimally invasive + ambulatory surgery** — same-day discharge for many procedures; (c) **biologic + regenerative** — cartilage restoration, tendon repair, gene therapy; (d) **robotic + AI-assisted** — precision, consistency, complex procedures; (e) **value-based + outcomes-driven**; (f) **patient empowerment** — wearables, apps, education; (g) **digital health integration**; (h) **expanded subspecialization**; (i) **global collaboration + equity**; (j) **prevention emphasis** — public health approach to MSK; (k) **multidisciplinary integration** — beyond ortho to comprehensive care; (l) **focus on quality of life + function** as primary outcomes; (8) **ethical dimensions**: (a) **equity + access** — geographic, socioeconomic, cultural; (b) **technology evaluation** — evidence before adoption; (c) **resource stewardship**; (d) **physician wellness + burnout** prevention; (e) **conflict of interest management**; (f) **patient autonomy** central; (g) **sustainable + environmentally responsible** practices; (9) **patient-centered always** — individual values + goals; shared decision-making; cultural humility; trauma-informed; respect; (10) **call to action** — orthopedic surgeons positioned to improve mobility + function + quality of life for patients globally — comprehensive, evidence-based, compassionate, innovative practice combined with prevention + advocacy + education + research will continue to advance the field"
+      },
+      {
+        "label": "C",
+        "text": "Focus only on individual patient ignoring system + global perspective"
+      },
+      {
+        "label": "D",
+        "text": "Maintain status quo without improvement"
+      },
+      {
+        "label": "E",
+        "text": "Avoid all new technology and methods"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Integrative ortho vision: comprehensive department (clinical excellence + education + research + community engagement + multidisciplinary). Leadership (shared vision, psychological safety, wellness, diversity). Education (competency-based, simulation, global health rotations). Research (RCTs, registries, AI, translational, biologics). Technology (robotic, navigation, 3D printing, AR/VR, AI/ML — evaluate evidence). Global ortho health (5B lack surgical care, trauma + MSK leading causes disability — capacity building, infrastructure, prevention, partnerships, equity). Future: precision + personalized, regenerative, ambulatory, value-based, prevention. Patient-centered + equitable + sustainable + compassionate.",
+    "difficulty": "easy",
+    "board_section": "integrative",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "WHO; AAOS; Global Burden of Disease"
   }
 ]
