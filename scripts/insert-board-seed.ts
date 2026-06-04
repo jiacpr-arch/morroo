@@ -22,7 +22,8 @@
 
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import { readdirSync, readFileSync } from "node:fs";
-import { join } from "node:path";
+import { dirname, join, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import { BOARD_SECTIONS } from "../lib/types-board";
 
 const SUPABASE_URL = process.env.SUPABASE_URL ?? process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -40,7 +41,14 @@ const ONLY = (process.env.ONLY_SPECIALTY ?? "")
   .map((s) => s.trim())
   .filter(Boolean);
 
-const SEED_DIR = join(import.meta.dirname ?? __dirname, "board-seed-data");
+const SCRIPT_DIR = (() => {
+  try {
+    return dirname(fileURLToPath(import.meta.url));
+  } catch {
+    return resolve(process.cwd(), "scripts");
+  }
+})();
+const SEED_DIR = join(SCRIPT_DIR, "board-seed-data");
 
 interface SeedQuestion {
   scenario: string;
