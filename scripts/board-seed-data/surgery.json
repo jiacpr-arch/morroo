@@ -5087,5 +5087,581 @@
     "board_topic": "id",
     "board_age_group": "elderly",
     "reference_source": "ISHLT Lung Transplant Guidelines; AST/ASTS Lung Transplant Guidelines; Greer M et al. Curr Opin Organ Transplant"
+  },
+  {
+    "scenario": "ทารกแรกเกิดอายุ 1 วัน born term, มาด้วย abdominal wall defect — bowel + liver exposed ที่ midline ไม่มี covering membrane\n\nคำถาม: distinguish + management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Same as omphalocele"
+      },
+      {
+        "label": "B",
+        "text": "**Gastroschisis vs Omphalocele — distinct entities**: **Gastroschisis**: defect right of umbilicus (paraumbilical), NO covering membrane, bowel exposed (often inflamed/thickened from amniotic fluid exposure), umbilical cord normal position, LOW association with other anomalies (5-10%) but high bowel atresia; **Omphalocele**: midline defect at umbilical cord, COVERED by amnion + peritoneum membrane (may rupture), liver + bowel inside sac, HIGH association with chromosomal (trisomy 13, 18, 21) + cardiac anomalies (30-50%), Beckwith-Wiedemann, pentalogy of Cantrell; **Management of gastroschisis**: (1) Immediate: cover exposed bowel with sterile saline-soaked gauze + cling wrap or bowel bag; NPO, NG decompression, IV fluid (large losses), IV antibiotic, thermoregulation (high losses → hypothermia); (2) Operative — primary closure if abdominal cavity can accommodate (no compartment syndrome); OR staged with **silo** (preformed silastic silo or surgical silo) → daily reduction over 5-10 days → delayed closure; (3) Post-op: TPN until bowel function returns (often weeks), gradual enteral feeds; (4) Complications: short gut syndrome, motility disorders, atresia (concurrent), feeding intolerance; (5) Omphalocele management: similar staged approach but slower (large defects); 'paint + wait' (silver sulfadiazine, escharification) for giant defects; sac itself protects; associated anomaly workup essential (echo, karyotype, etc.); (6) Long-term: most do well; nutritional + developmental follow-up"
+      },
+      {
+        "label": "C",
+        "text": "Observation only"
+      },
+      {
+        "label": "D",
+        "text": "Discharge home"
+      },
+      {
+        "label": "E",
+        "text": "Total bowel resection"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Abdominal wall defects** — two main: **Gastroschisis** vs **Omphalocele**. Differentiation critical for management + prognosis. Gastroschisis: right paraumbilical, no sac, inflamed bowel, fewer associations, primary or staged silo closure. Omphalocele: midline, intact sac, liver + bowel, MANY associated anomalies (cardiac 30-50%, chromosomal — trisomies, Beckwith-Wiedemann, Cantrell pentalogy), echo + karyotype workup essential. Both need NG decompression, IV fluid, thermoregulation, antibiotic, and surgical management (primary or staged silo). Outcomes generally good with modern care; long-term issues: feeding, growth, motility, short gut if extensive bowel resection.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "pediatrics",
+    "board_age_group": "neonate",
+    "reference_source": "APSA Pediatric Surgery Handbook; Christison-Lagay ER et al. Semin Pediatr Surg"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 25 ปี severe anxiety + abdominal pain RLQ + nausea but normal vitals + normal labs; previously suspected appendicitis but US negative + clinical improved overnight; planning discharge\n\nคำถาม: management of equivocal abdominal pain",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Force surgery"
+      },
+      {
+        "label": "B",
+        "text": "**Equivocal abdominal pain — observation + serial reassessment + targeted workup**: (1) **Serial abdominal exam** by same examiner — most valuable diagnostic tool; (2) **Active observation** in ED / observation unit 4-12h — many self-resolve OR develop clear features; (3) **Repeat labs** at 6-12h if not improving — WBC trend, CRP; (4) **Imaging** as guided: - US first (radiation-free, pelvic + abdominal) - CT if clinical worsening or persistent unclear - MRI if pregnant; (5) **Other differentials to consider** in young woman with RLQ pain: - GI: appendicitis (early or atypical), Meckel's, mesenteric adenitis, Crohn's terminal ileitis, infectious enteritis - GYN: ovarian cyst (rupture, torsion — surgical emergency), ectopic pregnancy (check β-hCG always), PID, endometriosis, mittelschmerz - GU: UTI, ureteral colic - Musculoskeletal: psoas, hip - Other: functional, anxiety-related; (6) **β-hCG mandatory** in reproductive-age female with abdominal pain; (7) **Discharge criteria**: - Clinical improvement - Pain controlled - Tolerating PO - Reliable patient + access to follow-up - Clear return precautions (worsening pain, fever, vomiting, inability to eat, peritonitis signs); (8) **Education** + follow-up clinic 24-48h; (9) **Document carefully** — return reasons, time of resolution, expected course"
+      },
+      {
+        "label": "C",
+        "text": "Discharge without follow-up"
+      },
+      {
+        "label": "D",
+        "text": "Long-term opioid prescription"
+      },
+      {
+        "label": "E",
+        "text": "Surgery indicated regardless"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Equivocal acute abdomen** — common scenario; balance between unnecessary surgery (negative laparotomy/laparoscopy ~ 10-15%) and missed serious diagnosis. **Diagnostic approach**: 1. Serial exam by same provider — most valuable 2. Active observation (4-12 hr) 3. Repeat labs (WBC trend) 4. Imaging escalation (US → CT) 5. β-hCG always in reproductive-age female 6. Consider gynecologic differentials in females Use 'safety netting' — clear return precautions, follow-up. Use 'shared decision-making' regarding observation vs intervention. Documentation important. **Pain management during observation**: appropriate analgesia does not mask diagnosis (clinical exam preserved with opioid administration per modern evidence — old dogma debunked). Multimodal analgesia preferred.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "Surgical Decision Making — ACS; AAST Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี chronic alcohol use + cirrhosis + esophageal varices on propranolol + EVBL + adherent — มา clinic for routine surveillance\n\nคำถาม: HCC surveillance + cirrhosis management principles",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No surveillance needed"
+      },
+      {
+        "label": "B",
+        "text": "**Cirrhosis comprehensive management + HCC surveillance**: (1) **HCC surveillance** in cirrhosis: - US ± AFP q6 months for at-risk (cirrhosis any etiology, chronic HBV without cirrhosis if Asian male > 40 / Asian female > 50 / Africans > 20 / family history HCC) - Multi-phase contrast CT or MRI if US suboptimal (obesity, fatty liver) or lesion detected - LI-RADS classification for indeterminate lesions; (2) **Variceal surveillance**: - EGD at diagnosis of cirrhosis - Repeat per Baveno criteria: small varices, no red signs → 2 yr; large or red signs → primary prophylaxis (NSBB or band) - On secondary prophylaxis (post-bleed, this patient) → continue NSBB + serial banding until eradication; (3) **Treat underlying liver disease**: - HBV: antiviral lifelong - HCV: DAA eradication (cure > 95%) - Alcohol: cessation absolute - NAFLD/MASH: weight loss, GLP-1 agonist (semaglutide, tirzepatide), pioglitazone (selected), resmetirom (FDA-approved 2024 for non-cirrhotic MASH) - Autoimmune: immunosuppression; (4) **Decompensation management**: - Ascites: sodium restriction (2 g/d) + diuretic (spironolactone + furosemide 100:40 ratio); refractory → large-volume paracentesis + albumin replacement; TIPS for refractory; - SBP prophylaxis if ascites + low protein or prior SBP — ciprofloxacin or TMP-SMX or norfloxacin daily - Hepatic encephalopathy: lactulose + rifaximin; treat precipitants - HRS: vasopressor (terlipressin, midodrine + octreotide + albumin) + RRT bridge; transplant - HPS (hepatopulmonary syndrome) — transplant evaluation; (5) **Liver transplant evaluation**: - MELD-Na score (waitlist priority US) - Refer when MELD > 15, refractory complications, HCC within criteria - Comprehensive evaluation: cardiac, pulm, infectious, psychosocial, cancer; (6) **Nutrition**: high-calorie + high-protein (1.2-1.5 g/kg); avoid restrictive low-protein (worsens malnutrition + encephalopathy); zinc, vitamin D, thiamine; (7) **Vaccinations** (inactivated): HAV, HBV, pneumococcal, influenza, COVID, Tdap; (8) **Lifestyle**: absolute alcohol cessation, smoking cessation, weight management (NAFLD), exercise; (9) **Avoid hepatotoxic medications**: NSAIDs (renal + bleeding), high-dose acetaminophen (2 g/day max in cirrhotic), aminoglycosides; (10) **Frailty + sarcopenia** — assessment + intervention"
+      },
+      {
+        "label": "C",
+        "text": "Refer to hospice"
+      },
+      {
+        "label": "D",
+        "text": "Stop all medications"
+      },
+      {
+        "label": "E",
+        "text": "Annual labs only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Cirrhosis comprehensive management** — multidimensional. **HCC surveillance** (AASLD): US ± AFP q6 mo for cirrhosis + at-risk HBV. Sensitivity ~ 60-80% (US alone); higher with AFP. Multi-phase CT/MRI for diagnosis with LI-RADS. **Variceal surveillance** (Baveno VII): - EGD at diagnosis - Small varices no red signs: q2 yr - Medium/large or red signs: primary prophylaxis (NSBB — carvedilol preferred per recent data, or EVBL) - Secondary: NSBB + EVBL until eradication **Decompensation management**: - Ascites: Na restriction + diuretic; TIPS for refractory; albumin with LVP - SBP: prophylaxis ciprofloxacin/norfloxacin/TMP-SMX in at-risk - Encephalopathy: lactulose + rifaximin; precipitants - HRS: terlipressin + albumin; transplant - Portal HTN: TIPS for refractory complications **Transplant evaluation**: MELD-Na > 15, refractory complications, HCC within criteria. **Underlying disease specific**: HBV antiviral, HCV DAA cure, alcohol cessation, NAFLD weight loss + emerging therapies (resmetirom FDA 2024 for non-cirrhotic MASH; semaglutide promising), AIH/PBC/PSC immunosuppression. **Nutrition**: do NOT restrict protein (worsens sarcopenia + encephalopathy); 1.2-1.5 g/kg; zinc, vit D, thiamine. **Vaccinations inactivated**. **Avoid hepatotoxic**: NSAIDs, high acetaminophen, aminoglycosides. **Frailty + sarcopenia**: Liver Frailty Index (LFI); intervention.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "elderly",
+    "reference_source": "AASLD Cirrhosis 2021; Baveno VII 2022; AASLD HCC 2023; EASL Guidelines"
+  },
+  {
+    "scenario": "ชายไทยอายุ 60 ปี ผ่า bypass graft femoropopliteal 2 weeks ago — มา ED ด้วยอาการ persistent leg swelling + pain + increasing erythema along graft site + draining wound + ไข้\n\nVS: BP 116/72, HR 102, Temp 38.6°C\nLeg: surgical wound erythema + drainage purulent; calf swollen; pulse intact distally\nLab: WBC 16,400, CRP 180\nBlood culture: gram-positive cocci\nCT angiogram: fluid + air around prosthetic graft; no acute occlusion; perigraft abscess\n\nคำถาม: management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Antibiotic alone"
+      },
+      {
+        "label": "B",
+        "text": "**Prosthetic graft infection — surgical emergency requires combined antimicrobial + surgical management**: (1) **Vascular graft infection (early < 4 mo more severe; late >4 mo possibly less severe but chronic)**; (2) **Initial workup**: blood cultures + wound culture + tissue cultures + CT angiography (perigraft fluid/gas/abscess, anastomotic pseudoaneurysm); (3) **IV broad-spectrum antibiotic** — cover staph (incl MRSA), gram-negative — empiric vancomycin + cefepime or pip-tazo; tailor per culture; long course (6 weeks IV + 6 weeks oral suppression often; lifelong oral if cannot remove graft); (4) **Surgical management options** by severity + extent: - **Graft excision + extra-anatomic bypass** — gold standard for severe infection of prosthetic graft (e.g., axillobifemoral bypass for aortobifemoral graft infection); 'remove infection, reroute flow' - **In-situ replacement with autologous vein** (femoral vein, GSV, cryopreserved) — for selected (lower infection burden, anatomy suitable, organism less virulent) - **In-situ replacement with new prosthetic / rifampin-soaked prosthetic** — controversial, less infection burden, soft-tissue coverage; selected - **Local debridement + irrigation + muscle flap coverage + retained graft** — selected (low-virulence, localized, no anastomosis involvement); risk of recurrence - **Suppressive antibiotic alone** — if graft cannot be safely removed (elderly, prohibitive surgery) — chronic infection accepted; (5) **Multidisciplinary**: vascular surgery, ID, plastic surgery (flaps), wound care; (6) **Limb salvage** consideration if graft removal compromises perfusion → bypass first to preserve limb then address infection; (7) **Prevention**: meticulous technique, prophylactic antibiotic, avoid groin incision when feasible (high infection rate), tunnel away from skin, treat infections elsewhere pre-op, glycemic control, smoking cessation"
+      },
+      {
+        "label": "C",
+        "text": "Outpatient management"
+      },
+      {
+        "label": "D",
+        "text": "Amputation immediately"
+      },
+      {
+        "label": "E",
+        "text": "Wait for resolution"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Vascular graft infection** — 1-5% incidence; mortality 10-25%; limb loss 10-20%. **Classification**: - **Szilagyi**: I — skin only; II — subcutaneous; III — graft involvement - **Samson**: I-V — granular detail of extent - **Early (< 4 mo)**: more virulent, sepsis common, often Staph - **Late (> 4 mo)**: indolent, low-virulence organisms (coag-neg Staph), chronic sinus tract **Imaging**: - CT angiography — perigraft fluid, gas, abscess, pseudoaneurysm, aortoenteric fistula - PET-CT — infection localization (high sensitivity) - WBC scan **Management principles**: 1. **Antibiotic** — broad-spectrum + culture-directed; long duration 2. **Surgery** — usually graft removal + revascularization 3. **Extra-anatomic bypass** — definitive for severe (e.g., axillobifem for aortic graft infection) 4. **In-situ replacement** — autologous vein (femoral or GSV) or cryopreserved arterial; or rifampin-soaked prosthetic in selected 5. **Selected conservative** — debridement + flap + retain graft for low-virulence, localized **Aortoenteric fistula** — feared complication of aortic graft infection — bleed from GI tract (small hemorrhage 'herald bleed' before catastrophic); emergency. **Prevention**: aseptic technique, antibiotic prophylaxis (cefazolin pre-incision, redose long surgery), groin avoidance when possible (high infection — alternatives like extraperitoneal access), wound closure, glycemic control, smoking cessation, MRSA decolonization in high-risk. **Long-term**: lifelong oral antibiotic suppression in selected (cannot remove graft + chronic low-grade infection); surveillance for recurrence + complications.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "vascular",
+    "board_age_group": "elderly",
+    "reference_source": "SVS Vascular Graft Infection; ESVS Chronic Limb-Threatening Ischemia; FitzGerald SF et al. Eur J Vasc Endovasc Surg"
+  },
+  {
+    "scenario": "เด็กชายอายุ 3 ปี ผ้าปูเตียงพันคอเล่นกัน — ตื่นมาภาวะสุดเย็น ครอบครัวพบในห้องไม่ตอบสนอง + นำส่ง ER\n\nVS: not breathing, pulseless, asystole on monitor\nFamily started CPR + 911 — ETA 8 min\n\nคำถาม: pediatric cardiac arrest + resuscitation",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Stop resuscitation immediately"
+      },
+      {
+        "label": "B",
+        "text": "**Pediatric cardiac arrest — PALS protocol with airway emphasis (often respiratory etiology in children)**: (1) **Most pediatric arrest is respiratory in origin** (asphyxia, drowning, choking, sepsis) — different from adult primary cardiac; (2) **Immediate steps**: - Bystander/EMS high-quality CPR (chest compressions 100-120/min, depth 1/3 AP diameter — 4 cm infant, 5 cm child, 5-6 cm adolescent) - Coordinated compressions:breaths 30:2 (single rescuer) or 15:2 (2 rescuers child) - Early effective ventilation critical - Automated external defibrillator (AED) — pediatric pads/attenuator for < 25 kg or < 8 yr (use adult if pediatric not available) - Defibrillation for shockable rhythms (VF/VT) — 2 J/kg first shock, 4 J/kg subsequent; (3) **In hospital**: - Continue compressions - Secure airway: bag-mask first (effective oxygenation often), advanced airway (ET tube, supraglottic) when feasible - IV access (peripheral or intraosseous — IO is fast + reliable in pediatric, especially when peripheral difficult) - **Epinephrine** 0.01 mg/kg IV/IO q3-5 min - **Amiodarone** 5 mg/kg IV/IO for VF/VT (after 3rd shock); lidocaine alternative - Treat reversible causes (H's + T's): hypoxia, hypovolemia, hydrogen ion (acidosis), hypo/hyperkalemia, hypothermia, hypoglycemia, toxins, tamponade, tension pneumo, thrombosis (PE, coronary), trauma; (4) **Post-cardiac arrest care (PALS)**: - Targeted temperature management — pediatric: maintain normothermia or therapeutic hypothermia (32-34°C × 48h then rewarm) per THAPCA pediatric trials (modest benefit/equipoise) - Oxygenation target SpO2 94-99% - Hemodynamic optimization - Neurological assessment + supportive care - Identify + treat underlying cause - Family support, psychosocial; (5) **Strangulation / hanging-specific**: - Cervical spine immobilization (potential injury) - Airway: edema common, may need surgical airway; ENT consult - CT brain + cervical spine when stable - Neuro-protective care + neurological prognostication; (6) **Outcomes**: - Pediatric in-hospital arrest survival ~ 30-50% to discharge (better than adult) - Out-of-hospital pediatric ~ 10-15% survival - Neurological outcome variable; (7) **Trauma resuscitation considerations**: TXA in massive bleeding (pediatric dose 15 mg/kg max 1 g), blood products, surgical bleeding control; (8) **Family presence** during resuscitation — supported by AHA + pediatric guidelines — improves family coping"
+      },
+      {
+        "label": "C",
+        "text": "Discharge home"
+      },
+      {
+        "label": "D",
+        "text": "Surgery alone"
+      },
+      {
+        "label": "E",
+        "text": "Wait without intervention"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Pediatric cardiac arrest** — distinct from adult: 1. **Etiology**: respiratory most common (asphyxia, drowning, choking, sepsis, SIDS) vs adult primary cardiac (VF) 2. **Airway + ventilation early + effective** — central to pediatric resuscitation 3. **PALS** (Pediatric Advanced Life Support) — AHA algorithm **Key differences from adult ACLS**: - Compression depth: 1/3 AP diameter (4 cm infant, 5 cm child, 5-6 cm adolescent) - Compression:Ventilation ratio: 30:2 single rescuer, 15:2 two rescuers (child); adult always 30:2 - Defibrillation: 2 J/kg first, 4 J/kg subsequent; pediatric pads/attenuator < 25 kg if available - Drug dosing weight-based - Epinephrine 0.01 mg/kg IV/IO - Amiodarone 5 mg/kg IV/IO for VF/VT - IO access common (fast, reliable, equivalent to IV) **H's + T's** (reversible causes): hypoxia, hypovolemia, hydrogen (acidosis), hypo/hyperkalemia, hypothermia, hypoglycemia, toxins, tamponade, tension pneumothorax, thrombosis (PE, coronary), trauma. **Post-arrest care (PALS)**: - Targeted temperature management — pediatric: THAPCA trials show no clear benefit of hypothermia 32-34°C vs normothermia 36-37.5°C; either acceptable - Avoid hyperthermia (fever post-arrest worsens outcomes) - Oxygen target 94-99% (avoid hyperoxia) - Hemodynamic, neurological support **Strangulation/hanging-specific considerations**: cervical spine injury, airway edema (may need surgical airway), CT imaging, neuroprotective care. **Trauma**: TXA (15 mg/kg max 1 g pediatric), blood products, surgical control. **Family presence during resuscitation**: increasingly supported (AHA, pediatric guidelines) — improves family coping + closure. **Outcomes**: pediatric in-hospital arrest ~ 30-50% survival to discharge (better than adult); out-of-hospital ~ 10-15%. Variable neurological outcome — depends on cause, downtime, witnessed status, bystander CPR.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "pediatrics",
+    "board_age_group": "child",
+    "reference_source": "AHA PALS Guidelines 2020; THAPCA-OH + IH Trials NEJM; AAP Trauma Guidelines"
+  },
+  {
+    "scenario": "Basic science: immunology + transplant\n\nคำถาม: organ rejection mechanisms + immunosuppression",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Rejection cannot be prevented"
+      },
+      {
+        "label": "B",
+        "text": "**Transplant rejection mechanisms + immunosuppression**: (1) **Types of rejection**: - **Hyperacute** (minutes-hours): preformed antibodies (ABO incompatibility, HLA mismatch) → complement + thrombosis; modern era rare (crossmatch screening); treatment: graft removal - **Acute cellular (T-cell mediated)**: days-weeks; T-cells recognize donor MHC; treatable with steroid + ATG; tubulitis + interstitial infiltrate (kidney) - **Acute antibody-mediated (AMR)**: B-cell + antibody mediated; weeks-months; C4d deposition + DSA; harder treatment (plasmapheresis + IVIG + rituximab + bortezomib) - **Chronic rejection** (months-years): combined immune + non-immune; obliterative arteriopathy, fibrosis; harder to reverse; gradual graft dysfunction; (2) **HLA + immune recognition**: - HLA Class I (A, B, C) — most cells - HLA Class II (DR, DQ, DP) — antigen-presenting cells - Direct + indirect alloantigen recognition - Crossmatch testing (CDC + flow + virtual) pre-transplant essential - DSA (donor-specific antibodies) — risk of AMR; (3) **Immunosuppression categories**: a. **Induction** (peri-transplant): - **Antibody therapy**: anti-thymocyte globulin (ATG — polyclonal T-cell depleting), basiliximab (anti-IL-2 receptor), alemtuzumab (anti-CD52, more depleting) - **Steroid bolus**: methylprednisolone b. **Maintenance** (lifelong): - **Calcineurin inhibitors (CNI)**: tacrolimus, cyclosporine — backbone; nephrotoxicity major side effect - **Antimetabolites**: mycophenolate (MMF, MPA) > azathioprine - **Steroids**: prednisone (often tapered to low-dose or stopped) - **mTOR inhibitors**: sirolimus, everolimus — anti-tumor; SE: poor wound healing, pneumonitis, mouth ulcers, hyperlipidemia - **Costimulation blockade**: belatacept (CD80/86) c. **Rejection treatment**: - Acute cellular: pulse steroid + ATG - AMR: plasmapheresis + IVIG + rituximab + bortezomib/daratumumab - Refractory: alemtuzumab; (4) **Side effects of immunosuppression** to manage: - Infection (opportunistic — CMV, PJP, fungal; bacterial; reactivation HBV) - Malignancy (skin, PTLD, increased cancer risk overall) - Cardiovascular (HT, hyperlipidemia, DM) - Renal (CNI nephrotoxicity) - Neurological (tremor, headache, CNI neurotoxicity, PRES) - Hematologic (cytopenias) - Metabolic (NODAT — new-onset DM after transplant) - Bone (osteoporosis from steroid); (5) **Therapeutic drug monitoring**: tacrolimus, cyclosporine, sirolimus, mycophenolate levels; (6) **Tolerance** — holy grail: mixed chimerism, regulatory T cells, donor BM transplant + organ — experimental; clinical trials ongoing; (7) **Long-term**: cancer surveillance, infection prophylaxis, cardiovascular risk, drug interactions awareness; adherence support"
+      },
+      {
+        "label": "C",
+        "text": "No immunosuppression needed"
+      },
+      {
+        "label": "D",
+        "text": "Single agent for life"
+      },
+      {
+        "label": "E",
+        "text": "Cure tolerance achievable for all"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Transplant immunology + immunosuppression** — foundational. **Types of rejection**: 1. **Hyperacute**: minutes-hours; preformed Ab; ABO + HLA mismatch; thrombosis; graft loss — prevented by crossmatch 2. **Acute cellular (TCMR)**: T-cell mediated; days-months; treatable with pulse steroid 3. **Acute antibody-mediated (AMR)**: B-cell + Ab; days-months; harder treatment (PEX, IVIG, rituximab) 4. **Chronic**: months-years; multifactorial; gradual graft loss **HLA Class I (A, B, C)** all nucleated cells. **HLA Class II (DR, DQ, DP)** APCs (B cells, macrophages, dendritic). **Alloantigen recognition**: direct (donor APC presenting donor HLA to recipient T cell) + indirect (recipient APC processing donor antigen). **Pre-transplant testing**: ABO, HLA, PRA (panel reactive antibodies), crossmatch (CDC, flow, virtual), DSA assessment. **Immunosuppression — 3 phases**: 1. **Induction** (peri-op): - ATG (T-cell depleting, polyclonal) - Basiliximab (anti-IL2R, less depleting) - Alemtuzumab (anti-CD52, profound depletion) - Methylprednisolone bolus 2. **Maintenance** (lifelong, 'triple therapy' common): - CNI (tacrolimus > cyclosporine) — backbone - Antiproliferative (mycophenolate > azathioprine) - Steroid (prednisone — often tapered) - Alternatives: mTOR inhibitor (sirolimus, everolimus), belatacept 3. **Rejection treatment**: - Acute cellular: pulse steroid + ATG - AMR: plasmapheresis + IVIG + rituximab ± bortezomib + steroids **Side effect profile** (major considerations): - Tacrolimus: nephrotoxic, neurotoxic, NODAT, HT, tremor, hair loss, hyperK - Cyclosporine: similar + hirsutism, gum hyperplasia - Mycophenolate: GI, leukopenia, anemia, teratogenic - Sirolimus: wound healing impaired, pneumonitis, hyperlipidemia, mouth ulcers - Steroids: HT, DM, osteoporosis, cataract, weight, mood, AVN - Belatacept: PTLD risk (especially EBV-naive recipient) **Therapeutic drug monitoring**: trough levels (tacrolimus, cyclosporine, sirolimus, everolimus); higher targets early post-transplant, lower later. **Tolerance** — operational tolerance without immunosuppression: holy grail; mixed chimerism (Stanford, Mass Gen + others) achieving partial success in selected; not clinical routine yet.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "AST/ASTS Immunosuppression Guidelines; OPTN/UNOS; Halloran PF NEJM"
+  },
+  {
+    "scenario": "Basic science: medical genetics + hereditary cancer syndromes\n\nคำถาม: hereditary cancer syndromes + surgical implications",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cancer is always sporadic"
+      },
+      {
+        "label": "B",
+        "text": "**Hereditary cancer syndromes — surgical implications**: (1) **HBOC (Hereditary Breast Ovarian Cancer) — BRCA1/2**: - Lifetime breast cancer 45-72% (BRCA1) / 45-69% (BRCA2); ovarian 39-44% / 11-17% - Risk-reducing mastectomy (RRM) — reduces breast Ca 90%+ - Risk-reducing salpingo-oophorectomy (RRSO) — at 35-40 (BRCA1) / 40-45 (BRCA2) after childbearing; reduces ovarian Ca > 80% + breast Ca ~ 50% (if premenopausal) - PARP inhibitors (olaparib, talazoparib) — adjuvant high-risk + metastatic - Increased pancreatic + prostate (BRCA2 esp), male breast (BRCA2), melanoma (BRCA2); (2) **Lynch Syndrome (HNPCC) — MLH1, MSH2, MSH6, PMS2, EPCAM**: - Colorectal lifetime 50-80% - Endometrial 40-60%, ovarian, gastric, small bowel, urothelial, brain, sebaceous skin (Muir-Torre) - Surveillance: colonoscopy q1-2 yr from 20-25; gynecologic surveillance; consider prophylactic hysterectomy + BSO after childbearing - Total colectomy with IRA if cancer diagnosed (synchronous + metachronous risk) - Immunotherapy (anti-PD-1 — pembrolizumab) for MSI-H/dMMR cancers — striking responses; (3) **FAP (Familial Adenomatous Polyposis) — APC gene**: - Colorectal cancer near 100% if untreated by 35-45 - Prophylactic total colectomy (with IRA — ileorectal anastomosis) or proctocolectomy with IPAA - Duodenal adenoma + cancer surveillance (EGD with side-viewer) - Desmoid tumor risk (especially attenuated FAP) - Thyroid Ca, brain tumor (Turcot variant), hepatoblastoma, osteoma, fibroma; (4) **MEN1 (Menin)**: - Parathyroid (primary HPT) - Pituitary adenoma - Pancreatic neuroendocrine (gastrinoma, insulinoma, others) - Adrenal, foregut carcinoid - Genetic counseling + screening - Parathyroidectomy + pancreaticoduodenectomy timing case-by-case; (5) **MEN2 (RET)**: - **MEN2A**: medullary thyroid Ca (MTC) + pheochromocytoma + parathyroid - **MEN2B**: MTC + pheo + mucosal neuromas, marfanoid - **Familial MTC** only - Prophylactic thyroidectomy in MEN2A by 5 yr, MEN2B by 1 yr - Pheochromocytoma screening lifelong; (6) **VHL (Von Hippel-Lindau)**: clear cell renal carcinoma, hemangioblastoma (CNS, retina), pheochromocytoma, pancreatic NET, endolymphatic sac tumor — multi-system surveillance + intervention; (7) **NF1 (Neurofibromatosis 1)**: neurofibromas, MPNST risk, pheochromocytoma, optic glioma, etc.; (8) **NF2**: vestibular schwannomas bilateral, meningioma; (9) **TP53 (Li-Fraumeni)**: sarcoma, breast, brain, adrenocortical, leukemia — multi-cancer; intensive surveillance (whole-body MRI); (10) **CDH1 (Hereditary Diffuse Gastric Ca)**: gastric (diffuse-type) + lobular breast — prophylactic total gastrectomy considered + breast surveillance/RRM; (11) **PTEN (Cowden)**: breast, thyroid, endometrial, renal, colon, melanoma — surveillance + selective intervention; (12) **STK11 (Peutz-Jeghers)**: GI hamartomatous polyps, breast, ovarian, pancreatic, cervical Ca; (13) **Genetic counseling + cascade testing of family** — essential"
+      },
+      {
+        "label": "C",
+        "text": "No screening needed"
+      },
+      {
+        "label": "D",
+        "text": "Surgery always avoided"
+      },
+      {
+        "label": "E",
+        "text": "Single approach for all"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Hereditary cancer syndromes** — ~ 5-10% of all cancers; genetic testing increasingly accessible (NGS multi-gene panels). Each syndrome has specific cancer profile + surveillance + risk-reduction options. **NCCN Guidelines for Genetic/Familial High-Risk Assessment** — detailed criteria for testing. Increasingly: 'all-comer' testing in certain cancers (pancreatic, ovarian, triple-negative breast, prostate metastatic) regardless of family history. **Major syndromes** (described above) — surgical implications: 1. **HBOC** (BRCA1/2): RRM, RRSO 2. **Lynch**: extensive colon resection if cancer; prophylactic hysterectomy + BSO after childbearing; intensive surveillance 3. **FAP**: prophylactic colectomy mandatory by 20s; subtotal with IRA vs total proctocolectomy + IPAA; duodenal surveillance 4. **MEN1**: pancreatic + parathyroid surgery timing 5. **MEN2**: prophylactic thyroidectomy in childhood; pheo workup before any surgery 6. **CDH1**: prophylactic total gastrectomy considered; breast surveillance/RRM 7. **VHL**: intervention for selected RCCs (nephron-sparing), hemangioblastoma, pheo 8. **Li-Fraumeni**: cancer-by-cancer; intensive surveillance whole-body MRI **Genetic counseling principles**: - Pre-test counseling: implications, limitations, alternatives - Variant interpretation (pathogenic, likely pathogenic, VUS, benign) — VUS management challenging - Cascade testing of family — important for risk stratification - Reproductive options (PGT — preimplantation genetic testing) - Psychosocial + insurance considerations (GINA US protects against insurance discrimination — health, not life or long-term care) **Polygenic risk scores (PRS)** — emerging for common cancers; combines multiple low-penetrance SNPs; may augment surveillance decisions; not standard yet. **Multi-gene panel testing** — practical efficiency vs single-gene; identifies syndromes beyond what's clinically suspected; manage incidental findings.",
+    "difficulty": "hard",
+    "board_section": "basic_science",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "NCCN Genetic/Familial High-Risk Assessment; ACMG Practice Guidelines; ASCO Genetic Testing"
+  },
+  {
+    "scenario": "Basic science: surgical anatomy — abdominal wall + hernias\n\nคำถาม: abdominal wall anatomy + hernia classification",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Anatomy not relevant"
+      },
+      {
+        "label": "B",
+        "text": "**Abdominal wall anatomy + hernia types**: (1) **Layers** (outside to inside): skin, subcutaneous (Camper's fascia + Scarpa's fascia), external oblique aponeurosis, internal oblique, transversus abdominis, transversalis fascia, peritoneum; (2) **Rectus abdominis sheath**: above arcuate line — anterior (EO + ½ IO) + posterior (½ IO + TA); below arcuate line — all anterior (rectus directly on transversalis fascia + peritoneum) — explains lower abdominal hernias predilection; (3) **Linea alba** midline fibrous raphe; **linea semilunaris** lateral border of rectus; **arcuate line (semicircular line of Douglas)** ~ midway between umbilicus + pubis; (4) **Inguinal canal anatomy**: - Floor (posterior wall): transversalis fascia + conjoint tendon (medial) - Roof: internal oblique + transversus abdominis (conjoint) - Anterior: external oblique aponeurosis - Posterior: transversalis - Contents: spermatic cord (M) / round ligament (F) - **Hesselbach's triangle**: medial — rectus, inferior — inguinal ligament, lateral — inferior epigastric vessels; (5) **Hernias — definitions**: - **Reducible**: contents return to abdomen - **Incarcerated**: stuck, irreducible, no ischemia - **Strangulated**: ischemic, surgical emergency - **Sliding**: part of sac is wall of viscus; (6) **Types of abdominal wall hernias**: a. **Inguinal**: - Indirect (lateral to inferior epigastric vessels — through deep ring, follows spermatic cord) — congenital patent processus vaginalis; common in pediatric + young adult - Direct (medial, through Hesselbach's triangle) — acquired weakness; older - Femoral (below inguinal ligament, through femoral canal) — more in women; high incarceration risk → repair upon diagnosis b. **Umbilical** — congenital in children (usually closes by 5 yr); acquired in adults (pregnancy, obesity, ascites); repair if symptomatic or > 1-1.5 cm c. **Epigastric** — midline above umbilicus through linea alba defect; small fat-only often; repair if symptomatic d. **Spigelian** — at semilunar line below arcuate line; rare; high incarceration risk → repair e. **Lumbar** (Petit, Grynfeltt triangles) — rare; congenital or acquired f. **Incisional** — through prior surgical scar (10-20% of laparotomies); repair with mesh; component separation for large defects g. **Parastomal** — adjacent to stoma; common; complex repair h. **Perineal** — through pelvic floor; post-pelvic surgery or rare congenital i. **Internal hernias** (e.g., Petersen's post-RYGB) — no abdominal wall defect, mesenteric defect inside; (7) **Surgical principles**: - Repair indication: symptomatic, complications, asymptomatic for incarceration-prone (femoral, Spigelian) - Mesh > primary suture in adults for lower recurrence - Pediatric: high ligation, NO mesh - Approach: open (Lichtenstein) vs laparoscopic (TEP, TAPP); robotic; - Component separation (anterior — Ramirez; posterior — TAR transversus abdominis release) for large complex ventral hernias - Mesh placement: onlay, sublay (preferred for ventral — retro-rectus), inlay (rare), preperitoneal/TEP (inguinal)"
+      },
+      {
+        "label": "C",
+        "text": "All hernias same management"
+      },
+      {
+        "label": "D",
+        "text": "No anatomy review needed"
+      },
+      {
+        "label": "E",
+        "text": "Children always need mesh"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Abdominal wall anatomy + hernias** — surgical staple. Foundation: anatomic layers (skin → subQ → muscles + aponeuroses → transversalis fascia → peritoneum). Key structures: rectus sheath (varies above/below arcuate line), inguinal canal, linea alba, linea semilunaris, Hesselbach's triangle. **Hernia types**: 1. **Inguinal** (most common): indirect (lateral to epigastric vessels), direct (medial, Hesselbach), femoral (below inguinal ligament — repair always, high incarceration) 2. **Umbilical** (children + adults) 3. **Epigastric** (midline above umbilicus) 4. **Spigelian** (semilunar line — high incarceration) 5. **Lumbar** (rare) 6. **Incisional** (10-20% post-laparotomy) 7. **Parastomal** (adjacent to stoma) 8. **Perineal** 9. **Internal hernias** (mesenteric defects, e.g., post-RYGB Petersen's) **Surgical approaches**: - **Open Lichtenstein** (tension-free mesh) — gold standard inguinal - **Laparoscopic TEP** (totally extraperitoneal) or **TAPP** (transabdominal preperitoneal) — equal/better outcomes (chronic pain, bilateral repair, recurrent); lower learning curve - **Robotic** — increasing - **Component separation** (anterior Ramirez, posterior TAR) — for large complex ventral - **Mesh placement options**: onlay (top), sublay/retromuscular (preferred), inlay (rare), preperitoneal **Modern principles**: - Tension-free mesh for adult primary + incisional (lower recurrence) - Light-weight mesh — less chronic pain - Bioprosthetic (Strattice, biological) — contaminated field selectively - Avoid mesh in pediatric (growth) - Watchful waiting acceptable for asymptomatic minimally symptomatic inguinal in elderly (Fitzgibbons RCT) - Repair always for femoral, Spigelian (high incarceration) **Complications**: chronic pain (10-15%), recurrence (1-5%), seroma, infection, mesh complications (migration, erosion, infection, fistula). **Quality measures**: AHSQC (Americas Hernia Society Quality Collaborative), EHS standards.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "International HerniaSurge Guidelines 2018; SAGES Guidelines; Skandalakis Surgical Anatomy"
+  },
+  {
+    "scenario": "Basic science: surgical pharmacology + drug interactions\n\nคำถาม: perioperative medication management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue all medications"
+      },
+      {
+        "label": "B",
+        "text": "**Perioperative medication management — specific decisions**: (1) **Antihypertensives**: - **ACE-I / ARB**: HOLD on day of surgery — intraoperative hypotension; resume post-op when hemodynamically stable - **Beta-blocker**: CONTINUE if chronic; DO NOT initiate new (POISE — increased death + stroke) - **Calcium channel blocker**: continue - **Diuretic**: hold day of surgery typically (volume + electrolyte) - **Clonidine** (α2-agonist): continue (withdrawal rebound HTN); (2) **Antidiabetic**: - **Metformin**: usually OK day before; hold day of surgery for major (lactic acidosis risk if CKD); - **Sulfonylureas**: hold day of surgery (hypoglycemia) - **SGLT2 inhibitor (canagliflozin, empagliflozin, dapagliflozin)**: HOLD 3-4 days pre-op (DKA risk — euglycemic DKA can occur with normal glucose; FDA warning) - **GLP-1 (semaglutide, liraglutide, tirzepatide)**: HOLD 1 week pre-op for daily, 2 weeks for weekly (delayed gastric emptying → aspiration risk during anesthesia — ASA + ASRA guidance 2023) - **DPP-4 inhibitor (sitagliptin)**: usually continue - **Insulin**: long-acting reduced dose night before + day of, short-acting hold day of, sliding scale + correction; (3) **Anticoagulant + antiplatelet**: see prior question on perioperative anticoagulation; (4) **Statin**: CONTINUE — perioperative cardiovascular protection; (5) **Hormonal**: - **OCP, HRT**: VTE risk — consider holding 4 weeks pre-op for major + immobilization vs continuing in lower-risk - **Tamoxifen, AI**: continue (long half-life, low impact); - **GnRH agonist**: continue; (6) **Psychiatric**: - **SSRIs**: continue (rebound depression); some bleeding risk - **SNRIs**: continue - **MAOIs**: HOLD 2 weeks pre-op if possible (severe drug interaction with sympathomimetics, meperidine, opioid) - **TCAs**: continue typically - **Lithium**: hold day of surgery + monitor electrolyte (renal); - **Antipsychotics**: continue (avoid withdrawal); (7) **Antiepileptics**: continue (perioperative seizure prevention); IV equivalent if NPO; (8) **Immunosuppressants** (transplant, autoimmune): continue (avoid rejection / flare); stress-dose steroid if chronic; (9) **Steroids**: - Stress dose if HPA suppression suspected (chronic ≥ 20 mg prednisone or equivalent × 3 weeks within last year — debated, modern less aggressive per Marik) - Continue or supplement during surgery + post-op taper; (10) **Herbal supplements**: - Hold 1-2 weeks pre-op: ginkgo, garlic, ginseng, ginger (bleeding); St. John's wort (drug interactions); kava, valerian (sedation); ephedra (sympathomimetic - banned); echinacea (immune modulation); (11) **NSAIDs**: hold 5-7 days pre-op for elective; aspirin individualized; (12) **Antiretrovirals (HIV)**: continue (avoid resistance); coordinate with ID + pharmacist for drug interactions; (13) **Opioids** (chronic use, addiction recovery): continue baseline + multimodal adjuncts; addiction medicine consult; (14) **Pre-op assessment + medication reconciliation** essential; pharmacist consultation in complex polypharmacy"
+      },
+      {
+        "label": "C",
+        "text": "Stop all medications 4 weeks before"
+      },
+      {
+        "label": "D",
+        "text": "Start all medications day of surgery"
+      },
+      {
+        "label": "E",
+        "text": "No medication review needed"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Perioperative medication management** — common source of errors; impacts outcomes. **Categories** (continue, hold, modify): 1. **HOLD** day of surgery: ACE-I/ARB, sulfonylureas, SGLT2, GLP-1 (1-2 weeks), diuretics (variable), most NSAIDs (elective), warfarin (5 days), DOACs (1-2 days based on procedure), oral hypoglycemics (mostly day of) 2. **CONTINUE** through surgery: beta-blocker (if chronic), statin, ACE-I/ARB sometimes for HF (newer evidence — controversy), SSRIs, antiepileptics, antipsychotics, immunosuppressants, antiretrovirals, calcium channel blockers, antiparkinsonian (don't withdraw — worsening symptoms) 3. **MODIFY**: insulin (reduce long-acting + hold short-acting + sliding scale day of), steroids (stress dose if HPA-suppressed) **Key specifics — recent updates**: - **SGLT2 inhibitors**: HOLD 3-4 days pre-op due to euglycemic DKA risk (FDA warning + clinical case series) - **GLP-1 agonists**: HOLD 1 week for daily formulations, 2 weeks for weekly (semaglutide, dulaglutide, tirzepatide) due to delayed gastric emptying + aspiration risk (ASA + ASRA 2023 guidance) - **Beta-blocker**: continue if chronic; DO NOT INITIATE NEW perioperatively (POISE trial NEJM 2008 — increased death + stroke) - **Aspirin**: continue except for high-bleed surgery (intracranial, posterior chamber eye, transurethral prostate); POISE-2 supported continuation generally **Steroid stress dose**: traditional approach for chronic ≥ 20 mg prednisone or equivalent × 3 weeks within last year — debated; modern approach: hydrocortisone 50-100 mg pre-op + post-op taper; some prefer simpler 'continue usual dose' approach with monitoring (Marik + others suggested over-treatment historically). **Herbal supplements**: many affect bleeding (gingko, garlic, ginseng, ginger), sedation (kava, valerian), HPA (ginseng, licorice), drug interactions (St. John's wort) — hold 1-2 weeks pre-op. **Anesthesia + drug interactions**: MAOI + sympathomimetic + meperidine (serotonin syndrome) — hold MAOI 2 weeks if possible; antiretroviral + opioid metabolism considerations; pharmacist consultation for polypharmacy. **Reconciliation** at admission + discharge — important to prevent omission + duplication. **Patient education** — clear instructions for what to take/not take morning of surgery.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "ASA Perioperative Medication Management; ASRA + ASA GLP-1 + SGLT2 Statements 2023; ACCP Perioperative Anticoagulation"
+  },
+  {
+    "scenario": "Basic science: trauma evaluation — primary + secondary survey\n\nคำถาม: ATLS principles + trauma evaluation",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No systematic approach needed"
+      },
+      {
+        "label": "B",
+        "text": "**ATLS (Advanced Trauma Life Support) — systematic approach**: (1) **Pre-arrival**: communication with EMS, team activation, prepare equipment, blood products, OR notification; (2) **Primary survey ABCDE — identify + treat life-threats simultaneously**: - **A — Airway** with cervical spine protection: assess patency, talking = patent; obstructed → jaw thrust, suction, oral/nasal airway, supraglottic, intubation (rapid sequence with C-spine inline immobilization), surgical airway last resort; - **B — Breathing**: inspect, palpate, percuss, auscultate; identify life-threats: tension pneumothorax (needle/finger decompression — 5th ICS anterior axillary), open pneumothorax (3-sided occlusive dressing), massive hemothorax (chest tube > 1.5L initial OR > 200 mL/hr × 4h → OR), flail chest (positive pressure ventilation if respiratory failure); - **C — Circulation** + hemorrhage control: assess pulse, capillary refill, mental status, BP; identify hemorrhage sources: external (direct pressure, tourniquet, hemostatic gauze), thoracic (chest tube), abdominal (FAST), pelvic (binder + angio + REBOA), retroperitoneal, long bone fractures (splinting + ortho); 2 large-bore IV (16-18g) or IO; type & cross; balanced resuscitation (1:1:1 PRC:FFP:Plt early in massive bleed per PROPPR); permissive hypotension (no TBI); TXA early (CRASH-2 + CRASH-3); MTP activation; calcium (citrate binding) - **D — Disability**: GCS (E4V5M6 = 15), pupil (size + reactivity), gross motor; head trauma signs - **E — Exposure + environmental**: completely undress, log roll, look for occult injuries (back, axilla, perineum); rewarm aggressively (hypothermia worsens coagulopathy + acidosis = lethal triad); avoid cold IV fluid; (3) **Adjuncts to primary survey**: FAST exam (or eFAST including lung), CXR, pelvis XR, ECG, ABG, lactate, type + cross, urinary catheter (if no urethral injury — blood at meatus, high-riding prostate), NG/OG; (4) **Reassess + identify undiagnosed life threats**; (5) **Secondary survey** — head-to-toe systematic exam + AMPLE history (Allergies, Medications, Past, Last meal, Events); only after primary stabilized; identify all injuries — log roll + back exam, head + maxillofacial, neck + C-spine, chest, abdomen + pelvis, perineum + rectal, musculoskeletal, neurological detailed; (6) **Definitive care + transfer** — to appropriate trauma center if needed; do NOT delay definitive care for prolonged workup; OR + IR + ICU coordination; (7) **Tertiary survey** — within 24h, identifies missed injuries (5-10% miss rate without tertiary); (8) **Special populations**: - **Pediatric**: weight-based dosing, anatomical differences, vital sign norms differ, NAT consideration - **Geriatric**: under-triage common due to compensated initial vitals; lower threshold for trauma center - **Pregnant**: maternal first (best for fetus); left lateral tilt (avoid IVC compression > 20 weeks); fetal monitoring; Rh status (Rhogam) - **Anticoagulated**: reversal (PCC, TXA, FFP); reverse first then evaluate; (9) **Damage control resuscitation (DCR) + damage control surgery (DCS)** principles when severely injured; (10) **Communication + handoff** structured (SBAR); patient + family disclosure"
+      },
+      {
+        "label": "C",
+        "text": "Random workup"
+      },
+      {
+        "label": "D",
+        "text": "Discharge all trauma"
+      },
+      {
+        "label": "E",
+        "text": "Single specialty only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**ATLS** — global standard for trauma initial evaluation + management. Systematic ABCDE primary survey identifies + treats life threats simultaneously; secondary survey for complete injury identification; tertiary survey within 24h for missed injuries (5-10% miss rate). **Primary survey life-threats**: - **Airway**: obstruction → maneuvers → airway adjuncts → intubation → surgical airway - **Breathing**: tension pneumothorax (decompress), open pneumothorax (3-sided dressing + chest tube), massive hemothorax (chest tube; > 1500 mL or > 200 mL/h × 4h → OR), flail chest (PPV if respiratory failure), cardiac tamponade (pericardiocentesis + thoracotomy) - **Circulation**: external bleeding control (pressure, tourniquet, hemostatic), source identification (FAST, CXR, pelvis), IV access (2 large bore), balanced resuscitation, TXA, MTP, calcium - **Disability**: GCS, pupils, gross motor - **Exposure**: undress, log roll, rewarm **Adjuncts**: FAST/eFAST, CXR, pelvis, ECG, ABG, lactate, type + cross, Foley (if no urethral injury), NG. **Pelvic binder** for unstable pelvic fracture before any imaging — temporizes hemorrhage. **REBOA** (Resuscitative Endovascular Balloon Occlusion of Aorta) — emerging adjunct for non-compressible torso hemorrhage in extremis — Zone 1 (above diaphragm) or Zone 3 (below renal); bridge to definitive control. **Damage control resuscitation (DCR)**: balanced products 1:1:1 (PROPPR), permissive hypotension (no TBI), TXA early (CRASH-2 NEJM 2010 within 3h; CRASH-3 NEJM 2019 within 3h of mild-moderate TBI), avoid lethal triad (coagulopathy + hypothermia + acidosis), calcium replacement. **Damage control surgery (DCS)**: abbreviated initial operation — control hemorrhage + contamination, temporary closure → ICU resuscitation → definitive 24-48h. **Trauma center matters**: outcomes 20-25% better in dedicated trauma centers (MacKenzie NEJM 2006). **Special populations**: pediatric (weight-based, family centered), geriatric (under-triage risk, anticoagulation, lower threshold to trauma center, modified Frailty Index), pregnant (resuscitate mom first, left lateral tilt, Rh status), anticoagulated (reverse early).",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "ATLS 10th Edition; ACS Committee on Trauma Resources for Optimal Care"
+  },
+  {
+    "scenario": "Basic science: ICU + nutritional support\n\nคำถาม: critical care nutrition principles",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No nutrition needed in ICU"
+      },
+      {
+        "label": "B",
+        "text": "**Critical Care Nutrition (ASPEN/SCCM Guidelines)**: (1) **Initiation timing**: - **Early enteral nutrition (EN) within 24-48h** of ICU admission if hemodynamically stable + no contraindication - **Parenteral nutrition (PN)** only if EN contraindicated / insufficient ≥ 7 days (no benefit + harm with early PN — EPaNIC trial); (2) **Routes**: - **EN**: NG, NJ (post-pyloric — useful in gastroparesis, high aspiration risk, pancreatitis), gastrostomy, jejunostomy - **PN**: central (peripheral if short-term + low osmolarity); (3) **Caloric target**: - Early phase (acute, days 1-3): permissive underfeeding 50-70% (recent evidence — full feeds may worsen outcomes by overfeeding stressed metabolism) - Late phase: full feeds 25-30 kcal/kg/day; - Indirect calorimetry gold standard if available - Avoid hyperglycemia + overfeeding-associated complications (hepatic steatosis, hypertriglyceridemia, CO2 retention); (4) **Protein**: higher need in critical illness — 1.2-1.5 g/kg/day (up to 2 g/kg in burns, multi-trauma, CRRT) — preserve lean body mass; (5) **Composition**: - Carb: 40-60% of calories - Fat: 25-30% (including essential FA — linoleic, α-linolenic) - Standard polymeric formulas — most patients - Specialty: - High-protein - Concentrated (fluid restriction) - Fiber-containing - Renal-specific (low K, PO4, fluid) - Immunonutrition (arginine, omega-3 PUFA, RNA nucleotides — Impact, Oxepa) — selected (elective major GI cancer surgery shows benefit; mixed in critical care — controversial in sepsis); (6) **Electrolyte management**: monitor + adjust (Na, K, PO4, Mg) — refeeding syndrome prevention; (7) **Micronutrients + vitamins**: thiamine (especially before glucose load), vitamin D + others as deficient; selenium, zinc; antioxidants — RCT evidence mixed; (8) **Glycemic control**: target 140-180; avoid hyper + hypoglycemia (NICE-SUGAR — strict glycemic control 80-110 increased mortality); (9) **Gastric residual volumes (GRV)** — historically used to assess tolerance; recent evidence: NOT necessary for routine EN tolerance check (REGANE trial — outcomes not different with vs without GRV monitoring); promotility (metoclopramide, erythromycin short-term) if intolerance; (10) **Aspiration prevention**: head of bed 30-45°, postpyloric feeding if at risk, ETT cuff pressure adequate, monitor for high gastric residuals selectively; (11) **Constipation**: laxatives, prokinetics, bowel regimen; (12) **Refeeding syndrome**: severely malnourished — phosphate, K, Mg drops + thiamine deficiency → cardiac + neurological dysfunction; prevent: slow advancement + thiamine + electrolyte replacement; (13) **Special populations**: - Burns: hypermetabolic; high protein + calorie - Trauma: aggressive nutrition - Sepsis: early enteral, hypocaloric early phase - AKI/CRRT: protein loss higher with CRRT (1.5-2.5 g/kg) - Liver failure: balanced (don't restrict protein) - Pancreatitis: early enteral (NJ tube past leak); reduces complications + mortality - Obesity: hypocaloric, high protein (1.5-2 g/kg ideal body weight); (14) **Discharge transition**: oral intake, oral supplements, home tube feeding, home TPN if needed; outpatient nutritional follow-up"
+      },
+      {
+        "label": "C",
+        "text": "TPN for all"
+      },
+      {
+        "label": "D",
+        "text": "NPO indefinitely"
+      },
+      {
+        "label": "E",
+        "text": "Single formula for all patients"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Critical Care Nutrition (ASPEN/SCCM 2016 Guidelines + updates)** — important but historically under-prioritized. **Principles**: 1. **Early enteral nutrition (EN)** within 24-48h of ICU admission if stable + no contraindication — preserves gut barrier, reduces translocation, immune function, infection 2. **Parenteral nutrition (PN)** — only if EN insufficient/contraindicated ≥ 7 days; EPaNIC trial (NEJM 2011) showed early PN harmful (over-feeding, infection); 3. **Caloric target**: phase-dependent — early hypocaloric, advance later 4. **Protein target**: higher (1.2-1.5 g/kg, up to 2 g/kg in burns/CRRT) — preserve lean body mass during catabolic state 5. **Glycemic control**: 140-180 (NICE-SUGAR — strict harmful) 6. **Gastric residual volumes**: not routinely needed (REGANE) 7. **Aspiration prevention**: HOB 30-45°, postpyloric for high-risk **Specialty considerations**: - Pancreatitis: early enteral (PYTHON trial NEJM 2014; EarlyNJ studies) — reduces complications - Burns: hypermetabolic — high protein + calorie - Sepsis: early enteral, hypocaloric early - Obesity: hypocaloric + high protein per ideal body weight - Renal: protein NOT restricted in CRRT (high loss); restrict K, PO4 per renal function - Liver: don't restrict protein; balanced **Refeeding syndrome**: in severely malnourished resuming nutrition → cells uptake K, Mg, PO4 + thiamine deficiency → cardiac arrhythmia, respiratory failure, neurologic; prevention: slow advance + thiamine pre-feed + monitor electrolytes + replace. **Immunonutrition** (arginine, ω-3 PUFA, nucleotides): - Elective major GI cancer surgery — benefit (Drover meta-analysis Ann Surg) - Critical illness/sepsis — controversial; some signal harm with arginine in septic shock; case-by-case **Glutamine** supplementation in ICU — REDOXS (NEJM 2013) showed harm with high-dose IV glutamine — discontinue routine use. **Selenium + antioxidants** — mixed evidence in critical care; not routine. **Indirect calorimetry** — gold standard for energy expenditure measurement when available + feasible; predictive equations (Harris-Benedict, Mifflin, ASPEN) widely used. **Discharge transition**: oral intake assessment, oral supplements, home tube feeding, home TPN if indicated; outpatient nutrition follow-up.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "ASPEN/SCCM Critical Care Nutrition Guidelines 2016; ESPEN ICU Guidelines; Casaer MP et al. NEJM 2011 (EPaNIC)"
+  },
+  {
+    "scenario": "Basic science: surgical microbiology — antimicrobial stewardship\n\nคำถาม: antibiotic resistance + stewardship in surgery",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Use broadest antibiotic always"
+      },
+      {
+        "label": "B",
+        "text": "**Antimicrobial Stewardship — surgical perspective**: (1) **Why stewardship**: - Resistance increasing globally (WHO priority — top 10 health threats) - C. difficile infection (antibiotic exposure major risk) - Cost - Pharmacy + ID team integration; (2) **Stewardship principles**: a. **Right drug, right dose, right duration**: - Narrow spectrum when organism known - Broad-spectrum empirically when severe + then de-escalate per culture - Dose for site (some abscesses need high dose) + patient (renal, hepatic, weight) - Shortest effective duration b. **De-escalation** when culture + sensitivity available c. **Source control** — surgical, percutaneous drainage, removal of infected device d. **Pharmacokinetic / pharmacodynamic considerations**: - Time-dependent (β-lactams): time above MIC critical — extended infusion or continuous - Concentration-dependent (aminoglycoside, fluoroquinolone): peak/MIC ratio - AUC/MIC (vancomycin, linezolid); (3) **Common resistant organisms in surgical patients**: a. **MRSA** (Methicillin-Resistant Staph aureus): - SSI, IV catheter infections, pneumonia - Vancomycin, daptomycin, linezolid, ceftaroline, tedizolid - Decolonization protocols (mupirocin nasal + chlorhexidine bath) reduces SSI b. **VRE** (Vancomycin-Resistant Enterococcus): - Less virulent typically but limited options - Linezolid, daptomycin, tigecycline c. **ESBL-producers** (Extended-Spectrum β-Lactamase) — E. coli, Klebsiella: - Resist most cephalosporins + penicillins - Carbapenems (meropenem, ertapenem, imipenem), pip-tazo (selected), ceftolozane-tazobactam, ceftazidime-avibactam d. **CRE / CPE** (Carbapenem-Resistant Enterobacterales, Carbapenemase-Producing Enterobacterales): - Limited options: ceftazidime-avibactam, meropenem-vaborbactam, imipenem-relebactam, eravacycline, plazomicin, polymyxin (last resort, nephrotoxic) e. **Pseudomonas aeruginosa**: - Intrinsic resistance + acquired - Pip-tazo, cefepime, ceftazidime, meropenem, levofloxacin, aminoglycoside, ceftolozane-tazobactam f. **MDR Acinetobacter**: - Carbapenem-resistant common; very limited; colistin, tigecycline, sulbactam, eravacycline g. **Stenotrophomonas maltophilia**: - TMP-SMX first-line h. **Candida**: - Fluconazole (susceptible — albicans, parapsilosis often) - Echinocandin (caspofungin, micafungin, anidulafungin) — resistant Candida, severe - C. auris emerging multi-drug resistant; (4) **High-risk surgical populations**: prolonged hospitalization, prior antibiotic exposure, ICU, immunosuppressed, transplant, traveled from endemic regions; (5) **Stewardship implementation**: - Antimicrobial Stewardship Program (ASP) — required by Joint Commission + Medicare - Prospective audit + feedback - Formulary restriction + pre-authorization - Education - Surveillance + reporting - Order sets + clinical decision support - De-escalation protocols - IV-to-oral conversion - Allergy delabeling - C. difficile prevention bundles"
+      },
+      {
+        "label": "C",
+        "text": "No oversight needed"
+      },
+      {
+        "label": "D",
+        "text": "Same antibiotic for all infections"
+      },
+      {
+        "label": "E",
+        "text": "Avoid culture-directed therapy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Antimicrobial stewardship** — central to modern infectious disease + surgical practice. WHO top 10 global health threats includes antimicrobial resistance. Drivers: overuse, misuse, broad-spectrum overreliance, agriculture, lack of new antibiotics. **5 Rs of antibiotic use**: 1. **Right diagnosis** — culture before antibiotic when feasible 2. **Right drug** — narrow when organism known 3. **Right dose** — patient-specific 4. **Right duration** — shortest effective (recent evidence supports shorter courses for many infections; e.g., 5-7 days for uncomplicated pneumonia, abdominal infection if source control adequate) 5. **Right route** — IV-to-oral conversion early when patient stable + absorption adequate **De-escalation** — switch from broad to narrow when sensitivity known. **Source control** — surgical/IR drainage, debridement, device removal — critical; antibiotic alone often inadequate. **Common resistant organisms (priority)**: 1. **ESKAPE** pathogens — common nosocomial multi-drug resistant: - Enterococcus (VRE) - Staphylococcus aureus (MRSA) - Klebsiella pneumoniae (ESBL, CRE) - Acinetobacter baumannii (MDR/XDR) - Pseudomonas aeruginosa (MDR) - Enterobacter species 2. **Candida** including auris (emerging MDR) **New antibiotics**: - Ceftolozane-tazobactam (Pseudomonas, ESBL) - Ceftazidime-avibactam (CRE, KPC) - Meropenem-vaborbactam (CRE) - Imipenem-relebactam - Eravacycline (CRE, Acinetobacter) - Cefiderocol — siderophore cephalosporin (CRE, Acinetobacter) - Tedizolid (MRSA, VRE) - Delafloxacin **Stewardship program elements** (CDC core elements): leadership commitment, accountability, drug expertise, action (prospective audit + feedback, formulary), tracking, reporting, education. **MRSA decolonization** (CHG bathing + mupirocin nasal) — reduces SSI + MRSA infections in select surgical populations (cardiac, orthopedic). **Allergy delabeling** — important: > 90% of self-reported penicillin allergies are NOT true IgE allergies; delabeling enables use of effective + narrow first-line agents. **C. difficile prevention**: minimize broad-spectrum + duration; contact precautions; hand hygiene (soap > alcohol for C. diff spores); environmental cleaning.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "IDSA Antimicrobial Stewardship Guidelines 2016; CDC Core Elements; WHO Global Action Plan AMR"
+  },
+  {
+    "scenario": "Basic science: surgical decision-making + evidence-based medicine\n\nคำถาม: evidence-based surgery + clinical practice guidelines",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Personal preference only"
+      },
+      {
+        "label": "B",
+        "text": "**Evidence-Based Surgery — principles + application**: (1) **Hierarchy of evidence** (highest → lowest): - Systematic reviews + meta-analyses of RCTs - RCTs (large, well-designed) - Cohort studies (prospective > retrospective) - Case-control studies - Case series - Case reports - Expert opinion / textbook (NB: hierarchy not absolute — well-conducted observational with large effect > poor RCT); (2) **Surgical evidence challenges**: - RCTs in surgery harder than medical (sham surgery ethics, learning curve, surgeon variability) - Crossover difficult - Equipoise variable - Blinding nearly impossible - Quality variation - Volume + experience effects; (3) **Clinical Practice Guidelines (CPG)** — synthesize evidence: - **GRADE methodology**: assess quality of evidence (high, moderate, low, very low) + strength of recommendation (strong vs conditional/weak) - Major surgical societies: ACS, SAGES, ASCRS, AAST, EAST, WSES, NCCN, SVS, AHPBA, ESC, etc. - International + regional adaptations; (4) **Apply evidence to patient** — EBM cycle: - **Ask** focused clinical question (PICO: Patient, Intervention, Comparison, Outcome) - **Acquire** best evidence - **Appraise** validity + relevance - **Apply** to patient (considering values + circumstances) - **Assess** + reflect on outcomes; (5) **Shared decision-making**: - Patient preferences + values matter - Especially for elective / quality-of-life decisions - Decision aids (Ottawa, Mayo Choice) - Outcomes-focused conversation; (6) **Variation in practice**: - Substantial unwarranted variation in surgical decisions (Dartmouth Atlas) - Quality improvement to reduce variation when evidence clear; (7) **Quality improvement**: - ACS NSQIP — risk-adjusted outcomes benchmark - STS, MBSAQIP, MIPS, others - PDSA cycles, FMEA, RCA - Audit + feedback (Cochrane evidence supports); (8) **Research integration**: - Clinical trial enrollment - Translational research - Implementation science (closing evidence-to-practice gap — Cochrane EPOC); (9) **Critical appraisal**: - Internal validity: bias, confounding, randomization, blinding, ITT analysis - External validity: generalizability to your patient population - Magnitude of effect + clinical relevance - Cost-effectiveness; (10) **Beyond efficacy — patient-reported outcomes (PROs)**: - Quality of life - Functional outcomes - Patient satisfaction - Long-term implications - Capturing what matters to patients"
+      },
+      {
+        "label": "C",
+        "text": "Ignore patient preferences"
+      },
+      {
+        "label": "D",
+        "text": "Use only personal experience"
+      },
+      {
+        "label": "E",
+        "text": "No quality measurement needed"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Evidence-Based Surgery** — synthesis of best evidence + clinical expertise + patient values. **Hierarchy of evidence**: meta-analysis > RCT > cohort > case-control > case series > case report > expert opinion. Not absolute — methodologic quality + applicability also matter. **GRADE methodology** (Grading of Recommendations Assessment, Development + Evaluation) — used by WHO + many guidelines: assess quality (high → moderate → low → very low) + strength (strong / conditional) of recommendations. **Surgical research challenges**: - RCT difficult (sham surgery ethics, learning curve, surgeon variability, blinding hard) - Observational + registry data often important - IDEAL framework (Idea → Development → Exploration → Assessment → Long-term study) for surgical innovation evaluation **EBM cycle (PICO + 5 A's)**: 1. Ask focused question (PICO) 2. Acquire evidence 3. Appraise critically 4. Apply to patient 5. Assess + reflect **Shared decision-making**: - Patient values + preferences part of EBM definition - Decision aids - Especially important: elective, quality-of-life, preference-sensitive conditions (e.g., BPH treatment, prostate cancer, knee replacement, bariatric surgery) **Critical appraisal**: - Internal validity: randomization, allocation concealment, blinding, ITT, attrition - External validity: generalizability - Effect size + confidence interval - NNT (number needed to treat) - Cost-effectiveness **Major guideline organizations**: ACS, SAGES, ASCRS, AAST, EAST, WSES, NCCN, SVS, AHPBA, ESC, ESVS, AHA/ACC, ATS, RCOG, ACOG, AAP. **Quality improvement**: - ACS NSQIP — gold standard for surgical outcomes benchmarking - STS Database (cardiothoracic) - MBSAQIP (bariatric) - MIPS (Medicare quality reporting) - Process measures (SCIP, WHO checklist) - Outcomes measures - Patient-reported outcomes (PROs) **Implementation science**: closing evidence-practice gap — getting proven interventions into routine practice. Cochrane EPOC (Effective Practice + Organization of Care). **Volume-outcome relationship**: higher-volume surgeons + hospitals → better outcomes for complex procedures (Whipple, esophagectomy, hepatectomy, complex cardiac); regionalization of complex surgery debated.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "Sackett DL et al. (EBM); Cochrane Handbook; GRADE Working Group; ACS Clinical Congress Education"
+  },
+  {
+    "scenario": "ระบบ EMS / ethics: organ donation\n\nคำถาม: organ donation + end-of-life",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Avoid all organ donation discussions"
+      },
+      {
+        "label": "B",
+        "text": "**Organ donation — modern approach**: (1) **Types of donation**: a. **Deceased donor**: - **Donation after brain death (DBD)** — most common - **Donation after circulatory death (DCD)** — increasing globally - **Tissue donation** — corneas, skin, bone, heart valves — wide donor pool (vs solid organ stricter); b. **Living donor** — kidney (most common), liver lobe, lung lobe, small bowel segment, pancreas segment; (2) **Brain death determination**: - Clinical criteria (irreversible cessation of all brain function): - Cause of coma known + irreversible - Absence of confounders (hypothermia, drugs, metabolic) - Coma without response - Absent brainstem reflexes (pupillary, corneal, vestibulo-ocular, gag, cough) - Apnea test positive (no respiratory drive with PaCO2 > 60) - Confirmatory tests if needed (EEG, cerebral blood flow study, brain death angiogram); (3) **DCD (Donation after Circulatory Death)**: - Donor not brain-dead but has irrecoverable injury + decision to withdraw life support - Withdrawal in OR or ICU; declaration of death after circulatory cessation (5 min asystole typical) - Warm ischemia time minimized for organ recovery - Expanding donor pool — outcomes good in selected (kidney, liver, lung, heart with NRP — normothermic regional perfusion); (4) **Organ procurement organizations (OPO)**: - Coordinate donor evaluation + family approach + organ allocation - Independent from medical team caring for potential donor (separation of duties); (5) **Family approach** — best practice: - Compassionate, after death declaration / family understanding of prognosis - Specialized requesters (OPO coordinators) trained - Right to refuse respected; not coerced - Discuss patient's wishes (donor card, advance directive, organ donor registry); (6) **Consent**: - Opt-in (most countries — US) — explicit consent required - Opt-out (presumed consent — Spain, Austria, others) — higher donor rates - Family may override registered donor wishes (varies by jurisdiction); (7) **Allocation**: - UNOS / OPTN in US (similar systems globally — Eurotransplant, Australia/NZ ANZDATA, etc.) - Algorithms balance: medical urgency, time on list, blood type/HLA matching, geographic distance, pediatric priority - Special considerations: HCC exception (MELD), Status 1A for fulminant liver failure, etc.; (8) **Living donor**: - Evaluation: medical, psychological, social, financial - Donor advocate / independent assessment - Risks: surgical complications, long-term (kidney function decline modest, but lifelong follow-up needed) - Donor protection — primary goal; (9) **Special situations**: - Anencephalic newborn donation — controversial - Death by neurologic criteria in children - Pregnant donor; (10) **Increase donation**: - Public education + awareness - Family discussions - Donor registry - Required request laws - Routine notification of OPO - Donor management protocols; (11) **Ethics**: separation of donor + recipient care teams, dead donor rule, no payment for organs (with limited exceptions in some countries), pediatric considerations"
+      },
+      {
+        "label": "C",
+        "text": "Sell organs commercially"
+      },
+      {
+        "label": "D",
+        "text": "Avoid family input"
+      },
+      {
+        "label": "E",
+        "text": "No regulation needed"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Organ donation** — central to transplantation; complex ethical, legal, medical framework. **Types**: 1. **Deceased donor**: - DBD (Donation after Brain Death) - most common - DCD (Donation after Circulatory Death) - increasing 2. **Living donor**: kidney (most common), liver lobe, lung lobe, others 3. **Tissue donation**: corneas, skin, bone, heart valves **Brain death** (death by neurologic criteria): - Cause of coma known + irreversible - Confounders excluded (hypothermia, drugs, severe metabolic) - Clinical exam: coma, absent brainstem reflexes, positive apnea test - Confirmatory studies as needed (EEG, cerebral blood flow, angiogram) - Uniform Determination of Death Act (US) + similar laws globally **DCD**: - Maastricht categories I-V (controlled vs uncontrolled) - Withdrawal of life support → asystole → declaration of death (typically 5 min observation) → rapid organ recovery - Warm ischemia time critical for organ viability - Expanding pool — outcomes good for kidney + liver; recently good for heart + lung with NRP (Normothermic Regional Perfusion) **Living donation**: - Kidney most common (~ 30-40% of US transplants) - Liver lobe (right or left lobe — adult-to-adult, left lateral segment adult-to-child) - Donor evaluation comprehensive — medical, psychological, social, financial - Independent donor advocate - Long-term donor follow-up + outcomes tracking - Slight increase in long-term ESRD risk in kidney donors (still low absolute risk) **Ethical principles**: 1. Dead donor rule — vital organs only from confirmed dead 2. Voluntary consent — no coercion, no payment 3. Separation of teams — donor care team independent from recipient/transplant 4. Family approach by OPO + sensitive 5. Equitable allocation 6. Respect for autonomy + patient wishes **Donor management**: aggressive resuscitation post-brain death → optimize organ function for procurement (hemodynamic, hormonal — thyroid, steroid; lung protective ventilation; glycemic control). **OPO + OPTN/UNOS** (US): coordinate, allocate, regulate. **Increasing donation strategies**: opt-out systems (Spain has highest donor rates globally), public education, family discussions, donor registry awareness, required request laws, hospital protocols. **Newer**: extended criteria donor (ECD), hepatitis C+ donor to + recipient with subsequent DAA cure, paired exchange (living kidney swap), domino transplant.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "UNOS/OPTN Policies; Uniform Determination of Death Act; AAN Brain Death Criteria 2010 + 2023 Update; AST/ASTS"
+  },
+  {
+    "scenario": "EMS: surgical workforce + burnout\n\nคำถาม: physician wellness + burnout in surgery",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Burnout not relevant"
+      },
+      {
+        "label": "B",
+        "text": "**Physician wellness + burnout in surgery — critical professional issue**: (1) **Definition** (Maslach Burnout Inventory): - Emotional exhaustion - Depersonalization (cynicism toward patients) - Reduced personal accomplishment; (2) **Prevalence**: - Surgeons 40-60% in US studies (varies by specialty + cohort) - General surgeons high; emergency, critical care, oncology elevated - Residents particularly vulnerable; (3) **Consequences**: - Personal: depression, anxiety, substance use, suicide (physicians higher rate than general population), divorce, decreased life satisfaction - Professional: medical errors (~ 2× increased), patient safety, decreased patient satisfaction, decreased empathy, turnover, early retirement, decreased career engagement - Healthcare system: increased costs, decreased quality, workforce shortage; (4) **Drivers**: - System: EHR burden, productivity demands, administrative tasks, regulatory burden, malpractice concerns, RVU pressure, work-hour intensity, on-call burden - Workplace culture: hierarchical, blame culture, lack of autonomy, inadequate teamwork - Individual: maladaptive coping, perfectionism, work-life imbalance, social isolation, financial stress; (5) **Prevention + intervention** — multilevel: a. **Individual strategies**: - Self-care: sleep, exercise, nutrition, hobbies, relationships - Mindfulness, meditation, CBT, professional therapy - Resilience training - Peer support, mentorship - Professional coaching - Setting limits, learning to say no; b. **Organizational/system**: - Reduce administrative burden (scribes, voice recognition) - Improve EHR usability - Wellness officers (Chief Wellness Officer increasing in academic centers) - Schedule design (limit on-call burden, flexible scheduling) - Peer support programs - Mental health services (low barrier, confidentiality protected) - Just culture (vs blame) - Leadership training - Compensation models that don't solely reward volume; c. **Professional/cultural**: - Destigmatize seeking help - Mental health resources for clinicians (e.g., RISE — Resilience in Stressful Events at Hopkins; Anesthesia Patient Safety Foundation; ACS Surgeon Wellbeing) - Peer support after adverse events (second victim phenomenon) - Bereavement support after patient death - Professional society initiatives; (6) **Surgeon-specific challenges**: - Long training (5-10+ years) - Sleep deprivation - Adverse outcomes psychological impact - Lawsuit risk - Demanding patient care + family demands - Identity tied to work; (7) **Special populations**: - Trainees (high burnout, hidden curriculum exposure) - Women + minority physicians (often face additional stressors — discrimination, harassment, work-family balance) - Mid-career - Late career; (8) **Wellness as patient safety + quality issue** — increasingly recognized; not just individual responsibility; (9) **Mental health crisis among physicians**: - Suicide rate physicians higher than general population (especially female physicians ~ 2× rate) - License restrictions for mental health treatment historically (modernizing — many states now ask only about current impairment vs ever diagnosis - help-seeking should be supported) - Substance use - Depression - Anxiety; (10) **Building wellness culture**: leadership, accountability, measurement (annual surveys), evidence-based interventions, allocate resources, integrate into strategic planning"
+      },
+      {
+        "label": "C",
+        "text": "Stigmatize seeking help"
+      },
+      {
+        "label": "D",
+        "text": "Single intervention"
+      },
+      {
+        "label": "E",
+        "text": "Individual responsibility only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Physician burnout + wellness** — major contemporary issue in medicine + surgery; recognized as quality + safety issue, not just individual challenge. **Burnout definition** (Maslach): emotional exhaustion + depersonalization + reduced personal accomplishment. **Prevalence in surgery**: 40-60% — highest in general surgery, EM, critical care, oncology; residents particularly vulnerable. **Consequences**: - Personal: depression, anxiety, substance use, divorce, suicide (physicians 2-4× general population, especially female physicians) - Patient: medical errors 2× increased, decreased satisfaction, decreased empathy - Healthcare: turnover, early retirement, costs, workforce shortage **System drivers** (largest factors): - EHR burden + administrative tasks - Productivity demands - Regulatory + malpractice burden - On-call + sleep disruption - Workflow inefficiencies - Inadequate staffing - Culture (hierarchical, blame) **Multilevel intervention**: 1. **Individual**: self-care, mindfulness, CBT, peer support, professional help-seeking, boundary-setting 2. **Organizational/system**: - Reduce EHR + admin burden - Schedule + workload optimization - Wellness officers + programs - Mental health services (confidential, low-barrier) - Peer support programs - Just culture - Leadership training - Recognition + appreciation 3. **Professional/societal**: destigmatize, mental health licensure reform, peer support, professional society initiatives (ACS, AMA, surgical specialty societies) **Second victim phenomenon**: clinicians distressed by patient adverse events — need debriefing, peer support, mental health resources (RISE program Hopkins, etc.). **Mental health licensure**: historically asked about ever diagnosis or treatment → barrier to seeking help; modernizing — questions should focus on current impairment, not history of treatment (American Medical Association advocates; FSMB updated guidance). **Trainee burnout**: very high rates; ACGME duty hour limits, wellness curricula, mental health resources, harassment + mistreatment policies (hidden curriculum exposure significant issue). **Quadruple aim** — original Triple Aim (better care, better health, lower cost) expanded to add clinician wellbeing as essential. **Quality + safety connection**: physician wellbeing correlates with patient outcomes; burnout associated with increased errors, lower patient satisfaction, decreased empathy + adherence to evidence — wellness is patient safety issue. **Special populations** — women, minority, LGBTQ+ physicians often face additional stressors (discrimination, harassment, work-family expectations).",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "ACS Surgeon Wellbeing Resources; National Academy of Medicine Action Collaborative on Clinician Wellbeing; Maslach C et al."
+  },
+  {
+    "scenario": "EMS / quality: telesurgery + technology\n\nคำถาม: surgical innovation + emerging technology",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Technology not relevant"
+      },
+      {
+        "label": "B",
+        "text": "**Surgical innovation + emerging technology**: (1) **Robotic surgery** (current state): - **da Vinci** dominant — multiple procedures (urologic, gynecologic, general, cardiac selected, head + neck) - **Versius (CMR), Hugo (Medtronic), Senhance, Stereotaxis** — emerging competitors - Benefits: enhanced visualization (3D), improved ergonomics, articulating instruments, motion scaling, tremor reduction - Disadvantages: cost, training, no haptic feedback, conversion if equipment failure - Best evidence: urology (prostatectomy), gynecology (hysterectomy); growing in colorectal, hepatobiliary, thoracic, cardiac selected; LACC trial showed lap inferior to open for radical hysterectomy cervical cancer — surprising, prompted reconsideration of MIS for cervical Ca; (2) **Imaging + navigation**: - Indocyanine green (ICG) fluorescence — perfusion, lymph node, biliary, tumor margin - 3D reconstruction + virtual reality pre-op planning - Augmented reality intra-op overlay - Hyperspectral imaging - Cone-beam CT intra-op; (3) **Artificial Intelligence + machine learning**: - Image interpretation (pathology, radiology) — FDA-approved AI for some - Surgical decision support - Predictive analytics (risk, complications, recurrence) - Computer vision (intraoperative — phase recognition, instrument tracking, anatomy identification) - Natural language processing (documentation, charting) - Personalized medicine; (4) **Minimally invasive trends**: - Laparoscopic → robotic - Endoscopic procedures (POEM, ESD, EMR, endoscopic anti-reflux, endoscopic bariatric) - NOTES (Natural Orifice Translumenal Endoscopic Surgery) — niche; - Single-incision laparoscopic (SILS) — niche; (5) **Tissue engineering + regenerative medicine**: - Bioprinting (cartilage, skin, vascular grafts experimental; whole organs distant future) - Stem cell therapy (selected — bone, heart in trials) - Decellularized scaffolds (heart valves, vessels, esophagus, trachea) - Mesenchymal stem cells for fistula (darvadstrocel for Crohn's perianal); (6) **Diagnostics + biomarkers**: - Liquid biopsy (ctDNA) - Precision oncology - Pharmacogenomics; (7) **Telemedicine + telesurgery**: - Pre + post-op virtual visits - Remote second opinion - Tele-trauma consultation - Telementoring (experienced surgeon guides remote surgery) - Telesurgery (true remote surgery — Lindbergh Operation 2001 NY to France; modern: 5G enables; growing in selected countries); (8) **Surgical training innovation**: - Simulation (low + high fidelity, VR) - Video-based assessment (Coaching + feedback) - Crowdsourced surgical assessment - AI-assisted skill evaluation; (9) **Implants + devices**: - 3D-printed patient-specific - Smart implants (sensors, drug-eluting) - Magnetic devices (LINX, anastomosis) - Bioabsorbable - Wireless monitoring; (10) **Ethical + regulatory considerations**: - FDA regulatory (510k vs PMA pathways) - Learning curve + quality outcomes - Data privacy + cybersecurity - Equity + access (technology gap) - Cost-effectiveness - Informed consent for novel - Conflict of interest disclosure - IDEAL framework for surgical innovation evaluation (Stages 1-5: Idea, Development, Exploration, Assessment, Long-term study)"
+      },
+      {
+        "label": "C",
+        "text": "Avoid all new technology"
+      },
+      {
+        "label": "D",
+        "text": "Skip safety evaluation"
+      },
+      {
+        "label": "E",
+        "text": "No training needed for new tech"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Surgical innovation + emerging technology** — rapid evolution; balance enthusiasm with rigorous evaluation. **Robotic surgery**: - da Vinci dominant; new competitors entering market - Strong evidence in urology (prostatectomy), gynecology (hysterectomy) - Growing in colorectal, hepatobiliary, thoracic - LACC trial NEJM 2018 — surprising: laparoscopic radical hysterectomy for cervical cancer INFERIOR to open for OS + recurrence; prompted reconsideration of MIS in cervical Ca + cautioned 'MIS always better' assumption - Cost-effectiveness debated for many indications **AI + machine learning in surgery**: - Image interpretation (pathology — Paige.AI, others; radiology — many FDA-cleared) - Surgical decision support, risk prediction - Computer vision intraoperative (phase recognition, instrument tracking, anatomy ID — Cas Squared, Theator, others) - Clinical decision support - Documentation NLP (Nuance DAX, Augmedix) **Imaging adjuncts**: - **ICG fluorescence** — practical, expanding: perfusion (anastomosis, flap), lymph node mapping (sentinel), biliary visualization, tumor margins, parathyroid identification - **Augmented reality** — pre-op planning + intraoperative overlay - **3D printing** — patient-specific implants, anatomical models for planning **Minimally invasive evolution**: - Laparoscopic → robotic for many - Endoscopic procedures expanding (POEM achalasia, ESD early Ca, endoscopic anti-reflux, endoscopic bariatric — sleeve gastroplasty + others) **Tissue engineering**: - Bioprinting still early - Decellularized scaffolds (heart valves, vessels — TAVR + TAVI growing) - Stem cell + regenerative — selected applications (mesenchymal stem cells for Crohn's fistula — darvadstrocel; others) **Telesurgery**: - Lindbergh Operation 2001 (proof-of-concept) - 5G + low latency enabling near-real-time - Currently telementoring + tele-consultation widespread; true telesurgery limited but growing **Innovation evaluation framework** — IDEAL Collaboration (Stages 1-5: Idea → Development → Exploration → Assessment → Long-term Study) — analog to drug Phase I-IV; structured approach to surgical innovation evaluation; rigorous + safe vs unevaluated adoption. **FDA regulation**: 510(k) clearance (substantial equivalence) vs PMA (premarket approval — higher risk devices); De Novo for novel low/moderate risk; debates about appropriate rigor + post-market surveillance. **Equity + access**: cost + technology gaps concern; rural + LMIC populations may not benefit equally. **Privacy + cybersecurity** — increasingly important with connected devices + data.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "IDEAL Collaboration; ACS Innovation; FDA Surgical Devices"
+  },
+  {
+    "scenario": "Integrative: complex multimorbid elderly\n\nคำถาม: octogenarian with multiple cancers + comorbidities",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Standard treatment for all"
+      },
+      {
+        "label": "B",
+        "text": "**Octogenarian with multimorbidity — individualized integrative care**: (1) **Comprehensive Geriatric Assessment (CGA)**: - Functional (ADL, IADL, gait, balance) - Cognitive (MMSE, MoCA, delirium screen) - Psychological (depression, anxiety) - Social (caregiver, support, financial) - Medical (comorbidity Charlson, polypharmacy STOPP/START) - Nutritional (MNA-SF) - Frailty (Fried, CFS); (2) **Estimated life expectancy** assessment: - General health, comorbidities, function - ePrognosis tools (Lee, Schonberg) - 'Lag time to benefit' — does intervention's benefit timeline exceed life expectancy? (e.g., colon cancer screening benefit ~ 10 yr → may not benefit those with limited life expectancy); (3) **Cancer-specific considerations**: - Aggressive vs indolent cancer - Treatment goals: cure vs control vs palliation - Treatment tolerability based on functional reserve - Geriatric oncology (G8, CARG, CRASH tools predict toxicity); (4) **Polypharmacy + deprescribing**: - Beers Criteria — potentially inappropriate medications - STOPP/START - Simplify regimens - Reassess each medication's continued benefit - Common: anticholinergics (cognition, falls), benzodiazepines (cognition, falls, dependence), opioids (cognition, falls, constipation), NSAIDs (renal, GI), statins (debated in very elderly with limited life expectancy); (5) **Goals of care discussion**: - Patient's values + preferences - What outcomes matter (function, independence, comfort, time, family) - Trade-offs acceptable - Cultural + family dynamics - Advance care planning; (6) **Function-focused care**: - Maintain/restore function as primary goal - PT, OT, rehabilitation - Home safety + adaptation - Assistive devices - Fall prevention (multi-component intervention reduces falls 25-30% per meta-analysis); (7) **Cognitive impairment management**: - Identify (screening, diagnosis, type — Alzheimer's, vascular, Lewy body, frontotemporal, mixed) - Cognition + behavioral support - Delirium prevention (HELP, ABCDEF bundles, mobility, sleep, hydration, vision/hearing aids, family presence, restraint avoidance) - Caregiver education + support - Advance care planning while capacity intact; (8) **Multimorbidity management** — chronic disease optimization: - HF, CKD, COPD, DM, AF, etc. - Coordinated care; - Avoid disease-specific guideline-driven care that conflicts (e.g., aspirin for primary prevention controversial in very elderly); (9) **Social + caregiver**: - Caregiver burden assessment - Respite - Community resources - Home health services - Long-term care planning (independent living, assisted, skilled nursing, hospice); (10) **Integrated geriatric care models**: - Geriatric consultation services - Acute Care for Elders (ACE) units - PACE (Programs of All-Inclusive Care for Elderly) - Primary care + geriatric clinics - Geriatric trauma + surgery programs (ACS Geriatric Surgery Verification); (11) **Quality of life > quantity** often preferred by elderly — should drive decisions"
+      },
+      {
+        "label": "C",
+        "text": "Avoid all treatment"
+      },
+      {
+        "label": "D",
+        "text": "Discharge home without follow-up"
+      },
+      {
+        "label": "E",
+        "text": "Same as young adult"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Geriatric surgical / oncologic care** — individualization paramount given heterogeneity of elderly. **Heterogeneity**: chronologic age ≠ biological age. Many 80-yr-olds robust, some 60-yr-olds frail. **Comprehensive Geriatric Assessment (CGA)** — multidimensional; predicts outcomes better than chronological age alone. **Tools**: - Frailty: Fried, Clinical Frailty Scale (CFS — Rockwood), Modified Frailty Index, Edmonton Frail - Cognition: MMSE, MoCA, Mini-Cog, delirium (CAM) - Function: ADL/IADL, gait speed (slow < 0.8 m/s independent risk), grip strength - Comorbidity: Charlson, CIRS-G - Polypharmacy: Beers, STOPP/START - Cancer-specific: G8, CARG (chemo toxicity), CRASH score **Geriatric oncology principles**: - Tumor biology + behavior - Patient's functional + cognitive reserve - Life expectancy estimation (ePrognosis tools — Lee, Schonberg) - 'Lag time to benefit' — does intervention's benefit timeline align with patient's expected longevity? - Treatment intensity individualization (full, modified, supportive) - Geriatric assessment improves treatment outcomes + patient satisfaction (Mohile et al evidence) **Polypharmacy + deprescribing**: - Beers Criteria — potentially inappropriate medications (PIM) for elderly - STOPP/START — Screening Tool of Older Person's Prescriptions + Screening Tool to Alert to Right Treatment - Common deprescribing targets: anticholinergics, BZD, opioids, NSAIDs, sliding scale insulin alone, multiple antihypertensives, statin in limited life expectancy + frailty - Reduces falls, cognitive impairment, drug interactions, costs **Delirium prevention** — HELP (Hospital Elder Life Program), ABCDEF bundle, NICE delirium guidelines: orientation, mobilization, hydration, vision/hearing aids, sleep hygiene, minimize anticholinergic + benzodiazepine, family presence, avoid restraints + Foley + restrictive environment. **Goals of care + advance care planning**: ongoing conversations; documented; portable (POLST/MOLST); honor patient's values. **Function-focused care**: primary aim — maintain/restore function vs disease cure alone. PT, OT, rehab, home safety, assistive devices, fall prevention (multifactorial intervention works). **Models of care**: - ACE (Acute Care for Elders) units — inpatient geriatric model improves outcomes - PACE (Programs of All-Inclusive Care for Elderly) — community-based - Geriatric consult services - Co-management (orthogeriatrics, geriatric trauma) - ACS Geriatric Surgery Verification Program (since 2019) — institutional standards.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "hemato_onco",
+    "board_age_group": "elderly",
+    "reference_source": "ACS Geriatric Surgery Verification; ASCO Geriatric Oncology; Mohile SG et al. JCO; ePrognosis tools"
+  },
+  {
+    "scenario": "Integrative: gender-affirming care + surgery\n\nคำถาม: gender-affirming surgical care principles",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Reject all gender-affirming care"
+      },
+      {
+        "label": "B",
+        "text": "**Gender-affirming surgical care — multidisciplinary patient-centered**: (1) **Terminology**: - **Gender identity** vs sex assigned at birth - **Cisgender** (identity matches assigned sex) vs **transgender** (does not) - **Non-binary** — outside binary - **Gender dysphoria** — distress from incongruence (DSM-5 diagnostic criterion historically required for some insurance/surgical access — moving away from pathologization); (2) **Care framework**: - **WPATH (World Professional Association for Transgender Health) Standards of Care 8 (2022)** — global guidance - **Endocrine Society Guidelines** for hormone therapy - Multidisciplinary: mental health, endocrinology, plastic/urologic/gynecologic surgery, primary care, voice + speech therapy, fertility specialist; (3) **Components of care** (not all individuals desire all): - **Social transition** — name, pronouns, presentation - **Mental health support** - **Hormone therapy**: - Feminizing: estradiol + anti-androgen (spironolactone, GnRH agonist) - Masculinizing: testosterone - Monitoring + complications - **Pubertal suppression** in adolescents (GnRH agonist) — reversible; allows time for decision-making - **Surgery** — multiple options; (4) **Gender-affirming surgeries**: a. **Top surgery**: - Masculinizing: bilateral mastectomy + chest contouring - Feminizing: breast augmentation b. **Bottom surgery**: - Masculinizing: hysterectomy + BSO, vaginectomy, scrotoplasty, phalloplasty (radial forearm free flap, ALT, others) or metoidioplasty (clitoral release + extension), testicular prosthesis - Feminizing: orchiectomy, penectomy, vaginoplasty (penile inversion most common, peritoneal or intestinal alternatives), labiaplasty, clitoroplasty, vulvoplasty c. **Facial feminization / masculinization** (FFS / FMS): forehead, jaw, brow, rhinoplasty, tracheal shave/augmentation, chin contouring d. **Voice surgery** — feminizing (cricothyroid approximation, Wendler glottoplasty) — adjunct to voice therapy; (5) **Pre-surgical requirements** (WPATH 8 — modernized, less restrictive than prior): - Persistent + well-documented gender dysphoria - Capacity to consent - Age of majority (or pediatric protocols with multidisciplinary team for adolescents) - Significant medical/mental health conditions reasonably well controlled - 12 months of continuous hormone therapy as appropriate (for some procedures) — though increasingly individualized; (6) **Post-op care**: - Surgery-specific protocols - Long-term care: dilation regimens (vaginoplasty), continued hormone therapy, follow-up - Mental health support - Continued cancer screening based on anatomy (Pap if cervix remains, prostate if prostate remains, breast if breast tissue remains); (7) **Reproductive considerations**: - Fertility preservation counseling before hormone therapy or surgery - Options: sperm cryopreservation, oocyte/embryo cryopreservation, ovarian/testicular tissue (selected); (8) **Insurance + access**: - Coverage variable - Advocacy + legal protections (Affordable Care Act US protects against discrimination — currently contested) - International variation significant - Equity concerns - Health disparities; (9) **Adolescent care** — particular complexity: - Pubertal suppression — reversible - Hormone therapy — partially reversible - Surgery — generally deferred until adulthood, with exceptions (chest surgery sometimes considered earlier with multidisciplinary input + family); (10) **Outcomes**: high satisfaction; reduces mental health distress + suicide risk in many studies; ethics + politics ongoing; cultural competency essential"
+      },
+      {
+        "label": "C",
+        "text": "Surgery without evaluation"
+      },
+      {
+        "label": "D",
+        "text": "Discrimination acceptable"
+      },
+      {
+        "label": "E",
+        "text": "Avoid multidisciplinary care"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Gender-affirming surgical care** — increasingly recognized component of comprehensive medical care for transgender + gender diverse individuals. **WPATH Standards of Care 8 (2022)** — globally recognized framework; updated less restrictive criteria + recognizes diversity of gender identity + expression; multidisciplinary care model; individualized approach. **Comprehensive care components**: 1. **Social transition** — supported by mental health 2. **Hormone therapy**: - **Feminizing**: estradiol (oral, transdermal, injection) + anti-androgen (spironolactone or GnRH agonist; bicalutamide; finasteride for some) - **Masculinizing**: testosterone (injection, gel, patch) - Monitoring: hormone levels, hematocrit (testosterone), lipid + LFT, BP, mood, cardiovascular risk - Long-term: cancer risks, cardiovascular, fertility 3. **Pubertal suppression** in adolescents (GnRH agonist — leuprolide, others) — reversible; allows time + reduces distress 4. **Surgery** — various procedures; not all individuals desire all **Surgical procedures**: - **Top surgery**: masculinizing (chest masculinization with mastectomy + reconstruction) or feminizing (augmentation) - **Bottom surgery**: - **Vaginoplasty** — penile inversion (most common), peritoneal pull-through, intestinal (sigmoid colon — usually for prior failed PIV, complex; risk of mucus, malignancy long-term) - **Phalloplasty** — radial forearm free flap (gold standard, sensate), anterolateral thigh (ALT), latissimus, fibula osteocutaneous - **Metoidioplasty** — clitoral release + extension (testosterone-hypertrophied clitoris), urethroplasty, vaginectomy - Hysterectomy ± BSO - Orchiectomy - Penectomy, scrotoplasty - **Facial feminization / masculinization**: multiple procedures - **Voice surgery**: cricothyroid approximation, Wendler glottoplasty - **Hair**: electrolysis (genital area pre-vaginoplasty), scalp transplant for masculinizing **Pre-surgical evaluation**: persistent gender dysphoria, capacity, age of majority (or adolescent protocols), medical/mental health stability, hormone therapy if appropriate. WPATH 8 removed previous requirement of separate mental health letters for many procedures + emphasizes individualized assessment by qualified provider. **Post-op care**: - Vaginoplasty: dilation regimen (initially several times daily, tapering — lifelong some dilation needed), wound care - Phalloplasty: stages (urethroplasty, glansplasty, erectile/testicular prosthesis), complications (urethral stricture, fistula common) - Continued hormone therapy + monitoring - Mental health support - Continued cancer screening based on remaining anatomy: Pap if cervix, breast if tissue, prostate if prostate **Fertility preservation**: counseling before hormone therapy or surgery; gamete cryopreservation, ovarian/testicular tissue (experimental). **Outcomes**: high satisfaction in majority; substantial mental health benefit in studies (reduces depression, anxiety, suicidality); regret rates low (< 1-2%) in modern series with appropriate evaluation. **Advocacy + access**: insurance coverage variable + contested; legal protections vary; substantial health disparities; cultural competency essential for providers.",
+    "difficulty": "easy",
+    "board_section": "integrative",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "WPATH Standards of Care 8 (2022); Endocrine Society Transgender Guidelines 2017; ACS Statement on Care of Transgender Patients"
   }
 ]
