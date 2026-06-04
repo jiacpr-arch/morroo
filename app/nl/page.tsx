@@ -94,36 +94,52 @@ export default async function NLPage() {
         </Card>
       </div>
 
-      {/* Subjects Grid */}
-      <div className="mb-8">
-        <div className="flex items-center gap-2 mb-6">
-          <BookOpen className="h-5 w-5 text-brand" />
-          <h2 className="text-2xl font-bold">สาขาวิชา</h2>
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-          {subjects.map((subject) => {
-            const count = counts[subject.id] || 0;
-            return (
-              <Link
-                key={subject.id}
-                href={`/nl/practice?subject=${subject.id}`}
-              >
-                <Card className="group h-full hover:shadow-md hover:border-brand/30 transition-all cursor-pointer">
-                  <CardContent className="p-5 text-center">
-                    <span className="text-3xl block mb-2">{subject.icon}</span>
-                    <h3 className="font-medium text-sm mb-1">
-                      {subject.name_th}
-                    </h3>
-                    <p className="text-xs text-muted-foreground">
-                      {count} ข้อ
-                    </p>
-                  </CardContent>
-                </Card>
-              </Link>
-            );
-          })}
-        </div>
-      </div>
+      {/* Subjects — split by exam type, hide subjects with no published (active)
+          questions so newly-created/empty subjects don't pollute the grid. */}
+      {([
+        {
+          type: "NL2" as const,
+          label: "NL2 · คลินิก",
+          list: subjects.filter(
+            (s) =>
+              (counts[s.id] || 0) > 0 &&
+              (s.exam_type === "NL2" || s.exam_type === "both")
+          ),
+        },
+        {
+          type: "NL1" as const,
+          label: "NL1 · พรีคลินิก",
+          list: subjects.filter(
+            (s) => (counts[s.id] || 0) > 0 && s.exam_type === "NL1"
+          ),
+        },
+      ])
+        .filter((group) => group.list.length > 0)
+        .map((group) => (
+          <div key={group.type} className="mb-10">
+            <div className="flex items-center gap-2 mb-6">
+              <BookOpen className="h-5 w-5 text-brand" />
+              <h2 className="text-2xl font-bold">สาขาวิชา · {group.label}</h2>
+              <Badge variant="secondary">{group.list.length} สาขา</Badge>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+              {group.list.map((subject) => {
+                const count = counts[subject.id] || 0;
+                return (
+                  <Link key={subject.id} href={`/nl/practice?subject=${subject.id}`}>
+                    <Card className="group h-full hover:shadow-md hover:border-brand/30 transition-all cursor-pointer">
+                      <CardContent className="p-5 text-center">
+                        <span className="text-3xl block mb-2">{subject.icon}</span>
+                        <h3 className="font-medium text-sm mb-1">{subject.name_th}</h3>
+                        <p className="text-xs text-muted-foreground">{count} ข้อ</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        ))}
     </div>
   );
 }
