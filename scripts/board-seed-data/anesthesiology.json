@@ -5758,5 +5758,645 @@
     "board_topic": "procedures",
     "board_age_group": "adult",
     "reference_source": "Miller's; ASRA"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 45 ปี — emergency open repair flail chest + bilateral pulmonary contusions + hemodynamic compromise\nIntubated, BP 80/50, HR 130, SpO2 88% FiO2 1.0",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Mass crystalloid"
+      },
+      {
+        "label": "B",
+        "text": "Chest trauma + thoracic anesthesia: (1) Flail chest — paradoxical chest wall movement, severe pain, underlying pulmonary contusion; (2) Pulmonary contusion — most important pathology; ARDS-like; (3) Management priorities: - Airway (intubated); - Ventilation (lung-protective TV 6 mL/kg); - Pain control essential (thoracic epidural, ESP, intercostal blocks — facilitates breathing + reduces splinting); - Volume management (avoid overload — worsens contusion); - Treat associated injuries (pneumothorax, hemothorax with chest tubes); (4) Surgical fixation of flail (rib plating) — improving outcomes vs conservative; (5) Anesthetic considerations: - Difficult ventilation (one-lung ventilation may worsen + improve); - Hemodynamic instability — judicious fluids + early vasopressor; - Massive transfusion if hemorrhage; - Avoid N2O (pneumothorax expansion); - Ketamine acceptable; - Lung-protective + permissive hypercapnia; (6) Specific: - Tension pneumothorax — immediate chest decompression; - Massive hemothorax (> 1500 mL initially or > 200 mL/hr) → thoracotomy; - Cardiac contusion — ECG, troponin, echo; - Aortic injury — CT angiogram; (7) Post-op: - ICU; - Multimodal analgesia continuation; - Lung-protective ventilation; - Wean ventilator as tolerated; - DVT prophylaxis; - Aggressive pulmonary toilet; - Monitor for ARDS; (8) Multidisciplinary: trauma surgery + anesthesia + ICU + thoracic + cardiology + IR"
+      },
+      {
+        "label": "C",
+        "text": "No pain control"
+      },
+      {
+        "label": "D",
+        "text": "N2O routine"
+      },
+      {
+        "label": "E",
+        "text": "Skip multimodal"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Flail chest + pulmonary contusion: lung-protective ventilation, multimodal analgesia (epidural, ESP), judicious fluids, rib plating emerging, ICU management. Avoid N2O. Multidisciplinary trauma team.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "ATLS; EAST Chest Trauma"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 28 ปี — emergent surgery for ectopic pregnancy ruptured\nHypotensive BP 75/40, HR 130, abdominal pain\nIV × 2, type + cross pending, NPO unclear",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Wait for stability"
+      },
+      {
+        "label": "B",
+        "text": "Hypovolemic shock + emergency gynecologic surgery: (1) Resuscitation priorities: - 2 large-bore IV; - O- blood emergency or type-specific; - Crystalloid bolus initially while blood arrives; - MTP protocol activation if massive; (2) Anesthesia preparation: - Full stomach (emergency) — RSI; - Likely hemorrhagic shock — choose CV-stable induction (ketamine 1 mg/kg + opioid OR etomidate 0.3 mg/kg); avoid propofol bolus; rocuronium for RSI; - Pre-O2 thorough; - Arterial line; - Foley; (3) Intra-op: - Continue resuscitation — blood, FFP, platelets 1:1:1; TXA 1g; - Calcium replacement; - Warming; - Avoid acidosis + hypothermia + coagulopathy; - Vasopressor (norepinephrine) if persistent hypotension despite volume; - Surgeon control bleeding ASAP (clamp tube + ovary, hemostasis); (4) Maintain anesthesia: - Lower MAC volatile (hemodynamic); - Adequate amnesia (BIS if available); - Multimodal opioid-sparing post-op; (5) Post-op: - PACU or ICU based on stability; - Continued monitoring + transfusion; - Rh(D) immunoglobulin if Rh- mother + Rh+ products (or unknown fetus); - Emotional support (loss of pregnancy + emergency); - Follow-up + counseling fertility; (6) Multidisciplinary: OB-GYN + anesthesia + nursing + social work + blood bank; (7) Modern: methotrexate medical Mx for stable ectopic; surgical for ruptured/unstable; salpingostomy vs salpingectomy"
+      },
+      {
+        "label": "C",
+        "text": "Crystalloid only"
+      },
+      {
+        "label": "D",
+        "text": "Propofol bolus high dose"
+      },
+      {
+        "label": "E",
+        "text": "Skip blood"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Ruptured ectopic: RSI with ketamine/etomidate (CV stable), blood products 1:1:1, TXA, Ca, warming, norepi. Rh(D) immunoglobulin. Multidisciplinary including emotional support.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "SOAP; ATLS; ACOG"
+  },
+  {
+    "scenario": "ผู้ป่วยทารก 18 mo 10 kg — emergent surgery for foreign body aspiration in main bronchus\nMild dyspnea, occasional wheeze, SpO2 92% RA",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Force ETT first"
+      },
+      {
+        "label": "B",
+        "text": "Pediatric foreign body airway anesthesia: (1) Pre-op: - Stable child — proceed semi-urgent; - Unstable (severe distress, near-total obstruction) — immediate; - Avoid sedation/general anesthesia that may worsen obstruction; - NPO if possible; - Discussion with ENT/bronchoscopist for plan; - IV access + atropine pre-treatment (vagal bradycardia from airway stimulation); (2) Anesthetic approach (shared airway with bronchoscopist): - Inhalational induction with sevoflurane in O2 (maintain spontaneous ventilation initially — avoid converting partial to complete obstruction with paralysis); - Alternative: IV induction with propofol (with NMB if planning controlled ventilation); - Topical lidocaine to airway; - Equipment: rigid bronchoscope (ENT) + flexible bronchoscope + multiple ETT sizes + ECMO if catastrophic; (3) During bronchoscopy: - Spontaneous ventilation vs controlled (TIVA + NMB) — debated, depends on patient + foreign body + bronchoscopist preference; - 100% O2; - Adequate depth; - Hemodynamic support; (4) Specific risks: - Airway trauma; - Mucosal edema; - Foreign body migration; - Hypoxia; - Bronchospasm + laryngospasm; - Pneumothorax + bleeding; - Cardiac arrest; (5) Post-removal: - Assess airway; - Treat residual swelling (steroid, racemic epinephrine); - Observation 24h (may have delayed edema, infection); - Antibiotics if appropriate; (6) Common foreign bodies — peanuts, popcorn, hot dogs, small toys, batteries (button battery = caustic, urgent); (7) Outcomes generally good with prompt recognition; mortality < 1%; (8) Multidisciplinary: ENT + anesthesia + nursing + family; (9) Prevention education — chokable foods, supervised play, button battery storage"
+      },
+      {
+        "label": "C",
+        "text": "Mass NMB"
+      },
+      {
+        "label": "D",
+        "text": "Skip atropine"
+      },
+      {
+        "label": "E",
+        "text": "Discharge home"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pediatric foreign body: inhalational induction with maintained spontaneous ventilation (typically), shared airway with bronchoscopist, atropine pre-treatment, multiple equipment ready, post-removal observation. Button battery urgent.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "respiratory",
+    "board_age_group": "peds",
+    "reference_source": "APAGBI; SPA; Cote"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 70 ปี — elective colectomy ASA III with CAD + DM\nUsing IV PCA morphine post-op\nDay 1 develops confusion + agitation + visual hallucinations\nNo focal neuro deficit + WBC normal",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Sedate heavily"
+      },
+      {
+        "label": "B",
+        "text": "Acute post-op delirium — comprehensive workup + management: (1) DDx: - Medication-induced (opioid, benzodiazepine, anticholinergic, steroid); - Hypoxia; - Hypoglycemia; - Infection (UTI, pneumonia, wound, line); - Electrolyte derangement (Na, glucose, Ca, Mg); - Pain undertreated; - Withdrawal (alcohol, benzo, nicotine); - Urinary retention/constipation; - Sleep deprivation; - CNS event (stroke, hemorrhage, seizure); - PRES (Posterior Reversible Encephalopathy Syndrome) — HTN + immunosuppressant; - Sepsis; - Cardiogenic (low CO); (2) Diagnosis — CAM (Confusion Assessment Method): - Acute onset + fluctuating; - Inattention; - Disorganized thinking; - Altered consciousness; - Plus diagnosis when 1 + 2 + (3 or 4); (3) Workup: - Vital signs + glucose + SpO2; - Pain assessment; - Medication review (Beers); - Labs: BMP, Mg, glucose, CBC, UA; - ECG; - Consider CXR, CT head if focal/severe; (4) Management non-pharmacologic (primary): - Address underlying causes; - Re-orient (clock, calendar, family); - Hearing aids + glasses; - Sleep promotion (night light off, day activities); - Mobilize early; - Hydration; - Pain control multimodal (reduce opioid); - Remove tethers (lines, Foley, restraints); - Family presence; (5) Pharmacologic (sparingly + low-dose): - Low-dose haloperidol 0.25-0.5 mg or quetiapine 12.5-25 mg for severe agitation/safety; - AVOID benzodiazepines (worsen) — except withdrawal; - AVOID anticholinergics; - Dexmedetomidine has emerging role; (6) Risk reduction multimodal — multifactorial intervention (HELP — Hospital Elder Life Program) reduces incidence; (7) Long-term outcomes: increased mortality, functional decline, dementia risk, LOS; (8) Family education + support"
+      },
+      {
+        "label": "C",
+        "text": "More opioid"
+      },
+      {
+        "label": "D",
+        "text": "Restrain physically"
+      },
+      {
+        "label": "E",
+        "text": "Ignore"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Post-op delirium: comprehensive workup (causes — meds, hypoxia, infection, electrolytes, pain, withdrawal), CAM diagnosis, non-pharm primary (re-orient, sleep, mobility, family), low-dose antipsychotic sparingly, AVOID benzo + anticholinergic. HELP bundle prevention.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "AGS; ASA Brain Health Initiative"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 30 ปี diabetic ESRD on HD — emergent AV fistula thrombectomy\nHas labile glucose, K 6.0, recently dialyzed 6h ago\nUse local + sedation vs regional vs GA",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cuff on fistula arm"
+      },
+      {
+        "label": "B",
+        "text": "AV fistula salvage anesthesia: (1) Anesthetic options: - Local infiltration + monitored anesthesia care (MAC) — for minor revisions; - Regional anesthesia (brachial plexus block) — preferred for major fistula work; - GA — reserved for complex/uncooperative; (2) Brachial plexus block options: - Supraclavicular — covers entire arm, good for fistula work; small pneumothorax risk; - Infraclavicular — also good coverage, less phrenic palsy than interscalene; - Axillary — only safer in ESRD with possible coagulopathy; - Ultrasound guidance preferred (reduces complications + improves success); (3) ESRD-specific considerations: - Recently dialyzed (6h) — better K + volume; check K before; - Heparin from HD — wait time before regional; ASRA timing; - Coagulopathy from uremia — DDAVP if bleeding; - Protect non-fistula arm (no BP, IV, art line); - Avoid succinylcholine if K elevated; - Avoid morphine; use fentanyl/hydromorphone; - Cisatracurium NMB if GA; (4) Sedation: - Avoid heavy sedation (already volume + electrolyte concerns); - Dexmedetomidine — sedation without respiratory depression; - Small midazolam + fentanyl; (5) Hemodynamic: - Maintain MAP — preserve fistula flow; - Cautious fluid (overload risk); - Vasopressor if needed; (6) Fistula salvage success time-sensitive (24-48h); coordinate with vascular + IR; (7) Post-op: - Monitor for bleeding, thrombosis; - Continue dialysis schedule; - Protect arm; - Multimodal analgesia; (8) Multidisciplinary: vascular surgery + IR + nephrology + anesthesia; (9) Modern: percutaneous thrombectomy emerging; AV graft considerations"
+      },
+      {
+        "label": "C",
+        "text": "Use succinylcholine"
+      },
+      {
+        "label": "D",
+        "text": "Morphine PCA"
+      },
+      {
+        "label": "E",
+        "text": "Heavy sedation"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "AV fistula salvage: regional anesthesia (brachial plexus block, ultrasound-guided) preferred. ESRD considerations: K, coagulopathy, drug selection (cisatracurium, fentanyl/hydromorphone). Protect fistula arm. Maintain MAP. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "ASRA Regional + ESRD; KDIGO"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 55 ปี — major colorectal resection for cancer\nPlanned ERAS protocol\nNo prior surgery, normal labs, ASA II",
+    "choices": [
+      {
+        "label": "A",
+        "text": "NPO since midnight"
+      },
+      {
+        "label": "B",
+        "text": "ERAS colorectal protocol — comprehensive: (1) Pre-op: - Patient education + expectations; - No mechanical bowel prep + no fasting > 2h (clear fluids); carb load 2h pre-op; - No long-acting premedication; - DVT + antibiotic prophylaxis; - Chlorhexidine skin prep; (2) Intra-op: - Multimodal opioid-sparing analgesia (acetaminophen + NSAID/COX-2 + gabapentinoid + ketamine + lidocaine infusion + dexamethasone); - Regional: epidural OR TAP/QL block OR ESP — debate epidural value in ERAS; TAP increasingly preferred; - Short-acting anesthetics (propofol + remifentanil OR low-dose volatile + opioid); - Goal-directed fluid therapy (esophageal Doppler, pulse contour) — moderate fluid; - Normothermia (active warming); - PONV prophylaxis multimodal (Apfel); - Minimize NG, drains, urinary catheter; - Lung-protective ventilation; - Avoid N2O; - Glucose control; - Local infiltration LA (laparoscopic ports + open wound); (3) Post-op: - Early oral intake (Day 0 or Day 1); - Early mobilization (Day 0); - Multimodal opioid-sparing analgesia continued; - Glucose control; - DVT prophylaxis; - Early Foley removal (Day 0-1); - NG/drains removed early; - Discharge criteria objective; - Follow-up; (4) Outcomes (multiple RCTs): - Reduced LOS (~30%); - Reduced complications (~50%); - Reduced opioid use; - Improved patient satisfaction; - Cost-effective; (5) Multidisciplinary: surgery + anesthesia + nursing + nutrition + PT + patient education; (6) Audit + continuous improvement; (7) Modern: ERAS Society protocols by procedure (colorectal, thoracic, gynecologic, orthopedic, bariatric, etc.); ERAS adapted to ambulatory; (8) Patient buy-in + family engagement; (9) Quality improvement framework — compliance with elements drives outcome"
+      },
+      {
+        "label": "C",
+        "text": "Heavy opioid PCA"
+      },
+      {
+        "label": "D",
+        "text": "Prolonged bedrest"
+      },
+      {
+        "label": "E",
+        "text": "Delayed feeding"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "ERAS colorectal: shortened fasting + carb load, multimodal opioid-sparing + regional, goal-directed fluid, normothermia, early feeding + mobilization. Multidisciplinary. Reduces LOS + complications.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "ERAS Society Colorectal Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 60 ปี — atrial fibrillation rate 150 + acute pulmonary edema in PACU post-cholecystectomy\nBP 90/60, SpO2 88% on 6L NC, anxious + dyspneic\nCardiac history HTN",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge to ward"
+      },
+      {
+        "label": "B",
+        "text": "Acute new onset AFib + decompensated HF in PACU: (1) Initial — ABCs, supplemental O2, position upright, IV access, monitor; (2) Assessment: - Hemodynamically unstable (hypotension, ischemia, severe HF) — synchronized cardioversion immediate (200J biphasic); - Hemodynamically stable but symptomatic — rate control + diuretic + supportive; (3) Acute pulmonary edema: - O2 — NC → mask → HFNC → NIV (CPAP/BiPAP) → intubate; NIV often effective for cardiogenic edema; - Loop diuretic (furosemide 20-40 mg IV); - Nitroglycerin (sublingual or infusion) — preload + afterload reduction (caution hypotension); - Inotropes if cardiogenic shock; (4) AFib rate control: - Beta-blocker (esmolol IV — short, titratable; metoprolol); - Calcium channel blocker (diltiazem) if BB contraindicated; - Amiodarone (rate + rhythm); - Digoxin (slow); - AVOID rate-control if WPW (use cardioversion); (5) Rhythm control: - Synchronized cardioversion if unstable or anticipated quick conversion + low stroke risk; - Amiodarone IV; - Newer: ibutilide, vernakalant; (6) Anticoagulation: - CHA2DS2-VASc score; - If AFib > 48h or unknown: anticoagulate before cardioversion or TEE; - Post-cardioversion anticoagulation 4 weeks minimum (stunning); (7) Identify precipitants: - Hypoxia, hypercapnia, acidosis; - Electrolyte (K, Mg); - Pain, anxiety; - Volume status; - PE; - Sepsis; - Hyperthyroidism; - Anemia; - MI; (8) Differential — other causes pulmonary edema: ARDS, TRALI, neurogenic, negative-pressure; (9) Multidisciplinary: anesthesia + cardiology + ICU; (10) Disposition: step-down or ICU; continued workup + treatment"
+      },
+      {
+        "label": "C",
+        "text": "Aggressive crystalloid"
+      },
+      {
+        "label": "D",
+        "text": "Sedate heavily"
+      },
+      {
+        "label": "E",
+        "text": "Wait"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "New AFib + acute pulmonary edema PACU: O2 + NIV, diuretic + nitroglycerin, rate control (esmolol, diltiazem, amio), cardioversion if unstable. CHA2DS2-VASc anticoagulation. Identify precipitants. Step-down/ICU.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "AHA/ACC AFib + HF"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 75 ปี — fall + hip fracture, ASA III\nAlzheimer dementia + atrial fibrillation on apixaban + recent stroke 2 months ago\nLast apixaban 18h ago\nUrgent surgery < 48h per ortho guidelines",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cancel surgery"
+      },
+      {
+        "label": "B",
+        "text": "Multi-comorbidity hip fracture anesthesia — complex decision: (1) Hip fracture < 48h reduces mortality per multiple guidelines; (2) Stroke 2 months ago — high perioperative risk: - Recommendation defer elective surgery 9 months post-stroke; - Hip fracture urgent — proceed with risk acceptance; - Cardiology consult; - Maintain MAP > 80 to preserve cerebral perfusion; - Avoid hypotension + hyperglycemia; - Continue antiplatelet typically; (3) Apixaban management: - Half-life 12h normal renal; 18h since last dose; - Wait further or use reversal (andexanet alfa) for neuraxial; - Andexanet expensive; PCC 4-factor 50 U/kg empirical alternative; - Generally hold neuraxial if recent DOAC + bleeding concern; (4) Anesthetic choice: - Neuraxial (spinal) vs GA — both acceptable per recent RCT REGAIN (no significant difference for mortality, delirium); - Spinal may be preferred for: avoidance of GA in elderly (delirium concern — though REGAIN showed equivocal); - GA may be preferred for: anticoagulation status (avoid neuraxial hematoma), dementia patient cooperation, time pressure; - Decision individualized; (5) For THIS patient: - GA + multimodal opioid-sparing recommended given recent DOAC + dementia + stroke; - Regional adjunct: fascia iliaca + lateral femoral cutaneous nerve blocks for analgesia; (6) Anesthetic technique: - Etomidate or low-dose propofol; - Multimodal + regional adjunct (fascia iliaca block); - Avoid Beers Criteria meds (benzo, anticholinergic); - Use sugammadex for rapid reversal; (7) Delirium prevention: - HELP bundle; - Family presence; - Re-orientation; - Pain control + multimodal; (8) Post-op: - ICU/step-down monitoring; - Stroke awareness (neuro checks); - Restart antithrombotic when hemostasis OK; - DVT prophylaxis; - Mobilization; - PT/OT; - Discharge planning (likely SNF); (9) Goals of care discussion with family — dementia + multiple comorbidities — what does patient want? Function vs comfort?"
+      },
+      {
+        "label": "C",
+        "text": "Wait 9 months for stroke"
+      },
+      {
+        "label": "D",
+        "text": "Immediate neuraxial"
+      },
+      {
+        "label": "E",
+        "text": "Skip blocks"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Hip fracture + multiple comorbidities: surgery < 48h, individualize anesthesia (REGAIN — spinal/GA similar), recent DOAC + stroke considerations, fascia iliaca block, multimodal opioid-sparing, delirium prevention, goals of care discussion.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "ACS Geriatric Surgery; REGAIN Trial; ASRA Anticoag"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 35 ปี severe sleep apnea — elective tonsillectomy + uvulopalatopharyngoplasty (UPPP) + nasal surgery\nBMI 36, AHI 50, on CPAP",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Outpatient discharge"
+      },
+      {
+        "label": "B",
+        "text": "Severe OSA + airway surgery — high-risk anesthesia: (1) Pre-op: - Optimize CPAP compliance; - Difficult airway anticipated; - Multidisciplinary planning ENT + anesthesia + sleep medicine; (2) Airway considerations: - Predicted difficult: large neck, redundant tissue, friable post-op; - Awake fiberoptic intubation may be wise; - Video laryngoscopy first; - Multiple airway equipment + plans; (3) Anesthetic technique: - Avoid heavy sedation + long-acting opioids (respiratory depression OSA); - Multimodal opioid-sparing maximally: acetaminophen + NSAID + gabapentinoid (caution OSA — sedation), ketamine, dexmedetomidine; - Local infiltration; - Bilateral palatal block; - Topical anesthesia airway; (4) Intra-op: - Lung-protective + PEEP; - PONV prophylaxis (dexamethasone helps swelling + nausea + analgesia); - Limit IV fluid (edema); - Surgical-shared airway with ENT; (5) Extubation: - Awake extubation in lateral position; - Suction; - Equipment ready for re-intubation; - Watch for post-op bleeding (tonsillar + palatal); (6) Post-op: - PACU + CPAP back ASAP; - Continuous capnography + SpO2 monitoring step-down/ICU; - Multimodal analgesia opioid-sparing; - Position lateral or semi-upright; - Avoid sedatives; - Observation 24h+ (NOT outpatient for severe OSA major airway surgery); - Difficult airway alert + documentation; (7) Specific complications watch: - Post-op bleeding (primary 24h, secondary 5-10 days); - Airway edema; - NPPE; - Apnea + hypoxia; - PONV; - Pain (severe); (8) Long-term: continue CPAP + sleep medicine follow-up; (9) Multidisciplinary: ENT + anesthesia + sleep medicine + intensivist"
+      },
+      {
+        "label": "C",
+        "text": "Heavy opioid PCA"
+      },
+      {
+        "label": "D",
+        "text": "Skip CPAP postop"
+      },
+      {
+        "label": "E",
+        "text": "Single-shot blocks"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Severe OSA + airway surgery: difficult airway prep, multimodal opioid-sparing maximally, AFOI/video laryngoscopy, awake extubation lateral, CPAP back ASAP, continuous monitoring 24h+, NOT outpatient, multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "respiratory",
+    "board_age_group": "adult",
+    "reference_source": "SAMBA OSA; AAOHNS Sleep Surgery"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 55 ปี — chronic pain referred to pain clinic, severe lumbar radicular pain × 1 year\nMRI: large L5-S1 disc herniation\nFailed conservative\nProcedural: epidural steroid injection",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No imaging guidance"
+      },
+      {
+        "label": "B",
+        "text": "Interventional pain management — epidural steroid injection (ESI): (1) Indications: - Radicular pain (radiculopathy) from disc herniation, spinal stenosis; - Failed conservative management (PT, NSAIDs, neuropathic agents); - Diagnostic + therapeutic; (2) Pre-procedure: - Imaging review (level + side); - Anticoagulation review (ASRA Interventional 2018): - High bleeding risk procedure for transforaminal; - Intermediate for interlaminar/caudal; - Hold per category + half-life; - Coagulation assessment if abnormal history; - Informed consent (risks: infection, bleeding, dural puncture, vascular injection, transient/permanent neuro deficit, no benefit); - IV access + monitoring; - Patient prone position; (3) Approaches: - Interlaminar (loss of resistance, fluoroscopy guidance); - Transforaminal (foramen, image guidance — fluoro or CT); more targeted but higher risk vascular injection + neuro complications; - Caudal (sacral hiatus); (4) Drugs: - Local anesthetic (lidocaine 1-2%) — diagnostic + analgesia; - Steroid: dexamethasone (non-particulate — recommended for transforaminal to reduce stroke/cord injury risk from particulate steroid embolism); particulate (triamcinolone, methylprednisolone) interlaminar/caudal acceptable; - Contrast (Omnipaque) to confirm spread + rule out vascular; (5) Image guidance MANDATORY for cervical + thoracic + transforaminal — multiple safety reports; (6) Complications: - Vascular injection (artery of Adamkiewicz, vertebral) → catastrophic; - Dural puncture → PDPH; - Infection (epidural abscess, meningitis); - Hematoma; - Nerve injury; - Transient steroid side effects (insomnia, glucose elevation, flushing); (7) Outcome — limited evidence; modest short-term benefit for radicular pain; (8) Multidisciplinary: pain medicine + spine surgery + PT; (9) Modern: regenerative medicine (PRP, stem cells) emerging but limited evidence"
+      },
+      {
+        "label": "C",
+        "text": "Particulate steroid for transforaminal"
+      },
+      {
+        "label": "D",
+        "text": "Skip consent"
+      },
+      {
+        "label": "E",
+        "text": "No image guidance cervical"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "ESI: image guidance mandatory (fluoro/CT) for cervical/thoracic/transforaminal. Non-particulate steroid (dex) for transforaminal. ASRA anticoag timing. Risks: vascular injection (cord ischemia), dural puncture, infection, hematoma. Modest benefit.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "ASRA Interventional Pain"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 45 ปี — chronic pain post-zoster (postherpetic neuralgia) ipsilateral T4-T6 × 6 months\nSevere allodynia + burning + shooting pain\nFailed gabapentinoid + TCA",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Heavy opioid only"
+      },
+      {
+        "label": "B",
+        "text": "Postherpetic neuralgia (PHN) — chronic management: (1) Definition — pain > 3 months after zoster (shingles) rash resolution; (2) Risk factors: age > 50, severity acute zoster, ophthalmic, immunocompromise; (3) Mechanism — peripheral + central sensitization, nerve damage; (4) Treatment hierarchy: - First-line: - Gabapentin (300-3600 mg/day) or pregabalin (75-300 mg BID); - TCA (amitriptyline, nortriptyline) 10-100 mg HS; - 5% lidocaine patch (topical, localized); - Capsaicin 8% patch (single application 60 min, can repeat q3 months); - Second-line: - SNRI (duloxetine, venlafaxine); - Tramadol (weak opioid + SNRI); - Combination therapy; - Refractory: - Opioids — limited efficacy + addiction risk; consider carefully; - Methadone (NMDA + opioid); - Botulinum toxin injection; - Intrathecal medications; (5) Interventional options: - Intercostal nerve block — diagnostic + therapeutic; - Paravertebral block; - Erector spinae plane block (ESP) — emerging; - Pulsed radiofrequency; - Sympathetic block; - Spinal cord stimulation (refractory); - Dorsal root ganglion (DRG) stimulation; (6) Non-pharmacologic: - CBT; - Mindfulness; - PT for stiffness/disuse; - TENS; - Acupuncture (mixed evidence); (7) Prevention (most important): - Shingles vaccine (Shingrix) > 50 years — significantly reduces zoster + PHN; - Early antiviral (acyclovir, valacyclovir) within 72h acute zoster reduces PHN risk; - Pain control acute zoster (opioid, antiviral, possibly steroid); (8) Patient education: - Chronic condition; - Functional restoration focus; - Pacing; - Sleep; - Mood support; (9) Multidisciplinary pain clinic + multimodal"
+      },
+      {
+        "label": "C",
+        "text": "Refuse care"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Single agent only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "PHN: multimodal (gabapentinoid, TCA, lidocaine patch, capsaicin 8%, SNRI, tramadol, ESP/intercostal blocks, SCS/DRG). Prevention: Shingrix vaccine + early antiviral + acute pain control. Multidisciplinary + non-pharm.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "IASP NeuropathicPain; AAN PHN Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 35 ปี G2P1 GA 32 wk — admitted for severe HELLP syndrome — emergent C-section\nPlt 35k, AST 350, ALT 380, Hb 9, INR 1.2, fibrinogen 200\nBP 165/105 on labetalol",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Spinal anesthesia"
+      },
+      {
+        "label": "B",
+        "text": "HELLP syndrome — emergent C-section anesthesia: (1) HELLP — Hemolysis, Elevated Liver enzymes, Low Platelets; subset severe PEC; high mortality; (2) BP control: - Labetalol 20 mg IV bolus q10 min; - Hydralazine 5-10 mg IV q20; - Nicardipine infusion; - Target SBP 140-160, DBP 90-110; (3) Seizure prophylaxis — magnesium 4-6g loading + 1-2g/hr (continue 24h post-delivery); (4) Anesthesia choice (challenging): - Platelets 35k = BELOW threshold for neuraxial (typically need > 70-80k, some advocate higher); - Spinal hematoma risk too high; - GA required typically; (5) GA technique: - Aspiration prophylaxis (PPI, antacid); - Rapid Sequence Induction (RSI) with cricoid; - Anticipated difficult airway (edema); - Pre-O2 thorough; - Video laryngoscopy first; - Blunt response: opioid (remifentanil 1 mcg/kg or fentanyl 2-4 mcg/kg); lidocaine 1.5 mg/kg; magnesium adjunct; consider esmolol; - Induction: propofol 1.5-2 mg/kg + rocuronium 1.2 mg/kg; - Maintain anesthesia: sevoflurane 1 MAC + opioid + magnesium (potentiates NMB, careful); (6) Hemorrhage risk + transfusion: - Coagulopathy possible; - Platelet transfusion if active bleeding or pre-procedure (controversial threshold); - FFP if INR > 1.5; - Cryoprecipitate if fibrinogen < 1.5; - Cell saver acceptable OB; - TXA 1g; (7) Hemodynamic management: - Cautious fluid (pulmonary edema risk); - Vasopressor (norepinephrine, phenylephrine carefully — already HTN); (8) Neonatal preparation: - Term but premature; - NICU team ready; - Magnesium effects on neonate (respiratory depression); (9) Post-op care: - ICU; - Continue magnesium 24h; - BP control; - Monitor for pulmonary edema, AKI, abruption, DIC, hepatic infarction/rupture; - Platelet count + LFT trending; - Hepatic rupture (rare, devastating) — abdominal pain, shock; (10) Multidisciplinary: OB + anesthesia + neonatology + ICU + hematology + critical care + family"
+      },
+      {
+        "label": "C",
+        "text": "Skip BP control"
+      },
+      {
+        "label": "D",
+        "text": "No transfusion ready"
+      },
+      {
+        "label": "E",
+        "text": "Routine technique"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "HELLP + emergent C-section: GA with RSI (plt too low for neuraxial), difficult airway prep, blunt response to laryngoscopy, magnesium continuation, careful fluid + vasopressor, transfusion ready, ICU + monitor for hepatic rupture. Multidisciplinary.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "SOAP HELLP; ACOG"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 40 ปี ASA III — sleep study confirms positional OSA + obesity\nNeeds elective bariatric surgery laparoscopic sleeve gastrectomy\nBMI 45, neck circ 47 cm",
+    "choices": [
+      {
+        "label": "A",
+        "text": "NSAID PCA"
+      },
+      {
+        "label": "B",
+        "text": "Bariatric anesthesia (sleeve gastrectomy): (1) Pre-op optimization: - CPAP for OSA — adherent 1-3 months pre-op; - Weight loss preoperative (some surgeons require); - Glucose control DM; - Smoking cessation; - Cardiac + pulmonary clearance; - Sleep study screening (STOP-BANG); - Pre-op clinic comprehensive evaluation; (2) Airway: - Difficult airway anticipated; - Pre-O2 thorough (rapid desaturation); - Ramped position (HELP); - Apneic oxygenation (high-flow NC during apnea); - Video laryngoscopy first-pass; - Multiple equipment + difficult airway plan; - Awake fiberoptic intubation for predicted very difficult; (3) Drug dosing: - Lean body weight for: induction (propofol, sux), NMB; - Total body weight for: succinylcholine, antibiotics; - Adjusted body weight for: maintenance, opioid; - Sugammadex weight-based; (4) Intra-op: - Lung-protective + PEEP 8-12; - Recruitment maneuvers; - Multimodal opioid-sparing (TAP/QL block, acetaminophen, ketamine, dexmedetomidine, dexamethasone); - AVOID NSAID after bariatric (ulcer + perforation risk); - PONV prophylaxis multimodal (Apfel + bariatric); - Glucose control; - DVT prophylaxis (mechanical + LMWH adjusted weight); (5) Position considerations: - Reverse Trendelenburg + steep; - Pad bony prominences; - Foot board; - Compartment syndrome risk lower extremity; (6) Pneumoperitoneum effects (covered separately) — limit pressure < 15 mmHg; (7) Surgical sleeve gastrectomy specific: - Bougie size; - Staple line check; - Leak test; - Drain selective; (8) Extubation: - Fully awake; - HOB up 30°; - Lateral position; - CPAP back ASAP; (9) Post-op: - Step-down or PACU monitoring; - Continuous SpO2 + capnography; - Multimodal pain (opioid-sparing maximally); - Early mobilization; - DVT prophylaxis; - Glucose control; - Aspiration precautions; - Nutrition (bariatric supplementation lifelong); (10) Multidisciplinary: bariatric surgery + anesthesia + nursing + nutrition + psychology + endocrinology; (11) ERAS bariatric protocol"
+      },
+      {
+        "label": "C",
+        "text": "Heavy benzo premed"
+      },
+      {
+        "label": "D",
+        "text": "Total body weight all drugs"
+      },
+      {
+        "label": "E",
+        "text": "Outpatient discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Bariatric anesthesia: difficult airway prep, ramped position + HELP, drug dosing by weight class (LBW, ABW, TBW), multimodal + TAP block, AVOID NSAID, CPAP back ASAP, ERAS bariatric. Multidisciplinary lifelong care.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "SOBA Bariatric; ERAS Society"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 80 ปี — emergent abdominal surgery for ischemic bowel\nSepsis, lactate 6, BP 80/50 on norepi, K 5.5, AKI Cr 2.8\nIntubated in ED",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Propofol high dose"
+      },
+      {
+        "label": "B",
+        "text": "Septic shock + emergent abdominal surgery: (1) Source control — emergent surgery for ischemic bowel; (2) Pre-op (in ED already): - Antibiotics (broad-spectrum within 1h); - Fluid resuscitation initiated; - Norepinephrine started; - Lactate measured; - Cultures; (3) Anesthesia for emergent septic patient: - Pre-induction art line; CVL useful; - Continue vasopressor; - Induction agent — CV-stable: etomidate 0.3 mg/kg (single dose acceptable despite adrenal suppression theoretical concern in sepsis — controversial; consider stress steroid coverage); OR ketamine 0.5-1 mg/kg (preserves CV); - Reduced doses; - Rocuronium 1.2 mg/kg; - Avoid propofol bolus; (4) Maintenance: - Low-dose volatile + opioid (fentanyl, hydromorphone); - Minimize vasodilator effects; - Avoid prolonged opioid hangover (kidney + liver dysfunction); - Cisatracurium for NMB (organ-independent metabolism); (5) Resuscitation continued: - Goal-directed: MAP > 65, lactate clearance, urine output, ScvO2; - Balanced crystalloid; - Avoid colloid (HES contraindicated AKI); - Vasopressin + epinephrine if refractory; - Steroid (hydrocortisone 200 mg/d) for vasopressor-refractory; - Blood products as needed (Hb > 7 generally); (6) Renal protection: - Avoid nephrotoxins; - Maintain perfusion; - Monitor UO; - Consider CRRT post-op if AKI persists; (7) Glucose 140-180; (8) Ventilator: - Lung-protective TV 6 mL/kg IBW; - PEEP appropriate; - Avoid V/Q worsening; (9) Post-op: - ICU; - Continue resuscitation + source control if not achieved; - Open abdomen if damage control (ACS, packing); - Multidisciplinary; (10) Goals of care + family communication — elderly + emergent + sepsis = high mortality risk; ethical discussion important; (11) Modern: ABCDEF bundle ICU; sepsis bundle compliance correlates with outcome"
+      },
+      {
+        "label": "C",
+        "text": "Skip vasopressor"
+      },
+      {
+        "label": "D",
+        "text": "Hypotonic fluid"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Septic shock + emergent surgery: etomidate/ketamine induction (CV stable), continue vasopressor + fluid, source control surgery, ICU post-op, goals of care + family discussion. Cisatracurium. Multidisciplinary. ABCDEF bundle.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "Surviving Sepsis 2021; ACS Surgical Sepsis"
+  },
+  {
+    "scenario": "ผู้ป่วย 55 ปี — diagnostic colonoscopy + polypectomy under MAC sedation\nBMI 32, OSA STOP-BANG 5, controlled HTN\nUsing propofol + fentanyl by anesthesiologist",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Skip capnography"
+      },
+      {
+        "label": "B",
+        "text": "GI endoscopy anesthesia (NORA): (1) Pre-procedure: - History + physical, allergies, comorbidities; - NPO standard; - IV access; - Monitoring (BP, ECG, SpO2, capnography mandatory); - Communication with endoscopist + plan; (2) Anesthesia options: - Conscious sedation (endoscopist-administered, often midazolam + fentanyl); - Monitored Anesthesia Care (MAC) by anesthesiologist — propofol-based; - General anesthesia with ETT for select cases (advanced procedures, aspiration risk); (3) Propofol MAC: - Bolus 0.5-1 mg/kg + titrated infusion 50-150 mcg/kg/min; - Fentanyl 25-50 mcg adjunct; - Maintains airway often; - Smooth + rapid recovery; - Respiratory depression risk (especially OSA, obesity, elderly, with opioids); (4) OSA considerations: - Increased risk obstruction + apnea; - Lateral position helps; - Capnography essential; - Consider lower target depth; - Have airway equipment ready; - Bigger role for endoscopist suction; (5) Specific procedures: - Colonoscopy — supine to lateral; bowel preparation may cause dehydration; - EGD — shared airway, bite block; - ERCP — prone or lateral; longer; - EUS — similar to EGD/ERCP; - Bronchoscopy — shared airway; topical lidocaine; high O2 needs; (6) Risks: - Aspiration (especially upper GI, ileus); - Airway obstruction (OSA); - Hemodynamic instability; - Bleeding (polypectomy); - Perforation; (7) Recovery: - PACU standard discharge criteria; - Cannot drive same day; - Escort home; - Diet advancement gradual; (8) Anticoagulant management — coordinate with proceduralist; (9) Modern: increasing complex GI procedures (ESD, POEM, advanced ERCP) — anesthesia involvement increasing; (10) Multidisciplinary: GI + anesthesia + nursing"
+      },
+      {
+        "label": "C",
+        "text": "Heavy fentanyl"
+      },
+      {
+        "label": "D",
+        "text": "Long-acting benzo"
+      },
+      {
+        "label": "E",
+        "text": "Adult standard NPO ignored"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "GI endoscopy MAC: propofol-based + low-dose fentanyl, capnography mandatory, OSA considerations (lateral, lower depth, equipment ready), specific procedure considerations (EGD shared airway, ERCP prone). Aspiration risk.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "ASA NORA; ASGE Sedation"
+  },
+  {
+    "scenario": "Basic science: blood pressure monitoring techniques + invasive vs noninvasive",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Skip BP monitoring"
+      },
+      {
+        "label": "B",
+        "text": "Blood pressure monitoring — physics + methods: (1) Indirect (non-invasive): - Manual sphygmomanometer (auscultation Korotkoff sounds — gold standard intermittent); - Oscillometric (automated, most common); detects oscillations, calculates MAP from peak amplitude, derives SBP + DBP from algorithm; - Limitations: errors at extreme pressures, arrhythmia, motion, cuff size; - Cuff size — bladder 80% arm circumference (too small = falsely high; too large = falsely low); - Wrong cuff size most common error; (2) Direct (invasive arterial line): - Continuous beat-to-beat; - Accurate at extreme pressures; - Allows ABG sampling; - Risk: bleeding, thrombosis, infection, ischemia (Allen test); - Common sites: radial > femoral > brachial > axillary > dorsalis pedis; - Wave form analysis: dicrotic notch, slope, pulse pressure variation (fluid responsiveness); - Damped (occlusion, air, fibrosis); - Resonant (under-damped — over-shoot); (3) Indications arterial line: - Hemodynamic instability; - Major surgery (cardiac, vascular, neuro); - Frequent ABG; - Vasoactive infusion titration; - Inaccurate noninvasive (extreme BMI, edema); (4) Newer non-invasive continuous: - ClearSight, Nexfin (finger cuff); - LiDCO; - FloTrac; - Comparable in many cases but not all; (5) Central venous pressure: - Limited utility static fluid responsiveness; - Useful for vasoactive infusion access, fluid administration, vasopressor monitoring; (6) Pulmonary artery catheter (Swan-Ganz): - Decreasing use; - Useful in selected complex cases (right HF, PAH, complex cardiac); - Complications: arrhythmia, infection, pulmonary infarct/rupture; (7) Cardiac output monitoring: - Thermodilution (PA cath gold standard); - Esophageal Doppler; - Pulse contour (FloTrac); - Bioreactance; - Lithium dilution; (8) Selection — least invasive that meets goal"
+      },
+      {
+        "label": "C",
+        "text": "Single technique always"
+      },
+      {
+        "label": "D",
+        "text": "Wrong cuff size OK"
+      },
+      {
+        "label": "E",
+        "text": "No arterial line ever"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "BP monitoring: manual + oscillometric NIBP (cuff size critical), arterial line for instability/major surgery/vasoactive (radial > others, Allen test). CVP limited fluid utility. PA cath declining. Newer NIBP continuous. Least invasive that meets goal.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "ASA Standards; Miller's"
+  },
+  {
+    "scenario": "Management question: clinical pathway for emergency anesthesia department coverage",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single provider 24/7"
+      },
+      {
+        "label": "B",
+        "text": "Emergency anesthesia coverage + staffing: (1) Coverage models: - 24/7 in-house; - On-call from home; - Combination; - Trainee coverage with attending availability; (2) Staffing decisions based on: - Case volume + acuity; - Geographic factors (distance to hospital); - Reimbursement; - Quality + safety standards; - Resident education; - Workforce sustainability; (3) Emergency case categories (NCEPOD): - Immediate (life/limb/organ saving — within minutes); - Urgent (life/limb/organ saving — within hours); - Expedited (early treatment — within days); - Elective (planned); (4) Acuity-based triage + prioritization: - Communication surgeon + anesthesia + OR; - Multiple emergencies simultaneously — triage; - Document; (5) After-hours considerations: - Reduced staffing; - Fatigue + safety; - Communication challenges; - Resource limitations; (6) Quality + safety after hours: - Standards same as daytime; - Surgical timing for elective; - Trauma + emergency only after hours where possible; - Fatigue mitigation; (7) Wellness + sustainability: - Duty hour limits; - Hand-off + sleep protection; - Mental health resources; - Substance use awareness; (8) Multidisciplinary: anesthesia + surgery + OR nursing + administration; (9) Pediatric + cardiac + neurosurgery sub-specialty coverage; (10) Communication: - Clear escalation pathways; - Centralized call schedule; - Backup coverage; (11) Quality improvement: - Adverse event after hours; - Audit + feedback; - Continuous improvement; (12) Modern: telemedicine coverage, AI scheduling, work-life balance focus, COVID-19 + recovery impact, recruitment challenges"
+      },
+      {
+        "label": "C",
+        "text": "No staffing plan"
+      },
+      {
+        "label": "D",
+        "text": "Skip after-hours quality"
+      },
+      {
+        "label": "E",
+        "text": "Refuse emergency"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Emergency coverage: 24/7 in-house vs on-call models, acuity-based triage (NCEPOD), after-hours standards same, fatigue mitigation, multidisciplinary communication, quality improvement, sub-specialty considerations, modern: telemedicine + AI scheduling.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "ASA Practice Management; AAGBI"
+  },
+  {
+    "scenario": "Integrative: socioeconomic determinants of anesthesia outcomes + health equity",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ignore disparities"
+      },
+      {
+        "label": "B",
+        "text": "Health equity + anesthesia outcomes: (1) Social Determinants of Health (SDOH) — non-medical factors affecting health: - Economic stability; - Education; - Healthcare access; - Neighborhood + environment; - Social + community context; (2) Anesthesia outcome disparities: - Pain treatment (multiple studies showing minorities undertreated for pain); - Surgical mortality higher in lower socioeconomic; - Maternal mortality (Black women 3-4× higher); - Access to specialty care + transplant; - Insurance + reimbursement disparities; (3) Bias in healthcare: - Implicit bias (automatic stereotyping); - Structural racism in policy + practice; - Provider biases affecting decisions; - System designed for some not others; - Awareness + reflection + training; (4) Addressing disparities: - Education + training; - Workforce diversity; - Patient-centered care; - Community engagement; - Policy advocacy; - Quality improvement targeting equity; - Data stratification by demographics; (5) Specific anesthesia-relevant interventions: - Multilingual care; - Cultural humility training; - Outreach in underserved; - Pain management equity; - Pre-op clinic for high-risk; - ERAS for all (reducing disparities); - Mobile health technology; - Telemedicine; (6) Maternal mortality: - Black maternal mortality crisis; - Multi-faceted (pre-existing, access, bias, treatment); - California Maternal Quality Collaborative model; (7) Pediatric — child poverty effects; (8) LGBTQ+ health (covered); (9) Global health (covered); (10) Disability — accommodations + accessibility; (11) Modern: anti-racism in medicine, structural competency, advocacy, ASA + APSF + AAMC initiatives; (12) Resources: - SDOH screening; - Community health workers; - Social work referrals; - Patient advocacy"
+      },
+      {
+        "label": "C",
+        "text": "Single approach all"
+      },
+      {
+        "label": "D",
+        "text": "Treat all same regardless"
+      },
+      {
+        "label": "E",
+        "text": "Skip community"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Health equity: SDOH affect anesthesia outcomes (pain undertreatment minorities, maternal mortality, surgical outcomes). Implicit bias + structural racism awareness. Interventions: education, diversity, patient-centered, advocacy, ERAS, data stratification. Modern: anti-racism + structural competency.",
+    "difficulty": "easy",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "AHRQ; AAMC; ASA DEI"
+  },
+  {
+    "scenario": "Integrative: future of anesthesia — AI, machine learning, automation",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Resist all AI"
+      },
+      {
+        "label": "B",
+        "text": "Future of anesthesia — AI/ML: (1) Current AI applications: - Hypotension Prediction Index (HPI) — predicts hypotension before occurrence; FDA-approved; - Difficult airway prediction; - Drug dosing optimization; - PONV risk stratification; - Mortality + complication prediction; - Closed-loop drug delivery (target-controlled infusion, BIS-guided sedation, fluid management); - Image analysis (ultrasound for regional anesthesia, echo); - Natural language processing (chart review, documentation); (2) Machine learning approaches: - Supervised (predict outcomes); - Unsupervised (clustering, phenotypes); - Deep learning (neural networks, image, complex pattern); - Reinforcement learning (sequential decision-making); (3) Big data sources: - EHR (NACOR registry); - Wearables + continuous monitoring; - Genomics; - Imaging; - Patient-reported outcomes; (4) Considerations + challenges: - Data quality + standardization; - Algorithmic bias (training data); - Interpretability (black box); - Generalizability across populations; - Validation in diverse cohorts; - Regulatory (FDA SaMD framework); - Liability + accountability; - Privacy + security; - Implementation + workflow integration; - Provider acceptance + training; - Equity concerns (digital divide, bias); (5) Closed-loop systems: - Anesthesia delivery; - Fluid resuscitation; - Glucose control; - Ventilation; - Sedation; - Need to balance autonomy + safety; (6) Telemedicine + remote: - Pre-op evaluation; - Tele-ICU; - Mentorship; - Disaster + global; (7) Wearable + continuous: - Home monitoring post-discharge; - Early detection complications; (8) Ethical considerations: - Bias propagation; - Job displacement (mostly augmentation not replacement); - Patient autonomy + consent; - Equity + access; (9) Education + training: - AI literacy for anesthesiologists; - Lifelong learning; - Hybrid expertise (clinical + computational); (10) Anesthesiologist role evolving: - Decision support partner; - Quality + safety oversight; - Higher-level + complex case focus; - Education + research; - Leadership + advocacy; (11) Modern: rapidly evolving field, opportunity for anesthesiology leadership"
+      },
+      {
+        "label": "C",
+        "text": "Replace all clinicians"
+      },
+      {
+        "label": "D",
+        "text": "Skip ethics"
+      },
+      {
+        "label": "E",
+        "text": "Single use only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Future anesthesia: AI/ML (HPI, prediction, closed-loop, imaging). Considerations: bias, interpretability, regulation, equity. Wearables + telemedicine. Ethical + equity considerations. Anesthesiologist role evolves (augmentation + leadership). Rapidly evolving field.",
+    "difficulty": "easy",
+    "board_section": "integrative",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "ASA Innovations; APSF Tech"
+  },
+  {
+    "scenario": "Integrative: educational + lifelong learning in anesthesia",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Skip CME"
+      },
+      {
+        "label": "B",
+        "text": "Anesthesia education + lifelong learning: (1) Education hierarchy: - Medical school; - Residency (4 years anesthesia in US after intern); - Fellowship (cardiac, pediatric, OB, regional, pain, critical care, NORA); - Continuous practice + learning; (2) ACGME competencies: - Patient care; - Medical knowledge; - Practice-based learning + improvement; - Interpersonal + communication; - Professionalism; - Systems-based practice; (3) Maintenance of Certification in Anesthesiology (MOCA): - 10-year cycle; - Continuous learning (MOCA Minute); - Periodic assessment; - Quality improvement; - Professional standing; - 4 components by ABA; (4) Continuing Medical Education (CME): - Required for licensure + boards; - Categories: lecture, simulation, journal, online, self-directed; - ACCME accreditation; (5) Adult learning theory: - Self-directed; - Experience-based; - Relevant + applicable; - Problem-centered; (6) Effective methods: - Active learning > passive; - Simulation (high-fidelity, standardized patient); - Procedural skills practice; - Debriefing; - Peer learning; - Mentorship; - Feedback (formative + summative); (7) Resident education: - Graduated responsibility; - Case mix variety; - Sub-specialty exposure; - Wellness + work-life balance; - Inter-professional training; - QI + research; (8) Faculty development: - Teaching skills; - Educational scholarship; - Mentoring; - Curriculum design; (9) Educational research: - Evidence-based education; - Implementation; - Assessment validity; (10) Professional engagement: - Specialty societies (ASA, AAGBI, ESA); - Conferences; - Journals; - Online communities; (11) Mentorship: - Formal + informal; - Sponsorship; - Career navigation; - Bidirectional; (12) Modern: digital education, podcasts, MOOCs, social media, simulation centers, telementoring, lifelong learning culture; (13) Wellness integrated with education — sustainable career"
+      },
+      {
+        "label": "C",
+        "text": "Single training only"
+      },
+      {
+        "label": "D",
+        "text": "Avoid simulation"
+      },
+      {
+        "label": "E",
+        "text": "No mentorship"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Anesthesia education: medical school → residency → fellowship → MOCA. ACGME competencies. Adult learning theory. Simulation + active learning. Mentorship. CME. Professional engagement. Modern: digital + lifelong learning culture integrated with wellness.",
+    "difficulty": "easy",
+    "board_section": "integrative",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "ABA MOCA; ACGME"
   }
 ]
