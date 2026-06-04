@@ -168,5 +168,175 @@
     "board_topic": "hemato_onco",
     "board_age_group": "adult",
     "reference_source": "NCCN Colon + Rectal Cancer 2024; ACR Appropriateness Criteria"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 45 ปี acute renal colic — severe flank pain + hematuria — concerned ureterolithiasis\n\nคำถาม: imaging selection",
+    "choices": [
+      { "label": "A", "text": "X-ray only" },
+      { "label": "B", "text": "Renal Colic Imaging: (1) **Non-contrast CT abdomen-pelvis (CT-KUB)** — gold standard, > 95% sensitivity + specificity for stones; identifies size, location, hydronephrosis, complications; alternative diagnoses if equivocal; (2) **Low-dose CT** preferred for known recurrent stone formers — reduce radiation; (3) **Ultrasound** alternative: pregnant, pediatric, suspected lower risk — detects hydronephrosis, larger stones, but lower sensitivity for ureteral stones; (4) **KUB plain film** — limited (only radiopaque stones — calcium, struvite seen; uric acid invisible); used for follow-up of known stones; (5) **MRI** rarely needed (slow, not great for stones); (6) **Management based on size + location**: < 5 mm — usually passes spontaneously + medical expulsive therapy (alpha-blockers — controversial), hydration, analgesia; 5-10 mm — may need intervention if pain/obstruction persists; > 10 mm or obstructing — urology consult (ureteroscopy, shock wave lithotripsy SWL, percutaneous nephrolithotomy PCNL); (7) **Complications**: infection (obstructed + infected — emergency), AKI, stone obstruction; (8) **Imaging follow-up**: confirm passage or guide intervention; (9) **Stone workup**: 24-hr urine, stone composition analysis, metabolic workup for recurrent; (10) **Hydration + dietary** for prevention; (11) **Multidisciplinary**: ED + urology + radiology + sometimes IR" },
+      { "label": "C", "text": "MRI only" },
+      { "label": "D", "text": "Bone scan" },
+      { "label": "E", "text": "No imaging" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Renal colic: non-contrast CT gold standard. Low-dose CT for recurrent stone formers. US for pregnancy + pediatric. Management based on size + location. Multidisciplinary urology care. Modern: low-dose protocols + selective imaging.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "renal_gu",
+    "board_age_group": "adult",
+    "reference_source": "AUA Surgical Stone Disease Guideline; ACR Appropriateness"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 50 ปี severe chest pain radiating to back — concerned acute aortic dissection\n\nคำถาม: imaging for aortic dissection",
+    "choices": [
+      { "label": "A", "text": "Wait + observe" },
+      { "label": "B", "text": "Acute Aortic Dissection Imaging: (1) **CT angiography (CTA) chest/abdomen/pelvis** — gold standard, rapid, widely available, identifies intimal flap + true/false lumen + extent + branch vessel involvement + complications (rupture, pericardial effusion, malperfusion); (2) **Stanford classification**: - Type A (involves ascending aorta) — surgical emergency (open repair); - Type B (descending only, distal to subclavian) — usually medical management (BP control, beta-blocker, esmolol or labetalol; target HR < 60, SBP 100-120); endovascular (TEVAR) for complicated B; (3) **TEE (transesophageal echocardiogram)**: bedside alternative for unstable patient or contrast contraindication; high sensitivity for Type A; intra-operative monitoring; (4) **MRI** alternative when contrast contraindicated or pregnancy — slower, less widely available emergently; (5) **D-dimer**: highly sensitive (98%) — exclusion in low-risk; nonspecific; (6) **Risk factors**: HT (most), Marfan, Ehlers-Danlos, bicuspid aortic valve, pregnancy, cocaine, trauma, prior aortic surgery; (7) **Initial management while imaging**: BP control + HR control (esmolol or labetalol IV, target HR 60, SBP 100-120); pain control; surgical/IR consult; (8) **Multidisciplinary urgent**: ED + cardiothoracic surgery + radiology + ICU + IR + anesthesia; (9) **High mortality** if Type A unrepaired (1% per hour); (10) **Long-term**: lifelong surveillance imaging, BP control, beta-blocker, genetic counseling if syndromic; (11) **Bedside echocardiogram** rules out pericardial tamponade urgent; (12) **Modern**: aggressive surgical + endovascular care + improved outcomes" },
+      { "label": "C", "text": "Refuse" },
+      { "label": "D", "text": "Discharge" },
+      { "label": "E", "text": "X-ray only" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Aortic dissection: CTA gold standard. Stanford A surgical emergency; B medical/endovascular. TEE bedside alternative. BP + HR control critical. Multidisciplinary urgent care. High mortality without treatment. Modern: aggressive surgical + endovascular + improved outcomes.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "AHA/ACC Aortic Disease Guidelines; ESC Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี — knee pain + recent sports injury — clinical exam suggests ACL tear + meniscal injury\n\nคำถาม: knee imaging modality",
+    "choices": [
+      { "label": "A", "text": "X-ray only" },
+      { "label": "B", "text": "Knee MRI: (1) **X-ray first** to rule out fracture (lateral, AP, sunrise, weight-bearing for OA); (2) **MRI knee** — gold standard for soft tissue + cartilage + bone marrow edema: - ACL/PCL/MCL/LCL ligaments; - Menisci (medial + lateral); - Cartilage; - Bone marrow edema (suggests recent injury, AVN); - Tendons; - Effusion; - Fractures (occult); - Cysts; (3) **MR arthrography**: contrast injected into joint — improves sensitivity for: labral tears (shoulder, hip), meniscal repair vs re-tear, post-surgical evaluation; (4) **US knee**: superficial structures (tendons, ligaments — collateral), effusion; operator-dependent; dynamic; alternative to MRI for some; (5) **CT knee**: bony detail (fractures, loose bodies, surgical planning); not soft tissue; (6) **Bone scan**: stress fractures, infection, AVN — selected; (7) **Clinical-MRI correlation**: clinical exam + history + MRI guides treatment; (8) **Modern**: 3T MRI improved resolution; (9) **Selection**: clinical scenario, expected pathology, contraindications (pacemaker, metallic implants — some MRI-compatible), claustrophobia, cost; (10) **Multidisciplinary**: ortho + sports medicine + radiology + PT" },
+      { "label": "C", "text": "Bone scan only" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "No imaging" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Knee MRI: gold standard for soft tissue + meniscus + cartilage + bone marrow edema. X-ray first for fracture. MR arthrography for selected. US for superficial + dynamic. CT for bone detail. Clinical-MRI correlation. Modern: 3T MRI improved resolution.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "ACR Appropriateness Criteria"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี — chest pain + EKG inconclusive + serial troponins negative — chest pain rule out ACS\n\nคำถาม: cardiac imaging for ACS workup",
+    "choices": [
+      { "label": "A", "text": "No imaging" },
+      { "label": "B", "text": "Cardiac Imaging for ACS Workup: (1) **Stress echocardiogram**: exercise + dobutamine stress — assesses LV function + regional wall motion at rest + stress; useful for moderate pre-test probability; non-invasive, no radiation; (2) **Stress nuclear (SPECT) myocardial perfusion**: dipyridamole, adenosine, regadenoson + radiotracer — perfusion at rest + stress; radiation exposure; well-established; (3) **Stress MRI**: dobutamine — wall motion; vasodilator — perfusion; no radiation, high resolution; not widely available; (4) **Coronary CT angiography (CCTA)**: detailed coronary anatomy; high sensitivity but lower specificity for hemodynamically significant stenosis; PROMISE trial — non-inferior + identifies non-cardiac causes; preferred in low-intermediate risk; modern advantage; (5) **Invasive coronary angiography**: gold standard for high pre-test probability + intervention planning; (6) **Selection factors**: pre-test probability of CAD (CAD Consortium), patient factors (renal, allergy, ability to exercise, BMI), local availability, cost; (7) **Pre-test probability low**: CCTA or stress imaging (reduces unnecessary invasive); (8) **Pre-test probability high**: invasive angiography directly; (9) **HEART score**: ED chest pain risk stratification (history, EKG, age, risk factors, troponin) — guides imaging decisions; (10) **Modern**: CCTA increasing role + AI-assisted analysis; CT-FFR (fractional flow reserve from CT) emerging; FAME 3 trial; (11) **Multidisciplinary**: ED + cardiology + radiology" },
+      { "label": "C", "text": "Refuse" },
+      { "label": "D", "text": "Surgery" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cardiac imaging for ACS: pre-test probability based. CCTA for low-intermediate (PROMISE). Stress echo, nuclear, MRI alternatives. Invasive angiography for high pre-test probability. HEART score guides. Modern: CCTA + AI + CT-FFR emerging. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "AHA/ACC + ESC Chest Pain Guidelines; PROMISE NEJM 2015"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 60 ปี — palpable thyroid nodule on physical exam — workup",
+    "choices": [
+      { "label": "A", "text": "Ignore" },
+      { "label": "B", "text": "Thyroid Nodule Imaging Workup: (1) **TSH + Free T4** — first (rule out functional nodule; hyperfunctioning nodules — \"hot\" — rarely malignant, less aggressive workup); (2) **Thyroid US** — first-line imaging: nodule characterization, additional nodules, lymph nodes; TI-RADS classification (1-5) by features (composition, echogenicity, shape, margin, calcifications) → guides FNA biopsy decision; ATA + ACR-TIRADS systems; (3) **Indications for FNA biopsy** by TI-RADS + size: highly suspicious (TI-RADS 5) — FNA if ≥ 1 cm; moderately suspicious (TI-RADS 4) — FNA if ≥ 1.5 cm; mildly suspicious — FNA if ≥ 2.5 cm; benign features — no FNA usually; (4) **FNA cytology** Bethesda Classification (I-VI) guides management: - I non-diagnostic; II benign; III AUS/FLUS; IV FN/SFN; V suspicious; VI malignant; (5) **Radioactive iodine uptake (RAIU) scan** for thyrotoxicosis + nodule (functional?); not for nodule characterization alone; (6) **CT/MRI**: large or retrosternal extension, lymph node assessment for known malignancy; (7) **Surgery**: lobectomy or total thyroidectomy + central neck dissection for malignancy; (8) **Modern**: molecular testing (Afirma, ThyroSeq) for indeterminate cytology (Bethesda III/IV) — reduce unnecessary surgery; (9) **Surveillance**: US periodic, growth (per ATA criteria); (10) **Multidisciplinary**: endocrinology + radiology + endocrine surgery + pathology + nuclear medicine" },
+      { "label": "C", "text": "Surgery first" },
+      { "label": "D", "text": "Refuse care" },
+      { "label": "E", "text": "Antibiotic only" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Thyroid nodule: TSH + US first. TI-RADS classification guides FNA. Bethesda cytology classification guides surgery. Modern: molecular testing reduces unnecessary surgery. Multidisciplinary care.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "ATA Thyroid Nodule + Cancer 2015 Guidelines; ACR TI-RADS"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี post-MVC neck pain + neurologic deficit — concerned spinal cord injury\n\nคำถาม: spine imaging trauma",
+    "choices": [
+      { "label": "A", "text": "X-ray only" },
+      { "label": "B", "text": "Trauma Spine Imaging: (1) **NEXUS criteria + Canadian C-Spine Rule** — identify patients who don't need imaging (low risk); (2) **CT cervical spine** — first-line for trauma: high sensitivity for bony injury (fractures, dislocations); rapid; widely available; replaces routine X-ray for trauma; (3) **CT thoracic + lumbar spine** for high-energy or focal symptoms; (4) **MRI spine** if: neurologic deficit, suspected ligamentous injury (CT negative but clinical concern), suspected cord injury, evaluate disc + spinal cord + soft tissues; (5) **Plain X-ray**: limited role modern — replaced by CT for trauma; selected (suspected fracture in single area, follow-up); (6) **CT angiography neck**: blunt cerebrovascular injury (BCVI) screening — high-risk mechanism (cervical hyperextension/rotation/distraction, cervical fracture involving foramen, GCS ≤ 8 without explanation, LeFort II/III, basal skull fracture with petrous involvement, neurologic deficit + CT brain inconsistent, near-hanging, severe seatbelt sign) — Denver criteria; (7) **MRI for cord injury**: assess hematoma, edema, contusion, prognosis; (8) **Bedside US**: limited; (9) **Multidisciplinary**: trauma + neurosurgery + orthopedics + radiology + critical care; (10) **C-collar precautions** until cleared; (11) **Treatment based on findings**: stable/unstable fracture, dislocation, cord injury, ligamentous injury; (12) **Modern**: NEXUS rules reduce unnecessary CT; pan-scan for severe mechanism" },
+      { "label": "C", "text": "MRI only" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "No imaging" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Spine trauma imaging: NEXUS/Canadian rules + CT first-line + MRI for neuro deficit/ligamentous. CT angiography for BCVI screen (Denver criteria). Multidisciplinary trauma care. C-collar precautions. Modern: validated decision rules + CT mainstay + MRI selective.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "EAST + AAST Spine Trauma; NEXUS Rules"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 70 ปี — elevated PSA 8.2 + abnormal DRE — concerned prostate cancer\n\nคำถาม: prostate imaging + biopsy",
+    "choices": [
+      { "label": "A", "text": "Refuse care" },
+      { "label": "B", "text": "Prostate Cancer Imaging + Biopsy: (1) **MRI prostate (multiparametric mpMRI)** before biopsy increasingly standard (PRECISION trial NEJM 2018): - T2-weighted (anatomy); - Diffusion-weighted (DWI — apparent diffusion coefficient ADC); - Dynamic contrast-enhanced (DCE — perfusion); - Optional spectroscopy; - **PI-RADS classification** (1-5): probability of clinically significant cancer; (2) **Biopsy approach**: - **Targeted biopsy** (cognitive, fusion, in-bore) of PI-RADS ≥ 3 lesions; - **Systematic biopsy** (12-core template) + targeted = combination approach (best yield); - **Transperineal biopsy** alternative to transrectal (lower infection rate); (3) **Bone scan + CT abdomen/pelvis** for staging if intermediate/high-risk cancer (Gleason ≥ 7, PSA > 20, T3+); (4) **PSMA PET-CT** — emerging: high sensitivity for staging + recurrence detection; FDA approved 2020 (Pylarify, Locametz); (5) **Risk stratification**: NCCN risk groups (very low to very high) — guide treatment; (6) **Treatment options**: active surveillance (low-risk), surgery (radical prostatectomy), radiation (external beam, brachytherapy), focal therapy (HIFU, cryotherapy — selected); androgen deprivation therapy; chemotherapy; targeted; (7) **Multidisciplinary**: urology + radiology + medical oncology + radiation oncology + pathology + primary care; (8) **Genetic counseling**: BRCA + Lynch + others for advanced + family history; (9) **Modern**: MRI before biopsy reduces unnecessary biopsies + finds clinically significant; PSMA PET for staging" },
+      { "label": "C", "text": "Ignore" },
+      { "label": "D", "text": "Surgery without staging" },
+      { "label": "E", "text": "Refuse care" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Prostate cancer: mpMRI before biopsy (PRECISION trial). PI-RADS classification + targeted + systematic biopsy. Bone scan + CT for intermediate/high-risk. PSMA PET emerging. Risk stratification + treatment options. Multidisciplinary. Genetic counseling. Modern: MRI standard + PSMA PET growing.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "NCCN Prostate Cancer; PRECISION Trial NEJM 2018"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี post-knee surgery 1 week + acute calf swelling + pain — concerned DVT\n\nคำถาม: DVT imaging",
+    "choices": [
+      { "label": "A", "text": "X-ray leg" },
+      { "label": "B", "text": "DVT Imaging Diagnosis: (1) **Compression Ultrasound (CUS)** — gold standard imaging: lack of vein compressibility = thrombus; high sensitivity + specificity proximal DVT; can extend to whole leg (whole-leg vs proximal CUS — different protocols); (2) **D-dimer + Wells score** for risk stratification — low Wells + negative D-dimer = exclude DVT; high Wells or positive D-dimer → CUS; (3) **CT venography** alternative — when US technically limited or pelvic/IVC suspected; (4) **MR venography** — pelvic, abdominal, IVC clot characterization; (5) **Contrast venography** historical gold standard — invasive, rarely used; (6) **Initial management while imaging**: anticoagulation if high suspicion (LMWH or DOAC); (7) **Confirmed DVT**: - Anticoagulation (DOAC first-line for most — apixaban, rivaroxaban; LMWH for cancer-associated; warfarin for selected) duration based on provoked vs unprovoked, comorbidity, bleeding risk; - IVC filter for absolute anticoagulation contraindication; - Catheter-directed thrombolysis for selected (extensive proximal — ATTRACT trial); (8) **Risk factors**: surgery, immobilization, malignancy, OCP, pregnancy, thrombophilia, prior VTE; (9) **Workup unprovoked DVT**: age-appropriate cancer screening; thrombophilia testing selected (recurrent, young, family history); (10) **Multidisciplinary**: vascular medicine, hematology, IR, primary care; (11) **Prevention**: VTE prophylaxis (mechanical + chemical) post-surgery + immobilized" },
+      { "label": "C", "text": "Bone scan" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "No imaging" }
+    ],
+    "correct_answer": "B",
+    "explanation": "DVT: CUS gold standard. Wells + D-dimer risk stratification. CT/MR venography alternatives. Anticoagulation treatment (DOAC first-line most). IVC filter selected. Thrombolysis for extensive (ATTRACT). Multidisciplinary care. Prevention essential.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "ACCP CHEST Antithrombotic 2016; ASH Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 75 ปี with CKD3 (eGFR 35) — needs CT scan for cancer staging with IV contrast\n\nคำถาม: contrast considerations + alternatives",
+    "choices": [
+      { "label": "A", "text": "No precautions" },
+      { "label": "B", "text": "Contrast-Induced Nephropathy (CIN) Risk + Management: (1) **Risk factors**: pre-existing CKD (most important), DM, age > 75, dehydration, contrast volume + osmolality, repeated within 72h, nephrotoxic medications (NSAIDs, ACE/ARB controversial); (2) **Risk stratification**: eGFR > 60 — low risk; 30-60 — moderate; < 30 or dialysis — high risk; (3) **Prevention strategies**: - **IV hydration** with normal saline (Cochrane evidence — most effective) — typically 1 mL/kg/hr × 6-12h pre + post; isotonic bicarbonate alternative (less evidence); - **Use lowest contrast dose** needed; - **Iso-osmolar or low-osmolar contrast** preferred; - **N-acetylcysteine (NAC)** — debated, AMACING trial showed no benefit, recent evidence weak; - **Hold nephrotoxic medications** if possible (NSAIDs, diuretics — although diuretics controversial); - **Hold metformin** day of contrast (lactic acidosis risk if AKI develops); - **Re-dose adjustment** based on Cr; (4) **Alternative imaging** when possible: - **MRI** (gadolinium-based contrast — own risks including nephrogenic systemic fibrosis NSF in severe CKD/dialysis with linear gadolinium agents — use macrocyclic if needed); - **Non-contrast CT** for many indications; - **Ultrasound** for selected; (5) **Contrast allergy** considerations: prior reaction (mild — premedication; moderate/severe — strongly consider alternative or different agent); steroid + diphenhydramine premedication protocol; (6) **Modern**: limited consensus on benefit of NAC; emphasis on hydration + lowest dose + alternatives when possible; (7) **Documentation** + post-contrast Cr monitoring 48-72h; (8) **Multidisciplinary**: radiology + nephrology + ordering physician" },
+      { "label": "C", "text": "Refuse imaging" },
+      { "label": "D", "text": "Surgery without imaging" },
+      { "label": "E", "text": "Random approach" }
+    ],
+    "correct_answer": "B",
+    "explanation": "CIN: risk factors + risk stratification + prevention (IV hydration + low dose). Alternatives (MRI, non-contrast, US). Allergy management. Hold metformin. NAC debated. Documentation + Cr monitoring. Multidisciplinary. Modern: hydration + lowest dose + alternatives when possible.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "renal_gu",
+    "board_age_group": "adult",
+    "reference_source": "ACR Contrast Manual; KDIGO AKI"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 28 ปี G1P0 GA 24 wk — fever + cough + SOB — concerned pneumonia + considering imaging in pregnancy",
+    "choices": [
+      { "label": "A", "text": "Refuse imaging" },
+      { "label": "B", "text": "Imaging in Pregnancy — Risk-Benefit: (1) **Principles**: don't withhold necessary imaging due to pregnancy; risks of undiagnosed disease often exceed imaging risks; informed consent; (2) **Radiation considerations**: - Most diagnostic imaging well below threshold for teratogenic + carcinogenic effects (50 mGy threshold for organogenesis effects, single CXR ~ 0.01 mGy, abdominal CT ~ 10 mGy); - Cumulative dose matters; - Highest sensitivity 8-15 weeks (organogenesis); - Discuss with patient — informed consent; (3) **Imaging selection in pregnancy** (lowest first): - **US** — no radiation, first-line for many; - **MRI without gadolinium** — no radiation, safe in pregnancy (gadolinium relative contraindication — animal data NSF risk); - **CXR** — minimal radiation, lead shielding; for respiratory symptoms; - **CTPA** for PE if needed — low dose (< 10 mGy abdomen), lead shielding breast/abdomen; - **CT abdomen** — if necessary, weigh benefits, lead shielding when feasible; - **Nuclear medicine + interventional radiology** — selective; - **Iodinated contrast** — generally OK if needed (low fetal thyroid risk — check neonatal TFT post-natal if exposed); (4) **Specific scenarios**: - Suspected pneumonia → CXR (minimal radiation); - Suspected PE → V/Q vs CTPA — both reasonable; - Appendicitis → US first, MRI if equivocal; - Trauma → as needed; - Suspected pulmonary edema, dissection — necessary imaging; (5) **Documentation + counseling**: explain to patient, informed consent, document; (6) **Multidisciplinary**: OB + radiology + treating team; (7) **Modern**: pregnant patients should receive appropriate medical care including imaging when indicated" },
+      { "label": "C", "text": "Surgery without imaging" },
+      { "label": "D", "text": "Ignore symptoms" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pregnancy imaging: don't withhold necessary imaging. Most diagnostic imaging well below teratogenic threshold. US/MRI without contrast preferred. CXR safe. CT when indicated with shielding. Risks of undiagnosed disease often exceed imaging risks. Informed consent. Multidisciplinary care.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACR Imaging in Pregnancy; ACOG Committee Opinion"
   }
 ]
