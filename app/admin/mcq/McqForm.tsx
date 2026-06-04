@@ -6,8 +6,12 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { createMcqQuestion, updateMcqQuestion } from "@/lib/supabase/mutations-mcq-admin";
-import { ChevronLeft, Save, Loader2, GraduationCap } from "lucide-react";
+import {
+  createMcqQuestion,
+  updateMcqQuestion,
+  type McqDetailedExplanation,
+} from "@/lib/supabase/mutations-mcq-admin";
+import { ChevronLeft, Save, Loader2, GraduationCap, Sparkles } from "lucide-react";
 import { BOARD_SECTIONS } from "@/lib/types-board";
 
 export interface AdminMcqSubject {
@@ -77,10 +81,12 @@ const EMPTY_FORM: FormData = {
 
 export function McqForm({
   initial,
+  initialDetailed,
   subjects,
   boardTopics = [],
 }: {
   initial?: Partial<FormData> & { id?: string };
+  initialDetailed?: McqDetailedExplanation | null;
   subjects: AdminMcqSubject[];
   boardTopics?: AdminBoardTopic[];
 }) {
@@ -88,6 +94,24 @@ export function McqForm({
   const [form, setForm] = useState<FormData>({ ...EMPTY_FORM, ...initial });
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Detailed (per-choice) explanation — kept as flat state, recomposed into the
+  // detailed_explanation jsonb at save time. text + is_correct are derived from
+  // the main choices/correct_answer fields so they can't drift out of sync.
+  const [detailSummary, setDetailSummary] = useState(initialDetailed?.summary ?? "");
+  const [detailReason, setDetailReason] = useState(initialDetailed?.reason ?? "");
+  const [detailKeyTakeaway, setDetailKeyTakeaway] = useState(
+    initialDetailed?.key_takeaway ?? ""
+  );
+  const [choiceExpl, setChoiceExpl] = useState<Record<string, string>>(() => {
+    const map: Record<string, string> = {};
+    for (const c of initialDetailed?.choices ?? []) map[c.label] = c.explanation ?? "";
+    return map;
+  });
+  const [drafting, setDrafting] = useState(false);
+  // Tracks whether AI drafted the explanation in this editing session, so we can
+  // flag is_ai_enhanced. The human still reviews/edits before saving.
+  const [aiUsed, setAiUsed] = useState(false);
 
   const selectedSubject = useMemo(
     () => subjects.find((s) => s.id === form.subject_id) ?? null,
@@ -136,6 +160,77 @@ export function McqForm({
     setForm((prev) => ({ ...prev, choices }));
   }
 
+  // Recompose flat detail state → detailed_explanation jsonb. Returns null when
+  // nothing has been written (so we don't store an empty shell).
+  function buildDetailed(): McqDetailedExplanation | null {
+    const hasAny =
+      detailSummary.trim() ||
+      detailReason.trim() ||
+      detailKeyTakeaway.trim() ||
+      Object.values(choiceExpl).some((v) => v.trim());
+    if (!hasAny) return null;
+    return {
+      summary: detailSummary.trim(),
+      reason: detailReason.trim(),
+      key_takeaway: detailKeyTakeaway.trim(),
+      choices: form.choices.map((c) => ({
+        label: c.label,
+        text: c.text,
+        is_correct: c.label === form.correct_answer,
+        explanation: (choiceExpl[c.label] ?? "").trim(),
+      })),
+    };
+  }
+
+  async function handleDraftWithAi() {
+    if (!form.scenario.trim() || form.choices.some((c) => !c.text.trim())) {
+      setError("ใส่โจทย์และตัวเลือกให้ครบก่อนร่างเฉลยด้วย AI");
+      return;
+    }
+    setDrafting(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/admin/mcq/draft-explanation", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          scenario: form.scenario,
+          choices: form.choices,
+          correct_answer: form.correct_answer,
+          subject_th: selectedSubject?.name_th,
+          exam_type: isBoard ? "Board" : form.exam_type,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setError(data.error || "ร่างเฉลยด้วย AI ไม่สำเร็จ");
+        return;
+      }
+      const d = data.detailed_explanation as McqDetailedExplanation | undefined;
+      if (!d) {
+        setError("AI ไม่ได้ส่งเฉลยกลับมา");
+        return;
+      }
+      setDetailSummary(d.summary ?? "");
+      setDetailReason(d.reason ?? "");
+      setDetailKeyTakeaway(d.key_takeaway ?? "");
+      const map: Record<string, string> = {};
+      for (const c of d.choices ?? []) map[c.label] = c.explanation ?? "";
+      setChoiceExpl(map);
+      // If AI is confident a different choice is correct, surface it by moving
+      // the selection — the admin can still override.
+      const aiCorrect = (d.choices ?? []).find((c) => c.is_correct)?.label;
+      if (aiCorrect && aiCorrect !== form.correct_answer) {
+        setField("correct_answer", aiCorrect);
+      }
+      setAiUsed(true);
+    } catch (e) {
+      setError(`ร่างเฉลยด้วย AI ไม่สำเร็จ: ${String(e)}`);
+    } finally {
+      setDrafting(false);
+    }
+  }
+
   async function handleSave() {
     if (!form.subject_id || !selectedSubject) {
       setError("กรุณาเลือกสาขา");
@@ -157,6 +252,7 @@ export function McqForm({
     setSaving(true);
     setError(null);
 
+    const detailed = buildDetailed();
     const commonPayload = {
       subject_id: form.subject_id,
       exam_source: form.exam_source || null,
@@ -164,6 +260,10 @@ export function McqForm({
       choices: form.choices,
       correct_answer: form.correct_answer,
       explanation: form.explanation || null,
+      detailed_explanation: detailed,
+      ...(aiUsed
+        ? { is_ai_enhanced: true, ai_notes: "AI-drafted detailed explanation" }
+        : {}),
       difficulty: form.difficulty,
       topic: form.topic || null,
       status: form.status,
@@ -488,7 +588,7 @@ export function McqForm({
         {/* Explanation */}
         <div>
           <label className="text-sm font-medium mb-1.5 block">
-            เฉลย (Explanation)
+            เฉลยสั้น (Explanation)
           </label>
           <textarea
             value={form.explanation}
@@ -497,6 +597,103 @@ export function McqForm({
             className="w-full border rounded-md px-3 py-2 text-sm resize-y"
             placeholder="อธิบายเหตุผลที่ตอบ..."
           />
+        </div>
+
+        {/* Detailed (per-choice) explanation */}
+        <div className="rounded-lg border border-emerald-200 bg-emerald-50/40 p-4 space-y-4">
+          <div className="flex items-center justify-between gap-2">
+            <span className="text-sm font-medium text-emerald-900">
+              เฉลยละเอียด (รายตัวเลือก) — แสดงในหน้าเฉลยของผู้เรียน
+            </span>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              onClick={handleDraftWithAi}
+              disabled={drafting}
+              className="gap-1.5 shrink-0"
+            >
+              {drafting ? (
+                <Loader2 className="h-3.5 w-3.5 animate-spin" />
+              ) : (
+                <Sparkles className="h-3.5 w-3.5" />
+              )}
+              ร่างด้วย AI
+            </Button>
+          </div>
+
+          <div>
+            <label className="text-xs font-medium mb-1 block text-muted-foreground">
+              สรุปคำตอบ (summary)
+            </label>
+            <Input
+              value={detailSummary}
+              onChange={(e) => setDetailSummary(e.target.value)}
+              placeholder="เช่น คำตอบที่ถูกคือ A. Acute appendicitis"
+            />
+          </div>
+
+          <div>
+            <label className="text-xs font-medium mb-1 block text-muted-foreground">
+              เหตุผลหลัก (reason)
+            </label>
+            <textarea
+              value={detailReason}
+              onChange={(e) => setDetailReason(e.target.value)}
+              rows={3}
+              className="w-full border rounded-md px-3 py-2 text-sm resize-y bg-white"
+              placeholder="อธิบายเหตุผลทางการแพทย์อย่างละเอียด..."
+            />
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-xs font-medium block text-muted-foreground">
+              เหตุผลรายตัวเลือก (ทำไมถูก/ผิด)
+            </label>
+            {form.choices.map((c) => (
+              <div key={c.label} className="flex items-start gap-2">
+                <span
+                  className={`mt-1.5 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${
+                    form.correct_answer === c.label
+                      ? "bg-green-500 text-white"
+                      : "bg-gray-200 text-muted-foreground"
+                  }`}
+                  title={form.correct_answer === c.label ? "ตัวเลือกที่ถูก" : undefined}
+                >
+                  {c.label}
+                </span>
+                <textarea
+                  value={choiceExpl[c.label] ?? ""}
+                  onChange={(e) =>
+                    setChoiceExpl((prev) => ({ ...prev, [c.label]: e.target.value }))
+                  }
+                  rows={2}
+                  className="flex-1 border rounded-md px-3 py-1.5 text-sm resize-y bg-white"
+                  placeholder={
+                    form.correct_answer === c.label
+                      ? "ถูกต้อง เพราะ..."
+                      : "ผิด เพราะ..."
+                  }
+                />
+              </div>
+            ))}
+          </div>
+
+          <div>
+            <label className="text-xs font-medium mb-1 block text-muted-foreground">
+              ข้อควรจำ (key takeaway)
+            </label>
+            <Input
+              value={detailKeyTakeaway}
+              onChange={(e) => setDetailKeyTakeaway(e.target.value)}
+              placeholder="หลักสำคัญที่ควรนำไปใช้สอบ"
+            />
+          </div>
+
+          <p className="text-xs text-muted-foreground">
+            ปล่อยว่างทั้งหมดได้ถ้ายังไม่เฉลย — ระบบจะไม่บันทึกเฉลยละเอียดที่ว่างเปล่า
+            (text/ถูก-ผิด ของแต่ละตัวเลือกดึงจากช่องตัวเลือก + คำตอบที่เลือกด้านบนอัตโนมัติ)
+          </p>
         </div>
 
         {/* Difficulty + Status */}

@@ -159,6 +159,11 @@ export default function AdminMcqPage() {
           <p className="text-muted-foreground mt-1">เพิ่ม แก้ไข และจัดการสถานะข้อสอบ</p>
         </div>
         <div className="flex items-center gap-2">
+          <Link href="/admin/mcq/import">
+            <Button variant="outline" className="gap-2">
+              <Upload className="h-4 w-4" />Bulk import (NL)
+            </Button>
+          </Link>
           <Link href="/admin/board/import">
             <Button variant="outline" className="gap-2">
               <Upload className="h-4 w-4" />Bulk import (board)
