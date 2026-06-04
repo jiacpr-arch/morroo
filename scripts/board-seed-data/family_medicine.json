@@ -338,5 +338,175 @@
     "board_topic": "signs_symptoms",
     "board_age_group": "adult",
     "reference_source": "AAFP"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง evidence-based medicine + clinical decision-making",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Evidence-Based Medicine Framework: (1) **Hierarchy of evidence** (lowest to highest): expert opinion < case series < cohort < RCT < systematic review/meta-analysis < GRADE-rated guidelines; (2) **5A approach**: Ask (clinical question) + Acquire (search literature) + Appraise (validity, importance) + Apply (to patient) + Assess (outcomes); (3) **PICO framework** clinical question: Patient/Problem + Intervention + Comparison + Outcome; (4) **Study design**: RCT for treatment efficacy; cohort for prognosis; case-control for rare conditions; cross-sectional for prevalence; diagnostic accuracy studies; (5) **Critical appraisal**: validity (internal, external), bias, statistical analysis, clinical significance; (6) **Statistical concepts**: p-value, confidence interval, RR, OR, HR, NNT/NNH, sensitivity, specificity, PPV/NPV, LR, kappa, ICC; (7) **Bayesian reasoning**: pre-test + post-test probability + likelihood ratios; (8) **Clinical decision-making**: integrate evidence + clinical expertise + patient values; shared decision-making; (9) **Guidelines**: GRADE methodology — strong vs conditional recommendations; (10) **EBM application** in primary care: more applicable to common conditions, individualize, use clinical decision tools (Wells, HEART, FRAX), point-of-care tools (UpToDate, DynaMed, BMJ Best Practice); (11) **EBM critiques**: limitations (RCT external validity, dominant pharmaceutical influence, individual application)" },
+      { "label": "C", "text": "Single study basis" },
+      { "label": "D", "text": "Expert opinion only" },
+      { "label": "E", "text": "Random" }
+    ],
+    "correct_answer": "B",
+    "explanation": "EBM: hierarchy + 5A + PICO + critical appraisal + Bayesian. GRADE methodology. Integrate evidence + expertise + patient values. Primary care: clinical decision tools + shared decision-making. Modern: precision + value-based + individualized.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "AAFP EBM; Sackett EBM"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง pharmacology — common medications + interactions in primary care",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Primary Care Pharmacology + Drug Interactions: (1) **Common drug-drug interactions**: warfarin + many (NSAIDs, antibiotics — INR fluctuations); SSRIs + tramadol (serotonin syndrome); statins + macrolides/azoles (rhabdo); ACEi + K-sparing diuretic (hyperkalemia); levothyroxine + Ca/iron/PPI (reduce absorption); colchicine + clarithromycin (toxicity); (2) **Pharmacokinetics**: absorption (food, gastric pH, formulation), distribution (Vd, protein binding), metabolism (CYP450 — 3A4, 2D6, 2C19 polymorphisms), excretion (renal, hepatic); (3) **Renal dose adjustment**: many medications require eGFR-based adjustment; (4) **Hepatic considerations**: statins, acetaminophen ceiling, opioids; (5) **Beers Criteria** for elderly — PIMs (potentially inappropriate medications): benzodiazepines, anticholinergic, NSAIDs, certain CV meds; (6) **STOPP/START** complementary deprescribing; (7) **Pregnancy + lactation**: FDA categories replaced by PLLR; LactMed for breastfeeding; (8) **Pediatric**: weight-based; specific avoidances (ceftriaxone < 4 wk, codeine < 12 yr, tetracycline < 8 yr, aspirin viral); (9) **Generic vs brand**: most generics bioequivalent; selected exceptions; cost; (10) **Resources**: Epocrates, Lexicomp, Micromedex, PharmGKB; CDC adult immunization; (11) **Polypharmacy management**: regular review, simplify, deprescribe; (12) **Medication adherence**: barriers + interventions (synchronization, blister packs, family involvement, education); (13) **Cost**: generic, formulary, assistance programs" },
+      { "label": "C", "text": "No interactions" },
+      { "label": "D", "text": "Random" },
+      { "label": "E", "text": "Ignore" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Primary care pharmacology: common interactions + PK + renal/hepatic adjustment + Beers + pregnancy + pediatric considerations. Polypharmacy management. Adherence + cost. Resources for decision support. Modern: precision medicine + safety + value.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "AAFP; Beers Criteria"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง social determinants of health (SDOH) + health equity",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Social Determinants of Health (SDOH) + Health Equity: (1) **SDOH**: conditions in which people are born, live, work — affect health outcomes more than healthcare (WHO Commission); (2) **Key domains**: economic stability, education, food security, healthcare access, neighborhood + environment, social + community, racism/discrimination, transportation; (3) **Impact**: SDOH explain 80% of health outcomes; healthcare 20%; (4) **Disparities**: racial/ethnic, socioeconomic, geographic, sexual/gender minorities, age, ability; (5) **Health equity**: everyone can achieve full health potential; not same as equality; structural barriers; (6) **Screening for SDOH** in primary care: standardized tools (PRAPARE, AHC HRSN); (7) **Interventions**: - **Healthcare-based**: food prescriptions, transportation, housing assistance, financial counseling, legal aid clinics, social work; - **Community partnerships**: food banks, housing organizations, schools, faith-based, employment; - **Policy advocacy**: address upstream determinants; (8) **Trauma-informed care**: recognize prevalence + impact; safety + trust + choice + collaboration + empowerment; (9) **Cultural humility + competency**: ongoing learning, address bias; (10) **Workforce**: community health workers, diversity, training; (11) **Quality metrics**: stratified by demographics, equity dashboard; (12) **Multidisciplinary**: PCP + social work + nutrition + community health workers + behavioral health + public health" },
+      { "label": "C", "text": "Random" },
+      { "label": "D", "text": "Ignore" },
+      { "label": "E", "text": "No determinants" }
+    ],
+    "correct_answer": "B",
+    "explanation": "SDOH: 80% of health outcomes. Multiple domains. Health equity. Screening + interventions in primary care. Trauma-informed care. Cultural humility. Community partnerships. Policy advocacy. Modern: SDOH integration essential to comprehensive primary care.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "WHO; CDC; AAFP Health Equity"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง prevention + lifestyle medicine principles",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Lifestyle Medicine Principles (ACLM + AAFP): (1) **6 pillars of lifestyle medicine**: - Whole-food plant-predominant nutrition; - Regular physical activity; - Restorative sleep; - Stress management; - Avoidance of risky substances (tobacco, excessive alcohol, illicit drugs); - Social connections; (2) **Evidence**: lifestyle modification can prevent or reverse many chronic diseases (T2DM, CVD, some cancers); (3) **5-2-1-0 for pediatric**: 5 fruits + veggies, < 2 h screen, 1 h exercise, 0 sugar drinks; (4) **Physical activity guidelines**: 150 min/wk moderate or 75 min vigorous + resistance training 2 d/wk; sit less + move more; (5) **Nutrition**: Mediterranean, DASH, plant-predominant; Whole foods; Limit ultra-processed, added sugar, refined grains; Hydration; Plant-based protein sources; (6) **Sleep**: 7-9 hr adults, more for children; sleep hygiene; address sleep disorders; (7) **Stress management**: mindfulness, meditation, CBT, yoga, social support; (8) **Behavioral change**: stages of change, motivational interviewing, goal-setting, environmental design, social influence; (9) **Group-based programs**: Diabetes Prevention Program (DPP) — evidence-based, cost-effective; (10) **Multidisciplinary**: PCP + dietitian + exercise physiologist + behavioral health + community resources; (11) **Quality metrics**: process + outcome — diet, activity, weight, BP, lipid, A1c; (12) **Reimbursement evolving**: lifestyle medicine being recognized + reimbursed" },
+      { "label": "C", "text": "Random" },
+      { "label": "D", "text": "Drugs only" },
+      { "label": "E", "text": "Surgery only" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Lifestyle medicine: 6 pillars. Evidence-based for prevention + treatment of chronic disease. Behavioral change strategies. Group programs (DPP). Multidisciplinary. Modern: integrated into primary care + recognized specialty.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "ACLM; AAFP Lifestyle Medicine"
+  },
+  {
+    "scenario": "Hospital implements patient-centered medical home (PCMH) — primary care transformation",
+    "choices": [
+      { "label": "A", "text": "Traditional model" },
+      { "label": "B", "text": "Patient-Centered Medical Home (PCMH) Transformation: (1) **PCMH model** (NCQA): comprehensive + patient-centered + coordinated + accessible + committed to quality + safety; (2) **Joint Principles** (AAP, AAFP, ACP, AOA 2007): personal physician, physician-directed team, whole-person orientation, care coordination, quality + safety, enhanced access, payment reform; (3) **Core elements**: team-based care, population health management, chronic disease management, behavioral health integration, care coordination + transitions, patient + family engagement; (4) **Population health**: registries, panel management, proactive outreach, gaps in care; (5) **Same-day access** + after-hours; telemedicine; group visits; (6) **Care coordination**: across specialists, hospitals, community; care managers for high-risk; (7) **Behavioral health integration**: Collaborative Care Model (CoCM); (8) **Quality improvement**: PDSA cycles, measurement-based care, EHR optimization; (9) **Patient engagement**: portal, education, shared decision-making, advisory councils, surveys; (10) **Multidisciplinary team**: physicians + APPs + nurses + MAs + behavioral health + social work + dietitian + pharmacist + community health workers; (11) **Payment models**: PMPM + quality bonuses + shared savings (vs fee-for-service); (12) **Outcomes evidence**: improved quality + access + experience + lower costs + reduced hospitalizations + better chronic disease management; (13) **Equity**: SDOH integration; (14) **NCQA recognition** + certification; (15) **Modern**: ongoing evolution + technology integration + AI assistance" },
+      { "label": "C", "text": "Random" },
+      { "label": "D", "text": "No team" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "PCMH: comprehensive + patient-centered + team-based + coordinated primary care. Joint Principles + NCQA. Population health + chronic disease management + behavioral health integration. Quality improvement + payment reform. Improved outcomes. Modern: primary care transformation.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "NCQA PCMH; AAFP"
+  },
+  {
+    "scenario": "Hospital implements primary care telemedicine + digital health integration",
+    "choices": [
+      { "label": "A", "text": "In-person only" },
+      { "label": "B", "text": "Telemedicine + Digital Health in Primary Care: (1) **Types**: synchronous (video, audio), asynchronous (secure messaging, eConsult), remote monitoring (BP, glucose, weight, sleep, fall detection, wearables); (2) **Use cases**: routine follow-up, chronic disease management, behavioral health, urgent care, specialist consultation, second opinion, school + work absences; (3) **Advantages**: access (rural, transportation, disabilities), efficiency, time, cost, convenience, infectious disease prevention; (4) **Limitations**: physical exam limited, technology barriers (elderly, low SES, language), digital divide, reimbursement, licensure (interstate); (5) **Best practices**: appropriate visit selection (some conditions need in-person), backup for failure, patient + provider training, privacy (HIPAA), documentation; (6) **Patient portal**: secure messaging, lab + test results, appointment scheduling, medication refills, patient education; (7) **EHR integration**: data exchange, decision support, structured reporting, interoperability; (8) **AI + digital tools**: symptom checker, triage, diagnosis aid, predictive analytics, patient self-management apps; (9) **Equity considerations**: digital divide — provide alternatives, community resources, language access, accessibility; (10) **Regulation + reimbursement evolving** post-COVID; (11) **Multidisciplinary**: provider + IT + nursing + administration + patient; (12) **Modern**: integrated care + technology + value-based; growing rapidly" },
+      { "label": "C", "text": "Refuse" },
+      { "label": "D", "text": "Random" },
+      { "label": "E", "text": "Avoid technology" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Telemedicine + digital health: synchronous + asynchronous + remote monitoring. Multiple use cases. Advantages + limitations. Best practices. Patient portal + EHR + AI integration. Equity considerations. Modern: integrated care + technology + COVID-accelerated.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "American Telemedicine Association; AAFP"
+  },
+  {
+    "scenario": "Hospital wants implement population health management + value-based care",
+    "choices": [
+      { "label": "A", "text": "Fee-for-service only" },
+      { "label": "B", "text": "Population Health + Value-Based Care: (1) **Population health management**: focus on entire population, not individual visit; data analytics, registries, stratification; (2) **Triple Aim (now Quadruple/Quintuple)**: better population health + better patient experience + lower cost + clinician well-being + health equity; (3) **Value-Based Payment models**: - Fee-for-service (volume); - Pay-for-performance (P4P); - Bundled payments (episodes); - Shared savings (ACOs — Accountable Care Organizations); - Capitation + full risk; - Alternative Payment Models (APMs); (4) **Quality measures**: process + outcome; HEDIS, CMS Stars, MIPS; clinical quality, patient experience, cost, equity; (5) **Care management** for high-risk: identification + intervention + outcomes; (6) **Chronic disease registries**: DM, HTN, asthma, CHF — proactive panel management; (7) **Preventive care gaps**: outreach for screening + vaccination + chronic disease followup; (8) **SDOH integration**: address upstream determinants; (9) **Behavioral health integration**: Collaborative Care, integrated primary care; (10) **Transitions of care**: post-hospital, care transitions intervention; (11) **Multidisciplinary team**: physicians + APPs + nurses + care managers + social workers + pharmacists + community health workers + data analysts; (12) **Health IT**: EHR + analytics + registry + telehealth + decision support + interoperability; (13) **Patient engagement**: portal, education, advisory groups, surveys; (14) **Equity focus**: stratified outcomes, address disparities; (15) **Modern**: transformation from volume to value + population focus" },
+      { "label": "C", "text": "Random" },
+      { "label": "D", "text": "No data" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Population health + value-based care: focus on population not individual visit. Quadruple/Quintuple Aim. Value-based payment models. Quality measures. Care management. SDOH + behavioral health integration. Equity focus. Modern: transformation + technology + multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "CMS Innovation Center; AAFP; IHI Triple Aim"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี — multimorbid (T2DM + HTN + CKD + obesity + OSA + depression + chronic LBP) — comprehensive integrative primary care",
+    "choices": [
+      { "label": "A", "text": "Single specialty" },
+      { "label": "B", "text": "Multimorbid Primary Care Integrative Management: (1) **Comprehensive assessment**: medical + functional + cognitive + nutritional + psychosocial + medications + advance care planning + values + goals; (2) **Care planning**: prioritize based on impact + patient values + interactions between conditions; (3) **Integrated chronic disease management**: - T2DM: ADA standards + SGLT2/GLP-1 RA for cardiorenal benefit + obesity + comorbidity; - HTN: target individualized + ACEi/ARB for CKD; - CKD: SGLT2i, RAAS, K-sparing diuretic, lipid; - Obesity: lifestyle + pharmacotherapy + bariatric for selected; - OSA: CPAP, weight loss, positional; - Depression: SSRI + therapy + Collaborative Care; - Chronic pain: multimodal opioid-sparing + PT + behavioral; (4) **Common medication overlaps**: SGLT2i + GLP-1 RA address DM + obesity + CV/renal; SSRI may help mood + pain; ACE/ARB renal + HT; (5) **Polypharmacy management**: Beers, STOPP/START; deprescribing; pharmacist consultation; (6) **Lifestyle medicine foundation**: nutrition + exercise + sleep + stress + social + avoid risky substances; (7) **Mental health integration**: collaborative care; (8) **SDOH assessment + intervention**: address food, housing, transportation, income; (9) **Multidisciplinary team**: PCP + endocrine + nephrology + cardiology + sleep + behavioral health + dietitian + PT + pharmacy + social work + nursing; (10) **Patient-centered**: shared decision-making + values + goals + quality of life; (11) **Care coordination**: medical home model; (12) **Long-term**: chronic disease lifelong + adjustment + transitions; (13) **Health equity + access** focus" },
+      { "label": "C", "text": "Single specialist" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Multimorbid primary care = quintessentially integrative. Comprehensive assessment + prioritize + integrated disease management + medication overlap leveraging. Polypharmacy + lifestyle + mental health + SDOH. Multidisciplinary + patient-centered. Modern: family medicine well-positioned for chronic disease integration.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "AAFP; ACP"
+  },
+  {
+    "scenario": "ครอบครัว — Family unit + multiple family members medical + behavioral + social problems — family-centered care",
+    "choices": [
+      { "label": "A", "text": "Single member" },
+      { "label": "B", "text": "Family-Centered Primary Care: (1) **Family unit as focus**: family medicine unique among specialties — treats family + system; (2) **Family genogram**: 3 generations medical + psychosocial + relationships; identify patterns, risk factors, supports; (3) **Family systems theory**: family as interdependent unit; changes affect whole; (4) **Common family-level interventions**: - Family meeting for chronic illness, end-of-life, dementia; - Couples counseling for marital + sexual + communication; - Parenting support (PCIT, Triple P); - Family therapy for relationship + behavioral; - Caregiver support + respite; (5) **Life cycle considerations**: transitions (childbirth, adolescence, empty nest, retirement, aging, dying) — anticipatory guidance + support; (6) **Family-based screening + risk assessment**: hereditary cancers (BRCA, Lynch), CV risk, mental health (genetic + environmental); (7) **Multigenerational care**: continuity across lifespan; (8) **Domestic violence + abuse**: screen + safety + resources + multidisciplinary response; (9) **Family-based interventions chronic disease**: improves outcomes (DM, asthma, mental health); (10) **Adverse childhood experiences (ACEs)**: screening, trauma-informed care, address long-term health impact; (11) **Multidisciplinary**: PCP + family therapy + social work + behavioral health + pediatric + adult specialists + community resources; (12) **Cultural humility**: family + cultural + religious values + practices; (13) **Modern**: family medicine evolution + integrated behavioral health + multidisciplinary care + relationship-centered" },
+      { "label": "C", "text": "Random" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Family-centered care: family medicine unique focus on family unit. Genogram + family systems theory + family-based interventions. Life cycle considerations + multigenerational. ACEs + trauma-informed. Multidisciplinary. Modern: relationship-centered + integrated.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "AAFP; STFM Family Medicine"
+  },
+  {
+    "scenario": "Community — health promotion + chronic disease prevention + reduce disparities through community-based + public health approach",
+    "choices": [
+      { "label": "A", "text": "Single clinic only" },
+      { "label": "B", "text": "Community-Oriented Primary Care (COPC): (1) **COPC principles**: integrate community + clinical perspectives, address health needs of defined population, multidisciplinary; (2) **5 steps**: define community + identify problems + research + intervene + evaluate; (3) **Community Health Needs Assessment**: data analysis + community input + health priorities; (4) **Population health management** including SDOH; (5) **Community-based interventions**: - School health programs; - Workplace health promotion; - Faith-based health partnerships; - Community health worker programs; - Public health collaboration (vaccination, screening); - Environmental + policy advocacy; (6) **Common community priorities**: chronic disease, mental health, substance use, violence, maternal + child, infectious disease, equity; (7) **Multisector partnerships**: healthcare + schools + employers + government + community organizations + faith + housing + food + transportation; (8) **Health Promotion**: education, social marketing, behavior change at population level; (9) **Health equity focus**: address disparities, structural racism, social determinants, marginalized populations; (10) **Disaster + pandemic preparedness + response**: community resilience; (11) **Quality improvement at community level**: data, evaluation, ongoing improvement; (12) **Modern**: integrated with primary care + value-based + population health + equity-focused" },
+      { "label": "C", "text": "Single specialty" },
+      { "label": "D", "text": "Random" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Community-Oriented Primary Care: integration of community + clinical. CHNA. Community-based interventions. Multisector partnerships. Health equity focus. Disaster preparedness. Modern: integrated + value-based + equity-focused.",
+    "difficulty": "easy",
+    "board_section": "integrative",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "STFM COPC; AAFP"
   }
 ]
