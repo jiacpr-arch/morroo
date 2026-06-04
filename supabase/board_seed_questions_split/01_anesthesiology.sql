@@ -1,0 +1,821 @@
+-- ===============================================================
+-- หมอรู้ — Board seed: วิสัญญีวิทยา (anesthesiology) — 30 MCQs
+-- Safe to paste into Supabase SQL Editor. Re-runnable.
+-- ===============================================================
+
+begin;
+
+-- 1/2 ─── mcq_subjects for this specialty ────────────────────
+insert into public.mcq_subjects
+  (name, name_th, icon, audience, board_specialty, exam_type, question_count)
+values
+  ('anes_clinical_decision', 'วิสัญญีวิทยา · การตัดสินใจทางเวชกรรม', '🩺', 'board', 'anesthesiology', NULL, 0),
+  ('anes_basic_science', 'วิสัญญีวิทยา · วิทยาศาสตร์การแพทย์พื้นฐาน', '🧬', 'board', 'anesthesiology', NULL, 0),
+  ('anes_ems_mgmt', 'วิสัญญีวิทยา · การจัดการระบบบริการการแพทย์ฉุกเฉิน', '🚨', 'board', 'anesthesiology', NULL, 0),
+  ('anes_integrative', 'วิสัญญีวิทยา · ข้อสอบบูรณาการ', '🧩', 'board', 'anesthesiology', NULL, 0)
+on conflict (name) do nothing;
+
+-- 2/2 ─── 30 mcq_questions for anesthesiology ─────────────
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 68 ปี underlying HT, T2DM, CAD post-PCI 2 ปีที่แล้ว — pre-op evaluation for elective open AAA repair
+
+Functional capacity: 4 METs (can walk up stairs)
+Meds: aspirin, atorvastatin, metoprolol, enalapril, metformin
+No angina + no recent CHF + no arrhythmia
+Lab: HbA1c 7.2%, Cr 1.2, normal CBC, BUN
+EKG: old Q wave inferior, no acute changes
+Echo: LVEF 50% with mild inferior hypokinesia', '[{"label":"A","text":"Cancel surgery"},{"label":"B","text":"Pre-op cardiac evaluation per AHA/ACC 2014 + ESC 2022 — High-risk surgery (vascular) + intermediate risk patient: (1) RCRI = 2 (CAD + DM on insulin if applicable, or here CAD + high-risk surgery) — intermediate risk (2-2.4%); (2) Functional capacity ≥ 4 METs adequate; (3) **Continue chronic medications**: aspirin (continue per surgical bleeding risk — vascular usually continue), statin (continue — cardioprotective, mortality benefit), beta-blocker (continue — sudden discontinuation harmful); ACE inhibitor — hold morning of surgery (hypotension intra-op); metformin — hold day of surgery (lactic acidosis risk if AKI); (4) **No additional stress testing** indicated (functional capacity OK); (5) **Pre-op consultation as needed**: cardiology if symptoms or new abnormalities; (6) Glycemic control: target intra-op 140-180; (7) Anesthetic plan: epidural for analgesia (open AAA), general anesthesia, invasive monitoring (arterial line, CVL), aortic cross-clamp considerations, cell saver, blood products available, temperature management; (8) Multidisciplinary: surgery + anesthesia + cardiology if needed; (9) Post-op: ICU monitoring, pain control, continue beta-blocker + statin, DVT prophylaxis, hyperglycemia management"},{"label":"C","text":"Cardiac catheterization preoperative"},{"label":"D","text":"Stop all medications"},{"label":"E","text":"Refuse surgery"}]'::jsonb,
+  'B', 'Pre-op cardiac evaluation: AHA/ACC 2014 stepwise approach. RCRI + functional capacity. Continue chronic medications (beta-blocker, statin) — sudden discontinuation harmful. Hold ACE inhibitor day of surgery. Metformin caution AKI. No additional stress test if functional capacity adequate. Pre-op coronary revascularization not routinely beneficial (CARP trial). Anesthetic plan + ICU monitoring.', NULL,
+  'medium', 'cardiovascular', 'review',
+  'anesthesiology', 'clinical_decision', 'cardiovascular', 'adult',
+  'AHA/ACC Perioperative Guidelines 2014; ESC/ESA 2022', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'ผู้ป่วยอายุ 68 ปี underlying HT, T2DM, CAD post-PCI 2 ปีที่แล้ว — pre-op evaluation for elective open AAA repair
+
+Functional capacity: 4 METs (can walk up stairs)
+Meds: aspirin, atorvastatin, metoprolol, enalapril, metformin
+No angina + no recent CHF + no arrhythmia
+Lab: HbA1c 7.2%, Cr 1.2, normal CBC, BUN
+EKG: old Q wave inferior, no acute changes
+Echo: LVEF 50% with mild inferior hypokinesia'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 55 ปี underlying obesity BMI 38, OSA on CPAP, hypertension — undergoing elective laparoscopic cholecystectomy
+
+Mallampati class IV, thyromental distance 5 cm, limited neck extension, large neck circumference 45 cm, beard
+
+Predicts difficult airway', '[{"label":"A","text":"Standard induction without preparation"},{"label":"B","text":"Difficult Airway Management — pre-op preparation: (1) **Predict difficult airway**: LEMON (Look, Evaluate 3-3-2, Mallampati, Obstruction, Neck mobility), MOANS (Mask, Obese, Age, No teeth, Stiff lungs); (2) **Multimodal preparation**: 2 difficult airway providers available, multiple equipment options ready; (3) **Pre-oxygenation thoroughly** (3-5 min FRC washout or 8 vital capacity breaths); high-flow nasal O2 during apnea (THRIVE — Transnasal Humidified Rapid Insufflation Ventilatory Exchange); (4) **Awake fiberoptic intubation** preferred for known/predicted difficult airway — sedation (dexmedetomidine, remifentanil), topical anesthesia (lidocaine spray/nebulized/atomized), supplemental O2; (5) **Video laryngoscopy** (GlideScope, McGrath, C-MAC) — better view + first-attempt success; (6) **Supraglottic airway** (LMA Fastrach, iGel, AirQ — conduit for ETT) — backup or primary; (7) **DAS (Difficult Airway Society) algorithm**: Plan A (intubation) → Plan B (SGA) → Plan C (face mask ventilation) → Plan D (emergency front of neck access — cricothyrotomy, surgical airway); (8) **Equipment ready**: bougie, multiple ETT sizes + types, multiple laryngoscope blades, SGA, fiberscope, cricothyrotomy kit; (9) **Communication + team**: brief plan + contingencies; (10) **Avoid prolonged hypoxia**: limit attempts (3 max), maintain oxygenation between attempts, wake patient if unable to intubate or ventilate (\"awaken\" option); (11) **OSA considerations**: continue CPAP intra-op (some surgeries) + post-op; (12) **Documentation** of difficult airway + future planning"},{"label":"C","text":"Blind nasotracheal"},{"label":"D","text":"Surgery without intubation"},{"label":"E","text":"Refuse case"}]'::jsonb,
+  'B', 'Difficult airway management: prediction (LEMON, MOANS) + preparation. Awake fiberoptic intubation preferred for known/predicted. Video laryngoscopy improves first-pass success. DAS algorithm: Plan A→B→C→D. Equipment ready. Team communication. Limit attempts (3). Awaken option. OSA continuation CPAP. Documentation. Modern: video laryngoscopy widespread + DAS algorithm.', NULL,
+  'medium', 'respiratory', 'review',
+  'anesthesiology', 'clinical_decision', 'respiratory', 'adult',
+  'ASA Difficult Airway Guidelines; Difficult Airway Society UK', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'ผู้ป่วยอายุ 55 ปี underlying obesity BMI 38, OSA on CPAP, hypertension — undergoing elective laparoscopic cholecystectomy
+
+Mallampati class IV, thyromental distance 5 cm, limited neck extension, large neck circumference 45 cm, beard
+
+Predicts difficult airway'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 28 ปี healthy elective knee arthroscopy under spinal anesthesia (bupivacaine 10mg) + epinephrine
+
+Procedure: 45 min, uneventful
+Post-op: patient develops perioral numbness then dizziness then tinnitus then mental status changes then seizure
+
+UDS negative, no other drug exposure
+LA accidentally given IV vs spinal in error', '[{"label":"A","text":"Wait + see"},{"label":"B","text":"Local Anesthetic Systemic Toxicity (LAST) — life-threatening complication of LA: (1) **CNS symptoms first** (lower threshold than CV): perioral numbness → tinnitus → metallic taste → dizziness → AMS → seizure → coma; (2) **CV later** (higher threshold): hypotension → arrhythmia (bradycardia, ventricular) → cardiac arrest; (3) **Bupivacaine cardiac toxicity** worst — high lipid solubility + sodium channel blockade — refractory to standard ACLS; (4) **Immediate management** (ASRA Checklist 2017): - Call for help + LAST checklist + lipid emulsion; - Airway/breathing: 100% O2, hyperventilate to alkalosis (improves CV outcome); - Stop LA delivery if ongoing; - Seizure: benzodiazepine (lorazepam, midazolam) preferred over propofol (propofol may further reduce CV function); - **Lipid emulsion 20% (Intralipid)** — first-line for cardiotoxicity: 1.5 mL/kg IV bolus over 1 min (~100 mL adult) → infusion 0.25 mL/kg/min × 30 min minimum; repeat bolus + double infusion if needed; max 12 mL/kg total; mechanism — lipid sink + metabolic; (5) **Modified ACLS** for cardiac arrest: chest compressions, lipid emulsion priority over epinephrine (small doses 1 mcg/kg if needed — high-dose epi may worsen); AVOID vasopressin, beta-blocker, Ca channel blocker, LA (lidocaine); (6) **Cardiopulmonary bypass / ECMO** for refractory arrest; (7) **Prolonged resuscitation** (> 1 hour) — case reports of survival; (8) **Prevention**: aspiration test before injection, slow incremental injection, ultrasound guidance, test dose with epinephrine; appropriate dose for weight (max 2-3 mg/kg bupivacaine); (9) **Document + report** — quality improvement"},{"label":"C","text":"Calcium gluconate only"},{"label":"D","text":"Surgery"},{"label":"E","text":"Discharge"}]'::jsonb,
+  'B', 'LAST = life-threatening LA complication. Mortality high if not recognized. CNS symptoms first → CV later. Bupivacaine cardiotoxicity worst. **Lipid emulsion 20% first-line treatment** (cornerstone). ASRA Checklist. Avoid vasopressin, beta-blocker, CCB, LA. Lipid sink mechanism. Prevention: ultrasound, aspiration test, test dose, max dose. Modern: lipid emulsion saved many lives.', NULL,
+  'medium', 'toxicology', 'review',
+  'anesthesiology', 'clinical_decision', 'toxicology', 'adult',
+  'ASRA LAST Checklist 2017; Neal JM et al. Reg Anesth Pain Med', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'ผู้ป่วยอายุ 28 ปี healthy elective knee arthroscopy under spinal anesthesia (bupivacaine 10mg) + epinephrine
+
+Procedure: 45 min, uneventful
+Post-op: patient develops perioral numbness then dizziness then tinnitus then mental status changes then seizure
+
+UDS negative, no other drug exposure
+LA accidentally given IV vs spinal in error'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 32 ปี G2P1 GA 39 wk elective C-section under spinal anesthesia + bupivacaine + morphine + fentanyl
+
+5 min after spinal: BP drops 90/60 → 70/40, HR drops 92 → 55, patient nauseous
+
+Fetal heart 142 stable', '[{"label":"A","text":"Wait + observe"},{"label":"B","text":"Post-Spinal Anesthesia Hypotension (Sympathectomy + IVC compression by gravid uterus): (1) **Left lateral tilt** (Wedge under right hip) — relieves IVC compression by gravid uterus, improves venous return; (2) **IV fluid co-loading** during spinal (better than pre-loading) — crystalloid + colloid; (3) **Vasopressor**: - **Phenylephrine** first-line (alpha-1 agonist — restores SVR + reflex bradycardia rare in OB); start prophylactic infusion 25-50 mcg/min; rescue bolus 50-100 mcg; - **Norepinephrine** alternative (alpha + mild beta — less bradycardia than phenylephrine; growing use); - **Ephedrine** (mixed alpha-beta) — historic first-line but causes neonatal acidosis more than phenylephrine (Ngan Kee); (4) **Bradycardia**: atropine 0.4-0.6 mg if symptomatic + hypotensive; (5) **Oxygen supplementation**; (6) **Nausea management**: ondansetron, metoclopramide; (7) **Monitor fetal heart** — fetal hypoxia risk from maternal hypotension; (8) **Prevention**: prophylactic phenylephrine infusion from time of spinal (mainstay modern OB anesthesia per Ngan Kee + Carvalho); left lateral tilt; fluid; (9) **Other causes of hypotension during C-section**: hemorrhage (placenta previa, abruption, atony), uterine inversion, amniotic fluid embolism, anaphylaxis, supine hypotensive syndrome; (10) Multidisciplinary: OB + anesthesia + neonatal team"},{"label":"C","text":"Supine flat position"},{"label":"D","text":"Reduce fluid"},{"label":"E","text":"Stop monitoring"}]'::jsonb,
+  'B', 'Post-spinal hypotension common in OB (sympathectomy + IVC compression). Left lateral tilt + IV fluid co-loading + phenylephrine prophylactic infusion = standard care. Modern: phenylephrine > ephedrine (better fetal pH). Norepinephrine emerging alternative. Bradycardia atropine. Fetal monitoring. Prevention better than treatment.', NULL,
+  'medium', 'obgyn', 'review',
+  'anesthesiology', 'clinical_decision', 'obgyn', 'adult',
+  'ASRA Recommendations; Ngan Kee WD Anesthesiology', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'ผู้ป่วยอายุ 32 ปี G2P1 GA 39 wk elective C-section under spinal anesthesia + bupivacaine + morphine + fentanyl
+
+5 min after spinal: BP drops 90/60 → 70/40, HR drops 92 → 55, patient nauseous
+
+Fetal heart 142 stable'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 14 ปี healthy elective tonsillectomy under general anesthesia
+
+30 min into surgery — temp rises rapidly 39.8°C → 40.5°C, HR 140, EtCO2 rising 35 → 55 mmHg despite increasing ventilation, muscle rigidity especially masseter, mottled skin, dark urine starts appearing
+
+Using volatile (sevoflurane) + succinylcholine for intubation
+
+Family: cousin died during dental surgery years ago', '[{"label":"A","text":"Increase volatile anesthetic"},{"label":"B","text":"Malignant Hyperthermia (MH) — rare life-threatening complication: triggered by volatile anesthetics + succinylcholine in genetically susceptible (RYR1, CACNA1S mutations — autosomal dominant): (1) **Stop triggering agents** immediately — volatile + succinylcholine; switch to non-triggering (propofol, opioid, NMB rocuronium/cisatracurium); change anesthesia circuit + soda lime + ventilator; (2) **Hyperventilate 100% O2** at 10 L/min minimum to flush volatile; (3) **Dantrolene** — specific antidote — 2.5 mg/kg IV bolus, repeat every 5-10 min up to 10 mg/kg total; dantrolene blocks RYR1 + decreases muscle Ca release; new formulation (Ryanodex) faster reconstitution; (4) **Active cooling**: cold IV fluids, ice packs to groin/axillae/neck, cooling blankets, peritoneal/gastric lavage with cold saline if severe; STOP at 38-38.5°C to avoid overshoot hypothermia; (5) **Treat acidosis**: bicarbonate, hyperventilation; (6) **Treat hyperkalemia**: insulin + glucose, Ca, kayexalate; (7) **Treat arrhythmias**: standard ACLS — but AVOID calcium channel blockers (interact with dantrolene); (8) **Monitor + treat rhabdomyolysis**: IV fluid, alkalinize urine (urine output > 2 mL/kg/hr), monitor CK + myoglobin + AKI; (9) **ICU admission** for at least 24-48 hours — recrudescence risk; continue dantrolene 1 mg/kg q6h × 24h; (10) **Counsel family** — autosomal dominant, family screening with muscle biopsy/in vitro contracture test or genetic testing; future surgeries need non-triggering anesthetic + MH precautions; (11) **MH Hotline** (US 1-800-MH-HYPER) — expert consultation; **MHAUS** (Malignant Hyperthermia Association)"},{"label":"C","text":"Wait + observe"},{"label":"D","text":"Increase muscle relaxant"},{"label":"E","text":"Stop monitoring"}]'::jsonb,
+  'B', 'MH = anesthetic emergency. Triggered by volatile anesthetics + succinylcholine. Autosomal dominant (RYR1, CACNA1S). Hypermetabolic crisis. Dantrolene is specific antidote. Active cooling. Treat acidosis, hyperkalemia, rhabdo. ICU recrudescence risk. Family screening. Avoid CCB (interact). Modern: Ryanodex (faster dantrolene). MHAUS expert consultation. Modern mortality < 5% with prompt treatment (was > 70%).', NULL,
+  'hard', 'endocrine_metabolic', 'review',
+  'anesthesiology', 'clinical_decision', 'endocrine_metabolic', 'peds',
+  'MHAUS Guidelines; ASA Practice Advisory', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'ผู้ป่วยอายุ 14 ปี healthy elective tonsillectomy under general anesthesia
+
+30 min into surgery — temp rises rapidly 39.8°C → 40.5°C, HR 140, EtCO2 rising 35 → 55 mmHg despite increasing ventilation, muscle rigidity especially masseter, mottled skin, dark urine starts appearing
+
+Using volatile (sevoflurane) + succinylcholine for intubation
+
+Family: cousin died during dental surgery years ago'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 45 ปี elective laparoscopic cholecystectomy under general anesthesia
+
+15 min after IV abx (cefazolin): BP drops 130/80 → 60/30, HR rises 80 → 130, urticaria + flushing chest + wheezing + difficulty ventilating with high airway pressure + bronchospasm
+
+Using propofol + remifentanil + sevoflurane + rocuronium + cefazolin', '[{"label":"A","text":"Continue case"},{"label":"B","text":"Intraoperative Anaphylaxis — anesthesia emergency: (1) **Immediate**: notify team, call for help, stop suspected trigger (cefazolin most likely, also rocuronium common); (2) **Epinephrine first-line**: 100-200 mcg IV bolus + repeat every 1-2 min as needed; severe — IV infusion 1-10 mcg/min titrated; (3) **Airway + ventilation**: 100% O2, may need increased PEEP for severe bronchospasm; consider salbutamol nebulizer; (4) **Volume resuscitation**: IV crystalloid 20-30 mL/kg rapid (distributive shock + capillary leak); colloid alternative; (5) **Reverse Trendelenburg or position to optimize venous return**; (6) **Secondary medications**: H1 antihistamine (diphenhydramine 50 mg IV), H2 antihistamine (ranitidine 50 mg IV), corticosteroid (hydrocortisone 200 mg IV or methylprednisolone 1-2 mg/kg) — prevent biphasic + late-phase; (7) **Glucagon** 1-5 mg IV if on beta-blocker (epinephrine-refractory); (8) **Refractory shock**: norepinephrine, vasopressin, methylene blue (selected); ECMO last resort; (9) **Consider whether to continue or abort surgery** — case-by-case based on stability + necessity; (10) **Post-event**: tryptase level (within 1-3h), document trigger, follow-up allergy testing + skin testing (4-6 weeks later for accurate); medic-alert; (11) **Documentation** for future anesthesia care; (12) **Differential**: hemorrhage, PE, MI, pneumothorax, MH, sepsis; (13) **Most common triggers**: NMB (rocuronium most), antibiotics (cefazolin, vancomycin), latex, chlorhexidine, contrast, blood products; (14) Multidisciplinary: anesthesia + surgery + allergy follow-up"},{"label":"C","text":"Antibiotic again"},{"label":"D","text":"Continue propofol"},{"label":"E","text":"Discharge to PACU"}]'::jsonb,
+  'B', 'Intraoperative anaphylaxis: anesthesia emergency. Most common triggers: NMB, antibiotics, latex. Epinephrine first-line. Volume resuscitation. Secondary meds (antihistamine, steroid). Glucagon for beta-blocker users. Tryptase level for confirmation. Future testing + documentation. Multidisciplinary care.', NULL,
+  'medium', 'toxicology', 'review',
+  'anesthesiology', 'clinical_decision', 'toxicology', 'adult',
+  'ASA + AAAAI + WAO Practice Parameter on Anesthetic Anaphylaxis', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'ผู้ป่วยอายุ 45 ปี elective laparoscopic cholecystectomy under general anesthesia
+
+15 min after IV abx (cefazolin): BP drops 130/80 → 60/30, HR rises 80 → 130, urticaria + flushing chest + wheezing + difficulty ventilating with high airway pressure + bronchospasm
+
+Using propofol + remifentanil + sevoflurane + rocuronium + cefazolin'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 72 ปี G2P2 elective open hysterectomy under general anesthesia
+
+Post-op PACU: alert + cooperative initially → at 2 hours becomes confused, agitated, inattention, hallucinations, hyperactive, attempting to remove IV + Foley
+
+No prior delirium history, no dementia, no substance use
+V/S: BP 142/85, HR 95, Temp 37.4°C, SpO2 96%
+Lab: electrolytes normal, glucose 145, no infection signs', '[{"label":"A","text":"Discharge home"},{"label":"B","text":"Postoperative Delirium (POD) — common in elderly post-surgical: (1) **Identify + treat underlying causes** (multifactorial): - **Pain** (under or over-treated); - **Medications** (opioid, benzodiazepine, anticholinergic — Beers list); - **Hypoxia** (assess oxygenation); - **Electrolyte derangement** (Na, glucose, Ca, Mg); - **Infection** (UTI, pneumonia, line, surgical site); - **Constipation/urinary retention**; - **Sleep deprivation**; - **Withdrawal** (alcohol, benzo, nicotine); - **CNS event** (stroke, seizure); (2) **Non-pharmacologic management (cornerstone)**: - Re-orient frequently (clock, calendar, names); - Family presence + familiar objects; - Hearing aids + glasses; - Sleep-wake cycle (lighting, noise); - Minimize tethers (lines, restraints, Foley) — remove ASAP; - Mobility (sit up, walk); - Hydration; - Multimodal pain control reduce opioid; (3) **Pharmacologic (sparingly + low-dose)** — only for severe agitation/danger to self: low-dose haloperidol 0.25-0.5 mg or quetiapine 12.5-25 mg; AVOID benzodiazepines (worsen — except alcohol/benzo withdrawal); AVOID anticholinergic; (4) **Multidisciplinary**: anesthesia, surgery, geriatric medicine, nursing, family; (5) **HELP (Hospital Elder Life Program)** prevention bundle; (6) **Prevention** going forward: pre-op cognitive screening (Mini-Cog), Beers Criteria deprescribing, hearing/vision aids; (7) **Long-term outcomes**: persistent cognitive impairment possible, increased mortality + functional decline + LTC placement risk; (8) **Family education** + reassurance"},{"label":"C","text":"Restraint"},{"label":"D","text":"Long-acting benzo"},{"label":"E","text":"Ignore"}]'::jsonb,
+  'B', 'Postoperative delirium common in elderly. Multifactorial. Non-pharm management primary. Identify + treat causes. Pharmacologic for severe agitation only (low-dose antipsychotic). AVOID benzodiazepines, anticholinergics. HELP program. Long-term consequences. Family + multidisciplinary care. Prevention through pre-op screening + multimodal anesthesia + minimal opioids.', NULL,
+  'easy', 'neurology', 'review',
+  'anesthesiology', 'clinical_decision', 'neurology', 'adult',
+  'ASA + APSF + AGS POD Guidelines', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'ผู้ป่วยอายุ 72 ปี G2P2 elective open hysterectomy under general anesthesia
+
+Post-op PACU: alert + cooperative initially → at 2 hours becomes confused, agitated, inattention, hallucinations, hyperactive, attempting to remove IV + Foley
+
+No prior delirium history, no dementia, no substance use
+V/S: BP 142/85, HR 95, Temp 37.4°C, SpO2 96%
+Lab: electrolytes normal, glucose 145, no infection signs'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 28 ปี healthy female elective lap chole + general anesthesia
+
+Post-op: severe persistent nausea + vomiting × 6 hours despite IV ondansetron 4mg + IV metoclopramide 10mg
+
+Mild + moderate hypotension + slightly dehydrated', '[{"label":"A","text":"Discharge with oral medications"},{"label":"B","text":"Post-Operative Nausea + Vomiting (PONV) — common after general anesthesia + abdominal surgery: (1) **Identify risk factors** (Apfel score 4 points — female + non-smoker + history of motion sickness/PONV + post-op opioids): - Female (highest risk); - Non-smoker; - Prior PONV/motion sickness; - Post-op opioids; (2) **Multimodal antiemetic prevention** for at-risk (≥ 2 factors): combine multiple classes — - 5-HT3 antagonist (ondansetron, granisetron, palonosetron — long-acting); - Dexamethasone (4-8 mg pre-induction); - Droperidol or haloperidol (D2 antagonist — QTc precaution); - Aprepitant (NK1 antagonist) — long-acting + effective; - Scopolamine patch (anticholinergic — placed > 2h pre-op); - Anti-histamine (promethazine, diphenhydramine); (3) **Rescue if PONV develops**: use different class than prophylaxis (since same class fails again); often combinations needed; (4) **Non-pharmacologic**: acupressure P6 (Neiguan point — wristbands), ginger, aromatherapy (isopropyl alcohol pads — limited evidence), hydration; (5) **Anesthetic technique adjustments**: TIVA with propofol (less PONV vs volatile), regional + neuraxial anesthesia, minimize opioids (multimodal pain), gastric decompression, avoid nitrous oxide; (6) **Hydration adequate**: IV crystalloid; (7) **Refractory PONV**: combinations of multiple classes + steroids + dexmedetomidine; (8) **Patient comfort**: significant patient satisfaction issue + can delay discharge + readmission risk; (9) Multidisciplinary: anesthesia + surgery + PACU + outpatient"},{"label":"C","text":"Surgery again"},{"label":"D","text":"Ignore"},{"label":"E","text":"Long-acting opioid"}]'::jsonb,
+  'B', 'PONV common — multifactorial. Apfel score + risk factors. Multimodal antiemetic prevention. Rescue with different class. Non-pharmacologic adjuncts. Anesthetic technique adjustments. TIVA + regional anesthesia reduce PONV. Avoid nitrous oxide. Hydration. Modern: prophylaxis with multiple classes routinely.', NULL,
+  'easy', 'gi', 'review',
+  'anesthesiology', 'clinical_decision', 'gi', 'adult',
+  'Society for Ambulatory Anesthesia Consensus Guidelines for PONV 2020', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'ผู้ป่วยอายุ 28 ปี healthy female elective lap chole + general anesthesia
+
+Post-op: severe persistent nausea + vomiting × 6 hours despite IV ondansetron 4mg + IV metoclopramide 10mg
+
+Mild + moderate hypotension + slightly dehydrated'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 60 ปี post-knee arthroplasty Day 1 — uncontrolled severe pain despite IV morphine + oral oxycodone — pain VAS 8-9/10
+
+Request assistance for pain management', '[{"label":"A","text":"Higher dose opioid"},{"label":"B","text":"Multimodal Post-Operative Analgesia — Opioid-Sparing: (1) **Reassess + diagnose**: rule out complications (compartment syndrome, infection, hematoma, nerve injury); (2) **Multimodal foundation**: - Scheduled acetaminophen 1 g IV/PO q6h (max 4 g/day); - NSAID (ketorolac 15-30 mg IV q6h max 5 days; or celecoxib 200 mg BID — caution renal, CV, GI); - Gabapentin or pregabalin (50-300 mg TID, dose adjust); - Ketamine low-dose infusion (0.1-0.3 mg/kg/hr) — opioid-sparing + anti-hyperalgesic; - Dexamethasone single dose (anti-inflammatory + antiemetic + analgesic); (3) **Regional anesthesia** considerations: - Femoral nerve block (best knee analgesia but motor weakness — fall risk); - Adductor canal block (preferred — preserves quadriceps strength + good analgesia); - Continuous catheter for prolonged effect; - Liposomal bupivacaine local infiltration (LIA — long-acting 72h); - Periarticular injection by surgeon; (4) **Ice + elevation + position**; (5) **Opioid as adjunct** (lower dose with multimodal): PCA (Patient-Controlled Analgesia), oral as transition; tramadol — caution interactions; avoid long-acting opioid PRN initially; (6) **Non-pharmacologic**: PT, mobility, distraction, mindfulness, music; (7) **Psychological**: chronic post-surgical pain risk — early intervention if catastrophizing, anxiety, depression; (8) **Discharge planning**: minimize discharge opioids (modern epidemic concerns), continue acetaminophen + NSAID schedule, taper opioid quickly, follow-up; (9) **Multidisciplinary**: anesthesia (pain service), surgery, nursing, PT, psychology; (10) **Pain at rest vs activity**: differentiate"},{"label":"C","text":"Discharge with oral opioid"},{"label":"D","text":"Ignore pain"},{"label":"E","text":"Surgery again"}]'::jsonb,
+  'B', 'Multimodal post-op analgesia = standard. Opioid-sparing through multiple mechanisms (acetaminophen + NSAID + gabapentinoid + ketamine + regional + steroid + non-pharm). Regional anesthesia (adductor canal for knee). Opioid PCA + oral as adjunct, minimize discharge prescription. Modern: addressing opioid epidemic. Multidisciplinary pain management.', NULL,
+  'medium', 'msk_nontrauma', 'review',
+  'anesthesiology', 'clinical_decision', 'msk_nontrauma', 'adult',
+  'AAPM + APS + ASA + ERAS Pain Management Guidelines', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'ผู้ป่วยอายุ 60 ปี post-knee arthroplasty Day 1 — uncontrolled severe pain despite IV morphine + oral oxycodone — pain VAS 8-9/10
+
+Request assistance for pain management'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 25 ปี G1P0 GA 40 wk in active labor at 6cm + epidural catheter placed for labor analgesia + bolus dose given
+
+10 min later: patient mentions difficulty breathing + speaking + then becomes mute + diaphoretic + hypotensive + bradycardic + dilated pupils + fully alert mental status (yet)
+
+Unable to elevate arms or push', '[{"label":"A","text":"Wait + observe"},{"label":"B","text":"High/Total Spinal — accidental intrathecal injection of epidural dose causing extensive sensory + motor + sympathetic block: (1) **Immediate** — call for help, OR/anesthesia, OB ready for emergency C-section; (2) **Airway + breathing**: respiratory compromise from intercostal + phrenic nerve block; intubate immediately if hypoxic/apneic; bag-mask ventilate; (3) **Cardiovascular**: profound hypotension + bradycardia from sympathectomy + cardiac accelerator block (T1-T4); aggressive IV fluid + vasopressors (phenylephrine or norepinephrine; epinephrine for bradycardia/cardiac arrest); atropine for bradycardia; (4) **Position**: avoid Trendelenburg (LA distribution worse + decreases venous return paradoxically); slight head up if possible; left lateral tilt to relieve IVC compression; (5) **Maintain fetal oxygenation**: maternal stability + position; fetal monitoring; (6) **Decision regarding delivery**: stable mother — continue monitoring; non-reassuring fetal status or unable to recover — emergency C-section under general (since spinal already in place but may not be effective if too high); (7) **Post-event**: monitor for prolonged block, document, debrief team; (8) **Cause**: catheter migration into intrathecal space, large bolus accidentally intrathecal, no test dose recognition; (9) **Prevention**: test dose for catheter placement (epinephrine), incremental dosing, aspiration before each bolus, observe for signs of intrathecal injection (rapid block onset, motor block, hypotension); (10) **Differential**: amniotic fluid embolism, eclampsia, anaphylaxis, LAST, pulmonary edema; (11) Multidisciplinary: anesthesia + OB + neonatal + nursing"},{"label":"C","text":"Increase epidural"},{"label":"D","text":"Discharge"},{"label":"E","text":"Refuse intervention"}]'::jsonb,
+  'B', 'High/Total spinal = accidental intrathecal injection of epidural dose. Anesthesia emergency. Respiratory + CV compromise. Immediate intubation + ventilation if needed. Aggressive vasopressor + fluid + atropine. Left lateral tilt. Fetal monitoring + emergency delivery if needed. Prevention: test dose, aspirate, incremental dosing. Modern: ultrasound-guided neuraxial reduces risk.', NULL,
+  'hard', 'obgyn', 'review',
+  'anesthesiology', 'clinical_decision', 'obgyn', 'adult',
+  'SOAP Practice Guidelines; ASA Anesthesia for Obstetrics', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'ผู้ป่วยอายุ 25 ปี G1P0 GA 40 wk in active labor at 6cm + epidural catheter placed for labor analgesia + bolus dose given
+
+10 min later: patient mentions difficulty breathing + speaking + then becomes mute + diaphoretic + hypotensive + bradycardic + dilated pupils + fully alert mental status (yet)
+
+Unable to elevate arms or push'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ICU patient post-cardiac surgery on mechanical ventilation needing sedation + analgesia for 5 days
+
+คำถาม: sedation + delirium prevention in ICU', '[{"label":"A","text":"Continuous benzodiazepine"},{"label":"B","text":"ICU Sedation + Analgesia — ABCDEF Bundle: A Assess + Prevent Pain (multimodal — opioid + non-opioid); B Both spontaneous awakening + breathing trials; C Choice of Sedation + Analgesia (target light sedation RASS 0 to -1; preferred — propofol short-term, dexmedetomidine (no respiratory depression + maintain interaction); AVOID benzodiazepine drips long-term — increases delirium + LOS + mortality; analgesia-first sedation; D Delirium — assess (CAM-ICU) + manage (non-pharm primary; haloperidol/quetiapine for severe agitation; avoid benzo); E Early mobility + exercise (PT in ICU even on vent); F Family engagement + empowerment; (2) **Pain control**: opioid (fentanyl, morphine, remifentanil) + non-opioid (acetaminophen, ketamine low-dose, regional anesthesia, multimodal); (3) **Daily sedation interruption** (Kress NEJM 2000) — daily SAT (spontaneous awakening trial) + SBT (spontaneous breathing trial) — reduces vent days + LOS + mortality; (4) **Outcomes**: ABCDEF compliance correlates with survival, less delirium, faster recovery; (5) Modern: less sedation, more interaction, family presence, early mobility; quality improvement focus"},{"label":"C","text":"Deep sedation continuous"},{"label":"D","text":"No analgesia"},{"label":"E","text":"Restraints only"}]'::jsonb,
+  'B', 'ICU sedation paradigm shift: light sedation + ABCDEF bundle. Avoid benzodiazepine drips long-term (delirium, mortality). Daily SAT/SBT. Multimodal analgesia. Early mobility. Family engagement. Outcomes improve with bundle compliance. Modern: less is more — light sedation, more interaction.', NULL,
+  'medium', 'procedures', 'review',
+  'anesthesiology', 'clinical_decision', 'procedures', 'adult',
+  'PADIS Guidelines 2018; ICU Liberation ABCDEF Bundle', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'ICU patient post-cardiac surgery on mechanical ventilation needing sedation + analgesia for 5 days
+
+คำถาม: sedation + delirium prevention in ICU'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 35 ปี polytrauma post-MVC — open femoral fracture + pneumothorax + closed head injury — going to OR for damage control surgery
+
+V/S: BP 88/52, HR 132, Hb 6.4, Lactate 4.8, INR 1.6, pH 7.21, Temp 35.4°C
+Airway secured pre-OR + chest tube + IV × 2', '[{"label":"A","text":"Standard elective anesthesia"},{"label":"B","text":"Trauma Anesthesia + Damage Control Resuscitation: (1) **Damage Control Surgery (DCS)** principles — control hemorrhage + contamination, leave anatomy abnormal, temporary closure, ICU resuscitation, return for definitive 24-72h; goal: avoid ''lethal triad'' (acidosis + coagulopathy + hypothermia); (2) **Damage Control Resuscitation**: - Permissive hypotension SBP 80-90 until bleeding controlled (avoid except TBI — different MAP target); - Balanced transfusion 1:1:1 (PRC:FFP:Plt) per PROPPR; - Crystalloid minimized (worsens coagulopathy + edema); - Tranexamic acid (TXA) 1g IV bolus within 3h then 1g over 8h (CRASH-2); - Warm products + fluid; - Calcium replacement (citrate binds Ca); (3) **Anesthetic choice**: avoid agents causing further hypotension; ketamine (cardiostable, analgesic), etomidate (hemodynamically stable but adrenal suppression — single dose OK); minimize propofol (hypotension); volatile carefully; (4) **Ventilation**: lung-protective TV 6 mL/kg IBW; chest tube monitoring; (5) **Monitoring**: arterial line, CVL, urine output, temperature, blood gas + lactate; (6) **TBI considerations**: avoid hypotension (different target — MAP > 65, CPP > 60), avoid hypoxia, avoid hyperventilation (cerebral vasoconstriction); osmotherapy if elevated ICP (mannitol, hypertonic saline); (7) **Open femoral fracture**: antibiotic within 1h (cefazolin + gentamicin for Gustilo III), tetanus, immobilize; (8) **Temperature**: normothermia (warming blankets, warm IV, warm room) — hypothermia worsens coagulopathy + cardiac; (9) **Massive Transfusion Protocol (MTP)** activation; (10) **Trauma team approach**: surgery + anesthesia + nursing + blood bank + lab + interventional radiology; ICU bed reserved; (11) **Post-op**: ICU resuscitation, monitor labs, plan definitive surgery; (12) **Predictors**: shock index, mortality scores"},{"label":"C","text":"Refuse case"},{"label":"D","text":"Elective approach"},{"label":"E","text":"Discharge home"}]'::jsonb,
+  'B', 'Trauma anesthesia: damage control resuscitation principles. Permissive hypotension (except TBI). Balanced transfusion 1:1:1. TXA early. Avoid lethal triad. Anesthetic choice — ketamine, etomidate. TBI considerations differ. Normothermia. MTP. Trauma team approach. Modern: aggressive multidisciplinary trauma care.', NULL,
+  'hard', 'trauma', 'review',
+  'anesthesiology', 'clinical_decision', 'trauma', 'adult',
+  'ATLS 10th ed; PROPPR Trial; CRASH-2 Trial', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'ผู้ป่วยอายุ 35 ปี polytrauma post-MVC — open femoral fracture + pneumothorax + closed head injury — going to OR for damage control surgery
+
+V/S: BP 88/52, HR 132, Hb 6.4, Lactate 4.8, INR 1.6, pH 7.21, Temp 35.4°C
+Airway secured pre-OR + chest tube + IV × 2'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'เด็กชายอายุ 3 ปี น้ำหนัก 15 kg elective tonsillectomy + adenoidectomy under general anesthesia
+
+No significant medical history, no allergies, vaccines current', '[{"label":"A","text":"Same as adult anesthesia"},{"label":"B","text":"Pediatric Anesthesia Considerations: (1) **Pre-operative**: parental separation anxiety — pre-medication (midazolam oral 0.5 mg/kg); EMLA topical; toys, distraction; child life specialist; (2) **Inhalation induction** (mask) preferred 3 yo — sevoflurane (sweet smell, fast); IV induction once IV in place (lidocaine for propofol injection pain); (3) **Airway** differences: large occiput → flexion neutral position, large tongue, narrow cricoid (subglottic stenosis risk), funnel-shaped larynx; ETT cuff size — ''age/4 + 4'' uncuffed, ''age/4 + 3.5'' cuffed; LMA acceptable for short cases; (4) **Drug doses weight-based** (mg/kg); fluid calculation by 4-2-1 rule; (5) **Temperature regulation**: high surface area:volume ratio → hypothermia risk; warm IV, blanket, warm room (26-28°C in OR for infants); (6) **Hemodynamics**: rate-dependent CO; bradycardia → low CO → use atropine; (7) **Tonsillectomy specifics**: airway shared with surgeon, position changes, intra-op bleeding monitoring; dexamethasone (reduce PONV + edema + pain); minimize opioid (post-T+A apnea risk in OSA); local infiltration; multimodal analgesia (acetaminophen, NSAIDs avoid if bleeding concern); (8) **Post-tonsillectomy hemorrhage** — major risk 5-10 days; emergency airway/resuscitation if returns; (9) **PONV**: high incidence after T+A; dexamethasone + ondansetron prophylactic; (10) **Pain management**: multimodal, parents stay, comfort measures; (11) **Discharge criteria**: usually same day except OSA, age < 3, comorbidity, distance from hospital; (12) **OSA considerations**: opioid sensitivity, post-op monitoring overnight if severe; (13) Multidisciplinary: anesthesia + ENT + nursing + child life + family"},{"label":"C","text":"No special considerations"},{"label":"D","text":"Adult dosing"},{"label":"E","text":"Refuse case"}]'::jsonb,
+  'B', 'Pediatric anesthesia: child differences from adult — airway, drug dosing, temperature, hemodynamics, psychological. Inhalation induction common (sevoflurane). Tonsillectomy: shared airway, OSA + opioid sensitivity, hemorrhage risk 5-10d, PONV high, multimodal pain. Multidisciplinary care + family-centered.', NULL,
+  'medium', 'respiratory', 'review',
+  'anesthesiology', 'clinical_decision', 'respiratory', 'peds',
+  'Society for Pediatric Anesthesia; APAS Guidelines', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'เด็กชายอายุ 3 ปี น้ำหนัก 15 kg elective tonsillectomy + adenoidectomy under general anesthesia
+
+No significant medical history, no allergies, vaccines current'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 55 ปี acute subarachnoid hemorrhage from ruptured cerebral aneurysm — going to OR for endovascular coiling under general anesthesia
+
+V/S: BP 178/108 (high), HR 88, GCS 14, no focal neurological deficit', '[{"label":"A","text":"Standard surgical anesthesia"},{"label":"B","text":"Neuroanesthesia for Aneurysmal SAH Coiling: (1) **Goals**: maintain CPP (CPP = MAP - ICP, target > 60), avoid spikes in BP (rebleeding risk), avoid hypotension, avoid increases in ICP, minimize aneurysm wall tension; (2) **Pre-op**: BP control (target SBP < 140-160 pre-secured aneurysm — prevent rebleeding 4% in 24h, 30% in 1 month); IV access; arterial line; CVL if needed; nimodipine for vasospasm prevention; seizure prophylaxis if HUNT/HESS poor grade; (3) **Induction**: smooth, avoid HTN spike (treat with esmolol, lidocaine), avoid hypotension; propofol (cardiostable + lowers ICP via reduced CMRO2), thiopental alternative; opioid (fentanyl/remifentanil) blunt sympathetic response; muscle relaxant non-depolarizing (rocuronium); (4) **Maintenance**: TIVA (propofol + remifentanil) vs balanced (volatile + opioid); TIVA preferred for neuroanesthesia (less ICP increase, faster wake-up, better neuro exam); (5) **Hemodynamic management during procedure**: tight BP control — avoid hyper + hypotension; arterial line; vasoactive infusions ready (nicardipine, esmolol for HT; phenylephrine, norepinephrine for hypotension); MAP 80-90 typically; (6) **Ventilation**: PaCO2 normocapnia (avoid hyper or hypoventilation — ICP effects); SpO2 > 95; (7) **Temperature**: normothermia or mild hypothermia (debated — no clear benefit, may worsen); (8) **Heparinization**: for procedure — coordinate with reversal availability; (9) **Hyperthermia**: aggressive treatment (acetaminophen, cooling — fever worsens outcome); (10) **Emergence**: smooth, avoid HTN (treat aggressively), rapid neurological assessment; (11) **Post-op**: ICU, BP control continues, monitor for vasospasm + rebleeding + hydrocephalus + seizures; nimodipine; close neuro checks; (12) **Multidisciplinary**: neurosurgery + interventional radiology + anesthesia + neurocritical care"},{"label":"C","text":"Refuse case"},{"label":"D","text":"Discharge"},{"label":"E","text":"No monitoring"}]'::jsonb,
+  'B', 'Neuroanesthesia: tight BP control + ICP management + smooth hemodynamic course. TIVA preferred for neurosurgical cases. Aneurysm SAH: pre-secured aneurysm — avoid HTN (rebleeding); post-secured — moderate HTN may be allowed if vasospasm. Nimodipine for vasospasm. Multidisciplinary neurocritical care.', NULL,
+  'hard', 'neurology', 'review',
+  'anesthesiology', 'clinical_decision', 'neurology', 'adult',
+  'SNACC Neuroanesthesia Guidelines; AHA SAH Guidelines', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'ผู้ป่วยอายุ 55 ปี acute subarachnoid hemorrhage from ruptured cerebral aneurysm — going to OR for endovascular coiling under general anesthesia
+
+V/S: BP 178/108 (high), HR 88, GCS 14, no focal neurological deficit'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 68 ปี going for elective CABG + aortic valve replacement + on cardiopulmonary bypass
+
+Meds: aspirin, statin, beta-blocker, lisinopril, metformin', '[{"label":"A","text":"Standard anesthesia"},{"label":"B","text":"Cardiac Anesthesia for CABG + AVR with CPB: (1) **Pre-op**: continue beta-blocker + statin + aspirin (continue per surgeon preference vs hold 5-7 days pre-op for some); hold ACE inhibitor day of surgery; hold metformin day of surgery; antifibrinolytic (TXA or aprotinin alternative); coordinate with cardiologist + perfusionist + ICU; (2) **Monitoring**: 5-lead EKG, arterial line, CVL with PAC option, BIS for depth, TEE intra-op (essential for valve + ventricular function assessment), temperature (esophageal + bladder); (3) **Induction**: smooth, hemodynamically neutral; fentanyl high-dose ''cardiac dose'' historic, modern lower with multimodal; etomidate or low-dose propofol; rocuronium; (4) **Pre-CPB**: maintain hemodynamics, monitor TEE; heparinization (300-400 U/kg) to ACT > 480 before bypass; (5) **On CPB**: maintained by perfusionist; perform aortic cross-clamp; cardioplegia for myocardial protection (cold + chemical); MAP 50-70 on bypass (typical); hemodilution; mild hypothermia (32-34°C) — cerebral protection; (6) **Coming off CPB**: rewarm to 36.5-37°C; restore rhythm (defibrillate, pace); volume management; inotropic support if needed (epinephrine, milrinone, dobutamine); ventilate; protamine to reverse heparin (carefully — anaphylactoid reaction risk); (7) **TEE assessment**: valve function, ventricular function, wall motion; (8) **Bleeding management**: balanced product replacement, TXA/aprotinin, factor concentrates, point-of-care testing (ROTEM, TEG); (9) **Post-op ICU**: ventilation, hemodynamic support, pain control, glycemic control, early extubation when stable (fast-track); (10) **Complications**: arrhythmia (AF — 20-30%), bleeding, stroke, AKI, vasoplegia; (11) **Multidisciplinary**: cardiac surgery + anesthesia + perfusion + ICU + cardiology"},{"label":"C","text":"Refuse case"},{"label":"D","text":"Local anesthetic only"},{"label":"E","text":"No monitoring"}]'::jsonb,
+  'B', 'Cardiac anesthesia: extensive monitoring + invasive (arterial line, CVL, PAC option, TEE). Heparinization for CPB. Cardioplegia + hypothermia for myocardial + cerebral protection. Inotropic support coming off CPB. TXA reduces bleeding. Modern: TEE essential, fast-track recovery, multidisciplinary team. Complications: arrhythmia, bleeding, stroke, AKI.', NULL,
+  'hard', 'cardiovascular', 'review',
+  'anesthesiology', 'clinical_decision', 'cardiovascular', 'adult',
+  'SCA + EACTS Guidelines; STS Cardiac Surgery', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'ผู้ป่วยอายุ 68 ปี going for elective CABG + aortic valve replacement + on cardiopulmonary bypass
+
+Meds: aspirin, statin, beta-blocker, lisinopril, metformin'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ระหว่างผ่าตัด — surgeon uses electrocautery near oxygen-enriched area + drape catches fire on patient
+
+คำถาม: OR fire management', '[{"label":"A","text":"Continue surgery"},{"label":"B","text":"OR Fire — Anesthesia/Surgical Emergency: (1) **Stop procedure immediately** + alert team + announce ''FIRE''; (2) **Fire triangle**: oxidizer (O2, N2O), ignition source (electrocautery, laser, drill), fuel (drapes, alcohol prep, hair, ETT, gauze); (3) **Immediate actions**: - Stop O2 + N2O flow (most important); - Remove burning materials from patient; - Extinguish fire (saline, CO2 extinguisher, smother with blankets); (4) **For airway fires**: - Disconnect breathing circuit; - Remove ETT immediately; - Pour saline into airway; - Once fire out, ventilate with room air + minimum O2 needed; - Re-intubate (likely required for airway burn); - Bronchoscopy to assess; - Tracheostomy if severe; - ICU admission + steroids; (5) **Post-fire**: - Assess patient injury (skin burns, airway burn); - Resuscitation if extensive; - Document — quality improvement; - Counsel patient + family; (6) **Prevention** (ASA Fire Algorithm): - Reduce ambient O2 below 30% when possible; - Use compressed air or blended O2; - Avoid open O2 delivery near surgical site for head/neck cases; - Use proper drape technique; - Allow time for alcohol prep to dry; - Communication between surgeon + anesthesia about ignition + oxidizer use; (7) **OR personnel safety**; (8) **Multidisciplinary**: surgery, anesthesia, OR nursing, infection control"},{"label":"C","text":"Continue with surgery"},{"label":"D","text":"Refuse to help"},{"label":"E","text":"Discharge patient"}]'::jsonb,
+  'B', 'OR fires: rare but devastating. Fire triangle — oxidizer + ignition + fuel. Stop O2 first. Airway fires require ETT removal + reintubation. Prevention: ASA Fire Algorithm — reduce ambient O2, time for alcohol drying, communication. Multidisciplinary safety. Document + QI.', NULL,
+  'medium', 'trauma', 'review',
+  'anesthesiology', 'clinical_decision', 'trauma', 'adult',
+  'ASA Practice Advisory for Prevention + Management of Operating Room Fires', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'ระหว่างผ่าตัด — surgeon uses electrocautery near oxygen-enriched area + drape catches fire on patient
+
+คำถาม: OR fire management'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 28 ปี G2P1 GA 40 wk emergency C-section for fetal distress + uterine atony + ongoing hemorrhage 2L+
+
+Going to OR + already lost lots of blood + still bleeding', '[{"label":"A","text":"Wait for typed blood"},{"label":"B","text":"Massive Transfusion Protocol (MTP) for OB Hemorrhage: (1) **Activate MTP** (criteria — ongoing hemorrhage requiring multiple units, shock); (2) **Balanced product administration 1:1:1** (PRC:FFP:Plt) per PROPPR trial 2015 — better than crystalloid + delayed plasma; (3) **Tranexamic acid (TXA) 1g IV** within 3 hours (WOMAN trial — reduces death from bleeding in OB hemorrhage); (4) **Crystalloid + colloid** secondary — minimize (dilutional coagulopathy); (5) **Type O negative blood emergent** before type-specific available (for women of reproductive age — Rh status matters); type-specific switch when available; uncrossmatched if needed; (6) **Cryoprecipitate** for fibrinogen < 200 (OB hemorrhage requires fibrinogen > 200 — higher target than trauma); (7) **Point-of-care testing**: ROTEM/TEG to guide product use; (8) **Permissive hypotension** caution in OB (placental + fetal perfusion, eclampsia risk); SBP target 90-100 typically; (9) **Cell saver** controversial in OB (amniotic fluid contamination concern, but increasingly used with leukocyte depletion filter); (10) **Treat cause**: uterine atony (oxytocin + methylergonovine + carboprost + misoprostol — 4 T''s: tone, trauma, tissue, thrombin), surgical control (B-Lynch, hysterectomy if needed); IR + UAE if available; (11) **Temperature**: warming all products, blanket warmer, warm IV — hypothermia worsens coagulopathy; (12) **Calcium replacement** (citrate binds Ca); (13) **Multidisciplinary team**: OB + anesthesia + blood bank + nursing + IR + ICU; (14) **Maternal mortality risk** — leading cause globally; aggressive management saves lives"},{"label":"C","text":"Crystalloid only"},{"label":"D","text":"Discharge"},{"label":"E","text":"Refuse"}]'::jsonb,
+  'B', 'Massive transfusion: balanced 1:1:1 ratio (PROPPR). TXA within 3h (WOMAN). Cryoprecipitate for fibrinogen < 200 (OB target higher). O-negative emergent. Point-of-care testing (ROTEM/TEG). Treat cause. Warm products. Multidisciplinary team. OB hemorrhage = leading cause of maternal mortality globally — saves lives.', NULL,
+  'medium', 'obgyn', 'review',
+  'anesthesiology', 'clinical_decision', 'obgyn', 'adult',
+  'ACOG; PROPPR Trial JAMA 2015; WOMAN Trial Lancet 2017', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'ผู้ป่วยอายุ 28 ปี G2P1 GA 40 wk emergency C-section for fetal distress + uterine atony + ongoing hemorrhage 2L+
+
+Going to OR + already lost lots of blood + still bleeding'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 65 ปี multi-trauma post-MVC + open femoral fracture exposure for 1 hour + Temp 33.6°C + slow rewarming
+
+คำถาม: perioperative hypothermia management', '[{"label":"A","text":"Ignore temperature"},{"label":"B","text":"Perioperative Hypothermia Management: (1) **Hypothermia harm**: coagulopathy (platelet + enzymatic dysfunction), arrhythmia (especially < 30°C), wound infection, increased SSI, delayed drug metabolism, shivering (cardiac demand), longer recovery; (2) **Prevention strategies (ASA + NICE recommend normothermia > 36°C)**: - Pre-warming pre-op (forced air warming 30-60 min before induction); - Warm OR room (initially 20-24°C, higher for infants 26-28°C); - Forced air warming intra-op (Bair Hugger most common); - Conductive warming mattress; - IV fluid warmer; - Humidification of inspired gas; - Reduce skin exposure; - Cover head; (3) **Active rewarming when hypothermic**: - Forced air warming primary; - IV fluid warmer (40°C); - Warmed humidified ventilation; - Body cavity lavage (pleural, peritoneal) for severe; - Continuous renal replacement therapy with warming; - ECMO for refractory severe (< 28°C, hemodynamic compromise); (4) **Hypothermia + trauma ''lethal triad''**: hypothermia + acidosis + coagulopathy — vicious cycle; aggressive rewarming + product replacement; (5) **Monitoring**: core temperature (esophageal, bladder, rectal, tympanic); skin temperature less accurate; (6) **Cooling for indications** (controversial benefit, narrow): targeted temperature management (TTM 32-36°C) post-cardiac arrest, neuroprotection (mild hypothermia for selected — debated); never hyperthermia (worsens outcome universally); (7) **Multidisciplinary**: anesthesia + surgery + nursing + ICU"},{"label":"C","text":"Discharge"},{"label":"D","text":"Refuse"},{"label":"E","text":"Cool further"}]'::jsonb,
+  'B', 'Perioperative hypothermia: significant harm (coagulopathy, arrhythmia, SSI). Prevention better than treatment. Forced air warming primary. Pre-warming. Trauma lethal triad: hypothermia + acidosis + coagulopathy. Hyperthermia universally harmful. Monitor core temperature. Multidisciplinary team. Modern: normothermia > 36°C standard.', NULL,
+  'easy', 'trauma', 'review',
+  'anesthesiology', 'clinical_decision', 'trauma', 'adult',
+  'ASA Temperature Monitoring Guidelines; NICE Hypothermia', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'ผู้ป่วยอายุ 65 ปี multi-trauma post-MVC + open femoral fracture exposure for 1 hour + Temp 33.6°C + slow rewarming
+
+คำถาม: perioperative hypothermia management'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 78 ปี HF, CKD3, recent MI, going for emergency hip fracture repair within 24 hours
+
+Functional capacity poor pre-fall, on aspirin + warfarin (INR 2.4) + furosemide + carvedilol + atorvastatin', '[{"label":"A","text":"Discharge"},{"label":"B","text":"Frail Elderly Emergency Surgery: (1) **Pre-op optimization while not delaying surgery > 48h** (hip fracture mortality increases with delay): - Volume status assessment (fluid resuscitation cautious in HF/CKD); - Anti-coagulation reversal — INR > 1.5 + emergency hip surgery → 4-factor PCC (Kcentra) + vitamin K (faster than FFP, smaller volume; especially CKD + HF); INR target 1.5; - Continue beta-blocker + statin; - Hold furosemide if hypovolemic; - Optimize Hb (transfuse if < 8 or anemic + symptomatic); - Glycemic control; (2) **Anesthetic plan**: - Regional anesthesia preferred (spinal/CSE) — less delirium + lower mortality than GA in some series (limited evidence — REGAIN trial NEJM 2021 no difference); - Fascia iliaca compartment block (pre-op + intra-op) — excellent analgesia + multimodal; - Reduce opioids; (3) **Monitoring**: arterial line for invasive BP, urine output, EKG, possibly TEE if hemodynamic concerns; (4) **Hemodynamic management**: maintain perfusion to organs (cardiac + renal + brain) — MAP > 65, individualized; avoid both HT + hypoTN; vasopressors as needed; (5) **Cementing reaction risk** (BCIS — bone cement implantation syndrome — hypotension + hypoxia + arrhythmia during prosthesis insertion) — communicate with surgeon, premedicate volume, ready vasopressors, careful cement use, vent reaming; (6) **Post-op**: PACU then ICU vs ward based on stability; multimodal analgesia opioid-sparing; early mobilization; PT; (7) **Ortho-geriatric co-management** — Cochrane evidence reduces mortality; (8) **Delirium prevention**: HELP, non-pharm, avoid Beers meds; (9) **Secondary fracture prevention**: osteoporosis Rx, fall prevention; (10) **Multidisciplinary**: orthopedics + anesthesia + geriatric medicine + nursing + PT + family"},{"label":"C","text":"Cancel surgery"},{"label":"D","text":"Standard elective"},{"label":"E","text":"Refuse"}]'::jsonb,
+  'B', 'Frail elderly emergency surgery: optimize without delaying > 48h. Reverse warfarin (PCC > FFP). Regional anesthesia (REGAIN trial — no clear difference from GA but fascia iliaca block + multimodal). Hemodynamic vigilance. Cementing reaction risk. Ortho-geriatric co-management. Modern multidisciplinary team approach.', NULL,
+  'medium', 'trauma', 'review',
+  'anesthesiology', 'clinical_decision', 'trauma', 'adult',
+  'AAOS Hip Fracture; REGAIN Trial NEJM 2021', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'ผู้ป่วยอายุ 78 ปี HF, CKD3, recent MI, going for emergency hip fracture repair within 24 hours
+
+Functional capacity poor pre-fall, on aspirin + warfarin (INR 2.4) + furosemide + carvedilol + atorvastatin'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 32 ปี Jehovah''s Witness — refusing all blood products + going for emergency surgery (ruptured ectopic pregnancy)
+
+Currently BP 88/52, HR 132, Hb 7.4 (dropping)', '[{"label":"A","text":"Force blood transfusion"},{"label":"B","text":"Jehovah''s Witness + Bloodless Medicine: (1) **Respect patient autonomy** — informed consent + refusal of blood products (constitutionally protected); document in advance directive + chart; (2) **Discuss specifics**: most JWs refuse whole blood, PRBC, FFP, platelets; many accept albumin, cryoprecipitate, some accept own blood (cell saver if continuous circuit), recombinant factors, ESA (erythropoietin); individualized — ask patient specifically; (3) **Pre-op optimization**: maximize Hb pre-op (iron, B12, folate, erythropoietin if elective); minimize blood draws; (4) **Intra-op blood conservation strategies**: - **Cell saver** (intraoperative blood recovery — preferred — continuous circuit acceptable to most JWs); - **Acute normovolemic hemodilution** (ANH — collect autologous blood + replace with crystalloid; reinfuse later); - **Hypotensive anesthesia** (lower MAP — reduces blood loss); - **Optimize hemostasis** — surgical technique, electrocautery, topical agents (TXA, fibrin glue, hemostatic patches); - **Tranexamic acid (TXA)** — IV systemic + topical reduces bleeding; - **Minimize phlebotomy** — pediatric tubes; - **Pharmacologic**: erythropoietin, iron IV, vitamin B12/folate; (5) **Post-op**: aggressive hemostasis, monitor for re-bleeding, optimize Hb (iron, EPO), nutritional support; (6) **Maternal mortality higher in JW vs general OB population** — counsel + discuss; (7) **Refractory severe anemia**: hyperbaric oxygen as last resort (controversial); (8) **Ethics committee** if complex situations; (9) **Family education** + support; (10) **Bloodless medicine programs** specialized centers; (11) **Documentation** of informed consent + refusal"},{"label":"C","text":"Refuse case"},{"label":"D","text":"Discharge"},{"label":"E","text":"Ignore wishes"}]'::jsonb,
+  'B', 'Jehovah''s Witness: respect patient autonomy. Bloodless medicine strategies: cell saver, ANH, TXA, EPO/iron, surgical hemostasis. Document informed consent + refusal. Higher mortality risk — discuss. Specialized bloodless programs. Modern: many options to minimize blood need.', NULL,
+  'medium', 'hematology', 'review',
+  'anesthesiology', 'clinical_decision', 'hematology', 'adult',
+  'Bloodless Medicine + Surgery; Patient Blood Management', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'ผู้ป่วยอายุ 32 ปี Jehovah''s Witness — refusing all blood products + going for emergency surgery (ruptured ectopic pregnancy)
+
+Currently BP 88/52, HR 132, Hb 7.4 (dropping)'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'Resident ถามเรื่อง pharmacology — IV induction agents + mechanisms', '[{"label":"A","text":"No differences"},{"label":"B","text":"IV Induction Agents — Mechanisms + Clinical Use: (1) **Propofol** — GABA-A agonist + glycine; most common induction; rapid onset + offset; reduces ICP + CMRO2 (neuroprotective); negative inotrope + vasodilator (hypotension); pain on injection (lidocaine pretreat); anti-emetic effects; propofol infusion syndrome (rare — > 4 mg/kg/hr > 48h); (2) **Etomidate** — GABA-A modulator; hemodynamically stable (preferred in unstable cardiac, hypovolemia); ADRENAL SUPPRESSION (11-beta hydroxylase inhibition — single dose may suppress 24-48h; concern in sepsis — avoid in adrenal insufficiency); myoclonus + N/V; (3) **Ketamine** — NMDA antagonist; dissociative anesthesia; preserves cardiovascular + respiratory function (preferred in shock, asthma, bronchospasm); analgesic; emergence reactions (hallucinations — benzo prophylaxis); sympathomimetic (caution CAD, HTN crisis); increases salivation; (4) **Midazolam** — GABA-A modulator (benzodiazepine); pre-medication, sedation, induction with opioid; reversible with flumazenil; respiratory depression; longer recovery; (5) **Thiopental** — GABA-A modulator (barbiturate); historical, less use now; rapid + neuroprotective; reduces ICP; CV depression; reduces hepatic blood flow; precipitates porphyria; pain on injection; (6) **Dexmedetomidine** — alpha-2 agonist; sedation without respiratory depression; analgesic; opioid-sparing; preserves arousability; useful for ICU sedation, awake fiberoptic, procedural sedation; bradycardia + hypotension; (7) **Selection factors**: hemodynamics, comorbidities, allergies, surgery type, recovery profile, cost; (8) **Combination + multimodal** preferred over single agent"},{"label":"C","text":"Same mechanism"},{"label":"D","text":"Random use"},{"label":"E","text":"Single agent only"}]'::jsonb,
+  'B', 'IV induction agents: different mechanisms + clinical profiles. Propofol most common. Etomidate cardiostable but adrenal suppression. Ketamine preserves CV + respiratory + analgesic. Midazolam reversible. Dexmedetomidine awake sedation. Selection by patient + procedure. Multimodal approach preferred.', NULL,
+  'medium', 'procedures', 'review',
+  'anesthesiology', 'basic_science', 'procedures', 'adult',
+  'Miller''s Anesthesia; Stoelting''s Pharmacology + Physiology', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_basic_science'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'Resident ถามเรื่อง pharmacology — IV induction agents + mechanisms'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'Resident ถามเรื่อง physiology — respiratory + cardiovascular changes during anesthesia', '[{"label":"A","text":"No changes"},{"label":"B","text":"Physiologic Changes During Anesthesia: (1) **Respiratory**: - Loss of upper airway tone → obstruction (jaw thrust, oral airway, intubation); - Loss of muscle tone → atelectasis (recruitment maneuver, PEEP); - Reduced FRC (functional residual capacity) by 20% (supine + anesthesia + paralysis); - V/Q mismatch + shunt; - Loss of HPV (hypoxic pulmonary vasoconstriction) in lung; - Apnea (depending on depth + agent); - Respiratory acidosis if hypoventilation; - Hyperventilation → respiratory alkalosis → cerebral vasoconstriction; (2) **Cardiovascular**: - Most anesthetics — myocardial depression, vasodilation → hypotension; - Loss of sympathetic tone (especially neuraxial); - Bradycardia (volatile, opioids, dexmedetomidine, vagal — surgical stimulation); - Reduced response to BP changes; (3) **Neurological**: CMRO2 reduced (most anesthetics neuroprotective in some sense); BBB intact; (4) **Renal**: GFR reduced; reduced response to ADH; - antidiuresis (sympathetic + renin-angiotensin response to surgical stress); - perioperative AKI risk; (5) **GI**: reduced gastric emptying (aspiration risk); ileus post-op; (6) **Endocrine**: stress response (cortisol, glucagon, GH, ADH, catecholamines) → hyperglycemia, fluid retention, immunosuppression; (7) **Hematologic**: hypercoagulability post-op (VTE prophylaxis); (8) **Temperature**: rapid hypothermia (vasodilation + cool OR); (9) **Pediatric/Geriatric** differ — separate considerations; (10) **Implications**: maintain physiologic homeostasis, monitor, intervene as needed"},{"label":"C","text":"No physiologic effects"},{"label":"D","text":"Adult only"},{"label":"E","text":"Random changes"}]'::jsonb,
+  'B', 'Anesthesia profound physiologic effects. Respiratory: loss of tone, atelectasis, reduced FRC, V/Q mismatch. CV: myocardial depression, vasodilation, hypotension. Neuro: reduced CMRO2. GI: aspiration risk + ileus. Endocrine: stress response. Hypothermia rapid. Implications: maintain physiology + monitor + intervene. Modern: minimize disruption.', NULL,
+  'medium', 'respiratory', 'review',
+  'anesthesiology', 'basic_science', 'respiratory', 'adult',
+  'Miller''s Anesthesia; West''s Pulmonary Physiology', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_basic_science'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'Resident ถามเรื่อง physiology — respiratory + cardiovascular changes during anesthesia'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'Resident ถามเรื่อง pharmacology — neuromuscular blockers + reversal', '[{"label":"A","text":"Same mechanism"},{"label":"B","text":"Neuromuscular Blockers (NMB) + Reversal: (1) **Depolarizing NMB — Succinylcholine**: ACh receptor agonist; rapid onset (30-60s) + short duration (5-10 min); fasciculations + myalgia; side effects — hyperkalemia (avoid in burns, denervation, neuromuscular disease, prolonged immobilization), MH trigger, increased ICP/IOP, bradycardia (esp peds repeat doses); plasma cholinesterase metabolism (pseudocholinesterase deficiency — prolonged effect); not routinely reversed (let wear off); (2) **Non-Depolarizing NMB — competitive ACh antagonists**: - **Aminosteroids**: rocuronium (intermediate, rapid onset), vecuronium (intermediate), pancuronium (long-acting); - **Benzylisoquinolinium**: cisatracurium (intermediate, Hofmann elimination — useful in liver/renal disease), atracurium (histamine release), mivacurium (short); (3) **Reversal of non-depolarizing NMB**: - **Sugammadex** — for aminosteroids only (rocuronium + vecuronium); cyclodextrin encapsulates molecule; rapid + complete reversal at any depth; 2-16 mg/kg dose-dependent; FDA approved + revolutionary — eliminates residual blockade concerns; - **Neostigmine** (acetylcholinesterase inhibitor) + glycopyrrolate or atropine (anticholinergic to prevent bradycardia + secretion); maximum 5 mg; not effective for profound block; (4) **Monitoring NMB** — train-of-four (TOF) at adductor pollicis or facial nerve; depth-of-block assessment; TOF ratio > 0.9 before extubation (residual NMB causes airway compromise + aspiration); (5) **Quantitative monitoring** (acceleromyography) preferred over qualitative; (6) **Clinical considerations**: avoid hypothermia (prolongs block), acidosis, hypokalemia, hypomagnesemia (potentiates); some antibiotics (aminoglycosides, polymyxin) potentiate; (7) **Reversal of residual NMB** — increased focus to reduce post-op respiratory complications"},{"label":"C","text":"No reversal needed"},{"label":"D","text":"Random use"},{"label":"E","text":"Single agent only"}]'::jsonb,
+  'B', 'NMB: depolarizing (succinylcholine — rapid, short) vs non-depolarizing (aminosteroids, benzyliso). Sugammadex revolutionized rocuronium/vecuronium reversal. Neostigmine + anticholinergic traditional reversal. TOF monitoring + quantitative preferred. TOF > 0.9 before extubation. Residual NMB causes post-op complications. Modern: emphasis on full reversal + monitoring.', NULL,
+  'medium', 'procedures', 'review',
+  'anesthesiology', 'basic_science', 'procedures', 'adult',
+  'Miller''s Anesthesia; ASA Quantitative NMB Monitoring', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_basic_science'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'Resident ถามเรื่อง pharmacology — neuromuscular blockers + reversal'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'Resident ถามเรื่อง regional anesthesia anatomy + ultrasound guidance', '[{"label":"A","text":"Blind technique only"},{"label":"B","text":"Ultrasound-Guided Regional Anesthesia: (1) **Advantages over blind/nerve stimulator**: direct visualization, real-time needle tracking, lower volume LA, faster onset, fewer attempts, lower complication rates (vascular puncture, nerve injury, LAST); (2) **Common blocks**: - Upper extremity: interscalene (shoulder), supraclavicular (arm), infraclavicular (forearm), axillary, peripheral (median, ulnar, radial nerve, distal); - Lower extremity: femoral, adductor canal (saphenous), sciatic (popliteal), ankle block; - Truncal: TAP (transversus abdominis plane), rectus sheath, quadratus lumborum, paravertebral, erector spinae plane (ESP), serratus anterior, PECS I + II (chest wall); - Neuraxial: spinal, epidural (ultrasound assists in difficult anatomy or obesity); (3) **Technique**: identify target nerve + surrounding structures, in-plane vs out-of-plane needle, hydrodissection, incremental LA injection with aspiration; (4) **LA selection**: lidocaine (short-acting, intra-op), bupivacaine + ropivacaine (long-acting, post-op analgesia 12-24h), liposomal bupivacaine (72h); adjuncts (epinephrine — vasoconstriction + LA duration + detect IV; dexamethasone + clonidine — prolong); (5) **Complications**: LAST (most feared — see other question), nerve injury, vascular puncture + hematoma, infection, pneumothorax (interscalene, supraclavicular), epidural hematoma (neuraxial); (6) **Patient selection**: cooperative, no severe coagulopathy at site, no infection at site, appropriate consent; (7) **Documentation**: technique, structure identification, LA + volume, response, complications; (8) **Continuous catheters**: prolonged analgesia, multimodal; (9) **Outcomes**: reduced opioid use, shorter hospital stay, less PONV, better recovery; (10) **Training**: ultrasound + needle skills require deliberate practice"},{"label":"C","text":"Random injection"},{"label":"D","text":"No regional"},{"label":"E","text":"Refuse"}]'::jsonb,
+  'B', 'Ultrasound-guided regional anesthesia: advantages over blind. Multiple block types upper/lower/truncal/neuraxial. LA selection + adjuncts. Continuous catheters for prolonged. Complications: LAST, nerve injury, vascular, pneumothorax. Reduces opioid use + improves recovery. Modern multimodal analgesia foundation.', NULL,
+  'easy', 'procedures', 'review',
+  'anesthesiology', 'basic_science', 'procedures', 'adult',
+  'ASRA Anatomy + Block Manual; SonoSim + Online Resources', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_basic_science'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'Resident ถามเรื่อง regional anesthesia anatomy + ultrasound guidance'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'Hospital wants reduce surgical mortality + improve perioperative care — implement Enhanced Recovery After Surgery (ERAS) hospital-wide', '[{"label":"A","text":"Traditional approach"},{"label":"B","text":"ERAS Hospital-Wide Implementation: (1) **Multidisciplinary team**: surgeons, anesthesia, nursing, PT/OT, dietitian, social work, pharmacy, case management, quality improvement, IT, leadership; (2) **Specialty-specific protocols** (ERAS Society guidelines exist for major specialties — colorectal, urology, GYN, breast, bariatric, hepatobiliary, esophageal, lung, cardiac, gastric, thoracic, head + neck, pancreas, ortho, OB); (3) **Components** (~ 20 elements per protocol): - Pre-operative: education + counseling, no prolonged fasting (clear fluids 2h, carb loading), no routine bowel prep (specialty-dependent), MRSA screening, smoking cessation, nutritional optimization; - Intra-operative: antibiotic prophylaxis timing, normothermia, restrictive fluid, minimally invasive when possible, multimodal analgesia (regional + non-opioid), avoid NG tube + drains routine, normoglycemia; - Post-operative: early diet + mobilization (within 24h), multimodal analgesia (opioid-sparing), no Foley routine > 24h, DVT prophylaxis, early discharge planning; (4) **Audit + feedback**: measure compliance + outcomes per ERAS interactive audit system or local; (5) **Outcomes**: reduced LOS 30%, complications 30-50%, opioid use, readmissions; cost-effective; (6) **Cultural change** essential — staff buy-in, education, ongoing reinforcement; (7) **Patient + family engagement**: empowered, informed, expectations set; (8) **Continuous improvement**: quarterly review, evolve protocols; (9) **Equity**: ensure benefits across all populations; (10) **Modern**: ERAS as standard of care; high-quality + low-cost approach"},{"label":"C","text":"Single intervention"},{"label":"D","text":"No multidisciplinary"},{"label":"E","text":"Refuse ERAS"}]'::jsonb,
+  'B', 'ERAS = evidence-based multimodal perioperative care. Specialty-specific protocols. ~20 elements per protocol. Multidisciplinary team. Audit + feedback. Outcomes: shorter LOS, less morbidity, less opioid, cost-effective. Cultural change. Patient empowerment. Modern: standard of care across major surgeries.', NULL,
+  'medium', 'procedures', 'review',
+  'anesthesiology', 'ems_mgmt', 'procedures', 'adult',
+  'ERAS Society Guidelines; Ljungqvist O JAMA Surg 2017', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_ems_mgmt'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'Hospital wants reduce surgical mortality + improve perioperative care — implement Enhanced Recovery After Surgery (ERAS) hospital-wide'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'Hospital implements patient safety + medication error reduction — anesthesia-specific', '[{"label":"A","text":"Ignore"},{"label":"B","text":"Anesthesia Patient Safety Program: (1) **APSF (Anesthesia Patient Safety Foundation)** leadership in anesthesia safety; (2) **Anesthesia mortality** reduced dramatically: from 1 per 5,000 (1960s) → 1 per 200,000 modern — model patient safety success in medicine; (3) **Key safety initiatives**: - **Standardized monitoring** (ASA standards 1986) — pulse ox, EKG, BP, EtCO2, temperature, vigilance; - **Difficult airway algorithm** + equipment availability; - **Crisis Resource Management (CRM)** training — communication, leadership, teamwork during emergencies; - **Simulation training** — realistic scenarios, debriefing; - **Pre-anesthesia checklists** (machine, equipment, drugs, patient identification, allergies, NPO); - **Time-out** before surgical incision (universal protocol — patient + site + procedure); - **Medication safety** — color-coded syringes, separate stations, pre-filled syringes, barcode scanning, electronic record; - **Closed-loop communication** — read-back of orders; - **Fatigue + handoff management** — duty hour limits, structured handoffs (SBAR, I-PASS); - **Quality improvement infrastructure** — case review, M&M, root cause analysis, blame-free reporting; - **APSF newsletter** + publications + funded research; (4) **Specific medication errors**: ampule confusion, similar labels (lookalike), wrong concentrations, wrong route (intrathecal vs IV), reversed drug → use prefilled syringes when possible; (5) **Technology**: anesthesia information management systems (AIMS), barcode scanning, smart pumps, computerized order entry; (6) **Culture of safety**: psychological safety, learning from errors, transparency, accountability; (7) **Multidisciplinary**: physicians, nurses, technicians, pharmacy, IT, administration; (8) **Continuous education + competency assessment**"},{"label":"C","text":"Refuse safety measures"},{"label":"D","text":"Single specialty"},{"label":"E","text":"Random approach"}]'::jsonb,
+  'B', 'Anesthesia patient safety: dramatic mortality reduction (1 per 5,000 → 1 per 200,000) — model of patient safety success. APSF leadership. ASA monitoring standards + difficult airway + CRM + simulation + checklists + time-out + medication safety + handoffs. Culture of safety. Technology aids. Modern: standard practice across hospitals.', NULL,
+  'easy', 'procedures', 'review',
+  'anesthesiology', 'ems_mgmt', 'procedures', 'adult',
+  'APSF; ASA Patient Safety Standards', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_ems_mgmt'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'Hospital implements patient safety + medication error reduction — anesthesia-specific'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'Hospital implements opioid stewardship in anesthesia + perioperative period — opioid crisis response', '[{"label":"A","text":"More opioids"},{"label":"B","text":"Opioid Stewardship in Anesthesia: (1) **Public health context**: opioid crisis — 100,000+ overdose deaths/year US, fentanyl epidemic, persistent post-op opioid use → addiction; (2) **Perioperative opioid stewardship goals**: - Reduce opioid prescribing without compromising pain control; - Identify high-risk patients; - Multimodal analgesia; - Patient + family education; - Safe disposal of unused; - Surveillance + monitoring; (3) **Specific interventions**: - **Multimodal analgesia foundation** (acetaminophen + NSAID + gabapentinoid + ketamine + regional + steroid); - **Regional anesthesia** + neuraxial — opioid-sparing; - **ERAS protocols** include opioid-sparing; - **Surgeon-specific prescribing guidelines** (limited dose + days for specific procedures — e.g., open hernia 5-10 tabs total); - **Default prescribing** — change defaults in EMR (smaller quantities, lower doses); - **PDMP (Prescription Drug Monitoring Programs)** — check before prescribing; - **OUD screening** + treatment (don''t withhold pain control from OUD patients — multimodal + may need MAT); - **Naloxone co-prescription** for high-risk; - **Education**: physicians, residents, students; (4) **Patient education**: realistic expectations, side effects, addiction risks, safe storage + disposal, alternatives; (5) **Post-op pain management programs**: outpatient pain management, transitional pain service for high-risk; (6) **Surveillance**: opioid prescribing data, persistent use rates, ED visits + readmissions, satisfaction; (7) **Quality metrics**: opioid prescribing per case + procedure; (8) **Multidisciplinary**: anesthesia + surgery + pharmacy + nursing + addiction medicine + primary care + mental health; (9) **Modern paradigm**: less opioid is more — patient outcomes, addiction prevention"},{"label":"C","text":"Long-term opioids"},{"label":"D","text":"Refuse stewardship"},{"label":"E","text":"Single intervention"}]'::jsonb,
+  'B', 'Opioid stewardship: anesthesia + perioperative response to opioid crisis. Multimodal analgesia + regional anesthesia + ERAS + PDMP + procedure-specific guidelines + default prescribing changes. Patient education + safe disposal. OUD screening + treatment. Modern: less opioid is more — patient outcomes + addiction prevention.', NULL,
+  'medium', 'psych_behavior', 'review',
+  'anesthesiology', 'ems_mgmt', 'psych_behavior', 'adult',
+  'CDC Pain Guidelines 2022; ASA Opioid Stewardship', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_ems_mgmt'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'Hospital implements opioid stewardship in anesthesia + perioperative period — opioid crisis response'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 78 ปี multimorbid (HF + CKD + DM + frailty + cognitive impairment) coming for hip surgery — complex perioperative + multidisciplinary care', '[{"label":"A","text":"Single specialty"},{"label":"B","text":"Multimorbid Elderly Perioperative Integrative Care: (1) **Pre-op multidisciplinary assessment**: orthopedics + anesthesia + geriatric medicine + cardiology + nephrology + endocrinology + PT + nutrition + social work; (2) **Comprehensive Geriatric Assessment (CGA)**: medical + functional + cognitive + nutritional + psychosocial + medications (Beers, STOPP/START); (3) **Goals of care discussion**: balance benefits vs risks; advance directives; family + patient values; outcomes-focused (function, QOL, mortality); (4) **Optimization without delaying urgent surgery**: HF (loop diuretic + ACE/ARB optimize cautious), CKD (avoid nephrotoxic + hydration), DM (glycemic control + hold metformin), frailty (nutrition, prehabilitation if elective); (5) **Anesthetic plan**: regional or neuraxial preferred (REGAIN trial mixed — local + anesthesia preference); multimodal + opioid-sparing; less sedation; (6) **Hemodynamic monitoring**: invasive in high-risk (arterial line); maintain MAP > 65, individualized; volume status balance; (7) **Delirium prevention**: HELP elements (orientation, mobility, sleep, hearing/vision aids, family); avoid Beers meds; ABCDEF in ICU if applicable; (8) **Post-op**: ortho-geriatric co-management — Cochrane evidence reduces mortality; multidisciplinary rounds; early mobilization; nutrition; PT/OT; pain control opioid-sparing; (9) **Discharge planning early**: home with services vs rehab vs SNF; family + social support; (10) **Secondary prevention**: osteoporosis, fall prevention, CV; (11) **Family + caregiver engagement**: support, education, decision-making; (12) **Long-term**: rehabilitation, function, follow-up; quality of life focus"},{"label":"C","text":"Refuse care"},{"label":"D","text":"Single intervention"},{"label":"E","text":"Discharge home"}]'::jsonb,
+  'B', 'Multimorbid elderly perioperative care = quintessential integrative + multidisciplinary. CGA + goals of care + optimization (not delaying urgent). Anesthetic choice individualized. Hemodynamic + delirium prevention. Ortho-geriatric co-management evidence-based. Family engagement. Long-term function focus. Modern: multidisciplinary team approach standard.', NULL,
+  'hard', 'trauma', 'review',
+  'anesthesiology', 'integrative', 'trauma', 'adult',
+  'AAOS + AGS Guidelines; ACS Geriatric Surgery', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_integrative'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'ผู้ป่วยอายุ 78 ปี multimorbid (HF + CKD + DM + frailty + cognitive impairment) coming for hip surgery — complex perioperative + multidisciplinary care'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 40 ปี undergoing major spine surgery for tumor resection — long surgery + complex monitoring + transfusion + neuro monitoring + chronic pain management', '[{"label":"A","text":"Single specialty"},{"label":"B","text":"Complex Spine Surgery Integrative Care: (1) **Pre-op multidisciplinary**: spine surgery + anesthesia + neuro monitoring + oncology + IR (potentially preoperative embolization) + ICU + rehabilitation + pain management + psychology + nutrition + social work; (2) **Pre-op planning**: imaging review, blood + products availability, autologous blood storage, cell saver, vascular access planning; (3) **Anesthetic plan**: TIVA for neuromonitoring (avoids volatile interference); positioning (prone or other) considerations + pressure injury prevention; (4) **Neurophysiologic monitoring (IONM)**: MEPs (motor evoked potentials), SSEPs (somatosensory), EMG — detect early nerve injury; requires TIVA + careful muscle relaxant; (5) **Massive blood loss management**: TXA (loading + infusion); cell saver; balanced transfusion; permissive hypotension cautious in spine — blood loss vs cord perfusion balance; point-of-care testing (ROTEM/TEG); fibrinogen monitoring; (6) **Hemodynamic management**: MAP > 80-85 to maintain cord perfusion + brain; arterial line + CVL + possibly TEE; vasopressors as needed; (7) **Lung-protective ventilation**: TV 6 mL/kg IBW + PEEP; particular consideration in prone position; (8) **Temperature**: normothermia; warming devices; (9) **Pain control**: regional (epidural, paravertebral, ESP); IV ketamine; multimodal opioid-sparing; (10) **Post-op**: ICU monitoring; neurological exam frequent; (11) **Rehabilitation**: early; spine precautions; PT + OT; (12) **Psychological support + family**: anxiety, depression, prolonged recovery; (13) **Long-term**: chronic pain + functional + tumor surveillance + oncology follow-up + transition planning"},{"label":"C","text":"Refuse"},{"label":"D","text":"Single specialty"},{"label":"E","text":"Discharge"}]'::jsonb,
+  'B', 'Complex spine surgery = integrative multidisciplinary. TIVA for IONM. Massive transfusion + cell saver. MAP maintenance for cord perfusion. Regional + multimodal pain. Prone positioning considerations. Post-op ICU + frequent neuro checks. Rehabilitation + psychological. Long-term oncology follow-up. Modern: highly coordinated multidisciplinary care.', NULL,
+  'hard', 'neurology', 'review',
+  'anesthesiology', 'integrative', 'neurology', 'adult',
+  'ASA + SNACC; AANS', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_integrative'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'ผู้ป่วยอายุ 40 ปี undergoing major spine surgery for tumor resection — long surgery + complex monitoring + transfusion + neuro monitoring + chronic pain management'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 60 ปี OUD on methadone — going for emergency surgery + multidisciplinary pain management challenge', '[{"label":"A","text":"Withhold methadone"},{"label":"B","text":"OUD on Methadone Perioperative Care: (1) **Continue methadone** for OUD treatment — do NOT stop; coordinate dose timing with surgery (last dose timing affects pain management); withholding precipitates withdrawal + worsens outcomes; (2) **Tolerance considerations**: increased opioid requirements vs opioid-naive (3-4× typical doses); standard doses inadequate; (3) **Multimodal opioid-sparing primary**: acetaminophen + NSAID + gabapentinoid + ketamine (excellent for OUD + chronic pain) + regional anesthesia + dexmedetomidine + dexamethasone; (4) **Acute pain on top of methadone**: short-acting opioid for breakthrough (PCA hydromorphone, fentanyl); higher doses than opioid-naive; (5) **Regional anesthesia** maximally utilized — neuraxial, peripheral nerve blocks, continuous catheters; (6) **NMDA antagonist**: ketamine infusion (anti-hyperalgesic + opioid-sparing) — particularly useful in OUD; (7) **Pain medicine + addiction medicine consult**; (8) **Behavioral**: address anxiety, recognize withdrawal symptoms, prevent precipitated withdrawal, supportive care; (9) **Discharge planning** carefully: transition off short-acting opioid back to methadone alone; multimodal + non-opioid continue; close follow-up; (10) **Avoid pain-medicine ''orphaning''** — addiction medicine + acute pain + chronic pain coordination; (11) **Stigma**: address — OUD = chronic illness, patient deserves appropriate pain management; (12) **Modern**: integrated dual treatment, multidisciplinary, addiction + pain specialists working together; (13) **Naltrexone challenges**: NOT in this case (methadone) but if on naltrexone — must address blocking of opioid effects"},{"label":"C","text":"More opioid only"},{"label":"D","text":"Refuse pain control"},{"label":"E","text":"Detox emergent"}]'::jsonb,
+  'B', 'OUD on methadone perioperative: CONTINUE methadone. Tolerance — higher opioid doses for breakthrough. Multimodal opioid-sparing primary (regional, ketamine, multimodal). Addiction + pain medicine coordination. Stigma awareness. Modern: integrated care + appropriate pain control + addiction treatment maintained. Patient deserves humane care.', NULL,
+  'medium', 'psych_behavior', 'review',
+  'anesthesiology', 'integrative', 'psych_behavior', 'adult',
+  'ASA + ASAM Perioperative OUD; ICA Opioid Use', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'anes_integrative'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'anesthesiology'
+      and q.scenario = 'ผู้ป่วยอายุ 60 ปี OUD on methadone — going for emergency surgery + multidisciplinary pain management challenge'
+  );
+
+commit;
+
+-- verify
+select board_section, count(*) from public.mcq_questions
+where board_specialty = 'anesthesiology' and exam_source = 'AI-generated-board-seed'
+group by 1 order by 1;
