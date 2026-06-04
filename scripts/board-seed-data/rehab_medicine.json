@@ -2814,5 +2814,965 @@
     "board_topic": "hemato_onco",
     "board_age_group": "adult",
     "reference_source": "ASCO CIPN Guidelines; Smith JAMA"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 50 ปี post-head and neck cancer (radiation + neck dissection) — dysphagia + trismus + neck pain + lymphedema",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single discipline only"
+      },
+      {
+        "label": "B",
+        "text": "Head & Neck Cancer Rehab: (1) **Multimodal late effects from surgery + radiation + chemo**: dysphagia, trismus, neck/shoulder dysfunction (spinal accessory nerve), xerostomia, dental, taste/smell, voice/speech, lymphedema (face/neck), pain, fatigue, psychosocial; (2) **Multidisciplinary**: ENT + radiation oncology + medical oncology + physiatrist + SLP + PT + OT + dentistry + nutrition + lymphedema therapist + psychology; (3) **Dysphagia**: SLP — VFSS/FEES; exercises (Mendelsohn, effortful swallow, Shaker, Masako, McNeill); diet modification (IDDSI); PEG transitional; pre-treatment swallowing exercises (\"prophylactic\") improves outcomes; (4) **Trismus**: jaw stretching devices (TheraBite, Dynasplint), passive + active ROM, manual; (5) **Spinal accessory nerve dysfunction (post-neck dissection)**: shoulder pain + dysfunction (trap weakness) — PT scapular + RC, posture, education; (6) **H&N lymphedema**: MLD + compression face/neck (specialized therapist + garments), self-management; (7) **Xerostomia**: saliva substitutes, pilocarpine, hydration, dental fluoride; (8) **Voice**: SLP; (9) **Pain**: multimodal (neuropathic + nociceptive); (10) **Nutrition**: high-protein, supplements, PEG transitional; (11) **Dental**: pre-radiation dental clearance + fluoride trays + osteoradionecrosis prevention; (12) **Psychosocial + survivorship**; **Modern**: prehab swallowing + multidisciplinary survivorship"
+      },
+      {
+        "label": "C",
+        "text": "Bedrest"
+      },
+      {
+        "label": "D",
+        "text": "Discharge"
+      },
+      {
+        "label": "E",
+        "text": "Hospice"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "H&N cancer rehab: multimodal late effects. Multidisciplinary. Dysphagia (prophylactic exercises evidence) + trismus + SA nerve + lymphedema + xerostomia + voice + pain + nutrition + dental + psychosocial.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "NCCN; ASCO H&N Survivorship"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 70 ปี advanced cancer + cachexia + functional decline — palliative rehab planning",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Aggressive rehab — restore baseline"
+      },
+      {
+        "label": "B",
+        "text": "Palliative + Hospice Rehab: (1) **Definition**: rehab in life-limiting illness — goal: maximize function + QOL + dignity + symptom control; align w/ patient goals + prognosis; (2) **Integration w/ palliative care**: physiatrist + palliative care + oncology + PT + OT + SLP + chaplain + social work + family; (3) **Cancer cachexia**: complex syndrome (anorexia, weight loss, muscle wasting, inflammation); not reversed by nutrition alone; multimodal — exercise (preserves muscle), nutrition (high-protein), pharmacology (megestrol, olanzapine, corticosteroid short-term, anamorelin selected); (4) **Symptom management**: pain (multimodal), dyspnea, fatigue, nausea, anxiety, depression, delirium; (5) **Function-focused goals**: ADL preservation, mobility, transfers, falls prevention; energy conservation (4 P's: pacing, planning, prioritizing, positioning); equipment (W/C, walker, raised toilet, shower chair, hospital bed home); (6) **Caregiver education + support**: training, respite, anticipatory grief; (7) **Communication + GoC**: prognostic awareness, advance directives, hospice transition; (8) **Discharge planning** + home health + DME; (9) **Outcomes**: function-focused (Karnofsky, PPS — palliative performance scale), symptoms (ESAS), QOL; (10) **Hospice rehab**: focus comfort + dignity + family; (11) **Bereavement support**; **Modern**: integrated rehab + palliative care + family-centered + value-based"
+      },
+      {
+        "label": "C",
+        "text": "No rehab — hospice only"
+      },
+      {
+        "label": "D",
+        "text": "Bedrest"
+      },
+      {
+        "label": "E",
+        "text": "Single discipline"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Palliative rehab: function + QOL + dignity. Multidisciplinary + palliative care. Cachexia multimodal (exercise + nutrition + pharma). Symptom mgmt. Energy conservation 4P. Caregiver + GoC + hospice. Family.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "geriatric",
+    "reference_source": "AAHPM; ASCO Palliative"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 45 ปี post-hematopoietic stem cell transplant (HSCT) 6 wk — deconditioning + GVHD risk",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bedrest 1 yr"
+      },
+      {
+        "label": "B",
+        "text": "Post-HSCT Rehab: (1) **Pre-HSCT prehab**: optimize function + nutrition + psych; (2) **Inpatient post-HSCT** (during neutropenia): - In-room therapy (PT, OT) maintain mobility + strength + endurance; - Isolation/protective considerations; - Address fatigue, mucositis, GI, infection; - Bedside cycle ergometer; (3) **Early post-discharge**: progressive aerobic + resistance + flexibility — evidence improves outcomes; supervised initially; (4) **Acute GVHD** manifestations + rehab implications: skin, GI, liver — symptom mgmt + nutrition + skin care; immunosuppressant effects (steroid myopathy → resistance training important); (5) **Chronic GVHD** (3 mo+): skin (sclerodermatous → ROM + stretching + scar management), oral (dryness, ROM, sicca, dental), ocular (sicca, drops), pulmonary (BOS — pulm rehab), MSK (myositis, fasciitis, contractures), genital — multidisciplinary + targeted rehab; (6) **Long-term effects**: cardiac, endocrine, secondary malignancy, cognitive (chemo-fog), psychosocial, sexual; (7) **Multidisciplinary**: BMT + physiatry + PT + OT + SLP + nutrition + behavioral + survivorship; (8) **Vaccination + infection precautions** (re-vaccination schedule); (9) **Survivorship clinic** + lifelong follow-up; (10) **Return to work + school**: graded; **Modern**: prehab + in-room ICU mobilization + tele-PR + integrated survivorship"
+      },
+      {
+        "label": "C",
+        "text": "No rehab post-HSCT"
+      },
+      {
+        "label": "D",
+        "text": "Single discipline"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Post-HSCT rehab: prehab + inpatient in-room + early outpatient. Acute + chronic GVHD multidisciplinary targeted. Long-term effects + survivorship. Vaccination + infection. Return-to-work. Modern integrated.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "ASBMT; FACT"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 50 ปี chronic low back pain 2 yr — failed PT + meds — interdisciplinary pain program eligibility",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Opioid escalation"
+      },
+      {
+        "label": "B",
+        "text": "Interdisciplinary Pain Rehabilitation Program (IPRP): (1) **Concept**: comprehensive biopsychosocial chronic pain rehab — integrated team — addresses pain + function + behavior simultaneously; Cochrane + meta-analyses strong evidence improves function + QOL > usual care; (2) **Team**: physiatrist (pain medicine board) + psychologist + PT + OT + nursing + pharmacist + social work + chaplain selected; (3) **Components**: - **Education**: pain neuroscience (PNE — explains pain physiology, central sensitization, reduces fear); - **PT**: graded exercise, functional restoration, pacing, posture, ergonomics, conditioning; - **OT**: ADLs, work simulation, ergonomics, energy conservation; - **Psychological**: CBT (cognitive restructuring, behavioral activation), ACT, mindfulness, exposure for fear-avoidance, sleep, stress; biofeedback; - **Medication management**: rationalize, opioid tapering, optimize adjuvants; - **Vocational**: return to work focus; (4) **Format**: typically 3-4 wk full-day intensive; outpatient or residential; (5) **Outcomes**: pain (not elimination but reduction), function (PROs — ODI, PROMIS), mood, sleep, opioid reduction, return to work; cost-effective; (6) **Selection**: motivation + multidisciplinary candidate; not for active substance use without addressing, severe psychiatric uncontrolled; (7) **Less effective**: passive treatments alone, opioid escalation, single-discipline; (8) **Coverage challenge** US insurance — underutilized; **Modern**: biopsychosocial + tele-IPRP emerging + value-based"
+      },
+      {
+        "label": "C",
+        "text": "Surgery"
+      },
+      {
+        "label": "D",
+        "text": "Single discipline PT"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Chronic pain IPRP: comprehensive biopsychosocial. Team. CBT/ACT + PNE + graded exercise + meds rationalize + vocational. 3-4 wk intensive. Function-focused outcomes. Strong evidence. Modern: tele-IPRP.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "Cochrane IPRP; AAPM"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 60 ปี chronic CRPS-I L lower limb 8 mo post-ankle sprain — burning + allodynia + skin changes",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bedrest + immobilization"
+      },
+      {
+        "label": "B",
+        "text": "Complex Regional Pain Syndrome (CRPS) — Multimodal: (1) **Budapest criteria** (dx): continuing pain disproportionate, w/ symptoms + signs in ≥ 3-4 categories (sensory — hyperalgesia/allodynia; vasomotor — temp/color; sudomotor/edema; motor/trophic) + no alternative dx; (2) **Multimodal** (interdisciplinary key): - **PT/OT** EARLY + intensive: graded motor imagery (GMI: laterality → imagined → mirror therapy — strong evidence), desensitization, ROM (active), strengthening, functional, mirror therapy, pool therapy; AVOID overly aggressive passive; - **Pharmacology**: bisphosphonate (alendronate, pamidronate IV — evidence in early CRPS), corticosteroid (short-course early), gabapentin/pregabalin, TCA, ketamine (IV selected), IV lidocaine selected, vit C (preventive evidence post-wrist fx — Zollinger); - **Procedures**: sympathetic block (stellate UE, lumbar LE) — diagnostic + therapeutic; SCS (selected, evidence in chronic refractory); intrathecal therapy selected; - **Psychological**: CBT, ACT, mindfulness, biofeedback, trauma-focused; - **Behavioral activation**; (3) **Early diagnosis + treatment** key; chronic refractory difficult; (4) **Education**: pain neuroscience + active rehab + function focus; (5) **Address contributors**: sleep, mood, social, work; (6) **Outcomes**: pain reduction + function + QOL; (7) **Multidisciplinary team essential**; **Modern**: early Dx + GMI + interventional adjuncts"
+      },
+      {
+        "label": "C",
+        "text": "Opioid only"
+      },
+      {
+        "label": "D",
+        "text": "Sympathectomy first-line"
+      },
+      {
+        "label": "E",
+        "text": "Amputation"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "CRPS: Budapest criteria. EARLY interdisciplinary. GMI + desensitization + active PT/OT (avoid aggressive passive). Bisphosphonate + corticosteroid + neuropathic. SCS refractory. Psychological. Modern: early multimodal.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "Budapest Criteria; Birklein"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี chronic neck pain — central sensitization features — fibromyalgia features — multimodal",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Opioid escalation"
+      },
+      {
+        "label": "B",
+        "text": "Fibromyalgia + Central Sensitization Rehab: (1) **2016 ACR criteria**: WPI ≥ 7 + SS ≥ 5 OR WPI 3-6 + SS ≥ 9 + symptoms ≥ 3 mo + no alternative; (2) **Multidisciplinary** approach: physiatrist + rheumatology + PT + OT + psychology + sleep medicine + pain medicine; (3) **Education**: pain neuroscience (validate + explain central sensitization, not \"in head\") — reduces catastrophizing + improves engagement; (4) **Exercise** (strongest evidence): - Aerobic (low-impact: walking, cycling, aquatic) gradual progression; - Resistance training; - Mind-body (yoga, Tai Chi — evidence); - START LOW + go slow + sustain; (5) **Pharmacology** (FDA-approved): - Duloxetine (SNRI), milnacipran (SNRI), pregabalin — modest effect; - Amitriptyline (off-label, evidence); - AVOID opioids (limited evidence + central sensitization risk); (6) **CBT** + ACT + mindfulness — evidence; (7) **Sleep**: address — restorative sleep important; CBT-I; (8) **Address comorbidities**: depression, anxiety, IBS, migraine, autonomic; (9) **Adjuncts**: acupuncture, TENS, balneotherapy — modest; (10) **Self-management** + pacing + activity diary; (11) **Function-focus** (not pain elimination): PROs FIQ, PROMIS; (12) **Multidisciplinary education programs**; **Modern**: biopsychosocial + central sensitization framework + self-management"
+      },
+      {
+        "label": "C",
+        "text": "Bed rest"
+      },
+      {
+        "label": "D",
+        "text": "Single discipline only"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Fibromyalgia: 2016 ACR. Multidisciplinary. Exercise strongest evidence (aerobic + resistance + mind-body, gradual). FDA: duloxetine/milnacipran/pregabalin. AVOID opioids. CBT/ACT/mindfulness. Sleep. Function-focus.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "rheumatology",
+    "board_age_group": "adult",
+    "reference_source": "ACR 2016; EULAR Fibromyalgia"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี chronic LBP — opioid 80 MME daily 5 yr — escalating dose + functional decline",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Abrupt discontinuation"
+      },
+      {
+        "label": "B",
+        "text": "Long-Term Opioid Therapy — Tapering + Multimodal: (1) **Assessment**: function, pain, mood, OUD (DSM-5 criteria), risk (PDMP, COMM, ORT), benefit, harm; (2) **Indications taper**: lack of meaningful benefit + escalating dose + functional decline + risk (>50 MME, concurrent benzo, mental health, substance hx, advancing age); (3) **CDC + HHS guidelines**: individualized, gradual (10% per wk to month — slower for high dose + long duration), shared decision, monitor + treat withdrawal, monitor mental health; AVOID rapid/forced tapering — increases overdose + suicide; (4) **OUD screening**: if criteria met → buprenorphine/MAT (medication for OUD) referral — pause taper, transition; (5) **Multimodal pain mgmt** in lieu: - Adjuvants (gabapentinoid, TCA, SNRI, topical); - Acetaminophen, NSAID (cautious); - PT + active exercise + functional; - CBT, ACT, mindfulness; - Interventional (selected); - Sleep, mood, social; (6) **Mental health support**: depression, anxiety, PTSD common; CBT, SSRI; (7) **Address sleep, function, social**; (8) **IPRP** referral for complex; (9) **Naloxone** prescription patient + family education; (10) **Patient engagement + trust + shared decision**: avoid abandonment; (11) **Education**: realistic expectations, non-pharm strategies; **Modern**: opioid stewardship + biopsychosocial + harm reduction"
+      },
+      {
+        "label": "C",
+        "text": "Increase opioid dose"
+      },
+      {
+        "label": "D",
+        "text": "Discharge — no follow-up"
+      },
+      {
+        "label": "E",
+        "text": "Single discipline"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "LTOT taper: shared, individualized, gradual (10%/wk-mo). Screen OUD → MAT. Multimodal non-opioid + PT + CBT + interventional. Mental health. Avoid rapid/abandonment. Naloxone. IPRP. Modern: stewardship + harm reduction.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "geriatric",
+    "reference_source": "CDC 2022 Opioid Guidelines; HHS Tapering"
+  },
+  {
+    "scenario": "ผู้ป่วย chronic LBP — เลือก interventional pain procedure — facet vs SI vs epidural",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single intervention without evaluation"
+      },
+      {
+        "label": "B",
+        "text": "Interventional Pain — Indication-Matched: (1) **Comprehensive eval first**: history + exam + imaging + conservative trial; correlate symptoms to pathology; (2) **Lumbar radicular pain**: - Epidural steroid injection (transforaminal > interlaminar for unilateral; particulate vs non-particulate considerations — non-particulate for cervical/transforaminal to avoid embolic complications); - Short + intermediate-term benefit; - Surgical consideration if neuro deficit/refractory; (3) **Lumbar facet (zygapophyseal) joint pain**: - Dx: medial branch block (MBB) — 2 confirmed positive blocks (controlled prevalence false-positives); - Tx: radiofrequency ablation (RFA) of medial branches — 6-12 mo benefit, repeatable; (4) **Sacroiliac joint pain**: - Dx: SI provocation tests (≥ 3 positive — Laslett cluster) + intra-articular block (gold standard); - Tx: intra-articular steroid, RFA (lateral branches), fusion (selected refractory); (5) **Discogenic pain**: - Provocative discography controversial; - Tx limited interventionally — IDET, biacuplasty — limited evidence; - Surgical (fusion, disc replacement) selected; (6) **Spinal cord stimulation**: FBSS, CRPS, PDPN, IS — Class I evidence selected; (7) **Vertebroplasty/kyphoplasty**: acute osteoporotic compression fracture — selected; (8) **Within multimodal**: not standalone — combined w/ PT + active + psychological; (9) **Risks**: infection, hematoma, neuro, vascular; consent; (10) **Multidisciplinary**: pain medicine + physiatry + PT + behavioral; **Modern**: indication-matched + outcome-driven + multimodal integration"
+      },
+      {
+        "label": "C",
+        "text": "Random injection"
+      },
+      {
+        "label": "D",
+        "text": "Surgery first-line all"
+      },
+      {
+        "label": "E",
+        "text": "Opioid only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Interventional: indication-matched. Radicular → ESI; facet → MBB then RFA; SI → block; discogenic limited; SCS for FBSS/CRPS. Multimodal not standalone. Risks. Modern: outcome-driven + integrated.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "ASIPP; SIS; ASRA"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี post-herpetic neuralgia thoracic dermatome 4 mo — burning + allodynia",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Opioid only escalating"
+      },
+      {
+        "label": "B",
+        "text": "Post-Herpetic Neuralgia (PHN) Multimodal: (1) **Prevention**: shingles vaccine (Shingrix recombinant — efficacious + preferred); early antiviral within 72 h reduces PHN risk; (2) **Diagnosis**: pain in zoster dermatome > 90 d post-rash onset; (3) **First-line pharmacology**: - **Gabapentin or pregabalin** (titrate); - **TCA** (amitriptyline, nortriptyline — anticholinergic + cardiac SE elderly); - **SNRI** (duloxetine); - **Topical lidocaine 5% patch** (well-tolerated); - **Topical capsaicin 8% patch** (Qutenza — single application 30-60 min, lasts months — second/third-line); (4) **Second-line**: opioids (tramadol > strong; limited chronic use); (5) **Interventional**: - Intercostal nerve block (thoracic) — selected; - Epidural steroid — limited evidence chronic PHN; - Sympathetic block; - **Spinal cord stimulation** refractory; - Intrathecal (selected); (6) **Non-pharm**: TENS, acupuncture (limited evidence), PT/OT for function; (7) **Address contributors**: sleep, mood (depression high), social isolation; CBT; (8) **Multidisciplinary** for refractory + functional impact; (9) **Patient education**: prognosis (improves over months-yr in many), self-management; (10) **Functional + QOL focus**; **Modern**: prevention (vaccine) + multimodal + early intervention"
+      },
+      {
+        "label": "C",
+        "text": "Surgery first-line"
+      },
+      {
+        "label": "D",
+        "text": "Single discipline"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "PHN: prevention (Shingrix). Pharma: gabapentin/pregabalin/TCA/SNRI/lido patch/capsaicin 8%. Opioids limited. SCS refractory. Function + sleep + mood. Multidisciplinary. Modern: prevention + multimodal.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "geriatric",
+    "reference_source": "AAN/EFNS NP; CDC Shingrix"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 40 ปี chronic widespread pain + insomnia + depression + work disability — biopsychosocial assessment",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single-modality only"
+      },
+      {
+        "label": "B",
+        "text": "Biopsychosocial Pain Assessment + Plan: (1) **Comprehensive assessment**: - **Biological**: physical exam, imaging, labs, sleep, comorbidities; - **Psychological**: PHQ-9 (depression), GAD-7 (anxiety), PCL-5 (PTSD), PCS (pain catastrophizing), TSK (kinesiophobia), CSI (central sensitization inventory), substance use, sleep (PSQI, ISI); - **Social**: work, family, finances, support, advocacy, ACEs (adverse childhood experiences); (2) **Multidimensional pain assessment**: NRS, BPI (Brief Pain Inventory), pain diagram, function (ODI, RMDQ, PROMIS); (3) **Function-focused care plan**: SMART goals, return-to-activity gradient; (4) **Multimodal interventions**: - Active PT/OT (graded, functional); - CBT/ACT/mindfulness; - Sleep medicine + CBT-I; - Mood treatment (SSRI/SNRI); - Address substance use; - Vocational rehab; - Pharma rational (adjuvants > opioids); - Interventional selected; (5) **Education**: pain neuroscience (PNE) validates + reduces catastrophizing; (6) **Social work + advocacy**: housing, finances, transportation, employer; (7) **Family + peer support**; (8) **Trauma-informed care**: ACEs + PTSD frequently underlying chronic pain; (9) **Health equity**: address SDOH; (10) **Outcomes**: function + QOL + mood + pain + opioid reduction + RTW; (11) **Care coordination**: IPRP for complex; **Modern**: biopsychosocial + trauma-informed + health equity + value-based"
+      },
+      {
+        "label": "C",
+        "text": "Pain medication alone"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Chronic pain biopsychosocial: comprehensive assessment (bio + psych + social) — multidimensional pain + function. Multimodal — active + CBT + sleep + mood + voc + meds + interventional. PNE + trauma-informed + equity.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "IASP; AAPM Biopsychosocial"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 60 ปี episodic vertigo precipitated by head position changes — 30 sec spinning — Dix-Hallpike positive R posterior canal",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Vestibular suppressant indefinitely"
+      },
+      {
+        "label": "B",
+        "text": "BPPV — Diagnosis + Canalith Repositioning: (1) **Most common cause** of vertigo; posterior canal 85-95%; (2) **Diagnosis**: Dix-Hallpike — geotropic torsional + upbeating nystagmus (R post-canal w/ R Dix-Hallpike), latency 5-15 s, duration < 60 s, fatigues; (3) **Treatment**: - **Epley maneuver** (canalith repositioning): 4 positions held 30-60 s each; success > 80% single treatment, > 95% w/ repeated; - **Semont maneuver** alternative; - **Brandt-Daroff** home exercise — habituation if canalith repositioning fails; (4) **Lateral (horizontal) canal BPPV**: supine roll test (Pagnini-McClure) — diagnose; treat — Lempert/Gufoni/BBQ roll; (5) **Anterior canal** rare; (6) **Post-treatment instructions**: positional restrictions controversial — modern evidence does NOT require strict restrictions; (7) **Refractory** consider: alternate canal, recurrence (~50% within years), persistent canalith — repeat maneuvers; rarely posterior canal occlusion surgery for refractory; (8) **DDx**: vestibular neuritis (constant vertigo), Meniere's (episodic + hearing + tinnitus), migraine vertigo, central (HINTS — Head Impulse, Nystagmus, Test of Skew — central if upright nystagmus + skew + normal HIT); (9) **Education + recurrence prevention**; (10) **Multidisciplinary**: physiatry + ENT + vestibular PT; **Modern**: video Frenzel goggles + VR rehab + remote diagnosis emerging"
+      },
+      {
+        "label": "C",
+        "text": "Bedrest 2 wk"
+      },
+      {
+        "label": "D",
+        "text": "Surgery first-line"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "BPPV posterior canal: Dix-Hallpike torsional upbeating geotropic nystagmus. Epley maneuver >80% success. Semont/Brandt-Daroff alternatives. Lateral: roll test + Lempert/BBQ. Recurrence common. Education.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AAO-HNS BPPV CPG; Bhattacharyya"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี acute vestibular neuritis 5 d ago — persistent imbalance + chronic dizziness",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continuous meclizine long-term"
+      },
+      {
+        "label": "B",
+        "text": "Unilateral Vestibular Hypofunction — Vestibular Rehab: (1) **Acute phase Tx**: short-course corticosteroid (early < 3 d, evidence modest), vestibular suppressants (meclizine, benzo) short-term ONLY (< 3 d) — prolonged use delays compensation; antiemetics; (2) **Vestibular rehabilitation therapy (VRT)**: evidence-based; promotes compensation: - **Gaze stabilization (VOR x1, x2)**: focus on target while head moves H + V; - **Adaptation** exercises (x1, x2 viewing); - **Substitution** exercises (saccadic, COR, smooth pursuit); - **Habituation** (Norré, Cawthorne-Cooksey) for motion-provoked vertigo; - **Balance + gait training**: static → dynamic, dual-task, surface variations, head turns, eyes-open/closed; - **Functional + sport-specific** progression; (3) **Assessment**: vHIT, caloric, VEMP, posturography, DGI, TUG, mini-BESTest, ABC scale, DHI (Dizziness Handicap Inventory), 10MWT; (4) **Home program**: daily 3-5×, several minutes; intensity-titrated (mild symptoms during/after — adaptive); (5) **Subset**: Persistent Postural-Perceptual Dizziness (PPPD) chronic — VRT + CBT + SSRI; (6) **Outcomes**: DHI, ABC, gait/balance, return to activity; (7) **Multidisciplinary**: vestibular PT + neurology/ENT + physiatry + psychology if PPPD; (8) **Patient education + reassurance + active engagement**; **Modern**: VR-based VRT + telerehab + chronic dizziness as PPPD"
+      },
+      {
+        "label": "C",
+        "text": "Bedrest"
+      },
+      {
+        "label": "D",
+        "text": "Single discipline"
+      },
+      {
+        "label": "E",
+        "text": "Surgery"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Unilateral vestib hypofunction VRT: gaze stab + adaptation + substitution + habituation + balance/gait. AVOID prolonged suppressants (delay compensation). Assessment vHIT/caloric + functional. PPPD chronic — CBT + SSRI.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "APTA VRT CPG; Bárány Society"
+  },
+  {
+    "scenario": "ผู้ป่วย Meniere disease confirmed — fluctuating hearing + tinnitus + vertigo — referred VRT",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Surgery first-line"
+      },
+      {
+        "label": "B",
+        "text": "Meniere Disease — Multimodal: (1) **Diagnosis (AAO-HNS 2015)**: definite — 2+ spontaneous vertigo episodes ≥ 20 min, fluctuating low-mid freq SNHL one ear, fluctuating aural symptoms; (2) **Management staged**: - **Diet + lifestyle**: low-Na (< 2 g/d) + reduce caffeine + alcohol + nicotine; stress reduction; - **Pharmacologic**: betahistine (limited evidence US), diuretic (HCTZ + triamterene — modest); intratympanic steroid for refractory; - **Vestibular suppressants** for acute episode only; antiemetics; - **Intratympanic gentamicin**: chemical ablation for refractory unilateral — risk hearing loss; - **Surgery**: endolymphatic sac decompression (limited evidence), labyrinthectomy (terminal, deaf), vestibular nerve section (selected hearing-sparing); (2) **VRT role**: between attacks for chronic imbalance + de-compensation; targets central compensation; not effective during acute; not first-line for vertigo episodes; (3) **Counseling**: episode management + safety (don't drive during) + fall prevention; (4) **Hearing aid** + tinnitus management (sound therapy, CBT); (5) **Cognitive + psychological**: anxiety + depression high — CBT + SSRI; (6) **Multidisciplinary**: ENT + audiology + vestibular PT + psychology + physiatry; (7) **Education + advocacy + peer support**; (8) **Bilateral 30-50% over years**; **Modern**: stepped care + outcomes-driven + counseling integration"
+      },
+      {
+        "label": "C",
+        "text": "VRT during acute attacks only"
+      },
+      {
+        "label": "D",
+        "text": "No counseling"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Meniere: stepped care. Diet (low Na) + diuretic + betahistine + intratympanic steroid → gentamicin/surgery refractory. VRT between attacks for de-compensation (not acute). Audiology + tinnitus + psych. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AAO-HNS Meniere 2015"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 50 ปี vestibular migraine — episodic vertigo + headache + sound/light sensitivity",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Surgery"
+      },
+      {
+        "label": "B",
+        "text": "Vestibular Migraine — Diagnosis + Management: (1) **Bárány Society + IHS criteria**: ≥ 5 episodes vestibular symptoms 5 min - 72 h moderate-severe + current/past migraine + migraine features in ≥ 50% (HA migraine type, photo/phonophobia, aura) + not better by other; (2) **Common — possibly most common cause episodic vertigo** + often missed; (3) **Treatment** — analogous to migraine: - **Lifestyle**: regular sleep + hydration + meals + exercise + stress management + trigger avoidance (caffeine, alcohol, MSG, aged cheese, others identified by diary); - **Acute**: triptans, NSAID, antiemetic, vestibular suppressant (limited); - **Preventive** (≥4 episodes/mo or significant disability): TCA (amitriptyline, nortriptyline), BB (propranolol, metoprolol), AED (topiramate, valproate), CCB (verapamil, flunarizine), CGRP mAb emerging selected; (4) **Vestibular rehab**: helpful for inter-ictal balance/imbalance + chronic dizziness; (5) **CBT** for chronic; (6) **Comorbidities**: anxiety/depression high — treat; PPPD overlap; sleep; (7) **Multidisciplinary**: neurology/HA + ENT + vestibular PT + physiatry + psychology; (8) **Headache diary** for identification + treatment response; (9) **Patient education**: chronic but manageable condition; (10) **Outcomes**: episode frequency, severity, function, DHI; **Modern**: CGRP-era + integrated care"
+      },
+      {
+        "label": "C",
+        "text": "No prevention — only acute"
+      },
+      {
+        "label": "D",
+        "text": "Single discipline"
+      },
+      {
+        "label": "E",
+        "text": "Bedrest"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Vestibular migraine: Bárány criteria. Likely most common episodic vertigo. Lifestyle + acute (triptan) + preventive (TCA/BB/AED/CCB/CGRP). VRT for inter-ictal. CBT + mood + sleep. Multidisciplinary. Modern: CGRP.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "Bárány VM Criteria"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 75 ปี chronic dizziness + multiple falls + multifactorial — geriatric vestibular evaluation",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single discipline only"
+      },
+      {
+        "label": "B",
+        "text": "Multifactorial Dizziness + Falls — Geriatric: (1) **Multifactorial in elderly**: vestibular (bilateral vestibular hypofunction common — \"presbyastasis\"), proprioceptive (DM neuropathy, B12, cervical), visual (cataract, macular degen, contrast), CV (orthostatic, vasovagal), cognitive (executive, dual-task), polypharmacy (sedating, anticholinergic, antihypertensive, hypoglycemic), MSK (gait, weakness, sarcopenia); (2) **Comprehensive geriatric assessment**: gait, balance (Berg, TUG, mini-BESTest, FGA), vestib (vHIT, dynamic visual acuity, posturography), proprioception, vision, CV (orthostatic, ECG), cognition (MoCA), medication review (Beers, STOPP/START), home safety, social; (3) **Multimodal intervention**: - **Exercise + balance training** (KEY): Otago, Tai Chi, group classes, individualized PT; - **Vestibular rehab** if vestib component; - **Medication review** + deprescribing (Beers); - **Vision + hearing optimization**; - **Vitamin D + Ca** + bone health; - **Address orthostatic hypotension** (volume, compression, midodrine selected); - **Home safety + OT eval**; - **Footwear + assistive device** appropriate; - **Cognitive considerations**; (4) **Evidence**: multifactorial intervention reduces falls 30%+ (Cochrane); (5) **Multidisciplinary**: geriatrician + physiatry + PT + OT + neurology + cardiology + ophthalmology + pharmacy; (6) **CDC STEADI** framework; (7) **Education + family + community resources**; (8) **Outcome**: falls (diary), function, confidence (ABC scale); **Modern**: integrated comprehensive falls clinics + community programs"
+      },
+      {
+        "label": "C",
+        "text": "Medication alone"
+      },
+      {
+        "label": "D",
+        "text": "Bedrest"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Multifactorial dizziness + falls elderly: comprehensive geriatric assessment. Multimodal — exercise/balance + VRT + meds deprescribe + vision/hearing + ortho/HoTN + vit D + home safety. Multidisciplinary. STEADI.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "geriatric",
+    "reference_source": "CDC STEADI; AGS/BGS Falls"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 50 ปี post-flexor tendon repair Zone II 2 wk — hand therapy protocol",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cast immobilization 6 wk"
+      },
+      {
+        "label": "B",
+        "text": "Flexor Tendon Repair Zone II — Rehab: (1) **Zone II (\"no man's land\")**: fibro-osseous tunnel — historically poor outcomes due to adhesions; modern: early controlled motion essential; (2) **Modern strong repair** (4-6 strand core + epitendinous) tolerates early loading; (3) **Protocols**: - **Modified Duran (early passive motion)**: passive flex w/ hand therapist + dorsal blocking splint (wrist 20-30° flex, MCP 50-70° flex, IPs extended) × 4-6 wk; - **Kleinert (rubber-band traction)**: passive flexion via rubber band + active extension into splint; - **Early active motion (EAM)**: place-and-hold + true active — used w/ strong repairs (Indianapolis Saint Mary's), Manchester protocols; better outcomes w/ modern repairs; (4) **Phased progression**: - 0-4 wk: dorsal block + early controlled motion; - 4-6 wk: composite + tendon glide; - 6-8 wk: discontinue splint + AROM, light functional; - 8-12 wk: strengthening progressive; - 12+ wk: return to full activity + heavy use; (5) **Hand therapist (CHT)** essential — protocols precise; (6) **Complications**: rupture (premature loading), adhesion (insufficient gliding), joint stiffness; (7) **Outcomes**: TAM (total active motion), strength, function (DASH, MHQ); (8) **Multidisciplinary**: hand surgeon + CHT + OT + patient/family education + adherence; (9) **Tenolysis** if adhesion-limited refractory; **Modern**: strong repair + early active motion + CHT"
+      },
+      {
+        "label": "C",
+        "text": "Aggressive early active motion w/o protocol"
+      },
+      {
+        "label": "D",
+        "text": "Discharge — no therapy"
+      },
+      {
+        "label": "E",
+        "text": "Surgical revision day 14"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Flexor Z II: early controlled motion w/ dorsal block. Modified Duran/Kleinert/EAM. Strong modern repair tolerates EAM. Phased. CHT essential. Complications rupture vs adhesion. Outcomes TAM/DASH.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "ASSH; Hand Therapy CPG"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี carpal tunnel syndrome moderate — failed splint + meds — considering options",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Long-term opioid"
+      },
+      {
+        "label": "B",
+        "text": "Carpal Tunnel Syndrome Management: (1) **Diagnosis**: symptoms (median distribution paresthesia, nocturnal, Phalen/Tinel/median compression test), exam (sensory, motor — thenar, two-point), EDS (NCS — distal latency, amplitude, axonal; EMG if motor); MSK US emerging; (2) **Severity**: mild (sensory + intermittent), moderate (positive EDS + frequent), severe (motor + atrophy + denervation); (3) **Management staged**: - **Mild-moderate**: nocturnal splint (neutral wrist), activity modification, ergonomics, NSAID short-term, gabapentin selected; - **Steroid injection**: temporary; diagnostic + therapeutic; multiple injections discouraged; - **Surgical (CTR)**: failed conservative ≥ 3-6 mo OR severe (motor, atrophy, advanced EDS) — open or endoscopic similar outcomes; (4) **Post-op rehab**: wound care + early ROM (no immobilization usually) + scar massage + gradual loading + return to activity 4-6 wk light, full 6-12 wk; (5) **Hand therapy** (CHT-led): tendon + nerve gliding exercises, ergonomics, education; (6) **Pre-op + post-op**: address contributors (DM, hypothyroidism, pregnancy resolves spontaneously, RA, obesity, repetitive); (7) **Severe atrophy**: opponensplasty selected; (8) **Outcomes**: BCTQ (Boston Carpal Tunnel Questionnaire), DASH, symptom resolution, return to work; (9) **Workers compensation**: ergonomic mod + RTW planning; **Modern**: US-guided injection + endoscopic + ultra-minimally invasive emerging"
+      },
+      {
+        "label": "C",
+        "text": "Casting 3 mo"
+      },
+      {
+        "label": "D",
+        "text": "No treatment"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "CTS staged: mild-mod splint + NSAID + ergonomics + steroid Inj. Surgical for failed conservative or severe. Post-op rehab + CHT. Contributors. BCTQ outcomes. Modern: US-guided + endoscopic.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AAOS CTS CPG"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 60 ปี Dupuytren contracture digit ring + small — flexion contracture MCP + PIP — functional",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bedrest"
+      },
+      {
+        "label": "B",
+        "text": "Dupuytren Contracture: (1) **Pathology**: fibroproliferative disorder palmar fascia → nodules + cords + flexion contracture; genetic + northern European > African descent; risk DM, alcohol, smoking, age, male; (2) **Assessment**: nodule + cord exam, **Hueston tabletop test** (cannot lay hand flat → likely need intervention), MCP + PIP contracture measurement; functional impact; (3) **Indications for treatment**: MCP contracture ≥ 30°, any PIP contracture, functional limit; (4) **Treatment options**: - **Needle aponeurotomy (NA, percutaneous)**: in-office, immediate, MCP > PIP responsive, higher recurrence (50-80% 5 yr); - **Collagenase clostridium histolyticum (CCH)** — Xiaflex: enzyme injection + day 2-3 manipulation; effective; modest recurrence; pricey, availability varies; - **Open fasciectomy**: surgical removal cord/diseased fascia; lower recurrence (~20-30% at 5 yr); longer recovery, complications (nerve, skin, infection); - **Dermofasciectomy + skin graft**: severe/recurrent; - **PIP arthrodesis or amputation**: last resort severe long-standing; (5) **Post-procedure rehab — CHT-led**: splinting (extension), ROM (active + passive), edema, scar, functional; commitment important; (6) **Recurrence common** — discuss expectations; (7) **Address contributors**: DM, alcohol; (8) **Patient-centered selection**: trade-offs (recurrence vs invasiveness vs recovery time); **Modern**: minimally invasive options + early intervention + CHT"
+      },
+      {
+        "label": "C",
+        "text": "Single intervention without rehab"
+      },
+      {
+        "label": "D",
+        "text": "Amputation first"
+      },
+      {
+        "label": "E",
+        "text": "Discharge — no Tx"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Dupuytren: tabletop test + contracture measure. Indications MCP ≥30° or PIP. Options: NA + CCH + fasciectomy + skin graft + arthrodesis. CHT post-procedure splint + ROM. Recurrence common. Patient-centered.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "ASSH Dupuytren"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 45 ปี trigger finger (stenosing tenosynovitis) — flexor digitorum profundus thumb — locking",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bedrest immobilization 6 wk"
+      },
+      {
+        "label": "B",
+        "text": "Trigger Finger Management: (1) **Pathology**: stenosing tenosynovitis A1 pulley → triggering/locking finger flexor tendon; thumb common — FPL through A1; risk DM, RA, repetitive use; (2) **Quinnell grade**: 1 uneven motion → 2 actively correctable triggering → 3 passively correctable → 4 fixed contracture; (3) **Treatment stepwise**: - **Conservative**: activity modification, NSAID short-term, splint (MCP extension blocking 4-6 wk evidence in mild); - **Corticosteroid injection** into tendon sheath (NOT tendon — risk rupture): success 70-90% first injection, lower w/ repeated; DM lower success + caution glucose; - **Surgical release A1 pulley**: failed 2+ injections OR severe Gr 3-4 — open or percutaneous; excellent outcomes; (4) **Pediatric trigger thumb**: often resolves spontaneously; surgery after age 1-2 if persistent; (5) **Post-op**: early ROM + return to function 1-2 wk; CHT brief OK; (6) **Complications**: bowstringing rare, nerve, recurrence; (7) **DM** higher recurrence + failure → address glycemic; (8) **Multidigit involvement**: consider underlying (RA, DM, mucopolysaccharidoses); (9) **Patient education + ergonomics**; **Modern**: US-guided injection + percutaneous release"
+      },
+      {
+        "label": "C",
+        "text": "Inject into tendon directly"
+      },
+      {
+        "label": "D",
+        "text": "Amputation"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Trigger finger: A1 pulley tenosynovitis. Conservative (splint + NSAID) → steroid injection sheath (NOT tendon) 70-90% → surgical release. Quinnell grading. DM lower success. CHT brief. Modern: US-guided.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "ASSH"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 50 ปี post-distal radius fracture (intra-articular) ORIF 6 wk — hand therapy",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cast 12 wk"
+      },
+      {
+        "label": "B",
+        "text": "Post-Distal Radius Fracture (ORIF) Rehab: (1) **Common fragility fracture** (post-menopausal, elderly); high-energy in young; (2) **Post-op phases**: - **0-2 wk**: protect, edema control (compression, elevation), pain, immobilization or removable splint depending stability, fingers ROM; - **2-6 wk**: progressive wrist + forearm ROM (active assisted → active), continued edema + scar mgmt; - **6-12 wk**: strengthening (progressive — putty → grippers → resisted), proprioception, functional, gradual loading; - **12+ wk**: heavy loading + return to sport/work; (3) **Hand therapist (CHT)** central; (4) **Common issues + management**: - **Stiffness**: dynamic + static splinting + ROM; - **CRPS** (5-30% risk): vit C 500 mg/d preventive (Zollinger); early identification + Tx (GMI, mobilization, multimodal); - **Tendon issues**: EPL rupture (~5%) — Lister tubercle; tendon transfer (EIP to EPL); - **Carpal tunnel** post-injury; - **Malunion** functional impact assessment; (5) **Functional rehab**: ADLs, work simulation, ergonomics; (6) **Pain**: multimodal opioid-sparing; (7) **Bone health**: DXA + osteoporosis Tx in fragility fx (FLS — fracture liaison service); fall prevention; (8) **Outcomes**: PRWE, DASH, ROM, grip strength; (9) **Address contributors**: smoking, vit D, nutrition; **Modern**: early motion + CRPS prevention + bone health integration"
+      },
+      {
+        "label": "C",
+        "text": "Aggressive ROM immediately heavy"
+      },
+      {
+        "label": "D",
+        "text": "No therapy"
+      },
+      {
+        "label": "E",
+        "text": "Hospice"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "DRF ORIF rehab: phased — protect + edema → ROM → strengthening → return. CHT central. Stiffness + CRPS (vit C prevention) + EPL rupture + carpal tunnel risks. Bone health FLS. PRWE/DASH outcomes.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "AAOS DRF; CHT"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 80 ปี recurrent falls 3× past 6 mo — multifactorial — comprehensive evaluation",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bedrest — prevent falls"
+      },
+      {
+        "label": "B",
+        "text": "Falls — Comprehensive Multifactorial Assessment + Intervention: (1) **AGS/BGS + CDC STEADI** approach; (2) **Screening (annual)**: 3 questions (falls past yr, fear, unsteadiness); (3) **Multifactorial assessment** for high-risk: - History + circumstances of falls + meds + comorbidities; - **Gait + balance**: TUG (>13.5 s risk), 5× sit-to-stand, BBS, gait speed, FGA, mini-BESTest, dynamic gait; - **Strength**: 5× STS, hand grip; - **Cognition**: MoCA + executive; - **Vision**: acuity, contrast; - **Hearing**; - **Vestibular**: vHIT, posturography; - **Proprioception** + sensory; - **CV**: orthostatic vital signs, ECG; - **Foot + footwear**; - **Polypharmacy** (Beers, STOPP/START — FRIDS: fall-risk-increasing drugs); - **Home environment**; - **Mood + sleep**; - **Bone health + vit D + Ca**; - **Continence**; - **Social**; (4) **Multifactorial Intervention** (KEY — strong evidence): - **Exercise** (strongest): Otago, Tai Chi (especially), group + individualized + balance + strength; - **Medication review + deprescribing**; - **Vision + hearing optimization**; - **Vitamin D ≥ 800-1000 IU/d** if deficient; - **Home modifications** (OT); - **Cataract surgery**; - **Cardiovascular Tx** (pacemaker if syncope/cardioinhibitory); - **Footwear** + assistive devices; - **Cognitive considerations**; (5) **Bone health** (osteoporosis Tx, fracture liaison); (6) **Multidisciplinary**: geriatrician + physiatry + PT + OT + pharmacy + neurology + cardiology + ophth + audiology; (7) **Family + caregiver education + community resources**; (8) **Outcomes**: falls (diary), function, fear (ABC), confidence; **Modern**: comprehensive falls clinics + community + technology (wearables, AI)"
+      },
+      {
+        "label": "C",
+        "text": "Single intervention"
+      },
+      {
+        "label": "D",
+        "text": "Restraints continuous"
+      },
+      {
+        "label": "E",
+        "text": "Discharge — no follow-up"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Falls multifactorial: AGS/CDC STEADI. Comprehensive assessment + multifactorial intervention (Cochrane reduces 30%). Exercise (Tai Chi, Otago) KEY. Deprescribe FRIDS. Vision + vit D + home + bone health. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "geriatric",
+    "reference_source": "AGS/BGS Falls; CDC STEADI"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 78 ปี frailty + sarcopenia + dependent ADL trajectory — community-dwelling",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bedrest"
+      },
+      {
+        "label": "B",
+        "text": "Sarcopenia + Frailty Management: (1) **Definitions**: - **Sarcopenia** (EWGSOP2 2019): low muscle strength (grip, chair stand) + low muscle quantity (DXA, BIA, US, MRI) + low physical performance (gait speed, SPPB, TUG) — confirmatory; - **Frailty** (Fried 5 phenotype): weight loss, exhaustion, weakness (grip), slowness, low activity; or accumulation index (Rockwood); (2) **Assessment**: SARC-F screen (sarcopenia), CFS (Clinical Frailty Scale), comprehensive geriatric assessment; (3) **Multimodal intervention (KEY)**: - **Exercise — resistance** training (1-3 sets, 8-12 reps, 2-3 d/wk, 60-80% 1RM) — STRONGEST evidence; + aerobic + balance; - **Nutritional**: protein 1.0-1.5 g/kg/d (higher in older), leucine-enriched + amino acids, vitamin D supplementation (≥ 800-1000 IU/d if deficient), adequate calories; - **Address comorbidities**: chronic disease, polypharmacy, mood, sleep, social isolation; - **Polypharmacy review** + deprescribing; (4) **Specific pharmacotherapy**: investigational (myostatin inhibitors, anamorelin); testosterone selected; (5) **Cognitive + mood**; (6) **Social** + community programs + group exercise; (7) **Multidisciplinary**: geriatrician + physiatry + PT + dietitian + pharmacy + social work + nursing; (8) **Outcomes**: SPPB, gait speed, grip, IADL, falls, hospitalizations; (9) **Goals of care** + advance planning + values; (10) **Family + caregiver**; **Modern**: integrated geriatric rehab + community + technology-enabled"
+      },
+      {
+        "label": "C",
+        "text": "Single discipline"
+      },
+      {
+        "label": "D",
+        "text": "Nutritional supplement only"
+      },
+      {
+        "label": "E",
+        "text": "Discharge no intervention"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Sarcopenia/frailty: EWGSOP2 + Fried/Rockwood. SARC-F + CFS. Multimodal: resistance exercise STRONGEST + protein 1.0-1.5 + vit D + address comorbidity + deprescribe + social. Multidisciplinary. SPPB outcomes.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "geriatric",
+    "reference_source": "EWGSOP2 2019; Fried"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 82 ปี mild cognitive impairment + early dementia — rehab considerations + adaptations",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Standard rehab no adaptations"
+      },
+      {
+        "label": "B",
+        "text": "Cognitive Impairment Rehab Adaptations: (1) **Comprehensive evaluation**: cognitive (MoCA, MMSE, neuropsych), function (IADL, ADL), behavior, mood, safety, caregiver; etiology (Alzheimer's, vascular, Lewy body, FTD); medication review; (2) **Rehab adaptations**: - Simple + clear instructions, one step at a time; - Demonstration + tactile cuing; - Consistent staff + routine + environment; - Visual + auditory cues + reminders; - Errorless learning + spaced retrieval (good evidence MCI/early); - Task-specific functional training; - Environmental modifications (signs, labels, simplified); - Shorter, more frequent sessions; - Family + caregiver engagement central; (3) **Exercise**: aerobic + resistance + balance — preserves function, mood, possibly cognition (mixed evidence MCI/dementia); group classes; supervision; (4) **OT**: ADL retraining + adaptive equipment + home safety + cognitive aids (apps, calendars, reminders); (5) **PT**: gait, balance, falls prevention; (6) **SLP**: communication + swallow assessment + cognitive-communication; (7) **Mood**: depression high in dementia — non-pharm first + SSRI selected; (8) **Behavioral + psychological symptoms (BPSD)**: identify triggers + behavioral approaches first; cautious pharm (avoid antipsychotic when possible — boxed warning); (9) **Caregiver education + support + respite**; (10) **Goals of care + advance directives**: stage-appropriate; (11) **Driving + safety + finances + legal**; (12) **Multidisciplinary**: geriatrician/cognitive neurology + physiatry + PT + OT + SLP + neuropsych + social work + family; **Modern**: person-centered + dementia-friendly care + caregiver-focused"
+      },
+      {
+        "label": "C",
+        "text": "Sedate continuously"
+      },
+      {
+        "label": "D",
+        "text": "Bedrest"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cognitive impairment rehab: adaptations (simple + routine + cues + errorless learning + family). Exercise preserves function. OT + PT + SLP. Mood + BPSD non-pharm first. Caregiver. GoC. Multidisciplinary. Person-centered.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "geriatric",
+    "reference_source": "AAN Dementia; AGS"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 80 ปี polypharmacy (15 medications) — referred for review + functional decline",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue all medications"
+      },
+      {
+        "label": "B",
+        "text": "Geriatric Polypharmacy + Deprescribing: (1) **Polypharmacy**: ≥5 meds — common in older + multimorbid; associated falls, ADRs, cognitive impairment, hospitalization, mortality, nonadherence; (2) **Comprehensive medication review**: - **Beers Criteria** (AGS): potentially inappropriate medications older adults — avoid or use w/ caution; - **STOPP/START** (European): STOPP = stop list; START = start list (e.g., bone health, anticoagulation indicated); - **MAI** (Medication Appropriateness Index); - Anticholinergic burden (ACB scale); - Drug-drug + drug-disease interactions; - Renal + hepatic dosing; (3) **Deprescribing process** (Reeve, Scott): - List all meds; - Identify potentially inappropriate; - Determine if can be deprescribed; - Plan + monitor + adjust; - Shared decision w/ patient + family; (4) **Common targets**: - **Benzodiazepines + Z-drugs**: falls, cognition — taper; - **Anticholinergics**: cognition; - **PPIs**: long-term re-evaluate; - **Antipsychotics for BPSD**: black box mortality; - **NSAIDs**: GI, renal, CV; - **Statins** if limited life expectancy + primary prevention discussion; - **Antihypertensives**: orthostatic risk — reassess targets; - **Antidiabetics**: hypoglycemia — relax A1c targets older; (5) **Critical not to under-prescribe**: pain, depression, bone health, anticoagulation when indicated; (6) **Multidisciplinary**: physiatry + geriatrician + pharmacy + PCP + nursing + family; (7) **Continuity** across transitions; (8) **Outcomes**: functional, falls, hospitalizations, QOL; **Modern**: technology (CDS — clinical decision support) + integrated team-based"
+      },
+      {
+        "label": "C",
+        "text": "Discontinue all medications immediately"
+      },
+      {
+        "label": "D",
+        "text": "No review"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Polypharmacy: Beers/STOPP/START + ACB. Deprescribing process: identify + assess + plan + monitor + shared decision. Common targets: benzo, anticholinergic, PPI, AP, NSAID, statin reassess. Avoid under-prescribing. Multidisciplinary.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "geriatric",
+    "reference_source": "AGS Beers 2023; STOPP/START"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 85 ปี delirium during inpatient rehab — interfering with progress",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Sedate w/ benzodiazepine"
+      },
+      {
+        "label": "B",
+        "text": "Delirium in Rehab Setting: (1) **Detection**: CAM (Confusion Assessment Method) — acute change + fluctuating + inattention + (disorganized thinking OR altered LOC); 4AT brief; (2) **Hypoactive (more common older + missed) vs hyperactive vs mixed**; (3) **Etiology workup**: DELIRIUMS mnemonic + thorough search — infection (UTI, pneumonia, CDIff), meds (anticholinergic, opioid, benzo, steroid, polypharmacy), metabolic (Na, glucose, Ca, BUN/Cr), hypoxia, alcohol/sedative withdrawal, constipation/retention, pain, sleep disruption, sensory deprivation, hospital environment, stroke/TBI; (4) **Non-pharmacological FIRST (KEY)**: - **HELP/ABCDEF bundle elements**: orientation, mobility, sleep, hydration, vision/hearing aids, sensory, music, family presence, normalize environment; - Reduce restraint (use selectively); - Optimize meds — remove offending; - Treat pain (multimodal opioid-sparing); - Address constipation, urinary retention, sleep; - Family + familiar objects; (5) **Pharmacological** (only for severe agitation/safety when non-pharm fails): - Low-dose haloperidol (0.5-1 mg) — risk EPS + QTc; - Atypical (quetiapine, risperidone) — risk; - AVOID benzodiazepines (worsen except alcohol/sedative withdrawal) + anticholinergics; - Caution dexmedetomidine; (6) **Rehab adjustments**: continue mobility (helps delirium!), shorter sessions, structure, supervision, safety; (7) **Family + caregiver education + presence**; (8) **Post-delirium**: cognitive sequelae monitoring (PICS); (9) **Multidisciplinary**: geriatrician + physiatry + PT + OT + nursing + family + psych selected; **Modern**: ABCDEF + HELP + delirium-aware rehab"
+      },
+      {
+        "label": "C",
+        "text": "Bedrest"
+      },
+      {
+        "label": "D",
+        "text": "Restraint primary"
+      },
+      {
+        "label": "E",
+        "text": "Discontinue rehab"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Delirium: CAM Dx. DELIRIUMS workup (meds, infection, metabolic, pain, sleep, urine/stool). Non-pharm FIRST (HELP, ABCDEF). Continue mobility. Pharm last resort low-dose AP. AVOID benzo. Family + multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "geriatric",
+    "reference_source": "ABCDEF Bundle; HELP"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 78 ปี end-of-life — declining function + wishes to remain home — interdisciplinary planning",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Aggressive rehab to baseline"
+      },
+      {
+        "label": "B",
+        "text": "End-of-Life + Home-Based Care: (1) **Patient-centered + goals-based**: what matters most — function, comfort, dignity, family, location of death; advance directives + POLST/MOLST; (2) **Multidisciplinary team**: physiatry + palliative care/hospice + PCP + nursing + PT/OT + SLP + social work + chaplain + family + caregiver; (3) **Functional optimization within prognosis**: - Maintain mobility + ADL where possible; - Energy conservation (4 P); - Adaptive equipment + DME for home (hospital bed, W/C, commode, raised toilet, shower bench, lift); - Home modifications + safety; (4) **Symptom management**: pain (multimodal w/ adequate opioid in advanced disease), dyspnea (opioid, fan, position, O2 selected), nausea, constipation, anorexia, anxiety, depression; (5) **Caregiver education + support + respite + 24/7 contact**; (6) **Advance care planning + values discussion**: aligned care + avoid burdensome treatments; (7) **Spiritual care + meaning-making**: chaplain + family rituals; (8) **Hospice eligibility + transition**: prognosis ≤ 6 mo + comfort focus; hospice provides team + meds + equipment + 24/7 + respite + bereavement; (9) **Bereavement support**: family throughout + after; (10) **Cultural humility + preferences**; (11) **Death at home logistics**: pronouncement, mortuary, post-death support; (12) **Outcomes**: comfort, QOL, satisfaction, family well-being; **Modern**: integrated palliative rehab + home-based hospice + family-centered"
+      },
+      {
+        "label": "C",
+        "text": "Hospital LTC"
+      },
+      {
+        "label": "D",
+        "text": "Single discipline"
+      },
+      {
+        "label": "E",
+        "text": "Refuse home services"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "End-of-life home: patient-centered + goals. Multidisciplinary including hospice. Functional optimization w/in prognosis. Symptom mgmt. Caregiver. Advance planning. Spiritual. Hospice eligibility. Bereavement. Cultural. Modern integrated.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "geriatric",
+    "reference_source": "AAHPM; CAPC"
+  },
+  {
+    "scenario": "ผู้ป่วย Parkinson disease (Hoehn-Yahr 3) — gait freezing + falls + tremor — comprehensive rehab",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bedrest"
+      },
+      {
+        "label": "B",
+        "text": "Parkinson Disease Rehab — Multidisciplinary: (1) **Multidisciplinary**: movement disorder neurology + physiatry + PT + OT + SLP + neuropsych + nursing + social work + family; (2) **Stage-based** (Hoehn-Yahr): - Early: exercise + education + activity; - Mid (this patient): structured rehab + assistive devices; - Late: care needs + transitions; (3) **PT (evidence-based)**: - **LSVT BIG**: amplitude-based motor — 4 wk × 4 d/wk × 1 h evidence improves bradykinesia + gait + ADLs; - **Tango/dance therapy** — evidence; - **Tai Chi** — balance + falls; - **Aerobic + resistance**; - **Treadmill** training; - **Gait + cueing strategies for freezing**: auditory (metronome), visual (lines on floor), attention; large amplitude, conscious; weight-shifting; - **Balance + falls prevention**; (4) **OT**: ADLs, fine motor, handwriting (LSVT effective for micrographia), home safety; (5) **SLP**: - **LSVT LOUD**: voice amplitude — evidence improves loudness, intelligibility; - Dysphagia: VFSS/FEES + targeted therapy; - Cognitive-communication; (6) **Medication optimization**: levodopa + adjuncts (DA agonist, MAO-B, COMT); DBS for selected refractory; (7) **Non-motor symptoms**: depression (SSRI, ECT, rTMS), anxiety, sleep (RBD), constipation, autonomic, cognitive (donepezil/rivastigmine for PDD), psychosis (pimavanserin, clozapine, quetiapine — NOT typical AP); (8) **Caregiver + family support**; (9) **Advanced disease**: DBS, levodopa-carbidopa intestinal gel, apomorphine, palliative; (10) **Outcomes**: UPDRS, MDS-UPDRS, BERG, TUG, 10MWT, PDQ-39; **Modern**: LSVT + exercise + multidisciplinary + advanced therapies"
+      },
+      {
+        "label": "C",
+        "text": "Single discipline"
+      },
+      {
+        "label": "D",
+        "text": "No exercise — risk falls"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "PD rehab: stage-based multidisciplinary. LSVT BIG (PT) + LSVT LOUD (SLP) evidence-based. Tai Chi + dance. Cueing for freezing. OT + meds optimize + DBS selected. Non-motor. Caregiver. Modern integrated.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "geriatric",
+    "reference_source": "MDS-PD Guidelines; LSVT"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 35 ปี relapsing-remitting MS — 5 yr disease — moderate disability + fatigue + spasticity",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Avoid all exercise"
+      },
+      {
+        "label": "B",
+        "text": "Multiple Sclerosis Rehab: (1) **Multidisciplinary**: neurology MS + physiatry + PT + OT + SLP + neuropsychology + urology + ophthalmology + psychiatry + social work + family; (2) **Symptom-targeted rehab**: - **Fatigue** (KEY symptom): energy conservation (4 P), graded aerobic + resistance exercise (NOT contraindicated — improves fatigue), cooling strategies, sleep hygiene, mood addressing; pharmacologic — amantadine, modafinil; - **Spasticity**: PT stretching + strengthening + spasm prevention; oral baclofen, tizanidine; ITB for severe; BoNT focal; SDR rare adult; - **Weakness + gait**: exercise + AFO + assistive devices; FES (Walkaide, Bioness); dalfampridine (4-AP) improves gait speed in selected; - **Balance + falls**: PT balance + Tai Chi; - **Bladder dysfunction**: urodynamics + CIC + anticholinergic/β3 + BoNT detrusor; - **Bowel**: scheduled, fiber/fluids; - **Cognitive**: neuropsych + cognitive rehab + accommodations; - **Visual**: optic neuritis + INO management; - **Mood**: depression (high), suicide risk, anxiety, pseudobulbar affect (dextromethorphan/quinidine); - **Sexual + reproductive**: counseling, pregnancy planning, DMT considerations; - **Pain**: neuropathic + spasm + MSK + multimodal; (3) **Disease-modifying therapy (DMT) coordination**; (4) **Exercise** safe + beneficial (HIIT emerging) — counters deconditioning; (5) **Uthoff phenomenon** — heat sensitivity — cooling strategies; (6) **Vocational rehab + ADA + RTW + adaptive equipment**; (7) **Family + caregiver support**; (8) **Modern**: comprehensive MS clinics + DMTs era + integrated rehab"
+      },
+      {
+        "label": "C",
+        "text": "Single discipline"
+      },
+      {
+        "label": "D",
+        "text": "Bedrest"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "MS rehab: symptom-targeted multidisciplinary. Fatigue energy conserve + exercise + amantadine. Spasticity + weakness/gait (dalfampridine, FES) + bladder (CIC) + cognitive + mood + sexual + pain. DMT. Exercise safe. Modern: comprehensive.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AAN MS Rehab; CMSC"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 60 ปี ALS — bulbar onset 1 yr — dysphagia + dysarthria + weight loss",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single discipline"
+      },
+      {
+        "label": "B",
+        "text": "ALS Multidisciplinary Care: (1) **ALS Multidisciplinary Clinic** (gold standard): neurology + pulmonology + physiatry + PT + OT + SLP + nutrition + nursing + social work + respiratory therapist + psychology + chaplain — improves QOL + survival; (2) **Symptom-targeted**: - **Dysphagia**: SLP swallow eval (VFSS); compensatory + diet modification (IDDSI); preserve oral safely; PEG for nutrition (early before FVC < 50%); - **Dysarthria + communication**: SLP + AAC (alternative + augmentative — devices, eye-gaze, brain-computer interface — emerging); speech banking for personalized synthesis; - **Nutrition**: high-calorie + protein + supplements; PEG early; weight maintenance prognostic; - **Pulmonary**: serial PFT (FVC), NIV when SOB or FVC ≤ 50% or sniff < 60% — extends survival + improves QOL; cough assist; trach ventilation discussed; - **Mobility + weakness**: PT (preserve function, ROM, no aggressive resistance — avoid overuse), assistive devices (walker, w/c power), home modifications; - **Spasticity**: baclofen, tizanidine; - **Cramps + fasciculations**: quinine selected, gabapentin; - **Sialorrhea**: glycopyrrolate, BoNT salivary glands, scopolamine; - **Pseudobulbar affect**: dextromethorphan/quinidine; - **Depression + anxiety**: SSRI + counseling; - **Pain**: multimodal; (3) **Disease-modifying**: riluzole (modest), edaravone, AMX0035 (recently FDA), tofersen for SOD1; (4) **Advance care planning EARLY + ongoing**: ventilation + nutrition + end-of-life; (5) **Hospice integration**; (6) **Caregiver + family support critical** — burden high; (7) **Outcomes**: ALSFRS-R, FVC, QOL; **Modern**: multidisciplinary clinic + emerging therapeutics + advance planning"
+      },
+      {
+        "label": "C",
+        "text": "No advance planning"
+      },
+      {
+        "label": "D",
+        "text": "Aggressive resistance exercise"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "ALS multidisciplinary clinic (improves survival). Symptom-targeted: dysphagia/PEG + AAC + NIV + cough assist + mobility (no overuse) + spasticity + sialorrhea + PBA + mood. DMT (riluzole etc). Advance planning early. Caregiver.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AAN ALS Practice Parameter"
+  },
+  {
+    "scenario": "ผู้ป่วย MS — secondary progressive — wheelchair-bound 5 yr — caregiver burnout",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ignore caregiver"
+      },
+      {
+        "label": "B",
+        "text": "Advanced MS + Caregiver-Centered Care: (1) **Comprehensive evaluation**: function, complications (pressure injuries, contractures, infections, DVT), psychosocial, caregiver; (2) **Multidisciplinary**: neurology + physiatry + PT + OT + SLP + nursing + social work + psychology + palliative care + family; (3) **Maintain quality of life + dignity**: - Mobility (power w/c, transfers, lift); - ADLs + adaptive equipment + personal care; - Communication (AAC if dysarthria/cognitive); - Nutrition + swallow safety; - Bladder/bowel; - Skin (pressure injury prevention); - Spasticity + pain management; - Cognitive + mood; - Sexual + intimacy; (4) **Caregiver burden assessment** (Zarit Burden Interview): physical + emotional + financial; (5) **Caregiver support** (KEY): - Education + training + skill-building; - Respite care (home, day, short-stay); - Peer support + MS Society resources; - Mental health (caregiver depression high); - Financial + legal + advocacy; - Family meetings + communication; - Acknowledgment + appreciation; (6) **Adaptive equipment + home modifications**: increase independence + reduce caregiver burden; (7) **Community resources**: MS Society, day programs, transportation; (8) **Advance care planning + GoC**: progressive trajectory; advance directives; palliative integration; hospice when appropriate; (9) **Crisis planning**: respite, hospital transitions; (10) **Cultural humility**; (11) **Outcomes**: function, complications, QOL (patient + caregiver), caregiver burden, satisfaction; **Modern**: caregiver-inclusive + technology + community + integrated palliative"
+      },
+      {
+        "label": "C",
+        "text": "Single discipline"
+      },
+      {
+        "label": "D",
+        "text": "Bedrest"
+      },
+      {
+        "label": "E",
+        "text": "Hospice — no rehab"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Advanced MS + caregiver: multidisciplinary. Maintain QOL/dignity. Caregiver assessment (Zarit) + education + respite + peer + mental health + financial + family meeting. Adaptive equipment. GoC. Modern: caregiver-inclusive.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "CMSC; NMSS"
   }
 ]
