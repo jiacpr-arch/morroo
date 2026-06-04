@@ -321,5 +321,194 @@
     "board_topic": "obgyn",
     "board_age_group": "adult",
     "reference_source": "SAGES Guidelines for Laparoscopic Surgery in Pregnancy 2017 (Pearl JP et al. Surg Endosc); Walker HG et al. JAMA Surg 2014 (Laparoscopic vs Open Appendectomy in Pregnancy); RCOG Green-top Guideline: Abdominal Pain in Pregnancy"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 42 ปี post-laparoscopic cholecystectomy day 5 มาห้องฉุกเฉินด้วยอาการ ไข้, ปวด RUQ, jaundice, bilirubin 6.2 ตรวจ MRCP พบ bile duct injury (Strasberg E2 — common bile duct transection > 2 cm from confluence) + bile collection 6 cm in subhepatic space\n\nV/S: BP 122/74, HR 96, RR 18, Temp 38.4°C, WBC 14,500",
+    "choices": [
+      { "label": "A", "text": "Repeat laparoscopy + simple suture repair" },
+      { "label": "B", "text": "Major Bile Duct Injury (Strasberg E2) post-cholecystectomy — multidisciplinary referral to HPB center: (1) **Control sepsis** — IV antibiotics + percutaneous drainage of biloma + ERCP with stent or PTBD for biliary diversion; (2) **Delayed definitive reconstruction** 6-8 weeks later (allow inflammation to resolve) — **Roux-en-Y hepaticojejunostomy** is gold standard; (3) Avoid attempts at primary repair in non-HPB centers (high stricture/leak rate); (4) Long-term complications: stricture (10-30%), recurrent cholangitis, secondary biliary cirrhosis; (5) Medico-legal documentation" },
+      { "label": "C", "text": "Conservative observation only" },
+      { "label": "D", "text": "Total hepatectomy + transplant" },
+      { "label": "E", "text": "Discharge with oral antibiotic" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Bile duct injury (BDI) — feared complication of cholecystectomy (0.3-0.6%). Strasberg classification A-E (E1-E5 = main duct injuries). Management principles: control sepsis (drainage + antibiotic), divert bile (ERCP/PTBD), refer to HPB specialist, delayed Roux-en-Y hepaticojejunostomy at 6-8 weeks for major injuries. Primary repair attempts by non-specialists have high failure rate (stricture, recurrent cholangitis, secondary cirrhosis). Outcome depends on time to specialist referral and surgeon expertise. A wrong — simple suture fails. C wrong — biloma + sepsis can't observe. D wrong — transplant for end-stage liver only. E wrong — outpatient unsafe.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "Strasberg SM et al. J Am Coll Surg 1995 (Classification); ATOM/Sicklick Ann Surg 2005 (BDI management); SAGES Safe Cholecystectomy Program"
+  },
+  {
+    "scenario": "Resident surgery ถามอาจารย์เรื่อง wound healing physiology อาจารย์อธิบายเรื่อง phases of wound healing + factors affecting healing\n\nคำถาม: phases ของ wound healing ตามลำดับ + key cells ในแต่ละ phase",
+    "choices": [
+      { "label": "A", "text": "Inflammation → proliferation → remodeling (collagen synthesis only)" },
+      { "label": "B", "text": "**4 overlapping phases**: (1) **Hemostasis** (immediate-hours): platelet aggregation + fibrin clot + vasoconstriction; (2) **Inflammation** (0-3 days): neutrophils (24-48h) → macrophages (key cell, phagocytosis + growth factors VEGF, PDGF, TGF-β); (3) **Proliferation** (3 days - 3 weeks): fibroblasts (collagen Type III), angiogenesis (endothelial cells, VEGF), epithelialization (keratinocytes); granulation tissue formation; (4) **Remodeling** (3 weeks - 1 year+): collagen Type III replaced by Type I (stronger), wound contraction (myofibroblasts), tensile strength reaches max 80% of original at 1 year" },
+      { "label": "C", "text": "Coagulation only" },
+      { "label": "D", "text": "Epithelialization first then inflammation" },
+      { "label": "E", "text": "Single-phase process" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Wound healing has 4 overlapping phases. Key cells: platelets (hemostasis), neutrophils + macrophages (inflammation — macrophages most important, transition cell), fibroblasts + endothelial cells + keratinocytes (proliferation), myofibroblasts (contraction in remodeling). Collagen Type III deposited first then replaced by Type I (stronger triple-helix). Final tensile strength ~ 80% (never 100%). Factors impairing: DM, malnutrition, steroids, smoking, radiation, ischemia, infection, age. A incomplete. C-E wrong.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "Sabiston Textbook of Surgery 21st ed Ch. 7; Schwartz Principles of Surgery 11th ed Ch. 9"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี เข้ารับการผ่าตัด elective abdominal surgery (open colectomy) ต้องประเมิน perioperative cardiac risk\n\nROSE Revised Cardiac Risk Index (RCRI) factors: high-risk surgery + ischemic heart disease + heart failure + cerebrovascular disease + insulin-treated DM + Cr > 2",
+    "choices": [
+      { "label": "A", "text": "Cardiac risk same for all surgeries" },
+      { "label": "B", "text": "**Lee's Revised Cardiac Risk Index (RCRI)** — 6 factors, 1 point each: (1) High-risk surgery (intraperitoneal, intrathoracic, suprainguinal vascular); (2) Ischemic heart disease (prior MI, angina, positive stress test, nitrate use, Q-wave on EKG); (3) Heart failure history; (4) Cerebrovascular disease (TIA/stroke); (5) Insulin-treated DM; (6) Cr > 2 mg/dL. Risk of major cardiac event: 0 factors = 0.4%, 1 = 1%, 2 = 2.4%, ≥3 = 5.4%+. AHA/ACC 2014 stepwise approach: (1) Emergent? → proceed; (2) Active cardiac condition (unstable angina, decompensated HF, severe arrhythmia, valvular disease) → optimize first; (3) Low-risk surgery → proceed; (4) Functional capacity ≥ 4 METs → proceed; (5) RCRI + functional capacity guides further testing (stress test, echo); (6) Optimize medical therapy (continue beta-blockers if already on; statins; ACEi/ARB consideration)" },
+      { "label": "C", "text": "All patients need echo and stress test" },
+      { "label": "D", "text": "Always cancel surgery if any cardiac risk" },
+      { "label": "E", "text": "Routine cardiac catheterization pre-op" }
+    ],
+    "correct_answer": "B",
+    "explanation": "RCRI (Lee 1999) widely used. Each factor = 1 point. Risk stratifies major adverse cardiac events. AHA/ACC 2014 + ESC perioperative guidelines emphasize stepwise approach + functional capacity (METs — 4 METs = climb stairs, walk uphill). Optimize comorbidities, continue chronic medications (beta-blockers, statins), evaluate active cardiac conditions, additional testing only if changes management. Pre-op coronary revascularization not routinely beneficial (CARP trial). A wrong — surgery-specific. C wrong — selective. D wrong — risk stratification, not blanket cancellation. E wrong — invasive, not first-line.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "Lee TH et al. Circulation 1999 (RCRI); Fleisher LA et al. JACC 2014 (AHA/ACC Perioperative Guidelines); ESC/ESA Guidelines on Non-Cardiac Surgery 2022"
+  },
+  {
+    "scenario": "Surgeon ออกข้อสอบเรื่อง surgical infection + antibiotic prophylaxis อาจารย์อธิบาย wound classification + recommendations",
+    "choices": [
+      { "label": "A", "text": "All surgeries need same prophylaxis" },
+      { "label": "B", "text": "**Wound classification** (CDC): (1) **Clean**: no inflammation, no entry into GI/GU/respiratory tract — SSI 1-2% — e.g., hernia, breast (prophylaxis typically not needed unless prosthesis/foreign body); (2) **Clean-contaminated**: GI/GU/respiratory entered under controlled conditions — SSI 5-10% — e.g., elective colectomy, cholecystectomy — single pre-op antibiotic dose; (3) **Contaminated**: gross spillage, fresh trauma, acute inflammation — SSI 15-20% — therapeutic antibiotic 24h; (4) **Dirty/Infected**: pus, perforated viscus, devitalized tissue — SSI > 30% — therapeutic antibiotic full course. **Prophylaxis principles**: appropriate agent (typically 1st-gen cephalosporin for skin flora; add metronidazole for colorectal), within 60 min before incision (within 120 min for vancomycin/fluoroquinolone), re-dose for long procedures (3-4h), single dose for most, discontinue within 24h post-op (NSQIP)" },
+      { "label": "C", "text": "Antibiotics for 7 days for all surgeries" },
+      { "label": "D", "text": "No antibiotics ever needed" },
+      { "label": "E", "text": "Topical antibiotics only" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Surgical wound classification CDC + ACS NSQIP guides antibiotic prophylaxis + SSI prevention. Key principles: (1) appropriate drug (skin flora for most; gut flora for colorectal); (2) timing within 60 min of incision (correct timing strongest predictor); (3) adequate dose (weight-based for obese); (4) redosing for prolonged surgery; (5) discontinue ≤ 24h (longer = no benefit + resistance). Other SSI prevention: glycemic control, normothermia, chlorhexidine skin prep, smoking cessation, no shaving (clipping), oxygen optimization. Bundle approach (Centre Comprehensive Unit Safety) reduces SSI.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "CDC Guideline for the Prevention of Surgical Site Infection 2017; ACS NSQIP Surgical Care Improvement Project; Bratzler DW et al. CID 2013"
+  },
+  {
+    "scenario": "Surgery resident ถามอาจารย์เรื่อง shock physiology + management — distinguish types of shock with hemodynamic profiles\n\nคำถาม: 4 ชนิด shock + hemodynamic patterns + first-line resuscitation",
+    "choices": [
+      { "label": "A", "text": "All shock treated same way with IV fluid" },
+      { "label": "B", "text": "**4 types of shock + patterns**: (1) **Hypovolemic** (hemorrhage, dehydration): ↓CVP, ↓PCWP, ↓CO, ↑SVR — Rx: fluid + blood; (2) **Cardiogenic** (MI, HF): ↑CVP, ↑PCWP, ↓CO, ↑SVR — Rx: revascularization (PCI), inotrope (dobutamine, milrinone), mechanical support (IABP, Impella, ECMO), avoid excess fluid; (3) **Obstructive** (PE, tamponade, tension pneumothorax): ↑CVP, varies, ↓CO, ↑SVR — Rx: relieve obstruction (thrombolysis/thrombectomy for PE, pericardiocentesis for tamponade, needle decompression for tension pneumo); (4) **Distributive** (septic, anaphylactic, neurogenic): ↓-N CVP/PCWP, ↑CO (early septic), ↓↓SVR — Rx for septic: 30 mL/kg crystalloid + broad-spectrum antibiotic + norepinephrine + source control; anaphylactic: epinephrine; neurogenic: fluid + phenylephrine. Goal: MAP > 65, urine output > 0.5 mL/kg/hr, lactate clearance, mental status" },
+      { "label": "C", "text": "Vasopressor first-line for all shock" },
+      { "label": "D", "text": "Beta-blocker for all shock" },
+      { "label": "E", "text": "Restrict fluid for all shock" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Shock = inadequate tissue oxygen delivery. Etiology-specific management essential. Hypovolemic (most common in surgery — trauma, GI bleed): restore volume + control source. Cardiogenic: pump failure — increase CO with inotrope, avoid excess fluid. Obstructive: relieve obstruction. Distributive: vasodilation — fluid + vasopressor + treat cause. Goals: MAP, urine output, lactate, mental status, ScvO2. Avoid one-size-fits-all approach. Modern multi-modal monitoring (TTE, lactate, capillary refill, cardiac output monitoring) guides individualized therapy.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "Surviving Sepsis Campaign 2021; Vincent JL, De Backer D NEJM 2013 (Circulatory Shock); Marino's ICU Book 5th ed Ch. 13"
+  },
+  {
+    "scenario": "Hospital ต้องการลด surgical site infection (SSI) ใน colorectal surgery จาก 12% เป็น < 5% ทีม quality improvement ตั้ง bundle intervention\n\nคำถาม: SSI prevention bundle ที่มี evidence ดี",
+    "choices": [
+      { "label": "A", "text": "Single intervention is enough" },
+      { "label": "B", "text": "**SSI Prevention Bundle for Colorectal Surgery** (multifaceted, evidence-based): (1) **Pre-op**: chlorhexidine + alcohol skin prep, oral antibiotic + mechanical bowel prep (combined — recent evidence favors), antibiotic prophylaxis within 60 min, normothermia (warm IV + air blanket), glycemic control (target glucose < 180), smoking cessation, hair removal by clipping (not shaving), nutritional optimization; (2) **Intra-op**: maintain normothermia, antibiotic re-dose at 3-4h, wound protector, surgeon glove change, sterile instruments for closure, supplemental oxygen 80% FiO2 (debated); (3) **Post-op**: glycemic control, early ambulation, sterile dressing 48h, daily wound assessment, antibiotic discontinue ≤ 24h; (4) **Bundle approach** reduces SSI 30-50% per ACS NSQIP, Keystone Project, IHI; (5) Audit + feedback + continuous improvement; (6) Multidisciplinary team — surgeon, anesthesia, nursing, pharmacy" },
+      { "label": "C", "text": "Antibiotic for 14 days for all" },
+      { "label": "D", "text": "Avoid hand hygiene" },
+      { "label": "E", "text": "Always operate at night when stable" }
+    ],
+    "correct_answer": "B",
+    "explanation": "SSI prevention bundle = multiple evidence-based interventions delivered together. Most effective when reliably applied. ACS NSQIP, CMS SCIP measures track key metrics. Bundle approach reduces SSI 30-50% in colorectal surgery (Cima R et al. JACS 2013, ACS Bundles 2015). Patient education + engagement also important. Sustained improvement requires culture change + leadership commitment + data feedback. A wrong — bundle better. C wrong — prolonged antibiotic ↑ resistance. D-E wrong absurd.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "ACS Bundles for SSI Prevention 2015; CDC HICPAC SSI Guideline 2017; Keenan JE et al. JAMA Surg 2014 (Colorectal Bundle Outcomes)"
+  },
+  {
+    "scenario": "Hospital trauma center พบ trauma death สูง — wants to implement Enhanced Recovery After Surgery (ERAS) for elective surgery + Trauma Quality Improvement Program (TQIP)\n\nคำถาม: ERAS pathway สำหรับ colorectal surgery + key components",
+    "choices": [
+      { "label": "A", "text": "Prolonged NPO + IV fluid loading + bed rest" },
+      { "label": "B", "text": "**ERAS Pathway for Colorectal Surgery** (multimodal evidence-based, reduces LOS 30%, complications 30-50%): (1) **Pre-admission**: counseling, smoking + alcohol cessation, anemia + nutrition optimization, prehabilitation; (2) **Pre-op**: avoid prolonged fasting (clear liquids until 2h pre-op, solids until 6h), carbohydrate loading 2h pre-op, no premedication routinely, mechanical + oral antibiotic bowel prep (recent), antibiotic prophylaxis + DVT prophylaxis, skin prep with chlorhexidine; (3) **Intra-op**: minimally invasive approach when possible, normothermia, goal-directed fluid therapy (avoid excess), short-acting anesthetic, multimodal pain (avoid opioid-only), regional block (TAP block, epidural for some), avoid NG tube routine, restrictive transfusion; (4) **Post-op**: early oral diet (immediately or within 24h), early mobilization (within 24h), multimodal analgesia (NSAID + acetaminophen + gabapentin + minimal opioid), DVT prophylaxis continued, glycemic control, remove urinary catheter < 24h, NG tube avoided, ileus prevention (alvimopan in selected); (5) **Audit + improvement** — ERAS compliance correlates with outcomes" },
+      { "label": "C", "text": "Routine nasogastric tube + 5-day NPO" },
+      { "label": "D", "text": "Opioid-based analgesia preferred" },
+      { "label": "E", "text": "No exercise until full recovery" }
+    ],
+    "correct_answer": "B",
+    "explanation": "ERAS = multimodal evidence-based perioperative care pathway. ERAS Society publishes guidelines per specialty. Colorectal ERAS reduces LOS 2-3 days, complications 30-50%, readmissions, costs without compromising safety (Kehlet H, Wilmore DW Ann Surg 2008; ERAS Society Guidelines). Key principles: minimize physiologic stress, restore homeostasis quickly, multidisciplinary + standardized + audited. Compliance with elements correlates with outcomes (>70% compliance = best outcomes). Implementation requires institutional commitment, education, audit.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "ERAS Society Guidelines: Colorectal Surgery 2018; Ljungqvist O et al. JAMA Surg 2017 (ERAS Review); Gustafsson UO et al. World J Surg 2018"
+  },
+  {
+    "scenario": "Hospital wants implement Trauma Quality Improvement Program (TQIP) — measure + improve trauma outcomes\n\nคำถาม: Trauma system organization + key quality metrics",
+    "choices": [
+      { "label": "A", "text": "Single hospital provides all trauma care" },
+      { "label": "B", "text": "**Trauma System** (regionalized): (1) **Level I** (highest): comprehensive care, research, education, 24h subspecialty coverage, > 1200 trauma admissions/year; (2) **Level II**: comprehensive care, may not have research; (3) **Level III**: ER + ICU + surgical capability, transfer for higher level; (4) **Level IV/V**: stabilize + transfer. **Inclusive trauma system** — all hospitals participate. **Pre-hospital**: triage criteria (CDC field triage), transport to appropriate level. **TQIP/ACS Quality Improvement**: data submission (registry), risk-adjusted outcomes, benchmarking, monthly multidisciplinary morbidity + mortality conferences, root cause analysis. **Key metrics**: mortality (overall, preventable, expected), undertriage/overtriage rates, time to OR, time to CT, time to interventional radiology, blood transfusion ratios, VTE rates, decubitus ulcer, ventilator-associated pneumonia, central line infection, return to OR, readmission. **TQIP benchmarking** shows performance vs comparable centers" },
+      { "label": "C", "text": "Avoid data collection" },
+      { "label": "D", "text": "Each hospital independent — no coordination" },
+      { "label": "E", "text": "Only major trauma centers needed" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Trauma system organization → improved outcomes vs non-system care (West JG JAMA 1979, MacKenzie EJ NEJM 2006). ACS-COT criteria for verification (Level I-V). Inclusive system: all hospitals participate at appropriate level. Pre-hospital triage critical. TQIP (Trauma Quality Improvement Program) launched 2010 by ACS — risk-adjusted benchmarking from > 800 centers. Drives quality improvement through transparent comparison + PI cycles. Modern trauma care: damage control, balanced resuscitation, REBOA, multidisciplinary, multimodal monitoring.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "ACS Resources for Optimal Care of the Injured Patient 2014 (Trauma System); MacKenzie EJ et al. NEJM 2006 (Trauma System Outcomes); ACS TQIP Annual Report"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 78 ปี มีหลายโรค (CAD post-PCI, HFrEF EF 35%, CKD stage 3, COPD GOLD II, frailty CFS 6) มา OPD ด้วย symptomatic gallstone disease — recurrent biliary colic + recent acute cholecystitis ทำ percutaneous cholecystostomy แล้วดีขึ้น ตอนนี้ tube ออกแล้ว pain free 6 weeks\n\nปรึกษาเรื่อง cholecystectomy",
+    "choices": [
+      { "label": "A", "text": "Always operate regardless of risk" },
+      { "label": "B", "text": "Multidisciplinary frailty + risk-benefit assessment — integrative geriatric + surgical decision-making: (1) **Frailty assessment** (Clinical Frailty Scale, FRAIL scale, Edmonton Frail Scale) — CFS 6 = moderately frail → significantly increased post-op morbidity/mortality; (2) **Comprehensive Geriatric Assessment** (CGA): medical optimization (HF, CAD, CKD, COPD), cognitive, functional, nutritional, psychosocial; (3) **Shared decision-making** with patient + family: discuss goals of care, life expectancy, quality of life, surgical risk vs ongoing symptom burden, alternative (interval cholecystostomy, lithotripsy controversial, conservative); (4) **Pre-habilitation** if proceeding: exercise, nutrition, smoking cessation, comorbidity optimization 4-6 weeks; (5) **Surgical options**: laparoscopic cholecystectomy preferred (lower morbidity); subtotal cholecystectomy if difficult anatomy; (6) **Anesthesia consult**, ERAS pathway, multimodal analgesia (avoid opioids in elderly), early mobilization; (7) **Post-op**: high-risk admission with cardiology + geriatric co-management; (8) Post-discharge: rehabilitation, medication reconciliation, fall prevention; (9) Some elderly with prohibitive risk + limited life expectancy: leave cholecystostomy long-term or conservative management",
+        "difficulty": "hard"
+      },
+      { "label": "C", "text": "Always conservative regardless of symptoms" },
+      { "label": "D", "text": "Total gastrectomy" },
+      { "label": "E", "text": "ERCP only" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Frail elderly surgical decision-making = integrative — surgical + medical + geriatric + functional + values. Frailty (CFS ≥ 5) independently predicts post-op morbidity, mortality, LOS, institutionalization. Shared decision-making essential — consider patient values, life expectancy, alternative therapies. Pre-habilitation can reduce risk (multiple RCTs). Comprehensive multidisciplinary care improves outcomes. ACS Geriatric Surgery Verification Program + Strong for Surgery + NSQIP Geriatric promote integrated care. A wrong — risk-benefit individualized. C wrong — symptomatic + low risk surgery acceptable. D-E wrong irrelevant.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "ACS Geriatric Surgery Verification Program 2019; Rockwood K et al. CMAJ 2005 (Clinical Frailty Scale); Robinson TN et al. Ann Surg 2013 (Frailty + Surgical Outcomes)"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี multitrauma post-MVC (motor vehicle crash) — splenic injury Grade IV + femur fracture + closed head injury + pelvic fracture\n\nDay 3 ICU: hemodynamically stable, intubated, requiring blood products + inotropes weaning\n\nคำถาม: multidisciplinary management of polytrauma + key principles",
+    "choices": [
+      { "label": "A", "text": "Treat each injury separately by individual specialists" },
+      { "label": "B", "text": "**Polytrauma Multidisciplinary Integrative Management** — coordinated by trauma team: (1) **Trauma team leader** coordinates overall care + family communication; (2) **Damage Control Resuscitation** during initial phase: balanced 1:1:1 transfusion, permissive hypotension if no TBI, normothermia, calcium replacement, TXA early; (3) **Damage Control Surgery**: stop hemorrhage + contamination, temporary closure, ICU resuscitation, return for definitive surgery 24-72h; (4) **Specialty consults**: trauma surgery, orthopedics (femur fracture — early total care vs damage control orthopedics depending on physiology), neurosurgery (TBI — ICP monitoring, CPP > 60), vascular (pelvic — angiography + embolization, REBOA in selected); (5) **ICU**: ventilator strategy (low TV, lung protective), sedation + analgesia (ABCDEF bundle), DVT prophylaxis (mechanical until safe for chemical, then start early), nutrition (enteral early), glycemic control, infection surveillance + antibiotic stewardship; (6) **Continuous reassessment** for missed injuries (tertiary survey), compartment syndrome, abdominal compartment syndrome, second hits; (7) **Rehab early**: PT/OT in ICU, mobility protocols; (8) **Psychological support**: PTSD risk, family support, social work; (9) **Discharge planning**: rehabilitation facility, outpatient follow-up multi-specialty; (10) **Long-term outcomes**: functional, vocational, psychological — multidisciplinary follow-up clinic" },
+      { "label": "C", "text": "Operate on all injuries day 1" },
+      { "label": "D", "text": "Discharge home with outpatient follow-up" },
+      { "label": "E", "text": "Single specialist manages all" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Polytrauma management = quintessentially integrative + multidisciplinary. Modern principles: damage control resuscitation + damage control surgery (Hirshberg, Holcomb), early balanced transfusion (PROPPR), TBI-aware sequencing, lung-protective ventilation, ABCDEF ICU bundle, early mobility + rehab. Coordinated trauma team (surgeon + intensivist + specialty consultants) — single point of accountability. Tertiary survey for missed injuries (5-10% miss rate). Long-term outcomes depend on coordinated care across acute + rehab + outpatient phases. Outcomes 30-40% better in dedicated trauma centers vs general hospital (MacKenzie NEJM 2006).",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "ATLS 10th Edition; PROPPR Trial JAMA 2015; ACS Resources for Optimal Care of the Injured Patient; Pape HC et al. JOT 2018 (Polytrauma Management)"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 62 ปี post-Whipple procedure for pancreatic head adenocarcinoma 6 months ago — adjuvant chemotherapy completed mFOLFIRINOX × 12 cycles\n\nNow asymptomatic, CA 19-9 rising 35 → 88 → 142 over 3 visits, CT scan shows new 2 cm hepatic lesion + suspicious peritoneal nodule\n\nคำถาม: management approach for recurrent pancreatic cancer",
+    "choices": [
+      { "label": "A", "text": "Whipple repeat" },
+      { "label": "B", "text": "**Recurrent metastatic pancreatic cancer — integrative palliative + oncologic approach**: (1) **Confirm recurrence**: biopsy of liver lesion if feasible (or peritoneal if accessible) to confirm + characterize; (2) **Multidisciplinary tumor board**: medical oncology + surgical + radiation + palliative; (3) **Systemic therapy** (second-line based on prior FOLFIRINOX + performance status): - **Gemcitabine + nab-paclitaxel** if not used; - **5-FU/leucovorin + nanoliposomal irinotecan** (NAPOLI-1); - **Targeted/precision**: olaparib if BRCA1/2 germline + platinum-responsive (POLO trial); pembrolizumab if MSI-high; (4) **Performance status assessment** ECOG — if 0-1, treat actively; 2 may treat selectively; 3-4 best supportive care; (5) **Concurrent palliative care** from diagnosis (Temel NEJM 2010 — survival + QOL benefit even in pancreatic Ca); (6) **Symptom management**: pain (multimodal analgesic ladder, celiac plexus block consideration), nutrition (PERT for exocrine insufficiency, weight loss), psychological, fatigue, ascites (paracentesis if symptomatic); (7) **Advance care planning**: goals of care discussion, advance directive, healthcare proxy, hospice when appropriate; (8) **Family support**: anticipatory grief, caregiver burden; (9) Survivorship + survivorship care plan if extended survival; (10) Spiritual + cultural support" },
+      { "label": "C", "text": "Aggressive surgery only" },
+      { "label": "D", "text": "Stop all treatment immediately" },
+      { "label": "E", "text": "Chemotherapy without palliative care" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Recurrent pancreatic cancer = integrative cancer + palliative care. Median survival recurrent unresectable PDAC: 6-12 months with second-line. Treatment decisions must balance: prognosis, performance status, comorbidities, patient values, quality of life. Second-line options based on first-line + biomarkers (BRCA, MSI). Concurrent palliative care improves QOL, may extend survival (Temel JCO 2010). Decision-making collaborative — patient + family + multidisciplinary team. Advance care planning essential. Hospice when life expectancy < 6 months + comfort-focused goals. Survivorship for long-term responders.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "NCCN Pancreatic Adenocarcinoma 2024; Wang-Gillam A et al. Lancet 2016 (NAPOLI-1); Temel JS et al. NEJM 2010 (Early Palliative Care); Golan T et al. NEJM 2019 (POLO Trial — Olaparib)"
   }
 ]
