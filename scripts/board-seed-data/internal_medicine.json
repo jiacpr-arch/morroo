@@ -5310,5 +5310,549 @@
     "board_topic": "endocrine_metabolic",
     "board_age_group": "elderly",
     "reference_source": "Goodman & Gilman's Pharmacology; Atkinson's Principles of Clinical Pharmacology; Beers Criteria 2023; KDIGO Drug Dosing in CKD"
+  },
+  {
+    "scenario": "ทีมแพทย์โรงพยาบาลแห่งหนึ่งพบว่ามีอัตรา catheter-associated UTI (CAUTI) สูงในหอผู้ป่วยใน + ICU + ต้องการลดอัตรา nosocomial UTI ลง 50% ใน 6 เดือน\n\nคำถาม: implement CAUTI prevention bundle ตาม CDC/IHI ใน healthcare system",
+    "choices": [
+      {
+        "label": "A",
+        "text": "ฉีดยาฆ่าเชื้อทุก catheter ทุกคน"
+      },
+      {
+        "label": "B",
+        "text": "**CAUTI prevention bundle** (CDC/IHI quality improvement): (1) **Insertion**: appropriate indication (acute retention, accurate monitoring critically ill, surgical procedure, comfort end-of-life — NOT incontinence alone); aseptic insertion (sterile gloves, drape, antiseptic, single-use closed-system catheter); trained personnel; (2) **Maintenance**: closed drainage system; bag below bladder; secure catheter; daily hygiene; avoid manipulation; (3) **DAILY assessment for removal** — most important factor: nurse-driven removal protocol when no longer needed; clinician must justify indication daily; (4) Alternative to indwelling: external catheter (men), intermittent cath, bladder scan + delay; (5) Hand hygiene before/after; (6) Surveillance + feedback (CAUTI rate per 1000 catheter days); (7) Multidisciplinary team + education + audit; CUSP (Comprehensive Unit-based Safety Program); (8) Avoid antibiotic prophylaxis (selection pressure); (9) Treat ASB only in pregnancy + pre-urologic procedure (not indwelling cath unless symptomatic); (10) Catheter culture only when symptomatic UTI suspected — not for surveillance"
+      },
+      {
+        "label": "C",
+        "text": "ให้ antibiotic prophylaxis ทุกคนที่ใส่ Foley"
+      },
+      {
+        "label": "D",
+        "text": "เก็บ urine culture ทุก 3 วัน"
+      },
+      {
+        "label": "E",
+        "text": "ปิด ward ที่มี CAUTI"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "CAUTI prevention — most common healthcare-associated infection; mortality + morbidity + cost. CDC HICPAC + IHI bundle + SHEA-IDSA + ANA recommendations. Key principle: most CAUTI prevented by AVOIDING unnecessary catheterization + DAILY removal assessment. Effective programs reduce by 50-70%. Components: appropriate indication, aseptic insertion, closed system, daily review, nurse-driven removal protocol, alternative methods (external, intermittent, bladder scan), surveillance feedback, education, multidisciplinary. NHSN definition for surveillance: positive urine culture + symptoms. Asymptomatic bacteriuria — do NOT treat (except pregnancy + pre-urologic). Antibiotic prophylaxis NOT recommended — selection pressure + resistance.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "CDC HICPAC Guideline for Prevention of CAUTI 2009 + update; SHEA/IDSA 2014; IHI How-to Guide"
+  },
+  {
+    "scenario": "ทีมพยาบาล + medical staff โรงพยาบาลแห่งหนึ่ง implement \"Code Sepsis\" program เพื่อปรับปรุง early recognition + treatment ของ sepsis + reduce mortality\n\nคำถาม: components ของ effective sepsis early recognition + treatment system + Surviving Sepsis Campaign hour-1 bundle",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single physician decision-making"
+      },
+      {
+        "label": "B",
+        "text": "**Code Sepsis / sepsis bundle system**: (1) Early recognition: screening tool (qSOFA, NEWS2, MEWS, electronic sepsis alerts, sepsis nurse alerts at triage) → activate Code Sepsis; (2) **Hour-1 bundle (SSC 2021)** initiate within 1 hour of recognition: - Measure lactate + remeasure if elevated. - Obtain blood cultures BEFORE antibiotics (if no delay > 45 min). - Broad-spectrum antibiotics within 1 hr. - 30 mL/kg crystalloid (balanced — RL/Plasma-Lyte preferred per SMART) for hypotension or lactate ≥ 4. - Vasopressor (norepinephrine first-line) if MAP < 65 despite fluid resuscitation. (3) Source control within 6-12 hr (abscess drain, foreign body remove, surgical etc.); (4) Ongoing: re-assess perfusion (lactate clearance, dynamic measures — PLR, SVV, IVC, US), de-escalate antibiotic per culture, vasopressor weaning, steroid (hydrocortisone 200 mg/d for vasopressor refractory — ADRENAL, APROCCHSS); (5) Multidisciplinary rapid response: ED + ICU + ward + pharm; (6) Quality metrics: bundle compliance, time-to-antibiotic, mortality, LOS — dashboards + feedback; (7) Education + simulation + protocolized order sets in EHR; (8) Survivorship: post-sepsis syndrome care (cognitive, functional, mental health follow-up — PICS); (9) Antimicrobial stewardship integrated (de-escalation, duration optimization)"
+      },
+      {
+        "label": "C",
+        "text": "Antibiotic only after blood culture results"
+      },
+      {
+        "label": "D",
+        "text": "Wait until septic shock"
+      },
+      {
+        "label": "E",
+        "text": "Manual paper protocol only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Sepsis bundles + Code Sepsis programs — mortality reduction through early recognition + treatment. Surviving Sepsis Campaign 2021 + 2024 updates. Hour-1 bundle is critical metric. Early antibiotic within 1 hr saves lives (Kumar Crit Care Med — each hour delay ↑ mortality 7-13%). Balanced fluid (SMART, SALT-ED, BaSICS, PLUS trials) — modest benefit. Norepi first-line vasopressor; vasopressin add-on. Steroids for refractory shock. Source control + de-escalation + survivorship. Effective programs require multidisciplinary team, EHR-embedded alerts, education, ongoing feedback + accountability.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "Surviving Sepsis Campaign 2021; CDC Hospital Sepsis Program Core Elements 2023"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 88 ปี underlying advanced dementia, dependent ADL, recurrent aspiration pneumonia + hospitalization (3rd admission ใน 6 mo), severe functional decline. ครอบครัวต้องการคำแนะนำ goals-of-care + advance care planning\n\nคำถาม: principle ของ palliative + goals-of-care discussion + advance directive ใน advanced dementia",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Full code + aggressive interventions for all"
+      },
+      {
+        "label": "B",
+        "text": "**Advance care planning + palliative care in advanced dementia**: (1) **Family meeting / shared decision-making**: assess understanding + values + goals (length of life vs quality of life vs comfort), preferences (NIH PrepareForYourCare framework, REMAP framework — Reframe, Expect emotion, Map values, Align, Plan); (2) Education re prognosis (advanced dementia 6-12 mo median survival; aspiration recurrence pattern); (3) Discuss options: aggressive + curative vs comfort-focused (palliative) vs hospice; (4) Honor patient's previously stated wishes if any (advance directive, healthcare proxy); (5) Goals-concordant care: DNR/DNI orders + POLST (Physician Orders for Life-Sustaining Treatment — actionable orders for code status, hospitalization, antibiotics, artificial nutrition + hydration); (6) Advanced dementia specific decisions: artificial nutrition (PEG no benefit — does NOT prolong life or prevent aspiration; hand feeding preferred), antibiotic for pneumonia (limited benefit; palliative antibiotic for symptom control may be reasonable; declining aggressive Rx for recurrent infection); hospitalization vs home/SNF; (7) Symptom management: dyspnea (opioid, fan, oxygen if hypoxic), pain (often under-recognized in non-verbal — PAINAD scale), agitation (non-pharm first; antipsychotic last resort + black-box warning), constipation, oral care, pressure injury prevention; (8) Caregiver support — high burden + depression + grief; respite; education; bereavement; (9) Hospice referral (life expectancy < 6 mo); not synonymous with stopping care; (10) Documentation + communication across care settings; SNF + home care coordination"
+      },
+      {
+        "label": "C",
+        "text": "PEG tube placement always"
+      },
+      {
+        "label": "D",
+        "text": "Defer all discussions to surrogate"
+      },
+      {
+        "label": "E",
+        "text": "Pursue all life-prolonging measures"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Advanced dementia palliative care + ACP — high-yield ethics + geriatric topic. Mitchell NEJM 2009 + CAPC + AAHPM guidelines. Advanced dementia is terminal illness; median survival 6-12 mo after stage 7. (1) Shared decision-making: REMAP, Ariadne Labs Serious Illness Conversation Guide. (2) PEG tube no benefit — multiple RCTs + observational; does NOT prolong life, prevent aspiration (often increases reflux + aspiration); does NOT reduce pressure injury; risks: tube complications, restraints to prevent self-removal, pneumonia worse outcome, no QoL benefit. Hand feeding preferred. (3) Antibiotic recurrent pneumonia: limited benefit; palliative role for symptom control; involve goals-of-care. (4) POLST / MOLST — actionable medical orders for code status, hospital, ICU, antibiotic, artificial nutrition; travels with patient. (5) Hospice: Medicare-covered if life expectancy < 6 mo + comfort-focused. Different from palliative care (any stage, with curative). (6) Symptom management — pain (PAINAD, hospice-like approach), dyspnea, agitation, oral care, pressure care, mouth care. (7) Caregiver: respite, support group, bereavement, depression screen. (8) Documentation + transition. Antipsychotic for BPSD: black-box warning ↑ mortality + stroke; use last resort + lowest dose + shortest duration; brexpiprazole FDA approved 2023 for AD agitation.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "geriatric",
+    "board_age_group": "elderly",
+    "reference_source": "Mitchell SL NEJM 2009; AAHPM + CAPC Palliative Care Guidelines; Mitchell SL JAMA 2012 (PEG dementia)"
+  },
+  {
+    "scenario": "ICU แพทย์ + พยาบาลกำลัง implement ICU liberation \"ABCDEF\" bundle (A2F bundle) เพื่อ improve outcomes\n\nคำถาม: ส่วนประกอบของ ABCDEF bundle + ทำไม implementation รวมกันลด delirium + LOS + mortality",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single-component intervention"
+      },
+      {
+        "label": "B",
+        "text": "**ABCDEF (A2F) bundle** = ICU Liberation Collaborative (SCCM): comprehensive evidence-based approach to reduce ICU-acquired weakness, delirium, PTSD, prolonged mechanical ventilation. (A) **Assess + manage + prevent pain**: standardized scale (BPS, CPOT, NRS); analgesia first (analgosedation) — opioid (fentanyl, morphine), non-opioid (acetaminophen, ketamine, gabapentinoid). (B) **Both SAT (Spontaneous Awakening Trial) + SBT (Spontaneous Breathing Trial)** daily — coordinated; SAT — daily sedation interruption; SBT — daily ventilator wean trial; ABC trial Lancet 2008 showed mortality reduction. (C) **Choice of analgesia + sedation**: avoid benzo (delirium ↑, prolonged vent); preferred dexmedetomidine + propofol; light sedation (RASS 0 to -2). (D) **Delirium assess, prevent + manage**: CAM-ICU, ICDSC q shift; non-pharm prevention (orientation, family, mobility, sleep, hearing aids, glasses, hydration, address sensory deprivation); pharm for severe agitation (haloperidol limited; quetiapine; dexmedetomidine for hyperactive); avoid benzo + anticholinergic. (E) **Early mobility + exercise**: PT/OT within 24-48 hr of ICU admission if stable; sit on bed → stand → walk; reduces ICU-AW, vent days, LOS, mortality. (F) **Family engagement + empowerment**: liberal visiting; family meetings; education; involve in care + decision-making; post-ICU syndrome prevention (cognitive + mental + physical). Effective bundle = > 60% compliance correlates with mortality reduction (ICU Liberation collaborative data). Multidisciplinary team — physician + nurse + RT + PT/OT + pharmacist + nutrition + family + patient"
+      },
+      {
+        "label": "C",
+        "text": "Deep sedation throughout"
+      },
+      {
+        "label": "D",
+        "text": "Bedrest until extubation"
+      },
+      {
+        "label": "E",
+        "text": "Restrict family visiting"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "ICU Liberation ABCDEF bundle = SCCM evidence-based bundle reducing delirium, ICU-acquired weakness, post-intensive care syndrome. ICU Liberation Collaborative + Pun BT et al. studies. Each component evidence-based; bundle implementation > components alone. Major shift from deep sedation to light-as-possible + early mobilization. Benzo associated with delirium + ↑ mortality — minimize (dexmedetomidine or propofol preferred). Early PT/OT — reduces ICU-AW. Family presence reduces patient + family PTSD. Post-ICU syndrome (PICS): cognitive impairment, mental health (anxiety, depression, PTSD), physical disability — affects patient + family; prevention starts in ICU; survivorship clinic emerging.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "respiratory",
+    "board_age_group": "adult",
+    "reference_source": "SCCM ICU Liberation Bundle; Pun BT et al. Crit Care Med 2019; PADIS Guidelines 2018"
+  },
+  {
+    "scenario": "ผู้บริหารโรงพยาบาลพบว่า readmission rate ภายใน 30 วันสำหรับ heart failure สูง 22%. ผู้บริหารต้องการ implement transition-of-care program เพื่อลด readmission + improve outcomes\n\nคำถาม: components ของ effective transition-of-care program สำหรับ HF",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge note alone"
+      },
+      {
+        "label": "B",
+        "text": "**Transition-of-care program for HF readmission reduction**: (1) **Pre-discharge**: discharge planning starts at admission; multidisciplinary team (cardiology, nursing, pharmacy, social work, case management); patient education (HF self-management, weight monitoring, low-Na + fluid restriction, medication, when to call, recognize decompensation), teach-back method; optimize GDMT (ACEi/ARB/ARNI + BB + MRA + SGLT2i) before discharge; medication reconciliation; arrange post-discharge care; (2) **Discharge process**: written instructions in plain language + native language; medication list with reason + side effects; scheduled follow-up within 7 days (cardiology or PCP); home health if needed; cardiac rehab referral; (3) **Post-discharge**: telephone follow-up within 48-72 hr by nurse — symptom screen, medication adherence, BP, weight, questions; weight-based diuretic adjustment protocol; home telemonitoring (BP, weight, symptom) — selective; (4) **Outpatient continuity**: HF clinic specialty; titration of GDMT to target doses; MDT team-based care; (5) **Care coordination**: PCP communication, EHR documentation, structured discharge summary; (6) **Specific HF tools**: GDMT optimization protocol, diuretic dosing adjustment, BNP monitoring (controversial — GUIDE-IT neutral), CardioMEMS implantable PA pressure monitor (CHAMPION — reduced HF hosp); (7) **Patient + caregiver engagement** + literacy assessment; (8) **Address SDoH** (food security, transportation, housing, financial); (9) Palliative care for advanced HF; advance care planning; (10) Quality metrics: 30-d readmission, mortality, ED visits, compliance, patient experience"
+      },
+      {
+        "label": "C",
+        "text": "Same discharge process for all patients"
+      },
+      {
+        "label": "D",
+        "text": "No follow-up needed"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic prophylaxis at discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "HF transition of care — major focus of CMS HRRP (Hospital Readmissions Reduction Program). Effective programs reduce 30-day HF readmission 20-30%. Components from BOOST, Project RED, RED + AIDET frameworks. AHA + HFSA HF GDMT. Key elements: GDMT optimization before discharge (4 pillars), patient education, multidisciplinary, early follow-up < 7 d, telephone follow-up, home health, cardiac rehab, MDT outpatient, address SDoH. CardioMEMS implantable PA pressure for selected. Palliative + ACP. Quality metrics + accountability. Coleman's 4 pillars of care transition: medication self-mgmt, patient-centered health record, follow-up, knowledge of red flags.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "cardiovascular",
+    "board_age_group": "elderly",
+    "reference_source": "AHA Scientific Statement on Care Transition in HF; Coleman EA Care Transitions; CMS HRRP"
+  },
+  {
+    "scenario": "โรงพยาบาลกำลัง implement antimicrobial stewardship program (ASP). พบว่าการใช้ broad-spectrum antibiotic เพิ่มขึ้น + resistance rate เพิ่ม + C. difficile + cost ↑\n\nคำถาม: core elements ของ effective hospital ASP",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Limit ทุก antibiotic ทันที"
+      },
+      {
+        "label": "B",
+        "text": "**Antimicrobial Stewardship Program (ASP) core elements** (CDC + IDSA/SHEA 2016 + WHO + Joint Commission): (1) **Leadership commitment**: institutional support, dedicated resources, accountability; (2) **Accountability**: physician leader (ID-trained typically) + pharmacist co-leader (PharmD with ID training); (3) **Drug expertise**: ID pharmacist, ID physician; (4) **Action items** = core interventions: - **Prospective audit + feedback** (PAF): pharmacist reviews broad-spectrum or high-cost antibiotic + recommends adjustments to prescriber. - **Pre-authorization** (formulary restriction): require approval for restricted antibiotics. - **Facility-specific treatment guidelines** for common infections (CAP, UTI, sepsis, surgical prophylaxis, asymptomatic bacteriuria — do NOT treat). - **De-escalation**: narrow spectrum + duration optimization based on culture/clinical response. - **Antibiotic time-outs**: 48-72 hr reassessment by prescriber. - **IV-to-PO switch**: criteria-based when stable + GI absorption intact. - **Allergy reassessment**: penicillin allergy de-labeling (90% \"penicillin allergic\" tolerate). (5) **Tracking**: usage (DDD per 1000 patient-days, days of therapy DOT), resistance patterns (antibiogram annual), C. difficile rate, adverse events, cost, outcomes; (6) **Reporting**: feedback to prescribers + leadership + clinical area; (7) **Education**: prescribers + nurses + pharm + patients + family; (8) **Diagnostic stewardship**: appropriate culture indication, NOT for asymptomatic, MALDI-TOF rapid identification, PCR multiplex syndromic panel, procalcitonin (lower respiratory tract — limited utility outside select). (9) Mortality + outcome neutral or improved while reducing CDI + resistance + cost. Pillar of value-based care + public health"
+      },
+      {
+        "label": "C",
+        "text": "Single physician interpretation of every culture"
+      },
+      {
+        "label": "D",
+        "text": "No tracking of usage"
+      },
+      {
+        "label": "E",
+        "text": "Discontinue all antibiotic in 24 hr regardless"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Antimicrobial Stewardship Program — required by Joint Commission since 2017; CDC Core Elements. Reduces inappropriate antibiotic use, CDI, resistance, cost while maintaining/improving outcomes. ID + pharmacist co-leadership. Prospective audit + feedback most evidence-based; pre-authorization for restricted; facility guidelines + clinical pathways; de-escalation + duration optimization; IV-to-PO; antibiotic time-out 48-72 hr; penicillin allergy de-labeling (90% tolerate after evaluation/skin test/test dose). Diagnostic stewardship: avoid inappropriate culture, rapid identification (MALDI-TOF), multiplex PCR + Film Array — guide therapy. Tracking: DDD, DOT, resistance, CDI rate. Education + accountability + leadership commitment essential. ASP effective in reducing CDI 30%, resistance, cost.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "CDC Core Elements of Hospital ASP 2019; IDSA/SHEA Antibiotic Stewardship 2016; WHO Antimicrobial Stewardship Toolkit"
+  },
+  {
+    "scenario": "Resident อายุ 28 ปี กำลังปฏิบัติงาน night shift ครั้งที่ 5 ติดต่อกัน นอนน้อย + เครียดสูง + พบ medical error ในการเขียน order ของผู้ป่วย — ผู้ป่วยปลอดภัยแต่เกิด near-miss event\n\nคำถาม: principles of patient safety + handling medical error + just culture",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Blame + punish individual"
+      },
+      {
+        "label": "B",
+        "text": "**Patient safety + just culture approach**: (1) **Disclosure**: be honest with patient + family about error (if patient harmed); apologize + transparency — multiple studies show reduces litigation + improves trust; \"Sorry program\" + Communication + Resolution Programs (CRP); (2) **Reporting**: confidential incident reporting system (RL Solutions, etc.); near-miss + adverse event; protected from punishment for honest reporting; (3) **Root cause analysis (RCA)**: \"5 whys\" + Fishbone + systems thinking; identify latent error in system (workflow, communication, fatigue, education, technology, EHR, handoff) not just individual; (4) **Just culture** framework (Marx): distinguish - Human error (slip, lapse, mistake) → console + system fix. - At-risk behavior (drift from procedure for perceived benefit) → coach + retrain. - Reckless behavior (conscious disregard) → discipline. (5) **Systems improvement**: CPOE + decision support + alerts, double-check + read-back for high-risk orders, standardization, checklists (WHO surgical, central line — Pronovost), bundles, simulation, FMEA, lean, six sigma; (6) **Resident wellness + fatigue**: ACGME duty hours, sleep, mental health support; physician burnout + 2nd victim phenomenon (caregiver harm after adverse event); EAP; debriefing; peer support; (7) **High reliability organization** (HRO) principles: preoccupation with failure, reluctance to simplify, sensitivity to operations, commitment to resilience, deference to expertise; (8) Continuous improvement + QI projects + dashboards + feedback; (9) Leadership + safety culture survey; (10) Patient + family engagement in safety; PFAC (patient + family advisory council); shared decision-making"
+      },
+      {
+        "label": "C",
+        "text": "Hide the error"
+      },
+      {
+        "label": "D",
+        "text": "Sue the patient first"
+      },
+      {
+        "label": "E",
+        "text": "Ignore systems issues"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Patient safety + just culture = core healthcare quality. To Err is Human (IOM 1999) — preventable medical errors major cause of death; estimates ~ 100K-400K annual US. Just Culture (David Marx): distinguishes human error (system fix), at-risk behavior (coaching), reckless (discipline). Encourages reporting. RCA + systems thinking. Disclosure + apology + CRP — reduces litigation + improves trust + healing. CPOE with decision support + double-check + standardization + checklist + bundle reduces error. Second victim: clinician psychological harm after adverse event — needs support (EAP, peer support, debriefing). HRO principles (Weick + Sutcliffe). Burnout: emotional exhaustion + depersonalization + ↓ accomplishment; affects 30-50% of physicians; impact on safety + quality + retention. ACGME duty hours. Patient + family engagement.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "IOM To Err is Human 1999; AHRQ Patient Safety Network; Marx D Just Culture; WHO Patient Safety"
+  },
+  {
+    "scenario": "ผู้ป่วย admit หลัง STEMI primary PCI ใน CCU + กำลัง implement \"door-to-balloon\" (D2B) time monitoring + รพ. ต้องการลด D2B time < 90 นาที + cardiac arrest team\n\nคำถาม: ส่วนประกอบของ STEMI care system regional + RACE program (Regional STEMI program) + ทำไม time-to-treatment critical",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Patient stays in any hospital regardless of capability"
+      },
+      {
+        "label": "B",
+        "text": "**STEMI care system / regional program**: time-critical — \"time is muscle\"; goal D2B < 90 min in PCI-capable hospital, D2B < 120 min including transfer; door-to-fibrinolysis < 30 min if PCI > 120 min away. Components: (1) **Pre-hospital**: EMS 12-lead EKG, advance notification of STEMI alert + activate cath lab during transport; bypass ED in some systems (\"hub-and-spoke\"); D2B clock starts at first medical contact; (2) **Regional system**: PCI-capable centers receive STEMI patients from non-PCI hospitals; rapid transfer; established protocols; RACE (Reperfusion of Acute MI in North Carolina) successful model; ESC + AHA STEMI systems of care; (3) **In-hospital STEMI activation**: single-call activation; cath lab team mobilized; bypass ED for direct cath lab in some systems; preserve LV — \"time is muscle\" — every 30 min delay associated with ↑ 1-yr mortality; (4) **Reperfusion strategy**: primary PCI preferred if within 90-120 min; fibrinolysis if delay anticipated > 120 min then transfer; rescue PCI for failed lysis; (5) **Pharmacologic**: ASA + P2Y12 (ticagrelor/prasugrel/clopidogrel) loading, anticoagulation, statin, BB; (6) **Quality metrics**: D2B time, in-hospital mortality, 30-d mortality, readmission, GDMT compliance at discharge, cardiac rehab referral; (7) **Post-PCI**: CCU/ICU monitoring 24 hr, secondary prevention (DAPT, statin, BB, ACEi/ARB if HF/HT/DM, MRA if LVEF < 40, smoking cessation, cardiac rehab), reassess LVEF at 3 mo for ICD evaluation; (8) **NSTEMI + UA**: similar systems for early invasive strategy; (9) ACS-OOH cardiac arrest: targeted temperature management, urgent coronary angiography selected (TOMAHAWK + COACT); (10) Multidisciplinary feedback + continuous improvement"
+      },
+      {
+        "label": "C",
+        "text": "Wait for clinic appointment"
+      },
+      {
+        "label": "D",
+        "text": "No transfer regional system"
+      },
+      {
+        "label": "E",
+        "text": "Aspirin alone for STEMI"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "STEMI systems of care — regional + hub-and-spoke models reduce mortality. D2B < 90 min Class I; D2B including transfer < 120 min. AHA Mission: Lifeline + ESC + AHA STEMI guideline. Pre-hospital EKG + activation by EMS (cath lab activation during transport) reduces D2B by 30-60 min. Single-call activation. Bypassing ED in selected. Primary PCI preferred reperfusion; fibrinolysis if not possible within window. Pharmacologic + reperfusion + secondary prevention. Quality metrics + accountability + continuous improvement. NCDR/Mission Lifeline registries. ACLS for cardiac arrest. Post-PCI: secondary prevention. NSTEMI early invasive. RACE program in NC = exemplar regional system.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "AHA Mission: Lifeline STEMI Systems of Care; ACC/AHA STEMI Guideline 2013 (update 2023); RACE Program NC"
+  },
+  {
+    "scenario": "เกิด outbreak ของ MDR organism (CRE) ในหอผู้ป่วยใน แพร่ไป 8 รายใน 4 สัปดาห์ + suspected เกิดจาก inadequate infection control + improper environmental cleaning\n\nคำถาม: outbreak investigation + infection prevention + control (IPC) response",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ignore outbreak + continue normal operation"
+      },
+      {
+        "label": "B",
+        "text": "**Outbreak investigation + IPC response (CDC + WHO + Thai DDC)**: (1) **Confirm outbreak**: define case (microbiologic + clinical + temporal); compare to baseline rate; epidemic curve; environmental sampling; molecular typing (PFGE, WGS) to confirm clonality; (2) **Cohorting + isolation**: place infected/colonized patients in contact precaution + dedicated cohort if multiple; private room with private bathroom; gown + glove + dedicated equipment + handwashing (soap + water for CDI; alcohol OK for others); (3) **Active surveillance** of contacts: rectal/perirectal swab for CRE screening on contacts + admitted patients in unit; (4) **Environmental cleaning**: enhanced cleaning (bleach 1:10 for CDI; environmental hygiene), terminal cleaning + UV-C disinfection or hydrogen peroxide vapor for confirmed positive room; monitor cleaning compliance (ATP, fluorescent marker); (5) **Antimicrobial stewardship**: reduce broad-spectrum antibiotic + carbapenem use (selection pressure); use carbapenem-sparing regimens; consult ID for case management; (6) **Hand hygiene** audit + feedback + posted reminders; alcohol-based hand rub at point of care; (7) **Staffing + workload**: avoid sharing between cohort + non-cohort if possible; train + educate; PPE supply; (8) **Devices + procedure**: minimize indwelling devices; aseptic technique; sterile processing audit; endoscope reprocessing audit; (9) **Reporting**: notifiable to public health (Thai DDC + WHO IHR for emerging MDR); communicate to receiving facility if transferred; (10) **Multidisciplinary team**: IPC + ID + microbiology + administration + nursing + housekeeping + lab; daily incident command; (11) **Post-outbreak**: continued surveillance, sustained policy change, education, simulation, root cause analysis + corrective action plan; (12) Patient + family education + decolonization strategies (limited evidence for CRE)"
+      },
+      {
+        "label": "C",
+        "text": "Treat each patient independently"
+      },
+      {
+        "label": "D",
+        "text": "Antibiotic prophylaxis all staff"
+      },
+      {
+        "label": "E",
+        "text": "Close hospital permanently"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Outbreak investigation + IPC = essential public health competency. CDC + WHO + ICN IPC guidelines. Steps: confirm outbreak (case definition, epidemic curve, baseline), descriptive epidemiology, hypothesis, analytic study, molecular typing (PFGE, WGS), environmental sampling, cohorting + isolation, hand hygiene, environmental cleaning + disinfection, antimicrobial stewardship, reporting + notification, education, audit, corrective action. CRE = global health threat; Thailand + SE Asia rising prevalence. Key control: surveillance, contact precaution, hand hygiene, antimicrobial stewardship, environmental cleaning. Cohorting + dedicated staff if multiple. Active screening of contacts to detect colonized. Multidisciplinary team. Notifiable disease + public health reporting. Post-outbreak sustained surveillance + policy + culture change.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "CDC Healthcare Infection Control Practices Advisory Committee (HICPAC); WHO IPC Guidelines; SHEA Outbreak Investigation"
+  },
+  {
+    "scenario": "Hospital implementing medication reconciliation process ที่ admission + discharge + transfers to reduce medication errors + adverse drug events\n\nคำถาม: ส่วนประกอบของ effective medication reconciliation",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Skip medication review"
+      },
+      {
+        "label": "B",
+        "text": "**Medication reconciliation** (Joint Commission NPSG.03.06.01): formal process to compare patient's current medications with newly ordered to prevent omissions, duplications, dosing errors, interactions, allergies. Steps: (1) Obtain comprehensive medication history at admission — patient + family + caregiver interview + pharmacy records + EHR + medication bottle review (\"brown bag\"); include prescription, OTC, supplements, herbal, marijuana, recreational; (2) **Verify** dose, frequency, route, last dose, indication, response, allergies + reactions; (3) **Compare to new orders + reconcile**: continue, modify, discontinue, hold; document rationale; (4) **Communicate**: discharge medication list with reason + side effects; patient + family + receiving provider; teach-back; (5) **Discharge**: review with patient + family in plain language; medication list provided + sent to PCP within 48 hr; (6) **Special situations**: NPO + restart, surgery, ICU transitions, transfer between facilities, transitions of care most error-prone; (7) **Pharmacist-led** medication reconciliation reduces errors > 40-70%; (8) **High-risk medications**: anticoagulant, insulin, opioid, anti-rejection, antiplatelet, antiepileptic, immunosuppressive — extra vigilance + ISMP high-alert medications protocols; (9) **CPOE + decision support**: electronic systems with alerts for duplicates + interactions + allergies + dosing; (10) **Deprescribing** in elderly: STOPP/START criteria + Beers; address polypharmacy; (11) **Monitoring**: AE reporting, ADR pharmacovigilance, medication error rate, near-miss; (12) **Quality metrics**: med reconciliation completion rate at admission + discharge + transition"
+      },
+      {
+        "label": "C",
+        "text": "Single nurse documentation"
+      },
+      {
+        "label": "D",
+        "text": "No discharge counseling"
+      },
+      {
+        "label": "E",
+        "text": "OTC drugs not part of reconciliation"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Medication reconciliation — Joint Commission NPSG + IHI 5-Million Lives Campaign + WHO High 5s. Prevents 30-40% of medication errors. Critical at transitions of care: admission, transfer, discharge — highest error risk. Pharmacist-led most effective. Includes prescription + OTC + supplements + herbal + recreational. Brown-bag medication review at home. EHR + CPOE + decision support — reduce interaction + duplicate + allergy errors. High-alert medications (ISMP list — anticoag, insulin, opioid, neuromuscular blocker, immunosuppressive, etc.) require extra protocols. Deprescribing in elderly polypharmacy: STOPP/START, Beers criteria; review at every visit. Teach-back at discharge. Patient + caregiver education. Quality metrics + accountability.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "geriatric",
+    "board_age_group": "adult",
+    "reference_source": "Joint Commission NPSG.03.06.01; IHI Medication Reconciliation; WHO High 5s; ISMP High-Alert Medications"
+  },
+  {
+    "scenario": "ทีมโรงพยาบาลกำลัง implement delirium prevention bundle in elderly hospitalized patients\n\nคำถาม: components ของ delirium prevention + management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Sedation alone"
+      },
+      {
+        "label": "B",
+        "text": "**Delirium prevention + management** (HELP = Hospital Elder Life Program; ABCDEF in ICU): non-pharmacologic multicomponent intervention preferred. (1) **Identify risk**: age > 65, dementia, prior delirium, severe illness, polypharmacy, sensory impairment, immobility, dehydration, malnutrition, infection, sleep deprivation; (2) **Non-pharm bundle**: - Orientation: clock, calendar, family photos, reorient verbally + caregivers, white board with date + names. - Sleep + circadian: minimize nighttime interruption, dim light at night, earplug + eye mask, no naps daytime, daytime light. - Mobilize early: out of bed within 24-48 hr, PT/OT, ambulate, avoid restraints + Foley. - Sensory: hearing aids, glasses, dentures available. - Hydration + nutrition: PO when safe, adequate fluid + nutrition assessment. - Family + visitors: companion presence. - Pain control: scheduled analgesic; avoid undertreated pain. - Cognitive activity: conversation, puzzles, reorientation games. (3) **Avoid precipitants**: anticholinergic, benzo, opioid (high-dose), antipsychotic, antihistamine (diphenhydramine), tricyclic, polypharmacy; constipation, urinary retention, electrolyte (Na, Mg, Ca, glucose), hypoxia, infection (UTI, pneumonia), pain, dehydration, sleep deprivation, sensory deprivation; (4) **Screening tools**: CAM (Confusion Assessment Method), CAM-ICU, 4AT (rapid bedside screen); routine screening q shift; (5) **Treatment of established delirium**: address underlying precipitant; supportive non-pharm; pharm only for severe agitation + dangerous behavior — low-dose haloperidol 0.25-0.5 mg or quetiapine 12.5-25 mg; avoid benzo (worsens; exception alcohol/benzo withdrawal); avoid restraints; (6) **Discharge + follow-up**: persistent post-hospital cognitive impairment common; cognitive rehab; family support; (7) **Hospitalization avoidance** in advanced dementia where appropriate; (8) **Outcomes affected**: ↑ mortality, ↑ LOS, ↑ institutionalization, ↑ functional decline, ↑ dementia development; preventable"
+      },
+      {
+        "label": "C",
+        "text": "Restraint for safety"
+      },
+      {
+        "label": "D",
+        "text": "Routine benzo PRN"
+      },
+      {
+        "label": "E",
+        "text": "Diphenhydramine for sleep"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Delirium = acute change in attention + cognition; multifactorial; preventable. Hospital Elder Life Program (HELP, Inouye) + ABCDEF bundle (ICU) = evidence-based multicomponent prevention. Reduces incidence by 30-40%. Key: non-pharm multicomponent — orientation, sleep, mobilization, sensory, hydration, family. Avoid precipitants: anticholinergic, benzo (worsens delirium), opioid high-dose, anti-PD, antipsychotic. Treat underlying. Pharm only for severe agitation/danger — low-dose haloperidol or atypical (quetiapine); avoid benzo except alcohol withdrawal. Screen routinely (CAM, 4AT). Persistent post-hospital cognitive impairment common — long-term sequelae; affects mortality + LOS + institutionalization + dementia progression. Geriatric consultation + interdisciplinary team.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "geriatric",
+    "board_age_group": "elderly",
+    "reference_source": "Inouye SK HELP NEJM 1999; AGS Geriatrics Care Online; SCCM PADIS Guideline 2018"
+  },
+  {
+    "scenario": "ทีมพยาบาล + แพทย์กำลัง implement structured handoff (SBAR or I-PASS) to reduce errors at shift change\n\nคำถาม: components + benefits of structured handoff",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No structured process"
+      },
+      {
+        "label": "B",
+        "text": "**Structured handoff** prevents communication errors at care transitions (shift, ICU-to-ward, OR-to-ICU, transfer). (1) **SBAR**: Situation (what's happening), Background (context, history), Assessment (clinical assessment + concern), Recommendation (what's needed). Concise, focused, action-oriented. (2) **I-PASS** (Stanford pediatric): Illness severity, Patient summary, Action list, Situational awareness + contingency, Synthesis by receiver. STARFISH or 5P also used. (3) **Components of effective handoff**: face-to-face when possible; standardized template; minimum interruption; verify with read-back; current + accurate information; allow time for questions; documentation; (4) **Evidence**: I-PASS implementation studies show 30% reduction in preventable adverse events (Starmer NEJM 2014 — pediatric, replicated other specialties); SBAR widely adopted; (5) **Multidisciplinary**: nursing + physician + RT + pharmacy; cross-discipline; (6) **Transition-specific handoffs**: ED-to-floor (5P or specific), OR-to-PACU, OR-to-ICU, ICU-to-floor (de-escalation), shift change, sign-out (cross-cover lists with pending tasks + anticipated issues + contingency plans); (7) **Avoid**: rushed handoff, distractions, incomplete data, vague language, missing handover at high-risk transitions; (8) **Training**: simulation, communication skills, TeamSTEPPS + CRM principles; (9) **EHR-supported**: standardized templates, structured sign-out tools, sign-out lists (electronic); (10) **Patient + family involvement** in handoff at admission + transfer + discharge — Patient + Family Centered I-PASS adaptation"
+      },
+      {
+        "label": "C",
+        "text": "Unstructured verbal only"
+      },
+      {
+        "label": "D",
+        "text": "Skip questions"
+      },
+      {
+        "label": "E",
+        "text": "Single person sign-out"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Structured handoff = key patient safety intervention. SBAR + I-PASS most studied. I-PASS NEJM 2014 (Starmer + Landrigan) — 30% reduction preventable adverse events. SBAR clinical communication standard. Joint Commission NPSG handoff requirements. WHO High 5s. Components: standardized, face-to-face, minimum interruption, verify with read-back, complete + accurate, allow Q&A. Multidisciplinary: nursing + physician + RT + pharmacy. Transition-specific. EHR support. TeamSTEPPS + CRM (crew resource management) principles. Patient + family involvement. Improves accuracy, reduces error, prevents adverse events, increases safety culture.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "I-PASS Starmer A et al. NEJM 2014; SBAR + TeamSTEPPS AHRQ; Joint Commission NPSG"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 76 ปี on 9 chronic medications (ASA, statin, BB, ACEi, metformin, gabapentin, amitriptyline, diphenhydramine, alprazolam) มา OPD ด้วย confusion + fall + orthostatic hypotension + recent admission\n\nคำถาม: deprescribing approach + identify potentially inappropriate medications (PIMs)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue all medications"
+      },
+      {
+        "label": "B",
+        "text": "**Deprescribing + polypharmacy review** (Beers Criteria 2023 + STOPP/START 2024): (1) **Identify PIMs**: - **Anticholinergic** (diphenhydramine, amitriptyline) → cognitive impairment, fall, confusion, urinary retention, dry mouth — DEPRESCRIBE; switch amitriptyline (for neuropathic) to duloxetine or gabapentin alone; switch diphenhydramine for sleep to non-pharm + melatonin/trazodone. - **Benzodiazepine** (alprazolam) → fall, cognitive impairment, dependence — taper slowly (10% q 1-2 wk); CBT-I for insomnia; gradually replace. - **Tricyclic** (amitriptyline) — anticholinergic + cardiac + fall risk. (2) **STOPP** (Screening Tool of Older People's Prescriptions): potentially inappropriate prescriptions to STOP. **START** (Screening Tool to Alert to Right Treatment): potentially appropriate to START in elderly. (3) **Beers Criteria 2023**: list of PIMs; categories — avoid generally, avoid in specific conditions, use with caution, drug-drug interaction. (4) **Approach**: prioritize highest-risk PIMs; one change at a time; assess effectiveness + adverse + symptoms; involve patient + family in shared decision-making; reconcile at every transition. (5) **Medication review tools**: MAI (Medication Appropriateness Index), Beers, STOPP/START. (6) **Deprescribing algorithms** (Scott et al.): identify, ascertain medication, assess risk-benefit, prioritize, taper, monitor. (7) **High-risk drugs in elderly**: benzo, opioid (high-dose), anticholinergic, NSAID, antiplatelet + anticoagulant combo, sulfonylurea (hypoglycemia), digoxin (high dose). (8) **Address underlying**: pain (non-pharm + acetaminophen + topical), sleep (CBT-I + sleep hygiene), depression (SSRI safer than TCA in elderly). (9) **Communicate with PCP** + patient + family; education on rationale; monitor adverse withdrawal. (10) **Outcomes**: reduce fall, hospitalization, cognitive decline, adverse drug events"
+      },
+      {
+        "label": "C",
+        "text": "Add more medications"
+      },
+      {
+        "label": "D",
+        "text": "Replace all medications new"
+      },
+      {
+        "label": "E",
+        "text": "Stop all medications abruptly"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Polypharmacy + deprescribing — essential geriatric. Beers Criteria 2023 (AGS) + STOPP/START 2024 (O'Mahony) major frameworks. Polypharmacy = ≥ 5 chronic medications; harmful adverse drug events + interactions + falls + cognitive impairment + non-adherence + cost. Approach: comprehensive medication review at every visit + transition; identify PIM + risk-benefit reassessment; deprescribing algorithm; prioritize one change at a time + monitor; address underlying with non-pharm + safer alternatives; communicate + involve patient + family. High-risk drugs in elderly: benzo, anticholinergic, opioid, NSAID, antipsychotic, sulfonylurea, digoxin. Replace with safer alternatives (non-pharm sleep + CBT-I; SSRI > TCA for depression; gabapentin or duloxetine for neuropathic; non-anticholinergic urge incontinence — mirabegron). Outcomes: reduce fall, hospitalization, cognitive decline, ADE.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "geriatric",
+    "board_age_group": "elderly",
+    "reference_source": "Beers Criteria 2023 (AGS); STOPP/START Criteria 2024; Scott IA et al. JAMA 2015 (Deprescribing)"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี post-major surgery ใน hospital × 5 d + Foley catheter + central line + mechanical ventilation + on multiple antibiotics + diabetes uncontrolled — high-risk for HAI. ทีม implement HAI prevention bundle\n\nคำถาม: comprehensive HAI prevention strategy",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single intervention"
+      },
+      {
+        "label": "B",
+        "text": "**Comprehensive HAI prevention** (CDC + IHI + SHEA + WHO bundles): - **CLABSI** (Central Line-Associated BSI): insertion bundle — hand hygiene, maximal barrier precaution, chlorhexidine skin prep, optimal site (subclavian > IJ > femoral), daily review of necessity + removal; maintenance — daily chlorhexidine bathing, scrub the hub, dedicated lines for TPN/blood products, sterile technique for dressing change. - **CAUTI**: appropriate indication, aseptic insertion, closed system, daily removal review (covered). - **VAP** (Ventilator-Associated Pneumonia): elevate HOB 30°, daily SAT/SBT, oral care with chlorhexidine, subglottic suction ETT, DVT + PUD prophylaxis, hand hygiene. - **SSI** (Surgical Site Infection): pre-op skin antiseptic chlorhexidine, appropriate timing + selection of prophylactic antibiotic, normothermia, glycemic control, smoking cessation pre-op, hair clipping not shaving, sterile technique. - **CDI**: judicious antibiotic + PPI use, contact precaution + private room, soap + water hand hygiene (alcohol ineffective for spores), terminal cleaning with bleach. - **MDRO** (CRE, MRSA, VRE): active surveillance + screening high-risk + chlorhexidine bathing + decolonization (MRSA — mupirocin) + cohorting + contact precaution. - **Hand hygiene**: alcohol-based hand rub at point of care; 5 moments of WHO; audit + feedback + reminder. - **Antimicrobial stewardship**: integrated (covered). - **Environment**: cleaning + disinfection + UV-C or H2O2 vapor; ATP audit. - **Vaccination of HCW**: influenza, COVID, HBV, MMR, varicella, pertussis. - **Surveillance + reporting**: NHSN, hospital benchmarking, public reporting. - **Education + culture**: simulation, training, accountability, leadership commitment"
+      },
+      {
+        "label": "C",
+        "text": "Discharge home early"
+      },
+      {
+        "label": "D",
+        "text": "Antibiotic prophylaxis weekly"
+      },
+      {
+        "label": "E",
+        "text": "Restrict patient room access"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "HAI prevention = comprehensive bundled approach. CDC HICPAC + IHI Improvement Map + WHO IPC + SHEA + Joint Commission. Major HAI types: CLABSI, CAUTI, VAP, SSI, CDI, MDRO infections. Each has specific evidence-based prevention bundle. Hand hygiene + antimicrobial stewardship + environmental cleaning + HCW vaccination + surveillance + culture of safety = foundational. CMS hospital-acquired conditions (HAC) penalty + value-based purchasing — financial incentive. NHSN benchmarking. Effective programs reduce HAI 30-70%. Bundles work better than individual interventions. Multidisciplinary + sustained leadership commitment.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "CDC HICPAC HAI Prevention Guidelines; IHI 5-Million Lives Campaign; SHEA Compendium of Strategies"
+  },
+  {
+    "scenario": "ผู้ป่วย stage IV pancreatic adenocarcinoma + functional decline + symptomatic + near end-of-life. ครอบครัวต้องการคำแนะนำ + ดูแลที่บ้านหรือ hospice\n\nคำถาม: principles ของ palliative + hospice care + symptom management at end-of-life",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue aggressive chemo"
+      },
+      {
+        "label": "B",
+        "text": "**Palliative + hospice care at end-of-life**: (1) **Palliative care**: specialty for serious illness; any stage; alongside curative; symptom + QoL + psychosocial + spiritual + family. Early integration (concurrent with oncology) improves QoL + symptom + mood + survival (Temel NEJM 2010 in NSCLC). (2) **Hospice**: Medicare benefit when life expectancy < 6 mo + opts for comfort focus over curative; home, inpatient, residential; covers medication + DME + nursing + chaplain + counselor; bereavement support. (3) **Symptom management end-of-life**: - **Pain**: opioid (morphine, hydromorphone, fentanyl patch + breakthrough); ESCALATE rapidly to comfort; opioid rotation; oral → SC/IV/buccal as PO declines. - **Dyspnea**: opioid (low-dose morphine), fan, oxygen if hypoxic, anxiolytic. - **Nausea**: ondansetron, metoclopramide, haloperidol, dexamethasone, olanzapine. - **Anxiety + restlessness**: low-dose benzo (lorazepam SC/SL); avoid in confusion. - **Delirium + agitation**: haloperidol; minimize stimuli; family presence. - **Excessive secretions / death rattle**: glycopyrrolate, atropine SL, hyoscine; suction limited. - **Constipation**: senna + osmotic + PEG. - **Anorexia**: not always treated; small frequent if desired; megestrol, dexamethasone for select. - **Oral care**: lip balm, ice chips, mouth swabs, NOT IV hydration solely. (4) **Withholding/withdrawing** life-sustaining treatment when not goals-concordant: comfort-focused IV fluid + nutrition; legal + ethical + religious considerations. (5) **Goals-of-care discussion**: serious illness conversation; REMAP framework; honor preferences. (6) **Spiritual + psychosocial**: chaplain, social work, counselor, family meetings. (7) **Caregiver support**: respite, education, recognize burden + depression. (8) **Bereavement**: continued support for family 12 mo post-death; complicated grief screening. (9) **Cultural + religious** competence + tailoring; (10) **Documentation**: POLST, advance directive, DNR/DNI, organ donation discussion if applicable"
+      },
+      {
+        "label": "C",
+        "text": "Defer to surrogate"
+      },
+      {
+        "label": "D",
+        "text": "Surgical intervention"
+      },
+      {
+        "label": "E",
+        "text": "Pursue all life-prolonging measures"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Palliative + hospice care = essential. Distinction: palliative — any stage + concurrent with curative; hospice — terminal, comfort-focused, life expectancy < 6 mo. Temel NEJM 2010 — early palliative care in metastatic NSCLC improved QoL + mood + survival (PARADIGM). Symptom management focused on pain, dyspnea, nausea, anxiety, delirium, secretions, constipation, anorexia, fatigue. Opioid escalation appropriate at end-of-life; no upper limit for symptom control. Avoid invasive procedure unless symptom benefit clear. Goals-of-care discussion + ACP. Family meetings + spiritual + psychosocial. Caregiver support critical (caregiver burden + depression + bereavement). Multidisciplinary palliative team. Communication + cultural competence + serious illness conversation guide. WHO public health approach to palliative care.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "Temel JS NEJM 2010; CAPC + AAHPM Palliative Care Guidelines; WHO Palliative Care; CMS Hospice Benefit"
+  },
+  {
+    "scenario": "ทีมแพทย์โรงพยาบาลกำลัง implement ICU mortality reduction QI project ผ่าน data dashboard + measurement\n\nคำถาม: principles of healthcare quality improvement + measurement",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single physician opinion"
+      },
+      {
+        "label": "B",
+        "text": "**Healthcare quality improvement (QI)** methodology: (1) **Six Sigma + Lean**: reduce variation + waste; DMAIC (Define, Measure, Analyze, Improve, Control); Plan-Do-Study-Act (PDSA) cycles. (2) **Donabedian framework**: structure (resources), process (clinical care delivered), outcome (results). (3) **Measure types**: process measures (did we do it?), outcome measures (did it help?), balancing measures (did we cause unintended harm?). (4) **STEEEP** quality domains (IOM): Safe, Timely, Effective, Efficient, Equitable, Patient-centered. (5) **Triple Aim → Quintuple Aim**: improve population health, individual care experience, reduce cost, + clinician well-being, + health equity. (6) **Dashboards + Run Charts + Control Charts**: visualize data over time; identify trends + variation + outliers; common cause vs special cause variation. (7) **QI tools**: Pareto chart, Fishbone (Ishikawa), Process map, Driver diagram, Failure Mode + Effects Analysis (FMEA), Root Cause Analysis (RCA). (8) **Specific ICU mortality QI**: Use national benchmark (APACHE, NHSN); identify gaps; bundles (ABCDEF, sepsis, VAP, CLABSI); process audits + feedback; multidisciplinary review; mortality + morbidity conference. (9) **Behavioral + culture**: leadership, transparency, blame-free reporting, recognition, sustained engagement, change management (Kotter 8 steps), team-based care. (10) **Patient + family engagement**: PFAC, patient experience survey (HCAHPS, NHS), shared decision-making. (11) **Health equity + SDoH**: stratify outcomes by race, ethnicity, language, SES; address disparities; targeted intervention. (12) **EHR + technology + AI**: predictive analytics, sepsis alerts, deterioration scores (NEWS2, eCart), clinical decision support; risk of alert fatigue + bias if not validated. (13) **Public reporting + payment models**: HCAHPS, CMS Star Rating, value-based purchasing, ACO, bundled payment, P4P"
+      },
+      {
+        "label": "C",
+        "text": "No measurement"
+      },
+      {
+        "label": "D",
+        "text": "Punish low performers"
+      },
+      {
+        "label": "E",
+        "text": "Skip data collection"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "QI methodology + measurement = core healthcare management. Frameworks: Six Sigma/Lean (DMAIC, PDSA), Donabedian (structure-process-outcome), IOM STEEEP, Triple Aim → Quintuple Aim (Berwick — population health + experience + cost + clinician + equity). Measure types: process, outcome, balancing. QI tools: Pareto, Fishbone, FMEA, RCA, driver diagram, process map. Run + control charts to visualize. Dashboards + data feedback. Multidisciplinary + cultural transformation. Patient + family engagement (PFAC, HCAHPS). Health equity focus. EHR + AI + predictive analytics — validated + bias-aware. Payment + accountability: CMS Star Rating, value-based purchasing, ACO. Continuous improvement vs episodic.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "IOM Crossing the Quality Chasm 2001; Berwick Triple Aim Health Affairs 2008; IHI; Donabedian Framework"
+  },
+  {
+    "scenario": "ภัยพิบัติแผ่นดินไหวขนาด 6.5 ในจังหวัด affecting hospital — multiple casualties + power loss + supply disruption + staff displacement. โรงพยาบาลต้อง activate disaster preparedness plan\n\nคำถาม: components ของ hospital disaster preparedness + response",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Wait for direction from government"
+      },
+      {
+        "label": "B",
+        "text": "**Hospital disaster preparedness + response** (HICS — Hospital Incident Command System; JCI + Joint Commission EM standards): (1) **Pre-disaster preparedness**: - All-hazards approach (natural, biologic, chemical, radiological, mass casualty, IT failure, supply chain). - Hazard Vulnerability Analysis (HVA) annual. - Emergency Operations Plan (EOP) — comprehensive, all-staff training. - Mock drills + tabletop exercises. - Mutual aid agreements + community partnerships. - Stockpile + supply chain redundancy. - Continuity of operations + business continuity. - Communication systems (radio, satellite, redundant). - Evacuation + sheltering-in-place plans. (2) **Activation + ICS (Incident Command System)**: structured command — Incident Commander + sections (Operations, Planning, Logistics, Finance/Admin); clear chain of command; resource allocation; communication. (3) **Mass casualty response**: - Triage (START — Simple Triage And Rapid Treatment; SALT — Sort/Assess/Lifesaving/Treatment) — categorize Red (immediate), Yellow (delayed), Green (minor walking wounded), Black (expectant). - Triage areas + flow + treatment areas (resuscitation, OR, ICU surge). - Surge capacity: cancel elective surgery, discharge stable, expand monitoring areas, double-up rooms, alternate care sites (school, gym), bring in additional staff (community, retired, students). - Crisis standards of care — when resources < demand; transparent + ethical framework; triage by likelihood of benefit + reversibility (not solely first-come). (4) **Specific scenarios**: - Earthquake: structural integrity assessment + evacuation if compromised; secondary triage in safe area. - Pandemic: infection control + isolation + cohorting + PPE supply + staff health + surge ICU + ventilator allocation framework. - Mass shooting: lockdown + active shooter response + casualty management. - Chemical/biological/radiological: decontamination zone before entering ED. (5) **Communication**: media, public, family reunification, multilingual; coordinate with public health + EMS + government. (6) **Staff welfare**: rest cycle, food, family support, mental health (CISD critical incident stress debriefing). (7) **Recovery**: damage assessment, business continuity, lessons learned, AAR (after-action review). (8) **Reporting + collaboration**: regional + state + federal (CDC, DDC Thailand); WHO IHR for international"
+      },
+      {
+        "label": "C",
+        "text": "Continue normal hospital operations"
+      },
+      {
+        "label": "D",
+        "text": "Discharge all patients"
+      },
+      {
+        "label": "E",
+        "text": "Stop accepting new patients"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Hospital disaster preparedness + response = essential safety. HICS (Hospital Incident Command System) modeled on FEMA NIMS ICS. JCI + Joint Commission Emergency Management standards. All-hazards approach. HVA annual. EOP comprehensive. Mock drills + tabletop. Mutual aid + community partnerships. Stockpile + redundancy. ICS structured response: Incident Commander + Operations + Planning + Logistics + Finance + Liaison + Safety + PIO. Mass casualty triage (START or SALT) — categorize by survivability + treatment time. Surge capacity: cancel elective, discharge stable, alternative sites, additional staff. Crisis standards of care — transparent framework for resource allocation when demand exceeds capacity. Pandemic + chemical/biological/radiological specific protocols. Communication + staff welfare + recovery + AAR. COVID-19 highlighted gaps + reinforced importance of comprehensive preparedness.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "HICS Hospital Incident Command System; Joint Commission Emergency Management Standards; AHRQ Hospital Surge Toolkit; WHO Disaster Preparedness"
   }
 ]
