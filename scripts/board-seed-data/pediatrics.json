@@ -2878,5 +2878,965 @@
     "board_topic": "cardiovascular",
     "board_age_group": "peds",
     "reference_source": "AHA/ACC/HRS Syncope Guideline 2017; Pediatric Heart Network"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 15 ปี (BW 50 kg) กิน Tylenol 50 เม็ด (500 mg/tablet = 25 g, 500 mg/kg) 4 ชม ก่อน หลังทะเลาะ ตอนนี้คลื่นไส้อาเจียน หลังกิน 90 นาทีให้ activated charcoal ไม่ได้ (ไม่ใช่ ED)\n\nV/S: HR 102, BP 116/78, RR 18, SpO2 99%, Temp 37.0°C\nGen: alert, no jaundice yet\n\n4-hr acetaminophen level: 240 mcg/mL (Rumack-Matthew nomogram = above 'probable hepatotoxicity' line)\nLFT: AST 32, ALT 38 (still normal), INR 1.0, Cr 0.7\nGlucose 92, no other co-ingestion",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Observe + recheck 12 hr"
+      },
+      {
+        "label": "B",
+        "text": "Acetaminophen toxicity (above treatment line at 4 hr): N-Acetylcysteine (NAC) — IV protocol (preferred for hepatic concern): 150 mg/kg in 200 mL D5W over 60 min, then 50 mg/kg in 500 mL D5W over 4 hr, then 100 mg/kg in 1 L D5W over 16 hr (total 21 hr, 300 mg/kg cumulative); may extend if persistent injury at end of standard course (LFT or APAP still detectable); monitor for anaphylactoid reaction during infusion (slow rate, antihistamine) — true allergy rare; alternative oral PO NAC 140 mg/kg loading then 70 mg/kg q4h × 17 doses (less preferred when vomiting); transfer to liver transplant center if King's College criteria positive (pH < 7.3, INR > 6.5, Cr > 3.4, Stage III encephalopathy); supportive — fluids, electrolytes, antiemetic ondansetron; psychiatric eval after stabilization (this is suicide attempt); social work + safety plan + lethal means restriction"
+      },
+      {
+        "label": "C",
+        "text": "Discharge home"
+      },
+      {
+        "label": "D",
+        "text": "Flumazenil"
+      },
+      {
+        "label": "E",
+        "text": "Naloxone"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Acetaminophen = leading cause acute liver failure US/UK. Rumack-Matthew nomogram (4-24 hr) guides NAC need. NAC effective if < 8-10 hr. IV NAC standard 21-hr regimen. King's College criteria for transplant. Psychiatric eval mandatory after intentional ingestion (lethal means + safety).",
+    "difficulty": "hard",
+    "board_section": "ems_mgmt",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "AACT/EAPCCT Position Paper Acetaminophen 2014; Rumack-Matthew Nomogram"
+  },
+  {
+    "scenario": "เด็กชายอายุ 2 ปี BW 12 kg พบเปิดขวด adult prenatal vitamin iron 80 mg/tablet กิน 30 เม็ด (2,400 mg = 200 mg/kg elemental iron — ในขวด FeSO4 elemental ≈ 65 mg/tablet = ~108 mg/kg) 2 ชม ก่อน อาเจียนหลายครั้ง bloody, lethargic\n\nV/S: HR 168, BP 78/40, RR 38, SpO2 96%, BW 12 kg\nGen: lethargic, abdominal tenderness, vomiting, melena\n\nABG: pH 7.20, HCO3 12 (high AGMA), lactate 8\nSerum iron 1,200 mcg/dL (4 hr level — toxic > 500), AST 240, ALT 180\nAXR: radiopaque tablets in stomach + small bowel",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Activated charcoal"
+      },
+      {
+        "label": "B",
+        "text": "Severe Iron Toxicity (ingestion > 60 mg/kg elemental, peak 4-6 hr, serum > 500 mcg/dL or symptoms): activated charcoal NOT effective (doesn't bind iron); GI decontamination — whole bowel irrigation with PEG-electrolyte solution (25-40 mL/kg/hr via NG) if tablets visible on KUB + significant ingestion; gastric lavage controversial selective; aggressive IV crystalloid resuscitation (large losses GI + 3rd space + capillary leak); IV Deferoxamine chelation — 15 mg/kg/hr IV continuous infusion (max 6 g/24 hr) when serum iron > 500, severe symptoms, metabolic acidosis, or shock; classic 'vin rose' urine indicates chelation; continue until clinical improvement, serum iron < 350, urine returns clear, acidosis resolved (typically 24 hr); side effects deferoxamine — hypotension (slow rate), pulmonary toxicity, anaphylactoid; correct acidosis, glucose, coagulopathy; LFT monitoring; ICU admission; child safety — accidental childproof packaging counseling"
+      },
+      {
+        "label": "C",
+        "text": "Outpatient observation"
+      },
+      {
+        "label": "D",
+        "text": "Naloxone"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic alone"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Iron = leading cause peds poisoning death (historically). Stages: GI (0-6 hr), latent (6-24), shock/metabolic (12-48), hepatotoxicity (2-5 d), late scarring (4-6 wk). > 60 mg/kg = toxic, > 500 mcg/dL serum = severe. Deferoxamine for severe. Charcoal ineffective. WBI for radiopaque pills. Childproof packaging.",
+    "difficulty": "hard",
+    "board_section": "ems_mgmt",
+    "board_topic": "gi",
+    "board_age_group": "peds",
+    "reference_source": "AACT/EAPCCT Position Paper Iron Toxicity; Tintinalli Emergency Medicine"
+  },
+  {
+    "scenario": "เด็กชายอายุ 6 ปี known severe Hemophilia A (factor VIII < 1%) สะดุดตกบันได 4 ชม ก่อน อาเจียน 2 ครั้ง ปวดศีรษะ + ง่วงซึม + walk unsteady\n\nV/S: HR 92, BP 110/72, GCS 14 (E4V4M6), pupil R 4 mm sluggish, L 3 mm reactive\n\nCT brain: small (1.5 cm) subdural hematoma right frontoparietal, no midline shift, no mass effect\nNo previous inhibitor",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Wait + observe before factor replacement"
+      },
+      {
+        "label": "B",
+        "text": "Severe Hemophilia A with intracranial bleed (life-threatening = highest priority): IMMEDIATE Factor VIII replacement BEFORE any imaging if strongly suspected ICH (history alone enough — clinical context > confirmatory imaging delay); dose for major/CNS bleed — Factor VIII 50 IU/kg IV bolus (target factor level 100%, formula: 1 IU/kg raises factor by 2%), then continuous infusion 3-4 IU/kg/hr OR q8-12h dosing to maintain trough 50-100% × 14 days for CNS bleed; admit pediatric ICU + neurosurgery consultation; serial neuro exams + repeat CT; AVOID NSAIDs, antiplatelets, IM injection; if inhibitor present → bypassing agents — rFVIIa 90-120 mcg/kg q2-3h OR FEIBA 50-100 IU/kg q6-12h; emicizumab not for acute bleed treatment (prophylaxis only); long-term prophylaxis emicizumab subQ q1-2 wk if not already; comprehensive hemophilia center; PT/OT post-recovery; education + medical alert; counsel about activity"
+      },
+      {
+        "label": "C",
+        "text": "Aspirin"
+      },
+      {
+        "label": "D",
+        "text": "Surgery without factor first"
+      },
+      {
+        "label": "E",
+        "text": "Discharge home"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Hemophilia + suspected ICH = factor replacement BEFORE imaging (don't delay). Target 100% for CNS bleed, maintain 50-100% × 14 d. WFH 2020 guideline. Inhibitor → bypassing agents (rFVIIa, FEIBA). Emicizumab = prophylaxis only. Comprehensive care center coordination.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "hematology",
+    "board_age_group": "peds",
+    "reference_source": "WFH Guidelines for the Management of Hemophilia 2020"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 4 ปี ซีดเรื้อรัง ตั้งแต่อายุ 6 mo, ต้องได้ blood transfusion ทุก 3-4 wk ตับโต ม้ามโต face thalassemic 'chipmunk' frontal bossing maxillary prominence\n\nFamily: parents both beta-thalassemia trait\nHb electrophoresis: HbF 92%, HbA2 elevated, no HbA = beta-thalassemia major\n\nCurrent Hb 6.8 (pre-transfusion), ferritin 1,200 (rising 1 yr post-transfusion), Hb 9.2 post-transfusion baseline\nGrowth chart < 3rd percentile",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No transfusion needed"
+      },
+      {
+        "label": "B",
+        "text": "Beta-Thalassemia Major (Cooley anemia) — comprehensive care: hypertransfusion regimen — PRBC q3-4 wk maintain pre-transfusion Hb 9-10.5 g/dL (suppresses endogenous erythropoiesis → reduces extramedullary hematopoiesis + skeletal deformity + improves growth/quality of life); iron chelation MANDATORY once cumulative transfusion ≥ 20 units OR ferritin > 1,000 — deferasirox PO 14-28 mg/kg/d OR deferoxamine SC 8-12 hr × 5 nights/wk OR deferiprone PO TID; baseline + annual cardiac MRI T2* (iron-induced cardiomyopathy = leading death), liver MRI; endocrine — growth, puberty, thyroid, parathyroid, gonadal, glucose monitor + treat; bone density + osteoporosis prophylaxis; folate supplement; immunizations including pneumococcal/meningococcal/Hib (functional asplenia if splenectomy); HCV screening (transfusion); HSCT = potentially curative (HLA-matched sibling preferred, age < 14); gene therapy (lentiviral lovo-cel, CRISPR exa-cel) FDA-approved emerging curative; counseling family for siblings; psychosocial support; transition adult care"
+      },
+      {
+        "label": "C",
+        "text": "Splenectomy mandatory all"
+      },
+      {
+        "label": "D",
+        "text": "Iron supplement"
+      },
+      {
+        "label": "E",
+        "text": "Discharge no follow-up"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Beta-thal major = severe transfusion-dependent. Hypertransfusion + iron chelation cornerstones. Iron overload = cardiac/endocrine/liver toxicity. Cardiac MRI T2* monitors. HSCT curative. Gene therapy emerging (exa-cel, lovo-cel). Comprehensive care.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "hematology",
+    "board_age_group": "peds",
+    "reference_source": "TIF Guidelines for Management of Transfusion-Dependent Thalassemia 2021"
+  },
+  {
+    "scenario": "เด็กชายอายุ 4 ปี ไข้ + ปวดศีรษะ + สับสน 3 วัน + ชัก focal right side × 5 นาที × 2 ครั้ง วันนี้\n\nV/S: HR 132, BP 108/70, RR 24, SpO2 96%, Temp 39.4°C, BW 16 kg\nGen: lethargic, GCS 12, no neck stiffness obvious, occasional focal twitches right face\n\nCT brain: temporal lobe hypodensity bilateral (R > L) + edema\nMRI brain: temporal lobe T2/FLAIR hyperintensity bilateral asymmetric + cingulate involvement\nLP: WBC 250 (lymphocyte 80%), Protein 95, Glucose 56 (normal), RBC 850 (! suggests hemorrhagic temporal lobe)\nCSF HSV PCR: pending\nEEG: PLEDs (periodic lateralized epileptiform discharges) right temporal",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Wait for PCR before treatment"
+      },
+      {
+        "label": "B",
+        "text": "HSV Encephalitis (classic features — temporal lobe, hemorrhagic, focal seizure, PLEDs) = empirically treat IMMEDIATELY (don't wait PCR — delay = worse outcome): IV Acyclovir 60 mg/kg/d ÷ q8h (20 mg/kg/dose) × 14-21 days (peds higher dose than adult); ensure adequate hydration to prevent crystalline nephrotoxicity (renal monitoring + good UO); seizure management — load levetiracetam or fosphenytoin + ongoing maintenance; ICU monitoring + airway protection; treat increased ICP (head-up, mannitol, hypertonic saline) if signs; repeat LP at end of treatment with HSV PCR (negative before stop); EEG monitoring; AVOID delay — HSE has 70% mortality untreated, < 30% with treatment; counsel family — neurological sequelae common (memory, seizure, behavioral, cognitive); long-term neuro + neuropsych + epilepsy follow-up; family education home seizure plan"
+      },
+      {
+        "label": "C",
+        "text": "Steroid alone"
+      },
+      {
+        "label": "D",
+        "text": "Antibiotic only"
+      },
+      {
+        "label": "E",
+        "text": "Discharge home"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "HSV encephalitis = most common sporadic encephalitis, treatable. Temporal lobe involvement + focal seizure + PLEDs + hemorrhagic = classic. Empiric acyclovir EARLY = standard (mortality 70 → 20% with treatment). 14-21 d treatment + repeat LP. Long-term neuro sequelae common.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "peds",
+    "reference_source": "IDSA Encephalitis Guideline 2008; Tunkel CID 2008"
+  },
+  {
+    "scenario": "เด็กชายอายุ 18 เดือน 3rd febrile UTI ใน 6 mo (E. coli ทั้งหมด) ระหว่าง episodes ดีปกติ\n\nVCUG: bilateral Grade IV VUR (gross dilation ureter + pelvis + calyces with blunting of fornices)\nDMSA: small focal scarring left kidney\nRenal US: hydronephrosis bilateral mild-moderate\nBP normal, growth normal, no neurogenic bladder",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No intervention needed"
+      },
+      {
+        "label": "B",
+        "text": "Bilateral high-grade VUR with breakthrough UTIs + scarring: continuous antibiotic prophylaxis (CAP) — trimethoprim-sulfamethoxazole 2-3 mg/kg/d trimethoprim OR nitrofurantoin 1-2 mg/kg/d at bedtime (reduces febrile UTI; RIVUR trial 50% reduction); manage voiding dysfunction + constipation aggressively (treat any bowel-bladder dysfunction); monitor — annual US + selective DMSA, BP, growth; recheck VCUG 12-24 mo (resolution rate decreases with higher grade — Grade IV ~30-40% resolve); surgical or endoscopic correction (subureteral injection Deflux, ureteral reimplantation) considered if: breakthrough infection on CAP, progressive scarring, parental preference, persistent high-grade after age 5-6, non-compliance; long-term: BP, proteinuria, renal function monitoring (risk CKD, HT, pregnancy complication); patient + family education + voiding hygiene"
+      },
+      {
+        "label": "C",
+        "text": "Immediate kidney transplant"
+      },
+      {
+        "label": "D",
+        "text": "Discharge no follow-up"
+      },
+      {
+        "label": "E",
+        "text": "Chronic high-dose ibuprofen"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "VUR + recurrent febrile UTI + scarring = treat. AAP/AUA: CAP for selected high-grade VUR + recurrent UTI (RIVUR trial). Address bowel-bladder dysfunction. Surgical/endoscopic for breakthrough/persistent. Long-term renal/BP follow-up. Voiding habits matter.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "renal_gu",
+    "board_age_group": "peds",
+    "reference_source": "AAP/AUA Guideline VUR 2010 (updated); RIVUR Trial NEJM 2014"
+  },
+  {
+    "scenario": "ทารกชายแรกเกิด term BW 3,200 g พบ urethral meatus opening ที่ ventral surface penis (mid-shaft) + ventral curvature (chordee) + hooded foreskin (dorsal incomplete)\n\nไม่มี ambiguous genitalia, scrotum normal, testes palpable bilateral descended\nNo other dysmorphism, normal fontanelle, normal exam อื่น",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Circumcise routinely at 1 wk"
+      },
+      {
+        "label": "B",
+        "text": "Mid-shaft Hypospadias with chordee — DO NOT circumcise (foreskin needed for surgical repair); pediatric urology referral; surgical repair typically 6-18 months of age (single or staged tubularized incised plate, urethroplasty); pre-op assessment — rule out DSD if also undescended testes or ambiguous genitalia (karyotype + endo workup); post-op care: stent/catheter management, antibiotic prophylaxis, follow-up complications (fistula 5-15%, meatal stenosis, dehiscence); counsel family — cosmetic + functional good results, ongoing follow-up to puberty; psychosocial support; school + adolescent transition counseling"
+      },
+      {
+        "label": "C",
+        "text": "Surgery at age 10"
+      },
+      {
+        "label": "D",
+        "text": "Hormone alone"
+      },
+      {
+        "label": "E",
+        "text": "Discharge no follow-up"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Hypospadias = ~1 in 200-300 male births. Severity by meatal position. AVOID circumcision (foreskin for repair). Repair 6-18 mo. Pediatric urology. Rule out DSD if bilateral cryptorchidism or ambiguous. Excellent outcomes most.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "renal_gu",
+    "board_age_group": "peds",
+    "reference_source": "AAP Section on Urology; EAU Pediatric Urology Guidelines 2024"
+  },
+  {
+    "scenario": "ทารกชายอายุ 9 เดือน term, BW 4 kg (เกิด 3.5 kg) มา check up พบ right testis อยู่ใน inguinal canal palpable but undescended ไม่สามารถดึงลง scrotum left testis ปกติใน scrotum\n\nไม่มี hypospadias, ไม่มี ambiguous genitalia, normal phallus length\nNo previous descent attempted\nUS confirms right testis in inguinal canal",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Wait until puberty"
+      },
+      {
+        "label": "B",
+        "text": "Cryptorchidism (undescended testis): natural descent rare after 6 mo of age — refer pediatric urology for surgical management; orchiopexy recommended ที่อายุ 6-18 months (optimal window before age 1 yr per AUA 2014 + EAU); surgery — open inguinal vs laparoscopic (impalpable testes); benefits early orchiopexy — better fertility (preserve germ cells), easier examination for malignancy (testicular cancer 4-10× elevated risk vs general — surveillance lifelong), normal growth; hormonal therapy hCG/GnRH analogues NOT recommended first-line (low success + side effects); if impalpable bilateral testes + < 3 mo old + signs of virilization → URGENT endocrine + DSD workup (CAH karyotype 46,XX masculinized); counsel — lifelong testicular self-exam; semen analysis later in life if needed; address comorbid inguinal hernia (often coexistent)"
+      },
+      {
+        "label": "C",
+        "text": "hCG injection only"
+      },
+      {
+        "label": "D",
+        "text": "Discharge — outgrow"
+      },
+      {
+        "label": "E",
+        "text": "Chemotherapy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cryptorchidism ~3% term, ~30% preterm. Natural descent first 6 mo. Orchiopexy 6-18 mo optimal — reduces infertility + cancer risk. Hormonal therapy not first-line. Bilateral impalpable = endo + DSD workup. Lifelong cancer surveillance.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "renal_gu",
+    "board_age_group": "peds",
+    "reference_source": "AUA Guideline Cryptorchidism 2014; EAU Pediatric Urology"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 6 ปี ไข้สูง 40°C + ปวดเมื่อยกล้ามเนื้อ + ไอ + หอบเหนื่อย 2 วัน + อาเจียน เริ่มหอบเหนื่อยมากขึ้น 6 ชม ก่อนมา ED\n\nV/S: HR 152, BP 92/58, RR 48, SpO2 88% room air, Temp 39.6°C, BW 22 kg\nGen: alert but distress, accessory muscle use, bilateral crackles\n\nRapid Influenza A positive (H1N1); CXR: bilateral interstitial infiltrate + RLL consolidation\nCBC: WBC 4,200 (lymphopenia)\nCommunity outbreak Influenza A current",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bronchodilator only"
+      },
+      {
+        "label": "B",
+        "text": "Severe Influenza pneumonia (high-risk + hospitalization criteria): IV Oseltamivir 3 mg/kg/dose q12h × 5 days (start as soon as suspect, best within 48 hr but still benefit later in severe disease); admit + O2 support to SpO2 ≥ 92%; supportive — fluid management, antipyretic; consider concurrent bacterial superinfection (Strep pneumo, Staph aureus including MRSA, GAS) — empiric ceftriaxone + vancomycin if persistent fever, worsening, lobar consolidation, leukocytosis; ICU + HFNC/CPAP/intubation if severe respiratory failure; ECMO selected; isolation droplet + standard precautions; chemoprophylaxis household + close contacts at high risk (immunocompromised, < 5 yr, pregnant, chronic illness) — oseltamivir 1× daily × 7-10 d; influenza vaccine annually (best prevention); avoid aspirin (Reye syndrome); long-term: counsel post-influenza pneumonia surveillance"
+      },
+      {
+        "label": "C",
+        "text": "Antibiotic alone"
+      },
+      {
+        "label": "D",
+        "text": "Aspirin"
+      },
+      {
+        "label": "E",
+        "text": "Discharge home"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Severe influenza = hospitalize. Oseltamivir within 48 hr ideal but benefit even later in severe. Watch bacterial superinfection (Staph especially). Annual vaccination prevention. Reye syndrome — no aspirin. Chemoprophylaxis household high-risk.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "respiratory",
+    "board_age_group": "peds",
+    "reference_source": "AAP Influenza Recommendations 2024-2025; IDSA Influenza Guideline 2018"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 16 ปี มาคลินิก ขอคุมกำเนิด มี sexual activity 6 mo unprotected ครั้ง bf ใช้ withdrawal เคยขาดประจำเดือน 2 mo (UPT neg, MIA normal cycles since)\n\nBP 116/72, BMI 22, no contraindication migraine with aura, no smoking, no DVT Hx, no breast/cervical cancer family\nNo current STI symptoms; agrees to STI screen",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Don't discuss"
+      },
+      {
+        "label": "B",
+        "text": "Adolescent contraception counseling (confidential, evidence-based per AAP/ACOG): assess preferences + medical eligibility (CDC US-MEC 2024); ALL options + LARC = first-line offer per AAP — most effective, top-tier (IUD copper or LNG, etonogestrel implant); etonogestrel implant Nexplanon — most effective adolescent option (failure < 1%, 3 yr), reversible, no estrogen, can use breastfeeding; LNG-IUD or copper IUD — also top-tier, > 99% effective, 3-12 yr depending on type, can place in adolescents per ACOG; tier 2: DMPA injection q3 mo (bone density caution, weight gain), combined oral contraceptive pill, patch, ring (need adherence); always counsel about STI prevention — condoms PLUS LARC (dual protection); emergency contraception availability (ulipristal, LNG, copper IUD); screen + offer STI testing (chlamydia/gonorrhea, HIV, syphilis, hepatitis B); Pap smear start 21 yr; HPV vaccination; preventive counseling — alcohol/drug, mental health, safety; confidentiality unless harm to self/others"
+      },
+      {
+        "label": "C",
+        "text": "Refuse counseling"
+      },
+      {
+        "label": "D",
+        "text": "Only abstinence"
+      },
+      {
+        "label": "E",
+        "text": "Force parental consent"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "AAP/ACOG: confidential adolescent contraception counseling. LARC (implant, IUD) = first-line (most effective). Dual protection (LARC + condom) for STI. CDC US-MEC for safety. STI screening + HPV vaccine + mental health screen. Confidentiality (varies by state).",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "renal_gu",
+    "board_age_group": "peds",
+    "reference_source": "AAP Clinical Report on Contraception for Adolescents 2014; ACOG Committee Opinion; CDC US-MEC 2024"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 5 ปี แม่พามาเพราะเด็กเล่าว่า 'ลุงเอาของแข็งเข้าไป' 2 วันก่อน + dysuria + ปัสสาวะมีเลือด เคยปกติมาก่อน\n\nV/S ปกติ, BW 18 kg\nPE: anogenital exam — vaginal redness + small laceration introitus + bleeding scant + perianal bruise (yellow-green = > 24h) — no other PE injury\n\nAffect: child anxious, avoids eye contact, hesitant to speak; mother appropriate concern, brought immediately",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge — wait + see"
+      },
+      {
+        "label": "B",
+        "text": "Suspected Acute Pediatric Sexual Abuse (recent < 72 hr — forensic evidence window) — multidisciplinary urgent response: ENSURE child safety FIRST (do not leave with potential abuser, may need protective custody temporary), keep child with trusted caregiver; mandated reporter — IMMEDIATE report to child protective services (CPS) + law enforcement (legally required, even suspicion = report, no delay); refer to Child Advocacy Center / SANE-Pediatric trained provider for forensic medical evaluation (limit history-taking + exam to one trained interviewer/examiner to reduce trauma + preserve evidence); forensic evidence collection (rape kit) if within window (72-96 hr varies); STI testing (chlamydia, gonorrhea, trichomonas, syphilis, HIV, HBV, HCV) + pregnancy test if menarche; HIV PEP within 72 hr if indicated (28-d antiretroviral); STI prophylaxis (ceftriaxone + azithromycin + metronidazole for older); emergency contraception if post-menarche; hepatitis B vaccination if not immune; counseling — mental health referral immediate + ongoing trauma-focused CBT; medical follow-up 2-6 wk for STI + counseling; document carefully (verbatim quotes, body diagram, photo if SANE) — chain of custody; AAP Section on Child Maltreatment guideline; multidisciplinary team (medical, mental health, legal, social work)"
+      },
+      {
+        "label": "C",
+        "text": "Don't report"
+      },
+      {
+        "label": "D",
+        "text": "Discharge no eval"
+      },
+      {
+        "label": "E",
+        "text": "Confront alleged perpetrator"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Child sexual abuse = mandatory report (all healthcare providers). Child Advocacy Center coordinated multidisciplinary. Limit re-interviewing (trauma + investigation integrity). Forensic eval + evidence within 72-96 hr. STI/HIV PEP + EC. Trauma-informed care. Long-term mental health. Document carefully.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "AAP Clinical Report on Care of Child Sexual Abuse 2023; APSAC Practice Guidelines"
+  },
+  {
+    "scenario": "ทารกชายอายุ 8 เดือน BW 7.2 kg แม่เล่ากลิ้งจากโซฟา 1 ฟุต ทารกร้องไห้ไม่หยุด 1 ชม alert ตอนนี้\n\nPE: bulging fontanelle, ecchymosis right forehead + retinal hemorrhages bilateral (multiple, dot/blot/flame) + grip mark bruise bilateral upper arms + femoral fracture left + multiple healed rib fractures different ages on incidental CXR\n\nCT: bilateral subdural hematoma + different ages\nDevelopment normal; SES low; previous CPS reports for sibling\nMother story changes during interview",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge home with reassurance"
+      },
+      {
+        "label": "B",
+        "text": "Highly suspicious Non-Accidental Trauma (Abusive Head Trauma / Shaken Baby Syndrome): triad — retinal hemorrhages + subdural hematomas + cerebral edema/injury — pathognomonic when no other explanation; injuries inconsistent with history (8-mo-old not yet rolling cannot generate force of 1-ft fall to cause SDH/retinal hem/long bone Fx); ENSURE child safety FIRST — admit hospital, do not discharge with caregivers under suspicion, may need emergency protective custody; MANDATORY REPORT immediate to CPS + law enforcement (mandatory reporter — no need certainty, suspicion sufficient); medical evaluation — full skeletal survey (XR of every bone — repeat in 2 wk to detect healing fractures), bilateral ophtho exam dilated by ophthalmologist (document retinal hem), brain MRI for parenchymal/axonal injury, abdominal CT or LFT/amylase/lipase to evaluate occult abdominal trauma, coagulation studies + Cl to rule out bleeding disorder (preserve evidence), Cu/Vit C/Cu deficiency rule out bone disease; consult Child Abuse Pediatrician (board-certified subspecialty) for assessment; multidisciplinary team — social work, mental health, law enforcement, hospital legal; siblings — screen + protect (high risk also); detailed documentation + photo + verbatim quotes (chain of custody); long-term: neurological sequelae 80% (developmental delay, seizure, vision, cognitive); legal proceedings; long-term mental health + developmental services"
+      },
+      {
+        "label": "C",
+        "text": "Discharge"
+      },
+      {
+        "label": "D",
+        "text": "Don't report"
+      },
+      {
+        "label": "E",
+        "text": "Send home with abuser"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "AHT/SBS = leading cause death from child abuse. Triad: SDH + retinal hem + brain injury. History inconsistent with injury = key. Mandatory report. Comprehensive workup (skeletal survey, ophtho, MRI). Sibling protection. Long-term sequelae high. Child abuse pediatrician consultation.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "trauma",
+    "board_age_group": "peds",
+    "reference_source": "AAP Clinical Report on Abusive Head Trauma 2020; Child Abuse Pediatric Subspecialty"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 13 ปี น้ำหนักลด 5 kg ใน 3 mo + ใจสั่น + ทนร้อนไม่ได้ + เหงื่อออก + tremor + irritable + insomnia + ผลการเรียนลด\n\nV/S: HR 122 sinus, BP 138/72, BW 38 kg\nPE: diffuse goiter symmetric non-tender, ophthalmopathy mild (mild proptosis + lid retraction), warm moist skin, fine tremor, hyperreflexia\n\nTSH < 0.01, Free T4 4.2 (high), Free T3 12 (high), TSI/TRAb HIGH, anti-TPO + thyroid US: diffuse heterogeneous + increased vascularity",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Levothyroxine"
+      },
+      {
+        "label": "B",
+        "text": "Graves Disease pediatric: anti-thyroid drug FIRST-LINE (block + replace or titration) — Methimazole 0.2-0.5 mg/kg/d ÷ 1-2 doses (only PTU during pregnancy 1st trimester due to teratogenicity, methimazole preferred otherwise per AAP/ATA 2016) — duration 1-2 yr trial (remission ~25-30% pediatric — lower than adult); beta-blocker (propranolol 1-2 mg/kg/d ÷ 3-4 doses, max 60 mg/d) for symptomatic relief tachycardia/tremor first 2-4 wk; baseline + monthly LFT + CBC (rare agranulocytosis, hepatotoxicity — discontinue + alternative if occur); periodic TSH + Free T4 + Free T3 (TSH lags 6-8 wk); if treatment fails or recurs after 2-yr course → definitive therapy — RAI ablation (preferred in adolescents > 10 yr, post-puberty for fertility) OR total thyroidectomy (skilled surgeon); ophthalmopathy — most mild self-limit, severe → ophtho + steroid + selenium + RAI typically not recommended worsens; reproductive counseling adolescent female (methimazole teratogenic 1st trimester); psychosocial + school accommodation; monitor growth + puberty + bone density"
+      },
+      {
+        "label": "C",
+        "text": "Surgery first-line all"
+      },
+      {
+        "label": "D",
+        "text": "Discharge no treatment"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pediatric Graves rare, treatment more conservative than adult initially. Methimazole 1-2 yr trial (remission lower than adult). Beta-blocker symptoms. Monitor LFT/CBC. RAI or surgery if fails. AAP/ATA 2016 guideline.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "peds",
+    "reference_source": "ATA Guideline Management of Hyperthyroidism 2016"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 9 ปี DKA แรกเดิม pH 7.05 glucose 720 ตอนนี้ resuscitation 6 ชม IV fluid + insulin drip ดี glucose ลดมา 280 ตอนนี้\n\nแต่จู่ ๆ ก็มี headache + ซึม + อาเจียน vomiting + GCS ลด 14 → 11 + papilledema + HR 62 + BP 132/88 (Cushing reflex)\n\nABG: pH 7.28 (ดีขึ้น), Glucose 280, Na corrected 142 (rise from 134 — sign of edema)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Increase insulin drip rate"
+      },
+      {
+        "label": "B",
+        "text": "Cerebral Edema in pediatric DKA (most feared complication — 20-25% mortality if untreated, 25% morbidity in survivors): RECOGNIZE EARLY — clinical signs: headache, vomiting (after initial), altered mental status, bradycardia + HT (Cushing triad), papilledema, sluggish pupil, rapid corrected Na rise (warning sign); STOP IV fluid resuscitation rate (often over-aggressive contributes); reduce IV fluid 1/2 to 2/3 maintenance; head of bed 30°; immediate osmotherapy — 3% Hypertonic Saline 2.5-5 mL/kg over 10-15 min OR Mannitol 0.5-1 g/kg over 20 min (may need re-dose); intubate + mild hyperventilation transient bridge (avoid prolonged hypocapnia → reduce cerebral blood flow worsen ischemia); maintain euvolemia + adequate cerebral perfusion pressure; emergent CT head (rules out hemorrhage but treat clinically — don't delay osmotherapy for CT); ICU + continuous neuro monitoring + neurosurgery consultation; identify other reversible factors (electrolyte derangement, sepsis); continue cautious diabetic management — extend correction over 48 hr (not 24); risk factors for cerebral edema: severe acidosis at presentation, high BUN, treatment with bicarbonate, rapid sodium drop, young age (< 5), new-onset diabetes; family counsel + long-term neuropsychological evaluation"
+      },
+      {
+        "label": "C",
+        "text": "Stop all fluid"
+      },
+      {
+        "label": "D",
+        "text": "Give D50W"
+      },
+      {
+        "label": "E",
+        "text": "Increase rate of glucose drop"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cerebral edema in DKA = most feared, fatal if missed. Recognize warning signs (HA, vomit, Cushing, falling GCS, papilledema, paradoxical Na rise). Hypertonic saline OR mannitol IMMEDIATELY. Don't wait for CT. Reduce fluid. Avoid prolonged hyperventilation. Risk factors guide caution.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "peds",
+    "reference_source": "ISPAD DKA Guidelines 2022; Glaser PECARN NEJM 2018"
+  },
+  {
+    "scenario": "ทารกเพศหญิงอายุ 2 wk virilized genitalia (Prader stage III — fused labia, clitoromegaly) อาเจียน + diarrhea + weight loss 200 g + lethargy + tachycardia + hyperpigmentation + dehydration\n\nV/S: HR 178, BP 56/30, RR 48, SpO2 96%, Temp 36.4°C, BW 3.0 kg (เกิด 3.4 kg)\n\nLab: Na 122, K 7.2, Glucose 38, HCO3 12 (metabolic acidosis), 17-OH-progesterone HIGH, cortisol LOW, ACTH HIGH\nKaryotype 46,XX",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Surgery for genital correction immediately"
+      },
+      {
+        "label": "B",
+        "text": "Salt-wasting CAH (21-hydroxylase deficiency) with adrenal crisis = endocrine emergency: IMMEDIATE Hydrocortisone IV — 25 mg IV bolus (or 25-50 mg/m² depending source) STAT — STRESS dose for crisis, then 25-50 mg/m²/d ÷ q6h or continuous infusion; aggressive fluid resuscitation 20 mL/kg NSS bolus repeat as needed (severe dehydration) then maintenance + correction over 24-48 hr; correct hypoglycemia — D10W 2-5 mL/kg bolus; treat hyperkalemia — IV insulin + glucose, calcium gluconate (cardiac protection), albuterol nebulizer, kayexalate, dialysis if severe; treat acidosis (usually corrects with volume + glucose + Cortisol); once stable: maintenance regimen — Hydrocortisone 10-15 mg/m²/d PO ÷ TID + Fludrocortisone 50-150 mcg/d PO (mineralocorticoid) + salt supplement 1-2 g/d (NaCl) in infants until intake from food; STRESS dosing education — 3× dose for illness/fever/surgery, IM hydrocortisone for vomiting (kit + training); medical alert bracelet; pediatric endocrinology + multidisciplinary DSD team; gender assignment + psychosocial — discussed with multidisciplinary team + family (not just surgical decision; postpone elective genital surgery — controversial); monitor growth, bone age, virilization, fertility, puberty"
+      },
+      {
+        "label": "C",
+        "text": "Insulin alone"
+      },
+      {
+        "label": "D",
+        "text": "Discharge with oral medication"
+      },
+      {
+        "label": "E",
+        "text": "No steroid"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "CAH salt-wasting = leading cause neonatal female virilization + crisis. 21-hydroxylase = 90%. NBS includes 17-OHP. Crisis: emergency hydrocortisone + fluid + glucose + correct K. Lifelong replacement + stress dosing + salt. DSD team for gender + psychosocial. Genital surgery controversial.",
+    "difficulty": "hard",
+    "board_section": "ems_mgmt",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "peds",
+    "reference_source": "Endocrine Society CAH Guideline 2018; PES CAH Consensus"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 3 ปี แม่คลำพบก้อนใน abdomen ลูก, ไม่เจ็บ, น้ำหนักไม่ลด, ปัสสาวะเป็นเลือดบ้าง 2 wk, BP สูง\n\nV/S: BP 132/86, HR 102, BW 14 kg\nPE: large left flank smooth firm mass, ปกติเด็ก well-appearing, no other abnormality, no aniridia, no hemihypertrophy\n\nUS: 8 cm renal mass left kidney + intact capsule, no IVC thrombus\nCT chest + abdomen: large renal mass left + no metastasis, contralateral kidney normal\nBiopsy NOT performed (would upstage)\nFamily: no syndrome",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Biopsy first then chemo"
+      },
+      {
+        "label": "B",
+        "text": "Wilms Tumor (Nephroblastoma) — most common pediatric renal malignancy peak 2-4 yr (clinical/imaging diagnosis sufficient — biopsy not done in COG/SIOP protocols, upstages tumor): pediatric oncology + pediatric surgery + radiation oncology coordinated; COG approach (North America) — NEPHRECTOMY FIRST (radical nephrectomy with retroperitoneal lymph node sampling) → staging → adjuvant chemotherapy based on stage + histology; SIOP approach (Europe) — neoadjuvant chemotherapy first → nephrectomy → adjuvant; staging — chest CT (lung mets), abdominal CT/MRI (IVC tumor thrombus important), bone scan + brain MRI for rhabdoid/clear cell selected; favorable histology + early stage — excellent prognosis (cure 90%+); chemotherapy regimens — vincristine + actinomycin-D ± doxorubicin ± etoposide depending stage; radiation for higher stage; screening — Beckwith-Wiedemann, hemihypertrophy, WAGR (aniridia + GU + retardation), Denys-Drash — abdominal US q3 mo until age 8; surveillance post-treatment chest + abdomen imaging; long-term: renal function, cardiac (anthracycline), pulmonary (if XRT), secondary malignancy"
+      },
+      {
+        "label": "C",
+        "text": "Watchful waiting"
+      },
+      {
+        "label": "D",
+        "text": "Antibiotic"
+      },
+      {
+        "label": "E",
+        "text": "Steroid alone"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Wilms = most common renal malignancy peds (2-4 yr peak). Biopsy NOT done (upstages). COG: nephrectomy first; SIOP: neoadjuvant. Favorable hist + early stage = > 90% cure. Screen at-risk syndromes. Long-term toxicity monitoring.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "peds",
+    "reference_source": "COG/SIOP Wilms Tumor Protocols; AAP Section on Hematology/Oncology"
+  },
+  {
+    "scenario": "เด็กชายอายุ 2 ปี ปวดท้อง + คลำได้ก้อน abdominal + อ่อนเพลีย + เหนื่อยง่าย + bony pain + periorbital ecchymosis ('raccoon eyes') + small subcutaneous nodule pulsatile + diarrhea (VIP from tumor)\n\nV/S: HR 132, BP 102/68, BW 12 kg\nPE: large irregular firm abdominal mass crossing midline, hepatomegaly, opsoclonus-myoclonus (eye + body), no aniridia\n\nLab: catecholamines (urine VMA + HVA) HIGH, NSE HIGH, LDH HIGH, ferritin HIGH\nCT/MIBG scan: large adrenal mass with calcification + para-aortic LN + bony mets vertebra + femur + bone marrow aspirate POSITIVE for neuroblasts\nN-MYC amplification: positive (high-risk)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Surgery alone curative"
+      },
+      {
+        "label": "B",
+        "text": "High-risk Neuroblastoma (age > 18 mo, stage 4, N-MYC amplified, unfavorable histology) — multidisciplinary intensive multimodal therapy: pediatric oncology + surgery + radiation oncology + BMT center; intensive induction chemotherapy (cyclophosphamide + topotecan/etoposide + cisplatin + doxorubicin/vincristine) × 5-6 cycles; surgical resection of primary; consolidation with myeloablative chemotherapy + tandem autologous stem cell transplant (recent studies improve EFS); radiation therapy primary site + selected mets; differentiation therapy 13-cis-retinoic acid maintenance; anti-GD2 immunotherapy (dinutuximab + GM-CSF + IL-2) — major advance (COG ANBL0032 trial significantly improved survival); newer: anti-GD2 + chemo upfront; supportive — pain management, nutrition, central line, transfusion support, infection prophylaxis; opsoclonus-myoclonus — IVIG + steroid + rituximab (paraneoplastic); long-term: hearing (cisplatin), cardiac (anthracycline), fertility, secondary malignancy, growth/endocrine, neurocognitive; prognosis high-risk historically 30-50% 5-yr survival, improving with newer therapy; family counseling + comprehensive late effects clinic"
+      },
+      {
+        "label": "C",
+        "text": "Chemo only no immunotherapy"
+      },
+      {
+        "label": "D",
+        "text": "Wait + observe"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Neuroblastoma = most common solid tumor < 1 yr. Range: spontaneous regression in infants (stage 4S, MYCN-) to highly aggressive (high-risk MYCN+). Multimodal: chemo + surgery + RT + ASCT + anti-GD2 immunotherapy + retinoic acid. Opsoclonus-myoclonus paraneoplastic. Long-term toxicity monitoring.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "peds",
+    "reference_source": "COG Neuroblastoma Protocols (ANBL); Maris JN NEJM 2010"
+  },
+  {
+    "scenario": "เด็กชายอายุ 8 ปี ก้อนต่อมน้ำเหลืองที่คอข้างขวา 2 cm 3 wk + ไข้ต่ำ ๆ + tender 2 wk ก่อนคุยกับแมวบ้านโดน scratch ที่แขนข้างขวา ตรงนี้มี healed papule 1 cm ที่ข้อมือขวา; ไม่มี night sweat, no weight loss, no other LN\n\nBW 24 kg, no organomegaly\nCBC normal, ESR mildly elevated\nBartonella henselae IgG titer +",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Aggressive surgery + chemo"
+      },
+      {
+        "label": "B",
+        "text": "Cat Scratch Disease (Bartonella henselae): most cases self-limited (3-4 mo) — supportive care; for typical immunocompetent + mild disease, antibiotic limited benefit (no proven shortening of natural course); however, AAP recommends azithromycin 10 mg/kg PO day 1, then 5 mg/kg × 4 d (PO) for hastens resolution + accepted; warm compresses to LN; analgesia; do NOT incise + drain typically (sinus tract); needle aspiration if suppurative + symptomatic; reassurance; for severe disease (visceral, encephalopathy, neuroretinitis, hepatosplenic, endocarditis, immunocompromised) — antibiotic combination (azithromycin + rifampin/doxycycline) extended duration; cat avoidance not necessary (most resolution), flea control on pet; HIV/immunocompromised need investigation Bartonella bacillary angiomatosis (different organism); follow-up 2-4 wk; rule out other LN causes (mycobacteria atypical, tularemia, lymphoma) if persists > 2 mo, > 3 cm, hard, systemic symptoms → biopsy"
+      },
+      {
+        "label": "C",
+        "text": "Discharge no diagnosis"
+      },
+      {
+        "label": "D",
+        "text": "Surgical excision routine"
+      },
+      {
+        "label": "E",
+        "text": "Chemo"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cat scratch = Bartonella henselae from cat (especially kittens). Inoculation papule → regional LN 1-3 wk. Most self-limit. Azithromycin may hasten resolution. Severe/immunocompromised → combination antibiotic. Differential lymphadenopathy includes atypical mycobacteria, lymphoma — biopsy if atypical.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "peds",
+    "reference_source": "AAP Red Book 2024 Bartonellosis"
+  },
+  {
+    "scenario": "ทารกเกิดจากแม่ HIV+ on ART unsuppressed viral load 18,000 copies/mL ที่ delivery (NOT undetectable, NOT ideal) คลอด NL term BW 3,000 g\n\nNo prenatal care until trimester 3; baby asymptomatic, no obvious dysmorphism, well-appearing\nBirth: HIV PCR sent, awaiting result; CBC normal",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No prophylaxis, breastfeed normally"
+      },
+      {
+        "label": "B",
+        "text": "Perinatal HIV exposure HIGH-risk (maternal VL > 50, unsuppressed) — combination antiretroviral prophylaxis: start within 6-12 hr of birth (CRITICAL TIMING) — 3-drug ARV regimen — zidovudine + lamivudine + nevirapine (preferred) OR raltegravir-based per HIV pediatric specialist guidance, duration 6 wk; immediate consultation pediatric HIV specialist; HIV PCR DNA (NAT) at birth, 14-21 d, 1-2 mo, 4-6 mo (definitive exclusion 2 negative tests ≥ 1 mo + ≥ 4 mo); antibody at 18-24 mo confirm; AVOID breastfeeding — replacement feeding (formula) in resource-rich settings; if breastfeeding inevitable (resource-limited) → maternal ART + infant prophylaxis throughout; vaccinations standard except avoid live vaccines (BCG until HIV status known); PCP prophylaxis (TMP-SMX) start age 4-6 wk regardless of CD4 until HIV ruled out; comprehensive primary care + adherence support; partner notification + testing; mental health + social work; if infant infected — start cART immediately, comprehensive HIV care; counsel family + privacy"
+      },
+      {
+        "label": "C",
+        "text": "Single-drug ZDV only"
+      },
+      {
+        "label": "D",
+        "text": "No follow-up"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic alone"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Perinatal HIV exposure: high-risk = 3-drug prophylaxis (vs ZDV monotherapy for low-risk). Start within 6-12 hr. Duration 6 wk. Series of HIV PCR for diagnosis (Ab unreliable < 18 mo). Avoid breastfeeding in resource-rich. PCP prophylaxis. Multidisciplinary.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "id",
+    "board_age_group": "peds",
+    "reference_source": "HHS Perinatal HIV Guidelines 2024; AAP COID HIV Recommendations"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 7 ปี ไข้ 39.0°C + เจ็บคอ + กลืนเจ็บ × 2 วัน, ไม่ไอ, ไม่คัดจมูก\n\nV/S: HR 102, Temp 39.0°C, BW 22 kg\nPE: tonsils enlarged + exudate, tender anterior cervical LN, no cough, no congestion, palate petechiae, strawberry tongue, sandpaper rash trunk (scarlatiniform)\n\nRapid Strep A: positive\nCenter score 4-5",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No treatment needed"
+      },
+      {
+        "label": "B",
+        "text": "Streptococcal Pharyngitis + Scarlet fever (GAS confirmed): antibiotic Penicillin V PO 250 mg BID-TID (< 27 kg) or 500 mg BID (≥ 27 kg) × 10 days OR Amoxicillin 50 mg/kg/d (max 1,000 mg) once daily × 10 days (similar efficacy + better adherence) OR Benzathine penicillin G 600,000 U IM single dose (< 27 kg) or 1,200,000 U (≥ 27 kg) — single shot ensures compliance; for true penicillin allergy: cephalexin (non-anaphylactic), clindamycin, azithromycin (resistance rising — verify), clarithromycin; treatment goals — prevent acute rheumatic fever (best evidence within 9 d of symptom onset), reduce suppurative complication (peritonsillar abscess, OM, sinusitis), reduce contagion (24 hr after antibiotic = not contagious — return school); supportive — analgesia/antipyretic, fluids, salt water gargle; treat household contacts ONLY if symptomatic (not routine); recurrence within months — repeat treatment same; chronic carriers (asymptomatic + Rapid+) generally NOT treated; complications — RhF, PSGN, scarlet fever, peritonsillar abscess; follow-up if persistent symptoms; tonsillectomy criteria — recurrent (Paradise criteria) — not first-line"
+      },
+      {
+        "label": "C",
+        "text": "Antiviral"
+      },
+      {
+        "label": "D",
+        "text": "Antifungal"
+      },
+      {
+        "label": "E",
+        "text": "Discharge no antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "GAS pharyngitis = treat to prevent RhF + complications. Centor score helps clinical Dx; confirm with RADT (high specificity). Penicillin or amoxicillin first-line × 10 d. Scarlet fever = GAS + erythrogenic toxin. 24 hr post-abx → return school. Penicillin allergy → cephalexin most safe.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "peds",
+    "reference_source": "IDSA Guideline Streptococcal Pharyngitis 2012"
+  },
+  {
+    "scenario": "เด็กชายอายุ 4 ปี BW 18 kg พบจมในสระว่ายน้ำ 5-7 นาที EMS เริ่ม CPR pulseless rhythm asystole มา ED ต่อเนื่อง CPR\n\nณ ED: continued CPR + intubated + IV/IO access; pupils dilated mid-position, no spontaneous breath, no pulse\nMonitor: asystole, then PEA\nGlucose 80, K 5.2, Temp 32.0°C (mild hypothermia from cold water)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Stop resuscitation immediately"
+      },
+      {
+        "label": "B",
+        "text": "Pediatric Drowning Cardiac Arrest with hypothermia: continue aggressive ALS resuscitation — high-quality CPR with minimal interruption, depth 1/3 chest diameter, rate 100-120/min, allow full recoil; airway secured + ventilation 10/min asynchronous with chest compression; IV/IO Epinephrine 0.01 mg/kg (0.1 mL/kg 1:10,000) q3-5 min; manage rhythm per PALS — asystole/PEA = CPR + epi; identify + treat reversible causes (Hs and Ts) — Hypoxia (most important in drowning), Hypothermia (continue resuscitation until rewarm > 32°C — 'not dead until warm and dead'), Hypovolemia, H+ (acidosis), Hyperkalemia, Hypoglycemia, Tension PTX, Tamponade, Toxin, Thrombosis (PE/MI uncommon peds); ACTIVE rewarming — warm IV fluid 38-40°C, warmed humidified O2, bladder + gastric + thoracic lavage warm fluid, ECMO if available (Class I in hypothermia arrest); avoid hyperventilation; correct electrolytes; once ROSC — post-arrest care (targeted temperature management — recent THAPCA trials suggest 32-34°C × 2 days vs strict normothermia debated, AHA peds 2020: maintain 32-34°C OR 36-37.5°C without fever); neuro exam delayed prognostication; long-term — most survivors require comprehensive neuro rehab; consider organ donation if irreversibly nonresponsive; family support; prevention — pool fence, supervision, swim lessons, CPR education"
+      },
+      {
+        "label": "C",
+        "text": "Cease CPR before rewarm"
+      },
+      {
+        "label": "D",
+        "text": "Discharge"
+      },
+      {
+        "label": "E",
+        "text": "Defibrillation asystole"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Drowning = hypoxia primary mechanism. Hypothermia prolongs viability — continue resuscitation until rewarmed > 32-35°C ('not dead until warm and dead'). Reversible causes (Hs and Ts). Post-arrest TTM. Don't defibrillate asystole. Prevention = supervision + barriers + CPR education.",
+    "difficulty": "hard",
+    "board_section": "ems_mgmt",
+    "board_topic": "trauma",
+    "board_age_group": "peds",
+    "reference_source": "AHA PALS 2020; Wilderness Medicine Society Drowning"
+  },
+  {
+    "scenario": "เด็กชายอายุ 4 ปี BW 18 kg เกิดเหตุน้ำร้อนจากกาแฟราดลงไหล่ + แขน + อก หน้า L (เด็กล้ม) เผาผิวไหม้ตื้น scattered: full thickness 8% + partial thickness 18% (รวม TBSA burn ~26%)\n\nV/S: HR 138, BP 96/60, RR 32, SpO2 99%, Temp 36.4°C\nGen: alert, pain crying, no airway involvement (no soot, no singed hair, no stridor, no hoarseness)\nWeight = 18 kg",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge home"
+      },
+      {
+        "label": "B",
+        "text": "Pediatric Moderate-Severe Burn 26% TBSA — admit burn unit: airway evaluation (no signs above so observation) — early intubation if any signs inhalation; fluid resuscitation — Parkland formula 4 mL × kg × %TBSA (full + partial thickness, NOT superficial) over 24 hr = 4 × 18 × 26 = 1,872 mL Ringer's lactate, give 1/2 in first 8 hr from time of burn (not arrival), 1/2 over next 16 hr; pediatric variation — additional MAINTENANCE fluid (often D5LR or D5W after) for children — Galveston (5,000 mL × m²/TBSA + 2,000 mL × m² maintenance) or modified Parkland with maintenance; titrate to urine output 1 mL/kg/hr; analgesia adequate — IV morphine 0.05-0.1 mg/kg q2-4h; wound care — cool tap water cooling 20 min if within 3 hr but AVOID hypothermia; gentle wound cleaning; silver sulfadiazine or bacitracin or biological/synthetic dressings; tetanus prophylaxis (per status); circumferential burn → escharotomy assess; nutrition — high calorie + protein (2-3 g/kg/d); infection prevention; physical therapy early to prevent contracture; multidisciplinary burn center; long-term scarring + functional rehab; psychosocial; report if non-accidental suspected (pattern, history inconsistent)"
+      },
+      {
+        "label": "C",
+        "text": "Tubinated outpatient"
+      },
+      {
+        "label": "D",
+        "text": "Antibiotic prophylactic"
+      },
+      {
+        "label": "E",
+        "text": "Restrict all fluid"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pediatric burn fluid resus = Parkland or Galveston, NOT just Parkland (kids need MAINTENANCE fluid added). UO target 1 mL/kg/hr. Burn center for major burns. Early analgesia + wound care + nutrition. NAI screen if pattern inconsistent. Multidisciplinary including PT/OT/psych.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "trauma",
+    "board_age_group": "peds",
+    "reference_source": "ABA Practice Guideline; Pediatric Burn Resuscitation Consensus"
+  },
+  {
+    "scenario": "เด็กชายอายุ 2 ปี กลืนแบตเตอรี่กระดุม (button battery, 20 mm CR2032) 4 ชม ก่อน asymptomatic — เห็นในหลอดอาหารส่วนล่าง 1/3 บน CXR PA + lateral (double halo sign + step-off)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Outpatient observation"
+      },
+      {
+        "label": "B",
+        "text": "Esophageal Button Battery = EMERGENCY (alkaline injury caustic necrosis within 2 hr — can cause perforation, fistula, vascular injury, death even after hours): IMMEDIATE endoscopic removal in OR ภายใน 2 hours of ingestion regardless symptom (don't wait or observe) — gastroenterology/ENT urgent; pre-removal mitigation NEW 2023 NASPGHAN/NACER recommendation — administer HONEY 10 mL PO q10 min × up to 6 doses (if > 12 mo + < 12 hr from ingestion + no perforation) OR sucralfate suspension 10 mL q10 min (in hospital) — both shown to neutralize alkaline injury + reduce mucosal damage in delayed presentation; do NOT induce vomiting (corrosive); NPO; airway monitoring; post-removal — assess injury extent + monitor for delayed complications (esophageal stricture, perforation, aortoesophageal fistula → catastrophic hemorrhage, tracheoesophageal fistula); imaging — repeat imaging confirm removal; if perforation/mediastinitis → surgery + ICU; if battery gastric in asymptomatic + no esophageal injury + > 12 mo + > 15 mm → can sometimes observe with follow-up imaging; education prevention (childproof, lock electronics); reportable to National Capital Poison Center battery hotline (US 1-800-498-8666)"
+      },
+      {
+        "label": "C",
+        "text": "Wait until passes"
+      },
+      {
+        "label": "D",
+        "text": "Charcoal"
+      },
+      {
+        "label": "E",
+        "text": "Ipecac"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Esophageal button battery = TIME-CRITICAL emergency (alkaline burn within 2 hr). Immediate endoscopic removal. HONEY (or sucralfate) mitigation 2023 NASPGHAN: 10 mL q10 min × 6 doses for > 12 mo + < 12 hr. Delayed complications (stricture, fistula) up to weeks later. Childproof prevention.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "peds",
+    "reference_source": "NASPGHAN/NACER Button Battery Management 2023; National Capital Poison Center Triage Guideline"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 5 ปี chronic diarrhea + abdominal distension + ปวดท้องเรื้อรัง + irritable + ผลโรงเรียนตก + growth failure (น้ำหนัก + ส่วนสูง < 3rd percentile) × 1 yr ปกติ unrelated to vaccines or new food\n\nDiet: regular Western diet inc wheat\nPE: thin, pot belly, mild pallor, no rash\nFamily: aunt with type 1 DM, mother autoimmune thyroiditis\n\nCBC: mild iron-deficiency anemia\nTTG-IgA HIGH (10× ULN), total IgA normal, anti-EMA + \nIntestinal biopsy: villous atrophy Marsh 3b",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Steroid alone forever"
+      },
+      {
+        "label": "B",
+        "text": "Celiac Disease (TTG > 10× + biopsy-confirmed villous atrophy): STRICT LIFELONG gluten-free diet (avoid wheat, rye, barley + cross-contamination) — only effective treatment; refer pediatric gastroenterologist + dietitian (gluten-free education essential — labels, eating out, hidden gluten); replace nutritional deficiencies — iron, folate, vitamin D, calcium, B12, zinc selectively; monitor symptom resolution (weeks) + serology normalization (TTG falls 6-12 mo); resolution growth catch-up + symptoms; bone density assessment (osteopenia common); screen first-degree relatives (10% prevalence); associated conditions screen — Type 1 DM (5%), autoimmune thyroid (5-10%), Addison, Sjogren, IgA deficiency, dermatitis herpetiformis; pneumococcal vaccine (functional asplenia); psychosocial — adherence challenges adolescence; ESPGHAN 2020 recent: in some children with TTG > 10× ULN + EMA + + HLA-DQ2/DQ8 → can avoid biopsy (Dx without endoscopy) — biopsy still standard most; long-term complications poorly controlled — refractory celiac, EATL lymphoma, infertility, osteoporosis; school + family + restaurant + travel planning"
+      },
+      {
+        "label": "C",
+        "text": "Eliminate dairy only"
+      },
+      {
+        "label": "D",
+        "text": "Reduce gluten"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Celiac disease = lifelong gluten avoidance only effective treatment. ESPGHAN 2020: no-biopsy diagnosis if TTG > 10× ULN + EMA + + symptoms (select children). Screen relatives + associated autoimmune conditions. Nutritional repletion. Dietitian + family education. Long-term cancer/osteoporosis surveillance.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "gi",
+    "board_age_group": "peds",
+    "reference_source": "ESPGHAN Celiac Disease Guidelines 2020; NASPGHAN Position"
+  },
+  {
+    "scenario": "เด็กชายอายุ 13 ปี chronic intermittent abdominal pain RLQ + diarrhea 4-6 ครั้ง/วัน (intermittent bloody) + weight loss 7 kg ใน 6 mo + delayed puberty Tanner 2 + ครั้งล่าสุดมี perianal fistula + ตา anterior uveitis flare\n\nV/S: HR 92, BW 38 kg (had been 45 kg)\nPE: cachectic, RLQ tenderness, perianal tag + small fistula, clubbing early, no organomegaly\n\nCBC: Hb 9.8 (microcytic), albumin 2.6, ESR 78, CRP 95, ferritin low\nFecal calprotectin > 1,000 (very high)\nColonoscopy + ileoscopy: skip lesions ileum + terminal colon + perianal disease + cobblestoning + granulomas histology = Crohn disease",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Wait — surgery only"
+      },
+      {
+        "label": "B",
+        "text": "Pediatric Crohn Disease with growth failure + perianal + extraintestinal — moderate-severe: multidisciplinary pediatric gastroenterology team + dietitian + IBD nurse + psychology + adolescent medicine + ophthalmology; INDUCTION — exclusive enteral nutrition (EEN) 8 weeks (formula only, equally effective as steroid in pediatric CD, improves growth, no steroid side effects — first-line per ESPGHAN/NASPGHAN); OR systemic corticosteroid prednisolone if EEN not tolerated; biologic — Infliximab (anti-TNF) early in moderate-severe pediatric CD with growth failure or fistulizing/perianal (top-down approach evidence improving outcomes vs step-up) + concurrent immunomodulator (azathioprine 1-2.5 mg/kg or methotrexate 15 mg/m²/wk SC) selected to reduce immunogenicity; ALTERNATIVES — adalimumab, ustekinumab, vedolizumab, risankizumab (newer); perianal fistula — combined medical + EUA + seton drainage + antibiotic (cipro + metronidazole) + biologic; treat anemia (iron replacement IV often), nutritional repletion, vitamin D + calcium; growth monitoring + puberty staging; ophthalmology for uveitis (topical steroid + treat IBD); surveillance colonoscopy + cancer screening; immunization including live (varicella/MMR) BEFORE biologic; mental health + transition adult care; surgery — symptomatic fistula not responding, stricture, perforation, abscess, refractory disease, dysplasia"
+      },
+      {
+        "label": "C",
+        "text": "Antibiotic alone"
+      },
+      {
+        "label": "D",
+        "text": "Steroid forever"
+      },
+      {
+        "label": "E",
+        "text": "Discharge home"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pediatric Crohn = growth + nutrition focus. EEN first-line induction (vs steroid). Early biologic (top-down) for moderate-severe + complicating features improves long-term outcomes + growth. Perianal disease = combined medical + surgical. Multidisciplinary team. Vaccinate before biologic.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "gi",
+    "board_age_group": "peds",
+    "reference_source": "ESPGHAN/NASPGHAN Pediatric IBD Guidelines 2020"
+  },
+  {
+    "scenario": "เด็กชายอายุ 18 เดือน ไข้ 39°C + irritable + ดึงหู ซ้าย × 2 วัน + URI 4 วันก่อน\n\nV/S: HR 122, RR 28, Temp 39.0°C, BW 11 kg\nPE: TM left bulging + erythematous + decreased mobility on pneumatic otoscopy = AOM moderate-severe, no perforation, no posterior auricular swelling\nRight TM normal",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No treatment"
+      },
+      {
+        "label": "B",
+        "text": "Acute Otitis Media (AAP 2013 + 2022 update): antibiotic indicated < 6 mo all, 6-23 mo with unilateral severe, ≥ 2 yr severe or bilateral ≥ 2 yr if non-severe; this patient (18 mo, unilateral + severe) → antibiotic; Amoxicillin 80-90 mg/kg/d ÷ q12h × 10 days (< 2 yr) — first-line if no recent antibiotic use; Amoxicillin-clavulanate 90 mg/kg/d if: recent antibiotic < 30 d, concurrent conjunctivitis (likely H. flu), prior treatment failure, recurrent AOM, severe disease, child > 2 yr can use 7-day course; alternatives for penicillin allergy (non-anaphylactic) — cefdinir, cefuroxime, cefpodoxime; anaphylaxis — azithromycin (resistance rising); analgesia + antipyretic (ibuprofen + acetaminophen); shared decision-making 'watchful waiting' (Watch + Wait, with prescription back-up) for non-severe, unilateral, ≥ 2 yr; follow-up if no improvement 48-72 hr → reassess + escalate (amox-clav, ceftriaxone IM × 1-3 d); tympanostomy tubes for recurrent (≥ 3 in 6 mo or ≥ 4 in 12 mo) or chronic effusion + hearing/speech impact; PCV13/15/20 + influenza vaccine reduce AOM; breastfeeding + smoke avoidance preventive"
+      },
+      {
+        "label": "C",
+        "text": "Surgery first"
+      },
+      {
+        "label": "D",
+        "text": "Antiviral"
+      },
+      {
+        "label": "E",
+        "text": "Steroid"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "AOM = most common kid bacterial infection (Spn, H flu, M cat). AAP 2013/2022: antibiotic for severe or < 2 yr bilateral; amoxicillin first-line. Pain management critical. Watchful waiting in select. Recurrent → tubes. Pneumococcal vaccine prevention.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "peds",
+    "reference_source": "AAP Clinical Practice Guideline: AOM 2013/2022"
+  },
+  {
+    "scenario": "เด็กชายอายุ 4 ปี untreated AOM 10 วันก่อน ตอนนี้ ไข้สูง 39.5°C + ปวดหลังหู + บวมแดงด้านหลังใบหู ดันใบหูออกข้างหน้า + irritable + drowsy\n\nV/S: HR 132, RR 28, Temp 39.5°C, BW 18 kg\nPE: protruding right pinna outward + downward, post-auricular swelling + erythema + tenderness + fluctuance, TM right perforated purulent discharge, ตรวจ neuro ปกติ\n\nCBC: WBC 22,400 (left shift), CRP 168\nCT mastoid: opacification mastoid air cells + coalescent destruction bony septae + small subperiosteal abscess + intact intracranial",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Outpatient oral antibiotic"
+      },
+      {
+        "label": "B",
+        "text": "Acute Mastoiditis (complication AOM): admit + IV antibiotic urgent — Ceftriaxone 50-100 mg/kg/d (covers Spn, H flu, Strep, GAS) + Vancomycin 60 mg/kg/d if concern MRSA, or Pip-tazo if severe; ENT consultation urgent; if subperiosteal abscess → surgical drainage (myringotomy + tympanostomy tube + cortical mastoidectomy if coalescent or abscess or refractory); imaging — CT temporal bone + intracranial complication screen (epidural abscess, sigmoid sinus thrombosis, meningitis, brain abscess); intracranial complications → emergent neurosurgery + extended antibiotic + anticoagulation for sinus thrombosis (controversial); blood culture + ear discharge culture pre-antibiotic; analgesia + supportive; total antibiotic 2-4 wk IV → oral; hearing test + ENT follow-up; recurrent risk; counsel + education AOM treatment importance"
+      },
+      {
+        "label": "C",
+        "text": "Antiviral alone"
+      },
+      {
+        "label": "D",
+        "text": "Discharge home"
+      },
+      {
+        "label": "E",
+        "text": "Wait for spontaneous resolution"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Mastoiditis = AOM complication. Protruding pinna + post-auricular swelling = classic. CT for severity + intracranial complication screen. IV antibiotic + ENT + surgery if abscess/coalescent. Sigmoid sinus thrombosis + brain abscess = serious neurological complications.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "id",
+    "board_age_group": "peds",
+    "reference_source": "AAO-HNS Mastoiditis Clinical Practice"
+  },
+  {
+    "scenario": "เด็กชายอายุ 6 ปี ไข้ + เหนื่อย 3 วัน 1 wk ago — well-appearing ตอนนี้ มี slapped cheek แดงสด ทั้ง 2 ข้าง + lacy reticular erythematous rash trunk + arms + legs ปรากฏ 2 วัน, ไม่คัน, ไม่มีไข้ ตอนนี้\n\nPE: bilateral malar erythema + lacy rash limbs, no oral lesions, no other findings\nFamily: father chronic anemia (sickle cell), grandmother elderly\nNo joint complaint",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Aggressive antibiotic"
+      },
+      {
+        "label": "B",
+        "text": "Erythema Infectiosum (Fifth Disease, Parvovirus B19): supportive care — no specific antiviral, rash phase = not contagious (contagious during pre-rash febrile illness only); reassurance — self-limited 7-10 days, rash can wax/wane with heat/sun/exercise × wk-mo; antipyretic + comfort; safe return to school (rash phase non-contagious); aplastic crisis precautions — counsel family/contacts with chronic hemolytic anemia (sickle cell father — temporary red cell aplasia, ~2 wk transfusion-dependent crisis) — they may need transfusion + isolation if exposed; pregnant women contacts — counsel about risk fetal hydrops + miscarriage (1st trimester especially) — referral for serology + obstetric monitoring; immunocompromised — chronic infection risk → IVIG treatment; arthritis (especially adults more) self-limit weeks; rare complications — myocarditis, encephalitis; no vaccine available; long-term immunity following infection"
+      },
+      {
+        "label": "C",
+        "text": "Isolation indefinitely"
+      },
+      {
+        "label": "D",
+        "text": "Antiviral 6 weeks"
+      },
+      {
+        "label": "E",
+        "text": "Steroid"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Parvovirus B19 = fifth disease. Slapped cheek + lacy rash. Self-limit. Concerns: aplastic crisis in chronic hemolytic anemia (sickle cell), fetal hydrops in pregnancy, chronic anemia in immunocompromised. Rash phase NOT contagious — only pre-rash febrile. Supportive care.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "id",
+    "board_age_group": "peds",
+    "reference_source": "AAP Red Book 2024 Parvovirus B19"
+  },
+  {
+    "scenario": "เด็กชายอายุ 8 ปี 4 วัน ก่อนเป็น chickenpox + influenza, แม่ให้ aspirin ลดไข้ ตอนนี้ vomiting persistent 24 ชม + ซึม + irritable → lethargic + confused → in coma, no fever now\n\nV/S: HR 122, BP 132/88, RR 24, Temp 37.0°C\nGen: lethargic, GCS 11, hepatomegaly 3 cm, no jaundice, decerebrate posturing\n\nALT 850, AST 920, NH3 280 (high), INR 2.4, hypoglycemia 48, glucose, no bilirubin elevation\nBrain CT: cerebral edema",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Antibiotic only"
+      },
+      {
+        "label": "B",
+        "text": "Reye Syndrome (acute encephalopathy + fatty liver, association salicylate + viral illness — varicella/influenza): admit PICU; aggressive management cerebral edema — head of bed 30°, intubation + mild hyperventilation transient, osmotherapy (mannitol 0.25-1 g/kg or 3% hypertonic saline 2.5-5 mL/kg), maintain CPP, monitor ICP (consider invasive ICP monitor), avoid hypotonic fluids; correct hypoglycemia — D10W (often need ongoing infusion + hyperglycemic state target); correct coagulopathy — vitamin K, FFP if bleeding/procedure; correct electrolyte derangements + avoid hyponatremia (worsens edema); manage hyperammonemia — lactulose, neomycin/rifaximin (limited evidence in Reye but tradition); avoid sedatives/hepatotoxic; supportive — temperature regulation, GI prophylaxis, DVT prophylaxis if able, infection surveillance; rule out other causes (inborn errors of metabolism — urine organic acids, acylcarnitine, ammonia, lactate — especially recurrent Reye-like → MCAD/OTC etc); liver transplant evaluation for refractory liver failure; prevention — AVOID aspirin in children with viral illness/varicella/influenza (FDA black box) — use acetaminophen/ibuprofen; reportable to CDC; long-term: high mortality 20-40%, neurologic sequelae in survivors"
+      },
+      {
+        "label": "C",
+        "text": "Steroid alone"
+      },
+      {
+        "label": "D",
+        "text": "Discharge home"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic alone"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Reye syndrome = aspirin + viral illness (varicella, influenza) classic. Hepatic + brain dysfunction without jaundice + hyperammonemia + hypoglycemia + coagulopathy. Management ICU + cerebral edema + supportive. RULE OUT inborn errors metabolism. PREVENT — no aspirin in kids with viral illness (use acetaminophen).",
+    "difficulty": "hard",
+    "board_section": "basic_science",
+    "board_topic": "neurology",
+    "board_age_group": "peds",
+    "reference_source": "Reye Syndrome Surveillance CDC; AAP Avoidance of Aspirin in Children"
+  },
+  {
+    "scenario": "ทารกชายอายุ 24 hr ก่อน discharge แม่ถามว่าทำไมต้องเจาะส้นเท้า ผ่านมาสองวันได้รับ heel-stick \"PKU test\"",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Heel-stick tests only PKU"
+      },
+      {
+        "label": "B",
+        "text": "Universal Newborn Screening (NBS) per state mandates — typically tests > 30 conditions ในแผง expanded screening (US RUSP / Thai NBS): metabolic — phenylketonuria, MSUD, homocystinuria, tyrosinemia, galactosemia, fatty acid oxidation (MCAD, VLCAD, LCHAD), organic acidemias (MMA, PA, IVA, GA1); endocrine — congenital hypothyroidism (CH), congenital adrenal hyperplasia (CAH); hemoglobinopathies — sickle cell, beta-thalassemia; cystic fibrosis (IRT ± DNA), severe combined immunodeficiency (SCID — TREC assay), spinal muscular atrophy (SMA), lysosomal storage disease (Pompe, MPS-I, others — newer additions), critical congenital heart disease (CCHD — pulse oximetry), hearing screen (OAE/AABR); rationale — early detection of treatable disorders to prevent disability + death (success stories — PKU, CH, CAH, MCAD, SCD); collection 24-48 hr to allow milk feeding (avoid false negatives); positive screen = NOT diagnosis (confirmatory testing needed urgent), counsel families carefully; primary care + subspecialty referral for positives; education + family-centered approach; recheck — if early discharge before 24 hr or NICU/transfusion → repeat; coordinated with genetic counseling"
+      },
+      {
+        "label": "C",
+        "text": "Optional only"
+      },
+      {
+        "label": "D",
+        "text": "Wait until 6 weeks"
+      },
+      {
+        "label": "E",
+        "text": "Single disease test"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "NBS = public health success — early detection treatable diseases. US RUSP > 30 conditions, varies by state. Heel-stick 24-48 hr + pulse oximetry + hearing screen. Positive screen needs confirmatory testing + urgent subspecialty. Improves outcomes for many treatable conditions.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "peds",
+    "reference_source": "ACMG/HRSA Recommended Uniform Screening Panel (RUSP); Thai NBS Program"
   }
 ]
