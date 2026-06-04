@@ -1,0 +1,172 @@
+[
+  {
+    "scenario": "ผู้ป่วยอายุ 68 ปี underlying HT, T2DM, CAD post-PCI 2 ปีที่แล้ว — pre-op evaluation for elective open AAA repair\n\nFunctional capacity: 4 METs (can walk up stairs)\nMeds: aspirin, atorvastatin, metoprolol, enalapril, metformin\nNo angina + no recent CHF + no arrhythmia\nLab: HbA1c 7.2%, Cr 1.2, normal CBC, BUN\nEKG: old Q wave inferior, no acute changes\nEcho: LVEF 50% with mild inferior hypokinesia",
+    "choices": [
+      { "label": "A", "text": "Cancel surgery" },
+      { "label": "B", "text": "Pre-op cardiac evaluation per AHA/ACC 2014 + ESC 2022 — High-risk surgery (vascular) + intermediate risk patient: (1) RCRI = 2 (CAD + DM on insulin if applicable, or here CAD + high-risk surgery) — intermediate risk (2-2.4%); (2) Functional capacity ≥ 4 METs adequate; (3) **Continue chronic medications**: aspirin (continue per surgical bleeding risk — vascular usually continue), statin (continue — cardioprotective, mortality benefit), beta-blocker (continue — sudden discontinuation harmful); ACE inhibitor — hold morning of surgery (hypotension intra-op); metformin — hold day of surgery (lactic acidosis risk if AKI); (4) **No additional stress testing** indicated (functional capacity OK); (5) **Pre-op consultation as needed**: cardiology if symptoms or new abnormalities; (6) Glycemic control: target intra-op 140-180; (7) Anesthetic plan: epidural for analgesia (open AAA), general anesthesia, invasive monitoring (arterial line, CVL), aortic cross-clamp considerations, cell saver, blood products available, temperature management; (8) Multidisciplinary: surgery + anesthesia + cardiology if needed; (9) Post-op: ICU monitoring, pain control, continue beta-blocker + statin, DVT prophylaxis, hyperglycemia management" },
+      { "label": "C", "text": "Cardiac catheterization preoperative" },
+      { "label": "D", "text": "Stop all medications" },
+      { "label": "E", "text": "Refuse surgery" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pre-op cardiac evaluation: AHA/ACC 2014 stepwise approach. RCRI + functional capacity. Continue chronic medications (beta-blocker, statin) — sudden discontinuation harmful. Hold ACE inhibitor day of surgery. Metformin caution AKI. No additional stress test if functional capacity adequate. Pre-op coronary revascularization not routinely beneficial (CARP trial). Anesthetic plan + ICU monitoring.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "AHA/ACC Perioperative Guidelines 2014; ESC/ESA 2022"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี underlying obesity BMI 38, OSA on CPAP, hypertension — undergoing elective laparoscopic cholecystectomy\n\nMallampati class IV, thyromental distance 5 cm, limited neck extension, large neck circumference 45 cm, beard\n\nPredicts difficult airway",
+    "choices": [
+      { "label": "A", "text": "Standard induction without preparation" },
+      { "label": "B", "text": "Difficult Airway Management — pre-op preparation: (1) **Predict difficult airway**: LEMON (Look, Evaluate 3-3-2, Mallampati, Obstruction, Neck mobility), MOANS (Mask, Obese, Age, No teeth, Stiff lungs); (2) **Multimodal preparation**: 2 difficult airway providers available, multiple equipment options ready; (3) **Pre-oxygenation thoroughly** (3-5 min FRC washout or 8 vital capacity breaths); high-flow nasal O2 during apnea (THRIVE — Transnasal Humidified Rapid Insufflation Ventilatory Exchange); (4) **Awake fiberoptic intubation** preferred for known/predicted difficult airway — sedation (dexmedetomidine, remifentanil), topical anesthesia (lidocaine spray/nebulized/atomized), supplemental O2; (5) **Video laryngoscopy** (GlideScope, McGrath, C-MAC) — better view + first-attempt success; (6) **Supraglottic airway** (LMA Fastrach, iGel, AirQ — conduit for ETT) — backup or primary; (7) **DAS (Difficult Airway Society) algorithm**: Plan A (intubation) → Plan B (SGA) → Plan C (face mask ventilation) → Plan D (emergency front of neck access — cricothyrotomy, surgical airway); (8) **Equipment ready**: bougie, multiple ETT sizes + types, multiple laryngoscope blades, SGA, fiberscope, cricothyrotomy kit; (9) **Communication + team**: brief plan + contingencies; (10) **Avoid prolonged hypoxia**: limit attempts (3 max), maintain oxygenation between attempts, wake patient if unable to intubate or ventilate (\"awaken\" option); (11) **OSA considerations**: continue CPAP intra-op (some surgeries) + post-op; (12) **Documentation** of difficult airway + future planning" },
+      { "label": "C", "text": "Blind nasotracheal" },
+      { "label": "D", "text": "Surgery without intubation" },
+      { "label": "E", "text": "Refuse case" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Difficult airway management: prediction (LEMON, MOANS) + preparation. Awake fiberoptic intubation preferred for known/predicted. Video laryngoscopy improves first-pass success. DAS algorithm: Plan A→B→C→D. Equipment ready. Team communication. Limit attempts (3). Awaken option. OSA continuation CPAP. Documentation. Modern: video laryngoscopy widespread + DAS algorithm.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "respiratory",
+    "board_age_group": "adult",
+    "reference_source": "ASA Difficult Airway Guidelines; Difficult Airway Society UK"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 28 ปี healthy elective knee arthroscopy under spinal anesthesia (bupivacaine 10mg) + epinephrine\n\nProcedure: 45 min, uneventful\nPost-op: patient develops perioral numbness then dizziness then tinnitus then mental status changes then seizure\n\nUDS negative, no other drug exposure\nLA accidentally given IV vs spinal in error",
+    "choices": [
+      { "label": "A", "text": "Wait + see" },
+      { "label": "B", "text": "Local Anesthetic Systemic Toxicity (LAST) — life-threatening complication of LA: (1) **CNS symptoms first** (lower threshold than CV): perioral numbness → tinnitus → metallic taste → dizziness → AMS → seizure → coma; (2) **CV later** (higher threshold): hypotension → arrhythmia (bradycardia, ventricular) → cardiac arrest; (3) **Bupivacaine cardiac toxicity** worst — high lipid solubility + sodium channel blockade — refractory to standard ACLS; (4) **Immediate management** (ASRA Checklist 2017): - Call for help + LAST checklist + lipid emulsion; - Airway/breathing: 100% O2, hyperventilate to alkalosis (improves CV outcome); - Stop LA delivery if ongoing; - Seizure: benzodiazepine (lorazepam, midazolam) preferred over propofol (propofol may further reduce CV function); - **Lipid emulsion 20% (Intralipid)** — first-line for cardiotoxicity: 1.5 mL/kg IV bolus over 1 min (~100 mL adult) → infusion 0.25 mL/kg/min × 30 min minimum; repeat bolus + double infusion if needed; max 12 mL/kg total; mechanism — lipid sink + metabolic; (5) **Modified ACLS** for cardiac arrest: chest compressions, lipid emulsion priority over epinephrine (small doses 1 mcg/kg if needed — high-dose epi may worsen); AVOID vasopressin, beta-blocker, Ca channel blocker, LA (lidocaine); (6) **Cardiopulmonary bypass / ECMO** for refractory arrest; (7) **Prolonged resuscitation** (> 1 hour) — case reports of survival; (8) **Prevention**: aspiration test before injection, slow incremental injection, ultrasound guidance, test dose with epinephrine; appropriate dose for weight (max 2-3 mg/kg bupivacaine); (9) **Document + report** — quality improvement" },
+      { "label": "C", "text": "Calcium gluconate only" },
+      { "label": "D", "text": "Surgery" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "LAST = life-threatening LA complication. Mortality high if not recognized. CNS symptoms first → CV later. Bupivacaine cardiotoxicity worst. **Lipid emulsion 20% first-line treatment** (cornerstone). ASRA Checklist. Avoid vasopressin, beta-blocker, CCB, LA. Lipid sink mechanism. Prevention: ultrasound, aspiration test, test dose, max dose. Modern: lipid emulsion saved many lives.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "toxicology",
+    "board_age_group": "adult",
+    "reference_source": "ASRA LAST Checklist 2017; Neal JM et al. Reg Anesth Pain Med"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 32 ปี G2P1 GA 39 wk elective C-section under spinal anesthesia + bupivacaine + morphine + fentanyl\n\n5 min after spinal: BP drops 90/60 → 70/40, HR drops 92 → 55, patient nauseous\n\nFetal heart 142 stable",
+    "choices": [
+      { "label": "A", "text": "Wait + observe" },
+      { "label": "B", "text": "Post-Spinal Anesthesia Hypotension (Sympathectomy + IVC compression by gravid uterus): (1) **Left lateral tilt** (Wedge under right hip) — relieves IVC compression by gravid uterus, improves venous return; (2) **IV fluid co-loading** during spinal (better than pre-loading) — crystalloid + colloid; (3) **Vasopressor**: - **Phenylephrine** first-line (alpha-1 agonist — restores SVR + reflex bradycardia rare in OB); start prophylactic infusion 25-50 mcg/min; rescue bolus 50-100 mcg; - **Norepinephrine** alternative (alpha + mild beta — less bradycardia than phenylephrine; growing use); - **Ephedrine** (mixed alpha-beta) — historic first-line but causes neonatal acidosis more than phenylephrine (Ngan Kee); (4) **Bradycardia**: atropine 0.4-0.6 mg if symptomatic + hypotensive; (5) **Oxygen supplementation**; (6) **Nausea management**: ondansetron, metoclopramide; (7) **Monitor fetal heart** — fetal hypoxia risk from maternal hypotension; (8) **Prevention**: prophylactic phenylephrine infusion from time of spinal (mainstay modern OB anesthesia per Ngan Kee + Carvalho); left lateral tilt; fluid; (9) **Other causes of hypotension during C-section**: hemorrhage (placenta previa, abruption, atony), uterine inversion, amniotic fluid embolism, anaphylaxis, supine hypotensive syndrome; (10) Multidisciplinary: OB + anesthesia + neonatal team" },
+      { "label": "C", "text": "Supine flat position" },
+      { "label": "D", "text": "Reduce fluid" },
+      { "label": "E", "text": "Stop monitoring" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Post-spinal hypotension common in OB (sympathectomy + IVC compression). Left lateral tilt + IV fluid co-loading + phenylephrine prophylactic infusion = standard care. Modern: phenylephrine > ephedrine (better fetal pH). Norepinephrine emerging alternative. Bradycardia atropine. Fetal monitoring. Prevention better than treatment.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ASRA Recommendations; Ngan Kee WD Anesthesiology"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 14 ปี healthy elective tonsillectomy under general anesthesia\n\n30 min into surgery — temp rises rapidly 39.8°C → 40.5°C, HR 140, EtCO2 rising 35 → 55 mmHg despite increasing ventilation, muscle rigidity especially masseter, mottled skin, dark urine starts appearing\n\nUsing volatile (sevoflurane) + succinylcholine for intubation\n\nFamily: cousin died during dental surgery years ago",
+    "choices": [
+      { "label": "A", "text": "Increase volatile anesthetic" },
+      { "label": "B", "text": "Malignant Hyperthermia (MH) — rare life-threatening complication: triggered by volatile anesthetics + succinylcholine in genetically susceptible (RYR1, CACNA1S mutations — autosomal dominant): (1) **Stop triggering agents** immediately — volatile + succinylcholine; switch to non-triggering (propofol, opioid, NMB rocuronium/cisatracurium); change anesthesia circuit + soda lime + ventilator; (2) **Hyperventilate 100% O2** at 10 L/min minimum to flush volatile; (3) **Dantrolene** — specific antidote — 2.5 mg/kg IV bolus, repeat every 5-10 min up to 10 mg/kg total; dantrolene blocks RYR1 + decreases muscle Ca release; new formulation (Ryanodex) faster reconstitution; (4) **Active cooling**: cold IV fluids, ice packs to groin/axillae/neck, cooling blankets, peritoneal/gastric lavage with cold saline if severe; STOP at 38-38.5°C to avoid overshoot hypothermia; (5) **Treat acidosis**: bicarbonate, hyperventilation; (6) **Treat hyperkalemia**: insulin + glucose, Ca, kayexalate; (7) **Treat arrhythmias**: standard ACLS — but AVOID calcium channel blockers (interact with dantrolene); (8) **Monitor + treat rhabdomyolysis**: IV fluid, alkalinize urine (urine output > 2 mL/kg/hr), monitor CK + myoglobin + AKI; (9) **ICU admission** for at least 24-48 hours — recrudescence risk; continue dantrolene 1 mg/kg q6h × 24h; (10) **Counsel family** — autosomal dominant, family screening with muscle biopsy/in vitro contracture test or genetic testing; future surgeries need non-triggering anesthetic + MH precautions; (11) **MH Hotline** (US 1-800-MH-HYPER) — expert consultation; **MHAUS** (Malignant Hyperthermia Association)" },
+      { "label": "C", "text": "Wait + observe" },
+      { "label": "D", "text": "Increase muscle relaxant" },
+      { "label": "E", "text": "Stop monitoring" }
+    ],
+    "correct_answer": "B",
+    "explanation": "MH = anesthetic emergency. Triggered by volatile anesthetics + succinylcholine. Autosomal dominant (RYR1, CACNA1S). Hypermetabolic crisis. Dantrolene is specific antidote. Active cooling. Treat acidosis, hyperkalemia, rhabdo. ICU recrudescence risk. Family screening. Avoid CCB (interact). Modern: Ryanodex (faster dantrolene). MHAUS expert consultation. Modern mortality < 5% with prompt treatment (was > 70%).",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "peds",
+    "reference_source": "MHAUS Guidelines; ASA Practice Advisory"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 45 ปี elective laparoscopic cholecystectomy under general anesthesia\n\n15 min after IV abx (cefazolin): BP drops 130/80 → 60/30, HR rises 80 → 130, urticaria + flushing chest + wheezing + difficulty ventilating with high airway pressure + bronchospasm\n\nUsing propofol + remifentanil + sevoflurane + rocuronium + cefazolin",
+    "choices": [
+      { "label": "A", "text": "Continue case" },
+      { "label": "B", "text": "Intraoperative Anaphylaxis — anesthesia emergency: (1) **Immediate**: notify team, call for help, stop suspected trigger (cefazolin most likely, also rocuronium common); (2) **Epinephrine first-line**: 100-200 mcg IV bolus + repeat every 1-2 min as needed; severe — IV infusion 1-10 mcg/min titrated; (3) **Airway + ventilation**: 100% O2, may need increased PEEP for severe bronchospasm; consider salbutamol nebulizer; (4) **Volume resuscitation**: IV crystalloid 20-30 mL/kg rapid (distributive shock + capillary leak); colloid alternative; (5) **Reverse Trendelenburg or position to optimize venous return**; (6) **Secondary medications**: H1 antihistamine (diphenhydramine 50 mg IV), H2 antihistamine (ranitidine 50 mg IV), corticosteroid (hydrocortisone 200 mg IV or methylprednisolone 1-2 mg/kg) — prevent biphasic + late-phase; (7) **Glucagon** 1-5 mg IV if on beta-blocker (epinephrine-refractory); (8) **Refractory shock**: norepinephrine, vasopressin, methylene blue (selected); ECMO last resort; (9) **Consider whether to continue or abort surgery** — case-by-case based on stability + necessity; (10) **Post-event**: tryptase level (within 1-3h), document trigger, follow-up allergy testing + skin testing (4-6 weeks later for accurate); medic-alert; (11) **Documentation** for future anesthesia care; (12) **Differential**: hemorrhage, PE, MI, pneumothorax, MH, sepsis; (13) **Most common triggers**: NMB (rocuronium most), antibiotics (cefazolin, vancomycin), latex, chlorhexidine, contrast, blood products; (14) Multidisciplinary: anesthesia + surgery + allergy follow-up" },
+      { "label": "C", "text": "Antibiotic again" },
+      { "label": "D", "text": "Continue propofol" },
+      { "label": "E", "text": "Discharge to PACU" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Intraoperative anaphylaxis: anesthesia emergency. Most common triggers: NMB, antibiotics, latex. Epinephrine first-line. Volume resuscitation. Secondary meds (antihistamine, steroid). Glucagon for beta-blocker users. Tryptase level for confirmation. Future testing + documentation. Multidisciplinary care.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "toxicology",
+    "board_age_group": "adult",
+    "reference_source": "ASA + AAAAI + WAO Practice Parameter on Anesthetic Anaphylaxis"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 72 ปี G2P2 elective open hysterectomy under general anesthesia\n\nPost-op PACU: alert + cooperative initially → at 2 hours becomes confused, agitated, inattention, hallucinations, hyperactive, attempting to remove IV + Foley\n\nNo prior delirium history, no dementia, no substance use\nV/S: BP 142/85, HR 95, Temp 37.4°C, SpO2 96%\nLab: electrolytes normal, glucose 145, no infection signs",
+    "choices": [
+      { "label": "A", "text": "Discharge home" },
+      { "label": "B", "text": "Postoperative Delirium (POD) — common in elderly post-surgical: (1) **Identify + treat underlying causes** (multifactorial): - **Pain** (under or over-treated); - **Medications** (opioid, benzodiazepine, anticholinergic — Beers list); - **Hypoxia** (assess oxygenation); - **Electrolyte derangement** (Na, glucose, Ca, Mg); - **Infection** (UTI, pneumonia, line, surgical site); - **Constipation/urinary retention**; - **Sleep deprivation**; - **Withdrawal** (alcohol, benzo, nicotine); - **CNS event** (stroke, seizure); (2) **Non-pharmacologic management (cornerstone)**: - Re-orient frequently (clock, calendar, names); - Family presence + familiar objects; - Hearing aids + glasses; - Sleep-wake cycle (lighting, noise); - Minimize tethers (lines, restraints, Foley) — remove ASAP; - Mobility (sit up, walk); - Hydration; - Multimodal pain control reduce opioid; (3) **Pharmacologic (sparingly + low-dose)** — only for severe agitation/danger to self: low-dose haloperidol 0.25-0.5 mg or quetiapine 12.5-25 mg; AVOID benzodiazepines (worsen — except alcohol/benzo withdrawal); AVOID anticholinergic; (4) **Multidisciplinary**: anesthesia, surgery, geriatric medicine, nursing, family; (5) **HELP (Hospital Elder Life Program)** prevention bundle; (6) **Prevention** going forward: pre-op cognitive screening (Mini-Cog), Beers Criteria deprescribing, hearing/vision aids; (7) **Long-term outcomes**: persistent cognitive impairment possible, increased mortality + functional decline + LTC placement risk; (8) **Family education** + reassurance" },
+      { "label": "C", "text": "Restraint" },
+      { "label": "D", "text": "Long-acting benzo" },
+      { "label": "E", "text": "Ignore" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Postoperative delirium common in elderly. Multifactorial. Non-pharm management primary. Identify + treat causes. Pharmacologic for severe agitation only (low-dose antipsychotic). AVOID benzodiazepines, anticholinergics. HELP program. Long-term consequences. Family + multidisciplinary care. Prevention through pre-op screening + multimodal anesthesia + minimal opioids.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "ASA + APSF + AGS POD Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 28 ปี healthy female elective lap chole + general anesthesia\n\nPost-op: severe persistent nausea + vomiting × 6 hours despite IV ondansetron 4mg + IV metoclopramide 10mg\n\nMild + moderate hypotension + slightly dehydrated",
+    "choices": [
+      { "label": "A", "text": "Discharge with oral medications" },
+      { "label": "B", "text": "Post-Operative Nausea + Vomiting (PONV) — common after general anesthesia + abdominal surgery: (1) **Identify risk factors** (Apfel score 4 points — female + non-smoker + history of motion sickness/PONV + post-op opioids): - Female (highest risk); - Non-smoker; - Prior PONV/motion sickness; - Post-op opioids; (2) **Multimodal antiemetic prevention** for at-risk (≥ 2 factors): combine multiple classes — - 5-HT3 antagonist (ondansetron, granisetron, palonosetron — long-acting); - Dexamethasone (4-8 mg pre-induction); - Droperidol or haloperidol (D2 antagonist — QTc precaution); - Aprepitant (NK1 antagonist) — long-acting + effective; - Scopolamine patch (anticholinergic — placed > 2h pre-op); - Anti-histamine (promethazine, diphenhydramine); (3) **Rescue if PONV develops**: use different class than prophylaxis (since same class fails again); often combinations needed; (4) **Non-pharmacologic**: acupressure P6 (Neiguan point — wristbands), ginger, aromatherapy (isopropyl alcohol pads — limited evidence), hydration; (5) **Anesthetic technique adjustments**: TIVA with propofol (less PONV vs volatile), regional + neuraxial anesthesia, minimize opioids (multimodal pain), gastric decompression, avoid nitrous oxide; (6) **Hydration adequate**: IV crystalloid; (7) **Refractory PONV**: combinations of multiple classes + steroids + dexmedetomidine; (8) **Patient comfort**: significant patient satisfaction issue + can delay discharge + readmission risk; (9) Multidisciplinary: anesthesia + surgery + PACU + outpatient" },
+      { "label": "C", "text": "Surgery again" },
+      { "label": "D", "text": "Ignore" },
+      { "label": "E", "text": "Long-acting opioid" }
+    ],
+    "correct_answer": "B",
+    "explanation": "PONV common — multifactorial. Apfel score + risk factors. Multimodal antiemetic prevention. Rescue with different class. Non-pharmacologic adjuncts. Anesthetic technique adjustments. TIVA + regional anesthesia reduce PONV. Avoid nitrous oxide. Hydration. Modern: prophylaxis with multiple classes routinely.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "Society for Ambulatory Anesthesia Consensus Guidelines for PONV 2020"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 60 ปี post-knee arthroplasty Day 1 — uncontrolled severe pain despite IV morphine + oral oxycodone — pain VAS 8-9/10\n\nRequest assistance for pain management",
+    "choices": [
+      { "label": "A", "text": "Higher dose opioid" },
+      { "label": "B", "text": "Multimodal Post-Operative Analgesia — Opioid-Sparing: (1) **Reassess + diagnose**: rule out complications (compartment syndrome, infection, hematoma, nerve injury); (2) **Multimodal foundation**: - Scheduled acetaminophen 1 g IV/PO q6h (max 4 g/day); - NSAID (ketorolac 15-30 mg IV q6h max 5 days; or celecoxib 200 mg BID — caution renal, CV, GI); - Gabapentin or pregabalin (50-300 mg TID, dose adjust); - Ketamine low-dose infusion (0.1-0.3 mg/kg/hr) — opioid-sparing + anti-hyperalgesic; - Dexamethasone single dose (anti-inflammatory + antiemetic + analgesic); (3) **Regional anesthesia** considerations: - Femoral nerve block (best knee analgesia but motor weakness — fall risk); - Adductor canal block (preferred — preserves quadriceps strength + good analgesia); - Continuous catheter for prolonged effect; - Liposomal bupivacaine local infiltration (LIA — long-acting 72h); - Periarticular injection by surgeon; (4) **Ice + elevation + position**; (5) **Opioid as adjunct** (lower dose with multimodal): PCA (Patient-Controlled Analgesia), oral as transition; tramadol — caution interactions; avoid long-acting opioid PRN initially; (6) **Non-pharmacologic**: PT, mobility, distraction, mindfulness, music; (7) **Psychological**: chronic post-surgical pain risk — early intervention if catastrophizing, anxiety, depression; (8) **Discharge planning**: minimize discharge opioids (modern epidemic concerns), continue acetaminophen + NSAID schedule, taper opioid quickly, follow-up; (9) **Multidisciplinary**: anesthesia (pain service), surgery, nursing, PT, psychology; (10) **Pain at rest vs activity**: differentiate" },
+      { "label": "C", "text": "Discharge with oral opioid" },
+      { "label": "D", "text": "Ignore pain" },
+      { "label": "E", "text": "Surgery again" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Multimodal post-op analgesia = standard. Opioid-sparing through multiple mechanisms (acetaminophen + NSAID + gabapentinoid + ketamine + regional + steroid + non-pharm). Regional anesthesia (adductor canal for knee). Opioid PCA + oral as adjunct, minimize discharge prescription. Modern: addressing opioid epidemic. Multidisciplinary pain management.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "AAPM + APS + ASA + ERAS Pain Management Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 25 ปี G1P0 GA 40 wk in active labor at 6cm + epidural catheter placed for labor analgesia + bolus dose given\n\n10 min later: patient mentions difficulty breathing + speaking + then becomes mute + diaphoretic + hypotensive + bradycardic + dilated pupils + fully alert mental status (yet)\n\nUnable to elevate arms or push",
+    "choices": [
+      { "label": "A", "text": "Wait + observe" },
+      { "label": "B", "text": "High/Total Spinal — accidental intrathecal injection of epidural dose causing extensive sensory + motor + sympathetic block: (1) **Immediate** — call for help, OR/anesthesia, OB ready for emergency C-section; (2) **Airway + breathing**: respiratory compromise from intercostal + phrenic nerve block; intubate immediately if hypoxic/apneic; bag-mask ventilate; (3) **Cardiovascular**: profound hypotension + bradycardia from sympathectomy + cardiac accelerator block (T1-T4); aggressive IV fluid + vasopressors (phenylephrine or norepinephrine; epinephrine for bradycardia/cardiac arrest); atropine for bradycardia; (4) **Position**: avoid Trendelenburg (LA distribution worse + decreases venous return paradoxically); slight head up if possible; left lateral tilt to relieve IVC compression; (5) **Maintain fetal oxygenation**: maternal stability + position; fetal monitoring; (6) **Decision regarding delivery**: stable mother — continue monitoring; non-reassuring fetal status or unable to recover — emergency C-section under general (since spinal already in place but may not be effective if too high); (7) **Post-event**: monitor for prolonged block, document, debrief team; (8) **Cause**: catheter migration into intrathecal space, large bolus accidentally intrathecal, no test dose recognition; (9) **Prevention**: test dose for catheter placement (epinephrine), incremental dosing, aspiration before each bolus, observe for signs of intrathecal injection (rapid block onset, motor block, hypotension); (10) **Differential**: amniotic fluid embolism, eclampsia, anaphylaxis, LAST, pulmonary edema; (11) Multidisciplinary: anesthesia + OB + neonatal + nursing" },
+      { "label": "C", "text": "Increase epidural" },
+      { "label": "D", "text": "Discharge" },
+      { "label": "E", "text": "Refuse intervention" }
+    ],
+    "correct_answer": "B",
+    "explanation": "High/Total spinal = accidental intrathecal injection of epidural dose. Anesthesia emergency. Respiratory + CV compromise. Immediate intubation + ventilation if needed. Aggressive vasopressor + fluid + atropine. Left lateral tilt. Fetal monitoring + emergency delivery if needed. Prevention: test dose, aspirate, incremental dosing. Modern: ultrasound-guided neuraxial reduces risk.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "SOAP Practice Guidelines; ASA Anesthesia for Obstetrics"
+  }
+]
