@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import {
-  parseCsv, validateAndMapMcq, MCQ_CSV_HEADERS,
-  type AdminStudentSubject,
+  parseCsv, validateAndMapMcq, validateMcqRows, MCQ_CSV_HEADERS,
+  type AdminStudentSubject, type RawMcqRow,
 } from "./mcq-import";
 
 const subjects: AdminStudentSubject[] = [
@@ -105,5 +105,52 @@ describe("validateAndMapMcq", () => {
   it("returns headerError when columns missing", () => {
     const res = validateAndMapMcq([["subject", "exam_type"]], subjects);
     expect(res.headerError).toMatch(/ขาดคอลัมน์/);
+  });
+});
+
+describe("validateMcqRows (shared validator — used by AI PDF importer)", () => {
+  const baseRow: RawMcqRow = {
+    subject: "surgery",
+    exam_type: "NL2",
+    exam_source: "NL2 2024",
+    scenario: "ผู้ป่วยชาย 30 ปี ปวดท้องน้อยขวา...",
+    choice_a: "Acute appendicitis",
+    choice_b: "Acute cholecystitis",
+    choice_c: "Ureteric stone",
+    choice_d: "Diverticulitis",
+    choice_e: "Mesenteric adenitis",
+    correct: "C",
+    difficulty: "medium",
+    status: "review",
+  };
+
+  it("accepts a valid row object", () => {
+    const [row] = validateMcqRows([baseRow], subjects);
+    expect(row.errors).toEqual([]);
+    expect(row.insert).toMatchObject({
+      subject_id: "sub-surg",
+      audience: "student",
+      exam_type: "NL2",
+      correct_answer: "C",
+      status: "review",
+    });
+  });
+
+  it("defaults a blank answer to placeholder 'A' (no error)", () => {
+    const [row] = validateMcqRows([{ ...baseRow, correct: "" }], subjects);
+    expect(row.errors).toEqual([]);
+    expect(row.insert?.correct_answer).toBe("A");
+  });
+
+  it("still flags an invalid (non A-E) answer", () => {
+    const [row] = validateMcqRows([{ ...baseRow, correct: "Z" }], subjects);
+    expect(row.insert).toBeNull();
+    expect(row.errors.join(" ")).toMatch(/correct/);
+  });
+
+  it("flags unknown subject from AI output", () => {
+    const [row] = validateMcqRows([{ ...baseRow, subject: "made_up" }], subjects);
+    expect(row.insert).toBeNull();
+    expect(row.errors.join(" ")).toMatch(/made_up/);
   });
 });
