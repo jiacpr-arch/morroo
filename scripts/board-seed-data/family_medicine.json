@@ -4798,5 +4798,965 @@
     "board_topic": "signs_symptoms",
     "board_age_group": "adult",
     "reference_source": "NHPCO; CAPC; Ariadne SI"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 50 ปี — palpable thyroid nodule 1.8 cm, asymptomatic, normal TSH, no compression",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Surgery for all nodules"
+      },
+      {
+        "label": "B",
+        "text": "Thyroid Nodule Evaluation (ATA 2015): (1) **Initial workup**: TSH + thyroid US for all palpable / incidentally discovered nodules; (2) **TSH-based approach**: - TSH **low/suppressed** → radioiodine scan (hot nodule rarely malignant, hyperthyroid Rx if toxic); - TSH **normal/elevated** → US characterization; (3) **US classification (ACR TI-RADS or ATA sonographic patterns)** stratifies malignancy risk + biopsy threshold: - **TI-RADS 1-2 / Benign / Very low suspicion** — no FNA; - **TR3 / Low** — FNA if ≥ 2.5 cm or follow if ≥ 1.5 cm; - **TR4 / Intermediate** — FNA if ≥ 1.5 cm; - **TR5 / High suspicion** — FNA if ≥ 1.0 cm; - **High-risk features**: solid hypoechoic, microcalcifications, irregular margins, taller-than-wide, extrathyroidal extension, suspicious LN; (4) **FNA biopsy (US-guided)** — Bethesda system 6 categories: - **I** Non-diagnostic → repeat FNA; - **II** Benign → US surveillance 12-24 mo; - **III** AUS/FLUS → repeat FNA or molecular; - **IV** Suspicious for follicular neoplasm → lobectomy vs molecular; - **V** Suspicious for malignancy → surgery; - **VI** Malignant → surgery; (5) **Molecular testing** (Afirma, ThyroSeq, ThyGeNEXT/ThyraMIR) for indeterminate (Bethesda III, IV) — reduces unnecessary surgery; (6) **Treatment**: - **Benign nodule** — US surveillance + adjust intervals based on growth/changes; symptomatic / cosmetic → ethanol ablation / RF ablation / surgery; - **Differentiated thyroid CA (papillary > follicular)** — lobectomy vs total thyroidectomy ± LN dissection; RAI ablation selected; levothyroxine suppression; surveillance Tg + neck US; - **Medullary** — total thyroidectomy + central LN; calcitonin, CEA, RET mutation; - **Anaplastic** — aggressive, multimodal; - **Lymphoma, metastatic** — specific; (7) **Active surveillance** for low-risk papillary microcarcinoma (< 1 cm, well-differentiated) — alternative to surgery selected (Ito + others); (8) **Pediatric**: more likely malignant if found — refer endocrine + FNA threshold lower; (9) **Pregnancy**: FNA OK; defer surgery if possible to postpartum; RAI contraindicated; (10) **Family history**: MEN2 (medullary), FAP (PTC), Cowden — genetic considerations; (11) **Multidisciplinary**: PCP + endocrinology + endocrine surgery + cytopathology + radiology + nuclear medicine"
+      },
+      {
+        "label": "C",
+        "text": "Ignore — palpable nodules common"
+      },
+      {
+        "label": "D",
+        "text": "Random biopsy without US"
+      },
+      {
+        "label": "E",
+        "text": "Only TSH test"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Thyroid nodule: TSH + US for all. TI-RADS or ATA pattern guides FNA threshold (size + features). Bethesda categorization → management. Molecular testing for indeterminate. Surgical pathology directed treatment. Active surveillance selected. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "ATA Thyroid Nodule 2015; ACR TI-RADS"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี — LLQ pain × 2 d + low-grade fever + bowel change; mild-mod tenderness, no peritoneal signs, no leukocytosis severe; CT shows uncomplicated sigmoid diverticulitis",
+    "choices": [
+      {
+        "label": "A",
+        "text": "IV antibiotic for all uncomplicated"
+      },
+      {
+        "label": "B",
+        "text": "Acute Uncomplicated Diverticulitis (AGA 2015 + 2022): (1) **Diagnosis**: CT contrast preferred imaging (also assesses complications — abscess, perforation, fistula, obstruction); WBC + CRP; (2) **Classification**: uncomplicated vs complicated (abscess, perforation, fistula, obstruction, peritonitis, hemorrhage); (3) **Treatment uncomplicated outpatient** (selected patients): - **Antibiotics — selective use** (AGA 2015 update — not all patients need): - Consider observation without antibiotics in mild uncomplicated patients (AVOD + DIABOLO trials — no benefit antibiotic over supportive); - Reasonable: hospitalize / antibiotic if immunocompromised, comorbidity, elderly, complicated, can't tolerate PO, severe systemic; - If antibiotic — **amoxicillin-clavulanate** PO × 5-10 d (newer trials shorter courses) OR ciprofloxacin + metronidazole; - Hospital IV: ceftriaxone + metronidazole or pip-tazo; (4) **Diet**: clear liquid early, advance as tolerated; no evidence prolonged restriction; no need to avoid nuts, seeds, popcorn long-term (historical myth); (5) **Follow-up + colonoscopy after acute episode**: - **Routine colonoscopy 4-8 wk after recovery** for first episode in patients without recent colonoscopy — exclude malignancy (rates of CRC slightly elevated post-diverticulitis); evidence supports but some emerging modification for younger / clear-cut cases; (6) **Long-term management**: - **High-fiber diet** + adequate hydration — recurrence prevention; - **Physical activity** + weight; - **Avoid NSAIDs** (perforation risk); - **Smoking cessation**; - **Mesalamine** + rifaximin + probiotics — limited evidence; (7) **Surgery** (elective for recurrent or complicated, urgent for complications): - **Elective sigmoidectomy** — individualized based on recurrence frequency, severity, lifestyle impact, complicated episodes; previous threshold of 2 episodes no longer absolute (more individualized); - **Complicated abscess**: percutaneous drainage if > 4 cm; smaller may respond to antibiotics alone; - **Perforation / peritonitis** → urgent surgery (Hartmann's procedure traditional, primary anastomosis emerging); (8) **Complications watch**: - **Abscess**; - **Perforation** (free air → emergency); - **Fistula** (colovesical most common — UTI, pneumaturia, fecaluria); - **Obstruction**; - **Hemorrhage** (separate diverticular bleed); (9) **Recurrence common** (~ 30%); (10) **Multidisciplinary**: PCP + GI + surgery + radiology + IR (drainage) + dietitian"
+      },
+      {
+        "label": "C",
+        "text": "Surgery first episode"
+      },
+      {
+        "label": "D",
+        "text": "Avoid nuts/seeds long-term"
+      },
+      {
+        "label": "E",
+        "text": "No colonoscopy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Acute uncomplicated diverticulitis: CT diagnosis. Outpatient OK selected — antibiotics selective (AGA 2015), often supportive sufficient. Colonoscopy 4-8 wk post for first. Long-term high-fiber + lifestyle. Surgery individualized. Watch complications. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "AGA Diverticulitis 2015 + 2022"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี — microscopic hematuria (5 RBC/HPF) ตอนทำ annual exam; no UTI; smoker × 30 yr; HT",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ignore — anticoagulant"
+      },
+      {
+        "label": "B",
+        "text": "Microscopic Hematuria Workup (AUA 2020): (1) **Diagnosis**: ≥ 3 RBC/HPF on properly collected midstream urine confirmed on 1 of 2 urinalyses; (2) **Risk stratification AUA 2020 (replaces prior age-based)**: - **Low risk**: women < 50, men < 40, never smoker, < 10 RBC/HPF, no risk factors → repeat UA within 6 mo; if hematuria persists → reclassify; - **Intermediate risk**: 50-60 yo women, 40-60 yo men, 10-30 pack-yr smoking, 11-25 RBC/HPF, other risk factors → cystoscopy + renal US; - **High risk** (this patient): > 60 yo, > 30 pack-yr smoker, > 25 RBC/HPF, gross hematuria → cystoscopy + CT urography (CTU) — best test for upper tract; (3) **Rule out first**: UTI (treat + repeat), exercise, menstruation, sexual activity, trauma, GU procedure recent; (4) **Workup**: - **Urinalysis** confirm; - **Urine culture** rule out UTI; - **Urine cytology** — limited utility primary; useful selected (high-risk + cytology positive → urgent workup); - **Imaging**: - **CT urography** — gold standard upper tract (high-risk); - **Renal US** + KUB — alternative if CT contraindication / pregnancy / younger; - **MRI urography** alternative; - **Cystoscopy** — bladder evaluation (>= intermediate risk); - **Cr / BUN, BP**; - **Proteinuria, dysmorphic RBC, casts** suggest glomerular cause → nephrology workup (BMP, UPC, ANA, complement, hepatitis serology, etc.); (5) **Causes**: - **Urologic** (workup priorities high-risk): malignancy (bladder, kidney, prostate, urethra), stones, BPH, infection, trauma, polycystic kidney; - **Nephrologic / glomerular**: IgA nephropathy, thin BM disease, Alport, glomerulonephritis (post-infectious, lupus, vasculitis), other; - **Other**: medications (rifampin, NSAIDs), exercise; (6) **Smoking cessation** — bladder cancer major risk; (7) **Follow-up negative workup**: repeat UA periodically (annual) — many resolve spontaneously; consider repeat workup if persistent + change in risk; nephrology referral if glomerular features; (8) **Bladder cancer high index suspicion** smoker + hematuria — don't dismiss; (9) **Anticoagulation**: doesn't excuse workup — anticoagulant-related hematuria still needs evaluation if persistent; (10) **Multidisciplinary**: PCP + urology + nephrology + radiology + smoking cessation"
+      },
+      {
+        "label": "C",
+        "text": "Single UA negative — done"
+      },
+      {
+        "label": "D",
+        "text": "Antibiotic empirically"
+      },
+      {
+        "label": "E",
+        "text": "Wait for gross hematuria"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Microscopic hematuria: AUA 2020 risk-stratified workup. High-risk (smoker, > 60, > 25 RBC) → cystoscopy + CT urography. Rule out UTI/menstruation first. Glomerular features → nephrology. Smoking cessation. Don't dismiss bladder CA. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "AUA Microscopic Hematuria 2020"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 45 ปี — radicular leg pain + numbness + L5 distribution × 4 wk; no red flags; conservative therapy failing",
+    "choices": [
+      {
+        "label": "A",
+        "text": "MRI immediately for all"
+      },
+      {
+        "label": "B",
+        "text": "Lumbar Radiculopathy / Sciatica Management (ACP + NASS): (1) **Diagnosis**: history (radiating leg pain > back pain, dermatomal, exacerbated by Valsalva, sciatic stretch — SLR + crossed SLR), exam (neurologic — sensory, motor, reflexes); rule out cauda equina (saddle anesthesia, bladder/bowel) emergency; (2) **No imaging routinely first 4-6 wk** unless red flags or progressive neuro deficit; (3) **Conservative management 4-6 wk first** (most resolve within 3 mo without intervention): - Activity modification (avoid prolonged bed rest); - **NSAIDs** short-term; - **PT** — McKenzie method, core strengthening, neurodynamic mobilization; - **Education** + reassurance — favorable prognosis; - Heat / ice; - **Avoid opioids** as first-line (limited benefit + harms); - **Gabapentin / pregabalin** — modest evidence radicular pain (more for diabetic neuropathy); - **Oral steroids** — limited evidence for sciatica (METEOR trial — modest functional benefit); - **Topical agents**; - **Acupuncture** alternative; (4) **MRI lumbar** indicated for: - **Red flags** (cauda equina, malignancy, infection, fracture); - **Progressive neuro deficit**; - Failed conservative ≥ 6 wk + considering interventional/surgical; - Atypical / suspicious; (5) **Epidural steroid injection (ESI)**: - Modest short-term benefit for radicular pain (NASS); - Transforaminal or interlaminar; - Image-guided (fluoroscopy / US); - 1-3 typically, no more than 3/yr; - Risks: rare but serious (infection, hematoma, paralysis with cervical TF approach); (6) **Surgery indications**: - **Cauda equina** (emergent); - **Progressive motor deficit** (weakness); - **Refractory disabling pain ≥ 6-12 wk** + correlative imaging (microdiscectomy, decompression, sometimes fusion); - SPORT trial — surgery + conservative both effective long-term, surgery faster recovery; (7) **Yellow flags** (psychosocial chronicity risk): fear-avoidance, depression, work issues — address; (8) **Return to activity** + work modifications; (9) **Multimodal chronic** if persistent — CBT, multidisciplinary pain program; (10) **Multidisciplinary**: PCP + PT + pain medicine + spine surgery (ortho or neurosurgery) + behavioral health"
+      },
+      {
+        "label": "C",
+        "text": "Long-term opioid"
+      },
+      {
+        "label": "D",
+        "text": "Bed rest × 4 weeks"
+      },
+      {
+        "label": "E",
+        "text": "Surgery first-line"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Sciatica: rule out cauda equina. No imaging first 4-6 wk without red flags. Conservative (PT, NSAIDs, activity, education). MRI if red flags / refractory / progressive deficit. ESI selective. Surgery for emergent or refractory + correlative imaging. Yellow flags. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "ACP LBP; NASS"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 35 ปี — acute unilateral facial weakness (forehead + face) × 1 d, decreased tear + taste, ปวดหลังหู; no other neuro deficit",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No treatment — self-limited"
+      },
+      {
+        "label": "B",
+        "text": "Bell's Palsy Management (AAN 2012 + AAO-HNS 2013): (1) **Diagnosis clinical**: acute (< 72 h) peripheral CN VII palsy involving forehead (unlike central — preserves forehead); often unilateral; can include hyperacusis, decreased taste anterior 2/3 tongue, decreased lacrimation, postauricular pain; (2) **Differential** — rule out before Bell's palsy diagnosis: - **Central (stroke)** — preserves forehead, other neuro deficits; - **Lyme disease** — bilateral facial palsy, endemic area, tick exposure, classic erythema migrans (50%) → serology (high prevalence area), treat doxycycline; - **Ramsay Hunt syndrome (HZV)** — vesicles in ear canal, severe pain, sometimes hearing loss / vertigo → acyclovir + steroid + urgent ENT; - **Otitis media / mastoiditis**; - **Trauma / fracture**; - **Tumor** (slowly progressive, recurrent, complete + atypical features → MRI); - **Sarcoidosis, GBS, MS**; (3) **Workup**: clinical for typical; selected — Lyme serology endemic, HSV/VZV serology if vesicles, CBC, glucose, imaging if atypical/progressive/recurrent (MRI w/ contrast); (4) **Treatment — start within 72 h for best outcomes**: - **Prednisone 60 mg daily × 7 days then taper** — Class I evidence (Engstrom, Sullivan); improves probability complete recovery; - **Antiviral (acyclovir, valacyclovir)** — controversial, possible modest benefit added to steroid in severe cases (Class II); use combination if severe (House-Brackmann ≥ IV) per some guidelines; not effective alone; - **Eye care critical**: lubricating drops daytime, ophthalmic ointment + taping/patch nighttime, eye protection; ophthalmology if persistent (risk corneal abrasion + ulceration); - **Facial exercises / PT** — may help recovery; (5) **Prognosis**: - 70% complete recovery without treatment; - 85% with steroid; - Recovery 3 wk - 6 mo typically; - Persistent / synkinesis / facial spasm in 30%; - Worse prognosis: complete palsy, older, DM, HTN, taste loss, hyperacusis, postauricular pain severe; (6) **Refractory / no improvement**: - Refer ENT / neurology / facial nerve specialist; - Electrodiagnostic studies (ENoG, EMG) 5-21 days post-onset for prognostic + decision on intervention; - Surgical decompression — selected severe nonimprovement (controversial); - Botox + selective neurectomy for late synkinesis; - Facial reanimation surgery; (7) **Recurrent or bilateral** — investigate for underlying cause (Lyme, sarcoid, lymphoma, GBS); (8) **Pregnancy**: 3x higher; usually 3rd trimester / immediate postpartum; treatment + close monitoring; (9) **Patient education + emotional support**: facial appearance distressing; (10) **Multidisciplinary**: PCP + neurology + ENT + ophthalmology + PT + facial nerve specialist (refractory) + mental health if needed"
+      },
+      {
+        "label": "C",
+        "text": "Surgery first-line"
+      },
+      {
+        "label": "D",
+        "text": "Antibiotic for all Bell's palsy"
+      },
+      {
+        "label": "E",
+        "text": "No eye care needed"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Bell's palsy: peripheral CN VII (forehead involved). Rule out central, Lyme, Ramsay Hunt. Treatment within 72 h: prednisone 60 mg × 7 d → taper. Antiviral selected for severe. Eye care critical. Prognosis good — most recover. Refractory specialist. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AAN 2012; AAO-HNS 2013"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 25 ปี — generalized hives + lip swelling + dyspnea + dizziness 15 min after eating shellfish; BP 90/60",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Antihistamine alone"
+      },
+      {
+        "label": "B",
+        "text": "Anaphylaxis — Emergency (AAAAI + WAO 2020): (1) **Diagnosis**: rapid-onset (minutes to hours) of skin/mucosa involvement + ≥ 1 of (respiratory, hypotension/end-organ, GI, syncope); OR hypotension/respiratory after known allergen exposure; (2) **TRIGGER first-line: IM epinephrine** — DO NOT DELAY: - **0.3-0.5 mg adults** (0.01 mg/kg, max 0.5 mg) **IM into vastus lateralis (anterolateral thigh)** — best absorption; - **0.15 mg child < 30 kg**; - **Repeat q 5-15 min** if no improvement (~ 30% need repeat); - **SC less effective** than IM; - **IV epinephrine drip** for refractory in monitored setting only — high arrhythmia risk if bolus; (3) **Position**: supine + legs elevated if hypotensive; left lateral if pregnant; sitting if dyspnea; (4) **Adjunct therapies (after epinephrine, not as substitute)**: - **Oxygen** + airway support; - **IV fluid** crystalloid bolus (20-30 mL/kg adult or 10-20 mL/kg child); - **H1 antihistamine** (diphenhydramine, cetirizine) — symptom relief skin only, NOT life-saving; - **H2 antihistamine** (famotidine) — symptom relief; - **Inhaled bronchodilator** (albuterol) for bronchospasm; - **Corticosteroid** (methylprednisolone 1-2 mg/kg IV) — debated efficacy in preventing biphasic, some evidence not helpful; given still by many; (5) **Refractory anaphylaxis**: - IV epinephrine drip; - Vasopressors (norepinephrine, vasopressin); - Glucagon 1-5 mg IV (especially beta-blocker-blocked patients); - Methylene blue refractory shock; (6) **Observation post-event**: - 4-6 hours typical mild; - 8-24+ hours severe; - **Biphasic reactions** in 5-20% (most within 4-6 h, can be up to 72 h); - Disposition based on clinical + risk; (7) **Discharge planning**: - **Epinephrine auto-injector prescription (≥ 2 devices)** — patient + family + school; - **Education** on use; - **Anaphylaxis action plan**; - **Trigger avoidance counseling**; - **Allergy referral** for trigger identification + further management; - **Medical alert** identification; - **No discharge without epinephrine prescription**; (8) **Allergist evaluation**: skin testing, specific IgE, oral food challenge, drug challenge (selected), component-resolved diagnostics; (9) **Immunotherapy / desensitization**: - **Venom immunotherapy** highly effective (hymenoptera); - **Oral immunotherapy (peanut — Palforzia)** FDA-approved 4-17 yo; - **Drug desensitization** for required medications; - Aeroallergen SCIT/SLIT for allergic rhinitis (may reduce systemic); (10) **Specific allergen counseling**: - **Food**: read labels, restaurant communication, school plans; - **Drug**: medical alert, listed on chart, alternatives; - **Insect**: avoidance, removal techniques; - **Latex**: occupational + medical; - **Idiopathic** anaphylaxis approach; (11) **Comorbidity**: asthma well-controlled (highest mortality), mast cell disease (mastocytosis); (12) **Multidisciplinary**: PCP + ED + allergy/immunology + emergency response + family + school + pharmacy"
+      },
+      {
+        "label": "C",
+        "text": "Steroid alone"
+      },
+      {
+        "label": "D",
+        "text": "Wait for symptoms to progress"
+      },
+      {
+        "label": "E",
+        "text": "Subcutaneous epi only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Anaphylaxis: IM epinephrine IMMEDIATELY (0.3-0.5 mg vastus lateralis), repeat q 5-15 min if needed. Adjuncts (O2, IV fluid, H1/H2 antihistamine, bronchodilator, steroid) AFTER epi. Observation biphasic. Discharge with epi pen + plan + allergist referral. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "AAAAI Anaphylaxis 2020"
+  },
+  {
+    "scenario": "พ่อแม่มาขอเลื่อนวัคซีน MMR ลูก 12 mo เพราะกังวลเรื่อง autism + กลัวการเจ็บปวดของลูก",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Fire family for refusing"
+      },
+      {
+        "label": "B",
+        "text": "Vaccine Hesitancy Counseling (CDC + AAP + AAFP): (1) **Common parental concerns**: - Autism (myth from Wakefield retracted 1998 — extensively disproven across many large studies, > 1 million children); - Adverse events (most mild local, serious extremely rare per VAERS analyses); - 'Too many too soon' (immune system handles thousands antigens daily; combined vaccines safe + well-studied); - Disease 'natural'; - Pharmaceutical motivations / mistrust; - Ingredients (aluminum, thimerosal — removed from most childhood vaccines 2001 in US except multi-dose flu); - Religious / philosophical beliefs; - COVID-related amplification of hesitancy; (2) **Communication approach evidence-based**: - **Presumptive (not participatory) approach** — recommend strongly + matter-of-factly: 'Today Sarah is due for MMR, varicella, and Hib' (vs 'What do you want to do?'); evidence improves uptake; - **Motivational interviewing** for hesitant parents — open-ended, reflective listening, autonomy + collaboration; - **CASE approach** (Corroborate + About Me + Science + Explain/Advise) for serious concerns; - **Storytelling** + personal experiences; - **Address specific concerns** with evidence; - **Affirm parental love + caring**; - Avoid shaming; (3) **Specific autism + MMR**: - Wakefield 1998 fraudulent + retracted; - Over 1 million children studied across multiple meta-analyses — NO link; - Madsen, Hviid, others; - Real risks of measles (encephalitis, SSPE, death); recent outbreaks tragic; (4) **Vaccine schedule rationale**: - Each vaccine added based on disease burden + safety; - Combined / multiple at once safe + effective; - Delay = vulnerable window; - 'Alternative schedules' not evidence-based; - Catch-up if behind; (5) **Vaccine adverse events**: - VAERS surveillance system; - VICP (Vaccine Injury Compensation Program) — no-fault compensation; - Risk-benefit favors vaccination; (6) **State + school requirements**: - School entry; - Religious + medical exemptions (variable by state); - Recent legislation tightening exemptions in some states (California SB 277); (7) **Resources for parents**: CDC vaccine info, AAP HealthyChildren.org, Children's Hospital of Philadelphia Vaccine Education Center, Voices for Vaccines; (8) **Continuing the relationship**: - Don't fire vaccine-hesitant families (controversial but recommended); - Continue to recommend each visit; - Build trust over time; - Document discussions + refusal forms; (9) **Disease re-emergence**: measles in US (declared eliminated 2000) recurring with under-vaccination; pertussis outbreaks; recent vaccine-preventable deaths preventable; (10) **Provider self-care**: hesitancy + refusal frustrating; institutional support; (11) **Public health response**: outbreak vaccination, contact investigation, community education; (12) **Multidisciplinary**: PCP + pediatric specialty + public health + community + school + media"
+      },
+      {
+        "label": "C",
+        "text": "Skip discussion entirely"
+      },
+      {
+        "label": "D",
+        "text": "Random delayed schedule"
+      },
+      {
+        "label": "E",
+        "text": "Lecture parents"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Vaccine hesitancy: presumptive recommendation; MI for hesitant; address concerns with evidence (MMR-autism DISPROVEN); CASE approach. Continue relationship + document. Resources. Real disease risks (measles re-emergence). State/school requirements. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "peds",
+    "reference_source": "CDC Vaccine Communication; AAP"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 50 ปี — bright red rectal bleeding (BRBPR) per stool × 2 wk + perianal discomfort, no weight loss, last colonoscopy 5 yr ago normal",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ignore — hemorrhoids"
+      },
+      {
+        "label": "B",
+        "text": "Rectal Bleeding (BRBPR) Workup (AGA + ACG): (1) **History**: characterize bleeding (with/separate from stool, amount, color), associated (pain, itching, discharge, mass, change in bowel habits, weight loss, family history CRC, IBD, smoking, NSAIDs); (2) **Exam**: general, abdominal, rectal (inspection + DRE — fissures, hemorrhoids, masses, sphincter tone); anoscopy (in office) for direct visualization; (3) **Causes BRBPR**: - **Hemorrhoids** — most common (internal painless, external painful if thrombosed); - **Anal fissure** — painful (tearing pain during BM, sentinel tag posterior most common, anterior may indicate trauma/Crohn's); - **Polyps** — usually painless; - **Diverticular bleeding** (typically intermittent, painless, larger volume); - **Colitis** (IBD, ischemic, infectious, radiation); - **Colorectal cancer** (must rule out — esp older, anemia, weight loss); - **Anorectal trauma** (sexual, foreign body, instrumentation); - **Proctitis** (radiation, STI, IBD); - **Angiodysplasia** (typically right colon, painless); - **Solitary rectal ulcer**; (4) **Colonoscopy indications** (definitive): - **Age ≥ 40-45** with rectal bleeding (lower threshold age 40 emerging); - **Age < 40**: if persistent / recurrent, red flags (anemia, weight loss, family history, change in bowel habits), uncertain source — colonoscopy; if low risk + clear hemorrhoidal cause + responds to treatment → conservative + repeat eval if persistent; - **Anemia** present; - **Suspicion of malignancy**; - This patient at age 50 — colonoscopy indicated; (5) **Hemorrhoid management**: - **Conservative**: high-fiber diet + adequate fluid + sitz baths + topical (hydrocortisone, lidocaine); avoid straining + prolonged toilet; address constipation; - **Office procedures**: rubber band ligation (most effective), sclerotherapy, infrared coagulation; - **Surgery** (hemorrhoidectomy) for severe / Grade IV / refractory; - **Thrombosed external** — excision within 48-72 h if very painful; otherwise conservative; (6) **Anal fissure management**: - **Acute** — sitz bath + bulk laxative + topical analgesic; usually heal; - **Chronic** — topical nitroglycerin / diltiazem / nifedipine; botox; sphincterotomy if refractory; (7) **STI proctitis screening** for receptive anal sex + risk factors — NAAT chlamydia/gonorrhea + syphilis + HSV + HIV; treat per CDC; (8) **IBD considerations**: if persistent, systemic symptoms, atypical features → endoscopy + biopsy + workup; (9) **CRC age 45 screening start** USPSTF; this is opportunity for screening colonoscopy now; (10) **Multidisciplinary**: PCP + GI + colorectal surgery + dermatology selected + STI clinic if indicated"
+      },
+      {
+        "label": "C",
+        "text": "Skip colonoscopy"
+      },
+      {
+        "label": "D",
+        "text": "Topical only"
+      },
+      {
+        "label": "E",
+        "text": "Random imaging without rectal exam"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Rectal bleeding: characterize + DRE + anoscopy. Causes (hemorrhoid common, but rule out malignancy especially ≥ 45 yo). Colonoscopy threshold low (age ≥ 40-45 or red flags). Hemorrhoid + fissure conservative + procedures + surgery if refractory. STI proctitis screening. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "AGA Hemorrhoids; ACG CRC Screening"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 32 ปี G2P2 — 6 wk postpartum visit; comprehensive postpartum care",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single 6-wk visit only"
+      },
+      {
+        "label": "B",
+        "text": "Comprehensive 6-Week Postpartum Visit (ACOG 2018 + AAFP): (1) **ACOG 2018 update — postpartum care as ongoing process not single visit** — 'The 4th trimester' framework: - Initial contact (in-person or phone) within 3 wk; - Comprehensive postpartum visit by 12 wk (not just 6); - Tailored to needs; - Many specific issues (chronic disease management, lactation, mental health, family planning) address ongoing; (2) **Comprehensive assessment domains**: - **Mental health**: PPD (EPDS, PHQ-9), anxiety, PTSD (especially traumatic birth, NICU baby, prior trauma), postpartum psychosis (rare, emergency), substance use, intimate partner violence screen; - **Reproductive health**: contraception, fertility, sexual function, dyspareunia, return of menses; - **Lactation**: support, problems, weaning decisions, medications during breastfeeding (LactMed); - **Physical recovery**: perineal/cesarean healing, urinary + fecal continence, prolapse, diastasis recti, pelvic pain; - **Chronic conditions**: BP (preeclampsia surveillance + future CV risk awareness — Hypertensive Disorders of Pregnancy = lifetime CV risk factor), diabetes (postpartum OGTT for GDM, T2DM monitoring), thyroid; - **Nutrition + activity + sleep**; - **Social + family**: childcare, return to work + workplace pumping rights (ACA), partner relationship, support system, financial; - **Health behaviors**: smoking, alcohol, substance use; - **Vaccination update**: Tdap if not in pregnancy, MMR if not immune (post-pregnancy as live), HepB, HPV catch-up, COVID, flu; (3) **Contraception counseling**: - LARC (IUD, implant) most effective; - **CDC US MEC**: < 21 d avoid combined hormonal (VTE); progestin OK; transition combined OK 21-42 d if no risk; - Tubal ligation, vasectomy options; - Breastfeeding considerations (LAM limited, progestin compatible); - Pregnancy spacing recommendation 18-24 mo; (4) **Cardiovascular risk** for women with pregnancy complications: - Preeclampsia, GDM, preterm birth, IUGR — all increase future CV risk; - Comprehensive CV risk assessment + lifestyle counseling; - Early ASCVD risk attention; (5) **Pelvic floor**: - **Pelvic floor physical therapy** — first-line for incontinence + prolapse + dyspareunia + pelvic pain — underutilized despite strong evidence; - Surgical options later if refractory; (6) **Return-to-activity counseling**: - Gradual exercise; - Sexual activity when ready (typically 4-6 wk if vaginal delivery uncomplicated); - Lifting, work return; (7) **Pediatric coordination**: well-baby care + maternal-infant dyad; (8) **Father / partner mental health**: paternal postpartum depression real — screen + treat; (9) **Future pregnancy planning**: interconception care; (10) **Postpartum-specific support**: groups, doulas, parenting classes; (11) **Multidisciplinary**: family medicine well-positioned + OB + pediatrics + behavioral health + lactation consultant + pelvic floor PT + nutrition + social work + family"
+      },
+      {
+        "label": "C",
+        "text": "Skip mental health"
+      },
+      {
+        "label": "D",
+        "text": "Avoid contraception discussion"
+      },
+      {
+        "label": "E",
+        "text": "No future CV risk discussion"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Postpartum care: '4th trimester' ongoing not single visit (ACOG 2018). Comprehensive — mental health (PPD/anxiety), reproductive/contraception, lactation, physical recovery, chronic conditions (BP/DM as CV risk markers), pelvic floor PT. Father screening. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG 4th Trimester 2018"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 70 ปี — Na 121, confused; chronic diuretic + SSRI; volume euvolemic by exam; urine Na 65, urine osm 380, serum osm 256",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Rapid IV correction in all"
+      },
+      {
+        "label": "B",
+        "text": "Hyponatremia Workup + Management Primary Care: (1) **Severity**: mild (Na 130-134), moderate (125-129), severe (< 125); symptoms guide urgency (confusion, seizure, coma); (2) **Volume status assessment** key: - **Hypovolemic** — diuretics, GI loss, third spacing, adrenal insufficiency; - **Euvolemic** (this patient) — **SIADH** most common cause (drugs — SSRI, carbamazepine, opioids, antipsychotics; lung — TB, pneumonia, small cell CA; CNS — stroke, infection, mass; surgery; postoperative; nausea; pain; idiopathic), hypothyroidism, adrenal insufficiency, primary polydipsia, beer potomania, low solute intake; - **Hypervolemic** — HF, cirrhosis, nephrotic syndrome, CKD; (3) **Workup**: - **Serum osmolality** (rule out pseudo / translocational): - Hypotonic (true hyponatremia, < 280): most cases; - Iso/hypertonic: hyperglycemia, mannitol, contrast, pseudohyponatremia (hypertriglyceridemia, paraproteinemia); - **Urine osmolality** (~ free water excretion ability): - Low (< 100) — primary polydipsia, beer potomania, low solute; - High (> 100) — ADH active — SIADH, hypovolemia, hypervolemia; - **Urine Na**: < 20 (hypovolemia, hypervolemia); > 40 (SIADH, diuretic, adrenal/thyroid); - **TSH + cortisol** (rule out treatable endocrine); - **BUN, Cr, glucose**; (4) **SIADH diagnosis**: euvolemic, hypotonic hyponatremia, urine osm > 100 (inappropriate concentration), urine Na > 30, normal kidney + adrenal + thyroid, no diuretic use; (5) **Treatment principles** — careful correction (RAPID correction → osmotic demyelination syndrome (ODS) — irreversible neuro damage, esp in chronic hyponatremia, malnutrition, hypokalemia, alcoholism, liver disease): - **Severe / symptomatic (seizure, coma) acute**: 3% saline 100 mL bolus IV may repeat; ICU; raise Na 4-6 mmol/L acutely; - **Maximum correction**: 8-10 mmol/L per 24 h, 18 mmol/L per 48 h (some say 6-8/24 h chronic, > 6 wk; lower in high-risk); - **Mild-moderate chronic asymptomatic**: address underlying cause; - **SIADH** treatment: - **Fluid restriction** (800-1200 mL/d) first-line; - **Salt + protein intake** (urea); - **Loop diuretic** + Na supplementation; - **Vaptans** (tolvaptan — V2 receptor antagonist) for refractory; cost + hepatotoxicity caution; - **Demeclocycline** alternative; - Discontinue offending drugs; (6) **Drug discontinuation review**: SSRIs, thiazides, NSAIDs, opioids, carbamazepine, antipsychotics, MDMA; (7) **Address underlying cause**: hypothyroid → replace; adrenal insufficiency → steroid; SIADH cause (infection, cancer, CNS); (8) **Outpatient follow-up close**: recheck Na in 24-48 h initial then weekly; (9) **Hospitalization** for severe / symptomatic / unable to correct outpatient / unstable; (10) **Multidisciplinary**: PCP + nephrology + endocrine if SIADH workup + ED if severe"
+      },
+      {
+        "label": "C",
+        "text": "Ignore — Na 121 common"
+      },
+      {
+        "label": "D",
+        "text": "Hold all medications without review"
+      },
+      {
+        "label": "E",
+        "text": "Free water bolus for hyponatremia"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Hyponatremia: volume + serum/urine osm + urine Na for diagnosis. SIADH common (drugs — SSRI; CNS; lung; postop). **Careful correction** to avoid ODS — max 8-10 mmol/L/24 h. Treat underlying + offending drugs. Severe → hypertonic saline ICU. Multidisciplinary.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "European Hyponatremia 2014; ASN"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง immunology basics + immunocompromised primary care + vaccines + infections",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No vaccinations immunocompromised"
+      },
+      {
+        "label": "B",
+        "text": "Immunocompromised Primary Care + Immunology Basics: (1) **Major types immunodeficiency**: - **Primary immunodeficiency** (PID) — genetic (CVID, X-linked agammaglobulinemia, severe combined ID, complement deficiencies, hyper-IgM, Wiskott-Aldrich, ataxia-telangiectasia, chronic granulomatous disease, etc.); often detected childhood; - **Secondary / acquired**: - **HIV**; - **Malignancy** (especially hematologic — lymphoma, leukemia, myeloma); - **Chemotherapy + targeted therapy** (CD20 — rituximab; BTK; checkpoint inhibitors); - **Immunosuppressants** (steroids, calcineurin inhibitors, MMF, azathioprine, methotrexate, biologics — TNF, IL-6, IL-17, IL-23, B-cell, T-cell, JAK inhibitors); - **Transplant** (solid organ + HSCT); - **Diabetes + uncontrolled hyperglycemia**; - **Splenectomy / asplenia (functional — sickle cell)**; - **Malnutrition**; - **CKD / ESRD**; - **Cirrhosis**; - **Aging (immunosenescence)**; - **Pregnancy** (mild physiologic immunosuppression); (2) **Workup suspected**: - Recurrent / unusual / severe infections; - Family history; - Quantitative immunoglobulins (IgG, IgA, IgM, IgE); - Lymphocyte subsets (CD3, CD4, CD8, CD19, CD56); - Vaccine response (T-cell-independent — Pneumovax; T-cell-dependent — tetanus); - Complement (CH50, C3, C4); - HIV; - Refer immunology specialist; (3) **Vaccinations in immunocompromised**: - **Generally AVOID live vaccines**: MMR, varicella, yellow fever, oral typhoid, BCG, oral polio, smallpox (limited situations); - **Recombinant Shingrix preferred** over live Zostavax in immunocompromised — ACIP recommends ≥ 19 yo immunocompromised; - **Inactivated vaccines safe but may have reduced response**: - **More doses or higher doses often** (e.g., 4 doses HepB 40 mcg dialysis); - Pneumococcal: PCV20 or PCV15 + PPSV23 8 wk apart (vs 1 yr) for immunocompromised; - **Vaccinate before immunosuppression when possible**: 2-4 wk live vaccines, 2 wk inactivated; - **HSCT recipients**: revaccination protocols (lose immune memory); - **Solid organ transplant**: optimize before transplant; live vaccines avoided lifelong after; - **Biologics specific**: - Anti-CD20 (rituximab) — vaccinate ≥ 4 wk before; reduced response × 6 mo after; - Anti-TNF — reduced response; reasonable to vaccinate while on; - Steroid: > 20 mg prednisone × 2 wk = immunosuppressed; (4) **Infection prevention + prophylaxis**: - **PCP (Pneumocystis jirovecii)** prophylaxis: TMP-SMX for HIV (CD4 < 200), post-transplant, certain chemo regimens, ANCA vasculitis, others; - **CMV prophylaxis**: post-transplant + selected; - **Fungal prophylaxis**: selected high-risk; - **Toxoplasmosis** for HIV (CD4 < 100); - **Hand hygiene + masking + avoidance** crowds + sick contacts; - **Food safety + water + travel precautions**; - **Pet safety** education (toxoplasmosis, salmonella); - **Wound care prompt**; - **Dental care** good hygiene; (5) **Recognition of infections**: - May present atypically (less fever, less inflammation); - Lower threshold for evaluation + treatment; - Broad differentials (opportunistic + community); - Cultures + biopsies; - Empiric treatment broader; (6) **Specific situations**: - **Asplenia**: vaccinate (encapsulated — pneumococcal, Hib, meningococcal ACWY + B), prophylactic antibiotic for some, medical alert ID, prompt evaluation fever + early empiric ceftriaxone; - **Sickle cell**: similar + penicillin prophylaxis childhood; - **Neutropenic fever**: emergency; - **HIV + low CD4**: opportunistic infection screening + prophylaxis; ART initiation; (7) **Cancer surveillance**: immunocompromised at increased risk for several cancers — screening per protocols + appropriate; (8) **Mental health + caregiver support**; (9) **Multidisciplinary**: PCP + ID + immunology + transplant + oncology + relevant specialists + pharmacy + nursing + nutrition + behavioral health"
+      },
+      {
+        "label": "C",
+        "text": "Live vaccines no concern"
+      },
+      {
+        "label": "D",
+        "text": "Ignore infection risks"
+      },
+      {
+        "label": "E",
+        "text": "Standard schedule only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Immunocompromised: types (primary + secondary). Workup if recurrent/unusual. Vaccines: **avoid live**, more doses, recombinant Shingrix preferred. Infection prevention + prophylaxis (PCP, CMV, etc.). Atypical presentations — low threshold. Asplenia considerations. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "ACIP Immunocompromised; IDSA"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง nutrition science primary care + dietary patterns evidence",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single nutrient focus"
+      },
+      {
+        "label": "B",
+        "text": "Nutrition Science + Dietary Patterns Primary Care (AAFP + Dietary Guidelines 2020-2025): (1) **Dietary Patterns Approach** (vs single nutrient) increasingly emphasized — DGA 2020-2025: - **Mediterranean** — strongest evidence CV, metabolic, cognitive, mortality (PREDIMED); plant-predominant, olive oil, fish, nuts, whole grains, moderate wine; - **DASH** — CV, BP (DASH-Sodium); similar to Mediterranean; - **Plant-based** — vegetarian / vegan / flexitarian; growing evidence; - **Healthy US-style** (DGA); - **Low-carb / Mediterranean-low-carb / ketogenic** — short-term weight + metabolic benefit; long-term data more limited; - **Intermittent fasting** — emerging; mixed evidence; - **Whole food, minimally processed** common theme — avoid ultra-processed (NOVA classification); (2) **Macronutrients** (DGA 2020-2025): - **Carbohydrate**: 45-65% — whole grains, fiber, complex; limit added sugar (< 10% calories); - **Protein**: 10-35% — plant + lean animal + fish; - **Fat**: 20-35% — unsaturated (mono + poly — olive, avocado, nuts, fish); limit saturated (< 10% calories — red meat, full-fat dairy, butter); avoid trans (essentially banned); - **Fiber**: 25-38 g/d (most Americans < 50%); - **Hydration**: ~ 2-3 L/d total; (3) **Specific nutrient considerations**: - **Sodium**: < 2300 mg/d (< 1500 high BP) — most Americans 3500+; - **Calcium + vit D**: bone + cancer protection; primarily food; supplements selective; - **Iron**: bioavailability heme > non-heme; pair with vit C; - **B12**: animal sources; supplement vegetarians + > 50 yo; - **Folate**: leafy green + fortified; pregnancy 400-800 mcg; - **Omega-3 (EPA + DHA)**: fatty fish 2x/wk; ALA plant sources lower conversion; supplements selected; - **Iodine**: salt fortified, seafood; - **Vit B-complex, antioxidants, magnesium, potassium, zinc** — food preferred; (4) **Special populations**: - **Pregnancy + lactation**: increased needs, folate, iron, DHA, calcium, vit D, choline; avoid alcohol, high mercury fish, raw, listeria-risk; - **Infants**: breast / formula + introduction solid 6 mo + iron-fortified + allergens early; - **Children + adolescents**: growth + development; calcium + vit D; limit added sugar / sugar-sweetened beverages; - **Older adults**: protein needs increase (1-1.2 g/kg); B12; vit D; calcium; address chewing + swallowing + appetite + social; - **Athletes**: macros + hydration + timing; - **Chronic disease specific**: - **DM**: carbohydrate management, glycemic index, Mediterranean / DASH; - **CKD**: protein moderate, K + phos as advances; - **CV**: Mediterranean + DASH; - **HF**: Na restriction + fluid; - **Cancer**: support during treatment; survivorship; - **Liver disease**: branched-chain amino acids, sodium; - **GI**: low-FODMAP for IBS, gluten-free celiac, low-residue acute IBD; (5) **Weight management**: - Modest calorie deficit; - Quality of diet > calories alone; - Behavioral + structured programs; - **Intermittent fasting** options; - **Very low calorie diets** for severe; - **Bariatric** for severe + comorbidity; (6) **Common myths + misconceptions**: - 'Dietary cholesterol' less important than once thought (DGA 2015 removed limit); - 'Eat fat to lose fat' qualified; - Detoxes + cleanses not evidence-based; - Supplements for healthy people limited benefit; - Sugar — not single villain but context; - **Ultra-processed food** epidemiologic concern; - **Food allergies vs intolerances** vs gluten sensitivity differ; (7) **Food insecurity** screening + intervention: critical SDOH; (8) **Food + medication interactions**: warfarin + vit K, MAOI + tyramine, grapefruit + meds; (9) **Cultural considerations** + personalization; (10) **Nutrition counseling**: brief in primary care; refer **dietitian / RDN** for comprehensive; Medicare benefit DM, CKD; (11) **Lifestyle medicine** integration; (12) **Multidisciplinary**: PCP + RDN/dietitian + diabetes educator + behavioral health + community programs + SDOH resources"
+      },
+      {
+        "label": "C",
+        "text": "Ignore dietary patterns"
+      },
+      {
+        "label": "D",
+        "text": "Supplements for all"
+      },
+      {
+        "label": "E",
+        "text": "Restrictive diet only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Nutrition: dietary patterns > single nutrient. Mediterranean strongest evidence (PREDIMED). DASH, plant-based, healthy US-style. Macros + key nutrients. Special populations + chronic disease specific. Address food insecurity. RDN for comprehensive. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "DGA 2020-2025; PREDIMED; AAFP"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง physical activity prescription + exercise as medicine",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No exercise needed"
+      },
+      {
+        "label": "B",
+        "text": "Physical Activity Prescription + Exercise as Medicine (CDC + ACSM + DGA): (1) **Major impact**: physical activity = one of most impactful interventions for prevention + treatment of chronic disease, mental health, mortality; (2) **CDC + DGA 2018 Physical Activity Guidelines**: - **Adults**: - **150 min/wk moderate** (brisk walking) OR **75 min/wk vigorous** (jogging) OR combination; - **Plus muscle-strengthening ≥ 2 d/wk** (all major muscle groups); - More benefit with more — up to 300 min/wk; - Move more, sit less (sedentary behavior independent risk); - **Older adults**: above + balance training; modify per ability; - **Children + adolescents**: 60 min/d moderate-vigorous + muscle/bone strengthening 3x/wk; - **Pregnancy + postpartum**: 150 min/wk moderate; modify per stage; - **Chronic conditions**: still strongly recommended with adaptations; (3) **Exercise prescription components (FITT)**: - **F**requency; - **I**ntensity (talk test, HR zones, RPE); - **T**ime (duration); - **T**ype (aerobic, resistance, flexibility, balance); (4) **Intensity gauges**: - **Moderate**: increased HR + breathing + sweat; can talk but not sing; ~ 50-70% HRmax; - **Vigorous**: significantly increased; only few words; ~ 70-85% HRmax; - **Maximum HR**: 220 - age (rough); - **MET-min/wk** > 500 = adequate; (5) **Exercise as therapy** — specific evidence: - **Cardiovascular disease**: cardiac rehab, prevention, post-event; - **Hypertension**: 5-10 mmHg BP reduction; - **T2DM + prediabetes**: improved insulin sensitivity, A1c reduction; DPP includes; - **Dyslipidemia**: HDL + TG improvement; - **Obesity**: weight + body composition + maintenance; - **Cancer**: prevention multiple cancers, during/after treatment improvement (fatigue, QOL, recurrence reduction breast/colon); - **Mental health**: depression (effective as antidepressants for mild-moderate), anxiety, cognition, dementia prevention; - **Osteoporosis**: weight-bearing + resistance for bone; - **Osteoarthritis**: paradoxically beneficial — exercise = first-line; - **COPD**: pulmonary rehab; - **HF**: cardiac rehab + exercise training; - **PAD**: structured exercise > revascularization for claudication (CLEVER); - **Stroke recovery**: rehab + ongoing; - **Falls prevention**: tai chi, multimodal; - **Sleep**: improves; - **Mortality**: dose-response — even small amounts reduce; (6) **Pre-exercise screening**: ACSM updated — most healthy adults can begin without medical clearance; clearance for: known disease + symptoms + advanced age + intense activity; (7) **Specific populations**: - **Cardiac rehab** Class I post-MI, stable angina, HF, post-CABG/PCI/valve, PAD; - **Pulmonary rehab** for COPD + ILD + others; - **Cancer rehab** survivorship; - **Vestibular rehab**; - **Pelvic floor PT**; - **Vestibular** + **balance**; - **Children with disability**; (8) **Behavior change** principles (see separate): motivational interviewing, goal-setting, environmental, social, technology; (9) **Address barriers**: time, access, safety, weather, mobility, knowledge, motivation, cost, social; (10) **Technology**: wearables (Fitbit, Apple Watch, Garmin), apps, virtual programs, exergaming, gamification; (11) **Group + community programs**: SilverSneakers (Medicare), local gyms, parks + recreation, walking groups, faith-based; (12) **Provider counseling effective**: brief counseling + prescription + referral; Exercise is Medicine initiative; (13) **Multidisciplinary**: PCP + exercise physiologist + PT + cardiac/pulm rehab + community programs + occupational therapy + behavioral health"
+      },
+      {
+        "label": "C",
+        "text": "Bed rest for chronic conditions"
+      },
+      {
+        "label": "D",
+        "text": "Random advice only"
+      },
+      {
+        "label": "E",
+        "text": "Single intensity prescribed"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Physical activity: 150 min/wk mod + strength 2x/wk adults (DGA). Less sedentary. FITT prescription. Therapy for nearly all chronic conditions (CV, DM, mental health, cancer, OA, etc.). Most adults can start without clearance. Cardiac/pulm rehab. Behavior change + tech + community. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "DGA Physical Activity 2018; ACSM; Exercise is Medicine"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง sleep medicine basics + sleep disorders primary care + sleep as health",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No sleep history needed"
+      },
+      {
+        "label": "B",
+        "text": "Sleep Medicine Basics + Primary Care (AASM): (1) **Sleep architecture**: ~ 90 min cycles; NREM (N1, N2, N3 — deep) + REM (dreaming, memory consolidation); 4-6 cycles/night; (2) **Sleep duration recommendations (NSF + AAP)**: - Newborn 0-3 mo: 14-17 h; - Infant 4-11 mo: 12-15 h; - Toddler 1-2 yr: 11-14 h; - Preschool 3-5 yr: 10-13 h; - School age 6-13 yr: 9-11 h; - Teen 14-17 yr: 8-10 h (often inadequate — early school start times, screens); - Adult 18-64: 7-9 h; - Older adult ≥ 65: 7-8 h; (3) **Sleep deprivation effects**: - Acute: cognition, mood, immune, metabolic; - Chronic (< 7 h adult): increased mortality, CV disease, DM, obesity, mental health, accidents (drowsy driving = drunk driving), cancer (shift work IARC group 2A); (4) **Sleep hygiene** — foundation: - Regular schedule (even weekends); - Dark, cool, quiet bedroom (60-67°F); - Bed for sleep + sex only; - Avoid screens 1+ h before bed (blue light); - Caffeine cutoff afternoon; - Alcohol disrupts; - Exercise (not late); - Limit naps (< 30 min, early); - Sunlight exposure morning; - Relaxation routine; - Manage stress; (5) **Major sleep disorders primary care**: - **Insomnia disorder** — see separate (CBT-I first-line); - **OSA** — see separate (CPAP + lifestyle + GLP-1 emerging); - **Central sleep apnea** — HF, opioid, idiopathic; - **Restless Legs Syndrome (RLS) / Willis-Ekbom**: urge to move + dysesthesia + evening + relief with movement; Workup: ferritin (target > 75-100, supplement), Cr, glucose, thyroid; Treatment: iron repletion if low; alpha-2-delta ligands (gabapentin, pregabalin — first-line shift); dopamine agonists (pramipexole, ropinirole — augmentation issue, less preferred now); rotigotine patch; opioids low-dose refractory; - **Narcolepsy**: excessive daytime sleepiness + cataplexy (type 1) + sleep paralysis + hypnagogic hallucinations; polysomnography + MSLT; modafinil/armodafinil, sodium oxybate, pitolisant, solriamfetol; refer sleep medicine; - **Circadian rhythm disorders**: delayed/advanced sleep phase, shift work, jet lag, irregular; melatonin + light therapy + chronotherapy; - **Parasomnias**: sleepwalking, night terrors, REM behavior disorder (alpha-synucleinopathy risk — Parkinson, DLB, MSA progression); - **Hypersomnia disorders**: idiopathic, Kleine-Levin; - **Bruxism**: dental + stress; - **Sleep-related movement disorders**: PLMS; (6) **Pediatric sleep**: - Sleep training (multiple methods debated); - SIDS prevention (back to sleep, firm surface, no co-sleeping same bed, no soft objects); - OSA in children — adenotonsillectomy first-line; - ADHD + sleep bidirectional; - Adolescent later chronotype + school start times advocacy; (7) **Pregnancy + postpartum**: sleep changes; RLS common; OSA can develop; preeclampsia association; (8) **Mental health bidirectional**: depression, anxiety, PTSD, bipolar — sleep disruption + treatment; (9) **Substance use + sleep**: stimulants, alcohol, opioids, marijuana — affect sleep; (10) **Sleep + cognitive aging**: deep sleep + glymphatic clearance + dementia prevention emerging evidence; (11) **Drowsy driving + occupational** safety; commercial drivers OSA screening; (12) **Sleep tracking technology**: wearables increasingly accurate; orthosomnia (anxiety from data); (13) **Multidisciplinary**: PCP + sleep medicine + ENT (OSA pediatric) + dental sleep (oral appliance) + behavioral health (CBT-I) + neurology + cardiology"
+      },
+      {
+        "label": "C",
+        "text": "Pills for all sleep issues"
+      },
+      {
+        "label": "D",
+        "text": "Ignore screen time"
+      },
+      {
+        "label": "E",
+        "text": "Random recommendation"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Sleep: 7-9 h adult; sleep hygiene foundation. Major disorders — insomnia (CBT-I), OSA (CPAP), RLS (iron + gabapentinoid), narcolepsy (sleep med referral), parasomnias. Pediatric considerations. Pregnancy + mental health bidirectional. Drowsy driving + tech. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AASM Sleep Medicine; NSF"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง developmental milestones + screening primary care peds",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No screening needed"
+      },
+      {
+        "label": "B",
+        "text": "Pediatric Development + Screening Primary Care (AAP Bright Futures): (1) **Developmental domains**: - **Motor** (gross + fine); - **Language** (receptive + expressive); - **Cognitive**; - **Social-emotional**; - **Adaptive / self-help**; (2) **Surveillance vs screening**: - **Surveillance**: ongoing process at every visit — history, parent concerns, observation; - **Screening**: standardized tool at specific intervals; (3) **Recommended screening intervals (AAP)**: - **General developmental** (ASQ, PEDS): 9, 18, 30 mo; - **Autism-specific** (M-CHAT-R/F): 18 + 24 mo; - **Maternal depression**: 1, 2, 4, 6 mo; - **Lead**: targeted; many recommend universal Medicaid; - **Anemia**: 9-12 mo; - **TB**: targeted; - **Lipid**: 9-11 + 17-21 yo; - **HIV**: 13+ yo; - **Behavioral**: at all WCV (PSC, CBCL); - **Adolescent depression** (PHQ-A): annually 12+ yo; (4) **Key milestones (AAP 2022 updated)**: - **2 mo**: social smile, coo, lift head prone; - **4 mo**: laugh, roll, reach; - **6 mo**: sit support, babble, transfer; - **9 mo**: pincer grasp, mama/dada, wave bye, separation anxiety; - **12 mo**: walk, 1-2 words, pat-a-cake; - **15 mo**: 3-5 words, point to wants; - **18 mo**: 10+ words, 1-step commands, run, scribble, parallel play; - **24 mo**: 2-word phrases, run + kick ball, points to body parts; - **3 yr**: 3-word sentences, draw circle, tricycle, dress with help; - **4 yr**: count to 10, draw person, hop, dress self; - **5 yr**: print name, skip, count to 20, friend relationships; (5) **Red flags requiring evaluation**: - **No social smile by 3 mo**; - **Cannot hold head up by 4 mo**; - **No babbling by 9 mo**; - **No words by 16 mo**; - **No 2-word phrases by 24 mo**; - **Loss of skills any age** (regression); - **Lack of social interest / engagement**; - **No pointing by 18 mo**; - **No interactive play**; - **Hand preference < 18 mo** (could indicate hemiparesis); (6) **Common conditions screening detects**: - **Autism spectrum disorder** (1 in 36 — CDC); - **Speech-language delay**; - **Intellectual disability**; - **ADHD** (older); - **Learning disability**; - **Hearing loss**; - **Vision impairment**; - **Cerebral palsy** + motor disorders; (7) **Early intervention referral don't delay**: - **Part C (IDEA — birth to 3)** — Early Intervention free; - **Part B (IDEA — 3-21)** — school-based services; IEP; 504 plan; - Concurrent referrals — audiology, vision, specialty; - Family training + support; (8) **Vision + hearing**: - Newborn hearing screen mandatory most states; - Vision screening at WCV per AAP + AAO; - Photoscreener instrument-based 3+ yo; - Refer ophthalmology if positive or risk; (9) **Other screening**: - Newborn metabolic + endocrine screening (state panels); - CCHD screening newborn (critical congenital heart); - Hip dysplasia (Barlow + Ortolani + Galeazzi infancy); - Scoliosis adolescent; (10) **Family-centered communication**: parents are partners; reassure normalcy + concerning findings; cultural humility; (11) **Special situations**: prematurity (corrected age), adoption, foster, history of risk; (12) **Anticipatory guidance** at each visit per Bright Futures; (13) **Multidisciplinary**: PCP + EI team + audiology + ophthalmology + speech-language + OT + PT + developmental pediatrics + autism specialist + school + family"
+      },
+      {
+        "label": "C",
+        "text": "Wait and see for all delays"
+      },
+      {
+        "label": "D",
+        "text": "Adult assessment for children"
+      },
+      {
+        "label": "E",
+        "text": "Single milestone check"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pediatric development: surveillance every visit + screening (ASQ 9/18/30 mo, M-CHAT-R/F 18+24 mo). Key milestones knowledge. Red flags → don't delay EI referral. Audiology + vision + other screens. Family-centered. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "peds",
+    "reference_source": "AAP Bright Futures; Milestones 2022"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง pharmacology in pregnancy + lactation + clinical decision-making",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Random medication choice"
+      },
+      {
+        "label": "B",
+        "text": "Medications in Pregnancy + Lactation (FDA PLLR + LactMed + ACOG): (1) **FDA Pregnancy + Lactation Labeling Rule (PLLR)** — 2015 replaced old A/B/C/D/X categories: - **Pregnancy summary** with risk; - **Lactation summary**; - **Females + males of reproductive potential**; - More nuanced + evidence-based; categories abandoned; (2) **Key principles**: - **No medication completely safe** in pregnancy/lactation; - **No medication automatically contraindicated** — assess benefit vs risk to mother + fetus/infant; - **Untreated condition often greater risk** than medication (e.g., depression, asthma, epilepsy, HIV); - **Trimester matters**: 1st (organogenesis 2-8 wk PCD), 2nd, 3rd, near delivery, postpartum; - **Lowest effective dose + duration**; - **Preferred agents within class** when alternatives; - **Counsel + document shared decision**; - **Resources**: LactMed (free NIH), TERIS, Reprotox, MotherToBaby, ACOG/specialty guidelines; (3) **Common medications + pregnancy**: - **Antibiotics**: penicillins / cephalosporins / azithromycin generally safe; AVOID — tetracyclines (after 1st trimester — bones + teeth), fluoroquinolones (cartilage, FDA caution though emerging more nuanced), aminoglycosides (ototoxic), TMP-SMX (1st trim — folate antagonist; 3rd trim — kernicterus, neonatal hyperbilirubinemia); nitrofurantoin avoid 38+ wk (hemolytic anemia neonatal G6PD); - **Hypertension**: methyldopa, labetalol, nifedipine OK; AVOID — ACE/ARB (renal + skull anomalies 2nd-3rd trim), atenolol (IUGR); - **DM**: insulin preferred; metformin (acceptable per ACOG); glyburide (decreased use — neonatal hypoglycemia); - **Anticoagulation**: heparin / LMWH preferred (no placental transfer); warfarin teratogen (esp 1st trim); DOACs limited data, avoid; - **Anti-seizure**: minimize teratogens; preferred — lamotrigine, levetiracetam; AVOID — valproic acid (highest teratogenicity NTD + cognitive); carbamazepine, phenytoin moderate; supplement folate 4 mg before + during pregnancy; - **Antidepressants**: SSRIs generally acceptable (sertraline preferred), paroxetine slight CV concern 1st trim (older data), avoid abrupt discontinuation; benefits often outweigh risks for moderate-severe depression; - **NSAIDs**: avoid 3rd trim (premature closure ductus arteriosus, oligohydramnios, kidney); 1st-2nd trim limited use OK; - **Acetaminophen**: generally safe but recent observational concerns ADHD/autism (causality not established); minimize unnecessary use; - **Opioids**: pregnancy MOUD (buprenorphine, methadone) for OUD better than detox; otherwise minimize; neonatal abstinence; - **Vaccines**: inactivated safe + recommended (Tdap, flu, COVID, RSV); avoid live (MMR, varicella, yellow fever — postpone if possible); - **Imaging**: minimize radiation, US + MRI safer; CT with shielding selected; iodinated contrast generally avoid; gadolinium avoid (especially 1st trim); - **Anesthesia**: regional preferred when possible; (4) **Common medications + lactation**: - **LactMed first-resource**; - **Generally safe**: most antibiotics, common antihypertensives, SSRIs (sertraline, paroxetine — minimal milk transfer), low-dose opioids brief, insulin, levothyroxine, hydroxychloroquine, low-dose steroids; - **Caution**: pseudoephedrine (↓ milk supply), bromocriptine/cabergoline (suppress lactation), lithium (high transfer, monitor infant), warfarin OK; - **Avoid**: chemotherapy, radioactive iodine, ergot alkaloids; (5) **Periconception counseling**: - Folate 400 mcg routine, 4 mg if prior NTD or AED use; - Review chronic medications + optimize teratogenic; - DM, BP, thyroid optimization; - Vaccinations update; - Lifestyle (smoking, alcohol, substance, weight, nutrition); - Genetic carrier screening; (6) **Special populations**: - **OUD pregnancy**: MOUD preferred; - **HIV**: ART continued / initiated; - **Epilepsy**: minimize teratogens; - **Mental illness**: weigh untreated vs treatment risks; - **Autoimmune**: hydroxychloroquine OK; some biologics; - **Chronic pain**: minimize opioids; - **Transplant**: immunosuppression continued; (7) **Postpartum + lactation drug choices**: minimize unnecessary; choose preferred; LactMed look-up; (8) **Father-to-be exposures + paternal effects**: emerging consideration; (9) **Documentation**: shared decisions, counseling, alternatives considered; (10) **Multidisciplinary**: PCP + OB + MFM + pharmacy + specialty (psych, ID, etc.) + neonatology + lactation"
+      },
+      {
+        "label": "C",
+        "text": "Stop all medications pregnancy"
+      },
+      {
+        "label": "D",
+        "text": "Adult dosing only"
+      },
+      {
+        "label": "E",
+        "text": "Ignore lactation considerations"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pregnancy + lactation pharm: PLLR (categories abandoned). Benefit-risk individualized. Untreated condition often worse. LactMed + resources. Common safe/avoid lists per condition. Periconception optimization. Special populations. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "FDA PLLR; LactMed; ACOG; MotherToBaby"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง preventive medicine principles + USPSTF + levels of prevention",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Treatment-focused only"
+      },
+      {
+        "label": "B",
+        "text": "Preventive Medicine Principles (USPSTF + CDC + Healthy People 2030): (1) **Levels of prevention**: - **Primary** — prevent disease occurrence (vaccination, lifestyle modification, smoking cessation, fluoride, seatbelts); - **Secondary** — early detection + treatment (screening — cancer, BP, glucose); - **Tertiary** — limit complications of existing disease (cardiac rehab, glycemic control to prevent complications); - **Quaternary** — protect from harms of medicine itself (avoid overtesting, overtreatment, overdiagnosis); (2) **USPSTF grades**: - **A** strong recommendation high certainty net benefit; - **B** moderate certainty; - **C** small net benefit — individual decision; - **D** recommend against; - **I** insufficient evidence; - A + B routinely cover preventive services under ACA without cost-sharing; (3) **Key USPSTF preventive recommendations adults**: - **BP screening** all adults ≥ 18; - **Cholesterol screening** age-based; - **DM screening** 35-70 + overweight; - **Cancer screening**: - Cervical 21-65; - Breast 40-74 biennial (USPSTF 2024 lowered to 40); - Colorectal 45-75 (lowered from 50); - Lung 50-80 with 20 pack-year history; - Prostate 55-69 shared decision; - Cervical, skin (selected), oral; - **Osteoporosis** women 65+ (younger if risk); - **AAA** men 65-75 ever-smoker; - **Hepatitis C** all adults 18-79; - **Hepatitis B** all adults (2023); - **HIV** 15-65; - **Latent TB** at-risk; - **STIs** risk-based; - **Depression** all adults including pregnant + postpartum; - **Anxiety** adults < 65 (USPSTF 2023); - **Substance use** alcohol + drugs + tobacco; - **IPV** women reproductive age; - **Falls** ≥ 65; - **Lifestyle counseling** weight, exercise, diet, smoking; (4) **Vaccinations** per CDC schedule (see separate); (5) **Choosing Wisely / Quaternary prevention**: avoid: - Unnecessary cancer screening (older, low risk, less benefit); - Routine imaging headache, LBP; - Routine EKG/CXR asymptomatic; - Annual physical detailed labs not evidence-based; - Antibiotic for viral; - PPI long-term without indication; - Polypharmacy without rationale; - Cancer screening with limited life expectancy; (6) **Shared decision-making essential** for many — especially C-grade or where benefits/harms close; (7) **Risk assessment + stratification**: Pooled Cohort Equations, FRAX, Tyrer-Cuzick, Lung CA risk, etc.; (8) **Counseling effective in primary care** — even brief (e.g., smoking cessation 5 As, alcohol SBIRT); (9) **Population health + community level**: water fluoridation, immunization programs, tobacco policy, food labeling, built environment, school health, workplace wellness; (10) **Health equity in prevention**: stratify outcomes + address disparities; (11) **Healthy People 2030 framework**: leading health indicators across domains; (12) **Implementation in practice**: EHR reminders, team-based delivery, registries, outreach; (13) **Pediatric preventive** (Bright Futures): - Vaccines per CDC; - Growth + development; - Lead, lipid, anemia, dental, vision/hearing screening; - Anticipatory guidance; (14) **Multidisciplinary**: PCP + nursing + APP + behavioral health + dietitian + public health + community + school + workplace + family"
+      },
+      {
+        "label": "C",
+        "text": "No screening — wait for symptoms"
+      },
+      {
+        "label": "D",
+        "text": "Single intervention"
+      },
+      {
+        "label": "E",
+        "text": "Maximum testing always"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Prevention: 4 levels (primary, secondary, tertiary, quaternary — avoid overuse). USPSTF grades guide preventive services. Key recommendations adults. Counseling effective. Risk stratification. Community + policy levels. Equity. Implementation in practice. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "USPSTF; CDC; Healthy People 2030"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง patient safety + medical errors + just culture in primary care",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Blame individual physician"
+      },
+      {
+        "label": "B",
+        "text": "Patient Safety + Just Culture (IHI + AHRQ + IOM): (1) **Magnitude**: medical errors ~ 3rd leading cause of death US (Makary BMJ 2016 estimate ~ 250,000/yr); primary care + ambulatory errors common but less studied; (2) **IOM (now NAM) framework** — '**To Err is Human**' (1999) + 'Crossing the Quality Chasm' (2001): - System problem, not individual; - Build safer systems; - 6 aims: Safe + Effective + Patient-centered + Timely + Efficient + Equitable; - 'Quintuple Aim' adds clinician well-being + equity; (3) **Just culture**: - Distinguish: - **Human error** (slip, lapse) → console + system fix; - **At-risk behavior** (taking shortcut) → coach; - **Reckless behavior** (knowing risk) → discipline; - **Psychological safety** — speak up about safety without fear; - **Learning culture** > blame culture; - Reduces underreporting + improves system improvement; (4) **High-Reliability Organization (HRO) principles** (Weick + Sutcliffe): - Preoccupation with failure; - Reluctance to simplify; - Sensitivity to operations; - Commitment to resilience; - Deference to expertise; (5) **Common error categories primary care**: - **Diagnostic errors** — missed, delayed, wrong (especially cancer, MI, stroke, infection, PE) — leading cause primary care malpractice; - **Medication errors** — prescribing, dispensing, monitoring, communication; - **Communication failures**: handoffs, results, between team; - **Care coordination + referrals**: lost referrals, missed results; - **Test result management**: missed abnormal results most common; - **Documentation**: unclear, illegible (less now), missing; - **Follow-up failures**; - **Care transitions**: hospital-to-home, between settings; (6) **System solutions**: - **Closed-loop communication**: results → patient → action → documentation; - **Robust safety net systems**: EHR reminders, automated follow-up, recall systems, panel management; - **Standardization + checklists**: surgical safety, central line, OB, sepsis, NEW for primary care; - **Decision support**: EHR alerts, clinical pathways, decision aids; - **Medication safety**: e-prescribing, drug interaction checking, medication reconciliation, double-checks for high-risk; - **Read-back + verification**; - **Adequate staffing + workload**; - **Fatigue + burnout reduction**; (7) **Reporting + analysis**: - **Voluntary incident reporting** (low-threshold, blame-free) + system feedback; - **Root cause analysis (RCA)** for serious events — identify system causes; - **Failure modes + effects analysis (FMEA)** prospective risk identification; - **Mortality + morbidity conferences** — learning oriented; - **AHRQ Common Formats** standardized; (8) **Disclosure of errors**: - Ethical + legal (most jurisdictions); - **CANDOR program** — Communication and Optimal Resolution; - Empathic, honest, system focus; - Reduces litigation when done well; - Apology laws (varies); (9) **Patient engagement in safety**: - Speak up programs; - Medication reconciliation involvement; - Question + understand care; - Patient + family advisory councils; (10) **Health literacy + plain language** essential; (11) **Specific safety priorities** WHO, AHRQ, Joint Commission goals: - Patient ID; - Communication of test results / handoffs; - Medication safety (high-alert); - Infection prevention; - Falls; - Surgical safety; - Suicide prevention; - DVT prophylaxis; - Sepsis recognition; (12) **Outpatient-specific safety**: telephone advice protocols, after-hours coverage, cross-coverage, test results management, abnormal result tracking, no-show follow-up, controlled substances; (13) **Clinician well-being + safety**: 2nd victim phenomenon (clinician trauma after adverse event); peer support, debriefing; (14) **Resources**: IHI, AHRQ PSNet, Joint Commission, state QIOs, NPSF (now part of IHI); (15) **Multidisciplinary**: clinicians + risk + quality + patients + administration + IT + nursing + pharmacy + legal + insurance"
+      },
+      {
+        "label": "C",
+        "text": "Hide errors"
+      },
+      {
+        "label": "D",
+        "text": "No reporting system"
+      },
+      {
+        "label": "E",
+        "text": "Single error = single fix"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Patient safety: system focus (IOM). Just culture (distinguish human error, at-risk, reckless). HRO principles. Common errors (diagnostic, medication, communication, results). System solutions (closed-loop, checklists, decision support). CANDOR disclosure. Patient engagement. Wellbeing — 2nd victim. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "IOM/NAM; IHI; AHRQ; Just Culture"
+  },
+  {
+    "scenario": "Hospital — improve specialty referral process + reduce wait times + improve information transfer",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Random referrals"
+      },
+      {
+        "label": "B",
+        "text": "Specialty Referral Management Optimization: (1) **Referral problems**: long wait times, inadequate information transfer (both directions), missed referrals, duplicated tests, lack of feedback, fragmented care, patient confusion; (2) **Structured referral processes**: - **Standardized templates** with key clinical info; - **Triage at receiving end** to prioritize urgency; - **Referral coordinators / hubs**; - **Two-way communication** mandated; - **Closing the loop**: receipt confirmation, consult report back; (3) **eConsults / asynchronous specialty consultation**: - PCP submits structured question + relevant data; - Specialist responds within days; - Avoids in-person visit ~ 50%+ for appropriate conditions; - Project ECHO model — telementoring + capacity building (Sanjeev Arora UNM); evidence in multiple conditions (HCV, chronic pain, opioid use); - Improves access esp underserved; (4) **Co-management + collaborative care**: - **Collaborative Care Model** (mental health) — measurement-based + care manager + specialist consultation; - **Cardio-renal-endocrine** coordination; - **Specialty-PCP shared chronic disease management** (e.g., cardiology shared care HF, endocrine shared DM); (5) **Direct booking + scheduling tools**: - Patient self-scheduling specialists with PCP referral approval; - Shared calendars; - Reduce gatekeeper burden; (6) **Network optimization**: - **Narrow networks** with quality + cost focus; - **Centers of excellence** for complex; - **Direct contracting**; (7) **Information exchange**: - **EHR same system** (Epic, Cerner) — facilitates; - **HIEs (Health Information Exchanges)** across systems; - **FHIR + interoperability** standards; - **Structured + complete referral data + consult notes**; (8) **Quality metrics**: - **Time to specialist appointment**; - **Information transfer completeness** both directions; - **Follow-up completion**; - **Patient experience** with referral process; - **Avoidable specialty visits** (could have been handled in primary care with support); (9) **Patient experience improvements**: - **Transparent process** + expectations; - **Pre-referral education**; - **Logistics support** (transportation, scheduling, navigation); - **Post-referral follow-up**; (10) **Capacity building primary care**: - **Specialist mentoring** (ECHO model); - **Continuing education**; - **Clinical decision support**; - **In-clinic specialty support** (visiting specialist, mini-residencies); - **Practice transformation**; - More primary care can manage = less referral needed; (11) **Specific high-volume referral pathways**: - Cardiology, GI, dermatology, orthopedics, psychiatry — most common; - Standardized pathways; - Pre-referral workup expectations; (12) **Equity in specialty access**: - Insurance + cost barriers; - Geographic / transportation; - Language access; - Cultural fit; - **Closing referral gap** for underserved; (13) **Workforce considerations**: - Specialty + primary care workforce alignment; - Mid-level provider integration; - Telemedicine expansion; (14) **Cost considerations**: - Avoid unnecessary specialty visits + duplicative testing; - Specialty cost + value variation; (15) **Multidisciplinary**: PCP + specialists + care coordinators + referral coordinators + IT + administration + quality + patients + insurance + community partners"
+      },
+      {
+        "label": "C",
+        "text": "No follow-up"
+      },
+      {
+        "label": "D",
+        "text": "Fax-only communication"
+      },
+      {
+        "label": "E",
+        "text": "Specialist makes all decisions"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Specialty referral: structured + close the loop. eConsults + ECHO + co-management. Direct booking. Information exchange. Quality metrics. Patient experience. Capacity building primary care. Equity. Workforce. Cost. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "Project ECHO; eConsults; AHRQ"
+  },
+  {
+    "scenario": "Hospital — telemedicine workflow integration + best practices",
+    "choices": [
+      {
+        "label": "A",
+        "text": "In-person only"
+      },
+      {
+        "label": "B",
+        "text": "Telemedicine in Primary Care — Best Practices (ATA + AAFP): (1) **Modalities**: - **Synchronous video**: real-time, most like in-person; - **Synchronous audio**: telephone only; - **Asynchronous (store + forward)**: patient submits photo/info; - **Remote patient monitoring (RPM)**: BP, glucose, weight, SpO2, ECG, wearables; - **eVisits**: messaging-based; - **eConsults**: provider-to-provider (see separate); (2) **Appropriate use cases**: - Routine chronic disease follow-up (HTN, DM, lipid); - Behavioral health (depression, anxiety, substance use, therapy); - Medication management + refills; - Minor acute conditions (URI, skin rashes, UTI selected); - Follow-up after labs/imaging; - Lifestyle counseling; - Care management + coordination; - Pre + post-procedural; - Specialty consultations; - Post-acute / hospital follow-up; - Rural + access-limited; (3) **Not appropriate**: - Acute serious conditions needing physical exam; - Procedures; - Imaging-required diagnoses; - When physical exam essential; - Some sensitive issues (preferences vary); - Technology / language barriers severe; (4) **Best practices visit conduct**: - **Pre-visit**: technology check, privacy/HIPAA, intake forms, consent; - **Setting**: quiet, well-lit, eye-level camera, professional appearance; - **Introduction**: identify self + confirm patient identity + setting privacy + explain technology; - **Webside manner**: eye contact (look at camera), unhurried, attentive, address technology issues; - **Limited physical exam adapted**: visual inspection, patient-performed maneuvers (palpation, ROM), home BP/wt/temp, smartphone tools; - **Documentation**: telemedicine modality + duration + key findings; - **Follow-up + close the loop**; (5) **Technology considerations**: - **Platforms**: Epic MyChart Video, Doxy.me, Zoom for Healthcare, others; HIPAA-compliant; - **Patient access**: smartphone, tablet, computer; broadband; - **Alternatives** for digital divide: telephone, in-person; - **Backup plan** for technical issues; - **Patient portal integration**; (6) **Regulatory + reimbursement**: - **Post-PHE COVID landscape evolving** — pre-PHE many restrictions removed; - **Audio-only** parity in many states (varies); - **Interstate licensure** — Interstate Medical Licensure Compact + state-specific telehealth licensure; - **Controlled substance prescribing** — DEA rules evolving post-PHE (Ryan Haight Act + extensions); - **Reimbursement parity** — Medicare + Medicaid + commercial; varies; - **Originating site** restrictions historically (many waived); (7) **Quality + safety considerations**: - **Safe vs in-person?** — emerging evidence comparable many conditions; - **Triage carefully** — when to convert to in-person; - **Care transitions to in-person** when needed; - **No-show + access disparities**; - **Outcomes monitoring**; (8) **Health equity**: - **Digital divide** — broadband, devices, digital literacy, language; - **Provide alternatives** (audio, community-based, in-person); - **Support resources**: community Wi-Fi, lending programs, low-cost broadband (FCC ACP); (9) **Special populations**: - **Pediatric**: parent involvement; specific considerations (developmental, parental support); - **Geriatric**: technology support; in-home help; - **Mental health**: very effective + accessible; specific platforms; - **Underserved + rural**: significant benefit + access; - **Disabilities**: accessibility (captions, sign language interpreter); - **Limited English**: video interpreters; (10) **Practice integration**: - **Workflow design**: scheduling, intake, visit, follow-up, billing; - **Hybrid practice**: balance + flexibility; - **Staff training**; - **Patient education + materials**; - **Quality improvement** ongoing; (11) **Provider considerations**: - **Burnout**: differing dynamics; - **Schedule flexibility** opportunity; - **Skills development**: webside manner, virtual exam, technology proficiency; (12) **Multidisciplinary**: PCP + IT + nursing + scheduling + billing + administration + patients + community + advocacy"
+      },
+      {
+        "label": "C",
+        "text": "Random telemedicine use"
+      },
+      {
+        "label": "D",
+        "text": "Skip privacy considerations"
+      },
+      {
+        "label": "E",
+        "text": "Avoid technology"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Telemedicine: modalities + appropriate use cases. Best practices (pre-visit, setting, webside manner, virtual exam, documentation). Technology + regulatory + reimbursement evolving. Quality + safety + equity. Special populations. Practice integration. Provider considerations. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "ATA Telemedicine; AAFP Telehealth"
+  },
+  {
+    "scenario": "Hospital — disaster preparedness + emergency response planning for primary care practice",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No preparedness needed"
+      },
+      {
+        "label": "B",
+        "text": "Disaster + Emergency Preparedness Primary Care (ASPR + CDC + AAFP): (1) **Types disasters/emergencies**: - **Natural**: hurricanes, floods, earthquakes, wildfires, tornadoes, blizzards, extreme heat/cold, drought; - **Public health**: pandemics (COVID-19), endemic outbreaks (measles, foodborne), bioterrorism; - **Technological**: power outages, cyber attacks, water contamination, transportation accidents, chemical/radiation; - **Mass casualty**: shootings, terrorism; - **Combined**: refugee crises, war; (2) **Phases of disaster cycle**: - **Mitigation** (reduce risk); - **Preparedness** (planning); - **Response** (acute); - **Recovery** (long-term); (3) **Primary care role**: - **Continuity of care**: maintain access for patients during/after; medication refills, chronic disease management; - **Surge capacity**: handle increased volume during outbreaks; - **Triage + screening**; - **Vaccination delivery**: outbreak + routine; - **Mental health support**: acute trauma + chronic; - **Communications**: with patients, public health, hospital; - **Vulnerable populations**: medically dependent, oxygen, dialysis, mental health, homeless, immigrants, elderly, disabled, low-income; (4) **Practice preparedness plan elements**: - **All-hazards approach**: flexible framework; - **Staff training + drills**; - **Communication plan**: internal staff, patient outreach (text, social, website), referral partners, public health, suppliers; - **Continuity of operations (COOP)**: alternate site, remote work, paper backup, key personnel; - **EHR + data backup + cybersecurity**; - **Supply chain**: medications, vaccines, PPE, basic supplies; - **Power + utilities** backup planning; - **Medication continuity** for patients (e.g., chronic medications stockpile, refill protocols, mail order, partnerships); - **Mutual aid agreements**; - **Patient outreach for chronic conditions** (HF, COPD, DM, dialysis, oxygen-dependent); - **Mental health response**; - **Public health collaboration**; (5) **Pandemic-specific (COVID lessons)**: - **Telemedicine** rapid implementation; - **Outpatient testing + triage**; - **Infection prevention + PPE**; - **Vaccination delivery** mass + accessible; - **Long COVID** management; - **Health equity** — disparities amplified; - **Workforce wellness** + burnout; - **Misinformation counter**; (6) **Climate change health impacts**: - **Heat-related illness** + heat waves; - **Vector-borne expansion** (Lyme, dengue, etc.); - **Air quality** (wildfire smoke, ozone, particulate); - **Allergies** worsening; - **Mental health** (climate anxiety, displacement); - **Water + food security**; - **Migration + conflict**; - Address adaptation + advocacy; (7) **Bioterrorism awareness**: - Recognize unusual presentations (anthrax, plague, smallpox, tularemia, botulism, viral hemorrhagic); - Report immediately to public health; - Personal protection; (8) **Mass casualty preparation**: - Active shooter / Stop the Bleed training; - Triage + first aid; - Mental health support; (9) **Recovery + long-term**: - Continued mental health (PTSD); - Chronic disease decompensation; - Health system rebuilding; - Equity considerations; (10) **National framework**: - **ESF #8** (Health + Medical) under Stafford Act; - **National Response Framework**; - **HHS ASPR** (Administration for Strategic Preparedness + Response); - **State + local public health** departments; - **HPP** (Hospital Preparedness Program); - **PHEP** (Public Health Emergency Preparedness); (11) **Resources**: ASPR TRACIE, CDC Emergency Preparedness, AAFP Disaster Resources, Healthcare Coalitions; (12) **Multidisciplinary**: PCP + emergency management + public health + hospital + EMS + community partners + government + faith + business + nonprofits"
+      },
+      {
+        "label": "C",
+        "text": "Single plan covers all"
+      },
+      {
+        "label": "D",
+        "text": "Ignore vulnerable populations"
+      },
+      {
+        "label": "E",
+        "text": "Wait until disaster occurs"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Disaster preparedness: all-hazards approach. Practice plan (staff, communication, COOP, supply chain, vulnerable patients). Pandemic lessons (telemedicine, equity). Climate change. Bioterrorism. Mass casualty. Recovery long-term. National framework + resources. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "ASPR; CDC; AAFP Disaster"
+  },
+  {
+    "scenario": "Hospital — primary care practice accreditation + certification + recognition programs",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No accreditation needed"
+      },
+      {
+        "label": "B",
+        "text": "Practice Accreditation + Recognition (NCQA + Joint Commission + URAC): (1) **PCMH (Patient-Centered Medical Home)** — most common: - **NCQA PCMH** — 3 levels of recognition; comprehensive criteria across team-based care, population health, care management, behavioral health integration, care coordination, patient engagement, performance measurement; - Demonstrates practice transformation; - Sometimes incentive payments; - Renewal triennial; - Continuous improvement focus; (2) **Joint Commission Ambulatory Care Accreditation** — broader healthcare accreditation; (3) **URAC Patient-Centered Health Care Home** — alternative; (4) **HRSA Health Center Program** (FQHCs) — federal funding + requirements; (5) **Specialty / condition-specific recognitions**: - **Diabetes Recognition Program** (NCQA DRP); - **Heart/Stroke Recognition Program**; - **Behavioral Health Integration**; - **Patient-Centered Specialty Practice** (NCQA PCSP); (6) **Hospital + system accreditation**: Joint Commission, DNV, HFAP; (7) **Recognition vs accreditation**: - Recognition often focused on specific model (PCMH); - Accreditation broader quality + safety; - Both demonstrate commitment + earn benefits; (8) **Value beyond compliance**: - Practice transformation; - Quality improvement focus; - Team-based care development; - Population health capabilities; - Performance measurement; - Continuous learning; - Staff + patient engagement; - Some payer incentives + alignment with value-based; (9) **Process for PCMH (NCQA)**: - Practice readiness assessment; - Application + documentation submission; - Self-evaluation against criteria; - Site visit or virtual review; - Recognition decision + level; - Annual reporting + improvement; - Renewal triennial; (10) **Costs + resources**: - Application fees; - Internal resources (staff time, project management); - Practice transformation investment; - Often supported by ACOs, payers, state programs; (11) **Critiques + considerations**: - Documentation burden; - Cost; - Variable evidence on outcomes (some positive, some neutral); - Real practice change vs paperwork; - Continuous improvement integration; (12) **Other quality programs**: - **CMS recognitions**: PCMH, ACO certification, MIPS APMs; - **State + regional programs**; - **Health plan recognition**: many private insurers; (13) **Maintenance of Certification (MOC)** for physicians — ABFM, ABIM, others — distinct from practice accreditation; (14) **DEI + equity certifications** emerging: equity-focused accreditation supplements; (15) **Multidisciplinary effort**: leadership + clinicians + administration + quality + IT + nursing + behavioral health + patients + consultants"
+      },
+      {
+        "label": "C",
+        "text": "Random pursuit"
+      },
+      {
+        "label": "D",
+        "text": "Cost prohibitive — avoid"
+      },
+      {
+        "label": "E",
+        "text": "Single audit only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Practice accreditation: NCQA PCMH most common + Joint Commission + URAC. Promotes practice transformation, team-based care, population health, performance measurement. Recognition vs accreditation. Process + costs. Critiques. CMS + state alignment with value-based. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "NCQA PCMH; Joint Commission; URAC"
+  },
+  {
+    "scenario": "Hospital — developing physician + clinical leadership in primary care + healthcare organizations",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Avoid leadership roles"
+      },
+      {
+        "label": "B",
+        "text": "Physician + Clinical Leadership Development (AAMC + AAFP + ACHE): (1) **Need**: healthcare transformation requires clinical leadership; complex change management; alignment of clinical + business + patient interests; (2) **Leadership competencies**: - **Self-awareness + emotional intelligence**: Goleman framework; - **Vision + strategic thinking**; - **Communication** — written, verbal, presentation, listening; - **Influence + negotiation**; - **Team building + management**; - **Change management** (Kotter 8-step, others); - **Financial + business acumen**; - **Quality + safety**; - **Data + analytics literacy**; - **Diversity, equity + inclusion (DEI)**; - **Mentorship + sponsorship**; - **Conflict resolution**; - **Ethical leadership**; - **Resilience + wellness**; (3) **Levels of leadership**: - **Self-leadership** (foundation); - **Team leadership** (e.g., medical director small practice); - **Departmental + division**; - **Organizational + system** (e.g., CMO, CMIO); - **National + advocacy**; - **Community + societal**; (4) **Development pathways**: - **Formal education**: MBA, MPH, MHA, MMM (Master of Medical Management), certificates; - **Leadership development programs**: ACHE, ACPE, AMA, specialty (AAFP, ACP); - **In-house programs**: organization-specific; - **Mentorship + sponsorship**: critical for advancement, especially women + URM; - **Project management training**: PMP, Lean Six Sigma; - **Coaching + executive coaching**; - **Self-directed learning**: books, podcasts, online; - **Stretch assignments** + cross-functional roles; - **Boards + committees**: medical staff, hospital, specialty society, community; (5) **Leadership development at all career stages**: - Trainee — chief resident; - Early career — clinical lead, project lead, committee; - Mid-career — director, MD-administrator dyad; - Senior — executive, board; (6) **Specific challenges**: - **Physician-administrator tension**: dyad leadership models; - **Burnout intersection** with leadership; - **DEI + representation gaps** — efforts to develop diverse leaders; - **Generation differences**; - **Imposter syndrome**; - **Work-life integration**; - **Compensation transition** from clinical to administrative; (7) **Leadership during disruption**: - COVID lessons in healthcare leadership; - Adaptive leadership (Heifetz); - Crisis communication; - Sense-making + ambiguity; (8) **Servant leadership + others-focused**: align with primary care values; (9) **Quality improvement + clinical leadership**: PDSA, Lean, Six Sigma; lead through QI projects; (10) **Patient-centered + community-engaged leadership**: PFAC engagement, community partnerships; (11) **Equity-focused leadership**: address structural racism, social determinants, diverse workforce; (12) **Resources + organizations**: - **ACHE** (American College of Healthcare Executives); - **ACPE** (American College of Physician Executives); - **AAFP Leadership Institute**; - **AAMC** (Association of American Medical Colleges) leadership programs; - **Harvard, Cornell, Penn, others** executive education; - **NLN, AONL** for nursing; - **Boards specific**: women, URM-specific (e.g., NMA); (13) **Coaching profession growing**: ICF certification; executive coaches with healthcare expertise; (14) **Multidisciplinary**: physicians + APPs + nursing + administration + quality + finance + IT + HR + patients + community + boards"
+      },
+      {
+        "label": "C",
+        "text": "Single workshop sufficient"
+      },
+      {
+        "label": "D",
+        "text": "No development needed"
+      },
+      {
+        "label": "E",
+        "text": "Random advancement"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Physician leadership: needed for transformation. Competencies (emotional intel, vision, communication, change mgmt, financial, DEI). Levels + pathways (formal degree, programs, mentorship, projects). Career-stage development. Specific challenges. Equity-focused. Resources. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "AAMC; AAFP Leadership; ACHE; ACPE"
+  },
+  {
+    "scenario": "Hospital — healthcare policy primary care + key legislation + advocacy",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No policy engagement"
+      },
+      {
+        "label": "B",
+        "text": "Healthcare Policy + Primary Care Advocacy (AAFP + ACP + AAP): (1) **Major US healthcare laws + frameworks** (international context note): - **Social Security Amendments 1965**: created **Medicare** (federal — 65+, disabilities) + **Medicaid** (federal-state partnership — low income); - **Children's Health Insurance Program (CHIP)** 1997; - **Affordable Care Act (ACA) 2010**: - Insurance marketplaces (Healthcare.gov, state exchanges); - Medicaid expansion (states optional — varies); - Pre-existing condition protection; - Dependent coverage to 26; - Preventive services covered without cost-sharing (USPSTF A + B); - Essential health benefits; - Individual mandate (penalty zeroed 2017); - Subsidies; - Quality + delivery innovations (CMMI); - **MACRA 2015**: MIPS + APMs (value-based); - **HIPAA 1996**: privacy + security; updated post; - **HITECH 2009**: EHR adoption + Meaningful Use; - **CARES Act 2020**: COVID response; - **Inflation Reduction Act 2022**: drug price negotiation Medicare; - **No Surprises Act 2020/2022**: out-of-network billing protection; (2) **Coverage gaps**: - **Uninsured ~ 26 million** (post-ACA but persistent); - **Underinsured** (high cost-sharing); - **Coverage cliff** vs Medicaid expansion holdouts; - **Immigration status restrictions**; - **Mental health + substance use coverage**; (3) **Drug pricing + access**: - IRA Medicare negotiation; - 340B program; - Drug shortages; - International comparisons; - Generic + biosimilar; - High-cost specialty + biologics; (4) **Primary care policy priorities** (AAFP, ACP, AAP, AOA): - **Payment reform**: shift FFS → value-based, primary care primary payment increase, hybrid models; - **Workforce**: GME funding, scope of practice, loan repayment, pipeline; - **Practice transformation**: PCMH + team-based + behavioral health; - **Workforce diversity** + URM pipeline; - **Mental health integration**; - **SDOH** + community-based; - **Health equity** + disparities; - **Administrative burden reduction**: prior authorization, documentation; - **Rural + underserved**; - **Telehealth** post-PHE; - **EHR interoperability**; - **DEA + controlled substance** (X-waiver removal 2023); - **MOUD access**; - **Reproductive + sexual health**; - **LGBTQ+ + transgender care**; - **Climate health**; (5) **Public health system + funding**: chronic under-investment; emergency response (COVID lessons); CDC + state/local health departments; (6) **Global health + international comparisons**: - **Universal coverage** systems (UK NHS, Canada, Germany, etc.); - **US** mixed public-private, fragmented; - **Outcomes** worse vs cost in US; - **Maternal mortality** rising US; - **Health inequities**; (7) **Equity policy**: - **CMS health equity** strategy; - **Structural racism** addressing; - **SDOH** in policy; - **Maternal health** disparities (Black 3-4x); - **LGBTQ+ protections**; - **Disability rights** (ADA); - **Voting rights + civic engagement** as health policy; (8) **Climate + environmental health policy**: - Clean Air, Water, environmental justice; - Climate adaptation + mitigation; - Health sector emissions; - Healthcare without Harm; (9) **Reproductive + sexual health policy** post-Dobbs 2022: variable state laws; abortion access; contraception; sexual education; (10) **Advocacy + civic engagement**: - **Professional associations** AAFP, ACP, AAP, AOA, AMA, specialty; - **Federal**: Congress, agencies (CMS, FDA, HHS, HRSA, CDC); - **State**: medical societies, legislature, governor, public health; - **Local**: city/county, school boards, community boards; - **Coalitions**: cross-specialty, patient groups, public health; - **Direct patient impact**: SDOH addressing, community partnerships, voter registration in healthcare settings (NoHealthyWithoutVotes); (11) **Skills for policy engagement**: - Understanding legislation + regulation; - Communication with policymakers; - Op-eds + media; - Testimony; - Coalition building; - Research + evidence translation; (12) **Resources**: AAFP Advocacy, ACP Health Policy + Advocacy, KFF (Kaiser Family Foundation), Commonwealth Fund, Health Affairs, NEJM Catalyst; (13) **Multidisciplinary advocacy**: clinicians + administrators + patients + community + public health + policy + legal + academia + media"
+      },
+      {
+        "label": "C",
+        "text": "Random advocacy"
+      },
+      {
+        "label": "D",
+        "text": "Avoid politics"
+      },
+      {
+        "label": "E",
+        "text": "Single legislation knowledge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Healthcare policy: major laws (Medicare/Medicaid, ACA, MACRA, HITECH, IRA). Coverage gaps. Drug pricing. Primary care priorities (payment, workforce, mental health, SDOH, equity). Public health funding. Global comparisons. Equity + climate + reproductive. Advocacy skills. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "AAFP Advocacy; ACP Health Policy; KFF"
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 35 ปี — primary care across women's lifespan; preconception → pregnancy → postpartum → menopause planning",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single life stage focus"
+      },
+      {
+        "label": "B",
+        "text": "Women's Health Across Lifespan Integrative Primary Care: (1) **Family medicine well-positioned for women's lifespan care** — continuity across stages; (2) **Reproductive years**: - **Preconception health**: optimization 3+ mo before — folate 400 mcg (4 mg if NTD risk), chronic disease optimization (DM, HT, thyroid, mental health), medication review (teratogen replacement), vaccinations update (MMR if non-immune, varicella, COVID), lifestyle (smoking, alcohol, weight, nutrition, exercise), genetic carrier screening, mental health, IPV screen; - **Contraception**: comprehensive options + LARC counseling + risk-benefit + medical eligibility; - **Reproductive autonomy + decisions**; - **Infertility evaluation**: starts after 12 mo (6 mo if > 35), basic workup PCP + refer REI; - **Menstrual + gynecologic**: PMS/PMDD, dysmenorrhea, AUB, dysfunctional bleeding, endometriosis, fibroids, PCOS; - **Sexual health**: function, dyspareunia, libido, sexual orientation, education; - **STI screening + prevention + treatment**; - **Cancer screening**: cervical + breast; (3) **Pregnancy + postpartum**: - **Antenatal care**: comprehensive routine + risk-based; - **Hypertensive disorders pregnancy**: preeclampsia, gestational HTN, chronic HTN; surveillance + management; **Future CV risk marker**; - **Gestational DM**: screening + management + postpartum follow-up + lifelong T2DM risk; - **Mental health pregnancy + postpartum**: high prevalence; screen + treat (SSRI, therapy); postpartum psychosis emergency; PPA; - **Substance use**: screening + treatment; tobacco, alcohol, opioids (MOUD); - **IPV**: screen; pregnancy + postpartum high-risk window; - **Postpartum 4th trimester** (ACOG 2018): comprehensive ongoing care; (4) **Midlife (40s-50s)**: - **Cancer screening**: breast (lower age), cervical, colon (45+), skin; - **CV risk assessment**: ASCVD; lipid; BP; DM; metabolic syndrome; - **Bone health**: foundation for osteoporosis prevention; calcium + vit D + weight-bearing; - **Mental health**: depression + anxiety high in midlife women; perimenopausal mood symptoms; - **Sexual health**: ongoing; menopause approaching; - **Perimenopause**: 4-8 yr transition; irregular menses, vasomotor symptoms beginning, mood, sleep; (5) **Menopause + postmenopause**: - **Symptoms**: vasomotor, GSM, sleep, mood, cognition, joint, sexual; - **MHT** (see separate — NAMS 2022) — < 60 yo or < 10 yr from menopause symptomatic; transdermal preferred; - **Non-hormonal options**: SSRI, gabapentin, fezolinetant new, lifestyle, CBT; - **Bone health**: DXA at 65 (younger if risk); FRAX; treat osteoporosis; - **CV**: lipid + BP + DM + ASCVD risk + statin; - **Cancer screening continued**; - **Sexual health**: GSM treatment (local vaginal estrogen safe even in BC history); ospemifene, prasterone; - **Cognitive aging**: lifestyle + monitor; - **Pelvic floor**: incontinence, prolapse — PT first-line; - **Mental health**: ongoing; (6) **Older adults (65+)**: - **Geriatric considerations**: see separate; - **Cancer screening individualized + life expectancy**; - **Osteoporosis management** ongoing; - **CV ongoing**; - **Cognitive screening** Mini-Cog/MoCA; - **Falls assessment + prevention**; - **Polypharmacy management** Beers; - **Caregiver role** common; - **Advance care planning**; (7) **Common across lifespan**: - **Mental health**: depression + anxiety higher in women across lifespan; trauma + IPV; - **Autoimmune disease** higher in women; - **Migraine** higher; - **Body image + eating**: lifespan; - **Caregiving + family**: integrate; - **Health equity + disparities**: maternal mortality (Black 3-4x), heart disease (often underrecognized in women), other; - **Reproductive justice + access**: lifespan; (8) **LGBTQ+ + gender-diverse**: affirming care across lifespan; (9) **Cultural humility + diverse populations**; (10) **Multidisciplinary integrative team**: family medicine + OB/GYN + breast + REI + endocrine + cardiology + behavioral health + nutrition + PT (pelvic floor) + social work + community + family + caregivers"
+      },
+      {
+        "label": "C",
+        "text": "Random screening"
+      },
+      {
+        "label": "D",
+        "text": "Avoid mental health"
+      },
+      {
+        "label": "E",
+        "text": "Refer everything to specialty"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Women's lifespan integrative: family medicine well-positioned. Preconception → pregnancy → postpartum → midlife → menopause → older adult. Reproductive, cancer screening, CV/bone, mental health, sexual health across stages. Equity + disparities focus. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "AAFP Women's Health; ACOG Lifespan"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 45 ปี — primary care across men's lifespan; chronic disease + screening + sexual + mental health",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single age focus"
+      },
+      {
+        "label": "B",
+        "text": "Men's Health Across Lifespan Integrative Primary Care: (1) **Men underutilize primary care** + worse outcomes — avoidance, stigma, work-prioritization, masculinity norms; engaging is opportunity; (2) **Young adult (18-39)**: - Lifestyle: smoking + alcohol + substance use + driving safety + sexual health + STI + mental health + injury prevention; - Establish primary care relationship; - Vaccinations (HPV catch-up to 26 + shared 27-45, Tdap, flu, COVID, meningococcal college); - Reproductive health + contraception (partner) + STI screening; - Mental health screening + suicide (highest age group); - Substance use screening; - Testicular self-exam (controversial USPSTF) — awareness of CA young; - Skin cancer awareness; (3) **Middle adult (40-64)** — major chronic disease emergence: - **CV risk assessment + management**: BP screening, lipid (ASCVD risk), DM screening (35-70), statin per risk, smoking cessation, lifestyle; - **Cancer screening**: - **Colorectal** 45-75 (USPSTF lowered); - **Lung CT** 50-80 + 20 pack-year smoker; - **Prostate** 55-69 shared decision; high-risk (Black, family, BRCA) earlier; - **Skin**, **oral**, **testicular** awareness; - **DM + obesity**: screening + lifestyle intervention; DPP for prediabetes; medication including GLP-1 RA for obesity; - **Mental health**: depression + anxiety screening; suicide higher rate; substance use including alcohol; - **Sexual health**: ED screening (window to CVD), testosterone (true hypogonadism only), STI; - **Reproductive**: vasectomy counseling, fertility preservation pre-treatment; - **Workplace + occupational**: hazards, ergonomics, stress; - **Sleep**: OSA more common men; - **Vaccinations**: continue + age-based; (4) **Older adult (65+)**: - **Geriatric care principles** (see separate); - **Cancer screening individualized + life expectancy**: stop most after age 75-85 or life expectancy < 10 yr; - **CV ongoing**; - **Osteoporosis**: men 70+ (or earlier if risk — hypogonadism, glucocorticoids, antiandrogen therapy); - **Falls assessment**; - **Cognitive screening**; - **BPH + LUTS** management; - **Polypharmacy management**; - **Caregiving role**; - **Advance care planning**; - **Mental health + isolation**: widower depression; suicide elevated; (5) **Cross-lifespan issues**: - **Smoking**: leading preventable cause; cessation; - **Cardiovascular** most common cause of death; - **Mental health**: underdiagnosed + undertreated; suicide rates higher men (especially older); depression presents differently (irritability, work issues, substance, somatic); - **Substance use**: higher rates; address; - **Injury + violence**: prevention; firearms; - **Sexual + reproductive**: lifespan; - **LGBTQ+ men**: affirming care; specific health considerations; - **Men of color**: disparities (life expectancy, prostate CA — Black men higher risk, CV); cultural humility; - **Veterans**: specific exposures + mental health + trauma; PTSD; access to VA; - **Workplace + occupational**: hazards + stress + chemical exposures; - **Caregiving + family**: increasing role for men; supportive; (6) **Engagement strategies**: - Meet patients where they are; - Honest + practical; - Sports + work metaphors when fit; - Reduce stigma; - Address barriers (time, cost, access); - Use other touch points (employer, sports physical, partner appointment); - Outreach + reminders; (7) **Specific cancer awareness**: - **Testicular CA** — young men, self-exam awareness; - **Prostate CA** — shared decision PSA + family history; - **Penile CA** — uncommon but awareness; - **Male breast CA** — uncommon, family history BRCA; - **Skin CA**; - **Colorectal**; - **Lung**; (8) **Sexual + reproductive health**: - **ED** — window to CVD; - **Testosterone** — only if confirmed hypogonadism; - **Infertility** — workup + REI; - **STI** screening + prevention; - **PrEP** for high-risk; - **LGBTQ+ + MSM-specific**: see separate; (9) **Pediatric to adult transition** for young men chronic conditions; (10) **Multidisciplinary integrative**: family medicine + urology + cardiology + behavioral health + endocrinology + oncology + community + family + workplace + male-oriented programs"
+      },
+      {
+        "label": "C",
+        "text": "Avoid mental health men"
+      },
+      {
+        "label": "D",
+        "text": "Only acute care"
+      },
+      {
+        "label": "E",
+        "text": "No engagement strategies"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Men's health lifespan: underutilize care — engagement strategies. Young adult — lifestyle + mental health + sexual. Middle adult — chronic disease + cancer screening + ED + mental health. Older adult — geriatric principles + BPH + falls. Cross-lifespan (CV, mental health, substance, sexual). Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "AAFP Men's Health"
+  },
+  {
+    "scenario": "ครอบครัวผู้อพยพ refugee — newly arrived, multiple medical + psychosocial concerns; family-centered integrative primary care",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single visit assessment"
+      },
+      {
+        "label": "B",
+        "text": "Refugee + Immigrant Primary Care Integrative (CDC + AAFP + Society for Refugee Healthcare Providers): (1) **Categories**: refugees (UNHCR-designated), asylees, asylum-seekers, immigrants (documented + undocumented), TPS (temporary protected status), parolees, others; (2) **Pre-arrival**: - **Refugees**: medical exam abroad — TB, syphilis, gonorrhea, leprosy, HIV (not exclusionary now); - **Vaccinations** per CDC requirements; - **Domestic medical screening** comprehensive within 30-90 days arrival (state programs); (3) **Comprehensive initial assessment**: - **History**: country of origin, ethnicity, language, refugee experience (camp duration, journey), pre-migration trauma, family separation, current resettlement; - **Physical exam comprehensive**; - **Screening**: - **Infectious**: - **TB** (IGRA or TST) — high prevalence many countries; LTBI treatment; - **HBV, HCV, HIV** screening — variable by country; - **Syphilis** + STIs; - **Parasites** (stool O&P, schistosomiasis serology endemic areas, strongyloidiasis especially before steroid/biologic — empirical ivermectin for refugees from endemic some recommend); - **Malaria** endemic; - **Country-specific**: e.g., Chagas Latin America; - **Hematologic**: CBC, hemoglobinopathy screening (thalassemia + sickle cell endemic areas), G6PD before primaquine/dapsone; - **Vitamin deficiency**: D, B12, iron — high prevalence; - **Lead** (children especially); - **Mental health**: PTSD, depression, anxiety — high prevalence; refugee-specific scales (RHS-15, HSCL-25); torture history; - **Dental + oral** — often unmet; - **Vision + hearing** — refractive errors common, may be untreated; - **Reproductive health**: contraception, prenatal care, female genital cutting (sensitive assessment + management); - **Vaccinations**: catch-up per CDC schedule; document acceptance varies; (4) **Common conditions**: - **Vitamin D deficiency** very common; - **Latent TB** common; - **Mental health** PTSD, depression; - **Chronic disease** (HT, DM, CV) — often unmanaged + worsening; - **Cancer screening** often never done; - **Untreated chronic conditions**: thyroid, anemia, etc.; - **Reproductive health** unmet needs; (5) **Cultural humility + practices**: - Diverse beliefs about health + illness + body; - Religious + spiritual considerations (Ramadan, prayer times, dietary halal/kosher, modesty, gender concordance providers preferred some); - Traditional healing integration; - Family + community dynamics; - Migration trauma + ongoing acculturation stress; - Discrimination + xenophobia; (6) **Trauma-informed care**: - High prevalence trauma (torture, violence, sexual, witnessing); - Triggers in healthcare; - Safety + trust + choice + collaboration + empowerment; - PTSD screening + treatment (EMDR, CBT, medications); - **Center for Victims of Torture** + similar resources; (7) **Language access**: - **Professional interpreters** mandatory — Title VI requirement federally-funded; - Video, phone, in-person; - NOT family or children; - Cultural brokers; - Written materials in language; (8) **Legal + social complexity**: - Immigration status + healthcare access; - Public charge concerns (chilling effect on services); - Employment + housing + food + transportation; - Family reunification; - Asylum process + medical evaluation (Physicians for Human Rights training for asylum medical/psychological evaluations); - Healthcare access for undocumented limited (emergency Medicaid + community resources); (9) **Refugee-specific resources + benefits**: - **RMA (Refugee Medical Assistance)** — 8 mo healthcare benefits federally funded; - State-specific extended benefits; - Refugee Resettlement Agencies; - Community + faith-based partners; (10) **Pediatric considerations**: - Vaccinations catch-up; - Growth + nutrition; - Developmental screening; - Education + school enrollment; - Trauma in children; - Family reunification; (11) **Special populations**: - **Unaccompanied minors**: complex; - **LGBTQ+ refugees**: persecution-specific; - **Survivors of torture + trafficking**; - **Women + girls**: gender-based violence, FGC; - **Older refugees**: isolation, dependency; (12) **Long-term integration**: chronic disease management as integration progresses; cultural broker role; advocacy; (13) **Multidisciplinary**: PCP + community health worker / cultural broker + interpreter + behavioral health + social work + legal + community partners + religious + family + specialty referrals + public health + resettlement agencies"
+      },
+      {
+        "label": "C",
+        "text": "Avoid mental health discussion"
+      },
+      {
+        "label": "D",
+        "text": "Family interpreter"
+      },
+      {
+        "label": "E",
+        "text": "Cultural assimilation expected"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Refugee/immigrant care: comprehensive initial screening (TB, parasites, vitamin D, mental health, chronic disease). Trauma-informed essential. Cultural humility. Professional interpreters. Legal + social complexity. Refugee-specific benefits + resources. Multidisciplinary.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "CDC Refugee Health; AAFP; SRHP"
+  },
+  {
+    "scenario": "ผู้ป่วย T2DM 12 คน — group visit model — shared medical appointments + peer support",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Individual visits only"
+      },
+      {
+        "label": "B",
+        "text": "Group Visits / Shared Medical Appointments (SMA) Integrative Care: (1) **Definition**: physician-led group visit where multiple patients with similar conditions receive medical care + education + peer support together; can include other team members; (2) **Evidence**: improved outcomes T2DM, HTN, HF, depression, chronic pain, prenatal care, weight management; cost-effective; (3) **Models**: - **Drop-in Group Medical Appointment (DIGMA)**: ongoing, mixed conditions, regular schedule; - **Cooperative Health Care Clinic (CHCC)**: closed cohort same patients over time; - **Physical SMA (PSMA)**: includes individual physical exam component; - **Specialty + condition-specific**: prenatal (Centering Pregnancy), DM, HTN, HF, depression, pain, weight, smoking cessation, behavioral health; (4) **Components**: - **Group education** by team; - **Peer interaction + support**; - **Individual physician encounter** within or separate; - **Team-based care** — RN, dietitian, behavioral health, pharmacy as needed; - **Goal-setting + accountability**; - **Self-management focus**; - **Cultural + language matching** when possible; (5) **Advantages**: - **Patient**: peer support + learning, more time with provider (90 min vs 15), normalization, accountability, social connection; - **Provider**: education efficiency, address common issues once, team-based, reduced burnout; - **System**: efficiency, access, reduced ED visits + hospitalizations, cost-effective; - **Outcomes**: improved A1c, BP, adherence, self-efficacy, satisfaction; (6) **Setup considerations**: - **Space**: large enough for group + privacy; - **Time**: 90-120 min typical; - **Frequency**: weekly to monthly; - **Group size**: 6-15 typical; - **Recruitment**: screen + enroll, address transportation, scheduling; - **Confidentiality + ground rules**: HIPAA, group agreements; - **Documentation**: each individual encounter; - **Billing**: typically code each individual; some states offer specific codes; - **Technology**: virtual SMA growing — telegroups; (7) **Patient selection**: - Common diagnosis or interest; - Mix of stages (engagement + role model); - Voluntary; - Address barriers; (8) **Specific examples + evidence**: - **Centering Pregnancy** — well-established, improved birth outcomes (lower preterm + LBW), satisfaction; - **DM SMAs** — improved A1c + other markers; - **HTN SMAs**; - **Chronic pain group programs** — Living Well; - **Behavioral health groups** — depression, anxiety, mindfulness, CBT; - **Weight management** — DPP group format; - **Cardiac rehab + pulmonary rehab** — group-based; - **Substance use treatment**: AA, MAT groups; - **Smoking cessation groups**; - **CHWs + peer support** programs; (9) **Cultural + linguistic adaptation**: - Language-concordant groups; - Cultural framing of content; - Community + faith partnerships; (10) **Integration with population health management**: identify panel members + outreach + enroll; (11) **Provider training**: facilitation, group dynamics, time management; (12) **Patient engagement + sustainability**: address dropout, peer leaders, ongoing recruitment; (13) **Equity + access**: address transportation, childcare, language, cost; reach underserved; (14) **Multidisciplinary**: PCP + APP + nursing + dietitian + behavioral health + pharmacy + CHW + administration + patients (peer leaders, advisors)"
+      },
+      {
+        "label": "C",
+        "text": "Random topics"
+      },
+      {
+        "label": "D",
+        "text": "No peer interaction"
+      },
+      {
+        "label": "E",
+        "text": "No follow-up"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Group visits / SMA: physician-led group care with peer support. Multiple models. Evidence-based for DM, HTN, prenatal, etc. Components: education + peer + individual encounter + team. Advantages — patient, provider, system. Setup + selection + billing. Equity. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "AAFP Group Visits; Centering"
+  },
+  {
+    "scenario": "Hospital — implementing behavioral health integration (BHI) in primary care — Collaborative Care Model",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Refer all to specialty"
+      },
+      {
+        "label": "B",
+        "text": "Behavioral Health Integration (BHI) — Collaborative Care Model (Unützer + APA + AIMS Center): (1) **Need**: mental health in primary care; ~ 50% mental health care delivered in primary care; specialty access limited; outcomes traditionally suboptimal; (2) **Continuum of integration** (SAMHSA-HRSA 4-quadrant): - **Level 1: Minimal collaboration** — separate; - **Level 2: Basic collaboration at distance** — referral with limited communication; - **Level 3: Basic collaboration on-site** — co-located; - **Level 4: Close collaboration on-site with shared system**; - **Level 5: Close collaboration approaching integration**; - **Level 6: Full collaboration in transformed/merged integrated practice**; - Higher level = better outcomes for moderate-severe conditions; (3) **Collaborative Care Model (CoCM)** — most evidence: - **5 core principles**: - Patient-centered team care; - Population-based care (registry); - Measurement-based care + treat-to-target (PHQ-9, GAD-7 routine); - Evidence-based care; - Accountable care; - **Team members**: - **PCP** — primary clinical management; - **Behavioral Health Care Manager** — RN, social worker, psychologist — care management, brief interventions, follow-up, registry; - **Psychiatric Consultant** — weekly case review with care manager, recommendations to PCP, direct consultation for complex; (4) **Evidence Collaborative Care**: > 80 RCTs across conditions + settings — better outcomes vs usual care for depression, anxiety, substance use, PTSD, dementia + caregiver; pediatric; perinatal; chronic disease comorbid; veterans; rural; (5) **CMS Collaborative Care codes (BHI 99492-99494)** support reimbursement; many private insurance; (6) **Implementation steps**: - Assess practice readiness; - Identify champions + leadership; - Workflow design + EHR integration; - Hire/train care manager + psychiatric consultant; - Universal screening (PHQ-9, GAD-7, CRAFFT, others); - Registry + measurement; - Quality improvement ongoing; - Patient engagement; - Reimbursement strategy; (7) **Alternative integrated models**: - **Primary Care Behavioral Health (PCBH)** — behavioral health provider embedded; brief interventions; warm handoffs; broader population; less specialized depression focus; - **Co-location** without integration — basic; - **Bidirectional integration** — primary care in mental health settings; (8) **Specific applications**: - **Depression** — most evidence; - **Anxiety**; - **PTSD + trauma**; - **Substance use disorders**: MAT for OUD (buprenorphine), AUD pharmacotherapy + counseling; - **Chronic pain + mental health comorbidity**; - **Severe mental illness** in primary care: schizophrenia, bipolar; primary care of medical comorbidities + co-management with psychiatry; - **Pediatric**: family-based, school integration; - **Perinatal**: postpartum depression; - **Geriatric**: depression, dementia, caregiver support; - **Substance use disorders**: SBIRT + MAT; - **Chronic disease**: DM + depression, etc. — depression treatment improves both; (9) **Specific evidence-based interventions delivered by BHI team**: - **Brief CBT**; - **Behavioral activation**; - **Problem-solving therapy**; - **Motivational interviewing**; - **Mindfulness**; - **Sleep hygiene + CBT-I**; - **Substance use brief intervention**; - **Self-management coaching**; (10) **Pharmacotherapy support**: PCP-prescribed with consultation; medication monitoring; adherence support; (11) **Quality measures**: PHQ-9 response + remission, GAD-7, screening rates, treatment initiation + intensification, suicide risk assessment; (12) **Equity + access**: BHI improves access to mental health especially for underserved + minorities + rural; addresses stigma; (13) **Technology**: tele-mental health, apps (Calm, Headspace, computerized CBT — Beating the Blues), digital therapeutics; (14) **Workforce considerations**: care manager workforce + training + reimbursement adequate; psychiatry workforce shortage so consultation model efficient; (15) **Resources**: AIMS Center (University of Washington), APA Integrated Care, SAMHSA-HRSA Center for Integrated Health Solutions; (16) **Multidisciplinary**: PCP + behavioral health care manager + psychiatric consultant + APP + nursing + social work + community resources + family + patient + payers + leadership"
+      },
+      {
+        "label": "C",
+        "text": "No integration"
+      },
+      {
+        "label": "D",
+        "text": "Random behavioral health"
+      },
+      {
+        "label": "E",
+        "text": "Single provider model"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "BHI Collaborative Care Model: PCP + care manager + psychiatric consultant. 5 core principles. Strong evidence depression + anxiety + others. Implementation. Alternative models (PCBH). Specific applications + pharm + non-pharm interventions. CMS reimbursement codes. Equity. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "Unützer Collaborative Care; AIMS Center; APA"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 78 ปี — advanced cancer + life expectancy < 6 mo + family + spiritual + goals-of-care + hospice transition",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Aggressive treatment until death"
+      },
+      {
+        "label": "B",
+        "text": "End-of-Life Care Integrative Family-Centered (NHPCO + CAPC + Ariadne): (1) **Goals-of-care conversation** central + ongoing: - Reframe from disease focus to person + values; - Hopes + worries + tradeoffs framework; - 'I wish + I worry + I wonder' phrases; - Family + caregiver involvement; - Cultural + spiritual considerations; - Document + revisit as condition changes; - Serious Illness Conversation Guide (Ariadne); (2) **Hospice eligibility + benefit**: - **Prognosis ≤ 6 mo** if disease takes natural course; - Patient + family agreement on comfort focus; - Medicare hospice benefit since 1982 — most insurance covers similarly; - **Disease-specific Local Coverage Determinations (LCDs)**: cancer, dementia, CHF, COPD, liver, kidney, stroke, debility; - **Hospice team**: physician, nurse, social worker, chaplain, aide, volunteer, bereavement counselor, therapists; - **Settings**: home (most common), nursing facility, inpatient hospice, hospital (rare); - **Levels**: routine home, continuous home, inpatient respite, general inpatient (for symptom crisis); (3) **Symptom management** — see palliative care: pain, dyspnea, nausea, constipation, fatigue, anorexia, anxiety, delirium, spiritual distress; (4) **Active dying phase**: - **Signs**: decreased consciousness, decreased intake, mottling, terminal secretions, Cheyne-Stokes breathing, restlessness, decreased urine, cool extremities; - **Anticipatory guidance** for family — expected, peaceful; - **Comfort measures**: medications for pain, dyspnea, secretions (scopolamine, glycopyrrolate); positioning; mouth care; - **Hydration / nutrition**: artificial generally not beneficial actively dying — discuss expectations; - **Discontinue non-essential medications + monitoring**; - **Withdraw burdensome interventions** as appropriate (cardiac monitor, IVs, BP checks, finger sticks); (5) **Family + caregiver support** integral: - **Pre-death**: education, anticipatory grief, emotional + practical support; - **Bedside vigil**: meaningful, supportive; - **Death**: notify family; provide privacy; honor cultural + religious practices; - **Post-death**: notify physician (or hospice MD pronounces); body care; mortuary; - **Bereavement support**: 13 months hospice (Medicare); ongoing groups + counseling; complicated grief identification + referral; (6) **Spiritual + existential care**: - **Chaplaincy** integral hospice; - **Religious + cultural practices** at end of life — diverse; ask + honor; - **Existential dignity work**: life review, dignity therapy, meaning-making, music/art, legacy; - **Mindfulness + meditation**; - **Connection + relationships**; (7) **Specific scenarios**: - **Sudden / unexpected death**: traumatic; immediate support family; followup; - **Death of child / infant**: devastating; specialized perinatal palliative + pediatric palliative; - **Suicide** (recent): family complex grief; support; reduce stigma + blame; - **Mass casualty / disaster deaths**; (8) **Voluntarily stopping eating and drinking (VSED)**: option in some patients; respect autonomy; supportive care; - **Medical aid in dying (MAID)** — legal in 10 US states + DC + several countries; differs from euthanasia (illegal US); strict eligibility + safeguards; family medicine often involved when legal + comfortable; - **Palliative sedation** for refractory suffering — ethical + accepted (not euthanasia); intentions transparent; (9) **Pediatric end-of-life**: - Specific challenges; - Family + sibling support; - Decision-making by parents — challenging; - School + community support; - Specialty pediatric palliative + hospice; (10) **Equity in end-of-life care**: - Disparities by race, ethnicity, SES, geography; - Black + Hispanic + Asian patients + families different preferences/utilization; - Cultural humility critical; - Access barriers; - Healthcare proxy + advance directives less common in some communities; (11) **Provider self-care + grief**: cumulative loss; debriefing; institutional support; primary care relationships make end-of-life care deeply meaningful + emotionally demanding; (12) **Quality measures end-of-life**: hospice length of stay (very short = late referral), preferred place of death achieved, family satisfaction; (13) **Family medicine well-positioned**: relationship continuity, family unit care, holistic, comfort with whole-person care; (14) **Multidisciplinary integrative**: PCP + hospice MD + RN + SW + chaplain + aide + volunteer + family + extended family + community + religious community + bereavement + pediatric (if pediatric)"
+      },
+      {
+        "label": "C",
+        "text": "No goals-of-care discussion"
+      },
+      {
+        "label": "D",
+        "text": "Avoid family"
+      },
+      {
+        "label": "E",
+        "text": "Single specialty handles"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "End-of-life integrative: goals-of-care central. Hospice for ≤ 6 mo prognosis. Active dying signs + management. Family + caregiver support throughout. Spiritual + existential. VSED / MAID where legal. Pediatric. Equity. Provider self-care. Family medicine well-positioned. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "NHPCO; CAPC; Ariadne"
   }
 ]
