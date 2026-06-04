@@ -1,0 +1,172 @@
+[
+  {
+    "scenario": "ชายไทยอายุ 22 ปี นำส่งโดยพ่อแม่ — เริ่มแยกตัวจากเพื่อน, พูดเรื่องคนตามมาจะฆ่า, ได้ยินเสียงสั่งให้ทำร้ายตัวเอง × 6 เดือน, ผลการเรียนตก, ไม่อาบน้ำ\n\nNo medical illness, no substance use, no family history clear\nV/S: ปกติ\nMSE: thought disorganized, auditory hallucinations (commanding), persecutory delusions, blunt affect, alogia, GAF 35\n\nUDS negative, TSH normal, CT brain normal",
+    "choices": [
+      { "label": "A", "text": "Observation only" },
+      { "label": "B", "text": "First Episode Psychosis / Schizophrenia (DSM-5: positive sx + negative sx + functional decline + > 6 mo): (1) Safety assessment + admit if dangerous; (2) **Atypical antipsychotic** first-line (lower EPS than typical): risperidone, olanzapine, aripiprazole, quetiapine; start low + titrate; (3) Clozapine reserved for treatment-resistant (failed ≥ 2 antipsychotics); requires CBC monitoring (agranulocytosis); (4) Long-acting injectable (LAI) for adherence concerns; (5) Adjuncts: benzodiazepine short-term for agitation; (6) **Psychosocial**: family education + support (NEAP — National Education + Awareness Program), CBT for psychosis, vocational rehab, supported employment, case management, peer support; (7) Early intervention services improve outcomes; (8) **Comorbidity**: depression (suicide risk high), substance use, anxiety, metabolic syndrome (antipsychotic side effect); (9) **Side effect monitoring**: weight + lipids + glucose (metabolic syndrome — olanzapine + clozapine worst), EPS, tardive dyskinesia, prolactin, QTc; (10) **Long-term**: 50-80% recurrence within 5 yr without treatment — continue medication ≥ 1-2 yr after stabilization, often lifelong; (11) Multidisciplinary: psychiatry, primary care, social work, family, vocational" },
+      { "label": "C", "text": "Refer for surgical evaluation" },
+      { "label": "D", "text": "Hospice" },
+      { "label": "E", "text": "Antibiotic" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Schizophrenia: positive (hallucinations, delusions, disorganized thought/behavior) + negative (alogia, anhedonia, asociality, avolition, affective flattening) + cognitive symptoms + functional decline. Onset late teens-20s (men earlier). Treatment: antipsychotic + psychosocial. Atypical first-line. Clozapine for treatment-resistant. Long-term medication essential. Multidisciplinary care. Early intervention improves outcomes. Recovery possible.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "APA Practice Guideline: Schizophrenia 2020; NICE CG178"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 35 ปี G2P1 postpartum 6 weeks มา OPD ด้วยอาการ low mood, loss of interest, fatigue, insomnia, poor appetite, weight loss 5kg, suicidal ideation × 4 weeks, difficulty bonding with baby\n\nNo psychiatric history\nNo substance use\nThyroid: TSH normal, anemia: Hb 11.0\nEPDS score: 22 (very high)\nPHQ-9: 18 (severe)",
+    "choices": [
+      { "label": "A", "text": "Discharge — postpartum blues will resolve" },
+      { "label": "B", "text": "Postpartum Major Depression with Suicidal Ideation: (1) **Safety assessment first** — suicidal ideation requires immediate evaluation: plan, intent, means, protective factors; assess for infanticide thoughts (rare but devastating); hospitalize if active suicidal/infanticidal/inability to care for self/baby; (2) **Treatment**: SSRI first-line — sertraline preferred (low milk transfer, evidence-based) or paroxetine; alternatives — escitalopram, venlafaxine; brexanolone IV (FDA approved postpartum depression — limited availability); zuranolone oral (FDA approved 2023 postpartum depression — 2-week course); (3) **Psychotherapy**: CBT, IPT (interpersonal — specifically for postpartum), peer support; (4) **Breastfeeding considerations**: most SSRIs low milk transfer + acceptable; benefits of treatment outweigh; (5) **Social support**: family involvement, partner education, mother support groups, public health nurse visits, child care assistance; (6) **Multidisciplinary**: OB-GYN, psychiatry, primary care, pediatrician, social work, lactation; (7) **Follow-up**: close (weekly initially); (8) **Family education**: depression is medical illness, NOT character flaw — reduce stigma + guilt; (9) **Untreated risks**: maternal suicide, infanticide, impaired bonding, child development issues, future pregnancy depression, marital issues; (10) **Differential**: postpartum blues (50-80%, < 2 wk, mild, self-limited), postpartum psychosis (0.1-0.2%, EMERGENCY — high infanticide risk), other secondary causes (thyroid, anemia)" },
+      { "label": "C", "text": "Antibiotic" },
+      { "label": "D", "text": "Surgery" },
+      { "label": "E", "text": "Wait + see" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Postpartum Depression: 10-20% of women. Distinct from postpartum blues (50-80%, < 2 wk, mild). Risk factors: prior depression, life stressors, lack of support, complications. Suicide leading cause of maternal mortality some series. Differential: postpartum psychosis (0.1-0.2%) — emergency, infanticide risk. Treatment: SSRI + psychotherapy + social support. Brexanolone + zuranolone new FDA-approved options. Multidisciplinary. Safety paramount.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Committee Opinion: Screening for Perinatal Depression 2018; APA Practice Guidelines"
+  },
+  {
+    "scenario": "ชายไทยอายุ 26 ปี มาห้องฉุกเฉินด้วยอาการ ตื่นเต้น พูดเร็ว ความคิดเร็ว ไม่นอน 3 คืน ใช้เงินซื้อของแพง ๆ มากกว่ารายได้ + แผนใหญ่ทำธุรกิจ + irritable + sexual disinhibition\n\nก่อนหน้านี้ 6 เดือนเคยมี depressive episode รุนแรง (treated by previous psychiatrist with SSRI)\n\nMSE: pressured speech, flight of ideas, grandiose delusions, elevated mood, distractible, decreased need for sleep\nNo substance use detected (UDS negative)\nTSH normal\n\nDSM-5 criteria for manic episode met",
+    "choices": [
+      { "label": "A", "text": "SSRI alone" },
+      { "label": "B", "text": "Bipolar I Disorder Manic Episode (after recent SSRI for depression — possible SSRI-induced mania revealing Bipolar) — DSM-5: distinct period elevated/irritable + ≥ 3 sx (DIG FAST: Distractibility, Indiscretion, Grandiosity, Flight of ideas, Activity ↑, Sleep ↓, Talkativeness) ≥ 1 week: (1) **Stop SSRI** (may have triggered mania — antidepressants in unrecognized bipolar can cause manic switch; SSRI alone in bipolar increases cycling); (2) **Acute mania treatment**: - **Lithium** (effective + reduces suicide risk uniquely; monitor levels 0.8-1.2, renal, thyroid); - **Valproate/Divalproex** (loading dose available, faster onset; teratogenic — avoid in women of reproductive age, NTD); - **Atypical antipsychotic** (risperidone, olanzapine, quetiapine, aripiprazole, asenapine, cariprazine — multiple FDA approved); - Combination — mood stabilizer + atypical for severe; (3) **Safety**: hospitalize if dangerous (poor judgment, psychotic, suicidal, financial/legal risk); (4) **Adjuncts**: benzodiazepine for agitation/insomnia short-term; restraint last resort; (5) **Long-term maintenance**: lithium gold standard; alternatives — valproate, lamotrigine (depression-focused), quetiapine, aripiprazole LAI; (6) **Psychotherapy**: CBT, family-focused, IPSRT (interpersonal + social rhythm therapy — sleep + routine focus), psychoeducation; (7) **Monitor**: side effects (lithium — renal, thyroid; valproate — liver, weight, polycystic ovaries; atypical — metabolic, EPS); (8) **Comorbidity high**: substance use, anxiety, ADHD, suicide (15× general); (9) **Family**: education, support, genetics counseling; (10) **Long-term**: chronic illness, recurrent episodes, maintenance medication essential" },
+      { "label": "C", "text": "Antibiotic" },
+      { "label": "D", "text": "Surgery" },
+      { "label": "E", "text": "Discharge — overworked" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Bipolar I = ≥ 1 manic episode (depression not required for diagnosis but common). Mania DSM-5: elevated/irritable mood + ≥ 3 sx ≥ 7 days (or any duration if hospitalization). SSRI in undiagnosed bipolar may trigger mania ('switch'). Treatment: stop SSRI, mood stabilizer + atypical antipsychotic. Lithium gold standard (unique suicide reduction). Long-term maintenance essential. Comorbidity + suicide risk high. Psychotherapy + family support. Recovery possible with treatment.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "APA Practice Guideline: Bipolar Disorder; CANMAT/ISBD 2018 Guidelines"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 28 ปี มา OPD ด้วยอาการ recurrent panic attacks 6 เดือน — palpitations, sweating, trembling, SOB, chest discomfort, fear of dying — last 10-20 min then resolve; เริ่มกลัวที่จะออกจากบ้าน (agoraphobia)\n\nMedical workup: ECG normal, echo normal, TSH normal, holter normal, no medical cause\nNo substance use\n\nMSE: anxious, well-oriented, no psychotic symptoms",
+    "choices": [
+      { "label": "A", "text": "Surgery" },
+      { "label": "B", "text": "Panic Disorder with Agoraphobia (DSM-5): (1) **Psychoeducation**: explain physiology of panic (fight-or-flight false alarm), normalize, reduce catastrophic interpretation; (2) **CBT** — first-line (Cochrane evidence; equivalent to medication, durable): - cognitive restructuring (challenge catastrophic thoughts); - interoceptive exposure (induce sensations safely — spinning, breath holding — habituate); - in vivo exposure (graduated exposure to feared situations — overcome avoidance + agoraphobia); - relaxation; (3) **Medication**: SSRI first-line (sertraline, paroxetine, fluoxetine, escitalopram) — start low (panic patients sensitive to side effects), titrate up over weeks; SNRI alternative; clomipramine (TCA — effective but side effects); (4) **Avoid benzodiazepines long-term** (effective acutely but tolerance, dependence, withdrawal; useful short-term during SSRI initiation 4-6 weeks); (5) **Treatment duration**: SSRI continue 12 months after remission then taper; CBT skills lifelong; (6) **Comorbidity**: depression, other anxiety disorders, substance use; (7) **Lifestyle**: avoid caffeine, alcohol, stimulants; regular exercise; sleep hygiene; (8) **Self-help resources**: books, apps, peer support; (9) **Outcomes**: 50-70% achieve full remission with treatment; (10) **Multidisciplinary**: psychiatry, primary care, mental health counseling" },
+      { "label": "C", "text": "Aspirin" },
+      { "label": "D", "text": "Beta-blocker only" },
+      { "label": "E", "text": "Avoid all activity" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Panic Disorder: recurrent unexpected panic attacks + persistent worry. Often agoraphobia. Treatment: CBT + SSRI (combination most effective; either alone effective). Avoid long-term benzodiazepines. Treatment duration extended. Comorbidity common. Lifestyle modification. Outcomes 50-70% remission. Self-management skills lifelong. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "APA Practice Guideline: Panic Disorder; NICE CG113"
+  },
+  {
+    "scenario": "ชายไทยอายุ 32 ปี ทหารผ่านศึก กลับจากสงคราม 2 ปี + มาด้วยอาการ flashbacks, nightmares, hypervigilance, avoidance of triggers, irritability, sleep disturbance, dissociation — เกิดหลังเหตุการณ์รุนแรง × 18 เดือน\n\nNo substance use disorder\nMSE: anxious, hypervigilant, intrusive thoughts visible during interview\nCAPS-5 score: 65 (severe)",
+    "choices": [
+      { "label": "A", "text": "Avoid all therapy" },
+      { "label": "B", "text": "Post-Traumatic Stress Disorder (PTSD) — DSM-5: exposure + intrusion + avoidance + negative cognitions/mood + hyperarousal > 1 month + functional impairment: (1) **Psychotherapy first-line — trauma-focused** (Cochrane + ISTSS evidence): - **Prolonged Exposure (PE)**: gradual exposure to trauma memories + cues; - **Cognitive Processing Therapy (CPT)**: address maladaptive cognitions about trauma; - **EMDR (Eye Movement Desensitization + Reprocessing)**: bilateral stimulation while recalling trauma; - **Trauma-focused CBT**: integrates exposure + cognitive components; (2) **Pharmacotherapy**: SSRI first-line (sertraline + paroxetine FDA approved); SNRI alternative (venlafaxine); other — prazosin for nightmares; (3) **Avoid**: benzodiazepines (worsen PTSD outcomes per evidence), atypical antipsychotic as monotherapy; (4) **Adjunct**: MDMA-assisted therapy (FDA approval pending — research promising — MAPS); ketamine (research), psilocybin (research); cannabis controversial; (5) **Comorbidity** common: depression, substance use, anxiety, sleep, suicidality; (6) **Peer support**: veteran groups (Wounded Warrior, VA), support groups; (7) **Family/relationship therapy**: secondary impact on family; (8) **Vocational support**: return to work, disability benefits; (9) **Suicide assessment**: PTSD increases risk substantially; (10) **Multidisciplinary**: psychiatry, primary care, social work, addiction medicine, family therapy, vocational rehab; (11) **Self-care**: exercise, sleep, mindfulness, limiting substances" },
+      { "label": "C", "text": "Antibiotic" },
+      { "label": "D", "text": "Surgery" },
+      { "label": "E", "text": "Refuse treatment" }
+    ],
+    "correct_answer": "B",
+    "explanation": "PTSD: exposure to traumatic event + persistent re-experiencing + avoidance + negative cognitions/mood + hyperarousal > 1 month + functional impairment. Treatment: trauma-focused psychotherapy first-line (PE, CPT, EMDR). SSRI/SNRI medication. AVOID benzodiazepines. Emerging: MDMA-assisted therapy. Comorbidity common. Suicide risk increased. Multidisciplinary care. Recovery possible.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "APA Practice Guideline: PTSD 2017; VA/DoD Clinical Practice Guideline 2017"
+  },
+  {
+    "scenario": "ชายไทยอายุ 45 ปี ดื่มสุราหนัก × 20 ปี — มา OPD ปรึกษาเรื่องเลิกเหล้า, ดื่มวันละ ~ 12 standard drinks, ไม่สามารถหยุดได้ ก่อนหน้านี้พยายามหยุดแล้วเกิด tremor + กระสับกระส่าย\n\nLab: AST 145, ALT 88 (AST > ALT classic), MCV 102 (high), GGT 285, low platelets, low albumin — fatty liver, possibly early cirrhosis\nAUDIT score 28 (severe AUD)\nNo other substance use\nDepression PHQ-9 14",
+    "choices": [
+      { "label": "A", "text": "Stop drinking immediately at home alone" },
+      { "label": "B", "text": "Alcohol Use Disorder (AUD) Severe + Comorbid Depression: (1) **Withdrawal management**: supervised detox preferred due to severity + comorbidity — admit or close outpatient monitoring; **benzodiazepine** (lorazepam, oxazepam — short-acting safer in liver disease) per CIWA-Ar protocol; **thiamine 100mg IV/IM BEFORE glucose** (prevent Wernicke); folate, multivitamin; correct K, Mg, phos; monitor for DTs (peak 48-96h after last drink); (2) **MAT (Medication-Assisted Treatment) for AUD long-term**: - **Naltrexone** (oral 50mg or LAI 380mg monthly — reduces cravings + reward, contraindication current opioid use, liver caution); - **Acamprosate** (333mg TID — reduces craving, safer in liver disease, renal adjustment); - **Disulfiram** (aversion — limited evidence, last-line, motivated patients); - **Topiramate, gabapentin, baclofen** (off-label, evidence base growing); (3) **Behavioral**: CBT, motivational interviewing, contingency management, AA + 12-step (free, accessible), SMART recovery; (4) **Comorbid depression**: SSRI (sertraline preferred — less hepatic + safe); often improves with sobriety + treatment; (5) **Medical workup + management**: liver disease (LFT, fibroscan, hepatitis B/C/HIV screening), nutrition, cardiac, pancreatic, neurological (Wernicke-Korsakoff, peripheral neuropathy), cancer screening; (6) **Social**: family education, social work, financial counseling, legal issues, vocational; (7) **Relapse prevention**: triggers, coping skills, support network; (8) **Multidisciplinary**: addiction medicine, psychiatry, primary care, hepatology, social work, peer support; (9) **Trauma history common** (PTSD overlap) — address" },
+      { "label": "C", "text": "Surgery" },
+      { "label": "D", "text": "Ignore" },
+      { "label": "E", "text": "Antibiotic only" }
+    ],
+    "correct_answer": "B",
+    "explanation": "AUD = chronic relapsing brain disease. Severe AUD + abrupt cessation = withdrawal (tremor, agitation, autonomic, seizure, DTs — mortality if untreated). Supervised detox + thiamine before glucose. Long-term MAT (naltrexone, acamprosate, disulfiram, topiramate). Behavioral therapy + 12-step. Comorbid depression treatment. Multidisciplinary. Liver disease workup. Modern: addiction = medical illness, treat without stigma.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "ASAM/APA AUD Practice Guidelines; SAMHSA Treatment Improvement Protocols"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 18 ปี นำส่งโดยพ่อแม่ — น้ำหนัก 38 kg (BMI 14.2), ปฏิเสธว่าตัวเองอ้วน, จำกัดอาหารอย่างรุนแรง, ออกกำลังกายมาก, primary amenorrhea เริ่ม 12 เดือน\n\nV/S: BP 84/52 (low), HR 48 (bradycardia), Temp 36.0°C (low)\nGen: cachectic, lanugo hair, dry skin\nLab: K 2.8 (low), Mg 1.4 (low), phos 1.8 (low), low T3, low albumin, mild anemia\nEKG: prolonged QTc 478 ms",
+    "choices": [
+      { "label": "A", "text": "Discharge — lifestyle choice" },
+      { "label": "B", "text": "Anorexia Nervosa, Restricting Type (DSM-5: restriction → significantly low body weight + intense fear weight gain + body image disturbance) — Severe + Medically Unstable: (1) **Inpatient medical stabilization** (criteria for hospitalization met — vital signs, electrolytes, severe weight loss): cardiac monitoring (arrhythmia risk — bradycardia, QTc prolongation, sudden death), correct electrolytes (K, Mg, phos), maintain warmth; (2) **Refeeding syndrome prevention** — major risk: start low calorie 1000-1200 kcal/d + advance slowly + phosphate/Mg/K supplementation + thiamine + close monitoring; phosphorus drops on refeeding (life-threatening); (3) **Nutritional rehabilitation**: registered dietitian, structured meals, gradual weight restoration goal (~ 1 lb/wk inpatient, 0.5-1 lb/wk outpatient); (4) **Psychotherapy**: family-based treatment (FBT/Maudsley) — first-line for adolescents (parents take active role); CBT-E (eating disorder); IPT; (5) **Medication**: no FDA-approved for AN; SSRI for comorbid depression/anxiety (after weight restoration — less effective when underweight); olanzapine (limited evidence — weight gain + reduce obsessions); (6) **Multidisciplinary essential**: psychiatry, primary care, dietitian, family therapy, individual therapy, medical monitoring; (7) **Stepwise care**: inpatient → residential → PHP → IOP → outpatient — based on stability; (8) **Long-term**: chronic illness, relapse common, mortality 5-10% (highest psychiatric mortality), need lifelong follow-up; (9) **Family education + support**: not patient's fault, illness behavior, recovery long; (10) **Suicide risk** elevated; (11) **Outcomes**: 50% full recovery, 25% partial, 25% chronic; early intervention improves" },
+      { "label": "C", "text": "Refuse care" },
+      { "label": "D", "text": "Surgery" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Anorexia Nervosa: significantly low body weight + intense fear gain + body image disturbance. Restricting vs binge-purge subtypes. Medical complications life-threatening: cardiac (arrhythmia, sudden death), electrolyte (refeeding syndrome), endocrine (amenorrhea, osteoporosis), GI, neurological. Treatment: medical stabilization + nutritional rehab + psychotherapy (FBT for adolescents). Multidisciplinary. Highest psychiatric mortality. Long-term care. Recovery possible.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "APA Practice Guideline: Eating Disorders 2023; AED + AAP Guidelines"
+  },
+  {
+    "scenario": "เด็กชายอายุ 8 ปี นำส่งโดยพ่อแม่และครู — มีปัญหาที่โรงเรียน: ไม่นั่งนิ่ง, รบกวนเพื่อน, ไม่ทำงาน, ไม่ฟังคำสั่ง, ทำงานไม่เสร็จ, สับสน × 2 ปี\n\nNo trauma, no developmental delay, regular school, BMI normal\nADHD Rating Scale (Parent + Teacher) elevated\nDSM-5 criteria for ADHD met (combined type): ≥ 6 inattention sx + ≥ 6 hyperactive-impulsive sx + onset < 12 yo + > 6 mo + 2 settings + impairment",
+    "choices": [
+      { "label": "A", "text": "Disciplinary action only" },
+      { "label": "B", "text": "ADHD Combined Type — Comprehensive Multimodal Treatment: (1) **Psychoeducation**: ADHD = neurodevelopmental disorder, not character flaw; understand behaviors; (2) **Behavioral interventions first-line** for preschool, **first-line or in combination** for school-age: parent training in behavior management (PCIT, behavioral parent training), school accommodations (504/IEP), classroom management, behavioral therapy; (3) **Medication** for school-age + adolescents (NICE: behavioral first for younger; combination for moderate-severe): - **Stimulants** first-line (most effective): methylphenidate (Ritalin, Concerta), amphetamine (Adderall, Vyvanse) — 70% response; side effects: appetite suppression, sleep disturbance, growth concerns (mild), tics, mood, rebound; titrate to optimal dose; - **Non-stimulants** alternative: atomoxetine (SNRI for ADHD), guanfacine ER, clonidine ER — slower onset but useful when stimulants problematic; (4) **Comorbidity** common (50-60%): learning disorders, anxiety, depression, ODD, conduct, sleep — address separately; (5) **School support**: 504 plan or IEP, modifications, IDEA services if eligible; (6) **Family**: parent training (most effective behavioral intervention), siblings, family stress; (7) **Lifestyle**: sleep, exercise, structured routine, limited screen, healthy diet; (8) **Follow-up regular**: medication titration, side effects, growth, academic + social progress; (9) **Long-term**: 50% persist into adulthood; teaches lifelong skills; (10) **Multidisciplinary**: pediatrician/psychiatrist, school psychologist, teachers, family, sometimes neuropsychology, OT for sensory" },
+      { "label": "C", "text": "Surgery" },
+      { "label": "D", "text": "Ignore" },
+      { "label": "E", "text": "Punishment" }
+    ],
+    "correct_answer": "B",
+    "explanation": "ADHD: neurodevelopmental disorder. Common (5-10% children). DSM-5 criteria. Treatment: multimodal — psychoeducation + behavioral (first-line young children; combination school-age) + medication (stimulants > non-stimulants). School accommodations. Comorbidity common — treat separately. Family + parent training. Long-term: 50% persist; early intervention improves outcomes. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "AAP ADHD Clinical Practice Guideline 2019; AACAP Practice Parameters"
+  },
+  {
+    "scenario": "ชายไทยอายุ 78 ปี ก่อนหน้านี้ healthy + active สังคม มาห้องฉุกเฉินด้วยอาการ acute confusion 6 ชั่วโมง — disoriented, agitated, fluctuating, hallucinations visual, ลูกบอกว่ารู้สึก like grandfather suddenly\n\nก่อนหน้านี้ 2 วัน ใช้ยา anticholinergic สำหรับ urinary urgency\nNo prior dementia\nV/S: BP 134/82, HR 102, Temp 38.4°C\nMSE: fluctuating consciousness, inattention, disorganized thinking, perceptual disturbance\n\nCAM positive (Confusion Assessment Method)\nUA + culture: UTI (E. coli growing)",
+    "choices": [
+      { "label": "A", "text": "Ignore — old age" },
+      { "label": "B", "text": "Delirium (acute fluctuating altered cognition + inattention + organic cause) — common in hospitalized elderly: (1) **Identify + treat underlying cause(s)** — multifactorial (often): - **Infection** (UTI here, pneumonia, sepsis); - **Medications** (anticholinergic, opioids, benzodiazepines, sedatives — Beers List); - **Metabolic** (electrolytes, glucose, Ca, hypoxia, hypercapnia); - **Withdrawal** (alcohol, benzo); - **Pain**; - **Constipation/urinary retention**; - **Sleep deprivation**; - **CNS** (stroke, seizure, hemorrhage); (2) **Workup**: full medical, medication review, infection workup, labs, neuro exam, possibly imaging; (3) **Non-pharmacologic management (essential)**: re-orientation (clock, calendar, names), familiar objects, family presence, hearing/vision aids, sleep hygiene, minimize tethers (lines, restraints), mobility, hydration, optimize environment (lighting day/night), avoid restraints; (4) **Pharmacologic only for severe agitation/danger**: low-dose haloperidol or quetiapine; AVOID benzodiazepines (worsen delirium except alcohol/benzo withdrawal); avoid restraints; (5) **Treat infection**: appropriate antibiotic per culture sensitivity; (6) **Multidisciplinary**: geriatric medicine consultation, nursing, family; (7) **Family education**: temporary usually, not dementia, can take weeks-months to fully resolve; (8) **Prevention** going forward: HELP Hospital Elder Life Program, comprehensive geriatric assessment, deprescribing, mobility, sleep hygiene, hearing/vision; (9) **Long-term**: persistent cognitive impairment possible (40% have some sustained changes — \"never fully recover\"); risk factor for future dementia + functional decline + mortality" },
+      { "label": "C", "text": "Restraint + sedation" },
+      { "label": "D", "text": "Discharge home" },
+      { "label": "E", "text": "Surgery" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Delirium: acute fluctuating altered cognition with inattention + organic cause. Common in hospitalized elderly. Multifactorial usually. CAM diagnostic tool. Identify + treat causes. Non-pharmacologic management primary. Pharmacologic for severe agitation only (low-dose antipsychotic; AVOID benzodiazepines except withdrawal). HELP program prevents delirium. Long-term consequences (cognitive decline, functional impairment, mortality).",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AGS Beers Criteria 2023; HELP Program; Inouye SK NEJM 2014"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 30 ปี มาด้วยอาการ persistent low mood + anhedonia + fatigue + insomnia + decreased appetite + weight loss 5kg + difficulty concentrating + thoughts of death × 6 weeks\n\nก่อนหน้านี้ no psychiatric history\nNo substance use\nMedical workup: TSH normal, B12/folate normal, CBC normal\nPHQ-9: 16 (moderate-severe)\nNo suicidal plan + protective factors present\n\nDSM-5 criteria for MDD met",
+    "choices": [
+      { "label": "A", "text": "Ignore — stress" },
+      { "label": "B", "text": "Major Depressive Disorder, Moderate-Severe — Comprehensive Treatment: (1) **Safety assessment first** (suicide screening — Columbia Suicide Severity Rating Scale); (2) **Combination therapy most effective**: psychotherapy + medication; (3) **Psychotherapy first-line**: CBT (cognitive behavioral therapy — most studied, evidence-based, durable), IPT (interpersonal therapy), behavioral activation, problem-solving therapy; (4) **Medication**: SSRI first-line (sertraline, escitalopram, fluoxetine, paroxetine) — best tolerated, similar efficacy; SNRI alternative (venlafaxine, duloxetine); bupropion (sexual side effects less, activating, no weight gain); mirtazapine (insomnia + weight loss issues); TCA + MAOI reserved; (5) **Onset of medication**: 4-6 weeks for full effect; titrate to target dose; continue 6-12 months after remission then taper carefully; (6) **Augmentation** if partial response: add second medication, lithium, thyroid (T3), atypical antipsychotic (aripiprazole, brexpiprazole — FDA approved adjunct), exercise, light therapy (especially seasonal); (7) **Treatment-resistant depression**: psychotherapy + medication failed × 2; consider — TMS (transcranial magnetic stimulation — FDA approved), ECT (electroconvulsive therapy — most effective, esp severe/psychotic/catatonic/pregnancy), ketamine/esketamine (FDA approved 2019 — rapid effect), psilocybin/MDMA (research); (8) **Lifestyle**: exercise (effective antidepressant), sleep hygiene, nutrition, social engagement, mindfulness, limit alcohol; (9) **Family/social support**: education, involvement; (10) **Comorbidity**: anxiety, substance use, chronic pain, medical illness — treat together; (11) **Follow-up close**: weekly to start, monitor response + side effects + suicidality; (12) **Outcomes**: 60-80% respond to treatment; (13) **Relapse prevention** education + maintenance" },
+      { "label": "C", "text": "Surgery" },
+      { "label": "D", "text": "Refuse care" },
+      { "label": "E", "text": "Antibiotic" }
+    ],
+    "correct_answer": "B",
+    "explanation": "MDD: ≥ 5 sx (incl depressed mood or anhedonia) × 2 wk + functional impairment. Treatment: psychotherapy + medication combination most effective. CBT + SSRI typical first-line. Multiple options for treatment-resistant (TMS, ECT, ketamine, augmentation). Lifestyle + support critical. Treatment continued 6-12 months after remission. Outcomes 60-80% respond. Multidisciplinary care.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "APA Practice Guideline: MDD; NICE CG90; CANMAT 2016"
+  }
+]
