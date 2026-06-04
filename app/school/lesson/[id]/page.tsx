@@ -9,6 +9,7 @@ import {
 } from "@/lib/supabase/queries-school";
 import LessonReader from "@/components/school/LessonReader";
 import AskMore from "@/components/school/AskMore";
+import { sortByDifficultyAsc } from "@/lib/school/difficulty";
 
 export const revalidate = 60;
 
@@ -39,9 +40,14 @@ export default async function LessonPage({ params }: PageProps) {
     limit: 20,
     randomize: true,
   });
-  const quizzes = allTopicQuizzes
-    .filter((q) => q.layer === lesson.layer)
-    .slice(0, 10);
+  // Shuffle (above) keeps variety across visits; then ramp easy→hard so the
+  // gate quizzes a reader meets get gradually harder instead of spiking. When a
+  // lesson authors its gate quizzes inline, those win and keep their order — this
+  // ramp only governs the legacy topic-pool fallback and the final retrieval.
+  const quizzes = sortByDifficultyAsc(
+    allTopicQuizzes.filter((q) => q.layer === lesson.layer).slice(0, 10),
+    (q) => q.difficulty
+  );
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
