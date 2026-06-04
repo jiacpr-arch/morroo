@@ -1887,5 +1887,869 @@
     "board_topic": "cardiovascular",
     "board_age_group": "adult",
     "reference_source": "CHEST Guidelines on Antithrombotic Therapy 2021; ESC Pulmonary Embolism 2019; Kearon C et al. CHEST 2016; Stevens SM et al. CHEST 2021"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 42 ปี BMI 32 มาด้วยอาการปวด RUQ หลังกินอาหารมันๆ 6 ชั่วโมง ไม่มีไข้\n\nVS: BP 124/78, HR 92, RR 16, Temp 37.0°C\nAbdomen: tender RUQ, Murphy's sign negative, no peritonitis\nLab: WBC 9,200, ALP normal, total bili 0.8, AST/ALT normal, lipase 38 (normal)\nUS abdomen: multiple gallstones in GB, GB wall 2 mm (normal), no pericholecystic fluid, CBD 5 mm",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Emergency cholecystectomy"
+      },
+      {
+        "label": "B",
+        "text": "**Symptomatic cholelithiasis without acute cholecystitis (biliary colic) → elective laparoscopic cholecystectomy**: (1) symptomatic gallstones — typical biliary colic episodes; (2) discuss timing — symptoms recurrent + risk of complications (cholecystitis, pancreatitis, cholangitis) → recommend elective laparoscopic cholecystectomy within weeks; (3) pre-op: low-fat diet, analgesia, anti-emetic; (4) laparoscopic preferred — gold standard, lower morbidity vs open; (5) intraoperative cholangiography selective vs routine — based on risk factors for CBD stones (LFTs, dilated CBD on US, history pancreatitis); (6) post-op: rapid recovery, return to normal diet"
+      },
+      {
+        "label": "C",
+        "text": "Observation + reassurance lifelong"
+      },
+      {
+        "label": "D",
+        "text": "Oral ursodeoxycholic acid lifelong only"
+      },
+      {
+        "label": "E",
+        "text": "ERCP first"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Asymptomatic gallstones — observation generally; intervention for selected (DM, transplant, sickle cell, porcelain GB, anticipated bariatric). Symptomatic gallstones (biliary colic without acute cholecystitis) — elective laparoscopic cholecystectomy due to ~20% risk of complications/year + recurrent attacks. UDCA medical dissolution — only small (< 5 mm) cholesterol stones in functioning GB with mild symptoms; high recurrence. Acute cholecystitis (Tokyo 2018): early laparoscopic cholecystectomy within 7 days preferred over delayed (CHOCOLATE, ACDC trials); percutaneous cholecystostomy if non-operative candidate.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "Tokyo Guidelines 2018; WSES Acute Calculous Cholecystitis 2020; SAGES Guidelines for Gallbladder Disease"
+  },
+  {
+    "scenario": "ชายไทยอายุ 60 ปี post-laparoscopic cholecystectomy day 1 มาด้วยอาการตัวเหลือง ปวด RUQ ไข้ขึ้น\n\nVS: BP 118/76, HR 102, Temp 38.4°C\nLab: Total bili 3.8 (preop 0.6), Direct 2.9, ALP 380, AST 180, ALT 142\nUS: free fluid RUQ + dilated CBD 9 mm, no GB (s/p removal)\nMRCP: leak from cystic duct stump + dilated intrahepatic ducts + retained CBD stone 8 mm",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Observation"
+      },
+      {
+        "label": "B",
+        "text": "**Post-cholecystectomy bile leak + retained CBD stone — multimodal management**: (1) **ERCP with sphincterotomy + stone extraction + biliary stent** — addresses both: relieves CBD obstruction, decompresses biliary tree, allows leak to seal (lower pressure system); (2) **Percutaneous drainage** of biloma if symptomatic localized collection; (3) **IV antibiotic** (covering biliary flora — ceftriaxone + metronidazole or piperacillin-tazobactam); (4) **Monitor LFTs**, repeat imaging; remove stent 4-8 wk later; (5) **Re-operation** if: large duct injury (Bismuth-Strasberg classification — E1-E5 hilar injuries need hepaticojejunostomy), failed ERCP/PTC drainage, peritonitis, severe sepsis; (6) **Strasberg classification of bile duct injuries**: A — cystic duct or aberrant duct leak, B/C — aberrant right duct, D — lateral injury of CBD, E1-E5 hilar injuries (more complex); (7) Tertiary HPB referral for major injuries"
+      },
+      {
+        "label": "C",
+        "text": "Re-operation laparotomy immediately for all leaks"
+      },
+      {
+        "label": "D",
+        "text": "Oral antibiotics + outpatient"
+      },
+      {
+        "label": "E",
+        "text": "Liver transplantation"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Bile duct injury post-laparoscopic cholecystectomy — 0.3-0.6% incidence. Cystic duct stump leak (Strasberg A) — most common; managed with ERCP + stent (relieves resistance), drain if collection. Major duct injury (Strasberg E1-E5) — need hepaticojejunostomy (Roux-en-Y) by HPB surgeon, ideally referred to tertiary center. Retained CBD stones — incidence 5-15%; ERCP + sphincterotomy gold standard. Strasberg-Bismuth classification systematizes injury type + guides management. Early recognition + appropriate management critical — delayed/missed injuries → biliary cirrhosis, recurrent cholangitis, death.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "Strasberg SM et al. J Am Coll Surg 1995; Tokyo Guidelines 2018; SAGES Safe Cholecystectomy 2020"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 58 ปี ตัวเหลืองมา 3 สัปดาห์ + คันตามตัว + น้ำหนักลด 6 kg ใน 2 เดือน + ปวดท้องตื้อๆ + Courvoisier sign + (palpable non-tender GB)\n\nVS stable\nLab: Total bili 16, Direct 13, ALP 680, GGT 540, CA 19-9 240\nCT abdomen: 3 cm mass at pancreatic head + dilated CBD + dilated PD (double duct sign) + atrophic distal pancreas + no liver/peritoneal metastases + SMA + SMV: ≤ 180° contact = borderline resectable; CA + celiac artery free\nFNA: pancreatic adenocarcinoma",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Upfront Whipple immediately"
+      },
+      {
+        "label": "B",
+        "text": "**Borderline resectable pancreatic adenocarcinoma — neoadjuvant + restaging approach**: (1) **Multidisciplinary tumor board** — pancreatic surgery + medical oncology + radiation + IR + GI; (2) **Biliary decompression** if jaundice severe + chemotherapy planned — endoscopic biliary stent (metal stent preferred per recent evidence, vs plastic — longer patency); avoid pre-op stenting in clearly resectable to prevent infection (PreVerstent trial considerations); (3) **Neoadjuvant chemotherapy** — modified FOLFIRINOX (preferred fit patients) OR gemcitabine + nab-paclitaxel × 3-6 months — improves R0 resection rate, treats micro-mets, identifies aggressive biology; (4) **Restaging** post-neoadjuvant — CT, CA 19-9 (response marker), PET if uncertain; (5) **Resection** if response/stable + remains technically resectable: pancreaticoduodenectomy (Whipple) — pylorus-preserving or classic + standard lymphadenectomy; vascular reconstruction (SMV/PV resection) as needed; (6) **Adjuvant chemo** completion (6 mo total perioperative); (7) **Adjuvant RT** considered selected R1 / positive margins; (8) **Surveillance** post-op: CA 19-9 + CT q3 mo × 2 yr; (9) **Genetic testing** considered (BRCA, Lynch — PALB2, ATM — actionable)"
+      },
+      {
+        "label": "C",
+        "text": "Sorafenib"
+      },
+      {
+        "label": "D",
+        "text": "Liver transplant"
+      },
+      {
+        "label": "E",
+        "text": "Palliative care only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pancreatic adenocarcinoma resectability (NCCN): - Resectable: no arterial contact, ≤ 180° venous contact without irregularity - Borderline resectable: SMA/CHA/celiac ≤ 180°, SMV/PV > 180° contact with reconstruction possible, short occlusion reconstructible - Locally advanced: SMA/celiac > 180°, unreconstructible venous, aortic involvement - Metastatic: distant disease Neoadjuvant FOLFIRINOX has shifted paradigm — better R0 rate, OS in borderline resectable (PRODIGE/SWOG, PREOPANC, A021501 trials). Adjuvant FOLFIRINOX × 6 mo standard for resected (PRODIGE 24). Median OS resected ~ 36 mo vs 12-16 mo non-resected with chemo. Courvoisier sign: palpable non-tender GB + jaundice → suggests malignant biliary obstruction (not gallstones, which scar GB).",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "NCCN Pancreatic Adenocarcinoma 2024; Conroy T et al. NEJM 2018 (PRODIGE 24); Versteijne E et al. JCO 2020 (PREOPANC); Janssen QP et al. Ann Surg 2020"
+  },
+  {
+    "scenario": "ชายไทยอายุ 65 ปี alcoholic chronic pancreatitis ปวดท้องเรื้อรัง 10 ปี + steatorrhea + DM type 3c + น้ำหนักลด\n\nMRCP: dilated main pancreatic duct 9 mm with multiple stones + atrophic parenchyma; pseudocyst 4 cm; no malignancy\nCA 19-9 normal\n\nคำถาม: management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue medical therapy only"
+      },
+      {
+        "label": "B",
+        "text": "**Chronic pancreatitis with dilated MPD, intraductal stones, intractable pain + complications**: (1) **Optimize medical first**: pain control multimodal (avoid chronic opioids if possible; gabapentinoids, TCA, multimodal), pancreatic enzyme replacement (PERT — 25,000-50,000 units lipase per meal), DM control (insulin), nutritional support, alcohol cessation absolute, smoking cessation, fat-soluble vitamins (ADEK); (2) **Endoscopic therapy** trial first for select: ERCP + sphincterotomy + stone extraction ± lithotripsy + PD stent — symptom relief 50-65% short-term; less invasive; (3) **Surgical drainage / resection** for: failed endoscopic, large MPD ≥ 6 mm + intractable pain, inflammatory mass head — options: - **Puestow procedure (lateral pancreaticojejunostomy Roux-en-Y)** — for diffusely dilated MPD; pain relief 70-80% - **Frey procedure** — core excision of pancreatic head + LPJ; for head-dominant disease - **Beger procedure** — duodenum-preserving pancreatic head resection; for inflammatory head mass - **Pancreaticoduodenectomy (Whipple)** — when suspect malignancy; (4) **Pseudocyst management**: > 6 cm, symptomatic, complications → endoscopic cyst gastrostomy / cystoduodenostomy OR surgical drainage; (5) **Surveillance for HCC and pancreatic cancer** elevated risk; (6) Multidisciplinary chronic pain management"
+      },
+      {
+        "label": "C",
+        "text": "Total pancreatectomy + islet cell autotransplantation immediately"
+      },
+      {
+        "label": "D",
+        "text": "Pancreatic resection for all chronic pancreatitis"
+      },
+      {
+        "label": "E",
+        "text": "Opioid escalation only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Chronic pancreatitis surgical management — pain + complications when medical inadequate. ESCAPE trial (NEJM 2020) — early surgery (< 18 mo symptoms) > endoscopic-first approach for pain. Procedure selection by anatomy: - Dilated MPD (≥ 6 mm) diffuse → Puestow/LPJ - Head-dominant + dilated duct → Frey - Inflammatory head mass + suspect malignancy → Beger or Whipple - Small duct + diffuse → consider total pancreatectomy + islet auto-tx in select centers Cambridge classification of CP severity. Total pancreatectomy with islet cell autotransplantation — for refractory severe pain in select younger patients with diffuse disease. Pseudocyst drainage when symptomatic / > 6 cm / complications. PERT essential for exocrine insufficiency. Insulin for type 3c DM. Risk of pancreatic Ca increased 2-3x in CP — surveillance considered.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "Issa Y et al. NEJM 2020 (ESCAPE); ACG Chronic Pancreatitis Guidelines 2020; ESGE Chronic Pancreatitis 2019"
+  },
+  {
+    "scenario": "ชายไทยอายุ 55 ปี HBV chronic + cirrhosis Child-Pugh B7 + portal HTN — Ascites moderate, prior variceal bleed banded; HCC 5 cm at segment IV + portal vein branch invasion + AFP 8,000\n\nMELD 14; no extrahepatic disease; Child-Pugh B (bili 2.4, albumin 2.9, INR 1.5, ascites moderate, no encephalopathy)\n\nคำถาม: management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Surgical resection"
+      },
+      {
+        "label": "B",
+        "text": "**Advanced HCC (BCLC C — portal vein invasion) — systemic therapy first-line**: (1) **Atezolizumab + bevacizumab** — first-line per IMbrave150 (NEJM 2020): improved OS + PFS vs sorafenib; caveats — esophageal varices must be screened + treated (bevacizumab bleeding risk); Child-Pugh A optimal, B with caution; (2) **Durvalumab + tremelimumab (STRIDE)** — alternative first-line per HIMALAYA, avoids bevacizumab in varices; (3) **Lenvatinib** — alternative if immunotherapy contraindicated; (4) **Sorafenib** — historical first-line; (5) **Treat underlying HBV** — antiviral (entecavir, tenofovir) lifelong — slow cirrhosis progression + reduces HCC recurrence; (6) **Treat portal HTN complications**: beta-blocker (carvedilol preferred in compensated, caution decompensated), variceal surveillance + banding, ascites diuretic + sodium restriction; (7) **Liver transplant consideration**: outside Milan due to vascular invasion → typically excluded; downstaging protocols (TACE/Y90) may allow listing if response + size criteria met; (8) **TACE/Y90** for select macrovascular invasion but reduced efficacy; (9) **Surgical resection contraindicated** typically — portal vein invasion = BCLC C; (10) **Palliative care integration**"
+      },
+      {
+        "label": "C",
+        "text": "TACE alone"
+      },
+      {
+        "label": "D",
+        "text": "Liver transplant immediately"
+      },
+      {
+        "label": "E",
+        "text": "Observation"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "BCLC C HCC (advanced) — portal vein invasion, lymph node, distant mets, ECOG 1-2. Standard first-line: - Atezolizumab + bevacizumab (IMbrave150) — preferred Child-Pugh A; OS 19.2 mo - Durvalumab + tremelimumab STRIDE (HIMALAYA) — alternative, no bev → safer with varices - Lenvatinib (REFLECT) — non-inferior to sorafenib - Sorafenib — historic Second-line: regorafenib, cabozantinib, ramucirumab (AFP > 400), nivolumab/pembrolizumab. Liver transplant criteria: Milan (1 ≤ 5 cm OR 2-3 ≤ 3 cm) — gold standard. Expanded (UCSF) sometimes used. Vascular invasion typically excluded. Downstaging with TACE/Y90 in selected protocols. HBV antiviral therapy reduces HCC recurrence post-treatment.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "AASLD HCC Practice Guidance 2023; EASL 2018; Finn RS et al. NEJM 2020 (IMbrave150); Abou-Alfa GK et al. NEJM Evid 2022 (HIMALAYA)"
+  },
+  {
+    "scenario": "ชายไทยอายุ 50 ปี smoker, dysphagia 3 เดือน รุนแรงขึ้น น้ำหนักลด 8 kg\n\nEGD: ulcerative mass at mid-esophagus 32 cm from incisors, biopsy = squamous cell carcinoma\nEUS: T3 invading muscularis propria, N1 (2 periesophageal nodes); no celiac nodes\nCT chest/abd: no distant mets\nPET: localized disease + 1 supraclavicular node SUV 4 (equivocal) — FNA negative\n\nClinical T3 N1 M0 — Stage III esophageal SCC",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Surgery alone (esophagectomy)"
+      },
+      {
+        "label": "B",
+        "text": "**Locally advanced esophageal SCC (cT3N1) — multimodal treatment**: (1) **Neoadjuvant chemoradiotherapy (CRT) then surgery** — CROSS regimen: carboplatin + paclitaxel + concurrent RT 41.4 Gy/23 fractions × 5 weeks; improves OS + R0 rate (van Hagen NEJM 2012); (2) **Restaging** 4-6 weeks post-CRT — CT, EUS, PET; (3) **Esophagectomy** — Ivor Lewis (right thoracotomy + abdominal) for distal/mid-esophageal; transhiatal or McKeown (3-field) for upper; minimally invasive (MIE) acceptable; (4) **Lymphadenectomy** — 2-field (mediastinal + abdominal) standard; 3-field (cervical) for upper esophageal SCC selected centers; (5) **Reconstruction** — gastric conduit standard; jejunum or colon if stomach unsuitable; (6) **Adjuvant** — nivolumab × 1 year post-resection if residual disease after neoadjuvant (CheckMate 577); (7) **Definitive CRT** alternative for cervical SCC OR non-surgical candidates; (8) **Surveillance** + nutritional optimization (J-tube during/post)"
+      },
+      {
+        "label": "C",
+        "text": "Chemo alone"
+      },
+      {
+        "label": "D",
+        "text": "Radiation alone"
+      },
+      {
+        "label": "E",
+        "text": "Endoscopic mucosal resection"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Esophageal cancer — SCC (upper-mid, alcohol/smoking risk) vs adenocarcinoma (distal, Barrett's, GERD, obesity). Staging: EUS for T/N, CT chest/abd for distant, PET selectively. Trimodality (CRT + surgery) per CROSS for locally advanced (T2N+/T3-4 any N) — improves OS 5-yr 47% vs 33% surgery alone. CheckMate 577 — adjuvant nivolumab × 1 yr for incomplete pathologic response after neoadjuvant CRT — improves DFS. Definitive CRT (50-50.4 Gy + chemo) — cervical SCC, refusal/unfit for surgery. Esophagectomy approaches: - Ivor Lewis: distal/mid - McKeown 3-field: mid/upper - Transhiatal: avoid thoracotomy MIE associated with less morbidity (TIME trial).",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "NCCN Esophageal and EGJ 2024; van Hagen P et al. NEJM 2012 (CROSS); Kelly RJ et al. NEJM 2021 (CheckMate 577)"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 70 ปี dysphagia + reflux 6 เดือน + iron deficiency anemia\n\nEGD: large 8 cm paraesophageal hernia type III + organoaxial gastric volvulus + Cameron erosions in herniated stomach\nCT: > 50% stomach in chest + obstruction signs at GEJ\n\nSymptoms: dysphagia worsening + intermittent chest pain + early satiety + anemia\n\nคำถาม: management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Observation + PPI"
+      },
+      {
+        "label": "B",
+        "text": "**Symptomatic large paraesophageal hernia (type III) with gastric volvulus + complications (Cameron erosions, anemia, dysphagia) — surgical repair**: (1) **Laparoscopic paraesophageal hernia repair** (gold standard — Stylopoulos vs open): - Sac dissection + reduction of stomach into abdomen - Crural repair (primary suture; mesh reinforcement controversial — biological mesh selected, synthetic avoid for erosion risk) - Fundoplication (Nissen 360° or Toupet 270°) to address reflux + prevent recurrence - Consider gastropexy in selected; (2) **Type III PEH**: combined sliding + paraesophageal — GEJ above diaphragm + portion of stomach beside esophagus; (3) **Indications for elective repair**: symptomatic (reflux, dysphagia, anemia, obstruction), large hernia > 50% intrathoracic, volvulus, recurrent complications; (4) **Emergent indications**: incarceration, strangulation, perforation, obstruction — high mortality 15-20% if delayed; (5) **Pre-op**: PPI, anemia workup, transfuse PRBC if symptomatic; nutritional optimization; (6) **Post-op**: gastric reflux still possible; recurrence rate 10-25% at 5 years (less with mesh); (7) Risk-benefit discussion — elderly + comorbid → balance"
+      },
+      {
+        "label": "C",
+        "text": "Endoscopic dilation only"
+      },
+      {
+        "label": "D",
+        "text": "Total gastrectomy"
+      },
+      {
+        "label": "E",
+        "text": "Heller myotomy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Hiatal hernia classification: - Type I (sliding) — most common, GEJ displaced into chest - Type II (true paraesophageal) — gastric fundus beside esophagus, GEJ intra-abdominal - Type III (mixed sliding + paraesophageal) — most common PEH - Type IV — other organs herniated (colon, spleen) Asymptomatic PEH — observation generally (Stylopoulos approach — watchful waiting; risk of emergency low ~1%/yr but high mortality if emergent). Symptomatic PEH — elective laparoscopic repair. Cameron lesions — gastric erosions/ulcers in hernia sac at diaphragmatic hiatus — cause chronic GI bleeding + iron deficiency anemia. Surgical principles: sac dissection, complete reduction, crural closure, antireflux procedure (Nissen most common; Toupet if dysmotility / poor esophageal contractility). Mesh use controversial — meta-analyses show reduced short-term recurrence but erosion + esophageal stricture risk with synthetic; biologic acceptable.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "SAGES Hiatal Hernia Guidelines 2013/Updated; Kohn GP et al. Surg Endosc 2013; Stylopoulos N et al. Ann Surg 2002"
+  },
+  {
+    "scenario": "ชายไทยอายุ 35 ปี BMI 42 (severe obesity class III), DM type 2 controlled HbA1c 7.2, HT, OSA, depression — ลองอาหารควบคุมหลายปีไม่สำเร็จ ต้องการลดน้ำหนักถาวร\n\nVS stable, lab acceptable, psychological evaluation cleared\n\nคำถาม: ตัวเลือก bariatric surgery",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bariatric not indicated at this BMI"
+      },
+      {
+        "label": "B",
+        "text": "**Bariatric surgery candidate (BMI > 40 OR BMI > 35 with obesity-related comorbidities — ASMBS 2022 update lowered threshold)**: (1) **Multidisciplinary evaluation**: dietitian, psychologist, endocrinology, gastroenterology — preoperative weight loss, nutritional assessment, medical optimization, psychiatric clearance, smoking cessation; (2) **Procedure options**: - **Roux-en-Y gastric bypass (RYGB)** — gold standard; greater + more durable weight loss, better DM resolution, more GERD improvement; complexity higher; risks: marginal ulcer, internal hernia, dumping, nutritional deficiency - **Sleeve gastrectomy (LSG)** — most common globally; simpler; less weight loss than RYGB but acceptable durability; risks: leak (staple line), GERD worsening (Barrett's screening) - **Duodenal switch (BPD-DS) / SADI-S** — most weight loss but more nutritional issues; reserved superobese - **Adjustable gastric band (LAGB)** — historic, declining use; lowest efficacy + durability; (3) **Outcomes**: 60-70% excess weight loss at 1-2 yr; DM remission 50-80% (DiaRem score predicts); HT, OSA, dyslipidemia improvement; mortality reduction (Sjöström SOS study); (4) **Lifelong vitamin + mineral supplementation** + nutritional surveillance + medical follow-up; (5) **Psychological** — eating disorder screening + ongoing support; (6) **DM**: SO bariatric surgery (Metabolic Surgery)** — 2nd-line for T2DM BMI ≥ 30 not controlled (joint statements); (7) Pregnancy — wait 12-18 months post-op + folic acid + vitamin supplementation"
+      },
+      {
+        "label": "C",
+        "text": "Liposuction"
+      },
+      {
+        "label": "D",
+        "text": "Gastric balloon as definitive"
+      },
+      {
+        "label": "E",
+        "text": "Refer to psychiatry only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Bariatric / metabolic surgery indications** (ASMBS-IFSO 2022 update — lowered thresholds): - BMI ≥ 35 regardless of comorbidities - BMI 30-34.9 with metabolic disease (T2DM, NAFLD/MASH) - Asian populations: BMI 27.5-32.5 with comorbidities considered Historical NIH 1991 was BMI > 40 OR > 35 + comorbidity. **Mechanism of weight loss + metabolic improvement**: restriction (anatomical), malabsorption (RYGB, DS), neurohormonal (ghrelin, GLP-1, PYY changes). **Outcomes**: - %EWL: LSG ~ 50-60%, RYGB ~ 60-70%, DS ~ 70-80% - DM remission: highest with DS > RYGB > LSG (STAMPEDE trial 5-yr) - HT, OSA, MASH improvement substantial - Mortality 30-40% reduction long-term (Sjöström SOS) **Complications**: leak, bleeding, stenosis, internal hernia, marginal ulcer, dumping, nutritional deficiency (iron, B12, calcium, vit D, thiamine in rapid loss). **Pregnancy** — defer 12-18 mo for stable weight + nutrition. **Endoscopic options**: gastric balloons (temporary), endoscopic sleeve (under investigation) — bridging or non-surgical candidates. A ผิด — meets criteria. C ผิด — cosmetic, not metabolic. D ผิด — temporary. E ผิด — already cleared.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "ASMBS-IFSO Statement on Indications for Metabolic Surgery 2022; STAMPEDE Trial NEJM 2017; Sjöström L et al. JAMA 2012 (SOS Study)"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 65 ปี post-Roux-en-Y gastric bypass 3 ปี มาด้วยอาการปวดท้องเรื้อรังเป็นพักๆ 6 เดือน + คลื่นไส้อาเจียน ครั้งล่าสุด acute severe + bilious vomiting 24 hr ก่อน\n\nVS: BP 102/64, HR 116, RR 22, Temp 37.0°C\nAbdomen: distended, tender diffuse, sluggish bowel sounds\n\nLab: WBC 14,800, lactate 3.4\nCT abdomen: 'mesenteric whirl sign' + small bowel obstruction + dilated alimentary limb",
+    "choices": [
+      {
+        "label": "A",
+        "text": "NG decompression + observation 48 hr"
+      },
+      {
+        "label": "B",
+        "text": "**Internal hernia post-RYGB — surgical emergency**: (1) **Resuscitation** + NG decompression + IV fluid + surgical consultation; (2) **Emergent diagnostic laparoscopy / laparotomy** — high suspicion + whirl sign on CT — do NOT delay; (3) **Operative findings**: 3 possible defect sites post-RYGB: - **Petersen's defect** — between Roux limb mesentery + transverse mesocolon - **Jejunojejunostomy mesenteric defect** - **Transverse mesocolon defect** (if retrocolic Roux limb); (4) **Reduce** internally herniated bowel; **assess viability** — resect non-viable; (5) **Close all mesenteric defects with non-absorbable suture** to prevent recurrence; (6) **Postop**: bowel rest, gradual feeding, nutritional optimization; (7) **High mortality** if delayed (bowel ischemia in closed loop) — modern series mortality ~ 1-3% with timely intervention vs >20% delayed; (8) Counsel patient about lifelong risk + symptom recognition"
+      },
+      {
+        "label": "C",
+        "text": "Outpatient EGD"
+      },
+      {
+        "label": "D",
+        "text": "Antibiotic alone"
+      },
+      {
+        "label": "E",
+        "text": "Reverse RYGB"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Internal hernia post-bariatric (RYGB) — incidence 1-5%; cause of significant late morbidity. Mesenteric defects created during RYGB heal poorly + may not be closed routinely (controversy — current trend toward routine closure with non-absorbable suture). Three sites: 1. Petersen's defect (between Roux limb mesentery + transverse mesocolon) 2. Jejunojejunostomy defect 3. Transverse mesocolon defect (retrocolic technique) Antecolic Roux limb construction → only Petersen's + JJ defects (preferred technique). Diagnosis: high index of suspicion in any post-RYGB patient with abdominal symptoms. CT signs: mesenteric swirl/whirl sign (twisted vessels), SBO, mesenteric edema, hurricane sign. Plain CT may be falsely negative — symptoms + clinical alone may warrant diagnostic laparoscopy. Treatment: emergent reduction + defect closure. Bowel ischemia common — assess viability carefully. Post-op recurrence with simple closure 5-10%; non-absorbable suture preferred. Patient education + early ED visit for symptoms key.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "ASMBS Standardization of Outcomes Committee; Geubbels N et al. Obes Surg 2015; Stenberg E et al. Lancet 2016 (mesenteric defect closure RCT)"
+  },
+  {
+    "scenario": "ชายไทยอายุ 45 ปี post-gastrectomy 2 ปีก่อนสำหรับ gastric ulcer มา outpatient ด้วย persistent watery diarrhea + flushing 15 นาทีหลังกิน + palpitation + sweating + drowsiness ก่อนกินอาหารบ่อย ๆ\n\nGlucose during episodes 48 mg/dL\nUpper GI series: small gastric remnant + rapid emptying\n\nคำถาม: management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Insulin therapy"
+      },
+      {
+        "label": "B",
+        "text": "**Dumping syndrome post-gastrectomy — early + late dumping symptoms**: (1) **Early dumping** (within 30 min): rapid emptying of hyperosmolar food → fluid shift into bowel + vasoactive substance release → tachycardia, sweating, flushing, abdominal cramps; (2) **Late dumping** (1-3h): rapid carbohydrate absorption → insulin spike → reactive hypoglycemia; this patient has both; (3) **Dietary management first-line** (75% improve): - **Small frequent meals** 6-8/day - **Low simple carb / high complex carb + protein + fat** - **Avoid hyperosmolar liquids** with meals — separate fluid from solid 30-60 min - **Pectin/guar gum** soluble fiber to slow gastric emptying - **Lie down 30 min post-meal**; (4) **Acarbose** — α-glucosidase inhibitor — slows carb absorption → reduces late dumping (reactive hypoglycemia); (5) **Octreotide** — somatostatin analog — slows GI transit + inhibits insulin/vasoactive peptides; SC short-acting before meals OR LAR depot monthly — refractory cases; (6) **Surgical revision** for refractory severe (< 5%): - Reconstruction with Roux limb (if Billroth I/II) - Antireflux procedure - Pyloric reconstruction (Henley loop, jejunal interposition); (7) **Nutritional follow-up** + monitoring B12, iron, calcium, vit D"
+      },
+      {
+        "label": "C",
+        "text": "PPI long-term"
+      },
+      {
+        "label": "D",
+        "text": "Total gastrectomy"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic for SIBO"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Dumping syndrome — common post-gastrectomy / pyloroplasty / RYGB. Pathophysiology: 1. Early (osmotic + vasomotor): hyperosmolar bolus into small bowel → fluid shift, release of vasoactive intestinal peptides (VIP, neurotensin, serotonin) → tachycardia, flushing, sweating, cramps 2. Late (hypoglycemic): rapid glucose absorption → hyperinsulinism → reactive hypoglycemia 30 min - 3h post-meal Diagnosis: clinical + Sigstad score (≥ 7 suggests dumping); oral glucose challenge with hypoglycemia + tachycardia. Treatment ladder: 1. Diet modification (75% effective) 2. Acarbose for late dumping 3. Octreotide SC pre-meal or LAR for refractory 4. Surgical revision rarely needed Post-RYGB hypoglycemia ('post-bariatric hypoglycemia') — late dumping variant, increasingly recognized; lifestyle + acarbose + diazoxide considered.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "Tack J et al. Aliment Pharmacol Ther 2009; Berg P et al. Curr Diab Rep 2018; Scarpellini E et al. Nat Rev Endocrinol 2020"
+  },
+  {
+    "scenario": "ชายไทยอายุ 28 ปี ตกจากที่สูง โดน blunt chest trauma\n\nVS: BP 110/72, HR 102, RR 20, SpO2 95% room air\nChest: tenderness left chest, no flail, mild crepitus\nCXR: widened mediastinum > 8 cm + indistinct aortic knob + left apical cap + depressed left mainstem bronchus\nCT chest angiography: blunt thoracic aortic injury at isthmus (just distal to L subclavian) — grade III (pseudoaneurysm) + mediastinal hematoma; no contrast extravasation\n\nคำถาม: management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Conservative observation"
+      },
+      {
+        "label": "B",
+        "text": "**Blunt Thoracic Aortic Injury (BTAI) — modern preferred: thoracic endovascular aortic repair (TEVAR)**: (1) **Acute resuscitation + permissive hypotension** SBP 100-120 (lower if no head injury) + heart rate control (esmolol or labetalol) to reduce shear stress on aorta — 'impulse control' (dP/dt reduction); (2) **Grade-based management** (SVS BTAI classification): - Grade I (intimal tear): observation + medical (impulse control); - Grade II (intramural hematoma): selective intervention; - Grade III (pseudoaneurysm): **TEVAR within 24h** — improved survival vs open in modern era (NTDB data, AAST PROOVIT registry); - Grade IV (rupture): emergent TEVAR; (3) **TEVAR**: percutaneous femoral access, stent-graft deploy across injury; may require LSCA coverage (consider revascularization if dominant); (4) **Open repair** alternative — if TEVAR not feasible (anatomy, no graft) — left thoracotomy + clamp + interposition graft; higher morbidity; (5) **Address concurrent injuries** — TBI, abdominal, etc.; balance permissive hypotension vs head injury; (6) ICU + multidisciplinary trauma"
+      },
+      {
+        "label": "C",
+        "text": "Anticoagulation only"
+      },
+      {
+        "label": "D",
+        "text": "Aspirin only"
+      },
+      {
+        "label": "E",
+        "text": "Wait 1 week for elective repair"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Blunt Thoracic Aortic Injury (BTAI)** — usually at aortic isthmus (just distal to L subclavian artery — relatively fixed ligamentum arteriosum). Result of rapid deceleration (MVC, fall, blast). 80-85% die at scene; remaining present with widened mediastinum, hypotension. Diagnosis: CXR signs (widened mediastinum > 8 cm, apical cap, indistinct knob, depressed L mainstem bronchus, tracheal deviation R, NG tube deviation R, L pleural effusion) → CT angiography gold standard. SVS BTAI Grading: - I: intimal tear - II: intramural hematoma - III: pseudoaneurysm (most common needing intervention) - IV: rupture / transection Management evolution: open repair → TEVAR (since 2010s). Modern era: TEVAR < 24h preferred — reduced mortality, paraplegia (vs open clamp/sew). Anatomical considerations: proximal landing zone, LSCA coverage (consider revascularization), femoral access. Impulse control medical therapy critical — beta-blocker (esmolol) to reduce dP/dt + shear; SBP target lower; concurrent TBI requires balanced BP target. A C D E ผิด — grade III ต้อง intervention urgent.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "SVS Practice Guidelines for BTAI 2011; AAST PROOVIT; EAST PMG Blunt Aortic Injury; Lee WA et al. J Vasc Surg"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 32 ปี post-thyroidectomy total day 1 มาด้วยอาการ tetany, perioral numbness, tingling fingers, positive Chvostek + Trousseau signs\n\nVS stable\nLab: Ca 6.4 (low), ionized Ca 0.8, Mg 1.6, PO4 5.2, PTH 8 (low normal), albumin 4.0\nECG: prolonged QTc\n\nคำถาม: management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Oral calcium carbonate alone"
+      },
+      {
+        "label": "B",
+        "text": "**Symptomatic post-thyroidectomy hypocalcemia (likely transient hypoparathyroidism from parathyroid trauma/devascularization)**: (1) **IV calcium gluconate 10% 10 mL slow IV bolus over 10 min** (3-4 mL contains 1 g — provides 90 mg elemental Ca per amp) — repeat as needed + continuous infusion if persistent (e.g., 1 g calcium gluconate in 100 mL D5W at 50 mL/h titrate); (2) **Repeat Ca q4-6h**; (3) **Activated vitamin D (calcitriol)** 0.25-0.5 mcg PO BID — bypasses PTH-dependent activation; (4) **Oral calcium carbonate** 1-2 g elemental Ca q6h between meals (better absorbed); (5) **Replete magnesium** — Mg essential for PTH function + Ca release; IV MgSO4 1-2 g if Mg < 1.8; (6) **ECG monitoring** — prolonged QT → torsade risk; (7) **Differentiate transient vs permanent hypoparathyroidism**: transient 6 mo follow-up; permanent if PTH not recovering — continue lifelong Ca + calcitriol; consider PTH replacement (recombinant PTH 1-84); (8) **Hungry bone syndrome** consideration in pre-op hyperparathyroid patients post-parathyroidectomy — rapid Ca uptake into bones; same management"
+      },
+      {
+        "label": "C",
+        "text": "Furosemide"
+      },
+      {
+        "label": "D",
+        "text": "Steroid IV"
+      },
+      {
+        "label": "E",
+        "text": "Discharge with PO calcium"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Post-thyroidectomy hypocalcemia** — common (10-30% transient, 1-3% permanent post-total thyroidectomy). Causes: 1. Parathyroid trauma / devascularization / inadvertent removal 2. Hungry bone syndrome — patients with severe pre-op hyperparathyroidism (rapid Ca deposition into bones post-correction) 3. Hypomagnesemia impairing PTH function/secretion **Symptoms**: perioral + acral paresthesias, muscle cramps, Chvostek sign (facial twitch on tapping facial nerve at zygomatic arch), Trousseau sign (carpal spasm with BP cuff inflation), tetany, laryngospasm, seizures, prolonged QT → torsades **Severity grading**: - Mild (Ca 8.0-8.4): oral Ca + calcitriol - Moderate (Ca 7.0-7.9): oral + close monitoring - Severe (Ca < 7.0 or symptomatic): IV calcium gluconate + infusion **IV Ca preparation**: - Calcium gluconate 10% 10 mL = 1 g = 90 mg elemental Ca (preferred — less tissue necrosis if extravasate) - Calcium chloride 10% 10 mL = 1 g = 270 mg elemental Ca (central line preferred — sclerosant) Always concurrently replete Mg + vitamin D. PTH check — distinguishes hypoparathyroid (low PTH) from other causes. Lifelong management of permanent hypoparathyroidism: calcium + calcitriol; recombinant PTH 1-84 for selected.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "American Thyroid Association Postsurgical Hypoparathyroidism Statement; ESE Hypoparathyroidism Guidelines 2015; Bollerslev J et al. Eur J Endocrinol"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 45 ปี ตรวจสุขภาพประจำปี พบ Ca 11.4 (high) + PTH 145 (high) + iPTH elevated + 24h urine Ca 380 (elevated) + Vit D 25-OH 22 (slightly low)\n\nNo bone disease, no nephrolithiasis on US, no DM\nBMD: T-score -2.1 hip (osteopenia)\nSestamibi scan: positive single adenoma in right inferior parathyroid\n\nคำถาม: management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Observation + repeat Ca/PTH in 1 year"
+      },
+      {
+        "label": "B",
+        "text": "**Primary hyperparathyroidism with surgical indication → minimally invasive parathyroidectomy**: (1) **Surgical indications (4th International Workshop 2014)** for asymptomatic PHPT: - Age < 50 - Serum Ca > 1.0 mg/dL above upper limit normal (this patient 11.4 likely meets) - 24h urine Ca > 400 - eGFR < 60 - Nephrolithiasis or nephrocalcinosis - BMD T-score ≤ -2.5 OR vertebral fracture - Inability/refusal medical surveillance - This patient meets multiple → surgery indicated; (2) **Pre-op localization**: sestamibi scan + neck US (concordant → MIP feasible); 4D-CT if discordant; (3) **Minimally invasive parathyroidectomy (MIP)** — focused exploration of localized adenoma; intraoperative PTH monitoring (50% drop from baseline at 10 min post-excision predicts cure); (4) **Bilateral neck exploration** if non-localizing, multi-gland, family history MEN; (5) **Intraoperative PTH (IoPTH)** — drop ≥ 50% from highest pre-excision + into normal range = cure (Miami criterion); (6) **Address vitamin D deficiency** pre-op cautiously (may worsen hypercalcemia in PHPT — controversial — replete moderately); (7) **Post-op monitoring**: Ca, PTH; risk of hungry bone syndrome; (8) **Cure rate** > 95% in expert hands"
+      },
+      {
+        "label": "C",
+        "text": "Calcimimetic (cinacalcet) lifelong only"
+      },
+      {
+        "label": "D",
+        "text": "Total thyroidectomy"
+      },
+      {
+        "label": "E",
+        "text": "Bisphosphonate alone"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Primary hyperparathyroidism (PHPT)** — high Ca + high (or inappropriately normal) PTH. Most common cause of hypercalcemia in outpatients. Etiology: 85% single adenoma, 10-15% 4-gland hyperplasia (sporadic or MEN 1/2A), 1% parathyroid cancer. **Symptoms** (classic 'stones, bones, abdominal groans, psychic moans'): nephrolithiasis, osteoporosis/fractures, abdominal pain (PUD, pancreatitis), neuropsychiatric (depression, fatigue), polyuria. Many asymptomatic on screening. **4th International Workshop 2014 surgical indications** (asymptomatic): - Ca > 1.0 above ULN - 24h urine Ca > 400 + kidney stone risk - eGFR < 60 - Nephrolithiasis/nephrocalcinosis - T-score ≤ -2.5 or vertebral fracture - Age < 50 - Refusal/inability for surveillance - Symptomatic — always surgery **Localization**: sestamibi + US (concordant = MIP); 4D-CT if uncertain; MRI; PET-CT (parathyroid). **MIP**: focused approach to localized adenoma; IoPTH guides extent (Miami criterion: 50% drop into normal range = cure). **MEN consideration**: family history, young age — 4-gland exploration; subtotal vs total parathyroidectomy + autotransplant. **Cinacalcet**: calcimimetic — selected non-operative candidates; doesn't address bone loss. A ผิด — meets surgical criteria. C ผิด — surgery curative. D ผิด — thyroidectomy ไม่ใช่ PHPT. E ผิด — surgery first-line.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "4th International Workshop on Asymptomatic PHPT 2014 (Bilezikian); AAES Guidelines for Parathyroidectomy 2016; Wilhelm SM et al. JAMA Surg"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 48 ปี ภาวะ persistent hypertension + episodic palpitations + headaches + diaphoresis + hyperhidrosis + paroxysmal panic-like attacks\n\nVS: BP 178/108 baseline; during attack 230/130\nLab: plasma metanephrine 3,200 (elevated 10x normal), normetanephrine 4,800 (elevated 8x normal), 24h urine VMA elevated; chromogranin A elevated\nCT abdomen: 3.5 cm well-circumscribed enhancing mass at right adrenal\n123-I MIBG scan: positive uptake at right adrenal\n\nคำถาม: pre-op preparation + management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Beta-blocker first then surgery"
+      },
+      {
+        "label": "B",
+        "text": "**Pheochromocytoma — proper preoperative alpha-blockade BEFORE surgery (critical to prevent intraoperative hypertensive crisis)**: (1) **Alpha-blockade FIRST** — phenoxybenzamine (non-selective irreversible) 10 mg BID, titrate q2-3 days to 0.5-1 mg/kg/day OR doxazosin (alpha-1 selective) 1-16 mg/day — for 10-14 days; goal: BP normotensive supine + mild orthostasis upon standing; (2) **Beta-blockade ONLY AFTER alpha-blockade established** (NEVER before — unopposed alpha → hypertensive crisis) — to control reflex tachycardia; propranolol or atenolol; (3) **High-sodium diet + IV fluid** preop — restore intravascular volume (chronic vasoconstriction has reduced); (4) **Calcium channel blocker** as adjunct (nicardipine, amlodipine); (5) **Adrenalectomy** — laparoscopic retroperitoneal OR transabdominal approach for benign-appearing < 6-8 cm; open for larger / malignant / invasive; minimize tumor manipulation (catecholamine release); ligate adrenal vein early; (6) **Intraop**: anesthesia team prepared with vasodilators (nitroprusside, phentolamine), beta-blockers (esmolol), vasopressors (norepi, phenylephrine) — wide swings of BP; (7) **Post-op**: monitor for hypotension (rebound — vasodilation), hypoglycemia (rebound insulin), and persistent disease; ICU 24h; (8) **Pathology + genetic testing** — 30-40% pheochromocytoma have germline mutation (RET, VHL, NF1, SDH genes) — refer genetics; (9) **Lifelong surveillance** for recurrence + metachronous + second primary; (10) **'Rule of 10s' historic** (now outdated): 10% extra-adrenal (paraganglioma), 10% bilateral, 10% malignant, 10% familial — actual percentages higher"
+      },
+      {
+        "label": "C",
+        "text": "Surgery immediately without medical preparation"
+      },
+      {
+        "label": "D",
+        "text": "Radiotherapy"
+      },
+      {
+        "label": "E",
+        "text": "Chemotherapy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Pheochromocytoma / paraganglioma** — catecholamine-secreting tumor of chromaffin cells. Adrenal medulla (pheochromocytoma) or extra-adrenal (paraganglioma — head/neck, organ of Zuckerkandl, bladder). **Symptoms triad**: paroxysmal headache + palpitations + diaphoresis (90% specificity if all 3). HT (sustained or paroxysmal). **Biochemical diagnosis**: plasma free metanephrines (most sensitive ~99%) OR 24h urine fractionated metanephrines. Chromogranin A supportive. **Imaging**: CT/MRI adrenal — 'lightbulb' enhancement; 123-I MIBG for functional confirmation + extra-adrenal; PET-DOTA for paraganglioma/metastatic. **Preop pharmacologic preparation** (critical — historic mortality 50% → < 3% with proper prep): - Alpha-blockade 10-14 days: phenoxybenzamine (non-selective irreversible), doxazosin (selective alpha-1) - High-sodium diet + IV fluid - Beta-blockade AFTER alpha-blockade (only for tachycardia) - Calcium channel blocker adjunct - Goal: SBP < 130, mild orthostasis **Surgery**: laparoscopic adrenalectomy (transabdominal or retroperitoneal); open for large > 6-8 cm, invasive, malignant. Minimize tumor manipulation, ligate adrenal vein early. **Postop**: hypotension (rebound), hypoglycemia (catecholamine-induced insulin suppression then rebound). Long-term: lifelong biochemical surveillance, genetic testing (30-40% germline mutation — RET, VHL, NF1, SDHB/C/D, MAX, TMEM127), screen first-degree relatives if positive.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "Endocrine Society Pheochromocytoma/Paraganglioma Guideline 2014; NANETS Consensus; Lenders JWM et al. JCEM 2014"
+  },
+  {
+    "scenario": "ชายไทยอายุ 32 ปี ไม่มีโรคประจำตัว มาด้วยปวดท้องเฉียบพลัน LLQ 6 ชั่วโมง คลื่นไส้ ไม่อาเจียน ไม่เคยมีอาการก่อน\n\nVS: BP 124/76, HR 88, RR 16, Temp 36.8°C\nAbdomen: tender LLQ but no rebound; reducible inguinal hernia left side detected on exam — bulge over inguinal ligament\nCT abdomen: incarcerated left inguinal hernia + small bowel obstruction at hernia site; bowel inside hernia sac, no signs of strangulation yet\n\nคำถาม: management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Outpatient referral elective surgery"
+      },
+      {
+        "label": "B",
+        "text": "**Incarcerated inguinal hernia with bowel obstruction — emergent surgical reduction + repair**: (1) **Attempt manual reduction** (taxis) — gentle, with sedation + Trendelenburg, after analgesia + muscle relaxation — if successful + no strangulation suspected → elective repair within days (caution: bowel ischemia could be missed → re-evaluate carefully post-reduction); (2) **Emergent surgical exploration** if: cannot reduce, signs of strangulation (peritonitis, sepsis, dark/bloody hernia sac contents, severe pain disproportionate), bowel obstruction not relieved; (3) **Operative**: - **Open approach** (Lichtenstein with mesh) — standard, can assess viability easily - **Laparoscopic** (TEP, TAPP) — increasingly utilized; allows intra-abdominal bowel assessment; mesh may be avoided if bowel viability questionable - **Bowel assessment**: viable → reduce + repair with mesh; non-viable → resect + primary anastomosis; (4) **Mesh decision**: clean contaminated (bowel resected) — primary repair without mesh OR delayed mesh OR biological mesh (controversial — recent evidence permits prosthetic in many cases per Society guidelines); (5) **Post-op**: monitor for infection, recurrence; (6) Discuss bilateral repair if other side detectable"
+      },
+      {
+        "label": "C",
+        "text": "Observation + IV fluids only"
+      },
+      {
+        "label": "D",
+        "text": "Laxatives"
+      },
+      {
+        "label": "E",
+        "text": "Discharge home"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Inguinal hernia** — common surgical problem. Indirect (most common, lateral to inferior epigastric vessels, congenital patent processus vaginalis) vs direct (medial, Hesselbach triangle, acquired weakness). Most asymptomatic; watchful waiting acceptable for asymptomatic minimally symptomatic (Fitzgibbons JAMA 2006 trial). **Indications for surgery**: symptoms, enlarging, recurrent obstruction risk. **Complications**: - Incarceration: irreducible without strangulation - Strangulation: ischemic bowel — emergency - Bowel obstruction **Approach**: - Open (Lichtenstein with mesh) — gold standard - Laparoscopic (TEP — totally extraperitoneal, TAPP — transabdominal preperitoneal) — comparable outcomes, bilateral repair easier, lower chronic pain - Recent evidence: laparoscopic equal/better re: chronic pain, return to work; cost higher **Mesh**: standard in adults (lower recurrence vs primary suture per evidence). Polypropylene most common. In contaminated field (strangulated bowel resection): biological mesh OR delayed repair OR primary suture; recent literature supports prosthetic mesh selectively. **Pediatric**: high ligation alone, no mesh; very low recurrence. **Femoral hernia**: more common in women, high incarceration risk → repair always upon diagnosis.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "International HerniaSurge Group Guidelines 2018; SAGES Hernia Guidelines; EHS European Hernia Society"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 60 ปี ปวดทวารหนัก + เลือดออกหลังถ่าย 6 เดือน + ก้อนยื่นออก reducible\n\nExam: prolapsed grade III internal hemorrhoid (reducible manually), no thrombosis, no skin tag\nNo perianal disease, no fistula\nColonoscopy normal proximal\n\nคำถาม: management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Surgical hemorrhoidectomy first-line"
+      },
+      {
+        "label": "B",
+        "text": "**Grade III internal hemorrhoid — staged management starting non-operative + procedural**: (1) **Conservative first-line**: high-fiber diet + adequate hydration + avoid straining + warm sitz baths + topical agents (analgesic, anti-inflammatory steroid short-term); (2) **Office-based procedures** for failed conservative or persistent grade I-III: - **Rubber band ligation (RBL)** — most effective office procedure; grade I-III; ~80% success; ligate above dentate line; avoid in anticoagulated patients (post-ligation bleeding 5-10 days); - **Infrared coagulation, sclerotherapy** — lower-grade alternatives; (3) **Surgical hemorrhoidectomy** for: grade IV, mixed internal-external, refractory grade III after RBL, complications (thrombosis, gangrene), patient preference - **Open (Milligan-Morgan) or closed (Ferguson) hemorrhoidectomy** — gold standard; remove diseased tissue; more painful but lower recurrence - **Stapled hemorrhoidopexy (Longo)** — less pain, faster recovery, higher recurrence + risk of severe complications (rectal stricture, sepsis); (4) **THD (transanal hemorrhoidal dearterialization) / HAL-RAR** — dearterialization with Doppler + mucopexy; less pain, mid-range recurrence; (5) **Address constipation + risk factors** lifelong"
+      },
+      {
+        "label": "C",
+        "text": "Long-term opioid use"
+      },
+      {
+        "label": "D",
+        "text": "Total proctocolectomy"
+      },
+      {
+        "label": "E",
+        "text": "Observation lifelong"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Hemorrhoid grading** (internal — above dentate line): - Grade I: bleeding without prolapse - Grade II: prolapse with spontaneous reduction - Grade III: prolapse requiring manual reduction - Grade IV: irreducible / chronically prolapsed External hemorrhoids — below dentate line, somatic innervation (painful); thrombosed external — excise within 72h. **Treatment ladder**: 1. Lifestyle: fiber 25-35 g/day, water, sitz bath, topical 2. Office procedures (grade I-III RBL most effective) 3. Surgical hemorrhoidectomy (Milligan-Morgan open, Ferguson closed, Longo stapled, THD/HAL-RAR) — for severe / refractory / complications 4. Newer: laser hemorrhoidoplasty Avoid: chronic constipation, prolonged straining, prolonged sitting on toilet, NSAIDs (bleeding). Pregnancy: conservative + topical; surgery rarely needed (postpartum resolution).",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "ASCRS Clinical Practice Guidelines for Hemorrhoids 2018; Cochrane RBL vs Hemorrhoidectomy"
+  },
+  {
+    "scenario": "ชายไทยอายุ 35 ปี ปวดบริเวณก้นกบ 3 วัน + บวมแดงร้อน + ไข้ต่ำ\n\nExam: tender erythematous swelling 4 cm at lower sacrum + central pit + small purulent discharge\nHair tuft present\nNo signs of cellulitis spreading\n\nคำถาม: management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Oral antibiotic only"
+      },
+      {
+        "label": "B",
+        "text": "**Acute pilonidal abscess — incision + drainage**: (1) **I&D off-midline** — local anesthesia + small lateral incision (off-midline preferred — better healing than midline); evacuate pus + debride hair + necrotic tissue; loose packing; no closure; (2) **No routine antibiotic** unless: cellulitis spreading, immunocompromised, sepsis — if needed: cover skin flora (cefalexin, dicloxacillin) or MRSA (clindamycin, doxycycline, TMP-SMX) per local prevalence; (3) **Wound care**: regular dressing change, sitz baths; (4) **Definitive treatment after acute episode resolved**: elective management of pilonidal disease — - **Pit picking / Bascom's procedure** (minimally invasive, off-midline) - **Excision + secondary intention healing** (open wound, longer healing) - **Excision + primary closure off-midline** (Karydakis flap, Limberg/rhomboid flap) — lower recurrence than midline closure - **Laser ablation** (newer); (5) **Lifestyle**: hair removal (shaving, laser depilation) at natal cleft, hygiene, weight loss, avoid prolonged sitting; (6) **Recurrence** 10-30% — choice of definitive procedure affects"
+      },
+      {
+        "label": "C",
+        "text": "Observation only"
+      },
+      {
+        "label": "D",
+        "text": "Total proctectomy"
+      },
+      {
+        "label": "E",
+        "text": "Discharge home, follow up 1 week"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Pilonidal disease** — chronic sinus / abscess in natal cleft, usually 15-35 yr males with deep cleft + hair + sweating. Etiology: hair penetrates skin → foreign body reaction + sinus → recurrent infection. **Acute abscess**: I&D off-midline (better healing); systemic antibiotic for surrounding cellulitis only. **Chronic / recurrent disease**: - Conservative: hair removal (shaving, laser depilation — Conroy meta-analysis supports laser), hygiene - Pit picking (Bascom) — minimally invasive - Excision + healing by secondary intention — longer wound care - Excision + flap closure off-midline (Karydakis, Limberg rhomboid) — lower recurrence than midline primary closure - Endoscopic pilonidal sinus treatment (EPSiT), laser ablation — newer **Wound closure principle**: avoid midline closure (poor healing, recurrence) — off-midline flap preferred. **Risk factors**: obesity, sedentary, sweating, hairy, family history. **Prevention**: hair removal, hygiene. A ผิด — abscess ต้อง I&D. C ผิดอย่างยิ่ง. D ผิดเกินจริง. E ผิด.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "ASCRS Clinical Practice Guidelines for Pilonidal Disease 2019; Iesalnieks I et al. Coloproctology"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 28 ปี Crohn's disease 10 ปี on adalimumab + budesonide แต่ flare ใหม่ 1 เดือน ปวดท้อง RLQ + ถ่ายเหลว 6 ครั้ง/วัน + น้ำหนักลด 4 kg + perianal fistula chronic\n\nMRI enterography: active inflammation distal ileum 15 cm + stricture + small bowel obstruction features + complex perianal fistula (Park's type)\nColonoscopy: focal colitis + skip lesions\n\nคำถาม: surgical considerations",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Total proctocolectomy + ileal pouch-anal anastomosis (IPAA)"
+      },
+      {
+        "label": "B",
+        "text": "**Crohn's disease with stricturing + penetrating phenotype — selective surgical approach (bowel preservation principle)**: (1) **Optimize medical therapy** — biologic optimization (adalimumab trough + ADA), switch class if loss of response (anti-TNF → ustekinumab, vedolizumab, risankizumab, upadacitinib JAK), corticosteroid bridging, nutritional optimization; (2) **Surgical indications in Crohn's**: failed medical therapy, intestinal obstruction (stricture), perforation, hemorrhage, fistula refractory, cancer/dysplasia, growth failure (pediatric); (3) **Surgical principles** — BOWEL PRESERVATION: - **Strictureplasty** (Heineke-Mikulicz, Finney, Michelassi for long strictures) — preserve bowel length, avoid short gut - **Limited segmental resection** with histologically clean margins (~ 2 cm grossly normal — no need wider; recurrence not reduced) - Avoid wide resection; (4) **Ileocecal resection** for distal ileal disease — standard; recent LIR!C trial (Ponsioen Lancet GH 2017) — early surgery non-inferior to infliximab in selected; (5) **Perianal fistulas** — multidisciplinary: seton placement for drainage, MRI mapping; biologic therapy (anti-TNF); local excision/LIFT; mesenchymal stem cell therapy (darvadstrocel — ADMIRE-CD); (6) **No IPAA in Crohn's** — high failure + complications; reserved for UC; (7) **Post-op recurrence prophylaxis** — clinical features (smoking, fistulizing, prior resection) → start biologic 4-8 weeks post-op; (8) **Surveillance for dysplasia/cancer** — chronic colitis at risk; (9) **Smoking cessation absolute** in Crohn's — strongest modifiable risk; (10) Multidisciplinary IBD team"
+      },
+      {
+        "label": "C",
+        "text": "Refuse surgery in all Crohn's"
+      },
+      {
+        "label": "D",
+        "text": "Total colectomy + permanent ileostomy first-line"
+      },
+      {
+        "label": "E",
+        "text": "Whipple procedure"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Crohn's disease surgical principles**: 1. Crohn's is not curable surgically — recurrence common — preserve bowel 2. Common indications: stricture (obstruction), fistula (enteroenteric, enterovesical, enterocutaneous), abscess, perforation, hemorrhage, dysplasia/cancer, refractory disease, growth retardation 3. Surgical options: - Strictureplasty (Heineke-Mikulicz < 10 cm, Finney for medium, Michelassi side-to-side isoperistaltic for long > 25 cm) — preserves length - Limited segmental resection with 2 cm grossly normal margin (Fazio Ann Surg 1996 — no benefit to wider margins for recurrence) - Drainage of abscess (often percutaneous first) - Diversion stoma sparingly 4. AVOID: extensive resection, IPAA (high failure in Crohn's), pouch in Crohn's 5. Recurrence — endoscopic 70% at 1 yr, surgical 30% at 10 yr 6. Postoperative prophylaxis: anti-TNF or other biologic based on risk (POCER trial — colonoscopy-guided step-up) 7. Smoking cessation absolute Perianal fistulas: complex anatomy (Park classification — intersphincteric, transsphincteric, suprasphincteric, extrasphincteric); MRI mapping; multidisciplinary management: drainage seton + biologic + local procedure (LIFT, fistula plug, advancement flap); mesenchymal stem cells (allogeneic adipose-derived darvadstrocel) for refractory complex perianal Crohn's fistulas. A ผิด — IPAA = UC. C E ผิดอย่างยิ่ง. D ผิด — bowel-preserving.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "ECCO-ESCP Surgical Management Crohn's 2017; ASCRS Crohn's Surgical Guidelines 2020; Ponsioen CY et al. Lancet GH 2017 (LIR!C)"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 24 ปี Ulcerative colitis 5 ปี on mesalamine + azathioprine + steroid; ตอนนี้ admit ICU ด้วย severe acute UC flare 10 วัน — diarrhea 12 ครั้ง/วัน + bloody + abdominal distention + ไข้ + tachycardia\n\nVS: BP 102/64, HR 116, Temp 38.4°C\nAbdomen: distended, tender, decreased bowel sounds\nLab: Hb 8.2, albumin 2.4, CRP 180, K 3.0\nKUB: transverse colon dilated 7 cm + 'thumbprinting' edema\nColonoscopy (limited): severe ulcerated mucosa + Mayo 3\n\nTruelove-Witts severe\nCT scan: rule out perforation, megacolon",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue azathioprine + steroid same dose"
+      },
+      {
+        "label": "B",
+        "text": "**Acute Severe Ulcerative Colitis (ASUC) — toxic megacolon possible, medical rescue OR colectomy**: (1) **Hospitalization + supportive care**: NPO, NG decompression if megacolon, IV fluid, electrolyte correction (K), VTE prophylaxis (UC = high VTE risk), correct anemia, nutritional support (parenteral if needed); rule out CDI + CMV (stool toxin + sigmoidoscopy biopsy CMV IHC); (2) **IV corticosteroid** — methylprednisolone 60 mg/day OR hydrocortisone 100 mg q6h — first 72h; (3) **Day 3 assessment** (Travis criteria): CRP > 45 + > 8 stools/day = > 80% likely need colectomy → consider rescue OR surgery; (4) **Medical rescue if no response by day 3-5**: - **Infliximab** 5 mg/kg IV (consider higher dose 10 mg/kg in severe inflammation given clearance) — accelerated induction - **Cyclosporine** IV 2-4 mg/kg/day - **Tofacitinib** rapid acting — emerging - **JAK inhibitors** upadacitinib emerging; (5) **Colectomy indication** — emergent: toxic megacolon (transverse colon > 6 cm + signs sepsis), perforation, massive hemorrhage, failed medical rescue 5-7 days; subacute: failed medical optimization; (6) **Surgery**: **subtotal/total colectomy with end ileostomy + Hartmann pouch** (preserve rectum) — emergent / unstable / steroid-dependent; later reconstruction with IPAA (ileal pouch-anal anastomosis) in 3-stage approach; (7) **Avoid antimotility** + opioids (precipitate toxic megacolon); (8) Long-term post-IPAA — pouchitis common (15-50%) — treat antibiotic"
+      },
+      {
+        "label": "C",
+        "text": "Discharge home with oral steroid"
+      },
+      {
+        "label": "D",
+        "text": "Antidiarrheal medication"
+      },
+      {
+        "label": "E",
+        "text": "Total proctectomy alone, leave colon"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Acute Severe UC (ASUC)** — Truelove-Witts criteria: ≥ 6 bloody stools/day + 1+ systemic (HR > 90, fever > 37.8, Hb < 10.5, ESR > 30, albumin < 30, CRP elevated). Mortality without colectomy historically 30%; modern era < 1% with rescue medical + timely surgery. **Day 3 assessment** (Oxford / Travis predictors of colectomy): - CRP > 45 + 3-8 stools/day OR > 8 stools/day on day 3 → 80% need colectomy **Rescue therapy options** (failed IV steroid day 3-5): 1. Infliximab — increasingly preferred; consider accelerated dosing (10 mg/kg, repeat 7 days) — CONSTRUCT trial 2. Cyclosporine IV 2-4 mg/kg/day — historical efficacy similar 3. JAK inhibitor (tofacitinib, upadacitinib) — emerging, rapid onset 4. Sequential rescue (cyclo → IFX or vice versa) not recommended — bone marrow + infection risk **Surgery (colectomy)** indications: toxic megacolon (≥ 6 cm + sepsis), perforation, hemorrhage, failed rescue 5-7 days. **Approach**: total/subtotal colectomy + end ileostomy + Hartmann (preserve rectum) — emergent; staged IPAA later (2 or 3 stages depending on patient). **Toxic megacolon**: KUB transverse colon > 6 cm + systemic toxicity (3+ of fever, HR > 120, WBC > 10.5k, anemia) + 1+ of dehydration, AMS, electrolyte, hypotension. **VTE prophylaxis** essential — UC active disease is hypercoagulable. A ผิด — current regimen failed. C ผิด — severe ต้อง IV. D ผิด — โครงสร้าง megacolon. E ผิด — leave colon = recurrent.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "ECCO Acute Severe UC Guidelines 2022; AGA Guidelines Moderate-Severe UC 2020; Travis SPL et al. Gut 1996"
+  },
+  {
+    "scenario": "ทารกแรกเกิดอายุ 1 วัน อาเจียน bilious 12 ชั่วโมง + abdominal distention + ไม่ผ่าน meconium 24 hr\n\nVS stable\nAbdomen: distended, no peritonitis\nX-ray: dilated loops bowel + 'soap bubble' appearance RLQ + no rectal gas\nContrast enema: microcolon + dilated proximal small bowel + filling defects in distal ileum",
+    "choices": [
+      {
+        "label": "A",
+        "text": "NG decompression only, no further workup"
+      },
+      {
+        "label": "B",
+        "text": "**Meconium ileus in neonate — likely cystic fibrosis-associated**: (1) **Initial resuscitation**: NPO, NG decompression, IV fluid, broad-spectrum antibiotic; (2) **Cystic fibrosis evaluation** — sweat chloride test + CFTR genetic testing — > 80% of meconium ileus have CF; refer pulmonology, genetics; (3) **Therapeutic Gastrografin enema** — hypertonic water-soluble contrast under fluoroscopy — both diagnostic + therapeutic (osmotic effect draws fluid → soften + flush meconium); success rate 50-70% in uncomplicated meconium ileus; risks: bowel perforation (~5%), fluid shift → hypovolemia (preceded by IV fluid resuscitation); (4) **Surgery indications**: failed contrast enema (3 attempts), complications (perforation, volvulus, atresia), complicated meconium ileus (meconium peritonitis, ileal atresia, pseudocyst); (5) **Surgical options**: enterotomy + meconium evacuation + irrigation; resection of non-viable segment + primary anastomosis or temporary stoma (Bishop-Koop, Mikulicz); (6) **Postop**: enzyme replacement therapy, nutritional optimization (CF-specific), antibiotic, follow CF specialist long-term; (7) Genetic counseling for family planning"
+      },
+      {
+        "label": "C",
+        "text": "Outpatient referral pediatric surgery"
+      },
+      {
+        "label": "D",
+        "text": "Emergent total colectomy"
+      },
+      {
+        "label": "E",
+        "text": "Observation 48 hr"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Meconium ileus** — distal small bowel obstruction in neonate from thick inspissated meconium; > 80% have cystic fibrosis (CFTR mutation → abnormal mucus). Other causes: pancreatic insufficiency, Hirschsprung's (DDx), small left colon syndrome (maternal DM). **Presentation**: bilious vomiting + abdominal distention + failure to pass meconium > 24h. **X-ray**: dilated bowel + 'soap bubble' appearance RLQ (meconium-gas), absent rectal gas. **Contrast enema (Gastrografin)**: microcolon (disuse) + filling defects in ileum from meconium. **Therapeutic enema**: hypertonic water-soluble (Gastrografin) — osmotic action; success 50-70% uncomplicated; risks: perforation 3-5%, fluid shift → hypovolemia (IV pre-hydration mandatory); repeat 1-2 times if partial success. **Surgery**: failed enema, complications. Options: enterotomy + irrigation, resection + anastomosis vs stoma (Bishop-Koop double-barrel, Mikulicz, Santulli). **CF evaluation**: sweat chloride > 60 mEq/L diagnostic; CFTR mutation analysis; pulmonology follow-up; pancreatic enzyme replacement therapy (PERT); nutritional optimization (high calorie, fat-soluble vitamins); long-term CF center care; precision therapy (CFTR modulators — ivacaftor, elexacaftor-tezacaftor-ivacaftor) for specific mutations.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "pediatrics",
+    "board_age_group": "neonate",
+    "reference_source": "APSA Pediatric Surgery Handbook; Cystic Fibrosis Foundation Consensus; Lawrence MJ et al. World J Pediatr"
+  },
+  {
+    "scenario": "ทารกแรกเกิดอายุ 36 ชม. ไม่ผ่าน meconium + ท้องอืด + อาเจียน feculent\n\nExam: explosive watery stool + flatus on rectal exam (digital examination relief)\nContrast enema: transition zone at sigmoid; dilated proximal + narrow distal\nRectal suction biopsy: aganglionosis in rectum",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Observation"
+      },
+      {
+        "label": "B",
+        "text": "**Hirschsprung disease (congenital aganglionic megacolon) — staged management**: (1) **Initial**: bowel decompression with rectal stimulation / irrigation (saline irrigation); broad-spectrum antibiotic; NG decompression; (2) **Confirm diagnosis**: rectal suction biopsy gold standard (absence of ganglion cells + hypertrophic nerve trunks + calretinin negative); (3) **Modern approach — single-stage pull-through** in stable infant after decompression: - **Soave** (endorectal pull-through) — preserve muscular cuff - **Swenson** (full-thickness rectosigmoidectomy + coloanal anastomosis) - **Duhamel** (retrorectal pull-through with side-to-side anastomosis) — common, less pelvic dissection - **Transanal endorectal pull-through (TERPT/De La Torre)** — increasingly preferred, no laparotomy in standard-length disease; (4) **Staged approach** for very ill / total colonic Hirschsprung / late presentation: leveling colostomy in ganglionic bowel → pull-through 4-6 mo later → closure of stoma; (5) **Post-op complications**: enterocolitis (Hirschsprung-associated enterocolitis HAEC — life-threatening; treat aggressive antibiotic + irrigation), constipation, soiling, recurrent enterocolitis; (6) **Long-term follow-up** for functional outcomes; (7) **Genetic counseling** — 10-15% have RET mutation (also MEN2); other genes (EDNRB, EDN3); associated syndromes (Down, MEN2A, Waardenburg)"
+      },
+      {
+        "label": "C",
+        "text": "Total colectomy + ileostomy without diagnosis"
+      },
+      {
+        "label": "D",
+        "text": "Discharge with laxative"
+      },
+      {
+        "label": "E",
+        "text": "Endoscopic dilation"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Hirschsprung disease** — congenital absence of ganglion cells (Meissner + Auerbach plexus) in distal bowel → functional obstruction. Etiology: arrest of neural crest migration; genetic (RET, EDNRB, EDN3, GDNF). Associations: Down syndrome (most common — 5-15% Down have Hirschsprung), MEN2A (RET), Waardenburg-Shah. **Clinical**: 90% present in neonate with delayed passage meconium (> 48h), abdominal distention, bilious vomiting; relief with rectal exam (explosive release); failure to thrive; chronic constipation. **Diagnosis**: 1. Contrast enema: transition zone (proximal dilated, distal narrow aganglionic) — operator-dependent in neonates 2. Anorectal manometry: absent rectoanal inhibitory reflex (RAIR) 3. Rectal suction biopsy: absent ganglion cells + hypertrophic nerve trunks + calretinin neg (immunohistochemistry) — gold standard **Length of aganglionosis**: - Short segment (80% — rectosigmoid) - Long segment - Total colonic Hirschsprung (TCHA) - Total intestinal aganglionosis (rare, fatal without transplant) **Surgery options**: pull-through procedures — Swenson, Soave, Duhamel; modern TERPT (transanal endorectal pull-through). Single-stage in stable patients; staged for very ill / very young / long-segment. **HAEC (Hirschsprung-associated enterocolitis)** — serious complication preop or postop; clinical: fever, abdominal distention, foul stool, lethargy → treat: NPO, NG, antibiotic broad (metronidazole + cephalosporin), rectal irrigation aggressive.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "pediatrics",
+    "board_age_group": "neonate",
+    "reference_source": "APSA Pediatric Surgery Handbook; ARM Hirschsprung Guidelines; Langer JC Semin Pediatr Surg"
+  },
+  {
+    "scenario": "เด็กชายอายุ 2 ปี มา ED ด้วยอาการบวมที่ขาหนีบขวา 4 ชั่วโมง คลื่นไส้อาเจียน ร้องไห้ ไม่ยอมเดิน\n\nExam: tender erythematous bulge right inguinal region 3 cm, not reducible, no overlying skin changes severe, mild scrotal swelling\nVS stable\n\nคำถาม: management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Observation"
+      },
+      {
+        "label": "B",
+        "text": "**Incarcerated pediatric inguinal hernia — urgent management**: (1) **Attempt manual reduction (taxis)** — sedation + analgesia + Trendelenburg + cold compress + gentle constant pressure; success rate > 80% in children; (2) **Successful reduction** → admit + observe 24h + **scheduled elective herniorrhaphy within 24-72h** (delayed re-operation has higher recurrence + complication); (3) **Failed reduction OR signs of strangulation** (peritonitis, sepsis, dark/edematous bulge, severe pain, irreducible after attempts) → **emergent surgical exploration**: high ligation of patent processus vaginalis (no mesh in children); assess viability of bowel / testis (in boys — testicular ischemia possible); resect non-viable bowel + primary anastomosis; (4) **Pediatric hernia repair**: high ligation alone (Marcy) — no mesh; very low recurrence (< 1-2%); laparoscopic increasingly utilized — allows contralateral inspection (5-10% have contralateral patent processus vaginalis); (5) **Postop**: monitor for testicular issues, recurrence, wound; (6) **Differentiate from communicating hydrocele**: transilluminates, reducible into peritoneum, often spontaneous resolution if simple; surgery for persistent > 12-24 mo"
+      },
+      {
+        "label": "C",
+        "text": "Outpatient referral 3 months"
+      },
+      {
+        "label": "D",
+        "text": "Antibiotic only"
+      },
+      {
+        "label": "E",
+        "text": "Discharge home, follow up 1 week"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Pediatric inguinal hernia** — most common pediatric surgery. Always indirect (patent processus vaginalis). Higher rate of incarceration in pediatric (5-20%) than adult, especially < 1 yr. **Boys** > girls (6-10:1), preterm > term (higher patent processus vaginalis). **Bilateral** — ~10% (more in preterm, family history). **Acute incarcerated hernia**: 1. Attempt taxis with sedation + analgesia + position (Trendelenburg) — success > 80% in pediatric 2. Successful → elective repair within 24-72h (don't discharge — recurrence + complication risk) 3. Failed / strangulation → emergent surgery **Repair principles** (pediatric): - High ligation of hernia sac (patent processus vaginalis) — Marcy procedure - NO MESH (growing patient) - Open or laparoscopic — both acceptable; laparoscopic allows contralateral evaluation **Contralateral exploration**: controversial — laparoscopy allows easy inspection; if patent processus vaginalis on other side → repair concurrently (5-30% bilateral patent on lap evaluation). **Complications**: testicular atrophy / ischemia (10-20% incarcerated), recurrence (1-2%), wound infection. **Hydrocele** vs hernia in child: communicating hydrocele (patent processus vaginalis, fluid varies) — observe until 12-24 mo; if persistent → repair (same as hernia). Non-communicating — observe (resolves spontaneously).",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "pediatrics",
+    "board_age_group": "child",
+    "reference_source": "APSA Pediatric Surgery Handbook; Nazem M et al. Pediatr Surg Int; ACS Pediatric Hernia Guidelines"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 5 ปี มาด้วย neck mass anterior midline midway hyoid bone โต 1 ปี ไม่เจ็บ; เคลื่อนขึ้นลงเวลากลืน + protrude tongue\n\nFNA: cyst with thyroid-like epithelium; no malignancy\nUS: cystic mass 2 cm anterior midline, separate from thyroid (normal thyroid orthotopic)\n\nคำถาม: management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Observation indefinitely"
+      },
+      {
+        "label": "B",
+        "text": "**Thyroglossal duct cyst (TGDC) — surgical excision (Sistrunk procedure)**: (1) **Confirm orthotopic thyroid present** — pre-op US thyroid to ensure not 'ectopic thyroid' (rare — would result in iatrogenic hypothyroidism if excised); (2) **Sistrunk procedure**: excise cyst + middle portion of hyoid bone + tract to foramen cecum at tongue base — reduces recurrence from ~50% (simple excision) to ~5% (Sistrunk); developed by Sistrunk 1920; (3) **Pre-op**: thyroid function (TSH, free T4); imaging (US adequate; CT/MRI for atypical); FNA if suspicious or atypical features; (4) **Risk of carcinoma in TGDC** ~1% (papillary thyroid carcinoma most common type within TGDC); recommendations: total thyroidectomy + RAI if positive — controversial vs local Sistrunk alone with surveillance; refer to thyroid surgery if found; (5) **Differential**: thyroglossal duct cyst, ectopic thyroid, branchial cleft cyst (lateral), dermoid cyst, lymph node, lipoma; (6) Postop: surveillance for recurrence + wound"
+      },
+      {
+        "label": "C",
+        "text": "Aspiration only"
+      },
+      {
+        "label": "D",
+        "text": "Total thyroidectomy"
+      },
+      {
+        "label": "E",
+        "text": "Radioactive iodine therapy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Thyroglossal duct cyst (TGDC)** — most common congenital neck mass in children. Embryology: thyroid descends from foramen cecum at tongue base through hyoid bone to anterior neck; thyroglossal duct usually obliterates but may persist as cyst. **Clinical**: midline neck mass, anterior to hyoid bone (75%) or below; elevates with swallowing + tongue protrusion (anatomical attachment to hyoid); may become infected. **Diagnosis**: clinical + US (confirm cystic + identify orthotopic thyroid — critical before excision; ectopic thyroid in TGDC location = avoid resection, would cause hypothyroidism). **Sistrunk procedure**: excise cyst + central hyoid (1-2 cm) + tract to foramen cecum (tongue base) — historic + still gold standard. Recurrence with simple excision ~ 50%, Sistrunk ~ 5%. **Carcinoma in TGDC**: ~1% — papillary thyroid carcinoma most common (~75-80% of TGDC cancers); follicular, mixed; treat: Sistrunk + total thyroidectomy ± neck dissection ± RAI for high-risk features (controversy — some advocate Sistrunk alone + surveillance for small intracystic PTC). **Branchial cleft anomalies** (differential): 2nd most common, lateral neck (along SCM); 1st (preauricular, periotic), 2nd (most common, along SCM), 3rd (lower lateral), 4th (rare); excise complete tract.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "pediatrics",
+    "board_age_group": "child",
+    "reference_source": "APSA Pediatric Surgery Handbook; Carter Y et al. Operative Tech Otolaryngol; Plaza CP et al. Otolaryngol Clin North Am"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 42 ปี post-laparoscopic Nissen fundoplication 3 วันก่อน complaining of new-onset persistent dysphagia ทุกครั้งที่ดื่มน้ำ + ไม่สามารถเรอได้ + gas bloat\n\nคำถาม: pathophysiology + management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Normal post-op finding, ignore"
+      },
+      {
+        "label": "B",
+        "text": "**Post-Nissen fundoplication complications**: (1) **Dysphagia** — common transient (50% first 2-4 weeks) due to: edema at wrap, wrap too tight, wrap herniation, slipped wrap; (2) **Gas bloat syndrome** — inability to belch due to competent valve mechanism; common; usually improves over time; (3) **Pathophysiology of fundoplication**: 360° wrap around lower esophagus (Nissen) creates one-way valve preventing reflux but may restrict belching/vomiting; (4) **Investigations**: contrast esophagram (rule out slipped wrap, paraesophageal recurrence), EGD (visualize wrap, exclude obstruction), high-resolution manometry, pH study; (5) **Management**: - Conservative: dietary modification (small bites, chewing well, soft texture, no carbonation), pro-motility, time (resolves 4-8 wk typically) - Endoscopic dilation if persistent moderate (3-6 mo post-op) - Re-do surgery if persistent severe + anatomical issue (slipped, twisted, too tight) — convert Nissen to partial (Toupet 270° posterior, Dor 180° anterior) - Partial wraps (Toupet/Dor) have lower dysphagia but slightly higher reflux long-term; (6) **Selection**: severe dysmotility on manometry pre-op → consider partial wrap to begin with; (7) Patient counseling — most resolves"
+      },
+      {
+        "label": "C",
+        "text": "Total gastrectomy"
+      },
+      {
+        "label": "D",
+        "text": "PPI lifelong only"
+      },
+      {
+        "label": "E",
+        "text": "No follow-up needed"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Anti-reflux surgery (fundoplication)**: surgical treatment of GERD refractory / complicated. Options: - Nissen (360° complete wrap) — most reflux control, highest dysphagia - Toupet (270° posterior partial) — less dysphagia, reasonable reflux control - Dor (180° anterior partial) — used with Heller myotomy for achalasia, less reflux control - LINX (magnetic sphincter augmentation) — newer, restorative **Principles**: 1. Complete hiatal dissection 2. Crural repair (close hiatus) 3. Adequate intra-abdominal esophageal length (3-5 cm) 4. Wrap construction over bougie 5. Short floppy wrap (Donahue technique) **Complications**: - Dysphagia (transient 50%, persistent 5-10%) - Gas bloat — inability to belch - Slipped wrap (Nissen → migration above diaphragm) - Twisted wrap — anatomic distortion - Wrap dehiscence - Recurrent reflux **Pre-op evaluation essential**: EGD + manometry + pH study + esophagram to exclude motility disorder (achalasia, scleroderma) which contraindicates Nissen → use partial. **GERD surgical indication**: refractory medical therapy (PPI failure), complications (Barrett's, stricture, recurrent aspiration), patient preference, large hiatal hernia, esophagitis with PPI tolerance issues. LOTUS trial — long-term PPI vs Nissen similar outcomes.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "SAGES Anti-Reflux Surgery Guidelines; Stefanidis D et al. Surg Endosc; Lundell L et al. Lancet GH (LOTUS)"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี ได้รับการเตรียมการผ่าตัด elective colorectal surgery มา clinic ขอ pre-op evaluation\n\nUnderlying: HT, DM type 2 (HbA1c 8.2), CKD stage 3 (eGFR 40), prior MI 2 ปีก่อน on aspirin + clopidogrel + statin + beta-blocker; functional capacity 4 METs (walks 2 blocks)\n\nคำถาม: pre-operative cardiac evaluation",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cancel surgery indefinitely"
+      },
+      {
+        "label": "B",
+        "text": "**Perioperative cardiac risk assessment + optimization**: (1) **Calculate cardiac risk** — RCRI (Revised Cardiac Risk Index — Lee): high-risk surgery, ischemic heart disease, HF, CVA, insulin-dependent DM, Cr > 2.0 — this patient: yes IHD, possible DM (insulin?), Cr (eGFR 40) → 2-3 points = intermediate to high (1-2% MACE) OR NSQIP MICA calculator; (2) **Functional capacity assessment** — METs > 4 = good; < 4 = poor (cannot climb 2 flights) — this patient marginal; (3) **Step-wise approach (ACC/AHA + ESC guidelines)**: - Emergent → proceed - Active cardiac condition (unstable angina, decompensated HF, severe valve dz, arrhythmia) → defer + treat - Low risk surgery + good MET → proceed - Intermediate-high risk + poor MET → consider non-invasive testing (stress test, echo) if results would change management; (4) **Investigations** consider: ECG, echo (LV function), stress test if poor MET + high-risk surgery; coronary angiography only if would change management (PCI before non-cardiac surgery NOT routinely indicated — DECREASE-V, CARP trials show no benefit of prophylactic revascularization); (5) **Medical optimization**: continue beta-blocker (if on chronic — DO NOT initiate new on day of surgery per POISE trial — increased stroke + death), statin continue, ACE-I hold on day of surgery (hypotension), antiplatelet management (aspirin continue per POISE-2 except for high bleed surgery; DAPT — delay surgery for elective until 6-12 months post-DES or 30 days BMS; bridging not routinely needed), DM control (sliding scale + adjusted long-acting; HbA1c < 8 ideal), CKD optimize, anemia treat (iron + EPO if needed); (6) **Counsel** + multidisciplinary; (7) Post-op: troponin surveillance in high-risk (MINS — myocardial injury after noncardiac surgery — associated with mortality)"
+      },
+      {
+        "label": "C",
+        "text": "Coronary angiography before all surgery"
+      },
+      {
+        "label": "D",
+        "text": "Start beta-blocker day of surgery"
+      },
+      {
+        "label": "E",
+        "text": "Stop all medications 2 weeks before"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Perioperative cardiac risk assessment**: 1. RCRI (Lee): 6 factors — high-risk surgery (intraperitoneal, intrathoracic, suprainguinal vascular), ischemic heart disease, HF, CVA/TIA, insulin-dependent DM, preop Cr > 2.0 — 0 pts <1%, 1: 1%, 2: 2.4%, ≥3: >5% MACE 2. NSQIP MICA calculator — more individualized 3. Functional capacity (METs) — 4 METs = climb 2 flights, walk uphill briskly **Stepwise approach (ACC/AHA 2014, ESC 2022)**: - Emergent → proceed with optimal medical management - Active condition → defer + treat - Risk + functional capacity → testing only if would change management **Medical management evidence**: - Beta-blocker: continue if chronic; DO NOT initiate same day (POISE trial — death + stroke up) - Statin: continue / initiate beneficial - Aspirin: continue except if high-risk bleed (POISE-2) - ACE-I/ARB: hold day of surgery (hypotension) - Antiplatelet for stent: 30 days BMS, 6-12 mo DES delay elective; bridging not routinely needed - DM: hold sulfonylureas + meglitinides; metformin OK day before per CKD/contrast; insulin adjust - Anticoagulation: bridge per stratified risk (BRIDGE trial — most non-mechanical valve AF don't need bridging) **Prophylactic revascularization** for asymptomatic CAD pre-op = NOT beneficial (CARP, DECREASE-V) **MINS** — myocardial injury after noncardiac surgery — troponin elevation alone (without symptoms) — high mortality; consider surveillance in high-risk.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "ACC/AHA Perioperative Guidelines 2014; ESC Non-Cardiac Surgery Guidelines 2022; Devereaux PJ et al. JAMA (POISE-2)"
+  },
+  {
+    "scenario": "ทีม EMS วิทยุแจ้ง trauma center ว่า กำลังนำส่งผู้ป่วย MVC ระดับ red ที่ป่าจังหวัด ETA 20 min; multiple casualties 4 ราย ระดับความรุนแรงต่างกัน — ผู้ป่วย 1: GCS 8, hypotensive (red); ผู้ป่วย 2: GCS 15, ขาหัก (yellow); ผู้ป่วย 3: GCS 14, abdominal pain (yellow); ผู้ป่วย 4: walking wounded (green)\n\nคำถาม: trauma team activation protocol + triage system",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Treat in order of arrival"
+      },
+      {
+        "label": "B",
+        "text": "**Mass Casualty Incident (MCI) triage + trauma activation**: (1) **Pre-arrival**: full trauma team activation for red patient — surgeon, anesthesia, ER physician, OR availability, blood bank notified MTP, IR/CT availability; (2) **Triage system (START / Simple Triage and Rapid Treatment)** or SALT (Sort-Assess-Lifesaving-Treatment-Transport): - **Red (Immediate / T1)**: life-threatening, salvageable with immediate intervention (e.g., airway, breathing, circulation compromise) - **Yellow (Delayed / T2)**: serious but stable, can wait 30-60 min - **Green (Minor / T3)**: walking wounded, minimal injury - **Black (Expectant)**: dead or non-salvageable; (3) **JumpSTART** for pediatric (< 8 yr); (4) **Resource allocation**: red patients get immediate trauma bay + team; yellow next; green to alternative area; (5) **Activation criteria** (universal trauma criteria): physiologic (SBP < 90, GCS < 13, RR < 10 or > 29), anatomic (penetrating head/neck/torso/extremity proximal, flail chest, > 2 long bone fractures, paralysis, amputation), mechanism (high-velocity MVC, falls > 3 m, ejection, extrication > 20 min); (6) **MCI command**: incident command system (ICS), unified command if multi-agency, communication coordinator; (7) **Tertiary survey** after primary stabilization to detect missed injuries; (8) **Documentation, family notification, mental health support, debrief**"
+      },
+      {
+        "label": "C",
+        "text": "Send all to ICU regardless"
+      },
+      {
+        "label": "D",
+        "text": "Discharge green patients home immediately without exam"
+      },
+      {
+        "label": "E",
+        "text": "Operate on all 4 patients simultaneously"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Mass Casualty Incident (MCI) management** — system-level coordination required. **Triage systems**: 1. **START** (Simple Triage and Rapid Treatment) — adults, 30-second assessment: walking (green), respirations (rate, present/absent → red/black), perfusion (radial pulse, cap refill), mental status (commands) 2. **JumpSTART** — pediatric (< 8 yr or weight) — modifications for respiratory: 5 rescue breaths before declaring black 3. **SALT** (Sort-Assess-Lifesaving-Treatment-Transport) — global sorting → individual assessment → lifesaving interventions (airway, hemorrhage, decompression) → triage category → transport **Triage categories**: - **Red / Immediate / T1**: life-threatening salvageable - **Yellow / Delayed / T2**: serious, stable - **Green / Minor / T3**: minor injuries, ambulatory - **Black / Expectant**: dead or non-salvageable in available resources **Trauma team activation criteria** (Tier 1 — full activation): - Physiologic: SBP < 90, GCS ≤ 8 (or motor < 6), RR < 10 or > 29, need airway - Anatomic: penetrating to head/neck/torso, flail chest, > 2 long bone fractures, amputation proximal wrist/ankle, paralysis, crushed mangled extremity, pelvic fracture - Mechanism: high-velocity MVC, ejection, > 20 min extrication, fall > 6 m **Incident Command System (ICS)** — unified command structure; communication; logistics; safety; finance. **Resource management** — when overwhelmed, shift paradigm: 'greatest good for greatest number' (vs individual patient focus).",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "ACS Resources for Optimal Care of the Injured Patient (Orange Book); SALT Triage; START Triage; ATLS 10th Ed"
+  },
+  {
+    "scenario": "ชายไทยอายุ 70 ปี ผ่า total gastrectomy + D2 dissection for advanced gastric cancer 18 เดือนก่อน + adjuvant chemotherapy completed\n\nNow มาด้วยอาการ severe fatigue + weight loss + diarrhea + leg edema + paresthesia + difficulty walking + recurrent infection\n\nLab: Hb 8.4 (microcytic + macrocytic mixed), albumin 2.6, B12 80 (low), folate 3 (low), iron 18, ferritin low, vit D low, Ca low, Mg low, Zn low\nMRI brain: subcortical demyelination consistent with subacute combined degeneration\nNo recurrence on imaging\n\nคำถาม: integrative survivorship management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Restart chemotherapy"
+      },
+      {
+        "label": "B",
+        "text": "**Post-gastrectomy nutritional deficiency syndrome + cancer survivorship — integrative multimodal care**: (1) **Diagnose specific deficiencies + replete**: - B12: parenteral 1000 mcg IM (loading: weekly × 4, then monthly lifelong) — oral cannot absorb without intrinsic factor (loss with total gastrectomy) - Iron: IV iron (gastrectomy impairs absorption); avoid oral if malabsorption - Folate: oral 1-5 mg daily - Vit D + Ca: high dose oral 50,000 IU/wk + Ca 1,500 mg/day - Mg, Zn: oral repletion; monitor - Vit ADEK: empiric supplementation; (2) **Nutritional optimization**: dietician, small frequent high-protein high-calorie meals, enzyme support if needed; address dumping syndrome (small meals, low carb); (3) **Subacute combined degeneration** treatment — B12 repletion early; neurological recovery may be incomplete if delayed; (4) **Long-term surveillance for recurrence**: clinical, CT chest/abd q6 mo × 2 yr then annual × 5 yr, EGD periodically; CA 19-9 if elevated initially; (5) **Bone health**: DEXA, treatment of osteoporosis (bisphosphonate if T-score ≤ -2.5 or fragility fracture); (6) **Functional rehabilitation**: PT, OT, neuropathy management; (7) **Psychological support**: cancer survivorship clinic, peer support, mental health; (8) **Lifestyle**: exercise as tolerated, smoking cessation, moderate alcohol, vaccination (pneumococcal, influenza, COVID); (9) **Survivorship care plan** — written summary of treatment received + future surveillance + risk factors + lifestyle + contacts; (10) **Multidisciplinary**: oncology, surgery, nutrition, psychology, physical therapy, primary care"
+      },
+      {
+        "label": "C",
+        "text": "TPN lifelong"
+      },
+      {
+        "label": "D",
+        "text": "Observation only"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic prophylaxis"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "**Post-gastrectomy nutritional consequences** — chronic, lifelong. Deficiencies: - B12 — total gastrectomy eliminates intrinsic factor production → no B12 absorption → require parenteral lifelong - Iron — gastric acid + duodenal absorption impaired → IV iron or aggressive oral - Folate — variable; oral repletion - Vit D + Ca — duodenal absorption; oral supplementation - Fat-soluble vitamins (ADEK) — fat malabsorption with dumping/rapid transit - Mg, Zn, Cu — variable - Protein — low intake + malabsorption → weight loss, sarcopenia **Dumping syndrome** — early + late (see prior question) **Subacute combined degeneration**: B12 deficiency → dorsal column + lateral corticospinal tract demyelination → paresthesia, ataxia, weakness, cognitive impairment. Treat with B12 — neurological recovery may be incomplete if delayed > months. **Cancer survivorship**: surveillance for recurrence, second primary cancer, late effects of treatment (chemo neuropathy, cardiotoxicity, secondary malignancy from RT), physical fitness, psychological, lifestyle modification, vaccination, family genetic risk assessment. **Survivorship care plan** (IOM recommendation): written summary of treatment, surveillance schedule, late effects, lifestyle, contact information for transitioning care. Multidisciplinary survivorship clinics — integrate medical, nutritional, psychological, social, financial, vocational, sexual health.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "ASCO Survivorship Care Planning; NCCN Survivorship; Davis JL et al. J Surg Oncol; Carpentieri J et al. J Gastrointest Surg"
   }
 ]
