@@ -3806,5 +3806,485 @@
     "board_topic": "cardiovascular",
     "board_age_group": "adult",
     "reference_source": "ESC Guidelines on Cardiovascular Diseases during Pregnancy 2018; HFSA + ESC PPCM Position Statement 2019; IPAC Trial 2015; Bromocriptine Trial JACC 2017"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 65 ปี underlying HT มา ED ด้วย BP 222/128 พบเฉยๆ ตอน routine check; ไม่มี symptom (no headache, no chest pain, no neuro deficit, no visual change, no dyspnea); recently missed medication 1 wk\n\nV/S: BP 222/128, HR 84, RR 16, SpO2 98%\nPE: no focal neuro, no papilledema, lungs clear, no S3, no edema\n\nLab: Cr 1.0 baseline, no rise; UA: trace protein, no blood; EKG: LVH, no acute change; CXR: no congestion; troponin neg",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Sublingual nifedipine for rapid BP drop"
+      },
+      {
+        "label": "B",
+        "text": "IV labetalol drip with target SBP < 140 within 1 hr"
+      },
+      {
+        "label": "C",
+        "text": "Hypertensive urgency (severe HT without acute end-organ damage) — restart/resume home antihypertensive (or adjust), oral agents (amlodipine, ACEi/ARB, beta-blocker, diuretic combination), lower BP gradually over 24-48 hr to < 160/100 then to target; outpatient follow-up 1-7 days; avoid IV agents + aggressive lowering (no benefit, risk ischemic complications); address adherence, identify secondary HT screen if young/refractory; lifestyle counseling"
+      },
+      {
+        "label": "D",
+        "text": "Admit ICU + IV nitroprusside"
+      },
+      {
+        "label": "E",
+        "text": "Discharge without medication adjustment"
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Hypertensive urgency = severe HT (SBP > 180 or DBP > 120) WITHOUT acute end-organ damage. Hypertensive emergency = same BP + end-organ damage (acute kidney injury, encephalopathy, retinopathy with papilledema, ACS, pulmonary edema, aortic dissection, eclampsia, intracranial bleed). ACC/AHA 2017 + JNC HT guideline: (1) Urgency: oral antihypertensive, gradual lowering over hours-days, target < 160/100 then to goal over weeks; outpatient management. (2) Avoid sublingual nifedipine (uncontrolled rapid drop → ischemic stroke/MI). (3) IV agents only for true emergency. (4) Address adherence, identify white-coat, secondary HT (Conn, pheo, OSA, renovascular). (5) Resume home regimen + reassess; outpatient follow-up.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "elderly",
+    "reference_source": "ACC/AHA 2017 Guideline on High Blood Pressure; ESC/ESH 2018 HT Guideline"
+  },
+  {
+    "scenario": "ชายไทยอายุ 25 ปี ไม่มีโรค มา ED ด้วยใจสั่น + วิงเวียน 2 ชม. ไม่มี syncope\n\nV/S: BP 118/76, HR 168 regular narrow QRS, RR 18, SpO2 98%\nEKG: regular narrow complex tachycardia ~ 170, P waves not clearly visible (retrograde or buried), QRS narrow, ST/T normal\nNo prior history, no medications, no thyroid hx",
+    "choices": [
+      {
+        "label": "A",
+        "text": "DC cardioversion ทันที"
+      },
+      {
+        "label": "B",
+        "text": "Stable SVX (likely AVNRT) — (1) Vagal maneuver: Valsalva (modified REVERT — supine + leg raise), carotid sinus massage (auscultate bruit first; avoid in elderly + carotid disease); (2) IV adenosine 6 mg rapid push + 20 mL saline flush via large vein → 12 mg if no response → 12 mg; warn re flushing + chest pain + brief asystole; (3) If unresponsive: IV diltiazem or verapamil (avoid in suspected pre-excitation/WPW) OR IV beta-blocker; (4) Long-term EP study + ablation for recurrent or symptomatic (catheter ablation curative ~95% AVNRT); (5) Avoid AV-blockers in pre-excited AF (WPW with AF — wide irregular tachy = procainamide or DC cardioversion)"
+      },
+      {
+        "label": "C",
+        "text": "Amiodarone IV bolus first-line"
+      },
+      {
+        "label": "D",
+        "text": "Digoxin loading dose"
+      },
+      {
+        "label": "E",
+        "text": "Heparin anticoagulation"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Paroxysmal supraventricular tachycardia (PSVT) — AVNRT most common (60%), AVRT (WPW), atrial tachycardia. ACC/AHA/HRS 2015 + ESC 2019 SVT guideline: (1) Stable: vagal maneuver (modified Valsalva REVERT trial higher success), adenosine 6→12→12 mg; (2) Refractory stable: IV CCB (diltiazem, verapamil — avoid in pre-excitation), beta-blocker; (3) Unstable: synchronized DC cardioversion; (4) Long-term: catheter ablation curative ~95% AVNRT, AVRT; medical (BB, CCB) alternative; (5) WPW + AF (wide irregular): procainamide or DC cardioversion; AVOID AV-blockers (can paradoxically increase ventricular rate via accessory pathway → VF).",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "ACC/AHA/HRS 2015 SVT Guideline; ESC 2019 SVT Guidelines; REVERT Trial Lancet 2015"
+  },
+  {
+    "scenario": "ชายไทยอายุ 55 ปี underlying alcohol use มา ED ด้วยอ่อนเพลีย + ขาบวม + คลื่นไส้ + ปวดข้อ + ลิ้นแสบ\n\nLab: Hb 8.4 macrocytic MCV 112, MCH 36, reticulocyte 1.2% (low), WBC 4,200, Plt 130K, smear hypersegmented neutrophil + macrocytes\nFolate < 2 (low), B12 380 (normal — rule out B12 deficiency), homocysteine elevated, MMA normal (B12 OK)\nLDH 480, indirect bilirubin 1.6\nAlcohol use 200 g/day, poor diet",
+    "choices": [
+      {
+        "label": "A",
+        "text": "B12 IM + iron supplementation"
+      },
+      {
+        "label": "B",
+        "text": "Folate deficiency (megaloblastic anemia) from alcohol + poor intake — (1) Oral folic acid 1-5 mg/d × 1-4 mo until normalized + ongoing maintenance; (2) Always check B12 BEFORE folate replacement (folate alone in B12 deficient = neurologic worsening); (3) Address alcohol use disorder — abstinence + nutrition counseling + thiamine + B-complex; (4) Investigate other deficiencies (iron, B12, zinc); (5) Address comorbidities (cirrhosis if present, pancreatitis); reticulocytosis at 5-10 d + Hb normalization 4-8 wk"
+      },
+      {
+        "label": "C",
+        "text": "Bone marrow biopsy first"
+      },
+      {
+        "label": "D",
+        "text": "Erythropoietin therapy"
+      },
+      {
+        "label": "E",
+        "text": "Blood transfusion + corticosteroid"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Folate deficiency — alcohol + poor nutrition common cause; pregnancy/lactation, hemolysis, drugs (MTX, phenytoin, sulfa, TMP), celiac. Distinguish from B12: MMA elevated only in B12 deficiency; homocysteine elevated in both. Replace with oral folic acid 1-5 mg/d. Always confirm B12 not deficient first (folate alone in B12 def = neurologic deterioration despite hematologic improvement). Address underlying cause. Reticulocytosis day 5-10 confirms response.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "BSH Cobalamin and Folate Deficiency Guideline 2014; Antony AC — Folate"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 38 ปี ไม่มีโรคประจำตัว มาด้วยอาการอ่อนเพลีย + jaundice + ปัสสาวะสีโคล่า 1 สัปดาห์ + เพิ่งได้ ceftriaxone 7 d สำหรับ pneumonia\n\nLab: Hb 7.4 (normocytic), MCV 92, reticulocyte 12%, smear: spherocytes + polychromasia, no schistocytes\nIndirect bilirubin 5.4, LDH 1,820, haptoglobin < 10 (consumed)\nDAT/Coombs positive IgG + C3, monospecific IgG strong (warm AIHA pattern)\nCold agglutinin titer low\nANA negative, no SLE features, viral hepatitis negative",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue ceftriaxone + observe"
+      },
+      {
+        "label": "B",
+        "text": "Warm autoimmune hemolytic anemia (AIHA) — possibly drug-induced (ceftriaxone — implicated DDAIHA) — (1) Stop suspected drug (ceftriaxone); (2) Prednisolone 1 mg/kg/d × 3-4 wk then slow taper over months — first-line; 75% respond; (3) Folic acid supplement (high RBC turnover); (4) Transfusion for life-threatening anemia (use least-incompatible PRC; coordinate with blood bank); (5) Refractory: rituximab (preferred 2nd-line per ASH 2019), splenectomy (delayed at least 1 yr), immunosuppressive (azathioprine, mycophenolate, cyclophosphamide); (6) Newer: fostamatinib (SYK inhibitor — FDA for warm AIHA refractory), sutimlimab (anti-C1s — cold AIHA), complement inhibitors; (7) VTE prophylaxis (AIHA = ↑ thrombosis); (8) Vaccinations pre-immunosuppression; investigate secondary cause (lymphoma, SLE, HIV, drug)"
+      },
+      {
+        "label": "C",
+        "text": "Splenectomy first-line"
+      },
+      {
+        "label": "D",
+        "text": "Plasma exchange"
+      },
+      {
+        "label": "E",
+        "text": "Heparin anticoagulation"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Warm autoimmune hemolytic anemia — IgG ± C3 on RBC (DAT+), spherocytes, ↑ retic, ↑ indirect bili, ↑ LDH, ↓ haptoglobin. Causes: primary idiopathic; secondary — lymphoproliferative (CLL, lymphoma), SLE, drug (penicillin, ceftriaxone, methyldopa, fludarabine, checkpoint inhibitor), HIV. ASH 2019 + BSH AIHA guideline: (1) Stop offending drug; (2) Prednisolone 1 mg/kg/d × 3-4 wk taper; (3) Rituximab preferred 2nd-line (BSH); (4) Splenectomy after ≥ 1 yr trial of medical; (5) Immunosuppression in refractory (AZA, MMF, CYC, fostamatinib); (6) Sutimlimab for cold AIHA (CAD); (7) Transfusion: least-incompatible; (8) Investigate underlying. Cold AIHA: IgM, C3 only on DAT, RBC agglutination, Raynaud, mycoplasma/EBV — treat differently (rituximab + sutimlimab; avoid splenectomy ineffective; warm patient).",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "ASH 2019 Guideline AIHA; BSH AIHA Guideline 2017"
+  },
+  {
+    "scenario": "ชายไทยอายุ 55 ปี ไม่มีโรค พบ incidentally Hb 19, Hct 58, WBC 12K, Plt 580K from CBC routine check + พบ facial flushing + pruritus หลังอาบน้ำร้อน + splenomegaly mild + history of DVT 2 ปีก่อน\n\nLab: Hb 19, Hct 58 (M > 49% diagnostic threshold lowered 2016 WHO), WBC 12K (mild), Plt 580K, EPO low, JAK2 V617F mutation positive\nO2 sat normal 98%, no smoking, no chronic lung disease, no cardiac source, no high altitude\nBone marrow biopsy: hypercellular, panmyelosis with megakaryocyte clustering — consistent with PV\nNo myelodysplasia, no fibrosis significant",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Anticoagulation alone"
+      },
+      {
+        "label": "B",
+        "text": "Polycythemia Vera (PV, JAK2 mutated) with prior thrombosis (high-risk) — WHO 2022 + NCCN: (1) **Phlebotomy** to maintain Hct < 45% (CYTO-PV trial — reduces thrombosis); aggressive initially (q 2-3 d) then maintenance q 2-3 mo; (2) **Low-dose aspirin** 81 mg/d — reduces thrombosis (ECLAP); not for prior major bleed; (3) **Cytoreductive therapy** for high-risk (age > 60 or prior thrombosis): **hydroxyurea** 500-1000 mg/d titrate; alternative IFN-α (pegylated; younger, pregnancy, intolerance); ropeginterferon (PROUD-PV — recent); (4) **Ruxolitinib** (JAK1/2 inhibitor): for HU-resistant/intolerant (RESPONSE trial); (5) Address symptoms: aquagenic pruritus (antihistamine, SSRI paroxetine, JAK inhibitor); erythromelalgia (aspirin); microvascular (aspirin); (6) Monitor for progression: myelofibrosis (10-20% / 10 yr), AML transformation (5-10% / 20 yr); (7) Anticoagulation if active thrombosis or AF; (8) Treat cardiovascular risk; (9) Vaccinations"
+      },
+      {
+        "label": "C",
+        "text": "Bone marrow transplant immediately"
+      },
+      {
+        "label": "D",
+        "text": "Watchful waiting indefinitely"
+      },
+      {
+        "label": "E",
+        "text": "Iron supplementation"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Polycythemia vera (PV) — myeloproliferative neoplasm; JAK2 V617F (96%) or JAK2 exon 12 mutations. WHO 2022 + NCCN + ELN guidelines: (1) Diagnosis: Hb > 16.5 M / > 16 F (or Hct > 49 M / > 48 F) + JAK2 mutation + low EPO + bone marrow showing hypercellularity. (2) Risk stratification: high-risk (age > 60 OR prior thrombosis) vs low-risk. (3) Treatment all: phlebotomy to Hct < 45 + low-dose aspirin (ECLAP, CYTO-PV trials). (4) Cytoreduction for high-risk: hydroxyurea or pegylated IFN-α (PROUD-PV — ropeginterferon alfa-2b approved). (5) HU-resistant/intolerant: ruxolitinib (RESPONSE — efficacy in symptoms, hematocrit control, spleen). (6) Pruritus: H1+H2 blocker, SSRI (paroxetine), ruxolitinib. (7) Pregnancy: aspirin + LMWH + phlebotomy + IFN-α. (8) Monitor for myelofibrosis (10-20%), AML (5%, higher with HU long-term). (9) Surveillance CBC, JAK2 allele burden, symptom assessment. (10) Differential erythrocytosis: secondary (smoking, COPD, OSA, high altitude, cardiac shunt, renal/hepatic tumor producing EPO, exogenous testosterone), congenital (high oxygen affinity Hb), Chuvash polycythemia.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "WHO Classification of Myeloid Neoplasms 2022; NCCN MPN Guideline 2024; CYTO-PV NEJM 2013; RESPONSE NEJM 2015"
+  },
+  {
+    "scenario": "ชายไทยอายุ 32 ปี ไม่มีโรค มา ED ด้วยอาการแขนซ้ายชา + อ่อนแรง + พูดไม่ชัด onset 2 ชม. resolved spontaneously 30 นาที before arrival; ก่อนหน้านี้ปกติ\n\nV/S: BP 142/86, HR 78, no AF on telemetry\nNeuro: now back to baseline; ABCD2 score = 5 (high risk)\nMRI brain DWI: small acute infarct left MCA territory cortical → confirms ischemic stroke (transient symptoms but radiographic infarct = stroke not TIA per recent definition)\nCarotid Doppler: 80% stenosis left ICA + atheromatous plaque (symptomatic side)\nLab: lipid panel TC 280 LDL 192, A1c 5.6%, normal CBC + coag",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Aspirin alone + outpatient follow-up"
+      },
+      {
+        "label": "B",
+        "text": "Symptomatic carotid stenosis 70-99% with recent stroke — Carotid endarterectomy (CEA) within 14 days (NASCET — 50% RRR stroke at 2 yr in 70-99% stenosis) OR carotid artery stenting (CAS) selected (high-surgical-risk, neck irradiation, restenosis post-CEA); MORE BENEFIT EARLY (within 2 wk) — TIA/stroke + > 50% (symptomatic) with low surgical risk → revascularize; concurrent: dual antiplatelet (CHANCE/POINT short-term 21 d ASA + clopidogrel for minor stroke/TIA) then ASA mono; high-intensity statin (atorvastatin 80 mg, target LDL < 70); BP control < 130/80 ACEi; glycemic; smoking; lifestyle; investigate other stroke sources (AF on telemetry/Holter, echo for cardiac source, hypercoagulable young, PFO in young, vasculitis, dissection)"
+      },
+      {
+        "label": "C",
+        "text": "Long-term warfarin anticoagulation"
+      },
+      {
+        "label": "D",
+        "text": "Asymptomatic carotid screening only"
+      },
+      {
+        "label": "E",
+        "text": "Defer intervention indefinitely"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Symptomatic carotid stenosis with recent stroke. AHA/ASA 2021 Secondary Stroke Prevention + SVS guideline: (1) Workup TIA/stroke: imaging (MRI/CT), carotid Doppler (or CTA/MRA), echo, telemetry/Holter (AF), labs (lipid, glucose, coag, hypercoag young). (2) Indication for revascularization (symptomatic — TIA or stroke + carotid stenosis): - 70-99%: CEA strongly indicated (NASCET — 50% RRR over medical therapy); 50-69%: moderate benefit (NASCET). - Asymptomatic 60-99%: less clear benefit; CEA may help in selected (ACAS, ACST) — recent trials suggest medical therapy may be equivalent (SPACE-2). (3) Timing: within 2 wk of event for max benefit (RR-best within 14 d; less after that). (4) CEA preferred over CAS for most (CREST — CEA lower stroke, CAS lower MI; ICSS — CEA better at long-term). CAS for high surgical risk, restenosis, radiation neck, anatomical access difficulty. (5) Medical: high-intensity statin (LDL target < 70 or even < 55 ESC), DAPT short-term (ASA + clopidogrel 21 d per CHANCE/POINT for minor stroke/TIA), BP control (ACEi/ARB), glycemic, smoking, lifestyle. (6) Stroke etiology workup: cardioembolic (AF — DOAC; PFO — close in selected per CLOSE, RESPECT), large artery (carotid, intracranial), small vessel, cryptogenic, other (dissection — anticoagulation 3-6 mo, then antiplatelet; vasculitis; hypercoagulable). (7) TIA = transient symptoms without infarct; if MRI DWI infarct = stroke regardless of resolution.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AHA/ASA Secondary Stroke Prevention Guideline 2021; NASCET NEJM 1991; CREST NEJM 2010"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 32 ปี diagnosed multiple sclerosis (relapsing-remitting) 2 ปีก่อน on dimethyl fumarate มา ED ด้วยอาการมองเห็นไม่ชัดข้างขวา + ตามัว + ปวดเมื่อขยับตา 5 วัน + อ่อนแรงขาขวา mild\n\nV/S: BP 124/76, HR 78, Temp 36.8°C\nPE: right RAPD (Marcus Gunn pupil), visual acuity 6/60 right (was 6/9), pain on extraocular movement, color desaturation, fundoscopy: optic disc swelling mild; mild right leg weakness 4+/5; sensory mild paresthesia; intact cerebellar, no encephalopathy\n\nMRI brain + spine: new T2/FLAIR lesion right optic nerve enhancing + 2 new white matter periventricular lesions + 1 new cervical cord lesion\nNo fever, no infection workup positive",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Increase dimethyl fumarate dose"
+      },
+      {
+        "label": "B",
+        "text": "Multiple sclerosis acute relapse with optic neuritis + new lesions = clinical + radiologic activity: (1) **High-dose corticosteroid** — IV methylprednisolone 1 g/d × 3-5 d (oral high-dose equivalent 1250 mg/d × 5 d non-inferior per UK trial); shortens relapse duration, does not affect long-term disability; (2) Plasma exchange (PLEX) for steroid-refractory severe relapse (acute severe optic neuritis, transverse myelitis); (3) Address current DMT inadequacy — switch to higher-efficacy: anti-CD20 (ocrelizumab, ofatumumab, ublituximab), natalizumab (anti-α4-integrin; PML risk JCV+), S1P modulator (fingolimod, siponimod, ozanimod, ponesimod), cladribine, alemtuzumab; recent trend toward early high-efficacy DMT in active MS (OPERA, ASCLEPIOS, MS-PATHS); (4) Symptomatic: spasticity (baclofen, tizanidine), neuropathic pain (gabapentin, pregabalin), fatigue (amantadine, modafinil), urinary (mirabegron); (5) Lifestyle: vitamin D, exercise, smoking cessation; (6) Vaccinations pre-DMT; JCV antibody for natalizumab; (7) MRI surveillance q6-12mo; (8) Counsel pregnancy planning (washout periods vary by DMT); (9) Multidisciplinary: neuro + ophth + PT/OT + mental health"
+      },
+      {
+        "label": "C",
+        "text": "Antibiotic IV empirically"
+      },
+      {
+        "label": "D",
+        "text": "Long-term oral steroid taper monotherapy"
+      },
+      {
+        "label": "E",
+        "text": "IVIG monotherapy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "MS acute relapse — clinical + radiologic activity (new T2/Gd-enhancing lesions). McDonald 2017 + AAN MS + ECTRIMS-EAN guideline: (1) Acute relapse: IV methylpred 1 g/d × 3-5 d shortens duration, does not change long-term outcomes. Oral high-dose equivalent (1250 mg/d) non-inferior (UK trial). PLEX for severe steroid-refractory. (2) DMT classes by efficacy: - Moderate: interferon-β (IM/SC), glatiramer, teriflunomide, dimethyl fumarate, fingolimod, ozanimod, ponesimod, cladribine. - High: anti-CD20 (ocrelizumab, ofatumumab, ublituximab), natalizumab, S1P modulator (fingolimod variants), alemtuzumab. (3) Trend: early high-efficacy DMT in active RRMS — better disability outcomes (OPERA, ASCLEPIOS, TREAT-MS). (4) Active disease on moderate DMT (new lesion, relapse, EDSS progression) = switch to higher efficacy. (5) Specific considerations: - Natalizumab: PML risk in JCV+ patients > 2 yr — monitor antibody index. - Anti-CD20: ↑ infection, ↓ vaccine response — pre-vaccination. - Fingolimod: cardiac monitoring first dose, macular edema, varicella. - Alemtuzumab: secondary autoimmunity (thyroid, ITP, GBM), infection. (6) Symptomatic: spasticity (baclofen, tizanidine, Sativex), pain (gabapentin), fatigue (amantadine, modafinil), urinary (mirabegron, antimuscarinic), depression. (7) Lifestyle: vit D supplementation, smoking cessation, exercise. (8) Pregnancy planning: washout periods vary (teriflunomide longest), select DMT for breastfeeding. (9) Multidisciplinary care. (10) Differential: NMO/MOGAD (longitudinally extensive transverse myelitis, severe optic neuritis, aquaporin-4 or MOG antibody — different treatment, eculizumab/satralizumab for NMO).",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "McDonald Criteria for MS 2017; AAN Practice Guideline on DMT in MS 2018; ECTRIMS-EAN MS Treatment Guideline 2018"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 68 ปี postmenopausal × 18 yr, no HRT, ไม่มีโรค underlying มาด้วยปวดหลังลำสันหลังเฉียบพลัน + height loss 4 cm จาก young adult height + fragility fracture vertebral L1 (compression fracture from minor fall)\n\nLab: Ca 9.4, P 3.4, Vit D 18 (low), PTH 56 (normal), TSH 1.6, CBC normal, Cr 0.9, ALP 88\n24h urine Ca normal, no celiac/hyperthyroid/cortisol/myeloma evidence (CBC + chem + SPEP normal)\nDXA: T-score lumbar -3.4, femoral neck -3.1, total hip -3.0 (osteoporosis severe + previous fragility fracture)\nFRAX 10-yr major OF 28%, hip 14% (very high risk)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Calcium + Vit D supplementation alone"
+      },
+      {
+        "label": "B",
+        "text": "Severe osteoporosis with vertebral fragility fracture + very high fracture risk — Endocrine Society 2020 + AACE/ACE + NOF guideline: (1) **Anabolic agent first-line for very high-risk** (recent fragility fracture, T-score < -3.0, FRAX hip > 4.5% or major > 30%): - **Romosozumab** (sclerostin inhibitor — anti-Wnt) — FRAME, ARCH; monthly SC × 12 mo then sequential antiresorptive (alendronate or denosumab); CV black box — caution recent MI/stroke. - **Teriparatide** (recombinant PTH 1-34) or **abaloparatide** (PTH-rP analog) — daily SC × 2 yr maximum (osteosarcoma rat — humans not seen but lifetime limit); follow with antiresorptive to maintain. - Sequence anabolic → antiresorptive (loss of bone if anabolic stopped without follow-up). (2) **Antiresorptive standard**: - Bisphosphonate: alendronate, risedronate (oral weekly), zoledronate IV annually (3-5 yr then drug holiday assess in low-moderate risk; longer in high risk). - Denosumab (anti-RANKL): 60 mg SC q6mo; effective; but discontinuation = rebound multi-vertebral fracture (must transition to bisphosphonate). - Raloxifene (SERM): postmenopausal vertebral fracture prevention; ↑ VTE + hot flashes; reduces breast cancer; not for non-vertebral. - HRT: postmenopausal symptoms; thrombosis + breast cancer concerns. (3) Calcium 1000-1200 mg/d + Vit D 800-2000 IU/d to maintain 25-OH > 30 ng/mL; (4) Fall prevention: PT/OT, home safety, vision, vestibular, medication review (deprescribe sedative, anticholinergic), exercise (resistance + balance); (5) Bone health: smoking + alcohol moderation, weight-bearing exercise, nutrition; (6) Vertebral fracture acute: pain control, vertebroplasty/kyphoplasty (controversial; selected severe persistent pain); brace; PT; (7) Secondary osteoporosis screen (already done — normal): hyperPT, thyroid, vit D, multiple myeloma, celiac, hypogonadism, drug (steroid, anti-epileptic, PPI long-term, SSRI, glitazone); (8) Monitor: DXA q2 yr (less frequent if stable); CTX/P1NP for compliance"
+      },
+      {
+        "label": "C",
+        "text": "Long-term bisphosphonate alone × 5 yr"
+      },
+      {
+        "label": "D",
+        "text": "Calcitonin nasal spray"
+      },
+      {
+        "label": "E",
+        "text": "Watchful waiting"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Osteoporosis with fragility fracture = severe; very high risk requires anabolic-first. Endocrine Society 2020 + AACE/ACE 2020 + NOF Clinician's Guide + Bone Health Foundation: (1) Diagnosis: DXA T-score ≤ -2.5 OR fragility fracture (any T-score; vertebral on imaging counts). (2) Risk: FRAX, T-score, fragility fracture history. Very high risk = fracture in past 12 mo + T < -3 + FRAX hip > 3-4.5% or major > 20-30%. (3) Treatment: - Lifestyle: Ca, Vit D, exercise, fall prevention, smoking/alcohol moderation. - First-line antiresorptive (moderate-high risk): bisphosphonate (alendronate, risedronate, zoledronate) — duration 3-5 yr oral or 3 yr IV then drug holiday assess. - Denosumab: anti-RANKL; effective; discontinuation = rebound vertebral fracture risk → must transition to bisphosphonate. - Anabolic first for very high risk: romosozumab (anti-sclerostin) 12 mo → antiresorptive; teriparatide or abaloparatide 2 yr (lifetime limit) → antiresorptive. - SERM (raloxifene): postmenopausal vertebral; VTE risk. - HRT: limited role. - Calcitonin: rarely used now (limited efficacy + cancer concern). (4) Vit D > 30 ng/mL goal; Ca 1000-1200 mg/d. (5) Bisphosphonate adverse: GI (oral), osteonecrosis of jaw (rare, dental clearance), atypical femur fracture (long-term > 5 yr), uveitis (IV). (6) Denosumab adverse: rebound vertebral fracture on stop, hypocalcemia. (7) Drug holiday after 3-5 yr bisphosphonate if low-moderate risk (T > -2.5, no new fracture); continue in high-risk. (8) Secondary osteoporosis: hyperPT, thyroid, hypogonadism, GI/celiac, MM, drugs (steroid, AED, PPI long-term, SSRI, TZD), CKD. (9) Vertebroplasty/kyphoplasty controversial — selected. (10) Fall prevention + bone health holistic.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "elderly",
+    "reference_source": "Endocrine Society 2020 Pharmacologic Management of Osteoporosis; AACE/ACE 2020 Osteoporosis Guidelines; NOF Clinician's Guide"
+  },
+  {
+    "scenario": "ชายไทยอายุ 28 ปี HIV+ on ART 1 ปี VL undetectable, CD4 300, มาด้วยไข้ + เหนื่อย + ไอแห้ง 3 สัปดาห์ + dyspnea on exertion progressive\n\nV/S: SpO2 88% RA → 93% on 2L NC, RR 26, T 38.2°C\nPE: clear lungs on exam (paradoxical to hypoxia), no rash, no LAN\n\nLab: WBC 4,200, Hb 12, LDH 480 (elevated), Cr 1.0\nCXR: bilateral perihilar interstitial reticulonodular infiltrate (\"bat-wing\")\nHRCT: bilateral ground-glass + reticular, no consolidation, no LAN, no pleural\nABG room air: PaO2 62, A-a gradient 48 (widened)\nBAL + PCR: Pneumocystis jirovecii positive; immunofluorescence positive\nCo-tests negative TB, fungal, CMV",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Vancomycin + cefepime empirical"
+      },
+      {
+        "label": "B",
+        "text": "Moderate-severe Pneumocystis jirovecii pneumonia (PJP, formerly PCP) in HIV+ patient (A-a > 35 or PaO2 < 70 = moderate-severe): (1) **TMP-SMX 15-20 mg/kg/d TMP component divided q6-8h IV** × 21 days — first-line; switch to oral when stable; (2) **Adjunctive corticosteroid for moderate-severe (PaO2 < 70 or A-a > 35)**: prednisolone 40 mg BID × 5 d → 40 mg/d × 5 d → 20 mg/d × 11 d (total 21 d); reduces mortality + respiratory failure; (3) Alternative if TMP-SMX intolerance/sulfa allergy: pentamidine IV (nephrotoxic, pancreatitis, hypoglycemia, dysrhythmia), atovaquone (mild only), clindamycin + primaquine (G6PD screen — primaquine contraindicated if deficient), dapsone + TMP, trimetrexate; (4) ART continuation (don't interrupt; if newly diagnosed, start ART within 2 weeks; in PJP — IRIS less concern than TB/crypto); (5) Secondary prophylaxis after acute Rx: TMP-SMX 1 DS daily or TIW until CD4 > 200 for > 3-6 mo on ART; (6) Primary prophylaxis: CD4 < 200 or oropharyngeal candidiasis (in HIV+); also in solid organ transplant, hematologic malignancy, prolonged high-dose steroid, certain immunosuppressives (rituximab, idelalisib); (7) Other adjuncts: respiratory support (NIV or intubation if severe), supplemental O2, address comorbidity"
+      },
+      {
+        "label": "C",
+        "text": "Antifungal voriconazole"
+      },
+      {
+        "label": "D",
+        "text": "Influenza antiviral"
+      },
+      {
+        "label": "E",
+        "text": "Discharge with outpatient antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pneumocystis jirovecii pneumonia (PJP) — most common opportunistic pneumonia HIV+. Risk: CD4 < 200, malignancy, transplant, chronic steroid, immunosuppressive (rituximab, TNF inhibitor). Clinical: subacute dyspnea, fever, dry cough, hypoxia out of proportion to exam; LDH ↑; HIV-PJP slower onset (weeks) vs non-HIV faster + severe. CDC/IDSA/HIVMA + ATS PJP guideline: (1) Diagnosis: BAL (90% sensitivity) + immunofluorescence/PCR; induced sputum (50-90%); serum β-D-glucan elevated. HRCT: bilateral ground-glass + perihilar; pneumothorax + cyst characteristic. (2) Treatment: - TMP-SMX 15-20 mg/kg/d TMP IV (or oral) divided q6-8h × 21 d — first-line. - Severe (PaO2 < 70 or A-a > 35): + corticosteroid (prednisolone 40 mg BID × 5d → 40/d × 5d → 20/d × 11d) — mortality reduction. - Alternatives (TMP-SMX intolerance): - Pentamidine IV: nephrotoxic, pancreatitis, hypoglycemia, dysrhythmia, hypotension. - Atovaquone suspension: mild only. - Clindamycin + primaquine: G6PD test (primaquine contraindicated if deficient). - Dapsone + TMP: G6PD test. - Trimetrexate. (3) ART: continue in HIV; start within 2 weeks of PJP diagnosis (PJP IRIS less common than other OI). (4) Prophylaxis: - Primary: HIV CD4 < 200, or oropharyngeal candidiasis; solid organ + heme transplant; chronic high-dose steroid + lymphoid malignancy; certain biologics. - TMP-SMX 1 DS daily or TIW (preferred); dapsone, atovaquone, pentamidine inhaled. - Secondary: after acute PJP until CD4 > 200 for > 3-6 mo. (5) Atypical: pneumothorax (PCP cyst rupture), DLCO low, sulfa allergy + desensitization. (6) Differentiate from CMV, fungal, TB.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "CDC/IDSA/HIVMA OI Guidelines 2023; ATS Statement on Treatment of PJP"
+  },
+  {
+    "scenario": "ชายไทยอายุ 22 ปี ไม่มีโรคประจำตัว มาด้วยอาการเหนื่อย + jaundice + ปัสสาวะสีโคล่า 2 วัน หลังจากกินยา primaquine (จาก outpatient เพื่อ malaria prophylaxis) + ก่อนหน้านี้กิน fava beans crashes prior\n\nLab: Hb 6.4 (drop from 14 baseline), MCV 92, reticulocyte 12% (high), smear: bite cells + blister cells + Heinz bodies on supravital stain\nIndirect bili 6.4, LDH 1,840, haptoglobin 0, Coombs negative\nUA: hemoglobinuria\nG6PD activity 4% (severely deficient — diagnostic)\nNo splenomegaly",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue primaquine + transfusion"
+      },
+      {
+        "label": "B",
+        "text": "Acute hemolytic anemia in G6PD deficiency (Mediterranean variant likely — severe phenotype) triggered by primaquine + fava beans — (1) **STOP triggering agent (primaquine)** + avoid in future; (2) Supportive: IV fluid to maintain renal perfusion (hemoglobinuria → AKI risk), bicarbonate alkalinization controversial; (3) **Blood transfusion** if Hb < 6-7 or symptomatic — usually one-time event, hemolysis self-limited as susceptible RBCs cleared; (4) Folic acid supplement (high turnover); (5) Avoid future triggers: oxidant drugs (sulfa — sulfonamide, sulfasalazine, dapsone; nitrofurantoin; primaquine, tafenoquine; rasburicase; methylene blue; phenazopyridine; chloramphenicol; high-dose ASA; vit K), fava beans, mothballs (naphthalene), henna, infection (Hep A, B, typhoid); (6) Newborn screening + family screening (X-linked recessive — males affected, females carriers; heterozygotes can have variable phenotype due to lyonization); (7) Patient education + medical alert + medication list; (8) G6PD activity test BEFORE primaquine for malaria treatment (vivax/ovale) and in any region with high G6PD prevalence; quantitative + qualitative test variability — quantitative preferred; (9) Tafenoquine (single dose 300 mg for P. vivax radical cure) requires G6PD testing first — severe deficiency contraindicated, intermediate cautious; (10) Methemoglobinemia avoidance"
+      },
+      {
+        "label": "C",
+        "text": "Splenectomy"
+      },
+      {
+        "label": "D",
+        "text": "Long-term corticosteroid therapy"
+      },
+      {
+        "label": "E",
+        "text": "Bone marrow biopsy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "G6PD deficiency — X-linked recessive RBC enzyme deficiency; protects against malaria (selection pressure). Most common enzymopathy worldwide; variants: African A- (mild, hemolysis only during oxidative stress); Mediterranean (severe, even fava beans); Asian variants. Acute hemolysis: episodic, oxidant-triggered, self-limited (succeptible old RBCs cleared, young RBCs more resistant). Chronic hemolytic form rare (Class I severe). WHO + Beutler G6PD guideline: (1) Diagnosis: G6PD activity quantitative (preferred — variants have residual activity differences) or qualitative fluorescent spot test; not during acute hemolysis (reticulocytes have high enzyme activity, falsely normal — test after recovery 2-4 wk or genetic testing). (2) Triggers: - Drugs: primaquine, tafenoquine, dapsone, sulfonamide, nitrofurantoin, rasburicase, methylene blue, phenazopyridine, chloramphenicol, henna, high-dose ASA, vit K (menadione). Lists vary; recent risk reassessment for some. - Foods: fava beans (Mediterranean variant). - Mothballs (naphthalene). - Infections: hepatitis A/B, typhoid, S. pneumoniae. (3) Management: stop trigger; supportive (fluid for hemoglobinuria + AKI prevention); transfusion if severe (Hb < 6-7 or symptomatic); folate. (4) Avoid future triggers: medical alert, medication review; pre-prescribing G6PD test for primaquine, tafenoquine, dapsone, rasburicase. (5) Primaquine (P. vivax/P. ovale radical cure): standard 30 mg/d × 14 d; G6PD deficient cannot tolerate; alternative weekly 45-60 mg × 8 wk (slower hemolysis); tafenoquine single dose 300 mg requires G6PD activity > 70%. (6) Heterozygous female: variable phenotype (lyonization — random X inactivation); may have mosaic enzyme activity; usually milder + carrier. (7) Neonatal: jaundice + kernicterus risk in G6PD deficient newborn — screening. (8) Methemoglobinemia (e.g., dapsone): G6PD deficient cannot reduce methemoglobin via NADPH-dependent pathway; methylene blue (treatment) is itself oxidant → cannot use; alternative ascorbic acid + supportive; cimetidine prevention dapsone-methemoglobinemia. (9) Family screening; genetic counseling.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "WHO G6PD Deficiency Guideline; Beutler E — G6PD Blood; CDC Malaria Treatment Guidelines re Primaquine"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 38 ปี ไม่มีโรค post-thyroidectomy 2 d ก่อน สำหรับ thyroid cancer มา ED ด้วยมือชา + ปากชา + Chvostek sign + Trousseau sign + tetanic spasm + perioral paresthesia\n\nV/S: BP 124/76, HR 92, RR 18, Temp 36.7°C\nPE: positive Chvostek (facial twitch tapping ใต้กระดูกแก้ม), Trousseau (carpopedal spasm with BP cuff > systolic for 3 min), no laryngeal stridor\n\nLab: Ca total 6.4 (severe; corrected 6.8 for albumin 3.8), ionized Ca 0.78 (very low), Phosphate 5.4 (high), Mg 1.6, K 4.0, Albumin 3.8, Cr 0.9\nPTH < 5 (severely suppressed — hypoparathyroidism)\n25-OH vit D 16 (low)\nEKG: prolonged QT 520 ms",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Oral calcium tablet alone"
+      },
+      {
+        "label": "B",
+        "text": "Severe symptomatic hypocalcemia from post-surgical hypoparathyroidism (transient or permanent): (1) **IV calcium gluconate** 1-2 g (10-20 mL of 10% solution) in 100 mL D5W slow over 10-20 min for symptomatic/severe (avoid bolus — arrhythmia risk); maintenance drip 1-3 mg/kg/hr (50-100 mg/kg/24h) elemental Ca; monitor Ca q4-6h initial; AVOID extravasation (tissue necrosis — central preferred); (2) Replenish **magnesium** — Mg < 1.6 hampers PTH release + action (functional hypopara); IV MgSO4 1-2 g; (3) **Calcitriol (active vit D, 1,25-OH)** 0.25-1 mcg PO/IV (or alfacalcidol) — bypasses 1α-hydroxylation (PTH-dependent); start before discharge for maintenance; (4) Oral calcium carbonate (1-2 g elemental Ca TID with meals — best absorption with food, acid environment); citrate alternative; (5) Vitamin D supplementation 1000-2000 IU/d + 25-OH replete; (6) Treat underlying: hypoparathyroid often transient (3-6 mo) after total thyroidectomy; permanent in 1-3%; (7) Monitor: serum Ca + Phos + Mg + Cr daily initial; 24h urine Ca (avoid hypercalciuria → nephrocalcinosis on Rx); (8) **PTH replacement** (recombinant teriparatide [PTH 1-34] or palopegteriparatide [TransCon PTH, FDA 2024]) for refractory chronic hypoparathyroidism; (9) Avoid loop diuretic (hypercalciuria worsens); thiazide reduces urine Ca; (10) Surgeon notification for hematoma/airway concern; (11) Avoid factors worsening: high phosphate, alkalemia (reduces ionized Ca)"
+      },
+      {
+        "label": "C",
+        "text": "Bisphosphonate IV"
+      },
+      {
+        "label": "D",
+        "text": "Vitamin D3 25,000 IU daily"
+      },
+      {
+        "label": "E",
+        "text": "Total parathyroidectomy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Hypocalcemia — post-thyroidectomy hypoparathyroidism. Other causes: surgical, autoimmune, congenital (DiGeorge 22q11), pseudohypoparathyroidism (PTH resistance), severe vit D deficiency, hyperphosphatemia (CKD, rhabdo, tumor lysis), pancreatitis, magnesium deficiency, sepsis, transfusion (citrate). Endocrine Society + ES Hypopara guideline: (1) Diagnosis: serum Ca corrected for albumin (or ionized Ca preferred — more accurate); confirm with PTH (low = hypopara; high = secondary/resistance). Phos, Mg, Cr, Vit D, Mg. EKG: prolonged QT. (2) Acute symptomatic: IV calcium gluconate 1-2 g over 10-20 min, then drip 50-100 mg/kg/24h elemental Ca; monitor q4-6h. Avoid central preference (extravasation tissue necrosis). (3) Mg replete (Mg < 1.6 hampers PTH); 1-2 g IV MgSO4. (4) Active vit D (calcitriol 0.25-1 mcg PO/IV; alfacalcidol) — bypasses 1α-hydroxylase (PTH-dependent in renal). (5) Oral calcium 1-2 g elemental TID (carbonate cheap, with food; citrate without food + PPI users). (6) 25-OH vit D supplement + replete. (7) Long-term hypoparathyroidism: - Target serum Ca low-normal 8.0-8.5 (corrected); avoid hypercalciuria (nephrocalcinosis, stones). - Calcium + active vit D + 24h urine Ca monitoring. - Thiazide diuretic to reduce urine Ca if hypercalciuric. - PTH replacement: rhPTH (teriparatide PTH 1-34) for refractory; palopegteriparatide (TransCon PTH, FDA 2024) — sustained release; preserves renal function. (8) Avoid loop diuretic (hypercalciuria), bisphosphonate, denosumab (severe hypocalcemia risk). (9) Genetic: 22q11 (DiGeorge — also cardiac, immune), AIRE (APS-1 with Addison + mucocutaneous candidiasis), autoimmune. (10) Pseudohypoparathyroidism: PTH resistance — Ca low, PTH HIGH, signs of AHO. (11) Monitor + adjust based on Ca, urine Ca, Cr, eGFR, BMD.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "Endocrine Society Hypoparathyroidism Guideline 2016; First International Workshop on Hypoparathyroidism JCEM 2016"
+  },
+  {
+    "scenario": "ชายไทยอายุ 65 ปี underlying T2DM, prior MI on ASA + statin มา ED ด้วยอาการถ่ายอุจจาระดำเหนียว + อ่อนเพลีย 2 d + ไม่มี hematemesis\n\nV/S: BP 102/68 (orthostatic +), HR 108, RR 18, SpO2 97%\nPE: pale, melena confirmed rectal exam, no tenderness, no peritonitis\n\nLab: Hb 8.2 (drop from 13.5 baseline), MCV 86, Plt 240K, BUN 56 (high — UGIB), Cr 1.2, INR 1.0\nGlasgow-Blatchford score 12 (high risk)\nEGD: 2 cm clean-base posterior duodenal ulcer Forrest III + no other lesions; biopsy H. pylori negative\nMedication: aspirin 81 mg daily + atorvastatin (no NSAID)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Stop aspirin permanently"
+      },
+      {
+        "label": "B",
+        "text": "Bleeding peptic ulcer Forrest III (clean base = lowest rebleed risk 5%) in patient on aspirin for secondary CV prevention: (1) Acute: resuscitation (PRC if Hb < 7 + symptomatic per Villanueva — restrictive); IV PPI (no benefit + cost — PPI infusion for high-risk Forrest Ia-IIb after endoscopic therapy; here Forrest III standard dose oral PPI 8 wk healing); (2) **Continue aspirin** for secondary CV prevention — restart within 1-3 days (or never stop if low-risk endoscopic stigmata) per ESGE/AGA — discontinuation = 7× MACE risk; benefit of CV prevention outweighs rebleed risk; (3) Concurrent PPI 8 wk healing + indefinite (with aspirin if at risk); (4) H. pylori test (here negative) + treat if positive; (5) NSAID avoidance; if must continue NSAID — COX-2 + PPI; (6) Address cause: aspirin alone (no NSAID, no H. pylori) = idiopathic / aspirin-related — minimize concurrent risk factors; (7) Discharge planning: outpatient follow-up; avoid NSAID; H. pylori + repeat if relapse; (8) Repeat EGD only for gastric ulcer (rule out malignancy)"
+      },
+      {
+        "label": "C",
+        "text": "Surgical resection"
+      },
+      {
+        "label": "D",
+        "text": "Stop statin"
+      },
+      {
+        "label": "E",
+        "text": "Long-term clopidogrel monotherapy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "PUD bleeding in patient on aspirin for secondary CV prevention. Key tension: CV benefit of antiplatelet vs bleeding risk. ESGE 2021 + AGA 2022 + ACG 2021 antiplatelet/GIB guideline: (1) Acute: resuscitation, restrictive transfusion Hb 7-8, IV PPI for high-risk endoscopy Forrest Ia-IIb (80 mg bolus + 8 mg/hr × 72 hr) — not for Forrest III clean base. (2) Antiplatelet management: - **Secondary prevention indication**: continue or restart aspirin within 1-3 days post-hemostasis — discontinuation associated with 7× MACE risk; benefit outweighs rebleed for most. Sung BMJ 2018 (aspirin + PPI vs stopping) — continuation reduced mortality. - Primary prevention only: more discretion to stop, less clear-cut benefit. - DAPT in recent PCI: continue both ASA + P2Y12 if possible; consider short interruption of P2Y12 (1-7 d) for active bleed if drug-eluting stent > 30 d; restart ASAP. - Anticoagulation (warfarin, DOAC) for AF: balance stroke risk vs bleeding; restart after hemostasis based on indication. (3) PPI for healing 8 wk + maintenance with antiplatelet/NSAID. (4) H. pylori test + treat. (5) NSAID avoidance / COX-2 + PPI if needed. (6) Lifestyle. (7) Repeat EGD only for gastric ulcer (rule out malignancy 8-12 wk). (8) Mortality from MI > mortality from GIB in most secondary prevention.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "elderly",
+    "reference_source": "ESGE Guideline on Endoscopic Diagnosis and Management of Nonvariceal UGIB 2021; AGA Guideline on Management of PUD Bleeding 2022; Sung JJ et al. BMJ 2018"
+  },
+  {
+    "scenario": "ชายไทยอายุ 55 ปี ไม่มีโรค มา ED ด้วยไอเป็นเลือดสด > 200 mL × 4 ครั้งใน 6 ชม. + เหนื่อย + รู้สึก suffocating; ก่อนหน้านี้ไอเรื้อรัง 6 เดือน + น้ำหนักลด + ไอเรื้อรังคล้าย bronchiectasis\n\nV/S: BP 102/64, HR 124, RR 28, SpO2 90% RA → 94% NRB, Temp 37.4°C\nPE: pale, blood in mouth + suctioned from airway, decreased breath sounds RUL, scattered crackles\n\nLab: Hb 9.2 (acute drop), Plt 220K, INR 1.0, Cr 1.0\nCXR + chest CT (rapid CTA): RUL cavitary lesion + bronchiectasis + bronchial artery hypertrophy on right; suspect TB-related cavitary lesion with bronchial artery aneurysm bleeding\nSputum AFB pending; CT angio shows tortuous hypertrophied bronchial artery from right intercostal branch\nNot on anticoagulant",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge with cough suppressant"
+      },
+      {
+        "label": "B",
+        "text": "Massive hemoptysis (> 500 mL/24 hr or > 100 mL/hr or hemodynamic compromise or respiratory failure from blood) — Life-threatening emergency from drowning > exsanguination: (1) Immediate: airway protection (intubate with large-bore tube 8.0 ETT, side of bleeding DOWN to prevent contralateral lung soiling — \"good lung up\"); selective bronchial intubation or double-lumen tube if available; suction + cough suppression; (2) **Bronchial artery embolization (BAE)** — first-line definitive: interventional radiology; identify + embolize hypertrophied bronchial artery (most common source 90%); high success ~85%; recurrence in 20-30% may need re-embolization; (3) Rigid bronchoscopy if BAE delayed: tamponade with balloon or topical hemostatic (cold saline lavage, epinephrine, thrombin) + visualize source; (4) Surgical resection (lobectomy/pneumonectomy) — for failed embolization or specific etiology (aspergilloma, malignancy with isolated source); (5) Reverse coagulopathy if any; TXA may have role; (6) Address underlying: TB (anti-TB therapy if confirmed; even after BAE), bronchiectasis (treat colonization, mucolytic, vaccination), malignancy (oncologic management), aspergilloma (antifungal + surgery), vasculitis, cystic fibrosis, AVM (embolize); (7) Massive hemoptysis = high mortality (especially without urgent intervention 50%+)"
+      },
+      {
+        "label": "C",
+        "text": "Long-term oral antibiotic outpatient"
+      },
+      {
+        "label": "D",
+        "text": "Anticoagulation"
+      },
+      {
+        "label": "E",
+        "text": "Watchful waiting"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Massive hemoptysis (life-threatening). Definitions vary: > 500 mL/24h, > 100 mL/hr, hemodynamic compromise, respiratory failure from blood. Most common cause Asia/Thailand: TB-related (cavitary, bronchiectasis, aspergilloma in cavity); also bronchiectasis (non-TB), malignancy, vasculitis (anti-GBM, ANCA), CF, PE, AVM. Death usually from asphyxia (blood in airway), not exsanguination. ATS/CHEST + ERS hemoptysis guideline: (1) Stabilize airway — intubate if respiratory compromise; large-bore ETT (8.0); position bleeding side DOWN (gravity protects contralateral lung); selective intubation; double-lumen tube if expertise; rigid bronchoscopy for tamponade balloon. (2) **Bronchial artery embolization (BAE)** — first-line definitive for non-surgical: high success ~85%; bronchial artery hypertrophy (systemic circulation, high pressure — 90% source); pulmonary artery source 10% (different). Recurrence 20-30%. (3) Rigid bronchoscopy adjunct: balloon tamponade, topical hemostatic (cold saline lavage, epinephrine, thrombin, fibrin glue). (4) Surgery: failed BAE, specific anatomic source (aspergilloma, AVM, malignancy localized), persistent bleed. (5) Address underlying: TB treatment (anti-TB regimen), aspergilloma (antifungal + surgery), bronchiectasis (airway clearance, antibiotics, vaccinations), vasculitis (immunosuppression — RPGN + DAH = anti-GBM, AAV; cyclophosphamide + steroid + PLEX), malignancy. (6) Coagulopathy reversal. TXA (HALT-IT-like) some evidence in hemoptysis. (7) Mortality high without intervention — > 50% massive untreated. (8) Workup: CT-A chest with contrast (identifies source + extent), bronchoscopy (visualize + biopsy if able), sputum AFB + culture, ANCA + anti-GBM if vasculitis suspected.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "respiratory",
+    "board_age_group": "adult",
+    "reference_source": "ATS/CHEST Guidelines on Management of Hemoptysis; ERS Statement"
+  },
+  {
+    "scenario": "ชายไทยอายุ 28 ปี ไม่มีโรค มาด้วยอาการตื่นมาแขนซ้ายอ่อนแรง ระยะ 3 ชม. + ปวดศีรษะรุนแรง 1 วันก่อน + เพิ่งเดินทางเครื่องบินยาว 12 ชม. + เกิดอาการสะดุดกระแทกคอเมื่อเล่นกีฬาหลังจากไม่กี่วันก่อน\n\nV/S: BP 132/82, HR 78\nNeuro: left hemiparesis 3/5, left facial droop, left neglect, NIHSS 14\nNo AF, no carotid bruit, normal cardiac auscultation\n\nCT brain: no hemorrhage; CTA neck: dissection of right ICA with intramural thrombus + flame-shaped narrowing\nLab: normal coag, normal CBC, lipid panel normal, ANA neg\nFamily history: no early stroke/connective tissue, no Marfan or Ehlers-Danlos features",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Aspirin 81 mg long-term only"
+      },
+      {
+        "label": "B",
+        "text": "Cervical artery dissection causing stroke (carotid in this case; vertebral artery dissection also common in young stroke) — neck trauma + travel + sports likely precipitants: (1) Acute management: IV tPA within 4.5 hr eligible (CADISS, CADISP — safety acceptable); endovascular thrombectomy if LVO + within window; (2) Antithrombotic — antiplatelet (aspirin) vs anticoagulation (warfarin/LMWH) for stroke prevention 3-6 mo until vessel heals: CADISS trial showed equivalence — antiplatelet typically preferred (simpler, fewer complications); duration 3-6 mo then reimage; (3) Long-term antiplatelet (aspirin) maintenance after vessel healing; (4) Avoid mechanical neck manipulation (chiropractic, sports); (5) Investigate connective tissue disorder if young/recurrent (Ehlers-Danlos vascular type COL3A1, Marfan, fibromuscular dysplasia, Loeys-Dietz); (6) Risk factors: cervical trauma, hyperextension/rotation, recent infection, hypertension, migraine, OCP; (7) Follow-up imaging at 3-6 mo to assess healing; consider stenting only refractory or pseudoaneurysm; (8) Rehabilitation, secondary prevention (BP, lipid, smoking)"
+      },
+      {
+        "label": "C",
+        "text": "Long-term high-dose statin only"
+      },
+      {
+        "label": "D",
+        "text": "Carotid endarterectomy emergency"
+      },
+      {
+        "label": "E",
+        "text": "Steroid IV pulse"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cervical artery dissection (CAD) — common cause of stroke in young (~20% in age < 50). Mechanism: tear in arterial wall → intramural hematoma → narrowing/occlusion ± embolization to brain. Vertebral or carotid (extracranial typically); intracranial less common. Triggers: minor trauma (sports, chiropractic, motor vehicle accident, head/neck movement), recent infection, connective tissue (Ehlers-Danlos vascular IV, Marfan, FMD, Loeys-Dietz), pregnancy, HT. Clinical: head/neck pain, ipsilateral Horner (carotid sympathetic), TIA/stroke (delayed hours-days), tinnitus (carotid). Imaging: MRA/CTA neck (luminal narrowing, flame-shape, double lumen, intramural hematoma on T1 fat-sat MRI), conventional angio rarely needed. AHA/ASA + ESO + AAN CAD guideline: (1) Acute stroke: IV tPA within window (CADISS suggested safety; no excess hemorrhage); endovascular thrombectomy for LVO. (2) Antithrombotic prevention 3-6 mo: CADISS RCT showed no difference between antiplatelet (ASA) and anticoagulation (warfarin/LMWH) — most use antiplatelet (simpler, fewer complications). Some still favor anticoagulation for thrombus-rich appearance or recurrent symptoms. (3) Long-term ASA after vessel healing. (4) Follow-up imaging at 3-6 mo. (5) Stenting: rare; refractory or pseudoaneurysm + recurrence. (6) Connective tissue workup if young/recurrent/family history: COL3A1 (vascular Ehlers-Danlos), Marfan, FMD, Loeys-Dietz. (7) Avoid neck manipulation (chiropractic association controversial — likely revealing rather than causing). (8) Risk factors: HT, smoking, OCP, migraine, recent URI. (9) Pregnancy + postpartum increased risk. (10) Recurrence rare (1% per yr); family history may indicate underlying disorder.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AHA/ASA Statement on Management of Cervical Artery Dissection 2024; CADISS Trial Lancet Neurol 2015; CADISP"
+  },
+  {
+    "scenario": "ชายไทยอายุ 50 ปี ไม่มีโรค มา ED ด้วยอาการ epigastric pain rapidly progressive + คลื่นไส้ + อาเจียน 2 ชม. + recent NSAID use + heavy alcohol 1 d ก่อน\n\nV/S: BP 96/58, HR 124, RR 24, SpO2 96%, Temp 38.0°C\nPE: abdomen tense, rigid, board-like, rebound + guarding diffuse, absent bowel sounds — peritonitis\n\nLab: WBC 18,400, Hb 13.4, Lactate 3.4, Cr 1.4, Lipase 88 (normal — rules out severe pancreatitis as primary; pancreatitis can be secondary)\nCXR upright: subdiaphragmatic free air RIGHT — pneumoperitoneum\nCT abdomen: free intraperitoneal air + fluid + small contained perforation duodenal bulb (perforated peptic ulcer)\nNo prior PUD history clinically",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Observation + NPO + IV PPI"
+      },
+      {
+        "label": "B",
+        "text": "Perforated peptic ulcer with peritonitis — surgical emergency: (1) Resuscitation: 2 large-bore IV, crystalloid bolus, foley + arterial line, NG tube; (2) IV broad-spectrum antibiotics within 1 hr — gut flora (gram-neg + anaerobe) — pip-tazo or ceftriaxone + metronidazole; sepsis bundle; (3) IV PPI infusion; (4) **Emergent surgery (laparotomy or laparoscopic) — primary repair with omental patch (Graham patch)** of duodenal/gastric perforation + peritoneal lavage; (5) Selective non-operative management (only for stable patient + sealed perforation on imaging + minimal peritonitis + good response to medical Rx — controversial Taylor approach, small ulcers in young healthy); (6) Post-op: H. pylori test + treat; biopsy of gastric ulcer to rule out malignancy at surgery; (7) Identify precipitant: NSAID + alcohol — counsel cessation; stress (steroid, ICU patient); H. pylori; Zollinger-Ellison (recurrent atypical); (8) Long-term PPI; (9) Avoid NSAID; (10) Reassess: if gastric ulcer — repeat EGD 8-12 wk + biopsy for malignancy"
+      },
+      {
+        "label": "C",
+        "text": "Continuous oral nutrition"
+      },
+      {
+        "label": "D",
+        "text": "Anticoagulation"
+      },
+      {
+        "label": "E",
+        "text": "Outpatient PPI"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Perforated peptic ulcer — surgical emergency. Mortality 5-25%. Causes: H. pylori, NSAID + alcohol, smoking, stress (ICU), Zollinger-Ellison. ACG + EAES + WSES perforated PUD guideline: (1) Diagnosis: sudden severe epigastric pain, peritoneal signs, pneumoperitoneum on imaging (upright CXR shows subdiaphragmatic air 80%; CT more sensitive — can detect minimal free air + fluid). (2) Resuscitation: IV fluid, antibiotics within 1 hr (gram-neg + anaerobe coverage: pip-tazo, ceftriaxone + metronidazole), IV PPI, NG, analgesia. (3) Surgery: - Open or laparoscopic repair: primary suture + omental (Graham) patch — most common. - Definitive ulcer surgery (vagotomy + drainage) — rarely needed now (H. pylori era). - Gastric ulcer: biopsy for malignancy at surgery. (4) Non-operative (Taylor regimen): selected stable + sealed + minimal peritonitis + good response to medical Rx in 24 hr — controversial. (5) Post-op: H. pylori test + eradicate; long-term PPI; avoid NSAID; alcohol/smoking cessation. (6) Mortality predictors: age, comorbid, delay, perforation site, peritonitis severity (Boey score), sepsis. (7) Other PUD complications: bleeding (already covered), gastric outlet obstruction (rare), penetration into adjacent organs (pancreas, liver).",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "ACG Guideline PUD; EAES/WSES Guidelines on Perforated PUD 2020"
   }
 ]
