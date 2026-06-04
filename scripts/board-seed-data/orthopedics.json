@@ -168,5 +168,175 @@
     "board_topic": "msk_nontrauma",
     "board_age_group": "adult",
     "reference_source": "AAOS Clinical Practice Guideline: Management of Rotator Cuff Injuries 2019"
+  },
+  {
+    "scenario": "เด็กชายอายุ 6 ปี ตกจาก monkey bar ปวด left forearm + บวม + ไม่ใช้แขน 1 ชั่วโมงก่อน\n\nV/S: ปกติ\nPE: left forearm midshaft swelling + tenderness + deformity, no neurovascular deficit, no open wound\n\nX-ray: both bone forearm fracture (radius + ulna) midshaft, displaced + angulated 25°",
+    "choices": [
+      { "label": "A", "text": "Surgery + plate fixation" },
+      { "label": "B", "text": "Pediatric Both-Bone Forearm Fracture: closed reduction + cast (long arm cast above elbow × 6 weeks) under conscious sedation or general anesthesia in ED/OR; pediatric bones remodel well — accept up to 10-15° angulation depending on age; > 8 years old accept less angulation (10°); operative fixation indications: failed closed reduction, open fracture, multiple trauma, irreducible, vascular injury, Monteggia or Galeazzi variants, age > 12; flexible intramedullary nailing (TENs) for older children; serial follow-up X-rays weekly initially for displacement; safety + child protection considerations; Salter-Harris classification for growth plate injuries (I-V) and growth disturbance follow-up if involved; remove cast + return to activity gradually 8-10 weeks" },
+      { "label": "C", "text": "Long arm cast without reduction" },
+      { "label": "D", "text": "Amputation" },
+      { "label": "E", "text": "External fixation" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pediatric forearm fractures common. Closed reduction + cast for most (remodeling potential). Older children accept less angulation. Surgical fixation for failed closed, open, polytrauma, irreducible. Flexible IM nailing (TENs) for older children. Monteggia (radial head dislocation + ulna fracture) + Galeazzi (DRUJ disruption + radius fracture) — surgical. Follow-up for displacement, malunion, growth disturbance.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "peds",
+    "reference_source": "POSNA; AAP"
+  },
+  {
+    "scenario": "ชายไทยอายุ 38 ปี เล่นบาสเกตบอลกระโดดลงพื้น รู้สึกถูกเตะที่น่อง ปวดร้อน + ไม่สามารถยกเท้าได้ (toe walking impossible) + เดินกะเผลก\n\nV/S: ปกติ\nPE: palpable defect 3-5 cm above heel, Thompson test positive (squeeze calf — no plantar flexion of foot), unable to plantarflex against resistance\n\nUS: complete Achilles tendon rupture",
+    "choices": [
+      { "label": "A", "text": "Conservative immobilization in equinus only" },
+      { "label": "B", "text": "Achilles Tendon Rupture (athletic male 30-50 yo): (1) **Initial**: ice, elevation, splint in equinus (plantar flexion), non-weight-bearing; (2) **Treatment options**: Surgical repair (open or percutaneous) vs functional rehabilitation with cast/boot — both acceptable, individualized choice; (3) **Operative**: end-to-end repair, augmentation if needed, percutaneous less invasive — slightly lower re-rupture risk, faster return to sports, but surgical complications (infection, nerve injury, scar); (4) **Non-operative functional rehabilitation**: equinus cast/boot × 2-4 weeks → progressive weight-bearing + ROM with heel lifts → PT × 12 weeks — modern functional rehab nearly equivalent re-rupture rate to surgery (Soroceanu CORR 2012 meta-analysis); (5) **Decision factors**: age, activity level, comorbidities (DM, smoking — surgical complications), preference; (6) Post-treatment: PT progressive strengthening, gradual return to running 4-6 mo, sports 6-9 mo; (7) Outcomes: 90%+ functional recovery either approach; (8) Counsel: chronic rupture (> 6 wk) more complex; tendinopathy prevention; eccentric loading; (9) Multidisciplinary: ortho/sports medicine, PT" },
+      { "label": "C", "text": "Bedrest only" },
+      { "label": "D", "text": "Amputation" },
+      { "label": "E", "text": "Continue activities" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Achilles rupture: athletic 30-50 yo (\"weekend warrior\"), often \"feel kick\" sensation. Diagnosis clinical (Thompson + palpable defect + unable plantarflex). Treatment: operative vs functional rehabilitation — modern evidence similar outcomes, re-rupture rates close. Decision individualized (activity, age, comorbidity, preference). Long rehabilitation. Return to sport 6-9 mo.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "AAOS Clinical Practice Guideline: Acute Achilles Tendon Rupture 2010; Soroceanu A et al. JBJS 2012"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 48 ปี office worker (typing) มาด้วยอาการ ชา + เจ็บ + อ่อนแรงนิ้วโป้ง + ชี้ + กลาง + ครึ่งนิ้วนาง × 6 เดือน อาการแย่ตอนกลางคืน ทำให้ตื่นนอน\n\nV/S: ปกติ\nPE: thenar atrophy mild, decreased sensation median nerve distribution, positive Tinel sign + Phalen test + Durkan test\n\nEMG/NCV: median nerve conduction velocity slowed at wrist, no other neuropathy",
+    "choices": [
+      { "label": "A", "text": "Long-term opioid" },
+      { "label": "B", "text": "Carpal Tunnel Syndrome (CTS) — median nerve compression at wrist: (1) **Conservative first-line**: nocturnal wrist splint (neutral position — most effective single intervention), ergonomic modifications, activity modification, NSAIDs for pain, glucocorticoid injection (short-term improvement, lasts 1-3 mo); (2) Lifestyle: weight management, glycemic control if DM (predisposing); (3) Workplace ergonomics; (4) **Conservative usually trial 6-12 weeks**; (5) **Surgical decompression** indications: severe symptoms, thenar atrophy, motor deficit, failed conservative, severe EMG findings, persistent symptoms despite treatment; open vs endoscopic carpal tunnel release — equivalent outcomes, endoscopic faster return to work but slightly higher nerve injury risk; (6) Post-op: ROM exercises, gradual return to activity 4-6 weeks, full recovery 3-6 months; (7) Outcomes: 90% improvement with surgery; (8) Differential: cervical radiculopathy (C6-C7), thoracic outlet syndrome, pronator teres syndrome; (9) Bilateral common — assess both hands; (10) Pregnancy CTS often resolves postpartum" },
+      { "label": "C", "text": "Cast 6 months" },
+      { "label": "D", "text": "Amputation" },
+      { "label": "E", "text": "Discharge without treatment" }
+    ],
+    "correct_answer": "B",
+    "explanation": "CTS = most common upper extremity entrapment neuropathy. Median nerve compression at wrist (transverse carpal ligament). Risk: female, age, pregnancy, DM, hypothyroid, RA, obesity, repetitive use. Diagnosis: clinical + EMG/NCV. Conservative trial (splint, injection, NSAIDs) 6-12 wk. Surgical decompression for severe + failed conservative. Open vs endoscopic similar outcomes. > 90% improvement post-op.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AAOS Clinical Practice Guideline: Carpal Tunnel Syndrome 2016"
+  },
+  {
+    "scenario": "ชายไทยอายุ 42 ปี delivery driver ปวดหลัง + ปวดร้าวลงขาขวาตามแนวด้าน lateral ของขาถึงข้อเท้า + ปลายเท้า — เป็นมา 4 สัปดาห์ ปวดมากเวลานั่งนาน + ไอ + จาม + ก้มตัว\n\nไม่มี bowel/bladder dysfunction, no saddle anesthesia\nV/S: ปกติ\nPE: positive straight leg raise right at 40° (sciatic stretch sign), decreased sensation lateral foot + decreased ankle dorsiflexion + decreased ankle reflex\n\nMRI lumbar: L5-S1 paracentral disc herniation right + impinging on right S1 nerve root, no canal stenosis",
+    "choices": [
+      { "label": "A", "text": "Emergency surgery immediately" },
+      { "label": "B", "text": "Lumbar Radiculopathy (S1) from disc herniation — most resolve with conservative care 6-12 weeks: (1) **Conservative first-line** (90% improve without surgery within 3 mo): pain control (NSAIDs first-line; acetaminophen; muscle relaxant short-term; avoid opioids long-term — recent evidence + addiction risk; neuropathic pain agents — gabapentin/pregabalin if needed); short-term rest then activity as tolerated; physical therapy (core strengthening, neural mobilization, exercises); back school; CBT for chronic pain; (2) **Epidural steroid injection**: short-term symptom relief (8-12 weeks); useful if surgery is being considered or for severe pain not improving; (3) **Surgical indications**: cauda equina syndrome (emergent), progressive neuro deficit, intractable pain failing 6-12 weeks conservative, significant motor deficit; **microdiscectomy** standard procedure; (4) **Surgery outcomes**: rapid pain relief but long-term similar to conservative at 1-2 yr (SPORT trial Weinstein NEJM 2008); patient selection important; (5) Multidisciplinary: spine surgery, PM&R, PT, pain management; (6) Lifestyle: weight, smoking cessation, ergonomics, exercise; (7) Mental health screening — chronic back pain + depression high overlap; (8) Avoid prolonged bed rest" },
+      { "label": "C", "text": "Long-term opioid" },
+      { "label": "D", "text": "Spinal fusion immediately" },
+      { "label": "E", "text": "Bed rest 6 months" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Lumbar radiculopathy: 90% resolve with conservative care. SPORT trial: surgery vs conservative — surgery faster relief, similar long-term outcomes. Conservative: NSAIDs, PT, epidural steroid, education. Surgery for cauda equina (emergent), progressive deficit, intractable pain > 6-12 wk conservative. Avoid bed rest. Multidisciplinary. Long-term opioids harmful. Address psychosocial factors.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "NASS (North American Spine Society) Lumbar Disc Herniation with Radiculopathy 2014; SPORT Trial NEJM 2008"
+  },
+  {
+    "scenario": "เด็กชายอายุ 8 ปี ตัวเหลือง + ปวดขา + ไข้สูง 39.4°C × 5 วัน + ไม่อยากเดิน + บวม + ปวดมากที่ข้อเข่าซ้าย\n\nV/S: HR 132, BP 96/64, Temp 39.4°C\nPE: left knee — focally tender lower femur metaphysis, warm, swelling, joint ROM preserved (joint not yet involved)\n\nLab: WBC 18,500 (PMN 88%), CRP 245, ESR 95, Blood culture: Staphylococcus aureus growing\nMRI knee: marrow edema + cortical bone destruction + periosteal elevation at distal femur metaphysis — acute osteomyelitis",
+    "choices": [
+      { "label": "A", "text": "Outpatient oral antibiotic" },
+      { "label": "B", "text": "Acute Hematogenous Osteomyelitis (pediatric — common metaphysis of long bones, S. aureus most common): (1) **Admit + IV broad-spectrum antibiotic empirical** within hour — vancomycin (MRSA coverage especially community-acquired) + cefazolin (MSSA + streptococci); modify per culture sensitivity; (2) **Source control**: surgical drainage + debridement if subperiosteal abscess, joint involvement, or no response to antibiotic 48-72h; image-guided drainage in some; (3) **Duration**: 4-6 weeks total — modern practice: 2 wk IV then transition to oral if responding well + acceptable bioavailability + reliable family (NICHE consensus); avoid PICC line outpatient for full 6 wk anymore — switch to oral; (4) Monitor response: CRP (best — rapidly responsive), fever, clinical, repeat imaging if not improving; (5) Surgical consultation: orthopedic + ID; (6) Pain management; (7) Complications: chronic osteomyelitis, growth disturbance (if physis involved), abscess, septic arthritis spread, pathologic fracture; (8) Differential: Brodie abscess (subacute), tumor (osteosarcoma — similar to osteo but X-ray, biopsy); (9) Multidisciplinary: ped ID, orthopedics, family support, PT; (10) Long-term follow-up for growth + function" },
+      { "label": "C", "text": "Aspirin only" },
+      { "label": "D", "text": "Amputation" },
+      { "label": "E", "text": "No treatment" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Acute hematogenous osteomyelitis pediatric: S. aureus most common (MRSA increasing — community-acquired, can have invasive features). Metaphysis of long bones (femur, tibia). MRI most sensitive for early diagnosis. Treatment: IV antibiotics, surgical drainage if abscess. Duration 4-6 weeks (modern: IV 2 wk then oral). Complications: growth disturbance, chronic osteo. Multidisciplinary care.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "peds",
+    "reference_source": "IDSA + AAP Osteomyelitis Guidelines; Cochrane Reviews"
+  },
+  {
+    "scenario": "ชายไทยอายุ 22 ปี soccer player เปลี่ยนทิศทางขณะวิ่ง รู้สึก pop ในเข่า ขวา + ปวด + บวมทันที + ไม่สามารถเดินได้\n\nMRI knee: complete tear of ACL + partial tear MCL + medial meniscus tear",
+    "choices": [
+      { "label": "A", "text": "Bedrest" },
+      { "label": "B", "text": "ACL Tear + Multi-ligament Injury (young active athlete): (1) Initial: RICE (rest, ice, compression, elevation), pain control, knee immobilizer or hinged brace; PT pre-operatively (\"prehab\") improves outcomes; (2) **ACL reconstruction** indications: young, active, return to sports + cutting/pivoting activities + instability; technique: arthroscopic ACL reconstruction with autograft (bone-patellar tendon-bone, hamstring tendon, quadriceps tendon) or allograft; concurrent meniscal repair (preserve when possible) or partial meniscectomy; MCL grade I-II often heal with bracing (delayed ACL); grade III MCL with concurrent ACL — may consider acute repair vs staged; (3) **Non-operative** acceptable for sedentary, low demand, partial tears, willing to modify activity (\"copers\"); (4) **Timing**: delay 2-4 weeks until swelling resolved, ROM regained — reduces arthrofibrosis risk (Shelbourne accelerated rehab); some advocate earlier; (5) **Post-op**: prolonged rehab 6-9 months for return to sport; ACL-RSI score for psychological readiness; (6) **Outcomes**: 85-90% return to sport, 65% to pre-injury level; (7) Long-term: increased OA risk (50% at 10-15 yr), prevention strategies (neuromuscular training programs — FIFA 11+); (8) Multidisciplinary: sports medicine, PT, athletic trainer, psychologist; (9) Female athletes higher ACL injury risk (anatomy, hormonal, biomechanics) — prevention programs especially important" },
+      { "label": "C", "text": "Cast 6 months" },
+      { "label": "D", "text": "Total knee replacement" },
+      { "label": "E", "text": "Amputation" }
+    ],
+    "correct_answer": "B",
+    "explanation": "ACL tear: common sports injury (pivoting, cutting). MOI: non-contact deceleration with rotation. Diagnosis: clinical (Lachman, pivot shift) + MRI. Treatment: surgical reconstruction for young active; non-operative for selected. Concurrent injuries common (\"unhappy triad\" — ACL + MCL + medial meniscus). Long rehab (6-9 mo) to return to sport. Long-term OA risk despite surgery. Female athletes higher risk. Prevention programs (neuromuscular training).",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "AAOS Clinical Practice Guideline: Management of Anterior Cruciate Ligament Injuries 2014, updated 2022"
+  },
+  {
+    "scenario": "ชายไทยอายุ 28 ปี post-MVC (motorcycle) — high-energy trauma, complete loss of motor + sensory below T6 level immediately\n\nV/S: BP 88/52, HR 56 (bradycardia), Temp 36.4°C\nGen: alert, oriented, paralyzed below mid-thoracic level\nNeuro: complete loss motor + sensory below T6, areflexic, priapism (suggests SCI)\n\nCT spine: T6 burst fracture + retropulsion of fragment into canal + spinal cord compression\nMRI: cord edema + transection at T6 likely\n\nASIA grade A complete spinal cord injury",
+    "choices": [
+      { "label": "A", "text": "Discharge home" },
+      { "label": "B", "text": "Acute Traumatic Spinal Cord Injury (SCI): (1) **ATLS protocol**: airway + breathing (intubation if high cervical), circulation (neurogenic shock — bradycardia + hypotension — IV fluid + atropine for symptomatic bradycardia + vasopressor — norepinephrine preferred); (2) **Immobilization**: spine board + cervical collar + log roll; (3) **MAP > 85** for 7 days improves outcomes (controversial — increasing evidence); (4) **Methylprednisolone (NASCIS protocol)** — controversial, no longer routine due to mixed evidence + risks (infection, GI bleed, mortality) — some still use within 8h for selected cases; (5) **Surgical decompression** + stabilization within 24 hours (some advocate < 12-24 — STASCIS study showed neurologic improvement); pedicle screws + rods, anterior decompression + corpectomy + cage + plate, combined; (6) **Multidisciplinary acute care**: spine surgery, ICU/trauma, anesthesia, physiatry, ortho, neurosurgery; (7) **Acute complications**: respiratory failure (high SCI), autonomic dysreflexia, neurogenic shock, DVT/PE (high risk — prophylactic anticoagulation when bleeding controlled), pressure injuries, urinary retention/dysfunction, bowel dysfunction, ileus; (8) **Inpatient rehab** transfer when stable — comprehensive rehabilitation; (9) **Long-term**: lifelong issues — pressure injuries, UTIs, autonomic dysfunction, sexual dysfunction, psychological adjustment, mental health, vocational, social; (10) **Multidisciplinary lifelong care**: PM&R, urology, GI, psychology, social work, vocational; (11) Family support + grief counseling; (12) Modern: emerging therapies — stem cells, exoskeletons, functional electrical stimulation, neuromodulation — still experimental for cure but improve function" },
+      { "label": "C", "text": "Conservative only" },
+      { "label": "D", "text": "Amputation" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Acute SCI: trauma emergency + lifelong condition. Neurogenic shock (bradycardia + hypotension) vs spinal shock (transient flaccidity + areflexia). MAP > 85 × 7 days. High-dose steroid controversial — no longer routine. Surgical decompression + stabilization < 24h. Complications: respiratory, DVT/PE, autonomic dysreflexia, UTI. Lifelong multidisciplinary care. Modern: technology + emerging therapies. Family-centered.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AOSpine STASCIS Trial 2012; Consortium for Spinal Cord Medicine Clinical Practice Guidelines"
+  },
+  {
+    "scenario": "ชายไทยอายุ 42 ปี ตกจากบันได 3 เมตร — open tibial fracture + bone protrusion + bleeding + contamination\n\nGustilo classification: Type IIIA (extensive soft tissue + > 10cm wound + adequate coverage)",
+    "choices": [
+      { "label": "A", "text": "Outpatient + oral antibiotic" },
+      { "label": "B", "text": "Open Fracture Gustilo Type IIIA: (1) **Initial**: ATLS, control hemorrhage, immobilize, hemodynamic resuscitation; (2) **Early IV broad-spectrum antibiotic within 1 hour** (BAPRAS evidence — earlier = less infection): cefazolin (gram-positive coverage) + gentamicin (gram-negative for III) or vancomycin + ceftazidime/piperacillin-tazobactam; add metronidazole/penicillin for farmyard contamination (clostridia); duration 24-72h post-closure typically; (3) **Tetanus prophylaxis** — vaccine if > 5 yr since booster, immunoglobulin if not vaccinated; (4) **Irrigation + debridement** in OR within 6 hours (the \"6-hour rule\" debated but principle of early debridement valid); (5) **Bone stabilization**: temporary external fixation if extensive soft tissue, then definitive IMN once soft tissue stabilized; some immediate IMN for selected; (6) **Soft tissue coverage**: assess + plan with plastic surgery — primary closure if possible, delayed primary, skin graft, local or free flap (rotational, free) — within 7 days reduces infection; (7) **Multidisciplinary**: orthopedic trauma + plastic surgery + ID; (8) Complications: infection (osteomyelitis), nonunion, malunion, amputation, compartment syndrome; (9) Long-term rehab + function follow-up; (10) Gustilo grading guides management: I (clean < 1cm wound), II (1-10 cm moderate damage), IIIA (> 10 cm but coverable), IIIB (extensive + needs flap), IIIC (vascular injury — limb-threatening, often amputation)" },
+      { "label": "C", "text": "Bedrest only" },
+      { "label": "D", "text": "Discharge with cast" },
+      { "label": "E", "text": "Aspirin" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Open fractures: emergency. Gustilo classification (I, II, IIIA-C). Critical interventions: hemorrhage control, IMMEDIATE IV antibiotic (within 1h — most important factor), tetanus prophylaxis, urgent I&D in OR (\"6-hour rule\" — earlier the better), bone stabilization, soft tissue coverage. Multidisciplinary trauma + plastic + ID. Complications high — infection, osteomyelitis, nonunion. Type IIIC limb-threatening.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "AAOS + OTA Open Fracture Guidelines; BAPRAS-BOA Standards"
+  },
+  {
+    "scenario": "วัยรุ่นชายอายุ 16 ปี ปวด distal femur ขวา 6 สัปดาห์ + บวมเริ่ม + ก้อนคลำได้ + ไม่ตอบสนองต่อ NSAIDs + น้ำหนักลดเล็กน้อย\n\nFamily: no cancer history known\nV/S: ปกติ\nPE: tender + warm + firm mass distal femur lateral side\n\nX-ray: lytic + sclerotic lesion distal femur metaphysis with Codman triangle + sunburst periosteal reaction\nMRI: 8 cm soft tissue mass + cortical destruction + extends into surrounding tissue\nCT chest: no metastases visible\nBiopsy (open): osteosarcoma, high grade, malignant osteoid produced by tumor cells",
+    "choices": [
+      { "label": "A", "text": "Ignore — likely growing pain" },
+      { "label": "B", "text": "Osteosarcoma (most common primary malignant bone tumor in young — peak 15-25 yo, around knee — distal femur, proximal tibia): (1) **Multidisciplinary**: orthopedic oncology + medical oncology + radiation oncology + pediatric/adolescent if applicable + pathology + radiology + plastic surgery + rehab + psychology + social work; (2) **Staging workup**: CT chest (lung metastases most common), bone scan, MRI of primary, biopsy (open or core through planned surgical approach); (3) **Neoadjuvant chemotherapy** 8-12 weeks: MAP regimen (methotrexate + doxorubicin + cisplatin) — standard for high-grade osteo; (4) **Limb-sparing surgery** (vs amputation) — wide local excision with negative margins; reconstruction (mega-prosthesis, allograft, rotationplasty in selected, expandable prosthesis in growing children); (5) **Adjuvant chemotherapy** post-op for 6-12 months total; (6) **Histologic response** assessed post-neoadjuvant — > 90% necrosis = good response prognosticator; (7) **Surveillance**: CT chest q3 mo × 2 yr, q6 mo × 2 yr, annual after — pulmonary metastases most common site relapse; (8) **Long-term**: secondary malignancy from chemo, cardiotoxicity, fertility, growth, function, psychological, return to school/society; (9) **Survivorship care plan**; (10) **Outcomes**: localized 60-70% 5-yr survival; metastatic at presentation 20-30%; modern improving with neoadjuvant + adjuvant chemo + limb-sparing — major advance over historical amputation alone; (11) **Genetic counseling**: rare familial syndromes (Li-Fraumeni — TP53, hereditary retinoblastoma, Rothmund-Thomson)" },
+      { "label": "C", "text": "Aspirin alone" },
+      { "label": "D", "text": "Total joint replacement only" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Osteosarcoma: most common primary malignant bone tumor in young (15-25 yo peak), around knee (distal femur, proximal tibia). Pain + mass + X-ray (sunburst, Codman triangle). MRI + biopsy + staging (CT chest for mets). Neoadjuvant chemo (MAP) + limb-sparing surgery + adjuvant chemo. 5-yr survival 60-70% localized, 20-30% metastatic. Genetic counseling for syndromes. Modern multidisciplinary care + chemo enables limb salvage in most.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "peds",
+    "reference_source": "NCCN Bone Cancer 2024; Children's Oncology Group Sarcoma protocols"
+  },
+  {
+    "scenario": "ชายไทยอายุ 30 ปี HLA-B27 ตรวจสุขภาพประจำปี — ปวดหลังเรื้อรัง > 6 เดือน, ปวดมากตอนเช้า + improvement กับการเคลื่อนไหว, ปวดน้อยลงกับ exercise, ปวดมากตอนค่ำ\n\nFamily: father มี chronic back issues\nV/S: ปกติ\nPE: limited spine flexion + Schober test reduced, no joint inflammation, normal hip + knee ROM\n\nLab: ESR 45, CRP 22 (elevated), HLA-B27 positive\nX-ray pelvis: bilateral sacroiliitis grade 2 (sclerosis + erosions both sides)\nMRI SI joints: bone marrow edema both sides — active inflammation",
+    "choices": [
+      { "label": "A", "text": "Bed rest" },
+      { "label": "B", "text": "Ankylosing Spondylitis / Axial Spondyloarthritis (axSpA) — chronic inflammatory disease of axial skeleton, HLA-B27 strongly associated: (1) **Lifestyle**: regular exercise (cornerstone — improves stiffness, mobility, pain), postural exercises, swimming, no smoking, weight management; (2) Physical therapy + spine flexibility/strengthening; (3) **Pharmacologic stepwise**: - NSAIDs first-line (continuous use — disease-modifying effect potential per some evidence) — slow disease progression, reduce inflammation; long-term + GI/renal/CV monitoring; - **TNF-alpha inhibitors** (etanercept, adalimumab, infliximab, golimumab, certolizumab) for NSAID failures or severe — major advance — improve symptoms + slow radiographic progression (uncertain); - **IL-17 inhibitors** (secukinumab, ixekizumab) alternative biologic — effective even after TNFi failure; - **JAK inhibitors** (tofacitinib, upadacitinib) newer; - Sulfasalazine/methotrexate — only for peripheral arthritis (not axial); - Glucocorticoid — local injection only (no systemic); (4) **Extra-articular**: uveitis (30% — most common, urgent ophthalmology), IBD (overlap), psoriasis, aortic regurgitation, restrictive lung disease; (5) Surveillance: cardiovascular risk (increased), osteoporosis (DEXA, treat), depression; (6) Surgical: joint replacement for hip involvement; spinal correction surgery rare for severe deformity; (7) Counseling: family screening if symptoms (HLA-B27 60-90% in axSpA but only 5% of B27 develop disease); pregnancy + lactation considerations (most biologics compatible); (8) Multidisciplinary: rheumatology, PT, ophthalmology, dermatology, GI, cardiology, mental health" },
+      { "label": "C", "text": "Long-term opioid" },
+      { "label": "D", "text": "Amputation" },
+      { "label": "E", "text": "Refuse treatment" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Ankylosing Spondylitis / axSpA: chronic inflammatory axial skeleton, HLA-B27 association. Inflammatory back pain (insidious, > 3 mo, morning stiffness, improves with exercise, worsens with rest). Sacroiliitis on imaging (X-ray or MRI). Treatment: lifestyle + exercise foundation + NSAIDs + biologic (TNFi, IL-17i, JAKi) for severe. Extra-articular: uveitis (most common), IBD, psoriasis. CV + osteoporosis surveillance. Multidisciplinary lifelong care.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "rheumatology",
+    "board_age_group": "adult",
+    "reference_source": "ACR/SAA/SPARTAN Treatment Recommendations 2019; ASAS/EULAR 2022 Update"
   }
 ]
