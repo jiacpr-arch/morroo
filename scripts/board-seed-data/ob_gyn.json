@@ -168,5 +168,175 @@
     "board_topic": "obgyn",
     "board_age_group": "adult",
     "reference_source": "ACOG Committee Opinion: Screening for Fetal Chromosomal Abnormalities 2020; ACOG Guidelines for Perinatal Care"
+  },
+  {
+    "scenario": "หญิงตั้งครรภ์ GA 33 wk G3P2 มาห้องฉุกเฉินด้วยอาการน้ำคร่ำแตก 6 ชม ก่อน ไม่มีการเจ็บครรภ์\n\nV/S: BP 122/74, HR 88, RR 16, Temp 37.4°C\nVaginal exam: pooling of fluid in posterior fornix, nitrazine + (alkaline), ferning + on microscopy\nFetal heart 142 reassuring, no contractions\nCervix closed",
+    "choices": [
+      { "label": "A", "text": "Induce labor immediately" },
+      { "label": "B", "text": "PPROM (Preterm PROM) at 33 weeks: admit; expectant management to 34 wk if uncomplicated (balance prematurity vs infection risk); GBS prophylaxis (penicillin or alternatives); broad-spectrum antibiotic course — ampicillin + erythromycin (or azithromycin) × 7 days reduces chorioamnionitis + delivery latency (NICHD); antenatal corticosteroids (betamethasone × 2 doses) — fetal lung maturity; magnesium sulfate for neuroprotection < 32 wk; serial monitoring — fetal heart rate, uterine contractions, infection markers (WBC, CRP, fever), fluid color; delivery if: chorioamnionitis (fever, fetal tachycardia, uterine tenderness, foul fluid), non-reassuring fetal status, abruption, advanced labor, or reaching 34 wk; counsel; NICU notification" },
+      { "label": "C", "text": "Tocolyze long-term" },
+      { "label": "D", "text": "Discharge home" },
+      { "label": "E", "text": "Cesarean immediately" }
+    ],
+    "correct_answer": "B",
+    "explanation": "PPROM 24-34 wk: expectant management with surveillance, steroids, antibiotics, MgSO4 (neuroprotection < 32 wk). Antibiotic course (ampicillin + erythromycin or azithromycin × 7 days per NICHD/ORACLE) reduces chorioamnionitis + delays delivery. Deliver at 34 wk or if complications. Maternal/fetal surveillance critical. NICU planning.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Practice Bulletin: PROM 2020; NICHD Maternal-Fetal Medicine Network"
+  },
+  {
+    "scenario": "หญิงอายุ 30 ปี G1P0 GA 8 wk มาด้วยอาการอาเจียนไม่หยุด > 10 ครั้ง/วัน × 1 สัปดาห์ ดื่มน้ำไม่ได้ น้ำหนักลด 3 kg\n\nV/S: BP 96/62, HR 112, RR 18, Temp 36.8°C\nGen: dehydrated, ketones +\n\nLab: Na 134, K 3.0, Cl 92, HCO3 32, Glucose 78, ketonuria 3+, TSH 0.3 (low), Free T4 1.1 (normal)\nUS: viable IUP single, no molar pregnancy",
+    "choices": [
+      { "label": "A", "text": "Discharge with paracetamol" },
+      { "label": "B", "text": "Hyperemesis Gravidarum (HG) — severe N/V + dehydration + ketonuria + weight loss > 5%: admit; IV rehydration NSS or LR + dextrose, correct K + Mg; **Thiamine before glucose** (prevent Wernicke); antiemetics — first-line vitamin B6 (pyridoxine) + doxylamine; second-line metoclopramide, promethazine, ondansetron (caution Q-T prolongation + cleft palate risk 1st trimester — recent reassuring data); steroid (methylprednisolone) refractory cases; PPI for reflux; enteral nutrition (NG, J-tube) or TPN if severe + cannot tolerate PO; monitor electrolytes, ketones, weight; psychological support (devastating illness); rule out molar pregnancy (US done), thyroid storm (suppressed TSH due to β-hCG cross-reactivity = transient gestational thyrotoxicosis usually self-limiting); follow-up close" },
+      { "label": "C", "text": "Termination of pregnancy" },
+      { "label": "D", "text": "Antibiotic" },
+      { "label": "E", "text": "High-fat diet" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Hyperemesis Gravidarum: severe N/V > 5% weight loss + dehydration + electrolyte derangement + ketonuria. Peak 9 wk. Usually resolves by 20 wk. Stepwise treatment: pyridoxine + doxylamine first, then metoclopramide/promethazine, then ondansetron, then steroid. Thiamine before glucose (Wernicke). IV fluid + electrolyte correction. Severe: enteral or TPN. Transient gestational thyrotoxicosis common (β-hCG cross-reacts with TSH receptor) — usually no treatment. Psychological support critical. Rule out hydatidiform mole.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Practice Bulletin: Nausea + Vomiting of Pregnancy 2018"
+  },
+  {
+    "scenario": "หญิงอายุ 24 ปี มาห้องฉุกเฉินด้วยอาการปวดท้องน้อย + ไข้ + ตกขาวเหลืองมีกลิ่น × 5 วัน + dyspareunia\n\nLMP 1 สัปดาห์ที่แล้ว ปกติ\nSexually active, 2 partners last year, ไม่ใช้ condom\n\nV/S: BP 118/72, HR 102, RR 18, Temp 38.4°C\nAbdomen: lower abdominal tenderness bilaterally, no rebound\nPelvic: cervical motion tenderness +, uterine + bilateral adnexal tenderness, mucopurulent endocervical discharge\n\nLab: WBC 14,500, CRP 88, β-hCG negative, NAAT for GC/CT pending\nUS: thickened endometrium + small bilateral hydrosalpinx\nNo tubo-ovarian abscess",
+    "choices": [
+      { "label": "A", "text": "No treatment needed" },
+      { "label": "B", "text": "Pelvic Inflammatory Disease (PID — mild-moderate): empirical antibiotic (CDC 2021 + ACOG): outpatient — ceftriaxone 500mg IM single dose + doxycycline 100mg PO BID × 14 days + metronidazole 500mg PO BID × 14 days (anaerobic coverage); inpatient (more severe, pregnant, TOA, severe N/V, failed outpatient, immunocompromised) — IV cefoxitin or cefotetan + doxycycline OR clindamycin + gentamicin; treat sexual partners (within 60 days — also for GC/CT, doxycycline or treat presumptive); test for HIV + syphilis + hepatitis B + C; consent → STI counseling, contraception, safer sex education; follow-up 72h to confirm improvement; complications: tubo-ovarian abscess (TOA — may need drainage if > 4-5cm or not improving), chronic pelvic pain, infertility, ectopic pregnancy; long-term: counseling about reproductive consequences" },
+      { "label": "C", "text": "Acyclovir" },
+      { "label": "D", "text": "Hysterectomy" },
+      { "label": "E", "text": "Antifungal only" }
+    ],
+    "correct_answer": "B",
+    "explanation": "PID: ascending infection of upper genital tract — N. gonorrhoeae, C. trachomatis, anaerobes. Diagnosis CDC: minimum criteria = uterine, adnexal, or CMT tenderness in sexually active woman. Treatment empirical covering GC/CT + anaerobes. Outpatient acceptable for mild-moderate; inpatient for severe, TOA, pregnancy. Partner treatment. STI + HIV + syphilis screening. Complications: TOA, infertility (12% after 1 episode, 50% after 3), chronic pelvic pain, ectopic pregnancy.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "CDC STI Treatment Guidelines 2021; ACOG Practice Bulletin: Pelvic Inflammatory Disease 2010"
+  },
+  {
+    "scenario": "หญิงอายุ 28 ปี G1P0 GA 39 wk มา L/R for elective induction of labor for postdates\n\nLabor progression: spontaneous labor begins, contractions every 3 min, cervix 6cm dilated, 100% effaced, fetal head -2 station\n\nFetal heart monitoring: late decelerations occurring with contractions, baseline 140, variability minimal × 30 min\n\nMaternal V/S: stable\nFetal scalp pH: 7.18 (acidotic)\n\nCategory III fetal heart rate tracing per ACOG",
+    "choices": [
+      { "label": "A", "text": "Wait for vaginal delivery" },
+      { "label": "B", "text": "Non-Reassuring Fetal Status (NRFS) / Category III tracing — immediate intervention required: (1) Intrauterine resuscitation: change maternal position (left lateral preferred — relieves IVC + improves placental flow), O2 supplement, stop oxytocin if running, IV fluid bolus, correct hypotension (if epidural-related), tocolytic (terbutaline) if uterine hyperstimulation; (2) Vaginal exam — assess for cord prolapse, advanced labor; (3) Re-evaluate FHR after measures × 5-10 min; (4) If no improvement or worsening → **emergent cesarean delivery** within 30 min (or operative vaginal — vacuum/forceps if fully dilated + low station + experienced operator); (5) Continuous monitoring; (6) Neonatal team for resuscitation; (7) Document carefully — medico-legal; (8) Post-delivery: cord blood gas (acidosis), NICU assessment if needed, family discussion; (9) Categories: I = normal, II = indeterminate (need attention + workup), III = abnormal (recurrent late decel + minimal variability OR sinusoidal OR bradycardia + minimal variability) — high acidemia/CP risk → urgent delivery" },
+      { "label": "C", "text": "Increase oxytocin" },
+      { "label": "D", "text": "Discharge for outpatient delivery" },
+      { "label": "E", "text": "Stop fetal monitoring" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Fetal heart rate monitoring categories (ACOG/NICHD): I normal (baseline 110-160 + moderate variability + no late/variable decel), II indeterminate (most tracings — variable abnormalities), III abnormal (recurrent late decel + minimal var OR sinusoidal OR bradycardia + minimal var). Category III = urgent intervention or delivery. Intrauterine resuscitation: position, O2, IV fluid, stop oxytocin, treat hyperstim. If no improvement → emergent C-section within 30 min. NICU. Document carefully.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Practice Bulletin: Intrapartum Fetal Heart Rate Monitoring 2009; NICHD 2008 Workshop on EFM"
+  },
+  {
+    "scenario": "หญิงอายุ 26 ปี G2P1 ทำ Cesarean delivery 5 วันก่อนเนื่องจาก non-reassuring fetal status มาห้องฉุกเฉินด้วยอาการ ไข้สูง 39.2°C + ปวด wound + ตกขาวเหลืองมีกลิ่น + abdominal tenderness\n\nV/S: BP 102/68, HR 122, RR 22, Temp 39.2°C\nGen: ill\nC-section wound: erythematous + warm + discharge purulent at lower edge\nUterus: tender + boggy, foul-smelling lochia\nAdnexa: not tender\n\nLab: WBC 19,500 (left shift), CRP 245, lactate 2.4\nWound + uterine cultures: pending",
+    "choices": [
+      { "label": "A", "text": "Discharge with oral antibiotic" },
+      { "label": "B", "text": "Postpartum Endometritis + Wound Infection (post-C-section infection — common): admit; IV broad-spectrum antibiotic — clindamycin 900mg q8h + gentamicin 7mg/kg q24h (gold standard combination — Cochrane evidence superior coverage of anaerobes + GBS); add ampicillin or vancomycin if no response 48-72h (for enterococcus); wound — open + drain if abscess, debride + irrigate, allow secondary intention healing or delayed primary closure, daily dressing changes; remove staples/sutures over infected area; antibiotic continue until afebrile 24-48h + clinical improvement; thromboprophylaxis (high VTE risk postpartum); monitor for complications — septic pelvic thrombophlebitis (persistent fever despite antibiotic — anticoagulation indicated), abscess, peritonitis; counsel breastfeeding compatible antibiotics; postpartum depression screening; follow-up wound care + complete resolution" },
+      { "label": "C", "text": "Hysterectomy" },
+      { "label": "D", "text": "NSAIDs only" },
+      { "label": "E", "text": "No treatment needed" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Postpartum endometritis 1-3% post-vaginal, 5-15% post-C-section. Polymicrobial (anaerobes, GBS, gram-neg, enterococcus). IV clindamycin + gentamicin gold standard. Add ampicillin if no response (enterococcus). Wound infection: drain + debride + secondary healing. Septic pelvic thrombophlebitis if persistent fever despite antibiotics — anticoagulation. Complications: abscess, peritonitis, sepsis. Postpartum visit, follow-up.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Practice Bulletin: Use of Prophylactic Antibiotics in Labor and Delivery 2018; Williams Obstetrics"
+  },
+  {
+    "scenario": "หญิงอายุ 32 ปี G0P0 trying to conceive × 18 เดือน no success มา OPD\n\nMenstrual: regular cycle 28 days, normal flow, mild dysmenorrhea\nHistory: no PID, no STIs, BMI 23\nHusband: 35 yo, healthy, normal semen analysis (concentration 80M, motility 60%, normal morphology 8%)\n\nExam: normal pelvic, no masses\n\nLab: TSH 2.4, Prolactin normal, day 3 FSH 6.8, AMH 3.2 (normal), day 21 progesterone 12.8 (suggests ovulation)\nHSG (hysterosalpingography): bilateral tubal obstruction at distal ends",
+    "choices": [
+      { "label": "A", "text": "Continue trying naturally" },
+      { "label": "B", "text": "Infertility (failure to conceive 12 mo unprotected intercourse) — bilateral tubal disease: (1) Diagnostic workup done — male factor normal (normal SA), female ovulatory (regular cycle + d21 P4 > 3), tubal blockage on HSG; (2) **Treatment for tubal factor**: IVF (in vitro fertilization) is treatment of choice — best success rate; alternative — tubal microsurgical repair (less effective in distal blockage with damaged tubes — increases ectopic risk); (3) IVF process: controlled ovarian hyperstimulation (gonadotropin) + monitoring + egg retrieval + fertilization + embryo transfer + luteal support; (4) Preimplantation genetic testing (PGT) optional for selected; (5) Risks/counseling: multiple gestation (encourage single embryo transfer — eSET), OHSS (ovarian hyperstimulation syndrome — severe potential), procedural risks, financial cost, emotional burden; (6) Success rates per age: < 35 yo ~ 40% live birth per cycle; (7) Lifestyle: weight, smoking cessation, alcohol moderation, folate; (8) Psychological support; (9) Alternative: adoption, donor gametes, surrogacy depending on situation; (10) Tubal disease etiology: prior PID, endometriosis, prior tubal surgery, congenital — counseling + STI prevention" },
+      { "label": "C", "text": "Hysterectomy" },
+      { "label": "D", "text": "OCP" },
+      { "label": "E", "text": "Stop trying" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Infertility = failure to conceive 12 mo (6 mo if > 35 yo) of unprotected intercourse. Female factor 40%, male factor 30-40%, both/unexplained 20-30%. Female: ovulatory (cycle, d21 P4), tubal (HSG), structural (US, sono-HSG). Male: SA. Tubal disease → IVF first-line. Counseling psychological + financial. Lifestyle. eSET to reduce multiple gestation. Modern IVF success: 40% < 35 yo per cycle.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ASRM Practice Committee: Optimal Evaluation of Infertile Female 2015; ESHRE Guidelines"
+  },
+  {
+    "scenario": "หญิงอายุ 26 ปี ไม่มีโรคประจำตัว มา OPD ด้วยอาการประจำเดือนผิดปกติ (5-6 รอบ/ปี), น้ำหนักเพิ่ม 8 kg ใน 1 ปี, สิวที่หน้า + ผมหลังคอ + acanthosis nigricans, ขนหนาบริเวณคาง + แขน\n\nBMI 32 (obese), BP 132/85\nPelvic: ปกติ\nHair growth Ferriman-Gallwey score 12 (hirsutism)\n\nLab: TSH normal, Prolactin normal, 17-OHP normal, DHEAS slightly high, Testosterone 70 ng/dL (slightly high), Insulin fasting 22 (elevated), HbA1c 5.9% (prediabetes), Lipid: TG 220, HDL 35\nUS: bilateral polycystic ovaries + 12+ small follicles each + increased ovarian volume",
+    "choices": [
+      { "label": "A", "text": "Discharge — normal variation" },
+      { "label": "B", "text": "Polycystic Ovary Syndrome (PCOS) — Rotterdam criteria (2/3): oligo/anovulation + clinical or biochem hyperandrogenism + polycystic ovaries; this patient meets all 3: (1) **Lifestyle modification** (foundation) — weight loss 5-10% improves cycles, fertility, metabolic — diet (Mediterranean) + exercise 150 min/wk; (2) **Menstrual regulation**: combined OCP (low-dose, antiandrogenic progestin — drospirenone/cyproterone preferred) — first-line for non-fertility seeking; cyclic progestin alternative; (3) **Hyperandrogenism**: OCP for hirsutism + acne (slow effect 3-6 mo); spironolactone + OCP (antiandrogen); mechanical hair removal (laser, electrolysis); topical eflornithine; (4) **Metabolic**: metformin for insulin resistance (improves metabolic + may improve ovulation/cycle); statin if dyslipidemia; (5) **Fertility (when desired)**: weight loss first, letrozole first-line (PPCOS-II trial superior to clomiphene), clomiphene, metformin adjunct, gonadotropin if resistant, ovarian drilling, IVF; (6) **Endometrial protection**: chronic anovulation → endometrial hyperplasia/cancer risk — progestin (cyclic or LNG-IUD), OCP, induce withdrawal bleeding regularly; (7) **Screen for**: T2DM (OGTT annually), HT, dyslipidemia, OSA, depression, eating disorder, NAFLD; (8) **Long-term**: increased CV, T2DM, endometrial cancer risk — annual screening + risk modification; (9) Multidisciplinary: GYN, endocrine, dietitian, dermatology, mental health" },
+      { "label": "C", "text": "Hysterectomy" },
+      { "label": "D", "text": "Antidepressant only" },
+      { "label": "E", "text": "Ignore" }
+    ],
+    "correct_answer": "B",
+    "explanation": "PCOS: Rotterdam criteria (2/3 — oligo/anovulation, hyperandrogenism, polycystic ovaries). Common (10% reproductive age). Metabolic syndrome features (obesity, insulin resistance, dyslipidemia, T2DM, CV risk). Endometrial cancer risk (chronic anovulation → unopposed estrogen). Management: lifestyle first + symptom-based + metabolic risk modification + endometrial protection. Fertility: letrozole first-line per PPCOS-II. Multidisciplinary care.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "International Evidence-Based Guideline for Assessment + Management of PCOS 2018, updated 2023; ESHRE/ASRM 2018"
+  },
+  {
+    "scenario": "หญิงอายุ 65 ปี postmenopausal × 12 ปี มา OPD ด้วยอาการ chronic abdominal bloating + early satiety + ปวดท้องน้อยเล็กน้อย × 3 เดือน + น้ำหนักลด 4 kg + ปัสสาวะบ่อย\n\nFamily: น้องสาวเป็น breast cancer อายุ 48\nGenetic: BRCA1 testing positive (familial)\n\nV/S: BP 132/82, BMI 24\nAbdomen: distended + ascites (shifting dullness +)\nPelvic: bilateral adnexal mass palpable\n\nLab: CA-125 685 (very high), CEA normal, HE4 elevated\nROMA index high\nUS pelvis: bilateral complex ovarian masses + ascites\nCT abdomen/pelvis: bilateral ovarian masses (8 + 10 cm) + peritoneal carcinomatosis + omental caking + ascites\nNo distant metastases on imaging",
+    "choices": [
+      { "label": "A", "text": "Observation" },
+      { "label": "B", "text": "Advanced Ovarian Cancer (Stage III likely) + BRCA1 positive — multidisciplinary GYN-oncology management: (1) Confirm tissue diagnosis — paracentesis cytology, image-guided biopsy of omental disease, or laparoscopy; (2) **Treatment options based on resectability**: - **Primary debulking surgery (PDS)** + adjuvant chemo if optimal cytoreduction (R0/R1, no residual > 1cm) achievable AND fit patient (NCCN preferred); - **Neoadjuvant chemo (NACT) + interval debulking surgery + completion chemo** for not initially resectable, poor performance status, very advanced disease (EORTC + CHORUS trials — non-inferior + less morbidity); (3) **Chemotherapy regimen**: carboplatin + paclitaxel × 6 cycles; consider bevacizumab maintenance; **PARP inhibitor maintenance (olaparib, niraparib, rucaparib)** — major benefit in BRCA1/2 mutated (PFS improvement substantial — SOLO-1, PRIMA trials); (4) **Genetic testing already done** — BRCA1 → counseling for breast cancer surveillance, risk-reducing mastectomy considerations (already have ovarian Ca); family genetic counseling; (5) Surveillance: clinical + CA-125 + imaging q3-6 mo × 2 yr, q6-12 mo × 3 yr; (6) Palliative care concurrent; (7) Outcomes: stage III 5-year survival 30-40%, improved with PARP inhibitor era; (8) Recurrent disease: platinum-sensitive → re-challenge; platinum-resistant → other agents (bevacizumab, doxorubicin liposomal, gemcitabine, topotecan); (9) Lifelong follow-up + survivorship; (10) Multidisciplinary: GYN-oncology, medical oncology, palliative, genetics, social work, nutrition" },
+      { "label": "C", "text": "Hysterectomy alone" },
+      { "label": "D", "text": "Hormone replacement therapy" },
+      { "label": "E", "text": "Conservative" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Ovarian cancer: vague symptoms (bloating, early satiety, pelvic pain, urinary) — \"silent\" but actually symptomatic. Often advanced at presentation. CA-125 + HE4 + ROMA. Imaging + tissue diagnosis. Multidisciplinary GYN-onc management. PDS vs NACT decision. Adjuvant chemo carboplatin + paclitaxel. PARP inhibitor maintenance major advance for BRCA mutation. Genetic testing standard for all ovarian Ca (10-15% BRCA, Lynch). Family screening. Survival improving with modern Rx.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "NCCN Ovarian Cancer 2024; ASCO Clinical Practice Guidelines; SOLO-1 NEJM 2018; PRIMA NEJM 2019"
+  },
+  {
+    "scenario": "หญิงอายุ 52 ปี perimenopausal × 1 ปี มาด้วยอาการ vasomotor (hot flashes, night sweats) ทำให้นอนไม่หลับ + mood disturbance + vaginal dryness + dyspareunia\n\nLMP 4 เดือนที่แล้ว\nBMI 26, BP 132/82\nFamily: mother breast cancer at 65, father MI at 70\n\nLab: FSH 65 (high — menopausal), Estradiol 8 (low)\nMammogram: normal, Pap normal\nBone DEXA: T-score -1.8 (osteopenia)\nLipid: TC 245, LDL 158\nNo personal history breast or VTE or stroke",
+    "choices": [
+      { "label": "A", "text": "No treatment — symptoms self-limited" },
+      { "label": "B", "text": "Menopausal Symptoms — comprehensive management: (1) **Lifestyle**: cool environment, layered clothing, avoid triggers (alcohol, spicy), exercise, weight management, stress reduction, smoking cessation; (2) **MHT (Menopausal Hormone Therapy)** decision — risk-benefit individualized: indication = significant vasomotor symptoms (mod-severe), GSM, early menopause; - Estrogen + progestogen (if intact uterus) — combined; estrogen alone if hysterectomy; - Routes: oral (more VTE risk), transdermal (preferred — less VTE risk per most data), vaginal (for GSM only); - Dose: lowest effective for shortest duration but no arbitrary stop; - Contraindications: estrogen-receptor cancer, active VTE/stroke/CV disease, undiagnosed bleeding; relative — migraine with aura, high VTE risk, gallbladder disease; - Risks: breast Ca (long-term combined modestly increased), VTE (oral more), CV (early menopause may benefit), endometrial Ca (if unopposed estrogen with uterus); - Benefits: symptoms, bone, GSM, possible CV in early menopause; (3) **GSM-specific**: vaginal estrogen (very low systemic absorption), moisturizers, lubricants, ospemifene, prasterone; (4) **Non-hormonal alternatives**: SSRIs/SNRIs (paroxetine, venlafaxine), gabapentin, oxybutynin, cognitive-behavioral therapy, clonidine; (5) **Bone health**: calcium + vitamin D, weight-bearing exercise, bisphosphonate if T-score -2.5 or fragility fracture (DEXA already shows osteopenia, FRAX assessment); (6) **CV risk**: lifestyle, statin per LDL; (7) **Cancer screening**: continued mammogram, Pap, colonoscopy per guidelines; (8) **Shared decision-making + reassessment annually**; (9) Genitourinary syndrome of menopause (GSM) — chronic — local estrogen safe long-term; (10) Mental health support if depression/anxiety" },
+      { "label": "C", "text": "Total hysterectomy" },
+      { "label": "D", "text": "Antidepressants only without other therapy" },
+      { "label": "E", "text": "Ignore symptoms" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Menopause: cessation of menses > 12 mo (avg 51 yo). Vasomotor, GSM, mood, sleep, bone, CV changes. MHT for moderate-severe symptoms — risk-benefit individualized. Transdermal preferred (less VTE). GSM treated with vaginal estrogen (safe). Non-hormonal: SSRI/SNRI, gabapentin, CBT. Bone health: Ca/vit D + DEXA + bisphosphonate threshold. CV risk modification. Cancer screening continues. Shared decision-making + reassessment annually.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "NAMS 2022 Hormone Therapy Position Statement; ACOG Practice Bulletin: Menopause; Endocrine Society Treatment of Symptoms of the Menopause 2015"
+  },
+  {
+    "scenario": "หญิงอายุ 28 ปี G2P1 ตั้งครรภ์ GA 38 wk มาห้องฉุกเฉินด้วยอาการ acute onset chest pain + ตื่นกลัว + เหงื่อแตก + แน่นหน้าอก + รู้สึกหวาดกลัวจะตาย × 6 ชม\n\nFamily history: no cardiac history\n\nV/S: BP 154/96, HR 132, RR 28, SpO2 96%, Temp 36.8°C\nGen: anxious, restless, diaphoretic, alert\nLungs: clear, no crackles\nCardiac: tachycardia, no murmurs\n\nEKG: sinus tachycardia 132, no ST changes\nLab: Troponin slightly elevated 0.06, BNP 280, D-dimer high (pregnancy alters), TSH normal\nUS Fetal: alive, normal growth, no abruption\nObstetric exam: not in labor\n\nCT pulmonary angiogram: positive for pulmonary embolism in segmental branch",
+    "choices": [
+      { "label": "A", "text": "Reassure as anxiety attack" },
+      { "label": "B", "text": "PE in pregnancy — pregnancy = hypercoagulable state (4-5× VTE risk): (1) **Anticoagulation immediately** — LMWH (enoxaparin) IV/SC weight-based or therapeutic UFH bolus → infusion; LMWH preferred — does not cross placenta, safer, easier dosing; (2) **Pregnancy-specific considerations**: avoid warfarin (teratogenic 6-12 wk, fetal bleeding); avoid DOACs (cross placenta — insufficient safety data); LMWH continued through pregnancy + 6 weeks postpartum (6 mo total); (3) **Around delivery**: switch to IV heparin 24-36h before planned induction/C-section (shorter half-life, reversible); discontinue heparin 4-6h before neuraxial anesthesia; restart after delivery if hemostasis adequate; (4) **Severity stratification**: hemodynamically stable here — anticoagulation alone; if massive (hemodynamic instability) — consider thrombolysis (life-saving for mother), surgical/catheter embolectomy, ECMO; (5) Continuous monitoring fetal + maternal; (6) **Identify cause**: pregnancy + immobilization + obesity + thrombophilia — screen prior episodes, family history; (7) Counsel: VTE risk in subsequent pregnancies (prophylaxis next pregnancy); avoid OCP; long-term anticoagulation only if unprovoked or persistent risk; (8) Multidisciplinary: MFM, hematology, anesthesia, OB, internal medicine; (9) Postpartum follow-up + reassessment; (10) Anti-Xa monitoring for therapeutic LMWH in selected" },
+      { "label": "C", "text": "Anxiety treatment with benzodiazepine" },
+      { "label": "D", "text": "Beta-blocker only" },
+      { "label": "E", "text": "Discharge home" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pregnancy = 4-5× VTE risk (hypercoagulable, venous stasis, vascular injury). PE leading cause of maternal mortality. Diagnosis: clinical + imaging (V/Q scan or CTPA — both acceptable, CTPA growing standard, lower fetal radiation than thought, breast shielding for mother). Treatment: LMWH first-line (does not cross placenta). Warfarin teratogenic + fetal bleeding. DOACs cross placenta — avoid. Switch to IV heparin around delivery. Multidisciplinary care. Subsequent pregnancy prophylaxis. Counseling.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Practice Bulletin: Thromboembolism in Pregnancy 2018; ACCP CHEST Antithrombotic Therapy in VTE 2016"
   }
 ]
