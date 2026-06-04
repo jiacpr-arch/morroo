@@ -2910,5 +2910,965 @@
     "board_topic": "obgyn",
     "board_age_group": "adult",
     "reference_source": "ACOG Committee Opinion 757: Screening for Perinatal Depression; APA Perinatal Mental Health Guidelines"
+  },
+  {
+    "scenario": "หญิงอายุ 24 ปี G1P1 NSD 30 นาที, episiotomy + vacuum extraction. Bleeding 1.2 L, uterus contracted firm, placenta complete\n\nV/S: BP 96/58, HR 116\nPerineum exam: 4° laceration extending through anal sphincter + rectal mucosa\nUterus: firm, fundus at umbilicus, no atony\nBleeding from vaginal vault + cervix",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Just oxytocin + observe"
+      },
+      {
+        "label": "B",
+        "text": "PPH from **genital tract trauma** (T = Trauma in 4 T's of PPH): (1) systematic exam under good lighting + adequate analgesia/anesthesia — assess cervix, vaginal walls, perineum (4 degrees), periurethral; (2) **identify + repair sources** — cervical lacerations (sponge stick traction, suture if bleeding/> 1 cm), vaginal walls (running interlocking absorbable), perineal — repair in layers; (3) **4° laceration repair** — multidisciplinary (colorectal/urology if available, OB skilled): (a) **rectal mucosa** — interrupted or continuous fine absorbable (4-0 polyglactin/PDS), submucosal, knots away from lumen; (b) **internal anal sphincter** — separate repair (figure-of-8 or end-to-end with delayed absorbable); (c) **external anal sphincter** — overlapping or end-to-end with 2-0 PDS; (d) perineal body + vaginal mucosa + skin; (4) **antibiotics** — single dose cefazolin pre-repair (reduces wound complications); (5) **stool softeners + sitz bath** + analgesia + avoid constipation 6 wk; (6) **follow-up** — pelvic floor physical therapy, anal incontinence assessment 6 wk + 3-6 mo (manometry/endoanal US ถ้า symptoms); (7) **future delivery** — counsel risk recurrence ~ 7-15%; option C/S vs vaginal individualized; (8) hemodynamic resuscitation — IV fluid, blood products as needed; ongoing PPH protocol; (9) **document** — degree, repair technique, antibiotic, plan"
+      },
+      {
+        "label": "C",
+        "text": "Hysterectomy"
+      },
+      {
+        "label": "D",
+        "text": "Discharge home without repair"
+      },
+      {
+        "label": "E",
+        "text": "Methotrexate"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "OASIS (Obstetric Anal Sphincter Injury) — 4° = full thickness through rectal mucosa. Repair layered + antibiotic prophylaxis + stool softener + PFPT + follow-up incontinence assessment. Future delivery counseling. Vacuum/forceps + episiotomy + macrosomia + nulliparous = risk factors.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "RCOG Green-top 29: Management of Third- and Fourth-Degree Perineal Tears 2015"
+  },
+  {
+    "scenario": "หญิงตั้งครรภ์ G1P0 GA 38 wk SROM ที่บ้าน — sudden painless heavy bright red bleeding ทันที + fetal bradycardia within minutes\n\nV/S: BP 100/68, HR 110\nFetal: FHR 65 bradycardia\nUS done in prenatal — velamentous cord insertion + vessels crossing internal os (vasa previa) — was identified ANC at 30 wk but mother went into labor unexpectedly",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue vaginal delivery"
+      },
+      {
+        "label": "B",
+        "text": "**Vasa Previa rupture** (fetal vessels crossing or within 2 cm of internal os, unsupported by placenta or cord — ruptures with membranes → fetal exsanguination, fetal mortality > 50-95% if not recognized; risk: velamentous cord insertion, succenturiate/bilobed placenta, multifetal, IVF): (1) **emergency cesarean delivery** — fetal blood loss = imminent demise (small fetal blood volume ~ 80-90 mL/kg); decision-to-incision < 10 min; (2) **neonatal resuscitation team** ready — transfusion (O-negative emergency blood, type-specific ASAP); cord blood gas; (3) **prevention** — antenatal diagnosis on US (transvaginal Doppler — color flow over os) → planned admission at 30-34 wk, **antenatal corticosteroids 28-32 wk**, scheduled C/S 34-37 wk before ROM; (4) Apt test (HbF) — can confirm fetal blood (alkali-resistant) if doubt; (5) **post-delivery** — neonatal ICU care + transfusion; (6) **outcomes** — with antenatal dx + planned C/S → survival > 95%; without dx → mortality very high; (7) document + risk management; counsel future pregnancies + early US"
+      },
+      {
+        "label": "C",
+        "text": "Tocolysis"
+      },
+      {
+        "label": "D",
+        "text": "Discharge home — observation"
+      },
+      {
+        "label": "E",
+        "text": "Wait for natural delivery"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Vasa previa: fetal vessels over cervical os. Rupture = fetal exsanguination. Antenatal diagnosis (transvaginal color Doppler) → planned C/S 34-37 wk = > 95% survival. Without dx = catastrophic. Risk: velamentous cord, succenturiate lobe, IVF. Emergency C/S < 10 min.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "SMFM Consult Series 37: Vasa Previa; RCOG Green-top 27b"
+  },
+  {
+    "scenario": "หญิงตั้งครรภ์ GA 22 wk twin pregnancy MCDA (monochorionic-diamniotic) — routine US shows twin A polyhydramnios (DVP 9 cm, AFI 28) + twin B oligohydramnios (DVP 1.5 cm, 'stuck twin'), Twin A bladder visible distended, Twin B bladder not visible, both alive\n\nV/S: BP 118/74, HR 88\nFetal: both alive, FHR Twin A 148, Twin B 152\nDoppler: Twin B umbilical artery normal flow",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue routine ANC"
+      },
+      {
+        "label": "B",
+        "text": "**Twin-to-Twin Transfusion Syndrome (TTTS)** — Quintero stage II (donor with no bladder, but normal Doppler) — in MCDA pregnancy only (shared placental vascular anastomoses): donor → recipient through unbalanced AV anastomoses → recipient polyhydramnios + bladder distention + ↑ cardiac volume; donor oligohydramnios + small bladder + IUGR; (1) **refer fetal therapy center**; (2) **Quintero staging** — I (oligo/poly + visible donor bladder); II (no visible donor bladder); III (abnormal Doppler — UA AEDV/REDV, DV reversal); IV (hydrops); V (demise); (3) **treatment — fetoscopic laser photocoagulation** of placental vascular anastomoses (Solomon technique — equator dichorionizing) — gold standard for stage II-IV at 16-26 wk; survival of at least 1 twin ~ 85%, both ~ 70%; superior to amnioreduction (Eurofoetus trial); (4) **amnioreduction** (large-volume) — alternative for early/late or refractory; (5) **selective reduction** (radiofrequency, bipolar cord coagulation) — single twin demise ถ้า one severely compromised; (6) **expectant** — observation late presentation > 26 wk + planned early delivery; (7) **antenatal corticosteroids** if preterm delivery anticipated; (8) **post-laser** — serial US (TAPS — twin anemia-polycythemia sequence; recurrent TTTS), MCA Doppler, growth, BPP; (9) **co-twin demise** — surviving twin risk neurologic injury (15-25%) + death from acute exsanguination through anastomoses; brain MRI follow-up; (10) **delivery** — typically 34-37 wk for MCDA TTTS treated; (11) counsel: complex, fetal therapy referral promptly"
+      },
+      {
+        "label": "C",
+        "text": "Cesarean immediately at 22 wk"
+      },
+      {
+        "label": "D",
+        "text": "Terminate both twins"
+      },
+      {
+        "label": "E",
+        "text": "Discharge home"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "TTTS in MCDA twins. Quintero staging I-V. Fetoscopic laser ablation = standard 16-26 wk (Eurofoetus). Post-treatment: TAPS, recurrence, surviving twin neuro risk if co-twin demise. Antenatal dichorionic vs monochorionic critical — different management. Delivery 34-37 wk MCDA.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "NAFTNet TTTS Management Guidelines; ISUOG Twin Pregnancies 2016"
+  },
+  {
+    "scenario": "หญิงตั้งครรภ์ G1P0 GA 39 wk NSD with thick meconium-stained fluid — depressed neonate at delivery, HR 60, no respiratory effort, limp, no cry\n\nMaternal V/S: BP 122/76, HR 92 stable\nFetal: just delivered, Apgar 1 min: 1 (HR < 100, no respiration, limp, no reflex, blue)\nCord blood gas pH 6.95, base deficit 16",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Suction trachea aggressively first"
+      },
+      {
+        "label": "B",
+        "text": "Neonatal resuscitation (NRP 8e — Thai/AAP/AHA): (1) **initial rapid assessment** — term? tone? breathing/crying? — if YES routine, if NO → resuscitation; (2) **Golden Minute** — warm, dry, stimulate, position airway, suction only if obstructing (no longer routine for MSAF non-vigorous per NRP 8e — 2020 change); (3) **assess HR + respirations** at 30 sec; **HR < 100 or apnea/gasping → PPV** with bag-mask 21% O2 (term), 30 breaths/min, 20-25 cm H2O initial PIP — MR SOPA if not effective (Mask, Reposition, Suction, Open mouth, Pressure ↑, Alternative airway); (4) **HR < 60 despite effective PPV × 30 sec → intubate + chest compressions** 3:1 ratio (90 compressions + 30 breaths/min), 100% O2, depth 1/3 AP chest; (5) **HR still < 60 after 60 sec compressions + PPV → IV access** umbilical vein + **epinephrine** 0.01-0.03 mg/kg (1:10,000) IV or 0.05-0.1 mg/kg ETT every 3-5 min; **volume** (NS 10 mL/kg) if blood loss; (6) **MSAF non-vigorous** — initiate PPV at 1 min if not breathing (do not routinely suction trachea — NRP 8e changed); intubation + tracheal suction only if airway obstructed; (7) **post-resuscitation** — therapeutic hypothermia 33-34°C × 72 hr for moderate-severe HIE (GA ≥ 36 wk, criteria met) — neuroprotection; (8) **document** Apgar 1, 5, 10 min + resuscitative actions + interventions; (9) family update + transfer NICU; (10) debrief team"
+      },
+      {
+        "label": "C",
+        "text": "Discharge to nursery"
+      },
+      {
+        "label": "D",
+        "text": "Wait for spontaneous breathing 10 min"
+      },
+      {
+        "label": "E",
+        "text": "Continue stimulation only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "NRP 8e Golden Minute. Initial: warm/dry/stimulate. PPV if apnea/HR<100. Compressions + PPV if HR<60. Intubate + epi if persistent. MSAF non-vigorous: PPV not routine tracheal suction (NRP 8e change). Therapeutic hypothermia for HIE (≥ 36 wk, criteria). Apgar + cord blood gas document.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "AAP/AHA Neonatal Resuscitation Program (NRP) 8e 2020; ILCOR 2020"
+  },
+  {
+    "scenario": "หญิงอายุ 32 ปี G2P1 GA 38 wk in labor, dilation 4 cm. Suspect macrosomia — fundal height 41 cm, EFW 4,500 g on US, GDM well-controlled\n\nV/S: BP 120/74, HR 86\nFetal: FHR 140 reassuring\nNo prior shoulder dystocia, normal pelvis exam",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Forceps delivery at 4 cm"
+      },
+      {
+        "label": "B",
+        "text": "Suspected fetal macrosomia (EFW ≥ 4,000-4,500 g) management: (1) **caveats** — US EFW imprecise (±10-15% error), tends to over-estimate at term; clinical exam (Leopold) also imprecise; (2) **C/S consideration**: (a) **EFW > 5,000 g in non-diabetic** OR **> 4,500 g in diabetic** → ACOG suggests offering elective C/S (shoulder dystocia + brachial plexus risk); (b) **prior shoulder dystocia + macrosomia** → individualized; (3) this patient EFW 4,500 + GDM well-controlled, no prior dystocia → **shared decision**; reasonable trial of labor with: (4) **anticipatory planning**: (a) experienced operator + L&R team aware, (b) extra personnel available (anesthesia, additional OB, pediatric resuscitation), (c) bed at low height for McRoberts, (d) review HELPERR algorithm; (5) **labor progress** — adequately monitor, recognize protraction/arrest disorders; (6) **operative vaginal delivery cautious** — vacuum + macrosomia + protracted 2nd stage = ↑ dystocia risk; (7) **2nd stage** — controlled delivery of head, immediate assessment for shoulder dystocia (turtle sign), HELPERR ready; (8) **postpartum** — NICU eval (hypoglycemia, polycythemia, jaundice, RDS); maternal — PPH risk (overdistended uterus), 3-4° laceration risk; (9) **counsel patient** — risks both routes, individualized decision; (10) future pregnancies: GDM screening, weight management"
+      },
+      {
+        "label": "C",
+        "text": "Cesarean immediately"
+      },
+      {
+        "label": "D",
+        "text": "Discharge home"
+      },
+      {
+        "label": "E",
+        "text": "Methotrexate"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Macrosomia: EFW ≥ 4,000 (non-DM) / ≥ 4,500 (DM). US imprecise. C/S offer: > 5,000 non-DM or > 4,500 DM. Otherwise trial of labor with anticipatory shoulder dystocia preparation. Limit operative vaginal. NICU eval newborn. Shared decision counseling.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Practice Bulletin 216: Macrosomia 2020"
+  },
+  {
+    "scenario": "หญิงตั้งครรภ์ G1P0 GA 37 wk fetus breech presentation (frank breech) — multiparous, no contraindication to ECV\n\nV/S: BP 116/72, HR 78\nFetal: FHR 144, EFW 2,800 g, AFI normal, placenta posterior fundal (not previa)\nNo abruption, no prior C/S, no anomaly, no oligohydramnios, no labor",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cesarean immediately"
+      },
+      {
+        "label": "B",
+        "text": "**External Cephalic Version (ECV)** for breech at term (≥ 36-37 wk): (1) **criteria** — singleton breech ≥ 37 wk, no contraindication (no previa, no abruption, no fetal anomaly preventing version, no severe FGR/abnormal CTG, no oligohydramnios/PPROM, no multifetal, no uterine anomaly, no nuchal cord seen, mother stable, fetus reactive); (2) **pre-procedure** — confirm presentation US, NST reactive, IV access, type & screen, consent; (3) **tocolysis** — terbutaline 0.25 mg SC (most evidence), nifedipine, NTG to ↑ success; (4) **regional anesthesia** (epidural/spinal) may ↑ success + maternal comfort (controversial benefit, may use selectively); (5) **technique** — forward roll preferred; gentle continuous pressure; ≤ 2 attempts; ultrasound guidance; (6) **success rate** ~ 60% (lower if anterior placenta, nullip, low EFW, deep engagement); ~ 50% deliver vaginally cephalic after ECV; (7) **monitor post-ECV** — CTG 30-60 min, ensure reassuring; rule out abruption + fetal distress; (8) **complications** — transient FHR abnormality (most), abruption (rare), PPROM, FMH (give **Anti-D 300 mcg if Rh-negative**), emergent C/S need; (9) **fail** → schedule C/S vs repeat trial vs vaginal breech if criteria met (skilled provider, frank breech, head not hyperextended, EFW 2,500-4,000); (10) outpatient ECV vs admit per institution; (11) Thai context — ECV underutilized; promote training"
+      },
+      {
+        "label": "C",
+        "text": "Vaginal breech delivery without consent"
+      },
+      {
+        "label": "D",
+        "text": "Discharge home for spontaneous version"
+      },
+      {
+        "label": "E",
+        "text": "Methotrexate"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Breech 3-4% at term. ECV at 37 wk → success ~ 60% → reduces C/S. Criteria + contraindications. Tocolysis. Monitor post-ECV. Anti-D if Rh-neg. PROBE/Term Breech Trial established C/S for breech as safer but ECV reduces need. Vaginal breech selective + skilled.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Practice Bulletin 221: ECV; RCOG Green-top 20a/b"
+  },
+  {
+    "scenario": "หญิงตั้งครรภ์ GA 32 wk underlying chronic HT มา ANC — current BP 158/106 outpatient, no proteinuria, no symptoms\n\nV/S: BP 158/106, HR 90, RR 18\nFetal: FHR 144 reactive, EFW 1,650 g (50th), AFI normal\nLab: Cr 0.7, plt 240K, AST/ALT WNL, uric acid 4.2, urine protein/Cr 0.18 (negative for preeclampsia)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge — no action needed"
+      },
+      {
+        "label": "B",
+        "text": "Severe hypertension in pregnancy without preeclampsia features (chronic HT severe range BP ≥ 160/110) — **urgent BP control to prevent stroke** while continuing to investigate: (1) **measure BP × 15 min apart** to confirm persistence; (2) **acute treatment for severe-range BP within 30-60 min** (AIM bundle): (a) **IV labetalol** 20 mg → if no response 10 min → 40 mg → 80 mg → 80 mg (max 220-300 mg) — avoid in asthma, CHF, bradycardia; (b) **IV hydralazine** 5-10 mg → repeat 20-40 min → max 30 mg — SE reflex tachy, headache; (c) **oral nifedipine immediate-release** 10-20 mg → repeat 20-30 min — alternative oral if no IV; (3) **target BP** — < 140-150 / 90-100 (don't over-correct → placental hypoperfusion); (4) **rule out preeclampsia** — repeat urine protein/Cr, LFT, plt, Cr, LDH, uric acid; symptom review; (5) ongoing antihypertensive: labetalol, nifedipine ER, methyldopa (avoid ACEI/ARB, atenolol); CHAP trial supports target < 140/90; (6) **MgSO4** ถ้า any features of severe preeclampsia (HELLP, cerebral/visual, RUQ, pulm edema); (7) **fetal surveillance** — NST/BPP, serial growth; (8) **delivery indication** — uncontrolled severe HT, end-organ damage, preeclampsia features → deliver ≥ 34 wk; (9) **debrief** + safety bundle compliance; (10) follow-up postpartum (rebound HT)"
+      },
+      {
+        "label": "C",
+        "text": "Wait until 40 wk"
+      },
+      {
+        "label": "D",
+        "text": "Cesarean immediately"
+      },
+      {
+        "label": "E",
+        "text": "Aspirin alone"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Severe-range BP in pregnancy (≥ 160/110) → urgent treatment within 30-60 min to prevent stroke (leading cause of maternal mortality from HTN). IV labetalol/hydralazine or oral nifedipine. CHAP trial < 140/90. Rule out preeclampsia. MgSO4 if severe features. AIM bundle compliance.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Committee Opinion 767: Emergent Therapy for Acute-Onset Severe HT 2019; AIM Bundle"
+  },
+  {
+    "scenario": "หญิงตั้งครรภ์ G2P1 GA 36 wk previously healthy มา OPD — first ANC อยู่ไกล, มาด้วยอาการเหนื่อยง่าย + เท้าบวม + ปวดศีรษะ 1 สัปดาห์, no prior care\n\nV/S: BP 168/110, HR 92, RR 18\nGen: +2 edema legs + face, hyperreflexia 3+\nFetal: FHR 144 reactive, fundal height 33 cm (small for GA 36)\nLab pending: STAT — plt 95K, AST 120, Cr 1.0, urine 3+ protein, uric acid 7.8, HBs Ag negative, VDRL non-reactive, HIV negative",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge home with ANC referral"
+      },
+      {
+        "label": "B",
+        "text": "Late presentation severe preeclampsia + FGR — comprehensive admit: (1) immediate **stabilization** — BP control (IV labetalol/hydralazine), MgSO4 seizure prophylaxis 4-6 g load + 1-2 g/hr; (2) **complete preeclampsia workup** — CBC, CMP (Cr, LFT), uric acid, LDH, peripheral smear (schistocytes), urine protein/Cr or 24-hr, coag; (3) **fetal evaluation** — detailed US (anomaly missed, EFW, AFI), Doppler (umbilical, MCA), NST, BPP; ANC missed = unknown anomalies, growth, dating; (4) **antenatal steroids** betamethasone 12 mg IM × 2 doses 24 hr apart (late preterm 34-37 wk benefit per ALPS trial); GA 36 = borderline benefit + risk hypoglycemia neonate; (5) **delivery timing** — severe preeclampsia at 34+0 wk → **deliver after stabilization** (no need to wait for steroids if maternal/fetal instability; ALPS for 34-36+6 elective); (6) **mode** — vaginal preferred if favorable cervix + stable; cervical ripening with Foley/PG; oxytocin; C/S for usual obstetric indication; continuous EFM; (7) **postpartum** — MgSO4 24 hr, BP monitoring, may need antihypertensive 6-12 wk; PE labs may worsen 48 hr postpartum; (8) social work + WCC/social determinants — late presentation often = SES/access barriers; education + support + transition care; (9) Anti-D if Rh-neg + bleeding; (10) postpartum contraception + future pregnancy aspirin"
+      },
+      {
+        "label": "C",
+        "text": "Cesarean immediately"
+      },
+      {
+        "label": "D",
+        "text": "Tocolysis to delay"
+      },
+      {
+        "label": "E",
+        "text": "Outpatient observation"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Late ANC + severe preeclampsia + FGR: stabilize, workup, deliver. Steroids ALPS for late preterm. Severe PE at 34+0 deliver. Social determinants → SBIRT, social work, equity. Postpartum surveillance. Future pregnancy aspirin. Universal screening + early access addresses equity.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Hypertension in Pregnancy 2020; ALPS Trial Antenatal Late Preterm Steroids 2016"
+  },
+  {
+    "scenario": "หญิงอายุ 25 ปี G2P1 GA 16 wk first ANC — Lab returned: VDRL positive 1:64, FTA-ABS positive, no symptoms, no prior history of syphilis or treatment\n\nV/S: BP 118/72, HR 80\nGen: well, no rash, no chancre\nPartner status unknown",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No treatment needed"
+      },
+      {
+        "label": "B",
+        "text": "Syphilis in pregnancy management (Treponema pallidum — congenital syphilis prevention): (1) **diagnosis** — confirmed (RPR/VDRL + treponemal FTA-ABS or TP-PA positive); titer 1:64 = active; stage by clinical + serology — likely early latent (< 1 yr) or late latent (unknown duration → treat as late); (2) **treatment**: (a) **early latent (< 1 yr) — Benzathine Penicillin G 2.4 million U IM single dose**; (b) **late latent or unknown duration — Benzathine Penicillin G 2.4 million U IM × 3 doses 1 wk apart** (total 7.2 million U); (3) **penicillin allergy** — **desensitization required** (penicillin only proven prevention of congenital syphilis — no alternative in pregnancy; doxycycline contraindicated, erythromycin doesn't cross placenta well); inpatient desensitization protocol then PCN treatment; (4) **Jarisch-Herxheimer reaction** — fever/chills/uterine contractions after first dose (~ 6-12 hr) — monitor + supportive (acetaminophen); rare preterm labor; (5) **partner notification + treatment** — contact tracing essential (Thai DDC, anonymous partner services); (6) **follow-up** — quantitative non-treponemal titer (RPR/VDRL) at 3, 6, 12 mo expecting 4-fold ↓; if no decline → re-evaluate (HIV, persistent, reinfection); (7) **fetal evaluation** — US for stigmata (hepatomegaly, ascites, hydrops, placentomegaly); (8) **neonatal evaluation** — IgM, exam, dark-field of lesions, LP, long bone X-ray, CBC, CSF VDRL; treat per CDC criteria; (9) **HIV + co-infection screening** mandatory; other STIs (GC, CT, HBV, HCV); (10) **prevention** — universal first trimester + 28 wk + delivery screening in Thai/CDC high-risk areas; condoms; education"
+      },
+      {
+        "label": "C",
+        "text": "Doxycycline"
+      },
+      {
+        "label": "D",
+        "text": "Discharge — wait until delivery"
+      },
+      {
+        "label": "E",
+        "text": "Methotrexate"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Syphilis in pregnancy: BPG only proven prevention congenital syphilis. PCN allergy → desensitize. Stage to determine dose. Partner notification. Follow-up titer 4-fold ↓ at 6-12 mo. Newborn eval + treatment. Universal screening 1st trimester + 28 wk + delivery (Thai). Co-infection HIV.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "CDC STI Treatment Guidelines 2021; WHO Syphilis Pregnancy"
+  },
+  {
+    "scenario": "หญิงตั้งครรภ์ G1P0 GA 38 wk underlying genital HSV-2 with active recurrent outbreak (genital ulcers + vesicles) detected at L&R when contractions started\n\nV/S: BP 122/74, HR 92, Temp 37.0\nGen: vulvar vesicles + ulcers visible, painful\nFetal: FHR 144, contractions q 5 min, cervix 2 cm",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Allow vaginal delivery"
+      },
+      {
+        "label": "B",
+        "text": "**Genital HSV with active outbreak in labor → Cesarean delivery** to prevent neonatal HSV (devastating CNS/disseminated disease, mortality 30-60%): (1) **indication for C/S** — active genital lesions OR **prodromal symptoms** at onset of labor → C/S preferred (even if ROM); ACOG; (2) **prevention** — suppressive **acyclovir 400 mg PO TID** OR **valacyclovir 500 mg PO BID** from 36 wk to delivery for women with recurrent genital HSV (reduces outbreaks + viral shedding + C/S need); (3) **PPROM management** — individualized: if active lesions + preterm + benefit of prolonging > risk neonatal HSV → continue expectant with acyclovir; if term with active lesions → C/S; (4) **avoid invasive procedures** — fetal scalp electrode, fetal scalp blood, instrumented delivery (vacuum/forceps in labor; vacuum/forceps for C/S OK); (5) **counsel patient** — risk neonatal HSV with active primary lesions in labor ~ 30-50%; recurrent ~ 1-3% (lower because of maternal antibody); (6) **first episode (primary)** during pregnancy → highest risk neonatal HSV → treat acyclovir 400 mg TID × 7-10 d, suppression from 36 wk, C/S in active labor; (7) **neonatal management** — culture (skin, eyes, mouth, NP, rectum), HSV PCR, exam q shift; preemptive acyclovir if exposed + symptomatic; (8) **breastfeeding** — safe unless breast lesions; (9) **partner counseling** + STI screen + condoms + suppression for prevention of transmission"
+      },
+      {
+        "label": "C",
+        "text": "Forceps delivery"
+      },
+      {
+        "label": "D",
+        "text": "Discharge home"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Genital HSV + active outbreak in labor = C/S. Suppression acyclovir/valacyclovir 36 wk → delivery reduces outbreaks. Primary episode highest risk neonatal HSV. Avoid invasive procedures. Neonatal eval. Breastfeeding safe (no breast lesions). Partner counseling.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Practice Bulletin 220: Management of Genital Herpes in Pregnancy 2020"
+  },
+  {
+    "scenario": "หญิงอายุ 28 ปี G1P0 GA 16 wk pre-existing asthma, on inhaled budesonide + salbutamol PRN — has been having ↑ exacerbations recently, peak flow declining 80% → 60% best\n\nV/S: BP 116/72, HR 90, RR 22\nGen: wheezing, accessory muscle use mild\nLab: SpO2 95% RA, no fever\nFetal: FHR 152 reactive",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Stop all asthma medication"
+      },
+      {
+        "label": "B",
+        "text": "Asthma in pregnancy management (poorly-controlled asthma → preterm birth, FGR, preeclampsia, perinatal mortality — RISK > medication risk): (1) **continue + optimize medications** — pregnancy-safe: inhaled corticosteroids first-line (**budesonide** most data, fluticasone OK); SABA (albuterol/salbutamol) for rescue; LABA (salmeterol, formoterol) add-on; (2) **step-up therapy** for poor control — increase ICS dose, add LABA, add LTRA (montelukast), oral steroid burst (prednisolone) for exacerbations; (3) **monitor** — peak flow daily, symptom diary, ACT (Asthma Control Test); decline 20% needs action; (4) **trigger avoidance** — smoking cessation + secondhand smoke, allergens, infections (flu + COVID + Tdap vaccines indicated); (5) **acute exacerbation in pregnancy** — same as non-pregnant + lower threshold to admit; SpO2 target ≥ 95% (fetal); nebulized albuterol q 20 min × 3, ipratropium, IV magnesium, systemic steroid (methylprednisolone 60-125 mg IV or prednisolone 40-60 mg PO), O2; severe — ICU + ventilator; (6) **labor + delivery** — continue asthma meds; if on oral steroid > 2 wk in last year → stress dose hydrocortisone 100 mg IV q 8 hr in labor; avoid PGF2α (carboprost → bronchospasm), opioid morphine (histamine), aspirin (sensitive); preferred uterotonics oxytocin, misoprostol, methylergonovine (HT caution); (7) **fetal surveillance** — growth + NST if poorly controlled; (8) **lactation** — all asthma meds safe; (9) **postpartum** — continue therapy; (10) **multidisciplinary** — OB + pulm/allergy + primary care"
+      },
+      {
+        "label": "C",
+        "text": "Cesarean immediately"
+      },
+      {
+        "label": "D",
+        "text": "Use only oxygen"
+      },
+      {
+        "label": "E",
+        "text": "Methotrexate"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Asthma pregnancy: 1/3 better, 1/3 worse, 1/3 same. Poor control > medication risk. Budesonide preferred ICS. Step up if poor control. Avoid PGF2α (bronchospasm) for PPH. Vaccines flu/COVID/Tdap. Stress dose steroid if chronic. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "GINA Asthma Guidelines 2024; ACOG Asthma in Pregnancy"
+  },
+  {
+    "scenario": "หญิงตั้งครรภ์ G2P1 GA 26 wk MVC trauma — driver, restrained, airbag deployed, abdominal blunt trauma + bilateral chest contusion\n\nV/S: BP 110/72, HR 110, RR 22, SpO2 96%\nGen: alert, abdominal tenderness diffuse + uterine tenderness\nFetal: FHR 160 (tachy) with minimal variability\nUS pelvis: placenta posterior (not previa), AFI normal, no obvious abruption seen\nLab pending: CBC, type & screen, Kleihauer-Betke, coag",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge home + observe"
+      },
+      {
+        "label": "B",
+        "text": "**Trauma in pregnancy** — leading cause of non-obstetric maternal death; manage with **standard ATLS + pregnancy modifications**: (1) **primary survey ABCDE** — airway (intubation as needed), breathing (O2, chest tube), circulation (large-bore IV ×2, crystalloid → blood; aim for normal pre-pregnancy targets), **left lateral tilt 15-30°** (LUD) after 20 wk to relieve aortocaval compression during resuscitation/CPR; (2) **disability** — GCS, glucose; (3) **exposure** — remove clothing, log roll, examine; (4) **secondary survey** — head-to-toe + obstetric (fundal tenderness, vaginal bleeding, ROM, FHR, contractions, fetal movement); pelvic + speculum exam; (5) **investigations** — CBC, type & cross, **Kleihauer-Betke** (FMH quantification → Anti-D dose calculation if Rh-neg; even trauma without bleeding can cause FMH), coag, lactate, **FAST exam** + radiology as indicated (don't withhold imaging if needed — fetus tolerates well under 5-10 rad cumulative, especially first trimester avoiding pelvis if possible); CT chest/abdomen/pelvis if indicated — risk-benefit; shield uterus when feasible; (6) **fetal monitoring** — continuous EFM **minimum 4 hr** for trauma all gestations ≥ 20-24 wk (longer ≥ 24 hr if contractions > 6/hr, ROM, tenderness, vaginal bleeding, abnormal FHR, abnormal KB); category II/III FHR → consider abruption; (7) **resuscitative hysterotomy / perimortem C/S** — start within **4 min of arrest** if ≥ 23-24 wk for maternal + fetal benefit; (8) **rule out abruption** — abdominal pain, vaginal bleeding, contractions > 6/hr, abnormal FHR, hypertonic uterus, ↑ KB; up to 24 hr presentation; (9) **DV/IPV** — screen — trauma in pregnancy often domestic; (10) **Anti-D Ig** if Rh-negative + any abdominal trauma (even no bleeding — silent FMH possible); (11) **MDT** — trauma + OB + anesthesia + NICU + social"
+      },
+      {
+        "label": "C",
+        "text": "Cesarean immediately without trauma workup"
+      },
+      {
+        "label": "D",
+        "text": "Refuse imaging"
+      },
+      {
+        "label": "E",
+        "text": "Tocolytic only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Trauma in pregnancy: ATLS + LUD + fetal monitoring ≥ 4 hr (longer if abnormalities). KB test for FMH + Anti-D. CT if indicated — don't withhold. Abruption presentation up to 24 hr. Perimortem C/S < 4 min of arrest ≥ 24 wk. IPV screening — common cause. MDT.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Committee Opinion 518/667 Trauma in Pregnancy; Eastern Association Trauma Pregnancy"
+  },
+  {
+    "scenario": "หญิงอายุ 52 ปี postmenopausal × 2 yr มาด้วยอาการ stress urinary incontinence (leak with cough/sneeze/exercise) + pelvic pressure × 6 mo, ไม่มี dysuria\n\nV/S: BP 132/82, HR 78\nPelvic: bulge of anterior vaginal wall to introitus on Valsalva (POP-Q stage 2 cystocele), Q-tip test angle 45° with Valsalva, no UTI, post-void residual 30 mL\nUrine analysis: WNL\nCough stress test: positive",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Antibiotic only"
+      },
+      {
+        "label": "B",
+        "text": "Stress urinary incontinence (SUI) + pelvic organ prolapse (POP) — comprehensive management: (1) **lifestyle + behavioral** first-line — weight loss, fluid management, treat constipation, smoking cessation; **pelvic floor muscle training (Kegel) supervised by PFPT** — strong evidence for SUI + POP; (2) **pessary** — supportive vaginal device for POP + SUI (ring, Gellhorn, donut, incontinence pessary) — non-surgical, fit clinic, change/clean q 3 mo, watch for erosion/discharge; (3) **vaginal estrogen** ถ้า GSM + atrophy (cream, ring, tablet) — improves tissue + symptoms; (4) **bladder training** + scheduled voiding; (5) **medications for SUI** — **duloxetine** (SNRI — modest effect, GI side effects); no other SUI-specific oral; for **urge incontinence** (different) — anticholinergic, mirabegron; (6) **surgical SUI** — **midurethral sling** (TVT/TOT) — gold standard; pubovaginal sling autologous fascia; Burch colposuspension; bulking agents (urethral injection); (7) **surgical POP** — vaginal hysterectomy + USLS (uterosacral ligament suspension) or sacrospinous ligament fixation; **sacrocolpopexy** (abdominal/lap/robotic) — gold standard apical support; native tissue repair anterior/posterior; **mesh** vaginal — restricted/banned in many countries; **colpocleisis** (Le Fort) — obliterative for elderly + frail; (8) **shared decision-making** — sexual activity desire, surgical risk; (9) follow-up + counsel recurrence; (10) workup before surgery — urodynamics (controversial routine), cystoscopy if indicated, PVR"
+      },
+      {
+        "label": "C",
+        "text": "Cesarean delivery"
+      },
+      {
+        "label": "D",
+        "text": "Methotrexate"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "SUI/POP management: lifestyle + PFPT + pessary + vaginal estrogen (1st line). Sling for SUI. Sacrocolpopexy gold standard apical POP. Mesh vaginal controversial. Colpocleisis frail elderly. Shared decision. Vaginal estrogen for atrophy.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "AUGS/ACOG SUI Practice Bulletin 155; AUGS Pelvic Organ Prolapse Practice Bulletin 214"
+  },
+  {
+    "scenario": "หญิงอายุ 35 ปี Pap smear + colposcopy + biopsy = cervical cancer SCC invasive — staging FIGO IB1 (tumor 3 cm confined to cervix, no parametrial invasion, no nodes)\n\nV/S: BP 122/76, HR 80\nGen: well, no symptoms\nMRI pelvis: 3 cm cervical mass, no parametrial/nodal involvement\nPET-CT: no distant metastasis",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge — observation"
+      },
+      {
+        "label": "B",
+        "text": "**Early-stage cervical cancer (FIGO 2018 IB1, tumor < 2 cm; this case IB2 tumor 2-4 cm)** — review FIGO 2018: IA microscopic; IB1 < 2 cm; IB2 2-4 cm; IB3 > 4 cm; II beyond uterus but not pelvic wall/lower vagina; III pelvic wall/hydronephrosis/lower vagina; IV beyond pelvis; (1) **staging gold standard** — clinical + imaging (MRI for local extent, PET-CT for nodes/distant), surgical staging optional; (2) **treatment options for IB1-IB2** (≤ 4 cm, lymph node negative): (a) **radical hysterectomy + bilateral pelvic lymphadenectomy** (Type C — Querleu-Morrow) — fertility loss; preferred if completed childbearing; sentinel LN biopsy increasingly used; **LACC trial 2018 — open approach superior to minimally invasive** (MIS had worse DFS + OS — paradigm shift away from lap/robotic for cervical cancer); (b) **chemoradiation** — alternative, similar survival, different morbidity (vaginal stenosis, bowel/bladder); (c) **fertility-sparing — radical trachelectomy** (vaginal Dargent or abdominal) + pelvic lymphadenectomy ถ้า tumor < 2 cm + no LVSI + no metastasis + desires fertility; cervical cerclage placed; future pregnancy high-risk preterm + need C/S; (3) **adjuvant therapy** — pelvic RT + concurrent platinum chemo (cisplatin) if intermediate (large tumor, deep stromal invasion, LVSI) or high risk (positive margin, parametrial, LN+); (4) **HPV vaccination** — primary prevention + post-treatment recurrence reduction (controversial); (5) **screening** — Thai universal cervical cancer screening (Pap or HPV); (6) **follow-up** — exam + cytology + HPV q 3-6 mo × 2 yr, then q 6-12 mo × 3 yr, then annual × 5 yr; imaging if symptoms; (7) **prognosis** — 5-yr stage IB1 > 90%, IB2 70-80%, IB3 60-70%, II 50-60%, III 30-40%, IV < 20%; (8) Thai context — RTCOG + Royal Thai GYN-Onc Society protocols"
+      },
+      {
+        "label": "C",
+        "text": "Antibiotic alone"
+      },
+      {
+        "label": "D",
+        "text": "Methotrexate"
+      },
+      {
+        "label": "E",
+        "text": "Hysterectomy without staging"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cervical cancer FIGO 2018 staging. Early stage: radical hysterectomy or chemoradiation. LACC trial — OPEN approach (not lap/robotic) for radical hysterectomy. Fertility-sparing trachelectomy < 2 cm. Adjuvant RT-chemo for intermediate/high risk. HPV vaccine prevention. Thai protocols.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "FIGO Cervical Cancer Staging 2018; LACC Trial NEJM 2018; NCCN Cervical Cancer"
+  },
+  {
+    "scenario": "หญิงอายุ 19 ปี nulligravid มา OPD ด้วยอาการประจำเดือนไม่มา 4 เดือน + galactorrhea + bilateral spontaneous nipple discharge + ปวดศีรษะ + bitemporal hemianopia\n\nV/S: BP 116/72, HR 80\nGen: alert, no Cushingoid, no acromegaly, visual field defect on confrontation\nLab: β-hCG negative, prolactin 220 (very high), TSH 2.4 normal, FT4 normal, FSH/LH suppressed\nMRI pituitary: 2.0 cm pituitary macroadenoma compressing optic chiasm",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge — wait + see"
+      },
+      {
+        "label": "B",
+        "text": "**Prolactinoma (macroadenoma > 10 mm) with mass effect (visual field defect)** — endocrine + visual emergency: (1) **referral neurosurgery + endocrinology + neuro-ophthalmology** urgent; (2) **first-line — dopamine agonist** — even for macroadenoma with mass effect (medication can rapidly shrink tumor): (a) **cabergoline** 0.25-0.5 mg PO twice weekly, titrate up — preferred (better efficacy + tolerability + less valvular risk at low dose); (b) bromocriptine alternative; (3) **monitor** — prolactin level + MRI in 1-3 mo + repeat visual field; expect rapid normalization prolactin + tumor shrinkage 30-50% within months; vision recovery often rapid; (4) **surgical (transsphenoidal)** — second-line if medical fails or intolerance, or apoplexy, or CSF leak; (5) **radiation** — last resort; (6) **rule out hypopituitarism** — cortisol, ACTH, TSH/FT4, FSH/LH/E2, GH/IGF-1; treat as needed; (7) **etiology hyperprolactinemia** ddx — physiologic (pregnancy/lactation/stress/sleep/sex), medications (antipsychotics, metoclopramide, opioids, methyldopa), hypothyroidism (always check TSH), renal failure, hepatic, chest wall stim, idiopathic, macroadenoma; (8) **fertility** — restore ovulation usually with treatment; pregnancy possible — cabergoline can be continued if needed (older data bromocriptine more data — switch when pregnancy planned); microadenoma low risk in pregnancy (monitor visual field); macroadenoma may need surgical resection pre-pregnancy or close monitoring; (9) **counseling** — long-term often required (may discontinue if normalized > 2 yr + tumor shrunk)"
+      },
+      {
+        "label": "C",
+        "text": "Cesarean delivery"
+      },
+      {
+        "label": "D",
+        "text": "Antibiotic alone"
+      },
+      {
+        "label": "E",
+        "text": "Hysterectomy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Prolactinoma: dopamine agonist first-line even macroadenoma with mass effect. Cabergoline preferred. Rapid tumor shrinkage + vision recovery. Workup hyperprolactinemia ddx (meds, hypothyroid). Restore fertility. Pregnancy considerations. Surgery second-line.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "Endocrine Society Hyperprolactinemia 2011; Pituitary Society 2023"
+  },
+  {
+    "scenario": "หญิงอายุ 16 ปี G1P0 GA 32 wk teen pregnancy — มา ANC ครั้งแรก ตอน 32 wk, no prior care, denies STIs/substance use, lives with grandmother (parents absent), high school dropped out, anemia\n\nV/S: BP 108/68, HR 88\nGen: thin, BMI 18\nFetal: FHR 148, fundal height 28 cm (small for GA)\nLab: Hb 8.2, MCV 78, ferritin 9, β-hCG positive (already known), VDRL negative, HIV negative, HBsAg negative, urine WNL\nUS: singleton, EFW 1,300 g (< 5th percentile), AFI 8, no anomaly",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge without follow-up"
+      },
+      {
+        "label": "B",
+        "text": "**Adolescent pregnancy** (especially with late ANC + small for GA + anemia + social vulnerability) — multidisciplinary comprehensive care: (1) **non-judgmental + youth-friendly approach** — confidentiality, autonomy, trust-building; (2) **medical** — iron supplementation (ferrous sulfate + vit C; consider IV iron if intolerance/severe), nutritional counseling, weight gain target (BMI 18 underweight — recommend 12.5-18 kg gain), folic acid, calcium, fetal surveillance + growth US q 3-4 wk + Doppler if FGR, NST/BPP from 32 wk; (3) **risk awareness** — teen pregnancy ↑ preterm, PE, LBW, anemia, depression, social isolation; FGR present → workup placental insufficiency, smoking/substance, hypertension, infection; (4) **STI/HIV/hepatitis screening complete** + repeat 3rd trimester; **immunization** — Tdap 27-36 wk, flu, COVID; (5) **mental health** — PHQ-9/EPDS, screen depression + anxiety + IPV + self-harm; (6) **social work** — housing, food security, family support, legal (parental notification varies by jurisdiction — Thai law: under 18 needs parental consent for some decisions but ANC + emergency confidentiality), education continuation, financial support (Thai government child allowance), enrollment in maternal-child health programs; (7) **birth preparation** — childbirth education, breastfeeding counseling, doula/support person; (8) **delivery + postpartum** — vaginal delivery favored if no obstetric contra; teen pelvis usually adequate; postpartum contraception **LARC (implant, IUD)** at delivery — reduces repeat teen pregnancy (highest-impact intervention); (9) **breastfeeding** support; (10) **infant care** + home visiting nurse + pediatric follow-up; (11) Thai context — 1663 hotline; teen-friendly clinics; school continuation policies; (12) **prevent recurrence** — comprehensive sex ed + LARC promotion"
+      },
+      {
+        "label": "C",
+        "text": "Cesarean immediately"
+      },
+      {
+        "label": "D",
+        "text": "Refuse care"
+      },
+      {
+        "label": "E",
+        "text": "Methotrexate"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Adolescent pregnancy: multidisciplinary. Late ANC + FGR + anemia + social risk. Youth-friendly. Iron + nutrition + growth surveillance. STI/HIV. Mental health. Social work + education. Postpartum LARC reduces repeat. Thai 1663 hotline + teen clinics + child allowance. Prevention: sex ed.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Committee Opinion 803: Teen Pregnancy; SAHM Adolescent Pregnancy Care"
+  },
+  {
+    "scenario": "หญิงอายุ 30 ปี G2P1 GA 28 wk ลื่นล้มเดิน + leg DVT acute — R leg painful + swollen + warmth × 2 d\n\nV/S: BP 116/72, HR 92, RR 18, SpO2 98% RA\nGen: R lower limb edema + erythema + Homan's sign +\nFetal: FHR 144 reactive\nDoppler US: R popliteal + femoral DVT extending to iliac\nLab: CBC normal, no coagulopathy, D-dimer 4,200",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge with PO aspirin"
+      },
+      {
+        "label": "B",
+        "text": "**DVT in pregnancy** — anticoagulation **LMWH** (does NOT cross placenta, safer than warfarin in pregnancy): (1) **anticoagulation initiation** — **LMWH enoxaparin 1 mg/kg SC BID** (therapeutic) — weight-based, adjust anti-Xa levels (peak 4 hr post-dose target 0.6-1.0 IU/mL prophylactic; 0.8-1.2 therapeutic); (2) **alternatives** — UFH IV (if labor imminent, renal failure, thrombolysis planned); avoid warfarin (teratogenic, fetal hemorrhage); avoid DOACs in pregnancy (insufficient data); (3) **rule out PE** — clinical assessment, oxygenation, ECG; CTPA if suspected (lower fetal radiation than V/Q); (4) **duration** — minimum 3 mo + continue through pregnancy + **6 wk postpartum** (overall ≥ 6 mo treatment); (5) **adjustments** — postpartum can transition to warfarin (safe in breastfeeding) bridge with LMWH × 5 d + INR therapeutic; (6) **delivery planning** — switch LMWH to UFH at 36-37 wk for flexibility (UFH t½ shorter, reversible with protamine, allows regional anesthesia); plan induction; **hold LMWH 24 hr before scheduled procedure** (12 hr prophylactic, 24 hr therapeutic); resume 6-12 hr postpartum if hemostatic; (7) **regional anesthesia** — wait 24 hr after therapeutic LMWH; (8) **mechanical** — early ambulation, compression stockings; (9) **thrombolysis** — massive PE only (postpartum bleed risk); IVC filter if anticoagulation contraindicated; (10) **workup thrombophilia** — postpartum off anticoagulation (pregnancy makes results unreliable); future pregnancies → prophylaxis LMWH; (11) **family** counseling + bleeding precautions"
+      },
+      {
+        "label": "C",
+        "text": "Aspirin alone"
+      },
+      {
+        "label": "D",
+        "text": "Discharge — observe"
+      },
+      {
+        "label": "E",
+        "text": "Methotrexate"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "DVT pregnancy: LMWH therapeutic (1 mg/kg BID). Avoid warfarin (teratogen) + DOACs (no data). Duration: 3 mo + through pregnancy + 6 wk postpartum. Switch UFH at 36-37 wk. Hold for delivery. Regional anesthesia 24 hr off LMWH. Postpartum bridge to warfarin (safe breastfeeding). Future pregnancy prophylaxis.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Practice Bulletin 196: Thromboembolism in Pregnancy; ASH 2018 VTE in Pregnancy"
+  },
+  {
+    "scenario": "หญิงอายุ 30 ปี G3P2 GA 12 wk underlying CKD stage 3a (baseline Cr 1.6, eGFR 45), pre-existing proteinuria 1+ baseline, hypertension on losartan 50 mg/d pre-pregnancy\n\nV/S: BP 138/86, HR 76\nGen: well\nFetal: heart present, dating CRL matches LMP\nLab: Cr 1.7, eGFR 42, urine protein/Cr 0.9, K 4.2, Hb 10.5, no preeclampsia features",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue losartan"
+      },
+      {
+        "label": "B",
+        "text": "**CKD in pregnancy** — high-risk, multidisciplinary (nephrology + MFM): (1) **stop teratogenic medications** — **discontinue losartan (ARB) immediately** — ACEI/ARB cause fetal renal dysgenesis + oligohydramnios + skull hypoplasia + fetal death (2nd-3rd trimester especially; even 1st trimester risk); switch to **safe antihypertensive** — labetalol, nifedipine ER, methyldopa; target BP 110-140/85 (CHAP); (2) **assess baseline + monitor** — eGFR, urine protein/Cr or 24-hr, K, P, Ca, Hb, BP; serial monitoring q 2-4 wk early then more frequent; (3) **risk stratification** — Cr > 1.4 mg/dL = ↑ risk progression CKD + adverse OB outcomes (preeclampsia, FGR, preterm, perinatal mortality); dialysis-dependent — fertility lower, very high-risk pregnancy; (4) **aspirin 81-150 mg/d from 12-16 wk to delivery** — preeclampsia prevention (CKD = high risk); (5) **proteinuria** — distinguish baseline vs preeclampsia (new doubling, severe features); (6) **anemia** — iron + ESA (erythropoietin safe); (7) **fetal surveillance** — anatomy scan, serial growth q 4 wk, NST/BPP from 28-32 wk; (8) **delivery timing** — individualized based on maternal-fetal status; aim for term if stable; earlier if maternal deterioration or fetal compromise; (9) **postpartum** — kidney function reassess; may resume ACEI/ARB postpartum (avoid in breastfeeding — though enalapril/captopril considered compatible by Hale's); (10) **dialysis pregnancy** — intensify hemodialysis (> 36 hr/wk improves outcomes); (11) **preconception counseling** ideal — optimize BP + proteinuria + transplantation; (12) **post-transplant pregnancy** — wait 1-2 yr, stable function, switch teratogenic immunosuppressants (mycophenolate → azathioprine)"
+      },
+      {
+        "label": "C",
+        "text": "Continue all meds without change"
+      },
+      {
+        "label": "D",
+        "text": "Cesarean immediately at 12 wk"
+      },
+      {
+        "label": "E",
+        "text": "Methotrexate"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "CKD pregnancy: stop ACEI/ARB (teratogenic). Switch to labetalol/nifedipine/methyldopa. Aspirin PE prevention. Cr > 1.4 high risk. Monitor closely. Preconception counseling. Dialysis intensify. Post-transplant: 1-2 yr after, stable, change immunosuppressants. Multidisciplinary.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Practice Bulletin 202: Pregnancy in Women with Renal Disease; KDIGO Pregnancy + CKD"
+  },
+  {
+    "scenario": "Resident ถามอาจารย์เรื่อง fetal lung development + surfactant + RDS pathophysiology",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Surfactant produced from week 12"
+      },
+      {
+        "label": "B",
+        "text": "Fetal lung development + surfactant: (1) **stages**: (a) embryonic 4-6 wk (lung bud), (b) pseudoglandular 5-17 wk (airways branching), (c) canalicular 16-25 wk (vascularization, terminal sacs, first surfactant ~ 24 wk), (d) saccular 24-40 wk (alveolar precursors), (e) alveolar 36 wk → 8 yr (alveolarization continues); (2) **surfactant** — produced by **type II pneumocytes** from ~ 24 wk, mature production by 35-36 wk; (3) **composition** — 90% phospholipids (primarily **DPPC — dipalmitoylphosphatidylcholine = lecithin**), 10% proteins (SP-A, B, C, D — B + C surface activity, A + D innate immunity), small amount neutral lipids; (4) **function** — reduces alveolar surface tension → prevents alveolar collapse on expiration + ↓ work of breathing + maintains FRC + improves compliance; (5) **fetal lung maturity tests** (mostly historical now): **L/S ratio** (lecithin/sphingomyelin) ≥ 2 = mature; **phosphatidylglycerol** (PG) presence = mature even in DM; **TDx-FLM**; foam stability index — modern obstetrics uses GA + amniocentesis only for select cases; (6) **antenatal corticosteroids (betamethasone)** induce type II pneumocyte surfactant production + alveolar maturation + edema clearance → reduces RDS, IVH, NEC, mortality (Liggins 1972; Cochrane meta-analysis); (7) **postnatal surfactant therapy** — exogenous (Survanta/poractant) intratracheal for RDS/preterm; (8) **RDS pathophysiology** — surfactant deficiency → alveolar collapse → V/Q mismatch → hypoxia + hypercarbia + acidosis + hyaline membrane formation; X-ray: ground-glass + air bronchograms + low volume; (9) **prevention** — antenatal steroids 24-34 wk (extend to 34-36+6 wk ALPS trial); avoid unnecessary late preterm/term elective delivery; (10) maternal DM → delayed lung maturity (hyperinsulinemia inhibits surfactant) — PG important marker"
+      },
+      {
+        "label": "C",
+        "text": "Type I pneumocytes produce surfactant"
+      },
+      {
+        "label": "D",
+        "text": "L/S ratio mature at 1"
+      },
+      {
+        "label": "E",
+        "text": "Surfactant unrelated to RDS"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Fetal lung dev stages. Surfactant from type II pneumocytes from 24 wk. DPPC + proteins SP-A/B/C/D. Reduces surface tension. Antenatal steroids mature lungs. RDS = surfactant deficiency. L/S ratio + PG historic markers. DM delays maturity. ALPS late preterm steroids 34-36+6 wk.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "Avery Diseases of the Newborn 10e; ACOG Antenatal Corticosteroids 713"
+  },
+  {
+    "scenario": "Resident ถามอาจารย์เรื่อง pelvic anatomy + planes of labor + Caldwell-Moloy pelvis types",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Caldwell-Moloy: 3 types only"
+      },
+      {
+        "label": "B",
+        "text": "Pelvic anatomy + obstetric planes: (1) **bony pelvis** — false pelvis (above linea terminalis, supports abdo) + true pelvis (below — birth canal); (2) **pelvic inlet** — boundaries: sacral promontory, alae, linea terminalis, pubic crest; transverse ~ 13.5 cm, AP (true conjugate ~ 11 cm); important: **obstetric conjugate** ~ 10 cm (shortest AP — promontory to inner pubic symphysis); **diagonal conjugate** (clinically measured: lower symphysis to promontory, normal ≥ 11.5 cm); (3) **midpelvis** — narrowest plane; ischial spines (transverse 10 cm); **interspinous diameter ≥ 10 cm** for vaginal delivery; (4) **pelvic outlet** — pubic arch, ischial tuberosities (transverse ~ 11 cm), tip of coccyx; subpubic angle > 90° favorable; (5) **Caldwell-Moloy classification** (4 types based on inlet): (a) **gynecoid** (50%) — round inlet, wide subpubic angle, best for vaginal delivery; (b) **android** (30%, male-type) — heart-shaped, narrow subpubic, prominent spines, ↑ arrest of labor + OP; (c) **anthropoid** (25%) — AP > transverse oval, narrow transverse, OP/OA presentations common, often allows vaginal; (d) **platypelloid** (3%) — flat, wide transverse + narrow AP, transverse arrest, often C/S; (6) **clinical pelvimetry** — diagonal conjugate, ischial spine prominence, subpubic angle, sacrum curvature, sidewalls; not predictive enough for routine C/S decision — trial of labor; (7) **cardinal movements of labor** — engagement, descent, flexion, internal rotation, extension, restitution, external rotation, expulsion; (8) **station** — ischial spines = 0; -5 high to +5 crowning; (9) **soft tissues** — pelvic floor muscles (levator ani — pubococcygeus, iliococcygeus, puborectalis) + perineal membrane + supportive ligaments; (10) **abnormalities** — contracted inlet (< 10 cm conjugate), midpelvis, outlet → may need C/S"
+      },
+      {
+        "label": "C",
+        "text": "Pelvic outlet has 5 types"
+      },
+      {
+        "label": "D",
+        "text": "Diagonal conjugate is the shortest diameter"
+      },
+      {
+        "label": "E",
+        "text": "Android most common pelvis type"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pelvic anatomy: inlet/mid/outlet planes. Obstetric conjugate shortest AP. Caldwell-Moloy 4 types — gynecoid best. Cardinal movements 8. Station ischial spines. Pelvic floor levator ani. Soft tissue + bony assessment.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "Williams Obstetrics 26e Ch 2; Cunningham Anatomy"
+  },
+  {
+    "scenario": "Resident ถามอาจารย์เรื่อง teratology — principles + medication categories + common teratogens",
+    "choices": [
+      {
+        "label": "A",
+        "text": "All medications equally safe in pregnancy"
+      },
+      {
+        "label": "B",
+        "text": "Teratology principles: (1) **6 principles (Wilson)**: (a) **genotype** of conceptus + interaction with environment; (b) **stage of development** at exposure — fertilization (all-or-none), embryonic period 3-8 wk (organogenesis — highest risk structural), fetal period (functional + growth); (c) **mechanism** specific (folate antagonist, DNA damage, receptor); (d) **agent type** + chemical/biologic properties; (e) **dose-dependent** + threshold (some); (f) **manifestations** — death, malformation, growth restriction, functional disorder; (2) **FDA categories obsolete (A/B/C/D/X)** — replaced 2015 by **Pregnancy + Lactation Labeling Rule (PLLR)** — narrative summary of risk; (3) **common teratogens + effects**: (a) **alcohol** — fetal alcohol spectrum disorder (FAS — short palpebral fissures, smooth philtrum, thin upper lip, growth, CNS); no safe dose; (b) **isotretinoin** — high risk craniofacial, cardiac, CNS, abortion; iPledge program; (c) **valproate** — NTD, cleft lip/palate, cardiac, neurodevelopmental; switch preconception; (d) **warfarin** — embryopathy (nasal hypoplasia, stippled epiphyses); fetal hemorrhage; (e) **ACEI/ARB** — renal dysgenesis, oligohydramnios, skull hypoplasia (2nd-3rd trimester); (f) **lithium** — Ebstein anomaly (cardiac); risk vs untreated bipolar; (g) **methotrexate, mycophenolate, cyclophosphamide** — abortion, malformation; (h) **phenytoin** — fetal hydantoin syndrome; (i) **tetracycline, doxycycline** — teeth staining + bone (after 14 wk); (j) **streptomycin/gentamicin** — ototoxicity; (k) **fluoroquinolone** — cartilage (mostly animal data, generally avoid); (l) **statins** — controversial, recently relabeled less risk; (m) **misoprostol** — Möbius sequence; (n) **DES** — vaginal clear cell, T-shaped uterus; (o) **thalidomide** — limb phocomelia; (p) **NSAIDs** — DA closure 3rd trimester, oligohydramnios; (q) **paroxetine** — small ↑ cardiac defects; (4) **infections** — TORCH (toxo, rubella, CMV, HSV, syphilis, Zika, VZV, parvovirus B19); (5) **maternal disease** — DM (cardiac, NTD, caudal regression), PKU (CHD, microcephaly), thyroid; (6) **environmental** — radiation (high dose), lead, mercury; (7) **preconception counseling** — medication review, optimize disease, folate; (8) resources — Mother to Baby (MotherToBaby), LactMed, Reprotox"
+      },
+      {
+        "label": "C",
+        "text": "Warfarin is safe in pregnancy"
+      },
+      {
+        "label": "D",
+        "text": "Ace inhibitors are safe in pregnancy"
+      },
+      {
+        "label": "E",
+        "text": "Valproate is safest antiepileptic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Teratology: Wilson's 6 principles. PLLR replaced FDA categories. Common teratogens — alcohol, isotretinoin, valproate, warfarin, ACEI/ARB, lithium, methotrexate. TORCH infections. DM, PKU. Preconception counseling. MotherToBaby resource.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "Cunningham Williams Obstetrics; FDA PLLR 2015; Briggs Drugs in Pregnancy"
+  },
+  {
+    "scenario": "Resident ถามอาจารย์เรื่อง bone metabolism + menopause + osteoporosis pathophysiology",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Estrogen increases bone resorption"
+      },
+      {
+        "label": "B",
+        "text": "Bone metabolism + menopause + osteoporosis: (1) **bone remodeling** — continuous balance of osteoclast resorption + osteoblast formation; coupled cycle; (2) **estrogen role** — **inhibits osteoclast activity** (via RANKL/OPG balance), promotes osteoblast survival, ↓ inflammatory cytokines (IL-6, TNF); menopause → estrogen withdrawal → ↑ osteoclast → ↑ resorption → rapid trabecular bone loss especially first 5 yr (~ 2-3%/yr) then 1%/yr; (3) **peak bone mass** — achieved by age 25-30; influenced by genetics, nutrition (calcium, vit D), exercise, hormonal status; (4) **osteoporosis** — T-score ≤ -2.5 on DEXA (lumbar spine, hip, distal radius); osteopenia T-score -1.0 to -2.5; (5) **risk factors** — age, female, postmenopausal, low BMI, family history, smoking, alcohol, glucocorticoid, anticonvulsant, GnRH agonist (chronic), aromatase inhibitor, early menopause, hypogonadism, hyperparathyroid, hyperthyroid, hypovitamin D, malabsorption, RA, CKD; (6) **fracture risk** — vertebral, hip, distal radius (Colles); FRAX 10-yr risk; (7) **screening DEXA** — women ≥ 65, postmenopausal < 65 with risk factors (USPSTF); Thai recommendations similar; (8) **prevention** — calcium 1,200 mg/d + vit D 800-1,000 IU/d, weight-bearing exercise, smoking/alcohol cessation, fall prevention; (9) **pharmacologic treatment** — (a) **bisphosphonates** (alendronate, risedronate, zoledronate) — first-line — antiresorptive; (b) **denosumab** — monoclonal Ab against RANKL — antiresorptive; (c) **raloxifene** (SERM) — bone + breast cancer prevention, ↑ VTE; (d) **teriparatide, abaloparatide** — PTH analog anabolic; (e) **romosozumab** — sclerostin antibody anabolic + antiresorptive; (f) **MHT** — estrogen for menopausal symptoms + bone (not first-line for osteoporosis alone post WHI); (g) **calcitonin** — limited; (10) **monitoring** — DEXA q 1-2 yr on therapy; (11) Thai context — RTCOG osteoporosis guidelines; calcium dietary often low"
+      },
+      {
+        "label": "C",
+        "text": "Bisphosphonate stimulates osteoblast"
+      },
+      {
+        "label": "D",
+        "text": "Osteoporosis T-score > 2.5"
+      },
+      {
+        "label": "E",
+        "text": "Calcitonin is first-line"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Bone metabolism: estrogen inhibits osteoclasts (RANKL/OPG). Menopause → bone loss. Osteoporosis T ≤ -2.5. DEXA screening ≥ 65 (or earlier with risk). Prevention: Ca/vit D + exercise. Bisphosphonate first-line. Denosumab, teriparatide, romosozumab newer. MHT for menopause symptoms + bone benefit.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "NAMS Position Statement; AACE/ACE Osteoporosis 2020; NOF Clinician Guide"
+  },
+  {
+    "scenario": "Rural Thai hospital implements telemedicine for ANC consultation with MFM + remote OB ultrasound interpretation",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Telemedicine is not feasible"
+      },
+      {
+        "label": "B",
+        "text": "**Telemedicine in OB** — expanded access + quality: (1) **synchronous video consultations** with MFM/specialty for high-risk pregnancies — diabetes, HTN, cardiac, complex anomalies; (2) **remote US interpretation** — tele-ultrasound — local sonographer scans, expert remote review (real-time or store-and-forward); (3) **continuous monitoring** — wearables (BP, glucose), home NST devices, remote PT monitoring; (4) **ANC visit modifications** — hybrid model — fewer in-person + telehealth for routine visits in low-risk pregnancies; (5) **postpartum + lactation support** virtual; (6) **rural + underserved access** — reduces travel + costs + improves equity; (7) **mental health** — perinatal psychiatry telehealth; (8) **education** — virtual childbirth classes, BF support groups; (9) **considerations**: (a) ensure adequate technology + bandwidth + privacy/security (HIPAA equivalent), (b) appropriate triage — some visits need in-person (BP, fundal height, fetal heart, exam, US), (c) clear protocols for escalation, (d) cultural + language considerations, (e) reimbursement structure, (f) provider training, (g) patient acceptance + technology literacy; (10) **evidence** — COVID-era data — telemedicine ANC non-inferior in low-risk + improves attendance; (11) **Thai context** — National Telemedicine Policy 2020; Bumrungrad/Bangkok hospitals leaders; expansion to rural areas via Ministry of Public Health (สอ./รพ.สต.); (12) **integration** — with EMR, regional health systems, referral network"
+      },
+      {
+        "label": "C",
+        "text": "Eliminate in-person ANC entirely"
+      },
+      {
+        "label": "D",
+        "text": "Use only paper records"
+      },
+      {
+        "label": "E",
+        "text": "Refuse new technology"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Telemedicine in OB: ANC for low-risk hybrid, MFM consults, tele-US, remote monitoring, postpartum, mental health. Equity + access. Safeguards: technology, privacy, escalation, training. Thai context: National Telemedicine Policy, rural expansion. Evidence COVID-era favorable.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Committee Opinion 798: Telehealth; Thai MOPH Telemedicine Policy"
+  },
+  {
+    "scenario": "Hospital implements I-PASS handoff bundle on Labor & Delivery to reduce harm from communication failures",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Skip handoffs"
+      },
+      {
+        "label": "B",
+        "text": "**I-PASS handoff** (structured handoff communication, evidence reduces preventable adverse events ~ 30%): (1) **I — Illness severity** — sick/getting sick/watcher/stable; (2) **P — Patient summary** — concise SBAR-like summary; (3) **A — Action list** — to-do items with owners + timeline; (4) **S — Situation awareness + contingency planning** — anticipated problems + 'if-then' plans; (5) **S — Synthesis by receiver** — receiver summarizes + asks clarifying questions (closed-loop); **implementation OB**: (a) shift change L&D + antepartum + postpartum + nursery; (b) standardized template/checklist embedded in EMR; (c) protected time + minimize interruptions; (d) bedside huddles + bedside handoffs ('hello to patient'); (e) simulation training + champions + audit; (6) **specific OB high-risk handoff scenarios** — laboring patient changing shift, OR-to-PACU, antepartum-to-L&D, L&D-to-postpartum, postpartum-to-newborn nursery; (7) **emergency code handoffs** — closed-loop SBAR; (8) **measurement** — observed handoff quality, miscommunication rate, adverse events, near-misses; (9) **culture** — psychological safety, speak-up; (10) **special — pregnant patient transfer between hospitals** — clear documentation + advance call + accepting MD + transfer summary + accompanying staff per acuity"
+      },
+      {
+        "label": "C",
+        "text": "Use only verbal informal"
+      },
+      {
+        "label": "D",
+        "text": "Skip patient summary"
+      },
+      {
+        "label": "E",
+        "text": "No standardization"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "I-PASS handoff: Illness severity, Patient summary, Action list, Situation awareness, Synthesis. Evidence reduces adverse events ~ 30%. OB-specific scenarios — shift change, OR-to-PACU, transfers. Embedded in EMR. Bedside. Simulation. Measurement. Culture of safety.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "I-PASS Handoff Bundle Starmer NEJM 2014; ACGME Common Program Requirements"
+  },
+  {
+    "scenario": "Ministry establishes levels of maternal care system to match patient acuity to facility capability",
+    "choices": [
+      {
+        "label": "A",
+        "text": "All hospitals equal capability"
+      },
+      {
+        "label": "B",
+        "text": "**Levels of Maternal Care** (ACOG/SMFM 2019 / WHO regionalization): standardizes facility capability + matches patient acuity → improves outcomes (similar concept to neonatal levels): (1) **Birth Center / Level I (Basic Care)** — uncomplicated, low-risk, term singleton vertex; immediate stabilization + transfer for complications; midwifery model; (2) **Level I (Basic Hospital)** — care of low to moderate-risk pregnancies; 24/7 OB/midwife + anesthesia available; ability to perform emergency C/S; immediate transfer for higher levels; (3) **Level II (Specialty)** — high-risk including moderate complications (e.g., GDM on insulin, mild preeclampsia); 24/7 obstetrician + anesthesia + level II NICU (≥ 32 wk); MFM consultation available; (4) **Level III (Subspecialty)** — comprehensive — major maternal medical conditions, severe obstetric complications; 24/7 MFM + anesthesia + level III NICU + adult ICU + medical specialists; surgical capability including cesarean hysterectomy; blood bank + IR; (5) **Level IV (Regional Perinatal Health Care Centers)** — most complex — placenta accreta spectrum, complex cardiac, transplant, ECMO; on-site full subspecialty; training + research + outreach; (6) **transfer criteria + system** — early transfer better than late (in-utero transfer when possible); referral network; bidirectional (back-transport stable to home hospital); (7) **regulations + verification** — facility self-attestation + accreditation; (8) **Thai context** — Health Ministry levels (สถานีอนามัย/รพ.สต. → รพ.ชุมชน → รพ.ทั่วไป → รพ.ศูนย์ → รพ.มหาวิทยาลัย); MCH boards; (9) **equity** — geographic + financial access; (10) **outcomes** — improved when matched care; sentinel events with mismatch; (11) **research/data sharing**; (12) **drills + simulation** + interfacility coordination"
+      },
+      {
+        "label": "C",
+        "text": "Eliminate referral system"
+      },
+      {
+        "label": "D",
+        "text": "All low-risk to tertiary"
+      },
+      {
+        "label": "E",
+        "text": "Skip transfers"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Levels of Maternal Care: birth center, Level I-IV. Match acuity to capability. In-utero transfer preferable. Regional Perinatal Centers most complex. Thai system: รพ.ศูนย์/มหาวิทยาลัย. Accreditation + verification. Outcomes improved with matched care.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG/SMFM Obstetric Care Consensus 9: Levels of Maternal Care 2019"
+  },
+  {
+    "scenario": "Quality improvement project — reducing primary C-section rate (NTSV — nulliparous term singleton vertex) without compromising safety",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Increase C-sections"
+      },
+      {
+        "label": "B",
+        "text": "**NTSV C-section rate reduction** (CMS quality measure; benchmark ≤ 23.6% target; safe vaginal birth + reduce primary C/S → reduces subsequent C/S + accreta): evidence-based interventions: (1) **labor management** — (a) **adopt Friedman → newer labor curves (Consortium on Safe Labor, Zhang 2010)** — active labor starts at 6 cm not 4 cm; allow more time before diagnosing arrest disorders; (b) **arrest of dilation criteria** — no progress 4 hr adequate contractions OR 6 hr inadequate contractions after 6 cm dilation (ACOG/SMFM Safe Prevention of Primary C-Section); (c) **arrest of descent** — push 3 hr nullip with epidural (4 hr possible) before C/S; (2) **induction of labor** — (a) allow latent phase 24 hr in induced labor before failure dx; (b) ARRIVE trial — IOL at 39 wk in low-risk nullip doesn't ↑ C/S; (3) **continuous labor support** — doulas/midwifery model reduces C/S; (4) **fetal heart rate** — accurate NICHD interpretation, intrauterine resuscitation, scalp stim, fetal scalp blood, restrict cesarean to category III + persistent II; (5) **breech** — offer ECV at 37 wk; vaginal breech selective; (6) **TOLAC** — appropriate selection + availability; (7) **prenatal education** — preferences, expectations, when to come in (4-1-1 rule), avoid early labor admission; (8) **provider feedback + audit** — share NTSV rates by provider + practice; (9) **culture** — patient choice, shared decision; (10) **data systems** — collaborative (CMQCC, ACOG Council); (11) **payment reform** — bundled payment removing financial incentive C/S; (12) **simulation + workforce** — vaginal breech, operative vaginal skills"
+      },
+      {
+        "label": "C",
+        "text": "Eliminate fetal monitoring"
+      },
+      {
+        "label": "D",
+        "text": "Force vaginal delivery without consent"
+      },
+      {
+        "label": "E",
+        "text": "Cesarean for all"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Reduce NTSV C/S: Zhang labor curves (active labor 6 cm), longer latent + active + 2nd stage tolerance, ARRIVE 39-wk IOL, continuous support, NICHD CTG, ECV breech, TOLAC, education. Provider audit + culture + payment reform. CMQCC + CMS measure benchmark.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG/SMFM Safe Prevention of Primary C-Section Care Consensus 1 2014; CMQCC Toolkit"
+  },
+  {
+    "scenario": "หญิงอายุ 26 ปี G2P1 GA 12 wk underlying SLE on HCQ + low-dose prednisone, recently flared with arthritis + proteinuria 1g/d + ANA + anti-dsDNA + low C3 — on stable doses\n\nV/S: BP 138/86, HR 92\nGen: malar rash + arthritis active\nFetal: heart present, dating correct, normal early US\nLab: Hb 10.8, plt 145K, Cr 0.8, urine protein/Cr 0.9, anti-dsDNA elevated, low C3, anti-Ro/La positive, antiphospholipid Ab negative",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Stop all medications"
+      },
+      {
+        "label": "B",
+        "text": "**SLE in pregnancy** — high-risk multidisciplinary (rheumatology + MFM + neonatology): (1) **preconception planning** — disease quiescent ≥ 6 mo, no active nephritis, controlled HT, safe medications, normal renal function; (2) **continue safe medications** — **HCQ continue** (reduces flares + congenital heart block + neonatal lupus + thrombosis + preeclampsia); **low-dose prednisone** (< 20 mg/d) if needed; **azathioprine** if more immunosuppression; **avoid** — mycophenolate (teratogen — switch to azathioprine), cyclophosphamide, methotrexate; (3) **flare management** — distinguish from preeclampsia (often difficult — both can have proteinuria, HT, low plt); ↑ prednisone for flare; pulse methylprednisolone severe; (4) **APS (antiphospholipid syndrome) workup** — lupus anticoagulant, anti-cardiolipin IgG/IgM, anti-β2GP1; **if positive** — aspirin + prophylactic LMWH (history thrombosis) or aspirin alone (no thrombosis); (5) **preeclampsia prevention** — **aspirin 81-150 mg/d from 12-16 wk** (high-risk); (6) **anti-Ro/La positive** → fetal echo serial (q 1-2 wk from 16-28 wk) for **congenital heart block + neonatal lupus**; if 1°-2° AV block → consider dexamethasone + IVIG (controversial); 3° AV block irreversible; (7) **fetal surveillance** — anatomy scan, growth, NST/BPP; FGR + preterm risk; (8) **delivery timing** — 38-39 wk uncomplicated; earlier if maternal/fetal compromise; vaginal preferred; (9) **postpartum** — **flare risk** common — continue therapy; breastfeeding compatible with HCQ, low-dose prednisone, azathioprine; (10) **monitor** — labs q 4-6 wk (CBC, Cr, urine protein/Cr, anti-dsDNA, C3/C4, LFT); BP; (11) future pregnancy planning + contraception (avoid estrogen if APS+; progestin OK; IUD OK); (12) Thai SLE community + support"
+      },
+      {
+        "label": "C",
+        "text": "Cesarean immediately"
+      },
+      {
+        "label": "D",
+        "text": "Stop HCQ"
+      },
+      {
+        "label": "E",
+        "text": "Methotrexate"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "SLE pregnancy: HCQ continue (vital), prednisone low-dose, azathioprine if needed. Avoid MMF/cyclophosphamide/MTX. Aspirin PE prevention. APS workup + treatment. Anti-Ro/La → fetal echo congenital heart block. Multidisciplinary. Postpartum flare. Breastfeeding safe with most. Distinguish flare vs PE difficult.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "EULAR/ACR SLE in Pregnancy 2020; ACOG Practice Bulletin 234"
+  },
+  {
+    "scenario": "หญิงอายุ 24 ปี G1P0 GA 28 wk active opioid use disorder (heroin daily) + alcohol + cannabis use, IDU history, no recent overdose, HIV/HCV unknown\n\nV/S: BP 122/76, HR 102, RR 18\nGen: track marks both forearms, dental decay, withdrawal signs mild\nFetal: FHR 158 reactive, EFW 1,100 g (10th percentile)\nLab: urine tox positive opioid + cannabis + cocaine, anti-HIV + HCV Ab pending, HBsAg pending, TSH normal, syphilis VDRL pending",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Refuse care + discharge"
+      },
+      {
+        "label": "B",
+        "text": "**Substance use disorder (SUD) in pregnancy** — comprehensive harm-reduction + treatment + non-judgmental + multidisciplinary: (1) **opioid use disorder (OUD)** — **medication for opioid use disorder (MOUD)** — **methadone** (clinic-based, daily; safe + recommended in pregnancy; stabilizes mother + fetus; reduces overdose, illicit use, transmission; safe in lactation; can ↑ dose 2nd-3rd trimester due to metabolism) OR **buprenorphine** (now first-line option per recent ACOG — outpatient prescribing; better neonatal outcomes — shorter NAS, less severe; mono product preferred over combo with naloxone — though combo now considered acceptable); (2) **AVOID detoxification/withdrawal during pregnancy** — high relapse + overdose risk; agonist therapy preferred; (3) **prenatal care comprehensive** — frequent visits, social work, addiction medicine, mental health, peer support; (4) **infection screening** — HIV, HBV, HCV, syphilis, GC/CT, TB; treatment per status; HBV vaccination if susceptible; HCV — DAA postpartum (some safety in pregnancy now); (5) **other substances** — alcohol (no safe — refer SBIRT, AA, naltrexone postpartum), cannabis (avoid — neurodevelopmental); cocaine/meth (avoid — abruption, FGR, vasoconstriction); benzo (taper carefully); tobacco (NRT, varenicline limited data, contingency); (6) **fetal surveillance** — growth + NST/BPP (FGR risk); (7) **labor management** — continue MOUD; avoid agonist-antagonist (precipitates withdrawal); adequate analgesia (will need higher doses opioid for pain on top of maintenance — non-opioid adjuncts); epidural OK; (8) **neonatal** — **Neonatal Abstinence Syndrome (NAS) / NOWS** — eat-sleep-console approach + morphine/methadone PRN; rooming-in + breastfeeding (if mother stable on MOUD + not using illicit) reduces NAS severity; (9) **postpartum** — high relapse + overdose mortality risk — continuity + naloxone Rx + harm reduction + LARC contraception; (10) **legal** — Thai law: not mandatory reporting SUD pregnancy but DCFS varies; offer voluntary treatment, support family; (11) **stigma reduction** — language ('person with SUD' not 'addict'); (12) **Thailand resources** — Thanyarak Institute, Princess Mother addiction centers"
+      },
+      {
+        "label": "C",
+        "text": "Force C-section"
+      },
+      {
+        "label": "D",
+        "text": "Discharge without follow-up"
+      },
+      {
+        "label": "E",
+        "text": "Methotrexate"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "OUD pregnancy: MOUD (methadone or bupe). AVOID detox. Comprehensive prenatal + addiction + mental health. STI screening. Other substances. Labor: continue MOUD + adequate analgesia. NAS — eat-sleep-console. Postpartum overdose risk high. LARC. Stigma reduction. Thai Thanyarak.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Committee Opinion 711: OUD in Pregnancy; ASAM/AAFP/SMFM Guidelines"
+  },
+  {
+    "scenario": "หญิงอายุ 35 ปี G2P1 GA 30 wk underlying cardiac — peripartum cardiomyopathy diagnosed at 30 wk based on symptoms + echo EF 35% + no other cause\n\nV/S: BP 110/70, HR 110, RR 22, SpO2 95% RA\nGen: dyspnea NYHA III, mild edema legs + JVP elevated\nFetal: FHR 150 reactive, growth appropriate\nLab: BNP 1,800, troponin negative\nEcho: dilated LV, EF 35%, no valvular, no other cause",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No treatment"
+      },
+      {
+        "label": "B",
+        "text": "**Peripartum Cardiomyopathy (PPCM)** — heart failure with reduced EF (< 45%) in late pregnancy or up to 5 mo postpartum without other cause; multidisciplinary cardiology + MFM + anesthesia: (1) **diagnosis** — exclude other causes (CAD, valvular, congenital, hypertensive, etc.); echo + biomarkers (BNP); cardiac MRI; (2) **medical therapy — pregnancy-modified heart failure**: (a) **avoid in pregnancy** — ACEI/ARB (teratogenic — switch postpartum), aldosterone antagonists, ARNI; (b) **safe during pregnancy** — **hydralazine + isosorbide dinitrate** (afterload reduction), **β-blocker (metoprolol succinate, bisoprolol, labetalol)** — heart rate + remodeling; (c) **diuretic** (furosemide) for congestion — careful avoiding placental hypoperfusion; (d) **digoxin** for symptoms; (e) **anticoagulation** if EF < 35% (LV thrombus risk) — LMWH; (f) **bromocriptine** — controversial — may improve EF by inhibiting prolactin (German + Brazilian studies); standard care varies; need anticoagulation if given; (3) **arrhythmia management** — β-blocker; cardioversion safe in pregnancy; ICD if criteria; (4) **delivery timing + mode** — multidisciplinary; vaginal delivery preferred (reduce hemodynamic stress) with epidural + assisted 2nd stage (passive descent + operative vaginal if needed); C/S for obstetric indication or severe decompensation; (5) **anesthesia** — epidural preferred (reduces preload + afterload smoothly), avoid spinal (rapid changes); (6) **postpartum** — fluid shifts; risk of decompensation; continue therapy; switch to ACEI/ARB postpartum; (7) **recovery + prognosis** — 50-70% recover EF over 6-12 mo; 20-30% chronic HF; 5-10% mortality; future pregnancy risk recurrence + worsening — counsel re: avoidance especially if EF unrecovered; (8) **breastfeeding** — most cardiac meds compatible; bromocriptine suppresses; (9) **mechanical support** — refractory cases (IABP, ECMO, LVAD, transplant); (10) **screen family** — sometimes genetic dilated CM"
+      },
+      {
+        "label": "C",
+        "text": "Cesarean immediately"
+      },
+      {
+        "label": "D",
+        "text": "Discharge home"
+      },
+      {
+        "label": "E",
+        "text": "Methotrexate"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "PPCM: HF reduced EF late pregnancy → 5 mo postpartum. Multidisciplinary cardio-OB. Pregnancy-safe HF meds (hydralazine + nitrate, β-blocker, diuretic, digoxin); avoid ACEI/ARB until postpartum. Anticoagulation if EF < 35%. Bromocriptine controversial. Vaginal delivery + epidural preferred. 50-70% recover. Future pregnancy risk.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ESC PPCM Position Statement 2019; AHA Cardiovascular Disease in Pregnancy"
+  },
+  {
+    "scenario": "หญิงอายุ 30 ปี G1P0 GA 16 wk recent diagnosis breast cancer ER+ PR+ HER2- T2N0 — multidisciplinary discussion of treatment options during pregnancy\n\nV/S: BP 116/72, HR 80\nGen: 3 cm left breast mass, no node\nFetal: heart present, dating correct, anatomy scan planned 20 wk\nLab: routine WNL\nPathology: invasive ductal carcinoma, ER+ PR+ HER2-, Ki-67 30%",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Terminate pregnancy"
+      },
+      {
+        "label": "B",
+        "text": "**Breast cancer in pregnancy** — second most common malignancy in pregnancy; preserve maternal + fetal outcomes — multidisciplinary (oncology, OB-MFM, breast surgery, radiation onc, neonatology, psychology, genetics): (1) **counseling** — termination not required for treatment; outcomes maternal similar to non-pregnant matched; pregnancy not contraindication to most treatment; (2) **staging** — breast US + mammography (shielded), liver US, CXR shielded; AVOID PET + CT abdomen pelvis where possible (radiation); MRI without gadolinium safe (gadolinium avoid); breast MRI (no gadolinium suboptimal but possible); (3) **surgery** — **safe in pregnancy** — modified radical mastectomy or breast-conserving surgery (BCS); sentinel lymph node biopsy with technetium-99m safe (avoid blue dye — fetal); (4) **chemotherapy** — **avoid 1st trimester** (organogenesis); **2nd-3rd trimester safe** — anthracycline (doxorubicin, epirubicin) + cyclophosphamide + 5-FU (FAC/FEC) or AC regimen; taxanes (paclitaxel) less data but safe 2nd-3rd; (5) **AVOID in pregnancy** — **trastuzumab** (anti-HER2 — oligohydramnios + renal/pulmonary), endocrine therapy **(tamoxifen, AI)** — defer to postpartum; (6) **radiation** — avoid in pregnancy (esp upper abdomen, but breast/chest can be considered with shielding 3rd trimester if essential — usually defer to postpartum); (7) **delivery timing** — aim term (37+) for best neonatal outcomes; stop chemo 3 wk before delivery to allow marrow recovery + reduce neonatal myelosuppression; (8) **breastfeeding** — from treated breast may not be possible; non-treated breast OK during treatment if no chemo; pump + discard during chemo; (9) **postpartum complete treatment** — radiation, endocrine therapy, targeted therapy; (10) **genetic counseling** — BRCA testing — guides surgery + family; (11) **psychological + family support**; (12) Thai context — Royal Thai breast onc + MFM collaboration"
+      },
+      {
+        "label": "C",
+        "text": "Stop all care"
+      },
+      {
+        "label": "D",
+        "text": "Cesarean at 16 weeks for treatment"
+      },
+      {
+        "label": "E",
+        "text": "Methotrexate"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Breast cancer in pregnancy: surgery safe, chemo 2nd-3rd trimester safe (anthracycline + cyclophosphamide), avoid trastuzumab + tamoxifen + AI until postpartum, radiation defer. Stop chemo 3 wk pre-delivery. Term delivery. Counsel — termination not required. BRCA testing.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ESMO Cancer in Pregnancy 2013; NCCN Breast Cancer; Loibl Cancer 2012"
   }
 ]
