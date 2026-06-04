@@ -338,5 +338,175 @@
     "board_topic": "obgyn",
     "board_age_group": "adult",
     "reference_source": "ACR Imaging in Pregnancy; ACOG Committee Opinion"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง physics — CT imaging principles + dose",
+    "choices": [
+      { "label": "A", "text": "No physics relevant" },
+      { "label": "B", "text": "CT Physics + Dose: (1) **Principles**: X-ray attenuation through tissues — multiple angles reconstructed into cross-sectional image; Hounsfield Units (HU): air -1000, fat -100, water 0, soft tissue ~ 30-70, bone +1000+; (2) **Image acquisition**: collimation, beam pitch, rotation time, kV (kilovoltage), mA (tube current); (3) **Dose metrics**: - **CTDI (Computed Tomography Dose Index)** — measured in phantom (mGy); - **CTDIvol** — volume CTDI (per slice); - **DLP (Dose Length Product)** — total dose × length (mGy·cm); - **Effective dose** (mSv) — tissue weighting factors per organ; typical chest CT 7 mSv (~ 2 years background radiation); abdomen 10 mSv; head 2 mSv; (4) **Dose optimization (ALARA)**: lower kV (for smaller patients — exponential dose reduction; 100 kV vs 120 = ~ 33% less dose); lower mA + automatic mA modulation (auto-mA, CARE Dose); higher pitch; iterative reconstruction (50-70% dose reduction with similar image quality); pediatric-specific protocols (Image Gently); avoid repeat scans; limit z-axis coverage; (5) **Image quality vs dose trade-off**: noise, contrast, resolution; lower dose = more noise; (6) **Radiation risk**: lifetime cancer risk from radiation (especially young patients, repeat scans); BEIR VII estimates; small individual risk but cumulative; (7) **Modern techniques**: dual-energy CT (material decomposition), spectral CT, AI noise reduction, photon-counting CT (emerging); (8) **Clinical considerations**: dose tracking (cumulative), risk-benefit communication, alternatives when possible (MRI, US)" },
+      { "label": "C", "text": "Same as MRI" },
+      { "label": "D", "text": "No dose" },
+      { "label": "E", "text": "Random" }
+    ],
+    "correct_answer": "B",
+    "explanation": "CT physics: X-ray attenuation + reconstruction. HU values. Dose metrics (CTDI, DLP, effective). ALARA optimization (kV, mA, pitch, iterative reconstruction). Modern: dual-energy, AI noise reduction, photon-counting. Dose tracking + risk communication.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "AAPM TG-204; ACR Dose Index Registry"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง physics — MRI principles + safety",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "MRI Physics + Safety: (1) **Principles**: strong magnetic field (1.5T - 7T) aligns hydrogen protons; RF pulse excites; relaxation back to equilibrium emits signal; T1 + T2 relaxation times differ by tissue; gradients localize signal; reconstruction; (2) **Sequences**: T1-weighted (fat bright, fluid dark — anatomy), T2-weighted (fluid bright — pathology, edema), FLAIR (T2 + suppressed CSF — brain lesions), DWI (diffusion — stroke, abscess, tumor), perfusion, MRA (angiography), MRS (spectroscopy), functional MRI; (3) **Contrast**: gadolinium chelates (linear vs macrocyclic — macrocyclic safer in CKD/dialysis due to less NSF — nephrogenic systemic fibrosis); other contrasts (USPIO, gadoxetate for liver); (4) **Safety**: - **Projectile risk** — ferromagnetic objects pulled into magnet (catastrophic); - **MR-conditional vs MR-unsafe** — devices, implants assessed individually; pacemakers + ICDs (newer MR-conditional, requires protocols); cochlear implants, metallic foreign bodies (especially in eye — pre-screen), aneurysm clips, drug pumps; - **Heat (SAR)** specific absorption rate — RF heating, tissue burns risk; - **Acoustic noise** — > 100 dB; ear protection; - **Cryogen quench** — emergency vent; - **Claustrophobia** — open MRI, sedation; (5) **Patient screening**: questionnaire + interview + metal detector; (6) **Pediatric**: sedation often needed (slow + claustrophobic for young); (7) **Pregnancy**: MRI safe at any trimester without gadolinium; gadolinium relative contraindication (avoid unless essential); (8) **Modern**: 3T mainstream; 7T research; AI reconstruction (Compressed Sensing); portable MRI (Hyperfine); functional + connectivity imaging" },
+      { "label": "C", "text": "X-ray" },
+      { "label": "D", "text": "No safety" },
+      { "label": "E", "text": "Same as CT" }
+    ],
+    "correct_answer": "B",
+    "explanation": "MRI: strong magnetic field + RF + gradients + reconstruction. Multiple sequences. Gadolinium contrast — NSF risk in CKD (macrocyclic safer). Safety: projectile, implants, SAR, noise, claustrophobia, cryogen. Patient screening. Pregnancy safe without gadolinium. Modern: higher field strength, AI, portable.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "ACR MR Safety; ISMRM"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง ultrasound principles + applications",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Ultrasound Principles + Applications: (1) **Physics**: high-frequency sound waves (1-20 MHz) emitted + reflected at tissue interfaces; piezoelectric crystals; differential reflection by tissue density; (2) **Probes**: linear (high frequency, superficial — vascular, MSK, breast), curved/convex (low frequency, deep — abdomen, OB), phased array (cardiac), endocavitary (transvaginal, transrectal); (3) **Modes**: 2D, M-mode (motion over time — cardiac), Doppler (color, pulsed, continuous — flow), 3D/4D, contrast-enhanced US (CEUS — microbubbles); (4) **Advantages**: no ionizing radiation, real-time, portable, repeatable, dynamic, lower cost, bedside POCUS, fetal/pediatric safe; (5) **Limitations**: operator-dependent, bone + air poor transmission, body habitus, limited depth penetration; (6) **Common applications**: abdominal (gallbladder, kidney, aorta, liver, spleen), pelvic (OB, gyn), thyroid, breast, MSK, vascular (Doppler), cardiac (echo), interventional guidance (CVC placement, biopsy, regional anesthesia), trauma (FAST), POCUS (lung, cardiac, abdominal, IVC); (7) **POCUS (Point-of-Care US)**: clinician-performed at bedside — focused, problem-specific; integrated into many specialties; (8) **Training**: hands-on essential; certification programs; (9) **Modern**: handheld US (Butterfly, GE Vscan), AI-assisted image acquisition + interpretation, telemedicine; (10) **Multidisciplinary**: radiology, emergency medicine, critical care, OB, cardiology, anesthesia, family medicine" },
+      { "label": "C", "text": "X-ray" },
+      { "label": "D", "text": "Random" },
+      { "label": "E", "text": "MRI" }
+    ],
+    "correct_answer": "B",
+    "explanation": "US: high-frequency sound waves + piezoelectric crystals. Multiple probes + modes. No radiation, real-time, portable. Bone + air poor transmission. Multiple applications. POCUS integrated into specialties. Modern: handheld + AI + telemedicine.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "AIUM Guidelines; SonoSim Curriculum"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง nuclear medicine + PET-CT",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Nuclear Medicine + PET-CT: (1) **Principles**: radiotracers (radiopharmaceuticals) injected → preferentially accumulate in target tissue → detection of emitted radiation → image; (2) **SPECT (Single Photon Emission CT)**: gamma emitters (Tc-99m most common, I-123, I-131); applications — bone scan, myocardial perfusion, lung V/Q, thyroid scan, parathyroid, sentinel node mapping, DAT scan; (3) **PET (Positron Emission Tomography)**: positron emitters (F-18, Ga-68, C-11); coincidence detection; higher resolution than SPECT; (4) **FDG-PET** (fluorodeoxyglucose F-18): glucose analog — accumulates in metabolically active cells (tumors, inflammation, infection); applications: oncology (staging, treatment response, recurrence), infection/inflammation (FUO, sarcoid, vasculitis, IBD), neurology (dementia — pattern, epilepsy), cardiology (sarcoid, viability); (5) **PET-CT** combined: PET (functional) + CT (anatomic) co-registered; standard now; (6) **Other PET tracers**: 68Ga-PSMA + 68Ga-DOTATATE for prostate cancer + NET; 18F-FAPI emerging; amyloid PET (Pittsburgh compound, florbetapir) for AD; tau PET; (7) **Theranostics**: combination of therapy + diagnostics with same compound — Lu-177 PSMA for metastatic prostate cancer (VISION trial), Lu-177 DOTATATE for NET (NETTER-1); growing field; (8) **Radiation considerations**: doses (FDG-PET ~ 7 mSv body), pregnancy + breastfeeding precautions; (9) **PET-MRI** hybrid emerging; (10) **Modern**: precision medicine + targeted molecular imaging + radioligand therapy" },
+      { "label": "C", "text": "X-ray" },
+      { "label": "D", "text": "MRI" },
+      { "label": "E", "text": "Random" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Nuclear medicine + PET: molecular imaging with radiotracers. FDG-PET widespread oncology + others. PSMA + DOTATATE for prostate + NET. Theranostics emerging (Lu-177 therapy). PET-CT standard; PET-MRI emerging. Modern: precision medicine + radioligand therapy.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "SNMMI Guidelines; NCCN"
+  },
+  {
+    "scenario": "Hospital implements imaging utilization management + appropriateness criteria",
+    "choices": [
+      { "label": "A", "text": "Random ordering" },
+      { "label": "B", "text": "Imaging Utilization Management: (1) **Appropriateness criteria** (ACR Appropriateness Criteria, CDS — Clinical Decision Support): evidence-based ratings for imaging by clinical scenario; (2) **CDS at point of order entry**: EMR-integrated; recommendations based on clinical indication + patient factors + alternatives; (3) **Choosing Wisely** initiative: avoid imaging without clinical justification (LBP without red flags, headache without red flags, sinusitis acute uncomplicated, pre-op chest X-ray routine, syncope simple); (4) **Radiation safety**: image only when needed, ALARA, alternatives (US, MRI), pediatric considerations, cumulative dose tracking; (5) **Contrast safety**: CKD screening, allergy management, alternatives; (6) **Reading workflow + quality**: standardized reports, structured reporting, peer review, double reads for selected, AI-assisted; (7) **Communication of findings**: critical results — direct + documented; ACR communication guidelines; (8) **Multidisciplinary collaboration**: ordering physicians, radiologists, imaging staff, IT; (9) **Patient + family education**: indications, alternatives, what to expect; (10) **Quality metrics**: appropriateness, accuracy, turnaround time, patient satisfaction, complication rates, dose; (11) **Equity considerations**: ensure access + reduce disparities; (12) **Modern**: AI assistance, structured reporting, value-based imaging; (13) **Healthcare cost considerations**: high-value imaging" },
+      { "label": "C", "text": "No guidelines" },
+      { "label": "D", "text": "Random" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Imaging utilization management: ACR Appropriateness Criteria + CDS integrated EMR. Choosing Wisely + ALARA + dose tracking. Critical results communication. Quality metrics. Multidisciplinary. Modern: AI, structured reporting, value-based imaging.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "ACR Appropriateness Criteria; Choosing Wisely"
+  },
+  {
+    "scenario": "Hospital implements teleradiology + AI in radiology",
+    "choices": [
+      { "label": "A", "text": "No technology" },
+      { "label": "B", "text": "Teleradiology + AI in Radiology: (1) **Teleradiology**: remote reading of imaging — expands access, after-hours coverage, subspecialty expertise; modern: most major imaging read across distances; (2) **PACS (Picture Archiving + Communication System) + RIS (Radiology Information System)**: digital workflow; integration with EMR; standardized; (3) **AI applications**: - **Triage**: prioritize urgent (intracranial hemorrhage, PE, pneumothorax); - **Detection**: lung nodules, breast lesions, fractures, hemorrhage, embolism; - **Quantification**: lesion measurement, organ volume, bone density, cardiac function; - **Image quality**: noise reduction, motion correction, reconstruction; - **Workflow**: protocoling, hanging protocols, structured reports; (4) **FDA-cleared AI applications growing** (> 500 + as of 2024); (5) **Limitations + concerns**: bias, generalizability, validation, regulatory, integration, training, liability, ethics; (6) **Human-AI collaboration**: AI augments not replaces radiologist; emphasis on subtle findings + workflow efficiency; (7) **Quality + validation**: prospective trials, real-world evidence, post-market surveillance; (8) **Education + training**: residents + practicing radiologists need familiarity; (9) **Patient-facing AI**: explanation, communication; (10) **Equity**: ensure benefits across populations + reduce disparities; (11) **Multidisciplinary**: radiology + IT + leadership + regulatory + patient; (12) **Modern**: AI transforming imaging — increased throughput, missed findings, structured + actionable reports" },
+      { "label": "C", "text": "Random" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Avoid technology" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Teleradiology + AI: expanding access + capabilities. Multiple AI applications: triage, detection, quantification, workflow. FDA-cleared growing. Human-AI collaboration. Limitations: bias, validation, integration. Education + ethics. Modern: AI transforming radiology workflow.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "ACR Data Science Institute; RSNA AI Initiative"
+  },
+  {
+    "scenario": "Hospital implements interventional radiology + image-guided procedures expansion",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Interventional Radiology (IR) — Image-Guided Minimally Invasive: (1) **Scope**: image-guided diagnostic + therapeutic procedures; replacing many surgeries; (2) **Procedures**: - **Vascular**: angioplasty + stent (peripheral, renal, mesenteric, intracranial), embolization (GI bleeding, uterine fibroids — UFE, AVM, aneurysm coiling, varicocele, tumor — TACE for HCC, splenic artery for hypersplenism), thrombolysis (DVT, PE, stroke — mechanical thrombectomy), IVC filter, central venous access (PICC, port, CVC); - **Non-vascular**: percutaneous biopsy (US, CT-guided), drainage (abscess, biliary, urinary, ascites, pleural), ablation (RFA, microwave, cryo for tumors), vertebroplasty + kyphoplasty (compression fractures), nephrostomy, gastrostomy (PEG/PIG), feeding tubes, TIPS (portal HT), pain procedures (sympathetic blocks, RFA spine); - **Neurointerventional**: aneurysm coiling, AVM embolization, stroke mechanical thrombectomy, carotid stenting; (3) **Multidisciplinary**: IR + referring specialties (oncology, GI, urology, neurology, cardiology, surgery); (4) **Outcomes**: minimally invasive — less morbidity, faster recovery, shorter hospital stay vs open surgery; (5) **Specialization**: IR is a recognized specialty with fellowship training (or IR/DR pathway combined); (6) **Complications**: bleeding, infection, contrast nephropathy, vessel injury, organ injury; (7) **Patient + family education** + informed consent; (8) **Modern**: AI guidance, image fusion, robotic assistance, advanced imaging; (9) **Healthcare value**: cost-effective + improved patient experience" },
+      { "label": "C", "text": "Random" },
+      { "label": "D", "text": "Avoid" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "IR: image-guided minimally invasive — replacing many surgeries. Vascular + non-vascular + neurointerventional procedures. Multidisciplinary. Less morbidity + faster recovery. Recognized specialty. Modern: AI + robotics + advanced imaging. Cost-effective + improved patient experience.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "SIR + CIRSE Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี advanced cancer + chronic pain + multiple complications — integrative imaging + IR care",
+    "choices": [
+      { "label": "A", "text": "Single specialty" },
+      { "label": "B", "text": "Integrative Imaging + IR for Advanced Cancer Care: (1) **Multidisciplinary tumor board** coordinated approach; (2) **Diagnostic imaging**: staging (CT + PET + MRI), tumor response (RECIST, iRECIST for immunotherapy), surveillance for recurrence; (3) **Image-guided biopsy** for diagnosis + molecular characterization (precision medicine); (4) **Therapeutic IR options based on cancer type**: - Tumor embolization (HCC — TACE, UFE for fibroids — palliation, splenic for hypersplenism); - Ablation (RFA, MWA, cryo) for local control; - Y-90 radioembolization for liver metastases; - Pain procedures (celiac plexus block for pancreatic Ca pain, vertebroplasty for spine mets, peripheral nerve blocks); - Central venous access for chemo (port, PICC); - Biliary stenting for obstruction; - Nephrostomy for ureteral obstruction; - Drainage of effusions, ascites (PleurX catheter for recurrent); - Hemostatic procedures for bleeding (hemoptysis, GI bleed); (5) **Palliative imaging + IR**: focus on quality of life, symptom relief; (6) **Multidisciplinary palliative care** integrated; (7) **Cost-effectiveness**: minimally invasive often replaces more morbid surgery; (8) **Patient + family communication**: realistic expectations, decision-making, advance care planning; (9) **Quality of life metrics**: pain scores, functional, satisfaction; (10) **Long-term care**: ongoing imaging surveillance + IR procedures as needed + transitions to hospice when appropriate" },
+      { "label": "C", "text": "Single specialty" },
+      { "label": "D", "text": "Refuse care" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Integrative imaging + IR for cancer care = multidisciplinary. Diagnostic + therapeutic. Many IR options for palliation + local control. Quality of life focus. Concurrent palliative care. Cost-effective. Modern: precision + minimally invasive + integrated care.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "NCCN Survivorship; ASCO + SIR Palliative IR"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 78 ปี multimorbid + dementia + functional decline + new symptoms — diagnostic + management complexity + multidisciplinary",
+    "choices": [
+      { "label": "A", "text": "Single specialty" },
+      { "label": "B", "text": "Complex Elderly Patient Integrative Imaging Care: (1) **Goals of care discussion first** — imaging guided by what will change management + values + prognosis; (2) **Comprehensive geriatric assessment**: medical, functional, cognitive, psychosocial; (3) **Imaging selection considerations**: - Can patient tolerate (cooperation, claustrophobia, ability to lie still); - Will imaging change management (avoid imaging not changing care); - Risks of imaging (contrast, radiation, transportation, transition to new environment — confusion, falls); - Sedation needed (additional risk); - Alternatives (less invasive); (4) **Multidisciplinary**: primary care + geriatric medicine + specialists + radiology + nursing + family + palliative care; (5) **Shared decision-making**: patient (if cognitively able), family, surrogate; values + preferences; quality vs quantity of life; (6) **Common scenarios + considerations**: - New symptoms in advanced dementia — careful workup; - Falls — minimal vs full workup; - Acute change — DDx + workup; - Screening cancer — discontinuation often appropriate based on life expectancy; (7) **Imaging modifications**: low-dose protocols, alternatives (US > CT for some), sedation only if essential, mobile imaging when possible; (8) **Family communication**: explain rationale, alternatives, expectations; (9) **Modern**: integrated care + value-based + patient-centered + advance care planning + palliative care concurrent" },
+      { "label": "C", "text": "Refuse" },
+      { "label": "D", "text": "Always image" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Complex elderly imaging: goals-of-care-driven. CGA + multidisciplinary + shared decision-making. Image selection considers tolerability + will change management + risks + alternatives. Screening discontinuation appropriate based on life expectancy. Modifications for elderly. Family communication. Modern: patient-centered + value-based.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AGS Choosing Wisely; ACR"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 40 ปี chronic pain syndrome — multidisciplinary diagnostic + therapeutic IR + pain management",
+    "choices": [
+      { "label": "A", "text": "Single specialty" },
+      { "label": "B", "text": "Chronic Pain — Integrative Diagnostic + IR + Multidisciplinary Care: (1) **Diagnosis + characterization**: comprehensive imaging when needed (MRI for spine, joints; nerve imaging — high-resolution MR neurography or US); (2) **Multidisciplinary pain team**: pain medicine + IR + anesthesia + neurology + orthopedics + PT/OT + psychology + primary care; (3) **IR pain procedures**: - **Spine procedures**: epidural steroid injection (cervical, lumbar; transforaminal, interlaminar), medial branch blocks + RFA for facet pain, sacroiliac joint injections, vertebroplasty/kyphoplasty for compression fractures; - **Peripheral nerve blocks** (image-guided ultrasound or fluoroscopy): occipital nerve, intercostal, sciatic, etc.; - **Sympathetic blocks**: stellate ganglion (CRPS upper extremity), lumbar sympathetic (CRPS lower), celiac plexus (pancreatic cancer pain), superior hypogastric (pelvic pain); - **Joint injections** (US or fluoroscopic guidance): shoulder, hip, knee — corticosteroid, hyaluronic acid; - **Genicular nerve block + RFA** for knee OA pain; - **PRP, prolotherapy** for selected tendon/joint; (4) **Cognitive Behavioral Therapy** for chronic pain — evidence-based; (5) **Multimodal pharmacologic + non-pharmacologic** (per CDC pain guidelines 2022): - Acetaminophen + NSAID (topical preferred for localized); - SNRI (duloxetine) for chronic pain; - Anticonvulsants (gabapentinoids — caution misuse); - Avoid long-term opioids (epidemic, addiction, hyperalgesia); - Topical agents; - Acupuncture; - Mindfulness + meditation; (6) **Functional goals** over pain elimination; (7) **Mental health integration**: depression + anxiety + sleep + trauma history; (8) **Substance use screening**; (9) **Family + work support**: vocational rehabilitation, accommodations; (10) **Modern**: biopsychosocial + multidisciplinary + opioid-sparing + minimally invasive + functional focus" },
+      { "label": "C", "text": "Long-term opioids" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Chronic pain integrative care = multidisciplinary biopsychosocial. Imaging diagnosis. IR procedures (spine, peripheral nerves, sympathetic, joints). CBT + multimodal pharmacologic + non-pharmacologic. Avoid long-term opioids. Functional goals. Mental health integration. Modern: comprehensive opioid-sparing approach.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "CDC Pain Guidelines 2022; SIR + ASRA"
   }
 ]
