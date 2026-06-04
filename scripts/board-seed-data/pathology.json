@@ -1,0 +1,172 @@
+[
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี breast lump biopsy — histopathology + immunohistochemistry results: invasive ductal carcinoma, grade 2, ER 95%+ PR 70%+ HER2 IHC 3+ confirmed by FISH amplification",
+    "choices": [
+      { "label": "A", "text": "No treatment" },
+      { "label": "B", "text": "Breast Cancer Pathology Interpretation: (1) **Histologic type**: invasive ductal carcinoma (IDC) — most common; other types — lobular, mucinous, tubular, medullary, metaplastic; (2) **Grade (Nottingham)**: based on tubule formation + nuclear pleomorphism + mitotic count — 1 (well) to 3 (poorly differentiated); (3) **Stage**: AJCC TNM (T size, N nodes, M metastases) + anatomic + prognostic; (4) **Biomarkers** (essential for treatment decisions): - **ER (estrogen receptor)** + percent positive — predicts hormone therapy benefit; - **PR (progesterone receptor)** — confirms ER pathway; - **HER2** by IHC (0, 1+, 2+, 3+) → FISH for 2+ to confirm amplification; this patient HER2+ → targeted therapy; - **Ki-67** proliferation index; (5) **Molecular subtypes**: Luminal A (ER+, HER2-, low Ki-67), Luminal B (ER+, HER2- high Ki-67 or HER2+), HER2-enriched, Triple-negative (TNBC); (6) **Genomic assays**: Oncotype DX 21-gene recurrence score, MammaPrint, PAM50 — guide adjuvant chemo decisions in ER+/HER2-; (7) **HER2+ implications**: trastuzumab + pertuzumab targeted therapy improves survival dramatically; (8) **Triple-negative**: PARP inhibitors if BRCA, immunotherapy (pembrolizumab) for PD-L1+; (9) **Multidisciplinary tumor board**: pathology + surgery + medical oncology + radiation oncology + radiology + genetics; (10) **Genetic counseling**: BRCA + others when criteria met; (11) **Modern**: precision oncology + molecular characterization + targeted therapy" },
+      { "label": "C", "text": "Surgery only" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Breast cancer pathology: histologic type + grade + stage + biomarkers (ER, PR, HER2, Ki-67) → molecular subtypes → treatment selection. Genomic assays for adjuvant decisions. HER2+ → targeted therapy. Multidisciplinary tumor board. Modern: precision oncology.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "ASCO/CAP Breast Cancer Biomarkers; NCCN"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 60 ปี — peripheral blood smear shows immature blasts with Auer rods + CBC: WBC 45,000, Hb 8.4, Plt 28,000 — concerned acute leukemia",
+    "choices": [
+      { "label": "A", "text": "Ignore" },
+      { "label": "B", "text": "Acute Leukemia Pathology Diagnosis: (1) **Initial workup**: CBC + peripheral smear + bone marrow biopsy + aspirate; (2) **Acute Myeloid Leukemia (AML)**: blasts ≥ 20% in marrow (or PB); Auer rods pathognomonic; (3) **Acute Lymphoblastic Leukemia (ALL)**: blasts ≥ 20% lymphoid lineage; (4) **Distinguishing**: morphology + immunophenotype (flow cytometry — myeloid markers MPO, CD13, CD33, CD117 vs lymphoid markers CD19, CD20, CD10, TdT) + cytochemistry (MPO+ in AML); (5) **Cytogenetics + molecular essential**: - AML good prognosis: t(8;21), inv(16), t(15;17) — APL (acute promyelocytic — treat differently with ATRA + arsenic); - AML poor: complex karyotype, monosomy 5, 7; - AML molecular: FLT3-ITD, NPM1, CEBPA, TP53, IDH1/2 + targeted therapies (gilteritinib, midostaurin for FLT3, venetoclax-azacitidine combos); - ALL: Philadelphia chromosome t(9;22) BCR-ABL — TKI added; (6) **Treatment based on subtype**: - AML: 7+3 induction (cytarabine + anthracycline) → consolidation → consider HCT (hematopoietic cell transplant); - APL: ATRA + arsenic — > 90% cure (don't miss — DIC risk if delayed); - ALL: multi-agent chemo + CNS prophylaxis + +/- HCT; (7) **Supportive care**: blood products, antibiotic, tumor lysis prophylaxis, fever workup; (8) **Multidisciplinary**: heme-onc + pathology + transplant + ID + ICU; (9) **Modern**: targeted therapies, immunotherapy (CAR-T, blinatumomab for ALL), MRD monitoring; (10) **Long-term survivorship + late effects**" },
+      { "label": "C", "text": "Surgery" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Acute leukemia diagnosis: morphology + immunophenotype (flow) + cytochemistry + cytogenetics + molecular. Auer rods → AML. APL (t(15;17)) treated differently (ATRA + arsenic). Subtype-based treatment + targeted therapies + immunotherapy. Multidisciplinary + supportive care.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "WHO Classification of Hematologic Neoplasms 2022; NCCN AML"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 45 ปี — chronic diarrhea + weight loss + colonoscopy with biopsy — pathology: chronic active inflammation + crypt distortion + granulomas — IBD workup",
+    "choices": [
+      { "label": "A", "text": "Random treatment" },
+      { "label": "B", "text": "IBD Pathology + Diagnosis: (1) **Crohn's vs UC differentiation**: - **Crohn's**: transmural inflammation, skip lesions, granulomas (50%), strictures, fistulas, can affect any GI from mouth to anus, terminal ileum most common; - **UC**: continuous mucosal + submucosal inflammation, starts rectum + extends proximally, no granulomas, crypt abscesses, no skip lesions; - **Indeterminate colitis**: features of both; (2) **Histology**: chronic + active inflammation; crypt distortion (chronic); granulomas (Crohn's); rule out infection + ischemia + drug-induced; (3) **Other workup**: endoscopy + biopsy; CT/MR enterography (small bowel for Crohn's); fecal calprotectin (active inflammation); stool studies (C. difficile, parasites, bacterial); serologies (ASCA Crohn's, p-ANCA UC); (4) **Treatment based on type + severity** (ACG + ECCO guidelines): - 5-ASA (mesalamine) for mild UC; - Corticosteroids for moderate-severe induction (not maintenance); - Immunomodulators (azathioprine, methotrexate); - Biologics (anti-TNF — infliximab, adalimumab; anti-integrin — vedolizumab; anti-IL12/23 — ustekinumab, risankizumab; anti-IL23 — risankizumab; JAK inhibitors — tofacitinib, upadacitinib); - Small molecule (S1P — ozanimod); (5) **Surgery**: for refractory + complications; can be curative in UC (proctocolectomy); not curative in Crohn's; (6) **Surveillance for dysplasia + colon cancer**: increased risk with longstanding colitis, IBD-related cancer differs from sporadic; (7) **Complications**: strictures, fistulas, abscesses, perforation, dysplasia, malnutrition, growth failure (peds), extraintestinal (skin, joints, eyes, liver — PSC); (8) **Multidisciplinary**: GI + surgery + pathology + radiology + nutrition + mental health" },
+      { "label": "C", "text": "Refuse" },
+      { "label": "D", "text": "Discharge" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "IBD pathology: Crohn's (transmural, granulomas, skip lesions) vs UC (mucosal continuous from rectum). Treatment by type + severity. Biologics + small molecules expanded options. Surveillance for dysplasia/cancer. Multidisciplinary. Modern: precision + biologics.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "ACG; ECCO IBD Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 70 ปี — sputum AFB smear positive + Mycobacterium tuberculosis identified — drug susceptibility testing pending — pulmonary TB workup",
+    "choices": [
+      { "label": "A", "text": "Ignore" },
+      { "label": "B", "text": "TB Diagnosis + Drug Susceptibility (CDC + WHO): (1) **Initial diagnostics**: AFB smear (sensitivity 50-70%, fast), TB culture (gold standard but slow 4-8 wk), NAAT (Xpert MTB/RIF — rapid + detects rifampin resistance); (2) **Drug susceptibility testing (DST)**: essential — phenotypic (slow) + genotypic (rapid — line probe assay, sequencing); (3) **Categories**: drug-susceptible (DS), MDR (multi-drug resistant — resistant to ≥ INH + RIF), pre-XDR/XDR (extensively — adds fluoroquinolone + second-line); (4) **Treatment based on susceptibility**: - **DS-TB**: 6-month standard regimen (RIPE 2 mo intensive + RI 4 mo continuation) OR shorter 4-month regimen rifapentine + moxifloxacin (Study 31, 2022); - **MDR-TB**: longer (9-24 months) all-oral with bedaquiline + linezolid + levofloxacin/moxifloxacin + others (BPaL regimen — bedaquiline + pretomanid + linezolid for 6 months — Nix-TB/ZeNix trials, revolutionary); (5) **Isolation**: airborne precautions in hospitals until non-infectious; (6) **HIV testing all TB** (high co-infection); (7) **DOT (Directly Observed Therapy)** for adherence; (8) **Public health reporting** + contact tracing; (9) **Treatment of contacts** (LTBI — latent TB infection): rifamycin-based shorter regimens (3HP — 12 wk rifapentine + INH preferred; 4R — 4 mo rifampin; 6-9 mo INH); (10) **Monitor**: clinical, sputum AFB, LFT, CBC, vision (ethambutol), uric acid; (11) **Multidisciplinary**: TB program + ID + pulmonology + public health" },
+      { "label": "C", "text": "Surgery" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "TB pathology: AFB + culture + NAAT (Xpert) + DST essential. DS standard 6-month regimen or 4-month new. MDR — BPaL revolutionary 6-month all-oral. DOT + isolation + public health reporting. Contact tracing + LTBI treatment. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "WHO TB Guidelines; CDC; ATS"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี — autoimmune hepatitis workup — labs: AST/ALT elevated + ANA positive + anti-smooth muscle Ab positive + IgG elevated + liver biopsy: interface hepatitis + lymphoplasmacytic infiltrate",
+    "choices": [
+      { "label": "A", "text": "Ignore" },
+      { "label": "B", "text": "Autoimmune Hepatitis Diagnosis + Management: (1) **AIH Type 1**: ANA + ASMA + IgG elevation (most common); (2) **AIH Type 2**: anti-LKM1 (children); (3) **Histology**: interface hepatitis (inflammation at limiting plate) + lymphoplasmacytic infiltrate + rosette formation; (4) **Differential**: viral hepatitis (Hep A/B/C/E), drug-induced (DILI), Wilson's, NAFLD, alcohol, hemochromatosis, PBC, PSC; (5) **Workup**: viral hepatitis serologies, drug history, metabolic (ferritin, ceruloplasmin, alpha-1 antitrypsin), AMA (PBC overlap); (6) **Treatment** (AASLD + EASL): - **Prednisone + Azathioprine** combination first-line; - **Budesonide** alternative initial (less systemic SE — non-cirrhotic only); - **Mycophenolate** for AZA-intolerant; - **Calcineurin inhibitors** (cyclosporine, tacrolimus) for refractory; - **Rituximab** considered; (7) **Goal**: biochemical remission (normal LFTs + IgG); sustained ~ 3-5 yr before trial of discontinuation; high relapse rate (50-80%) — many lifelong therapy; (8) **Monitor**: LFTs + clinical regularly; bone density (steroid risk); pregnancy planning; (9) **Vaccinations**: hepatitis A/B, flu, pneumo, COVID, shingles; (10) **Cirrhosis surveillance**: HCC screening with US + AFP q6 mo; (11) **Transplant** for end-stage; can recur post-transplant; (12) **Multidisciplinary**: hepatology + pathology + rheumatology + pharmacy + transplant + primary care" },
+      { "label": "C", "text": "Surgery" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "AIH: serology + histology (interface hepatitis + lymphoplasmacytic) + IgG. Rule out other causes. Treatment: pred + AZA; biochemical remission goal. Often lifelong therapy. Monitoring + complications. Multidisciplinary care.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "AASLD AIH 2019; EASL"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 35 ปี — gravid uterus + concerns about gestational trophoblastic disease — hCG very elevated + US — complete hydatidiform mole",
+    "choices": [
+      { "label": "A", "text": "Ignore" },
+      { "label": "B", "text": "Gestational Trophoblastic Disease Pathology: (1) **Spectrum (GTD)**: hydatidiform mole (complete + partial) → invasive mole → gestational trophoblastic neoplasia (GTN — choriocarcinoma, placental site trophoblastic tumor, epithelioid trophoblastic tumor); (2) **Complete mole**: diploid 46,XX or 46,XY all paternal; no fetal tissue; markedly elevated hCG; 'snowstorm' US; 20% risk progression to GTN; (3) **Partial mole**: triploid (69 chromosomes); some fetal tissue; less elevated hCG; 5% risk progression; (4) **Pathology**: villi with central cisternal cavitation, trophoblastic proliferation, no fetal blood vessels (complete); (5) **Management**: - **Suction D+C** (dilation + curettage) of uterus — primary treatment; - **Anti-D immunoglobulin** if Rh-negative; - **Weekly hCG monitoring** until 3 consecutive undetectable then monthly × 6 months; - **Contraception** essential during follow-up (avoid pregnancy 6 mo — confounds hCG); IUD acceptable per recent evidence; (6) **GTN diagnosis**: persistent hCG plateau or rise after evacuation, hCG > 20,000 4 wk post-evacuation, hCG > 6 months persistence, metastases, histology of choriocarcinoma; (7) **GTN treatment** (highly chemosensitive — excellent prognosis): - Low-risk (WHO score 0-6): methotrexate or actinomycin-D single agent; - High-risk (≥ 7): EMA-CO (etoposide + MTX + actinomycin + cyclophosphamide + vincristine) multi-agent; - Brain metastases: high-dose intrathecal MTX, RT consideration; (8) **Prognosis**: > 95% cure even metastatic; (9) **Multidisciplinary**: OB-GYN + GYN-oncology + medical oncology + pathology" },
+      { "label": "C", "text": "Hysterectomy first" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "GTD: spectrum from mole to GTN. D+C primary; hCG monitoring + contraception. GTN diagnosis criteria; methotrexate or EMA-CO treatment. > 95% cure even metastatic. Multidisciplinary. Modern: chemo highly curative.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG; FIGO; ESMO GTD"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 60 ปี — Hodgkin lymphoma — lymph node biopsy + Reed-Sternberg cells + EBV positive — staging + treatment",
+    "choices": [
+      { "label": "A", "text": "Ignore" },
+      { "label": "B", "text": "Hodgkin Lymphoma Pathology + Management: (1) **Classic Hodgkin Lymphoma (CHL)**: Reed-Sternberg cells (large, multinucleated, mirror image — \"owl eye\") + lacunar variants; CD30+ CD15+ usually CD45-; B-cell origin; EBV association in some; (2) **Subtypes**: nodular sclerosis (most common), mixed cellularity, lymphocyte-rich, lymphocyte-depleted; (3) **Nodular Lymphocyte-Predominant HL (NLPHL)**: distinct entity — LP/popcorn cells, CD20+ CD45+; treated differently; (4) **Staging (Ann Arbor + Lugano)**: I-IV based on node + organ involvement; A/B symptoms; bulky disease; (5) **Workup**: PET-CT (functional + anatomic), bone marrow biopsy (selective), CBC, LDH, ESR, HIV; (6) **Treatment (excellent overall — 80-90% cure rate)**: - **Early-stage favorable**: ABVD × 2 cycles + 20 Gy IFRT; - **Early-stage unfavorable**: ABVD × 4 cycles + 30 Gy IFRT; - **Advanced (Stage III-IV)**: ABVD × 6 cycles; eBEACOPP for high-risk + poor PET2; brentuximab + AVD (A+AVD) alternative — ECHELON-1 trial; - **PET-adapted therapy**: deintensify if PET2 negative; (7) **Relapsed/refractory**: brentuximab vedotin (anti-CD30 ADC), checkpoint inhibitors (nivolumab, pembrolizumab — KEYNOTE), autologous HCT; (8) **Late effects**: secondary malignancy (breast, lung, etc.), cardiotoxicity (anthracycline + RT), fertility, thyroid, lung fibrosis, infertility; (9) **Survivorship care**: lifelong surveillance for late effects; (10) **Multidisciplinary**: heme-onc + pathology + radiation + cardiology + endocrinology + reproductive + survivorship; (11) **Excellent prognosis** even relapsed with modern therapies" },
+      { "label": "C", "text": "Surgery only" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Hodgkin lymphoma: Reed-Sternberg cells, CD30/15. PET-adapted therapy. ABVD or A+AVD. Brentuximab + checkpoint inhibitors for relapse. Late effects significant. Multidisciplinary. Modern: high cure rates + reducing toxicity.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "NCCN Hodgkin Lymphoma; ECHELON-1"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี — prostate biopsy — Gleason 4+3 = 7 (Grade Group 3) — pathology guides management",
+    "choices": [
+      { "label": "A", "text": "Ignore" },
+      { "label": "B", "text": "Prostate Cancer Pathology Grading: (1) **Gleason grading** (most validated cancer grading): primary + secondary pattern (1-5 each); modern Grade Group system (ISUP 2014): - GG 1: Gleason 3+3 = 6; - GG 2: Gleason 3+4 = 7; - GG 3: Gleason 4+3 = 7; - GG 4: Gleason 4+4 = 8; - GG 5: Gleason 9 or 10; (2) **Grade Group affects prognosis + treatment**; (3) **Other pathologic features**: percentage of involvement, perineural invasion, extraprostatic extension, seminal vesicle invasion, lymph node status; (4) **Risk stratification** (NCCN): - Very low: GG 1, PSA < 10, < 3 cores positive, < 50% in cores; - Low: GG 1, PSA < 10; - Intermediate (favorable vs unfavorable): GG 2-3; - High: GG 4-5 or T3a, PSA > 20; - Very high: T3b-4 or GG 5, etc.; (5) **Treatment based on risk + life expectancy**: - **Active surveillance**: GG 1, selected GG 2 (low-risk) — serial PSA + DRE + MRI + repeat biopsy; reduce overtreatment; - **Surgery (radical prostatectomy)**: open, lap, robotic; - **Radiation**: external beam (IMRT, SBRT, proton), brachytherapy (LDR, HDR); - **ADT (androgen deprivation therapy)**: GnRH agonist/antagonist + antiandrogen; - **Combination ADT + RT** for intermediate-high; - **Combination ADT + chemotherapy or novel hormonals** (abiraterone, enzalutamide, apalutamide) for high-risk + metastatic; (6) **Modern**: precision — genomic classifier (Oncotype, Polaris, Decipher) refines risk; (7) **Recurrent/metastatic**: salvage RT + ADT; novel hormonals (abiraterone, enzalutamide, apalutamide, darolutamide); PARP inhibitors (BRCA); PSMA radioligand therapy (Pluvicto Lu-177); chemotherapy (docetaxel, cabazitaxel); (8) **Multidisciplinary**: urology + radiation oncology + medical oncology + pathology + genetics + survivorship" },
+      { "label": "C", "text": "Surgery only" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Prostate cancer: Gleason + Grade Group system. Risk stratification (NCCN). Treatment by risk + life expectancy (AS for low, surgery/radiation, ADT, novel hormonals, PARP, PSMA). Modern: genomic classifiers + targeted therapies + precision. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "NCCN Prostate Cancer; ISUP Gleason 2014"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 30 ปี — pleural effusion + lymph node biopsy — pathology: caseating granulomas — AFB stain positive — sputum mycobacterium culture pending",
+    "choices": [
+      { "label": "A", "text": "No treatment" },
+      { "label": "B", "text": "Granulomatous Disease Pathology Workup: (1) **Caseating granulomas with AFB+** = TB until proven otherwise; (2) **Differential of granulomatous disease**: - **Infections**: TB (caseating most common), atypical mycobacteria, fungal (histoplasmosis, blastomycosis, coccidioidomycosis, cryptococcosis), parasitic (toxoplasmosis), Brucella, leprosy, syphilis (rare); - **Non-infectious**: sarcoidosis (non-caseating), Crohn's, granulomatous polyangiitis (GPA), Churg-Strauss, foreign body, drug-induced, primary biliary cholangitis, primary immunodeficiencies, hypersensitivity pneumonitis, berylliosis; (3) **Sarcoidosis** features: non-caseating, multisystem (lung most), young adults Black > White, ACE may be elevated, hilar lymphadenopathy on imaging, often spontaneous remission; (4) **Workup further**: histology + special stains (AFB, GMS for fungi, etc.), culture, NAAT, serologies (autoimmune, fungal), ACE, calcium, eye exam (sarcoid uveitis); (5) **TB treatment** if confirmed: standard regimen + DOT + isolation + contact tracing (already covered); (6) **Sarcoidosis treatment**: observation many spontaneously remit; corticosteroids for symptomatic (lung function, CNS, cardiac, eye, hypercalcemia, severe skin); methotrexate, azathioprine, biologics for refractory; (7) **Multidisciplinary**: pulmonology + ID + pathology + rheumatology + ophthalmology + cardiology if systemic" },
+      { "label": "C", "text": "Surgery" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Granulomatous disease: caseating most often TB (AFB +); non-caseating includes sarcoid + others. Workup with stains + culture + NAAT + serology. Treatment by underlying. Multidisciplinary. Modern: precision diagnostics + targeted therapy.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "ATS Sarcoidosis; WHO TB"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี — surgery for colon cancer — pathology: invasive adenocarcinoma + MMR/MSI testing — needed for treatment + family screening",
+    "choices": [
+      { "label": "A", "text": "Ignore molecular" },
+      { "label": "B", "text": "Molecular Pathology in Cancer (precision medicine — colon cancer example): (1) **Microsatellite instability (MSI) / Mismatch Repair (MMR) testing**: - MSI-H or MMR-deficient (dMMR) — hypermutated phenotype; - MMR proteins: MLH1, MSH2, MSH6, PMS2 IHC; loss of expression = dMMR; - MSI testing by PCR alternative; - **Implications**: better prognosis stage II (no chemo benefit), worse stage IV unless immunotherapy; **PEMBROLIZUMAB or NIVOLUMAB** highly effective in MSI-H/dMMR tumors (KEYNOTE-177 — pembro better than chemo first-line metastatic dMMR); - **Lynch syndrome screening**: MSH/MSH2/MSH6/PMS2 germline mutations — autosomal dominant; family screening; risk-reducing strategies; (2) **RAS testing** (KRAS, NRAS): mutations predict resistance to anti-EGFR (cetuximab, panitumumab) — only RAS wild-type benefit; (3) **BRAF testing** (V600E): poor prognosis; targeted therapy (encorafenib + cetuximab — BEACON trial); (4) **HER2 testing**: amplification — trastuzumab + tucatinib (mountaineer trial); (5) **NTRK fusions** (rare): larotrectinib, entrectinib (tumor agnostic); (6) **Tumor mutational burden (TMB)**: high TMB — checkpoint inhibitor benefit; (7) **Liquid biopsy** (ctDNA): MRD monitoring, treatment response, recurrence detection; (8) **Hereditary cancer testing + counseling**: Lynch, FAP, MUTYH-associated polyposis, Peutz-Jeghers; family implications; (9) **Multidisciplinary tumor board**: pathology + medical oncology + genetics + surgery; (10) **Modern**: precision oncology + biomarker-driven + immunotherapy + tumor-agnostic therapies" },
+      { "label": "C", "text": "Random treatment" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "No testing" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Molecular pathology: MSI/MMR + RAS + BRAF + HER2 + NTRK + TMB testing — precision oncology. KEYNOTE-177 — pembrolizumab better than chemo for dMMR. Lynch screening implications. Liquid biopsy emerging. Multidisciplinary. Modern: biomarker-driven precision medicine.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "NCCN Colon Cancer; KEYNOTE-177"
+  }
+]
