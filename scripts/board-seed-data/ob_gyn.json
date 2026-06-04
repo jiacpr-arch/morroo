@@ -1,0 +1,172 @@
+[
+  {
+    "scenario": "หญิงตั้งครรภ์ GA 36 wk G1P0 มา ANC ตรวจ BP 162/108 (สูงต่อเนื่อง 3 ครั้ง ห่าง 4 ชม) + proteinuria 3+ + edema + ปวดศีรษะ + เห็นแสงวาบ\n\nLab: Plt 88,000, AST 188, ALT 142, LDH 685, Cr 1.2, Total protein 5.8, Uric acid 7.8\nUrine protein/Cr 4.2 g/g, 24h urine protein 5.2 g",
+    "choices": [
+      { "label": "A", "text": "Observation outpatient" },
+      { "label": "B", "text": "Severe Preeclampsia with HELLP syndrome (BP severe + end-organ dysfunction): admit; IV magnesium sulfate 4-6g loading then 1-2g/hr × 24h (seizure prophylaxis); antihypertensive — IV labetalol 20-80mg or hydralazine 5-10mg or oral nifedipine 10-20mg (target BP 140-150/90-100, not normal — placental perfusion); corticosteroid betamethasone 12mg IM × 2 (fetal lung maturity even at 36 wk if preterm) — but at 36 wk + HELLP = expedite delivery; **expedite delivery** is definitive treatment (HELLP + severe features → delivery regardless of GA after stabilization); mode (vaginal vs c-section) per obstetric indication; postpartum: continue magnesium 24h after delivery, BP monitoring, may need antihypertensive 6 wk" },
+      { "label": "C", "text": "Wait until 40 weeks" },
+      { "label": "D", "text": "Anti-hypertensive only without delivery" },
+      { "label": "E", "text": "Aspirin only" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Preeclampsia: BP ≥ 140/90 + proteinuria (or end-organ dysfunction without proteinuria) after 20 wk. Severe features: BP ≥ 160/110, plt < 100K, LFT 2× ULN, Cr > 1.1, pulmonary edema, visual/cerebral symptoms. HELLP: hemolysis + elevated LFT + low platelets. Delivery is definitive Rx. Magnesium for seizure prophylaxis (eclampsia). BP control (avoid maternal stroke; don't over-correct — placental perfusion). Steroid if < 34 wk. Postpartum continue Mg + monitor.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Practice Bulletin: Gestational HTN + Preeclampsia 2020; SMFM Consult Series; ISSHP 2018"
+  },
+  {
+    "scenario": "หญิงตั้งครรภ์ GA 32 wk G2P1 มาห้องฉุกเฉินด้วย contractions ทุก 5 นาที × 2 ชม + กระเป๋าน้ำคร่ำไม่แตก\n\nCervix exam: 2 cm dilated, 80% effaced, ทารก vertex\nFetal heart rate: 142 reassuring\nUS: ทารกประมาณ 1,800g, AFI ปกติ, placenta upper segment",
+    "choices": [
+      { "label": "A", "text": "Discharge home" },
+      { "label": "B", "text": "Preterm Labor: admit + assess; tocolytics — nifedipine 20-30mg PO loading then 10-20mg q4-6h (preferred, calcium channel blocker) OR indomethacin (< 32 wk only — ductus arteriosus closure risk); other options atosiban (oxytocin antagonist), magnesium (also neuroprotection); duration 48h to allow steroid + transfer; antenatal corticosteroid betamethasone 12mg IM × 2 doses 24h apart (mature fetal lung — reduces RDS, IVH, NEC, mortality 30-50% per Cochrane); magnesium sulfate 4-6g loading then 1-2g/hr for fetal neuroprotection (< 32 wk); GBS prophylaxis if positive or unknown; do NOT tocolyze if: chorioamnionitis, severe preeclampsia/eclampsia, abruption, IUFD, lethal anomaly, advanced labor > 5cm; counsel for NICU; consider transfer to tertiary if level 3 NICU not available" },
+      { "label": "C", "text": "Cesarean immediately" },
+      { "label": "D", "text": "Antibiotic only" },
+      { "label": "E", "text": "Discharge with progesterone" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Preterm labor: contractions + cervical change before 37 wk. Management focus: delay birth 48h for steroids + neuroprotection + transfer. Tocolytics (nifedipine first-line, atosiban, MgSO4, indomethacin < 32 wk). Antenatal steroids — Liggins 1972 — major mortality reduction. Magnesium for fetal neuroprotection < 32 wk. GBS prophylaxis. Don't tocolyze if contraindicated. Transfer to tertiary if possible.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Practice Bulletin: Management of Preterm Labor 2016; Cochrane Reviews"
+  },
+  {
+    "scenario": "หญิงอายุ 28 ปี G2P1 GA 39 wk normal delivery NSD 2 ชม ก่อน อยู่หลังคลอด มาด้วยอาการ heavy bleeding + uterus boggy + ปวดท้อง\n\nV/S: BP 88/52, HR 132, RR 24\nGen: pale, anxious\nUterus: 4 finger breadths above umbilicus, soft + boggy\nBleeding: heavy ongoing ~ 1L estimated\n\nHb 6.4 (baseline 11), Plt 178K, INR 1.2\nCervix exam: no laceration, placenta delivered complete",
+    "choices": [
+      { "label": "A", "text": "Observation + IV fluid only" },
+      { "label": "B", "text": "Postpartum Hemorrhage (PPH > 500mL NSD, > 1000mL C/S, or any with hypovolemia) from uterine atony (most common cause — 70%): activate massive transfusion protocol if needed; uterine massage (bimanual); empty bladder (catheter); IV oxytocin 10-40 units in 1L NSS infusion (first-line — already given postpartum); second-line uterotonics: methylergonovine 0.2mg IM (CI in HT/preeclampsia), carboprost (15-methyl PGF2α) 250mcg IM (CI in asthma), misoprostol 800-1000mcg PR; tranexamic acid 1g IV (WOMAN trial); blood products with MTP protocol 1:1:1; balloon tamponade (Bakri); uterine artery embolization (IR); surgical: B-Lynch suture, uterine artery ligation, hysterectomy (last resort); identify 4 T's: Tone (atony), Trauma (laceration), Tissue (retained), Thrombin (coagulopathy)" },
+      { "label": "C", "text": "Hysterectomy immediately" },
+      { "label": "D", "text": "Discharge home" },
+      { "label": "E", "text": "Anticoagulation" }
+    ],
+    "correct_answer": "B",
+    "explanation": "PPH = leading cause of maternal mortality globally. 4 T's: **T**one (atony 70% — most common), **T**rauma (laceration, hematoma), **T**issue (retained products), **T**hrombin (coagulopathy). Atony management: massage + uterotonics (oxytocin first-line, then methylergonovine, carboprost, misoprostol) + balloon tamponade + uterine artery embolization + surgical options. TXA within 3h reduces mortality (WOMAN trial). Blood products 1:1:1. Hysterectomy last resort. Active management of 3rd stage (oxytocin) reduces PPH.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Practice Bulletin: Postpartum Hemorrhage 2017; WHO PPH Guidelines; WOMAN Trial Lancet 2017"
+  },
+  {
+    "scenario": "หญิงอายุ 32 ปี G3P2 GA 28 wk ANC ตรวจพบ GDM screening positive (OGTT fasting 105, 1h 195, 2h 168 — meets ADA/ACOG criteria)\n\nก่อนหน้านี้ลูก 1 คนเป็น macrosomia 4.2kg shoulder dystocia\nFamily history: father DM type 2",
+    "choices": [
+      { "label": "A", "text": "Ignore — manage after delivery" },
+      { "label": "B", "text": "Gestational Diabetes Mellitus (GDM) management: (1) Medical nutrition therapy first-line (registered dietitian — 40-50% calories from carb, 20% protein, 30-40% fat, distributed 3 meals + 2-3 snacks); (2) Exercise 30 min/d if no contraindication; (3) Self-monitor blood glucose 4×/d (fasting + 1 or 2h postprandial) — targets: fasting < 95, 1h < 140, 2h < 120; (4) Pharmacotherapy if MNT fail (target not met 50% of time after 1-2 wk): **insulin** preferred (does not cross placenta — long-acting NPH/detemir/glargine + rapid lispro/aspart); metformin/glyburide alternatives (cross placenta, ACOG accepts but insulin preferred); (5) Antepartum surveillance — NST + AFI weekly from 32-34 wk; (6) Delivery timing — 39-40 wk uncomplicated GDM on diet; 39 wk if on medication well-controlled; earlier if complications; (7) Intrapartum: glucose control 70-110, insulin drip if needed; (8) Postpartum: usually return to normal; OGTT 6-12 wk postpartum (50% develop T2DM lifetime); (9) Lifestyle: weight, exercise, prevention; (10) Recurrence high in future pregnancies" },
+      { "label": "C", "text": "Insulin without diet education" },
+      { "label": "D", "text": "Cesarean immediately" },
+      { "label": "E", "text": "Restrict carbohydrate completely" }
+    ],
+    "correct_answer": "B",
+    "explanation": "GDM: glucose intolerance first recognized in pregnancy. Screening 24-28 wk (1-step OGTT 75g or 2-step). Management: MNT first, insulin if MNT fail (insulin preferred — no placental crossing). Surveillance + delivery timing. Macrosomia, shoulder dystocia, preeclampsia, NICU risks. Postpartum OGTT — 50% develop T2DM. Lifestyle modification reduces.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Practice Bulletin: Gestational Diabetes Mellitus 2018; ADA Standards of Care 2024"
+  },
+  {
+    "scenario": "หญิงอายุ 22 ปี LMP 6 สัปดาห์ที่แล้ว มาห้องฉุกเฉินด้วยอาการ acute onset ปวดท้องน้อยขวา + vaginal spotting 12 ชม\n\nV/S: BP 96/62, HR 108\nGen: pale, anxious\nAbdomen: RLQ + suprapubic tenderness, guarding +\nPelvic: cervical motion tenderness +, right adnexal mass + tenderness\n\nβ-hCG quantitative 4,800 mIU/mL\nUS pelvis: empty uterus + right adnexal complex mass 3.5cm + free fluid in pelvis (moderate)",
+    "choices": [
+      { "label": "A", "text": "Observation" },
+      { "label": "B", "text": "Ectopic Pregnancy (high suspicion: β-hCG > 1500 + empty uterus + adnexal mass + free fluid): IV access × 2 + type & cross; consult OB-GYN immediately; treatment options: (1) **Methotrexate** (medical management) — criteria: hemodynamically stable, β-hCG < 5000, ectopic < 3.5cm, no fetal heart, no rupture; protocol single-dose 50 mg/m² IM, follow β-hCG day 4 + 7 (expect 15% decline), repeat if needed; (2) **Surgical** — laparoscopic salpingostomy (preserve tube) or salpingectomy (remove tube — if extensive damage, contralateral healthy tube, no future fertility plan) — indications: hemodynamic instability, rupture, methotrexate CI, large mass, fetal heart, β-hCG > 5000; (3) **Expectant management** — selected very low β-hCG declining; (4) Rh(D)-negative + bleeding → Anti-D Ig 50-300 mcg; (5) Contraception + future fertility counseling; (6) **Differential**: PID, ovarian cyst, appendicitis, threatened abortion" },
+      { "label": "C", "text": "Misoprostol for missed abortion" },
+      { "label": "D", "text": "Continue current pregnancy support" },
+      { "label": "E", "text": "Discharge with iron supplement" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Ectopic pregnancy: implantation outside uterine cavity (95% tubal). Suspicion: positive β-hCG + abdominal pain + bleeding + adnexal mass. Discriminatory zone: β-hCG > 1500-2000 + no IUP on TVS = ectopic likely. Methotrexate vs surgery decision: hemodynamics, β-hCG, size, fetal heart, patient factors. Rupture = surgical emergency. Future fertility preserved better with conservative management. Counsel + contraception + future fertility.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Practice Bulletin: Tubal Ectopic Pregnancy 2018; ASRM Practice Committee"
+  },
+  {
+    "scenario": "หญิงอายุ 35 ปี G2P1 GA 38 wk มา L/R complaining of decreased fetal movement × 12 ชม + small amount vaginal bleeding\n\nV/S: BP 112/72, HR 92, RR 16\nAbdomen: tense + tender + palpable contractions painful\nFetal heart: 110 (mild bradycardia)\nCervix: closed, no advanced labor\n\nUS: placental abruption suspected (retroplacental clot + abnormal placental edge)\nLab: Hb 10.4, Plt 162K, Fibrinogen 220 (low), INR 1.6 (high) — DIC features developing",
+    "choices": [
+      { "label": "A", "text": "Observation" },
+      { "label": "B", "text": "Placental Abruption (premature separation) with developing DIC + non-reassuring fetal status: emergency C-section delivery (immediate — both mother + fetus at risk); concurrent: IV access × 2 large bore + type & cross 4 units PRC + 4 FFP; correct coagulopathy (FFP, cryoprecipitate for fibrinogen < 200, platelets if < 50K, PRBCs); manage shock; massive transfusion protocol if needed; tranexamic acid (WOMAN); anesthesia consultation; NICU notification; postpartum: monitor for PPH (uterine atony commonly follows), continue coagulopathy correction, monitor Hb, may need ICU; counsel: 5-15% recurrence next pregnancy; risk factors: HT, smoking, cocaine, trauma, prior abruption, advanced maternal age, multiple gestation" },
+      { "label": "C", "text": "Vaginal delivery induction" },
+      { "label": "D", "text": "Tocolytic" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Placental abruption: premature separation. Spectrum from mild to catastrophic. Severe: pain + bleeding + uterine tetany + DIC + fetal distress. Risk factors: HT, smoking, cocaine, trauma, prior abruption. Imaging: US often misses (only sees if large clot). Diagnosis often clinical. Management: stabilize + deliver (C-section if non-reassuring fetal status or maternal compromise; vaginal if reassuring + stable + advanced labor). Major bleeding + DIC complication. PPH common. Recurrence risk 5-15%.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Practice Bulletin: Placental Abruption 2006 (reaffirmed); Williams Obstetrics 26th ed"
+  },
+  {
+    "scenario": "หญิงอายุ 45 ปี มา OPD ด้วยอาการเลือดประจำเดือนผิดปกติ — heavy menstrual bleeding + intermenstrual spotting × 6 เดือน + น้ำหนักลด 3 kg\n\nLMP irregular last 4 months\nNo dyspareunia, no fever\n\nV/S: ปกติ\nPelvic exam: enlarged uterus 14 wk size + irregular contour\nNo cervical lesion, no adnexal mass\n\nLab: Hb 9.2 (anemia), TSH normal\nUS: multiple uterine fibroids (intramural + submucosal) largest 6cm + endometrial thickening 14mm\nEndometrial biopsy: complex hyperplasia without atypia",
+    "choices": [
+      { "label": "A", "text": "Hysterectomy alone" },
+      { "label": "B", "text": "Abnormal Uterine Bleeding (AUB) — PALM-COEIN classification: structural (P-polyp, A-adenomyosis, L-leiomyoma, M-malignancy/hyperplasia) + non-structural (C-coagulopathy, O-ovulatory dysfunction, E-endometrial, I-iatrogenic, N-not classified); this patient: leiomyoma + complex hyperplasia: (1) **Iron supplement** for anemia; (2) **Treatment of hyperplasia without atypia**: progestin (LNG-IUD preferred — Mirena 90% effective + provides contraception + treats heavy bleeding; or oral medroxyprogesterone, micronized progesterone, megestrol) × 3-6 mo then repeat biopsy; if complex with atypia → hysterectomy preferred (high cancer risk); (3) **Treatment of fibroids causing AUB**: - Medical: LNG-IUD, combined OCP, NSAIDs, tranexamic acid acute (Lukes JAMA 2010), GnRH agonist temporary (suppress to operate), GnRH antagonist (elagolix); - Procedural: uterine artery embolization (UAE — preserves uterus, fibroid shrink), myomectomy (preserves uterus + fertility — open, laparoscopic, hysteroscopic for submucosal); hysterectomy (definitive — for refractory + completed childbearing or large symptomatic); endometrial ablation (alternative); (4) Counseling: future fertility, recurrence (fibroids), follow-up; (5) Surveillance for hyperplasia progression + endometrial cancer" },
+      { "label": "C", "text": "Observation only" },
+      { "label": "D", "text": "Total pelvic radiation" },
+      { "label": "E", "text": "Chemotherapy" }
+    ],
+    "correct_answer": "B",
+    "explanation": "AUB workup: PALM-COEIN classification (Munro AOG 2011). Structural causes more common with age. Endometrial sampling required for risk factors (age > 45, persistent AUB, obesity, anovulation, HRT). Hyperplasia without atypia: progestin Rx + reassess. Hyperplasia with atypia: hysterectomy preferred (40% concurrent cancer). Fibroid management: medical + procedural + surgical based on size, location, symptoms, fertility desires. LNG-IUD highly effective for heavy menstrual bleeding.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Committee Opinion: Endometrial Intraepithelial Neoplasia 2015; FIGO PALM-COEIN 2018; ACOG Practice Bulletin: Management of Symptomatic Uterine Leiomyomas"
+  },
+  {
+    "scenario": "หญิงอายุ 26 ปี ไม่มีโรคประจำตัว มาตรวจคัดกรอง pap smear (cervical cytology) ผลเป็น HSIL (high-grade squamous intraepithelial lesion)\n\nFollow-up colposcopy: CIN 2-3 confirmed by biopsy\nHPV testing: positive HPV 16 + 18\n\nไม่มีอาการ, sexually active, ไม่ pregnant",
+    "choices": [
+      { "label": "A", "text": "Observe + repeat in 5 years" },
+      { "label": "B", "text": "Cervical CIN 2-3 (high-grade) — pre-cancerous lesion requiring treatment: (1) **Excisional treatment preferred** over ablation: LEEP (loop electrosurgical excision procedure) — most common, outpatient, can do cone biopsy at same time; cold-knife conization (CKC) — for endocervical lesion, possible micro-invasion; (2) **Ablative treatment** alternative (cryotherapy, laser) — only for selected (visible squamocolumnar junction, no glandular involvement, no suspicion for invasion); (3) **Post-treatment surveillance**: cytology + HPV co-testing 6 + 18 months + annually × 3 years then routine if normal; (4) Margin status: if positive endocervical margin → repeat excision or close follow-up; (5) **Pregnancy considerations**: LEEP/CKC increase preterm birth risk slightly; defer if pregnant unless invasive; (6) **HPV vaccination** for partner, future children (HPV vaccine for women 9-26 routinely, 27-45 selective; nonavalent vaccine covers 90% cervical cancers); (7) Counseling: HPV common, often clears, treatable lesion not cancer, importance of follow-up; (8) Sexual partner — no specific testing; (9) Smoking cessation (smoking accelerates CIN progression); (10) Long-term: HPV co-testing q 3-5 years standard cervical cancer screening" },
+      { "label": "C", "text": "Total hysterectomy" },
+      { "label": "D", "text": "Chemotherapy" },
+      { "label": "E", "text": "Stop screening" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cervical cancer prevention: HPV vaccination + screening + treat precancers. HPV 16, 18 cause 70% cervical cancers. CIN 2-3 = high-grade precancer → 30% progress to cancer if untreated. Treatment: excisional (LEEP, CKC) preferred. ASCCP risk-based management guidelines. Post-treatment surveillance critical. HPV vaccine effective for prevention. Modern: HPV primary screening replacing cytology in many settings. WHO target — eliminate cervical cancer.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Practice Bulletin: Management of Abnormal Cervical Cancer Screening Tests 2020; ASCCP Risk-Based Management Consensus Guidelines 2019"
+  },
+  {
+    "scenario": "หญิงอายุ 58 ปี postmenopausal × 7 ปี ก่อนหน้านี้ healthy มาด้วยอาการ vaginal bleeding ผิดปกติ 2 สัปดาห์ — เลือดออกเล็กน้อยติดต่อกัน\n\nBMI 32 (obese), DM type 2, HT, ไม่เคยตั้งครรภ์\n\nV/S: BP 142/88, HR 78\nGen: well, slightly obese\nPelvic exam: ปกติ external + cervix\nNo adnexal mass\n\nUS: endometrial thickness 18mm (postmenopausal > 4 mm requires evaluation)\nEndometrial biopsy: endometrioid adenocarcinoma, Grade 1, hormone receptor positive",
+    "choices": [
+      { "label": "A", "text": "Observation" },
+      { "label": "B", "text": "Endometrial Adenocarcinoma Stage I (presumed — endometrioid, low grade) — surgical staging primary: (1) **Surgical staging** = standard of care — laparoscopic, robotic, or open total hysterectomy + bilateral salpingo-oophorectomy + lymphadenectomy (sentinel node biopsy increasingly used vs full pelvic + para-aortic dissection); peritoneal washings, omentectomy in selected; (2) **Final stage** determined by surgical pathology — FIGO 2009 + 2023 updates; (3) **Adjuvant therapy** based on risk: Stage IA Grade 1-2: no adjuvant; Stage IA Grade 3 or IB: vaginal brachytherapy +/- chemotherapy; Stage II-III: external beam RT + chemotherapy (carboplatin + paclitaxel); (4) **Molecular classification** (TCGA): POLE-ultramutated (good prognosis), MSI-high, copy-number low/p53 wild-type, copy-number high/p53 mutant (worst); guides therapy increasingly; (5) **Hormonal therapy** (selected): progestin for poor surgical candidates or fertility preservation in Grade 1; (6) **Targeted therapy**: pembrolizumab + lenvatinib for advanced/recurrent (KEYNOTE-775); (7) **Lifestyle**: weight loss, glycemic control, exercise; (8) **Genetic counseling**: Lynch syndrome screening (3-5% of endometrial cancers, age < 50, family history); (9) **Survivorship**: surveillance pelvic exam, symptoms monitoring; (10) **Multidisciplinary**: GYN-oncology, radiation oncology, medical oncology" },
+      { "label": "C", "text": "Hormone replacement therapy" },
+      { "label": "D", "text": "Discharge — physiologic bleeding" },
+      { "label": "E", "text": "Pap smear only" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Postmenopausal bleeding ALWAYS requires evaluation — endometrial cancer until proven otherwise. Type I (endometrioid, estrogen-dependent — obesity, DM, nulliparity, late menopause, tamoxifen) vs Type II (serous, clear cell — older, p53). Surgical staging standard. Molecular classification (TCGA) emerging. Lynch syndrome screening — implications for family. Adjuvant therapy stage + grade + molecular based. Survival good if early (Stage I > 90% 5-year).",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Committee Opinion: Endometrial Cancer 2015 + updates; NCCN Uterine Cancer 2024; ESGO/ESTRO/ESP Guidelines 2021"
+  },
+  {
+    "scenario": "หญิงอายุ 32 ปี ตั้งครรภ์ GA 12 wk G1P0 มาตรวจ ANC ครั้งแรก — counseling on prenatal genetic screening + first trimester care\n\nNo family history concerning, no consanguinity\nMaternal age 32 (not advanced maternal age which is 35+)\nNo medical comorbidity",
+    "choices": [
+      { "label": "A", "text": "No screening needed" },
+      { "label": "B", "text": "Comprehensive First Trimester Care: (1) **History + examination**: comprehensive including obstetric, medical, surgical, family, social, drug, allergy, mental health, IPV screening; (2) **Vital signs + BMI + edema baseline**; (3) **Lab tests**: CBC, blood group + Rh + antibody screen, hepatitis B sAg, syphilis (VDRL/RPR), HIV (opt-out), rubella IgG, varicella IgG if no history, urine culture + UA, Pap smear if due (per cervical screening guideline), GBS at 36-37 wk; (4) **Genetic screening (offered to all regardless of age — ACOG 2020)**: first trimester combined screen (PAPP-A + free β-hCG + NT US at 11-13+6 wk — detects 85% Down with 5% FPR); cell-free DNA / NIPT (cfDNA from maternal blood — detects 99% Down, also 18, 13, sex chromosomes, increasingly accurate, growing standard); quad screen 15-20 wk if not first; diagnostic — CVS 10-13 wk (1% miscarriage), amniocentesis 15-20 wk (0.5% miscarriage) — for positive screen or specific risk; (5) **Carrier screening** (offered all): cystic fibrosis, spinal muscular atrophy, hemoglobinopathies (thalassemia in Asian — Thai high risk!), fragile X, Ashkenazi panel, expanded carrier; (6) **Vaccinations**: Tdap (27-36 wk), flu (any time), COVID, RSV (32-36 wk new); (7) **Counseling**: nutrition (folate 400 mcg + iron + calcium + DHA), exercise (moderate OK), avoid alcohol/smoking/illicit, medications review (teratogens), seafood, listeria foods, hot tubs, travel; (8) **Schedule prenatal visits** per gestational age; (9) **Mental health screening**: depression, anxiety; (10) **Anticipatory guidance** + birth plan; (11) **Confirm IUP + viability** US" },
+      { "label": "C", "text": "Cesarean planned at 39 wk" },
+      { "label": "D", "text": "Single visit follow-up" },
+      { "label": "E", "text": "No vaccination" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Comprehensive first trimester prenatal care = foundation. Universal genetic screening offered (ACOG 2020 update — previously only AMA). NIPT increasingly standard. Carrier screening — Thai population specific (thalassemia high prevalence). Vaccinations (Tdap, flu, COVID, RSV). Nutrition + lifestyle counseling. Mental health screening. Multidisciplinary if high-risk. Quality care = better outcomes (Thai maternal mortality improving over decades).",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Committee Opinion: Screening for Fetal Chromosomal Abnormalities 2020; ACOG Guidelines for Perinatal Care"
+  }
+]
