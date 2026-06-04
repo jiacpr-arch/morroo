@@ -1,0 +1,517 @@
+[
+  {
+    "scenario": "ชายไทยอายุ 68 ปี underlying HT, DM type 2, ex-smoker 40 pack-year มาด้วยอาการเหนื่อยมากขึ้น orthopnea + bilateral pedal edema มา 1 สัปดาห์\n\nV/S: BP 138/82, HR 102 (irregular), RR 24, SpO2 90% room air, น้ำหนักเพิ่ม 4 kg ใน 2 สัปดาห์\nJVP 12 cmH2O, S3 gallop, fine basilar crackles ทั้งสองข้าง, hepatomegaly, 2+ pitting edema\n\nLab: BNP 1,850 pg/mL (URL 100), Troponin 0.02 (ไม่เพิ่ม), Cr 1.6 (baseline 1.2), Na 132, K 4.2\nEchocardiogram: LVEF 28%, dilated LV\nCXR: cardiomegaly + pulmonary congestion + bilateral pleural effusion",
+    "choices": [
+      { "label": "A", "text": "IV furosemide 40-80 mg bolus (2× home dose) + monitor urine output + ลด preload (NTG ถ้า BP > 100) + ออกซิเจน + assess perfusion" },
+      { "label": "B", "text": "IV norepinephrine drip + dobutamine สำหรับ cardiogenic shock" },
+      { "label": "C", "text": "IV beta-blocker (metoprolol IV) ทันทีเพื่อ rate control" },
+      { "label": "D", "text": "Restrict fluid + furosemide oral + discharge follow-up OPD" },
+      { "label": "E", "text": "ACEi loading dose + spironolactone IV" }
+    ],
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วยเป็น acute decompensated heart failure (ADHF) — \"warm and wet\" profile (perfusion ดี, congestion +) ESC 2021 + AHA/ACC 2022 HF guideline first-line: (1) IV loop diuretic — initial dose 2× home oral dose IV (Pioneer-HF + DOSE trial); titrate q 2-4 ชม. (2) Oxygen supplementation ถ้า SpO2 < 90% (3) IV vasodilator (NTG) ถ้า systolic BP > 100 + symptomatic (4) Beta-blocker: ห้ามให้ใหม่ใน acute decompensation — continue home dose ถ้าตัว stable (5) ACEi/ARB: continue oral; ห้าม initiate IV (6) Inotrope (dobutamine) เฉพาะ \"cold and wet\" (poor perfusion) — ตัวเลือก A ถูก. B ผิดเพราะไม่ใช่ shock. C ผิด — beta-blocker IV ใน ADHF เพิ่ม mortality. D ผิด — IV diuretic ดีกว่า oral. E ผิด — spironolactone IV ไม่มี form",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "AHA/ACC/HFSA 2022 Guideline for the Management of Heart Failure; ESC Guidelines for Diagnosis and Treatment of Acute and Chronic Heart Failure 2021; Felker GM et al. NEJM 2011 (DOSE-AHF)"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 52 ปี ไม่มีโรคประจำตัว มาด้วยอาการอ่อนเพลีย น้ำหนักลด 5 kg ใน 3 เดือน เหงื่อออกตอนกลางคืน ปวดข้อมือทั้งสองข้าง บวมตอนเช้า > 1 ชม.\n\nV/S: BP 124/76, HR 88, RR 14, Temp 37.6°C\nPE: symmetric synovitis ที่ MCP, PIP ทั้งสองข้าง + wrists\nไม่มี nodules\n\nLab: Hb 10.2 (normocytic), WBC 9,800, Plt 425,000, ESR 78, CRP 32, RF positive (78 IU/mL), Anti-CCP > 200 U/mL (strongly positive), ANA 1:80",
+    "choices": [
+      { "label": "A", "text": "NSAIDs อย่างเดียว + observe" },
+      { "label": "B", "text": "Start methotrexate 15 mg/wk + folate + low-dose prednisolone bridging + monitor CBC/LFT + refer rheumatology — early aggressive DMARD ลด joint damage ตาม treat-to-target strategy" },
+      { "label": "C", "text": "Hydroxychloroquine อย่างเดียว" },
+      { "label": "D", "text": "ส่ง biologic agent (anti-TNF) เป็น first-line" },
+      { "label": "E", "text": "Topical NSAIDs + physiotherapy" }
+    ],
+    "correct_answer": "B",
+    "explanation": "ผู้ป่วยมี classic Rheumatoid Arthritis (RA) ตาม ACR/EULAR 2010 classification criteria: symmetric polyarthritis ของ small joints + morning stiffness > 1 ชม. + RF positive + Anti-CCP strongly positive + ESR/CRP elevated + symptoms > 6 สัปดาห์ ACR 2021 + EULAR 2022 RA guideline: (1) Methotrexate (MTX) เป็น anchor DMARD first-line — start within 3 เดือนของ diagnosis (window of opportunity) (2) Folate supplementation ลด GI side effect (3) Bridging glucocorticoid (low-dose prednisolone 5-10 mg) ลด symptoms ระหว่าง MTX onset (4-8 สัปดาห์ to effect), taper เมื่อ DMARD effective (4) Treat-to-target: aim for remission (DAS28 < 2.6) (5) Biologic หรือ targeted synthetic DMARD ถ้า MTX fail หลัง 3-6 เดือน — ตัวเลือก B ครบ. A ผิด — NSAIDs ไม่ stop progression. C ผิด — HCQ ใช้ใน mild RA หรือ combo. D ผิด — biologic ไม่ใช่ first-line. E ผิดเชิงพื้นฐาน",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "rheumatology",
+    "board_age_group": "adult",
+    "reference_source": "ACR Guideline for the Treatment of Rheumatoid Arthritis 2021; EULAR Recommendations for the Management of RA 2022"
+  },
+  {
+    "scenario": "ชายไทยอายุ 45 ปี underlying chronic alcoholism มา ED ด้วยอาการสับสน confused ระยะ 3 วัน ก่อนหน้านี้หยุดดื่มสุรามา 5 วัน เพราะรู้สึกไม่สบาย\n\nV/S: BP 168/102, HR 124, RR 22, Temp 38.4°C, SpO2 96%\nGen: tremor, diaphoretic, agitated, ตอบคำถามเพี้ยน เห็น insects ที่ผนัง\nGCS 14 (E4V4M6)\nไม่มี focal neurology, neck supple\n\nLab: Mg 1.2 (low), K 3.1, Na 132, Glucose 88, AST 188, ALT 92, Ammonia 84\nCT brain: negative",
+    "choices": [
+      { "label": "A", "text": "IV haloperidol อย่างเดียว + restraint" },
+      { "label": "B", "text": "IV thiamine 500 mg ก่อนให้กลูโคส + IV benzodiazepine (lorazepam หรือ diazepam) titrate ด้วย CIWA-Ar protocol + correct electrolytes (Mg, K) + IV fluid + monitor — ป้องกัน Wernicke encephalopathy" },
+      { "label": "C", "text": "Beta-blocker IV เพื่อ control HR + BP" },
+      { "label": "D", "text": "IV dextrose 50% bolus ก่อนเพราะกลัว hypoglycemia" },
+      { "label": "E", "text": "IV phenytoin loading dose เพื่อ prevent seizure" }
+    ],
+    "correct_answer": "B",
+    "explanation": "ผู้ป่วยเป็น Delirium Tremens (DTs) — severe alcohol withdrawal (peak 48-96 ชม. หลังหยุด) + เพิ่ม risk Wernicke encephalopathy AAFP/ASAM/Royal College of Psychiatrists guideline: (1) **Thiamine 100-500 mg IV ก่อนกลูโคส** เสมอ — ถ้าให้กลูโคสก่อน thiamine จะ precipitate Wernicke (acute amnestic state) ใน thiamine-deficient (2) Benzodiazepine titrate ตาม CIWA-Ar — lorazepam (short half-life ใน liver disease), diazepam (long half-life — auto-tapering) — first-line สำหรับทั้ง withdrawal และ DTs (3) Correct electrolytes: Mg (precipitate seizure), K, Phos (4) IV fluid (dehydration) (5) Treat hyperthermia + agitation (6) Avoid haloperidol ใน DTs (lower seizure threshold) — ตัวเลือก B ครบและถูกลำดับ. A ผิดเพราะ haloperidol ลด seizure threshold. C ผิด — beta-blocker mask autonomic symptoms ไม่ได้รักษา root cause. D ผิดอย่างยิ่ง — กลูโคสก่อน thiamine = Wernicke. E ผิด — phenytoin ไม่มีประโยชน์ใน alcohol withdrawal seizures (benzodiazepine ดีกว่า)",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "ASAM Clinical Practice Guideline on Alcohol Withdrawal Management 2020; Mayo-Smith MF et al. Arch Intern Med 2004 (CIWA-Ar)"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 28 ปี ตั้งครรภ์ GA 24 weeks มา OPD ด้วยอาการเหนื่อยเมื่อออกแรงมา 2 สัปดาห์ ก่อนหน้านี้ healthy\n\nV/S: BP 110/72, HR 96, RR 18, SpO2 99%, Temp 36.8°C\nGen: pale, conjunctival pallor +\nไม่มี jaundice, ม้าม-ตับไม่โต\n\nLab: Hb 7.8 g/dL (baseline 12 ก่อนตั้งครรภ์), MCV 68 fL (low), MCH 22 pg, RDW 18% (high), Reticulocyte 1.2%\nFerritin 8 ng/mL (low), Iron 28 (low), TIBC 480 (high), Transferrin saturation 6%\nVitamin B12 + Folate ปกติ",
+    "choices": [
+      { "label": "A", "text": "Blood transfusion ทันที 2 units PRC" },
+      { "label": "B", "text": "Oral ferrous sulfate 325 mg TID + vitamin C 250 mg เพื่อเพิ่ม absorption + ตรวจ Hb ซ้ำ 4 สัปดาห์ + counseling diet + investigate cause ของ iron deficiency + ตรวจ thalassemia screening (ระวัง coexistence)" },
+      { "label": "C", "text": "IV iron sucrose 200 mg ทุกวันที่ 3 × 3 doses เพราะรุนแรง" },
+      { "label": "D", "text": "Erythropoietin SC weekly" },
+      { "label": "E", "text": "Bone marrow biopsy เพื่อ rule out aplastic anemia" }
+    ],
+    "correct_answer": "B",
+    "explanation": "ผู้ป่วยมี Iron Deficiency Anemia (IDA) ในการตั้งครรภ์ — microcytic, hypochromic anemia + ferritin < 30 + low transferrin saturation < 16% + high TIBC = classic IDA (ไม่ใช่ thalassemia ที่ ferritin จะปกติ-สูง) WHO + ACOG + RCOG guideline: (1) Oral iron first-line — 100-200 mg elemental iron/วัน (ferrous sulfate 325 mg มี elemental ~65 mg) ในขณะท้องว่าง + vitamin C (acidic environment เพิ่ม absorption) (2) Side effects (constipation, nausea) — start TID หรือ alternate-day (PROVIDE trial 2019 — alternate-day absorption ดีกว่าและ side effect น้อยกว่า) (3) Reticulocyte response ภายใน 1-2 สัปดาห์, Hb ขึ้น 1 g/dL ใน 2-4 สัปดาห์ (4) IV iron ถ้า: ทน oral ไม่ได้, severe (Hb < 7), 3rd trimester, surgery imminent (5) Transfusion ถ้า Hb < 7 + symptomatic, หรือ < 6 (6) Investigate cause: ในไทยต้อง screen thalassemia แยกจาก IDA (อาจ coexist) — ตัวเลือก B ครบ. A ผิด — Hb 7.8 ยังไม่ต้อง transfuse. C ผิด — IV iron เป็น second-line. D ผิด — EPO สำหรับ CKD. E ผิด — IDA classic ไม่ต้อง marrow",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hematology",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Practice Bulletin: Anemia in Pregnancy 2021; British Society for Haematology UK Guidelines on IDA 2021; PROVIDE Trial (Stoffel NU et al. Lancet Haematol 2017)"
+  },
+  {
+    "scenario": "ชายไทยอายุ 72 ปี underlying HT, T2DM, CKD stage 3 มา ED ด้วยปัสสาวะออกน้อยลง 2 วัน + edema เพิ่มขึ้น + nausea\n\nV/S: BP 178/104, HR 88, RR 20, SpO2 96%, Temp 36.8°C\nUrine output 6 ชม. = 80 mL\nLab: Cr 4.2 (baseline 1.8), BUN 76, K 5.8, Bicarbonate 18, Hb 10.5\nUrinalysis: protein 2+, blood 1+, RBC 5-10/HPF (eumorphic), Granular casts +\nUrine Na 8 mEq/L, Urine osm 580, FENa 0.4%\nRecent: เริ่ม losartan 100 mg + lisinopril 20 mg + furosemide 40 mg เพิ่ม dose สัปดาห์ที่แล้ว ใช้ ibuprofen 400 mg TID ปวดเข่า 4 วัน",
+    "choices": [
+      { "label": "A", "text": "Pre-renal AKI on CKD จาก dehydration + ACEi/ARB/NSAIDs (triple whammy) → หยุด NSAIDs + ลด/หยุด ACEi+ARB ชั่วคราว + ปรับ diuretic + IV fluid replacement carefully (judicious) + manage hyperkalemia + repeat creatinine + nephrology consult ถ้าไม่ดีขึ้น" },
+      { "label": "B", "text": "Aggressive IV fluid 200 mL/hr ต่อเนื่อง" },
+      { "label": "C", "text": "Hemodialysis ทันที" },
+      { "label": "D", "text": "Increase furosemide IV high dose" },
+      { "label": "E", "text": "Renal biopsy เพื่อ confirm ATN" }
+    ],
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วยเป็น Acute Kidney Injury on CKD — KDIGO criteria: Cr ↑ 0.3 ภายใน 48 ชม. หรือ 1.5× baseline; ของเรา Cr 4.2 vs 1.8 = 2.3× → AKI Stage 2 Subtype = Pre-renal (FENa < 1% ใน eumorphic urine + low urine Na + concentrated urine osm) — แต่ตอนนี้ไม่ใช่ pure pre-renal เพราะมี granular casts บ่งบอกว่าเริ่มเป็น ATN ตามมา Causative trio: \"Triple whammy\" = ACEi/ARB (reduce GFR) + diuretic (volume depletion) + NSAIDs (vasoconstrict afferent + reduce prostaglandin-mediated dilation) — synergistic AKI risk Management ตาม KDIGO AKI 2012: (1) Stop nephrotoxins (NSAIDs first) (2) Reduce/hold ACEi+ARB temporarily — รวมจึง 3 ตัวขัดแย้ง (3) Adjust diuretic (4) Fluid replacement judiciously — ระวัง overload เพราะ CKD baseline (5) Treat hyperkalemia (Ca gluconate, insulin/dextrose, kayexalate; HD ถ้าไม่ตอบสนอง) (6) Repeat Cr 24-48 ชม. ติดตาม — ตัวเลือก A ครบ. B ผิด — aggressive fluid เสี่ยง overload. C ผิด — HD ใช้เมื่อ refractory hyperkalemia, severe acidosis, uremic complications, fluid overload — ยังไม่ใช่ขั้นนี้. D ผิด — diuretic เพิ่มจะแย่ลง. E ผิด — biopsy เฉพาะ unclear cases",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "renal_gu",
+    "board_age_group": "adult",
+    "reference_source": "KDIGO Clinical Practice Guideline for AKI (2012); Loutradis C et al. (Triple Whammy and AKI risk) BMJ 2013"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 35 ปี underlying SLE on hydroxychloroquine + low-dose prednisolone มาด้วยปวดข้อเข่าทั้งสองข้าง + ผื่นแดงที่หน้า ก่อนหน้า 1 สัปดาห์ไปทะเลอาบแดด\n\nV/S: BP 142/88, HR 92, RR 18, Temp 37.8°C\nGen: malar rash + photosensitive\nMild synovitis at knees, mild ankle edema\nUrine dipstick: protein 3+, blood 2+\n\nLab: Hb 9.2, WBC 3,400 (Lymph 980), Plt 92,000, Cr 1.4 (baseline 0.9), Albumin 2.8\nUrine: protein/Cr ratio 3.8 g/g, RBC casts +, RBC dysmorphic\nC3 ต่ำ, C4 ต่ำ, Anti-dsDNA 480 IU/mL (high), ANA 1:1280",
+    "choices": [
+      { "label": "A", "text": "Increase prednisolone oral แล้วนัด follow-up 1 เดือน" },
+      { "label": "B", "text": "SLE flare + Class III/IV lupus nephritis (proliferative GN) — admit + Renal biopsy + IV methylprednisolone pulse 500-1000 mg × 3 days → oral prednisolone + Induction immunosuppression (mycophenolate mofetil 2-3 g/วัน หรือ cyclophosphamide) + hydroxychloroquine continue + monitor renal function" },
+      { "label": "C", "text": "Continue HCQ อย่างเดียว + sunscreen" },
+      { "label": "D", "text": "Rituximab single agent first-line" },
+      { "label": "E", "text": "ACEi อย่างเดียวเพื่อ control proteinuria" }
+    ],
+    "correct_answer": "B",
+    "explanation": "ผู้ป่วยมี SLE flare with active Lupus Nephritis (LN) — clinical clues: (1) proteinuria > 0.5 g/24 ชม. (2) active urine sediment (RBC casts, dysmorphic RBC) (3) ↑ Cr (4) low C3/C4 + ↑ Anti-dsDNA ตาม ACR/EULAR 2019 + KDIGO 2024 LN guideline: (1) Renal biopsy เป็น standard — แยก Class III/IV (proliferative) จาก Class V (membranous) เพราะ treatment ต่างกัน (2) Induction therapy (3-6 เดือน) สำหรับ Class III/IV: - High-dose glucocorticoid: IV methylprednisolone pulse → oral pred 0.5-1 mg/kg taper - PLUS one of: MMF 2-3 g/วัน (preferred ใน Asian, less toxicity) หรือ IV cyclophosphamide (Euro-Lupus or NIH regimen) (3) Maintenance (≥ 3 ปี): MMF หรือ azathioprine + low-dose pred (4) Adjuncts: HCQ continue (ลด flare, improve survival, lupus-protective), ACEi/ARB (lower BP target < 130/80, antiproteinuria), statin, sun protection, calcium/vitamin D, vaccination — ตัวเลือก B ครบ. A ผิด — flare + active nephritis ต้อง escalate, not OPD. C ผิด — HCQ alone ไม่พอ. D ผิด — rituximab เป็น refractory option. E ผิด — ACEi เป็น adjunct ไม่ใช่ treatment เดียว",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "rheumatology",
+    "board_age_group": "adult",
+    "reference_source": "ACR/EULAR Recommendations for LN 2019; KDIGO Clinical Practice Guideline for Lupus Nephritis 2024; Houssiau FA et al. (Euro-Lupus) Arthritis Rheum 2002"
+  },
+  {
+    "scenario": "ชายไทยอายุ 58 ปี underlying T2DM 15 ปี ไม่ค่อย compliance ยา HbA1c ล่าสุด 11.2%, BP control แย่, สูบบุหรี่ 30 pack-year มาด้วยอาการเจ็บขาขวาเวลาเดิน relief เมื่อพัก เพิ่งเริ่ม 3 เดือน เดินได้ < 100 m\n\nV/S: BP 168/96, HR 84, ABI right 0.62, left 0.85\nFemoral pulse ขวา weak, popliteal absent, dorsalis pedis absent\nผิวหนังเท้าขวา cool, hair loss, slow capillary refill\nไม่มี ulcer, ไม่มี rest pain",
+    "choices": [
+      { "label": "A", "text": "Refer vascular surgery ทันทีเพื่อ revascularization" },
+      { "label": "B", "text": "Optimize medical therapy: statin (atorvastatin 80 mg) + antiplatelet (aspirin 81 mg หรือ clopidogrel 75 mg) + smoking cessation + structured exercise program (supervised walking) + glycemic control + BP control + cilostazol สำหรับ claudication; revascularization reserved สำหรับ lifestyle-limiting claudication หลัง medical fail หรือ critical limb ischemia" },
+      { "label": "C", "text": "Long-term anticoagulation with warfarin" },
+      { "label": "D", "text": "Pentoxifylline as first-line agent" },
+      { "label": "E", "text": "Avoid exercise — bed rest จะช่วย" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Peripheral Arterial Disease (PAD) — symptomatic intermittent claudication, ABI < 0.9 confirms PAD (0.62 = moderate-severe) AHA/ACC 2016 + ESC 2017 PAD guideline lifestyle-limiting claudication management: (1) Risk factor modification (foundational): - **Smoking cessation** (single most effective intervention — reduces amputation, MI, mortality) - **Statin high-intensity** (atorvastatin 40-80 mg) — reduces cardiovascular events + improves walking distance - **Glycemic control** (HbA1c < 7% if safe) - **BP control** (< 130/80; ACEi preferred) - **Antiplatelet** (aspirin หรือ clopidogrel) reduces MI/stroke (2) Symptom control: - **Supervised exercise therapy** (35-50 นาที × 3 ครั้ง/สัปดาห์ × 12 สัปดาห์) — Class I, increases walking distance more than meds - **Cilostazol** 100 mg BID — phosphodiesterase III inhibitor; contraindicated in CHF (3) Revascularization (endovascular หรือ surgical) เฉพาะ: lifestyle-limiting claudication ที่ medical fail, critical limb-threatening ischemia (rest pain, tissue loss, gangrene) — ตัวเลือก B ครบและสะท้อน guideline-directed therapy. A ผิด — surgery ไม่ใช่ first-line ใน claudication ที่ไม่ critical. C ผิด — warfarin ไม่ improve outcomes ใน PAD. D ผิด — pentoxifylline weak evidence. E ผิดอย่างยิ่ง — exercise ช่วย ไม่ใช่ bed rest",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "AHA/ACC 2016 Guideline for the Management of Patients with Lower Extremity Peripheral Artery Disease; ESC/ESVS 2017 Guidelines on the Diagnosis and Treatment of PAD"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 42 ปี HIV positive (CD4 = 38 cells/μL), ไม่ compliance ART มา ED ด้วยปวดศีรษะรุนแรง + ไข้ + คอแข็ง onset 5 วัน ค่อย ๆ แย่ลง วันนี้สับสน\n\nV/S: BP 124/76, HR 102, RR 22, Temp 39.0°C, SpO2 97%\nGCS 13 (E3V4M6), neck stiffness +\nKernig sign positive, Brudzinski +\nไม่มี focal neurology, ไม่มี papilledema\n\nLab: WBC 4,800, Hb 11.2, Plt 168,000, Cr 1.0, Na 132\nCT brain non-contrast: no mass effect, no hydrocephalus, no abscess\n\nLumbar puncture: opening pressure 38 cmH2O (very high), WBC 25 (mononuclear predominant), Protein 88, Glucose 32 (serum 92), India ink + (encapsulated yeasts), Cryptococcal antigen positive (titer 1:512)",
+    "choices": [
+      { "label": "A", "text": "Empirical antibacterial coverage (ceftriaxone + vancomycin) + observe" },
+      { "label": "B", "text": "Induction therapy: IV Amphotericin B (liposomal 3-4 mg/kg/day) + Flucytosine (100 mg/kg/วัน) × 2 weeks → consolidation Fluconazole 800 mg/day × 8 weeks → maintenance fluconazole 200 mg/วัน + serial therapeutic LP เพื่อลด ICP + delay ART 4-6 weeks เพื่อหลีก IRIS" },
+      { "label": "C", "text": "Restart ART ทันทีเพื่อ recover immunity" },
+      { "label": "D", "text": "Fluconazole monotherapy 400 mg/วัน" },
+      { "label": "E", "text": "Steroid IV ทันทีเพื่อ reduce CNS inflammation" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cryptococcal Meningitis (CrM) ใน AIDS — India ink + capsule + CrAg + CD4 < 100 IDSA + WHO 2022 Cryptococcal Disease guideline: (1) Induction phase (2 สัปดาห์): - Liposomal Amphotericin B 3-4 mg/kg/วัน + 5-Flucytosine 100 mg/kg/วัน (Cochrane evidence: combo > monotherapy, reduces mortality) - Alternative ถ้า amphotericin ไม่ได้: high-dose fluconazole 1200 mg/วัน + flucytosine - WHO recently: single dose Liposomal Amphotericin 10 mg/kg + 14 days fluconazole + flucytosine (AMBITION trial 2022) (2) Consolidation (8 สัปดาห์): Fluconazole 800 mg/วัน (3) Maintenance (> 1 ปี ถึง CD4 > 100 สม่ำเสมอ): Fluconazole 200 mg/วัน (4) Manage raised ICP: serial therapeutic LPs (target OP < 20 cm) — independent predictor ของ survival (5) ART delay 4-6 สัปดาห์ — premature ART = IRIS + worse outcomes (COAT trial 2014) — ตัวเลือก B ครบ. A ผิด — bacterial meningitis เป็น different pathogen. C ผิด — IRIS risk. D ผิด — monotherapy inferior. E ผิด — steroid ใน CrM IRIS เฉพาะ severe CNS IRIS — ไม่ใช่ initial",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "WHO Guidelines for Diagnosing, Preventing and Managing Cryptococcal Disease 2022; IDSA Practice Guideline for the Management of Cryptococcal Disease 2010; AMBITION-cm Trial (Jarvis JN et al. NEJM 2022); COAT Trial NEJM 2014"
+  },
+  {
+    "scenario": "ชายไทยอายุ 28 ปี ตรวจสุขภาพประจำปีพบ AST 78, ALT 92 (URL 40), GGT 88, ALP 110, Bilirubin 1.0 ก่อนหน้านี้ปกติ ผู้ป่วย asymptomatic ไม่มีโรคประจำตัว ไม่ดื่มสุรา ไม่ได้กินยาใหม่\n\nBMI 32 kg/m², waist 102 cm\nFasting glucose 108, HbA1c 6.2%, Triglyceride 285, HDL 32, LDL 142\nUS abdomen: hepatomegaly + diffuse hyperechoic texture (\"bright liver\") consistent with steatosis, no focal lesion\n\nHBsAg neg, Anti-HCV neg, Iron studies normal, ANA neg, IgG normal",
+    "choices": [
+      { "label": "A", "text": "Hepatitis A vaccine + observe ใน 6 เดือน" },
+      { "label": "B", "text": "Lifestyle modification: weight loss 7-10% (mediterranean diet + caloric restriction + exercise 150 min/wk moderate) + manage metabolic syndrome (statin OK ใน NAFLD ไม่ contraindicate) + screen for fibrosis (FIB-4, NAFLD Fibrosis Score, transient elastography); ถ้า FIB-4 > 2.67 หรือ elastography > 8 kPa → hepatologist consult + biopsy พิจารณา; ยังไม่มี FDA-approved drug routine (อาจ vitamin E 800 IU ใน selected non-diabetic biopsy-proven NASH)" },
+      { "label": "C", "text": "Pioglitazone first-line" },
+      { "label": "D", "text": "Ursodeoxycholic acid 15 mg/kg/วัน" },
+      { "label": "E", "text": "Refer transplant" }
+    ],
+    "correct_answer": "B",
+    "explanation": "ผู้ป่วยเป็น Non-Alcoholic Fatty Liver Disease (NAFLD) / MAFLD (Metabolic Associated Fatty Liver Disease) — obesity + insulin resistance + dyslipidemia + steatosis + ↑ transaminase (ALT > AST pattern in NAFLD; AST > ALT in alcoholic) AASLD 2018 + EASL 2024 NAFLD/MAFLD guideline: (1) Lifestyle (cornerstone): - Weight loss 7-10% ของ body weight reverses steatosis และ NASH histology (Promrat K et al.) - Mediterranean diet - Aerobic + resistance exercise 150-300 min/wk - ลด fructose, processed food (2) Comorbidity management: - Lipids: statin safe ใน NAFLD (myth ที่ statin contraindicate — actually แนะนำใช้) - Diabetes: metformin ไม่ improve liver histology แต่ overall benefit; GLP-1 agonist (semaglutide, liraglutide) + SGLT2 inhibitor — emerging evidence (3) Fibrosis assessment: - Non-invasive: FIB-4, NAFLD Fibrosis Score, transient elastography (FibroScan), MRE - Biopsy: selected ใน intermediate scores หรือ progression (4) Pharmacotherapy: - Vitamin E 800 IU/วัน ใน biopsy-proven NASH non-diabetic (PIVENS trial) - Pioglitazone: NASH improvement but weight gain — selected - Resmetirom (FDA approved 2024): for non-cirrhotic NASH F2-F3 — ตัวเลือก B comprehensive. A ผิด — vaccinate good แต่ละเลย main issue. C ผิด — pioglitazone ไม่ใช่ first-line. D ผิด — UDCA ใน NAFLD ไม่ improve histology. E ผิด — ไม่ใช่ end-stage",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "AASLD Practice Guidance on NAFLD 2018; EASL Clinical Practice Guidelines on Management of NAFLD/MAFLD 2024; Promrat K et al. Hepatology 2010 (Weight Loss in NASH); PIVENS Trial NEJM 2010"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 65 ปี underlying T2DM, HT, CKD stage 3 (eGFR 42) มา OPD เพื่อปรับยา DM ปัจจุบัน HbA1c 8.4%, BP 142/88 mmHg, BMI 31, urine microalbumin/Cr 145 mg/g (moderately increased)\n\nGroup of medications: metformin 1000 mg BID, glipizide 10 mg BID, lisinopril 20 mg/วัน, amlodipine 5 mg/วัน, atorvastatin 40 mg\n\nต้องการเพิ่มยา DM 1 ตัวเพื่อ better glycemic control",
+    "choices": [
+      { "label": "A", "text": "Insulin glargine basal — เพิ่มเป็น first preference" },
+      { "label": "B", "text": "SGLT2 inhibitor (empagliflozin หรือ dapagliflozin) — provides glycemic + cardio-renal protection (reduces MACE, HF hospitalization, CKD progression) ใน patients with diabetes + CKD + albuminuria, even with metformin already optimized; check eGFR cutoff (initiate at eGFR ≥ 20-30) + monitor for euglycemic DKA, UTI, volume depletion" },
+      { "label": "C", "text": "Sulfonylurea (เพิ่มขึ้น) — glipizide เป็น 20 mg" },
+      { "label": "D", "text": "Pioglitazone 30 mg/วัน" },
+      { "label": "E", "text": "DPP-4 inhibitor (sitagliptin) — neutral cardiovascular profile" }
+    ],
+    "correct_answer": "B",
+    "explanation": "ผู้ป่วยมี T2DM + CKD + albuminuria + HT — high cardiovascular และ renal risk ADA 2024 Standards of Care + KDIGO 2022 Diabetes in CKD + AHA/ACC guideline: เลือก antihyperglycemic ตาม comorbidity ก่อน HbA1c lowering: 1. **SGLT2 inhibitors** (empagliflozin, dapagliflozin, canagliflozin) — preferred ใน: - CKD with albuminuria (eGFR > 20) — slows CKD progression (EMPA-KIDNEY, DAPA-CKD, CREDENCE trials) - Heart failure (DAPA-HF, EMPEROR-Reduced/Preserved) - ASCVD high risk - Weight loss + BP lowering benefits 2. **GLP-1 receptor agonists** (semaglutide, dulaglutide, liraglutide) — preferred ใน: - ASCVD (LEADER, SUSTAIN-6, REWIND, AMPLITUDE-O) - Obesity (weight loss benefit) 3. Metformin: continue if eGFR > 30 (caution > 30, hold > 45 mostly) 4. Sulfonylurea: hypoglycemia risk ใน elderly + CKD — avoid 5. Pioglitazone: weight gain, edema, bladder cancer concern, HF — caution 6. DPP-4 inhibitor: neutral CV — okay but no benefit beyond glucose 7. Insulin: lowest priority unless severe — ตัวเลือก B comprehensive และ guideline-concordant. A ผิด — insulin ไม่ใช่ first preference. C ผิด — SU เพิ่ม hypoglycemia + ไม่มี CV/renal benefit. D ผิด — pioglitazone เสี่ยง HF + edema ใน CKD. E ผิด — DPP-4 inferior ต่อ SGLT2/GLP-1 ใน this patient",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "ADA Standards of Care in Diabetes 2024; KDIGO 2022 Clinical Practice Guideline for Diabetes Management in CKD; EMPA-KIDNEY NEJM 2023; DAPA-CKD NEJM 2020; CREDENCE NEJM 2019"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 56 ปี underlying HT, T2DM มาด้วยอาการ shortness of breath ขั้นรุนแรง + crackles ทั้งสองข้างปอด + bilateral pedal edema เป็นมา 3 ชั่วโมง ก่อนหน้านี้ adherent ต่อยา\n\nV/S: BP 218/124 mmHg, HR 112, RR 30, SpO2 86% room air, Temp 36.7°C\nPE: JVP 14, S3 gallop, fine crackles 3/4 ของปอด, no focal neurology\n\nCXR: pulmonary edema bilateral, cardiomegaly\nEKG: LVH with strain pattern, no ST changes\nTroponin 0.04 (URL 0.04), BNP 1,200\nFundoscopy: papilledema + flame hemorrhages",
+    "choices": [
+      { "label": "A", "text": "Oral captopril + sublingual NTG" },
+      { "label": "B", "text": "Hypertensive emergency with acute pulmonary edema — IV nitroglycerin (start 10 mcg/min titrate to BP) + IV furosemide + non-invasive ventilation (BiPAP) + reduce MAP by 25% ใน 1 ชม. แรก (target ~ MAP 110) ไม่ aggressive เกิน + ICU monitoring; avoid hydralazine ใน acute LV failure" },
+      { "label": "C", "text": "IV labetalol bolus + observe" },
+      { "label": "D", "text": "IV nitroprusside without arterial line monitoring" },
+      { "label": "E", "text": "Reduce BP to normal (120/80) within 1 hour" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Hypertensive emergency (BP > 180/120 + end-organ damage: pulmonary edema, papilledema, retinal hemorrhage) AHA 2017 + JNC 8 + ESC hypertension guideline: (1) Reduce MAP by 20-25% ใน 1 ชม. แรก, then to 160/100 ใน 2-6 ชม., gradual normalization ใน 24-48 ชม. — aggressive reduction → cerebral/coronary/renal ischemia (2) Choice of agent depends on end-organ: - Acute pulmonary edema/HF: **IV nitroglycerin** (venodilator → reduce preload + afterload), **furosemide**, NIV - Aortic dissection: labetalol + esmolol (HR control), IV nitroprusside - Acute neurological (stroke): nicardipine, labetalol - Pheochromocytoma: phentolamine + beta-blocker - Eclampsia: hydralazine, labetalol, MgSO4 (3) Avoid in pulmonary edema: - Hydralazine (reflex tachycardia, increased CO worsens edema) - Beta-blocker IV monotherapy (negative inotrope) (4) NIV (BiPAP) for cardiogenic pulmonary edema (5) Continuous arterial line monitoring ใน ICU — ตัวเลือก B ครบ. A ผิด — oral onset ช้า ใน emergency. C ผิด — labetalol IV ไม่ดีใน acute LV failure. D ผิด — nitroprusside ต้องมี arterial line + cyanide concern long use. E ผิด — ลด BP เร็วเกินไป",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "AHA/ACC 2017 Guideline for the Prevention, Detection, Evaluation, and Management of High Blood Pressure in Adults; ESC/ESH 2018 Guidelines for the Management of Arterial Hypertension"
+  },
+  {
+    "scenario": "ชายไทยอายุ 35 ปี HIV-negative, ไม่มีโรคประจำตัว ทำงาน health worker ที่โรงพยาบาล มาด้วยอาการไอเรื้อรัง > 3 สัปดาห์ ร่วมกับน้ำหนักลด 5 kg, ไข้ต่ำตอนเย็น, เหงื่อออกตอนกลางคืน\n\nV/S: BP 118/72, HR 88, RR 18, SpO2 96% room air, Temp 37.8°C, น้ำหนัก 58 kg (จาก 63)\nPE: ฟัง crackles RUL\n\nCXR: cavitary lesion ที่ right upper lobe + fibronodular infiltrate\nSputum AFB × 3: positive 2+ ทั้ง 3 specimen\nSputum GeneXpert MTB/RIF: MTB detected, Rifampin sensitive\nHIV test: negative\nCBC + LFT + Cr ปกติ",
+    "choices": [
+      { "label": "A", "text": "Isoniazid + Rifampin × 6 เดือน เท่านั้น" },
+      { "label": "B", "text": "Initial 4-drug regimen (Isoniazid + Rifampin + Pyrazinamide + Ethambutol) × 2 เดือน intensive phase → Continuation (Isoniazid + Rifampin) × 4 เดือน = total 6 เดือน + ตรวจ baseline LFT, vision (ethambutol), uric acid + DOT (Directly Observed Therapy) + contact tracing + report to public health" },
+      { "label": "C", "text": "Treatment regimen 9 months 4-drug ทั้ง regimen" },
+      { "label": "D", "text": "Empirical antibiotic for community-acquired pneumonia ก่อน" },
+      { "label": "E", "text": "Surgery to remove cavitary lesion" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pulmonary TB confirmed (AFB + GeneXpert positive, Rifampin sensitive) WHO + Thai National TB Program + ATS/CDC/IDSA 2016 guideline: (1) **Standard regimen for drug-susceptible pulmonary TB (Category I)**: - **Intensive phase (2 เดือน)**: Isoniazid (H) + Rifampin (R) + Pyrazinamide (Z) + Ethambutol (E) - **Continuation phase (4 เดือน)**: Isoniazid + Rifampin - Total 6 เดือน (DS-TB pulmonary) (2) **Adjuncts**: - Pyridoxine (vitamin B6) 25-50 mg/day with INH to prevent peripheral neuropathy - Baseline LFT (hepatotoxicity from H/R/Z), uric acid (Z), eye exam (E — optic neuritis), Cr (3) **DOT** (Directly Observed Therapy) — improves adherence, reduces resistance development (4) **Contact tracing** + report to Public Health (notifiable disease) (5) **HIV testing** (must in all TB) — negative here (6) **Monitor**: monthly clinical, sputum AFB at 2 months (smear conversion), LFT 2 weeks then monthly, weight/symptom (7) MDR/XDR-TB: longer (18-24 months), 2nd line drugs — สำหรับ resistant case ไม่ใช่กรณีนี้ — ตัวเลือก B comprehensive. A ผิด — INH + Rif alone ไม่ใช่ standard. C ผิด — 9 months ใช้ใน selected (extrapulmonary, slow response). D ผิด — TB confirmed ไม่ต้อง CAP empirical. E ผิด — surgery เฉพาะ refractory MDR-TB",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "WHO Consolidated Guidelines on Tuberculosis 2022; ATS/CDC/IDSA Clinical Practice Guidelines: Treatment of Drug-Susceptible Tuberculosis (CID 2016); Thailand National TB Program Guidelines"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 75 ปี underlying multiple myeloma, recent chemotherapy มา ED ด้วยอาการสับสน เพ้อ ดื่มน้ำมาก ปัสสาวะเยอะ ก่อนหน้านี้ 1 สัปดาห์ปวดหลังรุนแรง\n\nV/S: BP 102/64, HR 102, RR 18, Temp 36.8°C, SpO2 97%\nGen: dry mucous membrane, lethargic but arousable\nGCS 13, neuro non-focal\n\nLab: Ca total 14.8 mg/dL (corrected for albumin 2.6 → corrected Ca 15.9), Phosphate 4.8, Cr 2.4 (baseline 1.0), Albumin 2.6, Alkaline phosphatase 285, PTH < 10 (suppressed), PTH-rP 88 pmol/L (elevated)\nEKG: short QT interval",
+    "choices": [
+      { "label": "A", "text": "Mild restriction of fluid + observe" },
+      { "label": "B", "text": "Severe hypercalcemia (corrected Ca > 14 + symptomatic) — IV normal saline aggressive (200-300 mL/hr) + once euvolemic add loop diuretic (furosemide) + IV bisphosphonate (zoledronate 4 mg IV — onset 2-4 days) OR Denosumab (faster ใน CKD) + calcitonin SC/IM (rapid 2-6 hr action) bridging + treat underlying malignancy + monitor electrolytes" },
+      { "label": "C", "text": "Calcium gluconate to correct electrolyte" },
+      { "label": "D", "text": "Aggressive hemodialysis without prior fluid" },
+      { "label": "E", "text": "Steroid alone — IV dexamethasone 8 mg" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Hypercalcemia of malignancy (HCM) — most common cause of hypercalcemia in hospital setting; in MM = osteolytic + PTH-rP mediated; suppressed PTH ruled out primary hyperparathyroidism Severity: - Mild: Ca 10.5-12 mg/dL (often asymptomatic) - Moderate: 12-14 mg/dL - Severe: > 14 mg/dL (symptomatic, requires aggressive Rx) Management ตาม Endocrine Society + ASCO + KDIGO: 1. **Aggressive IV hydration** (NSS 200-300 mL/hr first, then maintain euvolemia ~ 100-150 mL/hr) — restores GFR, dilutes Ca, promotes renal excretion 2. **Loop diuretic (furosemide)** — only AFTER euvolemia restored (without rehydration first → worsens hypovolemia + Ca) 3. **Bisphosphonates** (zoledronate 4 mg IV over 15 min, or pamidronate 60-90 mg over 2 hr) — onset 2-4 days, lasts weeks; adjust ใน renal impairment 4. **Denosumab** (RANK-L inhibitor) — alternative bisphosphonate ใน CKD severe (no renal adjustment), faster onset ใน some cases 5. **Calcitonin** (4 IU/kg SC/IM q12h) — rapid (2-6 hr) but tachyphylaxis ใน 48 hr; bridge until bisphosphonate works 6. **Glucocorticoid** — effective ใน vit D-mediated (sarcoid, lymphoma, MM somewhat), reduces 1,25-vit D 7. **Hemodialysis** — refractory case, low-Ca dialysate; ใช้เมื่อ life-threatening + AKI + can't tolerate fluid 8. **Treat underlying malignancy** essential — ตัวเลือก B comprehensive. A ผิดอย่างยิ่ง — severe symptomatic = emergency. C ผิดอย่างยิ่ง — give Ca ใน hyper-Ca = lethal. D ผิด — HD ก่อน fluid resuscitation ผิด sequence. E ผิด — steroid alone insufficient + slow onset",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "Endocrine Society Clinical Practice Guideline: Hypercalcemia of Malignancy 2014 (Stewart); ASCO/Cancer Care Ontario Guidelines on Bisphosphonates and Bone Health"
+  },
+  {
+    "scenario": "ชายไทยอายุ 45 ปี ไม่มีโรคประจำตัว มาด้วยอาการ acute onset ปวดข้อเท้าซ้ายอย่างรุนแรง บวมแดงร้อน 8 ชั่วโมงก่อน ก่อนหน้านี้กินอาหารทะเลและดื่ม craft beer มาก\n\nV/S: BP 142/88, HR 92, RR 16, Temp 37.6°C\nPE: 1st MTP joint ซ้าย: erythema, swelling, exquisite tenderness, ROM ลด\n\nLab: WBC 11,800, ESR 56, CRP 24, Uric acid 8.6, Cr 1.0\nJoint aspiration: WBC 18,000 (PMN 78%), polarized light: negatively birefringent needle-shaped crystals + intracellular\nCulture pending",
+    "choices": [
+      { "label": "A", "text": "Allopurinol 300 mg start ทันที + observe" },
+      { "label": "B", "text": "Acute Gout flare confirmed by crystal analysis — first-line: NSAID (indomethacin 50 mg TID หรือ naproxen 500 mg BID) ถ้าไม่มี contraindication; OR colchicine 1.2 mg → 0.6 mg ใน 1 ชม. OR oral/intra-articular glucocorticoid — choice based on comorbidities; do NOT initiate urate-lowering during flare; once resolved discuss long-term ULT (allopurinol/febuxostat) ถ้า indications (≥2 attacks/yr, tophi, CKD3+, urolithiasis) + lifestyle (avoid purine, alcohol, fructose)" },
+      { "label": "C", "text": "IV antibiotic for septic arthritis empirically" },
+      { "label": "D", "text": "Joint surgery ทันที" },
+      { "label": "E", "text": "Aspirin high-dose 4 g/day" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Acute gout — pathognomonic crystal (monosodium urate — negatively birefringent needle-shaped) ใน 1st MTP (podagra) — classic ACR 2020 Gout Management Guideline + EULAR 2016: 1. **Acute flare treatment** (any of, choice by comorbidity, side effect): - **NSAIDs** (indomethacin, naproxen, ibuprofen) — first-line if no contraindication (CKD, PUD, HF, anticoagulation) - **Colchicine** — loading 1.2 mg then 0.6 mg in 1 hr (low-dose regimen = high-dose regimen efficacy with fewer side effects per AGREE trial); avoid if severe CKD or strong CYP3A4 inhibitors - **Glucocorticoid** (oral pred 30-40 mg/วัน taper × 5-10 วัน, IM, intra-articular) — preferred in CKD, PUD, anticoagulation - **Anti-IL-1 (anakinra, canakinumab)** — refractory cases 2. **Important**: Do NOT initiate urate-lowering therapy (ULT) during acute flare (may worsen/prolong) — BUT do not stop ULT if patient already on it 3. **Long-term ULT indications** (after flare resolution): - ≥ 2 attacks/year - Tophi - CKD stage ≥ 3 - History of urolithiasis - Target uric acid < 6 mg/dL (< 5 if tophi) - Allopurinol first-line (start 100 mg/day, titrate); HLA-B*5801 screen ใน Asian (high risk SJS) — Thai have high prevalence - Alternative: febuxostat (caution ใน ASCVD per CARES) - Probenecid: uricosuric (avoid in CKD, urolithiasis) 4. **Flare prophylaxis during ULT initiation** (3-6 months): low-dose colchicine 0.6 mg/d or NSAID — prevents mobilization flares 5. **Lifestyle**: low purine, less alcohol (especially beer), avoid fructose-sweetened drinks, weight loss, hydration — ตัวเลือก B comprehensive. A ผิดอย่างยิ่ง — allopurinol during flare = worsens. C ผิด — crystals confirmed gout + culture pending (low fever doesn't suggest sepsis primarily). D ผิด — no surgery indication. E ผิด — aspirin ↑ uric acid",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "rheumatology",
+    "board_age_group": "adult",
+    "reference_source": "ACR 2020 Guideline for the Management of Gout (Arthritis Care Res); EULAR Evidence-Based Recommendations for the Management of Gout 2016"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 38 ปี underlying hyperthyroidism on methimazole มา ED ด้วยอาการเหนื่อย ใจสั่นมาก เหงื่อแตก ไข้สูง สับสน เริ่มอาเจียน 12 ชม. ก่อนหน้านี้มี influenza-like illness 3 วัน หยุดยา methimazole มา 1 สัปดาห์ก่อนเพราะลืม\n\nV/S: BP 168/86 mmHg, HR 168 (AF rapid response), RR 28, SpO2 97%, Temp 39.8°C\nGen: agitated, diaphoretic, fine tremor\nNeuro: GCS 13, no focal deficits\nThyroid: enlarged smooth, no nodules, ไม่มี bruit\n\nLab: TSH < 0.01 (very suppressed), Free T4 5.8 (5×ULN), Free T3 18 (high), WBC 14,200\nEKG: AF rate 168, no ST changes",
+    "choices": [
+      { "label": "A", "text": "Restart methimazole 20 mg และ rate control" },
+      { "label": "B", "text": "Thyroid Storm (Burch-Wartofsky score > 45 — diagnostic) — admit ICU; sequential therapy: (1) **Beta-blocker** propranolol IV 1 mg slow push, repeat q5-10 min OR esmolol drip (blocks T4→T3 conversion + symptomatic) (2) **Antithyroid drug** PTU 500-1000 mg loading then 250 mg q4h (preferred — blocks T4→T3) OR methimazole 60-80 mg (3) **Iodine** (Lugol's or SSKI) at least 1 hour AFTER antithyroid (4) **Glucocorticoid** hydrocortisone 100 mg IV q8h (blocks T4→T3 + treats potential adrenal insufficiency) (5) **Supportive**: cooling (acetaminophen, NOT aspirin which displaces T4 from TBG), IV fluid, treat precipitant (here: infection — work up) (6) **Identify trigger**: infection, surgery, trauma, DKA, MI, withdrawal of antithyroid" },
+      { "label": "C", "text": "Aspirin 650 mg PR for fever + sedation only" },
+      { "label": "D", "text": "Thyroidectomy emergent" },
+      { "label": "E", "text": "Iodine first then antithyroid" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Thyroid Storm — life-threatening hyperthyroidism with multi-organ decompensation Diagnosis: Burch-Wartofsky Point Scale (BWPS): - Temperature 39.8°C → 30 pts - HR 168 → 25 pts - Atrial fibrillation → 10 pts - CNS agitation/confusion → 20 pts - GI dysfunction (vomiting) → 10 pts - Precipitant (infection, missed doses) → 10 pts Total > 45 = highly suggestive thyroid storm Mortality 10-30% if untreated — emergency Treatment sequence is critical (Endocrine Society + JTA Japan Thyroid Association guideline): 1. **Beta-blocker FIRST** — propranolol IV (blocks T4→T3 conversion, controls cardiac symptoms); avoid IV propranolol if CHF (use esmolol — short-acting, titratable) 2. **Antithyroid drug** (Thionamides) — blocks new hormone synthesis: - **PTU** preferred initially (also blocks peripheral T4→T3) - **Methimazole** longer half-life but no T4→T3 blockade 3. **Iodine** (Lugol's, SSKI) — blocks release of pre-formed hormone; MUST be given at least 1 hour after antithyroid (else iodine fuels more hormone synthesis — Wolff-Chaikoff vs Jod-Basedow paradox) 4. **Glucocorticoid** (hydrocortisone) — blocks T4→T3, treats relative adrenal insufficiency 5. **Cooling** with acetaminophen + cooling blankets (ASPIRIN CONTRAINDICATED — displaces T4 from TBG → worse storm) 6. **Identify and treat precipitant** (infection most common; here: flu-like) 7. **Supportive ICU** care: fluid, electrolytes, nutrition, treat AF — ตัวเลือก B comprehensive correct sequence. A ผิด — under-treats severe storm. C ผิดอย่างยิ่ง — aspirin contraindicated. D ผิด — surgery refractory option. E ผิด — sequence wrong (iodine before antithyroid = worse)",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "Burch HB, Wartofsky L. Endocrinol Metab Clin North Am 1993 (BWPS); American Thyroid Association Guidelines for Diagnosis and Management of Hyperthyroidism 2016"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 32 ปี ไม่มีโรคประจำตัว มาด้วยอาการอ่อนเพลีย หน้าซีด เลือดออกตามไรฟัน และผื่น petechiae ที่ขาเป็นมา 5 วัน ก่อนหน้านี้ไอ มีไข้เล็กน้อย 2 สัปดาห์ที่แล้ว ใช้ paracetamol และ ibuprofen\n\nV/S: BP 112/72, HR 88, RR 16, Temp 37.0°C, SpO2 99%\nPE: pallor, petechiae ที่ extremities + buccal mucosa, gum bleeding mild\nไม่มี hepatosplenomegaly, ไม่มี lymphadenopathy\n\nLab: Hb 11.8, WBC 5,200 (normal differential), Platelet 8,000/μL (severe thrombocytopenia)\nPeripheral blood smear: normal RBC + WBC morphology, ลด platelets ไม่มี schistocytes\nCoagulation: PT/PTT/INR ปกติ, Fibrinogen ปกติ\nDirect Coombs: negative\nHIV/HCV: negative",
+    "choices": [
+      { "label": "A", "text": "Platelet transfusion ทันที × 2 units" },
+      { "label": "B", "text": "Immune Thrombocytopenia (ITP) — diagnosis of exclusion; first-line glucocorticoid (oral prednisolone 1 mg/kg/day × 1-2 wk then taper OR dexamethasone 40 mg/d × 4 days × 1-4 cycles) OR IVIG 1 g/kg × 1-2 doses (faster response); platelet transfusion only if active life-threatening bleeding; bone marrow biopsy not needed in classic case; second-line for refractory: rituximab, TPO agonists (eltrombopag, romiplostim), splenectomy" },
+      { "label": "C", "text": "Splenectomy first-line" },
+      { "label": "D", "text": "Plasmapheresis emergent" },
+      { "label": "E", "text": "Bone marrow biopsy เป็น mandatory first step" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Immune Thrombocytopenia (ITP, formerly ITP \"idiopathic\") — autoimmune destruction of platelets Diagnosis: isolated thrombocytopenia (platelet < 100,000) + exclusion of other causes; no specific test (diagnosis of exclusion) Clinical clues here: - Isolated thrombocytopenia (Hb normal, WBC normal) - No schistocytes (rule out TTP/HUS/DIC) - Normal coagulation (rule out DIC) - No splenomegaly or lymphadenopathy (rule out lymphoma, leukemia) - Antecedent viral illness (common trigger in primary ITP, especially in children) - Negative HIV/HCV (chronic viral cause ruled out) ASH 2019 + ICR international consensus ITP guideline: 1. **First-line treatment**: - **Glucocorticoid**: prednisolone 1 mg/kg/day for 1-2 weeks then taper OR dexamethasone 40 mg/day × 4 days (1-4 cycles) — both effective, dex faster + lower cumulative steroid - **IVIG 1 g/kg × 1-2 doses** — faster response (24-48 hr); use when need rapid rise (active bleeding, pre-procedure, refractory steroid) - **Anti-D (WinRho)** — Rh-positive non-splenectomized 2. **Platelet transfusion**: only for life-threatening bleeding (CNS, severe GI) — transfused platelets destroyed quickly 3. **Bone marrow biopsy**: NOT routine in classic presentation; consider if atypical features (age > 60, abnormal smear, B symptoms, lymphadenopathy) 4. **Second-line** (refractory > 3-6 months): - Rituximab (anti-CD20) - Thrombopoietin receptor agonists (eltrombopag, romiplostim) - Fostamatinib (SYK inhibitor) - Splenectomy (last resort due to lifelong infection risk) — ตัวเลือก B comprehensive. A ผิด — platelet transfusion only for major bleeding; here petechiae + minor gum bleed = not life-threatening. C ผิด — splenectomy last resort. D ผิด — plasmapheresis for TTP, not ITP. E ผิด — bone marrow not mandatory",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hematology",
+    "board_age_group": "adult",
+    "reference_source": "ASH 2019 Guidelines for the Management of Immune Thrombocytopenia (Blood Adv); International Consensus Report on ITP 2019 (Provan D et al.)"
+  },
+  {
+    "scenario": "ชายไทยอายุ 28 ปี ทำงาน farmer มาด้วยอาการ acute onset ปวดศีรษะ ปวดเมื่อยกล้ามเนื้อ ไข้สูง คลื่นไส้ อาเจียน เป็นมา 5 วัน วันนี้สังเกตว่าตาเหลือง ปัสสาวะเข้ม\n\nV/S: BP 102/64, HR 108, RR 22, Temp 39.4°C, SpO2 96%\nPE: conjunctival suffusion + jaundice mild, calf tenderness ทั้งสองข้าง, hepatomegaly mild\nไม่มี meningismus, no focal neuro\n\nLab: WBC 14,500 (left shift), Hb 13.2, Plt 78,000, Cr 2.4, BUN 56, Total bilirubin 4.8 (direct 3.6, indirect 1.2), AST 188, ALT 142, ALP 168, CK 1,840\nUrinalysis: protein 2+, blood 1+, no RBC casts\nPCR for Leptospira: positive\nMicroscopic agglutination test (MAT): pending",
+    "choices": [
+      { "label": "A", "text": "Doxycycline oral 200 mg/วัน × 7 วัน" },
+      { "label": "B", "text": "Severe Leptospirosis (Weil's disease — triad of jaundice + AKI + bleeding tendency, often with myocarditis/pulmonary hemorrhage) — admit ICU; IV penicillin G 1.5 million units q6h × 7 days OR IV ceftriaxone 1-2 g/d OR IV doxycycline if penicillin allergy; supportive: IV fluid + hemodialysis if severe AKI + manage hemorrhagic complications + JarisсhHerxheimer reaction may occur after first dose; report to public health" },
+      { "label": "C", "text": "Tetracycline oral + observe outpatient" },
+      { "label": "D", "text": "Empirical malaria treatment first" },
+      { "label": "E", "text": "Steroid alone" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Leptospirosis — zoonotic spirochete (Leptospira interrogans) from contact with contaminated water/soil; common in farmers, sanitation workers, after floods Clinical features: - **Anicteric (90%)**: 1-week biphasic course, flu-like, conjunctival suffusion (pathognomonic), calf myalgia, headache - **Icteric (Weil's syndrome 10%)**: severe with jaundice + AKI + bleeding + myocarditis + pulmonary hemorrhage; mortality 5-40% Diagnosis: - **Acute**: PCR (positive in blood 1st week, urine after 2nd week) - **Convalescent**: MAT (microagglutination — gold standard but slow), 4-fold rise titer - IgM ELISA (week 1-2) Severity here: Weil's disease (jaundice + AKI + thrombocytopenia + hepatitis + rhabdomyolysis CK↑) = severe Treatment ตาม WHO + IDSA: 1. **Severe leptospirosis** (Weil's): - **IV Penicillin G** 1.5 million units q6h × 7 days (preferred) - OR **IV Ceftriaxone** 1-2 g/day (similar efficacy, easier dosing) - OR **IV Doxycycline** (penicillin allergy or in setting where also rickettsial coverage needed) 2. **Mild/Moderate** (outpatient): - **Oral Doxycycline** 100 mg BID × 7 days - OR **Oral Amoxicillin** 500 mg q8h × 7 days 3. **Supportive**: - IV fluid (volume often depleted) - Hemodialysis early for severe AKI (improves survival) - Blood products for thrombocytopenia/bleeding - Mechanical ventilation for pulmonary hemorrhage (ECMO in extreme cases) 4. **Jarisch-Herxheimer reaction** may occur 1-2 hrs after first antibiotic dose (rare but expect) — supportive 5. **Public health reporting** (notifiable disease in Thailand) 6. **Prophylaxis**: Doxycycline 200 mg/wk for high-risk exposure — ตัวเลือก B comprehensive. A ผิด — severe leptospirosis ต้อง IV not oral. C ผิดอย่างยิ่ง — severe disease + outpatient = fatal. D ผิด — PCR confirmed lepto. E ผิด — steroid not standard",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "WHO Human Leptospirosis: Guidance for Diagnosis, Surveillance and Control 2003; Thailand Bureau of Epidemiology Leptospirosis Guidelines; Costa F et al. PLoS Negl Trop Dis 2015"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 68 ปี underlying COPD GOLD III on tiotropium + salmeterol/fluticasone + roflumilast มาด้วยอาการเหนื่อยมาก + ไอเสมหะเหลืองมากกว่าปกติ + ไข้ต่ำ 3 วัน เพิ่มยา reliever salbutamol ทุก 2 ชม.\n\nV/S: BP 138/82, HR 108, RR 28, Temp 37.8°C, SpO2 86% room air → 91% on O2 2 L/min\nPE: barrel chest, distant breath sounds, expiratory wheeze both lungs, prolonged expiratory phase\n\nABG (on O2 2L): pH 7.32, PaCO2 56 (baseline 48), PaO2 64, HCO3 30\nCXR: hyperinflation no consolidation no pneumothorax\n\nProcalcitonin 0.18 ng/mL\nCBC: WBC 11,800",
+    "choices": [
+      { "label": "A", "text": "Increase oxygen to 6 L/min via NC + outpatient" },
+      { "label": "B", "text": "Moderate-Severe COPD exacerbation with hypercapnic respiratory acidosis — admit; titrate O2 to SpO2 88-92% (avoid > 92% — risk worsening hypercapnia); **NIV (BiPAP)** indicated (pH < 7.35 + PaCO2 > 45); short-acting bronchodilator nebulization (salbutamol + ipratropium); **systemic corticosteroid** (oral prednisolone 40 mg/d × 5 days REDUCE trial); **antibiotic** indicated (Anthonisen criteria: ≥2 of dyspnea, sputum volume, sputum purulence + procalcitonin moderate — amoxicillin/clavulanate, doxycycline, or macrolide; consider Pseudomonas coverage if frequent exacerbator/structural lung disease)" },
+      { "label": "C", "text": "Intubation immediate" },
+      { "label": "D", "text": "IV magnesium sulfate alone" },
+      { "label": "E", "text": "Heliox first-line" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Acute COPD exacerbation classification: - Mild: SABA only - Moderate: SABA + antibiotic and/or steroid - Severe: hospitalization needed - Very severe: respiratory failure GOLD 2024 Report management: 1. **Oxygen**: target SpO2 88-92% — avoid liberal O2 (cuts hypoxic drive in CO2 retainers, worsens V/Q mismatch — Austin BMJ 2010 RCT showed mortality benefit of titrated O2) 2. **Inhaled bronchodilators**: short-acting beta-2 agonist (salbutamol) + short-acting muscarinic antagonist (ipratropium) — nebulized or MDI with spacer 3. **Systemic corticosteroids** (REDUCE trial): - Prednisolone 40 mg PO × 5 days (5 days = 14 days for outcomes) - Shortens recovery, reduces relapse 4. **Antibiotics** (Anthonisen criteria, GOLD): - Indicated if ≥ 2 of 3: ↑ dyspnea, ↑ sputum volume, ↑ sputum purulence (Anthonisen 1987 NEJM) - OR requiring mechanical ventilation - OR procalcitonin-guided where available - Choice: amoxicillin/clavulanate, doxycycline, macrolide (5-7 days) - Pseudomonas coverage (e.g., fluoroquinolone, anti-pseudomonal beta-lactam) if: FEV1 < 50%, frequent exacerbator > 4/yr, prior Pseudomonas, hospitalized in past 90 days, bronchiectasis 5. **NIV (BiPAP)**: - Indicated if respiratory acidosis (pH < 7.35 + PaCO2 > 45) or severe dyspnea with accessory muscle use - Cochrane meta-analysis: reduces intubation by 65%, mortality by 46% - Contraindications: severe acidosis (pH < 7.25), AMS, vomiting, copious secretions, hemodynamic instability 6. **Intubation/IMV**: reserved for NIV failure, severe AMS, hemodynamic instability, contraindication to NIV 7. **IV MgSO4**: weak evidence in COPD, not routine 8. **Heliox**: not standard — ตัวเลือก B comprehensive matches GOLD. A ผิด — liberal O2 + outpatient miss severe. C ผิด — try NIV first. D ผิด — Mg not first. E ผิด — heliox not first",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "respiratory",
+    "board_age_group": "adult",
+    "reference_source": "GOLD Report 2024 (Global Strategy for Diagnosis, Management and Prevention of COPD); Anthonisen NR et al. Ann Intern Med 1987 (Antibiotic Criteria); Plant PK et al. Lancet 2000 (NIV in COPD)"
+  },
+  {
+    "scenario": "ชายไทยอายุ 55 ปี underlying alcoholic cirrhosis (Child-Pugh B) มา ED ด้วยอาการสับสน เพ้อ ไม่รู้จักครอบครัว เริ่มเช้านี้ ก่อนหน้านี้รับประทานอาหารปกติ ไม่มีอาการไข้\n\nV/S: BP 124/82, HR 96, RR 18, Temp 36.8°C, SpO2 98%, DTX 92\nGCS 13 (E3V4M6), asterixis +, fetor hepaticus, sluggish movements, no focal neuro\nAscites moderate\nไม่มี hematemesis หรือ melena\n\nLab: Hb 11.0, WBC 8,200, Plt 88,000, Cr 1.4, Na 128, K 3.2, Glucose 92, NH3 92 μmol/L (>>normal 35), AST 78, ALT 42, Total bili 3.2, INR 1.8, Albumin 2.6\nCT brain: no acute lesion\nUrinalysis: WBC 12 RBC 5, leukocyte esterase positive — UTI",
+    "choices": [
+      { "label": "A", "text": "Diagnose dementia and admit for evaluation" },
+      { "label": "B", "text": "Hepatic Encephalopathy (HE) precipitated by UTI — West Haven Grade II-III; admit; identify and treat precipitant (treat UTI with appropriate antibiotic — ceftriaxone or cefotaxime if SBP not excluded; consider also SBP — diagnostic paracentesis if ascites; correct electrolytes K, Na); start **lactulose** (oral or NG) 30-45 mL q1h until soft stool then titrate to 2-3 BM/day + **rifaximin 550 mg BID** added if recurrent or severe; nutrition: protein 1.2-1.5 g/kg/d (do NOT restrict protein); zinc supplementation; avoid sedatives; manage cerebral edema if Grade IV/coma" },
+      { "label": "C", "text": "Stat hemodialysis to clear ammonia" },
+      { "label": "D", "text": "Protein restriction strict + IV dextrose" },
+      { "label": "E", "text": "Benzodiazepine for agitation" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Hepatic Encephalopathy (HE) — neuropsychiatric syndrome in chronic liver disease West Haven Grading: - Grade 0 (Minimal): only on neuropsychological testing - Grade I: trivial loss of awareness, euphoria, anxiety, shortened attention span - Grade II: lethargy or apathy, disorientation, asterixis (flapping tremor), inappropriate behavior - Grade III: somnolence but rousable, gross disorientation, confusion - Grade IV: coma This patient: GCS 13, asterixis, disorientation, sluggish → **Grade II-III** Precipitants of HE (5 most common — \"PRECIPITATE\"): 1. **Infection** (most common — SBP, UTI, pneumonia) ← this case 2. GI bleed (high protein load + reduced perfusion) 3. Electrolyte: hypokalemia, hyponatremia, alkalosis (↑ NH3 across BBB) 4. Constipation 5. Drugs: sedatives (benzodiazepines), opioids 6. Renal failure (uremia) 7. Dehydration (overdiuresis) 8. Dietary: excess protein (rare alone) 9. TIPS or shunt 10. Hepatocellular carcinoma AASLD 2014 + EASL HE guideline + Italian AIGO: 1. **Identify and treat precipitant** — most important step 2. **Lactulose** (first-line) — 30-45 mL q1h until soft stool, then titrate to 2-3 BM/day; acidifies gut + traps NH3 + cathartic 3. **Rifaximin** 550 mg BID — non-absorbable antibiotic; reduces ammonia-producing bacteria; add for recurrent HE, refractory, or as monotherapy when lactulose limiting (Bass et al. NEJM 2010) 4. **Nutrition**: - DO NOT restrict protein (old myth) — leads to muscle catabolism + worsens HE - Target 1.2-1.5 g protein/kg/day - Branched-chain amino acids (BCAA) supplementation - Frequent small meals + late-evening snack (prevent nocturnal catabolism) - Vegetable + dairy protein preferred over animal 5. **Other agents**: - L-ornithine L-aspartate (LOLA) - Zinc supplementation - Polyethylene glycol (PEG) — emerging alternative to lactulose 6. **Avoid sedatives** — benzodiazepines worsen HE 7. **Manage cerebral edema** in Grade IV: mannitol, hypertonic saline, head elevation 8. **Long-term**: liver transplant evaluation if recurrent/refractory — ตัวเลือก B comprehensive. A ผิด — acute HE not dementia. C ผิด — HD ใช้ใน end-stage. D ผิดอย่างยิ่ง — protein restriction outdated, harms. E ผิด — benzo worsen HE",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "AASLD/EASL Practice Guideline: Hepatic Encephalopathy in Chronic Liver Disease (Vilstrup H et al. Hepatology 2014); Bass NM et al. NEJM 2010 (Rifaximin in HE)"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 48 ปี underlying breast cancer on chemotherapy (cycle 2 of FEC) มา ED ด้วยอาการเหนื่อยมาก แน่นหน้าอก เท้าและขาบวม คอบวม เห็น collateral vein ที่ผนังหน้าอก เริ่ม 2 สัปดาห์ที่ผ่านมา ค่อย ๆ แย่ลง วันนี้นอนราบหายใจไม่ออก\n\nV/S: BP 102/64, HR 102, RR 26, SpO2 92%, Temp 36.8°C\nPE: facial plethora + edema, JVD prominent, dilated chest wall collaterals, cyanosis upper extremities, Pemberton's sign positive\n\nCXR: widened mediastinum + right paratracheal mass\nCT chest with contrast: large mediastinal mass compressing SVC + extending to right pulmonary artery\nNo prior history of central line\nBronchoscopy biopsy result pending",
+    "choices": [
+      { "label": "A", "text": "Furosemide IV high dose only" },
+      { "label": "B", "text": "Superior Vena Cava Syndrome (SVCS) from compression by malignant mediastinal mass — semi-recumbent positioning + oxygen + supportive; tissue diagnosis essential ก่อน definitive treatment (chemotherapy ทำได้ if chemosensitive tumor — SCLC, lymphoma, germ cell; radiation if NSCLC, mesothelioma; endovascular SVC stent + thrombolysis for severe/refractory case); steroid for laryngeal/cerebral edema or lymphoma trial; diuretics + sodium restriction; anticoagulation if SVC thrombus; AVOID upper extremity IV lines (impede flow)" },
+      { "label": "C", "text": "Immediate sternotomy + decompression" },
+      { "label": "D", "text": "Aspirin only — likely thromboembolic" },
+      { "label": "E", "text": "Discharge with diuretics + outpatient follow-up" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Superior Vena Cava Syndrome (SVCS) — obstruction of SVC blood flow Etiology: - **Malignant (most common 60-90%)**: lung cancer (NSCLC > SCLC), lymphoma, metastatic, thymoma, germ cell tumor, mesothelioma - **Non-malignant**: indwelling catheter thrombosis, mediastinal fibrosis (histoplasmosis, TB), aortic aneurysm Clinical features: - Face + neck swelling, plethora - Dyspnea, cough, orthopnea - Distended neck + chest wall veins (collaterals) - Cyanosis, edema upper extremities - Pemberton's sign (arms above head → facial plethora) - Headache, blurred vision, dizziness (cerebral edema) - Stridor, hoarseness (laryngeal edema) - Lethargy, syncope, seizure (severe — emergency!) Severity (Yu et al. grading): - Grade 1: Asymptomatic - Grade 2: Mild (facial swelling, plethora, dyspnea) - Grade 3: Moderate (functional impairment) - Grade 4: Severe (cerebral edema, laryngeal edema, hemodynamic compromise) — emergency - Grade 5: Life-threatening Management ตาม ASCO + Wilson 2007 NEJM review: 1. **Initial supportive** (all cases): - Semi-recumbent position (decrease venous pressure) - Oxygen - Avoid upper extremity IV lines + venipuncture (impede flow + risk thrombosis) - Sodium restriction + cautious diuretics 2. **Tissue diagnosis** — essential before specific Rx (except life-threatening emergency): - Sputum cytology, lymph node biopsy, bronchoscopy, mediastinoscopy, CT-guided biopsy 3. **Definitive treatment** based on histology: - **Chemosensitive tumors** (SCLC, NHL, germ cell): chemotherapy first — high response rate within days - **Less chemosensitive** (NSCLC, mesothelioma, thymoma): radiation - **Combined modality** in some cases 4. **Endovascular stent placement**: - Rapid symptom relief (24-48 hr) - Indicated for severe symptoms, refractory, or pre-treatment to bridge - Often combined with mechanical thrombectomy if thrombus 5. **Glucocorticoid**: - Useful for laryngeal edema, cerebral edema - Diagnostic-therapeutic trial in suspected lymphoma (can mask diagnosis — give after biopsy if possible) 6. **Anticoagulation**: indicated if SVC thrombus or central line thrombosis 7. **Surgery (SVC bypass)**: rarely used in malignant; sometimes for benign refractory — ตัวเลือก B comprehensive. A ผิด — diuretic alone insufficient. C ผิด — surgery not first. D ผิด — this is compression not just thrombus. E ผิดอย่างยิ่ง — SVCS Grade 3-4 emergent",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "Wilson LD et al. NEJM 2007 (Superior Vena Cava Syndrome); Yu JB et al. J Thorac Oncol 2008 (SVCS Grading); NCCN Guidelines: Management of Oncologic Emergencies"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี underlying AF on warfarin (target INR 2-3) ได้รับยา azithromycin 500 mg/วัน × 5 วัน สำหรับ atypical pneumonia\n\nหลังจบ course 3 วัน INR ตรวจ = 5.8 (เดิม 2.4) ไม่มี active bleeding หรือ INR > 9\n\nคำถาม: จงอธิบายกลไก drug-drug interaction และการจัดการ INR overdose ที่ถูกต้องตาม Chest 2018 guideline"
+,
+    "choices": [
+      { "label": "A", "text": "Azithromycin เป็น CYP3A4 inducer → ลด warfarin → INR ควรลด ไม่ใช่เพิ่ม" },
+      { "label": "B", "text": "Macrolides (azithromycin, clarithromycin, erythromycin) inhibit CYP3A4 และ CYP2C9 → ลด clearance warfarin → INR สูงขึ้น; การจัดการ INR 4.5-10 ไม่มี bleeding: หยุด warfarin 1-2 doses, restart at lower dose, recheck INR — DO NOT routinely give vitamin K (ACCP Chest 2018 guideline updated — vitamin K not recommended for INR < 10 without bleeding); INR > 10 + no bleed: low-dose oral vitamin K 2.5-5 mg; major bleeding: hold + PCC + vitamin K 10 mg IV" },
+      { "label": "C", "text": "ให้ vitamin K 10 mg IV ทันทีเพื่อ reverse" },
+      { "label": "D", "text": "ทำ plasmapheresis" },
+      { "label": "E", "text": "Continue warfarin same dose + recheck INR ใน 1 สัปดาห์" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Warfarin pharmacology: - Warfarin = racemic mixture; **S-warfarin (more potent)** metabolized by **CYP2C9**; **R-warfarin** by CYP1A2, CYP3A4 - Therapeutic index narrow → many drug-drug + drug-food interactions Common interactions ↑ INR (inhibit metabolism): - Macrolides (azithromycin, clarithromycin, erythromycin) — CYP3A4 inhibitors - Fluoroquinolones (ciprofloxacin, levofloxacin) — CYP1A2 + protein displacement - TMP-SMX — CYP2C9 inhibitor + displacement - Metronidazole — CYP2C9 inhibitor (potent) - Amiodarone — CYP2C9 + 3A4 inhibitor (one of strongest) - SSRIs (fluoxetine, fluvoxamine) — CYP2C9 inhibitor - Statins (lovastatin, simvastatin) - Acetaminophen high-dose chronic Common interactions ↓ INR (induce metabolism): - Rifampin (strong CYP inducer) - Phenytoin, phenobarbital, carbamazepine - St. John's wort - Vitamin K-rich foods (green leafy vegetables) ACCP CHEST 2018 + 9th ed. Antithrombotic Guidelines — supratherapeutic INR management: 1. **INR < 4.5, no bleeding**: lower dose or omit 1 dose; recheck 2. **INR 4.5-10, no bleeding**: - Hold warfarin 1-2 doses - Recheck INR - **Vitamin K NOT routinely recommended** (no clinical benefit, may overcorrect → resistance) - Restart at lower dose when INR therapeutic 3. **INR > 10, no bleeding**: - Hold warfarin - **Vitamin K 2.5-5 mg oral** (avoid IV — risk anaphylaxis; SC erratic) - Daily INR monitoring - Restart lower dose 4. **Major bleeding (any INR)**: - Hold warfarin - **PCC (4-factor prothrombin complex concentrate)** 25-50 IU/kg — preferred over FFP (faster, less volume) - **Vitamin K 5-10 mg IV slow** (slow push to avoid anaphylactoid reaction) - Recheck INR, repeat PCC if needed - Treat bleeding source — ตัวเลือก B ถูกและสะท้อน 2018 update. A ผิดเชิงพื้นฐาน (azithromycin = inhibitor not inducer). C ผิด — vitamin K 10 mg IV เก็บไว้สำหรับ major bleeding. D ผิด — plasmapheresis ไม่ effective. E ผิด — INR 5.8 ต้อง intervene",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "Witt DM et al. CHEST 2018 (ACCP Antithrombotic Therapy 9th Edition Updates); Holbrook A et al. CHEST 2012 (Evidence-Based Management of Anticoagulant Therapy)"
+  },
+  {
+    "scenario": "Researcher ทำ randomized controlled trial ของยาใหม่ A กับ standard therapy ใน acute heart failure ผลแสดงว่า 30-day mortality: drug A = 8.2%, standard = 11.4%; absolute risk reduction 3.2%; p = 0.04, 95% CI 0.5-5.9%\n\nคำถาม: จงคำนวณ Number Needed to Treat (NNT) และตีความหมายผลของ study นี้",
+    "choices": [
+      { "label": "A", "text": "NNT = 100 / 3.2 = 31.25 ≈ 32; treat 32 patients with drug A to prevent 1 additional death at 30 days; result statistically significant (p < 0.05, CI excludes null effect of 0); clinical significance depends on cost, side effects, and patient values" },
+      { "label": "B", "text": "NNT = 3.2 — only 3 patients needed to treat" },
+      { "label": "C", "text": "NNT = 8.2 / 11.4 = 0.72" },
+      { "label": "D", "text": "Cannot calculate without odds ratio" },
+      { "label": "E", "text": "NNT calculation requires individual patient data" }
+    ],
+    "correct_answer": "A",
+    "explanation": "Number Needed to Treat (NNT) — core EBM concept Formula: NNT = 1 / ARR (Absolute Risk Reduction expressed as decimal) OR NNT = 100 / ARR% (when ARR expressed as percentage) Calculation: - Control event rate (CER) = 11.4% = 0.114 - Experimental event rate (EER) = 8.2% = 0.082 - ARR = CER - EER = 11.4% - 8.2% = 3.2% = 0.032 - **NNT = 1 / 0.032 = 31.25 ≈ 32** Interpretation: - Treat ~32 patients with drug A for 30 days to prevent 1 additional death - Smaller NNT = bigger effect; larger NNT = smaller effect - NNT of 32 = moderate effect for short-term mortality endpoint Compare common NNTs (calibration): - Aspirin in acute MI: NNT ~ 40 for 1 month mortality - Statin primary prevention: NNT ~ 100 over 5 years - Statin secondary prevention: NNT ~ 50 over 5 years - tPA in acute stroke (3-4.5 hr): NNT ~ 14 for improvement Statistical significance: - p = 0.04 < 0.05 → statistically significant - 95% CI 0.5-5.9% does not cross 0 → consistent with significance - Note: statistical ≠ clinical significance (need to consider effect size + side effects + cost) Other related metrics: - Relative Risk (RR) = EER/CER = 0.082/0.114 = 0.72 (28% relative reduction) - Relative Risk Reduction (RRR) = 1 - RR = 28% (or ARR/CER) - Number Needed to Harm (NNH) = 1 / Absolute Risk Increase of harm Common pitfalls: - Do NOT confuse RRR (28%) with ARR (3.2%) — RRR often quoted in headlines but ARR more clinically useful - NNT depends on baseline risk — same RRR yields different NNT in low- vs high-risk populations - Time horizon matters — NNT differs at different follow-up durations — ตัวเลือก A ถูก calculation + interpretation. B ผิด — confused ARR with NNT. C ผิด — calculated RR not NNT. D ผิด — NNT calculated from ARR. E ผิด — can calculate from group rates",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "Guyatt G et al. JAMA Users' Guides to the Medical Literature; Cook RJ, Sackett DL. BMJ 1995 (NNT)"
+  },
+  {
+    "scenario": "ผู้ป่วยที่มี type 2 diabetes มีกลไกหลักคือ insulin resistance + relative insulin deficiency อาจารย์อธิบายเรื่อง molecular pathway ของ insulin signaling ให้นักศึกษาแพทย์ฟัง:\n\nคำถาม: อธิบาย pathway การส่งสัญญาณของ insulin หลังจาก binding กับ insulin receptor (IR) ที่ liver/muscle/adipose cell — เริ่มต้นจากตำแหน่งใดและจบที่กระบวนการใด ?",
+    "choices": [
+      { "label": "A", "text": "Insulin → cAMP → PKA → glucose uptake" },
+      { "label": "B", "text": "Insulin → IR tyrosine kinase autophosphorylation → IRS-1/2 phosphorylation → PI3K activation → PIP3 production → AKT (PKB) phosphorylation → multiple downstream: (1) GLUT4 translocation to membrane (glucose uptake in muscle/adipose) (2) Glycogen synthase activation (glycogen storage liver/muscle via inhibition of GSK-3) (3) Lipogenesis activation (SREBP-1c) (4) Inhibition of gluconeogenesis (FoxO1 nuclear exclusion) (5) Protein synthesis via mTOR; parallel MAPK pathway for mitogenic effects" },
+      { "label": "C", "text": "Insulin → G-protein → IP3 → Ca release → glucose uptake" },
+      { "label": "D", "text": "Insulin → directly enters cell → activates nuclear receptor → gene transcription" },
+      { "label": "E", "text": "Insulin → JAK/STAT → glucose metabolism" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Insulin signaling pathway (essential basic science): 1. **Receptor binding**: Insulin binds extracellular alpha-subunit of insulin receptor (IR, a transmembrane RTK = receptor tyrosine kinase) on hepatocytes, myocytes, adipocytes (and many others) 2. **Autophosphorylation**: Conformational change activates intrinsic tyrosine kinase in beta-subunit → autophosphorylation of multiple tyrosine residues on IR 3. **IRS phosphorylation**: Activated IR phosphorylates Insulin Receptor Substrate 1 and 2 (IRS-1, IRS-2) on tyrosine residues 4. **PI3K activation**: Phosphorylated IRS recruits and activates phosphatidylinositol-3-kinase (PI3K) — main metabolic branch 5. **PIP3 generation**: PI3K converts PIP2 → PIP3 in membrane 6. **PDK1 and AKT phosphorylation**: PIP3 recruits PDK1 (3-phosphoinositide-dependent kinase) and AKT (= protein kinase B) to membrane; PDK1 + mTORC2 phosphorylate AKT 7. **Downstream effects of AKT**: a. **GLUT4 translocation** (skeletal muscle + adipose): activates AS160 → vesicles fuse with plasma membrane → glucose uptake (NOTE: liver has insulin-independent GLUT2; brain has GLUT3) b. **Glycogen synthesis** (liver + muscle): AKT phosphorylates and inactivates GSK-3 → glycogen synthase activated c. **Lipogenesis** (liver + adipose): SREBP-1c activation → fatty acid + triglyceride synthesis d. **Inhibition of gluconeogenesis** (liver): AKT phosphorylates FoxO1 → cytoplasmic sequestration → reduced PEPCK, G6Pase transcription e. **Protein synthesis**: AKT → mTORC1 → 4E-BP1 + S6K1 → translation initiation f. **Inhibition of lipolysis** (adipose): AKT → PDE3B → ↓cAMP → ↓HSL activity 8. **Parallel mitogenic branch**: IRS → GRB2 → SOS → Ras → Raf → MEK → MAPK (ERK) → growth/proliferation Pathophysiology of insulin resistance: - Defects: serine (not tyrosine) phosphorylation of IRS (inhibitory) by inflammatory kinases (JNK, IKK), reduced GLUT4 translocation - Hyperglycemia + hyperinsulinemia results — ตัวเลือก B ถูกครอบคลุม. A ผิด — cAMP/PKA pathway สำหรับ glucagon/epinephrine ตรงข้ามกับ insulin. C ผิด — Gq/IP3/Ca pathway สำหรับ alpha-1 adrenergic etc. D ผิด — insulin signaling cell surface ไม่ใช่ nuclear hormone. E ผิด — JAK/STAT สำหรับ cytokines/leptin",
+    "difficulty": "hard",
+    "board_section": "basic_science",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "Boron & Boulpaep Medical Physiology 3rd ed. Ch. 51; Williams Textbook of Endocrinology 14th ed. Ch. 31; Saltiel AR, Kahn CR. Nature 2001 (Insulin signaling)"
+  },
+  {
+    "scenario": "ผู้ป่วย hospital-acquired pneumonia (HAP) ใน ICU ตรวจพบ Acinetobacter baumannii จาก tracheal aspirate sensitivity: resistant ต่อ ceftazidime, cefepime, piperacillin-tazobactam, ciprofloxacin, gentamicin; intermediate ต่อ meropenem; sensitive ต่อ colistin และ tigecycline\n\nคำถาม: A. baumannii MDR/XDR pathogenic mechanisms และ optimal treatment approach"
+,
+    "choices": [
+      { "label": "A", "text": "ใช้ meropenem high-dose monotherapy" },
+      { "label": "B", "text": "MDR Acinetobacter resistance mechanisms: (1) ESBL/carbapenemase production (OXA-23, OXA-58, NDM) — degrade beta-lactams (2) Efflux pumps (AdeABC system) (3) Porin loss/mutation reducing permeability (4) Aminoglycoside-modifying enzymes (5) Target modifications (mutations in topoisomerase for fluoroquinolone resistance); Treatment XDR (extensively drug-resistant): combination therapy — colistin (polymyxin E) IV (load 9 million units → 4.5 million q12h, nephrotoxic monitor) + tigecycline IV (caution in pneumonia — low lung penetration) OR sulbactam high-dose (synergy with intrinsic A. baumannii susceptibility) OR cefiderocol (siderophore cephalosporin — new option); source control critical (remove infected device); infectious diseases consult + antibiotic stewardship" },
+      { "label": "C", "text": "Ciprofloxacin oral monotherapy" },
+      { "label": "D", "text": "Vancomycin IV — gram-negative coverage" },
+      { "label": "E", "text": "Stop antibiotic and observe immune response" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Acinetobacter baumannii — opportunistic gram-negative coccobacillus, ICU pathogen, common HAP/VAP, bloodstream infection, surgical wound, meningitis Resistance phenotypes: - **MDR** (multidrug-resistant): non-susceptible ≥ 1 agent in ≥ 3 antimicrobial categories - **XDR** (extensively drug-resistant): non-susceptible ≥ 1 agent in all but ≤ 2 categories - **PDR** (pan-drug-resistant): non-susceptible to all agents in all categories Resistance mechanisms (often combined): 1. **Enzymatic inactivation**: - Beta-lactamases: ESBL (e.g., PER, VEB), AmpC (cephalosporinase), carbapenemases — OXA-type carbapenemases (OXA-23, OXA-24/40, OXA-58) most prevalent globally; metallo-beta-lactamases (NDM, IMP, VIM) — Aminoglycoside-modifying enzymes (acetyltransferases, phosphotransferases) 2. **Reduced permeability**: porin loss (e.g., CarO) 3. **Efflux pumps**: AdeABC (RND-family), AdeIJK, AdeFGH — extrude multiple antibiotic classes 4. **Target modifications**: mutations in penicillin-binding proteins (PBPs), DNA gyrase/topoisomerase IV (fluoroquinolone resistance), 16S rRNA methylases (aminoglycoside resistance) 5. **Biofilm formation** on devices Treatment for XDR/MDR (IDSA 2022 + ESCMID + Tamma 2024 update): 1. **Sulbactam** (often combined with ampicillin or as ampicillin-sulbactam high-dose): - Intrinsic anti-A. baumannii activity (binds PBP3) - High-dose: 9-12 g sulbactam component/day (off-label) - Recently approved: sulbactam-durlobactam (Xacduro) — FDA 2023 specifically for HAP/VAP by A. baumannii 2. **Polymyxins** (colistin = polymyxin E, polymyxin B): - Lipid A binding → membrane disruption - Loading dose 5 mg/kg colistin base activity (CBA) - Nephrotoxicity + neurotoxicity monitor - Should not be monotherapy (synergy needed) 3. **Cefiderocol** — siderophore cephalosporin: - Trojan-horse: binds iron, transported via siderophore uptake - Effective vs all carbapenemase classes (OXA, NDM, KPC) - FDA approved for cUTI, HAP/VAP 4. **Combination therapy** preferred for severe XDR: - Colistin + meropenem (high-dose, 2 g q8h infused over 3 hr) - Colistin + tigecycline (caution in pneumonia — lung penetration limited) - Colistin + ampicillin-sulbactam 5. **Tigecycline**: glycylcycline; broad gram-positive + negative + atypical coverage; **caution in pneumonia and bacteremia** — black box warning (increased mortality); reserved for cIAI, cSSTI 6. **Adjuncts**: source control (drain abscess, remove infected device), infection control (isolation) — ตัวเลือก B comprehensive. A ผิด — intermediate susceptibility, monotherapy inadequate. C ผิด — already resistant. D ผิด — vancomycin = gram-positive coverage. E ผิด — XDR HAP requires aggressive Rx",
+    "difficulty": "hard",
+    "board_section": "basic_science",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "IDSA 2022 Guidance: Treatment of AmpC β-lactamase, Carbapenem-Resistant Acinetobacter baumannii; Tamma PD et al. CID 2024 Update; Magiorakos AP et al. CMI 2012 (MDR/XDR/PDR definitions)"
+  },
+  {
+    "scenario": "โรงพยาบาลใหญ่ในกรุงเทพมีอัตรา central line-associated bloodstream infection (CLABSI) สูง 4.2 ต่อ 1,000 catheter-days (เป้าหมาย CDC NHSN ≤ 1) ผู้บริหารโรงพยาบาลตั้ง quality improvement team\n\nคำถาม: ตามหลัก quality improvement (PDSA cycle) + CLABSI bundle ขั้นตอนใดควรปฏิบัติเป็น \"foundational evidence-based bundle\" เพื่อลด CLABSI ตามที่ AHRQ และ IHI แนะนำ"
+,
+    "choices": [
+      { "label": "A", "text": "ใช้ silver-impregnated catheter ทุกราย" },
+      { "label": "B", "text": "Central Line Insertion Bundle (5 elements): (1) Hand hygiene before insertion (2) Maximal barrier precautions (cap, mask, sterile gown, gloves, large drape) (3) Chlorhexidine 2% skin antisepsis (allow drying) (4) Optimal catheter site selection (subclavian > IJ > femoral; avoid femoral in adults) (5) Daily review of line necessity + prompt removal when no longer indicated; PLUS culture-of-safety: empower nurses to stop procedure if breaches; track and feedback rates; PDSA cycles to drive process improvement" },
+      { "label": "C", "text": "Antibiotic prophylaxis vancomycin for every line" },
+      { "label": "D", "text": "Replace lines q72h regardless of indication" },
+      { "label": "E", "text": "Skip dressing changes to avoid contamination" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Central Line-Associated Bloodstream Infection (CLABSI) — high-morbidity nosocomial infection; preventable to large degree CDC NHSN definition: laboratory-confirmed bloodstream infection in patient with central line in place > 2 days, not related to infection from another site Pronovost et al. NEJM 2006 (Keystone ICU project in Michigan): - 103 ICUs implemented 5-element bundle - CLABSI dropped from 7.7 → 1.4 per 1000 catheter-days - Sustained reduction over 18 months - Cost-effective: prevented 1500 deaths + $200M cost savings IHI + AHRQ + SHEA + CDC bundle (consistent core elements): **CLABSI Insertion Bundle (5 elements)**: 1. **Hand hygiene** before insertion 2. **Maximal sterile barrier precautions**: cap, mask, sterile gown, sterile gloves, large sterile drape covering patient 3. **Chlorhexidine gluconate ≥ 0.5% in alcohol** for skin antisepsis (or 2% CHG) — allow to dry 30 sec on dry skin, 2 min if hair/oil 4. **Optimal site selection**: - Subclavian preferred (lowest infection rate) - Internal jugular acceptable - **Avoid femoral** in adults (highest infection + thrombosis risk) - In children, femoral acceptable (lower rates than adults) 5. **Daily review** of line necessity + remove promptly when no longer indicated **Maintenance Bundle**: - Disinfect access hubs/ports with chlorhexidine/alcohol before each use (\"scrub the hub\" 15 seconds) - Transparent dressing change q7 days, gauze dressing q2 days, or if soiled/non-occlusive - Chlorhexidine-impregnated dressings (CHG-discs) — additional reduction - Daily CHG bathing (in some institutions) - Antimicrobial lock therapy for selected high-risk lines **Additional strategies**: - Empower any team member to stop procedure if breach in technique - Standardized insertion checklist + observer documentation - Provider education + competency assessment - Real-time CLABSI tracking + feedback to units - Antimicrobial-impregnated catheters (CHG + sulfadiazine, or minocycline-rifampin) — for selected high-risk patients only, not routine **PDSA Cycle for QI**: - **Plan**: define problem, set aim (e.g., reduce CLABSI to ≤ 1 per 1000 catheter-days), measure baseline - **Do**: implement bundle on pilot unit - **Study**: measure outcomes vs aim - **Act**: adapt, spread, sustain — ตัวเลือก B comprehensive evidence-based. A ผิด — antimicrobial catheter เป็น selected use ไม่ใช่ first foundational step. C ผิด — antibiotic prophylaxis NOT recommended (promotes resistance). D ผิด — routine replacement NOT recommended (increases mechanical complications without reducing infection). E ผิด — soiled dressing increases infection",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "Pronovost P et al. NEJM 2006 (Michigan Keystone ICU); CDC NHSN CLABSI Prevention; IHI How-to Guide: Prevent CLABSI; SHEA/IDSA Practice Recommendation 2014"
+  },
+  {
+    "scenario": "โรงพยาบาลพบว่ามีการใช้ broad-spectrum antibiotics สูงและ resistance rates เพิ่มขึ้น ผู้บริหารตั้ง Antimicrobial Stewardship Program (ASP) นำโดยทีม ID + clinical pharmacist\n\nคำถาม: ASP \"core elements\" ตาม CDC + IDSA/SHEA 2016 ที่ควรมีในทุก hospital-based ASP"
+,
+    "choices": [
+      { "label": "A", "text": "Restrict all broad-spectrum antibiotics for use only by infectious disease physicians" },
+      { "label": "B", "text": "CDC Core Elements of Hospital ASPs: (1) Leadership commitment + dedicated resources (2) Accountability — physician leader (3) Pharmacy expertise — pharmacist leader (4) Action — interventions: (a) prospective audit + feedback (b) formulary restriction + pre-authorization (c) facility-specific treatment recommendations (5) Tracking — metrics: antibiotic use (days of therapy/DOT), C. difficile rates, resistance (6) Reporting — feedback to providers (7) Education; Specific interventions: IV-to-PO switch + de-escalation based on culture + duration optimization (avoiding overlong therapy)" },
+      { "label": "C", "text": "Same antibiotic protocol regardless of unit" },
+      { "label": "D", "text": "Avoid culture-guided therapy" },
+      { "label": "E", "text": "Empirical broad-spectrum for all febrile patients" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Antimicrobial Stewardship Program (ASP) — coordinated interventions to optimize antimicrobial use Goals: 1. Improve patient outcomes 2. Reduce antimicrobial resistance 3. Reduce antibiotic-related adverse events (C. difficile, drug toxicity) 4. Reduce healthcare costs CDC Core Elements (2014, updated 2019) — required by Joint Commission accreditation: 1. **Leadership commitment**: senior leadership support, dedicated time/funding/staff 2. **Accountability**: appoint a single leader (typically physician) responsible for outcomes 3. **Pharmacy expertise**: appoint single pharmacist leader 4. **Action** (interventions): - **Prospective audit and feedback** (most effective): ID/pharmacist reviews ongoing prescriptions, recommends changes - **Formulary restriction + pre-authorization**: restricted drugs require approval - **Facility-specific guidelines** based on local antibiogram - **IV-to-PO conversion** when patient tolerates oral - **De-escalation** based on culture results (narrow spectrum) - **Duration optimization** — avoid overlong courses (e.g., uncomplicated CAP 5 days, uncomplicated pyelonephritis 7-14 days, uncomplicated SSTI 5-7 days) - **Rapid diagnostics + biomarker-guided** (procalcitonin in pneumonia) 5. **Tracking** (metrics): - Antibiotic use: Days of Therapy (DOT) per 1000 patient-days; Standardized Antimicrobial Administration Ratio (SAAR) - Resistance: institutional antibiogram updated annually - Outcomes: C. difficile rate, mortality, LOS 6. **Reporting**: regular feedback to prescribers, leadership 7. **Education**: providers, nurses, pharmacists, patients Evidence: - 30-40% antibiotic use is inappropriate (CDC) - ASP reduces antibiotic use ~ 20%, resistance, C. difficile, cost - Joint Commission requires ASP for hospital accreditation since 2017 IDSA/SHEA 2016 guideline endorses these strategies WHO Global Action Plan on AMR + Thailand's National Strategic Plan on AMR alignment — ตัวเลือก B comprehensive. A ผิด — pure restriction without other elements insufficient + creates conflict. C ผิด — facility-unit-specific guidelines preferred. D ผิดอย่างยิ่ง — culture-guided therapy is cornerstone. E ผิดอย่างยิ่ง — opposite of stewardship",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "CDC Core Elements of Hospital Antibiotic Stewardship Programs 2019; IDSA/SHEA Implementing an ASP 2016 (CID); Barlam TF et al. CID 2016"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 72 ปี มีปัญหา medication ที่ซับซ้อน — polypharmacy 12 ตัว: rosuvastatin, amlodipine, lisinopril, hydrochlorothiazide, metoprolol, metformin, glipizide, omeprazole, tamsulosin, donepezil, paroxetine, alprazolam\n\nผู้ป่วยตกล้ม 2 ครั้งในเดือนที่ผ่านมา\n\nคำถาม: ตามหลัก geriatric medicine + Beers Criteria + STOPP/START ยาใดควร reconsider หรือลด/หยุดเพราะ inappropriate medication ใน elderly ที่มี falls"
+,
+    "choices": [
+      { "label": "A", "text": "หยุดทุกยาทันที" },
+      { "label": "B", "text": "Apply Beers Criteria + STOPP/START + geriatric assessment: high-risk medications for falls and adverse events in elderly include — (1) **Alprazolam (benzodiazepine)** — Beers Criteria avoid in elderly (increased fall, fracture, cognitive impairment risk); taper slowly (2) **Paroxetine** — strongly anticholinergic, avoid in elderly per Beers; consider switch to sertraline or escitalopram (3) **Tamsulosin + amlodipine + diuretic + ACEi** combo → orthostatic hypotension; check standing BP, consider de-prescribing (4) **Glipizide** — sulfonylurea, hypoglycemia risk in elderly + CKD; consider switch to DPP-4 inhibitor or metformin alone (5) **Donepezil** — review indication and risk/benefit (6) **PPI long-term** — review indication; risks fracture, C. difficile, B12 deficiency; deprescribe if no clear indication; comprehensive geriatric assessment (CGA) + medication reconciliation + functional + cognitive + nutritional + social assessment; fall prevention program (CDC STEADI)" },
+      { "label": "C", "text": "Add more medications to control symptoms" },
+      { "label": "D", "text": "Continue all medications unchanged" },
+      { "label": "E", "text": "Stop only statins (low benefit in elderly)" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Polypharmacy in elderly (≥ 5 medications) — associated with: falls, fractures, hospitalization, cognitive impairment, adverse drug events, drug-drug interactions, increased mortality Tools for deprescribing: 1. **Beers Criteria (AGS, updated 2023)** — list of Potentially Inappropriate Medications (PIMs) in adults ≥ 65 years 2. **STOPP/START Criteria** (Screening Tool of Older People's Prescriptions / Screening Tool to Alert to Right Treatment) — version 3 (2023) European 3. **Medication Appropriateness Index (MAI)** 4. **Drug Burden Index** Specific drugs in this case (high-risk per Beers/STOPP): **Alprazolam (Benzodiazepine)**: - Beers: avoid in elderly (high risk: falls, fractures, delirium, cognitive impairment) - Long half-life → cumulative effect - If used: taper slowly (10-25% q2-4 weeks), substitute non-pharm strategies for anxiety/insomnia (CBT-I) **Paroxetine**: - Strongly anticholinergic among SSRIs → cognitive impairment, anticholinergic burden - Withdrawal syndrome (short half-life) - Beers: avoid; prefer sertraline, escitalopram, citalopram (with caution for QTc) **Antihypertensives + alpha-blocker (tamsulosin) + diuretic**: - Orthostatic hypotension → falls - Check standing BP + symptoms - Consider deprescribing one or more, especially if BP well-controlled - Beers: avoid alpha-blockers as antihypertensives (not as BPH treatment) — but tamsulosin OK for BPH if no orthostasis **Sulfonylurea (glipizide)**: - Hypoglycemia risk especially in CKD - Beers: avoid long-acting (glyburide); short-acting (glipizide) acceptable but caution - Prefer: metformin (eGFR > 30), DPP-4 inhibitor, SGLT2 inhibitor (with renal/CV benefit), GLP-1 agonist **PPI (omeprazole)**: - Long-term risks: fracture, hypomagnesemia, B12 deficiency, C. difficile, pneumonia, AKI, CKD - Deprescribing recommended if no ongoing indication (e.g., chronic NSAID, Barrett's, severe esophagitis) - Algorithm: identify indication → reassess need → step down or stop **Anticholinergic burden**: paroxetine, donepezil (counteracts purpose), some bladder agents — assess total burden Comprehensive Geriatric Assessment (CGA) — multidisciplinary: 1. Medical: medication review, comorbidity 2. Functional: ADL, IADL, gait/balance (TUG) 3. Cognitive: Mini-Cog, MoCA 4. Nutritional: weight, MNA-SF 5. Psychosocial: depression (GDS), social support 6. Environmental: home safety Deprescribing approach: 1. Comprehensive medication review 2. Identify drugs with no clear indication or harm > benefit 3. Prioritize based on risk (fall risk, anticholinergic, hypoglycemia) 4. Taper one drug at a time 5. Engage patient + family in shared decision-making 6. Monitor for withdrawal/return of symptoms — ตัวเลือก B comprehensive evidence-based deprescribing. A ผิด — abrupt all withdrawal dangerous. C ผิด — adds harm. D ผิด — perpetuates problem. E ผิด — statins debatable benefit in oldest old but не isolated issue",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "American Geriatrics Society Beers Criteria 2023 Update (J Am Geriatr Soc); STOPP/START Criteria Version 3 (2023); O'Mahony D et al. Age Ageing 2023"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 64 ปี underlying breast cancer (HER2+) ได้ trastuzumab + chemotherapy 4 cycles มาด้วยอาการเหนื่อย + bilateral pedal edema + รุนแรงขึ้นใน 2 สัปดาห์\n\nV/S: BP 124/78, HR 96, RR 20, SpO2 95%\nPE: JVP 11, S3 gallop +, fine basilar crackles, 2+ pedal edema\nEchocardiogram before chemo: LVEF 62%\nEchocardiogram now: LVEF 38% (drop > 10 absolute points + below 50%)\n\nLab: BNP 1,240, Troponin negative, Cr 1.1\nEKG: sinus tachycardia, no acute changes",
+    "choices": [
+      { "label": "A", "text": "Continue trastuzumab + monitor" },
+      { "label": "B", "text": "Trastuzumab-induced cardiotoxicity (HFrEF) — integrated cardio-oncology management: (1) HOLD trastuzumab temporarily (cardiotoxicity often reversible with HF therapy, unlike anthracycline which is dose-cumulative + often irreversible) (2) Start guideline-directed medical therapy (GDMT) for HFrEF: ACEi/ARB or ARNI + beta-blocker + MRA + SGLT2 inhibitor (4 pillars) + diuretic for congestion (3) Repeat echo in 3-4 weeks; if LVEF recovers to > 50%, can resume trastuzumab with close monitoring (4) Cardio-oncology consult — joint decision balancing cancer + cardiac (5) Oncology consult — alternative HER2-targeted therapy (e.g., pertuzumab combo, TDM-1, T-DXd) (6) Long-term surveillance — annual echo, biomarkers; cardiotoxicity affect overall survival" },
+      { "label": "C", "text": "Increase trastuzumab dose to overcome cardiac stress" },
+      { "label": "D", "text": "Hospice referral — terminal cancer + heart failure" },
+      { "label": "E", "text": "Heart transplant evaluation immediately" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cancer Therapy-Related Cardiac Dysfunction (CTRCD) — major cardio-oncology issue Types of cardiotoxicity by agent: 1. **Anthracyclines** (doxorubicin, epirubicin): - Type I cardiotoxicity: dose-dependent, often irreversible, myocyte death - Cumulative dose limit: doxorubicin > 450-500 mg/m² high risk - Mechanism: oxidative stress, topoisomerase II-beta inhibition - Prevention: dexrazoxane (iron chelator), limit cumulative dose 2. **HER2-targeted (trastuzumab, pertuzumab, TDM-1, T-DXd)**: - Type II cardiotoxicity: not dose-dependent, often **reversible** with cessation + HF therapy - Mechanism: HER2 (ErbB2) inhibition disrupts cardiomyocyte stress response - Risk factors: prior anthracycline, age > 60, baseline LVEF reduced, HTN 3. **Tyrosine kinase inhibitors** (sunitinib, sorafenib): - Hypertension, LV dysfunction - Reversible 4. **Fluoropyrimidines** (5-FU, capecitabine): - Coronary vasospasm → angina, MI - Acute, often reversible with cessation 5. **Immune checkpoint inhibitors** (pembrolizumab, nivolumab, ipilimumab): - Myocarditis (rare but high mortality 50%) - Other: pericarditis, conduction abnormalities - Treatment: high-dose steroid + ICI discontinuation 6. **Radiation therapy**: - Pericardial disease, accelerated CAD, valvular disease - Years to decades later 7. **CAR-T cell therapy**: - Cytokine release syndrome → cardiotoxicity ESC 2022 Cardio-Oncology Guideline + ASCO definition of CTRCD: - **Asymptomatic CTRCD**: LVEF drop ≥ 10 absolute % to < 50%, OR new GLS reduction > 15% relative, OR troponin/BNP elevation - **Symptomatic CTRCD**: HF symptoms + LVEF reduction This patient: LVEF 62 → 38% (drop 24 points) + HF symptoms = Severe CTRCD Management: 1. **Hold trastuzumab** (Type II — reversible) 2. **GDMT for HFrEF**: - ACEi/ARB or **ARNI (sacubitril/valsartan)** — cardioprotective, may improve recovery - **Beta-blocker** (carvedilol, metoprolol succinate, bisoprolol) - **MRA** (spironolactone, eplerenone) - **SGLT2 inhibitor** (dapagliflozin, empagliflozin) — 4th pillar HFrEF therapy - Loop diuretic for congestion 3. **Repeat echo 3-4 weeks**: most recover to > 50% LVEF on GDMT 4. **Cardio-oncology + oncology joint decision**: - If LVEF recovers > 50%, can resume trastuzumab with monitoring - If not recovered, consider alternative HER2-targeted agents (pertuzumab + chemo, TDM-1, T-DXd — newer with less cardiotoxicity) - Balance cancer prognosis + cardiac risk 5. **Long-term surveillance**: - Annual echo, biomarkers - Cardiac biomarker (troponin, BNP) trends - Lifestyle: BP, lipids, weight, exercise 6. **Primary prevention** (high-risk patients pre-treatment): - Baseline echo + biomarkers - ACEi/beta-blocker prophylactically in selected high-risk - Statin (some evidence in anthracycline) — ตัวเลือก B comprehensive integrative. A ผิด — continued trastuzumab worsens LVEF, harms. C ผิด — increased dose worse. D ผิด — premature, cardiotoxicity often reversible. E ผิด — transplant not first-line",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "ESC 2022 Guidelines on Cardio-Oncology (Eur Heart J); Lyon AR et al. Eur Heart J 2022 (Cardiovascular Toxicity); ASCO Practical Clinical Guideline on Cardiac Dysfunction"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 70 ปี underlying CKD stage 4 (eGFR 22), T2DM, HFpEF, AF on apixaban, peripheral neuropathy มา OPD ด้วยอาการ chronic constipation + recently elevated cardiac biomarker (NT-proBNP) on routine check\n\nMedications: metformin 500 BID, glipizide 5 mg, empagliflozin 10 mg, apixaban 5 mg BID, metoprolol succinate 100 mg, furosemide 40 mg, atorvastatin 40 mg, gabapentin 600 mg TID\n\nQuestion: identify high-priority drug-disease + drug-drug interactions to address",
+    "choices": [
+      { "label": "A", "text": "ปรับยาทุกตัว ไม่ปรับใดก็ได้" },
+      { "label": "B", "text": "Multi-morbidity prescribing review: (1) **Metformin** — eGFR 22 < 30 = contraindicated (lactic acidosis risk) → discontinue (2) **Empagliflozin** — eGFR 22 < initiation threshold 20 (some guidelines 30) but if already on, continue with monitoring per EMPA-KIDNEY (3) **Apixaban** dose — adjust to 2.5 mg BID if ≥ 2 of: age ≥ 80, weight ≤ 60 kg, Cr ≥ 1.5 (4) **Gabapentin** — accumulates in CKD → reduce dose (eGFR 15-29: 200-700 mg/day; eGFR < 15: 100-300 mg/day) — current 1800 mg/day too high → reduce to 600 mg/day max + monitor for sedation/falls (5) **Glipizide** — hypoglycemia risk in CKD elderly → consider switch (6) **HFpEF guideline**: SGLT2 inhibitor continue (DELIVER, EMPEROR-Preserved benefit); consider spironolactone if K stable; loop diuretic for congestion; treat HT (7) **Constipation** — review opioids, anticholinergics; gabapentin can contribute; PEG laxative first-line (8) Cardio-renal-metabolic syndrome multidisciplinary approach + medication reconciliation" },
+      { "label": "C", "text": "หยุด empagliflozin เพราะ CKD" },
+      { "label": "D", "text": "Continue current regimen unchanged" },
+      { "label": "E", "text": "Stop apixaban — too high bleeding risk" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Multi-morbidity + polypharmacy + advanced CKD + HF — complex integrative management Key drug-disease interactions: 1. **Metformin in CKD**: - eGFR ≥ 45: full dose - eGFR 30-44: reduce dose, monitor - **eGFR < 30: contraindicated** (FDA 2016 update) — risk of metformin-associated lactic acidosis (MALA), mortality 50% - Discontinue in this patient (eGFR 22) 2. **SGLT2 inhibitors in CKD**: - Indicated for: T2DM + CKD with albuminuria, HFrEF, HFpEF (EMPEROR-Preserved/DELIVER), CKD without DM (EMPA-KIDNEY, DAPA-CKD) - Initiation: empagliflozin labeled for eGFR ≥ 20; dapagliflozin ≥ 25 - **Already on**: continue until dialysis per major trials (cardiorenal benefit persists) 3. **Apixaban dose adjustment** (FDA): - 2.5 mg BID if ≥ 2 of: - Age ≥ 80 years - Body weight ≤ 60 kg - Serum Cr ≥ 1.5 mg/dL - This patient: age 70 (no), weight unknown, Cr (eGFR 22 → likely Cr > 1.5) → assess: if only 1 criterion → 5 mg BID; if ≥ 2 → 2.5 mg BID 4. **Gabapentin in CKD** (renal excretion): - eGFR ≥ 60: full dose 900-3600 mg/day - eGFR 30-59: 400-1400 mg/day - eGFR 15-29: 200-700 mg/day - eGFR < 15: 100-300 mg/day - This patient: eGFR 22 → max 700 mg/day; currently 1800 mg → toxic risk (sedation, falls, ataxia) 5. **Sulfonylurea (glipizide)** in elderly + CKD: - Hypoglycemia risk - Switch to DPP-4 inhibitor (linagliptin — no renal adjustment) or other 6. **HFpEF management** (recent paradigm shift): - SGLT2 inhibitor (empagliflozin EMPEROR-Preserved 2021; dapagliflozin DELIVER 2022) — first guideline-supported - Spironolactone (TOPCAT — debated, some benefit) - Sacubitril/valsartan (PARAGON-HF — borderline; selected) - Loop diuretic for congestion - Treat comorbidities (HT, AF rate control, T2DM, obesity) Comprehensive geriatric medication review + cardio-renal-metabolic coordination — ตัวเลือก B comprehensive. A ผิด — adjustment needed. C ผิด — continue SGLT2 if benefit. D ผิด — toxic medications. E ผิด — anticoagulation needed for AF, just dose adjust",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "renal_gu",
+    "board_age_group": "adult",
+    "reference_source": "FDA Metformin Label 2016; ESC 2021 HF Guidelines + 2023 Focused Update; KDIGO Diabetes in CKD 2022; Apixaban (Eliquis) Prescribing Information"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 58 ปี diagnosed metastatic NSCLC, ECOG 2, no actionable mutations มาด้วยอาการ severe back pain + leg weakness + urinary retention มา 2 วัน\n\nV/S: BP 138/82, HR 92, RR 18, SpO2 96%\nNeuro: bilateral lower extremity weakness grade 3/5, sensory level T10, sphincter dysfunction, bladder palpable post-void volume 600 mL\n\nMRI spine: epidural metastasis T8-T9 with cord compression > 50% canal stenosis + edema",
+    "choices": [
+      { "label": "A", "text": "Continue chemotherapy + observe" },
+      { "label": "B", "text": "Malignant Spinal Cord Compression (MSCC) — oncologic emergency requiring multidisciplinary integrative approach: (1) Immediate IV dexamethasone 10-16 mg loading + 4 mg q6h (reduces cord edema; PRESCO trial supports) (2) Urgent neurosurgery + radiation oncology consult — surgery (decompression + stabilization) + post-op RT shown superior to RT alone in selected ambulatory patients with single-level compression (Patchell trial Lancet 2005); choice based on neurologic status, prognosis, life expectancy, tumor type (3) Concurrent palliative consultation — goals of care discussion (ECOG 2 + metastatic) (4) Pain management (opioids + bisphosphonates for bone pain) (5) DVT prophylaxis (immobile + cancer = high risk) (6) Bladder management (catheter for retention; intermittent catheterization plan) (7) Bowel management (8) Rehab early to maximize function + prevent contracture/decubitus (9) Psychosocial support — patient/family" },
+      { "label": "C", "text": "Discharge with oral analgesics" },
+      { "label": "D", "text": "MRI brain only — likely cerebral metastasis" },
+      { "label": "E", "text": "Aspirin + observe" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Malignant Spinal Cord Compression (MSCC) — oncologic emergency Incidence: 5-10% of cancer patients overall; most common in lung (15%), breast (15%), prostate (15%), lymphoma, myeloma Etiology: - Extradural (95%): vertebral body metastasis → posterior extension - Intradural extramedullary - Intramedullary Levels: thoracic 60% (most common — narrow canal), lumbosacral 30%, cervical 10% Clinical features: 1. **Pain** (95% — earliest, weeks before deficit): back pain, often radicular, worse at night/lying flat 2. **Motor weakness** (75% at presentation): symmetric, lower extremities (in thoracolumbar) 3. **Sensory deficit** (50%): level - dermatome correlates with compression level 4. **Autonomic dysfunction** (late): - **Urinary retention** + overflow incontinence (post-void > 200 mL highly suggestive) - **Constipation** + bowel incontinence - Loss of anal sphincter tone 5. Lhermitte's sign, hyperreflexia, Babinski + Diagnosis: - **Whole spine MRI with contrast** — gold standard (multifocal in 30%) - CT myelography if MRI contraindicated Management (NICE 2019 + ASCO + ESMO MSCC guidelines): 1. **Glucocorticoid IMMEDIATELY** (don't wait for imaging): - Dexamethasone 8-16 mg IV loading → 4 mg q6h - Reduces edema, pain, may preserve neurological function - Taper after definitive Rx 2. **Urgent referral within 24 hr**: - **Neurosurgery + Radiation Oncology** - **Multidisciplinary decision**: a. **Surgical decompression + post-op RT** (Patchell trial Lancet 2005): - Superior to RT alone in: single-level compression, expected survival > 3 months, ambulatory, not radiosensitive tumor - 84% vs 57% retention of ambulation b. **Radiation alone**: - Radiosensitive tumors (lymphoma, SCLC, germ cell, multiple myeloma) - Multi-level compression - Poor prognosis - Non-surgical candidate c. **Stereotactic body radiation (SBRT)**: highly conformal, increasingly used d. **Vertebroplasty/kyphoplasty**: pain control in vertebral collapse 3. **Tumor-directed therapy**: - Chemotherapy (highly chemosensitive tumors: lymphoma, germ cell) - Targeted therapy (e.g., EGFR-TKI for EGFR-mutant NSCLC) - Hormonal (prostate, breast) 4. **Supportive care**: - Pain control (multimodal: opioid + adjuvant analgesic + bisphosphonate) - Bisphosphonate or denosumab for skeletal-related events - **DVT prophylaxis** (cancer + immobility = very high risk) - Bladder + bowel management (Foley initially, IC scheduling) - Pressure injury prevention - Early rehabilitation 5. **Goals-of-care discussion**: - Prognosis, expected outcome of intervention - Quality of life - Patient + family values - Palliative care consultation - Advance directives Prognosis: pre-treatment ambulatory status best predictor of post-treatment function — \"time is cord\" Long-term outcomes: - Median survival after MSCC: 3-6 months (varies by tumor) - Lung cancer: shorter; breast/prostate/myeloma: longer - ตัวเลือก B comprehensive integrative oncology + neurosurgery + palliative + rehab approach. A ผิด — emergency missed. C ผิด — discharge dangerous. D ผิด — MRI brain not relevant. E ผิด — totally inadequate",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "NICE Guideline NG234: Metastatic Spinal Cord Compression 2023; Patchell RA et al. Lancet 2005 (Surgery vs RT in MSCC); Loblaw DA et al. ASCO 2012 Guideline; ESMO Clinical Practice Guidelines"
+  }
+]
