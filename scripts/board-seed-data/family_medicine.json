@@ -168,5 +168,175 @@
     "board_topic": "signs_symptoms",
     "board_age_group": "adult",
     "reference_source": "AGS Geriatrics; ACOVE; Choosing Wisely"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 68 ปี COPD GOLD II — chronic dyspnea + cough + sputum, FEV1 65% predicted, smoker quit 10 yr ago",
+    "choices": [
+      { "label": "A", "text": "Ignore" },
+      { "label": "B", "text": "COPD Outpatient Management (GOLD 2024): (1) Spirometry confirmation (post-BD FEV1/FVC < 0.7); GOLD grading + ABCDE groups (modern uses A/B/E based on symptom + exacerbation); (2) **Smoking cessation** — most impactful intervention even after quitting; ongoing counseling; (3) **Pharmacotherapy stepwise**: - LAMA (tiotropium) or LABA (salmeterol, formoterol) — first-line; - Combination LAMA + LABA for moderate-severe; - LAMA + LABA + ICS for severe + frequent exacerbations + eosinophils > 300; - Short-acting reliever (SABA) as needed; - Avoid ICS monotherapy in COPD; - Roflumilast for severe + chronic bronchitis phenotype; - Azithromycin chronic for frequent exacerbators (Cochrane); (4) **Vaccinations**: flu annual, pneumococcal, COVID, Tdap, RSV; (5) **Pulmonary rehabilitation** — Cochrane evidence: improves dyspnea, exercise tolerance, QOL; (6) **Oxygen therapy** if severe hypoxia (PaO2 < 55 or SpO2 < 88 at rest); long-term oxygen (LTOT) extends life; (7) **Lung volume reduction**: surgery or endoscopic for selected severe emphysema; (8) **Alpha-1 antitrypsin** screening if young + family history + non-smoker; (9) **Exacerbation management**: bronchodilator + steroid + antibiotic if Anthonisen criteria; (10) **Comorbidity management**: CVD, OSA, depression, osteoporosis; (11) **Palliative care** + advance care planning for advanced; (12) **Multidisciplinary**: PCP + pulmonology + PT + smoking cessation + mental health" },
+      { "label": "C", "text": "Surgery" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "COPD: spirometry diagnosis + GOLD grading. Smoking cessation foundation. Stepwise pharmacotherapy (LAMA/LABA/ICS). Vaccinations + pulmonary rehab + O2 for severe. Modern: ABE groups + ICS selectively + emerging therapies. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "respiratory",
+    "board_age_group": "adult",
+    "reference_source": "GOLD 2024"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี HFrEF EF 30% + DM + HT + CKD — chronic management",
+    "choices": [
+      { "label": "A", "text": "Ignore" },
+      { "label": "B", "text": "HFrEF Comprehensive Management (AHA/ACC/HFSA 2022 + ESC 2021 + 2023 update): (1) **Four pillars of GDMT** (Guideline-Directed Medical Therapy): - **ARNI** (sacubitril/valsartan) preferred over ACEi/ARB — PARADIGM-HF; - **Beta-blocker** (carvedilol, metoprolol succinate, bisoprolol); - **MRA** (spironolactone, eplerenone); - **SGLT2 inhibitor** (dapagliflozin, empagliflozin) — DAPA-HF + EMPEROR-Reduced — major addition 2022; (2) **Combination + titration**: start all 4 + titrate; benefits additive; modern: start all 4 at lower doses initially; (3) **Loop diuretic** for symptom control + congestion; (4) **Newer agents**: vericiguat (sGC stimulator — VICTORIA), omecamtiv mecarbil; ivabradine for HR > 70 + sinus; (5) **Device therapy**: ICD primary prevention (EF < 35% + NYHA II-III + on GDMT); CRT (cardiac resynchronization) for QRS > 130 + EF < 35%; (6) **Atrial fibrillation**: rate vs rhythm + anticoagulation (CHA2DS2-VASc); (7) **Transplant + LVAD** for end-stage; (8) **Comorbidity management**: DM (SGLT2 + GLP-1), HT, CKD, obesity, sleep apnea; (9) **Lifestyle**: sodium restriction (2-3 g/d), fluid restriction if hyponatremic, exercise + cardiac rehab; (10) **Patient education + self-management**: weights, symptoms, medication adherence, when to seek help; (11) **Vaccinations**: flu, pneumo, COVID; (12) **Mental health**: depression high comorbidity, treat; (13) **Palliative care** + advance care planning for advanced; (14) **Multidisciplinary**: PCP + cardiology + nephrology + pharmacy + nursing + dietitian + PT" },
+      { "label": "C", "text": "Surgery only" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "HFrEF GDMT: Four pillars (ARNI + BB + MRA + SGLT2). SGLT2 major 2022 addition. Devices (ICD, CRT). Comorbidity management. Lifestyle + self-management. Multidisciplinary. Modern: start all 4 pillars early, titrate to maximum tolerated.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "AHA/ACC/HFSA HF 2022; ESC HF 2021"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 25 ปี asthma — poorly controlled despite SABA PRN — symptoms 2-3x/week + nighttime awakening monthly",
+    "choices": [
+      { "label": "A", "text": "Continue SABA only" },
+      { "label": "B", "text": "Adult Asthma Management (GINA 2024): (1) **Major GINA paradigm shift**: SABA monotherapy NO LONGER recommended for any adult/adolescent asthma — increased mortality vs ICS use; (2) **Stepwise approach**: - Step 1-2: ICS-formoterol PRN as both reliever + controller (MART — Maintenance + Reliever Therapy); or daily low-dose ICS + SABA PRN; - Step 3: low-dose ICS-formoterol MART or low-dose ICS-LABA + SABA PRN; - Step 4: medium-dose ICS-formoterol MART; - Step 5: add-on biologics (anti-IgE omalizumab; anti-IL-5 mepolizumab, reslizumab, benralizumab; anti-IL-4/13 dupilumab; anti-TSLP tezepelumab), oral steroid last resort; (3) **Assess control + adherence + technique**: (4) **Education**: inhaler technique (most common cause of poor control), asthma action plan, trigger avoidance; (5) **Comorbidity**: rhinitis (intranasal steroid), GERD, obesity, OSA, mental health, smoking; (6) **Biologic options** for severe — assess Type 2 inflammation (eosinophils, FeNO, IgE), allergy testing; (7) **Vaccinations**: flu, pneumo, COVID; (8) **Exacerbation management**: prompt SABA + oral steroid + medical evaluation; (9) **Pregnancy**: continue controllers (untreated asthma worse than meds); (10) **Multidisciplinary**: PCP + allergy/immunology + pulmonology + respiratory therapy + mental health" },
+      { "label": "C", "text": "Surgery" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Asthma GINA 2024 paradigm: SABA monotherapy out. ICS-formoterol MART (both reliever + controller). Stepwise. Inhaler technique. Comorbidity. Biologics for severe Type 2. Modern: MART approach + biologics + precision.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "respiratory",
+    "board_age_group": "adult",
+    "reference_source": "GINA 2024"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 68 ปี postmenopausal × 18 yr + recent fragility wrist fracture — osteoporosis screening + treatment",
+    "choices": [
+      { "label": "A", "text": "Ignore" },
+      { "label": "B", "text": "Osteoporosis Management (AACE + NOF + Endocrine Society): (1) **Fragility fracture = osteoporosis clinically** regardless of DXA — diagnosis confirmed; (2) **Workup**: DXA (T-score), labs (Ca, vit D, PTH, TSH, Cr, others if indicated), secondary causes assessment (CKD, hyperthyroidism, primary hyperparathyroidism, malabsorption, hypogonadism, multiple myeloma); (3) **FRAX score**: 10-year fracture probability + risk stratification; (4) **Treatment indications**: T-score ≤ -2.5, fragility fracture, T-score -1 to -2.5 + FRAX major fracture > 20% or hip > 3%; (5) **Anti-osteoporosis therapy**: - **Bisphosphonates** first-line: alendronate weekly, risedronate weekly/monthly, ibandronate monthly, zoledronate IV annually; - **Denosumab** (anti-RANK-L) — alternative + post-bisphosphonate; q6 mo SC; careful — discontinuation rebound fracture; - **Anabolic** for very high-risk (multiple fractures, T-score very low): teriparatide (2 yr), abaloparatide, romosozumab (1 yr then anti-resorptive); sequential therapy: anabolic first then anti-resorptive consolidates gains; - **Selective estrogen receptor modulators (raloxifene)**: alternative — reduces vertebral fracture; - **Calcitonin**: rarely used (less effective); - **HRT** for early menopause + symptomatic — bone benefit but other risks; (6) **Adjuncts**: Ca 1000-1200 mg + vitamin D 800-2000 IU daily; weight-bearing + resistance exercise; (7) **Fall prevention** (CDC STEADI): essential — most fractures from falls; (8) **Lifestyle**: smoking cessation, alcohol moderation, weight; (9) **Drug holiday** consideration with long-term bisphosphonate (5-10 yr — risk-benefit); (10) **Surveillance**: DXA q2 yr typically; (11) **Multidisciplinary**: PCP + endocrinology + orthopedics + PT" },
+      { "label": "C", "text": "Surgery only" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Osteoporosis: fragility fracture = clinical diagnosis. DXA + FRAX. Anti-osteoporosis Rx (bisphosphonate first-line; anabolic for very high-risk + sequential). Ca + vit D + exercise + fall prevention. Modern: sequential therapy + multidisciplinary care.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "AACE Osteoporosis 2020; Endocrine Society"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 45 ปี — obesity BMI 36, hyperinsulinism, fatty liver, sleep apnea — wants to lose weight",
+    "choices": [
+      { "label": "A", "text": "Lifestyle only" },
+      { "label": "B", "text": "Obesity Management (AACE + OMA + AHA): (1) **Comprehensive assessment**: BMI + waist + comorbidities + medical conditions + medications causing weight gain + psychosocial; (2) **Lifestyle (foundation)**: - Medical nutrition therapy with dietitian; - Moderate caloric reduction (500-750 kcal/d deficit); - Mediterranean, DASH, low-carb — multiple work; - Exercise 150 min/wk moderate + resistance; - Behavioral therapy + CBT for eating; - Mindfulness; (3) **Pharmacotherapy** (BMI ≥ 30, or ≥ 27 + comorbidity, after lifestyle 3-6 mo or as adjunct): - **GLP-1 RA (semaglutide injectable — Wegovy; tirzepatide — Mounjaro/Zepbound)** — most effective (15-22% weight loss); CV + metabolic benefits; cost barriers; - **Phentermine-topiramate** (Qsymia); - **Naltrexone-bupropion** (Contrave); - **Liraglutide** (Saxenda); - **Orlistat** (limited efficacy); - **Setmelanotide** for specific genetic obesity; (4) **Bariatric surgery** (BMI ≥ 40 or ≥ 35 + comorbidity): - Roux-en-Y gastric bypass, sleeve gastrectomy, gastric banding (less now), duodenal switch (selected); - 20-30% sustained weight loss; - Comorbidity remission (T2DM, HT, sleep apnea, fatty liver); - Multidisciplinary evaluation + lifelong follow-up; (5) **Treat comorbidities**: T2DM (SGLT2 + GLP-1 — overlap with obesity Rx), OSA (CPAP), NAFLD, dyslipidemia, depression; (6) **Mental health screening**: depression, eating disorders, binge eating; (7) **Long-term**: chronic disease management — relapse common, ongoing support; (8) **Multidisciplinary**: PCP + bariatric medicine + dietitian + behavioral therapy + bariatric surgery + endocrinology" },
+      { "label": "C", "text": "Surgery first" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Obesity = chronic disease. Lifestyle + pharmacotherapy + bariatric surgery for appropriate. GLP-1 RA (semaglutide, tirzepatide) revolutionary — 15-22% weight loss + CV/metabolic benefits. Comorbidity treatment. Multidisciplinary lifelong care. Modern: medical management much improved.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "AACE Obesity 2023; OMA"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 38 ปี — recurrent migraines × 3 yr, 4-5 attacks/month — debilitating",
+    "choices": [
+      { "label": "A", "text": "Long-term opioid" },
+      { "label": "B", "text": "Migraine Management (AAN + AHS + IHS): (1) **Acute treatment** (abortive — treat attacks): - **Triptans** (sumatriptan, rizatriptan, eletriptan) — 5-HT1B/1D agonist; gold standard; CV CI; - **Gepants** (rimegepant, ubrogepant — CGRP receptor antagonist) — newer, no CV CI; - **Ditans** (lasmiditan — 5-HT1F agonist) — driving precaution; - **NSAIDs + acetaminophen** for mild; - **Anti-emetics** (metoclopramide, ondansetron, prochlorperazine); - **Avoid**: opioids, butalbital (rebound + addiction); (2) **Preventive treatment** (if frequent ≥ 4/mo, disabling, or acute Rx not enough): - **First-line**: beta-blockers (propranolol, metoprolol), topiramate, valproate, amitriptyline; - **CGRP monoclonal antibodies** (erenumab, fremanezumab, galcanezumab, eptinezumab) — major advance; monthly/quarterly injection; well-tolerated; - **Botulinum toxin (Botox)** for chronic migraine (≥ 15 d/mo); - **CGRP gepants** (atogepant, rimegepant) — oral preventive; - **Lifestyle + non-pharm**: sleep, hydration, regular meals, exercise, avoid triggers, stress management; CBT, biofeedback; (3) **Status migrainosus** (> 72 h): inpatient or ED treatment; (4) **Pregnancy**: lifestyle + acetaminophen + selected (avoid triptans 1st trimester less data, OK 2nd-3rd); CGRP mAb avoid; (5) **Comorbidity**: depression, anxiety, fibromyalgia, IBS, epilepsy, stroke (rare); (6) **Multidisciplinary**: PCP + neurology + psychology + PT" },
+      { "label": "C", "text": "Surgery" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Migraine: acute (triptans, gepants, ditans, NSAIDs) + preventive (beta-blockers, CGRP mAb — major advance). Avoid opioids. Lifestyle + non-pharm. Modern: CGRP-targeted therapies + gepants revolutionary. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AHS + AAN Migraine 2021; AHS 2024 Update"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 50 ปี — acute LBP × 3 days after lifting + radiation to right buttock, no red flags",
+    "choices": [
+      { "label": "A", "text": "MRI immediately" },
+      { "label": "B", "text": "Acute Low Back Pain Management (ACP + NICE + Choosing Wisely): (1) **Red flag screening** (cauda equina, malignancy, infection, fracture, ankylosing spondylitis) — none here = mechanical LBP; (2) **NO imaging routinely** for acute LBP without red flags (Choosing Wisely) — MRI doesn't improve outcomes + finds incidental abnormalities; (3) **Reassurance + education**: most resolve within 6 weeks; activity OK + better than bed rest; (4) **Non-pharmacologic first-line**: superficial heat, exercise, manipulation, acupuncture, massage, yoga, mindfulness, tai chi; (5) **Pharmacologic if needed**: - NSAIDs first-line (caution renal, GI, CV); - Acetaminophen limited efficacy alone (recent evidence); - Muscle relaxant short-term (cyclobenzaprine — sedation); - Avoid opioids first-line (epidemic, AE, addiction); - Topical agents; (6) **Chronic LBP** (> 12 wk): multimodal — exercise + PT + CBT for chronic pain + acupuncture + multimodal medication; - SNRI (duloxetine) — chronic LBP; - Tramadol caution; - Procedures selective (epidural steroid for radiculopathy short-term, facet RFA); - Cognitive behavioral therapy; (7) **Surgery indications limited**: cauda equina (emergent), progressive deficit, refractory persistent radiculopathy + clear imaging; (8) **Avoid**: prolonged bed rest, long-term opioids, excessive imaging; (9) **Address psychosocial**: chronic pain + depression + anxiety + work stress; (10) **Functional goals + return to activity**; (11) **Multidisciplinary** for chronic: PCP + PT + pain medicine + behavioral health" },
+      { "label": "C", "text": "Surgery" },
+      { "label": "D", "text": "Long-term opioid" },
+      { "label": "E", "text": "Bedrest 4 weeks" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Acute LBP: red flag screening + NO imaging routinely + reassurance + non-pharm first + NSAIDs. Avoid opioids + bed rest. Chronic LBP: multimodal. Surgery limited indications. Address psychosocial. Modern: high-value non-imaging + non-opioid approach.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "ACP LBP 2017; NICE LBP"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 22 ปี + tinea pedis (athlete's foot) — itchy + scaly between toes — wants treatment",
+    "choices": [
+      { "label": "A", "text": "Surgery" },
+      { "label": "B", "text": "Common Dermatology in Primary Care (Tinea pedis + general principles): (1) **Diagnose clinically**; KOH prep if atypical or unclear; fungal culture for resistant; (2) **Topical antifungals** first-line for most tinea: - **Allylamines** (terbinafine, naftifine) — most effective; - **Imidazoles** (clotrimazole, miconazole) — alternatives; - 4-6 weeks; (3) **Oral antifungals** (terbinafine, itraconazole, fluconazole) for extensive, recurrent, nail involvement; LFT monitoring; (4) **General principles common skin conditions in primary care**: - Eczema: emollients + topical steroids (low potency face/groin/children) + tacrolimus/pimecrolimus + dupilumab for severe; - Psoriasis: topical steroids, vitamin D analogs, biologics for moderate-severe; - Acne: topical retinoid + benzoyl peroxide + antibiotic + oral options (doxycycline, isotretinoin for severe); - Rosacea: topical metronidazole, ivermectin, brimonidine + oral doxycycline; - Seborrheic dermatitis: antifungal shampoo + topical antifungal + steroid; - Contact dermatitis: avoid trigger + topical steroid; - Urticaria: H1 antihistamine + identify trigger; refractory — omalizumab; - Skin cancer (BCC, SCC, melanoma): biopsy + treat or refer; - STIs: see other; (5) **Lifestyle measures + prevention**: hygiene, drying feet, breathable footwear, treat shoes; (6) **Education + return precautions**; (7) **Refer to dermatology** if atypical, refractory, severe, suspicious for malignancy" },
+      { "label": "C", "text": "Refuse" },
+      { "label": "D", "text": "Antibiotic" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Common dermatology in primary care: tinea topical antifungal; eczema/psoriasis topical + biologics severe; acne stepwise; rosacea topical + doxy; STI; skin cancer biopsy + refer. Modern: biologics for many chronic conditions + precision.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "dermatology",
+    "board_age_group": "adult",
+    "reference_source": "AAFP; AAD Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 25 ปี + new sexual partner + asking about STI screening",
+    "choices": [
+      { "label": "A", "text": "Ignore" },
+      { "label": "B", "text": "STI Screening Counseling + Prevention (CDC STI Treatment Guidelines 2021 + USPSTF): (1) **Universal screening**: - **HIV**: all 13-75 yo at least once + risk-based repeat; - **Hepatitis C**: all 18-79 yo at least once (2020 update); - **Hepatitis B**: at least once (2023 update); - **Syphilis**: pregnant women + high-risk + selected; (2) **Risk-based screening younger + high-risk**: - **Chlamydia + gonorrhea**: women < 25 + > 25 + risk; men MSM annual + 3-6 mo if multiple partners; pregnant women; sites — urine, vaginal, rectal, oropharyngeal; - **HIV**: high-risk q3-6 mo; - **Syphilis**: MSM annual + q3-6 mo if multiple partners; pregnant; (3) **Window periods**: HIV 10-90 days antibody (sooner with antigen), syphilis 3-6 wk; (4) **Modern testing**: NAAT for chlamydia + gonorrhea (high sensitivity); 4th gen HIV (antigen-antibody combination); rapid tests; (5) **Counseling**: safer sex education, condom use, vaccination (HPV, HepB), PrEP for HIV (Truvada, Descovy, cabotegravir LAI), PEP if exposure, partner notification, expedited partner therapy (EPT) for partner treatment in some states; (6) **Treatment** per CDC 2021 guidelines: - Chlamydia: doxycycline 100 mg BID × 7d (preferred over azithromycin single dose updated); - Gonorrhea: ceftriaxone 500 mg IM single dose (or 1g if BMI ≥ 150 kg); - Syphilis: penicillin G IM dose-dependent on stage; - Trichomoniasis: metronidazole 500 mg BID × 7d (women) or single dose (men); - HSV: antivirals; - HIV: PrEP/PEP + ART; (7) **Pregnancy**: routine screening + treat to prevent vertical transmission; (8) **Adolescents**: confidentiality, consent; (9) **Multidisciplinary**: PCP + public health + STI clinic" },
+      { "label": "C", "text": "Surgery" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "STI screening: universal (HIV, HCV, HBV) + risk-based (chlamydia, gonorrhea, syphilis). Counseling + prevention + vaccination + PrEP. CDC 2021 treatment guidelines (doxy for chlamydia, ceftriaxone for gonorrhea). Modern: comprehensive sexual health.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "CDC STI Treatment Guidelines 2021"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี undiagnosed for 6 mo — vague symptoms — chronic fatigue + weight loss + concerns + medical workup",
+    "choices": [
+      { "label": "A", "text": "Ignore" },
+      { "label": "B", "text": "Unexplained Weight Loss + Fatigue Workup: (1) **Comprehensive history**: timeline, quantification, associated symptoms (B symptoms — fever, night sweats; GI; respiratory; mood/sleep; cognitive); medication review; psychosocial; (2) **Focused exam**: weight + BMI + nutritional, lymph nodes, thyroid, heart + lungs, abdomen (organomegaly, masses), skin, neurological; (3) **Targeted lab workup** (USPSTF + AAFP): - CBC (anemia, malignancy); - CMP (electrolytes, glucose, liver, kidney); - TSH (hyperthyroidism); - HbA1c (DM); - Iron studies + ferritin; - LDH (lymphoma); - HIV; - ESR/CRP; - Vitamin D, B12; - Urinalysis; - Stool occult blood; - Pregnancy test if applicable; (4) **Age-appropriate cancer screening**: colonoscopy, mammogram, lung CT, cervical, PSA; symptom-directed; (5) **Mental health screening**: PHQ-9, GAD-7, substance use; (6) **Targeted imaging by clinical**: CXR, abdominal US/CT for suspected; (7) **Endocrinology workup**: adrenal (cortisol), pituitary; (8) **Differential**: malignancy (always consider in elderly), endocrine (hyper-thyroid, adrenal, DM), GI (malabsorption, IBD, celiac), infection (chronic — TB, HIV, hepatitis), psychiatric (depression, anxiety, eating disorders), medication side effects, alcohol, dementia, social (food insecurity, isolation); (9) **Specialist referral** as indicated; (10) **Nutritional support**: dietitian, supplements; (11) **Follow-up close** until cause identified; (12) **Multidisciplinary**: PCP + specialists + social work + mental health" },
+      { "label": "C", "text": "Surgery" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Unexplained weight loss + fatigue: comprehensive workup essential — wide differential. Lab + imaging + age-appropriate cancer screening + mental health. Specialist referral as indicated. Nutritional support. Multidisciplinary. Don't dismiss — significant underlying disease possible.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "AAFP"
   }
 ]
