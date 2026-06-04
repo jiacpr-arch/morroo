@@ -1,3 +1,9 @@
+// A single upcoming exam: which topic ("สอบหัวข้ออะไร") on which date ("วันไหน").
+export interface ExamScheduleItem {
+  topic: string;
+  date: string; // ISO date "YYYY-MM-DD"
+}
+
 export interface Profile {
   id: string;
   email: string;
@@ -26,6 +32,7 @@ export interface Profile {
   school_daily_goal: number;
   target_exam: "NL1" | "NL2" | "both" | "board" | null;
   weak_subjects: string[] | null;
+  exam_schedule: ExamScheduleItem[] | null;
   referral_code: string | null;
   referred_by: string | null;
   reporter_points: number;

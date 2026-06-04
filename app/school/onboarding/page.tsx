@@ -21,7 +21,7 @@ export default async function OnboardingPage() {
   const [{ data: profile }, systems] = await Promise.all([
     supabase
       .from("profiles")
-      .select("current_year, school_daily_goal, exam_date, weak_subjects")
+      .select("current_year, school_daily_goal, exam_date, exam_schedule, weak_subjects")
       .eq("id", user.id)
       .maybeSingle(),
     getSchoolSystems(),
@@ -42,6 +42,7 @@ export default async function OnboardingPage() {
         initialYear={profile?.current_year ?? null}
         initialGoal={profile?.school_daily_goal ?? 20}
         initialExamDate={profile?.exam_date ?? null}
+        initialExamSchedule={profile?.exam_schedule ?? null}
         initialWeakSubjects={profile?.weak_subjects ?? []}
         systems={systems.map((s) => ({
           id: s.id,
