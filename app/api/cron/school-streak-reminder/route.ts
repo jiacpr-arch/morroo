@@ -63,7 +63,7 @@ export async function GET(request: Request) {
     if (!prof?.line_user_id) continue;
     const msg = `🔥 Streak ${s.current_streak} วันของ ${prof.name ?? "คุณ"} เกือบหายแล้ว!\nทบทวน flashcard เร็วๆ ที่ https://www.morroo.com/school/daily — แค่ 5 นาที`;
     try {
-      await sendLineMessage(prof.line_user_id, msg);
+      await sendLineMessage(prof.line_user_id, [{ type: "text", text: msg }]);
       sent += 1;
     } catch {
       // Non-blocking

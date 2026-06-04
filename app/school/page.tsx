@@ -1,31 +1,18 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   ArrowRight,
   GraduationCap,
   Layers,
-  Brain,
   Sparkles,
-  Shuffle,
   Clock,
   Flame,
-  Calendar,
   Target,
   Trophy,
-  Award,
   Zap,
-  Bot,
-  Network,
-  Stethoscope,
-  Search,
-  Bookmark,
-  GitCompare,
   Database,
-  Route,
-  Settings as SettingsIcon,
-  Image as ImageIcon,
 } from "lucide-react";
 import { xpToLevel } from "@/lib/school/xp";
 import {
@@ -34,7 +21,18 @@ import {
   getSchoolTopicCounts,
   getSchoolStreak,
   getDueCount,
+  getSchoolMasteryByTopic,
+  getWeeklyQuestMetrics,
 } from "@/lib/supabase/queries-school";
+import { getUnlockState } from "@/lib/school/journey";
+import {
+  buildWeeklyQuests,
+  topSystemSlugFor,
+  type Quest,
+} from "@/lib/school/quests";
+import JourneyBanner from "@/components/school/JourneyBanner";
+import ToolGrid from "@/components/school/ToolGrid";
+import WeeklyQuests from "@/components/school/WeeklyQuests";
 import { createClient } from "@/lib/supabase/server";
 import SectionUpdatesBadge from "@/components/SectionUpdatesBadge";
 import type { Metadata } from "next";
@@ -49,57 +47,6 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 const YEARS = [1, 2, 3, 4, 5, 6] as const;
-
-// โหมดทั้งหมด จัดเป็นหมวดหมู่ให้ไม่งง — เรียงจาก "เริ่มที่นี่" ไปเครื่องมือเสริม
-const MODE_GROUPS = [
-  {
-    title: "เรียนประจำวัน",
-    desc: "ทำทุกวันเพื่อสร้าง streak",
-    items: [
-      { href: "/school/daily", icon: Calendar, color: "violet", title: "Daily Lesson", desc: "บทเรียน 5 นาที/วัน" },
-      { href: "/school/review", icon: Clock, color: "rose", title: "Review", desc: "ใกล้ลืม — SRS" },
-      { href: "/school/mixed", icon: Shuffle, color: "fuchsia", title: "Mixed", desc: "Interleaved practice" },
-    ],
-  },
-  {
-    title: "ฝึก & ทบทวน",
-    desc: "เลือกฝึกเองตามใจ",
-    items: [
-      { href: "/school/flashcards", icon: Layers, color: "sky", title: "Flashcards", desc: "ทบทวนทีละการ์ด" },
-      { href: "/school/quiz", icon: Brain, color: "emerald", title: "Quiz", desc: "ข้อสอบสั้น + เฉลย" },
-      { href: "/school/cases", icon: Stethoscope, color: "orange", title: "Cases", desc: "Y1→Y6 walk-through" },
-    ],
-  },
-  {
-    title: "ผู้ช่วย AI",
-    desc: "ถาม-อธิบาย-เทียบ ด้วย AI",
-    items: [
-      { href: "/school/tutor", icon: Bot, color: "indigo", title: "AI Tutor", desc: "ถามได้ตลอด" },
-      { href: "/school/concepts", icon: Network, color: "cyan", title: "Concepts", desc: "เชื่อมข้ามวิชา" },
-      { href: "/school/compare", icon: GitCompare, color: "pink", title: "Compare", desc: "Side-by-side AI" },
-      { href: "/school/visuals", icon: ImageIcon, color: "fuchsia", title: "Visuals", desc: "รูปสรุป + ช็อตโน้ต" },
-    ],
-  },
-  {
-    title: "ความก้าวหน้า & แรงจูงใจ",
-    desc: "ดูพัฒนาการและรางวัล",
-    items: [
-      { href: "/school/progress", icon: GraduationCap, color: "indigo", title: "Progress", desc: "Mastery + ปลดล็อก" },
-      { href: "/school/badges", icon: Award, color: "amber", title: "Badges", desc: "เหรียญรางวัล" },
-      { href: "/school/leaderboard", icon: Trophy, color: "yellow", title: "Leaderboard", desc: "อันดับ XP" },
-      { href: "/school/tracks", icon: Route, color: "lime", title: "Tracks", desc: "Curated bundles" },
-    ],
-  },
-  {
-    title: "เครื่องมือ & ตั้งค่า",
-    desc: "ค้นหา บันทึก ปรับค่า",
-    items: [
-      { href: "/school/search", icon: Search, color: "slate", title: "Search", desc: "ค้นทุกอย่าง" },
-      { href: "/school/saved", icon: Bookmark, color: "amber", title: "Saved", desc: "Bookmarks + Notes" },
-      { href: "/school/settings", icon: SettingsIcon, color: "slate", title: "Settings", desc: "เปลี่ยน goal / year" },
-    ],
-  },
-] as const;
 
 export default async function SchoolPage() {
   const supabase = await createClient();
@@ -121,19 +68,23 @@ export default async function SchoolPage() {
   let xp = 0;
   let badgeCount = 0;
   let isAdmin = false;
+  let masteredCount = 0;
+  let targetSpecialty: string | null = null;
+  let quests: Quest[] = [];
   if (user) {
-    const [s, due, profileRes, badgesRes] = await Promise.all([
+    const [s, due, profileRes, badgesRes, mastery] = await Promise.all([
       getSchoolStreak(user.id),
       getDueCount(user.id),
       supabase
         .from("profiles")
-        .select("current_year, school_daily_goal, school_xp, role")
+        .select("current_year, school_daily_goal, school_xp, role, target_specialty")
         .eq("id", user.id)
         .maybeSingle(),
       supabase
         .from("school_user_badges")
         .select("badge_id", { count: "exact", head: true })
         .eq("user_id", user.id),
+      getSchoolMasteryByTopic(user.id),
     ]);
     streak = s;
     dueCount = due;
@@ -142,16 +93,49 @@ export default async function SchoolPage() {
     xp = profileRes.data?.school_xp ?? 0;
     badgeCount = badgesRes.count ?? 0;
     isAdmin = profileRes.data?.role === "admin";
-    // Count units done today
-    const startOfDay = new Date();
-    startOfDay.setHours(0, 0, 0, 0);
-    const { count } = await supabase
-      .from("school_progress")
-      .select("id", { count: "exact", head: true })
-      .eq("user_id", user.id)
-      .gte("reviewed_at", startOfDay.toISOString());
-    dailyDone = count ?? 0;
+    targetSpecialty = profileRes.data?.target_specialty ?? null;
+    // A topic counts as "mastered" once seen >= 5 quizzes and >= 80% correct
+    masteredCount = Object.values(mastery).filter(
+      (m) => m.seen >= 5 && m.pct >= 80
+    ).length;
+
+    // Weekly quests — one tied to the student's target specialty.
+    const focusSlug = topSystemSlugFor(targetSpecialty);
+    const focusSystem = focusSlug
+      ? systems.find((sy) => sy.slug === focusSlug) ?? null
+      : null;
+    const [metrics, todayCount] = await Promise.all([
+      getWeeklyQuestMetrics(user.id, focusSlug),
+      supabase
+        .from("school_progress")
+        .select("id", { count: "exact", head: true })
+        .eq("user_id", user.id)
+        .gte(
+          "reviewed_at",
+          (() => {
+            const d = new Date();
+            d.setHours(0, 0, 0, 0);
+            return d.toISOString();
+          })()
+        ),
+    ]);
+    dailyDone = todayCount.count ?? 0;
+    quests = buildWeeklyQuests(metrics, {
+      targetSpecialtyId: targetSpecialty,
+      focusSystem: focusSystem
+        ? { slug: focusSystem.slug, name_th: focusSystem.name_th }
+        : null,
+    });
   }
+
+  // Progressive-disclosure unlock state for the tool grid + journey banner.
+  const unlockState = getUnlockState({
+    hasYear: currentYear != null,
+    xp,
+    streak: streak.current_streak,
+    masteredCount,
+    dueCount,
+  });
 
   const totalFlashcards = Object.values(counts.flashcards).reduce((a, b) => a + b, 0);
   const totalQuizzes = Object.values(counts.quizzes).reduce((a, b) => a + b, 0);
@@ -180,37 +164,14 @@ export default async function SchoolPage() {
         <SectionUpdatesBadge section="school" className="mt-3" />
       </div>
 
-      {/* เริ่มยังไง — 3 ขั้น (ภาพรวมว่าหน้านี้ใช้ทำอะไร) */}
-      <Card className="mb-8 border-brand/20 bg-brand/5">
-        <CardContent className="p-4 sm:p-5">
-          <p className="font-semibold mb-3 flex items-center gap-2">
-            <Sparkles className="h-4 w-4 text-brand" /> เริ่มยังไง? ทำตาม 3 ขั้น
-          </p>
-          <div className="grid gap-3 sm:grid-cols-3 text-sm">
-            <div className="flex items-start gap-3">
-              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand text-white text-xs font-bold">1</span>
-              <div>
-                <p className="font-medium">เลือกชั้นปีของคุณ</p>
-                <p className="text-muted-foreground text-xs mt-0.5">บอกระบบว่าคุณอยู่ Y1–Y6</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand text-white text-xs font-bold">2</span>
-              <div>
-                <p className="font-medium">ทำ Daily Lesson</p>
-                <p className="text-muted-foreground text-xs mt-0.5">วันละ 5 นาทีก็พอ</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand text-white text-xs font-bold">3</span>
-              <div>
-                <p className="font-medium">กลับมา Review</p>
-                <p className="text-muted-foreground text-xs mt-0.5">ระบบเตือนตอนใกล้ลืม</p>
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+      {/* Journey: ก้าวต่อไป + ด่านปลดล็อก (แทน "เริ่มยังไง 3 ขั้น") */}
+      <JourneyBanner
+        hasYear={currentYear != null}
+        xp={xp}
+        streak={streak.current_streak}
+        masteredCount={masteredCount}
+        dueCount={dueCount}
+      />
 
       {/* เลือกชั้นปี — จุดเริ่มต้น ยกขึ้นมาบนสุด */}
       <div className="mb-8">
@@ -370,72 +331,22 @@ export default async function SchoolPage() {
               </CardContent>
             </Card>
           )}
+
+          {/* Weekly quests — รวมเป้าหมายของสัปดาห์ไว้ที่เดียว */}
+          {quests.length > 0 && <WeeklyQuests quests={quests} />}
         </>
       )}
 
-      {/* ปุ่มหลัก — กดอันนี้ก่อนเพื่อเริ่มเรียน */}
-      <div className="mb-8">
-        <div className="flex items-center gap-2 mb-1">
-          <Calendar className="h-5 w-5 text-brand" />
-          <h2 className="text-2xl font-bold">2. เริ่มเรียนวันนี้</h2>
-        </div>
-        <p className="text-sm text-muted-foreground mb-4">
-          ไม่รู้จะเริ่มตรงไหน? แตะปุ่มนี้ — ระบบจัดบทเรียนวันนี้ให้พร้อมเลย
-        </p>
-        <Link href="/school/daily">
-          <Card className="group border-violet-200 bg-gradient-to-r from-violet-50 to-fuchsia-50 hover:shadow-md hover:border-violet-300 transition-all cursor-pointer">
-            <CardContent className="p-5 flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-violet-100 flex items-center justify-center shrink-0">
-                <Calendar className="h-6 w-6 text-violet-600" />
-              </div>
-              <div className="flex-1">
-                <h3 className="font-bold text-lg">Daily Lesson</h3>
-                <p className="text-sm text-muted-foreground">บทเรียน 5 นาที/วัน — แนะนำให้เริ่มที่นี่</p>
-              </div>
-              <Button className="gap-2 shrink-0">
-                เริ่มเลย <ArrowRight className="h-4 w-4" />
-              </Button>
-            </CardContent>
-          </Card>
-        </Link>
-      </div>
-
-      {/* โหมดทั้งหมด จัดเป็นหมวดหมู่ */}
+      {/* โหมดทั้งหมด จัดเป็นหมวดหมู่ — ค่อยๆ ปลดล็อกตามความก้าวหน้า */}
       <div className="mb-12">
         <div className="flex items-center gap-2 mb-1">
           <Layers className="h-5 w-5 text-brand" />
-          <h2 className="text-2xl font-bold">3. เครื่องมือทั้งหมด</h2>
+          <h2 className="text-2xl font-bold">2. เครื่องมือทั้งหมด</h2>
         </div>
         <p className="text-sm text-muted-foreground mb-6">
-          เลือกใช้ตามใจ — จัดเป็นหมวดหมู่ให้หาง่าย
+          เครื่องมือที่ล็อกอยู่จะค่อยๆ ปลดล็อกเมื่อคุณเรียนคืบหน้า — ไม่ต้องรีบ ทำทีละนิด
         </p>
-        <div className="space-y-6">
-          {MODE_GROUPS.map((g) => (
-            <div key={g.title}>
-              <div className="mb-3">
-                <h3 className="font-bold text-base">{g.title}</h3>
-                <p className="text-xs text-muted-foreground">{g.desc}</p>
-              </div>
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-                {g.items.map((m) => (
-                  <Link key={m.href} href={m.href}>
-                    <Card className="group h-full hover:shadow-md hover:border-brand/30 transition-all cursor-pointer">
-                      <CardContent className="p-4 text-center">
-                        <div
-                          className={`w-10 h-10 rounded-full bg-${m.color}-100 flex items-center justify-center mb-2 mx-auto`}
-                        >
-                          <m.icon className={`h-5 w-5 text-${m.color}-600`} />
-                        </div>
-                        <h3 className="font-bold text-sm">{m.title}</h3>
-                        <p className="text-xs text-muted-foreground mt-1">{m.desc}</p>
-                      </CardContent>
-                    </Card>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
+        <ToolGrid state={unlockState} />
       </div>
 
       {/* Systems overview */}
@@ -479,7 +390,7 @@ export default async function SchoolPage() {
           </div>
           <div>
             <p className="font-semibold mb-1">✓ Elaborative Interrogation</p>
-            <p className="text-muted-foreground">AI ตั้งคำถาม "ทำไม / อย่างไร?" บังคับคิดถึงกลไก — Dunlosky 2013</p>
+            <p className="text-muted-foreground">AI ตั้งคำถาม &quot;ทำไม / อย่างไร?&quot; บังคับคิดถึงกลไก — Dunlosky 2013</p>
           </div>
           <div>
             <p className="font-semibold mb-1">✓ Generation Effect (Cloze)</p>

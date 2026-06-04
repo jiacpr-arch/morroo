@@ -69,6 +69,10 @@
       "schedule": "0 13 * * *"
     },
     {
+      "path": "/api/cron/school-review-reminder",
+      "schedule": "0 11 * * *"
+    },
+    {
       "path": "/api/cron/school-enrich",
       "schedule": "0 18 * * *"
     },
