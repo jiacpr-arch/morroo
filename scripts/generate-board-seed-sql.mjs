@@ -12,13 +12,14 @@
  * guard so duplicate questions are not inserted twice.
  */
 
-import { readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const SEED_DIR = join(HERE, "board-seed-data");
 const OUT_FILE = join(HERE, "..", "supabase", "board_seed_questions.sql");
+const OUT_DIR_SPLIT = join(HERE, "..", "supabase", "board_seed_questions_split");
 
 const SUBJECT_PREFIX = {
   emergency_medicine: "em",
@@ -205,3 +206,103 @@ console.log(`Wrote ${OUT_FILE}`);
 console.log(`Total questions: ${totalQ}`);
 console.log(`Invalid skipped: ${totalInvalid}`);
 console.log(`Lines: ${lines.length}`);
+
+// ──────────────────────────────────────────────────────────────────────────
+// Also write per-specialty SQL files for users who hit the Supabase SQL
+// Editor query-size limit on the combined file.
+// ──────────────────────────────────────────────────────────────────────────
+
+mkdirSync(OUT_DIR_SPLIT, { recursive: true });
+
+for (const file of files) {
+  const slug = file.replace(/\.json$/, "");
+  const prefix = SUBJECT_PREFIX[slug];
+  if (!prefix) continue;
+  const questions = JSON.parse(readFileSync(join(SEED_DIR, file), "utf8"));
+  const nameTh = SPECIALTY_NAME_TH[slug];
+
+  const splitLines = [];
+  splitLines.push("-- ===============================================================");
+  splitLines.push(`-- หมอรู้ — Board seed: ${nameTh} (${slug}) — ${questions.length} MCQs`);
+  splitLines.push("-- Safe to paste into Supabase SQL Editor. Re-runnable.");
+  splitLines.push("-- ===============================================================");
+  splitLines.push("");
+  splitLines.push("begin;");
+  splitLines.push("");
+
+  splitLines.push("-- 1/2 ─── mcq_subjects for this specialty ────────────────────");
+  splitLines.push("insert into public.mcq_subjects");
+  splitLines.push("  (name, name_th, icon, audience, board_specialty, exam_type, question_count)");
+  splitLines.push("values");
+  const subjRowsThis = [];
+  for (const section of Object.keys(SECTION_LABEL_TH)) {
+    subjRowsThis.push(
+      `  (${sqlString(`${prefix}_${section}`)}, ` +
+        `${sqlString(`${nameTh} · ${SECTION_LABEL_TH[section]}`)}, ` +
+        `${sqlString(SECTION_ICON[section])}, ` +
+        `'board', ${sqlString(slug)}, NULL, 0)`
+    );
+  }
+  splitLines.push(subjRowsThis.join(",\n"));
+  splitLines.push("on conflict (name) do nothing;");
+  splitLines.push("");
+
+  splitLines.push(`-- 2/2 ─── ${questions.length} mcq_questions for ${slug} ─────────────`);
+  splitLines.push("");
+
+  for (const q of questions) {
+    if (
+      !q.scenario ||
+      !Array.isArray(q.choices) ||
+      q.choices.length !== 5 ||
+      !["A", "B", "C", "D", "E"].includes(q.correct_answer)
+    ) {
+      splitLines.push("-- INVALID question skipped");
+      continue;
+    }
+    const subjectName = `${prefix}_${q.board_section}`;
+    splitLines.push("insert into public.mcq_questions (");
+    splitLines.push("  subject_id, audience, exam_type, scenario, choices, correct_answer,");
+    splitLines.push("  explanation, detailed_explanation, difficulty, topic, status,");
+    splitLines.push("  board_specialty, board_section, board_topic, board_age_group,");
+    splitLines.push("  reference_source, exam_source, is_ai_enhanced, ai_notes");
+    splitLines.push(")");
+    splitLines.push("select");
+    splitLines.push(
+      `  s.id, 'board', NULL, ${sqlString(q.scenario)}, ${sqlJsonb(q.choices)},`
+    );
+    splitLines.push(
+      `  ${sqlString(q.correct_answer)}, ${sqlString(q.explanation)}, ${sqlJsonb(q.detailed_explanation)},`
+    );
+    splitLines.push(
+      `  ${sqlString(difficultyOrDefault(q.difficulty))}, ${sqlString(q.board_topic || null)}, 'review',`
+    );
+    splitLines.push(
+      `  ${sqlString(slug)}, ${sqlString(q.board_section)}, ${sqlString(q.board_topic || "general")}, ${sqlString(q.board_age_group)},`
+    );
+    splitLines.push(
+      `  ${sqlString(q.reference_source)}, 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'`
+    );
+    splitLines.push(`from public.mcq_subjects s`);
+    splitLines.push(`where s.name = ${sqlString(subjectName)}`);
+    splitLines.push("  and s.audience = 'board'");
+    splitLines.push("  and not exists (");
+    splitLines.push("    select 1 from public.mcq_questions q");
+    splitLines.push("    where q.exam_source = 'AI-generated-board-seed'");
+    splitLines.push(`      and q.board_specialty = ${sqlString(slug)}`);
+    splitLines.push(`      and q.scenario = ${sqlString(q.scenario)}`);
+    splitLines.push("  );");
+    splitLines.push("");
+  }
+
+  splitLines.push("commit;");
+  splitLines.push("");
+  splitLines.push("-- verify");
+  splitLines.push("select board_section, count(*) from public.mcq_questions");
+  splitLines.push(`where board_specialty = ${sqlString(slug)} and exam_source = 'AI-generated-board-seed'`);
+  splitLines.push("group by 1 order by 1;");
+
+  const outName = join(OUT_DIR_SPLIT, `${String(files.indexOf(file) + 1).padStart(2, "0")}_${slug}.sql`);
+  writeFileSync(outName, splitLines.join("\n") + "\n", "utf8");
+  console.log(`Wrote ${outName} (${questions.length} questions)`);
+}

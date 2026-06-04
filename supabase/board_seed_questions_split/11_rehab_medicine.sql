@@ -1,0 +1,685 @@
+-- ===============================================================
+-- หมอรู้ — Board seed: เวชศาสตร์ฟื้นฟู (rehab_medicine) — 30 MCQs
+-- Safe to paste into Supabase SQL Editor. Re-runnable.
+-- ===============================================================
+
+begin;
+
+-- 1/2 ─── mcq_subjects for this specialty ────────────────────
+insert into public.mcq_subjects
+  (name, name_th, icon, audience, board_specialty, exam_type, question_count)
+values
+  ('rehab_clinical_decision', 'เวชศาสตร์ฟื้นฟู · การตัดสินใจทางเวชกรรม', '🩺', 'board', 'rehab_medicine', NULL, 0),
+  ('rehab_basic_science', 'เวชศาสตร์ฟื้นฟู · วิทยาศาสตร์การแพทย์พื้นฐาน', '🧬', 'board', 'rehab_medicine', NULL, 0),
+  ('rehab_ems_mgmt', 'เวชศาสตร์ฟื้นฟู · การจัดการระบบบริการการแพทย์ฉุกเฉิน', '🚨', 'board', 'rehab_medicine', NULL, 0),
+  ('rehab_integrative', 'เวชศาสตร์ฟื้นฟู · ข้อสอบบูรณาการ', '🧩', 'board', 'rehab_medicine', NULL, 0)
+on conflict (name) do nothing;
+
+-- 2/2 ─── 30 mcq_questions for rehab_medicine ─────────────
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 65 ปี post-ischemic stroke right MCA — left hemiparesis + aphasia + dysphagia + 2 weeks post-acute — needs rehab', '[{"label":"A","text":"Discharge home"},{"label":"B","text":"Stroke Rehabilitation — Comprehensive Multidisciplinary Care: (1) **Stroke unit care**: organized stroke care reduces mortality + disability + dependency (Cochrane); (2) **Multidisciplinary team**: physiatrist (PM&R) + neurology + nursing + PT (gait, balance, motor) + OT (ADLs, fine motor, cognitive) + SLP (speech, language, swallow) + neuropsychology + recreational therapy + social work + dietitian; (3) **Early mobilization**: within 24h if stable (AVERT trial — careful interpretation, but generally early mobilization good); (4) **Specific interventions**: - Motor: task-specific training, repetitive task practice, constraint-induced movement therapy (CIMT) for selected upper limb, mirror therapy, FES (functional electrical stimulation), robotic-assisted, virtual reality; - Aphasia: speech-language therapy (intensity matters), AAC (alternative + augmentative communication), aphasia groups; - Dysphagia: swallowing therapy (effortful swallow, supraglottic swallow), dietary modification (textures + thickeners), eventual return to oral; - Cognitive: attention + memory + executive function training; (5) **Spasticity management**: stretching, splinting, oral antispasticity (baclofen — caution sedation, tizanidine), intrathecal baclofen, botulinum toxin for focal; (6) **Mood + depression**: high prevalence post-stroke, screen, treat (SSRI); psychotherapy; (7) **Secondary prevention**: antiplatelet, anticoagulation if AF, statin, BP control, lifestyle, AF screening; (8) **Driving + return to work** assessment; (9) **Family + caregiver education + support**; (10) **Long-term**: continued OPD therapy + community + home; (11) **Outcomes**: recovery curve over 3-6 mo + beyond; modern: emerging neuroplasticity-based therapies + technology (BCI brain-computer interface)"},{"label":"C","text":"Single specialty"},{"label":"D","text":"Hospice"},{"label":"E","text":"Bedrest"}]'::jsonb,
+  'B', 'Stroke rehab: multidisciplinary stroke unit care reduces mortality + disability. PT/OT/SLP/neuropsych + family. Motor + aphasia + dysphagia + cognitive interventions. Spasticity + mood management. Secondary prevention. Modern: technology + neuroplasticity-based therapies.', NULL,
+  'medium', 'neurology', 'review',
+  'rehab_medicine', 'clinical_decision', 'neurology', 'adult',
+  'AHA/ASA Stroke Rehabilitation Guidelines 2016', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'ผู้ป่วยอายุ 65 ปี post-ischemic stroke right MCA — left hemiparesis + aphasia + dysphagia + 2 weeks post-acute — needs rehab'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 35 ปี traumatic SCI T6 ASIA A — paraplegia — 4 weeks post-injury — rehab unit transfer', '[{"label":"A","text":"Bedrest"},{"label":"B","text":"Spinal Cord Injury Rehabilitation: (1) **Specialized SCI rehab unit**: better outcomes; (2) **Multidisciplinary team**: physiatrist + nursing + PT + OT + recreation + vocational + social work + psychology + urology + sexual health; (3) **Physical training**: strength + endurance + ROM + wheelchair skills + transfers + ADLs + adaptive equipment; (4) **Bowel + bladder management**: - Bladder: intermittent catheterization preferred (lower UTI than indwelling); urodynamics; - Bowel: scheduled program with suppositories/stimulation; (5) **Skin/pressure injury prevention**: pressure relief q15-30 min, special cushions/mattress, daily skin checks, nutrition; (6) **Autonomic dysreflexia** (lesions above T6): elevated BP from noxious stimulus below (full bladder, constipation, etc.); life-threatening; remove stimulus + sit up + treat HTN (NTG, nifedipine); education to patient + family essential; (7) **Spasticity management**: PT + OT, baclofen, tizanidine, intrathecal baclofen pump, botulinum toxin; (8) **Cardiovascular**: orthostatic hypotension common; gradual upright training + abdominal binder + compression + medications; reduced exercise capacity; (9) **Pulmonary** (high SCI especially): respiratory PT, abdominal binder, vaccination; (10) **Sexual + reproductive**: counseling + PDE5i + assisted reproduction options; (11) **Mental health**: depression high, suicide risk, peer support; (12) **Pain management**: neuropathic pain (gabapentin, pregabalin, SNRI, TCA), nociceptive; (13) **Equipment**: wheelchair selection (manual, power), home modifications, vehicle modifications; (14) **Vocational rehab + community reintegration**; (15) **Long-term**: lifelong follow-up — UTI, pressure injuries, depression, sexual + reproductive, secondary medical conditions; (16) **Modern**: emerging — exoskeletons + epidural stimulation + neural prostheses + stem cells (research)"},{"label":"C","text":"Single specialty"},{"label":"D","text":"Discharge home"},{"label":"E","text":"Hospice"}]'::jsonb,
+  'B', 'SCI rehab: specialized multidisciplinary care. Comprehensive body systems management. Autonomic dysreflexia emergency. Lifelong issues. Modern: emerging technologies (exoskeletons, epidural stim). Patient + family-centered.', NULL,
+  'hard', 'neurology', 'review',
+  'rehab_medicine', 'clinical_decision', 'neurology', 'adult',
+  'Consortium for Spinal Cord Medicine Guidelines', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'ผู้ป่วยอายุ 35 ปี traumatic SCI T6 ASIA A — paraplegia — 4 weeks post-injury — rehab unit transfer'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 28 ปี post-MVC TBI — moderate (GCS 9, multiple contusions, no surgical lesion) — 6 weeks post-injury, awake but confused + behavioral issues', '[{"label":"A","text":"Discharge home"},{"label":"B","text":"Traumatic Brain Injury Rehabilitation: (1) **Severity classification**: mild (concussion), moderate, severe; this patient moderate; (2) **Multidisciplinary team**: physiatrist + neuropsychology + PT + OT + SLP + neurology + neurosurgery + behavioral health + social work + family; (3) **Rancho Los Amigos cognitive recovery scale** I-VIII: guides intervention by level (e.g., Level IV agitated — environmental + behavioral); (4) **Cognitive rehabilitation**: attention, memory, executive function, processing speed; restorative + compensatory strategies; (5) **Behavioral management**: structured environment, consistent staff, redirection, behavioral plan; psychiatry consult for severe agitation/disinhibition; (6) **Pharmacotherapy**: - Amantadine (DRS — methylphenidate for arousal + attention); - Modafinil for fatigue; - SSRI for depression + emotional lability; - Atypical antipsychotic for severe agitation (cautious); - Anti-epileptics for post-traumatic seizures; - Avoid benzodiazepines + first-gen antipsychotics (cognitive impairment); (7) **Physical rehab**: mobility, balance, motor; (8) **Speech/language**: dysarthria, aphasia, cognitive-communication; (9) **Swallowing**: assessment + therapy if needed; (10) **Vision + vestibular**: post-concussive — VOR + balance therapy; (11) **Sleep disorders**: common — circadian disruption, insomnia, fragmentation; (12) **Mental health**: depression + anxiety + PTSD + substance use; family adjustment; (13) **Return to activity**: gradual + school/work re-integration; (14) **Long-term**: neurodegenerative concerns (CTE in repeated mild — sports + military), cognitive decline, mood, social + vocational; (15) **Family education + support**; (16) **Modern**: emerging biomarkers (NfL, GFAP), pharmacotherapy, neuromodulation"},{"label":"C","text":"Single specialty"},{"label":"D","text":"Hospice"},{"label":"E","text":"Bedrest"}]'::jsonb,
+  'B', 'TBI rehab: severity-stratified multidisciplinary. Cognitive + behavioral + physical + speech + family. Rancho scale + tailored intervention. Pharmacotherapy + behavioral management. Long-term concerns. Modern: emerging biomarkers + therapeutics + neuromodulation.', NULL,
+  'hard', 'neurology', 'review',
+  'rehab_medicine', 'clinical_decision', 'neurology', 'adult',
+  'Brain Injury Association; INCOG Guidelines', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'ผู้ป่วยอายุ 28 ปี post-MVC TBI — moderate (GCS 9, multiple contusions, no surgical lesion) — 6 weeks post-injury, awake but confused + behavioral issues'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 60 ปี — post-AKA (above-knee amputation) for PAD complications — 4 weeks post-op + ready for rehab + considering prosthesis', '[{"label":"A","text":"No rehab"},{"label":"B","text":"Amputee Rehabilitation: (1) **Pre-prosthetic phase**: residual limb shaping + maturation (shrinkers + ace wraps), wound care, pain management (phantom limb + residual limb), strengthening (core + remaining limb + UE), cardiovascular conditioning, balance + transfers + mobility with assistive devices; (2) **Pain management**: - Phantom limb pain: mirror therapy, desensitization, mental imagery, TENS, gabapentin/pregabalin, SNRI, opioid sparing; - Residual limb pain: address neuroma (steroid injection, surgery), prosthetic fit; - TMR (targeted muscle reinnervation) emerging — reduces neuroma + improves prosthetic control; - RPNI (regenerative peripheral nerve interface); (3) **Prosthetic prescription**: K-level (functional ambulation potential) — K0 (no ambulation) — K4 (high-level recreation); guides component selection; (4) **Prosthetic fitting + training**: cast/digital scan → socket fabrication → static + dynamic alignment + ambulation training with PT; (5) **Multidisciplinary**: physiatrist + prosthetist + PT + OT + nurse + social work + vascular surgery; (6) **Modern prosthetic technology**: microprocessor knees (C-Leg, Genium, Rheo, Power Knee, etc.), ankle-foot mechanisms, energy-storing feet, myoelectric upper limbs, osseointegration (bone-anchored — selected); (7) **K-level training program**: stand → step → ambulate → advanced activities; (8) **Long-term**: socket adjustments + prosthetic replacement (typically every 3-5 yr); contralateral limb care (high risk in PAD + DM patients); skin care; weight management; (9) **Psychosocial adjustment**: body image, depression common, peer support, vocational; (10) **Return to function**: ADLs, work, recreation, driving; (11) **Modern**: integrated team + advanced technology + emerging neural interfaces"},{"label":"C","text":"Hospice"},{"label":"D","text":"Discharge"},{"label":"E","text":"Random"}]'::jsonb,
+  'B', 'Amputee rehab: pre-prosthetic + prosthetic phases. K-level prescription. Multidisciplinary team. Modern prosthetic technology (microprocessor, osseointegration, myoelectric). Phantom limb pain management. Psychosocial adjustment. Long-term limb + prosthesis care.', NULL,
+  'medium', 'trauma', 'review',
+  'rehab_medicine', 'clinical_decision', 'trauma', 'adult',
+  'AAPM&R; VA Amputee Rehab', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'ผู้ป่วยอายุ 60 ปี — post-AKA (above-knee amputation) for PAD complications — 4 weeks post-op + ready for rehab + considering prosthesis'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 75 ปี post-hip fracture surgery + 5 days post-op — frail + chronic conditions — going to rehab', '[{"label":"A","text":"Bedrest"},{"label":"B","text":"Geriatric Hip Fracture Rehabilitation: (1) **Multidisciplinary team**: physiatrist + geriatrician + ortho + nursing + PT + OT + social work + dietitian + pharmacy + family; (2) **Mobility + weight-bearing per ortho**: typically weight bear as tolerated (WBAT) with appropriate device; early mobilization day 1 (Cochrane evidence — better outcomes); (3) **PT**: gait training, balance, strength, transfers, stair climbing, fall prevention; (4) **OT**: ADLs, home safety assessment, adaptive equipment, energy conservation; (5) **Nutritional optimization**: protein 1.2-1.5 g/kg, oral supplements (Cochrane — reduces complications); (6) **Pain management**: multimodal opioid-sparing (acetaminophen + NSAID cautious + gabapentinoid + regional + nerve block); avoid Beers medications; (7) **Delirium prevention + management**: HELP elements; avoid contributing factors; (8) **Polypharmacy review** + deprescribing (Beers + STOPP/START); (9) **Secondary prevention**: - **Osteoporosis treatment**: bisphosphonate or other (fracture liaison service - reduce subsequent fractures 50%); - **Fall prevention** (CDC STEADI): exercise (Tai Chi, Otago), medication review, vision, home safety; - VTE prophylaxis continued; (10) **Mental health**: depression screening + treatment; (11) **Goals of care discussion**: realistic recovery vs decline; functional goals; (12) **Discharge planning**: home with services vs SNF vs LTC based on function; family + community support; (13) **Long-term follow-up**: orthopedic + primary care + geriatric + bone health; (14) **Outcomes**: 30-50% return to prior function within 1 yr; 20-30% mortality first year; (15) **Modern**: ortho-geriatric co-management + multidisciplinary standardized pathway + secondary fracture prevention"},{"label":"C","text":"Single specialty"},{"label":"D","text":"Hospice"},{"label":"E","text":"Discharge"}]'::jsonb,
+  'B', 'Geriatric hip fracture rehab: multidisciplinary + early mobilization + nutritional optimization + delirium prevention + secondary prevention (osteoporosis + falls) + comprehensive medical management. Significant mortality. Modern: ortho-geriatric co-management + standardized pathways.', NULL,
+  'medium', 'trauma', 'review',
+  'rehab_medicine', 'clinical_decision', 'trauma', 'adult',
+  'AAOS Hip Fracture; AGS', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'ผู้ป่วยอายุ 75 ปี post-hip fracture surgery + 5 days post-op — frail + chronic conditions — going to rehab'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 55 ปี post-MI + CABG — cardiac rehabilitation program — multidisciplinary care', '[{"label":"A","text":"Bedrest"},{"label":"B","text":"Cardiac Rehabilitation (AHA + AACVPR): (1) **Phase I (inpatient)**: early mobilization, education, risk factor introduction; (2) **Phase II (outpatient supervised, 12 wk)**: structured exercise + risk factor modification + education + psychosocial; ECG-monitored; (3) **Phase III (community-based maintenance)**: long-term lifestyle; (4) **Components**: - **Exercise training**: aerobic (treadmill, cycle, walking) + resistance (after RA selected); intensity titrated (60-85% peak HR or RPE); 3-5 times/wk × 30-60 min; - **Risk factor modification**: lipids, BP, DM, weight, smoking cessation, diet (Mediterranean), stress; - **Education**: heart disease, medications, signs/symptoms, when to seek help; - **Psychosocial counseling**: depression + anxiety + stress; - **Vocational + sexual counseling**; (5) **Indications**: post-MI, post-CABG, post-PCI, HF, stable angina, valve surgery, transplant, peripheral vascular; (6) **Benefits** (extensive evidence): - Reduces mortality 20-25%, MI, CV hospitalizations; - Improves exercise capacity, QOL, depression, symptoms; - Cost-effective; (7) **Underutilization** despite Class I recommendation; (8) **Multidisciplinary team**: physiatrist or cardiologist + exercise physiologist + nurse + dietitian + psychologist + pharmacist + social work; (9) **Modern**: home-based, telerehab, technology-enabled (wearables, apps); (10) **Equity** considerations + access"},{"label":"C","text":"Single specialty"},{"label":"D","text":"Hospice"},{"label":"E","text":"Discharge"}]'::jsonb,
+  'B', 'Cardiac rehab: Phase I-III. Multimodal exercise + risk factor + education + psychosocial. Reduces mortality 20-25%. Multidisciplinary. Underutilized despite Class I. Modern: home-based + telerehab + technology. Equity considerations.', NULL,
+  'easy', 'cardiovascular', 'review',
+  'rehab_medicine', 'clinical_decision', 'cardiovascular', 'adult',
+  'AACVPR; AHA Cardiac Rehab', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'ผู้ป่วยอายุ 55 ปี post-MI + CABG — cardiac rehabilitation program — multidisciplinary care'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 60 ปี severe COPD post-exacerbation — pulmonary rehabilitation referral', '[{"label":"A","text":"Bedrest"},{"label":"B","text":"Pulmonary Rehabilitation (ATS/ERS): (1) **Components** (multidisciplinary 6-12 wk supervised): - Exercise training (aerobic + resistance + IMT inspiratory muscle); - Patient education (disease, medications, self-management, inhaler technique, action plan, exacerbation management, nutrition, energy conservation, oxygen, sleep, end-of-life); - Behavioral change (smoking cessation, physical activity); - Psychosocial support (depression + anxiety high in COPD); - Nutritional counseling; (2) **Indications**: COPD (most studied), other chronic respiratory (ILD, asthma, bronchiectasis, post-TB, NMD), post-acute lung injury (ARDS), post-COVID, lung cancer rehab, pre/post lung transplant + LVRS, pre/post lung surgery; (3) **Benefits**: - Reduces dyspnea + improves exercise capacity, QOL, depression, anxiety; - Reduces hospitalization + mortality after exacerbation; - Cost-effective; - Class I recommendation; (4) **Settings**: inpatient (post-acute, deconditioned), outpatient (most), home-based, telerehab; (5) **Multidisciplinary team**: physiatrist or pulmonologist + RT (respiratory) + PT + nurse + dietitian + psychologist + social work; (6) **Outcome measures**: 6MWT (6-minute walk test), CAT (COPD Assessment Test), mMRC dyspnea scale, SGRQ (St George''s Respiratory Questionnaire); (7) **Underutilization despite Class I** — access + awareness + reimbursement challenges; (8) **Modern**: home-based, telerehab, technology-enabled (wearables, apps), post-COVID expansion; (9) **Maintenance** important — benefits decline if not sustained"},{"label":"C","text":"Hospice"},{"label":"D","text":"Single specialty"},{"label":"E","text":"Discharge"}]'::jsonb,
+  'B', 'Pulmonary rehab: multimodal multidisciplinary 6-12 wk. Reduces dyspnea + improves QOL + reduces hospitalization + mortality. Class I for COPD + others. Underutilized. Modern: home-based + telerehab + post-COVID expansion. Multidisciplinary team.', NULL,
+  'easy', 'respiratory', 'review',
+  'rehab_medicine', 'clinical_decision', 'respiratory', 'adult',
+  'ATS/ERS Pulmonary Rehab; GOLD', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'ผู้ป่วยอายุ 60 ปี severe COPD post-exacerbation — pulmonary rehabilitation referral'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 60 ปี chronic LBP × 8 yr + multiple failed treatments — coming for multidisciplinary pain rehabilitation', '[{"label":"A","text":"Long-term opioid"},{"label":"B","text":"Multidisciplinary Pain Rehabilitation (interdisciplinary intensive program): (1) **Foundation: biopsychosocial model**; chronic pain = chronic disease requiring comprehensive approach; (2) **Multidisciplinary team**: physiatrist + pain medicine + psychology + PT + OT + nursing + pharmacy + nutrition + social work + vocational + recreation; (3) **Patient selection**: chronic pain (> 3 mo), failed conventional treatment, motivated for change, no untreated severe psychiatric, no high-dose opioid (or willing to taper); (4) **Components** (typically 3-4 wk full-day program): - **Cognitive Behavioral Therapy (CBT) for chronic pain**: cornerstone — challenge maladaptive cognitions + behaviors; - **Activity-based therapy**: graded exposure, paced activity, fear avoidance reduction, functional restoration; - **PT**: aerobic + strengthening + flexibility + posture + body mechanics; - **OT**: ADL adaptation, energy conservation, return to work; - **Education**: pain neuroscience education (modern emphasis), self-management, sleep, nutrition; - **Mindfulness + meditation + relaxation**; - **Medication optimization**: opioid tapering + multimodal; (5) **Outcomes**: improved function + QOL + reduced disability + reduced opioid use + return to work; (6) **Functional goals** rather than pain elimination; (7) **Specific syndromes**: chronic LBP, fibromyalgia, CRPS, headache, neuropathic; (8) **Modern**: opioid epidemic context — multidisciplinary essential alternative; (9) **Insurance + reimbursement** challenges; (10) **Long-term**: maintenance + self-management skills lifelong"},{"label":"C","text":"Surgery only"},{"label":"D","text":"Single specialty"},{"label":"E","text":"Refuse"}]'::jsonb,
+  'B', 'Multidisciplinary pain rehab: biopsychosocial model + CBT + activity-based + multimodal. Functional goals over pain elimination. Reduces disability + opioid use. Modern: essential opioid epidemic response. Skills + self-management lifelong.', NULL,
+  'medium', 'msk_nontrauma', 'review',
+  'rehab_medicine', 'clinical_decision', 'msk_nontrauma', 'adult',
+  'ACPA; APS', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'ผู้ป่วยอายุ 60 ปี chronic LBP × 8 yr + multiple failed treatments — coming for multidisciplinary pain rehabilitation'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'เด็กชายอายุ 5 ปี cerebral palsy + spastic diplegia + recent botulinum toxin treatment — comprehensive rehab', '[{"label":"A","text":"Random"},{"label":"B","text":"Pediatric Cerebral Palsy Rehabilitation: (1) **Multidisciplinary team**: pediatric physiatrist + pediatric neurology + ortho + PT + OT + SLP + nutrition + psychology + family; (2) **Gross Motor Function Classification System (GMFCS)** I-V: guides intervention + prognosis; (3) **Treatment approach**: - Goal-directed functional therapy; - Family-centered care; - Lifespan approach; (4) **Spasticity management**: - Stretching + positioning + bracing; - Oral antispasticity (limited efficacy + side effects — diazepam, baclofen, tizanidine, dantrolene); - **Focal**: botulinum toxin (BTX-A, BTX-B) injection — first-line for focal spasticity in CP; quadrennial injections; - **Systemic**: intrathecal baclofen pump for severe; - **Selective dorsal rhizotomy (SDR)**: neurosurgical for selected; reduces spasticity permanently; - **Tendon transfers + lengthening + bony procedures** (single-event multi-level surgery — SEMLS); (5) **PT**: motor function, gait, balance, strength; (6) **OT**: ADLs, fine motor, adaptive equipment; (7) **SLP**: communication (verbal + AAC), feeding/swallowing; (8) **Equipment**: orthoses (AFO), walkers, wheelchairs, adaptive seating; (9) **Pain management**: hip pain (subluxation/dislocation), spasticity, scoliosis; (10) **Comorbidities**: epilepsy, intellectual disability, vision (CVI), hearing, GI, hip dysplasia, scoliosis, growth + nutrition + bone health; (11) **Education**: appropriate school placement + IEP; (12) **Transition planning**: adolescence + adulthood healthcare + vocational; (13) **Family support + caregiver education**: respite care + community resources; (14) **Modern**: emerging — stem cells (research), neurorehabilitation, technology, bracing + selective surgery + targeted spasticity therapy"},{"label":"C","text":"Single specialty"},{"label":"D","text":"Bedrest"},{"label":"E","text":"Discharge"}]'::jsonb,
+  'B', 'Pediatric CP rehab: lifespan + family-centered + multidisciplinary. GMFCS guides. Goal-directed functional therapy. Spasticity management (BTX, ITB, SDR, surgery). PT/OT/SLP + equipment + education + transition. Comorbidities management. Modern: integrated comprehensive care.', NULL,
+  'medium', 'neurology', 'review',
+  'rehab_medicine', 'clinical_decision', 'neurology', 'peds',
+  'AACPDM; AAP CP', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'เด็กชายอายุ 5 ปี cerebral palsy + spastic diplegia + recent botulinum toxin treatment — comprehensive rehab'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 35 ปี athlete with ACL reconstruction 6 wk ago — sports rehabilitation + return-to-play', '[{"label":"A","text":"Bedrest"},{"label":"B","text":"Sports Rehabilitation + Return-to-Play (RTP): (1) **Multidisciplinary**: sports physician + physiatrist + orthopedic surgeon + PT + athletic trainer + strength coach + nutritionist + sports psychologist; (2) **Phased rehabilitation**: - **Phase I (acute)**: control inflammation + protect; ROM + isometrics; - **Phase II (mid)**: progressive ROM + strengthening; weight-bearing progression; - **Phase III (late)**: dynamic strengthening + neuromuscular control + proprioception + endurance; - **Phase IV (return-to-sport)**: sport-specific drills + agility + plyometrics + sport-specific testing; (3) **Specific to ACL**: 6-9 mo for safe RTP (sometimes longer); functional + biomechanical testing (single-leg hop, Y-balance, isokinetic quadriceps, etc.); psychological readiness (ACL-RSI score); (4) **Re-injury prevention**: neuromuscular training programs (FIFA 11+, ACL Injury Prevention) — evidence-based; female athletes higher ACL risk; (5) **Other common sports injuries**: concussion (gradual RTP per SCAT5), shoulder (rotator cuff, instability), ankle sprains, hamstring strains, stress fractures, overuse injuries; (6) **Performance + nutrition**: macronutrients + hydration + supplements (caution); recovery (sleep, modalities, active recovery); (7) **Doping awareness + education**: WADA prohibited list; (8) **Pediatric athlete special considerations**: growth plates, overuse syndromes, female athlete triad/REDS; (9) **Sports psychology**: motivation, anxiety, recovery, identity, pressure; (10) **Modern**: data-driven RTP + biomechanical analysis + technology-enabled rehab"},{"label":"C","text":"Single specialty"},{"label":"D","text":"Hospice"},{"label":"E","text":"Discharge"}]'::jsonb,
+  'B', 'Sports rehab: phased + multidisciplinary + criteria-based RTP. ACL: 6-9 mo with functional testing. Re-injury prevention (neuromuscular training). Sport-specific considerations. Modern: data-driven + technology-enabled. Multidisciplinary team approach.', NULL,
+  'easy', 'msk_nontrauma', 'review',
+  'rehab_medicine', 'clinical_decision', 'msk_nontrauma', 'adult',
+  'AOSSM; AMSSM; ACSM', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'ผู้ป่วยอายุ 35 ปี athlete with ACL reconstruction 6 wk ago — sports rehabilitation + return-to-play'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 35 ปี — extensive burns 30% TBSA + post-acute — comprehensive burn rehab', '[{"label":"A","text":"Bedrest"},{"label":"B","text":"Burn Rehabilitation: (1) **Multidisciplinary team**: physiatrist + burn surgeon + plastic surgery + PT + OT + nursing + nutrition + psychology + social work; (2) **Phases**: acute → intermediate → long-term + reconstructive; (3) **Wound care + skin grafting**: ongoing dressing changes, graft care, scar management; (4) **Range of motion + positioning**: prevent contracture (most common complication) — positioning + splinting + stretching; (5) **Strengthening + endurance**: gradually progressive; (6) **Hypertrophic scarring management**: pressure garments (12-23 mmHg, 23+ hr/d × months), silicone gel sheets, massage, laser, intralesional steroid, surgical revision; (7) **Pruritus management**: antihistamines, gabapentin, moisturizers, topicals; (8) **Pain management**: multimodal — opioid + adjuvants + non-pharm (distraction, virtual reality, music); (9) **Nutrition**: hypermetabolic state — high calorie + protein; vitamins; (10) **Psychological + psychosocial**: body image, PTSD, depression, anxiety; CBT; peer support; (11) **Vocational + community reintegration**; (12) **Reconstructive surgery**: timed for contractures, function, aesthetics; (13) **Pediatric considerations**: growth + development + long-term scar evolution; (14) **Family support**; (15) **Modern**: emerging technologies — biological skin substitutes (Integra, AlloDerm), spray-on skin (ReCell), virtual reality pain control"},{"label":"C","text":"Single specialty"},{"label":"D","text":"Hospice"},{"label":"E","text":"Discharge"}]'::jsonb,
+  'B', 'Burn rehab: multidisciplinary phased. Contracture prevention + scar management + nutrition + psychological + reconstructive. Modern: biological substitutes + technology pain control. Comprehensive lifelong.', NULL,
+  'medium', 'trauma', 'review',
+  'rehab_medicine', 'clinical_decision', 'trauma', 'adult',
+  'ABA; ISBI Burn Rehab', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'ผู้ป่วยอายุ 35 ปี — extensive burns 30% TBSA + post-acute — comprehensive burn rehab'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 55 ปี chronic vertigo + dizziness × 3 months — vestibular rehabilitation', '[{"label":"A","text":"Bedrest"},{"label":"B","text":"Vestibular Rehabilitation: (1) **Common causes**: BPPV (most common), vestibular neuritis/labyrinthitis, Meniere''s, vestibular migraine, central vestibular disorders, age-related, MS; (2) **Comprehensive vestibular assessment**: history + bedside (Dix-Hallpike, head impulse, vHIT, dynamic visual acuity, postural stability), specialized (VNG, rotary chair, posturography, fukuda); (3) **BPPV treatment**: canalith repositioning maneuvers (Epley for posterior canal, BBQ roll for lateral) — highly effective; brandt-daroff exercises for self-treatment; (4) **Vestibular adaptation exercises**: gaze stabilization (VOR adaptation), habituation, balance training, gait training; (5) **Vestibular substitution**: visual + somatosensory training; (6) **Pharmacotherapy** (acute symptoms only — avoid long-term — inhibits compensation): - Antihistamines (meclizine — short-term, avoid in elderly); - Antiemetics (ondansetron, promethazine); - Benzodiazepines (short-term, sparingly); (7) **Central causes**: migraine treatment, MS management, etc.; (8) **Multidisciplinary**: physiatrist + neurology + ENT + audiology + PT specialized in vestibular; (9) **Fall prevention** in elderly with dizziness; (10) **Modern**: technology-assisted (VR, computerized posturography, mobile apps for home exercises)"},{"label":"C","text":"Single specialty"},{"label":"D","text":"Hospice"},{"label":"E","text":"Discharge"}]'::jsonb,
+  'B', 'Vestibular rehab: BPPV (Epley) + vestibular adaptation exercises for compensation. Avoid long-term medications. Multidisciplinary. Modern: technology-assisted. Fall prevention.', NULL,
+  'easy', 'neurology', 'review',
+  'rehab_medicine', 'clinical_decision', 'neurology', 'adult',
+  'APTA Vestibular; ANA', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'ผู้ป่วยอายุ 55 ปี chronic vertigo + dizziness × 3 months — vestibular rehabilitation'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 80 ปี frail + recurrent falls + deconditioning + functional decline — geriatric rehab', '[{"label":"A","text":"Bedrest"},{"label":"B","text":"Geriatric Rehabilitation: (1) **Comprehensive geriatric assessment** + functional + nutritional + cognitive + psychosocial + medications; (2) **5Ms framework**: mind, mobility, medications, multicomplexity, matters most; (3) **Multidisciplinary**: physiatrist + geriatrician + PT + OT + nursing + dietitian + pharmacy + social work + family; (4) **Fall prevention** (CDC STEADI): assess + interventions: - Exercise (Tai Chi, Otago — most evidence); - Medication review (Beers + STOPP); - Vision + hearing + footwear; - Vitamin D; - Home safety; (5) **Functional training**: gait + balance + strength (especially LE) + ADL + IADL; (6) **Sarcopenia + frailty**: nutrition (protein 1.2-1.5 g/kg) + resistance exercise + treat underlying; (7) **Cognitive intervention**: cognitive training, address dementia if present; (8) **Pain management**: multimodal, avoid Beers; (9) **Nutritional optimization**: oral supplements, micronutrients; (10) **Psychosocial**: depression treatment, social engagement; (11) **Discharge planning**: home with services vs assisted living vs SNF; (12) **Caregiver support + education**; (13) **Goals of care** discussion; (14) **Long-term**: ongoing community-based rehab + chronic disease management; (15) **Modern**: integrated geriatric rehab + technology (sensors, smart homes, fall detection)"},{"label":"C","text":"Single specialty"},{"label":"D","text":"Hospice"},{"label":"E","text":"Discharge"}]'::jsonb,
+  'B', 'Geriatric rehab: CGA + 5Ms + multidisciplinary. Fall prevention + functional + sarcopenia + cognitive + pain. Family + goals of care. Modern: integrated + technology. Lifelong chronic disease management.', NULL,
+  'medium', 'msk_nontrauma', 'review',
+  'rehab_medicine', 'clinical_decision', 'msk_nontrauma', 'adult',
+  'AGS; AAPM&R Geriatric', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'ผู้ป่วยอายุ 80 ปี frail + recurrent falls + deconditioning + functional decline — geriatric rehab'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 50 ปี post-severe COVID-19 + long COVID + chronic fatigue + dyspnea + cognitive — comprehensive rehab', '[{"label":"A","text":"Bedrest"},{"label":"B","text":"Long COVID / Post-Acute COVID Rehabilitation: (1) **Multidisciplinary**: physiatrist + pulmonology + neurology + cardiology + ID + PT + OT + SLP + behavioral health + nutrition + occupational; (2) **Comprehensive assessment**: organ-system involvement (pulmonary, cardiac, neurological, GI, MSK, dermatologic, psychiatric); fatigue, dyspnea, cognitive (\\"brain fog\\"), POTS-like symptoms; (3) **Pulmonary rehab** modeled — graduated exercise + breathing exercises (consider pacing in post-exertional malaise — avoid graded exercise that worsens — controversial); (4) **Cognitive rehabilitation**: attention, memory, executive function strategies; (5) **Cardiac evaluation**: rule out myocarditis + arrhythmia; consider POTS workup (tilt table, autonomic testing); (6) **Sleep**: address; (7) **Mental health**: depression, anxiety, PTSD common; CBT; medication; (8) **Pacing + energy conservation**: especially with PEM (post-exertional malaise); (9) **Nutrition + hydration**; (10) **Vaccination**: recommended; (11) **Multidisciplinary clinics** emerging: post-COVID centers; (12) **Research evolving**: emerging treatments (anticoagulation trials, antivirals, immunomodulators) — not yet established; (13) **Patient + family education**: validation, expectations, peer support; (14) **Vocational support**: accommodation, gradual return; (15) **Modern**: rapidly evolving field with growing understanding"},{"label":"C","text":"Single specialty"},{"label":"D","text":"Hospice"},{"label":"E","text":"Discharge"}]'::jsonb,
+  'B', 'Long COVID rehab: multidisciplinary multi-organ. Pulmonary + cognitive + cardiac evaluation + mental health + pacing + energy conservation. Post-COVID centers emerging. Modern: rapidly evolving field.', NULL,
+  'medium', 'respiratory', 'review',
+  'rehab_medicine', 'clinical_decision', 'respiratory', 'adult',
+  'AAPM&R Long COVID; CDC', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'ผู้ป่วยอายุ 50 ปี post-severe COVID-19 + long COVID + chronic fatigue + dyspnea + cognitive — comprehensive rehab'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 45 ปี + post-radius distal fracture + ORIF — hand therapy + functional restoration', '[{"label":"A","text":"Bedrest"},{"label":"B","text":"Hand Therapy: (1) **Multidisciplinary**: physiatrist + hand surgeon + Certified Hand Therapist (CHT — OT or PT specialized); (2) **Phased rehab**: - Acute: edema control, splinting, gentle ROM; - Intermediate: progressive ROM, scar management, gradual strengthening; - Late: full strengthening + endurance + dexterity + return to activity; (3) **Modalities**: cold therapy, paraffin, ultrasound, electrical stimulation; (4) **Splinting**: custom, addresses position + protection + ROM; (5) **Scar management**: massage, silicone, pressure; (6) **Pain management**: multimodal; (7) **Common conditions**: fractures, tendon repairs, nerve injuries, joint replacements, arthritis, CTS, trigger finger, Dupuytren''s, CRPS; (8) **Specific tendon protocols**: e.g., flexor tendon — early protected motion; (9) **Sensory re-education**: post-nerve injury; (10) **CRPS prevention + treatment**: early intervention, edema control, gentle ROM, desensitization; (11) **Return to function/work**: gradual + task-specific; (12) **Ergonomics + adaptive equipment**: for chronic conditions; (13) **Outcomes measurement**: DASH score, grip strength, ROM measurements"},{"label":"C","text":"Single specialty"},{"label":"D","text":"Hospice"},{"label":"E","text":"Discharge"}]'::jsonb,
+  'B', 'Hand therapy: specialized + phased + multidisciplinary. CHT certification. Modalities + splinting + scar + pain management. Specific protocols. Sensory re-education + CRPS prevention. Outcomes measurement. Modern: evidence-based hand specialty.', NULL,
+  'easy', 'msk_nontrauma', 'review',
+  'rehab_medicine', 'clinical_decision', 'msk_nontrauma', 'adult',
+  'ASHT; CHT certification', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'ผู้ป่วยอายุ 45 ปี + post-radius distal fracture + ORIF — hand therapy + functional restoration'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 35 ปี — Multiple Sclerosis + relapsing-remitting + chronic fatigue + spasticity + bladder issues — comprehensive rehab', '[{"label":"A","text":"Single specialty"},{"label":"B","text":"MS Rehabilitation: (1) **Multidisciplinary**: physiatrist + neurology + PT + OT + SLP + nursing + urology + social work + psychology + nutrition; (2) **Disease-modifying therapy** (DMT) by neurology — multiple options; (3) **Rehabilitation focus on specific impairments**: - **Fatigue** (most common MS symptom): pacing + energy conservation + exercise (graded — important — improves fatigue); modafinil, amantadine selected; - **Spasticity**: stretching + positioning + oral antispasticity (baclofen, tizanidine, dantrolene), focal botulinum, intrathecal baclofen for severe; - **Bladder dysfunction**: anticholinergics, mirabegron, beta-3 agonist, intermittent catheterization, urology consult; - **Bowel**: scheduled program; - **Gait + balance**: PT, dalfampridine (4-AP) for walking, AFOs, walking aids; - **Cognitive impairment**: cognitive rehabilitation strategies; - **Mood**: depression high prevalence — SSRI + therapy; - **Sexual dysfunction**: PDE5i + counseling; - **Pain**: neuropathic — gabapentinoids, SNRI; - **Vision**: optic neuritis — treat + adaptive; - **Dysphagia**: SLP + dietary modification; (4) **Exercise**: aerobic + resistance + balance — improves multiple symptoms; (5) **Heat sensitivity** (Uhthoff phenomenon): cooling, air conditioning; (6) **Lifestyle**: Mediterranean diet + smoking cessation + vitamin D + sleep; (7) **Pregnancy + family planning**: timing with DMTs + monitoring; (8) **Mental health support**: depression + anxiety; (9) **Vocational + community**: ongoing support; (10) **Modern**: comprehensive integrated multidisciplinary care + emerging neurorestorative therapies"},{"label":"C","text":"Bedrest"},{"label":"D","text":"Hospice"},{"label":"E","text":"Discharge"}]'::jsonb,
+  'B', 'MS rehab: multidisciplinary integrative. Multiple symptoms (fatigue, spasticity, bladder/bowel, gait, cognitive, mood, sexual, pain). Symptom-specific interventions + exercise + lifestyle. Modern: emerging neurorestorative + comprehensive care.', NULL,
+  'medium', 'neurology', 'review',
+  'rehab_medicine', 'clinical_decision', 'neurology', 'adult',
+  'National MS Society; AAN', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'ผู้ป่วยอายุ 35 ปี — Multiple Sclerosis + relapsing-remitting + chronic fatigue + spasticity + bladder issues — comprehensive rehab'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 70 ปี Parkinson disease + bradykinesia + falls — multidisciplinary rehab', '[{"label":"A","text":"Single specialty"},{"label":"B","text":"Parkinson Disease Rehabilitation: (1) **Multidisciplinary**: physiatrist + neurology + PT + OT + SLP + nutrition + social work + caregiver; (2) **Medical management**: levodopa-carbidopa + adjuvants by neurology; deep brain stimulation (DBS) for advanced + motor fluctuations + dyskinesias; (3) **Exercise** essential: - **LSVT-BIG** (Lee Silverman Voice Treatment BIG — adapted for motor) — large amplitude training; - **PWR! (Parkinson Wellness Recovery)**; - Tai Chi (balance + fall prevention); - Tango + dance; - Aerobic + resistance; - Boxing programs; - Vestibular + balance specific; (4) **Speech therapy**: **LSVT-LOUD** — loud phonation; cognitive-communication; swallowing therapy (dysphagia common); (5) **OT**: ADLs, adaptive equipment, home safety, fall prevention; (6) **Fall prevention**: significant issue — postural instability + freezing; (7) **Dystonia + dyskinesia**: medication optimization, botulinum toxin for focal; (8) **Sleep**: REM behavior disorder, insomnia — clonazepam, melatonin, sleep hygiene; (9) **Cognitive + neuropsychiatric**: depression, anxiety, hallucinations, dementia (late) — manage carefully (avoid antipsychotics that worsen — pimavanserin safer); (10) **Autonomic**: orthostatic hypotension, constipation, urinary, sexual; (11) **Nutrition**: weight, protein timing (interferes with levodopa absorption); (12) **Caregiver support**: education + respite + mental health; (13) **Advance care planning**; (14) **Modern**: precision (PET imaging, biomarkers), new symptomatic + disease-modifying agents (research), DBS technology, focused ultrasound"},{"label":"C","text":"Bedrest"},{"label":"D","text":"Hospice"},{"label":"E","text":"Discharge"}]'::jsonb,
+  'B', 'PD rehab: multidisciplinary symptom-based. Exercise (LSVT-BIG, Tai Chi). Speech (LSVT-LOUD) + dysphagia. Fall prevention. Cognitive + neuropsychiatric + autonomic. Caregiver support. Modern: precision + DBS + emerging therapies.', NULL,
+  'medium', 'neurology', 'review',
+  'rehab_medicine', 'clinical_decision', 'neurology', 'adult',
+  'Movement Disorder Society; AAN PD', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'ผู้ป่วยอายุ 70 ปี Parkinson disease + bradykinesia + falls — multidisciplinary rehab'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 60 ปี post-cancer treatment — chronic fatigue + neuropathy + lymphedema + deconditioning — cancer rehabilitation', '[{"label":"A","text":"Single specialty"},{"label":"B","text":"Cancer Rehabilitation (CRP — Cancer Rehab Program): (1) **Multidisciplinary**: physiatrist + oncology + PT + OT + SLP + nutrition + psychology + social work + lymphedema specialist; (2) **Common issues**: fatigue, deconditioning, peripheral neuropathy (chemo-induced), lymphedema, weakness, cognitive impairment (\\"chemo brain\\"), pain, body image, depression + anxiety, sexual dysfunction, sleep, mobility, ADL difficulty, vocational; (3) **Cancer-related fatigue**: most common — multimodal exercise (aerobic + resistance) is most evidence-based intervention (Cochrane); modafinil + psychostimulants selected; sleep + mood + nutrition; (4) **Lymphedema management**: - Complex Decongestive Therapy (CDT) — gold standard 4 components: manual lymph drainage (MLD), compression bandaging + garments, exercise, skin care; - Pneumatic compression devices for selected; - Surgical (lymphovenous anastomosis, lymph node transfer, liposuction) — emerging; - Prevention + early intervention key; (5) **CIPN (chemotherapy-induced peripheral neuropathy)**: duloxetine first-line (per ASCO); other gabapentinoids, topical; exercise; balance training; fall prevention; (6) **Functional restoration**: PT + OT + endurance + ADL training; (7) **Cognitive rehabilitation**: strategies + computer-based; (8) **Pain management**: multimodal; (9) **Psychosocial**: counseling + peer support + caregiver; (10) **Vocational + return to work**; (11) **Survivorship care plans**: long-term issues + surveillance; (12) **Palliative integration**: concurrent care; (13) **Modern**: prehabilitation (pre-treatment) + integrated cancer rehab clinics + telerehab"},{"label":"C","text":"Bedrest"},{"label":"D","text":"Hospice"},{"label":"E","text":"Discharge"}]'::jsonb,
+  'B', 'Cancer rehab: multidisciplinary survivorship. Fatigue + CIPN + lymphedema + cognitive + functional + psychosocial. CDT for lymphedema. Exercise for fatigue. Duloxetine for CIPN. Modern: integrated programs + prehabilitation + telerehab.', NULL,
+  'medium', 'hemato_onco', 'review',
+  'rehab_medicine', 'clinical_decision', 'hemato_onco', 'adult',
+  'AAPM&R Cancer Rehab; ASCO Survivorship', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'ผู้ป่วยอายุ 60 ปี post-cancer treatment — chronic fatigue + neuropathy + lymphedema + deconditioning — cancer rehabilitation'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 45 ปี — workplace injury + chronic LBP + unable to return to physically demanding job — vocational rehabilitation + return-to-work', '[{"label":"A","text":"Single specialty"},{"label":"B","text":"Vocational Rehabilitation + Return-to-Work (RTW): (1) **Multidisciplinary**: physiatrist + occupational medicine + PT + OT + vocational counselor + ergonomist + psychologist + employer + insurance + attorney (workers comp); (2) **Comprehensive functional capacity evaluation (FCE)**: objective measure of work-related abilities vs job demands; (3) **Job demands analysis**: physical + cognitive + environmental requirements; (4) **Work conditioning + work hardening programs**: progressive job-specific tasks + endurance + simulation; (5) **Accommodations**: ADA-compliant + employer collaboration — modified duty, ergonomic adjustments, assistive technology, schedule changes; (6) **Vocational counseling**: career change if cannot return; retraining + education; (7) **Functional restoration**: addresses physical + psychological + behavioral aspects of chronic pain + disability; (8) **Disability evaluation**: temporary vs permanent, partial vs total; AMA Guides to Permanent Impairment; (9) **Psychosocial**: depression + anxiety + fear avoidance + catastrophizing — CBT + behavioral activation; (10) **Pain self-management**: multimodal opioid-sparing; (11) **Stakeholder coordination**: employer + insurance + healthcare + patient + family + legal; (12) **Outcome metrics**: RTW rate + duration + sustainability + recurrence; (13) **Prevention**: workplace ergonomics + safety + early intervention; (14) **Modern**: telework + remote accommodations + technology-enabled work + early intervention + integrated programs"},{"label":"C","text":"Bedrest"},{"label":"D","text":"Disability only"},{"label":"E","text":"Discharge"}]'::jsonb,
+  'B', 'Vocational rehab + RTW: multidisciplinary stakeholder coordination. FCE + job analysis + work conditioning + accommodations + vocational counseling. Address psychosocial. Disability evaluation. Modern: remote work + ergonomics + early intervention + integrated.', NULL,
+  'medium', 'msk_nontrauma', 'review',
+  'rehab_medicine', 'clinical_decision', 'msk_nontrauma', 'adult',
+  'AAPM&R Occupational Med; AMA Guides', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'ผู้ป่วยอายุ 45 ปี — workplace injury + chronic LBP + unable to return to physically demanding job — vocational rehabilitation + return-to-work'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 40 ปี — post-mastectomy + lymphedema secondary + early management + prevention', '[{"label":"A","text":"Ignore"},{"label":"B","text":"Lymphedema Management Comprehensive: (1) **Risk reduction + prevention**: early identification, education, skin care, avoid trauma + IV/BP on affected side (controversial — recent evidence questions strict avoidance), gradual exercise, weight management; (2) **Diagnosis**: clinical (pitting + non-pitting), tape measure + circumferential measurements, BIS (bioimpedance spectroscopy — early detection), perometry, lymphoscintigraphy, MRI lymphangiography; (3) **Stage classification (ISL)**: 0 (subclinical), 1 (early, pitting), 2 (non-pitting, fibrosis), 3 (elephantiasis); (4) **Complex Decongestive Therapy (CDT) — gold standard**: 4 components — - **Manual Lymphatic Drainage (MLD)**: specialized massage to redirect lymph flow; - **Compression bandaging (intensive phase)** → custom compression garments (maintenance); - **Exercise** with compression to enhance pumping; - **Skin care**: prevent infection (cellulitis); (5) **Adjuncts**: pneumatic compression devices, kinesiotape, low-level laser, BIS-guided early intervention (PREVENT trial — early identification + Rx prevents progression); (6) **Pharmacologic**: limited role; (7) **Surgical** for selected refractory: - Microsurgical — lymphovenous anastomosis (LVA), vascularized lymph node transfer (VLNT); - Excisional — suction-assisted lipectomy/liposuction; - Emerging: combined approaches; (8) **Infection prevention + management**: cellulitis high risk — early antibiotic, repeat episodes — prophylactic antibiotic; (9) **Education + self-management**: lifelong; (10) **Psychosocial support**; (11) **Multidisciplinary**: certified lymphedema therapist (CLT) + physiatrist + surgeon + dermatology + breast/cancer team; (12) **Modern**: early identification programs + microsurgical advances + integrated rehab"},{"label":"C","text":"Single specialty"},{"label":"D","text":"Bedrest"},{"label":"E","text":"Discharge"}]'::jsonb,
+  'B', 'Lymphedema: CDT gold standard. Early identification (BIS, PREVENT trial) reduces progression. Microsurgical options for refractory. Infection prevention. Lifelong self-management. Multidisciplinary. Modern: integrated + microsurgical advances.', NULL,
+  'medium', 'hemato_onco', 'review',
+  'rehab_medicine', 'clinical_decision', 'hemato_onco', 'adult',
+  'ISL Lymphology; NCCN Survivorship', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_clinical_decision'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'ผู้ป่วยอายุ 40 ปี — post-mastectomy + lymphedema secondary + early management + prevention'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'Resident ถามเรื่อง principles of rehabilitation + ICF model + outcomes', '[{"label":"A","text":"Random"},{"label":"B","text":"Rehabilitation Principles + ICF Model: (1) **WHO ICF (International Classification of Functioning, Disability, and Health)**: biopsychosocial model — body functions/structures + activities + participation; contextual factors (environmental + personal); replaces older disability models; (2) **Rehab principles**: - Functional focus (activities + participation) over impairment alone; - Person-centered + values-based; - Goal-oriented + measurable; - Time-limited intensive programs; - Team-based + multidisciplinary; - Continuum of care across settings; (3) **Outcome measures**: - Generic: FIM (Functional Independence Measure), Barthel Index, SF-36, EQ-5D; - Condition-specific: NIHSS (stroke), ASIA (SCI), Glasgow Outcome Scale (TBI), DASH (upper limb), Berg Balance, Tinetti, 6MWT; - PROMs (Patient-Reported Outcome Measures): increasing importance; (4) **Levels of evidence + GRADE**; (5) **Rehab settings**: acute inpatient rehab (IRF), subacute (SNF), long-term acute care (LTACH), outpatient, home-based, day program, telerehab; (6) **Adaptive equipment + assistive technology**: wheelchairs, prosthetics, orthotics, ADL aids, communication devices, environmental control; (7) **Disability rights**: Americans with Disabilities Act (ADA), UN Convention on Rights of Persons with Disabilities (CRPD); inclusive society; (8) **Multidisciplinary team dynamics**: communication + coordination + leadership; (9) **Modern**: technology-enabled + neuroplasticity-based + telerehab + AI assistance"},{"label":"C","text":"Random"},{"label":"D","text":"No principles"},{"label":"E","text":"Single discipline"}]'::jsonb,
+  'B', 'Rehab principles: WHO ICF biopsychosocial. Functional focus + person-centered + multidisciplinary + outcome-measured. ICF replaces older models. Multiple settings + continuum of care. Disability rights. Modern: technology + neuroplasticity + telerehab.', NULL,
+  'easy', 'procedures', 'review',
+  'rehab_medicine', 'basic_science', 'procedures', 'adult',
+  'WHO ICF; AAPM&R', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_basic_science'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'Resident ถามเรื่อง principles of rehabilitation + ICF model + outcomes'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'Resident ถามเรื่อง neuroplasticity + motor learning + rehabilitation', '[{"label":"A","text":"No plasticity"},{"label":"B","text":"Neuroplasticity + Motor Learning: (1) **Neuroplasticity**: ability of CNS to reorganize structure + function in response to experience, injury, or therapy; lifelong but variable by age + condition; (2) **Principles of neuroplasticity** (Kleim + Jones 2008): use it or lose it; use it + improve it; specificity; repetition matters; intensity matters; time matters; salience matters; age matters; transference; interference; (3) **Mechanisms**: synaptic changes, LTP/LTD, new neuron generation (limited adult — hippocampus, OB), neural connectivity changes, functional reorganization; (4) **Motor learning stages**: cognitive → associative → autonomous (Fitts + Posner); (5) **Practice principles**: massed vs distributed, blocked vs random, whole vs part, mental practice + imagery; (6) **Feedback**: knowledge of results + performance; intrinsic vs extrinsic; (7) **Specific therapies leveraging neuroplasticity**: - **Constraint-Induced Movement Therapy (CIMT)** for stroke upper limb; - **Task-specific training**; - **Robotic-assisted training**; - **Mirror therapy**; - **Virtual reality / gaming**; - **Brain-computer interfaces (BCI)**; - **Functional electrical stimulation (FES)**; - **Transcranial magnetic stimulation (TMS)** + transcranial direct current stimulation (tDCS) — neuromodulation; - **Exoskeletons**; (8) **Pharmacologic adjuncts** (research): amantadine, modafinil, SSRIs, BDNF modulators; (9) **Critical period + recovery curve**: early intervention important but plasticity continues; (10) **Modern**: neuroplasticity + technology + neuromodulation expanding rehab capabilities"},{"label":"C","text":"Random"},{"label":"D","text":"Single technique"},{"label":"E","text":"Refuse"}]'::jsonb,
+  'B', 'Neuroplasticity + motor learning: principles guide rehabilitation. Use-dependent + specific + intense + repetitive + salient. Therapies leveraging plasticity (CIMT, task-specific, robotic, BCI, TMS, FES, exoskeletons). Modern: technology + neuromodulation expanding capabilities.', NULL,
+  'medium', 'neurology', 'review',
+  'rehab_medicine', 'basic_science', 'neurology', 'adult',
+  'Kleim + Jones 2008; AAPM&R', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_basic_science'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'Resident ถามเรื่อง neuroplasticity + motor learning + rehabilitation'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'Resident ถามเรื่อง pharmacology + medications in rehab', '[{"label":"A","text":"Random"},{"label":"B","text":"Rehabilitation Pharmacology: (1) **Spasticity**: baclofen (oral + intrathecal), tizanidine, dantrolene, diazepam (caution sedation), gabapentin off-label; botulinum toxin (focal), phenol/alcohol neurolysis; (2) **Neuropathic pain**: gabapentin, pregabalin, SNRIs (duloxetine, venlafaxine), TCAs (amitriptyline, nortriptyline), topical lidocaine + capsaicin; opioids minimal long-term; (3) **CRPS**: gabapentin, ketamine (severe), bisphosphonates (selected), sympathetic blocks; (4) **Cognitive enhancement (TBI, stroke)**: amantadine, methylphenidate, modafinil, donepezil; (5) **Mood**: SSRIs/SNRIs for depression + emotional lability; lithium for selected; (6) **Bladder**: anticholinergics (oxybutynin, tolterodine — caution cognitive), mirabegron (beta-3); intermittent catheterization; intravesical botulinum; (7) **Bowel**: bulk + osmotic laxatives, stimulants, suppositories; (8) **Bone health**: bisphosphonates + vitamin D + calcium (immobilization osteopenia); (9) **Autonomic dysreflexia**: short-acting antihypertensive (nitroglycerin, nifedipine) for episodes; (10) **Heterotopic ossification**: bisphosphonates + NSAIDs + RT post-surgery + surgical excision; (11) **Phantom limb pain**: gabapentinoids + mirror therapy; (12) **Sleep**: CBT-I + melatonin + selected hypnotics; avoid long-term benzo; (13) **Fatigue**: modafinil, amantadine in MS + post-stroke + cancer (selected); (14) **MS-specific**: dalfampridine (4-AP) for walking; (15) **PD-specific**: levodopa-carbidopa + adjuncts (MAO-B inhibitors, COMT inhibitors, dopamine agonists, amantadine, anticholinergics — caution elderly); (16) **Caution + interactions** especially in elderly + polypharmacy"},{"label":"C","text":"Random"},{"label":"D","text":"Single drug"},{"label":"E","text":"No pharmacology"}]'::jsonb,
+  'B', 'Rehab pharmacology: spasticity + neuropathic pain + cognitive + mood + bladder/bowel + autonomic + bone + condition-specific. Multi-targeted approach. Caution polypharmacy + elderly. Modern: targeted + multidisciplinary medication management.', NULL,
+  'medium', 'procedures', 'review',
+  'rehab_medicine', 'basic_science', 'procedures', 'adult',
+  'AAPM&R; Kasper Adams Frontera', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_basic_science'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'Resident ถามเรื่อง pharmacology + medications in rehab'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'Resident ถามเรื่อง orthotics + prosthetics + assistive technology', '[{"label":"A","text":"Random"},{"label":"B","text":"Orthotics + Prosthetics + Assistive Technology: (1) **Orthotics** (support + correct + protect existing limb): - AFO (ankle-foot orthosis): post-stroke foot drop, peripheral neuropathy, spasticity; - KAFO (knee-AFO): more proximal weakness; - HKAFO: hip too; - Spinal: TLSO (post-vertebral fracture), Milwaukee brace + Boston brace for scoliosis; - Upper limb: WHO (wrist-hand orthosis), CTS splint; - Custom vs off-the-shelf; - Functional vs stabilization; (2) **Prosthetics** (replace missing limb): - Upper extremity: body-powered, myoelectric, hybrid; advanced — TMR (targeted muscle reinnervation), osseointegration; - Lower extremity: by amputation level (Syme, transtibial — BK, transfemoral — AK, hip disarticulation); - Components: socket, suspension, knee, ankle, foot; - K-level prescription (K0-K4) for functional ambulation potential; (3) **Assistive technology**: - Wheelchairs (manual + power), seating + positioning; - Mobility aids (canes, walkers, crutches); - Adaptive equipment for ADLs (reachers, dressing aids, kitchen tools); - Augmentative + alternative communication (AAC); - Environmental control + smart home; - Computer access (eye gaze, switches); - Robotics + exoskeletons; (4) **Selection process**: multidisciplinary, functional assessment, patient preferences, environment, cost, reimbursement, training; (5) **Multidisciplinary**: physiatrist + prosthetist + orthotist + PT + OT + engineering + patient + family; (6) **Modern**: 3D printing + smart materials + neural interfaces + AI-controlled + telerehab training"},{"label":"C","text":"Random"},{"label":"D","text":"Single device"},{"label":"E","text":"No use"}]'::jsonb,
+  'B', 'O&P + AT: orthotics support, prosthetics replace, AT enables function. Multiple types + technology evolving. Selection multidisciplinary + individualized. Modern: 3D printing + smart materials + neural interfaces + AI + telerehab.', NULL,
+  'easy', 'procedures', 'review',
+  'rehab_medicine', 'basic_science', 'procedures', 'adult',
+  'AAOP; RESNA', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_basic_science'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'Resident ถามเรื่อง orthotics + prosthetics + assistive technology'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'Hospital implements rehabilitation services + multidisciplinary integrated programs', '[{"label":"A","text":"Single specialty"},{"label":"B","text":"Rehabilitation Services Implementation: (1) **Levels of care**: inpatient rehabilitation facility (IRF), subacute (SNF), long-term acute care (LTACH), outpatient, home-based, telerehab; (2) **CMS criteria for IRF**: medical necessity + 3 hours of therapy/day 5 d/wk + multidisciplinary team + measurable functional goals + active medical management; (3) **Specialty programs**: stroke, SCI, TBI, amputee, cardiac, pulmonary, cancer, pediatric, vestibular, lymphedema, hand, sports; (4) **Team-based care**: physiatrist + PT + OT + SLP + nursing + psychology + recreation + social work + dietitian + family; (5) **Quality measures**: functional outcomes (FIM, CARE), readmission, discharge to community, length of stay, patient experience; UDSMR (Uniform Data System) data; (6) **Outcomes measurement**: continuous quality improvement, benchmarking; (7) **Patient-Family-Centered Care**: education, training, involvement in care + decisions, support; (8) **Care coordination**: transitions, community resources, follow-up, primary care + specialist; (9) **Equity considerations**: access, language, cultural, disability; (10) **Workforce**: shortages in many specialties; training programs; (11) **Reimbursement**: changing landscape — value-based, episode-based, telerehab coverage expanding; (12) **Modern**: telerehab + technology integration + AI-assisted + outcome-driven + patient-centered"},{"label":"C","text":"Random"},{"label":"D","text":"Bedrest"},{"label":"E","text":"Refuse"}]'::jsonb,
+  'B', 'Rehab services: continuum of care + specialty programs + multidisciplinary teams + quality measures + outcomes + family-centered + care coordination + equity. Modern: telerehab + technology + value-based + patient-centered.', NULL,
+  'easy', 'procedures', 'review',
+  'rehab_medicine', 'ems_mgmt', 'procedures', 'adult',
+  'AAPM&R; AMRPA', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_ems_mgmt'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'Hospital implements rehabilitation services + multidisciplinary integrated programs'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'Hospital implements community-based rehabilitation + disability services + advocacy', '[{"label":"A","text":"Single setting"},{"label":"B","text":"Community-Based Rehabilitation + Disability Services: (1) **WHO CBR (Community-Based Rehabilitation)**: rehabilitation + equalization of opportunities + social inclusion at community level; includes — health, education, livelihood, social, empowerment; (2) **Settings**: community centers, schools, workplaces, home; (3) **Multidisciplinary**: rehab professionals + community health workers + educators + employers + family + peer mentors + advocates; (4) **Disability rights**: - ADA (Americans with Disabilities Act) — access + accommodation + employment + transportation + communication; - UN Convention on Rights of Persons with Disabilities (CRPD); - Inclusive society — accessibility + employment + education + healthcare + recreation; (5) **Independent Living Movement**: peer support, consumer-directed, civil rights focus; (6) **Specific services**: - Vocational rehab; - Independent living centers; - Transportation; - Adaptive housing; - Education (IEP, 504); - Support groups + advocacy organizations; - Caregiver support; - Sport + recreation programs (Paralympics); (7) **Universal design** principles: accessible for all; environmental design + products; (8) **Long-term care + chronic disease management**; (9) **Health promotion + wellness** for people with disabilities; (10) **Modern**: technology-enabled independent living + remote care + community integration + telerehab; (11) **Equity + global health**: extending services to underserved populations"},{"label":"C","text":"Single setting"},{"label":"D","text":"Random"},{"label":"E","text":"Refuse"}]'::jsonb,
+  'B', 'Community-based rehab + disability services: WHO CBR + ADA/CRPD + Independent Living Movement + universal design + multidisciplinary + community-centered. Modern: technology + global health + equity focus.', NULL,
+  'easy', 'procedures', 'review',
+  'rehab_medicine', 'ems_mgmt', 'procedures', 'adult',
+  'WHO CBR; ADA', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_ems_mgmt'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'Hospital implements community-based rehabilitation + disability services + advocacy'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'Hospital implements telerehabilitation + digital health + technology in rehab', '[{"label":"A","text":"In-person only"},{"label":"B","text":"Telerehabilitation + Digital Health: (1) **Modalities**: synchronous video (real-time therapy + assessment), asynchronous (exercise apps, education), hybrid models, remote monitoring (wearables, sensors); (2) **Applications**: outpatient therapy continuation, home-based programs, remote consultation, telehealth coaching, post-discharge follow-up, specialty rehab consultation; (3) **Conditions**: stroke, SCI, TBI, cardiac, pulmonary, MSK, pain, mental health, geriatric, pediatric, cancer; (4) **Evidence**: comparable outcomes to in-person for many conditions; improves access especially rural + underserved; (5) **Technology**: video platforms, mobile apps, wearable sensors, virtual reality, AI-coached exercise, robotic-assisted, gaming-based; (6) **Implementation barriers**: technology access + digital literacy (especially elderly, low SES), licensing + reimbursement, privacy + security, internet bandwidth, language; (7) **Quality + best practices**: appropriate visit selection, technology testing, backup plans, training, documentation; (8) **Hybrid care models**: combine telerehab with in-person; (9) **AI applications**: motion analysis, exercise quality monitoring, personalized programs, predictive analytics, virtual coaches; (10) **Equity**: address digital divide; provide alternatives; (11) **Patient engagement**: gamification + interactive content; (12) **Modern**: rapidly evolving + COVID-accelerated + technology integration + AI growing"},{"label":"C","text":"Random"},{"label":"D","text":"Avoid technology"},{"label":"E","text":"Refuse"}]'::jsonb,
+  'B', 'Telerehab + digital health: multiple modalities + applications. Comparable outcomes for many conditions. Expands access. Implementation challenges (digital divide). AI growing. Modern: hybrid + technology-integrated + COVID-accelerated.', NULL,
+  'easy', 'procedures', 'review',
+  'rehab_medicine', 'ems_mgmt', 'procedures', 'adult',
+  'AAPM&R Telerehab; APTA', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_ems_mgmt'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'Hospital implements telerehabilitation + digital health + technology in rehab'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 60 ปี multimorbid + post-stroke + DM + HF + frailty + cognitive impairment — comprehensive integrative rehab', '[{"label":"A","text":"Single specialty"},{"label":"B","text":"Multimorbid Post-Stroke Integrative Rehab: (1) **Multidisciplinary team**: physiatrist + stroke neurology + cardiology + endocrinology + geriatrics + PT + OT + SLP + nursing + dietitian + psychology + social work + pharmacy + family + caregiver; (2) **Stroke-specific rehab** (motor + speech + cognitive + ADL); (3) **Comorbidity-specific**: - DM: glycemic control + SGLT2 + GLP-1 + dietary + exercise; - HF: GDMT (4 pillars) + lifestyle; - Frailty: nutrition + exercise + multidisciplinary; - Cognitive: assessment + strategies + safety; (4) **Polypharmacy management**: Beers + STOPP/START + deprescribing; (5) **Cardiac rehab integration**: post-stroke patients high CV risk; (6) **Secondary stroke prevention**: antiplatelet + statin + BP + AF screen + lifestyle; (7) **Goals of care + shared decision-making**: realistic functional goals + values + family; (8) **Discharge planning**: home with services vs SNF vs LTC; family + caregiver assessment; (9) **Long-term**: continued therapy + community + medical management; (10) **Mental health**: depression high prevalence post-stroke + chronic illness; (11) **Caregiver burden**: education + support + respite; (12) **Modern**: integrated chronic disease + rehab + family-centered + value-based"},{"label":"C","text":"Single specialty"},{"label":"D","text":"Bedrest"},{"label":"E","text":"Hospice"}]'::jsonb,
+  'B', 'Multimorbid post-stroke integrative rehab: multidisciplinary + comorbidity-specific + polypharmacy + secondary prevention + goals of care + family. Modern: integrated chronic disease + value-based care.', NULL,
+  'hard', 'neurology', 'review',
+  'rehab_medicine', 'integrative', 'neurology', 'adult',
+  'AHA/ASA Stroke Rehab; AAPM&R', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_integrative'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'ผู้ป่วยอายุ 60 ปี multimorbid + post-stroke + DM + HF + frailty + cognitive impairment — comprehensive integrative rehab'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 35 ปี SCI + chronic pain + depression + substance use + relationship issues — comprehensive integrative care', '[{"label":"A","text":"Single specialty"},{"label":"B","text":"SCI + Complex Comorbidities Integrative Care: (1) **Multidisciplinary**: physiatrist + addiction medicine + psychiatry + pain medicine + PT + OT + psychology + social work + sexual health + peer support; (2) **SCI rehab continuation**: bladder/bowel + skin + spasticity + autonomic + mobility + ADLs; (3) **Chronic pain management**: - Multimodal opioid-sparing (gabapentinoids + SNRIs + topical + ketamine + procedures + cannabinoids selected); - CBT for chronic pain; - Mindfulness + meditation; - PT + OT; - Procedures (spinal cord stim selected); (4) **Substance use treatment**: addiction medicine + behavioral; integrated dual diagnosis treatment; medication-assisted treatment if indicated (buprenorphine for OUD); (5) **Depression treatment**: SSRI + CBT + peer support; high prevalence in SCI; suicide risk; (6) **Relationship + family + caregiver**: counseling + education + sexual health + peer support; (7) **Vocational + community reintegration**: vocational rehab + ADA accommodations + return to work/school; (8) **Long-term complications surveillance**: UTI, pressure injury, secondary medical conditions; (9) **Adaptive sports + recreation**: improves mood + function + community; (10) **Goals + values discussion**: patient-centered care + quality of life focus; (11) **Multidisciplinary care coordination**: case manager + medical home; (12) **Modern**: integrated comprehensive care + technology + emerging therapies (exoskeletons, epidural stim research) + advocacy"},{"label":"C","text":"Single specialty"},{"label":"D","text":"Bedrest"},{"label":"E","text":"Hospice"}]'::jsonb,
+  'B', 'SCI + comorbidities integrative care: multidisciplinary including addiction + psychiatry + pain. Chronic pain multimodal + substance use treatment + depression + family + vocational + adaptive sports. Modern: integrated comprehensive lifelong care.', NULL,
+  'hard', 'neurology', 'review',
+  'rehab_medicine', 'integrative', 'neurology', 'adult',
+  'Consortium for SCI; AAPM&R', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_integrative'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'ผู้ป่วยอายุ 35 ปี SCI + chronic pain + depression + substance use + relationship issues — comprehensive integrative care'
+  );
+
+insert into public.mcq_questions (
+  subject_id, audience, exam_type, scenario, choices, correct_answer,
+  explanation, detailed_explanation, difficulty, topic, status,
+  board_specialty, board_section, board_topic, board_age_group,
+  reference_source, exam_source, is_ai_enhanced, ai_notes
+)
+select
+  s.id, 'board', NULL, 'ผู้ป่วยอายุ 60 ปี — post-CABG + Parkinson disease + diabetes + osteoporosis + chronic LBP — comprehensive multidisciplinary rehab', '[{"label":"A","text":"Single specialty"},{"label":"B","text":"Complex Multimorbid Integrative Rehabilitation: (1) **Multidisciplinary team**: physiatrist + cardiology + neurology + endocrinology + ortho + PT + OT + SLP + nursing + dietitian + pharmacy + psychology + social work + family + caregiver; (2) **Comprehensive assessment**: medical + functional + cognitive + nutritional + psychosocial + medications + advance care planning + values + goals; (3) **Coordinated care plan**: - **Cardiac rehab post-CABG** (Phase II — supervised exercise, risk factor modification, education, psychosocial); - **PD rehab** (LSVT-BIG + LSVT-LOUD + Tai Chi + fall prevention + medication optimization); - **DM management** (glycemic + SGLT2/GLP-1 + lifestyle + nutrition); - **Osteoporosis** (DEXA + Ca/vit D + bisphosphonate + fall prevention); - **Chronic LBP** (multimodal + opioid-sparing + PT + CBT); (4) **Polypharmacy management**: Beers + STOPP/START + deprescribing + interactions; (5) **Multimodal exercise** addressing multiple conditions simultaneously; (6) **Fall prevention**: comprehensive — multiple risk factors; (7) **Mental health**: depression high prevalence chronic illness + PD; (8) **Nutritional optimization**: protein + Ca + vit D + Mediterranean; (9) **Patient + family education + self-management**; (10) **Goals of care + shared decision-making**: realistic + values-based; (11) **Care coordination**: medical home + transitions; (12) **Modern**: integrated chronic disease + rehab + value-based + technology-enabled + patient + family-centered"},{"label":"C","text":"Single specialty"},{"label":"D","text":"Bedrest"},{"label":"E","text":"Hospice"}]'::jsonb,
+  'B', 'Complex multimorbid integrative rehab: comprehensive multidisciplinary + coordinated care plan + multimodal exercise + polypharmacy management + mental health + family. Modern: integrated value-based patient-centered chronic disease management.', NULL,
+  'hard', 'signs_symptoms', 'review',
+  'rehab_medicine', 'integrative', 'signs_symptoms', 'adult',
+  'AAPM&R; AGS', 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'
+from public.mcq_subjects s
+where s.name = 'rehab_integrative'
+  and s.audience = 'board'
+  and not exists (
+    select 1 from public.mcq_questions q
+    where q.exam_source = 'AI-generated-board-seed'
+      and q.board_specialty = 'rehab_medicine'
+      and q.scenario = 'ผู้ป่วยอายุ 60 ปี — post-CABG + Parkinson disease + diabetes + osteoporosis + chronic LBP — comprehensive multidisciplinary rehab'
+  );
+
+commit;
+
+-- verify
+select board_section, count(*) from public.mcq_questions
+where board_specialty = 'rehab_medicine' and exam_source = 'AI-generated-board-seed'
+group by 1 order by 1;
