@@ -338,5 +338,175 @@
     "board_topic": "hematology",
     "board_age_group": "adult",
     "reference_source": "Bloodless Medicine + Surgery; Patient Blood Management"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง pharmacology — IV induction agents + mechanisms",
+    "choices": [
+      { "label": "A", "text": "No differences" },
+      { "label": "B", "text": "IV Induction Agents — Mechanisms + Clinical Use: (1) **Propofol** — GABA-A agonist + glycine; most common induction; rapid onset + offset; reduces ICP + CMRO2 (neuroprotective); negative inotrope + vasodilator (hypotension); pain on injection (lidocaine pretreat); anti-emetic effects; propofol infusion syndrome (rare — > 4 mg/kg/hr > 48h); (2) **Etomidate** — GABA-A modulator; hemodynamically stable (preferred in unstable cardiac, hypovolemia); ADRENAL SUPPRESSION (11-beta hydroxylase inhibition — single dose may suppress 24-48h; concern in sepsis — avoid in adrenal insufficiency); myoclonus + N/V; (3) **Ketamine** — NMDA antagonist; dissociative anesthesia; preserves cardiovascular + respiratory function (preferred in shock, asthma, bronchospasm); analgesic; emergence reactions (hallucinations — benzo prophylaxis); sympathomimetic (caution CAD, HTN crisis); increases salivation; (4) **Midazolam** — GABA-A modulator (benzodiazepine); pre-medication, sedation, induction with opioid; reversible with flumazenil; respiratory depression; longer recovery; (5) **Thiopental** — GABA-A modulator (barbiturate); historical, less use now; rapid + neuroprotective; reduces ICP; CV depression; reduces hepatic blood flow; precipitates porphyria; pain on injection; (6) **Dexmedetomidine** — alpha-2 agonist; sedation without respiratory depression; analgesic; opioid-sparing; preserves arousability; useful for ICU sedation, awake fiberoptic, procedural sedation; bradycardia + hypotension; (7) **Selection factors**: hemodynamics, comorbidities, allergies, surgery type, recovery profile, cost; (8) **Combination + multimodal** preferred over single agent" },
+      { "label": "C", "text": "Same mechanism" },
+      { "label": "D", "text": "Random use" },
+      { "label": "E", "text": "Single agent only" }
+    ],
+    "correct_answer": "B",
+    "explanation": "IV induction agents: different mechanisms + clinical profiles. Propofol most common. Etomidate cardiostable but adrenal suppression. Ketamine preserves CV + respiratory + analgesic. Midazolam reversible. Dexmedetomidine awake sedation. Selection by patient + procedure. Multimodal approach preferred.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "Miller's Anesthesia; Stoelting's Pharmacology + Physiology"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง physiology — respiratory + cardiovascular changes during anesthesia",
+    "choices": [
+      { "label": "A", "text": "No changes" },
+      { "label": "B", "text": "Physiologic Changes During Anesthesia: (1) **Respiratory**: - Loss of upper airway tone → obstruction (jaw thrust, oral airway, intubation); - Loss of muscle tone → atelectasis (recruitment maneuver, PEEP); - Reduced FRC (functional residual capacity) by 20% (supine + anesthesia + paralysis); - V/Q mismatch + shunt; - Loss of HPV (hypoxic pulmonary vasoconstriction) in lung; - Apnea (depending on depth + agent); - Respiratory acidosis if hypoventilation; - Hyperventilation → respiratory alkalosis → cerebral vasoconstriction; (2) **Cardiovascular**: - Most anesthetics — myocardial depression, vasodilation → hypotension; - Loss of sympathetic tone (especially neuraxial); - Bradycardia (volatile, opioids, dexmedetomidine, vagal — surgical stimulation); - Reduced response to BP changes; (3) **Neurological**: CMRO2 reduced (most anesthetics neuroprotective in some sense); BBB intact; (4) **Renal**: GFR reduced; reduced response to ADH; - antidiuresis (sympathetic + renin-angiotensin response to surgical stress); - perioperative AKI risk; (5) **GI**: reduced gastric emptying (aspiration risk); ileus post-op; (6) **Endocrine**: stress response (cortisol, glucagon, GH, ADH, catecholamines) → hyperglycemia, fluid retention, immunosuppression; (7) **Hematologic**: hypercoagulability post-op (VTE prophylaxis); (8) **Temperature**: rapid hypothermia (vasodilation + cool OR); (9) **Pediatric/Geriatric** differ — separate considerations; (10) **Implications**: maintain physiologic homeostasis, monitor, intervene as needed" },
+      { "label": "C", "text": "No physiologic effects" },
+      { "label": "D", "text": "Adult only" },
+      { "label": "E", "text": "Random changes" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Anesthesia profound physiologic effects. Respiratory: loss of tone, atelectasis, reduced FRC, V/Q mismatch. CV: myocardial depression, vasodilation, hypotension. Neuro: reduced CMRO2. GI: aspiration risk + ileus. Endocrine: stress response. Hypothermia rapid. Implications: maintain physiology + monitor + intervene. Modern: minimize disruption.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "respiratory",
+    "board_age_group": "adult",
+    "reference_source": "Miller's Anesthesia; West's Pulmonary Physiology"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง pharmacology — neuromuscular blockers + reversal",
+    "choices": [
+      { "label": "A", "text": "Same mechanism" },
+      { "label": "B", "text": "Neuromuscular Blockers (NMB) + Reversal: (1) **Depolarizing NMB — Succinylcholine**: ACh receptor agonist; rapid onset (30-60s) + short duration (5-10 min); fasciculations + myalgia; side effects — hyperkalemia (avoid in burns, denervation, neuromuscular disease, prolonged immobilization), MH trigger, increased ICP/IOP, bradycardia (esp peds repeat doses); plasma cholinesterase metabolism (pseudocholinesterase deficiency — prolonged effect); not routinely reversed (let wear off); (2) **Non-Depolarizing NMB — competitive ACh antagonists**: - **Aminosteroids**: rocuronium (intermediate, rapid onset), vecuronium (intermediate), pancuronium (long-acting); - **Benzylisoquinolinium**: cisatracurium (intermediate, Hofmann elimination — useful in liver/renal disease), atracurium (histamine release), mivacurium (short); (3) **Reversal of non-depolarizing NMB**: - **Sugammadex** — for aminosteroids only (rocuronium + vecuronium); cyclodextrin encapsulates molecule; rapid + complete reversal at any depth; 2-16 mg/kg dose-dependent; FDA approved + revolutionary — eliminates residual blockade concerns; - **Neostigmine** (acetylcholinesterase inhibitor) + glycopyrrolate or atropine (anticholinergic to prevent bradycardia + secretion); maximum 5 mg; not effective for profound block; (4) **Monitoring NMB** — train-of-four (TOF) at adductor pollicis or facial nerve; depth-of-block assessment; TOF ratio > 0.9 before extubation (residual NMB causes airway compromise + aspiration); (5) **Quantitative monitoring** (acceleromyography) preferred over qualitative; (6) **Clinical considerations**: avoid hypothermia (prolongs block), acidosis, hypokalemia, hypomagnesemia (potentiates); some antibiotics (aminoglycosides, polymyxin) potentiate; (7) **Reversal of residual NMB** — increased focus to reduce post-op respiratory complications" },
+      { "label": "C", "text": "No reversal needed" },
+      { "label": "D", "text": "Random use" },
+      { "label": "E", "text": "Single agent only" }
+    ],
+    "correct_answer": "B",
+    "explanation": "NMB: depolarizing (succinylcholine — rapid, short) vs non-depolarizing (aminosteroids, benzyliso). Sugammadex revolutionized rocuronium/vecuronium reversal. Neostigmine + anticholinergic traditional reversal. TOF monitoring + quantitative preferred. TOF > 0.9 before extubation. Residual NMB causes post-op complications. Modern: emphasis on full reversal + monitoring.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "Miller's Anesthesia; ASA Quantitative NMB Monitoring"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง regional anesthesia anatomy + ultrasound guidance",
+    "choices": [
+      { "label": "A", "text": "Blind technique only" },
+      { "label": "B", "text": "Ultrasound-Guided Regional Anesthesia: (1) **Advantages over blind/nerve stimulator**: direct visualization, real-time needle tracking, lower volume LA, faster onset, fewer attempts, lower complication rates (vascular puncture, nerve injury, LAST); (2) **Common blocks**: - Upper extremity: interscalene (shoulder), supraclavicular (arm), infraclavicular (forearm), axillary, peripheral (median, ulnar, radial nerve, distal); - Lower extremity: femoral, adductor canal (saphenous), sciatic (popliteal), ankle block; - Truncal: TAP (transversus abdominis plane), rectus sheath, quadratus lumborum, paravertebral, erector spinae plane (ESP), serratus anterior, PECS I + II (chest wall); - Neuraxial: spinal, epidural (ultrasound assists in difficult anatomy or obesity); (3) **Technique**: identify target nerve + surrounding structures, in-plane vs out-of-plane needle, hydrodissection, incremental LA injection with aspiration; (4) **LA selection**: lidocaine (short-acting, intra-op), bupivacaine + ropivacaine (long-acting, post-op analgesia 12-24h), liposomal bupivacaine (72h); adjuncts (epinephrine — vasoconstriction + LA duration + detect IV; dexamethasone + clonidine — prolong); (5) **Complications**: LAST (most feared — see other question), nerve injury, vascular puncture + hematoma, infection, pneumothorax (interscalene, supraclavicular), epidural hematoma (neuraxial); (6) **Patient selection**: cooperative, no severe coagulopathy at site, no infection at site, appropriate consent; (7) **Documentation**: technique, structure identification, LA + volume, response, complications; (8) **Continuous catheters**: prolonged analgesia, multimodal; (9) **Outcomes**: reduced opioid use, shorter hospital stay, less PONV, better recovery; (10) **Training**: ultrasound + needle skills require deliberate practice" },
+      { "label": "C", "text": "Random injection" },
+      { "label": "D", "text": "No regional" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Ultrasound-guided regional anesthesia: advantages over blind. Multiple block types upper/lower/truncal/neuraxial. LA selection + adjuncts. Continuous catheters for prolonged. Complications: LAST, nerve injury, vascular, pneumothorax. Reduces opioid use + improves recovery. Modern multimodal analgesia foundation.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "ASRA Anatomy + Block Manual; SonoSim + Online Resources"
+  },
+  {
+    "scenario": "Hospital wants reduce surgical mortality + improve perioperative care — implement Enhanced Recovery After Surgery (ERAS) hospital-wide",
+    "choices": [
+      { "label": "A", "text": "Traditional approach" },
+      { "label": "B", "text": "ERAS Hospital-Wide Implementation: (1) **Multidisciplinary team**: surgeons, anesthesia, nursing, PT/OT, dietitian, social work, pharmacy, case management, quality improvement, IT, leadership; (2) **Specialty-specific protocols** (ERAS Society guidelines exist for major specialties — colorectal, urology, GYN, breast, bariatric, hepatobiliary, esophageal, lung, cardiac, gastric, thoracic, head + neck, pancreas, ortho, OB); (3) **Components** (~ 20 elements per protocol): - Pre-operative: education + counseling, no prolonged fasting (clear fluids 2h, carb loading), no routine bowel prep (specialty-dependent), MRSA screening, smoking cessation, nutritional optimization; - Intra-operative: antibiotic prophylaxis timing, normothermia, restrictive fluid, minimally invasive when possible, multimodal analgesia (regional + non-opioid), avoid NG tube + drains routine, normoglycemia; - Post-operative: early diet + mobilization (within 24h), multimodal analgesia (opioid-sparing), no Foley routine > 24h, DVT prophylaxis, early discharge planning; (4) **Audit + feedback**: measure compliance + outcomes per ERAS interactive audit system or local; (5) **Outcomes**: reduced LOS 30%, complications 30-50%, opioid use, readmissions; cost-effective; (6) **Cultural change** essential — staff buy-in, education, ongoing reinforcement; (7) **Patient + family engagement**: empowered, informed, expectations set; (8) **Continuous improvement**: quarterly review, evolve protocols; (9) **Equity**: ensure benefits across all populations; (10) **Modern**: ERAS as standard of care; high-quality + low-cost approach" },
+      { "label": "C", "text": "Single intervention" },
+      { "label": "D", "text": "No multidisciplinary" },
+      { "label": "E", "text": "Refuse ERAS" }
+    ],
+    "correct_answer": "B",
+    "explanation": "ERAS = evidence-based multimodal perioperative care. Specialty-specific protocols. ~20 elements per protocol. Multidisciplinary team. Audit + feedback. Outcomes: shorter LOS, less morbidity, less opioid, cost-effective. Cultural change. Patient empowerment. Modern: standard of care across major surgeries.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "ERAS Society Guidelines; Ljungqvist O JAMA Surg 2017"
+  },
+  {
+    "scenario": "Hospital implements patient safety + medication error reduction — anesthesia-specific",
+    "choices": [
+      { "label": "A", "text": "Ignore" },
+      { "label": "B", "text": "Anesthesia Patient Safety Program: (1) **APSF (Anesthesia Patient Safety Foundation)** leadership in anesthesia safety; (2) **Anesthesia mortality** reduced dramatically: from 1 per 5,000 (1960s) → 1 per 200,000 modern — model patient safety success in medicine; (3) **Key safety initiatives**: - **Standardized monitoring** (ASA standards 1986) — pulse ox, EKG, BP, EtCO2, temperature, vigilance; - **Difficult airway algorithm** + equipment availability; - **Crisis Resource Management (CRM)** training — communication, leadership, teamwork during emergencies; - **Simulation training** — realistic scenarios, debriefing; - **Pre-anesthesia checklists** (machine, equipment, drugs, patient identification, allergies, NPO); - **Time-out** before surgical incision (universal protocol — patient + site + procedure); - **Medication safety** — color-coded syringes, separate stations, pre-filled syringes, barcode scanning, electronic record; - **Closed-loop communication** — read-back of orders; - **Fatigue + handoff management** — duty hour limits, structured handoffs (SBAR, I-PASS); - **Quality improvement infrastructure** — case review, M&M, root cause analysis, blame-free reporting; - **APSF newsletter** + publications + funded research; (4) **Specific medication errors**: ampule confusion, similar labels (lookalike), wrong concentrations, wrong route (intrathecal vs IV), reversed drug → use prefilled syringes when possible; (5) **Technology**: anesthesia information management systems (AIMS), barcode scanning, smart pumps, computerized order entry; (6) **Culture of safety**: psychological safety, learning from errors, transparency, accountability; (7) **Multidisciplinary**: physicians, nurses, technicians, pharmacy, IT, administration; (8) **Continuous education + competency assessment**" },
+      { "label": "C", "text": "Refuse safety measures" },
+      { "label": "D", "text": "Single specialty" },
+      { "label": "E", "text": "Random approach" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Anesthesia patient safety: dramatic mortality reduction (1 per 5,000 → 1 per 200,000) — model of patient safety success. APSF leadership. ASA monitoring standards + difficult airway + CRM + simulation + checklists + time-out + medication safety + handoffs. Culture of safety. Technology aids. Modern: standard practice across hospitals.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "APSF; ASA Patient Safety Standards"
+  },
+  {
+    "scenario": "Hospital implements opioid stewardship in anesthesia + perioperative period — opioid crisis response",
+    "choices": [
+      { "label": "A", "text": "More opioids" },
+      { "label": "B", "text": "Opioid Stewardship in Anesthesia: (1) **Public health context**: opioid crisis — 100,000+ overdose deaths/year US, fentanyl epidemic, persistent post-op opioid use → addiction; (2) **Perioperative opioid stewardship goals**: - Reduce opioid prescribing without compromising pain control; - Identify high-risk patients; - Multimodal analgesia; - Patient + family education; - Safe disposal of unused; - Surveillance + monitoring; (3) **Specific interventions**: - **Multimodal analgesia foundation** (acetaminophen + NSAID + gabapentinoid + ketamine + regional + steroid); - **Regional anesthesia** + neuraxial — opioid-sparing; - **ERAS protocols** include opioid-sparing; - **Surgeon-specific prescribing guidelines** (limited dose + days for specific procedures — e.g., open hernia 5-10 tabs total); - **Default prescribing** — change defaults in EMR (smaller quantities, lower doses); - **PDMP (Prescription Drug Monitoring Programs)** — check before prescribing; - **OUD screening** + treatment (don't withhold pain control from OUD patients — multimodal + may need MAT); - **Naloxone co-prescription** for high-risk; - **Education**: physicians, residents, students; (4) **Patient education**: realistic expectations, side effects, addiction risks, safe storage + disposal, alternatives; (5) **Post-op pain management programs**: outpatient pain management, transitional pain service for high-risk; (6) **Surveillance**: opioid prescribing data, persistent use rates, ED visits + readmissions, satisfaction; (7) **Quality metrics**: opioid prescribing per case + procedure; (8) **Multidisciplinary**: anesthesia + surgery + pharmacy + nursing + addiction medicine + primary care + mental health; (9) **Modern paradigm**: less opioid is more — patient outcomes, addiction prevention" },
+      { "label": "C", "text": "Long-term opioids" },
+      { "label": "D", "text": "Refuse stewardship" },
+      { "label": "E", "text": "Single intervention" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Opioid stewardship: anesthesia + perioperative response to opioid crisis. Multimodal analgesia + regional anesthesia + ERAS + PDMP + procedure-specific guidelines + default prescribing changes. Patient education + safe disposal. OUD screening + treatment. Modern: less opioid is more — patient outcomes + addiction prevention.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "CDC Pain Guidelines 2022; ASA Opioid Stewardship"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 78 ปี multimorbid (HF + CKD + DM + frailty + cognitive impairment) coming for hip surgery — complex perioperative + multidisciplinary care",
+    "choices": [
+      { "label": "A", "text": "Single specialty" },
+      { "label": "B", "text": "Multimorbid Elderly Perioperative Integrative Care: (1) **Pre-op multidisciplinary assessment**: orthopedics + anesthesia + geriatric medicine + cardiology + nephrology + endocrinology + PT + nutrition + social work; (2) **Comprehensive Geriatric Assessment (CGA)**: medical + functional + cognitive + nutritional + psychosocial + medications (Beers, STOPP/START); (3) **Goals of care discussion**: balance benefits vs risks; advance directives; family + patient values; outcomes-focused (function, QOL, mortality); (4) **Optimization without delaying urgent surgery**: HF (loop diuretic + ACE/ARB optimize cautious), CKD (avoid nephrotoxic + hydration), DM (glycemic control + hold metformin), frailty (nutrition, prehabilitation if elective); (5) **Anesthetic plan**: regional or neuraxial preferred (REGAIN trial mixed — local + anesthesia preference); multimodal + opioid-sparing; less sedation; (6) **Hemodynamic monitoring**: invasive in high-risk (arterial line); maintain MAP > 65, individualized; volume status balance; (7) **Delirium prevention**: HELP elements (orientation, mobility, sleep, hearing/vision aids, family); avoid Beers meds; ABCDEF in ICU if applicable; (8) **Post-op**: ortho-geriatric co-management — Cochrane evidence reduces mortality; multidisciplinary rounds; early mobilization; nutrition; PT/OT; pain control opioid-sparing; (9) **Discharge planning early**: home with services vs rehab vs SNF; family + social support; (10) **Secondary prevention**: osteoporosis, fall prevention, CV; (11) **Family + caregiver engagement**: support, education, decision-making; (12) **Long-term**: rehabilitation, function, follow-up; quality of life focus" },
+      { "label": "C", "text": "Refuse care" },
+      { "label": "D", "text": "Single intervention" },
+      { "label": "E", "text": "Discharge home" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Multimorbid elderly perioperative care = quintessential integrative + multidisciplinary. CGA + goals of care + optimization (not delaying urgent). Anesthetic choice individualized. Hemodynamic + delirium prevention. Ortho-geriatric co-management evidence-based. Family engagement. Long-term function focus. Modern: multidisciplinary team approach standard.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "AAOS + AGS Guidelines; ACS Geriatric Surgery"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 40 ปี undergoing major spine surgery for tumor resection — long surgery + complex monitoring + transfusion + neuro monitoring + chronic pain management",
+    "choices": [
+      { "label": "A", "text": "Single specialty" },
+      { "label": "B", "text": "Complex Spine Surgery Integrative Care: (1) **Pre-op multidisciplinary**: spine surgery + anesthesia + neuro monitoring + oncology + IR (potentially preoperative embolization) + ICU + rehabilitation + pain management + psychology + nutrition + social work; (2) **Pre-op planning**: imaging review, blood + products availability, autologous blood storage, cell saver, vascular access planning; (3) **Anesthetic plan**: TIVA for neuromonitoring (avoids volatile interference); positioning (prone or other) considerations + pressure injury prevention; (4) **Neurophysiologic monitoring (IONM)**: MEPs (motor evoked potentials), SSEPs (somatosensory), EMG — detect early nerve injury; requires TIVA + careful muscle relaxant; (5) **Massive blood loss management**: TXA (loading + infusion); cell saver; balanced transfusion; permissive hypotension cautious in spine — blood loss vs cord perfusion balance; point-of-care testing (ROTEM/TEG); fibrinogen monitoring; (6) **Hemodynamic management**: MAP > 80-85 to maintain cord perfusion + brain; arterial line + CVL + possibly TEE; vasopressors as needed; (7) **Lung-protective ventilation**: TV 6 mL/kg IBW + PEEP; particular consideration in prone position; (8) **Temperature**: normothermia; warming devices; (9) **Pain control**: regional (epidural, paravertebral, ESP); IV ketamine; multimodal opioid-sparing; (10) **Post-op**: ICU monitoring; neurological exam frequent; (11) **Rehabilitation**: early; spine precautions; PT + OT; (12) **Psychological support + family**: anxiety, depression, prolonged recovery; (13) **Long-term**: chronic pain + functional + tumor surveillance + oncology follow-up + transition planning" },
+      { "label": "C", "text": "Refuse" },
+      { "label": "D", "text": "Single specialty" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Complex spine surgery = integrative multidisciplinary. TIVA for IONM. Massive transfusion + cell saver. MAP maintenance for cord perfusion. Regional + multimodal pain. Prone positioning considerations. Post-op ICU + frequent neuro checks. Rehabilitation + psychological. Long-term oncology follow-up. Modern: highly coordinated multidisciplinary care.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "ASA + SNACC; AANS"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 60 ปี OUD on methadone — going for emergency surgery + multidisciplinary pain management challenge",
+    "choices": [
+      { "label": "A", "text": "Withhold methadone" },
+      { "label": "B", "text": "OUD on Methadone Perioperative Care: (1) **Continue methadone** for OUD treatment — do NOT stop; coordinate dose timing with surgery (last dose timing affects pain management); withholding precipitates withdrawal + worsens outcomes; (2) **Tolerance considerations**: increased opioid requirements vs opioid-naive (3-4× typical doses); standard doses inadequate; (3) **Multimodal opioid-sparing primary**: acetaminophen + NSAID + gabapentinoid + ketamine (excellent for OUD + chronic pain) + regional anesthesia + dexmedetomidine + dexamethasone; (4) **Acute pain on top of methadone**: short-acting opioid for breakthrough (PCA hydromorphone, fentanyl); higher doses than opioid-naive; (5) **Regional anesthesia** maximally utilized — neuraxial, peripheral nerve blocks, continuous catheters; (6) **NMDA antagonist**: ketamine infusion (anti-hyperalgesic + opioid-sparing) — particularly useful in OUD; (7) **Pain medicine + addiction medicine consult**; (8) **Behavioral**: address anxiety, recognize withdrawal symptoms, prevent precipitated withdrawal, supportive care; (9) **Discharge planning** carefully: transition off short-acting opioid back to methadone alone; multimodal + non-opioid continue; close follow-up; (10) **Avoid pain-medicine 'orphaning'** — addiction medicine + acute pain + chronic pain coordination; (11) **Stigma**: address — OUD = chronic illness, patient deserves appropriate pain management; (12) **Modern**: integrated dual treatment, multidisciplinary, addiction + pain specialists working together; (13) **Naltrexone challenges**: NOT in this case (methadone) but if on naltrexone — must address blocking of opioid effects" },
+      { "label": "C", "text": "More opioid only" },
+      { "label": "D", "text": "Refuse pain control" },
+      { "label": "E", "text": "Detox emergent" }
+    ],
+    "correct_answer": "B",
+    "explanation": "OUD on methadone perioperative: CONTINUE methadone. Tolerance — higher opioid doses for breakthrough. Multimodal opioid-sparing primary (regional, ketamine, multimodal). Addiction + pain medicine coordination. Stigma awareness. Modern: integrated care + appropriate pain control + addiction treatment maintained. Patient deserves humane care.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "ASA + ASAM Perioperative OUD; ICA Opioid Use"
   }
 ]
