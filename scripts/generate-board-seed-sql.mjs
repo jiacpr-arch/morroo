@@ -65,11 +65,13 @@ const SPECIALTY_NAME_TH = {
   rehab_medicine: "เวชศาสตร์ฟื้นฟู",
 };
 
-// SQL string literal: wrap with E'...' (escape) and double backslashes/apostrophes
+// SQL string literal. With standard_conforming_strings = on (Postgres default
+// since 9.1), backslashes are NOT escape characters inside ordinary string
+// literals, so we must only double single quotes. Doubling backslashes would
+// corrupt embedded JSON escapes like \"awaken\".
 function sqlString(s) {
   if (s === null || s === undefined) return "NULL";
-  const str = String(s);
-  return "'" + str.replace(/\\/g, "\\\\").replace(/'/g, "''") + "'";
+  return "'" + String(s).replace(/'/g, "''") + "'";
 }
 
 function sqlBool(b) {
