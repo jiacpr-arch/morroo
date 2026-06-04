@@ -70,9 +70,19 @@ describe("validateAndMapMcq", () => {
     expect(res.parsed[0].errors.join(" ")).toMatch(/correct/);
   });
 
-  it("flags missing choices", () => {
+  it("accepts a 4-option question (choice_e blank)", () => {
     const res = validateAndMapMcq(parseCsv(makeCsv({ ...validRow, choice_e: "" })), subjects);
-    expect(res.parsed[0].errors.join(" ")).toMatch(/choice_e/);
+    expect(res.parsed[0].errors).toEqual([]);
+    expect(res.parsed[0].insert?.choices).toHaveLength(4);
+  });
+
+  it("flags too-few choices (only 3 present)", () => {
+    const res = validateAndMapMcq(
+      parseCsv(makeCsv({ ...validRow, choice_d: "", choice_e: "" })),
+      subjects
+    );
+    expect(res.parsed[0].insert).toBeNull();
+    expect(res.parsed[0].errors.join(" ")).toMatch(/ตัวเลือกไม่ครบ/);
   });
 
   it("defaults status to 'review' and difficulty to 'medium' when blank", () => {

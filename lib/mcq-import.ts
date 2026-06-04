@@ -100,14 +100,23 @@ function mapOneRow(
   if (!VALID_STATUS.has(status)) errors.push(`status "${status}" ไม่ถูกต้อง`);
 
   if (!scenario) errors.push("ขาด scenario");
-  for (const [k, v] of [
-    ["choice_a", choiceA],
-    ["choice_b", choiceB],
-    ["choice_c", choiceC],
-    ["choice_d", choiceD],
-    ["choice_e", choiceE],
-  ] as const) {
-    if (!v) errors.push(`ขาด ${k}`);
+
+  // Keep only non-empty choices. NL MCQ have 4–5 options, so require ≥4 — this
+  // lets legit 4-option questions through while dropping truncated 1–3 ones.
+  const presentChoices: McqChoice[] = (
+    [
+      ["A", choiceA],
+      ["B", choiceB],
+      ["C", choiceC],
+      ["D", choiceD],
+      ["E", choiceE],
+    ] as const
+  )
+    .filter(([, t]) => t)
+    .map(([label, text]) => ({ label, text }));
+  const presentLabels = presentChoices.map((c) => c.label);
+  if (presentChoices.length < 4) {
+    errors.push(`ตัวเลือกไม่ครบ (ต้องมี ≥4 ตัว, ได้ ${presentChoices.length})`);
   }
 
   if (questionNumber && !/^\d+$/.test(questionNumber)) {
@@ -116,13 +125,6 @@ function mapOneRow(
 
   let insert: McqQuestionInput | null = null;
   if (errors.length === 0 && subject) {
-    const choices: McqChoice[] = [
-      { label: "A", text: choiceA },
-      { label: "B", text: choiceB },
-      { label: "C", text: choiceC },
-      { label: "D", text: choiceD },
-      { label: "E", text: choiceE },
-    ];
     insert = {
       subject_id: subject.id,
       audience: "student",
@@ -130,8 +132,12 @@ function mapOneRow(
       exam_source: (raw.exam_source ?? "").trim() || null,
       question_number: questionNumber ? Number(questionNumber) : null,
       scenario,
-      choices,
-      correct_answer: correctRaw || "A",
+      choices: presentChoices,
+      // placeholder when the source has no (usable) answer — admin verifies
+      correct_answer:
+        correctRaw && presentLabels.includes(correctRaw)
+          ? correctRaw
+          : presentLabels[0],
       explanation: null,
       difficulty: difficulty as "easy" | "medium" | "hard",
       topic: null,
