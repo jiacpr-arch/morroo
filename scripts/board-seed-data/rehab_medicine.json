@@ -1918,5 +1918,901 @@
     "board_topic": "trauma",
     "board_age_group": "adult",
     "reference_source": "ADA Diabetic Foot; SVS PAD"
+  },
+  {
+    "scenario": "นักกีฬาฟุตบอลอายุ 22 ปี ACL reconstruction (BPTB autograft) 6 mo post-op — ต้องการ return-to-sport",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Return at 4 mo timeline only"
+      },
+      {
+        "label": "B",
+        "text": "ACL Return-to-Sport Criteria + Program: (1) **Time alone insufficient**: ≥9-12 mo recommended (reduces re-injury); time + criteria; (2) **Objective criteria battery**: - **Strength**: Limb Symmetry Index (LSI) ≥ 90% (quadriceps + hamstrings isokinetic); - **Hop tests** (single-leg hop, triple, crossover, 6m timed) LSI ≥ 90%; - **Movement quality**: drop vertical jump assessment (knee valgus angles, LESS — Landing Error Scoring System); - **PROs**: IKDC, KOOS, Tegner; - **Psychological readiness**: ACL-RSI ≥ 60-77 (fear of reinjury predictor); (3) **Phased program**: phase 1 swelling/ROM/quad activation → 2 strength + closed-chain → 3 power/plyometric → 4 sport-specific drills → 5 unrestricted return; (4) **Neuromuscular training**: emphasis perturbation, plyometrics, agility, sport-specific cutting/pivoting; (5) **Graft considerations**: BPTB (this patient) anterior knee pain risk; hamstring graft slower strength recovery; quad tendon emerging; (6) **Re-injury**: 15-30% within 2 yr; ACL-RSI predicts; girls/younger higher risk; (7) **Prevention** programs (FIFA 11+, Sportsmetrics) for prevention contralateral + future; (8) **Multidisciplinary**: surgeon + PT + athletic trainer + psych + coach; **Modern**: criteria-based + psychological + biomechanics + injury prevention"
+      },
+      {
+        "label": "C",
+        "text": "Bedrest 1 yr"
+      },
+      {
+        "label": "D",
+        "text": "Surgery revision"
+      },
+      {
+        "label": "E",
+        "text": "Stop sport permanently"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "ACL RTS: ≥9-12 mo + objective criteria. LSI ≥90% strength + hop tests. Movement quality (DVJ, LESS). PROs + ACL-RSI psychological. Phased program. 15-30% reinjury. Prevention programs. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "AOSSM; APTA ACL Guidelines"
+  },
+  {
+    "scenario": "นักกีฬาวิ่งระยะยาวอายุ 28 ปี — chronic exertional medial tibial pain — running progression issues",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Increase mileage 50% next week"
+      },
+      {
+        "label": "B",
+        "text": "Medial Tibial Stress Syndrome (Shin Splints) — Rehabilitation: (1) **Diagnosis**: diffuse medial tibial pain along posteromedial border (distal 2/3) during/after activity; tender to palpation > 5 cm linear; exclude stress fracture (focal point tenderness + bone scan/MRI), compartment syndrome (compartmental pressure), tendinopathy; (2) **Risk factors**: training error (volume + intensity + surface change), foot mechanics (overpronation, pes planus), BMI/sex (female), bone density, calcium/vit D, prior MTSS; (3) **Management**: - **Activity modification**: reduce volume + intensity, cross-train (cycling, swimming, pool running) maintain CV; - **Progressive loading return**: pain-guided gradual; - **Strengthening**: tibialis posterior, intrinsic foot, hip abductors + ext rotators (kinetic chain); - **Stretching**: calf complex; - **Footwear**: appropriate, replace > 500-800 km; - **Orthotics**: arch support for overpronation; - **Modalities**: ice, NSAIDs short-term, ESWT selected; (4) **Address training error** + periodization; (5) **Bone health**: vit D, Ca, female athlete triad/RED-S screen (energy deficiency, menstrual, bone); (6) **Imaging**: MRI ถ้า refractory or suspect stress fx; (7) **Prevention**: gradual progression (10% rule), strengthening, recovery; (8) **Multidisciplinary**: sports med + PT + athletic trainer + nutritionist; **Modern**: kinetic chain + load management + bone health"
+      },
+      {
+        "label": "C",
+        "text": "Surgical fasciotomy first-line"
+      },
+      {
+        "label": "D",
+        "text": "Casting 6 wk"
+      },
+      {
+        "label": "E",
+        "text": "Discharge no PT"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "MTSS: diffuse posteromedial tibial pain. R/o stress fx. Risk: training error + mechanics + bone. Tx: load mgmt + cross-train + strengthen kinetic chain + footwear. Bone health (RED-S). Periodization.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "BJSM; AMSSM Sports Med"
+  },
+  {
+    "scenario": "นักกีฬาเทนนิสอายุ 35 ปี chronic lateral elbow pain 6 mo (tennis elbow) — failed initial Tx",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Corticosteroid injection — repeated"
+      },
+      {
+        "label": "B",
+        "text": "Chronic Lateral Epicondylopathy: (1) **Pathology**: degenerative tendinopathy of ECRB (Extensor Carpi Radialis Brevis) origin — NOT inflammation (\"tendinosis\"); (2) **Assessment**: pain over lateral epicondyle + tender + provocative (resisted wrist ext, Cozen, Mill, middle finger ext); PROs (PRTEE); imaging (US, MRI) ถ้า atypical; (3) **Conservative (mainstay)**: - **Wait + watch** (often self-limited 12-18 mo); - **Activity modification**: equipment (grip size, racquet stiffness), technique (shot mechanics) — sports med specialist + coach; - **PT**: eccentric strengthening (Tyler twist w/ Theraband), heavy slow resistance, scapular kinetic chain, wrist extensor stretch + grip; - **Counterforce brace** (forearm strap); - **Topical NSAID**, modalities; (4) **Injections**: - **Corticosteroid**: short-term pain relief but worse 6-12 mo outcomes (Coombes JAMA) — avoid; - **PRP**: emerging evidence in tendinopathy; - **Autologous blood, prolotherapy**: limited evidence; - **Anesthetic dry needling**, tenotomy; (5) **ESWT**: evidence supportive; (6) **Surgical**: refractory > 6-12 mo conservative — tenotomy/debridement; (7) **Address kinetic chain**: shoulder + core + technique; **Modern**: eccentric loading + sports tech analysis + biologic options"
+      },
+      {
+        "label": "C",
+        "text": "Casting 3 mo"
+      },
+      {
+        "label": "D",
+        "text": "Surgical release first-line"
+      },
+      {
+        "label": "E",
+        "text": "Discharge — wait years"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Lateral epicondylopathy: degenerative tendinopathy (not inflammation). Eccentric load (Tyler twist) + kinetic chain + technique + equipment. AVOID repeated corticosteroid (worse long-term). PRP/ESWT options. Surgery refractory.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "AAOS; Coombes JAMA 2013"
+  },
+  {
+    "scenario": "นักกีฬาบาสเกตบอล grade 2 ankle sprain (lateral) — 2 wk post-injury — สามารถ partial weight bear ได้",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cast immobilization 6 wk"
+      },
+      {
+        "label": "B",
+        "text": "Ankle Sprain Functional Rehabilitation: (1) **Grading**: Gr 1 (stretch), Gr 2 (partial tear), Gr 3 (complete); (2) **Acute phase**: POLICE/PEACE & LOVE (Protection, Optimal Loading, Ice, Compression, Elevation, then Education + load); early mobilization > immobilization (functional bracing > rigid cast); (3) **Subacute rehab progression**: - **ROM** restoration; - **Strengthening**: peroneal (eversion w/ Theraband), DF/PF/inv, intrinsic; - **Proprioception/balance** (KEY!) wobble board, single-leg, BAPS, perturbation — reduces re-injury; - **Functional drills**: walking → jogging → cutting → sport-specific; - **Plyometrics** + agility; (4) **Return-to-sport criteria**: pain-free, full ROM, strength symmetric, proprioception restored, sport-specific testing (hop, cutting); (5) **External support**: brace/tape during return + high-risk activities; (6) **Re-injury prevention**: continued proprioceptive program — chronic ankle instability common (40%) if inadequate rehab; (7) **Chronic ankle instability**: persistent giving way → consider lateral ankle reconstruction (Brostrom); (8) **PROs**: FAAM, CAIT; (9) **Address kinetic chain**: hip strength, core; (10) **Imaging**: MRI ถ้า refractory; **Modern**: early mobilization + proprioception + functional return"
+      },
+      {
+        "label": "C",
+        "text": "Bedrest 4 wk"
+      },
+      {
+        "label": "D",
+        "text": "Discharge no PT"
+      },
+      {
+        "label": "E",
+        "text": "Surgical first-line"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Ankle sprain: early mobilization + proprioception (KEY) + functional progression. CAI common if undertreated. Brace return. Brostrom for chronic. FAAM/CAIT. Kinetic chain. Modern functional rehab.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "BJSM Ankle Consensus 2018"
+  },
+  {
+    "scenario": "นักวิ่ง marathon อายุ 30 ปี — patellofemoral pain syndrome (PFPS) 3 mo — bilateral",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Quad-only strengthening"
+      },
+      {
+        "label": "B",
+        "text": "Patellofemoral Pain Syndrome (PFPS) — Multimodal: (1) **Diagnosis**: anterior knee pain w/ loading (stairs, squat, prolonged sitting — \"theater sign\"); R/o other causes (chondromalacia, patellar tendinopathy, ITB, meniscus); (2) **Multifactorial**: hip weakness (abductors + ext rotators — KEY), quad imbalance (VMO), foot mechanics (overpronation), training load, malalignment; (3) **Evidence-based Tx (BJSM consensus)**: - **Exercise therapy** combined hip + knee (strong evidence): hip strengthening (glute med, ext rotators — clamshells, single-leg bridges, side-stepping) + quad strengthening (closed-chain, eccentric); - **Gait retraining**: increase cadence, reduce overstride, address valgus collapse; - **Patellar taping** (McConnell) short-term; - **Foot orthoses** for overpronation; - **Manual therapy** adjunct; (4) **Load management**: temporarily reduce volume + intensity, cross-train; (5) **Avoid**: passive treatments alone, prolonged rest; (6) **Surgical**: rarely indicated PFPS; (7) **Education**: pathophysiology + self-management + load management; (8) **PROs**: AKPS (Kujala), Lower Extremity Functional Scale; (9) **Return-to-run progression** when symptom-controlled; **Modern**: hip-focused + gait retraining + load management"
+      },
+      {
+        "label": "C",
+        "text": "Knee brace continuous"
+      },
+      {
+        "label": "D",
+        "text": "Surgical release first-line"
+      },
+      {
+        "label": "E",
+        "text": "Complete rest 3 mo"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "PFPS: multifactorial — hip > knee. Combined hip + knee exercise (strong evidence). Gait retraining. Foot orthoses selective. Load management. PROs AKPS. Avoid quad-only, prolonged rest, early surgery.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "BJSM PFP Consensus 2018"
+  },
+  {
+    "scenario": "นักกีฬาอายุ 19 ปี diagnosed Female Athlete Triad / RED-S — endurance runner",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue training — push through"
+      },
+      {
+        "label": "B",
+        "text": "Relative Energy Deficiency in Sport (RED-S) — Multidisciplinary: (1) **Definition** (IOC 2014, update 2018, 2023): syndrome from low energy availability — broader than Triad; affects multiple systems (menstrual, bone, immune, cardiovascular, GI, metabolic, hematological, psychological) + performance; (2) **Female Athlete Triad**: low energy availability + menstrual dysfunction + low BMD; (3) **Assessment**: - Energy availability calc (kcal/kg FFM/day, < 30 risk); - Menstrual history; - DEXA bone density (Z-score, hx fractures, stress fx); - Labs: hormonal (LH, FSH, estradiol, T3, cortisol, IGF-1), iron, vit D; - ECG (cardiac risk); - Mental health (eating disorder, depression, anxiety) — DSM-5; (4) **Stratification** + RED-S Risk Assessment Tool (red/yellow/green); (5) **Management — multidisciplinary**: - Sports medicine physician; - Sports dietitian (increase energy availability — goal); - Mental health/psychology + eating disorder specialist; - Endocrinology if hormonal; - Coach + family education; (6) **Treatment**: - Increase energy availability (food intake or decrease training); - Treat eating disorder if present; - Bone health (Ca + vit D + weight-bearing + medication selected); - Hormonal therapy controversial — address root cause first; (7) **Training modification** + return-to-sport when criteria met; (8) **Long-term** monitoring; **Modern**: RED-S framework + multidisciplinary + early identification"
+      },
+      {
+        "label": "C",
+        "text": "Ignore menstrual changes"
+      },
+      {
+        "label": "D",
+        "text": "Increase training volume"
+      },
+      {
+        "label": "E",
+        "text": "Hormone replacement only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "RED-S: low energy availability syndrome. Triad component. Multidisciplinary — sports med + dietitian + mental health + endocrine + coach. Address EA first. Bone + ED + hormones. RED-S risk tool.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "IOC RED-S 2023; ACSM/AMSSM"
+  },
+  {
+    "scenario": "นักว่ายน้ำอายุ 24 ปี — chronic shoulder pain 4 mo (swimmer's shoulder) — high volume training",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue same volume"
+      },
+      {
+        "label": "B",
+        "text": "Swimmer's Shoulder — Rehabilitation: (1) **Etiology multifactorial**: overuse + repetitive overhead; impingement (subacromial + internal posterior — GIRD), RC tendinopathy + tears (selectively), labral pathology, instability (multidirectional common swimmers), scapular dyskinesis, stroke mechanics, training error; (2) **Assessment**: comprehensive — ROM (GIRD: glenohumeral internal rotation deficit), strength (RC + scapular + core), stability, impingement signs, kinetic chain, stroke analysis (coach + video); (3) **Treatment**: - **Activity modification**: temporarily reduce yardage + intensity, cross-train, technique (stroke mechanics — coach); - **PT**: rotator cuff + scapular stabilizer strengthening (serratus, lower trap), posterior capsule stretching (sleeper stretch, cross-body), kinetic chain (hip/core), eccentric loading for tendinopathy; - **Stroke modification**: early vertical forearm, body rotation, breathing pattern, distance per stroke; - **Modalities**: ice, NSAIDs short-term; - **Injection** (subacromial) selected; (4) **Address instability** w/ stability program + brace selected; (5) **Prevention** integrated: prehab, periodization, recovery; (6) **Return-to-swim progression**: pain-free + criteria-based; (7) **PROs**: KJOC, ASES; (8) **Multidisciplinary**: sports med + PT + athletic trainer + coach + dietitian; **Modern**: stroke biomechanics + kinetic chain + load management"
+      },
+      {
+        "label": "C",
+        "text": "Surgical decompression first"
+      },
+      {
+        "label": "D",
+        "text": "Casting 6 wk"
+      },
+      {
+        "label": "E",
+        "text": "Stop swimming forever"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Swimmer's shoulder: multifactorial — impingement + RC + GIRD + scapular + instability + stroke. Activity modification + RC/scapular strengthening + posterior capsule stretch + stroke analysis. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "AAOS; FINA Sports Med"
+  },
+  {
+    "scenario": "เด็กชายอายุ 5 ปี cerebral palsy bilateral spastic — GMFCS III — เดินด้วย walker — multidisciplinary care plan",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single-discipline PT only"
+      },
+      {
+        "label": "B",
+        "text": "CP GMFCS III — Comprehensive Rehab: (1) **GMFCS classification** I-V (Gross Motor Function Classification System) — Level III: walks w/ handheld mobility device, may use wheels for community; functional severity-stratified care; (2) **Functional outcomes** (GMFM-66, GMFM-88): trajectory + intervention monitoring; ≥95% reach motor potential by age 6-7 (Rosenbaum trajectories); (3) **Multidisciplinary team**: pediatrician + physiatrist + orthopaedist + neurologist + PT + OT + SLP + special education + social work + family + ortotist; (4) **Spasticity management**: - **PT**: stretching + strengthening + functional training; - **Orthotics**: AFO common (rigid, articulated, GRF) for foot drop + crouch + stability; - **Oral antispasticity**: baclofen, tizanidine, diazepam — sedation limit; - **Focal — BoNT-A**: targeted (gastrocnemius, hamstrings, hip adductors, biceps) — improves function + delays surgery; max dose by weight; - **Generalized — intrathecal baclofen (ITB) pump**: severe spasticity affecting function; - **Selective Dorsal Rhizotomy (SDR)**: selected ambulators (typically GMFCS II-III, age 3-8, good cognition); (5) **Orthopaedic**: hip surveillance (radiograph yearly — hip displacement risk), tendon lengthening, multilevel single-event surgery, scoliosis; (6) **OT**: ADLs, UE function, adaptive equipment, school; (7) **SLP**: dysarthria, AAC if needed, feeding; (8) **Education**: school IEP, accessibility, peer interaction; (9) **Family + caregiver education + respite**; (10) **Long-term transition** to adult care; **Modern**: family-centered + GMFCS-stratified + technology-enhanced"
+      },
+      {
+        "label": "C",
+        "text": "Surgery first-line"
+      },
+      {
+        "label": "D",
+        "text": "Discharge — no intervention"
+      },
+      {
+        "label": "E",
+        "text": "Hospice"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "CP GMFCS III: stratified care. Multidisciplinary. Spasticity (BoNT, ITB, SDR), orthotics (AFO), hip surveillance, ortho selected. Family-centered. Long-term transition. GMFM outcomes.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "pediatric",
+    "reference_source": "Rosenbaum GMFCS; AACPDM"
+  },
+  {
+    "scenario": "เด็กอายุ 2 ปี global developmental delay — มี hypotonia + motor delay — family wants early intervention",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Wait until school age"
+      },
+      {
+        "label": "B",
+        "text": "Early Intervention for Developmental Delay: (1) **Assessment**: comprehensive developmental (Bayley III, Mullen, AIMS) across domains (motor, cognitive, language, social-emotional, adaptive); medical workup for etiology (genetic, metabolic, neuroimaging selected); hearing + vision; (2) **Etiology workup**: history (prenatal, perinatal, postnatal), family hx, exam (dysmorphology, neuro), genetic (chromosomal microarray first-tier, FXS, WES selected), metabolic (selected), EEG, MRI as indicated; (3) **Early Intervention Programs** (Part C IDEA USA; equivalent local systems): - Birth to 3 yr; - IFSP (Individualized Family Service Plan); - Home- + community-based; - Family-centered + coaching model; - Multidisciplinary: PT + OT + SLP + early childhood educator + social work + nursing; (4) **Specific interventions**: - PT: gross motor, postural control, mobility; - OT: fine motor, sensory, ADL, feeding; - SLP: language, communication, AAC if severe; - Behavioral; (5) **Family education + coaching**: empower parents — interactions, routines-based intervention; (6) **Transition to school**: at age 3 to IEP (special education); (7) **Address comorbidities**: seizures, sleep, GI, feeding, behavioral; (8) **Specialist referrals**: pediatric neurology, genetics, GI, dev-behavioral pediatrics; (9) **Equipment + AT**: adaptive seating, mobility, communication; (10) **Long-term monitoring** + family support; **Modern**: family-centered + coaching + routines-based + early neuroplasticity"
+      },
+      {
+        "label": "C",
+        "text": "Single discipline only"
+      },
+      {
+        "label": "D",
+        "text": "No therapy — observe"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Early intervention dev delay: comprehensive assessment + etiology workup + EI program (IFSP, family-coaching, multidisciplinary). Specific therapy. Family-centered. Transition to IEP. Long-term monitoring.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "pediatric",
+    "reference_source": "AAP; IDEA Part C"
+  },
+  {
+    "scenario": "เด็กอายุ 8 ปี Duchenne muscular dystrophy — ambulatory แต่เริ่มมี Gowers sign + frequent falls",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Aggressive eccentric exercise"
+      },
+      {
+        "label": "B",
+        "text": "Duchenne Muscular Dystrophy — Rehab + Multidisciplinary: (1) **Multidisciplinary care** (DMD Care Considerations Group): neuromuscular specialist + cardiology + pulmonology + ortho + physiatry + PT + OT + endocrine + GI/nutrition + psychiatry + social work + family; (2) **Stage-based management** (early ambulatory, late ambulatory, early non-ambulatory, late non-ambulatory): (3) **Physical therapy**: - Stretching daily (heel cords, hamstrings, hip flexors, ITB) prevent contractures; - Submaximal aerobic + functional activity; - AVOID eccentric + maximal eccentric exercise (damage); - Aquatic therapy; (4) **Orthotics**: night AFO/KAFO to preserve ROM; daytime as needed; (5) **Mobility + equipment**: power w/c when ambulation lost (typically 8-13 yr); standing program (standing frame); adaptive seating; (6) **Pharmacology**: - **Corticosteroids** (prednisone, deflazacort) — slow disease progression, prolong ambulation, preserve cardiac/pulm; SE managed; - **Exon-skipping** (eteplirsen, golodirsen, viltolarsen — exon 51/53/45 specific); - **Givinostat** (HDAC inhibitor); - **Gene therapy** (delandistrogene moxeparvovec — emerging); - **Vamorolone** alternative steroid; (7) **Cardiac**: ACEi/ARB + BB starting age 10 + MRI; (8) **Pulmonary**: PFT serial, cough assist, NIV when nocturnal hypoventilation; (9) **Scoliosis surgery** selectively; (10) **Bone health, GI, psychosocial**; (11) **Transition to adult care**; **Modern**: emerging genetic + comprehensive care extends lifespan"
+      },
+      {
+        "label": "C",
+        "text": "No corticosteroid"
+      },
+      {
+        "label": "D",
+        "text": "Bedrest"
+      },
+      {
+        "label": "E",
+        "text": "Discharge no follow-up"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "DMD multidisciplinary stage-based. Stretching + submax exercise + AVOID eccentric. Corticosteroid slow progression. Exon-skipping + gene therapy emerging. Cardiac/pulm proactive. Long-term + transition.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "pediatric",
+    "reference_source": "DMD Care Considerations 2018-2024"
+  },
+  {
+    "scenario": "เด็กอายุ 4 ปี autism spectrum disorder — referred for rehab — motor + sensory + communication concerns",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single-discipline behavioral only"
+      },
+      {
+        "label": "B",
+        "text": "ASD Multidisciplinary Rehab: (1) **Comprehensive assessment**: developmental + behavioral (ADOS-2 diagnostic), cognitive (Mullen/WPPSI), language (REEL, CELF), motor (BOT, M-ABC), sensory (Sensory Profile), adaptive (Vineland); medical (genetic, metabolic selected); (2) **Comorbidities**: ID, ADHD, anxiety, seizures, GI, sleep, feeding, motor coordination disorder; (3) **Evidence-based interventions**: - **Behavioral** (NDBI — naturalistic developmental behavioral interventions; ESDM, JASPER, PRT, ABA-based) — strong evidence; - **Speech-language therapy** + AAC (PECS, devices) if non-verbal; - **OT**: sensory integration (selected), fine motor, ADLs; - **PT**: gross motor coordination, postural; - **Social skills training**; - **Parent-mediated** + parent training; (4) **Educational**: IEP, structured teaching (TEACCH), inclusion + supports; (5) **Pharmacotherapy** (targeted symptoms — not ASD core): risperidone/aripiprazole for irritability (FDA-approved), stimulants for ADHD, SSRI for anxiety, melatonin for sleep; (6) **Medical comorbidities**: GI (constipation common), sleep, feeding (selective eating), seizures; (7) **Family education + support**: respite, peer, advocacy; (8) **Transition planning** (school + adult); (9) **Caregiver mental health**; **Modern**: NDBI + family-centered + neurodiversity-affirming + targeted comorbidity"
+      },
+      {
+        "label": "C",
+        "text": "Antipsychotic alone — no behavioral"
+      },
+      {
+        "label": "D",
+        "text": "Discharge no intervention"
+      },
+      {
+        "label": "E",
+        "text": "Heavy sedation"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "ASD multidisciplinary: NDBI (ESDM, JASPER) strong evidence + SLP + OT + PT + social skills + parent-mediated. Educational. Targeted pharma for comorbidity. Family support. Modern: neurodiversity-affirming.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "pediatric",
+    "reference_source": "AAP; ACOG ASD Guidelines"
+  },
+  {
+    "scenario": "เด็กอายุ 12 ปี spina bifida (myelomeningocele) thoracic-level — multidisciplinary transition + bladder/bowel",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single discipline"
+      },
+      {
+        "label": "B",
+        "text": "Spina Bifida Comprehensive Care: (1) **Multidisciplinary clinic** (gold standard): pediatric urology + neurosurgery + orthopaedics + physiatry + PT + OT + nursing + social work + nutrition + psychology + family; (2) **Neurogenic bladder**: CIC + anticholinergic/β3 + monitor upper tract (renal US, urodynamics); preserve renal function — leading cause mortality historically; SPT/augmentation selected; (3) **Neurogenic bowel**: bowel program (timing, stimulation, suppositories, enemas — antegrade continence enema via cecostomy/MACE selected), high-fiber, fluids; (4) **Hydrocephalus + Chiari II**: shunt monitoring + neurosurgery follow-up; symptoms (HA, vomiting, neuro decline, vision); (5) **Mobility**: thoracic level → wheelchair primary, standing programs (parapodium, KAFO), upper limb propulsion + shoulder preservation; (6) **Orthopaedic**: scoliosis (high rate thoracic level), hip + knee deformity, foot deformity, fractures (low BMD); (7) **Skin**: pressure injury prevention (insensate), daily checks, equipment fit; (8) **Latex allergy** — high prevalence — latex-free environment; (9) **Cognitive**: executive function issues common (\"cocktail party syndrome\"), neuropsych eval, school IEP; (10) **Sexual + reproductive** (adolescent/adult): counseling, fertility, pregnancy planning; (11) **Transition to adult care** (age 18-21) — challenging; (12) **Family + advocacy**; **Modern**: SBA (Spina Bifida Association) care guidelines + lifespan integrated"
+      },
+      {
+        "label": "C",
+        "text": "No bladder management — wait incontinence"
+      },
+      {
+        "label": "D",
+        "text": "Latex products fine"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Spina bifida: multidisciplinary clinic. Neurogenic bladder (CIC + monitor) + bowel + hydrocephalus + Chiari + mobility + scoliosis + skin + latex allergy + cognitive + sexual + transition. Family.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "pediatric",
+    "reference_source": "Spina Bifida Association Guidelines 2018"
+  },
+  {
+    "scenario": "เด็กอายุ 6 ปี post-pediatric brain tumor (medulloblastoma) — completed chemo/radiation — multiple deficits",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No follow-up — survived"
+      },
+      {
+        "label": "B",
+        "text": "Pediatric Cancer Survivorship Rehab: (1) **Multidisciplinary**: oncology + physiatrist + PT + OT + SLP + neuropsychology + endocrinology + audiology + ophthalmology + social work + education + family; (2) **Late effects screening + management**: - **Neurocognitive**: chemo/radiation effects — attention, processing speed, memory, executive; neuropsych eval; cognitive rehab + school IEP/504 + accommodations; - **Motor + balance**: ataxia, weakness, neuropathy (vincristine), spasticity — PT + OT; - **Endocrinopathies**: GH deficiency (growth failure — GH replacement), hypothyroidism, gonadal failure — endocrine screen + treat; - **Cardiotoxicity** (anthracycline): echo + ECG surveillance; - **Hearing loss** (platinum agents, radiation): audio + hearing aids; - **Vision** (radiation): ophthalmology; - **Secondary malignancy** risk: surveillance; - **Fertility** future considerations; - **Psychosocial**: PTSD, anxiety, depression, social difficulties; family adjustment; (3) **School reintegration**: gradual + accommodations + IEP/504 + teacher education; (4) **Survivorship clinic + lifelong follow-up** (COG LTFU guidelines); (5) **Patient + family education + advocacy + peer support**; (6) **Adaptive PE + recreation**; (7) **Health behaviors**: nutrition, exercise, no tobacco, sun protection; (8) **Transition to adult survivorship care**; **Modern**: COG Long-Term Follow-Up Guidelines + survivorship clinics + integrated rehab"
+      },
+      {
+        "label": "C",
+        "text": "Single discipline"
+      },
+      {
+        "label": "D",
+        "text": "Discharge to PCP only"
+      },
+      {
+        "label": "E",
+        "text": "Avoid school"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pediatric cancer survivorship rehab: multidisciplinary late-effects (neurocognitive, motor, endocrine, cardiotoxicity, hearing, vision, secondary malignancy, fertility, psychosocial). School + survivorship clinic. COG guidelines.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "pediatric",
+    "reference_source": "COG LTFU Guidelines; Children's Oncology Group"
+  },
+  {
+    "scenario": "เด็กอายุ 3 ปี — brachial plexus birth palsy — no recovery elbow flexion at 6 mo of age",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Wait years for surgery"
+      },
+      {
+        "label": "B",
+        "text": "Obstetric Brachial Plexus Palsy (OBPP) — Multidisciplinary: (1) **Classification**: - Erb's (C5-C6): waiter's tip; - Extended Erb's (C5-C7); - Klumpke (C8-T1) rare; - Total (C5-T1) + possible Horner's; (2) **Prognosis**: ~80% recovery by 1 yr; but absent biceps recovery by 3 mo (Gilbert) or 6 mo (Waters) → poor — consider microsurgical reconstruction; (3) **Multidisciplinary team**: physiatry + neurosurgery/plastic + ortho + PT + OT + nursing + family; (4) **Early management** (birth to 3 mo): - PROM gentle: shoulder, elbow, forearm, wrist (parents trained); - Avoid pulling/stretching forcefully; - Positioning to prevent contractures + skin care; (5) **Assessment**: Active Movement Scale (AMS), Mallet (functional), Toronto Test Score, ROM, sensory; (6) **Microsurgery indication** (3-9 mo age): nerve graft + nerve transfer; outcomes best early; (7) **Secondary surgery** (1+ yr): muscle transfers, joint releases, tendon transfers for residual deformity; (8) **PT/OT**: ROM + strengthening + bimanual function + sensory + functional/ADL; (9) **Botulinum toxin** for muscle imbalance (e.g., subscapularis for shoulder internal rotation contracture); (10) **Joint surveillance**: shoulder (glenohumeral dysplasia from imbalance), elbow, forearm; (11) **Long-term**: school + adult function; family + child education; **Modern**: early multidisciplinary + microsurgery + neuromuscular reeducation"
+      },
+      {
+        "label": "C",
+        "text": "No therapy needed"
+      },
+      {
+        "label": "D",
+        "text": "Discharge"
+      },
+      {
+        "label": "E",
+        "text": "Bedrest"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "OBPP: classify (Erb most common). 80% recover but no biceps by 3-6 mo → microsurgery candidate. AMS/Mallet. Early PT/OT + PROM + family training. Microsurgery + secondary procedures. Joint surveillance.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "pediatric",
+    "reference_source": "AAOS OBPP; Waters/Gilbert"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 62 ปี post-MI + PCI 1 wk — phase II cardiac rehab + exercise prescription",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Maximum intensity immediately"
+      },
+      {
+        "label": "B",
+        "text": "Cardiac Rehab Phase II Exercise Prescription: (1) **Pre-program evaluation**: Symptom-limited CPET (cardiopulmonary exercise test) — VO2 peak, anaerobic threshold (AT/VT1), heart rate (HR), BP, ECG, symptoms — gold standard for prescription; alternative submaximal (modified Bruce, 6MWT); (2) **Exercise prescription (FITT-VP)**: - **Frequency**: 3-5 sessions/wk (supervised + home); - **Intensity**: 40-80% HRR (Karvonen) or VO2 reserve; RPE 11-14 (Borg 6-20); or HR at AT; aim moderate-vigorous; - **Time**: 20-60 min aerobic + 5-10 min warm-up/cool-down; resistance 1-3 sets × 10-15 reps; - **Type**: aerobic (treadmill, cycle, elliptical, walking) + resistance (after 2-3 wk Phase II) + flexibility; - **Volume + Progression**: gradual; (3) **Monitoring**: continuous ECG initial sessions, BP, symptoms, RPE; (4) **Resistance training**: 1-3 sets, 8-15 reps, RPE 11-13, avoid Valsalva; (5) **Risk stratification** (low/moderate/high) — guides monitoring + supervision; (6) **Patient education**: meds, signs/symptoms, when to call, lifestyle; (7) **HIIT**: emerging evidence improves VO2 vs MICT — selected patients; (8) **Psychosocial + smoking cessation + dietary**; (9) **Outcomes**: VO2 peak, MET capacity, HR-rate response, BP, PROs; **Modern**: CPET-guided + HIIT + technology"
+      },
+      {
+        "label": "C",
+        "text": "Bedrest 6 mo"
+      },
+      {
+        "label": "D",
+        "text": "Single session only"
+      },
+      {
+        "label": "E",
+        "text": "Anaerobic high-intensity only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cardiac rehab Phase II: pre CPET + FITT-VP prescription. 40-80% HRR, RPE 11-14, 20-60 min, 3-5×/wk. Aerobic + resistance + flexibility. Risk stratify + monitor. HIIT emerging. Psychosocial + lifestyle.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "AACVPR; AHA Cardiac Rehab"
+  },
+  {
+    "scenario": "ผู้ป่วย HFrEF (EF 30%) NYHA III — referred cardiac rehab",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No exercise — too dangerous"
+      },
+      {
+        "label": "B",
+        "text": "HF Cardiac Rehab — HF-ACTION Lessons: (1) **HF-ACTION trial**: safe + modestly effective in HFrEF (trend mortality reduction, improved QOL + exercise capacity); cardiac rehab Class I HFrEF NYHA II-III on GDMT; (2) **Evaluation**: clinical status (stable + euvolemic), CPET, echo + functional status; coordinate w/ HF team; (3) **Exercise prescription**: - Aerobic: 60-70% HRR or RPE 11-13; intervals selected; 30-40 min; 3-5×/wk; - Resistance: low-mod intensity, 1-2 sets, avoid Valsalva; - Progress gradually; - Inspiratory muscle training (IMT) adjunct evidence; (4) **GDMT optimization** (4 pillars HFrEF): ARNI/ACEi/ARB + BB + MRA + SGLT2i; up-titrate before/during rehab; (5) **Monitoring**: weight (daily home), symptoms (DOE, edema, fatigue), HR, BP, ECG; recognize decompensation; (6) **Patient education**: HF (low-Na diet, fluid restriction, daily weights), meds, signs/symptoms (when call), self-care; (7) **Comorbidities**: DM, CKD, AF, COPD — addressed; (8) **Psychosocial**: depression (high in HF), anxiety, social — CBT, screen + treat; (9) **Devices**: ICD, CRT, LVAD — modifications; (10) **Advance care planning**: appropriate stage; (11) **Outcomes**: VO2, 6MWT, QOL (KCCQ, MLHFQ), hospitalization; **Modern**: home-based + telerehab + GDMT integration + HFpEF emerging evidence"
+      },
+      {
+        "label": "C",
+        "text": "Maximum intensity always"
+      },
+      {
+        "label": "D",
+        "text": "Bedrest"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "HFrEF cardiac rehab Class I (HF-ACTION). CPET-guided 60-70% HRR. Aerobic + resistance (low Valsalva). IMT adjunct. GDMT 4 pillars optimization. Monitor decompensation. Psychosocial. Modern: home/telerehab.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "HF-ACTION; AHA/ACC HF Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วย post-CABG 2 wk — sternotomy precautions + Phase I/II transition",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No precautions immediately"
+      },
+      {
+        "label": "B",
+        "text": "Post-Sternotomy Precautions + Phase I/II: (1) **Sternotomy precautions** (vary by institution but typical 6-8 wk): - No lifting > 5-10 lb; - No pushing/pulling heavy; - No driving 4-6 wk; - Avoid arms overhead aggressive; - No pulling self up using arms (use \"snake-out\" technique — log roll + use legs); - Cough w/ pillow splint; - Maintain incision care; (2) \"Move in the Tube\" / \"Keep Your Move in the Tube\" emerging — less restrictive, allows functional UE within pain-free arc; evidence supports earlier UE use w/o sternal complications; (3) **Phase I (inpatient)**: early mobilization, education, IS use, gradual ambulation, family education; (4) **Phase II (outpatient)**: structured exercise, risk factor modification, education, psychosocial; (5) **Exercise prescription**: see standard cardiac rehab; modifications during sternotomy healing phase (UE limited initially); (6) **Wound care + monitoring**: sternal dehiscence (rare), infection (DM, obesity, smoking risk), arrhythmia (postop AF common); (7) **Pain management**: multimodal opioid-sparing; (8) **Psychosocial**: postop depression + cognitive changes (post-pump); (9) **Education**: meds (anticoagulation, antiplatelet, statin, BB, ACEi), lifestyle, when call physician; (10) **Long-term**: lifelong secondary prevention; **Modern**: ERAS cardiac + earlier mobilization + less restrictive precautions evidence"
+      },
+      {
+        "label": "C",
+        "text": "Bedrest 6 wk"
+      },
+      {
+        "label": "D",
+        "text": "Full lifting day 1"
+      },
+      {
+        "label": "E",
+        "text": "Hospice"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Post-CABG: sternal precautions 6-8 wk (no >5-10 lb, no heavy push/pull, snake-out, splint cough). \"Tube\" emerging less restrictive. Phase I→II. Monitor dehiscence/AF. Multimodal pain. Long-term prevention.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "AACVPR; ERAS Cardiac"
+  },
+  {
+    "scenario": "ผู้ป่วย post heart transplant 8 wk — cardiac rehab considerations",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Use HR targets standard"
+      },
+      {
+        "label": "B",
+        "text": "Heart Transplant Cardiac Rehab: (1) **Unique physiology**: denervated heart — no vagal/sympathetic intrinsic response; resting HR elevated (90-110), slow rise + slow recovery w/ exercise; rely on circulating catecholamines (humoral); altered HR response — use RPE > HR target alone; (2) **Exercise prescription**: - **Use RPE primary** (11-14); - Extended warm-up + cool-down (slow HR adaptation); - Aerobic + resistance progressing; - Monitor signs/symptoms; (3) **Outcomes**: VO2 peak improves but blunted vs normal — typically 50-70% predicted; (4) **Medications + considerations**: - Immunosuppressants (calcineurin inhibitors — nephrotoxicity, HTN, DM; mycophenolate, prednisone), monitor SE; - Steroid effects (myopathy, osteopenia — resistance training important, bone health); - Antimicrobial prophylaxis; (5) **Rejection surveillance**: biopsy, echo, BNP; new symptoms → urgent eval; (6) **CV vasculopathy** (CAV — late complication): silent ischemia (denervated — no chest pain), screening; (7) **Infection precautions** during immunosuppression: handwashing, vaccinations (no live), exposure avoidance; (8) **Comorbidities**: HTN, DM, CKD, dyslipidemia — manage; (9) **Psychosocial**: post-transplant adjustment + survivor concerns + family + return to activity/work; (10) **Long-term**: malignancy risk + skin checks; **Modern**: cardiac rehab improves outcomes post-transplant + lifelong integration"
+      },
+      {
+        "label": "C",
+        "text": "No exercise"
+      },
+      {
+        "label": "D",
+        "text": "Bedrest"
+      },
+      {
+        "label": "E",
+        "text": "Discharge — no rehab"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Heart transplant rehab: denervated heart — use RPE, extended warm/cool, blunted VO2. Immunosuppression considerations + steroid SE + rejection + CAV + infection. Comorbidities. Psychosocial. Modern integrated.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "ISHLT Rehab; AACVPR"
+  },
+  {
+    "scenario": "ผู้ป่วย PAD intermittent claudication — referred supervised exercise therapy",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Avoid exercise"
+      },
+      {
+        "label": "B",
+        "text": "PAD Supervised Exercise Therapy (SET): (1) **Evidence**: SET first-line for IC — improves walking distance + QOL > meds + placebo; Class IA recommendation (AHA/ACC, ESC); CMS coverage for PAD SET (USA) since 2017; (2) **Protocol** (Gardner-Skinner type): - 3 sessions/wk × 12 wk supervised; - Treadmill walking — walk until moderate-severe claudication (3-4/5), rest until resolved, repeat; total 30-60 min including rest; - Gradual progression speed + grade; (3) **Mechanisms**: collateral development, mitochondrial/metabolic, endothelial, muscle adaptations, gait economy; (4) **Home-based** alternative: structured + monitored — emerging evidence comparable selected patients; (5) **Walking impairment** assessment: WIQ (Walking Impairment Questionnaire), treadmill (Gardner protocol — max walking distance MWD + pain-free PFD), 6MWT; (6) **CV risk reduction** (key): - Smoking cessation; - Statin (high-intensity); - Antiplatelet (aspirin or clopidogrel); - BP + DM control; - Mediterranean diet; - Vorapaxar/rivaroxaban selected; (7) **Revascularization** for severe/disabling — endovascular or open; (8) **Multidisciplinary**: vascular + PCP + cardiology + PT + dietitian; (9) **Foot care + ulcer prevention** in DM PAD; (10) **CLI/CLTI** — limb-threatening — urgent revascularization; **Modern**: SET + CV risk reduction integrated, home-based emerging"
+      },
+      {
+        "label": "C",
+        "text": "Rest until pain-free always"
+      },
+      {
+        "label": "D",
+        "text": "Single session"
+      },
+      {
+        "label": "E",
+        "text": "Surgery first-line all"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "PAD: SET first-line Class IA (AHA/ACC). 3×/wk × 12 wk treadmill walk to claudication. CV risk reduction critical (statin, antiplatelet, smoking). Home-based emerging. Multidisciplinary. Foot care.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "AHA/ACC PAD Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 78 ปี post-MI — frail + multimorbid — \"too sick\" for cardiac rehab? — referral question",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Exclude — too frail"
+      },
+      {
+        "label": "B",
+        "text": "Older + Frail Cardiac Rehab — Inclusion + Adaptation: (1) **Underutilization**: frail/older underrefferred despite benefit; equity gap; aim to INCLUDE w/ adaptations; (2) **Risk stratification** + comprehensive geriatric assessment: function (gait, balance, ADL), cognition, mood, sensory, polypharmacy, social; CFS (Clinical Frailty Scale), CHAMPS; (3) **Adapted exercise prescription**: - Lower starting intensity (40-60% HRR or RPE 9-11); - Shorter duration → progress; - Include balance + strength + flexibility (functional focus); - Tai Chi, chair-based, recumbent options; - Fall prevention integrated; (4) **Address contributors**: pain, sleep, depression, anemia, sarcopenia; (5) **Nutrition**: protein 1.2-1.5 g/kg + Mediterranean; (6) **Polypharmacy management**: Beers + STOPP/START + deprescribing; (7) **Cognitive + delirium prevention**; (8) **Multidisciplinary**: cardiology + geriatrics + physiatrist + PT + OT + dietitian + pharmacy + social work; (9) **Home-based + telerehab** options for transportation barriers; (10) **Goals of care + shared decision**: function, QOL focus; advance care planning; (11) **Caregiver involvement**; (12) **Outcomes**: function (SPPB, gait speed), QOL, falls; **Modern**: equity-focused inclusion + adaptations + integrated geriatric cardiology"
+      },
+      {
+        "label": "C",
+        "text": "Standard prescription same as young"
+      },
+      {
+        "label": "D",
+        "text": "Bedrest"
+      },
+      {
+        "label": "E",
+        "text": "Hospice"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Frail/older cardiac rehab: INCLUDE w/ adaptations. CGA. Lower starting intensity + functional focus + balance/strength + fall prevention. Address contributors + polypharmacy. Multidisciplinary. Telerehab. Equity.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "geriatric",
+    "reference_source": "AACVPR; AGS"
+  },
+  {
+    "scenario": "ผู้ป่วย COPD GOLD III — mMRC 3 — referred pulmonary rehab",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single discipline only"
+      },
+      {
+        "label": "B",
+        "text": "Pulmonary Rehabilitation — COPD: (1) **Evidence**: PR is Grade A recommendation for symptomatic COPD (mMRC ≥ 2 or post-exacerbation) — improves dyspnea, exercise capacity, QOL, reduces hospitalizations; cost-effective; underutilized; (2) **Indications**: COPD + other chronic respiratory (ILD, bronchiectasis, asthma, pulm HTN, lung Ca, pre/post lung transplant/resection); (3) **Pre-PR evaluation**: medical + exercise (6MWT or CPET) + PROs (CAT, mMRC, SGRQ); (4) **Exercise component (FITT-VP)**: - Aerobic: 60-80% peak (RPE 4-6/10 dyspnea); 20-60 min; 3-5×/wk; cycle/treadmill/walking; - Resistance: 1-3 sets, 8-15 reps, focus large muscle groups, RPE moderate; - Interval training: HIIT alternative — less dyspnea limitation; - Inspiratory Muscle Training (IMT) adjunct selected (low MIP); - Functional + balance; (5) **Duration**: 6-12 wk minimum + maintenance; (6) **Multidisciplinary**: respiratory therapist + PT + OT + nutrition + nurse + psychologist + physician; (7) **Education**: disease, meds (inhaler technique), oxygen, action plan, smoking cessation, nutrition; (8) **Psychosocial**: anxiety + depression screening + treatment; (9) **O2 supplementation** during exercise if desat (SpO2 < 88%); (10) **Smoking cessation** integrated; (11) **Post-exacerbation PR** especially effective; (12) **Home-based + tele-PR** alternatives for access; **Modern**: post-exacerbation + tele-PR + integrated chronic disease"
+      },
+      {
+        "label": "C",
+        "text": "Surgery first-line"
+      },
+      {
+        "label": "D",
+        "text": "Discharge no rehab"
+      },
+      {
+        "label": "E",
+        "text": "Bed rest"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "PR for COPD: Grade A. Aerobic + resistance + IMT + functional. 6-12 wk. Multidisciplinary. Education + meds + O2 + smoking cessation + psychosocial. Post-exacerbation key. Tele-PR access. Modern integrated.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "respiratory",
+    "board_age_group": "adult",
+    "reference_source": "ATS/ERS PR Statement 2013, 2021"
+  },
+  {
+    "scenario": "ผู้ป่วย post-acute COVID-19 (long COVID) 4 mo — dyspnea + fatigue + exercise intolerance",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Aggressive GET — push through symptoms"
+      },
+      {
+        "label": "B",
+        "text": "Post-COVID-19 Rehabilitation: (1) **Heterogeneous presentation**: pulmonary, cardiac (myocarditis, POTS), neurologic (cognitive, neuropathy), MSK (deconditioning, myopathy), psychiatric (anxiety, PTSD), autonomic, ME/CFS-like; (2) **Assessment**: comprehensive — cardiopulmonary (CPET, echo, PFT), neurocognitive, autonomic (tilt table, HUTT), MSK, psychosocial; rule out persistent organ damage; (3) **PESE (Post-Exertional Symptom Exacerbation)** screen — if present, AVOID standard graded exercise therapy (GET) — can worsen; use **pacing** + symptom-titrated activity; (4) **Pulmonary rehab elements**: breathing exercises (diaphragmatic, pursed-lip), aerobic if tolerated, IMT, education; (5) **Cardiac rehab elements**: for POTS — recumbent → upright progression (CHOP protocol), volume expansion (fluid + salt), compression, fludrocortisone/midodrine/IVA selected; (6) **Cognitive rehab**: external aids, paced cognitive activity, treat sleep + mood; (7) **PT**: graded mobility, strength, balance — SYMPTOM-TITRATED; (8) **Psychological**: CBT, ACT, mindfulness for symptom coping (not implying psychogenic); (9) **Sleep, nutrition, energy management**: pacing strategies, activity diary; (10) **Multidisciplinary clinic**: physiatry + pulm + cardio + neuro + psych + PT + OT + SLP + social work; (11) **Patient + family education + advocacy**: validate experience; (12) **Return-to-activity**: gradual + paced; return-to-sport criteria; **Modern**: PESE-aware + multidisciplinary post-COVID clinics + pacing"
+      },
+      {
+        "label": "C",
+        "text": "No rehab — wait"
+      },
+      {
+        "label": "D",
+        "text": "Bedrest 1 yr"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Post-COVID rehab: heterogeneous. SCREEN for PESE — avoid GET if present, use pacing. POTS protocols. Pulm + cardiac + cognitive + MSK + psych elements. Multidisciplinary clinic. Validate + family. Modern: pacing.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "respiratory",
+    "board_age_group": "adult",
+    "reference_source": "WHO Post-COVID; AAPM&R PASC"
+  },
+  {
+    "scenario": "ผู้ป่วย post-lung transplant 6 wk — pulmonary rehab planning",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No rehab post-transplant"
+      },
+      {
+        "label": "B",
+        "text": "Post-Lung Transplant Pulmonary Rehab: (1) **Pre-transplant** \"prehab\": maintain exercise tolerance + nutrition + strength — predicts outcomes; (2) **Early post-transplant** (inpatient): mobilization day 1-2 if stable, IS, airway clearance, breathing exercises, gradual ambulation; (3) **Outpatient PR** (typically 4-12 wk post-transplant when stable): - Aerobic (treadmill, cycle); - Resistance — important due to steroid myopathy + critical illness; - IMT adjunct; - Education on meds + signs of rejection + infection; (4) **Exercise prescription**: HR less reliable (denervation, meds — use RPE); start moderate progress; monitor SpO2 + symptoms; (5) **Immunosuppression effects**: steroid myopathy + osteopenia (resistance training + Ca/vit D + bisphosphonate selected), DM, HTN, nephrotoxicity, infection risk; (6) **Rejection** surveillance (bronchoscopy + biopsy + PFTs) — patient watches for ↓SpO2, dyspnea, fever, FEV1 drop; (7) **CLAD/BOS** (chronic lung allograft dysfunction): ongoing concern — PR ongoing; (8) **Infection precautions** w/ immunosuppression: handwashing, vaccinations (no live), avoid exposure, mask in crowded; (9) **Psychosocial**: post-transplant adjustment, survivor concerns, family + return to work; (10) **Long-term**: lifelong PR + comprehensive care + skin cancer screening + malignancy risk; **Modern**: integrated transplant + rehab + tele-PR"
+      },
+      {
+        "label": "C",
+        "text": "Bedrest"
+      },
+      {
+        "label": "D",
+        "text": "Maximum intensity immediately"
+      },
+      {
+        "label": "E",
+        "text": "Discharge — wait rejection"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Lung transplant PR: prehab + early mobilization + outpatient program. RPE-guided (denervation). Resistance for steroid myopathy. Immunosuppression considerations + rejection + CLAD/BOS + infection + psychosocial. Lifelong.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "respiratory",
+    "board_age_group": "adult",
+    "reference_source": "ISHLT; ATS/ERS PR"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 70 ปี post-acute respiratory failure ICU 3 wk — ICU-acquired weakness + delirium — transferring rehab",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bedrest 4 wk"
+      },
+      {
+        "label": "B",
+        "text": "Post-ICU Rehab — ICU-Acquired Weakness + PICS: (1) **Post-Intensive Care Syndrome (PICS)**: physical (ICU-AW — critical illness polyneuropathy + myopathy), cognitive impairment, psychiatric (anxiety, depression, PTSD); family — PICS-F; (2) **Assessment**: MRC sum score (muscle strength), 6MWT, FIM, neurocog (MoCA), HADS, IES-R (PTSD); pulmonary, swallow (high dysphagia rate post-intubation); (3) **Early mobilization in ICU** (prevention) — evidence + safe (TEAM RCT mixed, but generally beneficial w/ protocol); (4) **Rehab interventions**: - PT: progressive mobility (bed → edge → stand → ambulation), strengthening, endurance; - OT: ADLs + adaptive equipment; - SLP: swallow + voice (post-intubation) + cognitive; - RT: airway clearance, IS, IMT; - Nutrition: protein-rich, calorie adequate, address sarcopenia; - Cognitive rehab + sleep + mood + family; (5) **Delirium** ongoing management — environment, sleep, sensory, address meds, treat contributors; (6) **Pulmonary**: weaning trach, IMT, breathing exercises; (7) **Address: pain, sleep, nutrition, mood, family** all contributors; (8) **Multidisciplinary IRF or LTAC** based on intensity needs; (9) **Long-term PICS clinic**: outcomes track years post-discharge; (10) **Family education + support — PICS-F**; **Modern**: ICU mobility + post-ICU clinics + integrated rehab"
+      },
+      {
+        "label": "C",
+        "text": "Single discipline"
+      },
+      {
+        "label": "D",
+        "text": "Discharge home no services"
+      },
+      {
+        "label": "E",
+        "text": "Hospice"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Post-ICU: PICS triad. Early ICU mobilization. Assessment MRC/6MWT/FIM/MoCA. PT + OT + SLP + RT + nutrition + cognitive + family. IRF/LTAC. Long-term PICS clinic. Family PICS-F. Modern integrated.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "respiratory",
+    "board_age_group": "geriatric",
+    "reference_source": "SCCM PICS; ABCDEF Bundle"
+  },
+  {
+    "scenario": "ผู้ป่วย cystic fibrosis อายุ 22 ปี — chronic productive cough + declining FEV1 — airway clearance + exercise",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bedrest"
+      },
+      {
+        "label": "B",
+        "text": "CF Comprehensive Rehab: (1) **Multidisciplinary CF center**: pulm + RT + PT + dietitian + nurse + social work + psychologist + family; (2) **Airway clearance techniques (ACT)** daily core: - Active Cycle of Breathing Technique (ACBT); - Autogenic drainage; - PEP (positive expiratory pressure) — flutter, acapella, PARI PEP; - High-frequency chest wall oscillation (HFCWO — vest); - Postural drainage + percussion (less common now); - Adjunct nebulized hypertonic saline 7% + dornase alfa; (3) **Exercise**: aerobic + resistance — improves FEV1, QOL, BMD, mucus clearance; integrated as ACT; tailored intensity; (4) **CFTR modulators** (game-changing): elexacaftor/tezacaftor/ivacaftor (Trikafta) for eligible mutations — dramatically improves outcomes; (5) **Nutrition**: high-calorie + protein + fat + supplements (ADEK vitamins); BMI target; pancreatic enzyme replacement (PERT); (6) **CFRD** (CF-related diabetes) screening + management; (7) **Infections** — culture-directed antibiotics (P. aeruginosa, B. cepacia, MRSA, NTM); infection control between CF patients (segregation); (8) **Mental health**: depression + anxiety high prevalence; screen + treat (CF Foundation Mental Health Guidelines); (9) **Bone health, fertility, transition adult care**; (10) **Pre/post lung transplant rehab**; **Modern**: CFTR modulators + integrated multidisciplinary + telemedicine"
+      },
+      {
+        "label": "C",
+        "text": "No ACT"
+      },
+      {
+        "label": "D",
+        "text": "Single discipline"
+      },
+      {
+        "label": "E",
+        "text": "Discharge — no follow-up"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "CF: multidisciplinary center. ACT daily + exercise. CFTR modulators (Trikafta) game-changing. Nutrition + PERT + CFRD. Infection control. Mental health. Long-term care + transition + transplant. Modern integrated.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "respiratory",
+    "board_age_group": "adult",
+    "reference_source": "CF Foundation Guidelines; CFTR Modulators"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี post-breast Ca + axillary node dissection 6 mo — มี ipsilateral upper limb lymphedema",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Avoid all exercise"
+      },
+      {
+        "label": "B",
+        "text": "Breast Cancer-Related Lymphedema (BCRL): (1) **Risk**: ~20% post-ALND + radiation; reduced w/ SLN biopsy + axillary reverse mapping; (2) **Staging (ISL)**: Stage 0 (subclinical) → I (reversible) → II (irreversible) → III (lymphostatic elephantiasis); (3) **Assessment**: limb volume (perometer, water displacement, circumferential), bioimpedance (L-Dex — early detection), symptoms, function, ROM, strength; rule out DVT, infection, recurrence; (4) **Complete Decongestive Therapy (CDT) — gold standard**: - **Phase 1 (intensive 2-4 wk)**: MLD (manual lymphatic drainage), multilayer short-stretch bandaging, exercise w/ bandage, skin care; - **Phase 2 (maintenance lifelong)**: compression garment (custom or off-shelf — Class 2-3), self-MLD, exercise, skin care; (5) **Compression**: garment 24-h or daytime + night bandaging/Tribute selected; (6) **Pneumatic compression pumps**: adjunct; (7) **Exercise** SAFE: strengthening (PAL trial — weights safe and helpful), aerobic; (8) **Surgical**: vascularized lymph node transfer, lympho-venous anastomosis, liposuction — selected refractory/stage II-III; (9) **Skin care**: prevent infection — moisturize, avoid trauma, treat promptly; lifelong cellulitis risk; (10) **Education + adherence + psychosocial**; (11) **CLT** (certified lymphedema therapist) PT/OT specialty; **Modern**: early detection (L-Dex) + early intervention + surgical advances"
+      },
+      {
+        "label": "C",
+        "text": "Just monitor — no Tx"
+      },
+      {
+        "label": "D",
+        "text": "Diuretic alone"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "BCRL: 20% ALND risk. ISL staging. CDT gold standard (MLD + bandaging + exercise + skin care intensive → garment maintenance). Exercise safe (PAL). Surgical for refractory. Early detection (L-Dex) + lifelong.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "ISL Consensus; PAL Trial"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี post-lung Ca resection (lobectomy) — chemo planning — \"prehabilitation\" question",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bedrest before surgery"
+      },
+      {
+        "label": "B",
+        "text": "Prehabilitation — Oncologic: (1) **Concept**: optimize pre-treatment functional status to improve outcomes (postoperative morbidity, length of stay, QOL, treatment tolerance); (2) **Multimodal prehab** (most evidence): exercise + nutrition + psychological + smoking cessation + alcohol reduction; (3) **Exercise**: aerobic + resistance + IMT — 4 wk minimum often, longer better; CPET-guided when possible; (4) **Nutrition**: optimize protein, address sarcopenia + malnutrition, immunonutrition (selected — arginine, omega-3, nucleotides), pre + post; (5) **Smoking cessation**: ideally 4-8 wk pre-op — reduces pulm complications, wound; (6) **Alcohol reduction**: 4 wk pre-op recommended; (7) **Psychological**: anxiety + depression screen + treat, mindfulness, CBT; (8) **Comorbidity optimization**: DM (A1c), CV, COPD/anemia/cardiac eval; (9) **Multidisciplinary**: surgery + oncology + physiatry + PT + dietitian + psychology + smoking cessation; (10) **Evidence**: meta-analyses show reduced postop complications, shorter LOS, faster functional recovery (especially abdominal, thoracic surgery); (11) **Logistics**: prehab clinics, home-based, telerehab — increase access; (12) **Continuation**: prehab → rehab postop continuum; (13) **ERAS integration**; **Modern**: multimodal multidisciplinary + technology-enabled access"
+      },
+      {
+        "label": "C",
+        "text": "No prehab"
+      },
+      {
+        "label": "D",
+        "text": "Surgery delay 1 yr"
+      },
+      {
+        "label": "E",
+        "text": "Hospice"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Prehab: optimize pre-Tx — multimodal exercise + nutrition + psych + smoking + alcohol + comorbidity. CPET-guided. Multidisciplinary. Evidence reduced complications + LOS. ERAS integration. Modern multimodal.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "Carli; ERAS Society"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 60 ปี post-chemo (taxane + platinum) — chemotherapy-induced peripheral neuropathy (CIPN) — function limited",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Opioid only escalating"
+      },
+      {
+        "label": "B",
+        "text": "CIPN Management: (1) **Common offenders**: platinum (cisplatin, oxaliplatin), taxanes (paclitaxel), vinca (vincristine), bortezomib, thalidomide; mechanism varies (oxaliplatin acute cold-induced + chronic, taxane axonal); (2) **Assessment**: clinical exam (sensory, motor, autonomic), PROs (CIPN20, FACT/GOG-Ntx), QST, NCS selected, functional (balance, hand function); CTCAE grading; (3) **Prevention**: limited proven — duloxetine NOT prevention; cryotherapy (taxane hand/foot — limited evidence); dose modification when CTCAE Gr 2-3; (4) **Treatment**: - **Duloxetine** — ONLY agent w/ Grade A evidence (Smith JAMA 2013) for painful CIPN; - Limited evidence: gabapentin, pregabalin, TCA, topical (capsaicin, lidocaine, ketamine/amitriptyline compound); - AVOID opioid escalation chronic; (5) **Non-pharmacologic**: - **Exercise** evidence growing — balance, sensorimotor, aerobic, resistance; - **PT/OT**: balance training, functional, adaptive equipment, fall prevention; - **Acupuncture** selected (mixed evidence); - **Scrambler therapy** — emerging; - **TENS, mind-body**; (6) **Multidisciplinary**: oncology + physiatry + neurology + PT + OT + pain medicine + behavioral; (7) **Address contributors**: B12 deficiency (metformin), DM, alcohol; (8) **Functional + safety**: fall prevention, equipment, modifications; (9) **Patient education + survivorship integration**; **Modern**: exercise + duloxetine + multimodal + survivorship clinics"
+      },
+      {
+        "label": "C",
+        "text": "No intervention"
+      },
+      {
+        "label": "D",
+        "text": "Bedrest"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "CIPN: platinum + taxane common. CTCAE grading. Duloxetine Grade A for painful CIPN. Exercise emerging. PT/OT balance + fall prevention. Avoid opioid escalation. Multidisciplinary. Survivorship integration.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "ASCO CIPN Guidelines; Smith JAMA"
   }
 ]
