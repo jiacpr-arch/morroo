@@ -1,7 +1,14 @@
 import { createClient } from "./client";
-import type { McqChoice } from "../types-mcq";
+import type { McqChoice, McqChoiceExplanation } from "../types-mcq";
 
 // Admin-only MCQ CRUD mutations (browser client, role checked server-side by RLS)
+
+export interface McqDetailedExplanation {
+  summary: string;
+  reason: string;
+  choices: McqChoiceExplanation[];
+  key_takeaway: string;
+}
 
 export interface McqQuestionInput {
   subject_id: string;
@@ -13,6 +20,10 @@ export interface McqQuestionInput {
   choices: McqChoice[];
   correct_answer: string;
   explanation?: string | null;
+  // Per-choice "why" reasoning shown on the answer pages (jsonb column).
+  detailed_explanation?: McqDetailedExplanation | null;
+  is_ai_enhanced?: boolean;
+  ai_notes?: string | null;
   difficulty: "easy" | "medium" | "hard";
   topic?: string | null;
   status: "active" | "review" | "disabled";

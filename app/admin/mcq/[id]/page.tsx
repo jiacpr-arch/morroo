@@ -5,6 +5,7 @@ import { useRouter, useParams } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { Loader2, Shield } from "lucide-react";
 import { McqForm, type AdminMcqSubject, type AdminBoardTopic } from "../McqForm";
+import type { McqDetailedExplanation } from "@/lib/supabase/mutations-mcq-admin";
 
 export default function EditMcqPage() {
   const router = useRouter();
@@ -32,7 +33,7 @@ export default function EditMcqPage() {
       const [qRes, sRes, tRes] = await Promise.all([
         supabase
           .from("mcq_questions")
-          .select("id, subject_id, exam_type, exam_source, scenario, choices, correct_answer, explanation, difficulty, topic, status, audience, board_section, board_topic, board_age_group, board_level, reference_source")
+          .select("id, subject_id, exam_type, exam_source, scenario, choices, correct_answer, explanation, detailed_explanation, difficulty, topic, status, audience, board_section, board_topic, board_age_group, board_level, reference_source")
           .eq("id", questionId)
           .single(),
         supabase
@@ -73,6 +74,9 @@ export default function EditMcqPage() {
     <McqForm
       subjects={subjects}
       boardTopics={boardTopics}
+      initialDetailed={
+        (initial.detailed_explanation as McqDetailedExplanation | null) ?? null
+      }
       initial={{
         id: initial.id as string,
         subject_id: initial.subject_id as string,
