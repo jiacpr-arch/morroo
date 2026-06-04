@@ -338,5 +338,175 @@
     "board_topic": "rheumatology",
     "board_age_group": "adult",
     "reference_source": "ACR/SAA/SPARTAN Treatment Recommendations 2019; ASAS/EULAR 2022 Update"
+  },
+  {
+    "scenario": "Resident ถามอาจารย์เรื่อง bone biology — bone remodeling + osteoporosis pathophysiology",
+    "choices": [
+      { "label": "A", "text": "Bone is static tissue" },
+      { "label": "B", "text": "Bone Biology + Remodeling: (1) Two cell types: **osteoblasts** (bone formation — secrete osteoid + matrix) and **osteoclasts** (bone resorption — derived from monocyte lineage, multinucleated); (2) **Bone remodeling cycle**: activation → resorption (osteoclasts dig pit) → reversal → formation (osteoblasts fill with new bone) → mineralization; continuous balance maintains bone mass; takes 4-6 months per cycle; (3) **Regulation**: parathyroid hormone (intermittent — anabolic; sustained — catabolic), vitamin D (Ca absorption + bone), calcitonin (inhibit osteoclast — minor), estrogen (inhibit osteoclast — explains postmenopausal bone loss), glucocorticoids (catabolic), thyroid (high turnover), mechanical loading (Wolff's law — bone adapts to load); (4) **Bone composition**: cortical (dense, peripheral, 80% of skeleton) + trabecular/cancellous (sponge-like, internal, higher turnover, sensitive to estrogen — vertebrae); (5) **Pathophysiology of osteoporosis**: imbalance — resorption > formation; postmenopausal — estrogen deficiency → ↑ RANK-L → ↑ osteoclast; senile — both decrease but resorption > formation; secondary — glucocorticoids, hyperparathyroidism, hyperthyroidism, malabsorption, hypogonadism; (6) **Diagnosis**: DEXA T-score (-2.5 or lower = osteoporosis; -1.0 to -2.5 osteopenia; > -1.0 normal); fragility fracture defines clinical osteoporosis regardless of DXA; (7) **Treatment**: bisphosphonates (anti-resorptive — alendronate, risedronate, zoledronate IV), denosumab (anti-RANK-L mAb), teriparatide (recombinant PTH 1-34 anabolic), abaloparatide, romosozumab (anti-sclerostin — anabolic), SERMs (raloxifene), Ca + vitamin D, exercise; (8) **Calcium + vitamin D** foundation: Ca 1000-1200 mg, vit D 800-2000 IU daily" },
+      { "label": "C", "text": "Only one cell type involved" },
+      { "label": "D", "text": "No regulation" },
+      { "label": "E", "text": "No hormonal effects" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Bone is dynamic — continuous remodeling. Osteoblasts + osteoclasts balance determines bone mass. Hormonal + mechanical regulation. Postmenopausal + senile + secondary osteoporosis mechanisms. Diagnosis: DEXA T-score + fragility fracture. Treatment: anti-resorptive + anabolic agents + Ca/vit D + exercise. Modern: biologics (denosumab, romosozumab) + sequential therapy.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "Endocrine Society Osteoporosis 2019; AACE Guidelines"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง biomechanics — joint forces + implant design considerations",
+    "choices": [
+      { "label": "A", "text": "No engineering principles needed" },
+      { "label": "B", "text": "Orthopedic Biomechanics + Implant Design: (1) **Joint forces**: hip + knee experience 3-5× body weight during walking, up to 8× during running; this drives loosening, wear of implants; (2) **Wolff's Law**: bone remodels in response to load — relevant for stress shielding around implants; (3) **Implant materials**: titanium (Ti6Al4V — strong, biocompatible, lower modulus to reduce stress shielding), cobalt-chrome (wear surface), zirconia ceramic (low wear, brittle), UHMWPE polyethylene (bearing surface), highly crosslinked polyethylene (reduced wear); (4) **Failure modes**: aseptic loosening (most common reason for revision — particle disease, polyethylene wear → osteolysis), infection (1-2% — devastating), instability, fracture, wear; (5) **Total Hip Arthroplasty (THA) design**: femoral stem (cemented vs cementless — initial fixation by interference fit then bone ingrowth), femoral head (28-36 mm — larger reduces dislocation but increases wear with metal-on-metal), acetabular cup (titanium shell + polyethylene liner — standard), fixation (cemented for elderly, cementless for younger); (6) **Bearing surfaces**: metal-on-polyethylene (standard), ceramic-on-polyethylene (lower wear), ceramic-on-ceramic (lowest wear but squeak + fracture risk), metal-on-metal (mostly abandoned — pseudotumor + ion levels); (7) **Surgical principles**: anatomic positioning, soft tissue balance, ROM, stability, leg length; (8) **Recovery**: early mobilization, PT, weight bearing as tolerated typically; (9) **Survivorship**: > 90% 15-20 years modern THA/TKA" },
+      { "label": "C", "text": "All materials same" },
+      { "label": "D", "text": "No mechanical principles" },
+      { "label": "E", "text": "Random design" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Biomechanics + implant design = critical for orthopedic outcomes. Joint forces drive wear. Material selection + design + fixation choices. Failure modes: aseptic loosening (most), infection, instability. Bearing surfaces evolved over decades. Modern implants > 90% 15-20 yr survival. Stress shielding around implants. Wolff's law relevant.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "AAOS OKU (Orthopaedic Knowledge Update); Kuiper JH"
+  },
+  {
+    "scenario": "อาจารย์อธิบาย physiology — muscle + tendon biology + healing",
+    "choices": [
+      { "label": "A", "text": "No biology relevant" },
+      { "label": "B", "text": "Muscle + Tendon Biology: (1) **Muscle types**: skeletal (voluntary, striated), cardiac, smooth; **fiber types** (skeletal): Type I slow-twitch oxidative (endurance, fatigue-resistant, mitochondria-rich, red), Type IIa fast-twitch oxidative-glycolytic (mixed), Type IIb fast-twitch glycolytic (power, fatigue-easily); training-dependent shift; (2) **Muscle contraction**: actin-myosin sliding filament theory — ATP-dependent — neural input → ACh release → Ca release from SR → cross-bridge cycling; (3) **Muscle injury**: strain (overstretch — pain, bleeding) → hematoma → inflammatory phase → satellite cell activation → regeneration with new myofibers; scar tissue if extensive; (4) **Healing phases**: hemostasis + inflammation → cell proliferation → matrix remodeling; (5) **Tendon biology**: type I collagen primarily; lower vascularity → slower healing; tendon healing phases similar — inflammation, proliferation, remodeling; (6) **Risk factors** for tendinopathy: overuse, age, diabetes, fluoroquinolones (CI), genetics; (7) **Treatment principles**: relative rest (not absolute — controlled loading promotes healing), eccentric loading (Alfredson protocol for Achilles), NSAIDs short-term, modalities, PT; surgical repair for complete rupture; (8) **Sports medicine principles**: prehabilitation, biomechanics, return to sport criteria, prevention programs (FIFA 11+, ACL injury prevention); (9) **PRP (platelet-rich plasma)**: emerging therapy for tendinopathy + selected injuries — mixed evidence; (10) **Eccentric exercise**: gold standard for chronic tendinopathy (Alfredson protocol)" },
+      { "label": "C", "text": "All muscle same" },
+      { "label": "D", "text": "No healing process" },
+      { "label": "E", "text": "Cardiac and skeletal same" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Muscle + tendon biology critical for sports medicine + orthopedic care. Fiber types + training. Injury + healing phases. Tendinopathy chronic — eccentric loading evidence-based (Alfredson). Fluoroquinolones cause tendon rupture (avoid). Modern treatments: controlled loading, PT, biologics (PRP). Prevention programs reduce injury (FIFA 11+).",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "AAOS OKU Sports Medicine; Alfredson H Sports Med 1998"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง pharmacology — pain management in orthopedic surgery",
+    "choices": [
+      { "label": "A", "text": "Opioid only" },
+      { "label": "B", "text": "Multimodal Pain Management — opioid-sparing approach: (1) **Multimodal**: target multiple pain pathways with lower doses of each agent — better analgesia + fewer side effects; (2) **Pre-op**: acetaminophen 1000 mg PO + gabapentin 300-600 mg PO + celecoxib 400 mg PO (selective COX-2 inhibitor — less GI/bleeding than non-selective); (3) **Intra-op**: regional anesthesia preferred (spinal, epidural, peripheral nerve block — femoral, adductor canal, popliteal); local infiltration analgesia (LIA — surgeon-administered bupivacaine/liposomal bupivacaine + adjuncts); (4) **Post-op**: scheduled acetaminophen + NSAID (caution renal, GI, bleeding) + low-dose opioid PRN; gabapentin/pregabalin if neuropathic component; ice + elevation; (5) **Avoid**: routine long-term opioids (epidemic + addiction), opioid only as primary analgesic, ketorolac > 5 days; (6) **Special populations**: elderly (reduce doses, avoid certain — Beers Criteria), CKD (NSAIDs avoid, acetaminophen OK), opioid-tolerant (multimodal + higher doses), addiction (consult addiction medicine); (7) **PCA (Patient-Controlled Analgesia)**: useful for major surgery; (8) **Continuous regional catheter**: extended block, less opioid, faster recovery; (9) **Discharge counseling**: limited opioid prescriptions, monitor for misuse, dispose unused, non-opioid alternatives; (10) **Pain assessment**: regular, multimodal scales (NRS, FLACC for pediatric, behavioral); (11) **Acute pain transition to chronic**: identify + intervene early, multidisciplinary pain management" },
+      { "label": "C", "text": "No pain management" },
+      { "label": "D", "text": "Long-term opioid for all" },
+      { "label": "E", "text": "Bedrest only" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Multimodal pain management = standard. Opioid-sparing approach reduces side effects + addiction risk. Pre-op + intra-op + post-op planning. Regional anesthesia + LIA + scheduled non-opioids + minimal opioid PRN. Outcomes: better pain control + faster recovery + less opioid use. Special populations require adjustment. Address opioid epidemic.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "AAOS Pain Management 2019; ASRA Guidelines on Acute Pain Management"
+  },
+  {
+    "scenario": "Hospital wants to reduce surgical complications + improve total joint arthroplasty outcomes — implement ERAS protocol",
+    "choices": [
+      { "label": "A", "text": "Traditional restrictive recovery" },
+      { "label": "B", "text": "ERAS for Total Joint Arthroplasty (THA/TKA): (1) Pre-op: patient education + expectation setting (\"joint class\"), home environment prep; medical optimization (HbA1c < 7%, smoking cessation, weight loss if BMI > 40, dental clearance, anemia treated, MRSA screening + decolonization); (2) Pre-admission carb loading 2h pre-op, no prolonged fasting; (3) Antibiotic prophylaxis within 60 min (cefazolin); (4) Spinal anesthesia preferred + IV sedation; (5) Multimodal analgesia (acetaminophen + NSAID + gabapentinoid + regional block + LIA + minimal opioid); (6) Tranexamic acid (TXA) IV or topical reduces transfusion; (7) Normothermia + restrictive fluids + no Foley routine; (8) Same-day mobilization + early discharge; many centers now outpatient TJA (TKA/THA discharge same day or next morning for selected); (9) Post-op: oral diet + PT immediately; multimodal pain; VTE prophylaxis (aspirin for low-risk, DOAC or LMWH for higher-risk per modern evidence Anderson AAOS); (10) Discharge: home > rehab facility (cost + outcomes), home PT, multidisciplinary follow-up; (11) Outcomes: shorter LOS, lower complications, higher satisfaction, similar safety; (12) Quality metrics: LOS, readmission, complications, PROMs (KOOS, HOOS, EQ-5D); (13) Multidisciplinary: surgeon, anesthesia, nursing, PT/OT, social work, case management" },
+      { "label": "C", "text": "Bed rest 1 week" },
+      { "label": "D", "text": "Opioid-only analgesia" },
+      { "label": "E", "text": "No PT" }
+    ],
+    "correct_answer": "B",
+    "explanation": "ERAS for TJA — major paradigm shift. Pre-op optimization + same-day mobilization + multimodal analgesia + TXA + outpatient TJA programs. Reduces LOS, complications, opioid use. Patient education key. Multidisciplinary. Outcomes equivalent or better than traditional. PROMs (patient-reported outcome measures) track success. Modern: many TJA outpatient.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "ERAS Society Guidelines for Total Hip + Knee Replacement 2020; Wainwright TW et al."
+  },
+  {
+    "scenario": "Hospital implements fall prevention program for elderly + osteoporosis screening + treatment",
+    "choices": [
+      { "label": "A", "text": "No interventions needed" },
+      { "label": "B", "text": "Fracture Prevention Program — multilevel approach: (1) **Universal screening**: DXA at age 65 (women) + 70 (men), earlier if risk factors; FRAX score (10-year fracture risk); (2) **Fall prevention** (CDC STEADI): screen all elderly annually (3 Key Questions, Timed Up and Go), gait/balance, medication review (Beers), home safety, vision/hearing, vitamin D, exercise (Tai Chi, Otago); (3) **Treatment when indicated**: bisphosphonate (alendronate 70 mg/wk, risedronate, zoledronate 5 mg IV/year), denosumab (60 mg SC q6 mo — careful — discontinuation rebound fracture risk if not transitioned), teriparatide (20 mcg SC daily × 2 yr, anabolic for high-risk), romosozumab (anabolic 1 yr then anti-resorptive); Ca + vitamin D foundation; (4) **Secondary fracture prevention**: fragility fracture clinic — initiate Rx after any fragility fracture (50% reduction subsequent fractures with treatment); coordinator-based programs (Fracture Liaison Service) effective; (5) **Drug holiday** consideration with long-term bisphosphonate (5-10 yr — assess); (6) **Multidisciplinary**: PCP, orthopedic, endocrine, geriatric, PT, pharmacy; (7) **Patient education**: nutrition, exercise, fall prevention, medication adherence; (8) **Long-term**: regular DXA, adherence monitoring, side effect management (jaw osteonecrosis rare, atypical femur fracture rare with bisphosphonates); (9) **Quality metrics**: screening rate, treatment rate, fracture rate, mortality post-hip fracture (20-30% first year)" },
+      { "label": "C", "text": "Bed rest" },
+      { "label": "D", "text": "Aspirin only" },
+      { "label": "E", "text": "Avoid screening" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Fracture prevention = multilevel + system approach. Universal screening (DXA, FRAX). Fall prevention (CDC STEADI). Anti-osteoporosis treatment when indicated. Secondary fracture prevention (FLS) — most underutilized opportunity. Multidisciplinary care. Modern: anabolic agents for very high risk + sequential therapy. Patient education + adherence. Mortality post-hip fracture significant.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "CDC STEADI; AACE 2020 Osteoporosis Guidelines; National Osteoporosis Foundation"
+  },
+  {
+    "scenario": "Hospital implements ortho-geriatric co-management for hip fracture patients — reduce mortality + complications",
+    "choices": [
+      { "label": "A", "text": "Single specialty manages" },
+      { "label": "B", "text": "Ortho-Geriatric Co-Management for Hip Fracture: (1) **Co-management model**: ortho + geriatrics jointly manage, daily ward rounds; (2) **Evidence**: reduces mortality (10-15% relative), LOS, complications, delirium per Cochrane + systematic reviews; (3) **Care pathway**: standardized + multidisciplinary — admission within hours, surgical assessment + repair within 24-48h, post-op early mobilization day 1; (4) **Pre-op optimization**: anesthesia evaluation, anti-coagulation reversal, cardiac risk assessment + optimization (echo, beta-blocker, statin), nutrition, anemia treatment, delirium assessment + prevention; (5) **Pain control**: multimodal — fascia iliaca compartment block or femoral nerve block effective + opioid-sparing; (6) **VTE prophylaxis**: low molecular weight heparin or DOAC; (7) **Delirium**: CAM screening, prevention (reorient, hydrate, mobilize, sleep), treatment of underlying causes; (8) **Pressure injury prevention**: turning, special mattress, nutrition, skin care; (9) **Nutrition**: oral supplement (Cochrane evidence reduces complications), early diet, PEG if needed; (10) **Mobilization day 1**: weight-bearing as tolerated (essential — Cochrane), PT/OT, fall prevention; (11) **Discharge planning early**: home vs rehab vs SNF, family support, services; (12) **Secondary prevention**: osteoporosis treatment, fall prevention, FLS; (13) **Quality metrics**: 30-day mortality, time to surgery, delirium incidence, mobilization day, LOS, readmission, secondary prevention rates; (14) **NSQIP, Australia + UK National Hip Fracture Database, AAOS — best practice models" },
+      { "label": "C", "text": "Avoid surgery" },
+      { "label": "D", "text": "Geriatric alone" },
+      { "label": "E", "text": "Bedrest" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Ortho-geriatric co-management for hip fracture: evidence-based — reduces mortality + complications. Joint care, standardized pathway, early surgery, multimodal pain, delirium prevention, early mobilization, secondary prevention. UK National Hip Fracture Database transformed UK practice. AAOS standards. Quality metrics drive improvement.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "UK National Hip Fracture Database; Cochrane Reviews; AAOS Hip Fracture Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 78 ปี post-THA day 7 underlying T2DM, CKD3, CAD, mild dementia + delirium + new arrhythmia (AF) postoperatively\n\nคำถาม: complex elderly post-surgical management integrative care",
+    "choices": [
+      { "label": "A", "text": "Single specialty" },
+      { "label": "B", "text": "Complex Elderly Post-Surgical Integrative Care: (1) **Multidisciplinary team**: orthopedics + geriatrics + cardiology + endocrinology + nephrology + neurology + PT/OT + nutrition + pharmacy + social work + psychiatry + case management; (2) **New AF post-op**: cardiology consult — rate control (metoprolol cautious in HF, diltiazem alternative), anticoagulation decision (CHA2DS2-VASc) — high stroke risk vs surgical bleeding (consult orthopedics, plan timing); (3) **Delirium**: identify cause (medications, infection, pain, dehydration, hypoxia, withdrawal, etc.); treat underlying; non-pharmacologic measures (re-orient, family presence, sleep hygiene, mobility, sensory aids); low-dose antipsychotic only for severe agitation/safety (haloperidol, quetiapine — avoid in elderly per Beers); avoid benzodiazepines (worsen); (4) **CKD**: adjust medications, monitor Cr + electrolytes, avoid nephrotoxins (NSAIDs, contrast, gentamicin); (5) **DM**: glycemic control, post-op insulin transition; (6) **Multimodal pain**: avoid opioid-heavy in elderly (delirium risk); regional block + scheduled non-opioid; (7) **VTE prophylaxis**: balance bleeding risk; (8) **Nutrition**: oral supplement, monitor weight; (9) **Mobility + PT**: every day; (10) **Discharge planning**: home with services vs SNF vs LTC — family support assessment, environmental safety; (11) **Polypharmacy review**: deprescribing where possible (Beers Criteria + STOPP/START); (12) **Family engagement** + caregiver support + advance care planning + goals of care discussion; (13) **Follow-up**: orthopedic, primary care, cardiology, comprehensive geriatric assessment; (14) **Long-term**: secondary prevention (osteoporosis, falls, CV)" },
+      { "label": "C", "text": "Discharge home" },
+      { "label": "D", "text": "ICU only" },
+      { "label": "E", "text": "Refuse care" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Complex elderly post-surgical care = quintessentially integrative. Multidisciplinary management. New AF + delirium + multi-organ disease — common, complex. CHA2DS2-VASc anticoagulation decision balanced with surgical bleeding. Delirium common, multifactorial — treat underlying. Polypharmacy review (Beers, STOPP/START). Family engagement + goals of care. Comprehensive geriatric assessment. Modern: ortho-geriatric co-management standard.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "AAOS + AGS Guidelines; ACS Geriatric Surgery Verification"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 35 ปี traumatic spinal cord injury post-MVC 3 months ago — paraplegia level T6 ASIA A — undergoing rehabilitation\n\nคำถาม: lifelong integrative care + multidisciplinary management",
+    "choices": [
+      { "label": "A", "text": "Single specialty" },
+      { "label": "B", "text": "SCI Lifelong Integrative Care: (1) **Acute rehabilitation** (post-acute care 4-12 wk): comprehensive in SCI specialty unit; (2) **Multidisciplinary team**: physiatry/PM&R, neurology, urology, orthopedics, plastics, GI, psychiatry, pulmonology, social work, vocational rehab, peer support, sexual health; (3) **PT/OT**: strength, transfers, wheelchair skills, ADLs, gait training (if applicable), assistive devices, home modifications; (4) **Bladder management**: intermittent catheterization preferred (lower UTI than indwelling); UTI surveillance + treatment; urodynamics; (5) **Bowel program**: scheduled, manual stimulation, diet, medications (suppositories, mini-enemas); (6) **Skin/pressure injury prevention**: pressure relief q15-30 min, special cushions/mattress, daily skin checks, nutrition; (7) **Autonomic dysreflexia** (above T6 SCI): elevated BP from noxious stimulus below — life-threatening; remove stimulus + sit upright + treat HT (nitroglycerin, nifedipine), education to patient + family; (8) **Spasticity**: PT/OT, oral baclofen, tizanidine, intrathecal baclofen pump, botulinum toxin injection; (9) **Cardiovascular**: orthostatic hypotension, decreased fitness — exercise + monitoring; (10) **Pulmonary**: respiratory PT (high SCI especially), vaccination, vigilance for infection; (11) **Sexual + reproductive health**: counseling, medication (PDE5i), assisted reproduction if needed, partner support; (12) **Mental health**: depression high prevalence (50%), suicide risk, peer support groups, counseling, medication; (13) **Vocational**: return to school/work, education, disability services; (14) **Long-term**: pressure injuries, UTIs, secondary medical conditions, neurogenic bone changes (HO), accelerated aging, chronic pain (50% — neuropathic); (15) **Emerging therapies**: neuromodulation, exoskeletons, regenerative medicine — research; (16) **Family + caregiver support**: training, respite, financial; (17) **Equity + access** challenges" },
+      { "label": "C", "text": "Bedridden" },
+      { "label": "D", "text": "Hospice" },
+      { "label": "E", "text": "Single specialist" }
+    ],
+    "correct_answer": "B",
+    "explanation": "SCI lifelong integrative care = paradigm of multidisciplinary medicine. Acute rehab in specialty unit. Multiple body systems involved. Autonomic dysreflexia emergency. Mental health critical. Long-term complications. Family + caregiver support. Vocational rehabilitation. Emerging technologies promising. Equity + access issues. Modern outcomes: many individuals lead fulfilling lives with appropriate support.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "Consortium for Spinal Cord Medicine; Christopher + Dana Reeve Foundation"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี newly diagnosed osteoporotic vertebral compression fractures × 3 in past 6 months + chronic pain + functional decline + depression — multidisciplinary integrative management needed",
+    "choices": [
+      { "label": "A", "text": "NSAIDs only" },
+      { "label": "B", "text": "Vertebral Compression Fracture (VCF) + Osteoporosis + Chronic Pain Integrative Care: (1) **Acute fracture management**: pain control multimodal (acetaminophen, NSAIDs cautious, calcitonin nasal spray short-term, tramadol or low-dose opioid PRN — Beers caution in elderly), bracing (TLSO short-term selected), rest then mobilize; (2) **Procedural options**: vertebroplasty or kyphoplasty — controversial (Cochrane mixed; recent trials show benefit in selected acute persistent severe pain); patient selection important; (3) **Imaging**: MRI to distinguish acute (edema) vs old fractures, rule out malignancy (10% can be neoplastic); (4) **Osteoporosis management**: workup secondary causes (Ca, vitamin D, PTH, TSH, etc.); start anabolic agent (teriparatide, romosozumab) for very high-risk (multiple recent fractures, T-score very low) — superior to anti-resorptive in this setting (VERO, ARCH trials); transition to anti-resorptive after; Ca + vitamin D foundation; (5) **Fall prevention** (CDC STEADI) + osteoporosis prevention; (6) **Multidisciplinary**: PCP, ortho, endocrine, geriatric, PM&R, pain management, mental health, PT, social work; (7) **PT**: posture, balance, core strengthening, gait training, assistive devices; (8) **Mental health**: depression high prevalence in chronic pain + functional decline — screening + treatment (SSRI, CBT, multidisciplinary pain program); (9) **Nutrition**: protein, Ca, vitamin D, weight; (10) **Social support**: family, peer support groups, caregiver; (11) **Survivorship + secondary prevention**: lifelong osteoporosis care + bone health; (12) **Quality of life focus**: functional improvement, return to meaningful activities; (13) **Long-term**: continued surveillance + treatment + adherence + adjustment" },
+      { "label": "C", "text": "Bedrest" },
+      { "label": "D", "text": "Spinal fusion all" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "VCF + osteoporosis + chronic pain = integrative multidisciplinary care. Acute pain management + procedural (kyphoplasty selected). Aggressive osteoporosis Rx — anabolic preferred for very high-risk recent fractures (VERO, ARCH). Fall prevention + PT. Mental health screening + treatment. Multidisciplinary. Quality of life focus. Modern: anabolic-first then anti-resorptive sequential therapy for very high-risk.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "AACE Osteoporosis Guidelines 2020; AAOS Vertebroplasty; VERO + ARCH Trials"
   }
 ]
