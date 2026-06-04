@@ -338,5 +338,175 @@
     "board_topic": "obgyn",
     "board_age_group": "adult",
     "reference_source": "ACOG Practice Bulletin: Thromboembolism in Pregnancy 2018; ACCP CHEST Antithrombotic Therapy in VTE 2016"
+  },
+  {
+    "scenario": "อาจารย์อธิบาย physiology — pregnancy adaptations + key hemodynamic + endocrine changes",
+    "choices": [
+      { "label": "A", "text": "No significant changes" },
+      { "label": "B", "text": "Pregnancy Physiologic Adaptations: Cardiovascular — plasma volume ↑ 40-50%, RBC mass ↑ 20-30% (physiologic anemia from dilution), CO ↑ 30-50% (HR + SV both), SVR ↓ → BP nadir mid-pregnancy then rise; Respiratory — minute ventilation ↑ 40% (TV not RR), respiratory alkalosis compensated by renal HCO3 excretion, functional residual capacity ↓; Renal — GFR ↑ 50%, Cr decreases (normal pregnancy < 0.8), glycosuria more common; Hematologic — hypercoagulable (↑ factors I, VII, VIII, IX, X, plasminogen, ↓ protein S), VTE risk; Endocrine — progesterone (smooth muscle relaxation), estrogen, hCG (early luteal support), prolactin (lactation), HPL (insulin antagonism — GDM risk), thyroid (TBG ↑ binding, total T4 ↑ but free T4 normal), cortisol ↑; GI — gastric motility ↓ (reflux), constipation; Musculoskeletal — relaxin (joint laxity, lordosis); Immune — Th2 shift (autoimmune disease may improve)" },
+      { "label": "C", "text": "BP increases" },
+      { "label": "D", "text": "GFR decreases" },
+      { "label": "E", "text": "Hypercoagulable state unchanged" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pregnancy adaptations affect every organ. Key: ↑ plasma volume + CO, ↓ SVR + BP nadir mid-trimester, ↑ GFR, hypercoagulable, respiratory alkalosis, insulin resistance (GDM). Understanding essential for: interpreting normal labs, managing pre-existing conditions in pregnancy, recognizing pathology. Modern obstetric care builds on physiology.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "Williams Obstetrics 26th ed Ch. 4 (Maternal Physiology); Sanghavi M Circulation 2014"
+  },
+  {
+    "scenario": "Resident ถามอาจารย์เรื่อง pharmacology — teratogenic medications + FDA pregnancy category",
+    "choices": [
+      { "label": "A", "text": "All drugs safe in pregnancy" },
+      { "label": "B", "text": "Teratogenic Medications + Pregnancy Considerations: (1) FDA categories replaced by PLLR (Pregnancy and Lactation Labeling Rule) — narrative risk; (2) Known teratogens to avoid: ACEi/ARB (renal dysgenesis, oligohydramnios 2nd-3rd trimester), warfarin (6-12 wk window — chondrodysplasia, microcephaly, fetal bleeding throughout), isotretinoin (multiple), valproic acid (NTD, autism, low IQ), phenytoin (fetal hydantoin syndrome), carbamazepine (NTD), lithium (Ebstein anomaly — relative risk), methotrexate (multiple), thalidomide (limb), DES (clear cell adenocarcinoma in offspring), tetracycline (tooth, bone), aminoglycosides (ototoxicity), fluconazole (multiple), live vaccines (theoretical, avoid), androgens, NSAIDs (avoid 3rd trimester — ductus arteriosus closure, oligohydramnios); (3) Generally safer alternatives: penicillins, cephalosporins (most), acetaminophen, methyldopa (HT), labetalol (HT), nifedipine (HT, tocolysis), insulin (DM), heparin/LMWH (anticoagulation), levothyroxine (hypothyroid); (4) Timing matters — organogenesis 3-8 weeks most vulnerable; (5) Risk-benefit individualized — uncontrolled disease may harm more than medication; (6) Resources: REPROTOX, TERIS, OTIS/MotherToBaby; (7) Folate before + during pregnancy (NTD prevention); (8) Pre-conception counseling for chronic conditions" },
+      { "label": "C", "text": "No need for caution" },
+      { "label": "D", "text": "All antibiotics safe" },
+      { "label": "E", "text": "Stop all medications" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Teratogen awareness critical. Major: ACEi/ARB, warfarin, isotretinoin, valproate, thalidomide, methotrexate. Generally safer: penicillins, acetaminophen, methyldopa, labetalol, insulin, heparin, levothyroxine. Timing of exposure matters. Risk-benefit individualized. Resources: REPROTOX, TERIS, OTIS. Pre-conception counseling + medication review. Folate pre-conception NTD prevention.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "FDA Pregnancy and Lactation Labeling Rule (PLLR); REPROTOX; TERIS"
+  },
+  {
+    "scenario": "อาจารย์อธิบาย physiology — labor + delivery + uterine contraction",
+    "choices": [
+      { "label": "A", "text": "No physiological coordination" },
+      { "label": "B", "text": "Labor Physiology — coordinated uterine activity: (1) Hormonal: ↑ estrogen + ↓ progesterone (functional withdrawal) → increased gap junction (connexin-43) → coordinated contractions; PGE2/F2α uterotonic + cervical ripening; oxytocin from posterior pituitary + receptors upregulated in myometrium late pregnancy; (2) Three phases of cervical change: cervical ripening (softening, late pregnancy), effacement, dilation; (3) Three phases of labor: latent (slow dilation, 0-6 cm), active (6-10 cm, ~1 cm/hr nulli, 1.5 cm/hr multi), 2nd stage (full dilation to delivery — pushing), 3rd stage (delivery of placenta); modern: latent up to 6 cm (vs old 4 cm — Friedman curve revised, Zhang); (4) Cardinal movements of labor (head): engagement → descent → flexion → internal rotation → extension → external rotation → expulsion; (5) Power, passenger, passage (Three P's) determine progress; abnormal labor: protraction, arrest of dilation/descent; (6) Pain control: epidural (lumbar L3-4, blocks T10-L1 + S2-4 — ESM block), spinal, combined, opioids, nitrous oxide, non-pharmacologic; (7) Monitoring: intermittent vs continuous FHR (NICE — intermittent for low-risk; continuous if risk factors); (8) Augmentation: amniotomy, oxytocin titration; (9) Cesarean indications: NRFS, labor dystocia, abnormal presentation, placenta previa, etc." },
+      { "label": "C", "text": "Random uterine activity" },
+      { "label": "D", "text": "No hormonal control" },
+      { "label": "E", "text": "Same throughout pregnancy" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Labor = coordinated uterine activity through hormonal + neurogenic + mechanical factors. Modern understanding (Zhang vs Friedman) — latent labor longer than thought, active phase begins ~ 6 cm. Cardinal movements describe fetal navigation through pelvis. Power/passenger/passage analysis identifies dystocia. Pain management options + risks. Continuous vs intermittent monitoring based on risk. Modern labor management = patient-centered + evidence-based.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "Williams Obstetrics 26th ed Ch. 21-22; Zhang J et al. Obstet Gynecol 2010 (Modern Labor Curve)"
+  },
+  {
+    "scenario": "อาจารย์อธิบาย contraception methods + mechanisms",
+    "choices": [
+      { "label": "A", "text": "Only OCP available" },
+      { "label": "B", "text": "Contraception — tiered approach by effectiveness (CDC + WHO MEC — Medical Eligibility Criteria): (1) **Most effective (< 1% failure)**: LARCs (Long-Acting Reversible Contraception) — implant (etonogestrel — Nexplanon, 3 yr, < 0.1% failure), IUDs (LNG-IUD — Mirena/Liletta/Skyla/Kyleena, 3-8 yr, also treats heavy bleeding; copper IUD — ParaGard, 10 yr, no hormones — useful for emergency contraception); sterilization (vasectomy, tubal ligation/Essure withdrawn); (2) **Very effective (6-9%)**: depot medroxyprogesterone (Depo-Provera 3 mo IM); OCPs (combined estrogen + progestin — many options, also non-contraceptive benefits — cycle regulation, menorrhagia, acne, ovarian/endometrial cancer risk reduction); progestin-only pill (POP — Norethindrone, also breastfeeding); patch (combined); ring (combined NuvaRing/Annovera); (3) **Moderately effective (18%)**: male condom (also STI protection), diaphragm + spermicide; (4) **Less effective (24-28%)**: spermicide, sponge, withdrawal, fertility awareness; (5) **Emergency contraception**: copper IUD (most effective, up to 5 days), ulipristal acetate (5 days), levonorgestrel (3-5 days, less effective); (6) **Mechanisms**: hormonal — suppress LH/FSH (no ovulation), thicken cervical mucus, change endometrium; copper IUD — spermicidal + inflammatory; barrier — physical block; (7) **Choice based on**: patient values, medical history (WHO MEC categories 1-4), STI risk, fertility plans, side effect tolerance" },
+      { "label": "C", "text": "All same effectiveness" },
+      { "label": "D", "text": "No medical conditions matter" },
+      { "label": "E", "text": "Hormones only" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Contraception counseling = patient-centered + evidence-based. Tier 1 = LARC (most effective, increasingly first-line). WHO MEC categorizes eligibility per medical conditions. Estrogen contraindications: VTE history, migraine with aura, stroke, MI, BC < 5 yr, advanced liver, smoking > 35 yo. POP/LARC alternatives. Emergency contraception (copper IUD most effective, ulipristal, LNG). Modern approach: LARC first; respect patient preferences.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "CDC US Medical Eligibility Criteria for Contraceptive Use 2016; WHO MEC 5th edition"
+  },
+  {
+    "scenario": "Hospital wants to reduce maternal mortality + improve obstetric outcomes — implement Maternal Early Warning Systems",
+    "choices": [
+      { "label": "A", "text": "Single intervention" },
+      { "label": "B", "text": "Maternal Quality Improvement Program: (1) Maternal Early Warning Systems (MEWS) — track vital signs trigger response (BP > 160/110, RR > 30, HR > 130, SpO2 < 95%, oliguria, AMS) → rapid response team activation; (2) Standardized bundles (AIM — Alliance for Innovation on Maternal Health): hypertension bundle, hemorrhage bundle, VTE bundle, sepsis bundle, maternal mental health, peripartum racial/ethnic disparities, severe maternal morbidity review; (3) Hemorrhage bundle: risk assessment, recognition + response, hemorrhage cart, MTP, drills; (4) Hypertensive bundle: severe range BP management protocols, MgSO4 use, transfer criteria; (5) Multidisciplinary simulations + drills (shoulder dystocia, hemorrhage, eclampsia, cardiac arrest); (6) Severe maternal morbidity (SMM) review committees + root cause analysis; (7) Levels of maternal care designation (similar to trauma — Level I-IV); (8) Continuous improvement + audit; (9) Address social determinants + disparities (Black women 3-4× maternal mortality in US); (10) Family/support involvement; (11) Mental health screening + treatment; (12) Quality metrics: maternal mortality ratio, SMM rate, blood transfusion rate, NICU admission, c-section rate, breastfeeding initiation, postpartum visit attendance" },
+      { "label": "C", "text": "Single specialty manages" },
+      { "label": "D", "text": "No data collection" },
+      { "label": "E", "text": "Avoid drills" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Maternal mortality reduction = system-level multidisciplinary effort. MEWS for early recognition. Bundles standardize evidence-based care. Drills + simulations improve readiness. SMM review identifies improvement opportunities. Levels of maternal care match risk to capability. AIM + ACOG + national initiatives. Address disparities. Maternal mortality preventable in majority of cases — system improvement saves lives.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "Alliance for Innovation on Maternal Health (AIM); ACOG Obstetric Care Consensus on Levels of Maternal Care 2019"
+  },
+  {
+    "scenario": "Hospital implements ERAS protocol for elective C-section — Enhanced Recovery After Cesarean (ERAC)",
+    "choices": [
+      { "label": "A", "text": "Traditional restrictive recovery" },
+      { "label": "B", "text": "Enhanced Recovery After Cesarean (ERAC) — multimodal evidence-based: (1) Pre-op: counseling, no prolonged fasting (clear fluids until 2h, carb loading 2h pre-op), antibiotic prophylaxis 60 min pre-op (cefazolin + azithromycin), VTE prophylaxis (mechanical + LMWH start 6-12h post-op), normothermia, chlorhexidine skin prep; (2) Intra-op: neuraxial anesthesia preferred (spinal/CSE), multimodal analgesia (intrathecal morphine + IV acetaminophen + NSAID), minimize opioid use, restrictive IV fluid, blunt expansion of uterine incision (less blood loss), uterotonic at delivery (oxytocin); (3) Post-op: early oral diet (within 1h), early ambulation (within 6h), Foley removal 12h, opioid-sparing analgesia (acetaminophen + NSAID + TAP block + low-dose opioid PRN), thromboprophylaxis continued, breastfeeding support, mental health screening; (4) Discharge planning early; (5) Outcomes: reduced LOS (1-2 days), opioid use ↓ 50%, complications ↓, breastfeeding rates ↑, patient satisfaction ↑; (6) SOGC + ERAS Society + Cooper Medical Center publications; (7) Implementation requires multidisciplinary team + audit + continuous improvement" },
+      { "label": "C", "text": "Bed rest 5 days" },
+      { "label": "D", "text": "Opioid-only analgesia" },
+      { "label": "E", "text": "Restrict fluid intake" }
+    ],
+    "correct_answer": "B",
+    "explanation": "ERAC = ERAS principles applied to cesarean. Evidence: shorter LOS, less opioid use, better breastfeeding, less morbidity, higher satisfaction. Multimodal pain management (intrathecal morphine + NSAID + acetaminophen + TAP block + minimal opioid) — opioid-sparing reduces side effects + neonatal exposure (in breastfeeding). Early diet + ambulation + Foley removal. Counseling + family-centered care. Quality improvement driven.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ERAS Society Guidelines for Cesarean Delivery 2018-2019; Wilson RD et al. Am J Obstet Gynecol 2018"
+  },
+  {
+    "scenario": "Pediatric/Obstetric collaboration — reducing perinatal mortality + improving newborn outcomes",
+    "choices": [
+      { "label": "A", "text": "Pediatric + obstetric work separately" },
+      { "label": "B", "text": "Perinatal Care Integration — multidisciplinary obstetric + neonatal collaboration: (1) Pre-pregnancy: optimization (chronic disease, vaccinations, mental health, nutrition); (2) Antenatal: shared risk assessment, antenatal corticosteroid for preterm, MgSO4 for neuroprotection, GBS prophylaxis, level of care matching; (3) Intrapartum: skilled birth attendant, intermittent vs continuous monitoring, neonatal team alert for high-risk; (4) Delayed cord clamping 30-60 sec (improves iron stores, NEC, IVH); (5) Immediate skin-to-skin + early breastfeeding initiation; (6) Neonatal resuscitation if needed (NRP); (7) Newborn screening: pulse oximetry (CHD), hearing, blood spot (PKU, hypothyroid, CF, sickle cell, etc.), bilirubin; (8) NICU criteria + family involvement; (9) Postpartum: maternal screening (preeclampsia, depression, thyroid, infection, VTE, hemorrhage), breastfeeding support, contraception counseling; (10) Quality metrics: perinatal mortality rate, neonatal mortality, NICU admission, breastfeeding rates, preterm rate, c-section rate, severe morbidity; (11) Multidisciplinary team: obstetricians, midwives, neonatologists, anesthesia, lactation, social work, mental health, family medicine; (12) Continuity of care + transition" },
+      { "label": "C", "text": "Single specialty handles all" },
+      { "label": "D", "text": "Avoid newborn screening" },
+      { "label": "E", "text": "Discharge immediately" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Perinatal care = integrative obstetric + neonatal + pediatric. Whole pregnancy journey + postpartum. Multidisciplinary team. Quality metrics. Outcomes improve with integrated care. Thai perinatal/neonatal mortality improving with system development. Family-centered. Continuous quality improvement.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "WHO Standards for Improving Quality of Maternal and Newborn Care; ACOG/AAP Guidelines for Perinatal Care"
+  },
+  {
+    "scenario": "หญิงอายุ 35 ปี G2P1 GA 28 wk underlying SLE on hydroxychloroquine + low-dose prednisolone + APS (antiphospholipid syndrome) — history of recurrent miscarriage + DVT 2 ปีที่แล้ว\n\nADD ลูกคนที่แล้ว: IUGR + preeclampsia + small for gestational age\n\nคำถาม: high-risk pregnancy multidisciplinary management",
+    "choices": [
+      { "label": "A", "text": "Standard prenatal care" },
+      { "label": "B", "text": "SLE + APS Pregnancy — Multidisciplinary Integrative High-Risk Care: (1) **Pre-conception**: disease optimization (low/no activity 6 mo before conception), medication review (continue HCQ — prevents flares + congenital heart block; avoid teratogenic — MMF, MTX, cyclophosphamide; corticosteroid OK; AZA OK; tacrolimus OK), folate, vaccination updates; (2) **Antenatal**: combined obstetric + rheumatology + maternal-fetal medicine clinic; (3) APS treatment: **low-dose aspirin** (start pre-conception or early pregnancy) + **prophylactic LMWH** (start positive pregnancy test) — reduces miscarriage, preeclampsia, IUGR risk; therapeutic LMWH if prior thrombosis history; (4) Monitor for SLE flare; (5) Lupus nephritis surveillance — proteinuria, Cr, complements; (6) Anti-Ro/SSA + Anti-La/SSB — congenital heart block + neonatal lupus risk — fetal echo monitoring weekly 16-26 wk; (7) Preeclampsia prevention — aspirin 81-150mg (high-risk indication), Ca, BP monitoring; (8) IUGR surveillance — serial growth US, umbilical Doppler; (9) Mental health support; (10) Delivery planning + timing (often induced/scheduled 37-39 wk based on activity + complications); (11) Postpartum: continue medications, flare risk highest, contraception (avoid estrogen in APS — VTE risk, OK with HCQ on activity controlled lupus), breastfeeding — most meds compatible; (12) Long-term follow-up with rheumatology" },
+      { "label": "C", "text": "Single specialty" },
+      { "label": "D", "text": "Stop all medications" },
+      { "label": "E", "text": "Termination" }
+    ],
+    "correct_answer": "B",
+    "explanation": "SLE + APS pregnancy = high-risk integrative care. Pre-conception optimization + medication review (HCQ continue, avoid teratogens). Combined MFM + rheumatology. APS — aspirin + LMWH. Monitor flares + complications (preeclampsia, IUGR, flare). Anti-Ro+/La+ — fetal heart block monitoring. Multidisciplinary. Outcomes excellent with optimized care vs poor without. Modern integrated care improves outcomes.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "rheumatology",
+    "board_age_group": "adult",
+    "reference_source": "EULAR Recommendations: Pregnancy + Lupus + APS 2017; ACOG Practice Bulletin Antiphospholipid Syndrome"
+  },
+  {
+    "scenario": "หญิงอายุ 28 ปี G1P0 GA 36 wk underlying severe depression + anxiety on sertraline 100 mg + receiving CBT therapy + family stress\n\nคำถาม: perinatal mental health integrative management",
+    "choices": [
+      { "label": "A", "text": "Stop all medications + therapy" },
+      { "label": "B", "text": "Perinatal Mental Health — Integrative Care: (1) Pre-conception: counseling, medication review (most SSRIs OK — sertraline preferred; avoid paroxetine for new starts though not absolutely; counsel benefit-risk); (2) Continue treatment during pregnancy if beneficial — untreated depression has its own risks (preterm, LBW, postpartum depression, suicide, impaired bonding); (3) Multidisciplinary: OB + perinatal psychiatry + therapist + social work + primary care + lactation; (4) Monitor depression scores (EPDS, PHQ-9) throughout; (5) Address psychosocial stressors (intimate partner violence screening, financial, support); (6) **Postpartum**: highest risk period — postpartum blues (50-80%, < 2 wk, no Rx), postpartum depression (15-20%, treatment), postpartum psychosis (rare 0.1%, emergency); (7) Breastfeeding considerations — sertraline + paroxetine preferred (low milk transfer); (8) Support network — family, friends, support groups (mom support groups, online communities); (9) Screening tools: EPDS at every visit including postpartum, PHQ-9 alternatives; (10) Suicide risk assessment — leading cause maternal mortality some series (Ko JY MMWR 2017); (11) Pediatric outcomes follow-up — child development, attachment, behavior issues higher with untreated maternal depression; (12) ACOG + APA + AAP guidance — treatment generally outweighs medication risk in moderate-severe depression; (13) Trauma-informed care; (14) Continued care planning + transitions; (15) Family + partner involvement" },
+      { "label": "C", "text": "Refuse all psychiatric care" },
+      { "label": "D", "text": "Pregnancy termination" },
+      { "label": "E", "text": "Single specialist" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Perinatal mental health = integrative multidisciplinary care. Untreated depression = significant risk (preterm, LBW, postpartum depression, suicide). SSRIs generally OK (sertraline preferred). Continue beneficial treatment. Postpartum highest risk period. Suicide leading maternal mortality cause in some series. Screen routinely (EPDS, PHQ-9). Multidisciplinary care + family support + breastfeeding considerations. Modern integrated care.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Committee Opinion: Screening for Perinatal Depression 2018; American Psychiatric Association Perinatal MH"
+  },
+  {
+    "scenario": "หญิงอายุ 65 ปี recently diagnosed advanced ovarian cancer (Stage IIIC) on chemotherapy — counsel + integrative care across cancer survivorship",
+    "choices": [
+      { "label": "A", "text": "Chemotherapy alone" },
+      { "label": "B", "text": "Gynecologic Cancer Survivorship Integrative Care: (1) Active treatment: oncology team coordinated care, side effect management (nausea/vomiting, neuropathy, fatigue, alopecia, infection prevention, growth factors), nutritional support, exercise programs (improves outcomes), psychological + spiritual support; (2) Long-term survivorship (modern: many survive significantly with better Rx): - surveillance (clinical, CA-125, imaging) for recurrence; - PARP inhibitor maintenance if BRCA+; - secondary cancer screening; - cardiovascular monitoring (cardiotoxicity from some chemo); - bone health (DEXA, calcium, vitamin D); - sexual health (vaginal estrogen for GSM safe in non-hormone responsive cancers, lubricants, sexual therapy); - reproductive (premature ovarian failure if young — hormone considerations); - emotional/psychological (PTSD, anxiety, depression — high prevalence); - financial toxicity counseling; - return to work/role; (3) Survivorship care plan — written summary + plan provided; (4) Multidisciplinary: oncology, primary care, social work, psychology, nutrition, physical therapy, sexual health; (5) Family/caregiver support + bereavement preparation; (6) Palliative care integration (early palliative + curative treatment — Temel; recurrent disease — symptom + QOL focus); (7) End-of-life if appropriate — advance care planning, hospice; (8) Patient advocacy + support groups; (9) Genetic counseling — family screening for inherited cancer; (10) Equity in care + cultural competence" },
+      { "label": "C", "text": "Stop all treatment" },
+      { "label": "D", "text": "Avoid follow-up" },
+      { "label": "E", "text": "Hospice only" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cancer survivorship integrative care = multidisciplinary + lifelong. Modern ovarian cancer outcomes improving (PARP inhibitors). Survivorship care plan (IOM 2006). Multiple domains: surveillance, late effects, sexual health, mental health, return to function, financial, family. Integrated palliative care from diagnosis (Temel — improves QOL + survival). Family + caregiver support. Genetic counseling — implications for family. Continuous quality of life focus.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "ASCO Cancer Survivorship Care Planning; IOM From Cancer Patient to Cancer Survivor 2006; NCCN Survivorship Guidelines"
   }
 ]
