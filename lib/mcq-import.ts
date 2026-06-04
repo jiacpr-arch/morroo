@@ -1,6 +1,7 @@
-// CSV bulk import helpers for NL (student) MCQ questions.
-// Sibling of board-import.ts — keeps parsing + validation + row→insert mapping
-// for /admin/mcq/import in one module. Reuses the RFC-4180 parser from
+// Bulk import helpers for NL (student) MCQ questions.
+// Shared by the CSV importer (/admin/mcq/import) and the AI PDF importer
+// (/admin/mcq/import-pdf): both produce "raw row" objects and run them through
+// the same validator → McqQuestionInput. Reuses the RFC-4180 parser from
 // board-import.ts so we don't duplicate CSV plumbing.
 
 import { parseCsv } from "./board-import";
@@ -11,13 +12,13 @@ export { parseCsv };
 
 export interface AdminStudentSubject {
   id: string;
-  /** slug, matched case-sensitively against the CSV `subject` column */
+  /** slug, matched case-sensitively against the `subject` field */
   name: string;
   name_th: string;
 }
 
 export interface ParsedMcqRow {
-  /** 1-indexed row number in the source CSV (data rows; header is row 0) */
+  /** 1-indexed row number (data rows; header is row 0 for CSV) */
   rowNum: number;
   raw: Record<string, string>;
   errors: string[];
@@ -42,22 +43,124 @@ export const MCQ_CSV_HEADERS = [
 
 export type McqCsvHeader = (typeof MCQ_CSV_HEADERS)[number];
 
+/** Object form of one row (keys = MCQ_CSV_HEADERS). The AI importer builds these
+ *  directly; the CSV importer builds them from parsed CSV cells. */
+export type RawMcqRow = Partial<Record<McqCsvHeader, string>>;
+
 const VALID_EXAM_TYPE = new Set(["NL1", "NL2"]);
 const VALID_DIFFICULTY = new Set(["easy", "medium", "hard"]);
 const VALID_CORRECT = new Set(["A", "B", "C", "D", "E"]);
 const VALID_STATUS = new Set(["active", "review", "disabled"]);
 
 /**
- * Validate parsed CSV rows and map each valid one to an McqQuestionInput.
+ * Validate one raw row and map it to an McqQuestionInput.
  *
- * Notes on intent:
- * - `correct` is the answer extracted from the source PDF — treated as a
- *   *draft*. Rows default to `status=review` so they stay hidden from learners
- *   (RLS only exposes status='active') until an admin verifies the key and
- *   writes the explanation. The blank default is therefore "review", not "active".
+ * Intent:
+ * - `correct` is a *draft* from the source — when blank we store a placeholder
+ *   "A" (the admin sets the real answer during review). Rows default to
+ *   `status=review` so they stay hidden from learners (RLS exposes only active)
+ *   until verified.
  * - student rows always carry exam_type (NL1/NL2) and null board_* fields to
  *   satisfy the mcq_questions audience-consistency CHECK constraint.
  */
+function mapOneRow(
+  raw: Record<string, string>,
+  rowNum: number,
+  subjectByName: Map<string, AdminStudentSubject>
+): ParsedMcqRow {
+  const errors: string[] = [];
+
+  const subjectName = (raw.subject ?? "").trim();
+  const examType = (raw.exam_type ?? "").trim().toUpperCase();
+  const scenario = (raw.scenario ?? "").trim();
+  const choiceA = (raw.choice_a ?? "").trim();
+  const choiceB = (raw.choice_b ?? "").trim();
+  const choiceC = (raw.choice_c ?? "").trim();
+  const choiceD = (raw.choice_d ?? "").trim();
+  const choiceE = (raw.choice_e ?? "").trim();
+  const correctRaw = (raw.correct ?? "").trim().toUpperCase();
+  const difficulty = ((raw.difficulty ?? "").trim() || "medium").toLowerCase();
+  const status = ((raw.status ?? "").trim() || "review").toLowerCase();
+  const questionNumber = (raw.question_number ?? "").trim();
+
+  const subject = subjectByName.get(subjectName);
+  if (!subjectName) errors.push("ขาด subject");
+  else if (!subject)
+    errors.push(`subject "${subjectName}" ไม่พบใน mcq_subjects (audience=student)`);
+
+  if (!examType) errors.push("ขาด exam_type");
+  else if (!VALID_EXAM_TYPE.has(examType))
+    errors.push(`exam_type "${examType}" ต้องเป็น NL1 หรือ NL2`);
+
+  if (!VALID_DIFFICULTY.has(difficulty))
+    errors.push(`difficulty "${difficulty}" ไม่ถูกต้อง`);
+  // correct may be blank (→ placeholder "A"); if provided it must be A-E
+  if (correctRaw && !VALID_CORRECT.has(correctRaw))
+    errors.push(`correct "${correctRaw}" ต้องเป็น A-E`);
+  if (!VALID_STATUS.has(status)) errors.push(`status "${status}" ไม่ถูกต้อง`);
+
+  if (!scenario) errors.push("ขาด scenario");
+  for (const [k, v] of [
+    ["choice_a", choiceA],
+    ["choice_b", choiceB],
+    ["choice_c", choiceC],
+    ["choice_d", choiceD],
+    ["choice_e", choiceE],
+  ] as const) {
+    if (!v) errors.push(`ขาด ${k}`);
+  }
+
+  if (questionNumber && !/^\d+$/.test(questionNumber)) {
+    errors.push(`question_number "${questionNumber}" ต้องเป็นตัวเลข`);
+  }
+
+  let insert: McqQuestionInput | null = null;
+  if (errors.length === 0 && subject) {
+    const choices: McqChoice[] = [
+      { label: "A", text: choiceA },
+      { label: "B", text: choiceB },
+      { label: "C", text: choiceC },
+      { label: "D", text: choiceD },
+      { label: "E", text: choiceE },
+    ];
+    insert = {
+      subject_id: subject.id,
+      audience: "student",
+      exam_type: examType as "NL1" | "NL2",
+      exam_source: (raw.exam_source ?? "").trim() || null,
+      question_number: questionNumber ? Number(questionNumber) : null,
+      scenario,
+      choices,
+      correct_answer: correctRaw || "A",
+      explanation: null,
+      difficulty: difficulty as "easy" | "medium" | "hard",
+      topic: null,
+      status: status as "active" | "review" | "disabled",
+      board_specialty: null,
+      board_subspecialty: null,
+      board_section: null,
+      board_topic: null,
+      board_age_group: null,
+      board_level: null,
+      reference_source: null,
+    };
+  }
+
+  return { rowNum, raw: { ...raw }, errors, insert };
+}
+
+/** Validate a list of raw row objects (used by the AI PDF importer). */
+export function validateMcqRows(
+  raws: RawMcqRow[],
+  subjects: AdminStudentSubject[]
+): ParsedMcqRow[] {
+  const subjectByName = new Map(subjects.map((s) => [s.name, s]));
+  return raws.map((raw, i) =>
+    mapOneRow(raw as Record<string, string>, i + 1, subjectByName)
+  );
+}
+
+/** CSV entry point: header check + parse cells into raw rows, then validate. */
 export function validateAndMapMcq(
   rows: string[][],
   subjects: AdminStudentSubject[]
@@ -75,97 +178,13 @@ export function validateAndMapMcq(
     MCQ_CSV_HEADERS.map((h) => [h, header.indexOf(h)])
   ) as Record<McqCsvHeader, number>;
 
-  const subjectByName = new Map(subjects.map((s) => [s.name, s]));
+  const raws: RawMcqRow[] = rows.slice(1).map((cols) => {
+    const raw: RawMcqRow = {};
+    for (const h of MCQ_CSV_HEADERS) raw[h] = (cols[idx[h]] ?? "").trim();
+    return raw;
+  });
 
-  const parsed: ParsedMcqRow[] = [];
-
-  for (let r = 1; r < rows.length; r++) {
-    const cols = rows[r];
-    const get = (h: McqCsvHeader) => (cols[idx[h]] ?? "").trim();
-
-    const raw: Record<string, string> = {};
-    for (const h of MCQ_CSV_HEADERS) raw[h] = get(h);
-
-    const errors: string[] = [];
-
-    const subjectName = raw.subject;
-    const examType = raw.exam_type.toUpperCase();
-    const scenario = raw.scenario;
-    const choiceA = raw.choice_a;
-    const choiceB = raw.choice_b;
-    const choiceC = raw.choice_c;
-    const choiceD = raw.choice_d;
-    const choiceE = raw.choice_e;
-    const correct = raw.correct.toUpperCase();
-    const difficulty = (raw.difficulty || "medium").toLowerCase();
-    const status = (raw.status || "review").toLowerCase();
-    const questionNumber = raw.question_number;
-
-    const subject = subjectByName.get(subjectName);
-    if (!subjectName) errors.push("ขาด subject");
-    else if (!subject)
-      errors.push(`subject "${subjectName}" ไม่พบใน mcq_subjects (audience=student)`);
-
-    if (!examType) errors.push("ขาด exam_type");
-    else if (!VALID_EXAM_TYPE.has(examType))
-      errors.push(`exam_type "${examType}" ต้องเป็น NL1 หรือ NL2`);
-
-    if (!VALID_DIFFICULTY.has(difficulty))
-      errors.push(`difficulty "${difficulty}" ไม่ถูกต้อง`);
-    if (!VALID_CORRECT.has(correct)) errors.push(`correct "${correct}" ต้องเป็น A-E`);
-    if (!VALID_STATUS.has(status)) errors.push(`status "${status}" ไม่ถูกต้อง`);
-
-    if (!scenario) errors.push("ขาด scenario");
-    for (const [k, v] of [
-      ["choice_a", choiceA],
-      ["choice_b", choiceB],
-      ["choice_c", choiceC],
-      ["choice_d", choiceD],
-      ["choice_e", choiceE],
-    ] as const) {
-      if (!v) errors.push(`ขาด ${k}`);
-    }
-
-    if (questionNumber && !/^\d+$/.test(questionNumber)) {
-      errors.push(`question_number "${questionNumber}" ต้องเป็นตัวเลข`);
-    }
-
-    let insert: McqQuestionInput | null = null;
-    if (errors.length === 0 && subject) {
-      const choices: McqChoice[] = [
-        { label: "A", text: choiceA },
-        { label: "B", text: choiceB },
-        { label: "C", text: choiceC },
-        { label: "D", text: choiceD },
-        { label: "E", text: choiceE },
-      ];
-      insert = {
-        subject_id: subject.id,
-        audience: "student",
-        exam_type: examType as "NL1" | "NL2",
-        exam_source: raw.exam_source || null,
-        question_number: questionNumber ? Number(questionNumber) : null,
-        scenario,
-        choices,
-        correct_answer: correct,
-        explanation: null,
-        difficulty: difficulty as "easy" | "medium" | "hard",
-        topic: null,
-        status: status as "active" | "review" | "disabled",
-        board_specialty: null,
-        board_subspecialty: null,
-        board_section: null,
-        board_topic: null,
-        board_age_group: null,
-        board_level: null,
-        reference_source: null,
-      };
-    }
-
-    parsed.push({ rowNum: r, raw, errors, insert });
-  }
-
-  return { headerError: null, parsed };
+  return { headerError: null, parsed: validateMcqRows(raws, subjects) };
 }
 
 export function buildMcqSampleCsv(): string {
