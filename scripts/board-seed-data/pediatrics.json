@@ -1918,5 +1918,965 @@
     "board_topic": "endocrine_metabolic",
     "board_age_group": "peds",
     "reference_source": "Clinical Practice Guidelines for Care of Girls and Women with Turner Syndrome (Gravholt CH 2017)"
+  },
+  {
+    "scenario": "ทารกอายุ 3 เดือน BW 4.2 kg (จาก BW เกิด 3.4 kg — เพิ่ม < 30 g/d) feed นมไม่ดี sweating ขณะ feed หอบขณะ feed\n\nV/S: HR 158, RR 62, SpO2 96%, BW 4.2 kg\nPE: tachypnea, mild retraction, hepatomegaly 3 cm, harsh holosystolic murmur grade 4/6 LLSB + diastolic rumble apex, hyperdynamic precordium\nCXR: cardiomegaly + increased pulmonary vascularity\nEcho: large perimembranous VSD 8 mm + L→R shunt + LV/LA enlargement",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Observe + repeat echo 1 yr"
+      },
+      {
+        "label": "B",
+        "text": "Large VSD with congestive heart failure + failure to thrive: anti-HF therapy — furosemide 1-2 mg/kg/dose q8-12h PO + spironolactone 1-2 mg/kg/d + captopril 0.1-0.3 mg/kg/dose q8h (increase as tolerated, monitor BP + renal); high-calorie nutrition (24-27 kcal/oz formula) + may need NG feeds; treat anemia (keep Hb ≥ 10); RSV prophylaxis ในฤดู; immunizations on time; surgical/catheter closure 3-6 mo ของวัย ถ้า: persistent HF/FTT despite therapy, pulmonary HT, large shunt + Qp:Qs > 2; small restrictive VSD ส่วนใหญ่ปิดเอง (35-40%); cardiology follow-up; endocarditis prophylaxis routine NOT recommended unless prior IE/repair < 6 mo"
+      },
+      {
+        "label": "C",
+        "text": "Diuretic alone forever"
+      },
+      {
+        "label": "D",
+        "text": "Cardiac transplant"
+      },
+      {
+        "label": "E",
+        "text": "Discharge no medication"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "VSD = most common CHD. Large VSD = HF + FTT. Manage HF medically + nutritional + timed surgical closure. Small VSD often closes spontaneously. AHA 2018 endocarditis prophylaxis only for highest-risk lesions (cyanotic, prosthetic, prior IE, < 6 mo post-repair).",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "peds",
+    "reference_source": "AHA/ACC 2018 ACHD Guideline; Park Pediatric Cardiology"
+  },
+  {
+    "scenario": "ทารกชายอายุ 6 เดือน known Tetralogy of Fallot (still pre-repair) ตื่นเช้ามาร้องไห้แล้ว cyanotic วูบลง SpO2 ลดเหลือ 60% หายใจหอบเหนื่อย irritable\n\nV/S: HR 178, BP 78/42, RR 58, SpO2 60% room air, BW 6 kg\nGen: marked cyanosis, irritable, decreased intensity of pulmonic ejection murmur (vs baseline harsh)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Beta agonist nebulizer"
+      },
+      {
+        "label": "B",
+        "text": "Tetralogy of Fallot 'tet spell' (hypercyanotic spell): calm + knee-chest position (เพิ่ม SVR); 100% O2 mask; IV access + Morphine 0.1 mg/kg IM/IV หรือ SC (sedate + decrease respiratory effort + decrease infundibular spasm); IV fluid bolus 10-20 mL/kg NSS (increase preload + RV filling); Phenylephrine 0.02 mg/kg IV หรือ IV infusion ถ้า refractory (increase SVR); sodium bicarbonate ถ้า severe acidosis; Esmolol/Propranolol IV ถ้า spell continues (decrease infundibular contractility); AVOID inotropic agents (worsen RVOT obstruction); urgent cardiology + cardiac surgery — definitive surgical repair recommended now (delayed repair = more spells); admit ICU"
+      },
+      {
+        "label": "C",
+        "text": "Diuretic IV"
+      },
+      {
+        "label": "D",
+        "text": "Inotropic agent"
+      },
+      {
+        "label": "E",
+        "text": "Discharge home"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Tet spell = acute increase in RVOT obstruction + decrease SVR → severe R→L shunt → hypoxia. Treatment increases SVR + reduces infundibular spasm. Knee-chest position increases SVR + venous return. Phenylephrine for refractory. Avoid inotropes (worsen obstruction). Definitive surgical repair after spell.",
+    "difficulty": "hard",
+    "board_section": "ems_mgmt",
+    "board_topic": "cardiovascular",
+    "board_age_group": "peds",
+    "reference_source": "AHA 2018 ACHD; Park Pediatric Cardiology"
+  },
+  {
+    "scenario": "ทารกอายุ 2 เดือน BW 5 kg มาด้วย irritability + poor feeding 6 ชม ก่อน HR fast monitor\n\nV/S: HR 240, BP 75/45, RR 52, SpO2 98%, capillary refill 3 sec\nGen: irritable but alert, no distress\nECG: narrow complex tachycardia rate 240, no P wave, regular rhythm = SVT (likely AVRT)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Immediate unsynchronized defibrillation"
+      },
+      {
+        "label": "B",
+        "text": "Pediatric SVT (stable, narrow complex regular tachycardia): vagal maneuvers FIRST — apply ice pack/bag to face × 15-30 sec (diving reflex, most effective ใน infants); ถ้าไม่กลับ → Adenosine 0.1 mg/kg IV rapid push + flush via proximal IV (max 6 mg first dose, repeat 0.2 mg/kg max 12 mg); ถ้า unstable (poor perfusion, AMS, HF) → synchronized cardioversion 0.5-1 J/kg → 2 J/kg; identify + treat reversible causes; cardiology consult; long-term: digoxin หรือ propranolol prophylaxis; ablation for recurrent/refractory; counsel family about recurrence + vagal maneuvers at home"
+      },
+      {
+        "label": "C",
+        "text": "Lidocaine bolus"
+      },
+      {
+        "label": "D",
+        "text": "Magnesium IV"
+      },
+      {
+        "label": "E",
+        "text": "Discharge no treatment"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "SVT = most common dysrhythmia infants. Vagal maneuvers (ice to face) first if stable. Adenosine = drug of choice. Synchronized cardioversion if unstable. WPW common substrate in infants. Long-term: medication or ablation.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "cardiovascular",
+    "board_age_group": "peds",
+    "reference_source": "AHA PALS 2020; Pediatric Cardiology guidelines"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 11 ปี ปวดข้อหลายข้อย้ายที่ × 2 สัปดาห์ ไข้ 38.5°C ใจสั่น 3 สัปดาห์ก่อนเคย sore throat untreated\n\nV/S: HR 122, BP 105/68, Temp 38.5°C\nPE: migratory polyarthritis (knees, elbows), erythema marginatum, subcutaneous nodules, soft systolic murmur apex new\n\nLab: ESR 78, CRP 95, ASO HIGH, anti-DNase B HIGH\nECG: PR interval 240 ms (prolonged)\nEcho: mild MR + mild AR, no vegetation",
+    "choices": [
+      {
+        "label": "A",
+        "text": "NSAID alone"
+      },
+      {
+        "label": "B",
+        "text": "Acute Rheumatic Fever (Jones criteria revised 2015 — 2 major + evidence GAS): admit + bed rest until afebrile + ESR normalize; eradication GAS — benzathine penicillin G IM 600,000-1,200,000 U single dose (or PO penicillin V × 10 d); arthritis + carditis — high-dose aspirin 80-100 mg/kg/d ÷ 4 doses (monitor salicylate level, hepatotoxicity); severe carditis (CHF, severe valve insufficiency) — corticosteroid (prednisolone 1-2 mg/kg/d × 2-3 wk taper); Sydenham chorea — supportive ± haloperidol/valproic acid; HF management; ECHO + serial; SECONDARY PROPHYLAXIS critical — benzathine penicillin IM q3-4 wk ต่อ minimum 10 ปี หรือถึง 21 ปี (without carditis) หรือ 40 ปี/lifelong (with carditis); dental prophylaxis only for severe valve disease per AHA"
+      },
+      {
+        "label": "C",
+        "text": "Antibiotic only 7 days"
+      },
+      {
+        "label": "D",
+        "text": "Cardioversion"
+      },
+      {
+        "label": "E",
+        "text": "Anticoagulation high dose"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "ARF = post-strep autoimmune. Jones criteria revised 2015 (low + high-risk populations). Major: carditis, arthritis, chorea, erythema marginatum, subcutaneous nodules. Long-term secondary prophylaxis critical — duration depends on carditis severity. Pen V or benzathine IM standard.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "peds",
+    "reference_source": "Jones Criteria 2015 (Gewitz MH AHA); WHF Position Statement 2024"
+  },
+  {
+    "scenario": "ทารกชายอายุ 6 เดือน เกิด meconium ileus DOL 2 + chronic loose foul-smelling stool + poor weight gain + recurrent pneumonia + chronic cough\n\nBW 5.8 kg (< 3rd percentile), length 60 cm (< 3rd)\nPE: clubbing early, wheeze, hyperinflation, decreased subcutaneous fat\n\nSweat chloride 78 mmol/L (> 60 = positive), CFTR genotype: F508del/F508del (homozygous classic)\nStool elastase: very low (pancreatic insufficient)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Antibiotic only as needed"
+      },
+      {
+        "label": "B",
+        "text": "Cystic Fibrosis (classic F508del homozygous) — multidisciplinary CF center care: airway clearance — chest physiotherapy + nebulized hypertonic saline 7% + dornase alfa daily; bronchodilator pre-airway clearance; pancreatic enzyme replacement (PERT) 1500-2500 lipase units/kg/meal — monitor + titrate; high-calorie diet (110-200% of normal need) + fat-soluble vitamin (ADEK) supplement + salt supplement; treat infection — sputum culture q3 mo, treat Staph (anti-staph penicillin), Pseudomonas (inhaled tobramycin or colistin) chronically suppressive; CFTR modulator — elexacaftor/tezacaftor/ivacaftor (Trikafta) ≥ 2 yr F508del = transformative; vaccinations (RSV, flu, COVID); CF-related diabetes screen annually > 10 yr; liver, bone, sinus, fertility monitoring; mental health; psychosocial support"
+      },
+      {
+        "label": "C",
+        "text": "Steroid daily"
+      },
+      {
+        "label": "D",
+        "text": "Restrict salt"
+      },
+      {
+        "label": "E",
+        "text": "Diuretic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "CF = autosomal recessive, F508del most common mutation. Multisystem: lung, pancreas, sweat, sinuses, liver, fertility. Newborn screening (IRT + DNA). CFTR modulators revolutionized care. Median survival now 50+ yr. Center-based multidisciplinary care essential.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "respiratory",
+    "board_age_group": "peds",
+    "reference_source": "CF Foundation Clinical Practice Guidelines 2024"
+  },
+  {
+    "scenario": "ทารกชายอายุ 2 เดือน vaccine ยังไม่ครบ (DTaP เพิ่งได้ครั้งแรก) ไอ paroxysmal 2 สัปดาห์ + whooping inspiration หลังไอ + cyanosis ขณะไอ + post-tussive emesis แม่เพิ่งเป็นหวัด chronic cough\n\nV/S: HR 168, RR 52, SpO2 92%, Temp 37.6°C, BW 5 kg\nGen: well between coughing fits, lethargic during, post-tussive cyanosis\n\nCBC: WBC 38,500, lymphocytosis 78% (absolute lymphocyte > 20,000)\nNasopharyngeal PCR for Bordetella pertussis: positive",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge home"
+      },
+      {
+        "label": "B",
+        "text": "Pertussis < 6 mo = high risk severe: admit (apnea, pulmonary HT, death risk); macrolide (azithromycin 10 mg/kg/d × 5 d preferred ในเด็ก < 1 mo เพื่อหลีกเลี่ยง erythromycin/IHPS); supportive — O2, monitor for apnea/cyanosis (continuous cardiopulmonary), suction, IV fluid, small frequent feeds; consider exchange transfusion ถ้า extreme leukocytosis + pulmonary HT (lifesaving in severe cases); droplet isolation 5 d after start macrolide; ICU + intubation ถ้า respiratory failure; reportable disease; post-exposure prophylaxis household contacts macrolide; Tdap booster mother + cocooning + maternal Tdap during pregnancy (27-36 wk) สำคัญ; complete DTaP catch-up"
+      },
+      {
+        "label": "C",
+        "text": "Bronchodilator only"
+      },
+      {
+        "label": "D",
+        "text": "Steroid"
+      },
+      {
+        "label": "E",
+        "text": "Antiviral"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pertussis < 6 mo = high mortality. Macrolide reduces shedding (azithromycin first-line). Maternal Tdap during pregnancy + cocooning protects infants until immunized. Extreme leukocytosis (> 50K) + pulmonary HT = exchange transfusion considered. Reportable.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "peds",
+    "reference_source": "AAP Red Book 2024; CDC Pertussis Treatment Guideline"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 6 ปี พ่ออยู่บ้านเดียวกันเพิ่ง diagnosis active pulmonary TB smear+ TB clinic ส่งมาประเมิน\n\nเด็ก asymptomatic, no cough, no fever, no weight loss; BW 20 kg, normal exam\nCXR: clear (no infiltrate, no LN)\nTuberculin skin test (TST) 12 mm induration, IGRA positive",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No treatment indicated"
+      },
+      {
+        "label": "B",
+        "text": "Latent TB Infection (LTBI, child < 5 yr or close contact = high priority): start LTBI treatment — INH 10 mg/kg/d × 6-9 mo (standard) หรือ rifampin 15-20 mg/kg/d × 4 mo (shorter, fewer hepatotoxicity) หรือ INH + rifapentine once weekly × 12 wk (3HP, ≥ 2 yr); pyridoxine 1-2 mg/kg/d supplement (prevent INH neuropathy in malnourished, breastfed, vegetarian); monthly clinical evaluation (compliance, hepatotoxicity); LFT baseline + as needed; address index case + screen household; CXR + symptoms re-evaluate ถ้า new symptoms; education + DOTS if compliance concern; report public health; vaccinate BCG not protective against pulmonary TB but reduces meningitis/miliary"
+      },
+      {
+        "label": "C",
+        "text": "Active TB regimen 6 months"
+      },
+      {
+        "label": "D",
+        "text": "Wait for symptoms"
+      },
+      {
+        "label": "E",
+        "text": "Surgery"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pediatric LTBI = critical to treat (high progression to active TB). 6-9 mo INH classic; 4 mo rifampin or 3HP equally effective with fewer side effects + better adherence. Pyridoxine supplement. CDC/WHO recommend LTBI treatment for child close contacts.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "id",
+    "board_age_group": "peds",
+    "reference_source": "WHO Consolidated Guidelines Tuberculosis 2022; CDC LTBI Guidelines"
+  },
+  {
+    "scenario": "เด็กชายอายุ 4 ปี ก่อนหน้านี้ healthy 1 สัปดาห์ ก่อนมี viral URI + diarrhea ตอนนี้ดูเหนื่อยง่าย หอบเหนื่อยเวลาเดิน ดูดนมไม่ดี dependent edema\n\nV/S: HR 168 sinus, BP 82/52, RR 48, SpO2 94%, BW 16 kg\nPE: gallop S3, jugular distention, hepatomegaly 4 cm, rales, decreased pulses, cap refill 4 sec\n\nCBC normal, troponin HIGH (12 ng/mL), BNP 1,820, CK-MB elevated\nCXR: cardiomegaly + pulmonary edema\nEcho: dilated LV + EF 22% + global hypokinesis\nViral PCR: enterovirus +",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Diuretic alone forever"
+      },
+      {
+        "label": "B",
+        "text": "Viral Myocarditis with acute decompensated HF: ICU admission with continuous monitoring; ABC + supplemental O2 + non-invasive ventilation/intubation ถ้า severe; gentle fluid resuscitation (watch for worsening HF); inotropic support — milrinone (preferred — inodilator, less arrhythmogenic) 0.25-0.75 mcg/kg/min หรือ low-dose epinephrine; diuretic furosemide IV; afterload reduction (carvedilol, ACEI) เมื่อ stable; mechanical circulatory support (VAD, ECMO) ถ้า refractory cardiogenic shock; arrhythmia management (avoid digoxin acutely); IVIG controversial — selected cases; routine immunosuppression NOT recommended; treat underlying infection; HF + arrhythmia team + cardiac transplant evaluation ถ้า persistent; long-term: gradual recovery 50-70%, residual cardiomyopathy 20-30%, death/transplant 10%; restrict activity 3-6 mo"
+      },
+      {
+        "label": "C",
+        "text": "High-dose steroid mandatory"
+      },
+      {
+        "label": "D",
+        "text": "Antibiotic alone"
+      },
+      {
+        "label": "E",
+        "text": "Discharge home"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Viral myocarditis = leading cause acute DCM kids. Enterovirus, parvo, adeno, SARS-CoV-2 common. ICU + inotropic + mechanical support. ECMO bridge to recovery/transplant. Steroid/IVIG limited evidence — selected cases. 3 outcomes: recovery, chronic DCM, death.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "peds",
+    "reference_source": "AHA Scientific Statement: Pediatric Myocarditis 2018; ISHLT Guidelines"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 5 ปี diarrhea bloody × 5 วัน หลังกินเนื้อ undercooked วันนี้ปัสสาวะน้อย ซีด เหนื่อยง่าย\n\nV/S: BP 132/86, HR 122, BW 20 kg\nPE: pallor, mild edema, petechiae, mild hepatosplenomegaly\n\nCBC: Hb 7.2, Plt 38,000, WBC 14,500\nPeripheral smear: schistocytes ++, helmet cells\nBUN 68, Cr 2.4, K 5.8, Albumin 3.0\nUA: protein 2+, RBC, granular cast\nStool culture: E. coli O157:H7 positive (Shiga toxin)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Antibiotic for EHEC"
+      },
+      {
+        "label": "B",
+        "text": "Typical HUS (post-EHEC Shiga toxin): supportive care mainstay (no specific treatment cures); fluid management — careful IV fluid early in disease may prevent oliguric phase, but ONCE oliguric → restrict to insensible + UO; correct electrolytes (K, P, Ca); transfuse PRBC for Hb < 6 หรือ symptomatic; AVOID platelet transfusion (worsens microangiopathy) unless major bleeding/surgery; renal replacement therapy (HD, CRRT, PD) ถ้า severe AKI/uremia/hyperK/volume overload — needed ~50%; treat HT; AVOID antibiotic for EHEC (increases Shiga toxin release + HUS risk in some studies); AVOID antimotility (loperamide, opioid); plasma exchange not indicated typical HUS; eculizumab for atypical HUS (complement dysregulation, recurrent, family Hx); long-term renal + BP follow-up; reportable disease + public health"
+      },
+      {
+        "label": "C",
+        "text": "Loperamide"
+      },
+      {
+        "label": "D",
+        "text": "Heparin"
+      },
+      {
+        "label": "E",
+        "text": "Aspirin"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Typical HUS = MAHA + thrombocytopenia + AKI post-EHEC Shiga toxin. Supportive only. Avoid antibiotic + antimotility (worsen). Atypical HUS (complement) = eculizumab. Long-term CKD risk 25%. Public health reporting (foodborne).",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "renal_gu",
+    "board_age_group": "peds",
+    "reference_source": "KDIGO Glomerular Diseases 2021; AAP Red Book 2024"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 10 ปี polyuria + polydipsia + weight loss 4 kg × 6 wk ไม่มีอาเจียน ไม่ซึม\n\nV/S: BP 110/70, HR 92, BW 30 kg\nGen: alert, mild dehydration\n\nGlucose random 320, HbA1c 11.2%, no ketones serum/urine, pH 7.36, HCO3 22\nAnti-GAD65 + IA-2 antibodies positive (T1DM autoimmune)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Metformin alone"
+      },
+      {
+        "label": "B",
+        "text": "New-onset Type 1 Diabetes without DKA: start subcutaneous insulin — basal-bolus regimen (preferred): glargine/detemir/degludec long-acting once daily (~0.4-0.5 U/kg/d total = 50% basal, 50% bolus) + rapid-acting (lispro, aspart, glulisine) pre-meal based on carb counting + correction; alternative: NPH + regular insulin ทวีติด; start total daily insulin 0.5-1 U/kg/d (peripubertal more); diabetes team education (carb counting, glucose monitoring 4-6×/d or CGM, sick day rules, hypoglycemia recognition + glucagon, exercise, ketone monitoring); HbA1c target < 7.5% (ADA recent: individualize, < 7% if achievable safely); annual screen — TSH, celiac, retinopathy (≥ 11 yr or 2-5 yr post-Dx), microalbuminuria (≥ 11 yr or 2-5 yr), lipid; immunizations (flu, pneumococcal); psychosocial support; transition to adult care; technology — CGM, insulin pump, AID systems greatly improve outcomes"
+      },
+      {
+        "label": "C",
+        "text": "Sulfonylurea"
+      },
+      {
+        "label": "D",
+        "text": "Lifestyle alone"
+      },
+      {
+        "label": "E",
+        "text": "Discharge no treatment"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "T1DM = autoimmune β-cell destruction. Insulin mandatory. ISPAD/ADA: basal-bolus or pump = standard. Carb counting + flexible insulin + CGM = modern. Address comorbidities + transition. AID closed-loop systems improve TIR + reduce burden.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "peds",
+    "reference_source": "ISPAD Guidelines 2022; ADA Standards of Care 2024"
+  },
+  {
+    "scenario": "ทารก LGA term BW 4,400 g (IDM — mother GDM A2 on insulin) อายุ 2 ชม jittery + lethargic + poor feeding\n\nV/S: HR 152, RR 48, SpO2 96%, Temp 36.8°C\nGen: alert at moments, jittery, mild distress\n\nBedside glucose 28 mg/dL (< 47 = abnormal; cutoff < 50 symptomatic according to recent AAP)\nNo seizure",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Wait until 6 hr"
+      },
+      {
+        "label": "B",
+        "text": "Neonatal Hypoglycemia (symptomatic, IDM): IV access + start IV dextrose — give bolus D10W 2 mL/kg (200 mg/kg) slow IV push then continuous D10W infusion GIR 6-8 mg/kg/min, titrate up to achieve glucose > 50 mg/dL (< 48h) and > 60 mg/dL (> 48h); recheck glucose 15-30 min after intervention then q1-2h until stable; continue regular feeds (breast or formula) once stable + tolerating; gradually wean IV as PO intake increases (rebound common); if persistent hypoglycemia despite GIR 12-15 mg/kg/min → think hyperinsulinism (diazoxide, octreotide, glucagon), inborn error, hormone deficiency; check critical sample (insulin, cortisol, GH, lactate, ketones, FFA, ammonia, AC profile) ขณะ hypo; long-term: neurodevelopmental follow-up severe/prolonged"
+      },
+      {
+        "label": "C",
+        "text": "Glucose oral gel only"
+      },
+      {
+        "label": "D",
+        "text": "Discharge home"
+      },
+      {
+        "label": "E",
+        "text": "Insulin"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Neonatal hypoglycemia = preventable cause neurodisability. Symptomatic + glucose < 47 (PES 2015) or < 50 (AAP) = treat. IDM = transient hyperinsulinism, screen + feed early. Persistent severe → workup for hyperinsulinism/inborn error. Avoid prolonged hypoglycemia.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "peds",
+    "reference_source": "AAP Clinical Report on Neonatal Hypoglycemia 2011; PES 2015"
+  },
+  {
+    "scenario": "เด็กชายอายุ 3 ปี อยู่บ้านเก่าทาสีก่อน 1978 มี pica eating paint chips มา clinic ด้วย irritability + decreased appetite + abdominal pain intermittent + developmental delay (speech)\n\nBW 13 kg, no organomegaly\nCBC: Hb 9.8, MCV 70, basophilic stippling +\nBlood lead level (BLL) 52 mcg/dL\nAXR: paint chip in colon",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No treatment if asymptomatic"
+      },
+      {
+        "label": "B",
+        "text": "Pediatric Lead Poisoning BLL ≥ 45 mcg/dL = chelation therapy indicated: หา + remove lead source FIRST (critical — re-exposure futile chelation); BLL 45-69 + asymptomatic → outpatient succimer (DMSA) 10 mg/kg/dose q8h × 5 d then q12h × 14 d (oral chelator); BLL ≥ 70 หรือ symptomatic encephalopathy → inpatient + dual IV CaNa2EDTA + IM dimercaprol (BAL) (BAL ก่อน EDTA หลีกเลี่ยง redistribution to brain); whole bowel irrigation/cathartic for chip in GI; iron + calcium + zinc supplement (compete absorption); environmental abatement (Department of Public Health, certified abatement); recheck BLL post-chelation + 2-4 wk; family screen siblings + lead source; public health reporting; developmental + neurology follow-up (irreversible cognitive deficit); CDC 2021 reference value 3.5 mcg/dL — any BLL = action"
+      },
+      {
+        "label": "C",
+        "text": "Wait until 100 mcg/dL"
+      },
+      {
+        "label": "D",
+        "text": "Discharge home no follow-up"
+      },
+      {
+        "label": "E",
+        "text": "Surgery"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Lead = potent neurotoxin, no safe level. CDC blood lead reference 3.5 mcg/dL (2021). Chelation ≥ 45 + remove source. Encephalopathy = emergency (BAL + EDTA). Source: old paint, water pipes, soil, imported items. Sources of exposure must be eliminated.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "neurology",
+    "board_age_group": "peds",
+    "reference_source": "AAP Lead Exposure Policy 2016; CDC Lead Reference Value 2021"
+  },
+  {
+    "scenario": "เด็กชายอายุ 5 ปี ชักทั้งตัว tonic-clonic ต่อเนื่อง > 5 นาที EMS ส่งมา ED ขณะที่ชักยังคงอยู่ at ED chair seizure ต่อ + ไข้ 39°C ครอบครัวบอก seizure เริ่ม 25 นาทีก่อน\n\nV/S: HR 168, BP 102/68, RR irregular, SpO2 92%, Temp 39°C, BW 20 kg\nGlucose bedside 96, no obvious trauma",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Observe + wait"
+      },
+      {
+        "label": "B",
+        "text": "Pediatric Status Epilepticus (> 5 min established): ABC — position, suction, jaw thrust, O2 + bag-mask ถ้า inadequate ventilation, monitor; rapid glucose check (give D10W 5 mL/kg ถ้า < 60); IV/IO access; FIRST line = Lorazepam 0.1 mg/kg IV (max 4 mg) หรือ Midazolam 0.2 mg/kg IM/IN/buccal (no IV) — may repeat × 1 ที่ 5 นาที; SECOND line ถ้า persists: fosphenytoin 20 mg PE/kg IV (over 7-10 min, monitor BP/arrhythmia) หรือ Levetiracetam 60 mg/kg IV (max 4.5 g, equally effective per ESETT 2019) หรือ valproate 40 mg/kg IV (avoid age < 2, hepatic dysfunction, metabolic concern); THIRD line ถ้า refractory > 30-60 min: midazolam infusion หรือ pentobarbital coma → intubate + EEG monitor in ICU; treat underlying cause (FS workup, infection, electrolytes, toxic, structural); antipyretic for fever; do NOT delay treatment for diagnostics"
+      },
+      {
+        "label": "C",
+        "text": "Antibiotic alone"
+      },
+      {
+        "label": "D",
+        "text": "Diuretic"
+      },
+      {
+        "label": "E",
+        "text": "Discharge home"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "SE = neurologic emergency. > 5 min = treat. Time = brain. Benzo first (lorazepam IV preferred, midaz IM/buccal/IN if no IV). Second-line: fosphenytoin, leva, valproate equivalent (ESETT 2019). Refractory > 30-60 min = anesthetic infusion + ICU. Treat underlying cause.",
+    "difficulty": "hard",
+    "board_section": "ems_mgmt",
+    "board_topic": "neurology",
+    "board_age_group": "peds",
+    "reference_source": "Neurocritical Care Society Status Epilepticus 2012; ESETT NEJM 2019; AES 2016"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 12 ปี ปวดหัวข้างเดียว throbbing × 6 ชม + คลื่นไส้ + กลัวแสง กลัวเสียง ทำให้นอน 3-4 ครั้ง/เดือน × 6 เดือน ครอบครัวแม่มี migraine; เรียนยังปกติ\n\nPE neurologic ปกติ; BMI ปกติ\nไม่มี red flags (no head trauma, no fever, no fixed deficit, no AM headache + vomit, normal exam)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Brain MRI mandatory all kids"
+      },
+      {
+        "label": "B",
+        "text": "Pediatric Migraine without aura (ICHD-3 criteria): no neuroimaging needed (no red flags + normal exam); acute treatment — ibuprofen 10 mg/kg PO at onset (most effective NSAID) หรือ acetaminophen 15 mg/kg; triptans (sumatriptan nasal/PO, rizatriptan, almotriptan, zolmitriptan) ≥ 12 yr FDA-approved; antiemetic (ondansetron, metoclopramide) ถ้าคลื่นไส้; rest in dark quiet room; treat early ในตอน aura/onset; prevention ถ้า > 4-6 attacks/mo + functional impact — topiramate, amitriptyline (low dose, off-label), propranolol; CGRP antagonist (rimegepant > 12, atogepant > 12) emerging; behavioral: cognitive behavioral therapy + biofeedback proven effective in peds (CHAMP trial); lifestyle — regular sleep, hydration, meals, exercise, limit screens, trigger diary; education; school accommodation"
+      },
+      {
+        "label": "C",
+        "text": "Opioid as needed"
+      },
+      {
+        "label": "D",
+        "text": "Antibiotic"
+      },
+      {
+        "label": "E",
+        "text": "Surgery"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pediatric migraine common. Ibuprofen + triptan acute. CHAMP trial: behavioral therapy + low-dose preventive equivalent. Imaging only with red flags. Lifestyle + trigger management critical. CGRP class emerging in older adolescents.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "peds",
+    "reference_source": "AAN Practice Guideline: Acute Pediatric Migraine 2019; CHAMP NEJM 2017"
+  },
+  {
+    "scenario": "เด็กชายอายุ 18 เดือน ประวัติ preterm 28 wk BPD HIE มา clinic ด้วย delay motor — ยังไม่นั่งเองได้ ขาเกร็ง spastic both legs scissoring + toe-walking ปกติ cognition ดูใกล้ปกติ\n\nPE: increased tone lower extremities, scissoring, brisk DTRs, Babinski +, persistent ATNR, no head control issue\nMRI brain: periventricular leukomalacia",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No intervention needed"
+      },
+      {
+        "label": "B",
+        "text": "Spastic diplegic Cerebral Palsy (likely from PVL) — early intervention multidisciplinary: PT/OT/speech therapy intensive — focus motor + functional skills (GMFM, Bayley); orthotics (AFO) prevent contracture + improve gait; spasticity management — oral baclofen, dantrolene, diazepam (titrate); focal — botulinum toxin injection (effective for focal spasticity, repeat q3-6 mo); intrathecal baclofen pump (severe generalized); selective dorsal rhizotomy (GMFCS II-III, ambulatory, age 4-8); orthopedic surgery (tendon lengthening, osteotomy) selected; assistive devices (walker, wheelchair); GMFCS staging; co-morbidities — epilepsy 30-50%, intellectual 50%, hearing/vision, GI/feeding, GERD, sleep, hip surveillance + scoliosis; family-centered + IEP school; address pain + drooling + bone health; nutrition + growth; transition planning"
+      },
+      {
+        "label": "C",
+        "text": "Spinal surgery infant"
+      },
+      {
+        "label": "D",
+        "text": "Discharge no therapy"
+      },
+      {
+        "label": "E",
+        "text": "Chemotherapy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "CP = non-progressive motor disorder, perinatal injury (PVL, HIE common). GMFCS staging guides function. Early intervention + multidisciplinary essential. Spasticity tools: oral, botox, ITB, SDR, surgery. Address comorbidities. Family-centered.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "neurology",
+    "board_age_group": "peds",
+    "reference_source": "AACPDM Care Pathway 2022; AAP Section on Developmental Pediatrics"
+  },
+  {
+    "scenario": "เด็กชายอายุ 24 เดือน พ่อแม่กังวล — พูด < 5 คำเดี่ยว, ไม่ตอบเรียก, ไม่พ้นมือ, no joint attention, ตื่นเล่นล้อรถซ้ำ ๆ + hand-flapping, sensory issues (covers ears, food selectivity), tantrums เมื่อ routine change\n\nDevelopmental: motor normal, fine motor ok, social/language severely delayed\nHearing test: normal; M-CHAT-R high risk\nNo dysmorphism, normal exam",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Reassure 'late talker'"
+      },
+      {
+        "label": "B",
+        "text": "Suspected ASD — refer for comprehensive evaluation (developmental pediatrician, psychologist with ADOS-2, speech-language) — diagnosis < 24 mo possible reliable; AAP universal ASD screen 18 + 24 mo with M-CHAT-R; while awaiting eval start early intervention (federal Part C, ages 0-3) — applied behavioral analysis (ABA) intensive 20-40 hr/wk, speech, OT, sensory integration; parent training (Pivotal Response Treatment, ESDM); audiology if not done; genetic evaluation (chromosomal microarray + Fragile X DNA + targeted gene panel if features); medical comorbidities — seizure, sleep, GI, ADHD; immunizations standard (no MMR-autism link, debunked); family support + IEP school transition; medication only for specific symptoms (risperidone/aripiprazole for severe irritability/aggression, melatonin sleep) not core ASD; school IEP/IDEA"
+      },
+      {
+        "label": "C",
+        "text": "Discharge — wait 1 yr"
+      },
+      {
+        "label": "D",
+        "text": "Steroid"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "ASD prevalence 1 in 36 (CDC 2023). Early identification + intervention critical for outcomes. AAP screen 18 + 24 mo. M-CHAT-R/F. Comprehensive eval (ADOS-2 + ADI-R). Multidisciplinary intervention. Medication for comorbid symptoms only. Genetic + medical workup. No vaccine link.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "AAP Clinical Report: Identification, Evaluation, and Management of ASD 2020"
+  },
+  {
+    "scenario": "เด็กชายอายุ 8 ปี ป.2 ครู report ไม่มีสมาธิ ลุกในห้องบ่อย คุยไม่หยุด ขัดจังหวะ ทำการบ้านไม่เสร็จ ลืม supplies เป็นมา > 6 เดือน ที่บ้านก็เป็นเช่นเดียวกัน ไม่เคยมี mood disorder, ทำร้ายตัวเอง\n\nVanderbilt teacher + parent score: both > cutoff inattention + hyperactivity\nDDx normal exam, hearing+vision ok, no learning specifically\nFamily Hx: father has ADHD",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Wait until age 12"
+      },
+      {
+        "label": "B",
+        "text": "ADHD combined presentation (DSM-5): multimodal treatment — first-line FDA-approved stimulant medications (methylphenidate, amphetamine derivatives) effective 70-80%, start low + titrate up clinical effect + side effect (appetite, sleep, growth, BP); long-acting preparations preferred adherence; alternative — atomoxetine (NRI), guanfacine ER, clonidine ER (non-stimulant, slower onset); behavioral therapy + parent training (mandatory < 6 yr); IEP/504 school accommodations (extended time, preferred seating, breaks, organizational support); monitor growth, BP, HR; sleep hygiene; address comorbid (anxiety, depression, ODD, learning disability); avoid screen + structured routine; reassess q3-6 mo; long-term: persists 50-65% adult; AAP 2019 + AACAP guideline"
+      },
+      {
+        "label": "C",
+        "text": "Antibiotic"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Punishment-based"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "ADHD = neurodevelopmental, persists adulthood half. DSM-5 criteria: ≥ 6 symptoms either inattention or hyperactivity/impulsivity, ≥ 6 mo, ≥ 2 settings, before 12 yr, impairment. Vanderbilt screening tool. Stimulant first-line 6+ yr; behavioral primary < 6. Multimodal. Address comorbidities + school.",
+    "difficulty": "easy",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "AAP Clinical Practice Guideline: ADHD 2019"
+  },
+  {
+    "scenario": "เด็กชายอายุ 15 ปี มาคลินิกพ่อแม่กังวล — หลีกเลี่ยงคบเพื่อน 6 เดือน, ผลการเรียนตก, sleep > 12h, นน. ลด 5 kg, ร้องไห้บ่อย, กล่าวว่า 'ไม่อยากตื่นอีก' ฟังเพลง dark พ่อพบว่ามียาเก็บไว้ใน drawer\n\nPHQ-9 score 22 (severe); SI active ideation ไม่มีแผนเฉพาะแต่เก็บยา; previous self-harm episodes 1; no psychotic Sx\nNo substance use; no family Hx attempt",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Outpatient SSRI alone discharge"
+      },
+      {
+        "label": "B",
+        "text": "Adolescent Severe Major Depression with active suicidal ideation + means access: immediate safety assessment — ensure ในที่ปลอดภัย ใน clinic จนกว่า safe disposition; เก็บยาทั้งหมด lock + remove firearms/sharps จากบ้าน (lethal means restriction); psychiatric evaluation urgent + likely admission to inpatient psychiatry (active SI + means + persistent symptoms = high risk); safety plan + crisis hotline (988); start SSRI fluoxetine 10-20 mg/d (only FDA-approved peds depression > 8 yr) — monitor closely first 4 wk for activation/SI (black box warning); evidence-based psychotherapy — CBT or IPT-A; family involvement + psychoeducation; school support; treat comorbidities; ภายใน 1 wk follow-up; sertraline alternative; ความคาดหวัง: response 50-60%, remission 30-40%; persistent → SSRI + CBT (TADS); refractory → augmentation, ECT, ketamine (selected); transition to adult care; suicide risk persists — ongoing monitoring"
+      },
+      {
+        "label": "C",
+        "text": "Reassure no follow-up"
+      },
+      {
+        "label": "D",
+        "text": "Bupropion as first-line"
+      },
+      {
+        "label": "E",
+        "text": "Sleeping pills"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Adolescent depression + active SI with means = high acute risk → admission. Lethal means restriction = #1 evidence-based prevention. SSRI fluoxetine peds depression only FDA-approved < 18 (sertraline > 6 only OCD). Combination CBT + SSRI > monotherapy (TADS). Black box warning monitoring.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "AAP Guidelines for Adolescent Depression in Primary Care (GLAD-PC) 2018; TADS NEJM 2007"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 14 ปี BMI 14.5 น้ำหนักลด 12 kg ใน 6 เดือน amenorrhea 4 mo distorted body image (กลัวอ้วน) restricting calorie + excessive exercise no purging\n\nV/S: HR 42, BP 88/56 standing → 78/50 (orthostatic), Temp 35.6°C, BMI 14.5\nPE: lanugo, cachectic, dry skin, bradycardia\n\nECG: prolonged QTc, sinus brady; K 3.0, Phosphate 2.2, ALT/AST elevated; bone density Z-score -2.1",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Outpatient calorie diary only"
+      },
+      {
+        "label": "B",
+        "text": "Anorexia Nervosa, restricting type, severe with medical instability — admit for medical stabilization (criteria: HR < 50 day or < 45 night, BP < 90/45, orthostatic, < 75% IBW, electrolyte imbalance, refeeding risk): cardiac monitor; SLOW refeeding to avoid refeeding syndrome — start 1,200-1,400 kcal/d (or 30-40 kcal/kg/d) ค่อยเพิ่ม 200 kcal q1-3 d (newer guidelines: more aggressive start ใน less severe cases); check + correct electrolytes (P, K, Mg) daily + thiamine supplement BEFORE feeding; weight gain target 0.5-1 kg/wk inpatient; calorie progression supervised; multidisciplinary team — pediatrician, dietitian, mental health (Family-Based Treatment Maudsley = first-line ที่อายุ < 18, evidence-based for AN); olanzapine adjunct ของบางอย่าง; SSRI helpful comorbid anxiety/depression (after weight restoration); bone density monitoring + treat with weight restoration not BP/HRT; medical follow-up + long-term: mortality 5%, recovery 50-70%"
+      },
+      {
+        "label": "C",
+        "text": "Force feed without medical eval"
+      },
+      {
+        "label": "D",
+        "text": "Punitive approach"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "AN = high mortality eating disorder (highest of all mental illnesses). Hospitalize for medical instability. Refeeding syndrome = fatal — slow refeed + phosphate/electrolyte/thiamine. FBT (Maudsley) = first-line < 18. Multidisciplinary. Bone, growth, fertility long-term.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "AAP Clinical Report: Identification and Management of Eating Disorders in Children 2021"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 16 ปี มี nodulocystic acne รุนแรงทั่วใบหน้า + หลัง + อก หลายปี ใช้ benzoyl peroxide + topical retinoid + tetracycline 6 mo แล้วไม่ดีขึ้น มี scarring + ส่งผลต่อ self-esteem มาก",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue same regimen"
+      },
+      {
+        "label": "B",
+        "text": "Severe nodulocystic acne refractory to standard therapy → consider Isotretinoin (oral) — cumulative dose 120-150 mg/kg over 5-6 mo; pregnancy prevention iPLEDGE program mandatory in females (teratogenic — Category X, 2 effective contraception methods + monthly pregnancy test); baseline + monthly LFT + lipid + CBC; counsel side effects (dry skin/lips/eyes, photosensitivity, depression/suicidal ideation monitor, IBD link not proven, night vision, headache from pseudotumor cerebri, hyperostosis); avoid tetracycline concurrent (pseudotumor); avoid waxing/laser × 6 mo; mental health screen + support; results: clear 70-90%, relapse 30%; alternative oral spironolactone (anti-androgen, females), oral hormonal therapy (COC, anti-androgen), light/laser therapy; multidisciplinary — dermatology + adolescent medicine + mental health"
+      },
+      {
+        "label": "C",
+        "text": "Wait + outgrow"
+      },
+      {
+        "label": "D",
+        "text": "Steroid systemic chronic"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic 5 years"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Severe nodulocystic acne → isotretinoin = most effective. iPLEDGE registry mandatory (teratogenicity). Monitor LFT/lipid/mental health. Acne scarring + psychosocial impact justifies aggressive treatment. Alternative oral anti-androgens (spironolactone, COC) effective females.",
+    "difficulty": "easy",
+    "board_section": "integrative",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "peds",
+    "reference_source": "AAD Guidelines of Care for Acne 2024; iPLEDGE REMS"
+  },
+  {
+    "scenario": "ทารกชายอายุ 4 เดือน term, BW 7 kg พบ groin bulge ทั้งสองข้างเมื่อร้องไห้ + ขณะ feeding 2 สัปดาห์ ตอนนี้ฝั่งขวาบวมเริ่มแข็ง 4 ชม ทารกร้องไห้รุนแรง อาเจียน 1 ครั้ง groin red\n\nPE: right groin: tender + non-reducible mass, mild erythema\nLeft groin: easily reducible bulge\nNo testicular pain/swelling, abdomen soft non-distended",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Elective surgery 1 year"
+      },
+      {
+        "label": "B",
+        "text": "Incarcerated right inguinal hernia (surgical emergency) + asymptomatic left reducible hernia: attempt manual reduction with sedation (morphine + midazolam) + Trendelenburg + gentle steady pressure — successful 80% if reduction within 12 hr of incarceration; ถ้า reduce ได้ → schedule semi-elective surgical repair ภายใน 24-48 ชม (allow edema to subside, reduce recurrent incarceration); ถ้า reduction ไม่สำเร็จ หรือ strangulation/perforation signs (peritonitis, sepsis, bilious vomiting, bloody stool) → emergency surgery; NPO + IV fluid + pediatric surgery consultation; left side — repair simultaneously contralateral exploration controversial ในเด็กเอเชีย exploration recommended (35% contralateral PPV); preterm/high-risk hernia higher complication = repair before discharge from NICU; post-op: testicular check + recurrence monitoring"
+      },
+      {
+        "label": "C",
+        "text": "Wait + observe"
+      },
+      {
+        "label": "D",
+        "text": "Antibiotic alone"
+      },
+      {
+        "label": "E",
+        "text": "Discharge home"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pediatric inguinal hernia = indirect (patent processus vaginalis). Incarceration risk highest first year. Manual reduction first if no strangulation. Surgery semi-elective post-reduction. Contralateral exploration in young infants debated.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "peds",
+    "reference_source": "AAP/APSA Pediatric Inguinal Hernia"
+  },
+  {
+    "scenario": "ทารกชายอายุ 5 สัปดาห์ first-born อาเจียน projectile non-bilious เพิ่มขึ้น × 1 สัปดาห์ หลังกินนม น้ำหนักลด 200 g ดูดนมเก่ง (hungry vomiter)\n\nV/S: HR 162, RR 38, BW 3.8 kg (BW เกิด 3.6 kg)\nPE: dehydrated, sunken fontanelle, peristaltic wave visible LUQ → RLQ, palpable olive RUQ, no abdominal distension\n\nLab: Na 132, K 3.0, Cl 88, HCO3 32 (hypochloremic hypokalemic metabolic alkalosis), BUN 28\nUS pylorus: muscle thickness 5 mm, length 18 mm = pyloric stenosis",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Emergency surgery before correcting electrolytes"
+      },
+      {
+        "label": "B",
+        "text": "Hypertrophic Pyloric Stenosis: surgery is NEVER emergency — correct fluid + electrolyte FIRST (anesthesia safety): NPO + NG decompression; IV fluid resuscitation D5 1/2 NSS + KCl 20 mEq/L at 1.5-2× maintenance; goal — correct dehydration, normalize Cl > 100, HCO3 < 30, K > 3.5, urine output good; usually 24-48 ชม; THEN surgical pyloromyotomy (Ramstedt) — laparoscopic preferred; feed advancement 6-8 ชม post-op (small volume → full); home POD 1-2; long-term: excellent outcome, no growth issues; education + reassurance"
+      },
+      {
+        "label": "C",
+        "text": "Discharge with formula change"
+      },
+      {
+        "label": "D",
+        "text": "Reglan oral"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "HPS = classic first-born male, 3-6 wk, projectile non-bilious vomit, hungry baby. Hypochloremic hypokalemic metabolic alkalosis (paradoxical aciduria). Correct electrolytes FIRST — anesthesia/respiratory safety critical. Pyloromyotomy curative.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "peds",
+    "reference_source": "AAP Section on Surgery; UpToDate Pyloric Stenosis"
+  },
+  {
+    "scenario": "เด็กชายอายุ 12 ปี ปวดท้องเริ่มรอบสะดือ 18 ชม ก่อน ย้ายมา RLQ + ไข้ + คลื่นไส้อาเจียน + เบื่ออาหาร เดินสะเทือนเจ็บ\n\nV/S: HR 122, BP 110/72, Temp 38.4°C, BW 36 kg\nPE: RLQ tenderness at McBurney, Rovsing +, psoas +, obturator +, rebound +\n\nCBC: WBC 16,500 (left shift), CRP 78\nPediatric Appendicitis Score 9 (likely)\nUS abdomen: non-compressible appendix > 7 mm + appendicolith + peri-appendiceal fluid",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge antibiotic only"
+      },
+      {
+        "label": "B",
+        "text": "Acute Appendicitis (likely non-perforated): NPO + IV fluid resuscitation + analgesia + IV antibiotic ceftriaxone + metronidazole หรือ piperacillin-tazobactam pre-op; surgical consultation; laparoscopic appendectomy ภายใน 12-24 ชม preferred (less SSI, shorter LOS); short-course antibiotic 24 ชม post-op ถ้า non-perforated; ถ้า perforated/abscess → 5-7 d IV → switch oral; non-operative management (NOM) ด้วย antibiotic + observation = option for selected non-complicated cases (recent evidence shows acceptable in selected); appendectomy still standard ใน complicated cases; post-op: advance diet POD 1, discharge POD 1-2; long-term: rare recurrence in NOM (~30%); educate signs return"
+      },
+      {
+        "label": "C",
+        "text": "MRI before surgery"
+      },
+      {
+        "label": "D",
+        "text": "Steroid alone"
+      },
+      {
+        "label": "E",
+        "text": "Wait 1 week"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Appendicitis = most common acute surgical abdomen kids. PAS or Alvarado helpful. US first-line imaging (avoid CT radiation). Laparoscopic appendectomy standard. NOM antibiotic-alone emerging option for non-complicated. Recurrence ~30% after NOM.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "peds",
+    "reference_source": "WSES Pediatric Appendicitis Guideline 2021; AAP"
+  },
+  {
+    "scenario": "ทารกอายุ 3 เดือน term BW 6 kg (50th percentile, growing normally) gulp + spit up after most feeds ตั้งแต่อายุ 2 wk ปริมาณน้อย ไม่หลังจาก projectile happy baby, gain weight ดี, feed ดี, ไม่ irritable, no respiratory issue\n\nPE ปกติ, no dehydration, no abdominal mass, no FTT",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Start PPI immediately"
+      },
+      {
+        "label": "B",
+        "text": "Physiologic Gastroesophageal Reflux (GER, not GERD — 'happy spitter'): reassurance to parents — ~50% infants at 4 mo, peaks 4 mo, resolves > 90% by 12 mo (lower esophageal sphincter immature); positioning — UPRIGHT 20-30 min after feed; AVOID prone or side-lying for sleep (SIDS risk); smaller more frequent feeds; thickened feed (rice cereal, infant rice starch) ถ้า ของเหลวมาก; trial of hypoallergenic formula (extensively hydrolyzed) × 2-4 wk ถ้าสงสัย milk protein allergy; AVOID acid suppression in uncomplicated GER (no benefit, increased infection + fracture risk); review red flag — FTT, projectile, bilious, blood, persistent crying, hematemesis, dysphagia, lethargy → workup; education + follow-up if persists past 12-18 mo or develops GERD complications (esophagitis, FTT, respiratory)"
+      },
+      {
+        "label": "C",
+        "text": "Surgery fundoplication"
+      },
+      {
+        "label": "D",
+        "text": "Stop breastfeeding"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Physiologic GER common, resolves spontaneously. No need for acid suppression in uncomplicated 'happy spitter.' GERD = pathologic when complications (FTT, esophagitis, respiratory). NASPGHAN/ESPGHAN 2018 advise against acid suppression first-line.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "peds",
+    "reference_source": "NASPGHAN/ESPGHAN Joint Guideline on Pediatric GERD 2018"
+  },
+  {
+    "scenario": "เด็กชายอายุ 4 ปี ถ่ายอุจจาระแข็งทุก 5-7 วัน × 6 เดือน เจ็บขณะถ่าย retentive posturing soiling underwear 3 ครั้ง/wk หลังจาก toilet trained 3 yr ปกติ\n\nDiet: low fiber, picky eating, ดูดนมวัว 1 L/d, น้ำน้อย, no exercise; emotion อาย\nPE: palpable stool LLQ + suprapubic, anal exam normal (no fissure, no tag), no neuro deficit, growth normal\n\nNo red flags (no delayed meconium, no FTT, no bloody stool)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Surgery"
+      },
+      {
+        "label": "B",
+        "text": "Functional constipation with overflow encopresis (Rome IV criteria): disimpaction — polyethylene glycol (PEG 3350/Miralax) 1-1.5 g/kg/d × 3-6 d (oral preferred over enema, equally effective in studies, less traumatic); maintenance — PEG 0.4-0.8 g/kg/d titrate to soft daily stool × minimum 6 months; behavior modification — scheduled toilet sits 5-10 min after meals (gastrocolic reflex) × 2-3 ครั้ง/วัน, positive reinforcement (sticker chart), foot stool, calm + non-punitive; dietary — increase fiber gradually (age + 5 = grams/d) + adequate water + limit cow milk < 500 mL/d; physical activity; education that this is medical condition + retraining takes months — relapse common; alarm features for further evaluation (FTT, blood, FH Hirschsprung, abnormal anus/neuro) → workup; mental health support if needed"
+      },
+      {
+        "label": "C",
+        "text": "Discharge no treatment"
+      },
+      {
+        "label": "D",
+        "text": "Daily enema chronic"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Functional constipation = most common kids constipation. Encopresis from retentive behavior + overflow. Rome IV diagnosis. PEG = first-line (oral disimpaction + maintenance). Behavior modification + dietary essential. Long-term commitment, relapse common.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "peds",
+    "reference_source": "NASPGHAN/ESPGHAN Constipation Guidelines 2014; Rome IV"
+  },
+  {
+    "scenario": "เด็กชายอายุ 7 ปี 2 สัปดาห์ก่อนเป็น URI ตอนนี้ palpable purpura ที่ขา + ก้น + ปวดท้องตื้น ๆ + ปวดข้อเข่า + ข้อเท้า + ปัสสาวะสีเข้ม\n\nV/S: BP 110/72, HR 102, Temp 37.4°C, BW 24 kg\nPE: palpable purpura lower extremities + buttocks, no thrombocytopenia, mild knee + ankle effusion\n\nCBC: Plt 384,000 normal, WBC 12,200\nUA: RBC 30/HPF, Protein 1+\nBUN 14, Cr 0.5, complement normal\nABD US: bowel wall thickening, no intussusception",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bone marrow biopsy"
+      },
+      {
+        "label": "B",
+        "text": "IgA Vasculitis (HSP, EULAR/PRINTO/PReS criteria): supportive care most cases (self-limited 4-6 wk, monitor 6 mo); rest + elevate legs + analgesia (NSAID for arthralgia, avoid ถ้า renal involvement); hydration; AVOID activity that could exacerbate purpura; monitor for complications — abdominal pain (intussusception risk 3-4%, usually ileo-ileal — US monitoring), GI bleeding, renal (any presentation — hematuria/proteinuria 30-50% within 4 wk); BP + UA + Cr q1-2 wk × 6 mo (nephritis can be delayed up to 6 mo); corticosteroid (prednisolone 1-2 mg/kg/d) NOT for cutaneous/arthritis (no prevention of nephritis) but consider for severe abdominal pain or rapidly progressive nephritis; ถ้า severe nephritis (nephrotic, RPGN) → MMF, cyclophosphamide, ACEI; recurrence 30%"
+      },
+      {
+        "label": "C",
+        "text": "Aggressive cytotoxic all"
+      },
+      {
+        "label": "D",
+        "text": "Discharge no follow"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "HSP/IgAV = most common pediatric vasculitis. Tetrad: palpable purpura (always), arthritis, abdominal pain, nephritis. Most self-limit. Steroid for severe abdominal pain not skin/joint. Long-term renal follow-up 6 mo (nephritis predictor outcome). Intussusception ileo-ileal.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "renal_gu",
+    "board_age_group": "peds",
+    "reference_source": "EULAR/PRINTO/PReS Criteria 2010; SHARE Initiative HSP 2019"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 3 ปี ขาขวาเข่าบวม 6 wk + ตื่นมาขาเกร็ง morning stiffness 30 นาที + เดินขาเขลงเล็กน้อย ไม่มีไข้ ไม่มีรอย rash\n\nV/S ปกติ, BW 14 kg\nPE: right knee effusion + warm, slight flexion contracture 10°, no other joint, no rash, no organomegaly\n\nCBC normal, CRP mild elevated, ANA + 1:160 (speckled), RF negative, HLA-B27 negative, anti-CCP negative\nXR: soft tissue swelling, no erosion\nOphtho slit lamp: ASYMPTOMATIC anterior uveitis +",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Methotrexate IV without ophthalmology evaluation"
+      },
+      {
+        "label": "B",
+        "text": "Oligoarticular JIA (≤ 4 joints first 6 mo) + ANA + ที่มี asymptomatic uveitis (high risk especially ANA+ young female): NSAID (naproxen 10 mg/kg/dose q12h) first-line for joint inflammation; intra-articular corticosteroid injection (triamcinolone hexacetonide) — effective + can sustain remission joint; methotrexate 10-15 mg/m²/wk PO or SC (preferred SC) ถ้า persistent/polyarticular evolution or uveitis not controlled — both joint + uveitis; for uveitis topical corticosteroid (prednisolone acetate) + mydriatic ophtho-managed; biologic — adalimumab (anti-TNF, best for uveitis) ถ้า uveitis refractory; SCHEDULED slit lamp screen q3 mo × first 4 yr (ANA+ < 7 yr highest risk → high screening frequency); PT + OT; education + activity; long-term: remission 50-75%, uveitis blindness preventable with screening + treatment"
+      },
+      {
+        "label": "C",
+        "text": "Wait — outgrow"
+      },
+      {
+        "label": "D",
+        "text": "Antibiotic"
+      },
+      {
+        "label": "E",
+        "text": "Surgery only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "JIA oligoarticular = most common subtype. Young ANA+ girl = highest uveitis risk → scheduled screen (asymptomatic chronic anterior uveitis = blindness risk). MTX disease-modifying. Adalimumab gold standard for uveitis. PT/OT functional. Screening prevents irreversible vision loss.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "peds",
+    "reference_source": "ACR/AF Treatment Guideline JIA 2019; AAP Ophthalmologic Screening JIA"
+  },
+  {
+    "scenario": "ทารกเดิม preterm GA 26 wk BW 700 g ตอนนี้อายุ corrected gestational 36 wk (postnatal age 10 wk) ยังต้องการ O2 supplemental 28% via nasal cannula (FiO2 ≥ 0.21 + > 28 d cumulative oxygen need); CXR: hyperinflation + cystic changes\n\nFeed full enteral, growing slowly, no acute illness\nEcho: mild pulmonary HT",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discontinue O2 immediately"
+      },
+      {
+        "label": "B",
+        "text": "Bronchopulmonary Dysplasia (Moderate-Severe per NIH 2018 criteria — O2 + GA 36 wk PMA): optimize ventilation + O2 (target SpO2 90-95%, avoid hyperoxia); high-calorie nutrition (target 130-150 kcal/kg/d) + protein-fortified human milk + multivitamin; cautious fluid (avoid overload); diuretic (furosemide intermittent or thiazide + spironolactone) selected ถ้า worsening pulmonary edema or HT; bronchodilator (inhaled albuterol) selected ถ้า reversible airway obstruction; systemic corticosteroid (DART low-dose dexamethasone) controversial — only for ventilator-dependent BPD (consider risk neurodevelopmental); inhaled corticosteroid mixed evidence; immunizations + RSV palivizumab prophylaxis (high risk); home O2 wean by oximetry; early intervention developmental services; treat pulmonary HT (sildenafil); ophtho + audio + neurodevelopmental follow-up; long-term: improve pulmonary function over years but increased asthma + reduced exercise tolerance"
+      },
+      {
+        "label": "C",
+        "text": "High-dose steroid week 1"
+      },
+      {
+        "label": "D",
+        "text": "Restrict calories"
+      },
+      {
+        "label": "E",
+        "text": "Discharge no follow-up"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "BPD = chronic lung disease premature infants. NIH 2018 criteria. Multifactorial — surfactant deficient, oxygen toxicity, volutrauma, infection, inflammation. Nutritional + O2 + judicious diuretics + RSV prophylaxis. Long-term respiratory + neurodevelopmental follow-up.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "respiratory",
+    "board_age_group": "peds",
+    "reference_source": "AAP COFN; NIH BPD Workshop 2018 (Higgins RD)"
+  },
+  {
+    "scenario": "ทารก term DOL 2 BW 2,800 g แม่ใช้ methadone 80 mg/d ตลอด pregnancy ทารกตื่นกลางคืน irritable + high-pitched cry + tremor + sweating + sneezing + feeding difficulty + loose stool\n\nFinnegan score 12 (moderate-severe, > 8 = treatment threshold ที่ 3 consecutive scores)\nVitals stable\nNo signs sepsis, no jaundice severe",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge home with mother"
+      },
+      {
+        "label": "B",
+        "text": "Neonatal Abstinence Syndrome (NAS, opioid exposure) — utilize Eat, Sleep, Console (ESC) function-based approach (newer, reduces pharmacotherapy + LOS) OR Finnegan score; non-pharmacologic FIRST — swaddling, low stimulation environment, dim lighting, calm room, breastfeeding promotion (allowed in methadone/buprenorphine), skin-to-skin, on-demand feeds, small frequent, hypercaloric formula ถ้า not breastfeeding; pharmacotherapy ถ้า non-pharm fails — morphine 0.04 mg/kg q3-4h titrate (or methadone or buprenorphine sublingual, recent buprenorphine sublingual showing shorter treatment); clonidine adjunct/monotherapy non-opioid; phenobarbital ถ้า polysubstance; observe minimum 4-7 d for opioid (longer for methadone 5-7 d); discharge — child welfare/social work involvement, follow-up 1-2 wk, ophtho + auditory + developmental, breastfeeding support, naloxone training, address maternal substance use disorder + mental health"
+      },
+      {
+        "label": "C",
+        "text": "Naloxone routinely"
+      },
+      {
+        "label": "D",
+        "text": "Restrict breastfeeding"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "NAS rising incidence (opioid epidemic). Non-pharm first (ESC model = function-based, less pharm + LOS, AAP endorsed). Morphine or methadone first-line pharm. Breastfeeding allowed in methadone/buprenorphine — recommended. Address maternal SUD.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "AAP Clinical Report on NAS 2020; ESC Approach Grossman 2017"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 14 ปี ขณะยืน assembly เช้า > 30 นาที + ร้อน + อดอาหาร feeling lightheaded + nausea + visual gray-out → faints to ground 5 sec then rapid recovery, อาเจียนเล็กน้อย\n\nV/S after: HR 78, BP 110/72 (no orthostatic later), Temp normal\nPE: normal, no neuro deficit, no murmur\n\nECG: sinus, QTc 410 ms normal, normal axis + intervals\nHx: family no sudden death, no syncope with exercise, no chest pain",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Implant pacemaker"
+      },
+      {
+        "label": "B",
+        "text": "Vasovagal (neurocardiogenic) Syncope (clinical Dx + reassuring features): reassurance — common benign in adolescents (15% age 15); identify + avoid triggers (prolonged standing, hot environment, dehydration, fasting, fear/pain, blood/needles, micturition); preventive — increase fluid 2-3 L/d + salt liberalization 6-10 g/d (low sodium common adolescents); counterpressure maneuvers (leg crossing, fist clenching, squat) when prodromal; AVOID prolonged standing/hot/skip meals; postural changes slowly; education about prodrome — sit/lie immediately; ECG normal sufficient most cases (no need echo/MRI/tilt table routinely if classic features + normal ECG + no red flags); RED FLAGS for cardiac syncope warranting workup: exertional, no prodrome, supine, family Hx SCD, chest pain, palpitation, prolonged QT, structural heart disease — refer cardiology; refractory → midodrine, fludrocortisone, beta blocker controversial"
+      },
+      {
+        "label": "C",
+        "text": "Cardiac catheterization"
+      },
+      {
+        "label": "D",
+        "text": "Antiarrhythmic"
+      },
+      {
+        "label": "E",
+        "text": "Discharge no instruction"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Vasovagal = most common syncope adolescents. Diagnosis clinical with classic prodrome + triggers + reassuring exam/ECG. Red flags = cardiac eval. Lifestyle (fluid/salt/avoid trigger) effective most. Pharmacology rarely needed. AAP/AHA: ECG initial; further testing only if red flags.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "peds",
+    "reference_source": "AHA/ACC/HRS Syncope Guideline 2017; Pediatric Heart Network"
   }
 ]
