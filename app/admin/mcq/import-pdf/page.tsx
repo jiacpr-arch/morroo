@@ -36,7 +36,18 @@ interface AiQuestion {
   correct?: string | null;
 }
 
-type Phase = "idle" | "reading" | "extracting" | "done";
+type Phase = "idle" | "reading" | "extracting" | "answering" | "done";
+
+interface AiAnswer {
+  index: number;
+  correct?: string;
+  detailed_explanation?: {
+    summary: string;
+    reason: string;
+    choices: { label: string; text: string; is_correct: boolean; explanation: string }[];
+    key_takeaway: string;
+  };
+}
 
 export default function ImportPdfPage() {
   const router = useRouter();
@@ -47,6 +58,8 @@ export default function ImportPdfPage() {
   const [examType, setExamType] = useState<"NL1" | "NL2">("NL2");
   const [examSource, setExamSource] = useState("");
   const [files, setFiles] = useState<File[]>([]);
+  // After extraction, also have AI answer + write a draft เฉลย for each question.
+  const [withAnswers, setWithAnswers] = useState(true);
 
   const [phase, setPhase] = useState<Phase>("idle");
   const [progress, setProgress] = useState("");
@@ -113,6 +126,51 @@ export default function ImportPdfPage() {
       parts.push(line);
     }
     return cleanPdfText(parts.join("\n"));
+  }
+
+  // Phase 2 (optional): Sonnet answers each valid question + drafts a detailed
+  // เฉลย. Mutates rows in place; status stays "review" for admin verification.
+  async function answerRows(rows: ParsedMcqRow[]) {
+    const valid = rows.filter((r) => r.insert);
+    if (valid.length === 0) return;
+    setPhase("answering");
+    const BATCH = 5;
+    for (let start = 0; start < valid.length; start += BATCH) {
+      const batch = valid.slice(start, start + BATCH);
+      setProgress(
+        `AI กำลังเฉลย (Sonnet)… ${Math.min(start + batch.length, valid.length)}/${valid.length} ข้อ`
+      );
+      const questions = batch.map((r) => ({
+        scenario: r.insert?.scenario ?? "",
+        choices: r.insert?.choices ?? [],
+      }));
+      try {
+        const res = await fetch("/api/admin/mcq/answer-questions", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ questions, exam_type: examType }),
+        });
+        const data = await res.json();
+        if (!res.ok) continue;
+        for (const a of (data.answers as AiAnswer[]) ?? []) {
+          const row = batch[a.index];
+          if (!row || !row.insert) continue;
+          const labels = row.insert.choices.map((c) => c.label);
+          const correct = String(a.correct ?? "").trim().toUpperCase();
+          if (labels.includes(correct)) {
+            row.insert.correct_answer = correct;
+            row.raw.correct = correct;
+          }
+          if (a.detailed_explanation) {
+            row.insert.detailed_explanation = a.detailed_explanation;
+            row.insert.is_ai_enhanced = true;
+          }
+        }
+        setParsed([...rows]);
+      } catch {
+        // leave this batch with placeholder answers — admin fills during review
+      }
+    }
   }
 
   async function handleProcess() {
@@ -194,11 +252,16 @@ export default function ImportPdfPage() {
 
       const rows = validateMcqRows(raws, subjects);
       setParsed(rows);
-      setPhase("done");
       setProgress(
         `แกะเสร็จ ${files.length} ไฟล์: ${rows.length} ข้อ` +
         (failedChunks ? ` (มี ${failedChunks} ส่วนที่ AI อ่านไม่สำเร็จ ข้ามไป)` : "")
       );
+
+      if (withAnswers) {
+        await answerRows(rows);
+        setParsed([...rows]);
+      }
+      setPhase("done");
     } catch (e) {
       setError(`อ่าน/แกะ PDF ไม่สำเร็จ: ${String(e)}`);
       setPhase("idle");
@@ -223,7 +286,11 @@ export default function ImportPdfPage() {
     setResult({ inserted, failed });
   }
 
-  const busy = phase === "reading" || phase === "extracting";
+  const busy = phase === "reading" || phase === "extracting" || phase === "answering";
+  const answeredCount = useMemo(
+    () => parsed.filter((p) => p.insert?.detailed_explanation).length,
+    [parsed]
+  );
 
   if (loading) {
     return (
@@ -282,6 +349,22 @@ export default function ImportPdfPage() {
             </div>
           </div>
 
+          <label className="flex items-start gap-2 text-sm cursor-pointer">
+            <input
+              type="checkbox"
+              checked={withAnswers}
+              onChange={(e) => setWithAnswers(e.target.checked)}
+              disabled={busy}
+              className="h-4 w-4 mt-0.5"
+            />
+            <span>
+              ให้ AI เฉลย + เขียนเหตุผลด้วย (Sonnet)
+              <span className="text-muted-foreground">
+                {" "}— ช้าลง/แพงขึ้นนิด แต่ได้เฉลยฉบับร่างมาเลย · ยังต้องตรวจก่อนกด Active
+              </span>
+            </span>
+          </label>
+
           <div className="flex flex-wrap items-center gap-3">
             <label className="inline-flex">
               <input type="file" accept="application/pdf,.pdf" multiple className="hidden" onChange={onFile} disabled={busy} />
@@ -317,6 +400,9 @@ export default function ImportPdfPage() {
             <Badge className="bg-green-100 text-green-700">✓ {validRows.length} ใช้ได้</Badge>
             {invalidRows.length > 0 && (
               <Badge className="bg-red-100 text-red-700">✗ {invalidRows.length} ต้องแก้</Badge>
+            )}
+            {answeredCount > 0 && (
+              <Badge className="bg-emerald-100 text-emerald-700">🤖 เฉลยแล้ว {answeredCount}</Badge>
             )}
           </div>
           <div className="rounded-lg border overflow-hidden mb-4">
