@@ -2846,5 +2846,485 @@
     "board_topic": "renal_gu",
     "board_age_group": "elderly",
     "reference_source": "KDIGO 2024 CKD Evaluation and Management; KDIGO 2022 Diabetes Management in CKD; KDIGO 2017 CKD-MBD; DAPA-CKD NEJM 2020; EMPA-KIDNEY NEJM 2023; FIDELIO-DKD NEJM 2020"
+  },
+  {
+    "scenario": "ชายไทยอายุ 62 ปี มา ED ด้วยปวดอกร้าวไปหลังรุนแรงทันที onset 30 นาทีก่อน \"แบบฉีกขาด\" + เหงื่อแตก + เป็นลม\n\nV/S: BP แขนขวา 198/110, แขนซ้าย 162/88 (pulse differential 36 mmHg), HR 108, RR 24, SpO2 97%\nPE: diastolic murmur LSB grade 2/6 (new AR), no JVP elevation, pulse deficits, no cardiac tamponade signs yet\n\nEKG: sinus tach, no ST elevation, no Q waves, LVH\nCXR: widened mediastinum + abnormal aortic contour\nCT angiography aorta: type A aortic dissection from aortic root to arch + iliac extension, intimal flap visible, no pericardial effusion yet, no organ malperfusion currently\nTroponin negative\nCr 1.0, Hb 13.4",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Conservative medical management with antihypertensive + observe"
+      },
+      {
+        "label": "B",
+        "text": "Acute Stanford Type A aortic dissection — SURGICAL EMERGENCY: (1) Immediate cardiac surgery consult + transfer OR if needed — open aortic repair (replacement of ascending aorta ± valve ± arch); untreated mortality 1-2%/hr first 24 hr; (2) Pre-op medical optimization: target SBP 100-120 + HR < 60 — IV beta-blocker first (esmolol drip or labetalol) BEFORE vasodilator (avoid reflex tachycardia from pure vasodilator alone); then add IV nitroprusside or nicardipine if BP not controlled with BB alone; (3) Pain control IV morphine/fentanyl; (4) Avoid thrombolytic, anticoagulant (worsens hemorrhage); (5) Type B (descending only) — usually medical first (BP/HR control) + endovascular TEVAR for complicated (malperfusion, rupture, refractory pain, rapid expansion); (6) ICU monitoring continuous arterial line, foley, frequent neuro exam (CVA from arch involvement), limb perfusion; (7) Watch for complications: cardiac tamponade, aortic regurgitation, coronary involvement (RCA → inferior MI), stroke, mesenteric/renal/limb ischemia; (8) Post-op lifelong BP control + surveillance imaging"
+      },
+      {
+        "label": "C",
+        "text": "Thrombolytic IV tPA"
+      },
+      {
+        "label": "D",
+        "text": "Heparin anticoagulation"
+      },
+      {
+        "label": "E",
+        "text": "Coronary angiography first"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Acute aortic dissection. Stanford classification: Type A = involves ascending aorta (surgical emergency); Type B = distal to left subclavian (medical first). AHA/ACC + ESC + AATS aortic guideline: (1) Recognition: tearing chest/back pain, BP/pulse asymmetry, mediastinal widening, AR murmur, neurologic deficit, malperfusion, syncope. (2) Imaging: CT angiography (gold standard if stable), TEE (intraoperative or unstable), MRA. D-dimer high sensitivity but not diagnostic alone. (3) Type A management: emergent surgical repair (replacement of ascending aorta ± valve ± arch ± aortic root); untreated mortality 1-2%/hr first 48 hr. (4) Type B management: - Uncomplicated: medical therapy alone — beta-blocker + ACEi long-term, BP < 130/80. - Complicated (malperfusion, rupture, refractory pain, rapid expansion): TEVAR (thoracic endovascular aortic repair) — INSTEAD trial. (5) Medical optimization (both types): - Target HR < 60 + SBP 100-120. - Beta-blocker first (esmolol IV drip, labetalol) — reduces shear stress dP/dt. - Then add vasodilator (nicardipine, nitroprusside) if BP not controlled — never give vasodilator alone first (reflex tachycardia → ↑ dP/dt → propagation). - IV opioid for pain (also reduces sympathetic). - Avoid thrombolytic, anticoagulant, aspirin acutely. (6) Coronary involvement (RCA in 10-20% of Type A) — inferior MI; don't delay surgery for cath. (7) Complications: cardiac tamponade (pericardial rupture), severe AR, coronary occlusion, stroke (arch vessels), mesenteric/renal/limb malperfusion. (8) Long-term: BP control mandatory (< 130/80, beta-blocker + ACEi), serial CT/MRA surveillance, lifestyle, family screening (Marfan, Loeys-Dietz, Ehlers-Danlos, bicuspid aortopathy, family aneurysm history). A ผิด — Type A = surgery. C ผิด — thrombolytic worsens. D ผิด — anticoag worsens. E ผิด — coronary delay risks death.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "AHA/ACC 2022 Guideline for the Diagnosis and Management of Aortic Disease; ESC 2014 Guidelines on the Diagnosis and Treatment of Aortic Diseases"
+  },
+  {
+    "scenario": "ชายไทยอายุ 78 ปี underlying HF, T2DM, prior MI ก่อน 2 ปี on optimal medical therapy (carvedilol 25 mg BID, sacubitril/valsartan, spironolactone, empagliflozin, ASA) มา ED ด้วยใจสั่น + วิงเวียน + ไม่ syncope\n\nV/S: BP 102/64, HR 38 (slow), RR 18, SpO2 97%, Temp 36.8°C\nEKG: 2nd degree AV block Mobitz Type II (constant PR with sudden non-conducted P; sometimes 2:1 conduction), wide QRS 130 ms, sinus rhythm underneath\nLab: K 4.2, Mg 2.0, Cr 1.4, Ca 9.2, TSH 1.8, troponin negative\nMedication review: recently started higher dose metoprolol (replaced carvedilol; mistake) → likely contributory but also infranodal disease based on EKG\nNo digoxin, no diltiazem, no antiarrhythmic\nNo Lyme, no infiltrative cardiomyopathy clue",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Atropine IV 0.5 mg + observe"
+      },
+      {
+        "label": "B",
+        "text": "Mobitz Type II AV block with wide QRS = infranodal block, high-risk for progression to complete heart block — (1) Identify + remove reversible causes: review medication (over-rate-controlling agents, AV-blockers), electrolytes (K, Mg, Ca), thyroid, ischemia (rule out ACS), infiltration (sarcoid, amyloid, hemochromatosis); (2) Stop offending beta-blocker temporarily; (3) Atropine 0.5 mg IV — limited benefit in infranodal (works at AV node, not below); transcutaneous pacing pads on standby; transvenous pacing if hemodynamically unstable or progresses to CHB; (4) Permanent pacemaker indicated (Class I per 2018 ACC/AHA/HRS bradycardia guideline): - Symptomatic Mobitz II (regardless of cause). - Mobitz II with wide QRS or block below the bundle of His (here both). - High-grade AV block (≥ 2 consecutive non-conducted P). - 3rd degree AV block (CHB) symptomatic or with broad QRS escape. (5) Single-chamber (VVI) vs dual-chamber (DDD) — DDD preferred for AV synchrony in those with intact SA node + AV conduction issues; CRT (biventricular) considered if HFrEF + expected high RV pacing burden (HOT-CRT, BLOCK HF); His bundle pacing / left bundle area pacing — physiologic; (6) Pre-implant: device counseling, MRI compatibility, driving restrictions, infection prophylaxis (cephazolin), bleeding risk (DOAC hold)"
+      },
+      {
+        "label": "C",
+        "text": "Increase metoprolol dose to suppress arrhythmia"
+      },
+      {
+        "label": "D",
+        "text": "Digoxin therapy"
+      },
+      {
+        "label": "E",
+        "text": "ICD without pacing function"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Mobitz Type II AV block — infranodal (below AV node, His-Purkinje system), high progression risk to complete heart block + ventricular standstill. EKG: constant PR interval with sudden non-conducted P (vs Mobitz I/Wenckebach = progressive PR lengthening, AV nodal, lower risk). Wide QRS suggests bundle branch disease. ACC/AHA/HRS 2018 Bradycardia + ESC 2021 Pacing guideline: (1) Reversible causes: medication (BB, CCB, digoxin, antiarrhythmic, clonidine), electrolyte (K, Mg, Ca), hypothyroid, ischemia, Lyme, sarcoid, amyloid, infiltrative, vagal hypertonia, post-cardiac surgery, congenital. (2) Acute management: - Stable: monitor, treat reversible. - Symptomatic/unstable: atropine 0.5 mg q3-5 min (limited in infranodal); transcutaneous pacing prep; transvenous pacing if persistent. - Avoid further AV-blockers. (3) Pacemaker indications (Class I): - 3rd degree AV block (CHB), permanent or paroxysmal, regardless of symptoms (most situations). - Mobitz II AV block — independent of symptoms if wide QRS or block in/below His; if narrow QRS without other cause + asymptomatic, individualized. - Symptomatic Mobitz I — pace if symptomatic OR infranodal location. - High-grade AV block (multiple consecutive blocked P). - Chronic bifascicular/trifascicular block with intermittent CHB or syncope unexplained. - Sinus node dysfunction symptomatic (sinus bradycardia, pauses > 3 sec awake, chronotropic incompetence). (4) Pacing modality: - SSS sinus node dysfunction: DDD-R or AAI-R. - AV block with intact SA: DDD. - AF + CHB: VVI-R. - Avoidance of unnecessary RV pacing (RV pacing-induced cardiomyopathy) — managed PVP algorithms, AAIsafeR, His-Purkinje pacing. - CRT (biventricular pacing) if expected RV pacing > 40% + LVEF < 50% (BLOCK HF, BIOPACE). - Conduction system pacing (His bundle, left bundle area) — more physiologic, increasing. (5) Pre-implant: anticoagulation hold (warfarin held INR < 1.8 or DOAC hold 24-48 hr; DAPT continued for CAD/PCI as per BRUISE CONTROL), antibiotic prophylaxis (cefazolin), device counseling, lifestyle (no driving 1 wk after implant). (6) Post-implant: wound care, follow-up interrogation, MRI compatibility per device (most newer = MRI-conditional). A ผิด — Mobitz II infranodal = needs pacing; atropine doesn't reliably work. C ผิด — worsens. D ผิด — digoxin AV nodal blocker. E ผิด — primary indication is bradyarrhythmia not ventricular tachyarrhythmia.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "elderly",
+    "reference_source": "ACC/AHA/HRS 2018 Guideline on Bradycardia and Cardiac Conduction Delay; ESC 2021 Guidelines on Cardiac Pacing and CRT"
+  },
+  {
+    "scenario": "ชายไทยอายุ 30 ปี สูง 188 cm BMI 19, ไม่มีโรคประจำตัว มา ED ด้วยปวดอกข้างขวา + เหนื่อย onset 1 ชม. ก่อนหน้านี้สูบบุหรี่ light ขณะที่ไอแรง\n\nV/S: BP 124/76, HR 102, RR 22, SpO2 94% RA, Temp 36.8°C\nPE: decreased breath sounds right hemithorax + hyperresonance + decreased fremitus, trachea midline, no JVP, no hemodynamic compromise\n\nCXR: right pneumothorax 35% (large by BTS criteria > 2 cm at hilum); no mediastinal shift, no rib fracture\nNo prior pneumothorax",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Observation alone — small pneumothorax"
+      },
+      {
+        "label": "B",
+        "text": "Primary spontaneous pneumothorax, large (> 2 cm rim) + symptomatic — (1) Chest tube insertion (small-bore 8-14 Fr pigtail) is traditional but recent BTS 2023 + ACCP guidance favor: needle aspiration as first-line for large primary spontaneous pneumothorax (success ~ 50-70%; equivalent outcomes vs tube — Thomsen NEJM 2020); chest tube if aspiration fails or air leak persists; (2) Connect to underwater seal + monitor — apply suction (-20 cm H2O) only if persistent air leak > 48 hr; (3) Supplemental oxygen — accelerates absorption (3-4x with high-FiO2); (4) Pain control; (5) Avoid air travel until resolved + 1 wk after; lifelong avoid scuba diving (BTS); (6) Smoking cessation counseling — reduces recurrence 6x; (7) Recurrence: ~20-50% first-side risk → ipsilateral risk ↑ after first event; pleurodesis (chemical talc, mechanical abrasion) or VATS bullectomy + pleurectomy considered after second ipsilateral or first contralateral or persistent air leak > 5-7 d or high-risk profession (pilot, diver); (8) Secondary pneumothorax (underlying lung disease — COPD, CF, asthma, ILD, TB, malignancy, HIV/PCP): chest tube indicated more aggressively, lower threshold for surgery; (9) Tension pneumothorax: needle decompression 2nd intercostal space midclavicular line OR 4th-5th anterior axillary, then chest tube"
+      },
+      {
+        "label": "C",
+        "text": "Surgery thoracotomy + pleurectomy first"
+      },
+      {
+        "label": "D",
+        "text": "Heimlich one-way valve for outpatient"
+      },
+      {
+        "label": "E",
+        "text": "Thoracic CT angiography to rule out PE"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Primary spontaneous pneumothorax (PSP) — no underlying lung disease, tall thin males, smokers; rupture of subpleural bleb at apex. BTS 2023 + ACCP 2001 + ERS pneumothorax guideline: (1) Size definition: BTS > 2 cm at hilum = large; ACCP > 3 cm at apex = large; small if < 2 cm BTS or < 3 cm ACCP. (2) Primary spontaneous pneumothorax management: - Small + asymptomatic: observation + O2 (absorbs 1-2%/d, faster with O2); discharge with f/u. - Large or symptomatic: - Needle aspiration (16-18 G) — first-line per BTS 2023 (less hospital stay, similar success; Thomsen NEJM 2020 conservative). - Chest tube (small-bore 8-14 Fr pigtail preferred over large-bore) — if NA fails (> 2.5 L air aspirated, persistent breathlessness, persistent PTX > 50%). - VATS/pleurectomy for persistent air leak > 5-7 d, recurrent ipsilateral, contralateral first event, high-risk profession (pilot, diver). (3) Secondary spontaneous pneumothorax (SSP) — underlying lung disease (COPD, CF, ILD, TB, PCP, malignancy, Pneumocystis): - More aggressive: chest tube earlier; surgery threshold lower. - Higher morbidity + mortality. - Pleurodesis for recurrence prevention (chemical talc — pleurodesis at bedside or VATS, mechanical pleurectomy + bullectomy). (4) Tension pneumothorax: emergency — hemodynamic instability + tracheal deviation + JVP rise + absent breath sounds; needle decompression 2nd ICS midclavicular line (or 4th-5th anterior/mid-axillary per recent updates — better in obese), followed by chest tube. (5) Catamenial: in menstruating female, possibly endometriosis-related — hormonal Rx + surgery. (6) Iatrogenic (post-CVC, thoracentesis): aspiration or tube. (7) Post-PTX management: - O2 supplementation accelerates resorption. - Avoid air travel until resolved + 1-2 wk. - Avoid SCUBA diving — lifelong if recurrent (relative even with single). - Smoking cessation — recurrence ↓. - Counsel re recognizing recurrence. (8) Heimlich valve for outpatient management in selected stable PSP — institution-dependent. (9) Recurrence: PSP 20-50% on same side after first; SSP higher; pleurodesis/surgery after 2nd ipsilateral. A ผิด — large symptomatic = intervention. C ผิด — surgery for recurrent/persistent. D ผิด — alternative not first-line. E ผิด — distractor.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "respiratory",
+    "board_age_group": "adult",
+    "reference_source": "BTS Pleural Disease Guideline 2023; ACCP Consensus Statement on Pneumothorax 2001; Thomsen R et al. NEJM 2020"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 45 ปี ไม่มีโรคประจำตัวเดิม มาด้วยปวดท้อง epigastric + คลื่นไส้ + อาเจียน + กลืนเจ็บ ตอนกลางคืน เป็นมา 3 เดือน + recently 2 สัปดาห์ ถ่ายอุจจาระดำ \n\nV/S: BP 122/76, HR 88, RR 16, Temp 36.8°C\nPE: epigastric tenderness mild, no peritonitis, rectal exam: melena on glove\n\nLab: Hb 9.8 (microcytic MCV 76 — iron deficiency), Plt 280K, BUN/Cr ratio 28 (high, suggests UGIB), Cr 0.9, INR 1.0\nEGD: 2 ulcers — 1 in gastric antrum (1.2 cm, clean base — Forrest III), 1 duodenal bulb (0.8 cm, visible non-bleeding vessel — Forrest IIa); biopsy: H. pylori positive on rapid urease test + histology; no malignancy on gastric ulcer biopsy\nMedication review: takes ibuprofen 400 mg PRN for back pain × 6 months",
+    "choices": [
+      {
+        "label": "A",
+        "text": "PPI + observation only without H. pylori treatment"
+      },
+      {
+        "label": "B",
+        "text": "H. pylori-positive peptic ulcer disease with NSAID contribution: (1) Acute UGIB control during EGD — Forrest IIa (visible vessel) duodenal ulcer = endoscopic therapy (epinephrine injection + bipolar cautery / hemoclip — dual modality preferred); high-dose PPI infusion (esomeprazole 80 mg bolus + 8 mg/hr × 72 hr) per Lau NEJM; (2) H. pylori eradication — Thai/Asian common: triple therapy (PPI BID + amoxicillin 1 g BID + clarithromycin 500 mg BID × 14 d) if local clarithromycin resistance < 15%, OR bismuth quadruple (PPI + bismuth + metronidazole + tetracycline × 10-14 d) — preferred where resistance > 15% (Thailand resistance rising); concomitant therapy 4-drug × 14 d alternative; new option vonoprazan + amoxicillin ± clarithromycin (potassium-competitive acid blocker — higher acid suppression even with CYP2C19 EM); (3) Stop NSAID; alternative analgesic (acetaminophen, topical, low-dose if essential + co-prescribe PPI/misoprostol); (4) PPI 8 weeks for ulcer healing; (5) Confirm H. pylori eradication 4 weeks after therapy: urea breath test, stool antigen, or biopsy — off PPI 2 weeks + off antibiotic 4 weeks; (6) Iron supplementation for IDA; (7) Repeat EGD only if gastric ulcer (rule out malignancy — biopsies were negative initially), follow-up 8-12 wk; duodenal ulcer no follow-up scope needed; (8) Recurrence prevention: maintenance PPI if NSAID continued; smoking/alcohol cessation; H. pylori re-test if relapse symptoms"
+      },
+      {
+        "label": "C",
+        "text": "Surgery (selective vagotomy) first-line"
+      },
+      {
+        "label": "D",
+        "text": "PPI + clarithromycin monotherapy"
+      },
+      {
+        "label": "E",
+        "text": "Antacid alone"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Peptic ulcer disease with UGIB — H. pylori-positive + NSAID-contributory. Forrest classification: Ia (active spurting), Ib (oozing), IIa (visible non-bleeding vessel), IIb (adherent clot), IIc (flat pigment), III (clean base). Higher Forrest = higher rebleed risk → endoscopic Rx + IV PPI. ACG 2017 UGIB + ACG 2017/2024 H. pylori + Maastricht VI 2022 H. pylori guideline: (1) Acute UGIB: - Risk stratify (Glasgow-Blatchford, AIMS65, Rockall). - Resuscitation: large-bore IV, restrictive transfusion Hb 7-8 (Villanueva). - IV PPI: 80 mg bolus + 8 mg/hr × 72 hr post-endoscopy hemostasis for high-risk (Forrest Ia-IIb). Pre-endoscopic PPI may down-stage lesion but not reduce rebleed/mortality. - Erythromycin 250 mg IV pre-endoscopy: clears stomach, improves visualization. - EGD within 24 hr: hemostasis for Forrest Ia-IIb (combination: epinephrine + thermal/clip; clip alone or thermal alone OK). - Forrest III no endoscopic Rx needed. - Rebleed → repeat endoscopy; angiographic embolization; surgery rarely. (2) H. pylori testing: stool antigen, urea breath test (off PPI 2 wk + antibiotics 4 wk), serology (cannot distinguish current vs past), histology + RUT during EGD. (3) Eradication regimens (Thailand high clarithromycin resistance area — > 20%): - **Bismuth quadruple** (PPI + bismuth subsalicylate + metronidazole + tetracycline) × 10-14 d — preferred where clarithromycin resistance > 15%. - **Concomitant** (PPI + amoxicillin + clarithromycin + metronidazole) × 14 d — alternative. - **Triple** (PPI + amoxicillin + clarithromycin) × 14 d — only if clarithromycin resistance < 15% (no longer reliable in Thailand). - **Sequential** (PPI + amoxicillin × 5 d → PPI + clarithromycin + metronidazole × 5 d) — outdated. - **Levofloxacin-based**: salvage. - **Vonoprazan-based** (P-CAB potassium-competitive acid blocker): emerging — superior acid suppression, equivalent or better eradication; vonoprazan + amoxicillin (dual) or with clarithromycin (triple) — pylera-Helie data. (4) Confirm eradication 4 wk post-Rx: stool antigen or UBT off PPI/abx. (5) Indications for H. pylori test + treat: PUD, MALT lymphoma, ITP, IDA unexplained, gastric MALT, first-degree relative gastric cancer, gastric adenocarcinoma after resection. (6) NSAID-induced ulcer prevention: - Stop NSAID if possible; switch to acetaminophen/topical/coxib. - Co-prescribe PPI or misoprostol for high-risk continuing NSAID (elderly, prior PUD, on anticoagulant/steroid). - COX-2 selective (celecoxib) — lower GI bleed but CV risk. - H. pylori eradication if positive + NSAID use planned/ongoing. (7) Gastric ulcer (vs duodenal): biopsy to rule out malignancy; repeat EGD 8-12 wk to document healing. A ผิด — must eradicate H. pylori. C ผิด — surgery rare. D ผิด — needs combination + antibiotic. E ผิด — inadequate.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "ACG Clinical Guideline: Upper GI and Ulcer Bleeding 2021; Maastricht VI/Florence Consensus on H. pylori 2022; ACG Treatment of H. pylori 2024"
+  },
+  {
+    "scenario": "ชายไทยอายุ 42 ปี ไม่มีโรคประจำตัว มาด้วยอาการกลืนติด solid food > liquid 8 เดือน progressive + ระบายอาการอาเจียนอาหารไม่ย่อย + น้ำหนักลด 5 kg + ไม่มี heartburn + ไม่มี GI bleeding\n\nUpper GI study (barium swallow): \"bird's beak\" appearance distal esophagus + dilated proximal esophagus + retained barium with delayed emptying\nEGD: dilated esophagus, retained food + saliva, no mass, normal mucosa, scope passes through LES with mild resistance, no Schatzki ring, no mucosal break, biopsy normal (no eosinophilic esophagitis)\nHigh-resolution esophageal manometry: integrated relaxation pressure (IRP) > 15 mmHg + 100% failed peristalsis + Type II achalasia (panesophageal pressurization)\nChagas serology negative (not Mexico/SA exposure)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "High-dose PPI + observation"
+      },
+      {
+        "label": "B",
+        "text": "Achalasia Type II (Chicago Classification v4.0) — best prognosis subtype, responds well to all treatments: (1) Definitive options (no single \"best\" — patient preference + center expertise per ACG 2020 + ASGE): - **Pneumatic dilation** (graded 30 → 35 → 40 mm): endoscopic; risk of perforation 1-3%; durable in 70-80% at 5 yr; multiple sessions often; preferred in elderly + high surgical risk; not for hiatal hernia or prior surgery. - **Laparoscopic Heller myotomy** with Dor or Toupet fundoplication: gold-standard surgical; durable 80-90% at 5 yr; preferred in young patients + Type III achalasia (longer myotomy); GERD risk addressed by fundoplication. - **POEM (peroral endoscopic myotomy)**: endoscopic, no skin incision; emerging as effective alternative; high success 80-95% but ↑ GERD (up to 50%) — must offer PPI long-term + surveillance. - All three roughly equivalent in Type II per recent RCTs. (2) Medical (poor durability, bridging only): - Calcium channel blocker (nifedipine 10-20 mg sublingual pre-meal), nitrate (isosorbide dinitrate) — short-term, side effects, low efficacy. - Botulinum toxin injection at LES (EUS-guided): 6-12 mo duration; option for elderly, high surgical risk, bridging. (3) Lifestyle: small frequent meals, upright posture, chew thoroughly, hydration during meals. (4) Post-treatment GERD surveillance — endoscopy + symptom assessment; PPI in symptomatic. (5) Long-term: ~2-7% lifetime esophageal cancer risk (squamous) — surveillance endoscopy debated; not routinely recommended but consider 10-15 yr post-symptom onset. (6) Type III (spastic) — POEM preferred (longer myotomy); CCB/nitrate adjunct. (7) Pseudoachalasia: malignancy mimics — EGD + CT/EUS exclude; suspect if rapid weight loss + short history + elderly. (8) Refractory: esophagectomy last resort"
+      },
+      {
+        "label": "C",
+        "text": "Surgical esophagectomy first-line"
+      },
+      {
+        "label": "D",
+        "text": "Repeat endoscopy every 6 months without treatment"
+      },
+      {
+        "label": "E",
+        "text": "H2 blocker monotherapy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Achalasia — primary esophageal motility disorder of unknown etiology; ganglion cell loss in myenteric plexus → impaired LES relaxation + aperistalsis. Chicago Classification v4.0 (HREM): Type I (classic, no pressurization), Type II (panesophageal pressurization — best prognosis), Type III (spastic — premature contractions, worst prognosis, needs longer myotomy). ACG 2020 + ASGE 2021 + ISDE guideline: (1) Diagnosis: - Symptoms: dysphagia (solid + liquid, often progressive), regurgitation, weight loss, chest pain, aspiration. - Barium swallow: bird's beak, dilated esophagus, retained food, delayed emptying. - EGD: rule out mechanical obstruction (mass, stricture, ring); pseudoachalasia (10% malignant — gastroesophageal junction adenocarcinoma); rule out EoE. - **HREM (high-resolution esophageal manometry) — gold standard**: integrated relaxation pressure (IRP) > 15 mmHg + 100% failed peristalsis. Type subclassification. - Timed barium esophagogram for monitoring. - EndoFLIP (functional luminal imaging probe): emerging. (2) Treatment goals: relieve obstruction, improve emptying, prevent megaesophagus. (3) Definitive options: - **Pneumatic dilation**: 30-40 mm balloon, graded approach; success 70-80% at 5 yr; perforation 1-3% (highest at largest balloon); multiple sessions often. - **Laparoscopic Heller myotomy + partial fundoplication** (Dor anterior or Toupet posterior): durable 80-90% at 5 yr; GERD reduced by fundoplication. - **POEM (peroral endoscopic myotomy)**: high success 80-95%; GERD 30-50% (no fundoplication); preferred Type III (longer myotomy possible); requires expertise. - Equivalency: in Type II — all roughly equivalent (Werner NEJM 2019 — POEM vs PD); choice by patient, center, anatomy. (4) Medical (poor efficacy, bridge): - Calcium channel blocker (nifedipine SL), nitrate — pre-meal; modest. - Botulinum toxin injection LES: 6-12 mo duration; for elderly, high-risk, bridging. (5) Lifestyle: small meals, upright, chew, hydrate. (6) Post-treatment: monitor symptoms, GERD; PPI if reflux; periodic EGD if surveillance for cancer (controversial — modest ↑ squamous cell ca lifetime). (7) Refractory or megaesophagus: esophagectomy. (8) Pseudoachalasia: short Hx + rapid weight loss + elderly + atypical findings → rule out malignancy (EGD biopsy, EUS, CT). (9) Chagas disease (Trypanosoma cruzi): South/Central America exposure; serology — endemic achalasia look-alike. A ผิด — PPI for reflux, not achalasia. C ผิด — esophagectomy is last resort. D ผิด — progressive, treat. E ผิด — wrong mechanism.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "ACG Clinical Guidelines: Diagnosis and Management of Achalasia 2020; ASGE Guidelines on Endoscopic Management of Achalasia 2021; Werner YB et al. NEJM 2019"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 30 ปี underlying SLE on hydroxychloroquine + low-dose prednisolone + mycophenolate มาด้วย ขาบวมทั้งสองข้าง + ปัสสาวะมีฟอง + edema 2 สัปดาห์ + weight gain 4 kg\n\nV/S: BP 158/96, HR 88, Temp 36.8°C\nPE: 3+ pedal edema, periorbital edema, no ascites, no rash flare, no arthritis, no oral ulcer\n\nLab: Hb 11.4, WBC 6,800, Plt 198K, Cr 1.6 (baseline 0.8), Albumin 1.8, Cholesterol 380, LDL 220, Triglyceride 280\n24-hr urine protein 8.4 g (heavy proteinuria); UPCR 7.8 g/g\nUA: protein 4+, oval fat bodies, fatty casts; RBC few; no RBC casts\nC3 low, C4 low, anti-dsDNA 280 (high — active SLE)\nKidney biopsy: Class V membranous lupus nephritis (subepithelial immune deposits + thickened basement membrane on EM) + features of Class III/IV mild (focal proliferative) — mixed Class III+V or pure V depends on severity\nNo thrombosis history, no contraindication anticoagulation",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue current immunosuppression without change"
+      },
+      {
+        "label": "B",
+        "text": "Class V (pure membranous) ± mixed lupus nephritis with nephrotic syndrome — Treatment per KDIGO 2024 + ACR/EULAR 2019 LN guideline: (1) Induction: - Pure Class V: MMF (mycophenolate mofetil 2-3 g/d, current MMF dose insufficient — increase) OR cyclophosphamide (lower dose Euro-Lupus); ACEi/ARB; antimalarial. - Mixed Class III/IV + V: more aggressive proliferative LN regimen — IV methylprednisolone pulse + oral prednisolone 0.5-1 mg/kg/d + MMF or cyclophosphamide; add belimumab (BLISS-LN) or voclosporin (calcineurin inhibitor, AURORA) as additive — improves complete renal response. (2) BP target < 130/80 with ACEi/ARB (anti-proteinuric + reno-protective; safe in pregnancy planning? — switch to non-RAAS pre-conception). (3) Nephrotic syndrome management: - Salt restriction + loop diuretic for edema. - Statin for hyperlipidemia (avoid if pregnancy planning). - Anticoagulation: high VTE risk in membranous + Alb < 2-2.5 g/dL — prophylactic anticoagulation (warfarin INR 2-3 or DOAC; consider in nephrotic membranous especially with additional risk; Class V LN intermediate risk — individualize). - Hydroxychloroquine ALWAYS continue (improves renal + extra-renal outcomes + survival). - Pneumocystis (TMP-SMX) prophylaxis if pred ≥ 20 mg + > 1 mo or other immunosuppressive risk. - Calcium + Vit D + bisphosphonate consideration with chronic steroid. - Vaccinations (avoid live; inactivated when stable). - Pregnancy counseling: avoid teratogen (MMF, MTX, cyclophosphamide stop ≥ 3 mo before conception); switch to azathioprine + tacrolimus + low-dose pred; HCQ continued; APS antibody screen. (4) Maintenance: MMF 1-2 g/d OR azathioprine 2 mg/kg/d for 3-5 yr at least; taper steroid; monitor activity (anti-dsDNA, C3/C4, urine sediment). (5) Refractory: rituximab, plasma exchange (rarely needed), belimumab"
+      },
+      {
+        "label": "C",
+        "text": "Cyclosporine monotherapy as first-line"
+      },
+      {
+        "label": "D",
+        "text": "Renal transplant evaluation"
+      },
+      {
+        "label": "E",
+        "text": "Plasmapheresis alone"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Lupus nephritis Class V (membranous) ± mixed proliferative — ISN/RPS 2003 classification. Distinct from Class III/IV (proliferative) in pathogenesis + treatment + prognosis. Nephrotic syndrome features (heavy proteinuria > 3.5 g/d, hypoalbuminemia, edema, hyperlipidemia). KDIGO 2024 LN + ACR/EULAR 2019 LN + recent trials: (1) Class III/IV (proliferative): - Induction: IV methylprednisolone pulse + oral pred + MMF (preferred Asian, less toxic) or cyclophosphamide (Euro-Lupus 500 mg q2wk × 6 doses; NIH high-dose alternative); add belimumab (BLISS-LN) or voclosporin (AURORA — CNI). - Maintenance: MMF or AZA + low-dose pred × 3-5 yr. (2) Class V (membranous): - Pure V with nephrotic proteinuria: MMF 2-3 g/d OR cyclophosphamide; CNI (tacrolimus, voclosporin); rituximab in refractory. - Pure V with sub-nephrotic: ACEi/ARB + HCQ + low-dose steroid + close monitor; no aggressive immunosuppression initially. - Mixed III/IV + V: treat as proliferative + V combined — more aggressive. (3) Class VI (advanced sclerosis): no immunosuppression; prepare RRT. (4) Adjunct in all LN: - Hydroxychloroquine: improves renal + survival + lipid; continue lifelong unless contraindicated (avoid retinopathy — annual ophth screen). - ACEi/ARB: BP < 130/80; albuminuria target ↓ to < 0.5 g/d; safe in non-pregnant. - Statin for hyperlipidemia. - Anticoagulation: VTE risk in nephrotic syndrome especially membranous + Alb < 2-2.5; prophylactic in selected. - Bone (steroid): Ca, Vit D, bisphosphonate (avoid in pregnancy planning). - Vaccinations: pre-immunosuppression preferred; avoid live. - PCP prophylaxis (TMP-SMX) if pred ≥ 20 mg × > 1 mo + concurrent immunosuppression. - Pregnancy: counseling; teratogen avoidance (MMF, MTX, CYC — stop ≥ 3 mo pre-conception); switch to AZA + tacrolimus + low-dose pred + HCQ; APS screen; planned conception in quiescent state ≥ 6 mo. - Cardiovascular risk: SLE = ↑ premature ASCVD — manage aggressively. - Cancer surveillance: ↑ lymphoma, cervical, skin. (5) Refractory: rituximab, voclosporin, belimumab, obinutuzumab; PLEX rare. (6) Monitoring: serum Cr, UPCR, urine sediment, anti-dsDNA, C3/C4, lupus activity (SLEDAI). (7) ESRD: ~10-15% LN; transplant outcomes good. (8) Outcomes: ~80% 10-yr renal survival now (vs 50% pre-MMF era). A ผิด — active LN needs escalation. C ผิด — CNI is adjunct or alternative. D ผิด — too early. E ผิด — PLEX rare indication.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "rheumatology",
+    "board_age_group": "adult",
+    "reference_source": "KDIGO 2024 Clinical Practice Guideline for Lupus Nephritis; ACR/EULAR 2019 LN Recommendations; BLISS-LN NEJM 2020; AURORA Voclosporin"
+  },
+  {
+    "scenario": "ชายไทยอายุ 35 ปี ไม่มีโรคประจำตัว มาด้วยปวดหลังเรื้อรัง > 6 เดือน + ปวดสะโพก + sciatic-like + stiffness ตอนเช้า > 60 นาที + ดีขึ้นเมื่อขยับ + อาการแย่ตอนกลางคืน + Achilles tendinitis 2 ตอน + พ่อมี HLA-B27 positive AS\n\nV/S: BP 124/76, HR 78, Temp 36.8°C\nPE: Schober test < 4 cm (limited lumbar flexion), reduced chest expansion 3 cm, bilateral SI joint tenderness, FABER positive bilateral, no peripheral synovitis active\n\nLab: ESR 48, CRP 28, RF negative, anti-CCP negative, ANA negative, HLA-B27 positive\nX-ray pelvis: bilateral sacroiliitis grade 3 (definite erosions + sclerosis); X-ray spine: shiny corners early bamboo spine\nMRI SI joints: active inflammation with bone marrow edema + erosions (confirms radiographic axial SpA)\nNo IBD symptoms, no psoriasis, no uveitis history",
+    "choices": [
+      {
+        "label": "A",
+        "text": "DMARDs methotrexate first-line"
+      },
+      {
+        "label": "B",
+        "text": "Axial Spondyloarthritis / Ankylosing Spondylitis (radiographic axSpA) — ASAS/EULAR 2022 axSpA management guideline: (1) Non-pharmacologic foundation: regular exercise (aerobic + spine extension + posture), physical therapy, smoking cessation (smoking accelerates progression), patient education + self-management; (2) First-line: NSAIDs continuous (vs PRN) — at full anti-inflammatory dose (naproxen 500 mg BID, celecoxib 200 mg/d, etoricoxib 90 mg/d, indomethacin 75 mg/d); ≥ 2 different NSAIDs adequate trial × 2-4 weeks each before declaring inadequate response; some evidence NSAID slow radiographic progression; (3) Second-line for axial active despite NSAIDs (no role for conventional DMARDs methotrexate/sulfasalazine in axial; helpful for peripheral arthritis): biologic — TNF inhibitor (adalimumab, etanercept, golimumab, infliximab, certolizumab) OR IL-17 inhibitor (secukinumab, ixekizumab) — both classes effective; JAK inhibitor (upadacitinib, tofacitinib) alternative; (4) Peripheral arthritis/enthesitis/dactylitis: sulfasalazine, methotrexate (more for peripheral); biologic same as above; (5) Extra-articular manifestations (uveitis, IBD, psoriasis) — anti-TNF mAb (infliximab, adalimumab) effective for uveitis + IBD-associated; secukinumab/ixekizumab less effective for IBD (may worsen); etanercept no IBD efficacy; (6) Comorbidity: osteoporosis screening (DXA — high risk despite young), cardiovascular (↑ ASCVD), cancer, depression; (7) Bone health: vit D, Ca, bisphosphonate if osteoporotic; (8) Vaccinations pre-biologic; TB + hepatitis screen before anti-TNF; (9) Surgery: hip arthroplasty (common in AS), spinal corrective for severe deformity (rare); osteotomy considered"
+      },
+      {
+        "label": "C",
+        "text": "Long-term high-dose oral steroid"
+      },
+      {
+        "label": "D",
+        "text": "Allopurinol prophylactic"
+      },
+      {
+        "label": "E",
+        "text": "Surgery as first-line"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Ankylosing spondylitis (AS) / radiographic axial spondyloarthritis (axSpA). Diagnostic criteria modified New York (radiographic sacroiliitis + clinical) or ASAS for axSpA (sacroiliitis on imaging + SpA features OR HLA-B27 + ≥ 2 SpA features). Inflammatory back pain: insidious, age < 45 onset, > 3 mo, morning stiffness > 30 min, improves with exercise, no improvement with rest, awakens night especially 2nd half. ASAS/EULAR 2022 + ACR/Spondyloarthritis Research Network of America 2019 axSpA guideline: (1) Treatment goals: symptom control, prevent structural damage, maintain function, manage comorbidities. (2) Non-pharm cornerstone: - Education + self-management. - Exercise (extension, posture, aerobic, hydrotherapy) — strongest evidence non-pharm. - Smoking cessation. - Physical therapy. - Postural therapy + sleep ergonomics. (3) Pharmacologic stepped: - NSAID continuous at maximum tolerated dose × at least 2-4 wk; if inadequate try second NSAID; ≥ 2 trials before declaring inadequate; NSAID may slow radiographic progression (Wanders ARD 2005, controversial). - Biologics for axial active despite NSAID: - **Anti-TNF**: adalimumab, etanercept, golimumab, certolizumab, infliximab — all effective. - **Anti-IL-17**: secukinumab, ixekizumab — alternative. - **JAK inhibitor**: upadacitinib (axial), tofacitinib — alternative. - Switch within class or cross-class if inadequate. - Conventional DMARDs (MTX, SSZ): role only for peripheral arthritis, not axial. (4) Peripheral arthritis: SSZ, MTX; biologic if refractory. (5) Enthesitis: NSAID, local steroid injection (caution Achilles — rupture), biologic. (6) Extra-articular: - Uveitis (acute anterior, HLA-B27): topical steroid + cycloplegic; recurrent → biologic (anti-TNF mAb preferred, secukinumab less). - IBD: biologic — anti-TNF mAb (not etanercept); avoid IL-17 (worsens). - Psoriasis: anti-TNF, IL-17, IL-23. (7) Comorbidity: ↑ ASCVD, osteoporosis (paradox in AS — both syndesmophyte formation + vertebral fragility), spinal fracture risk, depression. (8) Bone health: DXA (often spuriously high due to syndesmophyte — hip/forearm preferred); fracture risk. (9) Vaccines pre-biologic; TB + HBV + HCV screen before anti-TNF. (10) Pregnancy: SSZ + certolizumab pegol (no transplacental); avoid MTX; biologic mostly safe. (11) Surgery: hip arthroplasty (severe coxitis), spinal osteotomy for severe deformity (rare). A ผิด — DMARD no role axial. C ผิด — long-term steroid not used in AS axial. D ผิด — distractor. E ผิด — surgery last resort.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "rheumatology",
+    "board_age_group": "adult",
+    "reference_source": "ASAS/EULAR 2022 Recommendations for the Management of Axial Spondyloarthritis; ACR/SPARTAN 2019 Treatment Guideline for AS and Non-radiographic axSpA"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 52 ปี ไม่มีโรคประจำตัวเดิม มาด้วย Raynaud phenomenon 5 ปี + อาการแย่ขึ้น + ผิวมือ + ใบหน้าหนา + difficulty swallow solid food + รู้สึก SOB เพิ่ม 6 เดือน + arthralgia\n\nV/S: BP 132/78, HR 92, RR 20, SpO2 94%\nPE: sclerodactyly (digital tip ulcers), telangiectasia ใบหน้า + มือ, salt-and-pepper hyperpigmentation, skin tightening face + neck + arms (mRSS modified Rodnan skin score 16 — diffuse cutaneous), no synovitis, no organomegaly\n\nLab: Hb 11.2, Cr 0.9, urinalysis normal, K 4.0, Ca 9.4\nLFT normal\nANA 1:1280 nucleolar pattern\nAnti-Scl-70 (anti-topoisomerase I) positive → diffuse cutaneous SSc\nAnti-centromere negative (more limited)\nAnti-RNA polymerase III negative (associated with rapid progression + scleroderma renal crisis)\nPFT: restrictive FVC 68%, DLCO 52% (reduced)\nHRCT chest: bibasilar reticular opacities + ground-glass + traction bronchiectasis — NSIP pattern interstitial lung disease\nEcho: estimated PASP 32 (mild PH) — borderline\nEsophageal manometry: hypotensive LES + absent peristalsis distal 2/3 (typical SSc esophagus)\n6MWT 380 m",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Methotrexate alone first-line"
+      },
+      {
+        "label": "B",
+        "text": "Diffuse cutaneous systemic sclerosis (dcSSc) with multi-organ involvement (ILD-NSIP, esophageal, Raynaud, skin) — Organ-based management per EULAR 2017 (update 2024) + ACR SSc guideline: (1) Raynaud + digital ulcers: avoid cold/smoking/vasoconstrictors; calcium channel blocker (nifedipine, amlodipine — first-line); PDE5 inhibitor (sildenafil, tadalafil) for refractory; iloprost IV; endothelin receptor antagonist (bosentan) for digital ulcer prevention (RAPIDS trials); aspirin/statin; topical nitrate; (2) Skin (diffuse cutaneous active): methotrexate; mycophenolate (MMF) — also for ILD synergy; rituximab; tocilizumab (focuSSced trial); hematopoietic stem cell transplant in selected severe progressive; (3) ILD: MMF (Scleroderma Lung Study II) preferred OR cyclophosphamide (SLS I); add nintedanib (SENSCIS trial — slows FVC decline) for SSc-ILD; tocilizumab (IL-6 inhibitor — focuSSced); rituximab. Monitor FVC + DLCO + HRCT serial; pulmonary rehab; oxygen; vaccinations; (4) Pulmonary arterial hypertension (PAH-SSc — leading cause death): screen annually (echo, NT-proBNP, DLCO < 60%, FVC/DLCO ratio > 1.6); confirm with right heart catheterization (mPAP > 20 + PCWP ≤ 15 + PVR > 2 WU); treat upfront combination — ERA (ambrisentan/bosentan/macitentan) + PDE5i (sildenafil/tadalafil), add prostanoid (selexipag, treprostinil, epoprostenol) for inadequate; AMBITION trial; (5) Scleroderma renal crisis (SRC — abrupt malignant HT + AKI + MAHA, esp anti-RNA pol III + diffuse early-disease): IMMEDIATE ACEi (captopril titrate up); avoid steroids > 20 mg/d (precipitates SRC); dialysis if needed; many recover; (6) GI: PPI for reflux; prokinetic (metoclopramide, erythromycin); SIBO antibiotic rotation; nutrition; (7) Avoid high-dose steroid (SRC precipitator); (8) Cardiac: HF, arrhythmia, pericardial effusion — monitor + treat"
+      },
+      {
+        "label": "C",
+        "text": "Plasmapheresis alone"
+      },
+      {
+        "label": "D",
+        "text": "Hydroxychloroquine alone"
+      },
+      {
+        "label": "E",
+        "text": "Calcium channel blocker alone"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Diffuse cutaneous systemic sclerosis (dcSSc) with ILD + Raynaud + esophageal + borderline PH — multi-organ approach needed. ACR/EULAR 2013 SSc classification + EULAR 2017 (update 2024) SSc management + ACR ILD-SSc 2024 guideline: (1) Classify: - Limited cutaneous (lcSSc, CREST): distal extremities + face; anti-centromere; better prognosis; PAH more common later. - Diffuse cutaneous (dcSSc): proximal limbs + trunk; anti-Scl-70 (topoisomerase I), anti-RNA pol III; ILD + renal crisis more common; worse early prognosis. - Autoantibodies guide organ risk: centromere → lcSSc + PAH; Scl-70 → ILD; RNA pol III → SRC + cancer; U1-RNP → PAH/MCTD; PM-Scl → myositis overlap. (2) Organ-specific management: - **Raynaud**: cold avoidance, no smoking, CCB (nifedipine); PDE5i (sildenafil); iloprost IV for ulcers; bosentan for prevention (RAPIDS). - **Skin**: MTX, MMF, rituximab, tocilizumab; HSCT for severe progressive (ASTIS, SCOT trials). - **ILD-SSc** (leading cause death): MMF preferred (SLS II — better tolerated); cyclophosphamide alternative (SLS I); + nintedanib (SENSCIS — slows FVC decline); + tocilizumab (focuSSced); rituximab. Monitor FVC + DLCO q3-6mo + HRCT q1y. - **PAH-SSc**: screen annually (DETECT algorithm); RHC confirm; upfront combo therapy (ERA + PDE5i ± prostanoid); AMBITION trial. - **Scleroderma renal crisis (SRC)**: emergent ACEi (captopril titrate); never give high-dose steroid (> 20 mg pred precipitates SRC); dialysis bridge; ACEi continue even on dialysis (renal recovery occurs months). - **GI**: PPI for reflux (universal); prokinetic; SIBO antibiotic rotation; gastric antral vascular ectasia → APC. - **Cardiac**: monitor echo + EKG. - **Musculoskeletal**: low-dose pred + MTX + biologic. (3) Avoid high-dose steroid > 15-20 mg/d (SRC risk). (4) Vaccinations: pre-immunosuppression. (5) Cancer surveillance: ↑ lung, breast, hematologic; RNA pol III especially. (6) Pregnancy: high-risk; defer until stable; SRC fatal; avoid teratogens (MMF, MTX, CYC). (7) Multidisciplinary: rheum + pulm + cardio + nephro + GI + derm. A ผิด — MTX alone doesn't cover ILD. C ผิด — PLEX rare role. D ผิด — HCQ adjunct only. E ผิด — CCB for Raynaud only.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "rheumatology",
+    "board_age_group": "adult",
+    "reference_source": "EULAR 2017 (update 2024) Recommendations for Treatment of Systemic Sclerosis; ACR Guideline on Pharmacologic Treatment of ILD in SSc and other CTDs 2024; SENSCIS Nintedanib NEJM 2019; focuSSced Tocilizumab Lancet 2020"
+  },
+  {
+    "scenario": "ชายไทยอายุ 70 ปี underlying HT, T2DM, CKD3 มาด้วยอ่อนเพลีย + คลื่นไส้ + ปัสสาวะออกน้อย 5 วัน หลังเริ่ม TMP-SMX สำหรับ UTI + ใช้ ibuprofen ปวดเข่า\n\nV/S: BP 132/82, HR 88, RR 18, SpO2 97%, Temp 37.6°C\nPE: mild rash trunk + extremities, no edema active, abdomen soft\n\nLab: Cr 3.8 (baseline 1.6), BUN 64, K 5.4, HCO3 18, Hb 11.0, WBC 8,400 with eosinophilia 12%, Plt 220K\nUA: protein 1+, WBC 20-30 cells/HPF (sterile pyuria), WBC casts +, urine eosinophils 5% (low sensitivity)\nUrine Na 48, FENa 2.4% (not pre-renal), urine osm 320\nNo urinary obstruction on US\nDrug review: started TMP-SMX 5 d ago for UTI + chronic ibuprofen\nRenal biopsy: interstitial edema + inflammatory infiltrate (lymphocyte + eosinophil + plasma cell) + tubulitis; glomeruli normal — confirms Acute Interstitial Nephritis (AIN)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue TMP-SMX + IV fluid + observe"
+      },
+      {
+        "label": "B",
+        "text": "Drug-induced Acute Interstitial Nephritis (AIN — TMP-SMX + NSAID polypharmacy) — Management: (1) Identify + remove offending agent — STOP TMP-SMX + ibuprofen; substitute non-nephrotoxic alternative for UTI (e.g., nitrofurantoin if eGFR allows, cephalexin); (2) Supportive: avoid additional nephrotoxin (contrast, aminoglycoside), maintain euvolemia, adjust drug dosing for AKI, manage electrolytes (K, HCO3) + dialysis if severe; (3) Corticosteroid: controversial but commonly used in moderate-severe AIN without rapid Cr improvement after drug withdrawal (3-7 days observation); prednisolone 0.5-1 mg/kg/d × 2-4 weeks then taper over 6-8 weeks (Gonzalez Kidney Int 2008 — earlier + higher dose better outcome retrospective); steroid evidence weak (no RCT), but consensus reasonable in biopsy-proven AIN without spontaneous recovery; mycophenolate or rituximab as steroid-sparing in refractory; (4) Repeat Cr 24-72 hr after drug withdrawal — improvement supports diagnosis + good prognosis; persistent → consider steroid + biopsy if not done; (5) Long-term: 30-70% complete recovery; some progress to CKD; lifelong avoidance of offending drug class; (6) Causes: drugs (antibiotics — beta-lactam, sulfa, FQ, rifampin; NSAIDs — distinctive proteinuric with minimal change picture; PPI — common + often missed; allopurinol — SJS/TEN risk in HLA-B*5801 Thai; checkpoint inhibitor; tuberculostatic), infection (legionella, leptospira, EBV, BK virus), autoimmune (SLE, Sjögren, sarcoid, IgG4-related TIN), TINU (tubulointerstitial nephritis + uveitis); (7) Ophthalmology referral if uveitis (TINU); (8) Pharmacovigilance + patient education re medication adherence to avoid implicated drugs"
+      },
+      {
+        "label": "C",
+        "text": "Empirical immunosuppression cyclophosphamide"
+      },
+      {
+        "label": "D",
+        "text": "Hemodialysis immediately regardless of indication"
+      },
+      {
+        "label": "E",
+        "text": "Continue ibuprofen for pain"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Drug-induced Acute Interstitial Nephritis (AIN) — common cause of acute kidney injury. Classic triad (only 10%): fever, rash, eosinophilia + AKI; sterile pyuria + WBC casts + low-level proteinuria (NSAID-AIN can have nephrotic-range with minimal change). Drug causes 70%: NSAIDs (delayed weeks-months, often nephrotic), antibiotics (beta-lactam, sulfonamide, FQ, rifampin), PPI (often missed), allopurinol (SJS/TEN risk Asian HLA-B*5801), checkpoint inhibitors. KDIGO AKI + Praga AIN review: (1) Diagnosis: - History (drug exposure + timeline, classic triad), - Lab: AKI, sterile pyuria, WBC casts, low-grade proteinuria (or nephrotic in NSAID), eosinophilia variable, urine eosinophils (low sensitivity ~ 30%), - Imaging: kidneys normal-mildly enlarged, hyperechoic. - Biopsy: gold standard — interstitial edema + lymphoplasmacytic + eosinophil infiltrate + tubulitis; glomeruli + vessels normal; granuloma in some (sarcoid, TB). - Gallium-67 scan: positive (not specific). (2) Treatment: - **Stop offending drug** (cornerstone). - Substitute alternative if antibiotic needed. - Avoid additional nephrotoxin. - Supportive: fluid + electrolyte management; dialysis if indicated. - **Corticosteroid**: controversial. Reasonable in moderate-severe biopsy-proven AIN without rapid (3-7 d) Cr improvement post-drug withdrawal. Prednisolone 0.5-1 mg/kg/d × 2-4 wk then taper 6-8 wk total. Evidence weak (no RCT); some retrospective (Gonzalez Kidney Int 2008) suggests earlier + higher dose better. - Mycophenolate or rituximab in refractory. (3) Prognosis: - 30-70% complete recovery (drug-induced). - Some residual CKD. - Worse with delayed Dx, advanced age, baseline CKD, granulomatous AIN, severe interstitial fibrosis on biopsy. (4) Other AIN causes: - Infection: legionella, leptospira, EBV, BK virus, HIV, Hantavirus. - Autoimmune: SLE, Sjögren, sarcoid (granuloma), IgG4-related (steroid-responsive). - TINU (tubulointerstitial nephritis + uveitis): young adults, Sjögren-like; steroid responsive; ophth eval. - Idiopathic. (5) Differential of sterile pyuria + AKI: AIN, partially treated UTI, TB urinary, papillary necrosis. (6) Long-term: avoid offending drug class lifelong (cross-react possible); medical alert. A ผิด — perpetuates injury. C ผิด — cyclo not first-line for drug-induced AIN. D ผิด — no current indication. E ผิด — NSAID continues injury.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "renal_gu",
+    "board_age_group": "elderly",
+    "reference_source": "KDIGO AKI Guideline 2012; Praga M + González E — Kidney International 2010 Review on AIN; Perazella MA Clin J Am Soc Nephrol 2017"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 32 ปี ไม่มีโรคประจำตัว มาด้วย ปวดสันหลังด้านล่าง + ปวดข้างขวา + คลื่นไส้ + ปัสสาวะแสบ + เห็นเลือดในปัสสาวะ + ไข้ต่ำ 1 วัน\n\nV/S: BP 124/76, HR 102, RR 16, SpO2 99%, Temp 37.8°C\nPE: right CVA tenderness +, no peritonitis, no leg edema\n\nLab: WBC 12,800, Hb 12.4, Cr 1.0, K 4.0, Ca 11.4 (mild hypercalcemia), Phosphate 3.4, Albumin 4.2, Uric acid 7.2\nUA: pH 5.5, RBC 30-50/HPF, WBC 10-15/HPF, no nitrite, crystals + (calcium oxalate)\nNCCT abdomen: 8 mm stone right mid-ureter + mild hydronephrosis right, no pyonephrosis, contralateral kidney normal, no obstruction beyond stone\n24-hr urine: high oxalate 65 mg, normal citrate, mild hypercalciuria 280 mg/24h\nNo recent UTI, no fever > 38.5\nIVU/CTU: solitary right stone\nNo prior stone history",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Aggressive IV fluid 3 L bolus + observation only"
+      },
+      {
+        "label": "B",
+        "text": "Acute ureteral calculus (8 mm — borderline; AUA: < 10 mm may pass spontaneously, > 10 mm usually requires intervention): (1) Acute management: hydration (oral or moderate IV if NPO), pain control with NSAID (preferred over opioid — better analgesia + reduces ureteral spasm; ketorolac IV/IM if oral intolerable; avoid in CKD/dehydration), antiemetic; (2) Medical Expulsive Therapy (MET) — alpha-1 blocker (tamsulosin 0.4 mg/d) for distal ureter stones 5-10 mm — Cochrane: improves passage; ineffective for proximal ureter; limit trial 4-6 weeks; (3) Indications for intervention (urgent — same day urology consult): - Sepsis / pyonephrosis / obstructed infected system → emergent decompression with ureteral stent or percutaneous nephrostomy + IV antibiotics. - AKI from obstruction. - Anuria (solitary kidney). - Intractable pain. - Stone > 10 mm or low spontaneous passage probability. - Failure of conservative + MET. (4) Elective definitive: - Ureteroscopy (URS) with laser lithotripsy + stent — preferred for ureteral stones, especially mid-distal. - Extracorporeal shock wave lithotripsy (ESWL) — non-invasive, good for renal pelvis + upper ureteral < 2 cm; not for cystine, calcium oxalate monohydrate, very hard stones. - Percutaneous nephrolithotomy (PCNL): for renal stones > 2 cm, staghorn, lower pole anatomy unfavorable for ESWL. (5) Metabolic workup after first stone in young or after second stone: 24-hr urine × 2 (calcium, oxalate, citrate, uric acid, Na, volume, pH, creatinine), serum chemistry + PTH + uric acid, stone analysis. Address: high Ca (hypercalciuria — thiazide), high oxalate (dietary calcium, oxalate restriction; pyridoxine for primary hyperoxaluria), low citrate (citrate supplementation, alkalinizing K citrate; thiazide diuretic), uric acid (allopurinol + K citrate; pH > 6.5), cystine (alkalinization + thiol agent). (6) Lifestyle: hydration > 2.5 L/d (UO > 2 L/d), sodium reduction < 2.3 g/d, normal calcium 1000 mg/d (not low — increases enteric oxalate absorption!), reduce animal protein, oxalate moderation (spinach, nuts, chocolate), citrus juice (lemon)"
+      },
+      {
+        "label": "C",
+        "text": "Surgical open ureterolithotomy first-line"
+      },
+      {
+        "label": "D",
+        "text": "Furosemide + low calcium diet"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic prophylaxis indefinitely"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Acute ureteral calculus with hypercalciuria + hyperoxaluria. AUA 2016 + 2019 Update Surgical Management of Stones + EAU Urolithiasis guideline: (1) Acute assessment: severity, sepsis screen, AKI, solitary kidney, stone size + location. (2) Imaging: noncontrast CT abdomen-pelvis (NCCT) — gold standard (sensitivity > 95%); US in pregnancy + young avoid radiation (lower sensitivity); KUB plain film for radioopaque follow-up. (3) Acute management: - Hydration (oral preferred; moderate IV if NPO). - Analgesia: NSAID first-line (ketorolac, ibuprofen) — better pain control + reduces ureteral peristalsis; opioid adjunct. - Antiemetic. - Tamsulosin (alpha-1 blocker) MET for distal ureter stones 5-10 mm; debated benefit (Cochrane positive, large RCT SUSPEND negative for some); reasonable trial 4-6 wk; limited for proximal ureter. (4) Indication for intervention/emergent: - Sepsis / pyonephrosis / obstructed infected system → emergent decompression (ureteral stent or percutaneous nephrostomy) + IV antibiotics; URGENT urology. - AKI from obstruction. - Solitary kidney + obstruction. - Intractable pain. - Stone > 10 mm unlikely to pass. (5) Definitive procedures: - Ureteroscopy + laser lithotripsy: preferred for ureteral stones (mid-distal especially); high success. - ESWL: extracorporeal shockwave; non-invasive; for renal pelvis + upper ureter < 2 cm; not for cystine, COM hard, lower pole anatomy. - PCNL: percutaneous nephrolithotomy for > 2 cm renal stones, staghorn, lower pole unfavorable for ESWL. - Open/laparoscopic surgery: rare. (6) Metabolic workup indications: first stone in young < 35, family Hx, recurrent stone, complex (multiple, bilateral, cystine, struvite), CKD, unique anatomy. - 24-hr urine × 2 (Ca, oxalate, citrate, uric acid, Na, volume, Cr, pH). - Serum chemistry + PTH + Vit D + uric acid. - Stone analysis (crystallography). (7) Stone composition guide: - Calcium oxalate (75%): hypercalciuria, hyperoxaluria, hypocitraturia. - Calcium phosphate: high pH (RTA, primary hyperparathyroidism). - Uric acid: low pH, gout, urate overproduction. - Struvite (Mg-NH4-PO4): urease-producing UTI (Proteus, Klebsiella, Staph saprophyticus). - Cystine: cystinuria (autosomal recessive). (8) Prevention by stone type: - Hypercalciuria: thiazide diuretic + low Na + normal Ca diet (not low — paradoxically ↑ enteric oxalate absorption). - Hyperoxaluria: low oxalate diet + adequate dietary Ca + pyridoxine (primary hyperoxaluria); RNAi lumasiran (PH1). - Hypocitraturia: K citrate alkalinization. - Uric acid: alkalinization (K citrate, NaHCO3 to urine pH > 6.5) + allopurinol if hyperuricosuric. - Cystine: alkalinization + hydration + thiol (tiopronin). - Struvite: complete stone removal + antibiotic + acidification; consider acetohydroxamic acid (urease inhibitor). (9) Lifestyle universal: hydration > 2.5 L/d to UO > 2 L; reduce Na, animal protein, oxalate moderate; normal dietary Ca 1000-1200 mg; citrus juice (lemonade); plant protein vs animal; weight reduction if obese. A ผิด — incomplete pain + delayed intervention. C ผิด — open surgery rare. D ผิด — low-Ca diet harmful. E ผิด — prophylactic abx not for non-infected stone.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "renal_gu",
+    "board_age_group": "adult",
+    "reference_source": "AUA Guideline on Surgical Management of Stones 2016 (2019 update); EAU Guidelines on Urolithiasis 2024; AUA Guideline on Medical Management of Stones 2014"
+  },
+  {
+    "scenario": "ชายไทยอายุ 45 ปี ไม่มีโรคประจำตัว มาด้วย central obesity + striae + proximal muscle weakness + HT new onset + hyperglycemia + osteoporosis + จิตใจ depression\n\nV/S: BP 168/96, HR 88, BMI 32, central obesity, dorsocervical fat pad (buffalo hump), supraclavicular fat, moon face, wide purple abdominal striae > 1 cm, easy bruising, proximal muscle wasting + weakness\n\nLab: glucose 168, A1c 7.4%, K 3.2, Cr 1.0, lipid: TG 280, LDL 168, HDL 32; A.M. cortisol 28 (normal-high)\n\nWorkup confirms hypercortisolism:\n- 24-hr urine free cortisol 480 (high)\n- Late-night salivary cortisol elevated\n- Low-dose dexamethasone suppression test (1 mg overnight): cortisol 18 (not suppressed; normal < 1.8) → CONFIRMS Cushing syndrome\n- ACTH 84 (elevated — ACTH-dependent)\n- High-dose dexamethasone test (8 mg): cortisol suppression > 50% → suggests pituitary source\n- Pituitary MRI: 6 mm microadenoma\n- IPSS (inferior petrosal sinus sampling): central-to-peripheral ACTH ratio > 2 confirms pituitary Cushing disease",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bilateral adrenalectomy as first-line"
+      },
+      {
+        "label": "B",
+        "text": "Cushing disease (ACTH-secreting pituitary adenoma) — Endocrine Society 2015 + Pituitary Society guideline: (1) First-line: transsphenoidal selective adenomectomy by experienced pituitary surgeon — remission 70-90% in microadenoma, lower in macroadenoma + cavernous sinus invasion; (2) Recurrent or persistent post-surgery: - Repeat pituitary surgery if visible residual. - Radiation therapy (stereotactic radiosurgery, fractionated): slow onset months-years; pituitary insufficiency long-term risk. - Medical therapy: - **Steroidogenesis inhibitors**: ketoconazole (LFT monitoring), metyrapone, osilodrostat (FDA 2020 — 11β-hydroxylase inhibitor), levoketoconazole, mitotane (also adrenolytic for adrenal cancer). - **Pituitary-directed**: cabergoline (dopamine agonist — modest); pasireotide (somatostatin analog — hyperglycemia common SE). - **Glucocorticoid receptor blocker**: mifepristone — improves glycemic + clinical features, monitor adrenal insufficiency by clinical + cortisol unreliable. - **Bilateral adrenalectomy**: last resort — provides immediate normalization, but causes lifelong adrenal insufficiency + Nelson syndrome risk (pituitary adenoma growth + hyperpigmentation). (3) Peri-op management: corticosteroid replacement (hydrocortisone) at surgery and pituitary axis recovery in months; monitor for sodium fluctuation (transient SIADH then DI then SIADH); long-term DI from pituitary stalk; pituitary hormone replacement as needed. (4) Address comorbidities while pursuing surgery — antihypertensives, antidiabetic, statin, antiplatelet, anticoagulation (Cushing = hypercoagulable, ↑ VTE — prophylaxis), osteoporosis (Vit D + bisphosphonate), antidepressant; psychiatric symptoms (depression, mania) common; (5) Ectopic ACTH (paraneoplastic — SCLC, carcinoid, MTC, thymic): different workup (chest/abdomen imaging, dotatate scan); manage primary tumor + steroidogenesis inhibitor as bridge; (6) Adrenal source (ACTH-independent — adrenal adenoma, carcinoma, bilateral hyperplasia): unilateral or bilateral adrenalectomy; mitotane for ACC"
+      },
+      {
+        "label": "C",
+        "text": "Long-term hydrocortisone replacement only"
+      },
+      {
+        "label": "D",
+        "text": "Whole-body radiation therapy"
+      },
+      {
+        "label": "E",
+        "text": "Watchful waiting"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cushing disease (ACTH-secreting pituitary microadenoma) — most common cause endogenous Cushing syndrome (70%). Endocrine Society 2015 + Pituitary Society Cushing's syndrome guideline + Newell-Price Lancet 2006: (1) Diagnosis (3 tests, ≥ 2 positive confirms hypercortisolism — ES 2008 + 2015): - 24-hr urine free cortisol × 2-3 (consistent elevation). - Late-night salivary cortisol × 2 (best sensitivity for circadian loss). - Low-dose dexamethasone suppression test (1 mg overnight or 0.5 mg q6h × 2 d): cortisol > 1.8 mcg/dL = abnormal. - Cortisol diurnal rhythm. (2) Etiology workup (after confirmation of hypercortisolism): - ACTH: < 5 → ACTH-independent (adrenal); > 20 → ACTH-dependent; intermediate ambiguous. - ACTH-independent: adrenal CT/MRI → adenoma, carcinoma, bilateral hyperplasia. - ACTH-dependent: high-dose DST (8 mg dex): - Suppression > 50% → pituitary (Cushing disease). - No suppression → ectopic (paraneoplastic — SCLC, carcinoid, MTC, thymic, pancreatic, pheochromocytoma). - Pituitary MRI (50-70% identify adenoma). - IPSS (inferior petrosal sinus sampling) if MRI negative or uncertain: central-to-peripheral ACTH ratio > 2 (basal) or > 3 (CRH-stimulated) → pituitary. - CRH stimulation. - Chest/abdomen CT for ectopic suspicion; somatostatin receptor imaging (Ga-DOTATATE PET). (3) Treatment Cushing disease: - First-line: transsphenoidal selective adenomectomy. Remission microadenoma 70-90%; macroadenoma 30-60%. - Recurrent/persistent (10-20% in microadenoma, higher in macro): repeat surgery, radiotherapy, medical, bilateral adrenalectomy. (4) Medical therapy classes: - Steroidogenesis inhibitors: ketoconazole (LFT monitoring, QT, drug interactions), metyrapone, osilodrostat (FDA 2020), levoketoconazole, mitotane (adrenal carcinoma). - Pituitary-directed: pasireotide (somatostatin analog — hyperglycemia common), cabergoline (dopamine agonist). - Glucocorticoid receptor blocker: mifepristone (Korlym). - Bilateral adrenalectomy: last resort; lifelong adrenal insufficiency + Nelson syndrome (15-30% — adenoma growth + hyperpigmentation; recurrent need for repeat pituitary surgery). (5) Adjunctive treatment of complications: - HT: spironolactone, eplerenone (mineralocorticoid contribution); ACEi/ARB. - DM. - Osteoporosis: Ca, Vit D, bisphosphonate. - VTE prophylaxis (Cushing = hypercoagulable). - Psychiatric: SSRI. - Infection prophylaxis if severe (Pneumocystis). - Steroid replacement after surgery (transient adrenal insufficiency from suppressed pituitary axis recovery 6-18 mo). (6) Post-operative: hydrocortisone replacement, taper based on AM cortisol; monitor for diabetes insipidus (transient), SIADH (post-op water excess). (7) Long-term: monitor for recurrence (cortisol normalcy, IGF-1, ACTH, salivary cortisol); pituitary hormone deficiency. A ผิด — bilateral adrenalectomy is last resort. C ผิด — replacement after curative surgery. D ผิด — focal RT not whole-body. E ผิด — high mortality untreated.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "Endocrine Society Clinical Practice Guideline: Treatment of Cushing's Syndrome 2015; Newell-Price J Lancet 2006; Nieman LK Endocrine Society Diagnosis of Cushing 2008"
+  },
+  {
+    "scenario": "ชายไทยอายุ 38 ปี มา ED ด้วยปวดศีรษะรุนแรง + เหงื่อแตก + ใจสั่น + tremor + คลื่นไส้ paroxysmal episodes มาเป็นเดือน + ความดันเปลี่ยนแปลงรุนแรง\n\nV/S baseline: BP 178/118, HR 124, BP varies 90/60 to 220/130 in 30 min\nPE: pallor + diaphoresis during episode, no rash, no goiter, no neck mass\n\nLab: K 3.6, glucose 162, Cr 1.0, Hb 16 (mild polycythemia)\nPlasma free metanephrines: normetanephrine 4.8 nmol/L (high — > 3.5 = positive)\n24-hr urine metanephrines + catecholamines: markedly elevated\nClonidine suppression test (if equivocal): not needed here\n\nLocalization:\nCT abdomen: 5 cm well-enhancing left adrenal mass, central low-attenuation areas, no contralateral mass, no extra-adrenal mass\nMIBG scintigraphy: intense uptake left adrenal, no metastasis\nGenetic testing pending (RET, VHL, NF1, SDHx — guideline now recommends germline testing all pheochromocytoma due to high inherited rate)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Emergency adrenalectomy without preoperative preparation"
+      },
+      {
+        "label": "B",
+        "text": "Pheochromocytoma — Endocrine Society 2014 guideline: (1) **Pre-operative pharmacological preparation MANDATORY** (10-14 days; reduces intraoperative crisis + death): - **Alpha-1 blocker FIRST**: phenoxybenzamine (non-selective, irreversible, long-acting) 10 mg BID titrate up over 2 wk to 1 mg/kg/d divided, target BP < 130/80 supine and mild postural drop standing + nasal congestion (target indicating adequate); doxazosin/prazosin/terazosin (selective, shorter-acting) — alternative + less reflex tachycardia. - **Beta-blocker AFTER alpha is established (NEVER FIRST)**: only if reflex tachycardia or arrhythmia; selective beta-1 (atenolol, metoprolol) or labetalol; START WITH ALPHA UNOPPOSED → otherwise unopposed alpha → hypertensive crisis. - **Calcium channel blocker** (nicardipine, amlodipine): adjunct or alternative if alpha-blocker not tolerated. - **High-salt diet + IV fluid loading** last 2-3 days before surgery — restores volume (chronic catecholamines → vasoconstriction + volume contraction; restoring volume prevents post-op hypotension). - **Tyrosine hydroxylase inhibitor metyrosine**: rarely added for severe / metastatic. (2) Surgery: laparoscopic adrenalectomy preferred for tumors < 6 cm (and select 6-8 cm); open for larger or malignancy. (3) Intra-operative coordination: experienced anesthesia + endocrine surgeon; arterial line + central line; nitroprusside / nicardipine for crisis. (4) Post-operative: hypotension common (vasodilation from alpha-blocker still on board + lost catecholamine surge) — IV fluid + brief vasopressor; hypoglycemia (lost catecholamine-stimulated gluconeogenesis); monitor glucose. (5) Genetic testing for ALL pheochromocytoma (germline mutation 30-40%): RET (MEN2), VHL (von Hippel-Lindau), NF1 (neurofibromatosis), SDHx (paraganglioma syndromes), MAX, TMEM127; cascade family screening. (6) Long-term follow-up: annual biochemical screening for recurrence + metastasis (10-17% — even small benign); imaging based on syndrome. (7) Metastatic pheo/paragangliomas: I-131 MIBG therapy, peptide receptor radionuclide therapy (PRRT — Lu-177-DOTATATE), tyrosine kinase inhibitors (sunitinib), chemotherapy (CVD)"
+      },
+      {
+        "label": "C",
+        "text": "Beta-blocker first to control HR"
+      },
+      {
+        "label": "D",
+        "text": "Long-term medical management without surgery"
+      },
+      {
+        "label": "E",
+        "text": "ACE inhibitor as primary therapy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pheochromocytoma — catecholamine-secreting tumor of adrenal medulla (90%) or extra-adrenal paraganglioma (10%); classic episodic triad: headache, sweating, palpitation + hypertension (sustained or paroxysmal). Endocrine Society 2014 + ENS@T + ESE Pheo/Para guideline: (1) Indications for testing: paroxysmal hypertension + symptoms, resistant hypertension, hypertensive crisis during procedure/anesthesia, adrenal incidentaloma, family history of pheo/para syndromes, hereditary syndrome (MEN2, VHL, NF1, SDHx), unexplained orthostatic hypotension. (2) Diagnosis (biochemistry — best sensitivity): - **Plasma free metanephrines + normetanephrines** (high sensitivity 96-100%, lower specificity); supine after 30 min rest; 4× ULN highly diagnostic. - **24-hr urine fractionated metanephrines + catecholamines** (alternative). - Avoid stress, drugs (TCA, MAOI, sympathomimetic, levodopa) that cause false positive. - Clonidine suppression test if equivocal. (3) Localization (only after biochemical confirmation — small chance of catecholamine release from imaging-only incidentalomas misidentified): - CT or MRI abdomen/pelvis (sensitivity 90-100% for adrenal, lower extra-adrenal). - MIBG scintigraphy (123I-MIBG) — functional confirmation, screens extra-adrenal + metastasis. - Ga-68 DOTATATE PET-CT — increasingly preferred (higher sensitivity for SDHx, metastatic). - FDG-PET for poor MIBG uptake / metastatic. (4) Pre-operative preparation (10-14 d): - **Alpha-1 blockade FIRST**: phenoxybenzamine (non-selective, irreversible, long-acting; preferred) 10 mg BID titrate to 1 mg/kg/d; target mild postural drop + nasal stuffiness; alternative doxazosin (selective, shorter; less reflex tachy). - **Beta-blocker only AFTER alpha** (selective beta-1: atenolol, metoprolol; labetalol later) — for reflex tachycardia or arrhythmia; NEVER beta first (unopposed alpha → hypertensive crisis + heart failure). - CCB (nicardipine, amlodipine) adjunct. - High-sodium diet + IV fluid loading last 2-3 days. - Metyrosine (tyrosine hydroxylase inhibitor) rarely. (5) Surgery: laparoscopic adrenalectomy for < 6 cm; open for larger or malignancy or extra-adrenal. (6) Intra-op: experienced team; nitroprusside/nicardipine + magnesium for crisis; postoperative hypotension manage with IV fluid + brief pressor. (7) Hypoglycemia post-op (loss of catecholamine-mediated counterregulation) — monitor glucose. (8) Genetic testing for ALL pheo/para (30-40% germline): RET (MEN2A/B), VHL, NF1, SDHx (SDHB associated with malignant + metastatic; SDHD paternal inheritance), MAX, TMEM127, FH. Cascade family screening. (9) Pregnancy: maternal/fetal mortality high if undiagnosed; alpha-blockade + delivery (C-section or vaginal) + later resection; multidisciplinary. (10) Metastatic (10-17%, higher in extra-adrenal + SDHB): - Surgical debulking if possible. - 131I-MIBG therapy. - 177Lu-DOTATATE (PRRT — peptide receptor radionuclide therapy). - Sunitinib (TKI). - Chemotherapy (CVD — cyclophosphamide, vincristine, dacarbazine). (11) Long-term: lifelong biochemical surveillance (annual) + imaging per syndrome. A ผิด — surgery without prep = high mortality crisis. C ผิด — beta first → unopposed alpha crisis. D ผิด — surgical cure preferred. E ผิด — ACE inhibitor inadequate.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "Endocrine Society Clinical Practice Guideline: Pheochromocytoma and Paraganglioma 2014; ENSAT/ESE Guidelines"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 36 ปี ไม่มีโรคประจำตัว มาด้วยปวดศีรษะ + อาการอ่อนเพลีย + ความดันสูง resistant แม้กิน 3 antihypertensives + hypokalemia recurrent\n\nV/S: BP 168/102 on amlodipine 10 mg + lisinopril 40 mg + HCTZ 25 mg (resistant); HR 78, Temp 36.7°C\nPE: no edema, no abdominal bruit, no Cushing features, no thyroid\n\nLab: K 2.8 (low recurrent despite K supplementation), Na 144, Cl 102, HCO3 30 (mild metabolic alkalosis), Cr 0.9, glucose 92, A1c 5.4%\nUrinary K appropriately elevated (renal loss), aldosterone:renin ratio (ARR) = 80 (high — > 30 suggestive)\nPlasma aldosterone 32 ng/dL (high), Plasma renin activity 0.4 ng/mL/hr (suppressed)\nConfirm: oral salt loading test → urinary aldosterone 18 mcg/24h (high — > 12 confirms autonomous), or saline infusion test fails to suppress aldosterone\nAdrenal CT: 1.5 cm left adrenal nodule, normal right adrenal\nAVS (adrenal venous sampling — gold standard for lateralization): unilateral lateralization left adrenal — ratio left:right > 4\nMedications: stop ACEi 4 wk, MRA 6 wk before ARR ideally",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue current antihypertensives + observe"
+      },
+      {
+        "label": "B",
+        "text": "Primary Hyperaldosteronism (Conn syndrome) — unilateral aldosterone-producing adenoma (APA) confirmed by AVS lateralization — Endocrine Society 2016 guideline: (1) Surgical: laparoscopic unilateral adrenalectomy = first-line for confirmed unilateral disease — high cure rate (35-50% complete biochemical + clinical cure; 80-95% improvement in HTN, hypokalemia) per PASO international consensus; (2) Medical (for bilateral disease, refused surgery, surgical contraindication): mineralocorticoid receptor antagonist — spironolactone 12.5-100 mg/d titrate (most common; risk gynecomastia + libido + GI; men intolerant ~ 10%) or eplerenone 25-100 mg BID (selective, less SE, more expensive); newer non-steroidal MRA finerenone (FIDELIO-DKD — primarily for CKD/HF but emerging in primary aldo); (3) Address hypokalemia: K supplement until MRA effective; (4) Monitor for adverse effects: hyperkalemia (esp with ACEi/ARB combo + CKD), gynecomastia (spironolactone), Cr rise; (5) Post-operative follow-up: baseline aldosterone + renin + K + BP at 1, 3, 6, 12 months; many cured of hypokalemia; ~50% cured of HTN; remainder require ongoing antihypertensive; (6) Genetic testing: familial hyperaldosteronism type 1 (GRA — glucocorticoid-remediable, dexamethasone responsive) in early-onset (< 20 yr), family history, intracranial aneurysm; FH-2/3/4 in young; KCNJ5 somatic mutation in APA; (7) Lifestyle: Na restriction (< 2 g/d); weight reduction; alcohol moderation; exercise; (8) Screening indication primary aldosteronism: - Resistant HTN (≥ 3 drugs incl diuretic). - HTN + hypokalemia (spontaneous or diuretic-provoked). - HTN + adrenal incidentaloma. - HTN + family history early HTN/stroke < 40 yr. - HTN + OSA. - First-degree relative of PA patient. (9) Long-term CV risk reduction: PA = higher CV/renal events than essential HTN even at same BP — treat aggressively"
+      },
+      {
+        "label": "C",
+        "text": "ACEi + spironolactone combo as first-line medical without surgery"
+      },
+      {
+        "label": "D",
+        "text": "Bilateral adrenalectomy without lateralization"
+      },
+      {
+        "label": "E",
+        "text": "Beta-blocker monotherapy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Primary aldosteronism (PA) — autonomous aldosterone excess; aldosterone-producing adenoma (APA, 30-40%) or bilateral adrenal hyperplasia (BAH, 60-65%) or rare familial. Most common cause of secondary HTN (5-15% of HTN). Endocrine Society 2016 + Funder/Lancet PA Cohort: (1) Screening: aldosterone-renin ratio (ARR) > 20-30 (depending on unit) + plasma aldosterone > 10-15 ng/dL. Hold MRA ≥ 6 wk + ACEi/ARB ideally 4 wk + diuretic (can confound); replete K (low K suppresses aldosterone falsely); doxazosin or verapamil for BP during washout. (2) Confirmation (any one — Endocrine Society 4 tests): - Oral salt loading: 24-hr urine aldosterone > 12 mcg after 3-day high-sodium diet. - Saline infusion test: failure to suppress plasma aldosterone < 5-10 ng/dL after 2 L NSS over 4 hr (seated more sensitive than recumbent). - Fludrocortisone suppression test. - Captopril challenge. (3) Subtype testing — Adrenal CT (or MRI) + AVS: - Adrenal CT: may detect nodule but cannot reliably distinguish APA vs non-functional adrenal incidentaloma (especially in older > 35) — sensitivity for APA only 50-70%. - **AVS (adrenal venous sampling) — gold standard for lateralization**, especially > 35 yr (where non-functional incidentaloma common); identify unilateral vs bilateral source. Performed by experienced interventional radiologist; cortisol-corrected ratio. - Some centers omit AVS in young (< 35) + clear unilateral macroadenoma + biochemically severe — clinical judgment. (4) Treatment: - **Unilateral APA**: laparoscopic adrenalectomy — first-line; cure HTN ~50% + biochemical cure ~95%; cardiovascular and renal events reduced. - **Bilateral/familial/refused surgery**: medical management with mineralocorticoid receptor antagonist (MRA). - Spironolactone 12.5-100 mg/d titrate; SE: gynecomastia + libido changes + GI (10-20% men intolerant). - Eplerenone 25-100 mg BID; selective; less SE; expensive. - Finerenone (non-steroidal, newer): emerging. - Adjunct other antihypertensives, K-sparing combo. (5) Adverse + monitor: hyperkalemia (especially with ACEi/ARB + CKD + supplements), Cr rise (10-20% rise acceptable), AKI risk. (6) Post-surgery follow-up: BP + K + aldosterone/renin at intervals; ~50% complete HTN cure; remainder require fewer drugs (predictor: short HTN duration, female, less family Hx, fewer baseline antihypertensives). (7) Familial PA: - FH-1 (glucocorticoid-remediable aldosteronism — GRA): CYP11B1/B2 chimeric gene; dexamethasone responsive; early onset < 20; family history intracranial aneurysm. - FH-2/3/4: various — KCNJ5, CACNA1D, CTNNB1. - Screen all PA < 20 or family history. (8) Indications for PA screening (Endocrine Society): - Sustained BP > 150/100, > 140/90 on ≥ 3 drugs (resistant), controlled BP on ≥ 4 drugs. - HTN + spontaneous or diuretic-provoked hypokalemia. - HTN + adrenal incidentaloma. - HTN + sleep apnea. - HTN + family history of early HTN/CVA < 40. - All hypertensive first-degree relatives of confirmed PA. (9) Cardio-renal events: PA carries higher MACE + AF + renal events at same BP — definitive treatment important. A ผิด — current Rx ineffective. C ผิด — surgery preferred for unilateral. D ผิด — bilateral adrenalectomy = lifelong AI + Nelson risk. E ผิด — BB inadequate.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "Endocrine Society Clinical Practice Guideline: Primary Aldosteronism 2016; Funder JW et al. J Clin Endocrinol Metab 2016"
+  },
+  {
+    "scenario": "ชายไทยอายุ 55 ปี ไม่มีโรคประจำตัวเดิม มา ED ด้วยปวดท้องท่อนกลางรุนแรง onset 2 ชม. ก่อน ไม่ตอบ analgesic ปกติ + คลื่นไส้ + อาเจียน + ก่อนหน้านี้กิน AC mass effect + AF on warfarin (recently sub-therapeutic INR 1.4) ขาด dose 2 วัน\n\nV/S: BP 142/88, HR 122 irregularly irregular (AF), RR 24, SpO2 96%, Temp 37.4°C\nPE: abdomen soft initially, mild generalized tender — \"pain out of proportion to exam\" finding classic + no peritonism + no distension yet, normoactive bowel sounds\n\nLab: WBC 21,000 (very high), Hb 12.4, Plt 220K, Lactate 6.8 (very high — concerning), Cr 1.4, INR 1.4 (sub-therapeutic), K 4.0, glucose 142, ALT 96, AST 88 (mild rise — early ischemia)\nABG: pH 7.30, HCO3 18\nLipase 84 (normal)\nNo prior abdominal surgery, no IBD, no malignancy known\nCT abdomen with IV contrast (with mesenteric angiography phase): SMA (superior mesenteric artery) occlusion at proximal segment, no contrast filling, bowel wall edema + pneumatosis in some segments, no perforation yet, but findings consistent with acute mesenteric ischemia",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Observation + nasogastric decompression + IV fluid"
+      },
+      {
+        "label": "B",
+        "text": "Acute mesenteric ischemia (AMI) — embolic SMA occlusion (AF + sub-therapeutic anticoagulation = high risk) with bowel wall changes — Surgical emergency: (1) Immediate resuscitation — IV fluid (correct hypovolemia, watch for fluid overload), correct acidemia carefully, broad-spectrum antibiotics (pip-tazo or carbapenem — gut bacterial translocation prophylaxis), IV heparin anticoagulation (full-dose, immediate); NG decompression; foley + arterial line; (2) Urgent surgery + endovascular revascularization — choice depends on bowel viability + center expertise: - Endovascular: mechanical thrombectomy / aspiration ± thrombolytic injection — preferred if viable bowel + no peritonitis + early presentation; - Open: laparotomy + thromboembolectomy (Fogarty catheter from SMA exposed at root) + bypass if atherosclerotic occlusion + resect necrotic bowel + second-look laparotomy 24-48 hr (to reassess marginal segments); (3) Etiology: - Embolic (50%): AF, valve disease, MI, endocarditis — sudden onset, abrupt occlusion, classically near origin of middle colic artery. - Thrombotic (25%): pre-existing atherosclerosis with acute thrombosis at origin — subacute presentation with chronic postprandial pain history. - Non-occlusive (NOMI) (20%): low cardiac output (cardiogenic shock, recent cardiac surgery, sepsis, vasopressors, cocaine) — diffuse vasoconstriction; treat underlying + intra-arterial papaverine. - Mesenteric venous thrombosis (5%): hypercoagulable (factor V Leiden, OCP, antiphospholipid, malignancy, cirrhosis, JAK2 in MPN) — subacute, often manageable with anticoagulation alone if no peritonism. (4) Post-revascularization care: ICU; serial physical exam, lactate, abdominal ultrasonography; second-look laparotomy planned 24-48 hr if any concern; long-term anticoagulation + secondary prevention of underlying cause (rate/rhythm control AF, statin, antiplatelet for atherosclerotic source); (5) Prognosis: high mortality 30-70% even with treatment; early recognition + revascularization within 6-12 hr key"
+      },
+      {
+        "label": "C",
+        "text": "Continue current warfarin + IV antibiotic only"
+      },
+      {
+        "label": "D",
+        "text": "Surgical biopsy first then medical management"
+      },
+      {
+        "label": "E",
+        "text": "Discharge with outpatient cardiology follow-up"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Acute mesenteric ischemia (AMI) — surgical emergency. \"Pain out of proportion to physical examination\" classic; high mortality (30-70%) due to late recognition. AGA + WSES + Tilsed Br J Surg 2016 AMI guideline: (1) Etiologies: - Embolic SMA (50%): AF, valve disease, recent MI, endocarditis — sudden severe pain. - Thrombotic SMA (25%): pre-existing atherosclerosis acute thrombosis at SMA origin — preceded by chronic postprandial abdominal pain + weight loss (intestinal angina). - Non-occlusive mesenteric ischemia (NOMI) (20%): low-flow state — cardiogenic shock, sepsis, vasopressor, dialysis, cocaine; diffuse vasoconstriction; angiography shows spasm pattern. - Mesenteric venous thrombosis (5%): hypercoagulable (factor V Leiden, OCP, APS, malignancy, MPN, cirrhosis, sepsis); slower onset, may respond to anticoagulation alone if no peritonism. (2) Clinical: - Sudden severe abdominal pain with rapid onset + minimal exam findings initially. - Vomiting, diarrhea, hematochezia later. - Peritonitis = bowel infarction (late, advanced). - Tachycardia + acidemia + leukocytosis + lactic acidosis. - Risk factors history: AF, atherosclerosis, hypercoagulable, low CO. (3) Lab: - Elevated WBC + lactate (often very high, > 4 — sensitive but not specific). - Metabolic acidosis with AG. - LFT mild ↑. - D-dimer ↑ (sensitive, low specificity). - Amylase + lipase can be elevated. (4) Imaging: - **CT angiography (CTA) abdomen-pelvis** — first-line: high sensitivity for arterial occlusion + bowel changes (wall thickening, pneumatosis, portal venous gas, mesenteric edema). - Conventional angiography — diagnostic + therapeutic. - US Doppler — limited. - Plain film — late findings. (5) Management: - Immediate resuscitation: IV fluid, broad-spectrum antibiotics (gut translocation), IV anticoagulation (heparin), NG decompression, foley, art line. - Avoid vasopressors (worsen ischemia). - Treat underlying (rate/rhythm control AF, optimize CO in NOMI). - **Revascularization**: - **Endovascular (preferred when feasible)**: percutaneous mechanical thrombectomy, aspiration, stent — for embolic + thrombotic; if no peritonitis + early; less morbid. - **Open**: laparotomy + SMA embolectomy (Fogarty) + bypass for thrombotic; resect necrotic bowel; second-look laparotomy 24-48 hr (reassess marginal segments). - **Hybrid**: combine if needed. - **Intra-arterial papaverine** for NOMI: vasodilation; treat underlying low-flow. - **Mesenteric venous thrombosis**: anticoagulation alone often sufficient if no infarction; surgery if peritonism. - **Chronic mesenteric ischemia**: postprandial pain, food fear, weight loss; angioplasty/stent OR open bypass. (6) Long-term: - Anticoagulation (lifelong typically). - Source control (AF, atherosclerosis). - Hypercoagulable workup. - Statin, antiplatelet for atherosclerotic. - Bowel rehabilitation; short bowel syndrome if extensive resection. (7) Prognosis: time-critical — outcomes inversely proportional to delay. A ผิด — observation = death. C ผิด — Rx without revascularization fails. D ผิด — no biopsy needed; act. E ผิด — life-threatening.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "AGA Institute Guideline on Acute Mesenteric Ischemia 2024; WSES Guidelines on Mesenteric Ischemia 2017; Tilsed JV et al. Br J Surg 2016"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 28 ปี ไม่มีโรคประจำตัว ตั้งครรภ์ GA 28 weeks มา OPD พบ glucose ใน OGTT screening เกินขีด → diagnosed gestational diabetes mellitus (GDM)\n\nFasting glucose 110 (cutoff > 92), 1-hr 188 (cutoff > 180), 2-hr 168 (cutoff > 153) — 75g OGTT IADPSG criteria, 2 of 3 abnormal confirms GDM\nA1c 5.8% (normal)\nBMI 28, weight gain ตามเกณฑ์\nFamily Hx: mother T2DM\nBP 124/76, no proteinuria, fetus AGA on US\nNo prior GDM in earlier pregnancy",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Strict insulin therapy from diagnosis regardless"
+      },
+      {
+        "label": "B",
+        "text": "GDM diagnosis (IADPSG 2010 + ADA 2024 + ACOG): (1) Initial: medical nutrition therapy + lifestyle — registered dietitian counseling, carbohydrate counting, distribution across 3 meals + 2-3 snacks (45-50% carb, 20% protein, 30% fat); moderate exercise (walking 30 min post-meals); SMBG (self-monitored blood glucose) 4× daily — fasting + 1 or 2 hr post-meal; target: fasting < 95, 1-hr post < 140, 2-hr post < 120 (some recommend tighter < 90/< 130/<110); (2) Pharmacotherapy if MNT inadequate (target glucose not achieved after 1-2 weeks): - **Insulin** = first-line pharmacotherapy per ADA + ACOG (does not cross placenta, predictable, titratable): basal NPH or detemir bedtime + prandial regular or aspart pre-meal; insulin glargine acceptable but historically off-label (now broadly accepted); needs significant patient education. - **Metformin** + **glyburide**: cross placenta — some safety concerns long-term offspring (metformin: small studies suggest minimal risk, ACOG accepts as alternative; glyburide: neonatal hypoglycemia + macrosomia higher than insulin per MiTy + RCT data — generally avoid as first-line). - **Metformin acceptable alternative** for patient reluctance to insulin + after counseling about long-term unknowns. (3) Monitor: SMBG, A1c every trimester (less useful than SMBG in pregnancy), fetal growth US monthly, antepartum testing (NST, BPP) from 32-34 wk; (4) Delivery timing: 39-40 weeks if well-controlled + no other complications; earlier (38-39 wk) if poor control, macrosomia, polyhydramnios, other complications; 38 wk for medication-requiring; (5) Intrapartum glucose control: maintain glucose 70-110-130 to avoid neonatal hypoglycemia; insulin drip if labor + persistent hyperglycemia; (6) Postpartum: stop pharmacotherapy immediately (often hyperglycemia resolves); breastfeeding encouraged (reduces future T2DM risk in mother + infant); **75g 2-hr OGTT at 4-12 weeks postpartum to detect persistent diabetes / impaired glucose tolerance** (50% of GDM develop T2DM within 10 yr — major risk); annual diabetes screening lifelong; weight management; future pregnancy: GDM screen early (12-16 wk) due to recurrence ~ 50%"
+      },
+      {
+        "label": "C",
+        "text": "Discharge home + recheck glucose at term"
+      },
+      {
+        "label": "D",
+        "text": "Empirical metformin only without monitoring"
+      },
+      {
+        "label": "E",
+        "text": "Plan early delivery at 32 weeks"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Gestational diabetes mellitus (GDM) — diagnosed during pregnancy (excluding pre-existing diabetes). ADA Standards of Care 2024 + ACOG Practice Bulletin 190 + IADPSG/HAPO/Crowther/Landon trials: (1) Screening + diagnosis: - **One-step approach (IADPSG, ADA recommended)**: 75g 2-hr OGTT at 24-28 wk; GDM if any one of fasting ≥ 92, 1-hr ≥ 180, 2-hr ≥ 153. - **Two-step approach (Carpenter-Coustan, ACOG long-standing)**: 50g glucose challenge non-fasting; if 1-hr ≥ 130 or 140, then 100g 3-hr OGTT (fasting ≥ 95, 1-hr ≥ 180, 2-hr ≥ 155, 3-hr ≥ 140); ≥ 2 abnormal = GDM. - First-trimester screening for high-risk (obesity, prior GDM, family Hx, PCOS, A1c ≥ 5.7%, ethnic) — to detect overt diabetes. (2) Management cornerstone — medical nutrition therapy (MNT) + lifestyle: - Carbohydrate counting + distribution. - Moderate exercise (walking post-meals). - SMBG 4× (fasting + post-meals). - Target glucose: fasting < 95, 1-hr < 140, 2-hr < 120 (some recommend tighter). - Weight gain per IOM guidelines. (3) Pharmacotherapy if targets not met in 1-2 wk MNT trial: - **Insulin = first-line per ADA + ACOG** — no placental crossing, predictable, titratable; NPH/detemir basal + regular/aspart prandial; glargine acceptable. - Metformin: alternative; crosses placenta; some long-term offspring concerns; MiTy + recent trials suggest acceptable; ACOG accepts; ADA reserves for those declining insulin. - Glyburide: crosses placenta; ↑ macrosomia, neonatal hypoglycemia (Hebrew Univ JAMA 2015 + RCTs) — avoid first-line per ADA + ACOG; reserved as last option. - Other oral agents not used in pregnancy. (4) Antenatal monitoring: - SMBG. - Fetal growth ultrasound monthly. - Antepartum testing (NST, BPP) from 32-34 wk for medication-requiring; from 36 wk for diet-controlled. (5) Delivery timing (ACOG): - Diet-controlled, well-controlled: 39-40 wk. - Medication-requiring, well-controlled: 39 wk. - Poor control: 36-39 wk based on assessment. - Macrosomia (EFW > 4500): C-section discussion (LGA = shoulder dystocia, birth injury). (6) Intrapartum: maintain glucose 70-110-130; insulin drip if labor + hyperglycemic. (7) Postpartum: - Stop insulin/oral agents at delivery (often resolves). - 75g 2-hr OGTT at 4-12 wk postpartum: 5-15% will have persistent diabetes/IGT. - Lifelong annual diabetes screening (50% develop T2DM within 5-10 yr — major life-long risk). - Breastfeeding (reduces future T2DM in mother + childhood obesity in infant). - Weight management, lifestyle. - Future pregnancy: early screen 12-16 wk (recurrence ~50%). - Counsel re cardiovascular risk lifetime. (8) Neonatal: monitor hypoglycemia (1st hour onwards), hypocalcemia, polycythemia, jaundice, birth trauma; pediatric care plan. A ผิด — insulin not first; MNT first. C ผิด — neglects critical Rx. D ผิด — no monitoring inadequate. E ผิด — preterm not indicated.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "ADA Standards of Care 2024 (Management of Diabetes in Pregnancy); ACOG Practice Bulletin 190: GDM; IADPSG Criteria 2010; MiTy Trial Lancet 2020"
   }
 ]
