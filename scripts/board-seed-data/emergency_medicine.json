@@ -1,0 +1,172 @@
+[
+  {
+    "scenario": "ชายไทยอายุ 62 ปี underlying HT, DM type 2 มาห้องฉุกเฉินด้วยอาการแน่นหน้าอกร้าวไปกรามซ้าย ปวดหนัก-ๆ นาน 45 นาที ร่วมกับเหงื่อแตกและคลื่นไส้ ตรวจร่างกาย: BP 152/94 mmHg, HR 102 bpm, RR 22, SpO2 96% room air ฟัง heart sound: S1S2 ปกติ ไม่ได้ยิน murmur หรือ gallop\n\nEKG 12-lead พบ: ST elevation 3 mm ใน lead II, III, aVF + reciprocal ST depression ใน lead I, aVL และ V1-V3\n\nLab cTnI = 0.04 ng/mL (URL 0.04), CBC ปกติ, Cr 1.1 mg/dL",
+    "choices": [
+      { "label": "A", "text": "ให้ Aspirin 162 mg เคี้ยว + Sublingual nitroglycerin + ส่งไป cath lab ภายใน 90 นาที" },
+      { "label": "B", "text": "ให้ Aspirin 162 mg เคี้ยว + Clopidogrel 600 mg + IV NTG drip + ส่งไป cath lab ภายใน 90 นาที โดยระวัง RV infarction" },
+      { "label": "C", "text": "Thrombolysis ด้วย Streptokinase ทันที เนื่องจากเป็น STEMI" },
+      { "label": "D", "text": "ให้ IV heparin + รอผล cTnI ซ้ำใน 3 ชั่วโมง" },
+      { "label": "E", "text": "ทำ stress test เพื่อยืนยันการวินิจฉัยก่อนพิจารณา reperfusion" }
+    ],
+    "correct_answer": "B",
+    "explanation": "EKG ผู้ป่วยรายนี้เข้าได้กับ Inferior STEMI (ST elevation II, III, aVF) ร่วมกับ reciprocal change ที่ I, aVL และ depression V1-V3 ซึ่งอาจบ่งชี้ posterior หรือ RV involvement การจัดการที่ถูกต้องตาม AHA/ACC 2013 STEMI guideline คือ dual antiplatelet (ASA + P2Y12 inhibitor) ก่อน primary PCI โดย door-to-balloon ≤ 90 นาที — ตัวเลือก B ครบถ้วน ส่วน A ขาด clopidogrel loading ซึ่งจำเป็นก่อน PCI. C ผิดเพราะ primary PCI ดีกว่า thrombolysis เมื่อ available ใน 90 นาที. D ผิดเพราะ STEMI ต้อง reperfuse ทันที ไม่รอ troponin. E ผิดอย่างยิ่งเพราะ stress test ห้ามใน acute STEMI",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "2013 ACCF/AHA Guideline for the Management of STEMI; Tintinalli's Emergency Medicine 9th ed., Ch. 49"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 28 ปี G2P1 GA 32 weeks มาห้องฉุกเฉินด้วยอาการปวดศีรษะรุนแรงและเห็นภาพมัวมา 6 ชั่วโมง ร่วมกับปวดท้องบริเวณ epigastrium ตรวจร่างกาย: BP 178/112 mmHg (วัดซ้ำห่าง 15 นาที 174/108), HR 92, RR 20 ตรวจ urine dipstick: protein 3+\n\nLab: Hb 10.8 g/dL, Plt 92,000/μL, AST 145 U/L, ALT 138 U/L, LDH 720 U/L, Cr 1.0 mg/dL, Uric acid 7.2 mg/dL",
+    "choices": [
+      { "label": "A", "text": "ให้ IV labetalol + IV magnesium sulfate loading 4-6 g แล้ว 1-2 g/hr พร้อมเตรียม urgent delivery" },
+      { "label": "B", "text": "ให้ IV hydralazine 5 mg และ admit ICU เพื่อ observe ปล่อยให้ครรภ์ดำเนินต่อจนครบกำหนด" },
+      { "label": "C", "text": "ให้ oral methyldopa 250 mg และ discharge home พร้อมนัด ANC สัปดาห์หน้า" },
+      { "label": "D", "text": "ให้ IV nitroprusside drip และ refer แพทย์เฉพาะทาง" },
+      { "label": "E", "text": "ให้ IV dexamethasone และ tocolysis ด้วย MgSO4 เพื่อยืดอายุครรภ์อีก 48 ชั่วโมง" }
+    ],
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วยเข้าได้กับ HELLP syndrome (Hemolysis, Elevated Liver enzymes, Low Platelets) ซ้อนทับ severe preeclampsia (BP ≥ 160/110, protein 3+, neurologic symptoms, epigastric pain) การรักษามาตรฐานคือ control BP ด้วย IV labetalol (หรือ hydralazine) + seizure prophylaxis ด้วย MgSO4 + delivery เป็นการรักษาที่ definitive — ตัวเลือก A ถูกต้องครบ. B ผิดเพราะ HELLP severe ต้อง deliver ไม่ใช่ observe. C ผิดเพราะ severe range BP ต้อง IV และห้าม discharge. D ผิดเพราะ nitroprusside มี cyanide toxicity ในทารก. E ผิดเพราะ MgSO4 ใน HELLP เป็น seizure prophylaxis ไม่ใช่ tocolytic",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Practice Bulletin No. 222 (2020): Gestational Hypertension and Preeclampsia; Williams Obstetrics 25th ed., Ch. 40"
+  },
+  {
+    "scenario": "เด็กชายไทยอายุ 4 ปี น้ำหนัก 16 kg มาห้องฉุกเฉินหลังตกจากที่สูง 1.5 เมตร เด็กรู้สึกตัวดี แต่ร้องไห้และปวดที่แขนขวา ตรวจร่างกาย: HR 130, RR 28, BP 95/60 mmHg, SpO2 99% room air\nGCS 15, pupils 3 mm reactive both eyes\nMidshaft right humerus: deformed, swollen, ไม่มีบาดแผลเปิด, radial pulse ปกติ, capillary refill < 2 sec ที่นิ้วมือ, motor และ sensory ปกติ\n\nไม่มีบาดเจ็บอื่นในการตรวจ primary และ secondary survey",
+    "choices": [
+      { "label": "A", "text": "ส่ง X-ray humerus + chest + pelvis เป็น trauma series + รอผลก่อนรักษา" },
+      { "label": "B", "text": "ทำ closed reduction และ long arm cast ที่ ED แล้ว discharge home" },
+      { "label": "C", "text": "ประเมิน NAI (non-accidental injury) เป็น mandatory ในการบาดเจ็บแบบนี้ของเด็กก่อนวัยเรียน + skeletal survey + แจ้งสหวิชาชีพถ้าสงสัย" },
+      { "label": "D", "text": "ส่ง CT brain เพราะ mechanism เป็น fall จากที่สูง" },
+      { "label": "E", "text": "Refer ortho เพื่อ operative fixation ทันที" }
+    ],
+    "correct_answer": "C",
+    "explanation": "Humerus fracture ใน toddler/preschool โดยเฉพาะ spiral หรือ transverse mid-shaft เป็น \"red flag\" สำคัญสำหรับ non-accidental injury (NAI) — Royal College of Paediatrics และ AAP แนะนำให้ทำ skeletal survey และประเมิน NAI ในทุกกรณีของเด็กอายุ < 5 ปี ที่มี long bone fracture โดยเฉพาะถ้า mechanism ไม่สอดคล้องกับอาการ — ตัวเลือก C ถูกต้อง การไม่คัดกรอง NAI ในเด็กเล็กถือเป็นข้อผิดพลาดสำคัญ. A อาจทำเพิ่ม แต่ไม่ตอบ NAI question. B ผิดเพราะต้อง orthopedic consult สำหรับ humerus fracture ในเด็ก. D ผิดเพราะไม่มี neurologic symptom — CT brain ไม่จำเป็นเชิง routine. E ผิดเพราะ humerus shaft ในเด็กส่วนใหญ่รักษา conservative ได้",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "peds",
+    "reference_source": "AAP Clinical Report: Evaluating Children with Fractures for Child Physical Abuse (Pediatrics 2014); RCPCH Child Protection Companion 2017"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 35 ปี ไม่มีโรคประจำตัว มาห้องฉุกเฉินด้วยอาการชักเกร็งกระตุกทั้งตัวต่อเนื่อง 12 นาทีก่อนถึงโรงพยาบาล ที่ ED ยังชักอยู่ ไม่รู้สึกตัวระหว่างชัก ไม่มีประวัติ epilepsy หรือใช้ยา\n\nV/S: BP 145/88 mmHg, HR 128, RR 28 (irregular), SpO2 88% room air, Temp 38.2°C, DTX 110 mg/dL\n\nให้ Lorazepam IV 4 mg ผ่านไป 5 นาที — ยังชักอยู่",
+    "choices": [
+      { "label": "A", "text": "ให้ Lorazepam IV ซ้ำ 4 mg อีก 1 dose แล้ว observe" },
+      { "label": "B", "text": "ใส่ท่อช่วยหายใจ + Phenytoin IV loading 20 mg/kg (หรือ Fosphenytoin 20 mg PE/kg) + เตรียม ICU" },
+      { "label": "C", "text": "ให้ IV diazepam 10 mg และส่ง CT brain ทันที" },
+      { "label": "D", "text": "ให้ IV magnesium sulfate เพราะอาจเป็น eclampsia" },
+      { "label": "E", "text": "Anesthetic induction ด้วย propofol drip ก่อน load anti-epileptic" }
+    ],
+    "correct_answer": "B",
+    "explanation": "ผู้ป่วยเข้านิยาม status epilepticus (ชัก > 5 นาที หรือไม่ฟื้นระหว่างชัก) — Established status (ชักต่อหลังให้ benzodiazepine ครบ dose) ตาม NCS guideline 2016 และ Tintinalli ขั้นต่อไปคือ second-line anti-epileptic เช่น Phenytoin/Fosphenytoin 20 mg/kg, Valproate 40 mg/kg หรือ Levetiracetam 60 mg/kg ร่วมกับ airway protection (intubation) เพราะ RR irregular และ SpO2 ต่ำ — ตัวเลือก B ถูกต้องที่สุด. A ผิดเพราะ benzo dose ครบแล้ว ขั้นต่อไปคือ second-line. C ผิดเพราะ diazepam ไม่ใช่ second-line และ CT ไม่ใช่ priority ในขณะ active seizure. D ผิดเพราะไม่ใช่ pregnant — eclampsia ไม่ใช่ DDx. E เป็น third-line สำหรับ refractory status ยังไม่ใช่ขั้นนี้",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "Neurocritical Care Society Guideline for the Evaluation and Management of Status Epilepticus (2016); Tintinalli 9th ed., Ch. 171"
+  },
+  {
+    "scenario": "ชายไทยอายุ 19 ปี ถูกนำส่งโรงพยาบาลหลังเพื่อนพบกินยา paracetamol จำนวน 30 เม็ด (เม็ดละ 500 mg) เมื่อ 6 ชั่วโมงก่อนเพื่อพยายามฆ่าตัวตาย ผู้ป่วยรู้สึกตัวดี ปฏิเสธอาการปวดท้องหรือคลื่นไส้\n\nน้ำหนัก 60 kg\nV/S: ปกติ\nLab: AST 28, ALT 32, INR 1.0, Cr 0.9, paracetamol level 175 μg/mL (เก็บที่ 6 ชั่วโมงหลังกิน)",
+    "choices": [
+      { "label": "A", "text": "ไม่ต้องรักษา เพราะ paracetamol level ต่ำกว่า toxicity line ใน Rumack-Matthew nomogram" },
+      { "label": "B", "text": "ทำ activated charcoal 50 g PO แล้ว observe 24 ชั่วโมง" },
+      { "label": "C", "text": "ให้ N-acetylcysteine IV regimen 21 ชั่วโมง (150 mg/kg → 50 mg/kg → 100 mg/kg) เพราะ level อยู่เหนือ treatment line" },
+      { "label": "D", "text": "ทำ hemodialysis ทันที" },
+      { "label": "E", "text": "ส่ง psychiatry consult และ discharge หลังประเมินจิตเวช" }
+    ],
+    "correct_answer": "C",
+    "explanation": "Paracetamol level 175 μg/mL ที่ 6 ชั่วโมง อยู่ \"เหนือ\" treatment line ของ Rumack-Matthew nomogram (treatment line = 150 μg/mL ที่ 4 ชม., ~75 μg/mL ที่ 12 ชม., extrapolate ที่ 6 ชม. ~118 μg/mL) — ต้องให้ NAC ตาม 21-hour IV regimen (150 mg/kg/loading ใน 60 นาที → 50 mg/kg ใน 4 ชม. → 100 mg/kg ใน 16 ชม.) ต่อเนื่อง โดยให้ทันทีโดยไม่รอ AST ขึ้น — ตัวเลือก C ถูกต้อง. A ผิดเพราะ level อยู่เหนือเส้น. B ผิดเพราะกิน > 4 ชม. แล้ว charcoal ไม่มีประโยชน์. D ผิดเพราะ HD ใช้สำหรับ massive ingestion + coma หรือ paracetamol level > 1000 μg/mL. E ผิดเพราะ medical clearance ต้องทำก่อน",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "toxicology",
+    "board_age_group": "adult",
+    "reference_source": "Goldfrank's Toxicologic Emergencies 11th ed., Ch. 33; Tintinalli 9th ed., Ch. 184"
+  },
+  {
+    "scenario": "ชายไทยอายุ 45 ปี ดำน้ำลึก SCUBA ที่ระดับ 25 เมตร ขึ้นสู่ผิวน้ำเร็วเนื่องจากแรงดันอากาศหมด หลังขึ้นมา 30 นาที มีอาการปวดข้อไหล่ทั้งสองข้างรุนแรง คลื่นไส้ ปวดศีรษะ ตามด้วยอาการชาและอ่อนแรงขาทั้งสองข้าง ปัสสาวะลำบาก\n\nV/S: BP 130/82, HR 96, RR 20, SpO2 95% room air, Temp 36.8°C\nNeuro: motor power ขาทั้งสองข้าง grade 3/5, sensory level T10, anal tone ลดลง",
+    "choices": [
+      { "label": "A", "text": "ให้ O2 100% via NRB + IV NSS + ส่ง hyperbaric oxygen therapy (recompression chamber) ด่วน + นอนราบ" },
+      { "label": "B", "text": "ส่ง MRI spine ก่อน เพื่อหา cord injury ที่อาจเกิดจากอุบัติเหตุดำน้ำ" },
+      { "label": "C", "text": "ให้ IV methylprednisolone high dose สำหรับ spinal cord injury" },
+      { "label": "D", "text": "ให้ analgesic และ NSAIDs + observe 6 ชั่วโมง" },
+      { "label": "E", "text": "Intubate และ ventilate ที่ FiO2 100% โดยไม่ต้องส่ง hyperbaric" }
+    ],
+    "correct_answer": "A",
+    "explanation": "ผู้ป่วยเป็น Decompression Sickness (DCS) Type II — มี neurological symptoms (paraparesis, sensory level, sphincter dysfunction) จาก nitrogen bubbles ใน spinal cord การรักษามาตรฐานคือ: (1) 100% O2 via NRB ทันที เพื่อ wash out nitrogen และเพิ่ม oxygen delivery (2) IV fluid เพื่อ optimize perfusion (3) นอนราบ (supine) — ไม่ใช่ Trendelenburg เพราะอาจเพิ่ม cerebral edema (4) ส่ง hyperbaric oxygen therapy (HBOT) ด่วนภายใน 6 ชม. — Treatment Table 6 (USN) เป็นมาตรฐาน — ตัวเลือก A ถูกต้องครบทุกองค์ประกอบ. B ผิดเพราะ MRI ไม่ใช่ priority และทำให้ recompression ล่าช้า. C ผิดเพราะ steroid ไม่ได้ระบุใน DCS. D ผิด — DCS Type II ต้อง HBOT ไม่ใช่ observe. E ผิดเพราะ HBOT จำเป็น",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "environmental",
+    "board_age_group": "adult",
+    "reference_source": "Undersea & Hyperbaric Medical Society Guidelines 2019; Tintinalli 9th ed., Ch. 209 (Diving Disorders)"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 72 ปี underlying COPD GOLD stage III, ใช้ tiotropium และ salbutamol MDI prn มาห้องฉุกเฉินด้วยอาการเหนื่อยมาก พูดเป็นคำ ตัวเขียว มา 2 ชั่วโมง ก่อนมามีไข้ ไอเสมหะข้นเหลือง 3 วัน\n\nV/S: BP 142/88, HR 122 (irregular), RR 32, SpO2 84% room air, Temp 38.5°C\nฟังปอด: wheezing ทั้งสองข้าง, expiratory phase prolonged, breath sound ลดลงทั้งสองข้าง\n\nABG (room air): pH 7.28, PaCO2 68 mmHg, PaO2 52 mmHg, HCO3 28 mEq/L",
+    "choices": [
+      { "label": "A", "text": "ใส่ท่อช่วยหายใจทันทีเพราะ severe respiratory failure" },
+      { "label": "B", "text": "เริ่ม Non-Invasive Ventilation (BiPAP) + nebulized bronchodilators + IV steroid + IV antibiotics" },
+      { "label": "C", "text": "ให้ O2 100% via NRB และให้ doxapram IV เพื่อกระตุ้นการหายใจ" },
+      { "label": "D", "text": "Heliox therapy เป็น first-line สำหรับ COPD exacerbation" },
+      { "label": "E", "text": "Continuous nebulization salbutamol อย่างเดียวก่อน แล้วประเมินซ้ำใน 30 นาที" }
+    ],
+    "correct_answer": "B",
+    "explanation": "ผู้ป่วยเป็น severe COPD exacerbation มี acute on chronic respiratory failure (pH 7.28, PaCO2 68 — acute respiratory acidosis on chronic compensation) ตาม GOLD 2023 และ ERS/ATS Guideline: NIV (BiPAP) เป็น first-line สำหรับ COPD exacerbation ที่มี acidosis (pH < 7.35, PaCO2 > 45) โดยไม่ต้อง intubate ก่อน — ลด mortality, intubation rate, และ LOS ร่วมกับ bronchodilators, IV/oral corticosteroid, และ antibiotics (เพราะมีไข้, sputum purulent) — ตัวเลือก B ถูกต้อง. A ผิดเพราะ NIV ลด intubation rate และมีข้อบ่งชี้ชัด. C ผิด — doxapram ล้าสมัย ห้ามใช้. D ผิด — heliox ไม่ใช่ standard first-line ใน COPD. E ผิดเพราะ severe exacerbation ต้องรักษาครบ ไม่ใช่ bronchodilator อย่างเดียว",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "respiratory",
+    "board_age_group": "adult",
+    "reference_source": "GOLD Report 2023; ERS/ATS Clinical Practice Guideline: NIV in Acute Respiratory Failure (Eur Respir J 2017)"
+  },
+  {
+    "scenario": "หญิงไทยอายุ 24 ปี ไม่มีโรคประจำตัว เป็น nurse OR มาห้องฉุกเฉินด้วยอาการ angioedema ที่ใบหน้าและริมฝีปาก หายใจมีเสียง stridor หลังสัมผัส latex glove ที่ทำงาน 20 นาทีก่อน\n\nV/S: BP 78/42 mmHg, HR 138, RR 28, SpO2 91% room air\nLip swelling, peri-orbital edema, urticaria ทั่วลำตัว, fine wheezing ทั้งสองข้าง",
+    "choices": [
+      { "label": "A", "text": "IV diphenhydramine 50 mg + IV hydrocortisone 200 mg + observe" },
+      { "label": "B", "text": "IM Epinephrine 0.5 mg (1:1000) ที่ vastus lateralis ทันที + IV NSS bolus + เตรียม airway + ให้ซ้ำได้ทุก 5-15 นาที" },
+      { "label": "C", "text": "Subcutaneous epinephrine 0.3 mg + nebulized albuterol" },
+      { "label": "D", "text": "IV epinephrine 1 mg push (1:10,000) ทันที" },
+      { "label": "E", "text": "ใส่ท่อช่วยหายใจก่อนให้ epinephrine เพื่อ secure airway" }
+    ],
+    "correct_answer": "B",
+    "explanation": "ผู้ป่วยเป็น Anaphylaxis grade 3-4 (severe) ตาม WAO 2020 criteria — มี airway involvement (stridor, lip swelling) + hypotension + cutaneous symptoms การรักษามาตรฐาน first-line คือ IM epinephrine 0.01 mg/kg (max 0.5 mg) ใน vastus lateralis (ดูดซึมเร็วกว่า deltoid) — ไม่ใช่ SC หรือ IV push (ยกเว้น cardiac arrest) IV push 1 mg เป็น cardiac arrest dose ทำให้เกิด arrhythmia ใน conscious patient — ตัวเลือก B ถูก. A ผิดเพราะ antihistamine + steroid เป็น second-line ไม่ทดแทน epinephrine. C ผิดเพราะ SC ดูดซึมไม่แน่นอนใน shock — IM ดีกว่า. D ผิดเพราะ IV push 1 mg อันตราย ใช้เฉพาะ cardiac arrest. E ผิดเพราะต้องให้ epinephrine ก่อนเพื่อแก้ shock และ swelling — การ intubate อาจล้มเหลวถ้าไม่ลด edema ก่อน",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "World Allergy Organization Anaphylaxis Guidance 2020; AHA 2020 Focused Update — Anaphylaxis"
+  },
+  {
+    "scenario": "อาจารย์แพทย์อธิบายเรื่อง pharmacokinetics ของยาในงานวิจัย ED ให้ resident ฟัง: ยา A มี volume of distribution (Vd) สูงมาก = 12 L/kg และ protein binding 30% ในขณะที่ยา B มี Vd = 0.2 L/kg และ protein binding 95%\n\nคำถาม: หากผู้ป่วยได้รับ overdose ทั้งสองตัว ตัวใดจะถูกขจัดด้วย hemodialysis ได้ดีกว่า และเพราะอะไร",
+    "choices": [
+      { "label": "A", "text": "ยา A เพราะ Vd สูง" },
+      { "label": "B", "text": "ยา B เพราะ Vd ต่ำ + protein binding สูง" },
+      { "label": "C", "text": "ยา B เพราะ Vd ต่ำ — drug อยู่ใน plasma มาก dialyzer เข้าถึงได้ง่าย ส่วน protein binding สูงเป็นข้อจำกัด แต่ Vd มี impact มากกว่า" },
+      { "label": "D", "text": "ทั้งสองตัวขจัดได้พอ ๆ กัน เพราะ HD ไม่ขึ้นกับ pharmacokinetics" },
+      { "label": "E", "text": "ยา A เพราะ protein binding ต่ำ ทำให้ free drug ขจัดได้ง่ายแม้ Vd สูง" }
+    ],
+    "correct_answer": "C",
+    "explanation": "หลักการขจัดยาด้วย hemodialysis (EXTRIP criteria): (1) Molecular weight ต่ำ (< 500 Da เก่า, < 25,000 Da hi-flux) (2) Vd ต่ำ (< 1 L/kg) — เพราะถ้า Vd สูง drug กระจายไป tissue ส่วน plasma มีน้อย dialyzer เข้าถึงไม่ได้ (3) Protein binding ต่ำ (< 80%) — เพราะ HD ขจัดเฉพาะ free drug ยา B มี Vd = 0.2 L/kg (ต่ำมาก, drug ส่วนใหญ่อยู่ใน plasma) แต่ protein binding 95% (สูงมาก) — overall ยังถือว่า dialyzable ดีกว่ายา A ที่ Vd 12 L/kg (drug กระจายไป tissue เป็นหลัก ไม่ว่า protein binding เท่าใด HD ก็เอาออกได้น้อย) — ตัวเลือก C อธิบายครบถ้วน. A ผิดเพราะ Vd สูง = ไม่ dialyzable. B ขาดเหตุผล (correct call แต่ no rationale). D ผิดเชิงพื้นฐาน. E ผิดเพราะ Vd สูงเอาชนะ protein binding ต่ำ",
+    "difficulty": "hard",
+    "board_section": "basic_science",
+    "board_topic": "toxicology",
+    "board_age_group": "adult",
+    "reference_source": "EXTRIP Workgroup recommendations (KDIGO 2014); Goodman & Gilman's Pharmacological Basis 14th ed., Ch. 4"
+  },
+  {
+    "scenario": "ในระบบ EMS ของจังหวัดหนึ่ง มีรายงานว่าเวลา response time เฉลี่ยจากเมื่อรับแจ้งเหตุจนถึงจุดเกิดเหตุ (call-to-scene) สำหรับเคส cardiac arrest = 14 นาที (เป้าหมาย AHA = ≤ 8 นาที) ผู้อำนวยการศูนย์ EMS ต้องการปรับปรุงคุณภาพการให้บริการ\n\nสมาชิกในทีมเสนอแนวทาง 5 ข้อ — ข้อใดเป็นมาตรการ \"system-level\" ที่ส่งผลสูงสุดต่อ survival rate ของ out-of-hospital cardiac arrest (OHCA)",
+    "choices": [
+      { "label": "A", "text": "ซื้อรถพยาบาลใหม่เพิ่ม 5 คัน และเพิ่มจำนวน paramedic ในรถแต่ละคัน" },
+      { "label": "B", "text": "พัฒนา Dispatcher-Assisted CPR (T-CPR) + เครือข่าย AED ในชุมชน + bystander CPR training ครอบคลุม — เพราะ chain of survival ที่ต้นทาง (early CPR + early defibrillation) ส่งผลต่อ survival มากที่สุด" },
+      { "label": "C", "text": "เพิ่ม ICU bed ในโรงพยาบาลปลายทาง" },
+      { "label": "D", "text": "ฝึกอบรม advanced airway สำหรับ EMT-basic" },
+      { "label": "E", "text": "ใช้รถพยาบาลเปิดไซเรนทุกครั้งเพื่อลดเวลาเดินทาง" }
+    ],
+    "correct_answer": "B",
+    "explanation": "จาก AHA Chain of Survival และ Utstein-style OHCA registries: ปัจจัยที่ส่งผลต่อ survival ของ OHCA มากที่สุดเรียงลำดับคือ (1) early recognition + activation, (2) early bystander CPR, (3) early defibrillation (AED ในชุมชน), (4) early advanced life support, (5) post-resuscitation care การปรับปรุงในระดับ \"upstream\" (ก่อน EMS arrival) โดย Dispatcher-Assisted CPR + AED network + community CPR training ได้รับการยืนยันจากการศึกษาในญี่ปุ่น (Iwami T, NEJM 2010) และเดนมาร์ก (Wissenberg M, JAMA 2013) ว่าเพิ่ม survival อย่างมีนัยสำคัญ (HR 1.5-2.5) — ตัวเลือก B ถูกต้องและสะท้อน system-level intervention. A ลด response time แต่ไม่ได้แก้ root cause. C เป็น downstream — ไม่ช่วย ROSC. D advanced airway ใน OHCA ไม่ได้เพิ่ม survival (PART trial 2018). E ไม่ใช่ system-level improvement",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "mixed",
+    "reference_source": "AHA Guidelines for CPR and ECC 2020; Iwami T et al. NEJM 2010; Wissenberg M et al. JAMA 2013 (Bystander CPR + Survival)"
+  }
+]
