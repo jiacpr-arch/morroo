@@ -338,5 +338,175 @@
     "board_topic": "gi",
     "board_age_group": "adult",
     "reference_source": "ACG Celiac; ESPGHAN"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง pathology techniques + IHC + molecular methods",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Pathology Techniques: (1) **Histopathology**: H+E staining standard; special stains (PAS — glycogen + fungi; Gomori — fungi; AFB — mycobacteria; Congo red — amyloid; trichrome — collagen; iron — Perls; Alcian blue — mucin); fresh-frozen + permanent sections; (2) **Immunohistochemistry (IHC)**: antibody-based — specific antigen detection; markers (e.g., cytokeratin — epithelial, CD45 — lymphoid, S100 — melanocytic/neural, vimentin — mesenchymal, chromogranin/synaptophysin — neuroendocrine, TTF1 — lung adenocarcinoma + thyroid, GATA3 — breast + urothelial); (3) **Molecular pathology**: - **PCR + qPCR**: amplification; HIV viral load, BCR-ABL CML, fusion detection; - **FISH (fluorescence in situ hybridization)**: chromosomal + gene rearrangements, HER2 amplification; - **NGS (next-generation sequencing)**: targeted panels, whole exome, whole genome; tumor profiling; resistance testing; - **MSI/MMR**: PCR or IHC; - **Liquid biopsy / ctDNA**: circulating tumor DNA, MRD, treatment response; (4) **Flow cytometry**: hematologic malignancy diagnosis, immunophenotyping; (5) **Cytology**: FNA, Pap, body fluids — minimally invasive; (6) **Digital pathology + AI**: whole-slide imaging, AI assistance — emerging; reduces interobserver variability; (7) **Tumor banking + research**; (8) **Quality**: CLIA + CAP accreditation, proficiency testing, validation, controls; (9) **Multidisciplinary**: pathologist + clinician + IT + research; (10) **Modern**: integrated diagnostics + precision medicine + AI-augmented" },
+      { "label": "C", "text": "Random" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "No techniques" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pathology techniques: H+E + special stains, IHC, molecular (PCR, FISH, NGS, MSI), flow, cytology, digital pathology + AI. Quality + validation. Modern: integrated diagnostics + precision + AI.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "CAP; ASCP"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง laboratory medicine + reference ranges + interpretation",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Laboratory Medicine Principles: (1) **Reference intervals**: 2.5-97.5% of healthy population; age, sex, ethnicity, time of day, posture, exercise affect; (2) **Sensitivity + specificity + PPV/NPV**: test characteristics + prevalence-dependent; (3) **Critical values + delta checks + autoverification**; (4) **Common tests + interpretation**: - **CBC + differential**: anemia (microcytic/normocytic/macrocytic), leukocytosis pattern (neutrophilia, lymphocytosis, eosinophilia), thrombocytopenia/cytosis; - **Chemistry**: electrolytes (Na, K, Cl, HCO3, Ca, Mg, phos), renal (BUN, Cr, eGFR), glucose, LFT (AST, ALT, ALP, GGT, bili, albumin, total protein); - **Cardiac**: troponin (high-sensitivity), BNP/NT-proBNP, CK-MB; - **Coagulation**: PT/INR, aPTT, fibrinogen, D-dimer; - **Endocrine**: TSH, free T4, cortisol, ACTH, calcium, PTH, vitamin D, HbA1c; - **Lipid panel**; - **Iron studies**: ferritin, iron, TIBC, transferrin saturation; - **Vitamin levels**: B12, folate, D; - **Inflammatory**: ESR, CRP, ferritin; (5) **Specific test selection by clinical question**: avoid shotgun testing; targeted; (6) **Pre-analytical errors**: collection, transport, storage, hemolysis, lipemia, jaundice; (7) **Point-of-care testing**: rapid bedside; (8) **Quality**: internal QC + external proficiency; (9) **Reflex testing**: e.g., positive HIV → confirmation; (10) **AI + decision support**: automated interpretation, alerts" },
+      { "label": "C", "text": "Random" },
+      { "label": "D", "text": "Single test" },
+      { "label": "E", "text": "No interpretation" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Laboratory medicine: reference intervals + test characteristics + appropriate selection + interpretation + quality. Multiple disciplines tests. Pre-analytical errors. POC testing. Modern: targeted + reflex + AI-supported.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "CAP; CLSI"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง autopsy + forensic + post-mortem",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Autopsy + Forensic Pathology: (1) **Autopsy types**: clinical/hospital (consent-based, quality + education), forensic/medical examiner (statutory — suspicious, sudden, accidental, violent, in-custody deaths); (2) **Hospital autopsy benefits**: education, quality improvement, family closure, public health; declining utilization concern; (3) **Forensic autopsy**: examines cause + manner of death (natural, accident, homicide, suicide, undetermined); chain of evidence; toxicology; trauma; (4) **External examination**: documentation, photographs, evidence collection (clothing, fingernails, bite marks, foreign bodies, GSR — gunshot residue, sexual assault kits); (5) **Internal examination**: comprehensive — head, neck, thorax, abdomen, pelvis; organ-by-organ; (6) **Toxicology**: blood, urine, vitreous, gastric, hair, drugs of abuse, alcohol, prescription, illicit; (7) **Histology**: microscopic — confirms gross findings, identifies pathology not visible grossly; (8) **Adjunct studies**: imaging (postmortem CT/MRI), genetics, microbiology, chemistry; (9) **Death certificate**: cause (immediate, intermediate, underlying) + manner; accuracy important for public health statistics; (10) **Multidisciplinary**: pathology + medical examiner + law enforcement + clinical + family; (11) **Specialized autopsies**: pediatric (SIDS workup), athletic + sudden cardiac death (cardiomyopathy, channelopathy genetics), occupational; (12) **Mass casualty + disaster**: forensic anthropology, dental, DNA identification; (13) **Modern**: minimally invasive autopsy (postmortem imaging + targeted biopsy), genetic post-mortem testing" },
+      { "label": "C", "text": "Random" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "No examination" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Autopsy + forensic: clinical vs forensic. Determine cause + manner of death. External + internal + toxicology + histology + adjuncts. Death certificate accuracy. Multidisciplinary. Modern: minimally invasive + genetic + technology-assisted.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "NAME; CAP Autopsy Guidelines"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง biomarkers + companion diagnostics",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Biomarkers + Companion Diagnostics: (1) **Biomarker types**: diagnostic (HCG for pregnancy, hCG + AFP for germ cell), prognostic (stage, grade), predictive (HER2 for trastuzumab response), monitoring (PSA recurrence, CA 19-9 pancreatic Ca); (2) **Companion diagnostics**: FDA-approved tests required to identify patients who will benefit from specific therapies; (3) **Cancer biomarkers**: - **HER2** for trastuzumab in breast/gastric Ca; - **BRCA1/2** for PARP inhibitors (olaparib) — breast, ovarian, prostate, pancreatic; - **EGFR + ALK + ROS1** for lung cancer TKIs; - **BRAF V600E** for vemurafenib/dabrafenib in melanoma + NSCLC + thyroid; - **MSI-H/dMMR** for pembrolizumab + immunotherapy; - **PD-L1** for immunotherapy; - **PSMA** for radioligand therapy + PSMA PET; - **KRAS G12C** for sotorasib in NSCLC; (4) **Pharmacogenomics**: - HLA-B*5701 for abacavir hypersensitivity; - DPYD for fluoropyrimidine toxicity; - UGT1A1 for irinotecan; - CYP2D6 for codeine metabolism (slow + ultra-rapid); - CYP2C19 for clopidogrel; - TPMT for thiopurines; (5) **Cardiac markers**: troponin (high-sensitivity), BNP/NT-proBNP, ST2; (6) **Liquid biopsy + ctDNA**: minimal residual disease (MRD), early diagnosis, treatment response, recurrence; (7) **Quality + validation**: analytical + clinical performance; (8) **Multidisciplinary**: pathology + clinical + clinical lab + bioinformatics + IT" },
+      { "label": "C", "text": "Random" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "No use" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Biomarkers + companion diagnostics: precision medicine. Multiple cancer biomarkers driving treatment. Pharmacogenomics for safety + efficacy. Liquid biopsy + ctDNA. Modern: precision medicine increasingly biomarker-driven.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "FDA Companion Diagnostics; CAP"
+  },
+  {
+    "scenario": "Hospital implements digital pathology + AI + quality improvement in lab medicine",
+    "choices": [
+      { "label": "A", "text": "Traditional only" },
+      { "label": "B", "text": "Digital Pathology + AI Integration: (1) **Whole-slide imaging (WSI)**: digitize entire glass slides; high resolution; remote viewing + sharing; teleconsultation; (2) **AI applications**: - Cancer detection (lung nodules, breast, prostate, melanoma, GI); - Grading + quantification (Gleason, Ki-67, Her2 IHC, tumor cellularity); - Biomarker prediction from H+E (e.g., MSI status from histology); - Workflow optimization + triage; - Quality control + double reading; (3) **FDA-approved AI in pathology growing** (Paige, PathAI, etc.); (4) **Benefits**: improved accuracy + consistency, productivity, remote work, education, research; (5) **Limitations + concerns**: validation, generalization across populations, bias, integration, regulatory, liability, training, ethics; (6) **Quality + safety improvements**: - Standardized reporting (synoptic reports); - Peer review + double reads for selected; - Critical results communication standards; - Diagnostic concordance audits; - Continuous education; (7) **Lab medicine quality**: CLIA + CAP accreditation, proficiency testing, internal QC, external QA; (8) **Patient safety**: specimen identification (positive ID), labeling, tracking; (9) **Equity**: ensure benefits across populations + reduce disparities; (10) **Multidisciplinary**: pathology + IT + administration + clinical + research; (11) **Modern**: digital + AI transforming pathology workflow + capabilities" },
+      { "label": "C", "text": "Random" },
+      { "label": "D", "text": "Avoid technology" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Digital pathology + AI: whole-slide imaging + AI applications. FDA-approved tools growing. Quality + accuracy improvements. Limitations + ethics. CLIA + CAP quality. Multidisciplinary. Modern: digital + AI transforming pathology.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "CAP; ASCP Digital Pathology"
+  },
+  {
+    "scenario": "Hospital implements precision medicine program + tumor board + multidisciplinary integration",
+    "choices": [
+      { "label": "A", "text": "Single specialty" },
+      { "label": "B", "text": "Precision Medicine Program: (1) **Molecular tumor board (MTB)**: multidisciplinary — pathology + medical oncology + surgical oncology + radiation + radiology + clinical genetics + bioinformatics + pharmacy + research; (2) **Workflow**: tissue procurement + adequate quality + comprehensive molecular profiling (NGS panel, IHC, FISH) → interpretation → treatment recommendation → clinical trial matching; (3) **Cancer Genomics**: actionable mutations identification, targeted therapy selection, clinical trial eligibility, off-label use, expanded access; (4) **Hereditary cancer genetics**: germline testing + counseling + family screening; (5) **Liquid biopsy**: minimal residual disease (MRD), monitoring, recurrence detection, resistance evolution; (6) **Pharmacogenomics**: medication selection + dosing + safety; (7) **Specialized pathology**: synoptic reports, molecular sign-out, MDT participation; (8) **Quality + standards**: CAP, ASCO, NCCN guidelines; (9) **Data sharing + registries**: cBioPortal, OncoKB, AACR Project GENIE; (10) **Patient + family education**: complex information, shared decision-making; (11) **Equity considerations**: ensure access + reduce disparities; (12) **Research integration**: clinical trials, translational; (13) **Multidisciplinary infrastructure**: regular meetings, EMR integration, decision support; (14) **Modern**: precision medicine standard in oncology + expanding to other specialties (cardiology, neurology, immunology)" },
+      { "label": "C", "text": "Random" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Single specialty" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Precision medicine: molecular tumor board + multidisciplinary. Comprehensive profiling + interpretation + treatment selection. Hereditary + liquid biopsy + pharmacogenomics. Equity + research integration. Modern: standard in oncology + expanding.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "ASCO; NCCN; CAP"
+  },
+  {
+    "scenario": "Hospital implements pathology workforce + telepathology + global pathology",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Pathology Workforce + Telepathology: (1) **Workforce shortage**: pathology + lab medicine global shortage; rural + developing country access challenges; aging workforce; (2) **Telepathology**: remote consultation, primary diagnosis (with validation), subspecialty consultation, education; reduces geographic disparity; (3) **Telepathology modes**: dynamic (real-time microscope), static (selected images), whole-slide image-based (most comprehensive); (4) **Subspecialty consultation**: rare or difficult cases referred to specialists globally; (5) **Global pathology**: capacity building in LMICs (low- middle-income countries); WHO + ASCP, etc.; (6) **Workforce expansion**: - More residency training positions; - Subspecialty fellowships; - Pathologist assistant + lab technologist; - Cytotechnologists + histotechnologists; (7) **Education + training**: simulation, online learning, webinars, virtual microscopy; (8) **Quality assurance** for telepathology: validation, consistency, lighting + color, network latency, security; (9) **Regulatory + licensing**: cross-state + cross-country; HIPAA + GDPR + local regulations; (10) **Equity + access**: ensure benefits reach underserved + LMIC; affordability; (11) **Multidisciplinary**: pathology + IT + administration + clinical + global health; (12) **Modern**: telepathology + global collaboration + AI + digital transformation expanding access" },
+      { "label": "C", "text": "Random" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Avoid" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pathology workforce + telepathology: shortage + access challenges. Telepathology expands access + subspecialty consultation. Global pathology capacity building. Workforce expansion + education. Quality + regulation. Equity. Modern: digital + collaboration transforming.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "ASCP; CAP; WHO"
+  },
+  {
+    "scenario": "Patient with breast cancer — pathology + multidisciplinary + survivorship integrative care",
+    "choices": [
+      { "label": "A", "text": "Single specialty" },
+      { "label": "B", "text": "Breast Cancer Pathology Integrative Care: (1) **Initial pathology**: core biopsy diagnosis + biomarkers (ER/PR/HER2/Ki-67) → molecular subtype + risk stratification; (2) **Multidisciplinary tumor board**: pathology + breast surgery + medical oncology + radiation oncology + radiology + plastic surgery + genetics + nurse navigator; (3) **Treatment planning**: neoadjuvant vs adjuvant; surgery (BCS vs mastectomy); axillary management; radiation; systemic therapy (chemo + targeted + endocrine); (4) **Post-treatment monitoring + surveillance**: annual mammography, clinical exam, symptoms, biomarkers (selected); (5) **Late effects + survivorship**: - Cardiotoxicity (trastuzumab, anthracycline) — cardio-oncology; - Lymphedema management; - Sexual + reproductive health; - Bone health (aromatase inhibitor — DEXA, bisphosphonate); - Cognitive (chemo brain); - Mental health + body image; - Fatigue + nutrition + exercise; (6) **Genetic counseling**: BRCA + others — family implications + risk-reducing strategies; (7) **Recurrence/metastatic disease**: re-biopsy when accessible — biomarker changes (ER/PR/HER2 conversion), new actionable mutations; (8) **New agents revolutionizing**: CDK4/6 inhibitors (palbociclib, ribociclib, abemaciclib) + endocrine; PARP inhibitors (BRCA); antibody-drug conjugates (T-DXd — HER2 + HER2-low); sacituzumab govitecan (TNBC); immunotherapy (TNBC + PD-L1+); (9) **Patient + family support**: education, peer support, financial counseling, integrative therapies; (10) **Equity considerations** + access" },
+      { "label": "C", "text": "Random" },
+      { "label": "D", "text": "Single specialty" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Breast cancer integrative pathology + care: multidisciplinary + comprehensive + long-term. Treatment phase + monitoring + survivorship + late effects + genetic counseling + recurrence management. Modern: revolutionary new agents + precision. Patient-centered.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "NCCN Breast Cancer; ASCO Survivorship"
+  },
+  {
+    "scenario": "Patient with chronic kidney disease — pathology + multidisciplinary integrative care",
+    "choices": [
+      { "label": "A", "text": "Single specialty" },
+      { "label": "B", "text": "CKD Integrative Multidisciplinary Care: (1) **Pathology role**: kidney biopsy for diagnosis of underlying disease (IgA, lupus nephritis, membranous, FSGS, diabetic nephropathy, etc.) → guides treatment; (2) **CKD staging**: by GFR + albuminuria (KDIGO); (3) **Treatment based on cause + stage**: - Diabetic nephropathy: SGLT2 + RAS blockade + finerenone + glycemic + BP control; - Immune-mediated: immunosuppression + KDIGO 2021; - Inherited (polycystic): tolvaptan for ADPKD; - Other secondary: treat underlying; (4) **Slowing progression** (universal): BP control + RAS blockade + glycemic + SGLT2 + finerenone + lipid + diet + smoking cessation; (5) **Comorbidity management**: CVD (greatest cause of death in CKD), bone-mineral disease (Ca, phos, PTH, vit D), anemia (EPO, iron, oral HIF-PHI roxadustat in some regions), acidosis (bicarbonate), uremia symptoms; (6) **Dialysis planning + transplant evaluation early** (Stage 4 → access, evaluation); (7) **Education + patient empowerment**: nutrition (K, phos, Na, protein, fluid), medication adherence, lifestyle, symptom recognition; (8) **Pharmacy review**: dose adjustment, nephrotoxin avoidance; (9) **Vaccinations**: special considerations (HBV — high doses, pre-dialysis); (10) **Mental health**: depression high in CKD; (11) **Palliative + advance care planning** for advanced; (12) **Multidisciplinary**: nephrology + pathology + primary care + dietitian + pharmacy + social work + transplant + dialysis + mental health; (13) **Modern**: novel agents (SGLT2, finerenone, HIF-PHI) + integrated chronic care" },
+      { "label": "C", "text": "Random" },
+      { "label": "D", "text": "Single specialty" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "CKD integrative care: pathology diagnostic + comprehensive multidisciplinary management. Slowing progression + comorbidity + dialysis/transplant planning + education + palliative for advanced. Modern: SGLT2 + finerenone + HIF-PHI revolutionizing care.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "renal_gu",
+    "board_age_group": "adult",
+    "reference_source": "KDIGO CKD; ADA + ACC"
+  },
+  {
+    "scenario": "Patient with hereditary cancer syndrome (Lynch) + multidisciplinary genetics integrative care",
+    "choices": [
+      { "label": "A", "text": "Single specialty" },
+      { "label": "B", "text": "Hereditary Cancer Syndrome Integrative Care (Lynch Syndrome example): (1) **Diagnostic confirmation**: germline MMR gene mutation (MLH1, MSH2, MSH6, PMS2, EPCAM); tumor testing (MSI, IHC for MMR) + Amsterdam/Bethesda criteria + family history; (2) **Surveillance + risk reduction**: - Colon: colonoscopy q1-2 yr starting age 20-25 (or 2-5 yr before youngest relative); - Endometrial + ovarian (women): annual TVS + endometrial sampling 30-35; risk-reducing hysterectomy + BSO 40-45; - Gastric/duodenal: EGD q3-5 yr from age 30-35 (especially Asian + family history); - Urothelial: annual urinalysis from 30-35; - Skin: annual skin exam; - Pancreatic: EUS/MRI in selected; (3) **Family screening**: cascade testing of first-degree relatives at appropriate age; counseling; (4) **Treatment of cancers**: standard but consider immunotherapy (pembrolizumab — MSI-H benefit); chemoprevention (aspirin — CAPP2 trial — reduces CRC + endometrial in Lynch); (5) **Genetic counseling**: complex testing + interpretation + family implications + psychosocial impact; (6) **Reproductive**: preimplantation genetic testing (PGT) consideration; (7) **Multidisciplinary**: medical genetics + GI + GYN + medical oncology + surgical oncology + pathology + primary care + psychology; (8) **Registry + research**: data + future understanding; (9) **Equity considerations**: testing access + cost + underrepresented populations; (10) **Patient + family education + advocacy**; (11) **Modern**: precision + family-centered + comprehensive lifelong care" },
+      { "label": "C", "text": "Random" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Single specialty" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Hereditary cancer syndrome integrative care: diagnosis + surveillance + risk reduction + family screening + treatment + counseling. Multidisciplinary genetics. Chemoprevention (aspirin Lynch). Modern: precision family-centered comprehensive lifelong care.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "NCCN Genetic/Familial High-Risk Assessment"
   }
 ]
