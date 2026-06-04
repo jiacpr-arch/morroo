@@ -60,6 +60,7 @@ export default function ImportPdfPage() {
   const [files, setFiles] = useState<File[]>([]);
   // After extraction, also have AI answer + write a draft เฉลย for each question.
   const [withAnswers, setWithAnswers] = useState(true);
+  const [answerModel, setAnswerModel] = useState<"haiku" | "sonnet">("haiku");
 
   const [phase, setPhase] = useState<Phase>("idle");
   const [progress, setProgress] = useState("");
@@ -148,7 +149,7 @@ export default function ImportPdfPage() {
         const res = await fetch("/api/admin/mcq/answer-questions", {
           method: "POST",
           headers: { "content-type": "application/json" },
-          body: JSON.stringify({ questions, exam_type: examType }),
+          body: JSON.stringify({ questions, exam_type: examType, model: answerModel }),
         });
         const data = await res.json();
         if (!res.ok) continue;
@@ -358,12 +359,27 @@ export default function ImportPdfPage() {
               className="h-4 w-4 mt-0.5"
             />
             <span>
-              ให้ AI เฉลย + เขียนเหตุผลด้วย (Sonnet)
+              ให้ AI เฉลย + เขียนเหตุผลด้วย
               <span className="text-muted-foreground">
-                {" "}— ช้าลง/แพงขึ้นนิด แต่ได้เฉลยฉบับร่างมาเลย · ยังต้องตรวจก่อนกด Active
+                {" "}— ได้เฉลยฉบับร่างมาเลย · ยังต้องตรวจก่อนกด Active
               </span>
             </span>
           </label>
+
+          {withAnswers && (
+            <div className="flex items-center gap-2 text-sm pl-6">
+              <span className="text-muted-foreground">โมเดลเฉลย:</span>
+              <select
+                value={answerModel}
+                onChange={(e) => setAnswerModel(e.target.value as "haiku" | "sonnet")}
+                disabled={busy}
+                className="border rounded-md px-2 py-1 text-sm bg-white"
+              >
+                <option value="haiku">Haiku — ถูก/เร็ว (แนะนำสำหรับชุดใหญ่)</option>
+                <option value="sonnet">Sonnet — แม่นกว่า/แพงกว่า</option>
+              </select>
+            </div>
+          )}
 
           <div className="flex flex-wrap items-center gap-3">
             <label className="inline-flex">

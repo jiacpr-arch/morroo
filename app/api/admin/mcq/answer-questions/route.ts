@@ -94,7 +94,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "ANTHROPIC_API_KEY not set" }, { status: 500 });
   }
 
-  let body: { questions?: InQuestion[]; exam_type?: string };
+  let body: { questions?: InQuestion[]; exam_type?: string; model?: string };
   try {
     body = await request.json();
   } catch {
@@ -103,6 +103,11 @@ export async function POST(request: NextRequest) {
 
   const questions = Array.isArray(body.questions) ? body.questions : [];
   const examType = body.exam_type === "NL1" ? "NL1" : "NL2";
+  // Haiku by default (cheap); Sonnet when accuracy is worth the extra cost.
+  const modelId =
+    body.model === "sonnet"
+      ? "claude-sonnet-4-6-20250514"
+      : "claude-haiku-4-5-20251001";
   if (questions.length === 0) return NextResponse.json({ answers: [] });
 
   let res: Response;
@@ -115,7 +120,7 @@ export async function POST(request: NextRequest) {
         "content-type": "application/json",
       },
       body: JSON.stringify({
-        model: "claude-sonnet-4-6-20250514",
+        model: modelId,
         max_tokens: 8000,
         messages: [{ role: "user", content: buildPrompt(questions, examType) }],
       }),
