@@ -1,0 +1,172 @@
+[
+  {
+    "scenario": "เด็กชายอายุ 6 เดือน คลอดครบกำหนด มาห้องฉุกเฉินด้วยอาการหอบเหนื่อย ไอ มีเสียง wheeze เป็นมา 3 วัน ก่อนหน้าเป็นหวัด 1 สัปดาห์ พ่อแม่บอกว่าลูกกินนมน้อยลง\n\nV/S: HR 165, RR 65, SpO2 89% room air, Temp 37.8°C, น้ำหนัก 7 kg\nGen: alert but tired, mild cyanosis perioral, nasal flaring, subcostal + intercostal retraction\nLungs: bilateral fine crackles + expiratory wheeze, prolonged expiratory phase\n\nCBC: WBC 12,500, normal differential\nCXR: hyperinflation + bilateral perihilar streaking + scattered atelectasis\nRSV antigen: positive",
+    "choices": [
+      { "label": "A", "text": "IV antibiotics + bronchodilator + steroid" },
+      { "label": "B", "text": "Acute Bronchiolitis (RSV) moderate-severe: supportive care mainstay — O2 to SpO2 ≥ 90%, nasal suctioning, hydration; routine bronchodilators NOT recommended (AAP 2014 — no proven benefit); NO routine steroids or antibiotics (viral); HFNC for moderate distress; hospitalization for severe distress/hypoxia/dehydration/apnea < 3 mo; palivizumab prophylaxis for high-risk (premature, BPD, CHD)" },
+      { "label": "C", "text": "Discharge with oral antibiotic" },
+      { "label": "D", "text": "Intubation immediately" },
+      { "label": "E", "text": "Restrict fluid completely" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Bronchiolitis = viral lower respiratory infection (RSV most common). Peak age 2-6 mo. AAP 2014 + NICE emphasize supportive care. Key: O2, hydration, monitoring. No routine antibiotics, bronchodilators, steroids, chest PT. HFNC may help. Prevention: hand hygiene + palivizumab for high-risk. A wrong — abx + steroid not indicated. C wrong — moderate distress can't discharge. D wrong — try less invasive. E wrong — fluid needed.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "respiratory",
+    "board_age_group": "peds",
+    "reference_source": "AAP Clinical Practice Guideline: Bronchiolitis 2014 (Ralston SL et al.); NICE NG9"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 4 ปี ไข้สูง 39.8°C × 6 วัน + ผื่นแดง + ตาแดง 2 ข้าง + ปากแดงสด + แขนขาบวมแดง + ต่อมน้ำเหลืองที่คอข้างเดียว 1.8 cm + irritable\n\nV/S: HR 142, BP 96/64, Temp 39.8°C\nPE: cracked lips + strawberry tongue + cervical lymphadenopathy unilateral + bilateral non-purulent conjunctival injection + polymorphous rash + extremity edema + perineal desquamation\n\nLab: WBC 18,500, CRP 145, Plt 580,000 (rising), Albumin 2.8\nEcho: dilated left main coronary (Z-score +3.5)",
+    "choices": [
+      { "label": "A", "text": "Discharge with paracetamol for viral exanthem" },
+      { "label": "B", "text": "Complete Kawasaki Disease (5/6 criteria) with coronary involvement: IVIG 2 g/kg IV over 10-12h within first 10 days (reduces coronary aneurysm 25→5%); high-dose aspirin 80-100 mg/kg/d until afebrile 48-72h then low-dose 3-5 mg/kg/d antiplatelet × 6-8 wk; echo at dx, 2 wk, 6-8 wk; high-risk Kobayashi → adjunctive steroid; IVIG-resistant → 2nd IVIG, infliximab; live vaccines delayed 11 mo post-IVIG" },
+      { "label": "C", "text": "Antibiotic for streptococcal scarlet fever" },
+      { "label": "D", "text": "Observation × 24 hours" },
+      { "label": "E", "text": "Hospice care" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Kawasaki = acute vasculitis of medium vessels, leading cause acquired heart disease children. Criteria: fever ≥ 5 d + ≥ 4 of 5: conjunctivitis, oral changes, rash, extremity changes, cervical LN. IVIG + aspirin within first 10 days reduces coronary aneurysm 5×. Echo at dx, 2 wk, 6-8 wk. AHA 2017 guideline. Long-term cardiac surveillance.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "peds",
+    "reference_source": "AHA Scientific Statement: Kawasaki Disease 2017 (McCrindle BW et al.)"
+  },
+  {
+    "scenario": "เด็กชายอายุ 8 เดือน acute onset ปวดท้อง crying + กระสับกระส่าย 15-20 นาทีแล้วหยุด สลับเป็นรอบ ๆ × 6 ชั่วโมง อาเจียน 3 ครั้ง วันนี้ถ่าย currant jelly stool\n\nV/S: HR 168, lethargic\nAbdomen: distended, palpable sausage-shaped mass RUQ\n\nUS: target/donut sign + pseudokidney — ileocolic intussusception",
+    "choices": [
+      { "label": "A", "text": "Observe + serial exams" },
+      { "label": "B", "text": "Ileocolic Intussusception (most common bowel obstruction 6 mo-3 yr): IV fluid bolus 20 mL/kg + NG decompression + NPO; pneumatic or hydrostatic enema reduction under fluoroscopy/US guidance (80-90% success, first-line); contraindications: peritonitis, perforation, instability; surgery if enema fails, perforation, identifiable lead point (older children); post-reduction observation 12-24h (recurrence 5-10%)" },
+      { "label": "C", "text": "Antibiotic + outpatient" },
+      { "label": "D", "text": "Endoscopy" },
+      { "label": "E", "text": "MRI abdomen first" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Intussusception (telescoping bowel) — most common obstruction infants 6 mo-3 yr. Classic triad: intermittent crampy pain + currant jelly stool + sausage mass (25-50%). Most ileocolic (95%). Lead point: lymphoid hyperplasia (post-viral, Peyer's patches). US diagnostic (target sign). Enema reduction first-line. Surgery if fails or contraindicated. Older children: investigate pathological lead point.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "peds",
+    "reference_source": "AAP Section on Surgery; Marsicovetere P et al. Pediatr Rev 2018"
+  },
+  {
+    "scenario": "เด็กหญิงอายุ 12 ปี polyuria + polydipsia + น้ำหนักลด 6 kg × 2 เดือน + เหนื่อย + คลื่นไส้ + อาเจียน 6 ชม\n\nV/S: BP 102/64, HR 124, RR 32 (Kussmaul), Temp 36.8°C, DTX HI\nGen: dehydrated, GCS 13, capillary refill 4 sec\n\nABG: pH 7.10, PaCO2 18, HCO3 6\nLab: Glucose 685, Na 132, K 5.4, BUN 28, Cr 1.0, Ketone urine 3+, AG 30\nNew DM type 1",
+    "choices": [
+      { "label": "A", "text": "Insulin bolus IV high dose + glucose 50% IV" },
+      { "label": "B", "text": "Pediatric DKA moderate-severe (ISPAD 2022): CAUTIOUS fluid resuscitation (high cerebral edema risk!) — 10-20 mL/kg NSS bolus if shock then deficit over 48h (not 24h); insulin drip 0.05-0.1 U/kg/hr start 1-2h AFTER fluid (NO bolus); K replacement in fluid once K < 5.5 + UO established; bicarbonate ONLY if pH < 6.9 + CV compromise; MONITOR for cerebral edema (HA, AMS, bradycardia, HT, sudden change) — mannitol or 3% HTS if suspected; transition to SC insulin when bicarbonate > 18, pH > 7.3, AG closed, eating; diabetes team consultation + family education" },
+      { "label": "C", "text": "Same protocol as adult DKA" },
+      { "label": "D", "text": "Restrict all fluid" },
+      { "label": "E", "text": "Discharge home with oral hypoglycemic" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pediatric DKA: high risk cerebral edema (mortality 20-25%, most common DKA death in peds). Key differences from adult: cautious fluid over 48h; NO insulin bolus; delayed insulin start; aggressive K replacement; avoid bicarbonate; high suspicion for cerebral edema. Glaser PECARN 2018: fast vs slow fluid + 0.45% vs 0.9% — both safe. Modern: gentle resuscitation + close monitoring + multidisciplinary team.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "peds",
+    "reference_source": "ISPAD Guidelines DKA 2022; Glaser PECARN NEJM 2018"
+  },
+  {
+    "scenario": "เด็กชายอายุ 5 ปี ไข้สูง + คอแข็ง + ปวดศีรษะ + ซึม + กระสับกระส่าย × 24 ชม Vaccine complete\n\nV/S: BP 98/62, HR 142, RR 32, Temp 39.6°C\nGCS 12, neck stiffness +, Kernig + Brudzinski +\nMild petechial rash chest\n\nCBC: WBC 22,500, CRP 285, Lactate 4.2\nCT brain: normal\nLP: WBC 1,850 (PMN 95%), Protein 220, Glucose 18, Gram stain: gram-neg diplococci",
+    "choices": [
+      { "label": "A", "text": "Wait for culture before any antibiotic" },
+      { "label": "B", "text": "Bacterial Meningitis likely Meningococcus (gram-neg diplococci + petechiae): IMMEDIATE IV antibiotic within 1h — Ceftriaxone 100 mg/kg/d + Vancomycin 60 mg/kg/d (until Spn sens known); Dexamethasone 0.15 mg/kg q6h × 2-4d (give before/with first antibiotic); resuscitation; ICU monitoring; droplet isolation 24h; public health reporting; chemoprophylaxis close contacts (rifampin, cipro, ceftriaxone single dose); audiology follow-up (hearing loss risk)" },
+      { "label": "C", "text": "Discharge with oral antibiotic" },
+      { "label": "D", "text": "Acyclovir only" },
+      { "label": "E", "text": "Steroid only without antibiotic" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Bacterial meningitis = peds emergency. Gram-neg diplococci → N. meningitidis. Time to antibiotic = key prognostic factor — give within 1h. Empiric ceftriaxone + vancomycin. Dexamethasone before/with antibiotic. Isolation + chemoprophylaxis for meningococcal contacts. Long-term: hearing + developmental follow-up. MenACWY + MenB vaccines.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "peds",
+    "reference_source": "AAP Red Book 2024; IDSA Bacterial Meningitis Guideline 2004"
+  },
+  {
+    "scenario": "เด็กชายอายุ 18 เดือน development normal มา ED ชักทั้งตัว tonic-clonic 5 นาที ขณะไข้ 39.8°C จาก URI เริ่ม 2 ชม ก่อน หลังชักซึม 10-15 นาทีแล้วฟื้นปกติ ครอบครัวพ่อมีประวัติ febrile seizure\n\nไม่มี neuro deficit, neck supple, fontanelle ปกติ, no rash\nWBC 9,200, glucose 96",
+    "choices": [
+      { "label": "A", "text": "Admit for EEG + MRI + LP mandatory" },
+      { "label": "B", "text": "Simple Febrile Seizure (6 mo-5 yr, generalized, < 15 min, single in 24h, normal exam): Reassurance (cornerstone — usually benign, recurrence 30%, epilepsy 2-5%); treat fever source (URI viral here); antipyretics for comfort (NOT to prevent recurrence — proven no benefit); NO routine EEG/MRI/LP for simple FS with normal exam in non-toxic well-vaccinated child > 12 mo; NO anticonvulsant prophylaxis; counsel parents: recurrence, safety, when to call EMS (> 5 min, breathing trouble); complex FS (focal, > 15 min, recurrent in 24h, abnormal exam) → fuller workup" },
+      { "label": "C", "text": "Long-term phenytoin prophylaxis" },
+      { "label": "D", "text": "Discharge without counseling" },
+      { "label": "E", "text": "Continuous IV anticonvulsant infusion" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Simple Febrile Seizure: 6 mo-5 yr, fever > 38°C, generalized, < 15 min, single in 24h, normal exam, no CNS infection/metabolic cause. Most common peds seizure (3-5%). Strong familial. Recurrence 30%, epilepsy 2-3% (vs 1% baseline). AAP 2011/2018: minimal workup if classic + well-appearing + > 12 mo + vaccines complete. No prophylactic anticonvulsant. Education + reassurance + safety.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "peds",
+    "reference_source": "AAP Febrile Seizures Guideline 2011, re-affirmed 2018"
+  },
+  {
+    "scenario": "เด็กชายอายุ 3 ปี healthy มา ED ไอเสียงดังบ่อย ๆ + เหมือนสำลัก + stridor inspiratory × 30 นาที ลดลงเล็กน้อย ยังมีอยู่ ไม่มีไข้ ประวัติเล่นกับถั่วลิสง 30 นาทีก่อน\n\nV/S: HR 132, RR 28, SpO2 94%\nGen: anxious, mild distress\nStridor inspiratory mild, air entry decreased RLL, no wheeze\n\nCXR (expiratory): RLL hyperinflation + slight mediastinal shift",
+    "choices": [
+      { "label": "A", "text": "Discharge — likely viral croup" },
+      { "label": "B", "text": "Suspected Foreign Body Aspiration (peds emergency): clinical history + asymmetric breath sounds + CXR signs = high suspicion; don't disturb child (avoid converting partial to complete obstruction); allow comfortable position + O2; avoid blind finger sweep, back blows/abdominal thrust (per AHA peds BLS — only for complete obstruction with no air movement); urgent RIGID bronchoscopy in OR under GA by experienced peds ENT + anesthesia (diagnosis + removal); CT chest if equivocal but don't delay; post-extraction monitor edema (steroid), pneumonia; prevention counseling — high-risk foods < 4 yr" },
+      { "label": "C", "text": "Heimlich maneuver in office" },
+      { "label": "D", "text": "Antibiotic + bronchodilator + outpatient" },
+      { "label": "E", "text": "Steroid alone" }
+    ],
+    "correct_answer": "B",
+    "explanation": "FBA — most common accidental death in toddlers. Peak 1-3 yr. Peanuts, popcorn, grapes, hot dogs, beads. Triad: choking + cough + wheeze (50%). CXR normal in 25% (radiolucent). Asymmetric breath sounds, air trapping, atelectasis, mediastinal shift on expiratory film. Rigid bronchoscopy by experienced team. Don't agitate child + avoid blind interventions. AHA BLS: back blows/thrusts only for complete obstruction without air movement.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "respiratory",
+    "board_age_group": "peds",
+    "reference_source": "AAP Section on Otolaryngology — FBA; AHA Guidelines CPR 2020"
+  },
+  {
+    "scenario": "เด็กชายอายุ 6 ปี บวมรอบตา + ขา + ท้อง 1 สัปดาห์ ปัสสาวะออกน้อย สีคล้ายเบียร์เข้ม\n\nV/S: BP 138/88 (high for age), HR 92\nPE: periorbital + lower extremity pitting edema + mild ascites\n\nUrinalysis: protein 4+, blood 3+, RBC casts + dysmorphic RBCs\nLab: Albumin 1.8, Cr 0.8, Chol 380, C3 ต่ำ, C4 ปกติ, ASO 480 (high)\n\nก่อน 3 สัปดาห์ pharyngitis ไม่รักษา",
+    "choices": [
+      { "label": "A", "text": "Steroid pulse therapy high dose" },
+      { "label": "B", "text": "Post-streptococcal AGN (PSGN) — classic features: nephritic syndrome, low C3 + normal C4, ASO elevated, RBC casts, recent strep: Supportive care (mainstay — usually self-limiting in children > 95% recover): salt + fluid restriction, diuretic (furosemide) for edema + HT, antihypertensive if severe; NO routine steroid; Penicillin × 10 days (eradicate strep + prevent transmission, not change PSGN course); Monitor BP, UO, weight, electrolytes, Cr; C3 normalize within 8 wk — if persistent → biopsy + DDx (MPGN, lupus, dense deposit); long-term follow-up 1-2 yr" },
+      { "label": "C", "text": "Renal transplant evaluation" },
+      { "label": "D", "text": "Aggressive immunosuppression" },
+      { "label": "E", "text": "Discharge with high-protein diet" }
+    ],
+    "correct_answer": "B",
+    "explanation": "PSGN — classic peds nephritic syndrome 1-3 wk after GAS infection. Immune complex deposition. Features: hematuria + RBC casts + proteinuria + HT + edema + AKI + LOW C3 + normal C4 + elevated ASO. Self-limiting > 95% children. Supportive care. NO routine steroid. C3 normalize 6-8 wk — if persistent → biopsy. DDx: IgA (C3 normal), MPGN (C3 persistent low), Lupus (C3 + C4 low + ANA), HSP (purpura + GI + joints).",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "renal_gu",
+    "board_age_group": "peds",
+    "reference_source": "KDIGO Glomerulonephritis Guideline 2021; Rodriguez-Iturbe B CJASN 2014"
+  },
+  {
+    "scenario": "ทารก 36h GA 34 wk preterm BW 1,800g มาด้วย apnea + cyanosis + lethargy 2 ชม ก่อน ก่อนหน้านี้กินนมได้ดี\n\nV/S: HR 168, BP 56/32 (hypotensive), RR irregular + apnea, Temp 35.8°C (hypothermia), SpO2 88%\nGen: lethargic, poor perfusion\nMother: GBS unknown, ROM 18h, intrapartum fever 38.4°C\n\nLab: WBC 4,200 (band 24%, I/T 0.4), Plt 102K\nABG: pH 7.20, HCO3 14, Lactate 4.8\nCRP 28 (high for neonate)",
+    "choices": [
+      { "label": "A", "text": "Observation 24 hours" },
+      { "label": "B", "text": "Early-Onset Neonatal Sepsis (< 72h — likely GBS, E. coli, Listeria from maternal source): Immediate IV antibiotic within 1h — Ampicillin (GBS, Listeria, susceptible E. coli) + Gentamicin (gram-neg + synergy); cefotaxime if meningitis (NOT ceftriaxone in neonates — kernicterus + Ca precipitation); Septic workup: blood culture × 2, CBC, CRP serial, urine culture (if > 6 days), LP if possible, CXR; Resuscitation: warming, fluid bolus 10-20 mL/kg, vasopressor for hypotension, intubation if needed; NICU; Duration: 10-14d bacteremia, 14-21d meningitis; modify per culture; family support; long-term developmental follow-up" },
+      { "label": "C", "text": "Discharge home with parental observation" },
+      { "label": "D", "text": "Oral antibiotic" },
+      { "label": "E", "text": "Hold antibiotic until culture grows" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Neonatal sepsis: early-onset < 72h (vertical from mother — GBS, E. coli, Listeria) vs late-onset > 72h (hospital/community). Risk factors: prematurity, prolonged ROM > 18h, maternal intrapartum fever, GBS unknown. Signs subtle: temperature instability (hypo > hyper), apnea, poor feeding, lethargy. Sepsis screen: CBC + I/T ratio + CRP + culture. Empirical antibiotic ASAP: ampicillin + gentamicin (NOT ceftriaxone). LP if possible. NICU resuscitation. Duration based on organism + culture + clinical.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "peds",
+    "reference_source": "AAP Red Book 2024; AAP COFN Suspected Early-Onset Sepsis 2018"
+  },
+  {
+    "scenario": "เด็กหญิง 14 เดือน normal development จน 9 เดือน หลังจากนั้นช้าลง: ไม่นั่งจน 14 เดือน, ไม่พูดคำ, ไม่ตอบสนองชื่อ, eye contact ลดลง, head circumference จาก 75th → 25th percentile\n\nไม่มี dysmorphic features\nFamily: น้องคนพี่ healthy, ไม่มีประวัติพันธุกรรม",
+    "choices": [
+      { "label": "A", "text": "Normal variation, observe" },
+      { "label": "B", "text": "Global Developmental Delay + Regression + Microcephaly progression — neurodegenerative concern (Rett syndrome in girls, mitochondrial, leukodystrophy, neurometabolic): multidisciplinary referral — dev peds, neuro, genetics; Tier 1: chromosomal microarray + Fragile X + MECP2 (Rett — regression 6-18 mo + microcephaly + hand stereotypies + lost purposeful hand use + breathing irregularities); brain MRI; metabolic screen (ammonia, lactate, AA, OA, acylcarnitine, VLCFA, MPS, lysosomal); TSH, CK; Tier 2: whole exome sequencing, mtDNA; Early intervention (don't wait for dx): PT/OT/speech; Family support + genetic counseling; symptomatic + specific treatments for some metabolic disorders" },
+      { "label": "C", "text": "Refer adult psychiatry" },
+      { "label": "D", "text": "Lifestyle change only" },
+      { "label": "E", "text": "MRI without other workup" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Developmental regression + microcephaly progression = red flag for neurodegenerative disease. Rett syndrome: girls, 6-18 mo regression + lost hand use + stereotypies + microcephaly progression + breathing irregularities + seizures — MECP2 gene (X-linked). Other: neurometabolic, leukodystrophies, neurogenetic syndromes. Tiered workup. Early intervention essential. Multidisciplinary: dev peds, neuro, genetics, therapies, family.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "peds",
+    "reference_source": "AAP Comprehensive Evaluation of Children with GDD 2014; RettSearch Consensus Criteria 2010"
+  }
+]
