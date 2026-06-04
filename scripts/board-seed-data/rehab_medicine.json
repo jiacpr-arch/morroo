@@ -338,5 +338,175 @@
     "board_topic": "hemato_onco",
     "board_age_group": "adult",
     "reference_source": "ISL Lymphology; NCCN Survivorship"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง principles of rehabilitation + ICF model + outcomes",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Rehabilitation Principles + ICF Model: (1) **WHO ICF (International Classification of Functioning, Disability, and Health)**: biopsychosocial model — body functions/structures + activities + participation; contextual factors (environmental + personal); replaces older disability models; (2) **Rehab principles**: - Functional focus (activities + participation) over impairment alone; - Person-centered + values-based; - Goal-oriented + measurable; - Time-limited intensive programs; - Team-based + multidisciplinary; - Continuum of care across settings; (3) **Outcome measures**: - Generic: FIM (Functional Independence Measure), Barthel Index, SF-36, EQ-5D; - Condition-specific: NIHSS (stroke), ASIA (SCI), Glasgow Outcome Scale (TBI), DASH (upper limb), Berg Balance, Tinetti, 6MWT; - PROMs (Patient-Reported Outcome Measures): increasing importance; (4) **Levels of evidence + GRADE**; (5) **Rehab settings**: acute inpatient rehab (IRF), subacute (SNF), long-term acute care (LTACH), outpatient, home-based, day program, telerehab; (6) **Adaptive equipment + assistive technology**: wheelchairs, prosthetics, orthotics, ADL aids, communication devices, environmental control; (7) **Disability rights**: Americans with Disabilities Act (ADA), UN Convention on Rights of Persons with Disabilities (CRPD); inclusive society; (8) **Multidisciplinary team dynamics**: communication + coordination + leadership; (9) **Modern**: technology-enabled + neuroplasticity-based + telerehab + AI assistance" },
+      { "label": "C", "text": "Random" },
+      { "label": "D", "text": "No principles" },
+      { "label": "E", "text": "Single discipline" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Rehab principles: WHO ICF biopsychosocial. Functional focus + person-centered + multidisciplinary + outcome-measured. ICF replaces older models. Multiple settings + continuum of care. Disability rights. Modern: technology + neuroplasticity + telerehab.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "WHO ICF; AAPM&R"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง neuroplasticity + motor learning + rehabilitation",
+    "choices": [
+      { "label": "A", "text": "No plasticity" },
+      { "label": "B", "text": "Neuroplasticity + Motor Learning: (1) **Neuroplasticity**: ability of CNS to reorganize structure + function in response to experience, injury, or therapy; lifelong but variable by age + condition; (2) **Principles of neuroplasticity** (Kleim + Jones 2008): use it or lose it; use it + improve it; specificity; repetition matters; intensity matters; time matters; salience matters; age matters; transference; interference; (3) **Mechanisms**: synaptic changes, LTP/LTD, new neuron generation (limited adult — hippocampus, OB), neural connectivity changes, functional reorganization; (4) **Motor learning stages**: cognitive → associative → autonomous (Fitts + Posner); (5) **Practice principles**: massed vs distributed, blocked vs random, whole vs part, mental practice + imagery; (6) **Feedback**: knowledge of results + performance; intrinsic vs extrinsic; (7) **Specific therapies leveraging neuroplasticity**: - **Constraint-Induced Movement Therapy (CIMT)** for stroke upper limb; - **Task-specific training**; - **Robotic-assisted training**; - **Mirror therapy**; - **Virtual reality / gaming**; - **Brain-computer interfaces (BCI)**; - **Functional electrical stimulation (FES)**; - **Transcranial magnetic stimulation (TMS)** + transcranial direct current stimulation (tDCS) — neuromodulation; - **Exoskeletons**; (8) **Pharmacologic adjuncts** (research): amantadine, modafinil, SSRIs, BDNF modulators; (9) **Critical period + recovery curve**: early intervention important but plasticity continues; (10) **Modern**: neuroplasticity + technology + neuromodulation expanding rehab capabilities" },
+      { "label": "C", "text": "Random" },
+      { "label": "D", "text": "Single technique" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Neuroplasticity + motor learning: principles guide rehabilitation. Use-dependent + specific + intense + repetitive + salient. Therapies leveraging plasticity (CIMT, task-specific, robotic, BCI, TMS, FES, exoskeletons). Modern: technology + neuromodulation expanding capabilities.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "Kleim + Jones 2008; AAPM&R"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง pharmacology + medications in rehab",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Rehabilitation Pharmacology: (1) **Spasticity**: baclofen (oral + intrathecal), tizanidine, dantrolene, diazepam (caution sedation), gabapentin off-label; botulinum toxin (focal), phenol/alcohol neurolysis; (2) **Neuropathic pain**: gabapentin, pregabalin, SNRIs (duloxetine, venlafaxine), TCAs (amitriptyline, nortriptyline), topical lidocaine + capsaicin; opioids minimal long-term; (3) **CRPS**: gabapentin, ketamine (severe), bisphosphonates (selected), sympathetic blocks; (4) **Cognitive enhancement (TBI, stroke)**: amantadine, methylphenidate, modafinil, donepezil; (5) **Mood**: SSRIs/SNRIs for depression + emotional lability; lithium for selected; (6) **Bladder**: anticholinergics (oxybutynin, tolterodine — caution cognitive), mirabegron (beta-3); intermittent catheterization; intravesical botulinum; (7) **Bowel**: bulk + osmotic laxatives, stimulants, suppositories; (8) **Bone health**: bisphosphonates + vitamin D + calcium (immobilization osteopenia); (9) **Autonomic dysreflexia**: short-acting antihypertensive (nitroglycerin, nifedipine) for episodes; (10) **Heterotopic ossification**: bisphosphonates + NSAIDs + RT post-surgery + surgical excision; (11) **Phantom limb pain**: gabapentinoids + mirror therapy; (12) **Sleep**: CBT-I + melatonin + selected hypnotics; avoid long-term benzo; (13) **Fatigue**: modafinil, amantadine in MS + post-stroke + cancer (selected); (14) **MS-specific**: dalfampridine (4-AP) for walking; (15) **PD-specific**: levodopa-carbidopa + adjuncts (MAO-B inhibitors, COMT inhibitors, dopamine agonists, amantadine, anticholinergics — caution elderly); (16) **Caution + interactions** especially in elderly + polypharmacy" },
+      { "label": "C", "text": "Random" },
+      { "label": "D", "text": "Single drug" },
+      { "label": "E", "text": "No pharmacology" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Rehab pharmacology: spasticity + neuropathic pain + cognitive + mood + bladder/bowel + autonomic + bone + condition-specific. Multi-targeted approach. Caution polypharmacy + elderly. Modern: targeted + multidisciplinary medication management.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "AAPM&R; Kasper Adams Frontera"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง orthotics + prosthetics + assistive technology",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Orthotics + Prosthetics + Assistive Technology: (1) **Orthotics** (support + correct + protect existing limb): - AFO (ankle-foot orthosis): post-stroke foot drop, peripheral neuropathy, spasticity; - KAFO (knee-AFO): more proximal weakness; - HKAFO: hip too; - Spinal: TLSO (post-vertebral fracture), Milwaukee brace + Boston brace for scoliosis; - Upper limb: WHO (wrist-hand orthosis), CTS splint; - Custom vs off-the-shelf; - Functional vs stabilization; (2) **Prosthetics** (replace missing limb): - Upper extremity: body-powered, myoelectric, hybrid; advanced — TMR (targeted muscle reinnervation), osseointegration; - Lower extremity: by amputation level (Syme, transtibial — BK, transfemoral — AK, hip disarticulation); - Components: socket, suspension, knee, ankle, foot; - K-level prescription (K0-K4) for functional ambulation potential; (3) **Assistive technology**: - Wheelchairs (manual + power), seating + positioning; - Mobility aids (canes, walkers, crutches); - Adaptive equipment for ADLs (reachers, dressing aids, kitchen tools); - Augmentative + alternative communication (AAC); - Environmental control + smart home; - Computer access (eye gaze, switches); - Robotics + exoskeletons; (4) **Selection process**: multidisciplinary, functional assessment, patient preferences, environment, cost, reimbursement, training; (5) **Multidisciplinary**: physiatrist + prosthetist + orthotist + PT + OT + engineering + patient + family; (6) **Modern**: 3D printing + smart materials + neural interfaces + AI-controlled + telerehab training" },
+      { "label": "C", "text": "Random" },
+      { "label": "D", "text": "Single device" },
+      { "label": "E", "text": "No use" }
+    ],
+    "correct_answer": "B",
+    "explanation": "O&P + AT: orthotics support, prosthetics replace, AT enables function. Multiple types + technology evolving. Selection multidisciplinary + individualized. Modern: 3D printing + smart materials + neural interfaces + AI + telerehab.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "AAOP; RESNA"
+  },
+  {
+    "scenario": "Hospital implements rehabilitation services + multidisciplinary integrated programs",
+    "choices": [
+      { "label": "A", "text": "Single specialty" },
+      { "label": "B", "text": "Rehabilitation Services Implementation: (1) **Levels of care**: inpatient rehabilitation facility (IRF), subacute (SNF), long-term acute care (LTACH), outpatient, home-based, telerehab; (2) **CMS criteria for IRF**: medical necessity + 3 hours of therapy/day 5 d/wk + multidisciplinary team + measurable functional goals + active medical management; (3) **Specialty programs**: stroke, SCI, TBI, amputee, cardiac, pulmonary, cancer, pediatric, vestibular, lymphedema, hand, sports; (4) **Team-based care**: physiatrist + PT + OT + SLP + nursing + psychology + recreation + social work + dietitian + family; (5) **Quality measures**: functional outcomes (FIM, CARE), readmission, discharge to community, length of stay, patient experience; UDSMR (Uniform Data System) data; (6) **Outcomes measurement**: continuous quality improvement, benchmarking; (7) **Patient-Family-Centered Care**: education, training, involvement in care + decisions, support; (8) **Care coordination**: transitions, community resources, follow-up, primary care + specialist; (9) **Equity considerations**: access, language, cultural, disability; (10) **Workforce**: shortages in many specialties; training programs; (11) **Reimbursement**: changing landscape — value-based, episode-based, telerehab coverage expanding; (12) **Modern**: telerehab + technology integration + AI-assisted + outcome-driven + patient-centered" },
+      { "label": "C", "text": "Random" },
+      { "label": "D", "text": "Bedrest" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Rehab services: continuum of care + specialty programs + multidisciplinary teams + quality measures + outcomes + family-centered + care coordination + equity. Modern: telerehab + technology + value-based + patient-centered.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "AAPM&R; AMRPA"
+  },
+  {
+    "scenario": "Hospital implements community-based rehabilitation + disability services + advocacy",
+    "choices": [
+      { "label": "A", "text": "Single setting" },
+      { "label": "B", "text": "Community-Based Rehabilitation + Disability Services: (1) **WHO CBR (Community-Based Rehabilitation)**: rehabilitation + equalization of opportunities + social inclusion at community level; includes — health, education, livelihood, social, empowerment; (2) **Settings**: community centers, schools, workplaces, home; (3) **Multidisciplinary**: rehab professionals + community health workers + educators + employers + family + peer mentors + advocates; (4) **Disability rights**: - ADA (Americans with Disabilities Act) — access + accommodation + employment + transportation + communication; - UN Convention on Rights of Persons with Disabilities (CRPD); - Inclusive society — accessibility + employment + education + healthcare + recreation; (5) **Independent Living Movement**: peer support, consumer-directed, civil rights focus; (6) **Specific services**: - Vocational rehab; - Independent living centers; - Transportation; - Adaptive housing; - Education (IEP, 504); - Support groups + advocacy organizations; - Caregiver support; - Sport + recreation programs (Paralympics); (7) **Universal design** principles: accessible for all; environmental design + products; (8) **Long-term care + chronic disease management**; (9) **Health promotion + wellness** for people with disabilities; (10) **Modern**: technology-enabled independent living + remote care + community integration + telerehab; (11) **Equity + global health**: extending services to underserved populations" },
+      { "label": "C", "text": "Single setting" },
+      { "label": "D", "text": "Random" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Community-based rehab + disability services: WHO CBR + ADA/CRPD + Independent Living Movement + universal design + multidisciplinary + community-centered. Modern: technology + global health + equity focus.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "WHO CBR; ADA"
+  },
+  {
+    "scenario": "Hospital implements telerehabilitation + digital health + technology in rehab",
+    "choices": [
+      { "label": "A", "text": "In-person only" },
+      { "label": "B", "text": "Telerehabilitation + Digital Health: (1) **Modalities**: synchronous video (real-time therapy + assessment), asynchronous (exercise apps, education), hybrid models, remote monitoring (wearables, sensors); (2) **Applications**: outpatient therapy continuation, home-based programs, remote consultation, telehealth coaching, post-discharge follow-up, specialty rehab consultation; (3) **Conditions**: stroke, SCI, TBI, cardiac, pulmonary, MSK, pain, mental health, geriatric, pediatric, cancer; (4) **Evidence**: comparable outcomes to in-person for many conditions; improves access especially rural + underserved; (5) **Technology**: video platforms, mobile apps, wearable sensors, virtual reality, AI-coached exercise, robotic-assisted, gaming-based; (6) **Implementation barriers**: technology access + digital literacy (especially elderly, low SES), licensing + reimbursement, privacy + security, internet bandwidth, language; (7) **Quality + best practices**: appropriate visit selection, technology testing, backup plans, training, documentation; (8) **Hybrid care models**: combine telerehab with in-person; (9) **AI applications**: motion analysis, exercise quality monitoring, personalized programs, predictive analytics, virtual coaches; (10) **Equity**: address digital divide; provide alternatives; (11) **Patient engagement**: gamification + interactive content; (12) **Modern**: rapidly evolving + COVID-accelerated + technology integration + AI growing" },
+      { "label": "C", "text": "Random" },
+      { "label": "D", "text": "Avoid technology" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Telerehab + digital health: multiple modalities + applications. Comparable outcomes for many conditions. Expands access. Implementation challenges (digital divide). AI growing. Modern: hybrid + technology-integrated + COVID-accelerated.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "AAPM&R Telerehab; APTA"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 60 ปี multimorbid + post-stroke + DM + HF + frailty + cognitive impairment — comprehensive integrative rehab",
+    "choices": [
+      { "label": "A", "text": "Single specialty" },
+      { "label": "B", "text": "Multimorbid Post-Stroke Integrative Rehab: (1) **Multidisciplinary team**: physiatrist + stroke neurology + cardiology + endocrinology + geriatrics + PT + OT + SLP + nursing + dietitian + psychology + social work + pharmacy + family + caregiver; (2) **Stroke-specific rehab** (motor + speech + cognitive + ADL); (3) **Comorbidity-specific**: - DM: glycemic control + SGLT2 + GLP-1 + dietary + exercise; - HF: GDMT (4 pillars) + lifestyle; - Frailty: nutrition + exercise + multidisciplinary; - Cognitive: assessment + strategies + safety; (4) **Polypharmacy management**: Beers + STOPP/START + deprescribing; (5) **Cardiac rehab integration**: post-stroke patients high CV risk; (6) **Secondary stroke prevention**: antiplatelet + statin + BP + AF screen + lifestyle; (7) **Goals of care + shared decision-making**: realistic functional goals + values + family; (8) **Discharge planning**: home with services vs SNF vs LTC; family + caregiver assessment; (9) **Long-term**: continued therapy + community + medical management; (10) **Mental health**: depression high prevalence post-stroke + chronic illness; (11) **Caregiver burden**: education + support + respite; (12) **Modern**: integrated chronic disease + rehab + family-centered + value-based" },
+      { "label": "C", "text": "Single specialty" },
+      { "label": "D", "text": "Bedrest" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Multimorbid post-stroke integrative rehab: multidisciplinary + comorbidity-specific + polypharmacy + secondary prevention + goals of care + family. Modern: integrated chronic disease + value-based care.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AHA/ASA Stroke Rehab; AAPM&R"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 35 ปี SCI + chronic pain + depression + substance use + relationship issues — comprehensive integrative care",
+    "choices": [
+      { "label": "A", "text": "Single specialty" },
+      { "label": "B", "text": "SCI + Complex Comorbidities Integrative Care: (1) **Multidisciplinary**: physiatrist + addiction medicine + psychiatry + pain medicine + PT + OT + psychology + social work + sexual health + peer support; (2) **SCI rehab continuation**: bladder/bowel + skin + spasticity + autonomic + mobility + ADLs; (3) **Chronic pain management**: - Multimodal opioid-sparing (gabapentinoids + SNRIs + topical + ketamine + procedures + cannabinoids selected); - CBT for chronic pain; - Mindfulness + meditation; - PT + OT; - Procedures (spinal cord stim selected); (4) **Substance use treatment**: addiction medicine + behavioral; integrated dual diagnosis treatment; medication-assisted treatment if indicated (buprenorphine for OUD); (5) **Depression treatment**: SSRI + CBT + peer support; high prevalence in SCI; suicide risk; (6) **Relationship + family + caregiver**: counseling + education + sexual health + peer support; (7) **Vocational + community reintegration**: vocational rehab + ADA accommodations + return to work/school; (8) **Long-term complications surveillance**: UTI, pressure injury, secondary medical conditions; (9) **Adaptive sports + recreation**: improves mood + function + community; (10) **Goals + values discussion**: patient-centered care + quality of life focus; (11) **Multidisciplinary care coordination**: case manager + medical home; (12) **Modern**: integrated comprehensive care + technology + emerging therapies (exoskeletons, epidural stim research) + advocacy" },
+      { "label": "C", "text": "Single specialty" },
+      { "label": "D", "text": "Bedrest" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "SCI + comorbidities integrative care: multidisciplinary including addiction + psychiatry + pain. Chronic pain multimodal + substance use treatment + depression + family + vocational + adaptive sports. Modern: integrated comprehensive lifelong care.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "Consortium for SCI; AAPM&R"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 60 ปี — post-CABG + Parkinson disease + diabetes + osteoporosis + chronic LBP — comprehensive multidisciplinary rehab",
+    "choices": [
+      { "label": "A", "text": "Single specialty" },
+      { "label": "B", "text": "Complex Multimorbid Integrative Rehabilitation: (1) **Multidisciplinary team**: physiatrist + cardiology + neurology + endocrinology + ortho + PT + OT + SLP + nursing + dietitian + pharmacy + psychology + social work + family + caregiver; (2) **Comprehensive assessment**: medical + functional + cognitive + nutritional + psychosocial + medications + advance care planning + values + goals; (3) **Coordinated care plan**: - **Cardiac rehab post-CABG** (Phase II — supervised exercise, risk factor modification, education, psychosocial); - **PD rehab** (LSVT-BIG + LSVT-LOUD + Tai Chi + fall prevention + medication optimization); - **DM management** (glycemic + SGLT2/GLP-1 + lifestyle + nutrition); - **Osteoporosis** (DEXA + Ca/vit D + bisphosphonate + fall prevention); - **Chronic LBP** (multimodal + opioid-sparing + PT + CBT); (4) **Polypharmacy management**: Beers + STOPP/START + deprescribing + interactions; (5) **Multimodal exercise** addressing multiple conditions simultaneously; (6) **Fall prevention**: comprehensive — multiple risk factors; (7) **Mental health**: depression high prevalence chronic illness + PD; (8) **Nutritional optimization**: protein + Ca + vit D + Mediterranean; (9) **Patient + family education + self-management**; (10) **Goals of care + shared decision-making**: realistic + values-based; (11) **Care coordination**: medical home + transitions; (12) **Modern**: integrated chronic disease + rehab + value-based + technology-enabled + patient + family-centered" },
+      { "label": "C", "text": "Single specialty" },
+      { "label": "D", "text": "Bedrest" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Complex multimorbid integrative rehab: comprehensive multidisciplinary + coordinated care plan + multimodal exercise + polypharmacy management + mental health + family. Modern: integrated value-based patient-centered chronic disease management.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "AAPM&R; AGS"
   }
 ]
