@@ -2878,5 +2878,965 @@
     "board_topic": "psych_behavior",
     "board_age_group": "adult",
     "reference_source": "USPSTF Tobacco 2021; EAGLES"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี — fatigue + weight gain + constipation + cold intolerance; TSH 12.8, free T4 0.7 (low)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Start T3 alone — no levothyroxine"
+      },
+      {
+        "label": "B",
+        "text": "Hypothyroidism Management (ATA + AACE 2014 + 2022): (1) **Diagnosis**: overt — TSH ↑ + free T4 ↓; subclinical — TSH ↑ + free T4 normal; (2) **Etiology workup**: anti-TPO antibody (Hashimoto's = most common in iodine-sufficient areas); other causes: post-radioactive iodine, post-thyroidectomy, central (rare — TSH normal/low + T4 low), drugs (amiodarone, lithium, immune checkpoint inhibitors), congenital, iodine deficiency; (3) **Treatment overt hypothyroidism**: - **Levothyroxine** weight-based 1.6 mcg/kg/d in healthy; lower in elderly, CAD, frail (start 25-50 mcg, titrate); - Take fasting, 30-60 min before breakfast OR bedtime ≥ 3 h after last meal; consistent timing; - Separate from Ca, iron, PPI, soy, fiber (absorption); separate from levothyroxine 4 h; - Recheck TSH 6-8 wk after initiation/dose change; target TSH 0.5-2.5 most (slightly higher in elderly); - Brand vs generic: bioequivalence variable — stick to same; (4) **Subclinical hypothyroidism**: - Treat if TSH > 10, symptoms, positive antibodies + planning pregnancy, infertility; - Observation reasonable < 10 + asymptomatic; (5) **Pregnancy**: - Pre-pregnancy optimize TSH < 2.5; - During pregnancy ↑ dose ~ 30% (more thyroid demand); - Trimester-specific TSH ranges; (6) **Older adults**: less aggressive — TSH 4-6 acceptable; avoid overtreatment (AFib, osteoporosis, mortality); (7) **Treatment failure / persistent symptoms despite normalized TSH**: assess adherence, absorption (celiac, atrophic gastritis, PPI), other causes (depression, sleep apnea, anemia, polycystic); T3 addition controversial — most evidence shows no benefit (selected may try liothyronine combination); (8) **Myxedema coma** rare emergency — IV levothyroxine + T3 + steroid; (9) **Monitor**: TSH q 6-12 mo when stable; (10) **Multidisciplinary**: PCP + endocrine if complex / pregnancy / refractory"
+      },
+      {
+        "label": "C",
+        "text": "Treat all subclinical with TSH 6"
+      },
+      {
+        "label": "D",
+        "text": "No treatment — wait"
+      },
+      {
+        "label": "E",
+        "text": "Long-term steroid for thyroid"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Hypothyroidism: TSH ↑ + T4 ↓ overt; levothyroxine weight-based fasting consistent timing. Recheck 6-8 wk. Subclinical — treat if TSH > 10 / sx / pregnancy. Elderly less aggressive. Pregnancy ↑ dose. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "ATA Hypothyroidism 2014; AACE 2022"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 35 ปี — palpitations + weight loss + heat intolerance + tremor + diffuse goiter + mild ophthalmopathy; TSH < 0.01, T4 ↑, T3 ↑; TRAb positive",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No treatment — self-resolves"
+      },
+      {
+        "label": "B",
+        "text": "Graves Disease Management (ATA 2016): (1) **Diagnosis**: clinical + TSH suppressed + T4/T3 ↑ + TRAb (TSI) positive; thyroid US — diffuse vascular goiter; RAIU if uncertain (↑ uniform); (2) **3 main treatment options — patient preference + factors**: - **Antithyroid drugs (ATDs)** — first-line many, especially mild + young + small goiter + planning pregnancy: - **Methimazole (MMI)** preferred — 5-30 mg daily; LFT + CBC baseline + as needed; ~ 50% remission after 12-18 mo (continue ≥ 12 mo before considering taper); - **PTU** for 1st trimester pregnancy (MMI teratogen 1st trim — aplasia cutis), thyroid storm; hepatotoxicity higher; - SE: rash, hepatitis (PTU), agranulocytosis (RARE — STOP for fever/sore throat → CBC), arthralgia; - **Radioactive iodine (RAI)** — definitive, simple outpatient; CI in pregnancy + lactation + young children + severe orbitopathy (may worsen); usually leads to hypothyroidism → lifelong levothyroxine; - **Thyroidectomy** — definitive, for large goiter, suspicious nodules, severe orbitopathy, pregnancy 2nd trim if needed, patient preference; risk recurrent laryngeal nerve + hypoparathyroidism; experienced surgeon; (3) **Symptom management**: **beta-blocker (propranolol, atenolol)** for tachycardia, tremor, anxiety; (4) **Graves orbitopathy management**: refer ophthalmology; smoking cessation critical (worsens); IV steroids for moderate-severe active; **teprotumumab** (Tepezza — IGF-1R antibody) FDA-approved 2020 — game changer; orbital radiation, decompression surgery selected; (5) **Pregnancy**: PTU 1st trimester, MMI 2nd-3rd; close monitoring; (6) **Thyroid storm**: emergency — ICU; beta-blocker, PTU, iodine, steroid, supportive; (7) **Monitor**: TFT q 4-6 wk during titration, q 3-6 mo stable; TRAb if considering ATD withdrawal; (8) **Multidisciplinary**: PCP + endocrine + nuclear medicine + ENT/surgery + ophthalmology + smoking cessation"
+      },
+      {
+        "label": "C",
+        "text": "Levothyroxine for hyperthyroid"
+      },
+      {
+        "label": "D",
+        "text": "Beta-blocker alone long-term"
+      },
+      {
+        "label": "E",
+        "text": "Surgery first-line for all"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Graves: TSH ↓ + T4/T3 ↑ + TRAb +. 3 options: ATD (MMI; PTU 1st trim) / RAI / surgery — based on factors. Beta-blocker for sx. Orbitopathy — smoking cessation + steroid + teprotumumab. Pregnancy considerations. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "ATA Hyperthyroidism 2016"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 50 ปี — heartburn + regurgitation × 3 wk, no alarm symptoms; BMI 32",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Long-term PPI without lifestyle"
+      },
+      {
+        "label": "B",
+        "text": "GERD Management (ACG 2022): (1) **Diagnosis**: clinical with typical symptoms (heartburn, regurgitation); rule out alarm symptoms (dysphagia, odynophagia, weight loss, anemia, hematemesis, melena, vomiting) → EGD; (2) **EGD indications**: alarm symptoms, refractory PPI, > 50 yo first onset, Barrett's surveillance, screening high-risk (chronic GERD + 2 risk factors — white male > 50, obese, smoker, family history); (3) **Lifestyle modification (foundation)**: - Weight loss (most impactful in obese — strong evidence); - Elevate head of bed 6-8 inches (gravity); - Avoid late meals (< 3 h before bed); - Smaller meals; - Avoid trigger foods individually (spicy, fatty, citrus, mint, chocolate, caffeine, alcohol — variable); - Smoking cessation; - Loose clothing; (4) **Pharmacotherapy stepwise**: - **PPI standard dose × 8 wk** — first-line (omeprazole 20-40, esomeprazole, pantoprazole, lansoprazole); take 30-60 min before breakfast; - **H2RA** (famotidine) — alternative; less effective; tachyphylaxis; useful for nocturnal breakthrough or maintenance; - **Antacid** symptomatic only; - **Step-down approach** — once controlled, reduce to lowest effective dose, PRN, or discontinue; - **Refractory** (despite optimized PPI): - Compliance + timing check; - Switch PPI brand; - BID dosing; - Add H2RA at bedtime; - Refer GI — pH-impedance testing, manometry, consider P-CAB (potassium-competitive acid blocker — vonoprazan FDA-approved 2022); (5) **Long-term PPI considerations**: - Generally safe; - Possible associations (low quality): CKD, fracture, dementia, infections (C diff, pneumonia), hypomagnesemia, B12 deficiency, gastric polyps — discuss but don't deprive when indicated; - Minimum effective dose; (6) **Anti-reflux surgery** (Nissen fundoplication, magnetic sphincter augmentation — LINX) for: refractory + objective reflux + non-acid reflux predominant + young, regurgitation predominant; less common with effective PPIs; (7) **Barrett's surveillance**: q 3-5 yr based on dysplasia; (8) **Multidisciplinary**: PCP + GI + nutritionist + surgery selected"
+      },
+      {
+        "label": "C",
+        "text": "Surgery first-line for typical GERD"
+      },
+      {
+        "label": "D",
+        "text": "Antacid PRN only for chronic"
+      },
+      {
+        "label": "E",
+        "text": "No treatment for moderate symptoms"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "GERD: lifestyle (weight, HOB, late meals) + PPI 8 wk first-line. EGD for alarms / refractory / Barrett's screen. H2RA + antacid roles. Refractory — GI eval. Long-term PPI generally safe. Surgery selective. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "ACG GERD 2022"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี — dyspepsia + EGD พบ gastric ulcer + biopsy positive H. pylori",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No treatment — bacteria normal"
+      },
+      {
+        "label": "B",
+        "text": "H. pylori Eradication (ACG 2017 + Maastricht VI 2022): (1) **Testing indications**: PUD, MALT lymphoma, atrophic gastritis, gastric cancer family history, post-gastric cancer resection, uninvestigated dyspepsia in low-risk, before long-term NSAID/aspirin (selected), iron-deficiency anemia unexplained, ITP, vitamin B12 deficiency unexplained; (2) **Testing methods**: - **Non-invasive**: urea breath test, stool antigen — first choice non-EGD; serology — has been used but cannot distinguish current vs past; - **Invasive (EGD)**: rapid urease test, histology, culture; - Hold PPI ≥ 1-2 wk + antibiotic ≥ 4 wk before testing (false neg); (3) **Treatment** — empiric based on local resistance: - **Bismuth quadruple × 14 d** (preferred first-line per ACG 2017 + Maastricht VI in areas with clarithromycin resistance > 15%): PPI BID + bismuth + tetracycline + metronidazole; - **Clarithromycin-based triple** × 14 d (PPI + amox + clarithro) — only if local clarithro resistance < 15% AND no prior macrolide exposure; - **Levofloxacin triple** × 10-14 d (PPI + amox + levo) — alternative; - **Concomitant** quadruple (PPI + amox + clarithro + metronidazole) × 10-14 d; - **Rifabutin triple** (rifabutin + amox + omeprazole — Talicia) salvage; - Vonoprazan-amox dual / triple emerging; (4) **Test of cure** ≥ 4 wk after completing therapy + ≥ 1-2 wk off PPI — urea breath test or stool antigen (NOT serology); (5) **Treatment failure** ~ 20-30%: use different regimen (avoid prior abx); resistance testing if available; (6) **Counseling**: complete full course; SE warning (taste, GI); confirm cure (PUD risk reduction); (7) **Family considerations**: gastric cancer family history — discuss screening; (8) **Multidisciplinary**: PCP + GI"
+      },
+      {
+        "label": "C",
+        "text": "Short 3-day course"
+      },
+      {
+        "label": "D",
+        "text": "Single antibiotic alone"
+      },
+      {
+        "label": "E",
+        "text": "Surgery for ulcer first"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "H. pylori PUD: bismuth quadruple × 14 d first-line (or clarithro triple if local resist < 15%). Hold PPI/abx before testing. Test of cure 4 wk post-tx (UBT or stool Ag, not serology). Treatment failure — different regimen.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "ACG H. pylori 2017; Maastricht VI 2022"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 30 ปี — recurrent abdominal pain + altered bowel habits (diarrhea predominant) × 6 mo, no alarm features, normal physical exam, normal labs",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Repeat colonoscopy q 6 mo"
+      },
+      {
+        "label": "B",
+        "text": "IBS Management (ACG 2021 + Rome IV): (1) **Diagnosis Rome IV**: recurrent abdominal pain ≥ 1 d/wk in past 3 mo + ≥ 2 of: related to defecation, change in frequency, change in form; (2) **Subtypes by Bristol stool**: IBS-D (diarrhea), IBS-C (constipation), IBS-M (mixed), IBS-U (unsubtyped); (3) **Workup limited if no alarms**: - CBC, CRP/ESR; - Celiac serology (tTG-IgA); - Stool studies if diarrhea (Giardia, infection); - **Calprotectin** — to rule out IBD; - **No routine colonoscopy** if no alarms + age < 45 (or 50); - Lactose breath test if suspected; (4) **Patient education** — chronic relapsing, gut-brain disorder, not progressive, not life-threatening; therapeutic relationship key; (5) **Dietary**: - **Low FODMAP diet** (with dietitian) — strong evidence for symptom improvement, especially IBS-D; structured elimination + reintroduction; - Soluble fiber (psyllium) — IBS-C and some IBS-D; - Avoid trigger foods individual; - Gluten-free trial selected (non-celiac gluten sensitivity overlap); (6) **Pharmacotherapy by subtype**: - **IBS-D**: - Loperamide for diarrhea; - **Rifaximin** 550 mg TID × 14 d (TARGET trials); can repeat 2 more cycles if symptomatic recurrence; - **Eluxadoline** (Viberzi) — mixed mu/kappa; CI no gallbladder or alcohol; - **Alosetron** (5HT3 antagonist) — restricted; - TCA low-dose (amitriptyline, nortriptyline) — visceral pain modulation + sleep; - **IBS-C**: - PEG; - **Linaclotide, plecanatide** (guanylate cyclase agonists); - **Lubiprostone** (chloride channel activator); - **Tenapanor** (NHE3 inhibitor) — newer; - SSRI; - Prucalopride (5HT4 agonist) selected; (7) **Behavioral therapy**: CBT, gut-directed hypnotherapy — strong evidence; mindfulness; (8) **Probiotics** — limited evidence overall; specific strains may help; (9) **Address psychosocial**: stress, anxiety, depression, trauma, FODMAP triggers; (10) **Mental health screening + collaborative care**; (11) **Multidisciplinary**: PCP + GI + dietitian + behavioral health"
+      },
+      {
+        "label": "C",
+        "text": "Single antibiotic course indefinitely"
+      },
+      {
+        "label": "D",
+        "text": "Ignore — psychological only"
+      },
+      {
+        "label": "E",
+        "text": "Long-term opioid"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "IBS: Rome IV diagnosis + limited workup (no alarms). Education + dietary (low FODMAP, fiber). Subtype-specific pharm (IBS-D — rifaximin/loperamide/TCA; IBS-C — PEG/linaclotide). Behavioral therapy strong evidence. Address psychosocial. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "ACG IBS 2021; Rome IV"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 40 ปี — leg redness + warmth + swelling × 2 d after minor scratch, no purulent drainage, no abscess, no fever; stable vitals",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Empiric IV vancomycin for all cellulitis"
+      },
+      {
+        "label": "B",
+        "text": "Cellulitis Outpatient Management (IDSA SSTI 2014): (1) **Diagnosis clinical**: erythema + warmth + edema + tenderness; mark borders; demarcate; (2) **Differentiate**: - **Non-purulent cellulitis** (this patient) — typically beta-hemolytic strep (GAS, GBS) and MSSA; - **Purulent cellulitis / abscess** — typically MRSA; I&D first; abx if larger; - **Mimics**: DVT, stasis dermatitis, contact dermatitis, gout, erysipelas (more raised + sharp border — strep), necrotizing fasciitis (severe pain out of proportion, crepitus, hemorrhagic bullae — surgical emergency); (3) **Severity classification**: - **Mild** (this patient — afebrile, stable, no comorbidity) — outpatient oral; - **Moderate** — systemic signs, more extensive — outpatient IV or hospitalization; - **Severe** — sepsis, deep infection, fail outpatient — admit IV; (4) **Outpatient antibiotic for non-purulent cellulitis** (cover strep ± MSSA): - **Cephalexin 500 mg QID × 5-10 d** (5 days often sufficient — DICTATES study); or - **Dicloxacillin** 500 mg QID; or - **Penicillin V** 500 mg QID if clear strep; - **PCN allergy**: clindamycin 300-450 mg QID, doxycycline; - **MRSA coverage** (purulent or risk factors): TMP-SMX, doxycycline, clindamycin; (5) **Adjuncts**: - Elevation of affected limb; - Mark borders + reassess 24-48 h; - Cool compresses; - Treat tinea pedis (common entry); skin care; - Address venous insufficiency, lymphedema (recurrence prevention); (6) **Hospital admission indications**: severe systemic signs, immunocompromised, rapid progression, failed outpatient, suspect necrotizing fasciitis (URGENT surgery + IV abx), facial cellulitis (esp orbital), special hosts; (7) **Follow-up 24-72 h**: expect improvement; worsening → re-evaluate (abscess, resistant, alternative diagnosis); (8) **Recurrence prevention**: treat predisposing (tinea, venous, lymphedema); long-term prophylaxis (penicillin) for frequent recurrences; (9) **Multidisciplinary**: PCP + ID/dermatology + vascular if venous + surgery if necrotizing"
+      },
+      {
+        "label": "C",
+        "text": "MRI all cellulitis"
+      },
+      {
+        "label": "D",
+        "text": "No antibiotic — observe"
+      },
+      {
+        "label": "E",
+        "text": "Hospitalize all cellulitis"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Non-purulent cellulitis: clinical diagnosis, mark borders. Cephalexin (strep ± MSSA) 5-10 d outpatient if mild. Cover MRSA only if purulent / risk factors. Address entry (tinea), elevation. Watch necrotizing fasciitis. Follow-up 24-72 h.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "IDSA SSTI 2014"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี HTN — acute monoarthritis of 1st MTP joint, red + hot + extremely tender × 1 d; serum uric acid 9.8; first episode",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Allopurinol during acute attack alone"
+      },
+      {
+        "label": "B",
+        "text": "Acute Gout + Long-term Management (ACR 2020): (1) **Acute attack diagnosis**: classic (1st MTP — podagra), monoarthritis, rapid onset, red/hot/tender; gold standard = joint aspiration + monosodium urate crystals (negatively birefringent needles) under polarized light; uric acid often elevated but may be normal during attack; rule out septic arthritis (always consider with monoarthritis — culture); (2) **Acute treatment** (start ASAP, within 24 h best): - **NSAIDs** (naproxen 500 BID, indomethacin, ibuprofen) — first-line if no CI; consider PPI; - **Colchicine** (1.2 mg → 0.6 mg in 1 h → 0.6 mg BID-TID until resolved; max ~ 5-7 d) — best within 24 h of onset; less effective if delayed; dose-reduce in CKD; - **Corticosteroid** (prednisone 30-40 mg taper over 7-10 d) — first-line if NSAID/colchicine CI (CKD, GI bleed, anticoagulation, HF); intra-articular for single joint; IM as alternative; - **IL-1 inhibitor** (anakinra, canakinumab) for refractory or contraindications to others; - Combination therapy for severe (NSAID + colchicine or steroid + colchicine); - Don't start/stop urate-lowering during acute (but continue if already on); (3) **Long-term urate-lowering therapy (ULT)** indications (ACR 2020): - ≥ 2 attacks/yr; - Tophi; - Radiographic damage; - Stage 3 CKD; - Uric acid > 9; - Discuss with first attack + risk factors; (4) **ULT options**: - **Allopurinol first-line** — start 100 mg/d (50 if CKD), titrate q 2-5 wk to uric acid < 6 (< 5 if tophi); HLA-B*5801 testing in Asian (esp Han Chinese, Korean, Thai) + African — severe hypersensitivity (SJS/TEN) risk; - **Febuxostat** alternative; CV warning (FDA 2019 — black box vs allopurinol — CARES trial); - **Probenecid** uricosuric (CI overproducers, kidney stones, CKD); - **Pegloticase** (uricase IV) — refractory + tophaceous; - **ULT initiation during acute attack OK** (modern recommendation, with anti-inflammatory bridge — colchicine 0.6 mg daily or low-dose NSAID/steroid × 3-6 mo while titrating ULT — prevents paradoxical flares); (5) **Lifestyle**: weight loss, alcohol limit (especially beer, spirits), purine moderation (red meat, organ, shellfish), low-fructose, dairy + cherries beneficial, hydration; (6) **Address comorbidities** (high CV risk): HTN — losartan + amlodipine preferred (uric acid neutral), DM, lipid, CKD, NAFLD; AVOID — thiazide, loop diuretic, low-dose aspirin (raise uric acid); (7) **Patient education**: chronic disease, attack action plan, ULT adherence; (8) **Multidisciplinary**: PCP + rheumatology if refractory + nutrition"
+      },
+      {
+        "label": "C",
+        "text": "Long-term opioid for gout pain"
+      },
+      {
+        "label": "D",
+        "text": "No treatment — self-resolves"
+      },
+      {
+        "label": "E",
+        "text": "Surgery for tophi only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Gout: acute — NSAID/colchicine/steroid (start < 24 h). Joint aspiration if uncertain. Long-term ULT (allopurinol — HLA-B*5801 high-risk pop; febuxostat alt) — start during attack OK with anti-inflam bridge. Target uric acid < 6. Lifestyle + CV risk + meds.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "ACR Gout 2020"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 45 ปี — bilateral symmetric MCP + PIP joint pain + morning stiffness > 1 h × 6 wk; positive RF + anti-CCP; ESR 55",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Long-term NSAIDs alone"
+      },
+      {
+        "label": "B",
+        "text": "Rheumatoid Arthritis Initial Management (ACR 2021): (1) **Diagnosis** — ACR/EULAR 2010 criteria; clinical + serology (RF, anti-CCP) + acute phase + duration; (2) **Workup**: CBC, LFT, Cr, hepatitis B+C, TB screen, CXR; pregnancy if applicable; (3) **Refer rheumatology urgently** — early initiation of DMARD (within 3 mo) — improves outcomes, prevents joint damage (window of opportunity); (4) **Treatment principle: treat-to-target** (remission or low disease activity); monitor disease activity (CDAI, DAS28) regularly + escalate as needed; (5) **DMARDs**: - **Methotrexate first-line** (csDMARD) — start 7.5-15 mg/wk + folate 1 mg/d (or 5 mg/wk); titrate to 20-25 mg/wk; SC if oral GI intolerance or insufficient; baseline + monitoring CBC, LFT, Cr; avoid alcohol; - **Hydroxychloroquine** mild disease or combination; baseline + annual eye exam (retinopathy); - **Sulfasalazine** alternative; - **Leflunomide** alternative; - **Triple therapy** (MTX + HCQ + SSZ) for inadequate MTX response; (6) **Biologics + JAK inhibitors (b/tsDMARDs)** for MTX-inadequate response: - **TNF inhibitors** (adalimumab, etanercept, infliximab, golimumab, certolizumab) — first-line biologic; - **Non-TNF biologics**: IL-6 (tocilizumab, sarilumab), B-cell (rituximab), T-cell (abatacept); - **JAK inhibitors** (tofacitinib, baricitinib, upadacitinib) — Boxed warning for CV + cancer (ORAL Surveillance) — secondary now in many; - Screen + treat latent TB before biologics; - Hepatitis B screening + prophylaxis; - Live vaccines avoid on biologics; (7) **Bridging therapy**: low-dose corticosteroid (prednisone 5-10 mg or intra-articular) for symptom control during DMARD onset; taper ASAP; avoid chronic; (8) **NSAIDs** for symptoms — adjunct; cautious CV + GI + renal; (9) **Comorbidities**: CV risk ↑ (treat aggressively), depression, osteoporosis (steroid + disease), interstitial lung disease screen; (10) **Vaccinations**: pneumococcal, flu, COVID, shingles (Shingrix recombinant OK), HPV — update before immunosuppression ideally; (11) **Lifestyle**: exercise, smoking cessation (worsens RA + decreases response), Mediterranean diet, weight; (12) **Patient education**: chronic disease, adherence, infection signs; (13) **Multidisciplinary**: PCP + rheumatology + PT/OT + orthopedic + ophthalmology (HCQ) + behavioral health + cardiac"
+      },
+      {
+        "label": "C",
+        "text": "Steroid monotherapy long-term"
+      },
+      {
+        "label": "D",
+        "text": "Wait 1 yr before DMARD"
+      },
+      {
+        "label": "E",
+        "text": "No treatment until severe deformity"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "RA: early DMARD critical (window of opportunity). MTX first-line + folate. Hydroxychloroquine + SSZ + leflunomide alternatives. Biologics/JAK for refractory. Treat-to-target. Steroid bridge. CV/osteoporosis/lung screening. Vaccines. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "ACR RA 2021"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 65 ปี — LUTS (urgency + frequency + nocturia 3x + weak stream) × 1 yr; AUA-SI 18 (moderate-severe); no hematuria; PSA 3.2",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Surgery first-line for moderate BPH"
+      },
+      {
+        "label": "B",
+        "text": "BPH Management (AUA + Canadian Urological Association): (1) **Evaluation**: AUA-SI (Symptom Index) score (mild < 8, moderate 8-19, severe 20-35); history including red flags (hematuria, retention, recurrent UTI, stones, CKD), digital rectal exam (size + nodularity), urinalysis, PSA (with shared decision discussion), Cr; uroflowmetry, post-void residual (PVR), US optional; (2) **Rule out**: prostate cancer (PSA + DRE — shared decision), bladder cancer, overactive bladder, stricture, urinary tract infection, medication causes (anticholinergic, sympathomimetic), neuro causes, polyuria; (3) **Behavioral / lifestyle (mild + moderate)**: - Limit fluids before bed; - Avoid caffeine + alcohol (especially evening); - Double voiding; - Avoid anticholinergics, decongestants; - Bladder training (timed voiding); - Pelvic floor exercises; - Weight loss; (4) **Pharmacotherapy moderate-severe**: - **Alpha-1 blockers** (tamsulosin, alfuzosin, silodosin, doxazosin, terazosin) — first-line; relax smooth muscle; rapid effect; SE: orthostatic hypotension, ejaculatory dysfunction; non-selective (doxazosin) — BP-lowering; floppy iris syndrome (alert ophthalmology before cataract surgery); - **5-alpha reductase inhibitors (5-ARI)** (finasteride, dutasteride) — shrink prostate; for larger prostates (> 40 g); slow effect (6+ mo); SE: sexual dysfunction (libido, ED, ejaculatory), depression rare; lowers PSA ~ 50% (multiply x 2 for interpretation); - **Combination** (alpha + 5-ARI) — CombAT trial; for moderate-severe + large prostate; better than monotherapy; - **Anticholinergic / beta-3 agonist** (mirabegron) — for irritative symptoms + low PVR; - **PDE5 inhibitor** (tadalafil 5 mg daily) — for BPH + ED — dual benefit; (5) **Surgical / procedural** for refractory + complications: - **TURP** (transurethral resection) — gold standard; - **HoLEP** (Holmium laser enucleation), **GreenLight laser** — alternatives; - **Minimally invasive**: UroLift (prostatic urethral lift), Rezum (water vapor), iTind, Aquablation, prostatic artery embolization; - Open / robotic simple prostatectomy for very large; (6) **Complications watch**: urinary retention, recurrent UTI, hematuria, bladder stones, hydronephrosis, AKI; (7) **Multidisciplinary**: PCP + urology referral for refractory / complications / surgical candidate"
+      },
+      {
+        "label": "C",
+        "text": "Long-term Foley catheter"
+      },
+      {
+        "label": "D",
+        "text": "Anticholinergic for retention"
+      },
+      {
+        "label": "E",
+        "text": "No treatment ever"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "BPH: AUA-SI severity. Behavioral + medical first. Alpha-blocker first-line moderate-severe. 5-ARI for large prostate. Combination for both. PDE5 if also ED. Mirabegron irritative. Surgical for refractory. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "AUA BPH 2023"
+  },
+  {
+    "scenario": "ผู้ป่วยชายอายุ 55 ปี HTN + DM + smoker — gradual decrease in erection × 1 yr; embarrassed",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ignore — not important"
+      },
+      {
+        "label": "B",
+        "text": "Erectile Dysfunction (ED) Evaluation + Management (AUA + ISSM): (1) **ED as window to systemic disease** — strong marker of CV disease, often precedes by 3-5 yr; comprehensive CV evaluation + risk modification; (2) **History + exam**: onset, progression, situational (psychogenic) vs all settings (organic), morning erections (preserved suggests psychogenic), medications, comorbidities, partner factors, mental health, sexual orientation/identity, substance use; testicular + genital exam; (3) **Workup**: testosterone (total + free if low; AM); fasting glucose / A1c; lipids; TSH if indicated; prolactin if low T; (4) **Comprehensive CV risk evaluation + management** — HT, lipid, DM control, smoking cessation; ASCVD calculator; exercise; (5) **First-line: PDE5 inhibitors** (highly effective ~ 70%): - **Sildenafil** (Viagra) — 25-100 mg PRN 1 h before; with empty stomach better; - **Tadalafil** (Cialis) — 5-20 mg PRN or **5 mg daily** (also BPH dual benefit); long half-life 36 h; food-independent; - **Vardenafil**, avanafil alternatives; - **Absolute CI**: concurrent nitrates (life-threatening hypotension), severe hypotension; - Caution: alpha-blockers (lower dose), CYP3A4 interactions, retinitis pigmentosa; - Side effects: headache, flushing, dyspepsia, blue vision (sildenafil), rare priapism > 4 h emergency; (6) **Address medications causing ED**: SSRI (bupropion alternative), beta-blocker (except nebivolol/carvedilol), thiazide, finasteride, opioids; (7) **Testosterone replacement** only if confirmed hypogonadism (low + symptoms); not for normal T; risks: erythrocytosis, prostate growth, possible CV (current data more reassuring per TRAVERSE); (8) **Second-line**: - **Intraurethral alprostadil** (MUSE); - **Intracavernosal injection** (alprostadil, papaverine, phentolamine combo) — urology training; - **Vacuum erection device**; - **Penile prosthesis** — surgical, very effective, satisfaction high; (9) **Psychosexual counseling / sex therapy** — alone or combined with medical; address partner; (10) **Lifestyle**: exercise (significant ED improvement), weight loss, Mediterranean diet, sleep, stress; (11) **Multidisciplinary**: PCP + urology + endocrinology + cardiology + behavioral health + sex therapy"
+      },
+      {
+        "label": "C",
+        "text": "Testosterone for all ED"
+      },
+      {
+        "label": "D",
+        "text": "Surgery first-line for all"
+      },
+      {
+        "label": "E",
+        "text": "Long-term opioid for relationship issues"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "ED: marker of CVD — comprehensive risk eval. PDE5 inhibitors first-line (avoid w/ nitrates). Address meds + low T (only if confirmed). Lifestyle + CV risk. Second-line: alprostadil, vacuum, prosthesis. Psychosexual counseling. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "AUA ED 2018"
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 52 ปี — vasomotor symptoms + sleep disturbance + vaginal dryness × 6 mo; last menses 8 mo ago; no breast cancer or VTE history",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No treatment for menopause symptoms"
+      },
+      {
+        "label": "B",
+        "text": "Menopause + Menopausal Hormone Therapy (NAMS 2022): (1) **Menopause definition**: 12 consecutive months amenorrhea; perimenopause symptomatic period before; (2) **Symptoms**: vasomotor (hot flashes, night sweats), genitourinary syndrome of menopause (GSM — dryness, dyspareunia, urinary), sleep, mood, cognition, joint, sexual; (3) **Comprehensive evaluation**: history + cardiovascular risk + breast cancer risk + thromboembolism risk + osteoporosis risk; baseline BP, lipid, mammogram per screening, DXA if indicated; (4) **Menopausal Hormone Therapy (MHT) — NAMS 2022 reaffirmed for symptomatic women < 60 yo or < 10 yr from menopause**: - Most effective for vasomotor symptoms + GSM; - **Benefits**: symptom relief, fracture prevention, possible CV benefit if early (timing hypothesis); - **Risks**: VTE (oral > transdermal), breast cancer (with combined estrogen+progestin > 5 yr; estrogen-only — controversial), stroke (oral); - Individual risk-benefit + shared decision; (5) **Formulation choice**: - **Systemic** for vasomotor: - **Estrogen alone** if hysterectomy; - **Estrogen + progestin** if uterus (endometrial protection); - **Transdermal estrogen** preferred over oral — lower VTE + stroke risk; lipid + BP neutral; - Multiple options: patch, gel, spray, oral; - Continuous combined or sequential; - **Local vaginal** for GSM only: vaginal estrogen tablet/cream/ring (low-dose Estring), DHEA (prasterone), ospemifene (SERM oral) — minimal systemic absorption, safe even in breast cancer history (with onc input), no progestin needed; (6) **Non-hormonal options for vasomotor** (if MHT CI or declined): - **SSRI/SNRI** (paroxetine FDA-approved low-dose, venlafaxine, escitalopram); - **Gabapentin**; - **Clonidine**; - **Fezolinetant** (NK3 receptor antagonist — Veozah) — FDA-approved 2023 — novel non-hormonal; - **Lifestyle**: dressing layers, cool environment, weight, exercise, stress, avoid triggers; - CBT for hot flashes; clinical hypnosis evidence; (7) **Contraindications absolute MHT**: ER+ breast cancer, recent VTE, stroke, CAD, active liver disease, undiagnosed vaginal bleeding, pregnancy; (8) **Bone health**: weight-bearing, calcium, vit D, DXA, treat osteoporosis; (9) **CV risk modification** + cancer screening; (10) **Annual reevaluation** — risk-benefit + symptoms; no fixed duration; many continue beyond 5 yr if benefit > risk; (11) **Multidisciplinary**: PCP + gyn + breast + cardiology if indicated"
+      },
+      {
+        "label": "C",
+        "text": "Long-term oral estrogen for all"
+      },
+      {
+        "label": "D",
+        "text": "Avoid all therapy"
+      },
+      {
+        "label": "E",
+        "text": "Bioidentical hormones not regulated as superior"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Menopause MHT: NAMS 2022 supports for symptomatic < 60 yo or < 10 yr from menopause. Transdermal preferred (lower VTE). Estrogen alone if no uterus; +progestin if uterus. Local vaginal for GSM. Non-hormonal options (SSRI, gabapentin, fezolinetant). Individualized + shared decision. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "NAMS Hormone Therapy 2022"
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 25 ปี — irregular menses (5-7/yr) + hirsutism + acne + acanthosis nigricans + BMI 32; pregnancy test negative",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No treatment until trying to conceive"
+      },
+      {
+        "label": "B",
+        "text": "PCOS Management (Rotterdam + International PCOS Guideline 2023): (1) **Rotterdam criteria** (2 of 3): - Oligo/anovulation; - Clinical or biochemical hyperandrogenism (hirsutism, acne, alopecia; total/free T elevated, DHEAS); - Polycystic ovarian morphology on US (≥ 20 follicles per ovary or volume > 10 mL); - Exclude other (CAH 17-OHP, Cushing, hyperprolactinemia, thyroid, androgen tumor); (2) **Workup**: total T + SHBG + free T, DHEAS, 17-OHP, prolactin, TSH, fasting glucose + lipid + HbA1c, transvaginal US, endometrial assessment if prolonged amenorrhea; (3) **Comorbidities high**: insulin resistance + T2DM, dyslipidemia, NAFLD, OSA, infertility, endometrial hyperplasia/cancer (unopposed estrogen), CV risk, depression/anxiety, eating disorders; (4) **Lifestyle FOUNDATION**: - Weight loss 5-10% — significant improvement in menses, ovulation, metabolic, fertility; - Mediterranean / low-carb diet; - Exercise 150 min/wk; - CBT for weight + mood; (5) **Management by goal**: - **Menstrual regulation + hyperandrogenism + contraception (not fertility currently)** (this patient): - **Combined OCP first-line** — regulates cycles, reduces hyperandrogenism + endometrial protection; less androgenic progestin preferred (drospirenone, desogestrel, norgestimate); - **Spironolactone** add-on for hirsutism (anti-androgen 50-100 mg BID; effective combined with OCP); - Cosmetic measures hair (eflornithine cream, laser, electrolysis); - **Metformin** for metabolic + irregular menses; modest weight loss; useful adjunct esp glucose intolerance; - **GLP-1 RA** emerging for weight + metabolic; - **Inositol** (myo + d-chiro) supplements — some evidence; - **Fertility (when desired)**: - Letrozole first-line ovulation induction (better than clomid per PPCOS II); - Clomiphene; - Metformin add-on; - Gonadotropin; - IVF; - **Bariatric surgery** for severe obesity + comorbidity; (6) **Endometrial protection** if amenorrhea/oligomenorrhea — withdraw progestin q 2-3 mo or continuous OCP/POP/LNG-IUD; (7) **Metabolic screening + management**: OGTT q 1-3 yr, lipids, BP, depression screen; (8) **Pregnancy + obstetric considerations**: T2DM, gestational DM, preeclampsia, preterm; (9) **Multidisciplinary**: PCP + gyn/REI + endocrine + dietitian + behavioral health + dermatology"
+      },
+      {
+        "label": "C",
+        "text": "Surgery first-line"
+      },
+      {
+        "label": "D",
+        "text": "Steroid for hyperandrogenism"
+      },
+      {
+        "label": "E",
+        "text": "Ignore — cosmetic only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "PCOS: Rotterdam criteria + exclude others. Lifestyle foundation. **Combined OCP** for menses + hyperandrogenism + contraception; spironolactone add-on; metformin for metabolic. Letrozole for ovulation induction. Endometrial protection. Screen metabolic + mental health. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "International PCOS Guideline 2023; Rotterdam"
+  },
+  {
+    "scenario": "ทารกอายุ 5 wk — fever 38.5 rectal × 1 d, no source identified, well-appearing",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Outpatient observation with no workup"
+      },
+      {
+        "label": "B",
+        "text": "Infant Fever Workup (AAP 2021 Guideline: Well-Appearing Febrile Infants 8-60 d): (1) **All febrile infants < 28 d (this patient — 5 wk = 35 d at edge)**: - Full sepsis workup; - Admit + empiric antibiotics; - **CBC + procalcitonin + blood culture + urinalysis + urine culture + LP (CSF — cell count, glucose, protein, culture, gram stain, HSV PCR), CXR if respiratory sx**; - Empiric IV abx (ampicillin + cefotaxime or gentamicin); add acyclovir if HSV suspected (hypothermia, seizure, vesicles, maternal HSV); (2) **Updated AAP 2021 guideline 22-28 days**: - Inflammatory markers (procal, CRP, ANC); - Risk stratification; - Some can avoid LP if low risk; - Many institutions still aggressive; (3) **29-60 days** (this patient applies): - **Step approach**: vitals + appearance + risk factors; - **Required**: CBC, procalcitonin (or CRP if procal unavailable), ANC, urinalysis + culture, blood culture; - **LP** if any high-risk: ill-appearing, abnormal inflammatory markers (procal > 0.5 or CRP > 20 or ANC > 4000 or > 5200), positive UA; - **Can manage outpatient with close F/U** if low-risk + reliable family; - Empiric ceftriaxone if treating; (4) **Common pathogens**: GBS, E. coli (most common — UTI), Listeria (decreasing with maternal screening), HSV, enterovirus (seasonal), bacteremia, meningitis; (5) **Older infants 3-36 mo well-appearing with fever ≤ 39 without source**: - Less aggressive (post-PCV/Hib era — bacteremia rare); UA in girls < 24 mo + uncircumcised boys < 12 mo; selective bloodwork; observation strategy; close follow-up; (6) **Sources to identify**: UTI, otitis, viral URI, gastroenteritis, pneumonia, skin/soft tissue, occult bacteremia, meningitis; (7) **Specific viral**: enterovirus (seasonal, supportive); HSV (treat IV acyclovir empirically high-risk + sick); RSV; influenza (oseltamivir); COVID; (8) **Family education**: when to return, antipyretics for comfort (acetaminophen, ibuprofen ≥ 6 mo, not aspirin children), fever management; (9) **Multidisciplinary**: PCP + ED + pediatrics + ID consultation if needed"
+      },
+      {
+        "label": "C",
+        "text": "Discharge with reassurance"
+      },
+      {
+        "label": "D",
+        "text": "Antibiotic without workup"
+      },
+      {
+        "label": "E",
+        "text": "Wait until baby looks ill"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Infant fever 29-60 d (AAP 2021): risk-stratify with inflammatory markers. Required workup (CBC, procal, UA, cx, blood cx). LP if high-risk. Empiric ceftriaxone if treating. Pathogens: GBS, E coli, Listeria, HSV. < 28 d: full workup + admit always. Multidisciplinary.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "peds",
+    "reference_source": "AAP Febrile Infants 2021"
+  },
+  {
+    "scenario": "ทารกอายุ 6 mo — cough + congestion + wheezing + tachypnea × 3 d, mild-mod work of breathing, SpO2 94%, hydrated, drinking, no apnea",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Routine albuterol for all"
+      },
+      {
+        "label": "B",
+        "text": "Bronchiolitis Management (AAP 2014 + Continuing Updates): (1) **Diagnosis clinical**: < 2 yo + viral URI + wheeze/crackles + work of breathing; RSV most common (also rhinovirus, metapneumovirus, parainfluenza, adenovirus); (2) **No routine testing**: chest X-ray (not unless concerned pneumonia/foreign body/cardiac), viral PCR (only if changes management or admitted/cohorting), blood/urine workup (only if febrile young infant or focal); (3) **Management — SUPPORTIVE — what AAP says NOT to do**: - **DO**: hydration (oral, IV/NG if needed), oxygen if SpO2 < 90% sustained, suction (nasal saline ± bulb, deep suction avoided), monitor; nasal CPAP / HFNC for moderate-severe; - **DO NOT routinely**: - **Albuterol/bronchodilator** — no benefit overall (selected response possible — trial only if persistent); - **Racemic epinephrine** outpatient; - **Steroid** (oral/IV/inhaled) — no benefit; - **Antibiotic** (only if confirmed bacterial coinfection); - **Chest physiotherapy**; - **Hypertonic saline** outpatient (mixed evidence inpatient); (4) **Admission indications**: - Persistent SpO2 < 90%; - Severe respiratory distress; - Apnea; - Inability to feed / dehydration; - Toxic appearance; - High-risk (< 12 wk, prematurity, cardiopulmonary, immunocompromised); - Unreliable follow-up; (5) **ICU**: respiratory failure, severe distress, recurrent apnea; (6) **Prevention**: - **RSV monoclonal antibody**: - **Nirsevimab (Beyfortus)** — single dose all infants < 8 mo before/during RSV season (CDC/AAP 2023 — major update); replacing palivizumab for most; - **Palivizumab** — older monthly during season for high-risk; - **Maternal RSV vaccination (Abrysvo)** 32-36 wk gestation — alternative protective strategy; - Hand hygiene, breastfeeding, smoke-free, daycare exposure management; (7) **Family education**: expected course (worst day 3-5, total 14 d), red flags (worsening WOB, poor feeding, dehydration, color change, apnea, fever), return precautions; (8) **Follow-up close**: 24-48 h while symptoms peak; (9) **Multidisciplinary**: PCP + ED + pediatrics + ICU if needed"
+      },
+      {
+        "label": "C",
+        "text": "Antibiotic empirically"
+      },
+      {
+        "label": "D",
+        "text": "Routine chest X-ray"
+      },
+      {
+        "label": "E",
+        "text": "Oral steroid for bronchiolitis"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Bronchiolitis: clinical, no routine testing, supportive (hydration, O2 if < 90, suction). **Avoid**: albuterol, steroid, abx routinely. Admit if severe. Prevention: **nirsevimab** all infants + maternal RSV vaccine (2023 update). Family education + follow-up.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "respiratory",
+    "board_age_group": "peds",
+    "reference_source": "AAP Bronchiolitis 2014; CDC RSV 2023"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 25 ปี — ear pain + itching + discharge ข้างขวา 3 วันหลังว่ายน้ำ; tragal tenderness + erythematous canal",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Oral antibiotic first-line"
+      },
+      {
+        "label": "B",
+        "text": "Acute Otitis Externa (AAO-HNS 2014): (1) **Diagnosis**: rapid onset + canal inflammation + ear pain ± otorrhea ± hearing loss; differentiate from AOM (TM mobility + bulging); (2) **Risk factors**: swimming (swimmer's ear), trauma, occlusion (hearing aid, ear plug), allergic dermatitis, eczema, DM (higher risk malignant otitis externa); (3) **Common pathogens**: Pseudomonas aeruginosa + Staphylococcus aureus (bacterial); fungal (Aspergillus, Candida) in chronic/refractory; (4) **First-line topical therapy** (most cases): - **Topical antibiotic + steroid combination** (acetic acid + steroid, neomycin-polymyxin-hydrocortisone — OK if intact TM, fluoroquinolone preparations); - **Fluoroquinolone ear drops** (ofloxacin, ciprofloxacin — alone or with steroid) — **safe even with TM perforation or tympanostomy tubes** (NOT ototoxic); preferred when TM status uncertain; - Avoid neomycin-containing if perforation/tubes (potentially ototoxic); - Duration 7-10 days; - Wick (Pope ear wick) if canal swollen + drops cannot enter; (5) **Pain control**: NSAIDs / acetaminophen — adequate for most; opioids rarely needed brief; (6) **Aural toilet**: gentle removal of debris (visualize TM) — ENT if needed; (7) **Avoid water in ear** during treatment (showering — earplug, no swimming); (8) **No oral antibiotic** for uncomplicated otitis externa (topical superior, less resistance); oral abx if: - Extension beyond canal; - Immunocompromised + cellulitis; - DM with severe symptoms or suspected malignant OE; (9) **Malignant (necrotizing) otitis externa** — emergency: - DM, elderly, immunocompromised; - Severe pain, granulation, cranial nerve involvement; - CT/MRI base of skull + culture + IV antipseudomonal (ciprofloxacin oral may suffice mild) + ENT consult; - Risk osteomyelitis + intracranial spread; (10) **Chronic OE**: consider fungal (yellow/black/fluffy debris) — topical antifungal (clotrimazole, gentian violet, acetic acid); dermatitis (steroid); avoid Q-tips; (11) **Prevention**: dry ears after water, ear plugs swimmers, acidifying drops post-swim; (12) **Multidisciplinary**: PCP + ENT if refractory or malignant OE"
+      },
+      {
+        "label": "C",
+        "text": "Surgery for acute OE"
+      },
+      {
+        "label": "D",
+        "text": "Q-tip cleaning recommended"
+      },
+      {
+        "label": "E",
+        "text": "Ignore — self-resolves"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Acute OE: clinical. Pseudomonas + Staph. Topical antibiotic ± steroid (FQ drops safe perforation). Pain control. Avoid water. Oral abx only severe/extension/DM. Malignant OE — emergency. Prevention. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "AAO-HNS Otitis Externa 2014"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 22 ปี — ER post-overdose attempt acetaminophen 30 tablets; รักษาเสร็จ medical stabilization แล้ว",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge with no follow-up"
+      },
+      {
+        "label": "B",
+        "text": "Post-Suicide Attempt Assessment + Management (Joint Commission + Zero Suicide): (1) **Universal screening**: Columbia Suicide Severity Rating Scale (C-SSRS) or ASQ (Ask Suicide-Screening Questions) for all behavioral health + medical patients (Joint Commission requirement); (2) **Risk assessment** comprehensive: - **Ideation**: passive vs active, plan, intent, lethality; - **Behavior**: prior attempts (strongest predictor — 30-40x risk), preparatory behavior, rehearsal, aborted/interrupted; - **Risk factors**: mental illness (depression, bipolar, psychosis, anxiety, PTSD, substance use), recent loss, hopelessness, access to means (especially firearms — # 1 suicide method US; lethal means counseling critical), prior attempts, chronic pain, terminal illness, male, age extremes, LGBTQ+ (esp youth), social isolation, family history, prior trauma/ACEs, recent hospitalization, military service; - **Protective factors**: connectedness, religious beliefs, children at home, future orientation, engaged in treatment, problem-solving skills; (3) **Disposition**: - **Inpatient psychiatric admission** for acute high risk: - Persistent SI with plan + intent; - Recent attempt with continued ideation; - Severe mental illness with safety concerns; - Lack of support / safety plan unworkable; - **Outpatient with intensive follow-up** if stabilized + can engage in safety plan + close follow-up + support: - Same-day or 24-48 h followup; - Crisis services + warm handoff; - PHP/IOP options; (4) **Safety planning** (Stanley + Brown — evidence-based): - Warning signs; - Internal coping strategies; - Social distractions + people; - People to contact for help; - Professionals + agencies + crisis line (988 Suicide + Crisis Lifeline US); - **Means restriction** (firearms — secured storage / off-site; medication — locked, limited supplies); (5) **Treatment**: - Underlying mental illness (medications, therapy — DBT for chronic suicidal behavior + BPD, CBT); - **Lithium** for bipolar — anti-suicidal; - **Clozapine** for schizophrenia — anti-suicidal; - Substance use treatment; (6) **Caring contacts** (phone, text, postcards) — reduces re-attempt; (7) **Don't use no-suicide contracts** — ineffective; (8) **Family + support engagement** with consent; (9) **Documentation comprehensive**; (10) **Reduce stigma + non-judgmental approach**; (11) **Multidisciplinary**: ED + psychiatry + social work + crisis services + outpatient mental health + family"
+      },
+      {
+        "label": "C",
+        "text": "No-suicide contract sufficient"
+      },
+      {
+        "label": "D",
+        "text": "Ignore — gesture only"
+      },
+      {
+        "label": "E",
+        "text": "Single visit and release"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Post-suicide attempt: comprehensive risk assessment (C-SSRS), risk + protective factors. Inpatient vs intensive outpatient. Safety planning + means restriction (firearms #1). Treat underlying. Lithium/clozapine anti-suicidal. Caring contacts. Multidisciplinary.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "Joint Commission Suicide; Zero Suicide; Stanley-Brown"
+  },
+  {
+    "scenario": "วัยรุ่นหญิง 17 ปี — BMI 16, amenorrhea × 6 mo, restrictive eating, exercise obsessive, body image distortion",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Force feeding only"
+      },
+      {
+        "label": "B",
+        "text": "Eating Disorder (Anorexia Nervosa) — Primary Care (AAP + APA): (1) **Diagnosis DSM-5 AN**: restriction of intake → significantly low weight, intense fear of gaining weight, body image disturbance; subtypes — restricting, binge-purge; severity by BMI; (2) **High mortality** (~ 5-10%) — highest of psychiatric disorders; medical complications + suicide; (3) **Comprehensive medical assessment**: - Vitals (orthostatic, bradycardia < 50, hypothermia); BMI; - Cardiac (ECG — QTc, arrhythmia); - Electrolytes (hypokalemia from purging), glucose, BUN, Cr, Mg, phos; - CBC; - LFT; - TSH, FSH/LH/estradiol; - DXA bone density (osteoporosis common); - Dental (purging erosion); - EKG; (4) **Screening tools**: SCOFF questionnaire; EAT-26; comprehensive interview; (5) **Hospitalization criteria** (AAP + APA — any): - HR < 50, orthostatic, hypotension, hypothermia < 36; - Severe electrolyte imbalance; - Cardiac complications (arrhythmia, prolonged QT); - Acute medical complications; - Severe weight loss (< 75% expected; < 85% with rapid loss); - Inability to gain weight outpatient; - Comorbidity needing inpatient (suicidal, severe depression, severe substance abuse); - **Refeeding syndrome risk** (severely malnourished) — careful monitoring electrolytes (esp phos), gradual reintroduction, thiamine; (6) **Outpatient treatment** stable patients: - **Multidisciplinary team mandatory** — primary care + mental health + nutrition; - **Family-Based Treatment (FBT, Maudsley)** — first-line for adolescent AN (strong evidence); - **CBT-E (enhanced)** for adult or non-adolescent; - **IPT, DBT** alternatives; - Nutritional rehabilitation — weight restoration goal; - **Pharmacotherapy LIMITED in AN** — olanzapine modest weight gain evidence; SSRI for depression/anxiety after weight restoration (less effective when severely underweight); (7) **Bulimia nervosa + binge eating disorder**: more medication evidence (fluoxetine high-dose for BN; lisdexamfetamine for BED; topiramate); CBT effective both; (8) **Refeeding syndrome prevention**: start low calories + advance slowly + electrolyte monitoring + thiamine + phosphorus supplementation; (9) **Bone health**: weight restoration primary; calcium + vit D; not OCP (suppresses bone formation; pulses dehydroepiandrosterone + transdermal estradiol some evidence adolescents); (10) **Family + school involvement + support**; (11) **Specialty eating disorder programs**: residential, PHP, IOP, outpatient — match to severity; (12) **Multidisciplinary**: PCP + adolescent medicine + psychiatry + therapist + dietitian + family + school + medical specialists + ED program"
+      },
+      {
+        "label": "C",
+        "text": "Hospital not needed for severe"
+      },
+      {
+        "label": "D",
+        "text": "Single visit reassurance"
+      },
+      {
+        "label": "E",
+        "text": "Antidepressant alone"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Anorexia: high mortality. Comprehensive medical eval + hospitalization criteria. Multidisciplinary care mandatory. Adolescent — FBT first-line. CBT-E adult. Pharm limited AN (olanzapine some). Refeeding syndrome prevention. Bone health. Specialty programs.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "AAP Eating Disorders; APA 2023"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 72 ปี — new severe temporal headache + jaw claudication + visual symptoms (transient); proximal muscle pain + stiffness; ESR 92, CRP 8",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Outpatient routine — biopsy first then treat"
+      },
+      {
+        "label": "B",
+        "text": "Giant Cell Arteritis (GCA / Temporal Arteritis) + PMR — EMERGENCY (ACR 2022 + EULAR): (1) **GCA medical emergency**: risk of permanent blindness (ischemic optic neuropathy); start treatment IMMEDIATELY on clinical suspicion — don't wait for biopsy; (2) **Classic features GCA**: > 50 yo, new headache (temporal area), scalp tenderness, jaw claudication (highly specific), visual symptoms (transient monocular blindness — amaurosis, diplopia, vision loss permanent), temporal artery abnormality (tender, beaded, decreased pulse), constitutional symptoms (fever, fatigue, weight loss); (3) **Overlap with PMR** (~ 50% of GCA): bilateral shoulder + pelvic girdle pain + stiffness > 45 min, ESR/CRP elevated; (4) **Diagnostic workup**: - **ESR + CRP** elevated (normal ~ 10% — don't rule out alone); - Anemia, thrombocytosis often; - **Temporal artery biopsy** — gold standard, but treat first; specimen ≥ 1-2 cm, contralateral if negative + high suspicion; skip lesions; can be positive up to 2 wk after starting steroid; - **Imaging**: temporal artery US (halo sign), MRI/MRA, PET — increasingly used + supplement biopsy; - Ophthalmology consult urgent for visual symptoms; (5) **Treatment GCA**: - **High-dose oral prednisone 60 mg/d** (1 mg/kg) immediately on suspicion; if vision loss → IV methylprednisolone 1g/d × 3 d then oral; - Slow taper over months-years (12-24 mo+); monitor symptoms + ESR/CRP; - **Tocilizumab (IL-6 inhibitor)** — FDA approved 2017 — steroid-sparing, reduce flare, dual therapy; can shorten/reduce steroid; - **Methotrexate** — alternative steroid-sparing; - Prednisone tapered to lowest effective; (6) **Treatment PMR**: - Low-dose prednisone 15-20 mg/d → response rapid (often dramatic) → taper slowly over 1-2 yr; - Methotrexate steroid-sparing for relapse; - Tocilizumab in selected (especially GCA + PMR); (7) **Steroid management**: - Bone protection (calcium + vit D + bisphosphonate if appropriate); - PCP prophylaxis (TMP-SMX) for high-dose chronic steroid; - Glucose monitoring (steroid DM); - BP monitoring; - Weight, mood, sleep, infection screening; - Cataract, glaucoma watch; - Gradual taper to prevent adrenal insufficiency; (8) **Aortitis surveillance**: large vessel involvement common in GCA (~ 20%) — aortic aneurysm risk; serial imaging (CT, MRA, US) per protocol; (9) **Patient education**: red flag symptoms (vision change, jaw claudication during taper); (10) **Multidisciplinary**: PCP + rheumatology urgent + ophthalmology + ENT + biopsy surgeon"
+      },
+      {
+        "label": "C",
+        "text": "Wait for ESR result before treating"
+      },
+      {
+        "label": "D",
+        "text": "NSAIDs alone for GCA"
+      },
+      {
+        "label": "E",
+        "text": "No imaging for surveillance"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "GCA = emergency (blindness risk) — start high-dose prednisone IMMEDIATELY on suspicion; biopsy after. Tocilizumab steroid-sparing. PMR — prednisone 15-20 mg, slow taper. Aortitis surveillance. Steroid management + bone. Multidisciplinary.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "ACR/EULAR GCA 2022"
+  },
+  {
+    "scenario": "ผู้หญิงอายุ 45 ปี — fatigue, pallor; CBC: Hb 8.5, MCV 72 (low), RDW 18; ferritin 8 (low)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Iron infusion only — never oral"
+      },
+      {
+        "label": "B",
+        "text": "Iron Deficiency Anemia (IDA) Workup + Management: (1) **Diagnosis**: microcytic anemia (low MCV) + low ferritin (gold standard if < 30; functional iron deficiency may have normal ferritin + low TSAT) + low TSAT (< 20%); RDW elevated; (2) **Always identify CAUSE**: - **Menstrual blood loss** — most common in premenopausal women (heavy menstrual bleeding — workup gynecologic if heavy); - **GI blood loss** — must rule out in: men, postmenopausal women, weight loss, GI symptoms, hemoccult positive, family history; **endoscopy + colonoscopy** for these; - **Malabsorption**: celiac disease (test tTG-IgA), atrophic gastritis (with PPI or H. pylori), bariatric surgery; - **Inadequate intake**: vegetarian/vegan, restrictive; - **Pregnancy + lactation** increased demand; - **Frequent blood donation**; - **Hemoglobinopathy** screen (mimics microcytic — Hb electrophoresis if Asian, Mediterranean, African); (3) **Workup for THIS patient (premenopausal women, severe IDA)**: - Menstrual history (HMB → gyn workup); - Celiac serology; - GI workup if: irregular bleeding, age > 50, family history, GI symptoms, no obvious source; - Reticulocyte count; - B12, folate (concurrent deficiency); - Hb electrophoresis if indicated; (4) **Treatment iron repletion**: - **Oral iron** first-line: - Ferrous sulfate 325 mg (65 mg elemental) daily or every other day (alternate-day improves absorption, less SE — emerging evidence); - Take with vitamin C, avoid with calcium / dairy / tea / coffee / PPI / antacids; - SE: nausea, constipation, dark stools; - Alternative formulations: ferrous gluconate, fumarate, iron polysaccharide; - Duration: until Hb normalizes + 3-6 mo to replete stores (typically 3-6 mo total); - **IV iron** if oral fails / intolerant / malabsorption (celiac, IBD, bariatric) / urgent (severe, pregnancy, pre-surgery): - Iron sucrose, ferric gluconate, ferric carboxymaltose (FCM), ferumoxytol, iron isomaltoside; - Outpatient infusion; - Test dose + monitoring (rare anaphylaxis); - **Transfusion** only acute symptomatic severe; - **Monitor**: Hb recheck 2-4 wk (expect rise > 1 g/dL); ferritin after course; (5) **Treat underlying cause**; (6) **Vitamin co-supplementation** if deficient (B12, folate); (7) **Multidisciplinary**: PCP + GI (workup), gyn (HMB), hematology (refractory), surgery, transfusion service"
+      },
+      {
+        "label": "C",
+        "text": "Transfusion for any anemia"
+      },
+      {
+        "label": "D",
+        "text": "No workup for cause"
+      },
+      {
+        "label": "E",
+        "text": "Steroid for IDA"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "IDA: low ferritin + low TSAT + microcytic. Always find cause: menstrual, GI (endoscopy if older/male/no source), malabsorption (celiac), diet. Oral iron first-line (alternate-day improves absorption). IV iron if oral fails. Treat cause. Recheck Hb 2-4 wk.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "AAFP IDA; ASH"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 30 ปี — LDL 280, TC 350, normal TG, HDL ปกติ; father MI age 42, uncle MI age 45; tendinous xanthomas",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Statin alone — no escalation"
+      },
+      {
+        "label": "B",
+        "text": "Familial Hypercholesterolemia (FH) (NLA + AHA): (1) **High suspicion**: severe LDL (> 190 untreated adult, > 160 child), family history premature CAD, physical findings (tendinous xanthomas, arcus cornealis < 45 yo, xanthelasma); (2) **Clinical criteria**: Dutch Lipid Clinic Network (DLCN) Score, Simon Broome, MEDPED; - Premature CAD < 55 men / < 60 women in 1st-degree relative; - LDL very high; - Physical findings; - Genetic confirmation (LDLR, ApoB, PCSK9 mutations — most common LDLR); (3) **Heterozygous FH (HeFH)**: ~ 1:250 — most common autosomal codominant condition; lifetime CAD risk very high if untreated; (4) **Homozygous FH (HoFH)** rare: extremely severe, early childhood disease, often need lipid apheresis + advanced therapy; (5) **CV risk assessment**: ASCVD risk underestimates FH — treat all as high-risk regardless of calculator; CAC scoring may add; consider stress test, carotid US selected; (6) **Treatment goals**: - **LDL < 100 (FH without ASCVD)**; - **LDL < 70 (FH with ASCVD or other major risk)** — modern AHA + ESC even < 55; - At minimum ≥ 50% LDL reduction; (7) **Pharmacotherapy AGGRESSIVE — start early**: - **High-intensity statin first-line** — rosuvastatin 20-40 or atorvastatin 40-80 — typically 40-50% LDL reduction; - **Ezetimibe 10 mg** add — additional 18-20% reduction; combination very effective; - **PCSK9 inhibitors** (alirocumab, evolocumab) — additional 50-60% reduction; SC q 2-4 wk; for FH + insufficient on statin/ezetimibe (esp ASCVD); high cost + insurance pre-auth; - **Inclisiran** (siRNA — Leqvio) — twice-yearly SC injection; emerging option; - **Bempedoic acid** alternative; - **Lomitapide, mipomersen, evinacumab** for HoFH; - **Lipid apheresis** weekly/biweekly for HoFH or refractory severe; (8) **Cascade family screening** essential — 1st-degree relatives + extended; offered to all; genetic testing + lipid panel; (9) **Pediatric**: screen children 9-11 yo + repeat 17-21 yo + earlier if family history; treat from age 8-10 with high LDL (statin safe pediatric); (10) **Comprehensive CV risk modification**: BP, glucose, smoking cessation, exercise, diet (Mediterranean preferred), weight; (11) **Pregnancy**: stop statin + ezetimibe + PCSK9i (limited safety data); apheresis for severe; resume postpartum + lactation considerations; (12) **Multidisciplinary**: PCP + lipidology + genetics + cardiology + pediatric (children) + family education"
+      },
+      {
+        "label": "C",
+        "text": "Wait until first MI"
+      },
+      {
+        "label": "D",
+        "text": "No family screening"
+      },
+      {
+        "label": "E",
+        "text": "Avoid PCSK9i regardless of severity"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "FH: high suspicion (severe LDL + family history + xanthoma). Treat very high-risk. Goals LDL < 100 (or < 70 if ASCVD). Aggressive: high-intensity statin + ezetimibe + PCSK9i / inclisiran. Cascade family screening + pediatric. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "NLA FH 2015"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง pharmacogenomics + precision medicine in primary care",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Same dose for all patients"
+      },
+      {
+        "label": "B",
+        "text": "Pharmacogenomics in Primary Care (CPIC + PharmGKB): (1) **Pharmacogenomics (PGx)**: tailoring drug + dose based on genetic variants affecting metabolism, transport, target, or immune response; (2) **CPIC Guidelines** (Clinical Pharmacogenetics Implementation Consortium) — evidence-based, primary resource for clinical translation; (3) **Key examples relevant primary care**: - **CYP2C19** + clopidogrel — poor metabolizers reduced antiplatelet effect (high CV risk); consider prasugrel/ticagrelor; - **CYP2C19** + PPI (esp omeprazole) — poor metabolizers higher exposure; ultra-rapid metabolizers reduced; - **CYP2C19** + voriconazole, SSRIs (citalopram, escitalopram); - **CYP2D6** + opioids: codeine + tramadol — ultra-rapid metabolizers → toxicity risk (avoid in breastfeeding mothers, children < 12); poor metabolizers → ineffective analgesia; - **CYP2D6** + SSRIs, TCAs, antipsychotics (risperidone), tamoxifen (need active metabolite endoxifen); - **CYP2C9 + VKORC1** + warfarin — dose prediction algorithms (e.g., warfarindosing.org); - **HLA-B*5701** + abacavir — severe hypersensitivity (mandatory screen before); - **HLA-B*1502** + carbamazepine — SJS/TEN risk (esp Asian populations — screen Thai, Han Chinese, Korean); - **HLA-B*5801** + allopurinol — SJS/TEN risk (Asian populations); - **TPMT** / **NUDT15** + thiopurines (azathioprine, mercaptopurine) — myelosuppression; - **DPYD** + fluoropyrimidines (5-FU, capecitabine) — severe toxicity; - **G6PD** + several drugs (rasburicase, dapsone, primaquine, sulfa, nitrofurantoin); - **UGT1A1** + irinotecan; - **SLCO1B1** + statins — myopathy risk (especially simvastatin); (4) **When to test**: pre-emptive (before prescribing — increasingly available, some institutions panel testing), reactive (after adverse event), high-risk drug initiation, race/ethnicity-specific (HLA, CYP variants more common); (5) **Limitations**: not all variants known, gene-drug interactions complex, environmental + drug interactions also affect, cost + insurance coverage, interpretation requires training; (6) **Resources**: CPIC.org, PharmGKB, FDA Table of Pharmacogenomic Biomarkers, FDA label information; (7) **Documentation + EHR integration**: clinical decision support; carry forward results lifetime; (8) **Health equity**: ensure equitable access; population-specific variants; (9) **Patient education**: results lifelong relevance; (10) **Multidisciplinary**: PCP + pharmacy (key partner) + genetics + specialist when needed"
+      },
+      {
+        "label": "C",
+        "text": "Random selection"
+      },
+      {
+        "label": "D",
+        "text": "Ignore genetics"
+      },
+      {
+        "label": "E",
+        "text": "Only oncology applicable"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pharmacogenomics: CPIC + PharmGKB. Key in primary care: CYP2C19 + clopidogrel/PPI/SSRI; CYP2D6 + codeine; CYP2C9 + warfarin; HLA-B*1502/5801 (Asian) + CBZ/allopurinol; TPMT thiopurines; G6PD; SLCO1B1 statins. EHR integration. Multidisciplinary with pharmacy.",
+    "difficulty": "hard",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "CPIC; PharmGKB; FDA PGx"
+  },
+  {
+    "scenario": "Resident ตีความ RCT — drug X reduced cardiovascular events from 5.2% to 4.1%, p = 0.02, NNT 91 over 5 yr",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Just use p-value"
+      },
+      {
+        "label": "B",
+        "text": "RCT Statistical Interpretation + Clinical Application: (1) **Absolute risk reduction (ARR)**: 5.2 - 4.1 = 1.1%; (2) **Relative risk reduction (RRR)**: 1.1/5.2 = 21%; (3) **NNT (Number Needed to Treat)**: 1/ARR = 1/0.011 ≈ 91 — treat 91 patients to prevent 1 event over study duration (5 yr here); (4) **Statistical significance (p-value)**: p < 0.05 = unlikely due to chance; doesn't = clinically significant; **confidence interval (95% CI)** more informative — width = precision, includes 1 (HR/RR/OR) or 0 (mean difference) = not significant; (5) **Statistical vs clinical significance**: p value can be significant for trivial effect (especially large N); ARR + NNT more clinically meaningful; (6) **Need to consider**: - **Magnitude** of benefit; - **Cost**, side effects, harms — calculate NNH; - **External validity** — population studied vs your patient; - **Baseline risk** — same RRR translates to different ARR; - **Duration** of follow-up; - **Outcome importance** (mortality > surrogate); - **Composite endpoints** — examine components; - **Subgroup analyses** — hypothesis-generating only; - **Funding bias**, publication bias; (7) **Bayesian thinking**: integrate with prior probability + patient values; (8) **Number needed to harm (NNH)**: 1/ARI (absolute risk increase of adverse event); (9) **Likelihood ratio (LR)** for diagnostic tests: LR > 10 strong + evidence, < 0.1 strong - evidence; LR + sens/spec for evaluation; (10) **Cost-effectiveness**: QALY, cost per QALY thresholds; (11) **GRADE methodology**: certainty of evidence (high to very low) + strength of recommendation (strong vs conditional); (12) **Application to patient**: shared decision-making integrating evidence + values + circumstances; this drug — moderate benefit, NNT 91 over 5 yr — substantial number to treat for 1 event; need to weigh against cost, side effects, alternatives, baseline risk; (13) **Multidisciplinary clinical decision-making**"
+      },
+      {
+        "label": "C",
+        "text": "Ignore numbers"
+      },
+      {
+        "label": "D",
+        "text": "Apply universally without consideration"
+      },
+      {
+        "label": "E",
+        "text": "Larger N always better"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "RCT interpretation: ARR, RRR, NNT essential. Statistical vs clinical significance differ. Need: magnitude, harms, external validity, baseline risk, duration, outcomes, subgroups. Bayesian + patient values. NNH for harm. GRADE. Shared decision-making.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "JAMA Users' Guides; GRADE"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง screening + intervention IPV (intimate partner violence) + child abuse + elder abuse in primary care",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No screening — patient will tell"
+      },
+      {
+        "label": "B",
+        "text": "Family Violence Screening + Intervention (USPSTF + AAFP + ACOG): (1) **IPV (Intimate Partner Violence) screening**: - **USPSTF B recommendation**: women of reproductive age; - **Tools**: HITS (Hurt, Insult, Threaten, Scream), HARK, OAS, WAST; - Universal vs targeted — most recommend universal; - Privacy + confidentiality (limits — mandatory reporting in some jurisdictions); ask alone; - Consider in: chronic pain, mental health, substance use, headaches, GI sx, frequent visits, behavioral changes; (2) **IPV intervention** — LIVES framework (WHO): - **L**isten — empathic non-judgmental; - **I**nquire about needs + concerns; - **V**alidate; - **E**nhance safety — safety plan + danger assessment; - **S**upport — referrals (shelter, hotline 1-800-799-7233, legal aid, mental health, social work); - Documentation careful (legal); - Universal education even if screen negative; (3) **Child abuse + neglect** — mandatory reporting (all states US, all healthcare): - Suspicion-based (not proof) → CPS/social work; - **Red flags physical abuse**: bruises in non-mobile, patterned injuries, multiple stages of healing, inconsistent history, delayed presentation; metaphyseal fractures, posterior rib fractures, retinal hemorrhages, classic injury patterns; - **Sexual abuse**: behavior changes, STI in prepubertal, genital trauma, disclosure; - **Neglect**: poor hygiene, malnutrition, missed appointments, untreated medical, school absenteeism; - **Emotional abuse** + exposure to violence; - **Workup**: skeletal survey (< 2 yo), head CT/MRI, fundoscopy, labs as indicated; - **Avoid leading questions** if disclosure suspected — refer forensic interview; - Multidisciplinary child protection teams; (4) **Elder abuse** (1 in 10 elderly): - Physical, sexual, emotional, neglect, financial, abandonment; - **Tools**: EASI, BMI; - **Red flags**: unexplained injuries, malnutrition, dehydration, medication mismanagement, withdrawal, financial irregularities, fear of caregiver; - **Workup**: thorough exam, labs; - **Reporting**: APS (Adult Protective Services) — mandatory in most jurisdictions (varies); - Address caregiver burden, social isolation, cognitive decline; (5) **Trauma-informed care** universal: - Safety + trust + choice + collaboration + empowerment; - Recognize ubiquity; - Avoid retraumatization; - ACEs (Adverse Childhood Experiences) screening + addressing; (6) **Vicarious trauma + provider wellness** — self-care + supervision; (7) **Multidisciplinary**: PCP + social work + behavioral health + legal + law enforcement + advocacy + community + child/adult protective services + emergency services"
+      },
+      {
+        "label": "C",
+        "text": "Random asking"
+      },
+      {
+        "label": "D",
+        "text": "Single visit — no follow-up"
+      },
+      {
+        "label": "E",
+        "text": "Confront alleged abuser"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Family violence: IPV — USPSTF screen reproductive women, LIVES intervention. Child abuse — mandatory reporting, red flags, multidisciplinary teams. Elder abuse — EASI screen, APS reporting. Trauma-informed care universal. ACEs. Provider wellness. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "USPSTF IPV 2018; AAP Child Abuse; NIA Elder Abuse"
+  },
+  {
+    "scenario": "Resident — community ที่ดูแล multicultural population (immigrant, refugee, LGBTQ+, racial/ethnic minorities) — competent + equitable care",
+    "choices": [
+      {
+        "label": "A",
+        "text": "One-size-fits-all approach"
+      },
+      {
+        "label": "B",
+        "text": "Cultural Humility + Health Equity (NIH + AAFP + AAMC): (1) **Cultural humility** (Tervalon + Murray-García) — lifelong learning + self-reflection + recognizing power imbalances + community partnerships (vs traditional 'cultural competency' which implies achievable endpoint); (2) **LEARN framework cross-cultural communication**: Listen + Explain + Acknowledge + Recommend + Negotiate; ETHNIC framework similar; (3) **Health disparities**: differences in health outcomes between populations; structural racism + SDOH + discrimination + access; (4) **Specific population considerations**: - **Immigrant + refugee**: pre-migration trauma, screening (TB, hepatitis, HIV, STIs, parasites, vaccinations status, mental health, language access, legal/immigration concerns affecting healthcare access, cultural beliefs); - **LGBTQ+**: ask about sexual orientation + gender identity + practices (SO/GI/SPA); appropriate language; healthcare disparities (mental health, substance use, suicide, STI risk, healthcare avoidance from past discrimination); affirming care; transition support if applicable; partner involvement; chosen family; - **Racial/ethnic minorities**: implicit bias awareness, structural racism, disparities (Black maternal mortality 3-4x white; differences in BP, DM, mental health, cancer screening); culturally competent care; community partnership; - **Religious/spiritual**: respect + integration; Jehovah's Witness (blood products), Muslim (Ramadan, modesty, Halal medications), Jewish (kosher, Sabbath), Christian Science, etc.; - **Indigenous**: historical trauma, sovereignty, traditional healing integration, tribal health systems; - **Rural**: access barriers, transportation, broadband, workforce shortage, agricultural exposures; - **Persons with disabilities**: accessibility, communication, accommodations, autonomy; - **Older adults**: ageism, cognitive considerations, family involvement; (5) **Language access**: professional interpreter (in-person, video, phone) — NOT family/children; Title VI legal requirement (CMS, federally-funded); written materials in patient language; (6) **Implicit bias training + reflection**: IAT (Implicit Association Test), regular self-assessment; structured decision aids reduce bias; diverse workforce; (7) **Trauma-informed care**: ACEs, structural violence; (8) **Community health worker (CHW) / promotores** programs — bridge community + healthcare; effective for many conditions; (9) **Workforce diversity + pipeline**: critical for representation + cultural concordance benefits; (10) **Quality improvement** with equity lens: stratified outcomes, equity dashboard, root cause analysis; (11) **Advocacy + policy** beyond clinic; (12) **Multidisciplinary**: PCP + social work + community health workers + interpreters + community partners + leadership + advocacy"
+      },
+      {
+        "label": "C",
+        "text": "Family interpreter always"
+      },
+      {
+        "label": "D",
+        "text": "Avoid asking about identity"
+      },
+      {
+        "label": "E",
+        "text": "Ignore cultural factors"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cultural humility: lifelong reflection + community partnerships. LEARN framework. Specific populations (immigrant, LGBTQ+, racial/ethnic, religious, indigenous, rural). Professional interpreters mandatory. Implicit bias training. CHW programs. Equity-focused QI. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "Tervalon Cultural Humility; AAFP Health Equity"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง medical ethics + decision-making in challenging primary care scenarios",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Doctor decides alone always"
+      },
+      {
+        "label": "B",
+        "text": "Medical Ethics + Decision-Making in Primary Care: (1) **Four principles (Beauchamp + Childress)**: autonomy + beneficence + non-maleficence + justice; (2) **Informed consent components**: capacity (assess if questioned — informed, understand, appreciate, reason), voluntariness, information (diagnosis, options, risks/benefits, alternatives, prognosis), comprehension, documentation; (3) **Decision-making capacity assessment**: condition-specific, not global; can have capacity for some decisions not others; assess: understand information, appreciate situation, reason with information, communicate choice; consult psychiatry/ethics if unclear; (4) **Surrogate decision-making** when capacity lacks: - **Hierarchy** (varies by state): healthcare POA → court-appointed guardian → spouse → adult children → parents → siblings → close friend; - **Substituted judgment standard** (what patient would want) > best interests (when patient wishes unknown); - **Advance directives** + living will + POLST/MOLST guide; - **Surrogate decision-making conflict** — ethics consultation; (5) **End-of-life care + advance care planning**: - **Palliative care** integrated early in serious illness; - **Hospice** prognosis ≤ 6 mo if disease takes natural course; - **POLST/MOLST** forms — actionable medical orders; - **Goals of care discussions**: VitalTalk, Serious Illness Conversation Guide (Ariadne); 'I wish' + 'I worry' + 'I wonder'; - **Code status**: full code, DNR/DNI, partial; - **Voluntary stopping eating + drinking (VSED)** option in some jurisdictions; - **Medical aid in dying (MAID)** legal in 10 US states + DC; varies internationally; - **Withdrawing vs withholding** — ethically equivalent; (6) **Confidentiality + privacy**: HIPAA framework; limits — court order, mandatory reporting (abuse, certain infections, gunshot/stab, suicide/homicide intent in some), threat to others (Tarasoff); (7) **Adolescent confidentiality**: complex — sensitive services (mental health, sexual, substance) often confidential; varies by state; (8) **Conscientious objection** vs duty to refer; (9) **Resource allocation + justice**: triage during scarcity (COVID ventilator allocation), access disparities, advocacy; (10) **Patient-physician relationship**: - Boundaries (especially in small communities/rural — dual relationships); - Gifts (small OK, large concerning); - Social media + electronic communication policies; - Treating family/friends (avoid except urgent); - Sexual relationships absolutely prohibited; - Bias + discrimination; (11) **Conflicts of interest**: pharma, devices, financial — disclose + manage; (12) **Mistakes + adverse events**: disclosure ethically required (also legally most jurisdictions); transparency improves trust + reduces litigation; (13) **Professional integrity**: honesty in documentation, billing, with patients; ethics consultation when needed; (14) **Multidisciplinary**: PCP + ethics committee + palliative care + legal + social work + chaplaincy + family"
+      },
+      {
+        "label": "C",
+        "text": "Ignore patient preferences"
+      },
+      {
+        "label": "D",
+        "text": "No documentation needed"
+      },
+      {
+        "label": "E",
+        "text": "Family decision overrides patient"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Medical ethics: 4 principles. Informed consent + capacity assessment. Surrogate decision-making (substituted judgment > best interests). Advance directives, POLST. Palliative + hospice. Confidentiality with limits. Conscientious objection. Justice. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "Beauchamp + Childress; ACP Ethics Manual"
+  },
+  {
+    "scenario": "Hospital — implement quality improvement (QI) program for chronic disease management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No measurement of quality"
+      },
+      {
+        "label": "B",
+        "text": "Quality Improvement (QI) in Primary Care (IHI + ACGME): (1) **Frameworks**: - **PDSA cycle** (Plan-Do-Study-Act) — iterative small tests of change; - **Model for Improvement** (IHI): aim + measure + change → PDSA; - **Lean** (Toyota production): waste reduction + value stream; - **Six Sigma**: variation reduction; - **Triple/Quadruple/Quintuple Aim**: better population health + experience + lower cost + clinician well-being + equity; (2) **Measure types**: - **Process**: % patients screened, % vaccinated, time to follow-up; - **Outcome**: HbA1c control rate, BP control, hospitalization, mortality; - **Balancing**: unintended consequences; - **Patient experience**: PROMs, satisfaction; - **Cost**: total cost of care, utilization; - **Equity**: stratified outcomes; (3) **Quality measures programs**: - **HEDIS** (NCQA) — most widely used; - **CMS Stars** (Medicare); - **MIPS** (Medicare Merit-based Incentive); - **UDS** (Uniform Data System — FQHCs); - Custom EHR-based registries; (4) **Population health management**: - **Risk stratification** of panel; - **Registries** (disease-specific or risk-based); - **Care gaps** identification + outreach; - **Care management** for high-risk; (5) **Practice transformation**: - **PCMH** (Patient-Centered Medical Home); - **Health home models**; - **Team-based care**; - **Integrated behavioral health**; - **Community partnerships** addressing SDOH; (6) **Data + analytics**: EHR data, claims data, registries, dashboards real-time; (7) **Implementation science**: bridging research to practice; barriers + facilitators; spread + scale; sustainability; (8) **Value-based payment**: alignment with quality + outcomes vs volume; ACOs (Accountable Care Organizations), shared savings, capitation, bundled payments; (9) **Patient + family engagement** in QI: PFACs (Patient + Family Advisory Councils), co-design, surveys, patient stories; (10) **Equity-focused QI**: stratify outcomes by race/ethnicity, language, SES, geography; address disparities; community-based participatory research; (11) **Continuous learning health system**: data → knowledge → practice → outcomes feedback loop; (12) **Workforce + culture**: psychological safety, just culture, learning orientation; (13) **Multidisciplinary QI team**: leadership + clinicians + nurses + MAs + data analytics + quality + IT + administration + patients + community"
+      },
+      {
+        "label": "C",
+        "text": "Single intervention without iteration"
+      },
+      {
+        "label": "D",
+        "text": "Top-down without team"
+      },
+      {
+        "label": "E",
+        "text": "Random change"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "QI: PDSA cycles + Model for Improvement. Triple/Quadruple/Quintuple Aim. Process + outcome + balancing + experience + cost + equity measures. HEDIS, CMS Stars, MIPS. Population health, PCMH, value-based. Equity-focused. Multidisciplinary team.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "IHI Model for Improvement; NCQA; CMS"
+  },
+  {
+    "scenario": "Hospital — implement EHR-based clinical decision support (CDS) — improve quality + safety",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Random alerts for everything"
+      },
+      {
+        "label": "B",
+        "text": "EHR + Clinical Decision Support (CDS) (ONC + AMIA): (1) **CDS types**: - **Alerts + warnings**: drug-drug interactions, allergies, dose adjustments, abnormal lab follow-up; - **Order sets**: standardized for conditions (sepsis, ACS, asthma admission); - **Smart forms / templates**: structured data, decision support embedded; - **Reminders**: preventive care, follow-up, missed appointments; - **Documentation tools**: SmartPhrases, templates; - **Real-time risk calculators**: ASCVD, FRAX, Wells, HEART; - **Diagnostic assistance**: differential generators, image AI; - **Predictive analytics + ML/AI**: deterioration, readmission, sepsis (e.g., Epic Sepsis Score); - **Population health dashboards**: care gaps, registry; - **Patient-facing CDS**: portal + apps; (2) **Five Rights of CDS** (Bates + Osheroff): right information + right person + right format + right channel + right point in workflow; (3) **Alert fatigue**: too many alerts → ignored; rationalize + customize; high-yield only; severity tiers; (4) **EHR optimization**: usability — top clinician burden; redesign for workflow; voice recognition; ambient AI scribes (Dax, Suki, Abridge) — major emerging — reduces documentation burden + burnout; (5) **Interoperability**: - **FHIR** (Fast Healthcare Interoperability Resources) — standard; - **TEFCA** (Trusted Exchange Framework + Common Agreement); - **Health Information Exchanges** (HIEs); - **CMS interoperability rules**: information blocking prohibition + patient API access; - **USCDI** (US Core Data for Interoperability); (6) **Patient portal + digital tools**: - Messaging (asynchronous); - Lab results; - Appointment + scheduling; - Refills; - Bill pay; - Self-management apps + connected devices (BP, glucose, weight, fitness); - Remote monitoring; (7) **Telemedicine integration**: synchronous (video, audio) + asynchronous; (8) **AI + machine learning**: imaging (radiology, ophthalmology — diabetic retinopathy, dermatology), risk prediction, NLP for documentation, ambient scribing, drug discovery; need: validation, equity (no biased training data), explainability, regulation; (9) **Cybersecurity**: HIPAA compliance, ransomware threats, breach response; (10) **Privacy + ethics**: data ownership, consent, secondary use, equity; (11) **EHR + provider well-being**: usability + meaningful use lead to burnout; optimization + workflow + scribe + AI assistance critical; (12) **Implementation considerations**: change management, training, super-users, ongoing optimization, governance; (13) **Multidisciplinary**: clinicians + IT + informatics + nursing + administration + patients + regulatory"
+      },
+      {
+        "label": "C",
+        "text": "Avoid all technology"
+      },
+      {
+        "label": "D",
+        "text": "Single CDS rule without monitoring"
+      },
+      {
+        "label": "E",
+        "text": "Ignore alert fatigue"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "CDS: 5 rights. Types (alerts, order sets, reminders, calculators, AI). Alert fatigue management. Optimization + ambient AI scribes for burden. FHIR + interoperability + TEFCA. Patient portal + digital tools. AI considerations. Cybersecurity. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "ONC; AMIA; HIMSS; Bates CDS"
+  },
+  {
+    "scenario": "Hospital — high physician + nurse burnout, leadership wants comprehensive wellness program",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Yoga sessions only"
+      },
+      {
+        "label": "B",
+        "text": "Clinician Burnout + Well-Being (National Academy of Medicine + AMA + AAMC): (1) **Burnout = system problem, not individual failing** — Stanford WellMD framework + NAM report; ~ 50% physicians + nurses meet criteria; (2) **3 dimensions Maslach**: emotional exhaustion + depersonalization + reduced personal accomplishment; (3) **Consequences**: clinician suicide (higher than general population), depression, substance use, turnover, errors, decreased quality, patient experience, cost; quintuple aim added clinician well-being; (4) **Drivers (systems-level)**: - **EHR + documentation burden** — top driver; - **Excessive workload + work-home imbalance**; - **Loss of autonomy + control**; - **Bureaucratic burden**: prior auths, billing, regulations; - **Inefficient workflow**; - **Lack of teamwork support**; - **Practice inefficiency**; - **Values misalignment**; - **Moral injury** (being prevented from doing right thing for patient); - **COVID-19** exacerbated; - **Workplace incivility, microaggressions, harassment**; - **Pay disparities + financial stress** (especially trainees); (5) **System-level interventions (must address — not just individual wellness)**: - **EHR optimization** + ambient AI scribes (major emerging) — reduces documentation; - **Reduce administrative burden** — pre-auth reform, decrease low-value mandates; - **Team-based care** — share workload, top-of-license; - **Workflow optimization**: standing orders, panel management, support staff; - **Adequate staffing + reasonable workload**; - **Schedule flexibility** + part-time options + paid leave; - **Compensation + financial wellness**; - **Mental health resources** + reduce stigma + remove credentialing barriers (state licensure questions about mental health treatment — major issue); - **Peer support programs** + Schwartz Rounds; - **Leadership development + commitment**; - **Just culture** + psychological safety; - **DEI** + anti-discrimination; (6) **Individual interventions** (necessary but not sufficient): - Mindfulness, exercise, sleep, nutrition; - Hobbies + relationships; - Therapy + EAP; - Boundary-setting; - Self-compassion; - Peer support; (7) **Measurement**: Maslach Burnout Inventory, Mini Z, Professional Fulfillment Index, regular surveys; (8) **Chief Wellness Officer** model + dedicated resources; (9) **Trainee wellness**: specific attention residents + students; (10) **Suicide prevention** for clinicians: 988, physician-specific resources, addressing barriers to help-seeking; (11) **Workforce shortages** worsening — burnout drives; pipeline + retention; (12) **Multidisciplinary**: leadership + clinicians + HR + IT + administration + employee assistance + mental health + national advocacy"
+      },
+      {
+        "label": "C",
+        "text": "Just hire more staff temporarily"
+      },
+      {
+        "label": "D",
+        "text": "Blame individuals"
+      },
+      {
+        "label": "E",
+        "text": "Ignore — natural part of job"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Burnout: system problem (NAM). EHR/admin burden top drivers. System interventions: EHR optimization + ambient AI scribes, reduce admin, team-based, workflow, staffing, mental health access, peer support, leadership commitment. Individual necessary but insufficient. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "NAM Clinician Burnout 2019; AMA; AAMC"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 50 ปี multimorbid (T2DM + HTN + obesity + depression) — multiple challenging behavior changes (diet, exercise, smoking, adherence)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Lecture patient"
+      },
+      {
+        "label": "B",
+        "text": "Behavior Change + Health Coaching (Motivational Interviewing + Lifestyle Medicine): (1) **Transtheoretical Model (stages of change)**: precontemplation → contemplation → preparation → action → maintenance → (relapse common, part of process); identify stage + match intervention; (2) **Motivational Interviewing (MI) — evidence-based for many conditions**: - **Spirit**: partnership + acceptance + compassion + evocation; - **OARS skills**: Open-ended questions + Affirmations + Reflective listening + Summaries; - **Eliciting change talk** + responding to sustain talk; - **Importance + confidence rulers** + decisional balance; - **Develop discrepancy** between current behavior + values/goals; - **Respect autonomy + roll with resistance**; - Effective brief in primary care; (3) **Goal-setting SMART**: Specific + Measurable + Achievable + Relevant + Time-bound; small wins build momentum; (4) **Health coaching model** (CDC, NBHWC certified): - Patient-centered, partnership; - Strengths-based; - Health behavior change focus; - Multiple sessions over time; - Often non-physician coach (RN, social worker, CHW, certified coach); - Evidence for chronic disease management; (5) **Habit formation (BJ Fogg, James Clear)**: - **Tiny habits** + behavior anchoring; - **Cue-routine-reward** framework; - **Environment design** (make easy what want, hard what don't); - **Identity-based change** ('I am a non-smoker'); - **Implementation intentions** (if-then plans); (6) **Self-efficacy (Bandura)**: mastery experiences + vicarious + verbal persuasion + emotional state; foundation; (7) **Social ecological model**: individual + interpersonal + organizational + community + policy; address multiple levels; (8) **Group-based programs evidence-based**: - **Diabetes Prevention Program (DPP)** — 58% T2DM reduction; CDC-recognized; - **Living Well with Chronic Conditions** (Stanford CDSMP); - **MOVE!** (VA weight management); - **Cardiac rehab**; - **Pulmonary rehab**; (9) **Technology-supported**: apps (Headspace, MyFitnessPal, Calm, etc.), wearables, text-based programs, virtual coaching, gamification; (10) **Address SDOH barriers** — food security, transportation, financial, housing, social support; (11) **Treat comorbidity**: depression interferes with behavior change → CoCM; (12) **Family + social involvement**; (13) **Multidisciplinary integrative**: PCP + health coach + dietitian + behavioral health + community resources + family + group programs"
+      },
+      {
+        "label": "C",
+        "text": "Single visit advice"
+      },
+      {
+        "label": "D",
+        "text": "Punitive approach"
+      },
+      {
+        "label": "E",
+        "text": "Ignore — patient must want to change"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Behavior change: stages (TTM). MI skills (OARS). SMART goals. Health coaching. Habit formation. Self-efficacy. Group programs (DPP). Technology-supported. SDOH + comorbidity. Multidisciplinary integrative.",
+    "difficulty": "easy",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "Miller + Rollnick MI; ACLM"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 75 ปี multimorbid (HF + COPD + DM + dementia) — D/C from hospital — high readmission risk; primary care responsibility",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No follow-up needed"
+      },
+      {
+        "label": "B",
+        "text": "Care Transitions (Hospital to Home) — Integrative Primary Care (CMS + Coleman Care Transitions): (1) **High-risk for 30-d readmission** (~ 25-30% Medicare): multimorbid, elderly, prior admissions, complex meds, social isolation, low health literacy, mental health, SDOH challenges, dementia; (2) **Evidence-based care transitions interventions**: - **Care Transitions Intervention (Coleman)** — coach over 4 wk + 4 pillars: medication self-management + PHR (personal health record) + follow-up + red flags + role of PCP; - **Project RED** (Re-Engineered Discharge); - **Transitional Care Model** (Naylor) — APN-led, evidence for older adults with HF + others; - **BOOST** (Better Outcomes by Optimizing Safe Transitions); - All show ~ 20-50% readmission reduction; (3) **Hospital → primary care handoff**: - Discharge summary timely (ideally before first PCP visit); structured + complete (diagnosis, hospital course, meds + reconciliation, follow-up needs, pending tests, contingency plans); - Direct communication (call, secure message) for complex; - Warm handoff for high-risk; (4) **Early follow-up (within 7-14 days)** PCP visit — telemedicine acceptable some; sooner for highest-risk; (5) **Medication reconciliation** — high error point: - List from multiple sources (hospital, prior med list, patient/family, pharmacy); - Identify discrepancies + clarify; - Simplify regimen; - Address cost; - Patient/family understanding of changes; - Pharmacist involvement valuable; (6) **Care management** for high-risk: - Telephonic outreach; - Home visits selected; - RN/social work coordinator; - Risk stratification; (7) **Patient + family education**: - Teach-back method; - Health literacy considerations; - Written + visual materials; - Action plan / red flags / when to call; - Self-management skills; (8) **Address SDOH**: transportation, food security, home environment, caregiver burden, financial; (9) **Connect to community resources**: meals, transportation, social services, support groups, faith community; (10) **Behavioral health**: depression common post-hospital; CoCM; (11) **Advance care planning + goals of care**; (12) **Coordination with specialists + post-acute (SNF, home health, hospice)** — continuity; (13) **Health IT**: EHR alerts for ED visits/admissions, ADT (admission discharge transfer) notifications; (14) **Quality measures**: 30-d readmission, follow-up timeliness; CMS programs; (15) **Family medicine well-positioned** for integrative transitions — relationship continuity + comprehensive view; (16) **Multidisciplinary**: PCP + care manager + pharmacy + social work + home health + specialty + family + community + behavioral health"
+      },
+      {
+        "label": "C",
+        "text": "Send to ER for issues"
+      },
+      {
+        "label": "D",
+        "text": "Discharge to nursing home only"
+      },
+      {
+        "label": "E",
+        "text": "Single specialist handles all"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Care transitions: high-risk readmission. Evidence-based (Coleman, Project RED, TCM). Hospital → PCP handoff. Early F/U 7-14 d. Medication reconciliation. Care management high-risk. Patient/family education + teach-back. SDOH + behavioral + ACP. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "Coleman Care Transitions; Naylor TCM; CMS"
   }
 ]
