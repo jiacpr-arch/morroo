@@ -1982,5 +1982,965 @@
     "board_topic": "cardiovascular",
     "board_age_group": "adult",
     "reference_source": "AHA/ACC Valvular HD 2020; SCA Cardiac Anesthesia"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 50 ปี — elective craniotomy for brain tumor (R frontal lobe)\nGCS 15, no focal deficit, no seizure\nMRI: 4 cm mass + minimal edema, no midline shift\nMeds: dexamethasone 4mg q6h, levetiracetam 1g BID",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Use ketamine + N2O routinely"
+      },
+      {
+        "label": "B",
+        "text": "Neuroanesthesia craniotomy principles: (1) Goals — maintain CPP, control ICP, brain relaxation, smooth emergence for neuro exam; (2) CPP = MAP - ICP; target CPP 60-70; (3) ICP control intraop: - Head up 15-30°; - Avoid PEEP > 10 if possible; - Mannitol 0.5-1 g/kg or hypertonic saline 3% (250 mL) — osmotic diuresis; - Hyperventilation to PaCO2 30-35 (temporary, avoid < 30 prolonged — ischemia); - Avoid hypotonic fluids (use NS or balanced isotonic); - CSF drainage via lumbar drain (selected); (4) Anesthetic choice: - Propofol-based TIVA preferred (reduces CMRO2, ICP, may improve brain relaxation); - Volatile (sevoflurane < 1 MAC OK; high MAC vasodilator); - Avoid N2O (expands air, may worsen pneumocephalus); - Opioid (remifentanil infusion or fentanyl) for analgesia + blunt response; - Muscle relaxant — rocuronium or cisatracurium; avoid succinylcholine (transient ICP rise + K release); (5) Hemodynamic — arterial line; CVL if needed; tight BP control; avoid surges with laryngoscopy/pinning (lidocaine, opioid, deepen); (6) Avoid ketamine (controversial — some say OK with controlled ventilation but classic teaching: avoid); (7) Emergence — smooth, awake neuro exam priority; remifentanil + dexmedetomidine helpful; (8) Post-op — neuro ICU; serial neuro exams; HOB up; control BP, glucose, temperature (normothermia); seizure prophylaxis; (9) Awake craniotomy — for eloquent cortex; dexmedetomidine + remifentanil + scalp block; (10) Monitoring — neurophysiologic (SSEP, MEP) — affects anesthetic choice"
+      },
+      {
+        "label": "C",
+        "text": "Hypotensive technique aggressive"
+      },
+      {
+        "label": "D",
+        "text": "PEEP 15 mandatory"
+      },
+      {
+        "label": "E",
+        "text": "Mass hypotonic fluids"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Neuro craniotomy: CPP > 60, propofol-TIVA, avoid N2O + succinylcholine, mannitol/HTS, modest hyperventilation, smooth emergence. Scalp block for pinning. Awake craniotomy for eloquent areas.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "SNACC Neuroanesthesia Guidelines; ASA Practice Advisory"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 45 ปี SAH grade III (Hunt-Hess) — emergent craniotomy for clipping ruptured anterior communicating aneurysm\nGCS 13, BP 165/95, HR 90\nNo neuro deficit currently",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Allow BP to rise during induction"
+      },
+      {
+        "label": "B",
+        "text": "Aneurysm clipping anesthesia: (1) Pre-rupture goal — PREVENT rebleed (mortality 50% if rebleed); strict BP control SBP < 140-160; (2) Avoid HTN surges — at intubation, pinning, dural opening, emergence; (3) Premedication — small midazolam for anxiety; avoid heavy sedation (need neuro exam); (4) Induction: - Pre-induction arterial line MANDATORY; - Smooth induction: propofol + opioid (high-dose fentanyl 5-10 mcg/kg OR remifentanil 0.3-0.5 mcg/kg/min); - Lidocaine 1.5 mg/kg blunt response; - NMB rocuronium; - Esmolol/labetalol ready for HTN; - Scalp block (bupivacaine + epinephrine) for pinning + scalp incision; (5) Maintenance — TIVA propofol + remifentanil OR sevoflurane < 1 MAC + opioid; (6) Hemodynamic: - Tight BP control (avoid spikes); - SBP 140-160 before clipping; - Reduce BP for temporary clipping if needed (SBP 100-120, MAP 70-80); - After clipping: liberalize, allow higher BP for cerebral perfusion (Triple-H — Hypertension, Hypervolemia, Hemodilution — historic; now permissive HTN + euvolemia); (7) Brain relaxation: mannitol, hyperventilation modest, CSF drainage; (8) Burst suppression for temporary clipping — propofol bolus + EEG; (9) Avoid hyperglycemia (worsens ischemia); maintain normothermia (some advocate mild hypothermia — controversial); (10) Emergence — smooth, allow early neuro exam; (11) Post-op vasospasm — typically days 4-14 post-SAH; nimodipine, BP support (euvolemia + permissive HTN), endovascular treatment if symptomatic; (12) Endovascular alternative — coiling in IR"
+      },
+      {
+        "label": "C",
+        "text": "Skip arterial line"
+      },
+      {
+        "label": "D",
+        "text": "Allow hypovolemia"
+      },
+      {
+        "label": "E",
+        "text": "Hyperventilate aggressively all case"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Aneurysm clipping: prevent rebleed (tight BP), pre-induction art line, scalp block, TIVA, burst suppression for temp clipping, mannitol + modest hyperventilation. Post-op vasospasm management. Endovascular alternative.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "SNACC Practice Advisory; Neurocritical Care Society Vasospasm"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 60 ปี diabetic — elective lumbar fusion L4-S1 posterior approach\nDuration 4-6 hr prone position planned\nWeight 95 kg",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No special precautions for prone"
+      },
+      {
+        "label": "B",
+        "text": "Prone position complications + management: (1) Eye injury — POVL (Postoperative Visual Loss) — ischemic optic neuropathy most common in prolonged prone + blood loss; PREVENTION: - Eyes free of pressure (foam pad with holes); - Check eyes regularly q15-30 min; - Avoid hypotension (MAP > 70); - Limit blood loss; consider transfusion threshold; - Head neutral position, level with or higher than heart; - Avoid direct eye pressure; (2) Airway — ETT secure (taped firmly), EtCO2 monitor, anticipated airway swelling, leak test before extubation; (3) Neck — neutral position; (4) Pressure injuries — pad bony prominences (chest, iliac crests, knees, ankles); breasts/genitalia free; (5) Hemodynamic — venous return decreased; abdomen free (avoid IVC compression) — venous bleeding worse if pressure; (6) Pulmonary — chest free (improves compliance), but anterior chest wall compression possible; PCV often preferred; (7) Neuropathy — brachial plexus (arms < 90° abduction, supinated), ulnar nerves (padded elbows), lateral femoral cutaneous, peroneal; (8) Endotracheal tube obstruction (kink, secretion) — capnogram monitor; (9) Anesthesia — multi-modal opioid-sparing important (spine + fusion = high postop pain); TIVA reduces blood loss + facilitates motor/SSEP monitoring; (10) MEP/SSEP — TIVA preferred, avoid muscle relaxant after intubation; (11) Massive blood loss — type + cross, TXA 1g, cell saver; (12) Post-op — neuro exam, pain control, PT, DVT prophylaxis"
+      },
+      {
+        "label": "C",
+        "text": "Eyes pressed against pad"
+      },
+      {
+        "label": "D",
+        "text": "No padding required"
+      },
+      {
+        "label": "E",
+        "text": "Avoid all monitoring"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Prone position: POVL prevention (no eye pressure, MAP > 70, limit blood loss), pad bony prominences, free abdomen + chest, neutral neck, brachial plexus protection, capnogram for ETT obstruction. TIVA for MEP.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "ASA POVL Practice Advisory 2019; SNACC Spine Anesthesia"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 35 ปี traumatic brain injury, GCS 7, pupils 3 mm reactive, requires intubation + emergent OR for ICH evacuation\nBP 160/90, HR 60 (Cushing-like)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Aggressive hyperventilation to PaCO2 25"
+      },
+      {
+        "label": "B",
+        "text": "Severe TBI anesthesia: (1) ABC + C-spine precautions (always assume unstable C-spine in TBI); (2) Airway — RSI with MILS + video laryngoscopy; - Induction: etomidate (CV stable) or propofol; lidocaine pre-treatment; opioid (fentanyl); rocuronium (succinylcholine ICP rise — but minor + transient, often acceptable in TBI RSI); - Pre-O2 thorough; - Avoid hypotension (single SBP < 90 doubles mortality TBI); avoid hypoxia; (3) Intracranial pressure management: - Head up 30°, neck neutral (allows venous drainage); - PaCO2 35-40 normal; mild hyperventilation 30-35 ONLY for impending herniation (transient measure); - Hyperosmolar therapy: hypertonic saline 3% 250 mL or mannitol 0.5-1 g/kg; - Sedation + analgesia adequate; (4) BP/CPP — MAP > 80, CPP > 60 (BTF guideline); norepinephrine first-line vasopressor; (5) Fluid — isotonic crystalloid (NS, balanced); avoid hypotonic; avoid albumin (SAFE TBI subgroup worse); (6) Hyperglycemia — avoid (worsens secondary injury); target 140-180; (7) Temperature — normothermia (hyperthermia harmful); (8) Sodium — target Na 145-155 (mild hypernatremia OK); avoid hyponatremia; (9) Seizure prophylaxis — levetiracetam or phenytoin × 7 days (early seizure); (10) ICP monitor placement (Camino, EVD) — neurosurgery; ICP target < 20-22; (11) Avoid PEEP > 10 generally; (12) Cushing response (HTN + bradycardia) — ominous, indicates impending herniation; (13) Multidisciplinary: anesthesia + neurosurgery + ICU"
+      },
+      {
+        "label": "C",
+        "text": "Aggressive fluid restriction"
+      },
+      {
+        "label": "D",
+        "text": "Hypotonic fluid"
+      },
+      {
+        "label": "E",
+        "text": "Hypertonic saline contraindicated"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "TBI: avoid hypotension + hypoxia, RSI MILS, etomidate, mild HV only for herniation, hypertonic saline > mannitol, MAP > 80 CPP > 60. Normothermia. ICP monitor < 20-22. Cushing = herniation imminent.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "BTF Severe TBI Guidelines 4th Edition; SNACC TBI"
+  },
+  {
+    "scenario": "ผู้ป่วย post-spine surgery 50 ปี ICU monitoring SSEP + MEP signals\nSurgeon requests anesthetic technique that preserves neuromonitoring",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Volatile + N2O + paralytic"
+      },
+      {
+        "label": "B",
+        "text": "Neuromonitoring + anesthetic technique: (1) SSEP (Somatosensory Evoked Potential) — cortical signal from peripheral nerve stimulation; sensitive to: volatile (dose-dependent suppression), hypothermia, hypotension, hypoxia, anemia; (2) MEP (Motor Evoked Potential) — direct cortical stimulation, recorded in muscles; MORE sensitive than SSEP to anesthetic + muscle relaxant; (3) Preferred anesthetic for SSEP + MEP: - TIVA propofol + opioid (remifentanil/sufentanil) — minimal interference; - Ketamine acceptable (some advocate); - Dexmedetomidine well-tolerated; - Low-dose volatile (< 0.5 MAC) tolerable for SSEP, suppresses MEP; (4) AVOID: - High-dose volatile (suppresses both); - N2O (suppresses both, expands air); - Muscle relaxant after intubation (eliminates MEP); use intermediate-acting rocuronium for intubation, then no further dose; (5) Maintain physiology: - MAP > 70; - SpO2 > 95%; - Normothermia 36-37°C; - Normocarbia PaCO2 35-40; - Adequate Hb (> 9-10 typically); (6) Communication with neuromonitoring tech essential — alerts to signal changes; (7) Signal change response — STOP surgery, check anesthetic + physiology, reposition if needed; (8) Stagnara wake-up test alternative (rare now); (9) Documentation; (10) Modern: routine for scoliosis, spinal cord tumor, complex spine surgery"
+      },
+      {
+        "label": "C",
+        "text": "Deep hypothermia"
+      },
+      {
+        "label": "D",
+        "text": "Continuous NMB infusion"
+      },
+      {
+        "label": "E",
+        "text": "Heavy sedation"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Neuromonitoring anesthesia: TIVA propofol + remifentanil, low/no volatile, NO N2O, single-dose NMB only. Maintain MAP, normothermia, Hb. MEP more sensitive than SSEP. Communicate with tech.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "ASNM Intraoperative Neuromonitoring; SNACC Practice"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 28 ปี GSW abdomen + chest, profound shock\nBP 70/40, HR 140, GCS 14, intubated in ED\nFAST positive, hemoperitoneum\nBlood products activated, MTP started",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Aggressive crystalloid only"
+      },
+      {
+        "label": "B",
+        "text": "Hemorrhagic shock + damage control resuscitation: (1) Massive Transfusion Protocol — pre-defined ratios, immediate release; (2) Balanced transfusion 1:1:1 (PRC:FFP:Platelets) per PROPPR trial; whole blood emerging (military origin); (3) TXA 1g IV bolus < 3h, then 1g over 8h (CRASH-2 mortality reduction); (4) Permissive hypotension — SBP 80-90 until hemorrhage controlled (avoid for TBI); reduces clot disruption + further bleeding; (5) Minimize crystalloid — worsens coagulopathy + edema + abdominal compartment syndrome; (6) Calcium replacement — citrate from transfusion chelates Ca; check iCa, replace 1g CaCl2 every 4 units PRBC; (7) Warming — warmed fluids + blankets; hypothermia worsens coagulopathy + cardiac function; (8) Fibrinogen target > 1.5-2 g/L; cryoprecipitate (10 units) or fibrinogen concentrate if low; (9) Viscoelastic testing (TEG/ROTEM) — guides component therapy (FFP, platelets, cryo, TXA); (10) Anesthetic — ketamine 1-2 mg/kg + opioid; etomidate alternative; avoid propofol bolus (hypotension); maintain low-dose volatile/TIVA; (11) Vasopressor — norepinephrine if persistent hypotension despite volume; vasopressin adjunct; (12) Calcium gluconate or chloride; (13) Lung-protective ventilation; (14) Post-op — ICU, monitor for ACS (abdominal compartment), AKI, MOF, coagulopathy; (15) Damage control surgery — quick hemorrhage + contamination control, leave open, return 24-48h"
+      },
+      {
+        "label": "C",
+        "text": "Crystalloid 5L bolus"
+      },
+      {
+        "label": "D",
+        "text": "Aggressive vasopressor without blood"
+      },
+      {
+        "label": "E",
+        "text": "Refuse transfusion"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Trauma hemorrhagic shock: MTP 1:1:1, TXA, permissive hypotension (except TBI), minimize crystalloid, Ca replacement, warm, TEG/ROTEM-guided. Ketamine + low-dose volatile. Damage control surgery.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "ATLS 10th Edition; ACS TQIP Massive Transfusion"
+  },
+  {
+    "scenario": "ICU patient 65 ปี septic shock, intubated, on norepinephrine 0.4 mcg/kg/min + vasopressin 0.04 U/min\nLactate 5.2, MAP 58, urine output 15 mL/hr × 4h\nFluids 3L crystalloid already given",
+    "choices": [
+      {
+        "label": "A",
+        "text": "More fluid 5L"
+      },
+      {
+        "label": "B",
+        "text": "Septic shock — Surviving Sepsis Campaign 2021: (1) Initial — 30 mL/kg crystalloid within 3h (now individualized); reassess hemodynamic response; (2) Antibiotics within 1h (broad-spectrum); source control; (3) Vasopressor — norepinephrine first-line (alpha + mild beta); target MAP > 65 (some advocate higher 80-85 in chronic HTN); (4) Refractory shock — add vasopressin 0.03-0.04 U/min (V1 receptor — non-catecholamine sparing); epinephrine third-line; (5) Stress-dose steroid — hydrocortisone 200 mg/day continuous infusion or 50 mg q6h IV if refractory shock on norepinephrine + vasopressin; ADRENAL trial showed faster shock resolution; (6) Fluid responsiveness assessment — passive leg raise, pulse pressure variation > 13%, IVC variation, cardiac output monitor; avoid fluid overload (mortality); (7) Goal-directed: lactate clearance, ScvO2, MAP, urine output; (8) Glycemic control — target < 180; insulin infusion; (9) DVT + stress ulcer prophylaxis; (10) Lung-protective ventilation TV 6 mL/kg, plateau < 30, PEEP per FiO2; prone if severe ARDS PaO2/FiO2 < 150; (11) Sedation — light, dexmedetomidine, daily SAT; (12) Renal — CRRT if AKI + refractory; (13) Nutrition — early enteral if possible; (14) Family communication + goals of care; (15) Multidisciplinary; (16) Avoid prolonged unnecessary fluids; modern trend conservative fluid + early vasopressor"
+      },
+      {
+        "label": "C",
+        "text": "Stop all vasopressor"
+      },
+      {
+        "label": "D",
+        "text": "Hypotonic fluid"
+      },
+      {
+        "label": "E",
+        "text": "Avoid steroid always"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Septic shock SSC 2021: initial 30 mL/kg, norepi first-line, vasopressin + steroid for refractory, MAP > 65, lactate clearance, fluid-responsive assessment, lung-protective, CRRT. Conservative fluids modern trend.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "Surviving Sepsis Campaign 2021"
+  },
+  {
+    "scenario": "ICU ARDS patient 50 ปี post-pneumonia\nPaO2/FiO2 95 on FiO2 0.7 + PEEP 12\nPlateau pressure 32, TV 6 mL/kg IBW\nMechanically ventilated 3 วัน, hemodynamically stable",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Increase TV to 10 mL/kg"
+      },
+      {
+        "label": "B",
+        "text": "Severe ARDS management — ARDSnet + recent evidence: (1) Lung-protective ventilation: - TV 4-6 mL/kg IBW (predicted body weight); - Plateau pressure < 30 cmH2O; - Driving pressure < 15 cmH2O (delta P = Pplat - PEEP); - PEEP titration per FiO2 (ARDSnet table) or optimal PEEP (best compliance, lowest driving P); (2) PaO2/FiO2 < 150 = severe ARDS — prone positioning 16h/day (PROSEVA trial — mortality benefit); (3) Conservative fluid strategy after initial resuscitation (FACTT); (4) Neuromuscular blockade in early severe ARDS (ACURASYS — controversial; ROSE found no benefit if not deeply sedated); (5) Recruitment maneuvers — controversial (ART trial harm); selective use; (6) ECMO — refractory hypoxia despite optimization (EOLIA trial); P/F < 50 for 3h or < 80 for 6h; CESAR for transfer to center; (7) Inhaled vasodilator (NO, prostacyclin) — selective pulmonary vasodilation, improves oxygenation, no mortality benefit; (8) Permissive hypercapnia (pH > 7.20) OK; (9) Sedation — minimize, daily SAT; (10) Steroids — DEXA-ARDS trial showed benefit dexamethasone 20 mg × 5d then 10 mg × 5d for moderate-severe ARDS; (11) Treat underlying cause; (12) Nutrition + DVT prophylaxis + ABCDEF bundle; (13) APRV (Airway Pressure Release Ventilation) — alternative mode; (14) Family communication + goals of care; (15) Modern: prone positioning + ECMO save lives"
+      },
+      {
+        "label": "C",
+        "text": "Permissive supine without prone"
+      },
+      {
+        "label": "D",
+        "text": "High TV 12 mL/kg"
+      },
+      {
+        "label": "E",
+        "text": "No PEEP"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Severe ARDS: TV 4-6 mL/kg IBW, Pplat < 30, driving P < 15, PEEP titration. Prone for P/F < 150. Conservative fluids. ECMO refractory. Dexamethasone benefit. Inhaled NO bridge. Modern: prone + ECMO.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "respiratory",
+    "board_age_group": "adult",
+    "reference_source": "ARDSnet; PROSEVA; ESICM ARDS Guidelines 2023"
+  },
+  {
+    "scenario": "ICU patient 70 ปี post-cardiac arrest ROSC × 1h, intubated, comatose\nGCS 4, no withdrawal\nCore temp 36.4°C, BP 110/70 on no vasopressor\nLactate 4, no overt seizure",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Wait observation only"
+      },
+      {
+        "label": "B",
+        "text": "Post-cardiac arrest care (PCAC): (1) Targeted Temperature Management (TTM) — TTM2 trial showed 33°C vs 36°C equivalent; current consensus: avoid fever (target 32-36°C × 24h, then rewarm slowly 0.25°C/hr); (2) Cardiopulmonary support — MAP > 65-80 (some advocate higher), avoid hypotension, lactate normalization; (3) Ventilation — PaO2 90-100 (avoid hyperoxia + hypoxia), PaCO2 35-45 (normocapnia), lung-protective; (4) Glucose 140-180; (5) Seizure detection — continuous EEG (subclinical seizure common); treat with levetiracetam, valproate, benzo for convulsive; (6) Sedation — propofol + opioid + NMB during TTM to prevent shivering; magnesium 2g; counterwarming; (7) Coronary angiography — if STEMI on ECG; consider if non-STEMI + presumed cardiac cause (selective per recent trials); (8) Neuroprognostication — DELAY > 72h after rewarming for accurate assessment; multimodal: clinical exam (GCS M, pupillary, corneal), bilateral absent N20 SSEP, NSE, EEG, MRI; do NOT base prognosis on single modality early; (9) Withdrawal of life-sustaining therapy — based on neuroprognostication, patient wishes, family discussion; (10) Modern: ECPR (ECMO-assisted CPR) for refractory; (11) Cause identification — CAD, PE, sepsis, hypoxia, etc; (12) Family communication ongoing"
+      },
+      {
+        "label": "C",
+        "text": "Allow fever to 39°C"
+      },
+      {
+        "label": "D",
+        "text": "Withdraw care immediately"
+      },
+      {
+        "label": "E",
+        "text": "Aggressive hyperoxia"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Post-arrest care: TTM (avoid fever 32-36°C), MAP > 65, normoxia + normocapnia, EEG monitoring, neuroprognostication > 72h post-rewarm multimodal, treat reversible cause. ECPR emerging.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "ILCOR 2020; AHA Post-Cardiac Arrest Care; TTM2 Trial"
+  },
+  {
+    "scenario": "ผู้ป่วยชาย 45 ปี polytrauma open femur + pelvic fracture, splenic laceration, lung contusion\nPost-laparotomy + splenectomy + ex fix → ICU\nBP 110/70 on norepi 0.1, lactate 3, Hb 8.5, INR 1.4\nABG: pH 7.30, PaO2 75, PaCO2 45, T 35.0°C",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cool further to 32°C"
+      },
+      {
+        "label": "B",
+        "text": "Post-damage control resuscitation in ICU: (1) Continue resuscitation goals — normalize lactate, hemoglobin, coagulation, temperature; (2) Lethal triad reversal: - Hypothermia: warming (Bair Hugger, warm fluids, IV warmer, room temp 24-26°C); target 36-37°C; - Coagulopathy: TEG/ROTEM-guided product therapy; FFP, platelets, fibrinogen, cryoprecipitate; - Acidosis: improve perfusion + ventilation; bicarb selectively; (3) Volume + perfusion — balanced approach; vasopressor as needed; lactate clearance goal; (4) Reduce vasopressor as appropriate; (5) Ventilation — lung-protective; chest tube monitor; expect ARDS risk with lung contusion + transfusion; (6) Imaging — secondary survey CT scans (head, chest, abd, pelvis); (7) Antibiotic — open fracture prophylaxis (cefazolin + gentamicin Gustilo III); tetanus; (8) Pain — multimodal (regional anesthesia useful — fascia iliaca, lumbar plexus, paravertebral, ESP); minimize opioid; (9) Return to OR for definitive surgery (24-72h) — orthopedic, abdominal closure; (10) DVT prophylaxis — early (mechanical immediate; pharmacologic 48-72h depending on bleeding); (11) Stress ulcer prophylaxis; (12) Early enteral nutrition; (13) Monitor for ACS (abdominal compartment), AKI, MOF, infection, splenectomy considerations (vaccinate); (14) Multidisciplinary team — trauma, anesthesia, ortho, ICU, PT, nutrition; (15) Family communication"
+      },
+      {
+        "label": "C",
+        "text": "Avoid all warming"
+      },
+      {
+        "label": "D",
+        "text": "Maximize crystalloid"
+      },
+      {
+        "label": "E",
+        "text": "Skip antibiotics open fracture"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Post-DCS ICU: reverse lethal triad (warm, correct coag, treat acidosis), TEG/ROTEM-guided, lactate clearance, multimodal regional analgesia, early DVT prophylaxis, definitive surgery 24-72h, multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "EAST Trauma Practice Management; ATLS"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 45 ปี chronic back pain × 5 ปี — admitted for elective spinal fusion\nMeds: oxycodone ER 40 mg BID + IR 10 mg q4h PRN, pregabalin 150 mg BID, duloxetine 60 mg daily\nDaily MME estimated 180",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Stop all opioids preop"
+      },
+      {
+        "label": "B",
+        "text": "Chronic opioid use perioperative: (1) Continue chronic opioid regimen — abrupt stop causes withdrawal + worsens pain; (2) Calculate baseline MME (morphine milligram equivalents) — informs intra/post-op needs; tolerance = increased opioid requirements (3-5×); (3) Multimodal opioid-sparing maximally: - Acetaminophen scheduled; - NSAID (ketorolac, celecoxib) unless CI; - Ketamine infusion 0.1-0.3 mg/kg/hr (anti-hyperalgesic + opioid-sparing); - Continue gabapentinoid (pregabalin); - Continue duloxetine; - Dexamethasone single dose; - Lidocaine infusion (1-2 mg/kg/hr); - Magnesium sulfate; (4) Regional anesthesia maximally — neuraxial (epidural for spine — controversial near surgical site; ESP block alternative), peripheral nerve blocks; (5) Intra-op opioid — higher doses than naive; (6) Post-op pain — PCA hydromorphone (or fentanyl) with higher doses; basal rate avoided typically but considered; (7) Coordinate with pain medicine + addiction medicine; (8) Discharge — transition off short-acting back to chronic regimen + multimodal; avoid escalation; close follow-up; (9) Tolerance considerations: - May need higher intra-op opioid (sufentanil/fentanyl); - Hyperalgesia phenomenon — opioid-induced; ketamine helps; (10) Psychological support — anxiety, catastrophizing, depression contribute to perception; (11) Goals of care discussion + realistic expectations; (12) Avoid combining opioids + benzodiazepines (CDC warning — respiratory depression mortality)"
+      },
+      {
+        "label": "C",
+        "text": "Discharge with double opioid dose"
+      },
+      {
+        "label": "D",
+        "text": "Combine opioid + benzo"
+      },
+      {
+        "label": "E",
+        "text": "Refuse perioperative care"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Chronic opioid: continue, multimodal opioid-sparing (ketamine, lidocaine, regional, gabapentinoid), higher intra-op doses, transition back postop. Pain + addiction medicine consult. Avoid opioid + benzo combo.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "ASA Chronic Pain Perioperative; CDC Opioid Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 55 ปี post-mastectomy 3 เดือน — persistent burning + shooting pain ipsilateral chest wall + axilla\nNon-radiating, allodynia + hyperalgesia present\nNo recurrence on imaging",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Surgery again"
+      },
+      {
+        "label": "B",
+        "text": "Chronic Post-Mastectomy Pain Syndrome (post-surgical neuropathic pain): (1) Pathophys — intercostobrachial nerve injury most common (axillary dissection); central sensitization; (2) Risk factors — axillary lymph node dissection, chemo/radiation, younger age, higher acute postop pain, anxiety/depression; (3) Diagnosis — clinical; neuropathic features (burning, shooting, allodynia, hyperalgesia); chronic > 3 months postop; rule out recurrence imaging; (4) Multimodal treatment: - Pharmacologic: gabapentinoid (gabapentin titrate to 1800-3600 mg/day; pregabalin 75-300 mg BID), TCA (amitriptyline, nortriptyline 10-75 mg HS), SNRI (duloxetine, venlafaxine), topical lidocaine 5% patch, capsaicin 8% patch; - Avoid chronic opioid (limited efficacy + addiction risk); - Acetaminophen + NSAID adjunct; (5) Interventional: - Intercostal nerve block; - Pulsed radiofrequency intercostal nerve; - Paravertebral block; - Stellate ganglion block; - Erector spinae plane block (ESP) — both diagnostic + therapeutic; (6) Non-pharmacologic — PT, TENS, mindfulness, CBT, acupuncture; (7) Psychological support — depression, anxiety, PTSD common in cancer survivors; (8) Prevention (best) — regional anesthesia at surgery (PVB, ESP), multimodal analgesia perioperatively, minimize acute postop pain; (9) Multidisciplinary pain clinic; (10) Refractory — spinal cord stimulation, intrathecal pump"
+      },
+      {
+        "label": "C",
+        "text": "Long-term high-dose opioid"
+      },
+      {
+        "label": "D",
+        "text": "Single nerve block only"
+      },
+      {
+        "label": "E",
+        "text": "Ignore symptoms"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Chronic post-mastectomy pain: neuropathic, intercostobrachial nerve injury. Multimodal: gabapentinoid, TCA, SNRI, topical, interventional (intercostal, PVB, ESP). Avoid chronic opioid. Prevention via regional at surgery.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "IASP Neuropathic Pain Guidelines; ASRA Chronic Pain"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 35 ปี complex regional pain syndrome (CRPS) Type I — left lower extremity 6 เดือน after ankle sprain\nPain: severe burning, allodynia, autonomic changes (color, temp, sweating), edema, motor dysfunction",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Wait + observe"
+      },
+      {
+        "label": "B",
+        "text": "CRPS Type I management: (1) Diagnosis — Budapest criteria (continuing pain disproportionate to event + symptoms in 3 of 4 categories: sensory, vasomotor, sudomotor/edema, motor/trophic + signs in 2 of 4 + no alternative diagnosis); (2) Multidisciplinary EARLY intervention key: - Physical/occupational therapy = CORNERSTONE (graded motor imagery, mirror therapy, desensitization, ROM, strengthening); - Active rather than passive treatments; (3) Pharmacologic: - Gabapentin/pregabalin (first-line neuropathic); - TCA (amitriptyline, nortriptyline); - Bisphosphonate (pamidronate) — modest evidence; - Vitamin C (prevention not treatment); - Calcitonin (limited evidence); - Topical lidocaine, capsaicin; - Avoid chronic opioid (poor efficacy); (4) Interventional: - Sympathetic ganglion block (stellate ganglion UE, lumbar sympathetic LE) — diagnostic + therapeutic; - Continuous nerve catheter; - Spinal cord stimulation (DRG stimulation for focal CRPS — strong evidence); - Intrathecal therapy (refractory); (5) Psychological — CBT, biofeedback, mindfulness (chronic pain coping); high comorbidity depression/anxiety; (6) Ketamine infusion (sub-anesthetic) — controversial but emerging evidence; (7) IVIG, plasmapheresis — research; (8) Prevention — vitamin C 500 mg/day × 50 days after distal radius fracture (some evidence); regional anesthesia; (9) Early treatment (< 1 year) = better outcomes; (10) Patient education + expectation setting; (11) Functional restoration focus rather than pain elimination"
+      },
+      {
+        "label": "C",
+        "text": "Amputation"
+      },
+      {
+        "label": "D",
+        "text": "High-dose opioid only"
+      },
+      {
+        "label": "E",
+        "text": "Refuse evaluation"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "CRPS: Budapest criteria. PT/OT cornerstone (graded motor imagery, mirror, desensitization). Multimodal pharmacologic + sympathetic blocks + SCS/DRG. CBT. Avoid chronic opioid. Early intervention key.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "IASP CRPS Guidelines; Budapest Criteria"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 60 ปี — major abdominal surgery, ASA II, pre-op anxiety + history PONV + chronic neck pain on tramadol 50 mg q6h\nPlan: ERAS protocol",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Traditional pre-op fasting NPO midnight"
+      },
+      {
+        "label": "B",
+        "text": "ERAS (Enhanced Recovery After Surgery) protocol: (1) Pre-op: - Education + expectations; - No prolonged fasting (clear fluids until 2h pre-op; light meal 6h); - Carbohydrate loading drink 2h pre-op (reduces insulin resistance); - Avoid bowel prep (most cases); - Anxiolysis without long-acting (avoid premed in elderly — delirium risk); - Skin prep (chlorhexidine); - Antibiotic prophylaxis within 60 min; (2) Intra-op: - Multimodal opioid-sparing analgesia (acetaminophen, NSAID/COX-2, gabapentinoid, ketamine, lidocaine infusion, dexamethasone); - Regional anesthesia (TAP block, ESP block, rectus sheath block, neuraxial selectively); - Goal-directed fluid therapy (avoid over and under); - Normothermia (warming); - Multimodal PONV prophylaxis (Apfel high-risk); - Short-acting anesthetics (propofol TIVA, remifentanil); - Minimize NG, drains, urinary catheters; - Lung-protective ventilation; - Avoid nitrous oxide; (3) Post-op: - Early mobilization (Day 0); - Early oral intake/diet advancement (Day 0-1); - Multimodal opioid-sparing analgesia continuation; - Glycemic control; - DVT prophylaxis; - Early Foley removal; - Discharge criteria objective; - Follow-up; (4) Outcomes — reduced LOS, complications, opioid use, cost, improved patient satisfaction; (5) Multidisciplinary: surgery + anesthesia + nursing + nutrition + PT + patient; (6) Patient buy-in critical; (7) ERAS Society protocols by procedure; (8) Audit + continuous improvement"
+      },
+      {
+        "label": "C",
+        "text": "Heavy opioid post-op"
+      },
+      {
+        "label": "D",
+        "text": "Delay diet 5 days"
+      },
+      {
+        "label": "E",
+        "text": "Mass IV fluid empirical"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "ERAS: shortened fasting + carb load, multimodal opioid-sparing, regional, goal-directed fluid, normothermia, PONV prophylaxis, early mobilization + feeding. Multidisciplinary. Reduces LOS + complications.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "ERAS Society Guidelines; ASA Practice Advisory"
+  },
+  {
+    "scenario": "ผู้ป่วย 70 ปี chronic intractable cancer pain (pancreatic CA) — pain VAS 9/10 despite oral oxycodone 80 mg BID + ER\nLimited life expectancy 6 เดือน\nNausea + constipation + sedation from opioids",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Add more oral opioid"
+      },
+      {
+        "label": "B",
+        "text": "Intractable cancer pain — interventional options: (1) Celiac plexus block/neurolysis — pancreatic + upper abd visceral pain; alcohol or phenol; significant reduction in opioid + pain in pancreatic CA (Wong RCT); ultrasound or fluoroscopy guided; (2) Splanchnic nerve neurolysis — alternative to celiac; (3) Intrathecal pump (IDDS) — for refractory cancer pain; morphine, fentanyl, hydromorphone, ziconotide, bupivacaine, clonidine combinations; significant opioid reduction; quality of life improvement; reduces systemic side effects (nausea, constipation, sedation); (4) Spinal cord stimulation — less common for cancer pain; (5) Hypogastric plexus block — pelvic cancer pain; (6) Ganglion impar block — perineal cancer pain; (7) Vertebroplasty/kyphoplasty — pathologic spine fracture; (8) Multimodal systemic: opioid (rotate if tolerance), NSAID, gabapentinoid, antidepressant, steroid, bisphosphonate (bone mets); (9) Symptom management — nausea (haloperidol, prochlorperazine, ondansetron, scopolamine), constipation (osmotic + stimulant laxatives, methylnaltrexone, naloxegol — peripherally-acting opioid antagonists), sedation; (10) Goals of care + advance directives; palliative care consult; (11) Hospice referral when appropriate; (12) Psychosocial + spiritual support; (13) Family education + support; (14) Modern: integrated palliative + pain medicine + oncology"
+      },
+      {
+        "label": "C",
+        "text": "Refuse pain care"
+      },
+      {
+        "label": "D",
+        "text": "Discharge no follow-up"
+      },
+      {
+        "label": "E",
+        "text": "Surgery as primary treatment"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cancer pain: celiac plexus block (pancreatic CA), intrathecal pump for refractory, multimodal systemic. Symptom Mx (constipation, nausea). Palliative + hospice. Integrated multidisciplinary approach.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "ASA Cancer Pain; WHO Pain Ladder; ASRA Interventional"
+  },
+  {
+    "scenario": "Question on pharmacology of induction agents:\nPatient with elevated ICP needs RSI for emergent surgery",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Use ketamine 2 mg/kg"
+      },
+      {
+        "label": "B",
+        "text": "Induction agents — pharmacology: (1) Propofol — GABA-A agonist; rapid onset (30s) + offset; metabolized hepatic CYP; decreases ICP + CMRO2 + BP; bolus 1.5-2.5 mg/kg; infusion 50-150 mcg/kg/min; side effects: hypotension, pain on injection, PRIS (propofol infusion syndrome — high dose long duration: rhabdo, acidosis, cardiac failure); preferred for neurosurgery; (2) Etomidate — GABA-A agonist; rapid onset (30s); hemodynamically stable (preferred unstable); bolus 0.3 mg/kg; side effects: adrenal suppression (single dose — controversial significance; consider stress steroid in critically ill sepsis), myoclonus, PONV, no analgesia; good for cardiac + shock + TBI; (3) Ketamine — NMDA receptor antagonist; dissociative; bolus 1-2 mg/kg IV or 4 mg/kg IM; bronchodilator, analgesic, sympathomimetic (preserved BP + HR — beneficial in shock); historic concern increased ICP (now controversial — may be OK with controlled ventilation; some advocate use in TBI); emergence reactions (use benzo or propofol); excellent for trauma, shock, asthma, peds; (4) Thiopental — barbiturate; rapid onset; decreases ICP + CMRO2 + BP; rarely used now (limited availability); useful for status epilepticus; (5) Midazolam — benzodiazepine; slower onset; less BP effect than propofol; 0.1-0.3 mg/kg IV; amnesia good; for selected cases; (6) Dexmedetomidine — alpha-2 agonist; sedation without respiratory depression; awake intubation, MAC; loading 1 mcg/kg over 10 min + infusion; bradycardia + hypotension; (7) Selection — patient factors (hemodynamic, neuro, asthma, allergies, dose adjustment renal/hepatic)"
+      },
+      {
+        "label": "C",
+        "text": "Thiopental 10 mg/kg high dose"
+      },
+      {
+        "label": "D",
+        "text": "Avoid all induction agents"
+      },
+      {
+        "label": "E",
+        "text": "Use volatile only induction"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Induction agents: propofol (rapid, ICP↓), etomidate (CV stable, adrenal suppression), ketamine (NMDA, dissociative, broncho-/sympathomimetic), thiopental (rarely used), midazolam, dexmedetomidine (alpha-2). Select per patient.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "Miller's Anesthesia 9th ed"
+  },
+  {
+    "scenario": "Question on neuromuscular blockers + reversal pharmacology",
+    "choices": [
+      {
+        "label": "A",
+        "text": "All NMBs equal"
+      },
+      {
+        "label": "B",
+        "text": "Neuromuscular blocker (NMB) pharmacology: (1) Depolarizing — Succinylcholine: - Mechanism: acetylcholine receptor agonist (depolarization phase 1 → phase 2 with high dose); fast onset (30-60s), short duration (5-10 min) — metabolized by plasma cholinesterase; - Use: RSI; - Side effects: fasciculation, myalgia, K+ rise (0.5-1; AVOID in burns > 24h, denervation, hyperkalemia, severe muscular dystrophy, MH-susceptible), bradycardia (peds especially), increased ICP/IOP/intragastric pressure, masseter spasm, MH trigger; - Pseudocholinesterase deficiency — prolonged paralysis (atypical, heterozygous, homozygous); (2) Non-depolarizing — Rocuronium (preferred): - Aminosteroid, fast onset 60-90s (intubating dose 1.2 mg/kg), duration 30-60 min; minimal CV effects; sugammadex-reversible; (3) Vecuronium — aminosteroid, intermediate duration; sugammadex-reversible; (4) Cisatracurium — benzylisoquinoline; Hofmann elimination (organ-independent — preferred renal/hepatic failure); no histamine release; (5) Atracurium — Hofmann; histamine release; (6) Pancuronium — long-acting; vagolytic (tachycardia); rarely used now; (7) Reversal: - Sugammadex (cyclodextrin) — binds rocuronium/vecuronium; rapid + complete reversal; dose 2 mg/kg (TOF 2) or 4 mg/kg (deep block) or 16 mg/kg (immediate); preferred modern; - Neostigmine — AChE inhibitor; combine with anticholinergic (glycopyrrolate 0.2 mg per 1 mg neostigmine — avoid muscarinic effects bradycardia/secretions/bronchospasm); only when TOF count 2-4 (won't reverse deep block); ceiling effect; (8) TOF monitoring — quantitative (TOFCuff, AcceleroMyograph) — TOF ratio > 0.9 = adequate reversal; modern standard"
+      },
+      {
+        "label": "C",
+        "text": "Sux in all patients regardless"
+      },
+      {
+        "label": "D",
+        "text": "No reversal needed"
+      },
+      {
+        "label": "E",
+        "text": "Pancuronium first-line"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "NMBs: sux (depol, fast/short, K+, MH trigger, contraindications), rocuronium (sugammadex-reversible), cisatracurium (Hofmann), vecuronium. Reversal: sugammadex preferred (rocuronium/vecuronium); neostigmine + glyco (TOF 2-4). Quantitative TOF standard.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "Miller's Anesthesia; ASA NMB Monitoring 2023"
+  },
+  {
+    "scenario": "Question on volatile anesthetics pharmacology",
+    "choices": [
+      {
+        "label": "A",
+        "text": "All volatiles identical"
+      },
+      {
+        "label": "B",
+        "text": "Volatile anesthetics — pharmacology: (1) MAC (Minimum Alveolar Concentration) — concentration preventing movement in 50% to surgical stimulus; - Sevoflurane 2.0% (lower in elderly; 0.6% age 80); - Isoflurane 1.15%; - Desflurane 6%; - Decreased by: age, hypothermia, opioid, alpha-2 agonist, pregnancy, hyponatremia, ethanol acute; - Increased by: hyperthermia, chronic ethanol, sympathomimetic, hypernatremia; (2) Solubility (blood/gas partition coefficient) — lower = faster onset/offset; desflurane 0.42 (fastest), sevoflurane 0.65, isoflurane 1.4; (3) Effects: - CV: dose-dependent decrease in BP (vasodilation), SVR, contractility; HR variable (desflurane increases at induction transient); QT prolongation; - Respiratory: bronchodilation (sevoflurane best — pediatric induction; desflurane = airway irritant); decreased TV, increased RR, decreased response to CO2/hypoxia; - CNS: increased CBF + ICP (vasodilator) — minimize in neurosurgery; decrease CMRO2; modulate seizure (sevoflurane epileptogenic at high concentration); - Skeletal muscle: relaxation + potentiates NMB; trigger MH (all halogenated); - Metabolism: minimal modern (sevoflurane 5%, isoflurane 0.2%, desflurane 0.02%); compound A from sevoflurane + desiccated CO2 absorbent (theoretical nephrotoxicity — limited clinical); CO production from desflurane + desiccated; (4) Selection: - Sevoflurane: peds induction (sweet, bronchodilator), short cases, neuroanesthesia (limited MAC); - Desflurane: rapid emergence (long cases, obese — fast offset); avoid: induction (irritant); high environmental impact; - Isoflurane: cardiac surgery, neuro, cost-effective; - N2O: adjunct (analgesia, MAC sparing); avoid pneumothorax, bowel obstruction, middle ear, retinal surgery; B12 deficiency"
+      },
+      {
+        "label": "C",
+        "text": "Highest possible MAC always"
+      },
+      {
+        "label": "D",
+        "text": "Use for awake intubation"
+      },
+      {
+        "label": "E",
+        "text": "Skip CO2 absorbent"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Volatile: MAC, solubility (des fastest), CV depression, bronchodilator (sevo > des), increased CBF/ICP, MH trigger. Sevo: peds induction. Des: rapid emergence, irritant induction. Iso: cardiac, neuro. N2O: adjunct + restrictions.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "respiratory",
+    "board_age_group": "adult",
+    "reference_source": "Miller's Anesthesia; Stoelting Pharmacology"
+  },
+  {
+    "scenario": "Question on opioid pharmacology in anesthesia",
+    "choices": [
+      {
+        "label": "A",
+        "text": "All opioids equivalent"
+      },
+      {
+        "label": "B",
+        "text": "Opioids — anesthesia pharmacology: (1) Mu-receptor agonist mechanism (analgesia, respiratory depression, sedation, miosis, decreased GI motility, urinary retention, pruritus, tolerance, dependence); (2) Specific agents: - Morphine — IV, IM, oral, neuraxial; onset 5-10 min IV, peak 20 min, duration 3-4h; active metabolite M6G (renal accumulation — avoid CKD); histamine release; intrathecal morphine = prolonged analgesia (up to 24h) for C-section, major surgery; - Fentanyl — synthetic, 100× morphine potency; rapid onset (30-60s IV), short duration (30-60 min single dose) but accumulates context-sensitive half-time; lipophilic; safer renal; transdermal patch (chronic pain); intrathecal/epidural; - Sufentanil — 1000× morphine; intra-op for cardiac; - Alfentanil — short-acting (5-10 min); - Remifentanil — ultra-short (3-5 min); ester linkage metabolized by plasma esterases; infusion 0.05-0.5 mcg/kg/min; no accumulation; rapid recovery; opioid-induced hyperalgesia + acute tolerance; need bridge analgesic before stop; - Hydromorphone — 5-7× morphine; PCA; renal safer than morphine; - Oxycodone — oral; PO common; - Methadone — NMDA antagonist + Mu; long half-life; chronic pain + OUD; QTc prolongation, drug interactions; - Tramadol — weak Mu + SNRI; seizure risk, serotonin syndrome; - Buprenorphine — partial agonist; ceiling for respiratory depression; OUD, chronic pain; (3) Reversal — naloxone (Mu antagonist) 0.04-0.4 mg IV titrated; short half-life (need repeat); precipitate withdrawal; - Naltrexone — oral long-acting (OUD/AUD treatment); (4) Side effect management — multimodal opioid-sparing; PRO laxative; pruritus (nalbuphine, antihistamine); urinary retention; (5) PCA settings — bolus + lockout; basal rare; (6) Modern: opioid epidemic awareness, minimize where possible"
+      },
+      {
+        "label": "C",
+        "text": "Use only morphine universally"
+      },
+      {
+        "label": "D",
+        "text": "Naloxone first-line analgesic"
+      },
+      {
+        "label": "E",
+        "text": "Avoid all opioids universally"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Opioids: morphine (M6G renal), fentanyl (rapid, lipophilic), remifentanil (esterase, ultra-short), sufentanil, hydromorphone (renal safer), methadone (NMDA + QTc), tramadol (SNRI). Naloxone reversal. Multimodal opioid-sparing.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "Miller's Anesthesia; Stoelting Pharmacology"
+  },
+  {
+    "scenario": "Question on local anesthetic pharmacology",
+    "choices": [
+      {
+        "label": "A",
+        "text": "All locals same"
+      },
+      {
+        "label": "B",
+        "text": "Local anesthetics — pharmacology: (1) Mechanism — block voltage-gated Na+ channels (intracellular side) → prevents action potential propagation; (2) Structure — lipophilic aromatic + amide/ester linkage + hydrophilic amine; lipid solubility = potency; protein binding = duration; pKa = onset; (3) Classification: - Esters (1 'i' in name): procaine, chloroprocaine (very short), tetracaine (long), cocaine; metabolized by plasma cholinesterase; PABA metabolite (allergy more common); - Amides (2 'i' in name): lidocaine, bupivacaine, ropivacaine, mepivacaine, prilocaine; metabolized hepatic; (4) Common agents: - Lidocaine — fast onset, intermediate duration; max 4.5 mg/kg (7 mg/kg with epinephrine); IV use OK (LAST risk lower than bupivacaine); ventricular arrhythmia treatment; topical; - Bupivacaine — slow onset, long duration (4-8h); highly protein-bound; CARDIOTOXIC (worse than CNS toxicity ratio); use carefully + max 2 mg/kg (3 with epi); levobupivacaine = S-enantiomer (less cardiotox); - Ropivacaine — long duration; less cardiotoxic than bupivacaine; less motor block (sensory > motor) — useful labor; max 3-4 mg/kg; - Mepivacaine — intermediate duration; - Prilocaine — risk methemoglobinemia (avoid in infants, anemic, G6PD); EMLA component; (5) Adjuncts: - Epinephrine 1:200,000 — vasoconstrictor: prolongs duration, reduces systemic absorption + LAST risk; AVOID end-arteries (digit, penis, ear), peripheral nerve blocks now OK in most; - Bicarbonate — speed onset (raises pH); - Dexamethasone — prolongs block (perineural or IV); - Dexmedetomidine, clonidine — alpha-2 prolong; (6) Toxicity LAST — CNS (perioral numbness → tinnitus → metallic taste → seizure → coma) + CV (hypotension → arrhythmia → arrest); bupivacaine worst CV; treatment — lipid emulsion 20% (1.5 mL/kg bolus + infusion); (7) Allergy — true rare; esters > amides; preservative methylparaben often blamed"
+      },
+      {
+        "label": "C",
+        "text": "Skip all locals"
+      },
+      {
+        "label": "D",
+        "text": "Mass IV bupivacaine"
+      },
+      {
+        "label": "E",
+        "text": "Use cocaine routinely"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Locals: Na channel block. Esters (procaine, chloroprocaine, tetracaine; PABA) vs amides (lidocaine, bupivacaine, ropivacaine). Bupivacaine cardiotoxic. Adjuncts: epi, bicarb, dex. LAST: lipid emulsion. Max doses critical.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "Miller's Anesthesia; ASRA LAST"
+  },
+  {
+    "scenario": "OR 35 ปี healthy patient sevoflurane induction + succinylcholine\n10 min: jaw rigidity (masseter spasm), HR rising 90 → 130, EtCO2 mild rising 40 → 48, no temp change yet\nBP stable",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ignore + continue"
+      },
+      {
+        "label": "B",
+        "text": "MMR (Masseter Muscle Rigidity) — possible MH precursor: (1) MMR after succinylcholine — common (1%) in peds; significance varies: - Mild + transient (jaw stiff but mouth opens) — usually normal succinylcholine effect; - SEVERE (jaw locked, cannot open) = MH-suggestive in 50%; (2) Management: - If severe MMR with other MH signs (rising EtCO2, tachycardia, rhabdo, acidosis): treat as MH — stop triggers, dantrolene, cooling; - If isolated MMR + no other features: postpone elective surgery, observe in PACU/ICU 24h; monitor for late MH features; check CK, K, urine myoglobin q6h × 24h; counsel future anesthesia; refer for MH testing (in vitro contracture test, genetic); - Urgent surgery: switch to non-triggering anesthetic; (3) MH-trigger-free anesthetic for future + family: avoid volatile + succinylcholine; use TIVA propofol + opioid + non-depolarizing NMB (rocuronium/cisatracurium); change circuit + soda lime; MH machine prep (flushing 10+ min, fresh circuit); (4) Documentation + MedicAlert; (5) Family counseling — autosomal dominant inheritance; (6) MHAUS Hotline 1-800-MH-HYPER for consultation; (7) Definitive diagnosis — caffeine-halothane contracture test (gold standard) or genetic testing (RYR1, CACNA1S — ~80% sensitivity); (8) MH-susceptible = OK for surgery with trigger-free anesthetic; (9) Differential MMR — TMJ pathology, dystonic reaction, myotonic disorder; (10) Modern: Ryanodex (dantrolene faster reconstitution)"
+      },
+      {
+        "label": "C",
+        "text": "Continue surgery + give more sux"
+      },
+      {
+        "label": "D",
+        "text": "Discharge home"
+      },
+      {
+        "label": "E",
+        "text": "Increase volatile"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "MMR after sux: mild = normal; severe + other signs = treat as MH. Isolated severe MMR — postpone elective, observe 24h, MH workup. Future trigger-free anesthetic. MHAUS hotline. Genetic + contracture testing.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "MHAUS Guidelines; ASA Practice Advisory"
+  },
+  {
+    "scenario": "OR — patient just received IV cefazolin pre-incision + rocuronium for induction\n3 min later: profound hypotension BP 60/30, HR 140, increased airway pressure, no rash visible yet under drape\nUnresponsive to phenylephrine bolus",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue case"
+      },
+      {
+        "label": "B",
+        "text": "Intra-op anaphylaxis — REFRACTORY: (1) Recognition under drape — hypotension + bronchospasm + tachycardia (or bradycardia in severe) often precedes rash; (2) Stop trigger (suspect rocuronium > cefazolin — NMB most common in OR anaphylaxis); call for help; declare emergency; (3) Epinephrine FIRST-LINE — 100-200 mcg IV bolus; repeat every 1-2 min; infusion if refractory (1-10 mcg/min titrated up to 50 mcg/min); intramuscular 0.3-0.5 mg if no IV access; (4) Airway — 100% O2, may need to deepen anesthesia for refractory bronchospasm; consider ECMO if refractory hypoxia; (5) Aggressive fluid resuscitation — 20-30 mL/kg crystalloid bolus; capillary leak + distributive shock; (6) Trendelenburg position to optimize venous return; (7) Refractory hypotension despite epinephrine: - Norepinephrine + vasopressin; - Methylene blue 1-2 mg/kg (NOS inhibitor for vasoplegia); - Glucagon 1-5 mg if on beta-blocker (interferes with epinephrine response); - Consider VA-ECMO for refractory; (8) Secondary medications (after epinephrine): - H1 antihistamine (diphenhydramine 50 mg IV); - H2 antihistamine (ranitidine 50 mg IV or famotidine); - Corticosteroid (hydrocortisone 200 mg IV or methylprednisolone 1-2 mg/kg) — prevents biphasic; (9) Decision continue vs abort surgery — stabilize first; case-by-case; (10) Post-event — tryptase level 30 min - 3h post-event (peak); document trigger; refer for allergy testing 4-6 weeks (skin testing + IgE, BAT — basophil activation test); MedicAlert; (11) ICU observation 24h (biphasic risk 1-20%); (12) Top triggers — NMB (rocuronium, succinylcholine), antibiotics (cefazolin, penicillin, vancomycin), latex, chlorhexidine, contrast, blood; (13) Document for future"
+      },
+      {
+        "label": "C",
+        "text": "Discharge to PACU"
+      },
+      {
+        "label": "D",
+        "text": "More cefazolin"
+      },
+      {
+        "label": "E",
+        "text": "Anti-histamine only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Refractory anaphylaxis: epinephrine first-line + infusion, fluid bolus 20-30 mL/kg, methylene blue + glucagon (beta-blocker) for refractory, ECMO. Secondary meds: antihistamine + steroid. Tryptase + allergy testing. NMB top trigger.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "toxicology",
+    "board_age_group": "adult",
+    "reference_source": "ASA + WAO Anaphylaxis Practice Parameter; NAP6"
+  },
+  {
+    "scenario": "OR patient under spinal anesthesia for inguinal hernia + IV sedation\n5 min after spinal injection: anxiety, slurred speech, lightheaded, then tonic-clonic seizure\nLA used: 0.5% bupivacaine 15 mL + epinephrine for combined spinal + field block by surgeon",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Wait + observe"
+      },
+      {
+        "label": "B",
+        "text": "LAST (Local Anesthetic Systemic Toxicity) management — ASRA Checklist 2020: (1) Recognition — CNS symptoms (perioral numbness → tinnitus → metallic taste → confusion → seizure → coma) precede CV (hypotension → arrhythmia → arrest); bupivacaine worst CV toxicity; (2) IMMEDIATE: call for help + LAST checklist + lipid emulsion + airway help; (3) Airway management — 100% O2, hyperventilation (alkalosis improves CV outcome — moves drug off Na channels); intubate if needed; (4) Seizure: - Benzodiazepine preferred (midazolam 2-4 mg, lorazepam 2-4 mg) — minimal CV depression; - Small dose propofol acceptable IF no CV compromise; AVOID propofol if hypotensive (further CV depression); - Avoid additional LA (lidocaine); (5) LIPID EMULSION 20% (Intralipid) — first-line cornerstone for cardiovascular toxicity (also helps CNS): - Bolus 1.5 mL/kg LBW over 1 min (~100 mL adult); - Infusion 0.25 mL/kg/min × 30 min minimum; - Repeat bolus + double infusion if persistent CV collapse; - Maximum 12 mL/kg total; - Mechanism: lipid sink + metabolic + ionotrope effects; (6) Modified ACLS for cardiac arrest: - Chest compressions; - Lipid emulsion priority; - SMALL doses epinephrine (1 mcg/kg = ~70 mcg) — high-dose impairs lipid efficacy; - AVOID: vasopressin (increased mortality), beta-blocker (depress contractility), calcium channel blocker, lidocaine/procainamide; - Cardiopulmonary bypass/ECMO if refractory; (7) PROLONGED RESUSCITATION — survival reported > 1 hour; (8) Post-event monitoring — ICU 4-6h minimum (recurrent CV instability), liver/lipid monitoring; (9) Prevention: - Aspiration test before injection (multiple sites for nerve block); - Slow incremental injection; - Ultrasound guidance peripheral block; - Test dose epinephrine; - Appropriate dose for weight (max bupivacaine 2-3 mg/kg); (10) Bupivacaine 15 mL of 0.5% = 75 mg; >> typical spinal dose (10-15 mg); concern systemic absorption from field block or intravascular component"
+      },
+      {
+        "label": "C",
+        "text": "Calcium gluconate first-line"
+      },
+      {
+        "label": "D",
+        "text": "Increased epinephrine dose"
+      },
+      {
+        "label": "E",
+        "text": "More LA injection"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "LAST: lipid emulsion 20% cornerstone (1.5 mL/kg bolus + 0.25 mL/kg/min infusion). Benzo for seizure. Modified ACLS — SMALL epi, NO vasopressin/beta-blocker/CCB/LA. Prolonged resus. Prevention: aspirate, US, dose limits.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "toxicology",
+    "board_age_group": "adult",
+    "reference_source": "ASRA LAST Checklist 2020"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 65 ปี post-major abdominal surgery PACU\nShivering, restless, SpO2 95% on 4L NC, BP 145/90, HR 100\nCore temp 35.4°C, peripheral cold",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge to ward"
+      },
+      {
+        "label": "B",
+        "text": "Postoperative hypothermia + shivering management: (1) Recognition — core temp < 36°C; mild 35-36, moderate 32-35, severe < 32; (2) Consequences: - Increased cardiac complications (shivering → 5× O2 consumption, MI risk); - Coagulopathy (impaired platelet + enzyme); - Delayed drug metabolism + emergence; - Wound infection (vasoconstriction → tissue hypoxia + impaired neutrophil); - Patient discomfort + length of stay; (3) Active rewarming: - Forced air warmer (Bair Hugger) — most effective; - Warmed IV fluids (37-40°C); - Warm humidified gases; - Room temperature 24-26°C; (4) Shivering treatment: - Meperidine 12.5-25 mg IV (most effective; kappa receptor) — avoid in MAOI, serotonin syndrome risk; - Tramadol; - Clonidine; - Dexmedetomidine; - Magnesium sulfate; - Buspirone; - Ondansetron; (5) Oxygen supplementation — meets increased demand; (6) Monitor — ECG (arrhythmia risk), serial temps q15-30 min; (7) Prevention — intraoperative warming (pre-warming pre-op, intraop forced air, fluid warming, warm room, humidified gases); (8) High-risk patients — elderly, low BMI, long surgery, large fluid/blood, open cavity, regional anesthesia (vasodilation); (9) Severe hypothermia (< 32°C) — aggressive: warmed IV, ETT humidification, bladder/peritoneal lavage, ECMO if cardiac arrest; (10) Goals — target normothermia 36-37°C before transfer to ward; (11) Document"
+      },
+      {
+        "label": "C",
+        "text": "Cool further"
+      },
+      {
+        "label": "D",
+        "text": "Ignore + observe"
+      },
+      {
+        "label": "E",
+        "text": "Restraint patient"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Postop hypothermia: active rewarming (Bair Hugger, warm IV), shivering treatment (meperidine first-line), O2 supplementation. Consequences: MI, coagulopathy, infection. Prevention via intraop warming. Target 36-37°C.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "ASPAN Hypothermia Guidelines; ASA Practice Advisory"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิง 75 ปี post-hip surgery PACU\nAlert but slow to respond, SpO2 88% on 4L NC, RR 8, pinpoint pupils\nReceived: morphine 8 mg PCA + previous IV doses",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge"
+      },
+      {
+        "label": "B",
+        "text": "Opioid-induced respiratory depression — PACU: (1) Recognition — RR < 10, sedation (Pasero opioid-induced sedation scale > 3), SpO2 drop, pinpoint pupils; elderly + comorbid most at risk; (2) Immediate — stimulate, supplemental O2 high-flow, position (jaw thrust, lateral if vomiting risk), call for help; (3) Naloxone — opioid antagonist: - Dose 0.04-0.4 mg IV (start low — titrate to RR without precipitating withdrawal/pain); - Onset 1-2 min, duration 30-90 min (shorter than most opioids — repeat or infusion may be needed); - Mu receptor antagonist; - Side effects: precipitated withdrawal (pain, hypertension, tachycardia, arrhythmia, pulmonary edema rare); - Infusion if long-acting opioid 2/3 effective bolus dose per hour; (4) Airway management — bag mask, intubation if severe; (5) Hold further opioids; reassess pain control; (6) Identify causes: - Cumulative opioid dose; - Combination with sedatives/benzo (synergistic — CDC warning); - Renal/hepatic accumulation (morphine M6G in renal failure); - Patient factors (elderly, OSA, obesity, COPD, opioid-naive); - PCA programming error; (7) Multimodal opioid-sparing — reduce future risk; (8) Continuous monitoring — capnography (EtCO2) detects hypoventilation BEFORE SpO2 drops; modern recommendation for high-risk patients on opioid PCA; (9) ICU/step-down for monitoring after event; (10) Documentation + safety review; (11) Prevention: PCA without basal rate typically, lockout, dose reduction in elderly + renal, multimodal analgesia, opioid-induced sedation scale assessment q1-2h, naloxone available"
+      },
+      {
+        "label": "C",
+        "text": "More opioid"
+      },
+      {
+        "label": "D",
+        "text": "Ignore vital signs"
+      },
+      {
+        "label": "E",
+        "text": "Sedative IV bolus"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Opioid-induced respiratory depression: naloxone titrated 0.04-0.4 mg IV. Watch for withdrawal/recurrence (short half-life). Capnography monitoring high-risk PCA. Multimodal opioid-sparing prevention.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "respiratory",
+    "board_age_group": "adult",
+    "reference_source": "ASA Practice Advisory; APSF Capnography Monitoring"
+  },
+  {
+    "scenario": "Question on patient safety in anesthesia practice — preventing wrong-site surgery",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Skip checklist"
+      },
+      {
+        "label": "B",
+        "text": "WHO Surgical Safety Checklist — patient safety: (1) Three phases: - SIGN IN (before induction): patient ID, site, procedure, consent, anesthesia safety check, allergies, difficult airway, blood loss risk; - TIME OUT (before skin incision): all team introduce themselves + role, confirm patient/site/procedure, anticipated critical events surgeon/anesthesia/nurse, antibiotic 60 min, imaging displayed, sterile + equipment OK; - SIGN OUT (before patient leaves OR): procedure recorded, instrument/sponge/needle count, specimen labeled, equipment concerns, key concerns for recovery; (2) Effectiveness — WHO study reduced mortality 40% + complications 36% in low/middle income settings; (3) Implementation success requires: - Team buy-in + leadership; - Customized to local setting; - Continuous training + reinforcement; - Audit + feedback; - Combine with team training (CRM); (4) Joint Commission Universal Protocol: - Pre-procedure verification; - Mark site (surgeon mark + patient awake/aware); - Time out (active confirmation, all team); (5) Crew Resource Management (CRM) — borrowed from aviation; flat hierarchy, speak up culture, closed-loop communication; (6) Just culture — distinguish honest error from reckless behavior; learn from near-miss + adverse event; report without fear; (7) Crisis checklists — emergency manuals (Stanford, Harvard, AOA) — bedside aids for crisis (MH, LAST, anaphylaxis, ACLS, ALS); (8) Quality improvement frameworks — PDSA cycles, root cause analysis; (9) Patient + family engagement; (10) Modern: human factors engineering, simulation training, technology integration (EHR alerts, smart pumps)"
+      },
+      {
+        "label": "C",
+        "text": "Surgeon alone responsible"
+      },
+      {
+        "label": "D",
+        "text": "Speak up culture suppressed"
+      },
+      {
+        "label": "E",
+        "text": "No documentation needed"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "WHO Surgical Safety Checklist: Sign In + Time Out + Sign Out. Reduces mortality 40%. Joint Commission Universal Protocol. CRM. Just culture. Emergency manuals. Multimodal patient safety.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "WHO Surgical Safety Checklist; Joint Commission"
+  },
+  {
+    "scenario": "Question on anesthesia informed consent + capacity",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Skip consent"
+      },
+      {
+        "label": "B",
+        "text": "Informed consent for anesthesia: (1) Required elements: - Disclosure of nature of anesthesia + procedure; - Risks (common + rare but serious): mortality, MI, stroke, awareness, PONV, dental damage, allergic reaction, nerve injury, PDPH, infection, transfusion-related; - Benefits; - Alternatives (regional vs GA, MAC, no anesthesia); - Patient questions answered; - Voluntary (no coercion); (2) Capacity assessment — ability to: - Understand the information; - Appreciate the implications; - Reason about choices; - Communicate a choice; (3) Surrogate decision-makers if patient lacks capacity: - Healthcare proxy/medical power of attorney; - Court-appointed guardian; - Family hierarchy per state law (spouse, adult child, parent, sibling); - Two-physician consent in emergency without surrogate; (4) Special populations: - Pediatric — parent/guardian consent + child assent (age-appropriate, typically > 7); - Pregnant patient — usually unchanged; emergent procedures; - Cognitively impaired — surrogate + best interest; - Emergency — implied consent if life-threatening + no surrogate available; - Jehovah's Witness — respect blood refusal even if life-threatening (adult competent); document; advance directive; (5) Documentation — written + verbal discussion; specific risks discussed; alternatives offered; questions answered; patient + witness signature; (6) Refusal of anesthesia/surgery — explore reasons, address concerns, alternatives, document refusal + counseled; (7) Withdrawal of consent — can occur any time before/during procedure if competent; (8) DNR in OR — ASA recommends required reconsideration (not automatic suspension); explicit discussion + documentation; (9) Modern: shared decision-making, patient values, decision aids; (10) Ethical principles: autonomy, beneficence, non-maleficence, justice"
+      },
+      {
+        "label": "C",
+        "text": "Coerce patient"
+      },
+      {
+        "label": "D",
+        "text": "Ignore patient preferences"
+      },
+      {
+        "label": "E",
+        "text": "DNR automatically suspended in OR"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Informed consent: disclose risks/benefits/alternatives, capacity assessment, surrogate if lacks, special populations, document, withdrawal allowed. DNR in OR = required reconsideration not automatic suspension. Shared decision-making.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "ASA Statement on Ethical Practice; AMA Code Medical Ethics"
+  },
+  {
+    "scenario": "Question on operating room fire safety + electrosurgery",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Fire safety not concern of anesthesiologist"
+      },
+      {
+        "label": "B",
+        "text": "OR Fire Safety — Fire Triangle: (1) Three elements (anesthesia owns oxidizer): - Fuel: drapes, gauze, ETT, alcohol prep, hair, GI gas; - Heat/ignition: electrosurgery (Bovie), laser, fiberoptic light source; - Oxidizer: O2, N2O (supports combustion); (2) High-risk procedures (Joint Commission alerts): - Surgery above xiphoid + open O2 source + heat source; - Head/neck/upper airway surgery; - Tonsillectomy/adenoidectomy + cautery; - Tracheostomy with cautery during entry; (3) Anesthesia role — minimize O2 to lowest needed; ideally < 30% FiO2 for high-risk; transition to medical air if open delivery (NC, mask); communicate to team before electrocautery; (4) Surgeon role: - Pause O2 reduction before activating cautery (30s wait); - Use bipolar over monopolar in airway; - Cuffed ETT for tonsillectomy with cautery to prevent O2 leak; - Laser-resistant ETT for laser surgery; - Saline-filled cuff with methylene blue (detect rupture); - Wet drapes/gauze in surgical field; (5) Drape patient with O2-permeable drapes; avoid pooling; (6) Alcohol prep — fully dry before drape + electrocautery; document drying; (7) Airway fire: - STOP all gases (disconnect ventilator); - Remove ETT immediately; - Pour saline into airway + extinguish fire; - Re-intubate after fire extinguished; - Inspect airway for damage (bronchoscopy); - Monitor for thermal injury + edema; - Steroids + observation 24h+; (8) Drape fire: - Stop O2 flow; - Remove burning drape; - Water/saline to extinguish; - Cardex CO2 fire extinguisher; (9) Education + simulation; emergency protocol posted; (10) Modern: laser smoke evacuator (toxic plume), team training, fire drills; (11) Documentation post-event"
+      },
+      {
+        "label": "C",
+        "text": "Use 100% O2 always"
+      },
+      {
+        "label": "D",
+        "text": "Skip wet drapes"
+      },
+      {
+        "label": "E",
+        "text": "Alcohol prep wet OK"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "OR fire: triangle (fuel + heat + O2 oxidizer). Anesthesia reduces FiO2 < 30%, pause before cautery. Cuffed ETT for tonsillectomy + cautery. Airway fire: stop gas, remove ETT, saline, re-intubate. Wet drapes. Education + simulation.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "ASA Practice Advisory on OR Fire 2013; APSF Fire Safety"
+  },
+  {
+    "scenario": "ผู้ป่วย Jehovah's Witness 45 ปี severe anemia Hb 7.5 — elective major orthopedic surgery\nRefuses all blood products including PRC + plasma; will accept albumin + cell saver + recombinant factors\nUnderstands risks including death; competent adult with advance directive",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Force transfusion"
+      },
+      {
+        "label": "B",
+        "text": "Jehovah's Witness bloodless surgery — ethical + clinical: (1) Respect patient autonomy — competent adult refusal of transfusion is legally + ethically binding (most jurisdictions); cannot transfuse against will even if life-threatening; (2) Explore patient preferences — what they accept varies (some accept albumin, immune globulin, clotting factors, dialysis, cell saver, normovolemic hemodilution; some refuse all blood-derived products); document explicitly; (3) Advance directive + healthcare proxy review; (4) Pre-op optimization — aggressive: - Iron (PO 3x daily, or IV iron sucrose/iron carboxymaltose if PO failed/intolerant); - Erythropoietin (EPO) — stimulate erythropoiesis; - B12, folate; - Treat underlying cause anemia; - Optimize medical conditions; - Time elective surgery for optimization (target Hb > 13); (5) Intra-op blood conservation: - Cell saver (autologous; most witnesses accept); - Acute normovolemic hemodilution (ANH) — collect autologous blood in continuity with patient (accept if attached); - Antifibrinolytics (TXA 1g IV); - Permissive low BP (within safety); - Bipolar electrocautery, vessel sealer, harmonic; - Minimal blood draw (microsampling); - Topical hemostatics (fibrin glue, gelfoam); - Limit phlebotomy; (6) Anesthetic technique — regional anesthesia (less bleeding), controlled hypotension carefully, position to minimize blood loss; (7) Post-op — minimize blood loss, iron + EPO continued, monitor; (8) Multidisciplinary — anesthesia + surgery + hematology + ethics consult + Jehovah's Witness Hospital Liaison Committee; (9) Pediatric Jehovah's Witness — different (parents' refusal may be overridden for child's life); court order if needed; (10) Patient Blood Management (PBM) principles apply to ALL patients now — minimize unnecessary transfusion (universal benefit); (11) Document + communicate"
+      },
+      {
+        "label": "C",
+        "text": "Refuse surgery"
+      },
+      {
+        "label": "D",
+        "text": "Override decision"
+      },
+      {
+        "label": "E",
+        "text": "Hide transfusion"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Jehovah's Witness: respect autonomy (competent adult). Explore acceptable products. Optimize anemia (iron, EPO). Cell saver, ANH, TXA. Pediatric different (court order possible). PBM universal. Multidisciplinary + ethics.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "hematology",
+    "board_age_group": "adult",
+    "reference_source": "ASA Patient Blood Management; AABB Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วย 80 ปี severe dementia, hip fracture — capacity to consent uncertain\nFamily wants surgery, patient inconsistent\nNo advance directive, no formal proxy",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Just operate"
+      },
+      {
+        "label": "B",
+        "text": "Capacity + surrogate consent in elderly with dementia: (1) Capacity assessment: - Specific to decision (sliding scale — higher stakes = higher capacity threshold); - Four components: understand, appreciate, reason, communicate choice; - Document specific assessment (not just diagnosis); - Re-assess (capacity may fluctuate — sundowning, delirium, medication); (2) Lack of capacity → surrogate decision-maker: - Healthcare proxy / medical POA (formal designation); - Court-appointed guardian; - Family hierarchy per state/jurisdiction law (typically: spouse → adult children → parents → siblings → close friend); - Two-physician consent for emergency without surrogate (life-threatening); - Ethics committee for difficult cases; (3) Substituted judgment standard (preferred) — what would patient choose based on prior values, statements, religious beliefs; (4) Best interest standard (fallback) — what reasonable person would choose; (5) Hip fracture in elderly: - Surgical repair improves mortality + function; mortality 30% at 1 year without surgery; - Pain control, mobilization, dignity; - Goals of care discussion with family + medical team; - Palliative approach if dying or extremely frail; (6) Anesthetic considerations elderly with dementia: - Pre-op delirium screening (Mini-Cog); - Regional anesthesia preferred (spinal — less delirium than GA per some studies; but recent RCT REGAIN showed no difference); - Avoid benzodiazepines, anticholinergics, long-acting opioid (Beers list); - Multimodal analgesia; - Family presence + reorientation; - Quick mobilization; (7) Ethics: - Autonomy respect — what patient would want; - Beneficence — what's medically beneficial; - Non-maleficence — avoid harm; - Justice; (8) Multidisciplinary — anesthesia + surgery + geriatric medicine + palliative care + ethics consult + social work + family meeting; (9) Document all"
+      },
+      {
+        "label": "C",
+        "text": "Refuse surgery + nothing"
+      },
+      {
+        "label": "D",
+        "text": "Skip family input"
+      },
+      {
+        "label": "E",
+        "text": "Ignore advance directive concept"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Elderly + dementia + hip fracture: capacity assessment specific, surrogate hierarchy, substituted judgment > best interest, hip surgery improves outcomes, regional + multimodal anesthesia, delirium prevention, ethics consult, multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "ASA Geriatric Anesthesia; AGS Beers Criteria 2023"
   }
 ]
