@@ -168,5 +168,175 @@
     "board_topic": "msk_nontrauma",
     "board_age_group": "adult",
     "reference_source": "AOSSM; AMSSM; ACSM"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 35 ปี — extensive burns 30% TBSA + post-acute — comprehensive burn rehab",
+    "choices": [
+      { "label": "A", "text": "Bedrest" },
+      { "label": "B", "text": "Burn Rehabilitation: (1) **Multidisciplinary team**: physiatrist + burn surgeon + plastic surgery + PT + OT + nursing + nutrition + psychology + social work; (2) **Phases**: acute → intermediate → long-term + reconstructive; (3) **Wound care + skin grafting**: ongoing dressing changes, graft care, scar management; (4) **Range of motion + positioning**: prevent contracture (most common complication) — positioning + splinting + stretching; (5) **Strengthening + endurance**: gradually progressive; (6) **Hypertrophic scarring management**: pressure garments (12-23 mmHg, 23+ hr/d × months), silicone gel sheets, massage, laser, intralesional steroid, surgical revision; (7) **Pruritus management**: antihistamines, gabapentin, moisturizers, topicals; (8) **Pain management**: multimodal — opioid + adjuvants + non-pharm (distraction, virtual reality, music); (9) **Nutrition**: hypermetabolic state — high calorie + protein; vitamins; (10) **Psychological + psychosocial**: body image, PTSD, depression, anxiety; CBT; peer support; (11) **Vocational + community reintegration**; (12) **Reconstructive surgery**: timed for contractures, function, aesthetics; (13) **Pediatric considerations**: growth + development + long-term scar evolution; (14) **Family support**; (15) **Modern**: emerging technologies — biological skin substitutes (Integra, AlloDerm), spray-on skin (ReCell), virtual reality pain control" },
+      { "label": "C", "text": "Single specialty" },
+      { "label": "D", "text": "Hospice" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Burn rehab: multidisciplinary phased. Contracture prevention + scar management + nutrition + psychological + reconstructive. Modern: biological substitutes + technology pain control. Comprehensive lifelong.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "ABA; ISBI Burn Rehab"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี chronic vertigo + dizziness × 3 months — vestibular rehabilitation",
+    "choices": [
+      { "label": "A", "text": "Bedrest" },
+      { "label": "B", "text": "Vestibular Rehabilitation: (1) **Common causes**: BPPV (most common), vestibular neuritis/labyrinthitis, Meniere's, vestibular migraine, central vestibular disorders, age-related, MS; (2) **Comprehensive vestibular assessment**: history + bedside (Dix-Hallpike, head impulse, vHIT, dynamic visual acuity, postural stability), specialized (VNG, rotary chair, posturography, fukuda); (3) **BPPV treatment**: canalith repositioning maneuvers (Epley for posterior canal, BBQ roll for lateral) — highly effective; brandt-daroff exercises for self-treatment; (4) **Vestibular adaptation exercises**: gaze stabilization (VOR adaptation), habituation, balance training, gait training; (5) **Vestibular substitution**: visual + somatosensory training; (6) **Pharmacotherapy** (acute symptoms only — avoid long-term — inhibits compensation): - Antihistamines (meclizine — short-term, avoid in elderly); - Antiemetics (ondansetron, promethazine); - Benzodiazepines (short-term, sparingly); (7) **Central causes**: migraine treatment, MS management, etc.; (8) **Multidisciplinary**: physiatrist + neurology + ENT + audiology + PT specialized in vestibular; (9) **Fall prevention** in elderly with dizziness; (10) **Modern**: technology-assisted (VR, computerized posturography, mobile apps for home exercises)" },
+      { "label": "C", "text": "Single specialty" },
+      { "label": "D", "text": "Hospice" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Vestibular rehab: BPPV (Epley) + vestibular adaptation exercises for compensation. Avoid long-term medications. Multidisciplinary. Modern: technology-assisted. Fall prevention.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "APTA Vestibular; ANA"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 80 ปี frail + recurrent falls + deconditioning + functional decline — geriatric rehab",
+    "choices": [
+      { "label": "A", "text": "Bedrest" },
+      { "label": "B", "text": "Geriatric Rehabilitation: (1) **Comprehensive geriatric assessment** + functional + nutritional + cognitive + psychosocial + medications; (2) **5Ms framework**: mind, mobility, medications, multicomplexity, matters most; (3) **Multidisciplinary**: physiatrist + geriatrician + PT + OT + nursing + dietitian + pharmacy + social work + family; (4) **Fall prevention** (CDC STEADI): assess + interventions: - Exercise (Tai Chi, Otago — most evidence); - Medication review (Beers + STOPP); - Vision + hearing + footwear; - Vitamin D; - Home safety; (5) **Functional training**: gait + balance + strength (especially LE) + ADL + IADL; (6) **Sarcopenia + frailty**: nutrition (protein 1.2-1.5 g/kg) + resistance exercise + treat underlying; (7) **Cognitive intervention**: cognitive training, address dementia if present; (8) **Pain management**: multimodal, avoid Beers; (9) **Nutritional optimization**: oral supplements, micronutrients; (10) **Psychosocial**: depression treatment, social engagement; (11) **Discharge planning**: home with services vs assisted living vs SNF; (12) **Caregiver support + education**; (13) **Goals of care** discussion; (14) **Long-term**: ongoing community-based rehab + chronic disease management; (15) **Modern**: integrated geriatric rehab + technology (sensors, smart homes, fall detection)" },
+      { "label": "C", "text": "Single specialty" },
+      { "label": "D", "text": "Hospice" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Geriatric rehab: CGA + 5Ms + multidisciplinary. Fall prevention + functional + sarcopenia + cognitive + pain. Family + goals of care. Modern: integrated + technology. Lifelong chronic disease management.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "AGS; AAPM&R Geriatric"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 50 ปี post-severe COVID-19 + long COVID + chronic fatigue + dyspnea + cognitive — comprehensive rehab",
+    "choices": [
+      { "label": "A", "text": "Bedrest" },
+      { "label": "B", "text": "Long COVID / Post-Acute COVID Rehabilitation: (1) **Multidisciplinary**: physiatrist + pulmonology + neurology + cardiology + ID + PT + OT + SLP + behavioral health + nutrition + occupational; (2) **Comprehensive assessment**: organ-system involvement (pulmonary, cardiac, neurological, GI, MSK, dermatologic, psychiatric); fatigue, dyspnea, cognitive (\"brain fog\"), POTS-like symptoms; (3) **Pulmonary rehab** modeled — graduated exercise + breathing exercises (consider pacing in post-exertional malaise — avoid graded exercise that worsens — controversial); (4) **Cognitive rehabilitation**: attention, memory, executive function strategies; (5) **Cardiac evaluation**: rule out myocarditis + arrhythmia; consider POTS workup (tilt table, autonomic testing); (6) **Sleep**: address; (7) **Mental health**: depression, anxiety, PTSD common; CBT; medication; (8) **Pacing + energy conservation**: especially with PEM (post-exertional malaise); (9) **Nutrition + hydration**; (10) **Vaccination**: recommended; (11) **Multidisciplinary clinics** emerging: post-COVID centers; (12) **Research evolving**: emerging treatments (anticoagulation trials, antivirals, immunomodulators) — not yet established; (13) **Patient + family education**: validation, expectations, peer support; (14) **Vocational support**: accommodation, gradual return; (15) **Modern**: rapidly evolving field with growing understanding" },
+      { "label": "C", "text": "Single specialty" },
+      { "label": "D", "text": "Hospice" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Long COVID rehab: multidisciplinary multi-organ. Pulmonary + cognitive + cardiac evaluation + mental health + pacing + energy conservation. Post-COVID centers emerging. Modern: rapidly evolving field.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "respiratory",
+    "board_age_group": "adult",
+    "reference_source": "AAPM&R Long COVID; CDC"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 45 ปี + post-radius distal fracture + ORIF — hand therapy + functional restoration",
+    "choices": [
+      { "label": "A", "text": "Bedrest" },
+      { "label": "B", "text": "Hand Therapy: (1) **Multidisciplinary**: physiatrist + hand surgeon + Certified Hand Therapist (CHT — OT or PT specialized); (2) **Phased rehab**: - Acute: edema control, splinting, gentle ROM; - Intermediate: progressive ROM, scar management, gradual strengthening; - Late: full strengthening + endurance + dexterity + return to activity; (3) **Modalities**: cold therapy, paraffin, ultrasound, electrical stimulation; (4) **Splinting**: custom, addresses position + protection + ROM; (5) **Scar management**: massage, silicone, pressure; (6) **Pain management**: multimodal; (7) **Common conditions**: fractures, tendon repairs, nerve injuries, joint replacements, arthritis, CTS, trigger finger, Dupuytren's, CRPS; (8) **Specific tendon protocols**: e.g., flexor tendon — early protected motion; (9) **Sensory re-education**: post-nerve injury; (10) **CRPS prevention + treatment**: early intervention, edema control, gentle ROM, desensitization; (11) **Return to function/work**: gradual + task-specific; (12) **Ergonomics + adaptive equipment**: for chronic conditions; (13) **Outcomes measurement**: DASH score, grip strength, ROM measurements" },
+      { "label": "C", "text": "Single specialty" },
+      { "label": "D", "text": "Hospice" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Hand therapy: specialized + phased + multidisciplinary. CHT certification. Modalities + splinting + scar + pain management. Specific protocols. Sensory re-education + CRPS prevention. Outcomes measurement. Modern: evidence-based hand specialty.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "ASHT; CHT certification"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 35 ปี — Multiple Sclerosis + relapsing-remitting + chronic fatigue + spasticity + bladder issues — comprehensive rehab",
+    "choices": [
+      { "label": "A", "text": "Single specialty" },
+      { "label": "B", "text": "MS Rehabilitation: (1) **Multidisciplinary**: physiatrist + neurology + PT + OT + SLP + nursing + urology + social work + psychology + nutrition; (2) **Disease-modifying therapy** (DMT) by neurology — multiple options; (3) **Rehabilitation focus on specific impairments**: - **Fatigue** (most common MS symptom): pacing + energy conservation + exercise (graded — important — improves fatigue); modafinil, amantadine selected; - **Spasticity**: stretching + positioning + oral antispasticity (baclofen, tizanidine, dantrolene), focal botulinum, intrathecal baclofen for severe; - **Bladder dysfunction**: anticholinergics, mirabegron, beta-3 agonist, intermittent catheterization, urology consult; - **Bowel**: scheduled program; - **Gait + balance**: PT, dalfampridine (4-AP) for walking, AFOs, walking aids; - **Cognitive impairment**: cognitive rehabilitation strategies; - **Mood**: depression high prevalence — SSRI + therapy; - **Sexual dysfunction**: PDE5i + counseling; - **Pain**: neuropathic — gabapentinoids, SNRI; - **Vision**: optic neuritis — treat + adaptive; - **Dysphagia**: SLP + dietary modification; (4) **Exercise**: aerobic + resistance + balance — improves multiple symptoms; (5) **Heat sensitivity** (Uhthoff phenomenon): cooling, air conditioning; (6) **Lifestyle**: Mediterranean diet + smoking cessation + vitamin D + sleep; (7) **Pregnancy + family planning**: timing with DMTs + monitoring; (8) **Mental health support**: depression + anxiety; (9) **Vocational + community**: ongoing support; (10) **Modern**: comprehensive integrated multidisciplinary care + emerging neurorestorative therapies" },
+      { "label": "C", "text": "Bedrest" },
+      { "label": "D", "text": "Hospice" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "MS rehab: multidisciplinary integrative. Multiple symptoms (fatigue, spasticity, bladder/bowel, gait, cognitive, mood, sexual, pain). Symptom-specific interventions + exercise + lifestyle. Modern: emerging neurorestorative + comprehensive care.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "National MS Society; AAN"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 70 ปี Parkinson disease + bradykinesia + falls — multidisciplinary rehab",
+    "choices": [
+      { "label": "A", "text": "Single specialty" },
+      { "label": "B", "text": "Parkinson Disease Rehabilitation: (1) **Multidisciplinary**: physiatrist + neurology + PT + OT + SLP + nutrition + social work + caregiver; (2) **Medical management**: levodopa-carbidopa + adjuvants by neurology; deep brain stimulation (DBS) for advanced + motor fluctuations + dyskinesias; (3) **Exercise** essential: - **LSVT-BIG** (Lee Silverman Voice Treatment BIG — adapted for motor) — large amplitude training; - **PWR! (Parkinson Wellness Recovery)**; - Tai Chi (balance + fall prevention); - Tango + dance; - Aerobic + resistance; - Boxing programs; - Vestibular + balance specific; (4) **Speech therapy**: **LSVT-LOUD** — loud phonation; cognitive-communication; swallowing therapy (dysphagia common); (5) **OT**: ADLs, adaptive equipment, home safety, fall prevention; (6) **Fall prevention**: significant issue — postural instability + freezing; (7) **Dystonia + dyskinesia**: medication optimization, botulinum toxin for focal; (8) **Sleep**: REM behavior disorder, insomnia — clonazepam, melatonin, sleep hygiene; (9) **Cognitive + neuropsychiatric**: depression, anxiety, hallucinations, dementia (late) — manage carefully (avoid antipsychotics that worsen — pimavanserin safer); (10) **Autonomic**: orthostatic hypotension, constipation, urinary, sexual; (11) **Nutrition**: weight, protein timing (interferes with levodopa absorption); (12) **Caregiver support**: education + respite + mental health; (13) **Advance care planning**; (14) **Modern**: precision (PET imaging, biomarkers), new symptomatic + disease-modifying agents (research), DBS technology, focused ultrasound" },
+      { "label": "C", "text": "Bedrest" },
+      { "label": "D", "text": "Hospice" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "PD rehab: multidisciplinary symptom-based. Exercise (LSVT-BIG, Tai Chi). Speech (LSVT-LOUD) + dysphagia. Fall prevention. Cognitive + neuropsychiatric + autonomic. Caregiver support. Modern: precision + DBS + emerging therapies.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "Movement Disorder Society; AAN PD"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 60 ปี post-cancer treatment — chronic fatigue + neuropathy + lymphedema + deconditioning — cancer rehabilitation",
+    "choices": [
+      { "label": "A", "text": "Single specialty" },
+      { "label": "B", "text": "Cancer Rehabilitation (CRP — Cancer Rehab Program): (1) **Multidisciplinary**: physiatrist + oncology + PT + OT + SLP + nutrition + psychology + social work + lymphedema specialist; (2) **Common issues**: fatigue, deconditioning, peripheral neuropathy (chemo-induced), lymphedema, weakness, cognitive impairment (\"chemo brain\"), pain, body image, depression + anxiety, sexual dysfunction, sleep, mobility, ADL difficulty, vocational; (3) **Cancer-related fatigue**: most common — multimodal exercise (aerobic + resistance) is most evidence-based intervention (Cochrane); modafinil + psychostimulants selected; sleep + mood + nutrition; (4) **Lymphedema management**: - Complex Decongestive Therapy (CDT) — gold standard 4 components: manual lymph drainage (MLD), compression bandaging + garments, exercise, skin care; - Pneumatic compression devices for selected; - Surgical (lymphovenous anastomosis, lymph node transfer, liposuction) — emerging; - Prevention + early intervention key; (5) **CIPN (chemotherapy-induced peripheral neuropathy)**: duloxetine first-line (per ASCO); other gabapentinoids, topical; exercise; balance training; fall prevention; (6) **Functional restoration**: PT + OT + endurance + ADL training; (7) **Cognitive rehabilitation**: strategies + computer-based; (8) **Pain management**: multimodal; (9) **Psychosocial**: counseling + peer support + caregiver; (10) **Vocational + return to work**; (11) **Survivorship care plans**: long-term issues + surveillance; (12) **Palliative integration**: concurrent care; (13) **Modern**: prehabilitation (pre-treatment) + integrated cancer rehab clinics + telerehab" },
+      { "label": "C", "text": "Bedrest" },
+      { "label": "D", "text": "Hospice" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cancer rehab: multidisciplinary survivorship. Fatigue + CIPN + lymphedema + cognitive + functional + psychosocial. CDT for lymphedema. Exercise for fatigue. Duloxetine for CIPN. Modern: integrated programs + prehabilitation + telerehab.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "AAPM&R Cancer Rehab; ASCO Survivorship"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 45 ปี — workplace injury + chronic LBP + unable to return to physically demanding job — vocational rehabilitation + return-to-work",
+    "choices": [
+      { "label": "A", "text": "Single specialty" },
+      { "label": "B", "text": "Vocational Rehabilitation + Return-to-Work (RTW): (1) **Multidisciplinary**: physiatrist + occupational medicine + PT + OT + vocational counselor + ergonomist + psychologist + employer + insurance + attorney (workers comp); (2) **Comprehensive functional capacity evaluation (FCE)**: objective measure of work-related abilities vs job demands; (3) **Job demands analysis**: physical + cognitive + environmental requirements; (4) **Work conditioning + work hardening programs**: progressive job-specific tasks + endurance + simulation; (5) **Accommodations**: ADA-compliant + employer collaboration — modified duty, ergonomic adjustments, assistive technology, schedule changes; (6) **Vocational counseling**: career change if cannot return; retraining + education; (7) **Functional restoration**: addresses physical + psychological + behavioral aspects of chronic pain + disability; (8) **Disability evaluation**: temporary vs permanent, partial vs total; AMA Guides to Permanent Impairment; (9) **Psychosocial**: depression + anxiety + fear avoidance + catastrophizing — CBT + behavioral activation; (10) **Pain self-management**: multimodal opioid-sparing; (11) **Stakeholder coordination**: employer + insurance + healthcare + patient + family + legal; (12) **Outcome metrics**: RTW rate + duration + sustainability + recurrence; (13) **Prevention**: workplace ergonomics + safety + early intervention; (14) **Modern**: telework + remote accommodations + technology-enabled work + early intervention + integrated programs" },
+      { "label": "C", "text": "Bedrest" },
+      { "label": "D", "text": "Disability only" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Vocational rehab + RTW: multidisciplinary stakeholder coordination. FCE + job analysis + work conditioning + accommodations + vocational counseling. Address psychosocial. Disability evaluation. Modern: remote work + ergonomics + early intervention + integrated.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "AAPM&R Occupational Med; AMA Guides"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 40 ปี — post-mastectomy + lymphedema secondary + early management + prevention",
+    "choices": [
+      { "label": "A", "text": "Ignore" },
+      { "label": "B", "text": "Lymphedema Management Comprehensive: (1) **Risk reduction + prevention**: early identification, education, skin care, avoid trauma + IV/BP on affected side (controversial — recent evidence questions strict avoidance), gradual exercise, weight management; (2) **Diagnosis**: clinical (pitting + non-pitting), tape measure + circumferential measurements, BIS (bioimpedance spectroscopy — early detection), perometry, lymphoscintigraphy, MRI lymphangiography; (3) **Stage classification (ISL)**: 0 (subclinical), 1 (early, pitting), 2 (non-pitting, fibrosis), 3 (elephantiasis); (4) **Complex Decongestive Therapy (CDT) — gold standard**: 4 components — - **Manual Lymphatic Drainage (MLD)**: specialized massage to redirect lymph flow; - **Compression bandaging (intensive phase)** → custom compression garments (maintenance); - **Exercise** with compression to enhance pumping; - **Skin care**: prevent infection (cellulitis); (5) **Adjuncts**: pneumatic compression devices, kinesiotape, low-level laser, BIS-guided early intervention (PREVENT trial — early identification + Rx prevents progression); (6) **Pharmacologic**: limited role; (7) **Surgical** for selected refractory: - Microsurgical — lymphovenous anastomosis (LVA), vascularized lymph node transfer (VLNT); - Excisional — suction-assisted lipectomy/liposuction; - Emerging: combined approaches; (8) **Infection prevention + management**: cellulitis high risk — early antibiotic, repeat episodes — prophylactic antibiotic; (9) **Education + self-management**: lifelong; (10) **Psychosocial support**; (11) **Multidisciplinary**: certified lymphedema therapist (CLT) + physiatrist + surgeon + dermatology + breast/cancer team; (12) **Modern**: early identification programs + microsurgical advances + integrated rehab" },
+      { "label": "C", "text": "Single specialty" },
+      { "label": "D", "text": "Bedrest" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Lymphedema: CDT gold standard. Early identification (BIS, PREVENT trial) reduces progression. Microsurgical options for refractory. Infection prevention. Lifelong self-management. Multidisciplinary. Modern: integrated + microsurgical advances.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "ISL Lymphology; NCCN Survivorship"
   }
 ]
