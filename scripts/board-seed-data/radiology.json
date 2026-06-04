@@ -508,5 +508,515 @@
     "board_topic": "msk_nontrauma",
     "board_age_group": "adult",
     "reference_source": "CDC Pain Guidelines 2022; SIR + ASRA"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 70 ปี acute severe headache + decreased consciousness + GCS 11 — CT พบ hyperdense lesion in right basal ganglia 4 cm with mass effect + intraventricular extension\n\nคำถาม: diagnosis + immediate management",
+    "choices": [
+      { "label": "A", "text": "Tension headache — discharge" },
+      { "label": "B", "text": "Acute intracerebral hemorrhage (ICH): (1) **CT findings**: hyperdense (50-80 HU) lesion — basal ganglia + thalamus typical hypertensive site; mass effect, midline shift, intraventricular extension (worse prognosis); (2) **Differential by location**: hypertensive (BG, thalamus, pons, cerebellum), amyloid angiopathy (lobar, elderly), AVM/aneurysm (atypical location), tumor (rim enhancement, edema disproportionate), hemorrhagic transformation of infarct; (3) **CTA** to evaluate underlying vascular lesion (spot sign predicts expansion); (4) **Management per AHA 2022 ICH guidelines**: BP control (SBP target 130-150 in INTERACT trials), reverse anticoagulation (PCC for warfarin, idarucizumab for dabigatran, andexanet for FXa-i), ICU admission, neurosurgery consult for cerebellar > 3 cm or hydrocephalus (EVD), supratentorial surgery limited role (MISTIE III — minimally invasive evacuation selected); (5) **ICH score** for prognosis (GCS, age, ICH volume, IVH, location)" },
+      { "label": "C", "text": "Plain X-ray skull" },
+      { "label": "D", "text": "Lumbar puncture first" },
+      { "label": "E", "text": "Observation only" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Hyperdense BG lesion = hypertensive ICH. CTA to exclude vascular cause. AHA 2022: BP control, reverse anticoag, NSG for selected cerebellar/hydrocephalus. ICH score prognosis.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AHA/ASA ICH Guidelines 2022; ACR Appropriateness Criteria"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 45 ปี thunderclap headache (worst of life) + neck stiffness + photophobia — NCCT head 6 ชั่วโมงหลัง onset ปกติ\n\nคำถาม: SAH workup next step",
+    "choices": [
+      { "label": "A", "text": "Discharge home" },
+      { "label": "B", "text": "Suspected SAH workup: (1) **NCCT sensitivity** for SAH: ~ 100% within 6h of onset on modern scanner with neuroradiologist read (Perry 2011); drops to ~ 85% at 24h, ~ 50% at 1 week — blood becomes isodense; (2) **If CT negative but high clinical suspicion** → **lumbar puncture** — look for xanthochromia (yellow CSF from bilirubin, takes 12 h to develop — most reliable after 12h), elevated RBC count not decreasing from tube 1 → 4; (3) **CTA or MRA** for aneurysm detection after SAH confirmed (or as alternative to LP in selected — CTA-only protocols controversial); (4) **DSA** gold standard if CTA negative but high suspicion; (5) **Management of confirmed aneurysmal SAH**: securing aneurysm (clipping vs coiling — ISAT trial favored coiling for selected), nimodipine for vasospasm prevention, monitor for hydrocephalus, rebleed, vasospasm (TCD, CTA, DSA), DCI; Hunt-Hess + WFNS + Fisher scores for prognosis" },
+      { "label": "C", "text": "Repeat CT in 24 h" },
+      { "label": "D", "text": "MRI brain only" },
+      { "label": "E", "text": "Antibiotics empirically" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Thunderclap HA + negative CT < 6h does NOT exclude SAH late; classic teaching = LP for xanthochromia. CTA to find aneurysm. Modern: CTA-only protocols emerging but LP still standard if > 6h.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AHA SAH Guidelines 2023; ACR Appropriateness Criteria Headache"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 35 ปี ADPKD (autosomal dominant polycystic kidney disease) + family history of SAH — screening for intracranial aneurysm",
+    "choices": [
+      { "label": "A", "text": "No screening needed" },
+      { "label": "B", "text": "Aneurysm screening in ADPKD: (1) **Risk**: ADPKD has 4-10× general population risk of intracranial aneurysm (~ 9-12% prevalence vs ~ 2% general); (2) **ACR Appropriateness Criteria + AHA**: screening recommended if family history of aneurysm/SAH, prior SAH, high-risk occupation (pilot), pre-transplant; routine screening of all ADPKD controversial; (3) **Modality**: **MR angiography (MRA) — 3T preferred, time-of-flight (TOF), no contrast needed** — first-line, no radiation, no contrast; sensitivity ~ 90% for ≥ 3 mm; (4) **CTA** alternative — better spatial resolution, requires contrast + radiation; (5) **DSA** reserved for treatment planning or equivocal cases; (6) **Surveillance interval**: every 5-10 years if initial negative, sooner if family history; (7) **If aneurysm found**: size + location + PHASES score guides treatment (clipping, coiling, flow diverter, observation for small < 5 mm anterior circulation); (8) **Multidisciplinary**: nephrology + neurology + neurosurgery + neuro-IR" },
+      { "label": "C", "text": "Annual CT head" },
+      { "label": "D", "text": "Plain skull X-ray" },
+      { "label": "E", "text": "Carotid US" }
+    ],
+    "correct_answer": "B",
+    "explanation": "ADPKD: 4-10× aneurysm risk. MRA TOF first-line (no contrast/radiation). Screen if family history. Surveillance q5-10y. PHASES score for treatment. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "renal_gu",
+    "board_age_group": "adult",
+    "reference_source": "ACR Appropriateness Criteria; AHA Unruptured Aneurysm Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 60 ปี progressive headache + seizure + right hemiparesis × 6 สัปดาห์ — MRI brain พบ heterogeneously enhancing mass in left frontal lobe with central necrosis + extensive vasogenic edema + crosses corpus callosum (butterfly pattern)",
+    "choices": [
+      { "label": "A", "text": "Likely abscess — antibiotics" },
+      { "label": "B", "text": "Glioblastoma (GBM, WHO grade 4 astrocytoma): (1) **Imaging features**: heterogeneous T1 hypointense / T2-FLAIR hyperintense mass, ring/heterogeneous enhancement (necrosis), butterfly pattern across corpus callosum classic, marked surrounding vasogenic edema (T2-FLAIR — tumor cells extend BEYOND enhancement); (2) **Advanced MRI** distinguishes from mimics: MR spectroscopy (↑ choline, ↓ NAA, lactate peak), MR perfusion (↑ rCBV high-grade), DWI (variable), DTI for tract mapping pre-op; (3) **Differential**: high-grade glioma, lymphoma (homogeneous enhancement, less necrosis, DWI restriction, immunocompromised), metastasis (often multiple, gray-white junction, less edema-to-tumor mismatch), abscess (DWI restriction central — different from tumor necrosis), demyelinating tumefactive lesion (open ring); (4) **Workup**: contrast MRI + advanced sequences, neuro-oncology referral, multidisciplinary tumor board, stereotactic biopsy or maximal safe resection; (5) **Molecular**: IDH mutation, MGMT methylation, EGFR, 1p/19q — guide therapy + prognosis; (6) **Standard treatment**: maximal safe resection + concurrent chemoradiation (Stupp protocol — TMZ) + adjuvant TMZ + tumor-treating fields (TTF)" },
+      { "label": "C", "text": "Migraine — discharge" },
+      { "label": "D", "text": "Stroke acute" },
+      { "label": "E", "text": "Multiple sclerosis" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Butterfly GBM = heterogeneous enhancing mass crossing corpus callosum + vasogenic edema. MR spectroscopy + perfusion differentiate from lymphoma/mets/abscess. Stupp protocol standard. Modular molecular markers.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "WHO CNS Tumor Classification 2021; NCCN CNS Cancer"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี known lung adenocarcinoma + new headache + seizure — MRI brain พบ multiple ring-enhancing lesions at gray-white junctions + surrounding vasogenic edema",
+    "choices": [
+      { "label": "A", "text": "Likely benign" },
+      { "label": "B", "text": "Brain metastases: (1) **Imaging features**: multiple lesions (most common pattern, ~ 50% have multiple), gray-white matter junction (vascular supply terminates), ring or solid enhancement, vasogenic edema (out of proportion to tumor size — finger-like extension in white matter), hemorrhage common with melanoma/renal/thyroid/choriocarcinoma; (2) **Common primaries**: lung > breast > melanoma > renal > colorectal; (3) **MRI > CT** sensitivity — gadolinium + 3D thin-section, post-contrast T1, FLAIR; (4) **Differential**: GBM (typically single, butterfly), abscess (DWI restriction central), lymphoma, demyelination, radiation necrosis (in treated patients — MR perfusion + spectroscopy differentiate), septic emboli (peripheral location); (5) **Management**: (a) symptomatic — dexamethasone for edema, AEDs only if seizure (no prophylaxis); (b) systemic therapy with CNS-active agents (osimertinib for EGFR NSCLC, alectinib for ALK, trastuzumab/T-DM1 + tucatinib for HER2+ BC); (c) **SRS (stereotactic radiosurgery)** preferred up to 4-10 lesions (NCCTG N0574, JLGK0901); (d) **WBRT** for many lesions, leptomeningeal disease — but cognitive decline; hippocampal sparing + memantine; (e) **Surgery** for symptomatic single large, accessible, primary diagnosis needed; (6) **Multidisciplinary**: neuro-oncology + radiation oncology + neurosurgery + medical oncology" },
+      { "label": "C", "text": "Single specialty" },
+      { "label": "D", "text": "Discharge" },
+      { "label": "E", "text": "Observation" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Brain mets: multiple ring-enhancing lesions at gray-white junction + edema. Lung > breast > melanoma. SRS preferred up to 4-10 lesions; WBRT for many. CNS-active systemic therapy. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "NCCN CNS Cancers; ASTRO Brain Metastases Guideline 2022"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี chronic headache — MRI brain พบ extra-axial dural-based mass with homogeneous avid enhancement + dural tail + calcification + skull hyperostosis adjacent\n\nคำถาม: most likely diagnosis + management",
+    "choices": [
+      { "label": "A", "text": "Brain abscess" },
+      { "label": "B", "text": "Meningioma: (1) **Imaging features pathognomonic**: extra-axial dural-based mass (broad dural base, CSF cleft sign separating from brain), homogeneous avid contrast enhancement, **dural tail** (enhancement extending along dura — present in ~ 60-70%, not pathognomonic but characteristic), calcification (15-20%), adjacent skull hyperostosis (psammomatous changes); (2) **MRI signal**: T1 iso to gray matter, T2 iso to hyperintense, diffusion restriction variable; (3) **Locations**: parasagittal/falcine (most common), convexity, sphenoid wing, olfactory groove, suprasellar, posterior fossa, intraventricular; (4) **Grading WHO 2021**: Grade 1 (benign ~ 80%), Grade 2 atypical (~ 15%), Grade 3 anaplastic/malignant (~ 5% — higher recurrence); (5) **Management**: (a) asymptomatic small typical → observation with serial MRI (low growth rate); (b) symptomatic or growing → surgery (Simpson grading of resection — extent predicts recurrence); (c) **SRS** for small (≤ 3 cm) or surgical residual; (d) RT for recurrent, residual, atypical/malignant; (e) hormonal management — progesterone receptor positive may grow in pregnancy; (6) **Multidisciplinary**: neurosurgery + radiation oncology + neuro-oncology" },
+      { "label": "C", "text": "Glioblastoma" },
+      { "label": "D", "text": "Metastasis" },
+      { "label": "E", "text": "Stroke" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Meningioma: extra-axial dural-based + dural tail + calcification + hyperostosis. WHO grading 1-3. Surgery for symptomatic, SRS for small. Multidisciplinary. Pregnancy growth risk (PR+).",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "WHO CNS Tumor 2021; ACR Appropriateness Criteria"
+  },
+  {
+    "scenario": "หญิงอายุ 35 ปี amenorrhea + galactorrhea + bitemporal hemianopia — MRI พบ sellar/suprasellar mass 1.5 cm with homogeneous enhancement + chiasm compression\n\nคำถาม: diagnosis + workup",
+    "choices": [
+      { "label": "A", "text": "Likely brain tumor — surgery first" },
+      { "label": "B", "text": "Pituitary macroadenoma (likely prolactinoma): (1) **Imaging**: dedicated sellar MRI thin-section pre/post gadolinium — microadenoma (< 10 mm — hypoenhancing relative to normal gland on dynamic post-contrast) vs macroadenoma (≥ 10 mm — heterogeneous enhancement, suprasellar extension, chiasm compression — 'snowman' configuration when notched by diaphragma sellae); (2) **Workup**: hormonal panel — prolactin, IGF-1 (GH excess — acromegaly), 8 AM cortisol + ACTH or 24h UFC (Cushing), TSH + FT4, LH/FSH/estradiol or testosterone; **hook effect** in very high prolactin (> 200,000) — dilute sample; (3) **Visual field** (formal perimetry) for chiasm compression; (4) **Differentials sellar/suprasellar mass**: pituitary adenoma (most common adult), craniopharyngioma (calcification + cystic — children + adults), Rathke cleft cyst, meningioma, germinoma (children, midline), aneurysm (CTA/MRA!), pituitary hyperplasia (pregnancy, primary hypothyroidism), lymphocytic hypophysitis (postpartum); (5) **Management**: (a) **prolactinoma** — dopamine agonist (cabergoline > bromocriptine) first-line even with chiasm compression — usually shrinks tumor; (b) **non-functioning + symptomatic** (visual loss, hypopituitarism) — transsphenoidal surgery; (c) **GH-secreting (acromegaly)** — surgery + somatostatin analog (octreotide, lanreotide, pasireotide) or pegvisomant; (d) **Cushing's disease** — surgery, then medical (mifepristone, osilodrostat); (e) RT for residual/recurrent; (6) **Multidisciplinary**: endocrinology + neurosurgery + neuro-ophthalmology" },
+      { "label": "C", "text": "Migraine — discharge" },
+      { "label": "D", "text": "Multiple sclerosis" },
+      { "label": "E", "text": "Stroke" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pituitary macroadenoma. Workup: hormonal panel (prolactin, IGF-1, cortisol, TSH) + visual field. Prolactinoma → cabergoline first-line. Other types → surgery. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "Endocrine Society Pituitary Guidelines; ACR Appropriateness"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 50 ปี unilateral sensorineural hearing loss + tinnitus + imbalance × 2 ปี — MRI พบ enhancing mass in cerebellopontine angle (CPA) extending into internal auditory canal (ice cream cone appearance)",
+    "choices": [
+      { "label": "A", "text": "Stroke" },
+      { "label": "B", "text": "Vestibular schwannoma (acoustic neuroma): (1) **Imaging gold standard**: MRI with gadolinium + high-resolution T2 CISS/FIESTA — avidly enhancing mass at CPA with intracanalicular component into IAC ('ice cream cone'); (2) **Differential CPA mass**: vestibular schwannoma (most common, ~ 80% of CPA tumors), meningioma (dural-based, dural tail, hyperostosis), epidermoid (DWI bright — restricted diffusion, T2 bright, non-enhancing), arachnoid cyst (CSF signal all sequences, non-enhancing), facial nerve schwannoma; (3) **Bilateral vestibular schwannoma** = pathognomonic for NF2 (genetic testing); (4) **Audiogram**: sensorineural hearing loss + speech discrimination disproportionately decreased; (5) **Management options based on size, growth, age, hearing status**: (a) **observation + serial MRI** for small (< 1.5 cm), elderly, slow-growing — many don't grow; (b) **SRS (gamma knife, cyberknife)** for small-medium (< 3 cm) — preserves hearing better than surgery in many; (c) **microsurgery** (translabyrinthine, retrosigmoid, middle fossa approaches) for large, brainstem compression, young; goal — facial nerve preservation primary; (6) **Multidisciplinary**: neurosurgery + neurotology/ENT + radiation oncology + audiology; (7) **NF2 management**: bevacizumab for selected, complex multidisciplinary care" },
+      { "label": "C", "text": "Migraine" },
+      { "label": "D", "text": "Discharge" },
+      { "label": "E", "text": "Likely benign — no workup" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Vestibular schwannoma: CPA mass + intracanalicular component ('ice cream cone') on MRI. Bilateral = NF2. Options: observation, SRS, microsurgery. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AAO-HNS Vestibular Schwannoma Guidelines; ACR"
+  },
+  {
+    "scenario": "หญิงอายุ 28 ปี episodes of visual loss + paresthesia + ataxia separated in time — MRI พบ multiple ovoid T2/FLAIR hyperintense lesions perpendicular to ventricles (Dawson fingers) + some enhancing\n\nคำถาม: imaging diagnosis MS",
+    "choices": [
+      { "label": "A", "text": "Stroke" },
+      { "label": "B", "text": "Multiple sclerosis — McDonald 2017 criteria (revised 2024): (1) **MRI is gold standard for diagnosis**: typical lesions — ovoid T2/FLAIR hyperintense; classic locations — periventricular (Dawson fingers perpendicular to ventricles), juxtacortical/cortical, infratentorial (brainstem, cerebellum), spinal cord (cervical > thoracic, < 2 vertebral segments, partial cross-section); (2) **Active vs chronic**: enhancing lesion (active inflammation, BBB breakdown — gadolinium), T2 lesion without enhancement (chronic), black holes T1 (axonal loss); (3) **McDonald 2017 Criteria**: dissemination in space (DIS) — ≥ 1 T2 lesion in ≥ 2 of 4 typical locations (periventricular, cortical/juxtacortical, infratentorial, spinal cord); + dissemination in time (DIT) — new T2 or enhancing lesion on follow-up scan OR simultaneous enhancing + non-enhancing lesions on single scan; (4) **CSF**: oligoclonal bands (substitute for DIT in 2017 criteria), elevated IgG index; (5) **Differential**: NMOSD (longitudinally extensive transverse myelitis > 3 segments, optic neuritis, AQP4 ab), MOGAD (MOG ab), ADEM (monophasic, post-infectious), small vessel ischemic (older, vascular risk factors), neurosarcoidosis, vasculitis, Susac, CADASIL; (6) **Management**: high-efficacy DMTs early (ocrelizumab, ofatumumab, natalizumab, S1P modulators) — paradigm shift toward early aggressive treatment; (7) **Multidisciplinary MS care**: neurology + MS specialist + radiology + PT/OT + urology + mental health" },
+      { "label": "C", "text": "Migraine — discharge" },
+      { "label": "D", "text": "Brain tumor" },
+      { "label": "E", "text": "Discharge — observation" }
+    ],
+    "correct_answer": "B",
+    "explanation": "MS = MRI + McDonald 2017 (DIS + DIT). Periventricular Dawson fingers, juxtacortical, infratentorial, spinal cord. Oligoclonal bands substitute DIT. Differential NMOSD/MOGAD/ADEM. Early high-efficacy DMT.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "McDonald Criteria 2017 (revised 2024); AAN MS Guidelines"
+  },
+  {
+    "scenario": "หญิงอายุ 40 ปี bilateral optic neuritis + longitudinally extensive transverse myelitis > 3 vertebral segments — MRI spine T2 hyperintense central cord lesion spanning C2-C7\n\nคำถาม: diagnosis suspected",
+    "choices": [
+      { "label": "A", "text": "MS — start interferon" },
+      { "label": "B", "text": "Neuromyelitis optica spectrum disorder (NMOSD): (1) **Hallmark imaging**: longitudinally extensive transverse myelitis (LETM, ≥ 3 contiguous vertebral segments) — central cord T2 hyperintense, enhancement, atypical for MS (MS lesions < 2 segments, partial cross-section); optic neuritis often bilateral or chiasmal involvement (severe vs MS); area postrema lesion (intractable hiccups/vomiting); brain lesions if any are atypical for MS — diencephalic, periependymal; (2) **Serology**: AQP4-IgG antibody — pathognomonic when positive (specificity > 99%), positive in ~ 75% of NMOSD; AQP4-negative NMOSD — some have MOG-IgG (MOGAD — overlap but distinct entity); (3) **Wingerchuk 2015 criteria** for NMOSD: AQP4-positive + 1 core clinical characteristic (optic neuritis, LETM, area postrema, brainstem, narcolepsy/diencephalic, cerebral with NMOSD-typical MRI lesions); AQP4-negative requires ≥ 2 core clinical characteristics + more stringent MRI criteria; (4) **Treatment**: acute relapse — high-dose methylprednisolone + plasmapheresis for severe; (5) **Prevention** — disease modifying therapy in NMOSD distinct from MS (some MS DMTs WORSEN NMOSD — e.g., interferon, fingolimod, natalizumab): - **Eculizumab** (anti-C5) approved AQP4+; - **Inebilizumab** (anti-CD19); - **Satralizumab** (anti-IL-6R); - Off-label: rituximab, azathioprine, mycophenolate; (6) **Multidisciplinary**: neurology (neuroimmunology) + ophthalmology + PT/OT + urology" },
+      { "label": "C", "text": "Stroke" },
+      { "label": "D", "text": "Migraine" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "NMOSD: LETM ≥ 3 segments + optic neuritis + AQP4-IgG. Wingerchuk criteria. CRITICAL: MS DMTs (interferon, fingolimod, natalizumab) WORSEN NMOSD. Treat with eculizumab/inebilizumab/satralizumab/rituximab.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "Wingerchuk NMOSD Criteria 2015; AAN/IPMSSG"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 75 ปี progressive gait disturbance (magnetic gait) + urinary incontinence + cognitive decline × 1 ปี — MRI brain พบ ventriculomegaly disproportionate to sulcal atrophy + Evans index 0.35\n\nคำถาม: diagnosis + workup",
+    "choices": [
+      { "label": "A", "text": "Alzheimer disease" },
+      { "label": "B", "text": "Normal pressure hydrocephalus (NPH) — Hakim triad: (1) **Clinical triad** (often incomplete): gait apraxia (magnetic gait, broad-based, shuffling — most responsive feature), urinary incontinence, cognitive decline (subcortical pattern); (2) **Imaging features (iNPH)**: ventriculomegaly out of proportion to atrophy — Evans index ≥ 0.30 (max width frontal horns / max biparietal diameter); callosal angle (coronal at posterior commissure) < 90° (NPH) vs > 90° (atrophy); DESH pattern (disproportionately enlarged subarachnoid spaces hydrocephalus) — tight high convexity + dilated Sylvian fissures (specific for iNPH); CSF flow void aqueduct; (3) **Workup**: high-volume LP (tap test — 30-50 mL CSF removed, gait/cognition tested before + after — improvement suggests responsive); external lumbar drainage (3-5 days, more sensitive); CSF pressure measurement (normal — by definition); (4) **Differentials**: Alzheimer (cortical atrophy disproportionate), vascular dementia, Lewy body, PSP, normal pressure hydrocephalus secondary (post-SAH, post-meningitis, post-traumatic); (5) **Treatment**: ventriculoperitoneal shunt (programmable valve) for responders — gait improves most predictably, cognition less so; (6) **Multidisciplinary**: neurology + neurosurgery + neuropsychology + PT/OT + urology" },
+      { "label": "C", "text": "Migraine" },
+      { "label": "D", "text": "Discharge" },
+      { "label": "E", "text": "Single specialty" }
+    ],
+    "correct_answer": "B",
+    "explanation": "NPH: triad gait/incontinence/cognitive + ventriculomegaly disproportionate (Evans ≥ 0.30, callosal angle < 90°, DESH). Tap test + ELD predict shunt response. VP shunt for responders. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "International Society for Hydrocephalus Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี HIV+ CD4 50 + multiple focal neurological deficits — MRI brain พบ multiple periventricular + deep gray homogeneously enhancing lesions with restricted diffusion + subependymal spread",
+    "choices": [
+      { "label": "A", "text": "Likely toxoplasmosis only — empiric treatment" },
+      { "label": "B", "text": "Primary CNS lymphoma (PCNSL): (1) **Imaging features**: periventricular + deep gray location (basal ganglia, thalami, corpus callosum), subependymal spread (highly characteristic), homogeneous enhancement (vs ring/heterogeneous in GBM/abscess/mets), restricted diffusion (high cellularity — DWI bright, ADC dark); less edema-to-tumor mismatch than GBM; (2) **In immunocompromised** (HIV, transplant, immunosuppressed) — often more heterogeneous, may have necrosis (less typical than immunocompetent); (3) **Differential in HIV with brain lesions**: toxoplasmosis (most common — ring-enhancing, eccentric target sign, basal ganglia, multiple, no DWI restriction usually), PCNSL (single or few, periventricular, DWI restricted, subependymal), PML (T2 hyperintense, subcortical white matter, NO enhancement, JC virus), tuberculoma (ring-enhancing, basal cisterns/meningitis), cryptococcoma; (4) **Workup**: contrast MRI + advanced (perfusion — low rCBV PCNSL vs high GBM; spectroscopy — high choline, lipid-lactate), FDG-PET (hypermetabolic PCNSL vs hypometabolic toxo), CSF analysis (EBV PCR positive in HIV-PCNSL, flow cytometry, cytology — limited sensitivity), serum LDH, slit-lamp eye exam for ocular involvement; (5) **Avoid steroids before biopsy** if possible — can cause rapid lymphoma regression and obscure diagnosis; (6) **Treatment**: HD-MTX-based polychemotherapy (rituximab, temozolomide, MATRIX/Bonn regimens); consolidation with autologous SCT or WBRT in selected; cART for HIV-PCNSL; (7) **Multidisciplinary**: hematology + neuro-oncology + ID (HIV) + radiation oncology + neurosurgery" },
+      { "label": "C", "text": "Stroke" },
+      { "label": "D", "text": "Migraine" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "PCNSL in HIV: periventricular + subependymal + DWI restriction + homogeneous enhancement. Differential vs toxoplasmosis/PML/TB. AVOID empiric steroids. HD-MTX + rituximab. Multidisciplinary.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "NCCN PCNSL Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 60 ปี known prostate cancer + acute lower back pain + urinary retention + bilateral leg weakness × 24 hr — MRI spine พบ T9-T10 epidural mass compressing cord with T2 hyperintensity (cord edema)\n\nคำถาม: diagnosis + management",
+    "choices": [
+      { "label": "A", "text": "Conservative care" },
+      { "label": "B", "text": "Metastatic spinal cord compression (MSCC) — oncologic emergency: (1) **Imaging**: **whole spine MRI** (gadolinium not strictly required) is gold standard — entire vertebral column imaged (multiple levels of involvement common, may change radiation field); shows epidural mass + cord compression + edema (T2 hyperintensity) + level of block; STIR sensitive for vertebral marrow disease; (2) **CT myelogram** alternative if MRI contraindicated; CT for bone detail + planning instrumentation; (3) **Plain X-ray** insensitive (50% bone loss needed) — not adequate; (4) **Common primaries**: prostate, breast, lung, RCC, multiple myeloma; (5) **Diagnosis + management urgent — within hours not days**: (a) **High-dose dexamethasone immediately** (10 mg IV bolus + 4-16 mg q6h) — start before imaging if high clinical suspicion; (b) **Urgent surgical consultation** — laminectomy + tumor debulking + instrumentation (Patchell 2005 RCT showed surgery + RT > RT alone for selected — single level, ambulatory, life expectancy > 3 months, radioresistant); (c) **Urgent radiotherapy** — 8 Gy × 1 or 30 Gy / 10 fractions; SBRT for selected; (d) **Systemic therapy** for radio-sensitive (lymphoma, germ cell, small cell); (e) **Ambulation status at presentation = strongest predictor** of post-treatment ambulation — DO NOT DELAY; (6) **Multidisciplinary** — radiation oncology + neurosurgery/spine + medical oncology + radiology + PT/OT + palliative care + urology; (7) **Bisphosphonates / denosumab** for prevention" },
+      { "label": "C", "text": "Single specialty" },
+      { "label": "D", "text": "Discharge" },
+      { "label": "E", "text": "Outpatient follow-up" }
+    ],
+    "correct_answer": "B",
+    "explanation": "MSCC = oncologic emergency. Whole spine MRI gold standard. IMMEDIATE dexamethasone + urgent surgery/RT consultation. Ambulation at presentation strongest predictor of outcome. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "NCCN Adult Cancer Pain; ASTRO Bone Metastases"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 30 ปี MVC + neck pain + GCS 15 + no neuro deficit + no distracting injury + no intoxication\n\nคำถาม: cervical spine imaging decision",
+    "choices": [
+      { "label": "A", "text": "Always image with X-ray" },
+      { "label": "B", "text": "Cervical spine clearance — Canadian C-Spine + NEXUS criteria: (1) **NEXUS criteria** (low-risk — no imaging needed if ALL met): no posterior midline tenderness, no focal neurological deficit, normal alertness, no intoxication, no distracting injury; (2) **Canadian C-Spine Rule** (more sensitive in trials — Stiell): - **High-risk factors** mandate imaging: age ≥ 65, dangerous mechanism (fall > 3 ft / 5 stairs, axial load, MVC > 100 km/h, rollover, ejection, bicycle struck), paresthesias in extremities; - If NO high-risk → check **low-risk** allowing safe range of motion assessment: simple rear-end MVC, sitting position in ED, ambulatory at any time, delayed onset of neck pain, absence of midline tenderness; - If any low-risk feature → assess **45° rotation L+R** — if able → no imaging; if unable → image; (3) **Modality choice**: **CT cervical spine** if imaging indicated — replaces plain films (much higher sensitivity > 98%, plain X-ray ~ 50%); MRI for cord/ligamentous injury suspected (neuro deficit, persistent pain with normal CT); (4) **In obtunded patients** — protocol varies, CT alone often sufficient in modern era; MRI controversial; (5) **Pediatric considerations** — flexion injuries higher in young children, SCIWORA (spinal cord injury without radiographic abnormality), use PECARN-style validated rules + lower threshold for MRI; (6) **Documentation** of clinical clearance + decision rationale critical" },
+      { "label": "C", "text": "Always do MRI" },
+      { "label": "D", "text": "X-ray plain only sufficient" },
+      { "label": "E", "text": "Bone scan" }
+    ],
+    "correct_answer": "B",
+    "explanation": "C-spine clearance: NEXUS or Canadian C-Spine Rule. CT (not X-ray) if imaging needed. MRI for cord/ligamentous. Pediatric SCIWORA consideration.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "Canadian C-Spine Rule (Stiell); NEXUS; ACR Appropriateness"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 45 ปี chronic low back pain + radicular pain left leg in L5 distribution + foot drop weakness × 2 สัปดาห์ — failed conservative therapy 6 สัปดาห์",
+    "choices": [
+      { "label": "A", "text": "Always image acutely" },
+      { "label": "B", "text": "Lumbar disc herniation with radiculopathy + neuro deficit — MRI indicated: (1) **ACR Appropriateness Criteria — low back pain**: routine imaging NOT indicated in acute non-specific LBP < 6 weeks WITHOUT red flags (Choosing Wisely); (2) **Red flags** mandating imaging: progressive neuro deficit, suspected cauda equina (saddle anesthesia, bladder/bowel dysfunction), suspected malignancy (history of cancer, weight loss, age > 50, night pain), suspected infection (fever, IVDU, immunocompromised), suspected fracture (trauma, osteoporosis, steroid use), failed conservative therapy > 4-6 weeks with persistent radiculopathy + neuro deficit (this patient); (3) **MRI lumbar spine — modality of choice**: T1/T2 sagittal + axial; STIR for edema; gadolinium for post-op (scar vs recurrent disc), infection, tumor; (4) **Findings**: disc bulge vs herniation (protrusion < extrusion < sequestered), location (central, paracentral, foraminal, far lateral — predicts which nerve compressed), level, modic changes (endplate edema/sclerosis suggests degenerative), facet arthropathy, stenosis (central, lateral recess, foraminal); (5) **Management**: continued conservative if symptoms tolerable (PT, NSAIDs, neuropathic agents); epidural steroid injection (transforaminal more targeted) for refractory; surgery (microdiscectomy) for: progressive neuro deficit, cauda equina (emergency), severe persistent pain failing conservative; (6) **Multidisciplinary**: PCP + PT + pain medicine + spine surgery + IR" },
+      { "label": "C", "text": "Surgery without imaging" },
+      { "label": "D", "text": "X-ray only" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "LBP imaging: NOT needed acutely without red flags. MRI for red flags or failed conservative + neuro deficit. ACR Appropriateness + Choosing Wisely. Surgery for cauda equina/progressive deficit/refractory.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "ACR Appropriateness Criteria; AAFP/ACP Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี acute severe low back pain + bilateral leg weakness + urinary retention + saddle anesthesia × 8 ชั่วโมง",
+    "choices": [
+      { "label": "A", "text": "Conservative management" },
+      { "label": "B", "text": "Cauda equina syndrome — surgical emergency: (1) **Classic features**: severe low back pain + bilateral leg weakness/numbness + saddle (perineal) anesthesia + urinary retention (overflow incontinence) or fecal incontinence + decreased rectal tone + sexual dysfunction; (2) **Etiology**: massive central disc herniation (most common), epidural hematoma (post-procedure, anticoagulants), epidural abscess (fever, IVDU, immunocompromised), tumor/metastases, trauma, severe stenosis; (3) **EMERGENT MRI lumbar spine** — must be obtained urgently (CT myelogram if MRI contraindicated); time to decompression linked to outcomes (within 24-48h, ideally < 24h); (4) **Findings**: compression of cauda equina nerve roots at level of lesion; (5) **Management**: (a) emergent neurosurgical/orthopedic spine consultation; (b) emergent decompressive surgery (laminectomy + discectomy or abscess drainage); (c) high-dose dexamethasone for tumor/abscess while preparing for OR; (d) antibiotics if abscess + culture-directed; (e) Foley catheter, monitor neuro; (6) **Outcome**: incomplete syndrome (preserved sensation, no incontinence) better outcomes than complete; bladder dysfunction may be incomplete recovery even with prompt surgery; (7) **Documentation**: clinical exam findings (post-void residual, rectal tone, perineal sensation) + imaging + time of surgery — medicolegal high-risk; (8) **Multidisciplinary**: ED + spine surgery + radiology + anesthesia + urology + PT/OT" },
+      { "label": "C", "text": "Outpatient MRI in 1 week" },
+      { "label": "D", "text": "Discharge with NSAIDs" },
+      { "label": "E", "text": "Single specialty" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cauda equina = surgical emergency. Bilateral leg sx + saddle anesthesia + urinary retention. EMERGENT MRI + surgery within 24-48h. Multidisciplinary. Medicolegal high-risk — document exam.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "NICE Cauda Equina Guidelines; ACR Appropriateness"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 70 ปี recent TIA — workup for source of stroke including carotid evaluation\n\nคำถาม: carotid imaging modality choice",
+    "choices": [
+      { "label": "A", "text": "No imaging" },
+      { "label": "B", "text": "Carotid imaging for stroke/TIA workup: (1) **Carotid duplex US (CDUS) — first-line screening**: no radiation, no contrast, widely available, evaluates plaque morphology + degree of stenosis via velocity criteria (peak systolic velocity); limitations — operator-dependent, calcified plaque shadowing, tandem lesions, distal/intracranial vessels not assessed; (2) **CT angiography (CTA) head + neck**: high spatial resolution, evaluates aortic arch + cervical + intracranial vessels (whole pathway), excellent for stenosis + plaque calcification + occlusion; iodinated contrast — caution CKD; radiation; (3) **MR angiography (MRA)**: TOF (no contrast — but tends to overestimate stenosis, especially turbulent flow), contrast-enhanced MRA (gadolinium, more accurate); no radiation; longer; (4) **DSA**: gold standard but invasive (small stroke risk) — reserved for treatment planning, equivocal imaging; (5) **Severity quantification** by NASCET method (% stenosis based on residual vs distal normal lumen); (6) **Management based on severity + symptoms**: - **Symptomatic 70-99% stenosis** → carotid endarterectomy (CEA) within 14 days ideal (NASCET, ECST) OR carotid artery stenting (CAS) for selected (high surgical risk); - **Symptomatic 50-69%** → CEA reasonable if low surgical risk + early after event; - **Asymptomatic 60-99%** → benefit smaller with modern medical therapy (CREST-2 ongoing) — individualized; (7) **Medical therapy in ALL**: antiplatelet (aspirin or clopidogrel), high-intensity statin, BP control, DM control, smoking cessation — modern medical therapy reduces benefit of revascularization in asymptomatic; (8) **Multidisciplinary**: stroke neurology + vascular surgery + IR + radiology" },
+      { "label": "C", "text": "Bone scan" },
+      { "label": "D", "text": "Skull X-ray" },
+      { "label": "E", "text": "PET scan" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Carotid imaging: CDUS first-line; CTA most comprehensive; MRA no radiation; DSA gold standard. CEA for symptomatic 70-99% (or 50-69% selected). Modern medical therapy reduces revasc benefit in asymptomatic.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "AHA/ASA Stroke Prevention Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 35 ปี post-MVC + neck pain + ipsilateral Horner syndrome + contralateral hemiparesis × 6 ชั่วโมง — MRI brain พบ no acute infarct yet",
+    "choices": [
+      { "label": "A", "text": "Migraine — discharge" },
+      { "label": "B", "text": "Carotid dissection — high clinical suspicion warrants vascular imaging: (1) **Clinical features**: ipsilateral neck/face/head pain, ipsilateral Horner syndrome (sympathetic plexus on carotid), cranial nerve palsies (IX-XII near carotid), pulsatile tinnitus, TIA/stroke (embolic distally) — delayed up to days/weeks; (2) **Risk factors**: trauma (MVC, neck manipulation — chiropractic, hyperextension), connective tissue disease (Ehlers-Danlos, Marfan, fibromuscular dysplasia), spontaneous; (3) **Imaging**: - **CTA neck** — first-line in trauma: stenosis (string sign), occlusion, pseudoaneurysm, intimal flap, intramural hematoma (eccentric crescent narrowing lumen); - **MRA neck + fat-suppressed T1 axial neck** — sensitive for intramural hematoma (crescent of T1 hyperintense methemoglobin in vessel wall); MRA without fat sat misses it; - **DSA** for treatment planning or equivocal; (4) **Vertebral artery dissection** similar — posterior circulation symptoms; (5) **Management**: - **Antithrombotic** — antiplatelet (aspirin) vs anticoagulation (warfarin/DOAC) — CADISS RCT showed equivalent for stroke prevention; antiplatelet generally preferred; - Treat for 3-6 months then reimage — most dissections heal; - **Endovascular** for failure of medical, expanding pseudoaneurysm, hemodynamic compromise; - **Surgery** rarely; (6) **Avoid IV tPA** if dissection with intracranial extension (risk extension); (7) **Multidisciplinary**: stroke neurology + vascular surgery + neuro-IR" },
+      { "label": "C", "text": "Likely viral" },
+      { "label": "D", "text": "Stroke alone — no further workup" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Carotid dissection: post-trauma + Horner + delayed stroke. CTA or MRA + fat-sat T1 (crescent intramural hematoma). Antiplatelet vs anticoag (CADISS — equivalent). 3-6 months treatment + reimage. Multidisciplinary.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AHA Cervical Dissection Statement; ACR Appropriateness"
+  },
+  {
+    "scenario": "หญิงอายุ 30 ปี postpartum 2 สัปดาห์ + severe headache + seizure + papilledema — MRI พบ T2 hyperintensity in bilateral parasagittal regions + MRV พบ filling defect in superior sagittal sinus\n\nคำถาม: diagnosis + management",
+    "choices": [
+      { "label": "A", "text": "Migraine — discharge" },
+      { "label": "B", "text": "Cerebral venous sinus thrombosis (CVST): (1) **Risk factors**: pregnancy/postpartum (hypercoagulable), OCPs, thrombophilia (Factor V Leiden, prothrombin, antiphospholipid, protein C/S deficiency, antithrombin deficiency), dehydration, malignancy, infection (mastoiditis, sinusitis — dural sinus thrombosis), trauma, IBD, recent COVID/vaccine; (2) **Clinical**: headache (most common, may be only symptom — DDx of post-LP headache, etc.), seizures, focal deficits (depending on infarct territory — often venous infarct doesn't follow arterial distribution), papilledema, encephalopathy; (3) **Imaging**: - **NCCT** — hyperdense thrombus in sinus (cord sign, dense triangle); often normal; - **CT venography (CTV) or MR venography (MRV)** — gold standard non-invasive: filling defect, lack of opacification, empty delta sign on contrast CT (post-contrast triangle around sagittal sinus clot); - **MRI brain** — T2 hyperintense parenchymal lesions (vasogenic + cytotoxic edema mixed), hemorrhagic transformation, in non-arterial distribution; - **DSA** rarely needed; (4) **Management** (AHA 2011 + 2024 Statement): - **Anticoagulation** — heparin (LMWH preferred or UFH) acutely, then transition to warfarin or DOAC × 3-12 months (depending on cause); pregnancy — LMWH; - Even if hemorrhagic transformation — still anticoagulate (paradox — bleeding due to congestion improves with restoration of venous drainage); - Endovascular thrombectomy for deterioration despite anticoag (TO-ACT trial — not superior, but selected cases); - Decompressive craniectomy for malignant edema; - Treat underlying cause; (5) **Multidisciplinary**: neurology + hematology + neurosurgery + OB if peripartum" },
+      { "label": "C", "text": "Stroke arterial — tPA" },
+      { "label": "D", "text": "Tumor" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "CVST in postpartum: headache + seizure + papilledema + filling defect on MRV. Anticoagulate even if hemorrhagic transformation. Treat 3-12 months + underlying cause. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AHA CVST Statement 2024; EAN Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 25 ปี ICH lobar — angiography เพื่อหา etiology พบ tangle of abnormal vessels with feeding arteries from MCA + early draining vein",
+    "choices": [
+      { "label": "A", "text": "Likely tumor — biopsy" },
+      { "label": "B", "text": "Brain arteriovenous malformation (AVM): (1) **Imaging features**: nidus (tangle of dysplastic vessels), enlarged feeding arteries, early draining vein (high flow), often surrounding gliosis; (2) **Modalities**: - CT may show calcifications, hemorrhage; - CTA/MRA — first-line non-invasive; - **DSA — gold standard** — defines feeding arteries, nidus, draining veins, aneurysms (intranidal — high rebleed risk); - MRI to evaluate parenchymal changes + relationship to eloquent cortex; (3) **Presentation**: hemorrhage (most common — 50%, lobar in young), seizures, headache, focal neurologic deficit, incidental; **risk of hemorrhage** ~ 2-4%/year (cumulative — higher with prior bleed, deep location, exclusive deep venous drainage, associated aneurysm); (4) **Spetzler-Martin grading** (size, eloquence, venous drainage) for surgical risk; (5) **Management options** (multimodal — individualized by SM grade + age + symptoms): - **Microsurgical resection** for accessible low-grade; - **Stereotactic radiosurgery** for small (< 3 cm) deep/eloquent (gamma knife — obliteration over 2-3 years, latency period bleed risk); - **Endovascular embolization** — adjunct before surgery/SRS or curative for selected; - **Observation** for unruptured high-grade (ARUBA RCT — controversial — showed observation better than intervention for unruptured at 33 months, but longer-term follow-up needed); (6) **Ruptured AVM** — secure the AVM (vs unruptured ARUBA controversy not applicable to ruptured); (7) **Multidisciplinary**: neurosurgery + neuro-IR + radiation oncology + radiology + neurology" },
+      { "label": "C", "text": "Conservative" },
+      { "label": "D", "text": "Single specialty" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "AVM: nidus + feeders + early draining vein. DSA gold standard. SM grading. Multimodal treatment (surgery, SRS, embolization). ARUBA — observation may be appropriate for unruptured. Ruptured = treat. Multidisciplinary.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AHA/ASA AVM Guidelines; ARUBA Trial"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 50 ปี new-onset seizure — MRI พบ popcorn-appearance lesion with mixed signal (T2 hyperintense center, T2 hypointense rim — hemosiderin) without surrounding edema",
+    "choices": [
+      { "label": "A", "text": "AVM — embolize" },
+      { "label": "B", "text": "Cerebral cavernous malformation (cavernoma): (1) **Imaging characteristic**: 'popcorn' appearance — heterogeneous mixed-signal core (different ages of blood products on T1 + T2 — methemoglobin, deoxyhemoglobin), surrounding rim of hemosiderin (low signal on T2 + GRE/SWI — 'blooming'); **GRE / SWI ESSENTIAL** — most sensitive for hemosiderin + multiple lesions detection; (2) **Differential**: cavernoma (popcorn + hemosiderin rim, NO early enhancement), AVM (high flow, contrast enhancement, vascular nidus), hemorrhagic neoplasm (mass effect, edema), developmental venous anomaly (DVA — caput medusae, often co-exists with cavernoma), micro-hemorrhages of CAA (elderly, lobar, no popcorn appearance); (3) **DSA — typically negative** (low flow lesion) — distinguishes from AVM; (4) **Familial CCM** (KRIT1, CCM2, CCM3 mutations) — multiple lesions, autosomal dominant — genetic counseling; (5) **Hemorrhage risk**: 0.5-2% per year (untreated, supratentorial), higher in brainstem, prior hemorrhage, infratentorial location, deep venous drainage; (6) **Management**: - Asymptomatic incidental → observation + serial MRI; - **Seizures controlled with AED** + observation if surgically inaccessible; - **Surgical resection** for: recurrent symptomatic hemorrhage, drug-resistant epilepsy attributable to cavernoma, severe progressive neuro deficit, accessible location (avoid eloquent cortex/brainstem unless absolutely needed); - **SRS** controversial — not first-line, some role for inaccessible recurrent bleeders; (7) **Multidisciplinary**: neurology + neurosurgery + radiology + genetics if familial" },
+      { "label": "C", "text": "Tumor — biopsy" },
+      { "label": "D", "text": "Stroke" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cavernoma: 'popcorn' + hemosiderin rim on GRE/SWI. DSA negative (vs AVM). Familial CCM (multiple). Surgery for symptomatic accessible; SRS controversial. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AHA Cavernoma Statement; Angioma Alliance Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 40 ปี recurrent stroke + headache + cognitive decline — MRI พบ multiple infarcts in different vascular territories + segmental beading on MRA + CSF lymphocytic pleocytosis",
+    "choices": [
+      { "label": "A", "text": "Likely migraine" },
+      { "label": "B", "text": "Primary CNS vasculitis (PACNS) — imaging + workup: (1) **Imaging features**: multiple infarcts in different vascular territories (suggests systemic embolic source vs vasculitis if no cardiac source), segmental narrowing + dilatation ('beading') on MRA/CTA/DSA — vessel caliber irregularity, gadolinium enhancement of vessel wall on high-resolution vessel wall MRI (modern technique — distinguishes from RCVS, atherosclerosis), parenchymal contrast enhancement (granulomatous form), microhemorrhages on SWI; (2) **DSA** gold standard for angiographic findings — but limited sensitivity (< 60%) for small-vessel PACNS, low specificity (atherosclerosis, RCVS, infectious vasculitis, vasospasm look similar); high-resolution vessel wall MRI helps differentiate (PACNS — concentric thickening + enhancement; RCVS — minimal/no wall enhancement; atherosclerosis — eccentric); (3) **Workup to exclude mimics**: - CSF — lymphocytic pleocytosis, elevated protein common in PACNS (helps distinguish from RCVS, atherosclerosis); - Serology — ANA, ANCA, RF, CCP, dsDNA, complement, cryoglobulins, HIV, syphilis (RPR), hepatitis serologies, ESR, CRP (PACNS — systemic markers usually normal!); - Echo + telemetry — exclude embolic source; - **Brain biopsy** — gold standard for PACNS diagnosis (granulomatous, lymphocytic, or necrotizing) but invasive; reserved for atypical / severe / progressive cases with negative workup; (4) **Differential**: RCVS (reversible cerebral vasoconstriction — thunderclap HA, postpartum, vasoactive substances, resolves in 1-3 months), systemic vasculitis with CNS involvement (GPA, EGPA, PAN, Behcet), infectious vasculitis (VZV, syphilis, TB), atherosclerosis, Moyamoya, lymphoma; (5) **Treatment** (if PACNS confirmed): high-dose steroids + cyclophosphamide induction (rituximab alternative), maintenance with MTX/azathioprine/MMF; (6) **Multidisciplinary**: rheumatology + neurology + neuroradiology" },
+      { "label": "C", "text": "Stroke - aspirin" },
+      { "label": "D", "text": "Discharge" },
+      { "label": "E", "text": "Single specialty" }
+    ],
+    "correct_answer": "B",
+    "explanation": "PACNS: multiple infarcts + beading on angiogram. High-res vessel wall MRI helps differentiate from RCVS. Brain biopsy gold standard. Steroids + cyclophosphamide. Exclude mimics. Multidisciplinary.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "ACR Vasculitis Guidelines; AAN PACNS Review"
+  },
+  {
+    "scenario": "MRI brain sequences — แต่ละ sequence เหมาะกับ pathology ใด\n\nคำถาม: characteristics + indications",
+    "choices": [
+      { "label": "A", "text": "Single sequence sufficient" },
+      { "label": "B", "text": "MRI brain sequences — clinical applications: (1) **T1-weighted**: anatomy, fat bright, fluid (CSF) dark, gray matter darker than white matter; post-contrast (gadolinium) — enhancement reflects BBB breakdown (tumor, infection, demyelination active, vascular); (2) **T2-weighted**: pathology bright (edema, gliosis, demyelination, tumor); CSF bright; differentiate gray/white matter; (3) **FLAIR (Fluid Attenuated Inversion Recovery)**: suppresses CSF — periventricular + cortical lesions seen better than T2 (MS plaques, subarachnoid blood, infection); (4) **DWI (diffusion-weighted imaging)** + ADC map: restricted diffusion — bright DWI + dark ADC — acute ischemia (within minutes — hyperacute marker), abscess (pus restricts), hypercellular tumor (lymphoma, GBM, epidermoid — bright on DWI), early stroke; (5) **GRE (gradient echo) / SWI (susceptibility-weighted)**: blood products (hemosiderin, deoxyhemoglobin), calcification, iron — micro-hemorrhages (CAA, hypertensive, DAI), cavernoma, hemorrhagic stroke; SWI more sensitive than GRE; (6) **MR angiography (MRA)**: TOF (no contrast) — flow imaging; contrast-enhanced MRA (gadolinium); MR venography (MRV) for venous; (7) **MR perfusion (PWI)**: CBV, CBF, MTT — penumbra in stroke, tumor grading (high rCBV = high-grade glioma); (8) **MR spectroscopy (MRS)**: metabolites — NAA (neuronal), choline (cell turnover — increased in tumors), creatine (energy), lactate (anaerobic), lipid (necrosis); (9) **DTI (diffusion tensor)**: white matter tracts for surgical planning; (10) **Functional MRI (fMRI)**: BOLD signal — language + motor mapping pre-op" },
+      { "label": "C", "text": "X-ray only" },
+      { "label": "D", "text": "CT only" },
+      { "label": "E", "text": "No imaging" }
+    ],
+    "correct_answer": "B",
+    "explanation": "MRI sequences: T1 (anatomy + contrast), T2 (edema), FLAIR (CSF-suppressed), DWI (stroke + abscess + cellular tumor), GRE/SWI (hemorrhage), MRA (vessels), perfusion, spectroscopy, DTI, fMRI. Tailor sequences to question.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "Radiology Textbook MRI Physics; ACR"
+  },
+  {
+    "scenario": "Hounsfield units (HU) on CT — typical values for brain pathology\n\nคำถาม: HU value differences across tissues",
+    "choices": [
+      { "label": "A", "text": "No standard values" },
+      { "label": "B", "text": "Hounsfield Units (HU) — CT density values calibrated water = 0, air = -1000, dense bone = +1000+: (1) **Brain CT typical HU values**: - Air: -1000; - Fat: -100 to -50; - Water/CSF: 0; - White matter: 22-32 HU (slightly lower than gray); - Gray matter: 32-44 HU; - Acute blood: 50-80 HU (hyperdense); - Subacute blood: 30-40 HU (isodense, easier to miss); - Chronic blood/old hemorrhage: 0-30 HU (hypodense); - Calcification: > 100-200+ HU; - Cortical bone: > 1000 HU; (2) **Clinical pearls**: - Hyperdense MCA sign — thrombus 70-90 HU vs normal vessel 35-50 HU; - Loss of gray-white differentiation in acute ischemia (gray matter HU drops toward white matter); - Acute ICH is hyperdense (clot retraction) — fresh blood; over days becomes isodense then hypodense (rim); - Subdural hematoma: acute hyperdense → subacute isodense (~ 1-3 weeks — easy to miss, look for mass effect) → chronic hypodense; mixed-density suggests acute on chronic or active bleeding; - Contrast extravasation in trauma — 80-200 HU dependent on phase; (3) **CT brain window**: brain window (level 35, width 80) for parenchyma; bone window for skull fractures; subdural window (level 75, width 200) for thin hyperdense SDH along skull" },
+      { "label": "C", "text": "All tissues same HU" },
+      { "label": "D", "text": "Bone is negative HU" },
+      { "label": "E", "text": "Air positive HU" }
+    ],
+    "correct_answer": "B",
+    "explanation": "HU: water 0, air -1000, bone +1000. Brain parenchyma 20-40, acute blood 50-80, calcification > 100, fat negative. Subacute SDH isodense — easy to miss. Use windows appropriately.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "Radiology Physics Fundamentals; ACR"
+  },
+  {
+    "scenario": "Functional MRI (fMRI) + diffusion tensor imaging (DTI) — applications in brain tumor pre-op planning",
+    "choices": [
+      { "label": "A", "text": "Plain X-ray sufficient" },
+      { "label": "B", "text": "Advanced MRI for neurosurgical planning: (1) **fMRI (BOLD signal — Blood Oxygen Level Dependent)**: detects changes in deoxyhemoglobin during neuronal activity; - **Task-based fMRI**: patient performs task (finger tapping, language) during scan — localizes motor cortex, language (Broca, Wernicke), visual areas; - **Resting-state fMRI**: networks (default mode, salience, attention) identified without task — useful when patient can't cooperate; (2) **Clinical applications**: - Pre-op localization of eloquent cortex for tumor resection planning — maximizes safe resection extent while preserving function; - Pre-op for epilepsy surgery — language lateralization (alternative to Wada test), seizure focus characterization; - Stroke recovery monitoring; (3) **DTI (Diffusion Tensor Imaging)** + tractography: directionality of water diffusion along white matter tracts (anisotropic) — visualizes white matter pathways (corticospinal tract, arcuate fasciculus, optic radiations); (4) **Clinical applications DTI**: - Pre-op tract mapping — tumor relationship to corticospinal tract, language tracts, visual pathways; - Stroke/TBI — Wallerian degeneration assessment; - Connectome research; (5) **Integration with intraoperative**: fMRI/DTI fused with stereotactic neuronavigation + intraoperative awake mapping (direct cortical stimulation) = modern brain tumor surgery; (6) **Limitations**: BOLD signal altered near tumors (neurovascular uncoupling), patient cooperation needed for task-based, motion artifacts; (7) **Multidisciplinary**: neurosurgery + neuroradiology + neuropsychology + speech therapy" },
+      { "label": "C", "text": "No advanced imaging" },
+      { "label": "D", "text": "CT alone" },
+      { "label": "E", "text": "Bone scan" }
+    ],
+    "correct_answer": "B",
+    "explanation": "fMRI (BOLD) + DTI (tractography) for pre-op brain tumor planning — eloquent cortex + white matter tracts. Maximizes safe resection. Integrated with intraoperative awake mapping + neuronavigation.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "Neurosurgical fMRI Standards; ASFNR Guidelines"
+  },
+  {
+    "scenario": "Gadolinium contrast — safety considerations + nephrogenic systemic fibrosis (NSF)",
+    "choices": [
+      { "label": "A", "text": "Always safe — no precautions" },
+      { "label": "B", "text": "Gadolinium-based contrast agents (GBCAs) — safety: (1) **NSF (nephrogenic systemic fibrosis)** — rare but severe fibrosing disorder of skin + organs in patients with severe renal impairment (eGFR < 30) exposed to GBCAs, especially older linear (non-ionic) agents (gadodiamide — Omniscan, gadoversetamide); (2) **Risk stratification by group**: - **Group I (high-risk linear)** — restricted in CKD; - **Group II (macrocyclic — stable)** — gadobutrol (Gadavist), gadoteridol (ProHance), gadoterate (Dotarem) — very low NSF risk, used preferentially; - **Group III (linear stable)**: gadoxetate (Eovist — liver-specific); (3) **ACR + Manufacturer recommendations**: screening for renal function (eGFR or GFR estimate) before GBCA in at-risk patients (CKD, dialysis, AKI, > 60 years, DM, HTN); macrocyclic agents (Group II) preferred — many institutions use only Group II; in dialysis patients on Group II → dialysis after exam may help clear contrast (does not eliminate NSF risk per recent guidelines but commonly practiced); (4) **Gadolinium retention in brain (dentate nucleus, globus pallidus)** — linear > macrocyclic; clinical significance uncertain but FDA warning 2017; preference for macrocyclic; (5) **Allergic reactions**: less common than iodinated CT contrast; treat similarly (epinephrine, antihistamine, steroids); premedication for known prior reaction; (6) **Pregnancy**: GBCAs cross placenta — only if essential, no alternative, benefits outweigh risk (ACR not contraindicated absolutely); (7) **Breastfeeding**: ACR — continue breastfeeding (minimal transfer); (8) **Pediatric**: lower doses, weight-based; macrocyclic preferred" },
+      { "label": "C", "text": "Discharge without screening" },
+      { "label": "D", "text": "Contraindicated in everyone" },
+      { "label": "E", "text": "Same as iodinated contrast" }
+    ],
+    "correct_answer": "B",
+    "explanation": "GBCAs: NSF risk in CKD eGFR < 30 — linear agents higher risk; macrocyclic Group II preferred. Renal screening before. Brain retention noted (clinical significance uncertain). Allergic reactions less common than iodinated.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "renal_gu",
+    "board_age_group": "adult",
+    "reference_source": "ACR Manual on Contrast Media v10.3; FDA Communications"
+  },
+  {
+    "scenario": "Critical findings communication — radiology workflow + safety\n\nคำถาม: communicating life-threatening findings",
+    "choices": [
+      { "label": "A", "text": "Email only" },
+      { "label": "B", "text": "Critical findings communication — ACR + IOM standards: (1) **Critical / actionable findings** require direct communication beyond report: imminent life-threatening (pneumothorax under tension, free air, pulmonary embolism, AAA leak, ICH, stroke, acute aortic dissection, fracture risking instability, ectopic pregnancy), urgent (new mass, fracture, abscess); (2) **ACR Practice Parameter for Communication of Diagnostic Imaging Findings (2020)**: - **Level 1 (Red — within minutes)**: directly threatens patient survival or limb — call referring provider; document time, person spoken to, content; - **Level 2 (Orange — within hours)**: requires medical attention to avoid significant morbidity — phone/secure messaging; - **Level 3 (Yellow — within days)**: requires follow-up but not emergent — automated alerts, secure portals, follow-up systems; (3) **Methods**: phone call (most reliable for Level 1), secure messaging, EHR alerts, closed-loop communication confirming receipt; (4) **Documentation in report + audit trail**: when, how, who, content; (5) **Closing the loop**: tracking + follow-up systems for incidental findings (lung nodules — Fleischner, adnexal cysts, etc.) — avoid 'fall through cracks'; (6) **Safety culture**: blame-free reporting of near misses; (7) **Modern tools**: AI-assisted prioritization of worklists (flag PE/pneumothorax/ICH to top), automated alerts, dashboards, structured reporting; (8) **Multidisciplinary**: radiology + ordering provider + IT + quality + administration; (9) **Standards bodies**: ACR, Joint Commission, ABR; (10) **Continuous improvement**: case reviews, root cause analysis when communication failures lead to harm" },
+      { "label": "C", "text": "Defer to next day" },
+      { "label": "D", "text": "No direct contact needed" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Critical findings: direct communication required (phone for Level 1). ACR levels Red/Orange/Yellow + timing. Document method + person + content + closed loop. Modern AI-prioritization. Multidisciplinary safety culture.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "ACR Practice Parameter Communication 2020; Joint Commission"
+  },
+  {
+    "scenario": "Door-to-needle (DTN) + door-to-imaging time for acute stroke — quality metrics",
+    "choices": [
+      { "label": "A", "text": "No time pressure" },
+      { "label": "B", "text": "Stroke imaging quality metrics + DTN: (1) **AHA Get With The Guidelines-Stroke (GWTG)** + Joint Commission standards: - **Door-to-CT initiation** ≤ 25 minutes (ideal < 20); - **Door-to-CT interpretation** ≤ 45 minutes; - **Door-to-needle (DTN)** ≤ 60 minutes (target ≤ 45 minutes for highest tier); - **Door-to-groin puncture** for thrombectomy ≤ 90 minutes (≤ 60 minutes ideal); - **Door-in-door-out** for transfers ≤ 120 minutes; (2) **Process improvements proven to reduce DTN** (Target: Stroke campaign): pre-notification by EMS, single-call activation, parallel processes (registration concurrent with imaging), tPA mixing during CT, CT to ED bed reverse flow, point-of-care testing (INR), team meeting at scanner, premixed weight-based tPA dosing; (3) **Comprehensive Stroke Center criteria** vs Primary Stroke Center; (4) **Tele-stroke** expands access — vRobot consultation; (5) **Imaging protocols**: integrated CT + CTA + CTP rapid scan ('one-stop' acquisition < 5 minutes); standardized post-processing automated (RAPID, Viz.ai, AI-assisted LVO detection); (6) **Multidisciplinary stroke team**: ED + neurology + radiology + IR + neurocritical care + pharmacy + nursing; (7) **Quality reporting**: GWTG, internal dashboards, AHA Stroke Honor Roll; (8) **Outcomes tied to time**: every 15 minutes saved = improved functional outcome (mRS shift); time is brain (1.9 million neurons lost per minute LVO); (9) **Continuous improvement**: monthly stroke team meetings + case review; (10) **Modern**: AI-driven LVO detection, mobile stroke units in some cities, ambulance bypass protocols" },
+      { "label": "C", "text": "Discharge" },
+      { "label": "D", "text": "Wait next day" },
+      { "label": "E", "text": "Single specialty" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Stroke imaging metrics: DTN ≤ 60 (target 45), door-to-CT ≤ 25, door-to-groin ≤ 90 minutes. Target: Stroke processes (pre-notification, single-call, parallel processes). AI-assisted LVO detection. Multidisciplinary.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AHA Get With The Guidelines-Stroke; Target: Stroke"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 60 ปี acute LVO stroke + successful thrombectomy — comprehensive post-stroke care",
+    "choices": [
+      { "label": "A", "text": "Single specialty discharge" },
+      { "label": "B", "text": "Post-stroke integrative care: (1) **Acute (24-48 hours)**: ICU/stroke unit monitoring — BP control (post-thrombectomy 140-180 SBP typically — avoid hypoperfusion + hemorrhage), neuro checks, repeat imaging 24h (assess hemorrhagic transformation), dysphagia screen before PO (NPO until cleared — aspiration prevention), DVT prophylaxis; (2) **Sub-acute (days-weeks)**: comprehensive workup for etiology — ECG/Holter for AFib (cryptogenic — extended monitoring 30 days, implantable loop recorder consideration), echo (TTE then TEE if cryptogenic — PFO, LV thrombus, valve, ASD), vessel imaging (carotid + intracranial), labs (lipids, HbA1c, hypercoagulable if young/atypical), CHA2DS2-VASc; (3) **Secondary prevention based on etiology**: - Atherosclerotic — antiplatelet (aspirin/clopidogrel; DAPT × 21-90 days for high-risk minor stroke per CHANCE/POINT/SOCRATES), high-intensity statin (target LDL < 70), BP control (< 130/80), DM, smoking cessation; - Cardioembolic (AFib) — anticoagulation (DOAC preferred or warfarin); - Other (PFO, dissection, hypercoagulable) — individualized; (4) **Rehabilitation** early + intensive: PT (gait, balance), OT (ADLs), speech therapy (aphasia, dysphagia), neuropsychology (cognitive deficits, depression), recreational therapy; inpatient rehab vs SNF vs home with services; (5) **Post-stroke depression** (~ 30%) — screen + treat (SSRI); cognitive impairment screening; (6) **Modifiable risk factor management** lifelong: BP, lipids, DM, weight, exercise, diet, smoking, alcohol; (7) **Family + caregiver support + education**: stroke warning signs, medication adherence, fall prevention, transportation, equipment; (8) **Multidisciplinary stroke clinic** follow-up: neurology + PCP + cardiology if AFib + PT/OT + speech + social work + nutrition + nursing; (9) **Advance care planning** if severe deficit; (10) **Return to work + driving + community reintegration**" },
+      { "label": "C", "text": "No follow-up" },
+      { "label": "D", "text": "Refuse care" },
+      { "label": "E", "text": "Hospice immediately" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Post-stroke care: acute monitoring + etiology workup + secondary prevention by mechanism + intensive rehab + depression/cognitive screening + risk factor management + multidisciplinary stroke clinic + family support.",
+    "difficulty": "easy",
+    "board_section": "integrative",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AHA Stroke Survivors Statement; AAN Post-stroke Care"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 85 ปี severe dementia + new acute symptoms + family disagreement — goals of imaging discussion",
+    "choices": [
+      { "label": "A", "text": "Always image" },
+      { "label": "B", "text": "Goals of care + imaging in advanced dementia: (1) **First step — goals of care discussion BEFORE imaging**: imaging guided by what will change management consistent with patient values + prognosis; ALWAYS ask: 'Will this scan change what we do? Is what we'd do aligned with patient values?'; (2) **Comprehensive geriatric assessment**: medical (comorbidities), functional (ADLs/IADLs), cognitive (severity of dementia — Global Deterioration Scale, FAST), psychosocial, advance directives review; (3) **Family conflict navigation**: - Identify legal surrogate decision-maker (HCPOA, next of kin per state law); - Substituted judgment standard (what would patient want, not what family wants); - Family meeting with palliative care if available — explore values, concerns, fears, misunderstandings; - Time-limited trial of treatment with predetermined goals + reassessment may help; - Mediation, ethics committee if persistent conflict; (4) **Considerations against extensive imaging in severe dementia**: - Patient may not tolerate (cooperation, claustrophobia, anxiety); - Transport risk (falls, delirium worsening, exposure to noise/stress); - Sedation risks (delirium, aspiration); - Findings may not change management (e.g., new cancer found but patient too frail for treatment); - Avoid 'imaging cascade' — incidental findings → more tests → more interventions → potential harm; (5) **Considerations FOR imaging when changes management**: - Acute pain — fracture (would impact pain control + positioning); - Suspected reversible cause of decline (UTI, infection, treatable mass causing pain); - Comfort interventions (palliative XRT for bone mets pain — yes, would need imaging for planning); (6) **Palliative imaging philosophy**: limited but purposeful imaging consistent with comfort + dignity goals; concurrent palliative care services; (7) **Hospice consideration** when prognosis < 6 months + focus on comfort; (8) **Documentation**: detailed shared decision-making conversation, surrogate involvement, rationale; (9) **Multidisciplinary**: PCP + geriatrics + palliative care + radiology + nursing + social work + ethics + chaplaincy + family" },
+      { "label": "C", "text": "Single specialty" },
+      { "label": "D", "text": "Discharge without discussion" },
+      { "label": "E", "text": "Refuse care" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Goals of care drive imaging decisions in advanced dementia. Substituted judgment for surrogate decision. Will imaging change management? Family meeting, palliative care involvement, ethics if needed. Limited purposeful imaging.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AGS Choosing Wisely; ASCO Palliative Care; ACR"
   }
 ]
