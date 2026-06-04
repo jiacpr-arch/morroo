@@ -517,6 +517,43 @@ export async function getSchoolMasteryByTopic(
   return out;
 }
 
+/**
+ * Per-system "power" score (0–100) for the specialty radar — aggregates the
+ * per-topic quiz mastery up to each school_systems.slug. Systems the student
+ * has not touched are simply absent (treated as 0 by callers).
+ */
+export async function getSystemCompetency(
+  userId: string
+): Promise<Record<string, number>> {
+  const supabase = await createClient();
+  const [masteryByTopic, { data: topics }] = await Promise.all([
+    getSchoolMasteryByTopic(userId),
+    supabase.from("school_topics").select("id, school_systems(slug)"),
+  ]);
+
+  type TopicRow = { id: string; school_systems?: { slug: string } | null };
+  const topicToSlug = new Map<string, string>();
+  for (const t of (topics ?? []) as TopicRow[]) {
+    const slug = t.school_systems?.slug;
+    if (slug) topicToSlug.set(t.id, slug);
+  }
+
+  const agg: Record<string, { seen: number; correct: number }> = {};
+  for (const [tid, m] of Object.entries(masteryByTopic)) {
+    const slug = topicToSlug.get(tid);
+    if (!slug) continue;
+    const a = (agg[slug] ??= { seen: 0, correct: 0 });
+    a.seen += m.seen;
+    a.correct += m.correct;
+  }
+
+  const out: Record<string, number> = {};
+  for (const [slug, a] of Object.entries(agg)) {
+    out[slug] = a.seen ? Math.round((a.correct / a.seen) * 100) : 0;
+  }
+  return out;
+}
+
 export async function getDueCount(userId: string): Promise<number> {
   const supabase = await createClient();
   const { count } = await supabase
