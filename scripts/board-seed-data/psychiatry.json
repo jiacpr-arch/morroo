@@ -338,5 +338,175 @@
     "board_topic": "obgyn",
     "board_age_group": "adult",
     "reference_source": "ACOG Committee Opinion; APA Perinatal Psychiatry; LactMed; MotherToBaby"
+  },
+  {
+    "scenario": "Resident ถามอาจารย์เรื่อง neurobiology of mental illness — neurotransmitters + circuits",
+    "choices": [
+      { "label": "A", "text": "No biology relevant" },
+      { "label": "B", "text": "Psychiatric Neurobiology Foundation: (1) **Key neurotransmitters**: serotonin (5-HT — mood, anxiety, OCD, eating, sleep, aggression — SSRI/SNRI target), norepinephrine (alertness, anxiety, mood — SNRI, atomoxetine target), dopamine (motivation, reward, psychosis — D2 blockade for antipsychotic + addiction), GABA (inhibitory, anxiety, sleep — benzodiazepine target), glutamate (excitatory, ketamine/memantine target — NMDA receptor), acetylcholine (memory, cognition — cholinesterase inhibitor for AD); (2) **Brain circuits + psychiatric disorders**: prefrontal cortex (executive function, depression, ADHD), limbic system (amygdala — fear, mood; hippocampus — memory, PTSD, depression), basal ganglia (movement, OCD, Tourette, schizophrenia), default mode network (depression, rumination); (3) **HPA axis**: stress response, depression dysregulation (high cortisol), CRH; (4) **Genetics + epigenetics**: polygenic risk (no single gene for major psychiatric), gene-environment interaction, trauma + early adversity affect gene expression; (5) **Inflammation hypothesis**: cytokines, depression-inflammation link, sickness behavior overlap; (6) **Neuroplasticity**: BDNF (brain-derived neurotrophic factor) — antidepressants increase; ketamine rapid synaptic plasticity; exercise; (7) **Mechanism examples**: SSRI = serotonin reuptake inhibition → increased synaptic 5-HT → downstream receptor + intracellular changes → clinical effect 2-4 weeks (longer than receptor effect — neuroplasticity hypothesis); antipsychotic = D2 blockade in mesolimbic + mesocortical; ECT mechanism uncertain but BDNF, neurogenesis; psychedelics emerging — serotonin 2A receptors, rapid plasticity" },
+      { "label": "C", "text": "Only behavior matters" },
+      { "label": "D", "text": "Random biology" },
+      { "label": "E", "text": "No mechanism" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Psychiatric neurobiology: multiple neurotransmitter systems + brain circuits + HPA axis + genetics + inflammation + neuroplasticity. Major treatments target these (SSRI, SNRI, antipsychotic, mood stabilizer, ketamine). Mechanism understanding evolving. Modern psychiatry = biopsychosocial.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "Kandel Principles of Neural Science; APA Textbook of Psychiatry"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง psychopharmacology — antidepressant choices + mechanisms",
+    "choices": [
+      { "label": "A", "text": "All same" },
+      { "label": "B", "text": "Antidepressants — Mechanisms + Clinical Use: (1) **SSRIs** (sertraline, fluoxetine, paroxetine, escitalopram, citalopram, fluvoxamine) — first-line for MDD, anxiety disorders; mechanism: serotonin reuptake inhibition; side effects: GI, sexual dysfunction, insomnia/somnolence, weight changes, QTc (citalopram > 40mg risk), discontinuation syndrome (especially paroxetine — short half-life); (2) **SNRIs** (venlafaxine, duloxetine, desvenlafaxine, levomilnacipran) — depression + chronic pain + anxiety; mechanism: serotonin + norepinephrine reuptake inhibition; side effects: similar to SSRIs + BP elevation, sweating; (3) **Bupropion** — depression + smoking cessation; norepinephrine + dopamine reuptake; no sexual dysfunction or weight gain; SEIZURE LOWERING (avoid in eating disorders, seizure history); activating; (4) **Mirtazapine** — depression with insomnia/weight loss; alpha-2 antagonist + 5-HT2/3 antagonist; weight gain, sedation; (5) **Trazodone** — sleep + depression; serotonin antagonist + reuptake inhibitor; orthostatic, priapism rare; (6) **TCAs** (amitriptyline, nortriptyline, clomipramine, imipramine, desipramine) — second-line; serotonin + norepinephrine reuptake + anticholinergic + antihistaminergic + alpha-1 + sodium channels; lethal in overdose (cardiac); chronic pain (low dose); OCD (clomipramine); (7) **MAOIs** (phenelzine, tranylcypromine, selegiline) — refractory; irreversible MAO inhibition (transdermal selegiline less); tyramine reaction (hypertensive crisis), serotonin syndrome (mixing with serotonergic); (8) **Atypical**: vortioxetine (multimodal), vilazodone (SSRI + 5-HT1A partial agonist), nefazodone, mianserin; (9) **Newer**: esketamine (S-ketamine — FDA approved 2019 treatment-resistant depression — rapid onset); auvelity (dextromethorphan + bupropion); (10) **Selection factors**: comorbidity, side effect profile, drug interactions, prior response, family history, patient preference, cost, pregnancy/lactation; (11) **General**: 4-6 weeks for full effect; titrate slowly initially; monitor for activation/SI; combine with psychotherapy" },
+      { "label": "C", "text": "Random selection" },
+      { "label": "D", "text": "Single agent only" },
+      { "label": "E", "text": "No mechanism" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Antidepressants: multiple classes + mechanisms. SSRI/SNRI first-line. Selection based on patient factors + comorbidity + side effects. Newer: ketamine/esketamine + atypical agents. Combine with psychotherapy. 4-6 weeks for full effect. Modern psychopharmacology: precision + individualized.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "APA Practice Guidelines; Stahl's Essential Psychopharmacology"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง therapy modalities — psychotherapy approaches + evidence",
+    "choices": [
+      { "label": "A", "text": "No therapy effective" },
+      { "label": "B", "text": "Evidence-Based Psychotherapy: (1) **CBT (Cognitive Behavioral Therapy)** — most studied + applied; cognitive restructuring + behavioral; effective for MDD, anxiety disorders, OCD, PTSD, eating disorders, insomnia, psychosis; (2) **DBT (Dialectical Behavior Therapy)** — Linehan; BPD, chronic suicidality, eating disorders; skills training (mindfulness, distress tolerance, emotion regulation, interpersonal effectiveness) + individual + phone coaching + consultation team; (3) **IPT (Interpersonal Therapy)** — Klerman; depression (postpartum especially), grief; focus on interpersonal stressors; (4) **Psychodynamic therapy** — insight-oriented; transference + countertransference; longer duration; depression, anxiety, personality disorders; (5) **MBT (Mentalization-Based Treatment)** — BPD; understand own + others mental states; (6) **PE (Prolonged Exposure)** + **CPT (Cognitive Processing Therapy)** — PTSD; (7) **EMDR (Eye Movement Desensitization + Reprocessing)** — PTSD; (8) **Family-Based Treatment (Maudsley)** — eating disorders adolescents; (9) **Motivational Interviewing** — substance use, change; (10) **Behavior therapy** — habit reversal, ERP, behavioral activation; (11) **Mindfulness-based therapies**: MBCT (depression relapse prevention), MBSR (stress), ACT (acceptance + commitment); (12) **Group therapy** — interpersonal, skills, support; (13) **Family therapy** — systemic; (14) **Couples therapy** — Gottman, EFT; (15) **Telepsychiatry** — increasingly accepted modality; (16) **Selection**: patient preference, severity, comorbidity, evidence base; (17) **Combination with medication** often most effective; (18) **Therapist training + alliance** crucial; (19) **Cultural adaptation** important" },
+      { "label": "C", "text": "Surgery only" },
+      { "label": "D", "text": "Medication alone" },
+      { "label": "E", "text": "Random approaches" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Psychotherapy: evidence-based modalities for specific disorders. CBT most studied, broadly applicable. DBT for BPD. IPT for depression + grief. Trauma-focused for PTSD. Family-based for eating disorders adolescents. Combination with medication often most effective. Therapist training + alliance critical. Cultural adaptation important. Telepsychiatry growing.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "Empirically Supported Treatments — APA Division 12"
+  },
+  {
+    "scenario": "Resident ถามเรื่อง stigma + mental health epidemiology in Thailand",
+    "choices": [
+      { "label": "A", "text": "No stigma exists" },
+      { "label": "B", "text": "Mental Health Epidemiology + Stigma: (1) **Thai mental health prevalence**: depression ~ 5-8%, anxiety disorders ~ 7-10%, substance use disorders ~ 2-3%, schizophrenia ~ 1%, dementia ~ 5-10% > 65 yo; suicide rate ~ 6-7 per 100,000 (lower than many countries but underreported); (2) **Treatment gap**: 70-80% of people with mental illness do NOT receive treatment (WHO); barriers — stigma, awareness, access, cost, capacity (limited psychiatrists especially rural); (3) **Stigma**: public stigma (others' negative attitudes), self-stigma (internalized), structural stigma (policies); effects: delay treatment, employment + housing discrimination, social isolation; (4) **Anti-stigma interventions**: education (knowledge), contact (with affected individuals), advocacy, media + storytelling, language ('person with schizophrenia' not 'schizophrenic'), workplace mental health programs; (5) **Thai cultural factors**: Buddhist concepts (karma, suffering), family-centered care, stigma especially severe mental illness; (6) **Mental Health Act Thailand 2008**: legal framework for involuntary treatment; (7) **Mental health policy + system**: limited workforce, primary care integration efforts, community mental health, telepsychiatry growing, school mental health, workplace; (8) **Vulnerable populations**: refugees + displaced, sexual minorities (high stigma in some communities), elderly, youth (high suicide), military, healthcare workers, women (postpartum); (9) **Global mental health priority** — WHO target — universal mental health coverage; (10) **Multidisciplinary + community approach** essential" },
+      { "label": "C", "text": "Mental health irrelevant" },
+      { "label": "D", "text": "Stigma helpful" },
+      { "label": "E", "text": "No treatment exists" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Mental health epidemiology + stigma: significant burden + treatment gap in Thailand + globally. Stigma major barrier. Anti-stigma interventions multiple. Cultural sensitivity. Vulnerable populations. Mental Health Act framework. Modern: integration with primary care + community + telepsychiatry + multidisciplinary care + advocacy.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "WHO Mental Health Atlas; Thailand Department of Mental Health"
+  },
+  {
+    "scenario": "Hospital wants to integrate behavioral health into primary care + reduce barriers to mental health care",
+    "choices": [
+      { "label": "A", "text": "Specialty referral only" },
+      { "label": "B", "text": "Collaborative Care Model (Wagner Chronic Care + Unützer IMPACT): (1) Integration of mental health into primary care; (2) Components: - **Patient-centered team-based care**; - **Population-based care** (registry, measurement-based care); - **Measurement-based treatment** (PHQ-9, GAD-7 routine); - **Evidence-based treatments** (CBT, IPT, medication algorithms); - **Behavioral health care manager** (nurse, social worker, psychologist) — central coordination role; - **Psychiatric consultant** (caseload review, recommendations, complex cases); (3) **Stepped care**: severity-based intensity of intervention; brief interventions for mild, more intensive for severe; (4) **Universal screening** for depression, anxiety, substance use; (5) **Same-day or warm handoff** to behavioral health team; (6) **Multiple modalities**: in-person, telephone, video, asynchronous, group; (7) **Outcomes**: IMPACT trial (Unützer JAMA 2002) — collaborative care 2× improvement vs usual care for depression; cost-effective; (8) **Mental health workforce** training: brief therapy, problem-solving, motivational interviewing; (9) **Substance use integration** — SBIRT (Screening, Brief Intervention, Referral to Treatment); (10) **Pediatric integration** (school-based, peds primary care); (11) **Geriatric integration** (HELP program, dementia care); (12) **Specialty referral** for complex cases — psychiatry, specialty programs; (13) **Telepsychiatry** to extend specialist reach especially rural; (14) **Quality metrics**: screening rate, treatment initiation, follow-up, response rate, suicide risk follow-up; (15) **Cultural + linguistic adaptation**; (16) **Family + peer support**" },
+      { "label": "C", "text": "Avoid mental health" },
+      { "label": "D", "text": "Surgery" },
+      { "label": "E", "text": "Random approach" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Collaborative Care Model (Wagner Chronic Care + IMPACT): evidence-based — integrate mental health into primary care. Components: care manager, registry, psychiatric consultant, measurement-based care, evidence-based treatments. Outcomes 2× better than usual care + cost-effective. Stepped care + universal screening + warm handoff. Modern: expanding to telepsychiatry + specialty programs.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "Unützer J et al. JAMA 2002 (IMPACT); AIMS Center; SAMHSA"
+  },
+  {
+    "scenario": "Hospital implements suicide prevention program — public health approach",
+    "choices": [
+      { "label": "A", "text": "No prevention possible" },
+      { "label": "B", "text": "Comprehensive Suicide Prevention Program — Public Health Approach: (1) **Universal prevention**: public education, stigma reduction, mental health literacy, school-based programs, media reporting guidelines (avoid copycat effect — WHO + Suicide Prevention Resource Center guidelines), safe firearm/medication storage; (2) **Selective prevention**: gatekeeper training (teachers, clergy, military, healthcare — recognize warning signs + refer); workplace programs; veteran programs; LGBTQ+ youth support; (3) **Indicated prevention**: screening high-risk (Columbia Suicide Severity Rating Scale), brief interventions, safety planning (Stanley-Brown), means restriction; (4) **Treatment access**: integrated primary care behavioral health, telepsychiatry, crisis services, hotlines (988 US, 1323 Thailand), text/chat services; (5) **Treatment of underlying**: mental health, substance use; lithium + clozapine unique anti-suicide effects; (6) **Crisis services**: 24/7 hotlines, mobile crisis teams, crisis stabilization units, peer-run respite, ED + hospital follow-up; (7) **Means restriction**: most evidence-based — counsel + restrict access (especially firearms, medications, jumping locations, pesticides — major in Asia); coalition with families, employers, communities; (8) **Postvention**: support for survivors of suicide loss (bereavement groups, individual therapy) + traumatic events (school suicide clusters); (9) **System changes**: Zero Suicide initiative (healthcare organization commitment); transitions of care critical (post-discharge highest risk); follow-up (caring contacts — postcards, calls reduce reattempts); (10) **Research + data**: surveillance, evaluation; (11) **Multidisciplinary + multisector**: healthcare, schools, workplaces, military, criminal justice, faith communities, government; (12) **Equity**: address disparities (LGBTQ+, indigenous, youth, military veterans, rural)" },
+      { "label": "C", "text": "Ignore" },
+      { "label": "D", "text": "Surgery" },
+      { "label": "E", "text": "Single intervention" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Suicide prevention: public health approach — universal + selective + indicated. Means restriction most evidence-based. Zero Suicide initiative. Crisis services + hotlines. Treatment access + transitions of care. Postvention. Multidisciplinary + multisector. Equity. Modern: data-driven + comprehensive. Many lives can be saved.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "WHO Suicide Prevention; Zero Suicide; SAMHSA SPRC"
+  },
+  {
+    "scenario": "Hospital wants to expand telepsychiatry + reduce mental health workforce gap",
+    "choices": [
+      { "label": "A", "text": "Avoid technology" },
+      { "label": "B", "text": "Telepsychiatry Implementation — Expands Access + Capacity: (1) **Modalities**: synchronous video (most common), telephone, asynchronous (consult, secure messaging), eConsult, hybrid models; (2) **Equipment + technology**: secure HIPAA-compliant platforms, basic hardware (camera, microphone, screen), bandwidth, backup options; (3) **Use cases**: routine outpatient visits, ED consultation (psychiatrists scarce), inpatient psychiatry consultation in non-psych hospitals, school-based, primary care integration, rural communities, correctional facilities, group therapy, family + couples therapy; (4) **Patient population**: most effective comparable to in-person care for most disorders (depression, anxiety, PTSD, ADHD, substance use disorder); some limitations — severe psychosis requiring physical exam, certain ages (very young), elderly with cognitive impairment, technology access; (5) **Special considerations**: emergency protocols (safety plan, local emergency contacts, hospital), documentation, prescription regulations (controlled substances rules — DEA Ryan Haight Act + COVID waivers); (6) **Licensing + credentialing**: state-by-state in US, interstate compacts emerging; Thailand — increasing regulation + acceptance; (7) **Reimbursement**: parity laws, payer coverage expanding post-COVID; (8) **Quality**: training in telehealth-specific skills, patient assessment + safety, technical + therapeutic competence; (9) **Equity**: digital divide concerns (rural, elderly, low-income, language barriers — provide alternatives); (10) **Modern**: collaborative care, eConsults, peer support, asynchronous apps for self-management (Headspace, Calm, BetterHelp); (11) **Multidisciplinary integration**: primary care, specialty, schools, employers; (12) **Outcomes research**: similar to in-person + improved access" },
+      { "label": "C", "text": "In-person only" },
+      { "label": "D", "text": "Ignore technology" },
+      { "label": "E", "text": "Random approach" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Telepsychiatry: expands access + workforce capacity. Multiple modalities. Effective for most disorders comparable to in-person. Safety + emergency protocols essential. Licensing + reimbursement evolving. Equity — digital divide. Modern: integrated with collaborative care + asynchronous apps + peer support. COVID accelerated adoption.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "American Telemedicine Association; APA Telepsychiatry Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี chronic pain (low back) + depression + opioid use disorder + chronic insomnia — multidisciplinary integrative management",
+    "choices": [
+      { "label": "A", "text": "Single specialty" },
+      { "label": "B", "text": "Chronic Pain + Depression + OUD + Insomnia — Integrative Multidisciplinary Care: (1) **Bidirectional relationship**: chronic pain + depression — each worsens other; chronic pain + opioid use → addiction risk + hyperalgesia + worsens depression + sleep; (2) **Multidisciplinary team**: pain medicine, addiction medicine, psychiatry, primary care, PT, OT, behavioral health, social work, possibly anesthesia/interventional; (3) **OUD treatment first** (often) — initiating buprenorphine treats addiction + provides analgesia + can replace opioid analgesics; methadone similar; addresses primary risk; (4) **Chronic pain non-pharmacologic + non-opioid pharmacologic**: - CBT for chronic pain (evidence-based); - PT + graded exercise; - Mindfulness-based stress reduction; - Acceptance + commitment therapy; - SNRIs (duloxetine — both pain + depression); - SSRIs (less for pain but treat depression); - Anticonvulsants (gabapentin, pregabalin — caution misuse potential); - Topical agents (capsaicin, lidocaine); - Procedures (steroid injection, RFA, spinal cord stimulator selected); - Avoid escalating opioids; (5) **Depression treatment**: SSRI/SNRI (duloxetine excellent — dual purpose), CBT, behavioral activation, exercise; (6) **Insomnia**: CBT-I gold standard; avoid benzodiazepines + nightly opioids; consider melatonin agonist, low-dose trazodone, DORA; sleep hygiene; (7) **Address comorbidity**: anxiety, substance use, trauma history; (8) **Functional goals**: return to meaningful activity > pain elimination; (9) **Patient education + self-management**; (10) **Family + social support**: care navigation, support groups; (11) **Avoid harm**: monitoring, PDMP (prescription drug monitoring program), urine drug screens, naloxone, safety planning; (12) **Whole-person care**: holistic + biopsychosocial model" },
+      { "label": "C", "text": "More opioids" },
+      { "label": "D", "text": "Bedrest" },
+      { "label": "E", "text": "Single specialist" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Chronic pain + depression + OUD + insomnia = quintessential integrative + multidisciplinary case. Treat OUD first often (buprenorphine multipurpose). Chronic pain — non-pharm + non-opioid (CBT, PT, SNRI). Depression treatment overlaps. CBT-I for insomnia. Functional goals over pain elimination. Whole-person care. Modern pain medicine: biopsychosocial + non-opioid focus.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "CDC Pain Guidelines 2022; ASAM Opioid Use Disorder Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 28 ปี — schizophrenia + cannabis use disorder + metabolic syndrome on olanzapine + family stress — multidisciplinary integrative care",
+    "choices": [
+      { "label": "A", "text": "Single specialty" },
+      { "label": "B", "text": "Schizophrenia + Substance Use + Metabolic Syndrome — Integrative Multidisciplinary Care: (1) **Mental health treatment** continuation + optimization: antipsychotic adherence (LAI consideration — risperidone, paliperidone, aripiprazole, olanzapine LAIs); switch to less metabolic agent (aripiprazole, ziprasidone, lurasidone, cariprazine) given metabolic syndrome — but balance with effectiveness; (2) **Co-occurring substance use disorder**: integrated dual diagnosis treatment (separate treatment historically less effective); motivational interviewing + CBT; cannabis use disorder — no FDA-approved meds, supportive therapy + harm reduction; cannabis exacerbates psychosis + increases relapse — important to address; (3) **Metabolic syndrome management**: lifestyle (diet, exercise, weight), screen + treat (HbA1c, lipids, BP); switch antipsychotic if possible; metformin for weight gain (off-label use, modest benefit); statin if indicated; (4) **Psychosocial**: assertive community treatment (ACT) for severe persistent; supportive employment; supportive housing; CBT for psychosis (CBTp) — emerging evidence; (5) **Family education + support**: NAMI Family-to-Family, support groups, education about illness + reduce expressed emotion (high EE associated with relapse); (6) **Social determinants**: housing, employment, income, education, social network; (7) **Physical health**: people with schizophrenia 15-20 years reduced life expectancy — mostly cardiovascular + metabolic; aggressive prevention + treatment; (8) **Smoking** common (60-90%) — increases mortality + drug interactions; cessation programs; (9) **Multidisciplinary team**: psychiatry, addiction medicine, primary care, nursing, social work, vocational rehab, peer support, family; (10) **Treatment resistance** (~30%): clozapine after 2 failed antipsychotics — only antipsychotic with mortality reduction; (11) **Quality + outcomes**: SAMHSA + WHO + AIMS Center models" },
+      { "label": "C", "text": "Single drug only" },
+      { "label": "D", "text": "Refuse care" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Schizophrenia + SUD + metabolic syndrome = complex chronic illness requiring integrative multidisciplinary care. Integrated dual diagnosis treatment. Metabolic syndrome major contributor to mortality — aggressive prevention + treatment + antipsychotic choice. Smoking cessation. Family education + support. Social determinants. Treatment-resistant — clozapine (unique mortality reduction). Multidisciplinary lifelong care.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "APA Schizophrenia 2020; NAMI; SAMHSA"
+  },
+  {
+    "scenario": "Adolescent อายุ 16 ปี — eating disorder (anorexia nervosa) + depression + cutting + family conflict + school refusal — multidisciplinary integrative management",
+    "choices": [
+      { "label": "A", "text": "Single specialty" },
+      { "label": "B", "text": "Adolescent Eating Disorder + Depression + Self-Harm + Family Conflict — Integrative Multidisciplinary Care: (1) **Safety assessment** + level of care: AN with medical instability → inpatient medical; otherwise residential, PHP, IOP, outpatient by severity; (2) **Family-Based Treatment (FBT/Maudsley) first-line for adolescent AN** — parents take active role in refeeding + recovery; (3) **Multidisciplinary**: adolescent medicine, child + adolescent psychiatry, dietitian, individual therapy, family therapy, school liaison; (4) **Concurrent depression**: treat with SSRI (caution — FDA boxed warning increased SI in adolescents but benefits outweigh; close monitoring); CBT or DBT; (5) **Self-harm (cutting)**: DBT-A (DBT for adolescents) — skills, family component; address function (emotion regulation usually); reduce access to means; safety plan; (6) **Family conflict**: family therapy + parental support; reduce blame + criticism; consistency; education about adolescent development; (7) **School refusal**: gradual exposure + return; school accommodations; address bullying, learning disorders, anxiety; school nurse + counselor coordination; (8) **Adolescent development considerations**: identity, peer relationships, autonomy + parental support balance, social media + body image; (9) **LGBTQ+ assessment** + support if applicable (high suicide + eating disorder risk if minority stress); (10) **Suicide risk** elevated — assess + safety plan; (11) **Long-term**: chronic illness for some; relapse common; ongoing care + transition to adult system; (12) **Outcomes**: with comprehensive care 50% full recovery, 25% partial, 25% chronic; (13) **Multidisciplinary team**: child + adolescent psychiatry, adolescent medicine, dietitian, individual therapist, family therapist, school personnel, primary care; family-centered" },
+      { "label": "C", "text": "Single specialist" },
+      { "label": "D", "text": "Discharge home" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Adolescent multiple psychiatric comorbidities = integrative + multidisciplinary + family-centered. FBT for adolescent AN. SSRI + CBT/DBT for depression + self-harm. Family therapy + school re-integration. Adolescent development considerations. Suicide risk elevated. Long-term care + transition. Multidisciplinary essential. Outcomes improve with comprehensive care.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "AACAP Practice Parameters; APA Eating Disorders Guidelines"
   }
 ]
