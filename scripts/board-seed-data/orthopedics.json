@@ -4798,5 +4798,965 @@
     "board_topic": "msk_nontrauma",
     "board_age_group": "adult",
     "reference_source": "Modern Joint Biology"
+  },
+  {
+    "scenario": "**Basic Science**\n\n**Limb embryology** — กลไก limb formation + congenital anomaly\n\nอธิบาย limb development + signaling centers + clinical correlations (radial club hand, polydactyly, syndactyly, transverse deficiency)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Limbs form in week 1 of gestation"
+      },
+      {
+        "label": "B",
+        "text": "Limb Embryology + Development: (1) **timing** — limb buds appear week 4 of gestation; upper limb (week 4-5) precedes lower limb (~ 24-48h later); critical period of teratogen sensitivity weeks 4-8; (2) **3 signaling centers controlling limb growth in 3 axes**: (a) **Apical Ectodermal Ridge (AER)** — controls proximo-distal axis growth; produces **FGF (fibroblast growth factor — FGF4, FGF8)**; removal → truncation of limb (transverse deficiency); (b) **Zone of Polarizing Activity (ZPA)** — posterior mesoderm of limb bud; controls antero-posterior (radio-ulnar) axis; produces **Sonic Hedgehog (SHH)**; mutations → polydactyly, radial club hand; (c) **Wnt7a + dorsal ectoderm** — controls dorso-ventral axis; (3) **mesoderm contributions**: (a) lateral plate mesoderm → bone, cartilage, ligament, tendon, dermis; (b) paraxial mesoderm (somites) → muscle (myogenic precursors migrate in) + dermis + vasculature; (c) neural crest → nerves; (4) **apoptosis** in interdigital regions separates digits — failure → **syndactyly** (most common upper limb congenital anomaly); (5) **clinical correlations**: (a) **transverse deficiency** (e.g., Symbrachydactyly, congenital below-elbow amputation) — AER disruption or vascular event (typically failure to receive distal signals); (b) **radial club hand (radial deficiency)** — failure of anteroposterior axis from ZPA/SHH disruption; associated with VACTERL, Holt-Oram (TBX5), thrombocytopenia-absent radius (TAR), Fanconi anemia; **screen these syndromes!**; (c) **polydactyly** — over-expression of SHH or related; postaxial more common (familial, isolated, AR); preaxial often syndromic (trisomy, Holt-Oram); (d) **syndactyly** — failure of apoptosis; (e) **constriction band syndrome (amniotic band)** — extrinsic disruption from amniotic bands; (f) **cleft hand (ectrodactyly)** — central deficiency; (g) **macrodactyly, hypoplasia, Madelung deformity** — various etiologies; (6) **classification systems**: (a) Swanson IFSSH classification (transverse arrest, longitudinal — radial/central/ulnar/postaxial, failure of differentiation, duplication, overgrowth, undergrowth, congenital constriction band, generalized abnormality); (b) Oberg-Manske-Tonkin (OMT) — modern molecular-based; (7) **management approach**: multidisciplinary (peds ortho, hand, plastic, genetics, social work, occupational therapy); functional > cosmetic; timing typically 6 months - 2 years for reconstruction; family education + counseling"
+      },
+      {
+        "label": "C",
+        "text": "AER controls dorso-ventral axis"
+      },
+      {
+        "label": "D",
+        "text": "SHH controls limb length only"
+      },
+      {
+        "label": "E",
+        "text": "Syndactyly is failure of cell division"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Limb embryology: bud week 4. 3 signaling centers: AER (FGF — proximo-distal), ZPA (SHH — antero-posterior), Wnt7a (dorso-ventral). Apoptosis separates digits. Clinical: transverse deficiency (AER), radial club hand (ZPA/SHH disruption — screen VACTERL, Holt-Oram, TAR, Fanconi), polydactyly (SHH excess), syndactyly (failed apoptosis), constriction band, cleft hand. IFSSH/OMT classification. Multidisciplinary care.",
+    "difficulty": "hard",
+    "board_section": "basic_science",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "peds",
+    "reference_source": "IFSSH; OMT Classification"
+  },
+  {
+    "scenario": "**Basic Science**\n\n**Skeletal muscle physiology** — fiber types + energy metabolism + force generation\n\nอธิบาย muscle fiber types (type I, IIa, IIx) + energy metabolism + sliding filament theory + clinical correlations (atrophy, denervation, training)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Type I fibers are anaerobic"
+      },
+      {
+        "label": "B",
+        "text": "Skeletal Muscle Physiology: (1) **fiber types** — based on myosin heavy chain isoforms + metabolic profile: (a) **Type I (slow-twitch, slow-oxidative)** — red (myoglobin-rich), aerobic metabolism (mitochondria-rich), fatigue-resistant, low force, postural muscles (soleus, paraspinals), endurance athletes; (b) **Type IIa (fast-twitch, fast-oxidative-glycolytic)** — intermediate, aerobic + anaerobic, moderate fatigue resistance, moderate force, mixed activities; (c) **Type IIx/IIb (fast-twitch, fast-glycolytic)** — white, anaerobic metabolism, rapid fatigue, high force, powerful brief activities (sprinting, jumping); (d) human muscle has mixed fibers — different proportion in different muscles + individuals (athletic phenotype); training can shift between IIa ↔ IIx but not I ↔ II readily; (2) **sliding filament theory (Huxley)**: (a) sarcomere — basic unit (Z-line to Z-line) contains thick (myosin) + thin (actin + tropomyosin + troponin) filaments; (b) **cross-bridge cycling**: ATP binds myosin → myosin detaches from actin → ATP hydrolyzed to ADP + Pi (myosin head cocks) → Ca²⁺ binds troponin C → tropomyosin shifts → actin binding sites exposed → myosin binds actin → power stroke (releases ADP + Pi, pulls actin) → ATP rebinds (cycle continues); rigor mortis from lack of ATP; (c) muscle contraction shortens sarcomere (Z-lines closer, H-zone + I-band shorten, A-band stays same); (3) **energy metabolism** — order of activation: (a) ATP (existing — seconds), (b) **creatine phosphate (PCr)** — rapid regeneration of ATP (~ 10-15 seconds), (c) anaerobic glycolysis — glucose → lactate (~ 1-3 minutes, byproduct lactate), (d) aerobic oxidation — glucose, fatty acids, amino acids → ATP via Krebs + electron transport (sustained); (4) **clinical correlations**: (a) **muscle atrophy** from disuse, immobilization, denervation, sarcopenia (aging) — preferentially affects Type II first; (b) **denervation atrophy** — fasciculations, fibrillations (EMG), eventual fibro-fatty replacement; (c) **Volkmann's ischemic contracture** — muscle necrosis + fibrosis after compartment syndrome; (d) **muscular dystrophy** — Duchenne (dystrophin gene X-linked, calf pseudohypertrophy, Gowers sign — child climbs body to stand), Becker (milder); (e) **myasthenia gravis** — autoimmune ACh receptor; (f) **rhabdomyolysis** — muscle necrosis → myoglobin → AKI (post-trauma, crush, statins); (g) **exercise training** — Type I/IIa hypertrophy with endurance, IIa hypertrophy with resistance; (h) **delayed onset muscle soreness (DOMS)** — eccentric exercise → microtrauma → adaptation"
+      },
+      {
+        "label": "C",
+        "text": "Sliding filament theory is obsolete"
+      },
+      {
+        "label": "D",
+        "text": "All muscles have only one fiber type"
+      },
+      {
+        "label": "E",
+        "text": "Atrophy preferentially affects Type I first"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Skeletal muscle: Type I (slow, red, aerobic, postural), Type IIa (fast, intermediate), Type IIx (fast, white, anaerobic, powerful). Sliding filament: actin-myosin cross-bridge cycling with ATP + Ca²⁺. Energy: ATP → PCr → glycolysis → aerobic. Atrophy preferentially Type II. Clinical: denervation, Volkmann's, muscular dystrophy (Duchenne — dystrophin), MG, rhabdo, training adaptations.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "Modern Muscle Physiology"
+  },
+  {
+    "scenario": "**Basic Science**\n\n**Normal gait cycle** — สำคัญสำหรับ evaluate gait abnormalities + post-injury / post-arthroplasty / pediatric ortho\n\nอธิบาย gait cycle phases + muscle activation + clinical correlations (Trendelenburg, drop-foot, antalgic gait)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Swing phase is 60% of gait cycle"
+      },
+      {
+        "label": "B",
+        "text": "Normal Gait Cycle + Clinical Correlations: (1) **gait cycle** — from initial contact (heel strike) of one foot to next initial contact of same foot; divided into: (a) **stance phase** (~ 60% of cycle) — foot on ground; (b) **swing phase** (~ 40% of cycle) — foot off ground; (2) **8 sub-phases (Rancho Los Amigos)**: stance: (a) initial contact (heel strike), (b) loading response (foot flat), (c) mid-stance, (d) terminal stance (heel off), (e) pre-swing (toe off); swing: (f) initial swing, (g) mid-swing, (h) terminal swing; (3) **key events**: heel strike → flat foot → mid-stance → heel off → toe off; double-limb support (~ 20% — both feet on ground) at beginning + end of stance — reduced in running, increased in cautious gait (elderly, post-injury); single-limb support (~ 40%); cadence ~ 100-115 steps/min average adult; (4) **muscle activation**: (a) **heel strike + loading**: anterior tibialis + dorsiflexors (eccentric — controlled foot lowering); quadriceps (eccentric — controls knee flexion); hip extensors (gluteus maximus, hamstrings — extend hip); (b) **mid-stance**: quadriceps (knee extension), hip abductors (**gluteus medius** — stabilizes pelvis on stance leg, prevents contralateral drop); ankle plantarflexors stabilize; (c) **terminal stance + pre-swing**: ankle plantarflexors (gastroc-soleus — propulsion); hip flexors (iliopsoas — initiate swing); (d) **swing**: hip flexors (advance limb), knee flexors (avoid foot drag), ankle dorsiflexors (foot clearance); (5) **clinical gait abnormalities**: (a) **Trendelenburg gait** — gluteus medius weakness (Superior Gluteal Nerve injury, hip OA/AVN, post-THA) → contralateral pelvic drop during stance phase OR compensated by trunk lean toward affected side; (b) **antalgic gait** — pain → shortened stance phase on affected side, longer on unaffected; (c) **drop foot gait** (steppage gait) — tibialis anterior weakness (peroneal nerve injury, L5 radiculopathy) → exaggerated hip + knee flexion in swing to clear foot, foot slap on initial contact; (d) **circumduction gait** — leg length discrepancy, knee stiffness — swings affected leg around; (e) **scissor gait** — spastic adductors (CP, MS, stroke) — knees cross during gait; (f) **ataxic gait** — wide-based unsteady (cerebellar, sensory ataxia); (g) **shuffling gait** — Parkinson's; (h) **vaulting** — leg-length discrepancy, contralateral plantarflexion to advance long limb; (6) **clinical use**: gait analysis lab (3D motion capture, force plate, EMG — comprehensive evaluation); applications: CP surgical planning, post-stroke, post-THA/TKA, prosthetic gait optimization, sports biomechanics"
+      },
+      {
+        "label": "C",
+        "text": "Trendelenburg gait is from quadriceps weakness"
+      },
+      {
+        "label": "D",
+        "text": "Drop foot gait is from gluteal weakness"
+      },
+      {
+        "label": "E",
+        "text": "Single-limb support is 80% of stance"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Gait cycle: stance (60%) + swing (40%). 8 sub-phases. Key muscles: anterior tibialis (heel strike eccentric), quadriceps (loading), gluteus medius (single-leg stance — pelvic stability), gastroc-soleus (push-off), hip flexors (swing initiation). Clinical: Trendelenburg (glut med — pelvis drops contralateral), antalgic (pain — shortened stance), drop foot (peroneal/L5), circumduction (LLD/stiff knee), scissor (spastic), ataxic (cerebellar), shuffling (PD). Gait labs for analysis.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "Perry Gait Analysis"
+  },
+  {
+    "scenario": "**Basic Science**\n\n**MRI in MSK imaging** — basic principles + sequences + clinical applications\n\nอธิบาย MRI principles (T1, T2, STIR, PD) + tissue characterization + common MSK MRI applications",
+    "choices": [
+      {
+        "label": "A",
+        "text": "MRI uses ionizing radiation"
+      },
+      {
+        "label": "B",
+        "text": "MRI in MSK Imaging: (1) **MRI physics** — based on hydrogen proton magnetization (most tissues contain water + fat); strong external magnetic field (1.5T, 3T, 7T research) aligns protons → radiofrequency (RF) pulse perturbs → relaxation (T1, T2) → signal detected → image reconstruction; no ionizing radiation; (2) **basic sequences + tissue characterization**: (a) **T1-weighted** — fat bright, water dark, anatomy; good for marrow architecture, sub-acute hemorrhage (methemoglobin — bright), fat-containing lesions (lipoma — bright); (b) **T2-weighted** — water bright (fluid, edema, inflammation, hemorrhage), fat bright (in conventional T2; suppressed in T2 FS), CSF bright; good for pathology detection; (c) **STIR (Short Tau Inversion Recovery)** or **T2-fat suppressed** — fluid bright + fat suppressed → highly sensitive for marrow edema (occult fracture, osteomyelitis, stress fracture, tumor); (d) **PD (Proton Density)** — middle ground, common for cartilage + menisci + ligament; (e) **gradient echo (GRE)** — sensitive to blood products + calcium (susceptibility artifact); (f) **DWI (diffusion-weighted)** — characterizes infection, tumor cellularity; (g) **Gadolinium-enhanced T1** — vascular tissues + tumor + active inflammation + abscess ring enhancement; **AVOID gadolinium in renal insufficiency** (GFR < 30) due to nephrogenic systemic fibrosis (NSF) risk; (3) **MR arthrogram** — direct intra-articular gadolinium injection → distends joint + outlines structures → best for labral tears (shoulder, hip), osteochondral defects, ligament injuries; (4) **clinical MSK MRI applications**: (a) **soft tissue assessment** — superior to CT for: ligaments, tendons, menisci, cartilage, muscle, nerves, bone marrow; (b) **occult fracture** — STIR shows bone marrow edema (e.g., scaphoid, hip stress, sacral); (c) **osteomyelitis vs cellulitis** — bone marrow edema + ring-enhancing abscess; (d) **soft tissue tumor** — characterization; (e) **stress fracture** — earlier detection than X-ray; (f) **spine** — disc herniation, stenosis, infection, tumor, demyelination; (g) **avascular necrosis** — early changes before X-ray; (5) **contraindications/limitations**: pacemakers (most modern MRI-compatible), cochlear implants, ferromagnetic foreign bodies (especially intraocular), claustrophobia; metal artifact (MARS sequences reduce); long scan time + cost; (6) **CT comparison**: CT better for cortical bone, fracture details, calcified lesions, fast (trauma — polytrauma evaluation), implant assessment"
+      },
+      {
+        "label": "C",
+        "text": "T1 shows fluid as bright"
+      },
+      {
+        "label": "D",
+        "text": "Gadolinium safe in all patients including dialysis"
+      },
+      {
+        "label": "E",
+        "text": "MRI better than CT for cortical fractures"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "MRI MSK: T1 (fat bright, marrow + sub-acute blood + fat), T2 (fluid bright — pathology), STIR/T2-FS (fluid bright + fat suppressed — best for marrow edema: occult fracture, OM, stress fx), PD (cartilage, meniscus, ligament), GRE (blood/calcium), DWI, Gd (vascular, tumor, abscess — AVOID GFR < 30 — NSF). MR arthrogram for labrum/cartilage. Applications: soft tissue, occult fx, OM vs cellulitis, tumor, AVN, spine. CT better for cortical/calcified/trauma.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "Standard MSK Imaging"
+  },
+  {
+    "scenario": "**Basic Science**\n\n**Biomechanics ของ hip joint** — joint reaction forces + abductor mechanism + clinical relevance\n\nอธิบาย hip joint reaction force + Pauwels angle + abductor mechanism + clinical applications (THA design, cane use, single-leg stance)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cane should be on same side as affected hip"
+      },
+      {
+        "label": "B",
+        "text": "Hip Joint Biomechanics: (1) **hip joint** — ball-and-socket joint (femoral head in acetabulum); 3° freedom; deep socket + labrum + ligaments + capsule provide stability + mobility; (2) **joint reaction force (JRF)** — sum of all forces acting across joint; depends on muscle forces + body weight: (a) **single-leg stance** — body weight (W) acts at center of gravity medial to hip + abductor muscle force (F_abd) acts laterally; for equilibrium around hip joint center, abductor muscle must produce sufficient torque; (b) **abductor mechanism** — lever arm of abductors (short — 5 cm from center of hip) vs lever arm of body weight (longer — 10 cm) → abductor force must be ~ 2x body weight just to maintain balance; total JRF (abductor + body weight vector summed) = ~ 3-4x body weight in single-leg stance; (c) **walking** — JRF increases with cadence (4-6x BW); running 8-10x BW; stairs even higher; (3) **Pauwels angle** in femoral neck fractures — angle between fracture line + horizontal — > 50° (Pauwels III) = vertical fracture line → shear forces predominate → instability + higher non-union rate; (4) **abductor mechanism (lever arm + force) — clinical implications**: (a) **gluteus medius (primary hip abductor) weakness** → Trendelenburg gait; (b) **cane use in contralateral hand** — push down on cane creates upward force opposite to body weight → reduces moment arm of body weight → significantly reduces JRF (~ 30-50% in single-leg stance); cane in CONTRALATERAL hand (lever arm of cane + body weight on opposite side of hip cancel); (c) **avoid carrying heavy objects ipsilateral side** (increases JRF), prefer contralateral; (d) **weight loss** — directly reduces JRF (1 lb = 4 lb force at hip per step); (e) **hip preservation** — restore femoral offset (lateral distance from hip center to femoral shaft) + leg length in THA → optimal abductor mechanics + reduces wear + instability; (5) **THA design principles**: (a) restore femoral offset (under-restoration → abductor insufficiency, weakness, limp; over-restoration → trochanteric bursitis, leg discrepancy); (b) restore center of rotation; (c) appropriate cup version/inclination (Lewinnek safe zone — anteversion 5-25°, inclination 30-50°); (d) **leg length equalization** important; (6) **labrum** — sealing function + nourishment + stability; tear → instability + early arthritis; (7) **acetabular dysplasia + impingement (FAI — Cam, Pincer)** — biomechanical etiology of early arthritis; (8) **stress shielding** — rigid femoral stem absorbs load → bone resorption proximal femur (Wolff's law)"
+      },
+      {
+        "label": "C",
+        "text": "Hip JRF is equal to body weight in single-leg stance"
+      },
+      {
+        "label": "D",
+        "text": "Weight loss does not affect hip joint forces"
+      },
+      {
+        "label": "E",
+        "text": "Pauwels I is more unstable than Pauwels III"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Hip biomechanics: JRF = 3-4x BW in single-leg stance (abductor 2x BW + body weight). 4-6x BW walking, 8-10x running. Abductor mechanism: short lever arm vs longer body weight lever. Cane in CONTRALATERAL hand reduces JRF 30-50%. Pauwels III vertical fracture → shear instability. THA: restore offset + center of rotation + LL + Lewinnek safe zone. Weight loss directly reduces JRF. Labrum + FAI biomechanics matter. Stress shielding from rigid stems.",
+    "difficulty": "hard",
+    "board_section": "basic_science",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "Pauwels; Lewinnek Safe Zone"
+  },
+  {
+    "scenario": "**Basic Science**\n\n**Orthopedic implant materials** — metals + polymers + ceramics + applications + concerns\n\nอธิบาย common implant materials (titanium, stainless steel, cobalt-chrome, polyethylene, PEEK, ceramics) + properties + clinical applications",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Stainless steel has lowest modulus matching bone"
+      },
+      {
+        "label": "B",
+        "text": "Orthopedic Implant Materials: (1) **Metals**: (a) **titanium + alloys (Ti-6Al-4V)** — modulus of elasticity closer to bone (less stress shielding), excellent biocompatibility (osseointegration — for cementless implants), corrosion resistant, MRI-compatible (lower artifact); used: spinal screws, fracture fixation plates/screws, dental, cementless hip stems; concerns: notch sensitivity, lower fatigue strength than CoCr, soft metal (poor for bearing surfaces); allergy rare; (b) **cobalt-chrome (CoCr) alloy** — high strength + wear resistance + corrosion resistance; used for bearing surfaces (hip head + knee femoral component) + porous coatings; concerns: high modulus → stress shielding, metal ion release (Co + Cr — concern with MoM bearings — pseudotumor, ALTR), nickel allergy (~ 10%); (c) **stainless steel (316L)** — strong, ductile, inexpensive; used for fracture plates/screws, K-wires, surgical instruments; concerns: high modulus, metal ion release, nickel content, NOT for permanent bearing; (d) **tantalum (porous trabecular metal)** — highly porous → bone ingrowth, low modulus close to bone, used for revision THA acetabular augments, cones for severe bone loss; expensive; (e) **magnesium alloys** — bioresorbable emerging for fixation in select pediatric/temporary; (2) **Polymers**: (a) **ultra-high molecular weight polyethylene (UHMWPE)** — bearing surface for TKA, THA, shoulder arthroplasty (paired against CoCr or ceramic); historic standard; concerns: wear → particulate → **osteolysis + aseptic loosening** (major historical cause of revision); (b) **highly cross-linked polyethylene (XLPE)** — modern improvement, gamma irradiation creates cross-links → reduces wear 50-90% → reduces osteolysis + loosening; standard for modern THA; (c) **vitamin-E enhanced XLPE** — antioxidant prevents oxidative degradation; (d) **PEEK (polyetheretherketone)** — radiolucent, modulus close to bone; used: spinal cages (interbody), some plates, suture anchors; (e) **PMMA (polymethyl methacrylate, bone cement)** — for cemented fixation; exothermic polymerization (heat); concerns: \"bone cement implantation syndrome\" — embolism + hypotension intra-op (especially elderly cemented hip hemi); (3) **Ceramics**: (a) **alumina (Al₂O₃)** — hard, wear-resistant; used for femoral head + acetabular liner; brittle (fracture risk historically 1-5%, modern materials 0.01%); excellent biocompatibility; (b) **zirconia + zirconia-toughened alumina (ZTA, BIOLOX delta)** — improved fracture resistance + wear; modern standard for ceramic-on-ceramic; (c) **hydroxyapatite (HA) coating** — bioactive bone-binding for cementless implant; (d) ceramic-on-ceramic — excellent wear (< 1 mm³/year) but \"squeaking\" 1-3% + fracture rare; (4) **modern THA bearing**: ceramic-on-XLPE most common (low wear + low fracture risk); ceramic-on-ceramic premium (lowest wear), metal-on-XLPE classic; **avoid metal-on-metal** (ALVAL, ARMD — pseudotumor, except for resurfacing in select males); (5) **implant failure modes**: (a) infection (PJI), (b) aseptic loosening (wear-induced osteolysis → most common with traditional UHMWPE), (c) instability/dislocation, (d) periprosthetic fracture, (e) material failure (rare with modern); (6) **MRI compatibility** of implants — titanium > stainless steel > CoCr"
+      },
+      {
+        "label": "C",
+        "text": "Metal-on-metal is current standard for THA"
+      },
+      {
+        "label": "D",
+        "text": "Ceramic is too weak for any THA use"
+      },
+      {
+        "label": "E",
+        "text": "UHMWPE has not improved since 1960s"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Implant materials: titanium (low modulus, biocompatible, fixation), CoCr (bearing surfaces, strong, wear-resistant), stainless steel (cheaper fixation), tantalum (porous, revision augments), UHMWPE (historic bearing → osteolysis), XLPE (modern — 50-90% less wear), PEEK (spine, radiolucent), PMMA (cement), alumina/zirconia (ceramic bearing). Modern THA: ceramic-on-XLPE. AVOID MoM (ALTR/pseudotumor). Failure modes: infection, loosening (wear-osteolysis), instability, fracture.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "AAOS Implant Materials"
+  },
+  {
+    "scenario": "**Basic Science**\n\n**Local anesthetics in orthopedics** — mechanism + properties + duration + toxicity\n\nอธิบาย local anesthetics (lidocaine, bupivacaine, ropivacaine) + mechanism + duration + dose limits + LAST (local anesthetic systemic toxicity) management + regional blocks",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Esters have lower allergy risk than amides"
+      },
+      {
+        "label": "B",
+        "text": "Local Anesthetics: (1) **mechanism** — block voltage-gated sodium channels on neuronal axons → prevent depolarization + action potential propagation → block sensation + motor; (2) **classification**: (a) **amides** (metabolized in liver) — lidocaine, bupivacaine, ropivacaine, mepivacaine; suffix \"-caine\" with one \"i\" before -caine often = amide; (b) **esters** (metabolized by plasma cholinesterase) — procaine, chloroprocaine, tetracaine, cocaine; higher allergy risk (PABA metabolite); (3) **commonly used in orthopedics**: (a) **lidocaine** — onset 1-2 min, duration 1-2 hours (with epinephrine 2-3 hours); max dose **5 mg/kg without epinephrine, 7 mg/kg with epinephrine** (epinephrine vasoconstriction → reduces systemic absorption + prolongs duration); (b) **bupivacaine** — slower onset 5-10 min, **long duration 4-8 hours** (with epi up to 12h); max dose **2.5 mg/kg** (3 mg/kg with epi); high cardiotoxicity (Na channel blockade in heart → arrhythmia); used for prolonged regional blocks; (c) **ropivacaine** — slower onset, duration similar to bupivacaine, **lower cardiotoxicity** than bupivacaine, preferred for large regional blocks; max 3-4 mg/kg; (d) **liposomal bupivacaine (Exparel)** — prolonged-release formulation, 72-hour duration; (e) **chloroprocaine** — rapid onset, very short duration (45 min), useful for surgical anesthesia in epidural; (4) **avoid epinephrine** in: digits + extremities with end-arteries traditionally taught (modern evidence — safe in healthy digits with appropriate concentration < 1:100,000), penis, nose tip, earlobe; in patients with severe HTN, cardiovascular disease; (5) **LAST (Local Anesthetic Systemic Toxicity)** — emergency: (a) symptoms — early CNS (perioral numbness, metallic taste, tinnitus, dizziness, seizure) → coma; cardiovascular — bradycardia, arrhythmia, hypotension, cardiac arrest; (b) **treatment** — immediate stop injection, ABCs, supplemental O2, **20% lipid emulsion (Intralipid) bolus 1.5 mL/kg → infusion 0.25 mL/kg/min** — sequesters lipid-soluble anesthetic; benzodiazepines for seizure; avoid vasopressin + calcium channel blocker; epinephrine doses lower than ACLS (< 1 μg/kg); ACLS modified (no procainamide, lidocaine); (6) **regional anesthesia in orthopedics**: (a) **Bier block** (IV regional) — tourniquet + IV lidocaine in extremity — for short hand/wrist surgery; (b) **brachial plexus blocks** — interscalene (shoulder), supraclavicular (arm), infraclavicular, axillary (hand/forearm); (c) **fascia iliaca compartment block** — hip fracture analgesia (femoral + LFCN + obturator); (d) **femoral nerve block + adductor canal block** — knee surgery (adductor canal preserves quad strength); (e) **popliteal sciatic block** — foot/ankle surgery; (f) **continuous catheters** for prolonged blocks; (g) **ultrasound guidance** standard modern technique (reduces complications, improves accuracy); (7) ortho applications — reduce opioid use, faster recovery, multimodal pain management"
+      },
+      {
+        "label": "C",
+        "text": "Lipid emulsion not used in LAST"
+      },
+      {
+        "label": "D",
+        "text": "Bupivacaine has shorter duration than lidocaine"
+      },
+      {
+        "label": "E",
+        "text": "All local anesthetics are renally excreted"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Local anesthetics: block Na channels → no AP. Amides (lido, bupi, ropi — liver metabolism) vs esters (allergy risk). Lidocaine 5 mg/kg (7 with epi), bupivacaine 2.5 mg/kg (long but cardiotoxic), ropivacaine (lower cardiotoxic). Epinephrine prolongs + reduces absorption. LAST: CNS → CV → ARREST; treat with 20% LIPID EMULSION + ACLS modified. Regional blocks: brachial plexus, fascia iliaca, femoral, adductor canal, popliteal sciatic — US-guided standard.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "ASRA LAST Guidelines"
+  },
+  {
+    "scenario": "**Basic Science**\n\n**Tourniquet physiology + safe practices** ในผ่าตัด ortho — สำคัญสำหรับ bloodless field\n\nอธิบาย tourniquet physiology + pressure recommendations + safe time + complications + applications",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Tourniquet can stay inflated indefinitely"
+      },
+      {
+        "label": "B",
+        "text": "Tourniquet Physiology + Practice: (1) **purpose** — provides bloodless surgical field → improves visualization + reduces blood loss + shorter operative time; (2) **types**: (a) **pneumatic tourniquet** — most common, modern; (b) **rubber esmarch bandage** — for exsanguination before pneumatic inflation, or as primary tourniquet in select cases; (c) **digital tourniquet** for finger surgery (Penrose drain — must be removed before closure to avoid being forgotten — \"never event\"); (3) **pressure recommendations**: (a) **upper extremity** — typically 200-250 mmHg, or **50 mmHg above systolic blood pressure (SBP)**; (b) **lower extremity** — 250-350 mmHg, or **100 mmHg above SBP**; (c) **limb occlusion pressure (LOP)** — measure individualized pressure required to occlude arterial flow (modern recommendation) — Doppler-confirmed → set tourniquet at LOP + safety margin (50-100 mmHg above LOP) → reduces complications vs fixed high pressure; (4) **safe tourniquet time**: (a) **maximum 2 hours** recommended — beyond → ischemia + reperfusion injury risk increases; (b) deflate periodically — \"tourniquet break\" of 10-15 minutes after each 90-120 minutes; reperfusion → metabolic acidosis temporary; (c) **avoid tourniquet in**: severe peripheral vascular disease, AV fistula, sickle cell disease (risk crisis — controversial), tumor (theoretical tumor cell dissemination — but used routinely with controversy), severe vascular calcification; (5) **complications**: (a) **nerve injury** — most common — pressure neuropraxia (especially radial > ulnar > median upper, peroneal > tibial lower); usually transient, can be permanent (~ 1:5,000); higher with prolonged time + high pressure + thin patients; (b) **muscle injury** — ischemia → rhabdo, compartment syndrome (rare); (c) **vascular injury** — atheroma dislodgement, DVT, post-tourniquet syndrome; (d) **skin injury** — under-padding, wrong placement (wrinkles, alcohol-soaked drapes); (e) **post-tourniquet syndrome** — swelling, stiffness, pallor, weakness 1-6 weeks; (f) **PE/DVT** — release of tourniquet → embolism; (g) **systemic hemodynamic effects** — release → hypotension + acidosis + hyperkalemia + brief; (6) **safe practices**: (a) appropriate cuff size + correct placement (proximal limb on muscle bellies, not over joints, nerves, bony prominences), (b) padding underneath (wrinkles cause injury), (c) drape carefully (alcohol prep can soak into padding → chemical burn under cuff), (d) exsanguinate by elevation + Esmarch (avoid in infection, malignancy), (e) record time + pressure clearly, (f) deflate when no longer needed (don't routinely leave inflated through closure), (g) communicate with anesthesia (hemodynamic effects); (7) **modern alternatives**: tranexamic acid (TXA) reduces need for prolonged tourniquet in TKA"
+      },
+      {
+        "label": "C",
+        "text": "Lower extremity needs lower pressure than upper extremity"
+      },
+      {
+        "label": "D",
+        "text": "Esmarch should not be removed before closure in finger surgery"
+      },
+      {
+        "label": "E",
+        "text": "Tourniquet is safe in severe PVD"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Tourniquet: bloodless field. Pressure: 50 mmHg above SBP (UE), 100 mmHg above SBP (LE), or modern LOP-based (Doppler) + 50-100 mmHg margin. Max time 2h, break 10-15 min after 90-120 min. Complications: nerve injury (most common — neuropraxia, can be permanent), muscle/rhabdo, post-tourniquet syndrome, embolism. Avoid in PVD, sickle cell. Proper placement + padding + dry drapes critical. TXA reduces need.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "AAOS Tourniquet Safety"
+  },
+  {
+    "scenario": "**Basic Science**\n\n**Effects of medications on bone + soft tissue healing** — perioperative management of common medications\n\nอธิบาย effects ของ corticosteroid, NSAIDs, methotrexate, biologic DMARDs (anti-TNF), bisphosphonate ต่อ surgical healing + perioperative considerations",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Stop methotrexate before all surgery"
+      },
+      {
+        "label": "B",
+        "text": "Medication Effects on Orthopedic Healing + Perioperative Management: (1) **corticosteroids** — impair wound + bone healing (inhibit fibroblast proliferation, collagen synthesis, angiogenesis, immune function); long-term use → osteoporosis, AVN, infection risk; (a) **perioperative**: do NOT abruptly stop chronic users (adrenal insufficiency); **stress-dose steroid** for major surgery if chronic high-dose (> 20 mg prednisolone/day or equivalent > 3 weeks within past year) — hydrocortisone 50-100 mg IV at induction + 50 mg q8h × 24-48h then taper; (b) avoid intra-articular steroid within 3 months pre-joint arthroplasty (increased infection risk); (2) **NSAIDs** — variable effect on bone healing: (a) inhibit prostaglandin synthesis (COX inhibition) → may impair early fracture healing in animal studies; clinical evidence mixed — most studies show no significant clinical effect with short-term use; (b) avoid in: severe comminuted fractures, non-union concern, spine fusion (controversial), pediatric long bone fracture; (c) reasonable for short-term post-op pain + multimodal analgesia + reducing opioid use; (d) renal + GI + CV considerations; (e) selective COX-2 better GI profile but CV concerns; (3) **methotrexate (MTX)** — DMARD for RA, psoriasis; perioperative: (a) **continue MTX through surgery** (no increased infection risk per ACR/AAHKS guidelines + multiple studies); (b) hold if active infection or significant renal dysfunction; (c) low-dose folate supplementation continued; (4) **biologic DMARDs (anti-TNF — adalimumab, etanercept, infliximab, certolizumab; IL-6 — tocilizumab; B-cell — rituximab; JAK inhibitors — tofacitinib, baricitinib)** — perioperative for elective surgery: (a) **hold during peri-operative period** — timing based on dosing interval (e.g., adalimumab — hold ~ 1-2 doses pre-op = 2-4 weeks; etanercept — 1 week; infliximab — 4-6 weeks); (b) **resume when wound healed** (typically 2 weeks post-op); (c) screen TB + hepatitis before initiation; (5) **bisphosphonates** — anti-resorptive: (a) generally safe to continue perioperatively; (b) **osteonecrosis of the jaw (ONJ)** risk — minimize invasive dental procedures during therapy; **atypical femur fracture (AFF)** — subtrochanteric/diaphyseal, prodromal thigh pain, transverse + lateral cortex thickening — bilateral risk (screen contralateral); (c) **denosumab** (anti-RANKL) — same ONJ + AFF risk; **rebound vertebral fractures if stopped abruptly without transition** to bisphosphonate; (6) **anticoagulants** — perioperative bridging: warfarin INR < 1.5 typically required; DOAC hold 24-48h depending; resume post-op based on bleeding risk + DVT prophylaxis dose; (7) **smoking** — single most important modifiable risk factor for impaired healing — counsel cessation 4-8 weeks pre-op (significantly reduces infection, non-union, wound complications); (8) **glycemic control** — HbA1c < 7.5-8 for elective arthroplasty (reduces infection risk); (9) **vitamin D + nutrition** — vitamin D deficiency (< 30 ng/mL) common → optimize"
+      },
+      {
+        "label": "C",
+        "text": "NSAIDs always best for fracture healing"
+      },
+      {
+        "label": "D",
+        "text": "Smoking does not affect bone healing"
+      },
+      {
+        "label": "E",
+        "text": "Bisphosphonates have no risks"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Medications + healing: corticosteroid impairs (stress-dose if chronic high-dose, avoid IA steroid 3 mo pre-arthroplasty), NSAIDs variable (avoid in non-union concern, spine fusion), MTX continue through surgery (no infection risk), biologic DMARDs HOLD perioperatively (resume 2 wk post-wound healing), bisphosphonate continue (ONJ + AFF risk), denosumab — rebound fractures if stopped abruptly. Smoking cessation 4-8 wk pre-op (largest modifiable). HbA1c < 7.5-8 elective arthroplasty.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "ACR/AAHKS Perioperative Guidelines"
+  },
+  {
+    "scenario": "**Basic Science**\n\n**Compartment pressure measurement** + interpretation\n\nอธิบาย technique + interpretation + perfusion pressure (ΔP) + indications for fasciotomy",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Pulselessness is the earliest sign"
+      },
+      {
+        "label": "B",
+        "text": "Compartment Pressure Measurement: (1) **acute compartment syndrome (ACS)** = elevated intra-compartmental pressure → impaired tissue perfusion → ischemia/necrosis; clinical diagnosis primary but pressure measurement supports + helps in equivocal/obtunded patients; (2) **most reliable clinical signs** — pain out of proportion + pain with passive stretch of involved compartment muscles; 5 P's classically taught (Pain, Paresthesia, Pallor, Paralysis, Pulselessness) — but **late signs**, especially pulselessness (often last to appear, may be preserved); (3) **measurement technique**: (a) **Stryker device** (handheld with disposable side-port needle + transducer) — most common; (b) **arterial line transducer system** (in OR/ICU); (c) **slit catheter** for continuous monitoring; (d) **needle insertion** into compartment perpendicular, advance slowly, calibrate, hold transducer at level of measurement, read; (e) measure **each compartment** of the limb — leg has 4 (anterior, lateral, deep posterior, superficial posterior); forearm has 3 (volar, dorsal, mobile wad); hand has multiple; (4) **interpretation**: (a) **absolute pressure** — > 30 mmHg threshold traditionally; but variable with patient blood pressure; (b) **perfusion pressure (ΔP)** = **diastolic BP - compartment pressure** — physiologic measure; **ΔP < 30 mmHg → fasciotomy** (improved accuracy vs absolute pressure, accounts for individual perfusion needs); recommended by Whitesides + McQueen; (c) normal compartment pressure 0-10 mmHg; (d) **trend over time** more useful than single value; (5) **fasciotomy indications**: (a) clinical compartment syndrome — proceed without delay; (b) pressure measurement supports in equivocal cases — ΔP < 30 mmHg; (c) crush injury, prolonged ischemia, reperfusion, tibial fracture, supracondylar humerus fracture in children, snake bite, exertional CS in athletes; (6) **leg fasciotomy** — 4-compartment via 2 incisions (medial + lateral): anterior + lateral compartments through lateral incision; deep posterior + superficial posterior through medial incision; complete release through entire compartment fascia; (7) **forearm fasciotomy** — volar (extended Henry — releases superficial + deep flexor + carpal tunnel + lacertus + mobile wad) + dorsal incisions; (8) **hand fasciotomy** — multiple incisions for 10 compartments; (9) **gluteal compartment syndrome** — rare, prolonged immobilization (drug overdose); fasciotomy posterior approach; (10) **avoid delay** > 6-8 hours from onset → irreversible muscle necrosis → Volkmann's contracture, nerve damage, possible amputation; (11) **always document carefully** — high medicolegal risk; serial exams documented"
+      },
+      {
+        "label": "C",
+        "text": "Absolute pressure > 50 mmHg required for fasciotomy"
+      },
+      {
+        "label": "D",
+        "text": "Always wait 24 hours before fasciotomy"
+      },
+      {
+        "label": "E",
+        "text": "Only measure one compartment per limb"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Compartment pressure: clinical dx primary. Measurement (Stryker, arterial line) for equivocal/obtunded. ΔP = DBP - compartment pressure — **< 30 mmHg = fasciotomy** (better than absolute > 30). 5 P's (pulselessness LATE). Indications: clinical CS, equivocal + ΔP < 30, high-risk injuries. Leg fasciotomy 4 compartments via 2 incisions. Forearm — volar (Henry + CTR) + dorsal. Don't delay > 6-8h. Document serial exams (medicolegal).",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "Whitesides; McQueen"
+  },
+  {
+    "scenario": "**Basic Science**\n\n**Fat embolism syndrome (FES)** — pathophysiology + clinical features + management\n\nอธิบาย FES pathophysiology + Gurd criteria + management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Fat embolism only affects lungs"
+      },
+      {
+        "label": "B",
+        "text": "Fat Embolism Syndrome (FES): (1) **definition** — clinical syndrome from fat emboli released into systemic circulation, typically after long bone fracture or intramedullary nailing/reaming; (2) **incidence** — subclinical fat embolism in essentially all long bone fractures + reamed IM nail (echocardiographic + lab evidence); clinical FES occurs in 1-3% of long bone + pelvic fractures, higher with bilateral femur + delayed fixation; (3) **pathophysiology**: (a) **mechanical theory** — disrupted marrow fat enters venous circulation → emboli to pulmonary capillaries → ARDS-like picture + bypass to systemic via patent foramen ovale (~ 25% population) or pulmonary shunt → brain + skin; (b) **biochemical theory** — released free fatty acids cause inflammatory response + capillary leak + ARDS; (c) systemic inflammatory response; (4) **clinical features** — classic triad (24-72h after injury): (a) **respiratory distress** (75%) — tachypnea, hypoxemia, ARDS-pattern bilateral infiltrates on CXR; (b) **neurologic** (50%) — confusion, agitation, coma, focal deficits; (c) **petechial rash** (50-60%) — most specific feature — axilla, conjunctiva, oral mucosa, neck — non-dependent areas; (d) other — fever, tachycardia, retinopathy (cotton-wool spots), anemia, thrombocytopenia, hypocalcemia, elevated lipase, fat in urine; (5) **Gurd criteria** (1970) for diagnosis: (a) **major** (need 1): petechial rash, respiratory insufficiency, cerebral dysfunction unrelated to head injury; (b) **minor**: fever > 38.5, tachycardia > 110, retinopathy, jaundice, renal changes, anemia, thrombocytopenia, ESR elevated, fat macroglobulinemia; (6) **differential diagnosis** — pulmonary embolism (DVT), pneumonia, ARDS from other cause, sepsis, head injury (for neurologic features); (7) **management — primarily supportive**: (a) **early operative fixation** of long bone fractures within 24-48h reduces FES incidence (\"early total care\" historically — now \"damage control orthopedics\" for polytrauma + ARDS; current evidence balances both); (b) **supportive ICU care** — oxygen ± mechanical ventilation (lung-protective settings), hemodynamic support, IV fluids carefully (avoid overload), monitor coagulation; (c) **DVT prophylaxis** (mechanical + chemical when bleeding controlled); (d) **steroids** — controversial — historical use, some evidence for prevention with high-dose methylprednisolone but not standard; (e) **mortality** 5-15% with modern care; full recovery common in survivors; (8) **prevention**: (a) early fracture stabilization, (b) avoid unnecessary delay, (c) careful intramedullary reaming + nailing technique (use small holes, slow reaming, vent pressure), (d) consider non-reamed nail in polytrauma + lung injury, (e) damage control orthopedics for severe polytrauma"
+      },
+      {
+        "label": "C",
+        "text": "Fat embolism never causes neurologic symptoms"
+      },
+      {
+        "label": "D",
+        "text": "Diagnosis is by CT scan only"
+      },
+      {
+        "label": "E",
+        "text": "Treatment is high-dose steroids in all patients"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Fat embolism: 1-3% long bone fractures. Triad 24-72h after injury: respiratory distress (ARDS) + neurologic + petechial rash (axilla, conjunctiva, oral — non-dependent). Gurd criteria. Pathogenesis: mechanical + biochemical. Management: supportive ICU + early fracture fixation (reduces incidence). Damage control for polytrauma + lung injury. Steroids controversial. Mortality 5-15%. Prevent by early stabilization + careful IM reaming.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "Gurd Criteria; Pape OTA"
+  },
+  {
+    "scenario": "**Basic Science**\n\n**Vitamin D + calcium metabolism** + bone health implications\n\nอธิบาย vitamin D synthesis + activation + PTH + calcium homeostasis + clinical correlations (rickets, osteomalacia, osteoporosis)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "25-OH vitamin D is the active form"
+      },
+      {
+        "label": "B",
+        "text": "Vitamin D + Calcium Metabolism: (1) **vitamin D sources**: (a) skin synthesis from 7-dehydrocholesterol → cholecalciferol (D3) under UVB light (most physiologic — 30 min sun exposure can provide adequate); (b) dietary — D2 (ergocalciferol — plant-based, fortified foods) + D3 (animal-based — fatty fish, egg yolks, fortified dairy); (2) **activation**: (a) **25-hydroxylation in liver** → 25(OH)D (calcidiol — circulating form, **best clinical marker of vitamin D status**); (b) **1α-hydroxylation in kidney** → 1,25(OH)2D (calcitriol — active form); regulated by PTH (stimulates) + phosphate (inhibits) + calcium (inhibits); also some 1α-hydroxylase in immune cells + skin (extrarenal); (3) **actions of calcitriol**: (a) **intestine** — increases calcium + phosphate absorption (binds VDR → increases calcium-binding protein + TRPV6 channel); (b) **bone** — increases osteoclast activity (mobilize calcium) + supports mineralization; (c) **kidney** — increases calcium reabsorption (with PTH); (d) **immune** — modulates immune function; (e) **muscle** — strength + balance; (4) **PTH (parathyroid hormone)** — released from parathyroid glands in response to LOW serum ionized calcium (via calcium-sensing receptor); actions: (a) **bone** — increases osteoclastic activity → releases calcium + phosphate; (b) **kidney** — increases calcium reabsorption (distal tubule), decreases phosphate reabsorption, increases 1α-hydroxylase activity; (c) net effect — raises serum calcium + lowers phosphate; (5) **calcium homeostasis** — tight regulation: (a) **PTH** raises calcium (rapid); (b) **calcitriol** raises calcium (intestinal absorption — slower); (c) **calcitonin** lowers calcium (minor in adults); (d) **FGF-23** (from osteocytes) — regulates phosphate (inhibits reabsorption); (6) **vitamin D deficiency**: (a) **definition** — 25(OH)D < 20 ng/mL deficient; 20-30 insufficient; > 30 sufficient (debated); (b) **causes** — inadequate sun exposure, dietary, malabsorption (celiac, IBD, bariatric), liver/renal disease, anticonvulsants (increase metabolism), obesity (sequestered in adipose); (c) **consequences**: rickets in children (impaired mineralization → bowed legs, rachitic rosary, widened wrists, delayed milestones), osteomalacia in adults (impaired mineralization → bone pain, muscle weakness, pseudofractures Looser zones, increased fracture risk), proximal myopathy + falls in elderly, secondary hyperparathyroidism, osteoporosis exacerbation; (7) **supplementation**: (a) **800-2000 IU/day** maintenance; **higher loading dose** (50,000 IU weekly × 8 weeks) for deficiency; (b) **calcium 1000-1200 mg/day** dietary or supplemental; (c) target 25(OH)D > 30 ng/mL; (8) **clinical correlations in orthopedics**: (a) **bone healing** — adequate vitamin D + calcium important for fracture healing; check + replete; (b) **osteoporosis** — universal recommendation for vit D + Ca with anti-osteoporosis drugs; (c) **hip fracture patients** — high prevalence of deficiency, replete to prevent re-fracture + falls; (d) **post-arthroplasty** — vitamin D deficient patients have higher complication rates per recent studies; (e) **pediatric orthopedics** — vitamin D deficiency contributes to rickets + bone fragility"
+      },
+      {
+        "label": "C",
+        "text": "PTH is released in response to high calcium"
+      },
+      {
+        "label": "D",
+        "text": "Vitamin D deficiency does not affect bone"
+      },
+      {
+        "label": "E",
+        "text": "Calcium has no role in muscle function"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Vitamin D: synthesized in skin (UVB) → 25-OH in liver (best marker) → 1,25-OH (active) in kidney (PTH-stimulated). Actions: intestinal Ca/P absorption + bone resorption + kidney reabsorption. PTH responds to LOW Ca — raises Ca, lowers P. Deficiency: < 20 ng/mL. Consequences: rickets (peds), osteomalacia (adults), osteoporosis, falls. Repletion: 800-2000 IU + Ca 1000-1200 mg. Check + replete in fracture, osteoporosis, hip fracture, arthroplasty patients.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "Endocrine Society Vitamin D"
+  },
+  {
+    "scenario": "**Basic Science**\n\n**Nuclear medicine imaging** ใน orthopedics — bone scan + indications + interpretation\n\nอธิบาย technetium bone scan (3-phase) + indications + interpretation + comparison with PET-CT",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bone scan uses ionizing X-ray only"
+      },
+      {
+        "label": "B",
+        "text": "Nuclear Medicine in Orthopedics: (1) **Technetium-99m methylene diphosphonate (Tc-99m MDP) bone scan** — most common; binds to hydroxyapatite at sites of bone turnover (osteoblast activity), reflects bone remodeling; (2) **3-phase bone scan**: (a) **flow phase** — dynamic images during injection (~ first minute) — assesses **blood flow** to area; positive in cellulitis, septic arthritis, acute inflammation; (b) **blood pool phase** — static images at 5-10 minutes — assesses **soft tissue hyperemia**; positive in cellulitis, inflammation, early infection; (c) **delayed phase** — static images at 2-4 hours after radiotracer cleared from soft tissue — assesses **bone uptake** specifically; positive in fracture, infection, neoplasm, metabolic bone disease; (d) **4th phase (24-hour)** — sometimes added for distinguishing infection from cellulitis (infection persists, cellulitis fades); (3) **indications**: (a) **occult fracture** — stress fracture (especially femoral neck, navicular, metatarsal), child abuse, hip fracture in elderly with normal X-ray; (b) **infection (osteomyelitis)** — sensitive + non-specific; better when combined with **WBC scan (Indium-111 or Tc-99m HMPAO-labeled WBC)** for chronic OM diagnosis; (c) **metastatic disease** — whole-body screening for skeletal mets (breast, prostate, lung); compared with PET-CT (more specific); (d) **Paget's disease, fibrous dysplasia, osteomyelitis assessment**; (e) **complex regional pain syndrome (CRPS)** — increased uptake all 3 phases classically; (f) **prosthetic joint loosening vs infection** — combined bone scan + WBC scan; (g) **AVN of femoral head** — early phase decreased uptake (avascular), late phase increased (revascularization); (h) **growth plate assessment**, congenital anomalies; (4) **interpretation pitfalls**: (a) very young children — normally high uptake at physes (growth plates); (b) Paget's disease — markedly increased uptake; (c) photopenia (cold lesion) — multiple myeloma, aggressive lytic tumor (lytic > blastic — bone scan less sensitive than CT for lytic only); (d) post-surgical changes — uptake persists 12-18 months around hardware; (5) **other nuclear medicine**: (a) **PET-CT with FDG (fluorodeoxyglucose)** — assesses glucose metabolism, sensitive for tumor (primary + recurrence + metastases), infection, inflammation; combined with CT for anatomic localization; (b) **PET-CT with Na-18F (sodium fluoride)** — better bone-specific PET, replacing some bone scan; (c) **SPECT-CT** combines functional bone scan + anatomic CT — improved localization; (6) **comparison**: bone scan high sensitivity, low specificity; PET-CT higher resolution + specificity for tumor; MRI better for soft tissue + early changes; (7) **radiation dose** — bone scan ~ 4-6 mSv (relevant for pediatric)"
+      },
+      {
+        "label": "C",
+        "text": "3-phase scan only assesses bone phase"
+      },
+      {
+        "label": "D",
+        "text": "WBC scan is not useful for chronic OM"
+      },
+      {
+        "label": "E",
+        "text": "Bone scan is the best test for soft tissue tumors"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Bone scan: Tc-99m MDP, binds hydroxyapatite — reflects bone turnover. 3-phase: flow (blood flow), blood pool (soft tissue), delayed (bone) — distinguishes infection vs cellulitis. Indications: occult fracture (stress), OM, skeletal mets, prosthetic loosening vs infection (+WBC scan), AVN, CRPS, Paget. Pitfalls: pediatric physes, multiple myeloma cold lesions. PET-CT (FDG, Na-18F) — tumor + infection. SPECT-CT — combined. MRI for soft tissue.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "SNM"
+  },
+  {
+    "scenario": "**Basic Science**\n\n**Surgical antibiotic prophylaxis in orthopedics** — evidence-based principles\n\nอธิบาย principles + timing + drug choice + duration for different ortho procedures (arthroplasty, fracture, spine, sports surgery)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Antibiotic should be given 2 hours before incision"
+      },
+      {
+        "label": "B",
+        "text": "Surgical Antibiotic Prophylaxis in Orthopedics: (1) **principles** — reduce surgical site infection (SSI) rate; antibiotic must achieve adequate tissue concentration at the time of incision + throughout the period of contamination; (2) **timing**: (a) **administer within 60 minutes before incision** (within 120 min for vancomycin + fluoroquinolones due to infusion time); (b) ideally complete infusion before tourniquet inflation; (c) too early (> 60 min before incision) → reduced efficacy; too late (after incision) → reduced efficacy; (3) **drug choice — first-line** (CDC/SCIP/AAOS guidelines): (a) **cefazolin 2 g IV (3 g for > 120 kg)** — first-line for most orthopedic surgery (covers S. aureus, Streptococcus, some gram-negative); cefazolin > cefuroxime for ortho (better gram-positive); (b) **vancomycin** alternative or addition: (i) beta-lactam allergy (true IgE-mediated — not just rash with penicillin), (ii) MRSA-colonized patients (positive nasal screening), (iii) high MRSA prevalence institutions, (iv) revision arthroplasty with prior infection; vancomycin alone has worse gram-negative coverage → typically combined with cefazolin if both indicated; (c) **clindamycin** — alternative for true beta-lactam allergy if vancomycin not feasible; (d) **gentamicin** — added for: contaminated open fractures, GU surgery preparation; (4) **redosing intraoperatively**: cefazolin q 4 hours during long surgery (half-life ~ 2 hours); after significant blood loss (> 1500 mL); (5) **duration**: (a) **single pre-op dose ± intra-op redosing** sufficient for most clean orthopedic surgery; (b) **24 hours postoperative** for arthroplasty (currently 24-hour standard; some shorter); not longer — does not reduce SSI + increases C. diff + resistance; (c) **prolonged for open fractures** based on Gustilo classification (covered separately): I-II — 24-48 hours cefazolin; III — extended (48-72h) with gram-negative coverage; (6) **specific orthopedic settings**: (a) **clean elective (TKA, THA, ACDF, spine fusion)** — cefazolin pre-op + 24h; (b) **open fracture** — based on Gustilo type; (c) **arthroscopy** — single pre-op dose; (d) **fragility hip fracture** — cefazolin pre-op + 24h; (7) **MRSA screening + decolonization** — pre-op nasal swab; if positive → 5-day mupirocin ointment + chlorhexidine wash + add vancomycin to prophylaxis; (8) **dental prophylaxis post-arthroplasty** — AAOS + ADA evidence-based guideline 2012/2014: **no longer routinely recommended** for healthy patients (no clear evidence link dental procedures to PJI); selective for immunocompromised + first 2 years post-arthroplasty; (9) **avoid prolonged prophylaxis** — no benefit + increases C. diff + resistance + adverse effects"
+      },
+      {
+        "label": "C",
+        "text": "Vancomycin alone covers all pathogens"
+      },
+      {
+        "label": "D",
+        "text": "Continue prophylaxis 7 days post-op for all arthroplasty"
+      },
+      {
+        "label": "E",
+        "text": "Dental prophylaxis required indefinitely post-arthroplasty"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Ortho antibiotic prophylaxis: cefazolin 2-3 g IV within 60 min pre-incision (vancomycin 120 min). Add vancomycin for beta-lactam allergy, MRSA carrier, revision after prior infection. Redose cefazolin q 4h + after major blood loss. Duration: pre-op + 24h post-op for most (no longer). Open fractures: extended based on Gustilo. MRSA screening + decolonization pre-arthroplasty. Dental prophylaxis post-arthroplasty NOT routine (AAOS/ADA 2014).",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "AAOS; SCIP; ADA Joint Statement"
+  },
+  {
+    "scenario": "**Basic Science**\n\n**Venous thromboembolism (VTE) pathophysiology + prophylaxis** ใน orthopedics\n\nอธิบาย VTE pathophysiology + Virchow's triad + risk factors + prophylaxis choices + duration after ortho surgery",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Aspirin is not effective for VTE prophylaxis"
+      },
+      {
+        "label": "B",
+        "text": "VTE Pathophysiology + Prophylaxis in Orthopedics: (1) **Virchow's triad** (1856) — 3 factors predisposing to thrombosis: (a) **venous stasis** (immobilization, surgery, paralysis, prolonged travel); (b) **endothelial injury** (surgery, trauma, central lines, fractures); (c) **hypercoagulability** (cancer, OCP/HRT, pregnancy, inherited thrombophilias — Factor V Leiden, protein C/S deficiency, antithrombin III deficiency, antiphospholipid syndrome, MTHFR, prothrombin gene mutation); (2) **orthopedic patients HIGH RISK** — combination: prolonged operative time + immobilization + endothelial injury + inflammatory response; (3) **highest VTE risk surgeries** without prophylaxis: total hip arthroplasty (40-60% DVT, 1-2% fatal PE), total knee arthroplasty (40-80% DVT — even higher than THA), hip fracture surgery (50% DVT); (4) **risk stratification** — Caprini score for individual risk; major surgery duration > 45 min, age > 60, cancer, prior VTE, obesity, immobility, OCP, pregnancy add risk; (5) **prophylaxis options** (AAOS + ACCP guidelines): (a) **mechanical** — sequential compression devices (SCDs), foot pumps, graduated compression stockings; early mobilization; useful as adjunct or alone if bleeding risk high; (b) **chemical**: (i) **aspirin** (81 mg or 325 mg BID) — AAOS-endorsed option for elective hip + knee arthroplasty in healthy patients without prior VTE (PEPPER trial, Lancet 2019 — multiple RCTs support); equivalent to anticoagulants with lower bleeding; (ii) **LMWH (enoxaparin 40 mg daily, dalteparin)** — gold standard, broad use, monitor renal; (iii) **fondaparinux** — synthetic Xa inhibitor; (iv) **DOACs (rivaroxaban, apixaban, edoxaban)** — oral, no monitoring, equivalent efficacy; (v) **warfarin** — historic, requires INR monitoring (2-3); (vi) **UFH** — limited role due to inferior efficacy; (6) **duration**: (a) **elective THA** — 28-35 days; (b) **elective TKA** — 10-14 days; (c) **hip fracture** — 28-35 days; (d) prolonged in higher-risk patients; (7) **special situations**: (a) **spine surgery** — controversial — mechanical prophylaxis preferred initially due to epidural hematoma risk; chemical when bleeding risk reduced; (b) **arthroscopy** — generally not routine, selective; (c) **fracture without surgery (cast immobilization of lower limb)** — selective based on risk; (8) **TXA (tranexamic acid)** — for blood loss reduction, does NOT increase VTE risk (well-studied in arthroplasty); (9) **screening** — pre-op risk assessment; **DO NOT routine pre-op duplex** scan; (10) **diagnosis VTE**: D-dimer (sensitive, not specific), duplex US (DVT diagnostic), CTA chest (PE), V/Q scan (alternative if contrast contraindicated); (11) **treatment**: therapeutic anticoagulation (LMWH, DOAC, warfarin) for 3+ months; IVC filter for contraindication to anticoagulation; thrombolysis for massive PE"
+      },
+      {
+        "label": "C",
+        "text": "Mechanical prophylaxis is not useful"
+      },
+      {
+        "label": "D",
+        "text": "Duration of prophylaxis is 1 week for THA"
+      },
+      {
+        "label": "E",
+        "text": "TXA increases VTE risk significantly"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "VTE in ortho: high risk (THA, TKA, hip fracture). Virchow's triad: stasis + endothelial injury + hypercoagulability. Prophylaxis: mechanical (SCD) + chemical (aspirin AAOS-endorsed for low-risk arthroplasty per PEPPER + multiple RCTs, LMWH gold standard, DOACs, fondaparinux, warfarin). Duration: 28-35d THA, 10-14d TKA, 28-35d hip fracture. Spine: mechanical first (epidural hematoma risk). TXA reduces blood loss without ↑ VTE. Modern: shared decision risk-stratified.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "AAOS; ACCP; PEPPER Trial"
+  },
+  {
+    "scenario": "**Basic Science**\n\n**Bone graft + substitutes** — types + properties + indications\n\nอธิบาย autograft vs allograft + properties (osteoconductive, osteoinductive, osteogenic) + bone substitutes (DBM, ceramics, BMP) + clinical applications",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Allograft has osteogenic cells"
+      },
+      {
+        "label": "B",
+        "text": "Bone Graft + Substitutes: (1) **3 essential properties** of bone graft material: (a) **osteoconductive** — provides scaffold for new bone growth (cells from host migrate into graft); ceramics, allograft, autograft; (b) **osteoinductive** — induces stem cells to differentiate into osteoblasts; growth factors (BMP) primarily; autograft has it; allograft minimal (after processing); demineralized bone matrix (DBM); (c) **osteogenic** — contains live cells (osteoblasts, mesenchymal stem cells) that directly form bone; **only autograft** has this; allograft + synthetics have NONE; (2) **autograft** — gold standard — has ALL 3 properties: (a) **cancellous autograft** (iliac crest most common, also distal radius, proximal tibia) — highly osteoconductive + osteoinductive + osteogenic; rapid incorporation; used for fracture non-union, fusion (spine, arthrodesis), filling defects, ankle arthrodesis; (b) **cortical autograft** (fibula, iliac crest) — structural support; slower incorporation; used for segmental bone loss, anterior cervical fusion; (c) **vascularized autograft (free vascularized fibula)** — maintains osteogenic cells via vascular pedicle; for large segmental defects, AVN femoral head, congenital pseudarthrosis tibia, post-tumor resection; (d) **disadvantages** — donor site morbidity (pain, infection, hematoma, fracture, nerve injury — LFCN at ASIS, sciatic notch, meralgia paresthetica), limited quantity, prolonged operative time; (3) **allograft** — cadaveric: osteoconductive + minimal osteoinductive (after processing) + NO osteogenic; (a) **fresh frozen** — preserves more growth factors but disease transmission risk; (b) **freeze-dried** — sterile, preserves osteoconductive but less osteoinductive; (c) **irradiated** — sterile but reduces mechanical strength; (d) **demineralized bone matrix (DBM)** — processed allograft with calcium removed → exposes BMPs → enhanced osteoinductive; available as putty, gel, strips; (e) advantages — no donor morbidity, available, larger quantity, structural pieces; (f) disadvantages — slower incorporation, immune response, disease transmission risk (low — 1:1.6 million HIV, hepatitis), expense; (4) **bone substitutes / synthetic**: (a) **calcium sulfate (CaSO4)** — osteoconductive, resorbs rapidly (6-12 weeks), used in non-load-bearing applications + as antibiotic carrier; (b) **calcium phosphate** (hydroxyapatite, tricalcium phosphate, biphasic) — osteoconductive, slower resorption + bone-like; (c) **bioactive glass** — osteoconductive + may release ions promoting bone; (d) **coralline hydroxyapatite** — natural coral-derived; (5) **growth factors / biologics**: (a) **rhBMP-2 (recombinant human bone morphogenetic protein-2 — InFuse)** — FDA-approved for tibial nonunion, ALIF (anterior lumbar interbody fusion), and selected other; potent osteoinductive; concerns — heterotopic ossification, swelling, controversial cancer risk in cervical use; (b) **rhBMP-7 (OP-1)** — withdrawn from US market; (c) **PRP (platelet-rich plasma)** — adjunct, debated efficacy; (d) **bone marrow aspirate concentrate (BMAC)** — concentrated mesenchymal stem cells + growth factors, used in osteonecrosis, non-union; (e) **stem cell therapies** investigational; (6) **clinical applications**: spine fusion (autograft + BMP), non-union (autograft + BMAC), fracture (cancellous autograft), filling defects after tumor resection (allograft, synthetic), distraction osteogenesis (Ilizarov)"
+      },
+      {
+        "label": "C",
+        "text": "Autograft has no osteogenic property"
+      },
+      {
+        "label": "D",
+        "text": "BMP-2 has no clinical applications"
+      },
+      {
+        "label": "E",
+        "text": "Demineralized bone matrix has no osteoinductive properties"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Bone graft properties: osteoconductive (scaffold), osteoinductive (BMP — stimulates), osteogenic (live cells). Autograft = ALL 3 (gold standard but donor morbidity). Allograft = osteoconductive + minimal osteoinductive. DBM = enhanced osteoinductive (BMPs exposed). Synthetic (CaSO4, CaP, bioactive glass) = osteoconductive only. rhBMP-2 = potent osteoinductive. Vascularized fibula for large defects + AVN. PRP + BMAC adjuncts. Each graft chosen by need.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "AAOS Bone Graft"
+  },
+  {
+    "scenario": "**EMS/Management**\n\nผู้บาดเจ็บ multi-trauma มาจากรถมอเตอร์ไซค์ชนรถยนต์ ห้องฉุกเฉิน trauma center อายุ 35 ปี\n\nGCS 13, BP 92/56, HR 124, RR 28, SpO2 91% on RA, obvious deformity right thigh + chest pain + abdominal tenderness, no obvious external bleeding\n\nจงอธิบาย ATLS primary survey approach + ortho's role",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Head CT before airway management always"
+      },
+      {
+        "label": "B",
+        "text": "ATLS Primary Survey in Multi-Trauma — ABCDE: (1) **A — Airway** with cervical spine protection: assess patency (look, listen, feel), patient talking = airway intact; intervene — chin lift/jaw thrust (no head tilt with C-spine concern), oral/nasal airway, **intubate** if GCS ≤ 8 or unable to protect; **cervical collar + spine board** initially (remove board < 2 hours pressure ulcer risk); definitive airway = cuffed tube in trachea; surgical airway (cricothyroidotomy) if cannot intubate cannot ventilate; (2) **B — Breathing**: expose chest, look + feel + auscultate; identify life-threatening: **tension pneumothorax** (decompression with needle 2nd ICS midclavicular or 5th ICS midaxillary → chest tube), **open pneumothorax** (3-sided dressing → chest tube), **massive hemothorax** (chest tube + autotransfusion + thoracotomy if > 1500 mL initial or 200 mL/h × 3 hr), **flail chest with pulmonary contusion** (analgesia, oxygen, mechanical ventilation), **cardiac tamponade** (pericardiocentesis or surgical); 100% O2 + monitor SpO2 + ETCO2; (3) **C — Circulation** with hemorrhage control: 5 sources of hemorrhage — \"blood on the floor + 4 more\" (external + chest + abdomen + retroperitoneum/pelvis + long bone fractures); (a) external hemorrhage — direct pressure, tourniquet (extremity, junctional), wound packing + topical hemostatics (Combat Gauze, QuikClot); (b) **2 large bore IV lines** (16-18g) + crystalloid bolus 1L (caution — large volume worsens coagulopathy + dilutes); modern — early balanced transfusion 1:1:1 PRBC:FFP:platelets; (c) **massive transfusion protocol (MTP)** — for shock class III-IV; (d) TXA within 3 hours (CRASH-2); (e) **pelvic binder** for suspected pelvic injury (hypotension, deformity); (f) **damage control resuscitation** — permissive hypotension (SBP 80-90, MAP 65) until surgical control + euvolemia + reverse coagulopathy + correct acidosis + warm; (g) lab — type + cross, CBC, BMP, lactate, ABG, coags, fibrinogen, TEG/ROTEM if available, urine pregnancy; (4) **D — Disability**: neurologic — GCS, pupils, gross motor + sensation, glucose; spine immobilization; head CT if GCS ≤ 13 or focal deficit; (5) **E — Exposure / Environment**: completely undress + log roll to inspect back; **warm** patient to prevent hypothermia (warming blankets, warmed fluids, blood warmer) — **lethal triad** = hypothermia + acidosis + coagulopathy; (6) **adjuncts** — monitor (cardiac, BP, SpO2), Foley (if no urethral injury — RUG first if blood at meatus or pelvic injury), NG/OG tube, CXR + pelvic X-ray + FAST → CT scan if stable; (7) **secondary survey** after stabilization — head-to-toe exam, AMPLE history; (8) **orthopedic role in primary survey**: (a) **pelvic binder** for hemodynamic instability; (b) **gross long-bone alignment + splinting** (traction splint for femoral shaft — reduces blood loss + pain); (c) **open fracture management** — antibiotic + tetanus + irrigate + cover; (d) **damage control orthopedics** for unstable polytrauma — external fixator for stabilization, definitive later when stable; (e) early identification + reduction of dislocations (hip, knee — vascular emergency)"
+      },
+      {
+        "label": "C",
+        "text": "Wait for definitive vascular surgeon before pelvic binder"
+      },
+      {
+        "label": "D",
+        "text": "High volume crystalloid 5L bolus standard"
+      },
+      {
+        "label": "E",
+        "text": "Splinting deformed limbs is the priority before airway"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "ATLS Primary Survey ABCDE: Airway + C-spine (intubate GCS ≤ 8), Breathing (treat tension PTX/open PTX/hemothorax/tamponade), Circulation (\"floor + 4\" — control hemorrhage, MTP 1:1:1, TXA, pelvic binder, permissive hypotension), Disability (GCS), Exposure (warm — avoid lethal triad: hypothermia + acidosis + coagulopathy). Adjuncts: monitor + Foley + NG + CXR + pelvic + FAST → CT. Ortho role: pelvic binder, splint long bones, damage control orthopedics.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "ATLS 10th Edition"
+  },
+  {
+    "scenario": "**EMS/Management**\n\nชายไทย 28 ปี crush injury ขาขวา open wound 8 cm with bone exposed + active arterial bleeding ส่งจาก field มา ED 1 ชั่วโมงหลัง injury\n\nVS: BP 105/68, HR 115, alert\n\nจงอธิบาย initial management ของ open fracture ใน ED + Pre-hospital",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Antibiotics can wait 24 hours after presentation"
+      },
+      {
+        "label": "B",
+        "text": "Open Fracture Initial Management Pre-hospital + ED: (1) **pre-hospital**: (a) ABCs first; (b) **control bleeding** — direct pressure first; **tourniquet** for uncontrolled extremity hemorrhage (CAT, SOFTT-W — high above wound, tight enough to stop bleeding, mark time, do not loosen periodically); (c) cover wound with **sterile/clean moist saline dressing** (do not push bone back into wound — culture-document position seen); (d) **splint** in position found; (e) NV check distal; (f) rapid transport to trauma center; (g) NPO if possible; (h) IV access; (2) **ED initial management**: (a) **ATLS primary survey** — open fracture is NOT priority over ABC; (b) **immediate IV access + resuscitation**; (c) **immediate IV antibiotic within 1 hour of presentation** (single most important factor reducing infection risk per multiple studies); choice based on **Gustilo classification**: (i) **Gustilo I** (wound < 1 cm, low energy, minimal contamination) — **cefazolin 2 g IV** × 24 hr; (ii) **Gustilo II** (wound 1-10 cm, moderate, no extensive soft tissue) — cefazolin; (iii) **Gustilo III** — cefazolin + aminoglycoside (gentamicin) for 48-72 hours, or piperacillin-tazobactam alternative; (iv) **farm/anaerobic contamination** — add penicillin or metronidazole for Clostridium; (3) **tetanus prophylaxis**: (a) **Td or Tdap** if > 5 years since last dose with dirty wound; (b) **TIG (tetanus immune globulin)** for unknown/incomplete immunization + dirty wound; (c) check status; (4) **rigorous wound assessment**: (a) inspect — extent, contamination, neurovascular status, soft tissue coverage; (b) photograph if possible; (c) sterile saline-soaked dressing — DO NOT pour Betadine/hydrogen peroxide into wound (tissue toxicity); (d) splint anatomically; (e) prophylactic compartment syndrome monitoring; (5) **definitive surgical management**: (a) **surgical debridement + irrigation in OR**: timing — historically \"6-hour rule\" relaxed — recent evidence (multiple meta-analyses) shows **within 24 hours acceptable if antibiotic started early** (modern AAOS/AO guidance); (b) **aggressive debridement** of all devitalized tissue + foreign material in OR; (c) **copious low-pressure saline irrigation** (3-9 L depending on Gustilo type) — high-pressure damages tissue per FLOW trial NEJM 2015 (saline = soap for outcomes); (d) **fracture stabilization** appropriate to grade + location — IM nail for closed-equivalent IIIA tibia/femur, external fixator for damage control; (e) **wound management** — primary closure for IIIA selected clean (no longer dogma to leave open); VAC + delayed closure for contaminated; soft tissue flap (rotational, free) for IIIB requiring coverage; (f) **repeat debridement q 48-72h** until clean before closure; (6) **screening other injuries** (compartment syndrome, NV injury, associated injuries); (7) **complications/outcomes**: infection — modern rates I: 0-2%, II: 2-7%, IIIA: 7-10%, IIIB: 10-50%, IIIC: > 25%; nonunion; chronic osteomyelitis; amputation; (8) **multidisciplinary**: ortho + plastic + vascular + ID + general surgery"
+      },
+      {
+        "label": "C",
+        "text": "High-pressure irrigation with betadine is preferred"
+      },
+      {
+        "label": "D",
+        "text": "Push exposed bone back into the wound"
+      },
+      {
+        "label": "E",
+        "text": "Tetanus not needed for any open fracture"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Open fracture: PRE-HOSPITAL — direct pressure, tourniquet for uncontrolled bleeding, sterile moist dressing, splint, transport. ED: ATLS + **antibiotic within 1 hr** (most important — cefazolin Gustilo I-II; + aminoglycoside Gustilo III; + penicillin/metronidazole for farm contamination), tetanus, splint, NV check. DEFINITIVE: debridement + low-pressure saline irrigation + stabilization in OR within 24h (relaxed from 6h with early abx). VAC + delayed closure for contaminated. Plastic for IIIB coverage.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "OTA; FLOW Trial NEJM 2015"
+  },
+  {
+    "scenario": "**EMS/Management**\n\nMass casualty incident — รถบัสตกหุบเขา 30 ผู้บาดเจ็บมาห้องฉุกเฉินพร้อมกัน, ทรัพยากร limited\n\nจงอธิบาย mass casualty triage system (START / SALT) + role of orthopedic team",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Treat the most severely injured patient regardless of survivability"
+      },
+      {
+        "label": "B",
+        "text": "Mass Casualty Triage + Orthopedic Role: (1) **mass casualty incident (MCI)** = injured patient number exceeds available resources → need triage to maximize survival → \"doing the greatest good for greatest number\"; (2) **START (Simple Triage and Rapid Treatment)** — most widely used adult MCI triage system, pre-hospital, 30 seconds per patient assessment: (a) **green/minor (walking wounded)** — \"if you can walk, come over here\" → low priority; (b) assess remaining (those who can't walk): (i) **respirations** — if absent + no response to head positioning → **black (deceased/expectant)**; if RR > 30 → **red (immediate)**; (ii) **perfusion** — capillary refill > 2 sec OR no radial pulse → **red (immediate)**; (iii) **mental status** — unable to follow simple commands → **red (immediate)**; otherwise → **yellow (delayed)**; (3) **categories**: (a) **RED (immediate)** — life-threatening injuries with reasonable chance of survival with prompt treatment — priority; (b) **YELLOW (delayed)** — serious but stable, can wait for treatment without significant deterioration; (c) **GREEN (minor/walking wounded)** — non-life-threatening, can wait or self-care; (d) **BLACK (expectant/deceased)** — deceased OR injuries incompatible with survival under current resources; (4) **SALT (Sort, Assess, Lifesaving interventions, Treatment and/or Transport)** — newer evidence-based, recommended by CDC: (a) **sort** — global sort (walk → wave → still), (b) **assess** individuals, (c) **brief lifesaving interventions** allowed: hemorrhage control (tourniquet, direct pressure), open airway (chin lift, recovery position), 2 rescue breaths (children), chest decompression, autoinjectors; (d) categories — immediate, expectant, delayed, minimal, dead; (5) **JumpSTART** — pediatric modification of START; (6) **principles**: (a) **dynamic** — reassess + retriage; (b) **commander designated** — incident commander coordinates; (c) **secondary triage** at receiving facility re-evaluates; (d) **forward triage** to limit hospital overflow; (e) **rule of thirds** — 1/3 immediate, 1/3 delayed, 1/3 minor (varies by event); (7) **orthopedic role in MCI**: (a) **hemorrhage control** — limb tourniquet for catastrophic extremity bleeding (junctional and limb); (b) **rapid extremity assessment** — open fractures, dislocations, hemorrhage, compartment syndrome; (c) **field-grade fracture stabilization** — splinting, traction splint for femoral fractures (reduces blood loss + pain); (d) **damage control orthopedics** — external fixator for unstable pelvic + long bone fractures; (e) **delayed definitive surgery** when resources permit; (f) **organize OR resources** + collaboration with general/vascular/trauma surgery; (g) **family communication, documentation, mass disaster forensic identification**; (8) **disaster preparedness** — hospital + system plans; PPE; communication systems; mock drills; mental health support for responders; (9) **ethics** — utilitarian + transparent + consistent; psychological + moral distress on responders"
+      },
+      {
+        "label": "C",
+        "text": "All patients require immediate definitive surgical care"
+      },
+      {
+        "label": "D",
+        "text": "Use full primary + secondary survey for each patient at scene"
+      },
+      {
+        "label": "E",
+        "text": "Triage categories are static and never reassessed"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "MCI triage: START (Simple Triage Rapid Treatment) — 30s per patient. (1) walking wounded = GREEN; (2) RR > 30 OR cap refill > 2s/no radial pulse OR can't follow commands = RED (immediate); else YELLOW (delayed); apneic post-positioning = BLACK. SALT = newer (sort, assess, lifesaving, treatment/transport). Categories: red/yellow/green/black. JumpSTART pediatric. Ortho role: tourniquet, splint, damage control ex-fix, organize OR resources. Disaster preparedness essential.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "START; SALT; CDC"
+  },
+  {
+    "scenario": "**EMS/Management**\n\nผู้ป่วยอายุ 22 ปี รถมอเตอร์ไซค์ชน open femur fracture + ankle dislocation + suspected pelvic fracture (lateral compression) + suspected cervical spine injury — pre-hospital paramedic ใน ambulance\n\nจงอธิบาย splinting + immobilization + transport principles",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Remove all impaled objects in the field"
+      },
+      {
+        "label": "B",
+        "text": "Pre-hospital Splinting + Immobilization + Transport: (1) **principles**: (a) immobilize fractures + dislocations in **position found** generally; (b) splint **above + below** joint of injury (long bone fracture immobilizes joint above + below); (c) **assess + document NV status before + after splinting** (capillary refill, pulses, sensation, motor); (d) **gentle realignment of grossly deformed limbs** with diminished perfusion to relieve neurovascular compromise — gentle longitudinal traction (DO NOT force); for clearly malaligned with neurovascular compromise, gentle realignment in line; (e) cover open wounds + control hemorrhage before splinting; (f) **expedient transport** — \"scoop + run\" for unstable polytrauma; (2) **specific orthopedic immobilization**: (a) **suspected cervical spine** — rigid cervical collar + manual stabilization + spine board for transport; remove from board ASAP at hospital (pressure injury risk > 2 hours); maintain in-line position during airway management; (b) **suspected pelvic fracture** (hemodynamic instability, pelvic deformity, perineal/scrotal hematoma, blood at urethral meatus, severe mechanism) — **pelvic binder** (T-POD, commercial) or pelvic sheet at level of greater trochanters → reduces pelvic volume + tamponades venous bleeding (primary source 85%); avoid log rolling repeatedly; (c) **femoral shaft fracture** — **traction splint** (Hare, Sager, Kendrick) — restores length + reduces blood loss + reduces pain; contraindicated if knee/hip dislocation, ankle/foot injury, open fracture with bone protruding; (d) **other long bone fractures** — rigid splint (vacuum, padded board, SAM), pneumatic splint, manufactured splint; immobilize joint above + below; (e) **dislocations** — splint in position found unless NV compromise; spontaneous reduction of patella, shoulder may occur — document; **hip dislocations** are emergencies (AVN risk) — early transport; (f) **suspected spine injury below cervical** — full spine board + log roll; modern evidence — selective spinal immobilization (NEXUS criteria, Canadian C-spine rule) reduces unnecessary use in many EMS systems; (3) **open fracture in field**: (a) **control hemorrhage** — direct pressure → tourniquet if uncontrolled; (b) **cover with sterile moist gauze** — do not push bone back; (c) splint anatomically; (d) NV check; (e) document; (4) **mangled extremity** with vascular compromise: tourniquet + rapid transport + early arrival communication; (5) **special situations**: (a) **impaled object** — DO NOT remove (may be tamponading bleeding) — stabilize in place; (b) **amputated part** — wrap in saline-moistened gauze → plastic bag → on ice (NOT direct contact with ice); transport with patient; (c) **degloving injury** — preserve flap; (6) **pain management** in field — IV opioids, ketamine, IN fentanyl; (7) **documentation** — mechanism, time, NV status, interventions, response; (8) **communication** with receiving hospital — early notification + activation of trauma team"
+      },
+      {
+        "label": "C",
+        "text": "Femoral traction splint indicated in all hip dislocations"
+      },
+      {
+        "label": "D",
+        "text": "Spine board can be kept indefinitely"
+      },
+      {
+        "label": "E",
+        "text": "Splinting is never needed before transport"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pre-hospital splinting: position found generally + above/below joint + NV check before/after. Gentle realignment if NV compromise. C-spine: collar + spine board (remove < 2h at hospital). Pelvic suspicion: binder at greater trochanters. Femur: traction splint (Hare/Sager — reduces blood loss + pain). Open fracture: control bleed, sterile moist dressing, no bone push. Amputated part: saline gauze + plastic bag + on ice. Impaled object: stabilize, don't remove. Rapid transport. Document. Communicate to receiving.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "AAOS Pre-hospital; NAEMT"
+  },
+  {
+    "scenario": "**EMS/Management**\n\nผู้ป่วย minor trauma ในห้องฉุกเฉิน — รถยนต์ชนความเร็วต่ำ ไม่มี LOC, no neurologic symptoms, alert + oriented, GCS 15, can walk, mild neck pain ตอนนี้ใส่ cervical collar ตั้งแต่ pre-hospital\n\nจงอธิบาย NEXUS + Canadian C-Spine Rule + indications สำหรับ imaging + clinical clearance",
+    "choices": [
+      {
+        "label": "A",
+        "text": "All patients must have C-spine imaging regardless of exam"
+      },
+      {
+        "label": "B",
+        "text": "Cervical Spine Clearance — NEXUS + Canadian C-Spine Rule: (1) **purpose** — efficient decision tool to identify patients requiring cervical spine imaging vs safe clinical clearance, avoiding unnecessary imaging while not missing significant injury; (2) **NEXUS Low-Risk Criteria** (5 criteria) — patient is cervical spine cleared **WITHOUT imaging** if ALL: (a) no posterior midline cervical spine tenderness; (b) no evidence of intoxication; (c) normal level of alertness (GCS 15, no AMS); (d) no focal neurologic deficit; (e) no painful distracting injury (e.g., long bone fracture, severe burn) — if any criterion fails → imaging indicated; **sensitivity ~ 99%** for cervical spine injury; (3) **Canadian C-Spine Rule (CCR)** — more specific algorithm, may be more sensitive (some studies): (a) **high-risk factors mandating imaging** — age ≥ 65, dangerous mechanism (fall ≥ 3 ft/5 stairs, axial load to head e.g., diving, MVC > 100 km/h, rollover, ejection, motorized recreational vehicle, bicycle vs car), paresthesias in extremities → if any → IMAGING; (b) **low-risk factors allowing safe assessment of ROM** — simple rear-end MVC, sitting in ED, ambulatory at any time, delayed onset neck pain, absence of midline tenderness → if none → cannot assess ROM; (c) **ROM testing** — if able to actively rotate neck 45° L + R → no imaging; if not → imaging; (4) **patient selection** for application: (a) NEXUS — all stable trauma patients; (b) CCR — alert (GCS 15), stable, with neck pain + tenderness OR with dangerous mechanism / new paresthesias / age > 65; CCR not for: GCS < 15, unstable vitals, age < 16, acute paralysis, known spine disease, return for same injury; (5) **imaging choice**: (a) **CT cervical spine** — best modality, sensitivity > 98%, in adults with risk factors or unable to be clinically cleared; replaced plain X-ray for trauma evaluation in most centers; (b) **MRI** — for: suspected ligamentous injury (clinical concern with normal CT), neurologic deficit, suspected cord injury, unconscious patient who cannot be examined (still debated); (c) **plain X-ray** (3 views: AP, lateral, odontoid) — limited modern use; selective in low-risk pediatric or low-resource settings; (6) **collar removal protocol**: (a) **clinical clearance** (NEXUS/CCR positive) without imaging — for low-risk awake reliable patient; remove collar; (b) **after CT cervical** with no acute injury found in awake reliable patient → remove collar; (c) **obtunded patient with normal CT** — controversial: most centers remove collar with normal high-quality CT (multiple meta-analyses support — CCSG meta-analysis), some still add MRI; (d) **persistent neck pain + tenderness despite normal CT** — consider MRI for occult ligamentous injury, or maintain immobilization + repeat exam later; (7) **special populations**: pediatrics (CCR not validated < 16, PECARN cervical rule emerging), elderly (high risk for occult fracture — low threshold for imaging), AS/DISH (high suspicion even with minor trauma — MRI), ankylosing conditions; (8) avoid prolonged spine board use (pressure ulcer)"
+      },
+      {
+        "label": "C",
+        "text": "Plain X-ray is more sensitive than CT"
+      },
+      {
+        "label": "D",
+        "text": "Distracting injury allows clinical clearance"
+      },
+      {
+        "label": "E",
+        "text": "Spine board can stay indefinitely"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "C-spine clearance: NEXUS — clinically clear if ALL: no midline tenderness, no intoxication, alert, no focal neuro, no distracting injury. CCR — high-risk (age ≥ 65, dangerous mechanism, paresthesias) → imaging; low-risk + able to rotate 45° L/R → no imaging. CT modality of choice (replaced X-ray). MRI for ligamentous, neuro, obtunded persistent concern. Elderly + AS/DISH = HIGH risk even minor trauma → MRI. Remove collar after clearance (pressure ulcer).",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "NEXUS; Canadian C-Spine Rule"
+  },
+  {
+    "scenario": "**EMS/Management**\n\nผู้ป่วย polytrauma อายุ 28 ปี รถยนต์ชน multiple injuries: closed femoral shaft + open tibial + unstable pelvic fracture + chest contusion + ARDS + coagulopathy in ICU\n\nจงอธิบาย concept of damage control orthopedics (DCO) vs early total care (ETC) + decision making",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Always do definitive fixation within 6 hours regardless of physiology"
+      },
+      {
+        "label": "B",
+        "text": "Damage Control Orthopedics (DCO) vs Early Total Care (ETC): (1) **historical context**: (a) **early total care (ETC)** — historical paradigm — fix all fractures definitively within 24-48 hours after polytrauma; rationale — early stabilization improves outcomes (reduces ARDS, fat embolism, MOF, mortality); supported by Bone JBJS 1989 + subsequent studies; (b) **damage control orthopedics (DCO)** — paradigm shift for severely injured polytrauma patients — temporary stabilization with **external fixator** initially → delayed definitive fixation when patient stable; introduced by Scalea + Pape in late 1990s/2000s; (2) **rationale for DCO**: (a) prolonged complex surgery in physiologically compromised patient → \"**second hit**\" of inflammatory cascade → worsens lung injury, ARDS, MOF; (b) **lethal triad** (hypothermia + acidosis + coagulopathy) in polytrauma — major surgery worsens; (c) prevents this second hit while still providing fracture stabilization for resuscitation; (3) **classification of polytrauma severity** for DCO decision: (a) **stable** — adequate resuscitation, normal hemodynamics, no major organ dysfunction → **ETC** (definitive treatment); (b) **borderline** — initially responsive resuscitation but at risk for deterioration → individualized; (c) **unstable** — persistent hemodynamic instability, ongoing resuscitation → **DCO**; (d) **in extremis** — peri-arrest, severe physiologic derangement → **DCO + life-saving only**; (4) **markers favoring DCO**: (a) shock — persistent hypotension, vasopressor requirement, base deficit > 6, lactate > 4; (b) coagulopathy (INR > 1.5, fibrinogen < 200), thrombocytopenia; (c) hypothermia (< 35°C); (d) ARDS, pulmonary contusion, high FiO2 requirement; (e) high ISS > 25, NISS > 40; (f) elevated IL-6 (inflammatory marker — research); (g) severe head injury; (5) **DCO technique**: (a) **external fixator** for femur, tibia, pelvis fractures — quick (< 1 hour), provides skeletal stabilization, allows nursing/mobilization, reduces blood loss + pain; (b) **wound debridement + temporary coverage** for open fractures; (c) **definitive fixation when stable** — typically 5-14 days when physiologic recovery + reversal of acidosis + coagulopathy + cleared lung injury; (d) **conversion ex-fix to IM nail** for femur/tibia — relatively safe within 2-3 weeks (longer increases pin tract infection risk); (6) **pelvic fracture DCO** — pelvic binder + external fixator + preperitoneal packing ± angioembolization for hemorrhage control; definitive ORIF when stable; (7) **modern nuanced view** — \"early appropriate care (EAC)\" — neither all DCO nor all ETC: definitive fixation if patient is physiologically responsive within 36 hours (Vallier OTA), DCO if persistent instability; individualized; (8) **outcomes**: DCO has reduced mortality + complications in unstable polytrauma vs ETC (multiple studies)"
+      },
+      {
+        "label": "C",
+        "text": "Damage control means no surgery ever"
+      },
+      {
+        "label": "D",
+        "text": "External fixator is permanent fixation"
+      },
+      {
+        "label": "E",
+        "text": "DCO worsens outcomes in unstable polytrauma"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Damage Control Orthopedics (DCO) vs Early Total Care (ETC): ETC = definitive fixation < 24-48h (reduces ARDS, fat embolism — appropriate for STABLE polytrauma). DCO = ex-fix + temporary stabilization → delayed definitive — for UNSTABLE polytrauma (avoids \"second hit\"). Use DCO if: shock/coagulopathy/hypothermia/ARDS/severe head injury/in extremis. Conversion ex-fix → IM nail within 2-3 weeks. Modern: Early Appropriate Care (EAC) — individualized based on physiology.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "Pape Scalea DCO; Vallier EAC"
+  },
+  {
+    "scenario": "**EMS/Management**\n\nผู้ป่วย polytrauma มาห้องฉุกเฉิน BP 80/40, HR 140, รถยนต์ชนหนัก ออกเลือดเยอะ — open pelvis + bilateral femur + abdomen tenderness\n\nLab: Hb 6.0 (ดรอป), platelet 110, INR 1.8, fibrinogen 120, lactate 7.0, base excess -10\n\nจงอธิบาย massive transfusion protocol (MTP) + balanced resuscitation",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Crystalloid 5 L bolus best initial resuscitation"
+      },
+      {
+        "label": "B",
+        "text": "Massive Transfusion Protocol (MTP) in Trauma: (1) **definition** — variable: (a) **10+ units PRBC in 24 hours**; (b) **3+ units PRBC in 1 hour** with ongoing bleeding; (c) anticipated massive transfusion based on **shock index (HR/SBP) > 1.0** or ABC score ≥ 2 (penetrating mechanism, SBP < 90, HR > 120, FAST positive); (d) modern definitions are time-based and dynamic; (2) **trauma-induced coagulopathy (TIC)** — develops early in severe trauma: (a) tissue damage + shock → endothelial dysfunction; (b) consumption of clotting factors; (c) dilution from resuscitation; (d) acidosis + hypothermia worsen clotting; (e) \"lethal triad\" — hypothermia + acidosis + coagulopathy; (f) hyperfibrinolysis (especially head injury, prolonged shock) — TXA addresses; (g) modern fluid-restrictive resuscitation aims to prevent dilutional coagulopathy; (3) **balanced transfusion (1:1:1)**: (a) PROPPR trial JAMA 2015 — 1:1:1 ratio PRBC:FFP:platelets equivalent to 1:1:2 for survival but with hemostatic advantages; (b) start MTP immediately when bleeding patient activates protocol — DO NOT wait for labs; (c) typical \"pack\" — 6 PRBC + 6 FFP + 1 unit platelets (apheresis = 6-pack equivalent); (4) **TXA (tranexamic acid)** — antifibrinolytic — give within 3 hours of trauma per CRASH-2 + WOMAN trials; **1 g IV bolus over 10 min → 1 g IV infusion over 8 hours**; reduces mortality; (5) **adjuncts**: (a) **cryoprecipitate** if fibrinogen < 150-200 mg/dL — \"the most clottable protein\"; (b) **calcium** — replacement (citrate in blood products chelates calcium → hypocalcemia); ionized Ca > 1.0 mmol/L; (c) **prothrombin complex concentrate (PCC)** for warfarin reversal or refractory bleeding; (d) **recombinant factor VIIa** — limited use, expensive, thrombotic risk; (e) **vitamin K** for warfarin reversal; (f) **DDAVP** for uremic platelets or vWD; (6) **viscoelastic testing — TEG (thromboelastography) or ROTEM** — modern goal-directed approach: (a) **R time prolonged** → FFP/PCC; (b) **K time prolonged** → cryoprecipitate (fibrinogen); (c) **MA decreased** → platelets; (d) **LY30 elevated** → TXA (hyperfibrinolysis); (7) **permissive hypotension** — accept SBP 80-90 (MAP 65) until surgical control + euvolemia in non-CNS injured patients; avoids dilution + dislodging clots; **NOT for traumatic brain injury** (need MAP > 80 for cerebral perfusion); (8) **damage control resuscitation (DCR)** — combines: balanced transfusion + permissive hypotension + early hemorrhage control + reverse coagulopathy + correct acidosis + warm; (9) **REBOA** (resuscitative endovascular balloon occlusion of aorta) — zone I (above celiac) for non-compressible torso hemorrhage; zone III (between renal + bifurcation) for pelvic hemorrhage; bridge to definitive control; complications + selection critical; (10) **temperature management** — warm fluids + blood, warming blankets, room warm; (11) **multidisciplinary team** — trauma surgery, anesthesia, transfusion medicine, blood bank"
+      },
+      {
+        "label": "C",
+        "text": "Wait for lab results before starting blood products"
+      },
+      {
+        "label": "D",
+        "text": "TXA contraindicated in trauma"
+      },
+      {
+        "label": "E",
+        "text": "Permissive hypotension safe in head injury"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "MTP: activate if 10+ U PRBC in 24h or 3+ in 1h with bleeding, or shock index > 1/ABC score ≥ 2. Balanced 1:1:1 PRBC:FFP:platelets (PROPPR). TXA within 3h (1g IV bolus + 1g over 8h — CRASH-2). Cryoprecipitate for fibrinogen < 150-200. Calcium replacement. TEG/ROTEM goal-directed. Permissive hypotension (SBP 80-90, NOT in TBI). Damage control resuscitation. REBOA selective. Address lethal triad (hypothermia + acidosis + coagulopathy).",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "PROPPR JAMA 2015; CRASH-2"
+  },
+  {
+    "scenario": "**EMS/Management**\n\nเด็กชายอายุ 6 ปี ตกจักรยานชน head + abdomen + femur fracture — มาห้องฉุกเฉิน\n\nVS: BP 105/60, HR 145, RR 30, GCS 12\n\nจงอธิบาย key differences in pediatric trauma management (anatomy, physiology, dose-based) + special considerations",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Pediatric vital signs are same as adult"
+      },
+      {
+        "label": "B",
+        "text": "Pediatric Trauma — Key Differences from Adult: (1) **anatomic differences**: (a) **larger head:body ratio** → more head injury; (b) **higher fulcrum cervical spine** (C2-C3 vs C5-C6 in adults) → upper cervical injuries common; (c) **flexible bones + ligaments** — can sustain spinal cord injury without radiographic abnormality (**SCIWORA** — MRI shows abnormalities); (d) **physes (growth plates)** — Salter-Harris fractures, growth disturbance; (e) **softer pliable ribs** → less rib fractures BUT more underlying organ injury without rib fracture protection (pulmonary contusion, cardiac); (f) **larger surface area to mass ratio** → faster heat loss → **hypothermia risk high** — keep warm; (g) **liver/spleen relatively unprotected by ribs** → more abdominal injuries; (h) **smaller airway** — smaller ETT, edema disproportionate effect; (2) **physiologic differences**: (a) **maintain blood pressure** until late (sympathetic surge — compensates by tachycardia + vasoconstriction) → BP normal in significant shock until decompensation; **tachycardia** is most reliable early sign of shock; **bradycardia** + hypotension = pre-arrest; (b) **higher cardiac output per kg** but lower absolute blood volume; (c) **rapid metabolic acidosis** with shock; (d) **immature CNS** → more diffuse injury, axonal injury, longer recovery; (3) **assessment**: (a) GCS — modified pediatric GCS for verbal/preverbal; (b) AVPU scale; (c) **vitals normal ranges age-specific** (HR + RR higher in children); (d) Broselow tape — weight-based estimation + dosing reference (color-coded); (e) family-centered care (parental presence beneficial); (4) **fluid resuscitation**: (a) **20 mL/kg crystalloid bolus** — initial; up to 3 boluses; (b) **PRBC 10-20 mL/kg** if persistent shock; (c) avoid over-resuscitation (risk fluid overload in pediatric); (d) modern — balanced resuscitation principles apply to pediatric; (5) **airway management**: (a) **cuffed ETT now preferred** in modern practice (formerly uncuffed for < 8 yr); (b) **smaller ETT size** (age/4 + 4 — older formula; modern weight-based); (c) **straight (Miller) blade** under 2 years (large floppy epiglottis); (d) succinylcholine — caution (hyperkalemia risk in burn, denervation, muscular dystrophy); (e) **risk of right mainstem intubation** higher (short trachea); (6) **specific orthopedic in pediatrics**: (a) **Salter-Harris classification** for physeal injuries; (b) **higher remodeling potential** → tolerated some malalignment; (c) **closed reduction + cast** for most fractures; (d) **flexible IM nails (ESIN/TEN)** for femur/forearm fractures in older children; (e) **plate fixation** for adolescents; (f) **avoid intramedullary nail** through proximal femoral physis (AVN risk); (g) **supracondylar humerus** common — CRPP; (h) **toddler fracture** — spiral tibia + child protective consideration; (7) **non-accidental trauma (NAT) screening**: (a) history doesn't match injury; (b) delayed presentation; (c) multiple fractures different ages; (d) **specific patterns** — metaphyseal corner (\"bucket handle\"), posterior rib, fractures < 12 months, bilateral; (e) **mandatory reporting** to CPS; (f) **skeletal survey** if any suspicion; (8) **psychosocial** — pain assessment age-specific (Wong-Baker, FLACC), parental presence + support, child life specialists, follow-up; (9) **long-term outcomes** — growth disturbance from physeal injury, psychological impact"
+      },
+      {
+        "label": "C",
+        "text": "Hypotension is the first sign of shock in children"
+      },
+      {
+        "label": "D",
+        "text": "Salter-Harris classification does not exist in pediatrics"
+      },
+      {
+        "label": "E",
+        "text": "Children rarely have non-accidental trauma"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pediatric trauma differences: large head:body, higher cervical fulcrum (C2-3, SCIWORA), flexible bones (rib fractures less but underlying injury more), physes (Salter-Harris), hypothermia risk, BP normal until late (tachycardia early shock sign — bradycardia + hypotension = pre-arrest). Fluids 20 mL/kg crystalloid + 10-20 mL/kg PRBC. Modern: cuffed ETT preferred. SH classification, remodeling potential, flexible IM nails, closed reduction. NAT screen — pattern recognition + mandatory reporting + skeletal survey. Family-centered care.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "trauma",
+    "board_age_group": "peds",
+    "reference_source": "ATLS Pediatric"
+  },
+  {
+    "scenario": "**EMS/Management**\n\nหญิงไทยอายุ 82 ปี frail, lives alone, underlying HT + AF on warfarin หกล้มในบ้าน ปวด hip 6 ชั่วโมง paramedic นำส่ง ED — ไม่สามารถ weight bear\n\nVS: BP 142/86, HR 92 (AF), warmth normal, no neurologic deficit\nX-ray: displaced intertrochanteric hip fracture\n\nจงอธิบาย geriatric hip fracture clinical pathway + ortho-geriatric co-management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Delay surgery 1 week for medical optimization"
+      },
+      {
+        "label": "B",
+        "text": "Geriatric Hip Fracture Clinical Pathway + Ortho-Geriatric Co-Management: (1) **importance** — hip fracture in elderly = sentinel event: (a) **1-year mortality 20-30%** (some series higher in frail/comorbid), (b) only ~ 50% return to pre-fracture functional status, (c) high rate of institutionalization, (d) cost burden major; (2) **early ED management**: (a) **rapid assessment + diagnosis** — clinical exam + X-ray (AP pelvis + lateral hip); MRI if X-ray equivocal but high clinical suspicion (occult); (b) **multimodal pain control** — avoid opioid-only (delirium risk); **fascia iliaca compartment block** (ED ultrasound-guided) early — significantly reduces opioid use, pain, delirium; acetaminophen scheduled; (c) IV access + labs (CBC, BMP, coag, T+C, glucose, troponin if CV symptoms, ECG, type and cross 2 units); (d) **rapid medical optimization** — assess + correct: anticoagulation reversal (warfarin → vitamin K 5 mg PO/IV + PCC if INR > 2 or urgent surgery; DOAC — specific reversal or surgery 24-48h after last dose), anemia + transfusion threshold (Hb < 8 — 9 ICU/symptomatic), electrolytes, hydration, blood pressure, oxygenation; (e) **early surgery within 24-48 hours** strongly recommended — multiple meta-analyses + AAOS/NICE/BOA guidelines show reduced mortality + complications (Cochrane); avoid unnecessary delays; (3) **ortho-geriatric co-management model**: (a) joint geriatrician + orthopedic surgeon care; (b) **proven mortality reduction** (Cochrane meta-analysis); (c) elements: rapid medical optimization, delirium prevention/management, nutrition, multidisciplinary discharge planning, mobilization, falls + osteoporosis assessment + treatment, secondary prevention; (4) **surgical management**: (a) **intertrochanteric fracture** — **cephalomedullary nail** (CMN — modern preferred for unstable patterns, reverse oblique, subtrochanteric extension) OR sliding hip screw (DHS — stable patterns OK); (b) **femoral neck displaced (Garden III-IV)** — arthroplasty: hemiarthroplasty (low-demand) or total hip arthroplasty (active independent ambulator) per HEALTH trial NEJM 2019; (c) **femoral neck non-displaced (Garden I-II)** — cannulated screws OR arthroplasty (some advocate due to high reoperation rate with screws); (d) **subtrochanteric** — long cephalomedullary nail; (5) **post-op care**: (a) **immediate mobilization day 0-1** (weight-bear as tolerated typically — modern implant designs allow), (b) **multimodal pain control** + opioid-sparing, (c) **delirium prevention** (CAM screening, avoid Foley, sleep hygiene, reorient, avoid restraints, family presence), (d) DVT prophylaxis, (e) GI ulcer prophylaxis (selective), (f) early nutrition assessment + supplements (protein + caloric); (6) **falls + osteoporosis secondary prevention**: (a) DEXA, (b) calcium + vit D, (c) bisphosphonate or denosumab (NICE guidelines — fracture liaison service ideally), (d) home safety assessment, (e) gait + balance training (PT), (f) review meds → discontinue/modify those increasing fall risk; (7) **discharge planning** — early multidisciplinary; rehabilitation facility, home with services, or extended care; (8) **end-of-life considerations** for frail patients — palliative care consultation; goals of care discussion; non-operative selective (severe medical futility); (9) **quality measures** — time to surgery, multidisciplinary co-management, secondary prevention rates, mortality, length of stay, 30-day readmission"
+      },
+      {
+        "label": "C",
+        "text": "Avoid fascia iliaca block in elderly"
+      },
+      {
+        "label": "D",
+        "text": "Use opioid-only pain regimen"
+      },
+      {
+        "label": "E",
+        "text": "Hip precautions not needed post-op"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Geriatric hip fracture pathway: high mortality (20-30%/yr). Early ED — multimodal pain (fascia iliaca block!), rapid medical optimization, anticoagulation reversal. Surgery within 24-48h (reduces mortality — Cochrane). Ortho-geriatric co-management proven. Intertrochanteric: CMN. Displaced femoral neck: arthroplasty (THA active, hemi low-demand — HEALTH NEJM 2019). Post-op: early mobilization, delirium prevention, DVT prophylaxis. Secondary prevention osteoporosis + falls. Multidisciplinary discharge planning.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "AAOS Hip Fracture CPG; NICE; BOA"
+  },
+  {
+    "scenario": "**EMS/Management**\n\nเด็กชายอายุ 6 ปี ตกจักรยานบนสนามเด็กเล่น ปวดข้อศอกขวา + บวม + ผิดรูป + เริ่มชาปลายมือ paramedic ตรวจ field\n\nVS: BP 100/65, HR 110, alert\nPE: gross deformity elbow, decreased radial pulse, capillary refill 4 s, paresthesia distal, no open wound\n\nจงอธิบาย field management + transport + ED management of suspected supracondylar humerus fracture",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Splint elbow in full flexion 90° immediately"
+      },
+      {
+        "label": "B",
+        "text": "Suspected Pediatric Supracondylar Fracture Field + ED Management: (1) **pre-hospital (paramedic) management**: (a) **assess + document** ABCs, GCS, NV status (radial pulse, capillary refill, motor + sensory in median + AIN + ulnar + radial nerve distribution); (b) **gentle splint in position found** — typically slight flexion (30°) — do **NOT force into 90° flexion** (kinks brachial artery + compresses neurovascular structures further if displaced); (c) **avoid forceful realignment** in field — gentle alignment only if vascular compromise + extreme deformity; (d) **NV reassessment + documentation** after splint; (e) elevation if possible; (f) NPO; (g) IV access if available; (h) opioid analgesia (IV/IN); (i) **expedient transport to pediatric ED/orthopedic care** — Gartland III with NV compromise = surgical emergency; (j) communicate with receiving facility for activation; (2) **ED management**: (a) **rapid pediatric ATLS** assessment; (b) **document NV exam** carefully — specifically check **AIN (anterior interosseous nerve)** — OK sign (FPL + FDP index — \"can you make an OK sign?\"), median, radial, ulnar nerve function; radial + capillary refill; (c) **X-ray** — AP + lateral elbow — **anterior humeral line** key (should pass through middle third of capitellum); Gartland classification: I (non-displaced), II (displaced posteriorly but posterior cortex intact — hinged), III (completely displaced — most unstable), IV (multi-directional instability — rare); (d) **vascular assessment with pulse oximetry + Doppler** if pulse weak; (e) **pain control** — IV opioid; consider regional block (axillary or supraclavicular) for distal-only injury; (f) **NPO + admit** for likely OR; (g) **emergent OR for Gartland III** (especially with NV compromise) within hours; (3) **surgical management**: (a) **closed reduction + percutaneous pinning (CRPP)** — gold standard; (b) **2-3 lateral pins** (modern preferred — avoids ulnar nerve risk of medial pin); (c) medial pin selective with mini-incision (better stability biomechanically but ulnar nerve risk — iatrogenic injury 2-15%); (d) **assess pulse + perfusion after reduction**: (i) **pink pulseless hand** (perfused via collaterals) — usually observe (most recover); (ii) **white pulseless hand** — vascular emergency → emergent vascular exploration of brachial artery (entrapment, transection, intimal injury); (e) cast immobilization 3-4 weeks at 60-80° flexion (not full flexion); (f) pin removal in clinic 3-4 weeks; (g) PT for ROM after pin removal; (4) **complications + monitoring**: (a) **compartment syndrome (Volkmann's)** — vigilance, especially with prolonged ischemia or excessive flexion; classic triad — pain, paresthesia, pain with passive stretch; **5 P's late**; emergent fasciotomy if confirmed; (b) **AIN palsy** — common transient neuropraxia (recovers 2-4 months); (c) **ulnar nerve injury** — iatrogenic from medial pin; (d) **malunion + cubitus varus** (\"gunstock deformity\") — late complication of malalignment; (e) **radial nerve injury** — less common; (5) **family communication, follow-up, return precautions"
+      },
+      {
+        "label": "C",
+        "text": "Force realignment of displaced fracture in field"
+      },
+      {
+        "label": "D",
+        "text": "Discharge home if Gartland II with poor pulse"
+      },
+      {
+        "label": "E",
+        "text": "Wait 48 hours for surgery in white pulseless hand"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Supracondylar humerus pediatric: pre-hospital — gentle splint in slight flexion (NOT 90° — kinks artery), document NV, opioid, NPO, expedient transport. ED — rapid ATLS + ANTERIOR HUMERAL LINE on X-ray + Gartland classification + AIN check (OK sign) + radial pulse/cap refill + pain control. Gartland III + NV compromise = emergent CRPP. Pink pulseless = observe; white pulseless = vascular exploration. 2-3 lateral pins (medial pin → ulnar n risk). Monitor compartment syndrome (Volkmann's). AIN palsy usually recovers.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "trauma",
+    "board_age_group": "peds",
+    "reference_source": "AAOS Pediatric Supracondylar CPG 2011"
+  },
+  {
+    "scenario": "**EMS/Management**\n\nชายไทยอายุ 30 ปี โดนสุนัขจรจัดกัดมือซ้าย wound 3 cm + 1.5 cm laceration over MCP joint of right hand 2 ชั่วโมงก่อน — animal not captured\n\nVS: stable\nPE: 2 puncture + 1 laceration wounds left hand + dorsum right MCP 3rd finger laceration\nLast tetanus 8 ปีก่อน\n\nจงอธิบาย bite wound management + special considerations (animal vs human + fight bite)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Primary closure of all bite wounds"
+      },
+      {
+        "label": "B",
+        "text": "Bite Wound Management — Animal + Human + Fight Bite: (1) **general principles**: (a) **all bite wounds high infection risk** (especially cat, human, deep, hand) — polymicrobial oral flora; (b) thorough wound irrigation with normal saline (low pressure, copious); (c) **avoid primary closure** for most bite wounds — leave open or delayed primary closure (especially hand, puncture, > 12 hours old, signs of infection); face lacerations sometimes primary closure for cosmesis; (d) elevate, immobilize injured extremity; (e) tetanus update; (2) **antibiotic prophylaxis** — indicated for: hand bites, deep puncture, joint/bone involvement, immunocompromise, asplenia, all cat bites, all human bites, > 12 hours old, presented late, signs of infection; (a) **amoxicillin-clavulanate (Augmentin)** — covers Pasteurella + S. aureus + Eikenella + anaerobes; **first-line oral**; (b) IV options — ampicillin-sulbactam, piperacillin-tazobactam, ceftriaxone + metronidazole, ertapenem; (c) **penicillin allergy** — doxycycline + clindamycin/metronidazole; (d) **duration** — 3-5 days prophylaxis; 7-14 days for established infection; (3) **specific pathogens**: (a) **Pasteurella multocida** — cat (75%) + dog (50%) — rapid (< 24h) cellulitis; (b) **Capnocytophaga canimorsus** — dog — severe sepsis in asplenic, immunocompromised, alcoholic; (c) **Eikenella corrodens** — human, fight bite — penicillin-susceptible (cephalosporin-resistant); (d) **S. aureus** + Streptococcus — all; (e) **anaerobes** — common; (f) **Bartonella** — cat (cat scratch); (4) **special — human bite + fight bite**: (a) **fight bite** = laceration over MCP joint after striking opponent's teeth → tooth penetrates joint capsule → high risk of septic arthritis + osteomyelitis (frequently missed initially as innocuous laceration); (b) **assume joint penetration** in any laceration over knuckle in patient who hit someone or denies origin; (c) **explore in OR** under anesthesia for fight bite (irrigation, debridement, capsule inspection); (d) **antibiotics IV** — broader spectrum cover Eikenella (penicillin/amoxicillin-clavulanate, ampicillin-sulbactam); (e) hand surgery consultation; (5) **rabies prophylaxis**: (a) **risk assessment** — high-risk: bat, raccoon, fox, skunk, wild carnivores; dog/cat — depends on regional epidemiology, animal availability for observation; in Thailand — rabies endemic — high suspicion; (b) **post-exposure prophylaxis (PEP)** if indicated: wash wound thoroughly + soap/water + virucidal; **rabies vaccine** (4-5 doses on days 0, 3, 7, 14, ± 28 depending on protocol; modified for immunocompromised); **rabies immunoglobulin (RIG)** 20 IU/kg infiltrated around wound if previously unimmunized; (c) **observe healthy domestic animal** 10 days — if no rabies signs → no PEP needed (initiate PEP if unable to capture/observe); (6) **tetanus**: (a) **Td or Tdap** if > 5 years since last dose with dirty wound; (b) **TIG (tetanus immune globulin)** for unknown/incomplete immunization + dirty wound; (7) **wound culture** — generally not useful for prophylaxis; useful for established infection; (8) **follow-up** — 24-48 hours for infection check; immediate return precautions; (9) **report animal bites** per local regulations"
+      },
+      {
+        "label": "C",
+        "text": "Antibiotics not needed for any bite"
+      },
+      {
+        "label": "D",
+        "text": "Fight bite always safe outpatient management without exploration"
+      },
+      {
+        "label": "E",
+        "text": "Rabies prophylaxis never indicated in domestic animal bites"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Bite wounds: irrigate copiously, LEAVE OPEN (no primary closure, esp. hand/late/infected). Prophylactic abx: amoxicillin-clavulanate (covers Pasteurella + Eikenella + S. aureus + anaerobes) for hand bites, deep, joints, cats, humans, > 12 h, immunocompromised. Tetanus + rabies risk assessment (Thailand endemic — vaccine + RIG; observe healthy domestic 10 d). FIGHT BITE over MCP — assume joint penetration, OR exploration, hand surgery consult. Specific pathogens (Pasteurella, Eikenella, Capnocytophaga). Follow up 24-48h.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "IDSA SSTI Bite Guidelines"
+  },
+  {
+    "scenario": "**EMS/Management**\n\nชายไทยอายุ 30 ปี s/p closed reduction + long-leg cast for tibial fracture 3 วันก่อน เริ่มปวดมากในปลายขา + ชา + ปลายเท้าเริ่มเย็น + ปวดมากเมื่อขยับนิ้วเท้า, ไม่ดีขึ้นกับ pain medications\n\nจงอธิบาย cast care principles + warning signs + complications + emergency management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Pain in cast is normal and always managed with more opioids"
+      },
+      {
+        "label": "B",
+        "text": "Cast Care + Complications: (1) **cast care patient education**: (a) **elevate extremity** above heart level for first 48-72 hours to reduce swelling; (b) **keep cast dry** — protect with plastic during bathing; do not submerge; consider waterproof liner for showering; (c) **ice intermittently** over cast in first 48h; (d) **avoid inserting objects** to scratch (skin breakdown, retained foreign body); (e) **finger/toe wiggling exercises** + ROM at unaffected joints; (f) **weight-bearing instructions** — clarify (NWB, TTWB, PWB, WBAT); (g) **follow-up plan** + emergency contact information; (h) avoid getting cast wet, dirty, or damaged; (2) **warning signs requiring urgent evaluation** — \"Worsening pain, paresthesia, pallor, paralysis, pulselessness, perishingly cold\" (5+ P's): (a) **increasing pain** despite analgesics — most concerning sign of complication; (b) **pain on passive stretch** of toes/fingers; (c) **numbness/tingling** distal; (d) **pallor/cyanosis** distal; (e) **inability to move** distal digits; (f) **cool/cold** distal extremity; (g) **swelling** above + below cast; (h) **fever + foul odor** from cast (suspect underlying infection); (i) **persistent pressure pain** at single spot under cast (pressure ulcer); (j) cast cracking, loose, or wet; (3) **complications + management**: (a) **acute compartment syndrome** — emergency: bivalve cast (or remove) immediately + assess; if confirmed → emergent fasciotomy; (b) **cast tightness + swelling** — bivalve initially, may need recasting after swelling resolves; (c) **pressure ulcer/sore** under cast — windowing the cast over pressure point for inspection + relief; (d) **infection** — bone/soft tissue under cast (pin tract for external fix) — labs + imaging + remove cast for inspection; (e) **DVT** — leg cast immobilization risk; selective prophylaxis based on patient risk; (f) **disuse atrophy + stiffness** — early mobilization at unaffected joints, isometric exercises; (g) **CRPS (complex regional pain syndrome)** — particularly after distal radius/wrist; aggressive PT, early recognition; (h) **fracture displacement under cast** — repeat X-ray at 1-2 weeks + as clinically indicated; recasting or surgery if loss of reduction; (4) **bivalving + windowing**: (a) **bivalve** — cut cast longitudinally on both sides → split open like clamshell — relieves pressure while maintaining alignment; useful for swelling, suspected compartment syndrome (preserves alignment while allowing inspection + monitoring); (b) **windowing** — cut window over specific area of pressure or suspected pathology — allows local inspection + treatment; replace window with padding to prevent edema window edema; (5) **cast removal + transition**: (a) **cast saw** — vibrating blade (not rotating) — safe with proper technique but burns if held in one place; explain to patient (reduces anxiety); (b) **transition to functional brace** for selected late fractures; (6) **cast types**: (a) **plaster of Paris** — moldable, cheaper, more time to set; (b) **fiberglass** — lighter, water-resistant, modern; (c) **prefab splints** for emergency; (d) **functional braces** for selected late fractures; (7) **special populations**: (a) **pediatric** — risk of compartment syndrome from cast tightness (rapid swelling), regular monitoring; (b) **elderly** — pressure ulcers, deconditioning, DVT, functional decline"
+      },
+      {
+        "label": "C",
+        "text": "Cast should not be cut even if compartment syndrome suspected"
+      },
+      {
+        "label": "D",
+        "text": "Patient may insert objects to relieve itch"
+      },
+      {
+        "label": "E",
+        "text": "No follow-up needed after cast application"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cast care: elevate, keep dry, avoid inserting objects, monitor distal NV. Warning signs (5+ P's): worsening pain, pain on passive stretch, paresthesia, pallor, paralysis, cold, pulselessness, fever/foul odor (infection). Complications: compartment syndrome (bivalve emergently!), pressure sore (window cast), infection, DVT, CRPS, displacement (repeat X-ray). Bivalve preserves alignment + allows inspection. Window for local pathology. Cast saw vibrates (safe with proper technique). Pediatric — rapid swelling + compartment risk.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "AAOS Cast Management"
+  },
+  {
+    "scenario": "**EMS/Management**\n\nหญิงไทยอายุ 78 ปี on warfarin (atrial fibrillation, INR 3.5) หกล้มต้องเข้า OR สำหรับ hip fracture\n\nนอกจากนี้มี hematoma หน้าผากเล็กน้อย + head CT — small subdural\n\nจงอธิบาย anticoagulation reversal strategies + perioperative management — warfarin + DOAC + antiplatelet",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Protamine reverses warfarin"
+      },
+      {
+        "label": "B",
+        "text": "Anticoagulation Reversal in Trauma + Pre-operative: (1) **warfarin reversal**: (a) **vitamin K 5-10 mg PO/IV** — onset 6-12 hours (slower) — essential for sustained reversal; (b) **prothrombin complex concentrate (PCC, 4-factor — Kcentra, Beriplex)** 25-50 IU/kg IV — **rapid (10-15 min) + complete reversal** — preferred for urgent reversal (intracranial bleeding, urgent surgery within 6 hours); (c) **fresh frozen plasma (FFP)** 10-15 mL/kg — slower (need to thaw), less complete reversal, volume-intensive (consider in elderly with HF), used when PCC unavailable; (d) target INR < 1.5 for surgery (< 1.3 for neurosurgery); recheck INR + give additional doses as needed; (e) **bridge restart anticoagulation** post-op based on surgical bleeding risk + ongoing AF/VTE risk; (2) **DOAC (direct oral anticoagulant) reversal**: (a) **dabigatran (direct thrombin inhibitor)** — **idarucizumab (Praxbind)** 5 g IV — specific monoclonal antibody, rapid + complete; hemodialysis alternative (dabigatran is dialyzable, others are not); (b) **rivaroxaban, apixaban, edoxaban (factor Xa inhibitors)** — **andexanet alfa (Andexxa)** — specific recombinant decoy Xa — high cost, limited availability; alternative — **4-factor PCC** 50 IU/kg (off-label but supported by multiple studies for emergent reversal); (c) **timing without specific reversal** — postpone surgery 24-48 hours after last dose for most procedures if possible; (d) check **drug-specific assays** if available (dabigatran — TT/dTT/ECT; Xa inhibitors — anti-Xa levels); (3) **antiplatelet reversal**: (a) **aspirin + clopidogrel + ticagrelor + prasugrel** — irreversibly inhibit platelets for 7-10 days; (b) **platelet transfusion** for severe bleeding or emergent surgery with significant platelet dysfunction — limited efficacy for newer agents (ticagrelor inhibits via reversible binding so transfused platelets affected); recent PATCH trial — platelet transfusion in ICH with antiplatelet may worsen outcomes; (c) **DDAVP (desmopressin)** 0.3 μg/kg IV — improves platelet function modestly, useful adjunct; (d) **TXA** as antifibrinolytic adjunct; (4) **heparin reversal**: (a) **unfractionated heparin (UFH)** — **protamine sulfate** 1 mg per 100 U heparin, max 50 mg IV; (b) **LMWH (enoxaparin)** — partial reversal with protamine (50-60% reversal); (5) **clinical decision making** — risks of thrombosis vs bleeding: (a) **emergent surgery + active bleeding** → immediate reversal; (b) **urgent (< 24h)** → reverse + delay if can wait for partial DOAC clearance; (c) **elective** → hold per drug protocol + reschedule; (d) **bridging therapy** in high VTE/thromboembolic risk patients (recent embolic stroke, mechanical valve, recent VTE within 3 months) — LMWH bridge selective; PERIOP-2 + BRIDGE trials — most patients do NOT need bridging for AF without recent embolic events; (6) **post-op restart anticoagulation** — balance bleeding risk vs thromboembolic risk; typically restart within 24-72 hours post-op; (7) **multidisciplinary** — anesthesia, cardiology/hematology, surgical team"
+      },
+      {
+        "label": "C",
+        "text": "Idarucizumab reverses rivaroxaban"
+      },
+      {
+        "label": "D",
+        "text": "Platelet transfusion always indicated in ICH with antiplatelets"
+      },
+      {
+        "label": "E",
+        "text": "Bridging therapy needed in all atrial fibrillation patients"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Anticoagulation reversal: warfarin → vitamin K + PCC (rapid + complete) > FFP (slow, volume). DOACs → dabigatran: idarucizumab (Praxbind); Xa inhibitors (riva/apix/edox): andexanet alfa OR 4-factor PCC. Heparin → protamine (UFH; partial for LMWH). Antiplatelets → platelet transfusion (limited for newer agents, PATCH trial in ICH may worsen) + DDAVP + TXA. Elective: hold per protocol. Bridging only for high-risk (recent embolism, mechanical valve, recent VTE) — most AF don't need (PERIOP-2/BRIDGE). Restart post-op 24-72h.",
+    "difficulty": "hard",
+    "board_section": "ems_mgmt",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "ACCP; ASRA Perioperative"
+  },
+  {
+    "scenario": "**EMS/Management**\n\nผู้ป่วยอายุ 35 ปี ในห้องฉุกเฉิน — open ankle fracture + dislocation + compartment syndrome\n\nจงอธิบาย key elements of documentation + medico-legal considerations in orthopedic emergencies + informed consent",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Copy-paste exam from previous visit without verification"
+      },
+      {
+        "label": "B",
+        "text": "Documentation + Medico-legal in Orthopedic Emergencies: (1) **principles** — orthopedic emergencies are common malpractice sources (compartment syndrome, missed cervical spine, missed scaphoid, cauda equina syndrome, NV injury); thorough documentation = best defense + best patient care; (2) **history documentation**: (a) **mechanism of injury** — detailed (force vector, direction, velocity, fall height, body position, witnesses); (b) **time of injury** + time of presentation; (c) **patient-reported symptoms** — pain (severity, location, character, exacerbating/relieving), function, NV symptoms; (d) **prior medical history** — relevant comorbidities, medications (especially anticoagulants), prior injuries/surgeries; (e) **social history** — handedness, occupation, sports, smoking, alcohol; (f) **allergies** + tetanus status; (3) **examination documentation**: (a) **NV exam BEFORE + AFTER any intervention** (reduction, splinting, transport) — specifically: pulses (radial/ulnar/DP/PT), capillary refill, sensation (specific dermatomes), motor function (specific muscle groups/nerves), pain on passive stretch (compartment); (b) **wound description** — size, depth, contamination, exposed structures, photograph if possible; (c) **deformity, swelling, ecchymosis, range of motion**; (d) **specific tests** — Tinel, Phalen, Lachman, Spurling, Ortolani, etc. (whichever relevant); (e) **vital signs** + clinical state; (4) **imaging documentation**: (a) **interpretation + actions taken**; (b) include specific findings + measurements + correlation with clinical exam; (c) note if imaging is read by radiologist vs ordering physician; (d) document reasoning for ordering or not ordering additional imaging; (5) **decision-making documentation**: (a) **differential diagnosis considered**; (b) **clinical reasoning** for management choice; (c) **patient/family discussion** + understanding; (d) **shared decision making** documented; (6) **informed consent**: (a) **elements** — diagnosis, proposed treatment, alternatives (including non-treatment), benefits + risks, expected outcomes + complications, time for questions, voluntary nature, capacity assessment; (b) **specific risks** to discuss for ortho surgery: infection, bleeding, NV injury, DVT/PE, MI/stroke, scar, stiffness, hardware failure, nonunion/malunion, need for additional surgery, anesthesia risks, instrument retention, post-traumatic OA, AVN (for hip), tumor (for knee), cauda equina (for spine) — tailor to procedure; (c) **emergency exception** — implied consent for emergency life- or limb-threatening situations without capacity; (d) **minor consent** — parents/guardians; (e) **interpreter** for non-English speakers — document; (f) **discuss in language patient understands**; (7) **communication documentation**: (a) **all conversations** with patient, family, consultants, primary care, transferring physicians; (b) **timing + content** of phone calls; (c) **handoffs** of care; (d) **discharge instructions** — written + verbal — when to return, follow-up plan, contact information, activity restrictions; (8) **specific high-risk situations**: (a) **compartment syndrome** — serial exams documented, time of decision, who made decisions, who notified, time to OR; (b) **NV injury** — pre + post-intervention; (c) **delayed transport** — reasons; (d) **non-compliance** — counseled, documented; (e) **left AMA** — counseled risks + benefits, witnessed; (9) **electronic medical record best practices** — accurate timestamp, no backdating, no alterations after the fact (addenda OK with timestamp), avoid copy-paste of templates without verification; (10) **multidisciplinary care documentation** — consultations + recommendations + actions; (11) **handoffs/SBAR + escalation** — clear, structured; (12) **patient confidentiality** + privacy laws (HIPAA equivalent in Thailand — PDPA); (13) **never events** — wrong site/side/patient surgery (use surgical checklist + time-out + site marking)"
+      },
+      {
+        "label": "C",
+        "text": "Documentation only needed if complications occur"
+      },
+      {
+        "label": "D",
+        "text": "Informed consent not needed in any orthopedic emergency"
+      },
+      {
+        "label": "E",
+        "text": "Backdating documentation is acceptable"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Ortho documentation + medico-legal: thorough = both good care + defense. Document mechanism, NV exam BEFORE + AFTER intervention, wound description + photo, all decisions + reasoning, conversations, handoffs. Informed consent: dx, treatment, alternatives, benefits/risks/complications (tailored), capacity, voluntary, interpreter. Emergency exception valid. High-risk = compartment syndrome (serial NV documented), missed cervical spine, scaphoid, CES, NV injury. Time-out + site marking for never events. PDPA compliance.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "AAOS Risk Management"
   }
 ]
