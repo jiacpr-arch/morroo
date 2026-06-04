@@ -168,5 +168,175 @@
     "board_topic": "obgyn",
     "board_age_group": "adult",
     "reference_source": "SOAP Practice Guidelines; ASA Anesthesia for Obstetrics"
+  },
+  {
+    "scenario": "ICU patient post-cardiac surgery on mechanical ventilation needing sedation + analgesia for 5 days\n\nคำถาม: sedation + delirium prevention in ICU",
+    "choices": [
+      { "label": "A", "text": "Continuous benzodiazepine" },
+      { "label": "B", "text": "ICU Sedation + Analgesia — ABCDEF Bundle: A Assess + Prevent Pain (multimodal — opioid + non-opioid); B Both spontaneous awakening + breathing trials; C Choice of Sedation + Analgesia (target light sedation RASS 0 to -1; preferred — propofol short-term, dexmedetomidine (no respiratory depression + maintain interaction); AVOID benzodiazepine drips long-term — increases delirium + LOS + mortality; analgesia-first sedation; D Delirium — assess (CAM-ICU) + manage (non-pharm primary; haloperidol/quetiapine for severe agitation; avoid benzo); E Early mobility + exercise (PT in ICU even on vent); F Family engagement + empowerment; (2) **Pain control**: opioid (fentanyl, morphine, remifentanil) + non-opioid (acetaminophen, ketamine low-dose, regional anesthesia, multimodal); (3) **Daily sedation interruption** (Kress NEJM 2000) — daily SAT (spontaneous awakening trial) + SBT (spontaneous breathing trial) — reduces vent days + LOS + mortality; (4) **Outcomes**: ABCDEF compliance correlates with survival, less delirium, faster recovery; (5) Modern: less sedation, more interaction, family presence, early mobility; quality improvement focus" },
+      { "label": "C", "text": "Deep sedation continuous" },
+      { "label": "D", "text": "No analgesia" },
+      { "label": "E", "text": "Restraints only" }
+    ],
+    "correct_answer": "B",
+    "explanation": "ICU sedation paradigm shift: light sedation + ABCDEF bundle. Avoid benzodiazepine drips long-term (delirium, mortality). Daily SAT/SBT. Multimodal analgesia. Early mobility. Family engagement. Outcomes improve with bundle compliance. Modern: less is more — light sedation, more interaction.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "PADIS Guidelines 2018; ICU Liberation ABCDEF Bundle"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 35 ปี polytrauma post-MVC — open femoral fracture + pneumothorax + closed head injury — going to OR for damage control surgery\n\nV/S: BP 88/52, HR 132, Hb 6.4, Lactate 4.8, INR 1.6, pH 7.21, Temp 35.4°C\nAirway secured pre-OR + chest tube + IV × 2",
+    "choices": [
+      { "label": "A", "text": "Standard elective anesthesia" },
+      { "label": "B", "text": "Trauma Anesthesia + Damage Control Resuscitation: (1) **Damage Control Surgery (DCS)** principles — control hemorrhage + contamination, leave anatomy abnormal, temporary closure, ICU resuscitation, return for definitive 24-72h; goal: avoid 'lethal triad' (acidosis + coagulopathy + hypothermia); (2) **Damage Control Resuscitation**: - Permissive hypotension SBP 80-90 until bleeding controlled (avoid except TBI — different MAP target); - Balanced transfusion 1:1:1 (PRC:FFP:Plt) per PROPPR; - Crystalloid minimized (worsens coagulopathy + edema); - Tranexamic acid (TXA) 1g IV bolus within 3h then 1g over 8h (CRASH-2); - Warm products + fluid; - Calcium replacement (citrate binds Ca); (3) **Anesthetic choice**: avoid agents causing further hypotension; ketamine (cardiostable, analgesic), etomidate (hemodynamically stable but adrenal suppression — single dose OK); minimize propofol (hypotension); volatile carefully; (4) **Ventilation**: lung-protective TV 6 mL/kg IBW; chest tube monitoring; (5) **Monitoring**: arterial line, CVL, urine output, temperature, blood gas + lactate; (6) **TBI considerations**: avoid hypotension (different target — MAP > 65, CPP > 60), avoid hypoxia, avoid hyperventilation (cerebral vasoconstriction); osmotherapy if elevated ICP (mannitol, hypertonic saline); (7) **Open femoral fracture**: antibiotic within 1h (cefazolin + gentamicin for Gustilo III), tetanus, immobilize; (8) **Temperature**: normothermia (warming blankets, warm IV, warm room) — hypothermia worsens coagulopathy + cardiac; (9) **Massive Transfusion Protocol (MTP)** activation; (10) **Trauma team approach**: surgery + anesthesia + nursing + blood bank + lab + interventional radiology; ICU bed reserved; (11) **Post-op**: ICU resuscitation, monitor labs, plan definitive surgery; (12) **Predictors**: shock index, mortality scores" },
+      { "label": "C", "text": "Refuse case" },
+      { "label": "D", "text": "Elective approach" },
+      { "label": "E", "text": "Discharge home" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Trauma anesthesia: damage control resuscitation principles. Permissive hypotension (except TBI). Balanced transfusion 1:1:1. TXA early. Avoid lethal triad. Anesthetic choice — ketamine, etomidate. TBI considerations differ. Normothermia. MTP. Trauma team approach. Modern: aggressive multidisciplinary trauma care.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "ATLS 10th ed; PROPPR Trial; CRASH-2 Trial"
+  },
+  {
+    "scenario": "เด็กชายอายุ 3 ปี น้ำหนัก 15 kg elective tonsillectomy + adenoidectomy under general anesthesia\n\nNo significant medical history, no allergies, vaccines current",
+    "choices": [
+      { "label": "A", "text": "Same as adult anesthesia" },
+      { "label": "B", "text": "Pediatric Anesthesia Considerations: (1) **Pre-operative**: parental separation anxiety — pre-medication (midazolam oral 0.5 mg/kg); EMLA topical; toys, distraction; child life specialist; (2) **Inhalation induction** (mask) preferred 3 yo — sevoflurane (sweet smell, fast); IV induction once IV in place (lidocaine for propofol injection pain); (3) **Airway** differences: large occiput → flexion neutral position, large tongue, narrow cricoid (subglottic stenosis risk), funnel-shaped larynx; ETT cuff size — 'age/4 + 4' uncuffed, 'age/4 + 3.5' cuffed; LMA acceptable for short cases; (4) **Drug doses weight-based** (mg/kg); fluid calculation by 4-2-1 rule; (5) **Temperature regulation**: high surface area:volume ratio → hypothermia risk; warm IV, blanket, warm room (26-28°C in OR for infants); (6) **Hemodynamics**: rate-dependent CO; bradycardia → low CO → use atropine; (7) **Tonsillectomy specifics**: airway shared with surgeon, position changes, intra-op bleeding monitoring; dexamethasone (reduce PONV + edema + pain); minimize opioid (post-T+A apnea risk in OSA); local infiltration; multimodal analgesia (acetaminophen, NSAIDs avoid if bleeding concern); (8) **Post-tonsillectomy hemorrhage** — major risk 5-10 days; emergency airway/resuscitation if returns; (9) **PONV**: high incidence after T+A; dexamethasone + ondansetron prophylactic; (10) **Pain management**: multimodal, parents stay, comfort measures; (11) **Discharge criteria**: usually same day except OSA, age < 3, comorbidity, distance from hospital; (12) **OSA considerations**: opioid sensitivity, post-op monitoring overnight if severe; (13) Multidisciplinary: anesthesia + ENT + nursing + child life + family" },
+      { "label": "C", "text": "No special considerations" },
+      { "label": "D", "text": "Adult dosing" },
+      { "label": "E", "text": "Refuse case" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pediatric anesthesia: child differences from adult — airway, drug dosing, temperature, hemodynamics, psychological. Inhalation induction common (sevoflurane). Tonsillectomy: shared airway, OSA + opioid sensitivity, hemorrhage risk 5-10d, PONV high, multimodal pain. Multidisciplinary care + family-centered.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "respiratory",
+    "board_age_group": "peds",
+    "reference_source": "Society for Pediatric Anesthesia; APAS Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี acute subarachnoid hemorrhage from ruptured cerebral aneurysm — going to OR for endovascular coiling under general anesthesia\n\nV/S: BP 178/108 (high), HR 88, GCS 14, no focal neurological deficit",
+    "choices": [
+      { "label": "A", "text": "Standard surgical anesthesia" },
+      { "label": "B", "text": "Neuroanesthesia for Aneurysmal SAH Coiling: (1) **Goals**: maintain CPP (CPP = MAP - ICP, target > 60), avoid spikes in BP (rebleeding risk), avoid hypotension, avoid increases in ICP, minimize aneurysm wall tension; (2) **Pre-op**: BP control (target SBP < 140-160 pre-secured aneurysm — prevent rebleeding 4% in 24h, 30% in 1 month); IV access; arterial line; CVL if needed; nimodipine for vasospasm prevention; seizure prophylaxis if HUNT/HESS poor grade; (3) **Induction**: smooth, avoid HTN spike (treat with esmolol, lidocaine), avoid hypotension; propofol (cardiostable + lowers ICP via reduced CMRO2), thiopental alternative; opioid (fentanyl/remifentanil) blunt sympathetic response; muscle relaxant non-depolarizing (rocuronium); (4) **Maintenance**: TIVA (propofol + remifentanil) vs balanced (volatile + opioid); TIVA preferred for neuroanesthesia (less ICP increase, faster wake-up, better neuro exam); (5) **Hemodynamic management during procedure**: tight BP control — avoid hyper + hypotension; arterial line; vasoactive infusions ready (nicardipine, esmolol for HT; phenylephrine, norepinephrine for hypotension); MAP 80-90 typically; (6) **Ventilation**: PaCO2 normocapnia (avoid hyper or hypoventilation — ICP effects); SpO2 > 95; (7) **Temperature**: normothermia or mild hypothermia (debated — no clear benefit, may worsen); (8) **Heparinization**: for procedure — coordinate with reversal availability; (9) **Hyperthermia**: aggressive treatment (acetaminophen, cooling — fever worsens outcome); (10) **Emergence**: smooth, avoid HTN (treat aggressively), rapid neurological assessment; (11) **Post-op**: ICU, BP control continues, monitor for vasospasm + rebleeding + hydrocephalus + seizures; nimodipine; close neuro checks; (12) **Multidisciplinary**: neurosurgery + interventional radiology + anesthesia + neurocritical care" },
+      { "label": "C", "text": "Refuse case" },
+      { "label": "D", "text": "Discharge" },
+      { "label": "E", "text": "No monitoring" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Neuroanesthesia: tight BP control + ICP management + smooth hemodynamic course. TIVA preferred for neurosurgical cases. Aneurysm SAH: pre-secured aneurysm — avoid HTN (rebleeding); post-secured — moderate HTN may be allowed if vasospasm. Nimodipine for vasospasm. Multidisciplinary neurocritical care.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "SNACC Neuroanesthesia Guidelines; AHA SAH Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 68 ปี going for elective CABG + aortic valve replacement + on cardiopulmonary bypass\n\nMeds: aspirin, statin, beta-blocker, lisinopril, metformin",
+    "choices": [
+      { "label": "A", "text": "Standard anesthesia" },
+      { "label": "B", "text": "Cardiac Anesthesia for CABG + AVR with CPB: (1) **Pre-op**: continue beta-blocker + statin + aspirin (continue per surgeon preference vs hold 5-7 days pre-op for some); hold ACE inhibitor day of surgery; hold metformin day of surgery; antifibrinolytic (TXA or aprotinin alternative); coordinate with cardiologist + perfusionist + ICU; (2) **Monitoring**: 5-lead EKG, arterial line, CVL with PAC option, BIS for depth, TEE intra-op (essential for valve + ventricular function assessment), temperature (esophageal + bladder); (3) **Induction**: smooth, hemodynamically neutral; fentanyl high-dose 'cardiac dose' historic, modern lower with multimodal; etomidate or low-dose propofol; rocuronium; (4) **Pre-CPB**: maintain hemodynamics, monitor TEE; heparinization (300-400 U/kg) to ACT > 480 before bypass; (5) **On CPB**: maintained by perfusionist; perform aortic cross-clamp; cardioplegia for myocardial protection (cold + chemical); MAP 50-70 on bypass (typical); hemodilution; mild hypothermia (32-34°C) — cerebral protection; (6) **Coming off CPB**: rewarm to 36.5-37°C; restore rhythm (defibrillate, pace); volume management; inotropic support if needed (epinephrine, milrinone, dobutamine); ventilate; protamine to reverse heparin (carefully — anaphylactoid reaction risk); (7) **TEE assessment**: valve function, ventricular function, wall motion; (8) **Bleeding management**: balanced product replacement, TXA/aprotinin, factor concentrates, point-of-care testing (ROTEM, TEG); (9) **Post-op ICU**: ventilation, hemodynamic support, pain control, glycemic control, early extubation when stable (fast-track); (10) **Complications**: arrhythmia (AF — 20-30%), bleeding, stroke, AKI, vasoplegia; (11) **Multidisciplinary**: cardiac surgery + anesthesia + perfusion + ICU + cardiology" },
+      { "label": "C", "text": "Refuse case" },
+      { "label": "D", "text": "Local anesthetic only" },
+      { "label": "E", "text": "No monitoring" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cardiac anesthesia: extensive monitoring + invasive (arterial line, CVL, PAC option, TEE). Heparinization for CPB. Cardioplegia + hypothermia for myocardial + cerebral protection. Inotropic support coming off CPB. TXA reduces bleeding. Modern: TEE essential, fast-track recovery, multidisciplinary team. Complications: arrhythmia, bleeding, stroke, AKI.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "SCA + EACTS Guidelines; STS Cardiac Surgery"
+  },
+  {
+    "scenario": "ระหว่างผ่าตัด — surgeon uses electrocautery near oxygen-enriched area + drape catches fire on patient\n\nคำถาม: OR fire management",
+    "choices": [
+      { "label": "A", "text": "Continue surgery" },
+      { "label": "B", "text": "OR Fire — Anesthesia/Surgical Emergency: (1) **Stop procedure immediately** + alert team + announce 'FIRE'; (2) **Fire triangle**: oxidizer (O2, N2O), ignition source (electrocautery, laser, drill), fuel (drapes, alcohol prep, hair, ETT, gauze); (3) **Immediate actions**: - Stop O2 + N2O flow (most important); - Remove burning materials from patient; - Extinguish fire (saline, CO2 extinguisher, smother with blankets); (4) **For airway fires**: - Disconnect breathing circuit; - Remove ETT immediately; - Pour saline into airway; - Once fire out, ventilate with room air + minimum O2 needed; - Re-intubate (likely required for airway burn); - Bronchoscopy to assess; - Tracheostomy if severe; - ICU admission + steroids; (5) **Post-fire**: - Assess patient injury (skin burns, airway burn); - Resuscitation if extensive; - Document — quality improvement; - Counsel patient + family; (6) **Prevention** (ASA Fire Algorithm): - Reduce ambient O2 below 30% when possible; - Use compressed air or blended O2; - Avoid open O2 delivery near surgical site for head/neck cases; - Use proper drape technique; - Allow time for alcohol prep to dry; - Communication between surgeon + anesthesia about ignition + oxidizer use; (7) **OR personnel safety**; (8) **Multidisciplinary**: surgery, anesthesia, OR nursing, infection control" },
+      { "label": "C", "text": "Continue with surgery" },
+      { "label": "D", "text": "Refuse to help" },
+      { "label": "E", "text": "Discharge patient" }
+    ],
+    "correct_answer": "B",
+    "explanation": "OR fires: rare but devastating. Fire triangle — oxidizer + ignition + fuel. Stop O2 first. Airway fires require ETT removal + reintubation. Prevention: ASA Fire Algorithm — reduce ambient O2, time for alcohol drying, communication. Multidisciplinary safety. Document + QI.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "ASA Practice Advisory for Prevention + Management of Operating Room Fires"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 28 ปี G2P1 GA 40 wk emergency C-section for fetal distress + uterine atony + ongoing hemorrhage 2L+\n\nGoing to OR + already lost lots of blood + still bleeding",
+    "choices": [
+      { "label": "A", "text": "Wait for typed blood" },
+      { "label": "B", "text": "Massive Transfusion Protocol (MTP) for OB Hemorrhage: (1) **Activate MTP** (criteria — ongoing hemorrhage requiring multiple units, shock); (2) **Balanced product administration 1:1:1** (PRC:FFP:Plt) per PROPPR trial 2015 — better than crystalloid + delayed plasma; (3) **Tranexamic acid (TXA) 1g IV** within 3 hours (WOMAN trial — reduces death from bleeding in OB hemorrhage); (4) **Crystalloid + colloid** secondary — minimize (dilutional coagulopathy); (5) **Type O negative blood emergent** before type-specific available (for women of reproductive age — Rh status matters); type-specific switch when available; uncrossmatched if needed; (6) **Cryoprecipitate** for fibrinogen < 200 (OB hemorrhage requires fibrinogen > 200 — higher target than trauma); (7) **Point-of-care testing**: ROTEM/TEG to guide product use; (8) **Permissive hypotension** caution in OB (placental + fetal perfusion, eclampsia risk); SBP target 90-100 typically; (9) **Cell saver** controversial in OB (amniotic fluid contamination concern, but increasingly used with leukocyte depletion filter); (10) **Treat cause**: uterine atony (oxytocin + methylergonovine + carboprost + misoprostol — 4 T's: tone, trauma, tissue, thrombin), surgical control (B-Lynch, hysterectomy if needed); IR + UAE if available; (11) **Temperature**: warming all products, blanket warmer, warm IV — hypothermia worsens coagulopathy; (12) **Calcium replacement** (citrate binds Ca); (13) **Multidisciplinary team**: OB + anesthesia + blood bank + nursing + IR + ICU; (14) **Maternal mortality risk** — leading cause globally; aggressive management saves lives" },
+      { "label": "C", "text": "Crystalloid only" },
+      { "label": "D", "text": "Discharge" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Massive transfusion: balanced 1:1:1 ratio (PROPPR). TXA within 3h (WOMAN). Cryoprecipitate for fibrinogen < 200 (OB target higher). O-negative emergent. Point-of-care testing (ROTEM/TEG). Treat cause. Warm products. Multidisciplinary team. OB hemorrhage = leading cause of maternal mortality globally — saves lives.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG; PROPPR Trial JAMA 2015; WOMAN Trial Lancet 2017"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี multi-trauma post-MVC + open femoral fracture exposure for 1 hour + Temp 33.6°C + slow rewarming\n\nคำถาม: perioperative hypothermia management",
+    "choices": [
+      { "label": "A", "text": "Ignore temperature" },
+      { "label": "B", "text": "Perioperative Hypothermia Management: (1) **Hypothermia harm**: coagulopathy (platelet + enzymatic dysfunction), arrhythmia (especially < 30°C), wound infection, increased SSI, delayed drug metabolism, shivering (cardiac demand), longer recovery; (2) **Prevention strategies (ASA + NICE recommend normothermia > 36°C)**: - Pre-warming pre-op (forced air warming 30-60 min before induction); - Warm OR room (initially 20-24°C, higher for infants 26-28°C); - Forced air warming intra-op (Bair Hugger most common); - Conductive warming mattress; - IV fluid warmer; - Humidification of inspired gas; - Reduce skin exposure; - Cover head; (3) **Active rewarming when hypothermic**: - Forced air warming primary; - IV fluid warmer (40°C); - Warmed humidified ventilation; - Body cavity lavage (pleural, peritoneal) for severe; - Continuous renal replacement therapy with warming; - ECMO for refractory severe (< 28°C, hemodynamic compromise); (4) **Hypothermia + trauma 'lethal triad'**: hypothermia + acidosis + coagulopathy — vicious cycle; aggressive rewarming + product replacement; (5) **Monitoring**: core temperature (esophageal, bladder, rectal, tympanic); skin temperature less accurate; (6) **Cooling for indications** (controversial benefit, narrow): targeted temperature management (TTM 32-36°C) post-cardiac arrest, neuroprotection (mild hypothermia for selected — debated); never hyperthermia (worsens outcome universally); (7) **Multidisciplinary**: anesthesia + surgery + nursing + ICU" },
+      { "label": "C", "text": "Discharge" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Cool further" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Perioperative hypothermia: significant harm (coagulopathy, arrhythmia, SSI). Prevention better than treatment. Forced air warming primary. Pre-warming. Trauma lethal triad: hypothermia + acidosis + coagulopathy. Hyperthermia universally harmful. Monitor core temperature. Multidisciplinary team. Modern: normothermia > 36°C standard.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "ASA Temperature Monitoring Guidelines; NICE Hypothermia"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 78 ปี HF, CKD3, recent MI, going for emergency hip fracture repair within 24 hours\n\nFunctional capacity poor pre-fall, on aspirin + warfarin (INR 2.4) + furosemide + carvedilol + atorvastatin",
+    "choices": [
+      { "label": "A", "text": "Discharge" },
+      { "label": "B", "text": "Frail Elderly Emergency Surgery: (1) **Pre-op optimization while not delaying surgery > 48h** (hip fracture mortality increases with delay): - Volume status assessment (fluid resuscitation cautious in HF/CKD); - Anti-coagulation reversal — INR > 1.5 + emergency hip surgery → 4-factor PCC (Kcentra) + vitamin K (faster than FFP, smaller volume; especially CKD + HF); INR target 1.5; - Continue beta-blocker + statin; - Hold furosemide if hypovolemic; - Optimize Hb (transfuse if < 8 or anemic + symptomatic); - Glycemic control; (2) **Anesthetic plan**: - Regional anesthesia preferred (spinal/CSE) — less delirium + lower mortality than GA in some series (limited evidence — REGAIN trial NEJM 2021 no difference); - Fascia iliaca compartment block (pre-op + intra-op) — excellent analgesia + multimodal; - Reduce opioids; (3) **Monitoring**: arterial line for invasive BP, urine output, EKG, possibly TEE if hemodynamic concerns; (4) **Hemodynamic management**: maintain perfusion to organs (cardiac + renal + brain) — MAP > 65, individualized; avoid both HT + hypoTN; vasopressors as needed; (5) **Cementing reaction risk** (BCIS — bone cement implantation syndrome — hypotension + hypoxia + arrhythmia during prosthesis insertion) — communicate with surgeon, premedicate volume, ready vasopressors, careful cement use, vent reaming; (6) **Post-op**: PACU then ICU vs ward based on stability; multimodal analgesia opioid-sparing; early mobilization; PT; (7) **Ortho-geriatric co-management** — Cochrane evidence reduces mortality; (8) **Delirium prevention**: HELP, non-pharm, avoid Beers meds; (9) **Secondary fracture prevention**: osteoporosis Rx, fall prevention; (10) **Multidisciplinary**: orthopedics + anesthesia + geriatric medicine + nursing + PT + family" },
+      { "label": "C", "text": "Cancel surgery" },
+      { "label": "D", "text": "Standard elective" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Frail elderly emergency surgery: optimize without delaying > 48h. Reverse warfarin (PCC > FFP). Regional anesthesia (REGAIN trial — no clear difference from GA but fascia iliaca block + multimodal). Hemodynamic vigilance. Cementing reaction risk. Ortho-geriatric co-management. Modern multidisciplinary team approach.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "AAOS Hip Fracture; REGAIN Trial NEJM 2021"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 32 ปี Jehovah's Witness — refusing all blood products + going for emergency surgery (ruptured ectopic pregnancy)\n\nCurrently BP 88/52, HR 132, Hb 7.4 (dropping)",
+    "choices": [
+      { "label": "A", "text": "Force blood transfusion" },
+      { "label": "B", "text": "Jehovah's Witness + Bloodless Medicine: (1) **Respect patient autonomy** — informed consent + refusal of blood products (constitutionally protected); document in advance directive + chart; (2) **Discuss specifics**: most JWs refuse whole blood, PRBC, FFP, platelets; many accept albumin, cryoprecipitate, some accept own blood (cell saver if continuous circuit), recombinant factors, ESA (erythropoietin); individualized — ask patient specifically; (3) **Pre-op optimization**: maximize Hb pre-op (iron, B12, folate, erythropoietin if elective); minimize blood draws; (4) **Intra-op blood conservation strategies**: - **Cell saver** (intraoperative blood recovery — preferred — continuous circuit acceptable to most JWs); - **Acute normovolemic hemodilution** (ANH — collect autologous blood + replace with crystalloid; reinfuse later); - **Hypotensive anesthesia** (lower MAP — reduces blood loss); - **Optimize hemostasis** — surgical technique, electrocautery, topical agents (TXA, fibrin glue, hemostatic patches); - **Tranexamic acid (TXA)** — IV systemic + topical reduces bleeding; - **Minimize phlebotomy** — pediatric tubes; - **Pharmacologic**: erythropoietin, iron IV, vitamin B12/folate; (5) **Post-op**: aggressive hemostasis, monitor for re-bleeding, optimize Hb (iron, EPO), nutritional support; (6) **Maternal mortality higher in JW vs general OB population** — counsel + discuss; (7) **Refractory severe anemia**: hyperbaric oxygen as last resort (controversial); (8) **Ethics committee** if complex situations; (9) **Family education** + support; (10) **Bloodless medicine programs** specialized centers; (11) **Documentation** of informed consent + refusal" },
+      { "label": "C", "text": "Refuse case" },
+      { "label": "D", "text": "Discharge" },
+      { "label": "E", "text": "Ignore wishes" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Jehovah's Witness: respect patient autonomy. Bloodless medicine strategies: cell saver, ANH, TXA, EPO/iron, surgical hemostasis. Document informed consent + refusal. Higher mortality risk — discuss. Specialized bloodless programs. Modern: many options to minimize blood need.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hematology",
+    "board_age_group": "adult",
+    "reference_source": "Bloodless Medicine + Surgery; Patient Blood Management"
   }
 ]
