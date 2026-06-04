@@ -1494,5 +1494,481 @@
     "board_topic": "renal_pathology",
     "board_age_group": "adult",
     "reference_source": "Banff 2022; KDIGO Transplant"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 70 ปี — incidental lymphocytosis 25,000; smear: small mature lymphocytes + smudge cells; flow cytometry: CD5+, CD19+, CD20 dim, CD23+, CD200+, kappa-restricted dim, FMC7-, CD79b dim; การวินิจฉัย + workup + treatment",
+    "choices": [
+      { "label": "A", "text": "AML" },
+      { "label": "B", "text": "Chronic Lymphocytic Leukemia (CLL) / Small Lymphocytic Lymphoma (SLL): (1) **Diagnostic criteria (iwCLL 2018)**: monoclonal B-lymphocyte count > 5 × 10⁹/L in peripheral blood; clonality + immunophenotype confirmed; SLL = same disease, tissue-based (lymph nodes), low lymphocyte count; (2) **Immunophenotype** (essential — distinguishes from other CD5+ lymphomas): - **CD5+** (T-cell antigen aberrantly expressed); - **CD19+**, CD20 dim, CD79b dim; - **CD23+** (CLL key — vs MCL CD23-); - **CD200+** (CLL — vs MCL); - **FMC7 dim/negative** (vs MCL strong); - Light chain restricted (kappa or lambda) dim; cyclin D1 negative (vs MCL); LEF1 + (CLL marker); (3) **Workup at diagnosis** (essential — risk stratification): - **IGHV mutation status**: **unmutated IGHV** (poor prognosis, more aggressive) vs **mutated** (better); - **FISH (CLL panel)**: del(13q) — best prognosis; +12; del(11q) ATM; **del(17p) TP53** — worst; - **TP53 mutation** (next-gen sequencing — important even without del(17p)); - **NOTCH1, SF3B1, BIRC3** — adverse; - **CD49d** flow — adverse; - Beta-2 microglobulin; (4) **MBL** (monoclonal B-cell lymphocytosis) — < 5 × 10⁹/L, immunophenotype like CLL — precursor, surveillance; (5) **Treatment** — only when indicated (active disease per iwCLL — progressive cytopenia, symptomatic LAD/splenomegaly, B symptoms, lymphocyte doubling < 6 mo, autoimmune cytopenia): - **Targeted therapy frontline (no chemo)**: - **BTK inhibitor** (acalabrutinib, zanubrutinib preferred over ibrutinib due to cardiac SE) ± obinutuzumab — continuous; - **Venetoclax (BCL2 inhibitor) + obinutuzumab** — fixed duration 12 mo (CLL14); - **Ibrutinib + venetoclax** fixed-duration combinations (GLOW, CAPTIVATE) emerging; - Chemo-IO (FCR, BR, R-Bendamustine) historical — limited current use; (6) **TP53/del(17p) high-risk**: avoid chemo; BTKi + venetoclax preferred; (7) **Relapsed/refractory**: switch class (BTKi → BCL2i or vice versa); pirtobrutinib (non-covalent BTKi) — BRUIN; CAR-T (lisocabtagene — TRANSCEND CLL); allo-HCT select; (8) **Complications**: hypogammaglobulinemia (infections, IVIG selected), autoimmune cytopenia (AIHA, ITP), Richter transformation (DLBCL or Hodgkin), second malignancies; (9) **Vaccinations** + infection prophylaxis (PJP, antifungal, antiviral on BTKi/BCL2i)" },
+      { "label": "C", "text": "DLBCL" },
+      { "label": "D", "text": "MCL" },
+      { "label": "E", "text": "ALL" }
+    ],
+    "correct_answer": "B",
+    "explanation": "CLL/SLL: CD5+/CD19+/CD23+/CD200+/dim Ig; FMC7-/cyclin D1-/LEF1+. IGHV + FISH (del17p/TP53 high-risk) + NGS. Treat when iwCLL active. Targeted frontline: BTKi (acala/zanu) or ven-obi (CLL14). Pirtobrutinib + CAR-T R/R. Richter transformation, infections.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "hematopathology",
+    "board_age_group": "adult",
+    "reference_source": "iwCLL 2018; NCCN CLL; CLL14"
+  },
+  {
+    "scenario": "ผู้ป่วยหญิงอายุ 65 ปี — bilateral parotid swelling chronic; biopsy: lymphoepithelial lesions + reactive germinal centers + monocytoid B-cells expanding into epithelium; flow: monoclonal kappa; IHC: CD20+, CD5-, CD10-, CD23-, cyclin D1-; การวินิจฉัย",
+    "choices": [
+      { "label": "A", "text": "Reactive" },
+      { "label": "B", "text": "Extranodal Marginal Zone Lymphoma (MALT lymphoma): (1) **Origin**: arises from chronic antigenic stimulation in mucosa-associated lymphoid tissue (MALT) — acquired or normal; (2) **Common sites + associations**: - **Gastric** — H. pylori (most studied); - **Salivary gland** — Sjögren syndrome; - **Thyroid** — Hashimoto thyroiditis; - **Ocular adnexa** — Chlamydia psittaci (some regions); - **Skin** — Borrelia (Europe); - **Lung (BALT)**, GI other sites, breast; (3) **Histology**: small B-cells (centrocyte-like, monocytoid, plasmacytic differentiation), reactive follicles colonized + 'lymphoepithelial lesions' (B-cells infiltrating epithelium) — diagnostic; (4) **Immunophenotype**: CD20+, CD79a+; **CD5-, CD10-, CD23-, cyclin D1- (rules out other small B-cell lymphomas)**; light chain restricted (kappa or lambda); CD43 sometimes aberrant+; (5) **Genetics**: - **t(11;18)(q21;q21) BIRC3-MALT1** — most common; **predicts H. pylori eradication resistance** (gastric — choose alternate Tx if positive); - t(14;18) MALT1/IGH; t(1;14) BCL10/IGH; t(3;14) FOXP1/IGH; - Trisomy 3, 18; (6) **Workup**: identify + treat underlying chronic stimulus when possible; staging PET-CT, BM (selectively), EGD/site-specific endoscopy; (7) **Treatment** (depends on site + stage + risk + t(11;18)): - **Gastric MALT**: H. pylori eradication — induces regression in low-grade, t(11;18) negative; persistent disease or t(11;18) positive → RT (low-dose) or rituximab ± chemo; - **Non-gastric**: RT (very radiosensitive), rituximab, observation in indolent low-burden, immunochemotherapy in advanced; - **Antibiotic-responsive** in other sites (ocular — doxycycline for C. psittaci); (8) **Indolent course typically**; **transformation to DLBCL** ~ 10%; (9) **Multidisciplinary**: heme-onc + GI/specialty + ID + rheumatology" },
+      { "label": "C", "text": "DLBCL" },
+      { "label": "D", "text": "MCL" },
+      { "label": "E", "text": "Sjögren only" }
+    ],
+    "correct_answer": "B",
+    "explanation": "MALT lymphoma: chronic antigen stimulation (H. pylori/Sjögren/Hashimoto/C. psittaci). Lymphoepithelial lesions + monocytoid B-cells; CD20+/CD5-/CD10-/CD23-. t(11;18) most common — predicts H. pylori eradication resistance. Antibiotic-responsive when feasible.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hematopathology",
+    "board_age_group": "adult",
+    "reference_source": "WHO HAEM5 2022; ESMO MZL"
+  },
+  {
+    "scenario": "ผู้ป่วยเด็กอายุ 5 ปี — fatigue + bruising + LAD; CBC: WBC 60,000 with blasts; flow: CD19+, CD10+, CD20-, CD22+, TdT+, MPO-; cytogenetics: t(12;21) ETV6-RUNX1; การวินิจฉัยและการรักษา",
+    "choices": [
+      { "label": "A", "text": "AML" },
+      { "label": "B", "text": "B-cell Acute Lymphoblastic Leukemia/Lymphoblastic Lymphoma (B-ALL/LBL): (1) **Diagnostic criteria**: ≥ 20% lymphoblasts in BM/PB (or tissue-based LBL); immunophenotyping essential; (2) **B-ALL immunophenotype**: CD19+ (pan-B), CD22+, CD79a+, **CD10+ (common ALL)**, **TdT+**, CD34+ in many, **MPO negative** (vs AML); pro-B (CD10-), common B (CD10+, surface Ig-), pre-B (cIgM+), mature B = Burkitt (sIg+); (3) **T-ALL**: cytoplasmic CD3+, CD7+, CD1a+ (cortical), CD4/CD8 variable; T-cell receptor rearrangements; (4) **Cytogenetics/molecular (essential — risk stratification, WHO HAEM5)**: - **Good risk pediatric**: hyperdiploidy (51-65), **t(12;21) ETV6-RUNX1** (cryptic — needs FISH); - **High risk**: hypodiploidy < 44, **t(9;22) BCR-ABL (Ph+)** — add TKI, **KMT2A (MLL) rearrangements** (especially infants), iAMP21, **Ph-like ALL** (CRLF2, JAK2, ABL-class — adult > pediatric, kinase fusions); - **B-other**, ETP-T-ALL (T-cell aggressive), **TCF3-PBX1**, **TCF3-HLF**, ZNF384, DUX4 (favorable); - **IKZF1 deletion** — adverse independently; (5) **MRD monitoring** (flow MRD + molecular) — strongest prognostic factor; (6) **Treatment**: - **Multi-agent chemo**: induction (corticosteroid + vincristine + anthracycline + asparaginase ± rituximab) → consolidation → CNS-directed (IT MTX/cytarabine) → maintenance (~ 2-3 yr total in pediatric); - **Ph+ ALL**: add TKI (imatinib, dasatinib, ponatinib) — survival > 80% pediatric, much improved adult; - **Pediatric > adult outcomes**; pediatric-inspired protocols extended to AYA + adult; - **Relapsed/refractory**: - **Blinatumomab** (CD19/CD3 bispecific) — pre/post-MRD-positive role; - **Inotuzumab ozogamicin** (anti-CD22 ADC); - **CAR-T (tisagenlecleucel, brexucabtagene)** — pediatric ALL revolutionary cure rates; - allo-HCT consolidation; (7) **Pediatric outcomes excellent**: > 90% cure in good-risk; (8) **Multidisciplinary** + supportive + survivorship" },
+      { "label": "C", "text": "Reactive lymphocytosis" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "B-ALL: ≥20% blasts; CD19/CD22/CD10/TdT+, MPO-. Risk strat by genetics: hyperdiploid + t(12;21) good; hypodiploid + Ph+ + KMT2A + Ph-like + iAMP21 high. MRD-guided. Pediatric chemo + CNS prophylaxis; +TKI for Ph+. R/R: blinatumomab, inotuzumab, CAR-T.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "hematopathology",
+    "board_age_group": "child",
+    "reference_source": "WHO HAEM5 2022; ICC 2022; NCCN ALL"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 75 ปี — pancytopenia + dysplastic features in marrow: ringed sideroblasts > 15%, blasts 6%; cytogenetics: del(5q); molecular: SF3B1 mutation + TP53 wildtype; การจำแนกและการรักษา",
+    "choices": [
+      { "label": "A", "text": "AML" },
+      { "label": "B", "text": "Myelodysplastic Syndromes (MDS) — Classification + Management: (1) **WHO HAEM5 (2022) / ICC**: classified by dysplasia lineage count, blast %, genetics, ring sideroblasts: - MDS with low blasts (< 5% BM, < 2% PB); - MDS with low blasts and SF3B1 mutation; - MDS with low blasts and isolated del(5q); - MDS with biallelic TP53 inactivation (poor); - MDS with increased blasts (MDS-IB1 5-9%, MDS-IB2 10-19%); - MDS, hypoplastic; - MDS, fibrotic; - MDS/MPN overlap; - (2) **IPSS-R / IPSS-M** prognostic — IPSS-M integrates 31 mutations (TP53 multi-hit worst; SF3B1, SRSF2, U2AF1, ASXL1, RUNX1, EZH2, ETV6, others); (3) **Diagnostic workup**: BM biopsy + aspirate + iron stain (ring sideroblasts) + cytogenetics + FISH + NGS panel (myeloid); flow cytometry + Ogata score; rule out copper/B12/HIV/recent chemo; (4) **MDS with del(5q) — 5q minus syndrome**: middle-aged women, macrocytic anemia, normal/elevated platelet, megakaryocyte hypolobulation; **lenalidomide highly effective**; (5) **Treatment by risk**: - **Lower-risk MDS**: ESA (erythropoietin) for symptomatic anemia + low EPO; **luspatercept (RBC)** especially SF3B1+/ring sideroblasts (COMMANDS, MEDALIST); lenalidomide for del(5q); transfusion + iron chelation; immunosuppression (ATG/cyclosporine) for hypoplastic MDS; - **Higher-risk MDS**: **hypomethylating agents (azacitidine, decitabine, oral cedazuridine-decitabine)** — backbone; **allo-HCT only curative** (eligibility based on age/comorbidities); - **AML transformation** (MDS-IB2 already AML-like — venetoclax + aza emerging in 'AML with myelodysplasia-related changes'); - **TP53-mutated MDS/AML**: very poor — magrolimab/eprenetapopt under study, mostly trials; (6) **Supportive**: transfusion + chelation; growth factors; vaccinations; (7) **Multidisciplinary**: heme + transplant + transfusion + supportive care; (8) **Symptom-focused** in older unfit patients; palliative integration" },
+      { "label": "C", "text": "Refuse" },
+      { "label": "D", "text": "Iron deficiency" },
+      { "label": "E", "text": "B12 deficiency" }
+    ],
+    "correct_answer": "B",
+    "explanation": "MDS WHO HAEM5: by lineage dysplasia + blast % + genetics (SF3B1, del(5q), TP53). IPSS-M with mutations. Tx by risk: ESA/luspatercept/lenalidomide for low-risk; HMA + allo-HCT for high-risk. TP53 multi-hit worst. Supportive + multidisciplinary.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "hematopathology",
+    "board_age_group": "adult",
+    "reference_source": "WHO HAEM5 2022; ICC 2022; IPSS-M; NCCN MDS"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี — high WBC 80,000 + immature myeloid cells + basophilia; BM hypercellular with granulocytic hyperplasia + blasts < 5%; FISH/PCR: **BCR-ABL1 t(9;22)** positive; การวินิจฉัยและการรักษา",
+    "choices": [
+      { "label": "A", "text": "AML" },
+      { "label": "B", "text": "Chronic Myeloid Leukemia (CML) — BCR-ABL1+: (1) **Diagnostic criteria (WHO HAEM5)**: **BCR-ABL1 fusion** (t(9;22)(q34;q11.2) Philadelphia chromosome) — pathognomonic; myeloproliferation; left-shifted granulocytes + basophilia (specific) + variable eosinophilia + thrombocytosis; splenomegaly; (2) **Phases**: - **Chronic phase (CP)** — < 5% blasts in BM/PB, control of WBC achievable; - **Accelerated phase (AP)** — 10-19% blasts OR ≥ 20% basophils OR persistent thrombocytosis/penia OR new clonal evolution; - **Blast phase (BP)** — ≥ 20% blasts (myeloid 70% or lymphoid 30%) — behaves like acute leukemia; (3) **Workup**: PB + BM + cytogenetics + FISH + RT-PCR for BCR-ABL1 (p210 major, p190 minor, p230 — typing); baseline before TKI; (4) **Risk scores**: Sokal, Hasford, ELTS — guides TKI choice + monitoring; (5) **Treatment** (CP): - **TKI revolution** transformed CML survival ~ normal lifespan: - **First-gen**: **imatinib** (Gleevec); - **Second-gen**: **dasatinib, nilotinib, bosutinib** — frontline in higher-risk; - **Third-gen + asciminib (STAMP — allosteric BCR-ABL inhibitor)** approved 1L (ASC4FIRST 2024); - **Ponatinib** for T315I-mutated (resistance to other TKIs); - Choice considers comorbidities (cardiovascular — ponatinib + nilotinib caution; pleural effusion — dasatinib caution; pulmonary HTN); (6) **Monitoring**: - **BCR-ABL1 RT-qPCR (IS — international scale)** every 3 mo until MMR; milestones: BCR-ABL1 ≤ 10% at 3 mo, ≤ 1% at 6 mo, ≤ 0.1% (MMR) at 12 mo; - **Deep molecular response (MR4, MR4.5)** allows **treatment-free remission (TFR)** trial in eligible patients (sustained DMR > 2 yr) — ~ 50% maintain; - **Failure**: switch TKI, check BCR-ABL kinase domain mutations (T315I, F359, etc.); (7) **AP/BP**: more intensive — TKI + chemo ± allo-HCT; (8) **Multidisciplinary**: heme + transplant + adherence (TKI adherence critical) + pharmacy + cardiovascular + supportive; (9) **Compliance > 90% essential** for optimal response" },
+      { "label": "C", "text": "Reactive leukocytosis" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "MDS" }
+    ],
+    "correct_answer": "B",
+    "explanation": "CML: BCR-ABL1 t(9;22) pathognomonic; CP/AP/BP. TKI revolution: imatinib → dasatinib/nilotinib/bosutinib → ponatinib (T315I) → asciminib (STAMP). Molecular monitoring (IS); MMR at 12 mo; TFR for sustained DMR. Switch TKI + kinase mutation testing for failure.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hematopathology",
+    "board_age_group": "adult",
+    "reference_source": "WHO HAEM5 2022; ELN CML 2020; ASC4FIRST"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 60 ปี — erythrocytosis Hb 19 + splenomegaly + pruritus; EPO low; molecular: **JAK2 V617F mutation** positive; BM: hypercellular trilineage hyperplasia; การวินิจฉัยและการรักษา",
+    "choices": [
+      { "label": "A", "text": "Secondary polycythemia" },
+      { "label": "B", "text": "Polycythemia Vera (PV) — WHO 2022: (1) **Diagnostic criteria** (3 major or first 2 + minor): - Major 1: Hb > 16.5 (M) / 16.0 (F) OR Hct > 49% (M) / 48% (F) OR red cell mass > 25% mean predicted; - Major 2: BM biopsy showing hypercellular for age with trilineage growth (panmyelosis) with pleomorphic mature megakaryocytes; - Major 3: **JAK2 V617F or JAK2 exon 12 mutation**; - Minor: subnormal serum EPO level; (2) **Other Philadelphia-negative MPNs**: - **Essential thrombocythemia (ET)** — sustained Plt > 450 × 10⁹/L; JAK2 V617F (~ 50%), **CALR exon 9** (~ 25%), **MPL** (~ 3%), 'triple negative' (~ 10-15%); BM proliferation of large mature megakaryocytes; - **Primary myelofibrosis (PMF)** — prefibrotic and overt; same drivers; cytopenia + fibrosis + leukoerythroblastic + dacrocytes/teardrops + splenomegaly; - **MDS/MPN overlap**: CMML, aCML, JMML, MDS/MPN-RS-T, MDS/MPN-NOS; (3) **MPN complications**: thrombosis (arterial + venous — splanchnic — important PV/ET; HCT control), bleeding (acquired vWS in ET high platelet), transformation to MF then AML (acquired drivers ASXL1, EZH2, SRSF2, IDH; TP53); (4) **Risk stratification PV**: - **Low risk**: age < 60 + no thrombosis history → phlebotomy + low-dose aspirin; - **High risk**: age ≥ 60 OR thrombosis history → add cytoreduction; (5) **Treatment**: - **PV cytoreduction**: hydroxyurea (1st-line typically), interferon-α / pegylated IFN (**ropeginterferon alfa-2b** FDA-approved PV — PROUD-PV) — preferred for young/pregnancy; **ruxolitinib** (JAK1/2 inhibitor) — for HU-intolerant/resistant (RESPONSE/RESPONSE-2); - **ET**: low-risk — aspirin; high-risk — hydroxyurea, anagrelide, IFN; - **MF**: ruxolitinib, fedratinib, momelotinib (anemia + ↓ spleen, MOMENTUM), pacritinib (severe thrombocytopenia, PERSIST-2); navitoclax + ruxo combos under trial; allo-HCT only curative; (6) **Thrombosis prevention** central; control Hct < 45 PV (CYTO-PV); aspirin; risk-adapted cytoreduction; (7) **Multidisciplinary**" },
+      { "label": "C", "text": "MDS" },
+      { "label": "D", "text": "AML" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "PV: WHO 2022 — Hb/Hct↑ + panmyelosis + JAK2 mutation + low EPO. MPN drivers JAK2/CALR/MPL. Tx: phlebotomy + ASA all; cytoreduction (HU or ropeg-IFN) for high-risk PV. Ruxolitinib for HU-intol/resistant (RESPONSE) + MF. Hct < 45 (CYTO-PV).",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hematopathology",
+    "board_age_group": "adult",
+    "reference_source": "WHO HAEM5 2022; NCCN MPN; RESPONSE"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี — heavy smoker + drinker; HPV testing positive; oropharyngeal tonsil mass biopsy: non-keratinizing squamous + basaloid cells + central necrosis; IHC: **p16 strong + diffuse block-positive**; HPV ISH or HPV PCR positive (high-risk type 16); การวินิจฉัยและการ stage",
+    "choices": [
+      { "label": "A", "text": "Adenocarcinoma" },
+      { "label": "B", "text": "HPV-associated Oropharyngeal Squamous Cell Carcinoma (HPV-OPSCC): (1) **Epidemiology**: rising incidence, predominantly white middle-aged men, sexual transmission, oral HPV exposure; better prognosis than HPV-negative; (2) **Histology**: typically non-keratinizing, basaloid, with comedo-type necrosis; lymphoepithelial pattern; tonsil + base of tongue most common; high-risk HPV types — predominantly HPV-16 (90% of HPV+ OPSCC), HPV-18, 33, 35; (3) **HPV testing — required** for OPSCC (CAP/ASCO/CAP-WHO): - **p16 IHC** — strong + diffuse (≥ 70% nuclear + cytoplasmic) — surrogate marker, high sensitivity, lower specificity especially outside oropharynx; - **HPV DNA ISH** or **HPV E6/E7 mRNA ISH** — directly detects HPV; - **HPV PCR** including high-risk genotype; - **HPV-associated head/neck cancers limited mostly to OROPHARYNX** — non-oropharyngeal p16+ less reliable HPV-driven; (4) **Staging**: **AJCC 8th edition (2017) — DIFFERENT for HPV-related OPSCC** (cN/cM categories simpler — reflects better prognosis): - p16+ T1-T2 N1 = stage I; - cf. p16- OPSCC traditional staging; (5) **HPV+ OPSCC excellent prognosis** — 5-yr OS > 80%; (6) **Treatment**: - **De-escalation trials ongoing** (lower dose RT, less intensive chemo) — not yet standard outside trial; - **Standard**: surgery (transoral robotic — TORS) for select + neck dissection + risk-adapted adjuvant; OR primary RT + concurrent platinum chemo; - **HPV-negative**: stage-based intensive multimodal; (7) **EBV-associated nasopharyngeal carcinoma** distinct — common SE Asia + Mediterranean: EBER ISH + (testing essential), non-keratinizing undifferentiated, treat with concurrent chemoRT; nivolumab + chemo in advanced (KEYNOTE-122); (8) **HPV vaccination** primary prevention; (9) **Multidisciplinary**: H&N surgery + RT + medical onc + speech + nutrition + dental + psychology + survivorship" },
+      { "label": "C", "text": "Lymphoma" },
+      { "label": "D", "text": "Melanoma" },
+      { "label": "E", "text": "Cyst" }
+    ],
+    "correct_answer": "B",
+    "explanation": "HPV+ OPSCC: non-keratinizing, p16 block+ (CAP), HPV ISH/PCR confirmatory. AJCC 8th separate staging (better prognosis). 5-yr OS > 80%. Treatment: surgery (TORS) + risk-adapted adjuvant or chemoRT. EBV NPC distinct (EBER ISH). HPV vaccination prevention.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "surgical_pathology",
+    "board_age_group": "adult",
+    "reference_source": "WHO Head + Neck Tumors 5th ed; AJCC 8th; CAP/ASCO p16"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 60 ปี — gastric mass → biopsy: spindle cell tumor with mild atypia + low mitoses; IHC: **CD117 (KIT) +, DOG1+, CD34 + variable**, S100-, desmin-, SMA-; molecular: KIT exon 11 mutation; การวินิจฉัยและการรักษา",
+    "choices": [
+      { "label": "A", "text": "Leiomyoma" },
+      { "label": "B", "text": "Gastrointestinal Stromal Tumor (GIST): (1) **Origin**: interstitial cells of Cajal (pacemaker cells of GI tract); (2) **Common sites**: stomach (~ 60%), small intestine (~ 30%), colon, rectum, esophagus, extraintestinal (omentum); (3) **Histology**: spindle (70%), epithelioid (20%), mixed; nuclear atypia + mitoses variable; necrosis; (4) **IHC**: **CD117 (KIT)+ ~ 95%** (most specific), **DOG1+ ~ 98%** (more sensitive — useful in KIT-negative), CD34+ (~ 70%), variable SMA; S100-, desmin- (distinguishes from leiomyoma/sarcoma/schwannoma); succinate dehydrogenase (SDHB) IHC — loss in pediatric/SDH-deficient GIST; (5) **Molecular** (essential — guides treatment): - **KIT mutation** ~ 75-80% (exon 11 most common — best response to imatinib; exon 9 — partial response, higher dose 800 mg; exon 13, 17 less common); - **PDGFRA mutation** ~ 5-10% (exon 18 D842V — **imatinib resistant** — needs avapritinib; other exon 18 sensitive); - **KIT/PDGFRA wild-type GIST**: SDH-deficient (pediatric, Carney triad, Carney-Stratakis), NF1 (small bowel multifocal), BRAF V600E, KIT exon 11 internal duplication; (6) **Risk stratification (Miettinen + Lasota)**: size + mitotic count + site + tumor rupture → very low/low/intermediate/high — guides surveillance + adjuvant; (7) **Treatment**: - **Surgical resection** primary if resectable — R0 without lymph node dissection (rare nodal mets except SDH-deficient pediatric); - **Adjuvant imatinib** 3 yr for high-risk (PERSIST-5, SSGXVIII); - **Neoadjuvant imatinib** for unresectable/borderline → downsize; - **Metastatic/unresectable**: **imatinib** (400 mg, 800 mg for KIT exon 9) → **sunitinib** (2nd line) → **regorafenib** (3rd line) → **ripretinib** (4th line, INVICTUS); - **PDGFRA D842V**: **avapritinib**; - SDH-deficient + WT: targeted by mutation; immunotherapy investigational; (8) **Multidisciplinary**: surgery + medical onc + GI + pathology + radiology + genetics (SDH/NF1/Carney)" },
+      { "label": "C", "text": "Lipoma" },
+      { "label": "D", "text": "Carcinoma" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "GIST: CD117+/DOG1+/CD34+ (interstitial cells of Cajal). KIT mutation 75-80% (exon 11 best imatinib response); PDGFRA D842V → avapritinib. SDH-deficient + WT subset. Surgery + adjuvant imatinib for high-risk. Sequential TKIs metastatic (imatinib → sunitinib → regorafenib → ripretinib).",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "surgical_pathology",
+    "board_age_group": "adult",
+    "reference_source": "WHO Soft Tissue + Bone 5th ed; NCCN GIST; INVICTUS"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 15 ปี — knee pain + radiograph: aggressive bone lesion + Codman triangle + sunburst periosteal reaction; biopsy: malignant cells producing osteoid matrix + marked atypia + high mitoses; การวินิจฉัยและการรักษา",
+    "choices": [
+      { "label": "A", "text": "Osteomyelitis" },
+      { "label": "B", "text": "Osteosarcoma (Conventional): (1) **Epidemiology**: most common primary malignant bone tumor in adolescents + young adults; bimodal — second peak in elderly (Paget-associated, post-radiation); metaphysis of long bones (distal femur > proximal tibia > proximal humerus); (2) **Histology**: **osteoid production by malignant cells** — defining feature; spindle/polygonal cells with marked pleomorphism + atypical mitoses + necrosis; lace-like + sheet-like + filigree osteoid patterns; (3) **Subtypes**: - **Conventional** (most common — osteoblastic, chondroblastic, fibroblastic); - **Telangiectatic** (cystic, mimics ABC); - **Small cell** (mimics Ewing); - **Low-grade central** (mimics fibrous dysplasia, MDM2/CDK4 amp); - **Parosteal** (low-grade, posterior distal femur, MDM2/CDK4 amp — same as well-diff/dediff liposarcoma); - **Periosteal** (intermediate-grade, chondroblastic); - **Surface high-grade**; - **Secondary** (Paget, radiation); (4) **IHC**: SATB2+ (osteoblastic), variable osteonectin, osteocalcin; non-specific largely; **MDM2/CDK4** IHC + FISH for low-grade central + parosteal; (5) **Imaging**: aggressive periosteal reaction (Codman triangle, sunburst), poorly defined, soft-tissue mass; staging — CT chest (lung mets common), MRI primary, bone scan / PET; (6) **Genetics**: complex karyotype typically; hereditary predisposition (**Li-Fraumeni — TP53**, **Hereditary retinoblastoma — RB1**, **Rothmund-Thomson, Werner, Bloom**); MDM2 amp in low-grade subtypes; (7) **Differential**: Ewing sarcoma (small round blue cell — CD99+, EWSR1-FLI1 t(11;22)), chondrosarcoma, osteomyelitis (clinical), fibrous dysplasia, GCT; (8) **Treatment**: - **Neoadjuvant chemo** (MAP — methotrexate + adriamycin + cisplatin) → wide resection → adjuvant chemo; - **Necrosis ≥ 90% (Huvos)** predicts better outcome; EURAMOS-1 showed switching post-op chemo for poor response didn't improve; - **Limb salvage** vs amputation per anatomy + response; - **Lung mets** resection (curative possible); - **Relapsed/refractory**: regorafenib, cabozantinib, sorafenib, mifamurtide (selected); trials; (9) **Multidisciplinary**: ortho onc + medical onc + RT (limited role) + pediatric onc + pathology + radiology + rehab; (10) **Genetic counseling** when hereditary suspected" },
+      { "label": "C", "text": "Refuse" },
+      { "label": "D", "text": "Hospice" },
+      { "label": "E", "text": "Benign cyst" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Osteosarcoma: osteoid by malignant cells; metaphysis adolescent. Subtypes: conventional + telangiectatic + small cell + low-grade (MDM2/CDK4 amp) + parosteal. TP53/RB1 hereditary. MAP chemo neoadj + adjuvant + wide resection; Huvos necrosis prognostic. Limb salvage. Pulmonary met resection.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "surgical_pathology",
+    "board_age_group": "all",
+    "reference_source": "WHO Soft Tissue + Bone 5th ed; EURAMOS-1; NCCN Bone"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 14 ปี — diaphysis of femur + onion-skin periosteal reaction; biopsy: small round blue cells with scant cytoplasm; IHC: CD99+ membranous (diffuse), FLI1+, NKX2.2+; molecular: EWSR1-FLI1 fusion t(11;22)",
+    "choices": [
+      { "label": "A", "text": "Osteosarcoma" },
+      { "label": "B", "text": "Ewing Sarcoma: (1) **Epidemiology**: bone or soft tissue, children + young adults, diaphysis of long bones / pelvis / chest wall (Askin tumor) / paraspinal; (2) **Histology**: small round blue cell tumor — monotonous small cells with scant cytoplasm + round nuclei + finely dispersed chromatin + PAS-positive glycogen; Homer-Wright rosettes occasional; (3) **IHC**: **CD99 (MIC2)+ membranous diffuse** — characteristic (also positive in lymphoblastic lymphoma, synovial sarcoma, others — not specific alone); **NKX2.2+** (more specific), FLI1+, ERG+ (variant fusions); often vimentin+; (4) **Molecular (essential for diagnosis)** — **'Ewing sarcoma family' genetic definition**: - **EWSR1-FLI1** ~ 85% (t(11;22)(q24;q12)); - **EWSR1-ERG** ~ 10% (t(21;22)); - Less common: EWSR1-ETV1, EWSR1-ETV4, EWSR1-FEV; - **FUS-ERG, FUS-FEV** rare; - These are 'fusions involving FET family RNA-binding protein with ETS transcription factor'; - **'Ewing-like sarcomas' / round cell sarcomas — distinct entities** (WHO 2020): - **CIC-rearranged sarcoma** (CIC-DUX4 most common) — aggressive; - **BCOR-rearranged sarcoma** (BCOR-CCNB3) — children, distinct biology; - **Round cell sarcoma with EWSR1-non-ETS fusion**; - Different biology + treatment than classical Ewing; (5) **Differential**: osteosarcoma small cell, neuroblastoma (HVA, VMA, MIBG+; PHOX2B+), rhabdomyosarcoma alveolar (myogenin+, PAX-FOXO1), lymphoblastic lymphoma (TdT+), small cell carcinoma (cytokeratin, synaptophysin); (6) **Imaging**: diaphyseal, onion-skin or hair-on-end periosteal, large soft-tissue mass; staging CT chest, bone scan, MRI primary, PET; **BM biopsy** (high involvement frequency); (7) **Treatment**: - **Multimodal — chemo + local control + chemo**; - **VDC/IE (vincristine + doxorubicin + cyclophosphamide alternating with ifosfamide + etoposide)** — backbone; - **Interval compression** every 2 wk (Children's Oncology Group) better outcomes pediatric; - **Local control**: surgery preferred when feasible; RT alternative or addition; - **Mets at diagnosis** ~ 25% (lung > bone > BM); lung-only better prognosis; - **Relapsed**: cyclophosphamide + topotecan, irinotecan + temozolomide, high-dose chemo + auto-SCT (controversial); trials with EZH2 inhibitor, others; (8) **Multidisciplinary**: ortho/surg + pediatric onc + RT + pathology + molecular + rehab; (9) **5-yr OS** ~ 70% localized, ~ 30% metastatic" },
+      { "label": "C", "text": "Lymphoma" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Benign" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Ewing: small round blue cell + glycogen; CD99 membranous + NKX2.2 + FLI1; EWSR1-FLI1 ~85%. 'Ewing-like' (CIC-DUX4, BCOR) distinct entities. Multimodal VDC/IE chemo + surgery/RT. Interval compression pediatric. Lung-only mets better prognosis.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "surgical_pathology",
+    "board_age_group": "child",
+    "reference_source": "WHO Soft Tissue + Bone 5th ed; COG Ewing"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 50 ปี — large retroperitoneal mass → biopsy: well-differentiated lipomatous areas + spindle cells in fibrous bands; IHC: MDM2+, CDK4+; FISH: MDM2 amplification on 12q15; การวินิจฉัย",
+    "choices": [
+      { "label": "A", "text": "Lipoma" },
+      { "label": "B", "text": "Liposarcoma — Well-Differentiated / Dedifferentiated (WHO 2020): (1) **Categories**: - **Well-differentiated liposarcoma (WDLPS)** / **atypical lipomatous tumor (ALT)** — same biology, different name based on location (extremity = ALT, retroperitoneum/mediastinum/spermatic cord = WDLPS — implies worse prognosis due to inability to resect with margins); - **Dedifferentiated liposarcoma (DDLPS)** — abrupt transition from WD areas to high-grade non-lipogenic sarcoma; - **Myxoid liposarcoma** — round to spindle cells in myxoid stroma with delicate vasculature + lipoblasts (signet-ring); 'low-grade' (< 5% round cell) vs 'high-grade' (≥ 5% round cell — worse); - **Pleomorphic liposarcoma** — high-grade pleomorphic sarcoma with lipoblasts; (2) **Histology WDLPS**: mature adipocytes with size variation + scattered atypical hyperchromatic spindle cells in fibrous septa + atypical adipocytes/lipoblasts (latter not required); (3) **Molecular**: - **WDLPS/DDLPS**: **MDM2 + CDK4 amplification on 12q14-15** — diagnostic; IHC + FISH; - **Myxoid liposarcoma**: **FUS-DDIT3** (CHOP) t(12;16) ~ 95%, or rare EWSR1-DDIT3; - **Pleomorphic**: complex karyotype; (4) **Differential**: lipoma (no atypia, no MDM2 amp), spindle cell lipoma (CD34+, monosomy 13/16, no MDM2), atypical spindle cell/pleomorphic lipomatous tumor (RB1 loss); (5) **Treatment**: - **Surgical resection** mainstay — wide excision; - **WDLPS retroperitoneal**: recurrence common (multifocal in 30%) — long-term surveillance; - **DDLPS**: more aggressive, distant mets possible; - **Myxoid LPS**: highly radiosensitive — RT may be useful pre-op or post-op; characteristic dissemination to soft tissue + extrapulmonary (vs other sarcoma lung-pattern); - **Pleomorphic**: doxorubicin-based chemo for metastatic; - **Investigational**: MDM2 inhibitors (milademetan, navtemadlin) for WD/DD LPS (trials, mixed results); trabectedin myxoid LPS especially active (ET-743 binds DNA + affects FUS-DDIT3 transcription); (6) **Soft tissue sarcoma general**: sarcoma multidisciplinary centers improve outcomes; (7) **Multidisciplinary**: surgical onc + sarcoma medical onc + pathology + RT + radiology" },
+      { "label": "C", "text": "Cyst" },
+      { "label": "D", "text": "Carcinoma" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Liposarcoma WHO 2020: WDLPS/ALT (MDM2/CDK4 amp 12q), DDLPS (high-grade transition), myxoid (FUS-DDIT3; round cell % matters), pleomorphic. Surgery mainstay; myxoid radiosensitive + trabectedin active. MDM2 IHC/FISH key. Sarcoma multidisciplinary centers.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "surgical_pathology",
+    "board_age_group": "adult",
+    "reference_source": "WHO Soft Tissue + Bone 5th ed; NCCN Sarcoma"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 50 ปี — adult — convexity dural-based brain mass → resection: meningothelial cells forming whorls + psammoma bodies; IHC: EMA+, SSTR2A+, progesterone receptor+; การวินิจฉัยและการ grade",
+    "choices": [
+      { "label": "A", "text": "Glioma" },
+      { "label": "B", "text": "Meningioma — CNS WHO 2021: (1) **Origin**: arachnoid cap cells (meningothelial); most common primary CNS tumor adult (~ 1/3); dural-based; majority benign (grade 1); women > men (2:1); progesterone receptor positive — increased growth with pregnancy/hormones; (2) **Histology**: meningothelial whorls + syncytial nests + psammoma bodies + intranuclear pseudoinclusions; many subtypes histologically (transitional, fibrous, psammomatous, secretory, microcystic, etc.); (3) **IHC**: **EMA+ (variable), SSTR2A+ (somatostatin receptor)**, vimentin+, **PR+** (better in lower grade), Ki-67 grade marker; CD34+ + STAT6+ rule out solitary fibrous tumor (different entity); (4) **CNS WHO 2021 grading**: - **Grade 1 (benign — ~ 80%)**: usual subtypes, < 4 mitoses/10 HPF; - **Grade 2 (atypical — ~ 15%)**: ≥ 4 mitoses OR ≥ 3 of (necrosis spontaneous, sheeting, small cell, prominent nucleoli, hypercellularity); brain invasion alone now grade 2 (CNS5); chordoid + clear cell subtypes; - **Grade 3 (malignant)**: ≥ 20 mitoses, frank malignancy histology, rhabdoid or papillary subtypes; (5) **Molecular criteria (CNS5)**: - **TERT promoter mutation** OR **homozygous CDKN2A/B deletion** → upgrade to **grade 3** (CNS5 — integrated grading); - **NF2** loss common (sporadic + NF2-associated multiple meningiomas); - **AKT1, TRAF7, KLF4, SMO, POLR2A** mutations in subsets — some location-correlated; - **SMARCE1** (clear cell), **BAP1** (rhabdoid), **DMD** loss (subset); - **Methylation profiling** increasingly used for accurate grading + prognosis (DKFZ classifier); (6) **Imaging**: dural-based + enhancing + dural tail; (7) **Treatment**: - **Asymptomatic small grade 1**: observation; - **Symptomatic / growing / accessible**: surgical resection — **Simpson grade** of resection (0-V) — predicts recurrence; - **Subtotal resection or higher grade**: adjuvant or salvage RT (stereotactic for small, fractionated for larger); - **Recurrent/refractory**: trials with bevacizumab, sunitinib, octreotide-derivatives, mTOR inhibitors; - **NF2 multiple meningiomas**: complex management, observation when possible, bevacizumab in some; (8) **Multidisciplinary**: neurosurgery + RT + neuropath + neuro-onc; genetic eval (NF2) if multiple/young" },
+      { "label": "C", "text": "Lymphoma" },
+      { "label": "D", "text": "Pituitary" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Meningioma: arachnoid cap; EMA+/SSTR2A+/PR+. CNS WHO 2021: grade 1-3 by histology + molecular (TERT or CDKN2A/B homozygous deletion → grade 3). NF2 sporadic + germline. Methylation classification emerging. Simpson resection grade; RT for residual/recurrent.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neuropathology",
+    "board_age_group": "adult",
+    "reference_source": "WHO CNS5 2021"
+  },
+  {
+    "scenario": "ME case — found man with gunshot wound to head; postmortem exam — distinguishing entrance vs exit wounds, range determination, trajectory, and forensic ballistics workflow",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Gunshot Wound Forensic Examination: (1) **Entrance vs exit features**: - **Entrance**: usually round/oval; abrasion collar (skin scraped by spinning bullet); marginal abrasion irregular if angled; bullet wipe (dirt/lubricant); inverted edges; - **Exit**: usually larger, irregular/stellate; no abrasion collar (unless shored = pressed against surface); everted edges; (2) **Range of fire (entrance characteristics)**: - **Contact**: muzzle imprint, soot in wound track, seared edges, stellate tearing (gas under skin — head especially); - **Close-range (intermediate)**: < ~ 1 m — **stippling/tattooing** = embedded burnt+unburnt powder grains (in skin, not wipeable); soot if very close; - **Distant**: no stippling; (3) **Documentation**: - Photographs (with scale, ruler); - Diagrams; - Trajectory: external + internal — entrance to exit or terminal location; can suggest assailant position; - Wound dimensions, location anatomically + clothing + body landmarks; (4) **Bullet recovery + chain of custody**: - Recovered carefully without metal forceps (preserve striae for ballistics); - Labeled + sealed bag with documentation; - Chain of custody maintained for forensic ballistics + court; (5) **Tox + alcohol**: standard; (6) **Manner determination — homicide, suicide, accident, undetermined**: - Suicide indicators: contact wound, anatomically accessible site (temple ipsilateral to handedness, mouth, sub-mandibular), single shot, weapon present, no defensive wounds, fingerprints/DNA; - Multiple shots, atypical site, defensive wounds, weapon away → homicide more likely; - Scene investigation essential; (7) **Special — shotgun**: pellet pattern (close range tight, distance spreads); choke effect; wadding identified; (8) **Other forensic ballistics**: rifling pattern (lands + grooves), caliber estimation, NIBIN database; (9) **Communication**: testimony in court, evidence-based, neutral; quality + peer review for testimony; (10) **NAME standards + Wood + DiMaio textbook + RCFL coordination**" },
+      { "label": "C", "text": "Skip" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Random" }
+    ],
+    "correct_answer": "B",
+    "explanation": "GSW: entrance (abrasion collar, contact may have soot/imprint/stellate; close range has stippling) vs exit (larger, no collar). Range: contact/close/distant. Manner determination needs scene + wounds + tox + history. Bullet recovery + chain of custody. Photograph + diagram + measurements.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "forensic",
+    "board_age_group": "adult",
+    "reference_source": "DiMaio Gunshot Wounds; NAME"
+  },
+  {
+    "scenario": "Pregnant woman Rh-negative with Rh-positive fetus — postpartum maternal serology + antibody screen + cord blood + Kleihauer-Betke + RhoGAM administration + management of subsequent pregnancy",
+    "choices": [
+      { "label": "A", "text": "ไม่ทำอะไร" },
+      { "label": "B", "text": "Rh Alloimmunization Prevention: (1) **Pathophysiology**: Rh-negative mother exposed to Rh-positive fetal blood (delivery, miscarriage, trauma, procedures, transfusion) → anti-D Ab → next Rh-positive pregnancy → fetal hemolysis (HDFN — hemolytic disease of fetus + newborn); severe → hydrops fetalis, in utero death; (2) **Prevention with RhoIG (RhoGAM, anti-D immunoglobulin)**: - **Antenatal**: 300 μg IM at 28 wk gestation (covers usual fetomaternal hemorrhage to delivery); - **Postpartum**: 300 μg IM within 72 hr of delivery if baby Rh+ (cord blood typing); - **Sensitizing events**: 300 μg after miscarriage > 12 wk, ectopic, amniocentesis, CVS, abdominal trauma, ECV, antepartum hemorrhage; smaller doses (50-120 μg) for early pregnancy events per protocol; (3) **Workup**: - **Antibody screen** maternal at first prenatal + 28 wk (and after sensitizing event); - **Cord blood typing** (ABO, Rh, DAT) on baby of Rh-negative mother; - **Kleihauer-Betke test** if large fetomaternal hemorrhage suspected (placental abruption, trauma, abdominal injury) — quantifies fetal RBCs in maternal circulation → dose RhoIG (1 vial 300 μg covers ~ 30 mL fetal whole blood); alternative flow cytometry; (4) **Mechanism RhoIG**: passive Ab coats fetal RBCs → cleared by maternal RES before maternal immune sensitization; (5) **Mother already sensitized (anti-D present)**: RhoIG doesn't help — monitor anti-D titers + middle cerebral artery Doppler peak systolic velocity (MCA-PSV) in fetus → predicts fetal anemia; intrauterine transfusion if severe; deliver early; (6) **Other relevant alloantibodies**: Kell (transfuse Kell-negative blood to Rh-D negative women of childbearing age — Kell can cause severe HDFN with low titers + suppress erythropoiesis), Duffy, Kidd, c, E, S; routine antibody screen covers; (7) **ABO incompatibility HDFN**: mostly mild — group O mother + A/B baby; jaundice manageable with phototherapy; (8) **Postpartum management**: newborn DAT + bilirubin monitoring; phototherapy + exchange transfusion if severe; (9) **Counseling for future pregnancy**" },
+      { "label": "C", "text": "Refuse" },
+      { "label": "D", "text": "Surgery" },
+      { "label": "E", "text": "Random" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Rh prevention: RhoIG antenatal (28 wk) + postpartum (if baby Rh+) within 72 h + after sensitizing events. Kleihauer-Betke quantifies FMH for dosing. Already sensitized → MCA-PSV + IUT. Kell-negative blood for Rh-D-neg women childbearing. Other alloantibodies relevant.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "transfusion",
+    "board_age_group": "all",
+    "reference_source": "ACOG; AABB"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 35 ปี ผู้หญิงตั้งครรภ์ — chest pain + dyspnea + troponin elevated; cardiac biomarkers + interpretation + reference intervals + DDx",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Cardiac Biomarkers — Troponin (hs-cTn) + Use: (1) **High-sensitivity troponin (hs-cTnI or hs-cTnT)** — replaces conventional troponin; detects much lower levels reliably + rapid rule-in/rule-out protocols (0/1-h or 0/2-h); (2) **Pathophysiology**: cTnI + cTnT — cardiac-specific structural proteins released from injured cardiomyocytes; rise within 1-3 hr injury, peak 24-48 hr, persist 7-14 d; (3) **Interpretation**: - **Sex-specific 99th percentile URL (upper reference limit)** — male/female different — apply correct; - **Delta change** essential — rule-in for MI requires both elevated AND dynamic change (rise/fall); - 0/1-h algorithm ESC: hs-cTn very low + no chest pain ≥ 3 hr → rule-out; high + delta → rule-in; - Type 1 MI (atherothrombotic) vs **Type 2 MI** (supply-demand mismatch — anemia, hypotension, tachyarrhythmia); cardiac troponin elevation also in many non-MI conditions; (4) **Differential of elevated troponin (NOT all MI)**: - Demand ischemia (anemia, sepsis, tachyarrhythmia, HF, hypotension, hypoxia); - Myocarditis (incl post-COVID, immune checkpoint inhibitor); - Cardiomyopathy (HCM, takotsubo, peripartum, infiltrative); - Aortic dissection, PE (RV strain), severe HTN, stroke (neurogenic stunning); - Renal disease (chronic elevation — interpret with delta + clinical), tachyarrhythmia, blunt trauma, cardioversion, ablation, cardiac surgery; - Sepsis, critical illness; (5) **Universal definition of MI (4th)**: troponin rise/fall + ≥ 1 of (symptoms ischemia, ECG changes, imaging evidence wall motion/loss, coronary thrombus identified); (6) **In pregnancy**: differential includes peripartum cardiomyopathy, preeclampsia-related, dissection (SCAD — spontaneous coronary artery dissection — increased pregnancy), PE, amniotic fluid embolism, takotsubo; pregnancy slightly alters reference; (7) **Other biomarkers**: BNP/NT-proBNP (HF — pregnancy slightly elevated baseline), D-dimer (PE — pregnancy elevated baseline — adjust by trimester or use age/preg-adjusted cutoff or YEARS), CK-MB (obsolete except specific scenarios); (8) **Pre-analytics**: hemolysis affects assays; tube types; same assay for serial; (9) **Critical value reporting** + ED-cardiology coordination + standardized protocols" },
+      { "label": "C", "text": "Skip" },
+      { "label": "D", "text": "Random" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "hs-cTn: sex-specific 99th URL + delta change rule-in MI. 0/1-h algorithm ESC. DDx many non-MI causes (demand, myocarditis, PE, dissection, sepsis, renal, infiltrative). Universal MI definition (4th). Pregnancy: SCAD, peripartum CM, preeclampsia, PE.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "clinical_chemistry",
+    "board_age_group": "adult",
+    "reference_source": "ESC 0/1-h hs-cTn; Universal MI Definition 4th"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 60 ปี — fatigue + bradycardia + cold intolerance; labs TSH 25, free T4 0.4 (low), anti-TPO + anti-thyroglobulin antibodies elevated; การวินิจฉัยและการรักษา + interpretation",
+    "choices": [
+      { "label": "A", "text": "Hyperthyroidism" },
+      { "label": "B", "text": "Hypothyroidism — Diagnosis + Lab Interpretation: (1) **Primary hypothyroidism**: TSH ↑ + free T4 ↓ (overt) or normal (subclinical); most common etiology — **Hashimoto thyroiditis** (autoimmune — anti-TPO + anti-Tg positive); other — post-radioactive iodine, post-thyroidectomy, iodine deficiency, drugs (lithium, amiodarone, IFN, IO checkpoint inhibitors, ATG, TKI); (2) **Secondary (central) hypothyroidism**: TSH low/inappropriately normal + free T4 ↓ — pituitary or hypothalamic disease (mass, surgery, RT, infiltrative — sarcoid, hemochromatosis, lymphocytic hypophysitis); (3) **Sick euthyroid (NTIS — non-thyroidal illness syndrome)**: TSH normal/low, T3 low, reverse T3 high, T4 variable — defer routine hypothyroid screening in critically ill unless strong clinical suspicion; (4) **TSH assays — interpretation pitfalls**: - Reference range narrows ages + adjusted for pregnancy (trimester-specific cutoffs — lower upper limit early pregnancy); - **Biotin interference** (high-dose biotin supplements interfere with streptavidin-biotin immunoassays → falsely low TSH + falsely high free T4 mimicking hyperthyroidism — pause biotin 48 h before draw); - **Macro-TSH** (autoantibody-bound TSH cleared slowly — falsely high TSH); - **Heterophile antibodies, HAMA** — false elevations; (5) **Treatment**: - **Levothyroxine (T4)** — once-daily oral, empty stomach, 30-60 min before food/coffee/other meds; weight-based starting dose ~ 1.6 μg/kg/d in healthy; lower starting dose (12.5-25 μg) in elderly, CAD; - Recheck TSH 6-8 wk after dose change; - Target TSH normal range (mid-low for young, slightly higher for elderly); - **Subclinical hypothyroidism**: treat if TSH > 10, symptomatic, infertility/pregnancy planning, goiter, dyslipidemia; pregnant — treat to TSH < 2.5; - **Pregnancy**: increase levothyroxine ~ 30% empirically + monitor q4 wk first half; (6) **T3 add-on**: largely unsupported routinely; some persistent symptoms patient subgroups discussed; (7) **Drug interactions**: PPI, calcium, iron, soy reduce absorption — separate timing; (8) **Multidisciplinary**: endocrinology + primary care + pregnancy + cardiology if older with CAD" },
+      { "label": "C", "text": "Refuse" },
+      { "label": "D", "text": "Random" },
+      { "label": "E", "text": "Adrenal crisis" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Hypothyroidism: primary (TSH↑, T4↓) — Hashimoto most common. Central (low/inappropriate TSH). Sick euthyroid distinct. Biotin/macro-TSH/heterophile interfere. Levothyroxine 1.6 μg/kg empty stomach; recheck q6-8 wk; pregnancy ↑30%. Subclinical Tx criteria.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "clinical_chemistry",
+    "board_age_group": "adult",
+    "reference_source": "ATA Hypothyroidism 2014"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 70 ปี — confusion + dilute urine; serum Na 118; clinical euvolemic; urine osm 450, serum osm 250; การวินิจฉัยและการ workup + management",
+    "choices": [
+      { "label": "A", "text": "Diuretic" },
+      { "label": "B", "text": "Hyponatremia — Workup + Treatment: (1) **First step — confirm true hyponatremia + identify acute vs chronic**: rule out pseudohyponatremia (hyperlipidemia/hyperproteinemia — older methods; hyperglycemia — corrected Na = measured + 1.6 mEq/L per 100 mg/dL glucose above 100); (2) **Classification by tonicity + volume**: - **Hypotonic** (true): - **Hypovolemic**: GI loss, renal loss (diuretics — thiazide), adrenal insufficiency, third-spacing, cerebral salt wasting; - **Euvolemic**: SIADH (this case profile — urine osm > 100 + serum osm < 275 + euvolemic + normal renal/adrenal/thyroid + urine Na > 20); hypothyroidism; adrenal insufficiency; reset osmostat; primary polydipsia (low urine osm < 100); - **Hypervolemic**: HF, cirrhosis, nephrotic syndrome, AKI/CKD; (3) **SIADH causes**: - **CNS**: stroke, hemorrhage, infection (meningitis, encephalitis), trauma, mass, surgery, pain, nausea; - **Pulmonary**: SCLC ectopic ADH, pneumonia, TB, ARDS; - **Drugs**: SSRIs, carbamazepine + oxcarbazepine, MDMA, antipsychotics, NSAIDs, vincristine, cyclophosphamide; - **Postoperative** (especially neuro); - **HIV, idiopathic in elderly** (~ 10% of community-dwelling elderly); (4) **Workup essentials**: - **Serum + urine osmolality + urine Na simultaneously**; - **Volume status assessment**; - **TSH, cortisol** rule out endocrine; - **History + medication review**; - **Imaging** for SIADH cause if cancer/CNS suspected; (5) **Treatment**: - **Acute severe symptomatic (seizure, severe altered LOC, brainstem herniation)**: **3% hypertonic saline 100 mL bolus q10 min × 1-3** until symptoms improve; target rise ~ 4-6 mEq/L initial; - **Chronic asymptomatic/mild**: cause-directed — restrict fluid, treat underlying; - **SIADH chronic**: fluid restriction (< 800-1000 mL/d), salt + protein intake, **tolvaptan (V2 receptor antagonist)** carefully (limit 30 days liver concern); urea oral; loop diuretic + salt tablets adjunct; - **CRITICAL — rate of correction**: ≤ 10-12 mEq/L in 24 hr (some say 8); too rapid → **osmotic demyelination syndrome (ODS — central pontine + extrapontine myelinolysis)** — devastating, irreversible; - **Risk factors ODS**: chronic hyponatremia, alcoholism, malnutrition, liver disease, hypokalemia; - **Re-lower** with hypotonic fluid + DDAVP if overcorrected to slow back; (6) **Recheck Na q2-4 hr during correction**" },
+      { "label": "C", "text": "Skip" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Furosemide alone" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Hyponatremia: confirm hypotonic + classify by volume → cause. SIADH if euvolemic + urine osm>100 + urine Na>20 + normal endocrine. Acute symptomatic: 3% saline bolus. Chronic: fluid restriction, tolvaptan, urea. Rate ≤10-12 mEq/L/24h (ODS risk). Re-lower if overcorrected.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "clinical_chemistry",
+    "board_age_group": "adult",
+    "reference_source": "European Hyponatremia Guidelines; ASN"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 30 ปี HIV positive — high fever + lymphadenopathy; biopsy: necrotizing granulomas with acid-fast bacilli; AFB+, GeneXpert MTB/RIF positive — rifampin susceptible; การ pathology workflow + integration",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Mycobacterial Infection Pathology + Workflow: (1) **Histology features**: - **Granulomatous inflammation** — collections of epithelioid macrophages + Langhans giant cells + lymphocytes; - **Caseating necrosis** classic of TB (vs sarcoid non-necrotizing); - Acid-fast bacilli (slender, beaded rods) — usually scant in tuberculoid form, abundant in immunocompromised; - **Spectrum**: tuberculoid (well-organized granuloma, paucibacillary) → lepromatous-like in HIV severe (poorly formed, multibacillary, foamy macrophages); (2) **Stains for AFB**: - **Ziehl-Neelsen** (carbol-fuchsin) — gold standard; - **Kinyoni** (cold modification); - **Auramine-rhodamine fluorescence** — more sensitive than Z-N for screening; - **Fite stain** for M. leprae + Nocardia (less acid-fast); (3) **Differential of granulomatous infection**: - Mycobacteria — TB, NTM (MAC, kansasii), leprosy; - **Fungal** — histoplasmosis (small yeast in macrophages), coccidioidomycosis (large spherules with endospores), blastomycosis (broad-based budding), cryptococcosis (capsule with India ink/mucicarmine, narrow-based budding), aspergillosis (septate hyphae 45° branching), mucormycosis (broad ribbon-like aseptate hyphae 90° branching); - **Bacterial** — brucellosis, listeriosis, syphilis, cat-scratch (Bartonella); - **Parasitic** — schistosomiasis, leishmaniasis; - **Sarcoidosis** (non-caseating); - **GPA + Crohn's** non-infectious; (4) **Special stains adjunct**: GMS, PAS (fungi); Warthin-Starry (spirochetes, Bartonella); Giemsa (Leishmania, Histoplasma); (5) **Molecular diagnostics (rapid + sensitive)**: - **GeneXpert MTB/RIF** (now MTB/RIF Ultra) — 2-hr PCR direct from specimen — detects MTB + rifampin resistance — revolutionary; - **Line probe assays** (LPA) — first-line + second-line drug resistance; - **NAAT** for other organisms; (6) **Culture + susceptibility** still gold standard for definitive ID + full susceptibility — Mycobacteria growth slow weeks (MGIT broth, LJ solid); MALDI-TOF mass spec for species ID; (7) **HIV + TB co-infection**: common SE Asia + sub-Saharan; impacts presentation + Tx; IRIS risk on ART; (8) **Reporting + public health**: TB reportable; isolate; contact tracing; (9) **Multidisciplinary**: pathology + microbiology + ID + pulmonology + public health" },
+      { "label": "C", "text": "Skip" },
+      { "label": "D", "text": "Random" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Granuloma: caseating (TB), non-caseating (sarcoid); Z-N/auramine for AFB; Fite for leprosy. Differential: fungi (GMS/PAS), bacterial, parasitic, autoimmune. GeneXpert MTB/RIF rapid + RIF resistance. Culture gold-standard + slow. HIV + TB common, IRIS risk.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "microbiology",
+    "board_age_group": "adult",
+    "reference_source": "WHO TB Diagnostic; CAP Surgical Pathology"
+  },
+  {
+    "scenario": "ผู้ป่วย HIV/AIDS — sputum + BAL: large yeast cells with broad-based budding + capsule; cryptococcal antigen positive in serum + CSF; การวินิจฉัยและการรักษา",
+    "choices": [
+      { "label": "A", "text": "TB" },
+      { "label": "B", "text": "Cryptococcosis — Pathology + Treatment: (1) **Organism**: Cryptococcus neoformans (immunocompromised — HIV/AIDS, organ transplant, steroid use) + C. gattii (immunocompetent + Pacific Northwest); encapsulated yeast — polysaccharide capsule (GXM antigen detected); (2) **Histology**: round to oval yeast 4-10 μm with thick polysaccharide capsule appearing as clear halo (mucicarmine + Alcian blue + Fontana-Masson + positive for capsule/melanin); narrow-based budding; (3) **Stains**: - **India ink** (CSF — wet mount) — capsule excludes dye; - **Mucicarmine** + **Alcian blue** — stain capsule pink/blue; - **Fontana-Masson** — stains melanin in cell wall (helpful capsule-deficient variant); - GMS + PAS — fungal wall; (4) **Cryptococcal antigen (CrAg) detection**: - Lateral flow assay (LFA) — fast, accurate, low cost — in serum + CSF; - Latex agglutination historical; - **Sensitive + specific** for screening — used for HIV+ patients with CD4 < 100 in high-burden settings (preempt with fluconazole); (5) **Clinical syndromes**: cryptococcal meningitis (most common AIDS, classic), pulmonary cryptococcosis (variable from asymptomatic to severe), cutaneous, prostate, disseminated; (6) **CSF in cryptococcal meningitis**: lymphocytic, elevated protein, low glucose, **markedly elevated opening pressure** (often > 25 cm H2O — critical to manage with repeated LPs to reduce → reduces blindness + mortality); (7) **Treatment** (cryptococcal meningitis HIV — WHO + IDSA): - **Induction (2 wk)**: amphotericin B (liposomal preferred — toxicity less) + flucytosine; - **AMBITION-cm trial** — **single-dose liposomal amphotericin B 10 mg/kg + 14 days flucytosine + fluconazole** non-inferior to standard, less toxic — emerging standard especially LMIC settings; - **Consolidation (8 wk)**: fluconazole 400-800 mg; - **Maintenance**: fluconazole 200 mg until CD4 > 100-200 sustained on ART; - **Opening pressure management**: serial LPs reducing 50% to < 20 cm; lumbar drain or shunt selected cases; - **IRIS risk** when ART started — delay ART 4-6 wk after antifungal initiation; (8) **Other organ transplant + non-HIV**: tailored; (9) **Pulmonary cryptococcosis** mild — fluconazole; severe — amphotericin + flucytosine then fluconazole; (10) **Multidisciplinary**: ID + neurology + ICU + pharmacy" },
+      { "label": "C", "text": "Bacterial" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Skip" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cryptococcus: encapsulated yeast (India ink, mucicarmine+); CrAg LFA sensitive. Meningitis AIDS classic. CSF: lymphocytic + ↑OP critical to manage. Tx: ampho + flucytosine induction → fluconazole consolidation + maintenance; AMBITION-cm single-dose lipo ampho emerging. IRIS risk.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "microbiology",
+    "board_age_group": "adult",
+    "reference_source": "IDSA Cryptococcus; WHO HIV OI; AMBITION-cm"
+  },
+  {
+    "scenario": "Resident — fundamentals of routine H&E stain — chemistry of hematoxylin and eosin staining + common artifacts + interpretation",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Hematoxylin + Eosin (H&E) Stain Chemistry + Interpretation: (1) **Hematoxylin**: natural dye from logwood tree; oxidized to **hematein** (active form); requires **mordant** (aluminum, iron — Harris uses aluminum potassium sulfate) to bind tissue; basic — stains **acidic structures (nucleic acids, ribosomes, calcium-rich, mucin)** blue/purple → **'basophilic'**; (2) **Eosin**: acidic synthetic dye; stains **basic structures (proteins, cytoplasm, collagen, red blood cells, keratin)** pink/red → **'eosinophilic'**; (3) **Typical workflow**: deparaffinize (xylene) → rehydrate (graded ethanol) → hematoxylin → blueing (Scott's tap water or lithium carbonate) — turns red precipitate blue + sharpens → differentiate (acid alcohol — remove excess) → dehydrate → eosin → dehydrate → clear → coverslip with mounting medium; (4) **Variations**: progressive (no differentiation, e.g., Mayer's) vs regressive (over-stain then differentiate, e.g., Harris); H&E variations (gill's, mayer's, harris's) — pathologists/labs prefer different; (5) **Common H&E artifacts + their causes**: - **'Cornflake' (air bubbles)** — incomplete coverslip wetting → ghosts of cells; - **Knife scratches** — dull microtome; - **Tissue folding** — section too thick + cold block; - **'Chatter' / lines** — microtome vibration or blocked block; - **Pale staining** — over-differentiation, weak dye, old; - **Over-purple/blue** — over-stain, inadequate differentiation; - **Floaters** — tissue contamination between cases; serious QC issue → CAP requirement to address; - **Pen/charcoal artifacts** from ink margins; - **Lipid washout artifact** — clear vacuoles from fat dissolved by xylene/ethanol; - **Freezing artifact** — ice crystal vacuolation (frozen sections); - **Mercury pigment** (B5 fixed) — small brown granules; - **Formalin pigment** (acid hematin — pH issue) — brown/black extracellular granules in bloody tissue; - **Heat artifact** (electrocautery) — nuclei elongated + smudged at edges; (6) **Other key routine stains**: PAS (carbohydrates, BM, fungi), GMS (fungi, PCP), Gram (bacteria), Z-N/auramine (AFB), Congo red (amyloid — apple-green birefringence under polarized), Prussian blue (iron), reticulin, trichrome (collagen), oil red O (frozen for lipid), Alcian blue (mucin); (7) **QA standards**: CAP histology checklist — stain quality monitoring + control slides + tissue handling" },
+      { "label": "C", "text": "Skip" },
+      { "label": "D", "text": "Random" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "H&E: hematoxylin (basic, stains acidic structures blue — nucleic acids) + eosin (acidic, stains basic structures pink — cytoplasm/collagen). Progressive vs regressive. Artifacts: cornflake, scratches, chatter, floaters, lipid wash, formalin pigment. Special stains complement.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "quality_safety",
+    "board_age_group": "all",
+    "reference_source": "CAP Histology Checklist; Bancroft Theory and Practice"
+  },
+  {
+    "scenario": "หลักการของ flow cytometry ใน hematopathology — workflow + gating + immunophenotyping + interpretation + applications + limitations",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Flow Cytometry Principles: (1) **Concept**: cells in suspension pass through laser → detect forward scatter (FSC — size), side scatter (SSC — granularity/complexity), + fluorescence at multiple wavelengths from labeled antibodies binding cellular antigens (surface, intracellular); (2) **Workflow**: - Cell suspension preparation (blood, BM, lymph node, body fluid, FNA); - Lysis of RBCs (cell-specific protocols); - **Cocktail** of fluorochrome-conjugated antibodies (different fluorochromes — FITC, PE, APC, PerCP, BV421, etc. — many channels); - Acquire (typically 100,000+ events/tube); - **Compensation** for spectral overlap between fluorochromes; - **Gating** strategy (sequential gates): FSC/SSC → exclude debris + doublets → identify lymphocytes, monocytes, granulocytes, blasts → subset analysis; (3) **Modern instruments**: 8-12 colors routine; spectral flow cytometry + mass cytometry (CyTOF) > 30 parameters; (4) **Applications hemato**: - **Leukemia/lymphoma diagnosis + classification** — phenotype B/T/NK + lineage (CD19, CD20, CD3, CD56, CD13/33 myeloid, CD41/61 megakaryocyte, CD235a erythroid); abnormal antigen expression patterns vs normal; - **MRD (minimal residual disease)** — high-sensitivity (10⁻⁴ to 10⁻⁶) in ALL, CLL, AML, MM (8-color + next-generation flow per EuroFlow); - **PNH** — CD55 + CD59 absence on granulocytes/RBCs, FLAER (more sensitive); - **Lymphocyte subsets** — CD4/CD8 in HIV monitoring; - **CD34 stem cell enumeration** for HCT; - **DNA content/ploidy** (less common now); - **Platelet disorders** — GPIb (Bernard-Soulier), GPIIb/IIIa (Glanzmann); - **Reticulocyte enumeration** automated; (5) **Light chain restriction**: monoclonal B-cell — kappa or lambda only; vs polyclonal reactive — mixed; (6) **CD45 vs SSC plot**: standard gating — blasts CD45 dim/low SSC, lymphocytes CD45 bright/low SSC, granulocytes CD45 dim/high SSC; (7) **Limitations**: - Loss of architecture (cell context lost — biopsy still essential); - Cell viability sensitive (older samples); - Sample heterogeneity + subsampling; - Operator + interpretation expertise required; - Cost + technology investment; (8) **QC**: instrument standardization (CS&T beads), control samples, compensation, panel validation; (9) **Reporting**: standardized terminology; integrate with cytology/histology + cytogenetics + molecular" },
+      { "label": "C", "text": "Skip" },
+      { "label": "D", "text": "Random" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Flow cytometry: laser detection of size/granularity/fluorochrome-labeled antibodies. Multi-color cocktail + gating (CD45 vs SSC + lineage). Applications: heme malignancy classification, MRD (EuroFlow), PNH (CD55/59/FLAER), CD34, light chain restriction. Compensation + QC.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "hematopathology",
+    "board_age_group": "all",
+    "reference_source": "ICCS Flow Cytometry; EuroFlow"
+  },
+  {
+    "scenario": "Lab director — implementing laboratory biosafety program + risk assessment + BSL levels + PPE + safety culture + reporting",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Laboratory Biosafety Program: (1) **Biosafety Levels (BSL — WHO/CDC)**: - **BSL-1**: agents not known to cause disease in healthy adults (e.g., E. coli K-12, B. subtilis); basic lab practices; - **BSL-2**: moderate-risk agents (most clinical specimens, HIV, HBV, HCV, S. aureus, Salmonella); BSC class II + PPE + sharps + autoclave; - **BSL-3**: serious/lethal disease + airborne route (M. tuberculosis, SARS-CoV-2 — initial phases, certain influenzas); sealed lab + directional airflow + respirator + autoclave; - **BSL-4**: high-risk + no treatment (Ebola, Marburg, smallpox); positive-pressure suit + dedicated facility; (2) **Animal BSL (ABSL)** parallel framework; (3) **Risk assessment** essential: - Agent characteristics (route, infectious dose, stability, treatment, vaccine); - Procedures (aerosol-generating — sonication, centrifuge open, vortex, pipetting, autopsy); - Personnel (training, immunocompromised, pregnant); - Equipment + facility; - Likelihood + consequence; (4) **Engineering controls** (most effective): biosafety cabinet (BSC class I/II/III — II most common clinical), HEPA filtration, autoclave, sealed centrifuges, biosafety hood; (5) **Administrative controls**: training, competency, SOPs, occupational health, vaccination (HBV, MMR, varicella, influenza, COVID, others per role); (6) **PPE**: gloves, lab coat, eye protection, face shield, respiratory (N95, PAPR); appropriate to task; donning/doffing trained; (7) **Sharps + waste**: sharps containers, no recapping, dedicated biohazard waste, segregation, disposal per regulations; chemical + radiation waste separate; (8) **Specimen handling**: tube tops carefully, prevent spills, contained transport, decontamination protocols (bleach 1:10, 70% EtOH, glutaraldehyde, etc. — agent-specific); (9) **Exposure response**: - Bloodborne — wash + report + occupational health + serology + PEP per algorithm (HIV PEP within hours, HBV vaccine/HBIG, HCV monitoring); - Aerosol — leave room + report; - Documentation + RCA; (10) **Reporting + surveillance**: needlestick injuries, near-misses; trend analysis; quality improvement; (11) **Regulations**: OSHA bloodborne pathogen standard, CDC/NIH BMBL 6th ed, CAP, ISO 15189, country-specific (e.g., Thailand DMSc); (12) **Culture of safety**: leadership commitment, non-punitive reporting, continuous improvement, training, drills" },
+      { "label": "C", "text": "Skip" },
+      { "label": "D", "text": "Random" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Biosafety: BSL 1-4 by agent risk; engineering (BSC, HEPA) > admin (training, vaccines) > PPE. Risk assessment + agent-specific. Exposure response — bloodborne PEP. Reporting non-punitive. OSHA BBP, BMBL 6th ed, ISO 15189. Culture of safety.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "quality_safety",
+    "board_age_group": "all",
+    "reference_source": "CDC/NIH BMBL 6th ed; WHO LBM 4th ed; ISO 15189"
+  },
+  {
+    "scenario": "Lab management — implementing comprehensive quality management system (QMS) with accreditation + continuous improvement + ISO 15189 + CAP + Six Sigma + lean",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Lab Quality Management System (QMS): (1) **Standards/accreditation frameworks**: - **ISO 15189**: international standard for medical labs — quality + competence; - **CAP (College of American Pathologists)** accreditation — checklists by discipline + on-site inspection; - **CLIA (US — Clinical Laboratory Improvement Amendments)** regulatory; - **The Joint Commission (TJC)** lab accreditation; - **WHO LQSI / Stepwise Lab Quality Improvement Process** for resource-limited; - **Country-specific**: Thailand LA (Laboratory Accreditation), BLQS; (2) **QMS pillars (12 'Quality System Essentials' per CLSI HS01)**: organization, personnel, equipment, purchasing/inventory, process control, information management, documents/records, occurrence management, assessments, process improvement, customer service, facilities/safety; (3) **Total testing process — 3 phases**: - **Pre-analytical** (60-70% of errors): order entry, patient ID, collection, transport, accessioning — STAT recognition, mislabels, tube errors, hemolysis; - **Analytical**: test performance, calibration, QC, validation, proficiency testing — failure modes traceable; - **Post-analytical**: result reporting, critical value, interpretation, distribution — wrong report linked to wrong patient; (4) **Quality control + proficiency testing**: - Daily internal QC (Westgard rules for SPC), CUSUM; - **External PT** required (CAP surveys, CDC, etc.) regular — proficiency testing failure → corrective action; - **Interlaboratory comparison**; (5) **Continuous improvement frameworks**: - **PDCA (Plan-Do-Check-Act)** Deming; - **Six Sigma DMAIC** (define-measure-analyze-improve-control) — DPMO < 3.4/million; - **Lean** — eliminate waste (TIM WOODS — transport, inventory, motion, waiting, overprocessing, overproduction, defects, skills); 5S; value stream mapping; - **A3 problem solving**, **kaizen**; (6) **Patient safety events**: - Sentinel events + close calls reported; - **Root cause analysis (RCA)** systematic; - **Failure modes + effects analysis (FMEA)** proactive; - **TJC NPSGs** patient safety goals (correct patient + sample, critical value, medication safety); (7) **KPIs/dashboards**: TAT (turnaround time), critical value compliance, rejection rate, customer satisfaction, mislabeling rate, error rates by phase; (8) **Personnel competency**: hire + train + assess (CLIA 6 elements); continuing ed; (9) **Document control**: SOPs, versions, training records, traceability; (10) **Risk-based quality (CLSI QMS, IVD-R)** modernizing — designed for individual lab + tests" },
+      { "label": "C", "text": "Random" },
+      { "label": "D", "text": "Skip" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Lab QMS: ISO 15189 / CAP / CLIA / TJC standards; CLSI HS01 12 essentials. Phases: pre-analytical (60-70% errors) + analytical + post-analytical. QC + PT mandatory. Improvement: PDCA/Six Sigma/Lean. RCA + FMEA. KPIs (TAT, critical values, rejections).",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "quality_safety",
+    "board_age_group": "all",
+    "reference_source": "ISO 15189; CAP All Common Checklist; CLSI HS01"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 5 ปี — abdominal mass + LDH high + catecholamine metabolites (HVA + VMA) elevated; biopsy: small round blue cells with Homer-Wright rosettes + neuropil-like background; IHC: synaptophysin+, chromogranin+, PHOX2B+; molecular: MYCN amplification",
+    "choices": [
+      { "label": "A", "text": "Wilms" },
+      { "label": "B", "text": "Neuroblastoma — Pediatric: (1) **Origin**: neural crest cells (sympathoadrenal) — adrenal medulla, paraspinal sympathetic ganglia; (2) **Most common extracranial solid tumor in children**; median age ~ 17 mo; (3) **Histology**: small round blue cell tumor; Homer-Wright rosettes (neuroblasts around fibrillary core); neuropil (fine eosinophilic matrix); spectrum — neuroblastoma (undifferentiated, poorly differentiated, differentiating), ganglioneuroblastoma (intermixed, nodular), ganglioneuroma (mature, benign); (4) **IHC**: synaptophysin+, chromogranin+, neuron-specific enolase+, CD56+, **PHOX2B+** (specific transcription factor), GD2 (target for therapy); CK negative (vs small cell carcinoma), CD99 negative (vs Ewing), TdT negative (vs lymphoblastic); (5) **Urinary catecholamines (HVA + VMA)** elevated in > 90% — diagnostic + monitoring; (6) **Imaging**: **MIBG (I-123 metaiodobenzylguanidine)** — concentrated in neuroblastoma — staging + response assessment; PET/CT alternative; (7) **Staging**: INRGSS (image-defined risk factors) — international consensus; INSS (older surgical staging); (8) **Risk stratification (Children's Oncology Group)**: - Age (< 18 mo better), stage, MYCN amplification (poor), ploidy (hyperdiploid better in infant), histology (Shimada/INPC favorable vs unfavorable), 1p/11q LOH; - **MYCN amplification — strongest adverse molecular marker**; - **ALK mutations** (germline + somatic — actionable with crizotinib/lorlatinib); - **ATRX, ARID1A, TERT** alterations; (9) **Treatment by risk**: - **Low-risk**: surgery alone often curative; observation for stage MS infants; - **Intermediate-risk**: surgery + moderate chemo (carbo + etop + cyclo + dox); - **High-risk** (~ 50%, with worse outcomes): - **Induction**: 5-6 cycles intensive chemo (BuMel-based); - **Consolidation**: high-dose chemo + auto-HCT (often tandem) + radiation to primary; - **Maintenance**: **anti-GD2 immunotherapy (dinutuximab)** + IL-2 + GM-CSF + cis-RA (isotretinoin) — major survival improvement; - **Refractory/relapsed**: MIBG therapy (I-131), ALK inhibitors (if mutated), naxitamab, eflornithine new addition; (10) **Multidisciplinary**: pediatric onc + surgery + RT + nuclear medicine + pathology + genetics + supportive + survivorship" },
+      { "label": "C", "text": "Refuse" },
+      { "label": "D", "text": "Hodgkin" },
+      { "label": "E", "text": "Skip" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Neuroblastoma: neural crest; Homer-Wright + neuropil; synaptophysin/chromogranin/PHOX2B+; HVA/VMA + MIBG. INRGSS staging + COG risk (age, MYCN amp, ploidy, histology, 1p/11q). High-risk: induction + auto-HCT + anti-GD2 (dinutuximab) maintenance. ALK actionable.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "surgical_pathology",
+    "board_age_group": "child",
+    "reference_source": "WHO Soft Tissue + Bone 5th ed; COG Neuroblastoma"
+  },
+  {
+    "scenario": "ผู้ป่วยเด็กอายุ 4 ปี — abdominal mass kidney → resection: triphasic tumor with blastemal + epithelial (tubules) + stromal components; favorable histology; WT1 mutation",
+    "choices": [
+      { "label": "A", "text": "Neuroblastoma" },
+      { "label": "B", "text": "Wilms Tumor (Nephroblastoma): (1) **Most common renal tumor pediatric**; peak 2-5 yr; ~ 5% bilateral; (2) **Histology**: classic **triphasic** — **blastemal** (small round blue cells), **epithelial** (primitive tubules, glomeruloid structures), **stromal** (loose mesenchymal); proportions variable; (3) **Favorable vs unfavorable histology**: - **Favorable** ~ 90%; - **Unfavorable** — diffuse anaplasia (extreme nuclear enlargement + hyperchromasia + atypical mitoses); focal anaplasia better than diffuse; - **Other renal tumors pediatric** distinct entities (per WHO): **clear cell sarcoma of kidney (CCSK)**, **rhabdoid tumor of kidney (SMARCB1/INI1 loss — extremely aggressive)**, **congenital mesoblastic nephroma** (infant, ETV6-NTRK3 in cellular type); (4) **IHC**: WT1+ in blastemal/epithelial; PAX2/PAX8 epithelial; vimentin stromal; (5) **Molecular**: WT1, WT2 (11p15), CTNNB1, FBXW7, TP53 (anaplasia association); (6) **Hereditary predisposition syndromes (~ 10-15% Wilms)**: - **WAGR** (Wilms, Aniridia, GU anomaly, Range of intellectual disability — 11p13 deletion); - **Denys-Drash** (WT1 mutation — early onset nephropathy + pseudohermaphroditism + Wilms); - **Beckwith-Wiedemann** (11p15 — overgrowth, omphalocele, macroglossia, hemihypertrophy — Wilms + other tumors); - **Perlman, Sotos, Bloom, Li-Fraumeni**; — surveillance with renal US for at-risk children; (7) **Staging (COG NWTS)**: I (limited to kidney, resected) → V (bilateral); (8) **Treatment (combined approaches — COG North American + SIOP European)**: - **COG**: surgery first → adjuvant chemo based on stage + histology + biology; - **SIOP**: pre-operative chemo → surgery → adjuvant; - **Chemo agents**: vincristine + actinomycin D (low-stage), + doxorubicin (higher-stage); - **RT** for unfavorable + advanced; - **High-risk relapsed**: high-dose chemo + auto-HCT, etoposide-based, novel agents; (9) **Outcomes**: > 90% cure favorable; (10) **Multidisciplinary**: peds onc + urology + RT + pathology + genetics; (11) **Long-term survivorship** — cardiotoxicity, renal function, secondary malignancy, reproductive" },
+      { "label": "C", "text": "Refuse" },
+      { "label": "D", "text": "Lymphoma" },
+      { "label": "E", "text": "Skip" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Wilms tumor: triphasic (blastemal + epithelial + stromal); favorable vs unfavorable (anaplasia). WT1+/PAX8. Hereditary syndromes: WAGR, Denys-Drash, BWS — surveillance. COG vs SIOP approach (surgery first vs neoadjuvant). Cure > 90% favorable.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "surgical_pathology",
+    "board_age_group": "child",
+    "reference_source": "WHO Urinary + Male Genital 5th ed; COG Wilms"
+  },
+  {
+    "scenario": "Multidisciplinary integrative pathology — patient with breast cancer + pregnancy + complex management; multidisciplinary tumor board including OB-GYN + medical onc + breast + pathology + maternal-fetal medicine",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Pregnancy-Associated Breast Cancer (PABC) Integrative Care: (1) **Definition**: diagnosed during pregnancy, lactation, or 1 year postpartum; ~ 1 in 3000 pregnancies; often delayed diagnosis (changes in breast); (2) **Pathology + workup**: - Core biopsy safe during pregnancy; pathology unchanged — IHC (ER/PR/HER2/Ki-67) standard; - More often ER-, HER2+, TNBC, higher grade in young; - Genetic counseling — BRCA testing recommended (young + family history); (3) **Staging**: US, MRI breast (no gadolinium contrast in pregnancy), CXR (with abdominal shielding), liver US; avoid CT + PET if avoidable; bone scan post-delivery; (4) **Multidisciplinary team**: medical oncology + breast surgery + radiation oncology + maternal-fetal medicine + OB-GYN + pathology + radiology + neonatology + psychology + lactation; (5) **Treatment by trimester**: - **1st trimester**: - **Surgery** safe (mastectomy or BCS — adapt anesthesia, avoid SLN with isosulfan blue, radiotracer alone OK); - **Chemotherapy CONTRAINDICATED** in 1st trimester (organogenesis); - **Endocrine therapy + tamoxifen CONTRAINDICATED** entire pregnancy (teratogenic); - **HER2 targeted (trastuzumab) CONTRAINDICATED** entire pregnancy (oligohydramnios); - **Radiation deferred to post-delivery**; - **2nd + 3rd trimester**: - Anthracycline + cyclophosphamide (AC) chemotherapy can be given (data show safe for fetus); - Taxanes (paclitaxel) OK 2nd-3rd; - **Avoid chemo within 3-4 wk of delivery** (neonatal cytopenia); - **6) Termination consideration**: rarely needed unless very early Ist trimester + need for immediate teratogenic Tx, no longer routinely recommended given good outcomes with adapted Tx; (7) **Delivery**: full-term preferred; (8) **Post-delivery**: complete standard treatment — endocrine, HER2 targeted, RT; (9) **Lactation**: usually safe to feed from unaffected side; avoid lactation during chemo; (10) **Fetal monitoring**: growth scans, NST, anomaly scan timing; (11) **Mental health**, support; (12) **Genetic counseling + future planning**; (13) **Fertility consult**: many young patients want options preserved; (14) **Survivorship including ongoing breast surveillance + late effects + psychosocial**; (15) **Outcomes**: comparable to non-PABC stage-for-stage when treated appropriately" },
+      { "label": "C", "text": "Random" },
+      { "label": "D", "text": "Skip" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "PABC integrative care: multidisciplinary inc. MFM. Trimester-based Tx — surgery anytime; chemo 2nd/3rd OK (anthracycline + taxane), CONTRA in 1st; tamoxifen + trastuzumab CONTRA entire pregnancy; RT post-delivery. Delivery full-term preferred. Outcomes comparable.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "ESMO PABC; NCCN Breast"
+  },
+  {
+    "scenario": "Integrative palliative care + pathology — patient with advanced metastatic cancer of unknown primary (CUP) — workflow + multidisciplinary + targeted therapy + supportive care + goals of care",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Cancer of Unknown Primary (CUP) Integrative Care: (1) **Definition**: histologically confirmed metastatic cancer without identifiable primary site after appropriate workup; ~ 2-5% of cancers; (2) **Pathology workup** (most important step — increasingly identifies primary or actionable target): - **Histology**: well-differentiated adenocarcinoma, poorly differentiated, squamous, neuroendocrine, undifferentiated → broad categories; - **IHC** algorithm (extensive, site-tailored): - CK7 + CK20 + (lung, breast, pancreas, biliary, urothelial, gastric); - CK7 + CK20 - (lung, breast, biliary, thyroid, salivary); - CK7 - CK20 + (colorectal); - CK7 - CK20 - (HCC, RCC, prostate, squamous, neuroendocrine); - Site-specific: TTF-1 (lung, thyroid), GATA3 (breast, urothelial), PAX8 (Müllerian, thyroid, RCC), CDX2 (GI), p40 (squamous), synapto/chromo (neuroendocrine), SALL4 (germ cell), HepPar1 (HCC), arginase (HCC), RCC marker, NKX3.1 (prostate), MUC1, MUC2, others; - **Molecular**: comprehensive NGS for actionable mutations + tissue-of-origin classifier (CancerType ID, CUP-AI-Dx); MSI/dMMR + TMB + PD-L1; (3) **Imaging**: CT chest/abdomen/pelvis; mammogram (women); upper + lower endoscopy if GI suspicion; specific imaging by histology + IHC; PET-CT useful selected; (4) **Favorable CUP subsets (treat like primary)**: - Women with adenocarcinoma in axillary nodes → treat as breast; - Women with peritoneal carcinomatosis (papillary serous + psammoma + PAX8+/WT1+) → ovarian/Müllerian; - Men with squamous in cervical nodes → treat as head/neck; - Inguinal nodes squamous → genital/anal; - Single site → consider primary; - Neuroendocrine — well-diff treat like NET, poorly diff like SCLC; - Germ cell features (midline mass young male) — test/treat like germ cell; (5) **Treatment**: - **Site-specific** when subset identifies; - **Empiric chemo** (platinum + taxane historical) — limited benefit; - **Targeted therapy if actionable mutations** — increasingly important — agnostic FDA approvals: **larotrectinib/entrectinib (NTRK fusions), pembrolizumab (MSI-H/dMMR or TMB ≥ 10), dabrafenib + trametinib (BRAF V600E), selpercatinib (RET), etc.**; - **Immunotherapy + chemo** — CUPISCO trial — molecular-guided improved outcomes; (6) **Multidisciplinary**: medical onc + pathology + radiology + molecular tumor board + palliative + supportive; (7) **Palliative integration early** — symptom management + goals of care + advance care planning; (8) **Patient + family**: communication of uncertainty, emotional support, second opinions, clinical trial discussion; (9) **Equity**: access to comprehensive molecular workup + targeted therapy + trials" },
+      { "label": "C", "text": "Random" },
+      { "label": "D", "text": "Skip" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "CUP integrative care: pathology IHC algorithm + molecular (NGS + tissue-of-origin classifier) → identify favorable subset or actionable target. Treat per primary when identified. Tissue-agnostic targeted therapy (NTRK/MSI-H/BRAF/RET). CUPISCO molecular-guided. Palliative early.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "ESMO CUP; CUPISCO"
+  },
+  {
+    "scenario": "Integrative pathology — public health surveillance: lab data role in identifying outbreaks + emerging pathogens + antimicrobial resistance + population health + epidemic preparedness",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Clinical Lab Role in Public Health Surveillance: (1) **Outbreak detection + response**: - **Real-time reporting** of reportable diseases (TB, measles, meningococcal disease, HIV, hepatitis, foodborne, STDs, novel emergencies) — automated electronic laboratory reporting (ELR) to public health; - **Cluster detection** algorithms (CDC + state systems) on lab data; - **Whole-genome sequencing** (WGS) for foodborne outbreaks (PulseNet) — supplements/replaces PFGE; (2) **Antimicrobial resistance (AMR) surveillance** (One Health priority): - **WHO GLASS** global; - National systems track key resistance (MRSA, VRE, CRE/carbapenem-resistant Enterobacterales, MDR/XDR-TB, MDR Gonorrhea, candida auris, drug-resistant malaria); - **Clinical microbiology labs essential** — submit isolates, AST data; (3) **Emerging + re-emerging pathogen detection**: - **COVID-19 pandemic** demonstrated critical lab role — high-throughput PCR, variant tracking (WGS — GISAID), serology, antigen testing; - **Mpox, Marburg, Ebola** preparedness; - **Avian influenza H5N1** — One Health (animal + human + environment); - **Antimicrobial-resistant Candida auris** monitoring; (4) **Public health labs** (state + reference) — confirmatory + outbreak + characterization + capacity-building; (5) **Population health** initiatives: - Cancer registries (population incidence + outcomes); - Newborn screening (PKU, sickle cell, etc.); - HIV testing (universal); - Cervical cancer (HPV + cytology); - Hepatitis C screening universal adult; - LDL/A1C/BP population-level chronic disease; (6) **Equity considerations**: - Disparities in screening access, diagnosis, treatment — health equity goals; - Reduce disparities through accessible testing + culturally competent outreach; (7) **Epidemic preparedness**: - **Laboratory Response Network (LRN)** US — tiered lab capability for biosafety + bioterror; - Stockpile reagents; - Surge capacity testing; - Workforce training; - Specimen submission protocols + transport (Cat A/B); (8) **Data integration**: - **Electronic lab reporting (ELR)** + HL7/FHIR standards; - **Public health informatics** infrastructure; - Privacy + ethics + data sharing; (9) **International collaboration**: WHO, ECDC, CDC, IHR (International Health Regulations) — outbreak coordination; (10) **Lessons from COVID + Ebola + Zika**: investment in lab capacity + workforce + surveillance + equity essential" },
+      { "label": "C", "text": "Random" },
+      { "label": "D", "text": "Skip" },
+      { "label": "E", "text": "Refuse" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Clinical labs public health: ELR + outbreak detection + WGS (PulseNet); AMR surveillance (WHO GLASS); emerging pathogens (COVID/mpox/H5N1); newborn screening + cancer registries; equity. LRN preparedness. International collaboration (WHO, IHR). Workforce + capacity investment.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "microbiology",
+    "board_age_group": "all",
+    "reference_source": "WHO GLASS; CDC PHL; LRN"
   }
 ]
