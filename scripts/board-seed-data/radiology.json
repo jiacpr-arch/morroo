@@ -1,0 +1,172 @@
+[
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี acute onset right-sided weakness + aphasia × 45 นาที — ER suspects acute ischemic stroke\n\nNo contraindications to IV tPA + window time appropriate\nคำถาม: imaging protocol for acute stroke",
+    "choices": [
+      { "label": "A", "text": "Wait + observe" },
+      { "label": "B", "text": "Acute Stroke Imaging Protocol: (1) **Non-contrast CT head FIRST** — rules out hemorrhage (absolute contraindication to thrombolysis); identifies large established infarct; early ischemic signs (loss of gray-white differentiation, hyperdense MCA sign, sulcal effacement); ASPECTS score; (2) **CT angiography (CTA) head + neck** if LVO (large vessel occlusion) suspected — identifies clot location, planning mechanical thrombectomy; (3) **CT perfusion (CTP)** for extended window thrombectomy (DAWN, DEFUSE-3 — 6-24h) — identifies salvageable penumbra (mismatch between infarct core and ischemic tissue); (4) **MRI alternative**: more sensitive for acute ischemia (DWI restricted diffusion within minutes) but slower + less available; MRI for unclear cases, wake-up stroke (FLAIR/DWI mismatch); (5) **Goals**: minimize door-to-imaging-to-needle/groin time; (6) **Thrombolysis (IV tPA or tenecteplase)** within 4.5h (selected up to 9h with imaging — EXTEND); (7) **Mechanical thrombectomy** within 6h (extended to 24h with CTP for selected LVO); (8) **Multidisciplinary stroke team**: ED + radiology + stroke neurology + IR + neurosurgery; (9) **Stroke center designation** drives outcomes; (10) **Post-imaging**: rapid clinical assessment + treatment decision; (11) **Tele-stroke**: increasingly used to expand expertise; (12) **Modern stroke care**: time = brain (1.9 million neurons lost per minute of stroke)" },
+      { "label": "C", "text": "Plain X-ray skull" },
+      { "label": "D", "text": "Bone scan" },
+      { "label": "E", "text": "No imaging" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Acute stroke imaging: non-contrast CT first (rules out hemorrhage). CTA for LVO. CTP for extended window (DAWN, DEFUSE-3 trials). MRI more sensitive but slower. Time = brain. Multidisciplinary stroke team. Modern: CT + CTA + CTP unified protocol enables thrombectomy decision rapidly.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AHA/ASA Stroke Guidelines 2019; ACR Appropriateness Criteria"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี acute onset chest pain + SOB + tachycardia + hypoxia — clinical suspicion of pulmonary embolism (PE)\n\nNo renal disease, no contrast allergy, can lie still",
+    "choices": [
+      { "label": "A", "text": "No imaging" },
+      { "label": "B", "text": "PE Imaging Protocol: (1) **Risk stratification first**: Wells score or revised Geneva → low/intermediate/high; - **Low Wells**: D-dimer first (if low → exclude PE); if positive → imaging; - **High Wells**: skip D-dimer (high false-positive) → direct imaging; (2) **CT Pulmonary Angiography (CTPA) — gold standard imaging**: high sensitivity + specificity; identifies clot location + alternative diagnoses (pneumonia, dissection, pneumothorax); requires contrast (caution in CKD); rapid; widely available; (3) **V/Q scan alternative**: pregnancy (preferred — lower radiation than CTPA per some, controversial — CTPA breast shielding reduces breast radiation); CTPA contraindications (severe allergy, AKI); pediatric; (4) **MRI angiography**: limited use — slow, expensive, motion artifacts; pregnancy/contrast allergy alternative; (5) **Doppler US lower extremity**: alternative for confirming DVT (treat same as PE if positive); selected — pregnant, contrast issues; (6) **Pulmonary angiography (traditional)**: rarely used anymore (invasive, gold standard historically); (7) **Echocardiogram bedside**: right heart strain in massive PE — guides management urgency (thrombolysis vs anticoagulation); (8) **Imaging during pregnancy**: low-dose CTPA (lung doses < V/Q), V/Q (preferred by some); doesn't justify withholding diagnosis; (9) **Risk-benefit**: contrast nephropathy, radiation (lifetime risk), allergy; (10) **Diagnosis decision**: PE rule-in or rule-out; (11) **Post-diagnosis**: severity stratification (sPESI score) → outpatient vs inpatient + thrombolysis vs anticoagulation alone" },
+      { "label": "C", "text": "Bone scan" },
+      { "label": "D", "text": "X-ray skull" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "PE imaging: risk stratification + D-dimer first for low Wells. CTPA gold standard. V/Q for contrast issues + pregnancy alternative. Bedside echo for hemodynamic significance. Imaging decisions individualized. Modern: CTPA mainstream. Multidisciplinary care.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "respiratory",
+    "board_age_group": "adult",
+    "reference_source": "ACR Appropriateness Criteria PE; ESC Guidelines PE 2019"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 45 ปี post-MVC — acute abdominal pain + hypotension + suspected intra-abdominal injury\n\nคำถาม: trauma imaging modality choices",
+    "choices": [
+      { "label": "A", "text": "X-ray only" },
+      { "label": "B", "text": "Trauma Imaging Protocol: (1) **eFAST (Extended Focused Assessment with Sonography for Trauma)** — bedside US: rapid, no radiation, identifies free fluid (intraperitoneal, pericardial, pleural), pneumothorax (lung sliding); SENSITIVITY HIGH for hemoperitoneum, specific for hemodynamically unstable to OR; LIMITATIONS — operator-dependent, retroperitoneal injuries missed, solid organ injury detection limited; (2) **CT abdomen-pelvis with IV contrast** — gold standard for hemodynamically stable; identifies solid organ injuries (liver, spleen, kidney), bowel injury, vascular injury (extravasation = active bleeding), mesenteric injury, retroperitoneal hemorrhage; high sensitivity + specificity; (3) **CT angiography** for vascular injury suspected (aorta, pelvic vessels); (4) **CT chest** for thoracic injuries; (5) **CT head** for TBI suspicion (GCS < 15, LOC, focal neuro, vomiting, seizure); (6) **Pan-scan vs selective** debate: pan-scan (CT head + neck + chest + abdomen/pelvis) for severe mechanism; selective for minor; modern trend toward more selective + lower radiation; (7) **DPL (diagnostic peritoneal lavage)** essentially replaced by FAST + CT; (8) **Hemodynamically unstable** → OR (no time for CT, FAST guides decision) — laparotomy; (9) **Repeat imaging**: serial CT, US for ongoing changes; (10) **Pediatric**: lower threshold, radiation concerns — MRI more, US first; (11) **Radiation considerations**: ALARA, focused exams when possible; (12) **Multidisciplinary**: trauma surgery + radiology + ED + IR + critical care" },
+      { "label": "C", "text": "MRI only" },
+      { "label": "D", "text": "Bone scan" },
+      { "label": "E", "text": "No imaging" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Trauma imaging: FAST bedside (rapid, no radiation, hemoperitoneum + pneumo); CT gold standard for stable patient (solid organ, bowel, vascular). Hemodynamically unstable → OR. Multidisciplinary trauma team. Radiation considerations. Modern: integrated trauma imaging protocols.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "ATLS 10th ed; ACR Appropriateness Criteria"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 60 ปี smoker × 30 pack-year — annual lung cancer screening per USPSTF criteria\n\nคำถาม: lung cancer screening protocol",
+    "choices": [
+      { "label": "A", "text": "Chest X-ray annual" },
+      { "label": "B", "text": "Lung Cancer Screening — Low-Dose CT (LDCT): (1) **USPSTF 2021 + ACR criteria**: age 50-80 (was 55-77, expanded 2021), ≥ 20 pack-year smoking history (was ≥ 30), current smoker or quit < 15 years; (2) **Modality**: low-dose CT (LDCT) annual — radiation dose 1.5 mSv (vs diagnostic CT 7 mSv); higher sensitivity than CXR; (3) **NLST trial** (NEJM 2011) — 20% reduction in lung cancer mortality vs CXR; (4) **Lung-RADS classification** (1-4 + S category) for nodule management: - 1: < 6 mm — annual screening; - 2: 6-8 mm solid or 6-10 mm part-solid solid component < 6mm — annual; - 3: 8-15 mm solid — 6-month follow-up; - 4A: ≥ 15 mm solid or 8-15 mm growing — short-term follow-up + possible biopsy; - 4B: highly suspicious — tissue diagnosis (biopsy, surgery); - 4X: large + clinical concern — definite intervention; - S: non-lung cancer significant finding (incidental); (5) **Shared decision-making** required by CMS for coverage; (6) **Smoking cessation counseling** at every screening visit — most important intervention; (7) **Multidisciplinary**: primary care + pulmonary + thoracic surgery + radiology; (8) **Adverse effects**: false positives, anxiety, complications from workup, overdiagnosis (some indolent cancers found), radiation exposure cumulative; (9) **Tracking**: registry, follow-up, communication; (10) **Modern**: AI-assisted reading + nodule characterization emerging" },
+      { "label": "C", "text": "Bronchoscopy" },
+      { "label": "D", "text": "Sputum cytology" },
+      { "label": "E", "text": "No screening" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Lung cancer screening: LDCT annual for high-risk (USPSTF 2021 — age 50-80, ≥ 20 pack-yr, < 15 yr quit). NLST 20% mortality reduction. Lung-RADS for nodule management. Shared decision-making. Smoking cessation. Multidisciplinary. Modern: expanded eligibility 2021 + AI-assisted reading.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "respiratory",
+    "board_age_group": "adult",
+    "reference_source": "USPSTF Lung Cancer Screening 2021; Lung-RADS; NLST NEJM 2011"
+  },
+  {
+    "scenario": "หญิงอายุ 55 ปี routine mammography screening — finding: BI-RADS 4 (suspicious calcifications + spiculated mass)\n\nคำถาม: breast imaging workup + management",
+    "choices": [
+      { "label": "A", "text": "Ignore" },
+      { "label": "B", "text": "Breast Imaging Workup BI-RADS 4 (Suspicious): (1) **BI-RADS Classification** (0-6): - 0: incomplete — additional imaging needed; - 1: negative; - 2: benign; - 3: probably benign (< 2% malignancy) — short-interval follow-up 6 months; - 4: suspicious (2-95% malignancy — broad range, subcategories 4A/B/C) — tissue diagnosis; - 5: highly suggestive (> 95% malignancy) — tissue diagnosis + surgical planning; - 6: known biopsy-proven malignancy; (2) **BI-RADS 4 management = tissue biopsy**: - Image-guided core needle biopsy preferred (stereotactic for calcifications, US-guided for masses); - Vacuum-assisted biopsy more tissue; - Fine needle aspiration (FNA) less preferred (cytology only — not architecture); (3) **Pre-biopsy imaging optimization**: diagnostic mammogram + US correlation; MRI in selected cases (high-risk, extensive disease, dense breasts); (4) **Pathology results**: benign (concordance — review imaging vs path), atypical hyperplasia (excisional biopsy — upgrade to malignancy 20%), DCIS, invasive cancer; (5) **Multidisciplinary tumor board** for any malignancy or atypia; (6) **Genetic counseling/testing** if young, family history, certain pathology (triple-negative); (7) **Risk assessment**: BRCA, Tyrer-Cuzick model; (8) **Surveillance**: post-treatment annual mammogram + clinical breast exam; possibly supplemental imaging for dense breasts; (9) **High-risk screening**: BRCA+, prior chest radiation, 5-yr Gail risk > 20% → annual MRI + mammogram alternating q6 months; (10) **Multidisciplinary**: radiology, breast surgery, medical oncology, pathology, genetics, primary care, psychology" },
+      { "label": "C", "text": "Refuse care" },
+      { "label": "D", "text": "Mastectomy without biopsy" },
+      { "label": "E", "text": "Avoid mammography" }
+    ],
+    "correct_answer": "B",
+    "explanation": "BI-RADS 4 (suspicious): tissue diagnosis required. Image-guided core biopsy preferred. Subcategories 4A-C reflect malignancy probability. Multidisciplinary tumor board for findings. Genetic counseling. High-risk surveillance. Modern: standardized BI-RADS + multidisciplinary care.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "ACR BI-RADS 5th Edition; NCCN Breast Cancer Screening"
+  },
+  {
+    "scenario": "เด็กชายอายุ 5 ปี trauma to head from fall — ED suspects head injury — pediatric imaging considerations\n\nGCS 13, vomiting × 2, no LOC, no focal neuro deficit + no seizure",
+    "choices": [
+      { "label": "A", "text": "CT immediately" },
+      { "label": "B", "text": "Pediatric Imaging — Radiation Considerations + PECARN Rules: (1) **Pediatric radiation concerns**: cancer risk per dose 3-4× higher than adult (BEIR VII); cumulative exposure lifetime risk; ALARA principle; alternatives when possible (US, MRI); (2) **PECARN Head Injury Rules** (validated decision tools — reduce CT use): - Age < 2: high-risk features (GCS < 15, AMS, palpable skull fracture, loss of consciousness ≥ 5s, severe MOI, non-frontal scalp hematoma, behavior change per parents) → CT; - Age 2-18: high-risk features (GCS < 15, AMS, signs of basilar skull fracture, vomiting, severe headache, LOC, severe MOI) → CT; - No high-risk → observation; (3) **Selective imaging**: observation in lower-risk + reassurance + return precautions; (4) **Imaging modalities for pediatric**: - **US first-line** for many indications (appendicitis, intussusception, DDH, lumbar puncture guidance, pyloric stenosis); no radiation; - **MRI** when possible (no radiation but sedation needed in young, longer); - **CT** when needed for trauma, vascular, complicated infection — use low-dose protocols, pediatric-specific (Image Gently campaign); - **Plain X-ray** for selected (chest, skeletal survey for abuse, foreign body); (5) **Image Gently campaign** (Alliance for Radiation Safety in Pediatric Imaging) — child-sized doses, fewer scans, image only when needed; (6) **Multidisciplinary**: pediatric ED + radiology + surgery + neurology; (7) **Family counseling**: radiation risks + benefits; (8) **Documentation**: track cumulative radiation in child" },
+      { "label": "C", "text": "X-ray skull" },
+      { "label": "D", "text": "MRI emergent" },
+      { "label": "E", "text": "No imaging" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pediatric imaging: radiation safety paramount. PECARN rules for head injury reduce unnecessary CT. US first-line for many. MRI alternative when feasible. Image Gently campaign. Multidisciplinary care. Family counseling. Modern: validated rules + low-dose protocols + alternative modalities.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "peds",
+    "reference_source": "Image Gently; PECARN Rules; ACR Pediatric Imaging"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 70 ปี acute abdominal pain + distension + N/V — concerned bowel obstruction\n\nคำถาม: abdominal imaging selection",
+    "choices": [
+      { "label": "A", "text": "X-ray only" },
+      { "label": "B", "text": "Acute Abdomen Imaging: (1) **Plain abdominal X-ray (upright + supine)**: bowel obstruction (dilated loops, air-fluid levels), free air (under diaphragm — perforation), foreign body, calcification (gallstone, urolith); limited sensitivity but quick + cheap; (2) **CT abdomen-pelvis with IV + oral contrast** — gold standard for most acute abdomen: bowel obstruction (point of transition, mechanism), perforation, ischemia, appendicitis, diverticulitis, pancreatitis, abscess, mass, vascular; high sensitivity + specificity; risk: contrast nephropathy, radiation; (3) **CT angiography**: mesenteric ischemia, vascular pathology, GI bleeding source (CTA + active extravasation); (4) **US abdomen** for selected: gallstones + cholecystitis (sensitivity 95% for stones), AAA, bladder, hydronephrosis, ovarian, pregnancy, pediatric; operator-dependent; no radiation — preferred pediatric + pregnant; (5) **MRI** for selected: pregnancy (better characterization than US), complex liver/pancreas/biliary, pelvic; no radiation; longer; (6) **MRCP** for biliary; (7) **HIDA scan** for cholecystitis when US equivocal; (8) **ERCP** therapeutic for biliary (after diagnosis); (9) **Selection factors**: clinical suspicion, hemodynamic stability, pregnancy, renal function, allergy; (10) **For SBO (small bowel obstruction)**: CT identifies cause (adhesions most common — 60%, hernia 15%, tumor 15%, IBD); guides surgery vs conservative; (11) **For appendicitis**: US first in pediatric/pregnant/young female; CT if equivocal; (12) **Multidisciplinary**: ED + surgery + radiology + GI" },
+      { "label": "C", "text": "MRI only" },
+      { "label": "D", "text": "Bone scan" },
+      { "label": "E", "text": "No imaging" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Acute abdomen imaging: X-ray quick screening (obstruction, perf). CT gold standard most. US for selected (gallstones, pregnancy, peds). MRI for special. Selection by clinical scenario + contraindications. Multidisciplinary care. Modern: CT mainstay but US + MRI selective.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "ACR Appropriateness Criteria Acute Abdomen"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 50 ปี known HCC (hepatocellular carcinoma) — going for interventional radiology procedure\n\nคำถาม: IR procedure options for HCC",
+    "choices": [
+      { "label": "A", "text": "Surgery only" },
+      { "label": "B", "text": "Interventional Radiology for HCC: (1) **Multidisciplinary tumor board** decides treatment per BCLC (Barcelona Clinic Liver Cancer) staging: very early/early — resection, transplant, ablation; intermediate — TACE; advanced — systemic; terminal — palliative; (2) **Locoregional therapies (IR)**: - **Radiofrequency ablation (RFA) or microwave ablation**: small tumors < 3 cm (or selected up to 5 cm) — curative-intent percutaneous; - **Transarterial Chemoembolization (TACE)**: standard for intermediate-stage HCC (Child-Pugh A-B, multinodular, no vascular invasion); conventional with lipiodol + chemo, or drug-eluting beads (DEB-TACE); HEPS to deliver chemo selectively to tumor via hepatic artery (HCC blood supply); - **TARE (Transarterial Radioembolization) / Yttrium-90**: radiation delivered via microspheres into hepatic artery; alternative to TACE; useful in larger tumors, portal vein thrombosis; - **Stereotactic Body Radiation Therapy (SBRT)**: external; selected; - **Hepatic Artery Infusion (HAI)** chemo less common; (3) **Selection**: tumor characteristics (size, number, location, vascular invasion), liver function (Child-Pugh, MELD), performance status, comorbidity, transplant candidacy; (4) **Bridging to transplant**: TACE/RFA prevent dropout; (5) **Combined modalities**: TACE + RFA, sequential systemic + locoregional; (6) **Systemic therapy** (BCLC advanced): atezolizumab + bevacizumab (IMbrave150 — first-line), sorafenib historic, lenvatinib alternative, multiple TKIs second-line; emerging immunotherapy combinations; (7) **Outcomes**: BCLC stage-based; modern: significantly improved with new IR + systemic; (8) **Surveillance**: AFP + imaging (US + alternating MRI/CT) every 6 months in cirrhosis; (9) **Multidisciplinary**: hepatology + GI surgery + IR + medical oncology + transplant + pathology" },
+      { "label": "C", "text": "Refuse" },
+      { "label": "D", "text": "No treatment" },
+      { "label": "E", "text": "Hospice only" }
+    ],
+    "correct_answer": "B",
+    "explanation": "IR for HCC: multidisciplinary BCLC-based. RFA/MWA for early. TACE for intermediate. TARE/Y90 alternative + portal vein thrombosis. Bridging to transplant. Combined modalities. Modern systemic (atezolizumab + bevacizumab IMbrave150). Multidisciplinary essential.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "AASLD HCC Guidelines; BCLC Staging"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี acute massive GI bleeding (hematemesis + melena) — hemodynamically unstable + multiple units PRC needed\n\nคำถาม: imaging + intervention",
+    "choices": [
+      { "label": "A", "text": "Wait + observe" },
+      { "label": "B", "text": "Acute GI Bleeding Imaging + IR: (1) **Initial**: resuscitation + endoscopy (UGIB → EGD; LGIB → colonoscopy after prep — except massive); (2) **CT angiography (CTA)**: identifies active bleeding (extravasation of contrast), localizes source, guides angiography; useful when endoscopy fails, unable to localize, or as planning for IR; rapid + non-invasive; (3) **Conventional angiography + transcatheter intervention**: - Diagnostic catheterization of celiac, SMA, IMA; - Identifies extravasation, pseudoaneurysm, AVM; - **Therapeutic options**: - Coil embolization (most common); - Particle embolization (PVA particles); - Glue embolization; - Vasopressin infusion (less common modern); - Stent for vessel injury; (4) **Specific scenarios**: - Variceal bleeding — endoscopy first (banding); TIPS for refractory; - Peptic ulcer — endoscopy first; embolize gastroduodenal artery if persistent; - Diverticular bleeding — endoscopy + embolization if continuous; - Lower GI bleeding — angiography may localize when colonoscopy difficult; - Aortoenteric fistula — surgical; (5) **TIPS (Transjugular Intrahepatic Portosystemic Shunt)**: variceal bleeding refractory, refractory ascites; reduces portal pressure; (6) **Tagged RBC scan**: detects slower bleeding (0.1-0.5 mL/min) — guides angiography; less specific but sensitive for intermittent; (7) **Multidisciplinary**: GI + IR + surgery + ICU + transfusion; (8) **Massive transfusion**: balanced products + TXA + reversal of anticoagulation; (9) **Endoscopic + IR + surgical** options coordinated; (10) **Outcomes**: mortality higher with delay" },
+      { "label": "C", "text": "Surgery first" },
+      { "label": "D", "text": "Refuse intervention" },
+      { "label": "E", "text": "Discharge home" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Acute GIB IR: endoscopy first then CTA/angiography for unstable or unlocalized. Transcatheter embolization for persistent bleeding. TIPS for varices. Tagged RBC scan for slow. Multidisciplinary GI + IR + surgery. Modern: minimally invasive, organ-preserving approach.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "SIR Guidelines; ACR Appropriateness Criteria"
+  },
+  {
+    "scenario": "หญิงอายุ 65 ปี — colonoscopy finds mass + biopsy confirms adenocarcinoma + needs staging\n\nคำถาม: oncology staging imaging",
+    "choices": [
+      { "label": "A", "text": "No staging" },
+      { "label": "B", "text": "Colorectal Cancer Staging Imaging: (1) **CT chest/abdomen/pelvis with IV + oral contrast** — gold standard for staging: - Local extent (T) + nodal (N) + distant metastases (M — liver most common, lung second); (2) **MRI pelvis with rectal protocol**: specifically for rectal cancer (vs colon) — better local staging (T category + nodes + circumferential margin + extramural vascular invasion); guides neoadjuvant + surgical approach; (3) **MRI liver** with hepatobiliary contrast (gadoxetate) for equivocal liver lesions or planning resection of mets; (4) **CEA (Carcinoembryonic Antigen)**: tumor marker, baseline + follow-up; (5) **PET-CT (FDG-PET)** indications: equivocal lesions on CT, recurrence workup, before metastasectomy planning, rising CEA without visible disease; not routine for initial staging; (6) **Endoscopic ultrasound (EUS)** for rectal cancer — T staging; (7) **AJCC TNM staging**: Stage I-IV with subcategories — guides treatment; (8) **Molecular testing**: KRAS, NRAS, BRAF, MSI/MMR, HER2 — guides targeted therapy; (9) **Genetic testing**: Lynch syndrome (MSI-H or family history); (10) **Multidisciplinary tumor board**: GI + surgery (colorectal) + medical oncology + radiation oncology + radiology + pathology + genetics; (11) **Treatment based on stage**: Stage I — surgery; Stage II — surgery + adjuvant chemo for high-risk; Stage III — surgery + adjuvant chemo (FOLFOX or CapeOx, IDEA duration); Stage IV — multidisciplinary + systemic + locoregional + selective resection of mets; (12) **Surveillance after treatment**: CT + CEA q3-6 mo × 5 yr; colonoscopy 1 yr + every 3-5 yr" },
+      { "label": "C", "text": "Bone scan only" },
+      { "label": "D", "text": "Refuse care" },
+      { "label": "E", "text": "Surgery without staging" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Colorectal cancer staging: CT chest/abdomen/pelvis standard. MRI pelvis for rectal. MRI liver for mets characterization. CEA baseline. PET-CT for selected. EUS for rectal. Molecular testing essential modern. Multidisciplinary tumor board. Stage-based treatment.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "NCCN Colon + Rectal Cancer 2024; ACR Appropriateness Criteria"
+  }
+]
