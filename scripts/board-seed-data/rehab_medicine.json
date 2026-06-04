@@ -3774,5 +3774,965 @@
     "board_topic": "neurology",
     "board_age_group": "adult",
     "reference_source": "CMSC; NMSS"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี early Parkinson disease — newly diagnosed — exercise + lifestyle counseling",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Wait — bedrest"
+      },
+      {
+        "label": "B",
+        "text": "Early PD — Exercise as Disease-Modifying: (1) **Diagnosis confirmed**: motor (bradykinesia + rest tremor/rigidity) + supportive (response to levodopa); referral movement disorder; (2) **Exercise** (evidence growing — possibly disease-modifying): - **Aerobic moderate-vigorous** (cycling, treadmill — Park-in-Shape, SPARX trials show benefit) — recommended 150 min/wk moderate or 75 vigorous; - **Resistance** 2-3 d/wk; - **Balance + flexibility**; - **Tai Chi, dance (tango), boxing** — popular w/ evidence; - **PWR! Moves, LSVT BIG** for amplitude; (3) **Lifestyle**: Mediterranean diet, sleep hygiene, social engagement, cognitive engagement, smoking cessation, moderate caffeine (?protective); (4) **Mood + cognition** baseline + monitor: depression, anxiety, RBD, MCI; (5) **Education**: disease, expectations, support groups; (6) **Vocational + driving** counseling; (7) **Pharmacotherapy initiation** (timing controversial — symptom-based; levodopa mainstay; MAO-B inhibitor for mild; DA agonist; amantadine for dyskinesia later; deprenyl); (8) **Non-motor screen + management** (RBD, constipation, autonomic, anosmia, mood — often precede motor); (9) **Multidisciplinary involvement EARLY** (not just advanced) improves outcomes; (10) **Driving + safety**: cognitive + visual + motor + driving eval; (11) **Patient empowerment + self-management**; **Modern**: \"Exercise as Medicine\" + early multidisciplinary + emerging neuromodulation"
+      },
+      {
+        "label": "C",
+        "text": "Single discipline reactive only"
+      },
+      {
+        "label": "D",
+        "text": "Discharge no follow-up"
+      },
+      {
+        "label": "E",
+        "text": "Hospice"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Early PD: exercise as Rx (aerobic + resistance + balance + Tai Chi/boxing/dance) — possibly disease-modifying. Lifestyle. Multidisciplinary EARLY. Mood + cognition + non-motor screen. Pharma initiation. Education.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "MDS-PD; Park-in-Shape; SPARX"
+  },
+  {
+    "scenario": "ผู้ป่วย MS — bladder dysfunction (urgency, frequency, incontinence) — referred urology + rehab",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Foley indefinitely"
+      },
+      {
+        "label": "B",
+        "text": "MS Neurogenic Bladder Management: (1) **Common in MS** (~75-90% over disease course); impacts QOL; (2) **Symptom-based assessment + urodynamics**: pattern — detrusor overactivity (most common — urgency, frequency, urge incontinence), DSD (incomplete emptying, hesitancy, infections), failure to store + failure to empty combined; (3) **Workup**: urodynamics + PVR (post-void residual) + UA/Cx + renal US selected; (4) **Conservative**: timed voiding, fluid management, pelvic floor PT (Kegels, biofeedback), avoid caffeine/alcohol; (5) **Storage failure (overactivity)**: - **Anticholinergics** (oxybutynin, tolterodine, solifenacin, darifenacin) — caution cognitive SE in MS; - **β3-agonist** (mirabegron) — less cognitive; - **BoNT-A detrusor injection** refractory; - **Sacral neuromodulation** selected; (6) **Empty failure (DSD, atony)**: - **Clean intermittent catheterization (CIC)** preferred when PVR elevated; - α-blockers (tamsulosin) selected; - Suprapubic catheter rarely; (7) **UTI**: treat symptomatic, NOT asymptomatic bacteriuria; address contributors; (8) **Renal preservation**: avoid high storage pressure; surveillance; (9) **Education + adaptive equipment + community + sexual** integration; (10) **Multidisciplinary**: urology + neurology + physiatry + pelvic floor PT + nursing + sexual health; (11) **Outcomes**: PROs (KHQ, OAB-q), QOL, UTI rate, function; **Modern**: target therapies + neuromodulation + integrated"
+      },
+      {
+        "label": "C",
+        "text": "No assessment"
+      },
+      {
+        "label": "D",
+        "text": "Single discipline"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "MS bladder: urodynamics-guided. Storage (overactivity) — anticholinergic/β3/BoNT/SNM. Emptying — CIC. Pelvic floor PT. Treat sympt UTI only. Renal preservation. Multidisciplinary. Modern: targeted + neuromodulation.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "renal_gu",
+    "board_age_group": "adult",
+    "reference_source": "AUA; AAN MS"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 25 ปี Guillain-Barré syndrome (AIDP) post-ICU — 6 wk post — significant weakness — admit rehab",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Aggressive maximal exercise"
+      },
+      {
+        "label": "B",
+        "text": "Post-GBS Rehabilitation: (1) **Multidisciplinary**: neurology + physiatry + PT + OT + SLP + RT + nutrition + psychology + family; (2) **Phased approach**: - **Plateau/early recovery**: mobility (transfers, sitting, standing tolerance, gait initiation), strength training (CAREFUL — avoid overwork weakness; submaximal eccentric/concentric, monitor fatigue + delayed weakness), endurance, ADLs, equipment; - **Recovery**: progressive strength, endurance, balance, functional + return-to-prior-activity, vocational; (3) **Avoid overuse weakness** (Bensman): submaximal, monitor symptoms post-exercise; (4) **Pulmonary**: IS, breathing exercises, IMT, cough assist if weak; airway clearance; serial vital capacity in recovering patients; (5) **Cardiovascular dysautonomia**: orthostatic hypotension common — gradual upright training, compression, fluids, salt, midodrine selected; arrhythmia monitor; (6) **Pain**: neuropathic + back/joint — gabapentin, TCA, multimodal; (7) **Fatigue**: significant + lasting — energy conservation, graded exercise, pacing; (8) **Mood**: depression + anxiety + PTSD common — screen, CBT, SSRI; (9) **Sensory**: numbness + dysesthesia — desensitization; (10) **Cranial nerve**: dysphagia + facial — SLP eval, swallow strategies; (11) **DVT prevention** during immobility phase; (12) **Family + caregiver education + support**; (13) **Long-term**: most recover but residual common (20%); fatigue often persistent; vocational + community reintegration; **Modern**: structured rehab + outcomes-tracked + multidisciplinary"
+      },
+      {
+        "label": "C",
+        "text": "Bedrest"
+      },
+      {
+        "label": "D",
+        "text": "Single discipline"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "GBS rehab: phased multidisciplinary. AVOID overuse weakness (submaximal). Pulm (cough assist, IMT, VC). Dysautonomia (ortho). Pain + fatigue + mood + sensory + dysphagia. DVT. Family. Long-term residual. Modern structured.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "Bensman; AAN GBS"
+  },
+  {
+    "scenario": "ผู้ป่วย post-burn 30% TBSA — deep partial + full-thickness — 3 wk post — rehab planning",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No splint"
+      },
+      {
+        "label": "B",
+        "text": "Burn Rehabilitation — Comprehensive: (1) **Multidisciplinary burn center team**: burn surgeon + physiatrist + PT + OT + RT + nutrition + psychology + child life (peds) + nursing + social work; (2) **Phases**: - **Acute/critical**: resuscitation + early ROM/positioning + splinting (anti-deformity — neck ext, shoulder abducted, elbow ext, wrist neutral, hip ext, knee ext, ankle neutral), wound care, nutrition, pain; - **Surgical**: excision + grafting; rehab during inter-operative; - **Rehabilitative (this patient)**: aggressive ROM + strengthening + scar management + functional + community; - **Long-term**: continued; (3) **Splinting + positioning (KEY)**: prevents contractures — anti-deformity positions; serial casting/dynamic splinting for established; custom orthoses (CHT/OT); (4) **Range of motion**: aggressive + frequent — even painful; address potential burn-specific contractures (axillary, antecubital, popliteal, cervical); (5) **Strengthening + endurance**: progressive; (6) **Scar management** (KEY): - **Pressure garments** 23 h/d × 12-18+ mo (custom, 15-25 mmHg) — reduces hypertrophy; - **Silicone gel sheeting** evidence for hypertrophy; - **Massage** (scar mobilization); - **Moisturizer + sun protection**; - **Laser** (PDL, fractional CO2) — emerging strong evidence for hypertrophic scar + contracture; - **Steroid injection** for hypertrophic/keloid; - **Surgical scar revision/Z-plasty** for contracture refractory; (7) **Pain management**: multimodal — opioid + adjuvants (gabapentin), NSAID + non-pharm (VR distraction, hypnosis); (8) **Psychosocial**: PTSD, anxiety, depression, body image, family — CBT; (9) **Nutrition**: high-protein, calories, vit C, zinc; (10) **Functional + RTW + driving + return-to-community**; (11) **Pediatric considerations**: growth, contracture risk w/ growth, family; **Modern**: laser + biologics + multidisciplinary burn rehab"
+      },
+      {
+        "label": "C",
+        "text": "Bedrest"
+      },
+      {
+        "label": "D",
+        "text": "Single discipline"
+      },
+      {
+        "label": "E",
+        "text": "Discharge — no scar mgmt"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Burn rehab: multidisciplinary phased. Anti-deformity splinting + aggressive ROM + scar mgmt (pressure garments + silicone + laser + steroid). Pain multimodal + non-pharm. Psychosocial. Nutrition. Long-term. Modern: laser/biologics.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "ABA Burn Rehab; ISBI"
+  },
+  {
+    "scenario": "ผู้ป่วย post-burn hand — palmar burn deep partial — early management",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cast 6 wk"
+      },
+      {
+        "label": "B",
+        "text": "Hand Burn — Rehabilitation: (1) **Functional significance**: small surface but high impact; aggressive rehab essential; (2) **Acute management**: wound care + early surgery (excision + graft if deep), edema control (elevation), splinting (\"position of safety\" — wrist 20-30° ext, MCP 60-70° flex, IP ext, thumb opposition/abduction) — prevents intrinsic-minus + extrinsic shortening; (3) **Early ROM**: as soon as possible — daily PROM/AROM (even painful) by hand therapist (CHT); preserves tendon glide + joint motion; (4) **Post-graft phase**: typically 5-7 d immobilization → active ROM; protect graft initially; (5) **Specific issues**: - **Palmar burn** + deep — risk web space syndactyly, claw deformity, scar contracture (especially MCP flex contracture if not splinted); - **Dorsal burn** — risk boutonniere from PIP swelling/extensor injury; - **Web space** scar contracture — splinting + Z-plasty; (6) **Edema control**: elevation + compression (Coban) + active ROM; (7) **Scar management**: pressure gloves (custom, 12-18 mo), silicone, massage, laser (PDL, fractional CO2); (8) **Strengthening progressive**: putty + grippers + functional; (9) **Sensory re-education**: desensitization + protective sensation; (10) **Functional + ADL + fine motor + work**: integrated; (11) **CHT-led** central; (12) **Patient + family education + adherence**: home program critical; (13) **Outcomes**: TAM, DASH, MHQ, function; **Modern**: early surgery + aggressive rehab + laser scar + CHT"
+      },
+      {
+        "label": "C",
+        "text": "No splint"
+      },
+      {
+        "label": "D",
+        "text": "Bedrest"
+      },
+      {
+        "label": "E",
+        "text": "Amputation"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Hand burn: position of safety splinting (wrist ext, MCP flex, IP ext, thumb abduct). Early ROM by CHT. Edema control. Scar mgmt (pressure glove + silicone + laser). Specific issues palmar vs dorsal. Sensory + functional. CHT-led.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "ABA; ASSH Burn Hand"
+  },
+  {
+    "scenario": "เด็กอายุ 7 ปี post-burn — รุนแรง full-thickness anterior neck — 1 yr post — cervical flexion contracture",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Bedrest no splint"
+      },
+      {
+        "label": "B",
+        "text": "Pediatric Neck Burn Contracture: (1) **Pediatric considerations**: contractures more severe relative to body growth; psychological + body image developmental impact; (2) **Multidisciplinary**: burn surgeon + plastic + physiatry + PT/OT (CHT) + child life + psychology + family; (3) **Anti-deformity positioning (KEY)** from acute: neck extension — no pillow under head, rolled towel under shoulders; sustained — splints + neck conformers (silicone neck collar, soft neck conformer day, more rigid splint night); (4) **Cervical contracture management**: - Sustained stretching + splinting; - Serial casting/dynamic; - Pressure garment + silicone (neck conformer); - Laser (PDL hypertrophy + fractional CO2 contracture); - Steroid injection + intralesional 5-FU; (5) **Surgical scar release**: - Z-plasty + W-plasty for linear contracture; - Local + regional flap; - Skin grafting; - Tissue expansion; - Free flap for severe; - Timing — mature scar (~12+ mo) usually, earlier for severe functional; (6) **Recurrence prevention**: long-term splinting + pressure + monitoring through growth — recurrence risk in pediatric high w/ growth; (7) **Functional + activity**: integration; (8) **Psychosocial + school**: peer support, school reintegration, body image, mental health; (9) **Family education + adherence + advocacy**; (10) **Camp + peer programs** improve outcomes psychosocial; (11) **Long-term follow-up** through growth + adulthood; **Modern**: laser + tissue expansion + integrated multidisciplinary + child life"
+      },
+      {
+        "label": "C",
+        "text": "Cast neck flexed"
+      },
+      {
+        "label": "D",
+        "text": "Single discipline"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pediatric neck burn contracture: anti-deformity positioning (extension) + splinting + scar mgmt + surgical release (Z-plasty, flap, expansion). Pediatric risk recurrence w/ growth. Multidisciplinary + child life. Long-term FU.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "pediatric",
+    "reference_source": "ABA Pediatric; ISBI"
+  },
+  {
+    "scenario": "ผู้ป่วย post-burn 6 mo — PTSD + depression + body image + difficulty returning work",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No psych intervention"
+      },
+      {
+        "label": "B",
+        "text": "Burn Psychosocial + Vocational: (1) **Psychological sequelae prevalent** post-burn: PTSD (~20-40%), depression (~25%), anxiety, body image, sleep disturbances, substance use; predicts QOL > burn severity; (2) **Screening + assessment**: PCL-5, PHQ-9, GAD-7, body image scales, sleep, substance use, QOL (BSHS-B — Burn Specific Health Scale-Brief); (3) **Multimodal treatment**: - **Trauma-focused CBT**: gold standard PTSD; - **Prolonged exposure + EMDR**; - **SSRI/SNRI** for PTSD + depression + anxiety; - **Sleep**: CBT-I + meds selected; - **Body image therapy + scar camouflage** (makeup, clothing, tattoo to scar — adjuncts); - **Peer support + burn survivor groups**; - **Family therapy**; (4) **Substance use** integrated treatment; (5) **Vocational rehabilitation**: - Comprehensive assessment (function + cognitive + psych + job demands); - Worksite assessment + accommodations (ADA): scheduling, heat tolerance, sun protection, scar care breaks; - Graded RTW; - Job coach selected; - Vocational re-training if cannot return; (6) **Driving evaluation** if needed; (7) **Community + recreation reintegration**: burn camps, adaptive recreation, peer support; (8) **Family + caregiver + spouse considerations**: relationship + sexual concerns; (9) **Pediatric considerations**: school reintegration, peer/bullying, family; (10) **Multidisciplinary**: psychiatry + psychology + physiatry + voc rehab + peer + family + social work; **Modern**: integrated trauma-informed + survivor-centered + burn psychology"
+      },
+      {
+        "label": "C",
+        "text": "Bedrest"
+      },
+      {
+        "label": "D",
+        "text": "Single discipline"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Burn psychosocial: PTSD/depression/anxiety/body image high. Screen. Trauma-focused CBT + EMDR + SSRI. Body image + peer support + camouflage. Vocational: assessment + accommodations + graded RTW + job coach. Family. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "ABA; Phoenix Society"
+  },
+  {
+    "scenario": "ผู้ป่วย post-burn — chronic neuropathic pain + itching (pruritus) — refractory",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Opioid only escalating"
+      },
+      {
+        "label": "B",
+        "text": "Burn Pruritus + Neuropathic Pain — Multimodal: (1) **Pruritus prevalence** very high post-burn (~70-90% during healing, ~50% long-term); QOL impact + sleep + mood; (2) **Pathophysiology**: peripheral (nerve regeneration, mast cells, histamine, IL) + central sensitization; (3) **Pruritus management**: - **Topical**: emollients (frequent), pramoxine (local anesthetic), doxepin cream, capsaicin selected; - **Systemic**: antihistamines (H1: cetirizine, hydroxyzine; H2: ranitidine adjunct), gabapentin/pregabalin (evidence in burn), TCA (doxepin), naltrexone (opioid-induced), SSRI/SNRI; - **Non-pharm**: cool environment, loose breathable clothing, cool compresses, distraction, massage, TENS, pressure garments + silicone (also help scar); (4) **Neuropathic pain post-burn** (small fiber neuropathy, neuroma): - **Gabapentin/pregabalin, TCA, SNRI** first-line; - **Topical lidocaine + capsaicin** patches; - **Opioid-sparing**; - **Interventional**: nerve blocks, sympathetic blocks selected; (5) **Scar management** integrated reduces both; pressure + silicone + laser (PDL hypertrophic, fractional CO2 contracture + pruritus); (6) **Sleep + mood addressing**: contribute to both — CBT, sleep hygiene; (7) **Multimodal — interdisciplinary**: combine; (8) **Multidisciplinary**: burn rehab + pain + dermatology + psychology + PT/OT; (9) **Patient education + self-management**; (10) **Outcomes**: itch scale, pain, sleep, function, QOL; **Modern**: laser + neuromodulation + multimodal"
+      },
+      {
+        "label": "C",
+        "text": "No intervention — wait"
+      },
+      {
+        "label": "D",
+        "text": "Bedrest"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Burn pruritus + NP pain: prevalence high. Topical (emollients, doxepin, lido, capsaicin) + systemic (gabapentinoid, TCA, antihistamine). Scar mgmt (pressure + silicone + laser) integrated. Sleep + mood. Multidisciplinary multimodal.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "ABA; Burn Pruritus"
+  },
+  {
+    "scenario": "ผู้ป่วย stroke — L foot drop + mild knee hyperextension during stance — AFO selection",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No AFO needed"
+      },
+      {
+        "label": "B",
+        "text": "AFO Selection — Functional Considerations: (1) **AFO types + indications**: - **Posterior leaf spring (PLS, flexible polypropylene)**: mild foot drop, normal proximal control, swing-phase assist; - **Solid ankle AFO (rigid plastic)**: more severe spasticity/weakness, instability; controls coronal + sagittal; can cause increased knee flexion; - **Articulated AFO** (hinged): allows DF (selected), block PF (assist swing); - **Ground reaction force (GRF) AFO** (anterior shell): for crouch gait or knee hyperextension/buckling — knee extension moment via anterior tibial bar — useful for this patient (knee hyperextension); - **Energy-storing dynamic** (carbon fiber — ToeOFF, BlueRocker): active patients, push-off assist, less restrictive; - **AFO w/ free DF + PF stop**: foot drop + plantar fascia issue; (2) **Selection factors**: weakness pattern, spasticity, deformity, function, gait analysis, patient preference, cosmesis, activity level, weight; (3) **Custom (prosthetist/orthotist) vs off-shelf**; (4) **Gait analysis + fitting**: alignment, length, padding, donning/doffing; (5) **PT integration**: gait training w/ AFO; address impairments not solved by orthosis alone; (6) **Monitoring + adjustment**: pressure areas, skin, function, weight changes; replace 1-3 yr typically; (7) **FES alternative** for foot drop (Walkaide, Bioness L300, Odstock Dropped Foot Stimulator) — selected; (8) **Multidisciplinary**: orthotist + physiatry + PT + patient; **Modern**: 3D-scanned custom + carbon fiber + FES options"
+      },
+      {
+        "label": "C",
+        "text": "Cast"
+      },
+      {
+        "label": "D",
+        "text": "Surgery only"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "AFO: PLS (mild), solid (severe), articulated, GRF (knee hyperext/crouch — this case), energy-storing carbon fiber. Selection by impairment + function. Custom vs off-shelf. PT integration. FES alternative. Modern: 3D scan + carbon fiber.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AAOP; ISPO"
+  },
+  {
+    "scenario": "ผู้ป่วย C6 SCI — power wheelchair prescription + assessment",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Manual w/c only"
+      },
+      {
+        "label": "B",
+        "text": "Power Wheelchair Prescription — C6 Tetraplegic: (1) **Comprehensive seating + mobility assessment** (KEY): physiatrist + OT (or PT) + supplier; needs (mobility, transfers, pressure relief, function, environment, transport); (2) **Patient assessment**: function (motor — C6 partial wrist ext + tenodesis; transfers; pressure relief ability), cognition, vision, posture, deformity (scoliosis, contracture), skin, growth (peds); (3) **W/C category Medicare USA** (other systems similar): Group 1-5 — power Group 3+ for complex needs; (4) **Frame + drive wheels**: - **Mid-wheel drive** (e.g., Permobil M3): tight turning, smooth; - **Front-wheel** for outdoor; - **Rear-wheel** for higher speed; - **All-wheel** specialized; (5) **Controls (key for C6)**: - **Standard joystick**: hand if function permits — tenodesis-compatible mounting; - **Alternative**: chin, head, sip-puff, eye-gaze for higher-level SCI (C4-5); proportional or switch-based; - **Mounting + interface customization**; (6) **Seating system**: - Custom contoured seat + back; - Pressure-mapping; pressure-redistributing cushion (ROHO, gel, foam, hybrid); - Lateral supports + headrest as needed; - Tilt-in-space (KEY for pressure relief in C6 cannot independently); - Recline + leg elevation; - Standing function — selected; (7) **Power features**: tilt + recline + elevating legs (KEY) + seat elevation + standing; ventilator-compatible; (8) **Environment + transport**: home accessibility, vehicle (van w/ lift), wheelchair-accessible vehicle; (9) **Training**: OT/PT + caregiver; (10) **Long-term**: maintenance + replacement (5 yr typical) + growth/changes; **Modern**: technology-enabled + alternative controls + integrated assessment"
+      },
+      {
+        "label": "C",
+        "text": "Generic w/c — no assessment"
+      },
+      {
+        "label": "D",
+        "text": "Bedrest"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Power w/c C6: comprehensive assessment. Joystick or alternative control. Mid-wheel drive. Custom seating + pressure-redistributing cushion. Power tilt + recline + leg elev (key pressure relief). Vehicle. OT/PT training. Modern integrated.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "RESNA; Consortium SCI"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 80 ปี chronic LBP + degenerative disc + needs lumbosacral orthosis (LSO) — selection",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Long-term rigid brace alone"
+      },
+      {
+        "label": "B",
+        "text": "Spinal Orthotics — LSO Selection: (1) **Spinal orthotic categories**: - **Cervical**: soft collar (limited evidence except acute), rigid (Philadelphia, Aspen), halo (most rigid — TBI/SCI surgical); - **Cervicothoracic** (Minerva, SOMI); - **Thoracolumbar** (Jewett, CASH, TLSO); - **Lumbosacral** (LSO — chairback, Knight, semirigid lumbosacral corset, custom-molded); - **Sacroiliac**; (2) **LSO purposes**: motion restriction (post-op, fracture), pain reduction (load reduction, proprioception, warmth, support), postural awareness, prevention progression; (3) **LSO options**: - **Soft corset** (limited rigid support — postural cuing, warmth, comfort); - **Semirigid w/ stays** (moderate); - **Rigid (chairback, Knight, TLSO)**: maximum motion restriction, post-fracture/surgery; (4) **Evidence chronic LBP**: limited rigorous — modest benefit in selected acute; chronic adjunct; AVOID prolonged use (deconditioning of paraspinals); (5) **For this patient**: semirigid LSO short-term + active rehab + addressing contributors; (6) **Compression fractures (osteoporotic)**: TLSO (Jewett, CASH) selected acute — modest evidence; vertebroplasty/kyphoplasty selected; bone health Tx; (7) **Adherence + skin care + breathing + fit assessment**; (8) **Active rehab integration KEY**: orthosis NOT alternative to exercise — combined; (9) **Multidisciplinary**: physiatry + orthotist + PT + ortho/neuro surgery selected; (10) **Pediatric scoliosis**: brace (Boston) — angle-dependent + skeletal maturity-based; (11) **Outcomes**: pain, function (ODI), adherence; **Modern**: brace + active rehab + selected indications + biomechanical optimization"
+      },
+      {
+        "label": "C",
+        "text": "No brace + bedrest"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "LSO selection: soft (postural) → semirigid → rigid by indication. Chronic LBP: limited evidence — semirigid short-term + ACTIVE rehab. Compression fx: TLSO. Avoid prolonged (deconditioning). Multidisciplinary. Active rehab key.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "geriatric",
+    "reference_source": "AAOP; ISPO"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 50 ปี chronic LBP + neuro deficit — using mobile phone + computer extensively — assistive technology + ergonomics",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No AT"
+      },
+      {
+        "label": "B",
+        "text": "Assistive Technology + Ergonomics: (1) **Assessment**: comprehensive — function (motor, cognitive, sensory), tasks (work + home + recreation), environment, equipment; (2) **AT categories**: - **Low-tech**: built-up handles, reachers, dressing aids, jar openers, raised toilet seats, shower bench; - **Mid-tech**: powered tools, devices w/ switches; - **High-tech**: computers (alternative keyboards, mice, switch access, eye-gaze, voice recognition), AAC devices, environmental control (smart home — voice-activated lights, thermostat, locks), smart phones (apps for organization, memory, communication, navigation), powered W/C, exoskeletons, BCI (emerging), robotics; (3) **Ergonomic assessment workplace**: - Chair (lumbar support, adjustable); - Desk + monitor height (eye level top of screen, 50-70 cm); - Keyboard + mouse (neutral wrist; ergonomic options); - Lighting + glare; - Posture + microbreaks (Pomodoro, every 20-30 min); - Voice-input + dictation alternatives; - Wrist rests selected (not constant pressure); (4) **OT-led** AT assessment + recommendation + training; (5) **Funding**: Medicare/Medicaid/insurance (US), vocational rehab, voluntary; **Modern**: rapid evolution — smart devices + AI + IoT + accessibility-built-in (iOS Accessibility, Android, Microsoft Adaptive); inclusive design; voice assistants; (6) **Outcomes**: function, satisfaction (QUEST), participation; (7) **Multidisciplinary**: OT + PT + physiatry + speech (AAC) + voc rehab + IT + employer; (8) **Training + adherence + community**: support; **Modern**: smart + universal design + integrated AT"
+      },
+      {
+        "label": "C",
+        "text": "Generic devices"
+      },
+      {
+        "label": "D",
+        "text": "Bedrest"
+      },
+      {
+        "label": "E",
+        "text": "Surgery only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "AT + ergonomics: comprehensive assessment. Low/mid/high-tech spectrum. Ergonomic workplace (chair + monitor + keyboard + posture + breaks). OT-led. Smart devices + voice-input + accessibility built-in. Multidisciplinary. Modern: AI + IoT.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "RESNA; ISO 9241"
+  },
+  {
+    "scenario": "ผู้ป่วย post-amputation BKA — driving evaluation + adaptive vehicle considerations",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Drive without evaluation"
+      },
+      {
+        "label": "B",
+        "text": "Driving Rehabilitation — Adapted Vehicle: (1) **Comprehensive Driving Evaluation (CDE)** by Certified Driver Rehabilitation Specialist (CDRS) — OT or other; (2) **Clinical assessment**: vision (acuity, peripheral, contrast, glare, scanning), cognition (attention, processing speed, executive, memory, judgment), motor (strength, ROM, coordination, reaction time), sensation, medications (sedating); (3) **On-road evaluation**: simulator selected → road test by CDRS in adapted vehicle if needed; (4) **Adaptations BKA (right BKA — uses right pedals)**: - **Left-foot accelerator** + cover for right pedal — useful for right LE amputee; - **Hand controls** (mechanical or electronic — push-pull, push-twist, push-right-angle, etc.) — useful for SCI, paraplegic, severe LE impairment; - **Power steering + braking**; - **Spinner knob** for steering 1-handed; - **Pedal extensions** for short stature; - **Vehicle entry**: ramps, lifts, transfer seats, lowered vehicle floor for power w/c; - **Wheelchair-accessible vehicle (WAV)**: van w/ ramp/lift; (5) **Training + licensing**: graded training; some jurisdictions require re-test w/ adaptation noted on license; (6) **Considerations**: prosthesis fit + reaction time + endurance + complex environments + cognition + medications + seizure-free interval; (7) **Cost + funding** challenges — voc rehab, charities, insurance; (8) **Alternatives**: paratransit, ride-share, taxi, family; (9) **Community + independence** impact significant — driving is autonomy; (10) **Re-evaluation periodic** + after status changes; (11) **Multidisciplinary**: CDRS + physiatry + OT + ophthalmology + neuropsychology + family; **Modern**: tech-enabled adaptations + AV future + accessibility-built-in"
+      },
+      {
+        "label": "C",
+        "text": "Never drive"
+      },
+      {
+        "label": "D",
+        "text": "Single discipline"
+      },
+      {
+        "label": "E",
+        "text": "Bedrest"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Driving rehab: CDRS comprehensive eval (clinical + on-road). Adaptations: hand controls, left-foot accelerator, spinner knob, WAV. BKA selected (left-foot for right BKA). Training + licensing. Cost. Multidisciplinary. Modern: tech.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "ADED; AOTA Driving"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 45 ปี post-LBP 6 mo — failed conservative — ต้องการ return to manual labor job",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Permanent disability without trial"
+      },
+      {
+        "label": "B",
+        "text": "Vocational Rehabilitation — Return-to-Work (RTW): (1) **Comprehensive vocational assessment**: medical (impairment + function), job demands analysis (PDC, ergonomic, dictionary of occupational titles), psychological (depression, fear-avoidance, motivation), social (family, finances), employer relations; (2) **Function vs job demand match**: - **Functional Capacity Evaluation (FCE)**: standardized tests of work-related abilities (lifting, carrying, posture, endurance) — match to job requirements; - **Job site assessment** + ergonomic analysis; (3) **Interventions**: - **Work conditioning + work hardening**: progressive structured exercise programs simulating work demands — evidence in selected; - **Functional restoration program (FRP)**: interdisciplinary chronic pain + RTW focus (Mayer, Gatchel) — strong evidence chronic LBP RTW; - **Ergonomic modifications**: lifting techniques, mechanical aids, job redesign; - **Graded return**: hours, duties; - **Light duty**: temporary modified; - **Vocational re-training**: if cannot return — alternate career; (4) **Address contributors**: pain (multimodal), psychological (CBT for fear-avoidance, depression), substance use, social, sleep; (5) **Multidisciplinary team**: physiatry + PT + OT + psychology + voc rehab counselor + employer + insurance + family; (6) **Workers' compensation system navigation** (if applicable): IME, return-to-work coordinator, case management; (7) **Outcomes**: RTW status (return, retain), function (ODI), pain, sustainability, cost; (8) **Education**: pain neuroscience, biopsychosocial, self-management; (9) **Evidence**: FRP + multidisciplinary > single-modal; (10) **Modern**: biopsychosocial + early intervention + employer integration + flexible work"
+      },
+      {
+        "label": "C",
+        "text": "Surgery first-line"
+      },
+      {
+        "label": "D",
+        "text": "Single discipline"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "RTW: comprehensive — function + job demands + psych. FCE + worksite. Work hardening/FRP + ergonomic + graded + re-training. Address pain + fear-avoidance + mood. Multidisciplinary + employer. Evidence FRP > single. Modern biopsychosocial.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "AAPM&R; APTA Voc"
+  },
+  {
+    "scenario": "ผู้ป่วย TBI 9 mo — cognitive deficits — knowledge worker job — workplace accommodations",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No accommodations — same as before"
+      },
+      {
+        "label": "B",
+        "text": "Cognitive Disability Workplace Accommodations (ADA): (1) **ADA (USA)** / equivalent: protects qualified persons w/ disability — reasonable accommodations to perform essential job functions; not job creation; interactive process w/ employer; (2) **Disclosure** is patient's choice — pros/cons; required if requesting accommodation; (3) **Reasonable accommodations cognitive**: - **Environment**: quiet workspace, fewer distractions, private office vs cubicle, lighting adjustments; - **Schedule**: flexible hours, part-time return, extended breaks, regular short breaks (Pomodoro); - **Task modifications**: written instructions, checklists, simplified workflows, one-task focus, deadlines flexibility; - **Assistive technology**: text-to-speech, speech-to-text, organization apps, reminders, smartphones, planning software; - **Memory aids**: notebooks, calendars, recording devices; - **Job coach**: on-site support — supported employment model; - **Modified duties**: reduced multitasking, lower-stress tasks; - **Telework**: home environment + flexible; (4) **Employer education** about TBI + cognitive disability + strategies; (5) **Vocational rehab counselor**: coordinate w/ employer + advocacy; (6) **Job match assessment**: cognitive demands vs abilities; consider re-training if cannot return; (7) **Multidisciplinary**: neuropsych + physiatry + voc rehab + OT + employer + family; (8) **Address contributors**: fatigue, mood, sleep, pain — improve work capacity; (9) **Graduated RTW**: part-time → full; (10) **Monitor + adjust**: regular check-ins, evolving needs; (11) **Outcomes**: RTW status, retention, performance, satisfaction; **Modern**: ADA + supported employment + tech accommodations + flexible work"
+      },
+      {
+        "label": "C",
+        "text": "No return ever"
+      },
+      {
+        "label": "D",
+        "text": "Single discipline"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cognitive accommodations: ADA framework. Environment + schedule + task mods + AT (apps, T2S, organization) + job coach + telework + modified duties. Employer education. Voc rehab. Graduated. Multidisciplinary. Modern: supported employment.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "ADA; Job Accommodation Network"
+  },
+  {
+    "scenario": "ผู้ป่วย amputee post-AKA — desires return to physical labor or new career — voc rehab",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No return ever"
+      },
+      {
+        "label": "B",
+        "text": "Amputee Vocational Rehabilitation: (1) **Comprehensive eval**: function (prosthetic, ambulation, endurance), residual limb, prior occupation analysis, education, transferable skills, interests, motivation; (2) **Job demands analysis** + functional capacity eval + workplace accessibility; (3) **RTW options stratification**: - **Same job same employer**: if function permits + accommodations; - **Same job different employer/site**: better accessibility; - **Modified duties same employer**: reduced physical demands; - **Vocational re-training**: education for new career suited to abilities (sedentary, less physical) — common for AKA + heavy labor; - **Self-employment + entrepreneurship**: emerging options; - **Retirement/disability**: when re-employment not feasible; (4) **Prosthetic optimization for occupation**: activity-specific prosthetics (work boot adapters, sport-specific, heavy-duty components, K-level appropriate); (5) **Workplace accessibility + accommodations (ADA)**: parking, restroom, workspace, equipment; (6) **Training + education**: high school equivalency, community college, technical, on-the-job training, certifications; (7) **Vocational rehab counselor**: case mgmt + advocacy + funding navigation (state voc rehab agencies, VA for veterans); (8) **Address psychosocial**: identity, body image, motivation, depression, family; counseling + peer support; (9) **Driving evaluation** + adaptive vehicle if needed; (10) **Multidisciplinary team**: physiatry + prosthetist + PT + OT + voc rehab + psychology + family + employer; (11) **Outcomes**: RTW status, retention, income, satisfaction; **Modern**: integrated voc + advanced prosthetics + technology-enabled work"
+      },
+      {
+        "label": "C",
+        "text": "Same heavy labor without changes"
+      },
+      {
+        "label": "D",
+        "text": "Single discipline"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Amputee voc rehab: comprehensive eval. RTW options spectrum — same → modified → re-train → self-employment. Activity-specific prosthetics. Accommodations + training. Psychosocial. Funding (VR agencies, VA). Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "RSA; VA Voc Rehab"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 30 ปี SCI paraplegic 2 yr — wants to return to professional work — supported employment",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Disability pension only"
+      },
+      {
+        "label": "B",
+        "text": "Supported Employment + SCI Return-to-Work: (1) **SCI RTW low** (~30-40%) — significant gap; predictors: pre-injury employment, education, age, function, support, motivation; (2) **Supported employment model**: - **Individual placement + support (IPS)**: rapid placement (skip lengthy training), individualized, integrated work + clinical, time-unlimited support, consumer preferences; - **Evidence strongest** in psychiatric but applied to SCI/TBI; - Job coach + ongoing support; (3) **Pre-RTW preparation**: - Function optimization (mobility, ADLs, prosthetics/orthotics, equipment); - Psychological readiness + motivation; - Vocational counseling + interests + skills assessment; - Education/training as needed; - Mock interviews + skill-building; (4) **Workplace assessment**: - Accessibility (ramps, doors, restrooms, parking — ADA-compliant); - Equipment + ergonomic (height-adjustable desks, transfer surfaces); - Schedule + commute + transportation; - Restrooms + intermittent catheterization considerations; - Pressure relief breaks; (5) **Accommodations (ADA)**: home/remote work, flexible schedule, accessible workspace, assistive tech, voice recognition, ergonomic; (6) **Transportation**: adapted vehicle (hand controls), accessible public transit, ride-share; (7) **Health considerations workplace**: pressure relief, hydration + bladder/bowel timing, autonomic dysreflexia, skin, fatigue, equipment; (8) **Caregiver + family support**: managing pre-/post-work; (9) **Multidisciplinary**: physiatry + PT + OT + voc rehab + psychology + employer + family; (10) **Funding**: state VR, SSA, employer, voluntary; (11) **Outcomes**: RTW, retention, income, satisfaction, integration; **Modern**: IPS + telework expansion + tech-enabled + employer education"
+      },
+      {
+        "label": "C",
+        "text": "No accommodations"
+      },
+      {
+        "label": "D",
+        "text": "Single discipline"
+      },
+      {
+        "label": "E",
+        "text": "Bedrest"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "SCI RTW: supported employment IPS model — rapid placement + individualized + integrated + ongoing. Workplace accessibility + accommodations + transportation + health (pressure, bladder, AD). Multidisciplinary. Modern: IPS + telework.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "IPS; RSA; PVA"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 70 ปี post-stroke — generalized spasticity affecting UE + LE — failed BoNT + oral antispasticity — refractory",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Oral baclofen high dose only"
+      },
+      {
+        "label": "B",
+        "text": "Refractory Spasticity — Intrathecal Baclofen (ITB) Pump: (1) **Indications**: severe generalized spasticity interfering function (mobility, ADL, hygiene, comfort, positioning) refractory to oral + focal (BoNT) — SCI, MS, CP, stroke, TBI; (2) **Patient selection**: clear functional goals; trial benefit + tolerance + family/caregiver capability; (3) **Trial**: intrathecal bolus (50-100 mcg) — observe reduction Ashworth + function 4-8 h; pass → implant; (4) **Implantation**: subcutaneous pump (abdominal) + intrathecal catheter (T6-T12 typically); refilled q3-6 mo via percutaneous port; programmable rate + boluses; battery 5-7 yr; (5) **Titration**: starting + gradual increase; dosing varies (cerebral spasticity lower dose than spinal); (6) **Benefits**: reduces spasticity + spasms + improves hygiene + positioning + sleep + pain + may improve function in selected; reduces oral baclofen + SE; (7) **Complications**: - **Withdrawal** (sudden cessation — fever, severe spasticity, seizure, rhabdo, organ failure, death) — pump malfunction, catheter, refill error; EMERGENCY — IV/PO baclofen, benzo, support; - **Overdose** (drowsy → respiratory failure → coma) — flumazenil ineffective; supportive + naloxone trial; pump program review; - Infection, catheter migration/leak/break, pump failure, CSF leak; (8) **Multidisciplinary**: physiatry + neurosurgery + PT + OT + nursing + family; (9) **24/7 emergency contact + ID card + family education**; (10) **Alternative refractory**: SDR (selective dorsal rhizotomy — selected children + adults), orthopaedic; (11) **Outcomes**: Ashworth, Tardieu, function, goal attainment, QOL; **Modern**: ITB programmable + integrated + emerging neuromodulation"
+      },
+      {
+        "label": "C",
+        "text": "No intervention"
+      },
+      {
+        "label": "D",
+        "text": "Bedrest"
+      },
+      {
+        "label": "E",
+        "text": "Surgery — fusion"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "ITB pump: refractory spasticity. Trial → implant. Subcutaneous pump + intrathecal catheter, refill q3-6 mo. Withdrawal EMERGENCY (PO baclofen + benzo). Overdose. Multidisciplinary + 24/7. SDR alternative. Outcomes Ashworth/function.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "geriatric",
+    "reference_source": "AAN ITB; AAPM&R"
+  },
+  {
+    "scenario": "ผู้ป่วยเด็ก CP spastic diplegia GMFCS II — ambulating w/ AFOs — increasing spasticity affecting gait",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Oral diazepam only"
+      },
+      {
+        "label": "B",
+        "text": "Pediatric CP Spasticity — BoNT + Surgical Options: (1) **Goal-setting** (KEY): GAS, gait improvement, ADLs; not eliminating spasticity (some functional); (2) **BoNT-A** focal management: - Target muscles by gait analysis + pattern (e.g., spastic diplegia — gastroc-soleus, hamstrings, hip adductors); - Dosing weight-based (max ~12-20 U/kg total OnabotulinumtoxinA, varies by product); - US + EMG guidance; - Effect peak 2-4 wk, duration 3-4 mo, re-inject q3-6 mo; - Combine w/ post-BoNT serial casting + intensive PT for max effect; (3) **Orthopaedic**: - **Multilevel single-event surgery (SEMLS)**: address multiple deformities in one session — hamstring lengthening, psoas lengthening, gastroc-soleus lengthening, derotational osteotomies, foot — preferred over multiple separate; - 3D gait analysis-guided; (4) **Selective Dorsal Rhizotomy (SDR)**: - Selected ambulatory CP (typically GMFCS II-III, age 4-10, good cognition, good motor potential); - Reduces spasticity permanently, improves gait; - Requires intensive post-op PT 6-12 mo; - This patient potential candidate; (5) **Intrathecal Baclofen**: severe generalized spasticity; less common GMFCS I-II; (6) **Hip surveillance**: regular radiograph; address subluxation early; (7) **Multidisciplinary**: physiatry + ortho + neurosurgery + PT + OT + orthotist + family; (8) **Long-term**: continued surveillance through growth + into adulthood; transition; (9) **Outcomes**: GMFM-66, gait analysis, GAS, FMS, QOL (CPCHILD, KIDSCREEN); **Modern**: gait-analysis-guided + multimodal + early intervention"
+      },
+      {
+        "label": "C",
+        "text": "Bedrest"
+      },
+      {
+        "label": "D",
+        "text": "Single discipline"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pediatric CP spasticity: goal-directed. BoNT-A + serial casting + intensive PT focal. SEMLS for multiple deformities (gait-analysis-guided). SDR for selected ambulators. ITB severe. Hip surveillance. Multidisciplinary. Modern integrated.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "pediatric",
+    "reference_source": "AACPDM; Cerebral Palsy Spasticity"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 50 ปี MS — bilateral LE spastic gait + spasms + sleep disruption from cramps",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single high-dose oral medication"
+      },
+      {
+        "label": "B",
+        "text": "MS Spasticity Comprehensive Management: (1) **Multidisciplinary**: neurology MS + physiatry + PT + OT + nursing + urology + sleep; (2) **Address contributors (KEY)** — exacerbate spasticity: - UTI, urinary retention/bladder distension; - Constipation; - Pressure injury/skin; - Pain; - Tight clothing/positioning; - Infection; - Fatigue/sleep deprivation; - Mood; - Treat root cause first; (3) **Non-pharm**: PT (stretching + strengthening + functional + balance), positioning + sleep position, orthotics (AFO), thermal modalities, exercise — pool effective (cool), cryotherapy; (4) **Pharmacologic — stepwise**: - **First-line oral**: baclofen (start 5 mg TID, titrate to 80 mg/d max — sedation, weakness; do NOT abruptly stop — withdrawal seizures), tizanidine (BID-QID, monitor LFT + hypotension), benzodiazepine (clonazepam, diazepam — sedation, dependence); - **Add-on**: gabapentin/pregabalin (also for pain), dantrolene (hepatotoxicity), cyproheptadine (sleep + spasm), cannabinoid (nabiximols/Sativex if available); - **Topical**: lidocaine, capsaicin for focal; (5) **Focal — BoNT-A**: gait pattern (gastroc, hamstring, adductors); functional goals; (6) **Refractory — ITB pump**: severe generalized + functional impact; (7) **Spasms at night**: hydration, position, baclofen evening, magnesium selected, anti-spasmodic timing; (8) **Sleep + mood addressed**: improve overall; (9) **Education + self-management + family**; (10) **Outcomes**: Ashworth, spasm frequency, function, sleep, PROs (MSSS-88); **Modern**: multimodal + cannabinoid evidence + nuanced"
+      },
+      {
+        "label": "C",
+        "text": "No intervention"
+      },
+      {
+        "label": "D",
+        "text": "Bedrest"
+      },
+      {
+        "label": "E",
+        "text": "Surgery — fusion"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "MS spasticity: multidisciplinary. Address contributors FIRST (UTI, constipation, pain). Non-pharm + orthotics + cooling. Stepwise pharma — baclofen + tizanidine + adjuncts. BoNT focal. ITB refractory. Sleep + mood. Education.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "MS Society; CMSC"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 45 ปี TBI 1 yr — severe upper limb spasticity (MAS 4) — fixed contracture concern",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No intervention — accept contracture"
+      },
+      {
+        "label": "B",
+        "text": "Severe UE Spasticity + Contracture Prevention: (1) **Assessment**: pattern (e.g., flexor — pectoralis, biceps, FCR/U, FDS/FDP, intrinsics), Modified Ashworth Scale (MAS), Tardieu (R1 — fast catch angle vs R2 — slow ROM), functional impact, hygiene/skin, pain; (2) **Distinguish spasticity vs contracture**: - **Spasticity**: velocity-dependent (Tardieu); reversible w/ relaxation/anesthesia; - **Contracture**: fixed, no velocity, soft-tissue shortening; - **Combined often**; (3) **Comprehensive multimodal Tx**: - **PT/OT**: stretching + ROM (passive + active), splinting (custom resting hand splint at night + functional), positioning, sensory motor reeducation, task-specific; - **Splinting**: serial casting for established contracture; dynamic for ROM; - **Focal — BoNT-A**: targeted by pattern (e.g., flexor — biceps, BR, FCR/U, FDS, FDP, lumbricals, FPL, adductor pollicis); dosing weight-based + clinical; combined w/ post-injection serial casting/dynamic splinting + intensive PT (1-2 wk post peak effect window); - **Oral antispasticity** as adjunct; - **ITB** if generalized; (4) **Phenol/alcohol motor point or nerve block**: alternative/adjunct for selected — longer duration but technical + dysesthesia risk; obturator nerve, musculocutaneous, tibial; (5) **Surgical**: - Tendon lengthening, transfer, release; - Selective neurectomy (selected); - For established contracture + functional/hygiene goals; (6) **Goal-setting**: GAS, functional, hygiene, pain, cosmetic; (7) **Address contributors**: pain, sleep, fatigue, environment; (8) **Multidisciplinary**: physiatry + PT + OT + ortho + neurology + family + caregiver education for home; (9) **Outcomes**: Ashworth/Tardieu, ROM, function, hygiene, pain, GAS; **Modern**: US-guided + integrated multimodal + goal-directed"
+      },
+      {
+        "label": "C",
+        "text": "Restraint"
+      },
+      {
+        "label": "D",
+        "text": "Single discipline"
+      },
+      {
+        "label": "E",
+        "text": "Amputation"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Severe UE spasticity: pattern + MAS/Tardieu. Distinguish from contracture. Multimodal: PT/OT + splinting/casting + BoNT-A targeted + serial casting + oral antispastic + ITB selected. Phenol/alcohol option. Surgery established. Goal-directed.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AAPM&R Spasticity; AANEM"
+  },
+  {
+    "scenario": "ผู้ป่วย post-stroke focal lower-limb spasticity — equinus pattern — BoNT-A injection planning",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Inject without imaging guidance"
+      },
+      {
+        "label": "B",
+        "text": "Lower Limb BoNT-A — Equinus Pattern: (1) **Target identification**: - **Equinus (PF spasticity)**: gastrocnemius (medial + lateral heads), soleus; - **Equinovarus**: + tibialis posterior, tibialis anterior (sometimes spastic), flexor digitorum/hallucis longus; - **Striatal toe**: extensor hallucis longus; - **Stiff knee gait**: rectus femoris (selectively — confirm w/ gait analysis); - **Adducted thigh/scissoring**: hip adductors; (2) **Dosing** OnabotulinumtoxinA: gastrocnemius medial + lateral 100-200 U each, soleus 150-300 U, tibialis posterior 75-200 U, hip adductors 75-300 U; total max ~600 U single session (dilution-titrated); (3) **Localization (KEY accuracy)**: - **Ultrasound guidance** (preferred — anatomy + needle visualization); - **EMG guidance** (motor activity confirmation); - **Electrical stimulation** (motor response); - Surface anatomy alone — less accurate; (4) **Onset 3-7 d, peak 2-4 wk, duration 3-4 mo**; (5) **Adjunctive (KEY)**: - **Stretching + ROM** post-injection; - **Serial casting** for established contracture (within 2 wk peak); - **AFO + orthotics**; - **Intensive PT/OT** task-specific gait training; - **Strength + functional**; (6) **Goal-directed**: function (gait speed, 10MWT), pain, hygiene, comfort; PROs (GAS); (7) **Re-injection q3-4 mo** based on goals + response; antibody formation rare; (8) **Contraindications**: pregnancy, breastfeeding, NMJ disorders (myasthenia, LEMS, ALS — caution), allergy; (9) **Multidisciplinary**: physiatry + PT + orthotist + neurology selected; (10) **Outcomes**: MAS, Tardieu, gait, GAS, function; **Modern**: US-guided + goal-directed + integrated rehab"
+      },
+      {
+        "label": "C",
+        "text": "Maximum dose every muscle"
+      },
+      {
+        "label": "D",
+        "text": "No adjunctive therapy"
+      },
+      {
+        "label": "E",
+        "text": "Discharge"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "BoNT-A equinus: target gastroc + soleus ± TP for equinovarus. US-guided localization (preferred). Dosing weight + clinical. Onset/peak/duration. CRITICAL adjuncts: PT + stretching + serial casting + AFO. Goal-directed. Re-injection q3-4mo.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AAN BoNT; PROCEED"
+  },
+  {
+    "scenario": "Pathway involved in motor recovery post-stroke — neuroplasticity principle most important",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single repetition sufficient"
+      },
+      {
+        "label": "B",
+        "text": "Motor Recovery + Neuroplasticity Principles (Kleim & Jones): (1) **Use It or Lose It**: failure to use specific brain function → degradation; (2) **Use It and Improve It**: training engaging neural circuit → enhances function; (3) **Specificity**: nature of training experience dictates nature of plasticity; (4) **Repetition Matters**: hundreds-thousands of repetitions for true plasticity (motor learning); (5) **Intensity Matters**: sufficient intensity required; (6) **Time Matters**: different forms of plasticity occur at different times during training; early stroke ~3 mo window of heightened plasticity (animal models + RCTs); chronic stroke plasticity continues but slower; (7) **Salience Matters**: meaningful task engages plasticity better; (8) **Age Matters**: training-induced plasticity occurs more readily in younger brains but throughout lifespan; (9) **Transference**: plasticity in one brain pathway can enhance acquisition of similar behaviors; (10) **Interference**: plasticity in one brain pathway can interfere w/ another; (11) **Application**: task-specific repetitive training (CIMT, intensive aphasia therapy, mass practice, LSVT BIG/LOUD); avoid learned non-use; engage meaningful tasks; (12) **Biological mechanisms**: LTP/LTD, dendritic spines, axonal sprouting, neurogenesis (limited adult), cortical map reorganization, vicarious areas, contralesional/ipsilesional balance, BDNF, GABA modulation; (13) **Adjuncts to enhance plasticity**: tDCS, rTMS, BDNF-promoting (exercise, fluoxetine — emerging neg), BCI; **Modern**: precision rehab + biomarker-guided + technology-enabled neuroplasticity"
+      },
+      {
+        "label": "C",
+        "text": "Passive PROM only"
+      },
+      {
+        "label": "D",
+        "text": "Bedrest enhances plasticity"
+      },
+      {
+        "label": "E",
+        "text": "Plasticity ends day 1"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Kleim/Jones 10 principles neuroplasticity: use/improve, specificity, repetition, intensity, time (early window), salience, age, transference, interference. Application: task-specific + repetitive + intensive. Adjuncts emerging. Modern: precision.",
+    "difficulty": "hard",
+    "board_section": "basic_science",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "Kleim & Jones 2008"
+  },
+  {
+    "scenario": "หลักการ exercise physiology — VO2max determinants + training adaptation",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No training adaptation possible"
+      },
+      {
+        "label": "B",
+        "text": "VO2max + Training Adaptations: (1) **VO2max** = max O2 utilization = HRmax × SVmax × (a-vO2 difference)max; (2) **Determinants**: - **Central (cardiac)**: stroke volume + HRmax (genetic, declines w/ age) → cardiac output; - **Peripheral (skeletal muscle)**: a-vO2 difference — mitochondrial density + capillary density + myoglobin + oxidative enzymes; - **Pulmonary**: rarely limiting except disease (diffusion, ventilation); - **Hemoglobin/blood** (CaO2); (3) **Training adaptations**: - **Aerobic (endurance)**: increased SV (cardiac hypertrophy — eccentric), increased mitochondrial density + oxidative enzymes, increased capillarization, increased blood volume, increased VO2max 5-25% (genetic ceiling), shift fiber Type IIx → IIa, increased fatty acid oxidation, improved lactate threshold; - **Resistance**: increased muscle hypertrophy (cross-sectional area), neural adaptation (recruitment, rate coding), increased strength, modest VO2max change; - **HIIT**: combines — improves both VO2max + lactate threshold rapidly; (4) **Principles**: overload (FITT-VP), specificity (SAID — specific adaptation to imposed demand), progressive overload, reversibility (detraining 2-4 wk), individuality (responders/non-responders genetic), recovery (super-compensation); (5) **Rehab application**: progressive aerobic + resistance + functional in cardiac, pulm, neurologic, MSK rehab; HIIT adaptation patient-specific; CPET-guided prescription; (6) **Special populations**: elderly (preserved trainability!), denervated heart (RPE-based), pulmonary disease (intervals), HF (Karvonen modified); (7) **Limits**: pathology (pulm, cardiac, hematologic); environmental (heat, altitude); medications; **Modern**: precision exercise prescription + genetic/biomarker individualization"
+      },
+      {
+        "label": "C",
+        "text": "Single bout sufficient"
+      },
+      {
+        "label": "D",
+        "text": "Maximal intensity only"
+      },
+      {
+        "label": "E",
+        "text": "Static only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "VO2max: central (CO) + peripheral (a-vO2 diff). Adaptations aerobic (SV, mito, cap), resistance (hypertrophy + neural), HIIT both. Principles FITT-VP + SAID + reversibility. Rehab application across populations. Modern: precision.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "ACSM; Astrand"
+  },
+  {
+    "scenario": "Mechanism of action of botulinum toxin + clinical implications",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Postsynaptic receptor blocker"
+      },
+      {
+        "label": "B",
+        "text": "Botulinum Toxin Pharmacology: (1) **Source**: Clostridium botulinum exotoxin; serotypes A (most clinical), B, C, D, E, F, G; (2) **Mechanism**: cleaves SNARE proteins required for vesicular fusion at neuromuscular junction → blocks acetylcholine release pre-synaptically → chemical denervation: - **OnabotulinumtoxinA (Botox), AbobotulinumtoxinA (Dysport), IncobotulinumtoxinA (Xeomin), PrabotulinumtoxinA (Jeuveau), DaxibotulinumtoxinA (Daxxify)**: cleaves SNAP-25; - **RimabotulinumtoxinB (Myobloc)**: cleaves synaptobrevin; (3) **Onset**: 3-7 d; **Peak**: 2-4 wk; **Duration**: 3-4 mo typically (varies — longer in larger muscles, immobile patients); newer formulations (Daxxify) longer; (4) **Recovery**: axonal sprouting → new NMJs + functional recovery NMJ; (5) **Diffusion**: dependent on volume + concentration + injection technique; minimize to target; (6) **Dose units NOT interchangeable** between products (different bioassays); (7) **Antibody formation** (immunoresistance): low w/ modern formulations (lower protein); risk factors — frequent dosing, high cumulative dose, booster within 4 wk (avoid!), young; preferred minimum interval ≥ 12 wk; complement-mediated; clinical loss of efficacy → consider switching serotype; (8) **Clinical indications**: spasticity (cerebral palsy, post-stroke, SCI, MS), focal dystonia (cervical, blepharospasm, hemifacial, oromandibular, focal limb), HF (sialorrhea), hyperhidrosis (axillary, palmar, gustatory), chronic migraine, urinary (detrusor overactivity, DSD), achalasia, anal fissure, cosmetic; (9) **Side effects**: local — pain, bruising, infection, weakness adjacent (diffusion); systemic — rare (autonomic, generalized weakness — boxed warning higher dose); (10) **Contraindications**: NMJ disorders (myasthenia, LEMS, ALS — caution), pregnancy, breastfeeding, allergy; (11) **Localization**: US, EMG, e-stim, anatomy — accuracy critical; **Modern**: targeted + US-guided + integrated multidisciplinary"
+      },
+      {
+        "label": "C",
+        "text": "Permanent denervation"
+      },
+      {
+        "label": "D",
+        "text": "Onset immediate (minutes)"
+      },
+      {
+        "label": "E",
+        "text": "Antibodies never form"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "BoNT: cleaves SNARE (SNAP-25 type A; synaptobrevin type B) blocking ACh pre-synaptic. Onset 3-7 d, peak 2-4 wk, duration 3-4 mo. Recovery via axonal sprouting. Antibodies (frequent dosing → resistance). Many clinical applications.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "AAN BoNT; FDA labels"
+  },
+  {
+    "scenario": "Gait cycle phases + normal kinematics — fundamental rehabilitation knowledge",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Stance 30% only"
+      },
+      {
+        "label": "B",
+        "text": "Normal Gait Cycle: (1) **Cycle definition**: heel-strike same foot → next heel-strike same foot = 1 cycle; ~60% stance + 40% swing typical comfortable speed; (2) **Stance phases (R foot)**: - **Initial contact (IC, heel strike, 0%)**: hip flexed ~30°, knee ext ~5°, ankle neutral; - **Loading response (LR, 0-10%)**: weight acceptance, double-limb support; controlled knee flexion (15°) absorbing shock; tibialis anterior eccentric controls foot drop; quadriceps eccentric controls knee flexion; - **Mid-stance (MSt, 10-30%)**: single-limb support; body advances over fixed foot; - **Terminal stance (TSt, 30-50%)**: heel-off; - **Pre-swing (PSw, 50-60%)**: toe-off; (3) **Swing phases**: - **Initial swing (ISw, 60-73%)**: limb advancement; - **Mid-swing (MSw, 73-87%)**: clearance; - **Terminal swing (TSw, 87-100%)**: limb deceleration prep for IC; (4) **Spatiotemporal**: stride length (1.4 m avg), step length, cadence (~110 steps/min), gait velocity (1.2-1.4 m/s preferred); (5) **Determinants of energy efficiency** (Saunders): pelvic rotation, pelvic tilt, knee flexion stance, foot mechanism, knee mechanism, lateral pelvic displacement — minimize COM displacement; (6) **Clinical gait deviations**: - Hemiplegic: circumduction, vaulting, equinovarus, knee hyperextension, anterior pelvic tilt; - Trendelenburg: glute med weakness → drop of contralateral pelvis swing; - Antalgic: shortened stance affected; - Steppage: foot drop; - Crouch: increased knee flex stance (CP, post-polio); - Scissoring: hip adductor spasticity; - Parkinsonian: shuffling, festinating, reduced arm swing, freezing; - Ataxic: wide base, unsteady; (7) **Analysis tools**: observational, video, instrumented 3D gait lab (cameras + force plates + EMG), wearables; (8) **Energy expenditure**: ~0.8 cal/m walking; gait dysfunction → increased — quantify; (9) **Outcomes**: 10MWT, 6MWT, gait analysis variables; **Modern**: 3D analysis + AI-enabled + wearable"
+      },
+      {
+        "label": "C",
+        "text": "Swing eliminated"
+      },
+      {
+        "label": "D",
+        "text": "No phases — continuous"
+      },
+      {
+        "label": "E",
+        "text": "Same as run"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Gait cycle: ~60% stance + 40% swing. Stance: IC → LR → MSt → TSt → PSw. Swing: ISw → MSw → TSw. Determinants minimize COM. Clinical deviations characteristic. Analysis tools observational → 3D + wearables.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "Perry; Sutherland"
+  },
+  {
+    "scenario": "Wound healing physiology — phases + factors affecting rehab",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single phase"
+      },
+      {
+        "label": "B",
+        "text": "Wound Healing Physiology: (1) **Phases**: - **Hemostasis (immediate)**: platelets + clotting cascade + vasoconstriction; - **Inflammation (0-3 d)**: vasodilation, neutrophils → macrophages, cytokines; - **Proliferation (3-21 d)**: fibroblast proliferation + collagen III deposition + angiogenesis + epithelialization + granulation tissue; - **Remodeling (21 d - 1+ yr)**: collagen type III → I, cross-linking, strength gain (80% original by 1 yr — never 100%); (2) **Factors impairing healing**: - **Local**: infection, ischemia (PAD), pressure/shear, edema, foreign body, radiation, smoking (vasoconstriction), trauma; - **Systemic**: malnutrition (protein, zinc, vit C, A), DM, advanced age, immunosuppression, medications (steroids, chemo), comorbidities (CV, anemia), genetics; - **Specific deficiencies**: vit C (collagen cross-linking), zinc, protein, arginine; (3) **Optimization for healing**: - **Nutrition**: protein 1.25-1.5 g/kg, calories 30-35 kcal/kg, micronutrients, hydration; - **Glycemic control**; - **Smoking cessation**; - **Address vascular**; - **Pressure offloading**; (4) **Wound types + Tx**: clean acute (close), chronic (delayed — pressure, vascular, diabetic, venous — etiology-specific Tx + dressings); (5) **Advanced therapies**: - **NPWT** (negative pressure — VAC); - **Hyperbaric O2** (selected — DM foot, radiation, refractory chronic); - **Bioengineered skin equivalents** (Apligraf, Dermagraft); - **PRP, stem cells, growth factors** (selected); - **Surgical closure** primary/delayed; (6) **Rehab considerations**: - Mobility w/o disrupting wound; - Pressure relief + redistribution; - Splinting + positioning; - Scar management (silicone, pressure, laser, massage); - Range of motion + strengthening — progressive; - Functional return; (7) **Multidisciplinary**: WOCN + physiatry + PT + OT + nutrition + plastics + vascular + ID + endo; **Modern**: tissue engineering + biologics + integrated"
+      },
+      {
+        "label": "C",
+        "text": "Heals 100% original strength"
+      },
+      {
+        "label": "D",
+        "text": "Smoking accelerates"
+      },
+      {
+        "label": "E",
+        "text": "No nutrition impact"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Wound healing: hemostasis → inflammation → proliferation → remodeling (never 100%). Factors local + systemic. Optimization: nutrition + glycemic + smoking + vascular + pressure. Advanced therapies. Rehab considerations. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "trauma",
+    "board_age_group": "adult",
+    "reference_source": "Wound Healing Society"
+  },
+  {
+    "scenario": "Muscle physiology — fiber types + adaptations + atrophy",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single fiber type only"
+      },
+      {
+        "label": "B",
+        "text": "Skeletal Muscle Physiology + Atrophy: (1) **Fiber types**: - **Type I (slow oxidative, red)**: high oxidative + capillary + myoglobin + mitochondria, low force, fatigue-resistant, endurance; - **Type IIa (fast oxidative-glycolytic, mixed)**: intermediate; - **Type IIx/IIb (fast glycolytic, white)**: high force + speed, fatigues quickly, anaerobic; humans mostly IIa + IIx; (2) **Recruitment**: size principle (Henneman) — small (slow) → large (fast) motor units recruited w/ increasing demand; (3) **Training adaptations**: - Resistance → hypertrophy + neural (size principle, rate coding, syncronization) + strength + IIx → IIa shift; - Endurance → oxidative enzymes + mitochondria + capillary + myoglobin + IIx → IIa + Type I maintenance; - Disuse/aging → atrophy + sarcopenia + Type II preferential loss (mostly Type IIx); (4) **Atrophy mechanisms**: - **Ubiquitin-proteasome** + autophagy systems; - **Akt-mTOR** pathway downregulation; - **Myostatin** upregulation (negative regulator muscle mass); - **FoxO** transcription factors; - **Inflammation, cortisol, denervation, malnutrition**; (5) **Critical illness myopathy (CIM)** + **polyneuropathy (CIP)**: ICU-AW; mechanism muscle protein loss + axonal dysfunction; (6) **Steroid myopathy**: type II preferential atrophy; (7) **Sarcopenia**: age-related (1-2%/yr after 50); intervention — resistance + protein + vit D + address comorbidities; (8) **Cachexia**: complex disease syndrome (cancer, CHF, COPD, CKD, AIDS); inflammation-driven; multimodal; (9) **Disuse atrophy**: ~5%/wk bedrest; (10) **Rehab application**: - Progressive resistance training to counter atrophy; - Protein 1.0-1.5+ g/kg/d; - Address inflammation/comorbidities; - Electrical stimulation (FES — preserves) selected; - Vibration, blood flow restriction (BFR) emerging; **Modern**: targeted + protein nutrition + technology-enabled"
+      },
+      {
+        "label": "C",
+        "text": "No adaptation"
+      },
+      {
+        "label": "D",
+        "text": "Type II preferred endurance"
+      },
+      {
+        "label": "E",
+        "text": "Bedrest preserves muscle"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Muscle: Type I (slow oxidative) + IIa (mixed) + IIx (fast glycolytic). Size principle recruitment. Adaptations: resistance (hypertrophy + neural) + endurance (oxidative). Atrophy: ubiquitin + Akt-mTOR + myostatin. CIM/sarcopenia/cachexia. Rehab: resistance + protein.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "msk_nontrauma",
+    "board_age_group": "adult",
+    "reference_source": "ACSM; Sarcopenia"
+  },
+  {
+    "scenario": "Functional electrical stimulation (FES) — mechanism + clinical use",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Permanent denervation"
+      },
+      {
+        "label": "B",
+        "text": "Functional Electrical Stimulation (FES): (1) **Mechanism**: electrical current applied to peripheral nerve (lower motor neuron intact) → depolarization → action potential → muscle contraction; surface electrodes or implanted; (2) **Parameters**: - Pulse width (200-300 μs sensory; 300-600 μs motor); - Frequency (20-50 Hz for fused tetanic contraction); - Amplitude (mA — sensory threshold → motor threshold → tetanic); - Duty cycle (on:off ratio — 1:3 to 1:1); - Waveform (biphasic balanced for safety); (3) **Indications**: - **Foot drop** post-stroke/MS/SCI: Walkaide, Bioness L300, Odstock — heel-strike-triggered tibialis anterior contraction during swing; alternative/adjunct to AFO; - **Hemiparetic UE**: NMES for wrist/finger extension + grasp/release; - **Shoulder subluxation** post-stroke: NMES supraspinatus + deltoid (reduces subluxation + pain); - **Cycling** (FES cycling) — SCI maintains lower limb muscle + bone + CV; - **Walking**: FES-assisted walking (Parastep, etc.) + complex hybrid orthoses; - **Hand neuroprostheses**: Freehand, NeuroControl — selected high SCI; - **Bladder/bowel** + diaphragmatic pacing — implanted; - **Strengthening** + maintaining muscle (post-disuse, denervation prevention selected); - **Cardiac**: muscle pump; (4) **Mechanism therapeutic**: muscle contraction + maintaining muscle volume + bone density (limited) + circulation + neuroplasticity (sensory + motor cortical) + reduced spasticity (reciprocal inhibition); (5) **Contraindications**: pacemaker (caution — selected types), pregnancy (lumbar/pelvic), active malignancy area, infection, broken skin, denervated muscle (LMN damaged — direct muscle stim required, less efficient); (6) **Skin care + monitoring**: electrode hygiene, skin checks; (7) **Combination w/ active therapy**: enhances learning vs passive; (8) **Multidisciplinary**: physiatry + PT + OT + biomedical engineer; **Modern**: implanted + closed-loop + wireless + BCI-integrated emerging"
+      },
+      {
+        "label": "C",
+        "text": "No clinical use"
+      },
+      {
+        "label": "D",
+        "text": "Direct CNS only"
+      },
+      {
+        "label": "E",
+        "text": "Pharmaceutical"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "FES: electrical depolarization peripheral nerve → muscle contraction. Pulse width + freq + amplitude. Uses: foot drop, UE, shoulder subluxation, FES cycling SCI, hand neuroprostheses. Therapeutic + neuroplasticity. Active therapy combination. Modern: implanted + closed-loop.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "adult",
+    "reference_source": "IFESS; NMES Reviews"
+  },
+  {
+    "scenario": "Pharmacologic principles in neurorehabilitation — drugs affecting motor recovery",
+    "choices": [
+      {
+        "label": "A",
+        "text": "All drugs equal"
+      },
+      {
+        "label": "B",
+        "text": "Pharmacology Affecting Motor Recovery: (1) **Potentially beneficial (evidence + theory)**: - **Amphetamines** (dexamphetamine): early enthusiasm + small RCTs; meta-analyses mostly negative for routine stroke; selected adjunct w/ PT; - **Fluoxetine**: FLAME suggested benefit motor stroke; FOCUS/AFFINITY/EFFECTS large RCTs negative — NOT recommended routinely; useful for depression w/ adjunct rehab; - **Amantadine**: NEJM Giacino 2012 — improves recovery in DoC TBI 4-16 wk; arousal + cognition; - **Methylphenidate**: attention + processing speed in TBI; cognitive enhancement; - **Donepezil**: limited TBI + post-stroke cognitive; - **Modafinil**: fatigue (MS, TBI); - **Citicoline**: limited overall evidence; - **Erythropoietin, statins, magnesium, GMI**: neuroprotection — limited clinical evidence in stroke recovery; (2) **Potentially harmful (avoid when possible)**: - **Benzodiazepines**: impair learning + plasticity; sedation; - **Anticholinergics**: cognitive impairment; - **First-generation antipsychotics** (haloperidol): impair recovery (animal); - **Phenytoin, phenobarbital**: cognitive impairment; - **Alpha-2 agonists** (clonidine, prazosin selected); - **Dopamine antagonists**: impair recovery (animal data); (3) **Considerations**: drug-drug interactions, polypharmacy, geriatric (Beers/STOPP), comorbidities, off-label use; (4) **Adjuncts to rehab not replacement**: pharma combined w/ intensive task-specific therapy; (5) **Emerging**: BDNF-promoting (exercise itself), G-CSF, stem cells (research), gene therapy; (6) **Neuromodulation**: tDCS, rTMS, vagus nerve stim (VNS — paired w/ rehab — RCT positive post-stroke UE — FDA approved); (7) **Multidisciplinary medication review** + minimize \"non-recovery\" drugs; **Modern**: precision pharmacology + biomarker-guided + integrated"
+      },
+      {
+        "label": "C",
+        "text": "No drugs affect recovery"
+      },
+      {
+        "label": "D",
+        "text": "Benzodiazepines enhance plasticity"
+      },
+      {
+        "label": "E",
+        "text": "Single drug cure"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Neurorehab pharm: amantadine TBI DoC + methylphenidate attention helpful. Fluoxetine motor neg (FOCUS/AFFINITY). AVOID benzo + anticholinergic + dopamine antagonist (impair recovery). Adjunct not replacement. Neuromodulation (VNS) emerging.",
+    "difficulty": "hard",
+    "board_section": "basic_science",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "Giacino NEJM; FOCUS; AAN"
   }
 ]
