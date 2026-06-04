@@ -1,0 +1,172 @@
+[
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี ตรวจสุขภาพประจำปี — BP 145/92 average ของ 3 ครั้ง 4-6 สัปดาห์ห่างกัน + BMI 28 + เคยสูบบุหรี่ + ลดน้ำหนักแล้ว 5kg + cholesterol 218\n\nก่อนหน้านี้ no medications, no other comorbidity",
+    "choices": [
+      { "label": "A", "text": "Ignore" },
+      { "label": "B", "text": "Hypertension Management (AHA/ACC 2017 + ISH 2020): (1) **Diagnosis confirmed**: ≥ 140/90 average × 3 visits over 1-4 wk (Stage 2 by 2017 guidelines = ≥ 130/80, but treatment thresholds vary); (2) **Lifestyle modification first** (foundation, may delay or prevent medication): - DASH diet (whole grains, fruits/veg, low-fat dairy, lean protein, low Na 1.5-2.3 g/d); - Weight loss 5-10% body weight (~ 1 mmHg per kg); - Exercise 150 min/wk moderate; - Alcohol limit (< 2 drinks/d men, < 1 women); - Smoking cessation; - Stress management; (3) **Medication initiation** if BP ≥ 140/90 with ASCVD risk factors or after 3-6 mo lifestyle insufficient: - **First-line** (per JNC 8 + AHA): - **ACEi/ARB** (lisinopril, losartan) — younger, DM, CKD, HF; - **CCB** (amlodipine) — older, Black; - **Thiazide diuretic** (chlorthalidone preferred, HCTZ); - **Combination** preferred over high-dose single (lower side effects, better adherence); - Avoid ACEi + ARB combination (no benefit, more side effects); (4) **Target BP**: < 130/80 most adults; < 140/90 some elderly; individualized based on comorbidity, frailty, life expectancy; SPRINT trial — intensive 120 better in selected; (5) **Follow-up**: monthly initially, then q3-6 mo when controlled; home BP monitoring; (6) **Workup secondary causes** if young, severe, refractory, suspicious: renal artery stenosis, primary aldosteronism, pheochromocytoma, Cushing's, OSA; (7) **ASCVD risk assessment**: pooled cohort equations; if > 7.5% → statin discussion; (8) **Compliance + side effects**: address, simplify regimen, generic; (9) **Multidisciplinary**: PCP + cardiology + nephrology if complications; nutritionist; (10) **Patient education + self-management**" },
+      { "label": "C", "text": "Surgery" },
+      { "label": "D", "text": "Refuse care" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "HTN management: AHA/ACC 2017 + JNC 8 + ISH 2020. Lifestyle first. Medication based on comorbidity + age + race (ACEi/ARB, CCB, thiazide). Combination preferred. Target individualized < 130/80 (SPRINT) vs < 140/90. Secondary workup for suspicious. ASCVD risk assessment. Multidisciplinary primary care.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "AHA/ACC 2017; JNC 8; ISH 2020"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 50 ปี newly diagnosed T2DM (HbA1c 8.2%, FPG 168) — overweight BMI 31 + sedentary + family history\n\nNo other comorbidity yet",
+    "choices": [
+      { "label": "A", "text": "Insulin" },
+      { "label": "B", "text": "T2DM Initial Management (ADA Standards of Care 2024 + AACE): (1) **Comprehensive evaluation**: BP, lipid, BMI, foot exam, eye exam, dental, depression, kidney (UACR + eGFR), Hb1Ac, lipids, vaccinations; (2) **Lifestyle modification** (foundation): - Medical nutrition therapy with registered dietitian; - Weight loss 5-10% (significant glycemic + CV benefit); - Exercise 150 min/wk moderate + resistance training; - Sleep + stress; (3) **Pharmacotherapy individualized** (ADA 2024 patient-centered): - **Metformin** first-line if no contraindications (start 500 mg BID titrate to 2g/d); CI in eGFR < 30, severe heart failure, liver disease; - **In presence of ASCVD or high risk**: GLP-1 agonist (semaglutide, liraglutide) or SGLT2 inhibitor preferred (proven CV benefit + weight loss + renal protection); - **CKD with albuminuria**: SGLT2 inhibitor + finerenone; - **HF**: SGLT2 inhibitor; - **Weight management**: GLP-1 RA (semaglutide highest weight loss); - **Cost concerns**: sulfonylurea, basal insulin alternatives; - **Combination therapy** if HbA1c > 1.5% above target initially; (4) **Glycemic targets individualized**: HbA1c < 7% most; < 6.5% selected; < 8% elderly, comorbidity, hypoglycemia risk; (5) **CV risk reduction**: statin (ADA recommends > 40 yo with DM), BP control, antiplatelet if ASCVD; (6) **Screening for complications**: retinopathy (annual eye), nephropathy (UACR + eGFR annual), neuropathy (foot exam annual), CV; (7) **Vaccinations**: flu, pneumococcal, hepatitis B, COVID, shingles; (8) **Patient education + self-management**: glucose monitoring, hypoglycemia, sick day, foot care, nutrition; (9) **Multidisciplinary**: PCP + dietitian + diabetes educator + ophthalmology + dentistry + podiatry; (10) **Mental health**: depression screening — high prevalence" },
+      { "label": "C", "text": "Refuse" },
+      { "label": "D", "text": "Surgery first" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "T2DM management: lifestyle + metformin foundation. ADA 2024: GLP-1 RA or SGLT2 preferred for ASCVD/HF/CKD/obesity. Individualized targets. Comprehensive complication screening. Multidisciplinary care. Vaccinations. Modern: precision based on comorbidity + patient factors.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "ADA Standards of Care 2024; AACE Algorithm"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 45 ปี — annual exam + asymptomatic + family history MI age 50 (father) — lipid panel: TC 235, LDL 158, HDL 38, TG 220\n\nNo DM, BP 128/78, BMI 27, current smoker (1 pack/day × 20 yr)",
+    "choices": [
+      { "label": "A", "text": "Ignore" },
+      { "label": "B", "text": "Dyslipidemia + ASCVD Prevention (AHA/ACC 2018 Cholesterol + 2019 Primary Prevention): (1) **ASCVD risk assessment**: 10-year ASCVD risk via Pooled Cohort Equations — likely > 7.5% given smoking + LDL + family history; (2) **Risk-enhancing factors**: family history premature ASCVD (< 55 men, < 65 women), CKD, chronic inflammation (RA, HIV), metabolic syndrome, persistent ↑ LDL, persistent ↑ TG; this patient: family history + smoking + central obesity; (3) **CAC (Coronary Artery Calcium) score** can refine risk if uncertain (especially borderline 5-7.5%); (4) **Statin therapy** by 10-yr risk: - > 20% high risk → high-intensity statin (atorvastatin 40-80, rosuvastatin 20-40); - 7.5-20% intermediate → moderate-high intensity; - 5-7.5% borderline → consider risk enhancers; - 0-5% low → lifestyle; (5) **Other LDL-lowering options for high-risk if statin not tolerated/insufficient**: - **Ezetimibe** (IMPROVE-IT — additive benefit); - **PCSK9 inhibitors** (alirocumab, evolocumab — high-cost, very high risk); - **Bempedoic acid** alternative; - **Inclisiran** (siRNA — twice yearly injection); - **Niacin** rarely used now; (6) **Triglycerides**: > 500 = pancreatitis risk → fibrate (fenofibrate); > 150 + ASCVD risk → consider icosapent ethyl (Vascepa — REDUCE-IT trial); (7) **Lifestyle (foundation)**: Mediterranean diet, exercise 150 min/wk, weight, smoking cessation (critical!), limit alcohol; (8) **Smoking cessation** counseling + pharmacotherapy (varenicline, NRT, bupropion); (9) **BP control + DM screening + aspirin selectively**; (10) **Multidisciplinary**: PCP + dietitian + lipidology if refractory; (11) **Follow-up**: lipids 4-12 wk after starting + then annually" },
+      { "label": "C", "text": "Refuse" },
+      { "label": "D", "text": "Surgery" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "ASCVD prevention: 10-yr risk + risk enhancers + CAC + statin therapy. Modern: PCSK9, bempedoic, inclisiran for high-risk + statin-intolerant. Lifestyle foundation. Smoking cessation critical. Multidisciplinary care. Modern: precision risk-based.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "AHA/ACC Cholesterol 2018 + Primary Prevention 2019"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 50 ปี — preventive health visit + healthy + no comorbidity + sexual history (heterosexual, monogamous) + last cervical Pap 3 yr ago + last colonoscopy never\n\nFamily history: mother colon cancer at 62",
+    "choices": [
+      { "label": "A", "text": "No screening needed" },
+      { "label": "B", "text": "Cancer Screening Recommendations USPSTF + ACS: (1) **Colorectal**: start age 45 (updated from 50 due to rising young-onset CRC) — first-line colonoscopy q10 yr; alternatives FIT (fecal immunochemical test) annual, multitarget stool DNA (Cologuard) q3 yr, flex sigmoidoscopy q5 yr, CT colonography q5 yr; family history mother colon cancer: start earlier (10 yr before relative's diagnosis age or 40); (2) **Breast**: USPSTF 2024 — start age 40, q2 yr biennial; ACS — start 45 (40-44 individual choice) annual then biennial 55+; women 75+ shared decision-making; (3) **Cervical**: ages 21-29 — cytology q3 yr; ages 30-65 — cytology q3 yr OR HPV testing q5 yr OR co-testing q5 yr; > 65 stop if normal screening prior; women with hysterectomy + cervix removed for benign reasons no screening; (4) **Lung cancer**: age 50-80 + > 20 pack-year + current/quit < 15 yr → annual LDCT (USPSTF 2021 expanded); (5) **Prostate (men)**: 55-69 shared decision-making PSA discussion; > 70 generally not recommended (USPSTF); ACR + AUA + others differ; high-risk earlier (Black, family history, BRCA); (6) **Skin**: USPSTF — insufficient evidence; suggest physical exam ± self-exam high-risk; (7) **Bone density (women)**: age 65 (younger if risk factors); FRAX; (8) **AAA (men)**: 65-75 + ever-smoked → one-time abdominal US (USPSTF); (9) **Hepatitis C**: universal one-time screening 18-79 (USPSTF 2020); (10) **HIV**: 13-75 routine screening; (11) **STIs**: targeted by age + risk; (12) **Diabetes**: 35-70 + overweight (USPSTF); (13) **Cardiovascular**: BP + lipid + ASCVD risk; (14) **Vaccinations**: per CDC adult schedule" },
+      { "label": "C", "text": "Surgery" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Adult cancer screening: USPSTF + ACS guidelines. CRC start 45. Breast 40-75 individualized. Cervical 21-65 with intervals. Lung LDCT high-risk. Prostate shared decision. Other (AAA, Hep C, HIV, DM). Vaccinations. Modern: evidence-based individualized + shared decision-making.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "USPSTF Recommendations; ACS Cancer Screening"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 50 ปี smoker × 30 years (1 pack/day) — readiness for change discussion + interested in quitting",
+    "choices": [
+      { "label": "A", "text": "Just stop" },
+      { "label": "B", "text": "Smoking Cessation Multimodal (USPSTF + AAFP + CDC): (1) **Assess readiness + barriers**: 5As — Ask + Advise + Assess + Assist + Arrange; transtheoretical model (precontemplation → contemplation → preparation → action → maintenance); (2) **Brief counseling at every visit** (effective even brief — opportunistic); evidence — minutes-based dose-response; (3) **Pharmacotherapy (combination most effective)**: - **Nicotine Replacement Therapy (NRT)**: patches (long-acting), gum/lozenge/inhaler/spray (short-acting); combination patch + short-acting for cravings; - **Varenicline** (Chantix) — most effective single agent (partial nicotinic agonist); CV safe (post-EAGLES trial); not associated with serious psychiatric (per recent evidence); now first-line; - **Bupropion** (Wellbutrin/Zyban — dual purpose if depression); contraindications: seizure disorder, eating disorder; - **Combination NRT + varenicline** even more effective; (4) **Behavioral support**: individual + group counseling, telephone (quitline 1-800-QUIT-NOW), text-based programs, mobile apps, online (smokefree.gov), peer support; combination behavioral + pharmacotherapy = best; (5) **Address triggers**: stress, social, mental health, alcohol; (6) **Mental health screening**: depression high comorbidity; (7) **Relapse common** — multiple attempts typical; don't discourage; (8) **Healthcare integration**: tobacco use as vital sign, EMR prompts, billing codes; (9) **Public health context**: tobacco kills 8 million annually globally — leading preventable cause of death; tobacco control policy, taxation, smoke-free legislation; (10) **E-cigarettes (vaping)**: less proven cessation; concerns — addiction (especially youth), EVALI (lung injury), unknown long-term; not currently FDA approved cessation aid in US (UK takes different view); (11) **Long-term**: even after years of cessation, CV + cancer risk benefits accumulate; (12) **Multidisciplinary**: PCP + pharmacist + behavioral health + tobacco treatment specialists" },
+      { "label": "C", "text": "Surgery" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Smoking cessation: 5As + multimodal combination (pharmacotherapy + behavioral). Varenicline + NRT + bupropion options. Combination most effective. Address triggers + mental health. Modern: integrated + technology-supported + public health approach. Most preventable cause of death.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "USPSTF Tobacco; AAFP; CDC"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 35 ปี G2P1 GA 28 wk — annual preventive visit + planning birth + family planning + general health\n\nNo medical comorbidity",
+    "choices": [
+      { "label": "A", "text": "Ignore" },
+      { "label": "B", "text": "Comprehensive Antenatal + Reproductive Health (ACOG + CDC): (1) **Antenatal screening + counseling**: routine labs (Hb, blood type/screen, urine, HIV, syphilis, hepatitis B, GBS at 35-37 wk, GDM 24-28 wk); genetic screening per maternal age + family history; vaccinations (Tdap 27-36 wk, flu, COVID, RSV); (2) **Preeclampsia surveillance**: BP monitoring, urine protein, symptoms; (3) **Fetal surveillance**: NST in selected high-risk, kick counts, growth; (4) **Anticipatory guidance**: nutrition (folate, iron, DHA), exercise, mental health (postpartum depression screening pre + post), breastfeeding planning, birth plan, infant care, car seat safety; (5) **Postpartum planning**: family planning (LARC options — IUD post-placental or 4-6 wk; sterilization considerations; OCP; injection — start 6 wk postpartum if breastfeeding), postpartum visit 6 wk; (6) **Breastfeeding**: education, support, lactation; (7) **Family planning + contraception** (postpartum + spacing): - LARC top tier; - Breastfeeding compatible options; - WHO MEC for chronic conditions; - LAM (lactational amenorrhea) limited; - Future fertility planning; (8) **Domestic violence + IPV screening**: pregnancy + postpartum risk window; (9) **Mental health screening + treatment** if needed: continue medications (sertraline safe lactation), CBT, support; (10) **Substance use screening**: tobacco, alcohol, illicit; (11) **Vaccinations + travel + occupational** considerations; (12) **Partner involvement** + family-centered care; (13) **Multidisciplinary**: family medicine + OB + pediatrics + lactation + mental health + social work" },
+      { "label": "C", "text": "Surgery" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Antenatal + reproductive health: comprehensive multidisciplinary. Screening + vaccinations + counseling + planning + monitoring. Postpartum family planning. Mental health critical. IPV screening. Family medicine well-positioned for life-course care.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG; AAFP; CDC"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 6 ปี well-child visit — vaccinations + growth + development",
+    "choices": [
+      { "label": "A", "text": "No exam" },
+      { "label": "B", "text": "Pediatric Well-Child Care (AAP Bright Futures): (1) **Periodic visits** at recommended intervals (Bright Futures): more frequent infancy, less frequent older child + adolescent; (2) **Vaccinations per CDC schedule**: routine + catch-up if behind; school requirements; (3) **Growth monitoring**: height, weight, BMI plotted, HC younger; identify FTT or excess weight gain; (4) **Developmental surveillance + screening**: milestones (motor, language, social, cognitive), screening tools (ASQ, M-CHAT-R/F for autism 18 + 24 mo, PEDS); (5) **Vision + hearing screening**: per age; (6) **Anticipatory guidance**: nutrition, sleep, screen time (AAP guidelines), exercise, safety (car seats, helmets, drowning, firearms), discipline, mental health, school, family relationships, sexuality (older); (7) **Mental health screening**: behavior, mood, anxiety, ADHD (older); depression in adolescents (PHQ-A); suicide screening (Columbia); (8) **Substance use screening adolescents**: CRAFFT or similar; (9) **Sexual health adolescents**: STI screening, contraception counseling, HPV vaccination; (10) **Oral health**: dental visits, fluoride; (11) **Lead screening**: by area + risk; (12) **Anemia screening**: 9-12 mo; (13) **Lipid screening**: 9-11 + 17-21 yo; (14) **TB screening**: risk-based; (15) **HIV screening**: 13+ yo; (16) **Adolescent confidentiality**: HIPAA considerations for sensitive topics; (17) **Family-centered care + parental support + education**; (18) **Multidisciplinary**: family medicine + pediatric specialists when indicated + school + community" },
+      { "label": "C", "text": "Surgery" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Adult medicine only" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pediatric well-child care: AAP Bright Futures framework. Vaccinations + growth + development + screenings + anticipatory guidance. Adolescent considerations: mental health, sexual health, substance use, confidentiality. Family-centered + multidisciplinary care.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "peds",
+    "reference_source": "AAP Bright Futures Guidelines; CDC"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 28 ปี — chief complaint of fatigue + insomnia × 3 mo + thoughts of hopelessness + concerns from partner about mood changes\n\nPHQ-9 18 (severe), GAD-7 14 (moderate)\nNo suicidality currently, no plan\nNo prior psychiatric history, no substance use, normal medical workup",
+    "choices": [
+      { "label": "A", "text": "Ignore" },
+      { "label": "B", "text": "MDD + Anxiety in Primary Care — Comprehensive Approach (USPSTF + APA + AAFP): (1) **Universal screening adults**: PHQ-9, GAD-7 routine; positive → assessment; (2) **Diagnostic confirmation**: DSM-5 criteria, rule out substance + medical (TSH, B12); (3) **Safety assessment**: suicide screening (C-SSRS) every visit; safety planning if SI; (4) **Treatment plan stepwise**: - Mild — psychotherapy + lifestyle; - Moderate — psychotherapy + medication; - Severe — combination, possibly specialty referral; (5) **Pharmacotherapy first-line**: SSRI (sertraline, escitalopram first-line in primary care; pregnancy-safe sertraline) — start low + titrate; expect 4-6 wk for full effect; continue 6-12 mo after remission then careful taper; (6) **Psychotherapy**: CBT (most evidence in primary care), IPT, behavioral activation; in-person, online, telehealth; (7) **Collaborative Care Model** (Unützer IMPACT): care manager (nurse, social worker, psychologist) + psychiatric consultant + measurement-based care + stepped care — 2× better outcomes vs usual care; (8) **Lifestyle + adjuncts**: exercise (effective antidepressant), sleep hygiene + insomnia management, nutrition, social engagement, mindfulness, limit alcohol; (9) **Comorbidity addressed**: anxiety (often co-occurs — SSRI treats both); substance use; chronic pain; medical illness; (10) **Family + partner support**: education + involvement; (11) **Specialty referral** if: complex, severe, suicidal, treatment-resistant, bipolar, psychotic; (12) **Follow-up close**: 2-4 wk initial, then monthly; PHQ-9 + GAD-7 routinely (measurement-based); (13) **Outcomes**: 50-70% respond to first-line — track + adjust; (14) **Modern**: primary care central to mental health access" },
+      { "label": "C", "text": "Surgery" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Single visit" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Primary care depression + anxiety: universal screening + stepwise treatment + Collaborative Care Model. SSRI first-line. CBT + lifestyle + safety. Specialty referral selective. Measurement-based (PHQ-9, GAD-7). Modern: primary care central to mental health.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "USPSTF Depression Screening; Collaborative Care Model (Unützer)"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 60 ปี — annual visit + adult vaccination questions + concerns about COVID + flu",
+    "choices": [
+      { "label": "A", "text": "Refuse vaccines" },
+      { "label": "B", "text": "Adult Vaccination Schedule (CDC Recommended Adult Schedule): (1) **Routine vaccinations all adults**: - **Influenza** annually (all ≥ 6 mo); - **Tdap** once + Td/Tdap every 10 yr; Tdap during each pregnancy; - **COVID-19** per current CDC recommendations (boosters); (2) **Age-based**: - **Pneumococcal**: PCV20 once if ≥ 65 yo or high-risk; alternative PCV15 + PPSV23; - **Shingles (Zoster)**: Shingrix (recombinant) ≥ 50 yo (2-dose series 2-6 mo apart); preferred over Zostavax; even if prior shingles or Zostavax; - **RSV**: 60+ yo shared decision (newer recommendation); pregnant 32-36 wk gestation; (3) **High-risk indications**: - **Hepatitis B**: chronic disease, healthcare workers, sexual exposure, IV drugs, diabetes; - **Hepatitis A**: travel, MSM, IVDU, chronic liver disease; - **Meningococcal**: college freshmen, military, asplenia, complement deficiency, travel; - **HPV**: all 11-12 yo (catch-up to 26 + shared decision 27-45); cervical cancer + other prevention; - **Pneumococcal high-risk earlier**: CKD, asplenia, HIV, chronic disease; - **Travel vaccines**: yellow fever, typhoid, etc.; (4) **Special populations**: pregnant (Tdap, flu, COVID, RSV — avoid live), immunocompromised (avoid live), HIV; (5) **Address vaccine hesitancy**: educate, address concerns, motivational interviewing, share evidence-based information; (6) **Documentation + state immunization registries**; (7) **Coverage gaps + catch-up**; (8) **Multidisciplinary**: PCP + pharmacy + public health" },
+      { "label": "C", "text": "Surgery" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Adult vaccinations: routine (flu, Tdap, COVID), age-based (pneumo, shingles, RSV), high-risk (HBV, HAV, meningococcal, HPV), travel. Address hesitancy. Documentation. Multidisciplinary. Modern: expanded RSV + COVID + life-course approach.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "CDC Adult Immunization Schedule"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 78 ปี multimorbid (HF + DM + CKD + frailty + early dementia) — comprehensive geriatric care + life-course",
+    "choices": [
+      { "label": "A", "text": "Single specialty" },
+      { "label": "B", "text": "Geriatric Comprehensive Care (AGS + ACOVE + Choosing Wisely): (1) **Comprehensive Geriatric Assessment (CGA)**: medical + functional (ADL, IADL) + cognitive (Mini-Cog, MoCA) + nutritional + psychosocial + medication + advance care planning; (2) **5Ms framework** (Mind, Mobility, Medications, Multicomplexity, Matters most): - Mind: cognition, mood, dementia management; - Mobility: gait, falls (CDC STEADI fall prevention bundle), exercise; - Medications: Beers Criteria + STOPP/START deprescribing + medication reconciliation; - Multicomplexity: multimorbidity care planning, coordination, shared decision-making; - Matters most: patient values, goals, advance directives, healthcare proxy; (3) **Disease management individualized**: less aggressive targets when life expectancy limited (e.g., HbA1c < 8%, BP < 140/90); avoid undertreatment too; (4) **Fall prevention**: assessment, environment, exercise, medication review, vision/hearing; (5) **Polypharmacy management**: Beers Criteria, STOPP/START, prioritize, deprescribe inappropriate; (6) **Frailty assessment + interventions**: nutrition + exercise + comprehensive care; (7) **Cognitive impairment management**: comprehensive dementia care (medications + behavioral + caregiver support + safety); (8) **Mental health**: depression screening, suicide assessment; (9) **Vaccinations** + cancer screening individualized (stop when life expectancy < 5-10 yr); (10) **Advance care planning**: POA, advance directive, goals of care, hospice eligibility discussion; (11) **Family + caregiver support**: education, support groups, respite, burnout prevention; (12) **Multidisciplinary**: PCP + geriatrician + specialists + PT/OT + nurses + social work + pharmacy + community; (13) **Care coordination**: medical home model; (14) **Modern**: value-based, patient-centered, integrated, family + caregiver involved" },
+      { "label": "C", "text": "Surgery" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Hospice only" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Geriatric comprehensive care: CGA + 5Ms framework. Individualized disease management. Falls, polypharmacy, frailty, cognition. Advance care planning. Family + caregiver. Multidisciplinary care coordination. Modern: value-based + patient-centered.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "adult",
+    "reference_source": "AGS Geriatrics; ACOVE; Choosing Wisely"
+  }
+]
