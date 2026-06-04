@@ -5854,5 +5854,549 @@
     "board_topic": "psych_behavior",
     "board_age_group": "adult",
     "reference_source": "HICS Hospital Incident Command System; Joint Commission Emergency Management Standards; AHRQ Hospital Surge Toolkit; WHO Disaster Preparedness"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี HIV+ × 12 ปี on ART (B/F/TAF — bictegravir/FTC/TAF), VL undetectable, CD4 480, มาด้วยปวดหลังเรื้อรัง + ผอม + คลื่นไส้ + LFT ↑ ALT 240, AST 180, ALP 380. ก่อนหน้านี้ healthy renal eGFR 75. กิน atorvastatin 40 mg + amlodipine 5 mg + sertraline 50 mg + แก้ปวด ibuprofen 400 mg + กิน traditional Chinese herbal เพื่อ \"detox\" 3 wk ก่อน + recently diagnosed HBsAg positive + anti-HBc IgM positive (new HBV co-infection)\n\nLab: ALT 240, ALP 380, Bili 1.8, INR 1.0, Cr 1.6 (rise from 1.1), Hb 11.6, A1c 6.0\nUS abdomen: heterogeneous hepatic with no mass\nFibroscan 11 kPa (F3)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue all medications + observation"
+      },
+      {
+        "label": "B",
+        "text": "Complex multi-pathology: new HBV co-infection in HIV + likely DILI from herbal + statin interaction + AKI: (1) **Differential**: acute HBV reactivation vs new infection vs DILI from herbal vs ART-related hepatotoxicity vs statin-drug interaction (TAF + ritonavir-free regimen — bictegravir non-CYP3A); cessation of herbal supplement first (most likely DILI; RUCAM scoring); (2) **HBV management**: HBeAg + HBV DNA + HBeAb + HDV check; current ART (TAF + FTC) already covers HBV (dual indication — TAF is anti-HBV); do NOT stop TAF/FTC (HBV flare on discontinuation); add entecavir or TDF if more potent needed; HCC surveillance q6mo (cirrhosis + HBV); (3) **AKI workup**: prerenal vs intrinsic (TAF tubular toxicity rare); NSAID (ibuprofen) discontinuation; volume status assessment; UA + renal sonogram + electrolyte; (4) **Statin + ART interaction**: bictegravir not significant CYP3A4 inhibitor; atorvastatin OK; if PI-based (which not here), would limit/dose-adjust statin; (5) **Stop herbal supplement** (likely contributing to LFT abnormality); stop NSAID + monitor renal recovery; (6) **Multidisciplinary**: ID/HIV + hepatology + nephrology + pharmacist; (7) **Patient education**: drug interactions, herbal supplement risk, importance of disclosing all medications; (8) **F3 fibrosis** progression — monitor; address other contributing factors (alcohol, lipid, metabolic); (9) **HCV co-screen**; opportunistic infection check; vaccinations"
+      },
+      {
+        "label": "C",
+        "text": "Stop all medications including ART"
+      },
+      {
+        "label": "D",
+        "text": "Liver transplant immediately"
+      },
+      {
+        "label": "E",
+        "text": "Increase ART dose"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Complex HIV + new HBV co-infection + DILI + AKI + drug interactions — integrative. HIV-HBV co-infection: TAF + FTC dual-active; never discontinue (HBV flare). Add entecavir if HBV breakthrough. Herbal supplement common DILI in Asian patients. NSAID + AKI in HIV. ART drug interactions: PI + cobicistat are CYP3A inhibitors → multiple drug interactions including statin (avoid simvastatin + lovastatin); bictegravir + dolutegravir minimal CYP3A; rifampin reduces multiple. Multidisciplinary care: ID/HIV + hepatology + nephro + pharmacist. HCC surveillance in HIV-HBV co-infection. Patient education on herbal + supplement risks. Comprehensive multimorbidity management.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "AASLD/IDSA HCV HIV Coinfection 2023; DHHS HIV; Adult HIV Co-Infection HBV Guideline"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 60 ปี post heart transplant 5 yr ago on tacrolimus + MMF + low-dose prednisolone มาด้วย acute kidney injury (Cr ↑ from 1.6 → 3.2) + ขาบวม + edema + BP 168/102 + new proteinuria 2.4 g/24h\n\nLab: Cr 3.2, K 5.8, BUN 64, Albumin 3.4, A1c 7.8% (steroid + tacrolimus DM), glucose 192, lipid TC 280 LDL 168, urine protein 2.4 g, no RBC casts, urinalysis bland, tacrolimus trough 18 (high; target 8-10)\nEcho LVEF 55% (preserved post-transplant)\nDoppler renal: no stenosis\nKidney biopsy: tacrolimus-induced nephrotoxicity (chronic allograft + arteriolar hyalinosis + tubular vacuolization)\nNo BK virus, no CMV, no rejection",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Stop tacrolimus completely"
+      },
+      {
+        "label": "B",
+        "text": "Post-heart-transplant comprehensive management: calcineurin inhibitor nephrotoxicity + secondary hypertension + post-transplant DM + dyslipidemia + need to balance immunosuppression with adverse effects: (1) **Tacrolimus level reduction**: target trough 5-8 (chronic stable transplant); use lower-dose calcineurin + spare with MMF or sirolimus/everolimus (mTOR inhibitor — KIM/Belatacept conversion may help renal but risk of acute rejection — multidisciplinary transplant team decision); (2) **BP control**: target < 130/80; ACEi/ARB (despite K rise — careful titration, lower K with binders if needed; renoprotective); calcium channel blocker (amlodipine — but interacts with tacrolimus, ↑ level); MRA; SGLT2i (DAPA-CKD evidence in CKD non-transplant; emerging in transplant); avoid NSAID; (3) **Glycemic control**: post-transplant DM (PTDM) common (tacro + steroid); insulin or oral (metformin if eGFR appropriate; SGLT2i, GLP-1 RA emerging); minimize steroid; (4) **Lipid**: statin (atorvastatin — interaction with cyclosporine; less with tacro; check level); pravastatin alternative; (5) **Renal monitoring + biopsy** as guided; (6) **Vaccinations** (avoid live; inactivated, recombinant zoster); (7) **Cancer surveillance** — solid + skin + lymphoproliferative (PTLD — EBV-driven); reduce immunosuppression if PTLD; rituximab; (8) **Infection prophylaxis**: TMP-SMX (PCP), CMV monitoring + valganciclovir, fungal in selected; (9) **Bone**: DXA, Ca, Vit D, bisphosphonate; (10) **Mental health + adherence**: depression + cognitive; transition of care; (11) **Multidisciplinary**: transplant cardiologist + nephrologist + ID + endocrinology + pharmacist + nutrition + mental health + social work; (12) Adverse + interactions tracking pharmacist-led; renal protection priority"
+      },
+      {
+        "label": "C",
+        "text": "Increase tacrolimus dose"
+      },
+      {
+        "label": "D",
+        "text": "Stop ACEi long-term"
+      },
+      {
+        "label": "E",
+        "text": "Restart MMF only"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Long-term post-transplant management — multi-organ + multi-comorbid integrative challenge. Calcineurin inhibitor (CNI — tacrolimus, cyclosporine) nephrotoxicity major contributor to CKD post-transplant. Strategy: CNI minimization + sparing (MMF, mTOR inhibitor sirolimus/everolimus, belatacept conversion). BP target < 130/80. ACEi/ARB despite K (renoprotection + proteinuria; use K binders if needed). SGLT2i emerging in CKD + post-transplant. PTDM: insulin, metformin, SGLT2i, GLP-1 RA; minimize steroid. Lipid management with statin (interaction with CNI; pravastatin safer). Vaccination (avoid live). Cancer surveillance — solid + skin + PTLD (EBV). Infection prophylaxis (PCP, CMV). Bone (DXA + bisphosphonate + Ca + Vit D). Mental health + adherence. Multidisciplinary transplant team. Quality of life + long-term function priority.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "cardiovascular",
+    "board_age_group": "elderly",
+    "reference_source": "ISHLT Heart Transplant Recipient Guideline 2010 + updates; KDIGO Care of KT Recipient; AHA Heart Transplant Guideline"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 32 ปี ตั้งครรภ์ GA 22 weeks + underlying SLE on hydroxychloroquine + mycophenolate (continued in early pregnancy mistake) + recently DVT + on enoxaparin. Anti-Ro/La positive. Past Hx 2 prior pregnancy losses (1st trimester each)\n\nLab: ANA 1:640, anti-dsDNA 280 (high), C3/C4 low, anti-Ro positive, anti-La positive, antiphospholipid (lupus anticoagulant) positive, anti-β2-GP1 IgG positive\nProteinuria 1.4 g/24h (new)\nFetal echo at 22 wk: normal sinus rhythm\nNo prior HF, BP 142/86, mild edema",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue mycophenolate during pregnancy"
+      },
+      {
+        "label": "B",
+        "text": "Complex high-risk pregnancy: SLE + APS + lupus nephritis flare + anti-Ro/La + prior pregnancy losses + DVT: (1) **STOP mycophenolate immediately** — teratogen (cleft lip/palate, ear anomalies, miscarriage); switch to azathioprine 2 mg/kg (compatible) + tacrolimus alternative; continue hydroxychloroquine (HCQ ESSENTIAL — reduces flare, congenital heart block risk, improves outcomes); add low-dose prednisolone if active; (2) **Lupus nephritis active**: nephritic features + proteinuria; renal biopsy if safe (often deferred 3rd trimester); MMF replaced with AZA; cyclophosphamide CONTRAINDICATED; treat with steroid + AZA + HCQ; voclosporin not for pregnancy; (3) **Anticoagulation for DVT + APS** (triple-positive): LMWH (enoxaparin) therapeutic during pregnancy; transition to warfarin postpartum (compatible with breastfeeding); not DOAC (limited data + per TRAPS warfarin preferred in APS); (4) **Anti-Ro/La**: monitor fetal heart for congenital heart block (CHB 1-2% risk; up to 20% with prior affected child); fetal echo q2 wk from 16-26 wk; HCQ may reduce CHB risk; if CHB detected — controversial fluorinated steroid (dexamethasone or beta) to reverse; observation otherwise; (5) **Antiphospholipid**: aspirin 81 mg + therapeutic LMWH (high-risk APS with thrombosis); reduce pregnancy loss; (6) **BP target** < 140/90 in pregnancy; labetalol, methyldopa, nifedipine extended-release (avoid ACEi/ARB — fetal renal/oligohydramnios; avoid MRA; SGLT2i not in pregnancy); (7) **Preeclampsia surveillance**: high-risk (SLE, APS, renal disease); aspirin pre-12 wk to reduce; serial BP, proteinuria, fetal monitoring; (8) **Multidisciplinary**: high-risk OB + rheumatology + nephrology + cardiology (if cardiac involvement) + neonatology + anesthesia (delivery planning); (9) **Pneumococcal + flu + COVID vaccination**; avoid live; (10) **Counsel** re continued breastfeeding (most medications compatible); long-term contraception; future pregnancy planning when stable"
+      },
+      {
+        "label": "C",
+        "text": "Stop hydroxychloroquine"
+      },
+      {
+        "label": "D",
+        "text": "DOAC for VTE"
+      },
+      {
+        "label": "E",
+        "text": "ACE inhibitor for BP"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "High-risk pregnancy with autoimmune + thrombophilic + cardio-renal multi-system disease — complex integrative. SLE + APS + Ro/La + DVT + lupus nephritis flare. ACOG + EULAR + ACR Pregnancy in CTD guideline: STOP mycophenolate, cyclophosphamide, MTX, leflunomide (teratogen) before/during pregnancy. CONTINUE hydroxychloroquine (improves outcomes, reduces flare + CHB); azathioprine + tacrolimus + low-dose pred compatible. APS treatment in pregnancy: aspirin + LMWH; reduces pregnancy loss; postpartum transition to warfarin; DOAC inferior in APS (TRAPS). Anti-Ro/La: CHB monitoring q2wk fetal echo 16-26 wk; HCQ may protect; fluorinated steroid for emerging CHB — controversial. ACEi/ARB/MRA/SGLT2i/DOAC/MMF/MTX/CYC contraindicated. Multidisciplinary team essential. Preeclampsia surveillance + aspirin prophylaxis. Vaccinations. Breastfeeding planning. Future pregnancy planning when disease quiescent ≥ 6 mo.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "rheumatology",
+    "board_age_group": "adult",
+    "reference_source": "EULAR Recommendations for Women's Health in CTD 2017; ACR Reproductive Health in Rheumatic Disease 2020; ACOG"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 58 ปี end-stage CKD (eGFR 8) ตัดสินใจกำลังเลือก renal replacement therapy modality. Underlying T2DM, HT, dyslipidemia, mild HF, peripheral vascular disease, depression\n\nDiscussion needed: hemodialysis vs peritoneal dialysis vs preemptive transplant vs conservative care + factors to consider",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Always hemodialysis"
+      },
+      {
+        "label": "B",
+        "text": "**Shared decision-making for ESRD modality** based on medical + lifestyle + social + values (KDIGO 2024 + RPA + KDOQI): (1) **Patient education program** (PEAK + others): structured + multidisciplinary; balanced presentation of options; (2) **Modalities**: - **Hemodialysis (HD)**: in-center (3×/wk × 4 hr) — most common; home HD (more frequent, daily, nocturnal — better outcomes selected). - **Peritoneal dialysis (PD)**: CAPD (4 exchanges/d), APD (cycler nighttime); home-based; flexibility + travel; less hemodynamic stress; peritonitis risk; transition to HD common after years (membrane failure). - **Kidney transplant**: preemptive (before dialysis) BEST outcomes; living donor > deceased; combined kidney-pancreas in T1DM. - **Conservative (non-dialysis) care**: comprehensive symptom + supportive + palliative; appropriate in frail elderly + multiple comorbid + poor prognosis + patient preference; not synonymous with stopping care. (3) **Factors influencing choice**: - **Medical**: HF severity (HD challenging fluid shift; PD may be better), PVD + vascular access difficulty, abdominal surgery hx (PD challenge), residual renal function (PD preserves longer), comorbid, frailty. - **Lifestyle + social**: home situation, support, employment, school, travel desires, self-care capability, family. - **Resource**: cost, geography, transport, dialysis access. - **Cultural + values**: religious, family decisions. (4) **Vascular access for HD**: AVF preferred (lower infection, longer patency, better outcomes vs AVG + CVC); creation 3-6 mo before anticipated start. AVG alternative. Central venous catheter — last resort + high infection + mortality. (5) **PD access**: laparoscopic catheter ≥ 2 wk before use ideally; embedded approach. (6) **Transplant evaluation early** — at eGFR < 20-30; preemptive transplant best outcomes; living donor preferred; cross-match + tissue type + immunological evaluation. (7) **Comprehensive comorbid management**: glycemic, BP, lipid, anemia (EPO + iron), bone-mineral (covered), CV prevention. (8) **Multidisciplinary nephrology + transplant + social work + dietitian + counselor**. (9) **Frailty + cognitive assessment** + advance care planning. (10) **Outcomes data + benchmarks** + transparent counseling + values-aligned"
+      },
+      {
+        "label": "C",
+        "text": "Defer all decisions"
+      },
+      {
+        "label": "D",
+        "text": "Single modality decision"
+      },
+      {
+        "label": "E",
+        "text": "Long-term tunneled central line"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "ESRD modality choice — shared decision-making + comprehensive education + multidisciplinary. KDIGO 2024 + KDOQI vascular access guideline. Goals: patient-centered + values-aligned + outcome-optimized. PEAK programs + patient education shown to improve preemptive transplant + home dialysis uptake. Preemptive transplant best outcomes (avoid dialysis exposure); living donor preferred. Home dialysis (PD or home HD) — preserved residual function, lifestyle flexibility, possibly better outcomes selected. In-center HD — most common; least disruption to life; supported. AVF preferred over AVG + CVC. Conservative care appropriate for frail elderly + multiple comorbid + patient preference. Multidisciplinary team + early referral. Comprehensive comorbid management. Frailty + cognitive + ACP. Quality + cost + equity. SDoH affects access.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "renal_gu",
+    "board_age_group": "adult",
+    "reference_source": "KDIGO 2024 CKD; KDOQI Vascular Access 2019; RPA Renal Physicians Association Shared Decision-Making"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 62 ปี underlying T2DM (A1c 7.8%) + CKD stage 3 + CAD post-PCI + ischemic HFrEF (LVEF 35%) + COPD + obesity BMI 36 + OSA + chronic pain on opioid + depression + obstructive sleep apnea on CPAP + recurrent gout. Polypharmacy 16 medications\n\nคำถาม: comprehensive multimorbidity management approach + how to integrate care",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single-organ approach"
+      },
+      {
+        "label": "B",
+        "text": "**Comprehensive multimorbidity management** (NICE Multimorbidity Guideline + AGS Geriatric Care + Care Coordination Models): (1) **Goals-of-care + patient-centered priorities**: what matters most to patient; functional vs longevity vs symptom focus; (2) **Medication review + deprescribing**: STOPP/START + Beers; identify PIMs (anticholinergic, benzo, NSAID, opioid high-dose); minimize duplicate; align with priorities; (3) **Care coordination + interdisciplinary team**: cardiology + nephrology + endocrinology + pulmonology + pain + psychiatry + sleep + primary care + pharmacist + nutrition + PT + social work; communication via shared EHR + care plan; (4) **Holistic GDMT** for HFrEF + DM + CKD + CAD: SGLT2i (multi-system benefit), ARNI (or ACEi/ARB), BB, MRA, statin, ASA + P2Y12 (if applicable), high-intensity statin, glycemic individualized A1c 7-8% (avoid hypoglycemia); (5) **CKD-specific**: SGLT2i, ACEi/ARB, finerenone, dietary protein, vit D, Ca + Phos binder, EPO, dialysis planning if progressing; (6) **HF**: GDMT optimization, diuretic, exercise (cardiac rehab), CPAP for OSA (improves HF), low-Na diet; (7) **CAD**: secondary prevention, DAPT (or post-DAPT ASA mono), statin, BB, ACEi/ARB; (8) **COPD**: bronchodilator, ICS-LABA if indicated, vaccination, pulm rehab, smoking cessation; (9) **OSA**: CPAP adherence; (10) **Chronic pain**: multimodal (acetaminophen, topical, gabapentin if neuropathic, low-dose duloxetine, PT, mind-body); minimize opioid; (11) **Depression**: SSRI (sertraline safe in CV; not paroxetine — anticholinergic + interaction), CBT, exercise; (12) **Gout**: urate-lowering (allopurinol with HLA-B*5801 screen, febuxostat); avoid NSAID in CKD; flare colchicine; (13) **Obesity**: weight loss (lifestyle, GLP-1 RA, bariatric eval); (14) **Sleep + mental health + social**: address SDoH, support; (15) **Vaccinations**: annual flu, COVID, pneumococcal, RSV ≥ 60, shingles; (16) **Advance care planning** in advanced disease; (17) **Quality + outcome monitoring + patient experience**; transition of care across settings; (18) **Health literacy + self-management + caregiver support**"
+      },
+      {
+        "label": "C",
+        "text": "Single specialist only"
+      },
+      {
+        "label": "D",
+        "text": "Maximum disease guidelines for each independently"
+      },
+      {
+        "label": "E",
+        "text": "Avoid disease-modifying treatments"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Multimorbidity = > 2 chronic conditions; common + complex; standard guideline approaches insufficient; require patient-centered + integrative approach. NICE Multimorbidity Guideline + Boyd Multimorbidity, AGS Geriatric Care Online. Key: align with patient priorities (functional, longevity, symptom, QoL), deprescribe, address polypharmacy, integrate GDMT that serves multiple conditions (SGLT2i for HFrEF + CKD + DM; weight loss for HF + DM + OSA + CAD), multidisciplinary care coordination + shared EHR + transitions. Vaccinations + lifestyle + mental health + SDoH. ACP for advanced disease. Quality of life > rigorous single-disease maximization. Health literacy + self-management + caregiver + financial. Avoid harm from cumulative aggressive disease-specific approach in elderly multimorbid.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "geriatric",
+    "board_age_group": "elderly",
+    "reference_source": "NICE Multimorbidity Guideline NG56; Boyd CM Multimorbidity JAMA; AGS Geriatric Care Online"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 28 ปี ไม่มีโรค post-acute COVID-19 (mild infection 3 mo ก่อน) มาด้วยอาการ persistent fatigue + post-exertional malaise + brain fog + tachycardia on standing (POTS-like) + chest pain + dyspnea + sleep + anxiety + 6-mo persistence despite recovery from acute illness\n\nคำถาม: approach to Long COVID / Post-Acute Sequelae of SARS-CoV-2 (PASC)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Antibiotic for long COVID"
+      },
+      {
+        "label": "B",
+        "text": "**Long COVID / PASC** management: (1) **Definition**: symptoms persisting ≥ 4 wk (CDC) or ≥ 12 wk (WHO) post-acute SARS-CoV-2; multi-organ; > 200 symptoms reported; mechanisms include viral persistence, microvascular dysfunction, dysautonomia, mast cell activation, microclots, immune dysregulation, mitochondrial dysfunction. (2) **Comprehensive evaluation**: detailed history, systems review, exam, baseline labs (CBC, BMP, LFT, CRP, ESR, TSH, ferritin, B12, vit D, cortisol, troponin if cardiac), EKG, orthostatic BP/HR (POTS: HR ↑ > 30 bpm on standing × 10 min without OH), echo if cardiac symptoms, PFT + chest imaging if pulmonary, neurocognitive testing if cognitive, sleep study; rule out alternative diagnoses (thyroid, anemia, depression, autoimmune). (3) **Symptom-based management**: - **Post-exertional malaise (PEM)**: pacing + energy conservation; avoid graded exercise (worsens ME/CFS-like presentations); only gradual increase if tolerated. - **Fatigue**: prioritize, sleep optimization, low-dose stimulant in some, address anemia/thyroid/sleep apnea. - **POTS / dysautonomia**: increase fluid + salt + compression stockings; midodrine, fludrocortisone, ivabradine, low-dose β-blocker selected; gradual exercise rehab (recumbent first). - **Brain fog + cognitive**: cognitive rehab, sleep, treat depression/anxiety. - **Chest pain + palpitation**: cardiac workup; treat after exclusion. - **Dyspnea**: pulmonary rehab; PFT + imaging; treat OSA/asthma. - **Sleep**: CBT-I, sleep hygiene, treat OSA, melatonin. - **Anxiety/depression**: CBT, SSRI/SNRI, mindfulness. - **GI**: probiotic + diet; rule out IBS, gastroparesis. (4) **Multidisciplinary clinic** + specialty input (cardio, pulm, neuro, rheum, psych, PT/OT); (5) **Patient education + validation** — symptoms real + recovery possible; pace + don't overdo; (6) **Vaccination + reinfection prevention** (some report improvement after vaccination — controversial); (7) **Research participation** + advocacy; (8) **Disability accommodation** + return-to-work planning; (9) **Cardiac MRI** for myocarditis (rare; selected); (10) **Exclude post-acute mimics**: thyroid, anemia, sleep apnea, depression, cardiac arrhythmia, lung dysfunction"
+      },
+      {
+        "label": "C",
+        "text": "Steroid IV pulse for all"
+      },
+      {
+        "label": "D",
+        "text": "Sole rest indefinitely"
+      },
+      {
+        "label": "E",
+        "text": "Antiviral indefinitely"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Long COVID/PASC = post-acute symptoms ≥ 4-12 wk after SARS-CoV-2; affects 5-30% post-infection; women + middle-aged + severe acute disease + obesity + diabetes higher risk. Mechanisms: viral persistence, dysautonomia, microvascular, immune dysregulation, mast cell, microclots, mitochondrial. Management: comprehensive multisystem evaluation, rule out alternative + treatable causes, symptom-based supportive care, multidisciplinary clinic. Pacing + energy management for ME/CFS-like (avoid graded exercise — worsens). POTS treatment for dysautonomia. CBT-I for sleep. Pulm rehab for dyspnea. Cognitive rehab + treat mental health. Validation + education + support. Disability + return-to-work. Research + clinical trials. RECOVER study + post-COVID clinics emerging. Vaccination may help. No specific FDA-approved therapy; supportive + symptom-based.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "WHO Definition Long COVID 2021; CDC PASC; Davis HE Nature Reviews Microbiology 2023 (Long COVID Mechanisms + Management)"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 45 ปี survivor of breast cancer (stage III, HER2+, completed neoadjuvant TCHP + adjuvant pertuzumab/trastuzumab/lapatinib + radiation + tamoxifen 5 yr ago) ตอนนี้ healthy from cancer + มาด้วย CV risk + obesity + premature ovarian failure from chemo + bone health + anxiety/PTSD\n\nคำถาม: comprehensive cancer survivorship care plan",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge from oncology + no follow-up"
+      },
+      {
+        "label": "B",
+        "text": "**Cancer survivorship care plan** (ASCO + IOM + NCCN Survivorship Guidelines): (1) **Surveillance** for recurrence: H&P q3-6mo for 3 yr → q6-12mo for 5 yr → annually; mammogram annual; symptom-based imaging; tumor markers selected; (2) **Cardio-oncology**: long-term cardiotoxicity (anthracycline, trastuzumab, lapatinib, radiation cardiac); echo q1-3y baseline; manage CV risk aggressively (BP, lipid, glucose, weight, smoking, exercise); cardiac rehab; (3) **Endocrine + bone + menopause**: premature ovarian failure → estrogen deficiency → osteoporosis, CV, vasomotor; bone health (DXA, Ca, Vit D, exercise, bisphosphonate if needed); non-hormonal vasomotor (SSRI, gabapentin, clonidine — avoid HRT in HR+ cancer); sexual health (vaginal moisturizer, lubricant, ospemifene non-hormonal); (4) **Mental health**: anxiety + depression + PTSD common; CBT, mindfulness, antidepressant; survivorship clinic + support groups; (5) **Lymphedema**: surveillance + early intervention + compression; PT specialist; (6) **Cognitive impairment** (\"chemo brain\"): cognitive rehab + supportive; (7) **Sexual + reproductive**: counseling, fertility issues; (8) **Second cancer surveillance** + age-appropriate (colon, lung, cervical, skin); (9) **Lifestyle**: weight management + exercise (150 min/wk moderate; aerobic + resistance); diet (Mediterranean); alcohol moderation; smoking cessation; sun protection; (10) **Vaccinations**: flu, COVID, pneumococcal, RSV, HPV (if eligible age), Tdap, shingles; (11) **Care plan document** + share with PCP + patient + family; (12) **Survivorship clinic** in cancer center; coordinated care PCP + oncology; (13) **Long-term medication management** (tamoxifen 5-10 yr in HR+; AI in postmenopausal HR+); (14) **Insurance + financial + return-to-work** support; (15) **Caregiver + family** considerations + support; (16) **Disparities + equity** in survivorship outcomes"
+      },
+      {
+        "label": "C",
+        "text": "Continue chemotherapy"
+      },
+      {
+        "label": "D",
+        "text": "HRT for menopause"
+      },
+      {
+        "label": "E",
+        "text": "Avoid all imaging"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cancer survivorship = comprehensive long-term care. ASCO + NCCN + IOM Survivorship Guidelines. Components: surveillance recurrence + 2nd cancer, late + long-term effects (cardiotoxicity, neurotoxicity, fertility, cognitive, mental health, bone, lymphedema), comorbidity management, healthy lifestyle, immunizations, psychosocial + caregiver support, financial + return-to-work, care coordination between oncology + PCP + survivorship clinic. Cardio-oncology essential for anthracycline + HER2-targeted + radiation. Endocrine effects from chemo-induced menopause. Mental health prevalent. Bone health + non-hormonal vasomotor. Sexual health. Lifestyle modification. Survivorship care plan document + handoff to PCP + patient. Quality of life + functional outcomes + equity priorities. Long-term tamoxifen/AI for HR+ breast cancer 5-10 yr.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "ASCO Cancer Survivorship; IOM From Cancer Patient to Cancer Survivor; NCCN Survivorship Guidelines"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 30 ปี underlying severe sickle cell disease (HbSS) on hydroxyurea + chronic transfusion (for stroke prevention) มาด้วย acute chest syndrome + pneumonia + AKI + severe pain crisis. Multidisciplinary care needed\n\nLab: Hb 6.4, retic 12%, WBC 18K, Cr 2.4 (baseline 1.0), Bili 6.2, LDH 1,820, Plt 380K, troponin negative\nABG: PaO2 58 RA, PaCO2 32, pH 7.38\nCXR: bilateral RUL + LLL infiltrates\nMRI brain: prior infarct stable\nVision: retinopathy known\nIron overload from transfusion (ferritin 4,800)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single-issue management"
+      },
+      {
+        "label": "B",
+        "text": "**Sickle cell disease comprehensive management** + acute crisis + chronic comorbidities: (1) **Acute chest syndrome (ACS)** treatment: empirical antibiotic (ceftriaxone + azithromycin for atypical), bronchodilator, oxygen, **simple or exchange transfusion** (exchange for severe — target HbS < 30%); incentive spirometry; pain control (opioid + adjunct; PCA); hydration; (2) **Severe VOC**: opioid IV (morphine/hydromorphone) titrate; PCA pump; non-opioid adjunct; supportive; (3) **AKI workup**: prerenal (dehydration, hemolysis), contrast-related (avoid if possible), sickle nephropathy (microalbuminuria + reduced concentrating ability + glomerulopathy + papillary necrosis); supportive + hydration + nephrology; (4) **Address comorbidities**: - Hemolysis + transfusion → iron overload (ferritin 4,800 — high; chelation with deferasirox PO or deferoxamine SC); cardiac + endocrine + liver iron monitoring (T2* MRI). - Stroke prevention: chronic transfusion (STOP trial in pediatric; selected adult; primary prevention by TCD pediatric); newer voxelotor (HOPE — Hb increase) discontinued 2024 post-marketing. - Retinopathy: annual ophthalmology; laser if proliferative. - AVN: hip + shoulder common; pain + functional; consider arthroplasty; bisphosphonate. - Bone marrow + cardiac iron monitoring. - Pulmonary HT: echo screen; right heart cath confirm; treat as Group 5 (multifactorial) or Group 1 if confirmed PAH. - Cholelithiasis + biliary disease. - Leg ulcers. - Priapism. - Renal medullary carcinoma rare. (5) **Disease-modifying**: hydroxyurea (continue + optimize); L-glutamine (Endari); crizanlizumab (SUSTAIN); voxelotor (HOPE — withdrawn 2024). (6) **Curative emerging**: allogeneic SCT (matched sibling pediatric best); gene therapy (lovo-cel Lyfgenia — withdrawn for ALI signal; CRISPR exa-cel Casgevy approved 2024). (7) **Vaccinations** (functional asplenia): pneumococcal PCV20 + booster PPSV23, Hib, meningococcal, flu, COVID, RSV, shingles ≥ 50. (8) **Penicillin prophylaxis** childhood. (9) **Pain management plan** + multimodal + minimize chronic opioid (assessment + risk stratification). (10) **Mental health + adherence + transition + comprehensive SCD clinic**. (11) **Pregnancy planning** + complications; reproductive counseling"
+      },
+      {
+        "label": "C",
+        "text": "Single antibiotic + observation"
+      },
+      {
+        "label": "D",
+        "text": "Avoid blood transfusion always"
+      },
+      {
+        "label": "E",
+        "text": "Stop hydroxyurea"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Adult sickle cell disease = chronic multi-organ involvement; lifetime + complex. NHLBI 2014 + ASH 2020 + Thai Hematology Society. Acute crisis (VOC, ACS, splenic sequestration, stroke, aplastic, hemolytic, AKI, MOF). Chronic complications (anemia, hemolysis, iron overload, retinopathy, AVN, PH, nephropathy, cardiomegaly, mental health). Disease-modifying (hydroxyurea cornerstone; L-glutamine; crizanlizumab; voxelotor — withdrawn 2024). Curative emerging: HSCT, gene therapy (Casgevy CRISPR + Lyfgenia — Lyfgenia hematologic malignancy + ALI signal). Vaccinations + prophylaxis + functional asplenia consideration. Iron chelation post-transfusion. Multidisciplinary comprehensive sickle cell clinic + adult transition. Mental health + pain management + opioid stewardship + cognitive support. Pregnancy + reproductive planning. Survivorship priorities + quality of life.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "NHLBI SCD 2014; ASH 2020 SCD Guideline; Thai Hematology Society"
+  },
+  {
+    "scenario": "ผู้บริหารโรงพยาบาลพิจารณานำเสนอ value-based care strategy → ผูก outcomes กับ payment + reduce cost + improve patient outcomes\n\nคำถาม: principles of value-based healthcare + how internal medicine practice apply",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Fee-for-service maximum"
+      },
+      {
+        "label": "B",
+        "text": "**Value-based healthcare** (Porter Harvard Business School + IHI Triple/Quintuple Aim + CMS): Value = Health Outcomes / Cost (per unit of money spent). Move from volume → value. (1) **Pillars**: outcomes that matter to patients, cost, equity, experience. (2) **Models** (CMS + commercial): - Pay-for-performance (P4P): bonus for quality metrics. - Bundled payment: single payment for episode of care (joint replacement, CABG, maternity); cost + quality accountability. - Accountable Care Organization (ACO): shared savings if reduce cost + meet quality; MSSP, REACH, Direct Contracting. - Patient-centered medical home (PCMH): primary care–based; care coordination, prevention, mental health integration. - Capitated/global payment: full risk; population-based. - Value-based purchasing (VBP) hospital + physician. (3) **IM practice application**: - Chronic disease management: diabetes, HF, CKD, CAD bundles; team-based care; population health management (registry, outreach, panel management). - Care coordination: between PCP + specialty + hospital + post-acute; care navigators. - Transition of care: discharge planning, post-discharge follow-up, readmission prevention (covered). - Preventive care: screening, vaccination, lifestyle counseling, USPSTF + ACIP. - High-cost case management (5% patients = 50% spend): targeted intervention; high-risk care management. - Behavioral health integration: collaborative care model; co-located. - SDoH: screening + addressing food insecurity + housing + transportation + financial. (4) **Outcomes that matter to patients (PROs — patient-reported outcomes)**: ICHOM standard sets; functional status, symptom, QoL, patient experience. (5) **Health equity**: disparity assessment + stratification + targeted intervention; health equity in quality metrics. (6) **Data + analytics**: EHR + registry + population health platform; dashboards; transparent. (7) **Multidisciplinary team**: physician + APP + nurse + pharmacist + nutrition + behavioral + social work + community health worker + care manager + navigator. (8) **Patient + family engagement**: shared decision-making + advance care planning + self-management; PFAC. (9) **Continuous improvement** + cultural transformation + leadership commitment + alignment of incentives. (10) **Equity, efficiency, effectiveness, patient-centeredness, safety, timeliness** (STEEEP)"
+      },
+      {
+        "label": "C",
+        "text": "Maximum testing for revenue"
+      },
+      {
+        "label": "D",
+        "text": "Avoid measurement"
+      },
+      {
+        "label": "E",
+        "text": "Single specialty model"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Value-based healthcare = paradigm shift from fee-for-service volume to value (outcomes/cost). Porter + Teisberg Harvard. Models: P4P, bundled, ACO, PCMH, capitated, VBP. CMS aggressive shift. Value = (Outcomes that matter to patients) / Cost. IM application: chronic disease management with team-based care + population health, care coordination, transition of care, preventive care, high-cost case management, behavioral health integration, SDoH. ICHOM PROs (patient-reported outcomes). Health equity central. Data + analytics + EHR + dashboards. Multidisciplinary team + APP + care navigator. Patient + family engagement + shared decision-making + ACP. Continuous improvement. Quintuple Aim: health + experience + cost + clinician well-being + equity. Internal medicine physicians at center of value-based primary care + chronic disease.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "Porter ME — Value-Based Healthcare HBR; CMS Value-Based Care; IHI Quintuple Aim; ICHOM"
+  },
+  {
+    "scenario": "Researcher publishing meta-analysis on novel therapy for HF + intervention's claimed benefit. Evidence synthesis needed for clinical guideline\n\nคำถาม: principles of evidence-based medicine + GRADE + critical appraisal of clinical trial + applying evidence to practice",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Trust all published studies"
+      },
+      {
+        "label": "B",
+        "text": "**Evidence-Based Medicine + GRADE**: (1) **5 steps**: Ask focused clinical question (PICO — Population, Intervention, Comparison, Outcome), Acquire best evidence, Appraise critically, Apply to patient, Assess outcomes. (2) **Hierarchy of evidence**: meta-analysis + systematic review of RCTs > individual RCT > cohort > case-control > case series > expert opinion (varies by question — for harm + diagnosis + prognosis hierarchies differ). (3) **GRADE methodology** (Grading of Recommendations Assessment, Development and Evaluation): quality of evidence (High, Moderate, Low, Very Low) downgraded for risk of bias, inconsistency, indirectness, imprecision, publication bias; upgraded for large effect, dose-response, plausible confounding minimizing effect. Recommendation strength (Strong vs Conditional/Weak) based on certainty + balance benefit-harm-cost-values. (4) **Critical appraisal**: - RCT: randomization + concealment + blinding + outcome measure + ITT + completeness; CONSORT reporting. - Observational: confounding, selection, measurement bias; propensity score; STROBE. - Systematic review: PRISMA; comprehensive search, study selection, risk of bias (RoB 2.0 + ROBINS-I); meta-analysis + heterogeneity (I²). - Diagnostic test: STARD; sensitivity + specificity + LR + PPV/NPV. (5) **Statistical understanding**: p-value, CI, RR, OR, HR, NNT/NNH, absolute vs relative; type I + II error; intention-to-treat. (6) **Apply to patient**: external validity, similarity to study population, individual values + preferences + comorbidity + cost + access. (7) **Shared decision-making**: communicate benefit + harm in absolute + understandable terms; decision aids. (8) **Clinical guidelines**: GRADE-based + transparent + conflicts of interest + multidisciplinary panel + patient involvement; ACR, NICE, USPSTF, AHA, ESC examples. (9) **Tools**: UpToDate, DynaMed, ACP Smart Medicine, BMJ Best Practice, JBI, Cochrane; PICO + EBM bedside teaching. (10) **Avoid**: cherry-picking, surrogate endpoints overinterpretation, post-hoc subgroup analysis, conflicts of interest unrecognized. (11) **Health equity in evidence + guidelines**: representation in trials, applicability to diverse populations"
+      },
+      {
+        "label": "C",
+        "text": "Single study sufficient"
+      },
+      {
+        "label": "D",
+        "text": "Ignore patient preferences"
+      },
+      {
+        "label": "E",
+        "text": "Statistical significance = clinical"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "EBM + GRADE = foundational to modern clinical practice + guideline development. Sackett's definition: integration of best evidence + clinical expertise + patient values. 5 steps: Ask, Acquire, Appraise, Apply, Assess. Evidence hierarchy: meta-analysis/SR > RCT > cohort > case-control > case series > expert. GRADE quality of evidence + strength of recommendation. Critical appraisal: RoB 2.0 (RCT), ROBINS-I (observational), PRISMA (SR), CONSORT (RCT reporting), STROBE (observational), STARD (diagnostic). Statistics: p, CI, RR, OR, HR, NNT, ITT, external validity. Apply to patient considering individual factors + values. Shared decision-making + decision aids. Guidelines: GRADE-based, multidisciplinary, patient involvement. Avoid pitfalls + conflicts of interest. Health equity in evidence + practice.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "Sackett DL Evidence-Based Medicine; GRADE Working Group; Cochrane Handbook; AHRQ EPC + USPSTF Methods"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 24 ปี recently diagnosed T1DM (DKA presentation) + family Hx of T1DM + celiac + Hashimoto + recently started insulin therapy. Concerns about long-term care + complications + technology + mental health + reproduction\n\nคำถาม: comprehensive young adult T1DM care",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Insulin alone"
+      },
+      {
+        "label": "B",
+        "text": "**Comprehensive young adult T1DM care** (ADA + ISPAD + Thai Endocrine Society): (1) **Multidisciplinary team**: endocrinologist + diabetes educator + dietitian + mental health + ophthalmologist + nephrologist + transition + reproductive specialist; (2) **Insulin regimen**: basal-bolus MDI (multiple daily injection) OR insulin pump (CSII — continuous subcutaneous insulin infusion); automated insulin delivery (AID) / hybrid closed-loop systems (Tandem Control-IQ, Omnipod 5, MiniMed 780G, iLet — emerging) — significant improvement glycemic + QoL; (3) **CGM (continuous glucose monitoring)**: Dexcom G7, Libre 3 + 4 — standard of care; targets — TIR (time in range 70-180) ≥ 70%, < 4% time below 70, < 1% time below 54, < 25% above 180; A1c < 7%; (4) **Adjunctive therapy**: low-carb dietary, structured education (DAFNE, DESMOND), exercise (glucose management), sick-day rules, hypoglycemia prevention + glucagon (Baqsimi nasal, GVOKE, Zegalogue) + family training, dual-hormone systems emerging; (5) **Screening for associated autoimmune conditions** (T1DM polyautoimmune): - Thyroid (TSH + anti-TPO) at diagnosis + annual. - Celiac (tTG IgA + total IgA) at diagnosis + every 1-2 yr or symptoms. - Vit B12, adrenal, gonadal, rheumatic. - APS-2 if multiple. (6) **Complication screening**: - Retinopathy: dilated eye annual from 5 yr post-diagnosis. - Nephropathy: urine albumin/Cr annual + eGFR. - Neuropathy: monofilament + vibration + autonomic. - CV: BP target < 130/80, lipid (statin per ADA), aspirin not routine primary. - Foot care + dental + bone (CDC). (7) **Mental health**: depression + diabetes distress + eating disorder (\"diabulimia\" — insulin omission) + adherence; routine screening; CBT + SSRI; peer support; (8) **Reproductive health**: contraception (any modality + non-hormonal options), pre-conception planning (target A1c < 6.5% + folic acid + ACEi/ARB d/c if planning + complications stabilization); pregnancy planning + GDM in subsequent (covered); (9) **Transition** from pediatric to adult care; education + self-management + insurance; (10) **Vaccinations** (immune normal); (11) **Technology + access + cost** considerations; equity in CGM + pump access; (12) **Emerging therapies**: teplizumab (anti-CD3) FDA-approved 2022 for delay of clinical T1DM in autoantibody+ relatives; islet cell transplant (Lantidra approved 2023); beta-cell replacement therapy emerging; immune-modulation in research"
+      },
+      {
+        "label": "C",
+        "text": "Single specialist + no education"
+      },
+      {
+        "label": "D",
+        "text": "Stop insulin during stress"
+      },
+      {
+        "label": "E",
+        "text": "Avoid pregnancy planning"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Young adult T1DM = chronic disease requiring lifelong comprehensive management; emerging technologies + complications + mental health + reproductive considerations. ADA 2024 + ISPAD + Thai Endocrine. Multidisciplinary team + comprehensive education. Insulin: MDI or pump + AID hybrid closed-loop (game-changing 2020s). CGM standard of care. TIR target ≥ 70%. Associated autoimmunity screening (thyroid, celiac, others). Complication screening (eye, kidney, neuropathy, CV, foot, dental). Mental health critical — diabetes distress, depression, eating disorder. Reproductive planning + contraception + pre-conception. Transition from pediatric. Emerging: teplizumab anti-CD3 (delay clinical T1DM in high-risk autoantibody+ relatives); islet cell transplant (Lantidra). Technology + cost + equity in access.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "endocrine_metabolic",
+    "board_age_group": "adult",
+    "reference_source": "ADA Standards of Care 2024; ISPAD Guideline; ATTD International Consensus on CGM"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 75 ปี planned for elective hip arthroplasty for severe OA + underlying CAD (post-PCI 6 mo ago on DAPT) + HFrEF (LVEF 32%) + CKD + DM + COPD + anticoagulant (DOAC for AF) + chronic opioid + nutritional issues + multiple medications\n\nคำถาม: comprehensive perioperative risk assessment + optimization for elective surgery",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Proceed without optimization"
+      },
+      {
+        "label": "B",
+        "text": "**Comprehensive perioperative risk assessment + optimization** (ACC/AHA + ESC + ESA Cardiovascular Risk Assessment + Choosing Wisely): (1) **Risk stratification**: surgical risk (hip arthroplasty intermediate); patient risk (RCRI Revised Cardiac Risk Index — CAD, HF, CVA, DM on insulin, Cr > 2; this patient ≥ 3 high-risk); ACS-NSQIP risk calculator; functional capacity (METs < 4 = poor); (2) **Cardiac**: continue beta-blocker (NOT starting new — POISE ↑ mortality with new BB); statin continue; ACEi/ARB hold morning of surgery (hypotension); ASA continue or stop based on indication + bleeding risk + cardiology consult (post-PCI < 12 mo high risk in-stent thrombosis → continue DAPT if possible; if must stop P2Y12 — bridge with platelet GP IIb/IIIa selected, minimize duration); cardiology consult for borderline + recent stent + low EF; (3) **DOAC management**: hold 1-2 d before surgery (apixaban 24-48 hr; rivaroxaban 24 hr; dabigatran 48 hr in normal renal — longer in CKD); bridge with LMWH if very high-risk (mechanical valve, recent CVA); resume 24-48 hr post-op based on bleeding; check anti-Xa levels in CKD; CHA2DS2-VASc balanced against bleeding; (4) **HF + LVEF 32%**: optimize GDMT; diuresis if volume overloaded; ACEi/ARB hold morning; BB continue; consider invasive hemodynamic monitoring (PA cath rarely; non-invasive — CVP, fluid response, lactate, urine output); cardiology + cardiac anesthesia consult; (5) **CKD**: monitor for AKI; avoid nephrotoxin (contrast, NSAID); dose adjust; (6) **DM**: hold metformin (SAGE recently — re-evaluating; previously 48 hr), insulin adjustment; avoid hyper/hypoglycemia; resume post-op once eating; (7) **COPD**: optimize bronchodilator; chest PT; smoking cessation > 4-8 wk if possible (best); pulm consult + PFT if needed; spirometry pre-op; (8) **Anticoagulant + antiplatelet** detailed plan; (9) **Anemia + nutrition**: pre-op Hb optimization (IV iron if Fe-deficient — STOP-AKI; Hb target ≥ 13); albumin > 3.5; nutritional support; protein 1.5 g/kg/d; counsel weight + nutrition; (10) **Frailty + functional**: 6MWT, gait, grip, ECOG, CSHA scale; prehab (exercise + nutrition + mental + medical optimization 4-8 wk) reduces complications; (11) **Mental health + cognition**: baseline MoCA + assess delirium risk; minimize anticholinergic + benzo; ACP discussion; (12) **Opioid management**: continue baseline; multimodal post-op (PCA + non-opioid adjunct + regional anesthesia — peripheral nerve block); avoid opioid escalation; transition off pre-op chronic if possible; (13) **Medications + reconciliation** + pharmacist; (14) **DVT prophylaxis** + mechanical + chemical; (15) **Vaccinations** if relevant; (16) **Surgical timing**: elective vs urgent; balance with optimization; (17) **Multidisciplinary**: surgery + anesthesia + cardiology + nephrology + pulmonology + geriatrics + PT/OT + nutrition + pharmacy + ACP"
+      },
+      {
+        "label": "C",
+        "text": "Single specialist clearance"
+      },
+      {
+        "label": "D",
+        "text": "Stop all medications"
+      },
+      {
+        "label": "E",
+        "text": "Avoid surgery indefinitely"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Comprehensive perioperative risk assessment + optimization in high-risk elderly = complex multidisciplinary. ACC/AHA 2014 + ESC 2022 + ASA. RCRI + ACS-NSQIP risk calculators. Cardiac: continue BB + statin + ASA (selectively); hold ACEi/ARB morning; manage DOAC by half-life + renal; bridge for very high-risk only. HFrEF optimize GDMT + cardiology + cardiac anesthesia. CKD: avoid nephrotoxin + dose adjust. DM: insulin adjustment + glycemic control. COPD: optimize + smoking cessation + PFT. Anemia + nutrition: pre-op IV iron + albumin + protein. Frailty + functional: prehab (exercise + nutrition + 4-8 wk) reduces complications. Cognition + delirium prevention + ACP. Opioid + multimodal + regional anesthesia. Medication reconciliation. DVT prophylaxis. Multidisciplinary team + surgery + anesthesia + cardiology + nephro + pulm + geriatrics + PT/OT + nutrition + pharmacy + social. ERAS (Enhanced Recovery After Surgery) protocols.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "cardiovascular",
+    "board_age_group": "elderly",
+    "reference_source": "ACC/AHA 2014 Perioperative CV Evaluation; ESC 2022 Perioperative CV Assessment; ASA Practice Advisory"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 72 ปี underlying advanced HF (NYHA IV, LVEF 22%) + multiple hospitalizations + functional decline + cardiac cachexia + recurrent diuretic-resistant edema + multiple comorbidities + family discussing options\n\nคำถาม: advanced HF management approach + when to consider advanced therapies vs comfort-focused",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue same therapy"
+      },
+      {
+        "label": "B",
+        "text": "**Advanced HF (Stage D)** management requires careful assessment + shared decision-making (AHA/ACC/HFSA 2022 HF + ISHLT + REMATCH-style): (1) **Confirm advanced HF**: NYHA III-IV symptoms despite optimal GDMT; LVEF persistently low; recurrent hospitalization; refractory edema; cachexia (cardiac); intolerant to GDMT (hypotension, AKI); ventricular arrhythmia; right HF; secondary organ dysfunction; (2) **Advanced therapy candidates evaluated**: - **Cardiac transplant**: gold standard; eligibility — < 70-75 yr, no severe comorbid, social support, adherent, no active malignancy, controlled diabetes, no irreversible PH, BMI < 35, no active substance abuse; UNOS waiting list; - **LVAD (Left Ventricular Assist Device)** — durable mechanical circulatory support: bridge-to-transplant, bridge-to-decision, or destination therapy (DT) in non-transplant candidates; HeartMate 3 most current (MOMENTUM 3); risks — bleeding (GI, intracranial), thrombosis, stroke, infection (driveline + device), aortic insufficiency; significant lifestyle changes; - **Total artificial heart** rare. (3) **Non-transplant candidates with severe functional decline + refractory symptoms** despite GDMT and not LVAD candidate: - **Inotrope therapy** (chronic — dobutamine + milrinone): symptomatic + functional improvement but mortality concern; bridge to transplant or palliative; - **Palliative care + hospice**: comfort-focused; symptom management (dyspnea — low-dose opioid, oxygen, fan; pain; anxiety; depression; nausea; secretions; constipation); ICD deactivation consideration; discontinue device shocks at end-of-life. (4) **Decision-making framework**: - Patient values + goals + preferences. - Functional + cognitive status (frailty scale). - Comorbidity burden. - Social support + caregiver. - Quality of life + symptom burden. - Realistic discussion of risks + benefits + survival + QoL trade-offs. - Multidisciplinary team meeting + family meeting + Serious Illness Conversation Guide. - Advance care planning + POLST + healthcare surrogate. (5) **Optimize GDMT**: continue + max tolerated; - SGLT2i for HF + comorbid - ARNI replace ACEi/ARB - BB - MRA - Loop diuretic + adjunctive thiazide + tolvaptan for refractory + spironolactone - Hydralazine + nitrate in African ancestry + intolerant ACEi/ARB - Ivabradine if HR > 70 sinus - Vericiguat (sGC stimulator) for HFrEF + recent decompensation (VICTORIA) (6) **Device therapy**: CRT-D if LBBB + LVEF < 35 + NYHA III-IV; ICD primary prevention if not already + life expectancy > 1 yr meaningful QoL; cardiac contractility modulation (CCM, Optimizer) selected; (7) **CardioMEMS implantable PA pressure monitoring**: HF hospital reduction (CHAMPION); (8) **Multidisciplinary HF clinic**: cardio + cardio-renal + transplant + LVAD + nurse + pharm + social work + palliative + cardio-rehab; (9) **Hospice referral** if comfort-focused + life expectancy < 6 mo"
+      },
+      {
+        "label": "C",
+        "text": "Aggressive surgery first-line"
+      },
+      {
+        "label": "D",
+        "text": "Increase diuretic indefinitely"
+      },
+      {
+        "label": "E",
+        "text": "Withhold all therapy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Advanced HF (Stage D) = high mortality + complex management + integration of disease-modifying + advanced therapies + palliative. AHA/ACC/HFSA 2022 + ISHLT + REMATCH (LVAD) + MOMENTUM 3 (HM3) + CardioMEMS CHAMPION. Cardiac transplant gold standard for eligible. LVAD durable MCS — bridge or destination. HM3 reduced stroke + thrombotic. Inotrope therapy as bridge or palliative — mortality concern. Palliative care + hospice — symptom focused; ICD deactivation discussion; comfort medication + multidisciplinary. Decision-making: patient values + goals + functional status + comorbidity + QoL trade-offs + family + serious illness conversation. ACP + POLST. GDMT optimization: ARNI + BB + MRA + SGLT2i + diuretic + ivabradine + vericiguat. Device therapy (CRT, ICD). Multidisciplinary advanced HF clinic. Cardio-renal-metabolic integrative + cardio-oncology if relevant + cardio-obstetric + cardio-psychiatry. Quintuple aim.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "cardiovascular",
+    "board_age_group": "elderly",
+    "reference_source": "AHA/ACC/HFSA 2022 HF Guideline; ISHLT Advanced HF Listing; MOMENTUM 3 NEJM 2019"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 38 ปี adult survivor of congenital heart disease (ToF — tetralogy of Fallot, surgical repair age 3) มา OPD ด้วยอาการ exercise intolerance + palpitation + dyspnea + plans for pregnancy + concerns\n\nLab: BNP 380, EKG sinus + RBBB + intermittent NSVT, Echo: severe pulmonary regurgitation, RV enlarged + dysfunction RVEF 35%, LVEF 50%, mild residual VSD, no other defect\nCMR: RV end-diastolic volume 180 mL/m² (severely dilated), late gadolinium enhancement at RVOT patch site\nCPET: VO2 max 60% predicted\nNo significant cyanosis at rest",
+    "choices": [
+      {
+        "label": "A",
+        "text": "General cardiology only + no further evaluation"
+      },
+      {
+        "label": "B",
+        "text": "**Adult congenital heart disease (ACHD)** comprehensive management (ACC/AHA + ESC 2020 + ISACHD): (1) **ACHD specialist + multidisciplinary**: ACHD-trained cardiologist + cardiac surgeon (or interventional structural) + electrophysiologist + cardio-obstetrician + nursing + counselor; specialized adult CHD centers (level III); (2) **Tetralogy of Fallot post-repair sequelae**: - Pulmonary regurgitation (PR): progressive over decades → RV volume overload → RV dilation + dysfunction + RVOT aneurysm. - **Pulmonary valve replacement (PVR)** indications (ESC): severe PR + symptoms (NYHA II+), RV EDV ≥ 160 mL/m² (some say ≥ 150) or RV ESV ≥ 80, decreased exercise capacity (VO2 max < 70% predicted), sustained VT, progressive RV dysfunction, severe RVOT obstruction. Surgical vs transcatheter (TPVR — Melody, Sapien) — based on anatomy. - Earlier intervention if symptoms or progressive RV dysfunction. (3) **Arrhythmia management**: - NSVT + sustained VT — ICD selected (high-risk: RV dysfunction, prior PVR, RVEF < 35%, QRS > 180, LV dysfunction, inducible VT); EPS + ablation considered. - Atrial flutter + AF common — antiarrhythmic + ablation. (4) **Pregnancy planning** (ACC/AHA + ESC + ROPAC): - Pre-conception evaluation: assess functional status + cardiac reserve + comorbidities; risk stratify (mWHO classification — ToF post-repair = mWHO II-III; severe PR + RV dysfunction increases risk). - Genetic counseling (recurrence risk in offspring 3-5%; chromosome 22q11.2 microdeletion 15% of ToF). - Anticoagulation management if needed. - Multidisciplinary cardio-obstetric care; planned delivery + anesthesia consult; postpartum monitoring + heart failure surveillance. (5) **CV risk reduction**: BP + lipid + glucose + smoking + lifestyle; many ACHD develop traditional CV risk factors superimposed. (6) **Endocarditis prophylaxis**: post-repair with residual defect, prior IE, prosthetic material — dental procedures only; not routine. (7) **Exercise**: supervised cardiac rehabilitation; tailored exercise prescription; sports participation based on Bethesda + ESC. (8) **Mental health + transition**: many ACHD experience anxiety, depression, PTSD related to childhood surgeries + chronic condition; transition from pediatric to adult care. (9) **Anticoagulation** if AF, prior thrombosis, intracardiac shunt + paradoxical embolism risk. (10) **Lifelong follow-up**: serial imaging (echo + CMR), CPET, BNP, EKG, Holter — frequency depending on lesion. (11) **Multidisciplinary IE prevention, vaccinations, dental care**, comprehensive primary care + ACHD specialty"
+      },
+      {
+        "label": "C",
+        "text": "Single visit clinic"
+      },
+      {
+        "label": "D",
+        "text": "Avoid pregnancy categorically"
+      },
+      {
+        "label": "E",
+        "text": "Pulmonary valve replacement immediately regardless"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Adult congenital heart disease (ACHD) — growing population due to pediatric surgical success; complex multi-system + lifelong specialty care. ACC/AHA 2018 + ESC 2020 + ISACHD + WHO ACHD. ToF most common cyanotic CHD; post-repair sequelae primarily PR + RV dysfunction. PVR indications based on RV dimensions + function + symptoms + arrhythmia + exercise capacity. Transcatheter (Melody, Sapien) vs surgical. Arrhythmia management — VT, atrial flutter, AF, ICD selected. Pregnancy: mWHO classification, multidisciplinary cardio-obstetric, recurrence risk in offspring (3-5%, higher 22q11.2 deletion), genetic counseling. CV risk reduction. Endocarditis prophylaxis selective. Exercise + rehab. Mental health + transition + multidisciplinary lifelong care. ACHD centers (level III).",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "cardiovascular",
+    "board_age_group": "adult",
+    "reference_source": "ACC/AHA 2018 ACHD Guideline; ESC 2020 Adult CHD Guideline; ISACHD"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี advanced cirrhosis (HBV-related) Child-Pugh C MELD 22 + ascites refractory + recent SBP + HRS + esophageal varices ligated + Hepatic encephalopathy (HE) recurrent + HCC small lesion BCLC A (2 cm) + family discussion re liver transplant\n\nคำถาม: comprehensive end-stage liver disease management + transplant evaluation",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Watchful waiting"
+      },
+      {
+        "label": "B",
+        "text": "**End-stage liver disease (ESLD)** + HCC + transplant evaluation (AASLD + EASL + ILTS): (1) **MELD score** (now MELD 3.0 including sex + albumin): MELD 22 = severe; transplant indication eGFR < 15-20 + decompensation; HCC exception points within Milan criteria boost MELD; (2) **Liver transplant evaluation**: comprehensive multidisciplinary — hepatology + transplant surgeon + anesthesia + ID + nephrology + cardiology + psychiatry + social work + financial; medical eligibility (cardiac, pulmonary, infection, cancer); social support; psychological + substance use evaluation; insurance; living donor + DDLT (deceased donor) options; (3) **HCC management** (within Milan criteria: single ≤ 5 cm or up to 3 lesions ≤ 3 cm; no vascular invasion + extrahepatic): - LT first-line — recurrence rare + curative. - Bridging while waiting: TACE (transarterial chemoembolization), RFA (radiofrequency ablation), MWA (microwave), TARE (Y-90), SBRT. - Downstaging if outside Milan criteria with hope of transplant. (4) **Decompensation management**: - Ascites: low-Na diet + loop diuretic + spironolactone; large-volume paracentesis + albumin; TIPS in refractory (risk of HE); avoid NSAID + nephrotoxin. - SBP secondary prophylaxis (norfloxacin) lifelong; primary prophylaxis high-risk. - HE: lactulose + rifaximin (already covered). - Variceal bleeding: NSBB (propranolol, carvedilol) + EVL secondary; primary prophylaxis NSBB or EVL. - HRS: terlipressin + albumin (CONFIRM). - Hyponatremia: water restriction; tolvaptan selective. (5) **HBV management on antiviral**: TDF or TAF (TAF preferred renal + bone protection); never stop (severe flare). (6) **Anti-HBV immunoglobulin (HBIG) + antiviral** post-transplant to prevent recurrence; oral antivirals long-term. (7) **HCC after transplant**: low recurrence within Milan; surveillance + intervention if recurrence. (8) **Cardiopulmonary assessment**: cirrhotic cardiomyopathy, portopulmonary HT, hepatopulmonary syndrome (target oxygen saturation + transplant indication). (9) **Renal optimization** pre-transplant. (10) **Mental health + substance use** evaluation + treatment; abstinence requirement varies by program for alcohol. (11) **Vaccinations** pre-transplant: HBV, HAV, pneumococcal, flu, COVID, RSV, shingles. (12) **Post-transplant**: long-term immunosuppression (CNI + MMF + steroid taper); rejection surveillance; infection prophylaxis; CV risk; metabolic + bone + cancer surveillance; renal + DM management. (13) **Palliative care + ACP** consideration if not transplant candidate. (14) **Multidisciplinary lifelong care**"
+      },
+      {
+        "label": "C",
+        "text": "Aggressive chemotherapy first"
+      },
+      {
+        "label": "D",
+        "text": "TIPS placement immediately"
+      },
+      {
+        "label": "E",
+        "text": "Single intervention"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "End-stage liver disease + HCC = complex integrative multidisciplinary. AASLD + EASL + ILTS. MELD 3.0 (sex + albumin added 2023). LT for ESLD + HCC within Milan criteria = curative. Bridging while waiting (TACE, RFA, SBRT, Y-90). Downstaging if beyond Milan. Comprehensive evaluation (medical, social, psychosocial). HCC surveillance q6mo US + AFP. HBV antiviral lifelong + HBIG post-transplant. Decompensation management — ascites, SBP, HE, varices, HRS, hyponatremia. Cardio-pulmonary assessment + renal optimization. Mental health + substance use eval. Vaccinations pre-transplant. Post-transplant: immunosuppression, rejection, infection prophylaxis, comorbid management, surveillance. Palliative if not candidate. Multidisciplinary lifelong + transition.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "gi",
+    "board_age_group": "elderly",
+    "reference_source": "AASLD Practice Guidance HCC 2023; EASL HCC Guideline; OPTN/UNOS Allocation; ILTS Standards"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 60 ปี African ancestry underlying HIV controlled, recently diagnosed with hepatocellular carcinoma + HCV (post-DAA cured 3 yr ago, SVR maintained) + multifocal cirrhosis Child-Pugh B + 5 cm HCC + portal vein thrombosis + extrahepatic LN metastasis. BCLC stage C/D\n\nคำถาม: HCC management beyond Milan + locally advanced + metastatic",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Single TACE only"
+      },
+      {
+        "label": "B",
+        "text": "**Advanced HCC (BCLC C-D) management**: (1) **Multidisciplinary tumor board**: hepatology + interventional radiology + hepatobiliary surgery + medical oncology + radiation oncology; (2) **Systemic therapy first-line** (locally advanced + metastatic): - **Atezolizumab + bevacizumab** (anti-PD-L1 + anti-VEGF) — IMbrave 150 NEJM 2020 — superior OS vs sorafenib; checkpoint inhibitor + VEGF; contraindicated severe varices (UGIB risk — screen + treat varices first); CTP A preferred (some B); - **Durvalumab + tremelimumab (single dose) — STRIDE regimen**: HIMALAYA — alternative; checkpoint inhibitor only — better for those with bleeding risk; CTP A preferred; - Sorafenib + lenvatinib + cabozantinib (TKI) — historical first-line; second-line; - Pembrolizumab + nivolumab + ipilimumab — checkpoint inhibitor combinations; - Regorafenib + ramucirumab + tivozanib (later lines); (3) **Locoregional + systemic combinations**: TACE + atezo-bev or TARE (Y-90) emerging; (4) **Surgical** for selected: resection for limited disease + preserved function; rare in advanced; (5) **Liver transplant** (LT): not typically for advanced HCC outside extended criteria (UCSF, downstaging); HIV + HCC + cirrhosis is unique consideration; HIV controlled + good performance + no extrahepatic + within criteria — possible; HIV + HCV history (cured) does not preclude; (6) **HIV management**: continue ART; ensure VL suppression; assess drug interactions with systemic HCC therapy (sorafenib, lenvatinib + PI minimal; CCR5 inhibitor no interaction; bictegravir minimal); avoid hepatotoxic interactions; (7) **HCV/HBV**: HCV cured (SVR maintained); monitor for HCC despite SVR (residual risk); HBV — confirm reactivation status + treat if HBsAg+; (8) **Symptom management**: pain control (opioid + adjunct), abdominal symptoms, ascites, fatigue, GI; palliative + supportive care early; (9) **Variceal screening + management** before checkpoint inhibitor (UGIB risk); (10) **Cardiac + pulmonary + renal** assessment for systemic therapy; (11) **Decision-making**: patient values + goals + comorbidities + cost + access + family + support + cultural; shared decision-making; ACP; (12) **Multidisciplinary HCC clinic** + tumor board + early palliative care integration + clinical trial enrollment; (13) Survivorship + monitoring + quality of life priorities"
+      },
+      {
+        "label": "C",
+        "text": "Sorafenib alone forever"
+      },
+      {
+        "label": "D",
+        "text": "Surgery for all"
+      },
+      {
+        "label": "E",
+        "text": "Wait until end-stage"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Advanced HCC = era of immunotherapy revolution. NCCN + ESMO + APASL + BCLC. First-line: atezo-bev (IMbrave 150 — practice-changing) OR durvalumab-tremelimumab (HIMALAYA STRIDE — alternative + bleeding risk concerns). TKI (sorafenib, lenvatinib, cabozantinib) — first-line or second-line. Locoregional + systemic combos emerging. Surgery + LT for highly selected. HIV + HCC management: continue ART, drug interactions, HIV-HCC integration. HCV cured but HCC risk persists. HBV management. Variceal screening before checkpoint inhibitor. Cardiac/pulm/renal eval. Multidisciplinary tumor board. Palliative care integration early. Shared decision-making + values + ACP. Clinical trial. Multidisciplinary lifelong. HCC has > 30% improvement in survival over decade due to checkpoint inhibitors.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "hemato_onco",
+    "board_age_group": "elderly",
+    "reference_source": "NCCN HCC Guideline; IMbrave 150 NEJM 2020; HIMALAYA NEJM 2022; BCLC Strategy 2022"
+  },
+  {
+    "scenario": "ทีมแพทย์ ICU พิจารณา withdraw life-sustaining treatment ของผู้ป่วยอายุ 72 ปี multi-organ failure + cardiogenic shock + ARDS on vent + CRRT + multiple pressors + persistent neurological deficit from anoxic brain injury post-arrest + family conflicted re continued aggressive care\n\nคำถาม: ethical + legal + clinical principles in withdrawal of life-sustaining treatment + family discussion",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Continue all interventions indefinitely"
+      },
+      {
+        "label": "B",
+        "text": "**Withdrawal of life-sustaining treatment (WLST)** = ethically + legally acceptable when continued treatment not goals-concordant + not benefiting patient (NEJM ICU End-of-Life + WHO + ASA + ACP + WMA WLST principles): (1) **Ethical principles**: - Autonomy: patient's previously expressed wishes via advance directive or surrogate. - Beneficence + non-maleficence: balance benefit + harm + suffering. - Justice: fair resource allocation. - Double effect doctrine: relieving suffering acceptable even if hastens death (e.g., opioid for dyspnea). (2) **Legal framework**: - Patient's right to refuse treatment (autonomy). - Surrogate decision-making in incapacity. - Living will + healthcare proxy. - Court intervention rarely. (3) **Clinical assessment**: - Prognosis assessment (multidisciplinary) — severity + reversibility. - Goals-of-care alignment with patient values + previously stated preferences. - Quality of life trajectory. - Disagreement among family members → mediation. (4) **Family meeting** (Family-Centered Care): - Multidisciplinary team — physician + nursing + social work + chaplain + ethics consult if needed. - Use Serious Illness Conversation Guide (Ariadne Labs). - REMAP framework: Reframe, Expect emotion, Map values, Align, Plan. - Explore patient's values + what made life meaningful. - Avoid \"there's nothing more we can do\" — reframe goals + comfort. - Allow time for understanding + emotion + questions. - Multiple meetings often needed. (5) **Implementation of withdrawal**: - Comfort-focused: aggressive symptom management — opioid (dyspnea, pain — high doses appropriate; double-effect doctrine), benzo (anxiety, agitation), antimuscarinic (secretions), antiemetic. - Discontinue: vasopressor, mechanical ventilation (terminal extubation or ventilator wean), dialysis, antibiotic (unless symptom palliation), IV fluid (per goals), nutrition (per goals). - ICD/pacemaker deactivation discussion. - Maintain dignity + privacy + family presence + cultural + spiritual support. (6) **Spiritual + cultural** competence: respect different traditions (Buddhism, Islam, Christianity, etc. each have specific perspectives on death + dying); chaplain involvement. (7) **Cultural + family considerations**: in some cultures (Thailand + many Asian), family-centered decision-making is normative; involve family + respect cultural framing. (8) **Documentation** + clear order set + communication to all staff. (9) **Post-withdrawal**: comfort care, family bereavement support, debriefing for staff (2nd victim). (10) **Disagreement resolution**: ethics committee + mediation + Time-Limited Trial approach in uncertainty. (11) **Resident education** + simulation + reflection. (12) **Equity + disparities** in end-of-life care; address SDoH"
+      },
+      {
+        "label": "C",
+        "text": "Continue without discussion"
+      },
+      {
+        "label": "D",
+        "text": "Ignore family input"
+      },
+      {
+        "label": "E",
+        "text": "Discontinue all care including symptoms"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Withdrawal of life-sustaining treatment (WLST) = ethically + legally acceptable + common end-of-life practice in ICU. Principles: autonomy, beneficence/non-maleficence, justice, double effect. Legal: patient's right to refuse + surrogate decision-making + advance directive. Clinical: prognosis + goals-of-care + multidisciplinary assessment. Family meeting essential: REMAP, Serious Illness Conversation Guide, Ariadne Labs framework, time + emotion + questions; multiple meetings often. Implementation: comfort-focused — high-dose opioid + benzo + secretion management + dignity + family presence; discontinue ventilator, pressors, dialysis, etc. Cultural + spiritual + religious considerations critical (Thailand family-centered). Documentation + communication. Post-withdrawal: bereavement + staff debriefing (2nd victim — high moral distress). Ethics committee for disagreement. Resident education + simulation. Equity in EOL.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "elderly",
+    "reference_source": "Truog RD NEJM ICU End-of-Life Care 2008; WMA Declaration on End-of-Life; ACP Position on EOL"
   }
 ]
