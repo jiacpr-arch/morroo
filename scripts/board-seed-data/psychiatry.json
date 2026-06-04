@@ -5758,5 +5758,645 @@
     "board_topic": "neurology",
     "board_age_group": "adult",
     "reference_source": "MDS PD; Weintraub ICD"
+  },
+  {
+    "scenario": "Healthcare system implementing school-based mental health programs for adolescents",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No intervention"
+      },
+      {
+        "label": "B",
+        "text": "School-Based Mental Health (SBMH) — Evidence-Based Public Health Approach: (1) **Rationale**: - 50% lifetime mental health onset by age 14; 75% by 24; - Schools = natural location reaching youth; - Reduces stigma + access barriers; - 80% of children receive mental health care through school when available; (2) **Multi-Tiered Systems of Support (MTSS)**: - **Tier 1 universal**: school-wide mental health promotion, SEL (social-emotional learning), positive behavior supports, anti-bullying, mental health literacy curriculum, suicide prevention education, screening (limited evidence); - **Tier 2 selective**: small group interventions for at-risk students (anxiety, depression skills groups, grief, divorce, conduct issues); - **Tier 3 indicated**: individual therapy, crisis services, referral to community mental health; (3) **Programs evidence-based**: - **CBT-based**: Coping Cat (anxiety), CBITS (trauma), SPARK (depression), CWD-A (depression); - **DBT skills training in schools**; - **Mindfulness programs** (MindUP, Calm Schools); - **PBIS** (Positive Behavioral Interventions + Supports); - **SEL** (CASEL framework); - **Suicide prevention**: SOS, Sources of Strength (peer-led); (4) **Workforce models**: - **School counselors, psychologists, social workers** — backbone; - **Community partnerships** — external mental health providers in schools; - **Telepsychiatry consultation**; - **Stigma reduction** through teachers + peers; (5) **Specific issues**: - Bullying prevention (Olweus, KiVa); - Suicide prevention; - Substance use prevention (Life Skills Training); - LGBTQ+ supports (GSAs reduce suicide); - Identification + intervention for struggling youth; (6) **Crisis response**: - Suicide assessment + safety planning; - Post-suicide postvention (school cluster prevention); - Trauma response after events; (7) **Equity considerations**: - Disparities in access + identification + outcomes by race + SES; - Cultural adaptation; - Multilingual; - Address adverse childhood experiences (ACEs); (8) **Integration with primary care + community**; (9) **Outcomes** evidence: - Reduces ED visits, hospitalization, suicide attempts; - Improves academic outcomes (mental health + learning intertwined); - Cost-effective; (10) **Funding**: federal grants, state mental health, education department, private foundations; (11) **Modern**: - **Trauma-informed schools**; - **Restorative practices** (vs zero tolerance); - **Whole child approach**; - **Family + community engagement**"
+      },
+      {
+        "label": "C",
+        "text": "Single approach"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Random"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "School-Based Mental Health: MTSS (universal/selective/indicated). Evidence-based programs (Coping Cat, CBITS, PBIS, SEL). School counselors + community partnerships + telepsych. Crisis response. Equity. Reduces ED + hospitalizations + improves academic. Trauma-informed + whole child.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "SAMHSA SBMH; MTSS"
+  },
+  {
+    "scenario": "Public health system addressing opioid epidemic + overdose prevention",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No intervention"
+      },
+      {
+        "label": "B",
+        "text": "Opioid Epidemic + Overdose Prevention — Comprehensive Public Health: (1) **Scope** (US perspective applicable globally): - 100K+ overdose deaths/year; - Driven by fentanyl + analogs in illicit supply; - Synthetic opioid + stimulant + polysubstance; (2) **Prevention**: - **Prescribing guidelines** (CDC 2022 — updated, less rigid than 2016): - Non-opioid first-line for chronic pain; - When opioid: lowest effective dose + shortest duration + monitoring; - Avoid > 50 MME without careful consideration; - **PDMP** (Prescription Drug Monitoring Programs) — mandatory in many; - **Prescriber education**; - **Patient education**; - **Safe disposal** programs; (3) **Treatment access**: - **Medication for Addiction Treatment (MAT)**: buprenorphine, methadone, naltrexone — reduce mortality 50%; - **X-waiver removed 2023** — easier buprenorphine prescribing; - **Low-threshold care**, mobile units, ED-initiated; - **Methadone clinic access** (more restrictive — advocacy for liberalization); - **Insurance coverage**; - **Workforce expansion**; (4) **Harm reduction**: - **Naloxone distribution** — community + family + first responders + OTC (2023); reverses overdose; - **Syringe service programs** — prevent HIV/HCV; - **Fentanyl test strips**; - **Drug checking services**; - **Safe consumption sites** (controversial US, established elsewhere — supervised injection, no overdose deaths in established sites); - **Good Samaritan laws** (911 protection from prosecution); (5) **Comorbidity**: - Address mental health; - HCV treatment (highly effective DAAs — treat regardless active use); - HIV testing + PrEP; - Wound care for IV use; (6) **Specific populations**: - **Pregnancy**: methadone/buprenorphine; AVOID detox alone (high relapse + harm); - **Adolescents**: prevention + early intervention; - **Pain patients** transitioning off opioids — taper carefully + MAT if OUD; - **Justice-involved** — high overdose post-release; MAT continuation; (7) **System changes**: - Insurance parity; - Workforce; - Reduce stigma in healthcare; - Address pain management without opioid escalation; (8) **Social determinants**: - Housing instability — Housing First; - Employment; - Income; - Address despair contributing; - Address root causes — economic + social; (9) **Data + surveillance**: - Real-time overdose tracking; - Treatment outcomes; (10) **International cooperation**: - Fentanyl precursor regulation; - Naloxone access; - WHO guidelines; (11) **Modern**: - Stimulant + polysubstance increasing; - Need contingency management for stimulants; - Long-acting injectable buprenorphine + naltrexone improving adherence"
+      },
+      {
+        "label": "C",
+        "text": "Single approach"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Random"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Opioid epidemic: prescribing guidelines (CDC) + PDMP + safe disposal. MAT (buprenorphine, methadone, naltrexone) reduces mortality 50%; X-waiver removed 2023. Harm reduction (naloxone OTC, SSP, test strips, safe consumption). Comorbidity (HCV cure). Pregnancy MAT. Social determinants.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "CDC 2022 Pain; ASAM"
+  },
+  {
+    "scenario": "Hospital system improving care for justice-involved individuals with mental illness",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No intervention"
+      },
+      {
+        "label": "B",
+        "text": "Justice-Involved + Mental Illness — Sequential Intercept Model: (1) **Scope**: - Disproportionate representation in justice system; - 20%+ jail population; - 'Three largest mental hospitals are jails'; - Deinstitutionalization + inadequate community services contributed; (2) **Sequential Intercept Model** (Munetz + Griffin) — opportunities to divert at each stage: - **Intercept 0**: Crisis services (mobile crisis, 988, hotlines, stabilization — prevent police involvement); - **Intercept 1**: Law enforcement (CIT — Crisis Intervention Team training, co-response with clinicians, diversion at scene); - **Intercept 2**: Initial detention + court hearings (mental health screening, court liaison); - **Intercept 3**: Jails + courts (mental health treatment in jail, mental health courts — diversion to community treatment with court supervision); - **Intercept 4**: Reentry from jail/prison (Transition Coordinators, Forensic ACT, medication continuation, Medicaid/insurance re-enrollment, housing); - **Intercept 5**: Community corrections (probation, parole — mental health caseloads, treatment-mandated supervision); (3) **Specific evidence-based programs**: - **CIT** (Memphis model — 40-hr training officers, diversion, reduced shootings + arrests); - **Mental Health Courts** — voluntary diversion, treatment + supervision vs incarceration, reduced recidivism; - **Forensic ACT (FACT)** — assertive community treatment with criminal justice involvement; - **Drug Courts** — substance use; - **Veterans Treatment Courts**; (4) **Treatment in correctional settings**: - Medication continuation (psychiatric + MAT — crucial; jail withdrawal mortality + overdose post-release); - Therapy when available; - Crisis services + suicide prevention (highest risk first 24-48h jail admission); - **Reentry planning** essential — high mortality post-release; (5) **Medicaid Inmate Exclusion** (US barrier — being addressed) — eligibility paused during incarceration; (6) **Restoration of competency** for justice-involved with mental illness; (7) **Capital case + insanity defense** — forensic psychiatry expertise; (8) **Address mass incarceration policy**: - Sentencing reform; - Drug policy reform; - Diversion at multiple points; - Investment in community treatment vs incarceration; (9) **Equity**: - Racial disparities in arrest, sentencing, treatment; - Address bias; - Cultural responsiveness; (10) **Multidisciplinary**: forensic + community psychiatry, judges, attorneys, police, corrections, social work, peer support, family; (11) **Modern**: - **Stepping Up Initiative** (NACo + APA + Council of State Governments — county-level reform); - **Justice + Mental Health Collaboration Program (JMHCP)** federal funding"
+      },
+      {
+        "label": "C",
+        "text": "Single approach"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Random"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Justice + Mental Illness: Sequential Intercept Model (5 intercepts). CIT, mental health courts, FACT, drug courts, reentry planning. MAT + medication continuation crucial. Reduce mass incarceration. Address racial disparities. Stepping Up Initiative. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "Munetz + Griffin Sequential Intercept; CIT"
+  },
+  {
+    "scenario": "Health system addressing perinatal mental health screening + treatment access",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No intervention"
+      },
+      {
+        "label": "B",
+        "text": "Perinatal Mental Health — Public Health Approach: (1) **Scope**: - Depression 10-20% pregnancy + postpartum; - Anxiety similar or higher; - Suicide leading cause maternal mortality in some series; - Untreated affects mother + infant + family; (2) **Screening recommendations**: - **ACOG** + **AAP** + **USPSTF** recommend universal screening pregnancy + postpartum (with adequate systems for follow-up); - **EPDS** (Edinburgh Postnatal Depression Scale) — most common; - **PHQ-9** + **GAD-7** alternatives; - Screen multiple times — early pregnancy, 3rd trimester, 6 wk postpartum, well-child visits up to 12 mo; - Screen at well-child visits — pediatrician + parents both benefit; (3) **Treatment access**: - **Massachusetts Child Psychiatry Access Project (MCPAP) for Moms** — telephone consultation + referrals for OB/family medicine — model replicating; - **Perinatal psychiatry programs** + specialty clinics; - **Mother-Baby Units** (inpatient — UK model spreading); - **Brexanolone** + **Zuranolone** FDA approved (limited access due to cost + REMS for brexanolone); - **Telepsychiatry**; - **Group therapy + peer support** (Postpartum Support International — PSI); (4) **Workforce gaps**: - Perinatal psychiatry specialty limited; - Education for OB + family medicine + pediatrics in prescribing + management; - Doulas + community health workers; (5) **Equity considerations**: - Racial disparities in screening + treatment + outcomes; - Black women — 3-4× maternal mortality (US); - Cultural adaptation; - Multilingual services; - Address structural racism in maternity care; (6) **Beyond depression**: - Anxiety; - PTSD (birth trauma, infant in NICU, prior pregnancy loss); - Bipolar; - Postpartum psychosis (EMERGENCY); - OCD intrusive thoughts; - Substance use; - Eating disorders; (7) **Father/partner mental health**: paternal PPD ~ 10%, affects family; screen + support; (8) **Loss + grief**: miscarriage, stillbirth, infant loss — specific support; (9) **Integrated care**: - OB + psychiatry; - Pediatrician engagement; - Lactation; - Social work; - Family; (10) **Policy advocacy**: - Insurance coverage; - Paid family leave; - Maternal mortality review committees; - **MOMS Act** (US); (11) **Modern**: - Maternal mental health = global priority; - WHO recommendations; - Perinatal mental health policy initiatives"
+      },
+      {
+        "label": "C",
+        "text": "Single approach"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Random"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Perinatal Mental Health: universal screening (EPDS), MCPAP for Moms consultation model, perinatal specialty + Mother-Baby Units, brexanolone/zuranolone, equity (racial disparities), beyond depression (anxiety, PTSD, OCD, bipolar, psychosis emergency), paternal PPD, integrated care, policy advocacy.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG; AAP; MCPAP for Moms"
+  },
+  {
+    "scenario": "Mental health system implementing prevention + early intervention strategies",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No intervention"
+      },
+      {
+        "label": "B",
+        "text": "Mental Health Prevention + Early Intervention — Population Approach: (1) **Public health prevention framework**: - **Universal**: whole population; - **Selective**: high-risk groups; - **Indicated**: subsyndromal symptoms; (2) **Universal prevention**: - **Maternal + child health**: prenatal care, nutrition, parenting education, ACEs prevention; - **Early childhood**: high-quality preschool (Head Start), parenting programs (Triple P, Incredible Years); - **Schools**: SEL, mental health literacy, anti-bullying, suicide prevention education; - **Workplace**: mental health programs, EAP, leadership development; - **Community**: connectedness, civic engagement, anti-stigma campaigns; - **Population health**: address social determinants (poverty, housing, racism); (3) **Selective prevention**: - **At-risk youth**: trauma exposure, family mental illness, foster care, juvenile justice involvement; - **Postpartum**: prevention of PPD in high-risk women; - **Bereavement**: complicated grief prevention; - **Disaster mental health**; - **Refugees + immigrants**; - **Veterans + military**; - **LGBTQ+ youth**; (4) **Indicated prevention**: - **Subsyndromal depression** → prevent MDD: CBT for prevention; - **CHR for psychosis** → reduce conversion; - **Subsyndromal substance use** → SBIRT, MET; - **Eating disorder risk**; (5) **Suicide prevention** (across levels): - Universal (means restriction, mental health literacy); - Selective (high-risk groups); - Indicated (treatment of mental illness + safety planning + caring contacts); - Zero Suicide health system initiative; (6) **Investment return**: - Prevention has high ROI (return on investment) over lifetime; - Underfunded historically; (7) **Risk factor modification**: - Modifiable risks for dementia (Lancet Commission — hearing, education, exercise, sleep, smoking, alcohol, BP, obesity, depression, social isolation, traumatic brain injury, air pollution); - Mental health prevention overlap (exercise, sleep, substance use, isolation); (8) **Stigma reduction** + mental health literacy (MHFA — Mental Health First Aid); (9) **Integration with primary care + schools + community**; (10) **Evidence challenges**: - Long latency; - Causality complex; - Resources required; - But growing evidence base — many cost-effective interventions; (11) **Modern**: precision prevention + digital + population data; (12) **Global mental health**: UN Sustainable Development Goals — mental health priority; WHO mhGAP"
+      },
+      {
+        "label": "C",
+        "text": "Single approach"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Random"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Mental health prevention: universal (maternal/child, schools, workplace, community) + selective (at-risk groups) + indicated (subsyndromal sx). Suicide prevention across levels. ROI high. Risk factor modification (Lancet Commission dementia). Stigma reduction + mental health literacy. WHO global priority.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "WHO mhGAP; Lancet Commission Dementia"
+  },
+  {
+    "scenario": "Hospital system addressing mental health disparities + equity",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No intervention"
+      },
+      {
+        "label": "B",
+        "text": "Mental Health Disparities + Equity — Comprehensive Approach: (1) **Documented disparities**: - **Racial/ethnic**: African Americans + Latino/Hispanic — lower access, lower quality care, more coercive (involuntary, police, jail), under-diagnosis of mood + over-diagnosis of psychosis; - **LGBTQ+**: higher mental health burden (minority stress) + barriers to affirming care; - **SES**: poverty associated with mental illness bidirectionally; access barriers; - **Geographic**: rural lower access; - **Gender**: women — depression, anxiety, eating, sexual violence; men — substance use, suicide death (higher), under-treatment due to stigma; - **Age**: elderly — under-recognized; youth — under-resourced; - **Immigration status**: undocumented — barriers; - **Disability**: mental health needs; - **Justice-involved**: massive overrepresentation; (2) **Drivers of disparities**: - **Structural racism** + historical injustice; - **Insurance + cost barriers**; - **Workforce diversity gaps**; - **Cultural + linguistic mismatch**; - **Stigma** (especially in some communities); - **Bias in diagnosis + treatment**; - **Trauma + ACEs disproportionate**; - **Social determinants**; (3) **Interventions**: - **Workforce diversity**: pipeline, recruitment, retention of URM providers; - **Cultural humility training**; - **Implicit bias training**; - **Community-engaged research + program design**; - **Trauma-informed + healing-centered**; - **Language services**; - **Insurance coverage parity + expansion**; - **Telepsychiatry** to address geographic + access; - **Integrated care** (primary care, schools, faith communities); - **Peer support + community health workers**; - **Address social determinants**; - **Anti-stigma campaigns**; (4) **Specific examples**: - **Friendship Bench (Zimbabwe)** — lay health workers, evidence-based; - **mhGAP** (WHO) — task-sharing; - **Strong African American Families** — culturally adapted prevention; - **Asian Counseling + Referral Service (ACRS)** — cultural specific; - **LGBTQ+ affirming care centers**; - **Indigenous healing programs** — integration traditional + modern; (5) **Data + accountability**: - Track outcomes by demographics; - Equity metrics; - Community Advisory Boards; - Accountability for disparities; (6) **Policy advocacy**: - Mental Health Parity (US Mental Health Parity + Addiction Equity Act); - Mental Health Block Grant; - Medicaid expansion + behavioral health coverage; - International — universal mental health coverage; (7) **Multidisciplinary leadership** + community partnership essential; (8) **Modern**: health equity as core mission, not afterthought"
+      },
+      {
+        "label": "C",
+        "text": "Single approach"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Random"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Mental health disparities: racial/ethnic, LGBTQ+, SES, geographic, gender, age, immigration, justice. Drivers: structural racism, insurance, workforce gaps, cultural mismatch, stigma, bias, ACEs. Interventions: workforce diversity, cultural humility, telepsych, integration, peer support, social determinants, advocacy. Equity = core.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "WHO Health Equity; SAMHSA Equity"
+  },
+  {
+    "scenario": "Health system implementing digital mental health interventions",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No intervention"
+      },
+      {
+        "label": "B",
+        "text": "Digital Mental Health Interventions — Expanding Access + Workforce Capacity: (1) **Modalities**: - **Telepsychiatry** (synchronous video) — most common; - **Mobile apps** (self-guided + therapist-assisted): - **Digital therapeutics** — FDA-approved or registered (Reset, Reset-O for substance use disorder; Endeavor for ADHD; Somryst for insomnia); - **Self-help/wellness** (Headspace, Calm — meditation; Woebot, Wysa — conversational); - **CBT-based**: Sleepio (CBT-I — strong evidence), SHUTi, Beating the Blues; - **PTSD**: PTSD Coach (VA — free); - **Anxiety**: Mindshift; - **Smoking cessation**: SmokefreeTXT; - **Online therapy platforms**: BetterHelp, Talkspace (caveats — quality variable); - **Peer support online**: 7 Cups, NAMI online; (2) **Evidence base**: - CBT-based digital — comparable to in-person for mild-moderate; - Especially effective with some guidance/support (therapist coaching); - More variable for unguided self-help; (3) **Use cases**: - **Stepped care low intensity** (mild-moderate); - **Augmentation** of in-person treatment; - **Workforce extension**; - **Geographic access**; - **Stigma reduction** (privacy); - **Wait times** for higher intensity; - **Maintenance** post-active treatment; (4) **Challenges**: - Quality + evidence varies widely (most apps not evidence-based); - Privacy + data concerns; - Engagement + dropout high in self-guided; - Digital divide (access, literacy); - Crisis safety management; - Reimbursement evolving; (5) **Regulatory**: - **FDA digital therapeutics** — Prescription Digital Therapeutic (PDT) — clinical trials, indication, prescription; - **mHealth apps** — most unregulated; quality variable; - **APA + One Mind** app evaluation framework; (6) **Equity considerations**: - Digital divide — provide alternatives; - Tailored content; - Language; - Cost; (7) **Privacy + ethics**: - Data security; - Confidentiality; - Informed consent; - Algorithm transparency; (8) **AI + machine learning emerging**: - Symptom monitoring (passive sensing, voice analysis); - Personalized interventions; - Clinical decision support; - **AI chatbots for mental health** — ethical concerns, supplementary not replacement; (9) **Workflow integration**: - Apps prescribed + monitored by clinician; - Asynchronous data review; - Patient portal; (10) **Cost-effectiveness** + scalability — major advantage; (11) **Modern**: rapid evolution; clinician selection + guidance essential; balance promise with appropriate skepticism + evidence"
+      },
+      {
+        "label": "C",
+        "text": "Single approach"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Random"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Digital mental health: telepsychiatry, FDA digital therapeutics (Reset, Endeavor, Somryst), evidence-based apps (Sleepio CBT-I), self-help (Headspace, Woebot), online platforms (caveats). Stepped care low intensity. Workforce extension. Privacy + equity + AI emerging. Clinician guidance.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "FDA Digital Therapeutics; APA Apps"
+  },
+  {
+    "scenario": "Hospital implementing global mental health approach + low-resource setting strategies",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No intervention"
+      },
+      {
+        "label": "B",
+        "text": "Global Mental Health — Low-Resource Setting Approach: (1) **Scope**: - 1 in 4 people experience mental illness; - 70% in low + middle-income countries (LMIC); - Treatment gap 70-90% LMIC; - Mental health < 2% of health budgets globally; (2) **WHO mhGAP** (Mental Health Gap Action Programme): - **Priority conditions**: depression, psychosis, bipolar, epilepsy, dementia, alcohol + drug use disorders, intellectual disability, child + adolescent disorders, suicide; - **Intervention Guide (mhGAP-IG)** — task-sharing tool for primary care providers in LMIC; - Brief assessment + intervention algorithms; (3) **Task-sharing** = central strategy: - Train non-specialists (primary care, nurses, community health workers, lay health workers) in mental health; - Supervision by specialists; - Examples: **Friendship Bench (Zimbabwe)** — grandmothers on park benches deliver problem-solving therapy; evidence-based; **Healthy Activity Program (India)** — lay counselors deliver behavioral activation; **THP (Thinking Healthy Programme — Pakistan)** — CBT-based perinatal; (4) **Community-based + integrated care**: - Integrate mental health into primary care; - Schools; - Maternal-child health programs; - HIV + TB programs; - Disaster response; (5) **Address social determinants**: - Poverty alleviation; - Education; - Housing; - Gender equity; - Reduce violence; (6) **Cultural adaptation**: - Local idioms of distress; - Traditional healers integration (where appropriate + evidence-based); - Family + community-centered approaches; - Religion + spirituality; (7) **Emergency + humanitarian settings**: - **IASC Guidelines on Mental Health + Psychosocial Support (MHPSS) in Emergencies**; - Psychological First Aid; - Phased + tiered approach; - Refugees, conflict, disaster; (8) **Suicide prevention**: - Means restriction (pesticide regulation — major in Asia rural agriculture; firearm in some contexts); - Mental health treatment access; - Media reporting guidelines; - Crisis services; (9) **Building specialist capacity** + leadership: - **PRIME** (Programme for Improving Mental Health Care); - **Emerald**; - Country mental health strategies + plans; (10) **Sustainable Development Goals (SDG)** — mental health as priority (SDG 3.4 — reduce mortality from NCDs including mental health); (11) **Funding**: - Movement for mental health investment; - Global Mental Health Action Network; - World Bank involvement; (12) **Stigma + human rights**: - Address discrimination + institutional abuse; - Movement away from chains + restraint + custodial care; - Rights-based + recovery-oriented"
+      },
+      {
+        "label": "C",
+        "text": "Single approach"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Random"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Global Mental Health LMIC: WHO mhGAP, task-sharing (Friendship Bench Zimbabwe, HAP India, THP Pakistan), community-integrated, cultural adaptation, IASC humanitarian guidelines, suicide prevention (pesticide regulation), SDG priority, stigma + human rights.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "WHO mhGAP; Lancet Global Mental Health"
+  },
+  {
+    "scenario": "Hospital implementing intellectual + developmental disability behavioral health services",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No intervention"
+      },
+      {
+        "label": "B",
+        "text": "Intellectual + Developmental Disability (IDD) + Mental Health — Specialized Approach: (1) **Scope**: - 30-50% of IDD have psychiatric comorbidity; - Underdiagnosed + undertreated; - 'Diagnostic overshadowing' — attribute symptoms to IDD; - Communication barriers; - Limited workforce; (2) **Common psychiatric in IDD**: - Anxiety (very common); - Depression (often atypical — irritability, behavior changes); - ADHD; - Autism overlap; - Psychosis; - Bipolar; - Behavioral issues (aggression, self-injury, stereotypies); - Trauma (high prevalence — abuse); - Adjustment disorders; (3) **Assessment**: - **Informant-based** scales (caregivers report); - **Modified instruments** (Glasgow Depression Scale for People with Learning Disability — GDS-LD; PAS-ADD); - Behavioral analysis + functional assessment; - Rule out medical (pain, constipation, sensory, sleep) — common drivers of behavioral changes in IDD; - Communication adaptation — pictures, simplified, AAC (augmentative + alternative communication); (4) **Treatment**: - **Behavioral interventions** first-line: - Applied Behavior Analysis (ABA); - Positive behavior support; - Functional analysis-based; - Environmental modification + sensory; - **Psychotherapy adapted**: - CBT with adaptation for cognitive level; - Behavioral therapy; - Trauma-focused (if applicable); - Family + caregiver involvement; - **Medication** — same as general but lower doses + slower titration + close monitoring: - SSRI for anxiety/depression; - Stimulant for ADHD; - Atypical antipsychotic for severe aggression/SIB (risperidone, aripiprazole FDA approved for severe irritability in autism); - AVOID polypharmacy; - AVOID benzodiazepines (paradoxical activation common); (5) **Address comorbidity + accommodations**: - Sensory issues (hearing, vision); - Communication; - Medical comorbidity (seizure, GI, cardiac); - Sleep; (6) **Caregiver support + family**: - Education; - Respite; - Caregiver mental health; - Sibling support; (7) **Transitions**: - Pediatric to adult care; - School to vocational; - Family home to supported living; (8) **Address abuse + trauma**: - Higher prevalence; - Trauma-informed; - Reporting; (9) **Specialized services**: - IDD-trained psychiatrists; - START programs (Systemic Therapeutic Assessment Resources + Treatment); - Behavioral specialists; - OT, speech, PT; - Case management; (10) **Avoid restrictive practices** (restraint, seclusion, chemical restraint) — use only as last resort; (11) **Long-term**: lifelong condition; chronic care model; (12) **Multidisciplinary**: psychiatry, developmental medicine, neurology, behavioral specialist, OT, speech, social work, family, vocational"
+      },
+      {
+        "label": "C",
+        "text": "Single approach"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Random"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "IDD + Mental Health: 30-50% comorbidity, underdiagnosed (diagnostic overshadowing). Informant-based + behavioral assessment. Behavioral interventions first. Adapted psychotherapy. Medication lower dose + close monitor. Address abuse/trauma higher. Specialized services (START). Caregiver support. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "START; AAIDD; NADD"
+  },
+  {
+    "scenario": "Healthcare system implementing forensic psychiatry consultation + risk assessment",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No intervention"
+      },
+      {
+        "label": "B",
+        "text": "Forensic Psychiatry — Scope + Practice: (1) **Forensic psychiatry** = intersection of psychiatry + legal: criminal + civil; (2) **Criminal forensic**: - **Competency to stand trial** (Dusky standard); - **Insanity defense / NGRI** (varies by jurisdiction — M'Naghten test most common: not knowing right from wrong due to mental disease at time of offense; some use ALI Model Penal Code — substantial capacity test); - **Diminished capacity** (mens rea); - **Capital case** mitigation; - **Sentencing recommendations**; - **Sex offender evaluation + treatment**; - **Risk assessment** for violence; (3) **Civil forensic**: - **Capacity assessments** (medical decision-making, financial, testamentary, guardianship); - **Civil commitment**; - **Disability evaluations**; - **Personal injury / emotional distress claims**; - **Child custody** (specialized); - **Worker's compensation**; - **Malpractice defense + plaintiff**; - **Independent Medical Exams (IME)**; (4) **Violence risk assessment**: - **Static factors**: prior violence (strongest predictor), age, gender, history; - **Dynamic factors**: psychiatric sx, substance use, treatment adherence, social support, life stressors, access to means; - **Standardized tools**: - **HCR-20** (Historical-Clinical-Risk Management — most commonly used); - **VRAG** (Violence Risk Appraisal Guide); - **COVR** (Classification of Violence Risk); - **Sex offender**: STATIC-99R, SVR-20, STABLE-2007; - **Structured Professional Judgment** > unstructured clinical judgment; - Probabilistic, not deterministic; (5) **Suicide risk** = different framework (C-SSRS, Beck SSI); (6) **Approach to forensic evaluation**: - Neutral (not therapeutic role — distinct from clinical); - Inform examinee of purpose + limits of confidentiality + role; - Collateral information essential; - Standardized assessment; - Document carefully; - Opinion clearly stated for legal purpose; (7) **Ethics**: - Avoid dual roles (treating + forensic same case); - Honesty + objectivity; - Avoid prejudice; - **APA Ethics Code + AAPL Guidelines**; (8) **Cultural + linguistic considerations**; (9) **Expert witness testimony**: - Specialized training; - Court testimony; - Daubert standard (scientific evidence admissibility); (10) **Modern**: - Risk assessment + management (not just prediction — also intervention); - Recovery-oriented even in forensic settings; - Address mental illness in justice system; - Reduce stigma + improve diversion + treatment access"
+      },
+      {
+        "label": "C",
+        "text": "Single approach"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Random"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Forensic psychiatry: criminal (competency, insanity, sentencing, violence risk) + civil (capacity, commitment, disability, custody). Risk assessment tools (HCR-20, VRAG, STATIC-99R). Structured professional judgment > unstructured. Avoid dual roles. AAPL ethics. Cultural considerations.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "AAPL; HCR-20; Dusky"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี diabetes + depression + chronic kidney disease + sleep apnea + obesity + anxiety — metabolic-psychiatric integrative",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No intervention"
+      },
+      {
+        "label": "B",
+        "text": "Metabolic-Psychiatric Complex Case — Integrative: (1) **Bidirectional relationships**: depression worsens diabetes outcomes + medication adherence + lifestyle; diabetes increases depression risk × 2; obesity, sleep apnea, anxiety all interact; (2) **Depression treatment** considering CKD + DM + sleep apnea + obesity: - **SSRI** (sertraline, escitalopram — relatively safe in CKD; dose adjust escitalopram); - **SNRI** (duloxetine — caution CKD; venlafaxine alternative); - **AVOID**: paroxetine (anticholinergic + weight + sexual SE); high-dose citalopram (QT esp DM patients); TCA (anticholinergic + CV); - **Bupropion** — no sexual SE + may help weight; lower seizure threshold (caution if uncontrolled DM); - **CBT** (especially CBT for depression in chronic illness); - Avoid mirtazapine + olanzapine (weight gain) for this patient if possible — but mirtazapine helps insomnia + weight loss in malnourished; (3) **Anxiety treatment**: - SSRI/SNRI dual purpose; - CBT; - Buspirone alternative; - AVOID benzodiazepines (sleep apnea — respiratory depression; falls; cognitive); (4) **Sleep apnea treatment**: - CPAP — adherence challenging; - Weight loss; - Address with mental health (depression bidirectional); (5) **Diabetes management**: - Glycemic control improves depression + cognition; - SGLT2 inhibitors, GLP-1 (semaglutide, tirzepatide) — also weight loss + CV + renal benefit + may have mood benefit; - Monitor for medication interactions; - Reduce hypoglycemia (worsens anxiety + cognition); - Education + self-management; (6) **Obesity intervention**: - **Multimodal**: lifestyle (diet, exercise — also antidepressant), behavioral, pharmacologic (semaglutide), bariatric surgery (effective + careful psychiatric assessment including binge eating, depression); - GLP-1 agonists effective + may help binge eating + depression (research); (7) **Address other lifestyle**: - Smoking cessation; - Alcohol reduction; - Sleep hygiene; - Stress management (mindfulness); - Social engagement; (8) **CKD considerations**: - Medication renal adjustments; - Hyperkalemia risk (some antidepressants + ACE-I + spironolactone); - Anemia + cognitive; - Dialysis psychiatric implications (depression high prevalence); (9) **Comorbid screening**: - Cardiovascular; - Cognitive (DM + depression + sleep apnea → dementia risk); - Bone health; - Cancer screening; (10) **Multidisciplinary**: endocrinology, psychiatry, primary care, nephrology, sleep medicine, dietitian, behavioral health, possibly bariatric, exercise specialist, social work; (11) **Patient-centered care + shared decision-making** with multiple chronic illnesses; (12) **Health behavior change** — motivational interviewing, gradual + sustainable"
+      },
+      {
+        "label": "C",
+        "text": "Single approach"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Random"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Metabolic + psychiatric: bidirectional. SSRI/SNRI (sertraline, escitalopram, bupropion; AVOID paroxetine, TCA, high citalopram). CPAP. Diabetes mgmt (SGLT2, GLP-1 — also mood + weight benefit). Multimodal obesity. CKD med adjustments. Multidisciplinary + shared decision-making.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "APA Depression Diabetes; Endocrine Society"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 60 ปี post-stroke + aphasia + depression + anxiety + caregiver burnout + medication management — integrative neuropsychiatric rehabilitation",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No intervention"
+      },
+      {
+        "label": "B",
+        "text": "Post-Stroke Neuropsychiatric Comprehensive Care: (1) **Post-stroke depression** (PSD ~ 30%): - SSRI (sertraline, escitalopram, citalopram cautious) — first-line; reduces depression + may improve recovery; - Some evidence prophylactic SSRI reduces incident PSD; - CBT adapted for cognitive + communication; - Exercise + rehab participation; - ECT if severe + safe post-stroke; - AVOID anticholinergics (TCA, paroxetine — cognitive); (2) **Post-stroke anxiety** (~ 25%): - SSRI; - CBT adapted; - Address stroke-related fears; - AVOID benzodiazepines (cognitive, sedation, aspiration risk, falls); (3) **Aphasia communication**: - Speech-language pathology; - Augmentative + alternative communication (AAC); - Communication-friendly assessment (yes/no, gestures, pictures, written); - Adapt psychotherapy + assessment tools; (4) **Cognitive assessment + management**: - Vascular cognitive impairment; - Vascular dementia if significant; - Cholinesterase inhibitor modest; - Cognitive rehabilitation; - Vascular risk factor modification (essential for prevention further events); (5) **Pseudobulbar affect (PBA)** if present: - Dextromethorphan + quinidine (Nuedexta); - SSRI alternative; (6) **Apathy** common (distinct from depression): - Address with activity engagement; - Limited medication evidence; - Dopaminergic experimental; (7) **Functional rehabilitation**: - PT/OT; - Speech therapy; - Vocational; - Adaptive equipment; - Home modifications; (8) **Caregiver burden**: - Education; - Respite; - Support groups; - Counseling; - Address depression in caregiver (high); (9) **Medication management**: - Pill organizers; - Caregiver involvement; - Simplification regimen; - Address polypharmacy; - **Anticholinergic burden minimize** (cognition); (10) **Vascular risk factor management**: - BP, lipids, glucose; - Antiplatelet/anticoagulation; - Smoking cessation; - Diet + exercise; (11) **Sexual + relationship issues**: - Address; - Adapt physically; - Couples counseling; (12) **Driving assessment**; (13) **Insurance + financial**: - Disability; - Family + Medical Leave Act; - Long-term care planning; (14) **Multidisciplinary stroke team**: neurology, psychiatry, PT/OT/SLP, rehabilitation medicine, social work, primary care, nursing, family, peer support (stroke survivor groups); (15) **Long-term**: chronic illness model + adaptation + sustained support"
+      },
+      {
+        "label": "C",
+        "text": "Single approach"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Random"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Post-stroke neuropsychiatric: PSD SSRI + CBT adapted, PSA SSRI (AVOID BZD), aphasia communication adaptation, vascular cognitive impairment + risk factor modification, PBA (dextromethorphan/quinidine), apathy, functional rehab, caregiver burden support, medication mgmt + minimize anticholinergic. Multidisciplinary stroke team.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "neurology",
+    "board_age_group": "adult",
+    "reference_source": "AHA/ASA Post-Stroke; Robinson PSD"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 45 ปี cancer (breast) + depression + chronic pain + fatigue + sleep disturbance + chemotherapy effects — psycho-oncology integrative",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No intervention"
+      },
+      {
+        "label": "B",
+        "text": "Psycho-Oncology Comprehensive Care: (1) **Distress screening** routine (NCCN Distress Thermometer); identifies psychological + practical + family + spiritual + physical needs; (2) **Depression**: - Distinguish from cancer-related fatigue + treatment side effects; - **Antidepressant choice — drug interactions critical**: - **Sertraline, escitalopram, mirtazapine** — preferred; - **AVOID**: fluoxetine, paroxetine, bupropion in tamoxifen patients (CYP2D6 inhibitors → reduce endoxifen active metabolite); - Mirtazapine — appetite + sleep + nausea benefit; - QTc considerations with chemotherapy (avoid high citalopram); - **CBT, mindfulness-based, meaning-centered (Breitbart)** psychotherapy; - **Exercise** — antidepressant + cancer benefits; - **ECT** if severe + safe; (3) **Anxiety**: - SSRI/SNRI; - CBT; - Mindfulness-based stress reduction (MBSR); - Anxiolytic for acute (e.g., procedure-related) — short-term BZD reasonable; - Hypnosis (anticipatory nausea); (4) **Cancer-related fatigue** (most common, multifactorial): - Exercise (paradoxically improves fatigue — evidence-based); - Address anemia, hypothyroidism, sleep, depression; - **Methylphenidate** (off-label) — moderate evidence palliative + advanced cancer; - **Modafinil** alternative; - **CBT for fatigue**; - **Mindfulness**; (5) **Pain management**: - WHO analgesic ladder; - Multi-modal (acetaminophen, NSAIDs, opioids titrated, adjuvants — gabapentin, antidepressants for neuropathic; SNRI duloxetine for chemo neuropathy); - Procedures (nerve blocks, neuraxial); - CBT for pain; - Mindfulness; - Spiritual + meaning support; (6) **Sleep**: - CBT-I; - Treat contributors (pain, hot flashes from chemo-induced menopause, anxiety, restless legs, OSA); - Melatonin agonist; - Trazodone, mirtazapine (also antidepressant); - AVOID benzodiazepines long-term; (7) **Chemotherapy-induced**: - Nausea (5-HT3 antagonists, mirtazapine); - Cognitive impairment ('chemo brain' — cognitive rehab, address contributors, exercise); - Neuropathy (duloxetine evidence; pregabalin/gabapentin caution); - Hot flashes + sexual + reproductive concerns; (8) **Existential + spiritual**: - Meaning-centered therapy; - Chaplaincy; - Dignity therapy (Chochinov — advanced cancer); - Address fear of death + recurrence; - End-of-life planning if appropriate; (9) **Family + caregiver support**: - Education; - Couples + family therapy; - Caregiver burden + their mental health; - Children of cancer patients; (10) **Survivorship**: - Long-term follow-up; - Late effects monitoring; - Recurrence anxiety (common); - Reintegration to life; (11) **Multidisciplinary**: oncology, psycho-oncology, palliative care, pain medicine, primary care, social work, chaplaincy, nutritionist, PT/OT, navigator, peer support, family"
+      },
+      {
+        "label": "C",
+        "text": "Single approach"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Random"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Psycho-oncology comprehensive: distress screening (NCCN); depression — sertraline/escitalopram/mirtazapine (AVOID fluoxetine/paroxetine/bupropion + tamoxifen); cancer fatigue (exercise, methylphenidate palliative); pain (WHO ladder + adjuvants); sleep CBT-I; chemo SE; existential meaning-centered therapy; family + survivorship. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "NCCN Distress; Breitbart MCP"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 16 ปี autism spectrum + ADHD + anxiety + sleep + family stress + school challenges — adolescent ASD integrative",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No intervention"
+      },
+      {
+        "label": "B",
+        "text": "Adolescent ASD with Comorbidities — Integrative: (1) **ASD core**: - Continued behavioral + skills support; - Social skills training adapted; - OT for sensory + motor; - Speech-language; - Educational supports (IEP); (2) **ADHD comorbidity** (30-50% in ASD): - **Stimulants** can be effective but more side effects in ASD (irritability, decreased appetite); start low + slow; - **Non-stimulants** (atomoxetine, guanfacine, clonidine) — sometimes better tolerated; - Address executive function + organization; - Educational accommodations; (3) **Anxiety** (40% in ASD): - **SSRI** — first-line but watch for activation/behavioral disinhibition; sertraline, fluoxetine, escitalopram; - **CBT adapted for ASD** (e.g., 'Facing Your Fears' — Reaven) — concrete + visual + skills-focused; - Address specific (separation, social, GAD, OCD); - Avoid benzodiazepines (paradoxical activation); (4) **Sleep** (very common in ASD — 50-80%): - **Sleep hygiene** + structured routine; - **Melatonin** (well-tolerated, evidence base in ASD); - Address contributors (anxiety, GI, sensory); - Behavioral sleep interventions; (5) **Severe irritability/aggression/self-injury** (not core ASD but common comorbid): - **Risperidone, aripiprazole** FDA-approved for irritability in ASD; - Behavioral interventions first; - Address triggers (sensory, communication, medical, environmental); (6) **Adolescent-specific issues**: - **Sexual + relationship education** adapted (often inadequate); - **Identity + self-acceptance** (neurodiversity perspective); - **Friendship + social challenges**; - **Bullying victimization** — assess + address; - **Gender + sexual minority** consideration (higher rates); - **Mental health stigma**; (7) **Transition planning** (starting age 14-16): - **Vocational** (supported employment, IPS adapted); - **Education** (post-secondary supports — many programs); - **Independent living skills**; - **Healthcare transition** to adult system; - **Driving assessment + skills**; - **Financial + legal**: ABLE accounts, special needs trust, supported decision-making vs guardianship; (8) **Family support**: - Education; - Sibling support; - Caregiver burnout; - Respite; (9) **Address medical comorbidity**: - Epilepsy (20-30% in ASD); - GI; - Hearing/vision; - Genetic — counseling + testing if syndromic; (10) **Multidisciplinary**: developmental + adolescent pediatrics, child + adolescent psychiatry, behavioral therapist, OT, speech, special education, social work, vocational, family; (11) **Modern**: neurodiversity perspective + acceptance + accommodation alongside skill-building"
+      },
+      {
+        "label": "C",
+        "text": "Single approach"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Random"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Adolescent ASD comorbidities integrative: ADHD (stimulant low/slow or non-stim), anxiety (SSRI + adapted CBT, AVOID BZD), sleep (melatonin), irritability (risperidone/aripiprazole FDA), adolescent issues (identity, sex ed, bullying, gender), transition planning, family support, address medical (epilepsy 20-30%). Neurodiversity.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "AAP ASD; AACAP"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 38 ปี complex PTSD + depression + dissociation + chronic pain + substance use — trauma-integrative care",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No intervention"
+      },
+      {
+        "label": "B",
+        "text": "Complex PTSD with Multiple Comorbidities — Integrative Phased Treatment: (1) **Phased treatment model** (Herman, ISTSS Complex PTSD): - **Phase 1 — Safety + Stabilization**: address self-harm, suicide risk, substance use, basic safety, skills (grounding, distress tolerance, emotion regulation), build alliance, psychoeducation — may take months-years before trauma processing; - **Phase 2 — Trauma processing**: gradual + integrated processing of trauma memories; - **Phase 3 — Integration + Re-engagement**: meaningful life, relationships, work, identity reconstruction; (2) **Trauma-focused therapies** (Phase 2): - **PE** (Prolonged Exposure); - **CPT** (Cognitive Processing Therapy); - **EMDR**; - **Trauma-focused CBT**; - For complex PTSD — adapted versions (STAIR + Narrative — Cloitre); - **Internal Family Systems (IFS)** + parts work for dissociation; (3) **Pharmacotherapy adjuncts**: - **SSRI** (sertraline + paroxetine FDA-approved PTSD); - **SNRI** (venlafaxine alternative); - **Prazosin** for nightmares; - **AVOID benzodiazepines** (worsen PTSD); - **Adjuncts**: atypical antipsychotic for severe + dissociation/psychotic-like (limited evidence); - **MDMA-assisted therapy** (FDA pending — research promising); - **Ketamine** + **psilocybin** (research); (4) **Comorbid depression**: - SSRI/SNRI overlap; - CBT; - Behavioral activation; - ECT for severe; (5) **Dissociation**: - Specialized assessment + treatment (ISSTD); - Grounding skills; - Address dissociative parts/states; - Avoid medications worsening dissociation (BZD, cannabis); (6) **Chronic pain — trauma overlap**: - Bidirectional; - CBT for chronic pain; - PT + mindfulness; - SNRI (duloxetine) overlap with PTSD + pain; - AVOID escalating opioids; (7) **Substance use** (very common — self-medication): - Integrated dual diagnosis treatment; - Address trauma + substance simultaneously (vs sequential — old model); - Seeking Safety (Najavits) — integrated PTSD + SUD curriculum; - MAT if opioid/alcohol; - Address harm reduction; (8) **Address social context**: - Safety from ongoing trauma (DV if applicable — safety planning, resources); - Stable housing; - Income; - Healthy relationships; - Address re-traumatization; (9) **Self-care + provider support**: - Vicarious traumatization risk; - Supervision essential; (10) **Trauma-informed care** throughout system; (11) **Multidisciplinary**: trauma-specialized therapist, psychiatry, primary care, pain medicine, addiction medicine, social work, peer support; (12) **Long-term**: gradual recovery; sustained engagement; complex PTSD takes years"
+      },
+      {
+        "label": "C",
+        "text": "Single approach"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Random"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Complex PTSD integrative: phased treatment (safety/stabilization → trauma processing → integration). PE/CPT/EMDR/STAIR for trauma. SSRI + prazosin (AVOID BZD). Integrated dual diagnosis (Seeking Safety). Chronic pain — CBT + non-opioid. Dissociation — ISSTD. Address ongoing trauma + social. Trauma-informed.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "ISTSS Complex PTSD; STAIR Cloitre"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 35 ปี severe BPD + AUD + bulimia + chronic SI + childhood trauma + custody issues — multi-disorder integrative",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No intervention"
+      },
+      {
+        "label": "B",
+        "text": "Multi-Disorder Severe Complex Case — Integrative: (1) **DBT** as foundational: - Comprehensive program (skills group + individual therapy + phone coaching + consultation team); - **Stage 1 — Behavioral stabilization**: address self-harm + suicidality + substance use + treatment-interfering behaviors + quality-of-life-interfering behaviors; - **Stage 2 — Trauma processing**: after stabilization; - **Stage 3 — Self-respect + ordinary problems**; - **Stage 4 — Capacity for joy**; (2) **AUD**: - **Naltrexone** (oral or LAI Vivitrol) — well-suited (affects reward + emotion regulation, FDA approved AUD); - Acamprosate alternative; - Disulfiram if highly motivated; - Behavioral (MET + CBT + 12-step); - Integrated with mental health; (3) **Bulimia**: - **CBT-E** (Enhanced — Fairburn) — gold standard; - **Fluoxetine 60mg** FDA approved BN; - Combined DBT + CBT-E may be needed; - Nutritional support + dietitian; - Medical monitoring (electrolytes, cardiac, dental); - **AVOID bupropion** (seizure risk); (4) **Trauma + childhood abuse**: - Address after Phase 1 stabilization; - Trauma-focused therapy (DBT-PE — Harned — integrates DBT + PE; or other trauma-focused after stabilization); - Trauma-informed care throughout; (5) **Chronic SI management**: - DBT skills (distress tolerance especially); - Distinguish chronic from acute change; - Crisis services + safety planning; - Brief hospitalization for acute danger (NOT extended — regression); - Address means restriction; (6) **Medication adjuncts** (no medication for BPD itself): - SSRI (depression, anxiety, bulimia); - Lamotrigine (emotion regulation); - Low-dose atypical (severe sx); - **AVOID benzodiazepines** (disinhibition + dependence + AUD); - **AVOID stimulants**; - Minimize polypharmacy; (7) **Custody issues**: - Mental health stigma in family court — advocacy; - Mental health does NOT automatically preclude custody; - Address actual parenting capacity; - Address children's safety + needs; - Family therapy + supervised visitation if needed; - Social work + child welfare engagement; - Legal counsel; (8) **Children's mental health** if involved — parent's mental illness affects; address; (9) **Social determinants**: - Stable housing; - Income; - Healthy relationships; - Address ongoing stress + trauma sources; (10) **Address relapse + relapse prevention**: - Triggers + skills + support; - Long-term recovery model; (11) **Multidisciplinary**: DBT-trained therapist, psychiatrist, addiction medicine, eating disorder specialist, primary care, social work, legal, peer support, family therapy; (12) **Long-term**: treatment over years; 50% BPD remit at 10 yr; AUD + bulimia chronic with recovery possible; (13) **Provider self-care** — challenging cases; supervision essential"
+      },
+      {
+        "label": "C",
+        "text": "Single approach"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Random"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Severe multi-disorder BPD + AUD + bulimia + SI + trauma + custody: DBT foundational (Stage 1 safety → trauma processing). Naltrexone AUD. CBT-E + fluoxetine bulimia. Trauma after stabilization (DBT-PE). Address chronic SI. AVOID BZD + stimulants. Custody — actual capacity. Multidisciplinary. Provider self-care.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "Linehan DBT; Harned DBT-PE; CBT-E"
+  },
+  {
+    "scenario": "Refugee อายุ 35 ปี post-trauma + depression + cultural adjustment + family separation + somatic symptoms — refugee mental health integrative",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No intervention"
+      },
+      {
+        "label": "B",
+        "text": "Refugee Mental Health — Trauma + Culture + Resettlement Integrative: (1) **Trauma exposure layers**: - Pre-migration (war, violence, persecution, torture, sexual violence, witnessing); - Migration journey (smugglers, exploitation, deprivation, separation); - Post-migration (refugee camp conditions, asylum process stress, discrimination, language barriers, employment, separation from family, identity); (2) **Common presentations**: - **PTSD** (high prevalence — 30%+); - **Depression** (40%+); - **Anxiety**; - **Somatic symptoms** — somatic expression more accepted in many cultures than psychological complaints — body pain, GI, headache, weakness; (3) **Trauma-informed assessment**: - Build trust gradually; - Confidentiality + safety; - Cultural humility; - Avoid forced disclosure; - Multiple sessions; - Trauma-specific assessment (after stabilization + alliance); (4) **Treatment**: - **Phased approach** — safety + stabilization, then trauma-focused; - **Trauma-focused therapies adapted**: NET (Narrative Exposure Therapy) — designed for refugees + multiple trauma; CETA (Common Elements Treatment Approach) — transdiagnostic + low-resource; PE, CPT, EMDR; - **CBT for depression + anxiety**; - **SSRI** for PTSD + depression; - **Somatic complaints**: validate, treat medically, integrate gradually with psychological framing; - **Psychoeducation** culturally adapted; (5) **Cultural considerations**: - Cultural concepts of distress; - Family + community-centered (vs individual); - Spirituality + religion; - Gender + sexuality (sometimes additional persecution + trauma); - Traditional healing — collaborate when appropriate; - **Interpreters** essential (professional, not family); - Avoid translation of psychiatric terms — use cultural idioms when possible; (6) **Address current stressors**: - Asylum process — legal counsel; - Housing; - Employment + English/Thai language classes; - Healthcare access; - Education for children; - Social services navigation; - Community connections — connect with same-culture community where possible; (7) **Family separation**: - Sponsorship + reunification advocacy; - Communication with separated family if possible; - Address grief + uncertainty; (8) **Children of refugees**: - Acculturation gaps with parents; - School challenges; - Specific PTSD + depression; - Family therapy; (9) **Specific populations**: - **Survivors of torture** — specialized centers (HealTorture in US, Centre for Torture Trauma); - **Sexual + gender violence survivors**; - **LGBTQ+ refugees** (intersecting persecution); - **Unaccompanied minors**; (10) **System level**: - Trauma-informed services; - Linguistically + culturally competent providers; - Refugee resettlement agencies; - Community partnerships; - Advocacy for refugee mental health; (11) **Modern**: - **WHO + UNHCR** guidelines for refugee mental health; - **mhGAP** in refugee settings; - **Sphere standards**; (12) **Multidisciplinary**: psychiatry, primary care, social work, legal, education, refugee resettlement, community organizations"
+      },
+      {
+        "label": "C",
+        "text": "Single approach"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Random"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Refugee mental health: layered trauma (pre/migration/post). PTSD/depression/anxiety/somatic high. Phased treatment + NET/CETA adapted + SSRI. Cultural humility + interpreters + community + spirituality. Address current stressors (asylum, housing, employment). Specialized for torture, sexual violence, LGBTQ+, minors. WHO/UNHCR guidelines.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "WHO Refugee MH; NET Schauer"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 28 ปี chronic schizophrenia + smoking + clozapine + medical comorbidity (obesity, diabetes, sleep apnea) + family burden — chronic SMI integrative",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No intervention"
+      },
+      {
+        "label": "B",
+        "text": "Chronic Severe Mental Illness + Multiple Comorbidities — Integrative: (1) **SMI medical comorbidity** = major mortality contributor: - 15-20 years reduced life expectancy in schizophrenia; - Cardiovascular leading cause; - Underdiagnosed + undertreated medical illness; (2) **Clozapine management**: - **Mandatory monitoring** — ANC, troponin/CRP/ECG, metabolic; - Specialist clozapine clinics improve outcomes; - Address side effects (sialorrhea, constipation, sedation, weight, metabolic); - Bowel monitoring — ileus mortality risk; - **Smoking + clozapine**: smoking induces CYP1A2 → lowers clozapine level; if quit smoking, level rises (toxicity risk — monitor); - **Therapeutic level** 350-600 ng/mL; (3) **Smoking cessation in schizophrenia**: - 50-90% smoke; - Lower quit rates but feasible; - Varenicline FDA approved + safety reassured (EAGLES); - NRT combinations; - Bupropion; - Behavioral support; - Monitor clozapine level if level was relying on smoking induction; (4) **Metabolic syndrome**: - **Aggressive prevention + treatment**; - Lifestyle (diet, exercise, weight); - Switch to lower-metabolic agent if possible (but clozapine often essential for TRS); - **Metformin** for weight gain prevention (off-label) modest evidence; - **GLP-1 agonists (semaglutide, tirzepatide)** — significant weight loss + DM benefit + acceptable in schizophrenia (emerging); - **Statin** for lipids; - **Glycemic control** for DM; - **BP** management; (5) **Sleep apnea**: - High prevalence with obesity; - CPAP therapy; - Weight loss synergy; - Improves cognition, mood, daytime function, CV risk; (6) **Other medical**: - Dental (often neglected); - Vision; - Cancer screening; - Vaccinations; - Hepatitis screening; - Drug interactions; (7) **Psychiatric optimization**: - **Long-acting injectable (LAI)** consideration if adherence issue + non-clozapine agent (clozapine no LAI); - **Psychosocial**: ACT for severe persistent; supported employment; supported housing; CBTp; - **Substance use** screening + treatment; - **Suicide risk** assessment ongoing (lifetime 5-10%); (8) **Family + caregiver support**: - **NAMI Family-to-Family**; - Family education reduces relapse + expressed emotion; - Caregiver burden + mental health; - Sibling + children of patient; - Multifamily group therapy; (9) **Social determinants**: - Housing; - Income (often SSDI); - Healthcare access; - Stigma; - Social engagement; (10) **Modern**: - **Health home model** integrating mental + physical health; - **Behavioral health-primary care integration**; - **Wellness coaching**; - **Peer support specialists**; (11) **Multidisciplinary lifelong team**: psychiatry, primary care, endocrinology, cardiology, sleep medicine, dental, social work, peer support, family, employment, housing support"
+      },
+      {
+        "label": "C",
+        "text": "Single approach"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Random"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Chronic SMI + medical comorbidity: 15-20 yr reduced life expectancy. Clozapine monitoring + smoking interaction (CYP1A2). Smoking cessation (varenicline EAGLES). Metabolic — lifestyle + metformin + GLP-1 emerging + statin + DM control. CPAP. Family support (NAMI). Integrated health home. Multidisciplinary lifelong.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "EAGLES; APA Schizophrenia; NAMI"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 70 ปี end-of-life + advanced cancer + depression + existential distress + family conflict + pain — palliative psychiatric integrative",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No intervention"
+      },
+      {
+        "label": "B",
+        "text": "Palliative Psychiatric Care — End-of-Life Integrative: (1) **Distinguish in advanced illness**: - **Adjustment** to diagnosis (normal); - **Demoralization** (loss of meaning, helplessness, hopelessness, NOT same as depression — distinct construct, responds to meaning-focused interventions); - **Depression** (anhedonia, guilt, worthlessness, persistent — distinct from sadness); - **Delirium** (very common end-of-life — under-recognized; rule out organic); - **Existential distress** (death anxiety, meaning); - **Anticipatory grief**; (2) **Depression in advanced illness**: - **Antidepressants — fast-acting options preferred** given prognosis: - **Methylphenidate** — onset within days, palliative care use, also helps fatigue; - **Ketamine** — rapid antidepressant, end-of-life setting research; - **Standard SSRI** — onset 2-6 wk (may not have time); - Sertraline, escitalopram, mirtazapine (multiple symptom benefit — appetite, sleep, antiemetic); - **CBT, IPT** adapted for limited time; - **Psychotherapy** specifically for advanced illness: - **Meaning-Centered Psychotherapy** (Breitbart) — addresses meaning + purpose; - **Dignity Therapy** (Chochinov) — life review, legacy; - **CALM** (Managing Cancer + Living Meaningfully — Rodin) — short-term, multiple themes; (3) **Existential distress**: - **Meaning-centered + dignity therapies**; - **Spiritual care** + chaplaincy; - **Psychedelic-assisted therapy** for end-of-life existential distress (psilocybin — FDA breakthrough, research base — Griffiths Hopkins) — emerging; - **Acceptance + commitment therapy**; - **Mindfulness**; (4) **Pain + symptom management**: - Adequate analgesia (often opioid scheduled + breakthrough); - Pain → mood interaction; - Adjuvants (gabapentin, antidepressants); - Address other sx (nausea, constipation, dyspnea, fatigue); (5) **Delirium at end-of-life**: - Extremely common (terminal delirium); - Identify reversible causes (medications, infection, electrolytes, dehydration); - Non-pharmacologic; - Low-dose antipsychotic if needed (haloperidol historically; atypicals); - Family education (often distressing for family); (6) **Family**: - Communication + family meetings; - Anticipatory grief; - Family conflict mediation; - Children of patient; - Bereavement support post-death; (7) **Goals of care + advance care planning**: - Patient's values + wishes; - Hospice eligibility; - POLST; - Surrogate decision-making; - Code status; (8) **Hospice integration** — psychiatric + symptom management + family + spiritual + bereavement; (9) **Provider self-care** — emotional toll of palliative work; (10) **Ethical issues**: - Medical aid in dying (where legal — assessment + capacity); - Withdrawal of treatment; - Withholding food/fluid; - Palliative sedation; - Suicide vs aid in dying distinction; (11) **Multidisciplinary**: palliative care, psychiatry, oncology, primary care, nursing, chaplaincy, social work, hospice, family"
+      },
+      {
+        "label": "C",
+        "text": "Single approach"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Random"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Palliative psychiatric: distinguish demoralization vs depression vs delirium. Fast-acting antidepressants (methylphenidate, ketamine). Meaning-centered + dignity + CALM therapy. Existential distress + psychedelic-assisted research. Symptom management (pain, delirium). Family + advance care + hospice. Ethical issues. Multidisciplinary.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "Breitbart MCP; Chochinov Dignity"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 25 ปี first-episode depression + suicidality + medical resident with high-stress job + relationship issues + sleep deprivation — physician mental health integrative",
+    "choices": [
+      {
+        "label": "A",
+        "text": "No intervention"
+      },
+      {
+        "label": "B",
+        "text": "Resident Physician Depression + Suicidality — Integrative Approach: (1) **Safety assessment** primary: - Suicide risk assessment (C-SSRS); - Means restriction (access to medications, knowledge of lethal means); - Brief hospitalization if needed; safety planning; - Family + close contacts involved appropriately; (2) **Treatment**: - **SSRI** first-line (sertraline, escitalopram) — safe, well-tolerated, low overdose risk vs TCA; - **CBT or IPT** psychotherapy — combine for severity; - **ECT** if severe + refractory + suicidal — safe + effective; - **Address sleep deprivation** — bidirectional with depression; reduce on-call burden if possible; CBT-I once shift work allows; melatonin agonist; - **Address relationship + life issues** — couples or individual therapy; (3) **Physician-specific considerations**: - **Stigma + reluctance** to seek care — self-treatment + denial common + dangerous; - **Confidentiality concerns** — fear of credentialing/licensing impact; - **Separate clinical care** from work setting if possible; - **Confidential PHP (Physician Health Program)** if needed — protective + non-disciplinary in most states (vs Board of Medicine); - **Treatment compatible with continued practice** — most depression + anxiety treatment does not impair practice; appropriate accommodations; (4) **Address work environment** (system-level — not just individual): - **Reduce duty hours** within ACGME limits; - **Adequate supervision**; - **Workload management**; - **Wellness initiatives**; - **Peer support programs** (resident peer support); - **Reduce administrative burden**; - **Address culture** (mental health acceptable to discuss, leadership modeling); (5) **Physician suicide** elevated risk: - Especially female physicians; - Means access (medications, lethal knowledge); - Address contributors; - Means restriction essential; - Crisis resources (988, Physician Support Line, Lawyers Concerned for Lawyers analogous, AFSP); - **Loss of physician colleague** affects entire program — postvention; (6) **Substance use** screening (high rates physicians, especially EM + anesthesiology) — address if present; (7) **Trainee-specific stressors**: - High debt; - Long hours; - Sleep deprivation; - Trauma exposure (patient deaths, suffering, errors); - Pandemic effects (moral injury, exhaustion); - Imposter syndrome; - Disclosure dilemmas; (8) **Mentorship + community**: - Faculty mentorship; - Peer support; - Resident wellness committee; - Address isolation; (9) **Address relationship**: - Couples therapy; - Address partner's burden; - Healthy relationship maintenance important; (10) **Long-term**: - Sustainable career + life integration; - Boundary setting; - Continued mental health awareness lifelong; (11) **Multidisciplinary + system change**: - Treatment provider + PHP + program leadership + wellness office + occupational health if needed; - System-level change essential — individual interventions alone insufficient; (12) **Hope + recovery messaging** — depression treatable; physicians can recover + continue careers; story of survival"
+      },
+      {
+        "label": "C",
+        "text": "Single approach"
+      },
+      {
+        "label": "D",
+        "text": "Surgery"
+      },
+      {
+        "label": "E",
+        "text": "Random"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Resident physician depression + suicidality: safety + means restriction + SSRI/ECT + CBT/IPT + sleep address. Physician-specific: stigma, confidentiality (PHP), licensing concerns, separate clinical care. System change essential (duty hours, workload, culture). Physician suicide elevated — means restriction. Mentorship + peer support. Hope + recovery.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "adult",
+    "reference_source": "AMA Wellness; AFSP Physician Suicide"
   }
 ]
