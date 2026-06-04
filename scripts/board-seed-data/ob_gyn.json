@@ -5790,5 +5790,613 @@
     "board_topic": "obgyn",
     "board_age_group": "adult",
     "reference_source": "ACOG Committee Opinion 786: Perinatal Palliative Care 2019"
+  },
+  {
+    "scenario": "หญิงตั้งครรภ์ G2P1 GA 32 wk underlying chronic HT + GDM — มาด้วยอาการ malaise + nausea + ปวด RUQ × 3 d + jaundice mild × 1 d\n\nV/S: BP 138/86, HR 102, RR 18, Temp 37.0\nGen: jaundiced + RUQ tenderness + no encephalopathy\nFetal: FHR 158 reactive, EFW 1,650 g (50th)\nLab: AST 580, ALT 480, total bilirubin 5.2, glucose 52 (hypoglycemia!), plt 95K, INR 1.6, fibrinogen 180, Cr 1.3, uric acid 8.5, urine protein 1+\nUS abdomen: liver echogenic (fatty)",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge home"
+      },
+      {
+        "label": "B",
+        "text": "**Acute Fatty Liver of Pregnancy (AFLP)** — rare but life-threatening (mortality 10-20% maternal, 20-30% perinatal) — microvesicular fatty infiltration of hepatocytes; 3rd trimester typically; associated with **fetal LCHAD deficiency** (long-chain 3-hydroxyacyl-CoA dehydrogenase — fetal fatty acid oxidation defect → toxic intermediates to mother); **Swansea criteria** (≥ 6 of 14): vomiting, abdominal pain, polydipsia/polyuria, encephalopathy, ↑ bilirubin, hypoglycemia, ↑ urate, leukocytosis, ascites/bright liver, ↑ transaminases, ↑ ammonia, ↑ Cr, coagulopathy, microvesicular steatosis on biopsy; (1) **differential** — HELLP (overlapping), severe preeclampsia, viral hepatitis (AVH), drug-induced, TTP, intrahepatic cholestasis of pregnancy (ICP — usually milder), acute viral hepatitis; (2) **management — STAT delivery** is definitive (do not delay for steroids in stable; deliver promptly): (a) **stabilize** — correct hypoglycemia (D10 infusion), correct coagulopathy (FFP, cryo, plt, vit K), correct electrolytes, blood products; (b) **MgSO4** seizure prophylaxis (often co-exists with preeclampsia features); (c) **antihypertensive** if needed; (d) **deliver** — mode per obstetric — vaginal if feasible + safe, C/S if compromised; consider preinduction maternal stabilization; (e) **multidisciplinary** — MFM + hepatology + ICU + neonatology; (3) **postpartum** — supportive in ICU; usually improves over days-weeks; liver transplant for fulminant failure (rare); monitor + correct coagulopathy; (4) **neonatal — test for LCHAD deficiency** — newborn screen + acylcarnitine + genetic; if affected → MCT-based diet + restriction long-chain fatty acids; (5) **future pregnancy** — recurrence ~ 20-70% if mother heterozygous + partner heterozygous + fetus homozygous → counsel + prenatal testing; (6) **counseling** + family support"
+      },
+      {
+        "label": "C",
+        "text": "Methotrexate"
+      },
+      {
+        "label": "D",
+        "text": "Hysterectomy"
+      },
+      {
+        "label": "E",
+        "text": "Wait for liver to recover before delivery"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "AFLP: rare, life-threatening. Hypoglycemia + coagulopathy + ↑ bilirubin/transaminases + ↑ urate + AKI. Swansea criteria. Fetal LCHAD deficiency association. STAT delivery is definitive after stabilization. Correct hypoglycemia + coagulopathy. ICU. Neonatal LCHAD screen. Recurrence ~ 20-70%.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "RCOG Green-top 47: Obstetric Cholestasis; Williams Obstetrics Ch 55"
+  },
+  {
+    "scenario": "หญิงอายุ 26 ปี G1P0 GA 28 wk underlying healthy — มาด้วย hemolytic anemia + thrombocytopenia + AKI + altered mental status\n\nV/S: BP 132/82, HR 110, Temp 37.4\nGen: petechiae + jaundice + altered mental status (confused)\nFetal: FHR 144 reactive\nLab: Hb 7.2, MCV 90, retic 8%, schistocytes ++, plt 15K, LDH 1,800, haptoglobin < 8, indirect bilirubin 4.5, Cr 2.8 (was 0.6), ADAMTS13 activity < 10% (severely reduced), anti-ADAMTS13 IgG positive, AST/ALT mildly ↑, INR normal, fibrinogen 320",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Cesarean immediately without TPE"
+      },
+      {
+        "label": "B",
+        "text": "**Thrombotic Thrombocytopenic Purpura (TTP) in pregnancy** — pentad: hemolytic anemia + thrombocytopenia + neurologic + renal + fever (often incomplete); **ADAMTS13 < 10% activity** + anti-ADAMTS13 IgG → acquired (immune-mediated) TTP; distinguish from severe preeclampsia/HELLP, AFLP, HUS, DIC, sepsis-DIC, APS catastrophic — overlapping features but ADAMTS13 deficit pathognomonic; (1) **STAT plasma exchange (TPE)** — daily 1.5× plasma volume with FFP replacement → removes anti-ADAMTS13 Ab + replaces ADAMTS13 + vWF cleaving; continue until plt > 150K × 2 d + clinical improvement; (2) **corticosteroid** (prednisolone 1 mg/kg/d) — adjunct immunosuppression; (3) **caplacizumab** (anti-vWF nanobody) — new effective; pregnancy data limited, individual risk-benefit; (4) **rituximab** — for refractory + relapsing — used in pregnancy with consideration; (5) **avoid platelet transfusion** unless life-threatening bleeding (theoretical worsens microthrombi); RBC + FFP OK; (6) **fetal monitoring**; (7) **delivery timing** — TTP itself not indication for delivery; treat TTP first; deliver per obstetric indications; if fetal compromise + TTP severe → multidisciplinary decision; (8) **multidisciplinary** — hematology + MFM + nephrology + neuro + ICU; (9) **postpartum** — continue treatment; recurrence ~ 30% in next pregnancy → close monitoring + prophylactic plasma infusion; (10) **congenital TTP (Upshaw-Schulman)** — inherited ADAMTS13 deficit — recurrent in pregnancy → prophylactic FFP infusion; (11) **differential** — preeclampsia/HELLP improves with delivery (TTP usually doesn't); AFLP has hypoglycemia + coagulopathy; HUS — Shiga toxin or atypical (complement-mediated); APS — antiphospholipid Ab; (12) **mortality** untreated > 90%, with TPE < 20%"
+      },
+      {
+        "label": "C",
+        "text": "Methotrexate"
+      },
+      {
+        "label": "D",
+        "text": "Discharge home"
+      },
+      {
+        "label": "E",
+        "text": "Hysterectomy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "TTP in pregnancy: pentad (anemia + thrombocytopenia + neuro + renal + fever — often incomplete). ADAMTS13 < 10% + Ab → acquired TTP. STAT TPE + steroid (+ caplacizumab/rituximab). Avoid plt transfusion. Distinguish from HELLP/AFLP/HUS/DIC. Delivery per obstetric — not TTP indication. Recurrence high. Mortality high untreated.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ISTH TTP 2020; Scully Caplacizumab NEJM 2019"
+  },
+  {
+    "scenario": "หญิงอายุ 34 ปี G1P0 GA 18 wk routine US — finding ovarian mass 6 cm complex on R + Pap smear last year ASCUS HPV+, colposcopy + biopsy: invasive SCC of cervix Stage IB1 (tumor 2.5 cm)\n\nV/S: BP 116/72, HR 80\nGen: well\nFetal: anatomy scan normal otherwise, growth appropriate\nMRI pelvis: cervical tumor 2.5 cm, no parametrial involvement, no nodal involvement; ovarian mass complex 6 cm — separately, R, likely physiologic vs benign\nNo metastasis on CXR",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Forced termination"
+      },
+      {
+        "label": "B",
+        "text": "**Cervical cancer in pregnancy** — multidisciplinary GYN-onc + MFM + neonatology + family — individualized: (1) **multidisciplinary discussion + patient preference** (desire to continue pregnancy, GA, stage, growth pattern); (2) **early pregnancy (< 22-24 wk) with early-stage**: (a) **delay treatment to fetal viability** if microscopic/early IA-IB1 stable + close monitoring (clinical + MRI q 4-8 wk); deliver 34-37 wk + post-delivery definitive surgery (radical hysterectomy or CRT); (b) **immediate treatment** (treatment supersedes pregnancy) for advanced or rapidly progressive — chemotherapy 2nd-3rd trimester (cisplatin + paclitaxel safer than CRT in pregnancy) → delay surgery to postpartum + adjuvant; (c) **termination if family chooses** + definitive treatment; (3) **later pregnancy (≥ 22-24 wk)**: (a) wait for fetal lung maturity, antenatal steroids 24-34 wk, deliver 34-37 wk (or earlier ถ้า progression) → C/S + radical hysterectomy en bloc at same operation, or staged; (b) avoid radiation in pregnancy ถ้า possible; (4) **fertility-sparing trachelectomy** — not feasible during pregnancy typically; (5) **delivery mode** — **cesarean** preferred to avoid vaginal birth (theoretical tumor seeding + bleeding); vaginal previously thought OK for very early lesion but C/S safer; (6) **at C/S** — radical hysterectomy + pelvic lymphadenectomy + BSO consideration based on age + path (preserve ovaries young if reasonable); send ovarian mass to frozen — likely benign physiologic at this GA; (7) **adjuvant** — RT + cisplatin per indications postpartum; (8) **lymph node assessment during pregnancy** — sentinel LN (technetium-99m safe), pelvic LND if needed; some delay; (9) **counseling** — survival similar to non-pregnant matched; fetal outcomes good with planned management; psychological + multidisciplinary support; (10) **chemotherapy in pregnancy 2nd-3rd trimester** — generally accepted safety for limited regimens (cisplatin, paclitaxel)"
+      },
+      {
+        "label": "C",
+        "text": "Methotrexate"
+      },
+      {
+        "label": "D",
+        "text": "Discharge — wait until delivery without further workup"
+      },
+      {
+        "label": "E",
+        "text": "Hysterectomy at 18 wk without considering options"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Cervical cancer in pregnancy: multidisciplinary + individualized. Early GA + early stage: delay until viability, antenatal steroid, C/S + radical hysterectomy. Chemo 2nd-3rd tri (cisplatin/paclitaxel) if needed. Avoid RT pregnancy. C/S preferred mode. Sentinel LN. Counseling + family choice — termination option.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ESGO Cancer in Pregnancy Consensus 2019; FIGO Cervical Cancer"
+  },
+  {
+    "scenario": "หญิงอายุ 32 ปี G2P0A2 prior 2 D&C for missed abortion — มาด้วยอาการประจำเดือนไม่มา 1 yr post-D&C + cyclic pelvic pain + infertility, β-hCG negative\n\nV/S: BP 116/72, HR 78\nGen: well\nPelvic: WNL\nLab: TSH normal, prolactin normal, FSH 6, LH 4, AMH 3.2 normal, β-hCG negative\nHSG: filling defects + irregular cavity outline (suggesting adhesions)\nHysteroscopy: extensive intrauterine adhesions involving > 75% cavity",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Hysterectomy"
+      },
+      {
+        "label": "B",
+        "text": "**Asherman Syndrome (intrauterine adhesions)** — fibrous bands in endometrial cavity → menstrual abnormalities, infertility, pregnancy complications; etiology: D&C (most common, esp post-miscarriage/postpartum), infection (TB, schistosomiasis), surgery, radiation: (1) **classification** — March/AFS (mild/moderate/severe by extent + type); ESH/Hamou; (2) **diagnosis** — HSG (filling defects), SIS, **hysteroscopy gold standard** (direct + treatment); (3) **treatment — hysteroscopic adhesiolysis** — scissors, hook, monopolar/bipolar — preserve healthy endometrium; outpatient or staged for extensive; (4) **prevention of recurrence post-adhesiolysis** — variable methods (no single proven best): (a) **intrauterine device/balloon** — Foley balloon or IUD for 1-2 wk to keep walls separated; (b) **hyaluronic acid gel** intracavitary; (c) **estrogen therapy** — high-dose estrogen (conjugated estrogen 5 mg/d or estradiol 4 mg/d) × 4-8 wk → stimulate endometrial regrowth; (d) **second-look hysteroscopy** at 6-8 wk to lyse new adhesions; (5) **stem cell / G-CSF** — emerging therapies for endometrial regeneration; (6) **fertility outcomes** — depend on severity + initial endometrial damage; ~ 60-90% restoration of menses; pregnancy 30-70%; (7) **pregnancy complications post-Asherman** — preterm, FGR, abnormal placentation (accreta — implantation on scar), abortion → close monitoring; (8) **counseling** — recurrence, fertility outcomes, alternative parenthood options (gestational surrogacy if severe); (9) **prevention** — D&C avoidance when possible (use medical management for early miscarriage), gentle technique, postpartum care; (10) **co-existing infertility workup** — semen, ovulation, tubes"
+      },
+      {
+        "label": "C",
+        "text": "Methotrexate"
+      },
+      {
+        "label": "D",
+        "text": "Discharge home"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic alone"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Asherman: intrauterine adhesions from D&C/infection. Diagnosis: hysteroscopy. Treatment: hysteroscopic adhesiolysis + prevent recurrence (balloon, hyaluronic gel, estrogen, second-look). Pregnancy complications: preterm, FGR, accreta. Prevention: avoid unnecessary D&C, gentle technique. Surrogacy if severe.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "AAGL Asherman Syndrome 2017; ESHRE Recurrent Implantation Failure"
+  },
+  {
+    "scenario": "หญิงอายุ 24 ปี nulligravid มา OPD ด้วยอาการ hirsutism progressive + acne refractory + voice deepening + clitoromegaly + amenorrhea 6 mo × 1 yr\n\nV/S: BP 134/86, HR 80\nGen: temporal balding, deep voice, hirsutism Ferriman-Gallwey 18, clitoromegaly mild\nLab: testosterone total 220 (markedly elevated; PCOS usually < 150), DHEAS WNL, 17-OHP normal, β-hCG negative, TSH normal, prolactin normal, FSH 5, LH 8, cortisol normal, ACTH-stim 17-OHP normal\nUS pelvis: R ovarian mass 4 cm solid + hypervascular\nMRI: R ovarian solid mass with vascular pedicle, no metastasis",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Methotrexate"
+      },
+      {
+        "label": "B",
+        "text": "**Hyperandrogenism with virilization + ovarian mass** — workup for **androgen-secreting tumor** (ovarian or adrenal); high testosterone + virilization signs (rapid onset, deep voice, clitoromegaly, balding) → likely ovarian: (1) **differential**: (a) **ovarian — Sertoli-Leydig cell tumor (most common androgen-secreting), thecoma, hilus cell tumor, granulosa cell**; (b) **adrenal — adenoma, carcinoma**; (c) **PCOS** — typically lower T < 150, slower onset, no virilization; (d) **non-classic CAH** — 17-OHP elevated post-ACTH stim; (e) **Cushing's** — cortisol; (f) **exogenous** — anabolic steroids, DHEA supplements; (2) **workup** — **DHEAS high → adrenal**; **testosterone very high → ovarian**; both → adrenal carcinoma; **17-OHP basal + ACTH-stim** for CAH; **dexamethasone suppression test** for Cushing; (3) **imaging** — TVS + MRI pelvis (ovarian); CT/MRI adrenal; sometimes selective venous sampling for occult source; (4) **management — surgical removal**: (a) **ovarian Sertoli-Leydig** — unilateral salpingo-oophorectomy + staging (frozen section); fertility-sparing in young; (b) bilateral if perimenopausal/completed family; (c) **adrenal mass** — adrenalectomy with workup of malignancy; (d) **histology** — guides adjuvant; (5) **post-removal** — androgens normalize within weeks; virilization improves but voice + balding may not regress fully; (6) **counseling** — fertility preservation (egg cryopreservation if anticipated bilateral surgery), psychological support; (7) **follow-up** — recurrence + tumor markers (inhibin); (8) **cosmetic + dermatology** — laser hair removal, eflornithine cream for residual hirsutism; (9) **HRT** if surgical menopause; (10) Sertoli-Leydig — DICER1 mutation association → genetic counseling"
+      },
+      {
+        "label": "C",
+        "text": "PCOS — treat with COCP"
+      },
+      {
+        "label": "D",
+        "text": "Hysterectomy"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic alone"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Severe hyperandrogenism with virilization + rapid onset + T > 150 → androgen-secreting tumor (Sertoli-Leydig ovarian or adrenal). Workup DHEAS, testosterone, 17-OHP, dexamethasone. Imaging. Surgical removal. Sertoli-Leydig DICER1 association. Fertility preservation. Cosmetic adjunct. Distinguish from PCOS (lower T, slow onset, no virilization).",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "Endocrine Society Hyperandrogenism; NIH PCOS + Differential"
+  },
+  {
+    "scenario": "หญิงอายุ 38 ปี nulligravid มา OPD ด้วยอาการ vulvar burning pain × 6 mo + dyspareunia + tender to touch + no visible lesion + Q-tip test positive at vestibule + no infection + no skin disease\n\nV/S: BP 122/76, HR 78\nGen: anxiety, no depression\nVulva: normal-appearing, no erythema/lesion, Q-tip test exquisitely tender at vestibule\nWet mount: WNL, KOH negative, culture negative",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Refuse care"
+      },
+      {
+        "label": "B",
+        "text": "**Vulvodynia (vulvar pain without identifiable cause ≥ 3 mo)** — diagnosis of exclusion; subtypes: (a) **localized provoked vestibulodynia (LPV)** — pain at vestibule with provocation (Q-tip, intercourse); (b) **generalized unprovoked** — burning vulva; mixed; (1) **diagnosis** — clinical + exclude infection (culture, wet mount), dermatosis, hormonal, neuropathic, neoplasia, trauma; (2) **multimodal management — biopsychosocial**: (a) **vulvar care** — avoid irritants (perfumed soap, panty liners, tight clothes), cotton underwear, lubricants, sitz baths; (b) **topical** — lidocaine 5% ointment (esp before intercourse), topical estrogen (if atrophy), topical compounded amitriptyline-baclofen-gabapentin; (c) **systemic** — TCAs (amitriptyline 10-50 mg QHS), SNRIs (duloxetine, venlafaxine), gabapentin/pregabalin (titrate, slow) — for neuropathic; (d) **pelvic floor physical therapy** — high-evidence intervention — relieve hypertonic pelvic floor; biofeedback; dilators; (e) **psychotherapy** — CBT, mindfulness, sex therapy, couples therapy; address coping + relationship; (f) **interventional** — pudendal nerve block, trigger point injection, **Botox injection** (refractory); (g) **surgical — vestibulectomy** for refractory LPV (success ~ 70-90% select cases) — partial vestibulectomy + perineorrhaphy; (h) **complementary** — acupuncture, hypnotherapy; (3) **chronic pain syndromes co-occur** — IBS, fibromyalgia, IC/PBS, endometriosis, vaginismus, chronic fatigue → comprehensive approach; (4) **mental health screening** — depression, anxiety, sexual abuse history; (5) **counseling + education** — validate, partner involvement; (6) **multidisciplinary** — gyn + PFPT + mental health + pain specialist; (7) **support groups** — National Vulvodynia Association; (8) **NEVER** dismiss as psychological — real pain disorder"
+      },
+      {
+        "label": "C",
+        "text": "Methotrexate"
+      },
+      {
+        "label": "D",
+        "text": "Hysterectomy"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic alone"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Vulvodynia: diagnosis of exclusion. LPV vs generalized. Multimodal: vulvar care, topical lidocaine, TCAs/SNRIs/gabapentin, PFPT (high evidence), CBT/sex therapy, Botox/vestibulectomy refractory. Mental health screening + chronic pain comorbidity. Validate + multidisciplinary. Don't dismiss.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Practice Bulletin 673: Vulvar Skin Care; NVA Guidelines"
+  },
+  {
+    "scenario": "หญิงอายุ 24 ปี G0P0 มา OPD ด้วยอาการ recurrent vaginal yeast infection × 6 episodes/yr × 2 yr, ทุกครั้งหายเองหลังครีม OTC แต่กลับมา\n\nV/S: BP 116/72, HR 78\nGen: well\nVagina: erythema mild + curdy discharge\nWet mount: yeast + pseudohyphae\nCulture: Candida albicans\nFasting glucose normal, HbA1c 5.4, HIV negative, no immunosuppression, no recent antibiotics",
+    "choices": [
+      {
+        "label": "A",
+        "text": "One dose OTC cream + done"
+      },
+      {
+        "label": "B",
+        "text": "**Recurrent Vulvovaginal Candidiasis (RVVC, ≥ 4 episodes/yr)** — distinguish from uncomplicated/single episode; identify species (C. albicans 80-90%, others — C. glabrata, krusei — fluconazole resistance): (1) **confirm diagnosis** — wet mount + KOH + **culture** for species + sensitivity (esp recurrent); (2) **rule out predisposing factors** — uncontrolled diabetes (HbA1c), HIV/immunosuppression, recent broad-spectrum antibiotics, COCP (mild risk), pregnancy, douching, vaginal irritants, tight clothing; (3) **induction therapy** — extended course: (a) **fluconazole 150 mg PO q 72 hr × 3 doses** (or 100-200 mg/d × 14 d); OR (b) **topical azole (miconazole, clotrimazole, terconazole)** × 7-14 days; (4) **maintenance therapy** — **fluconazole 150 mg PO weekly × 6 mo** (CDC, ACOG); alternative: clotrimazole 500 mg PV weekly; (5) **C. glabrata** — fluconazole-resistant — treat with **boric acid 600 mg PV daily × 14 d** (compounded) OR nystatin PV; (6) **C. albicans azole-resistant** rare — boric acid or oteseconazole (newer); (7) **partner treatment** — not routinely indicated (yeast not classically STI); treat partner ถ้า symptomatic; (8) **lifestyle** — cotton underwear, avoid tight, less douching, manage moisture, avoid panty liners daily, consider probiotic Lactobacillus (mixed evidence); (9) **follow-up** — culture + symptom assessment q 3 mo; (10) **post-maintenance** ~ 50% recurrence after stopping — reassess + discuss longer maintenance vs alternative therapies; (11) **specific scenarios** — **pregnancy** topical azole 7 d (avoid oral fluconazole 1st tri); diabetic — optimize glucose; HIV — treat as RVVC + manage immune; (12) **counseling** — natural history, lifestyle, expectations"
+      },
+      {
+        "label": "C",
+        "text": "Methotrexate"
+      },
+      {
+        "label": "D",
+        "text": "Hysterectomy"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic broad-spectrum"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "RVVC: ≥ 4 episodes/yr. Culture for species + sensitivity. Rule out DM/HIV/antibiotic predisposition. Induction: fluconazole 150 mg q 72 hr × 3 (or topical 7-14 d). Maintenance: fluconazole 150 mg weekly × 6 mo. C. glabrata: boric acid 14 d. Lifestyle. Counseling.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "CDC STI Treatment Guidelines 2021; ACOG Vaginitis"
+  },
+  {
+    "scenario": "หญิงอายุ 25 ปี nulligravid มา OPD ด้วยอาการปวด lower abdomen ค่อยๆ + ตกขาวเหลืองหนา + ปัสสาวะแสบ × 5 d + ไข้ low-grade + sexually active multiple partners + no condom\n\nV/S: BP 118/74, HR 92, Temp 37.8\nGen: ill-looking mild\nPelvic: cervical motion tenderness, adnexal tenderness bilateral, purulent cervical discharge, no mass\nLab: WBC 13.5K, CRP 42, β-hCG negative, NAAT GC + CT positive, HIV negative, syphilis VDRL negative\nUS: thickened tube + adnexal complexity bilateral but no abscess",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge home + observation"
+      },
+      {
+        "label": "B",
+        "text": "**Pelvic Inflammatory Disease (PID)** — polymicrobial (GC, CT, anaerobes, gardnerella, mycoplasma); long-term sequelae: tubal infertility, ectopic, chronic pelvic pain (CPP): (1) **diagnosis CDC** — sexually active reproductive-age woman + lower abdominal/pelvic pain + 1+ of (a) cervical motion tenderness, (b) uterine tenderness, (c) adnexal tenderness; low threshold to treat empirically (often subtle); supportive: fever, purulent discharge, ↑ ESR/CRP, GC/CT NAAT positive, US findings; (2) **outpatient treatment (mild-moderate)**: (a) **ceftriaxone 500 mg IM × 1** + **doxycycline 100 mg PO BID × 14 d** + **metronidazole 500 mg PO BID × 14 d** (CDC 2021 updated); (b) follow-up 72 hr; (3) **inpatient treatment indications** — pregnancy, severe illness (high fever, vomiting), tubo-ovarian abscess (TOA), failure outpatient, immunocompromised, surgical emergency cannot exclude, unable to tolerate oral, non-adherence: (a) **cefotetan/cefoxitin 2 g IV q 12 hr + doxycycline 100 mg PO/IV q 12 hr** OR (b) **clindamycin + gentamicin** OR (c) **ampicillin/sulbactam + doxycycline**; transition to oral after improvement to complete 14 d (with metronidazole for anaerobic); (4) **TOA** — admit, IV antibiotics, percutaneous drainage if not resolving 48-72 hr or large (> 7-9 cm), surgery if rupture/sepsis; (5) **partner notification + treatment** — sexual partners last 60 d → empirical GC/CT treatment (DOXY-PEP rationale, expedited partner therapy); abstain until treatment complete; (6) **STI screening** — HIV, syphilis, HBV, HCV, GC/CT, trichomoniasis; (7) **IUD considerations** — recent IUD insertion ↑ PID risk; if IUD-related PID, leave IUD unless no improvement 48-72 hr antibiotic; (8) **education + prevention** — condoms, limit partners, regular STI testing, HPV vaccine, vaccination Hep A/B; (9) **HIV PrEP** consideration if high risk; (10) **follow-up** — 3 mo STI rescreen + symptom check + sequelae assessment"
+      },
+      {
+        "label": "C",
+        "text": "Methotrexate"
+      },
+      {
+        "label": "D",
+        "text": "Hysterectomy"
+      },
+      {
+        "label": "E",
+        "text": "Antifungal alone"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "PID: CDC criteria + low threshold treatment. Outpatient: ceftriaxone IM + doxycycline + metronidazole × 14 d. Inpatient if severe/TOA/pregnancy/fail. Treat partners + STI screen. IUD-related PID — leave IUD unless no improvement. Sequelae: tubal infertility, ectopic, CPP. Prevention: condoms, vaccination.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "CDC STI Treatment Guidelines 2021; ACOG PID Practice Bulletin"
+  },
+  {
+    "scenario": "หญิงอายุ 32 ปี G1P1 NSD 7 d ago — มาด้วย postpartum hypertensive crisis BP 188/118 + severe headache + visual disturbance + epigastric pain, mom is at home with newborn\n\nV/S: BP 188/118, HR 96, RR 22\nGen: hyperreflexia 4+, photophobia\nFetal/Baby: at home with grandmother, breastfeeding\nLab: plt 95K, AST 145, Cr 1.2, urine protein 3+, LDH 580",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Outpatient management"
+      },
+      {
+        "label": "B",
+        "text": "**Postpartum Preeclampsia / Severe HT crisis** — preeclampsia can present **up to 6 wk postpartum** (new onset or worsening of antepartum); same severity criteria + management as antepartum: (1) **immediate admission** + IV access; (2) **antihypertensive within 30-60 min** for severe-range BP — **IV labetalol 20-40-80 mg q 10 min** (max 220-300 mg) or **IV hydralazine 5-10 mg q 20 min** or **oral nifedipine immediate-release 10-20 mg q 30 min**; target BP < 150/100; AIM bundle; (3) **MgSO4** for seizure prophylaxis (severe features present — thrombocytopenia, transaminitis, cerebral symptoms) — 4-6 g loading + 1-2 g/hr × 24 hr; (4) **rule out other causes** — postpartum cardiomyopathy (echo, BNP), PRES, stroke, RCVS, eclampsia, sepsis, AFLP late, TTP/HUS, drug effects; (5) **NSAIDs** controversial — generally OK in HT, but caution + acetaminophen preferred; (6) **maintenance antihypertensive** — labetalol 200-800 mg q 8-12 hr, nifedipine ER 30-120 mg/d, hydralazine, methyldopa; ACEI/ARB now OK postpartum (and breastfeeding — enalapril/captopril preferred; lisinopril etc. — Hale L3 compatible); (7) **monitor labs** — CBC + LFT + Cr + urine — often worsens 24-72 hr postpartum then improves; (8) **discharge planning** — BP daily home for 7-10 d + weekly + recheck PE labs; education for warning signs (HA, vision, RUQ pain, swelling, SOB, AMS — return for evaluation); (9) **breastfeeding** — all common antihypertensives compatible; (10) **future pregnancy** — recurrence 15-65% (depending on severity); preconception planning + aspirin 81-150 mg from 12 wk; (11) **lifelong CV risk** — postpartum PE = 2-4× lifelong CV disease + HT + stroke risk → cardiology referral + lifestyle modification; (12) **postpartum follow-up** — close, especially first 2 wk highest risk; consider home BP monitoring + telehealth check-ins; (13) **psychosocial** — childcare support + breastfeeding support; (14) **document + counsel**"
+      },
+      {
+        "label": "C",
+        "text": "Methotrexate"
+      },
+      {
+        "label": "D",
+        "text": "Cesarean (already delivered)"
+      },
+      {
+        "label": "E",
+        "text": "Hysterectomy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Postpartum preeclampsia: up to 6 wk. Treat severe HT < 30-60 min (AIM). MgSO4 if severe features. Rule out PPCM, stroke, PRES, TTP/HUS. ACEI/ARB OK postpartum + breastfeeding (enalapril/captopril preferred). Future pregnancy aspirin + recurrence. Lifelong CV risk 2-4×.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Hypertension Pregnancy 2020; AIM Severe HT Bundle"
+  },
+  {
+    "scenario": "หญิงอายุ 35 ปี G0P0 ตัดสินใจ desire fertility-sparing — diagnosed early endometrial cancer Stage IA grade 1 endometrioid + no myometrial invasion + no LVSI + no nodal involvement, BMI 35\n\nV/S: BP 132/82, HR 80\nGen: BMI 35, mild hirsutism\nMRI: no myometrial invasion, no nodal involvement\nEndometrial biopsy: endometrioid grade 1 + ER/PR strongly positive + no atypical features",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Hysterectomy without considering options"
+      },
+      {
+        "label": "B",
+        "text": "**Fertility-sparing management for early-stage endometrial cancer** — strict criteria + multidisciplinary GYN-onc + REI + counseling: (1) **criteria for fertility-sparing**: (a) endometrioid type, **grade 1**, (b) **stage IA** + **NO myometrial invasion** on MRI, (c) **NO LVSI**, (d) **NO extrauterine disease**, (e) reproductive age + strong fertility desire, (f) **Rh ER/PR positive** (predicts response), (g) understands risks + agrees close surveillance + hysterectomy after childbearing; (2) **first-line treatment — high-dose progestin**: (a) **LNG-IUD (Mirena)** — local high-dose progestin — increasingly preferred (less systemic SE; effective; can combine with oral); (b) **megestrol acetate 160-320 mg/d PO** OR **medroxyprogesterone acetate 200-600 mg/d PO**; (c) duration 6-12 mo with re-evaluation; (3) **GnRH agonist** — adjunct or alternative for obesity/PCOS; (4) **metformin** — adjunct for obesity/insulin resistance; (5) **weight loss** — bariatric surgery if BMI > 40 — reduces recurrence + improves response; (6) **surveillance during treatment** — **endometrial sampling (hysteroscopy + biopsy) every 3 mo** until complete response (CR — no carcinoma or atypical hyperplasia on biopsy); usually 6-9 mo; (7) **after CR** — proceed to fertility treatment (often need ART/IVF — 50-60% pregnancy success); maintenance progestin until pregnancy attempted; (8) **after childbearing complete — definitive hysterectomy** (high recurrence risk if uterus retained) + consider BSO based on age + Lynch screening; (9) **recurrence rate** — 30-40% after initial CR; close monitoring; re-treat or definitive; (10) **multidisciplinary** + counseling — risks + outcomes + lifelong surveillance even after hysterectomy; (11) **Lynch syndrome universal screening** (MSI/IHC) — affects family + future cancer surveillance; (12) **contraindication fertility-sparing** — high-grade, deep myometrial invasion, LVSI, extrauterine, non-endometrioid"
+      },
+      {
+        "label": "C",
+        "text": "Methotrexate"
+      },
+      {
+        "label": "D",
+        "text": "Refuse fertility consideration"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic alone"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Fertility-sparing endometrial cancer: strict criteria (grade 1, stage IA, no myometrial/LVSI, ER/PR+, fertility desire). LNG-IUD + megestrol high-dose progestin. Sampling q 3 mo until CR. Then fertility treatment (IVF often). Definitive hysterectomy after childbearing. Recurrence 30-40%. Lynch screen. Multidisciplinary.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "SGO/ASCO Fertility-Sparing Endometrial Cancer; ESGO/ESHRE/ESGE Guidelines"
+  },
+  {
+    "scenario": "หญิงอายุ 14 ปี nulliparous มา OPD ด้วยอาการปวดประจำเดือนรุนแรงตอน menses + ปวดท้อง + คลื่นไส้ + อาเจียน + ขาดเรียน × 1 yr ตั้งแต่ menarche 2 ปีก่อน, no pelvic pathology suspected, sexually inactive\n\nV/S: BP 110/68, HR 80\nGen: well, no signs PCOS\nPelvic: external exam normal\nUS TV: deferred (virgin); abdominal US WNL",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Ignore — pain is normal"
+      },
+      {
+        "label": "B",
+        "text": "**Primary dysmenorrhea** (no underlying pathology — cyclic prostaglandin-mediated uterine cramping) — most common in adolescents, peak 16-25 yr; vs **secondary** (endometriosis, adenomyosis, fibroids, PID, obstructed Müllerian — bicornuate with non-communicating horn — etc.): (1) **first-line — NSAIDs** — **mefenamic acid 500 mg q 6 hr** or **ibuprofen 400-800 mg q 6 hr** or **naproxen 220-500 mg q 8-12 hr** — start 1-2 d before expected menses + continue through pain; prevent prostaglandin synthesis at source; (2) **second-line — hormonal**: (a) **combined OCP** (cyclic or continuous) — suppresses ovulation + thins endometrium → ↓ PG production + cramping; also contraception (relevant if becomes sexually active); (b) **progestin alone** — POP, DMPA, implant (Nexplanon — adolescent option, no estrogen concern); (c) **LNG-IUD (Mirena)** — also adolescent option per ACOG/AAP (lower failure, reduces HMB + dysmenorrhea + endometriosis); (3) **non-pharmacological adjuncts** — heat (heating pad), exercise, dietary (omega-3, magnesium — limited evidence), TENS, yoga, acupuncture, stress management, sleep; (4) **refractory dysmenorrhea or atypical features** → consider **secondary dysmenorrhea** workup — endometriosis (suspect if pain worsening, dyspareunia, dyschezia, infertility), Müllerian anomaly (obstructed) — TVS/MRI, **diagnostic laparoscopy**; (5) **endometriosis treatment** — covered separately (NSAIDs + COCP + progestin + GnRH agonist if refractory); (6) **adolescent endometriosis** — increasingly recognized; refer if refractory; (7) **education + reassurance** — primary dysmenorrhea common + treatable; menstrual hygiene + tracking + cycle predictability; (8) **school accommodation** — emphasize importance of not missing school; pain management ahead of menses; (9) **mental health screening** — anxiety + depression often co-occur; (10) **parental involvement** + adolescent autonomy; (11) Thai school health programs + youth-friendly clinics"
+      },
+      {
+        "label": "C",
+        "text": "Methotrexate"
+      },
+      {
+        "label": "D",
+        "text": "Hysterectomy"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic alone"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Primary dysmenorrhea: NSAIDs first-line (start before menses), COCP/progestin/LNG-IUD second. Adolescent-friendly. Refractory → suspect endometriosis or anomaly (US/MRI + laparoscopy). Non-pharma adjuncts. Education + school accommodation. Mental health. Adolescent endometriosis increasingly recognized.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Committee Opinion 760: Dysmenorrhea + Endometriosis Adolescent; NASPAG"
+  },
+  {
+    "scenario": "หญิงอายุ 32 ปี nulligravid IUD copper × 5 yr มา OPD ด้วยอาการ acute lower abdominal pain + fever 38.6 + N/V + RLQ pain + peritonitis × 2 d\n\nV/S: BP 102/68, HR 124, Temp 38.8, RR 22\nGen: ill, peritonitis lower abdomen\nPelvic: cervical motion + adnexal tenderness, R adnexal mass 7 cm tender\nLab: WBC 22K with left shift, CRP 120, β-hCG negative, NAAT GC + CT positive, lactate 2.4\nUS: complex adnexal mass 7 cm with debris suggesting **tubo-ovarian abscess (TOA)**",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge home with PO antibiotic"
+      },
+      {
+        "label": "B",
+        "text": "**Tubo-Ovarian Abscess (TOA)** — complication of PID with abscess formation; polymicrobial (GC, CT, anaerobes, gram-negatives): (1) **admit + IV access + IV antibiotics**: (a) **cefoxitin/cefotetan 2 g IV q 12 hr + doxycycline 100 mg IV/PO q 12 hr** OR (b) **clindamycin 900 mg IV q 8 hr + gentamicin 5 mg/kg q 24 hr** OR (c) **ampicillin-sulbactam 3 g IV q 6 hr + doxycycline**; (2) **continue IV** until afebrile + improving 24-48 hr, then transition to **oral × 14 d total** with metronidazole 500 mg BID + doxycycline; (3) **drainage**: (a) **percutaneous (IR-guided)** — preferred for abscess > 7-9 cm + accessible + no improvement on antibiotics 48-72 hr OR initially for large abscess; minimally invasive; (b) **transvaginal drainage** alternative; (c) **surgical (laparoscopic or open)** — for rupture, sepsis, failed minimally invasive, or large unresponsive; (4) **IUD management** — IUD-associated TOA — leave IUD initially if responding to antibiotics, remove if not improving 48-72 hr or recurrent (CDC); (5) **STI screen + partner notification + treatment** (GC/CT empirically partners; HIV/syphilis/hepatitis screen); (6) **monitor** — temperature, WBC, CRP, abdo exam, US/CT q 48-72 hr to assess abscess size; (7) **complications** — sepsis, rupture (surgical emergency), chronic pelvic pain, infertility (tubal damage), ectopic risk; (8) **education** — STI prevention, condoms, regular screening, follow-up; (9) **discharge** when afebrile + improving + tolerate oral + arranged follow-up; (10) **outpatient** — complete antibiotic, follow-up 3 mo for symptom + STI re-screen + sequelae; (11) **prevention** — condoms, vaccination (HPV, Hep B), regular STI screen high-risk populations; (12) **counseling** — fertility implications; STI partner + Thai DDC reporting (some)"
+      },
+      {
+        "label": "C",
+        "text": "Methotrexate"
+      },
+      {
+        "label": "D",
+        "text": "Hysterectomy"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic outpatient"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "TOA: hospitalize + IV antibiotic (cefoxitin + doxycycline or clinda + gent or amp-sulb + doxy). Drainage for > 7-9 cm or no improvement 48-72 hr (IR-guided percutaneous preferred). Surgery if rupture/sepsis. IUD — leave if responding. STI + partner + screen. Complications: rupture, infertility. Total 14 d antibiotic with metronidazole.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "CDC STI 2021; ACOG PID; SGO Pelvic Inflammatory Disease"
+  },
+  {
+    "scenario": "หญิงอายุ 56 ปี postmenopausal × 4 yr มาด้วย hot flashes severe 15+/d + night sweats + insomnia, ก่อนหน้านี้ history of breast cancer ER+ × 4 yr ago, completed tamoxifen, currently NED, on aromatase inhibitor anastrozole — exacerbating VMS\n\nV/S: BP 124/76, HR 78\nGen: well, distressed by VMS\nLab: no current cancer findings, mammogram recent normal\nNo CV disease, no VTE history",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Refuse all treatment"
+      },
+      {
+        "label": "B",
+        "text": "**Severe vasomotor symptoms (VMS) in breast cancer survivor** — MHT contraindicated; **non-hormonal management**: (1) **first-line non-hormonal pharmacotherapy**: (a) **SSRIs/SNRIs** — **paroxetine 7.5 mg/d** (FDA-approved for VMS), **venlafaxine ER 37.5-150 mg/d**, escitalopram, citalopram, desvenlafaxine; **avoid paroxetine + fluoxetine with tamoxifen** (strong CYP2D6 inhibitors — ↓ active metabolite; consider venlafaxine/escitalopram instead with tamoxifen — but this patient on aromatase inhibitor not tamoxifen so paroxetine OK); (b) **gabapentin 300-900 mg QHS** — also helps sleep; (c) **pregabalin** alternative; (d) **clonidine** — limited effect, SE; (e) **oxybutynin 2.5-5 mg BID** — anticholinergic; (f) **fezolinetant** — new (2023) neurokinin-3 (NK3) receptor antagonist — FDA-approved VMS, hormonal pathway-independent — promising for cancer survivors; (2) **non-pharmacologic**: (a) **CBT** — strong evidence — symptom + sleep + mood; (b) **mindfulness-based stress reduction (MBSR)**; (c) **clinical hypnosis** — moderate evidence; (d) **acupuncture** — limited evidence; (e) **lifestyle** — cool environment, layered clothing, avoid triggers (hot drinks, spicy, alcohol, caffeine), weight management, exercise (paradoxical short-term ↑ but long-term improvement), smoking cessation; (3) **vaginal estrogen** for GSM — controversial in breast cancer history → MDT discussion with oncology — low-dose vaginal estrogen (esp non-systemic forms — DHEA prasterone, ospemifene) generally acceptable after counseling + MDT; (4) **other** — black cohosh + soy isoflavone — mixed evidence + concern in ER+; (5) **sleep hygiene** + treatment of insomnia (CBT-I, melatonin); (6) **mood + anxiety screening** (often comorbid); (7) **support groups** + counseling; (8) **switching aromatase inhibitor** to alternative (anastrozole vs letrozole vs exemestane) sometimes helps; oncology consult; (9) **bone health** — DEXA, Ca/vit D, bisphosphonate (AI ↑ bone loss); (10) **lifelong oncology surveillance + survivorship care**"
+      },
+      {
+        "label": "C",
+        "text": "Methotrexate"
+      },
+      {
+        "label": "D",
+        "text": "Hysterectomy"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic alone"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Breast cancer survivor + severe VMS: non-hormonal pharmacotherapy (SSRI/SNRI, gabapentin, clonidine, oxybutynin, fezolinetant new). CBT + MBSR + hypnosis + lifestyle. Avoid paroxetine + fluoxetine with tamoxifen (CYP2D6). Vaginal estrogen for GSM after MDT discussion. Bone surveillance + AI. Survivorship care.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "NAMS Non-hormonal Treatment VMS 2023; NCCN Survivorship"
+  },
+  {
+    "scenario": "Resident ถามอาจารย์เรื่อง fetal endocrinology + maternal-fetal thyroid + adrenal axis",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Fetal thyroid produces TSH from gestation"
+      },
+      {
+        "label": "B",
+        "text": "Fetal endocrinology: (1) **fetal hypothalamus-pituitary axis** develops 8-12 wk; (2) **fetal thyroid** — synthesizes hormones from ~ 10-12 wk; before that **maternal T4 critical** (crosses placenta — T4 > T3); maternal hypothyroidism untreated → fetal neurodevelopmental impairment (1st trimester critical); (3) **maternal iodine** — ↑ requirement 250 mcg/d (Thai dietary salt iodination); deficiency → cretinism; (4) **fetal thyroid hormones** — TBG synthesized fetal liver; T4 rises through gestation; **TSH** detectable from ~ 12 wk + rises late; (5) **at birth** — TSH surge (newborn screen at 48-72 hr), T4 ↑ acutely; newborn screening for **congenital hypothyroidism (CH)** mandatory (Thai national program; ~ 1/3,000); cretinism preventable; (6) **anti-thyroid drugs maternal** — PTU + methimazole cross placenta; PTU preferred 1st trimester (less teratogenic than methimazole — aplasia cutis, choanal/esophageal atresia); methimazole 2nd-3rd; (7) **Graves' with TRAb +** — crosses placenta → fetal Graves' (tachy, IUGR, goiter, craniosynostosis) — monitor fetal HR + thyroid US; (8) **fetal adrenal** — large in 2nd-3rd trimester (fetal zone — makes DHEAS → estriol via fetoplacental unit); regresses postnatally; (9) **cortisol from fetal adrenal** — required for lung maturation (surfactant), gut, brain; ↑ at birth helps lung; (10) **antenatal corticosteroid (betamethasone/dexamethasone)** — crosses placenta — accelerates fetal lung maturation + reduces RDS, IVH, NEC, mortality — 24-34 wk routinely (extend 34-36+6 wk ALPS); (11) **maternal cortisol** ↑ in pregnancy (estrogen ↑ CBG + free; physiologic hypercortisolism); usually not Cushingoid; (12) **CAH** — fetal 21-hydroxylase deficiency → virilization (female fetus) — prenatal dexamethasone to suppress fetal HPA controversial (rare research-protocol); (13) **fetal pancreas** — insulin from ~ 12 wk; **fetal hyperinsulinemia** in maternal hyperglycemia → macrosomia + hypoglycemia at birth"
+      },
+      {
+        "label": "C",
+        "text": "Methotrexate"
+      },
+      {
+        "label": "D",
+        "text": "Maternal T4 doesn't cross placenta"
+      },
+      {
+        "label": "E",
+        "text": "Hysterectomy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Fetal endocrinology: maternal T4 critical 1st trimester (fetal thyroid from 10-12 wk); newborn screen TSH at 48-72 hr (CH 1/3,000). Iodine 250 mcg. PTU 1st trimester, methimazole 2nd-3rd. Graves TRAb crosses → fetal Graves. Fetal adrenal large (DHEAS → estriol). Antenatal corticosteroid → lung maturation. CAH. Fetal insulin → macrosomia.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "Williams Obstetrics Ch 7 + 58; ATA Pregnancy Thyroid"
+  },
+  {
+    "scenario": "Resident ถามอาจารย์เรื่อง renal physiology in pregnancy + interpretation of labs",
+    "choices": [
+      {
+        "label": "A",
+        "text": "GFR decreases in pregnancy"
+      },
+      {
+        "label": "B",
+        "text": "Renal physiology in pregnancy: (1) **anatomic changes** — kidney enlarges ~ 1-1.5 cm (vascular + interstitial); **physiologic hydroureter + hydronephrosis** (R > L due to dextrorotation of uterus; progesterone smooth muscle relaxation) — late 1st trimester onward; persists 4-6 wk postpartum; can mimic obstruction; (2) **renal plasma flow** ↑ 60-80% by 2nd trimester; (3) **GFR** ↑ 50% by mid-pregnancy (peak ~ 200 mL/min from baseline ~ 120); via ↑ renal plasma flow + ↑ filtration fraction; (4) **lab implications**: (a) **serum creatinine ↓** to 0.4-0.7 (lab upper limit pregnancy ~ 0.8); **Cr 0.9-1.0 considered abnormal in pregnancy** (impaired renal function); (b) **BUN ↓** to ~ 8-10; (c) **uric acid ↓** in early pregnancy → rises slightly late; ↑ in preeclampsia; (d) **proteinuria** — physiologic up to 300 mg/24 hr; > 300 mg/24 hr or urine protein/Cr > 0.3 = pathologic (preeclampsia, renal disease); urine dipstick poor; (e) **glycosuria** — common (↓ tubular reabsorption + ↑ GFR) — physiologic; not always GDM; (f) **bicarbonate ↓** to ~ 19-22 (compensated respiratory alkalosis from ↑ tidal volume); (5) **water + electrolyte** — Na ↓ slightly (135-138), osmolality ↓ 5-10 mOsm/kg (resetting osmostat by hCG/relaxin); RAAS activated (↑ renin/angiotensin/aldosterone) — paradoxical hypervolemia with low colloid pressure; (6) **acid-base** — compensated respiratory alkalosis (PaCO2 28-32, HCO3 19-22); (7) **clinical implications**: (a) drugs renally cleared — adjust doses (LMWH, magnesium, gentamicin); (b) **CKD pregnancy** — Cr > 1.4 = ↑ risk progression + adverse outcomes; (c) **AKI in pregnancy** — preeclampsia/HELLP, AFLP, sepsis, hemorrhage, TTP/HUS, pyelonephritis, obstruction; (d) **preeclampsia** — endotheliosis, glomerular swelling, podocyte injury, proteinuria; (e) **postpartum AKI** — can be sentinel for atypical HUS (complement-mediated); (f) **dialysis pregnancy** — possible but complex; (8) **chronic HT/PE/preeclampsia long-term renal risk**"
+      },
+      {
+        "label": "C",
+        "text": "Methotrexate"
+      },
+      {
+        "label": "D",
+        "text": "Cr 0.9 normal in pregnancy"
+      },
+      {
+        "label": "E",
+        "text": "Hysterectomy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pregnancy renal: GFR ↑ 50%, RPF ↑ 60-80%. Cr ↓ to 0.4-0.7 — Cr 0.9 abnormal pregnancy. Proteinuria > 300 mg/24h pathologic. Glycosuria common. Hydronephrosis R > L physiologic. Compensated respiratory alkalosis. Drug dosing adjusted. CKD Cr > 1.4 high-risk. AKI causes: PE/HELLP/AFLP/sepsis/TTP-HUS.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "Williams Obstetrics Ch 4; KDIGO Pregnancy + CKD"
+  },
+  {
+    "scenario": "Resident ถามอาจารย์เรื่อง vaginal microbiome + immunology + dysbiosis",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Vaginal flora not important"
+      },
+      {
+        "label": "B",
+        "text": "**Vaginal microbiome + immunology**: (1) **normal vaginal flora** — dominated by **Lactobacillus** (L. crispatus most protective, L. gasseri, L. jensenii, L. iners less so); produce **lactic acid** + H2O2 → **acidic pH (3.8-4.5)** → inhibits pathogens; bacteriocins, biosurfactants; (2) **community state types (CSTs)**: I (L. crispatus), II (L. gasseri), III (L. iners — less stable), IV (diverse anaerobes, gardnerella — dysbiosis); (3) **dysbiosis** — ↓ Lactobacillus + ↑ anaerobes (Gardnerella, Atopobium, Mobiluncus, Prevotella) → BV, ↑ STI susceptibility, ↑ preterm birth, ↑ PID; (4) **hormonal influences** — estrogen ↑ glycogen in epithelium → Lactobacillus substrate; **postmenopause** ↓ estrogen → ↓ glycogen → ↓ Lactobacillus → ↑ pH 5-7 → atrophy, ↑ UTI/BV; pregnancy → ↑ Lactobacillus dominance (estrogen effect); (5) **factors disrupting** — douching, antibiotics, intercourse (semen alkaline), menstruation, smoking, IUD insertion (transient), STIs; (6) **innate immunity in genital tract** — antimicrobial peptides (defensins, cathelicidin, lactoferrin, lysozyme, SLPI, elafin); IgA + IgG mucosal Ab; mucus barrier; cervical plug (pregnancy); macrophages, DCs; PRRs (TLRs) recognize PAMPs; (7) **adaptive** — mucosal IgA + tissue-resident memory T cells; (8) **clinical correlates**: (a) **BV diagnosis + treatment** — covered separately; (b) **probiotics** — Lactobacillus crispatus + reuteri studied for BV recurrence + UTI prevention — mixed evidence; (c) **vaginal microbiome transplant (VMT)** — research for recurrent BV; (d) **HIV transmission** — dysbiotic flora ↑ susceptibility; (e) **preterm birth** — dysbiosis association with PTB; investigating screening + treatment; (f) **fertility + IVF** — dysbiosis may impair; (9) **prevention** — avoid douching, manage estrogen (postmenopause local estrogen), condom use, treat partners selectively, treat BV; (10) **research** — microbiome modulation therapies"
+      },
+      {
+        "label": "C",
+        "text": "Methotrexate"
+      },
+      {
+        "label": "D",
+        "text": "Hysterectomy"
+      },
+      {
+        "label": "E",
+        "text": "Antibiotic continuously"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Vaginal microbiome: Lactobacillus dominant → lactic acid + acidic pH protective. CST I (crispatus) most stable. Dysbiosis (CST IV) → BV, STI, preterm. Estrogen → glycogen → Lactobacillus. Postmenopausal ↓ flora. Innate immunity (defensins, IgA, mucus). Probiotics + VMT research. Prevention: avoid douching, condom, treat BV.",
+    "difficulty": "hard",
+    "board_section": "basic_science",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "Ravel Vaginal Microbiome PNAS 2011; SMFM Microbiome"
+  },
+  {
+    "scenario": "OB unit implements shared decision-making (SDM) tools + birth plans + patient-centered care for delivery preferences",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Provider decides everything"
+      },
+      {
+        "label": "B",
+        "text": "**Shared decision-making (SDM) + patient-centered care in OB**: (1) **definition** — collaborative process where patient + provider make decisions together based on best evidence + patient values/preferences/circumstances; (2) **elements (Charles)** — both parties involved, information sharing both ways, deliberation, decision; (3) **components**: (a) discuss decision needed; (b) present **best evidence options + risks + benefits + uncertainty**; (c) elicit patient values + preferences; (d) deliberate + decide; (e) review/revisit; (4) **tools**: (a) **decision aids** — written, video, interactive (e.g., MFMU VBAC calculator, BWH decision aids, BabyCenter); (b) **birth plans** — preferences documented (positions, pain mgmt, monitoring, support, episiotomy, immediate skin-to-skin, delayed cord clamping, breastfeeding, family); written + flexible; (c) **OPTION scale** for measurement; (5) **specific OB SDM opportunities** — TOLAC vs ERCD, IOL vs expectant, prenatal screening (NIPT, amnio), epidural choice, induction methods, mode of breech delivery, fertility-sparing cancer options, postpartum contraception, breastfeeding decisions, advance directives (rare); (6) **respectful maternity care** — WHO statement — autonomy, consent, dignity, no abuse/coercion/discrimination; (7) **informed consent** continuous, not one-time; (8) **trauma-informed care** — recognize prior trauma + adjust approach; (9) **cultural humility** — language, beliefs, family roles; medical interpreters; (10) **doulas + companions** — improve outcomes + experience; ACOG endorses; Medicaid coverage expanding; (11) **patient-reported outcomes** + experience measures (PROMs, PREMs); (12) **provider training** — communication skills, SDM-OPTION, motivational interviewing; (13) **system support** — time, EMR tools, scheduling, decision-aid distribution; (14) **balance** — SDM doesn't mean patient decides alone — guidance from provider; emergency situations differ; (15) Thai context — patient rights expanding; transition from paternalistic to partnership model"
+      },
+      {
+        "label": "C",
+        "text": "Methotrexate"
+      },
+      {
+        "label": "D",
+        "text": "Discharge if patient disagrees"
+      },
+      {
+        "label": "E",
+        "text": "Hysterectomy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "SDM in OB: collaborative — both parties — info + values + deliberation. Decision aids + birth plans + OPTION scale. Specific opportunities: TOLAC, IOL, screening, contraception, breech. Respectful maternity care (WHO). Trauma-informed + cultural humility + doulas. Provider training + system support. Balance — not abdication of expertise.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "ACOG Committee Opinion 819: Informed Consent + SDM; WHO Respectful Maternity Care"
+  },
+  {
+    "scenario": "Hospital reviews disclosure + apology after adverse outcome — neonatal HIE following missed CTG abnormality leading to delayed C/S",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Hide and deny"
+      },
+      {
+        "label": "B",
+        "text": "**Disclosure + apology + just culture after adverse outcome**: (1) **Patient + family disclosure** — ethical + many jurisdictions legal requirement: (a) timely (within 24-48 hr after event), (b) honest factual account, (c) acknowledge harm + expression of empathy/apology, (d) commitment to investigation + sharing findings, (e) ongoing support; (2) **'Apology laws'** — many US states protect expressions of sympathy from being used as admissions of liability — encourage transparency; Thai legal landscape — encourage open disclosure; (3) **Communication and Resolution Programs (CRPs)** — institutional approach (Michigan model, AHRQ CANDOR toolkit) — investigate + disclose + compensate when appropriate → reduces litigation + costs vs deny-defend; (4) **second victims** — providers + staff involved in adverse events suffer psychological harm — provide peer support, employee assistance, debriefing; (5) **investigation**: (a) **Root Cause Analysis (RCA)** — systematic identification of contributing factors (system, communication, equipment, training, fatigue, cognitive bias); (b) **fishbone, 5-whys** tools; (c) **avoid blame** — Just Culture framework; (6) **Just Culture** — distinguish: (a) human error (console + system fix), (b) at-risk behavior (coach), (c) reckless behavior (discipline); (7) **implementation of corrective actions** — protocol changes, equipment, training, simulation; track outcomes; (8) **morbidity + mortality (M&M) conferences** — confidential learning forum; (9) **patient safety culture** — Safety Attitudes Questionnaire; psychological safety; (10) **ongoing care + support** — continuity of care for harmed patient + family; mental health; spiritual support; (11) **bereavement + perinatal loss** — comprehensive support; (12) **legal counsel** — institutional; risk management; (13) **document** factually; (14) **share learning broadly** — lessons → other institutions; (15) **measure** — disclosure + resolution outcomes; (16) Thai context — Medical Council ethical guidelines + Thai Patient Safety Goals (2P safety, 3P safety frameworks)"
+      },
+      {
+        "label": "C",
+        "text": "Methotrexate"
+      },
+      {
+        "label": "D",
+        "text": "Refuse to discuss"
+      },
+      {
+        "label": "E",
+        "text": "Hysterectomy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Disclosure + apology: timely, honest, empathetic, ongoing. CRP institutional approach (CANDOR) — reduces litigation. Second victim support. RCA + Just Culture (human error vs at-risk vs reckless). M&M. Corrective actions + tracked. Safety culture. Bereavement support. Thai Patient Safety Goals. Share learning.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "AHRQ CANDOR Toolkit; ACOG Committee Opinion 681: Disclosure + Discussion of Adverse Events"
+  },
+  {
+    "scenario": "หญิงตั้งครรภ์ G2P1 GA 28 wk underlying healthy — มาห้องฉุกเฉินด้วย acute COVID-19 (PCR-confirmed) — moderate-severe symptoms (SpO2 91% on RA, dyspnea, fever, fatigue) + bilateral infiltrates on CXR\n\nV/S: BP 118/72, HR 110, RR 26, Temp 38.6, SpO2 91% RA\nGen: dyspneic, distressed\nFetal: FHR 158 reactive, no contractions\nLab: WBC 10K, CRP 95, D-dimer 2,400, ferritin 950, LDH 380, lymphocytes 0.8\nCXR: bilateral ground-glass + lower lobe infiltrates\nNo prior COVID vaccination",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Discharge home"
+      },
+      {
+        "label": "B",
+        "text": "**COVID-19 in pregnancy with moderate-severe disease** — pregnancy ↑ risk severe + adverse outcomes (preterm, stillbirth, ICU, mortality, VTE): (1) **admit + supportive care** + multidisciplinary (MFM + ID + pulmonary + ICU); (2) **oxygen** — target SpO2 ≥ 95% for fetal well-being; nasal cannula → HFNC → NIV → intubation as needed; awake proning encouraged (oxygenation + delays intubation); LUD when supine; (3) **antiviral** — **remdesivir** safe in pregnancy (acceptable per CDC/IDSA — limited but reassuring data) — 5-d course for moderate-severe; **nirmatrelvir-ritonavir (Paxlovid)** for mild-moderate outpatient if early (within 5 d) + risk factors — limited pregnancy data but generally acceptable per IDSA/RECOVERY; (4) **dexamethasone** — recommended for severe (requiring O2) per RECOVERY trial — improves mortality; cross placenta but benefit > risk in severe maternal disease; consider standard antenatal corticosteroid course concurrently if preterm risk (24-34 wk); (5) **anticoagulation** — VTE risk markedly ↑ in COVID + pregnancy — **prophylactic LMWH** for all hospitalized; therapeutic for confirmed VTE; (6) **immunomodulators** — **tocilizumab** (IL-6 inhibitor) for severe + escalating O2 needs — limited pregnancy data but RECOVERY/REMAP-CAP support; baricitinib alternative; (7) **antibiotics** — only if bacterial coinfection (procalcitonin); (8) **fetal monitoring** — continuous EFM, daily NST, growth + Doppler if FGR; (9) **delivery considerations** — COVID not indication for delivery; deliver per obstetric indication or maternal deterioration; if maternal ICU + respiratory failure → may improve respiratory status with delivery (controversial); preterm delivery for failing maternal status; (10) **mode of delivery** — vaginal preferred unless obstetric indication; PPE for staff; (11) **postpartum** — continue treatment + monitor; thromboprophylaxis 6 wk postpartum; (12) **breastfeeding** — encouraged with precautions (mask, hand hygiene; SARS-CoV-2 not transmitted via milk; antibodies transferred); (13) **vaccination** — recommend mRNA COVID vaccine + boosters in pregnancy + postpartum + breastfeeding (CDC/ACOG); (14) **neonatal** — monitor + universal precautions; (15) **mental health + family support** + telehealth follow-up"
+      },
+      {
+        "label": "C",
+        "text": "Methotrexate"
+      },
+      {
+        "label": "D",
+        "text": "Refuse all treatment"
+      },
+      {
+        "label": "E",
+        "text": "Hysterectomy"
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "COVID-19 pregnancy moderate-severe: admit + multidisciplinary. O2 target ≥ 95%. Remdesivir + dexamethasone (severe) + LMWH prophylaxis. Tocilizumab severe. Continuous fetal monitoring. Not indication for delivery — per obstetric. Vaginal preferred. Vaccine recommended pregnancy + postpartum. Breastfeeding safe with precautions. VTE 6 wk postpartum. Awake proning.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "obgyn",
+    "board_age_group": "adult",
+    "reference_source": "RECOVERY Trial; CDC/ACOG COVID-19 Pregnancy Guidance; SMFM COVID Updates"
   }
 ]
