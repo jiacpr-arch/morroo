@@ -338,5 +338,175 @@
     "board_topic": "respiratory",
     "board_age_group": "peds",
     "reference_source": "Cystic Fibrosis Foundation Guidelines; Middleton PG et al. NEJM 2019 (Trikafta)"
+  },
+  {
+    "scenario": "อาจารย์อธิบาย pediatric pharmacology — drug dosing differs from adults\n\nคำถาม: หลักการ pediatric drug dosing + key developmental pharmacokinetic differences",
+    "choices": [
+      { "label": "A", "text": "Same dose as adult per body weight" },
+      { "label": "B", "text": "Pediatric dosing requires consideration of developmental pharmacokinetics: (1) Absorption — gastric pH higher in neonates (favors penicillin, disfavors weak acids); slower gastric emptying; (2) Distribution — higher % water (neonates 75% water vs adult 60% — increased Vd of water-soluble drugs like aminoglycosides); lower albumin (higher free fraction of bound drugs — bilirubin displacement risk in neonates with ceftriaxone, sulfa); BBB permeable in neonate; (3) Metabolism — CYP450 immature at birth → mature by age 1 (varies); UGT (glucuronidation) immature → 'gray baby syndrome' with chloramphenicol; (4) Excretion — GFR low at birth, matures by 1 yr → renal drug dose adjustment; (5) Dosing methods: weight-based (mg/kg) for most; body surface area (m²) for chemotherapy; age-band approximations; (6) Special considerations: ceftriaxone CI in neonates < 4 wk (bilirubin displacement + Ca precipitation); chloramphenicol gray baby syndrome; tetracycline tooth/bone deposition < 8 yr; fluoroquinolone cartilage concern; aspirin Reye syndrome with viral illness; codeine/tramadol CI < 12 yr; benzyl alcohol toxicity in preservatives; (7) Always verify dose + use pediatric-specific resources" },
+      { "label": "C", "text": "Halve adult dose for all children" },
+      { "label": "D", "text": "Pediatric-specific dosing not necessary" },
+      { "label": "E", "text": "Use weight only" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pediatric pharmacology = different from adult due to developmental changes in ADME. Weight-based dosing standard. Special CI: ceftriaxone < 4 wk (bilirubin, Ca), chloramphenicol (gray baby), tetracycline < 8 yr (tooth, bone), fluoroquinolone (cartilage), aspirin + viral illness (Reye), codeine < 12 yr (variable metabolism, respiratory depression). Verify dose meticulously.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "procedures",
+    "board_age_group": "peds",
+    "reference_source": "AAP Pediatric Clinical Pharmacology; Lexicomp Pediatric Drug Information"
+  },
+  {
+    "scenario": "Resident ถาม physiology — neonatal transitional circulation",
+    "choices": [
+      { "label": "A", "text": "Same as adult" },
+      { "label": "B", "text": "Neonatal Transitional Circulation: fetal — high pulmonary vascular resistance (PVR), low systemic vascular resistance (SVR), R→L shunting through ductus arteriosus + foramen ovale + ductus venosus; oxygenation from placenta. AT BIRTH: (1) First breath expands lungs → ↓PVR + ↑oxygenation → pulmonary blood flow increases; (2) Cord clamping → loss of placental low-resistance circuit → ↑SVR; (3) Increased pulmonary venous return → ↑LA pressure → functional closure of foramen ovale (anatomic 3 mo-1 yr); (4) Higher PaO2 + ↓ prostaglandins → functional closure of ductus arteriosus (anatomic by 2-3 weeks); (5) Ductus venosus closes when umbilical flow stops; (6) Persistent fetal circulation (PPHN — persistent pulmonary HT of newborn) if PVR fails to drop — causes: meconium aspiration, sepsis, RDS, congenital diaphragmatic hernia — Rx: 100% O2, sedation, mechanical vent, iNO (selective pulmonary vasodilator), milrinone, ECMO; ductal-dependent CHD (HLHS, critical AS/PS, TGA, Tricuspid atresia) — PGE1 maintains PDA until surgery" },
+      { "label": "C", "text": "No transition occurs" },
+      { "label": "D", "text": "PDA never closes" },
+      { "label": "E", "text": "Foramen ovale always patent" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Neonatal transition: fetal R→L shunts + high PVR → newborn L→R adult circulation. Trigger: first breath + cord clamping. PVR drops, SVR rises, shunts close. PPHN if PVR fails to drop (iNO, ECMO). Ductal-dependent CHD: PGE1 maintains PDA (HLHS, critical AS/PS, TGA, Tricuspid atresia). PPS (peripheral pulmonary stenosis) common in newborns from incomplete transition — benign murmur usually.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "cardiovascular",
+    "board_age_group": "peds",
+    "reference_source": "Nelson Textbook of Pediatrics 22nd ed Ch. 461; Avery's Diseases of the Newborn 11th ed"
+  },
+  {
+    "scenario": "อาจารย์อธิบาย immunology — infant immune system + vaccine response",
+    "choices": [
+      { "label": "A", "text": "Same as adult" },
+      { "label": "B", "text": "Infant immune system maturation: (1) Innate: present at birth but qualitatively + quantitatively immature; (2) Adaptive: passive (maternal IgG transplacentally — protects 6 mo, wanes), active maturing; (3) Maternal IgG falls 6-9 mo while infant own immune building → 'physiologic hypogammaglobulinemia' (6-9 mo nadir) → susceptibility window; (4) IgA in breast milk — mucosal protection; (5) IgM appears first to new antigen; IgG class switching; (6) T-cell response immature — Th2-biased — atopy susceptibility; (7) Vaccine response: live attenuated (MMR, varicella, rotavirus, BCG) need cellular immunity — given after 6 mo; inactivated/subunit/conjugate (DTaP, Hib, PCV13, Hepatitis B, polio IPV) — given starting birth/2 mo; conjugate vaccines (PCV, Hib, MenACWY) — conjugate protein to polysaccharide for T-cell-dependent response in infants; (8) Polysaccharide unconjugated vaccines (pneumovax 23) poorly immunogenic < 2 yr — give after 2 yr; (9) Live vaccines CI in pregnant, severe immunodeficiency, recent IVIG (delay 11 mo for MMR/varicella)" },
+      { "label": "C", "text": "Adults respond same as infants" },
+      { "label": "D", "text": "No need for vaccination" },
+      { "label": "E", "text": "Single dose universal" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Infant immune system immature + Th2-biased. Maternal IgG protects ~ 6 mo then wanes. Live vaccines after 6-12 mo (cellular immunity needed). Conjugate vaccines key — convert T-independent polysaccharide to T-dependent (PCV, Hib, MenACWY) — effective in infants. Unconjugated polysaccharide (PPSV23) ineffective < 2 yr. Maternal vaccination (Tdap pregnancy, RSV, COVID, influenza) → passive transfer protects infant. Live vaccines CI in pregnancy + immunocompromised.",
+    "difficulty": "easy",
+    "board_section": "basic_science",
+    "board_topic": "id",
+    "board_age_group": "peds",
+    "reference_source": "CDC Recommended Immunization Schedule; AAP Red Book 2024"
+  },
+  {
+    "scenario": "อาจารย์อธิบาย physiology — pediatric fluid + electrolyte calculation",
+    "choices": [
+      { "label": "A", "text": "Same as adult" },
+      { "label": "B", "text": "Pediatric Fluid Management: (1) Maintenance fluid '4-2-1 rule' (Holliday-Segar): 4 mL/kg/hr first 10 kg + 2 mL/kg/hr next 10 kg + 1 mL/kg/hr each additional kg (e.g., 25 kg child = 40 + 20 + 5 = 65 mL/hr); (2) Maintenance fluid composition: isotonic — D5 NS preferred over D5 0.45 NS (Cochrane evidence — hypotonic causes iatrogenic hyponatremia, especially in ill children) — AAP 2018 endorse isotonic; (3) Resuscitation: NSS or LR 20 mL/kg bolus over 15-30 min for shock, may repeat × 2-3 then assess + consider blood/colloid; (4) Dehydration assessment: mild (3-5%), moderate (6-9% — sunken eyes, dry MM, decreased turgor, prolonged capillary refill, tachycardia), severe (≥ 10% — lethargic, sunken fontanelle, very poor perfusion, hypotension late sign in peds); (5) Replacement: 50% deficit + maintenance over first 8h, remaining 50% over next 16h; oral rehydration solution (ORS) preferred for mild-moderate (cheaper, safer, effective); (6) Electrolyte considerations: K based on serum + UO; correct Na slowly (max 10-12 mEq/L/d to avoid central pontine myelinolysis); (7) Special situations: DKA (cautious slow fluid as discussed), burns (Parkland formula for kids), neonatal (different calculations)" },
+      { "label": "C", "text": "8-4-2 rule" },
+      { "label": "D", "text": "Always restrict fluid" },
+      { "label": "E", "text": "Adult formula" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pediatric fluid management essential skill. 4-2-1 rule (Holliday-Segar 1957) for maintenance. AAP 2018 + NEJM 2018 (Friedman): isotonic preferred over hypotonic (less iatrogenic hyponatremia, esp ill children). 20 mL/kg bolus for shock (can repeat). Replace deficit over 24h (DKA 48h slower). ORS for mild-moderate dehydration. Cautions: rapid Na correction (CPM), DKA cerebral edema, neonatal special, burns Parkland. Frequent re-assessment + adjustment.",
+    "difficulty": "medium",
+    "board_section": "basic_science",
+    "board_topic": "renal_gu",
+    "board_age_group": "peds",
+    "reference_source": "AAP Clinical Practice Guideline: Maintenance IV Fluids in Children 2018 (Feld LG et al.); Holliday MA, Segar WE. Pediatrics 1957"
+  },
+  {
+    "scenario": "Hospital wants to reduce neonatal mortality + improve newborn screening + immunization rates\n\nคำถาม: child health policy + quality metrics",
+    "choices": [
+      { "label": "A", "text": "Single intervention solves all" },
+      { "label": "B", "text": "Comprehensive Child Health Program — multi-level intervention: (1) Antenatal: maternal nutrition + iron + folate, vaccination (Tdap, flu, COVID, RSV maternal), screening (gestational diabetes, group B Strep), education; (2) Intrapartum: skilled birth attendant, group B Strep prophylaxis if indicated, immediate skin-to-skin contact, delayed cord clamping (1-3 min — improves iron stores), early breastfeeding initiation; (3) Newborn: routine care (vitamin K, eye prophylaxis, hepatitis B vaccine), newborn screening (heel prick — congenital hypothyroidism, PKU, sickle cell, CF, etc.), pulse oximetry screening (critical CHD), hearing screening; (4) Well-child visits at scheduled intervals: growth + development monitoring, anticipatory guidance, vaccinations per CDC/local schedule, screening (lead, anemia, vision, hearing, autism, depression in adolescents); (5) Vaccination: universal + catch-up programs, education, address vaccine hesitancy, school requirements; (6) Nutrition: breastfeeding promotion (6 mo exclusive), complementary feeding 6 mo, micronutrient programs (iron, vitamin D, vitamin A), school meal programs; (7) Safety: car seats, helmets, water safety, firearm storage, lead paint; (8) Mental health: screening, school-based programs, family support; (9) Equity: address social determinants (food security, housing, education access); (10) Quality metrics: infant mortality, vaccination coverage, well-child visit completion, screening uptake, hospitalization rates" },
+      { "label": "C", "text": "Adult medicine principles only" },
+      { "label": "D", "text": "Ignore prevention" },
+      { "label": "E", "text": "Single specialty manages" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Comprehensive child health — life-course approach + multi-level intervention. WHO + AAP + CDC frameworks. Key components: antenatal, intrapartum, newborn screening + immunization, well-child visits, anticipatory guidance, safety, mental health, equity. Quality metrics: infant mortality (key indicator), vaccination coverage, screening uptake. Social determinants of health critical. Multidisciplinary + multi-level. Thailand: maternal + child health policy improved outcomes significantly past decades.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "signs_symptoms",
+    "board_age_group": "peds",
+    "reference_source": "WHO Reproductive Maternal Newborn Child + Adolescent Health Strategy; AAP Bright Futures Guidelines"
+  },
+  {
+    "scenario": "PICU implements quality improvement to reduce CLABSI in children — different from adult considerations",
+    "choices": [
+      { "label": "A", "text": "Same as adult bundle" },
+      { "label": "B", "text": "Pediatric CLABSI Prevention Bundle: similar adult core (hand hygiene, max barrier, chlorhexidine ≥ 0.5% in alcohol > 2 mo old, site selection — IJ or subclavian preferred over femoral in non-emergent, daily review) + pediatric-specific: (1) Use of central lines minimized — peripheral IV when possible, midline if longer duration; (2) Catheter selection by size + child size (different small catheters); (3) Site selection: in infants/children — IJ often easier than subclavian; femoral acceptable in PICU/post-op cardiac (less infection difference than adults); (4) Insertion checklist + observer; (5) Chlorhexidine bathing daily in PICU (less convincing evidence than adults); (6) Dressing change protocols (transparent q7d or per soil); (7) Hub disinfection (\"scrub the hub\"); (8) Daily review of necessity — early removal; (9) Antimicrobial-impregnated catheters in selected; (10) Education + ongoing competency assessment; (11) PICU-specific: TPN line designation, sepsis surveillance; (12) Family education + engagement; (13) Tracking + feedback: CLABSI rate per 1000 catheter-days; (14) Multidisciplinary: physicians, nurses, infection prevention, family" },
+      { "label": "C", "text": "Avoid all central lines" },
+      { "label": "D", "text": "Use all femoral lines" },
+      { "label": "E", "text": "No prevention needed in children" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pediatric CLABSI prevention — similar core to adult bundle (Pronovost Keystone applies) + pediatric considerations: smaller catheters, site preference varies, chlorhexidine after 2 mo old, family engagement. Pediatric ICU CLABSI lower with bundle implementation (Miller MR Pediatrics 2010 — 40% reduction). Modern: family-centered care, technology, electronic surveillance. Continuous improvement + audit + feedback critical.",
+    "difficulty": "medium",
+    "board_section": "ems_mgmt",
+    "board_topic": "id",
+    "board_age_group": "peds",
+    "reference_source": "Miller MR et al. Pediatrics 2010 (PICU CLABSI Bundle); CDC HICPAC + PIDS Guidelines for Pediatric"
+  },
+  {
+    "scenario": "Pediatric department implements 'Family-Centered Care' (FCC) — partner with families to improve outcomes",
+    "choices": [
+      { "label": "A", "text": "Exclude families from care decisions" },
+      { "label": "B", "text": "Family-Centered Care (FCC) in pediatric/PICU — partnership with families improves outcomes: (1) Core principles (Institute for Patient + Family-Centered Care): respect + dignity, information sharing, participation, collaboration; (2) Open visitation 24/7 + family at bedside; (3) Family rounds — daily bedside multidisciplinary rounds including family + child (age-appropriate); (4) Shared decision-making — values, goals, options discussed; (5) Family presence during procedures + resuscitation (AHA + AAP endorse); (6) Parental + caregiver role: comfort, education, advocacy, observation; (7) Sibling support + visitation; (8) Cultural + linguistic competence — interpreters, cultural understanding; (9) Discharge planning involves family early; (10) Family advisory councils — family input on hospital policies + design; (11) Education programs + support groups; (12) Bereavement care for family if child dies; (13) Outcome measures: family satisfaction, length of stay, readmission, error rates (reduced when family engaged), staff satisfaction; (14) Evidence: family presence at resuscitation reduces PTSD in family + does not impair care (Compassionate Connected Care, Doyle Crit Care Med); FCC reduces LOS, complications, costs (Cooper RL Crit Care Med)" },
+      { "label": "C", "text": "Visit only 2 hours/day" },
+      { "label": "D", "text": "Decisions by physicians alone" },
+      { "label": "E", "text": "No family communication" }
+    ],
+    "correct_answer": "B",
+    "explanation": "FCC = evidence-based partnership with families. Core: respect, information, participation, collaboration. Reduces LOS, complications, PTSD, increases satisfaction. Family-centered rounds, presence during resuscitation, shared decision-making, cultural competence. IPFCC framework. AAP, AHA endorse. Modern pediatric care unimaginable without family partnership.",
+    "difficulty": "easy",
+    "board_section": "ems_mgmt",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "Institute for Patient + Family-Centered Care; Committee on Hospital Care + IPFCC. Patient + Family-Centered Care + the Pediatrician's Role 2012"
+  },
+  {
+    "scenario": "เด็กชายอายุ 4 ปี diagnosed ALL (acute lymphoblastic leukemia) — induction phase chemotherapy, multidisciplinary care\n\nคำถาม: pediatric cancer integrative management",
+    "choices": [
+      { "label": "A", "text": "Chemotherapy only by oncologist" },
+      { "label": "B", "text": "Pediatric Cancer Integrative Multidisciplinary Care: (1) Oncology team: pediatric hematology-oncology, treatment protocol per COG/UKALL/equivalent; (2) Treatment: induction → consolidation → maintenance for ALL; risk-stratified (cytogenetics, MRD); intrathecal therapy + cranial RT (selected) for CNS prophylaxis; (3) Supportive: tumor lysis syndrome prevention (hydration, allopurinol, rasburicase for high risk), febrile neutropenia management (empirical broad antibiotic within 1h), antifungal prophylaxis selected, antiviral if needed, transfusion support, growth factors (G-CSF); (4) Multidisciplinary team: oncology, infectious disease, nutritionist, PT/OT, psychology, child life, social work, chaplain, school liaison, primary pediatrician coordination; (5) Family support: shared decision-making, anticipatory guidance, sibling support, financial counseling (treatment expensive), respite care; (6) Child life specialist: developmentally appropriate education, coping, distraction, procedural support; (7) School re-integration: maintain education, home/hospital schooling, school nurse coordination, transition back; (8) Long-term survivorship: 90% 5-year survival ALL — surveillance for late effects (secondary malignancy, cardiotoxicity, growth, fertility, cognitive, psychosocial); transition to adult survivor clinic; (9) Palliative care concurrent — improves QOL even in curative intent; (10) End-of-life care if treatment fails — pediatric palliative + hospice integration" },
+      { "label": "C", "text": "Refuse all support" },
+      { "label": "D", "text": "Single specialist" },
+      { "label": "E", "text": "Ignore long-term effects" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Pediatric cancer = integrative + multidisciplinary + family-centered. ALL 90% 5-year survival modern. Treatment phases. Risk-stratified (MRD, cytogenetics). Supportive care critical (febrile neutropenia, tumor lysis, transfusions). Multidisciplinary team. Family support essential. Long-term survivorship: late effects screening, transition to adult care. Palliative care concurrent (improves QOL + may extend life). Modern pediatric oncology highly integrated.",
+    "difficulty": "hard",
+    "board_section": "integrative",
+    "board_topic": "hemato_onco",
+    "board_age_group": "peds",
+    "reference_source": "Children's Oncology Group Protocols; AAP + ASCO Pediatric Cancer Survivorship; ChIPS — Children's International Project on Palliative + Hospice Services"
+  },
+  {
+    "scenario": "Adolescent 16-year-old + chronic medical condition — transition to adult care\n\nคำถาม: adolescent transition + multimorbidity",
+    "choices": [
+      { "label": "A", "text": "Abrupt transfer at 18" },
+      { "label": "B", "text": "Adolescent Transition to Adult Care (integrative + planned process): (1) Begin transition planning in early adolescence (age 12-14) — not abrupt at 18; (2) Joint pediatric + adult provider coordination — written transition plan, shared records; (3) Self-management skills development: medication knowledge + administration, appointment scheduling, insurance navigation, recognizing warning signs, communication with providers; (4) Address adolescent-specific issues: sexuality + reproductive health, mental health (depression, anxiety, substance use higher in chronic illness), school/career planning, peer relationships, identity + autonomy; (5) Family role evolution — from primary decision-maker to support; (6) Confidentiality + assent/consent transition; (7) Specific concerns by condition (DM, CF, cancer survivor, congenital heart, sickle cell, IBD, transplant); (8) Insurance + legal: medical decision-making, conservatorship if cognitive impairment, transition of insurance; (9) Multidisciplinary support: adolescent medicine, social work, mental health, primary care; (10) Outcome metrics: continuity of care, no gap, adherence, satisfaction; (11) Got Transition + Six Core Elements framework (national approach); (12) Special populations: developmental disabilities, autism (specialized adult providers limited), cognitive impairment, complex care" },
+      { "label": "C", "text": "Pediatric care for life" },
+      { "label": "D", "text": "Ignore transition needs" },
+      { "label": "E", "text": "Discharge from all care" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Adolescent transition to adult care = critical integrative process. Begin early, planned, not abrupt. Six Core Elements (Got Transition): transition policy, tracking, readiness, planning, transfer, completion. Self-management skill building. Adolescent-specific issues. Family + autonomy balance. Multidisciplinary. Specific to condition (CF, DM, sickle cell, transplant, complex care). Outcomes: continuity, adherence. Gap in transition = poor outcomes. Modern: 'Got Transition' national framework + AAP/AAFP/ACP joint clinical report.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "psych_behavior",
+    "board_age_group": "peds",
+    "reference_source": "AAP/AAFP/ACP Clinical Report: Transitions Clinical Report 2018; Got Transition / National Alliance to Advance Adolescent Health"
+  },
+  {
+    "scenario": "Premature infant ex-32 weeks now 6 months chronological age — chronic lung disease + developmental concerns + family stress\n\nคำถาม: post-NICU follow-up + integrative care",
+    "choices": [
+      { "label": "A", "text": "Discharge from all follow-up" },
+      { "label": "B", "text": "Premature Infant Follow-up (NICU Graduate) — Integrative Multidisciplinary: (1) High-risk infant follow-up clinic (HRIF): developmental assessment, growth, neurological at scheduled intervals up to 2-3 years (corrected age); (2) Subspecialty care: pulmonology (BPD/CLD — chronic lung disease, RSV prophylaxis with palivizumab, weaning O2 home), ophthalmology (ROP — retinopathy of prematurity, follow-up), cardiology (PDA, congenital concerns), neurology (IVH, PVL, hydrocephalus), GI (NEC, feeding difficulties); (3) Developmental: PT, OT, speech therapy, early intervention services (IDEA Part C), assessments (Bayley, AIMS); (4) Nutrition: high-calorie formulas, fortification, weight gain monitoring, feeding therapy; (5) Vaccination: catch-up schedule + RSV prophylaxis (palivizumab) for high-risk; (6) Hearing + vision screening + monitoring; (7) Family support: parental mental health (high postpartum depression + PTSD risk), sibling support, financial counseling (NICU costs, ongoing care), respite care; (8) Coordinate care: medical home with primary pediatrician + specialty consults; (9) Long-term: school readiness assessment, IEP if developmental delays, transition planning; (10) Outcomes: many achieve typical development; some have lasting disabilities — early intervention improves outcomes; family-centered support throughout; corrected age use until 2 yr for milestones" },
+      { "label": "C", "text": "Single specialty manages all" },
+      { "label": "D", "text": "Refuse early intervention" },
+      { "label": "E", "text": "Use chronological age only" }
+    ],
+    "correct_answer": "B",
+    "explanation": "NICU graduate follow-up = quintessentially integrative. High-Risk Infant Follow-up clinic standard model. Subspecialty care (pulm, ophtho, cardio, neuro, GI, dev). Early intervention essential — improves outcomes. Family-centered + corrected age use until 2 yr. Long-term outcomes variable — modern care + interventions improve trajectory. Family support critical (parental MH, finances, social). AAP + March of Dimes guidelines. Outcomes registry data informs care.",
+    "difficulty": "medium",
+    "board_section": "integrative",
+    "board_topic": "respiratory",
+    "board_age_group": "peds",
+    "reference_source": "AAP Section on Perinatal Pediatrics; Follow-up Care of High-Risk Infants 2008 + updates"
   }
 ]
