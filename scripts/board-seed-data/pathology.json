@@ -168,5 +168,175 @@
     "board_topic": "hemato_onco",
     "board_age_group": "adult",
     "reference_source": "NCCN Colon Cancer; KEYNOTE-177"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 50 ปี — proteinuria + edema + renal biopsy: thickened glomerular basement membranes + IgG + C3 immunofluorescence + 'spike' pattern on EM — membranous nephropathy",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Renal Pathology — Membranous Nephropathy + Glomerular Diseases: (1) **Membranous nephropathy (MN)**: subepithelial immune complex deposits → thickening of GBM (basement membrane); 'spike + dome' on EM; IgG + C3 IF; (2) **PLA2R antibody** (anti-phospholipase A2 receptor): primary (idiopathic) MN — 70-80% positive; serologic marker, helpful for diagnosis + monitoring; (3) **Secondary MN causes**: malignancy (especially solid tumors > 65), hepatitis B/C, autoimmune (SLE), drugs (NSAIDs, gold, penicillamine), infections — workup if PLA2R negative or atypical; (4) **Treatment** (KDIGO 2021): - Risk stratification by proteinuria + GFR + autoantibody; - Low-risk: supportive (ACEi/ARB, salt restriction, lipid, anticoagulation if severe proteinuria); 30% spontaneous remission; - High-risk: immunosuppression (rituximab, cyclophosphamide + steroid alternating Ponticelli, calcineurin inhibitors); rituximab increasingly first-line — MENTOR trial; (5) **Other primary glomerular diseases**: - **Minimal Change Disease**: foot process effacement on EM; treatment steroids — children + adults; - **FSGS**: focal segmental scarring; classic vs secondary causes (HIV, obesity, reflux); steroids + CNIs; - **IgA Nephropathy**: most common GN globally; IgA mesangial deposits; - **MPGN/C3 glomerulopathy**: low C3, complement pathway abnormalities; - **Lupus Nephritis**: 6 classes per ISN/RPS; immunosuppression for class III/IV; (6) **Nephritic vs nephrotic syndrome** classification; (7) **Multidisciplinary**: nephrology + pathology + rheumatology" },
+      { "label": "C", "text": "Surgery" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Renal pathology: membranous nephropathy (PLA2R Ab marker), classes of glomerular disease (minimal change, FSGS, IgA, lupus, MPGN). KDIGO 2021 risk-based Rx. Rituximab MENTOR. Multidisciplinary care.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "renal_gu",
+    "board_age_group": "adult",
+    "reference_source": "KDIGO Glomerular Diseases 2021"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 55 ปี — thyroid nodule biopsy — papillary thyroid carcinoma classical variant + BRAF V600E mutation",
+    "choices": [
+      { "label": "A", "text": "Ignore" },
+      { "label": "B", "text": "Thyroid Cancer Pathology + Management: (1) **Differentiated Thyroid Cancer (DTC)**: papillary (most common 80%), follicular (10-15%), Hürthle cell variant; oncocytic features; (2) **Papillary features**: papillae + clear nuclei (Orphan Annie) + nuclear grooves + pseudoinclusions; (3) **Variants of PTC**: classical, follicular variant (more indolent), tall cell (aggressive), columnar cell (aggressive), hobnail (aggressive), diffuse sclerosing (peds); (4) **Molecular**: BRAF V600E (most common, ~ 50%), RET/PTC rearrangements, RAS mutations, TERT promoter mutations (worse prognosis); (5) **Other thyroid cancers**: medullary (C-cell origin, calcitonin elevated, RET mutations — MEN2), anaplastic (highly aggressive — mortality > 90%, BRAF + others), lymphoma (rare); (6) **Risk stratification (ATA)**: low (small intrathyroidal, no nodes), intermediate (vascular invasion, microscopic ETE, small nodes), high (gross ETE, distant metastases, large nodes, aggressive variants); (7) **Treatment**: - Total thyroidectomy vs lobectomy based on size + risk; - Lymph node dissection (central, lateral) per evidence; - RAI (radioactive iodine) ablation based on risk; - TSH suppression with levothyroxine; - Surveillance: TSH + Tg + neck US; (8) **Targeted therapy** for advanced/refractory: - RAI-refractory: lenvatinib, sorafenib (multikinase TKIs); - **BRAF V600E**: dabrafenib + trametinib (selected); - RET fusion/mutation: selpercatinib, pralsetinib; - NTRK fusions: larotrectinib, entrectinib; (9) **Genetic counseling**: MEN2 for medullary; (10) **Multidisciplinary**: thyroid surgery + endocrinology + nuclear medicine + medical oncology + pathology" },
+      { "label": "C", "text": "Surgery only" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Thyroid cancer pathology: differentiated (papillary majority) + variants + medullary + anaplastic. Molecular (BRAF, RAS, RET, TERT). ATA risk stratification. Treatment by risk. Targeted therapy for advanced (TKIs, BRAF + MEK, RET inhibitors). Multidisciplinary care.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "ATA Thyroid Cancer 2015; NCCN"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี smoker — lung biopsy: non-small cell lung cancer adenocarcinoma + molecular: EGFR exon 19 deletion + PD-L1 75%",
+    "choices": [
+      { "label": "A", "text": "Random treatment" },
+      { "label": "B", "text": "NSCLC Pathology + Precision Therapy: (1) **NSCLC types**: adenocarcinoma (most common, peripheral, often non-smokers), squamous cell (central, smokers), large cell, NSCLC NOS; (2) **vs SCLC** (small cell — aggressive, neuroendocrine, smoker, central, paraneoplastic); (3) **Biomarker testing essential** for NSCLC adenocarcinoma (NCCN required for advanced): - **EGFR mutations** (exon 19 del, L858R most common, T790M resistance) — osimertinib first-line; - **ALK rearrangements** — alectinib, lorlatinib first-line; - **ROS1 rearrangements** — crizotinib, entrectinib; - **BRAF V600E** — dabrafenib + trametinib; - **KRAS G12C** — sotorasib, adagrasib; - **MET exon 14 skipping** — capmatinib, tepotinib; - **RET fusion** — selpercatinib, pralsetinib; - **NTRK fusion** — larotrectinib, entrectinib; - **HER2 mutations** — T-DXd, trastuzumab; (4) **PD-L1 testing** (TPS — tumor proportion score): immunotherapy decisions; PD-L1 ≥ 50% — pembrolizumab monotherapy first-line; < 50% — combination chemo + immunotherapy; (5) **Staging**: TNM + AJCC 8th edition; PET-CT + brain MRI + biopsy; (6) **Treatment based on stage + biomarker**: - Early (I-II): surgery + adjuvant chemo + osimertinib (EGFR+); - Locally advanced (III): chemoradiation + durvalumab consolidation (PACIFIC); - Metastatic (IV): targeted therapy if driver, immunotherapy if no driver + PD-L1+; (7) **SCLC**: chemo (platinum + etoposide) + atezolizumab/durvalumab + thoracic RT for limited; PCI; (8) **Multidisciplinary tumor board**: pathology + medical oncology + thoracic surgery + radiation oncology + pulmonology + IR + palliative; (9) **Modern**: precision oncology revolutionizing lung cancer — many patients live years with targeted therapy" },
+      { "label": "C", "text": "Surgery only" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "NSCLC: precision oncology — multiple actionable drivers (EGFR, ALK, ROS1, KRAS G12C, BRAF, MET, RET, NTRK, HER2). PD-L1 testing. Targeted therapy for drivers + immunotherapy for non-drivers. Stage-based treatment. Multidisciplinary. Modern: dramatic outcome improvements.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "NCCN NSCLC; IASLC"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 30 ปี — pigmented skin lesion biopsy: melanoma + Breslow thickness 2.5mm + ulceration + mitotic rate elevated",
+    "choices": [
+      { "label": "A", "text": "Ignore" },
+      { "label": "B", "text": "Melanoma Pathology + Staging + Management: (1) **Histology**: atypical melanocytes, asymmetric, pagetoid spread; Breslow thickness — most important prognostic factor; ulceration adverse; mitotic rate; lymphovascular invasion; perineural; satellite/in-transit; (2) **TNM (AJCC 8th)**: - T by thickness + ulceration; - N by nodes + microsatellite/in-transit; - M includes serum LDH; - Stage 0 (in situ) — IV; (3) **Sentinel lymph node biopsy (SLNB)**: standard for T1b+ (≥ 0.8mm or any with ulceration) — staging + prognosis; (4) **Molecular**: BRAF V600 most common (50%), NRAS, KIT (acral, mucosal), GNAQ/GNA11 (uveal); (5) **Treatment**: - Wide local excision (margins based on thickness — 5mm in situ, 1cm for ≤ 1mm, 1-2cm for 1.01-2mm, 2cm for > 2mm); - SLNB for T1b+; - Completion lymph node dissection — limited indication post-MSLT-II (observation acceptable); - Adjuvant immunotherapy (nivolumab, pembrolizumab) for Stage IIB-IV; targeted (dabrafenib + trametinib) for BRAF+ Stage III; (6) **Metastatic treatment**: - **Immunotherapy**: PD-1 inhibitor (nivo, pembro) +/- CTLA-4 (ipi); RELATIVITY-047 — nivolumab + relatlimab; - **Targeted** (BRAF+): dabrafenib + trametinib, encorafenib + binimetinib; - **TIL therapy** (tumor-infiltrating lymphocytes) — FDA approved 2024 (lifileucel); - Combination + sequential; (7) **Brain mets**: SRS + immunotherapy effective; (8) **Long-term**: surveillance for recurrence + new primaries; (9) **Sun protection + skin checks** lifelong; (10) **Multidisciplinary**: dermatology + surgical oncology + medical oncology + radiation + pathology + genetics" },
+      { "label": "C", "text": "Surgery only" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Melanoma: Breslow thickness key + ulceration + mitoses. SLNB for T1b+. Molecular (BRAF, NRAS). Treatment: wide excision + immunotherapy + targeted + TIL. Adjuvant for advanced. Modern: dramatic outcomes with immunotherapy + targeted. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "NCCN Melanoma; AJCC 8th"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 65 ปี — bone pain + anemia + renal failure — bone marrow biopsy: plasma cells > 20% + serum protein electrophoresis: M-spike + BJ proteinuria — multiple myeloma",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Multiple Myeloma Pathology + Diagnosis: (1) **CRAB criteria** (organ damage): hyperCalcemia, Renal failure, Anemia, Bone lesions; or biomarkers (plasma cells ≥ 60%, FLC ratio ≥ 100, MRI ≥ 1 focal lesion); (2) **IMWG criteria 2014**: bone marrow plasma cells ≥ 10% + monoclonal protein + CRAB or biomarkers; (3) **Diagnostic workup**: SPEP/UPEP (M-spike), immunofixation, serum FLC, BMBx + cytogenetics + FISH, skeletal survey or whole-body low-dose CT/MRI/PET-CT, CBC, Cr, Ca, beta-2 microglobulin, albumin, LDH; (4) **Risk stratification (R-ISS)**: cytogenetics (del 17p, t(4;14), t(14;16), 1q gain — poor) + beta-2 microglobulin + albumin + LDH; (5) **Pathology**: plasma cell infiltration; flame cells, Russell bodies; flow cytometry for clonal (κ/λ restriction); (6) **Treatment** (NCCN + IMWG): - **Triplet/quadruplet induction** then transplant: VRD (bortezomib + lenalidomide + dex), KRD (carfilzomib + len + dex), DARA-VRD or DARA-RVd quad (DETERMINATION/GRIFFIN — daratumumab + RVd improves PFS); - **Autologous HCT** for eligible (age + comorbidity); - Consolidation + maintenance (lenalidomide); - **Newer agents**: CD38 (daratumumab, isatuximab), bispecific (teclistamab, talquetamab), BCMA CAR-T (ide-cel, cilta-cel — revolutionary), selinexor; (6) **Smoldering MM**: monitoring vs early treatment for high-risk (PETHEMA, ECOG E3A06); (7) **Bone health**: bisphosphonate + denosumab; vertebroplasty/kyphoplasty for compression fractures; RT for pain; (8) **Renal failure**: hyperhydration, bortezomib (less nephrotoxic), avoid nephrotoxins; (9) **Supportive care**: prophylactic antibiotics, antifungal, antiviral, IVIG selected, vaccinations, hyperCa management, anemia (EPO); (10) **Long-term**: chronic disease with multiple lines of therapy; modern: median survival > 8-10 years" },
+      { "label": "C", "text": "Surgery" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Multiple myeloma: CRAB + IMWG criteria + monoclonal protein. Risk stratification (R-ISS). Triplet/quadruplet induction + transplant + maintenance. Modern: CD38 mAb + bispecifics + BCMA CAR-T revolutionary. Median survival 8-10+ years. Multidisciplinary.",
+    "difficulty": "hard",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "IMWG; NCCN Myeloma"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 60 ปี — lymphadenopathy + lymph node biopsy: small lymphocytes + flow cytometry CD5+ CD19+ CD23+ — CLL",
+    "choices": [
+      { "label": "A", "text": "Ignore" },
+      { "label": "B", "text": "CLL Pathology + Management: (1) **CLL diagnosis**: lymphocytosis (> 5,000 monoclonal B cells), classic immunophenotype CD5+ CD19+ CD23+ surface Ig dim, ROR1+, light chain restricted; (2) **vs SLL**: lymph nodes prominent vs marrow + blood; (3) **Smudge cells** on peripheral smear; (4) **Workup**: CBC + smear, BMBx selected, lymph node biopsy if atypical, flow cytometry, FISH for chromosomal (del 17p, 11q, 13q, trisomy 12), IGHV mutation status, TP53; (5) **Staging**: Rai (0-IV) or Binet (A-C); (6) **Prognosis**: - Good: IGHV mutated, isolated 13q, low ZAP-70 + CD38; - Poor: IGHV unmutated, del 17p/TP53 mutation, complex karyotype; (7) **Treatment** indicated for symptomatic, advanced stage, cytopenias, B symptoms: - **Targeted therapy first-line revolutionized care**: - **BTK inhibitors**: ibrutinib (1st gen), acalabrutinib + zanubrutinib (2nd gen — less cardiac); - **Venetoclax** (BCL-2 inhibitor) + anti-CD20 (obinutuzumab) — fixed duration; - **Combination** ibrutinib + venetoclax (selected); - **Chemoimmunotherapy** (FCR — fludarabine + cyclophosphamide + rituximab) less used now, selected IGHV mutated younger; (8) **Richter transformation**: aggressive DLBCL — rare but devastating; (9) **Infections**: high risk (hypogammaglobulinemia + immunodeficiency) — vaccines + antibiotic prophylaxis selected; (10) **Vaccinations**: avoid live; pneumo + flu + COVID + shingles (Shingrix); IVIG for recurrent infections + low IgG; (11) **Multidisciplinary**: heme-onc + pathology + ID + transplant for refractory + secondary malignancy surveillance" },
+      { "label": "C", "text": "Surgery" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "CLL: CD5+ CD19+ CD23+ classic. Risk by IGHV + cytogenetics. Modern treatment: BTK inhibitors + venetoclax — targeted, fixed duration + improved outcomes. Chemoimmunotherapy less. Infection risk + supportive. Multidisciplinary. Modern: precision + chronic disease management.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hemato_onco",
+    "board_age_group": "adult",
+    "reference_source": "NCCN CLL; ESMO"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 35 ปี — HIV positive newly diagnosed — CD4 250 + viral load 80,000",
+    "choices": [
+      { "label": "A", "text": "Refuse care" },
+      { "label": "B", "text": "HIV Diagnosis + Antiretroviral Therapy: (1) **Diagnosis**: 4th gen Ag/Ab combination test; confirmation HIV-1/2 antibody differentiation; viral load (HIV RNA); CD4 count; (2) **Baseline workup**: CBC, CMP, LFT, lipid panel, HbA1c, urinalysis, hepatitis A/B/C, syphilis, gonorrhea/chlamydia, TB (IGRA or PPD), pregnancy test, HLA-B*5701 if considering abacavir; (3) **ART recommended for all HIV+ regardless of CD4** (START trial 2015); (4) **First-line regimens (DHHS + IAS-USA)**: - **Integrase inhibitor (INSTI) based**: - Bictegravir/TAF/FTC (Biktarvy) — single pill, well-tolerated, no resistance to first-line; - Dolutegravir + (TAF/FTC or TDF/FTC) — Tivicay + Truvada/Descovy; - Dolutegravir + lamivudine (Dovato) — 2-drug regimen; (5) **Adherence + resistance testing baseline + on failure**: HIV-1 genotype baseline; (6) **Long-acting injectable**: cabotegravir + rilpivirine (Cabenuva) monthly or 2-monthly; (7) **PrEP for partners + at-risk**: TDF/FTC (Truvada), TAF/FTC (Descovy), cabotegravir LA (Apretude) — important prevention; (8) **Opportunistic infection prevention based on CD4**: PJP + Toxo prophylaxis (Bactrim) when CD4 < 200, MAC (azithromycin weekly) when CD4 < 50; (9) **Vaccinations**: hep A/B, flu, COVID, pneumo, Tdap, HPV, MMR + varicella if CD4 > 200 (live), shingles; (10) **Cancer screening**: anal Pap MSM, cervical women, hepatocellular if HBV/HCV; (11) **Mental health screening + support**: stigma, disclosure, partner notification; (12) **Multidisciplinary**: HIV specialist + primary care + pharmacy + mental health + social work + community" },
+      { "label": "C", "text": "Surgery" },
+      { "label": "D", "text": "Discharge" },
+      { "label": "E", "text": "Hospice" }
+    ],
+    "correct_answer": "B",
+    "explanation": "HIV: 4th gen diagnosis + viral load + CD4. ART for all. INSTI-based first-line (bictegravir, dolutegravir). 2-drug regimens. Long-acting injectables. PrEP. OI prophylaxis by CD4. Vaccinations. Multidisciplinary. Modern: chronic disease with normal life expectancy.",
+    "difficulty": "easy",
+    "board_section": "clinical_decision",
+    "board_topic": "id",
+    "board_age_group": "adult",
+    "reference_source": "DHHS HIV Guidelines; IAS-USA"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 25 ปี — easy bruising + heavy menstruation + family history bleeding — Coagulation workup: PT normal, aPTT prolonged, vWF antigen + activity reduced",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Bleeding Disorders Pathology + Workup: (1) **Initial workup**: CBC + smear + PT + aPTT + fibrinogen + bleeding history (ISTH-BAT score); (2) **Pattern of bleeding**: mucocutaneous (vWD, platelet) vs deep soft tissue/joints (factor deficiency); (3) **Common bleeding disorders**: - **Von Willebrand Disease (vWD)**: most common inherited; autosomal dominant most; types 1 (partial deficiency), 2 (qualitative — subtypes 2A, 2B, 2M, 2N), 3 (severe absence); vWF antigen + activity (ristocetin cofactor) + factor VIII + multimer analysis; - **Hemophilia A** (factor VIII deficiency) + **B** (factor IX) — X-linked; deep tissue + joint bleeding; severity by factor level; - **Platelet disorders**: function (Glanzmann, Bernard-Soulier) or number (ITP, TTP, DIC); - **Acquired**: liver disease (multiple factors), warfarin/DOACs, vitamin K deficiency, DIC, ITP, vWD acquired (heart valves, hypothyroidism); (4) **vWD management**: - Desmopressin (DDAVP) for type 1 + some type 2; tachyphylaxis with repeated doses; - vWF concentrate or factor VIII/vWF combination products; - Antifibrinolytics (TXA) for mucosal bleeding + menorrhagia; - Hormonal therapy for menorrhagia; (5) **Hemophilia management**: factor concentrates (recombinant — preferred); emicizumab (FVIII mimetic — Hemlibra) for hemophilia A — revolutionary; gene therapy emerging; (6) **Specialized care center**: hemophilia treatment center improves outcomes; (7) **Multidisciplinary**: hematology + transfusion medicine + dental + obstetrics + orthopedics + genetic counseling + physical therapy" },
+      { "label": "C", "text": "Random" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Bleeding disorders: vWD most common inherited; hemophilia A/B X-linked; platelet disorders; acquired. Workup: PT + aPTT + factor levels + specific tests. vWD: DDAVP, vWF concentrate, TXA. Hemophilia: factor concentrate, emicizumab revolutionary, gene therapy. Multidisciplinary specialized care.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hematology",
+    "board_age_group": "adult",
+    "reference_source": "NHF; WFH; ASH vWD"
+  },
+  {
+    "scenario": "ผู้ป่วยรับ blood transfusion + reaction: chills + fever + back pain + dark urine + hypotension + DIC features during transfusion",
+    "choices": [
+      { "label": "A", "text": "Continue transfusion" },
+      { "label": "B", "text": "Acute Hemolytic Transfusion Reaction (AHTR) — Anti-A/B IgM mediated severe: (1) **STOP transfusion immediately** + maintain IV access; (2) **Send blood bag + tubing + samples** to blood bank for investigation: clerical check (ABO compatibility), repeat ABO + crossmatch on patient + bag, direct antiglobulin test (DAT), bilirubin, haptoglobin, LDH, urinalysis (hemoglobinuria), CBC, coagulation (DIC); (3) **Supportive treatment**: - IV fluids aggressive (maintain UO > 1 mL/kg/hr — prevent AKI from hemoglobinuria); - Vasopressors if hypotension; - Treat DIC (FFP, cryoprecipitate, platelets); - Furosemide for oliguria + volume overload; - Bicarbonate to alkalinize urine (hemoglobinuria); - Monitor renal function, electrolytes, coagulation; - Possibly hemodialysis if AKI severe; (4) **Differential transfusion reactions**: - **AHTR**: ABO incompatibility (often clerical error) — most serious; - **Delayed HTR**: extravascular hemolysis days later; - **Febrile non-hemolytic (FNHTR)**: cytokines; common, less serious; - **Allergic (urticaria)**: minor; antihistamine; - **Anaphylactic** (IgA deficiency with anti-IgA): severe — epinephrine; washed RBCs; - **TRALI (transfusion-related acute lung injury)**: ARDS-like, donor antibodies; - **TACO (transfusion-associated circulatory overload)**: volume overload; - **Septic**: bacterial contamination — antibiotics + supportive; (5) **Reporting + investigation**: transfusion service notification, FDA reporting if severe; (6) **Prevention**: positive patient identification, double-checking, transfusion-safe protocols, leukoreduction, irradiation for at-risk patients; (7) **Multidisciplinary**: transfusion medicine + pathology + intensivist + nephrology" },
+      { "label": "C", "text": "Refuse" },
+      { "label": "D", "text": "Discharge" },
+      { "label": "E", "text": "Surgery" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Transfusion reactions: AHTR most serious (ABO incompatibility, often clerical error). Stop transfusion + investigation + supportive (fluids, vasopressor, DIC treatment, AKI prevention). Multiple reaction types — differential. Prevention: patient ID + safety protocols. Reporting + investigation. Multidisciplinary.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "hematology",
+    "board_age_group": "adult",
+    "reference_source": "AABB Transfusion Reactions; FDA"
+  },
+  {
+    "scenario": "ผู้ป่วยอายุ 60 ปี — chronic diarrhea + recent weight loss — duodenal biopsy: villous blunting + intraepithelial lymphocytes + crypt hyperplasia — celiac workup",
+    "choices": [
+      { "label": "A", "text": "Random" },
+      { "label": "B", "text": "Celiac Disease Pathology + Diagnosis: (1) **Histology**: Marsh classification - Marsh 0: normal; - 1: IELs > 25/100 enterocytes; - 2: + crypt hyperplasia; - 3a/b/c: villous atrophy (partial/subtotal/total); (2) **Diagnostic workup**: - **Serology**: TTG IgA (tissue transglutaminase) preferred — high sensitivity + specificity; total IgA (rule out IgA deficiency — common in celiac); DGP IgG (deamidated gliadin peptide) if IgA deficient; EMA (endomysial antibody) — confirmatory; - **Duodenal biopsy** ≥ 4 from descending duodenum + 2 from bulb during EGD — gold standard while on gluten-containing diet; - HLA-DQ2/DQ8 — negative virtually rules out (high negative predictive value); positive non-specific (40% population); (3) **Maintain gluten in diet during workup** (false negatives if gluten-free); (4) **Management**: lifelong gluten-free diet (GFD) — strict (cross-contamination matters); registered dietitian; (5) **Monitoring**: TTG normalization (6-12 mo on GFD), symptom resolution, repeat biopsy in some; bone density (osteoporosis common); micronutrients (iron, B12, folate, vitamin D); (6) **Complications + associated**: malabsorption + nutritional deficiencies, osteoporosis, infertility, dermatitis herpetiformis, neurological (ataxia, neuropathy), liver, refractory celiac (4-15%), enteropathy-associated T-cell lymphoma (EATL — small risk increase); (7) **Associated conditions**: T1DM, autoimmune thyroid, IgA deficiency, Down syndrome, Turner syndrome, Williams syndrome; (8) **Refractory celiac**: types I + II — corticosteroids, immunosuppressants; lymphoma surveillance; (9) **Family screening**: first-degree relatives — increased risk; (10) **Multidisciplinary**: GI + nutrition + endocrinology if associated" },
+      { "label": "C", "text": "Surgery" },
+      { "label": "D", "text": "Refuse" },
+      { "label": "E", "text": "Discharge" }
+    ],
+    "correct_answer": "B",
+    "explanation": "Celiac: serology (TTG IgA) + duodenal biopsy (Marsh) while on gluten. HLA helpful. Lifelong GFD. Complications + monitoring. Family screening. Refractory rare. Multidisciplinary care. Modern: precision + comprehensive.",
+    "difficulty": "medium",
+    "board_section": "clinical_decision",
+    "board_topic": "gi",
+    "board_age_group": "adult",
+    "reference_source": "ACG Celiac; ESPGHAN"
   }
 ]
