@@ -86,9 +86,32 @@ async function existingCount(admin: SupabaseClient, slug: string): Promise<numbe
   return count ?? 0;
 }
 
+const SUBJECT_PREFIX: Record<string, string> = {
+  emergency_medicine: "em",
+  internal_medicine: "im",
+  surgery: "surg",
+  pediatrics: "peds",
+  ob_gyn: "obg",
+  orthopedics: "ortho",
+  psychiatry: "psych",
+  anesthesiology: "anes",
+  radiology: "rad",
+  family_medicine: "fammed",
+  pathology: "path",
+  rehab_medicine: "rehab",
+};
+
+const SECTION_ICON: Record<string, string> = {
+  clinical_decision: "🩺",
+  basic_science: "🧬",
+  ems_mgmt: "🚨",
+  integrative: "🧩",
+};
+
 async function loadSubjectMap(
   admin: SupabaseClient,
-  slug: string
+  slug: string,
+  specialtyNameTh: string
 ): Promise<{ bySection: Map<string, string>; fallback: string | null }> {
   const { data: rows } = await admin
     .from("mcq_subjects")
@@ -104,7 +127,38 @@ async function loadSubjectMap(
       }
     }
   }
-  return { bySection, fallback: rows?.[0]?.id ?? null };
+
+  const prefix = SUBJECT_PREFIX[slug] ?? slug;
+  const missing = BOARD_SECTIONS.filter((s) => !bySection.has(s.code));
+  if (missing.length > 0 && !DRY_RUN) {
+    const toInsert = missing.map((s) => ({
+      name: `${prefix}_${s.code}`,
+      name_th: `${specialtyNameTh} · ${s.label_th}`,
+      icon: SECTION_ICON[s.code] ?? "🩺",
+      audience: "board" as const,
+      board_specialty: slug,
+      exam_type: null,
+      question_count: 0,
+    }));
+    const { data: inserted, error } = await admin
+      .from("mcq_subjects")
+      .insert(toInsert)
+      .select("id, name");
+    if (error) {
+      console.warn(`  [${slug}] failed to create missing subjects: ${error.message}`);
+    } else {
+      for (const r of inserted ?? []) {
+        for (const sec of BOARD_SECTIONS) {
+          if ((r.name as string).endsWith(sec.code)) {
+            bySection.set(sec.code, r.id as string);
+          }
+        }
+      }
+    }
+  }
+
+  const fallback = bySection.size > 0 ? Array.from(bySection.values())[0] : rows?.[0]?.id ?? null;
+  return { bySection, fallback };
 }
 
 interface SpecialtyReport {
@@ -113,6 +167,15 @@ interface SpecialtyReport {
   invalid: number;
   skipped_reason: string | null;
   inserted: number;
+}
+
+async function loadSpecialtyNameTh(admin: SupabaseClient, slug: string): Promise<string> {
+  const { data } = await admin
+    .from("board_specialties")
+    .select("name_th")
+    .eq("slug", slug)
+    .maybeSingle();
+  return (data?.name_th as string) ?? slug;
 }
 
 async function processSpecialty(
@@ -155,9 +218,10 @@ async function processSpecialty(
     return report;
   }
 
-  const { bySection, fallback } = await loadSubjectMap(admin, slug);
+  const specialtyNameTh = await loadSpecialtyNameTh(admin, slug);
+  const { bySection, fallback } = await loadSubjectMap(admin, slug, specialtyNameTh);
   if (!fallback) {
-    report.skipped_reason = "no mcq_subjects row for this specialty";
+    report.skipped_reason = "no mcq_subjects row available and auto-create failed";
     return report;
   }
 
