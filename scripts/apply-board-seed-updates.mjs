@@ -54,14 +54,68 @@ function logResult(slug, updated, missing, errors) {
   );
 }
 
+// Escape a string for use in PostgREST `like` filter — `%` and `_` are the
+// wildcards we need, `,` is the value separator so it must be quoted.
+function escapeLike(s) {
+  return s.replace(/[\\%_]/g, "\\$&");
+}
+
+async function tryUpdate(slug, q) {
+  // 1) Exact scenario match — fast path, no false positives.
+  const exact = await supabase
+    .from("mcq_questions")
+    .update({ choices: q.choices, explanation: q.explanation })
+    .eq("exam_source", "AI-generated-board-seed")
+    .eq("board_specialty", slug)
+    .eq("scenario", q.scenario)
+    .select("id");
+  if (exact.error) return { error: exact.error };
+  if (exact.data && exact.data.length > 0) {
+    return { matched: exact.data.length, mode: "exact" };
+  }
+
+  // 2) Fallback: prefix match on the first 80 chars. Real scenarios are
+  //    long + distinctive; if exactly one row matches the prefix, treat
+  //    it as the same question (likely a whitespace/newline drift).
+  const prefix = q.scenario.slice(0, 80).trim();
+  if (prefix.length < 40) return { matched: 0, mode: "no-prefix" };
+
+  // First: find candidate rows by prefix.
+  const probe = await supabase
+    .from("mcq_questions")
+    .select("id, scenario")
+    .eq("exam_source", "AI-generated-board-seed")
+    .eq("board_specialty", slug)
+    .like("scenario", escapeLike(prefix) + "%");
+  if (probe.error) return { error: probe.error };
+  const candidates = probe.data || [];
+  if (candidates.length === 0) return { matched: 0, mode: "no-match" };
+  if (candidates.length > 1) {
+    // Ambiguous — refuse to update, surface as ambiguous.
+    return { matched: 0, mode: "ambiguous", candidates: candidates.length };
+  }
+
+  // Exactly one candidate → update by id.
+  const upd = await supabase
+    .from("mcq_questions")
+    .update({ choices: q.choices, explanation: q.explanation })
+    .eq("id", candidates[0].id)
+    .select("id");
+  if (upd.error) return { error: upd.error };
+  return { matched: upd.data?.length || 0, mode: "prefix" };
+}
+
 async function applySpecialty(slug, questions) {
   let updated = 0;
+  let updatedExact = 0;
+  let updatedPrefix = 0;
   let missing = 0;
+  let ambiguous = 0;
   let errors = 0;
   const missingList = [];
+  const ambiguousList = [];
   const errorList = [];
 
-  // Concurrency: process N rows in parallel for throughput.
   const CONCURRENCY = 8;
   let idx = 0;
 
@@ -74,27 +128,28 @@ async function applySpecialty(slug, questions) {
         updated++;
         continue;
       }
-      const { data, error, count } = await supabase
-        .from("mcq_questions")
-        .update({ choices: q.choices, explanation: q.explanation }, { count: "exact" })
-        .eq("exam_source", "AI-generated-board-seed")
-        .eq("board_specialty", slug)
-        .eq("scenario", q.scenario)
-        .select("id");
-      if (error) {
+      const res = await tryUpdate(slug, q);
+      if (res.error) {
         errors++;
-        errorList.push({ scenario: q.scenario.slice(0, 80), error: error.message });
+        errorList.push({ scenario: q.scenario.slice(0, 80), error: res.error.message });
         continue;
       }
-      if (!data || data.length === 0) {
+      if (res.mode === "ambiguous") {
+        ambiguous++;
+        ambiguousList.push(q.scenario.slice(0, 80) + ` (${res.candidates} candidates)`);
+        continue;
+      }
+      if (!res.matched) {
         missing++;
         missingList.push(q.scenario.slice(0, 80));
         continue;
       }
       updated++;
-      if ((updated + missing + errors) % 50 === 0) {
+      if (res.mode === "exact") updatedExact++;
+      if (res.mode === "prefix") updatedPrefix++;
+      if ((updated + missing + errors + ambiguous) % 50 === 0) {
         process.stdout.write(
-          `\r    ${slug}: ${updated + missing + errors}/${questions.length}`
+          `\r    ${slug}: ${updated + missing + errors + ambiguous}/${questions.length}`
         );
       }
     }
@@ -102,16 +157,24 @@ async function applySpecialty(slug, questions) {
 
   await Promise.all(Array.from({ length: CONCURRENCY }, worker));
   process.stdout.write("\r");
-  logResult(slug, updated, missing, errors);
+  console.log(
+    `  ${slug.padEnd(20)} updated=${updated.toString().padStart(4)} (exact=${updatedExact} prefix=${updatedPrefix}) missing=${missing
+      .toString()
+      .padStart(4)} ambiguous=${ambiguous} errors=${errors}`
+  );
   if (errorList.length) {
     console.log("    first errors:");
     errorList.slice(0, 3).forEach((e) => console.log(`      - ${e.scenario}: ${e.error}`));
+  }
+  if (ambiguousList.length) {
+    console.log("    first ambiguous (multiple DB candidates — left untouched):");
+    ambiguousList.slice(0, 3).forEach((s) => console.log(`      - ${s}`));
   }
   if (missingList.length) {
     console.log("    first missing (not in DB — skipped):");
     missingList.slice(0, 3).forEach((s) => console.log(`      - ${s}`));
   }
-  return { updated, missing, errors };
+  return { updated, missing, ambiguous, errors };
 }
 
 async function main() {
@@ -135,7 +198,7 @@ async function main() {
   }
   console.log(`Existing AI-generated-board-seed rows in DB: ${count ?? "?"}\n`);
 
-  let totals = { updated: 0, missing: 0, errors: 0 };
+  let totals = { updated: 0, missing: 0, ambiguous: 0, errors: 0 };
   for (const file of files) {
     const slug = file.replace(/\.json$/, "");
     if (onlySlug && slug !== onlySlug) continue;
@@ -144,12 +207,13 @@ async function main() {
     const r = await applySpecialty(slug, questions);
     totals.updated += r.updated;
     totals.missing += r.missing;
+    totals.ambiguous += (r.ambiguous || 0);
     totals.errors += r.errors;
   }
 
   console.log("");
   console.log(
-    `TOTAL: updated=${totals.updated} missing=${totals.missing} errors=${totals.errors}`
+    `TOTAL: updated=${totals.updated} missing=${totals.missing} ambiguous=${totals.ambiguous} errors=${totals.errors}`
   );
   if (totals.errors > 0) process.exit(2);
 }
