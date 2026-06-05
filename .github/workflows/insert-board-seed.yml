@@ -1,0 +1,45 @@
+name: Insert Board MCQ Seed
+
+on:
+  workflow_dispatch:
+    inputs:
+      only_specialty:
+        description: "Comma-separated specialty slugs (e.g. anesthesiology). Leave blank for all."
+        required: false
+        default: ""
+      min_skip_at:
+        description: "Skip whole specialty if existing count ≥ this (scenario-dedup runs regardless)."
+        required: false
+        default: "10000"
+      dry_run:
+        description: "Parse + dedup-check only, no insert (true/false)."
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+
+jobs:
+  insert:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Insert board seed
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          ONLY_SPECIALTY: ${{ github.event.inputs.only_specialty }}
+          MIN_SKIP_AT: ${{ github.event.inputs.min_skip_at }}
+          DRY_RUN: ${{ github.event.inputs.dry_run == 'true' && '1' || '' }}
+        run: npx tsx scripts/insert-board-seed.ts
