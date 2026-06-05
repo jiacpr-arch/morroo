@@ -6,10 +6,15 @@
  * with status='review'. NO Anthropic API call — the questions were generated
  * by the Claude Code session and saved as JSON.
  *
- * Idempotency: per specialty, if the existing count of (audience='board',
- * board_specialty=slug, status in active/review) is already ≥ MIN_SKIP_AT,
- * the whole file is skipped. Within a run, exam_source='AI-generated-board-seed'
- * is used so re-runs against an empty DB will duplicate — call once.
+ * Idempotency: two layers.
+ *   1. Coarse safety gate — per specialty, if the existing count of
+ *      (audience='board', board_specialty=slug, status in active/review) is
+ *      already ≥ MIN_SKIP_AT, the whole file is skipped.
+ *   2. Scenario-level dedup — within the threshold, existing scenario strings
+ *      for that specialty are fetched and any matching rows in the seed file
+ *      are filtered out before insert. Re-runs against a partially seeded
+ *      specialty insert only the delta. Bump MIN_SKIP_AT above the file size
+ *      to enable adding new questions to an already-seeded specialty.
  *
  * Usage:
  *   SUPABASE_URL=… SUPABASE_SERVICE_ROLE_KEY=… npx tsx scripts/insert-board-seed.ts
