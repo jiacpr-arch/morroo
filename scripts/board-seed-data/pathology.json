@@ -846,7 +846,7 @@
     "difficulty": "medium",
     "board_section": "basic_science",
     "board_topic": "quality_safety",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "CAP Cancer Protocols; ASCO/CAP HER2 + ER Guidelines; AJCP Fixation"
   },
   {
@@ -863,7 +863,7 @@
     "difficulty": "medium",
     "board_section": "basic_science",
     "board_topic": "molecular_pathology",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "CAP IHC Guidelines; AJCP IHC"
   },
   {
@@ -880,7 +880,7 @@
     "difficulty": "medium",
     "board_section": "basic_science",
     "board_topic": "molecular_pathology",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "CAP Molecular Pathology; AMP Guidelines"
   },
   {
@@ -897,7 +897,7 @@
     "difficulty": "hard",
     "board_section": "basic_science",
     "board_topic": "molecular_pathology",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "AMP/ASCO/CAP 2017 Somatic Variant; ACMG/AMP 2015 Germline; CAP NGS"
   },
   {
@@ -914,7 +914,7 @@
     "difficulty": "medium",
     "board_section": "ems_mgmt",
     "board_topic": "quality_safety",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "ASCO/CAP Breast Biomarker; CAP Cancer Protocol; TJC NPSGs"
   },
   {
@@ -931,7 +931,7 @@
     "difficulty": "medium",
     "board_section": "ems_mgmt",
     "board_topic": "quality_safety",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "CAP Frozen Section; ADASP"
   },
   {
@@ -948,7 +948,7 @@
     "difficulty": "medium",
     "board_section": "ems_mgmt",
     "board_topic": "quality_safety",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "CAP; CLSI GP47; TJC NPSG 02.03.01"
   },
   {
@@ -982,7 +982,7 @@
     "difficulty": "hard",
     "board_section": "integrative",
     "board_topic": "molecular_pathology",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "ASCO Precision Medicine; AMP/ASCO/CAP 2017"
   },
   {
@@ -1067,7 +1067,7 @@
     "difficulty": "medium",
     "board_section": "clinical_decision",
     "board_topic": "hematopathology",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "WHO HAEM5 2022; NCCN; Roschewski DA-EPOCH-R Burkitt"
   },
   {
@@ -1152,7 +1152,7 @@
     "difficulty": "hard",
     "board_section": "clinical_decision",
     "board_topic": "hematopathology",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "ASH SCD Guidelines; NHLBI"
   },
   {
@@ -1169,7 +1169,7 @@
     "difficulty": "hard",
     "board_section": "clinical_decision",
     "board_topic": "hematopathology",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "TIF Thalassemia Guidelines; Thai NHSO Thalassemia Program"
   },
   {
@@ -1305,7 +1305,7 @@
     "difficulty": "medium",
     "board_section": "clinical_decision",
     "board_topic": "transfusion",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "PROPPR; CRASH-2/3; AABB MTP"
   },
   {
@@ -1322,7 +1322,7 @@
     "difficulty": "hard",
     "board_section": "clinical_decision",
     "board_topic": "coagulation",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "ASH/ISTH vWD 2021"
   },
   {
@@ -1407,7 +1407,7 @@
     "difficulty": "medium",
     "board_section": "basic_science",
     "board_topic": "coagulation",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "ISTH; ASH; AACC"
   },
   {
@@ -1424,7 +1424,7 @@
     "difficulty": "medium",
     "board_section": "basic_science",
     "board_topic": "coagulation",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "ISTH; CLSI; Hoffman Cell-Based Model"
   },
   {
@@ -1441,7 +1441,7 @@
     "difficulty": "medium",
     "board_section": "basic_science",
     "board_topic": "cytopathology",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "Papanicolaou Society; ASC"
   },
   {
@@ -1458,7 +1458,7 @@
     "difficulty": "medium",
     "board_section": "ems_mgmt",
     "board_topic": "quality_safety",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "CLSI POCT; CAP POCT Checklist; CLIA"
   },
   {
@@ -1543,7 +1543,7 @@
     "difficulty": "hard",
     "board_section": "clinical_decision",
     "board_topic": "hematopathology",
-    "board_age_group": "child",
+    "board_age_group": "peds",
     "reference_source": "WHO HAEM5 2022; ICC 2022; NCCN ALL"
   },
   {
@@ -1645,7 +1645,7 @@
     "difficulty": "medium",
     "board_section": "clinical_decision",
     "board_topic": "surgical_pathology",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "WHO Soft Tissue + Bone 5th ed; EURAMOS-1; NCCN Bone"
   },
   {
@@ -1662,7 +1662,7 @@
     "difficulty": "hard",
     "board_section": "clinical_decision",
     "board_topic": "surgical_pathology",
-    "board_age_group": "child",
+    "board_age_group": "peds",
     "reference_source": "WHO Soft Tissue + Bone 5th ed; COG Ewing"
   },
   {
@@ -1730,7 +1730,7 @@
     "difficulty": "medium",
     "board_section": "clinical_decision",
     "board_topic": "transfusion",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "ACOG; AABB"
   },
   {
@@ -1832,7 +1832,7 @@
     "difficulty": "easy",
     "board_section": "basic_science",
     "board_topic": "quality_safety",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "CAP Histology Checklist; Bancroft Theory and Practice"
   },
   {
@@ -1849,7 +1849,7 @@
     "difficulty": "medium",
     "board_section": "basic_science",
     "board_topic": "hematopathology",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "ICCS Flow Cytometry; EuroFlow"
   },
   {
@@ -1866,7 +1866,7 @@
     "difficulty": "medium",
     "board_section": "ems_mgmt",
     "board_topic": "quality_safety",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "CDC/NIH BMBL 6th ed; WHO LBM 4th ed; ISO 15189"
   },
   {
@@ -1883,7 +1883,7 @@
     "difficulty": "medium",
     "board_section": "ems_mgmt",
     "board_topic": "quality_safety",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "ISO 15189; CAP All Common Checklist; CLSI HS01"
   },
   {
@@ -1900,7 +1900,7 @@
     "difficulty": "medium",
     "board_section": "clinical_decision",
     "board_topic": "surgical_pathology",
-    "board_age_group": "child",
+    "board_age_group": "peds",
     "reference_source": "WHO Soft Tissue + Bone 5th ed; COG Neuroblastoma"
   },
   {
@@ -1917,7 +1917,7 @@
     "difficulty": "medium",
     "board_section": "clinical_decision",
     "board_topic": "surgical_pathology",
-    "board_age_group": "child",
+    "board_age_group": "peds",
     "reference_source": "WHO Urinary + Male Genital 5th ed; COG Wilms"
   },
   {
@@ -1968,7 +1968,7 @@
     "difficulty": "medium",
     "board_section": "integrative",
     "board_topic": "microbiology",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "WHO GLASS; CDC PHL; LRN"
   },
   {
@@ -2172,7 +2172,7 @@
     "difficulty": "medium",
     "board_section": "clinical_decision",
     "board_topic": "surgical_pathology",
-    "board_age_group": "child",
+    "board_age_group": "peds",
     "reference_source": "ICRB; AAO Retinoblastoma"
   },
   {
@@ -2206,7 +2206,7 @@
     "difficulty": "medium",
     "board_section": "ems_mgmt",
     "board_topic": "quality_safety",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "CAP Lean Lab; ASCP"
   },
   {
@@ -2223,7 +2223,7 @@
     "difficulty": "medium",
     "board_section": "ems_mgmt",
     "board_topic": "quality_safety",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "TJC Sentinel Event; AHRQ; Just Culture"
   },
   {
@@ -2240,7 +2240,7 @@
     "difficulty": "easy",
     "board_section": "basic_science",
     "board_topic": "cytopathology",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "Papanicolaou Society; ASC"
   },
   {
@@ -2257,7 +2257,7 @@
     "difficulty": "medium",
     "board_section": "basic_science",
     "board_topic": "molecular_pathology",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "CAP Molecular Pathology"
   },
   {
@@ -2291,7 +2291,7 @@
     "difficulty": "medium",
     "board_section": "integrative",
     "board_topic": "hemato_onco",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "WHO Palliative; ASCO Palliative; Temel NEJM"
   },
   {
@@ -2308,7 +2308,7 @@
     "difficulty": "medium",
     "board_section": "clinical_decision",
     "board_topic": "surgical_pathology",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "Amsterdam Placental Workshop Consensus; SPP"
   },
   {
@@ -2325,7 +2325,7 @@
     "difficulty": "medium",
     "board_section": "clinical_decision",
     "board_topic": "forensic",
-    "board_age_group": "child",
+    "board_age_group": "peds",
     "reference_source": "NAME SUID; AAP Safe Sleep"
   },
   {
@@ -2342,7 +2342,7 @@
     "difficulty": "medium",
     "board_section": "basic_science",
     "board_topic": "quality_safety",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "CAP WSI Validation; FDA Digital Pathology"
   },
   {
@@ -2359,7 +2359,7 @@
     "difficulty": "medium",
     "board_section": "ems_mgmt",
     "board_topic": "quality_safety",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "API Pathology Informatics; HIMSS"
   },
   {
@@ -2410,7 +2410,7 @@
     "difficulty": "medium",
     "board_section": "basic_science",
     "board_topic": "molecular_pathology",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "CAP/ASCO/NCCN MMR/MSI; KEYNOTE-177; NICHE"
   },
   {
@@ -2427,7 +2427,7 @@
     "difficulty": "hard",
     "board_section": "basic_science",
     "board_topic": "molecular_pathology",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "CAP PD-L1; Blueprint Harmonization"
   },
   {
@@ -2444,7 +2444,7 @@
     "difficulty": "medium",
     "board_section": "integrative",
     "board_topic": "quality_safety",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "WHO EDL; Lancet Pathology Commission 2018"
   },
   {
@@ -2461,7 +2461,7 @@
     "difficulty": "medium",
     "board_section": "clinical_decision",
     "board_topic": "surgical_pathology",
-    "board_age_group": "child",
+    "board_age_group": "peds",
     "reference_source": "WHO Soft Tissue + Bone 5th ed; COG Rhabdomyosarcoma"
   },
   {
@@ -2495,7 +2495,7 @@
     "difficulty": "hard",
     "board_section": "clinical_decision",
     "board_topic": "hematopathology",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "WHO HAEM5 2022; PTLD-1; AST"
   },
   {
@@ -2631,7 +2631,7 @@
     "difficulty": "easy",
     "board_section": "basic_science",
     "board_topic": "quality_safety",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "CAP Histology; ADASP; Bancroft"
   },
   {
@@ -2648,7 +2648,7 @@
     "difficulty": "medium",
     "board_section": "basic_science",
     "board_topic": "quality_safety",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "Bancroft Theory + Practice; CAP Histology"
   },
   {
@@ -2665,7 +2665,7 @@
     "difficulty": "medium",
     "board_section": "basic_science",
     "board_topic": "renal_pathology",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "Bancroft; Ghadially Diagnostic EM"
   },
   {
@@ -2682,7 +2682,7 @@
     "difficulty": "medium",
     "board_section": "basic_science",
     "board_topic": "molecular_pathology",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "AMP/CAP Molecular Pathology"
   },
   {
@@ -2699,7 +2699,7 @@
     "difficulty": "hard",
     "board_section": "ems_mgmt",
     "board_topic": "quality_safety",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "CLSI EP series; CAP All Common; FDA IVD"
   },
   {
@@ -2716,7 +2716,7 @@
     "difficulty": "medium",
     "board_section": "ems_mgmt",
     "board_topic": "quality_safety",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "CAP All Common; CLSI EP26"
   },
   {
@@ -2733,7 +2733,7 @@
     "difficulty": "medium",
     "board_section": "ems_mgmt",
     "board_topic": "quality_safety",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "CLIA Personnel; CAP HR"
   },
   {
@@ -2767,7 +2767,7 @@
     "difficulty": "medium",
     "board_section": "integrative",
     "board_topic": "hemato_onco",
-    "board_age_group": "geriatric",
+    "board_age_group": "adult",
     "reference_source": "ASCO Geriatric; SIOG"
   },
   {
@@ -2784,7 +2784,7 @@
     "difficulty": "hard",
     "board_section": "clinical_decision",
     "board_topic": "surgical_pathology",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "ATA MTC 2015; LIBRETTO-001; NCCN"
   },
   {
@@ -2852,7 +2852,7 @@
     "difficulty": "hard",
     "board_section": "basic_science",
     "board_topic": "molecular_pathology",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "BIOMED-2/EuroClonality; AMP"
   },
   {
@@ -2869,7 +2869,7 @@
     "difficulty": "medium",
     "board_section": "basic_science",
     "board_topic": "clinical_chemistry",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "IMWG; AASLD HH"
   },
   {
@@ -2886,7 +2886,7 @@
     "difficulty": "medium",
     "board_section": "ems_mgmt",
     "board_topic": "quality_safety",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "Plebani Clin Chem Acta; CAP All Common; TJC NPSGs"
   },
   {
@@ -2937,7 +2937,7 @@
     "difficulty": "medium",
     "board_section": "basic_science",
     "board_topic": "hematopathology",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "ASH Pocket Companion; Bain Blood Cells Atlas"
   },
   {
@@ -3056,7 +3056,7 @@
     "difficulty": "medium",
     "board_section": "basic_science",
     "board_topic": "clinical_chemistry",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "AACC; CLSI Mass Spec"
   },
   {
@@ -3107,7 +3107,7 @@
     "difficulty": "hard",
     "board_section": "clinical_decision",
     "board_topic": "molecular_pathology",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "ACMG/AMP 2015; NCCN Genetic/Familial"
   },
   {
@@ -3175,7 +3175,7 @@
     "difficulty": "medium",
     "board_section": "clinical_decision",
     "board_topic": "surgical_pathology",
-    "board_age_group": "child",
+    "board_age_group": "peds",
     "reference_source": "CHIC Hepatoblastoma; COG; SIOPEL"
   },
   {
@@ -3192,7 +3192,7 @@
     "difficulty": "medium",
     "board_section": "basic_science",
     "board_topic": "molecular_pathology",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "ACMG; ISCN; CAP Cytogenetics"
   },
   {
@@ -3209,7 +3209,7 @@
     "difficulty": "medium",
     "board_section": "ems_mgmt",
     "board_topic": "quality_safety",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "CAP All Common; ADASP"
   },
   {
@@ -3226,7 +3226,7 @@
     "difficulty": "hard",
     "board_section": "ems_mgmt",
     "board_topic": "quality_safety",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "FDA AI/ML Action Plan; CAP WSI/AI Validation"
   },
   {
@@ -3243,7 +3243,7 @@
     "difficulty": "medium",
     "board_section": "ems_mgmt",
     "board_topic": "quality_safety",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "My Green Lab; Practice Greenhealth; TCFD"
   },
   {
@@ -3260,7 +3260,7 @@
     "difficulty": "medium",
     "board_section": "integrative",
     "board_topic": "microbiology",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "Lancet Countdown; WHO Climate Health; One Health"
   },
   {
@@ -3277,7 +3277,7 @@
     "difficulty": "medium",
     "board_section": "basic_science",
     "board_topic": "coagulation",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "European Guideline Major Bleeding 2023; ISTH"
   },
   {
@@ -3294,7 +3294,7 @@
     "difficulty": "medium",
     "board_section": "ems_mgmt",
     "board_topic": "transfusion",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "WHO PBM; SABM; AABB"
   },
   {
@@ -3311,7 +3311,7 @@
     "difficulty": "medium",
     "board_section": "clinical_decision",
     "board_topic": "surgical_pathology",
-    "board_age_group": "geriatric",
+    "board_age_group": "adult",
     "reference_source": "Endocrine Society Paget 2014; AACE 2018"
   },
   {
@@ -3345,7 +3345,7 @@
     "difficulty": "easy",
     "board_section": "basic_science",
     "board_topic": "clinical_chemistry",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "CLSI POCT; CAP POCT Checklist; CLIA"
   },
   {
@@ -3362,7 +3362,7 @@
     "difficulty": "medium",
     "board_section": "integrative",
     "board_topic": "quality_safety",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "Belmont Report; Common Rule 2018; ACMG SF"
   },
   {
@@ -3396,7 +3396,7 @@
     "difficulty": "medium",
     "board_section": "integrative",
     "board_topic": "microbiology",
-    "board_age_group": "all",
+    "board_age_group": "mixed",
     "reference_source": "WHO/FAO/WOAH/UNEP One Health; Thai NSP-AMR"
   }
 ]
