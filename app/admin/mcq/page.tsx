@@ -159,6 +159,11 @@ export default function AdminMcqPage() {
           <p className="text-muted-foreground mt-1">เพิ่ม แก้ไข และจัดการสถานะข้อสอบ</p>
         </div>
         <div className="flex items-center gap-2">
+          <Link href="/admin/mcq/csv">
+            <Button variant="outline" className="gap-2">
+              <Upload className="h-4 w-4" />CSV เฉลย (Export/Seed)
+            </Button>
+          </Link>
           <Link href="/admin/mcq/cowork">
             <Button variant="outline" className="gap-2">
               <Upload className="h-4 w-4" />เฉลยด้วย cowork
