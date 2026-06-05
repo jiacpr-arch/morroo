@@ -6,6 +6,8 @@ const nextConfig: NextConfig = {
     // next/og types are missing in Next 16.2.1 — runtime works fine
     ignoreBuildErrors: true,
   },
+  // pdf-parse + its native canvas dep must stay external (server-only)
+  serverExternalPackages: ["pdf-parse", "@napi-rs/canvas"],
   images: {
     remotePatterns: [
       // Supabase Storage (blog cover images uploaded by generator)

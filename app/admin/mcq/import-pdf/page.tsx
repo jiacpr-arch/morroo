@@ -112,38 +112,45 @@ export default function ImportPdfPage() {
   }
 
   async function extractPdfText(f: File, prefix: string): Promise<string> {
-    const pdfjs = await import("pdfjs-dist");
-    pdfjs.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
-    const buf = new Uint8Array(await f.arrayBuffer());
-    // Self-hosted cMap + standard fonts (no CDN/CSP issues) so pdf.js can read
-    // PDFs that use non-embedded or CID fonts (common in old Thai exam PDFs).
-    const doc = await pdfjs.getDocument({
-      data: buf,
-      cMapUrl: "/pdfjs/cmaps/",
-      cMapPacked: true,
-      standardFontDataUrl: "/pdfjs/standard_fonts/",
-    }).promise;
-    const parts: string[] = [];
-    let failedPages = 0;
-    let firstErr = "";
-    for (let p = 1; p <= doc.numPages; p++) {
-      setProgress(`${prefix}อ่านข้อความจาก PDF… หน้า ${p}/${doc.numPages}`);
-      try {
-        const page = await doc.getPage(p);
-        const content = await page.getTextContent();
-        const items = (content?.items as PdfTextItem[]) ?? [];
-        parts.push(items.map((it) => it.str ?? "").join(" "));
-      } catch (e) {
-        failedPages++;
-        if (!firstErr) firstErr = String(e);
+    // 1) In-browser pdf.js (fast; works for most files e.g. NL2)
+    try {
+      const pdfjs = await import("pdfjs-dist");
+      pdfjs.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
+      const buf = new Uint8Array(await f.arrayBuffer());
+      const doc = await pdfjs.getDocument({
+        data: buf,
+        cMapUrl: "/pdfjs/cmaps/",
+        cMapPacked: true,
+        standardFontDataUrl: "/pdfjs/standard_fonts/",
+      }).promise;
+      const parts: string[] = [];
+      for (let p = 1; p <= doc.numPages; p++) {
+        setProgress(`${prefix}อ่านข้อความจาก PDF… หน้า ${p}/${doc.numPages}`);
+        try {
+          const page = await doc.getPage(p);
+          const content = await page.getTextContent();
+          const items = (content?.items as PdfTextItem[]) ?? [];
+          parts.push(items.map((it) => it.str ?? "").join(" "));
+        } catch {
+          /* skip a page pdf.js can't parse */
+        }
       }
+      const text = cleanPdfText(parts.join("\n"));
+      if (text.trim().length >= 30) return text;
+    } catch {
+      /* pdf.js failed entirely — fall through to the server reader */
     }
-    const text = cleanPdfText(parts.join("\n"));
-    if (text.trim().length < 30) {
+
+    // 2) Server fallback (pdf-parse / pdf.js v5) for PDFs the browser can't read
+    setProgress(`${prefix}เบราว์เซอร์อ่านไม่ได้ — กำลังอ่านด้วยตัวสำรอง (server)…`);
+    const fd = new FormData();
+    fd.append("file", f);
+    const res = await fetch("/api/admin/mcq/pdf-text", { method: "POST", body: fd });
+    const data = await res.json().catch(() => ({}));
+    const text = cleanPdfText((data.text as string) ?? "");
+    if (!res.ok || text.trim().length < 30) {
       throw new Error(
-        `อ่านข้อความจาก PDF ไม่ได้ (ข้าม ${failedPages}/${doc.numPages} หน้า) — ` +
-        `ไฟล์นี้อาจเป็นไฟล์สแกน (ไม่มี text layer) หรือ font ไม่รองรับ` +
-        (firstErr ? ` · ${firstErr.slice(0, 160)}` : "")
+        `อ่าน PDF ไม่ได้ทั้งสองวิธี — ${data.error || "ไฟล์อาจเป็นไฟล์สแกน (ไม่มี text layer)"}`
       );
     }
     return text;
