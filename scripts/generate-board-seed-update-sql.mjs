@@ -44,7 +44,11 @@ function sqlJsonb(obj) {
   return sqlString(JSON.stringify(obj)) + "::jsonb";
 }
 
+const OUT_DIR_CHUNKS = join(HERE, "..", "supabase", "board_seed_update_chunks");
+const CHUNK_SIZE = 25; // updates per chunk file — keeps each chunk under ~150KB
+
 mkdirSync(OUT_DIR, { recursive: true });
+mkdirSync(OUT_DIR_CHUNKS, { recursive: true });
 
 const files = readdirSync(SEED_DIR).filter((f) => f.endsWith(".json")).sort();
 const combinedLines = [];
@@ -73,6 +77,7 @@ for (const file of files) {
   lines.push("begin;");
   lines.push("");
 
+  const stmts = [];
   for (const q of questions) {
     if (!q.scenario || !Array.isArray(q.choices)) continue;
     const choicesSql = sqlJsonb(q.choices);
@@ -91,6 +96,7 @@ for (const file of files) {
 
     lines.push(stmt);
     combinedLines.push(stmt);
+    stmts.push(stmt);
     totalUpdates++;
   }
 
@@ -101,6 +107,30 @@ for (const file of files) {
   const outPath = join(OUT_DIR, `${numPrefix}_${slug}_update.sql`);
   writeFileSync(outPath, lines.join("\n"), "utf8");
   console.log(`Wrote ${outPath} (${questions.length} updates)`);
+
+  // Also write small chunked files (~CHUNK_SIZE updates each) so each one
+  // fits under the Supabase SQL Editor request-size limit.
+  const totalChunks = Math.ceil(stmts.length / CHUNK_SIZE);
+  for (let ci = 0; ci < totalChunks; ci++) {
+    const chunkStmts = stmts.slice(ci * CHUNK_SIZE, (ci + 1) * CHUNK_SIZE);
+    const chunkLines = [];
+    chunkLines.push("-- ===============================================================");
+    chunkLines.push(
+      `-- UPDATE chunk ${ci + 1}/${totalChunks}: ${slug} (${chunkStmts.length} questions)`
+    );
+    chunkLines.push("-- ===============================================================");
+    chunkLines.push("");
+    chunkLines.push("begin;");
+    chunkLines.push("");
+    chunkLines.push(...chunkStmts);
+    chunkLines.push("commit;");
+    chunkLines.push("");
+    const chunkPath = join(
+      OUT_DIR_CHUNKS,
+      `${numPrefix}_${slug}_${String(ci + 1).padStart(2, "0")}_of_${String(totalChunks).padStart(2, "0")}.sql`
+    );
+    writeFileSync(chunkPath, chunkLines.join("\n"), "utf8");
+  }
 }
 
 combinedLines.push("commit;");
