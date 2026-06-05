@@ -114,17 +114,32 @@ export default function ImportPdfPage() {
   async function extractPdfText(f: File, prefix: string): Promise<string> {
     const pdfjs = await import("pdfjs-dist");
     pdfjs.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
+    const ver = pdfjs.version;
     const buf = new Uint8Array(await f.arrayBuffer());
-    const doc = await pdfjs.getDocument({ data: buf }).promise;
+    // cMap/standardFont URLs (version-matched) let pdf.js handle PDFs that use
+    // non-embedded or CID fonts — otherwise getTextContent can throw.
+    const doc = await pdfjs.getDocument({
+      data: buf,
+      cMapUrl: `https://unpkg.com/pdfjs-dist@${ver}/cmaps/`,
+      cMapPacked: true,
+      standardFontDataUrl: `https://unpkg.com/pdfjs-dist@${ver}/standard_fonts/`,
+    }).promise;
     const parts: string[] = [];
+    let failedPages = 0;
     for (let p = 1; p <= doc.numPages; p++) {
       setProgress(`${prefix}อ่านข้อความจาก PDF… หน้า ${p}/${doc.numPages}`);
-      const page = await doc.getPage(p);
-      const content = await page.getTextContent();
-      const line = (content.items as PdfTextItem[])
-        .map((it) => it.str ?? "")
-        .join(" ");
-      parts.push(line);
+      // Skip a page that fails to parse instead of aborting the whole file.
+      try {
+        const page = await doc.getPage(p);
+        const content = await page.getTextContent();
+        const items = (content?.items as PdfTextItem[]) ?? [];
+        parts.push(items.map((it) => it.str ?? "").join(" "));
+      } catch {
+        failedPages++;
+      }
+    }
+    if (failedPages > 0) {
+      console.warn(`PDF extract: skipped ${failedPages}/${doc.numPages} bad pages`);
     }
     return cleanPdfText(parts.join("\n"));
   }
