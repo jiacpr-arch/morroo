@@ -22,12 +22,22 @@
  * reader can fall back to the legacy pool).
  */
 
+import type { SchoolDifficulty } from "@/lib/types-school";
+
 export interface InlineQuiz {
   stem: string;
   choices: { label: string; text: string }[];
   correct_answer: string;
   explanation: string | null;
+  /**
+   * Authored level of this gate quiz. Quizzes should be authored so that the
+   * difficulty ramps gradually across a lesson's Parts (easy gates first, harder
+   * gates deeper in). Null when a legacy block omits it.
+   */
+  difficulty: SchoolDifficulty | null;
 }
+
+const DIFFICULTIES: SchoolDifficulty[] = ["easy", "medium", "hard"];
 
 export interface LessonParts {
   /** Reading sections, in order. */
@@ -57,6 +67,11 @@ function parseQuiz(raw: string): InlineQuiz | null {
         correct_answer: obj.correct_answer,
         explanation:
           typeof obj.explanation === "string" ? obj.explanation : null,
+        difficulty:
+          typeof obj.difficulty === "string" &&
+          DIFFICULTIES.includes(obj.difficulty as SchoolDifficulty)
+            ? (obj.difficulty as SchoolDifficulty)
+            : null,
       };
     }
   } catch {
