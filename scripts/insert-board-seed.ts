@@ -34,7 +34,10 @@ if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
   process.exit(1);
 }
 
-const MIN_SKIP_AT = Number(process.env.MIN_SKIP_AT ?? 30);
+// Default raised: per-question dedup below makes re-runs safe, so the
+// file-level skip is mostly a safety net against accidental re-import
+// of older seed files.
+const MIN_SKIP_AT = Number(process.env.MIN_SKIP_AT ?? 1000);
 const DRY_RUN = process.env.DRY_RUN === "1";
 const ONLY = (process.env.ONLY_SPECIALTY ?? "")
   .split(",")
@@ -165,6 +168,7 @@ interface SpecialtyReport {
   slug: string;
   file_count: number;
   invalid: number;
+  skipped_dupe: number;
   skipped_reason: string | null;
   inserted: number;
 }
@@ -187,6 +191,7 @@ async function processSpecialty(
     slug,
     file_count: 0,
     invalid: 0,
+    skipped_dupe: 0,
     skipped_reason: null,
     inserted: 0,
   };
@@ -218,6 +223,34 @@ async function processSpecialty(
     return report;
   }
 
+  // Per-question dedup: skip questions whose scenario already exists in DB
+  // for this specialty. Lets a second run safely add only the new questions.
+  const existingScenarios = new Set<string>();
+  {
+    const PAGE = 1000;
+    for (let from = 0; ; from += PAGE) {
+      const { data, error } = await admin
+        .from("mcq_questions")
+        .select("scenario")
+        .eq("audience", "board")
+        .eq("board_specialty", slug)
+        .range(from, from + PAGE - 1);
+      if (error) {
+        report.skipped_reason = `failed to read existing scenarios: ${error.message}`;
+        return report;
+      }
+      if (!data || data.length === 0) break;
+      for (const r of data) existingScenarios.add(r.scenario as string);
+      if (data.length < PAGE) break;
+    }
+  }
+  const fresh = valid.filter((q) => !existingScenarios.has(q.scenario));
+  report.skipped_dupe = valid.length - fresh.length;
+  if (fresh.length === 0) {
+    report.skipped_reason = `all ${valid.length} questions already exist (${report.skipped_dupe} dup)`;
+    return report;
+  }
+
   const specialtyNameTh = await loadSpecialtyNameTh(admin, slug);
   const { bySection, fallback } = await loadSubjectMap(admin, slug, specialtyNameTh);
   if (!fallback) {
@@ -225,7 +258,7 @@ async function processSpecialty(
     return report;
   }
 
-  const rows = valid.map((q) => ({
+  const rows = fresh.map((q) => ({
     subject_id: bySection.get(q.board_section) ?? fallback,
     audience: "board" as const,
     exam_type: null,
@@ -300,7 +333,7 @@ async function main() {
     reports.push(r);
     const status = r.skipped_reason
       ? `SKIPPED (${r.skipped_reason})`
-      : `inserted ${r.inserted}/${r.file_count}${r.invalid ? ` (${r.invalid} invalid)` : ""}`;
+      : `inserted ${r.inserted}/${r.file_count}${r.invalid ? ` (${r.invalid} invalid)` : ""}${r.skipped_dupe ? ` (${r.skipped_dupe} dup skipped)` : ""}`;
     console.log(`  ${slug.padEnd(20)} ${status}`);
   }
 
@@ -310,6 +343,7 @@ async function main() {
       slug: r.slug,
       file: r.file_count,
       invalid: r.invalid,
+      dup: r.skipped_dupe,
       inserted: r.inserted,
       skipped: r.skipped_reason ?? "",
     }))
