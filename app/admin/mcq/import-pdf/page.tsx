@@ -114,34 +114,39 @@ export default function ImportPdfPage() {
   async function extractPdfText(f: File, prefix: string): Promise<string> {
     const pdfjs = await import("pdfjs-dist");
     pdfjs.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
-    const ver = pdfjs.version;
     const buf = new Uint8Array(await f.arrayBuffer());
-    // cMap/standardFont URLs (version-matched) let pdf.js handle PDFs that use
-    // non-embedded or CID fonts — otherwise getTextContent can throw.
+    // Self-hosted cMap + standard fonts (no CDN/CSP issues) so pdf.js can read
+    // PDFs that use non-embedded or CID fonts (common in old Thai exam PDFs).
     const doc = await pdfjs.getDocument({
       data: buf,
-      cMapUrl: `https://unpkg.com/pdfjs-dist@${ver}/cmaps/`,
+      cMapUrl: "/pdfjs/cmaps/",
       cMapPacked: true,
-      standardFontDataUrl: `https://unpkg.com/pdfjs-dist@${ver}/standard_fonts/`,
+      standardFontDataUrl: "/pdfjs/standard_fonts/",
     }).promise;
     const parts: string[] = [];
     let failedPages = 0;
+    let firstErr = "";
     for (let p = 1; p <= doc.numPages; p++) {
       setProgress(`${prefix}อ่านข้อความจาก PDF… หน้า ${p}/${doc.numPages}`);
-      // Skip a page that fails to parse instead of aborting the whole file.
       try {
         const page = await doc.getPage(p);
         const content = await page.getTextContent();
         const items = (content?.items as PdfTextItem[]) ?? [];
         parts.push(items.map((it) => it.str ?? "").join(" "));
-      } catch {
+      } catch (e) {
         failedPages++;
+        if (!firstErr) firstErr = String(e);
       }
     }
-    if (failedPages > 0) {
-      console.warn(`PDF extract: skipped ${failedPages}/${doc.numPages} bad pages`);
+    const text = cleanPdfText(parts.join("\n"));
+    if (text.trim().length < 30) {
+      throw new Error(
+        `อ่านข้อความจาก PDF ไม่ได้ (ข้าม ${failedPages}/${doc.numPages} หน้า) — ` +
+        `ไฟล์นี้อาจเป็นไฟล์สแกน (ไม่มี text layer) หรือ font ไม่รองรับ` +
+        (firstErr ? ` · ${firstErr.slice(0, 160)}` : "")
+      );
     }
-    return cleanPdfText(parts.join("\n"));
+    return text;
   }
 
   // Phase 2 (optional): Sonnet answers each valid question + drafts a detailed
