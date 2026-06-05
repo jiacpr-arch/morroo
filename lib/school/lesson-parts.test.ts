@@ -11,6 +11,7 @@ const QUIZ = {
   ],
   correct_answer: "C",
   explanation: "prokaryote ไม่มีนิวเคลียส",
+  difficulty: null,
 };
 
 describe("splitLessonParts", () => {
@@ -74,5 +75,26 @@ describe("splitLessonParts", () => {
 
   it("returns a single empty part for empty input", () => {
     expect(splitLessonParts("")).toEqual({ parts: [""], gateQuizzes: [] });
+  });
+
+  it("parses an authored difficulty and ignores invalid values", () => {
+    const hard = JSON.stringify({ ...QUIZ, difficulty: "hard" });
+    const bogus = JSON.stringify({ ...QUIZ, stem: "Q2", difficulty: "spicy" });
+    const md = [
+      "P1",
+      "## ⏸ Mini Quiz",
+      "```quiz",
+      hard,
+      "```",
+      "P2",
+      "## ⏸ Mini Quiz",
+      "```quiz",
+      bogus,
+      "```",
+      "P3",
+    ].join("\n");
+    const { gateQuizzes } = splitLessonParts(md);
+    expect(gateQuizzes[0]?.difficulty).toBe("hard");
+    expect(gateQuizzes[1]?.difficulty).toBeNull();
   });
 });
