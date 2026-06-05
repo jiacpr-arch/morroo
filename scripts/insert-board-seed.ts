@@ -6,10 +6,10 @@
  * with status='review'. NO Anthropic API call — the questions were generated
  * by the Claude Code session and saved as JSON.
  *
- * Idempotency: scenario-level dedup — fetches existing scenarios for the
- * specialty and filters out exact matches before insert. Safe to re-run after
- * the JSON file grows (e.g. 30 → 200). MIN_SKIP_AT still gates the whole file
- * as an extra safety net when set high enough.
+ * Idempotency: per specialty, if the existing count of (audience='board',
+ * board_specialty=slug, status in active/review) is already ≥ MIN_SKIP_AT,
+ * the whole file is skipped. Within a run, exam_source='AI-generated-board-seed'
+ * is used so re-runs against an empty DB will duplicate — call once.
  *
  * Usage:
  *   SUPABASE_URL=… SUPABASE_SERVICE_ROLE_KEY=… npx tsx scripts/insert-board-seed.ts
@@ -34,7 +34,10 @@ if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
   process.exit(1);
 }
 
-const MIN_SKIP_AT = Number(process.env.MIN_SKIP_AT ?? 10000);
+// Default raised: per-question dedup below makes re-runs safe, so the
+// file-level skip is mostly a safety net against accidental re-import
+// of older seed files.
+const MIN_SKIP_AT = Number(process.env.MIN_SKIP_AT ?? 1000);
 const DRY_RUN = process.env.DRY_RUN === "1";
 const ONLY = (process.env.ONLY_SPECIALTY ?? "")
   .split(",")
@@ -84,28 +87,6 @@ async function existingCount(admin: SupabaseClient, slug: string): Promise<numbe
     .eq("board_specialty", slug)
     .in("status", ["active", "review"]);
   return count ?? 0;
-}
-
-async function existingScenarios(admin: SupabaseClient, slug: string): Promise<Set<string>> {
-  const set = new Set<string>();
-  const PAGE = 1000;
-  let offset = 0;
-  for (;;) {
-    const { data, error } = await admin
-      .from("mcq_questions")
-      .select("scenario")
-      .eq("audience", "board")
-      .eq("board_specialty", slug)
-      .in("status", ["active", "review"])
-      .range(offset, offset + PAGE - 1);
-    if (error) throw new Error(`fetch existing scenarios: ${error.message}`);
-    for (const r of data ?? []) {
-      if (r.scenario) set.add((r.scenario as string).trim());
-    }
-    if (!data || data.length < PAGE) break;
-    offset += PAGE;
-  }
-  return set;
 }
 
 const SUBJECT_PREFIX: Record<string, string> = {
@@ -187,7 +168,7 @@ interface SpecialtyReport {
   slug: string;
   file_count: number;
   invalid: number;
-  duplicate: number;
+  skipped_dupe: number;
   skipped_reason: string | null;
   inserted: number;
 }
@@ -210,7 +191,7 @@ async function processSpecialty(
     slug,
     file_count: 0,
     invalid: 0,
-    duplicate: 0,
+    skipped_dupe: 0,
     skipped_reason: null,
     inserted: 0,
   };
@@ -242,12 +223,31 @@ async function processSpecialty(
     return report;
   }
 
-  const existingSet = await existingScenarios(admin, slug);
-  const fresh = valid.filter((q) => !existingSet.has(q.scenario.trim()));
-  report.duplicate = valid.length - fresh.length;
-
+  // Per-question dedup: skip questions whose scenario already exists in DB
+  // for this specialty. Lets a second run safely add only the new questions.
+  const existingScenarios = new Set<string>();
+  {
+    const PAGE = 1000;
+    for (let from = 0; ; from += PAGE) {
+      const { data, error } = await admin
+        .from("mcq_questions")
+        .select("scenario")
+        .eq("audience", "board")
+        .eq("board_specialty", slug)
+        .range(from, from + PAGE - 1);
+      if (error) {
+        report.skipped_reason = `failed to read existing scenarios: ${error.message}`;
+        return report;
+      }
+      if (!data || data.length === 0) break;
+      for (const r of data) existingScenarios.add(r.scenario as string);
+      if (data.length < PAGE) break;
+    }
+  }
+  const fresh = valid.filter((q) => !existingScenarios.has(q.scenario));
+  report.skipped_dupe = valid.length - fresh.length;
   if (fresh.length === 0) {
-    report.skipped_reason = `all ${valid.length} scenarios already in DB`;
+    report.skipped_reason = `all ${valid.length} questions already exist (${report.skipped_dupe} dup)`;
     return report;
   }
 
@@ -331,15 +331,9 @@ async function main() {
     const slug = f.replace(/\.json$/, "");
     const r = await processSpecialty(admin, slug, join(SEED_DIR, f));
     reports.push(r);
-    const extras = [
-      r.invalid ? `${r.invalid} invalid` : null,
-      r.duplicate ? `${r.duplicate} dup` : null,
-    ]
-      .filter(Boolean)
-      .join(", ");
     const status = r.skipped_reason
       ? `SKIPPED (${r.skipped_reason})`
-      : `inserted ${r.inserted}/${r.file_count}${extras ? ` (${extras})` : ""}`;
+      : `inserted ${r.inserted}/${r.file_count}${r.invalid ? ` (${r.invalid} invalid)` : ""}${r.skipped_dupe ? ` (${r.skipped_dupe} dup skipped)` : ""}`;
     console.log(`  ${slug.padEnd(20)} ${status}`);
   }
 
@@ -349,7 +343,7 @@ async function main() {
       slug: r.slug,
       file: r.file_count,
       invalid: r.invalid,
-      duplicate: r.duplicate,
+      dup: r.skipped_dupe,
       inserted: r.inserted,
       skipped: r.skipped_reason ?? "",
     }))
