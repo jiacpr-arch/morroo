@@ -88,6 +88,18 @@ function difficultyOrDefault(d) {
   return ["easy", "medium", "hard"].includes(d) ? d : "medium";
 }
 
+// The mcq_questions_board_age_group_check constraint only permits
+// 'peds' | 'adult' | 'mixed' (or null). Map any finer-grained labels we
+// use in the JSON (infant, neonate, child, elderly, …) onto that set.
+function normalizeAgeGroup(g) {
+  if (g === null || g === undefined) return null;
+  const v = String(g).toLowerCase();
+  if (["neonate", "infant", "child", "adolescent", "teen", "pediatric", "peds"].includes(v)) return "peds";
+  if (["adult", "elderly", "geriatric", "senior", "older"].includes(v)) return "adult";
+  if (["mixed", "all", "lifespan"].includes(v)) return "mixed";
+  return null;
+}
+
 // ──────────────────────────────────────────────────────────────────────────
 // Build SQL
 // ──────────────────────────────────────────────────────────────────────────
@@ -173,7 +185,7 @@ for (const file of files) {
       `  ${sqlString(difficultyOrDefault(q.difficulty))}, ${sqlString(q.board_topic || null)}, 'review',`
     );
     lines.push(
-      `  ${sqlString(slug)}, ${sqlString(q.board_section)}, ${sqlString(q.board_topic || "general")}, ${sqlString(q.board_age_group)},`
+      `  ${sqlString(slug)}, ${sqlString(q.board_section)}, ${sqlString(q.board_topic || "general")}, ${sqlString(normalizeAgeGroup(q.board_age_group))},`
     );
     lines.push(
       `  ${sqlString(q.reference_source)}, 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'`
@@ -280,7 +292,7 @@ for (const file of files) {
       `  ${sqlString(difficultyOrDefault(q.difficulty))}, ${sqlString(q.board_topic || null)}, 'review',`
     );
     splitLines.push(
-      `  ${sqlString(slug)}, ${sqlString(q.board_section)}, ${sqlString(q.board_topic || "general")}, ${sqlString(q.board_age_group)},`
+      `  ${sqlString(slug)}, ${sqlString(q.board_section)}, ${sqlString(q.board_topic || "general")}, ${sqlString(normalizeAgeGroup(q.board_age_group))},`
     );
     splitLines.push(
       `  ${sqlString(q.reference_source)}, 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'`
@@ -388,7 +400,7 @@ for (const file of files) {
         `  ${sqlString(difficultyOrDefault(q.difficulty))}, ${sqlString(q.board_topic || null)}, 'review',`
       );
       chunkLines.push(
-        `  ${sqlString(slug)}, ${sqlString(q.board_section)}, ${sqlString(q.board_topic || "general")}, ${sqlString(q.board_age_group)},`
+        `  ${sqlString(slug)}, ${sqlString(q.board_section)}, ${sqlString(q.board_topic || "general")}, ${sqlString(normalizeAgeGroup(q.board_age_group))},`
       );
       chunkLines.push(
         `  ${sqlString(q.reference_source)}, 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'`
