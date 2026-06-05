@@ -1,9 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/admin-auth";
+import { DOMMatrix, Path2D, ImageData, DOMPoint, DOMRect } from "@napi-rs/canvas";
 
 // Server-side PDF text extraction fallback. The browser pdf.js (v6) can't parse
 // some old PDFs (e.g. NL1 exam papers) — this uses pdf-parse (a different pdf.js
 // build, v5) on the server, which tolerates those files.
+
+// pdf.js (under pdf-parse) needs these DOM globals which don't exist in Node.
+const g = globalThis as unknown as Record<string, unknown>;
+g.DOMMatrix ??= DOMMatrix;
+g.Path2D ??= Path2D;
+g.ImageData ??= ImageData;
+g.DOMPoint ??= DOMPoint;
+g.DOMRect ??= DOMRect;
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
