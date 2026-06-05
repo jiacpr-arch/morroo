@@ -8,6 +8,13 @@ const nextConfig: NextConfig = {
   },
   // pdf-parse + its native canvas dep must stay external (server-only)
   serverExternalPackages: ["pdf-parse", "@napi-rs/canvas"],
+  // pdf-parse loads its pdf.js worker dynamically, which Vercel's file tracing
+  // misses — force-include the nested pdfjs build so the route can find it.
+  outputFileTracingIncludes: {
+    "/api/admin/mcq/pdf-text": [
+      "./node_modules/pdf-parse/node_modules/pdfjs-dist/**",
+    ],
+  },
   images: {
     remotePatterns: [
       // Supabase Storage (blog cover images uploaded by generator)
