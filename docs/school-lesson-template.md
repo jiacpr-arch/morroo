@@ -31,6 +31,27 @@ school_book_chapters             school_lessons (body_md)        school_flashcar
 - **Final retrieval ตอนจบบท: 3–5 ข้อ** (ข้อที่เหลือจากที่ใช้เป็น gate)
 - รูปแบบข้อ: single-best-answer MCQ 4–5 ตัวเลือก พร้อมคำอธิบายเฉลย
 
+### 2.1 ไล่ระดับความยากแบบค่อยเป็นค่อยไป (difficulty ramp)
+
+ผู้เรียนตอบ quiz **ตามลำดับ Part** ดังนั้นความยากต้อง **ค่อย ๆ ไต่ขึ้น** —
+อย่าให้ Part แรกง่ายแล้ว Part ถัดไปกระโดดไปยากทันที (จะท้อ)
+
+- **gate quiz ที่ author inline** ใส่ field `difficulty` (`easy` | `medium` | `hard`)
+  ลงใน JSON block และ **เรียง Part ให้ ง่าย → ยาก** (gate แรก ๆ ควรเป็น `easy`):
+
+  ```quiz
+  { "stem": "...", "choices": [...], "correct_answer": "B",
+    "explanation": "...", "difficulty": "easy" }
+  ```
+
+- **legacy fallback / final retrieval** (ดึงจาก pool `school_quizzes`):
+  หน้า lesson เรียงด้วย `sortByDifficultyAsc` (`lib/school/difficulty.ts`)
+  ให้ขึ้น ง่าย → ยาก อัตโนมัติ
+- `LessonReader` แสดง **badge ระดับความยาก** (ง่าย/ปานกลาง/ยาก) บนทุก mini-quiz
+  เพื่อให้ผู้เรียนเห็นว่ากำลังไต่ระดับอยู่
+- ตอน generate ด้วย `import-school-content.mjs` / cron `school-enrich`
+  prompt สั่งให้ AI ออกข้อแบบเรียง easy → hard อยู่แล้ว
+
 ## 3. จำนวนหน่วยต่อ lecture/บท (บังคับใช้ตอน import)
 
 | หน่วย | จำนวน |

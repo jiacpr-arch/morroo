@@ -92,7 +92,8 @@ const EXTRACT_TOOL = {
       },
       quizzes: {
         type: "array",
-        description: "5-10 multiple-choice questions. Each tests one concept.",
+        description:
+          "5-10 multiple-choice questions, each testing one concept. Order them so difficulty ramps gradually: the first quiz must be 'easy', then build up to 'hard' — never put a hard quiz before an easy one.",
         items: {
           type: "object",
           properties: {
@@ -134,6 +135,7 @@ Rules:
 - Use Thai medical terminology where natural (Thai med students learn in mixed Thai+English).
 - Keep flashcard fronts under 100 chars; backs under 300 chars.
 - Difficulty: easy = recall, medium = understanding, hard = application/integration.
+- Ramp the quizzes gradually: emit them ordered from easy → hard (start with at least one 'easy', end with the hardest). A learner answers them in order, so a difficulty spike between consecutive quizzes is discouraging — ease them in.
 
 Call the submit_school_units tool with your output.`;
 

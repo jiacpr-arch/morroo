@@ -1,23 +1,24 @@
-name: Insert Board MCQ Seed Data
+name: Insert Board Seed (manual)
 
 on:
   workflow_dispatch:
     inputs:
       only_specialty:
-        description: "Comma-separated specialty slugs to limit to (blank = all)"
+        description: "Comma-separated slugs (e.g. ob_gyn) — empty = all files"
         required: false
-        default: ""
-        type: string
+        default: "ob_gyn"
       min_skip_at:
-        description: "Skip a specialty's file if existing count ≥ this (set high to rely on scenario-level dedup)"
+        description: "Skip specialty if existing count ≥ this"
         required: false
-        default: "500"
-        type: string
+        default: "30"
       dry_run:
-        description: "Parse + report only — no DB writes"
+        description: "Dry run (1 = parse + report only, no insert)"
         required: false
-        default: true
-        type: boolean
+        type: choice
+        options:
+          - "1"
+          - "0"
+        default: "1"
 
 jobs:
   insert:
@@ -34,11 +35,11 @@ jobs:
       - name: Install dependencies
         run: npm ci --ignore-scripts
 
-      - name: Insert board seed data
+      - name: Insert board seed
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           ONLY_SPECIALTY: ${{ inputs.only_specialty }}
           MIN_SKIP_AT: ${{ inputs.min_skip_at }}
-          DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+          DRY_RUN: ${{ inputs.dry_run }}
         run: npx tsx scripts/insert-board-seed.ts
