@@ -88,6 +88,18 @@ function difficultyOrDefault(d) {
   return ["easy", "medium", "hard"].includes(d) ? d : "medium";
 }
 
+// The mcq_questions_board_age_group_check constraint only permits
+// 'peds' | 'adult' | 'mixed' (or null). Map any finer-grained labels we
+// use in the JSON (infant, neonate, child, elderly, …) onto that set.
+function normalizeAgeGroup(g) {
+  if (g === null || g === undefined) return null;
+  const v = String(g).toLowerCase();
+  if (["neonate", "infant", "child", "adolescent", "teen", "pediatric", "peds"].includes(v)) return "peds";
+  if (["adult", "elderly", "geriatric", "senior", "older"].includes(v)) return "adult";
+  if (["mixed", "all", "lifespan"].includes(v)) return "mixed";
+  return null;
+}
+
 // ──────────────────────────────────────────────────────────────────────────
 // Build SQL
 // ──────────────────────────────────────────────────────────────────────────
@@ -173,7 +185,7 @@ for (const file of files) {
       `  ${sqlString(difficultyOrDefault(q.difficulty))}, ${sqlString(q.board_topic || null)}, 'review',`
     );
     lines.push(
-      `  ${sqlString(slug)}, ${sqlString(q.board_section)}, ${sqlString(q.board_topic || "general")}, ${sqlString(q.board_age_group)},`
+      `  ${sqlString(slug)}, ${sqlString(q.board_section)}, ${sqlString(q.board_topic || "general")}, ${sqlString(normalizeAgeGroup(q.board_age_group))},`
     );
     lines.push(
       `  ${sqlString(q.reference_source)}, 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'`
@@ -280,7 +292,7 @@ for (const file of files) {
       `  ${sqlString(difficultyOrDefault(q.difficulty))}, ${sqlString(q.board_topic || null)}, 'review',`
     );
     splitLines.push(
-      `  ${sqlString(slug)}, ${sqlString(q.board_section)}, ${sqlString(q.board_topic || "general")}, ${sqlString(q.board_age_group)},`
+      `  ${sqlString(slug)}, ${sqlString(q.board_section)}, ${sqlString(q.board_topic || "general")}, ${sqlString(normalizeAgeGroup(q.board_age_group))},`
     );
     splitLines.push(
       `  ${sqlString(q.reference_source)}, 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'`
@@ -307,4 +319,113 @@ for (const file of files) {
   const outName = join(OUT_DIR_SPLIT, `${String(files.indexOf(file) + 1).padStart(2, "0")}_${slug}.sql`);
   writeFileSync(outName, splitLines.join("\n") + "\n", "utf8");
   console.log(`Wrote ${outName} (${questions.length} questions)`);
+}
+
+// ──────────────────────────────────────────────────────────────────────────
+// Also write chunked files (50 questions per chunk) for any specialty whose
+// split file would exceed ~500 KB — the Supabase SQL Editor rejects large
+// pastes. Each chunk is a self-contained transaction.
+// ──────────────────────────────────────────────────────────────────────────
+
+const CHUNK_SIZE = 50;
+
+for (const file of files) {
+  const slug = file.replace(/\.json$/, "");
+  const prefix = SUBJECT_PREFIX[slug];
+  if (!prefix) continue;
+  const questions = JSON.parse(readFileSync(join(SEED_DIR, file), "utf8"));
+  if (questions.length <= CHUNK_SIZE) continue;
+  const nameTh = SPECIALTY_NAME_TH[slug];
+
+  const chunks = [];
+  for (let i = 0; i < questions.length; i += CHUNK_SIZE) {
+    chunks.push(questions.slice(i, i + CHUNK_SIZE));
+  }
+
+  chunks.forEach((chunkQs, idx) => {
+    const part = idx + 1;
+    const total = chunks.length;
+    const chunkLines = [];
+    chunkLines.push("-- ===============================================================");
+    chunkLines.push(`-- หมอรู้ — Board seed: ${nameTh} (${slug}) — part ${part}/${total} (${chunkQs.length} MCQs)`);
+    chunkLines.push("-- Safe to paste into Supabase SQL Editor. Re-runnable.");
+    chunkLines.push("-- ===============================================================");
+    chunkLines.push("");
+    chunkLines.push("begin;");
+    chunkLines.push("");
+
+    // Ensure subjects exist in every chunk (idempotent via ON CONFLICT).
+    chunkLines.push("-- mcq_subjects for this specialty (idempotent)");
+    chunkLines.push("insert into public.mcq_subjects");
+    chunkLines.push("  (name, name_th, icon, audience, board_specialty, exam_type, question_count)");
+    chunkLines.push("values");
+    const subjRowsChunk = [];
+    for (const section of Object.keys(SECTION_LABEL_TH)) {
+      subjRowsChunk.push(
+        `  (${sqlString(`${prefix}_${section}`)}, ` +
+          `${sqlString(`${nameTh} · ${SECTION_LABEL_TH[section]}`)}, ` +
+          `${sqlString(SECTION_ICON[section])}, ` +
+          `'board', ${sqlString(slug)}, NULL, 0)`
+      );
+    }
+    chunkLines.push(subjRowsChunk.join(",\n"));
+    chunkLines.push("on conflict (name) do nothing;");
+    chunkLines.push("");
+
+    for (const q of chunkQs) {
+      if (
+        !q.scenario ||
+        !Array.isArray(q.choices) ||
+        q.choices.length !== 5 ||
+        !["A", "B", "C", "D", "E"].includes(q.correct_answer)
+      ) {
+        chunkLines.push("-- INVALID question skipped");
+        continue;
+      }
+      const subjectName = `${prefix}_${q.board_section}`;
+      chunkLines.push("insert into public.mcq_questions (");
+      chunkLines.push("  subject_id, audience, exam_type, scenario, choices, correct_answer,");
+      chunkLines.push("  explanation, detailed_explanation, difficulty, topic, status,");
+      chunkLines.push("  board_specialty, board_section, board_topic, board_age_group,");
+      chunkLines.push("  reference_source, exam_source, is_ai_enhanced, ai_notes");
+      chunkLines.push(")");
+      chunkLines.push("select");
+      chunkLines.push(
+        `  s.id, 'board', NULL, ${sqlString(q.scenario)}, ${sqlJsonb(q.choices)},`
+      );
+      chunkLines.push(
+        `  ${sqlString(q.correct_answer)}, ${sqlString(q.explanation)}, ${sqlJsonb(q.detailed_explanation)},`
+      );
+      chunkLines.push(
+        `  ${sqlString(difficultyOrDefault(q.difficulty))}, ${sqlString(q.board_topic || null)}, 'review',`
+      );
+      chunkLines.push(
+        `  ${sqlString(slug)}, ${sqlString(q.board_section)}, ${sqlString(q.board_topic || "general")}, ${sqlString(normalizeAgeGroup(q.board_age_group))},`
+      );
+      chunkLines.push(
+        `  ${sqlString(q.reference_source)}, 'AI-generated-board-seed', true, 'seeded via Claude Code session (no critique pass)'`
+      );
+      chunkLines.push(`from public.mcq_subjects s`);
+      chunkLines.push(`where s.name = ${sqlString(subjectName)}`);
+      chunkLines.push("  and s.audience = 'board'");
+      chunkLines.push("  and not exists (");
+      chunkLines.push("    select 1 from public.mcq_questions q");
+      chunkLines.push("    where q.exam_source = 'AI-generated-board-seed'");
+      chunkLines.push(`      and q.board_specialty = ${sqlString(slug)}`);
+      chunkLines.push(`      and q.scenario = ${sqlString(q.scenario)}`);
+      chunkLines.push("  );");
+      chunkLines.push("");
+    }
+
+    chunkLines.push("commit;");
+    chunkLines.push("");
+
+    const fileIdx = String(files.indexOf(file) + 1).padStart(2, "0");
+    const outName = join(
+      OUT_DIR_SPLIT,
+      `${fileIdx}_${slug}_part${String(part).padStart(2, "0")}_of_${String(total).padStart(2, "0")}.sql`
+    );
+    writeFileSync(outName, chunkLines.join("\n") + "\n", "utf8");
+    console.log(`Wrote ${outName} (${chunkQs.length} questions)`);
+  });
 }
