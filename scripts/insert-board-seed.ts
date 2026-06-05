@@ -6,10 +6,14 @@
  * with status='review'. NO Anthropic API call — the questions were generated
  * by the Claude Code session and saved as JSON.
  *
- * Idempotency: per specialty, if the existing count of (audience='board',
- * board_specialty=slug, status in active/review) is already ≥ MIN_SKIP_AT,
- * the whole file is skipped. Within a run, exam_source='AI-generated-board-seed'
- * is used so re-runs against an empty DB will duplicate — call once.
+ * Idempotency:
+ *   1. Per specialty, if the existing count of (audience='board',
+ *      board_specialty=slug, status in active/review) is already ≥ MIN_SKIP_AT,
+ *      the whole file is skipped (early exit).
+ *   2. Otherwise, scenario-level dedup: existing scenarios for the specialty
+ *      are fetched and the file's questions are filtered to exclude duplicates
+ *      (exact scenario-text match) before insert. Safe to re-run after the
+ *      JSON has grown.
  *
  * Usage:
  *   SUPABASE_URL=… SUPABASE_SERVICE_ROLE_KEY=… npx tsx scripts/insert-board-seed.ts
@@ -84,6 +88,29 @@ async function existingCount(admin: SupabaseClient, slug: string): Promise<numbe
     .eq("board_specialty", slug)
     .in("status", ["active", "review"]);
   return count ?? 0;
+}
+
+async function existingScenarios(admin: SupabaseClient, slug: string): Promise<Set<string>> {
+  const seen = new Set<string>();
+  const PAGE = 1000;
+  let from = 0;
+  for (;;) {
+    const { data, error } = await admin
+      .from("mcq_questions")
+      .select("scenario")
+      .eq("audience", "board")
+      .eq("board_specialty", slug)
+      .in("status", ["active", "review"])
+      .range(from, from + PAGE - 1);
+    if (error) throw new Error(`fetch existing scenarios: ${error.message}`);
+    if (!data || data.length === 0) break;
+    for (const r of data) {
+      if (r.scenario) seen.add((r.scenario as string).trim());
+    }
+    if (data.length < PAGE) break;
+    from += PAGE;
+  }
+  return seen;
 }
 
 const SUBJECT_PREFIX: Record<string, string> = {
@@ -165,6 +192,7 @@ interface SpecialtyReport {
   slug: string;
   file_count: number;
   invalid: number;
+  duplicates: number;
   skipped_reason: string | null;
   inserted: number;
 }
@@ -187,6 +215,7 @@ async function processSpecialty(
     slug,
     file_count: 0,
     invalid: 0,
+    duplicates: 0,
     skipped_reason: null,
     inserted: 0,
   };
@@ -218,6 +247,14 @@ async function processSpecialty(
     return report;
   }
 
+  const seenScenarios = await existingScenarios(admin, slug);
+  const fresh = valid.filter((q) => !seenScenarios.has(q.scenario.trim()));
+  report.duplicates = valid.length - fresh.length;
+  if (fresh.length === 0) {
+    report.skipped_reason = `all ${valid.length} scenarios already exist in DB`;
+    return report;
+  }
+
   const specialtyNameTh = await loadSpecialtyNameTh(admin, slug);
   const { bySection, fallback } = await loadSubjectMap(admin, slug, specialtyNameTh);
   if (!fallback) {
@@ -225,7 +262,7 @@ async function processSpecialty(
     return report;
   }
 
-  const rows = valid.map((q) => ({
+  const rows = fresh.map((q) => ({
     subject_id: bySection.get(q.board_section) ?? fallback,
     audience: "board" as const,
     exam_type: null,
@@ -298,9 +335,14 @@ async function main() {
     const slug = f.replace(/\.json$/, "");
     const r = await processSpecialty(admin, slug, join(SEED_DIR, f));
     reports.push(r);
+    const extras = [
+      r.invalid ? `${r.invalid} invalid` : null,
+      r.duplicates ? `${r.duplicates} dup` : null,
+    ].filter(Boolean);
+    const suffix = extras.length ? ` (${extras.join(", ")})` : "";
     const status = r.skipped_reason
       ? `SKIPPED (${r.skipped_reason})`
-      : `inserted ${r.inserted}/${r.file_count}${r.invalid ? ` (${r.invalid} invalid)` : ""}`;
+      : `inserted ${r.inserted}/${r.file_count}${suffix}`;
     console.log(`  ${slug.padEnd(20)} ${status}`);
   }
 
@@ -310,6 +352,7 @@ async function main() {
       slug: r.slug,
       file: r.file_count,
       invalid: r.invalid,
+      duplicates: r.duplicates,
       inserted: r.inserted,
       skipped: r.skipped_reason ?? "",
     }))
