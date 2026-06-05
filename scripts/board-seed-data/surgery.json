@@ -1725,7 +1725,7 @@
     "difficulty": "easy",
     "board_section": "clinical_decision",
     "board_topic": "pediatrics",
-    "board_age_group": "infant",
+    "board_age_group": "peds",
     "reference_source": "APSA Pediatric Surgery Handbook; Pandya S et al. Pediatr Surg Int; Aspelund G, Langer JC. Semin Pediatr Surg"
   },
   {
@@ -1757,7 +1757,7 @@
     "difficulty": "medium",
     "board_section": "clinical_decision",
     "board_topic": "pediatrics",
-    "board_age_group": "infant",
+    "board_age_group": "peds",
     "reference_source": "APSA Pediatric Surgery Handbook; Applegate KE Pediatr Radiol; Marsicovetere P et al. Clin Colon Rectal Surg"
   },
   {
@@ -1789,7 +1789,7 @@
     "difficulty": "easy",
     "board_section": "clinical_decision",
     "board_topic": "pediatrics",
-    "board_age_group": "neonate",
+    "board_age_group": "peds",
     "reference_source": "APSA Pediatric Surgery Handbook; Strouse PJ Pediatr Radiol; Adams SD, Stanton MP Surg Childhood"
   },
   {
@@ -2525,7 +2525,7 @@
     "difficulty": "medium",
     "board_section": "clinical_decision",
     "board_topic": "pediatrics",
-    "board_age_group": "neonate",
+    "board_age_group": "peds",
     "reference_source": "APSA Pediatric Surgery Handbook; Cystic Fibrosis Foundation Consensus; Lawrence MJ et al. World J Pediatr"
   },
   {
@@ -2557,7 +2557,7 @@
     "difficulty": "medium",
     "board_section": "clinical_decision",
     "board_topic": "pediatrics",
-    "board_age_group": "neonate",
+    "board_age_group": "peds",
     "reference_source": "APSA Pediatric Surgery Handbook; ARM Hirschsprung Guidelines; Langer JC Semin Pediatr Surg"
   },
   {
@@ -2589,7 +2589,7 @@
     "difficulty": "easy",
     "board_section": "clinical_decision",
     "board_topic": "pediatrics",
-    "board_age_group": "child",
+    "board_age_group": "peds",
     "reference_source": "APSA Pediatric Surgery Handbook; Nazem M et al. Pediatr Surg Int; ACS Pediatric Hernia Guidelines"
   },
   {
@@ -2621,7 +2621,7 @@
     "difficulty": "easy",
     "board_section": "clinical_decision",
     "board_topic": "pediatrics",
-    "board_age_group": "child",
+    "board_age_group": "peds",
     "reference_source": "APSA Pediatric Surgery Handbook; Carter Y et al. Operative Tech Otolaryngol; Plaza CP et al. Otolaryngol Clin North Am"
   },
   {
@@ -2781,7 +2781,7 @@
     "difficulty": "easy",
     "board_section": "clinical_decision",
     "board_topic": "vascular",
-    "board_age_group": "elderly",
+    "board_age_group": "adult",
     "reference_source": "SVS AAA Practice Guidelines 2018; ESVS AAA 2024; Greenhalgh RM et al. NEJM 2010 (EVAR-1); Schermerhorn ML et al. NEJM"
   },
   {
@@ -2813,7 +2813,7 @@
     "difficulty": "medium",
     "board_section": "clinical_decision",
     "board_topic": "vascular",
-    "board_age_group": "elderly",
+    "board_age_group": "adult",
     "reference_source": "ACC/AHA/SVS PAD Guidelines 2016; ESVS Acute Limb Ischemia 2020; Norgren L et al. TASC II; Ouriel K et al. NEJM (TOPAS)"
   },
   {
@@ -2877,7 +2877,7 @@
     "difficulty": "hard",
     "board_section": "clinical_decision",
     "board_topic": "hemato_onco",
-    "board_age_group": "elderly",
+    "board_age_group": "adult",
     "reference_source": "NCCN NSCLC 2024; Soria JC et al. NEJM 2018 (FLAURA); Brown PD et al. JAMA 2016 (N107C SRS vs WBRT); Palma DA et al. Lancet 2019 (SABR-COMET)"
   },
   {
@@ -3037,7 +3037,7 @@
     "difficulty": "hard",
     "board_section": "clinical_decision",
     "board_topic": "hemato_onco",
-    "board_age_group": "elderly",
+    "board_age_group": "adult",
     "reference_source": "ACG Barrett's Guidelines 2022; ESGE Endoscopic Submucosal Dissection 2015; Shaheen NJ et al. NEJM 2009 (AIM Trial RFA); Pech O et al. Gastroenterology 2014"
   },
   {
@@ -3101,7 +3101,7 @@
     "difficulty": "medium",
     "board_section": "clinical_decision",
     "board_topic": "pediatrics",
-    "board_age_group": "neonate",
+    "board_age_group": "peds",
     "reference_source": "APSA Pediatric Surgery Handbook; Spitz L et al. Br J Surg; ESPGHAN-NASPGHAN EA Guidelines"
   },
   {
@@ -3133,7 +3133,7 @@
     "difficulty": "hard",
     "board_section": "clinical_decision",
     "board_topic": "pediatrics",
-    "board_age_group": "neonate",
+    "board_age_group": "peds",
     "reference_source": "CDH EURO Consortium Consensus; Snoek KG et al. Neonatology; Deprest J et al. NEJM 2021 (TOTAL Trial)"
   },
   {
@@ -3165,7 +3165,7 @@
     "difficulty": "medium",
     "board_section": "clinical_decision",
     "board_topic": "pediatrics",
-    "board_age_group": "neonate",
+    "board_age_group": "peds",
     "reference_source": "APSA Pediatric Surgery Handbook; Neu J, Walker WA. NEJM 2011; Moss RL et al. NEJM 2006 (NEC Surgery); Blakely ML et al. JAMA Surg"
   },
   {
@@ -3293,7 +3293,7 @@
     "difficulty": "hard",
     "board_section": "clinical_decision",
     "board_topic": "hemato_onco",
-    "board_age_group": "elderly",
+    "board_age_group": "adult",
     "reference_source": "ABC6 Consensus on Advanced Breast Cancer 2024; NCCN Breast 2024; Finn RS et al. NEJM 2016 (PALOMA-2); Modi S et al. NEJM 2022 (DESTINY-Breast04)"
   },
   {
@@ -3485,7 +3485,7 @@
     "difficulty": "easy",
     "board_section": "ems_mgmt",
     "board_topic": "hemato_onco",
-    "board_age_group": "elderly",
+    "board_age_group": "adult",
     "reference_source": "WHO Palliative Care Definition; AAHPM Hospice Care Guidelines; Temel JS et al. NEJM 2010 (Early Palliative Care); ASCO Palliative Care Integration"
   },
   {
@@ -3549,7 +3549,7 @@
     "difficulty": "hard",
     "board_section": "integrative",
     "board_topic": "hemato_onco",
-    "board_age_group": "elderly",
+    "board_age_group": "adult",
     "reference_source": "NCCN Pancreatic Adenocarcinoma 2024 + Survivorship; ASCO Pancreatic Survivorship; Permert J et al. Pancreatology"
   },
   {
@@ -3677,7 +3677,7 @@
     "difficulty": "medium",
     "board_section": "clinical_decision",
     "board_topic": "hemato_onco",
-    "board_age_group": "elderly",
+    "board_age_group": "adult",
     "reference_source": "NCCN Colon Cancer 2024; Nordlinger B et al. Lancet 2013 (EPOC); Vauthey JN et al. Ann Surg; Adams RB et al. HPB"
   },
   {
@@ -3709,7 +3709,7 @@
     "difficulty": "medium",
     "board_section": "clinical_decision",
     "board_topic": "trauma",
-    "board_age_group": "child",
+    "board_age_group": "peds",
     "reference_source": "APSA Splenic Injury NOM Guidelines; EAST Pediatric Splenic Injury PMG; Holmes JH et al. J Pediatr Surg"
   },
   {
@@ -3805,7 +3805,7 @@
     "difficulty": "medium",
     "board_section": "basic_science",
     "board_topic": "gi",
-    "board_age_group": "elderly",
+    "board_age_group": "adult",
     "reference_source": "ASPEN-ESPEN Surgical Nutrition Guidelines; ERAS Society Guidelines; Weimann A et al. Clin Nutr; Drover JW et al. Ann Surg"
   },
   {
@@ -3997,7 +3997,7 @@
     "difficulty": "hard",
     "board_section": "integrative",
     "board_topic": "gi",
-    "board_age_group": "elderly",
+    "board_age_group": "adult",
     "reference_source": "ACS Geriatric Surgery Verification Program; Robinson TN et al. Ann Surg; Hall DE et al. JAMA Surg; Rockwood K et al. CMAJ"
   },
   {
@@ -4061,7 +4061,7 @@
     "difficulty": "medium",
     "board_section": "clinical_decision",
     "board_topic": "vascular",
-    "board_age_group": "elderly",
+    "board_age_group": "adult",
     "reference_source": "AHA/ASA Carotid Disease Guidelines 2014; SVS Carotid Guidelines; Brott TG et al. NEJM 2010 (CREST); CREST-2 ongoing"
   },
   {
@@ -4157,7 +4157,7 @@
     "difficulty": "hard",
     "board_section": "integrative",
     "board_topic": "hemato_onco",
-    "board_age_group": "elderly",
+    "board_age_group": "adult",
     "reference_source": "AST Transplant Malignancy Working Group; NCCN Squamous Cell Skin Cancer; Migden MR et al. NEJM 2018 (Cemiplimab)"
   },
   {
@@ -4253,7 +4253,7 @@
     "difficulty": "easy",
     "board_section": "basic_science",
     "board_topic": "procedures",
-    "board_age_group": "elderly",
+    "board_age_group": "adult",
     "reference_source": "ERAS Society Pain Management; ASA Multimodal Analgesia Guidelines; PROSPECT (Procedure-Specific Postoperative Pain Management); Joshi GP et al. Br J Anaesth"
   },
   {
@@ -4349,7 +4349,7 @@
     "difficulty": "hard",
     "board_section": "clinical_decision",
     "board_topic": "vascular",
-    "board_age_group": "elderly",
+    "board_age_group": "adult",
     "reference_source": "ESC Aortic Diseases Guidelines 2014; ACC/AHA Aortic Disease 2022; Nienaber CA et al. JACC (INSTEAD-XL)"
   },
   {
@@ -4381,7 +4381,7 @@
     "difficulty": "medium",
     "board_section": "clinical_decision",
     "board_topic": "vascular",
-    "board_age_group": "elderly",
+    "board_age_group": "adult",
     "reference_source": "SVS Practice Guidelines; Webber GW et al. Circulation; Vlachou PA et al. Eur Radiol"
   },
   {
@@ -4477,7 +4477,7 @@
     "difficulty": "medium",
     "board_section": "clinical_decision",
     "board_topic": "renal_gu",
-    "board_age_group": "elderly",
+    "board_age_group": "adult",
     "reference_source": "AUA Surgical Management of Stones 2016; EAU Urolithiasis Guidelines; ACR Appropriateness Criteria Urinary Stone"
   },
   {
@@ -4541,7 +4541,7 @@
     "difficulty": "hard",
     "board_section": "clinical_decision",
     "board_topic": "pediatrics",
-    "board_age_group": "infant",
+    "board_age_group": "peds",
     "reference_source": "APSA Pediatric Surgery Handbook; Spitz L. Br J Surg; Holland AJ et al. Semin Pediatr Surg"
   },
   {
@@ -4573,7 +4573,7 @@
     "difficulty": "easy",
     "board_section": "clinical_decision",
     "board_topic": "pediatrics",
-    "board_age_group": "child",
+    "board_age_group": "peds",
     "reference_source": "APSA Pediatric Appendicitis Guidelines; Samuel M Pediatr Surg Int; Minneci PC et al. JAMA (NOM Pediatric); WSES Acute Appendicitis 2020"
   },
   {
@@ -4605,7 +4605,7 @@
     "difficulty": "easy",
     "board_section": "clinical_decision",
     "board_topic": "renal_gu",
-    "board_age_group": "child",
+    "board_age_group": "peds",
     "reference_source": "AUA Pediatric Urology Guidelines; Sharp VJ et al. Am Fam Physician; Mansbach JM et al. Pediatrics"
   },
   {
@@ -4637,7 +4637,7 @@
     "difficulty": "hard",
     "board_section": "clinical_decision",
     "board_topic": "id",
-    "board_age_group": "elderly",
+    "board_age_group": "adult",
     "reference_source": "STS Guidelines Sternal Wound Infection; Sjogren J et al. Ann Thorac Surg (NPWT); Robicsek F. J Thorac Cardiovasc Surg"
   },
   {
@@ -4701,7 +4701,7 @@
     "difficulty": "medium",
     "board_section": "clinical_decision",
     "board_topic": "gi",
-    "board_age_group": "elderly",
+    "board_age_group": "adult",
     "reference_source": "WSES Bologna Guidelines ASBO 2017; Maung AA et al. EAST PMG SBO; Di Saverio S et al. World J Emerg Surg"
   },
   {
@@ -5053,7 +5053,7 @@
     "difficulty": "hard",
     "board_section": "integrative",
     "board_topic": "hemato_onco",
-    "board_age_group": "elderly",
+    "board_age_group": "adult",
     "reference_source": "ASCO Palliative Care Integration; Temel JS et al. NEJM 2010; Ariadne Labs Serious Illness Care; AAHPM"
   },
   {
@@ -5085,7 +5085,7 @@
     "difficulty": "hard",
     "board_section": "clinical_decision",
     "board_topic": "id",
-    "board_age_group": "elderly",
+    "board_age_group": "adult",
     "reference_source": "ISHLT Lung Transplant Guidelines; AST/ASTS Lung Transplant Guidelines; Greer M et al. Curr Opin Organ Transplant"
   },
   {
@@ -5117,7 +5117,7 @@
     "difficulty": "medium",
     "board_section": "clinical_decision",
     "board_topic": "pediatrics",
-    "board_age_group": "neonate",
+    "board_age_group": "peds",
     "reference_source": "APSA Pediatric Surgery Handbook; Christison-Lagay ER et al. Semin Pediatr Surg"
   },
   {
@@ -5181,7 +5181,7 @@
     "difficulty": "medium",
     "board_section": "clinical_decision",
     "board_topic": "gi",
-    "board_age_group": "elderly",
+    "board_age_group": "adult",
     "reference_source": "AASLD Cirrhosis 2021; Baveno VII 2022; AASLD HCC 2023; EASL Guidelines"
   },
   {
@@ -5213,7 +5213,7 @@
     "difficulty": "hard",
     "board_section": "clinical_decision",
     "board_topic": "vascular",
-    "board_age_group": "elderly",
+    "board_age_group": "adult",
     "reference_source": "SVS Vascular Graft Infection; ESVS Chronic Limb-Threatening Ischemia; FitzGerald SF et al. Eur J Vasc Endovasc Surg"
   },
   {
@@ -5245,7 +5245,7 @@
     "difficulty": "hard",
     "board_section": "clinical_decision",
     "board_topic": "pediatrics",
-    "board_age_group": "child",
+    "board_age_group": "peds",
     "reference_source": "AHA PALS Guidelines 2020; THAPCA-OH + IH Trials NEJM; AAP Trauma Guidelines"
   },
   {
@@ -5629,7 +5629,7 @@
     "difficulty": "hard",
     "board_section": "integrative",
     "board_topic": "hemato_onco",
-    "board_age_group": "elderly",
+    "board_age_group": "adult",
     "reference_source": "ACS Geriatric Surgery Verification; ASCO Geriatric Oncology; Mohile SG et al. JCO; ePrognosis tools"
   },
   {
@@ -5789,7 +5789,7 @@
     "difficulty": "hard",
     "board_section": "clinical_decision",
     "board_topic": "hemato_onco",
-    "board_age_group": "elderly",
+    "board_age_group": "adult",
     "reference_source": "AST PTLD Consensus; Trappe RU et al. JCO (PTLD-1); Prockop SE et al. (Tabelecleucel)"
   },
   {
@@ -5821,7 +5821,7 @@
     "difficulty": "medium",
     "board_section": "basic_science",
     "board_topic": "pediatrics",
-    "board_age_group": "neonate",
+    "board_age_group": "peds",
     "reference_source": "APSA Pediatric Surgery Handbook; Coran AG et al. Pediatric Surgery Textbook"
   },
   {
@@ -5981,7 +5981,7 @@
     "difficulty": "medium",
     "board_section": "basic_science",
     "board_topic": "pediatrics",
-    "board_age_group": "child",
+    "board_age_group": "peds",
     "reference_source": "APSA Pediatric Trauma Guidelines; ATLS Pediatric Chapter; PECARN; APSA Bell Stage NEC"
   },
   {
@@ -6141,7 +6141,7 @@
     "difficulty": "hard",
     "board_section": "integrative",
     "board_topic": "pediatrics",
-    "board_age_group": "child",
+    "board_age_group": "peds",
     "reference_source": "COG Long-Term Follow-Up Guidelines; Childhood Cancer Survivor Study (CCSS); NCCN Survivorship"
   },
   {
@@ -6173,7 +6173,7 @@
     "difficulty": "hard",
     "board_section": "clinical_decision",
     "board_topic": "pediatrics",
-    "board_age_group": "child",
+    "board_age_group": "peds",
     "reference_source": "COG Children's Oncology Group; NCCN Pediatric Tumors; INRG Neuroblastoma; SIOP Wilms"
   },
   {
@@ -6301,7 +6301,7 @@
     "difficulty": "easy",
     "board_section": "integrative",
     "board_topic": "procedures",
-    "board_age_group": "elderly",
+    "board_age_group": "adult",
     "reference_source": "Berwick D — Patient-Centered Care; ACS Geriatric Surgery; AAHPM; American Geriatrics Society"
   },
   {
