@@ -87,6 +87,7 @@ Produce NEW micro-learning units that directly address the students' questions:
 - Use Thai medical terminology where natural (Thai students learn in mixed Thai+English).
 - Keep flashcard fronts < 100 chars, backs < 300 chars.
 - Generate at most 6 flashcards and 4 quizzes. Fewer is fine if questions are narrow.
+- Order the quizzes from easy → hard so difficulty ramps gradually (learners answer them in order; avoid a hard quiz before an easy one).
 
 Call submit_enrichment with your output.`;
 
