@@ -90,3 +90,21 @@ export async function deleteMcqQuestion(id: string): Promise<boolean> {
   // Soft delete: set status = 'disabled'
   return updateMcqQuestionStatus(id, "disabled");
 }
+
+export async function bulkUpdateMcqQuestionStatus(
+  ids: string[],
+  status: "active" | "review" | "disabled"
+): Promise<{ ok: number; failed: number }> {
+  if (ids.length === 0) return { ok: 0, failed: 0 };
+  const supabase = createClient();
+  const { error, count } = await supabase
+    .from("mcq_questions")
+    .update({ status }, { count: "exact" })
+    .in("id", ids);
+  if (error) {
+    console.error("Bulk status update failed:", error);
+    return { ok: 0, failed: ids.length };
+  }
+  const ok = count ?? ids.length;
+  return { ok, failed: ids.length - ok };
+}

@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { createClient } from "@/lib/supabase/client";
 import {
   ChevronLeft, Shield, Loader2, GraduationCap, Eye, EyeOff,
-  Upload, BookOpen, Mic, Sparkles,
+  Upload, BookOpen, Mic, Sparkles, ClipboardCheck, History,
 } from "lucide-react";
 
 interface BoardStats {
@@ -165,7 +165,17 @@ export default function AdminBoardPage() {
             ดู content velocity ของแต่ละสาขา + ตัดสินใจ publish
           </p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-wrap">
+          <Link href="/admin/board/review">
+            <Button variant="outline" className="gap-2">
+              <ClipboardCheck className="h-4 w-4" /> Review queue
+            </Button>
+          </Link>
+          <Link href="/admin/board/runs">
+            <Button variant="outline" className="gap-2">
+              <History className="h-4 w-4" /> Run history
+            </Button>
+          </Link>
           <Link href="/admin/board/import">
             <Button variant="outline" className="gap-2">
               <Upload className="h-4 w-4" /> Bulk import MCQ
