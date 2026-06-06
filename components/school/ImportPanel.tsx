@@ -91,6 +91,17 @@ export default function ImportPanel({ topics }: Props) {
       let res: Response;
       if (mode === "file") {
         if (!file) throw new Error("เลือกไฟล์ก่อน");
+        // Anthropic PDF limit is 32 MB, but Vercel's serverless body limit is
+        // much smaller (~4.5 MB default). 10 MB matches what other upload
+        // routes accept in this project. For larger source material, suggest
+        // Text mode (paste excerpt) or splitting the PDF.
+        const MAX_BYTES = 10 * 1024 * 1024;
+        if (file.size > MAX_BYTES) {
+          const mb = (file.size / 1024 / 1024).toFixed(1);
+          throw new Error(
+            `ไฟล์ใหญ่เกินไป (${mb} MB) — สูงสุด 10 MB · ทางเลือก: บีบอัด PDF, แยกไฟล์, หรือใช้แท็บ Text paste เนื้อหา`,
+          );
+        }
         const fd = new FormData();
         fd.append("file", file);
         if (hint) fd.append("hint", hint);
@@ -283,7 +294,7 @@ export default function ImportPanel({ topics }: Props) {
               className="text-sm"
             />
             <p className="text-xs text-muted-foreground mt-1">
-              PDF / PNG / JPG / WebP — รวม GoodNotes export
+              PDF / PNG / JPG / WebP — สูงสุด 10 MB (รวม GoodNotes export)
             </p>
             {file && (
               <p className="text-xs mt-1">
