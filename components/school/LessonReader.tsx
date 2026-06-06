@@ -11,6 +11,11 @@ import type { SchoolLesson, SchoolQuiz } from "@/lib/types-school";
 import { createClient } from "@/lib/supabase/client";
 import { XP, awardXp } from "@/lib/school/xp";
 import { splitLessonParts, type InlineQuiz } from "@/lib/school/lesson-parts";
+import {
+  difficultyLabelTh,
+  difficultyBadgeClass,
+} from "@/lib/school/difficulty";
+import type { SchoolDifficulty } from "@/lib/types-school";
 import BookmarkButton from "./BookmarkButton";
 import NoteEditor from "./NoteEditor";
 import RelatedConcepts from "./RelatedConcepts";
@@ -165,7 +170,10 @@ function MiniQuizCard({
   return (
     <Card className="mt-3 border-emerald-200 bg-emerald-50/40">
       <CardContent className="p-4 space-y-2">
-        <p className="text-xs font-bold uppercase text-emerald-700">Mini Quiz</p>
+        <div className="flex items-center gap-2">
+          <p className="text-xs font-bold uppercase text-emerald-700">Mini Quiz</p>
+          {quiz.difficulty && <DifficultyBadge difficulty={quiz.difficulty} />}
+        </div>
         <p className="font-medium text-sm">{quiz.stem}</p>
         <div className="space-y-1">
           {quiz.choices.map((c) => {
@@ -202,6 +210,14 @@ function MiniQuizCard({
   );
 }
 
+function DifficultyBadge({ difficulty }: { difficulty: SchoolDifficulty }) {
+  return (
+    <Badge className={`text-[10px] ${difficultyBadgeClass(difficulty)}`}>
+      {difficultyLabelTh(difficulty)}
+    </Badge>
+  );
+}
+
 function FinalQuiz({ quizzes }: { quizzes: SchoolQuiz[] }) {
   return (
     <Card className="border-sky-300">
@@ -216,7 +232,10 @@ function FinalQuiz({ quizzes }: { quizzes: SchoolQuiz[] }) {
         <ul className="space-y-2">
           {quizzes.map((q) => (
             <li key={q.id} className="border rounded p-3">
-              <p className="text-sm font-medium mb-2">{q.stem}</p>
+              <div className="mb-2 flex items-start gap-2">
+                <p className="text-sm font-medium flex-1">{q.stem}</p>
+                {q.difficulty && <DifficultyBadge difficulty={q.difficulty} />}
+              </div>
               <details>
                 <summary className="text-xs text-muted-foreground cursor-pointer">
                   ดูเฉลย

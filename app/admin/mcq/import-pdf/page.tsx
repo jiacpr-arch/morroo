@@ -58,6 +58,8 @@ export default function ImportPdfPage() {
   const [examType, setExamType] = useState<"NL1" | "NL2">("NL2");
   const [examSource, setExamSource] = useState("");
   const [files, setFiles] = useState<File[]>([]);
+  // Fallback when a PDF can't be read: paste the exam text directly.
+  const [pastedText, setPastedText] = useState("");
   // After extraction, also have AI answer + write a draft เฉลย for each question.
   const [withAnswers, setWithAnswers] = useState(true);
   const [answerModel, setAnswerModel] = useState<"haiku" | "sonnet">("haiku");
@@ -107,26 +109,53 @@ export default function ImportPdfPage() {
     setResult(null);
     setError(null);
     if (fs.length === 1 && !examSource) {
-      setExamSource(fs[0].name.replace(/\.pdf$/i, ""));
+      setExamSource(fs[0].name.replace(/\.(pdf|txt|md)$/i, ""));
     }
   }
 
   async function extractPdfText(f: File, prefix: string): Promise<string> {
-    const pdfjs = await import("pdfjs-dist");
-    pdfjs.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
-    const buf = new Uint8Array(await f.arrayBuffer());
-    const doc = await pdfjs.getDocument({ data: buf }).promise;
-    const parts: string[] = [];
-    for (let p = 1; p <= doc.numPages; p++) {
-      setProgress(`${prefix}อ่านข้อความจาก PDF… หน้า ${p}/${doc.numPages}`);
-      const page = await doc.getPage(p);
-      const content = await page.getTextContent();
-      const line = (content.items as PdfTextItem[])
-        .map((it) => it.str ?? "")
-        .join(" ");
-      parts.push(line);
+    // 1) In-browser pdf.js (fast; works for most files e.g. NL2)
+    try {
+      const pdfjs = await import("pdfjs-dist");
+      pdfjs.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
+      const buf = new Uint8Array(await f.arrayBuffer());
+      const doc = await pdfjs.getDocument({
+        data: buf,
+        cMapUrl: "/pdfjs/cmaps/",
+        cMapPacked: true,
+        standardFontDataUrl: "/pdfjs/standard_fonts/",
+      }).promise;
+      const parts: string[] = [];
+      for (let p = 1; p <= doc.numPages; p++) {
+        setProgress(`${prefix}อ่านข้อความจาก PDF… หน้า ${p}/${doc.numPages}`);
+        try {
+          const page = await doc.getPage(p);
+          const content = await page.getTextContent();
+          const items = (content?.items as PdfTextItem[]) ?? [];
+          parts.push(items.map((it) => it.str ?? "").join(" "));
+        } catch {
+          /* skip a page pdf.js can't parse */
+        }
+      }
+      const text = cleanPdfText(parts.join("\n"));
+      if (text.trim().length >= 30) return text;
+    } catch {
+      /* pdf.js failed entirely — fall through to the server reader */
     }
-    return cleanPdfText(parts.join("\n"));
+
+    // 2) Server fallback (pdf-parse / pdf.js v5) for PDFs the browser can't read
+    setProgress(`${prefix}เบราว์เซอร์อ่านไม่ได้ — กำลังอ่านด้วยตัวสำรอง (server)…`);
+    const fd = new FormData();
+    fd.append("file", f);
+    const res = await fetch("/api/admin/mcq/pdf-text", { method: "POST", body: fd });
+    const data = await res.json().catch(() => ({}));
+    const text = cleanPdfText((data.text as string) ?? "");
+    if (!res.ok || text.trim().length < 30) {
+      throw new Error(
+        `อ่าน PDF ไม่ได้ทั้งสองวิธี — ${data.error || "ไฟล์อาจเป็นไฟล์สแกน (ไม่มี text layer)"}`
+      );
+    }
+    return text;
   }
 
   // Phase 2 (optional): Sonnet answers each valid question + drafts a detailed
@@ -175,29 +204,51 @@ export default function ImportPdfPage() {
   }
 
   async function handleProcess() {
-    if (files.length === 0) { setError("กรุณาเลือกไฟล์ PDF ก่อน"); return; }
+    const hasText = pastedText.trim().length >= 30;
+    if (files.length === 0 && !hasText) {
+      setError("กรุณาเลือกไฟล์ PDF หรือวางข้อความข้อสอบ");
+      return;
+    }
     setError(null);
     setResult(null);
     setParsed([]);
 
-    // dedupe + accumulate across ALL selected files → one preview/import
+    // dedupe + accumulate across ALL inputs → one preview/import
     const seen = new Set<string>();
     const raws: RawMcqRow[] = [];
     let failedChunks = 0;
 
+    // A "doc" is either pasted text or a PDF file to extract.
+    const docs: { src: string; text: string | null; file: File | null }[] =
+      hasText
+        ? [{ src: examSource || "วางข้อความ", text: pastedText, file: null }]
+        : files.map((f) => ({
+            src:
+              files.length === 1 && examSource
+                ? examSource
+                : f.name.replace(/\.(pdf|txt|md)$/i, ""),
+            text: null,
+            file: f,
+          }));
+
     try {
-      for (let fi = 0; fi < files.length; fi++) {
-        const f = files[fi];
-        const prefix = files.length > 1 ? `ไฟล์ ${fi + 1}/${files.length} · ` : "";
-        // per-file source: filename when batching; the input field when single
-        const src =
-          files.length === 1 && examSource
-            ? examSource
-            : f.name.replace(/\.pdf$/i, "");
+      for (let fi = 0; fi < docs.length; fi++) {
+        const doc = docs[fi];
+        const prefix = docs.length > 1 ? `ไฟล์ ${fi + 1}/${docs.length} · ` : "";
+        const src = doc.src;
 
         setPhase("reading");
-        setProgress(`${prefix}กำลังโหลดไฟล์…`);
-        const text = await extractPdfText(f, prefix);
+        setProgress(`${prefix}กำลังเตรียมข้อความ…`);
+        let text: string;
+        if (doc.text != null) {
+          text = doc.text;
+        } else if (doc.file && /\.(txt|md)$/i.test(doc.file.name)) {
+          text = cleanPdfText(await doc.file.text()); // plain-text upload
+        } else if (doc.file) {
+          text = await extractPdfText(doc.file, prefix);
+        } else {
+          text = "";
+        }
         const chunks = chunkText(text);
 
         setPhase("extracting");
@@ -254,7 +305,7 @@ export default function ImportPdfPage() {
       const rows = validateMcqRows(raws, subjects);
       setParsed(rows);
       setProgress(
-        `แกะเสร็จ ${files.length} ไฟล์: ${rows.length} ข้อ` +
+        `แกะเสร็จ: ${rows.length} ข้อ` +
         (failedChunks ? ` (มี ${failedChunks} ส่วนที่ AI อ่านไม่สำเร็จ ข้ามไป)` : "")
       );
 
@@ -383,17 +434,36 @@ export default function ImportPdfPage() {
 
           <div className="flex flex-wrap items-center gap-3">
             <label className="inline-flex">
-              <input type="file" accept="application/pdf,.pdf" multiple className="hidden" onChange={onFile} disabled={busy} />
+              <input type="file" accept="application/pdf,.pdf,text/plain,.txt,.md" multiple className="hidden" onChange={onFile} disabled={busy} />
               <span className="inline-flex items-center gap-1 px-3 py-1.5 text-sm rounded-md border bg-background hover:bg-muted cursor-pointer">
-                <Upload className="h-4 w-4" /> เลือกไฟล์ PDF (เลือกหลายไฟล์ได้)
+                <Upload className="h-4 w-4" /> เลือกไฟล์ PDF / .txt (เลือกหลายไฟล์ได้)
               </span>
             </label>
             {files.length === 1 && <span className="text-sm text-muted-foreground">{files[0].name}</span>}
             {files.length > 1 && <span className="text-sm text-muted-foreground">{files.length} ไฟล์</span>}
           </div>
 
+          <div>
+            <label className="text-sm font-medium mb-1 block">
+              …หรือวางข้อความข้อสอบ (กรณีอัปโหลด PDF ไม่ได้)
+            </label>
+            <textarea
+              value={pastedText}
+              onChange={(e) => setPastedText(e.target.value)}
+              disabled={busy}
+              rows={5}
+              placeholder="เปิด PDF ในเครื่อง → เลือกทั้งหมด (Cmd+A) → ก็อป (Cmd+C) → วางที่นี่ แล้วกดแกะ"
+              className="w-full border rounded-md px-3 py-2 text-sm resize-y"
+            />
+            {pastedText.trim().length >= 30 && (
+              <p className="text-xs text-muted-foreground mt-1">
+                จะใช้ข้อความที่วาง (ข้าม PDF) · ตั้ง &quot;แหล่งที่มา&quot; ให้ตรงปีด้วย
+              </p>
+            )}
+          </div>
+
           <div className="flex items-center gap-3">
-            <Button onClick={handleProcess} disabled={files.length === 0 || busy} className="gap-2">
+            <Button onClick={handleProcess} disabled={(files.length === 0 && pastedText.trim().length < 30) || busy} className="gap-2">
               {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <Sparkles className="h-4 w-4" />}
               แกะข้อสอบด้วย AI
             </Button>

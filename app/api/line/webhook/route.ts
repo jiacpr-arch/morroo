@@ -39,7 +39,6 @@ export async function POST(request: NextRequest) {
   for (const event of events) {
     const lineUserId = event.source?.userId;
     if (!lineUserId) continue;
-    console.log(`[line/webhook] event=${event.type} userId=${lineUserId}`);
 
     // Postback: ads-autofix merge / dismiss buttons (admin only)
     if (event.type === "postback" && event.postback?.data) {

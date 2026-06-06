@@ -36,7 +36,7 @@ const SUBJECTS_ROTATION = [
 // Haiku: easy+medium (21 ข้อ), Sonnet: hard (9 ข้อ)
 const BATCH_CONFIG = {
   easyMedium: { count: 21, model: "claude-haiku-4-5-20251001", maxTokens: 32000 },
-  hard: { count: 9, model: "claude-sonnet-4-6-20250514", maxTokens: 24000 },
+  hard: { count: 9, model: "claude-sonnet-4-6", maxTokens: 24000 },
 };
 
 interface GeneratedQuestion {
