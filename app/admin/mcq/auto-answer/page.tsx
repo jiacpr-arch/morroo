@@ -122,7 +122,9 @@ export default function AutoAnswerPage() {
     let done = 0, failed = 0;
     let firstErr = "";
     const answeredIds: string[] = [];
-    const BATCH = 3;
+    // Sonnet writes longer Thai explanations than Haiku, so keep its batch
+    // smaller to stay well under the 60s serverless limit on the answer call.
+    const BATCH = model === "sonnet" ? 1 : 3;
     for (let start = 0; start < rows.length; start += BATCH) {
       const batch = rows.slice(start, start + BATCH);
       setProgress(`AI กำลังเฉลย… ${Math.min(start + batch.length, rows.length)}/${rows.length} ข้อ`);
