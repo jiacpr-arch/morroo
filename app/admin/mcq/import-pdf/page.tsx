@@ -63,6 +63,10 @@ export default function ImportPdfPage() {
   // After extraction, also have AI answer + write a draft เฉลย for each question.
   const [withAnswers, setWithAnswers] = useState(true);
   const [answerModel, setAnswerModel] = useState<"haiku" | "sonnet">("haiku");
+  // Full auto-pilot: after AI answers, immediately import and flip status to
+  // "active" for any row that got a verified A–E answer + detailed_explanation.
+  // Rows the AI couldn't answer stay as "review" so nothing wrong reaches นศพ.
+  const [autoActivate, setAutoActivate] = useState(true);
 
   const [phase, setPhase] = useState<Phase>("idle");
   const [progress, setProgress] = useState("");
@@ -314,6 +318,18 @@ export default function ImportPdfPage() {
         setParsed([...rows]);
       }
       setPhase("done");
+
+      if (autoActivate && withAnswers) {
+        // Promote AI-answered rows to "active" so they appear to นศพ. without
+        // a manual review pass. Rows missing an AI answer/explanation are left
+        // as "review" — admin still sees them in the queue.
+        for (const r of rows) {
+          if (r.insert?.detailed_explanation && r.insert.correct_answer) {
+            r.insert.status = "active";
+          }
+        }
+        await runImport(rows.filter((r) => r.insert));
+      }
     } catch (e) {
       setError(`อ่าน/แกะ PDF ไม่สำเร็จ: ${String(e)}`);
       setPhase("idle");
@@ -323,12 +339,12 @@ export default function ImportPdfPage() {
   const validRows = useMemo(() => parsed.filter((p) => p.insert), [parsed]);
   const invalidRows = useMemo(() => parsed.filter((p) => p.errors.length > 0), [parsed]);
 
-  async function onImport() {
-    if (validRows.length === 0) return;
+  async function runImport(rows: ParsedMcqRow[]) {
+    if (rows.length === 0) return;
     setImporting(true);
     let inserted = 0;
     let failed = 0;
-    for (const row of validRows) {
+    for (const row of rows) {
       if (!row.insert) continue;
       const res = await createMcqQuestion(row.insert);
       if (res) inserted++;
@@ -336,6 +352,10 @@ export default function ImportPdfPage() {
     }
     setImporting(false);
     setResult({ inserted, failed });
+  }
+
+  async function onImport() {
+    await runImport(validRows);
   }
 
   const busy = phase === "reading" || phase === "extracting" || phase === "answering";
@@ -370,9 +390,8 @@ export default function ImportPdfPage() {
 
       <h1 className="text-2xl font-bold mb-2">🤖 Import จาก PDF (AI)</h1>
       <p className="text-sm text-muted-foreground mb-6">
-        อัปโหลดไฟล์ข้อสอบ PDF (ทั้งฉบับ) → AI แกะเป็นข้อสอบให้อัตโนมัติ (แยกสาขาให้)
-        → ตรวจ preview → นำเข้า ทุกข้อเข้าเป็นสถานะ <strong>review</strong> (ซ่อนจากผู้เรียน)
-        ให้ไปเฉลยในหน้า admin ก่อน · ไม่ต้องใช้ Terminal/คีย์/SQL
+        อัปโหลด PDF → AI แกะข้อสอบ + เฉลย + เหตุผล → นำเข้าเป็น <strong>active</strong> ให้อัตโนมัติ ·
+        ข้อที่ AI เฉลยไม่ได้จะตกเป็น <strong>review</strong> ให้ admin ตรวจต่อ
       </p>
 
       <Card className="mb-6">
@@ -432,6 +451,22 @@ export default function ImportPdfPage() {
             </div>
           )}
 
+          <label className="flex items-start gap-2 text-sm cursor-pointer">
+            <input
+              type="checkbox"
+              checked={autoActivate}
+              onChange={(e) => setAutoActivate(e.target.checked)}
+              disabled={busy || !withAnswers}
+              className="h-4 w-4 mt-0.5"
+            />
+            <span>
+              นำเข้า + Active ทันที (ข้ามขั้น preview)
+              <span className="text-muted-foreground">
+                {" "}— ข้อที่ AI เฉลยครบถูกเผยแพร่ทันที · ข้อที่เฉลยไม่ได้ตกเป็น review
+              </span>
+            </span>
+          </label>
+
           <div className="flex flex-wrap items-center gap-3">
             <label className="inline-flex">
               <input type="file" accept="application/pdf,.pdf,text/plain,.txt,.md" multiple className="hidden" onChange={onFile} disabled={busy} />
@@ -463,9 +498,9 @@ export default function ImportPdfPage() {
           </div>
 
           <div className="flex items-center gap-3">
-            <Button onClick={handleProcess} disabled={(files.length === 0 && pastedText.trim().length < 30) || busy} className="gap-2">
-              {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <Sparkles className="h-4 w-4" />}
-              แกะข้อสอบด้วย AI
+            <Button onClick={handleProcess} disabled={(files.length === 0 && pastedText.trim().length < 30) || busy || importing} className="gap-2">
+              {busy || importing ? <Loader2 className="h-4 w-4 animate-spin" /> : <Sparkles className="h-4 w-4" />}
+              {autoActivate && withAnswers ? "แกะ + เฉลย + นำเข้า (Active)" : "แกะข้อสอบด้วย AI"}
             </Button>
             {progress && <span className="text-sm text-muted-foreground">{progress}</span>}
           </div>
@@ -551,7 +586,7 @@ export default function ImportPdfPage() {
                 </div>
                 <div className="mt-3">
                   <Link href="/admin/mcq" className="text-sm text-brand hover:underline">
-                    → ไป MCQ admin (กรองสถานะ &quot;Review&quot; เพื่อไล่เฉลย)
+                    → ไป MCQ admin
                   </Link>
                 </div>
               </CardContent>
