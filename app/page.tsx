@@ -1,12 +1,9 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import ExamCard from "@/components/ExamCard";
 import PricingCard from "@/components/PricingCard";
 import PricingFaq from "@/components/PricingFaq";
-import DailyCountdown from "@/components/DailyCountdown";
 import AllExamsCountdown from "@/components/AllExamsCountdown";
-import GoodyEmbed from "@/components/GoodyEmbed";
 import HeroAB from "@/components/HeroAB";
 import PricingViewTracker from "@/components/PricingViewTracker";
 import SocialProofSection from "@/components/SocialProofSection";
@@ -18,13 +15,7 @@ import { getNewsItems } from "@/lib/news";
 import NewsCard from "@/components/NewsCard";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { getHeroForcedVariant } from "@/lib/site-config";
-import {
-  BookOpen,
-  Clock,
-  CheckCircle,
-  ArrowRight,
-  Stethoscope,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export const revalidate = 60; // revalidate every 60 seconds
 
@@ -37,8 +28,6 @@ export default async function HomePage() {
   ]);
   const exams = sortExamsAvailableFirst(allExams, partCounts);
   const latestExams = exams.slice(0, 6);
-  const dayIndex = Math.floor(Date.now() / (1000 * 60 * 60 * 24));
-  const dailyExam = exams.length > 0 ? exams[dayIndex % exams.length] : null;
 
   return (
     <>
@@ -54,46 +43,15 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* Feature Showcase — overview of every tool customers can use, up top */}
+      <FeatureShowcase />
+
       {/* All Exams Countdown */}
       <section className="py-8 bg-white border-b">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AllExamsCountdown />
         </div>
       </section>
-
-      {/* Daily Exam */}
-      {dailyExam && (
-        <section className="py-12 bg-white border-b">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-6 rounded-2xl bg-gradient-to-r from-brand/5 to-brand-light/5 border border-brand/10">
-              <div>
-                <div className="flex items-center gap-2 mb-2">
-                  <Badge className="bg-brand text-white">ข้อสอบประจำวัน</Badge>
-                  {dailyExam.is_free && (
-                    <Badge variant="secondary">ฟรี</Badge>
-                  )}
-                </div>
-                <h3 className="text-lg font-semibold">{dailyExam.title}</h3>
-                <p className="text-sm text-muted-foreground mt-1">
-                  {dailyExam.category} &bull; 6 ตอน
-                </p>
-              </div>
-              <div className="flex flex-col sm:items-end gap-3">
-                <div className="text-sm text-muted-foreground">ข้อถัดไปใน</div>
-                <DailyCountdown />
-                <Link href={`/exams/${dailyExam.id}`}>
-                  <Button className="bg-brand hover:bg-brand-light text-white">
-                    เริ่มทำข้อสอบ <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Feature Showcase — overview of every tool customers can use */}
-      <FeatureShowcase />
 
       {/* Categories */}
       <section className="py-16">
@@ -147,158 +105,6 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Long Case Feature */}
-      <section className="py-16 bg-amber-50 border-y border-amber-100">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <Badge className="mb-4 bg-amber-100 text-amber-800 border-amber-300">
-                <Stethoscope className="h-3 w-3 mr-1" /> ใหม่ — Long Case Exam
-              </Badge>
-              <h2 className="text-3xl font-bold text-gray-900">
-                ฝึกสอบ Long Case
-                <br />
-                <span className="text-amber-600">กับ AI Patient & Examiner</span>
-              </h2>
-              <p className="mt-4 text-muted-foreground text-lg">
-                AI รับบทเป็นผู้ป่วย คุณซักประวัติ ตรวจร่างกาย สั่ง Lab แล้วนำเสนอต่อ AI Examiner
-                ที่ให้ feedback และคะแนนแบบสอบจริง
-              </p>
-              <div className="mt-6 grid grid-cols-2 gap-3">
-                {[
-                  { icon: "🗣️", label: "ซักประวัติ", desc: "คุยกับ AI Patient" },
-                  { icon: "🩺", label: "ตรวจร่างกาย", desc: "เลือก PE ที่จะตรวจ" },
-                  { icon: "🔬", label: "สั่ง Lab", desc: "เลือก Lab/Imaging" },
-                  { icon: "👨‍⚕️", label: "สัมภาษณ์ Examiner", desc: "รับคะแนน + Feedback" },
-                ].map((s) => (
-                  <div key={s.label} className="flex items-start gap-2 p-3 rounded-lg bg-white border border-amber-100">
-                    <span className="text-xl shrink-0">{s.icon}</span>
-                    <div>
-                      <div className="text-sm font-semibold text-gray-900">{s.label}</div>
-                      <div className="text-xs text-muted-foreground">{s.desc}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-6">
-                <Link href="/longcase">
-                  <Button className="bg-amber-500 hover:bg-amber-600 text-white gap-2">
-                    ดูเคสทั้งหมด <ArrowRight className="h-4 w-4" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-            <div className="space-y-3">
-              {[
-                { specialty: "Surgery", title: "Testicular Torsion", diff: "ยาก", badge: "bg-red-100 text-red-700", weekly: true },
-                { specialty: "Cardiology", title: "Inferior STEMI", diff: "ปานกลาง", badge: "bg-rose-100 text-rose-700", weekly: false },
-                { specialty: "Obstetrics", title: "Ectopic Pregnancy", diff: "ยาก", badge: "bg-pink-100 text-pink-700", weekly: false },
-              ].map((c) => (
-                <div key={c.title} className="rounded-xl border bg-white p-4 flex items-center justify-between gap-4 shadow-sm">
-                  <div>
-                    <div className="flex gap-1.5 mb-1.5">
-                      <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${c.badge}`}>{c.specialty}</span>
-                      <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-red-100 text-red-700">{c.diff}</span>
-                      {c.weekly && <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-amber-100 text-amber-700">⭐ ประจำสัปดาห์</span>}
-                    </div>
-                    <p className="font-semibold text-sm text-gray-900">{c.title}</p>
-                    <p className="text-xs text-muted-foreground mt-0.5">ซักประวัติ + PE + Lab + Examiner · ~30 นาที</p>
-                  </div>
-                  <Link href="/longcase">
-                    <Button size="sm" variant="outline" className="shrink-0 border-amber-300 text-amber-700 hover:bg-amber-50">
-                      ลอง
-                    </Button>
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ACLS Reader — free study tool */}
-      <section className="py-16 bg-emerald-50 border-y border-emerald-100">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <Badge className="mb-4 bg-emerald-100 text-emerald-800 border-emerald-300">
-              ฟรี — ไม่ต้องสมัครสมาชิก
-            </Badge>
-            <h2 className="text-3xl font-bold text-gray-900">คู่มือทบทวน ACLS</h2>
-            <p className="mt-3 text-muted-foreground text-lg">
-              อ่านเป็นบท เรียน pre-course ทำแบบทดสอบ และฝึกอ่าน EKG — อ้างอิง ILCOR 2025
-            </p>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              { href: "/acls-reader/learn", icon: "🎓", label: "บทเรียน", desc: "13 บท อ่าน-ควิซ" },
-              { href: "/acls-reader/test", icon: "📝", label: "แบบทดสอบ", desc: "Pre / Post-test" },
-              { href: "/acls-reader/ekg", icon: "💓", label: "ฝึกอ่าน EKG", desc: "อ่านจังหวะคลื่น" },
-              { href: "/acls-reader", icon: "📖", label: "อ่านเป็นบท", desc: "13 บทเต็ม" },
-            ].map((t) => (
-              <Link
-                key={t.href}
-                href={t.href}
-                className="group flex flex-col items-center gap-2 rounded-xl border border-emerald-100 bg-white p-6 text-center transition-all hover:shadow-md hover:border-emerald-300"
-              >
-                <span className="text-4xl group-hover:scale-110 transition-transform">{t.icon}</span>
-                <span className="text-sm font-semibold text-gray-900">{t.label}</span>
-                <span className="text-xs text-muted-foreground">{t.desc}</span>
-              </Link>
-            ))}
-          </div>
-          <div className="mt-8 text-center">
-            <Link href="/acls-reader">
-              <Button className="bg-emerald-600 hover:bg-emerald-700 text-white gap-2">
-                เปิดคู่มือ ACLS <ArrowRight className="h-4 w-4" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* How it works */}
-      <section className="py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold">วิธีใช้งาน</h2>
-            <p className="mt-2 text-muted-foreground">3 ขั้นตอนง่ายๆ</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: BookOpen,
-                step: "1",
-                title: "เลือกข้อสอบ",
-                desc: "เลือกสาขาวิชาและข้อสอบที่ต้องการฝึก กรองตามระดับความยาก",
-              },
-              {
-                icon: Clock,
-                step: "2",
-                title: "ทำข้อสอบจับเวลา",
-                desc: "อ่านโจทย์ Progressive Case 6 ตอน พร้อมตัวจับเวลาแต่ละข้อ",
-              },
-              {
-                icon: CheckCircle,
-                step: "3",
-                title: "ดูเฉลยละเอียด",
-                desc: "ดูเฉลยพร้อม Key Points และคำอธิบายโดยผู้เชี่ยวชาญ",
-              },
-            ].map((item) => (
-              <div key={item.step} className="text-center space-y-4 p-6 rounded-xl">
-                <div className="mx-auto w-16 h-16 rounded-full bg-brand/10 flex items-center justify-center">
-                  <item.icon className="h-8 w-8 text-brand" />
-                </div>
-                <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand text-white text-sm font-bold">
-                  {item.step}
-                </div>
-                <h3 className="text-xl font-bold">{item.title}</h3>
-                <p className="text-muted-foreground">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Social Proof — testimonials + stats above pricing decision */}
       <SocialProofSection />
 
@@ -344,32 +150,6 @@ export default async function HomePage() {
           </div>
         </section>
       )}
-
-      {/* Health News */}
-      <section className="py-16 bg-muted/30 border-b">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
-            <h2 className="text-3xl font-bold">ข่าวสุขภาพ</h2>
-            <p className="mt-1 text-muted-foreground">อัปเดตข่าวสารวงการแพทย์และสุขภาพ</p>
-          </div>
-          <div className="rounded-xl border bg-card overflow-hidden">
-            <GoodyEmbed site="health" type="news" title="ข่าวสุขภาพ" />
-          </div>
-        </div>
-      </section>
-
-      {/* Wandee */}
-      <section className="py-12">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-6 text-center">
-            <h2 className="text-2xl font-bold">วันดีประจำวัน</h2>
-            <p className="mt-1 text-sm text-muted-foreground">เกร็ดผ่อนคลายระหว่างอ่านหนังสือ</p>
-          </div>
-          <div className="rounded-xl border bg-card overflow-hidden">
-            <GoodyEmbed site="jiacpr" type="wandee" title="วันดี" />
-          </div>
-        </div>
-      </section>
 
       {/* Social */}
       <section className="py-12 bg-white border-b">
