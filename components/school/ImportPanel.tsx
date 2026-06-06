@@ -41,10 +41,21 @@ interface ExtractedQuiz {
   explanation: string;
   difficulty: string;
 }
+interface Classification {
+  suggested_topic_id: string | null;
+  confidence: number;
+  reasoning: string;
+  suggested_new_topic?: {
+    year: number;
+    system_hint: string;
+    name_th: string;
+  };
+}
 interface Extracted {
   lesson: ExtractedLesson;
   flashcards: ExtractedFlashcard[];
   quizzes: ExtractedQuiz[];
+  classification?: Classification | null;
 }
 
 interface Props {
@@ -109,6 +120,16 @@ export default function ImportPanel({ topics }: Props) {
       }
       const d = (await res.json()) as Extracted;
       setData(d);
+      // Auto-select the topic if AI is reasonably confident and the suggested
+      // topic exists in our local list. Admin can still override.
+      const suggested = d.classification?.suggested_topic_id;
+      if (
+        suggested &&
+        (d.classification?.confidence ?? 0) >= 0.6 &&
+        topics.some((t) => t.id === suggested)
+      ) {
+        setTopicId(suggested);
+      }
     } catch (e) {
       setError(e instanceof Error ? e.message : "Error");
     } finally {
@@ -465,6 +486,48 @@ export default function ImportPanel({ topics }: Props) {
             {/* Save form */}
             <Card className="border-violet-300 bg-violet-50/30">
               <CardContent className="p-4 space-y-3">
+                {data.classification && (
+                  <div
+                    className={`rounded border p-2 text-xs flex items-start gap-2 ${
+                      data.classification.suggested_topic_id &&
+                      data.classification.confidence >= 0.6
+                        ? "border-emerald-300 bg-emerald-50 text-emerald-900"
+                        : "border-amber-300 bg-amber-50 text-amber-900"
+                    }`}
+                  >
+                    <span>💡</span>
+                    <div className="flex-1">
+                      {data.classification.suggested_topic_id ? (
+                        <>
+                          <span className="font-semibold">
+                            AI คิดว่า:{" "}
+                            {(() => {
+                              const t = topics.find(
+                                (x) => x.id === data.classification!.suggested_topic_id,
+                              );
+                              return t
+                                ? `Y${t.year} · ${t.school_systems?.icon ?? ""} ${t.name_th}`
+                                : "(ไม่พบ topic ใน list)";
+                            })()}
+                          </span>
+                          <span className="ml-1 opacity-70">
+                            ({Math.round(data.classification.confidence * 100)}%)
+                          </span>
+                        </>
+                      ) : (
+                        <span className="font-semibold">
+                          AI ไม่พบ topic ที่ตรง — แนะนำสร้างใหม่
+                          {data.classification.suggested_new_topic
+                            ? `: Y${data.classification.suggested_new_topic.year} · ${data.classification.suggested_new_topic.system_hint} · ${data.classification.suggested_new_topic.name_th}`
+                            : ""}
+                        </span>
+                      )}
+                      <p className="mt-0.5 opacity-80">
+                        {data.classification.reasoning}
+                      </p>
+                    </div>
+                  </div>
+                )}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <label className="block">
                     <span className="text-xs font-semibold text-muted-foreground block mb-1">

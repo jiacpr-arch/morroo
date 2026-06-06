@@ -3,6 +3,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase/server";
 
 const MODEL = "claude-sonnet-4-6";
+const CLASSIFY_MODEL = "claude-haiku-4-5";
 
 export const runtime = "nodejs";
 export const maxDuration = 300;
@@ -225,6 +226,159 @@ function parseMode(raw: unknown): Mode {
   return "expand";
 }
 
+interface TopicCandidate {
+  id: string;
+  year: number;
+  name_th: string;
+  system_name: string;
+}
+
+interface ClassifyResult {
+  suggested_topic_id: string | null;
+  confidence: number;
+  reasoning: string;
+  suggested_new_topic?: {
+    year: number;
+    system_hint: string;
+    name_th: string;
+  };
+}
+
+const CLASSIFY_TOOL: Anthropic.Tool = {
+  name: "submit_topic_classification",
+  description:
+    "Submit which existing curriculum topic best matches the material, or propose a new topic if none fit.",
+  input_schema: {
+    type: "object",
+    properties: {
+      suggested_topic_index: {
+        type: "integer",
+        description:
+          "Index (0-based) of the best-matching topic from the provided list. Use -1 if no existing topic is a good match.",
+      },
+      confidence: {
+        type: "number",
+        description:
+          "Confidence 0.0-1.0 that the suggested topic correctly matches the material.",
+        minimum: 0,
+        maximum: 1,
+      },
+      reasoning: {
+        type: "string",
+        description:
+          "One short sentence (Thai) explaining why this topic matches, or why none fit.",
+      },
+      suggested_new_topic: {
+        type: "object",
+        description:
+          "Only when suggested_topic_index = -1: propose a new topic.",
+        properties: {
+          year: { type: "integer", minimum: 1, maximum: 6 },
+          system_hint: {
+            type: "string",
+            description:
+              "Best-guess system name in Thai (e.g. 'ระบบหัวใจและหลอดเลือด', 'ระบบหายใจ').",
+          },
+          name_th: {
+            type: "string",
+            description: "Proposed topic name in Thai.",
+          },
+        },
+        required: ["year", "system_hint", "name_th"],
+      },
+    },
+    required: ["suggested_topic_index", "confidence", "reasoning"],
+  },
+};
+
+async function loadTopicCandidates(
+  supabase: Awaited<ReturnType<typeof createClient>>,
+): Promise<TopicCandidate[]> {
+  const { data } = await supabase
+    .from("school_topics")
+    .select("id, year, name_th, school_systems(name_th)")
+    .order("year")
+    .limit(500);
+  if (!data) return [];
+  return (data as Array<{
+    id: string;
+    year: number;
+    name_th: string;
+    school_systems: { name_th: string } | { name_th: string }[] | null;
+  }>).map((r) => {
+    const sys = Array.isArray(r.school_systems)
+      ? r.school_systems[0]
+      : r.school_systems;
+    return {
+      id: r.id,
+      year: r.year,
+      name_th: r.name_th,
+      system_name: sys?.name_th ?? "—",
+    };
+  });
+}
+
+async function classifyTopic(
+  classifyContent: Anthropic.ContentBlockParam[],
+  topics: TopicCandidate[],
+): Promise<ClassifyResult | null> {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey || topics.length === 0) return null;
+  const client = new Anthropic({ apiKey });
+
+  const topicList = topics
+    .map((t, i) => `${i}. Y${t.year} · ${t.system_name} · ${t.name_th}`)
+    .join("\n");
+
+  const system = `You classify Thai medical-school study materials into the correct curriculum topic.
+
+You will be given (1) the source material (PDF/text/image), and (2) a numbered list of existing topics in the curriculum (year + system + topic name).
+
+Your job: pick the index of the topic that best matches the material's content, or return -1 if no existing topic is a reasonable fit (in which case propose a new topic).
+
+Be conservative — only return a high confidence (>0.8) if the match is clearly correct. If multiple topics could plausibly match, pick the closest and lower the confidence.`;
+
+  try {
+    const response = await client.messages.create({
+      model: CLASSIFY_MODEL,
+      max_tokens: 800,
+      system,
+      tools: [CLASSIFY_TOOL],
+      tool_choice: { type: "tool", name: "submit_topic_classification" },
+      messages: [
+        {
+          role: "user",
+          content: [
+            ...classifyContent,
+            {
+              type: "text",
+              text: `Existing topics (pick the index that matches, or -1 if none):\n\n${topicList}`,
+            },
+          ],
+        },
+      ],
+    });
+    const tool = response.content.find((b) => b.type === "tool_use");
+    if (!tool || tool.type !== "tool_use") return null;
+    const input = tool.input as {
+      suggested_topic_index: number;
+      confidence: number;
+      reasoning: string;
+      suggested_new_topic?: ClassifyResult["suggested_new_topic"];
+    };
+    const idx = input.suggested_topic_index;
+    return {
+      suggested_topic_id: idx >= 0 && idx < topics.length ? topics[idx].id : null,
+      confidence: input.confidence,
+      reasoning: input.reasoning,
+      suggested_new_topic: input.suggested_new_topic,
+    };
+  } catch (e) {
+    console.error("classify error", e);
+    return null;
+  }
+}
+
 export async function POST(req: NextRequest) {
   try {
     const supabase = await createClient();
@@ -259,24 +413,25 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ error: "PDF or image only" }, { status: 400 });
       }
 
-      const content: Anthropic.MessageParam["content"] = [
-        isPdf
-          ? {
-              type: "document",
-              source: {
-                type: "base64",
-                media_type: "application/pdf",
-                data: b64,
-              },
-            }
-          : {
-              type: "image",
-              source: {
-                type: "base64",
-                media_type: file.type as Anthropic.Base64ImageSource["media_type"],
-                data: b64,
-              },
+      const mediaBlock: Anthropic.DocumentBlockParam | Anthropic.ImageBlockParam = isPdf
+        ? {
+            type: "document",
+            source: {
+              type: "base64",
+              media_type: "application/pdf",
+              data: b64,
             },
+          }
+        : {
+            type: "image",
+            source: {
+              type: "base64",
+              media_type: file.type as Anthropic.Base64ImageSource["media_type"],
+              data: b64,
+            },
+          };
+      const content: Anthropic.MessageParam["content"] = [
+        mediaBlock,
         {
           type: "text",
           text: `Extract a lesson + flashcards + quizzes from this material.${
@@ -284,8 +439,12 @@ export async function POST(req: NextRequest) {
           }`,
         },
       ];
-      const data = await callExtractor(content, mode);
-      return NextResponse.json({ ...data, mode });
+      const topics = await loadTopicCandidates(supabase);
+      const [data, classification] = await Promise.all([
+        callExtractor(content, mode),
+        classifyTopic([mediaBlock], topics),
+      ]);
+      return NextResponse.json({ ...data, mode, classification });
     }
 
     // ── Branch 2 — JSON body (text or url)
@@ -328,8 +487,16 @@ export async function POST(req: NextRequest) {
         }---\n\n${materialText}`,
       },
     ];
-    const data = await callExtractor(content, mode);
-    return NextResponse.json({ ...data, mode });
+    const classifyExcerpt = materialText.slice(0, 8000);
+    const topics = await loadTopicCandidates(supabase);
+    const [data, classification] = await Promise.all([
+      callExtractor(content, mode),
+      classifyTopic(
+        [{ type: "text", text: classifyExcerpt }],
+        topics,
+      ),
+    ]);
+    return NextResponse.json({ ...data, mode, classification });
   } catch (e) {
     console.error("import error", e);
     return NextResponse.json(
