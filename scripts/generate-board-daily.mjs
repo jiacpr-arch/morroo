@@ -1,16 +1,18 @@
 /**
  * Daily Board Exam MCQ generator — runs on GitHub Actions
  *
- * Generates 30 board MCQ questions/day for a rotating (specialty, section, topic)
- * triple drawn from `board_topic_categories` joined with `board_exam_blueprints`.
- * Only specialties with `is_published=true` are included.
+ * Adds ONE new board MCQ to EVERY active specialty per run — a steady
+ * "1 question / specialty / day" drip that grows the bank indefinitely
+ * (no cap). Within each specialty the least-covered (section, topic) from
+ * `board_topic_categories` is chosen so coverage stays flat across the
+ * blueprint over time.
  *
- * Distribution per day:
- *   - Haiku (cheap): 6 easy + 15 medium
- *   - Sonnet (deep reasoning): 9 hard
+ * Difficulty rotates over a 10-day cycle (~2 easy / 5 medium / 3 hard, the
+ * board mix) and is offset per specialty so the specialties don't all land on
+ * the same difficulty the same day. Hard → Sonnet, easy/medium → Haiku.
  *
  * Age stratification follows the topic's peds_count/adult_count ratio so that
- * the generated set matches the blueprint's expected case mix.
+ * the generated question matches the blueprint's expected case mix.
  *
  * Required env vars:
  *   SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, ANTHROPIC_API_KEY
@@ -32,9 +34,10 @@ if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY || !ANTHROPIC_API_KEY) {
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
-// Module-scoped so the top-level catch can flip the row to 'error' even when
-// failures happen after the row is created but before the explicit try/catch.
-let jobId = null;
+// Module-scoped so the top-level catch can flip any still-running audit rows
+// to 'error' even when failures happen after rows are created but before the
+// explicit try/catch. One row per specialty (see run()).
+let auditJobIds = [];
 
 // Subject name pattern: each section of each specialty has its own mcq_subject row.
 // e.g. emergency_medicine + clinical_decision → "em_clinical_decision"
@@ -316,6 +319,130 @@ async function findSubjectForSection(specialtySlug, sectionCode) {
   return data;
 }
 
+// Difficulty rotation over a 10-day cycle: ~2 easy / 5 medium / 3 hard, the
+// same mix the board exam favours (easy 20% / medium 50% / hard 30%). The
+// index is offset by the specialty's position so the 12 specialties don't all
+// generate the same difficulty on the same day.
+const DIFFICULTY_CYCLE = [
+  "easy", "medium", "medium", "hard", "medium",
+  "easy", "hard", "medium", "medium", "hard",
+];
+
+const DIFFICULTY_INSTRUCTION = {
+  easy:
+    "สร้างข้อง่าย (easy) 1 ข้อ — เน้น recall ข้อเท็จจริงพื้นฐาน, drug dose, ECG/imaging classic finding, definition ที่ board ควรรู้",
+  medium:
+    "สร้างข้อปานกลาง (medium) 1 ข้อ — เน้น first-line management, indication ของ procedure, การเลือก investigation ที่เหมาะสมตาม guideline",
+  hard:
+    "สร้างข้อยาก (hard) 1 ข้อ — เน้น clinical reasoning ระดับ board: complex differential, atypical presentation, การจัดการเคส critical ที่ board test จริงๆ",
+};
+
+// Generate exactly ONE question for a single specialty. Picks the
+// least-covered (section, topic) within that specialty so the daily +1 spreads
+// evenly across the blueprint over time. Returns a descriptor the caller uses
+// to bulk-insert + close the audit row.
+async function generateForSpecialty({
+  slug,
+  nameTh,
+  topics,
+  countByKey,
+  dayOfYear,
+  specialtyIndex,
+}) {
+  const withCounts = topics.map((t) => ({
+    ...t,
+    existing:
+      countByKey.get(`${t.specialty_slug}::${t.section_code}::${t.topic_slug}`) ?? 0,
+  }));
+  const minCount = Math.min(...withCounts.map((t) => t.existing));
+  const candidates = withCounts.filter((t) => t.existing === minCount);
+  // Deterministic tiebreak by day-of-year → same topic if the job re-runs today.
+  const chosen = candidates[dayOfYear % candidates.length];
+
+  const difficulty =
+    DIFFICULTY_CYCLE[(dayOfYear + specialtyIndex) % DIFFICULTY_CYCLE.length];
+  const model =
+    difficulty === "hard" ? "claude-sonnet-4-6" : "claude-haiku-4-5-20251001";
+
+  const subjectRow = await findSubjectForSection(
+    chosen.specialty_slug,
+    chosen.section_code
+  );
+  if (!subjectRow) {
+    return {
+      slug,
+      chosen,
+      error: `No mcq_subject for ${chosen.specialty_slug}/${chosen.section_code}`,
+    };
+  }
+
+  const totalCount = chosen.peds_count + chosen.adult_count + chosen.other_count;
+  const pedsRatio = totalCount > 0 ? chosen.peds_count / totalCount : 0.2;
+  const adultRatio = totalCount > 0 ? chosen.adult_count / totalCount : 0.8;
+
+  const prompt = buildPrompt({
+    specialtyNameTh: nameTh,
+    specialtySlug: chosen.specialty_slug,
+    sectionLabelTh: chosen.section_label_th,
+    topicNameTh: chosen.topic_name_th,
+    topicSlug: chosen.topic_slug,
+    pedsRatio,
+    adultRatio,
+    count: 1,
+    difficultyInstruction: DIFFICULTY_INSTRUCTION[difficulty],
+    existingCount: chosen.existing,
+  });
+
+  let questions;
+  try {
+    questions = await callClaudeWithRetry(`${slug}-${difficulty}`, model, 8000, prompt);
+  } catch (err) {
+    return { slug, chosen, subjectRow, error: err?.message ?? String(err) };
+  }
+
+  const valid = (questions ?? []).filter(
+    (q) =>
+      q.scenario &&
+      Array.isArray(q.choices) &&
+      q.choices.length >= 4 &&
+      q.correct_answer &&
+      ["A", "B", "C", "D", "E"].includes(q.correct_answer)
+  );
+  if (valid.length === 0) {
+    return { slug, chosen, subjectRow, error: "no valid question generated" };
+  }
+
+  // 1-per-specialty daily drip — keep exactly one even if the model returned more.
+  const q = valid[0];
+  const row = {
+    subject_id: subjectRow.id,
+    audience: "board",
+    exam_type: null,
+    board_specialty: chosen.specialty_slug,
+    board_section: chosen.section_code,
+    board_topic: chosen.topic_slug,
+    board_age_group: ["peds", "adult", "mixed"].includes(q.age_group)
+      ? q.age_group
+      : null,
+    reference_source: q.reference || null,
+    exam_source: "AI-generated-board-daily",
+    scenario: q.scenario,
+    choices: q.choices,
+    correct_answer: q.correct_answer,
+    explanation: q.explanation || null,
+    detailed_explanation: q.detailed_explanation || null,
+    difficulty: ["easy", "medium", "hard"].includes(q.difficulty)
+      ? q.difficulty
+      : difficulty,
+    is_ai_enhanced: true,
+    ai_notes: `Auto-generated board daily ${new Date().toISOString().split("T")[0]} | ${
+      model.includes("sonnet") ? "sonnet" : "haiku"
+    } | topic=${chosen.topic_slug}`,
+    status: "active",
+  };
+  return { slug, chosen, subjectRow, row };
+}
+
 async function run() {
   const now = new Date();
   const dayOfYear = Math.floor(
@@ -325,20 +452,12 @@ async function run() {
 
   const rotation = await loadRotation();
   if (rotation.length === 0) {
-    console.log("No published board topics in rotation — nothing to do");
+    console.log("No active board topics in rotation — nothing to do");
     return;
   }
 
-  // Deficit-aware pick: load active MCQ count per (specialty, section, topic)
-  // and weight rotation toward topics with the least existing content. Goal is
-  // to flatten content across all 12 specialties faster than pure round-robin
-  // would, especially during early bootstrap when most specialties have 0 q.
-  //
-  // Algorithm:
-  //   1. Bucket topics by content count
-  //   2. Pick from the lowest-count bucket
-  //   3. Within bucket, use day-of-year as deterministic tiebreaker (so two
-  //      runs on the same day pick the same topic — idempotency)
+  // Count existing active MCQs per (specialty, section, topic) so each
+  // specialty can target its own least-covered topic.
   const { data: counts } = await supabase
     .from("mcq_questions")
     .select("board_specialty, board_section, board_topic")
@@ -351,27 +470,37 @@ async function run() {
     countByKey.set(key, (countByKey.get(key) ?? 0) + 1);
   }
 
-  const withCounts = rotation.map((t) => ({
-    ...t,
-    existing: countByKey.get(`${t.specialty_slug}::${t.section_code}::${t.topic_slug}`) ?? 0,
-  }));
+  // Group topics by specialty — every active specialty gets exactly one
+  // question this run (a steady +1/specialty/day drip, no cap).
+  const bySpecialty = new Map();
+  for (const t of rotation) {
+    if (!bySpecialty.has(t.specialty_slug)) {
+      bySpecialty.set(t.specialty_slug, {
+        nameTh: t.specialty_name_th,
+        topics: [],
+      });
+    }
+    bySpecialty.get(t.specialty_slug).topics.push(t);
+  }
 
-  const minCount = Math.min(...withCounts.map((t) => t.existing));
-  const candidates = withCounts.filter((t) => t.existing === minCount);
-  const today = candidates[dayOfYear % candidates.length];
+  const specialties = [...bySpecialty.entries()]
+    .map(([slug, v]) => ({ slug, nameTh: v.nameTh, topics: v.topics }))
+    .sort((a, b) => a.slug.localeCompare(b.slug));
+
   console.log(
-    `Today (day ${dayOfYear}): ${today.specialty_name_th} · ${today.section_label_th} · ${today.topic_name_th} (${today.topic_slug}) — picked from ${candidates.length} topics tied at ${minCount} existing q`
+    `Daily drip (day ${dayOfYear}): +1 question for each of ${specialties.length} active specialties`
   );
 
-  // Open audit row in board_gen_jobs BEFORE any expensive work so a crash
-  // mid-run still leaves a tombstone explaining what was attempted.
-  {
+  // Open one audit row per specialty BEFORE the expensive work so a crash
+  // mid-run leaves a tombstone explaining what was attempted.
+  auditJobIds = [];
+  for (const sp of specialties) {
     const { data: jobRow, error: jobErr } = await supabase
       .from("board_gen_jobs")
       .insert({
         trigger: "daily",
-        specialty_slug: today.specialty_slug,
-        target_count: 30,
+        specialty_slug: sp.slug,
+        target_count: 1,
         status: "running",
         started_at: new Date().toISOString(),
         attempts: 1,
@@ -379,246 +508,136 @@ async function run() {
       .select("id")
       .single();
     if (jobErr) {
-      console.error(`Could not open audit row: ${jobErr.message}`);
-    } else {
-      jobId = jobRow.id;
+      console.error(`Could not open audit row for ${sp.slug}: ${jobErr.message}`);
     }
+    auditJobIds.push({ slug: sp.slug, id: jobRow?.id ?? null });
   }
+  const jobIdBySlug = new Map(auditJobIds.map((j) => [j.slug, j.id]));
 
-  const subjectRow = await findSubjectForSection(
-    today.specialty_slug,
-    today.section_code
-  );
-  if (!subjectRow) {
-    const msg = `No mcq_subject found for ${today.specialty_slug}/${today.section_code} — skipping`;
-    console.error(msg);
-    if (jobId) {
-      await supabase
-        .from("board_gen_jobs")
-        .update({
-          status: "skipped",
-          error: msg.slice(0, 500),
-          completed_at: new Date().toISOString(),
-        })
-        .eq("id", jobId);
-    }
-    return;
-  }
-
-  // Already computed by the deficit-aware picker above
-  const existing = today.existing;
-
-  const totalCount = today.peds_count + today.adult_count + today.other_count;
-  const pedsRatio = totalCount > 0 ? today.peds_count / totalCount : 0.2;
-  const adultRatio = totalCount > 0 ? today.adult_count / totalCount : 0.8;
-
-  const easyPrompt = buildPrompt({
-    specialtyNameTh: today.specialty_name_th,
-    specialtySlug: today.specialty_slug,
-    sectionLabelTh: today.section_label_th,
-    topicNameTh: today.topic_name_th,
-    topicSlug: today.topic_slug,
-    pedsRatio,
-    adultRatio,
-    count: 6,
-    difficultyInstruction:
-      "สร้างเฉพาะข้อง่าย (easy) 6 ข้อ — เน้น recall ข้อเท็จจริงพื้นฐาน, drug dose, ECG/imaging classic finding, definition ที่ board ควรรู้",
-    existingCount: existing,
-  });
-  const mediumPrompt = buildPrompt({
-    specialtyNameTh: today.specialty_name_th,
-    specialtySlug: today.specialty_slug,
-    sectionLabelTh: today.section_label_th,
-    topicNameTh: today.topic_name_th,
-    topicSlug: today.topic_slug,
-    pedsRatio,
-    adultRatio,
-    count: 15,
-    difficultyInstruction:
-      "สร้างเฉพาะข้อปานกลาง (medium) 15 ข้อ — เน้น first-line management, indication ของ procedure, การเลือก investigation ที่เหมาะสมตาม guideline",
-    existingCount: existing,
-  });
-  const hardPrompt = buildPrompt({
-    specialtyNameTh: today.specialty_name_th,
-    specialtySlug: today.specialty_slug,
-    sectionLabelTh: today.section_label_th,
-    topicNameTh: today.topic_name_th,
-    topicSlug: today.topic_slug,
-    pedsRatio,
-    adultRatio,
-    count: 9,
-    difficultyInstruction:
-      "สร้างเฉพาะข้อยาก (hard) 9 ข้อ — เน้น clinical reasoning ระดับ board: complex differential, atypical presentation, การจัดการเคส critical, ethical/system-based question ที่ board test จริงๆ",
-    existingCount: existing,
-  });
-
-  console.log(
-    "Calling Haiku-easy (6q) + Haiku-medium (15q) + Sonnet-hard (9q) in parallel..."
-  );
-  // Board questions carry richer detail (guideline refs, age stratification,
-  // 5-choice deep explanation) than NL Step 2, so the medium batch needs
-  // more headroom — 32k truncates ~12 questions in; 48k clears 15.
-  const [easyResult, mediumResult, hardResult] = await Promise.allSettled([
-    callClaudeWithRetry("haiku-easy", "claude-haiku-4-5-20251001", 16000, easyPrompt),
-    callClaudeWithRetry("haiku-medium", "claude-haiku-4-5-20251001", 48000, mediumPrompt),
-    callClaudeWithRetry("sonnet-hard", "claude-sonnet-4-6", 24000, hardPrompt),
-  ]);
-
-  const allQuestions = [];
-  for (const [label, result] of [
-    ["haiku-easy", easyResult],
-    ["haiku-medium", mediumResult],
-    ["sonnet-hard", hardResult],
-  ]) {
-    if (result.status === "fulfilled") {
-      console.log(`${label}: ${result.value.length} questions`);
-      allQuestions.push(...result.value);
-    } else {
-      console.error(
-        `${label} batch failed: ${result.reason?.message ?? result.reason}`
-      );
-    }
-  }
-
-  if (allQuestions.length === 0) {
-    const msg = "All batches failed — nothing to insert";
-    console.error(msg);
-    if (jobId) {
-      await supabase
-        .from("board_gen_jobs")
-        .update({
-          status: "error",
-          error: msg,
-          completed_at: new Date().toISOString(),
-        })
-        .eq("id", jobId);
-    }
-    await notifyCronFailure("generate-board-daily", new Error(msg));
-    process.exit(1);
-  }
-
-  const validQuestions = allQuestions
-    .filter(
-      (q) =>
-        q.scenario &&
-        Array.isArray(q.choices) &&
-        q.choices.length >= 4 &&
-        q.correct_answer &&
-        ["A", "B", "C", "D", "E"].includes(q.correct_answer)
-    )
-    .map((q) => ({
-      subject_id: subjectRow.id,
-      audience: "board",
-      exam_type: null,
-      board_specialty: today.specialty_slug,
-      board_section: today.section_code,
-      board_topic: today.topic_slug,
-      board_age_group: ["peds", "adult", "mixed"].includes(q.age_group)
-        ? q.age_group
-        : null,
-      reference_source: q.reference || null,
-      exam_source: "AI-generated-board-daily",
-      scenario: q.scenario,
-      choices: q.choices,
-      correct_answer: q.correct_answer,
-      explanation: q.explanation || null,
-      detailed_explanation: q.detailed_explanation || null,
-      difficulty: ["easy", "medium", "hard"].includes(q.difficulty)
-        ? q.difficulty
-        : "medium",
-      is_ai_enhanced: true,
-      ai_notes: `Auto-generated board ${now.toISOString().split("T")[0]} | ${
-        q.difficulty === "hard" ? "sonnet" : "haiku"
-      } | topic=${today.topic_slug}`,
-      status: "active",
-    }));
-
-  console.log(
-    `Valid questions after filter: ${validQuestions.length}/${allQuestions.length}`
-  );
-
-  if (validQuestions.length === 0) {
-    const msg = "No valid questions after validation";
-    console.error(msg);
-    if (jobId) {
-      await supabase
-        .from("board_gen_jobs")
-        .update({
-          status: "error",
-          error: msg,
-          completed_at: new Date().toISOString(),
-        })
-        .eq("id", jobId);
-    }
-    await notifyCronFailure("generate-board-daily", new Error(msg));
-    process.exit(1);
-  }
-
-  const { data: inserted, error: insertErr } = await supabase
-    .from("mcq_questions")
-    .insert(validQuestions)
-    .select("id");
-
-  if (insertErr) {
-    const msg = `Insert failed: ${insertErr.message}`;
-    console.error(msg);
-    if (jobId) {
-      await supabase
-        .from("board_gen_jobs")
-        .update({
-          status: "error",
-          error: msg.slice(0, 500),
-          completed_at: new Date().toISOString(),
-        })
-        .eq("id", jobId);
-    }
-    await notifyCronFailure("generate-board-daily", new Error(msg));
-    process.exit(1);
-  }
-
-  // Update question_count for this section's subject
-  const { count: newTotal } = await supabase
-    .from("mcq_questions")
-    .select("id", { count: "exact", head: true })
-    .eq("subject_id", subjectRow.id)
-    .eq("status", "active");
-
-  await supabase
-    .from("mcq_subjects")
-    .update({ question_count: newTotal ?? 0 })
-    .eq("id", subjectRow.id);
-
-  const easy = validQuestions.filter((q) => q.difficulty === "easy").length;
-  const medium = validQuestions.filter((q) => q.difficulty === "medium").length;
-  const hard = validQuestions.filter((q) => q.difficulty === "hard").length;
-
-  const summaryLine = `${today.specialty_slug}/${today.section_code}/${today.topic_slug} — inserted ${
-    inserted?.length ?? 0
-  } (easy=${easy} medium=${medium} hard=${hard}); subject total ${newTotal ?? 0}`;
-  console.log(`Inserted ${inserted?.length ?? 0} board questions: easy=${easy} medium=${medium} hard=${hard}`);
-  console.log(`Total in subject "${subjectRow.name_th}": ${newTotal ?? 0}`);
-
-  // Daily script inserts directly as status='active' (no critique gate), so
-  // drafted_count is always 0. Leave room to populate if we add a critique
-  // step later.
-  if (jobId) {
-    await supabase
-      .from("board_gen_jobs")
-      .update({
-        status: "done",
-        generated_count: inserted?.length ?? 0,
-        drafted_count: 0,
-        completed_at: new Date().toISOString(),
+  // Generate all specialties in parallel — each issues its own Claude call.
+  const settled = await Promise.allSettled(
+    specialties.map((sp, idx) =>
+      generateForSpecialty({
+        slug: sp.slug,
+        nameTh: sp.nameTh,
+        topics: sp.topics,
+        countByKey,
+        dayOfYear,
+        specialtyIndex: idx,
       })
-      .eq("id", jobId);
+    )
+  );
+
+  const perSpecialty = [];
+  const rowsToInsert = [];
+  settled.forEach((r, idx) => {
+    if (r.status === "fulfilled") {
+      perSpecialty.push(r.value);
+      if (r.value.row) rowsToInsert.push(r.value);
+    } else {
+      perSpecialty.push({
+        slug: specialties[idx].slug,
+        error: r.reason?.message ?? String(r.reason),
+      });
+    }
+  });
+
+  // Bulk-insert every generated question in one shot.
+  if (rowsToInsert.length > 0) {
+    const { error: insertErr } = await supabase
+      .from("mcq_questions")
+      .insert(rowsToInsert.map((x) => x.row));
+    if (insertErr) {
+      const msg = `Insert failed: ${insertErr.message}`;
+      console.error(msg);
+      for (const j of auditJobIds) {
+        if (j.id) {
+          await supabase
+            .from("board_gen_jobs")
+            .update({
+              status: "error",
+              error: msg.slice(0, 500),
+              completed_at: new Date().toISOString(),
+            })
+            .eq("id", j.id);
+        }
+      }
+      await notifyCronFailure("generate-board-daily", new Error(msg));
+      process.exit(1);
+    }
   }
 
-  await notifyCronSuccess("generate-board-daily", summaryLine);
+  // Refresh question_count for every subject that received a question.
+  const subjectIds = [...new Set(rowsToInsert.map((x) => x.subjectRow.id))];
+  for (const sid of subjectIds) {
+    const { count: newTotal } = await supabase
+      .from("mcq_questions")
+      .select("id", { count: "exact", head: true })
+      .eq("subject_id", sid)
+      .eq("status", "active");
+    await supabase
+      .from("mcq_subjects")
+      .update({ question_count: newTotal ?? 0 })
+      .eq("id", sid);
+  }
+
+  // Close audit rows + build the summary.
+  const summaryParts = [];
+  for (const res of perSpecialty) {
+    const jobId = jobIdBySlug.get(res.slug);
+    if (res.row) {
+      if (jobId) {
+        await supabase
+          .from("board_gen_jobs")
+          .update({
+            status: "done",
+            generated_count: 1,
+            drafted_count: 0,
+            completed_at: new Date().toISOString(),
+          })
+          .eq("id", jobId);
+      }
+      summaryParts.push(
+        `${res.slug}: +1 (${res.chosen.section_code}/${res.chosen.topic_slug})`
+      );
+    } else {
+      if (jobId) {
+        await supabase
+          .from("board_gen_jobs")
+          .update({
+            status: "error",
+            error: (res.error ?? "unknown").slice(0, 500),
+            completed_at: new Date().toISOString(),
+          })
+          .eq("id", jobId);
+      }
+      summaryParts.push(`${res.slug}: FAIL (${res.error ?? "unknown"})`);
+    }
+  }
+
+  const okCount = perSpecialty.filter((r) => r.row).length;
+  const summary =
+    `Daily board drip: ${okCount}/${specialties.length} specialties +1 question\n` +
+    summaryParts.join("\n");
+  console.log(summary);
+
+  if (okCount === 0) {
+    await notifyCronFailure(
+      "generate-board-daily",
+      new Error("All specialties failed to generate")
+    );
+    process.exit(1);
+  }
+
+  await notifyCronSuccess("generate-board-daily", summary);
 }
 
 run().catch(async (err) => {
   console.error("Fatal:", err);
-  if (jobId) {
+  // Flip any audit rows still in 'running' (the ones whose specialty never got
+  // closed) to 'error'. Rows already 'done' are guarded by the status filter.
+  for (const j of auditJobIds) {
+    if (!j.id) continue;
     try {
       await supabase
         .from("board_gen_jobs")
@@ -627,7 +646,8 @@ run().catch(async (err) => {
           error: (err?.message ?? String(err)).slice(0, 500),
           completed_at: new Date().toISOString(),
         })
-        .eq("id", jobId);
+        .eq("id", j.id)
+        .eq("status", "running");
     } catch (updateErr) {
       console.error("Could not flip audit row to error:", updateErr);
     }
