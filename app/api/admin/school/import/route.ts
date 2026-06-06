@@ -5,12 +5,14 @@ import { createClient } from "@/lib/supabase/server";
 const MODEL = "claude-sonnet-4-6";
 
 export const runtime = "nodejs";
-export const maxDuration = 60;
+export const maxDuration = 300;
+
+type Mode = "faithful" | "expand" | "deep";
 
 const EXTRACT_TOOL: Anthropic.Tool = {
   name: "submit_extracted_content",
   description:
-    "Submit a lesson + flashcards + quizzes extracted from the source material.",
+    "Submit a lesson + flashcards + quizzes extracted (and optionally expanded) from the source material.",
   input_schema: {
     type: "object",
     properties: {
@@ -21,21 +23,22 @@ const EXTRACT_TOOL: Anthropic.Tool = {
           body_md: {
             type: "string",
             description:
-              "Markdown lesson split into 2-4 parts. Between consecutive parts put a `## ⏸ Mini Quiz` marker line, and immediately after each marker embed ONE quiz that tests the part just above it, as a fenced ```quiz block containing JSON: " +
+              "Markdown lesson split into 2-6 parts. Between consecutive parts put a `## ⏸ Mini Quiz` marker line, and immediately after each marker embed ONE quiz that tests the part just above it, as a fenced ```quiz block containing JSON: " +
               '{ "stem": string, "choices": [{ "label": "A"|"B"|"C"|"D", "text": string }], "correct_answer": "A"|"B"|"C"|"D", "explanation": string }. ' +
-              "The inline quiz MUST be answerable from the part directly above it. Each part should be 2-4 short paragraphs.",
+              "The inline quiz MUST be answerable from the part directly above it. " +
+              "In expand/deep modes, also include sections: ## 🧠 Why it matters, ## 🔑 Key concepts, ## 💡 Clinical pearls, ## 🎯 Mnemonics (when applicable), ## 🔗 Connections to other topics.",
           },
           layer: {
             type: "string",
             enum: ["foundation", "anatomy", "physio", "biochem", "path", "pharm", "clinical"],
           },
-          estimated_min: { type: "integer", minimum: 1, maximum: 60 },
+          estimated_min: { type: "integer", minimum: 1, maximum: 120 },
         },
         required: ["title", "body_md", "layer", "estimated_min"],
       },
       flashcards: {
         type: "array",
-        description: "10-20 atomic flashcards extracted from the material.",
+        description: "Atomic flashcards. faithful: 10-20, expand: 20-35, deep: 30-50.",
         items: {
           type: "object",
           properties: {
@@ -48,7 +51,7 @@ const EXTRACT_TOOL: Anthropic.Tool = {
       },
       quizzes: {
         type: "array",
-        description: "5-10 multiple-choice questions.",
+        description: "Multiple-choice questions. faithful: 5-10, expand: 10-15, deep: 15-25.",
         items: {
           type: "object",
           properties: {
@@ -78,23 +81,94 @@ const EXTRACT_TOOL: Anthropic.Tool = {
   },
 };
 
-const SYSTEM_PROMPT = `You are a medical educator extracting micro-learning units from source material for Thai medical school students.
+const SYSTEM_BASE = `You are an expert medical educator creating micro-learning units for Thai medical students (นักศึกษาแพทย์ Y1-Y6).
 
-Output via submit_extracted_content:
-1. lesson — markdown body split into 2-4 parts using \`## ⏸ Mini Quiz\` marker between parts. Immediately after each marker, embed ONE inline quiz that tests the part directly above it, as a fenced \`\`\`quiz block of JSON ({ stem, choices:[{label,text}], correct_answer, explanation }). The inline quiz must be answerable from the part above. Keep each part under 200 words.
-2. flashcards — 10-20 atomic concept cards. Front = concept/question (under 100 chars). Back = concise answer (1-3 sentences, under 300 chars).
-3. quizzes — 5-10 MCQs with 4-5 options + correct answer + 1-2 sentence explanation. These feed the topic question bank and end-of-lesson retrieval (separate from the inline mini-quizzes above).
+Audience context:
+- Thai medical students study with mixed Thai + English medical terminology.
+- Source material is often summary notes from senior students (รุ่นพี่) — concise, often missing foundational context that the senior assumed the reader knew.
+- Students need to BOTH pass exams (NL/comprehensive) AND understand for clinical practice.
 
-Rules:
-- Use Thai mixed with English medical terms (Thai med students study in mixed language).
-- Stay faithful — do not invent facts not in the source.
-- Prefer clinically relevant content over rote trivia when possible.
-- Mix difficulty: roughly 30% easy / 50% medium / 20% hard.`;
+Output via the submit_extracted_content tool:
 
-function maxOutputTokensFor(_payloadLen: number) {
-  // Always reserve enough headroom for full output
-  return 12000;
-}
+1. **lesson.body_md** — markdown lesson split into clearly-marked parts.
+   - Use \`## ⏸ Mini Quiz\` between consecutive parts.
+   - Immediately after each marker, embed ONE inline quiz as a fenced \`\`\`quiz block of JSON: { stem, choices:[{label,text}], correct_answer, explanation }. The quiz must be answerable from the part directly above it.
+   - Use Thai mixed with English medical terms (the natural language of Thai med students).
+   - Format math/equations in plain text — no LaTeX.
+
+2. **flashcards** — atomic concept cards.
+   - Front = concept/question (under 120 chars).
+   - Back = concise answer (1-4 sentences, under 400 chars).
+   - Mix difficulty: ~30% easy / 50% medium / 20% hard.
+
+3. **quizzes** — MCQs with 4-5 options + correct answer + 1-3 sentence explanation. These feed the topic question bank (separate from inline mini-quizzes).
+
+General quality rules:
+- Prefer clinically relevant content over rote trivia.
+- Use concrete examples, not abstract definitions.
+- When you state a mechanism, briefly explain WHY (cause → effect chain).`;
+
+const MODE_INSTRUCTIONS: Record<Mode, string> = {
+  faithful: `MODE: FAITHFUL EXTRACTION
+- Stay strictly to what's in the source material.
+- Do NOT add facts, examples, or context not present in the source.
+- Output: 1 lesson (2-4 parts), 10-20 flashcards, 5-10 quizzes.
+- Use this mode when the source is authoritative (textbook, lecture).`,
+
+  expand: `MODE: EXPAND FOR UNDERSTANDING
+The source is a senior student's summary — often condensed and missing foundational context. Your job is to make it learnable for a student who is seeing this topic for the first time.
+
+You MAY and SHOULD:
+- Fill in foundational concepts the source assumes (anatomy, physiology basics, prerequisites).
+- Add concrete clinical examples and patient scenarios.
+- Add analogies that help intuition (เปรียบเทียบกับสิ่งใกล้ตัว).
+- Add Thai mnemonics (สูตรช่วยจำ) where they aid memorization.
+- Add "Why it matters" framing — when/why a clinician needs this knowledge.
+- Connect to other topics in the medical curriculum.
+- Add clinical pearls (high-yield points for NL/ward).
+
+You MUST NOT:
+- Invent facts that contradict the source.
+- Add speculative/unverified information.
+- Skip topics from the source.
+
+Lesson structure (use these sections):
+  ## 🧠 Why it matters
+  ## 🔑 Key concepts (split into 2-4 parts with mini-quizzes between)
+  ## 💡 Clinical pearls
+  ## 🎯 Mnemonics (optional)
+  ## 🔗 Connections to other topics
+
+Output: 1 lesson (longer, 4-6 parts), 20-35 flashcards, 10-15 quizzes.
+estimated_min: 15-30.`,
+
+  deep: `MODE: DEEP DIVE
+Same expansion rules as EXPAND mode, but go further:
+- Detailed mechanisms with step-by-step pathophysiology.
+- Multiple clinical scenarios per concept (Y3-Y6 ward perspective).
+- Common exam pitfalls and high-yield distinctions (e.g., "Don't confuse X with Y because…").
+- Include differential diagnosis thinking where relevant.
+- Add 'classic exam questions' style quizzes (NL/USMLE-style clinical vignettes).
+
+Lesson structure:
+  ## 🧠 Why it matters
+  ## 📚 Foundation review (prerequisites)
+  ## 🔑 Key concepts (split into 3-6 parts with mini-quizzes between)
+  ## 🩺 Clinical application (cases)
+  ## 💡 Clinical pearls + high-yield
+  ## ⚠️ Common pitfalls
+  ## 🎯 Mnemonics
+  ## 🔗 Connections to other topics
+
+Output: 1 lesson (long, 5-8 parts), 30-50 flashcards, 15-25 quizzes.
+estimated_min: 25-45.`,
+};
+
+const OUTPUT_TOKENS: Record<Mode, number> = {
+  faithful: 12000,
+  expand: 24000,
+  deep: 40000,
+};
 
 interface ExtractedContent {
   lesson?: {
@@ -107,16 +181,34 @@ interface ExtractedContent {
   quizzes?: unknown[];
 }
 
-async function callExtractor(content: Anthropic.MessageParam["content"]) {
+async function callExtractor(
+  content: Anthropic.MessageParam["content"],
+  mode: Mode,
+) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
     throw new Error("ANTHROPIC_API_KEY not set");
   }
   const client = new Anthropic({ apiKey });
+
+  // Split system into cached base + per-request mode block.
+  // Base is identical across imports → cache hit on subsequent calls.
+  const system: Anthropic.TextBlockParam[] = [
+    {
+      type: "text",
+      text: SYSTEM_BASE,
+      cache_control: { type: "ephemeral" },
+    },
+    {
+      type: "text",
+      text: MODE_INSTRUCTIONS[mode],
+    },
+  ];
+
   const response = await client.messages.create({
     model: MODEL,
-    max_tokens: maxOutputTokensFor(JSON.stringify(content).length),
-    system: SYSTEM_PROMPT,
+    max_tokens: OUTPUT_TOKENS[mode],
+    system,
     tools: [EXTRACT_TOOL],
     tool_choice: { type: "tool", name: "submit_extracted_content" },
     messages: [{ role: "user", content }],
@@ -126,6 +218,11 @@ async function callExtractor(content: Anthropic.MessageParam["content"]) {
     throw new Error("No tool_use returned");
   }
   return tool.input as ExtractedContent;
+}
+
+function parseMode(raw: unknown): Mode {
+  if (raw === "faithful" || raw === "expand" || raw === "deep") return raw;
+  return "expand";
 }
 
 export async function POST(req: NextRequest) {
@@ -149,6 +246,7 @@ export async function POST(req: NextRequest) {
       const form = await req.formData();
       const file = form.get("file");
       const hint = String(form.get("hint") ?? "");
+      const mode = parseMode(form.get("mode"));
       if (!(file instanceof File)) {
         return NextResponse.json({ error: "Missing file" }, { status: 400 });
       }
@@ -175,7 +273,7 @@ export async function POST(req: NextRequest) {
               type: "image",
               source: {
                 type: "base64",
-                media_type: file.type as Anthropic.ImageBlockParam["source"]["media_type"],
+                media_type: file.type as Anthropic.Base64ImageSource["media_type"],
                 data: b64,
               },
             },
@@ -186,17 +284,19 @@ export async function POST(req: NextRequest) {
           }`,
         },
       ];
-      const data = await callExtractor(content);
-      return NextResponse.json(data);
+      const data = await callExtractor(content, mode);
+      return NextResponse.json({ ...data, mode });
     }
 
     // ── Branch 2 — JSON body (text or url)
     const body = (await req.json()) as {
       mode?: "text" | "url";
+      extractMode?: string;
       text?: string;
       url?: string;
       hint?: string;
     };
+    const mode = parseMode(body.extractMode);
     let materialText = "";
     if (body.mode === "text" && body.text) {
       materialText = body.text;
@@ -228,8 +328,8 @@ export async function POST(req: NextRequest) {
         }---\n\n${materialText}`,
       },
     ];
-    const data = await callExtractor(content);
-    return NextResponse.json(data);
+    const data = await callExtractor(content, mode);
+    return NextResponse.json({ ...data, mode });
   } catch (e) {
     console.error("import error", e);
     return NextResponse.json(

@@ -52,9 +52,11 @@ interface Props {
 }
 
 type Mode = "file" | "url" | "text";
+type ExtractMode = "faithful" | "expand" | "deep";
 
 export default function ImportPanel({ topics }: Props) {
   const [mode, setMode] = useState<Mode>("file");
+  const [extractMode, setExtractMode] = useState<ExtractMode>("expand");
   const [file, setFile] = useState<File | null>(null);
   const [url, setUrl] = useState("");
   const [text, setText] = useState("");
@@ -81,6 +83,7 @@ export default function ImportPanel({ topics }: Props) {
         const fd = new FormData();
         fd.append("file", file);
         if (hint) fd.append("hint", hint);
+        fd.append("mode", extractMode);
         res = await fetch("/api/admin/school/import", {
           method: "POST",
           body: fd,
@@ -90,14 +93,14 @@ export default function ImportPanel({ topics }: Props) {
         res = await fetch("/api/admin/school/import", {
           method: "POST",
           headers: { "content-type": "application/json" },
-          body: JSON.stringify({ mode: "url", url, hint }),
+          body: JSON.stringify({ mode: "url", url, hint, extractMode }),
         });
       } else {
         if (!text) throw new Error("ใส่ text");
         res = await fetch("/api/admin/school/import", {
           method: "POST",
           headers: { "content-type": "application/json" },
-          body: JSON.stringify({ mode: "text", text, hint }),
+          body: JSON.stringify({ mode: "text", text, hint, extractMode }),
         });
       }
       if (!res.ok) {
@@ -178,8 +181,52 @@ export default function ImportPanel({ topics }: Props) {
             <Sparkles className="h-4 w-4 text-violet-600" /> Import + AI Generate
           </h3>
           <p className="text-xs text-muted-foreground">
-            Upload PDF / Image / URL / text → AI สรุปเป็น lesson + flashcards + quizzes ให้ → preview + แก้ + กดบันทึก
+            Upload PDF / Image / URL / text → AI สรุป (และขยาย) เป็น lesson + flashcards + quizzes → preview + แก้ + กดบันทึก
           </p>
+        </div>
+
+        {/* Extract depth */}
+        <div className="rounded-lg border bg-violet-50/30 p-3 space-y-2">
+          <p className="text-xs font-semibold text-violet-900">
+            ✨ ระดับการขยายเนื้อหา
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            {(
+              [
+                {
+                  key: "faithful",
+                  label: "📋 ตามต้นฉบับ",
+                  desc: "ไม่เพิ่มเนื้อหา ใช้กับ lecture/ตำรา",
+                },
+                {
+                  key: "expand",
+                  label: "✨ ขยาย (แนะนำ)",
+                  desc: "เพิ่ม foundation, clinical pearls, mnemonics — เหมาะกับสรุปจากรุ่นพี่",
+                },
+                {
+                  key: "deep",
+                  label: "🔬 ละเอียดสูงสุด",
+                  desc: "Deep dive + cases + pitfalls (ใช้เวลา 40-90s)",
+                },
+              ] as const
+            ).map((opt) => (
+              <button
+                key={opt.key}
+                type="button"
+                onClick={() => setExtractMode(opt.key)}
+                className={`text-left rounded border p-2 text-xs transition ${
+                  extractMode === opt.key
+                    ? "border-violet-500 bg-violet-100 ring-1 ring-violet-300"
+                    : "border-border bg-card hover:border-violet-300"
+                }`}
+              >
+                <div className="font-semibold">{opt.label}</div>
+                <div className="text-muted-foreground mt-0.5 leading-tight">
+                  {opt.desc}
+                </div>
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Mode tabs */}
@@ -257,11 +304,21 @@ export default function ImportPanel({ topics }: Props) {
         <Button onClick={extract} disabled={loading} className="gap-2">
           {loading ? (
             <>
-              <Loader2 className="h-4 w-4 animate-spin" /> AI กำลังสรุป… (อาจใช้ 20-40s สำหรับ PDF ใหญ่)
+              <Loader2 className="h-4 w-4 animate-spin" />
+              {extractMode === "deep"
+                ? "AI กำลัง deep-dive… (60-120s)"
+                : extractMode === "expand"
+                  ? "AI กำลังขยายเนื้อหา… (30-60s)"
+                  : "AI กำลังสรุป… (20-40s)"}
             </>
           ) : (
             <>
-              <Sparkles className="h-4 w-4" /> Extract ด้วย AI
+              <Sparkles className="h-4 w-4" />
+              {extractMode === "faithful"
+                ? "Extract"
+                : extractMode === "expand"
+                  ? "Extract + ขยายเนื้อหา"
+                  : "Extract + Deep Dive"}
             </>
           )}
         </Button>
