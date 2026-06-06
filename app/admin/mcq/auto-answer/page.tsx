@@ -38,6 +38,7 @@ export default function AutoAnswerPage() {
 
   const [examSource, setExamSource] = useState("all");
   const [subjectId, setSubjectId] = useState("all");
+  const [audience, setAudience] = useState<"student" | "board">("student");
   const [onlyUnanswered, setOnlyUnanswered] = useState(true);
   const [model, setModel] = useState<"haiku" | "sonnet">("haiku");
   const [maxCount, setMaxCount] = useState(100);
@@ -49,7 +50,7 @@ export default function AutoAnswerPage() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    async function load() {
+    async function checkAdmin() {
       const supabase = createClient();
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) { router.push("/login"); return; }
@@ -57,9 +58,20 @@ export default function AutoAnswerPage() {
         .from("profiles").select("role").eq("id", user.id).single();
       if (profile?.role !== "admin") { setLoading(false); return; }
       setIsAdmin(true);
+      setLoading(false);
+    }
+    checkAdmin();
+  }, [router]);
 
+  // (Re)load subject + ปี/ชุด filters for the chosen audience (student / board).
+  useEffect(() => {
+    if (!isAdmin) return;
+    setSubjectId("all");
+    setExamSource("all");
+    async function loadFilters() {
+      const supabase = createClient();
       const sRes = await supabase
-        .from("mcq_subjects").select("id, name_th").eq("audience", "student").order("name_th");
+        .from("mcq_subjects").select("id, name_th").eq("audience", audience).order("name_th");
       setSubjects((sRes.data as SubjectOpt[]) ?? []);
 
       const sources = new Set<string>();
@@ -67,7 +79,7 @@ export default function AutoAnswerPage() {
       for (let from = 0; ; from += CHUNK) {
         const { data, error } = await supabase
           .from("mcq_questions").select("exam_source")
-          .eq("status", "review").eq("audience", "student")
+          .eq("status", "review").eq("audience", audience)
           .range(from, from + CHUNK - 1);
         if (error || !data || data.length === 0) break;
         for (const r of data as { exam_source: string | null }[]) {
@@ -76,10 +88,9 @@ export default function AutoAnswerPage() {
         if (data.length < CHUNK) break;
       }
       setExamSources([...sources].sort());
-      setLoading(false);
     }
-    load();
-  }, [router]);
+    loadFilters();
+  }, [isAdmin, audience]);
 
   async function onRun() {
     setError(null);
@@ -92,7 +103,7 @@ export default function AutoAnswerPage() {
       .from("mcq_questions")
       .select("id, scenario, choices")
       .eq("status", "review")
-      .eq("audience", "student")
+      .eq("audience", audience)
       .order("created_at", { ascending: true })
       .limit(Math.min(Math.max(maxCount, 1), 500));
     if (examSource !== "all") q = q.eq("exam_source", examSource);
@@ -190,6 +201,24 @@ export default function AutoAnswerPage() {
 
       <Card>
         <CardContent className="p-6 space-y-4">
+          <div className="flex gap-2">
+            {(["student", "board"] as const).map((a) => (
+              <button
+                key={a}
+                type="button"
+                onClick={() => setAudience(a)}
+                disabled={running}
+                className={`px-4 py-1.5 rounded-md text-sm font-medium border transition-colors ${
+                  audience === a
+                    ? "bg-brand text-white border-brand"
+                    : "bg-white text-muted-foreground border-gray-200 hover:bg-muted"
+                }`}
+              >
+                {a === "student" ? "นศพ. (NL)" : "Board"}
+              </button>
+            ))}
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="text-xs text-muted-foreground block mb-1">ปี/ชุด</label>
