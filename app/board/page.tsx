@@ -1,7 +1,11 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, GraduationCap } from "lucide-react";
-import { getBoardSpecialties } from "@/lib/supabase/queries-board";
+import { ArrowLeft, GraduationCap, CircleCheckBig, Loader2 } from "lucide-react";
+import {
+  getBoardSpecialties,
+  getBoardSpecialtyMetrics,
+} from "@/lib/supabase/queries-board";
+import { sumBoardMetrics } from "@/lib/types-board";
 import BoardSpecialtyCard from "@/components/BoardSpecialtyCard";
 import type { Metadata } from "next";
 
@@ -21,8 +25,13 @@ export const metadata: Metadata = {
 export const revalidate = 300;
 
 export default async function BoardPage() {
-  const specialties = await getBoardSpecialties();
+  const [specialties, metrics] = await Promise.all([
+    getBoardSpecialties(),
+    getBoardSpecialtyMetrics(),
+  ]);
   const publishedCount = specialties.filter((s) => s.is_published).length;
+  const totals = sumBoardMetrics(metrics);
+  const fmt = (n: number) => n.toLocaleString("th-TH");
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
@@ -41,6 +50,18 @@ export default async function BoardPage() {
           <Badge variant="secondary">
             {publishedCount} / {specialties.length} สาขา เปิดแล้ว
           </Badge>
+          {totals.active > 0 && (
+            <Badge className="gap-1 bg-emerald-100 text-emerald-700">
+              <CircleCheckBig className="h-3 w-3" />
+              {fmt(totals.active)} ข้อ พร้อมฝึก
+            </Badge>
+          )}
+          {totals.pending > 0 && (
+            <Badge className="gap-1 bg-amber-100 text-amber-700">
+              <Loader2 className="h-3 w-3 animate-spin" />
+              กำลังจัดทำอีก {fmt(totals.pending)} ข้อ
+            </Badge>
+          )}
         </div>
         <h1 className="text-3xl font-bold">
           เตรียมสอบบอร์ดเฉพาะทาง
@@ -49,11 +70,24 @@ export default async function BoardPage() {
           ฝึกข้อสอบ MCQ ตาม Blueprint จริงของแต่ละราชวิทยาลัยฯ —
           ทบทวนหัวข้อตรงโครงสอบ ปรับคะแนนตามจุดอ่อนของตัวเอง
         </p>
+        {totals.projectedTotal > 0 && (
+          <p className="mt-2 text-sm text-muted-foreground max-w-2xl">
+            ตอนนี้มีข้อสอบในคลังรวม{" "}
+            <strong className="text-foreground">{fmt(totals.projectedTotal)} ข้อ</strong>{" "}
+            ทุกสาขา
+            {totals.pending > 0 && (
+              <>
+                {" "}— และกำลังเพิ่มอีก{" "}
+                <strong className="text-foreground">{fmt(totals.pending)} ข้อ</strong>
+              </>
+            )}
+          </p>
+        )}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {specialties.map((s) => (
-          <BoardSpecialtyCard key={s.slug} specialty={s} />
+          <BoardSpecialtyCard key={s.slug} specialty={s} metrics={metrics[s.slug]} />
         ))}
       </div>
 

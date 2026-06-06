@@ -48,6 +48,73 @@ export interface BlueprintWithTopics extends BoardExamBlueprint {
   topics: BoardTopicCategory[];
 }
 
+/** Live exam-bank counts shown to customers for transparency / trust.
+ *  - active:     ผ่าน QA แล้ว เปิดให้ฝึกได้ (status='active')
+ *  - review:     AI สร้างแล้ว รอตรวจ (status='review')
+ *  - generating: เป้าที่ยังเหลือในคิว board_gen_jobs (queued/running)
+ *  - pending:    review + generating = "กำลังจัดทำ"
+ *  - projectedTotal: active + pending = ข้อสอบทั้งหมดที่จะมี */
+export interface BoardSpecialtyMetrics {
+  active: number;
+  review: number;
+  generating: number;
+  pending: number;
+  projectedTotal: number;
+}
+
+/** Raw row shape from the `board_specialty_metrics()` RPC. Postgres `bigint`
+ *  may arrive as number or string depending on size, so we coerce with Number. */
+export interface BoardMetricRow {
+  specialty_slug: string;
+  active_count: number | string;
+  review_count: number | string;
+  generating_count: number | string;
+}
+
+export function toBoardMetrics(row: {
+  active_count: number | string;
+  review_count: number | string;
+  generating_count: number | string;
+}): BoardSpecialtyMetrics {
+  const active = Number(row.active_count) || 0;
+  const review = Number(row.review_count) || 0;
+  const generating = Number(row.generating_count) || 0;
+  const pending = review + generating;
+  return { active, review, generating, pending, projectedTotal: active + pending };
+}
+
+export function buildBoardMetricsMap(
+  rows: BoardMetricRow[]
+): Record<string, BoardSpecialtyMetrics> {
+  const map: Record<string, BoardSpecialtyMetrics> = {};
+  for (const row of rows) map[row.specialty_slug] = toBoardMetrics(row);
+  return map;
+}
+
+export const EMPTY_BOARD_METRICS: BoardSpecialtyMetrics = {
+  active: 0,
+  review: 0,
+  generating: 0,
+  pending: 0,
+  projectedTotal: 0,
+};
+
+/** Roll up per-specialty metrics into a single platform-wide total. */
+export function sumBoardMetrics(
+  map: Record<string, BoardSpecialtyMetrics>
+): BoardSpecialtyMetrics {
+  return Object.values(map).reduce<BoardSpecialtyMetrics>(
+    (acc, m) => ({
+      active: acc.active + m.active,
+      review: acc.review + m.review,
+      generating: acc.generating + m.generating,
+      pending: acc.pending + m.pending,
+      projectedTotal: acc.projectedTotal + m.projectedTotal,
+    }),
+    { ...EMPTY_BOARD_METRICS }
+  );
+}
+
 /** Narrow type — board question always has board_specialty + section */
 export type BoardQuestion = McqQuestion & {
   audience: "board";

@@ -4,7 +4,10 @@ import type {
   BoardExamBlueprint,
   BoardTopicCategory,
   BlueprintWithTopics,
+  BoardSpecialtyMetrics,
+  BoardMetricRow,
 } from "../types-board";
+import { buildBoardMetricsMap } from "../types-board";
 import type { McqSubject, McqQuestion } from "../types-mcq";
 
 export async function getBoardSpecialties(): Promise<BoardSpecialty[]> {
@@ -114,6 +117,24 @@ export async function getBoardQuestionStats(
     bySection[key] = (bySection[key] || 0) + 1;
   }
   return { total: data.length, bySection };
+}
+
+/** Live exam-bank counts for every active specialty, keyed by slug.
+ *  Powers the transparency badges customers see on /board and /board/[slug].
+ *  Backed by the `board_specialty_metrics()` SECURITY DEFINER RPC so we can
+ *  count `review` questions (which RLS hides from non-admins). Returns an
+ *  empty map (callers fall back to the static count) if the RPC is missing —
+ *  e.g. before the migration has been applied. */
+export async function getBoardSpecialtyMetrics(): Promise<
+  Record<string, BoardSpecialtyMetrics>
+> {
+  const supabase = await createClient();
+  const { data, error } = await supabase.rpc("board_specialty_metrics");
+  if (error || !data) {
+    if (error) console.error("Error fetching board specialty metrics:", error);
+    return {};
+  }
+  return buildBoardMetricsMap(data as BoardMetricRow[]);
 }
 
 export interface BoardMockSample {

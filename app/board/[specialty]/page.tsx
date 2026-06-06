@@ -7,8 +7,10 @@ import {
   getBoardSpecialty,
   getBoardBlueprint,
   getBoardQuestionStats,
+  getBoardSpecialtyMetrics,
 } from "@/lib/supabase/queries-board";
 import BoardBlueprintTable from "@/components/BoardBlueprintTable";
+import { BoardCountPanel } from "@/components/BoardExamCounts";
 import { BOARD_SECTIONS, BOARD_SPECIALTY_SLUGS } from "@/lib/types-board";
 import type { Metadata } from "next";
 
@@ -44,10 +46,12 @@ export default async function BoardSpecialtyPage({
   const s = await getBoardSpecialty(specialty);
   if (!s) return notFound();
 
-  const [blueprints, stats] = await Promise.all([
+  const [blueprints, stats, metricsMap] = await Promise.all([
     getBoardBlueprint(specialty),
     getBoardQuestionStats(specialty),
+    getBoardSpecialtyMetrics(),
   ]);
+  const metrics = metricsMap[specialty];
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
@@ -94,6 +98,12 @@ export default async function BoardSpecialtyPage({
           </div>
         </div>
       </div>
+
+      {(metrics?.projectedTotal ?? s.total_mcq_count ?? 0) > 0 && (
+        <div className="mb-6">
+          <BoardCountPanel metrics={metrics} fallbackTotal={s.total_mcq_count} />
+        </div>
+      )}
 
       {!s.is_published && (
         <Card className="mb-6 border-dashed">

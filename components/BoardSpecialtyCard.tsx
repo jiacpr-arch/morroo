@@ -1,13 +1,16 @@
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, BookOpenCheck, Stethoscope, MessageSquare } from "lucide-react";
-import type { BoardSpecialty } from "@/lib/types-board";
+import { ArrowRight, Stethoscope, MessageSquare } from "lucide-react";
+import type { BoardSpecialty, BoardSpecialtyMetrics } from "@/lib/types-board";
+import { BoardCountBadges } from "@/components/BoardExamCounts";
 
 export default function BoardSpecialtyCard({
   specialty,
+  metrics,
 }: {
   specialty: BoardSpecialty;
+  metrics?: BoardSpecialtyMetrics;
 }) {
   const isPublished = specialty.is_published;
   const card = (
@@ -49,10 +52,10 @@ export default function BoardSpecialtyCard({
         )}
 
         <div className="flex flex-wrap gap-1.5 mb-4">
-          <Badge variant="outline" className="gap-1 text-xs">
-            <BookOpenCheck className="h-3 w-3" />
-            MCQ {specialty.total_mcq_count ?? "?"} ข้อ
-          </Badge>
+          <BoardCountBadges
+            metrics={metrics}
+            fallbackTotal={specialty.total_mcq_count}
+          />
           {specialty.has_long_case && (
             <Badge variant="outline" className="gap-1 text-xs">
               <Stethoscope className="h-3 w-3" />
