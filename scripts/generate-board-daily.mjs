@@ -32,6 +32,10 @@ if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY || !ANTHROPIC_API_KEY) {
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
+// Module-scoped so the top-level catch can flip the row to 'error' even when
+// failures happen after the row is created but before the explicit try/catch.
+let jobId = null;
+
 // Subject name pattern: each section of each specialty has its own mcq_subject row.
 // e.g. emergency_medicine + clinical_decision → "em_clinical_decision"
 // Prefix used as the mcq_subjects.name prefix (must match the seed migrations).
@@ -359,14 +363,45 @@ async function run() {
     `Today (day ${dayOfYear}): ${today.specialty_name_th} · ${today.section_label_th} · ${today.topic_name_th} (${today.topic_slug}) — picked from ${candidates.length} topics tied at ${minCount} existing q`
   );
 
+  // Open audit row in board_gen_jobs BEFORE any expensive work so a crash
+  // mid-run still leaves a tombstone explaining what was attempted.
+  {
+    const { data: jobRow, error: jobErr } = await supabase
+      .from("board_gen_jobs")
+      .insert({
+        trigger: "daily",
+        specialty_slug: today.specialty_slug,
+        target_count: 30,
+        status: "running",
+        started_at: new Date().toISOString(),
+        attempts: 1,
+      })
+      .select("id")
+      .single();
+    if (jobErr) {
+      console.error(`Could not open audit row: ${jobErr.message}`);
+    } else {
+      jobId = jobRow.id;
+    }
+  }
+
   const subjectRow = await findSubjectForSection(
     today.specialty_slug,
     today.section_code
   );
   if (!subjectRow) {
-    console.error(
-      `No mcq_subject found for ${today.specialty_slug}/${today.section_code} — skipping`
-    );
+    const msg = `No mcq_subject found for ${today.specialty_slug}/${today.section_code} — skipping`;
+    console.error(msg);
+    if (jobId) {
+      await supabase
+        .from("board_gen_jobs")
+        .update({
+          status: "skipped",
+          error: msg.slice(0, 500),
+          completed_at: new Date().toISOString(),
+        })
+        .eq("id", jobId);
+    }
     return;
   }
 
@@ -446,7 +481,19 @@ async function run() {
   }
 
   if (allQuestions.length === 0) {
-    console.error("All batches failed — nothing to insert");
+    const msg = "All batches failed — nothing to insert";
+    console.error(msg);
+    if (jobId) {
+      await supabase
+        .from("board_gen_jobs")
+        .update({
+          status: "error",
+          error: msg,
+          completed_at: new Date().toISOString(),
+        })
+        .eq("id", jobId);
+    }
+    await notifyCronFailure("generate-board-daily", new Error(msg));
     process.exit(1);
   }
 
@@ -491,7 +538,19 @@ async function run() {
   );
 
   if (validQuestions.length === 0) {
-    console.error("No valid questions after validation");
+    const msg = "No valid questions after validation";
+    console.error(msg);
+    if (jobId) {
+      await supabase
+        .from("board_gen_jobs")
+        .update({
+          status: "error",
+          error: msg,
+          completed_at: new Date().toISOString(),
+        })
+        .eq("id", jobId);
+    }
+    await notifyCronFailure("generate-board-daily", new Error(msg));
     process.exit(1);
   }
 
@@ -501,7 +560,19 @@ async function run() {
     .select("id");
 
   if (insertErr) {
-    console.error(`Insert failed: ${insertErr.message}`);
+    const msg = `Insert failed: ${insertErr.message}`;
+    console.error(msg);
+    if (jobId) {
+      await supabase
+        .from("board_gen_jobs")
+        .update({
+          status: "error",
+          error: msg.slice(0, 500),
+          completed_at: new Date().toISOString(),
+        })
+        .eq("id", jobId);
+    }
+    await notifyCronFailure("generate-board-daily", new Error(msg));
     process.exit(1);
   }
 
@@ -526,11 +597,41 @@ async function run() {
   } (easy=${easy} medium=${medium} hard=${hard}); subject total ${newTotal ?? 0}`;
   console.log(`Inserted ${inserted?.length ?? 0} board questions: easy=${easy} medium=${medium} hard=${hard}`);
   console.log(`Total in subject "${subjectRow.name_th}": ${newTotal ?? 0}`);
+
+  // Daily script inserts directly as status='active' (no critique gate), so
+  // drafted_count is always 0. Leave room to populate if we add a critique
+  // step later.
+  if (jobId) {
+    await supabase
+      .from("board_gen_jobs")
+      .update({
+        status: "done",
+        generated_count: inserted?.length ?? 0,
+        drafted_count: 0,
+        completed_at: new Date().toISOString(),
+      })
+      .eq("id", jobId);
+  }
+
   await notifyCronSuccess("generate-board-daily", summaryLine);
 }
 
 run().catch(async (err) => {
   console.error("Fatal:", err);
+  if (jobId) {
+    try {
+      await supabase
+        .from("board_gen_jobs")
+        .update({
+          status: "error",
+          error: (err?.message ?? String(err)).slice(0, 500),
+          completed_at: new Date().toISOString(),
+        })
+        .eq("id", jobId);
+    } catch (updateErr) {
+      console.error("Could not flip audit row to error:", updateErr);
+    }
+  }
   await notifyCronFailure("generate-board-daily", err);
   process.exit(1);
 });
