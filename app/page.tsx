@@ -10,6 +10,7 @@ import GoodyEmbed from "@/components/GoodyEmbed";
 import HeroAB from "@/components/HeroAB";
 import PricingViewTracker from "@/components/PricingViewTracker";
 import SocialProofSection from "@/components/SocialProofSection";
+import FeatureShowcase from "@/components/FeatureShowcase";
 import { SocialButtonsRow, LineCtaButton } from "@/components/SocialLinks";
 import { CATEGORIES, PRICING_PLANS } from "@/lib/types";
 import { getExams, getExamPartCounts, sortExamsAvailableFirst } from "@/lib/supabase/queries";
@@ -90,6 +91,9 @@ export default async function HomePage() {
           </div>
         </section>
       )}
+
+      {/* Feature Showcase — overview of every tool customers can use */}
+      <FeatureShowcase />
 
       {/* Categories */}
       <section className="py-16">
