@@ -350,7 +350,7 @@ export async function POST(request: NextRequest) {
     ),
     callClaude(
       apiKey,
-      "claude-sonnet-4-6-20250514",
+      "claude-sonnet-4-6",
       24000,
       buildPrompt(
         target.name_th,

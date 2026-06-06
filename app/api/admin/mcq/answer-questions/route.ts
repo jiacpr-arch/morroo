@@ -106,7 +106,7 @@ export async function POST(request: NextRequest) {
   // Haiku by default (cheap); Sonnet when accuracy is worth the extra cost.
   const modelId =
     body.model === "sonnet"
-      ? "claude-sonnet-4-6-20250514"
+      ? "claude-sonnet-4-6"
       : "claude-haiku-4-5-20251001";
   if (questions.length === 0) return NextResponse.json({ answers: [] });
 
