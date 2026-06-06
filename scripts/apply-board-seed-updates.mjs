@@ -60,11 +60,17 @@ function escapeLike(s) {
   return s.replace(/[\\%_]/g, "\\$&");
 }
 
+function buildUpdatePayload(q) {
+  const payload = { choices: q.choices, explanation: q.explanation };
+  if (q.detailed_explanation) payload.detailed_explanation = q.detailed_explanation;
+  return payload;
+}
+
 async function tryUpdate(slug, q) {
   // 1) Exact scenario match — fast path, no false positives.
   const exact = await supabase
     .from("mcq_questions")
-    .update({ choices: q.choices, explanation: q.explanation })
+    .update(buildUpdatePayload(q))
     .eq("exam_source", "AI-generated-board-seed")
     .eq("board_specialty", slug)
     .eq("scenario", q.scenario)
@@ -98,7 +104,7 @@ async function tryUpdate(slug, q) {
   // Exactly one candidate → update by id.
   const upd = await supabase
     .from("mcq_questions")
-    .update({ choices: q.choices, explanation: q.explanation })
+    .update(buildUpdatePayload(q))
     .eq("id", candidates[0].id)
     .select("id");
   if (upd.error) return { error: upd.error };
