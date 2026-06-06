@@ -120,8 +120,9 @@ export default function AutoAnswerPage() {
     }
 
     let done = 0, failed = 0;
+    let firstErr = "";
     const answeredIds: string[] = [];
-    const BATCH = 5;
+    const BATCH = 3;
     for (let start = 0; start < rows.length; start += BATCH) {
       const batch = rows.slice(start, start + BATCH);
       setProgress(`AI กำลังเฉลย… ${Math.min(start + batch.length, rows.length)}/${rows.length} ข้อ`);
@@ -135,9 +136,14 @@ export default function AutoAnswerPage() {
             model,
           }),
         });
-        const dat = await res.json();
-        if (!res.ok) { failed += batch.length; continue; }
+        const dat = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          if (!firstErr) firstErr = String(dat?.error ?? `HTTP ${res.status}`);
+          failed += batch.length;
+          continue;
+        }
         const answers = (dat.answers as AiAnswer[]) ?? [];
+        if (answers.length === 0 && !firstErr) firstErr = "AI ไม่ส่งคำเฉลยกลับ (ลองลดจำนวน/เปลี่ยนโมเดล)";
         for (const a of answers) {
           const row = batch[a.index];
           if (!row) continue;
@@ -148,10 +154,12 @@ export default function AutoAnswerPage() {
           if (a.detailed_explanation) patch.detailed_explanation = a.detailed_explanation;
           if (a.detailed_explanation || patch.correct_answer) {
             const ok = await updateMcqQuestion(row.id, patch);
-            if (ok) { done++; answeredIds.push(row.id); } else failed++;
+            if (ok) { done++; answeredIds.push(row.id); }
+            else { failed++; if (!firstErr) firstErr = "เขียนเฉลยกลับ DB ไม่สำเร็จ (RLS?)"; }
           } else failed++;
         }
-      } catch {
+      } catch (e) {
+        if (!firstErr) firstErr = String(e);
         failed += batch.length;
       }
     }
@@ -166,6 +174,9 @@ export default function AutoAnswerPage() {
     setRunning(false);
     setResult({ done, failed, activated });
     setProgress(`เสร็จ: เฉลยแล้ว ${done} ข้อ`);
+    if (failed > 0 && firstErr) {
+      setError(`สาเหตุที่ล้มเหลว: ${firstErr.slice(0, 240)}`);
+    }
   }
 
   const subjectName = useMemo(
