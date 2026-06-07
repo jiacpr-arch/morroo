@@ -15,10 +15,6 @@ import {
   X,
   Check,
 } from "lucide-react";
-import {
-  extractPdfTextInBrowser,
-  renderPdfPagesToImages,
-} from "@/lib/school/pdf-extract";
 
 interface TopicOption {
   id: string;
@@ -97,99 +93,82 @@ export default function ImportPanel({ topics }: Props) {
       let res: Response;
       if (mode === "file") {
         if (!file) throw new Error("เลือกไฟล์ก่อน");
-        // Direct multipart upload is faster and keeps images/layout for the AI,
-        // but Vercel's serverless body limit caps it well below large PDFs.
-        // For oversized PDFs we fall back to browser-side text extraction —
-        // pdf.js runs locally, we send only the text (losing images/diagrams
-        // but unbounded in PDF size).
         const DIRECT_UPLOAD_MAX = 4 * 1024 * 1024;
-        // pdf.js parses the full PDF into memory (~2-3x file size) before we
-        // can extract text or render pages. On Safari, anything past ~25 MB
-        // crashes the tab during the parse, before our render fallback even
-        // runs. Reject big files up front with actionable guidance.
-        const BROWSER_PARSE_MAX = 25 * 1024 * 1024;
+        // Anthropic accepts PDFs up to 32 MB natively (it reads handwriting,
+        // diagrams, layout — better than any browser-side fallback). Files in
+        // the 4-32 MB range bypass Vercel's body limit by going through
+        // Supabase Storage, with the server then handing the PDF straight to
+        // Claude. No pdf.js parse in the browser, no canvas memory spike.
+        const STORAGE_PATH_MAX = 32 * 1024 * 1024;
+        if (
+          file.size > DIRECT_UPLOAD_MAX &&
+          file.size <= STORAGE_PATH_MAX &&
+          file.type === "application/pdf"
+        ) {
+          setProgressMsg("☁️ กำลังอัปโหลดไป storage...");
+          // 1. Mint signed upload URL
+          const urlRes = await fetch("/api/admin/school/import/storage-url", {
+            method: "POST",
+          });
+          const urlJson = (await urlRes.json()) as {
+            bucket?: string;
+            path?: string;
+            token?: string;
+            error?: string;
+          };
+          if (!urlRes.ok || !urlJson.path || !urlJson.token) {
+            throw new Error(urlJson.error ?? "Failed to get upload URL");
+          }
+          // 2. Upload to Supabase Storage
+          const { createClient: createSupabaseClient } = await import(
+            "@/lib/supabase/client"
+          );
+          const supa = createSupabaseClient();
+          const { error: upErr } = await supa.storage
+            .from(urlJson.bucket ?? "school-imports")
+            .uploadToSignedUrl(urlJson.path, urlJson.token, file, {
+              contentType: "application/pdf",
+            });
+          if (upErr) throw new Error(`Upload ล้มเหลว: ${upErr.message}`);
+          // 3. Tell server to process the storage path
+          setProgressMsg("AI กำลังอ่าน PDF...");
+          const fileHint =
+            (hint ? hint + " " : "") +
+            `(${file.name}, ${(file.size / 1024 / 1024).toFixed(1)} MB via storage)`;
+          res = await fetch("/api/admin/school/import", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({
+              mode: "storage",
+              storage_path: urlJson.path,
+              hint: fileHint,
+              extractMode,
+            }),
+          });
+          if (!res.ok) {
+            const j = await res.json().catch(() => ({}));
+            throw new Error(j.error ?? "Extract failed");
+          }
+          const d = (await res.json()) as Extracted;
+          setData(d);
+          const suggested = d.classification?.suggested_topic_id;
+          if (
+            suggested &&
+            (d.classification?.confidence ?? 0) >= 0.6 &&
+            topics.some((t) => t.id === suggested)
+          ) {
+            setTopicId(suggested);
+          }
+          return; // success — early exit from the function
+        }
+        const BROWSER_PARSE_MAX = 32 * 1024 * 1024;
         if (file.size > BROWSER_PARSE_MAX && file.type === "application/pdf") {
           const mb = (file.size / 1024 / 1024).toFixed(1);
           throw new Error(
-            `PDF ใหญ่เกินไป (${mb} MB) — สูงสุด 25 MB · เบราว์เซอร์ประมวลผลไม่ไหว\n\nวิธีแก้:\n• บีบอัด PDF: ilovepdf.com/compress_pdf หรือ smallpdf.com\n• แยกไฟล์ออกเป็นบทย่อย แล้ว import ทีละไฟล์\n• สำหรับ text-only ใช้แท็บ "Text" paste เนื้อหาแทน`,
+            `PDF ใหญ่เกินไป (${mb} MB) — สูงสุด 32 MB · บีบอัดที่ ilovepdf.com/compress_pdf หรือแยกไฟล์`,
           );
         }
-        if (file.size > DIRECT_UPLOAD_MAX && file.type === "application/pdf") {
-          setProgressMsg("📖 อ่านเนื้อหา PDF ในเบราว์เซอร์...");
-          let textResult: { text: string; pages: number };
-          try {
-            textResult = await extractPdfTextInBrowser(
-              file,
-              (p, total) => setProgressMsg(`📖 อ่าน PDF: หน้า ${p}/${total}`),
-            );
-          } catch (e) {
-            throw new Error(
-              `อ่าน PDF ไม่ได้: ${e instanceof Error ? e.message : "unknown"} — ลองบีบอัดให้เล็กลง หรือใช้แท็บ Text`,
-            );
-          }
-          const { text, pages } = textResult;
-          // Heuristic: handwritten / scanned PDFs have almost no extractable
-          // text layer. If we got < 30 chars per page on average, fall back
-          // to rendering pages as images and letting Claude vision read them.
-          const avgPerPage = pages > 0 ? text.length / pages : 0;
-          if (avgPerPage < 30) {
-            // Browser memory caps render to ~12 pages safely (especially on
-            // Safari). If the PDF is much longer, warn the admin that only
-            // the first 12 pages will be processed and suggest splitting.
-            const MAX_RENDER_PAGES = 12;
-            if (pages > MAX_RENDER_PAGES) {
-              const ok = window.confirm(
-                `PDF นี้มี ${pages} หน้า เป็นลายมือ/scan — ระบบจะอ่านได้แค่ ${MAX_RENDER_PAGES} หน้าแรก (ถ้าทำทั้งหมด เบราว์เซอร์อาจค้าง)\n\nแนะนำ: แยก PDF เป็นไฟล์ย่อย ${MAX_RENDER_PAGES} หน้า แล้ว import ทีละไฟล์\n\nกด OK เพื่ออ่าน ${MAX_RENDER_PAGES} หน้าแรก หรือ Cancel เพื่อกลับไปแก้ไฟล์`,
-              );
-              if (!ok) {
-                setProgressMsg(null);
-                setLoading(false);
-                return;
-              }
-            }
-            const renderTotal = Math.min(pages, MAX_RENDER_PAGES);
-            setProgressMsg(
-              `🖼️ ตรวจพบ PDF ลายมือ/scan — กำลัง render ${renderTotal} หน้า...`,
-            );
-            const { images } = await renderPdfPagesToImages(file, {
-              maxPages: MAX_RENDER_PAGES,
-              onProgress: (p, total) =>
-                setProgressMsg(`🖼️ render หน้า ${p}/${total}`),
-            });
-            setProgressMsg(null);
-            if (images.length === 0) {
-              throw new Error("render PDF เป็นรูปไม่สำเร็จ");
-            }
-            const fileHint =
-              (hint ? hint + " " : "") +
-              `(rendered handwritten PDF from ${file.name}, ${(file.size / 1024 / 1024).toFixed(1)} MB, ${images.length} pages)`;
-            res = await fetch("/api/admin/school/import", {
-              method: "POST",
-              headers: { "content-type": "application/json" },
-              body: JSON.stringify({
-                mode: "images",
-                images,
-                hint: fileHint,
-                extractMode,
-              }),
-            });
-          } else {
-            setProgressMsg(null);
-            const fileHint =
-              (hint ? hint + " " : "") +
-              `(extracted from ${file.name}, ${(file.size / 1024 / 1024).toFixed(1)} MB)`;
-            res = await fetch("/api/admin/school/import", {
-              method: "POST",
-              headers: { "content-type": "application/json" },
-              body: JSON.stringify({
-                mode: "text",
-                text,
-                hint: fileHint,
-                extractMode,
-              }),
-            });
-          }
-        } else if (file.size > DIRECT_UPLOAD_MAX) {
+        if (file.size > DIRECT_UPLOAD_MAX) {
           // Non-PDF (image) too big for direct upload — no text-extraction path
           const mb = (file.size / 1024 / 1024).toFixed(1);
           throw new Error(
@@ -390,9 +369,8 @@ export default function ImportPanel({ topics }: Props) {
               className="text-sm"
             />
             <p className="text-xs text-muted-foreground mt-1">
-              PDF ≤25 MB / รูปภาพ ≤4 MB · PDF ลายมือ/scan render ได้สูงสุด
-              12 หน้า · ถ้าใหญ่กว่านี้ใช้ ilovepdf.com/compress_pdf
-              หรือแยกไฟล์
+              PDF ≤32 MB / รูปภาพ ≤4 MB · 4-32 MB อัปโหลดผ่าน storage
+              (รองรับลายมือ/scan), &gt;32 MB ใช้ ilovepdf.com/compress_pdf
             </p>
             {file && (
               <p className="text-xs mt-1">

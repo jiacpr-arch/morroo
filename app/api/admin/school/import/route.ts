@@ -467,18 +467,78 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ ...data, mode, classification });
     }
 
-    // ── Branch 2 — JSON body (text, url, or page images)
+    // ── Branch 2 — JSON body (text, url, page images, or storage path)
     const body = (await req.json()) as {
-      mode?: "text" | "url" | "images";
+      mode?: "text" | "url" | "images" | "storage";
       extractMode?: string;
       text?: string;
       url?: string;
       hint?: string;
       images?: string[]; // base64 JPEG, one per page
+      storage_path?: string; // path inside school-imports bucket
     };
     const mode = parseMode(body.extractMode);
 
-    // Branch 2a — page images (handwritten / scanned PDFs rendered in the browser)
+    // Branch 2a — storage upload (large PDFs uploaded directly to Supabase)
+    if (body.mode === "storage" && body.storage_path) {
+      const { createAdminClient } = await import("@/lib/supabase/admin");
+      const admin = createAdminClient();
+      const BUCKET = "school-imports";
+      const { data: blob, error: dlErr } = await admin.storage
+        .from(BUCKET)
+        .download(body.storage_path);
+      if (dlErr || !blob) {
+        return NextResponse.json(
+          { error: `ดาวน์โหลดจาก storage ไม่สำเร็จ: ${dlErr?.message ?? "no file"}` },
+          { status: 500 },
+        );
+      }
+      const arr = new Uint8Array(await blob.arrayBuffer());
+      // Anthropic PDF limit is 32 MB. Beyond that the model rejects the file.
+      const ANTHROPIC_PDF_MAX = 32 * 1024 * 1024;
+      if (arr.byteLength > ANTHROPIC_PDF_MAX) {
+        await admin.storage.from(BUCKET).remove([body.storage_path]);
+        const mb = (arr.byteLength / 1024 / 1024).toFixed(1);
+        return NextResponse.json(
+          {
+            error: `PDF ใหญ่เกิน Claude limit (${mb} MB / 32 MB) — บีบอัดให้เล็กลง หรือแยกไฟล์`,
+          },
+          { status: 413 },
+        );
+      }
+      const b64 = Buffer.from(arr).toString("base64");
+      const mediaBlock: Anthropic.DocumentBlockParam = {
+        type: "document",
+        source: {
+          type: "base64",
+          media_type: "application/pdf",
+          data: b64,
+        },
+      };
+      const content: Anthropic.MessageParam["content"] = [
+        mediaBlock,
+        {
+          type: "text",
+          text: `Extract a lesson + flashcards + quizzes from this material.${
+            body.hint ? `\n\nHint: ${body.hint}` : ""
+          }`,
+        },
+      ];
+      const topics = await loadTopicCandidates(supabase);
+      try {
+        const [data, classification] = await Promise.all([
+          callExtractor(content, mode),
+          classifyTopic([mediaBlock], topics),
+        ]);
+        return NextResponse.json({ ...data, mode, classification });
+      } finally {
+        // Always clean up the storage object — even on error — so we never
+        // accumulate temp PDFs.
+        admin.storage.from(BUCKET).remove([body.storage_path]).catch(() => {});
+      }
+    }
+
+    // Branch 2b — page images (handwritten / scanned PDFs rendered in the browser)
     if (body.mode === "images" && Array.isArray(body.images) && body.images.length > 0) {
       // Cap at 12 to stay under Vercel body limits AND keep token cost
       // bounded (Claude charges ~2k input tokens per image).
