@@ -15,6 +15,7 @@ import {
   X,
   Check,
 } from "lucide-react";
+import { extractPdfTextInBrowser } from "@/lib/school/pdf-extract";
 
 interface TopicOption {
   id: string;
@@ -82,6 +83,7 @@ export default function ImportPanel({ topics }: Props) {
     msg: string;
   } | null>(null);
   const [data, setData] = useState<Extracted | null>(null);
+  const [progressMsg, setProgressMsg] = useState<string | null>(null);
   const [expanding, setExpanding] = useState(false);
   const [expandResult, setExpandResult] = useState<{
     kind: "ok" | "err";
@@ -92,29 +94,57 @@ export default function ImportPanel({ topics }: Props) {
     setLoading(true);
     setError(null);
     setData(null);
+    setProgressMsg(null);
     try {
       let res: Response;
       if (mode === "file") {
         if (!file) throw new Error("เลือกไฟล์ก่อน");
-        // Anthropic PDF limit is 32 MB, but Vercel's serverless body limit is
-        // much smaller (~4.5 MB default). 10 MB matches what other upload
-        // routes accept in this project. For larger source material, suggest
-        // Text mode (paste excerpt) or splitting the PDF.
-        const MAX_BYTES = 10 * 1024 * 1024;
-        if (file.size > MAX_BYTES) {
+        // Direct multipart upload is faster and keeps images/layout for the AI,
+        // but Vercel's serverless body limit caps it well below large PDFs.
+        // For oversized PDFs we fall back to browser-side text extraction —
+        // pdf.js runs locally, we send only the text (losing images/diagrams
+        // but unbounded in PDF size).
+        const DIRECT_UPLOAD_MAX = 4 * 1024 * 1024;
+        if (file.size > DIRECT_UPLOAD_MAX && file.type === "application/pdf") {
+          setProgressMsg("📖 อ่านเนื้อหา PDF ในเบราว์เซอร์...");
+          const text = await extractPdfTextInBrowser(file, (p, total) =>
+            setProgressMsg(`📖 อ่าน PDF: หน้า ${p}/${total}`),
+          );
+          setProgressMsg(null);
+          if (!text || text.length < 100) {
+            throw new Error(
+              "อ่าน PDF ไม่ได้ (อาจเป็น scan/รูป) — ลองบีบอัดให้เล็กกว่า 4 MB หรือใช้แท็บ Text paste เนื้อหา",
+            );
+          }
+          const fileHint =
+            (hint ? hint + " " : "") +
+            `(extracted from ${file.name}, ${(file.size / 1024 / 1024).toFixed(1)} MB)`;
+          res = await fetch("/api/admin/school/import", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({
+              mode: "text",
+              text,
+              hint: fileHint,
+              extractMode,
+            }),
+          });
+        } else if (file.size > DIRECT_UPLOAD_MAX) {
+          // Non-PDF (image) too big for direct upload — no text-extraction path
           const mb = (file.size / 1024 / 1024).toFixed(1);
           throw new Error(
-            `ไฟล์ใหญ่เกินไป (${mb} MB) — สูงสุด 10 MB · ทางเลือก: บีบอัด PDF, แยกไฟล์, หรือใช้แท็บ Text paste เนื้อหา`,
+            `รูปภาพใหญ่เกินไป (${mb} MB) — สูงสุด 4 MB`,
           );
+        } else {
+          const fd = new FormData();
+          fd.append("file", file);
+          if (hint) fd.append("hint", hint);
+          fd.append("mode", extractMode);
+          res = await fetch("/api/admin/school/import", {
+            method: "POST",
+            body: fd,
+          });
         }
-        const fd = new FormData();
-        fd.append("file", file);
-        if (hint) fd.append("hint", hint);
-        fd.append("mode", extractMode);
-        res = await fetch("/api/admin/school/import", {
-          method: "POST",
-          body: fd,
-        });
       } else if (mode === "url") {
         if (!url) throw new Error("ใส่ URL");
         res = await fetch("/api/admin/school/import", {
@@ -150,6 +180,7 @@ export default function ImportPanel({ topics }: Props) {
       setError(e instanceof Error ? e.message : "Error");
     } finally {
       setLoading(false);
+      setProgressMsg(null);
     }
   }
 
@@ -357,7 +388,8 @@ export default function ImportPanel({ topics }: Props) {
               className="text-sm"
             />
             <p className="text-xs text-muted-foreground mt-1">
-              PDF / PNG / JPG / WebP — สูงสุด 10 MB (รวม GoodNotes export)
+              PDF / PNG / JPG / WebP — รูปภาพ ≤4 MB · PDF ใหญ่กว่า 4 MB จะ
+              อ่าน text จากเบราว์เซอร์ (เสียรูปภาพ/diagram)
             </p>
             {file && (
               <p className="text-xs mt-1">
@@ -400,11 +432,13 @@ export default function ImportPanel({ topics }: Props) {
           {loading ? (
             <>
               <Loader2 className="h-4 w-4 animate-spin" />
-              {extractMode === "deep"
-                ? "AI กำลัง deep-dive… (60-120s)"
-                : extractMode === "expand"
-                  ? "AI กำลังขยายเนื้อหา… (30-60s)"
-                  : "AI กำลังสรุป… (20-40s)"}
+              {progressMsg
+                ? progressMsg
+                : extractMode === "deep"
+                  ? "AI กำลัง deep-dive… (60-120s)"
+                  : extractMode === "expand"
+                    ? "AI กำลังขยายเนื้อหา… (30-60s)"
+                    : "AI กำลังสรุป… (20-40s)"}
             </>
           ) : (
             <>

@@ -404,15 +404,16 @@ export async function POST(req: NextRequest) {
       if (!(file instanceof File)) {
         return NextResponse.json({ error: "Missing file" }, { status: 400 });
       }
-      // Defense-in-depth — client also enforces this. Vercel's serverless
-      // body limit will usually 413 before we even get here on big files,
-      // but this gives a friendly error when it doesn't.
-      const MAX_BYTES = 10 * 1024 * 1024;
+      // Client falls back to browser text-extraction for big PDFs and sends
+      // the result via JSON branch instead — anything reaching this branch
+      // should be small. Cap at Vercel's effective limit; bigger requests
+      // would have been truncated upstream anyway.
+      const MAX_BYTES = 5 * 1024 * 1024;
       if (file.size > MAX_BYTES) {
         const mb = (file.size / 1024 / 1024).toFixed(1);
         return NextResponse.json(
           {
-            error: `ไฟล์ใหญ่เกินไป (${mb} MB) — สูงสุด 10 MB ลองบีบอัด PDF, แยกไฟล์, หรือใช้แท็บ Text`,
+            error: `ไฟล์ใหญ่เกินไป (${mb} MB) — สำหรับ PDF ใช้ฝั่งเบราว์เซอร์ extract ก่อน, รูปภาพต้อง ≤4 MB`,
           },
           { status: 413 },
         );
