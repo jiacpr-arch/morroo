@@ -15,7 +15,10 @@ import {
   X,
   Check,
 } from "lucide-react";
-import { extractPdfTextInBrowser } from "@/lib/school/pdf-extract";
+import {
+  extractPdfTextInBrowser,
+  renderPdfPagesToImages,
+} from "@/lib/school/pdf-extract";
 
 interface TopicOption {
   id: string;
@@ -102,28 +105,56 @@ export default function ImportPanel({ topics }: Props) {
         const DIRECT_UPLOAD_MAX = 4 * 1024 * 1024;
         if (file.size > DIRECT_UPLOAD_MAX && file.type === "application/pdf") {
           setProgressMsg("📖 อ่านเนื้อหา PDF ในเบราว์เซอร์...");
-          const text = await extractPdfTextInBrowser(file, (p, total) =>
-            setProgressMsg(`📖 อ่าน PDF: หน้า ${p}/${total}`),
+          const { text, pages } = await extractPdfTextInBrowser(
+            file,
+            (p, total) => setProgressMsg(`📖 อ่าน PDF: หน้า ${p}/${total}`),
           );
-          setProgressMsg(null);
-          if (!text || text.length < 100) {
-            throw new Error(
-              "อ่าน PDF ไม่ได้ (อาจเป็น scan/รูป) — ลองบีบอัดให้เล็กกว่า 4 MB หรือใช้แท็บ Text paste เนื้อหา",
+          // Heuristic: handwritten / scanned PDFs have almost no extractable
+          // text layer. If we got < 30 chars per page on average, fall back
+          // to rendering pages as images and letting Claude vision read them.
+          const avgPerPage = pages > 0 ? text.length / pages : 0;
+          if (avgPerPage < 30) {
+            setProgressMsg(
+              `🖼️ ตรวจพบ PDF ลายมือ/scan — กำลัง render เป็นรูป (${pages} หน้า)...`,
             );
+            const { images } = await renderPdfPagesToImages(file, {
+              maxPages: 25,
+              onProgress: (p, total) =>
+                setProgressMsg(`🖼️ render หน้า ${p}/${total}`),
+            });
+            setProgressMsg(null);
+            if (images.length === 0) {
+              throw new Error("render PDF เป็นรูปไม่สำเร็จ");
+            }
+            const fileHint =
+              (hint ? hint + " " : "") +
+              `(rendered handwritten PDF from ${file.name}, ${(file.size / 1024 / 1024).toFixed(1)} MB, ${images.length} pages)`;
+            res = await fetch("/api/admin/school/import", {
+              method: "POST",
+              headers: { "content-type": "application/json" },
+              body: JSON.stringify({
+                mode: "images",
+                images,
+                hint: fileHint,
+                extractMode,
+              }),
+            });
+          } else {
+            setProgressMsg(null);
+            const fileHint =
+              (hint ? hint + " " : "") +
+              `(extracted from ${file.name}, ${(file.size / 1024 / 1024).toFixed(1)} MB)`;
+            res = await fetch("/api/admin/school/import", {
+              method: "POST",
+              headers: { "content-type": "application/json" },
+              body: JSON.stringify({
+                mode: "text",
+                text,
+                hint: fileHint,
+                extractMode,
+              }),
+            });
           }
-          const fileHint =
-            (hint ? hint + " " : "") +
-            `(extracted from ${file.name}, ${(file.size / 1024 / 1024).toFixed(1)} MB)`;
-          res = await fetch("/api/admin/school/import", {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify({
-              mode: "text",
-              text,
-              hint: fileHint,
-              extractMode,
-            }),
-          });
         } else if (file.size > DIRECT_UPLOAD_MAX) {
           // Non-PDF (image) too big for direct upload — no text-extraction path
           const mb = (file.size / 1024 / 1024).toFixed(1);
@@ -326,7 +357,8 @@ export default function ImportPanel({ topics }: Props) {
             />
             <p className="text-xs text-muted-foreground mt-1">
               PDF / PNG / JPG / WebP — รูปภาพ ≤4 MB · PDF ใหญ่กว่า 4 MB จะ
-              อ่าน text จากเบราว์เซอร์ (เสียรูปภาพ/diagram)
+              อ่าน text จากเบราว์เซอร์ · ลายมือ/scan จะ render เป็นรูปให้ AI
+              อ่าน (สูงสุด 25 หน้า)
             </p>
             {file && (
               <p className="text-xs mt-1">

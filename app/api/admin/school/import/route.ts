@@ -467,15 +467,50 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ ...data, mode, classification });
     }
 
-    // ── Branch 2 — JSON body (text or url)
+    // ── Branch 2 — JSON body (text, url, or page images)
     const body = (await req.json()) as {
-      mode?: "text" | "url";
+      mode?: "text" | "url" | "images";
       extractMode?: string;
       text?: string;
       url?: string;
       hint?: string;
+      images?: string[]; // base64 JPEG, one per page
     };
     const mode = parseMode(body.extractMode);
+
+    // Branch 2a — page images (handwritten / scanned PDFs rendered in the browser)
+    if (body.mode === "images" && Array.isArray(body.images) && body.images.length > 0) {
+      const MAX_IMAGES = 25;
+      const imgs = body.images.slice(0, MAX_IMAGES);
+      const imageBlocks: Anthropic.ImageBlockParam[] = imgs.map((b64) => ({
+        type: "image",
+        source: {
+          type: "base64",
+          media_type: "image/jpeg",
+          data: b64,
+        },
+      }));
+      const content: Anthropic.MessageParam["content"] = [
+        ...imageBlocks,
+        {
+          type: "text",
+          text: `Extract a lesson + flashcards + quizzes from these ${imgs.length} pages (handwritten or scanned).${
+            body.hint ? `\n\nHint: ${body.hint}` : ""
+          }`,
+        },
+      ];
+      // Classify off the first page only — saves Haiku tokens.
+      const classifyContent: Anthropic.ContentBlockParam[] = imageBlocks[0]
+        ? [imageBlocks[0]]
+        : [];
+      const topics = await loadTopicCandidates(supabase);
+      const [data, classification] = await Promise.all([
+        callExtractor(content, mode),
+        classifyTopic(classifyContent, topics),
+      ]);
+      return NextResponse.json({ ...data, mode, classification });
+    }
+
     let materialText = "";
     if (body.mode === "text" && body.text) {
       materialText = body.text;
