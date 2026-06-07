@@ -480,7 +480,9 @@ export async function POST(req: NextRequest) {
 
     // Branch 2a — page images (handwritten / scanned PDFs rendered in the browser)
     if (body.mode === "images" && Array.isArray(body.images) && body.images.length > 0) {
-      const MAX_IMAGES = 25;
+      // Cap at 12 to stay under Vercel body limits AND keep token cost
+      // bounded (Claude charges ~2k input tokens per image).
+      const MAX_IMAGES = 12;
       const imgs = body.images.slice(0, MAX_IMAGES);
       const imageBlocks: Anthropic.ImageBlockParam[] = imgs.map((b64) => ({
         type: "image",

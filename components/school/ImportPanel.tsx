@@ -114,11 +114,26 @@ export default function ImportPanel({ topics }: Props) {
           // to rendering pages as images and letting Claude vision read them.
           const avgPerPage = pages > 0 ? text.length / pages : 0;
           if (avgPerPage < 30) {
+            // Browser memory caps render to ~12 pages safely (especially on
+            // Safari). If the PDF is much longer, warn the admin that only
+            // the first 12 pages will be processed and suggest splitting.
+            const MAX_RENDER_PAGES = 12;
+            if (pages > MAX_RENDER_PAGES) {
+              const ok = window.confirm(
+                `PDF นี้มี ${pages} หน้า เป็นลายมือ/scan — ระบบจะอ่านได้แค่ ${MAX_RENDER_PAGES} หน้าแรก (ถ้าทำทั้งหมด เบราว์เซอร์อาจค้าง)\n\nแนะนำ: แยก PDF เป็นไฟล์ย่อย ${MAX_RENDER_PAGES} หน้า แล้ว import ทีละไฟล์\n\nกด OK เพื่ออ่าน ${MAX_RENDER_PAGES} หน้าแรก หรือ Cancel เพื่อกลับไปแก้ไฟล์`,
+              );
+              if (!ok) {
+                setProgressMsg(null);
+                setLoading(false);
+                return;
+              }
+            }
+            const renderTotal = Math.min(pages, MAX_RENDER_PAGES);
             setProgressMsg(
-              `🖼️ ตรวจพบ PDF ลายมือ/scan — กำลัง render เป็นรูป (${pages} หน้า)...`,
+              `🖼️ ตรวจพบ PDF ลายมือ/scan — กำลัง render ${renderTotal} หน้า...`,
             );
             const { images } = await renderPdfPagesToImages(file, {
-              maxPages: 25,
+              maxPages: MAX_RENDER_PAGES,
               onProgress: (p, total) =>
                 setProgressMsg(`🖼️ render หน้า ${p}/${total}`),
             });
@@ -356,9 +371,9 @@ export default function ImportPanel({ topics }: Props) {
               className="text-sm"
             />
             <p className="text-xs text-muted-foreground mt-1">
-              PDF / PNG / JPG / WebP — รูปภาพ ≤4 MB · PDF ใหญ่กว่า 4 MB จะ
-              อ่าน text จากเบราว์เซอร์ · ลายมือ/scan จะ render เป็นรูปให้ AI
-              อ่าน (สูงสุด 25 หน้า)
+              PDF / PNG / JPG / WebP — รูปภาพ ≤4 MB · PDF text ใหญ่ได้ไม่จำกัด
+              · PDF ลายมือ/scan render เป็นรูปได้สูงสุด 12 หน้า
+              (ถ้าเยอะกว่านี้ แนะนำแยกไฟล์)
             </p>
             {file && (
               <p className="text-xs mt-1">
