@@ -84,11 +84,6 @@ export default function ImportPanel({ topics }: Props) {
   } | null>(null);
   const [data, setData] = useState<Extracted | null>(null);
   const [progressMsg, setProgressMsg] = useState<string | null>(null);
-  const [expanding, setExpanding] = useState(false);
-  const [expandResult, setExpandResult] = useState<{
-    kind: "ok" | "err";
-    msg: string;
-  } | null>(null);
 
   async function extract() {
     setLoading(true);
@@ -226,64 +221,6 @@ export default function ImportPanel({ topics }: Props) {
       setResult({ kind: "err", msg: e instanceof Error ? e.message : "Error" });
     } finally {
       setSaving(false);
-    }
-  }
-
-  async function expandWithDeepSeek() {
-    if (!data) return;
-    setExpanding(true);
-    setExpandResult(null);
-    try {
-      const res = await fetch("/api/admin/school/import/expand-deepseek", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({
-          lesson: data.lesson,
-          flashcards: data.flashcards,
-          quizzes: data.quizzes,
-          hint: hint || undefined,
-        }),
-      });
-      const j = (await res.json()) as {
-        additional_flashcards?: ExtractedFlashcard[];
-        additional_quizzes?: ExtractedQuiz[];
-        mnemonics_md?: string;
-        clinical_pearls_md?: string;
-        error?: string;
-      };
-      if (!res.ok || j.error) {
-        setExpandResult({
-          kind: "err",
-          msg: j.error ?? "Expand failed",
-        });
-        return;
-      }
-      const addFc = j.additional_flashcards ?? [];
-      const addQz = j.additional_quizzes ?? [];
-      const extraMd = [j.clinical_pearls_md, j.mnemonics_md]
-        .filter((s) => s && s.trim().length > 0)
-        .join("\n\n");
-      setData({
-        ...data,
-        flashcards: [...data.flashcards, ...addFc],
-        quizzes: [...data.quizzes, ...addQz],
-        lesson: extraMd
-          ? { ...data.lesson, body_md: `${data.lesson.body_md}\n\n${extraMd}` }
-          : data.lesson,
-      });
-      setExpandResult({
-        kind: "ok",
-        msg: `+${addFc.length} cards, +${addQz.length} quizzes${
-          extraMd ? ", +mnemonics/pearls" : ""
-        }`,
-      });
-    } catch (e) {
-      setExpandResult({
-        kind: "err",
-        msg: e instanceof Error ? e.message : "Error",
-      });
-    } finally {
-      setExpanding(false);
     }
   }
 
@@ -464,51 +401,6 @@ export default function ImportPanel({ topics }: Props) {
               >
                 <X className="h-3 w-3" /> ทิ้ง
               </button>
-            </div>
-
-            {/* DeepSeek second-pass */}
-            <div className="rounded-lg border border-cyan-300 bg-cyan-50/40 p-3 space-y-2">
-              <div className="flex items-start justify-between gap-2">
-                <div>
-                  <p className="text-sm font-semibold text-cyan-900">
-                    🚀 ขยายเพิ่มด้วย DeepSeek
-                  </p>
-                  <p className="text-xs text-cyan-800/80">
-                    เพิ่ม flashcards, quizzes, mnemonics, clinical pearls
-                    (~$0.03/ครั้ง, ใช้เวลา 10-30s)
-                  </p>
-                </div>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  onClick={expandWithDeepSeek}
-                  disabled={expanding}
-                  className="gap-1 shrink-0"
-                >
-                  {expanding ? (
-                    <Loader2 className="h-3 w-3 animate-spin" />
-                  ) : (
-                    <Sparkles className="h-3 w-3" />
-                  )}
-                  ขยายเพิ่ม
-                </Button>
-              </div>
-              {expandResult && (
-                <div
-                  className={`text-xs rounded p-2 flex items-center gap-1 ${
-                    expandResult.kind === "ok"
-                      ? "bg-emerald-50 text-emerald-800 border border-emerald-200"
-                      : "bg-rose-50 text-rose-800 border border-rose-200"
-                  }`}
-                >
-                  {expandResult.kind === "ok" ? (
-                    <Check className="h-3 w-3" />
-                  ) : (
-                    <X className="h-3 w-3" />
-                  )}
-                  {expandResult.msg}
-                </div>
-              )}
             </div>
 
             {/* Lesson */}
