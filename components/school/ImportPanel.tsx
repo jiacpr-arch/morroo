@@ -103,12 +103,31 @@ export default function ImportPanel({ topics }: Props) {
         // pdf.js runs locally, we send only the text (losing images/diagrams
         // but unbounded in PDF size).
         const DIRECT_UPLOAD_MAX = 4 * 1024 * 1024;
+        // pdf.js parses the full PDF into memory (~2-3x file size) before we
+        // can extract text or render pages. On Safari, anything past ~25 MB
+        // crashes the tab during the parse, before our render fallback even
+        // runs. Reject big files up front with actionable guidance.
+        const BROWSER_PARSE_MAX = 25 * 1024 * 1024;
+        if (file.size > BROWSER_PARSE_MAX && file.type === "application/pdf") {
+          const mb = (file.size / 1024 / 1024).toFixed(1);
+          throw new Error(
+            `PDF ใหญ่เกินไป (${mb} MB) — สูงสุด 25 MB · เบราว์เซอร์ประมวลผลไม่ไหว\n\nวิธีแก้:\n• บีบอัด PDF: ilovepdf.com/compress_pdf หรือ smallpdf.com\n• แยกไฟล์ออกเป็นบทย่อย แล้ว import ทีละไฟล์\n• สำหรับ text-only ใช้แท็บ "Text" paste เนื้อหาแทน`,
+          );
+        }
         if (file.size > DIRECT_UPLOAD_MAX && file.type === "application/pdf") {
           setProgressMsg("📖 อ่านเนื้อหา PDF ในเบราว์เซอร์...");
-          const { text, pages } = await extractPdfTextInBrowser(
-            file,
-            (p, total) => setProgressMsg(`📖 อ่าน PDF: หน้า ${p}/${total}`),
-          );
+          let textResult: { text: string; pages: number };
+          try {
+            textResult = await extractPdfTextInBrowser(
+              file,
+              (p, total) => setProgressMsg(`📖 อ่าน PDF: หน้า ${p}/${total}`),
+            );
+          } catch (e) {
+            throw new Error(
+              `อ่าน PDF ไม่ได้: ${e instanceof Error ? e.message : "unknown"} — ลองบีบอัดให้เล็กลง หรือใช้แท็บ Text`,
+            );
+          }
+          const { text, pages } = textResult;
           // Heuristic: handwritten / scanned PDFs have almost no extractable
           // text layer. If we got < 30 chars per page on average, fall back
           // to rendering pages as images and letting Claude vision read them.
@@ -371,9 +390,9 @@ export default function ImportPanel({ topics }: Props) {
               className="text-sm"
             />
             <p className="text-xs text-muted-foreground mt-1">
-              PDF / PNG / JPG / WebP — รูปภาพ ≤4 MB · PDF text ใหญ่ได้ไม่จำกัด
-              · PDF ลายมือ/scan render เป็นรูปได้สูงสุด 12 หน้า
-              (ถ้าเยอะกว่านี้ แนะนำแยกไฟล์)
+              PDF ≤25 MB / รูปภาพ ≤4 MB · PDF ลายมือ/scan render ได้สูงสุด
+              12 หน้า · ถ้าใหญ่กว่านี้ใช้ ilovepdf.com/compress_pdf
+              หรือแยกไฟล์
             </p>
             {file && (
               <p className="text-xs mt-1">
