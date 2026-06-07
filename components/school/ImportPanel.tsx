@@ -15,6 +15,7 @@ import {
   X,
   Check,
 } from "lucide-react";
+import { extractPdfTextInBrowser } from "@/lib/school/pdf-extract";
 
 interface TopicOption {
   id: string;
@@ -41,10 +42,21 @@ interface ExtractedQuiz {
   explanation: string;
   difficulty: string;
 }
+interface Classification {
+  suggested_topic_id: string | null;
+  confidence: number;
+  reasoning: string;
+  suggested_new_topic?: {
+    year: number;
+    system_hint: string;
+    name_th: string;
+  };
+}
 interface Extracted {
   lesson: ExtractedLesson;
   flashcards: ExtractedFlashcard[];
   quizzes: ExtractedQuiz[];
+  classification?: Classification | null;
 }
 
 interface Props {
@@ -52,9 +64,11 @@ interface Props {
 }
 
 type Mode = "file" | "url" | "text";
+type ExtractMode = "faithful" | "expand" | "deep";
 
 export default function ImportPanel({ topics }: Props) {
   const [mode, setMode] = useState<Mode>("file");
+  const [extractMode, setExtractMode] = useState<ExtractMode>("expand");
   const [file, setFile] = useState<File | null>(null);
   const [url, setUrl] = useState("");
   const [text, setText] = useState("");
@@ -69,35 +83,76 @@ export default function ImportPanel({ topics }: Props) {
     msg: string;
   } | null>(null);
   const [data, setData] = useState<Extracted | null>(null);
+  const [progressMsg, setProgressMsg] = useState<string | null>(null);
 
   async function extract() {
     setLoading(true);
     setError(null);
     setData(null);
+    setProgressMsg(null);
     try {
       let res: Response;
       if (mode === "file") {
         if (!file) throw new Error("เลือกไฟล์ก่อน");
-        const fd = new FormData();
-        fd.append("file", file);
-        if (hint) fd.append("hint", hint);
-        res = await fetch("/api/admin/school/import", {
-          method: "POST",
-          body: fd,
-        });
+        // Direct multipart upload is faster and keeps images/layout for the AI,
+        // but Vercel's serverless body limit caps it well below large PDFs.
+        // For oversized PDFs we fall back to browser-side text extraction —
+        // pdf.js runs locally, we send only the text (losing images/diagrams
+        // but unbounded in PDF size).
+        const DIRECT_UPLOAD_MAX = 4 * 1024 * 1024;
+        if (file.size > DIRECT_UPLOAD_MAX && file.type === "application/pdf") {
+          setProgressMsg("📖 อ่านเนื้อหา PDF ในเบราว์เซอร์...");
+          const text = await extractPdfTextInBrowser(file, (p, total) =>
+            setProgressMsg(`📖 อ่าน PDF: หน้า ${p}/${total}`),
+          );
+          setProgressMsg(null);
+          if (!text || text.length < 100) {
+            throw new Error(
+              "อ่าน PDF ไม่ได้ (อาจเป็น scan/รูป) — ลองบีบอัดให้เล็กกว่า 4 MB หรือใช้แท็บ Text paste เนื้อหา",
+            );
+          }
+          const fileHint =
+            (hint ? hint + " " : "") +
+            `(extracted from ${file.name}, ${(file.size / 1024 / 1024).toFixed(1)} MB)`;
+          res = await fetch("/api/admin/school/import", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({
+              mode: "text",
+              text,
+              hint: fileHint,
+              extractMode,
+            }),
+          });
+        } else if (file.size > DIRECT_UPLOAD_MAX) {
+          // Non-PDF (image) too big for direct upload — no text-extraction path
+          const mb = (file.size / 1024 / 1024).toFixed(1);
+          throw new Error(
+            `รูปภาพใหญ่เกินไป (${mb} MB) — สูงสุด 4 MB`,
+          );
+        } else {
+          const fd = new FormData();
+          fd.append("file", file);
+          if (hint) fd.append("hint", hint);
+          fd.append("mode", extractMode);
+          res = await fetch("/api/admin/school/import", {
+            method: "POST",
+            body: fd,
+          });
+        }
       } else if (mode === "url") {
         if (!url) throw new Error("ใส่ URL");
         res = await fetch("/api/admin/school/import", {
           method: "POST",
           headers: { "content-type": "application/json" },
-          body: JSON.stringify({ mode: "url", url, hint }),
+          body: JSON.stringify({ mode: "url", url, hint, extractMode }),
         });
       } else {
         if (!text) throw new Error("ใส่ text");
         res = await fetch("/api/admin/school/import", {
           method: "POST",
           headers: { "content-type": "application/json" },
-          body: JSON.stringify({ mode: "text", text, hint }),
+          body: JSON.stringify({ mode: "text", text, hint, extractMode }),
         });
       }
       if (!res.ok) {
@@ -106,10 +161,21 @@ export default function ImportPanel({ topics }: Props) {
       }
       const d = (await res.json()) as Extracted;
       setData(d);
+      // Auto-select the topic if AI is reasonably confident and the suggested
+      // topic exists in our local list. Admin can still override.
+      const suggested = d.classification?.suggested_topic_id;
+      if (
+        suggested &&
+        (d.classification?.confidence ?? 0) >= 0.6 &&
+        topics.some((t) => t.id === suggested)
+      ) {
+        setTopicId(suggested);
+      }
     } catch (e) {
       setError(e instanceof Error ? e.message : "Error");
     } finally {
       setLoading(false);
+      setProgressMsg(null);
     }
   }
 
@@ -178,8 +244,52 @@ export default function ImportPanel({ topics }: Props) {
             <Sparkles className="h-4 w-4 text-violet-600" /> Import + AI Generate
           </h3>
           <p className="text-xs text-muted-foreground">
-            Upload PDF / Image / URL / text → AI สรุปเป็น lesson + flashcards + quizzes ให้ → preview + แก้ + กดบันทึก
+            Upload PDF / Image / URL / text → AI สรุป (และขยาย) เป็น lesson + flashcards + quizzes → preview + แก้ + กดบันทึก
           </p>
+        </div>
+
+        {/* Extract depth */}
+        <div className="rounded-lg border bg-violet-50/30 p-3 space-y-2">
+          <p className="text-xs font-semibold text-violet-900">
+            ✨ ระดับการขยายเนื้อหา
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            {(
+              [
+                {
+                  key: "faithful",
+                  label: "📋 ตามต้นฉบับ",
+                  desc: "ไม่เพิ่มเนื้อหา ใช้กับ lecture/ตำรา",
+                },
+                {
+                  key: "expand",
+                  label: "✨ ขยาย (แนะนำ)",
+                  desc: "เพิ่ม foundation, clinical pearls, mnemonics — เหมาะกับสรุปจากรุ่นพี่",
+                },
+                {
+                  key: "deep",
+                  label: "🔬 ละเอียดสูงสุด",
+                  desc: "Deep dive + cases + pitfalls (ใช้เวลา 40-90s)",
+                },
+              ] as const
+            ).map((opt) => (
+              <button
+                key={opt.key}
+                type="button"
+                onClick={() => setExtractMode(opt.key)}
+                className={`text-left rounded border p-2 text-xs transition ${
+                  extractMode === opt.key
+                    ? "border-violet-500 bg-violet-100 ring-1 ring-violet-300"
+                    : "border-border bg-card hover:border-violet-300"
+                }`}
+              >
+                <div className="font-semibold">{opt.label}</div>
+                <div className="text-muted-foreground mt-0.5 leading-tight">
+                  {opt.desc}
+                </div>
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Mode tabs */}
@@ -215,7 +325,8 @@ export default function ImportPanel({ topics }: Props) {
               className="text-sm"
             />
             <p className="text-xs text-muted-foreground mt-1">
-              PDF / PNG / JPG / WebP — รวม GoodNotes export
+              PDF / PNG / JPG / WebP — รูปภาพ ≤4 MB · PDF ใหญ่กว่า 4 MB จะ
+              อ่าน text จากเบราว์เซอร์ (เสียรูปภาพ/diagram)
             </p>
             {file && (
               <p className="text-xs mt-1">
@@ -257,11 +368,23 @@ export default function ImportPanel({ topics }: Props) {
         <Button onClick={extract} disabled={loading} className="gap-2">
           {loading ? (
             <>
-              <Loader2 className="h-4 w-4 animate-spin" /> AI กำลังสรุป… (อาจใช้ 20-40s สำหรับ PDF ใหญ่)
+              <Loader2 className="h-4 w-4 animate-spin" />
+              {progressMsg
+                ? progressMsg
+                : extractMode === "deep"
+                  ? "AI กำลัง deep-dive… (60-120s)"
+                  : extractMode === "expand"
+                    ? "AI กำลังขยายเนื้อหา… (30-60s)"
+                    : "AI กำลังสรุป… (20-40s)"}
             </>
           ) : (
             <>
-              <Sparkles className="h-4 w-4" /> Extract ด้วย AI
+              <Sparkles className="h-4 w-4" />
+              {extractMode === "faithful"
+                ? "Extract"
+                : extractMode === "expand"
+                  ? "Extract + ขยายเนื้อหา"
+                  : "Extract + Deep Dive"}
             </>
           )}
         </Button>
@@ -408,6 +531,48 @@ export default function ImportPanel({ topics }: Props) {
             {/* Save form */}
             <Card className="border-violet-300 bg-violet-50/30">
               <CardContent className="p-4 space-y-3">
+                {data.classification && (
+                  <div
+                    className={`rounded border p-2 text-xs flex items-start gap-2 ${
+                      data.classification.suggested_topic_id &&
+                      data.classification.confidence >= 0.6
+                        ? "border-emerald-300 bg-emerald-50 text-emerald-900"
+                        : "border-amber-300 bg-amber-50 text-amber-900"
+                    }`}
+                  >
+                    <span>💡</span>
+                    <div className="flex-1">
+                      {data.classification.suggested_topic_id ? (
+                        <>
+                          <span className="font-semibold">
+                            AI คิดว่า:{" "}
+                            {(() => {
+                              const t = topics.find(
+                                (x) => x.id === data.classification!.suggested_topic_id,
+                              );
+                              return t
+                                ? `Y${t.year} · ${t.school_systems?.icon ?? ""} ${t.name_th}`
+                                : "(ไม่พบ topic ใน list)";
+                            })()}
+                          </span>
+                          <span className="ml-1 opacity-70">
+                            ({Math.round(data.classification.confidence * 100)}%)
+                          </span>
+                        </>
+                      ) : (
+                        <span className="font-semibold">
+                          AI ไม่พบ topic ที่ตรง — แนะนำสร้างใหม่
+                          {data.classification.suggested_new_topic
+                            ? `: Y${data.classification.suggested_new_topic.year} · ${data.classification.suggested_new_topic.system_hint} · ${data.classification.suggested_new_topic.name_th}`
+                            : ""}
+                        </span>
+                      )}
+                      <p className="mt-0.5 opacity-80">
+                        {data.classification.reasoning}
+                      </p>
+                    </div>
+                  </div>
+                )}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <label className="block">
                     <span className="text-xs font-semibold text-muted-foreground block mb-1">
