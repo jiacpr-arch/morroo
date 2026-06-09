@@ -369,8 +369,15 @@ export default function ImportPanel({ topics }: Props) {
               className="text-sm"
             />
             <p className="text-xs text-muted-foreground mt-1">
-              PDF ≤32 MB / รูปภาพ ≤4 MB · 4-32 MB อัปโหลดผ่าน storage
-              (รองรับลายมือ/scan), &gt;32 MB ใช้ ilovepdf.com/compress_pdf
+              PDF ≤32 MB / รูปภาพ ≤4 MB · ถ้าใหญ่กว่านี้
+              <button
+                type="button"
+                onClick={() => setMode("text")}
+                className="ml-1 underline text-violet-700"
+              >
+                สลับไปแท็บ Text
+              </button>{" "}
+              (มีคู่มือแปลงทุก tool)
             </p>
             {file && (
               <p className="text-xs mt-1">
@@ -388,12 +395,153 @@ export default function ImportPanel({ topics }: Props) {
           />
         )}
         {mode === "text" && (
-          <textarea
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-            placeholder="paste lecture notes / textbook excerpt / etc."
-            className="w-full border rounded p-2 text-sm min-h-[160px] font-mono"
-          />
+          <div className="space-y-3">
+            <details className="rounded-lg border border-amber-300 bg-amber-50/40 group">
+              <summary className="cursor-pointer p-3 text-sm font-semibold text-amber-900 select-none list-none flex items-center justify-between">
+                <span>📖 วิธีแปลง PDF ลายมือ/scan เป็น text (กดเปิดดู)</span>
+                <span className="text-xs opacity-70 group-open:rotate-180 transition">
+                  ▼
+                </span>
+              </summary>
+              <div className="px-3 pb-3 text-xs space-y-3 text-amber-900">
+                <p className="text-amber-800/90">
+                  เลือกวิธีที่สะดวกสำหรับคุณ —
+                  ทุกวิธีคัดข้อความออกแล้วเอามาวางในช่องด้านล่าง
+                </p>
+
+                {/* GoodNotes */}
+                <div className="rounded border border-amber-200 bg-white/60 p-2">
+                  <p className="font-bold mb-1">
+                    📱 GoodNotes (iPad/Mac) — แนะนำสำหรับลายมือ
+                  </p>
+                  <ol className="list-decimal pl-4 space-y-0.5">
+                    <li>เปิด PDF ใน GoodNotes (ลากเข้าไปได้เลย)</li>
+                    <li>เลือกหน้า → เครื่องมือ <b>Lasso</b> (วงรอบ)</li>
+                    <li>วงข้อความที่ต้องการ → กดค้าง → <b>Convert</b></li>
+                    <li>
+                      เลือก &quot;<b>Convert Handwriting to Text</b>&quot; →
+                      เลือกภาษา <b>Thai</b>
+                    </li>
+                    <li>Copy text ที่ได้ → paste ที่ช่องด้านล่าง</li>
+                  </ol>
+                  <p className="text-[10px] opacity-70 mt-1">
+                    💡 ทำทีละหน้า/ทีละ section ดีกว่า — แม่นยำสูงกว่า batch ทีเดียว
+                  </p>
+                </div>
+
+                {/* Apple Preview */}
+                <div className="rounded border border-amber-200 bg-white/60 p-2">
+                  <p className="font-bold mb-1">
+                    🍎 Apple Preview (Mac) — สำหรับ PDF text หรือ scan ที่ชัด
+                  </p>
+                  <ol className="list-decimal pl-4 space-y-0.5">
+                    <li>
+                      double-click เปิด PDF (จะเปิดด้วย Preview อัตโนมัติ)
+                    </li>
+                    <li>
+                      Tools เมนูบน → <b>Text Selection</b> (หรือกด <kbd>⌘+A</kbd>)
+                    </li>
+                    <li>ลาก highlight ข้อความ → <kbd>⌘+C</kbd></li>
+                    <li>ถ้าเป็น scan: Tools → <b>Annotate</b> → <b>OCR</b> (macOS 13+)</li>
+                    <li>paste ที่ช่องด้านล่าง</li>
+                  </ol>
+                </div>
+
+                {/* iLovePDF */}
+                <div className="rounded border border-amber-200 bg-white/60 p-2">
+                  <p className="font-bold mb-1">
+                    🌐 iLovePDF.com — ฟรี, ใช้ผ่านเว็บ ไม่ต้องลง app
+                  </p>
+                  <ol className="list-decimal pl-4 space-y-0.5">
+                    <li>
+                      เข้า{" "}
+                      <a
+                        href="https://www.ilovepdf.com/ocr"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-violet-700 underline"
+                      >
+                        ilovepdf.com/ocr
+                      </a>
+                    </li>
+                    <li>ลาก PDF เข้าไป (ฟรีสูงสุด 25 MB)</li>
+                    <li>เลือกภาษา <b>Thai + English</b></li>
+                    <li>กด <b>Convert to OCR</b> → รอ ~30s</li>
+                    <li>Download PDF → เปิดด้วย Preview/Acrobat → Select All → Copy</li>
+                    <li>paste ที่ช่องด้านล่าง</li>
+                  </ol>
+                  <p className="text-[10px] opacity-70 mt-1">
+                    💡 ทางเลือกอื่น: smallpdf.com/pdf-ocr, sejda.com/ocr-pdf
+                  </p>
+                </div>
+
+                {/* Adobe */}
+                <div className="rounded border border-amber-200 bg-white/60 p-2">
+                  <p className="font-bold mb-1">
+                    📕 Adobe Acrobat Pro (Mac/PC) — ถ้ามี subscription
+                  </p>
+                  <ol className="list-decimal pl-4 space-y-0.5">
+                    <li>เปิด PDF ใน Acrobat</li>
+                    <li>
+                      All tools → <b>Scan &amp; OCR</b> → <b>Recognize Text</b>
+                    </li>
+                    <li>เลือกภาษา <b>Thai</b> → Recognize</li>
+                    <li>File → <b>Export to</b> → <b>Text (Plain)</b></li>
+                    <li>เปิดไฟล์ .txt → Select All → Copy → paste ที่ช่องด้านล่าง</li>
+                  </ol>
+                </div>
+
+                {/* Phone */}
+                <div className="rounded border border-amber-200 bg-white/60 p-2">
+                  <p className="font-bold mb-1">
+                    📸 ถ่ายภาพด้วยมือถือ — กรณีไม่มี tool อะไรเลย
+                  </p>
+                  <ol className="list-decimal pl-4 space-y-0.5">
+                    <li>
+                      เปิดแอป <b>Notes</b> (iPhone) หรือ <b>Google Lens</b>
+                    </li>
+                    <li>กดถ่ายรูปหน้า PDF → app จะอ่านลายมือออกมาเป็น text</li>
+                    <li>กด <b>Copy</b> → paste ที่ช่องด้านล่าง</li>
+                  </ol>
+                  <p className="text-[10px] opacity-70 mt-1">
+                    💡 หรือใช้แท็บ &quot;File&quot; upload รูปภาพหน้านั้น ๆ
+                    (ไฟล์ ≤4 MB) ให้ AI อ่านโดยตรง
+                  </p>
+                </div>
+
+                <div className="rounded bg-emerald-100/60 border border-emerald-300 p-2 text-emerald-900">
+                  <p className="font-bold">✅ Tips การเตรียม text ที่ดี</p>
+                  <ul className="list-disc pl-4 space-y-0.5 mt-1">
+                    <li>
+                      ไม่ต้อง format สวย — AI อ่านได้แม้ text ปนกัน
+                    </li>
+                    <li>
+                      มีคำผิดจาก OCR นิดหน่อยไม่เป็นไร — AI เดาความหมายได้
+                    </li>
+                    <li>
+                      เนื้อหา 1 หัวข้อ (เช่น &quot;Cardiac Cycle&quot;) ต่อ 1 import ดีสุด
+                    </li>
+                    <li>
+                      ไม่ต้องลบเลข page / header / footer — AI กรองให้
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+
+            <textarea
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+              placeholder="paste text ที่แปลงมาแล้ว... (lecture notes, สรุปจากรุ่นพี่, ตำราที่ OCR แล้ว)"
+              className="w-full border rounded p-2 text-sm min-h-[200px] font-mono"
+            />
+            {text.length > 0 && (
+              <p className="text-xs text-muted-foreground">
+                ความยาว: {text.length.toLocaleString()} ตัวอักษร (~
+                {Math.round(text.length / 4).toLocaleString()} tokens)
+              </p>
+            )}
+          </div>
         )}
 
         <input
