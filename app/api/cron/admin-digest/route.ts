@@ -16,7 +16,9 @@ import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { sendLineMessage } from "@/lib/line";
 import { buildAdminDigestFlex } from "@/lib/line-flex-templates";
-import { buildMarketingSnapshot } from "@/lib/marketing-digest";
+import { bangkokDayWindow, buildMarketingSnapshot } from "@/lib/marketing-digest";
+import { fetchAdInsights } from "@/lib/ads-diagnostics";
+import { summarizeAdsDay, type AdsDailySummary } from "@/lib/ads-daily-summary";
 import { runLineCtaAutopilot } from "@/lib/line-cta-config";
 import { runHeroAutopilot, runPricingPromoAutopilot } from "@/lib/site-config";
 
@@ -155,6 +157,18 @@ export async function GET(request: Request) {
     console.error("[admin-digest] marketing snapshot failed:", err);
   }
 
+  // Ads performance for yesterday's Bangkok day — same optionality as the
+  // marketing section: a Meta API failure must not block the digest.
+  let adsYesterday: AdsDailySummary | null = null;
+  try {
+    const yesterday = bangkokDayWindow(now, 1);
+    adsYesterday = summarizeAdsDay(
+      await fetchAdInsights(yesterday.label, yesterday.label)
+    );
+  } catch (err) {
+    console.error("[admin-digest] ads snapshot failed:", err);
+  }
+
   const flex = buildAdminDigestFlex({
     dateLabel,
     attemptsToday,
@@ -167,6 +181,7 @@ export async function GET(request: Request) {
     aiGradeFails24h,
     revenueTodayThb: revenueTodayThb > 0 ? revenueTodayThb : null,
     marketing,
+    adsYesterday,
   });
 
   const ok = await sendLineMessage(adminLineId, [flex]);
@@ -247,6 +262,7 @@ export async function GET(request: Request) {
       weakestSubject,
       aiGradeFails24h,
       marketing,
+      adsYesterday,
     },
   });
 }

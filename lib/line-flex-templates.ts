@@ -1,5 +1,6 @@
 import type { LineMessage } from "./line";
 import type { MarketingSnapshot } from "./marketing-digest";
+import type { AdsDailySummary } from "./ads-daily-summary";
 
 interface WeeklySummaryData {
   totalQuestions: number;
@@ -476,6 +477,7 @@ interface AdminDigestData {
   aiGradeFails24h: number;
   revenueTodayThb: number | null;
   marketing?: MarketingSnapshot | null;
+  adsYesterday?: AdsDailySummary | null;
 }
 
 function deltaText(value: number | null): string {
@@ -616,6 +618,34 @@ function marketingSection(m: MarketingSnapshot) {
   ];
 }
 
+function adsSection(a: AdsDailySummary) {
+  const spendText = `฿${a.spendThb.toLocaleString("th-TH", { maximumFractionDigits: 0 })}`;
+  const impressionsText =
+    a.ctrPct != null
+      ? `${a.impressions.toLocaleString("th-TH")} (CTR ${a.ctrPct.toFixed(2)}%)`
+      : a.impressions.toLocaleString("th-TH");
+  const signupText =
+    a.costPerSignupThb != null
+      ? `${a.signups} คน (฿${a.costPerSignupThb.toFixed(0)}/คน)`
+      : `${a.signups} คน`;
+
+  return [
+    { type: "separator" as const, margin: "md" as const },
+    {
+      type: "text" as const,
+      text: `📣 Ads เมื่อวาน (${a.adsDelivered} ตัว)`,
+      size: "xs" as const,
+      color: "#888888",
+      weight: "bold" as const,
+      margin: "md" as const,
+    },
+    statRow("💰 Spend", spendText),
+    statRow("👁 Impressions", impressionsText),
+    statRow("✅ สมัครจาก ads", signupText),
+    ...(a.topAdName ? [statRow("🏆 ตัวเด่น", a.topAdName)] : []),
+  ];
+}
+
 export function buildAdminDigestFlex(data: AdminDigestData): LineMessage {
   const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.morroo.com").trim();
   const accuracyText =
@@ -699,6 +729,7 @@ export function buildAdminDigestFlex(data: AdminDigestData): LineMessage {
                 },
               ]
             : []),
+          ...(data.adsYesterday ? adsSection(data.adsYesterday) : []),
           ...(data.marketing ? marketingSection(data.marketing) : []),
         ],
       },
