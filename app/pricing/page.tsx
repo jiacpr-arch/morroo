@@ -3,6 +3,8 @@ import PricingCard from "@/components/PricingCard";
 import PricingViewTracker from "@/components/PricingViewTracker";
 import PricingPromo from "@/components/PricingPromo";
 import PricingFaq from "@/components/PricingFaq";
+import NlExamCountdown from "@/components/NlExamCountdown";
+import SocialProofSection from "@/components/SocialProofSection";
 import { PRICING_FAQ_ITEMS } from "@/lib/pricing-faq";
 import { LineCtaButton } from "@/components/SocialLinks";
 import { PRICING_PLANS, BOARD_PRICING_PLANS } from "@/lib/types";
@@ -50,6 +52,8 @@ export default function PricingPage() {
         </p>
       </div>
 
+      <NlExamCountdown />
+
       {/* Student / NL Step 2 plans */}
       <section className="mb-16">
         <div className="text-center mb-6">
@@ -95,6 +99,11 @@ export default function PricingPage() {
           แอด LINE มาปรึกษาได้เลย เราช่วยแนะนำแพ็กที่ตรงกับเป้าหมายสอบของคุณ + รับข้อสอบฟรีทุกเช้า
         </p>
         <LineCtaButton surface="pricing" className="mt-4" />
+      </div>
+
+      {/* Testimonials + stats — same section as the landing page, helps hesitant buyers */}
+      <div className="mb-16 -mx-4 sm:-mx-6 lg:-mx-8">
+        <SocialProofSection />
       </div>
 
       <PricingFaq surface="pricing_page" />
