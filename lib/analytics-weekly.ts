@@ -1,35 +1,26 @@
 /**
- * Weekly analytics digest — pushes a Flex summary to the admin's LINE.
+ * Trailing-7-day analytics summary — aggregated from analytics_events
+ * (mirrored copy of @vercel/analytics events, see /api/analytics/track).
  *
- * Reads from analytics_events (mirrored copy of @vercel/analytics events,
- * see /api/analytics/track). Covers the trailing 7 days.
- *
- * Auth: Vercel Cron injects `Authorization: Bearer $CRON_SECRET`.
- * External callers can use `?secret=$BLOG_GENERATE_SECRET`.
+ * Used by the Monday edition of the admin daily digest
+ * (/api/cron/admin-digest), which absorbed the old standalone
+ * analytics-digest cron so the admin gets one LINE push per day.
  */
 
-import { NextResponse } from "next/server";
-import { createAdminClient } from "@/lib/supabase/admin";
-import { sendLineMessage } from "@/lib/line";
-import { buildAnalyticsDigestFlex } from "@/lib/line-flex-templates";
+import type { SupabaseClient } from "@supabase/supabase-js";
 
-export const runtime = "nodejs";
-export const maxDuration = 30;
-
-function isAuthorized(request: Request): boolean {
-  const url = new URL(request.url);
-  const secret = url.searchParams.get("secret");
-  if (secret && secret === process.env.BLOG_GENERATE_SECRET) return true;
-
-  const auth = request.headers.get("authorization");
-  if (
-    auth &&
-    process.env.CRON_SECRET &&
-    auth === `Bearer ${process.env.CRON_SECRET}`
-  ) {
-    return true;
-  }
-  return false;
+export interface WeeklyAnalyticsSummary {
+  rangeLabel: string; // e.g. "15–21 พ.ค. 2026"
+  pageViews: number;
+  uniqueVisitors: number;
+  signups: number;
+  examStarts: number;
+  checkoutClicks: number;
+  socialLineClicks: number;
+  topPath: { path: string; count: number } | null;
+  topReferrer: { ref: string; count: number } | null;
+  signupConversion: number | null; // signups / unique visitors %
+  checkoutConversion: number | null; // checkouts / signups %
 }
 
 type EventRow = {
@@ -121,8 +112,7 @@ function ratio(num: number, denom: number): number | null {
 }
 
 function rangeLabel(start: Date, end: Date): string {
-  const bangkok = (d: Date) =>
-    new Date(d.getTime() + 7 * 60 * 60 * 1000);
+  const bangkok = (d: Date) => new Date(d.getTime() + 7 * 60 * 60 * 1000);
   const s = bangkok(start);
   const e = bangkok(end);
   const month = s.toLocaleDateString("th-TH", { month: "short", timeZone: "UTC" });
@@ -130,51 +120,26 @@ function rangeLabel(start: Date, end: Date): string {
   return `${s.getUTCDate()}–${e.getUTCDate()} ${month} ${year}`;
 }
 
-export async function GET(request: Request) {
-  if (!isAuthorized(request)) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
-
-  const adminLineId = process.env.ADMIN_LINE_USER_ID;
-  if (!adminLineId) {
-    return NextResponse.json(
-      { error: "ADMIN_LINE_USER_ID not configured" },
-      { status: 500 }
-    );
-  }
-
-  const now = new Date();
+export async function fetchWeeklyAnalytics(
+  supabase: SupabaseClient,
+  now: Date
+): Promise<WeeklyAnalyticsSummary> {
   const start = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
 
-  const supabase = createAdminClient();
   const { data, error } = await supabase
     .from("analytics_events")
     .select("event_name,session_id,path,referrer")
     .gte("created_at", start.toISOString())
     .lte("created_at", now.toISOString())
     .limit(50000);
-
-  if (error) {
-    return NextResponse.json({ ok: false, error: error.message }, { status: 500 });
-  }
+  if (error) throw new Error(error.message);
 
   const agg = aggregate((data as EventRow[] | null) ?? []);
 
-  const flex = buildAnalyticsDigestFlex({
+  return {
     rangeLabel: rangeLabel(start, now),
-    pageViews: agg.pageViews,
-    uniqueVisitors: agg.uniqueVisitors,
-    signups: agg.signups,
-    examStarts: agg.examStarts,
-    checkoutClicks: agg.checkoutClicks,
-    socialLineClicks: agg.socialLineClicks,
-    topPath: agg.topPath,
-    topReferrer: agg.topReferrer,
+    ...agg,
     signupConversion: ratio(agg.signups, agg.uniqueVisitors),
     checkoutConversion: ratio(agg.checkoutClicks, agg.signups),
-  });
-
-  const ok = await sendLineMessage(adminLineId, [flex]);
-
-  return NextResponse.json({ ok, snapshot: agg });
+  };
 }

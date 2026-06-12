@@ -1,12 +1,22 @@
 /**
- * Daily admin digest cron — pushes a Flex summary to the admin's LINE.
+ * Daily admin digest cron — the ONE LINE push the admin gets every morning
+ * (08:00 BKK). Everything the overnight pipeline produced is folded in here
+ * so the admin is not pinged by each cron separately:
  *
- * Snapshot for today (Asia/Bangkok day window, computed in SQL via NOW()):
- *  - attempts, active users, avg accuracy, new users, revenue
+ *  - today (Asia/Bangkok): attempts, active users, accuracy, new users, revenue
  *  - all-time totals (students, 7d actives, weakest subject)
- *  - AI grading failure count in the last 24h (from Sentry-free signal:
- *    we count via a lightweight `_ai_grade_errors` view if present;
- *    otherwise reports 0)
+ *  - AI grading failure count in the last 24h
+ *  - yesterday's web funnel (marketing snapshot) + Meta ads performance
+ *  - overnight ads-ops results: ads-autofix findings/auto-pauses,
+ *    post-merge verdicts, and new AI suggest-PRs (the ads crons write to
+ *    DB only — this digest is where their results reach LINE). New suggest
+ *    PRs are attached as extra bubbles in the SAME push so the
+ *    merge/dismiss buttons keep working (LINE allows 5 messages per push).
+ *  - autopilot changes (LINE CTA / hero A/B / pricing promo) — run before
+ *    the flex is built so they appear inside the digest instead of as
+ *    separate text messages
+ *  - Mondays: trailing-7-day analytics summary (absorbed the old
+ *    analytics-digest cron)
  *
  * Auth: Vercel Cron injects `Authorization: Bearer $CRON_SECRET`.
  * External callers can use `?secret=$BLOG_GENERATE_SECRET`.
@@ -14,16 +24,24 @@
 
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { sendLineMessage } from "@/lib/line";
-import { buildAdminDigestFlex } from "@/lib/line-flex-templates";
+import { sendLineMessage, type LineMessage } from "@/lib/line";
+import {
+  buildAdminDigestFlex,
+  buildAdsSuggestFlex,
+  type AdsOpsSummary,
+} from "@/lib/line-flex-templates";
 import { bangkokDayWindow, buildMarketingSnapshot } from "@/lib/marketing-digest";
 import { fetchAdInsights } from "@/lib/ads-diagnostics";
 import { summarizeAdsDay, type AdsDailySummary } from "@/lib/ads-daily-summary";
+import { fetchWeeklyAnalytics, type WeeklyAnalyticsSummary } from "@/lib/analytics-weekly";
 import { runLineCtaAutopilot } from "@/lib/line-cta-config";
 import { runHeroAutopilot, runPricingPromoAutopilot } from "@/lib/site-config";
 
 export const runtime = "nodejs";
-export const maxDuration = 30;
+export const maxDuration = 60;
+
+// LINE push API caps a single push at 5 messages: 1 digest + up to 4 cards.
+const MAX_SUGGEST_CARDS = 4;
 
 function isAuthorized(request: Request): boolean {
   const url = new URL(request.url);
@@ -169,6 +187,192 @@ export async function GET(request: Request) {
     console.error("[admin-digest] ads snapshot failed:", err);
   }
 
+  // --- Overnight ads-ops pipeline results (written by the ads crons) ---
+  let adsOps: AdsOpsSummary | null = null;
+  const suggestCards: LineMessage[] = [];
+  try {
+    // Latest ads-autofix diagnostics run in the last 24h.
+    const { data: runRows } = await supabase
+      .from("ad_diagnostics_runs")
+      .select("id, ok, findings_count, actions_count, summary")
+      .gte("started_at", last24hUtc)
+      .order("started_at", { ascending: false })
+      .limit(1);
+    let autofix: AdsOpsSummary["autofix"] = null;
+    const run = runRows?.[0] as
+      | {
+          id: number;
+          ok: boolean;
+          findings_count: number;
+          actions_count: number;
+          summary: { bySeverity?: { critical?: number } } | null;
+        }
+      | undefined;
+    if (run) {
+      const { data: topRows } = await supabase
+        .from("ad_diagnostics_findings")
+        .select("entity_label, entity_id, recommendation")
+        .eq("run_id", run.id)
+        .eq("severity", "critical")
+        .order("created_at", { ascending: false })
+        .limit(2);
+      autofix = {
+        ok: run.ok,
+        findingsCount: run.findings_count,
+        critical: run.summary?.bySeverity?.critical ?? topRows?.length ?? 0,
+        autoPaused: run.actions_count,
+        topIssues: (topRows ?? []).map((f) => ({
+          label: (f.entity_label as string | null) ?? (f.entity_id as string),
+          recommendation: f.recommendation as string,
+        })),
+      };
+    }
+
+    // Post-merge verdicts resolved in the last 24h (written by ads-postmerge-watch).
+    const { data: pmRows } = await supabase
+      .from("ad_suggest_prs")
+      .select(
+        "page_path, pr_number, outcome, revert_pr_number, baseline_metrics, post_merge_metrics"
+      )
+      .gte("outcome_resolved_at", last24hUtc)
+      .not("outcome", "is", null);
+    const postMerge = ((pmRows ?? []) as {
+      page_path: string;
+      pr_number: number;
+      outcome: "improved" | "degraded" | "flat";
+      revert_pr_number: number | null;
+      baseline_metrics: Record<string, unknown> | null;
+      post_merge_metrics: Record<string, unknown> | null;
+    }[]).map((r) => ({
+      pagePath: r.page_path,
+      prNumber: r.pr_number,
+      outcome: r.outcome,
+      revertPrNumber: r.revert_pr_number,
+      baselineRate:
+        r.baseline_metrics?.signupRatePct != null
+          ? Number(r.baseline_metrics.signupRatePct)
+          : null,
+      currentRate:
+        r.post_merge_metrics?.signupRatePct != null
+          ? Number(r.post_merge_metrics.signupRatePct)
+          : null,
+    }));
+
+    // Open suggest PRs: new ones (last 24h) become interactive cards in this
+    // push; the rest are counted so stale approvals don't get forgotten.
+    const { data: openRows } = await supabase
+      .from("ad_suggest_prs")
+      .select("finding_id, page_path, pr_number, pr_url, baseline_metrics, created_at")
+      .eq("status", "open")
+      .order("created_at", { ascending: false });
+    const open = ((openRows ?? []) as {
+      finding_id: number | null;
+      page_path: string;
+      pr_number: number;
+      pr_url: string;
+      baseline_metrics: Record<string, number | string | null>;
+      created_at: string;
+    }[]);
+    const newOpen = open.filter((r) => r.created_at >= last24hUtc);
+
+    const findingIds = newOpen
+      .slice(0, MAX_SUGGEST_CARDS)
+      .map((r) => r.finding_id)
+      .filter((id): id is number => id != null);
+    const { data: findingRows } = findingIds.length
+      ? await supabase
+          .from("ad_diagnostics_findings")
+          .select("id, recommendation, severity")
+          .in("id", findingIds)
+      : { data: [] };
+    const findingById = new Map(
+      ((findingRows ?? []) as { id: number; recommendation: string; severity: string }[]).map(
+        (f) => [f.id, f]
+      )
+    );
+
+    for (const row of newOpen.slice(0, MAX_SUGGEST_CARDS)) {
+      const finding = row.finding_id != null ? findingById.get(row.finding_id) : undefined;
+      suggestCards.push(
+        buildAdsSuggestFlex({
+          pagePath: row.page_path,
+          recommendation: finding?.recommendation ?? "AI เสนอปรับหน้านี้เพื่อเพิ่ม conversion",
+          severity: finding?.severity ?? "warn",
+          prNumber: row.pr_number,
+          prUrl: row.pr_url,
+          baseline: row.baseline_metrics,
+        })
+      );
+    }
+
+    adsOps = {
+      autofix,
+      postMerge,
+      suggestsNew: newOpen.length,
+      suggestsOpenTotal: open.length,
+    };
+  } catch (err) {
+    console.error("[admin-digest] ads-ops summary failed:", err);
+  }
+
+  // --- Autopilots — run BEFORE building the flex so their changes appear
+  // inside the digest. Reversible config-only changes; failures must not
+  // affect the digest itself. ---
+  const autopilotChanges: string[] = [];
+
+  let lineCtaAutopilot: { previousLevel: number; level: number; changed: boolean; reason: string } | null = null;
+  if (marketing) {
+    try {
+      const { previousLevel, decision } = await runLineCtaAutopilot(supabase, marketing);
+      lineCtaAutopilot = { previousLevel, ...decision };
+      if (decision.changed) {
+        const arrow = decision.level > previousLevel ? "⬆️ ดันขึ้น" : "⬇️ ลดลง";
+        autopilotChanges.push(
+          `🤖 ปุ่มชวนแชท LINE: ${arrow} level ${previousLevel} → ${decision.level} — ${decision.reason}`
+        );
+      }
+    } catch (err) {
+      console.error("[admin-digest] line-cta autopilot failed:", err);
+    }
+  }
+
+  let heroAutopilot: { previous: string | null; forced: string | null; changed: boolean; reason: string } | null = null;
+  if (marketing) {
+    try {
+      const { previous, decision } = await runHeroAutopilot(supabase, marketing.heroAB);
+      heroAutopilot = { previous, ...decision };
+      if (decision.changed) {
+        autopilotChanges.push(`🧪 หน้าแรก A/B: ${decision.reason}`);
+      }
+    } catch (err) {
+      console.error("[admin-digest] hero autopilot failed:", err);
+    }
+  }
+
+  let pricingPromoAutopilot: { previous: number; level: number; changed: boolean; reason: string } | null = null;
+  if (marketing) {
+    try {
+      const { previous, decision } = await runPricingPromoAutopilot(supabase, marketing);
+      pricingPromoAutopilot = { previous, ...decision };
+      if (decision.changed) {
+        const state = decision.level === 1 ? "เปิด" : "ปิด";
+        autopilotChanges.push(`🏷️ แถบโปรหน้าราคา: ${state} — ${decision.reason}`);
+      }
+    } catch (err) {
+      console.error("[admin-digest] pricing promo autopilot failed:", err);
+    }
+  }
+
+  // --- Monday edition: trailing-7-day analytics summary ---
+  let weekly: WeeklyAnalyticsSummary | null = null;
+  if (bangkokNow.getUTCDay() === 1) {
+    try {
+      weekly = await fetchWeeklyAnalytics(supabase, now);
+    } catch (err) {
+      console.error("[admin-digest] weekly analytics failed:", err);
+    }
+  }
+
   const flex = buildAdminDigestFlex({
     dateLabel,
     attemptsToday,
@@ -182,71 +386,16 @@ export async function GET(request: Request) {
     revenueTodayThb: revenueTodayThb > 0 ? revenueTodayThb : null,
     marketing,
     adsYesterday,
+    adsOps,
+    autopilotChanges,
+    weekly,
   });
 
-  const ok = await sendLineMessage(adminLineId, [flex]);
-
-  // Tier-1 LINE-CTA autopilot — react to the same snapshot we just reported,
-  // so the fix is bound to the daily report. Reversible config-only change;
-  // failures must not affect the digest result.
-  let lineCtaAutopilot: { previousLevel: number; level: number; changed: boolean; reason: string } | null = null;
-  if (marketing) {
-    try {
-      const { previousLevel, decision } = await runLineCtaAutopilot(supabase, marketing);
-      lineCtaAutopilot = { previousLevel, ...decision };
-      if (decision.changed) {
-        const arrow = decision.level > previousLevel ? "⬆️ ดันขึ้น" : "⬇️ ลดลง";
-        await sendLineMessage(adminLineId, [
-          {
-            type: "text",
-            text:
-              `🤖 LINE CTA autopilot: ${arrow} level ${previousLevel} → ${decision.level}\n` +
-              `${decision.reason}`,
-          },
-        ]);
-      }
-    } catch (err) {
-      console.error("[admin-digest] line-cta autopilot failed:", err);
-    }
-  }
-
-  // Hero A/B autopilot — lock in a winner only once there's enough data
-  // (guardrails live in decideHeroWinner). Reversible config-only change.
-  let heroAutopilot: { previous: string | null; forced: string | null; changed: boolean; reason: string } | null = null;
-  if (marketing) {
-    try {
-      const { previous, decision } = await runHeroAutopilot(supabase, marketing.heroAB);
-      heroAutopilot = { previous, ...decision };
-      if (decision.changed) {
-        await sendLineMessage(adminLineId, [
-          { type: "text", text: `🧪 Hero A/B autopilot: ${decision.reason}` },
-        ]);
-      }
-    } catch (err) {
-      console.error("[admin-digest] hero autopilot failed:", err);
-    }
-  }
-
-  // Pricing promo autopilot — turn the reassurance bar on/off based on how
-  // pricing viewers convert. Reversible config-only change.
-  let pricingPromoAutopilot: { previous: number; level: number; changed: boolean; reason: string } | null = null;
-  if (marketing) {
-    try {
-      const { previous, decision } = await runPricingPromoAutopilot(supabase, marketing);
-      pricingPromoAutopilot = { previous, ...decision };
-      if (decision.changed) {
-        const state = decision.level === 1 ? "เปิด" : "ปิด";
-        await sendLineMessage(adminLineId, [
-          { type: "text", text: `🏷️ Pricing promo autopilot: ${state} — ${decision.reason}` },
-        ]);
-      }
-    } catch (err) {
-      console.error("[admin-digest] pricing promo autopilot failed:", err);
-    }
-  }
+  const ok = await sendLineMessage(adminLineId, [flex, ...suggestCards]);
 
   return NextResponse.json({
     ok,
+    suggestCardsAttached: suggestCards.length,
     lineCtaAutopilot,
     heroAutopilot,
     pricingPromoAutopilot,
@@ -263,6 +412,8 @@ export async function GET(request: Request) {
       aiGradeFails24h,
       marketing,
       adsYesterday,
+      adsOps,
+      weekly,
     },
   });
 }

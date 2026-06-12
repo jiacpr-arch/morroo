@@ -7,7 +7,9 @@
  *   3. diagnosePages + diagnoseAds → findings
  *   4. persist findings → ad_diagnostics_findings
  *   5. executeAutoActions on the safe subset (pause underperforming ads)
- *   6. push a Flex summary to the admin's LINE
+ *
+ * No LINE push here — results land in ad_diagnostics_runs/_findings and
+ * surface in the 08:00 admin digest (/api/cron/admin-digest).
  *
  * Reversible by design: auto-actions are limited to status=PAUSED writes.
  * The original state is stored in ad_auto_actions so the admin can revert
@@ -18,8 +20,6 @@
 
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { sendLineMessage } from "@/lib/line";
-import { buildAdsDiagnosticsFlex } from "@/lib/line-flex-templates";
 import {
   diagnoseAds,
   diagnosePages,
@@ -178,29 +178,5 @@ export async function GET(request: Request) {
     })
     .eq("id", runId);
 
-  // Notify admin via LINE — only when something happened.
-  const adminLineId = process.env.ADMIN_LINE_USER_ID;
-  let lineSent = false;
-  if (adminLineId && (findings.length > 0 || !ok)) {
-    const top = findings
-      .filter((f) => f.severity === "critical")
-      .slice(0, 3)
-      .map((f) => ({
-        label: f.entityLabel ?? f.entityId,
-        category: f.category,
-        recommendation: f.recommendation,
-        autoActioned: Boolean(f.autoAction),
-      }));
-    const flex = buildAdsDiagnosticsFlex({
-      pagesScanned: pageStats.length,
-      adsScanned: adInsights.length,
-      critical: summary.bySeverity.critical,
-      warn: summary.bySeverity.warn,
-      actionsTaken,
-      topFindings: top,
-    });
-    lineSent = await sendLineMessage(adminLineId, [flex]);
-  }
-
-  return NextResponse.json({ ok, runId, summary, lineSent });
+  return NextResponse.json({ ok, runId, summary });
 }
