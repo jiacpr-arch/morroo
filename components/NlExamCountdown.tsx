@@ -27,8 +27,16 @@ export default function NlExamCountdown() {
       <CalendarClock className="h-5 w-5 shrink-0 text-amber-600" />
       <p className="text-sm sm:text-base">
         <span className="font-semibold">{round.label}</span> เหลืออีก{" "}
-        <span className="font-bold text-amber-700">{daysLeft} วัน</span>{" "}
+        <span className="font-bold text-amber-700">
+          {round.confirmed ? "" : "~"}
+          {daysLeft} วัน
+        </span>{" "}
         — เริ่มฝึกวันนี้ให้ทันรอบสอบ
+        {!round.confirmed && (
+          <span className="block text-xs text-amber-600/80 sm:inline sm:ml-1">
+            (กำหนดการคาดการณ์ — รอประกาศ ศรว.)
+          </span>
+        )}
       </p>
     </div>
   );

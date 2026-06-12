@@ -4,6 +4,7 @@ import ExamCard from "@/components/ExamCard";
 import PricingCard from "@/components/PricingCard";
 import PricingFaq from "@/components/PricingFaq";
 import AllExamsCountdown from "@/components/AllExamsCountdown";
+import NlExamCountdown from "@/components/NlExamCountdown";
 import HeroAB from "@/components/HeroAB";
 import PricingViewTracker from "@/components/PricingViewTracker";
 import SocialProofSection from "@/components/SocialProofSection";
@@ -49,6 +50,7 @@ export default async function HomePage() {
       {/* All Exams Countdown */}
       <section className="py-8 bg-white border-b">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <NlExamCountdown />
           <AllExamsCountdown />
         </div>
       </section>
