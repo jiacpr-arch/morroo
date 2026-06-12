@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import GoodyEmbed from "@/components/GoodyEmbed";
 import NewsCard from "@/components/NewsCard";
 import { getNewsItems, type NewsSection, type NewsSourceType } from "@/lib/news";
+import { getJiaAedNews } from "@/lib/jiaaed-news";
 
 export const revalidate = 60;
 
@@ -57,7 +58,7 @@ export default async function NewsPage({
   const isHealthTab = activeFilter.key === "health";
 
   const items = isHealthTab
-    ? []
+    ? await getJiaAedNews(30)
     : await getNewsItems({
         sourceType: activeFilter.sourceType,
         section: activeSection,
@@ -127,8 +128,26 @@ export default async function NewsPage({
       )}
 
       {isHealthTab ? (
-        <div className="overflow-hidden rounded-xl border bg-card">
-          <GoodyEmbed site="health" type="news" title="ข่าวสุขภาพ" />
+        <div className="space-y-4">
+          {items.length > 0 && (
+            <>
+              <h2 className="text-lg font-semibold text-foreground">
+                ข่าว AED & การช่วยชีวิต
+                <span className="ml-2 text-sm font-normal text-muted-foreground">
+                  จาก jiaaed.com — ลิงก์ไปข่าวต้นฉบับ
+                </span>
+              </h2>
+              {items.map((item) => (
+                <NewsCard key={item.id} item={item} />
+              ))}
+            </>
+          )}
+          <h2 className="pt-4 text-lg font-semibold text-foreground">
+            ข่าวสุขภาพทั่วไป
+          </h2>
+          <div className="overflow-hidden rounded-xl border bg-card">
+            <GoodyEmbed site="health" type="news" title="ข่าวสุขภาพ" />
+          </div>
         </div>
       ) : items.length === 0 ? (
         <p className="py-12 text-center text-muted-foreground">
