@@ -1,7 +1,10 @@
 /**
  * Daily cron — generates AI rewrite suggestions for the worst open
  * landing-page findings. Each suggestion is opened as a draft PR and
- * posted to LINE with merge / dismiss postback buttons.
+ * recorded in ad_suggest_prs.
+ *
+ * No LINE push here — the 08:00 admin digest (/api/cron/admin-digest)
+ * attaches new PRs as interactive cards with merge / dismiss buttons.
  *
  * Schedule: 06:00 BKK (= 23:00 UTC), after the daily ads diagnose (22:00 UTC).
  * pickFindingsToSuggest de-dupes per page, so a persistent finding won't
@@ -14,8 +17,6 @@
 
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { sendLineMessage } from "@/lib/line";
-import { buildAdsSuggestFlex } from "@/lib/line-flex-templates";
 import { getFileOnBranch, getGhConfig } from "@/lib/github-api";
 import {
   findPageFile,
@@ -54,7 +55,6 @@ export async function GET(request: Request) {
     return NextResponse.json({ ok: true, message: "no findings to suggest" });
   }
 
-  const adminLineId = process.env.ADMIN_LINE_USER_ID;
   const opened: Array<{ findingId: number; pr: number; url: string }> = [];
   const errors: Array<{ findingId: number; error: string }> = [];
 
@@ -124,18 +124,6 @@ export async function GET(request: Request) {
       pr: result.pr.number,
       url: result.pr.html_url,
     });
-
-    if (adminLineId) {
-      const flex = buildAdsSuggestFlex({
-        pagePath: finding.entity_id,
-        recommendation: finding.recommendation,
-        severity: finding.severity,
-        prNumber: result.pr.number,
-        prUrl: result.pr.html_url,
-        baseline: baseline as Record<string, number | string | null>,
-      });
-      await sendLineMessage(adminLineId, [flex]);
-    }
   }
 
   return NextResponse.json({
