@@ -34,6 +34,33 @@ export function trackPurchase(opts: {
   window.ttq?.track("Subscribe", { value, currency }, { event_id: transactionId });
 }
 
+export function trackInitiateCheckout(opts: {
+  plan: string;
+  value: number;
+  currency: string;
+}): void {
+  if (typeof window === "undefined") return;
+  const { plan, value, currency } = opts;
+
+  window.gtag?.("event", "begin_checkout", {
+    value,
+    currency,
+    items: [{ item_id: plan }],
+  });
+  window.fbq?.("track", "InitiateCheckout", {
+    value,
+    currency,
+    content_ids: [plan],
+    content_type: "subscription",
+  });
+  window.ttq?.track("InitiateCheckout", {
+    value,
+    currency,
+    content_id: plan,
+    content_type: "subscription",
+  });
+}
+
 export function trackSignup(): void {
   if (typeof window === "undefined") return;
   // GA4 only. Meta/TikTok CompleteRegistration is already sent server-side
