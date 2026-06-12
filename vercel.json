@@ -13,6 +13,10 @@
       "schedule": "0 2 * * *"
     },
     {
+      "path": "/api/cron/exam-watch",
+      "schedule": "30 0 * * *"
+    },
+    {
       "path": "/api/cron/trial-expiry",
       "schedule": "30 2 * * *"
     },

@@ -41,7 +41,10 @@ export default async function NLPage() {
         </div>
         <h1 className="text-3xl font-bold">ข้อสอบใบประกอบวิชาชีพ</h1>
         <p className="mt-2 text-muted-foreground">
-          ฝึกทำข้อสอบ National License แบบ MCQ ครบทุกสาขา
+          ฝึกทำข้อสอบ National License แบบ MCQ ครบทุกสาขา ·{" "}
+          <Link href="/nl/calendar" className="underline hover:text-brand">
+            ดูปฏิทินสอบ NL 2569
+          </Link>
         </p>
         <SectionUpdatesBadge section="nl" className="mt-3" />
       </div>

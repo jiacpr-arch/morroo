@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { CalendarClock } from "lucide-react";
 import { getNextExamRound, type ExamRound } from "@/lib/exam-dates";
 
@@ -37,6 +38,12 @@ export default function NlExamCountdown() {
             (กำหนดการคาดการณ์ — รอประกาศ ศรว.)
           </span>
         )}
+        <Link
+          href="/nl/calendar"
+          className="block text-xs font-medium text-amber-700 underline hover:text-amber-800 sm:inline sm:ml-2"
+        >
+          ดูปฏิทินสอบทุกรอบ
+        </Link>
       </p>
     </div>
   );
