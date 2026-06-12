@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Rocket, FileText, Calendar, HeartPulse, Pin } from "lucide-react";
+import { Rocket, FileText, Calendar, HeartPulse, Pin, Zap } from "lucide-react";
 import type { NewsItem, NewsSourceType } from "@/lib/news";
 
 const SOURCE_META: Record<
@@ -26,6 +26,11 @@ const SOURCE_META: Record<
     label: "ข่าวสุขภาพ",
     icon: HeartPulse,
     tone: "bg-rose-100 text-rose-700",
+  },
+  external_aed: {
+    label: "ข่าวกู้ชีพ/AED",
+    icon: Zap,
+    tone: "bg-orange-100 text-orange-700",
   },
 };
 
