@@ -71,7 +71,7 @@ export default function OGImage() {
             marginTop: "8px",
           }}
         >
-          {["MEQ", "MCQ 1,300+ ข้อ", "Long Case AI"].map((feature) => (
+          {["MEQ", "MCQ 3,000+ ข้อ", "Long Case AI"].map((feature) => (
             <div
               key={feature}
               style={{
