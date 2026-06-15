@@ -158,7 +158,7 @@ export default function NlCalendarPage() {
           <div>
             <h2 className="text-lg font-bold">เตรียมสอบให้ทันรอบถัดไป</h2>
             <p className="text-sm text-muted-foreground">
-              คลังข้อสอบ MCQ กว่า 1,300 ข้อ พร้อมเฉลยละเอียด + จำลองสอบจับเวลา
+              คลังข้อสอบ MCQ กว่า 3,000 ข้อ พร้อมเฉลยละเอียด + จำลองสอบจับเวลา
             </p>
           </div>
           <div className="flex gap-2">

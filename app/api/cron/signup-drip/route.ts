@@ -73,7 +73,7 @@ function messageFor(day: ReminderDay, name: string, siteUrl: string): string {
     case 7:
       return (
         `${who} ครบ 1 สัปดาห์ที่ลงทะเบียน 🚀\n` +
-        `อัปเกรดเริ่มต้น ฿199/เดือน — ปลดล็อก MCQ 1,300+ ข้อ + Long Case ไม่จำกัด\n` +
+        `อัปเกรดเริ่มต้น ฿199/เดือน — ปลดล็อก MCQ 3,000+ ข้อ + Long Case ไม่จำกัด\n` +
         `${siteUrl}/pricing`
       );
   }

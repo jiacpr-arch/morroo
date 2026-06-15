@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     template: "%s | หมอรู้ MorRoo",
   },
   description:
-    "เตรียมสอบแพทย์ด้วย AI ข้อสอบ MEQ Progressive Case, MCQ 1,300+ ข้อ, Long Case กับ AI Patient & Examiner พร้อมเฉลยละเอียดจากผู้เชี่ยวชาญ",
+    "เตรียมสอบแพทย์ด้วย AI ข้อสอบ MEQ Progressive Case, MCQ 3,000+ ข้อ, Long Case กับ AI Patient & Examiner พร้อมเฉลยละเอียดจากผู้เชี่ยวชาญ",
   keywords: [
     "ข้อสอบ MEQ",
     "MCQ แพทย์",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     siteName: "หมอรู้ (MorRoo)",
     title: "หมอรู้ — เตรียมสอบแพทย์ ด้วย AI ที่เข้าใจคุณ",
     description:
-      "ข้อสอบ MEQ + MCQ 1,300+ ข้อ + Long Case กับ AI พร้อมเฉลยละเอียด",
+      "ข้อสอบ MEQ + MCQ 3,000+ ข้อ + Long Case กับ AI พร้อมเฉลยละเอียด",
     images: [
       {
         url: "/opengraph-image",
@@ -123,7 +123,7 @@ const faqSchema = {
       name: "หมอรู้ต่างจากที่อื่นอย่างไร?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "หมอรู้ใช้ AI ตรวจคำตอบและให้ feedback ทันที มีทั้ง MEQ, MCQ 1,300+ ข้อ และ Long Case กับ AI Patient ที่จำลองสอบจริง",
+        text: "หมอรู้ใช้ AI ตรวจคำตอบและให้ feedback ทันที มีทั้ง MEQ, MCQ 3,000+ ข้อ และ Long Case กับ AI Patient ที่จำลองสอบจริง",
       },
     },
     {

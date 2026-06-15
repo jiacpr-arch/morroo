@@ -1,11 +1,21 @@
 import { Quote, Sparkles, Users, BookOpen, Award } from "lucide-react";
+import type { QuestionBankStats } from "@/lib/supabase/queries-mcq";
 
-const STATS = [
-  { icon: Users, value: "1,000+", label: "แพทย์ใช้งาน" },
-  { icon: BookOpen, value: "1,300+", label: "ข้อสอบครบ MEQ + MCQ" },
-  { icon: Sparkles, value: "AI", label: "ตรวจคำตอบทันที 24/7" },
-  { icon: Award, value: "100%", label: "เฉลยโดยผู้เชี่ยวชาญ" },
-];
+function buildStats(stats?: QuestionBankStats | null) {
+  const ready = stats?.totalReady ?? 0;
+  const building = stats?.totalBuilding ?? 0;
+  const questionValue = ready > 0 ? ready.toLocaleString("en-US") : "3,000+";
+  const questionLabel =
+    building > 0
+      ? `ข้อสอบพร้อมใช้ (+${building.toLocaleString("en-US")} กำลังสร้าง)`
+      : "ข้อสอบครบ MEQ + MCQ";
+  return [
+    { icon: Users, value: "1,000+", label: "แพทย์ใช้งาน" },
+    { icon: BookOpen, value: questionValue, label: questionLabel },
+    { icon: Sparkles, value: "AI", label: "ตรวจคำตอบทันที 24/7" },
+    { icon: Award, value: "100%", label: "เฉลยโดยผู้เชี่ยวชาญ" },
+  ];
+}
 
 const TESTIMONIALS = [
   {
@@ -28,13 +38,18 @@ const TESTIMONIALS = [
   },
 ];
 
-export default function SocialProofSection() {
+export default function SocialProofSection({
+  stats = null,
+}: {
+  stats?: QuestionBankStats | null;
+}) {
+  const statItems = buildStats(stats);
   return (
     <section className="py-16 bg-white border-y">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-          {STATS.map((s) => (
+          {statItems.map((s) => (
             <div
               key={s.label}
               className="flex flex-col items-center text-center gap-2 p-4 rounded-xl bg-brand/5 border border-brand/10"

@@ -9,14 +9,14 @@ import SectionUpdatesBadge from "@/components/SectionUpdatesBadge";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "ข้อสอบ MCQ สอบใบประกอบวิชาชีพแพทย์ 1,300+ ข้อ",
+  title: "ข้อสอบ MCQ สอบใบประกอบวิชาชีพแพทย์ 3,000+ ข้อ",
   description:
-    "คลังข้อสอบ MCQ กว่า 1,300 ข้อ สำหรับเตรียมสอบ NL ใบประกอบวิชาชีพเวชกรรม ครบทุกสาขา พร้อมเฉลยละเอียดทุกข้อ",
+    "คลังข้อสอบ MCQ กว่า 3,000 ข้อ สำหรับเตรียมสอบ NL ใบประกอบวิชาชีพเวชกรรม ครบทุกสาขา พร้อมเฉลยละเอียดทุกข้อ",
   alternates: { canonical: "https://www.morroo.com/nl" },
   openGraph: {
-    title: "ข้อสอบ MCQ 1,300+ ข้อ — หมอรู้",
+    title: "ข้อสอบ MCQ 3,000+ ข้อ — หมอรู้",
     description:
-      "คลังข้อสอบ MCQ กว่า 1,300 ข้อ สำหรับเตรียมสอบ NL ใบประกอบวิชาชีพเวชกรรม",
+      "คลังข้อสอบ MCQ กว่า 3,000 ข้อ สำหรับเตรียมสอบ NL ใบประกอบวิชาชีพเวชกรรม",
     url: "https://www.morroo.com/nl",
   },
 };

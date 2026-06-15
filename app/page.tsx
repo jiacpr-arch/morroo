@@ -12,6 +12,7 @@ import FeatureShowcase from "@/components/FeatureShowcase";
 import { SocialButtonsRow, LineCtaButton } from "@/components/SocialLinks";
 import { CATEGORIES, PRICING_PLANS } from "@/lib/types";
 import { getExams, getExamPartCounts, sortExamsAvailableFirst } from "@/lib/supabase/queries";
+import { getQuestionBankStats } from "@/lib/supabase/queries-mcq";
 import { getNewsItems } from "@/lib/news";
 import { getJiaAedNewsItems } from "@/lib/jiaaed-news";
 import NewsCard from "@/components/NewsCard";
@@ -22,12 +23,13 @@ import { ArrowRight } from "lucide-react";
 export const revalidate = 60; // revalidate every 60 seconds
 
 export default async function HomePage() {
-  const [allExams, partCounts, newsItems, aedNewsItems, forcedHero] = await Promise.all([
+  const [allExams, partCounts, newsItems, aedNewsItems, forcedHero, bankStats] = await Promise.all([
     getExams(),
     getExamPartCounts(),
     getNewsItems({ limit: 6 }),
     getJiaAedNewsItems(2),
     getHeroForcedVariant(createAdminClient()),
+    getQuestionBankStats(),
   ]);
   const homeNewsItems = [...newsItems.slice(0, 4), ...aedNewsItems];
   const exams = sortExamsAvailableFirst(allExams, partCounts);
@@ -35,7 +37,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <HeroAB forced={forcedHero} />
+      <HeroAB forced={forcedHero} stats={bankStats} />
 
       {/* LINE add-friend strip — high-visibility CTA above the fold */}
       <section className="bg-[#06C755]/10 border-b border-[#06C755]/20">
@@ -111,7 +113,7 @@ export default async function HomePage() {
       </section>
 
       {/* Social Proof — testimonials + stats above pricing decision */}
-      <SocialProofSection />
+      <SocialProofSection stats={bankStats} />
 
       {/* Pricing */}
       <section className="py-16 bg-muted/30" id="pricing">
