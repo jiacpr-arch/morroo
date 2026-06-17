@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
 import { Loader2, Send, ChevronRight, CheckCircle, MessageSquare, Stethoscope, FlaskConical, Brain, ClipboardList, Star, Coins } from "lucide-react";
 import type { LongCaseSession, LongCaseFull } from "@/lib/types";
+import { consumeSSE } from "@/lib/sse";
 import FeedbackCard from "./FeedbackCard";
 
 type Phase = LongCaseSession["phase"];
@@ -151,6 +152,10 @@ function LongCaseSessionInner() {
 
     let aiText = "";
     setChatMessages(prev => [...prev, { role: "assistant", content: "..." }]);
+    const render = (t: string) => {
+      aiText += t;
+      setChatMessages(prev => [...prev.slice(0, -1), { role: "assistant", content: aiText }]);
+    };
 
     try {
       const res = await fetch("/api/ai/longcase-patient", {
@@ -158,22 +163,18 @@ function LongCaseSessionInner() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ sessionId, messages: [userMsg] }),
       });
-      const reader = res.body?.getReader();
-      if (!reader) return;
-      const decoder = new TextDecoder();
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        const lines = decoder.decode(value).split("\n");
-        for (const line of lines) {
-          if (!line.startsWith("data: ")) continue;
-          const parsed = JSON.parse(line.slice(6));
-          if (parsed.text) {
-            aiText += parsed.text;
-            setChatMessages(prev => [...prev.slice(0, -1), { role: "assistant", content: aiText }]);
-          }
-        }
+      const { error: streamErr } = await consumeSSE(res, render);
+      if (!aiText) {
+        setChatMessages(prev => [...prev.slice(0, -1), {
+          role: "assistant",
+          content: streamErr || "ขออภัย ระบบขัดข้องชั่วคราว ลองถามใหม่อีกครั้งนะคะ",
+        }]);
       }
+    } catch {
+      setChatMessages(prev => [...prev.slice(0, -1), {
+        role: "assistant",
+        content: "เชื่อมต่อไม่ได้ ลองใหม่อีกครั้งนะคะ",
+      }]);
     } finally {
       setChatLoading(false);
     }
@@ -202,6 +203,10 @@ function LongCaseSessionInner() {
     setExaminerStarted(true);
     let aiText = "";
     setExamMessages([{ role: "assistant", content: "..." }]);
+    const render = (t: string) => {
+      aiText += t;
+      setExamMessages([{ role: "assistant", content: aiText }]);
+    };
 
     try {
       const res = await fetch("/api/ai/longcase-examiner", {
@@ -209,21 +214,15 @@ function LongCaseSessionInner() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ sessionId, messages: [], action: "start" }),
       });
-      const reader = res.body?.getReader();
-      if (!reader) return;
-      const decoder = new TextDecoder();
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        for (const line of decoder.decode(value).split("\n")) {
-          if (!line.startsWith("data: ")) continue;
-          const parsed = JSON.parse(line.slice(6));
-          if (parsed.text) {
-            aiText += parsed.text;
-            setExamMessages([{ role: "assistant", content: aiText }]);
-          }
-        }
+      const { error: streamErr } = await consumeSSE(res, render);
+      if (!aiText) {
+        setExamMessages([{
+          role: "assistant",
+          content: streamErr || "ขออภัย เริ่มการสัมภาษณ์ไม่สำเร็จ ลองใหม่อีกครั้งนะคะ",
+        }]);
       }
+    } catch {
+      setExamMessages([{ role: "assistant", content: "เชื่อมต่อไม่ได้ ลองใหม่อีกครั้งนะคะ" }]);
     } finally {
       setExamLoading(false);
     }
@@ -239,6 +238,10 @@ function LongCaseSessionInner() {
 
     let aiText = "";
     setExamMessages(prev => [...prev, { role: "assistant", content: "..." }]);
+    const render = (t: string) => {
+      aiText += t;
+      setExamMessages(prev => [...prev.slice(0, -1), { role: "assistant", content: aiText }]);
+    };
 
     try {
       const res = await fetch("/api/ai/longcase-examiner", {
@@ -246,21 +249,18 @@ function LongCaseSessionInner() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ sessionId, messages: [userMsg], action: "chat" }),
       });
-      const reader = res.body?.getReader();
-      if (!reader) return;
-      const decoder = new TextDecoder();
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        for (const line of decoder.decode(value).split("\n")) {
-          if (!line.startsWith("data: ")) continue;
-          const parsed = JSON.parse(line.slice(6));
-          if (parsed.text) {
-            aiText += parsed.text;
-            setExamMessages(prev => [...prev.slice(0, -1), { role: "assistant", content: aiText }]);
-          }
-        }
+      const { error: streamErr } = await consumeSSE(res, render);
+      if (!aiText) {
+        setExamMessages(prev => [...prev.slice(0, -1), {
+          role: "assistant",
+          content: streamErr || "ขออภัย ระบบขัดข้องชั่วคราว ลองตอบใหม่อีกครั้งนะคะ",
+        }]);
       }
+    } catch {
+      setExamMessages(prev => [...prev.slice(0, -1), {
+        role: "assistant",
+        content: "เชื่อมต่อไม่ได้ ลองใหม่อีกครั้งนะคะ",
+      }]);
     } finally {
       setExamLoading(false);
     }
