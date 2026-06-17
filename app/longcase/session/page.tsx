@@ -83,8 +83,8 @@ function LongCaseSessionInner() {
         setLc(data.long_case);
         setPhase(data.phase || "history");
         if (data.history_chat?.length) setChatMessages(data.history_chat);
-        if (data.pe_selected?.length) setPeSelected(data.pe_selected);
-        if (data.lab_ordered?.length) setLabOrdered(data.lab_ordered);
+        if (data.pe_selected?.length) { setPeSelected(data.pe_selected); revealPe(data.pe_selected); }
+        if (data.lab_ordered?.length) { setLabOrdered(data.lab_ordered); revealLabs(data.lab_ordered); }
         if (data.student_ddx) setStudentDdx(data.student_ddx);
         if (data.student_mgmt) setStudentMgmt(data.student_mgmt);
         if (data.examiner_chat?.length) setExamMessages(data.examiner_chat);
@@ -103,6 +103,9 @@ function LongCaseSessionInner() {
       })
       .catch(() => setError("ไม่สามารถโหลด session ได้"))
       .finally(() => setLoading(false));
+    // revealPe/revealLabs are stable for a given sessionId; rehydrating here
+    // restores results for items ordered before a reload.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sessionId]);
 
   useEffect(() => { chatEndRef.current?.scrollIntoView({ behavior: "smooth" }); }, [chatMessages]);
@@ -181,21 +184,38 @@ function LongCaseSessionInner() {
   }
 
   async function revealPe(systems: string[]) {
-    const res = await fetch(`/api/longcase/session?id=${sessionId}&includePe=true`);
-    const data = await res.json();
-    const findings = data.long_case?.pe_findings || {};
-    const revealed: Record<string, string> = {};
-    for (const sys of systems) revealed[sys] = findings[sys] || "ปกติ ไม่มีสิ่งผิดปกติ";
-    setPeRevealed(prev => ({ ...prev, ...revealed }));
+    try {
+      const res = await fetch(`/api/longcase/session?id=${sessionId}&includePe=true`);
+      const data = await res.json();
+      const findings = data.long_case?.pe_findings || {};
+      const revealed: Record<string, string> = {};
+      for (const sys of systems) revealed[sys] = findings[sys] || "ปกติ ไม่มีสิ่งผิดปกติ";
+      setPeRevealed(prev => ({ ...prev, ...revealed }));
+    } catch {
+      const revealed: Record<string, string> = {};
+      for (const sys of systems) revealed[sys] = "โหลดผลไม่สำเร็จ — แตะอีกครั้งเพื่อลองใหม่";
+      setPeRevealed(prev => ({ ...prev, ...revealed }));
+    }
   }
 
   async function revealLabs(labs: string[]) {
-    const res = await fetch(`/api/longcase/session?id=${sessionId}&includeLab=true`);
-    const data = await res.json();
-    const results = data.long_case?.lab_results || {};
-    const revealed: Record<string, { value: string; isAbnormal: boolean }> = {};
-    for (const lab of labs) revealed[lab] = results[lab] || { value: "ไม่มีผลในระบบ", isAbnormal: false };
-    setLabRevealed(prev => ({ ...prev, ...revealed }));
+    try {
+      const res = await fetch(`/api/longcase/session?id=${sessionId}&includeLab=true`);
+      const data = await res.json();
+      // Imaging results (Chest X-Ray, ECG, Echo, …) live in a separate map
+      // from lab_results; merge both so imaging orders resolve too.
+      const results = {
+        ...(data.long_case?.lab_results || {}),
+        ...(data.long_case?.imaging_results || {}),
+      };
+      const revealed: Record<string, { value: string; isAbnormal: boolean }> = {};
+      for (const lab of labs) revealed[lab] = results[lab] || { value: "ไม่มีผลในระบบ", isAbnormal: false };
+      setLabRevealed(prev => ({ ...prev, ...revealed }));
+    } catch {
+      const revealed: Record<string, { value: string; isAbnormal: boolean }> = {};
+      for (const lab of labs) revealed[lab] = { value: "โหลดผลไม่สำเร็จ — แตะอีกครั้งเพื่อลองใหม่", isAbnormal: false };
+      setLabRevealed(prev => ({ ...prev, ...revealed }));
+    }
   }
 
   async function startExaminer() {
@@ -443,6 +463,8 @@ function LongCaseSessionInner() {
                           headers: { "Content-Type": "application/json" },
                           body: JSON.stringify({ sessionId, pe_selected: newSelected }),
                         });
+                      } else if (!revealed) {
+                        await revealPe([sys]);
                       }
                     }}
                   >
@@ -488,6 +510,8 @@ function LongCaseSessionInner() {
                               headers: { "Content-Type": "application/json" },
                               body: JSON.stringify({ sessionId, lab_ordered: newOrdered }),
                             });
+                          } else if (!res) {
+                            await revealLabs([name]);
                           }
                         }}
                         className={`rounded-lg border p-2.5 cursor-pointer transition-colors min-w-[100px] ${ordered ? "border-blue-400 bg-white" : "border-blue-300 bg-white hover:bg-blue-100"}`}
@@ -525,6 +549,8 @@ function LongCaseSessionInner() {
                           headers: { "Content-Type": "application/json" },
                           body: JSON.stringify({ sessionId, lab_ordered: newOrdered }),
                         });
+                      } else if (!res) {
+                        await revealLabs([name]);
                       }
                     }}
                   >
