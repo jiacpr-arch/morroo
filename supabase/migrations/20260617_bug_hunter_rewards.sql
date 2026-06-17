@@ -110,5 +110,10 @@ $$;
 
 -- Lock the function down: only the service role (our admin client) may call it,
 -- so points can only be spent through the rate-limited API with fixed tiers.
+-- NOTE: Supabase auto-grants EXECUTE on new public functions to anon/
+-- authenticated via default privileges, so REVOKE FROM PUBLIC is not enough —
+-- we must revoke those roles explicitly or the function stays callable straight
+-- from PostgREST (/rest/v1/rpc/redeem_reporter_points) with arbitrary cost/days.
 REVOKE ALL ON FUNCTION public.redeem_reporter_points(uuid, int, int) FROM PUBLIC;
+REVOKE EXECUTE ON FUNCTION public.redeem_reporter_points(uuid, int, int) FROM anon, authenticated;
 GRANT EXECUTE ON FUNCTION public.redeem_reporter_points(uuid, int, int) TO service_role;
