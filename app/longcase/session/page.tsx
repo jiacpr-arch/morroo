@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
 import { Loader2, Send, ChevronRight, CheckCircle, MessageSquare, Stethoscope, FlaskConical, Brain, ClipboardList, Star, Coins } from "lucide-react";
 import type { LongCaseSession, LongCaseFull } from "@/lib/types";
+import { consumeSSE } from "@/lib/sse";
 import FeedbackCard from "./FeedbackCard";
 
 type Phase = LongCaseSession["phase"];
@@ -19,60 +20,6 @@ const COMMON_LABS = [
   "Sputum AFB", "CXR", "ECG", "Scrotal US", "Transvaginal US",
   "CT Abdomen", "CT Head", "MRI Brain", "Echo",
 ];
-
-type SSEPayload = { text?: string; error?: string; done?: boolean };
-
-/**
- * Consume a Server-Sent Events stream (`data: {...}\n\n`) robustly.
- *
- * Buffers across network chunks so multi-byte UTF-8 (Thai) characters and
- * partial `data:` lines are never split mid-parse, decodes with
- * `{ stream: true }`, and ignores malformed fragments instead of throwing.
- * Returns an error string if the server reported one (or the request failed),
- * so callers can surface it instead of silently freezing on "...".
- */
-async function consumeSSE(
-  res: Response,
-  onText: (text: string) => void
-): Promise<{ error?: string }> {
-  if (!res.ok) {
-    const data = (await res.json().catch(() => ({}))) as { error?: string };
-    return { error: data.error || `เกิดข้อผิดพลาด (${res.status})` };
-  }
-  const reader = res.body?.getReader();
-  if (!reader) return { error: "ไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ได้" };
-
-  const decoder = new TextDecoder();
-  let buffer = "";
-  let streamError: string | undefined;
-
-  const handleLine = (line: string) => {
-    if (!line.startsWith("data: ")) return;
-    try {
-      const parsed = JSON.parse(line.slice(6)) as SSEPayload;
-      if (parsed.text) onText(parsed.text);
-      else if (parsed.error) streamError = parsed.error;
-    } catch {
-      // Incomplete/malformed fragment — skip it.
-    }
-  };
-
-  while (true) {
-    const { done, value } = await reader.read();
-    if (done) break;
-    buffer += decoder.decode(value, { stream: true });
-    let nl: number;
-    while ((nl = buffer.indexOf("\n")) !== -1) {
-      handleLine(buffer.slice(0, nl));
-      buffer = buffer.slice(nl + 1);
-    }
-  }
-  // Flush any trailing buffered event without a final newline.
-  buffer += decoder.decode();
-  if (buffer.trim()) handleLine(buffer.trim());
-
-  return streamError ? { error: streamError } : {};
-}
 
 function LongCaseSessionInner() {
   const searchParams = useSearchParams();
