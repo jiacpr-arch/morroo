@@ -1,5 +1,61 @@
 import { createClient } from "./server";
+import { createAdminClient } from "./admin";
 import type { McqSubject, McqQuestion, McqAudience } from "../types-mcq";
+
+/**
+ * Live counts for the question bank, split by audience and readiness.
+ *
+ * `ready`    = status 'active'  → published, students can practise these now.
+ * `building` = status 'review'  → AI-generated, pending expert review (i.e.
+ *              "กำลังสร้าง/ตรวจเฉลย"), not yet served to students.
+ *
+ * Uses the service-role admin client so the `review` rows (hidden from anon by
+ * RLS) are counted too. Cheap: 4 HEAD count queries, no row payloads.
+ */
+export type QuestionBankStats = {
+  nlReady: number;
+  nlBuilding: number;
+  boardReady: number;
+  boardBuilding: number;
+  totalReady: number;
+  totalBuilding: number;
+};
+
+export async function getQuestionBankStats(): Promise<QuestionBankStats> {
+  const supabase = createAdminClient();
+
+  const countBy = async (
+    audience: McqAudience,
+    status: "active" | "review"
+  ): Promise<number> => {
+    const { count, error } = await supabase
+      .from("mcq_questions")
+      .select("id", { count: "exact", head: true })
+      .eq("audience", audience)
+      .eq("status", status);
+    if (error) {
+      console.error(`Error counting ${audience}/${status} questions:`, error);
+      return 0;
+    }
+    return count ?? 0;
+  };
+
+  const [nlReady, nlBuilding, boardReady, boardBuilding] = await Promise.all([
+    countBy("student", "active"),
+    countBy("student", "review"),
+    countBy("board", "active"),
+    countBy("board", "review"),
+  ]);
+
+  return {
+    nlReady,
+    nlBuilding,
+    boardReady,
+    boardBuilding,
+    totalReady: nlReady + boardReady,
+    totalBuilding: nlBuilding + boardBuilding,
+  };
+}
 
 export async function getMcqSubjects(
   examType?: "NL1" | "NL2",

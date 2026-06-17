@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import GoodyEmbed from "@/components/GoodyEmbed";
 import NewsCard from "@/components/NewsCard";
 import { getNewsItems, type NewsSection, type NewsSourceType } from "@/lib/news";
+import { getJiaAedNewsItems } from "@/lib/jiaaed-news";
 
 export const revalidate = 60;
 
@@ -25,6 +26,7 @@ const FILTERS: { key: string; label: string; sourceType?: NewsSourceType }[] = [
   { key: "blog", label: "📝 บทความ", sourceType: "blog" },
   { key: "exam", label: "📅 ข่าวสอบ", sourceType: "exam" },
   { key: "health", label: "🏥 ข่าวสุขภาพ" },
+  { key: "aed", label: "⚡ ข่าวกู้ชีพ/AED" },
 ];
 
 const SECTIONS: { key: NewsSection; label: string }[] = [
@@ -55,14 +57,17 @@ export default async function NewsPage({
   const activeFilter = FILTERS.find((f) => f.key === filter) ?? FILTERS[0];
   const activeSection = SECTIONS.find((s) => s.key === section)?.key;
   const isHealthTab = activeFilter.key === "health";
+  const isAedTab = activeFilter.key === "aed";
 
   const items = isHealthTab
     ? []
-    : await getNewsItems({
-        sourceType: activeFilter.sourceType,
-        section: activeSection,
-        limit: 50,
-      });
+    : isAedTab
+      ? await getJiaAedNewsItems(30)
+      : await getNewsItems({
+          sourceType: activeFilter.sourceType,
+          section: activeSection,
+          limit: 50,
+        });
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
@@ -93,8 +98,8 @@ export default async function NewsPage({
         })}
       </div>
 
-      {/* Section filter (only when not health tab) */}
-      {!isHealthTab && (
+      {/* Section filter (only for tabs backed by news_items) */}
+      {!isHealthTab && !isAedTab && (
         <div className="mb-8 flex flex-wrap items-center gap-2 text-sm">
           <span className="text-muted-foreground">Section:</span>
           <Link
@@ -132,14 +137,44 @@ export default async function NewsPage({
         </div>
       ) : items.length === 0 ? (
         <p className="py-12 text-center text-muted-foreground">
-          ยังไม่มีข่าวในหมวดนี้
+          {isAedTab ? (
+            <>
+              โหลดข่าวไม่สำเร็จ — ดูข่าวทั้งหมดได้ที่{" "}
+              <a
+                href="https://jiaaed.com/news"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-brand hover:underline"
+              >
+                jiaaed.com/news
+              </a>
+            </>
+          ) : (
+            "ยังไม่มีข่าวในหมวดนี้"
+          )}
         </p>
       ) : (
-        <div className="space-y-4">
-          {items.map((item) => (
-            <NewsCard key={item.id} item={item} />
-          ))}
-        </div>
+        <>
+          <div className="space-y-4">
+            {items.map((item) => (
+              <NewsCard key={item.id} item={item} />
+            ))}
+          </div>
+          {isAedTab && (
+            <p className="mt-6 text-center text-sm text-muted-foreground">
+              ข่าวคัดสรรโดย{" "}
+              <a
+                href="https://jiaaed.com/news"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-brand hover:underline"
+              >
+                JiaAED
+              </a>{" "}
+              — ลิขสิทธิ์ข่าวต้นฉบับเป็นของสำนักข่าวที่อ้างอิง
+            </p>
+          )}
+        </>
       )}
 
       <div className="mt-12 rounded-xl border border-brand/20 bg-brand/10 p-6 text-center">

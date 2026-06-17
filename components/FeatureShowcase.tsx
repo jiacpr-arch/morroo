@@ -44,7 +44,7 @@ const FEATURES: Feature[] = [
     iconText: "text-blue-600",
     title: "ข้อสอบ MCQ / NL",
     en: "ใบประกอบวิชาชีพ",
-    desc: "คลังข้อสอบ MCQ 1,300+ ข้อ ครบทุกสาขา โหมดฝึกซ้อม + จำลองสอบจับเวลา เฉลยทุกข้อ",
+    desc: "คลังข้อสอบ MCQ NL ครบทุกสาขา โหมดฝึกซ้อม + จำลองสอบจับเวลา เฉลยทุกข้อ",
     badge: { label: "ยอดนิยม", className: "bg-blue-100 text-blue-700" },
   },
   {

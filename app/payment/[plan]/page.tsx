@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { createClient } from "@/lib/supabase/client";
 import { track } from "@/lib/analytics";
+import { trackInitiateCheckout } from "@/lib/analytics/conversions";
 import LandingPageTracker from "@/components/LandingPageTracker";
 import PaymentTrustSignals from "@/components/PaymentTrustSignals";
 import {
@@ -84,6 +85,14 @@ export default function PaymentPage({
     }
     checkAuth();
   }, [plan, router]);
+
+  // Canonical InitiateCheckout: fires once per payment-page visit so Meta/TikTok
+  // get the signal regardless of whether the user pays via Stripe or bank slip.
+  useEffect(() => {
+    const info = PLANS[plan];
+    if (!info) return;
+    trackInitiateCheckout({ plan, value: info.price, currency: "THB" });
+  }, [plan]);
 
   const copyAccountNumber = () => {
     navigator.clipboard.writeText("4392763940");
@@ -180,15 +189,7 @@ export default function PaymentPage({
     if (!user) return;
     setStripeLoading(true);
     setError("");
-    const planPrice: Record<string, number> = { monthly: 199, yearly: 1490, bundle: 299 };
-    const price = planPrice[plan] ?? 0;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (window as any).ttq?.track("InitiateCheckout", {
-      value: price,
-      currency: "THB",
-      content_id: plan,
-      content_type: "subscription",
-    });
+    const price = planInfo?.price ?? 0;
     track("stripe_checkout_click", { plan, price, wantInvoice });
     try {
       const res = await fetch("/api/billing/checkout", {

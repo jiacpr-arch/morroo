@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { track } from "@/lib/analytics";
 import { getVariant, type Variant } from "@/lib/ab";
+import type { QuestionBankStats } from "@/lib/supabase/queries-mcq";
 
 const EXPERIMENT = "hero";
 
@@ -17,22 +18,28 @@ type Copy = {
   subline: string;
 };
 
-const COPY: Record<Variant, Copy> = {
-  A: {
-    badge: "แพลตฟอร์มข้อสอบ MEQ + NL + Long Case ออนไลน์",
-    headlineTop: "เตรียมสอบแพทย์",
-    headlineAccent: "ด้วย AI ที่เข้าใจคุณ",
-    subline:
-      "ข้อสอบ MEQ แบบ Progressive Case + ข้อสอบ NL ใบประกอบวิชาชีพ 1,300+ ข้อ + ฝึกสอบ Long Case กับ AI Patient & Examiner",
-  },
-  B: {
-    badge: "1,300+ ข้อ • MEQ • NL Step 2 • Long Case",
-    headlineTop: "สอบผ่านครั้งแรก",
-    headlineAccent: "ด้วยข้อสอบ AI 1,300+ ข้อ",
-    subline:
-      "ฝึก NL Step 2 + MEQ Progressive Case + Long Case กับ AI Patient ที่ตอบโต้เหมือนคนไข้จริง — เริ่มฟรีไม่ต้องใช้บัตรเครดิต",
-  },
-};
+// Conservative floors used only when live counts are unavailable (e.g. a build
+// with Supabase not configured). The real numbers come from the DB at runtime.
+const FALLBACK_TOTAL = "3,000+";
+const FALLBACK_NL = "3,000+";
+
+function buildCopy(totalStr: string, nlStr: string): Record<Variant, Copy> {
+  return {
+    A: {
+      badge: "แพลตฟอร์มข้อสอบ MEQ + NL + Long Case ออนไลน์",
+      headlineTop: "เตรียมสอบแพทย์",
+      headlineAccent: "ด้วย AI ที่เข้าใจคุณ",
+      subline: `ข้อสอบ MEQ แบบ Progressive Case + ข้อสอบ NL ใบประกอบวิชาชีพ ${nlStr} ข้อ + ฝึกสอบ Long Case กับ AI Patient & Examiner`,
+    },
+    B: {
+      badge: `${totalStr} ข้อ • MEQ • NL Step 2 • Long Case`,
+      headlineTop: "สอบผ่านครั้งแรก",
+      headlineAccent: `ด้วยข้อสอบ AI ${totalStr} ข้อ`,
+      subline:
+        "ฝึก NL Step 2 + MEQ Progressive Case + Long Case กับ AI Patient ที่ตอบโต้เหมือนคนไข้จริง — เริ่มฟรีไม่ต้องใช้บัตรเครดิต",
+    },
+  };
+}
 
 function trackHeroCta(variant: Variant | null, cta: string) {
   track("hero_variant_convert", {
@@ -41,7 +48,13 @@ function trackHeroCta(variant: Variant | null, cta: string) {
   });
 }
 
-export default function HeroAB({ forced = null }: { forced?: Variant | null }) {
+export default function HeroAB({
+  forced = null,
+  stats = null,
+}: {
+  forced?: Variant | null;
+  stats?: QuestionBankStats | null;
+}) {
   const [variant, setVariant] = useState<Variant | null>(forced);
 
   useEffect(() => {
@@ -56,7 +69,14 @@ export default function HeroAB({ forced = null }: { forced?: Variant | null }) {
     if (v) track("hero_variant_view", { variant: v });
   }, [forced]);
 
-  const copy = COPY[variant ?? "A"];
+  // Live numbers from the DB (refreshed every revalidate window on the server).
+  const totalReady = stats?.totalReady ?? 0;
+  const totalBuilding = stats?.totalBuilding ?? 0;
+  const nlReady = stats?.nlReady ?? 0;
+  const totalStr = totalReady > 0 ? totalReady.toLocaleString("en-US") : FALLBACK_TOTAL;
+  const nlStr = nlReady > 0 ? nlReady.toLocaleString("en-US") : FALLBACK_NL;
+
+  const copy = buildCopy(totalStr, nlStr)[variant ?? "A"];
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-brand-dark via-brand-dark to-brand py-20 sm:py-28">
@@ -109,17 +129,31 @@ export default function HeroAB({ forced = null }: { forced?: Variant | null }) {
               </Button>
             </Link>
           </div>
-          <div className="mt-10 flex items-center justify-center gap-8 text-sm text-white/60">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-white/60">
             <span className="flex items-center gap-1.5">
               <Users className="h-4 w-4" /> 1,000+ แพทย์ใช้งาน
             </span>
             <span className="flex items-center gap-1.5">
-              <BookOpen className="h-4 w-4" /> 1,300+ ข้อสอบ
+              <BookOpen className="h-4 w-4" /> {totalStr} ข้อสอบพร้อมใช้
             </span>
             <span className="flex items-center gap-1.5">
               <Shield className="h-4 w-4" /> เฉลยจากผู้เชี่ยวชาญ
             </span>
           </div>
+
+          {/* Live "building" counter — shows how many questions are queued and
+              being generated/reviewed right now. Auto-refreshes with the page. */}
+          {totalBuilding > 0 && (
+            <div className="mt-6 flex justify-center">
+              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-400/15 px-4 py-1.5 text-sm font-medium text-emerald-50">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-300 opacity-75" />
+                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-300" />
+                </span>
+                อีก {totalBuilding.toLocaleString("en-US")} ข้อกำลังสร้าง — เพิ่มเข้าคลังเรื่อยๆ ทุกวัน
+              </span>
+            </div>
+          )}
         </div>
       </div>
     </section>

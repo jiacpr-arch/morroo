@@ -39,8 +39,18 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  // Onboarding redirect: logged-in users with onboarding_done = false
   const { pathname } = request.nextUrl;
+
+  // Already-authenticated users have no business on the auth pages — bounce
+  // them to their profile instead of showing the login/register forms again.
+  if (user && (pathname === "/login" || pathname === "/register")) {
+    const url = request.nextUrl.clone();
+    url.pathname = "/profile";
+    url.search = "";
+    return NextResponse.redirect(url);
+  }
+
+  // Onboarding redirect: logged-in users with onboarding_done = false
   const skipOnboarding = ONBOARDING_SKIP_PATHS.some((p) =>
     pathname.startsWith(p)
   );

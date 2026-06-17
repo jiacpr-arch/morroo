@@ -7,6 +7,8 @@ import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
 import { Loader2, Send, ChevronRight, CheckCircle, MessageSquare, Stethoscope, FlaskConical, Brain, ClipboardList, Star, Coins } from "lucide-react";
 import type { LongCaseSession, LongCaseFull } from "@/lib/types";
+import { consumeSSE } from "@/lib/sse";
+import { matchResult } from "@/lib/longcase-match";
 import FeedbackCard from "./FeedbackCard";
 
 type Phase = LongCaseSession["phase"];
@@ -35,7 +37,8 @@ function LongCaseSessionInner() {
   const [chatInput, setChatInput] = useState("");
   const [chatMessages, setChatMessages] = useState<{ role: "user" | "assistant"; content: string }[]>([]);
   const [chatLoading, setChatLoading] = useState(false);
-  const chatEndRef = useRef<HTMLDivElement>(null);
+  const chatScrollRef = useRef<HTMLDivElement>(null);
+  const chatLastMsgRef = useRef<HTMLDivElement>(null);
 
   // PE
   const [peSelected, setPeSelected] = useState<string[]>([]);
@@ -55,7 +58,8 @@ function LongCaseSessionInner() {
   const [examMessages, setExamMessages] = useState<{ role: "user" | "assistant"; content: string }[]>([]);
   const [examLoading, setExamLoading] = useState(false);
   const [examinerStarted, setExaminerStarted] = useState(false);
-  const examEndRef = useRef<HTMLDivElement>(null);
+  const examScrollRef = useRef<HTMLDivElement>(null);
+  const examLastMsgRef = useRef<HTMLDivElement>(null);
 
   // Scores
   const [scores, setScores] = useState<Record<string, number | string> | null>(null);
@@ -82,8 +86,8 @@ function LongCaseSessionInner() {
         setLc(data.long_case);
         setPhase(data.phase || "history");
         if (data.history_chat?.length) setChatMessages(data.history_chat);
-        if (data.pe_selected?.length) setPeSelected(data.pe_selected);
-        if (data.lab_ordered?.length) setLabOrdered(data.lab_ordered);
+        if (data.pe_selected?.length) { setPeSelected(data.pe_selected); revealPe(data.pe_selected); }
+        if (data.lab_ordered?.length) { setLabOrdered(data.lab_ordered); revealLabs(data.lab_ordered); }
         if (data.student_ddx) setStudentDdx(data.student_ddx);
         if (data.student_mgmt) setStudentMgmt(data.student_mgmt);
         if (data.examiner_chat?.length) setExamMessages(data.examiner_chat);
@@ -102,10 +106,25 @@ function LongCaseSessionInner() {
       })
       .catch(() => setError("ไม่สามารถโหลด session ได้"))
       .finally(() => setLoading(false));
+    // revealPe/revealLabs are stable for a given sessionId; rehydrating here
+    // restores results for items ordered before a reload.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sessionId]);
 
-  useEffect(() => { chatEndRef.current?.scrollIntoView({ behavior: "smooth" }); }, [chatMessages]);
-  useEffect(() => { examEndRef.current?.scrollIntoView({ behavior: "smooth" }); }, [examMessages]);
+  // เลื่อนให้ "หัว" ของข้อความล่าสุดมาอยู่บนสุดของกล่องแชท เพื่อให้อ่านคำตอบ
+  // ยาว ๆ จากต้นข้อความได้เลย (แทนการเด้งไปบรรทัดล่างสุด) และเลื่อนเฉพาะภายใน
+  // กล่องแชทเท่านั้น ไม่ดึงทั้งหน้าจอ
+  const scrollLastMsgToTop = (
+    container: HTMLDivElement | null,
+    lastMsg: HTMLDivElement | null,
+  ) => {
+    if (!container || !lastMsg) return;
+    const offset = lastMsg.getBoundingClientRect().top - container.getBoundingClientRect().top;
+    container.scrollTo({ top: container.scrollTop + offset, behavior: "smooth" });
+  };
+
+  useEffect(() => { scrollLastMsgToTop(chatScrollRef.current, chatLastMsgRef.current); }, [chatMessages]);
+  useEffect(() => { scrollLastMsgToTop(examScrollRef.current, examLastMsgRef.current); }, [examMessages]);
 
   // When the session is already completed (page reload), fetch whether the
   // user has already submitted feedback so we don't show the form twice.
@@ -151,6 +170,10 @@ function LongCaseSessionInner() {
 
     let aiText = "";
     setChatMessages(prev => [...prev, { role: "assistant", content: "..." }]);
+    const render = (t: string) => {
+      aiText += t;
+      setChatMessages(prev => [...prev.slice(0, -1), { role: "assistant", content: aiText }]);
+    };
 
     try {
       const res = await fetch("/api/ai/longcase-patient", {
@@ -158,43 +181,56 @@ function LongCaseSessionInner() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ sessionId, messages: [userMsg] }),
       });
-      const reader = res.body?.getReader();
-      if (!reader) return;
-      const decoder = new TextDecoder();
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        const lines = decoder.decode(value).split("\n");
-        for (const line of lines) {
-          if (!line.startsWith("data: ")) continue;
-          const parsed = JSON.parse(line.slice(6));
-          if (parsed.text) {
-            aiText += parsed.text;
-            setChatMessages(prev => [...prev.slice(0, -1), { role: "assistant", content: aiText }]);
-          }
-        }
+      const { error: streamErr } = await consumeSSE(res, render);
+      if (!aiText) {
+        setChatMessages(prev => [...prev.slice(0, -1), {
+          role: "assistant",
+          content: streamErr || "ขออภัย ระบบขัดข้องชั่วคราว ลองถามใหม่อีกครั้งนะคะ",
+        }]);
       }
+    } catch {
+      setChatMessages(prev => [...prev.slice(0, -1), {
+        role: "assistant",
+        content: "เชื่อมต่อไม่ได้ ลองใหม่อีกครั้งนะคะ",
+      }]);
     } finally {
       setChatLoading(false);
     }
   }
 
   async function revealPe(systems: string[]) {
-    const res = await fetch(`/api/longcase/session?id=${sessionId}&includePe=true`);
-    const data = await res.json();
-    const findings = data.long_case?.pe_findings || {};
-    const revealed: Record<string, string> = {};
-    for (const sys of systems) revealed[sys] = findings[sys] || "ปกติ ไม่มีสิ่งผิดปกติ";
-    setPeRevealed(prev => ({ ...prev, ...revealed }));
+    try {
+      const res = await fetch(`/api/longcase/session?id=${sessionId}&includePe=true`);
+      const data = await res.json();
+      const findings = data.long_case?.pe_findings || {};
+      const revealed: Record<string, string> = {};
+      for (const sys of systems) revealed[sys] = matchResult(sys, findings) || "ปกติ ไม่มีสิ่งผิดปกติ";
+      setPeRevealed(prev => ({ ...prev, ...revealed }));
+    } catch {
+      const revealed: Record<string, string> = {};
+      for (const sys of systems) revealed[sys] = "โหลดผลไม่สำเร็จ — แตะอีกครั้งเพื่อลองใหม่";
+      setPeRevealed(prev => ({ ...prev, ...revealed }));
+    }
   }
 
   async function revealLabs(labs: string[]) {
-    const res = await fetch(`/api/longcase/session?id=${sessionId}&includeLab=true`);
-    const data = await res.json();
-    const results = data.long_case?.lab_results || {};
-    const revealed: Record<string, { value: string; isAbnormal: boolean }> = {};
-    for (const lab of labs) revealed[lab] = results[lab] || { value: "ไม่มีผลในระบบ", isAbnormal: false };
-    setLabRevealed(prev => ({ ...prev, ...revealed }));
+    try {
+      const res = await fetch(`/api/longcase/session?id=${sessionId}&includeLab=true`);
+      const data = await res.json();
+      // Imaging results (Chest X-Ray, ECG, Echo, …) live in a separate map
+      // from lab_results; merge both so imaging orders resolve too.
+      const results = {
+        ...(data.long_case?.lab_results || {}),
+        ...(data.long_case?.imaging_results || {}),
+      };
+      const revealed: Record<string, { value: string; isAbnormal: boolean }> = {};
+      for (const lab of labs) revealed[lab] = matchResult(lab, results) || { value: "ไม่มีผลในระบบ", isAbnormal: false };
+      setLabRevealed(prev => ({ ...prev, ...revealed }));
+    } catch {
+      const revealed: Record<string, { value: string; isAbnormal: boolean }> = {};
+      for (const lab of labs) revealed[lab] = { value: "โหลดผลไม่สำเร็จ — แตะอีกครั้งเพื่อลองใหม่", isAbnormal: false };
+      setLabRevealed(prev => ({ ...prev, ...revealed }));
+    }
   }
 
   async function startExaminer() {
@@ -202,6 +238,10 @@ function LongCaseSessionInner() {
     setExaminerStarted(true);
     let aiText = "";
     setExamMessages([{ role: "assistant", content: "..." }]);
+    const render = (t: string) => {
+      aiText += t;
+      setExamMessages([{ role: "assistant", content: aiText }]);
+    };
 
     try {
       const res = await fetch("/api/ai/longcase-examiner", {
@@ -209,21 +249,15 @@ function LongCaseSessionInner() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ sessionId, messages: [], action: "start" }),
       });
-      const reader = res.body?.getReader();
-      if (!reader) return;
-      const decoder = new TextDecoder();
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        for (const line of decoder.decode(value).split("\n")) {
-          if (!line.startsWith("data: ")) continue;
-          const parsed = JSON.parse(line.slice(6));
-          if (parsed.text) {
-            aiText += parsed.text;
-            setExamMessages([{ role: "assistant", content: aiText }]);
-          }
-        }
+      const { error: streamErr } = await consumeSSE(res, render);
+      if (!aiText) {
+        setExamMessages([{
+          role: "assistant",
+          content: streamErr || "ขออภัย เริ่มการสัมภาษณ์ไม่สำเร็จ ลองใหม่อีกครั้งนะคะ",
+        }]);
       }
+    } catch {
+      setExamMessages([{ role: "assistant", content: "เชื่อมต่อไม่ได้ ลองใหม่อีกครั้งนะคะ" }]);
     } finally {
       setExamLoading(false);
     }
@@ -239,6 +273,10 @@ function LongCaseSessionInner() {
 
     let aiText = "";
     setExamMessages(prev => [...prev, { role: "assistant", content: "..." }]);
+    const render = (t: string) => {
+      aiText += t;
+      setExamMessages(prev => [...prev.slice(0, -1), { role: "assistant", content: aiText }]);
+    };
 
     try {
       const res = await fetch("/api/ai/longcase-examiner", {
@@ -246,21 +284,18 @@ function LongCaseSessionInner() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ sessionId, messages: [userMsg], action: "chat" }),
       });
-      const reader = res.body?.getReader();
-      if (!reader) return;
-      const decoder = new TextDecoder();
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        for (const line of decoder.decode(value).split("\n")) {
-          if (!line.startsWith("data: ")) continue;
-          const parsed = JSON.parse(line.slice(6));
-          if (parsed.text) {
-            aiText += parsed.text;
-            setExamMessages(prev => [...prev.slice(0, -1), { role: "assistant", content: aiText }]);
-          }
-        }
+      const { error: streamErr } = await consumeSSE(res, render);
+      if (!aiText) {
+        setExamMessages(prev => [...prev.slice(0, -1), {
+          role: "assistant",
+          content: streamErr || "ขออภัย ระบบขัดข้องชั่วคราว ลองตอบใหม่อีกครั้งนะคะ",
+        }]);
       }
+    } catch {
+      setExamMessages(prev => [...prev.slice(0, -1), {
+        role: "assistant",
+        content: "เชื่อมต่อไม่ได้ ลองใหม่อีกครั้งนะคะ",
+      }]);
     } finally {
       setExamLoading(false);
     }
@@ -385,9 +420,13 @@ function LongCaseSessionInner() {
               <MessageSquare className="h-5 w-5" /> ซักประวัติ
             </h2>
             <p className="text-sm text-gray-500">คุยกับผู้ป่วย AI ซักประวัติให้ครบถ้วน แล้วกด &ldquo;เสร็จแล้ว&rdquo;</p>
-            <div className="space-y-3 max-h-80 overflow-y-auto">
+            <div ref={chatScrollRef} className="space-y-3 max-h-80 overflow-y-auto">
               {chatMessages.map((m, i) => (
-                <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
+                <div
+                  key={i}
+                  ref={i === chatMessages.length - 1 ? chatLastMsgRef : undefined}
+                  className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}
+                >
                   <div className={`max-w-[80%] rounded-xl px-4 py-2.5 text-sm ${
                     m.role === "user"
                       ? "bg-amber-500 text-white"
@@ -399,7 +438,6 @@ function LongCaseSessionInner() {
                 </div>
               ))}
               {chatLoading && <div className="text-xs text-gray-400 animate-pulse">ผู้ป่วยกำลังตอบ...</div>}
-              <div ref={chatEndRef} />
             </div>
             <div className="flex gap-2">
               <Textarea
@@ -443,6 +481,8 @@ function LongCaseSessionInner() {
                           headers: { "Content-Type": "application/json" },
                           body: JSON.stringify({ sessionId, pe_selected: newSelected }),
                         });
+                      } else if (!revealed) {
+                        await revealPe([sys]);
                       }
                     }}
                   >
@@ -488,6 +528,8 @@ function LongCaseSessionInner() {
                               headers: { "Content-Type": "application/json" },
                               body: JSON.stringify({ sessionId, lab_ordered: newOrdered }),
                             });
+                          } else if (!res) {
+                            await revealLabs([name]);
                           }
                         }}
                         className={`rounded-lg border p-2.5 cursor-pointer transition-colors min-w-[100px] ${ordered ? "border-blue-400 bg-white" : "border-blue-300 bg-white hover:bg-blue-100"}`}
@@ -525,6 +567,8 @@ function LongCaseSessionInner() {
                           headers: { "Content-Type": "application/json" },
                           body: JSON.stringify({ sessionId, lab_ordered: newOrdered }),
                         });
+                      } else if (!res) {
+                        await revealLabs([name]);
                       }
                     }}
                   >
@@ -620,9 +664,13 @@ function LongCaseSessionInner() {
               </div>
             ) : (
               <>
-                <div className="space-y-3 max-h-80 overflow-y-auto">
+                <div ref={examScrollRef} className="space-y-3 max-h-80 overflow-y-auto">
                   {examMessages.map((m, i) => (
-                    <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
+                    <div
+                      key={i}
+                      ref={i === examMessages.length - 1 ? examLastMsgRef : undefined}
+                      className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}
+                    >
                       <div className={`max-w-[85%] rounded-xl px-4 py-2.5 text-sm ${
                         m.role === "user" ? "bg-amber-500 text-white" : "bg-gray-100 text-gray-800"
                       }`}>
@@ -632,7 +680,6 @@ function LongCaseSessionInner() {
                     </div>
                   ))}
                   {examLoading && <div className="text-xs text-gray-400 animate-pulse">Examiner กำลังพิมพ์...</div>}
-                  <div ref={examEndRef} />
                 </div>
                 <div className="flex gap-2">
                   <Textarea

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SocialIconsRow } from "@/components/SocialLinks";
+import { NETWORK_SITES } from "@/lib/network-sites";
 
 export default function Footer() {
   return (
@@ -79,6 +80,36 @@ export default function Footer() {
             >
               ติดต่อเรา →
             </a>
+          </div>
+        </div>
+
+        {/* เว็บในเครือ */}
+        <div className="mt-10 border-t border-white/10 pt-8">
+          <h3 className="mb-4 text-center font-semibold">
+            🌐 เว็บในเครือเรา
+          </h3>
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
+            {NETWORK_SITES.map((site) => (
+              <a
+                key={site.href}
+                href={site.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2.5 rounded-lg border border-white/10 bg-white/5 px-3 py-2 transition-colors hover:border-white/30 hover:bg-white/10"
+              >
+                <span className="text-lg shrink-0" aria-hidden>
+                  {site.emoji}
+                </span>
+                <span className="min-w-0">
+                  <span className="block truncate text-sm font-medium text-white/90 group-hover:text-white">
+                    {site.label}
+                  </span>
+                  <span className="block truncate text-xs text-white/50 group-hover:text-white/70">
+                    {site.tagline}
+                  </span>
+                </span>
+              </a>
+            ))}
           </div>
         </div>
 

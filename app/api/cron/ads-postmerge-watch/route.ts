@@ -6,16 +6,14 @@
  *   - marks the linked finding resolved (when conversion held or improved
  *     for the full 7-day window).
  *
+ * No LINE push here — verdicts land on ad_suggest_prs (outcome columns)
+ * and surface in the 08:00 admin digest (/api/cron/admin-digest).
+ *
  * Schedule: daily 04:30 BKK (= 21:30 UTC).
  */
 
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { sendLineMessage } from "@/lib/line";
-import {
-  buildAdsPostMergeAlertFlex,
-  buildAdsPostMergeResolvedFlex,
-} from "@/lib/line-flex-templates";
 import {
   createBranch,
   getDefaultBranchSha,
@@ -185,7 +183,6 @@ export async function GET(request: Request) {
 
   // One stats call covers the whole 7-day window for all pages.
   const stats = await fetchPageStats(supabase, sevenDaysAgo);
-  const adminLineId = process.env.ADMIN_LINE_USER_ID;
   const updates: Array<{ pr: number; outcome: string }> = [];
 
   for (const row of rows as SuggestPrRow[]) {
@@ -205,7 +202,6 @@ export async function GET(request: Request) {
     // Degraded → auto open revert PR.
     if (baselineRate > 0 && ratio < DEGRADATION_RATIO) {
       let revertNumber: number | null = null;
-      let revertUrl: string | null = null;
       if (cfg) {
         const revert = await openRevertPR(cfg, {
           suggest: row,
@@ -214,7 +210,6 @@ export async function GET(request: Request) {
         });
         if (revert) {
           revertNumber = revert.number;
-          revertUrl = revert.html_url;
         }
       }
       await supabase
@@ -229,17 +224,6 @@ export async function GET(request: Request) {
         })
         .eq("id", row.id);
 
-      if (adminLineId) {
-        const flex = buildAdsPostMergeAlertFlex({
-          pagePath: row.page_path,
-          prNumber: row.pr_number,
-          baselineRate,
-          currentRate: current.signupRatePct,
-          revertPrNumber: revertNumber,
-          revertPrUrl: revertUrl,
-        });
-        await sendLineMessage(adminLineId, [flex]);
-      }
       updates.push({ pr: row.pr_number, outcome: "degraded" });
       continue;
     }
@@ -270,17 +254,6 @@ export async function GET(request: Request) {
           resolved_at: new Date().toISOString(),
         })
         .eq("id", row.finding_id);
-    }
-
-    if (adminLineId) {
-      const flex = buildAdsPostMergeResolvedFlex({
-        pagePath: row.page_path,
-        prNumber: row.pr_number,
-        baselineRate,
-        currentRate: current.signupRatePct,
-        outcome: outcome as "improved" | "flat",
-      });
-      await sendLineMessage(adminLineId, [flex]);
     }
 
     updates.push({ pr: row.pr_number, outcome });

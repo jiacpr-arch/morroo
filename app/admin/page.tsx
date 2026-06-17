@@ -21,6 +21,7 @@ import {
   Camera,
   GraduationCap,
   Newspaper,
+  Flag,
 } from "lucide-react";
 
 interface HeatmapCell {
@@ -193,6 +194,19 @@ export default function AdminDashboard() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">เพิ่ม แก้ไข ลบ และจัดการสถานะข้อสอบ MCQ</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/mcq/reports">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Flag className="h-5 w-5 text-amber-600" />
+                <h3 className="font-bold">รายงานข้อสอบ (Bug Hunter)</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">ตรวจรายงานจากนักเรียน ยืนยันเพื่อให้ +10 คะแนน และดูอันดับ</p>
             </CardContent>
           </Card>
         </Link>

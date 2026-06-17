@@ -52,6 +52,12 @@ export async function POST(request: NextRequest) {
         invoiceEmail: user.email ?? "",
         ttclid: request.cookies.get("ttclid")?.value ?? "",
         ttp: request.cookies.get("_ttp")?.value ?? "",
+        // Meta click/browser IDs (set by the pixel) so the Purchase CAPI event
+        // in app/api/billing/webhook can attribute the sale to the ad. The
+        // webhook already reads session.metadata.fbc/fbp — it was just never
+        // populated here, so purchases came through unattributed.
+        fbc: request.cookies.get("_fbc")?.value ?? "",
+        fbp: request.cookies.get("_fbp")?.value ?? "",
       },
     });
 

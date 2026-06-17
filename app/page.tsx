@@ -4,6 +4,7 @@ import ExamCard from "@/components/ExamCard";
 import PricingCard from "@/components/PricingCard";
 import PricingFaq from "@/components/PricingFaq";
 import AllExamsCountdown from "@/components/AllExamsCountdown";
+import NlExamCountdown from "@/components/NlExamCountdown";
 import HeroAB from "@/components/HeroAB";
 import PricingViewTracker from "@/components/PricingViewTracker";
 import SocialProofSection from "@/components/SocialProofSection";
@@ -11,7 +12,9 @@ import FeatureShowcase from "@/components/FeatureShowcase";
 import { SocialButtonsRow, LineCtaButton } from "@/components/SocialLinks";
 import { CATEGORIES, PRICING_PLANS } from "@/lib/types";
 import { getExams, getExamPartCounts, sortExamsAvailableFirst } from "@/lib/supabase/queries";
+import { getQuestionBankStats } from "@/lib/supabase/queries-mcq";
 import { getNewsItems } from "@/lib/news";
+import { getJiaAedNewsItems } from "@/lib/jiaaed-news";
 import NewsCard from "@/components/NewsCard";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { getHeroForcedVariant } from "@/lib/site-config";
@@ -20,18 +23,21 @@ import { ArrowRight } from "lucide-react";
 export const revalidate = 60; // revalidate every 60 seconds
 
 export default async function HomePage() {
-  const [allExams, partCounts, newsItems, forcedHero] = await Promise.all([
+  const [allExams, partCounts, newsItems, aedNewsItems, forcedHero, bankStats] = await Promise.all([
     getExams(),
     getExamPartCounts(),
     getNewsItems({ limit: 6 }),
+    getJiaAedNewsItems(2),
     getHeroForcedVariant(createAdminClient()),
+    getQuestionBankStats(),
   ]);
+  const homeNewsItems = [...newsItems.slice(0, 4), ...aedNewsItems];
   const exams = sortExamsAvailableFirst(allExams, partCounts);
   const latestExams = exams.slice(0, 6);
 
   return (
     <>
-      <HeroAB forced={forcedHero} />
+      <HeroAB forced={forcedHero} stats={bankStats} />
 
       {/* LINE add-friend strip — high-visibility CTA above the fold */}
       <section className="bg-[#06C755]/10 border-b border-[#06C755]/20">
@@ -49,6 +55,7 @@ export default async function HomePage() {
       {/* All Exams Countdown */}
       <section className="py-8 bg-white border-b">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <NlExamCountdown />
           <AllExamsCountdown />
         </div>
       </section>
@@ -106,7 +113,7 @@ export default async function HomePage() {
       </section>
 
       {/* Social Proof — testimonials + stats above pricing decision */}
-      <SocialProofSection />
+      <SocialProofSection stats={bankStats} />
 
       {/* Pricing */}
       <section className="py-16 bg-muted/30" id="pricing">
@@ -128,13 +135,13 @@ export default async function HomePage() {
       </section>
 
       {/* News & Updates */}
-      {newsItems.length > 0 && (
+      {homeNewsItems.length > 0 && (
         <section className="py-16">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between mb-8">
               <div>
                 <h2 className="text-3xl font-bold">ข่าวและอัปเดตล่าสุด</h2>
-                <p className="mt-1 text-muted-foreground">ฟีเจอร์ใหม่ บทความ และข่าวสอบล่าสุด</p>
+                <p className="mt-1 text-muted-foreground">ฟีเจอร์ใหม่ บทความ ข่าวสอบ และข่าวกู้ชีพล่าสุด</p>
               </div>
               <Link href="/news">
                 <Button variant="outline" className="gap-2">
@@ -143,7 +150,7 @@ export default async function HomePage() {
               </Link>
             </div>
             <div className="space-y-4">
-              {newsItems.slice(0, 4).map((item) => (
+              {homeNewsItems.map((item) => (
                 <NewsCard key={item.id} item={item} />
               ))}
             </div>

@@ -149,7 +149,7 @@ export default async function BlogPostPage({
         <div className="mt-12 rounded-xl bg-brand/10 border border-brand/20 p-6">
           <h2 className="text-lg font-semibold">เริ่มฝึกสอบกับหมอรู้ได้เลย</h2>
           <p className="mt-1 text-sm text-muted-foreground">
-            ข้อสอบ MEQ + MCQ 1,300+ ข้อ + Long Case กับ AI — เริ่มต้นฟรี
+            ข้อสอบ MEQ + MCQ 3,000+ ข้อ + Long Case กับ AI — เริ่มต้นฟรี
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
             <Link

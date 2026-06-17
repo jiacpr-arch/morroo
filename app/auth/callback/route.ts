@@ -1,4 +1,4 @@
-import { NextResponse, after } from "next/server";
+import { NextRequest, NextResponse, after } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import {
   BETA_DURATION_DAYS,
@@ -9,7 +9,7 @@ import { sendTikTokEvent } from "@/lib/tiktok/events-api";
 import { sendMetaEvent } from "@/lib/meta/events-api";
 import { sendWelcomeEmail } from "@/lib/email/send";
 
-export async function GET(request: Request) {
+export async function GET(request: NextRequest) {
   const { searchParams, origin } = new URL(request.url);
   const code = searchParams.get("code");
   const next = searchParams.get("next") ?? "/profile";
@@ -85,6 +85,16 @@ export async function GET(request: Request) {
         const userAgent = request.headers.get("user-agent");
         const forwardedFor = request.headers.get("x-forwarded-for");
         const ip = forwardedFor?.split(",")[0]?.trim() ?? null;
+        // Pass the Meta click/browser IDs (set by the pixel in layout.tsx) and
+        // the TikTok equivalents so the CAPI CompleteRegistration can be
+        // attributed back to the ad that drove the signup. Without fbc/fbp,
+        // Meta receives the event but can't tie it to the campaign, so Ads
+        // Manager under-reports registrations to ~0.
+        const fbc = request.cookies.get("_fbc")?.value ?? null;
+        const fbp = request.cookies.get("_fbp")?.value ?? null;
+        const ttclid = request.cookies.get("ttclid")?.value ?? null;
+        const ttp = request.cookies.get("_ttp")?.value ?? null;
+        const eventUrl = `${origin}${destination}`;
         const signupEventId = `signup:${data.user!.id}`;
         after(() =>
           sendTikTokEvent({
@@ -94,6 +104,9 @@ export async function GET(request: Request) {
             externalId: data.user!.id,
             ip,
             userAgent,
+            ttclid,
+            ttp,
+            url: eventUrl,
             contentName: "signup",
           })
         );
@@ -105,6 +118,9 @@ export async function GET(request: Request) {
             externalId: data.user!.id,
             ip,
             userAgent,
+            fbc,
+            fbp,
+            url: eventUrl,
             contentName: "signup",
           })
         );

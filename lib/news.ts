@@ -4,7 +4,8 @@ export type NewsSourceType =
   | "product_update"
   | "blog"
   | "exam"
-  | "external_health";
+  | "external_health"
+  | "external_aed";
 
 export type NewsSection =
   | "exams"

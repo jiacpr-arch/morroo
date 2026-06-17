@@ -2,7 +2,7 @@ import { notFound, redirect } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Rocket, Calendar, FileText, HeartPulse } from "lucide-react";
+import { Rocket, Calendar, FileText, HeartPulse, Zap } from "lucide-react";
 import { getNewsItem, type NewsSourceType } from "@/lib/news";
 
 export const revalidate = 60;
@@ -13,6 +13,7 @@ const SOURCE_LABEL: Record<NewsSourceType, string> = {
   blog: "บทความ",
   exam: "ข่าวสอบ",
   external_health: "ข่าวสุขภาพ",
+  external_aed: "ข่าวกู้ชีพ/AED",
 };
 
 const SOURCE_ICON: Record<NewsSourceType, typeof Rocket> = {
@@ -20,6 +21,7 @@ const SOURCE_ICON: Record<NewsSourceType, typeof Rocket> = {
   blog: FileText,
   exam: Calendar,
   external_health: HeartPulse,
+  external_aed: Zap,
 };
 
 export async function generateMetadata({

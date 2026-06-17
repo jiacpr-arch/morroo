@@ -2,70 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { ExternalLink } from "lucide-react";
-
-type Ad = {
-  href: string;
-  label: string;
-  tagline: string;
-  emoji: string;
-};
-
-const ADS: Ad[] = [
-  {
-    href: "https://emr.morroo.com",
-    label: "MorRoo EMR",
-    tagline: "ระบบเวชระเบียนอิเล็กทรอนิกส์สำหรับคลินิก",
-    emoji: "🩺",
-  },
-  {
-    href: "https://icd10.morroo.com",
-    label: "ICD-10",
-    tagline: "ค้นหารหัสโรค ICD-10 ภาษาไทยแบบเร็ว",
-    emoji: "🔎",
-  },
-  {
-    href: "https://lab.morroo.com",
-    label: "Lab Reference",
-    tagline: "ค่าแล็บอ้างอิงครบในที่เดียว",
-    emoji: "🧪",
-  },
-  {
-    href: "https://pocket.morroo.com",
-    label: "Pocket MorRoo",
-    tagline: "คู่มือพกพาสำหรับแพทย์",
-    emoji: "📒",
-  },
-  {
-    href: "https://advice.morroo.com",
-    label: "MorRoo Advice",
-    tagline: "ผู้ช่วย AI ให้คำแนะนำทางคลินิก",
-    emoji: "💬",
-  },
-  {
-    href: "https://roodee.me",
-    label: "RooDee",
-    tagline: "เครื่องมือช่วยอ่านหนังสือสอบ",
-    emoji: "📚",
-  },
-  {
-    href: "https://pharmru.com",
-    label: "PharmRu",
-    tagline: "คู่มือยาออนไลน์",
-    emoji: "💊",
-  },
-  {
-    href: "https://jiacpr.com",
-    label: "JiaCPR",
-    tagline: "บทความและสื่อทางการแพทย์",
-    emoji: "✍️",
-  },
-  {
-    href: "https://jia1669.com",
-    label: "Jia 1669",
-    tagline: "เครื่องมือฉุกเฉินทางการแพทย์",
-    emoji: "🚑",
-  },
-];
+import { NETWORK_SITES } from "@/lib/network-sites";
 
 const ROTATE_MS = 7000;
 
@@ -78,15 +15,15 @@ export default function InternalAdsBanner({ placement, className }: Props) {
   const [idx, setIdx] = useState<number | null>(null);
 
   useEffect(() => {
-    setIdx(Math.floor(Math.random() * ADS.length));
+    setIdx(Math.floor(Math.random() * NETWORK_SITES.length));
     const t = setInterval(() => {
-      setIdx((i) => (((i ?? 0) + 1) % ADS.length));
+      setIdx((i) => (((i ?? 0) + 1) % NETWORK_SITES.length));
     }, ROTATE_MS);
     return () => clearInterval(t);
   }, []);
 
   if (idx === null) return null;
-  const ad = ADS[idx];
+  const ad = NETWORK_SITES[idx];
 
   return (
     <a
@@ -95,10 +32,16 @@ export default function InternalAdsBanner({ placement, className }: Props) {
       rel="noopener noreferrer"
       data-placement={placement}
       data-ad-href={ad.href}
-      className={`group block rounded-xl border border-brand/30 bg-gradient-to-r from-brand/5 via-white to-amber-50/40 px-4 py-3 transition hover:border-brand/60 hover:shadow-sm ${className ?? ""}`}
+      className={`group block overflow-hidden rounded-xl border border-brand/30 bg-gradient-to-r from-brand/5 via-white to-amber-50/40 px-4 py-3 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand/60 hover:shadow-md ${className ?? ""}`}
     >
-      <div className="flex items-center gap-3">
-        <span className="text-2xl shrink-0" aria-hidden>
+      <div
+        key={idx}
+        className="flex items-center gap-3 animate-in fade-in slide-in-from-bottom-1 duration-500"
+      >
+        <span
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand/15 to-amber-100/80 text-xl shadow-inner"
+          aria-hidden
+        >
           {ad.emoji}
         </span>
         <div className="min-w-0 flex-1">
@@ -106,7 +49,7 @@ export default function InternalAdsBanner({ placement, className }: Props) {
             <span className="font-semibold text-sm text-gray-900">
               {ad.label}
             </span>
-            <span className="text-[10px] uppercase tracking-wide text-muted-foreground bg-muted px-1.5 py-0.5 rounded">
+            <span className="text-[10px] uppercase tracking-wide text-brand bg-brand/10 px-1.5 py-0.5 rounded-full">
               เว็บในเครือเรา
             </span>
           </div>
