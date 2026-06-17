@@ -36,7 +36,8 @@ function LongCaseSessionInner() {
   const [chatInput, setChatInput] = useState("");
   const [chatMessages, setChatMessages] = useState<{ role: "user" | "assistant"; content: string }[]>([]);
   const [chatLoading, setChatLoading] = useState(false);
-  const chatEndRef = useRef<HTMLDivElement>(null);
+  const chatScrollRef = useRef<HTMLDivElement>(null);
+  const chatLastMsgRef = useRef<HTMLDivElement>(null);
 
   // PE
   const [peSelected, setPeSelected] = useState<string[]>([]);
@@ -56,7 +57,8 @@ function LongCaseSessionInner() {
   const [examMessages, setExamMessages] = useState<{ role: "user" | "assistant"; content: string }[]>([]);
   const [examLoading, setExamLoading] = useState(false);
   const [examinerStarted, setExaminerStarted] = useState(false);
-  const examEndRef = useRef<HTMLDivElement>(null);
+  const examScrollRef = useRef<HTMLDivElement>(null);
+  const examLastMsgRef = useRef<HTMLDivElement>(null);
 
   // Scores
   const [scores, setScores] = useState<Record<string, number | string> | null>(null);
@@ -108,8 +110,20 @@ function LongCaseSessionInner() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sessionId]);
 
-  useEffect(() => { chatEndRef.current?.scrollIntoView({ behavior: "smooth" }); }, [chatMessages]);
-  useEffect(() => { examEndRef.current?.scrollIntoView({ behavior: "smooth" }); }, [examMessages]);
+  // เลื่อนให้ "หัว" ของข้อความล่าสุดมาอยู่บนสุดของกล่องแชท เพื่อให้อ่านคำตอบ
+  // ยาว ๆ จากต้นข้อความได้เลย (แทนการเด้งไปบรรทัดล่างสุด) และเลื่อนเฉพาะภายใน
+  // กล่องแชทเท่านั้น ไม่ดึงทั้งหน้าจอ
+  const scrollLastMsgToTop = (
+    container: HTMLDivElement | null,
+    lastMsg: HTMLDivElement | null,
+  ) => {
+    if (!container || !lastMsg) return;
+    const offset = lastMsg.getBoundingClientRect().top - container.getBoundingClientRect().top;
+    container.scrollTo({ top: container.scrollTop + offset, behavior: "smooth" });
+  };
+
+  useEffect(() => { scrollLastMsgToTop(chatScrollRef.current, chatLastMsgRef.current); }, [chatMessages]);
+  useEffect(() => { scrollLastMsgToTop(examScrollRef.current, examLastMsgRef.current); }, [examMessages]);
 
   // When the session is already completed (page reload), fetch whether the
   // user has already submitted feedback so we don't show the form twice.
@@ -405,9 +419,13 @@ function LongCaseSessionInner() {
               <MessageSquare className="h-5 w-5" /> ซักประวัติ
             </h2>
             <p className="text-sm text-gray-500">คุยกับผู้ป่วย AI ซักประวัติให้ครบถ้วน แล้วกด &ldquo;เสร็จแล้ว&rdquo;</p>
-            <div className="space-y-3 max-h-80 overflow-y-auto">
+            <div ref={chatScrollRef} className="space-y-3 max-h-80 overflow-y-auto">
               {chatMessages.map((m, i) => (
-                <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
+                <div
+                  key={i}
+                  ref={i === chatMessages.length - 1 ? chatLastMsgRef : undefined}
+                  className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}
+                >
                   <div className={`max-w-[80%] rounded-xl px-4 py-2.5 text-sm ${
                     m.role === "user"
                       ? "bg-amber-500 text-white"
@@ -419,7 +437,6 @@ function LongCaseSessionInner() {
                 </div>
               ))}
               {chatLoading && <div className="text-xs text-gray-400 animate-pulse">ผู้ป่วยกำลังตอบ...</div>}
-              <div ref={chatEndRef} />
             </div>
             <div className="flex gap-2">
               <Textarea
@@ -646,9 +663,13 @@ function LongCaseSessionInner() {
               </div>
             ) : (
               <>
-                <div className="space-y-3 max-h-80 overflow-y-auto">
+                <div ref={examScrollRef} className="space-y-3 max-h-80 overflow-y-auto">
                   {examMessages.map((m, i) => (
-                    <div key={i} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
+                    <div
+                      key={i}
+                      ref={i === examMessages.length - 1 ? examLastMsgRef : undefined}
+                      className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}
+                    >
                       <div className={`max-w-[85%] rounded-xl px-4 py-2.5 text-sm ${
                         m.role === "user" ? "bg-amber-500 text-white" : "bg-gray-100 text-gray-800"
                       }`}>
@@ -658,7 +679,6 @@ function LongCaseSessionInner() {
                     </div>
                   ))}
                   {examLoading && <div className="text-xs text-gray-400 animate-pulse">Examiner กำลังพิมพ์...</div>}
-                  <div ref={examEndRef} />
                 </div>
                 <div className="flex gap-2">
                   <Textarea
