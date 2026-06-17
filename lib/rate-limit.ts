@@ -21,6 +21,7 @@ export const RATE_LIMITS = {
   aiChat: { max: 30, windowSeconds: 3600 },          // 30 Claude chats / hour
   mcqRecommended: { max: 60, windowSeconds: 3600 },  // 60 recs / hour
   reportError: { max: 20, windowSeconds: 86400 },    // 20 reports / day
+  redeemPoints: { max: 10, windowSeconds: 86400 },   // 10 point redeems / day
 } as const satisfies Record<string, RateLimitConfig>;
 
 /**

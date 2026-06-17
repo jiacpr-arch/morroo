@@ -8,8 +8,9 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
 import { track } from "@/lib/analytics";
-import { User, Mail, Crown, Calendar, LogOut, Gift, Copy, Check, Users, MessageSquare, Link2, Loader2, Flag, Coins } from "lucide-react";
+import { User, Mail, Crown, Calendar, LogOut, Gift, Copy, Check, Users, MessageSquare, Link2, Loader2, Flag, Coins, Sparkles } from "lucide-react";
 import type { Profile } from "@/lib/types";
+import { REWARD_TIER_LIST, availableReporterPoints } from "@/lib/bug-hunter";
 
 const membershipLabels: Record<string, string> = {
   free: "ฟรี",
@@ -38,6 +39,8 @@ export default function ProfilePage() {
   const [lineCode, setLineCode] = useState<string | null>(null);
   const [lineCopied, setLineCopied] = useState(false);
   const [generatingLine, setGeneratingLine] = useState(false);
+  const [redeemingTier, setRedeemingTier] = useState<string | null>(null);
+  const [redeemMsg, setRedeemMsg] = useState<{ kind: "ok" | "error"; text: string } | null>(null);
 
   useEffect(() => {
     async function loadProfile() {
@@ -113,6 +116,45 @@ export default function ProfilePage() {
     await navigator.clipboard.writeText(lineCode);
     setLineCopied(true);
     setTimeout(() => setLineCopied(false), 2000);
+  };
+
+  const handleRedeemPoints = async (tierId: string, cost: number, days: number) => {
+    setRedeemingTier(tierId);
+    setRedeemMsg(null);
+    try {
+      const res = await fetch("/api/mcq/redeem-points", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ tier: tierId }),
+      });
+      const json = await res.json();
+      if (!res.ok) {
+        setRedeemMsg({ kind: "error", text: json?.error ?? "แลกแต้มไม่สำเร็จ" });
+        return;
+      }
+      // Reflect the spend + new membership locally without a full reload.
+      setProfile((prev) =>
+        prev
+          ? {
+              ...prev,
+              reporter_points_spent: (prev.reporter_points_spent ?? 0) + cost,
+              membership_type:
+                prev.membership_type === "free" ? "monthly" : prev.membership_type,
+              membership_expires_at:
+                json.membership_expires_at ?? prev.membership_expires_at,
+            }
+          : prev
+      );
+      track("bug_hunter_redeem", { tier: tierId, days });
+      setRedeemMsg({
+        kind: "ok",
+        text: `แลกสำเร็จ! ได้สมาชิกฟรีเพิ่ม ${days} วัน`,
+      });
+    } catch {
+      setRedeemMsg({ kind: "error", text: "เกิดข้อผิดพลาดในการเชื่อมต่อ" });
+    } finally {
+      setRedeemingTier(null);
+    }
   };
 
   const handleCopy = async () => {
@@ -228,14 +270,75 @@ export default function ProfilePage() {
                 <Flag className="h-3 w-3" /> เฉลยไม่ถูก?
               </span>
               ใต้เฉลยแต่ละข้อ รับ +1 คะแนนทันที และ +10 คะแนนเมื่อแอดมินยืนยัน
+              แล้วนำคะแนนมาแลกเป็นสมาชิกฟรีได้
             </p>
           </CardHeader>
-          <CardContent>
+          <CardContent className="space-y-4">
             <div className="flex items-center justify-between rounded-lg bg-amber-50 border border-amber-200 p-4">
-              <span className="text-sm text-amber-800">คะแนน Bug Hunter ของคุณ</span>
+              <div>
+                <span className="text-sm text-amber-800">คะแนนที่ใช้แลกได้</span>
+                {profile && (profile.reporter_points_spent ?? 0) > 0 && (
+                  <p className="text-xs text-muted-foreground">
+                    สะสมทั้งหมด {profile.reporter_points ?? 0} · ใช้ไปแล้ว{" "}
+                    {profile.reporter_points_spent ?? 0}
+                  </p>
+                )}
+              </div>
               <span className="text-2xl font-bold text-amber-700">
-                {profile?.reporter_points ?? 0}
+                {profile ? availableReporterPoints(profile) : 0}
               </span>
+            </div>
+
+            {/* Redeem points → free membership */}
+            <div className="space-y-2">
+              <p className="text-xs font-medium text-muted-foreground">
+                แลกคะแนนเป็นสมาชิกฟรี
+              </p>
+              <div className="grid gap-2 sm:grid-cols-2">
+                {REWARD_TIER_LIST.map((tier) => {
+                  const avail = profile ? availableReporterPoints(profile) : 0;
+                  const canRedeem = avail >= tier.cost;
+                  return (
+                    <div
+                      key={tier.id}
+                      className="flex items-center justify-between gap-2 rounded-lg border p-3"
+                    >
+                      <div>
+                        <p className="text-sm font-medium">{tier.label}</p>
+                        <p className="text-xs text-muted-foreground">
+                          ใช้ {tier.cost} คะแนน
+                        </p>
+                      </div>
+                      <Button
+                        size="sm"
+                        disabled={!canRedeem || redeemingTier !== null}
+                        onClick={() =>
+                          handleRedeemPoints(tier.id, tier.cost, tier.days)
+                        }
+                        className="bg-amber-500 hover:bg-amber-600 text-white gap-1.5 shrink-0"
+                      >
+                        {redeemingTier === tier.id ? (
+                          <Loader2 className="h-4 w-4 animate-spin" />
+                        ) : (
+                          <Sparkles className="h-4 w-4" />
+                        )}
+                        แลก
+                      </Button>
+                    </div>
+                  );
+                })}
+              </div>
+              {redeemMsg && (
+                <p
+                  className={`text-xs rounded px-2 py-1.5 ${
+                    redeemMsg.kind === "ok"
+                      ? "bg-green-50 text-green-700 border border-green-200"
+                      : "bg-red-50 text-red-600 border border-red-200"
+                  }`}
+                >
+                  {redeemMsg.text}
+                </p>
+              )}
             </div>
           </CardContent>
         </Card>
