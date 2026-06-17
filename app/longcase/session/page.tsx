@@ -20,6 +20,60 @@ const COMMON_LABS = [
   "CT Abdomen", "CT Head", "MRI Brain", "Echo",
 ];
 
+type SSEPayload = { text?: string; error?: string; done?: boolean };
+
+/**
+ * Consume a Server-Sent Events stream (`data: {...}\n\n`) robustly.
+ *
+ * Buffers across network chunks so multi-byte UTF-8 (Thai) characters and
+ * partial `data:` lines are never split mid-parse, decodes with
+ * `{ stream: true }`, and ignores malformed fragments instead of throwing.
+ * Returns an error string if the server reported one (or the request failed),
+ * so callers can surface it instead of silently freezing on "...".
+ */
+async function consumeSSE(
+  res: Response,
+  onText: (text: string) => void
+): Promise<{ error?: string }> {
+  if (!res.ok) {
+    const data = (await res.json().catch(() => ({}))) as { error?: string };
+    return { error: data.error || `เกิดข้อผิดพลาด (${res.status})` };
+  }
+  const reader = res.body?.getReader();
+  if (!reader) return { error: "ไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ได้" };
+
+  const decoder = new TextDecoder();
+  let buffer = "";
+  let streamError: string | undefined;
+
+  const handleLine = (line: string) => {
+    if (!line.startsWith("data: ")) return;
+    try {
+      const parsed = JSON.parse(line.slice(6)) as SSEPayload;
+      if (parsed.text) onText(parsed.text);
+      else if (parsed.error) streamError = parsed.error;
+    } catch {
+      // Incomplete/malformed fragment — skip it.
+    }
+  };
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    buffer += decoder.decode(value, { stream: true });
+    let nl: number;
+    while ((nl = buffer.indexOf("\n")) !== -1) {
+      handleLine(buffer.slice(0, nl));
+      buffer = buffer.slice(nl + 1);
+    }
+  }
+  // Flush any trailing buffered event without a final newline.
+  buffer += decoder.decode();
+  if (buffer.trim()) handleLine(buffer.trim());
+
+  return streamError ? { error: streamError } : {};
+}
+
 function LongCaseSessionInner() {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -151,6 +205,10 @@ function LongCaseSessionInner() {
 
     let aiText = "";
     setChatMessages(prev => [...prev, { role: "assistant", content: "..." }]);
+    const render = (t: string) => {
+      aiText += t;
+      setChatMessages(prev => [...prev.slice(0, -1), { role: "assistant", content: aiText }]);
+    };
 
     try {
       const res = await fetch("/api/ai/longcase-patient", {
@@ -158,22 +216,18 @@ function LongCaseSessionInner() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ sessionId, messages: [userMsg] }),
       });
-      const reader = res.body?.getReader();
-      if (!reader) return;
-      const decoder = new TextDecoder();
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        const lines = decoder.decode(value).split("\n");
-        for (const line of lines) {
-          if (!line.startsWith("data: ")) continue;
-          const parsed = JSON.parse(line.slice(6));
-          if (parsed.text) {
-            aiText += parsed.text;
-            setChatMessages(prev => [...prev.slice(0, -1), { role: "assistant", content: aiText }]);
-          }
-        }
+      const { error: streamErr } = await consumeSSE(res, render);
+      if (!aiText) {
+        setChatMessages(prev => [...prev.slice(0, -1), {
+          role: "assistant",
+          content: streamErr || "ขออภัย ระบบขัดข้องชั่วคราว ลองถามใหม่อีกครั้งนะคะ",
+        }]);
       }
+    } catch {
+      setChatMessages(prev => [...prev.slice(0, -1), {
+        role: "assistant",
+        content: "เชื่อมต่อไม่ได้ ลองใหม่อีกครั้งนะคะ",
+      }]);
     } finally {
       setChatLoading(false);
     }
@@ -202,6 +256,10 @@ function LongCaseSessionInner() {
     setExaminerStarted(true);
     let aiText = "";
     setExamMessages([{ role: "assistant", content: "..." }]);
+    const render = (t: string) => {
+      aiText += t;
+      setExamMessages([{ role: "assistant", content: aiText }]);
+    };
 
     try {
       const res = await fetch("/api/ai/longcase-examiner", {
@@ -209,21 +267,15 @@ function LongCaseSessionInner() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ sessionId, messages: [], action: "start" }),
       });
-      const reader = res.body?.getReader();
-      if (!reader) return;
-      const decoder = new TextDecoder();
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        for (const line of decoder.decode(value).split("\n")) {
-          if (!line.startsWith("data: ")) continue;
-          const parsed = JSON.parse(line.slice(6));
-          if (parsed.text) {
-            aiText += parsed.text;
-            setExamMessages([{ role: "assistant", content: aiText }]);
-          }
-        }
+      const { error: streamErr } = await consumeSSE(res, render);
+      if (!aiText) {
+        setExamMessages([{
+          role: "assistant",
+          content: streamErr || "ขออภัย เริ่มการสัมภาษณ์ไม่สำเร็จ ลองใหม่อีกครั้งนะคะ",
+        }]);
       }
+    } catch {
+      setExamMessages([{ role: "assistant", content: "เชื่อมต่อไม่ได้ ลองใหม่อีกครั้งนะคะ" }]);
     } finally {
       setExamLoading(false);
     }
@@ -239,6 +291,10 @@ function LongCaseSessionInner() {
 
     let aiText = "";
     setExamMessages(prev => [...prev, { role: "assistant", content: "..." }]);
+    const render = (t: string) => {
+      aiText += t;
+      setExamMessages(prev => [...prev.slice(0, -1), { role: "assistant", content: aiText }]);
+    };
 
     try {
       const res = await fetch("/api/ai/longcase-examiner", {
@@ -246,21 +302,18 @@ function LongCaseSessionInner() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ sessionId, messages: [userMsg], action: "chat" }),
       });
-      const reader = res.body?.getReader();
-      if (!reader) return;
-      const decoder = new TextDecoder();
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        for (const line of decoder.decode(value).split("\n")) {
-          if (!line.startsWith("data: ")) continue;
-          const parsed = JSON.parse(line.slice(6));
-          if (parsed.text) {
-            aiText += parsed.text;
-            setExamMessages(prev => [...prev.slice(0, -1), { role: "assistant", content: aiText }]);
-          }
-        }
+      const { error: streamErr } = await consumeSSE(res, render);
+      if (!aiText) {
+        setExamMessages(prev => [...prev.slice(0, -1), {
+          role: "assistant",
+          content: streamErr || "ขออภัย ระบบขัดข้องชั่วคราว ลองตอบใหม่อีกครั้งนะคะ",
+        }]);
       }
+    } catch {
+      setExamMessages(prev => [...prev.slice(0, -1), {
+        role: "assistant",
+        content: "เชื่อมต่อไม่ได้ ลองใหม่อีกครั้งนะคะ",
+      }]);
     } finally {
       setExamLoading(false);
     }
