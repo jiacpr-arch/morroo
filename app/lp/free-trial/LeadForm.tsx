@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { track } from "@/lib/analytics";
 
 type Reward = "monthly_1m" | "bundle_10q";
 
@@ -47,10 +48,17 @@ export default function LeadForm({
   const [statusYear, setStatusYear] = useState("");
   const [examTarget, setExamTarget] = useState("");
   const [consent, setConsent] = useState(false);
-
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [success, setSuccess] = useState<{ code: string } | null>(null);
+
+  useEffect(() => {
+    track("lp_lead_form_view", {
+      campaign: campaign ?? null,
+      ad_set: adSet ?? null,
+    });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -74,10 +82,23 @@ export default function LeadForm({
       });
       const json = (await res.json()) as { error?: string; code?: string };
       if (!res.ok) {
+        track("lp_lead_form_error", {
+          error: json.error ?? "unknown",
+          campaign: campaign ?? null,
+          ad_set: adSet ?? null,
+        });
         setErrorMsg(translateError(json.error));
         setSubmitting(false);
         return;
       }
+      track("lp_lead_form_submit", {
+        reward_choice: reward,
+        has_phone: Boolean(phone),
+        status_year: statusYear || null,
+        exam_target: examTarget || null,
+        campaign: campaign ?? null,
+        ad_set: adSet ?? null,
+      });
       setSuccess({ code: json.code ?? "" });
     } catch (e) {
       setErrorMsg(e instanceof Error ? e.message : "ลองใหม่อีกครั้ง");
