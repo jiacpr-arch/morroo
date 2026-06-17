@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Loader2, Send, ChevronRight, CheckCircle, MessageSquare, Stethoscope, FlaskConical, Brain, ClipboardList, Star, Coins } from "lucide-react";
 import type { LongCaseSession, LongCaseFull } from "@/lib/types";
 import { consumeSSE } from "@/lib/sse";
+import { matchResult } from "@/lib/longcase-match";
 import FeedbackCard from "./FeedbackCard";
 
 type Phase = LongCaseSession["phase"];
@@ -189,7 +190,7 @@ function LongCaseSessionInner() {
       const data = await res.json();
       const findings = data.long_case?.pe_findings || {};
       const revealed: Record<string, string> = {};
-      for (const sys of systems) revealed[sys] = findings[sys] || "ปกติ ไม่มีสิ่งผิดปกติ";
+      for (const sys of systems) revealed[sys] = matchResult(sys, findings) || "ปกติ ไม่มีสิ่งผิดปกติ";
       setPeRevealed(prev => ({ ...prev, ...revealed }));
     } catch {
       const revealed: Record<string, string> = {};
@@ -209,7 +210,7 @@ function LongCaseSessionInner() {
         ...(data.long_case?.imaging_results || {}),
       };
       const revealed: Record<string, { value: string; isAbnormal: boolean }> = {};
-      for (const lab of labs) revealed[lab] = results[lab] || { value: "ไม่มีผลในระบบ", isAbnormal: false };
+      for (const lab of labs) revealed[lab] = matchResult(lab, results) || { value: "ไม่มีผลในระบบ", isAbnormal: false };
       setLabRevealed(prev => ({ ...prev, ...revealed }));
     } catch {
       const revealed: Record<string, { value: string; isAbnormal: boolean }> = {};

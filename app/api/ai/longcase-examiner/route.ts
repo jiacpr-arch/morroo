@@ -4,6 +4,7 @@ import { createClient } from "@/lib/supabase/server";
 import { getLongCaseSession, updateLongCaseSession } from "@/lib/supabase/queries-longcase";
 import { checkRateLimit, rateLimitResponse, RATE_LIMITS } from "@/lib/rate-limit";
 import { getBoardReference } from "@/lib/board-references";
+import { matchResult } from "@/lib/longcase-match";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -39,9 +40,13 @@ export async function POST(request: NextRequest) {
   const useOpus = action === "score";
   const model = useOpus ? OPUS_MODEL : SONNET_MODEL;
 
-  // Parse case data
+  // Parse case data. Imaging lives in a separate map from labs; merge them so
+  // imaging orders resolve too.
   const peFindings = lc.pe_findings as Record<string, string>;
-  const labResults = lc.lab_results as Record<string, { value: string; isAbnormal: boolean }>;
+  const labResults = {
+    ...(lc.lab_results as Record<string, { value: string; isAbnormal: boolean }>),
+    ...((lc.imaging_results as Record<string, { value: string; isAbnormal: boolean }> | null) || {}),
+  };
   const examinerQs = lc.examiner_questions as { question: string; modelAnswer: string; points: number }[];
   const rubric = lc.scoring_rubric as Record<string, number>;
   const historyChat = Array.isArray(session.history_chat) ? session.history_chat : [];
@@ -50,13 +55,13 @@ export async function POST(request: NextRequest) {
   // PE selected by student
   const peSelected = Array.isArray(session.pe_selected) ? session.pe_selected : [];
   const peRevealedText = peSelected.map((sys: string) =>
-    `${sys}: ${peFindings[sys] || "ปกติ"}`
+    `${sys}: ${matchResult(sys, peFindings) || "ปกติ"}`
   ).join("\n");
 
   // Labs ordered by student
   const labOrdered = Array.isArray(session.lab_ordered) ? session.lab_ordered : [];
   const labRevealedText = labOrdered.map((name: string) => {
-    const res = labResults[name];
+    const res = matchResult(name, labResults);
     return res ? `${name}: ${res.value}${res.isAbnormal ? " [ผิดปกติ]" : ""}` : `${name}: ไม่มีผล`;
   }).join("\n");
 
