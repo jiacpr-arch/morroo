@@ -67,3 +67,18 @@ export function trackSignup(): void {
   // (app/auth/callback) and we lack its eventId here to dedupe a browser copy.
   window.gtag?.("event", "sign_up", { method: "oauth" });
 }
+
+export function trackEmailSignup(userId: string): void {
+  if (typeof window === "undefined") return;
+  // Email/password signups never pass through app/auth/callback (that route's
+  // server-side CompleteRegistration only fires for Google/LINE OAuth, and its
+  // 60s isNewSignup window also misses the email-confirmation round-trip), so
+  // without firing here every email registration is invisible to Meta/TikTok —
+  // under-reporting results and starving the conversion campaigns of signal.
+  // The browser pixel carries the _fbp/_fbc cookies for attribution; eventID
+  // keys dedup against the `signup:<userId>` server copy if one is ever added.
+  const eventId = `signup:${userId}`;
+  window.gtag?.("event", "sign_up", { method: "email" });
+  window.fbq?.("track", "CompleteRegistration", { content_name: "signup" }, { eventID: eventId });
+  window.ttq?.track("CompleteRegistration", { content_name: "signup" }, { event_id: eventId });
+}

@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
 import { track } from "@/lib/analytics";
+import { trackEmailSignup } from "@/lib/analytics/conversions";
 import BetaPromoBanner from "@/components/beta/BetaPromoBanner";
 import LandingPageTracker from "@/components/LandingPageTracker";
 import RegisterValueProps from "@/components/RegisterValueProps";
@@ -88,6 +89,9 @@ function RegisterForm() {
       }
 
       track("signup_submit", { method: "email", hasRef: Boolean(refCode.trim()) });
+      // Email signups skip app/auth/callback, so fire CompleteRegistration here
+      // or Meta/TikTok never see them. (OAuth signups are tracked server-side.)
+      trackEmailSignup(data.user.id);
     }
 
     setSuccess(true);
