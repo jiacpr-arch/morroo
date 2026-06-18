@@ -25,6 +25,9 @@ function RegisterForm() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  // Lead with one-tap OAuth; keep the long email form collapsed so the page
+  // isn't an intimidating 4-field wall that ad traffic bounces off of.
+  const [showEmailForm, setShowEmailForm] = useState(false);
 
   useEffect(() => {
     const ref = searchParams.get("ref");
@@ -179,6 +182,18 @@ function RegisterForm() {
             สมัครด้วย Google
           </Button>
 
+          {!showEmailForm && (
+            <button
+              type="button"
+              onClick={() => setShowEmailForm(true)}
+              className="w-full text-sm text-muted-foreground hover:text-foreground underline underline-offset-4"
+            >
+              หรือสมัครด้วยอีเมล
+            </button>
+          )}
+
+          {showEmailForm && (
+          <>
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t" />
@@ -247,6 +262,8 @@ function RegisterForm() {
               {loading ? "กำลังสมัคร..." : "สมัครสมาชิก"}
             </Button>
           </form>
+          </>
+          )}
         </CardContent>
         <CardFooter className="justify-center">
           <p className="text-sm text-muted-foreground">
