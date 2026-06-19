@@ -101,9 +101,15 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "API key not configured" }, { status: 500 });
   }
 
-  const systemPrompt = `คุณเป็นที่ปรึกษาการเตรียมสอบแพทย์ (NL1/NL2) วางแผนอ่านรายสัปดาห์ให้นักศึกษา
+  const systemPrompt = [
+    {
+      type: "text" as const,
+      text: `คุณเป็นที่ปรึกษาการเตรียมสอบแพทย์ (NL1/NL2) วางแผนอ่านรายสัปดาห์ให้นักศึกษา
 ตอบเป็น JSON เท่านั้น ห้ามมีข้อความอื่นใดนอกเหนือจาก JSON
-ภาษาทุกข้อความใน JSON ต้องเป็นภาษาไทยที่กระชับและใช้งานได้จริง`;
+ภาษาทุกข้อความใน JSON ต้องเป็นภาษาไทยที่กระชับและใช้งานได้จริง`,
+      cache_control: { type: "ephemeral" as const },
+    },
+  ];
 
   const userPrompt = `ข้อมูลนักศึกษา:
 - ชื่อ: ${p.name ?? "ไม่ระบุ"}
