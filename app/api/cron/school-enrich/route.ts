@@ -29,6 +29,7 @@ const ENRICH_TOOL = {
   name: "submit_enrichment",
   description:
     "Submit new flashcards and quizzes that answer the students' questions, grounded in the reference text.",
+  cache_control: { type: "ephemeral" as const },
   input_schema: {
     type: "object" as const,
     properties: {
@@ -77,7 +78,9 @@ const ENRICH_TOOL = {
   },
 };
 
-const SYSTEM_PROMPT = `You are a medical educator improving a Thai medical-school topic based on what students actually asked.
+const SYSTEM_PROMPT: Anthropic.TextBlockParam = {
+  type: "text",
+  text: `You are a medical educator improving a Thai medical-school topic based on what students actually asked.
 
 You are given: (1) the topic's reference text, (2) a list of student questions, (3) the fronts/stems of EXISTING flashcards/quizzes.
 
@@ -89,7 +92,9 @@ Produce NEW micro-learning units that directly address the students' questions:
 - Generate at most 6 flashcards and 4 quizzes. Fewer is fine if questions are narrow.
 - Order the quizzes from easy → hard so difficulty ramps gradually (learners answer them in order; avoid a hard quiz before an easy one).
 
-Call submit_enrichment with your output.`;
+Call submit_enrichment with your output.`,
+  cache_control: { type: "ephemeral" },
+};
 
 function isAuthorized(request: Request): boolean {
   const url = new URL(request.url);

@@ -127,7 +127,10 @@ export async function generateChatbotReply(
 
   const client = new Anthropic({ apiKey });
 
-  const system = `${SYSTEM_PROMPT}\n\n${CHANNEL_HINTS[channel]}`;
+  const system: Anthropic.TextBlockParam[] = [
+    { type: "text", text: SYSTEM_PROMPT, cache_control: { type: "ephemeral" } },
+    { type: "text", text: CHANNEL_HINTS[channel] },
+  ];
 
   try {
     const response = await client.messages.create({
@@ -178,7 +181,10 @@ export async function* streamChatbotReply(
   if (history.length === 0) throw new Error("Empty conversation");
 
   const client = new Anthropic({ apiKey });
-  const system = `${SYSTEM_PROMPT}\n\n${CHANNEL_HINTS[channel]}`;
+  const system: Anthropic.TextBlockParam[] = [
+    { type: "text", text: SYSTEM_PROMPT, cache_control: { type: "ephemeral" } },
+    { type: "text", text: CHANNEL_HINTS[channel] },
+  ];
 
   const stream = client.messages.stream({
     model: MODEL,

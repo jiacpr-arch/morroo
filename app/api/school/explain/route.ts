@@ -42,11 +42,17 @@ export async function POST(req: NextRequest) {
     const response = await client.messages.create({
       model: MODEL,
       max_tokens: 800,
-      system: `You are a medical school tutor grading a student's self-explanation (Feynman technique) of a concept.
+      system: [
+        {
+          type: "text",
+          text: `You are a medical school tutor grading a student's self-explanation (Feynman technique) of a concept.
 
 Score 1-5 (1 = misconception, 3 = partial, 5 = excellent).
 List specific strengths, missing points, and corrections (in Thai or English matching the student).
 Respond with a tool call only.`,
+          cache_control: { type: "ephemeral" },
+        },
+      ],
       tools: [
         {
           name: "submit_feedback",
@@ -61,6 +67,7 @@ Respond with a tool call only.`,
             },
             required: ["score", "strengths", "missing_points", "feedback"],
           },
+          cache_control: { type: "ephemeral" },
         },
       ],
       tool_choice: { type: "tool", name: "submit_feedback" },

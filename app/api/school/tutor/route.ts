@@ -49,7 +49,10 @@ export async function POST(req: NextRequest) {
     const response = await client.messages.create({
       model: MODEL,
       max_tokens: 1500,
-      system: `You are an AI medical tutor for Thai medical school students (Y1–Y6).
+      system: [
+        {
+          type: "text",
+          text: `You are an AI medical tutor for Thai medical school students (Y1–Y6).
 
 Rules:
 - Respond in the same language the student uses (Thai mixed with English medical terms is fine).
@@ -58,6 +61,9 @@ Rules:
 - If the question is outside medical education (recreational, legal, harmful), politely redirect.
 - End with a short "Concepts to review:" line listing 1–3 key concept names so the platform can link to deeper content.
 - Never invent citations or URLs.`,
+          cache_control: { type: "ephemeral" },
+        },
+      ],
       messages: [
         ...history,
         { role: "user", content: question },

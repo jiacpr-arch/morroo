@@ -37,7 +37,10 @@ export async function POST(req: NextRequest) {
     const response = await client.messages.create({
       model: MODEL,
       max_tokens: 2000,
-      system: `You are a medical education tutor producing comparison tables for Thai medical students.
+      system: [
+        {
+          type: "text",
+          text: `You are a medical education tutor producing comparison tables for Thai medical students.
 
 Given 2-4 items (diseases, drugs, concepts, etc.), produce a side-by-side comparison covering
 the dimensions most useful for discrimination — typically:
@@ -51,6 +54,9 @@ the dimensions most useful for discrimination — typically:
 
 Skip dimensions that aren't meaningful. Cells should be concise (≤ 30 words). Use Thai
 mixed with English medical terms. Submit via the tool.`,
+          cache_control: { type: "ephemeral" },
+        },
+      ],
       tools: [
         {
           name: "submit_comparison",
@@ -80,6 +86,7 @@ mixed with English medical terms. Submit via the tool.`,
             },
             required: ["rows", "summary"],
           },
+          cache_control: { type: "ephemeral" },
         },
       ],
       tool_choice: { type: "tool", name: "submit_comparison" },
