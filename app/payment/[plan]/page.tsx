@@ -42,6 +42,12 @@ const BANK_INFO = {
   accountName: "บจก. เจี่ยรักษา",
 };
 
+// Mirror of NEXT_PUBLIC_STRIPE_PROMPTPAY_ENABLED used by the Stripe checkout
+// route. When on, the Stripe option also offers an instant PromptPay QR, so we
+// advertise it (and steer users away from the slow manual bank transfer).
+const PROMPTPAY_ENABLED =
+  process.env.NEXT_PUBLIC_STRIPE_PROMPTPAY_ENABLED === "true";
+
 export default function PaymentPage({
   params,
 }: {
@@ -178,6 +184,7 @@ export default function PaymentPage({
         }).catch(() => {});
       }
 
+      track("bank_slip_submitted", { plan, price: planInfo.price });
       setSubmitted(true);
     } catch {
       setError("เกิดข้อผิดพลาด กรุณาลองใหม่");
@@ -317,7 +324,10 @@ export default function PaymentPage({
           <div className="grid grid-cols-2 gap-3">
             <button
               type="button"
-              onClick={() => setPaymentMethod("stripe")}
+              onClick={() => {
+                setPaymentMethod("stripe");
+                track("payment_method_selected", { method: "stripe", plan });
+              }}
               className={`rounded-lg border-2 p-4 text-left transition-colors ${
                 paymentMethod === "stripe"
                   ? "border-brand bg-brand/5"
@@ -326,14 +336,23 @@ export default function PaymentPage({
             >
               <div className="flex items-center gap-2 mb-1">
                 <CreditCard className="h-5 w-5 text-brand" />
-                <span className="font-medium text-sm">บัตรเครดิต/เดบิต</span>
+                <span className="font-medium text-sm">
+                  {PROMPTPAY_ENABLED ? "PromptPay / บัตร" : "บัตรเครดิต/เดบิต"}
+                </span>
               </div>
-              <p className="text-xs text-muted-foreground">ชำระทันที ผ่าน Stripe</p>
+              <p className="text-xs text-muted-foreground">
+                {PROMPTPAY_ENABLED
+                  ? "ชำระทันที สแกน QR หรือบัตร"
+                  : "ชำระทันที ผ่าน Stripe"}
+              </p>
             </button>
 
             <button
               type="button"
-              onClick={() => setPaymentMethod("bank")}
+              onClick={() => {
+                setPaymentMethod("bank");
+                track("payment_method_selected", { method: "bank", plan });
+              }}
               className={`rounded-lg border-2 p-4 text-left transition-colors ${
                 paymentMethod === "bank"
                   ? "border-brand bg-brand/5"
@@ -355,7 +374,9 @@ export default function PaymentPage({
             <CardHeader>
               <h2 className="font-semibold flex items-center gap-2">
                 <CreditCard className="h-5 w-5 text-brand" />
-                ชำระผ่านบัตรเครดิต/เดบิต
+                {PROMPTPAY_ENABLED
+                  ? "ชำระด้วย PromptPay หรือบัตร"
+                  : "ชำระผ่านบัตรเครดิต/เดบิต"}
               </h2>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -442,7 +463,9 @@ export default function PaymentPage({
               </Button>
 
               <p className="text-xs text-center text-muted-foreground">
-                ระบบจะอัปเกรดอัตโนมัติหลังชำระเงิน • ปลอดภัยด้วย Stripe
+                {PROMPTPAY_ENABLED
+                  ? "สแกน PromptPay หรือจ่ายด้วยบัตร • อัปเกรดอัตโนมัติทันที • ปลอดภัยด้วย Stripe"
+                  : "ระบบจะอัปเกรดอัตโนมัติหลังชำระเงิน • ปลอดภัยด้วย Stripe"}
               </p>
             </CardContent>
           </Card>

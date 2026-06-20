@@ -5,6 +5,7 @@ import { createClient as createServerSupabaseClient } from "@/lib/supabase/serve
 import { sendTikTokEvent } from "@/lib/tiktok/events-api";
 import { sendMetaEvent } from "@/lib/meta/events-api";
 import { sendWelcomeEmail } from "@/lib/email/send";
+import { safeInternalPath } from "@/lib/safe-redirect";
 
 /**
  * GET /api/auth/line/callback
@@ -38,8 +39,16 @@ export async function GET(request: Request) {
   const [storedState, rawMode] = storedValue.split(":");
   const mode: "login" | "register" = rawMode === "register" ? "register" : "login";
 
-  // Clear the cookie
+  // Post-login destination stashed by /api/auth/line (e.g. back to checkout).
+  // Re-sanitised here as defence in depth before it's used in a redirect.
+  const nextPath = safeInternalPath(
+    cookieStore.get("line_oauth_next")?.value,
+    "",
+  );
+
+  // Clear the cookies
   cookieStore.delete("line_oauth_state");
+  cookieStore.delete("line_oauth_next");
 
   if (!storedState || storedState !== state) {
     return NextResponse.redirect(`${origin}/login?error=line_invalid_state`);
@@ -337,10 +346,15 @@ export async function GET(request: Request) {
     }
   }
 
-  const destination = mode === "register" ? "/onboarding" : "/profile";
+  // A `next` path (e.g. a buyer bounced from checkout) wins over the default
+  // landing — and over onboarding — so we don't strand them away from the sale.
+  const destination =
+    nextPath || (mode === "register" ? "/onboarding" : "/profile");
   // ?signup=1 makes the browser fire the GA4 sign_up event (see
   // components/analytics/SignupConversion); the CAPI events above cover
   // Meta/TikTok, matching the Google OAuth path in app/auth/callback.
-  const dest = isNewSignup ? `${destination}?signup=1` : destination;
+  const dest = isNewSignup
+    ? `${destination}${destination.includes("?") ? "&" : "?"}signup=1`
+    : destination;
   return NextResponse.redirect(`${origin}${dest}`);
 }

@@ -10,6 +10,7 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { createClient } from "@/lib/supabase/client";
 import { track } from "@/lib/analytics";
 import { trackEmailSignup } from "@/lib/analytics/conversions";
+import { safeInternalPath } from "@/lib/safe-redirect";
 import BetaPromoBanner from "@/components/beta/BetaPromoBanner";
 import LandingPageTracker from "@/components/LandingPageTracker";
 import RegisterValueProps from "@/components/RegisterValueProps";
@@ -28,6 +29,9 @@ function RegisterForm() {
   // Lead with one-tap OAuth; keep the long email form collapsed so the page
   // isn't an intimidating 4-field wall that ad traffic bounces off of.
   const [showEmailForm, setShowEmailForm] = useState(false);
+  // Post-signup destination carried from a gated page (e.g. checkout) so a
+  // buyer who signs up mid-purchase lands back on the payment page.
+  const nextPath = safeInternalPath(searchParams.get("redirect"), "");
 
   useEffect(() => {
     const ref = searchParams.get("ref");
@@ -105,13 +109,20 @@ function RegisterForm() {
     track("signup_submit", { method: "google", hasRef: Boolean(refCode.trim()) });
     const supabase = createClient();
     const ref = refCode.trim() || searchParams.get("ref") || "";
+    const callback = new URL(`${window.location.origin}/auth/callback`);
+    if (ref) callback.searchParams.set("ref", ref);
+    if (nextPath) callback.searchParams.set("next", nextPath);
     await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: `${window.location.origin}/auth/callback${ref ? `?ref=${ref}` : ""}`,
+        redirectTo: callback.toString(),
       },
     });
   };
+
+  const lineRegisterHref = nextPath
+    ? `/api/auth/line?mode=register&next=${encodeURIComponent(nextPath)}`
+    : "/api/auth/line?mode=register";
 
   if (success) {
     return (
@@ -157,7 +168,7 @@ function RegisterForm() {
           <BetaPromoBanner variant="inline" />
           {LINE_LOGIN_ENABLED && (
             <a
-              href="/api/auth/line?mode=register"
+              href={lineRegisterHref}
               className="inline-flex items-center justify-center gap-2 w-full rounded-md border border-input bg-[#06C755] hover:bg-[#05b34c] text-white font-medium py-2 px-4 text-sm transition-colors"
             >
               <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
@@ -268,7 +279,14 @@ function RegisterForm() {
         <CardFooter className="justify-center">
           <p className="text-sm text-muted-foreground">
             มีบัญชีอยู่แล้ว?{" "}
-            <Link href="/login" className="text-brand font-medium hover:underline">
+            <Link
+              href={
+                nextPath
+                  ? `/login?redirect=${encodeURIComponent(nextPath)}`
+                  : "/login"
+              }
+              className="text-brand font-medium hover:underline"
+            >
               เข้าสู่ระบบ
             </Link>
           </p>

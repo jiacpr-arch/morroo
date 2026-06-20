@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import PricingCard from "@/components/PricingCard";
 import PricingViewTracker from "@/components/PricingViewTracker";
+import PricingFreeCta from "@/components/PricingFreeCta";
 import PricingPromo from "@/components/PricingPromo";
 import PricingFaq from "@/components/PricingFaq";
 import NlExamCountdown from "@/components/NlExamCountdown";
@@ -50,6 +51,7 @@ export default function PricingPage() {
         <p className="mt-3 text-lg text-muted-foreground max-w-xl mx-auto">
           แพ็ก นศพ. เตรียม NL Step 2 หรือแพ็ก Board เตรียมวุฒิบัตรราชวิทยาลัยฯ
         </p>
+        <PricingFreeCta />
       </div>
 
       <NlExamCountdown />
