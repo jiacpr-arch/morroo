@@ -152,6 +152,33 @@ describe("diagnoseAds", () => {
     expect(f[0].autoAction).toBeUndefined();
   });
 
+  it("does not auto-pause a traffic-objective ad with zero leads", () => {
+    const f = diagnoseAds([
+      makeAd({
+        spend: THRESHOLDS.adNoLeadSpendCeilingThb + 100,
+        leads: 0,
+        cpl: null,
+        objective: "OUTCOME_TRAFFIC",
+        impressions: 5000,
+        ctr: 1.0,
+      }),
+    ]);
+    expect(f.some((x) => x.category === "ad_no_lead_high_spend")).toBe(false);
+  });
+
+  it("still auto-pauses a lead-objective ad with zero leads", () => {
+    const f = diagnoseAds([
+      makeAd({
+        spend: THRESHOLDS.adNoLeadSpendCeilingThb + 100,
+        leads: 0,
+        cpl: null,
+        objective: "OUTCOME_LEADS",
+      }),
+    ]);
+    const finding = f.find((x) => x.category === "ad_no_lead_high_spend");
+    expect(finding?.autoAction?.action).toBe("pause_ad");
+  });
+
   it("auto-pauses ad with CPL above ceiling", () => {
     const f = diagnoseAds([
       makeAd({ spend: 1000, leads: 1, cpl: THRESHOLDS.adHighCplThb + 50 }),
