@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Loader2, AlertCircle } from "lucide-react";
 import { trackPurchase } from "@/lib/analytics/conversions";
+import { track } from "@/lib/analytics";
 
 type VerifyStatus = "verifying" | "ok" | "pending" | "error";
 
@@ -66,6 +67,15 @@ export default function SuccessContent() {
             sessionStorage.setItem(firedKey, "1");
             trackPurchase({
               transactionId: sessionId,
+              value: data.amount,
+              currency: data.currency,
+            });
+            // Also mirror into our own analytics_events so the funnel we query
+            // for digests/admin closes on a real conversion. trackPurchase only
+            // reaches GA4/Meta/TikTok, leaving our Supabase funnel blind to the
+            // most important step — the completed sale.
+            track("purchase", {
+              transaction_id: sessionId,
               value: data.amount,
               currency: data.currency,
             });

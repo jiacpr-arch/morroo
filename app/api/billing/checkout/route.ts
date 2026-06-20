@@ -26,8 +26,23 @@ export async function POST(request: NextRequest) {
     const plan = STRIPE_PLANS[planType];
     const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://morroo.com").trim();
 
+    // PromptPay is the dominant consumer payment rail in Thailand and settles
+    // instantly (Stripe auto-verifies the QR), so it replaces the slow manual
+    // bank-slip flow. Gated behind a flag so this is a no-op until PromptPay is
+    // activated in the Stripe Dashboard — otherwise Stripe rejects the
+    // unsupported payment_method_type and breaks checkout entirely. When the
+    // flag is off we omit payment_method_types so Stripe keeps using the
+    // dashboard-configured automatic methods (current behaviour).
+    const paymentMethodTypes: Array<"promptpay" | "card"> | undefined =
+      process.env.NEXT_PUBLIC_STRIPE_PROMPTPAY_ENABLED === "true"
+        ? ["promptpay", "card"]
+        : undefined;
+
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
+      ...(paymentMethodTypes
+        ? { payment_method_types: paymentMethodTypes }
+        : {}),
       customer_email: user.email,
       line_items: [
         {
