@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
 import { track } from "@/lib/analytics";
+import { safeInternalPath } from "@/lib/safe-redirect";
 
 const LINE_LOGIN_ENABLED = process.env.NEXT_PUBLIC_LINE_LOGIN_ENABLED === "true";
 
@@ -34,6 +35,11 @@ function LoginForm() {
   const queryReason = searchParams.get("reason");
   const queryDetail = searchParams.get("detail");
   const queryRedirectUri = searchParams.get("redirect_uri");
+  // Where to land after a successful login. Set when the user was bounced here
+  // from a gated page (e.g. /payment/[plan] → /login?redirect=/payment/monthly).
+  // Without honouring it, buyers who are forced to log in get dumped on /profile
+  // and silently drop out of checkout.
+  const nextPath = safeInternalPath(searchParams.get("redirect"));
   const initialError = queryError
     ? [
         LINE_ERROR_LABELS[queryError] ?? `เกิดข้อผิดพลาด (${queryError})`,
@@ -66,7 +72,7 @@ function LoginForm() {
       setLoading(false);
     } else {
       track("login_success", { method: "email" });
-      router.push("/profile");
+      router.push(nextPath);
       router.refresh();
     }
   };
@@ -74,13 +80,22 @@ function LoginForm() {
   const handleGoogleLogin = async () => {
     track("login_attempt", { method: "google" });
     const supabase = createClient();
+    // Thread the destination through the OAuth round-trip; app/auth/callback
+    // reads `next` and redirects there after exchanging the code.
+    const callback = new URL(`${window.location.origin}/auth/callback`);
+    if (nextPath !== "/profile") callback.searchParams.set("next", nextPath);
     await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: `${window.location.origin}/auth/callback`,
+        redirectTo: callback.toString(),
       },
     });
   };
+
+  const lineLoginHref =
+    nextPath !== "/profile"
+      ? `/api/auth/line?mode=login&next=${encodeURIComponent(nextPath)}`
+      : "/api/auth/line?mode=login";
 
   return (
     <div className="flex items-center justify-center min-h-[calc(100vh-12rem)] px-4 py-8">
@@ -100,7 +115,7 @@ function LoginForm() {
           )}
           {LINE_LOGIN_ENABLED && (
             <a
-              href="/api/auth/line?mode=login"
+              href={lineLoginHref}
               className="inline-flex items-center justify-center gap-2 w-full rounded-md border border-input bg-[#06C755] hover:bg-[#05b34c] text-white font-medium py-2 px-4 text-sm transition-colors"
             >
               <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
@@ -188,7 +203,11 @@ function LoginForm() {
           <p className="text-sm text-muted-foreground">
             ยังไม่มีบัญชี?{" "}
             <Link
-              href="/register"
+              href={
+                nextPath !== "/profile"
+                  ? `/register?redirect=${encodeURIComponent(nextPath)}`
+                  : "/register"
+              }
               className="text-brand font-medium hover:underline"
             >
               สมัครสมาชิก
