@@ -104,6 +104,7 @@ export interface AdInsight {
   adset_name: string;
   campaign_id: string;
   campaign_name: string;
+  objective?: string | null;   // OUTCOME_LEADS / OUTCOME_TRAFFIC / LINK_CLICKS …
   status: string | null;       // ACTIVE / PAUSED / etc.
   effective_status: string | null;
   impressions: number;
@@ -238,6 +239,7 @@ interface MetaInsightsRow {
   adset_name?: string;
   campaign_id?: string;
   campaign_name?: string;
+  objective?: string;
   impressions?: string;
   clicks?: string;
   spend?: string;
@@ -258,7 +260,15 @@ function pickLeadsFromActions(
 ): number {
   if (!actions) return 0;
   // Prefer "lead" (Instant Form) then fall back to common conversion types.
-  const priority = ["lead", "onsite_conversion.lead_grouped", "complete_registration"];
+  // The pixel/CAPI registration event Morroo's signup campaign optimizes for
+  // arrives as offsite_conversion.fb_pixel_complete_registration — without it
+  // here the campaign always looks like "0 leads" and gets auto-paused.
+  const priority = [
+    "lead",
+    "onsite_conversion.lead_grouped",
+    "complete_registration",
+    "offsite_conversion.fb_pixel_complete_registration",
+  ];
   for (const key of priority) {
     const hit = actions.find((a) => a.action_type === key);
     if (hit) return Number(hit.value) || 0;
@@ -281,6 +291,7 @@ export async function fetchAdInsights(
     "adset_name",
     "campaign_id",
     "campaign_name",
+    "objective",
     "impressions",
     "clicks",
     "spend",
@@ -341,6 +352,7 @@ export async function fetchAdInsights(
       adset_name: r.adset_name ?? "",
       campaign_id: r.campaign_id ?? "",
       campaign_name: r.campaign_name ?? "",
+      objective: r.objective ?? null,
       status: status?.status ?? null,
       effective_status: status?.effective_status ?? null,
       impressions,
@@ -456,11 +468,29 @@ export function diagnosePages(pages: PageStats[]): Finding[] {
   return findings;
 }
 
+// Objectives whose ads are legitimately judged on lead/conversion volume.
+// Traffic / awareness / engagement objectives don't produce "leads" by
+// design, so the no-lead auto-pause must never touch them — that rule was
+// what kept killing the Morroo traffic campaign. An unknown objective falls
+// back to the original behaviour (treated as lead-bearing).
+const LEAD_OBJECTIVES = new Set([
+  "OUTCOME_LEADS",
+  "OUTCOME_SALES",
+  "CONVERSIONS",
+  "LEAD_GENERATION",
+  "PRODUCT_CATALOG_SALES",
+  "OUTCOME_APP_PROMOTION",
+  "APP_INSTALLS",
+  "MOBILE_APP_INSTALLS",
+]);
+
 export function diagnoseAds(ads: AdInsight[]): Finding[] {
   const findings: Finding[] = [];
 
   for (const ad of ads) {
     if (ad.spend < THRESHOLDS.adMinSpendThb) continue;
+    const isLeadObjective =
+      ad.objective == null || LEAD_OBJECTIVES.has(ad.objective);
     const alreadyPaused =
       ad.status === "PAUSED" ||
       ad.effective_status === "PAUSED" ||
@@ -479,8 +509,14 @@ export function diagnoseAds(ads: AdInsight[]): Finding[] {
       status: ad.status,
     };
 
-    // ad_no_lead_high_spend — strongest signal, auto-pause
-    if (ad.leads === 0 && ad.spend >= THRESHOLDS.adNoLeadSpendCeilingThb) {
+    // ad_no_lead_high_spend — strongest signal, auto-pause. Only for
+    // lead/conversion objectives; traffic & awareness ads have no leads to
+    // count and must not be paused on this basis.
+    if (
+      isLeadObjective &&
+      ad.leads === 0 &&
+      ad.spend >= THRESHOLDS.adNoLeadSpendCeilingThb
+    ) {
       findings.push({
         severity: "critical",
         category: "ad_no_lead_high_spend",
