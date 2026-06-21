@@ -14,6 +14,7 @@ import ChatWidget from "@/components/ChatWidget";
 import FloatingLineCta from "@/components/FloatingLineCta";
 import SignupConversion from "@/components/analytics/SignupConversion";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
+import FirstVisitNudge from "@/components/FirstVisitNudge";
 import "./globals.css";
 
 const GA_ID = "G-D7FX2CK8JY";
@@ -224,6 +225,7 @@ export default function RootLayout({
           </Suspense>
           <SignupConversion />
           <ExitIntentPopup />
+          <FirstVisitNudge />
         </BetaProvider>
         <Analytics />
         <SpeedInsights />
