@@ -1,18 +1,31 @@
-import { Quote, Sparkles, Users, BookOpen, Award } from "lucide-react";
-import type { QuestionBankStats } from "@/lib/supabase/queries-mcq";
+import { Quote, Stethoscope, BookOpen, Layers, Award } from "lucide-react";
+import type { HomeExamStats } from "@/lib/supabase/queries";
 
-function buildStats(stats?: QuestionBankStats | null) {
+function buildStats(stats?: HomeExamStats | null) {
   const ready = stats?.totalReady ?? 0;
   const building = stats?.totalBuilding ?? 0;
-  const questionValue = ready > 0 ? ready.toLocaleString("en-US") : "3,000+";
-  const questionLabel =
+  const meqExamCount = stats?.meqExamCount ?? 0;
+  const meqPartCount = stats?.meqPartCount ?? 0;
+  const longCaseCount = stats?.longCaseCount ?? 0;
+
+  const mcqValue = ready > 0 ? ready.toLocaleString("en-US") : "6,000+";
+  const mcqLabel =
     building > 0
-      ? `ข้อสอบพร้อมใช้ (+${building.toLocaleString("en-US")} กำลังสร้าง)`
-      : "ข้อสอบครบ MEQ + MCQ";
+      ? `ข้อสอบ MCQ พร้อมใช้ (+${building.toLocaleString("en-US")} กำลังสร้าง)`
+      : "ข้อสอบ MCQ พร้อมใช้";
+
+  const meqValue = meqExamCount > 0 ? meqExamCount.toLocaleString("en-US") : "40+";
+  const meqLabel =
+    meqPartCount > 0
+      ? `ชุด MEQ Progressive Case (${meqPartCount.toLocaleString("en-US")} ตอน)`
+      : "ชุด MEQ Progressive Case";
+
+  const longCaseValue = longCaseCount > 0 ? longCaseCount.toLocaleString("en-US") : "20+";
+
   return [
-    { icon: Users, value: "1,000+", label: "แพทย์ใช้งาน" },
-    { icon: BookOpen, value: questionValue, label: questionLabel },
-    { icon: Sparkles, value: "AI", label: "ตรวจคำตอบทันที 24/7" },
+    { icon: BookOpen, value: mcqValue, label: mcqLabel },
+    { icon: Layers, value: meqValue, label: meqLabel },
+    { icon: Stethoscope, value: longCaseValue, label: "เคส Long Case ฝึกกับ AI Patient" },
     { icon: Award, value: "100%", label: "เฉลยโดยผู้เชี่ยวชาญ" },
   ];
 }
@@ -41,7 +54,7 @@ const TESTIMONIALS = [
 export default function SocialProofSection({
   stats = null,
 }: {
-  stats?: QuestionBankStats | null;
+  stats?: HomeExamStats | null;
 }) {
   const statItems = buildStats(stats);
   return (
