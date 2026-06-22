@@ -13,6 +13,7 @@ import { SocialButtonsRow, LineCtaButton } from "@/components/SocialLinks";
 import { CATEGORIES, PRICING_PLANS } from "@/lib/types";
 import { getExams, getExamPartCounts, sortExamsAvailableFirst } from "@/lib/supabase/queries";
 import { getQuestionBankStats } from "@/lib/supabase/queries-mcq";
+import { getLongCaseCount } from "@/lib/supabase/queries-longcase";
 import { getNewsItems } from "@/lib/news";
 import { getJiaAedNewsItems } from "@/lib/jiaaed-news";
 import NewsCard from "@/components/NewsCard";
@@ -23,21 +24,34 @@ import { ArrowRight } from "lucide-react";
 export const revalidate = 60; // revalidate every 60 seconds
 
 export default async function HomePage() {
-  const [allExams, partCounts, newsItems, aedNewsItems, forcedHero, bankStats] = await Promise.all([
+  const [allExams, partCounts, newsItems, aedNewsItems, forcedHero, bankStats, longCaseCount] = await Promise.all([
     getExams(),
     getExamPartCounts(),
     getNewsItems({ limit: 6 }),
     getJiaAedNewsItems(2),
     getHeroForcedVariant(createAdminClient()),
     getQuestionBankStats(),
+    getLongCaseCount(),
   ]);
   const homeNewsItems = [...newsItems.slice(0, 4), ...aedNewsItems];
   const exams = sortExamsAvailableFirst(allExams, partCounts);
   const latestExams = exams.slice(0, 6);
 
+  // Real MEQ counts from published exams (getExams returns published only).
+  // Each MEQ exam is a Progressive Case made of several "parts" (ตอน).
+  const meqExamCount = allExams.length;
+  const meqPartCount = allExams.reduce((sum, e) => sum + (partCounts[e.id] || 0), 0);
+
+  const examStats = {
+    ...bankStats,
+    meqExamCount,
+    meqPartCount,
+    longCaseCount,
+  };
+
   return (
     <>
-      <HeroAB forced={forcedHero} stats={bankStats} />
+      <HeroAB forced={forcedHero} stats={examStats} />
 
       {/* LINE add-friend strip — high-visibility CTA above the fold */}
       <section className="bg-[#06C755]/10 border-b border-[#06C755]/20">
@@ -113,7 +127,7 @@ export default async function HomePage() {
       </section>
 
       {/* Social Proof — testimonials + stats above pricing decision */}
-      <SocialProofSection stats={bankStats} />
+      <SocialProofSection stats={examStats} />
 
       {/* Pricing */}
       <section className="py-16 bg-muted/30" id="pricing">

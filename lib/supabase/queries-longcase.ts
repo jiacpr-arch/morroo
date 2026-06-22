@@ -19,6 +19,22 @@ export async function getLongCases(): Promise<LongCase[]> {
   return (data as LongCase[]) || [];
 }
 
+// Count of published student Long Cases — cheap HEAD count for homepage stats.
+export async function getLongCaseCount(): Promise<number> {
+  const supabase = await createClient();
+  const { count, error } = await supabase
+    .from("long_cases")
+    .select("id", { count: "exact", head: true })
+    .eq("is_published", true)
+    .eq("audience", "student");
+
+  if (error) {
+    console.error("getLongCaseCount error:", error);
+    return 0;
+  }
+  return count ?? 0;
+}
+
 // Get published Board Oral cases for a specialty
 export async function getBoardOralCases(specialty: string): Promise<LongCase[]> {
   const supabase = await createClient();

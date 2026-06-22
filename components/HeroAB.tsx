@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ArrowRight, BookOpen, Shield, Sparkles, Users } from "lucide-react";
+import { ArrowRight, BookOpen, Shield, Sparkles, Stethoscope, Users } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { track } from "@/lib/analytics";
 import { getVariant, type Variant } from "@/lib/ab";
-import type { QuestionBankStats } from "@/lib/supabase/queries-mcq";
+import type { HomeExamStats } from "@/lib/supabase/queries";
 
 const EXPERIMENT = "hero";
 
@@ -19,9 +19,10 @@ type Copy = {
 };
 
 // Conservative floors used only when live counts are unavailable (e.g. a build
-// with Supabase not configured). The real numbers come from the DB at runtime.
-const FALLBACK_TOTAL = "3,000+";
-const FALLBACK_NL = "3,000+";
+// with Supabase not configured). The real numbers come from the DB at runtime,
+// so these are deliberately just below the current bank size — never above it.
+const FALLBACK_TOTAL = "6,000+";
+const FALLBACK_NL = "3,500+";
 
 function buildCopy(totalStr: string, nlStr: string): Record<Variant, Copy> {
   return {
@@ -53,7 +54,7 @@ export default function HeroAB({
   stats = null,
 }: {
   forced?: Variant | null;
-  stats?: QuestionBankStats | null;
+  stats?: HomeExamStats | null;
 }) {
   const [variant, setVariant] = useState<Variant | null>(forced);
 
@@ -73,6 +74,9 @@ export default function HeroAB({
   const totalReady = stats?.totalReady ?? 0;
   const totalBuilding = stats?.totalBuilding ?? 0;
   const nlReady = stats?.nlReady ?? 0;
+  const meqExamCount = stats?.meqExamCount ?? 0;
+  const meqPartCount = stats?.meqPartCount ?? 0;
+  const longCaseCount = stats?.longCaseCount ?? 0;
   const totalStr = totalReady > 0 ? totalReady.toLocaleString("en-US") : FALLBACK_TOTAL;
   const nlStr = nlReady > 0 ? nlReady.toLocaleString("en-US") : FALLBACK_NL;
 
@@ -134,12 +138,36 @@ export default function HeroAB({
               <Users className="h-4 w-4" /> 1,000+ แพทย์ใช้งาน
             </span>
             <span className="flex items-center gap-1.5">
-              <BookOpen className="h-4 w-4" /> {totalStr} ข้อสอบพร้อมใช้
+              <BookOpen className="h-4 w-4" /> {totalStr} ข้อสอบ MCQ พร้อมใช้
             </span>
             <span className="flex items-center gap-1.5">
               <Shield className="h-4 w-4" /> เฉลยจากผู้เชี่ยวชาญ
             </span>
           </div>
+
+          {/* Real MEQ + Long Case counts — the premium, case-based content that
+              sets us apart from plain MCQ banks. Numbers come live from the DB. */}
+          {(meqExamCount > 0 || longCaseCount > 0) && (
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+              {meqExamCount > 0 && (
+                <span className="inline-flex items-center gap-2 rounded-full border border-purple-300/30 bg-purple-400/15 px-4 py-1.5 text-sm font-semibold text-purple-50">
+                  <BookOpen className="h-4 w-4" />
+                  MEQ Progressive Case {meqExamCount.toLocaleString("en-US")} ชุด
+                  {meqPartCount > 0 && (
+                    <span className="font-normal text-purple-100/80">
+                      ({meqPartCount.toLocaleString("en-US")} ตอน)
+                    </span>
+                  )}
+                </span>
+              )}
+              {longCaseCount > 0 && (
+                <span className="inline-flex items-center gap-2 rounded-full border border-amber-300/30 bg-amber-400/15 px-4 py-1.5 text-sm font-semibold text-amber-50">
+                  <Stethoscope className="h-4 w-4" />
+                  Long Case กับ AI {longCaseCount.toLocaleString("en-US")} เคส
+                </span>
+              )}
+            </div>
+          )}
 
           {/* Live "building" counter — shows how many questions are queued and
               being generated/reviewed right now. Auto-refreshes with the page. */}
