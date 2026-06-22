@@ -99,6 +99,16 @@ function RegisterForm() {
       // Email signups skip app/auth/callback, so fire CompleteRegistration here
       // or Meta/TikTok never see them. (OAuth signups are tracked server-side.)
       trackEmailSignup(data.user.id);
+      // ...and fire the server-side CAPI copy with the same `signup:<userId>`
+      // eventId so Meta/TikTok dedupe the pair. Without it, iOS / ad-blocker
+      // users never reach the pixel and the signup is invisible to the ad
+      // platforms. keepalive lets it survive the post-signup re-render.
+      fetch("/api/track/registration", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userId: data.user.id }),
+        keepalive: true,
+      }).catch(() => {});
     }
 
     setSuccess(true);
