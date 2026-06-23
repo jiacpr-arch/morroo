@@ -5,6 +5,7 @@ import { getLongCaseSession, updateLongCaseSession } from "@/lib/supabase/querie
 import { checkRateLimit, rateLimitResponse, RATE_LIMITS } from "@/lib/rate-limit";
 import { getBoardReference } from "@/lib/board-references";
 import { matchResult } from "@/lib/longcase-match";
+import { friendlyAIError } from "@/lib/anthropic-error";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -36,7 +37,9 @@ export async function POST(request: NextRequest) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) return new Response(JSON.stringify({ error: "API key not configured" }), { status: 500 });
 
-  const client = new Anthropic({ apiKey });
+  // Retry transient upstream errors (429 rate limit, 5xx, 529 overloaded) a few
+  // extra times before surfacing a failure — these spike when the API is busy.
+  const client = new Anthropic({ apiKey, maxRetries: 4 });
   const useOpus = action === "score";
   const model = useOpus ? OPUS_MODEL : SONNET_MODEL;
 
@@ -173,7 +176,8 @@ ${examinerChat.map(m => `${m.role === "user" ? (isBoardCase ? "Candidate" : "น
         headers: { "Content-Type": "application/json" },
       });
     } catch (err) {
-      return new Response(JSON.stringify({ error: String(err) }), { status: 500 });
+      console.error("[longcase-examiner] score failed:", err);
+      return new Response(JSON.stringify({ error: friendlyAIError(err) }), { status: 500 });
     }
   }
 
@@ -250,8 +254,8 @@ ${isBoard
           phase: "examiner",
         });
       } catch (err) {
-        const msg = err instanceof Error ? err.message : String(err);
-        controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: msg })}\n\n`));
+        console.error("[longcase-examiner] stream failed:", err);
+        controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: friendlyAIError(err) })}\n\n`));
         controller.close();
       }
     },
