@@ -8,6 +8,8 @@ import AnalyticsPageviewTracker from "@/components/AnalyticsPageviewTracker";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { BetaProvider } from "@/components/beta/BetaProvider";
+import { AiHealthProvider } from "@/components/ai/AiHealthProvider";
+import AiStatusBanner from "@/components/ai/AiStatusBanner";
 import BetaWelcomeModal from "@/components/beta/BetaWelcomeModal";
 import BetaPromoBanner from "@/components/beta/BetaPromoBanner";
 import ChatWidget from "@/components/ChatWidget";
@@ -213,20 +215,23 @@ export default function RootLayout({
             alt=""
           />
         </noscript>
-        <BetaProvider>
-          <BetaPromoBanner variant="sticky-top" />
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          <BetaWelcomeModal />
-          <ChatWidget />
-          <Suspense fallback={null}>
-            <FloatingLineCta />
-          </Suspense>
-          <SignupConversion />
-          <ExitIntentPopup />
-          <FirstVisitNudge />
-        </BetaProvider>
+        <AiHealthProvider>
+          <AiStatusBanner />
+          <BetaProvider>
+            <BetaPromoBanner variant="sticky-top" />
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+            <BetaWelcomeModal />
+            <ChatWidget />
+            <Suspense fallback={null}>
+              <FloatingLineCta />
+            </Suspense>
+            <SignupConversion />
+            <ExitIntentPopup />
+            <FirstVisitNudge />
+          </BetaProvider>
+        </AiHealthProvider>
         <Analytics />
         <SpeedInsights />
         <Suspense fallback={null}>

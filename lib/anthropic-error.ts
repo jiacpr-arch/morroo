@@ -2,14 +2,42 @@ import Anthropic from "@anthropic-ai/sdk";
 import * as Sentry from "@sentry/nextjs";
 
 /**
- * Log an AI-related error to the server console and Sentry so we can see how
- * often the upstream API is failing (and grab the request_id) — instead of
- * silently swallowing it after showing the user a friendly message. `context`
- * is a short tag like "longcase-examiner:score" identifying the call site.
+ * Fire-and-forget an `ai_error` event to PostHog (for trend dashboards +
+ * alerts) without adding the posthog-node dependency. No-op unless
+ * `POSTHOG_PROJECT_KEY` is set, so it's safe in any environment.
+ */
+function captureToPostHog(context: string, err: unknown): void {
+  const key = process.env.POSTHOG_PROJECT_KEY;
+  if (!key) return;
+  const host = process.env.POSTHOG_HOST ?? "https://us.i.posthog.com";
+  const status = err instanceof Anthropic.APIError ? err.status : undefined;
+  void fetch(`${host}/capture/`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      api_key: key,
+      event: "ai_error",
+      distinct_id: "ai-server",
+      properties: {
+        ai_context: context,
+        status,
+        $process_person_profile: false,
+      },
+    }),
+  }).catch(() => {});
+}
+
+/**
+ * Log an AI-related error to the server console, Sentry, and PostHog so we can
+ * see how often the upstream API is failing (and grab the request_id) — instead
+ * of silently swallowing it after showing the user a friendly message.
+ * `context` is a short tag like "longcase-examiner:score" identifying the call
+ * site.
  */
 export function logAIError(context: string, err: unknown): void {
   console.error(`[ai-error] ${context}:`, err);
   Sentry.captureException(err, { tags: { feature: "ai", ai_context: context } });
+  captureToPostHog(context, err);
 }
 
 /**

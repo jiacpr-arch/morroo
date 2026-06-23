@@ -1,5 +1,5 @@
 import Anthropic from "@anthropic-ai/sdk";
-import { createAnthropic } from "@/lib/anthropic";
+import { createAnthropic, CHAT_MODELS, createWithFallback, streamTextWithFallback } from "@/lib/anthropic";
 import { logAIError } from "@/lib/anthropic-error";
 
 export type ChatMessage = {
@@ -9,7 +9,6 @@ export type ChatMessage = {
 
 export type ChatChannel = "web" | "line" | "facebook";
 
-const MODEL = "claude-sonnet-4-6";
 const MAX_TOKENS = 600;
 
 const SYSTEM_PROMPT = `คุณคือ "พี่หมอรู้" ผู้ช่วยอัจฉริยะของ MorRoo (หมอรู้) — แพลตฟอร์มเตรียมสอบใบประกอบวิชาชีพแพทย์ที่ใช้ AI
@@ -135,12 +134,16 @@ export async function generateChatbotReply(
   ];
 
   try {
-    const response = await client.messages.create({
-      model: MODEL,
-      max_tokens: MAX_TOKENS,
-      system,
-      messages: history.map((m) => ({ role: m.role, content: m.content })),
-    });
+    const response = await createWithFallback(
+      client,
+      CHAT_MODELS,
+      {
+        max_tokens: MAX_TOKENS,
+        system,
+        messages: history.map((m) => ({ role: m.role, content: m.content })),
+      },
+      "chatbot:generate",
+    );
 
     const block = response.content.find((b) => b.type === "text");
     const raw = block && block.type === "text" ? block.text.trim() : "";
@@ -188,19 +191,16 @@ export async function* streamChatbotReply(
     { type: "text", text: CHANNEL_HINTS[channel] },
   ];
 
-  const stream = client.messages.stream({
-    model: MODEL,
-    max_tokens: MAX_TOKENS,
-    system,
-    messages: history.map((m) => ({ role: m.role, content: m.content })),
-  });
-
-  for await (const event of stream) {
-    if (
-      event.type === "content_block_delta" &&
-      event.delta.type === "text_delta"
-    ) {
-      yield event.delta.text;
-    }
-  }
+  // Sonnet → Haiku fallback so the web chat widget keeps answering during a
+  // partial Anthropic outage.
+  yield* streamTextWithFallback(
+    client,
+    CHAT_MODELS,
+    {
+      max_tokens: MAX_TOKENS,
+      system,
+      messages: history.map((m) => ({ role: m.role, content: m.content })),
+    },
+    "chatbot:stream",
+  );
 }

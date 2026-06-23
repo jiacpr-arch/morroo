@@ -1,13 +1,11 @@
 import { NextRequest } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { checkRateLimit, rateLimitResponse, RATE_LIMITS } from "@/lib/rate-limit";
-import { createAnthropic } from "@/lib/anthropic";
+import { createAnthropic, CHAT_MODELS, createWithFallback } from "@/lib/anthropic";
 import { friendlyAIError, logAIError } from "@/lib/anthropic-error";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
-
-const MODEL = "claude-sonnet-4-6";
 
 export async function POST(request: NextRequest) {
   const supabase = await createClient();
@@ -99,12 +97,16 @@ ${explanationContext}
 - ตอบสั้นกระชับ ไม่เกิน 3-4 ย่อหน้า`;
 
   try {
-    const response = await client.messages.create({
-      model: MODEL,
-      max_tokens: 1024,
-      system: systemPrompt,
-      messages: [{ role: "user", content: userMessage }],
-    });
+    const response = await createWithFallback(
+      client,
+      CHAT_MODELS,
+      {
+        max_tokens: 1024,
+        system: systemPrompt,
+        messages: [{ role: "user", content: userMessage }],
+      },
+      "mcq-chat",
+    );
 
     const text =
       response.content[0].type === "text" ? response.content[0].text : "";
