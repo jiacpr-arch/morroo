@@ -1,9 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
-import { createAnthropic } from "@/lib/anthropic";
+import { createAnthropic, CHAT_MODELS, createWithFallback } from "@/lib/anthropic";
 import { friendlyAIError, logAIError } from "@/lib/anthropic-error";
-
-const MODEL = "claude-sonnet-4-6";
 
 interface Citation {
   type: "lesson" | "flashcard" | "quiz" | "concept";
@@ -47,8 +45,7 @@ export async function POST(req: NextRequest) {
     }
 
     const client = createAnthropic();
-    const response = await client.messages.create({
-      model: MODEL,
+    const response = await createWithFallback(client, CHAT_MODELS, {
       max_tokens: 1500,
       system: [
         {
@@ -69,7 +66,7 @@ Rules:
         ...history,
         { role: "user", content: question },
       ],
-    });
+    }, "school/tutor");
 
     const text = response.content
       .filter((b) => b.type === "text")

@@ -1,13 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { loadBookContext } from "@/lib/school/book-context";
-import { createAnthropic } from "@/lib/anthropic";
+import { createAnthropic, CHAT_MODELS, createWithFallback } from "@/lib/anthropic";
 import { friendlyAIError, logAIError } from "@/lib/anthropic-error";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
 
-const MODEL = "claude-sonnet-4-6";
 const MAX_CONTEXT_CHARS = 12000;
 
 /**
@@ -53,8 +52,7 @@ export async function POST(req: NextRequest) {
     const context = await loadBookContext(supabase, topicId, MAX_CONTEXT_CHARS);
 
     const client = createAnthropic();
-    const response = await client.messages.create({
-      model: MODEL,
+    const response = await createWithFallback(client, CHAT_MODELS, {
       max_tokens: 1200,
       system: [
         {
@@ -78,7 +76,7 @@ Rules:
             : `Student question: ${question}`,
         },
       ],
-    });
+    }, "school/ask");
 
     const answer = response.content
       .filter((b) => b.type === "text")

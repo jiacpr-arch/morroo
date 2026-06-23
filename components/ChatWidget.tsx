@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { MessageCircle, X, Send, Stethoscope } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useAiHealth } from "@/components/ai/AiHealthProvider";
 
 type Msg = { role: "user" | "assistant"; content: string; streaming?: boolean };
 
@@ -74,6 +75,7 @@ function renderContent(text: string, streaming?: boolean) {
 }
 
 export default function ChatWidget() {
+  const { reportAiFailure } = useAiHealth();
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Msg[]>([GREETING]);
   const [input, setInput] = useState("");
@@ -131,6 +133,7 @@ export default function ChatWidget() {
         const data = await res.json().catch(() => ({})) as { error?: string };
         const errMsg =
           data.error ?? "ขอโทษครับ ขณะนี้ระบบมีปัญหาชั่วคราว ลองใหม่อีกครั้งนะครับ";
+        reportAiFailure();
         setMessages((m) => {
           const updated = [...m];
           updated[updated.length - 1] = { role: "assistant", content: errMsg };

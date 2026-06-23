@@ -2,13 +2,11 @@ import { NextRequest } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { getLongCaseSession, updateLongCaseSession } from "@/lib/supabase/queries-longcase";
 import { checkRateLimit, rateLimitResponse, RATE_LIMITS } from "@/lib/rate-limit";
-import { createAnthropic } from "@/lib/anthropic";
+import { createAnthropic, CHAT_MODELS, streamTextWithFallback } from "@/lib/anthropic";
 import { friendlyAIError, logAIError } from "@/lib/anthropic-error";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
-
-const SONNET_MODEL = "claude-sonnet-4-6";
 
 export async function POST(request: NextRequest) {
   const supabase = await createClient();
@@ -68,24 +66,22 @@ export async function POST(request: NextRequest) {
     ...messages,
   ];
 
-  const stream = client.messages.stream({
-    model: SONNET_MODEL,
-    max_tokens: 512,
-    system: systemPrompt,
-    messages: allMessages,
-  });
-
   const encoder = new TextEncoder();
   let fullResponse = "";
 
   const readable = new ReadableStream({
     async start(controller) {
       try {
-        for await (const event of stream) {
-          if (event.type === "content_block_delta" && event.delta.type === "text_delta") {
-            fullResponse += event.delta.text;
-            controller.enqueue(encoder.encode(`data: ${JSON.stringify({ text: event.delta.text })}\n\n`));
-          }
+        // Sonnet → Haiku fallback so a busy primary model doesn't freeze the
+        // patient mid-conversation.
+        for await (const text of streamTextWithFallback(
+          client,
+          CHAT_MODELS,
+          { max_tokens: 512, system: systemPrompt, messages: allMessages },
+          "longcase-patient",
+        )) {
+          fullResponse += text;
+          controller.enqueue(encoder.encode(`data: ${JSON.stringify({ text })}\n\n`));
         }
         controller.enqueue(encoder.encode(`data: ${JSON.stringify({ done: true })}\n\n`));
         controller.close();

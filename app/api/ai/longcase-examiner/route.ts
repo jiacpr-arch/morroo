@@ -4,14 +4,11 @@ import { getLongCaseSession, updateLongCaseSession } from "@/lib/supabase/querie
 import { checkRateLimit, rateLimitResponse, RATE_LIMITS } from "@/lib/rate-limit";
 import { getBoardReference } from "@/lib/board-references";
 import { matchResult } from "@/lib/longcase-match";
-import { createAnthropic } from "@/lib/anthropic";
+import { createAnthropic, CHAT_MODELS, SCORE_MODELS, createWithFallback, streamTextWithFallback } from "@/lib/anthropic";
 import { friendlyAIError, logAIError } from "@/lib/anthropic-error";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
-
-const SONNET_MODEL = "claude-sonnet-4-6";
-const OPUS_MODEL = "claude-opus-4-7";
 
 export async function POST(request: NextRequest) {
   const supabase = await createClient();
@@ -119,24 +116,16 @@ ${examinerChat.map(m => `${m.role === "user" ? (isBoardCase ? "Candidate" : "น
 }`;
 
     try {
-      // Score with Opus, but fall back to Sonnet if Opus fails (it's more
+      // Score with Opus, falling back to Sonnet if Opus fails (it's more
       // capacity-constrained) — the student finished a whole case and must not
-      // lose their score to a transient upstream blip. If Sonnet also fails the
+      // lose their score to a transient upstream blip. If every model fails the
       // outer catch returns a friendly error.
-      const response = await client.messages
-        .create({
-          model: OPUS_MODEL,
-          max_tokens: 1024,
-          messages: [{ role: "user", content: scorePrompt }],
-        })
-        .catch((opusErr) => {
-          logAIError("longcase-examiner:score:opus-fallback", opusErr);
-          return client.messages.create({
-            model: SONNET_MODEL,
-            max_tokens: 1024,
-            messages: [{ role: "user", content: scorePrompt }],
-          });
-        });
+      const response = await createWithFallback(
+        client,
+        SCORE_MODELS,
+        { max_tokens: 1024, messages: [{ role: "user", content: scorePrompt }] },
+        "longcase-examiner:score",
+      );
       const rawText = response.content[0].type === "text" ? response.content[0].text : "";
       const jsonMatch = rawText.match(/\{[\s\S]*\}/);
       if (!jsonMatch) throw new Error("No JSON in response");
@@ -231,12 +220,7 @@ ${isBoard
     ...messages,
   ];
 
-  const stream = client.messages.stream({
-    model: SONNET_MODEL,
-    max_tokens: 1024,
-    system: systemPrompt,
-    messages: allMessages.length > 0 ? allMessages : [{ role: "user", content: "เริ่มต้นการสัมภาษณ์" }],
-  });
+  const examMessages = allMessages.length > 0 ? allMessages : [{ role: "user" as const, content: "เริ่มต้นการสัมภาษณ์" }];
 
   const encoder = new TextEncoder();
   let fullResponse = "";
@@ -244,11 +228,16 @@ ${isBoard
   const readable = new ReadableStream({
     async start(controller) {
       try {
-        for await (const event of stream) {
-          if (event.type === "content_block_delta" && event.delta.type === "text_delta") {
-            fullResponse += event.delta.text;
-            controller.enqueue(encoder.encode(`data: ${JSON.stringify({ text: event.delta.text })}\n\n`));
-          }
+        // Sonnet → Haiku fallback keeps the interview going if the primary
+        // model is overloaded.
+        for await (const text of streamTextWithFallback(
+          client,
+          CHAT_MODELS,
+          { max_tokens: 1024, system: systemPrompt, messages: examMessages },
+          "longcase-examiner",
+        )) {
+          fullResponse += text;
+          controller.enqueue(encoder.encode(`data: ${JSON.stringify({ text })}\n\n`));
         }
         controller.enqueue(encoder.encode(`data: ${JSON.stringify({ done: true })}\n\n`));
         controller.close();

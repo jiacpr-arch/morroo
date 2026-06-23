@@ -9,6 +9,7 @@ import { Loader2, Send, ChevronRight, CheckCircle, MessageSquare, Stethoscope, F
 import type { LongCaseSession, LongCaseFull } from "@/lib/types";
 import { consumeSSE } from "@/lib/sse";
 import { matchResult } from "@/lib/longcase-match";
+import { useAiHealth } from "@/components/ai/AiHealthProvider";
 import FeedbackCard from "./FeedbackCard";
 
 type Phase = LongCaseSession["phase"];
@@ -26,6 +27,7 @@ function LongCaseSessionInner() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const sessionId = searchParams.get("id");
+  const { reportAiFailure, reportAiSuccess } = useAiHealth();
 
   const [, setSession] = useState<LongCaseSession | null>(null);
   const [lc, setLc] = useState<Partial<LongCaseFull> | null>(null);
@@ -183,6 +185,8 @@ function LongCaseSessionInner() {
         body: JSON.stringify({ sessionId, messages: [userMsg] }),
       });
       const { error: streamErr } = await consumeSSE(res, render);
+      if (streamErr) reportAiFailure();
+      else if (aiText) reportAiSuccess();
       if (!aiText) {
         setChatMessages(prev => [...prev.slice(0, -1), {
           role: "assistant",
@@ -251,6 +255,8 @@ function LongCaseSessionInner() {
         body: JSON.stringify({ sessionId, messages: [], action: "start" }),
       });
       const { error: streamErr } = await consumeSSE(res, render);
+      if (streamErr) reportAiFailure();
+      else if (aiText) reportAiSuccess();
       if (!aiText) {
         setExamMessages([{
           role: "assistant",
@@ -286,6 +292,8 @@ function LongCaseSessionInner() {
         body: JSON.stringify({ sessionId, messages: [userMsg], action: "chat" }),
       });
       const { error: streamErr } = await consumeSSE(res, render);
+      if (streamErr) reportAiFailure();
+      else if (aiText) reportAiSuccess();
       if (!aiText) {
         setExamMessages(prev => [...prev.slice(0, -1), {
           role: "assistant",
@@ -316,7 +324,8 @@ function LongCaseSessionInner() {
       // full-screen error — the student finished a whole case and shouldn't be
       // bounced out by a transient blip; the examiner chat is already saved, so
       // retrying is safe.
-      if (data.error) { setScoreError(data.error); return; }
+      if (data.error) { setScoreError(data.error); reportAiFailure(); return; }
+      reportAiSuccess();
       setScores(data);
       setTeachingPoints(data.teaching_points || []);
       if (data.coins) setCoinsInfo(data.coins);
