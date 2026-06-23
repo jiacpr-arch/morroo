@@ -1,7 +1,8 @@
 import { NextRequest } from "next/server";
-import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase/server";
 import { checkRateLimit, rateLimitResponse, RATE_LIMITS } from "@/lib/rate-limit";
+import { createAnthropic } from "@/lib/anthropic";
+import { friendlyAIError, logAIError } from "@/lib/anthropic-error";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -60,7 +61,7 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     );
 
-  const client = new Anthropic({ apiKey });
+  const client = createAnthropic();
 
   // Build context about the question
   const choicesText = question.choices
@@ -97,18 +98,26 @@ ${explanationContext}
 - ใช้ความรู้ทางคลินิกประกอบการอธิบาย
 - ตอบสั้นกระชับ ไม่เกิน 3-4 ย่อหน้า`;
 
-  const response = await client.messages.create({
-    model: MODEL,
-    max_tokens: 1024,
-    system: systemPrompt,
-    messages: [{ role: "user", content: userMessage }],
-  });
+  try {
+    const response = await client.messages.create({
+      model: MODEL,
+      max_tokens: 1024,
+      system: systemPrompt,
+      messages: [{ role: "user", content: userMessage }],
+    });
 
-  const text =
-    response.content[0].type === "text" ? response.content[0].text : "";
+    const text =
+      response.content[0].type === "text" ? response.content[0].text : "";
 
-  return new Response(JSON.stringify({ reply: text }), {
-    status: 200,
-    headers: { "Content-Type": "application/json" },
-  });
+    return new Response(JSON.stringify({ reply: text }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
+  } catch (err) {
+    logAIError("mcq-chat", err);
+    return new Response(JSON.stringify({ error: friendlyAIError(err) }), {
+      status: 503,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
 }

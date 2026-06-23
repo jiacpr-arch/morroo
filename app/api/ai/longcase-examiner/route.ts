@@ -1,11 +1,11 @@
 import { NextRequest } from "next/server";
-import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase/server";
 import { getLongCaseSession, updateLongCaseSession } from "@/lib/supabase/queries-longcase";
 import { checkRateLimit, rateLimitResponse, RATE_LIMITS } from "@/lib/rate-limit";
 import { getBoardReference } from "@/lib/board-references";
 import { matchResult } from "@/lib/longcase-match";
-import { friendlyAIError } from "@/lib/anthropic-error";
+import { createAnthropic } from "@/lib/anthropic";
+import { friendlyAIError, logAIError } from "@/lib/anthropic-error";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -37,11 +37,7 @@ export async function POST(request: NextRequest) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) return new Response(JSON.stringify({ error: "API key not configured" }), { status: 500 });
 
-  // Retry transient upstream errors (429 rate limit, 5xx, 529 overloaded) a few
-  // extra times before surfacing a failure — these spike when the API is busy.
-  const client = new Anthropic({ apiKey, maxRetries: 4 });
-  const useOpus = action === "score";
-  const model = useOpus ? OPUS_MODEL : SONNET_MODEL;
+  const client = createAnthropic();
 
   // Parse case data. Imaging lives in a separate map from labs; merge them so
   // imaging orders resolve too.
@@ -123,11 +119,24 @@ ${examinerChat.map(m => `${m.role === "user" ? (isBoardCase ? "Candidate" : "น
 }`;
 
     try {
-      const response = await client.messages.create({
-        model,
-        max_tokens: 1024,
-        messages: [{ role: "user", content: scorePrompt }],
-      });
+      // Score with Opus, but fall back to Sonnet if Opus fails (it's more
+      // capacity-constrained) — the student finished a whole case and must not
+      // lose their score to a transient upstream blip. If Sonnet also fails the
+      // outer catch returns a friendly error.
+      const response = await client.messages
+        .create({
+          model: OPUS_MODEL,
+          max_tokens: 1024,
+          messages: [{ role: "user", content: scorePrompt }],
+        })
+        .catch((opusErr) => {
+          logAIError("longcase-examiner:score:opus-fallback", opusErr);
+          return client.messages.create({
+            model: SONNET_MODEL,
+            max_tokens: 1024,
+            messages: [{ role: "user", content: scorePrompt }],
+          });
+        });
       const rawText = response.content[0].type === "text" ? response.content[0].text : "";
       const jsonMatch = rawText.match(/\{[\s\S]*\}/);
       if (!jsonMatch) throw new Error("No JSON in response");
@@ -176,7 +185,7 @@ ${examinerChat.map(m => `${m.role === "user" ? (isBoardCase ? "Candidate" : "น
         headers: { "Content-Type": "application/json" },
       });
     } catch (err) {
-      console.error("[longcase-examiner] score failed:", err);
+      logAIError("longcase-examiner:score", err);
       return new Response(JSON.stringify({ error: friendlyAIError(err) }), { status: 500 });
     }
   }
@@ -223,7 +232,7 @@ ${isBoard
   ];
 
   const stream = client.messages.stream({
-    model,
+    model: SONNET_MODEL,
     max_tokens: 1024,
     system: systemPrompt,
     messages: allMessages.length > 0 ? allMessages : [{ role: "user", content: "เริ่มต้นการสัมภาษณ์" }],
@@ -254,7 +263,7 @@ ${isBoard
           phase: "examiner",
         });
       } catch (err) {
-        console.error("[longcase-examiner] stream failed:", err);
+        logAIError("longcase-examiner:stream", err);
         controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: friendlyAIError(err) })}\n\n`));
         controller.close();
       }

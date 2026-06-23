@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase/server";
 import { checkRateLimit, rateLimitResponse, RATE_LIMITS } from "@/lib/rate-limit";
+import { createAnthropic } from "@/lib/anthropic";
+import { friendlyAIError, logAIError } from "@/lib/anthropic-error";
 import type { StudyPlan } from "@/lib/types-study-plan";
 
 export const runtime = "nodejs";
@@ -151,13 +152,19 @@ export async function POST(request: NextRequest) {
 - ภารกิจแต่ละวันรวมเวลา ~${dailyHours} ชั่วโมง (แยกเป็น 2-3 ภารกิจ)
 - ภารกิจต้อง concrete เช่น "ทำ MCQ สาขาหัวใจ 30 ข้อ", "อ่านสรุป HTN + ทำ MCQ 15 ข้อ"`;
 
-  const client = new Anthropic({ apiKey });
-  const response = await client.messages.create({
-    model: MODEL,
-    max_tokens: 4000,
-    system: systemPrompt,
-    messages: [{ role: "user", content: userPrompt }],
-  });
+  const client = createAnthropic();
+  let response;
+  try {
+    response = await client.messages.create({
+      model: MODEL,
+      max_tokens: 4000,
+      system: systemPrompt,
+      messages: [{ role: "user", content: userPrompt }],
+    });
+  } catch (err) {
+    logAIError("study-plan", err);
+    return NextResponse.json({ error: friendlyAIError(err) }, { status: 503 });
+  }
 
   const raw = response.content[0].type === "text" ? response.content[0].text : "";
   const match = raw.match(/\{[\s\S]*\}/);

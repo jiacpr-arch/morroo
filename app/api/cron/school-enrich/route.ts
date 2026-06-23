@@ -14,6 +14,7 @@
 
 import { NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
+import { createAnthropic } from "@/lib/anthropic";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { loadBookContext } from "@/lib/school/book-context";
 
@@ -122,7 +123,7 @@ export async function GET(request: Request) {
   }
 
   const supabase = createAdminClient();
-  const client = new Anthropic({ apiKey });
+  const client = createAnthropic();
 
   const { data: open, error } = await supabase
     .from("school_questions")
