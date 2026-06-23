@@ -1,4 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
+import { createAnthropic } from "@/lib/anthropic";
+import { logAIError } from "@/lib/anthropic-error";
 
 export type ChatMessage = {
   role: "user" | "assistant";
@@ -125,7 +127,7 @@ export async function generateChatbotReply(
     return { ok: false, error: "Empty conversation" };
   }
 
-  const client = new Anthropic({ apiKey });
+  const client = createAnthropic();
 
   const system: Anthropic.TextBlockParam[] = [
     { type: "text", text: SYSTEM_PROMPT, cache_control: { type: "ephemeral" } },
@@ -155,8 +157,8 @@ export async function generateChatbotReply(
     const { text, card } = extractCard(afterIntent);
     return { ok: true, reply: text, ...(card && { card }), ...(intent && { intent }) };
   } catch (err) {
+    logAIError("chatbot:generate", err);
     const msg = err instanceof Error ? err.message : String(err);
-    console.error("[chatbot] Anthropic call failed:", msg);
     return { ok: false, error: msg };
   }
 }
@@ -180,7 +182,7 @@ export async function* streamChatbotReply(
   if (!apiKey) throw new Error("ANTHROPIC_API_KEY not configured");
   if (history.length === 0) throw new Error("Empty conversation");
 
-  const client = new Anthropic({ apiKey });
+  const client = createAnthropic();
   const system: Anthropic.TextBlockParam[] = [
     { type: "text", text: SYSTEM_PROMPT, cache_control: { type: "ephemeral" } },
     { type: "text", text: CHANNEL_HINTS[channel] },

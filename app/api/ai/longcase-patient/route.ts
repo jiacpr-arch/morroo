@@ -1,9 +1,9 @@
 import { NextRequest } from "next/server";
-import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase/server";
 import { getLongCaseSession, updateLongCaseSession } from "@/lib/supabase/queries-longcase";
 import { checkRateLimit, rateLimitResponse, RATE_LIMITS } from "@/lib/rate-limit";
-import { friendlyAIError } from "@/lib/anthropic-error";
+import { createAnthropic } from "@/lib/anthropic";
+import { friendlyAIError, logAIError } from "@/lib/anthropic-error";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -60,9 +60,7 @@ export async function POST(request: NextRequest) {
 5. ตอบสั้นๆ เป็นธรรมชาติ ไม่เกิน 3 ประโยค
 6. อย่าบอก diagnosis เองโดยตรง`;
 
-  // Retry transient upstream errors (429 rate limit, 5xx, 529 overloaded) a few
-  // extra times before surfacing a failure — these spike when the API is busy.
-  const client = new Anthropic({ apiKey, maxRetries: 4 });
+  const client = createAnthropic();
 
   // Merge existing history + new message
   const allMessages = [
@@ -99,7 +97,7 @@ export async function POST(request: NextRequest) {
         ];
         await updateLongCaseSession(sessionId, { history_chat: updatedChat });
       } catch (err) {
-        console.error("[longcase-patient] stream failed:", err);
+        logAIError("longcase-patient:stream", err);
         controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: friendlyAIError(err) })}\n\n`));
         controller.close();
       }

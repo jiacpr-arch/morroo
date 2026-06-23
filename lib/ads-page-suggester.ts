@@ -17,7 +17,7 @@
  * Never auto-merges. The LINE webhook handles human-confirmed merges.
  */
 
-import Anthropic from "@anthropic-ai/sdk";
+import { createAnthropic } from "@/lib/anthropic";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import {
   createBranch,
@@ -221,7 +221,7 @@ export async function generateSuggestion(
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) return { ok: false, error: "ANTHROPIC_API_KEY not configured" };
 
-  const client = new Anthropic({ apiKey });
+  const client = createAnthropic();
   const userMessage = `Page path: ${finding.entity_id}
 Severity: ${finding.severity}
 Category: ${finding.category}

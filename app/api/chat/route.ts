@@ -6,6 +6,7 @@ import {
   trimHistory,
   type ChatMessage,
 } from "@/lib/chatbot";
+import { logAIError } from "@/lib/anthropic-error";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -86,8 +87,7 @@ export async function POST(request: NextRequest) {
           controller.enqueue(encoder.encode(chunk));
         }
       } catch (err) {
-        const msg = err instanceof Error ? err.message : String(err);
-        console.error("[api/chat] stream error:", msg);
+        logAIError("api/chat:stream", err);
         // Send a fallback message so the widget shows something
         const fallback = "ขอโทษครับ ขณะนี้ระบบมีปัญหาชั่วคราว ลองใหม่อีกครั้งนะครับ";
         controller.enqueue(encoder.encode(fallback));

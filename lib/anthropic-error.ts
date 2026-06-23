@@ -1,4 +1,16 @@
 import Anthropic from "@anthropic-ai/sdk";
+import * as Sentry from "@sentry/nextjs";
+
+/**
+ * Log an AI-related error to the server console and Sentry so we can see how
+ * often the upstream API is failing (and grab the request_id) — instead of
+ * silently swallowing it after showing the user a friendly message. `context`
+ * is a short tag like "longcase-examiner:score" identifying the call site.
+ */
+export function logAIError(context: string, err: unknown): void {
+  console.error(`[ai-error] ${context}:`, err);
+  Sentry.captureException(err, { tags: { feature: "ai", ai_context: context } });
+}
 
 /**
  * Map an Anthropic SDK / network error to a friendly Thai message that is safe
