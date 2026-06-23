@@ -27,6 +27,10 @@ export default function ExitIntentPopup() {
     let lastTouchY = 0;
     let scrollAccum = 0;
     let armed = false;
+    // Once we've shown the popup, stop listening — otherwise every subsequent
+    // mouse-out / swipe re-fires show() and spams the tracker (was seen firing
+    // 80×/session) because the sessionStorage guard only runs on mount.
+    let fired = false;
 
     // Arm only after the visitor has been on the page for a few seconds and
     // has scrolled a little; otherwise an instant exit feels spammy.
@@ -35,7 +39,11 @@ export default function ExitIntentPopup() {
     }, 5000);
 
     function show(reason: "desktop_top" | "mobile_swipe") {
-      if (!armed) return;
+      if (!armed || fired) return;
+      fired = true;
+      document.removeEventListener("mouseleave", onMouseLeave);
+      document.removeEventListener("touchstart", onTouchStart);
+      document.removeEventListener("touchmove", onTouchMove);
       try {
         window.sessionStorage.setItem(SHOWN_KEY, "1");
       } catch {}
