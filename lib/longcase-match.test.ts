@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { matchKey, matchResult, normalizeKey } from "@/lib/longcase-match";
+import { matchKey, matchResult, normalizeKey, readHistoryScript } from "@/lib/longcase-match";
 
 describe("normalizeKey", () => {
   it("strips case, spaces and punctuation", () => {
@@ -53,5 +53,47 @@ describe("matchResult", () => {
 
   it("returns undefined when nothing matches", () => {
     expect(matchResult("MRI Brain", { CBC: { value: "x", isAbnormal: false } })).toBeUndefined();
+  });
+});
+
+describe("readHistoryScript", () => {
+  it("reads hand-authored short keys", () => {
+    const hs = readHistoryScript({
+      cc: "ไอเรื้อรัง", pi: "ไอมา 3 เดือน", onset: "ค่อยเป็นค่อยไป",
+      pmh: "เบาหวาน", fh: "ไม่มี", sh: "สูบบุหรี่", ros: "น้ำหนักลด",
+    });
+    expect(hs.cc).toBe("ไอเรื้อรัง");
+    expect(hs.pi).toBe("ไอมา 3 เดือน");
+    expect(hs.sh).toBe("สูบบุหรี่");
+  });
+
+  it("reads auto-generated long keys (the bug: these were all dropped)", () => {
+    const hs = readHistoryScript({
+      chief_complaint: "ไอเรื้อรัง มีเสมหะ มา 3 เดือน",
+      hpi: "ผู้ป่วยชายไทย อายุ 54 ปี...",
+      past_medical: "ไม่มีโรคประจำตัว",
+      medications: "ไม่มี",
+      family_history: "พ่อเป็นมะเร็งปอด",
+      social_history: "สูบบุหรี่ 30 pack-year",
+      review_of_systems: "น้ำหนักลด 5 กก.",
+    });
+    expect(hs.cc).toBe("ไอเรื้อรัง มีเสมหะ มา 3 เดือน");
+    expect(hs.pi).toBe("ผู้ป่วยชายไทย อายุ 54 ปี...");
+    expect(hs.pmh).toBe("ไม่มีโรคประจำตัว");
+    expect(hs.fh).toBe("พ่อเป็นมะเร็งปอด");
+    expect(hs.sh).toBe("สูบบุหรี่ 30 pack-year");
+    expect(hs.ros).toBe("น้ำหนักลด 5 กก.");
+  });
+
+  it("returns empty strings for missing fields, never undefined", () => {
+    const hs = readHistoryScript({ cc: "x" });
+    expect(hs.cc).toBe("x");
+    expect(hs.ros).toBe("");
+    expect(hs.meds).toBe("");
+  });
+
+  it("tolerates null/undefined input", () => {
+    expect(readHistoryScript(null).cc).toBe("");
+    expect(readHistoryScript(undefined).pi).toBe("");
   });
 });

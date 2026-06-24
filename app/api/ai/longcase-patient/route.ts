@@ -4,6 +4,7 @@ import { getLongCaseSession, updateLongCaseSession } from "@/lib/supabase/querie
 import { checkRateLimit, rateLimitResponse, RATE_LIMITS } from "@/lib/rate-limit";
 import { createAnthropic, CHAT_MODELS, streamTextWithFallback } from "@/lib/anthropic";
 import { friendlyAIError, logAIError } from "@/lib/anthropic-error";
+import { readHistoryScript } from "@/lib/longcase-match";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -35,17 +36,22 @@ export async function POST(request: NextRequest) {
     return new Response(JSON.stringify({ error: "API key not configured" }), { status: 500 });
   }
 
-  // Build patient system prompt from historyScript
-  const hs = lc.history_script as Record<string, string>;
+  // Build patient system prompt from historyScript. Cases are authored with
+  // two different key vocabularies (short cc/pi/... vs long chief_complaint/
+  // hpi/...); readHistoryScript reconciles both so the prompt is never blank.
+  const hs = readHistoryScript(lc.history_script as Record<string, unknown>);
   const pi = lc.patient_info as { name?: string; age?: number; gender?: string; underlying?: string[]; vitals?: Record<string, unknown> };
 
   const systemPrompt = `คุณรับบทเป็น ${pi.name || "ผู้ป่วย"} อายุ ${pi.age || "-"} ปี เพศ${pi.gender || "-"}
 
 สถานการณ์: ${hs.cc || ""}
 ประวัติจริง (ที่คุณรู้แต่จะเปิดเผยเฉพาะเมื่อถูกถาม):
-- อาการหลัก: ${hs.pi || ""}
+- อาการหลัก: ${hs.cc || ""}
+- รายละเอียดอาการปัจจุบัน: ${hs.pi || ""}
 - ลักษณะอาการ: ${hs.onset || ""}
 - ประวัติโรคเดิม: ${hs.pmh || "ไม่มี"}
+- ยาที่ใช้ประจำ: ${hs.meds || "ไม่มี"}
+- ประวัติแพ้ยา/อาหาร: ${hs.allergies || "ไม่มี"}
 - ประวัติครอบครัว: ${hs.fh || "ไม่มี"}
 - ประวัติสังคม: ${hs.sh || ""}
 - ระบบอื่น (ROS): ${hs.ros || ""}
