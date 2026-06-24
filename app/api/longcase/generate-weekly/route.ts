@@ -68,14 +68,15 @@ export async function POST(request: Request) {
     "appearance": "ชายวัยกลางคน ลักษณะเหนื่อย เหงื่อออก"
   },
   "history_script": {
-    "chief_complaint": "แน่นหน้าอก 2 ชั่วโมง",
-    "hpi": "รายละเอียด onset, duration, character, radiation, aggravating/relieving factors...",
-    "past_medical": "โรคประจำตัว...",
-    "medications": "ยาที่ใช้...",
+    "cc": "แน่นหน้าอก 2 ชั่วโมง",
+    "pi": "รายละเอียด onset, duration, character, radiation, aggravating/relieving factors...",
+    "onset": "ลักษณะการเกิดอาการ ระยะเวลา...",
+    "pmh": "โรคประจำตัว...",
+    "meds": "ยาที่ใช้...",
     "allergies": "แพ้ยา...",
-    "family_history": "ประวัติครอบครัว...",
-    "social_history": "สูบบุหรี่ ดื่มเหล้า อาชีพ...",
-    "review_of_systems": "ระบบอื่นๆ ที่เกี่ยวข้อง..."
+    "fh": "ประวัติครอบครัว...",
+    "sh": "สูบบุหรี่ ดื่มเหล้า อาชีพ...",
+    "ros": "ระบบอื่นๆ ที่เกี่ยวข้อง..."
   },
   "pe_findings": {
     "General": "ลักษณะทั่วไป vital signs...",

@@ -92,3 +92,64 @@ export function matchResult<T>(query: string, results: Record<string, T>): T | u
   const key = matchKey(query, Object.keys(results));
   return key === undefined ? undefined : results[key];
 }
+
+// ---------------------------------------------------------------------------
+// history_script reconciliation
+//
+// Two case authors write history_script with two different key vocabularies:
+//   - hand-authored / admin cases use short keys (cc, pi, onset, pmh, ...)
+//   - the weekly auto-generator writes long keys (chief_complaint, hpi, ...)
+// The AI-patient route only ever read the short keys, so every auto-generated
+// case fed the model a BLANK history and it improvised a patient that
+// contradicted the (correctly stored) PE / labs / diagnosis. Resolve both
+// vocabularies to one canonical shape so either author works.
+// ---------------------------------------------------------------------------
+
+/** Canonical fields the AI-patient prompt needs from a case's history_script. */
+export interface HistoryScript {
+  cc: string;        // chief complaint
+  pi: string;        // present illness / HPI
+  onset: string;     // onset, duration, character
+  pmh: string;       // past medical history
+  meds: string;      // current medications
+  allergies: string; // drug/food allergies
+  fh: string;        // family history
+  sh: string;        // social history
+  ros: string;       // review of systems
+}
+
+const HISTORY_ALIASES: Record<keyof HistoryScript, string[]> = {
+  cc: ["cc", "chief_complaint", "chiefComplaint", "chief complaint"],
+  pi: ["pi", "hpi", "present_illness", "history_present_illness", "presentIllness"],
+  onset: ["onset", "onset_duration", "duration", "character"],
+  pmh: ["pmh", "past_medical", "past_medical_history", "pastMedical", "underlying"],
+  meds: ["meds", "medications", "medication", "current_medications", "drugs"],
+  allergies: ["allergies", "allergy", "drug_allergy", "drugAllergy"],
+  fh: ["fh", "family_history", "familyHistory"],
+  sh: ["sh", "social_history", "socialHistory", "social"],
+  ros: ["ros", "review_of_systems", "reviewOfSystems", "review_of_system"],
+};
+
+/**
+ * Resolve a raw history_script (either key vocabulary) into the canonical
+ * {@link HistoryScript} shape. Missing fields come back as "" so the caller
+ * can treat them uniformly.
+ */
+export function readHistoryScript(
+  raw: Record<string, unknown> | null | undefined,
+): HistoryScript {
+  const byNorm = new Map<string, string>();
+  for (const [k, v] of Object.entries(raw ?? {})) {
+    const str = typeof v === "string" ? v : v == null ? "" : JSON.stringify(v);
+    if (str) byNorm.set(normalizeKey(k), str);
+  }
+
+  const out = {} as HistoryScript;
+  for (const field of Object.keys(HISTORY_ALIASES) as (keyof HistoryScript)[]) {
+    out[field] =
+      HISTORY_ALIASES[field]
+        .map((alias) => byNorm.get(normalizeKey(alias)))
+        .find((v) => v) ?? "";
+  }
+  return out;
+}
