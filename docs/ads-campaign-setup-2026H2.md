@@ -19,12 +19,17 @@
 | `[MR] ผู้เข้า /register 180 วัน` | `52569484751797` | 180 วัน | สมัครค้าง — ดันให้จบ |
 | `[MR] ผู้เข้า /exams 180 วัน` | `52569112726797` | 180 วัน | สนใจเนื้อหา |
 | `[MR] ผู้เข้า /longcase 180 วัน` | `52569112890597` | 180 วัน | จุดต่าง Long Case AI |
+| `[MR] ผู้มีปฏิสัมพันธ์กับเพจ 365 วัน` | `52579627674597` | 365 วัน | engager (event `page_engaged`) — retarget + seed LAL |
+
+> **Page MorRoo** = `1014545448419881` (morroo.com, owned by Jiacpr) · pixel = `966371002896288`
 
 ### ยังไม่ได้สร้าง — ติดเงื่อนไข (ทำต่อเมื่อพร้อม)
 - **Lookalike 1% (TH)** — เครื่องมือ MCP สร้าง LAL ไม่ได้ ต้องสร้างในหน้า Ads Manager เอง
-  - seed: `[MR] เว็บทั้งหมด 180 วัน` (`52569111931997`)
+  - seed: `[MR] เว็บทั้งหมด 180 วัน` (`52569111931997`) หรือ `[MR] เพจ engager 365 วัน` (`52579627674597`)
   - ⚠️ ตอนนี้ pool เล็กกว่าเกณฑ์ขั้นต่ำ 100 คนของ Meta → **รอสะสม ~2–4 สัปดาห์หลังเริ่มยิง Traffic** แล้วค่อยสร้าง
-- **Page / IG / Lead-form engagement audiences** — รอ **Page ID ของ MorRoo** จากเจ้าของ (ตอนนี้ Page ขึ้น "(unknown)" ทุกตัว, ไม่มี IG ผูก, ทุก Page ยังไม่ accept Leadgen ToS)
+- **Video viewers 50%+** — ต้องเลือกคลิปในหน้า Ads Manager (video engagement CA ระบุวิดีโอเป็นรายตัว) → ทำใน UI
+- **Lead-form audiences** — รอ Page accept **Leadgen ToS** + แคมเปญ A เริ่มเก็บ lead ก่อน (ยังไม่มีฟอร์มให้ดึง)
+- **IG engagers** — ไม่มี IG ผูกกับบัญชีโฆษณา → ผูก IG ก่อนถึงสร้างได้
 - **Customer list (51 users / 9 paying)** — ต้องดึง email hash จาก Supabase; 51 คนต่ำกว่าเกณฑ์ match ที่ดี → คุณภาพ seed ต่ำ แนะนำรอฐานโต
 
 ---
@@ -90,8 +95,8 @@
 
 ## 4. ลำดับงานถัดไป (checklist)
 
-1. [ ] **เจ้าของส่ง Page ID ของ MorRoo** → สร้าง Page/IG/Lead-form engagement audiences
-2. [ ] **Accept Leadgen ToS** บน Page MorRoo → ปลดล็อกแคมเปญ A (Instant Form)
+1. [x] ~~เจ้าของส่ง Page ID~~ → ได้แล้ว (`1014545448419881`) · สร้าง Page engager 365 วันแล้ว
+2. [ ] **Accept Leadgen ToS** บน Page MorRoo → ปลดล็อกแคมเปญ A (Instant Form) + lead-form audience
 3. [ ] เริ่มแคมเปญ B (Traffic) ก่อน — สะสม pixel + ขยาย Custom Audience
 4. [ ] รอ pool ≥ 100 → สร้าง **Lookalike 1%** จาก seed `52569111931997` (ทำในหน้า Ads Manager)
 5. [ ] อัป **customer list** เมื่อฐานโต/Supabase พร้อม → seed LAL คุณภาพสูง
