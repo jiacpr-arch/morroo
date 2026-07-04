@@ -42,7 +42,7 @@ export default async function FreeTrialLanding({
         </header>
 
         <section className="mt-8 flex flex-wrap justify-center gap-8 rounded-2xl border bg-white px-6 py-5 shadow-sm">
-          <Stat value="2,800+" label="ข้อสอบ MCQ" />
+          <Stat value="6,700+" label="ข้อสอบ MCQ" />
           <Stat value="12 สาขา" label="ครอบคลุม Board" />
           <Stat value="ฟรี 1 เดือน" label="ไม่ต้องใช้บัตรเครดิต" />
         </section>
