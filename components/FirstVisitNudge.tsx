@@ -5,21 +5,27 @@ import Link from "next/link";
 import { X, Sparkles, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { track } from "@/lib/analytics";
+import { useIsLoggedIn } from "@/lib/hooks/useIsLoggedIn";
 
 const SEEN_KEY = "morroo_first_visit_nudge_v1";
 const EXIT_INTENT_KEY = "morroo_exit_intent_shown";
 
 // A gentle, non-blocking first-visit nudge that slides up from the bottom
 // (corner card on desktop, full-width bar on mobile) inviting the visitor to
-// try a free exam before signing up. Deliberately NOT a full-screen modal so
-// it doesn't trip Google's intrusive-interstitial penalty on mobile (~60% of
-// traffic) or spike bounce. Fires once per visitor (localStorage), after a
-// short dwell or a bit of scrolling. Wired into the root layout.
+// try a free exam before signing up. Guests only — logged-in users (including
+// paying members, who were seeing this on their own profile page) never get
+// it. Deliberately NOT a full-screen modal so it doesn't trip Google's
+// intrusive-interstitial penalty on mobile (~60% of traffic) or spike bounce.
+// Fires once per visitor (localStorage), after a short dwell or a bit of
+// scrolling. Wired into the root layout.
 export default function FirstVisitNudge() {
   const [open, setOpen] = useState(false);
+  const isLoggedIn = useIsLoggedIn();
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+    // null = session still resolving; only arm the triggers for known guests.
+    if (isLoggedIn !== false) return;
     try {
       if (window.localStorage.getItem(SEEN_KEY)) return;
     } catch {
@@ -60,7 +66,7 @@ export default function FirstVisitNudge() {
     window.addEventListener("scroll", onScroll, { passive: true });
 
     return cleanup;
-  }, []);
+  }, [isLoggedIn]);
 
   function dismiss(method: "x" | "later") {
     track("first_visit_nudge_dismiss", { method });
