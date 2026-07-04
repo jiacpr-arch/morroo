@@ -56,7 +56,9 @@
 - ปลายทาง: `morroo.com/register?utm_source=fb&utm_medium=paid&utm_campaign=free_trial`
 - งบรวม ~฿120/วัน — เป้า LPV < ฿2 (เคยทำได้ ฿0.65–2.1)
 - **Ad set B1 Broad** = `52580833488197` (PAUSED) · TH อายุ 20–35 (ปิด Advantage+ Audience ให้เป็นช่วงตายตัว ตามกฎไทยห้ามยิง <20) · งบ ฿120/วัน · autobid · billing IMPRESSIONS
-- ยังไม่ได้สร้าง: **ad + creative** (รอเลือกรูป/โพสต์ + copy angle) · ad set B2 Lookalike (รอ LAL) · B3 Interest (รอ interest IDs)
+- **Ad `[MR] LongCaseAI — Broad`** = `52580833960797` (PAUSED) · creative `1716232586248493` (มุม Long Case AI, CTA Sign Up, FB+IG)
+  - รูป: ใช้ image_hash เดิมจากโพสต์ MorRoo `a07d950358a3646dbbf7f14d7e208315` · ปลายทาง `/register?utm_source=fb&utm_medium=paid&utm_campaign=free_trial`
+- ยังไม่ได้สร้าง: ad set B2 Lookalike (รอ LAL) · B3 Interest (รอ interest IDs)
 
 ### แคมเปญ C — `[MR]_Retarget` (เงินที่หล่นหาย — เริ่มเมื่อ pool โตพอ)
 - Objective: **OUTCOME_LEADS** (เปลี่ยนเป็น SALES เมื่อ pixel มี Subscribe พอ)
