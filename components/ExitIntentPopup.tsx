@@ -5,19 +5,24 @@ import Link from "next/link";
 import { X, Sparkles, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { track } from "@/lib/analytics";
+import { useIsLoggedIn } from "@/lib/hooks/useIsLoggedIn";
 
 const SHOWN_KEY = "morroo_exit_intent_shown";
 
 // Fires a single free-trial promo when the visitor signals they're about to
 // leave: desktop = mouse exits through the top of the viewport, mobile = a
-// fast upward swipe. Stored in sessionStorage so we never pester twice in the
-// same tab. Wired into the root layout via <Suspense> so it doesn't bail the
-// rest of the page out of static rendering.
+// fast upward swipe. Guests only — the CTA is "สมัครฟรีเลย" → /register, which
+// makes no sense for anyone already logged in. Stored in sessionStorage so we
+// never pester twice in the same tab. Wired into the root layout via
+// <Suspense> so it doesn't bail the rest of the page out of static rendering.
 export default function ExitIntentPopup() {
   const [open, setOpen] = useState(false);
+  const isLoggedIn = useIsLoggedIn();
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+    // null = session still resolving; only arm the triggers for known guests.
+    if (isLoggedIn !== false) return;
     try {
       if (window.sessionStorage.getItem(SHOWN_KEY)) return;
     } catch {
@@ -84,7 +89,7 @@ export default function ExitIntentPopup() {
       document.removeEventListener("touchstart", onTouchStart);
       document.removeEventListener("touchmove", onTouchMove);
     };
-  }, []);
+  }, [isLoggedIn]);
 
   if (!open) return null;
 
