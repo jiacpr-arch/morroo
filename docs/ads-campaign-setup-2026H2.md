@@ -51,11 +51,12 @@
 | A2 Lookalike 1% | LAL จาก seed (รอสร้าง) | ฿60 |
 | A3 Interest | นศ.แพทย์ / รร.แพทย์ (ศิริราช จุฬาฯ รามาฯ มอ. มช. ขอนแก่น) / ใบประกอบวิชาชีพเวชกรรม | ฿40 |
 
-### แคมเปญ B — `[MR]_Traffic_FreeTrial` (เลี้ยง pixel + สร้าง pool)
-- Objective: **Traffic** · optimize **Landing Page Views**
+### แคมเปญ B — `[MR]_Traffic_FreeTrial` (เลี้ยง pixel + สร้าง pool) — ✅ สร้างแล้ว (PAUSED)
+- **campaign_id** `52580729960597` · Objective **OUTCOME_TRAFFIC** · optimize **LANDING_PAGE_VIEWS** · สถานะ **PAUSED**
 - ปลายทาง: `morroo.com/register?utm_source=fb&utm_medium=paid&utm_campaign=free_trial`
 - งบรวม ~฿120/วัน — เป้า LPV < ฿2 (เคยทำได้ ฿0.65–2.1)
-- ad set เหมือน A (Broad / LAL / Interest) — ตัวนี้แหละที่จะ **ป้อนคนเข้า Custom Audience** ที่สร้างไว้
+- **Ad set B1 Broad** = `52580833488197` (PAUSED) · TH อายุ 20–35 (ปิด Advantage+ Audience ให้เป็นช่วงตายตัว ตามกฎไทยห้ามยิง <20) · งบ ฿120/วัน · autobid · billing IMPRESSIONS
+- ยังไม่ได้สร้าง: **ad + creative** (รอเลือกรูป/โพสต์ + copy angle) · ad set B2 Lookalike (รอ LAL) · B3 Interest (รอ interest IDs)
 
 ### แคมเปญ C — `[MR]_Retarget` (เงินที่หล่นหาย — เริ่มเมื่อ pool โตพอ)
 - Objective: **OUTCOME_LEADS** (เปลี่ยนเป็น SALES เมื่อ pixel มี Subscribe พอ)
