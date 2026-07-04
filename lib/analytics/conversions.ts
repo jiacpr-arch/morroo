@@ -61,6 +61,17 @@ export function trackInitiateCheckout(opts: {
   });
 }
 
+export function trackLead(code: string): void {
+  if (typeof window === "undefined") return;
+  // eventID must equal the server CAPI copy in app/api/leads/create
+  // (`lead:<code>`) so Meta dedupes the browser+server pair. The browser
+  // copy carries _fbp/_fbc for ad attribution.
+  const eventId = `lead:${code}`;
+  window.gtag?.("event", "generate_lead");
+  window.fbq?.("track", "Lead", { content_name: "free_trial" }, { eventID: eventId });
+  window.ttq?.track("SubmitForm", { content_name: "free_trial" }, { event_id: eventId });
+}
+
 export function trackSignup(): void {
   if (typeof window === "undefined") return;
   // GA4 only. Meta/TikTok CompleteRegistration is already sent server-side

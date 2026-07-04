@@ -1,5 +1,7 @@
-import { NextResponse } from "next/server";
+import { NextResponse, after } from "next/server";
+import { cookies, headers } from "next/headers";
 import { createLead } from "@/lib/leads";
+import { sendMetaEvent } from "@/lib/meta/events-api";
 import type { RewardType } from "@/lib/redeem";
 
 /**
@@ -75,6 +77,30 @@ export async function POST(request: Request) {
     const status = result.error === "db_error" ? 500 : 400;
     return NextResponse.json({ error: result.error }, { status });
   }
+
+  // Server-side Meta Lead — the free-trial form is the primary ad conversion,
+  // and without this event Meta never sees it (can't optimize or attribute).
+  // eventId `lead:<code>` keys dedup against the browser fbq copy in LeadForm.
+  const [cookieStore, headerStore] = await Promise.all([cookies(), headers()]);
+  const ip =
+    headerStore.get("x-forwarded-for")?.split(",")[0]?.trim() || null;
+  const fullName = typeof body.name === "string" ? body.name.trim() : "";
+  const [firstName, ...restName] = fullName.split(/\s+/);
+  after(() =>
+    sendMetaEvent({
+      event: "Lead",
+      eventId: `lead:${result.code}`,
+      email,
+      firstName: firstName || null,
+      lastName: restName.join(" ") || null,
+      ip,
+      userAgent: headerStore.get("user-agent"),
+      fbc: cookieStore.get("_fbc")?.value ?? null,
+      fbp: cookieStore.get("_fbp")?.value ?? null,
+      url: "https://www.morroo.com/lp/free-trial",
+      contentName: "free_trial",
+    })
+  );
 
   return NextResponse.json({ ok: true, code: result.code });
 }

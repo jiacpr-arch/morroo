@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { track } from "@/lib/analytics";
+import { trackLead } from "@/lib/analytics/conversions";
 
 type Reward = "monthly_1m" | "bundle_10q";
 
@@ -68,6 +69,7 @@ export default function LeadForm({
         campaign: campaign ?? null,
         ad_set: adSet ?? null,
       });
+      if (json.code) trackLead(json.code);
       window.location.href = `/redeem/${json.code}`;
     } catch (err) {
       setErrorMsg(err instanceof Error ? err.message : "ลองใหม่อีกครั้ง");
