@@ -41,10 +41,16 @@ export default async function FreeTrialLanding({
           </p>
         </header>
 
-        <section className="mt-10 grid gap-6 md:grid-cols-3">
+        <section className="mt-8 flex flex-wrap justify-center gap-8 rounded-2xl border bg-white px-6 py-5 shadow-sm">
+          <Stat value="6,700+" label="ข้อสอบ MCQ" />
+          <Stat value="12 สาขา" label="ครอบคลุม Board" />
+          <Stat value="ฟรี 1 เดือน" label="ไม่ต้องใช้บัตรเครดิต" />
+        </section>
+
+        <section className="mt-6 grid gap-6 md:grid-cols-3">
           <FeatureCard
-            title="MCQ ครอบคลุม 6 สาขา"
-            body="ข้อสอบ MCQ คุณภาพสูงพร้อมเฉลยอ้างอิง — Med, Surg, Ped, OB-Gyn, Psych, Family"
+            title="MCQ ครอบคลุม 12 สาขา"
+            body="ข้อสอบ MCQ คุณภาพสูงพร้อมเฉลยอ้างอิง — ครอบคลุมทุกสาขา Board ที่ต้องสอบ"
           />
           <FeatureCard
             title="MEQ + Long Case AI"
@@ -88,6 +94,15 @@ function FeatureCard({ title, body }: { title: string; body: string }) {
     <div className="rounded-xl border bg-white p-5 shadow-sm">
       <h3 className="font-semibold text-teal-700">{title}</h3>
       <p className="mt-2 text-sm text-muted-foreground">{body}</p>
+    </div>
+  );
+}
+
+function Stat({ value, label }: { value: string; label: string }) {
+  return (
+    <div className="text-center">
+      <p className="text-2xl font-bold text-teal-700">{value}</p>
+      <p className="mt-0.5 text-sm text-muted-foreground">{label}</p>
     </div>
   );
 }
