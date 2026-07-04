@@ -1,13 +1,13 @@
 import { NextRequest } from "next/server";
-import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase/server";
 import { getLongCaseSession, updateLongCaseSession } from "@/lib/supabase/queries-longcase";
 import { checkRateLimit, rateLimitResponse, RATE_LIMITS } from "@/lib/rate-limit";
+import { createAnthropic, CHAT_MODELS, streamTextWithFallback } from "@/lib/anthropic";
+import { friendlyAIError, logAIError } from "@/lib/anthropic-error";
+import { readHistoryScript } from "@/lib/longcase-match";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
-
-const SONNET_MODEL = "claude-sonnet-4-6";
 
 export async function POST(request: NextRequest) {
   const supabase = await createClient();
@@ -36,17 +36,22 @@ export async function POST(request: NextRequest) {
     return new Response(JSON.stringify({ error: "API key not configured" }), { status: 500 });
   }
 
-  // Build patient system prompt from historyScript
-  const hs = lc.history_script as Record<string, string>;
+  // Build patient system prompt from historyScript. Cases are authored with
+  // two different key vocabularies (short cc/pi/... vs long chief_complaint/
+  // hpi/...); readHistoryScript reconciles both so the prompt is never blank.
+  const hs = readHistoryScript(lc.history_script as Record<string, unknown>);
   const pi = lc.patient_info as { name?: string; age?: number; gender?: string; underlying?: string[]; vitals?: Record<string, unknown> };
 
   const systemPrompt = `คุณรับบทเป็น ${pi.name || "ผู้ป่วย"} อายุ ${pi.age || "-"} ปี เพศ${pi.gender || "-"}
 
 สถานการณ์: ${hs.cc || ""}
 ประวัติจริง (ที่คุณรู้แต่จะเปิดเผยเฉพาะเมื่อถูกถาม):
-- อาการหลัก: ${hs.pi || ""}
+- อาการหลัก: ${hs.cc || ""}
+- รายละเอียดอาการปัจจุบัน: ${hs.pi || ""}
 - ลักษณะอาการ: ${hs.onset || ""}
 - ประวัติโรคเดิม: ${hs.pmh || "ไม่มี"}
+- ยาที่ใช้ประจำ: ${hs.meds || "ไม่มี"}
+- ประวัติแพ้ยา/อาหาร: ${hs.allergies || "ไม่มี"}
 - ประวัติครอบครัว: ${hs.fh || "ไม่มี"}
 - ประวัติสังคม: ${hs.sh || ""}
 - ระบบอื่น (ROS): ${hs.ros || ""}
@@ -59,7 +64,7 @@ export async function POST(request: NextRequest) {
 5. ตอบสั้นๆ เป็นธรรมชาติ ไม่เกิน 3 ประโยค
 6. อย่าบอก diagnosis เองโดยตรง`;
 
-  const client = new Anthropic({ apiKey });
+  const client = createAnthropic();
 
   // Merge existing history + new message
   const allMessages = [
@@ -67,24 +72,22 @@ export async function POST(request: NextRequest) {
     ...messages,
   ];
 
-  const stream = client.messages.stream({
-    model: SONNET_MODEL,
-    max_tokens: 512,
-    system: systemPrompt,
-    messages: allMessages,
-  });
-
   const encoder = new TextEncoder();
   let fullResponse = "";
 
   const readable = new ReadableStream({
     async start(controller) {
       try {
-        for await (const event of stream) {
-          if (event.type === "content_block_delta" && event.delta.type === "text_delta") {
-            fullResponse += event.delta.text;
-            controller.enqueue(encoder.encode(`data: ${JSON.stringify({ text: event.delta.text })}\n\n`));
-          }
+        // Sonnet → Haiku fallback so a busy primary model doesn't freeze the
+        // patient mid-conversation.
+        for await (const text of streamTextWithFallback(
+          client,
+          CHAT_MODELS,
+          { max_tokens: 512, system: systemPrompt, messages: allMessages },
+          "longcase-patient",
+        )) {
+          fullResponse += text;
+          controller.enqueue(encoder.encode(`data: ${JSON.stringify({ text })}\n\n`));
         }
         controller.enqueue(encoder.encode(`data: ${JSON.stringify({ done: true })}\n\n`));
         controller.close();
@@ -96,8 +99,8 @@ export async function POST(request: NextRequest) {
         ];
         await updateLongCaseSession(sessionId, { history_chat: updatedChat });
       } catch (err) {
-        const msg = err instanceof Error ? err.message : String(err);
-        controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: msg })}\n\n`));
+        logAIError("longcase-patient:stream", err);
+        controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: friendlyAIError(err) })}\n\n`));
         controller.close();
       }
     },

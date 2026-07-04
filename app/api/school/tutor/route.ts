@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase/server";
-
-const MODEL = "claude-sonnet-4-6";
+import { createAnthropic, CHAT_MODELS, createWithFallback } from "@/lib/anthropic";
+import { friendlyAIError, logAIError } from "@/lib/anthropic-error";
 
 interface Citation {
   type: "lesson" | "flashcard" | "quiz" | "concept";
@@ -45,9 +44,8 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const client = new Anthropic({ apiKey });
-    const response = await client.messages.create({
-      model: MODEL,
+    const client = createAnthropic();
+    const response = await createWithFallback(client, CHAT_MODELS, {
       max_tokens: 1500,
       system: [
         {
@@ -68,7 +66,7 @@ Rules:
         ...history,
         { role: "user", content: question },
       ],
-    });
+    }, "school/tutor");
 
     const text = response.content
       .filter((b) => b.type === "text")
@@ -112,7 +110,7 @@ Rules:
       citations: citations.slice(0, 6),
     });
   } catch (err) {
-    console.error("tutor error", err);
-    return NextResponse.json({ error: "Internal error" }, { status: 500 });
+    logAIError("school/tutor", err);
+    return NextResponse.json({ error: friendlyAIError(err) }, { status: 500 });
   }
 }

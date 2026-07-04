@@ -1,16 +1,14 @@
 import { NextRequest } from "next/server";
-import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase/server";
 import { getLongCaseSession, updateLongCaseSession } from "@/lib/supabase/queries-longcase";
 import { checkRateLimit, rateLimitResponse, RATE_LIMITS } from "@/lib/rate-limit";
 import { getBoardReference } from "@/lib/board-references";
 import { matchResult } from "@/lib/longcase-match";
+import { createAnthropic, CHAT_MODELS, SCORE_MODELS, createWithFallback, streamTextWithFallback } from "@/lib/anthropic";
+import { friendlyAIError, logAIError } from "@/lib/anthropic-error";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
-
-const SONNET_MODEL = "claude-sonnet-4-6";
-const OPUS_MODEL = "claude-opus-4-7";
 
 export async function POST(request: NextRequest) {
   const supabase = await createClient();
@@ -36,9 +34,7 @@ export async function POST(request: NextRequest) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) return new Response(JSON.stringify({ error: "API key not configured" }), { status: 500 });
 
-  const client = new Anthropic({ apiKey });
-  const useOpus = action === "score";
-  const model = useOpus ? OPUS_MODEL : SONNET_MODEL;
+  const client = createAnthropic();
 
   // Parse case data. Imaging lives in a separate map from labs; merge them so
   // imaging orders resolve too.
@@ -120,11 +116,16 @@ ${examinerChat.map(m => `${m.role === "user" ? (isBoardCase ? "Candidate" : "น
 }`;
 
     try {
-      const response = await client.messages.create({
-        model,
-        max_tokens: 1024,
-        messages: [{ role: "user", content: scorePrompt }],
-      });
+      // Score with Opus, falling back to Sonnet if Opus fails (it's more
+      // capacity-constrained) — the student finished a whole case and must not
+      // lose their score to a transient upstream blip. If every model fails the
+      // outer catch returns a friendly error.
+      const response = await createWithFallback(
+        client,
+        SCORE_MODELS,
+        { max_tokens: 1024, messages: [{ role: "user", content: scorePrompt }] },
+        "longcase-examiner:score",
+      );
       const rawText = response.content[0].type === "text" ? response.content[0].text : "";
       const jsonMatch = rawText.match(/\{[\s\S]*\}/);
       if (!jsonMatch) throw new Error("No JSON in response");
@@ -173,7 +174,8 @@ ${examinerChat.map(m => `${m.role === "user" ? (isBoardCase ? "Candidate" : "น
         headers: { "Content-Type": "application/json" },
       });
     } catch (err) {
-      return new Response(JSON.stringify({ error: String(err) }), { status: 500 });
+      logAIError("longcase-examiner:score", err);
+      return new Response(JSON.stringify({ error: friendlyAIError(err) }), { status: 500 });
     }
   }
 
@@ -218,12 +220,7 @@ ${isBoard
     ...messages,
   ];
 
-  const stream = client.messages.stream({
-    model,
-    max_tokens: 1024,
-    system: systemPrompt,
-    messages: allMessages.length > 0 ? allMessages : [{ role: "user", content: "เริ่มต้นการสัมภาษณ์" }],
-  });
+  const examMessages = allMessages.length > 0 ? allMessages : [{ role: "user" as const, content: "เริ่มต้นการสัมภาษณ์" }];
 
   const encoder = new TextEncoder();
   let fullResponse = "";
@@ -231,11 +228,16 @@ ${isBoard
   const readable = new ReadableStream({
     async start(controller) {
       try {
-        for await (const event of stream) {
-          if (event.type === "content_block_delta" && event.delta.type === "text_delta") {
-            fullResponse += event.delta.text;
-            controller.enqueue(encoder.encode(`data: ${JSON.stringify({ text: event.delta.text })}\n\n`));
-          }
+        // Sonnet → Haiku fallback keeps the interview going if the primary
+        // model is overloaded.
+        for await (const text of streamTextWithFallback(
+          client,
+          CHAT_MODELS,
+          { max_tokens: 1024, system: systemPrompt, messages: examMessages },
+          "longcase-examiner",
+        )) {
+          fullResponse += text;
+          controller.enqueue(encoder.encode(`data: ${JSON.stringify({ text })}\n\n`));
         }
         controller.enqueue(encoder.encode(`data: ${JSON.stringify({ done: true })}\n\n`));
         controller.close();
@@ -250,8 +252,8 @@ ${isBoard
           phase: "examiner",
         });
       } catch (err) {
-        const msg = err instanceof Error ? err.message : String(err);
-        controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: msg })}\n\n`));
+        logAIError("longcase-examiner:stream", err);
+        controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: friendlyAIError(err) })}\n\n`));
         controller.close();
       }
     },

@@ -1,5 +1,19 @@
 import { createClient } from "./server";
 import type { Exam, ExamPart } from "../types";
+import type { QuestionBankStats } from "./queries-mcq";
+
+/**
+ * Combined, real counts surfaced on the homepage so visitors see the true size
+ * of the question bank (not a stale "3,000+" placeholder):
+ *  - MCQ live counts (from QuestionBankStats)
+ *  - MEQ Progressive Cases: number of exams + total parts/ตอน
+ *  - Long Case: number of published student cases
+ */
+export type HomeExamStats = QuestionBankStats & {
+  meqExamCount: number;
+  meqPartCount: number;
+  longCaseCount: number;
+};
 
 export async function getExams(): Promise<Exam[]> {
   const supabase = await createClient();

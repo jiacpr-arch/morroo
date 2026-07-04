@@ -87,7 +87,8 @@ export function trackEmailSignup(userId: string): void {
   // without firing here every email registration is invisible to Meta/TikTok —
   // under-reporting results and starving the conversion campaigns of signal.
   // The browser pixel carries the _fbp/_fbc cookies for attribution; eventID
-  // keys dedup against the `signup:<userId>` server copy if one is ever added.
+  // keys dedup against the `signup:<userId>` server copy fired by
+  // POST /api/track/registration (the register page calls both).
   const eventId = `signup:${userId}`;
   window.gtag?.("event", "sign_up", { method: "email" });
   window.fbq?.("track", "CompleteRegistration", { content_name: "signup" }, { eventID: eventId });

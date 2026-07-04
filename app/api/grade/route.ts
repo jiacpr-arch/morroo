@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
-import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase/server";
+import { createAnthropic } from "@/lib/anthropic";
+import { logAIError } from "@/lib/anthropic-error";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { sendLineMessage } from "@/lib/line";
 import { buildExamResultFlex } from "@/lib/line-flex-templates";
@@ -69,7 +70,7 @@ export async function POST(request: Request) {
     }
 
     // 5. Call Claude Haiku
-    const anthropic = new Anthropic({ apiKey });
+    const anthropic = createAnthropic();
 
     const keyPointsList = (keyPoints || [])
       .map((kp: string, i: number) => `${i + 1}. ${kp}`)
@@ -166,7 +167,7 @@ ${studentAnswer}
       matched_points: matchedPoints,
     });
   } catch (error) {
-    console.error("AI grading error:", error);
+    logAIError("grade", error);
     void logAiGradeError({
       stage: "unknown",
       message: error instanceof Error ? error.message : String(error),

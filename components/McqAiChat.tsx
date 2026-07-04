@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import type { McqQuestion } from "@/lib/types-mcq";
+import { useAiHealth } from "@/components/ai/AiHealthProvider";
 
 interface McqAiChatProps {
   question: McqQuestion;
@@ -38,6 +39,7 @@ export default function McqAiChat({
   selectedAnswer,
   isPremium = false,
 }: McqAiChatProps) {
+  const { reportAiFailure, reportAiSuccess } = useAiHealth();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
@@ -87,11 +89,13 @@ export default function McqAiChat({
       }
 
       const data = await res.json();
+      reportAiSuccess();
       setMessages((prev) => [
         ...prev,
         { role: "assistant", content: data.reply },
       ]);
     } catch {
+      reportAiFailure();
       setMessages((prev) => [
         ...prev,
         {

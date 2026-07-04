@@ -9,6 +9,7 @@ import { Loader2, Send, ChevronRight, CheckCircle, MessageSquare, Stethoscope, F
 import type { LongCaseSession, LongCaseFull } from "@/lib/types";
 import { consumeSSE } from "@/lib/sse";
 import { matchResult } from "@/lib/longcase-match";
+import { useAiHealth } from "@/components/ai/AiHealthProvider";
 import FeedbackCard from "./FeedbackCard";
 
 type Phase = LongCaseSession["phase"];
@@ -26,6 +27,7 @@ function LongCaseSessionInner() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const sessionId = searchParams.get("id");
+  const { reportAiFailure, reportAiSuccess } = useAiHealth();
 
   const [, setSession] = useState<LongCaseSession | null>(null);
   const [lc, setLc] = useState<Partial<LongCaseFull> | null>(null);
@@ -65,6 +67,7 @@ function LongCaseSessionInner() {
   const [scores, setScores] = useState<Record<string, number | string> | null>(null);
   const [teachingPoints, setTeachingPoints] = useState<string[]>([]);
   const [scoringLoading, setScoringLoading] = useState(false);
+  const [scoreError, setScoreError] = useState("");
 
   // Rewards + feedback state
   const [coinsInfo, setCoinsInfo] = useState<{
@@ -182,6 +185,8 @@ function LongCaseSessionInner() {
         body: JSON.stringify({ sessionId, messages: [userMsg] }),
       });
       const { error: streamErr } = await consumeSSE(res, render);
+      if (streamErr) reportAiFailure();
+      else if (aiText) reportAiSuccess();
       if (!aiText) {
         setChatMessages(prev => [...prev.slice(0, -1), {
           role: "assistant",
@@ -250,6 +255,8 @@ function LongCaseSessionInner() {
         body: JSON.stringify({ sessionId, messages: [], action: "start" }),
       });
       const { error: streamErr } = await consumeSSE(res, render);
+      if (streamErr) reportAiFailure();
+      else if (aiText) reportAiSuccess();
       if (!aiText) {
         setExamMessages([{
           role: "assistant",
@@ -285,6 +292,8 @@ function LongCaseSessionInner() {
         body: JSON.stringify({ sessionId, messages: [userMsg], action: "chat" }),
       });
       const { error: streamErr } = await consumeSSE(res, render);
+      if (streamErr) reportAiFailure();
+      else if (aiText) reportAiSuccess();
       if (!aiText) {
         setExamMessages(prev => [...prev.slice(0, -1), {
           role: "assistant",
@@ -303,6 +312,7 @@ function LongCaseSessionInner() {
 
   async function requestScore() {
     setScoringLoading(true);
+    setScoreError("");
     try {
       const res = await fetch("/api/ai/longcase-examiner", {
         method: "POST",
@@ -310,13 +320,18 @@ function LongCaseSessionInner() {
         body: JSON.stringify({ sessionId, messages: [], action: "score" }),
       });
       const data = await res.json();
-      if (data.error) { setError(data.error); return; }
+      // Show scoring failures inline (with a retry button) instead of the
+      // full-screen error — the student finished a whole case and shouldn't be
+      // bounced out by a transient blip; the examiner chat is already saved, so
+      // retrying is safe.
+      if (data.error) { setScoreError(data.error); reportAiFailure(); return; }
+      reportAiSuccess();
       setScores(data);
       setTeachingPoints(data.teaching_points || []);
       if (data.coins) setCoinsInfo(data.coins);
       setPhase("done");
     } catch {
-      setError("ไม่สามารถประเมินคะแนนได้");
+      setScoreError("ไม่สามารถประเมินคะแนนได้ กรุณาลองใหม่อีกครั้งนะคะ");
     } finally {
       setScoringLoading(false);
     }
@@ -695,13 +710,20 @@ function LongCaseSessionInner() {
                   </Button>
                 </div>
                 {examMessages.length >= 8 && (
-                  <Button
-                    onClick={requestScore}
-                    disabled={scoringLoading}
-                    className="w-full bg-green-600 hover:bg-green-700 text-white"
-                  >
-                    {scoringLoading ? <><Loader2 className="h-4 w-4 mr-2 animate-spin" />กำลังคำนวณคะแนน...</> : "จบการสัมภาษณ์ → ดูคะแนน"}
-                  </Button>
+                  <div className="space-y-2">
+                    {scoreError && (
+                      <p className="text-sm text-red-600 text-center">{scoreError}</p>
+                    )}
+                    <Button
+                      onClick={requestScore}
+                      disabled={scoringLoading}
+                      className="w-full bg-green-600 hover:bg-green-700 text-white"
+                    >
+                      {scoringLoading
+                        ? <><Loader2 className="h-4 w-4 mr-2 animate-spin" />กำลังคำนวณคะแนน...</>
+                        : scoreError ? "ลองคิดคะแนนอีกครั้ง" : "จบการสัมภาษณ์ → ดูคะแนน"}
+                    </Button>
+                  </div>
                 )}
               </>
             )}

@@ -1,5 +1,3 @@
-import { createHash, randomUUID } from "node:crypto";
-
 const PIXEL_ID = "966371002896288";
 const API_VERSION = "v18.0";
 
@@ -33,8 +31,13 @@ export interface MetaEventInput {
   contentType?: string;
 }
 
-function sha256Lower(value: string): string {
-  return createHash("sha256").update(value.trim().toLowerCase()).digest("hex");
+// Web Crypto API — works in both Node.js 18+ and Edge runtimes (unlike node:crypto)
+async function sha256Lower(value: string): Promise<string> {
+  const data = new TextEncoder().encode(value.trim().toLowerCase());
+  const buf = await crypto.subtle.digest("SHA-256", data);
+  return Array.from(new Uint8Array(buf))
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
 }
 
 export async function sendMetaEvent(input: MetaEventInput): Promise<void> {
@@ -42,14 +45,14 @@ export async function sendMetaEvent(input: MetaEventInput): Promise<void> {
   if (!token) return;
 
   const userData: Record<string, unknown> = {};
-  if (input.email) userData.em = [sha256Lower(input.email)];
+  if (input.email) userData.em = [await sha256Lower(input.email)];
   if (input.phone) {
     const digits = input.phone.replace(/\D/g, "");
-    if (digits) userData.ph = [sha256Lower(digits)];
+    if (digits) userData.ph = [await sha256Lower(digits)];
   }
-  if (input.firstName) userData.fn = [sha256Lower(input.firstName)];
-  if (input.lastName) userData.ln = [sha256Lower(input.lastName)];
-  if (input.externalId) userData.external_id = [sha256Lower(input.externalId)];
+  if (input.firstName) userData.fn = [await sha256Lower(input.firstName)];
+  if (input.lastName) userData.ln = [await sha256Lower(input.lastName)];
+  if (input.externalId) userData.external_id = [await sha256Lower(input.externalId)];
   if (input.ip) userData.client_ip_address = input.ip;
   if (input.userAgent) userData.client_user_agent = input.userAgent;
   if (input.fbc) userData.fbc = input.fbc;
@@ -65,7 +68,7 @@ export async function sendMetaEvent(input: MetaEventInput): Promise<void> {
   const eventData: Record<string, unknown> = {
     event_name: input.event,
     event_time: Math.floor(Date.now() / 1000),
-    event_id: input.eventId ?? randomUUID(),
+    event_id: input.eventId ?? crypto.randomUUID(),
     action_source: "website",
     user_data: userData,
   };

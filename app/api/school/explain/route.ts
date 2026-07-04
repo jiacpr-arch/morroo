@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import Anthropic from "@anthropic-ai/sdk";
 import { createClient } from "@/lib/supabase/server";
+import { createAnthropic } from "@/lib/anthropic";
+import { friendlyAIError, logAIError } from "@/lib/anthropic-error";
 
 const MODEL = "claude-sonnet-4-6";
 
@@ -38,7 +39,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const client = new Anthropic({ apiKey });
+    const client = createAnthropic();
     const response = await client.messages.create({
       model: MODEL,
       max_tokens: 800,
@@ -85,7 +86,7 @@ Respond with a tool call only.`,
     }
     return NextResponse.json(tool.input);
   } catch (err) {
-    console.error("explain error", err);
-    return NextResponse.json({ error: "Internal error" }, { status: 500 });
+    logAIError("school/explain", err);
+    return NextResponse.json({ error: friendlyAIError(err) }, { status: 500 });
   }
 }

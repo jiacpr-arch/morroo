@@ -1,5 +1,3 @@
-import { createHash, randomUUID } from "node:crypto";
-
 const PIXEL_ID = "D80UTR3C77UEO91IVCV0";
 const ENDPOINT = "https://business-api.tiktok.com/open_api/v1.3/event/track/";
 
@@ -30,12 +28,21 @@ export interface TikTokEventInput {
   contentType?: string;
 }
 
-function sha256Lower(value: string): string {
-  return createHash("sha256").update(value.trim().toLowerCase()).digest("hex");
+// Web Crypto API — works in both Node.js 18+ and Edge runtimes (unlike node:crypto)
+async function sha256Lower(value: string): Promise<string> {
+  const data = new TextEncoder().encode(value.trim().toLowerCase());
+  const buf = await crypto.subtle.digest("SHA-256", data);
+  return Array.from(new Uint8Array(buf))
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
 }
 
-function sha256(value: string): string {
-  return createHash("sha256").update(value.trim()).digest("hex");
+async function sha256(value: string): Promise<string> {
+  const data = new TextEncoder().encode(value.trim());
+  const buf = await crypto.subtle.digest("SHA-256", data);
+  return Array.from(new Uint8Array(buf))
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
 }
 
 export async function sendTikTokEvent(input: TikTokEventInput): Promise<void> {
@@ -43,9 +50,9 @@ export async function sendTikTokEvent(input: TikTokEventInput): Promise<void> {
   if (!token) return;
 
   const user: Record<string, string> = {};
-  if (input.email) user.email = sha256Lower(input.email);
-  if (input.phone) user.phone = sha256(input.phone);
-  if (input.externalId) user.external_id = sha256(input.externalId);
+  if (input.email) user.email = await sha256Lower(input.email);
+  if (input.phone) user.phone = await sha256(input.phone);
+  if (input.externalId) user.external_id = await sha256(input.externalId);
   if (input.ip) user.ip = input.ip;
   if (input.userAgent) user.user_agent = input.userAgent;
   if (input.ttclid) user.ttclid = input.ttclid;
@@ -65,7 +72,7 @@ export async function sendTikTokEvent(input: TikTokEventInput): Promise<void> {
       {
         event: input.event,
         event_time: Math.floor(Date.now() / 1000),
-        event_id: input.eventId ?? randomUUID(),
+        event_id: input.eventId ?? crypto.randomUUID(),
         user,
         properties,
         ...(input.url ? { page: { url: input.url } } : {}),

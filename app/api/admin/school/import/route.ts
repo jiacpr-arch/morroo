@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
+import { createAnthropic } from "@/lib/anthropic";
 import { createClient } from "@/lib/supabase/server";
 
 const MODEL = "claude-sonnet-4-6";
@@ -190,7 +191,7 @@ async function callExtractor(
   if (!apiKey) {
     throw new Error("ANTHROPIC_API_KEY not set");
   }
-  const client = new Anthropic({ apiKey });
+  const client = createAnthropic();
 
   // Split system into cached base + per-request mode block.
   // Base is identical across imports → cache hit on subsequent calls.
@@ -324,7 +325,7 @@ async function classifyTopic(
 ): Promise<ClassifyResult | null> {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey || topics.length === 0) return null;
-  const client = new Anthropic({ apiKey });
+  const client = createAnthropic();
 
   const topicList = topics
     .map((t, i) => `${i}. Y${t.year} · ${t.system_name} · ${t.name_th}`)
