@@ -15,6 +15,7 @@ import {
   ChevronRight,
   MessageCircle,
   AlertCircle,
+  Video,
 } from "lucide-react";
 import { usePreCourseStore } from "@/lib/courses/stores/pre-course-store";
 import {
@@ -25,6 +26,8 @@ import {
 } from "@/lib/courses/offline/db";
 import { scheduleFlush } from "@/lib/courses/offline/sync-engine";
 import { preCourseLessons } from "@/lib/acls-reader/precourse";
+import { getVideoLessons, type VideoLesson } from "@/lib/courses/video-lessons";
+import { computeVideoCompletion } from "@/lib/courses/video-progress";
 import {
   PRE_TEST_LESSON_ID,
   PRE_TEST_PASS_PERCENT,
@@ -95,6 +98,7 @@ export default function CertificationPage() {
   const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState<{ lessonId: string; readAt: string }[]>([]);
   const [attempts, setAttempts] = useState<AttemptLike[]>([]);
+  const [videoLessons, setVideoLessons] = useState<VideoLesson[]>([]);
 
   // Hydrate everything that only exists in the browser after mount, to
   // avoid SSR/CSR mismatch (this page has no server data of its own).
@@ -137,6 +141,17 @@ export default function CertificationPage() {
     };
   }, [activeStudent?.id]);
 
+  // Video-lesson catalog doesn't depend on the active student — fetch once.
+  useEffect(() => {
+    let cancelled = false;
+    getVideoLessons().then((lessons) => {
+      if (!cancelled) setVideoLessons(lessons);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   useEffect(() => {
     if (certData.certId && !lineUnlocked) {
       track("cert_line_gate_view", { source: "cert_gate", course: "acls" });
@@ -170,10 +185,13 @@ export default function CertificationPage() {
   );
   const preTestDone = !!preTestBest?.passed;
 
-  // Online theory certification — four knowledge gates (pre-test, pre-course,
-  // post-test, EKG test). Hands-on skills are completed separately at a
-  // training center. (Video-lesson gate from the source app is deferred
-  // until video lessons are ported — see docs/acls-migration.md Phase 6.)
+  const videoComp = computeVideoCompletion(videoLessons, progress, attempts);
+
+  // Online theory certification — knowledge gates (pre-test, pre-course,
+  // post-test, EKG test, video lessons). Hands-on skills are completed
+  // separately at a training center. The video-lesson gate only activates
+  // once at least one required video lesson is configured, so it never
+  // blocks certs issued before video lessons existed.
   const requirements = [
     {
       label: `ผ่าน Pre-test ≥ ${PRE_TEST_PASS_PERCENT}%`,
@@ -199,6 +217,16 @@ export default function CertificationPage() {
       Icon: Activity,
       to: "/acls/ekg",
     },
+    ...(videoComp.total > 0
+      ? [
+          {
+            label: `ผ่านบทเรียนวิดีโอ (${videoComp.done}/${videoComp.total})`,
+            done: videoComp.allDone,
+            Icon: Video,
+            to: "/acls/video-lessons",
+          },
+        ]
+      : []),
   ];
 
   const requirementsLoading = loading;

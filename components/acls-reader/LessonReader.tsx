@@ -75,7 +75,14 @@ function ReadBody({ body }: { body: string }) {
   );
 }
 
-export default function LessonReader({ lesson }: { lesson: Lesson }) {
+export default function LessonReader({
+  lesson,
+  nextHref = "/acls/learn",
+}: {
+  lesson: Lesson;
+  /** Where "บทเรียนถัดไป" points — pass "/bls/learn" from the BLS reader. */
+  nextHref?: string;
+}) {
   const totalSteps = lesson.steps.length;
   const quizSteps = useMemo(
     () => lesson.steps.filter((s): s is QuizStep => s.type === "quiz"),
@@ -233,7 +240,7 @@ export default function LessonReader({ lesson }: { lesson: Lesson }) {
               เริ่มบทนี้ใหม่
             </button>
             <Link
-              href="/acls/learn"
+              href={nextHref}
               className="rounded-lg bg-brand px-4 py-2 text-sm font-medium text-white hover:bg-brand/90"
             >
               บทเรียนถัดไป →

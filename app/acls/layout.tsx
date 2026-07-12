@@ -59,6 +59,12 @@ export default function AclsReaderLayout({
               บทเรียน
             </Link>
             <Link
+              href="/acls/video-lessons"
+              className="rounded-lg px-3 py-1.5 font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              วิดีโอบทเรียน
+            </Link>
+            <Link
               href="/acls/cohort"
               className="rounded-lg px-3 py-1.5 font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
