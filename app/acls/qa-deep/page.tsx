@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getQaDeep, getQaDeepChapters } from "@/lib/acls-reader/qa-deep";
+import StudentQuestionForm from "@/components/courses/StudentQuestionForm";
 
 export const revalidate = 600;
 
@@ -93,6 +94,10 @@ export default async function QaDeepIndex() {
           </ol>
         </section>
       )}
+
+      <section className="mt-12">
+        <StudentQuestionForm />
+      </section>
     </div>
   );
 }
