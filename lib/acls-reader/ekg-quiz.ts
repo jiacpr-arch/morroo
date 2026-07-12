@@ -4,6 +4,13 @@
 //   - imageUrl: real EKG image hosted under /public (e.g. /ekg/vf-01.png)
 // imageUrl takes precedence if both are set.
 
+// A run across the "all" category counted as the formal EKG test — the
+// certification page gates on having passed it at least once (localStorage,
+// matches the pre/post-test pass-tracking pattern used elsewhere in the
+// reader since EKG results aren't attempts against a DB-backed set).
+export const EKG_TEST_PASS_PERCENT = 80;
+export const EKG_TEST_PASSED_KEY = "ekg_test_passed";
+
 export const quizCategories = [
   { id: 'all', label: 'ทั้งหมด', color: 'info' },
   { id: 'arrest', label: 'Cardiac Arrest', color: 'danger' },

@@ -4,7 +4,13 @@ import { getExamQuestions, getAssessmentSets } from "@/lib/acls-reader/assessmen
 import { preCourseLessons } from "@/lib/acls-reader/precourse";
 import { isPostTestSet } from "@/lib/acls-reader/prereqs";
 import { PrereqGuard } from "@/components/acls-reader/PostTestLock";
-import Exam from "@/components/acls-reader/Exam";
+import TrackedExam from "@/components/acls-reader/TrackedExam";
+import {
+  PRE_TEST_LESSON_ID,
+  PRE_TEST_PASS_PERCENT,
+  POST_TEST_LESSON_ID,
+  POST_TEST_PASS_PERCENT,
+} from "@/lib/courses/assessment-ids";
 
 // Per-request so pool-based tests draw a fresh set each attempt.
 export const dynamic = "force-dynamic";
@@ -39,7 +45,25 @@ export default async function ExamPage({
     passingScore: l.passingScore,
   }));
 
-  const exam = <Exam questions={questions} setId={set.id} />;
+  // Pre-test / post-test attempts are tracked (Dexie + cohort sync +
+  // certification gate) under a synthetic lessonId; other reader-practice
+  // sets stay untracked and don't require the student to identify.
+  const isPreTest = set.id.startsWith("pretest");
+  const trackedLessonId = isPreTest
+    ? PRE_TEST_LESSON_ID
+    : gated
+      ? POST_TEST_LESSON_ID
+      : undefined;
+  const passPct = isPreTest ? PRE_TEST_PASS_PERCENT : gated ? POST_TEST_PASS_PERCENT : 75;
+
+  const exam = (
+    <TrackedExam
+      questions={questions}
+      setId={set.id}
+      passPct={passPct}
+      lessonId={trackedLessonId}
+    />
+  );
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">

@@ -84,6 +84,10 @@ export async function findStudentByStudentId(studentId: string) {
   return db.students.where("studentId").equals(studentId).first();
 }
 
+export async function getStudentById(id: string) {
+  return db.students.get(id);
+}
+
 export async function getAllStudents() {
   return db.students.orderBy("createdAt").reverse().toArray();
 }

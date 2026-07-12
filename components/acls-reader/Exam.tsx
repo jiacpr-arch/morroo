@@ -3,6 +3,13 @@
 import { useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import type { AssessmentQuestion } from "@/lib/acls-reader/assessment";
+import { usePreCourseStore } from "@/lib/courses/stores/pre-course-store";
+import {
+  saveQuizAttempt,
+  markLessonRead,
+  getAttemptCount,
+} from "@/lib/courses/offline/db";
+import { scheduleFlush } from "@/lib/courses/offline/sync-engine";
 
 const TOPIC_LABELS: Record<string, string> = {
   overview: "ภาพรวม",
@@ -24,14 +31,25 @@ export default function Exam({
   questions,
   setId,
   passPct = 75,
+  lessonId,
+  onSubmitted,
 }: {
   questions: AssessmentQuestion[];
   setId: string;
   passPct?: number;
+  /**
+   * When set, the attempt is also written to the local Dexie store under
+   * this synthetic lesson id (e.g. "pre-test" / "post-test") so the
+   * certification/results pages and cohort sync can see it. Omit for the
+   * free-practice reader tests, which stay localStorage-only.
+   */
+  lessonId?: string;
+  onSubmitted?: (result: { pct: number; passed: boolean }) => void;
 }) {
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
   const startedAtRef = useRef<string>(new Date().toISOString());
+  const activeStudent = usePreCourseStore((s) => s.activeStudent);
 
   if (questions.length === 0) {
     return (
@@ -52,7 +70,7 @@ export default function Exam({
     setAnswers((a) => ({ ...a, [qId]: choiceId }));
   }
 
-  function submit() {
+  async function submit() {
     setSubmitted(true);
     if (typeof window !== "undefined") {
       try {
@@ -62,9 +80,19 @@ export default function Exam({
       } catch {
         /* ignore */
       }
+      const startedAt = startedAtRef.current;
+      const finishedAt = new Date().toISOString();
+      const attemptAnswers = questions.map((q) => ({
+        questionId: q.id,
+        choiceId: answers[q.id] ?? null,
+        correct: answers[q.id] === q.correctId,
+      }));
+      const durationSeconds = Math.round(
+        (Date.now() - new Date(startedAt).getTime()) / 1000
+      );
+
       // Fire-and-forget: persist the attempt so admin stats see it. The
       // exam result itself never depends on this call succeeding.
-      const startedAt = startedAtRef.current;
       fetch("/api/acls/attempts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -74,19 +102,44 @@ export default function Exam({
           totalQuestions: total,
           correctCount,
           passed,
-          durationSeconds: Math.round(
-            (Date.now() - new Date(startedAt).getTime()) / 1000
-          ),
-          answers: questions.map((q) => ({
-            questionId: q.id,
-            choiceId: answers[q.id] ?? null,
-            correct: answers[q.id] === q.correctId,
-          })),
+          durationSeconds,
+          answers: attemptAnswers,
+          studentLocalId: activeStudent?.id ?? null,
+          studentCode: activeStudent?.studentId ?? null,
+          studentName: activeStudent?.name ?? null,
+          studentPhone: activeStudent?.phone ?? null,
           startedAt,
-          finishedAt: new Date().toISOString(),
+          finishedAt,
         }),
       }).catch(() => {});
+
+      // When this exam represents a tracked pre/post-test (lessonId set) and
+      // a student has identified themselves, also record it in the local
+      // Dexie store so the certification/results pages and cohort sync
+      // (class-code students) pick it up.
+      if (lessonId && activeStudent) {
+        try {
+          await markLessonRead(activeStudent.id, lessonId);
+          const attemptNumber = (await getAttemptCount(activeStudent.id, lessonId)) + 1;
+          await saveQuizAttempt({
+            studentId: activeStudent.id,
+            lessonId,
+            score: pct,
+            totalQuestions: total,
+            correctCount,
+            answers: attemptAnswers,
+            startedAt,
+            finishedAt,
+            passed,
+            attemptNumber,
+          });
+          scheduleFlush();
+        } catch {
+          /* Dexie unavailable (e.g. private browsing) — attempt still recorded server-side */
+        }
+      }
     }
+    onSubmitted?.({ pct, passed });
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
