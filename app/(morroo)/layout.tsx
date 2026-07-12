@@ -17,7 +17,7 @@ import FloatingLineCta from "@/components/FloatingLineCta";
 import SignupConversion from "@/components/analytics/SignupConversion";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 import FirstVisitNudge from "@/components/FirstVisitNudge";
-import "./globals.css";
+import "../globals.css";
 
 const GA_ID = "G-D7FX2CK8JY";
 const TIKTOK_PIXEL_ID = "D80UTR3C77UEO91IVCV0";

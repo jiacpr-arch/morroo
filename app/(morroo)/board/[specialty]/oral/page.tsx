@@ -9,7 +9,7 @@ import {
 import { getBoardOralCases } from "@/lib/supabase/queries-longcase";
 import { createClient } from "@/lib/supabase/server";
 import { hasBoardAccess } from "@/lib/membership";
-import LongCaseStartButton from "@/app/longcase/LongCaseStartButton";
+import LongCaseStartButton from "@/app/(morroo)/longcase/LongCaseStartButton";
 import { BOARD_SPECIALTY_SLUGS } from "@/lib/types-board";
 import type { Metadata } from "next";
 
