@@ -27,6 +27,22 @@ create table if not exists fa_learner_links (
 create index if not exists idx_fa_learner_links_learner on fa_learner_links(learner_id);
 create index if not exists idx_fa_learner_links_auth on fa_learner_links(auth_user_id);
 
+-- Staging map for identities copied from the old firstaid deployment
+-- (line_identities there). No FK to auth.users — the old system's auth users
+-- are NOT migrated; instead the LINE callback consults this table on first
+-- login, adopts the learner_id, and mints the real fa_learner_links row.
+-- Re-copyable any time for the pre-cutover delta.
+create table if not exists fa_migrated_learners (
+  line_user_id  text primary key,
+  learner_id    uuid not null,
+  email         text,
+  display_name  text,
+  picture_url   text,
+  nurture_opted_out    boolean not null default false,
+  nurture_opted_out_at timestamptz,
+  created_at    timestamptz not null default now()
+);
+
 create table if not exists fa_lesson_progress (
   id          bigserial primary key,
   learner_id  uuid not null,
@@ -128,6 +144,7 @@ create table if not exists fa_course_interest (
 );
 
 -- RLS on, no policies: service-role only.
+alter table fa_migrated_learners enable row level security;
 alter table fa_learner_links enable row level security;
 alter table fa_lesson_progress enable row level security;
 alter table fa_quiz_attempts enable row level security;

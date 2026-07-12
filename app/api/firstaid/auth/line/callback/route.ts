@@ -264,10 +264,25 @@ export async function GET(request: Request) {
       }
     }
 
-    // Determine the canonical learner id: adopt the anonymous device learner
-    // id when the cookie holds a valid uuid (pre-login progress carries over
-    // for free), otherwise mint a fresh one.
-    learnerId = isUuid(deviceLearnerId) ? deviceLearnerId : crypto.randomUUID();
+    // Determine the canonical learner id. Precedence:
+    // 1. fa_migrated_learners — identities copied from the old firstaid
+    //    deployment (no auth user was pre-created there, so the mapping to
+    //    their historical progress/certificates lives in this staging table
+    //    until first login mints the real fa_learner_links row).
+    // 2. The anonymous device learner id cookie (pre-login progress carries
+    //    over for free).
+    // 3. A fresh uuid.
+    const { data: migrated } = await supabase
+      .from("fa_migrated_learners")
+      .select("learner_id")
+      .eq("line_user_id", lineProfile.userId)
+      .maybeSingle();
+
+    if (migrated?.learner_id) {
+      learnerId = migrated.learner_id as string;
+    } else {
+      learnerId = isUuid(deviceLearnerId) ? deviceLearnerId : crypto.randomUUID();
+    }
 
     if (link) {
       // A link row existed without an auth_user_id (shouldn't happen in
@@ -312,6 +327,11 @@ export async function GET(request: Request) {
           console.error("fa_learner_links insert failed:", linkInsertError);
           return failRedirect("line_link_failed");
         }
+      } else {
+        // Migrated learners log in with a canonical id that differs from the
+        // device's anonymous id — fold any pre-login progress into it (no-op
+        // when the two ids match).
+        await adoptDeviceProgress(supabase, learnerId, deviceLearnerId);
       }
     }
   }

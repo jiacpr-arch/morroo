@@ -25,9 +25,13 @@ Supabase ของ morroo
 2. LINE Developers console (channel ของ firstaid): เพิ่ม callback URL
    `https://firstaid.morroo.com/api/firstaid/auth/line/callback`
    (+ URL ของ preview ถ้าจะทดสอบ login บน preview)
-3. Dry-run สคริปต์ migrate กับ Supabase branch ก่อน:
+3. ย้ายข้อมูล: ทำแล้วผ่าน Supabase MCP (12 ก.ค. 2026) — ตาราง firstaid ใน
+   โปรเจกต์ **jia-unified** (`tpoiyykbgsgnrdwzgzvn` ซึ่งเป็นโปรเจกต์ร่วมกับระบบอื่นของ Jia
+   ห้ามปิดทิ้ง) ถูก copy เข้าโปรเจกต์ morroo (`knxidnzexqehusndquqg`) แล้ว
+   identity เก่าอยู่ใน `fa_migrated_learners` (ไม่สร้าง auth user ล่วงหน้า — callback
+   จะ adopt learner_id เดิมตอน login ครั้งแรก) ถ้าต้องรันซ้ำเอง:
    ```
-   node scripts/firstaid/migrate/01-links-and-users.mjs
+   node scripts/firstaid/migrate/01-links-and-users.mjs   # line_identities → fa_migrated_learners
    node scripts/firstaid/migrate/02-certificates.mjs
    node scripts/firstaid/migrate/03-progress.mjs
    node scripts/firstaid/migrate/04-entitlements.mjs
@@ -39,8 +43,9 @@ Supabase ของ morroo
 
 ## ลำดับ cutover (~1 ชม. ย้อนกลับได้)
 
-1. Snapshot Supabase เก่า
-2. รันสคริปต์ migrate 01→04 กับโปรดักชัน
+1. Snapshot Supabase เก่า (jia-unified)
+2. Sync delta: รันสคริปต์ 01→04 ซ้ำ (หรือให้ Claude รันผ่าน Supabase MCP)
+   เพื่อเก็บข้อมูลที่เขียนบนระบบเก่าหลังการ copy รอบแรก
 3. Vercel: ย้ายโดเมน `firstaid.morroo.com` จากโปรเจกต์เก่า → โปรเจกต์ morroo (DNS ไม่ต้องแก้)
 4. รันสคริปต์ migrate ซ้ำ (เก็บ delta ที่เขียนระหว่างสลับ)
 5. ตรวจสด:
