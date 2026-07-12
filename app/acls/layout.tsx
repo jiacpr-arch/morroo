@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { HeartPulse } from "lucide-react";
+import SyncEngineMount from "@/components/courses/SyncEngineMount";
 
 export const metadata: Metadata = {
   title: {
@@ -57,9 +58,16 @@ export default function AclsReaderLayout({
             >
               บทเรียน
             </Link>
+            <Link
+              href="/acls/cohort"
+              className="rounded-lg px-3 py-1.5 font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              ห้องเรียน
+            </Link>
           </div>
         </div>
       </div>
+      <SyncEngineMount />
       {children}
     </div>
   );

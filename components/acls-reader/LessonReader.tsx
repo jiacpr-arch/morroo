@@ -1,8 +1,15 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { usePreCourseStore } from "@/lib/courses/stores/pre-course-store";
+import {
+  markLessonRead,
+  saveQuizAttempt,
+  getAttemptCount,
+} from "@/lib/courses/offline/db";
+import { scheduleFlush } from "@/lib/courses/offline/sync-engine";
 
 interface ReadStep {
   type: "read";
@@ -106,6 +113,46 @@ export default function LessonReader({ lesson }: { lesson: Lesson }) {
     if (score > prev) window.localStorage.setItem(key, String(score));
   }, [isOnSummary, score, lesson.id]);
 
+  // When a student identity exists (class/offline course mode), also record
+  // the read + quiz attempt in Dexie so it syncs to the cohort dashboard.
+  // localStorage above stays untouched — it still drives the prereq gates.
+  const startedAtRef = useRef<string>(new Date().toISOString());
+  const attemptSavedRef = useRef(false);
+  useEffect(() => {
+    if (!isOnSummary || attemptSavedRef.current) return;
+    const activeStudent = usePreCourseStore.getState().activeStudent;
+    if (!activeStudent) return;
+    attemptSavedRef.current = true;
+
+    const detailed = quizSteps.map((q) => {
+      const chosen = answers[q.id] || null;
+      return { questionId: q.id, chosenId: chosen, correct: chosen === q.correctId };
+    });
+    const finishedAt = new Date().toISOString();
+
+    void (async () => {
+      try {
+        await markLessonRead(activeStudent.id, lesson.id);
+        const prevCount = await getAttemptCount(activeStudent.id, lesson.id);
+        await saveQuizAttempt({
+          studentId: activeStudent.id,
+          lessonId: lesson.id,
+          score,
+          totalQuestions: totalQuiz,
+          correctCount: correctSoFar,
+          answers: detailed,
+          startedAt: startedAtRef.current,
+          finishedAt,
+          passed,
+          attemptNumber: prevCount + 1,
+        });
+        scheduleFlush();
+      } catch {
+        // Best-effort offline persistence — never block the summary screen.
+      }
+    })();
+  }, [isOnSummary, quizSteps, answers, score, totalQuiz, correctSoFar, passed, lesson.id]);
+
   const progressPct = Math.round((Math.min(stepIndex, totalSteps) / totalSteps) * 100);
   const quizUnanswered = step?.type === "quiz" && !answers[step.id];
 
@@ -178,6 +225,8 @@ export default function LessonReader({ lesson }: { lesson: Lesson }) {
               onClick={() => {
                 setAnswers({});
                 setStepIndex(0);
+                startedAtRef.current = new Date().toISOString();
+                attemptSavedRef.current = false;
               }}
               className="rounded-lg border border-border px-4 py-2 text-sm font-medium hover:bg-muted/40"
             >
