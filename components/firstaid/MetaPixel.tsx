@@ -8,45 +8,41 @@ import { usePathname } from "next/navigation";
 // fallback: when NEXT_PUBLIC_FIRSTAID_META_PIXEL_ID is unset (local dev,
 // previews, forks) the pixel stays off so those environments never send events
 // to the real production pixel.
+//
+// window.fbq's type is declared once repo-wide in lib/analytics/conversions.ts
+// as (...args: unknown[]) => void — don't redeclare it here.
 const PIXEL_ID = process.env.NEXT_PUBLIC_FIRSTAID_META_PIXEL_ID || "";
 
-type Fbq = {
-  (...args: unknown[]): void;
+type FbqStub = ((...args: unknown[]) => void) & {
   callMethod?: (...args: unknown[]) => void;
   queue: unknown[];
-  push: Fbq;
+  push: unknown;
   loaded: boolean;
   version: string;
 };
 
-declare global {
-  interface Window {
-    fbq?: Fbq;
-    _fbq?: Fbq;
-  }
-}
-
 // Typed equivalent of Meta's stock bootstrap snippet: install a queueing fbq
 // stub, then load fbevents.js which drains the queue.
-function installFbq() {
-  if (window.fbq) return;
+function installFbq(): FbqStub {
   const fbq = ((...args: unknown[]) => {
     if (fbq.callMethod) {
       fbq.callMethod(...args);
     } else {
       fbq.queue.push(args);
     }
-  }) as Fbq;
+  }) as FbqStub;
   fbq.queue = [];
   fbq.push = fbq;
   fbq.loaded = true;
   fbq.version = "2.0";
   window.fbq = fbq;
-  if (!window._fbq) window._fbq = fbq;
+  const w = window as unknown as Record<string, unknown>;
+  if (!w._fbq) w._fbq = fbq;
   const script = document.createElement("script");
   script.async = true;
   script.src = "https://connect.facebook.net/en_US/fbevents.js";
   document.head.appendChild(script);
+  return fbq;
 }
 
 export default function MetaPixel() {
@@ -54,8 +50,8 @@ export default function MetaPixel() {
 
   useEffect(() => {
     if (!PIXEL_ID || window.fbq) return;
-    installFbq();
-    window.fbq!("init", PIXEL_ID);
+    const fbq = installFbq();
+    fbq("init", PIXEL_ID);
   }, []);
 
   useEffect(() => {

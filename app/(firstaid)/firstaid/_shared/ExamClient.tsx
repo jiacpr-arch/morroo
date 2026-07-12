@@ -96,11 +96,13 @@ export default function ExamClient({ kind }: { kind: "pre" | "post" }) {
         }),
       });
       if (!res.ok) throw new Error(`submit failed (${res.status})`);
+      // Server response keeps the old handler's field names
+      // (correctCount/totalQuestions), same as api/exams/submit.js before.
       const data = (await res.json()) as {
         score: number;
         passed: boolean;
-        correct: number;
-        total: number;
+        correctCount: number;
+        totalQuestions: number;
       };
       if (kind === "pre") markPreTestDone();
       else markPostTestDone();
@@ -108,15 +110,15 @@ export default function ExamClient({ kind }: { kind: "pre" | "post" }) {
         kind,
         score: data.score,
         passed: data.passed,
-        correctCount: data.correct,
-        totalQuestions: data.total,
+        correctCount: data.correctCount,
+        totalQuestions: data.totalQuestions,
       });
       setDone({
         kind,
         score: data.score,
         passed: data.passed,
-        correctCount: data.correct,
-        totalQuestions: data.total,
+        correctCount: data.correctCount,
+        totalQuestions: data.totalQuestions,
         answers,
         finishedAt,
       });

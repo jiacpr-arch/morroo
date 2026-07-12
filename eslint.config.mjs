@@ -39,6 +39,19 @@ const eslintConfig = defineConfig([
       ],
     },
   },
+  // firstaid section: components/pages ported verbatim from the Vite app —
+  // course-content shapes (lessons/scenarios/algorithms) live in plain JS
+  // data files, so `any` at those boundaries is expected rather than a bug.
+  {
+    files: [
+      "app/(firstaid)/**",
+      "components/firstaid/**",
+      "lib/firstaid/**",
+    ],
+    rules: {
+      "@typescript-eslint/no-explicit-any": "warn",
+    },
+  },
 ]);
 
 export default eslintConfig;
