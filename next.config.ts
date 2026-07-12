@@ -21,6 +21,13 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "*.supabase.co", pathname: "/storage/v1/object/public/**" },
     ],
   },
+  async redirects() {
+    return [
+      // ACLS reader moved under /acls when the full course migrated in
+      { source: "/acls-reader", destination: "/acls", permanent: false },
+      { source: "/acls-reader/:path*", destination: "/acls/:path*", permanent: false },
+    ];
+  },
 };
 
 // Only wrap with Sentry's build plugin when SENTRY_DSN is configured. This

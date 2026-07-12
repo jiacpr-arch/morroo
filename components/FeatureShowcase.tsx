@@ -76,7 +76,7 @@ const FEATURES: Feature[] = [
     desc: "ฝึกข้อสอบ MCQ ตาม Blueprint จริงของแต่ละราชวิทยาลัยฯ ทบทวนตรงโครงสอบ",
   },
   {
-    href: "/acls-reader",
+    href: "/acls",
     icon: Zap,
     iconBg: "bg-emerald-100",
     iconText: "text-emerald-600",

@@ -79,7 +79,7 @@ export default function ReaderProgress({
               return (
                 <li key={s.id} className="flex items-center justify-between text-sm">
                   <Link
-                    href={`/acls-reader/test/${s.id}`}
+                    href={`/acls/test/${s.id}`}
                     className="text-muted-foreground hover:text-foreground"
                   >
                     {s.title}

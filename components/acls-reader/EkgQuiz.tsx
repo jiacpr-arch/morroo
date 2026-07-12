@@ -6,6 +6,8 @@ import {
   rhythmLabels,
   shuffleOptions,
   quizCategories,
+  EKG_TEST_PASS_PERCENT,
+  EKG_TEST_PASSED_KEY,
 } from "@/lib/acls-reader/ekg-quiz";
 import EKGWaveform from "@/components/acls-reader/EKGWaveform";
 import { cn } from "@/lib/utils";
@@ -75,6 +77,15 @@ export default function EkgQuiz() {
 
   if (finished) {
     const pct = order.length ? Math.round((score / order.length) * 100) : 0;
+    // The "all" category run is the formal EKG test the certification page
+    // gates on; a passing score here unlocks that requirement.
+    if (cat === "all" && pct >= EKG_TEST_PASS_PERCENT && typeof window !== "undefined") {
+      try {
+        window.localStorage.setItem(EKG_TEST_PASSED_KEY, "true");
+      } catch {
+        /* ignore */
+      }
+    }
     return (
       <div>
         {catChips}

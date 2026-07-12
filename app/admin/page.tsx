@@ -22,6 +22,7 @@ import {
   GraduationCap,
   Newspaper,
   Flag,
+  HeartPulse,
 } from "lucide-react";
 
 interface HeatmapCell {
@@ -370,6 +371,19 @@ export default function AdminDashboard() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">ดูสถานะการโพสต์ Instagram และกด retry บทความที่ failed</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/acls">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-red-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <HeartPulse className="h-5 w-5 text-red-600" />
+                <h3 className="font-bold">จัดการคอร์ส ACLS/BLS</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">คลังความรู้ · Q&amp;A เชิงลึก · วิดีโอบทเรียน · ข้อสอบ · นักเรียน · ใบประกาศนียบัตร</p>
             </CardContent>
           </Card>
         </Link>
