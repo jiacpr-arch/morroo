@@ -9,6 +9,7 @@ export function createClient() {
     return {
       auth: {
         getUser: async () => ({ data: { user: null }, error: null }),
+        getSession: async () => ({ data: { session: null }, error: null }),
         signInWithPassword: async () => ({ data: { user: null, session: null }, error: { message: "Supabase ยังไม่ได้ตั้งค่า กรุณาตั้งค่า .env.local" } }),
         signUp: async () => ({ data: { user: null, session: null }, error: { message: "Supabase ยังไม่ได้ตั้งค่า กรุณาตั้งค่า .env.local" } }),
         signInWithOAuth: async () => ({ data: { url: null, provider: null }, error: { message: "Supabase ยังไม่ได้ตั้งค่า" } }),

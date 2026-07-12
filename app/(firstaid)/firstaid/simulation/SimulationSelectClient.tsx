@@ -58,6 +58,23 @@ export default function SimulationSelectClient() {
         </div>
       </div>
 
+      {/* เกมด่าน BLS — โหมดท้าทายต่อจากฉากฝึกปกติ */}
+      <Link href="/bls">
+        <div
+          className="card"
+          style={{
+            marginTop: 16, display: "flex", alignItems: "center", gap: 12,
+            borderColor: "#FCA5A5", background: "#FEF2F2",
+          }}
+        >
+          <span style={{ fontSize: 28 }}>🫀</span>
+          <div style={{ flex: 1 }}>
+            <div className="text-headline" style={{ color: "#991B1B" }}>เกมฝึก BLS 8 ด่าน</div>
+            <div className="text-caption">เคสต่อเนื่องจับเวลา เลือกแล้วล็อก · ผ่านครบปลดข้อสอบรวม</div>
+          </div>
+        </div>
+      </Link>
+
       {grouped.map(
         (c) =>
           c.scenarios.length > 0 && (

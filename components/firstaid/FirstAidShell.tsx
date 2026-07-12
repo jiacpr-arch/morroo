@@ -48,6 +48,20 @@ export default function FirstAidShell({
     setMounted(true);
   }, []);
 
+  // persist rehydration เป็น async — ถ้าตัดสิน onboarding ก่อน hydrate เสร็จ
+  // ผู้ใช้เดิม (learner อยู่ใน localStorage) จะโดน redirect เข้า onboarding ทั้งที่
+  // ผ่านแล้ว ต้องรอ hydration ก่อนเสมอ
+  const [learnerHydrated, setLearnerHydrated] = useState(false);
+  useEffect(() => {
+    // persist API มีเฉพาะฝั่ง client — เช็คใน effect เท่านั้น (SSR ไม่มี)
+    const persistApi = useLearnerStore.persist;
+    if (!persistApi || persistApi.hasHydrated()) {
+      setLearnerHydrated(true);
+      return undefined;
+    }
+    return persistApi.onFinishHydration(() => setLearnerHydrated(true));
+  }, []);
+
   useEffect(() => {
     initPostHog();
   }, []);
@@ -98,7 +112,7 @@ export default function FirstAidShell({
   // @jiacpr หลังเรียนจบบท 1 แต่ "ไม่บังคับ" — ถ้ากด "ดูภายหลัง" (lineSkippedAt)
   // หรือแอดแล้ว (lineAdded) ก็เข้าทุกหน้าได้อิสระ
   const onboarding =
-    mounted && (!learner || (!learner.lineAdded && !learner.lineSkippedAt));
+    mounted && learnerHydrated && (!learner || (!learner.lineAdded && !learner.lineSkippedAt));
   const needsRedirect = onboarding && !ONBOARDING_ALLOWED.has(publicPath);
 
   useEffect(() => {

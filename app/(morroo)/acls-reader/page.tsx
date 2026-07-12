@@ -34,6 +34,12 @@ const tools = [
     title: "Q&A เชิงลึก",
     desc: "คำถาม-คำตอบประกอบ infographic",
   },
+  {
+    href: "/sim",
+    icon: "🚨",
+    title: "Code Blue Sim",
+    desc: "เกมจำลองกู้ชีพ — คุณคือ Team Leader",
+  },
 ];
 
 export default async function AclsReaderHome() {

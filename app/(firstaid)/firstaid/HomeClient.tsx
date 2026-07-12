@@ -10,6 +10,7 @@ import {
   UserCheck,
   MessageCircle,
   ChevronRight,
+  HeartPulse,
 } from "lucide-react";
 import CallEmergencyButton from "@/components/firstaid/CallEmergencyButton";
 import JiaAedNewsFeed from "@/components/firstaid/JiaAedNewsFeed";
@@ -42,6 +43,7 @@ const QUICK = [
   { to: "/learn", label: "เริ่มเรียน", desc: "10 บทเรียนสั้น ๆ ประมาณ 1 ชั่วโมง", icon: BookOpen, color: "#16A34A" },
   { to: "/algorithms", label: "เปิดดูตามอาการ", desc: "Flowchart ฉุกเฉิน 11 หัวข้อ", icon: Map, color: "#2563EB" },
   { to: "/simulation", label: "ฝึกสถานการณ์", desc: "ฝึกตัดสินใจกับเหตุการณ์จำลอง", icon: Activity, color: "#7C3AED" },
+  { to: "/bls", label: "เกมฝึก BLS 8 ด่าน", desc: "เคสต่อเนื่องจับเวลา ผ่านครบปลดข้อสอบรวม", icon: HeartPulse, color: "#DC2626" },
   { to: "/certificate", label: "ใบประกาศของฉัน", desc: "ดู/ดาวน์โหลดใบประกาศภาคทฤษฎีและปฏิบัติ", icon: Award, color: "#D97706" },
   { to: "/checkin", label: "เช็คชื่อภาคปฏิบัติ", desc: "สแกน QR หรือกรอกรหัสจากครูผู้สอน", icon: UserCheck, color: "#0EA5E9" },
 ];
