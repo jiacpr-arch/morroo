@@ -34,11 +34,11 @@ export default async function LessonPage({
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
       <nav className="mb-6 text-sm text-muted-foreground">
-        <Link href="/acls-reader" className="hover:text-foreground">
+        <Link href="/acls" className="hover:text-foreground">
           หน้าแรก
         </Link>
         {" / "}
-        <Link href="/acls-reader/learn" className="hover:text-foreground">
+        <Link href="/acls/learn" className="hover:text-foreground">
           บทเรียน
         </Link>
         {" / "}
@@ -55,7 +55,7 @@ export default async function LessonPage({
       {next && (
         <div className="mt-8 border-t border-border pt-4 text-sm text-muted-foreground">
           บทถัดไป:{" "}
-          <Link href={`/acls-reader/learn/${next.id}`} className="text-brand hover:underline">
+          <Link href={`/acls/learn/${next.id}`} className="text-brand hover:underline">
             {next.title}
           </Link>
         </div>

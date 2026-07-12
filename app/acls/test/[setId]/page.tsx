@@ -44,11 +44,11 @@ export default async function ExamPage({
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
       <nav className="mb-6 text-sm text-muted-foreground">
-        <Link href="/acls-reader" className="hover:text-foreground">
+        <Link href="/acls" className="hover:text-foreground">
           หน้าแรก
         </Link>
         {" / "}
-        <Link href="/acls-reader/test" className="hover:text-foreground">
+        <Link href="/acls/test" className="hover:text-foreground">
           แบบทดสอบ
         </Link>
         {" / "}

@@ -58,7 +58,7 @@ function LockedNotice({ status }: { status: PrereqStatus }) {
       <div className="mt-4 flex flex-wrap gap-2">
         {!status.preTestDone && (
           <Link
-            href="/acls-reader/test"
+            href="/acls/test"
             className="rounded-lg border border-amber-300 bg-white px-3 py-1.5 text-sm font-medium text-amber-800 hover:bg-amber-100"
           >
             ไปทำ pre-test
@@ -66,7 +66,7 @@ function LockedNotice({ status }: { status: PrereqStatus }) {
         )}
         {status.lessonsPassed < status.totalLessons && (
           <Link
-            href="/acls-reader/learn"
+            href="/acls/learn"
             className="rounded-lg border border-amber-300 bg-white px-3 py-1.5 text-sm font-medium text-amber-800 hover:bg-amber-100"
           >
             ไปเรียน pre-course
@@ -108,7 +108,7 @@ export function PostTestGate({
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {items.map((s) =>
           unlocked ? (
-            <Link key={s.id} href={`/acls-reader/test/${s.id}`} className="block">
+            <Link key={s.id} href={`/acls/test/${s.id}`} className="block">
               <Card className="h-full transition-shadow hover:shadow-md hover:ring-brand/30">
                 <CardHeader>
                   <CardTitle className="text-base">{s.title}</CardTitle>

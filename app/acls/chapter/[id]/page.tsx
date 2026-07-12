@@ -49,7 +49,7 @@ export default async function ChapterPage({
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
       <nav className="mb-6 text-sm text-muted-foreground">
-        <Link href="/acls-reader" className="hover:text-foreground">
+        <Link href="/acls" className="hover:text-foreground">
           หน้าแรก
         </Link>
         {" / "}
@@ -126,7 +126,7 @@ export default async function ChapterPage({
       <nav className="mt-14 grid grid-cols-1 gap-3 border-t border-border pt-6 sm:grid-cols-2">
         {prev ? (
           <Link
-            href={`/acls-reader/chapter/${prev.id}`}
+            href={`/acls/chapter/${prev.id}`}
             className="group rounded-xl border border-border p-4 transition-colors hover:border-brand/40 hover:bg-muted/40"
           >
             <span className="text-xs text-muted-foreground">← บทก่อนหน้า</span>
@@ -140,7 +140,7 @@ export default async function ChapterPage({
         )}
         {next ? (
           <Link
-            href={`/acls-reader/chapter/${next.id}`}
+            href={`/acls/chapter/${next.id}`}
             className="group rounded-xl border border-border p-4 text-right transition-colors hover:border-brand/40 hover:bg-muted/40 sm:col-start-2"
           >
             <span className="text-xs text-muted-foreground">บทถัดไป →</span>
@@ -156,7 +156,7 @@ export default async function ChapterPage({
 
       <div className="mt-6 text-center">
         <Link
-          href="/acls-reader"
+          href="/acls"
           className="text-sm font-medium text-brand hover:underline"
         >
           ดูบททั้งหมด

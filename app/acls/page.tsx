@@ -11,25 +11,25 @@ export const revalidate = 600;
 
 const tools = [
   {
-    href: "/acls-reader/learn",
+    href: "/acls/learn",
     icon: "🎓",
     title: "บทเรียน Pre-course",
     desc: "13 บทแบบอ่าน-ควิซ พร้อมเฉลย",
   },
   {
-    href: "/acls-reader/test",
+    href: "/acls/test",
     icon: "📝",
     title: "แบบทดสอบ",
     desc: "Pre-test / Post-test พร้อมเฉลยทุกข้อ",
   },
   {
-    href: "/acls-reader/ekg",
+    href: "/acls/ekg",
     icon: "💓",
     title: "ฝึกอ่าน EKG",
     desc: "ดูคลื่นแล้วเลือกจังหวะที่ถูกต้อง",
   },
   {
-    href: "/acls-reader/qa-deep",
+    href: "/acls/qa-deep",
     icon: "💬",
     title: "Q&A เชิงลึก",
     desc: "คำถาม-คำตอบประกอบ infographic",
@@ -76,7 +76,7 @@ export default async function AclsReaderHome() {
       </h2>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {chapters.map((c) => (
-          <Link key={c.id} href={`/acls-reader/chapter/${c.id}`} className="block">
+          <Link key={c.id} href={`/acls/chapter/${c.id}`} className="block">
             <Card className="h-full transition-shadow hover:shadow-md hover:ring-brand/30">
               <CardHeader>
                 <span className="text-3xl">{c.icon ?? "📘"}</span>

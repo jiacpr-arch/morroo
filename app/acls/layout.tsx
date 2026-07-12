@@ -20,7 +20,7 @@ export default function AclsReaderLayout({
       <div className="border-b border-border bg-white/80 backdrop-blur-md">
         <div className="mx-auto flex h-12 max-w-5xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link
-            href="/acls-reader"
+            href="/acls"
             className="flex items-center gap-2 text-sm font-semibold text-brand"
           >
             <HeartPulse className="h-4 w-4" />
@@ -28,31 +28,31 @@ export default function AclsReaderLayout({
           </Link>
           <div className="flex items-center gap-1 text-sm">
             <Link
-              href="/acls-reader"
+              href="/acls"
               className="rounded-lg px-3 py-1.5 font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               เนื้อหา ACLS
             </Link>
             <Link
-              href="/acls-reader/qa-deep"
+              href="/acls/qa-deep"
               className="rounded-lg px-3 py-1.5 font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               Q&A เชิงลึก
             </Link>
             <Link
-              href="/acls-reader/test"
+              href="/acls/test"
               className="rounded-lg px-3 py-1.5 font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               แบบทดสอบ
             </Link>
             <Link
-              href="/acls-reader/ekg"
+              href="/acls/ekg"
               className="rounded-lg px-3 py-1.5 font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               ฝึก EKG
             </Link>
             <Link
-              href="/acls-reader/learn"
+              href="/acls/learn"
               className="rounded-lg px-3 py-1.5 font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               บทเรียน

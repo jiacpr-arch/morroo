@@ -28,7 +28,7 @@ export default async function TestIndex() {
         </h2>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           {items.map((s) => (
-            <Link key={s.id} href={`/acls-reader/test/${s.id}`} className="block">
+            <Link key={s.id} href={`/acls/test/${s.id}`} className="block">
               <Card className="h-full transition-shadow hover:shadow-md hover:ring-brand/30">
                 <CardHeader>
                   <CardTitle className="text-base">{s.title}</CardTitle>

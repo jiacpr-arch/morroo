@@ -46,7 +46,7 @@ export default async function QaDeepIndex() {
           </h2>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {groupedChapters.map((c) => (
-              <Link key={c.id} href={`/acls-reader/qa-deep/${c.id}`} className="group block">
+              <Link key={c.id} href={`/acls/qa-deep/${c.id}`} className="group block">
                 <div className="flex h-full items-start gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-lg hover:shadow-brand/5">
                   <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-2xl transition-colors group-hover:bg-brand/15">
                     {c.icon ?? "❓"}
@@ -78,7 +78,7 @@ export default async function QaDeepIndex() {
             {ungrouped.map((it, i) => (
               <li key={it.id}>
                 <Link
-                  href={`/acls-reader/qa-deep/q/${it.id}`}
+                  href={`/acls/qa-deep/q/${it.id}`}
                   className="group flex items-start gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-md hover:shadow-brand/5"
                 >
                   <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand/10 text-sm font-bold text-brand transition-colors group-hover:bg-brand group-hover:text-white">

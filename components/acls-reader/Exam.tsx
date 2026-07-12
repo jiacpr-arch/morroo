@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import type { AssessmentQuestion } from "@/lib/acls-reader/assessment";
 
@@ -31,6 +31,7 @@ export default function Exam({
 }) {
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
+  const startedAtRef = useRef<string>(new Date().toISOString());
 
   if (questions.length === 0) {
     return (
@@ -61,6 +62,30 @@ export default function Exam({
       } catch {
         /* ignore */
       }
+      // Fire-and-forget: persist the attempt so admin stats see it. The
+      // exam result itself never depends on this call succeeding.
+      const startedAt = startedAtRef.current;
+      fetch("/api/acls/attempts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          setId,
+          score: pct,
+          totalQuestions: total,
+          correctCount,
+          passed,
+          durationSeconds: Math.round(
+            (Date.now() - new Date(startedAt).getTime()) / 1000
+          ),
+          answers: questions.map((q) => ({
+            questionId: q.id,
+            choiceId: answers[q.id] ?? null,
+            correct: answers[q.id] === q.correctId,
+          })),
+          startedAt,
+          finishedAt: new Date().toISOString(),
+        }),
+      }).catch(() => {});
     }
     window.scrollTo({ top: 0, behavior: "smooth" });
   }

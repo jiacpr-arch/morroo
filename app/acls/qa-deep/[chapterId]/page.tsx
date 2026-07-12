@@ -43,11 +43,11 @@ export default async function QaDeepChapterPage({
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
       <nav className="mb-6 text-sm text-muted-foreground">
-        <Link href="/acls-reader" className="hover:text-foreground">
+        <Link href="/acls" className="hover:text-foreground">
           หน้าแรก
         </Link>
         {" / "}
-        <Link href="/acls-reader/qa-deep" className="hover:text-foreground">
+        <Link href="/acls/qa-deep" className="hover:text-foreground">
           Q&A เชิงลึก
         </Link>
         {chapterTitle && (
@@ -78,7 +78,7 @@ export default async function QaDeepChapterPage({
         {items.map((it, i) => (
           <li key={it.id}>
             <Link
-              href={`/acls-reader/qa-deep/q/${it.id}`}
+              href={`/acls/qa-deep/q/${it.id}`}
               className="group flex items-start gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-md hover:shadow-brand/5"
             >
               <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand/10 text-sm font-bold text-brand transition-colors group-hover:bg-brand group-hover:text-white">
