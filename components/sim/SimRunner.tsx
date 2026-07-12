@@ -1,9 +1,9 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { AlertTriangle, Home, RefreshCw, Volume2, VolumeX, Zap } from "lucide-react";
-import { getCharacter } from "@/lib/sim/characters";
+import { resolveCharacter, type SimDbCharacter } from "@/lib/sim/characters";
 import CharacterSprite from "@/components/sim/CharacterSprite";
 import EcgMonitor from "@/components/sim/EcgMonitor";
 import {
@@ -72,9 +72,15 @@ interface SimRunnerProps {
   scenario: SimScenario;
   /** โหมดทดลองเล่น (admin playtest) — ไม่บันทึกผล/ไม่แจก XP */
   practice?: boolean;
+  /** ตัวละครจากตาราง sim_characters (เพิ่มจาก built-in 4 ตัว) */
+  characters?: SimDbCharacter[];
 }
 
-export default function SimRunner({ scenario, practice = false }: SimRunnerProps) {
+export default function SimRunner({ scenario, practice = false, characters }: SimRunnerProps) {
+  const dbCharacters = useMemo(
+    () => new Map((characters ?? []).map((c) => [c.slug, c])),
+    [characters],
+  );
   const [reducedMotion] = useState(
     () => isBrowser && window.matchMedia("(prefers-reduced-motion: reduce)").matches,
   );
@@ -588,7 +594,7 @@ export default function SimRunner({ scenario, practice = false }: SimRunnerProps
 
   // ============ GAME ============
   const st = view;
-  const char = speaker ? getCharacter(speaker.who) : null;
+  const char = speaker ? resolveCharacter(speaker.who, dbCharacters) : null;
   const plateName = plate?.name || char?.name || " ";
   const plateColors = plate ? null : char?.plate || null;
   const gameDiff = getDifficulty(st.difficulty);
@@ -625,7 +631,16 @@ export default function SimRunner({ scenario, practice = false }: SimRunnerProps
 
           {speaker && (
             <div className={`cbs-sprite ${reducedMotion ? "" : "cbs-pop"}`} key={`sp-${speaker.popN}`}>
-              <CharacterSprite charId={speaker.who} pose={speaker.pose} talking={typing} />
+              {/* motion loop แยกชั้นจาก pop-in เพื่อให้ animation ซ้อนกันได้ */}
+              <div className={!reducedMotion && char?.motion && char.motion !== "none" ? `cbs-motion-${char.motion}` : undefined}>
+                <CharacterSprite
+                  charId={speaker.who}
+                  pose={speaker.pose}
+                  talking={typing}
+                  images={char?.images}
+                  name={char?.name}
+                />
+              </div>
             </div>
           )}
 

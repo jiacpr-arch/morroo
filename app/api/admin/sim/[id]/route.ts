@@ -74,7 +74,11 @@ export async function PATCH(request: Request, context: Ctx) {
       difficultyTag: (update.difficulty_tag ?? current.difficulty_tag ?? "basic") as string,
       story: update.story ?? current.story,
     };
-    const invalid = describeScenarioError(merged);
+    const { data: dbChars } = await admin
+      .from("sim_characters")
+      .select("slug")
+      .eq("status", "active");
+    const invalid = describeScenarioError(merged, (dbChars ?? []).map((c) => c.slug));
     if (invalid) return NextResponse.json({ error: invalid }, { status: 400 });
   }
 

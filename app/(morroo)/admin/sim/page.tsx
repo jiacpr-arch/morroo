@@ -141,11 +141,16 @@ export default function AdminSimPage() {
         <ChevronLeft className="h-4 w-4" /> กลับ Dashboard
       </Link>
 
-      <div className="mb-6 flex items-center justify-between">
+      <div className="mb-6 flex flex-wrap items-center justify-between gap-2">
         <h1 className="text-2xl font-bold">Code Blue Sim — จัดการเคส</h1>
-        <Link href="/admin/sim/new">
-          <Button className="gap-2"><Plus className="h-4 w-4" /> สร้างเคสใหม่</Button>
-        </Link>
+        <div className="flex gap-2">
+          <Link href="/admin/sim/characters">
+            <Button variant="outline" className="gap-2"><Users className="h-4 w-4" /> ตัวละคร</Button>
+          </Link>
+          <Link href="/admin/sim/new">
+            <Button className="gap-2"><Plus className="h-4 w-4" /> สร้างเคสใหม่</Button>
+          </Link>
+        </div>
       </div>
 
       {/* สถิติรวม */}

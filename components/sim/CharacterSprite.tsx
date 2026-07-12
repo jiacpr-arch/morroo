@@ -1,7 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { characterImageUrl, getCharacter } from "@/lib/sim/characters";
+import {
+  GenericPlaceholder,
+  characterImageUrl,
+  getCharacter,
+} from "@/lib/sim/characters";
 import type { Pose } from "@/lib/sim/types";
 
 // จำผลโหลดรูปต่อ URL ไว้ทั้ง session — กัน request ซ้ำๆ ไปหาไฟล์ที่ไม่มี
@@ -24,17 +28,21 @@ interface Props {
   charId: string;
   pose?: Pose;
   talking?: boolean;
+  /** ตัวละครจาก DB: URL รูปต่อ pose (`${pose}` / `${pose}_talk`) จาก Supabase Storage */
+  images?: Record<string, string>;
+  /** ชื่อสำหรับ alt เมื่อเป็นตัวละคร DB */
+  name?: string;
 }
 
 /**
  * ตัวละครบนเวที — image-first + SVG placeholder fallback
  *
- * ลำดับการหา asset ต่อ (charId, pose):
- *   1. /images/sim/characters/{charId}/{pose}.webp   → ใช้รูปจริง
- *      + ถ้ามี {pose}_talk.webp จะสลับ 2 เฟรมตอน talking
- *   2. ไม่มีรูป → SVG placeholder จาก registry (ปากขยับผ่าน prop mouthOpen)
+ * ตัวละคร built-in: probe /images/sim/characters/{charId}/{pose}.webp
+ *   (+ {pose}_talk.webp) → ไม่มีรูปใช้ SVG จาก registry
+ * ตัวละคร DB (มี prop images): ใช้ URL ที่อัปโหลดไว้ตรงๆ — ท่าที่ไม่มีรูป
+ *   fallback เป็นรูปท่า idle แล้วค่อยเป็น GenericPlaceholder
  */
-export default function CharacterSprite({ charId, pose = "idle", talking = false }: Props) {
+export default function CharacterSprite({ charId, pose = "idle", talking = false, images, name }: Props) {
   const char = getCharacter(charId);
   const probeKey = `${charId}/${pose}`;
   // เก็บผล probe คู่กับ key — key ไม่ตรง = ยัง probing
@@ -43,6 +51,8 @@ export default function CharacterSprite({ charId, pose = "idle", talking = false
     result: null,
   });
   const [frame, setFrame] = useState(0);
+
+  const isDbCharacter = !char && !!images;
 
   useEffect(() => {
     if (!char) return undefined;
@@ -69,10 +79,26 @@ export default function CharacterSprite({ charId, pose = "idle", talking = false
     return () => clearInterval(iv);
   }, [talking]);
 
+  const mouthOpen = talking && frame === 1;
+
+  if (isDbCharacter) {
+    const base = images[pose] ?? images.idle;
+    if (base) {
+      const talkImg = images[`${pose}_talk`];
+      const src = mouthOpen && talkImg ? talkImg : base;
+      // eslint-disable-next-line @next/next/no-img-element -- รูปจาก Supabase Storage (URL dynamic); ไม่ใช้ next/image
+      return <img src={src} alt={name ?? charId} className="cbs-sprite-img" draggable="false" />;
+    }
+    return (
+      <div className="cbs-sprite-svg">
+        <GenericPlaceholder pose={pose} mouthOpen={mouthOpen} />
+      </div>
+    );
+  }
+
   if (!char) return null;
 
   const imgState = probe.key === probeKey ? probe.result : null; // null=probing
-  const mouthOpen = talking && frame === 1;
 
   if (imgState) {
     const src = mouthOpen && imgState.talk ? imgState.talk : imgState.base;

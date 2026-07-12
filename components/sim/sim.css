@@ -205,6 +205,23 @@
   width: min(64vw, 275px);
 }
 .cbs-sprite.cbs-pop { animation: cbs-pop .22s ease; }
+
+/* motion loop ต่อตัวละคร (เลือกจากหน้าแอดมิน) */
+@keyframes cbs-motion-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+@keyframes cbs-motion-sway {
+  0%, 100% { transform: rotate(-1.6deg); }
+  50% { transform: rotate(1.6deg); }
+}
+@keyframes cbs-motion-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+.cbs-motion-bob { animation: cbs-motion-bob 2.4s ease-in-out infinite; }
+.cbs-motion-sway { animation: cbs-motion-sway 3s ease-in-out infinite; transform-origin: 50% 100%; }
+.cbs-motion-pulse { animation: cbs-motion-pulse 1.1s ease-in-out infinite; transform-origin: 50% 100%; }
 .cbs-sprite svg, .cbs-sprite-img {
   width: 100%; display: block;
   filter: drop-shadow(0 10px 24px rgba(0, 0, 0, .45));
