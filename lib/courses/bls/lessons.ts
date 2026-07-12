@@ -1,0 +1,1168 @@
+// BLS for Healthcare Providers — pre-course lessons ported from acls-emr's
+// src/courses/bls-hcp/lessons.js. Uses the same schema as
+// lib/acls-reader/precourse.ts so the course-agnostic LessonReader engine
+// can render these directly.
+//
+// Each lesson is an array of `steps`: read step → quiz step → read step ...
+// Quiz `topic` isn't present in the BLS source data (unlike ACLS's Supabase
+// taxonomy) — set to the lesson id here since nothing besides internal
+// bookkeeping consumes it (Exam.tsx's TOPIC_LABELS map is ACLS-only; the
+// dedicated BlsPostTestExam component doesn't use lesson-quiz topics).
+//
+// IMPORTANT (kept from source): เนื้อหาในไฟล์นี้เป็น draft ที่ paraphrase จากแนวทาง
+// ILCOR 2025 + TRC ต้องผ่าน medical review โดยแพทย์ EM/ICU ก่อนปล่อย production
+// ระวังลิขสิทธิ์ ILCOR 2025 — ห้าม quote algorithm table ตรง ๆ ใช้ paraphrase เท่านั้น
+
+export interface BlsReadStep {
+  type: "read";
+  heading: string;
+  body: string;
+}
+
+export interface BlsQuizStep {
+  type: "quiz";
+  id: string;
+  topic: string;
+  question: string;
+  choices: { id: string; text: string }[];
+  correctId: string;
+  explanation: string;
+}
+
+export type BlsStep = BlsReadStep | BlsQuizStep;
+
+export interface BlsLessonDef {
+  id: string;
+  title: string;
+  description: string;
+  estMinutes: number;
+  passingScore: number;
+  steps: BlsStep[];
+}
+
+export interface BlsLesson extends BlsLessonDef {
+  sections: { heading: string; body: string }[];
+  quiz: BlsQuizStep[];
+}
+
+export const preCourseVideos = [
+  {
+    platform: "youtube",
+    label: "ดูบน YouTube",
+    url: "https://youtube.com/@jia-bu8yn",
+  },
+  {
+    platform: "tiktok",
+    label: "ดูบน TikTok",
+    url: "https://www.tiktok.com/@jia_lucksa",
+  },
+];
+
+const lessonDefs: BlsLessonDef[] = [
+  // ===================== บทที่ 1 =====================
+  {
+    id: "bls-1",
+    title: "บทที่ 1: ภาพรวม BLS และ Chain of Survival",
+    description:
+      "ห่วงโซ่การรอดชีวิตในโรงพยาบาล (IHCA) และนอกโรงพยาบาล (OHCA) บทบาทของผู้ช่วยเหลือคนแรก",
+    estMinutes: 6,
+    passingScore: 75,
+    steps: [
+      {
+        type: "read",
+        heading: "BLS คืออะไร",
+        body: "Basic Life Support (BLS) คือชุดทักษะพื้นฐานที่บุคลากรทางการแพทย์ทุกคนต้องทำได้:\n• จดจำภาวะหัวใจหยุดเต้นทันที\n• เรียกขอความช่วยเหลือ + ขอ defibrillator\n• กดหน้าอกคุณภาพสูง\n• ใช้ AED เร็วที่สุด\n• ดูแลทางเดินหายใจขั้นพื้นฐาน",
+      },
+      {
+        type: "read",
+        heading: "Universal Chain of Survival (6 links)",
+        body: "ตามแนวทางปี 2025 ใช้ Universal Chain เดียวครอบคลุมทั้งใน รพ. (IHCA) และนอก รพ. (OHCA):\n1) Early Recognition & Prevention — เฝ้าระวังสัญญาณชีพ + เรียก RRT/MET ก่อนเกิด arrest (IHCA) หรือ จดจำเหตุเร็ว (OHCA)\n2) Early High-Quality CPR — เริ่มทันที กดลึก 5–6 ซม. อัตรา 100–120/min CCF > 80%\n3) Defibrillation — AED/defib ให้เร็วที่สุดเมื่อพบ shockable rhythm\n4) Advanced Resuscitation — airway, IV/IO, ยา, capnography, ค้นหา H's & T's\n5) Post-Cardiac Arrest Care — TTM/Temperature Control, MAP target, PCI, ICU\n6) Recovery & Survivorship — ฟื้นฟูระบบประสาท, จิตใจ, การสนับสนุนครอบครัว, team debrief",
+      },
+      {
+        type: "read",
+        heading: "IHCA vs OHCA — Chain เดียว สองบริบท",
+        body: "• IHCA (ใน รพ.): มักมีสัญญาณเตือนล่วงหน้า — เน้นห่วง 1 (เฝ้าระวัง + RRT/MET/code blue ก่อน arrest)\n• OHCA (นอก รพ.): เน้น bystander CPR ทันที + AED ในชุมชน + EMS — dispatcher-assisted CPR coaching ช่วยเพิ่ม survival\n• Hands-only CPR แนะนำเฉพาะ untrained bystander; BLS-HCP ต้องช่วยหายใจเสมอ",
+      },
+      {
+        type: "quiz",
+        id: "bls-1-q1",
+        topic: "bls-1",
+        question: "พบผู้ป่วยหมดสติ ไม่ตอบสนอง ใน ward — ขั้นตอนแรกที่ควรทำคืออะไร?",
+        choices: [
+          { id: "a", text: "เริ่มกดหน้าอกทันทีก่อนเรียกใคร" },
+          { id: "b", text: "ตรวจชีพจรนาน 30 วินาที" },
+          { id: "c", text: "เรียก code blue / RRT พร้อมขอ defibrillator" },
+          { id: "d", text: "ไปตามแพทย์เวรเอง" },
+        ],
+        correctId: "c",
+        explanation:
+          "IHCA: เมื่อจดจำเหตุได้ ต้อง activate code blue / RRT ทันที พร้อมขอ defibrillator การช่วยเหลือคนเดียวเสียเวลา",
+      },
+      {
+        type: "quiz",
+        id: "bls-1-q2",
+        topic: "bls-1",
+        question: "Universal Chain of Survival (2025) มีกี่ห่วง และห่วงสุดท้ายคืออะไร?",
+        choices: [
+          { id: "a", text: "5 ห่วง — ห่วงสุดท้าย Post-cardiac arrest care" },
+          { id: "b", text: "6 ห่วง — ห่วงสุดท้าย Recovery & Survivorship" },
+          { id: "c", text: "4 ห่วง — ห่วงสุดท้าย Defibrillation" },
+          { id: "d", text: "แยกตาม IHCA/OHCA ไม่มีจำนวนตายตัว" },
+        ],
+        correctId: "b",
+        explanation:
+          "Universal Chain 2025 มี 6 ห่วง รวม IHCA + OHCA เข้าด้วยกัน; ห่วงที่ 6 (Recovery & Survivorship) เป็นห่วงใหม่ที่เน้นฟื้นฟูระยะยาวและการสนับสนุนครอบครัว",
+      },
+      {
+        type: "quiz",
+        id: "bls-1-q3",
+        topic: "bls-1",
+        question: "การตรวจชีพจรในผู้ใหญ่ที่หมดสติควรใช้เวลานานสุดเท่าไร?",
+        choices: [
+          { id: "a", text: "ไม่เกิน 10 วินาที" },
+          { id: "b", text: "15–20 วินาที" },
+          { id: "c", text: "30 วินาที" },
+          { id: "d", text: "1 นาที" },
+        ],
+        correctId: "a",
+        explanation: "ตรวจชีพจร carotid ไม่เกิน 10 วินาที — ถ้าไม่แน่ใจให้เริ่ม CPR ทันที",
+      },
+    ],
+  },
+
+  // ===================== บทที่ 2 =====================
+  {
+    id: "bls-2",
+    title: "บทที่ 2: CPR คุณภาพสูงในผู้ใหญ่",
+    description: "อัตรา ความลึก การคืนตัวของหน้าอก และการลดการหยุดกดหน้าอก",
+    estMinutes: 14,
+    passingScore: 75,
+    steps: [
+      {
+        type: "read",
+        heading: "5 องค์ประกอบของ High-Quality CPR",
+        body: "1) อัตรา 100–120 ครั้ง/นาที\n2) ความลึก ในผู้ใหญ่ 5–6 ซม. (อย่างน้อย 5 ซม. ไม่เกิน 6 ซม.); เด็ก/ทารก ใช้เกณฑ์ 1/3 ของ AP diameter (เด็ก ~5 ซม., ทารก ~4 ซม.)\n3) ปล่อยให้หน้าอกคืนตัวเต็มที่ (full recoil)\n4) ลดการหยุดกดหน้าอกให้น้อยที่สุด — ทุก interruption < 10 วินาที; CCF (Chest Compression Fraction) เป้าหมาย > 80%\n5) ห้าม over-ventilation (หลังใส่ advanced airway: ผู้ใหญ่ 1 ครั้งทุก 6 วินาที = 10/นาที; เด็ก/ทารก 20–30/นาที — ดูบทที่ 7)",
+      },
+      {
+        type: "read",
+        heading: "ตำแหน่งและท่าทาง",
+        body: "• วางส้นมือบนกลางหน้าอก ครึ่งล่างของกระดูก sternum\n• ประสานมือทั้งสอง แขนเหยียดตรง ไหล่อยู่เหนือมือ ใช้น้ำหนักตัวกด\n• ผู้ป่วยควรอยู่บนพื้นแข็ง (backboard ถ้าอยู่บนเตียงนุ่ม)",
+      },
+      {
+        type: "read",
+        heading: "⚠ BLS-HCP: ต้องช่วยหายใจเสมอ",
+        body: 'Hand-only CPR (กดอย่างเดียว) เป็นทางเลือกสำหรับ lay rescuer เท่านั้น\n• BLS-HCP ในโรงพยาบาลใช้ BVM (Ambu bag) + O₂ high flow เป็นหลัก — มีอุปกรณ์ครบ ใช้ได้เลย\n• Pocket mask / face shield = ทางเลือกสำรองกรณีไม่มี BVM หรือยังไม่ถึงตำแหน่ง\n• ไม่มี advanced airway (ผู้ใหญ่) → 30:2 (กด 30 ครั้ง บีบ Ambu 2 ครั้ง)\n• หลังใส่ ETT / SGA / LMA → continuous compressions + บีบ Ambu:\n   - ผู้ใหญ่: 1 ครั้งทุก 6 วินาที (10/min)\n   - เด็ก/ทารก: 1 ครั้งทุก 2–3 วินาที (20–30/min) ตาม ILCOR 2020+\n• บีบ Ambu 1 วินาทีต่อครั้ง พอเห็นหน้าอกขึ้น — อย่าบีบแรง/เร็ว (กัน gastric inflation)',
+      },
+      {
+        type: "read",
+        heading: "การเปิดทางเดินหายใจ (Airway Opening)",
+        body: "• Head-tilt/chin-lift — ท่ามาตรฐานสำหรับผู้ป่วยทั่วไปที่ไม่สงสัย trauma: มือหนึ่งกดหน้าผากเอียงศีรษะไปด้านหลัง อีกมือใช้ปลายนิ้วยกปลายคางขึ้น (ห้ามกดเนื้อใต้คางจนทางเดินหายใจตีบ)\n• Jaw-thrust — ใช้เมื่อสงสัย trauma หรือบาดเจ็บกระดูกสันหลังส่วนคอ: ไม่เอียงศีรษะ ใช้มือทั้งสองข้างจับมุมขากรรไกรล่างแล้วดันขึ้นมาทางด้านหน้า\n• ถ้า jaw-thrust เปิดทางเดินหายใจไม่ได้ผล ให้เปลี่ยนกลับมาใช้ head-tilt/chin-lift ทันที แม้จะสงสัย trauma ก็ตาม — ทางเดินหายใจโล่งสำคัญกว่าเสมอ",
+      },
+      {
+        type: "read",
+        heading: "เทคนิคการช่วยหายใจด้วย BVM",
+        body: '• 1 ผู้ช่วยเหลือ — ใช้ EC-clamp technique: นิ้วโป้งกับนิ้วชี้กดขอบหน้ากากให้แนบสนิทเป็นรูปตัว "C" อีก 3 นิ้วที่เหลือเกี่ยวใต้คางดึงขึ้นเป็นรูปตัว "E" (ดึงกระดูกขากรรไกร ไม่กดเนื้อใต้คาง) มืออีกข้างบีบ bag\n• 2 ผู้ช่วยเหลือ — คนหนึ่งใช้สองมือประคอง/กดหน้ากากพร้อมกัน (double EC-clamp) เพื่อให้ seal แน่นกว่า อีกคนบีบ bag เต็มมือ — แนะนำเมื่อ seal ยาก เช่น มีเครา ฟันปลอมหลุด หรือใบหน้าผิดรูป\n• สังเกต mask seal ไม่สนิท (ลมรั่ว, หน้าอกไม่ยก) ให้ปรับท่าหรือเปลี่ยนเป็น 2-rescuer ทันที ไม่ต้องรอ\n• บีบพอเห็นหน้าอกยก ~1 วินาที/ครั้ง — อย่าบีบแรง/เร็วเกิน (กัน gastric inflation ตามที่กล่าวไว้ข้างต้น)',
+      },
+      {
+        type: "read",
+        heading: "Pocket Mask และ Mouth-to-Mouth",
+        body: "• Pocket mask / mouth-to-mask — ใช้เมื่อยังไม่มี BVM หรือ BVM มาไม่ทัน มี one-way valve กันผู้ช่วยเหลือสัมผัสสิ่งคัดหลั่งของผู้ป่วยโดยตรง วาง seal บนใบหน้าคล้ายเทคนิค EC-clamp แล้วผู้ช่วยเหลือเป่าลมเองผ่านรูวาล์ว\n• Mouth-to-mouth — ทางเลือกสุดท้ายเมื่อไม่มีอุปกรณ์ป้องกันใด ๆ เลย (เช่น กรณี BLS-HCP อยู่ในบทบาทผู้พบเหตุนอกโรงพยาบาล): ใช้ face shield/barrier device ถ้ามีติดตัว บีบจมูกผู้ป่วยให้แน่น เปิดปากเป่าลมพอเห็นหน้าอกยก ~1 วินาที/ครั้ง\n• หลักการเดียวกันทุกวิธี: เป่า/บีบพอเห็นหน้าอกยก ไม่มากไม่เร็วเกิน",
+      },
+      {
+        type: "read",
+        heading: "สถานการณ์พิเศษในการช่วยหายใจ",
+        body: "• ผู้ป่วยมี stoma/tracheostomy — seal หน้ากากหรือปากที่ตัว stoma/tube โดยตรง ไม่ใช่ปาก-จมูก ถ้าลมยังรั่วออกทางปาก/จมูกให้ปิดเสริมด้วยมือหรือหน้ากากเล็ก\n• ฟันปลอม — ถ้าแนบสนิทดีให้คงไว้ (ช่วยให้ mask seal แนบสนิทกว่า) ถอดออกเฉพาะเมื่อหลวม แตก หรือกีดขวางทางเดินหายใจ\n• อาเจียน/สิ่งคัดหลั่งในปาก — เอียงศีรษะหรือตะแคงตัวผู้ป่วยเพื่อให้สิ่งคัดหลั่งไหลออก หรือ suction ถ้ามีอุปกรณ์ เคลียร์เท่าที่มองเห็นก่อนช่วยหายใจต่อ\n• Respiratory arrest ที่ยังมีชีพจร (หายใจไม่พอหรือไม่หายใจ แต่คลำชีพจรได้) — เปิดทางเดินหายใจ + ช่วยหายใจอย่างเดียว ไม่กดหน้าอก อัตราผู้ใหญ่ 1 ครั้งทุก 6 วินาที (~10 ครั้ง/นาที) ประเมินชีพจรซ้ำทุก ~2 นาที ถ้าคลำชีพจรไม่ได้เมื่อไรให้เริ่ม CPR ทันที (คนละสถานการณ์กับการช่วยหายใจหลังใส่ advanced airway ระหว่าง CPR แม้อัตราจะเท่ากัน)",
+      },
+      {
+        type: "quiz",
+        id: "bls-2-q1",
+        topic: "bls-2",
+        question: "อัตราการกดหน้าอกในผู้ใหญ่ตามแนวทาง ILCOR 2025 คือเท่าไร?",
+        choices: [
+          { id: "a", text: "60–80 ครั้ง/นาที" },
+          { id: "b", text: "80–100 ครั้ง/นาที" },
+          { id: "c", text: "100–120 ครั้ง/นาที" },
+          { id: "d", text: "มากกว่า 120 ครั้ง/นาที" },
+        ],
+        correctId: "c",
+        explanation:
+          "ILCOR 2025 แนะนำ 100–120 ครั้ง/นาที กดเร็วเกินจะกดได้ไม่ลึก กดช้าเกินจะได้ flow ไม่พอ",
+      },
+      {
+        type: "quiz",
+        id: "bls-2-q2",
+        topic: "bls-2",
+        question: "ความลึกในการกดหน้าอกในผู้ใหญ่ที่เหมาะสมคือ?",
+        choices: [
+          { id: "a", text: "2–3 ซม." },
+          { id: "b", text: "3–4 ซม." },
+          { id: "c", text: "5–6 ซม." },
+          { id: "d", text: "มากกว่า 7 ซม." },
+        ],
+        correctId: "c",
+        explanation:
+          "ผู้ใหญ่: อย่างน้อย 5 ซม. ไม่เกิน 6 ซม. — กดตื้นเกิน output ไม่พอ; กดลึกเกินเสี่ยง rib fracture (เกณฑ์ 1/3 AP diameter ใช้สำหรับเด็ก/ทารกเท่านั้น)",
+      },
+      {
+        type: "quiz",
+        id: "bls-2-q3",
+        topic: "bls-2",
+        question: "Chest Compression Fraction (CCF) เป้าหมายตามแนวทาง 2025 คือเท่าไร?",
+        choices: [
+          { id: "a", text: "> 40%" },
+          { id: "b", text: "> 60%" },
+          { id: "c", text: "> 80%" },
+          { id: "d", text: "100%" },
+        ],
+        correctId: "c",
+        explanation:
+          "แนวทางปี 2025 ระบุ CCF > 80% เป็น quality benchmark — เวลาที่กดหน้าอกจริงเทียบกับเวลารวมของ resuscitation; สูงขึ้นสัมพันธ์กับ ROSC + survival",
+      },
+      {
+        type: "quiz",
+        id: "bls-2-q4",
+        topic: "bls-2",
+        question: "ทำไมต้องปล่อยให้หน้าอกคืนตัวเต็มที่ระหว่าง compression?",
+        choices: [
+          { id: "a", text: "เพื่อพักกล้ามเนื้อผู้กด" },
+          { id: "b", text: "เพื่อให้เลือดไหลกลับเข้า heart ใน diastole (venous return)" },
+          { id: "c", text: "เพื่อให้ผู้ป่วยหายใจเอง" },
+          { id: "d", text: "ไม่มีผลทาง physiology" },
+        ],
+        correctId: "b",
+        explanation: "Incomplete recoil → ลด venous return → ลด cardiac output ของ CPR อย่างมาก",
+      },
+      {
+        type: "quiz",
+        id: "bls-2-q5",
+        topic: "bls-2",
+        question: "BLS-HCP ทำ CPR แตกต่างจาก lay rescuer อย่างไร?",
+        choices: [
+          { id: "a", text: "BLS-HCP ใช้ hand-only CPR เหมือนกัน" },
+          { id: "b", text: "BLS-HCP ต้องช่วยหายใจด้วย (30:2 หรือ 1 ครั้ง/6 วินาที หลัง advanced airway)" },
+          { id: "c", text: "BLS-HCP ไม่ต้องกดหน้าอก" },
+          { id: "d", text: "BLS-HCP ใช้ rate ต่างกัน" },
+        ],
+        correctId: "b",
+        explanation:
+          "Hand-only CPR = lay rescuer; BLS-HCP ต้องช่วยหายใจเสมอ — 30:2 (no advanced airway) หรือ 1 ครั้ง/6 วินาที (มี advanced airway)",
+      },
+      {
+        type: "quiz",
+        id: "bls-2-q6",
+        topic: "bls-2",
+        question:
+          "พบผู้ป่วยหมดสติจากอุบัติเหตุตกจากที่สูง สงสัยบาดเจ็บกระดูกสันหลังส่วนคอ ควรเปิดทางเดินหายใจด้วยวิธีใด?",
+        choices: [
+          { id: "a", text: "Head-tilt/chin-lift ตามปกติ" },
+          { id: "b", text: "Jaw-thrust โดยไม่เอียงศีรษะ" },
+          { id: "c", text: "ไม่ต้องเปิดทางเดินหายใจ รอ EMS" },
+          { id: "d", text: "ใส่ NPA ทันทีโดยไม่เปิด airway ก่อน" },
+        ],
+        correctId: "b",
+        explanation:
+          "สงสัย trauma/บาดเจ็บกระดูกสันหลังส่วนคอ ให้ใช้ jaw-thrust (ไม่เอียงศีรษะ) ก่อน ถ้าเปิดไม่ได้ผลจึงเปลี่ยนกลับมาใช้ head-tilt/chin-lift เพราะทางเดินหายใจโล่งสำคัญกว่าเสมอ",
+      },
+      {
+        type: "quiz",
+        id: "bls-2-q7",
+        topic: "bls-2",
+        question:
+          "ขณะบีบ Ambu คนเดียวด้วยเทคนิค EC-clamp พบว่าลมรั่วจากขอบหน้ากาก หน้าอกไม่ยก ควรทำอย่างไร?",
+        choices: [
+          { id: "a", text: "บีบแรงขึ้นเพื่อชดเชยลมรั่ว" },
+          { id: "b", text: "เปลี่ยนเป็น 2-rescuer BVM (double EC-clamp) ทันที" },
+          { id: "c", text: "เปลี่ยนไปทำ mouth-to-mouth แทน" },
+          { id: "d", text: "หยุดช่วยหายใจ กดหน้าอกอย่างเดียว" },
+        ],
+        correctId: "b",
+        explanation:
+          "ถ้า mask seal ไม่สนิทและหน้าอกไม่ยก ให้เปลี่ยนเป็น 2-rescuer (double EC-clamp) ทันทีเพื่อให้ seal แน่นขึ้น ไม่ควรบีบแรง/เร็วขึ้นเพราะเสี่ยง gastric inflation",
+      },
+      {
+        type: "quiz",
+        id: "bls-2-q8",
+        topic: "bls-2",
+        question: "ผู้ป่วยที่มี tracheostomy หยุดหายใจ ต้องช่วยหายใจตรงตำแหน่งใด?",
+        choices: [
+          { id: "a", text: "ปิดปากและจมูกตามปกติ" },
+          { id: "b", text: "Seal ที่ stoma/tracheostomy tube โดยตรง" },
+          { id: "c", text: "ปิดจมูกอย่างเดียว" },
+          { id: "d", text: "ไม่ต้องช่วยหายใจ รอ EMS" },
+        ],
+        correctId: "b",
+        explanation:
+          "ผู้ป่วยมี stoma/tracheostomy ต้อง seal/ช่วยหายใจที่ตัว stoma หรือ tube โดยตรง ถ้าลมยังรั่วออกทางปาก/จมูกให้ปิดเสริมด้วย",
+      },
+      {
+        type: "quiz",
+        id: "bls-2-q9",
+        topic: "bls-2",
+        question: "ผู้ป่วยคลำชีพจรได้ปกติ แต่หายใจไม่พอ (respiratory arrest) ควรช่วยเหลืออย่างไร?",
+        choices: [
+          { id: "a", text: "กดหน้าอก 30:2 ตามปกติ" },
+          {
+            id: "b",
+            text: "ช่วยหายใจอย่างเดียว 1 ครั้งทุก 6 วินาที ไม่กดหน้าอก และประเมินชีพจรซ้ำทุก ~2 นาที",
+          },
+          { id: "c", text: "ไม่ต้องทำอะไรจนกว่าจะหยุดหายใจสนิท" },
+          { id: "d", text: "ช่วยหายใจ 1 ครั้งทุก 2 วินาที" },
+        ],
+        correctId: "b",
+        explanation:
+          "Respiratory arrest ที่ยังคลำชีพจรได้ ให้ช่วยหายใจอย่างเดียว ไม่กดหน้าอก อัตราผู้ใหญ่ 1 ครั้ง/6 วินาที (~10/min) และประเมินชีพจรซ้ำเป็นระยะ ถ้าคลำไม่ได้ให้เริ่ม CPR ทันที",
+      },
+    ],
+  },
+
+  // ===================== บทที่ 3 =====================
+  {
+    id: "bls-3",
+    title: "บทที่ 3: การใช้ AED",
+    description: "การติดและใช้ Automated External Defibrillator อย่างปลอดภัยและมีประสิทธิภาพ",
+    estMinutes: 7,
+    passingScore: 75,
+    steps: [
+      {
+        type: "read",
+        heading: "4 ขั้นตอนการใช้ AED",
+        body: "1) เปิดเครื่อง — ฟังคำสั่งเสียง\n2) ติด pads ที่ตำแหน่งถูกต้อง\n3) ให้ AED วิเคราะห์ rhythm (ห้ามแตะผู้ป่วย)\n4) ถ้าแนะนำ shock — เคลียร์คนรอบ → กดปุ่ม shock → เริ่ม CPR ต่อทันที 2 นาที",
+      },
+      {
+        type: "read",
+        heading: "⚠ BLS-HCP: ใช้ AED mode เท่านั้น",
+        body: 'ใน scope ของ BLS-HCP ใช้ AED automated mode เท่านั้น\n• ไม่ต้องอ่าน rhythm strip / interpret VF/pVT/PEA/Asystole เอง\n• ไม่ต้องเลือก Joule manual — AED จัดการพลังงานให้อัตโนมัติ\n• ทำตามคำสั่งเสียง: "Shock advised" → shock; "No shock advised" → CPR ต่อ\n• Manual defibrillator + rhythm interpretation = ทักษะระดับ ACLS',
+      },
+      {
+        type: "read",
+        heading: "ตำแหน่ง pads",
+        body: '• Anterolateral: pad 1 ใต้กระดูกไหปลาร้าขวา; pad 2 กลางสีข้างซ้าย ระดับ mid-axillary line (~ICS 5–6 ระดับเดียวกับ nipple)\n• Anteroposterior: กลางอกหน้า + กลางหลัง — เป็นทางเลือก equivalent กับ anterolateral; แนะนำเมื่อมี pacemaker/ICD หรือ pads ขนาดใหญ่ทับซ้อนกัน\n• Pacemaker/ICD (คลำเป็นก้อนแข็งใต้ผิวหนัง มักอยู่ใต้ไหปลาร้าซ้าย): วางให้ห่างมากที่สุดเท่าที่ทำได้ (ควร ≥ 8 ซม. / 3.1 นิ้ว) ห้ามวางทับตัวเครื่องเด็ดขาด — ถ้าพื้นที่ไม่พอให้ยึดหลัก "ห่างเท่าที่ทำได้" เพราะ defib สำคัญที่สุด',
+      },
+      {
+        type: "read",
+        heading: "สถานการณ์พิเศษ",
+        body: "• Hairy chest: โกนเร็ว ๆ หรือใช้ pads สำรองดึงขนออก\n• Wet chest: เช็ดให้แห้งก่อนติด pads\n• Patch (ยา transdermal เช่น nitroglycerin/fentanyl): ดึงออก เช็ดยาออกก่อน — ห้าม shock ผ่าน patch (บล็อกกระแส/ผิวไหม้); ถ้าดึงไม่ทัน วาง pad ห่างจาก patch ≥ 2.5 ซม. (1 นิ้ว)\n• ในน้ำ: ย้ายผู้ป่วยขึ้นแห้งก่อน\n• เด็ก < 8 ปี หรือน้ำหนัก < 25 กก.: ใช้ pediatric pads / dose attenuator ถ้ามี; ถ้าไม่มีใช้ผู้ใหญ่ได้",
+      },
+      {
+        type: "quiz",
+        id: "bls-3-q1",
+        topic: "bls-3",
+        question: "ทันทีหลัง shock ควรทำอะไรต่อ?",
+        choices: [
+          { id: "a", text: "ตรวจชีพจรทันที" },
+          { id: "b", text: "เริ่มกดหน้าอกต่อทันที 2 นาที" },
+          { id: "c", text: "รอให้ AED วิเคราะห์ซ้ำ" },
+          { id: "d", text: "ใส่ advanced airway" },
+        ],
+        correctId: "b",
+        explanation: "หลัง shock ต้องเริ่ม CPR ต่อ 2 นาทีทันที โดยไม่ตรวจชีพจร เพื่อรักษา perfusion",
+      },
+      {
+        type: "quiz",
+        id: "bls-3-q2",
+        topic: "bls-3",
+        question: "ใช้ AED ในเด็กอายุ < 8 ปี (หรือน้ำหนัก < 25 กก.) ควรใช้อะไร?",
+        choices: [
+          { id: "a", text: "ใช้ pads ผู้ใหญ่ตามปกติ" },
+          { id: "b", text: "ใช้ pediatric pads / dose attenuator ถ้ามี (ถ้าไม่มีใช้ผู้ใหญ่ได้)" },
+          { id: "c", text: "ห้ามใช้ AED ในเด็กทุกกรณี" },
+          { id: "d", text: "รอ EMS มาเท่านั้น" },
+        ],
+        correctId: "b",
+        explanation:
+          "เด็ก < 8 ปี หรือ < 25 กก. ใช้ pediatric pads / attenuator ถ้ามี; ถ้าไม่มีให้ใช้ผู้ใหญ่ — defib เป็นชีวิต ห้ามชะลอ",
+      },
+      {
+        type: "quiz",
+        id: "bls-3-q3",
+        topic: "bls-3",
+        question: "ผู้ป่วย VF ที่มีหน้าอกเปียกน้ำ ควรทำอะไรก่อนติด AED pads?",
+        choices: [
+          { id: "a", text: "รอให้แห้งเอง" },
+          { id: "b", text: "เช็ดหน้าอกให้แห้งอย่างรวดเร็ว" },
+          { id: "c", text: "ห้ามใช้ AED" },
+          { id: "d", text: "ใส่ glove เพิ่ม" },
+        ],
+        correctId: "b",
+        explanation: "เช็ดให้แห้งเพื่อให้ pads ติดและ shock ผ่านได้ดี ห้ามรอ",
+      },
+      {
+        type: "quiz",
+        id: "bls-3-q4",
+        topic: "bls-3",
+        question: "ผู้ป่วยใส่ pacemaker อยู่ ต้องวาง pads อย่างไร?",
+        choices: [
+          { id: "a", text: "วางตรงบน pacemaker" },
+          { id: "b", text: "วางให้ห่างจาก pacemaker มากที่สุดเท่าที่ทำได้ (ควร ≥ 8 ซม.) ห้ามวางทับ" },
+          { id: "c", text: "ไม่ shock เลย" },
+          { id: "d", text: "ปิด pacemaker ก่อน" },
+        ],
+        correctId: "b",
+        explanation:
+          "หลีกเลี่ยงการวางทับ pacemaker (กระแสถูกบล็อก/เครื่องเสียหาย) — หลักคือวางห่างมากที่สุดเท่าที่ทำได้ ควร ≥ 8 ซม. (3.1 นิ้ว); ถ้าพื้นที่ไม่พอให้ห่างเท่าที่ทำได้ เพราะ defib สำคัญที่สุด (หมายเหตุ: ค่า 2.5 ซม./1 นิ้ว เป็นของแผ่นแปะยา ไม่ใช่ pacemaker)",
+      },
+      {
+        type: "quiz",
+        id: "bls-3-q5",
+        topic: "bls-3",
+        question: 'เมื่อ AED บอก "No shock advised" ขั้นตอนถัดไปคืออะไร?',
+        choices: [
+          { id: "a", text: "ตรวจชีพจรนาน 30 วินาที" },
+          { id: "b", text: "รอ AED วิเคราะห์ซ้ำเลย" },
+          { id: "c", text: "เริ่มกดหน้าอกต่อทันที 2 นาที แล้วให้ AED วิเคราะห์ใหม่" },
+          { id: "d", text: "ถอดแผ่นออกแล้วใส่ใหม่" },
+        ],
+        correctId: "c",
+        explanation:
+          '"No shock advised" → CPR ต่อทันที 2 นาที (rhythm อาจเป็น PEA/Asystole หรือ ROSC — BLS เน้น minimize interruptions ไม่ต้องเสียเวลาคลำชีพจร) AED จะวิเคราะห์รอบถัดไปอัตโนมัติ\nหมายเหตุ (HCP): ถ้าจังหวะบนจอมีระเบียบ/สงสัย ROSC คลำชีพจรสั้นๆ ≤ 10 วินาทีได้ ถ้าไม่มีชีพจรให้กดหน้าอกต่อทันที',
+      },
+      {
+        type: "quiz",
+        id: "bls-3-q6",
+        topic: "bls-3",
+        question: "BLS-HCP ใช้เครื่อง defibrillator แบบใด?",
+        choices: [
+          { id: "a", text: "Manual mode — อ่าน rhythm แล้วเลือก Joule เอง" },
+          { id: "b", text: "AED / automated mode เท่านั้น" },
+          { id: "c", text: "ใช้ได้ทุกแบบขึ้นกับว่าใครมาก่อน" },
+          { id: "d", text: "ไม่ใช้ defibrillator" },
+        ],
+        correctId: "b",
+        explanation:
+          "BLS-HCP ใช้ AED mode (อัตโนมัติ) เท่านั้น — ไม่ต้องอ่าน rhythm strip หรือเลือก Joule เอง Manual defibrillation = ทักษะระดับ ACLS",
+      },
+    ],
+  },
+
+  // ===================== บทที่ 4 =====================
+  {
+    id: "bls-1r",
+    title: "บทที่ 4: One-rescuer CPR",
+    description:
+      "การช่วยเหลือคนเดียวก่อนทีมมาถึง — CAB sequence, ใช้ AED คนเดียว, ขอความช่วยเหลือด้วย speakerphone",
+    estMinutes: 8,
+    passingScore: 75,
+    steps: [
+      {
+        type: "read",
+        heading: "หลักการ One-rescuer BLS",
+        body: "• ผู้ช่วยเหลือคนเดียว = บุคลากร/พลเรือนคนแรกที่พบเหตุ ก่อนทีม CPR/EMS มาถึง\n• เป้าหมาย: เริ่ม CPR + ขอความช่วยเหลือ + ใช้ AED ให้เร็วที่สุด โดยไม่เสียเวลากดหน้าอก\n• ใช้ speakerphone โทร 1669 / activate code blue พร้อมกดหน้าอกไปด้วยได้\n• อย่ารอความช่วยเหลือก่อนเริ่ม CPR — early CPR + early defib = survival",
+      },
+      {
+        type: "read",
+        heading: "ขั้นตอน CAB (Compression-Airway-Breathing)",
+        body: "1) Scene safety + tap and shout ปลุก\n2) ไม่ตอบสนอง → เรียก EMS / code blue ผ่าน speakerphone + ขอ AED\n3) ตรวจการหายใจ + carotid pulse พร้อมกัน ไม่เกิน 10 วินาที\n4) ไม่มี pulse หรือไม่แน่ใจ → เริ่ม CPR 30:2 ทันที (อัตรา 100–120/min)\n5) ใช้ AED ทันทีที่มาถึง วิเคราะห์ → shock → CPR ต่อ\n6) ทำต่อจนทีมมาถึง / ROSC / หมดแรง",
+      },
+      {
+        type: "read",
+        heading: "การใช้ AED คนเดียว",
+        body: "• ติด pads ระหว่างที่ยังกดหน้าอกอยู่ก็ได้ — ลดเวลา interrupt\n• หยุดกดเฉพาะตอน AED วิเคราะห์ rhythm (ห้ามแตะผู้ป่วย ~5–10 วินาที)\n• สั่งเคลียร์คนรอบ ๆ ระหว่าง analyze\n• หลัง shock → กลับมากดต่อทันที (ห้ามตรวจ pulse ก่อน)\n• ทุก 2 นาที AED จะ prompt วิเคราะห์ rhythm ซ้ำ",
+      },
+      {
+        type: "read",
+        heading: "เมื่อไหร่จึงหยุด CPR ได้",
+        body: "• ROSC: หายใจ + มี pulse กลับมา → จัดท่า recovery (ดูบทที่ 5)\n• ทีม CPR / EMS มาถึงและรับช่วงต่อ\n• หมดแรง ไม่สามารถกดต่อได้\n• สถานการณ์ไม่ปลอดภัย (เพลิงไหม้ น้ำท่วม)\n• แพทย์ประกาศยุติการช่วยเหลือ — การตัดสินใจ termination of resuscitation (TOR) เป็นดุลยพินิจของแพทย์เท่านั้น (เช่น กดหน้าอกต่อเนื่องนานโดยไม่มี ROSC และหาสาเหตุที่แก้ไขได้แล้วไม่พบ) BLS-HCP มีหน้าที่ทำ CPR ต่อเนื่องและรายงานทีม/แพทย์ ไม่ใช่ผู้ตัดสินใจยุติการช่วยเหลือเอง\n• สัญญาณเสียชีวิตที่ชัดเจน (obvious/irreversible death) ที่ผู้ช่วยเหลือรับรู้ได้ว่าไม่ควรเริ่ม (หรือควรหยุด) CPR แม้แพทย์ยังไม่มาถึง — เช่น rigor mortis (กล้ามเนื้อแข็งเกร็งหลังเสียชีวิต), dependent lividity (รอยจ้ำเลือดคั่งตามแรงโน้มถ่วง), decomposition (สภาพร่างกายเน่าเปื่อย), หรือบาดเจ็บที่ชัดเจนว่าไม่สอดคล้องกับการมีชีวิต (เช่น decapitation)\n• DNR / advance directive (คำสั่งไม่ช่วยชีวิตที่ทราบหรือมีเอกสารยืนยัน) — ให้เคารพตามที่ระบุไว้ (รายละเอียดกระบวนการเป็นส่วนของ ACLS/นโยบายโรงพยาบาล)",
+      },
+      {
+        type: "quiz",
+        id: "bls-1r-q1",
+        topic: "bls-1r",
+        question: "ผู้ช่วยเหลือคนเดียวพบผู้ป่วยหมดสติริมถนน — ขั้นตอนถูกต้องคือ?",
+        choices: [
+          { id: "a", text: "วิ่งไปตามคนช่วยก่อน แล้วค่อยกลับมาทำ CPR" },
+          { id: "b", text: "ใช้ speakerphone เรียก 1669 พร้อมประเมิน + เริ่ม CPR" },
+          { id: "c", text: "ตรวจชีพจร 30 วินาทีให้แน่ใจ" },
+          { id: "d", text: "รอ ambulance ก่อนเริ่มทำอะไร" },
+        ],
+        correctId: "b",
+        explanation:
+          "Speakerphone ทำให้เรียก EMS + ทำ CPR ได้พร้อมกัน — early CPR สำคัญต่อ survival, อย่าทิ้งผู้ป่วยไปตามคน",
+      },
+      {
+        type: "quiz",
+        id: "bls-1r-q2",
+        topic: "bls-1r",
+        question: "อัตราส่วน Compression:Ventilation ของ one-rescuer ในผู้ใหญ่คือ?",
+        choices: [
+          { id: "a", text: "15:2" },
+          { id: "b", text: "30:2" },
+          { id: "c", text: "50:2" },
+          { id: "d", text: "continuous compression อย่างเดียว" },
+        ],
+        correctId: "b",
+        explanation: "1-rescuer: 30:2 (ทั้งผู้ใหญ่/เด็ก/ทารก); 2-rescuer ในเด็ก/ทารก: 15:2",
+      },
+      {
+        type: "quiz",
+        id: "bls-1r-q3",
+        topic: "bls-1r",
+        question: "ผู้ช่วยเหลือคนเดียวกดหน้าอกอยู่ AED มาถึง — ทำอะไรต่อ?",
+        choices: [
+          { id: "a", text: "กดต่ออีก 5 นาทีค่อยใส่ AED" },
+          { id: "b", text: "ติด pads ระหว่างที่ยังกดอยู่ แล้วให้ AED วิเคราะห์" },
+          { id: "c", text: "รอจน rhythm กลับมาเอง" },
+          { id: "d", text: "ใส่ AED แล้วหยุด CPR ทั้งหมด" },
+        ],
+        correctId: "b",
+        explanation: "ติด pads ระหว่างกดเพื่อลดเวลา interrupt — early defib เพิ่ม survival อย่างมาก",
+      },
+      {
+        type: "quiz",
+        id: "bls-1r-q4",
+        topic: "bls-1r",
+        question: "ผู้ช่วยเหลือคนเดียวกดจนเหนื่อยมาก — ทำอะไรต่อ?",
+        choices: [
+          { id: "a", text: "หยุดทุกอย่าง รอ EMS" },
+          { id: "b", text: "กดต่อแม้คุณภาพลด — ทำจนคนช่วยมาถึง หรือหมดแรงจริง ๆ" },
+          { id: "c", text: "พัก 5 นาที แล้วค่อยกดใหม่" },
+          { id: "d", text: "นวดท้องแทน" },
+        ],
+        correctId: "b",
+        explanation: "การ interrupt CPR ↓ coronary perfusion → ↓ ROSC chances; กดต่อแม้คุณภาพลดยังดีกว่าหยุด",
+      },
+      {
+        type: "quiz",
+        id: "bls-1r-q5",
+        topic: "bls-1r",
+        question:
+          "ผู้ช่วยเหลือพบผู้ป่วยไม่หายใจ ตรวจพบลักษณะ rigor mortis (กล้ามเนื้อแข็งเกร็งชัดเจน) ควรทำอย่างไร?",
+        choices: [
+          { id: "a", text: "เริ่ม CPR ทันทีทุกกรณีโดยไม่ต้องประเมิน" },
+          { id: "b", text: "รับรู้เป็นสัญญาณเสียชีวิตที่ชัดเจน ไม่เริ่ม CPR และแจ้งทีม/EMS" },
+          { id: "c", text: "ทำ CPR ไปก่อนแล้วค่อยหยุดทีหลัง" },
+          { id: "d", text: "รอแพทย์มาก่อนจึงตัดสินใจทำอะไรทั้งสิ้น" },
+        ],
+        correctId: "b",
+        explanation:
+          "Rigor mortis เป็นสัญญาณ obvious/irreversible death — ผู้ช่วยเหลือรับรู้ได้และไม่ต้องเริ่ม CPR แต่ยังต้องแจ้งทีม/EMS ตามขั้นตอน",
+      },
+      {
+        type: "quiz",
+        id: "bls-1r-q6",
+        topic: "bls-1r",
+        question: 'การตัดสินใจ "ยุติการช่วยเหลือ" (termination of resuscitation) เป็นหน้าที่ของใคร?',
+        choices: [
+          { id: "a", text: "แพทย์ ตามดุลยพินิจทางคลินิก — BLS-HCP มีหน้าที่ทำ CPR ต่อเนื่องและรายงาน" },
+          { id: "b", text: "BLS-HCP คนแรกที่ไปถึงที่เกิดเหตุ" },
+          { id: "c", text: "ใครก็ได้ในทีมที่เหนื่อยที่สุด" },
+          { id: "d", text: "ต้องรอญาติเซ็นยินยอมก่อนเสมอ" },
+        ],
+        correctId: "a",
+        explanation:
+          "TOR เป็นดุลยพินิจทางคลินิกของแพทย์เท่านั้น — BLS-HCP ทำ CPR ต่อเนื่องและรายงานทีม ไม่ใช่ผู้ตัดสินใจยุติการช่วยเหลือเอง",
+      },
+    ],
+  },
+
+  // ===================== บทที่ 5 =====================
+  {
+    id: "bls-4",
+    title: "บทที่ 5: 2-rescuer CPR, Team Dynamics และ ROSC",
+    description: "การทำงานเป็นทีม สลับคนกด closed-loop communication และการดูแลหลัง ROSC",
+    estMinutes: 13,
+    passingScore: 75,
+    steps: [
+      {
+        type: "read",
+        heading: "อัตราส่วน Compression : Ventilation",
+        body: "• ไม่มี advanced airway:\n   - ผู้ใหญ่: 30:2 (ทั้ง 1 และ 2 ผู้ช่วยเหลือ)\n   - เด็ก/ทารก: 30:2 (1 ผู้ช่วยเหลือ); 15:2 (2 ผู้ช่วยเหลือ HCP)\n• มี advanced airway (ETT/SGA/LMA): continuous compressions ไม่ pause; ventilation ผู้ใหญ่ 10/min (1 ครั้ง/6 วิ), เด็ก/ทารก 20–30/min (1 ครั้ง/2–3 วิ)",
+      },
+      {
+        type: "read",
+        heading: "การสลับคนกด",
+        body: '• สลับทุก 2 นาที (หรือเร็วกว่าถ้าเหนื่อย) เพื่อรักษาคุณภาพ\n• สลับให้เร็ว ไม่หยุดเกิน 5 วินาที\n• ใช้จังหวะ "rhythm check" เป็นโอกาสสลับ\n• เมื่อ AED วิเคราะห์แล้วบอก "No shock advised" ให้ทีมคลำชีพจรสั้น ๆ (≤ 10 วินาที) ก่อนกลับไปกดต่อ — ให้คนที่กดหน้าอกอยู่เป็นคนคลำชีพจรก่อน (อยู่ตำแหน่งใกล้ผู้ป่วยอยู่แล้ว) ส่วนคนที่ช่วยหายใจให้เตรียมสลับเข้ามากดหน้าอกแทนทันทีถ้าคลำไม่ได้ชีพจร',
+      },
+      {
+        type: "read",
+        heading: "หลัก 6 ข้อของ Team Dynamics",
+        body: '1) Clear Roles — ทุกคนรู้บทบาทตัวเองและประกาศหน้าที่ตั้งแต่เริ่ม (Leader, Compressor, Airway, Defib operator, IV/Drug, Recorder)\n2) Knowing Limitations — ขอความช่วยเหลือทันทีเมื่อเกินขอบเขต ไม่รอจนเกิดความผิดพลาด\n3) Constructive Intervention — ทักท้วงอย่างสร้างสรรค์ เช่น "หยุดกดเกิน 10 วินาทีแล้ว กลับมากดก่อน"\n4) Knowledge Sharing — แบ่งปันข้อมูลและสิ่งที่สังเกตเห็นต่อเนื่อง (เช่น แนวโน้ม PEtCO₂)\n5) Closed-loop Communication — ผู้สั่งระบุชื่อ+คำสั่ง → ผู้รับทวน → รายงานเมื่อทำเสร็จ → ผู้สั่งยืนยัน\n6) Clear Message — เสียงดัง ชัด ระบุปริมาณ วิธีให้ และเวลา เช่น "Epinephrine 1 mg IV ตอนนี้"',
+      },
+      {
+        type: "read",
+        heading: "Closed-loop Communication — ตัวอย่าง",
+        body: '• Leader: "คุณ A ขอ epinephrine 1 mg IV ตอนนี้"\n• ผู้รับ: "กำลังเตรียม epinephrine 1 mg IV ครับ"\n• เมื่อทำเสร็จ: "ให้ epinephrine 1 mg IV แล้ว เวลา 14:32"\n• Leader ยืนยัน: "รับทราบ ขอบคุณ"\n• ลด miscommunication และ documentation ผิดใน high-stress environment',
+      },
+      {
+        type: "read",
+        heading: "CPR Coach — บทบาทใหม่ในทีมสมรรถนะสูง",
+        body: "CPR Coach เป็นบทบาทเสริมที่เน้นรักษาคุณภาพการกดหน้าอกตลอด resuscitation:\n• เฝ้าดูความลึก อัตรา full recoil ช่วงหยุดกดหน้าอก และความล้าของผู้กด\n• แจ้งสลับ Compressor ทันทีเมื่อคุณภาพลดลง (ไม่จำเป็นต้องรอครบ 2 นาที)\n• คุม interruption ไม่เกิน 10 วินาที — coach แบบ real-time\n• อาจทำควบคู่กับ Recorder หรือแยกตำแหน่ง ขึ้นกับจำนวนบุคลากร\n• Coach ไม่ใช่ผู้ควบคุมทีมแทน Team Leader — focus เฉพาะคุณภาพ CPR",
+      },
+      {
+        type: "quiz",
+        id: "bls-4-q1",
+        topic: "bls-4",
+        question: "ในการทำ CPR ผู้ใหญ่ที่ใส่ advanced airway แล้ว ควร ventilate อย่างไร?",
+        choices: [
+          { id: "a", text: "30:2 ตามปกติ" },
+          { id: "b", text: "1 ครั้งทุก 6 วินาที (10 ครั้ง/นาที) ร่วมกับ continuous compressions" },
+          { id: "c", text: "1 ครั้งทุก 3 วินาที" },
+          { id: "d", text: "ไม่ต้อง ventilate" },
+        ],
+        correctId: "b",
+        explanation: "หลังใส่ advanced airway: continuous compressions + 1 breath ทุก 6 วินาที ไม่ pause",
+      },
+      {
+        type: "quiz",
+        id: "bls-4-q2",
+        topic: "bls-4",
+        question: "ควรสลับคนกดหน้าอกบ่อยแค่ไหน?",
+        choices: [
+          { id: "a", text: "ทุก 30 วินาที" },
+          { id: "b", text: "ทุก 2 นาที หรือเร็วกว่าถ้าเหนื่อย" },
+          { id: "c", text: "ทุก 10 นาที" },
+          { id: "d", text: "ไม่ต้องสลับ" },
+        ],
+        correctId: "b",
+        explanation: "สลับทุก 2 นาทีเพื่อรักษาคุณภาพการกด เหนื่อยเร็วกว่าที่คิด",
+      },
+      {
+        type: "quiz",
+        id: "bls-4-q3",
+        topic: "bls-4",
+        question: "Closed-loop communication คืออะไร?",
+        choices: [
+          { id: "a", text: "การสั่งงานต่อกันเป็นทอด ๆ" },
+          { id: "b", text: "การที่ leader สั่ง → ผู้รับยืนยัน → ทำเสร็จรายงานกลับ" },
+          { id: "c", text: "การปิดประตูห้องระหว่างทำ CPR" },
+          { id: "d", text: "การส่งสัญญาณมือ" },
+        ],
+        correctId: "b",
+        explanation: "Closed-loop: สั่ง → ยืนยัน → รายงานกลับ ลด error ใน high-stress environment",
+      },
+      {
+        type: "quiz",
+        id: "bls-4-q4",
+        topic: "bls-4",
+        question: "ตามแนวทางปี 2025 ทุกการหยุดกดหน้าอก (interruption) ไม่ควรเกินกี่วินาที?",
+        choices: [
+          { id: "a", text: "5 วินาที" },
+          { id: "b", text: "10 วินาที" },
+          { id: "c", text: "20 วินาที" },
+          { id: "d", text: "30 วินาที" },
+        ],
+        correctId: "b",
+        explanation:
+          "แนวทาง 2025: limit interruption ทุกประเภท (สลับคน, AED วิเคราะห์, intubation, pulse check) ไม่เกิน 10 วินาที — เป้าฝึกของการสลับคนเองคือใน 5 วินาที แต่ formal limit ตามมาตรฐานคือ 10 วินาที",
+      },
+      {
+        type: "quiz",
+        id: "bls-4-q6",
+        topic: "bls-4",
+        question: "CPR Coach มีหน้าที่หลักคืออะไร?",
+        choices: [
+          { id: "a", text: "ควบคุมทีมแทน Team Leader" },
+          { id: "b", text: "เฝ้าดูคุณภาพการกดหน้าอก + แจ้งสลับคนเมื่อคุณภาพลด + คุม interruption ≤ 10 วิ" },
+          { id: "c", text: "ตัดสินใจให้ยา" },
+          { id: "d", text: "ใส่ advanced airway" },
+        ],
+        correctId: "b",
+        explanation:
+          "CPR Coach เป็นบทบาทเสริมที่ focus เฉพาะคุณภาพ CPR — เฝ้าดูความลึก, อัตรา, full recoil, ความล้าของผู้กด และคุมเวลาหยุดกด ไม่ใช่ผู้ควบคุมทีมแทน Team Leader",
+      },
+      {
+        type: "quiz",
+        id: "bls-4-q7",
+        topic: "bls-4",
+        question: "หลัก 6 ข้อของ Team Dynamics ประกอบด้วยอะไรบ้าง?",
+        choices: [
+          { id: "a", text: "Closed-loop + Clear Message อย่างเดียว" },
+          {
+            id: "b",
+            text: "Clear Roles, Knowing Limitations, Constructive Intervention, Knowledge Sharing, Closed-loop, Clear Message",
+          },
+          { id: "c", text: "SBAR 4 ขั้น + Debrief" },
+          { id: "d", text: "เริ่ม CPR เร็ว + ช็อกเร็ว" },
+        ],
+        correctId: "b",
+        explanation:
+          "หลัก 6 ข้อ: Clear Roles · Knowing Limitations · Constructive Intervention · Knowledge Sharing · Closed-loop Communication · Clear Message",
+      },
+      {
+        type: "read",
+        heading: "หลัง ROSC: การดูแลเบื้องต้น",
+        body: "• ตรวจชีพจร + การหายใจอีกครั้ง — มี pulse กลับมาแล้ว = Return of Spontaneous Circulation (ROSC)\n• ถ้าหายใจเองได้ปกติ แต่ยังไม่รู้สึกตัว → จัดท่า Recovery position ป้องกัน aspiration\n• ถ้าหายใจไม่พอ → rescue breath: ผู้ใหญ่ 1 ครั้งทุก 6 วินาที (10/min); เด็ก/ทารก 1 ครั้งทุก 2–3 วินาที (20–30/min)\n• Monitor ใกล้ชิด — re-arrest มีโอกาสสูงในช่วงแรก\n• ห้ามถอด pads/ปิดเครื่อง AED จนกว่าจะส่งต่อ — re-arrest จะได้ shock ได้ทันที\n• เรียก ALS / ICU team รับช่วงต่อสำหรับ post-cardiac arrest care",
+      },
+      {
+        type: "read",
+        heading: "สัญญาณบ่งชี้ ROSC — คนไข้กำลังรอด",
+        body: '• ชีพจรกลับมาคลำได้\n• เริ่มหายใจเองหรือมี gasping กลับมา — ระวังสับสนกับ agonal gasping ที่เกิดระหว่าง arrest (ไม่ใช่การหายใจที่มีประสิทธิภาพ) ต้องแยกให้ออกจากการหายใจปกติที่กลับมาจริงหลัง ROSC\n• เริ่มขยับตัว มี reflex เช่น ไอ สำลักท่อ/หน้ากาก\n• ลืมตา ตอบสนองต่อเสียงหรือความเจ็บ เริ่มรู้สึกตัว\n• สีผิวดีขึ้น จากซีด/เขียวคล้ำ กลับมาเป็นสีปกติ — สะท้อน perfusion ที่ดีขึ้น\n• พบสัญญาณเหล่านี้ระหว่าง CPR → หยุดกดสั้น ๆ ตรวจชีพจร/การหายใจทันที ไม่ต้องรอครบรอบ 2 นาที\n\nลำดับการดูแลต่อตามอาการที่พบ:\n1) มีชีพจรแต่ยังหายใจไม่พอ/ไม่หายใจ → เปิดทางเดินหายใจ + ช่วยหายใจ 1 ครั้งทุก 6 วินาที (10/min)\n2) หายใจได้ปกติแล้วแต่ยังไม่ตื่น/ไม่มีสติ → จัดท่า Recovery position\n3) ตื่น/มีสติกลับมาแล้ว → ยังไม่ถอด pads/ปิดเครื่อง AED — เฝ้าระวังต่อจนกว่าทีม EMS/ALS มาถึงและรับช่วงต่ออย่างเป็นทางการ\n\nAED ยังคงวิเคราะห์ rhythm ซ้ำทุก ~2 นาทีต่อไป แม้ผู้ป่วยจะ ROSC หรืออยู่ใน Recovery position แล้ว:\n• เมื่อเครื่องแจ้งวิเคราะห์ซ้ำ ให้พลิกผู้ป่วยกลับมานอนหงายก่อนเสมอ แล้วคลำชีพจรซ้ำ\n• ถ้าเครื่องบอก "No shock advised" และคลำชีพจรได้ → กลับไปจัดท่า Recovery position หรือช่วยหายใจต่อตามเดิม\n• ถ้าเครื่องบอก "Shock advised" (re-arrest) → shock ทันที แล้วกดหน้าอกต่อทันที 2 นาที ก่อนวิเคราะห์รอบถัดไป (flow เดียวกับการช็อกครั้งแรก)\n• หลักการเดียวกันนี้ใช้ได้กับเครื่อง defibrillator/monitor ในโรงพยาบาลเมื่อตั้งอยู่ใน AED mode เช่นกัน (ดูบทที่ 6 — BLS ในโรงพยาบาล)',
+      },
+      {
+        type: "quiz",
+        id: "bls-4-q8",
+        topic: "bls-4",
+        question: "ระหว่างทำ CPR สัญญาณใดบ่งชี้ว่าอาจเกิด ROSC แล้ว ควรหยุดกดตรวจทันที?",
+        choices: [
+          { id: "a", text: "ผู้ป่วยเริ่มขยับตัว ไอ หรือลืมตา" },
+          { id: "b", text: "หน้าอกยังคืนตัวเต็มที่ทุกครั้ง" },
+          { id: "c", text: "ผ่านไปครบ 2 นาทีพอดี" },
+          { id: "d", text: "AED ยังไม่วิเคราะห์ซ้ำ" },
+        ],
+        correctId: "a",
+        explanation:
+          "การขยับตัว ไอ สำลัก ลืมตา หรือตอบสนอง เป็นสัญญาณบ่งชี้ ROSC ที่ควรหยุดกดสั้น ๆ ตรวจชีพจร/การหายใจทันที ไม่ต้องรอครบรอบ 2 นาที",
+      },
+      {
+        type: "quiz",
+        id: "bls-4-q9",
+        topic: "bls-4",
+        question: "เหตุใดผู้ช่วยเหลือต้องระวังไม่สับสนระหว่าง agonal gasping กับการหายใจที่กลับมาจริงหลัง ROSC?",
+        choices: [
+          { id: "a", text: "เพราะทั้งสองอย่างไม่มีผลต่อการตัดสินใจ" },
+          {
+            id: "b",
+            text: "Agonal gasping ไม่ใช่การหายใจที่มีประสิทธิภาพ อาจเกิดระหว่าง arrest ทำให้เข้าใจผิดว่าไม่ต้องกดหน้าอกต่อ",
+          },
+          { id: "c", text: "Agonal gasping พบเฉพาะหลัง ROSC เท่านั้น" },
+          { id: "d", text: "ไม่มีความแตกต่างทางคลินิก" },
+        ],
+        correctId: "b",
+        explanation:
+          "Agonal gasping เป็นการหายใจที่ไม่มีประสิทธิภาพ อาจเกิดขึ้นระหว่างภาวะหัวใจหยุดเต้น หากเข้าใจผิดว่าเป็นการหายใจปกติอาจทำให้หยุด CPR ก่อนเวลาอันควร ต้องตรวจชีพจรยืนยันเสมอ",
+      },
+      {
+        type: "read",
+        heading: "Recovery Position",
+        body: "• ใช้กับผู้ป่วยที่หมดสติแต่หายใจปกติ + มีชีพจร (เช่น หลัง ROSC, opioid overdose ที่หายใจกลับ)\n1) คุกเข่าข้างผู้ป่วย\n2) จัดแขนข้างใกล้ตัวเหยียดตั้งฉากกับลำตัว\n3) จัดแขนข้างไกลตัวพาดผ่านหน้าอก ให้หลังมือแนบแก้มข้างใกล้ตัว\n4) จับขาข้างไกลตัวเหนือเข่า งอขึ้นโดยฝ่าเท้ายังติดพื้น\n5) ดึงขาที่งอเพื่อพลิกผู้ป่วยตะแคงมาทางตัวเรา โดยมือยังประคองแก้มไว้ตลอด\n6) จัดขาบนให้งอทำมุมประมาณ 90° ช่วยพยุงไม่ให้พลิกหงายกลับ\n7) เอียงศีรษะเงยขึ้นเล็กน้อยให้ทางเดินหายใจโล่ง\n• ห้ามใช้ท่านี้ถ้าสงสัย spinal injury (อุบัติเหตุ, ตกที่สูง) — เปิด airway ด้วย jaw-thrust แทน\n• ตรวจ airway + breathing ต่อเนื่อง ถ้าหยุดหายใจซ้ำ → เริ่ม CPR ทันที",
+      },
+      {
+        type: "quiz",
+        id: "bls-4-q5",
+        topic: "bls-4",
+        question: "หลัง ROSC ผู้ป่วยหายใจเองได้ปกติ แต่ยังไม่รู้สึกตัว ทำอะไรต่อ?",
+        choices: [
+          { id: "a", text: "กดหน้าอกต่อเพื่อความปลอดภัย" },
+          { id: "b", text: "จัดท่า Recovery position + monitor + รอ ALS" },
+          { id: "c", text: "ปิด AED แล้วถอด pads ออกทันที" },
+          { id: "d", text: "ปลุกด้วยการตบหน้าและน้ำเย็น" },
+        ],
+        correctId: "b",
+        explanation:
+          "ROSC + หายใจปกติ + ไม่รู้สึกตัว → Recovery position ป้องกัน aspiration + monitor (re-arrest risk สูง) + ขอ ALS; ห้ามถอด AED จนส่งต่อเสร็จ",
+      },
+      {
+        type: "read",
+        heading: "อะไรกำหนดว่าคนไข้จะรอดชีวิต",
+        body: "• เริ่ม CPR เร็ว (early recognition + early CPR) — ยิ่งเริ่มเร็ว โอกาสรอดยิ่งสูง\n• Defibrillation เร็วเมื่อพบ shockable rhythm — ดูบทที่ 1 และบทที่ 3\n• คุณภาพการกดหน้าอก — CCF > 80%, ความลึก/อัตราตามเกณฑ์, ปล่อยให้หน้าอกคืนตัวเต็มที่ (ดูบทที่ 2)\n• ลด interruption ทุกจุดให้ไม่เกิน 10 วินาที — สลับคนกด, วิเคราะห์ AED, ตรวจชีพจร\n• Bystander ลงมือช่วยทันทีไม่รอ + ส่งต่อ post-ROSC care ที่เหมาะสมให้ทีม ALS/ICU\n\nทั้งหมดนี้คือ Universal Chain of Survival 6 ห่วงจากบทที่ 1 — ทุกห่วงมีผลต่อว่าผู้ป่วยจะรอดชีวิตหรือไม่ ไม่ใช่ห่วงใดห่วงหนึ่ง",
+      },
+      {
+        type: "quiz",
+        id: "bls-4-q10",
+        topic: "bls-4",
+        question: "ปัจจัยใดมีผลต่อโอกาสรอดชีวิตของผู้ป่วย cardiac arrest มากที่สุด?",
+        choices: [
+          { id: "a", text: "การเริ่ม CPR/defibrillation เร็ว และคุณภาพการกดหน้าอกที่ดี (CCF สูง, interruption น้อย)" },
+          { id: "b", text: "จำนวนคนที่มายืนดูรอบตัว" },
+          { id: "c", text: "อายุของผู้ป่วยเพียงอย่างเดียว" },
+          { id: "d", text: "ยี่ห้อของเครื่อง AED" },
+        ],
+        correctId: "a",
+        explanation:
+          "Chain of Survival ทุกห่วงมีผล แต่ปัจจัยหลักที่ทีม/ผู้ช่วยเหลือควบคุมได้คือ เริ่ม CPR และ defibrillation เร็ว บวกกับคุณภาพการกดหน้าอกที่ดี (CCF > 80%, interruption ≤ 10 วินาที)",
+      },
+    ],
+  },
+
+  // ===================== บทที่ 6 =====================
+  {
+    id: "bls-5",
+    title: "บทที่ 6: BLS ในโรงพยาบาล — Defib ใน AED Mode",
+    description:
+      "ในโรงพยาบาลใช้ monitor/defibrillator แทน AED stand-alone — BLS provider ใช้ AED mode เพื่อ shock ได้ทันที",
+    estMinutes: 7,
+    passingScore: 75,
+    steps: [
+      {
+        type: "read",
+        heading: "ทำไม BLS ในโรงพยาบาลต่างจากนอก",
+        body: "• นอก รพ.: ใช้ AED stand-alone (เครื่องเล็ก คำสั่งเสียง ทำงาน mode เดียว)\n• ใน รพ.: ใช้ monitor/defibrillator (Philips HeartStart, Zoll R/X, Lifepak 15/20, Mindray) — เครื่องเดียวกันที่ ALS team จะใช้\n• เครื่องในโรงพยาบาลส่วนใหญ่มี 2 modes: AED mode (สำหรับ BLS provider) + Manual mode (สำหรับ ALS)\n• ข้อดี: BLS provider ที่มาถึงก่อน shock ได้ทันที ไม่ต้องรอ ALS team ตีความ rhythm",
+      },
+      {
+        type: "read",
+        heading: "ขั้นตอนใช้ Defib ใน AED Mode",
+        body: '1) เปิดเครื่อง → เลือก AED mode (ปุ่ม / สวิตช์ / เมนู ขึ้นกับรุ่น)\n2) ติด pads — anterolateral (ใต้ไหปลาร้าขวา + กลางสีข้างซ้าย ระดับ mid-axillary line) หรือ AP\n3) เครื่องวิเคราะห์ rhythm — ห้ามแตะผู้ป่วย (interruption ≤ 10 วินาที)\n4) ถ้า "shock advised": เคลียร์คนรอบ → กด shock → CPR ต่อทันที 2 นาที\n5) ถ้า "no shock advised": CPR ต่อ 2 นาที (PEA/asystole)\n6) เครื่องจะวิเคราะห์ซ้ำทุก 2 นาทีอัตโนมัติ',
+      },
+      {
+        type: "read",
+        heading: "ความแตกต่างจาก AED Stand-alone",
+        body: "• Defib + monitor: ใหญ่กว่า มี ECG display + IV port + pacing + sync cardioversion (สำหรับ ALS)\n• AED stand-alone: เล็ก พกพา ทำงาน mode เดียว\n• AED mode บน defib ทำงาน flow เหมือน AED ปกติ — คำสั่งเสียงเหมือนกัน\n• ข้อระวัง: pads ของ defib อาจมีหลายแบบ (peds vs adult) — เช็คก่อนติด",
+      },
+      {
+        type: "read",
+        heading: "การส่งต่อ BLS → ALS Team",
+        body: "• BLS provider เริ่ม AED mode ทันทีเมื่อเครื่องมาถึง — ห้ามรอ ALS\n• เมื่อ ALS team มา: หัวหน้าทีมจะ switch ไป manual mode เพื่ออ่าน rhythm ละเอียดขึ้น, ใช้ sync cardioversion / pacing\n• Hand-off ที่ดี: รายงาน (1) เวลาเริ่ม CPR (2) จำนวน shock + เวลา (3) rhythm ที่เห็น (4) ยาที่ให้ไปแล้ว — ใช้ closed-loop",
+      },
+      {
+        type: "read",
+        heading: "Vascular Access — IV ก่อน, IO ถ้าไม่สำเร็จ",
+        body: "BLS provider ที่ช่วย ALS เปิดทางให้ยา ควรเข้าใจหลัก:\n• แนวทาง 2025: เริ่ม peripheral IV ก่อน — ถ้าไม่สำเร็จใน 1–2 ครั้ง เปลี่ยนเป็น IO (intraosseous) ทันที\n• Central line ไม่จำเป็นระหว่าง resuscitation — เพิ่มความเสี่ยงและทำให้ CPR หยุดชะงัก\n• ETT route สำหรับให้ยา **ไม่แนะนำแล้ว** ใน 2025 — เปลี่ยนจากแนวทางเก่า\n• เทคนิคให้ยาทาง peripheral: bolus → flush 20 mL → ยกแขน/ขา 10–20 วินาที (ยาใช้เวลา 1–2 นาทีเข้า central circulation)",
+      },
+      {
+        type: "quiz",
+        id: "bls-5-q1",
+        topic: "bls-5",
+        question: "ทำไมในโรงพยาบาลถึงใช้ defib ที่มี AED mode แทน AED stand-alone?",
+        choices: [
+          { id: "a", text: "AED stand-alone ผิดกฎหมายในโรงพยาบาล" },
+          { id: "b", text: "เพราะเป็นเครื่องเดียวกันที่ ALS team ใช้ — BLS shock ก่อน ส่งต่อ manual mode ได้เลย" },
+          { id: "c", text: "AED stand-alone shock แรงกว่า" },
+          { id: "d", text: "ไม่ต่างกัน เลือกอันไหนก็ได้" },
+        ],
+        correctId: "b",
+        explanation:
+          "เครื่องในโรงพยาบาลเป็น defib/monitor ที่มี AED mode สำหรับ BLS + manual mode สำหรับ ALS — ใช้ต่อเนื่องไม่ต้องเปลี่ยนเครื่อง",
+      },
+      {
+        type: "quiz",
+        id: "bls-5-q2",
+        topic: "bls-5",
+        question: "BLS provider นำ defib มาถึง — ขั้นตอนแรกหลังเปิดเครื่องคืออะไร?",
+        choices: [
+          { id: "a", text: "อ่าน rhythm บนจอแล้วเลือก energy" },
+          { id: "b", text: "เลือก AED mode แล้วติด pads" },
+          { id: "c", text: "รอ ALS team มาถึงก่อน" },
+          { id: "d", text: "ใส่ IV ก่อน" },
+        ],
+        correctId: "b",
+        explanation: "BLS provider ใช้ AED mode (ไม่ได้รับการสอนอ่าน rhythm) — เลือก mode → ติด pads → ให้เครื่องวิเคราะห์",
+      },
+      {
+        type: "quiz",
+        id: "bls-5-q3",
+        topic: "bls-5",
+        question: 'หลังเครื่องในโหมด AED แนะนำ "shock advised" และ shock ไปแล้ว ทำอะไรต่อ?',
+        choices: [
+          { id: "a", text: "ตรวจชีพจรทันที" },
+          { id: "b", text: "รอเครื่องวิเคราะห์ rhythm อีกครั้ง" },
+          { id: "c", text: "เริ่ม CPR ต่อทันที 2 นาที" },
+          { id: "d", text: "Switch ไป manual mode ทันที" },
+        ],
+        correctId: "c",
+        explanation: "AED mode ใช้ flow เดียวกับ AED ปกติ: หลัง shock → CPR ต่อ 2 นาที ห้ามตรวจชีพจร",
+      },
+      {
+        type: "quiz",
+        id: "bls-5-q4",
+        topic: "bls-5",
+        question: "ALS team มาถึงระหว่าง code — ควรทำอย่างไรกับเครื่อง defib?",
+        choices: [
+          { id: "a", text: "ถอด pads ออก เปลี่ยนเครื่องใหม่" },
+          { id: "b", text: "BLS provider continue ใน AED mode ตลอด" },
+          { id: "c", text: "หัวหน้า ALS switch ไป manual mode + รับ hand-off (เวลา shock, rhythm, ยา)" },
+          { id: "d", text: "ปิดเครื่องก่อนเปลี่ยน mode" },
+        ],
+        correctId: "c",
+        explanation: "ALS team รับ hand-off แล้ว switch manual mode เพื่ออ่าน rhythm + ใช้ sync/pacing — pads เดิม ไม่ต้องถอด",
+      },
+    ],
+  },
+
+  // ===================== บทที่ 7 =====================
+  {
+    id: "bls-6",
+    title: "บทที่ 7: CPR ในทารก (< 1 ปี)",
+    description: "เทคนิคพิเศษสำหรับทารก: heel-of-1-hand / 2-thumb encircling, brachial pulse",
+    estMinutes: 12,
+    passingScore: 75,
+    steps: [
+      {
+        type: "read",
+        heading: "การตรวจชีพจรในทารก",
+        body: "ใช้ brachial pulse (inner upper arm) เป็นมาตรฐาน; femoral pulse ใช้แทนได้ — carotid ยากในทารกเพราะคอสั้น ตรวจไม่เกิน 10 วินาที\nHR < 60 + poor perfusion (แม้ให้ ventilation/O₂ เพียงพอแล้ว) → start compressions ทันที",
+      },
+      {
+        type: "read",
+        heading: "เทคนิคการกดหน้าอก",
+        body: '• Guideline ใหม่ (2025): "เลิกใช้" 2-finger technique เพราะมักกดได้ไม่ลึกพอ\n• 1 ผู้ช่วยเหลือ: ใช้ heel-of-1-hand (ฝ่ามือข้างเดียว — ส้นมือกดบน sternum ใต้เส้น nipple) หรือ 2-thumb encircling\n• 2 ผู้ช่วยเหลือ (HCP): 2-thumb encircling technique (โอบรอบหน้าอก ใช้นิ้วโป้งกด) — output ดีที่สุด; ถ้ามือเล็กโอบไม่รอบ ให้ใช้ heel-of-1-hand\n• ความลึก ~ 4 ซม. หรือ 1/3 ของ AP diameter\n• อัตรา 100–120 ครั้ง/นาที',
+      },
+      {
+        type: "read",
+        heading: "การเปิดทางเดินหายใจในทารก (Airway Opening)",
+        body: "• ใช้ท่า neutral / sniffing position — ไม่เอียงศีรษะไปด้านหลังมากเหมือนผู้ใหญ่ (ห้าม hyperextension)\n• ทารกมีปุ่มท้ายทอย (occiput) ยื่นมาก ทำให้ศีรษะเอียงไปด้านหน้าอยู่แล้วตามธรรมชาติเมื่อนอนหงาย — ถ้าเอียงศีรษะแบบผู้ใหญ่ (hyperextend) จะยิ่งบีบ/อุดทางเดินหายใจ\n• อาจรองผ้าบาง ๆ ใต้ไหล่ (ไม่ใช่ใต้ศีรษะ) เพื่อชดเชยปุ่มท้ายทอยและช่วยจัดคอให้อยู่ท่า neutral",
+      },
+      {
+        type: "read",
+        heading: "เทคนิคการช่วยหายใจในทารก (Ventilation)",
+        body: "• Mouth-to-mouth-and-nose — ใบหน้าทารกเล็ก ผู้ช่วยเหลือใช้ปากครอบทั้งปากและจมูกทารกพร้อมกัน (ต่างจากผู้ใหญ่ที่ปิดจมูกแล้วเป่าเข้าปากอย่างเดียว)\n• BVM ทารก — เลือกขนาดหน้ากากให้ครอบสนิทตั้งแต่สันจมูกถึงร่องคาง ไม่ทับตา ไม่เกินคาง ใช้ EC-clamp technique เหมือนผู้ใหญ่แต่แรงกดเบากว่ามาก\n• บีบ/เป่าพอเห็นหน้าอกยก ~1 วินาที/ครั้ง — ระวัง gastric inflation เช่นเดียวกับผู้ใหญ่ (ดูบทที่ 2)",
+      },
+      {
+        type: "read",
+        heading: "อัตราส่วน Compression : Ventilation",
+        body: "• 1-rescuer: 30:2\n• 2-rescuer (HCP): 15:2\n• AED < 1 ปี: ใช้ manual defibrillator ถ้ามี; ถ้าไม่มีใช้ AED with pediatric attenuator; ถ้าไม่มีใช้ adult AED ได้; ติด pads แบบ anteroposterior (หน้า-หลัง) มักเหมาะกว่าสำหรับทารกเพราะหน้าอกเล็ก ป้องกัน pads ทับ/ชนกัน (ดูบทที่ 3 — ตำแหน่ง pads)",
+      },
+      {
+        type: "read",
+        heading: 'ทำไมทารก/เด็กเน้น "Phone Fast" ไม่ใช่ "Phone First"',
+        body: '• สาเหตุ cardiac arrest ในทารก/เด็กส่วนใหญ่เป็น asphyxial/respiratory ในธรรมชาติ (ขาดออกซิเจนนำมาก่อน) ต่างจากผู้ใหญ่ที่มักเกิดจาก VF/sudden cardiac event — จึงเน้นการช่วยหายใจเร็วมากกว่า defibrillation ทันที\n• กรณีไม่มีคนเห็นเหตุการณ์ (unwitnessed) และช่วยเหลือคนเดียว: ให้เริ่ม CPR ก่อนประมาณ 2 นาที แล้วค่อยไปโทร/เรียก EMS ("phone fast") — ต่างจากผู้ใหญ่ witnessed collapse ที่เรียก EMS ก่อนทันทีด้วย speakerphone ระหว่างเริ่ม CPR ("phone first" — ดูบทที่ 4)\n• ถ้ามีคนอื่นอยู่ด้วย ให้สั่งไปโทรเรียก EMS ทันทีโดยไม่ต้องรอ — หลัก "phone fast" ใช้เฉพาะกรณีช่วยเหลือคนเดียว',
+      },
+      {
+        type: "quiz",
+        id: "bls-6-q1",
+        topic: "bls-6",
+        question: "ตรวจชีพจรในทารกใช้ตำแหน่งใด?",
+        choices: [
+          { id: "a", text: "Carotid" },
+          { id: "b", text: "Radial" },
+          { id: "c", text: "Brachial" },
+          { id: "d", text: "Femoral หรือ Brachial" },
+        ],
+        correctId: "d",
+        explanation: "Brachial pulse เป็นมาตรฐาน, femoral ก็ใช้ได้ — carotid ยากในทารกเพราะคอสั้น",
+      },
+      {
+        type: "quiz",
+        id: "bls-6-q2",
+        topic: "bls-6",
+        question: "ใน 2-rescuer CPR ของทารก เทคนิคไหนแนะนำ?",
+        choices: [
+          { id: "a", text: "1-hand technique" },
+          { id: "b", text: "2-finger technique" },
+          { id: "c", text: "2-thumb encircling technique" },
+          { id: "d", text: "Heel of hand (เหมือนผู้ใหญ่)" },
+        ],
+        correctId: "c",
+        explanation: "2-thumb encircling ให้ output และ depth ที่ดีกว่า 2-finger ใน 2-rescuer setting",
+      },
+      {
+        type: "quiz",
+        id: "bls-6-q3",
+        topic: "bls-6",
+        question: "ความลึกของการกดหน้าอกในทารกคือ?",
+        choices: [
+          { id: "a", text: "~2 ซม." },
+          { id: "b", text: "~4 ซม. หรือ 1/3 ของ AP diameter" },
+          { id: "c", text: "~5–6 ซม." },
+          { id: "d", text: "ลึกเท่ากับผู้ใหญ่" },
+        ],
+        correctId: "b",
+        explanation: "ทารก: 1/3 ของ AP diameter ~ 4 ซม.",
+      },
+      {
+        type: "quiz",
+        id: "bls-6-q4",
+        topic: "bls-6",
+        question: "อัตราส่วน compression:ventilation ในทารก 1-rescuer คือ?",
+        choices: [
+          { id: "a", text: "5:1" },
+          { id: "b", text: "15:2" },
+          { id: "c", text: "30:2" },
+          { id: "d", text: "10:1" },
+        ],
+        correctId: "c",
+        explanation: "1-rescuer: 30:2 (ทุกช่วงอายุ); 2-rescuer ในเด็ก/ทารก: 15:2",
+      },
+      {
+        type: "quiz",
+        id: "bls-6-q5",
+        topic: "bls-6",
+        question: "ทำไมจึงไม่ควรเปิดทางเดินหายใจทารกด้วยการเอียงศีรษะแบบผู้ใหญ่ (hyperextension)?",
+        choices: [
+          { id: "a", text: "ทารกไม่มี gag reflex" },
+          { id: "b", text: "ทารกมีปุ่มท้ายทอย (occiput) ยื่นมาก การเอียงมากเกินจะยิ่งบีบ/อุดทางเดินหายใจ" },
+          { id: "c", text: "ทารกไม่มีกระดูกคอ" },
+          { id: "d", text: "ไม่มีเหตุผลทางกายวิภาค เป็นแค่ธรรมเนียมปฏิบัติ" },
+        ],
+        correctId: "b",
+        explanation: "ปุ่มท้ายทอยของทารกยื่นมาก ทำให้คอเอียงไปด้านหน้าอยู่แล้วตามธรรมชาติ — ใช้ท่า neutral/sniffing แทน hyperextension",
+      },
+      {
+        type: "quiz",
+        id: "bls-6-q6",
+        topic: "bls-6",
+        question: "การช่วยหายใจทารกต่างจากผู้ใหญ่อย่างไร?",
+        choices: [
+          { id: "a", text: "เหมือนกันทุกประการ" },
+          { id: "b", text: "ใช้ปากครอบทั้งปากและจมูกทารกพร้อมกัน (mouth-to-mouth-and-nose) เพราะใบหน้าเล็ก" },
+          { id: "c", text: "ไม่ต้องช่วยหายใจในทารก" },
+          { id: "d", text: "เป่าแรงและเร็วกว่าผู้ใหญ่" },
+        ],
+        correctId: "b",
+        explanation: "ใบหน้าทารกเล็ก จึงใช้ปากครอบทั้งปากและจมูกพร้อมกัน ต่างจากผู้ใหญ่ที่บีบจมูกแล้วเป่าเข้าปากอย่างเดียว",
+      },
+      {
+        type: "quiz",
+        id: "bls-6-q7",
+        topic: "bls-6",
+        question: "ผู้ช่วยเหลือคนเดียวพบทารกหมดสติโดยไม่มีใครเห็นเหตุการณ์ (unwitnessed) ควรทำอย่างไร?",
+        choices: [
+          { id: "a", text: "โทรเรียก EMS ก่อนเสมอ แล้วค่อยเริ่ม CPR" },
+          { id: "b", text: 'เริ่ม CPR ก่อนประมาณ 2 นาที แล้วค่อยโทรเรียก EMS ("phone fast")' },
+          { id: "c", text: "รอคนอื่นมาก่อนจึงเริ่มทำอะไร" },
+          { id: "d", text: "ไม่ต้องโทรเรียก EMS หากทำ CPR แล้ว" },
+        ],
+        correctId: "b",
+        explanation: 'สาเหตุ arrest ในทารก/เด็กส่วนใหญ่เป็น asphyxial — เน้น CPR ก่อน ~2 นาที ("phone fast") ต่างจากผู้ใหญ่ที่เน้น "phone first"',
+      },
+      {
+        type: "quiz",
+        id: "bls-6-q8",
+        topic: "bls-6",
+        question: "ตำแหน่งติด AED pads ที่เหมาะสมสำหรับทารกคือ?",
+        choices: [
+          { id: "a", text: "Anterolateral เหมือนผู้ใหญ่เท่านั้น ห้ามใช้แบบอื่น" },
+          { id: "b", text: "Anteroposterior (หน้า-หลัง) มักเหมาะกว่า เพราะหน้าอกเล็ก ป้องกัน pads ทับ/ชนกัน" },
+          { id: "c", text: "ไม่ต้องติด pads ในทารก" },
+          { id: "d", text: "ติดที่ขาทั้งสองข้าง" },
+        ],
+        correctId: "b",
+        explanation: "หน้าอกทารกเล็ก anteroposterior placement จึงมักเหมาะกว่าเพื่อป้องกัน pads ทับ/ชนกัน",
+      },
+    ],
+  },
+
+  // ===================== บทที่ 8 =====================
+  {
+    id: "bls-7",
+    title: "บทที่ 8: ทางเดินหายใจอุดกั้น (FBAO)",
+    description: "Foreign Body Airway Obstruction ในผู้ใหญ่ เด็ก ทารก",
+    estMinutes: 7,
+    passingScore: 75,
+    steps: [
+      {
+        type: "read",
+        heading: "การประเมิน FBAO",
+        body: "Mild obstruction: ไอได้ พูดได้ → ให้ไอเอง อย่ารบกวน\nSevere obstruction: ไอไม่ออก, พูดไม่ได้, จับคอ, หน้าเขียว → ต้องช่วยทันที\n• Mild obstruction อาจแย่ลงเป็น severe ได้ตลอดเวลา — เฝ้าดูผู้ป่วยต่อเนื่อง อย่าเดินจากไป ถ้าเริ่มไอไม่ออก/พูดไม่ได้เมื่อไรให้เปลี่ยนมาช่วยด้วย back blows/abdominal thrusts ทันที",
+      },
+      {
+        type: "read",
+        heading: "ผู้ใหญ่ + เด็ก ≥ 1 ปี (รู้สึกตัว)",
+        body: "• ILCOR 2025: 5 back blows สลับกับ 5 abdominal thrusts (Heimlich) จนกว่าสิ่งของจะออก หรือผู้ป่วยหมดสติ\n• Back blows: ก้มตัวผู้ป่วยไปข้างหน้า ใช้ส้นมือตบกลางสะบักแรง 5 ครั้ง\n• Abdominal thrusts: ยืนข้างหลัง โอบเอว วางกำปั้นเหนือสะดือ ใต้ xiphoid กระตุกขึ้น-เข้าใน 5 ครั้ง\n• หญิงตั้งครรภ์ระยะท้าย / อ้วนมาก: ใช้ chest thrusts แทน abdominal thrusts (back blows ทำได้ปกติ)\n• ผู้ช่วยเหลือคนเดียว: ถ้ามีคนอื่นอยู่ด้วยให้สั่งไปโทร 1669 ทันที; ถ้าอยู่คนเดียว ให้เริ่ม back blows/abdominal thrusts ก่อน ถ้ายังไม่หลุดให้ใช้ speakerphone โทรขอความช่วยเหลือไปพร้อมกับช่วยเหลือต่อ (หลักเดียวกับบทที่ 4)",
+      },
+      {
+        type: "read",
+        heading: "ทารก < 1 ปี (รู้สึกตัว)",
+        body: "• ห้าม abdominal thrust (เสี่ยง liver injury)\n• Back blows 5 ครั้ง (วางคว่ำหน้าบนแขน หัวต่ำ ตบกลางสะบัก) สลับกับ chest thrusts 5 ครั้ง\n• ตำแหน่ง chest thrusts: 2 นิ้วที่ครึ่งล่างของ sternum (ตำแหน่งเดียวกับ CPR ทารก)\n• ทำซ้ำจนสิ่งของออก",
+      },
+      {
+        type: "read",
+        heading: "ผู้ป่วยหมดสติ",
+        body: "• เริ่ม CPR ทันที (ไม่ตรวจ pulse)\n• ก่อนให้ breath แต่ละครั้ง ดูในปาก ถ้าเห็นสิ่งของให้เอาออก\n• ห้าม blind finger sweep ในทุกช่วงวัย (ทั้งผู้ใหญ่ เด็ก ทารก) — เสี่ยงดันสิ่งของเข้าลึก / บาดเจ็บ",
+      },
+      {
+        type: "read",
+        heading: "การดูแลหลังช่วยเหลือสำเร็จ (Post-relief Aftercare)",
+        body: "• แม้สิ่งของหลุดออกและผู้ป่วยหายใจปกติแล้ว ควรได้รับการประเมินจาก EMS/แพทย์ต่อเสมอ\n• Abdominal thrusts มีความเสี่ยงบาดเจ็บอวัยวะภายใน (ตับ ม้าม กระเพาะ) แม้ทำถูกวิธี\n• Partial FBAO อาจมีเศษสิ่งของหลงเหลือและอุดกั้นซ้ำได้ภายหลัง — ต้องเฝ้าระวังต่อ ไม่ปล่อยผู้ป่วยไปทันที",
+      },
+      {
+        type: "quiz",
+        id: "bls-7-q1",
+        topic: "bls-7",
+        question: "ผู้ใหญ่สำลักอาหาร พูดไม่ได้ จับคอ — ทำอะไรตามแนวทาง ILCOR 2025?",
+        choices: [
+          { id: "a", text: "รอให้ไอเอง" },
+          { id: "b", text: "5 back blows สลับกับ 5 abdominal thrusts (Heimlich)" },
+          { id: "c", text: "ดื่มน้ำ" },
+          { id: "d", text: "ฉีดอะดรีนาลีน" },
+        ],
+        correctId: "b",
+        explanation: "ILCOR 2025: severe FBAO ใน adult/เด็ก ≥ 1 ปี ใช้ back blows สลับ abdominal thrusts (ครั้งละ 5) จนกว่าสิ่งของออกหรือผู้ป่วยหมดสติ",
+      },
+      {
+        type: "quiz",
+        id: "bls-7-q2",
+        topic: "bls-7",
+        question: "ทารก (< 1 ปี) สำลัก รู้สึกตัว ทำอะไร?",
+        choices: [
+          { id: "a", text: "Abdominal thrust 5 ครั้ง" },
+          { id: "b", text: "Back blows 5 ครั้ง สลับ chest thrusts 5 ครั้ง" },
+          { id: "c", text: "เริ่ม CPR ทันที" },
+          { id: "d", text: "ฉีดน้ำเข้าจมูก" },
+        ],
+        correctId: "b",
+        explanation: "ทารกใช้ back blows + chest thrusts (ห้าม abdominal thrust เสี่ยง liver injury)",
+      },
+      {
+        type: "quiz",
+        id: "bls-7-q3",
+        topic: "bls-7",
+        question: "หญิงตั้งครรภ์ไตรมาส 3 สำลัก พูดไม่ได้ ควรทำอะไร?",
+        choices: [
+          { id: "a", text: "Abdominal thrusts ตามปกติ" },
+          { id: "b", text: "Chest thrusts แทน abdominal thrusts" },
+          { id: "c", text: "Back blows อย่างเดียว" },
+          { id: "d", text: "ทำ CPR เลย" },
+        ],
+        correctId: "b",
+        explanation: "ครรภ์แก่ / อ้วนมาก: chest thrusts แทน abdominal เพื่อไม่กระทบมดลูก",
+      },
+      {
+        type: "quiz",
+        id: "bls-7-q4",
+        topic: "bls-7",
+        question: "ผู้ป่วย FBAO หมดสติแล้ว ทำอะไรต่อ?",
+        choices: [
+          { id: "a", text: "Abdominal thrusts ต่อ" },
+          { id: "b", text: "เริ่ม CPR ทันที และดูในปากก่อนแต่ละ breath" },
+          { id: "c", text: "รอ EMS" },
+          { id: "d", text: "ทำ blind finger sweep" },
+        ],
+        correctId: "b",
+        explanation: "หมดสติ → เริ่ม CPR; ดูในปากก่อนแต่ละ breath ถ้าเห็นสิ่งของเอาออก ห้าม blind finger sweep",
+      },
+      {
+        type: "quiz",
+        id: "bls-7-q5",
+        topic: "bls-7",
+        question: "ผู้ป่วย mild obstruction (ไอได้ พูดได้) ผู้ช่วยเหลือควรทำอย่างไรต่อ?",
+        choices: [
+          { id: "a", text: "ปล่อยผู้ป่วยไอเองแล้วเดินจากไปได้เลย" },
+          { id: "b", text: "ให้ไอเอง อย่ารบกวน แต่เฝ้าดูต่อเนื่อง เพราะอาจแย่ลงเป็น severe ได้ตลอดเวลา" },
+          { id: "c", text: "เริ่ม abdominal thrusts ทันทีเพื่อความปลอดภัย" },
+          { id: "d", text: "ให้ดื่มน้ำเพื่อช่วยให้สิ่งของหลุด" },
+        ],
+        correctId: "b",
+        explanation: "Mild obstruction ให้ไอเองแต่ต้องเฝ้าดูต่อเนื่อง — ถ้าเริ่มไอไม่ออก/พูดไม่ได้ต้องเปลี่ยนมาช่วยด้วย back blows/abdominal thrusts ทันที",
+      },
+      {
+        type: "quiz",
+        id: "bls-7-q6",
+        topic: "bls-7",
+        question: "ผู้ช่วยเหลือคนเดียวช่วยผู้ใหญ่ที่สำลักอยู่ ควรเรียก EMS เมื่อไร?",
+        choices: [
+          { id: "a", text: "ต้องโทรเรียก EMS ก่อนเสมอ ก่อนเริ่มช่วยเหลือใด ๆ" },
+          { id: "b", text: "ถ้ามีคนอื่นอยู่ด้วยให้สั่งไปโทรทันที; ถ้าอยู่คนเดียวให้เริ่มช่วยก่อน แล้วใช้ speakerphone ถ้ายังไม่หลุด" },
+          { id: "c", text: "ไม่ต้องโทรเรียก EMS หากสิ่งของหลุดออกแล้ว" },
+          { id: "d", text: "รอให้ผู้ป่วยหมดสติก่อนจึงโทร" },
+        ],
+        correctId: "b",
+        explanation: "มีคนอื่นอยู่ด้วย → สั่งโทรทันที; อยู่คนเดียว → เริ่มช่วยเหลือก่อน แล้วใช้ speakerphone โทรขอความช่วยเหลือถ้ายังไม่หลุด (หลักเดียวกับบทที่ 4)",
+      },
+      {
+        type: "quiz",
+        id: "bls-7-q7",
+        topic: "bls-7",
+        question: "หลังช่วยเหลือ FBAO สำเร็จ สิ่งของหลุดออกและผู้ป่วยหายใจปกติแล้ว ควรทำอย่างไรต่อ?",
+        choices: [
+          { id: "a", text: "ถือว่าจบเหตุการณ์ ไม่ต้องทำอะไรต่อ" },
+          { id: "b", text: "ยังควรให้ EMS/แพทย์ประเมินต่อ เพราะ thrusts เสี่ยงบาดเจ็บอวัยวะภายในและอาจมีเศษสิ่งของหลงเหลือ" },
+          { id: "c", text: "ให้ผู้ป่วยกลับบ้านได้ทันที" },
+          { id: "d", text: "ทำ abdominal thrusts ซ้ำเพื่อความมั่นใจ" },
+        ],
+        correctId: "b",
+        explanation: "Abdominal thrusts เสี่ยงบาดเจ็บอวัยวะภายในแม้ทำถูกวิธี และ partial FBAO อาจหลงเหลือ/อุดกั้นซ้ำได้ — ควรให้ EMS/แพทย์ประเมินต่อเสมอ",
+      },
+    ],
+  },
+];
+
+function deriveLesson(l: BlsLessonDef): BlsLesson {
+  const sections = l.steps
+    .filter((s): s is BlsReadStep => s.type === "read")
+    .map((s) => ({ heading: s.heading, body: s.body }));
+  const quiz = l.steps.filter((s): s is BlsQuizStep => s.type === "quiz");
+  return { ...l, sections, quiz };
+}
+
+export const preCourseLessons: BlsLesson[] = lessonDefs.map(deriveLesson);
+
+export function findLessonById(id: string): BlsLesson | null {
+  return preCourseLessons.find((l) => l.id === id) ?? null;
+}
+
+export function getLessonStepCount(lesson: BlsLessonDef | null | undefined): number {
+  return lesson?.steps?.length ?? 0;
+}
+
+export function getLessonQuizCount(lesson: BlsLesson | null | undefined): number {
+  return lesson?.quiz?.length ?? 0;
+}

@@ -27,6 +27,14 @@ interface ProgressCardProps {
   onIdentify?: () => void;
   onStartPretest?: () => void;
   onChangeStudent?: () => void;
+  /**
+   * Set false for courses with no pre-test (BLS) — hides the "Pre-test"
+   * step pill, adjusts the progress-ring math, and swaps the anonymous CTA
+   * copy from "เริ่มทำ Pre-test" to a generic "เริ่มเรียนเลย". Defaults to
+   * true so ACLS (which always passes preTestPassed/preTestAttempted from
+   * real pre-test state) is unaffected.
+   */
+  hasPreTest?: boolean;
 }
 
 // At-a-glance progress + next-step CTA for the pre-course flow (ported from
@@ -46,15 +54,17 @@ export default function ProgressCard({
   onIdentify,
   onStartPretest,
   onChangeStudent,
+  hasPreTest = true,
 }: ProgressCardProps) {
   const router = useRouter();
   const meta = getCourseMeta(course);
   const base = meta.basePath;
 
-  // Weighted percent: pre-test counts as 1 step, every lesson counts as 1,
-  // post-test counts as 1. Total = lessons + 2.
-  const totalUnits = totalLessons + 2;
-  const doneUnits = (preTestPassed ? 1 : 0) + lessonsPassed + (postTestPassed ? 1 : 0);
+  // Weighted percent: pre-test counts as 1 step (when the course has one),
+  // every lesson counts as 1, post-test counts as 1.
+  const totalUnits = totalLessons + (hasPreTest ? 2 : 1);
+  const doneUnits =
+    (hasPreTest ? (preTestPassed ? 1 : 0) : 0) + lessonsPassed + (postTestPassed ? 1 : 0);
   const percent = totalUnits === 0 ? 0 : Math.round((doneUnits / totalUnits) * 100);
 
   interface Cta {
@@ -68,13 +78,21 @@ export default function ProgressCard({
   if (!activeStudent) {
     // Action-first framing: the funnel's biggest drop was here, where the CTA
     // used to read "identify to start". Lead with the exam; identity is a quick
-    // name field that opens on click and then drops straight into the Pre-test.
-    cta = {
-      label: "เริ่มทำ Pre-test",
-      icon: ClipboardCheck,
-      tone: "primary",
-      onClick: onStartPretest || onIdentify,
-    };
+    // name field that opens on click and then drops straight into the Pre-test
+    // (courses with no pre-test lead into the lesson list instead).
+    cta = hasPreTest
+      ? {
+          label: "เริ่มทำ Pre-test",
+          icon: ClipboardCheck,
+          tone: "primary",
+          onClick: onStartPretest || onIdentify,
+        }
+      : {
+          label: "เริ่มเรียนเลย",
+          icon: Play,
+          tone: "primary",
+          onClick: onIdentify,
+        };
   } else if (postTestPassed) {
     cta = {
       label: "ดูใบประกาศนียบัตร",
@@ -89,7 +107,7 @@ export default function ProgressCard({
       tone: "warning",
       onClick: () => router.push(`${base}/post-test`),
     };
-  } else if (!preTestAttempted) {
+  } else if (hasPreTest && !preTestAttempted) {
     cta = {
       label: "เริ่มทำ Pre-test",
       icon: ClipboardCheck,
@@ -133,7 +151,7 @@ export default function ProgressCard({
         <span className="font-bold text-amber-600 dark:text-amber-400">พร้อมสอบ Post-test</span>
       );
     }
-    if (!preTestAttempted) {
+    if (hasPreTest && !preTestAttempted) {
       return <>เริ่มจาก Pre-test เพื่อเช็คพื้นฐาน</>;
     }
     const remaining = totalLessons - lessonsPassed;
@@ -210,8 +228,9 @@ export default function ProgressCard({
           </div>
         </div>
 
-        {/* 3-step pill row — bird's-eye view of the course journey */}
+        {/* Step pill row — bird's-eye view of the course journey */}
         <StepRow
+          hasPreTest={hasPreTest}
           preTestPassed={preTestPassed}
           preTestAttempted={preTestAttempted}
           lessonsPassed={lessonsPassed}
@@ -233,36 +252,44 @@ export default function ProgressCard({
 }
 
 function StepRow({
+  hasPreTest,
   preTestPassed,
   preTestAttempted,
   lessonsPassed,
   totalLessons,
   postTestPassed,
 }: {
+  hasPreTest: boolean;
   preTestPassed: boolean;
   preTestAttempted: boolean;
   lessonsPassed: number;
   totalLessons: number;
   postTestPassed: boolean;
 }) {
+  const lessonsState =
+    lessonsPassed === totalLessons && totalLessons > 0
+      ? "done"
+      : (hasPreTest ? preTestAttempted : true) || lessonsPassed > 0
+        ? "active"
+        : "todo";
+
   const steps = [
+    ...(hasPreTest
+      ? [
+          {
+            n: 1,
+            label: "Pre-test",
+            state: preTestPassed ? "done" : preTestAttempted ? "active" : "todo",
+          },
+        ]
+      : []),
     {
-      n: 1,
-      label: "Pre-test",
-      state: preTestPassed ? "done" : preTestAttempted ? "active" : "todo",
-    },
-    {
-      n: 2,
+      n: hasPreTest ? 2 : 1,
       label: `บทเรียน ${lessonsPassed}/${totalLessons}`,
-      state:
-        lessonsPassed === totalLessons && totalLessons > 0
-          ? "done"
-          : preTestAttempted || lessonsPassed > 0
-            ? "active"
-            : "todo",
+      state: lessonsState,
     },
     {
-      n: 3,
+      n: hasPreTest ? 3 : 2,
       label: "Post-test",
       state: postTestPassed
         ? "done"
