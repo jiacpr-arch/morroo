@@ -8,6 +8,7 @@
 
 import Dexie, { type Table } from "dexie";
 import { v4 as uuidv4 } from "uuid";
+import type { CohortSummaryRow } from "@/lib/courses/cohort";
 
 export interface LocalStudent {
   /** Local uuid; remapped to the server's student_pk after first sync. */
@@ -216,4 +217,48 @@ export async function hydrateStudentProgress(
     if (dup) continue;
     await db.quizAttempts.add({ ...row, studentId, syncedAt: now });
   }
+}
+
+// ===== instructor cohort summary =====
+// Local-only fallback for the get_cohort_summary RPC (lib/courses/cohort.ts)
+// — used on /acls/cohort and /bls/cohort when no class is connected, or the
+// cloud call fails, so the instructor still sees every student recorded on
+// this device. Ported from acls-emr's src/db/database.js getCohortSummary.
+
+export async function getCohortSummary(lessonIds: string[]): Promise<CohortSummaryRow[]> {
+  const [students, allProgress, allAttempts] = await Promise.all([
+    db.students.orderBy("createdAt").toArray(),
+    db.lessonProgress.toArray(),
+    db.quizAttempts.toArray(),
+  ]);
+  return students.map((s) => {
+    const lessons: CohortSummaryRow["lessons"] = {};
+    for (const lid of lessonIds) {
+      const read = allProgress.some((p) => p.studentId === s.id && p.lessonId === lid);
+      const attempts = allAttempts.filter((a) => a.studentId === s.id && a.lessonId === lid);
+      const best = attempts.reduce<QuizAttemptRow | null>(
+        (b, a) => (a.score > (b?.score ?? -1) ? a : b),
+        null,
+      );
+      lessons[lid] = {
+        read,
+        attemptCount: attempts.length,
+        bestScore: best?.score ?? null,
+        passed: best?.passed ?? false,
+        lastAttemptAt: attempts.length
+          ? attempts.reduce((m, a) => (a.finishedAt > m ? a.finishedAt : m), "")
+          : null,
+      };
+    }
+    return {
+      student: {
+        id: s.id,
+        studentId: s.studentId,
+        name: s.name,
+        phone: s.phone ?? null,
+        createdAt: s.createdAt,
+      },
+      lessons,
+    };
+  });
 }
