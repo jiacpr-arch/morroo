@@ -1,9 +1,15 @@
 const { createClient } = require("@supabase/supabase-js");
 
-const supabase = createClient(
-  "https://knxidnzexqehusndquqg.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtueGlkbnpleHFlaHVzbmRxdXFnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NDM2OTA3NiwiZXhwIjoyMDg5OTQ1MDc2fQ.t47-1W_kcZL9215ZA9vFEf51sptFWMyUsdHrOCkzPCQ"
-);
+// คีย์อ่านจาก env เท่านั้น — ห้าม hardcode service_role key ในโค้ด
+// วิธีรัน: NEXT_PUBLIC_SUPABASE_URL=... SUPABASE_SERVICE_ROLE_KEY=... node seed-batch2.js
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
+if (!SUPABASE_URL || !SERVICE_ROLE_KEY) {
+  console.error("ต้องตั้ง NEXT_PUBLIC_SUPABASE_URL และ SUPABASE_SERVICE_ROLE_KEY ก่อนรัน");
+  process.exit(1);
+}
+
+const supabase = createClient(SUPABASE_URL, SERVICE_ROLE_KEY);
 
 // ============================================================
 // 5 Medical Exams — Batch 2

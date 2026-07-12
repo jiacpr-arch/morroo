@@ -1,0 +1,50 @@
+/* ธีมของโซนคอร์ส CPR (แบรนด์ JIA) — scope ทั้งหมดใต้ .cpr ไม่กระทบหน้าอื่นของ morroo */
+.cpr {
+  /* palette B เดิมจาก jia-online เป็น CSS vars (ใช้ต่อใน Phase 2 ตอนแปลงเป็น Tailwind) */
+  --cpr-red: #c8102e;
+  --cpr-dk-red: #9b0020;
+  --cpr-black: #1a1a1a;
+  --cpr-cream: #fff8f0;
+  --cpr-gray: #f5f5f5;
+  --cpr-lt-gray: #e8e8e8;
+  --cpr-dk-gray: #666;
+  --cpr-green: #22c55e;
+  --cpr-gold: #f59e0b;
+
+  font-family: var(--font-cpr-sans), "Noto Sans Thai", sans-serif;
+  background: var(--cpr-cream);
+  color: var(--cpr-black);
+  min-height: 100vh;
+}
+
+.cpr ::selection {
+  background: rgba(200, 16, 46, 0.18);
+}
+
+/* เนื้อหาบทความจาก content_html (สไตล์เดิมจาก index.html ของ jia-online) */
+.cpr .jia-blog-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+.cpr .jia-blog-content h2 {
+  font-size: 19px;
+  font-weight: 800;
+  margin: 24px 0 8px;
+}
+.cpr .jia-blog-content h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 18px 0 6px;
+}
+.cpr .jia-blog-content p {
+  margin: 0 0 12px;
+}
+.cpr .jia-blog-content ul,
+.cpr .jia-blog-content ol {
+  padding-left: 22px;
+  margin: 0 0 12px;
+}
+.cpr .jia-blog-content a {
+  color: var(--cpr-red);
+}

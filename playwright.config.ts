@@ -10,6 +10,11 @@ export default defineConfig({
   use: {
     baseURL: process.env.E2E_BASE_URL ?? "http://localhost:3000",
     trace: "on-first-retry",
+    // Sandboxed CI images ship a pre-installed Chromium that may not match the
+    // build this Playwright version expects — point at it explicitly.
+    ...(process.env.PW_CHROMIUM_PATH
+      ? { launchOptions: { executablePath: process.env.PW_CHROMIUM_PATH } }
+      : {}),
   },
   projects: [
     {
