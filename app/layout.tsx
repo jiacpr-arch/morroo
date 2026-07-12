@@ -17,6 +17,7 @@ import FloatingLineCta from "@/components/FloatingLineCta";
 import SignupConversion from "@/components/analytics/SignupConversion";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 import FirstVisitNudge from "@/components/FirstVisitNudge";
+import HideOnCprChrome from "@/components/HideOnCprChrome";
 import "./globals.css";
 
 const GA_ID = "G-D7FX2CK8JY";
@@ -216,20 +217,27 @@ export default function RootLayout({
           />
         </noscript>
         <AiHealthProvider>
-          <AiStatusBanner />
+          {/* โซน /cpr เป็นแบรนด์ JIA แยกต่างหาก — ซ่อน chrome ของ morroo ทั้งหมด */}
+          <HideOnCprChrome>
+            <AiStatusBanner />
+          </HideOnCprChrome>
           <BetaProvider>
-            <BetaPromoBanner variant="sticky-top" />
-            <Navbar />
+            <HideOnCprChrome>
+              <BetaPromoBanner variant="sticky-top" />
+              <Navbar />
+            </HideOnCprChrome>
             <main className="flex-1">{children}</main>
-            <Footer />
-            <BetaWelcomeModal />
-            <ChatWidget />
-            <Suspense fallback={null}>
-              <FloatingLineCta />
-            </Suspense>
-            <SignupConversion />
-            <ExitIntentPopup />
-            <FirstVisitNudge />
+            <HideOnCprChrome>
+              <Footer />
+              <BetaWelcomeModal />
+              <ChatWidget />
+              <Suspense fallback={null}>
+                <FloatingLineCta />
+              </Suspense>
+              <SignupConversion />
+              <ExitIntentPopup />
+              <FirstVisitNudge />
+            </HideOnCprChrome>
           </BetaProvider>
         </AiHealthProvider>
         <Analytics />

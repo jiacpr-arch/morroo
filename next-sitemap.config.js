@@ -5,11 +5,39 @@ module.exports = {
   changefreq: "daily",
   priority: 0.7,
   sitemapSize: 5000,
-  exclude: ["/admin/*", "/api/*", "/payment/*", "/auth/*", "/invoice/*"],
+  exclude: [
+    "/admin/*",
+    "/api/*",
+    "/payment/*",
+    "/auth/*",
+    "/invoice/*",
+    // โซนคอร์ส CPR: หน้าใน flow เรียน/สมัคร/ชำระเงิน ไม่ให้ index (หน้า /cpr, /cpr/store,
+    // /cpr/booking, /cpr/blog เพิ่มผ่าน additionalPaths ด้านล่างแทน เพราะ catch-all
+    // ไม่ถูก generate เป็น path คงที่)
+    "/cpr/*",
+  ],
   robotsTxtOptions: {
     policies: [
       { userAgent: "*", allow: "/" },
-      { userAgent: "*", disallow: ["/admin", "/api", "/payment", "/auth", "/invoice"] },
+      {
+        userAgent: "*",
+        disallow: [
+          "/admin",
+          "/api",
+          "/payment",
+          "/auth",
+          "/invoice",
+          "/cpr/quiz",
+          "/cpr/signup",
+          "/cpr/register",
+          "/cpr/line-add",
+          "/cpr/claim",
+          "/cpr/payment",
+          "/cpr/course",
+          "/cpr/certificate",
+          "/cpr/minicert",
+        ],
+      },
     ],
   },
   additionalPaths: async (_config) => {
@@ -30,6 +58,11 @@ module.exports = {
         changefreq: "monthly",
         priority: 0.8,
       })),
+      // โซนคอร์ส CPR (JIA) — เฉพาะหน้า public ที่ให้ index
+      { loc: "/cpr", changefreq: "weekly", priority: 0.8 },
+      { loc: "/cpr/store", changefreq: "weekly", priority: 0.6 },
+      { loc: "/cpr/booking", changefreq: "weekly", priority: 0.6 },
+      { loc: "/cpr/blog", changefreq: "daily", priority: 0.6 },
     ];
 
     try {
