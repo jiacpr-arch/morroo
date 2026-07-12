@@ -22,6 +22,7 @@ import {
   GraduationCap,
   Newspaper,
   Flag,
+  HeartPulse,
 } from "lucide-react";
 
 interface HeatmapCell {
@@ -357,6 +358,19 @@ export default function AdminDashboard() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">โพสต์ product update และข่าวสอบให้แสดงที่ /news</p>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link href="/admin/sim">
+          <Card className="hover:shadow-md transition-shadow cursor-pointer h-full border-rose-200">
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <HeartPulse className="h-5 w-5 text-rose-600" />
+                <h3 className="font-bold">Code Blue Sim</h3>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">แต่ง/สร้างเคสเกมกู้ชีพด้วย AI ดูสถิติผู้เล่น และเผยแพร่ที่ /sim</p>
             </CardContent>
           </Card>
         </Link>

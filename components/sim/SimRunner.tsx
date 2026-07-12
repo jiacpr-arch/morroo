@@ -68,7 +68,13 @@ function DlgText({ segments, count }: { segments: TextSegment[]; count: number }
   );
 }
 
-export default function SimRunner({ scenario }: { scenario: SimScenario }) {
+interface SimRunnerProps {
+  scenario: SimScenario;
+  /** โหมดทดลองเล่น (admin playtest) — ไม่บันทึกผล/ไม่แจก XP */
+  practice?: boolean;
+}
+
+export default function SimRunner({ scenario, practice = false }: SimRunnerProps) {
   const [reducedMotion] = useState(
     () => isBrowser && window.matchMedia("(prefers-reduced-motion: reduce)").matches,
   );
@@ -230,7 +236,9 @@ export default function SimRunner({ scenario }: { scenario: SimScenario }) {
     }
     // บันทึกผล + XP/Badge เบื้องหลัง — จอ debrief โชว์ทันที รางวัลตามมา
     setReward(null);
-    void recordSimRun(scenario.slug, st, { won, grade, score }).then(setReward);
+    if (!practice) {
+      void recordSimRun(scenario.slug, st, { won, grade, score }).then(setReward);
+    }
     syncView();
     setResult({ won, grade, score, isHiscore });
     setChoice(null);
