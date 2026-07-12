@@ -11,8 +11,17 @@ const ONBOARDING_SKIP_PATHS = [
   "/purchase-policy",
 ];
 
-export async function updateSession(request: NextRequest) {
-  let supabaseResponse = NextResponse.next({ request });
+// When rewriteUrl is provided (firstaid.morroo.com host-rewrite), every
+// response — including the ones re-created inside setAll() — must be a
+// rewrite, otherwise refreshed auth cookies would ride on a response that
+// renders the wrong route.
+export async function updateSession(request: NextRequest, rewriteUrl?: URL) {
+  const makeResponse = () =>
+    rewriteUrl
+      ? NextResponse.rewrite(rewriteUrl, { request })
+      : NextResponse.next({ request });
+
+  let supabaseResponse = makeResponse();
 
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -26,7 +35,7 @@ export async function updateSession(request: NextRequest) {
           cookiesToSet.forEach(({ name, value }) =>
             request.cookies.set(name, value)
           );
-          supabaseResponse = NextResponse.next({ request });
+          supabaseResponse = makeResponse();
           cookiesToSet.forEach(({ name, value, options }) =>
             supabaseResponse.cookies.set(name, value, options)
           );
@@ -40,6 +49,13 @@ export async function updateSession(request: NextRequest) {
   } = await supabase.auth.getUser();
 
   const { pathname } = request.nextUrl;
+
+  // The firstaid section has its own funnel: anonymous learners are
+  // first-class and LINE signups are created with onboarding_done = true, so
+  // morroo's login-bounce and onboarding redirects must never fire there.
+  if (rewriteUrl || pathname.startsWith("/firstaid")) {
+    return supabaseResponse;
+  }
 
   // Already-authenticated users have no business on the auth pages — bounce
   // them to their profile instead of showing the login/register forms again.

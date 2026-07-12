@@ -5,7 +5,9 @@ module.exports = {
   changefreq: "daily",
   priority: 0.7,
   sitemapSize: 5000,
-  exclude: ["/admin/*", "/api/*", "/payment/*", "/auth/*", "/invoice/*"],
+  // /firstaid/* is the internal route tree for firstaid.morroo.com (host
+  // rewrite) — its public URLs live on the subdomain's own sitemap, not here.
+  exclude: ["/admin/*", "/api/*", "/payment/*", "/auth/*", "/invoice/*", "/firstaid", "/firstaid/*"],
   robotsTxtOptions: {
     policies: [
       { userAgent: "*", allow: "/" },
