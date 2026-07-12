@@ -65,6 +65,12 @@ export default function BlsLayout({ children }: { children: React.ReactNode }) {
               ใบประกาศฯ
             </Link>
             <Link
+              href="/bls/news"
+              className="rounded-lg px-3 py-1.5 font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              ข่าว
+            </Link>
+            <Link
               href="/bls/cohort"
               className="rounded-lg px-3 py-1.5 font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
