@@ -1,0 +1,365 @@
+"use client";
+
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState, useEffect, useRef } from "react";
+import { ArrowLeft, ChevronRight, CheckCircle2, XCircle, Lock } from "lucide-react";
+import { preTest, postTest } from "@/lib/firstaid/content/exams";
+import { lessons } from "@/lib/firstaid/content/lessons";
+import { useEnsureLearner } from "@/lib/firstaid/hooks/useLearner";
+import { useLearnerStore } from "@/lib/firstaid/stores/learnerStore";
+import { useProgressStore } from "@/lib/firstaid/stores/progressStore";
+import { useEnsureProgress } from "@/lib/firstaid/hooks/useProgress";
+import {
+  isPracticeDone,
+  practiceChaptersRemaining,
+} from "@/lib/firstaid/practice";
+import ProgressBar from "@/components/firstaid/ProgressBar";
+import TheoryCertCard from "@/components/firstaid/TheoryCertCard";
+import CertUpsellCard from "@/components/firstaid/CertUpsellCard";
+import { track } from "@/lib/firstaid/analytics";
+
+type ExamResult = {
+  kind: "pre" | "post";
+  score: number;
+  passed: boolean;
+  correctCount: number;
+  totalQuestions: number;
+  answers: Record<string, string>;
+  finishedAt: string;
+};
+
+// Shared by /pre-test and /post-test. Scoring is now server-side:
+// POST /api/firstaid/exams/submit grades the answers and the result screen
+// shows the SERVER's score/passed (replaces the old local saveExamAttempt +
+// flushSync — the client no longer decides pass/fail).
+export default function ExamClient({ kind }: { kind: "pre" | "post" }) {
+  useEnsureLearner();
+  const exam: any = kind === "pre" ? preTest : postTest;
+  const router = useRouter();
+  const learner = useLearnerStore((s) => s.learner);
+  const readSet = useProgressStore((s) => s.readLessonIds);
+  const progressLoaded = useProgressStore((s) => s.loaded);
+  const markPreTestDone = useProgressStore((s) => s.markPreTestDone);
+  const markPostTestDone = useProgressStore((s) => s.markPostTestDone);
+  const passedScenarioIds = useProgressStore((s) => s.passedScenarioIds);
+  useEnsureProgress(learner?.id);
+
+  const allLessons = lessons as any[];
+  const allLessonsDone =
+    allLessons.length > 0 && allLessons.every((l) => readSet.has(l.id));
+  const practiceDone = isPracticeDone(passedScenarioIds);
+  const postReady = allLessonsDone && practiceDone;
+
+  const [idx, setIdx] = useState(0);
+  const [answers, setAnswers] = useState<Record<string, string>>({});
+  const [done, setDone] = useState<ExamResult | null>(null);
+  const [busy, setBusy] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const startTracked = useRef(false);
+
+  useEffect(() => {
+    if (!startTracked.current) {
+      startTracked.current = true;
+      track("exam_start", { kind });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const q = exam.questions[idx];
+  const isLast = idx === exam.questions.length - 1;
+
+  const choose = (cid: string) => setAnswers((a) => ({ ...a, [q.id]: cid }));
+
+  const next = async () => {
+    if (!answers[q.id]) return;
+    if (!isLast) {
+      setIdx((i) => i + 1);
+      return;
+    }
+    // Guard against double-tap on the final question — otherwise a second tap
+    // creates a duplicate exam attempt and calls markPostTestDone() twice.
+    if (busy || !learner?.id) return;
+    setBusy(true);
+    setSubmitError("");
+    try {
+      const finishedAt = new Date().toISOString();
+      const res = await fetch("/api/firstaid/exams/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          learnerId: learner.id,
+          uuid: crypto.randomUUID(),
+          kind,
+          answers,
+          finishedAt,
+        }),
+      });
+      if (!res.ok) throw new Error(`submit failed (${res.status})`);
+      const data = (await res.json()) as {
+        score: number;
+        passed: boolean;
+        correct: number;
+        total: number;
+      };
+      if (kind === "pre") markPreTestDone();
+      else markPostTestDone();
+      track("exam_complete", {
+        kind,
+        score: data.score,
+        passed: data.passed,
+        correctCount: data.correct,
+        totalQuestions: data.total,
+      });
+      setDone({
+        kind,
+        score: data.score,
+        passed: data.passed,
+        correctCount: data.correct,
+        totalQuestions: data.total,
+        answers,
+        finishedAt,
+      });
+    } catch (err) {
+      console.error("exam submit failed", err);
+      setSubmitError("ส่งคำตอบไม่สำเร็จ กรุณาตรวจสอบอินเทอร์เน็ตแล้วลองใหม่");
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  // Post-test: รอโหลดสถานะความก้าวหน้าก่อน เพื่อไม่ให้โผล่ข้อสอบแวบ ๆ ตอนเปิด URL ตรง
+  if (kind === "post" && !progressLoaded && !done) {
+    return (
+      <div className="page-container py-12 text-center text-caption">
+        กำลังโหลด…
+      </div>
+    );
+  }
+
+  // กัน Post-test ตรง ๆ ผ่าน URL ก่อนเรียน+ฝึกครบ — รอโหลดสถานะก่อนค่อยตัดสิน
+  if (kind === "post" && progressLoaded && !postReady && !done) {
+    const lessonsRemaining =
+      allLessons.length - allLessons.filter((l) => readSet.has(l.id)).length;
+    const chaptersRemaining = practiceChaptersRemaining(passedScenarioIds);
+    // เรียนยังไม่ครบ → ให้ไปเรียนก่อน, เรียนครบแล้วแต่ยังฝึกไม่ครบ → ให้ไปฝึก
+    const needLessons = !allLessonsDone;
+    return (
+      <div className="page-container">
+        <div className="card" style={{ textAlign: "center", padding: 28 }}>
+          <Lock size={44} color="var(--color-text-secondary)" style={{ margin: "0 auto" }} />
+          <div className="text-title" style={{ marginTop: 12 }}>ยังทำ Post-test ไม่ได้</div>
+          <div className="text-body" style={{ marginTop: 8 }}>
+            ต้องทำให้ครบก่อนจึงจะทำแบบทดสอบหลังเรียนได้:
+          </div>
+          <div style={{ marginTop: 12, display: "flex", flexDirection: "column", gap: 8, textAlign: "left" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              {allLessonsDone ? (
+                <CheckCircle2 size={18} color="#10B981" />
+              ) : (
+                <Lock size={16} color="var(--color-text-secondary)" />
+              )}
+              <span className="text-body">
+                เรียนให้ครบทุกบท{allLessonsDone ? "" : ` (เหลืออีก ${lessonsRemaining} บท)`}
+              </span>
+            </div>
+            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              {practiceDone ? (
+                <CheckCircle2 size={18} color="#10B981" />
+              ) : (
+                <Lock size={16} color="var(--color-text-secondary)" />
+              )}
+              <span className="text-body">
+                ฝึกสถานการณ์ให้ผ่านอย่างน้อย 1 ฉากทุกบท
+                {practiceDone ? "" : ` (เหลืออีก ${chaptersRemaining} บท)`}
+              </span>
+            </div>
+          </div>
+        </div>
+        <Link
+          href={needLessons ? "/learn" : "/simulation"}
+          className="btn btn-primary btn-block"
+          style={{ marginTop: 16 }}
+        >
+          <ArrowLeft size={16} /> {needLessons ? "ไปเรียนต่อ" : "ไปฝึกสถานการณ์"}
+        </Link>
+      </div>
+    );
+  }
+
+  if (done) {
+    const passedTheory = kind === "post" && done.passed;
+    return (
+      <div className="page-container">
+        <div className="card" style={{ textAlign: "center", padding: 28 }}>
+          {done.passed ? (
+            <CheckCircle2 size={48} color="#10B981" style={{ margin: "0 auto" }} />
+          ) : (
+            <XCircle size={48} color="#DC2626" style={{ margin: "0 auto" }} />
+          )}
+          <div className="text-title" style={{ marginTop: 12 }}>
+            คะแนน {done.score}%
+          </div>
+          <div className="text-caption">
+            {done.correctCount} / {done.totalQuestions} ข้อ
+          </div>
+          {kind === "post" && (
+            <div className="text-body" style={{ marginTop: 10 }}>
+              {done.passed
+                ? "ยินดีด้วย — ผ่านแบบทดสอบหลังเรียนแล้ว กรอกข้อมูลด้านล่างเพื่อรับใบประกาศภาคทฤษฎี"
+                : `ยังไม่ผ่าน (ต้องได้ ≥ ${exam.passingScore}%) ลองทบทวนบทเรียนแล้วทำใหม่ได้`}
+            </div>
+          )}
+        </div>
+
+        {passedTheory && <TheoryCertCard postAttempt={done} />}
+        {passedTheory && <CertUpsellCard source="post_test_pass" />}
+
+        <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 8 }}>
+          {exam.questions.map((qq: any, i: number) => {
+            const selected = answers[qq.id];
+            const correct = selected === qq.correctId;
+            return (
+              <div key={qq.id} className="card">
+                <div className="text-body-strong" style={{ marginBottom: 6 }}>
+                  {i + 1}. {qq.question}
+                </div>
+                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                  {correct ? (
+                    <CheckCircle2 size={16} color="#10B981" />
+                  ) : (
+                    <XCircle size={16} color="#DC2626" />
+                  )}
+                  <span className="text-body">
+                    ตอบ: {qq.choices.find((c: any) => c.id === selected)?.text || "—"}
+                  </span>
+                </div>
+                {!correct && (
+                  <div className="text-caption" style={{ marginTop: 4 }}>
+                    คำตอบที่ถูก: {qq.choices.find((c: any) => c.id === qq.correctId)?.text}
+                  </div>
+                )}
+                {qq.explanation && (
+                  <div className="callout callout-info" style={{ marginTop: 8 }}>
+                    {qq.explanation}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        <div style={{ marginTop: 16, display: "flex", gap: 8 }}>
+          {kind === "pre" ? (
+            <>
+              <button
+                type="button"
+                className="btn btn-secondary"
+                style={{ flex: 1 }}
+                onClick={() => {
+                  setIdx(0);
+                  setAnswers({});
+                  setDone(null);
+                }}
+              >
+                ทำใหม่
+              </button>
+              <Link href="/learn" className="btn btn-primary" style={{ flex: 1 }}>
+                เริ่มเรียน <ChevronRight size={16} />
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link href="/learn" className="btn btn-secondary" style={{ flex: 1 }}>
+                กลับไปบทเรียน
+              </Link>
+              {passedTheory ? (
+                <Link href="/certificate" className="btn btn-primary" style={{ flex: 1 }}>
+                  ดูใบประกาศ
+                </Link>
+              ) : (
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  style={{ flex: 1 }}
+                  onClick={() => {
+                    setIdx(0);
+                    setAnswers({});
+                    setDone(null);
+                  }}
+                >
+                  ทำใหม่
+                </button>
+              )}
+            </>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="page-container">
+      <button
+        type="button"
+        onClick={() => router.push("/learn")}
+        className="btn btn-ghost"
+        style={{ paddingLeft: 0 }}
+      >
+        <ArrowLeft size={16} /> ออก
+      </button>
+      <div className="text-caption">{exam.description}</div>
+      <div className="text-title">{exam.title}</div>
+      <div style={{ marginTop: 12 }}>
+        <ProgressBar value={idx + 1} max={exam.questions.length} />
+        <div className="text-caption" style={{ marginTop: 4 }}>
+          ข้อ {idx + 1} / {exam.questions.length}
+        </div>
+      </div>
+
+      <div className="card" style={{ marginTop: 12 }}>
+        <div className="text-headline" style={{ marginBottom: 12 }}>{q.question}</div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+          {q.choices.map((c: any) => {
+            const isSelected = answers[q.id] === c.id;
+            return (
+              <button
+                key={c.id}
+                type="button"
+                onClick={() => choose(c.id)}
+                style={{
+                  textAlign: "left",
+                  padding: "12px 14px",
+                  borderRadius: "var(--radius)",
+                  border: `1.5px solid ${isSelected ? "var(--color-brand)" : "var(--color-border)"}`,
+                  background: isSelected
+                    ? "var(--color-brand-soft)"
+                    : "var(--color-bg-secondary)",
+                }}
+              >
+                {c.text}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {submitError && (
+        <div className="callout callout-warning" style={{ marginTop: 12 }}>
+          {submitError}
+        </div>
+      )}
+
+      <button
+        type="button"
+        className="btn btn-primary btn-block"
+        style={{ marginTop: 14 }}
+        disabled={!answers[q.id] || busy}
+        onClick={next}
+      >
+        {isLast ? (busy ? "กำลังส่ง…" : "ส่งคำตอบทั้งหมด") : "ข้อต่อไป"}{" "}
+        <ChevronRight size={16} />
+      </button>
+    </div>
+  );
+}
