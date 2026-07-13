@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/admin-auth";
 import { CHAT_MODELS, createAnthropic, createWithFallback } from "@/lib/anthropic";
+import { createAdminClient } from "@/lib/supabase/admin";
 import { vfArrest } from "@/lib/sim/scenarios";
 import { describeScenarioError } from "@/lib/sim/validate";
 
@@ -38,7 +39,23 @@ const SCENARIO_TOOL = {
   },
 };
 
-function systemPrompt(): string {
+interface ExtraCharacter {
+  slug: string;
+  name: string;
+  role: string | null;
+  personality: string | null;
+}
+
+function systemPrompt(extraCharacters: ExtraCharacter[]): string {
+  const extraCharLines = extraCharacters.length
+    ? "\nตัวละครเสริมที่ใช้ได้เพิ่มเติม (เขียนบทพูดให้ตรงบุคลิกของแต่ละตัว): " +
+      extraCharacters
+        .map((c) => {
+          const parts = [c.name, c.role, c.personality ? `บุคลิก: ${c.personality}` : null].filter(Boolean);
+          return `${c.slug} (${parts.join(" — ")})`;
+        })
+        .join(", ")
+    : "";
   return `คุณคือผู้เชี่ยวชาญ ACLS และนักออกแบบเกมการสอนแพทย์ หน้าที่คือแต่งโจทย์เกม "Code Blue Sim" (เกมตัดสินใจสไตล์ visual novel) เป็นภาษาไทย
 
 ## โครงสร้าง node ใน story (ต้องตรงเป๊ะ)
@@ -49,7 +66,7 @@ function systemPrompt(): string {
 - { "end": true } — node สุดท้ายเสมอ
 
 ## กติกาสำคัญ
-1. ตัวละคร (who): nurse_mint (พยาบาล IV/ยา), boy_compressor (คนกดหน้าอก), fon_defib (หมอคุม defib/monitor), att_dech (อาจารย์ attending) เท่านั้น
+1. ตัวละคร (who): nurse_mint (พยาบาล IV/ยา), boy_compressor (คนกดหน้าอก), fon_defib (หมอคุม defib/monitor), att_dech (อาจารย์ attending)${extraCharLines}
 2. pose: idle, talk, panic, stern, happy เท่านั้น
 3. fx ที่ใช้ได้: alarm, cpr, firstCPR, epi, shock, rosc, rhythm ("flat"|"vf"|"nsr")
 4. เน้นคำสำคัญด้วย **คำเน้น** เท่านั้น — ห้ามใช้ HTML เด็ดขาด
@@ -92,6 +109,14 @@ export async function POST(request: Request) {
     "ห้ามใช้ slug ว่า vf-arrest-01 (มีอยู่แล้ว)",
   ].filter(Boolean).join("\n");
 
+  // ตัวละครเสริมจาก DB — ใส่ใน prompt และใช้ตอน validate ผลลัพธ์
+  const adminClient = createAdminClient();
+  const { data: dbChars } = await adminClient
+    .from("sim_characters")
+    .select("slug, name, role, personality")
+    .eq("status", "active");
+  const extraCharacters = dbChars ?? [];
+
   try {
     const client = createAnthropic();
     const response = await createWithFallback(
@@ -99,7 +124,7 @@ export async function POST(request: Request) {
       CHAT_MODELS,
       {
         max_tokens: 8192,
-        system: systemPrompt(),
+        system: systemPrompt(extraCharacters),
         tools: [SCENARIO_TOOL],
         tool_choice: { type: "tool", name: "create_sim_scenario" },
         messages: [{ role: "user", content: userPrompt }],
@@ -123,7 +148,7 @@ export async function POST(request: Request) {
     }
 
     const scenario = tool.input as Record<string, unknown>;
-    const invalid = describeScenarioError(scenario);
+    const invalid = describeScenarioError(scenario, extraCharacters.map((c) => c.slug));
     if (invalid) {
       return NextResponse.json(
         { error: `โจทย์ที่ AI สร้างไม่ผ่านการตรวจ: ${invalid} — ลองสร้างใหม่` },

@@ -193,3 +193,72 @@ export function getCharacter(charId: string): SimCharacter | null {
 export function characterImageUrl(charId: string, pose: Pose, talking = false): string {
   return `/images/sim/characters/${charId}/${pose}${talking ? "_talk" : ""}.webp`;
 }
+
+// ---- ตัวละครจากตาราง sim_characters (เพิ่มผ่านหน้าแอดมิน) ------------------
+
+/** ท่าเคลื่อนไหวตอนยืนบนเวที (loop ตลอดที่ตัวละครแสดง) */
+export type CharacterMotion = "none" | "bob" | "sway" | "pulse";
+export const CHARACTER_MOTIONS: { id: CharacterMotion; label: string }[] = [
+  { id: "none", label: "นิ่ง" },
+  { id: "bob", label: "ลอยขึ้นลง" },
+  { id: "sway", label: "โยกซ้ายขวา" },
+  { id: "pulse", label: "เต้นตุบๆ" },
+];
+
+export interface SimDbCharacter {
+  slug: string;
+  name: string;
+  role: string | null;
+  plate: [string, string];
+  /** key = pose หรือ `${pose}_talk` → public URL ใน Supabase Storage */
+  images: Record<string, string>;
+  /** บุคลิก/วิธีพูด — ใช้ใน prompt ของ AI */
+  personality?: string | null;
+  motion?: CharacterMotion;
+}
+
+/** ข้อมูลตัวละครแบบรวม (built-in หรือจาก DB) ที่ runner/sprite ใช้ render */
+export interface ResolvedCharacter {
+  name: string;
+  plate: [string, string];
+  Placeholder?: SimCharacter["Placeholder"];
+  images?: Record<string, string>;
+  motion: CharacterMotion;
+}
+
+export function resolveCharacter(
+  charId: string,
+  dbCharacters?: Map<string, SimDbCharacter>,
+): ResolvedCharacter | null {
+  const builtin = SIM_CHARACTERS[charId];
+  if (builtin) {
+    return {
+      name: builtin.name,
+      plate: builtin.plate,
+      Placeholder: builtin.Placeholder,
+      motion: "none",
+    };
+  }
+  const db = dbCharacters?.get(charId);
+  if (db) {
+    return { name: db.name, plate: db.plate, images: db.images, motion: db.motion ?? "none" };
+  }
+  return null;
+}
+
+/** placeholder กลางสำหรับตัวละคร DB ที่ยังไม่ได้อัปโหลดรูปครบทุกท่า */
+export function GenericPlaceholder({ pose, mouthOpen }: FaceProps) {
+  const skin = "#EFC49E", scrub = "#7A8699", scrubD = "#5B6675", hair = "#3A3F4B";
+  return (
+    <svg viewBox="0 0 200 250" xmlns="http://www.w3.org/2000/svg">
+      <path d="M28,250 L28,206 Q28,172 100,170 Q172,172 172,206 L172,250 Z" fill={scrub} stroke={OUT} strokeWidth="4" />
+      <path d="M76,176 L100,200 L124,176 L118,170 L100,186 L82,170 Z" fill={scrubD} stroke={OUT} strokeWidth="3" />
+      <rect x="88" y="150" width="24" height="26" fill={skin} stroke={OUT} strokeWidth="3.4" />
+      <path d="M52,100 Q52,42 100,40 Q148,42 148,100 Q148,140 128,152 Q114,161 100,161 Q86,161 72,152 Q52,140 52,100 Z" fill={skin} stroke={OUT} strokeWidth="4" />
+      <path d="M48,100 Q46,44 100,36 Q154,44 152,100 Q148,72 132,66 Q116,82 100,64 Q84,82 68,66 Q52,72 48,100 Z" fill={hair} stroke={OUT} strokeWidth="4" />
+      <Brows pose={pose} x1={80} x2={120} y={92} />
+      <Eyes pose={pose} x1={80} x2={120} y={104} iris="#4A3728" />
+      <Mouth pose={pose} cx={100} y={132} mouthOpen={mouthOpen} />
+    </svg>
+  );
+}

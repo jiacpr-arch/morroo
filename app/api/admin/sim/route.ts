@@ -56,7 +56,14 @@ export async function POST(request: Request) {
     story: body.story,
   };
 
-  const invalid = describeScenarioError(scenario);
+  const adminForChars = createAdminClient();
+  const { data: dbChars } = await adminForChars
+    .from("sim_characters")
+    .select("slug")
+    .eq("status", "active");
+  const extraCharIds = (dbChars ?? []).map((c) => c.slug);
+
+  const invalid = describeScenarioError(scenario, extraCharIds);
   if (invalid) return NextResponse.json({ error: invalid }, { status: 400 });
 
   // slug ชนกับเคส built-in จะโดน shadow โดย queries-sim (built-in ชนะเสมอ)

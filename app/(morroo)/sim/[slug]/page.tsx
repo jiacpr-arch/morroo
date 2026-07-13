@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import SimRunner from "@/components/sim/SimRunner";
-import { getSimScenario } from "@/lib/supabase/queries-sim";
+import { getSimCharacters, getSimScenario } from "@/lib/supabase/queries-sim";
 
 export const dynamic = "force-dynamic";
 
@@ -21,8 +21,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function SimPlayPage({ params }: PageProps) {
   const { slug } = await params;
-  const scenario = await getSimScenario(slug);
+  const [scenario, characters] = await Promise.all([
+    getSimScenario(slug),
+    getSimCharacters(),
+  ]);
   if (!scenario) notFound();
 
-  return <SimRunner scenario={scenario} />;
+  return <SimRunner scenario={scenario} characters={characters} />;
 }

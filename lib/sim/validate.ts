@@ -8,15 +8,15 @@ import { isValidScenario, type SimScenario, type StoryNode } from "./types";
 const POSE_SET = new Set(["idle", "talk", "panic", "stern", "happy"]);
 const RHYTHM_SET = new Set(["flat", "vf", "nsr"]);
 
-function checkNodes(nodes: StoryNode[], path: string): string | null {
+function checkNodes(nodes: StoryNode[], path: string, charIds: Set<string>): string | null {
   for (let i = 0; i < nodes.length; i++) {
     const node = nodes[i];
     const at = `${path}[${i}]`;
 
     if ("say" in node) {
       const { who, pose } = node.say;
-      if (!SIM_CHARACTERS[who]) {
-        return `${at}: ไม่รู้จักตัวละคร "${who}" (ใช้ได้: ${Object.keys(SIM_CHARACTERS).join(", ")})`;
+      if (!charIds.has(who)) {
+        return `${at}: ไม่รู้จักตัวละคร "${who}" (ใช้ได้: ${[...charIds].join(", ")})`;
       }
       if (pose && !POSE_SET.has(pose)) {
         return `${at}: pose "${pose}" ไม่ถูกต้อง (ใช้ได้: ${[...POSE_SET].join(", ")})`;
@@ -40,7 +40,7 @@ function checkNodes(nodes: StoryNode[], path: string): string | null {
       }
       for (const opt of node.choice.options) {
         if (opt.then) {
-          const err = checkNodes(opt.then, `${at}.then`);
+          const err = checkNodes(opt.then, `${at}.then`, charIds);
           if (err) return err;
         }
       }
@@ -51,8 +51,12 @@ function checkNodes(nodes: StoryNode[], path: string): string | null {
 
 /**
  * คืน null เมื่อผ่าน หรือข้อความไทยอธิบายจุดที่ผิดจุดแรก
+ * @param extraCharIds slug ตัวละครจากตาราง sim_characters ที่อนุญาตเพิ่มจาก built-in
  */
-export function describeScenarioError(scenario: unknown): string | null {
+export function describeScenarioError(
+  scenario: unknown,
+  extraCharIds: string[] = [],
+): string | null {
   if (!isValidScenario(scenario)) {
     return "โครงสร้างโจทย์ไม่ถูกต้อง — ต้องมี slug, title และ story (array ของ node แบบ say/inter/skip/choice/end โดยทุก choice มี ≥2 ตัวเลือกและมีข้อถูก)";
   }
@@ -64,5 +68,6 @@ export function describeScenarioError(scenario: unknown): string | null {
   if (!("end" in last)) {
     return "story ต้องจบด้วย node { end: true }";
   }
-  return checkNodes(s.story, "story");
+  const charIds = new Set([...Object.keys(SIM_CHARACTERS), ...extraCharIds]);
+  return checkNodes(s.story, "story", charIds);
 }

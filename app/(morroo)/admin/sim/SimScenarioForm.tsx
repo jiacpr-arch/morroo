@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -9,7 +9,19 @@ import { Textarea } from "@/components/ui/textarea";
 import { Loader2, Play, WandSparkles, X } from "lucide-react";
 import SimRunner from "@/components/sim/SimRunner";
 import { describeScenarioError } from "@/lib/sim/validate";
+import type { SimDbCharacter } from "@/lib/sim/characters";
 import type { SimScenario } from "@/lib/sim/types";
+
+interface CharacterRow {
+  slug: string;
+  name: string;
+  role: string | null;
+  plate_top: string;
+  plate_bottom: string;
+  images: Record<string, string> | null;
+  motion: string | null;
+  status: string;
+}
 
 export interface SimFormValues {
   slug: string;
@@ -39,20 +51,26 @@ const EMPTY: SimFormValues = {
 };
 
 /** parse + validate — คืน { story } หรือ { error } ข้อความไทย */
-function parseStory(values: SimFormValues): { story?: unknown; error?: string } {
+function parseStory(
+  values: SimFormValues,
+  extraCharIds: string[],
+): { story?: unknown; error?: string } {
   let story: unknown;
   try {
     story = JSON.parse(values.storyJson);
   } catch (e) {
     return { error: `story ไม่ใช่ JSON ที่ถูกต้อง: ${e instanceof Error ? e.message : ""}` };
   }
-  const invalid = describeScenarioError({
-    slug: values.slug.trim(),
-    title: values.title.trim(),
-    subtitle: values.subtitle.trim(),
-    difficultyTag: values.difficultyTag,
-    story,
-  });
+  const invalid = describeScenarioError(
+    {
+      slug: values.slug.trim(),
+      title: values.title.trim(),
+      subtitle: values.subtitle.trim(),
+      difficultyTag: values.difficultyTag,
+      story,
+    },
+    extraCharIds,
+  );
   if (invalid) return { error: invalid };
   return { story };
 }
@@ -62,6 +80,29 @@ export default function SimScenarioForm({ initial, submitLabel, onSubmit, showAi
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [preview, setPreview] = useState<SimScenario | null>(null);
+
+  // ตัวละครจาก DB — ใช้ validate ฝั่ง client + render ตอนทดลองเล่น
+  const [dbCharacters, setDbCharacters] = useState<SimDbCharacter[]>([]);
+  useEffect(() => {
+    fetch("/api/admin/sim/characters")
+      .then((res) => (res.ok ? res.json() : { characters: [] }))
+      .then((json) =>
+        setDbCharacters(
+          ((json.characters ?? []) as CharacterRow[])
+            .filter((c) => c.status === "active")
+            .map((c) => ({
+              slug: c.slug,
+              name: c.name,
+              role: c.role,
+              plate: [c.plate_top, c.plate_bottom] as [string, string],
+              images: c.images ?? {},
+              motion: (c.motion ?? "none") as SimDbCharacter["motion"],
+            })),
+        ),
+      )
+      .catch(() => {});
+  }, []);
+  const extraCharIds = dbCharacters.map((c) => c.slug);
 
   // AI panel state
   const [aiTopic, setAiTopic] = useState("");
@@ -84,7 +125,7 @@ export default function SimScenarioForm({ initial, submitLabel, onSubmit, showAi
   }
 
   function playtest() {
-    const { story, error: parseError } = parseStory(values);
+    const { story, error: parseError } = parseStory(values, extraCharIds);
     if (parseError) {
       setError(parseError);
       return;
@@ -101,7 +142,7 @@ export default function SimScenarioForm({ initial, submitLabel, onSubmit, showAi
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
-    const { story, error: parseError } = parseStory(values);
+    const { story, error: parseError } = parseStory(values, extraCharIds);
     if (parseError) {
       setError(parseError);
       return;
@@ -303,7 +344,7 @@ export default function SimScenarioForm({ initial, submitLabel, onSubmit, showAi
       {preview && (
         <>
           {/* SimRunner เป็น fixed overlay เต็มจออยู่แล้ว — ใส่ปุ่มปิดลอยทับ */}
-          <SimRunner scenario={preview} practice />
+          <SimRunner scenario={preview} practice characters={dbCharacters} />
           <button
             type="button"
             onClick={() => setPreview(null)}

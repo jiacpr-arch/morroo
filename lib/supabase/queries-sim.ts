@@ -5,6 +5,7 @@
 
 import { createClient } from "@/lib/supabase/server";
 import { SIM_SCENARIOS, getBuiltinScenario } from "@/lib/sim/scenarios";
+import type { SimDbCharacter } from "@/lib/sim/characters";
 import { isValidScenario, type SimScenario } from "@/lib/sim/types";
 
 interface SimScenarioRow {
@@ -60,6 +61,38 @@ export async function getSimScenario(slug: string): Promise<SimScenario | null> 
     return data ? rowToScenario(data as SimScenarioRow) : null;
   } catch {
     return null;
+  }
+}
+
+interface SimCharacterRow {
+  slug: string;
+  name: string;
+  role: string | null;
+  plate_top: string;
+  plate_bottom: string;
+  images: Record<string, string> | null;
+  motion: string | null;
+}
+
+/** ตัวละคร active จากตาราง sim_characters (ตัวที่แอดมินเพิ่ม) */
+export async function getSimCharacters(): Promise<SimDbCharacter[]> {
+  try {
+    const supabase = await createClient();
+    const { data } = await supabase
+      .from("sim_characters")
+      .select("slug, name, role, plate_top, plate_bottom, images, motion")
+      .eq("status", "active")
+      .order("created_at", { ascending: true });
+    return ((data as SimCharacterRow[] | null) ?? []).map((row) => ({
+      slug: row.slug,
+      name: row.name,
+      role: row.role,
+      plate: [row.plate_top, row.plate_bottom] as [string, string],
+      images: row.images ?? {},
+      motion: (row.motion ?? "none") as SimDbCharacter["motion"],
+    }));
+  } catch {
+    return [];
   }
 }
 
