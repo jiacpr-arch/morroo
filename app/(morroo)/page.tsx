@@ -9,6 +9,7 @@ import HeroAB from "@/components/HeroAB";
 import PricingViewTracker from "@/components/PricingViewTracker";
 import SocialProofSection from "@/components/SocialProofSection";
 import FeatureShowcase from "@/components/FeatureShowcase";
+import TrainingCoursesSection from "@/components/TrainingCoursesSection";
 import { SocialButtonsRow, LineCtaButton } from "@/components/SocialLinks";
 import { CATEGORIES, PRICING_PLANS } from "@/lib/types";
 import { getExams, getExamPartCounts, sortExamsAvailableFirst } from "@/lib/supabase/queries";
@@ -147,6 +148,9 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Training courses network — cross-sell after the pricing funnel */}
+      <TrainingCoursesSection />
 
       {/* News & Updates */}
       {homeNewsItems.length > 0 && (
