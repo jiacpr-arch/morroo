@@ -6,18 +6,56 @@ import { sendMetaEvent } from "@/lib/meta/events-api";
 const BOT_UA_RE =
   /bot|crawl|spider|slurp|bytespider|facebookexternalhit|twitterbot|linkedinbot|whatsapp|applebot|yandex/i;
 
-// firstaid.morroo.com (plus firstaid-beta.* for pre-cutover QA and
-// firstaid.localhost for local dev) is served by this same app: requests on
-// that host are rewritten into the /firstaid route tree, which lives in its
-// own root layout (app/(firstaid)) with its own Meta pixel.
-const FIRSTAID_HOST_RE = /^firstaid(-beta)?\./i;
+// Each consolidated app is served by this same Next.js app on its own
+// subdomain (plus a "-beta." variant for pre-cutover QA): requests on that
+// host are rewritten into the section's internal route tree, which lives in
+// its own root layout with its own Meta pixel (see app/(firstaid),
+// app/(acls), app/(bls)).
+//
+// `prefix` is deliberately NOT a bare "/acls" or "/bls": app/(morroo)/ already
+// has unrelated routes named acls-emr and acls-reader, so a naive
+// `pathname.startsWith("/acls")` would wrongly capture "/acls-emr" too. The
+// segment-boundary-safe check in inSection() below is the real fix (an exact
+// prefix match or prefix + "/"), but the distinct "-course" suffix is kept as
+// a second, independent safety margin against future collisions.
+type Section = {
+  hostRe: RegExp;
+  prefix: string;
+  canonicalHost: string;
+  /** true if this section fires its own Meta pixel (skip morroo's CAPI here) */
+  skipMorrooCapi: boolean;
+};
 
-// Public URL space that belongs to the firstaid app on its subdomain. Only
-// these get the host-rewrite; anything else on the subdomain (unknown paths)
-// still rewrites and 404s inside the firstaid layout, which is what we want.
-function isFirstAidHost(request: NextRequest): boolean {
+const SECTIONS: Section[] = [
+  {
+    hostRe: /^firstaid(-beta)?\./i,
+    prefix: "/firstaid",
+    canonicalHost: "firstaid.morroo.com",
+    skipMorrooCapi: true,
+  },
+  {
+    hostRe: /^acls(-beta)?\./i,
+    prefix: "/acls-course",
+    canonicalHost: "acls.morroo.com",
+    skipMorrooCapi: true,
+  },
+  {
+    hostRe: /^bls(-beta)?\./i,
+    prefix: "/bls-course",
+    canonicalHost: "bls.morroo.com",
+    skipMorrooCapi: true,
+  },
+];
+
+function matchSection(request: NextRequest): Section | undefined {
   const host = request.headers.get("host") ?? "";
-  return FIRSTAID_HOST_RE.test(host);
+  return SECTIONS.find((s) => s.hostRe.test(host));
+}
+
+// Segment-boundary-safe: "/acls-course" must match "/acls-course" and
+// "/acls-course/x", but never "/acls-emr" or "/acls-reader".
+function inSection(pathname: string, prefix: string): boolean {
+  return pathname === prefix || pathname.startsWith(`${prefix}/`);
 }
 
 function shouldSendCapiPageView(request: NextRequest): boolean {
@@ -33,35 +71,36 @@ function shouldSendCapiPageView(request: NextRequest): boolean {
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  const firstaidHost = isFirstAidHost(request);
+  const section = matchSection(request);
 
   let rewriteUrl: URL | undefined;
-  if (firstaidHost) {
-    if (pathname.startsWith("/firstaid")) {
+  if (section) {
+    if (inSection(pathname, section.prefix)) {
       // Canonicalise: the internal prefix must not be a second public URL on
       // the subdomain — strip it so each page has exactly one address.
       const url = request.nextUrl.clone();
-      url.pathname = pathname.replace(/^\/firstaid/, "") || "/";
+      url.pathname = pathname.slice(section.prefix.length) || "/";
       return NextResponse.redirect(url, 301);
     }
     if (!pathname.startsWith("/api") && !pathname.startsWith("/_next")) {
       rewriteUrl = request.nextUrl.clone();
-      rewriteUrl.pathname = `/firstaid${pathname === "/" ? "" : pathname}`;
+      rewriteUrl.pathname = `${section.prefix}${pathname === "/" ? "" : pathname}`;
     }
   } else {
-    // Reverse direction: on the production www host the /firstaid tree is not
-    // a public URL — 301 to the subdomain so ads/SEO see one canonical home.
-    // Previews and localhost keep /firstaid/* reachable directly for QA.
+    // Reverse direction: on the production www host a section's internal
+    // path tree is not a public URL — 301 to that section's subdomain so
+    // ads/SEO see one canonical home. Previews and localhost keep the
+    // internal prefix reachable directly for QA.
     const host = request.headers.get("host") ?? "";
-    if (
-      pathname.startsWith("/firstaid") &&
-      /(^|\.)morroo\.com$/i.test(host.split(":")[0])
-    ) {
-      const target = new URL(request.url);
-      target.host = "firstaid.morroo.com";
-      target.port = "";
-      target.pathname = pathname.replace(/^\/firstaid/, "") || "/";
-      return NextResponse.redirect(target, 301);
+    if (/(^|\.)morroo\.com$/i.test(host.split(":")[0])) {
+      const hitSection = SECTIONS.find((s) => inSection(pathname, s.prefix));
+      if (hitSection) {
+        const target = new URL(request.url);
+        target.host = hitSection.canonicalHost;
+        target.port = "";
+        target.pathname = pathname.slice(hitSection.prefix.length) || "/";
+        return NextResponse.redirect(target, 301);
+      }
     }
   }
 
@@ -74,7 +113,7 @@ export async function middleware(request: NextRequest) {
   }
 
   // Timeout guard — don't let Supabase hang the entire request. The fallback
-  // must preserve the firstaid host-rewrite or an auth hiccup would render
+  // must preserve the section host-rewrite or an auth hiccup would render
   // morroo's tree on the subdomain.
   let response: NextResponse = rewriteUrl
     ? NextResponse.rewrite(rewriteUrl)
@@ -103,10 +142,9 @@ export async function middleware(request: NextRequest) {
 
   // Send server-side CAPI PageView so Meta sees traffic even when the browser
   // pixel is blocked by ad blockers (~97% of ad clicks were invisible).
-  // Skipped on the firstaid host: that section tracks with its own pixel
-  // (browser-side only for now), and firing morroo's pixel there would
-  // misattribute the traffic.
-  if (!firstaidHost && shouldSendCapiPageView(request)) {
+  // Skipped on sections with their own pixel (browser-side only for now) —
+  // firing morroo's pixel there would misattribute the traffic.
+  if (!section?.skipMorrooCapi && shouldSendCapiPageView(request)) {
     const fbc =
       request.cookies.get("_fbc")?.value ??
       (fbclid ? `fb.1.${Date.now()}.${fbclid}` : null);

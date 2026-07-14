@@ -1,0 +1,24 @@
+/*
+ * Per-course accent override for the ACLS/BLS route groups. Scoped to
+ * [data-course="..."] (set by AccentThemeProvider) rather than :root, so it
+ * can never leak into morroo's own pages or the firstaid section — CSS
+ * custom properties are late-bound, so re-declaring --primary/--ring/etc.
+ * here still flows through app/globals.css's `--color-primary: var(--primary)`
+ * (and friends) for every descendant, without touching :root at all.
+ *
+ * Hex values match the accent colors already defined in lib/network-sites.ts
+ * for these two course cards.
+ */
+[data-course="acls"] {
+  --color-brand: #1d4ed8;
+  --primary: #1d4ed8;
+  --ring: #1d4ed8;
+  --sidebar-primary: #1d4ed8;
+}
+
+[data-course="bls"] {
+  --color-brand: #0284c7;
+  --primary: #0284c7;
+  --ring: #0284c7;
+  --sidebar-primary: #0284c7;
+}
