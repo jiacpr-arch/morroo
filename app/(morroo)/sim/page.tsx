@@ -109,6 +109,10 @@ export default async function SimHubPage() {
         · ทบทวนเนื้อหาได้ที่{" "}
         <Link href="/acls-reader" className="font-semibold text-brand underline">
           คู่มือทบทวน ACLS
+        </Link>{" "}
+        · อยากลงมือทำหัตถการเอง ลอง{" "}
+        <Link href="/resus" className="font-semibold text-brand underline">
+          Resus Hero — เกมกู้ชีพภาคปฏิบัติ
         </Link>
       </p>
     </div>
