@@ -1,6 +1,6 @@
 "use client";
 
-// แถบชีพจร — HP + หัวใจเต้น (เร็วขึ้นเมื่อ HP ต่ำ) + เวลา + จำนวนพลาด
+// แถบสัญญาณชีพ — โอกาสรอด + หัวใจเต้น (เร็วขึ้นเมื่อโอกาสรอดต่ำ) + เวลา + จำนวนพลาด
 
 import { fmtTime } from "@/lib/resus/engine";
 
@@ -24,15 +24,18 @@ export default function VitalsBar({ hp, maxHp, elapsed, parTimeSec, wrong }: Vit
       >
         ❤️
       </span>
-      <div
-        className="rss-hpbar"
-        role="meter"
-        aria-label="อาการผู้ป่วย"
-        aria-valuenow={Math.round(pct)}
-        aria-valuemin={0}
-        aria-valuemax={100}
-      >
-        <div className={`rss-hpfill ${tone}`} style={{ width: `${pct}%` }} />
+      <div className="rss-hpwrap">
+        <span className="rss-hplabel">โอกาสรอด</span>
+        <div
+          className="rss-hpbar"
+          role="meter"
+          aria-label="โอกาสรอดของผู้ป่วย"
+          aria-valuenow={Math.round(pct)}
+          aria-valuemin={0}
+          aria-valuemax={100}
+        >
+          <div className={`rss-hpfill ${tone}`} style={{ width: `${pct}%` }} />
+        </div>
       </div>
       <span className={`rss-clock ${overPar ? "rss-clock-over" : ""}`}>
         ⏱ {fmtTime(elapsed)}

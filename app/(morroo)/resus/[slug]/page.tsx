@@ -12,9 +12,9 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const operation = await getResusCase(slug);
-  if (!operation) return { title: "Operation MorRoo" };
+  if (!operation) return { title: "Resus Hero" };
   return {
-    title: `${operation.title} — Operation MorRoo`,
+    title: `${operation.title} — Resus Hero`,
     description: operation.subtitle,
   };
 }

@@ -1,18 +1,18 @@
 import { test, expect } from "@playwright/test";
 
-// Operation MorRoo — เกมกู้ชีพที่ /resus
+// Resus Hero — เกมหัตถการกู้ชีพ ACLS ที่ /resus
 
 test("resus hub lists the 3 built-in cases", async ({ page }) => {
   await page.goto("/resus");
-  await expect(page.locator("h1")).toContainText("OPERATION");
-  await expect(page.getByText("เย็บแผลฉีกขาด").first()).toBeVisible();
-  await expect(page.getByText("Tension Pneumothorax", { exact: false }).first()).toBeVisible();
-  await expect(page.getByText("ผ่าฝีระบายหนอง", { exact: false }).first()).toBeVisible();
-  await expect(page.getByRole("link", { name: /เข้าห้องผ่าตัด/ })).toHaveCount(3);
+  await expect(page.locator("h1")).toContainText("RESUS");
+  await expect(page.getByText("VF Arrest", { exact: false }).first()).toBeVisible();
+  await expect(page.getByText("PEA", { exact: false }).first()).toBeVisible();
+  await expect(page.getByText("Airway & Post-ROSC", { exact: false }).first()).toBeVisible();
+  await expect(page.getByRole("link", { name: /เริ่มกู้ชีพ/ })).toHaveCount(3);
 });
 
-test("player can start suture case, gets punished for wrong tool, completes step 1", async ({ page }) => {
-  await page.goto("/resus/suture-laceration-01");
+test("player can start VF case, gets punished for wrong tool, completes step 1", async ({ page }) => {
+  await page.goto("/resus/vf-arrest-01");
   await expect(page.locator(".rss-title")).toBeVisible();
 
   // เริ่มเกม — คลิกซ้ำจนเข้าจอเกม (กันคลิกก่อน hydration)
@@ -22,27 +22,21 @@ test("player can start suture case, gets punished for wrong tool, completes step
     if (await banner.isVisible().catch(() => false)) break;
     await page.waitForTimeout(1000);
   }
-  await expect(page.getByTestId("step-banner")).toContainText("กดห้ามเลือด");
+  await expect(page.getByTestId("step-banner")).toContainText("เขย่าเรียก");
 
   // แตะเวทีโดยยังไม่เลือกเครื่องมือ → เตือน ไม่นับพลาด
   await page.getByTestId("zone-active").click();
   await expect(page.locator(".rss-toast-bad")).toContainText("เลือกเครื่องมือ");
   await expect(page.locator(".rss-wrongchip")).toContainText("0");
 
-  // หยิบมีดผิดจังหวะ → โดนหัก + toast อธิบาย
-  await page.getByTestId("tool-scalpel").click();
+  // กดปุ่มช็อกผิดจังหวะ (ยังไม่ประเมินผู้ป่วย) → โดนหัก + toast อธิบาย
+  await page.getByTestId("tool-defib_button").click();
   await page.getByTestId("zone-active").click();
   await expect(page.locator(".rss-wrongchip")).toContainText("1");
   await expect(page.locator(".rss-toast-bad")).toBeVisible();
 
-  // หยิบผ้าก๊อซแล้วกดค้างในเป้าจนครบ → step 1 เสร็จ ไป step 2 (ล้างแผล)
-  await page.getByTestId("tool-gauze").click();
-  const zone = page.getByTestId("zone-active");
-  const box = await zone.boundingBox();
-  if (!box) throw new Error("zone-active has no bounding box");
-  await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
-  await page.mouse.down();
-  await page.waitForTimeout(2600);
-  await page.mouse.up();
-  await expect(page.getByTestId("step-banner")).toContainText("ล้างแผล");
+  // เขย่าเรียกด้วยมือ (tap) → step 1 เสร็จ ไป step 2 (คลำชีพจร)
+  await page.getByTestId("tool-hands").click();
+  await page.getByTestId("zone-active").click();
+  await expect(page.getByTestId("step-banner")).toContainText("คลำชีพจร");
 });

@@ -63,8 +63,8 @@ export default function ResusField({
     const fx = op.steps[i].fxState;
     if (fx) doneStates.add(fx);
   }
-  const stitchProgress = step?.id === "suture" ? view.tracePct : 0;
-  const bleedingActive = !!step?.hpDrain && !view.done && !view.dead;
+  const cprActive =
+    step?.gesture.kind === "rhythm" && step.tool === "cpr_hands" && !view.done && !view.dead;
 
   const center = zone ? zoneCenter(zone) : null;
   const showGuide = highlight === "full";
@@ -87,12 +87,7 @@ export default function ResusField({
       role="img"
       aria-label={step ? `เป้าหมายปัจจุบัน: ${step.title}` : "เวทีผ่าตัด"}
     >
-      <OperationArt
-        artId={op.artId}
-        states={doneStates}
-        stitchProgress={stitchProgress}
-        bleedingActive={bleedingActive}
-      />
+      <OperationArt artId={op.artId} states={doneStates} cprActive={cprActive} />
 
       {/* เส้นนำสำหรับ trace (โหมดง่าย) + progress ที่ลากแล้ว */}
       {trace && showGuide && (

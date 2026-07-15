@@ -11,14 +11,16 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Home, RefreshCw, Volume2, VolumeX } from "lucide-react";
 import {
-  DEFAULT_DIFFICULTY, DIFFICULTY, armTool, createInitialState, currentStep,
-  currentZone, fmtTime, getDifficulty, gradeFor, holdTick, pointerDown,
-  pointerMove, pointerUp, scoreFor, starsFor, tick, type ActionOutcome,
+  DEFAULT_DIFFICULTY, DIFFICULTY, armTool, createInitialState, currentRhythm,
+  currentStep, currentZone, fmtTime, getDifficulty, gradeFor, holdTick,
+  pointerDown, pointerMove, pointerUp, scoreFor, starsFor, tick,
+  type ActionOutcome,
 } from "@/lib/resus/engine";
+import EcgMonitor from "@/components/sim/EcgMonitor";
 import { pointInZone, type Point } from "@/lib/resus/geometry";
 import {
-  initAudio, playMistake, playOpDone, playOpFailed, playStepDone, playSubDone,
-  playToolSelect,
+  initAudio, playMetronome, playMistake, playOpDone, playOpFailed, playRhythmGood,
+  playRosc, playShock, playStepDone, playSubDone, playToolSelect,
 } from "@/lib/resus/sound";
 import { RESUS_BADGE_NAMES, recordResusRun, type RecordedRun } from "@/lib/resus/record";
 import { parseEmphasis, type TextSegment } from "@/lib/sim/types";
@@ -94,6 +96,7 @@ export default function ResusRunner({ operation, practice = false }: ResusRunner
   const [holdPct, setHoldPct] = useState(0);
   const [shaking, setShaking] = useState(false);
   const [redN, setRedN] = useState(0);
+  const [whiteN, setWhiteN] = useState(0);
   const [result, setResult] = useState<Result | null>(null);
   const [reward, setReward] = useState<RecordedRun | null>(null);
   const [hiscore, setHiscore] = useState(() => readHiscore(op.slug, difficulty));
@@ -190,6 +193,22 @@ export default function ResusRunner({ operation, practice = false }: ResusRunner
     }
   }
 
+  /** แว้บขาวหนึ่งครั้ง — ใช้ตอนช็อกไฟฟ้า */
+  function flashScreen() {
+    vibrate([30, 30, 90]);
+    if (!reducedMotion) setWhiteN((n) => n + 1);
+  }
+
+  // เมโทรนอมระหว่าง step ที่เป็น gesture rhythm (ปั๊ม/บีบ bag ตามจังหวะ)
+  useEffect(() => {
+    if (screen !== "game") return;
+    const step = op.steps[view.stepIdx];
+    if (!step || step.gesture.kind !== "rhythm") return;
+    const period = 60000 / step.gesture.targetBpm;
+    const id = setInterval(() => sfx(playMetronome), period);
+    return () => clearInterval(id);
+  }, [screen, view.stepIdx, op]);
+
   function handleOutcome(out: ActionOutcome) {
     switch (out.kind) {
       case "wrong_tool":
@@ -203,6 +222,7 @@ export default function ResusRunner({ operation, practice = false }: ResusRunner
       case "rhythm_feedback":
         // feedback จังหวะแบบเบาๆ ทุก tap — ไม่ใช้ toast เพราะจะสแปมจอ
         vibrate([12]);
+        if (out.quality === "good") sfx(playRhythmGood);
         rhythmN.current += 1;
         setRhythmFb({ n: rhythmN.current, q: out.quality });
         syncView();
@@ -217,13 +237,15 @@ export default function ResusRunner({ operation, practice = false }: ResusRunner
       }
       case "step_done":
         stopHold();
-        sfx(playStepDone);
+        if (out.step.isShock) { sfx(playShock); flashScreen(); }
+        else sfx(playStepDone);
         showToast("ok", out.step.why);
         syncView();
         break;
       case "op_done":
         stopHold();
-        sfx(playOpDone);
+        if (out.step.fxState === "rosc") sfx(playRosc);
+        else sfx(playOpDone);
         showToast("ok", out.step.why);
         syncView();
         later(() => endCase(true), reducedMotion ? 500 : 1200);
@@ -350,9 +372,9 @@ export default function ResusRunner({ operation, practice = false }: ResusRunner
     return (
       <div className="rss-app">
         <section className="rss-title">
-          <div className="rss-eyebrow">Operation MorRoo · ห้องหัตถการ</div>
+          <div className="rss-eyebrow">Resus Hero · ห้องกู้ชีพ ACLS</div>
           <h1>
-            <span className="rss-green-text">OPERATION</span><br />
+            <span className="rss-green-text">RESUS HERO</span><br />
             {op.title}
           </h1>
           <div className="rss-chart">
@@ -395,13 +417,13 @@ export default function ResusRunner({ operation, practice = false }: ResusRunner
             </button>
           </div>
           <button type="button" className="rss-btn-main" onClick={startGame}>
-            🧤 เริ่มหัตถการ
+            ⚡ เริ่มกู้ชีพ
           </button>
           <Link href="/resus" className="rss-btn-ghost">
             <Home size={15} strokeWidth={2.4} style={{ display: "inline", verticalAlign: "-2px", marginRight: 6 }} />
             กลับหน้ารวมด่าน
           </Link>
-          <div className="rss-note">SURGERY GAME · PROCEDURE TRAINING · MORROO</div>
+          <div className="rss-note">RESUS HERO · ACLS PROCEDURE GAME · MORROO</div>
         </section>
       </div>
     );
@@ -414,7 +436,7 @@ export default function ResusRunner({ operation, practice = false }: ResusRunner
       <div className="rss-app">
         <section className={`rss-debrief ${result.won ? "rss-winbg" : "rss-losebg"}`}>
           <div className={`rss-stamp ${result.won ? "rss-win" : "rss-lose"}`}>
-            {result.won ? "OP SUCCESS!" : "OP FAILED"}
+            {result.won ? "ROSC! กู้ชีพสำเร็จ" : "ผู้ป่วยไม่รอด"}
           </div>
           <div className="rss-stars" aria-label={`ได้ ${result.stars} ดาว`}>
             {[1, 2, 3].map((i) => (
@@ -424,8 +446,8 @@ export default function ResusRunner({ operation, practice = false }: ResusRunner
           <div className="rss-diff-badge">โหมด {getDifficulty(st.difficulty).label}</div>
           <p className="rss-verdict-sub">
             {result.won
-              ? `${op.patient.name} ปลอดภัย — เก็บเคสนี้เข้าพอร์ตหมอได้เลย`
-              : "ผู้ป่วยไปไม่ไหวกลางหัตถการ — อ่าน debrief แล้วกลับมาแก้มือ"}
+              ? `${op.patient.name} ชีพจรกลับมาแล้ว — จำลำดับ ACLS ชุดนี้ไว้ให้ขึ้นใจ`
+              : "ผู้ป่วยไปไม่ไหว — อ่าน debrief ทบทวนลำดับแล้วลองใหม่"}
             {result.isHiscore && <><br />🏆 New Hi-Score: {result.score}</>}
           </p>
           {reward && reward.loggedIn && reward.xpEarned > 0 && (
@@ -483,7 +505,7 @@ export default function ResusRunner({ operation, practice = false }: ResusRunner
           <div className="rss-debrief-actions">
             <button type="button" className="rss-btn-main" onClick={startGame}>
               <RefreshCw size={16} strokeWidth={2.6} style={{ display: "inline", verticalAlign: "-2px", marginRight: 8 }} />
-              ผ่าอีกรอบ
+              กู้ชีพอีกรอบ
             </button>
             <Link href="/resus" className="rss-btn-ghost">กลับหน้ารวมด่าน</Link>
           </div>
@@ -521,6 +543,14 @@ export default function ResusRunner({ operation, practice = false }: ResusRunner
           )}
         </div>
         <div className="rss-stage">
+          <div className="rss-monitor" aria-hidden="true">
+            <EcgMonitor
+              rhythm={currentRhythm(op, st) ?? "flat"}
+              cpr={step?.gesture.kind === "rhythm" && step.tool === "cpr_hands"}
+              width={150}
+              height={44}
+            />
+          </div>
           <ResusField
             op={op}
             view={st}
@@ -551,6 +581,7 @@ export default function ResusRunner({ operation, practice = false }: ResusRunner
         />
       </section>
       {redN > 0 && <div key={`rf-${redN}`} className="rss-redflash rss-go" />}
+      {whiteN > 0 && <div key={`wf-${whiteN}`} className="rss-whiteflash rss-go" />}
     </div>
   );
 }

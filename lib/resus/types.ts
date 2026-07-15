@@ -14,23 +14,20 @@ export const FIELD_W = 1000;
 export const FIELD_H = 750;
 
 export type ToolId =
-  | "antiseptic"
-  | "saline"
-  | "gauze"
-  | "syringe_lidocaine"
-  | "scalpel"
-  | "suture_set"
-  | "forceps"
-  | "hemostat"
-  | "scissors"
-  | "dressing"
-  | "iv_catheter"
-  | "chest_tube"
-  | "seal_bottle"
+  | "hands"
+  | "fingers_pulse"
+  | "cpr_hands"
+  | "defib_pads"
+  | "defib_button"
+  | "bag_mask"
+  | "laryngoscope"
+  | "ett_tube"
   | "stethoscope"
-  | "o2_mask"
-  | "packing_strip"
-  | "gloved_finger";
+  | "iv_catheter"
+  | "saline_bag"
+  | "syringe_epi"
+  | "syringe_amio"
+  | "o2_mask";
 
 export interface ResusTool {
   id: ToolId;
@@ -41,23 +38,20 @@ export interface ResusTool {
 }
 
 export const TOOL_CATALOG: Record<ToolId, ResusTool> = {
-  antiseptic: { id: "antiseptic", name: "น้ำยาฆ่าเชื้อ", emoji: "🧴", hint: "ทาฆ่าเชื้อรอบแผล" },
-  saline: { id: "saline", name: "NSS ล้างแผล", emoji: "💧", hint: "ล้างสิ่งสกปรกออกจากแผล" },
-  gauze: { id: "gauze", name: "ผ้าก๊อซ", emoji: "🩹", hint: "กดห้ามเลือด / ซับ" },
-  syringe_lidocaine: { id: "syringe_lidocaine", name: "ยาชา 1% Lidocaine", emoji: "💉", hint: "ฉีดยาชาก่อนทำหัตถการ" },
-  scalpel: { id: "scalpel", name: "มีดผ่าตัด", emoji: "🔪", hint: "ลงมีดตามแนวที่กำหนด" },
-  suture_set: { id: "suture_set", name: "ชุดเย็บแผล", emoji: "🪡", hint: "เย็บปิดแผล" },
-  forceps: { id: "forceps", name: "Forceps", emoji: "🥢", hint: "คีบจับเนื้อเยื่อ" },
-  hemostat: { id: "hemostat", name: "Hemostat / Kelly", emoji: "✂️", hint: "หนีบ / เลาะแบบทู่" },
-  scissors: { id: "scissors", name: "กรรไกร", emoji: "✄", hint: "ตัดไหม" },
-  dressing: { id: "dressing", name: "ผ้าปิดแผล", emoji: "🩺", hint: "ปิดแผลเมื่อเสร็จ" },
-  iv_catheter: { id: "iv_catheter", name: "เข็ม IV เบอร์ใหญ่", emoji: "📍", hint: "Needle decompression" },
-  chest_tube: { id: "chest_tube", name: "สายระบายทรวงอก (ICD)", emoji: "🧪", hint: "ใส่สายระบายลม/ของเหลว" },
-  seal_bottle: { id: "seal_bottle", name: "ขวด Water Seal", emoji: "⚗️", hint: "ต่อปลายสาย ICD" },
-  stethoscope: { id: "stethoscope", name: "หูฟัง", emoji: "🩻", hint: "ฟังเสียงปอดสองข้าง" },
-  o2_mask: { id: "o2_mask", name: "หน้ากากออกซิเจน", emoji: "😮‍💨", hint: "ให้ O2 ก่อนเสมอ" },
-  packing_strip: { id: "packing_strip", name: "Packing gauze", emoji: "🎗️", hint: "ใส่ในโพรงฝี ห้ามเย็บปิด" },
-  gloved_finger: { id: "gloved_finger", name: "มือ (ใส่ถุงมือ)", emoji: "🖐️", hint: "คลำตรวจก่อนลงมือ" },
+  hands: { id: "hands", name: "มือเปล่า", emoji: "🫱", hint: "เขย่าปลุก / จัดท่าเปิดทางเดินหายใจ" },
+  fingers_pulse: { id: "fingers_pulse", name: "คลำชีพจร", emoji: "✌️", hint: "คลำ carotid ไม่เกิน 10 วินาที" },
+  cpr_hands: { id: "cpr_hands", name: "ปั๊มหัวใจ", emoji: "🫸", hint: "กดกลางอก 100-120/นาที ลึก 5-6 ซม." },
+  defib_pads: { id: "defib_pads", name: "แผ่น Pads", emoji: "🩹", hint: "ใต้ไหปลาร้าขวา + ชายโครงซ้าย" },
+  defib_button: { id: "defib_button", name: "ช็อกไฟฟ้า", emoji: "⚡", hint: "ประจุ เคลียร์คน แล้วช็อก" },
+  bag_mask: { id: "bag_mask", name: "Ambu Bag", emoji: "🫧", hint: "บีบช่วยหายใจ — อย่าเร็วเกิน" },
+  laryngoscope: { id: "laryngoscope", name: "Laryngoscope", emoji: "🔦", hint: "เปิดดู vocal cords ก่อนใส่ท่อ" },
+  ett_tube: { id: "ett_tube", name: "ท่อช่วยหายใจ (ETT)", emoji: "🪈", hint: "สอดผ่าน vocal cords" },
+  stethoscope: { id: "stethoscope", name: "หูฟัง", emoji: "🩺", hint: "ฟังเสียงปอดสองข้าง" },
+  iv_catheter: { id: "iv_catheter", name: "เข็มเปิดเส้น IV", emoji: "💉", hint: "เปิดเส้นที่ข้อพับแขน" },
+  saline_bag: { id: "saline_bag", name: "สารน้ำ NSS", emoji: "💧", hint: "ต่อถุงน้ำเกลือ / โหลด volume" },
+  syringe_epi: { id: "syringe_epi", name: "Epinephrine 1 mg", emoji: "🧪", hint: "ฉีดเข้า IV ทุก 3-5 นาที" },
+  syringe_amio: { id: "syringe_amio", name: "Amiodarone 300 mg", emoji: "💊", hint: "ยากันชักหัวใจสำหรับ VF ดื้อช็อก" },
+  o2_mask: { id: "o2_mask", name: "หน้ากากออกซิเจน", emoji: "😷", hint: "ให้ O2 เต็มที่" },
 };
 
 // ---- Zone & Gesture (พิกัด viewBox) ----
@@ -117,7 +111,8 @@ export interface OperationPatient {
   story: string;
 }
 
-export type OperationArtId = "laceration" | "chest" | "abscess";
+/** v1 มีฉากเดียว: ผู้ป่วยหัวใจหยุดเต้นบนเตียง ER (ทุกเคสใช้ร่วมกัน) */
+export type OperationArtId = "arrest";
 
 export interface Operation {
   slug: string;
