@@ -1,4 +1,4 @@
-// Operation MorRoo — ชนิดข้อมูลของด่านหัตถการ (Operation) และสถานะเกม
+// Resus Hero — ชนิดข้อมูลของด่านหัตถการ (Operation) และสถานะเกม
 //
 // ด่านเป็น data ล้วน (เขียนใน lib/resus/cases.ts หรืออนาคตจากตาราง
 // resus_cases) — พิกัดทั้งหมดอยู่ในระบบ viewBox 0..1000 × 0..750

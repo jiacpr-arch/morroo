@@ -1,6 +1,6 @@
 "use client";
 
-// Operation MorRoo — จอเกมหัตถการ (title → game → debrief)
+// Resus Hero — จอเกมกู้ชีพ (title → game → debrief)
 //
 // สถานะ engine เป็น mutable ใน ref (S) + snapshot เข้า React state (view)
 // ตามแบบ SimRunner: logic ทั้งหมดเป็น plain function แตะเฉพาะ ref + setter

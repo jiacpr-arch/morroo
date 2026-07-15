@@ -1,4 +1,4 @@
-// Operation MorRoo — data access (server components)
+// Resus Hero — data access (server components)
 //
 // ด่านมี 2 แหล่ง: built-in ในโค้ด (lib/resus/cases.ts) + ตาราง
 // resus_cases (แอดมิน/AI สร้าง, เฉพาะ status='published') —

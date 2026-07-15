@@ -1,6 +1,6 @@
 "use client";
 
-// เวทีผ่าตัด — SVG ตัวเดียวรับ pointer ทุกอย่าง (mouse + touch ผ่าน Pointer Events)
+// เวทีกู้ชีพ — SVG ตัวเดียวรับ pointer ทุกอย่าง (mouse + touch ผ่าน Pointer Events)
 // แปลงพิกัดจอ → viewBox แล้วส่งขึ้นไปให้ ResusRunner ตัดสินผ่าน engine
 //
 // การชี้เป้าตามความยาก: full = วงเป้า+เส้นนำชัด, subtle = จุดวิบๆ, none = ไม่ช่วย
@@ -85,7 +85,7 @@ export default function ResusField({
       onPointerCancel={handleUp}
       onPointerLeave={handleUp}
       role="img"
-      aria-label={step ? `เป้าหมายปัจจุบัน: ${step.title}` : "เวทีผ่าตัด"}
+      aria-label={step ? `เป้าหมายปัจจุบัน: ${step.title}` : "เวทีกู้ชีพ"}
     >
       <OperationArt artId={op.artId} states={doneStates} cprActive={cprActive} />
 
