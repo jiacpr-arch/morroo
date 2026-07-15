@@ -10,6 +10,10 @@ export default defineConfig({
   use: {
     baseURL: process.env.E2E_BASE_URL ?? "http://localhost:3000",
     trace: "on-first-retry",
+    // สภาพแวดล้อมที่ดาวน์โหลด browser เองไม่ได้ (เช่น sandbox/cloud) ชี้ binary ที่มีอยู่แล้วผ่าน env นี้
+    ...(process.env.PW_EXECUTABLE_PATH
+      ? { launchOptions: { executablePath: process.env.PW_EXECUTABLE_PATH } }
+      : {}),
   },
   projects: [
     {

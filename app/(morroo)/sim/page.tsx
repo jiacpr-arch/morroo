@@ -109,6 +109,10 @@ export default async function SimHubPage() {
         · ทบทวนเนื้อหาได้ที่{" "}
         <Link href="/acls-reader" className="font-semibold text-brand underline">
           คู่มือทบทวน ACLS
+        </Link>{" "}
+        · สายผ่าตัดลอง{" "}
+        <Link href="/surgery" className="font-semibold text-brand underline">
+          เกมหัตถการ Operation MorRoo
         </Link>
       </p>
     </div>
