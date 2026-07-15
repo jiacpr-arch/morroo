@@ -14,30 +14,30 @@ import {
   DEFAULT_DIFFICULTY, DIFFICULTY, armTool, createInitialState, currentStep,
   currentZone, fmtTime, getDifficulty, gradeFor, holdTick, pointerDown,
   pointerMove, pointerUp, scoreFor, starsFor, tick, type ActionOutcome,
-} from "@/lib/surgery/engine";
-import { pointInZone, type Point } from "@/lib/surgery/geometry";
+} from "@/lib/resus/engine";
+import { pointInZone, type Point } from "@/lib/resus/geometry";
 import {
   initAudio, playMistake, playOpDone, playOpFailed, playStepDone, playSubDone,
   playToolSelect,
-} from "@/lib/surgery/sound";
-import { SURGERY_BADGE_NAMES, recordSurgeryRun, type RecordedRun } from "@/lib/surgery/record";
+} from "@/lib/resus/sound";
+import { RESUS_BADGE_NAMES, recordResusRun, type RecordedRun } from "@/lib/resus/record";
 import { parseEmphasis, type TextSegment } from "@/lib/sim/types";
-import type { Grade, Operation, SurgeryState, ToolId } from "@/lib/surgery/types";
-import SurgicalField from "./SurgicalField";
+import type { Grade, Operation, ResusState, ToolId } from "@/lib/resus/types";
+import ResusField from "./ResusField";
 import ToolTray from "./ToolTray";
 import VitalsBar from "./VitalsBar";
-import "./surgery.css";
+import "./resus.css";
 
-const HISCORE_PREFIX = "morroo_surgery_hiscore";
-const MUTE_KEY = "morroo_surgery_muted";
-const DIFF_KEY = "morroo_surgery_difficulty";
+const HISCORE_PREFIX = "morroo_resus_hiscore";
+const MUTE_KEY = "morroo_resus_muted";
+const DIFF_KEY = "morroo_resus_difficulty";
 
 const isBrowser = typeof window !== "undefined";
 const hiscoreKey = (slug: string, diff: string) => `${HISCORE_PREFIX}_${slug}_${diff}`;
 const readHiscore = (slug: string, diff: string) =>
   isBrowser ? Number(localStorage.getItem(hiscoreKey(slug, diff)) || 0) : 0;
 
-function snapshot(st: SurgeryState): SurgeryState {
+function snapshot(st: ResusState): ResusState {
   return { ...st, timeline: [...st.timeline], traceHits: st.traceHits };
 }
 
@@ -47,7 +47,7 @@ function EmText({ text }: { text: string }) {
   return (
     <>
       {segments.map((s, i) => (
-        <span key={i} className={s.em ? "sgy-em" : undefined}>{s.text}</span>
+        <span key={i} className={s.em ? "rss-em" : undefined}>{s.text}</span>
       ))}
     </>
   );
@@ -67,13 +67,13 @@ interface Result {
   isHiscore: boolean;
 }
 
-interface SurgeryRunnerProps {
+interface ResusRunnerProps {
   operation: Operation;
   /** โหมดทดลองเล่น (admin playtest) — ไม่บันทึกผล/ไม่แจก XP */
   practice?: boolean;
 }
 
-export default function SurgeryRunner({ operation, practice = false }: SurgeryRunnerProps) {
+export default function ResusRunner({ operation, practice = false }: ResusRunnerProps) {
   const op = operation;
   const [reducedMotion] = useState(
     () => isBrowser && window.matchMedia("(prefers-reduced-motion: reduce)").matches,
@@ -86,8 +86,8 @@ export default function SurgeryRunner({ operation, practice = false }: SurgeryRu
   const mutedRef = useRef(muted);
   useEffect(() => { mutedRef.current = muted; }, [muted]);
 
-  const S = useRef<SurgeryState>(createInitialState(DEFAULT_DIFFICULTY));
-  const [view, setView] = useState<SurgeryState>(() => snapshot(createInitialState(DEFAULT_DIFFICULTY)));
+  const S = useRef<ResusState>(createInitialState(DEFAULT_DIFFICULTY));
+  const [view, setView] = useState<ResusState>(() => snapshot(createInitialState(DEFAULT_DIFFICULTY)));
 
   const [screen, setScreen] = useState<"title" | "game" | "debrief">("title");
   const [toast, setToast] = useState<Toast | null>(null);
@@ -168,7 +168,7 @@ export default function SurgeryRunner({ operation, practice = false }: SurgeryRu
     // บันทึกผล + XP/Badge เบื้องหลัง — จอ debrief โชว์ทันที รางวัลตามมา
     setReward(null);
     if (!practice) {
-      void recordSurgeryRun(op.slug, st, { won, grade, score, stars }).then(setReward);
+      void recordResusRun(op.slug, st, { won, grade, score, stars }).then(setReward);
     }
     syncView();
     setToast(null);
@@ -336,60 +336,60 @@ export default function SurgeryRunner({ operation, practice = false }: SurgeryRu
   // ============ TITLE ============
   if (screen === "title") {
     return (
-      <div className="sgy-app">
-        <section className="sgy-title">
-          <div className="sgy-eyebrow">Operation MorRoo · ห้องหัตถการ</div>
+      <div className="rss-app">
+        <section className="rss-title">
+          <div className="rss-eyebrow">Operation MorRoo · ห้องหัตถการ</div>
           <h1>
-            <span className="sgy-green-text">OPERATION</span><br />
+            <span className="rss-green-text">OPERATION</span><br />
             {op.title}
           </h1>
-          <div className="sgy-chart">
-            <div className="sgy-chart-head">
+          <div className="rss-chart">
+            <div className="rss-chart-head">
               🪪 {op.patient.name} · อายุ {op.patient.age} ปี
             </div>
-            <p className="sgy-chart-story">&ldquo;{op.patient.story}&rdquo;</p>
-            <div className="sgy-chart-meta">
+            <p className="rss-chart-story">&ldquo;{op.patient.story}&rdquo;</p>
+            <div className="rss-chart-meta">
               {op.steps.length} ขั้นตอน · เวลาเป้าหมาย {fmtTime(op.parTimeSec)} · เครื่องมือ {op.tools.length} ชิ้น
             </div>
           </div>
-          <div className="sgy-diff-group" role="group" aria-label="เลือกระดับความยาก">
-            <span className="sgy-diff-label">ระดับความยาก</span>
-            <div className="sgy-diff-btns">
+          <div className="rss-diff-group" role="group" aria-label="เลือกระดับความยาก">
+            <span className="rss-diff-label">ระดับความยาก</span>
+            <div className="rss-diff-btns">
               {Object.values(DIFFICULTY).map((d) => (
                 <button
                   key={d.id}
                   type="button"
-                  className={`sgy-diff-btn ${difficulty === d.id ? "sgy-diff-on" : ""}`}
+                  className={`rss-diff-btn ${difficulty === d.id ? "rss-diff-on" : ""}`}
                   onClick={() => chooseDifficulty(d.id)}
                   aria-pressed={difficulty === d.id}
                 >
-                  <span className="sgy-diff-name">{d.label}</span>
-                  <span className="sgy-diff-meta">
+                  <span className="rss-diff-name">{d.label}</span>
+                  <span className="rss-diff-meta">
                     {d.highlight === "full" ? "มีวงเป้า+เส้นนำ" : d.highlight === "subtle" ? "มีจุดชี้เป้า" : "ไม่ช่วยเลย"}
                   </span>
                 </button>
               ))}
             </div>
           </div>
-          <div className="sgy-title-row">
-            {hiscore > 0 && <div className="sgy-hiscore-chip">HI-SCORE {hiscore}</div>}
+          <div className="rss-title-row">
+            {hiscore > 0 && <div className="rss-hiscore-chip">HI-SCORE {hiscore}</div>}
             <button
               type="button"
-              className="sgy-icon-btn"
+              className="rss-icon-btn"
               onClick={toggleMute}
               aria-label={muted ? "เปิดเสียง" : "ปิดเสียง"}
             >
               {muted ? <VolumeX size={16} strokeWidth={2.4} /> : <Volume2 size={16} strokeWidth={2.4} />}
             </button>
           </div>
-          <button type="button" className="sgy-btn-main" onClick={startGame}>
+          <button type="button" className="rss-btn-main" onClick={startGame}>
             🧤 เริ่มหัตถการ
           </button>
-          <Link href="/surgery" className="sgy-btn-ghost">
+          <Link href="/resus" className="rss-btn-ghost">
             <Home size={15} strokeWidth={2.4} style={{ display: "inline", verticalAlign: "-2px", marginRight: 6 }} />
             กลับหน้ารวมด่าน
           </Link>
-          <div className="sgy-note">SURGERY GAME · PROCEDURE TRAINING · MORROO</div>
+          <div className="rss-note">SURGERY GAME · PROCEDURE TRAINING · MORROO</div>
         </section>
       </div>
     );
@@ -399,42 +399,42 @@ export default function SurgeryRunner({ operation, practice = false }: SurgeryRu
   if (screen === "debrief" && result) {
     const st = view;
     return (
-      <div className="sgy-app">
-        <section className={`sgy-debrief ${result.won ? "sgy-winbg" : "sgy-losebg"}`}>
-          <div className={`sgy-stamp ${result.won ? "sgy-win" : "sgy-lose"}`}>
+      <div className="rss-app">
+        <section className={`rss-debrief ${result.won ? "rss-winbg" : "rss-losebg"}`}>
+          <div className={`rss-stamp ${result.won ? "rss-win" : "rss-lose"}`}>
             {result.won ? "OP SUCCESS!" : "OP FAILED"}
           </div>
-          <div className="sgy-stars" aria-label={`ได้ ${result.stars} ดาว`}>
+          <div className="rss-stars" aria-label={`ได้ ${result.stars} ดาว`}>
             {[1, 2, 3].map((i) => (
-              <span key={i} className={i <= result.stars ? "sgy-star-on" : "sgy-star-off"}>★</span>
+              <span key={i} className={i <= result.stars ? "rss-star-on" : "rss-star-off"}>★</span>
             ))}
           </div>
-          <div className="sgy-diff-badge">โหมด {getDifficulty(st.difficulty).label}</div>
-          <p className="sgy-verdict-sub">
+          <div className="rss-diff-badge">โหมด {getDifficulty(st.difficulty).label}</div>
+          <p className="rss-verdict-sub">
             {result.won
               ? `${op.patient.name} ปลอดภัย — เก็บเคสนี้เข้าพอร์ตหมอได้เลย`
               : "ผู้ป่วยไปไม่ไหวกลางหัตถการ — อ่าน debrief แล้วกลับมาแก้มือ"}
             {result.isHiscore && <><br />🏆 New Hi-Score: {result.score}</>}
           </p>
           {reward && reward.loggedIn && reward.xpEarned > 0 && (
-            <div className="sgy-reward-row">
-              <span className="sgy-xp-pill">⚡ +{reward.xpEarned} XP</span>
+            <div className="rss-reward-row">
+              <span className="rss-xp-pill">⚡ +{reward.xpEarned} XP</span>
               {reward.newBadges.map((slug) => (
-                <span key={slug} className="sgy-badge-pill">🏅 {SURGERY_BADGE_NAMES[slug] ?? slug}</span>
+                <span key={slug} className="rss-badge-pill">🏅 {RESUS_BADGE_NAMES[slug] ?? slug}</span>
               ))}
             </div>
           )}
           {reward && !reward.loggedIn && (
-            <p className="sgy-login-hint">
+            <p className="rss-login-hint">
               <Link href="/login">เข้าสู่ระบบ</Link> เพื่อเก็บ XP, Badge และขึ้น Leaderboard
             </p>
           )}
-          <div className="sgy-grade-row">
-            <div className="sgy-grade-box">
-              <span className={`sgy-grade sgy-g-${result.grade.toLowerCase()}`}>{result.grade}</span>
-              <span className="sgy-grade-label">GRADE</span>
+          <div className="rss-grade-row">
+            <div className="rss-grade-box">
+              <span className={`rss-grade rss-g-${result.grade.toLowerCase()}`}>{result.grade}</span>
+              <span className="rss-grade-label">GRADE</span>
             </div>
-            <div className="sgy-metric-grid">
+            <div className="rss-metric-grid">
               <Metric
                 label="เวลาที่ใช้"
                 value={`${fmtTime(st.elapsed)} / ${fmtTime(op.parTimeSec)}`}
@@ -453,27 +453,27 @@ export default function SurgeryRunner({ operation, practice = false }: SurgeryRu
               <Metric label="คะแนน" value={String(result.score)} tone="" />
             </div>
           </div>
-          <div className="sgy-tl-title">ขั้นตอน + เกร็ดความรู้จากเคสนี้</div>
-          <div className="sgy-timeline">
+          <div className="rss-tl-title">ขั้นตอน + เกร็ดความรู้จากเคสนี้</div>
+          <div className="rss-timeline">
             {st.timeline.map((it, i) => (
-              <div key={i} className={`sgy-tl-item ${it.ok ? "sgy-ok" : "sgy-err"}`}>
-                <span className="sgy-tl-time">{fmtTime(it.t)}</span>
-                <span className="sgy-tl-dot" />
+              <div key={i} className={`rss-tl-item ${it.ok ? "rss-ok" : "rss-err"}`}>
+                <span className="rss-tl-time">{fmtTime(it.t)}</span>
+                <span className="rss-tl-dot" />
                 <span>
                   {it.text}
                   {it.note && (
-                    <span className="sgy-tl-note"><EmText text={it.note} /></span>
+                    <span className="rss-tl-note"><EmText text={it.note} /></span>
                   )}
                 </span>
               </div>
             ))}
           </div>
-          <div className="sgy-debrief-actions">
-            <button type="button" className="sgy-btn-main" onClick={startGame}>
+          <div className="rss-debrief-actions">
+            <button type="button" className="rss-btn-main" onClick={startGame}>
               <RefreshCw size={16} strokeWidth={2.6} style={{ display: "inline", verticalAlign: "-2px", marginRight: 8 }} />
               ผ่าอีกรอบ
             </button>
-            <Link href="/surgery" className="sgy-btn-ghost">กลับหน้ารวมด่าน</Link>
+            <Link href="/resus" className="rss-btn-ghost">กลับหน้ารวมด่าน</Link>
           </div>
         </section>
       </div>
@@ -487,8 +487,8 @@ export default function SurgeryRunner({ operation, practice = false }: SurgeryRu
   const diff = getDifficulty(st.difficulty);
 
   return (
-    <div className={`sgy-app ${shaking ? "sgy-shake" : ""}`}>
-      <section className="sgy-game">
+    <div className={`rss-app ${shaking ? "rss-shake" : ""}`}>
+      <section className="rss-game">
         <VitalsBar
           hp={st.hp}
           maxHp={st.maxHp}
@@ -496,15 +496,15 @@ export default function SurgeryRunner({ operation, practice = false }: SurgeryRu
           parTimeSec={op.parTimeSec}
           wrong={st.wrong}
         />
-        <div className="sgy-stepbanner" data-testid="step-banner">
-          <span className="sgy-stepnum">
+        <div className="rss-stepbanner" data-testid="step-banner">
+          <span className="rss-stepnum">
             {Math.min(st.stepIdx + 1, op.steps.length)}/{op.steps.length}
           </span>
           {step ? step.title : "เสร็จสิ้นหัตถการ"}
-          {step?.bleeding && <span className="sgy-bleedtag">เลือดกำลังไหล!</span>}
+          {step?.bleeding && <span className="rss-bleedtag">เลือดกำลังไหล!</span>}
         </div>
-        <div className="sgy-stage">
-          <SurgicalField
+        <div className="rss-stage">
+          <ResusField
             op={op}
             view={st}
             step={step}
@@ -516,7 +516,7 @@ export default function SurgeryRunner({ operation, practice = false }: SurgeryRu
             onUp={onFieldUp}
           />
           {toast && (
-            <div key={toast.n} className={`sgy-toast ${toast.kind === "ok" ? "sgy-toast-ok" : "sgy-toast-bad"}`}>
+            <div key={toast.n} className={`rss-toast ${toast.kind === "ok" ? "rss-toast-ok" : "rss-toast-bad"}`}>
               <EmText text={toast.text} />
             </div>
           )}
@@ -528,16 +528,16 @@ export default function SurgeryRunner({ operation, practice = false }: SurgeryRu
           onSelect={onSelectTool}
         />
       </section>
-      {redN > 0 && <div key={`rf-${redN}`} className="sgy-redflash sgy-go" />}
+      {redN > 0 && <div key={`rf-${redN}`} className="rss-redflash rss-go" />}
     </div>
   );
 }
 
 function Metric({ label, value, tone }: { label: string; value: string; tone: string }) {
   return (
-    <div className="sgy-metric">
-      <span className="sgy-metric-label">{label}</span>
-      <span className={`sgy-metric-val ${tone ? `sgy-${tone}` : ""}`}>{value}</span>
+    <div className="rss-metric">
+      <span className="rss-metric-label">{label}</span>
+      <span className={`rss-metric-val ${tone ? `rss-${tone}` : ""}`}>{value}</span>
     </div>
   );
 }

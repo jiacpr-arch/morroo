@@ -1,4 +1,4 @@
-// Surgery engine — ส่วน logic ล้วนของเกมหัตถการ (ไม่มี DOM/React)
+// Resus engine — ส่วน logic ล้วนของเกมหัตถการ (ไม่มี DOM/React)
 //
 // โมเดล interaction = select-then-act: ผู้เล่นแตะเลือกเครื่องมือ (armTool)
 // แล้วทำ gesture บนเวที — UI แปลง pointer event เป็นพิกัด viewBox แล้วเรียก
@@ -15,7 +15,7 @@ import {
   type Grade,
   type Operation,
   type OperationStep,
-  type SurgeryState,
+  type ResusState,
   type ToolId,
   type Zone,
 } from "./types";
@@ -44,7 +44,7 @@ export function getDifficulty(id: string): Difficulty {
   return DIFFICULTY[id] || DIFFICULTY[DEFAULT_DIFFICULTY];
 }
 
-export function createInitialState(difficultyId: string = DEFAULT_DIFFICULTY): SurgeryState {
+export function createInitialState(difficultyId: string = DEFAULT_DIFFICULTY): ResusState {
   return {
     difficulty: getDifficulty(difficultyId).id,
     stepIdx: 0,
@@ -64,12 +64,12 @@ export function createInitialState(difficultyId: string = DEFAULT_DIFFICULTY): S
   };
 }
 
-export function currentStep(op: Operation, state: SurgeryState): OperationStep | null {
+export function currentStep(op: Operation, state: ResusState): OperationStep | null {
   return state.done || state.dead ? null : op.steps[state.stepIdx] ?? null;
 }
 
 /** zone เป้าปัจจุบัน — subZones มาก่อน zone หลักเมื่อ step มีเป้าย่อย */
-export function currentZone(op: Operation, state: SurgeryState): Zone | null {
+export function currentZone(op: Operation, state: ResusState): Zone | null {
   const step = currentStep(op, state);
   if (!step) return null;
   if (step.subZones?.length) return step.subZones[state.subIdx] ?? step.zone;
@@ -86,12 +86,12 @@ export type ActionOutcome =
   | { kind: "wrong_zone"; note: string }
   | { kind: "op_failed"; note: string };
 
-export function armTool(state: SurgeryState, tool: ToolId): void {
+export function armTool(state: ResusState, tool: ToolId): void {
   state.activeTool = state.activeTool === tool ? null : tool;
 }
 
 /** เดินเวลา + เลือดไหล — เรียกจาก interval ~4Hz ของ UI, dt เป็นวินาที */
-export function tick(state: SurgeryState, op: Operation, dt: number): ActionOutcome {
+export function tick(state: ResusState, op: Operation, dt: number): ActionOutcome {
   if (state.done || state.dead) return { kind: "noop" };
   state.elapsed += dt;
   const step = currentStep(op, state);
@@ -103,13 +103,13 @@ export function tick(state: SurgeryState, op: Operation, dt: number): ActionOutc
   return { kind: "noop" };
 }
 
-function fail(state: SurgeryState, note: string): ActionOutcome {
+function fail(state: ResusState, note: string): ActionOutcome {
   state.dead = true;
   state.timeline.push({ t: state.elapsed, ok: false, text: "ผู้ป่วยไปไม่ไหว", note });
   return { kind: "op_failed", note };
 }
 
-function damage(state: SurgeryState, op: Operation, amount: number, text: string, note: string): ActionOutcome {
+function damage(state: ResusState, op: Operation, amount: number, text: string, note: string): ActionOutcome {
   state.wrong += 1;
   state.hp = Math.max(0, state.hp - amount * getDifficulty(state.difficulty).damageMult);
   state.timeline.push({ t: state.elapsed, ok: false, text, note });
@@ -117,7 +117,7 @@ function damage(state: SurgeryState, op: Operation, amount: number, text: string
   return { kind: "noop" };
 }
 
-function resetGestureProgress(state: SurgeryState): void {
+function resetGestureProgress(state: ResusState): void {
   state.tapsDone = 0;
   state.holdMs = 0;
   state.tracePct = 0;
@@ -125,7 +125,7 @@ function resetGestureProgress(state: SurgeryState): void {
 }
 
 /** เป้าปัจจุบันเสร็จ 1 จุด — เลื่อน sub/step และรายงานผล */
-function completeTarget(state: SurgeryState, op: Operation): ActionOutcome {
+function completeTarget(state: ResusState, op: Operation): ActionOutcome {
   const step = op.steps[state.stepIdx];
   resetGestureProgress(state);
 
@@ -151,7 +151,7 @@ function completeTarget(state: SurgeryState, op: Operation): ActionOutcome {
  * - ถูกเครื่องมือแต่นอกเป้า → หัก HP เบา
  * - ถูกทั้งคู่ → เดิน gesture
  */
-export function pointerDown(state: SurgeryState, op: Operation, p: Point): ActionOutcome {
+export function pointerDown(state: ResusState, op: Operation, p: Point): ActionOutcome {
   if (state.done || state.dead) return { kind: "noop" };
   const step = currentStep(op, state);
   if (!step || !state.activeTool) return { kind: "noop" };
@@ -191,7 +191,7 @@ export function pointerDown(state: SurgeryState, op: Operation, p: Point): Actio
 }
 
 /** ลากต่อเนื่อง (เฉพาะ gesture trace ระหว่างกดค้าง) — นอกเส้นไม่ลงโทษ แค่ไม่คืบ */
-export function pointerMove(state: SurgeryState, op: Operation, p: Point): ActionOutcome {
+export function pointerMove(state: ResusState, op: Operation, p: Point): ActionOutcome {
   if (state.done || state.dead) return { kind: "noop" };
   const step = currentStep(op, state);
   if (!step || state.activeTool !== step.tool) return { kind: "noop" };
@@ -204,7 +204,7 @@ export function pointerMove(state: SurgeryState, op: Operation, p: Point): Actio
 }
 
 /** กดค้างสะสมเวลา (เฉพาะ gesture hold ระหว่างกดค้างในเป้า) — เรียกถี่ๆ จาก UI */
-export function holdTick(state: SurgeryState, op: Operation, dtMs: number): ActionOutcome {
+export function holdTick(state: ResusState, op: Operation, dtMs: number): ActionOutcome {
   if (state.done || state.dead) return { kind: "noop" };
   const step = currentStep(op, state);
   if (!step || state.activeTool !== step.tool) return { kind: "noop" };
@@ -215,13 +215,13 @@ export function holdTick(state: SurgeryState, op: Operation, dtMs: number): Acti
 }
 
 /** ปล่อยนิ้ว — hold ที่ยังไม่ครบเวลาถูกรีเซ็ต (ไม่ลงโทษ), trace เก็บ progress ไว้ */
-export function pointerUp(state: SurgeryState): void {
+export function pointerUp(state: ResusState): void {
   state.holdMs = 0;
 }
 
 // ---- จบเกม: เกรด/ดาว/คะแนน ----
 
-export function gradeFor(state: SurgeryState, won: boolean): Grade {
+export function gradeFor(state: ResusState, won: boolean): Grade {
   if (!won) return "C";
   if (getDifficulty(state.difficulty).gradeStrict) {
     if (state.wrong === 0) return "S";
@@ -242,7 +242,7 @@ export function starsFor(grade: Grade, won: boolean): number {
 }
 
 /** 100 ตั้งต้น − 12/พลาด + โบนัสเวลา (เร็วกว่า par สูงสุด +30) + โบนัส HP (สูงสุด +20) */
-export function scoreFor(state: SurgeryState, op: Operation, won: boolean): number {
+export function scoreFor(state: ResusState, op: Operation, won: boolean): number {
   if (!won) return 0;
   const timeBonus =
     state.elapsed <= op.parTimeSec

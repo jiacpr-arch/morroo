@@ -1,18 +1,18 @@
 "use client";
 
 // เวทีผ่าตัด — SVG ตัวเดียวรับ pointer ทุกอย่าง (mouse + touch ผ่าน Pointer Events)
-// แปลงพิกัดจอ → viewBox แล้วส่งขึ้นไปให้ SurgeryRunner ตัดสินผ่าน engine
+// แปลงพิกัดจอ → viewBox แล้วส่งขึ้นไปให้ ResusRunner ตัดสินผ่าน engine
 //
 // การชี้เป้าตามความยาก: full = วงเป้า+เส้นนำชัด, subtle = จุดวิบๆ, none = ไม่ช่วย
 
 import { useRef } from "react";
 import OperationArt from "./OperationArt";
-import { zoneCenter, type Point } from "@/lib/surgery/geometry";
-import { FIELD_H, FIELD_W, type Operation, type OperationStep, type SurgeryState, type Zone } from "@/lib/surgery/types";
+import { zoneCenter, type Point } from "@/lib/resus/geometry";
+import { FIELD_H, FIELD_W, type Operation, type OperationStep, type ResusState, type Zone } from "@/lib/resus/types";
 
-interface SurgicalFieldProps {
+interface ResusFieldProps {
   op: Operation;
-  view: SurgeryState;
+  view: ResusState;
   step: OperationStep | null;
   zone: Zone | null;
   highlight: "full" | "subtle" | "none";
@@ -22,9 +22,9 @@ interface SurgicalFieldProps {
   onUp: () => void;
 }
 
-export default function SurgicalField({
+export default function ResusField({
   op, view, step, zone, highlight, holdPct, onDown, onMove, onUp,
-}: SurgicalFieldProps) {
+}: ResusFieldProps) {
   const svgRef = useRef<SVGSVGElement>(null);
   const downRef = useRef(false);
 
@@ -76,7 +76,7 @@ export default function SurgicalField({
   return (
     <svg
       ref={svgRef}
-      className="sgy-field"
+      className="rss-field"
       viewBox={`0 0 ${FIELD_W} ${FIELD_H}`}
       onPointerDown={handleDown}
       onPointerMove={handleMove}
@@ -97,13 +97,13 @@ export default function SurgicalField({
       {trace && showGuide && (
         <polyline
           points={trace.path.map(([x, y]) => `${x},${y}`).join(" ")}
-          className="sgy-guide"
+          className="rss-guide"
         />
       )}
       {trace && view.tracePct > 0 && (
         <polyline
           points={trace.path.map(([x, y]) => `${x},${y}`).join(" ")}
-          className="sgy-guide-done"
+          className="rss-guide-done"
           style={{
             strokeDasharray: 2200,
             strokeDashoffset: 2200 * (1 - view.tracePct),
@@ -116,7 +116,7 @@ export default function SurgicalField({
         <g>
           {showGuide && <ZoneOutline zone={zone} />}
           {showDot && (
-            <circle cx={center.x} cy={center.y} r="14" className="sgy-target-dot" />
+            <circle cx={center.x} cy={center.y} r="14" className="rss-target-dot" />
           )}
           {/* วงแหวน progress ตอนกดค้าง */}
           {hold && holdPct > 0 && (
@@ -124,21 +124,21 @@ export default function SurgicalField({
               cx={center.x}
               cy={center.y}
               r="52"
-              className="sgy-hold-ring"
+              className="rss-hold-ring"
               strokeDasharray={2 * Math.PI * 52}
               strokeDashoffset={2 * Math.PI * 52 * (1 - holdPct)}
             />
           )}
           {/* pips นับ taps */}
           {taps && (
-            <g className="sgy-pips">
+            <g className="rss-pips">
               {Array.from({ length: taps.count }).map((_, i) => (
                 <circle
                   key={i}
                   cx={center.x - ((taps.count - 1) * 26) / 2 + i * 26}
                   cy={center.y - 70}
                   r="9"
-                  className={i < view.tapsDone ? "sgy-pip-on" : "sgy-pip-off"}
+                  className={i < view.tapsDone ? "rss-pip-on" : "rss-pip-off"}
                 />
               ))}
             </g>
@@ -153,12 +153,12 @@ export default function SurgicalField({
 
 function ZoneOutline({ zone }: { zone: Zone }) {
   if (zone.shape === "circle") {
-    return <circle cx={zone.cx} cy={zone.cy} r={zone.r} className="sgy-zone" />;
+    return <circle cx={zone.cx} cy={zone.cy} r={zone.r} className="rss-zone" />;
   }
   if (zone.shape === "rect") {
-    return <rect x={zone.x} y={zone.y} width={zone.w} height={zone.h} rx="14" className="sgy-zone" />;
+    return <rect x={zone.x} y={zone.y} width={zone.w} height={zone.h} rx="14" className="rss-zone" />;
   }
-  return <polygon points={zone.points.map(([x, y]) => `${x},${y}`).join(" ")} className="sgy-zone" />;
+  return <polygon points={zone.points.map(([x, y]) => `${x},${y}`).join(" ")} className="rss-zone" />;
 }
 
 /** shape ล่องหนทับเป้า — ให้ Playwright คลิกได้และไม่บังภาพ */

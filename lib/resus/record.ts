@@ -6,12 +6,12 @@
 
 import { createClient } from "@/lib/supabase/client";
 import { awardBadge, awardXp } from "@/lib/school/xp";
-import type { Grade, SurgeryState } from "./types";
+import type { Grade, ResusState } from "./types";
 
-export const SURGERY_XP: Record<Grade, number> = { S: 150, A: 100, B: 60, C: 30 };
-export const SURGERY_XP_LOSS = 10;
+export const RESUS_XP: Record<Grade, number> = { S: 150, A: 100, B: 60, C: 30 };
+export const RESUS_XP_LOSS = 10;
 
-export interface SurgeryRunResult {
+export interface ResusRunResult {
   won: boolean;
   grade: Grade;
   score: number;
@@ -24,10 +24,10 @@ export interface RecordedRun {
   newBadges: string[];
 }
 
-export async function recordSurgeryRun(
+export async function recordResusRun(
   operationSlug: string,
-  state: SurgeryState,
-  result: SurgeryRunResult,
+  state: ResusState,
+  result: ResusRunResult,
 ): Promise<RecordedRun> {
   const out: RecordedRun = { loggedIn: false, xpEarned: 0, newBadges: [] };
   try {
@@ -36,9 +36,9 @@ export async function recordSurgeryRun(
     if (!user) return out;
     out.loggedIn = true;
 
-    await supabase.from("surgery_runs").insert({
+    await supabase.from("resus_runs").insert({
       user_id: user.id,
-      operation_slug: operationSlug,
+      case_slug: operationSlug,
       difficulty: state.difficulty,
       won: result.won,
       grade: result.grade,
@@ -50,17 +50,17 @@ export async function recordSurgeryRun(
       metrics: { timeline: state.timeline },
     });
 
-    const xp = result.won ? SURGERY_XP[result.grade] : SURGERY_XP_LOSS;
-    await awardXp(xp, `surgery:${operationSlug}:${result.won ? result.grade : "loss"}`);
+    const xp = result.won ? RESUS_XP[result.grade] : RESUS_XP_LOSS;
+    await awardXp(xp, `resus:${operationSlug}:${result.won ? result.grade : "loss"}`);
     out.xpEarned = xp;
 
     if (result.won) {
-      if (await awardBadge("surgery_first_op")) out.newBadges.push("surgery_first_op");
-      if (result.grade === "S" && (await awardBadge("surgery_grade_s"))) {
-        out.newBadges.push("surgery_grade_s");
+      if (await awardBadge("resus_first_save")) out.newBadges.push("resus_first_save");
+      if (result.grade === "S" && (await awardBadge("resus_grade_s"))) {
+        out.newBadges.push("resus_grade_s");
       }
-      if (state.wrong === 0 && state.difficulty !== "easy" && (await awardBadge("surgery_steady_hands"))) {
-        out.newBadges.push("surgery_steady_hands");
+      if (state.wrong === 0 && state.difficulty !== "easy" && (await awardBadge("resus_perfect_code"))) {
+        out.newBadges.push("resus_perfect_code");
       }
     }
   } catch {
@@ -69,8 +69,8 @@ export async function recordSurgeryRun(
   return out;
 }
 
-export const SURGERY_BADGE_NAMES: Record<string, string> = {
-  surgery_first_op: "หัตถการแรกสำเร็จ",
-  surgery_grade_s: "ศัลยแพทย์เกรด S",
-  surgery_steady_hands: "มือนิ่ง — ไม่พลาดสักจังหวะ",
+export const RESUS_BADGE_NAMES: Record<string, string> = {
+  resus_first_save: "กู้ชีพสำเร็จด้วยมือตัวเอง",
+  resus_grade_s: "มือกู้ชีพเกรด S",
+  resus_perfect_code: "Perfect Code — ไม่พลาดสักจังหวะ",
 };

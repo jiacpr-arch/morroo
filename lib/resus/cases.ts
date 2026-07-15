@@ -2,7 +2,7 @@
 //
 // วิธีเขียนด่านใหม่:
 // - พิกัดทุกอย่างอยู่ในกรอบ viewBox 0..1000 × 0..750 (FIELD_W × FIELD_H)
-//   ให้สอดคล้องกับภาพใน components/surgery/OperationArt.tsx (artId เดียวกัน)
+//   ให้สอดคล้องกับภาพใน components/resus/OperationArt.tsx (artId เดียวกัน)
 // - steps เรียงตามลำดับหัตถการจริง — ผู้เล่นต้องทำทีละขั้น
 // - gesture: tap (จิ้ม), taps (จิ้ม n ครั้ง), hold (กดค้าง ms), trace (ลากตามเส้น)
 // - subZones = เป้าย่อยตามลำดับ ใช้ tool+gesture เดิมซ้ำทีละจุด
@@ -423,8 +423,8 @@ const ABSCESS_ID: Operation = {
   ],
 };
 
-export const OPERATIONS: Operation[] = [SUTURE_LACERATION, TENSION_PNEUMO, ABSCESS_ID];
+export const CASES: Operation[] = [SUTURE_LACERATION, TENSION_PNEUMO, ABSCESS_ID];
 
-export function getBuiltinOperation(slug: string): Operation | null {
-  return OPERATIONS.find((op) => op.slug === slug) ?? null;
+export function getBuiltinCase(slug: string): Operation | null {
+  return CASES.find((op) => op.slug === slug) ?? null;
 }

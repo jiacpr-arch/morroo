@@ -4,7 +4,7 @@ import { Play, Scissors, Sparkles, Stethoscope, Trophy } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { getMySurgeryBests, getOperations } from "@/lib/supabase/queries-surgery";
+import { getMyResusBests, getResusCases } from "@/lib/supabase/queries-resus";
 
 export const metadata: Metadata = {
   title: "Operation MorRoo — เกมหัตถการเสมือนจริง",
@@ -35,8 +35,8 @@ function Stars({ n }: { n: number }) {
   );
 }
 
-export default async function SurgeryHubPage() {
-  const [operations, bests] = await Promise.all([getOperations(), getMySurgeryBests()]);
+export default async function ResusHubPage() {
+  const [operations, bests] = await Promise.all([getResusCases(), getMyResusBests()]);
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
@@ -99,7 +99,7 @@ export default async function SurgeryHubPage() {
                   <h3 className="text-lg font-bold">{op.title}</h3>
                   <p className="text-sm text-muted-foreground">{op.subtitle}</p>
                 </div>
-                <Link href={`/surgery/${op.slug}`} className="shrink-0">
+                <Link href={`/resus/${op.slug}`} className="shrink-0">
                   <Button size="lg" className="w-full gap-2 sm:w-auto">
                     <Play className="h-4 w-4" /> เข้าห้องผ่าตัด
                   </Button>

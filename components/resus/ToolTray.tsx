@@ -3,7 +3,7 @@
 // ถาดเครื่องมือ — select-then-act: แตะเลือกก่อนแล้วค่อยลงมือบนเวที
 // ปุ่มใหญ่พอสำหรับนิ้วโป้ง เลื่อนแนวนอนได้บนจอแคบ
 
-import { TOOL_CATALOG, type ToolId } from "@/lib/surgery/types";
+import { TOOL_CATALOG, type ToolId } from "@/lib/resus/types";
 
 interface ToolTrayProps {
   tools: ToolId[];
@@ -14,7 +14,7 @@ interface ToolTrayProps {
 
 export default function ToolTray({ tools, activeTool, showHints, onSelect }: ToolTrayProps) {
   return (
-    <div className="sgy-tray" role="toolbar" aria-label="ถาดเครื่องมือ">
+    <div className="rss-tray" role="toolbar" aria-label="ถาดเครื่องมือ">
       {tools.map((id) => {
         const tool = TOOL_CATALOG[id];
         const on = activeTool === id;
@@ -22,14 +22,14 @@ export default function ToolTray({ tools, activeTool, showHints, onSelect }: Too
           <button
             key={id}
             type="button"
-            className={`sgy-tool ${on ? "sgy-tool-on" : ""}`}
+            className={`rss-tool ${on ? "rss-tool-on" : ""}`}
             onClick={() => onSelect(id)}
             aria-pressed={on}
             data-testid={`tool-${id}`}
             title={showHints ? tool.hint : undefined}
           >
-            <span className="sgy-tool-emoji" aria-hidden>{tool.emoji}</span>
-            <span className="sgy-tool-name">{tool.name}</span>
+            <span className="rss-tool-emoji" aria-hidden>{tool.emoji}</span>
+            <span className="rss-tool-name">{tool.name}</span>
           </button>
         );
       })}

@@ -1,9 +1,9 @@
 import { test, expect } from "@playwright/test";
 
-// Operation MorRoo — เกมหัตถการที่ /surgery
+// Operation MorRoo — เกมกู้ชีพที่ /resus
 
-test("surgery hub lists the 3 built-in operations", async ({ page }) => {
-  await page.goto("/surgery");
+test("resus hub lists the 3 built-in cases", async ({ page }) => {
+  await page.goto("/resus");
   await expect(page.locator("h1")).toContainText("OPERATION");
   await expect(page.getByText("เย็บแผลฉีกขาด").first()).toBeVisible();
   await expect(page.getByText("Tension Pneumothorax", { exact: false }).first()).toBeVisible();
@@ -12,12 +12,12 @@ test("surgery hub lists the 3 built-in operations", async ({ page }) => {
 });
 
 test("player can start suture case, gets punished for wrong tool, completes step 1", async ({ page }) => {
-  await page.goto("/surgery/suture-laceration-01");
-  await expect(page.locator(".sgy-title")).toBeVisible();
+  await page.goto("/resus/suture-laceration-01");
+  await expect(page.locator(".rss-title")).toBeVisible();
 
   // เริ่มเกม — คลิกซ้ำจนเข้าจอเกม (กันคลิกก่อน hydration)
   for (let i = 0; i < 10; i++) {
-    await page.locator(".sgy-btn-main").click().catch(() => {});
+    await page.locator(".rss-btn-main").click().catch(() => {});
     const banner = page.getByTestId("step-banner");
     if (await banner.isVisible().catch(() => false)) break;
     await page.waitForTimeout(1000);
@@ -26,14 +26,14 @@ test("player can start suture case, gets punished for wrong tool, completes step
 
   // แตะเวทีโดยยังไม่เลือกเครื่องมือ → เตือน ไม่นับพลาด
   await page.getByTestId("zone-active").click();
-  await expect(page.locator(".sgy-toast-bad")).toContainText("เลือกเครื่องมือ");
-  await expect(page.locator(".sgy-wrongchip")).toContainText("0");
+  await expect(page.locator(".rss-toast-bad")).toContainText("เลือกเครื่องมือ");
+  await expect(page.locator(".rss-wrongchip")).toContainText("0");
 
   // หยิบมีดผิดจังหวะ → โดนหัก + toast อธิบาย
   await page.getByTestId("tool-scalpel").click();
   await page.getByTestId("zone-active").click();
-  await expect(page.locator(".sgy-wrongchip")).toContainText("1");
-  await expect(page.locator(".sgy-toast-bad")).toBeVisible();
+  await expect(page.locator(".rss-wrongchip")).toContainText("1");
+  await expect(page.locator(".rss-toast-bad")).toBeVisible();
 
   // หยิบผ้าก๊อซแล้วกดค้างในเป้าจนครบ → step 1 เสร็จ ไป step 2 (ล้างแผล)
   await page.getByTestId("tool-gauze").click();

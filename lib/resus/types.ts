@@ -1,7 +1,7 @@
 // Operation MorRoo — ชนิดข้อมูลของด่านหัตถการ (Operation) และสถานะเกม
 //
-// ด่านเป็น data ล้วน (เขียนใน lib/surgery/operations.ts หรืออนาคตจากตาราง
-// surgery_operations) — พิกัดทั้งหมดอยู่ในระบบ viewBox 0..1000 × 0..750
+// ด่านเป็น data ล้วน (เขียนใน lib/resus/cases.ts หรืออนาคตจากตาราง
+// resus_cases) — พิกัดทั้งหมดอยู่ในระบบ viewBox 0..1000 × 0..750
 //
 // ข้อความสอน (why) เป็น plain text — เน้นคำด้วย **คำเน้น** (render ผ่าน
 // parseEmphasis ของ lib/sim/types เท่านั้น ห้าม HTML เพื่อรองรับด่านจาก
@@ -32,7 +32,7 @@ export type ToolId =
   | "packing_strip"
   | "gloved_finger";
 
-export interface SurgeryTool {
+export interface ResusTool {
   id: ToolId;
   name: string;
   emoji: string;
@@ -40,7 +40,7 @@ export interface SurgeryTool {
   hint?: string;
 }
 
-export const TOOL_CATALOG: Record<ToolId, SurgeryTool> = {
+export const TOOL_CATALOG: Record<ToolId, ResusTool> = {
   antiseptic: { id: "antiseptic", name: "น้ำยาฆ่าเชื้อ", emoji: "🧴", hint: "ทาฆ่าเชื้อรอบแผล" },
   saline: { id: "saline", name: "NSS ล้างแผล", emoji: "💧", hint: "ล้างสิ่งสกปรกออกจากแผล" },
   gauze: { id: "gauze", name: "ผ้าก๊อซ", emoji: "🩹", hint: "กดห้ามเลือด / ซับ" },
@@ -122,7 +122,7 @@ export interface Operation {
   wrongZoneDamage: number;
 }
 
-// ---- สถานะเกม (mutable ใน ref ของ SurgeryRunner) ----
+// ---- สถานะเกม (mutable ใน ref ของ ResusRunner) ----
 
 export interface TimelineItem {
   t: number;
@@ -131,7 +131,7 @@ export interface TimelineItem {
   note?: string;
 }
 
-export interface SurgeryState {
+export interface ResusState {
   difficulty: string;
   /** index ของ step ปัจจุบัน (steps[stepIdx]) — เกิน length = จบด่าน */
   stepIdx: number;

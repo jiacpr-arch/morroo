@@ -22,7 +22,7 @@ export default function OperationArt({ artId, states, stitchProgress, bleedingAc
 /** หยดเลือดเต้นๆ ระหว่างยังห้ามเลือดไม่ได้ */
 function BloodDrips({ cx, cy }: { cx: number; cy: number }) {
   return (
-    <g className="sgy-bleed">
+    <g className="rss-bleed">
       <circle cx={cx - 30} cy={cy + 46} r="10" fill="#c0392b" />
       <circle cx={cx + 42} cy={cy + 60} r="7" fill="#c0392b" />
       <circle cx={cx + 8} cy={cy + 74} r="5" fill="#e74c3c" />
@@ -200,7 +200,7 @@ function ChestArt({ states, bleeding }: { states: Set<string>; bleeding: boolean
         <g>
           <rect x="110" y="580" width="120" height="140" rx="14" fill="#d6eaf8" stroke="#5dade2" strokeWidth="5" />
           <rect x="110" y="650" width="120" height="70" rx="14" fill="#85c1e9" />
-          <g className="sgy-bubbles" fill="#fdfefe">
+          <g className="rss-bubbles" fill="#fdfefe">
             <circle cx="150" cy="690" r="7" />
             <circle cx="180" cy="670" r="5" />
             <circle cx="165" cy="700" r="4" />
@@ -212,7 +212,7 @@ function ChestArt({ states, bleeding }: { states: Set<string>; bleeding: boolean
         <rect x="240" y="380" width="130" height="90" rx="12" fill="#fdfefe" stroke="#d5dbdb" strokeWidth="4" />
       )}
       {bleeding && (
-        <g className="sgy-bleed">
+        <g className="rss-bleed">
           {/* ลมรั่ว — วงสั่นๆ ข้างอกขวา */}
           <circle cx="330" cy="330" r="26" fill="none" stroke="#f4d03f" strokeWidth="5" opacity="0.8" />
           <circle cx="350" cy="300" r="14" fill="none" stroke="#f4d03f" strokeWidth="4" opacity="0.6" />
