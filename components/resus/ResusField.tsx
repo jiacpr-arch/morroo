@@ -64,7 +64,7 @@ export default function ResusField({
     if (fx) doneStates.add(fx);
   }
   const stitchProgress = step?.id === "suture" ? view.tracePct : 0;
-  const bleedingActive = !!step?.bleeding && !view.done && !view.dead;
+  const bleedingActive = !!step?.hpDrain && !view.done && !view.dead;
 
   const center = zone ? zoneCenter(zone) : null;
   const showGuide = highlight === "full";
@@ -72,6 +72,7 @@ export default function ResusField({
   const trace = step?.gesture.kind === "trace" ? step.gesture : null;
   const hold = step?.gesture.kind === "hold" ? step.gesture : null;
   const taps = step?.gesture.kind === "taps" ? step.gesture : null;
+  const rhythm = step?.gesture.kind === "rhythm" ? step.gesture : null;
 
   return (
     <svg
@@ -141,6 +142,21 @@ export default function ResusField({
                   className={i < view.tapsDone ? "rss-pip-on" : "rss-pip-off"}
                 />
               ))}
+            </g>
+          )}
+          {/* gesture rhythm: วงเต้นตามจังหวะเป้าหมาย + ตัวนับครั้ง */}
+          {rhythm && (
+            <g>
+              <circle
+                cx={center.x}
+                cy={center.y}
+                r="58"
+                className="rss-rhythm-ring"
+                style={{ animationDuration: `${(60 / rhythm.targetBpm).toFixed(3)}s` }}
+              />
+              <text x={center.x} y={center.y - 76} className="rss-rhythm-count" textAnchor="middle">
+                {view.tapsDone}/{rhythm.count}
+              </text>
             </g>
           )}
           {/* โซนโปร่งใสสำหรับ e2e + ขยายพื้นที่แตะ */}

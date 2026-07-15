@@ -5,10 +5,14 @@
 // pointerDown/pointerMove/holdTick ที่นี่ ผลลัพธ์กลับเป็น ActionOutcome
 // ให้ UI เอาไป map เป็นเสียง/เอฟเฟกต์เอง
 //
-// เวลากดดันของเกมนี้คือ "เลือดไหล": step ที่ติดธง bleeding ทำ HP ไหลลง
-// ต่อวินาที (ผ่าน tick) แทน countdown ต่อข้อแบบ Code Blue Sim
+// เวลากดดันของเกมนี้มี 3 ชั้น:
+// 1. step ที่ติดธง hpDrain — "โอกาสรอด" ไหลลงต่อวินาที (ผ่าน tick)
+//    จนกว่าจะทำหัตถการสำคัญสำเร็จ (recoverHp ฟื้นกลับได้)
+// 2. timeLimitSec ต่อ step — ช้าเกินโดนหักครั้งเดียว (too_slow)
+// 3. gesture rhythm — แตะตามจังหวะ (เช่น CPR 110/นาที) วัด interval จริง
 
 import {
+  RHYTHM_TOLERANCE_BPM_DEFAULT,
   TOOL_CATALOG,
   TRACE_COMPLETE_PCT,
   TRACE_TOLERANCE_DEFAULT,
@@ -56,6 +60,12 @@ export function createInitialState(difficultyId: string = DEFAULT_DIFFICULTY): R
     hp: MAX_HP,
     maxHp: MAX_HP,
     elapsed: 0,
+    stepElapsed: 0,
+    timePenalized: false,
+    lastTapMs: null,
+    goodTaps: 0,
+    offTempoTaps: 0,
+    firstShockAt: -1,
     wrong: 0,
     activeTool: null,
     done: false,
@@ -84,21 +94,30 @@ export type ActionOutcome =
   | { kind: "op_done"; step: OperationStep }
   | { kind: "wrong_tool"; note: string }
   | { kind: "wrong_zone"; note: string }
+  | { kind: "too_slow"; note: string } // เกิน timeLimitSec ของ step (หักครั้งเดียว)
+  | { kind: "rhythm_feedback"; quality: "good" | "fast" | "slow" }
   | { kind: "op_failed"; note: string };
 
 export function armTool(state: ResusState, tool: ToolId): void {
   state.activeTool = state.activeTool === tool ? null : tool;
 }
 
-/** เดินเวลา + เลือดไหล — เรียกจาก interval ~4Hz ของ UI, dt เป็นวินาที */
+/** เดินเวลา + โอกาสรอดไหลลง + เส้นตายต่อ step — เรียกจาก interval ~4Hz, dt เป็นวินาที */
 export function tick(state: ResusState, op: Operation, dt: number): ActionOutcome {
   if (state.done || state.dead) return { kind: "noop" };
   state.elapsed += dt;
+  state.stepElapsed += dt;
   const step = currentStep(op, state);
-  if (step?.bleeding) {
+  if (step?.hpDrain) {
     const drain = op.hpDrainPerSec * getDifficulty(state.difficulty).drainMult * dt;
     state.hp = Math.max(0, state.hp - drain);
-    if (state.hp <= 0) return fail(state, "เสียเลือดมากเกินไป — ผู้ป่วยช็อก");
+    if (state.hp <= 0) return fail(state, "ช้าเกินไป — โอกาสรอดของผู้ป่วยหมดลง");
+  }
+  if (step?.timeLimitSec && !state.timePenalized && state.stepElapsed > step.timeLimitSec) {
+    state.timePenalized = true;
+    const note = `เกินเวลา ${step.timeLimitSec} วิ — ${step.title}ต้องเร็วกว่านี้!`;
+    const out = damage(state, op, op.wrongToolDamage, "ช้าเกินไป!", note);
+    return out.kind === "op_failed" ? out : { kind: "too_slow", note };
   }
   return { kind: "noop" };
 }
@@ -122,6 +141,7 @@ function resetGestureProgress(state: ResusState): void {
   state.holdMs = 0;
   state.tracePct = 0;
   state.traceHits = [];
+  state.lastTapMs = null;
 }
 
 /** เป้าปัจจุบันเสร็จ 1 จุด — เลื่อน sub/step และรายงานผล */
@@ -134,9 +154,14 @@ function completeTarget(state: ResusState, op: Operation): ActionOutcome {
     return { kind: "sub_done", step };
   }
 
+  if (step.recoverHp) state.hp = Math.min(state.maxHp, state.hp + step.recoverHp);
+  if (step.isShock && state.firstShockAt < 0) state.firstShockAt = state.elapsed;
+
   state.timeline.push({ t: state.elapsed, ok: true, text: step.title, note: step.why });
   state.subIdx = 0;
   state.stepIdx += 1;
+  state.stepElapsed = 0;
+  state.timePenalized = false;
   if (state.stepIdx >= op.steps.length) {
     state.done = true;
     return { kind: "op_done", step };
@@ -150,8 +175,11 @@ function completeTarget(state: ResusState, op: Operation): ActionOutcome {
  * - เครื่องมือผิด → หัก HP เต็ม (ไม่ว่าจะแตะตรงไหน)
  * - ถูกเครื่องมือแต่นอกเป้า → หัก HP เบา
  * - ถูกทั้งคู่ → เดิน gesture
+ *
+ * nowMs = performance.now() จาก UI — ใช้วัดจังหวะของ gesture rhythm
+ * (ห้ามใช้ Date.now ใน engine เพื่อให้เทสต์ควบคุมเวลาได้)
  */
-export function pointerDown(state: ResusState, op: Operation, p: Point): ActionOutcome {
+export function pointerDown(state: ResusState, op: Operation, p: Point, nowMs?: number): ActionOutcome {
   if (state.done || state.dead) return { kind: "noop" };
   const step = currentStep(op, state);
   if (!step || !state.activeTool) return { kind: "noop" };
@@ -177,6 +205,24 @@ export function pointerDown(state: ResusState, op: Operation, p: Point): ActionO
     state.tapsDone += 1;
     if (state.tapsDone >= g.count) return completeTarget(state, op);
     return { kind: "step_progress" };
+  }
+  if (g.kind === "rhythm") {
+    state.tapsDone += 1;
+    let quality: "good" | "fast" | "slow" = "good";
+    if (state.lastTapMs != null && nowMs != null) {
+      const interval = nowMs - state.lastTapMs;
+      const tol = g.toleranceBpm ?? RHYTHM_TOLERANCE_BPM_DEFAULT;
+      if (interval < 60000 / (g.targetBpm + tol)) quality = "fast";
+      else if (interval > 60000 / (g.targetBpm - tol)) quality = "slow";
+      if (quality === "good") state.goodTaps += 1;
+      else state.offTempoTaps += 1;
+    } else {
+      // tap แรกยังไม่มี interval ให้วัด — นับเป็นดีไว้ก่อน
+      state.goodTaps += 1;
+    }
+    state.lastTapMs = nowMs ?? null;
+    if (state.tapsDone >= g.count) return completeTarget(state, op);
+    return { kind: "rhythm_feedback", quality };
   }
   if (g.kind === "hold") {
     state.holdMs = 0;
@@ -250,6 +296,23 @@ export function scoreFor(state: ResusState, op: Operation, won: boolean): number
       : Math.max(0, Math.round(30 * ((2 * op.parTimeSec - state.elapsed) / op.parTimeSec)));
   const hpBonus = Math.round(20 * (state.hp / state.maxHp));
   return Math.max(10, 100 - state.wrong * 12 + timeBonus + hpBonus);
+}
+
+/** คุณภาพจังหวะ (0..1) จาก tap ทั้งรอบ — null ถ้าด่านไม่มี gesture rhythm เลย */
+export function cprQualityFor(state: ResusState): number | null {
+  const total = state.goodTaps + state.offTempoTaps;
+  if (total === 0) return null;
+  return state.goodTaps / total;
+}
+
+/** คลื่นบนจอ monitor ณ step ปัจจุบัน — ใช้ค่า rhythm ล่าสุดที่ประกาศไว้ก่อนหน้า */
+export function currentRhythm(op: Operation, state: ResusState): "vf" | "nsr" | "flat" | null {
+  const idx = Math.min(state.stepIdx, op.steps.length - 1);
+  for (let i = idx; i >= 0; i--) {
+    const r = op.steps[i].rhythm;
+    if (r) return r;
+  }
+  return null;
 }
 
 export function fmtTime(s: number): string {

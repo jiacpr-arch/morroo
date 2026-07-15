@@ -6,7 +6,7 @@
 // - steps เรียงตามลำดับหัตถการจริง — ผู้เล่นต้องทำทีละขั้น
 // - gesture: tap (จิ้ม), taps (จิ้ม n ครั้ง), hold (กดค้าง ms), trace (ลากตามเส้น)
 // - subZones = เป้าย่อยตามลำดับ ใช้ tool+gesture เดิมซ้ำทีละจุด
-// - bleeding: true = HP ไหลลงเรื่อยๆ จนกว่า step นี้จะเสร็จ (แรงกดดันหลักของเกม)
+// - hpDrain: true = HP ไหลลงเรื่อยๆ จนกว่า step นี้จะเสร็จ (แรงกดดันหลักของเกม)
 // - why = ประโยคสอน (โชว์ตอนทำสำเร็จ + debrief) ใช้ **คำเน้น** ได้ ห้าม HTML
 
 import type { Operation } from "./types";
@@ -38,7 +38,7 @@ const SUTURE_LACERATION: Operation = {
       tool: "gauze",
       zone: { shape: "circle", cx: 500, cy: 375, r: 150 },
       gesture: { kind: "hold", ms: 2000 },
-      bleeding: true,
+      hpDrain: true,
       why: "**Direct pressure** คือวิธีห้ามเลือดขั้นแรกเสมอ — กดแน่นๆ ก่อนคิดถึงอย่างอื่น",
       wrongToolWhy: {
         suture_set: "ยังไม่เย็บ! เลือดยังไหลอยู่ — ห้ามเลือดก่อน",
@@ -163,7 +163,7 @@ const TENSION_PNEUMO: Operation = {
         { shape: "circle", cx: 390, cy: 330, r: 75 },
       ],
       gesture: { kind: "tap" },
-      bleeding: true,
+      hpDrain: true,
       why: "ข้างขวา**เสียงหายใจหายไป + เคาะโปร่ง** ร่วมกับ trachea เอียง = tension pneumothorax — วินิจฉัยจาก**อาการ ไม่ใช่ CXR**",
       wrongToolWhy: {
         scalpel: "ยังไม่รู้ว่าข้างไหน! ฟังปอดก่อนลงมือ",
@@ -176,7 +176,7 @@ const TENSION_PNEUMO: Operation = {
       tool: "o2_mask",
       zone: { shape: "circle", cx: 500, cy: 130, r: 90 },
       gesture: { kind: "tap" },
-      bleeding: true,
+      hpDrain: true,
       why: "O2 **high-flow** ทันทีระหว่างเตรียมหัตถการ — ซื้อเวลาให้ผู้ป่วย",
       fxState: "oxygen",
     },
@@ -186,7 +186,7 @@ const TENSION_PNEUMO: Operation = {
       tool: "iv_catheter",
       zone: { shape: "circle", cx: 385, cy: 270, r: 48 },
       gesture: { kind: "tap" },
-      bleeding: true,
+      hpDrain: true,
       why: "**เข็มก่อน สายทีหลัง** — แทง 2nd ICS ตำแหน่ง midclavicular line (หรือ 5th ICS anterior axillary) **เหนือขอบบนของ rib** เลี่ยง neurovascular bundle",
       wrongToolWhy: {
         chest_tube: "ICD ใช้เวลาเตรียมนาน — tension ต้อง**ระบายด้วยเข็มทันที**ก่อน",
@@ -371,7 +371,7 @@ const ABSCESS_ID: Operation = {
       tool: "gauze",
       zone: { shape: "circle", cx: 500, cy: 400, r: 130 },
       gesture: { kind: "taps", count: 3 },
-      bleeding: true,
+      hpDrain: true,
       why: "ระบายหนองออกให้มากที่สุด — **หนองที่ค้างคือเชื้อที่เหลือ**",
       fxState: "drained",
     },

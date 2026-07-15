@@ -105,6 +105,9 @@ export default function ResusRunner({ operation, practice = false }: ResusRunner
   }>({ loop: null, holdRaf: null, misc: [] });
   const toastN = useRef(0);
   const endingRef = useRef(false);
+  /** feedback จังหวะล่าสุดของ gesture rhythm (แสดงชั่วครู่เหนือเวที) */
+  const [rhythmFb, setRhythmFb] = useState<{ n: number; q: "good" | "fast" | "slow" } | null>(null);
+  const rhythmN = useRef(0);
 
   const stopHold = useCallback(() => {
     if (timers.current.holdRaf !== null) {
@@ -191,9 +194,17 @@ export default function ResusRunner({ operation, practice = false }: ResusRunner
     switch (out.kind) {
       case "wrong_tool":
       case "wrong_zone":
+      case "too_slow":
         stopHold();
         mistakeFx();
         showToast("bad", out.note);
+        syncView();
+        break;
+      case "rhythm_feedback":
+        // feedback จังหวะแบบเบาๆ ทุก tap — ไม่ใช้ toast เพราะจะสแปมจอ
+        vibrate([12]);
+        rhythmN.current += 1;
+        setRhythmFb({ n: rhythmN.current, q: out.quality });
         syncView();
         break;
       case "sub_done": {
@@ -239,7 +250,7 @@ export default function ResusRunner({ operation, practice = false }: ResusRunner
       return;
     }
     const step = currentStep(op, st);
-    const out = pointerDown(st, op, p);
+    const out = pointerDown(st, op, p, performance.now());
     handleOutcome(out);
     // เริ่มวงแหวนกดค้างเมื่อ gesture คือ hold และกดถูกเป้า
     if (out.kind === "step_progress" && step?.gesture.kind === "hold") {
@@ -307,11 +318,12 @@ export default function ResusRunner({ operation, practice = false }: ResusRunner
     setResult(null);
     setReward(null);
     setHoldPct(0);
+    setRhythmFb(null);
     setScreen("game");
-    // เวลา + เลือดไหล 4Hz
+    // เวลา + โอกาสรอดไหลลง + เส้นตายต่อ step — 4Hz
     timers.current.loop = setInterval(() => {
       const out = tick(S.current, op, 0.25);
-      if (out.kind === "op_failed") {
+      if (out.kind === "op_failed" || out.kind === "too_slow") {
         handleOutcome(out);
         return;
       }
@@ -501,7 +513,12 @@ export default function ResusRunner({ operation, practice = false }: ResusRunner
             {Math.min(st.stepIdx + 1, op.steps.length)}/{op.steps.length}
           </span>
           {step ? step.title : "เสร็จสิ้นหัตถการ"}
-          {step?.bleeding && <span className="rss-bleedtag">เลือดกำลังไหล!</span>}
+          {step?.hpDrain && <span className="rss-bleedtag">โอกาสรอดกำลังลด!</span>}
+          {step?.timeLimitSec && !st.timePenalized && (
+            <span className={`rss-deadline ${st.stepElapsed > step.timeLimitSec - 10 ? "rss-deadline-hot" : ""}`}>
+              ⏱ {Math.max(0, Math.ceil(step.timeLimitSec - st.stepElapsed))}s
+            </span>
+          )}
         </div>
         <div className="rss-stage">
           <ResusField
@@ -518,6 +535,11 @@ export default function ResusRunner({ operation, practice = false }: ResusRunner
           {toast && (
             <div key={toast.n} className={`rss-toast ${toast.kind === "ok" ? "rss-toast-ok" : "rss-toast-bad"}`}>
               <EmText text={toast.text} />
+            </div>
+          )}
+          {rhythmFb && step?.gesture.kind === "rhythm" && (
+            <div key={`rfb-${rhythmFb.n}`} className={`rss-rhythmfb rss-rfb-${rhythmFb.q}`}>
+              {rhythmFb.q === "good" ? "ตรงจังหวะ!" : rhythmFb.q === "fast" ? "เร็วไป!" : "ช้าไป!"}
             </div>
           )}
         </div>

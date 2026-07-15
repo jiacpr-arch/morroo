@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
+  cprQualityFor,
+  currentRhythm,
   DIFFICULTY,
   MAX_HP,
   armTool,
@@ -47,7 +49,7 @@ const TEST_OP: Operation = {
       tool: "gauze",
       zone: { shape: "circle", cx: 100, cy: 100, r: 50 },
       gesture: { kind: "hold", ms: 1000 },
-      bleeding: true,
+      hpDrain: true,
       why: "กดก่อน",
     },
     {
@@ -94,8 +96,8 @@ describe("createInitialState / difficulty", () => {
   });
 });
 
-describe("tick — เลือดไหลเฉพาะ step ที่ bleeding", () => {
-  it("step แรก (bleeding) HP ลดตาม drain × ตัวคูณความยาก", () => {
+describe("tick — เลือดไหลเฉพาะ step ที่ hpDrain", () => {
+  it("step แรก (hpDrain) HP ลดตาม drain × ตัวคูณความยาก", () => {
     const st = freshState("normal");
     tick(st, TEST_OP, 1);
     expect(st.hp).toBeCloseTo(MAX_HP - 2);
@@ -118,9 +120,9 @@ describe("tick — เลือดไหลเฉพาะ step ที่ bleedi
     expect(st.hp).toBe(0);
   });
 
-  it("step ที่ไม่ bleeding HP คงที่ แต่เวลาเดิน", () => {
+  it("step ที่ไม่ hpDrain HP คงที่ แต่เวลาเดิน", () => {
     const st = freshState();
-    st.stepIdx = 1; // s2 ไม่ bleeding
+    st.stepIdx = 1; // s2 ไม่ hpDrain
     tick(st, TEST_OP, 5);
     expect(st.hp).toBe(MAX_HP);
     expect(st.elapsed).toBe(5);
@@ -407,5 +409,150 @@ describe("DIFFICULTY มีครบ 3 ระดับ", () => {
   it("easy/normal/hard และ label ไทย", () => {
     expect(Object.keys(DIFFICULTY)).toEqual(["easy", "normal", "hard"]);
     expect(DIFFICULTY.easy.label).toBe("ง่าย");
+  });
+});
+
+// ---- กลไกเวลาใหม่ (rework ACLS) ----
+
+const RHYTHM_OP: Operation = {
+  slug: "rhythm-op",
+  title: "ด่านทดสอบจังหวะ",
+  subtitle: "",
+  patient: { name: "ทดสอบ", age: 1, story: "" },
+  artId: "laceration",
+  tools: ["gauze", "saline"],
+  parTimeSec: 60,
+  hpDrainPerSec: 2,
+  wrongToolDamage: 8,
+  wrongZoneDamage: 3,
+  steps: [
+    {
+      id: "cpr",
+      title: "ปั๊มหัวใจ",
+      tool: "gauze",
+      zone: { shape: "circle", cx: 100, cy: 100, r: 60 },
+      gesture: { kind: "rhythm", count: 5, targetBpm: 110, toleranceBpm: 15 },
+      hpDrain: true,
+      rhythm: "vf",
+      why: "ปั๊มลึก อกคืนตัวเต็ม",
+    },
+    {
+      id: "shock",
+      title: "ช็อกไฟฟ้า",
+      tool: "saline",
+      zone: { shape: "circle", cx: 300, cy: 100, r: 60 },
+      gesture: { kind: "tap" },
+      timeLimitSec: 10,
+      isShock: true,
+      recoverHp: 15,
+      rhythm: "nsr",
+      why: "ช็อกให้ไว",
+    },
+  ],
+};
+
+describe("gesture rhythm — วัดจังหวะจาก interval จริง", () => {
+  const target = 60000 / 110; // ~545ms
+
+  function tapAt(st: ReturnType<typeof freshState>, nowMs: number) {
+    return pointerDown(st, RHYTHM_OP, center(RHYTHM_OP.steps[0].zone), nowMs);
+  }
+
+  it("แตะตรงจังหวะนับ goodTaps และครบ count = step_done", () => {
+    const st = freshState();
+    armTool(st, "gauze");
+    let now = 1000;
+    let out = tapAt(st, now); // tap แรกนับ good ให้ฟรี
+    expect(out.kind).toBe("rhythm_feedback");
+    for (let i = 0; i < 3; i++) {
+      now += target;
+      out = tapAt(st, now);
+      expect(out).toEqual({ kind: "rhythm_feedback", quality: "good" });
+    }
+    now += target;
+    out = tapAt(st, now); // ครบ 5
+    expect(out.kind).toBe("step_done");
+    expect(st.goodTaps).toBe(5);
+    expect(st.offTempoTaps).toBe(0);
+    expect(st.stepIdx).toBe(1);
+  });
+
+  it("แตะเร็ว/ช้าเกิน tolerance นับ offTempo และรายงาน quality ถูกฝั่ง", () => {
+    const st = freshState();
+    armTool(st, "gauze");
+    tapAt(st, 1000);
+    const fast = tapAt(st, 1000 + 60000 / 140); // 140bpm — เร็วเกิน
+    expect(fast).toEqual({ kind: "rhythm_feedback", quality: "fast" });
+    const slow = tapAt(st, 1000 + 60000 / 140 + 60000 / 70); // 70bpm — ช้าเกิน
+    expect(slow).toEqual({ kind: "rhythm_feedback", quality: "slow" });
+    expect(st.offTempoTaps).toBe(2);
+    expect(st.goodTaps).toBe(1);
+    // จังหวะไม่ตรงไม่ใช่ "พลาด" — ไม่หัก HP ไม่บวก wrong
+    expect(st.wrong).toBe(0);
+    expect(st.hp).toBe(MAX_HP);
+  });
+
+  it("cprQualityFor คิดสัดส่วน good จาก tap ทั้งหมด (null ถ้าไม่มี)", () => {
+    const st = freshState();
+    expect(cprQualityFor(st)).toBeNull();
+    st.goodTaps = 3;
+    st.offTempoTaps = 1;
+    expect(cprQualityFor(st)).toBeCloseTo(0.75);
+  });
+});
+
+describe("timeLimitSec — เส้นตายต่อ step หักครั้งเดียว", () => {
+  it("เกินเวลาโดนหัก wrongToolDamage ครั้งเดียวแล้วไม่หักซ้ำ", () => {
+    const st = freshState("normal");
+    st.stepIdx = 1; // step shock มี timeLimitSec 10
+    let out = tick(st, RHYTHM_OP, 10.5);
+    expect(out.kind).toBe("too_slow");
+    expect(st.wrong).toBe(1);
+    const hpAfter = st.hp;
+    out = tick(st, RHYTHM_OP, 5);
+    expect(out.kind).toBe("noop");
+    expect(st.hp).toBe(hpAfter);
+    expect(st.wrong).toBe(1);
+  });
+
+  it("stepElapsed รีเซ็ตเมื่อขึ้น step ใหม่", () => {
+    const st = freshState();
+    armTool(st, "gauze");
+    tick(st, RHYTHM_OP, 3);
+    expect(st.stepElapsed).toBeCloseTo(3);
+    for (let i = 0; i < 5; i++) pointerDown(st, RHYTHM_OP, center(RHYTHM_OP.steps[0].zone), 1000 + i * 545);
+    expect(st.stepIdx).toBe(1);
+    expect(st.stepElapsed).toBe(0);
+    expect(st.timePenalized).toBe(false);
+  });
+});
+
+describe("recoverHp / isShock / currentRhythm", () => {
+  it("จบ step ที่มี recoverHp ฟื้น HP (ไม่เกิน max) + บันทึกเวลาช็อกแรก", () => {
+    const st = freshState();
+    st.stepIdx = 1;
+    st.hp = 50;
+    st.elapsed = 42;
+    armTool(st, "saline");
+    const out = pointerDown(st, RHYTHM_OP, center(RHYTHM_OP.steps[1].zone));
+    expect(out.kind).toBe("op_done");
+    expect(st.hp).toBe(65);
+    expect(st.firstShockAt).toBe(42);
+  });
+
+  it("recoverHp ไม่ทะลุ maxHp", () => {
+    const st = freshState();
+    st.stepIdx = 1;
+    st.hp = MAX_HP - 5;
+    armTool(st, "saline");
+    pointerDown(st, RHYTHM_OP, center(RHYTHM_OP.steps[1].zone));
+    expect(st.hp).toBe(MAX_HP);
+  });
+
+  it("currentRhythm ใช้ค่าล่าสุดที่ประกาศก่อนหน้า", () => {
+    const st = freshState();
+    expect(currentRhythm(RHYTHM_OP, st)).toBe("vf");
+    st.stepIdx = 1;
+    expect(currentRhythm(RHYTHM_OP, st)).toBe("nsr");
   });
 });

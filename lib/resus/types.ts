@@ -71,11 +71,18 @@ export type Gesture =
   | { kind: "tap" }
   | { kind: "taps"; count: number }
   | { kind: "hold"; ms: number }
-  | { kind: "trace"; path: [number, number][]; tolerance?: number };
+  | { kind: "trace"; path: [number, number][]; tolerance?: number }
+  /** แตะตามจังหวะ (CPR/bag) — วัด interval ระหว่าง tap เทียบ targetBpm */
+  | { kind: "rhythm"; count: number; targetBpm: number; toleranceBpm?: number };
 
 export const TRACE_TOLERANCE_DEFAULT = 60;
 /** trace ถือว่าสำเร็จเมื่อครอบคลุมจุดบนเส้น ≥ สัดส่วนนี้ */
 export const TRACE_COMPLETE_PCT = 0.9;
+/** rhythm: ช่วง BPM ที่ยังนับว่า "ตรงจังหวะ" (± ค่านี้) */
+export const RHYTHM_TOLERANCE_BPM_DEFAULT = 15;
+
+/** สถานะคลื่นไฟฟ้าหัวใจบนจอ monitor (ตรงกับ prop ของ components/sim/EcgMonitor) */
+export type MonitorRhythm = "vf" | "nsr" | "flat";
 
 export interface OperationStep {
   id: string;
@@ -86,8 +93,16 @@ export interface OperationStep {
   /** เป้าย่อยตามลำดับ (เย็บ 4 เข็ม, ฉีดยาชา 3 จุด) — ใช้ tool+gesture เดิมซ้ำทีละจุด */
   subZones?: Zone[];
   gesture: Gesture;
-  /** ระหว่าง step นี้ยังไม่เสร็จ HP ไหลลงตาม hpDrainPerSec ของด่าน */
-  bleeding?: boolean;
+  /** ระหว่าง step นี้ยังไม่เสร็จ "โอกาสรอด" ไหลลงตาม hpDrainPerSec ของด่าน */
+  hpDrain?: boolean;
+  /** จบ step นี้แล้วโอกาสรอดฟื้นกลับ (เช่น ช็อกสำเร็จ +10, ROSC +25) */
+  recoverHp?: number;
+  /** เส้นตายของ step (วินาทีนับจากเริ่ม step) — เกินแล้วโดนหักครั้งเดียว */
+  timeLimitSec?: number;
+  /** คลื่นบนจอ monitor ระหว่าง step นี้ (ไม่ใส่ = คงค่าเดิม) */
+  rhythm?: MonitorRhythm;
+  /** step นี้คือการช็อกไฟฟ้า — ใช้เก็บ metric เวลาถึงช็อกแรก */
+  isShock?: boolean;
   /** ข้อความสอนตอนทำสำเร็จ + ใน debrief (plain text, **เน้น** ได้) */
   why: string;
   /** ข้อความเฉพาะเมื่อหยิบเครื่องมือผิดตัวที่พบบ่อย */
@@ -116,7 +131,7 @@ export interface Operation {
   tools: ToolId[];
   steps: OperationStep[];
   parTimeSec: number;
-  /** อัตรา HP ไหลลงต่อวินาทีระหว่างมี step ที่ bleeding ค้างอยู่ */
+  /** อัตรา HP ไหลลงต่อวินาทีระหว่างมี step ที่ hpDrain ค้างอยู่ */
   hpDrainPerSec: number;
   wrongToolDamage: number;
   wrongZoneDamage: number;
@@ -147,6 +162,17 @@ export interface ResusState {
   hp: number;
   maxHp: number;
   elapsed: number;
+  /** วินาทีที่ผ่านไปใน step ปัจจุบัน — ใช้กับ timeLimitSec */
+  stepElapsed: number;
+  /** step ปัจจุบันโดนหักเพราะช้าเกิน timeLimitSec ไปแล้ว (หักครั้งเดียว) */
+  timePenalized: boolean;
+  /** เวลาของ tap ล่าสุดใน gesture rhythm (ms จาก performance.now ของ UI) */
+  lastTapMs: number | null;
+  /** สถิติจังหวะสะสมทั้งรอบ — ใช้คิดคุณภาพ CPR ใน debrief */
+  goodTaps: number;
+  offTempoTaps: number;
+  /** วินาทีที่ช็อกไฟฟ้าครั้งแรกสำเร็จ (-1 = ยังไม่ช็อก) */
+  firstShockAt: number;
   wrong: number;
   activeTool: ToolId | null;
   done: boolean;
@@ -198,5 +224,13 @@ function isValidGesture(g: unknown): g is Gesture {
   if (ges.kind === "taps") return typeof ges.count === "number" && ges.count >= 1;
   if (ges.kind === "hold") return typeof ges.ms === "number" && ges.ms > 0;
   if (ges.kind === "trace") return Array.isArray(ges.path) && ges.path.length >= 2;
+  if (ges.kind === "rhythm") {
+    return (
+      typeof ges.count === "number" &&
+      ges.count >= 1 &&
+      typeof ges.targetBpm === "number" &&
+      ges.targetBpm > 0
+    );
+  }
   return false;
 }

@@ -6,6 +6,7 @@
 
 import { createClient } from "@/lib/supabase/client";
 import { awardBadge, awardXp } from "@/lib/school/xp";
+import { cprQualityFor } from "./engine";
 import type { Grade, ResusState } from "./types";
 
 export const RESUS_XP: Record<Grade, number> = { S: 150, A: 100, B: 60, C: 30 };
@@ -25,7 +26,7 @@ export interface RecordedRun {
 }
 
 export async function recordResusRun(
-  operationSlug: string,
+  caseSlug: string,
   state: ResusState,
   result: ResusRunResult,
 ): Promise<RecordedRun> {
@@ -38,7 +39,7 @@ export async function recordResusRun(
 
     await supabase.from("resus_runs").insert({
       user_id: user.id,
-      case_slug: operationSlug,
+      case_slug: caseSlug,
       difficulty: state.difficulty,
       won: result.won,
       grade: result.grade,
@@ -47,11 +48,17 @@ export async function recordResusRun(
       wrong_count: state.wrong,
       duration_sec: Math.round(state.elapsed),
       hp_left: Math.round(state.hp),
-      metrics: { timeline: state.timeline },
+      metrics: {
+        timeline: state.timeline,
+        cpr_quality: cprQualityFor(state),
+        time_to_first_shock_sec: state.firstShockAt >= 0 ? Math.round(state.firstShockAt) : null,
+        good_taps: state.goodTaps,
+        off_tempo_taps: state.offTempoTaps,
+      },
     });
 
     const xp = result.won ? RESUS_XP[result.grade] : RESUS_XP_LOSS;
-    await awardXp(xp, `resus:${operationSlug}:${result.won ? result.grade : "loss"}`);
+    await awardXp(xp, `resus:${caseSlug}:${result.won ? result.grade : "loss"}`);
     out.xpEarned = xp;
 
     if (result.won) {
