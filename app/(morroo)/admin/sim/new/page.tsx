@@ -40,6 +40,8 @@ export default function AdminSimNewPage() {
         title: values.title,
         subtitle: values.subtitle,
         difficultyTag: values.difficultyTag,
+        category: values.category,
+        sourceCaseId: values.sourceCaseId,
         status: values.status,
         story,
       }),

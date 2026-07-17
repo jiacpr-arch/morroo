@@ -81,6 +81,9 @@ export default function SimRunner({ scenario, practice = false, characters }: Si
     () => new Map((characters ?? []).map((c) => [c.slug, c])),
     [characters],
   );
+  // เกมเคส (long case) ใช้เอนจินเดียวกันแต่ไม่มี CPR/shock/rhythm — ปรับข้อความให้เข้าธีม ward
+  const isLongcase = scenario.category === "longcase";
+  const hubHref = isLongcase ? "/casegame" : "/sim";
   const [reducedMotion] = useState(
     () => isBrowser && window.matchMedia("(prefers-reduced-motion: reduce)").matches,
   );
@@ -276,7 +279,9 @@ export default function SimRunner({ scenario, practice = false, characters }: Si
           label: "",
           ok: false,
           timeout: true,
-          why: "หมดเวลา — ใน arrest ความลังเลก็คือการตัดสินใจแบบหนึ่ง",
+          why: isLongcase
+            ? "หมดเวลา — ผู้ป่วยยังรอการตัดสินใจของคุณ"
+            : "หมดเวลา — ใน arrest ความลังเลก็คือการตัดสินใจแบบหนึ่ง",
           worsen: true,
         });
       }
@@ -463,16 +468,25 @@ export default function SimRunner({ scenario, practice = false, characters }: Si
     return (
       <div className="cbs-app">
         <section className="cbs-title">
-          <div className="cbs-eyebrow">Code Blue · ER Night Shift</div>
+          <div className="cbs-eyebrow">{isLongcase ? "Long Case · Ward Round" : "Code Blue · ER Night Shift"}</div>
           <h1>
             morroo<br />
-            <span className="cbs-gold-text">CODE BLUE</span><br />
-            {scenario.title.replace(/^CODE BLUE:\s*/, "")}
+            <span className="cbs-gold-text">{isLongcase ? "LONG CASE" : "CODE BLUE"}</span><br />
+            {scenario.title.replace(/^(CODE BLUE|LONG CASE):\s*/, "")}
           </h1>
           <p className="cbs-title-sub">
             {scenario.subtitle}<br />
-            คุณคือ <b>Team Leader</b> — ทีมทั้งห้องรอฟังคำสั่งของคุณ<br />
-            ตัดสินใจผิด ผู้ป่วยแย่ลงจริง เวลาไม่เคยรอใคร
+            {isLongcase ? (
+              <>
+                คุณคือ <b>แพทย์เจ้าของไข้</b> — ทุกคำถามและคำสั่งมีผลต่อผู้ป่วย<br />
+                ตัดสินใจผิด อาการแย่ลงจริง เวลาไม่เคยรอใคร
+              </>
+            ) : (
+              <>
+                คุณคือ <b>Team Leader</b> — ทีมทั้งห้องรอฟังคำสั่งของคุณ<br />
+                ตัดสินใจผิด ผู้ป่วยแย่ลงจริง เวลาไม่เคยรอใคร
+              </>
+            )}
           </p>
           <div className="cbs-diff-group" role="group" aria-label="เลือกระดับความยาก">
             <span className="cbs-diff-label">ระดับความยาก</span>
@@ -506,11 +520,11 @@ export default function SimRunner({ scenario, practice = false, characters }: Si
             <AlertTriangle size={18} strokeWidth={2.6} style={{ display: "inline", verticalAlign: "-3px", marginRight: 8 }} />
             รับเคส
           </button>
-          <Link href="/sim" className="cbs-btn-ghost">
+          <Link href={hubHref} className="cbs-btn-ghost">
             <Home size={15} strokeWidth={2.4} style={{ display: "inline", verticalAlign: "-2px", marginRight: 6 }} />
             กลับหน้ารวมเคส
           </Link>
-          <div className="cbs-note">DECISION GAME · ACLS TRAINING · MORROO</div>
+          <div className="cbs-note">{isLongcase ? "DECISION GAME · LONG CASE · MORROO" : "DECISION GAME · ACLS TRAINING · MORROO"}</div>
         </section>
       </div>
     );
@@ -523,13 +537,17 @@ export default function SimRunner({ scenario, practice = false, characters }: Si
       <div className="cbs-app">
         <section className={`cbs-debrief ${result.won ? "cbs-winbg" : "cbs-losebg"}`}>
           <div className={`cbs-stamp ${result.won ? "cbs-win" : "cbs-lose"}`}>
-            {result.won ? "ROSC!" : "CODE ENDED"}
+            {result.won ? (isLongcase ? "CASE CLEARED" : "ROSC!") : (isLongcase ? "CASE FAILED" : "CODE ENDED")}
           </div>
           <div className="cbs-diff-badge">โหมด {getDifficulty(st.difficulty).label}</div>
           <p className="cbs-verdict-sub">
             {result.won
-              ? "ผู้ป่วยกลับมามีชีพจร — ส่งต่อ Cath lab เคสนี้เป็นของคุณ"
-              : "ผู้ป่วยเสียชีวิต — อ่าน debrief ด้านล่าง แล้วกลับมาแก้มือ"}
+              ? isLongcase
+                ? "วินิจฉัยและจัดการถูกต้อง — เคสนี้เป็นของคุณ"
+                : "ผู้ป่วยกลับมามีชีพจร — ส่งต่อ Cath lab เคสนี้เป็นของคุณ"
+              : isLongcase
+                ? "ผู้ป่วยแย่ลงจากการตัดสินใจที่พลาด — อ่าน debrief ด้านล่าง แล้วกลับมาแก้มือ"
+                : "ผู้ป่วยเสียชีวิต — อ่าน debrief ด้านล่าง แล้วกลับมาแก้มือ"}
             {result.isHiscore && <><br />🏆 New Hi-Score: {result.score}</>}
           </p>
           {reward && reward.loggedIn && reward.xpEarned > 0 && (
@@ -551,16 +569,20 @@ export default function SimRunner({ scenario, practice = false, characters }: Si
               <span className="cbs-grade-label">GRADE</span>
             </div>
             <div className="cbs-metric-grid">
-              <Metric label="เริ่ม CPR ภายใน" value={st.firstCPRAt >= 0 ? fmtTime(st.firstCPRAt) : "—"}
-                tone={st.firstCPRAt >= 0 && st.firstCPRAt <= 90 ? "good" : "warn"} />
-              <Metric label="Shock แรกภายใน" value={st.firstShockAt >= 0 ? fmtTime(st.firstShockAt) : "—"}
-                tone={st.firstShockAt >= 0 && st.firstShockAt <= 300 ? "good" : "warn"} />
+              {!isLongcase && (
+                <>
+                  <Metric label="เริ่ม CPR ภายใน" value={st.firstCPRAt >= 0 ? fmtTime(st.firstCPRAt) : "—"}
+                    tone={st.firstCPRAt >= 0 && st.firstCPRAt <= 90 ? "good" : "warn"} />
+                  <Metric label="Shock แรกภายใน" value={st.firstShockAt >= 0 ? fmtTime(st.firstShockAt) : "—"}
+                    tone={st.firstShockAt >= 0 && st.firstShockAt <= 300 ? "good" : "warn"} />
+                </>
+              )}
               <Metric label="ตัดสินใจพลาด" value={String(st.wrong)}
                 tone={st.wrong === 0 ? "good" : st.wrong <= 2 ? "warn" : "badv"} />
               <Metric label="เวลาทั้งเคส" value={fmtTime(st.simTime)} tone="" />
             </div>
           </div>
-          {st.etco2Trace.length > 1 && (
+          {!isLongcase && st.etco2Trace.length > 1 && (
             <div className="cbs-etco2">
               <div className="cbs-tl-title">EtCO₂ — คุณภาพ CPR ตลอดเคส</div>
               <Etco2Sparkline trace={st.etco2Trace} />
@@ -585,7 +607,7 @@ export default function SimRunner({ scenario, practice = false, characters }: Si
               <RefreshCw size={16} strokeWidth={2.6} style={{ display: "inline", verticalAlign: "-2px", marginRight: 8 }} />
               เล่นเคสนี้อีกครั้ง
             </button>
-            <Link href="/sim" className="cbs-btn-ghost">กลับหน้ารวมเคส</Link>
+            <Link href={hubHref} className="cbs-btn-ghost">กลับหน้ารวมเคส</Link>
           </div>
         </section>
       </div>

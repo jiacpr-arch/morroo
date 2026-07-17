@@ -3,8 +3,9 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { getLongCases } from "@/lib/supabase/queries-longcase";
+import { getLongcaseGameMap } from "@/lib/supabase/queries-sim";
 import { createClient } from "@/lib/supabase/server";
-import { BookOpen, Stethoscope, Clock, Star } from "lucide-react";
+import { BookOpen, Stethoscope, Clock, Star, Gamepad2 } from "lucide-react";
 import type { Metadata } from "next";
 import LongCaseStartButton from "./LongCaseStartButton";
 import AllExamsCountdown from "@/components/AllExamsCountdown";
@@ -61,7 +62,7 @@ export default async function LongCasePage() {
     hasAccess = profile?.membership_type !== "free" && !!expires && expires > now;
   }
 
-  const cases = await getLongCases();
+  const [cases, gameMap] = await Promise.all([getLongCases(), getLongcaseGameMap()]);
   const weeklyCases = cases.filter(c => c.is_weekly);
   const regularCases = cases.filter(c => !c.is_weekly);
 
@@ -107,6 +108,22 @@ export default async function LongCasePage() {
         ))}
       </div>
 
+      {/* โปรโมทเกมเคส — เล่นเป็นเกมตัดสินใจแบบ visual novel */}
+      <Link href="/casegame" className="mb-8 block">
+        <div className="flex items-center gap-4 rounded-xl border-2 border-teal-300 bg-teal-50 p-5 transition-colors hover:bg-teal-100">
+          <div className="text-3xl shrink-0">🎮</div>
+          <div className="flex-1">
+            <p className="font-semibold text-teal-900">เล่นเป็นเกมตัดสินใจ — ลองเวอร์ชันเกมของ Long Case</p>
+            <p className="text-sm text-teal-700">
+              ซักประวัติ ตรวจร่างกาย สั่งแลป วินิจฉัยและรักษาภายใต้เวลากดดัน เล่นฟรี ไม่ต้องสมัคร
+            </p>
+          </div>
+          <Button className="shrink-0 gap-2 bg-teal-600 text-white hover:bg-teal-700">
+            <Gamepad2 className="h-4 w-4" /> เล่นเกมเคส
+          </Button>
+        </div>
+      </Link>
+
       {/* Access banner for free users */}
       {!hasAccess && (
         <div className="mb-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-5 flex items-center gap-4">
@@ -132,7 +149,7 @@ export default async function LongCasePage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {weeklyCases.map((c) => (
-              <CaseCard key={c.id} lc={c} hasAccess={hasAccess} isWeekly />
+              <CaseCard key={c.id} lc={c} hasAccess={hasAccess} gameSlug={gameMap[c.id]} isWeekly />
             ))}
           </div>
         </div>
@@ -144,7 +161,7 @@ export default async function LongCasePage() {
           <h2 className="text-xl font-bold text-gray-900 mb-4">เคสทั้งหมด</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {regularCases.map((c) => (
-              <CaseCard key={c.id} lc={c} hasAccess={hasAccess} />
+              <CaseCard key={c.id} lc={c} hasAccess={hasAccess} gameSlug={gameMap[c.id]} />
             ))}
           </div>
         </div>
@@ -160,9 +177,10 @@ export default async function LongCasePage() {
   );
 }
 
-function CaseCard({ lc, hasAccess, isWeekly }: {
+function CaseCard({ lc, hasAccess, gameSlug, isWeekly }: {
   lc: Awaited<ReturnType<typeof getLongCases>>[0];
   hasAccess: boolean;
+  gameSlug?: string;
   isWeekly?: boolean;
 }) {
   const diff = DIFFICULTY_LABEL[lc.difficulty] || DIFFICULTY_LABEL.medium;
@@ -196,6 +214,14 @@ function CaseCard({ lc, hasAccess, isWeekly }: {
           </span>
         </div>
         <LongCaseStartButton caseId={lc.id} hasAccess={hasAccess} />
+        {gameSlug && (
+          <Link
+            href={`/sim/${gameSlug}`}
+            className="mt-2 flex items-center justify-center gap-1.5 text-sm font-medium text-teal-700 hover:text-teal-800 hover:underline"
+          >
+            <Gamepad2 className="h-3.5 w-3.5" /> เล่นเป็นเกม
+          </Link>
+        )}
       </CardContent>
     </Card>
   );

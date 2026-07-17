@@ -70,6 +70,10 @@ export interface SimScenario {
   subtitle: string;
   /** ป้ายระดับเนื้อหา (ไม่ใช่ความยากของเกม) เช่น 'basic' | 'megacode' */
   difficultyTag?: string;
+  /** หมวดเคส: 'acls' (ค่าเริ่มต้น เคส Code Blue) | 'longcase' (เกมเคสจาก long case) */
+  category?: string;
+  /** id ของ long_cases ต้นฉบับ (เมื่อแปลงจากเคสจริง) */
+  sourceCaseId?: string;
   story: StoryNode[];
 }
 

@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Loader2, Play, WandSparkles, X } from "lucide-react";
 import SimRunner from "@/components/sim/SimRunner";
+import { createClient } from "@/lib/supabase/client";
 import { describeScenarioError } from "@/lib/sim/validate";
 import type { SimDbCharacter } from "@/lib/sim/characters";
 import type { SimScenario } from "@/lib/sim/types";
@@ -28,8 +29,16 @@ export interface SimFormValues {
   title: string;
   subtitle: string;
   difficultyTag: string;
+  category: string;
+  sourceCaseId?: string;
   status: string;
   storyJson: string; // เก็บเป็น string เสมอ — ห้ามทับข้อความผู้ใช้ตอน parse ไม่ผ่าน
+}
+
+interface LongCaseOption {
+  id: string;
+  title: string;
+  specialty: string;
 }
 
 interface Props {
@@ -46,6 +55,8 @@ const EMPTY: SimFormValues = {
   title: "",
   subtitle: "",
   difficultyTag: "basic",
+  category: "acls",
+  sourceCaseId: undefined,
   status: "draft",
   storyJson: "",
 };
@@ -110,6 +121,20 @@ export default function SimScenarioForm({ initial, submitLabel, onSubmit, showAi
   const [aiExtra, setAiExtra] = useState("");
   const [aiBusy, setAiBusy] = useState(false);
   const [aiError, setAiError] = useState<string | null>(null);
+  const [aiLongCaseId, setAiLongCaseId] = useState("");
+
+  // รายการ Long Case ที่ published — ใช้ทำ dropdown "แปลงจาก Long Case"
+  // (RLS: Published cases are viewable by all — ดึงผ่าน browser client ได้)
+  const [longCases, setLongCases] = useState<LongCaseOption[]>([]);
+  useEffect(() => {
+    if (!showAiPanel) return;
+    createClient()
+      .from("long_cases")
+      .select("id, title, specialty")
+      .eq("is_published", true)
+      .order("created_at", { ascending: false })
+      .then(({ data }: { data: LongCaseOption[] | null }) => setLongCases(data ?? []));
+  }, [showAiPanel]);
 
   function set<K extends keyof SimFormValues>(key: K, value: SimFormValues[K]) {
     setValues((v) => ({ ...v, [key]: value }));
@@ -136,6 +161,7 @@ export default function SimScenarioForm({ initial, submitLabel, onSubmit, showAi
       title: values.title.trim() || "ทดลองเล่น",
       subtitle: values.subtitle.trim(),
       difficultyTag: values.difficultyTag,
+      category: values.category,
       story: story as SimScenario["story"],
     });
   }
@@ -159,8 +185,8 @@ export default function SimScenarioForm({ initial, submitLabel, onSubmit, showAi
   }
 
   async function generateWithAi() {
-    if (!aiTopic.trim()) {
-      setAiError("ใส่หัวข้อ/ภาวะของเคสก่อน เช่น PEA arrest, bradycardia");
+    if (!aiLongCaseId && !aiTopic.trim()) {
+      setAiError("เลือก Long Case ที่จะแปลง หรือใส่หัวข้อ/ภาวะของเคสก่อน");
       return;
     }
     setAiError(null);
@@ -169,11 +195,18 @@ export default function SimScenarioForm({ initial, submitLabel, onSubmit, showAi
       const res = await fetch("/api/admin/sim/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          topic: aiTopic.trim(),
-          difficulty: aiDifficulty,
-          extraInstructions: aiExtra.trim() || undefined,
-        }),
+        body: JSON.stringify(
+          aiLongCaseId
+            ? {
+                longCaseId: aiLongCaseId,
+                extraInstructions: aiExtra.trim() || undefined,
+              }
+            : {
+                topic: aiTopic.trim(),
+                difficulty: aiDifficulty,
+                extraInstructions: aiExtra.trim() || undefined,
+              },
+        ),
       });
       const json = await res.json();
       if (!res.ok) throw new Error(json.error ?? "สร้างไม่สำเร็จ");
@@ -183,6 +216,8 @@ export default function SimScenarioForm({ initial, submitLabel, onSubmit, showAi
         title: s.title ?? "",
         subtitle: s.subtitle ?? "",
         difficultyTag: s.difficultyTag ?? "basic",
+        category: s.category ?? "acls",
+        sourceCaseId: s.sourceCaseId ?? undefined,
         status: "draft",
         storyJson: JSON.stringify(s.story, null, 2),
       });
@@ -202,6 +237,27 @@ export default function SimScenarioForm({ initial, submitLabel, onSubmit, showAi
             <div className="flex items-center gap-2 font-bold">
               <WandSparkles className="h-4 w-4 text-brand" /> สร้างเคสด้วย AI
             </div>
+            <div>
+              <Label htmlFor="ai-longcase">แปลงจาก Long Case (เกมเคส)</Label>
+              <select
+                id="ai-longcase"
+                className="h-9 w-full rounded-md border bg-transparent px-3 text-sm"
+                value={aiLongCaseId}
+                onChange={(e) => setAiLongCaseId(e.target.value)}
+              >
+                <option value="">— ไม่แปลง (แต่งเคส ACLS ใหม่จากหัวข้อด้านล่าง) —</option>
+                {longCases.map((c) => (
+                  <option key={c.id} value={c.id}>
+                    {c.title} · {c.specialty}
+                  </option>
+                ))}
+              </select>
+              {aiLongCaseId && (
+                <p className="mt-1 text-xs text-muted-foreground">
+                  จะแปลงเคสนี้เป็นเกมเคส (category: longcase) — ไม่ต้องกรอกหัวข้อด้านล่าง
+                </p>
+              )}
+            </div>
             <div className="grid gap-3 sm:grid-cols-[1fr_150px]">
               <div>
                 <Label htmlFor="ai-topic">หัวข้อ / ภาวะ</Label>
@@ -210,6 +266,7 @@ export default function SimScenarioForm({ initial, submitLabel, onSubmit, showAi
                   placeholder="เช่น PEA arrest จาก hyperkalemia, unstable bradycardia"
                   value={aiTopic}
                   onChange={(e) => setAiTopic(e.target.value)}
+                  disabled={!!aiLongCaseId}
                 />
               </div>
               <div>
@@ -219,6 +276,7 @@ export default function SimScenarioForm({ initial, submitLabel, onSubmit, showAi
                   className="h-9 w-full rounded-md border bg-transparent px-3 text-sm"
                   value={aiDifficulty}
                   onChange={(e) => setAiDifficulty(e.target.value)}
+                  disabled={!!aiLongCaseId}
                 >
                   <option value="easy">ง่าย</option>
                   <option value="medium">กลาง</option>
@@ -277,6 +335,18 @@ export default function SimScenarioForm({ initial, submitLabel, onSubmit, showAi
               <option value="megacode">megacode</option>
             </select>
           </div>
+        </div>
+        <div>
+          <Label htmlFor="category">หมวดเคส</Label>
+          <select
+            id="category"
+            className="h-9 w-full rounded-md border bg-transparent px-3 text-sm sm:w-64"
+            value={values.category}
+            onChange={(e) => set("category", e.target.value)}
+          >
+            <option value="acls">acls — Code Blue (หน้า /sim)</option>
+            <option value="longcase">longcase — เกมเคส (หน้า /casegame)</option>
+          </select>
         </div>
         <div>
           <Label htmlFor="title">ชื่อเคส</Label>

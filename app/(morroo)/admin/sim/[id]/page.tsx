@@ -50,6 +50,8 @@ export default function AdminSimEditPage() {
         title: scenario.title,
         subtitle: scenario.subtitle ?? "",
         difficultyTag: scenario.difficulty_tag ?? "basic",
+        category: scenario.category ?? "acls",
+        sourceCaseId: scenario.source_case_id ?? undefined,
         status: scenario.status,
         storyJson: JSON.stringify(scenario.story, null, 2),
       });
@@ -67,6 +69,8 @@ export default function AdminSimEditPage() {
         title: values.title,
         subtitle: values.subtitle,
         difficulty_tag: values.difficultyTag,
+        category: values.category,
+        source_case_id: values.sourceCaseId ?? null,
         status: values.status,
         story,
       }),

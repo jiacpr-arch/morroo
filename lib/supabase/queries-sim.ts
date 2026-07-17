@@ -13,8 +13,12 @@ interface SimScenarioRow {
   title: string;
   subtitle: string | null;
   difficulty_tag: string | null;
+  category: string | null;
+  source_case_id: string | null;
   story: unknown;
 }
+
+const SCENARIO_COLS = "slug, title, subtitle, difficulty_tag, category, source_case_id, story";
 
 function rowToScenario(row: SimScenarioRow): SimScenario | null {
   const scenario = {
@@ -22,6 +26,8 @@ function rowToScenario(row: SimScenarioRow): SimScenario | null {
     title: row.title,
     subtitle: row.subtitle ?? "",
     difficultyTag: row.difficulty_tag ?? undefined,
+    category: row.category ?? "acls",
+    sourceCaseId: row.source_case_id ?? undefined,
     story: row.story,
   };
   return isValidScenario(scenario) ? scenario : null;
@@ -33,7 +39,7 @@ export async function getSimScenarios(): Promise<SimScenario[]> {
     const supabase = await createClient();
     const { data } = await supabase
       .from("sim_scenarios")
-      .select("slug, title, subtitle, difficulty_tag, story")
+      .select(SCENARIO_COLS)
       .eq("status", "published")
       .order("created_at", { ascending: true });
     for (const row of (data as SimScenarioRow[] | null) ?? []) {
@@ -54,7 +60,7 @@ export async function getSimScenario(slug: string): Promise<SimScenario | null> 
     const supabase = await createClient();
     const { data } = await supabase
       .from("sim_scenarios")
-      .select("slug, title, subtitle, difficulty_tag, story")
+      .select(SCENARIO_COLS)
       .eq("slug", slug)
       .eq("status", "published")
       .maybeSingle();
@@ -62,6 +68,32 @@ export async function getSimScenario(slug: string): Promise<SimScenario | null> 
   } catch {
     return null;
   }
+}
+
+/** เคสตามหมวด: 'acls' (Code Blue) หรือ 'longcase' (เกมเคส) — built-in ที่ไม่ระบุถือเป็น acls */
+export async function getSimScenariosByCategory(category: string): Promise<SimScenario[]> {
+  const all = await getSimScenarios();
+  return all.filter((s) => (s.category ?? "acls") === category);
+}
+
+/** map: long_case id → slug ของเกมเคสที่ published (ใช้ทำลิงก์ "เล่นเป็นเกม" ในหน้า /longcase) */
+export async function getLongcaseGameMap(): Promise<Record<string, string>> {
+  const map: Record<string, string> = {};
+  try {
+    const supabase = await createClient();
+    const { data } = await supabase
+      .from("sim_scenarios")
+      .select("slug, source_case_id")
+      .eq("status", "published")
+      .eq("category", "longcase")
+      .not("source_case_id", "is", null);
+    for (const row of (data as { slug: string; source_case_id: string | null }[] | null) ?? []) {
+      if (row.source_case_id) map[row.source_case_id] = row.slug;
+    }
+  } catch {
+    // DB ล่ม/ยังไม่ migrate → ไม่มีลิงก์รายเคส (banner ยังทำงาน)
+  }
+  return map;
 }
 
 interface SimCharacterRow {
