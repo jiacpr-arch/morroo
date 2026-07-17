@@ -9,6 +9,7 @@ export const runtime = "nodejs";
 type Ctx = { params: Promise<{ id: string }> };
 
 const STATUSES = ["draft", "published", "archived"] as const;
+const CATEGORIES = ["acls", "longcase"] as const;
 const BUILTIN_SLUGS = new Set(SIM_SCENARIOS.map((s) => s.slug));
 
 export async function GET(_request: Request, context: Ctx) {
@@ -39,7 +40,7 @@ export async function PATCH(request: Request, context: Ctx) {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
 
-  const allowedKeys = ["slug", "title", "subtitle", "difficulty_tag", "status", "story"] as const;
+  const allowedKeys = ["slug", "title", "subtitle", "difficulty_tag", "category", "source_case_id", "status", "story"] as const;
   const update: Record<string, unknown> = {};
   for (const key of allowedKeys) {
     if (key in body) update[key] = body[key];
@@ -49,6 +50,9 @@ export async function PATCH(request: Request, context: Ctx) {
   }
   if (update.status && !STATUSES.includes(update.status as (typeof STATUSES)[number])) {
     return NextResponse.json({ error: "status ไม่ถูกต้อง" }, { status: 400 });
+  }
+  if ("category" in update && !CATEGORIES.includes(update.category as (typeof CATEGORIES)[number])) {
+    return NextResponse.json({ error: "category ไม่ถูกต้อง" }, { status: 400 });
   }
   if (typeof update.slug === "string" && BUILTIN_SLUGS.has(update.slug)) {
     return NextResponse.json(

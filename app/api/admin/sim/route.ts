@@ -7,6 +7,7 @@ import { describeScenarioError } from "@/lib/sim/validate";
 export const runtime = "nodejs";
 
 const STATUSES = ["draft", "published", "archived"] as const;
+const CATEGORIES = ["acls", "longcase"] as const;
 const BUILTIN_SLUGS = new Set(SIM_SCENARIOS.map((s) => s.slug));
 
 export async function GET(request: NextRequest) {
@@ -18,7 +19,7 @@ export async function GET(request: NextRequest) {
   let query = admin
     .from("sim_scenarios")
     // ไม่ส่ง story ในลิสต์ — jsonb ใหญ่
-    .select("id, slug, title, subtitle, difficulty_tag, status, source, created_at, updated_at")
+    .select("id, slug, title, subtitle, difficulty_tag, category, status, source, created_at, updated_at")
     .order("updated_at", { ascending: false })
     .limit(200);
   if (status && STATUSES.includes(status as (typeof STATUSES)[number])) {
@@ -41,12 +42,21 @@ export async function POST(request: Request) {
     status?: string;
     story?: unknown;
     source?: string;
+    category?: string;
+    sourceCaseId?: string;
   };
   try {
     body = await request.json();
   } catch {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
+
+  const category = CATEGORIES.includes(body.category as (typeof CATEGORIES)[number])
+    ? body.category!
+    : "acls";
+  const sourceCaseId = typeof body.sourceCaseId === "string" && body.sourceCaseId
+    ? body.sourceCaseId
+    : null;
 
   const scenario = {
     slug: body.slug?.trim() ?? "",
@@ -87,6 +97,8 @@ export async function POST(request: Request) {
       title: scenario.title,
       subtitle: scenario.subtitle || null,
       difficulty_tag: scenario.difficultyTag,
+      category,
+      source_case_id: sourceCaseId,
       status,
       story: scenario.story,
       source,

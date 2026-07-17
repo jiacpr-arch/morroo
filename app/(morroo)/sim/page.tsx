@@ -28,6 +28,8 @@ const GRADE_STYLE: Record<string, string> = {
 
 export default async function SimHubPage() {
   const [scenarios, bests] = await Promise.all([getSimScenarios(), getMySimBests()]);
+  const aclsCases = scenarios.filter((s) => (s.category ?? "acls") !== "longcase");
+  const longcaseGames = scenarios.filter((s) => (s.category ?? "acls") === "longcase");
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
@@ -65,12 +67,12 @@ export default async function SimHubPage() {
         </div>
       </section>
 
-      {/* รายการเคส */}
+      {/* รายการเคส ACLS */}
       <h2 className="mb-3 mt-8 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
         เลือกเคส
       </h2>
       <div className="space-y-4">
-        {scenarios.map((s) => {
+        {aclsCases.map((s) => {
           const best = bests[s.slug];
           return (
             <Card key={s.slug} className="transition-shadow hover:shadow-md hover:ring-brand/30">
@@ -100,6 +102,49 @@ export default async function SimHubPage() {
           );
         })}
       </div>
+
+      {/* Long Case Game — เกมเคสจากเนื้อหา Long Case */}
+      {longcaseGames.length > 0 && (
+        <>
+          <div className="mb-3 mt-10 flex items-center justify-between">
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+              Long Case Game
+            </h2>
+            <Link href="/casegame" className="text-sm font-semibold text-brand underline">
+              ดูทั้งหมดที่หน้า เกมเคส →
+            </Link>
+          </div>
+          <div className="space-y-4">
+            {longcaseGames.map((s) => {
+              const best = bests[s.slug];
+              return (
+                <Card key={s.slug} className="transition-shadow hover:shadow-md hover:ring-brand/30">
+                  <CardContent className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center">
+                    <div className="flex-1 space-y-1.5">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <Badge className="bg-teal-100 text-teal-700">เกมเคส</Badge>
+                        {best && (
+                          <Badge className={GRADE_STYLE[best.grade] ?? "bg-muted"}>
+                            <Trophy className="mr-1 h-3 w-3" />
+                            เกรดดีสุด {best.grade} · เล่นแล้ว {best.runs} รอบ
+                          </Badge>
+                        )}
+                      </div>
+                      <h3 className="text-lg font-bold">{s.title.replace(/^LONG CASE:\s*/, "")}</h3>
+                      <p className="text-sm text-muted-foreground">{s.subtitle}</p>
+                    </div>
+                    <Link href={`/sim/${s.slug}`} className="shrink-0">
+                      <Button size="lg" className="w-full gap-2 sm:w-auto">
+                        <Play className="h-4 w-4" /> รับเคส
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </>
+      )}
 
       <p className="mt-8 text-center text-sm text-muted-foreground">
         เล่นฟรีทุกเคส · ล็อกอินเพื่อเก็บ XP และขึ้น{" "}

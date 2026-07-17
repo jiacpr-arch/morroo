@@ -179,7 +179,10 @@ describe("built-in scenarios", () => {
         node = nextNode(st, s.story);
       }
       expect(ended).toBe(true);
-      expect(st.rosc).toBe(true); // เดินทางถูกทุกข้อต้องจบด้วย ROSC
+      // เคส arrest ที่เดินถูกทุกข้อต้องจบด้วย ROSC — เกมเคส (longcase) ไม่มี fx จึงข้าม
+      if ((s.category ?? "acls") !== "longcase") {
+        expect(st.rosc).toBe(true);
+      }
     }
   });
 });

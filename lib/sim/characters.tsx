@@ -184,6 +184,28 @@ export const SIM_CHARACTERS: Record<string, SimCharacter> = {
       );
     },
   },
+
+  patient_generic: {
+    name: "ผู้ป่วย",
+    role: "Patient",
+    plate: ["#7A8699", "#5B6675"],
+    Placeholder({ pose, mouthOpen }: FaceProps) {
+      const skin = "#EBBE96", gown = "#BFD3DE", gownD = "#93AEBD", hair = "#2A2A30";
+      return (
+        <svg viewBox="0 0 200 250" xmlns="http://www.w3.org/2000/svg">
+          <path d="M28,250 L28,206 Q28,172 100,170 Q172,172 172,206 L172,250 Z" fill={gown} stroke={OUT} strokeWidth="4" />
+          <path d="M76,176 L100,196 L124,176 L118,170 L100,184 L82,170 Z" fill={gownD} stroke={OUT} strokeWidth="3" />
+          <path d="M66,192 L78,192 M122,192 L134,192" stroke={gownD} strokeWidth="3" strokeLinecap="round" />
+          <rect x="88" y="150" width="24" height="26" fill={skin} stroke={OUT} strokeWidth="3.4" />
+          <path d="M52,100 Q52,42 100,40 Q148,42 148,100 Q148,140 128,152 Q114,161 100,161 Q86,161 72,152 Q52,140 52,100 Z" fill={skin} stroke={OUT} strokeWidth="4" />
+          <path d="M50,98 Q50,46 100,40 Q150,46 150,98 Q146,74 132,70 Q116,82 100,68 Q84,82 68,70 Q54,74 50,98 Z" fill={hair} stroke={OUT} strokeWidth="4" />
+          <Brows pose={pose} x1={80} x2={120} y={92} />
+          <Eyes pose={pose} x1={80} x2={120} y={104} iris="#3A2C1E" />
+          <Mouth pose={pose} cx={100} y={132} mouthOpen={mouthOpen} />
+        </svg>
+      );
+    },
+  },
 };
 
 export function getCharacter(charId: string): SimCharacter | null {
