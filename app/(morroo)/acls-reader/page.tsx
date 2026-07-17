@@ -40,6 +40,12 @@ const tools = [
     title: "Code Blue Sim",
     desc: "เกมจำลองกู้ชีพ — คุณคือ Team Leader",
   },
+  {
+    href: "/resus",
+    icon: "🫀",
+    title: "Resus Hero",
+    desc: "เกมหัตถการกู้ชีพ ACLS — ลงมือปั๊ม/ช็อก/ใส่ท่อเอง แข่งกับเวลา",
+  },
 ];
 
 export default async function AclsReaderHome() {
