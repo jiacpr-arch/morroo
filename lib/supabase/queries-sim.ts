@@ -7,6 +7,8 @@ import { createClient } from "@/lib/supabase/server";
 import { SIM_SCENARIOS, getBuiltinScenario } from "@/lib/sim/scenarios";
 import type { SimDbCharacter } from "@/lib/sim/characters";
 import { isValidScenario, type SimScenario } from "@/lib/sim/types";
+import { caseIdFromSlug, longCaseToScenario, slugForCase } from "@/lib/sim/longcase-to-scenario";
+import { getLongCaseFull } from "./queries-longcase";
 
 interface SimScenarioRow {
   slug: string;
@@ -64,9 +66,74 @@ export async function getSimScenario(slug: string): Promise<SimScenario | null> 
       .eq("slug", slug)
       .eq("status", "published")
       .maybeSingle();
-    return data ? rowToScenario(data as SimScenarioRow) : null;
+    if (data) return rowToScenario(data as SimScenarioRow);
   } catch {
-    return null;
+    // ตกไปลองเส้นทางสังเคราะห์ด้านล่าง
+  }
+  // เกมสังเคราะห์จาก long_cases (deterministic): slug = lc-<caseId>
+  const caseId = caseIdFromSlug(slug);
+  if (caseId) {
+    try {
+      const lc = await getLongCaseFull(caseId);
+      if (lc) return longCaseToScenario(lc);
+    } catch {
+      // เงียบ — คืน null ด้านล่าง
+    }
+  }
+  return null;
+}
+
+export interface LongcaseGameCard {
+  slug: string;
+  caseId: string;
+  title: string;
+  specialty: string;
+  audience: string;
+  difficulty: string;
+  isWeekly: boolean;
+}
+
+/**
+ * การ์ดเกมเคสสำหรับหน้า /casegame — ทุกเคส published (student + board)
+ * สังเคราะห์ slug = lc-<id>. ตัดเคสที่มีเกม polished (built-in/DB) ครอบแล้ว
+ * โดยดูจาก sourceCaseId เพื่อให้เวอร์ชันที่คัดมือชนะ
+ */
+export async function getLongcaseGameCards(): Promise<LongcaseGameCard[]> {
+  try {
+    const supabase = await createClient();
+    const { data } = await supabase
+      .from("long_cases")
+      .select("id, title, specialty, difficulty, audience, is_weekly")
+      .eq("is_published", true)
+      .order("is_weekly", { ascending: false })
+      .order("created_at", { ascending: false });
+    type Row = {
+      id: string;
+      title: string;
+      specialty: string | null;
+      difficulty: string | null;
+      audience: string | null;
+      is_weekly: boolean;
+    };
+    const rows = (data as Row[] | null) ?? [];
+    if (rows.length === 0) return [];
+    const covered = new Set<string>();
+    for (const s of await getSimScenariosByCategory("longcase")) {
+      if (s.sourceCaseId) covered.add(s.sourceCaseId);
+    }
+    return rows
+      .filter((r) => !covered.has(r.id))
+      .map((r) => ({
+        slug: slugForCase(r.id),
+        caseId: r.id,
+        title: r.title,
+        specialty: r.specialty ?? "",
+        audience: r.audience ?? "student",
+        difficulty: r.difficulty ?? "medium",
+        isWeekly: !!r.is_weekly,
+      }));
+  } catch {
+    return [];
   }
 }
 

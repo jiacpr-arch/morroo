@@ -189,6 +189,8 @@ export const lcTorsion: SimScenario = {
   subtitle: "ชาย 19 ปี ปวดท้องน้อยและอัณฑะซ้ายเฉียบพลัน 3 ชม. — คุณคือแพทย์เวร ER",
   difficultyTag: "basic",
   category: "longcase",
+  // ชี้ไปเคสต้นทาง เพื่อให้หน้า /casegame ซ่อนเวอร์ชันสังเคราะห์ (built-in ชนะ)
+  sourceCaseId: "b88ba108-986b-4842-a5b3-b47c12bf4423",
 
   story: [
     { say: { who: "nurse_mint", pose: "panic", text: "คุณหมอคะ! คนไข้ชายอายุ 19 ปี มา ER ด้วย**ปวดอัณฑะซ้ายเฉียบพลัน 3 ชั่วโมง** ดูเจ็บทรมานมากค่ะ" }, t: 5 },
