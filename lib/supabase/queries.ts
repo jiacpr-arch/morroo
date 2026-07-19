@@ -8,11 +8,13 @@ import type { QuestionBankStats } from "./queries-mcq";
  *  - MCQ live counts (from QuestionBankStats)
  *  - MEQ Progressive Cases: number of exams + total parts/ตอน
  *  - Long Case: number of published student cases
+ *  - เกมเคส: playable Long Case decision games (/casegame)
  */
 export type HomeExamStats = QuestionBankStats & {
   meqExamCount: number;
   meqPartCount: number;
   longCaseCount: number;
+  casegameCount: number;
 };
 
 export async function getExams(): Promise<Exam[]> {

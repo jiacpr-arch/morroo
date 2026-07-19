@@ -137,6 +137,18 @@ export async function getLongcaseGameCards(): Promise<LongcaseGameCard[]> {
   }
 }
 
+/**
+ * จำนวนเกมเคสทั้งหมด (เคสขัดเงา + สังเคราะห์จาก long_cases) — ตัวเลขเดียวกับ
+ * ที่โชว์บนหน้า /casegame ใช้โปรโมตบนหน้าแรก
+ */
+export async function getCasegameCount(): Promise<number> {
+  const [polished, cards] = await Promise.all([
+    getSimScenariosByCategory("longcase"),
+    getLongcaseGameCards(),
+  ]);
+  return polished.length + cards.length;
+}
+
 /** เคสตามหมวด: 'acls' (Code Blue) หรือ 'longcase' (เกมเคส) — built-in ที่ไม่ระบุถือเป็น acls */
 export async function getSimScenariosByCategory(category: string): Promise<SimScenario[]> {
   const all = await getSimScenarios();
