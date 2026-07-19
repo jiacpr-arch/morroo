@@ -9,19 +9,29 @@ import { createClient } from "@/lib/supabase/client";
 import type { User as SupabaseUser } from "@supabase/supabase-js";
 import BetaHeaderCounter from "@/components/beta/BetaHeaderCounter";
 
-const navLinks = [
+const navLinks: { href: string; label: string; isNew?: boolean }[] = [
   { href: "/", label: "หน้าแรก" },
   { href: "/school", label: "School" },
   { href: "/nl", label: "MCQ" },
   { href: "/exams", label: "MEQ" },
   { href: "/longcase", label: "Long Case" },
-  { href: "/casegame", label: "เกมเคส" },
+  { href: "/casegame", label: "เกมเคส", isNew: true },
   { href: "/acls-reader", label: "ACLS" },
   { href: "/board", label: "Board" },
   { href: "/blog", label: "บทความ" },
   { href: "/pricing", label: "แพ็กเกจ" },
   { href: "/guide", label: "คู่มือ" },
 ];
+
+/** จุดสีส้มเน้นเมนูใหม่ — ping ครั้งเดียวตอนโหลดเพื่อไม่กวนสายตาตลอดเวลา */
+function NewDot() {
+  return (
+    <span className="absolute -right-2 -top-0.5 flex h-1.5 w-1.5" aria-label="ฟีเจอร์ใหม่">
+      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-500 opacity-75 [animation-iteration-count:3]" />
+      <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-amber-500" />
+    </span>
+  );
+}
 
 const authNavLinks = [
   { href: "/dashboard", label: "ผลการเรียน" },
@@ -65,13 +75,14 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors hover:text-brand ${
+              className={`relative text-sm font-medium transition-colors hover:text-brand ${
                 pathname === link.href
                   ? "text-brand"
                   : "text-muted-foreground"
               }`}
             >
               {link.label}
+              {link.isNew && <NewDot />}
             </Link>
           ))}
         </div>
@@ -154,6 +165,11 @@ export default function Navbar() {
                 }`}
               >
                 {link.label}
+                {link.isNew && (
+                  <span className="ml-2 rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold text-amber-700">
+                    ใหม่
+                  </span>
+                )}
               </Link>
             ))}
             <div className="border-t pt-3 mt-3 space-y-2">
