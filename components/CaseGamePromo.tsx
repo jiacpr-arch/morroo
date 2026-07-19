@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { Play, Sparkles, Stethoscope, Trophy, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { track } from "@/lib/analytics";
 
 /**
  * แบนเนอร์โปรโมต "เกมเคส" (/casegame) บนหน้าแรก — วางไว้บนสุดใต้ hero
@@ -12,6 +15,7 @@ export default function CaseGamePromo({ count = 0 }: { count?: number }) {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Link
           href="/casegame"
+          onClick={() => track("casegame_promo_click", { surface: "home" })}
           className="group relative block overflow-hidden rounded-2xl bg-[#132320] px-6 py-8 text-white shadow-lg transition-shadow hover:shadow-xl sm:px-10 sm:py-10"
         >
           <div

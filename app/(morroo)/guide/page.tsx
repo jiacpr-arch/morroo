@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { BookOpen, GraduationCap, Brain, Stethoscope, CreditCard, MessageCircle, Users, FileText, HelpCircle } from "lucide-react";
+import { BookOpen, GraduationCap, Brain, Stethoscope, Gamepad2, CreditCard, MessageCircle, Users, FileText, HelpCircle } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "คู่มือการใช้งาน — หมอรู้",
@@ -69,6 +69,21 @@ const sections = [
       {
         subtitle: "การให้คะแนน",
         text: "AI ให้คะแนน 5 หมวด: History / PE / Lab / DDx / Management พร้อม Teaching Points และ Feedback สมาชิกฟรี: 1 เคส/เดือน | Premium: ไม่จำกัด",
+      },
+    ],
+  },
+  {
+    id: "casegame",
+    icon: Gamepad2,
+    title: "เกมเคส (Long Case Decision Game)",
+    content: [
+      {
+        subtitle: "เล่นเป็นแพทย์เจ้าของไข้",
+        text: "เข้าเมนู \"เกมเคส\" เลือกเคสที่สนใจ แล้วตัดสินใจทีละขั้น: ซักประวัติ → ตรวจร่างกาย → สั่งแลป → วินิจฉัย → รักษา ทุกตัวเลือกมีผลต่อคะแนนและอาการผู้ป่วย อิงจาก Long Case จริงทุกเคส",
+      },
+      {
+        subtitle: "เล่นฟรี เก็บ XP ขึ้น Leaderboard",
+        text: "เล่นได้ฟรีทุกเคสไม่ต้องสมัครสมาชิก ล็อกอินเพื่อบันทึกเกรดดีสุด (S/A/B/C) เก็บ XP + Badge และขึ้น Leaderboard — จบเกมมีช่วงอาจารย์ซักถามให้ทบทวนแบบ active recall",
       },
     ],
   },
