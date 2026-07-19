@@ -158,4 +158,56 @@ describe("longCaseToScenario", () => {
     expect(choices(s).some((c) => c.options.some((o) => o.tgt === "LAB"))).toBe(false);
     expect(choices(s).some((c) => c.options.some((o) => o.tgt === "DX"))).toBe(false);
   });
+
+  it("adds interactive choices to history-taking, PE, and management — not just lab+dx", () => {
+    const s = longCaseToScenario(TORSION)!;
+    const all = choices(s);
+    // เดิมมีแค่ LAB + DX (2 จุด) — ตอนนี้ต้องมี ASK/PE/MGMT เพิ่มด้วย
+    expect(all.length).toBeGreaterThanOrEqual(5);
+    const tgts = new Set(all.flatMap((c) => c.options.map((o) => o.tgt)));
+    expect(tgts.has("ASK")).toBe(true);
+    expect(tgts.has("PE")).toBe(true);
+    expect(tgts.has("MGMT")).toBe(true);
+    expect(tgts.has("LAB")).toBe(true);
+    expect(tgts.has("DX")).toBe(true);
+  });
+
+  it("never marks sequencing distractors as worsen (not a real clinical error)", () => {
+    const s = longCaseToScenario(TORSION)!;
+    const sequencing = choices(s).filter((c) =>
+      c.options.some((o) => o.tgt === "ASK" || o.tgt === "PE" || o.tgt === "MGMT"),
+    );
+    expect(sequencing.length).toBeGreaterThan(0);
+    for (const c of sequencing) {
+      for (const o of c.options) expect(o.worsen).toBeFalsy();
+    }
+  });
+
+  it("gates history-taking with HPI before PMH/SH (universal sequence, not case-specific)", () => {
+    const s = longCaseToScenario(TORSION)!;
+    const askChoices = choices(s).filter((c) => c.options.some((o) => o.tgt === "ASK"));
+    expect(askChoices.length).toBeGreaterThanOrEqual(1);
+    expect(askChoices[0].options.find((o) => o.ok)!.label).toContain("HPI");
+  });
+
+  it("orders physical exam choices head-to-toe (GA before GU)", () => {
+    const s = longCaseToScenario(TORSION)!;
+    const peChoices = choices(s).filter((c) => c.options.some((o) => o.tgt === "PE"));
+    expect(peChoices.length).toBeGreaterThanOrEqual(1);
+    expect(peChoices[0].options.find((o) => o.ok)!.label).toContain("GA");
+  });
+
+  it("gates management on the case author's own written order (not a guessed order)", () => {
+    const s = longCaseToScenario(TORSION)!;
+    const mgmt = choices(s).find((c) => c.options.some((o) => o.tgt === "MGMT"))!;
+    expect(mgmt).toBeTruthy();
+    expect(mgmt.options.find((o) => o.ok)!.label).toContain("Emergency surgical exploration");
+  });
+
+  it("still produces a rich choice set for the board case with sparser history data", () => {
+    const s = longCaseToScenario(AORTIC)!;
+    const all = choices(s);
+    expect(all.length).toBeGreaterThanOrEqual(5);
+    expect(describeScenarioError(s)).toBeNull();
+  });
 });
