@@ -1,14 +1,19 @@
 // แปลง Long Case (ตาราง long_cases) เป็นเกม Code Blue Sim แบบ deterministic
 // — ไม่ใช้ AI, ไม่มีต้นทุน, ใช้เนื้อหาที่ตรวจแล้วซ้ำ (ไม่ต้องรีวิวความถูกต้อง)
 //
-// หลักการให้คะแนน: สกอร์เฉพาะจุดที่ข้อมูลมี ground truth ชัดเจน —
+// ทุกจุดตัดสินใจอิง ground truth จริง ไม่มีการเดา/แต่งข้อมูลการแพทย์ —
 //   - สั่งตรวจ/แลป: ตัวถูก = ผล isAbnormal (informative), ตัวลวง = ผลปกติ
 //   - วินิจฉัย: ตัวถูก = correct_diagnosis, ตัวลวง = accepted_ddx ที่เหลือ
-// ส่วนซักประวัติ / ตรวจร่างกาย / การรักษา เป็นฉากเล่าเรื่อง (แตะไปต่อ ไม่มี
-// ตัวลวงปลอม) เพื่อไม่สร้าง "ตัวเลือกผิด" ที่จริงไม่ผิดในเนื้อหาการแพทย์
+//   - ซักประวัติ: HPI ต้องมาก่อน PMH/SH เสมอ (ลำดับซักประวัติมาตรฐานสากล
+//     ไม่ใช่ข้อมูลเฉพาะเคส)
+//   - ตรวจร่างกาย: เรียงตามลำดับ head-to-toe มาตรฐาน (ใช้กลุ่มเดียวกับ
+//     SYNONYM_GROUPS ใน lib/longcase-match.ts) ไม่เดาว่าระบบไหนสำคัญกับเคสนี้
+//   - การรักษา: ใช้ลำดับที่ผู้เขียนเคสเขียนไว้เองใน management_plan เป็น
+//     ground truth (ไม่ใช่การเดาลำดับใหม่)
+// ตัวลวงทุกจุดไม่ตั้ง worsen (ไม่ใช่ความผิดพลาดร้ายแรง แค่ลำดับไม่เหมาะ)
 
 import type { LongCaseFull } from "@/lib/types";
-import { normalizeKey, readHistoryScript } from "@/lib/longcase-match";
+import { matchKey, normalizeKey, readHistoryScript } from "@/lib/longcase-match";
 import {
   isValidScenario,
   type ChoiceOption,
@@ -56,6 +61,26 @@ function vitalsLine(pi: Record<string, unknown>): string {
   return parts.join(", ");
 }
 
+/** ลำดับตรวจร่างกายมาตรฐานสากล (head-to-toe) — กลุ่มเดียวกับ SYNONYM_GROUPS */
+const PE_CANONICAL_ORDER = ["GA", "HEENT", "Heart", "Lung", "Abdomen", "GU", "Extremities", "Neuro", "Skin"];
+
+/** เรียง pe_findings ตามลำดับตรวจมาตรฐาน — ระบบที่จับคู่ไม่ได้ต่อท้ายตามลำดับเดิม */
+function orderPeEntries(entries: [string, string][]): [string, string][] {
+  const remaining = new Map(entries);
+  const ordered: [string, string][] = [];
+  for (const label of PE_CANONICAL_ORDER) {
+    const key = matchKey(label, [...remaining.keys()]);
+    if (key !== undefined && remaining.has(key)) {
+      ordered.push([key, remaining.get(key)!]);
+      remaining.delete(key);
+    }
+  }
+  for (const [k, v] of entries) {
+    if (remaining.has(k)) ordered.push([k, v]);
+  }
+  return ordered;
+}
+
 interface Inv {
   name: string;
   value: string;
@@ -93,17 +118,98 @@ export function longCaseToScenario(lc: LongCaseFull): SimScenario | null {
   if (hx.cc) story.push({ inter: txt(truncate(hx.cc, 60)), t: 0 });
   story.push(say("att_dech", "stern", "คุณคือแพทย์เวรที่รับเคสนี้ — ประเมินและตัดสินใจให้ตรงจุด", 4));
 
-  // ---- Act 1: ซักประวัติ (reveal) ----
-  if (hx.pi) story.push(say("patient_generic", "talk", truncate(hx.pi, 240), 6));
-  if (hx.onset) story.push(say("patient_generic", "talk", truncate(hx.onset, 200), 6));
-  const bg = [hx.pmh && `PMH: ${hx.pmh}`, hx.sh && `SH: ${hx.sh}`].filter(Boolean).join(" · ");
-  if (bg) story.push(say("att_dech", "idle", truncate(bg, 220), 4));
+  // ---- Act 1: ซักประวัติ (choice: HPI ต้องมาก่อน PMH/SH เสมอ — ลำดับสากล) ----
+  const hpiText = [hx.pi, hx.onset].filter(Boolean).join(" ");
+  interface HxCand { label: string; text: string }
+  const laterCandidates: HxCand[] = [];
+  if (hx.pmh) laterCandidates.push({ label: "ซักประวัติโรคประจำตัว (PMH)", text: `PMH: ${hx.pmh}` });
+  if (hx.sh) laterCandidates.push({ label: "ซักประวัติสังคม (SH)", text: `SH: ${hx.sh}` });
+  if (hx.meds) laterCandidates.push({ label: "ซักประวัติการใช้ยา", text: `ยาที่ใช้ปัจจุบัน: ${hx.meds}` });
+  if (hx.fh) laterCandidates.push({ label: "ซักประวัติครอบครัว (FH)", text: `FH: ${hx.fh}` });
+  if (hx.ros) laterCandidates.push({ label: "ทบทวนอาการตามระบบ (ROS)", text: `ROS: ${hx.ros}` });
 
-  // ---- Act 2: ตรวจร่างกาย (reveal) ----
-  const peEntries = Object.entries(asObj(lc.pe_findings))
-    .map(([k, v]) => [k, asStr(v)] as [string, string])
-    .filter(([, v]) => v);
-  for (const [system, finding] of peEntries.slice(0, 4)) {
+  if (hpiText && laterCandidates.length >= 1) {
+    story.push({
+      choice: {
+        q: "จะซักประวัติเรื่องอะไรก่อน",
+        options: [
+          {
+            tgt: "ASK",
+            label: "ซักประวัติปัจจุบัน (HPI)",
+            ok: true,
+            then: [say("patient_generic", "talk", truncate(hpiText, 300), 6)],
+          },
+          {
+            tgt: "ASK",
+            label: laterCandidates[0].label,
+            ok: false,
+            why: "ควรซักประวัติปัจจุบันให้ครบก่อน ค่อยถามประวัติเดิม/สังคมทีหลัง",
+          },
+        ],
+      },
+    });
+  } else if (hpiText) {
+    story.push(say("patient_generic", "talk", truncate(hpiText, 300), 6));
+  }
+
+  if (laterCandidates.length >= 2) {
+    story.push({
+      choice: {
+        q: "จะถามอะไรต่อ",
+        options: [
+          {
+            tgt: "ASK",
+            label: laterCandidates[0].label,
+            ok: true,
+            then: [say("att_dech", "idle", truncate(laterCandidates[0].text, 240), 4)],
+          },
+          {
+            tgt: "ASK",
+            label: laterCandidates[1].label,
+            ok: false,
+            why: "ค่อยถามทีหลังได้ ตอนนี้ประเมินโรคประจำตัว/ความเสี่ยงก่อน",
+          },
+        ],
+      },
+    });
+    for (const c of laterCandidates.slice(1)) story.push(say("att_dech", "idle", truncate(c.text, 240), 4));
+  } else {
+    for (const c of laterCandidates) story.push(say("att_dech", "idle", truncate(c.text, 240), 4));
+  }
+
+  // ---- Act 2: ตรวจร่างกาย (choice: ลำดับ head-to-toe มาตรฐาน) ----
+  const peEntries = orderPeEntries(
+    Object.entries(asObj(lc.pe_findings))
+      .map(([k, v]) => [k, asStr(v)] as [string, string])
+      .filter(([, v]) => v),
+  );
+  let peIdx = 0;
+  const maxPeGates = 2;
+  while (peIdx < maxPeGates && peEntries.length - peIdx >= 2) {
+    const [okSystem, okFinding] = peEntries[peIdx];
+    const [distSystem] = peEntries[peIdx + 1];
+    story.push({
+      choice: {
+        q: "จะตรวจระบบไหนก่อน",
+        options: [
+          {
+            tgt: "PE",
+            label: `ตรวจ ${okSystem}`,
+            ok: true,
+            then: [say("fon_defib", "talk", `ตรวจ ${okSystem}: ${okFinding}`, 5)],
+          },
+          {
+            tgt: "PE",
+            label: `ตรวจ ${distSystem}`,
+            ok: false,
+            why: "ตรวจตามลำดับ head-to-toe ก่อน ระบบนี้ตรวจทีหลังได้",
+          },
+        ],
+      },
+    });
+    peIdx += 1;
+  }
+  for (const [system, finding] of peEntries.slice(peIdx, peIdx + 4)) {
     story.push(say("fon_defib", "talk", `ตรวจ ${system}: ${finding}`, 5));
   }
 
@@ -134,6 +240,10 @@ export function longCaseToScenario(lc: LongCaseFull): SimScenario | null {
     }
   }
 
+  // teaching points — ใช้ทั้งตอนเฉลยวินิจฉัย (ข้อแรก) และ debrief (ที่เหลือ)
+  const teachingPoints = asArr(lc.teaching_points).map((t) => txt(asStr(t))).filter(Boolean);
+  let tpUsedInDx = false;
+
   // ---- Act 4: วินิจฉัย (SCORED — จุดหลัก) ----
   const correct = txt(asStr(lc.correct_diagnosis));
   const nCorrect = normalizeKey(correct);
@@ -144,12 +254,18 @@ export function longCaseToScenario(lc: LongCaseFull): SimScenario | null {
       return nd && nd !== nCorrect && !nd.includes(nCorrect) && !nCorrect.includes(nd);
     });
   if (correct && distractorsDx.length >= 1) {
+    // เฉลยแล้วสอนเหตุผลตรงจุดทันทีด้วย teaching point ข้อแรก (ถ้ามี)
+    const dxThen: StoryNode[] = [say("att_dech", "happy", `ถูกต้อง — ${correct}`, 5)];
+    if (teachingPoints[0]) {
+      dxThen.push(say("att_dech", "happy", truncate(teachingPoints[0], 220), 4));
+      tpUsedInDx = true;
+    }
     const options: ChoiceOption[] = [
       {
         tgt: "DX",
         label: truncate(correct, 70),
         ok: true,
-        then: [say("att_dech", "happy", `ถูกต้อง — ${correct}`, 5)],
+        then: dxThen,
       },
       ...distractorsDx.slice(0, 3).map(
         (d): ChoiceOption => ({
@@ -165,25 +281,59 @@ export function longCaseToScenario(lc: LongCaseFull): SimScenario | null {
     story.push(say("att_dech", "stern", `การวินิจฉัย: ${correct}`, 5));
   }
 
-  // ---- Act 5: การรักษา (reveal) ----
+  // ---- Act 5: การรักษา (choice: ลำดับตามที่ผู้เขียนเคสเขียนไว้จริง) ----
   const mgmt = txt(asStr(lc.management_plan));
   if (mgmt) {
     const parts = mgmt.split(/[;\n]+/).map((s) => s.trim()).filter(Boolean);
-    const chunks =
-      parts.length > 3
-        ? [
-            parts.slice(0, Math.ceil(parts.length / 2)).join("; "),
-            parts.slice(Math.ceil(parts.length / 2)).join("; "),
-          ]
-        : [mgmt];
-    for (const c of chunks) {
-      story.push(say("att_dech", "talk", `แผนการรักษา: ${truncate(c, 220)}`, 5));
+    if (parts.length >= 2) {
+      const [first, second, ...restParts] = parts;
+      story.push({
+        choice: {
+          q: "จะทำอะไรก่อน",
+          options: [
+            {
+              tgt: "MGMT",
+              label: truncate(first, 70),
+              ok: true,
+              then: [say("att_dech", "talk", `แผนการรักษา: ${truncate(first, 220)}`, 5)],
+            },
+            {
+              tgt: "MGMT",
+              label: truncate(second, 70),
+              ok: false,
+              why: "เป็นขั้นตอนที่ถูกต้อง แต่ควรทำตามลำดับความเร่งด่วนที่วางแผนไว้ก่อน",
+            },
+          ],
+        },
+      });
+      const rest = [second, ...restParts].join("; ");
+      story.push(say("att_dech", "talk", `แผนการรักษา (ต่อ): ${truncate(rest, 220)}`, 5));
+    } else {
+      story.push(say("att_dech", "talk", `แผนการรักษา: ${truncate(mgmt, 220)}`, 5));
     }
   }
 
-  // ---- Act 6: debrief ----
-  const tps = asArr(lc.teaching_points).map((t) => txt(asStr(t))).filter(Boolean).slice(0, 3);
-  for (const tp of tps) {
+  // ---- Act 5.5: อาจารย์ซักถาม (retrieval practice จาก examiner_questions) ----
+  // แหล่งเดียวในข้อมูลที่เก็บ clinical reasoning เฉพาะเคสไว้จริง (คำถามสอบ + เฉลย)
+  // โครง active recall: ถามก่อน → ผู้เรียนคิดคำตอบในใจ → แตะดูแนวทางคำตอบ
+  const examinerQs = asArr(lc.examiner_questions)
+    .map((q) => asObj(q))
+    .map((q) => ({ question: asStr(q.question), modelAnswer: asStr(q.modelAnswer), points: typeof q.points === "number" ? q.points : 0 }))
+    .filter((q) => q.question && q.modelAnswer)
+    .sort((a, b) => b.points - a.points)
+    .slice(0, 4);
+  if (examinerQs.length >= 1) {
+    story.push(say("att_dech", "stern", "ถึงช่วงอาจารย์ซักถาม — ลองตอบในใจก่อน แล้วแตะดูแนวทางคำตอบ", 4));
+    for (const q of examinerQs) {
+      const pts = q.points > 0 ? ` [${q.points} คะแนน]` : "";
+      story.push(say("att_dech", "stern", `❓ ${truncate(q.question, 260)}${pts}`, 5));
+      story.push(say("att_dech", "talk", `💡 แนวทางคำตอบ: ${truncate(q.modelAnswer, 260)}`, 5));
+    }
+  }
+
+  // ---- Act 6: debrief (teaching points ที่เหลือ — ไม่ซ้ำกับที่โชว์ตอนเฉลยวินิจฉัย) ----
+  const debriefTps = (tpUsedInDx ? teachingPoints.slice(1) : teachingPoints).slice(0, 3);
+  for (const tp of debriefTps) {
     story.push(say("att_dech", "happy", truncate(tp, 220), 4));
   }
   story.push({ inter: "เคสสำเร็จ!!", green: true, t: 0 });

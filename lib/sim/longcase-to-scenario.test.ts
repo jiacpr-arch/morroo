@@ -70,6 +70,12 @@ const TORSION = mk({
     "Testicular torsion = surgical emergency ต้องผ่าตัดภายใน 6 ชม.",
     "High-riding testis + absent cremasteric reflex = classic signs",
   ],
+  examiner_questions: [
+    { question: "บอกสาเหตุที่ cremasteric reflex หายไปในเคสนี้", modelAnswer: "spermatic cord ถูกบิด ทำให้ reflex arc ขาดออก", points: 15 },
+    { question: "ถ้า Doppler US ปกติ คุณจะยังผ่าตัดไหม เพราะอะไร", modelAnswer: "ใช่ เพราะ clinical diagnosis สำคัญกว่า imaging — Doppler อาจ false negative", points: 20 },
+    { question: "bilateral orchiopexy ทำไมต้องทำทั้งสองข้าง", modelAnswer: "Bell-clapper deformity เป็น bilateral เสี่ยงบิดอีกข้าง", points: 15 },
+    { question: "ถ้ามาหลัง 24 ชม. ผลของ testis จะเป็นอย่างไร", modelAnswer: "Testicular necrosis สูง ต้อง orchiectomy", points: 10 },
+  ],
 });
 
 // เคสจริง 2: Aortic dissection (board) — abnormal 3, normal 2; ddx 3 distractor;
@@ -94,6 +100,10 @@ const AORTIC = mk({
   accepted_ddx: ["Type A aortic dissection", "STEMI", "Pulmonary embolism", "Esophageal rupture (Boerhaave)"],
   management_plan: "IV labetalol to HR<60 + SBP 100-120; STAT CT angio; ปรึกษา CVT surgery emergent",
   teaching_points: ["Type A = surgical emergency", "Rate control ก่อน BP control", "CXR widened mediastinum + BP differential = classic"],
+  examiner_questions: [
+    { question: "ทำไมต้อง rate control ก่อน BP control", modelAnswer: "ลด aortic wall stress (dP/dt) ก่อน มิฉะนั้น reflex tachycardia จะเพิ่ม shear", points: 20 },
+    { question: "gold standard imaging ของภาวะนี้คืออะไร", modelAnswer: "CT angiography; ถ้า unstable ใช้ TEE ข้างเตียง", points: 15 },
+  ],
 });
 
 describe("longCaseToScenario", () => {
@@ -157,5 +167,116 @@ describe("longCaseToScenario", () => {
     expect(describeScenarioError(s)).toBeNull();
     expect(choices(s).some((c) => c.options.some((o) => o.tgt === "LAB"))).toBe(false);
     expect(choices(s).some((c) => c.options.some((o) => o.tgt === "DX"))).toBe(false);
+  });
+
+  it("adds interactive choices to history-taking, PE, and management — not just lab+dx", () => {
+    const s = longCaseToScenario(TORSION)!;
+    const all = choices(s);
+    // เดิมมีแค่ LAB + DX (2 จุด) — ตอนนี้ต้องมี ASK/PE/MGMT เพิ่มด้วย
+    expect(all.length).toBeGreaterThanOrEqual(5);
+    const tgts = new Set(all.flatMap((c) => c.options.map((o) => o.tgt)));
+    expect(tgts.has("ASK")).toBe(true);
+    expect(tgts.has("PE")).toBe(true);
+    expect(tgts.has("MGMT")).toBe(true);
+    expect(tgts.has("LAB")).toBe(true);
+    expect(tgts.has("DX")).toBe(true);
+  });
+
+  it("never marks sequencing distractors as worsen (not a real clinical error)", () => {
+    const s = longCaseToScenario(TORSION)!;
+    const sequencing = choices(s).filter((c) =>
+      c.options.some((o) => o.tgt === "ASK" || o.tgt === "PE" || o.tgt === "MGMT"),
+    );
+    expect(sequencing.length).toBeGreaterThan(0);
+    for (const c of sequencing) {
+      for (const o of c.options) expect(o.worsen).toBeFalsy();
+    }
+  });
+
+  it("gates history-taking with HPI before PMH/SH (universal sequence, not case-specific)", () => {
+    const s = longCaseToScenario(TORSION)!;
+    const askChoices = choices(s).filter((c) => c.options.some((o) => o.tgt === "ASK"));
+    expect(askChoices.length).toBeGreaterThanOrEqual(1);
+    expect(askChoices[0].options.find((o) => o.ok)!.label).toContain("HPI");
+  });
+
+  it("orders physical exam choices head-to-toe (GA before GU)", () => {
+    const s = longCaseToScenario(TORSION)!;
+    const peChoices = choices(s).filter((c) => c.options.some((o) => o.tgt === "PE"));
+    expect(peChoices.length).toBeGreaterThanOrEqual(1);
+    expect(peChoices[0].options.find((o) => o.ok)!.label).toContain("GA");
+  });
+
+  it("gates management on the case author's own written order (not a guessed order)", () => {
+    const s = longCaseToScenario(TORSION)!;
+    const mgmt = choices(s).find((c) => c.options.some((o) => o.tgt === "MGMT"))!;
+    expect(mgmt).toBeTruthy();
+    expect(mgmt.options.find((o) => o.ok)!.label).toContain("Emergency surgical exploration");
+  });
+
+  it("still produces a rich choice set for the board case with sparser history data", () => {
+    const s = longCaseToScenario(AORTIC)!;
+    const all = choices(s);
+    expect(all.length).toBeGreaterThanOrEqual(5);
+    expect(describeScenarioError(s)).toBeNull();
+  });
+
+  // ---- examiner Q&A (retrieval practice จากคำถามสอบจริงเฉพาะเคส) ----
+  function sayTexts(s: SimScenario): string[] {
+    return s.story.flatMap((n) => ("say" in n ? [n.say.text] : []));
+  }
+
+  it("adds an examiner Q&A phase surfacing the case's real questions AND model answers", () => {
+    const s = longCaseToScenario(TORSION)!;
+    const texts = sayTexts(s);
+    // คำถามสอบจริงต้องปรากฏ
+    expect(texts.some((t) => t.includes("cremasteric reflex หายไป"))).toBe(true);
+    // เฉลยจริงต้องปรากฏด้วย (ไม่ใช่แค่ถามลอยๆ)
+    expect(texts.some((t) => t.includes("clinical diagnosis สำคัญกว่า imaging"))).toBe(true);
+    // มี intro นำเข้าช่วงซักถาม
+    expect(texts.some((t) => t.includes("ช่วงอาจารย์ซักถาม"))).toBe(true);
+  });
+
+  it("shows each examiner question before its model answer (retrieval-practice order)", () => {
+    const s = longCaseToScenario(TORSION)!;
+    const texts = sayTexts(s);
+    const qIdx = texts.findIndex((t) => t.includes("cremasteric reflex หายไป"));
+    const aIdx = texts.findIndex((t) => t.includes("reflex arc ขาดออก"));
+    expect(qIdx).toBeGreaterThanOrEqual(0);
+    expect(aIdx).toBeGreaterThan(qIdx);
+  });
+
+  it("caps examiner questions at 4 and orders them by points (highest first)", () => {
+    const s = longCaseToScenario(TORSION)!;
+    const questionNodes = sayTexts(s).filter((t) => t.startsWith("❓"));
+    expect(questionNodes.length).toBeLessThanOrEqual(4);
+    // ข้อ points สูงสุด (Doppler = 20) ต้องมาก่อนข้อ points ต่ำกว่า (cremasteric = 15)
+    const dopplerIdx = questionNodes.findIndex((t) => t.includes("Doppler US ปกติ"));
+    const cremIdx = questionNodes.findIndex((t) => t.includes("cremasteric reflex หายไป"));
+    expect(dopplerIdx).toBeGreaterThanOrEqual(0);
+    expect(dopplerIdx).toBeLessThan(cremIdx);
+  });
+
+  it("reveals a teaching point right after the correct diagnosis is chosen", () => {
+    const s = longCaseToScenario(TORSION)!;
+    const dx = choices(s).find((c) => c.options.some((o) => o.tgt === "DX"))!;
+    const ok = dx.options.find((o) => o.ok)!;
+    const thenTexts = (ok.then ?? []).flatMap((n) => ("say" in n ? [n.say.text] : []));
+    expect(thenTexts.some((t) => t.includes("surgical emergency"))).toBe(true);
+  });
+
+  it("stays valid when examiner_questions is missing or malformed", () => {
+    const missing = longCaseToScenario(mk({ correct_diagnosis: "X", accepted_ddx: ["X", "Y"], examiner_questions: [] }))!;
+    expect(describeScenarioError(missing)).toBeNull();
+    const malformed = longCaseToScenario(
+      mk({
+        correct_diagnosis: "X",
+        accepted_ddx: ["X", "Y"],
+        examiner_questions: [{ foo: "bar" }, { question: "ok?", modelAnswer: "" }] as unknown as LongCaseFull["examiner_questions"],
+      }),
+    )!;
+    expect(describeScenarioError(malformed)).toBeNull();
+    // element ที่ malformed (ไม่มี modelAnswer) ต้องถูกข้าม → ไม่มีช่วงซักถาม
+    expect(sayTexts(malformed).some((t) => t.includes("ช่วงอาจารย์ซักถาม"))).toBe(false);
   });
 });
