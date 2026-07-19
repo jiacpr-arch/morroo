@@ -6,6 +6,60 @@ export type NetworkSite = {
 };
 
 /**
+ * คอร์สอบรม + ใบเซอร์ในเครือ — แสดงเป็นการ์ดบนหน้าแรก www.morroo.com
+ * แต่ละคอร์สมีสี accent ประจำตัว (sub-brand ภายใต้ design system เดียว)
+ * ช่วงก่อน migration เสร็จ การ์ดลิงก์ไป subdomain เดิม แล้วค่อยสลับเป็น
+ * internal route เมื่อคอร์สนั้นย้ายเข้ามาอยู่ในแอพนี้แล้ว
+ */
+export type TrainingCourse = NetworkSite & {
+  /** สีประจำคอร์ส (hex) ใช้กับขอบ/ไอคอน/ปุ่มบนการ์ด */
+  accent: string;
+  /** กลุ่มเป้าหมายสั้นๆ ไว้โชว์บนการ์ด */
+  audience: string;
+  /** จุดขายสั้นๆ 2-3 ข้อ */
+  highlights: string[];
+};
+
+export const TRAINING_COURSES: TrainingCourse[] = [
+  {
+    href: "https://firstaid.morroo.com",
+    label: "First Aid",
+    tagline: "ปฐมพยาบาลเบื้องต้นที่ทุกคนควรรู้",
+    emoji: "🩹",
+    accent: "#16A34A",
+    audience: "บุคคลทั่วไป",
+    highlights: ["10 บทเรียน ~1 ชม.", "สถานการณ์จำลอง", "สอบ + ใบเซอร์ฟรี"],
+  },
+  {
+    href: "https://cpr.morroo.com",
+    label: "CPR & AED",
+    tagline: "ช่วยฟื้นคืนชีพขั้นพื้นฐาน ครบใน 1 คอร์ส",
+    emoji: "🫀",
+    accent: "#DC2626",
+    audience: "บุคคลทั่วไป",
+    highlights: ["วิดีโอ 5 บทเรียน", "สอบออนไลน์", "ใบเซอร์ + ส่วนลดคอร์สปฏิบัติ"],
+  },
+  {
+    href: "https://bls.morroo.com",
+    label: "BLS Provider",
+    tagline: "Basic Life Support สำหรับผู้ให้การช่วยเหลือ",
+    emoji: "⛑️",
+    accent: "#0284C7",
+    audience: "บุคลากรสุขภาพ",
+    highlights: ["แนวทางล่าสุด", "เกมจำลองสถานการณ์", "สอบ + ใบเซอร์"],
+  },
+  {
+    href: "https://acls.morroo.com",
+    label: "ACLS",
+    tagline: "Advanced Cardiovascular Life Support",
+    emoji: "💓",
+    accent: "#1D4ED8",
+    audience: "แพทย์ / พยาบาล",
+    highlights: ["Code Blue Sim", "คลังความรู้ + ยา ACLS", "สอบ + ใบเซอร์"],
+  },
+];
+
+/**
  * เว็บในเครือทั้งหมด — single source of truth
  * ใช้ทั้งใน InternalAdsBanner (โฆษณาหมุน) และ Footer (เว็บในเครือเรา)
  */
