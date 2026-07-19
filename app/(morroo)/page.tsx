@@ -9,11 +9,13 @@ import HeroAB from "@/components/HeroAB";
 import PricingViewTracker from "@/components/PricingViewTracker";
 import SocialProofSection from "@/components/SocialProofSection";
 import FeatureShowcase from "@/components/FeatureShowcase";
+import CaseGamePromo from "@/components/CaseGamePromo";
 import { SocialButtonsRow, LineCtaButton } from "@/components/SocialLinks";
 import { CATEGORIES, PRICING_PLANS } from "@/lib/types";
 import { getExams, getExamPartCounts, sortExamsAvailableFirst } from "@/lib/supabase/queries";
 import { getQuestionBankStats } from "@/lib/supabase/queries-mcq";
 import { getLongCaseCount } from "@/lib/supabase/queries-longcase";
+import { getCasegameCount } from "@/lib/supabase/queries-sim";
 import { getNewsItems } from "@/lib/news";
 import { getJiaAedNewsItems } from "@/lib/jiaaed-news";
 import NewsCard from "@/components/NewsCard";
@@ -24,7 +26,7 @@ import { ArrowRight } from "lucide-react";
 export const revalidate = 60; // revalidate every 60 seconds
 
 export default async function HomePage() {
-  const [allExams, partCounts, newsItems, aedNewsItems, forcedHero, bankStats, longCaseCount] = await Promise.all([
+  const [allExams, partCounts, newsItems, aedNewsItems, forcedHero, bankStats, longCaseCount, casegameCount] = await Promise.all([
     getExams(),
     getExamPartCounts(),
     getNewsItems({ limit: 6 }),
@@ -32,6 +34,7 @@ export default async function HomePage() {
     getHeroForcedVariant(createAdminClient()),
     getQuestionBankStats(),
     getLongCaseCount(),
+    getCasegameCount(),
   ]);
   const homeNewsItems = [...newsItems.slice(0, 4), ...aedNewsItems];
   const exams = sortExamsAvailableFirst(allExams, partCounts);
@@ -47,6 +50,7 @@ export default async function HomePage() {
     meqExamCount,
     meqPartCount,
     longCaseCount,
+    casegameCount,
   };
 
   return (
@@ -62,6 +66,9 @@ export default async function HomePage() {
           <LineCtaButton surface="home_hero" label="แอด LINE ฟรี" className="shrink-0" />
         </div>
       </section>
+
+      {/* เกมเคส — new flagship game, promoted prominently right below the fold */}
+      <CaseGamePromo count={casegameCount} />
 
       {/* Feature Showcase — overview of every tool customers can use, up top */}
       <FeatureShowcase />

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ArrowRight, BookOpen, Shield, Sparkles, Stethoscope, Users } from "lucide-react";
+import { ArrowRight, BookOpen, Gamepad2, Shield, Sparkles, Stethoscope, Users } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { track } from "@/lib/analytics";
@@ -77,6 +77,7 @@ export default function HeroAB({
   const meqExamCount = stats?.meqExamCount ?? 0;
   const meqPartCount = stats?.meqPartCount ?? 0;
   const longCaseCount = stats?.longCaseCount ?? 0;
+  const casegameCount = stats?.casegameCount ?? 0;
   const totalStr = totalReady > 0 ? totalReady.toLocaleString("en-US") : FALLBACK_TOTAL;
   const nlStr = nlReady > 0 ? nlReady.toLocaleString("en-US") : FALLBACK_NL;
 
@@ -147,7 +148,7 @@ export default function HeroAB({
 
           {/* Real MEQ + Long Case counts — the premium, case-based content that
               sets us apart from plain MCQ banks. Numbers come live from the DB. */}
-          {(meqExamCount > 0 || longCaseCount > 0) && (
+          {(meqExamCount > 0 || longCaseCount > 0 || casegameCount > 0) && (
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               {meqExamCount > 0 && (
                 <span className="inline-flex items-center gap-2 rounded-full border border-purple-300/30 bg-purple-400/15 px-4 py-1.5 text-sm font-semibold text-purple-50">
@@ -165,6 +166,16 @@ export default function HeroAB({
                   <Stethoscope className="h-4 w-4" />
                   Long Case กับ AI {longCaseCount.toLocaleString("en-US")} เคส
                 </span>
+              )}
+              {casegameCount > 0 && (
+                <Link
+                  href="/casegame"
+                  onClick={() => trackHeroCta(variant, "casegame")}
+                  className="inline-flex items-center gap-2 rounded-full border border-teal-300/30 bg-teal-400/15 px-4 py-1.5 text-sm font-semibold text-teal-50 transition-colors hover:bg-teal-400/25"
+                >
+                  <Gamepad2 className="h-4 w-4" />
+                  เกมเคส {casegameCount.toLocaleString("en-US")} เคส — เล่นฟรี
+                </Link>
               )}
             </div>
           )}
