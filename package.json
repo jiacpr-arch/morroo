@@ -12,7 +12,8 @@
     "test:watch": "vitest",
     "e2e": "playwright test",
     "e2e:install": "playwright install chromium",
-    "seed:boards": "tsx scripts/seed-all-boards.ts"
+    "seed:boards": "tsx scripts/seed-all-boards.ts",
+    "gen:casegames": "tsx scripts/generate-longcase-games.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.80.0",

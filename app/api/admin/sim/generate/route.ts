@@ -2,8 +2,14 @@ import { NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/admin-auth";
 import { CHAT_MODELS, createAnthropic, createWithFallback } from "@/lib/anthropic";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { lcTorsion, vfArrest } from "@/lib/sim/scenarios";
+import { vfArrest } from "@/lib/sim/scenarios";
 import { describeScenarioError } from "@/lib/sim/validate";
+import {
+  LONGCASE_CASE_COLUMNS,
+  SCENARIO_TOOL,
+  longcaseSystemPrompt,
+  type ExtraCharacter,
+} from "@/lib/sim/generate-longcase";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -16,35 +22,6 @@ const DIFFICULTY_HINT: Record<string, string> = {
   medium: "เคสระดับกลาง มีจุดหลอกที่พบบ่อยในห้องฉุกเฉินจริง",
   hard: "เคสยาก มี distractor ที่แพทย์มักสับสน และมีจังหวะเปลี่ยน rhythm",
 };
-
-const SCENARIO_TOOL = {
-  name: "create_sim_scenario",
-  description: "ส่งโจทย์ Code Blue Sim ที่แต่งเสร็จแล้ว",
-  input_schema: {
-    type: "object" as const,
-    required: ["slug", "title", "subtitle", "difficultyTag", "story"],
-    properties: {
-      slug: { type: "string", description: "kebab-case เช่น pea-arrest-01" },
-      title: { type: "string", description: "ชื่อเคสภาษาไทย ขึ้นต้นด้วย CODE BLUE: ..." },
-      subtitle: { type: "string", description: "โจทย์ผู้ป่วย 1 ประโยค (อายุ เพศ อาการนำ)" },
-      difficultyTag: { type: "string", enum: ["basic", "megacode"] },
-      story: {
-        type: "array",
-        minItems: 8,
-        description:
-          "array ของ node ตามโครงสร้างเดียวกับตัวอย่างใน system prompt เป๊ะๆ (say/inter/skip/choice/end)",
-        items: { type: "object" },
-      },
-    },
-  },
-};
-
-interface ExtraCharacter {
-  slug: string;
-  name: string;
-  role: string | null;
-  personality: string | null;
-}
 
 function systemPrompt(extraCharacters: ExtraCharacter[]): string {
   const extraCharLines = extraCharacters.length
@@ -77,50 +54,6 @@ function systemPrompt(extraCharacters: ExtraCharacter[]): string {
 
 ## ตัวอย่างโจทย์ที่สมบูรณ์ (เคส VF arrest)
 ${JSON.stringify(vfArrest)}`;
-}
-
-function longcaseSystemPrompt(extraCharacters: ExtraCharacter[], caseRow: Record<string, unknown>): string {
-  const extraCharLines = extraCharacters.length
-    ? "\nตัวละครเสริมที่ใช้ได้เพิ่มเติม (เขียนบทพูดให้ตรงบุคลิก): " +
-      extraCharacters
-        .map((c) => {
-          const parts = [c.name, c.role, c.personality ? `บุคลิก: ${c.personality}` : null].filter(Boolean);
-          return `${c.slug} (${parts.join(" — ")})`;
-        })
-        .join(", ")
-    : "";
-  return `คุณคือแพทย์ผู้เชี่ยวชาญและนักออกแบบเกมการสอน หน้าที่คือแปลงเคส Long Case ให้เป็นเกมตัดสินใจ "เกมเคส" (visual novel decision game) เป็นภาษาไทย โดยใช้ข้อมูลจากเคสที่ให้มาเท่านั้น
-
-## โครงสร้าง node ใน story (ต้องตรงเป๊ะ)
-- { "say": { "who": <charId>, "pose": <pose>, "text": "...", }, "t": <วินาที>? } — บทพูด
-- { "inter": "ข้อความสั้น!!", "green": true?, "t": <วินาที>? } — ตะโกนเต็มจอ
-- { "choice": { "q": "คำถามสั้น", "options": [ { "tgt": "<หมวด>", "label": "...", "ok": true/false, "why": "เหตุผลเมื่อผิด", "worsen": true?, "then": [<node>...]? } ] } }
-- { "end": true } — node สุดท้ายเสมอ
-
-## โครงเรื่องมาตรฐาน (เดินตามลำดับนี้ 8-10 จุดตัดสินใจ)
-1. เปิดเรื่อง: พยาบาลรายงาน vitals จาก patient_info + inter อาการนำ + attending เปิดเคส
-2. ซักประวัติ (~2 choice): เลือกคำถามที่แยกโรคได้ — ข้อถูกใส่ then ให้ patient_generic ตอบตาม history_script
-3. ตรวจร่างกาย (~2 choice): เลือกระบบที่ตรวจ — then เผย pe_findings สำคัญ
-4. Investigation (~1-2 choice): เลือก lab/imaging ที่ถูก (อิง lab_results ตัวที่ isAbnormal:true) และรู้ว่าเมื่อไรไม่ควรรอผล
-5. วินิจฉัย (1 choice): ข้อถูก = correct_diagnosis; ข้อลวง = accepted_ddx ตัวอื่น
-6. การรักษา (~1-2 choice): อิง management_plan; ทางเลือกอันตรายใส่ worsen:true
-7. debrief: attending (pose happy/talk) สรุป teaching_points 2-3 ข้อ → { "inter": "เคสสำเร็จ!!", "green": true } → { "end": true }
-
-## กติกาสำคัญ
-1. ตัวละคร (who): patient_generic (ผู้ป่วย — ใช้ตอบคำถามซักประวัติ), nurse_mint (พยาบาล), att_dech (อาจารย์/แพทย์อาวุโส), fon_defib และ boy_compressor (แพทย์/ทีมในวอร์ด ถ้าจำเป็น)${extraCharLines}
-2. pose: idle, talk, panic, stern, happy เท่านั้น
-3. **ห้ามใช้ fx ทุกชนิด** (ไม่มี alarm/cpr/shock/epi/rosc/rhythm) — นี่คือเคส ward ไม่ใช่ arrest
-4. เน้นคำสำคัญด้วย **คำเน้น** เท่านั้น — ห้ามใช้ HTML เด็ดขาด
-5. ทุก choice มี 3 ตัวเลือก และมีข้อถูก (ok: true) เพียงข้อเดียว; ข้อถูกใส่ then เดินเรื่องต่อ; ข้อผิดใส่ why อธิบายเหตุผลทางคลินิก
-6. เนื้อหาต้องอิงข้อมูลในเคสเท่านั้น ห้ามแต่งข้อมูลผู้ป่วยเพิ่ม
-7. slug ขึ้นต้นด้วย lc- (เช่น lc-appendicitis-01); title ขึ้นต้นด้วย "LONG CASE: ..."
-8. tgt ของตัวเลือกใช้หมวดสั้น: ASK, PE, LAB, DX, MGMT, CONSULT
-
-## ข้อมูลเคส Long Case ที่ต้องแปลง
-${JSON.stringify(caseRow)}
-
-## ตัวอย่างเกมเคสที่สมบูรณ์ (เคส Testicular torsion)
-${JSON.stringify(lcTorsion)}`;
 }
 
 export async function POST(request: Request) {
@@ -157,9 +90,7 @@ export async function POST(request: Request) {
   if (longCaseId) {
     const { data: caseRow, error: caseErr } = await adminClient
       .from("long_cases")
-      .select(
-        "title, specialty, patient_info, history_script, pe_findings, lab_results, imaging_results, correct_diagnosis, accepted_ddx, management_plan, teaching_points",
-      )
+      .select(LONGCASE_CASE_COLUMNS)
       .eq("id", longCaseId)
       .maybeSingle();
     if (caseErr || !caseRow) {
