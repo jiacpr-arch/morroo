@@ -240,6 +240,10 @@ export function longCaseToScenario(lc: LongCaseFull): SimScenario | null {
     }
   }
 
+  // teaching points — ใช้ทั้งตอนเฉลยวินิจฉัย (ข้อแรก) และ debrief (ที่เหลือ)
+  const teachingPoints = asArr(lc.teaching_points).map((t) => txt(asStr(t))).filter(Boolean);
+  let tpUsedInDx = false;
+
   // ---- Act 4: วินิจฉัย (SCORED — จุดหลัก) ----
   const correct = txt(asStr(lc.correct_diagnosis));
   const nCorrect = normalizeKey(correct);
@@ -250,12 +254,18 @@ export function longCaseToScenario(lc: LongCaseFull): SimScenario | null {
       return nd && nd !== nCorrect && !nd.includes(nCorrect) && !nCorrect.includes(nd);
     });
   if (correct && distractorsDx.length >= 1) {
+    // เฉลยแล้วสอนเหตุผลตรงจุดทันทีด้วย teaching point ข้อแรก (ถ้ามี)
+    const dxThen: StoryNode[] = [say("att_dech", "happy", `ถูกต้อง — ${correct}`, 5)];
+    if (teachingPoints[0]) {
+      dxThen.push(say("att_dech", "happy", truncate(teachingPoints[0], 220), 4));
+      tpUsedInDx = true;
+    }
     const options: ChoiceOption[] = [
       {
         tgt: "DX",
         label: truncate(correct, 70),
         ok: true,
-        then: [say("att_dech", "happy", `ถูกต้อง — ${correct}`, 5)],
+        then: dxThen,
       },
       ...distractorsDx.slice(0, 3).map(
         (d): ChoiceOption => ({
@@ -303,9 +313,27 @@ export function longCaseToScenario(lc: LongCaseFull): SimScenario | null {
     }
   }
 
-  // ---- Act 6: debrief ----
-  const tps = asArr(lc.teaching_points).map((t) => txt(asStr(t))).filter(Boolean).slice(0, 3);
-  for (const tp of tps) {
+  // ---- Act 5.5: อาจารย์ซักถาม (retrieval practice จาก examiner_questions) ----
+  // แหล่งเดียวในข้อมูลที่เก็บ clinical reasoning เฉพาะเคสไว้จริง (คำถามสอบ + เฉลย)
+  // โครง active recall: ถามก่อน → ผู้เรียนคิดคำตอบในใจ → แตะดูแนวทางคำตอบ
+  const examinerQs = asArr(lc.examiner_questions)
+    .map((q) => asObj(q))
+    .map((q) => ({ question: asStr(q.question), modelAnswer: asStr(q.modelAnswer), points: typeof q.points === "number" ? q.points : 0 }))
+    .filter((q) => q.question && q.modelAnswer)
+    .sort((a, b) => b.points - a.points)
+    .slice(0, 4);
+  if (examinerQs.length >= 1) {
+    story.push(say("att_dech", "stern", "ถึงช่วงอาจารย์ซักถาม — ลองตอบในใจก่อน แล้วแตะดูแนวทางคำตอบ", 4));
+    for (const q of examinerQs) {
+      const pts = q.points > 0 ? ` [${q.points} คะแนน]` : "";
+      story.push(say("att_dech", "stern", `❓ ${truncate(q.question, 260)}${pts}`, 5));
+      story.push(say("att_dech", "talk", `💡 แนวทางคำตอบ: ${truncate(q.modelAnswer, 260)}`, 5));
+    }
+  }
+
+  // ---- Act 6: debrief (teaching points ที่เหลือ — ไม่ซ้ำกับที่โชว์ตอนเฉลยวินิจฉัย) ----
+  const debriefTps = (tpUsedInDx ? teachingPoints.slice(1) : teachingPoints).slice(0, 3);
+  for (const tp of debriefTps) {
     story.push(say("att_dech", "happy", truncate(tp, 220), 4));
   }
   story.push({ inter: "เคสสำเร็จ!!", green: true, t: 0 });
