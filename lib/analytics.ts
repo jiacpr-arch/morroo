@@ -8,6 +8,7 @@
  */
 
 import { track as vercelTrack } from "@vercel/analytics";
+import { phCapture } from "@/lib/posthog";
 
 type Properties = Record<string, string | number | boolean | null>;
 
@@ -37,6 +38,12 @@ export function track(eventName: string, properties?: Properties): void {
     vercelTrack(eventName, properties);
   } else {
     vercelTrack(eventName);
+  }
+
+  // Mirror ทุก event เข้า PostHog ด้วย — ยกเว้น pageview เพราะ PostHog จับ
+  // $pageview ของตัวเองอยู่แล้ว (history_change) จะได้ไม่นับซ้ำ
+  if (eventName !== "pageview") {
+    phCapture(eventName, properties);
   }
 
   const payload = {
