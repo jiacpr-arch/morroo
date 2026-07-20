@@ -15,6 +15,7 @@ import BetaPromoBanner from "@/components/beta/BetaPromoBanner";
 import ChatWidget from "@/components/ChatWidget";
 import FloatingLineCta from "@/components/FloatingLineCta";
 import SignupConversion from "@/components/analytics/SignupConversion";
+import PostHogInit from "@/components/PostHogInit";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 import FirstVisitNudge from "@/components/FirstVisitNudge";
 import "../globals.css";
@@ -234,6 +235,7 @@ export default function RootLayout({
         </AiHealthProvider>
         <Analytics />
         <SpeedInsights />
+        <PostHogInit />
         <Suspense fallback={null}>
           <AnalyticsPageviewTracker />
         </Suspense>
