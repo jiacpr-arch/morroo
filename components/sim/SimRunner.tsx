@@ -17,6 +17,12 @@ import {
 } from "@/lib/sim/sound";
 import { SIM_BADGE_NAMES, recordSimRun, type RecordedRun } from "@/lib/sim/record";
 import {
+  CASEGAME_EVENTS, buildCompleteProps, buildFirstDecisionProps, buildStartProps,
+  newRunId, sendCaseGameCapi,
+} from "@/lib/sim/track";
+import { track } from "@/lib/analytics";
+import DebriefLeadCta from "@/components/sim/DebriefLeadCta";
+import {
   parseEmphasis,
   type ChoiceNode, type ChoiceOption, type NodeFx, type Pose,
   type SimScenario, type SimState, type TextSegment,
@@ -74,9 +80,14 @@ interface SimRunnerProps {
   practice?: boolean;
   /** ตัวละครจากตาราง sim_characters (เพิ่มจาก built-in 4 ตัว) */
   characters?: SimDbCharacter[];
+  /** utm ที่ส่งต่อมาจาก URL — ติดไปกับ lead ที่เก็บได้ท้ายเกม */
+  campaign?: string | null;
+  adSet?: string | null;
 }
 
-export default function SimRunner({ scenario, practice = false, characters }: SimRunnerProps) {
+export default function SimRunner({
+  scenario, practice = false, characters, campaign = null, adSet = null,
+}: SimRunnerProps) {
   const dbCharacters = useMemo(
     () => new Map((characters ?? []).map((c) => [c.slug, c])),
     [characters],
@@ -130,6 +141,10 @@ export default function SimRunner({ scenario, practice = false, characters }: Si
   const typeDoneRef = useRef<(() => void) | null>(null);
   const fullSegmentsRef = useRef<TextSegment[]>([]);
   const popCounter = useRef(0);
+  // analytics: 1 รอบเล่น = 1 runId, จับเวลาจริง (simTime เป็นนาฬิกาในเนื้อเรื่อง)
+  const runIdRef = useRef("");
+  const startedAtRef = useRef(0);
+  const firstDecisionSentRef = useRef(false);
 
   const stopMetronome = useCallback(() => {
     if (timers.current.metronome) {
@@ -247,6 +262,20 @@ export default function SimRunner({ scenario, practice = false, characters }: Si
     setReward(null);
     if (!practice) {
       void recordSimRun(scenario.slug, st, { won, grade, score }).then(setReward);
+      track(
+        CASEGAME_EVENTS.complete,
+        buildCompleteProps({
+          slug: scenario.slug,
+          category: scenario.category,
+          state: st,
+          won,
+          grade,
+          score,
+          isHiscore,
+          durationMs: startedAtRef.current ? Date.now() - startedAtRef.current : 0,
+        })
+      );
+      if (runIdRef.current) sendCaseGameCapi("complete", scenario.slug, runIdRef.current);
     }
     syncView();
     setResult({ won, grade, score, isHiscore });
@@ -365,6 +394,15 @@ export default function SimRunner({ scenario, practice = false, characters }: Si
     setChoice(null);
     const st = S.current;
 
+    // สัญญาณ "ไม่ใช่คนเปิดผ่าน" — ยิงครั้งเดียวต่อรอบเล่น ไม่ว่าจะตอบถูกหรือผิด
+    if (!practice && !firstDecisionSentRef.current) {
+      firstDecisionSentRef.current = true;
+      track(
+        CASEGAME_EVENTS.firstDecision,
+        buildFirstDecisionProps({ slug: scenario.slug, category: scenario.category })
+      );
+    }
+
     if (option.ok) {
       recordCorrect(st, option);
       currentChoiceRef.current = null;
@@ -445,6 +483,26 @@ export default function SimRunner({ scenario, practice = false, characters }: Si
     setDlgSegments([]);
     setDlgCount(0);
     setScreen("game");
+    // ปุ่ม "รับเคส" (title) และ "เล่นเคสนี้อีกครั้ง" (debrief) เรียกฟังก์ชันนี้ตัวเดียวกัน
+    // — อ่าน result ก่อนถูกล้างที่ setResult(null) ด้านบนไม่ได้แล้ว จึงใช้ runIdRef
+    // ที่ยังค้างจากรอบก่อนเป็นตัวบอกว่าเป็นการเล่นซ้ำ
+    if (!practice) {
+      const isReplay = runIdRef.current !== "";
+      runIdRef.current = newRunId();
+      startedAtRef.current = Date.now();
+      firstDecisionSentRef.current = false;
+      track(
+        CASEGAME_EVENTS.start,
+        buildStartProps({
+          slug: scenario.slug,
+          category: scenario.category,
+          difficulty,
+          isReplay,
+          sourceCaseId: scenario.sourceCaseId,
+        })
+      );
+      sendCaseGameCapi("start", scenario.slug, runIdRef.current);
+    }
     later(() => advance(), reducedMotion ? 100 : 400);
   }
 
@@ -558,10 +616,14 @@ export default function SimRunner({ scenario, practice = false, characters }: Si
               ))}
             </div>
           )}
-          {reward && !reward.loggedIn && (
-            <p className="cbs-login-hint">
-              <Link href="/login">เข้าสู่ระบบ</Link> เพื่อเก็บ XP, Badge และขึ้น Leaderboard
-            </p>
+          {reward && !reward.loggedIn && !practice && (
+            <DebriefLeadCta
+              slug={scenario.slug}
+              category={scenario.category}
+              grade={result.grade}
+              campaign={campaign}
+              adSet={adSet}
+            />
           )}
           <div className="cbs-grade-row">
             <div className="cbs-grade-box">

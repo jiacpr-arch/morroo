@@ -35,12 +35,18 @@ type Summary = {
   freeTrialCtaClicks: number;
   exitIntentShows: number;
   exitIntentCtaClicks: number;
+  caseGameStarts: number;
+  caseGameFirstDecisions: number;
+  caseGameCompletes: number;
+  caseGameLeads: number;
   landingViews: { surface: string; count: number }[];
   topPaths: { path: string; count: number }[];
   topReferrers: { ref: string; count: number }[];
   signupConv: number | null;
   checkoutConv: number | null;
   ctaToSignupConv: number | null;
+  caseGameCompleteConv: number | null;
+  caseGameLeadConv: number | null;
 };
 
 const RANGES = [
@@ -207,6 +213,40 @@ export default function AdminAnalyticsPage() {
         </CardContent>
       </Card>
 
+      {/* เกมเคส — หัวกรวยของแคมเปญโฆษณา (docs/casegame-acquisition-plan.md) */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-base">เกมเคส — funnel</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <FunnelRow
+            from="เริ่มเล่นเกม"
+            to="ตัดสินใจข้อแรก"
+            fromValue={summary.caseGameStarts}
+            toValue={summary.caseGameFirstDecisions}
+            conv={
+              summary.caseGameStarts > 0
+                ? (summary.caseGameFirstDecisions / summary.caseGameStarts) * 100
+                : null
+            }
+          />
+          <FunnelRow
+            from="เริ่มเล่นเกม"
+            to="เล่นจบ"
+            fromValue={summary.caseGameStarts}
+            toValue={summary.caseGameCompletes}
+            conv={summary.caseGameCompleteConv}
+          />
+          <FunnelRow
+            from="เล่นจบ"
+            to="ให้อีเมล (lead)"
+            fromValue={summary.caseGameCompletes}
+            toValue={summary.caseGameLeads}
+            conv={summary.caseGameLeadConv}
+          />
+        </CardContent>
+      </Card>
+
       {summary.landingViews.length > 0 && (
         <Card>
           <CardHeader>
@@ -364,6 +404,10 @@ function aggregate(rows: EventRow[]): Summary {
   let freeTrialCtaClicks = 0;
   let exitIntentShows = 0;
   let exitIntentCtaClicks = 0;
+  let caseGameStarts = 0;
+  let caseGameFirstDecisions = 0;
+  let caseGameCompletes = 0;
+  let caseGameLeads = 0;
   const sessions = new Set<string>();
   const pathCounts = new Map<string, number>();
   const refCounts = new Map<string, number>();
@@ -411,6 +455,18 @@ function aggregate(rows: EventRow[]): Summary {
       case "exit_intent_cta_click":
         exitIntentCtaClicks++;
         break;
+      case "casegame_start":
+        caseGameStarts++;
+        break;
+      case "casegame_first_decision":
+        caseGameFirstDecisions++;
+        break;
+      case "casegame_complete":
+        caseGameCompletes++;
+        break;
+      case "casegame_lead":
+        caseGameLeads++;
+        break;
     }
   }
 
@@ -429,6 +485,10 @@ function aggregate(rows: EventRow[]): Summary {
     freeTrialCtaClicks,
     exitIntentShows,
     exitIntentCtaClicks,
+    caseGameStarts,
+    caseGameFirstDecisions,
+    caseGameCompletes,
+    caseGameLeads,
     landingViews: toSorted(landingCounts).map(([surface, count]) => ({
       surface,
       count,
@@ -439,6 +499,11 @@ function aggregate(rows: EventRow[]): Summary {
     checkoutConv: signups > 0 ? (checkoutClicks / signups) * 100 : null,
     ctaToSignupConv:
       freeTrialCtaClicks > 0 ? (signups / freeTrialCtaClicks) * 100 : null,
+    caseGameCompleteConv:
+      caseGameStarts > 0 ? (caseGameCompletes / caseGameStarts) * 100 : null,
+    // ตัวชี้ขาดของแคมเปญเกมเคส: เล่นจบแล้วยอมให้อีเมลกี่เปอร์เซ็นต์
+    caseGameLeadConv:
+      caseGameCompletes > 0 ? (caseGameLeads / caseGameCompletes) * 100 : null,
   };
 }
 

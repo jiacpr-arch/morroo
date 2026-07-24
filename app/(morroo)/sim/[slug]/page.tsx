@@ -7,6 +7,12 @@ export const dynamic = "force-dynamic";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+/** utm ที่ส่งต่อไปติดกับ lead ที่เก็บได้ท้ายเกม — array จาก query ซ้ำถือว่าไม่ถูกต้อง */
+function firstParam(value: string | string[] | undefined): string | null {
+  return typeof value === "string" && value ? value : null;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -19,13 +25,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function SimPlayPage({ params }: PageProps) {
+export default async function SimPlayPage({ params, searchParams }: PageProps) {
   const { slug } = await params;
-  const [scenario, characters] = await Promise.all([
+  const [scenario, characters, sp] = await Promise.all([
     getSimScenario(slug),
     getSimCharacters(),
+    searchParams,
   ]);
   if (!scenario) notFound();
 
-  return <SimRunner scenario={scenario} characters={characters} />;
+  return (
+    <SimRunner
+      scenario={scenario}
+      characters={characters}
+      campaign={firstParam(sp.utm_campaign) ?? firstParam(sp.campaign)}
+      adSet={firstParam(sp.utm_content) ?? firstParam(sp.ad_set)}
+    />
+  );
 }

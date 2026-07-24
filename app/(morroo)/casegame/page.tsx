@@ -48,11 +48,34 @@ function BestBadge({ best }: { best?: SimBest }) {
   );
 }
 
-export default async function CaseGameHubPage() {
-  const [polished, cards, bests] = await Promise.all([
+/**
+ * ส่ง utm ต่อไปยังหน้าเล่นเกม — คนที่มาจากโฆษณาแล้วคลิกเลือกเคสจากหน้านี้
+ * ต้องยังผูกกับแคมเปญได้ตอนกรอกอีเมลท้ายเกม ไม่งั้นเทียบปลายทางโฆษณาสองแบบ
+ * (หน้ารวม vs ยิงเข้าเคสตรง) ไม่ได้เลย
+ */
+function playHref(
+  slug: string,
+  sp: { [key: string]: string | string[] | undefined }
+): string {
+  const carry = new URLSearchParams();
+  for (const key of ["utm_source", "utm_medium", "utm_campaign", "utm_content"]) {
+    const value = sp[key];
+    if (typeof value === "string" && value) carry.set(key, value);
+  }
+  const qs = carry.toString();
+  return qs ? `/sim/${slug}?${qs}` : `/sim/${slug}`;
+}
+
+interface PageProps {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+export default async function CaseGameHubPage({ searchParams }: PageProps) {
+  const [polished, cards, bests, sp] = await Promise.all([
     getSimScenariosByCategory("longcase"),
     getLongcaseGameCards(),
     getMySimBests(),
+    searchParams,
   ]);
 
   const total = polished.length + cards.length;
@@ -115,7 +138,7 @@ export default async function CaseGameHubPage() {
                         <h3 className="text-lg font-bold">{s.title.replace(/^LONG CASE:\s*/, "")}</h3>
                         <p className="text-sm text-muted-foreground">{s.subtitle}</p>
                       </div>
-                      <Link href={`/sim/${s.slug}`} className="shrink-0">
+                      <Link href={playHref(s.slug, sp)} className="shrink-0">
                         <Button size="lg" className="w-full gap-2 sm:w-auto">
                           <Play className="h-4 w-4" /> รับเคส
                         </Button>
@@ -137,7 +160,7 @@ export default async function CaseGameHubPage() {
                 {cards.map((c) => (
                   <Link
                     key={c.slug}
-                    href={`/sim/${c.slug}`}
+                    href={playHref(c.slug, sp)}
                     className="group rounded-xl border bg-white p-4 transition-shadow hover:shadow-md"
                   >
                     <div className="mb-2 flex flex-wrap items-center gap-1.5">
