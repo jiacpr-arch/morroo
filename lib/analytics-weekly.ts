@@ -17,6 +17,9 @@ export interface WeeklyAnalyticsSummary {
   examStarts: number;
   checkoutClicks: number;
   socialLineClicks: number;
+  caseGameStarts: number;
+  caseGameCompletes: number;
+  caseGameLeads: number;
   topPath: { path: string; count: number } | null;
   topReferrer: { ref: string; count: number } | null;
   signupConversion: number | null; // signups / unique visitors %
@@ -35,6 +38,9 @@ const FUNNEL = {
   signup: "signup_submit",
   examStart: "exam_start_click",
   checkout: "stripe_checkout_click",
+  caseGameStart: "casegame_start",
+  caseGameComplete: "casegame_complete",
+  caseGameLead: "casegame_lead",
 } as const;
 
 function aggregate(rows: EventRow[]) {
@@ -43,6 +49,9 @@ function aggregate(rows: EventRow[]) {
   let examStarts = 0;
   let checkoutClicks = 0;
   let socialLineClicks = 0;
+  let caseGameStarts = 0;
+  let caseGameCompletes = 0;
+  let caseGameLeads = 0;
 
   const sessions = new Set<string>();
   const pathCounts = new Map<string, number>();
@@ -72,6 +81,15 @@ function aggregate(rows: EventRow[]) {
       case "social_click":
         socialLineClicks++;
         break;
+      case FUNNEL.caseGameStart:
+        caseGameStarts++;
+        break;
+      case FUNNEL.caseGameComplete:
+        caseGameCompletes++;
+        break;
+      case FUNNEL.caseGameLead:
+        caseGameLeads++;
+        break;
     }
   }
 
@@ -85,6 +103,9 @@ function aggregate(rows: EventRow[]) {
     examStarts,
     checkoutClicks,
     socialLineClicks,
+    caseGameStarts,
+    caseGameCompletes,
+    caseGameLeads,
     topPath: topPath ? { path: topPath[0], count: topPath[1] } : null,
     topReferrer: topRef ? { ref: topRef[0], count: topRef[1] } : null,
   };
