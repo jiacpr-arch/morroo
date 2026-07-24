@@ -44,13 +44,14 @@ const EXAM_ID = val("--exam");
 const CATEGORY = val("--category");
 const MODELS = [val("--model") ?? "claude-sonnet-4-6", "claude-haiku-4-5"];
 
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
+// รับได้ทั้ง NEXT_PUBLIC_SUPABASE_URL (dev/local) และ SUPABASE_URL (CI secret)
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL ?? process.env.SUPABASE_URL;
 const SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 
 if (!SUPABASE_URL || !SERVICE_KEY || (!DRY && !ANTHROPIC_API_KEY)) {
   console.error(
-    "Missing env. Need NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY" +
+    "Missing env. Need NEXT_PUBLIC_SUPABASE_URL (หรือ SUPABASE_URL), SUPABASE_SERVICE_ROLE_KEY" +
       (DRY ? "" : ", ANTHROPIC_API_KEY"),
   );
   process.exit(1);
