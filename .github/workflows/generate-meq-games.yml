@@ -1,0 +1,52 @@
+name: Generate MEQ Case Games
+
+# แปลงข้อสอบ MEQ (progressive case) ที่ published แล้วเป็นเกมเคส (sim_scenarios
+# category='meq') — script ข้ามข้อที่มีเกมแล้ว จึง idempotent รันซ้ำได้
+# ตั้งเวลา 30 นาทีหลังรอบสร้าง MEQ รายสัปดาห์ (generate-meq.yml) เพื่อเก็บของใหม่
+
+on:
+  schedule:
+    # จันทร์ + พฤหัส 03:30 ICT (= 20:30 UTC วันก่อน) — หลัง generate-meq 30 นาที
+    - cron: "30 20 * * 0,3"
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "จำนวนสูงสุดต่อรอบ (เว้นว่าง = แปลงทุกข้อที่ยังไม่มีเกม — ใช้ backfill)"
+        required: false
+      publish:
+        description: "เผยแพร่ทันที (true) หรือบันทึกเป็น draft ให้รีวิวก่อน (false)"
+        type: boolean
+        default: true
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Convert published MEQ exams into case games
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          ARGS=""
+          # scheduled runs (ไม่มี inputs) → publish; dispatch ตั้ง publish=false → draft
+          if [ "${{ github.event.inputs.publish }}" != "false" ]; then
+            ARGS="$ARGS --publish"
+          fi
+          if [ -n "${{ github.event.inputs.limit }}" ]; then
+            ARGS="$ARGS --limit ${{ github.event.inputs.limit }}"
+          fi
+          echo "Running: npm run gen:meqgames -- $ARGS"
+          npm run gen:meqgames -- $ARGS

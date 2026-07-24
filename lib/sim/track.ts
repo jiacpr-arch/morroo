@@ -9,8 +9,13 @@
 
 import type { SimState } from "./types";
 
-/** SimRunner ตัวเดียวเสิร์ฟทั้ง Code Blue (acls) และเกมเคส (longcase) */
-export type CaseGameCategory = "acls" | "longcase";
+/**
+ * SimRunner ตัวเดียวเสิร์ฟทุกหมวด — Code Blue (acls), เกมเคสจาก Long Case
+ * (longcase) และเกมเคสที่แปลงจากข้อสอบ MEQ (meq)
+ */
+export type CaseGameCategory = "acls" | "longcase" | "meq";
+
+const KNOWN_CATEGORIES = new Set<CaseGameCategory>(["acls", "longcase", "meq"]);
 
 export type TrackProps = Record<string, string | number | boolean | null>;
 
@@ -28,9 +33,15 @@ export const CASEGAME_EVENTS = {
   lead: "casegame_lead",
 } as const;
 
-/** `category` ใน SimScenario เป็น string ล้วนและ optional — built-in ที่ไม่ระบุถือเป็น acls */
+/**
+ * `category` ใน SimScenario เป็น string ล้วนและ optional — built-in ที่ไม่ระบุ
+ * ถือเป็น acls (ตาม getSimScenariosByCategory) หมวดที่ไม่รู้จักก็ยุบเป็น acls
+ * เช่นกัน แต่ต้องเพิ่มหมวดใหม่ที่นี่ทุกครั้ง ไม่งั้นสถิติจะติดป้ายผิด
+ */
 export function caseGameCategory(category?: string): CaseGameCategory {
-  return category === "longcase" ? "longcase" : "acls";
+  return category && KNOWN_CATEGORIES.has(category as CaseGameCategory)
+    ? (category as CaseGameCategory)
+    : "acls";
 }
 
 export interface StartInput {

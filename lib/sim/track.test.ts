@@ -12,9 +12,15 @@ import {
 import { createInitialState } from "./engine";
 
 describe("caseGameCategory", () => {
-  it("maps longcase through and everything else to acls", () => {
+  it("passes through every category the hub actually renders", () => {
     expect(caseGameCategory("longcase")).toBe("longcase");
     expect(caseGameCategory("acls")).toBe("acls");
+    // เกมเคสจากข้อสอบ MEQ ต้องไม่ถูกนับรวมเป็น acls ไม่งั้นสถิติที่ใช้ตัดสิน
+    // แคมเปญโฆษณาจะเพี้ยน
+    expect(caseGameCategory("meq")).toBe("meq");
+  });
+
+  it("falls back to acls for missing or unknown categories", () => {
     // built-in scenarios ไม่ระบุ category — ต้องไม่กลายเป็น undefined ใน payload
     expect(caseGameCategory(undefined)).toBe("acls");
     expect(caseGameCategory("something-else")).toBe("acls");

@@ -71,14 +71,15 @@ interface PageProps {
 }
 
 export default async function CaseGameHubPage({ searchParams }: PageProps) {
-  const [polished, cards, bests, sp] = await Promise.all([
+  const [polished, cards, meqGames, bests, sp] = await Promise.all([
     getSimScenariosByCategory("longcase"),
     getLongcaseGameCards(),
+    getSimScenariosByCategory("meq"),
     getMySimBests(),
     searchParams,
   ]);
 
-  const total = polished.length + cards.length;
+  const total = polished.length + cards.length + meqGames.length;
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6">
@@ -183,6 +184,36 @@ export default async function CaseGameHubPage({ searchParams }: PageProps) {
                       <Play className="h-3 w-3" /> เล่นเคสนี้
                     </span>
                   </Link>
+                ))}
+              </div>
+            </>
+          )}
+
+          {/* เกมเคสที่แปลงจากข้อสอบ MEQ (progressive case) */}
+          {meqGames.length > 0 && (
+            <>
+              <h2 className="mb-3 mt-8 flex items-center gap-1.5 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+                <Sparkles className="h-4 w-4 text-teal-500" /> เกมเคสจากข้อสอบ MEQ
+              </h2>
+              <div className="space-y-4">
+                {meqGames.map((s) => (
+                  <Card key={s.slug} className="transition-shadow hover:shadow-md hover:ring-brand/30">
+                    <CardContent className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center">
+                      <div className="flex-1 space-y-1.5">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <Badge className="bg-teal-100 text-teal-700">MEQ</Badge>
+                          <BestBadge best={bests[s.slug]} />
+                        </div>
+                        <h3 className="text-lg font-bold">{s.title.replace(/^MEQ:\s*/, "")}</h3>
+                        <p className="text-sm text-muted-foreground">{s.subtitle}</p>
+                      </div>
+                      <Link href={playHref(s.slug, sp)} className="shrink-0">
+                        <Button size="lg" className="w-full gap-2 sm:w-auto">
+                          <Play className="h-4 w-4" /> รับเคส
+                        </Button>
+                      </Link>
+                    </CardContent>
+                  </Card>
                 ))}
               </div>
             </>
