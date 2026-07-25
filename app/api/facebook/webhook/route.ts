@@ -13,7 +13,7 @@ import {
   type ChatMessage,
 } from "@/lib/chatbot";
 import { getOrCreateLeadFromChannel } from "@/lib/lead-channel";
-import { handleBotIntent, handleEmailCapture } from "@/lib/bot-intent";
+import { detectTrialIntent, handleBotIntent, handleEmailCapture } from "@/lib/bot-intent";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -279,11 +279,14 @@ async function handleChatbotReply(
     ? result.reply
     : "ขอโทษครับ ขณะนี้ระบบมีปัญหาชั่วคราว ลองใหม่อีกครั้งนะครับ 🙏";
 
-  // Issue a free trial code when the AI detected purchase intent.
+  // Issue a free trial code when the AI detected purchase intent — or when the
+  // user's own words clearly say so. โมเดลเติม marker ให้น้อยมากในทางปฏิบัติ
+  // (lead จากแชทได้โค้ดไปแค่ 1 จาก ~41 คน) ตัวจับคำจึงเป็นชั้นล่างรองรับไว้
+  const intent = result.ok
+    ? result.intent ?? (detectTrialIntent(userMessage) ? "trial" : null)
+    : null;
   const intentMsg =
-    result.ok && result.intent && leadId
-      ? await handleBotIntent(leadId, result.intent, "facebook")
-      : null;
+    intent && leadId ? await handleBotIntent(leadId, intent, "facebook") : null;
 
   await sendFbTyping(psid, false);
   await sendFbMessage(psid, replyText);

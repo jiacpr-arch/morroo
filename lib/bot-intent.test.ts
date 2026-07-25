@@ -48,7 +48,12 @@ vi.mock("@/lib/redeem", () => ({
   }),
 }));
 
-import { handleBotIntent, detectEmail, handleEmailCapture } from "./bot-intent";
+import {
+  handleBotIntent,
+  detectEmail,
+  detectTrialIntent,
+  handleEmailCapture,
+} from "./bot-intent";
 
 beforeEach(() => {
   responseQueue.length = 0;
@@ -257,5 +262,63 @@ describe("handleEmailCapture", () => {
   it("returns null when leadId is null", async () => {
     const ack = await handleEmailCapture(null, "user@example.com");
     expect(ack).toBeNull();
+  });
+});
+
+// ─── detectTrialIntent ────────────────────────────────────────────────────────
+//
+// ตาข่ายรองรับตอนโมเดลไม่เติม marker ให้ ซึ่งเป็นกรณีปกติ ไม่ใช่กรณียกเว้น —
+// ของจริงคือ lead จากแชท ~41 คนได้โค้ดไปแค่ 1 คน
+
+describe("detectTrialIntent", () => {
+  it("จับข้อความที่ขอโค้ด/ขอทดลองตรงๆ", () => {
+    for (const msg of [
+      "ขอโค้ดทดลองหน่อยครับ",
+      "มีโค้ดส่วนลดไหมคะ",
+      "อยากทดลองใช้ก่อนได้ไหม",
+      "ขอลองใช้ก่อนได้ปะ",
+      "สนใจครับ",
+    ]) {
+      expect(detectTrialIntent(msg), msg).toBe(true);
+    }
+  });
+
+  it("จับคำถามเชิงราคา — ถามราคาคือเจตนาเชิงพาณิชย์ ไม่ใช่ถามข้อมูลเฉยๆ", () => {
+    for (const msg of [
+      "ราคาเท่าไหร่ครับ",
+      "กี่บาทครับ",
+      "มีแพ็กเกจอะไรบ้าง",
+      "รายเดือนเท่าไร",
+      "ค่าสมาชิกแพงไหม",
+    ]) {
+      expect(detectTrialIntent(msg), msg).toBe(true);
+    }
+  });
+
+  it("จับคำถามเรื่องการสมัคร", () => {
+    for (const msg of ["สมัครยังไงครับ", "อยากสมัครครับ", "เริ่มยังไงดี"]) {
+      expect(detectTrialIntent(msg), msg).toBe(true);
+    }
+  });
+
+  it("ไม่จับคำถามทางคลินิก แม้จะมีคำว่า 'ลอง' อยู่ในประโยค", () => {
+    for (const msg of [
+      "ผู้ป่วยความดันตก ลองให้ยาอะไรก่อนดีครับ",
+      "เคสนี้ลองตรวจอะไรเพิ่มดี",
+      "ลองคิดว่าเป็น sepsis ได้ไหม",
+    ]) {
+      expect(detectTrialIntent(msg), msg).toBe(false);
+    }
+  });
+
+  it("ไม่จับข้อความทั่วไปที่ไม่มีเจตนา", () => {
+    for (const msg of ["สวัสดีครับ", "ขอบคุณครับ", "MEQ คืออะไรครับ", "  "]) {
+      expect(detectTrialIntent(msg), msg).toBe(false);
+    }
+  });
+
+  it("ไม่จับข้อความที่เป็นอีเมลล้วน — ปล่อยให้ handleEmailCapture จัดการ", () => {
+    // ถ้าจับด้วยจะตอบซ้อนกันสองเรื่องในทีเดียว (บันทึกอีเมล + ยื่นโค้ด)
+    expect(detectTrialIntent("doc@example.com")).toBe(false);
   });
 });

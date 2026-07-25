@@ -11,7 +11,7 @@ import {
   buildAdsMergeConfirmFlex,
 } from "@/lib/line-flex-templates";
 import { getOrCreateLeadFromChannel } from "@/lib/lead-channel";
-import { handleBotIntent, handleEmailCapture } from "@/lib/bot-intent";
+import { detectTrialIntent, handleBotIntent, handleEmailCapture } from "@/lib/bot-intent";
 import { handleAdsAutofixPostback } from "@/lib/ads-autofix-line";
 
 export const runtime = "nodejs";
@@ -240,11 +240,13 @@ async function handleChatbotReply(
     messages.push(buildChatbotCard(result.card));
   }
 
-  // Issue a free trial code when the AI detected purchase intent.
+  // Issue a free trial code when the AI detected purchase intent — or when the
+  // user's own words clearly say so (ดูเหตุผลใน lib/bot-intent#detectTrialIntent)
+  const intent = result.ok
+    ? result.intent ?? (detectTrialIntent(userMessage) ? "trial" : null)
+    : null;
   const intentMsg =
-    result.ok && result.intent && leadId
-      ? await handleBotIntent(leadId, result.intent, "line")
-      : null;
+    intent && leadId ? await handleBotIntent(leadId, intent, "line") : null;
   if (intentMsg) {
     messages.push({ type: "text", text: intentMsg });
   }
