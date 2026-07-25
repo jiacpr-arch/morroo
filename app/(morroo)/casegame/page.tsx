@@ -10,6 +10,7 @@ import {
   getSimScenariosByCategory,
 } from "@/lib/supabase/queries-sim";
 import DoctorCard from "@/components/casegame/DoctorCard";
+import LocalDoctorCard from "@/components/casegame/LocalDoctorCard";
 import {
   normalizeDifficulty,
   normalizeSpecialty,
@@ -143,15 +144,18 @@ export default async function CaseGameHubPage({ searchParams }: PageProps) {
         </div>
       </section>
 
-      {doctor && (
-        <div className="mt-6">
+      <div className="mt-6">
+        {doctor ? (
           <DoctorCard
             xp={doctor.xp}
             specialties={doctor.specialties}
             totalWins={doctor.totalWins}
           />
-        </div>
-      )}
+        ) : (
+          /* ยังไม่ล็อกอิน — โชว์ความคืบหน้าที่เก็บไว้ในเครื่อง (ถ้ามี) */
+          <LocalDoctorCard />
+        )}
+      </div>
 
       {isEmpty ? (
         <div className="mt-8 rounded-xl border bg-white py-16 text-center text-muted-foreground">

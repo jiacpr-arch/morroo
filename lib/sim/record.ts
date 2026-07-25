@@ -15,6 +15,12 @@ import {
   type ExpertiseRun,
   type SpecialtyExpertise,
 } from "./expertise";
+import {
+  appendLocalRun,
+  clearLocalRuns,
+  readLocalRuns,
+  summarizeLocal,
+} from "./local-progress";
 import type { Grade, SimState } from "./types";
 
 /** XP ตามเกรด (แพ้ได้ปลอบใจ 10) — ระดับเดียวกับ challenge ของ school */
@@ -32,6 +38,13 @@ export interface SimRunResult {
 
 export interface RecordedRun {
   loggedIn: boolean;
+  /**
+   * ยศ/XP ที่แสดงมาจาก localStorage ไม่ใช่บัญชีจริง — จอ debrief ต้องบอกผู้เล่น
+   * ตามตรงว่ายังไม่ถาวรจนกว่าจะล็อกอิน
+   */
+  isLocal: boolean;
+  /** จำนวนรอบที่เก็บไว้ในเครื่อง (โหมดยังไม่ล็อกอิน) */
+  localRuns: number;
   xpEarned: number;
   newBadges: string[];
   /** ยศก่อน/หลังรอบนี้ — null เมื่อไม่ได้ล็อกอินหรืออ่าน XP ไม่สำเร็จ */
@@ -47,12 +60,93 @@ export interface RecordedRun {
 function emptyRun(): RecordedRun {
   return {
     loggedIn: false,
+    isLocal: false,
+    localRuns: 0,
     xpEarned: 0,
     newBadges: [],
     ...NO_RANK_DELTA,
     expertise: null,
     expertiseUp: false,
   };
+}
+
+/**
+ * บันทึกผลของผู้เล่นที่ยังไม่ล็อกอินลงเครื่อง แล้วคืนยศ/ความเชี่ยวชาญที่คิดจาก
+ * ประวัติในเครื่อง — จอ debrief จะได้แสดงความคืบหน้าเหมือนคนที่ล็อกอิน
+ * (ติดป้ายว่ายังไม่ถาวร) แทนที่จะไม่เห็นอะไรเลย
+ */
+function recordLocalRun(
+  scenarioSlug: string,
+  state: SimState,
+  result: SimRunResult,
+  specialty: string | null,
+): RecordedRun {
+  const xp = result.won ? SIM_XP[result.grade] : SIM_XP_LOSS;
+  const runs = appendLocalRun({
+    slug: scenarioSlug,
+    won: result.won,
+    grade: result.grade,
+    score: result.score,
+    specialty,
+    difficulty: state.difficulty,
+    xp,
+    at: Date.now(),
+  });
+
+  const before = summarizeLocal(runs.slice(0, -1));
+  const after = summarizeLocal(runs);
+  const expertise = specialty
+    ? summarizeExpertise(runs.map((r) => ({ specialty: r.specialty, won: r.won })))
+        .find((s) => s.specialty === specialty) ?? null
+    : null;
+
+  return {
+    loggedIn: false,
+    isLocal: true,
+    localRuns: runs.length,
+    xpEarned: xp,
+    newBadges: [],
+    ...rankDelta(before.xp, after.xp),
+    expertise,
+    expertiseUp: expertise
+      ? expertise.tier.level > expertiseFor(result.won ? expertise.wins - 1 : expertise.wins).level
+      : false,
+  };
+}
+
+/**
+ * ยกผลที่เล่นไว้ตอนยังไม่ล็อกอินเข้าบัญชี — เรียกครั้งเดียวตอนบันทึกผลรอบแรก
+ * หลังล็อกอิน แล้วล้างของในเครื่องทิ้ง
+ *
+ * XP รวมเป็นก้อนเดียว (reason `sim:claim:<n>`) แทนที่จะยิงทีละรอบ เพื่อให้ตาม
+ * รอยได้ว่าก้อนไหนมาจากการยกเข้า ไม่ใช่การเล่นจริงหลังล็อกอิน
+ */
+async function claimLocalRuns(supabase: Supabase, userId: string): Promise<void> {
+  const runs = readLocalRuns();
+  if (runs.length === 0) return;
+  // ล้างก่อนเขียน — ถ้า insert ล้มกลางทาง จะยอมเสียประวัติในเครื่องดีกว่าเสี่ยง
+  // ยกซ้ำสองรอบแล้ว XP เด้งเป็นเท่าตัว
+  clearLocalRuns();
+  try {
+    await supabase.from("sim_runs").insert(
+      runs.map((r) => ({
+        user_id: userId,
+        scenario_slug: r.slug,
+        specialty: r.specialty,
+        difficulty: r.difficulty,
+        won: r.won,
+        grade: r.grade,
+        score: r.score,
+        wrong_count: 0,
+        duration_sec: 0,
+        metrics: { claimed_from_local: true, played_at: r.at },
+      })),
+    );
+    const total = summarizeLocal(runs).xp;
+    if (total > 0) await awardXp(total, `sim:claim:${runs.length}`);
+  } catch {
+    // Non-blocking — ผู้เล่นยังเล่นต่อได้ แค่ประวัติเก่าไม่ได้ยกเข้า
+  }
 }
 
 type Supabase = ReturnType<typeof createClient>;
@@ -76,13 +170,16 @@ export async function recordSimRun(
   specialtyRaw?: string | null,
 ): Promise<RecordedRun> {
   const out = emptyRun();
+  const specialty = specialtyForRun(specialtyRaw);
   try {
     const supabase = createClient();
     const { data: { user } } = await supabase.auth.getUser();
-    if (!user) return out;
+    if (!user) return recordLocalRun(scenarioSlug, state, result, specialty);
     out.loggedIn = true;
 
-    const specialty = specialtyForRun(specialtyRaw);
+    // ล็อกอินแล้วเจอประวัติค้างในเครื่อง = เพิ่งสมัคร/เพิ่งเข้าระบบ → ยกเข้าบัญชี
+    await claimLocalRuns(supabase, user.id);
+
     const xpBefore = await readSchoolXp(user.id);
 
     await supabase.from("sim_runs").insert({

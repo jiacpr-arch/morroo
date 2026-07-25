@@ -674,7 +674,17 @@ export default function SimRunner({
               ))}
             </div>
           )}
-          {reward && reward.loggedIn && <RankProgressCard {...reward} />}
+          {reward && (reward.loggedIn || reward.isLocal) && (
+            <>
+              <RankProgressCard {...reward} />
+              {reward.isLocal && (
+                <p className="cbs-local-note">
+                  ความคืบหน้านี้เก็บไว้ในเครื่องนี้เท่านั้น ({reward.localRuns} เคส) —
+                  ล็อกอินแล้วระบบจะยกเข้าบัญชีให้ทันที
+                </p>
+              )}
+            </>
+          )}
           {reward && !reward.loggedIn && !practice && (
             <DebriefLeadCta
               slug={scenario.slug}

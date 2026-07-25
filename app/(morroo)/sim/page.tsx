@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { getMyDoctorProfile, getMySimBests, getSimScenarios } from "@/lib/supabase/queries-sim";
 import DoctorCard from "@/components/casegame/DoctorCard";
+import LocalDoctorCard from "@/components/casegame/LocalDoctorCard";
 
 export const metadata: Metadata = {
   title: "Code Blue Sim — เกมจำลองกู้ชีพ ACLS",
@@ -72,15 +73,18 @@ export default async function SimHubPage() {
         </div>
       </section>
 
-      {doctor && (
-        <div className="mt-6">
+      <div className="mt-6">
+        {doctor ? (
           <DoctorCard
             xp={doctor.xp}
             specialties={doctor.specialties}
             totalWins={doctor.totalWins}
           />
-        </div>
-      )}
+        ) : (
+          /* ยังไม่ล็อกอิน — โชว์ความคืบหน้าที่เก็บไว้ในเครื่อง (ถ้ามี) */
+          <LocalDoctorCard />
+        )}
+      </div>
 
       {/* รายการเคส ACLS */}
       <h2 className="mb-3 mt-8 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
