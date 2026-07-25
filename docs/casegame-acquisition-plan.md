@@ -75,22 +75,34 @@
 
 ---
 
-## 3. งานที่เหลือ (ต้องทำในหน้า Ads Manager — ระบบทำแทนไม่ได้)
+## 3. สถานะการยิงแอด
+
+> อัปเดต 2026-07-25 — ✅ = ทำแล้ว · ⬜ = ยังต้องทำ
 
 ### 3.1 ก่อนเปิดงบบาทแรก
-1. ตั้ง `META_TEST_EVENT_CODE` → เล่น 1 รอบ → ยืนยันใน Events Manager ว่าเห็น `ViewContent` 2 ใบ พร้อม `content_type: casegame`
-2. deploy แล้วรอ 48 ชม. → เช็ค `/admin/analytics` ว่าการ์ด "เกมเคส — funnel" มีตัวเลขจริง
-3. สร้าง **Custom Conversion "เริ่มเล่นเกมเคส"** บน pixel `966371002896288` จากกติกา `content_name` ขึ้นต้นด้วย `casegame_start`
-4. สร้าง **Custom Audience** `[MR] คนเล่นเกมเคส 180 วัน` (กติกา `content_type = casegame`) — จะกลายเป็น seed คุณภาพสูงสุดที่เรามี และช่วยปลดล็อก Lookalike 1% ที่ติดเงื่อนไข pool < 100 คน
+- [x] **ยืนยันว่า event ยิงจริงบน production** — `casegame_start` / `casegame_first_decision` / `casegame_complete` มีข้อมูลจริงในตาราง `analytics_events` แล้ว
+- [ ] **ยืนยันฝั่ง Meta ด้วย Test Events** — ตั้ง `META_TEST_EVENT_CODE` แล้วเล่น 1 รอบ ต้องเห็น `ViewContent` พร้อม `content_type: casegame`
+  ⚠️ ยังไม่ได้ทำ · dataset stats รวมแยกไม่ได้ว่า `ViewContent` ใบไหนมาจากเกม เพราะหน้า `/register` ก็ยิง event เดียวกัน
+- [ ] **สร้าง Custom Conversion "เริ่มเล่นเกมเคส"** บน pixel `966371002896288` จากกติกา `content_name` **ขึ้นต้นด้วย** `casegame_start`
+  ⚠️ **ต้องทำในหน้า Events Manager เอง** — MCP ไม่มีเครื่องมือสร้าง Custom Conversion · ตัวนี้คือ optimization target ของทั้งแผน
+- [x] **สร้าง Custom Audience** `[MR] คนเล่นเกมเคส 180 วัน` = `52588558510197`
+  กติกาใช้ URL (`url i_contains "/sim/"`) ไม่ใช่ `content_type` เพราะ WCA rule รองรับ filter แค่ `url`/`event` · เป็น seed ของ Lookalike 1% ที่ติดเงื่อนไข pool < 100 คน
 
-### 3.2 แคมเปญ
+### 3.2 แคมเปญ — สร้างแล้ว ทั้งหมดยัง PAUSED (ยังไม่เสียเงิน)
 
-`[MR]_Traffic_CaseGame` — Objective Traffic / optimize Landing Page Views · งบ **฿100–150/วัน**
-วิ่ง**คู่กับ** `[MR]_Traffic_FreeTrial` (`52580729960597`) เพื่อเทียบ **ไม่ใช่ไปแทนที่** · เริ่มที่ ad set Broad (TH, 20–35) ตัวเดียว
+| สิ่งที่สร้าง | ID | สถานะ |
+|---|---|---|
+| Campaign `[MR]_Traffic_CaseGame` (OUTCOME_TRAFFIC) | `52588558588397` | PAUSED |
+| Ad set `CG1 Broad — TH 20-35` (LPV, ฿120/วัน, ABO) | `52588558665397` | PAUSED |
+| Ad `[MR] CaseGame — Hub` | `52588558807597` | PAUSED |
+| Ad `[MR] CaseGame — Direct` | `52588558810397` | PAUSED |
 
-**ทดสอบปลายทาง 2 แบบตั้งแต่วันแรก** (กระทบ `casegame_start` โดยตรง):
-- ก. หน้ารวม `/casegame?utm_source=fb&utm_medium=paid&utm_campaign=casegame` — เห็นว่ามีหลายเคส แต่เพิ่ม 1 คลิก
-- ข. ยิงเข้าเคสเด่นตรงๆ `/sim/<slug>?...` — ตัดคลิกทิ้ง ดัน `casegame_start` สูงสุด
+ปิด Advantage+ Audience (`advantage_audience: 0`) ให้อายุ 20–35 เป็นช่วงตายตัว ตามกฎไทยห้ามยิงต่ำกว่า 20
+ต้องวิ่ง**คู่กับ** `[MR]_Traffic_FreeTrial` (`52580729960597` — **ACTIVE อยู่จริง** ใช้ไป ฿849 ใน 7 วัน) เพื่อเทียบ **ไม่ใช่ไปแทนที่**
+
+**ทดสอบปลายทาง 2 แบบด้วย ad 2 ตัวใน ad set เดียว** (กระทบ `casegame_start` โดยตรง):
+- ก. Hub → `/casegame?...&utm_content=hub` — เห็นว่ามีหลายเคส แต่เพิ่ม 1 คลิก
+- ข. Direct → `/sim/lc-testicular-torsion-01?...&utm_content=direct` — ตัดคลิกทิ้ง ดัน `casegame_start` สูงสุด
 
 วัดด้วย `casegame_start / LPV` ของแต่ละ ad
 
@@ -113,7 +125,7 @@
 
 | ขั้น | ตัววัด | เกณฑ์ผ่าน |
 |---|---|---|
-| เปิดงบได้ | การ์ด "เกมเคส — funnel" มีตัวเลข + Meta Test Events ผ่าน | ครบทุกข้อ |
+| เปิดงบได้ | Custom Conversion สร้างแล้ว + Meta Test Events ผ่าน (§3.1 สองข้อที่ยังค้าง) | ครบทุกข้อ |
 | เกมน่าเล่นจริง | ตัดสินใจข้อแรก / เริ่มเล่น | > 70% |
 | เกมจบได้จริง | เล่นจบ / เริ่มเล่น | > 40% |
 | **ตัวชี้ขาด** | ให้อีเมล / เล่นจบ | **> 15%** |
