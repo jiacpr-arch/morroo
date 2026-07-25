@@ -131,7 +131,13 @@ export function buildCtaClickProps(input: CtaClickInput): TrackProps {
 // ฝั่ง Meta CAPI
 // ---------------------------------------------------------------------------
 
-export type CaseGameCapiEvent = "start" | "complete";
+/**
+ * `first_decision` ส่งเข้า Meta ด้วย เพราะเมื่อโฆษณายิงเข้าโหมด autostart แล้ว
+ * `start` จะเกิดทุกครั้งที่หน้าโหลด = มีค่าเท่ากับ Landing Page View ใช้เป็น
+ * optimization target ไม่ได้อีกต่อไป — "ตัดสินใจข้อแรก" คือสัญญาณแรกที่พิสูจน์
+ * ว่าคนคนนั้นเล่นจริง และยังมีปริมาณมากพอให้อัลกอริทึมเรียนรู้
+ */
+export type CaseGameCapiEvent = "start" | "first_decision" | "complete";
 
 /**
  * content_name ที่ใช้สร้าง Custom Conversion ใน Events Manager

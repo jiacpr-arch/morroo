@@ -83,10 +83,16 @@ interface SimRunnerProps {
   /** utm ที่ส่งต่อมาจาก URL — ติดไปกับ lead ที่เก็บได้ท้ายเกม */
   campaign?: string | null;
   adSet?: string | null;
+  /**
+   * ข้ามจอ title แล้วเข้าเกมทันที — ใช้กับทราฟฟิกจากโฆษณา (`?start=1`) เพื่อให้
+   * คนที่กดโฆษณาเข้ามาได้เล่นทันทีโดยไม่ต้องกดอะไรอีก
+   */
+  autostart?: boolean;
 }
 
 export default function SimRunner({
   scenario, practice = false, characters, campaign = null, adSet = null,
+  autostart = false,
 }: SimRunnerProps) {
   const dbCharacters = useMemo(
     () => new Map((characters ?? []).map((c) => [c.slug, c])),
@@ -163,6 +169,17 @@ export default function SimRunner({
     t.type = null; t.dec = null; t.metronome = null; t.misc = [];
   }, []);
   useEffect(() => clearAllTimers, [clearAllTimers]);
+
+  // ทราฟฟิกจากโฆษณา: เข้าเกมทันทีโดยไม่ต้องกดจอ title ก่อน
+  // ยิงครั้งเดียวตอน mount — startGame เป็น function declaration จึง hoist ขึ้นมา
+  // ใช้ได้ และเอฟเฟกต์รันหลัง render อยู่แล้ว
+  const autostartedRef = useRef(false);
+  useEffect(() => {
+    if (!autostart || autostartedRef.current) return;
+    autostartedRef.current = true;
+    startGame();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autostart]);
 
   // ---- flow ทั้งหมดเป็น plain functions: เรียกไขว้/เรียกซ้ำกันได้อิสระ
   //      ปลอดภัยจาก stale closure เพราะแตะเฉพาะ ref + state setter (stable) ----
@@ -396,12 +413,17 @@ export default function SimRunner({
     const st = S.current;
 
     // สัญญาณ "ไม่ใช่คนเปิดผ่าน" — ยิงครั้งเดียวต่อรอบเล่น ไม่ว่าจะตอบถูกหรือผิด
+    // ส่งเข้า Meta ด้วย เพราะในโหมด autostart ตัว start เท่ากับ page view ไปแล้ว
+    // ตัวนี้จึงเป็น conversion ตัวแรกที่บอกได้จริงว่ามีคนเล่น
     if (!practice && !firstDecisionSentRef.current) {
       firstDecisionSentRef.current = true;
       track(
         CASEGAME_EVENTS.firstDecision,
         buildFirstDecisionProps({ slug: scenario.slug, category: scenario.category })
       );
+      if (runIdRef.current) {
+        sendCaseGameCapi("first_decision", scenario.slug, runIdRef.current);
+      }
     }
 
     if (option.ok) {
@@ -451,6 +473,9 @@ export default function SimRunner({
   }
 
   function onDialogTap() {
+    // โหมด autostart ไม่มี user gesture ตอน startGame — AudioContext เลยถูกสร้าง
+    // แบบ suspended ปลดล็อกที่การแตะครั้งแรกแทน
+    if (!mutedRef.current) initAudio();
     if (busyRef.current) return;
     if (timers.current.type) { finishTyping(); return; }
     if (!awaitTap) return;

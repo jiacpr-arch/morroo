@@ -14,7 +14,17 @@ export const dynamic = "force-dynamic";
  * ?exclude=<slug> กันสุ่มได้เคสเดิมซ้ำตอนกดจากในเกม
  */
 export async function GET(request: Request) {
-  const exclude = new URL(request.url).searchParams.get("exclude");
+  const sp = new URL(request.url).searchParams;
+  const exclude = sp.get("exclude");
+
+  // คงพารามิเตอร์แคมเปญ + `start` ไว้ ไม่งั้นคนที่มาจากโฆษณาแล้วกดสุ่มเคสถัดไป
+  // จะหลุด attribution และไม่ได้เข้าเกมทันทีเหมือนตอนแรก
+  const carry = new URLSearchParams();
+  for (const key of ["utm_source", "utm_medium", "utm_campaign", "utm_content", "start"]) {
+    const value = sp.get(key);
+    if (value) carry.set(key, value);
+  }
+  const qs = carry.toString();
 
   const [polished, longcase, meq] = await Promise.all([
     getSimScenariosByCategory("longcase"),
@@ -29,7 +39,8 @@ export async function GET(request: Request) {
   ].filter((s) => s !== exclude);
 
   // ไม่มีเคสอื่นให้สุ่ม → กลับหน้ารวมให้ผู้ใช้เลือกเอง
-  if (slugs.length === 0) redirect("/casegame");
+  if (slugs.length === 0) redirect(qs ? `/casegame?${qs}` : "/casegame");
 
-  redirect(`/sim/${slugs[Math.floor(Math.random() * slugs.length)]}`);
+  const slug = slugs[Math.floor(Math.random() * slugs.length)];
+  redirect(qs ? `/sim/${slug}?${qs}` : `/sim/${slug}`);
 }

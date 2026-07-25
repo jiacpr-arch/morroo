@@ -29,8 +29,10 @@ export const dynamic = "force-dynamic";
  * (หน้ารวม vs ยิงเข้าเคสตรง) ไม่ได้เลย
  */
 function utmQuery(sp: { [key: string]: string | string[] | undefined }): string {
+  // `start` ส่งต่อด้วย เพื่อให้คนที่มาจากโฆษณาแล้วเลือกเคสจากหน้านี้เข้าเกมทันที
+  // เหมือนกับคนที่โฆษณายิงเข้าเคสตรงๆ
   const carry = new URLSearchParams();
-  for (const key of ["utm_source", "utm_medium", "utm_campaign", "utm_content"]) {
+  for (const key of ["utm_source", "utm_medium", "utm_campaign", "utm_content", "start"]) {
     const value = sp[key];
     if (typeof value === "string" && value) carry.set(key, value);
   }
