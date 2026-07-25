@@ -60,12 +60,18 @@ test("playing a case through to debrief fires the funnel events and shows the le
 }) => {
   // เล่นจนจบเคสต้องคลิกหลายสิบครั้ง — งบ 30 วิ default ไม่พอเมื่อรันขนาน
   test.slow();
+  const tracked: { name: string; props: Record<string, unknown> }[] = [];
   const trackedEvents: string[] = [];
   const capiEvents: string[] = [];
 
   await page.route("**/api/analytics/track", async (route) => {
-    const body = route.request().postDataJSON() as { event_name?: string } | null;
-    if (body?.event_name) trackedEvents.push(body.event_name);
+    const body = route.request().postDataJSON() as
+      | { event_name?: string; properties?: Record<string, unknown> }
+      | null;
+    if (body?.event_name) {
+      trackedEvents.push(body.event_name);
+      tracked.push({ name: body.event_name, props: body.properties ?? {} });
+    }
     await route.fulfill({ status: 200, body: JSON.stringify({ ok: true }) });
   });
   await page.route("**/api/track/casegame", async (route) => {
@@ -102,4 +108,20 @@ test("playing a case through to debrief fires the funnel events and shows the le
   const cta = page.locator(".cbs-lead-cta");
   await expect(cta).toBeVisible();
   await expect(cta.locator("input[type=email]")).toBeVisible();
+
+  // ...และต้องยิง cta_view ด้วย ไม่งั้นเวลาเห็น lead = 0 จะแยกไม่ออกว่าไม่มีคน
+  // เล่นถึง, เห็นแล้วไม่กรอก หรือฟอร์มพัง
+  await expect
+    .poll(() => trackedEvents.includes("casegame_cta_view"), { timeout: 5_000 })
+    .toBe(true);
+
+  // ทุก event ของรอบเล่นเดียวกันต้องมี run_id ค่าเดียวกัน — เป็นตัวที่ใช้ต่อ
+  // funnel ใน SQL และใช้ตัดการรีโหลดหน้าซ้ำในโหมด autostart ออก
+  const runIds = new Set(
+    ["casegame_start", "casegame_first_decision", "casegame_complete", "casegame_cta_view"].map(
+      (name) => tracked.find((e) => e.name === name)?.props.run_id
+    )
+  );
+  expect(runIds.size).toBe(1);
+  expect([...runIds][0]).toBeTruthy();
 });
