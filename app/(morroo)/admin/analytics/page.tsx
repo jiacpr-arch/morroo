@@ -38,6 +38,7 @@ type Summary = {
   caseGameStarts: number;
   caseGameFirstDecisions: number;
   caseGameCompletes: number;
+  caseGameCtaViews: number;
   caseGameLeads: number;
   landingViews: { surface: string; count: number }[];
   topPaths: { path: string; count: number }[];
@@ -46,6 +47,8 @@ type Summary = {
   checkoutConv: number | null;
   ctaToSignupConv: number | null;
   caseGameCompleteConv: number | null;
+  /** เล่นจบ → เห็นฟอร์มเก็บอีเมล (คนที่ล็อกอินอยู่แล้วจะไม่เห็น) */
+  caseGameCtaViewConv: number | null;
   caseGameLeadConv: number | null;
 };
 
@@ -239,8 +242,15 @@ export default function AdminAnalyticsPage() {
           />
           <FunnelRow
             from="เล่นจบ"
-            to="ให้อีเมล (lead)"
+            to="เห็นฟอร์มขออีเมล"
             fromValue={summary.caseGameCompletes}
+            toValue={summary.caseGameCtaViews}
+            conv={summary.caseGameCtaViewConv}
+          />
+          <FunnelRow
+            from="เห็นฟอร์ม"
+            to="ให้อีเมล (lead)"
+            fromValue={summary.caseGameCtaViews}
             toValue={summary.caseGameLeads}
             conv={summary.caseGameLeadConv}
           />
@@ -407,6 +417,7 @@ function aggregate(rows: EventRow[]): Summary {
   let caseGameStarts = 0;
   let caseGameFirstDecisions = 0;
   let caseGameCompletes = 0;
+  let caseGameCtaViews = 0;
   let caseGameLeads = 0;
   const sessions = new Set<string>();
   const pathCounts = new Map<string, number>();
@@ -464,6 +475,9 @@ function aggregate(rows: EventRow[]): Summary {
       case "casegame_complete":
         caseGameCompletes++;
         break;
+      case "casegame_cta_view":
+        caseGameCtaViews++;
+        break;
       case "casegame_lead":
         caseGameLeads++;
         break;
@@ -488,6 +502,7 @@ function aggregate(rows: EventRow[]): Summary {
     caseGameStarts,
     caseGameFirstDecisions,
     caseGameCompletes,
+    caseGameCtaViews,
     caseGameLeads,
     landingViews: toSorted(landingCounts).map(([surface, count]) => ({
       surface,
@@ -502,8 +517,12 @@ function aggregate(rows: EventRow[]): Summary {
     caseGameCompleteConv:
       caseGameStarts > 0 ? (caseGameCompletes / caseGameStarts) * 100 : null,
     // ตัวชี้ขาดของแคมเปญเกมเคส: เล่นจบแล้วยอมให้อีเมลกี่เปอร์เซ็นต์
+    caseGameCtaViewConv:
+      caseGameCompletes > 0 ? (caseGameCtaViews / caseGameCompletes) * 100 : null,
+    // ตัวหารคือ "เห็นฟอร์ม" ไม่ใช่ "เล่นจบ" — เดิมหารด้วยยอดเล่นจบซึ่งรวมคนที่
+    // ล็อกอินอยู่แล้ว (ไม่เคยเห็นฟอร์ม) ทำให้ conversion ต่ำกว่าจริงเสมอ
     caseGameLeadConv:
-      caseGameCompletes > 0 ? (caseGameLeads / caseGameCompletes) * 100 : null,
+      caseGameCtaViews > 0 ? (caseGameLeads / caseGameCtaViews) * 100 : null,
   };
 }
 

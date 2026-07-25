@@ -35,12 +35,26 @@
 | `casegame_start` | กด "รับเคส" / "เล่นอีกครั้ง" | ปริมาณหัวกรวย · `is_replay` แยกเล่นซ้ำ |
 | `casegame_first_decision` | ตัดสินใจข้อแรก | สัญญาณ "ไม่ใช่คนเปิดผ่าน" |
 | `casegame_complete` | จบเคส | เกรด/แพ้ชนะ/เวลาจริง (`duration_sec`) |
-| `casegame_cta_click` | คลิก CTA ท้ายเกม | แยก `lead_form` vs `login` |
+| `casegame_cta_view` | ฟอร์มขออีเมลโผล่บนจอ debrief | **ตัวหารของขั้นสุดท้าย** |
+| `casegame_cta_click` | คลิก CTA ท้ายเกม | แยก `lead_form` / `login` / `pricing` |
 | `casegame_lead` | เก็บอีเมลสำเร็จ | **ตัวชี้ขาดของแคมเปญ** |
 
 > `casegame_lead` ยิงคู่กับ `lp_lead_form_submit` โดยตั้งใจ — ตัวหลังทำให้ยอด lead รวมของทั้งระบบยังครบ ส่วนตัวแรกให้หน้าแอดมินนับ lead จากเกมได้โดยไม่ต้องดึงคอลัมน์ `properties` มาทั้งก้อน (query จำกัด 50k แถว)
 
 ทั้งหมดข้ามเมื่ออยู่ในโหมด `practice` (admin playtest) จะได้ไม่ปนสถิติจริง
+
+> **`run_id` ติดไปกับทุก event ของเกม** (`start` / `first_decision` / `complete` / `cta_view` / `cta_click` / `lead`) — 1 รอบเล่น = 1 id
+> จำเป็นเพราะสองเรื่อง: (1) โหมด autostart ทำให้การ **รีโหลดหน้า** นับเป็น `start` ใหม่ทุกครั้ง แยกจากการกด "เล่นอีกครั้ง" ไม่ออกถ้าไม่มี id, (2) ถ้าไม่มี id การจับคู่ `start` กับ `complete` ทำได้แค่ระดับ session+slug ซึ่งพังทันทีที่คนเล่นเคสเดิมซ้ำ
+>
+> ```sql
+> -- funnel ที่ dedupe การรีโหลดออกแล้ว
+> select count(distinct properties->>'run_id') filter (where event_name='casegame_start')      as starts,
+>        count(distinct properties->>'run_id') filter (where event_name='casegame_cta_view')   as saw_form,
+>        count(distinct properties->>'run_id') filter (where event_name='casegame_lead')       as leads
+> from analytics_events where created_at > now() - interval '7 days';
+> ```
+
+> **ทำไมต้องมี `cta_view`:** ฟอร์มขออีเมลโผล่เฉพาะคนที่ **เล่นจบ + ยังไม่ล็อกอิน + ไม่ใช่โหมดซ้อม** ถ้าวัดแต่ `casegame_lead` แล้วเห็นเลข 0 จะแยกไม่ออกเลยว่า "ไม่มีใครเล่นถึง", "เห็นแล้วไม่กรอก" หรือ "ฟอร์มพัง" — ซึ่งเป็นสามปัญหาที่แก้คนละทางกันหมด
 
 ### 2.2 ส่ง conversion เข้า Meta
 
@@ -70,7 +84,8 @@
 ### 2.5 รายงาน
 
 `analytics_events` ไม่มี allowlist ฝั่งเขียน แต่ฝั่งอ่าน hardcode ชื่อ event ไว้ จึงลงทะเบียนเพิ่มที่:
-- `app/(morroo)/admin/analytics/page.tsx` — การ์ดใหม่ "เกมเคส — funnel" (เริ่มเล่น → ตัดสินใจข้อแรก → เล่นจบ → ให้อีเมล)
+- `app/(morroo)/admin/analytics/page.tsx` — การ์ด "เกมเคส — funnel" (เริ่มเล่น → ตัดสินใจข้อแรก → เล่นจบ → **เห็นฟอร์ม** → ให้อีเมล)
+  ขั้น "ให้อีเมล" หารด้วย **ยอดเห็นฟอร์ม** ไม่ใช่ยอดเล่นจบ — ยอดเล่นจบรวมคนที่ล็อกอินอยู่แล้วซึ่งไม่เคยเห็นฟอร์ม ทำให้ conversion ต่ำกว่าจริงเสมอ
 - `lib/analytics-weekly.ts` — เข้า digest รายสัปดาห์
 
 ---
@@ -81,6 +96,8 @@
 
 ### 3.1 ก่อนเปิดงบบาทแรก
 - [x] **ยืนยันว่า event ยิงจริงบน production** — `casegame_start` / `casegame_first_decision` / `casegame_complete` มีข้อมูลจริงในตาราง `analytics_events` แล้ว
+  ⚠️ ตัวแรกสุดในตารางคือ **25 ก.ค. 2026** — ก่อนหน้านั้น `/sim/<slug>` มี 231 pageviews โดยไม่มี event เลย ข้อมูล funnel ย้อนหลังจึงไม่มี ใช้เทียบ baseline ไม่ได้
+- [ ] **ยืนยัน `casegame_cta_view` → `casegame_lead` ยิงจริงบน production** — สองตัวนี้ยังไม่เคยมีข้อมูลสักแถว (e2e ครอบแล้วว่ายิงถูกใน browser จริง แต่ยังไม่มีผู้เล่นจริงเดินผ่านครบ)
 - [ ] **ยืนยันฝั่ง Meta ด้วย Test Events** — ตั้ง `META_TEST_EVENT_CODE` แล้วเล่น 1 รอบ ต้องเห็น `ViewContent` พร้อม `content_type: casegame`
   ⚠️ ยังไม่ได้ทำ · dataset stats รวมแยกไม่ได้ว่า `ViewContent` ใบไหนมาจากเกม เพราะหน้า `/register` ก็ยิง event เดียวกัน
 - [ ] **สร้าง Custom Conversion "เล่นเกมเคสจริง"** บน pixel `966371002896288` จากกติกา `content_name` **ขึ้นต้นด้วย** `casegame_first_decision`

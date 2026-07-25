@@ -17,8 +17,8 @@ import {
 } from "@/lib/sim/sound";
 import { SIM_BADGE_NAMES, recordSimRun, type RecordedRun } from "@/lib/sim/record";
 import {
-  CASEGAME_EVENTS, buildCompleteProps, buildFirstDecisionProps, buildStartProps,
-  newRunId, sendCaseGameCapi,
+  CASEGAME_EVENTS, buildCompleteProps, buildCtaClickProps, buildFirstDecisionProps,
+  buildStartProps, newRunId, sendCaseGameCapi,
 } from "@/lib/sim/track";
 import { track } from "@/lib/analytics";
 import DebriefLeadCta from "@/components/sim/DebriefLeadCta";
@@ -292,6 +292,7 @@ export default function SimRunner({
           score,
           isHiscore,
           durationMs: startedAtRef.current ? Date.now() - startedAtRef.current : 0,
+          runId: runIdRef.current,
         })
       );
       if (runIdRef.current) sendCaseGameCapi("complete", scenario.slug, runIdRef.current);
@@ -420,7 +421,11 @@ export default function SimRunner({
       firstDecisionSentRef.current = true;
       track(
         CASEGAME_EVENTS.firstDecision,
-        buildFirstDecisionProps({ slug: scenario.slug, category: scenario.category })
+        buildFirstDecisionProps({
+          slug: scenario.slug,
+          category: scenario.category,
+          runId: runIdRef.current,
+        })
       );
       if (runIdRef.current) {
         sendCaseGameCapi("first_decision", scenario.slug, runIdRef.current);
@@ -526,6 +531,7 @@ export default function SimRunner({
           difficulty,
           isReplay,
           sourceCaseId: scenario.sourceCaseId,
+          runId: runIdRef.current,
         })
       );
       sendCaseGameCapi("start", scenario.slug, runIdRef.current);
@@ -654,6 +660,7 @@ export default function SimRunner({
               slug={scenario.slug}
               category={scenario.category}
               grade={result.grade}
+              runId={runIdRef.current}
               campaign={campaign}
               adSet={adSet}
             />
@@ -715,7 +722,23 @@ export default function SimRunner({
           {!practice && (
             <p className="cbs-upsell">
               อยากฝึกครบทุกเคส + ข้อสอบเต็มระบบ?{" "}
-              <Link href="/pricing">ดูแพ็กเกจสมาชิก →</Link>
+              <Link
+                href="/pricing"
+                onClick={() =>
+                  track(
+                    CASEGAME_EVENTS.ctaClick,
+                    buildCtaClickProps({
+                      slug: scenario.slug,
+                      category: scenario.category,
+                      grade: result.grade,
+                      runId: runIdRef.current,
+                      target: "pricing",
+                    })
+                  )
+                }
+              >
+                ดูแพ็กเกจสมาชิก →
+              </Link>
             </p>
           )}
         </section>

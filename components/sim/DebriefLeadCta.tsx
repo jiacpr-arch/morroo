@@ -7,11 +7,16 @@
 // อีเมลแลกของที่ผูกกับสิ่งที่เพิ่งเล่นจบ แล้วส่งต่อเข้าเส้นทาง lead → redeem
 // code → drip ที่มีอยู่แล้ว (lib/leads.ts) โดยไม่ต้องสร้างระบบใหม่
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { track } from "@/lib/analytics";
 import { trackLead } from "@/lib/analytics/conversions";
-import { buildCtaClickProps, CASEGAME_EVENTS, caseGameCategory } from "@/lib/sim/track";
+import {
+  buildCtaClickProps,
+  buildCtaViewProps,
+  CASEGAME_EVENTS,
+  caseGameCategory,
+} from "@/lib/sim/track";
 
 const SURFACE = "casegame_debrief";
 
@@ -19,11 +24,20 @@ interface Props {
   slug: string;
   category?: string;
   grade: string | null;
+  /** id ของรอบเล่นที่เพิ่งจบ — ผูก view/click/lead เข้ากับ start ตัวเดียวกัน */
+  runId: string;
   campaign?: string | null;
   adSet?: string | null;
 }
 
-export default function DebriefLeadCta({ slug, category, grade, campaign, adSet }: Props) {
+export default function DebriefLeadCta({
+  slug,
+  category,
+  grade,
+  runId,
+  campaign,
+  adSet,
+}: Props) {
   const [email, setEmail] = useState("");
   const [consent, setConsent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -31,12 +45,25 @@ export default function DebriefLeadCta({ slug, category, grade, campaign, adSet 
 
   const isLongcase = caseGameCategory(category) === "longcase";
 
+  // ตัวหารของ funnel ขั้นสุดท้าย — คอมโพเนนต์นี้ถูก render เฉพาะตอนฟอร์มโผล่จริง
+  // (จบเกม + ยังไม่ล็อกอิน + ไม่ใช่โหมดซ้อม) การ mount จึงเท่ากับ "เห็นฟอร์ม"
+  // กันซ้ำด้วย runId เผื่อ effect ถูกเรียกสองรอบ (StrictMode) หรือ re-render
+  const viewedRunRef = useRef("");
+  useEffect(() => {
+    if (viewedRunRef.current === runId) return;
+    viewedRunRef.current = runId;
+    track(CASEGAME_EVENTS.ctaView, buildCtaViewProps({ slug, category, grade, runId }));
+  }, [runId, slug, category, grade]);
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!consent || submitting) return;
     setSubmitting(true);
     setErrorMsg("");
-    track(CASEGAME_EVENTS.ctaClick, buildCtaClickProps({ slug, category, grade, target: "lead_form" }));
+    track(
+      CASEGAME_EVENTS.ctaClick,
+      buildCtaClickProps({ slug, category, grade, runId, target: "lead_form" })
+    );
 
     try {
       const res = await fetch("/api/leads/create", {
@@ -71,6 +98,7 @@ export default function DebriefLeadCta({ slug, category, grade, campaign, adSet 
         slug,
         campaign: campaign ?? SURFACE,
         ad_set: adSet ?? null,
+        run_id: runId,
       });
       trackLead(json.code);
       window.location.href = `/redeem/${json.code}`;
@@ -125,7 +153,7 @@ export default function DebriefLeadCta({ slug, category, grade, campaign, adSet 
           onClick={() =>
             track(
               CASEGAME_EVENTS.ctaClick,
-              buildCtaClickProps({ slug, category, grade, target: "login" })
+              buildCtaClickProps({ slug, category, grade, runId, target: "login" })
             )
           }
         >
