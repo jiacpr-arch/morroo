@@ -40,6 +40,7 @@ export default async function SimPlayPage({ params, searchParams }: PageProps) {
       characters={characters}
       campaign={firstParam(sp.utm_campaign) ?? firstParam(sp.campaign)}
       adSet={firstParam(sp.utm_content) ?? firstParam(sp.ad_set)}
+      autostart={firstParam(sp.start) === "1"}
     />
   );
 }

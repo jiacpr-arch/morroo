@@ -10,27 +10,47 @@ test("sim hub lists the built-in VF scenario", async ({ page }) => {
   await expect(page.getByRole("link", { name: /รับเคส/ }).first()).toBeVisible();
 });
 
+/**
+ * แตะ/คลิกซ้ำจนกว่า target จะโผล่ — ใช้ toPass() แทน loop ที่นับรอบด้วย sleep
+ * คงที่ เพราะเมื่อรันขนานกับสเปกอื่นบน dev server ตัวเดียวกัน แต่ละคลิกจะช้าลง
+ * มากจน loop แบบนับรอบหมดโควตาก่อนเกมจะเดินไปถึงจุดที่รอ (คลิกที่ไม่ใส่ timeout
+ * ยังค้างยาวได้ด้วย เพราะ actionability check จะ retry จนหมดเวลาของทั้งเทส)
+ */
+async function clickUntilVisible(
+  page: import("@playwright/test").Page,
+  clickSelector: string,
+  targetSelector: string,
+  timeout = 60_000
+) {
+  await expect(async () => {
+    if (await page.locator(targetSelector).isVisible().catch(() => false)) return;
+    await page.locator(clickSelector).click({ timeout: 2_000 }).catch(() => {});
+    expect(await page.locator(targetSelector).isVisible().catch(() => false)).toBe(true);
+  }).toPass({ timeout, intervals: [300] });
+}
+
 test("player can start the VF case and reach the first decision", async ({ page }) => {
+  test.slow();
   await page.goto("/sim/vf-arrest-01");
   await expect(page.locator(".cbs-title")).toBeVisible();
 
   // เริ่มเกม — คลิกซ้ำจนเข้าจอเกม (กันคลิกก่อน hydration)
-  for (let i = 0; i < 10; i++) {
-    await page.locator(".cbs-btn-main").click().catch(() => {});
-    const dlg = page.locator(".cbs-dlg");
-    if (await dlg.isVisible().catch(() => false)) break;
-    await page.waitForTimeout(1000);
-  }
-  await expect(page.locator(".cbs-dlg")).toBeVisible();
+  await clickUntilVisible(page, ".cbs-btn-main", ".cbs-dlg");
 
   // แตะ dialog เดินเรื่องจน choice แรกโผล่
-  for (let i = 0; i < 30; i++) {
-    if (await page.locator(".cbs-choices").isVisible().catch(() => false)) break;
-    await page.locator(".cbs-dlg").click().catch(() => {});
-    await page.waitForTimeout(500);
-  }
+  await clickUntilVisible(page, ".cbs-dlg", ".cbs-choices");
+
   await expect(page.locator(".cbs-qbanner")).toContainText("คำสั่งแรกของคุณ");
   await expect(page.locator(".cbs-choice")).toHaveCount(3);
+});
+
+// ทราฟฟิกจากโฆษณาต้องได้เล่นทันทีที่กดเข้ามา ไม่ต้องกดจอ title ก่อน
+test("?start=1 drops the player straight into the game", async ({ page }) => {
+  await page.goto("/sim/vf-arrest-01?start=1");
+
+  // ไม่ต้องคลิกอะไรเลย — จอบทสนทนาต้องมาเอง
+  await expect(page.locator(".cbs-dlg")).toBeVisible({ timeout: 15_000 });
+  await expect(page.locator(".cbs-title")).toBeHidden();
 });
 
 // เกมคือหัวกรวยของแคมเปญโฆษณา (docs/casegame-acquisition-plan.md) — ถ้า event
@@ -38,6 +58,8 @@ test("player can start the VF case and reach the first decision", async ({ page 
 test("playing a case through to debrief fires the funnel events and shows the lead CTA", async ({
   page,
 }) => {
+  // เล่นจนจบเคสต้องคลิกหลายสิบครั้ง — งบ 30 วิ default ไม่พอเมื่อรันขนาน
+  test.slow();
   const trackedEvents: string[] = [];
   const capiEvents: string[] = [];
 
@@ -55,26 +77,21 @@ test("playing a case through to debrief fires the funnel events and shows the le
   await page.goto("/sim/vf-arrest-01");
   await expect(page.locator(".cbs-title")).toBeVisible();
 
-  for (let i = 0; i < 10; i++) {
-    await page.locator(".cbs-btn-main").click().catch(() => {});
-    if (await page.locator(".cbs-dlg").isVisible().catch(() => false)) break;
-    await page.waitForTimeout(1000);
-  }
-  await expect(page.locator(".cbs-dlg")).toBeVisible();
+  await clickUntilVisible(page, ".cbs-btn-main", ".cbs-dlg");
   expect(trackedEvents).toContain("casegame_start");
   expect(capiEvents).toContain("start");
 
   // เดินเรื่องไปเรื่อยๆ โดยเลือกตัวเลือกแรกเสมอ — ตอบผิดจะทำให้ HP หมดแล้วจบเคส
   // (แพ้ก็เข้าหน้า debrief เหมือนกัน ซึ่งเป็นสิ่งที่เทสนี้ต้องการ)
-  for (let i = 0; i < 80; i++) {
-    if (await page.locator(".cbs-debrief").isVisible().catch(() => false)) break;
+  await expect(async () => {
+    if (await page.locator(".cbs-debrief").isVisible().catch(() => false)) return;
     if (await page.locator(".cbs-choices").isVisible().catch(() => false)) {
-      await page.locator(".cbs-choice").first().click().catch(() => {});
+      await page.locator(".cbs-choice").first().click({ timeout: 2_000 }).catch(() => {});
     } else {
-      await page.locator(".cbs-dlg").click().catch(() => {});
+      await page.locator(".cbs-dlg").click({ timeout: 2_000 }).catch(() => {});
     }
-    await page.waitForTimeout(400);
-  }
+    expect(await page.locator(".cbs-debrief").isVisible().catch(() => false)).toBe(true);
+  }).toPass({ timeout: 90_000, intervals: [300] });
 
   await expect(page.locator(".cbs-debrief")).toBeVisible();
   expect(trackedEvents).toContain("casegame_first_decision");

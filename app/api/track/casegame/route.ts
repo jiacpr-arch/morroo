@@ -19,7 +19,9 @@
 import { NextResponse, after } from "next/server";
 import { sendMetaEvent } from "@/lib/meta/events-api";
 import { getSimScenario } from "@/lib/supabase/queries-sim";
-import { capiContentName, capiEventId, caseGameCategory } from "@/lib/sim/track";
+import {
+  capiContentName, capiEventId, caseGameCategory, type CaseGameCapiEvent,
+} from "@/lib/sim/track";
 import { rateLimited } from "@/lib/firstaid/server/rateLimit";
 
 export const runtime = "nodejs";
@@ -28,7 +30,7 @@ export const runtime = "nodejs";
 // เผื่อหลายคนหลัง NAT เดียวกัน แต่ยังตัดการยิงถล่มทิ้ง
 const RATE_LIMIT = { key: "casegame-track", limit: 40, windowMs: 60_000 };
 
-const EVENTS = new Set(["start", "complete"]);
+const EVENTS = new Set(["start", "first_decision", "complete"]);
 const SLUG_RE = /^[a-z0-9][a-z0-9-]{0,63}$/i;
 // runId มาจาก crypto.randomUUID() ฝั่ง client
 const RUN_ID_RE = /^[0-9a-z-]{8,64}$/i;
@@ -56,7 +58,7 @@ export async function POST(request: Request) {
   const scenario = await getSimScenario(slug);
   if (!scenario) return NextResponse.json({ ok: true });
 
-  const capiEvent = event as "start" | "complete";
+  const capiEvent = event as CaseGameCapiEvent;
   const cookies = request.headers.get("cookie") ?? "";
   const readCookie = (name: string): string | null => {
     const match = cookies.match(new RegExp(`(?:^|;\\s*)${name}=([^;]+)`));
