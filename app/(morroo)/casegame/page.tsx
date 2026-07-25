@@ -5,6 +5,7 @@ import {
   getLongcaseGameCards,
   getMeqGameCards,
   getMySimBests,
+  getPolishedLongcaseCards,
   getSimScenariosByCategory,
 } from "@/lib/supabase/queries-sim";
 import {
@@ -13,6 +14,7 @@ import {
   type CaseCard,
 } from "@/lib/casegame/normalize";
 import CaseGameBrowser from "@/components/casegame/CaseGameBrowser";
+import { getBuiltinScenario } from "@/lib/sim/scenarios";
 
 export const metadata: Metadata = {
   title: "เกมเคส — Long Case Decision Game",
@@ -45,25 +47,45 @@ interface PageProps {
 }
 
 export default async function CaseGameHubPage({ searchParams }: PageProps) {
-  const [polished, longcaseCards, meqCards, bests, sp] = await Promise.all([
+  const [polished, polishedCards, longcaseCards, meqCards, bests, sp] = await Promise.all([
     getSimScenariosByCategory("longcase"),
+    getPolishedLongcaseCards(),
     getLongcaseGameCards(),
     getMeqGameCards(),
     getMySimBests(),
     searchParams,
   ]);
 
-  // เคสคัดมือ/ขัดเงา = จุดเริ่มแนะนำ (ไม่มีสาขาเก็บไว้ → แสดงเฉพาะความยาก)
-  const featured: CaseCard[] = polished.map((s) => ({
-    slug: s.slug,
-    title: s.title,
-    subtitle: s.subtitle,
-    specialty: normalizeSpecialty(null),
-    difficulty: normalizeDifficulty(s.difficultyTag),
-    type: "featured",
-  }));
+  // "เคสแนะนำ" = เคสคัดมือที่เขียนเองในโค้ด (built-in) เท่านั้น
+  // เคสที่ AI แปลงไว้มีเป็นร้อย ถ้าเอามาไว้ตรงนี้ทั้งหมดหน้าจะยาวมากและกรอง
+  // ตามสาขาไม่ได้ — ย้ายลงลิสต์หลักที่จัดกลุ่ม/พับ/กรองได้แทน
+  //
+  // เช็คจาก built-in list ไม่ใช่ sourceCaseId เพราะเคสคัดมือก็ชี้ sourceCaseId
+  // ไปเคสต้นทางเหมือนกัน (เพื่อซ่อนเวอร์ชันสังเคราะห์)
+  const featured: CaseCard[] = polished
+    .filter((s) => getBuiltinScenario(s.slug))
+    .map((s) => ({
+      slug: s.slug,
+      title: s.title,
+      subtitle: s.subtitle,
+      specialty: normalizeSpecialty(null),
+      difficulty: normalizeDifficulty(s.difficultyTag),
+      type: "featured" as const,
+    }));
 
   const cards: CaseCard[] = [
+    // กันซ้ำกับเคสแนะนำ ถ้าใน DB มี slug เดียวกับ built-in
+    ...polishedCards
+      .filter((c) => !getBuiltinScenario(c.slug))
+      .map((c) => ({
+      slug: c.slug,
+      title: c.title,
+      subtitle: c.subtitle,
+      specialty: normalizeSpecialty(c.specialty),
+      difficulty: normalizeDifficulty(c.difficulty),
+      type: "longcase" as const,
+      audience: c.audience,
+    })),
     ...longcaseCards.map((c) => ({
       slug: c.slug,
       title: c.title,
