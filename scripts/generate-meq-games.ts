@@ -84,16 +84,20 @@ async function generateOne(
   let lastErr: unknown;
   for (const model of MODELS) {
     try {
-      const res = await client.messages.create({
-        model,
-        // scenario 9-12 choice พร้อม then/why เต็มรูปแบบยาวเกิน 8k เสมอ —
-        // ที่ 8192 เคสส่วนใหญ่ตาย max_tokens (เทียบ generate-meq-weekly ใช้ 32k)
-        max_tokens: 32000,
-        system,
-        tools: [SCENARIO_TOOL],
-        tool_choice: { type: "tool", name: "create_sim_scenario" },
-        messages: [{ role: "user", content: userPrompt }],
-      });
+      // ต้อง stream: max_tokens สูงขนาดนี้ SDK ปฏิเสธ non-streaming
+      // ("Streaming is required for operations that may take longer than 10 minutes")
+      const res = await client.messages
+        .stream({
+          model,
+          // scenario 9-12 choice พร้อม then/why เต็มรูปแบบยาวเกิน 8k เสมอ —
+          // ที่ 8192 เคสส่วนใหญ่ตาย max_tokens (เทียบ generate-meq-weekly ใช้ 32k)
+          max_tokens: 32000,
+          system,
+          tools: [SCENARIO_TOOL],
+          tool_choice: { type: "tool", name: "create_sim_scenario" },
+          messages: [{ role: "user", content: userPrompt }],
+        })
+        .finalMessage();
       if (res.stop_reason === "max_tokens") throw new Error("max_tokens — โจทย์ยาวเกิน");
       const tool = res.content.find((b) => b.type === "tool_use");
       if (!tool || tool.type !== "tool_use") throw new Error("AI ไม่ได้ส่ง tool_use");
