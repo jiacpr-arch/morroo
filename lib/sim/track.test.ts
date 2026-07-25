@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   buildCompleteProps,
   buildCtaClickProps,
+  buildCtaViewProps,
   buildFirstDecisionProps,
   buildStartProps,
   capiContentName,
@@ -35,6 +36,7 @@ describe("buildStartProps", () => {
       difficulty: "hard",
       isReplay: true,
       sourceCaseId: "case-abc",
+      runId: "run-1",
     });
     expect(props).toEqual({
       slug: "lc-123",
@@ -42,6 +44,7 @@ describe("buildStartProps", () => {
       difficulty: "hard",
       is_replay: true,
       source_case_id: "case-abc",
+      run_id: "run-1",
     });
   });
 
@@ -50,6 +53,7 @@ describe("buildStartProps", () => {
       slug: "vf-arrest-01",
       difficulty: "normal",
       isReplay: false,
+      runId: "run-1",
     });
     expect(props.source_case_id).toBeNull();
     expect(props.category).toBe("acls");
@@ -60,9 +64,12 @@ describe("buildStartProps", () => {
 
 describe("buildFirstDecisionProps", () => {
   it("keeps the payload minimal", () => {
-    expect(buildFirstDecisionProps({ slug: "a", category: "longcase" })).toEqual({
+    expect(
+      buildFirstDecisionProps({ slug: "a", category: "longcase", runId: "run-1" })
+    ).toEqual({
       slug: "a",
       category: "longcase",
+      run_id: "run-1",
     });
   });
 });
@@ -80,6 +87,7 @@ describe("buildCompleteProps", () => {
       score: 820,
       isHiscore: true,
       durationMs: 95_400,
+      runId: "run-1",
     });
     expect(props).toEqual({
       slug: "lc-9",
@@ -92,6 +100,7 @@ describe("buildCompleteProps", () => {
       sim_time: 480,
       duration_sec: 95,
       is_hiscore: true,
+      run_id: "run-1",
     });
   });
 
@@ -104,6 +113,7 @@ describe("buildCompleteProps", () => {
       score: 0,
       isHiscore: false,
       durationMs: 1_000,
+      runId: "run-1",
     });
     for (const value of Object.values(props)) {
       expect(["string", "number", "boolean"]).toContain(typeof value);
@@ -125,14 +135,39 @@ describe("durationSeconds", () => {
   });
 });
 
+describe("buildCtaViewProps", () => {
+  it("carries the run so the form-shown count has a start to divide by", () => {
+    expect(
+      buildCtaViewProps({ slug: "a", category: "meq", grade: "B", runId: "run-7" })
+    ).toEqual({
+      slug: "a",
+      category: "meq",
+      grade: "B",
+      run_id: "run-7",
+    });
+  });
+});
+
 describe("buildCtaClickProps", () => {
   it("allows a null grade for a click before any result exists", () => {
-    expect(buildCtaClickProps({ slug: "a", grade: null, target: "lead_form" })).toEqual({
+    expect(
+      buildCtaClickProps({ slug: "a", grade: null, runId: "run-1", target: "lead_form" })
+    ).toEqual({
       slug: "a",
       category: "acls",
       grade: null,
+      run_id: "run-1",
       target: "lead_form",
     });
+  });
+
+  // view กับ click ต้องมีคีย์ชุดเดียวกัน (บวก target) ไม่งั้นเทียบ funnel
+  // สองขั้นนี้ใน SQL ตัวเดียวกันไม่ได้
+  it("is a superset of the view payload", () => {
+    const base = { slug: "a", category: "longcase", grade: "A", runId: "run-2" };
+    const view = buildCtaViewProps(base);
+    const click = buildCtaClickProps({ ...base, target: "pricing" });
+    expect(click).toEqual({ ...view, target: "pricing" });
   });
 });
 

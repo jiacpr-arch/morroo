@@ -24,6 +24,13 @@ export const CASEGAME_EVENTS = {
   start: "casegame_start",
   firstDecision: "casegame_first_decision",
   complete: "casegame_complete",
+  /**
+   * ตัวหารของ CTA ท้ายเกม — ยิงตอนฟอร์มเก็บอีเมลโผล่บนจอ debrief
+   *
+   * ถ้ามีแต่ ctaClick อย่างเดียว เห็นเลข 0 แล้วแยกไม่ออกว่า "ไม่มีใครเล่นจนจบ",
+   * "จบแล้วแต่ไม่กรอก" หรือ "ฟอร์มพัง" — ซึ่งเป็นสามปัญหาที่แก้คนละทางกันหมด
+   */
+  ctaView: "casegame_cta_view",
   ctaClick: "casegame_cta_click",
   /**
    * ยิงคู่กับ `lp_lead_form_submit` ตอนเก็บ lead ได้ท้ายเกม — ต้องเป็นชื่อ event
@@ -44,7 +51,20 @@ export function caseGameCategory(category?: string): CaseGameCategory {
     : "acls";
 }
 
-export interface StartInput {
+/**
+ * `run_id` = 1 รอบการเล่น ต้องติดไปกับทุก event ของเกม
+ *
+ * เดิม runId ส่งเข้าแค่ Meta CAPI ทำให้ฝั่ง analytics_events ของเราเองต่อ
+ * funnel ไม่ได้เลย: ในโหมด autostart การรีโหลดหน้าหนึ่งครั้งเท่ากับ start
+ * หนึ่งครั้ง แยกจากการกด "เล่นอีกครั้ง" ไม่ออก และ start กับ complete จับคู่กัน
+ * ได้แค่ระดับ session+slug ซึ่งพังทันทีที่คนเล่นเคสเดิมซ้ำ
+ */
+export interface RunScoped {
+  /** id ต่อหนึ่งรอบเล่น (newRunId) — "" ถ้ายังไม่เริ่มรอบใหม่ */
+  runId: string;
+}
+
+export interface StartInput extends RunScoped {
   slug: string;
   category?: string;
   difficulty: string;
@@ -60,10 +80,11 @@ export function buildStartProps(input: StartInput): TrackProps {
     difficulty: input.difficulty,
     is_replay: input.isReplay,
     source_case_id: input.sourceCaseId ?? null,
+    run_id: input.runId,
   };
 }
 
-export interface FirstDecisionInput {
+export interface FirstDecisionInput extends RunScoped {
   slug: string;
   category?: string;
 }
@@ -72,10 +93,11 @@ export function buildFirstDecisionProps(input: FirstDecisionInput): TrackProps {
   return {
     slug: input.slug,
     category: caseGameCategory(input.category),
+    run_id: input.runId,
   };
 }
 
-export interface CompleteInput {
+export interface CompleteInput extends RunScoped {
   slug: string;
   category?: string;
   state: Pick<SimState, "difficulty" | "wrong" | "simTime">;
@@ -99,6 +121,7 @@ export function buildCompleteProps(input: CompleteInput): TrackProps {
     sim_time: input.state.simTime,
     duration_sec: durationSeconds(input.durationMs),
     is_hiscore: input.isHiscore,
+    run_id: input.runId,
   };
 }
 
@@ -111,18 +134,29 @@ export function durationSeconds(durationMs: number): number {
   return Math.round(durationMs / 1000);
 }
 
-export interface CtaClickInput {
+export interface CtaViewInput extends RunScoped {
   slug: string;
   category?: string;
+  /** เกรดที่เพิ่งได้ — ใช้ดูว่าคนเล่นที่ได้เกรดไหนยอมทิ้งอีเมลมากกว่ากัน */
   grade: string | null;
+}
+
+export function buildCtaViewProps(input: CtaViewInput): TrackProps {
+  return {
+    slug: input.slug,
+    category: caseGameCategory(input.category),
+    grade: input.grade,
+    run_id: input.runId,
+  };
+}
+
+export interface CtaClickInput extends CtaViewInput {
   target: string;
 }
 
 export function buildCtaClickProps(input: CtaClickInput): TrackProps {
   return {
-    slug: input.slug,
-    category: caseGameCategory(input.category),
-    grade: input.grade,
+    ...buildCtaViewProps(input),
     target: input.target,
   };
 }
