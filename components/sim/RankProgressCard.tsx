@@ -1,17 +1,28 @@
 "use client";
 
 import { ChevronRight, GraduationCap } from "lucide-react";
-import { EXPERTISE_TIERS } from "@/lib/sim/expertise";
-import type { RecordedRun } from "@/lib/sim/record";
+import { EXPERTISE_TIERS, type SpecialtyExpertise } from "@/lib/sim/expertise";
+import type { RankDelta } from "@/lib/school/rank-delta";
+import "./rank-card.css";
+
+interface Props extends RankDelta {
+  /** ความเชี่ยวชาญของสาขาที่เพิ่งเล่น — เกม Resus ไม่มีสาขาจึงไม่ส่งมา */
+  expertise?: SpecialtyExpertise | null;
+  expertiseUp?: boolean;
+}
 
 /**
  * ความคืบหน้าของ "ตัวละคร" ท้ายเกม — ยศแพทย์ + ความเชี่ยวชาญสาขาที่เพิ่งเล่น
  *
- * แสดงเฉพาะคนที่ล็อกอิน (คนไม่ล็อกอินเห็น DebriefLeadCta แทน) — คืน null
- * เงียบ ๆ เมื่ออ่านยศไม่ได้ เพื่อไม่ให้จอ debrief พังเพราะข้อมูลเสริม
+ * ใช้ร่วมกันทั้งเกมเคสและ Resus Hero จึงรับเป็น field ตรง ๆ ไม่ผูกกับ
+ * RecordedRun ของเกมใดเกมหนึ่ง
+ *
+ * แสดงเฉพาะคนที่ล็อกอิน (คนไม่ล็อกอินเห็น CTA แทน) — คืน null เงียบ ๆ เมื่อ
+ * อ่านยศไม่ได้ เพื่อไม่ให้จอ debrief พังเพราะข้อมูลเสริม
  */
-export default function RankProgressCard({ reward }: { reward: RecordedRun }) {
-  const { rankAfter, rankBefore, rankedUp, expertise, expertiseUp } = reward;
+export default function RankProgressCard({
+  rankAfter, rankBefore, rankedUp, expertise = null, expertiseUp = false,
+}: Props) {
   if (!rankAfter) return null;
 
   const { rank, next, xpIntoRank, xpForNext, progress } = rankAfter;

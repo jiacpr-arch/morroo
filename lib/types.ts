@@ -30,6 +30,8 @@ export interface Profile {
   daily_goal: number;
   current_year: 1 | 2 | 3 | 4 | 5 | 6 | null;
   school_daily_goal: number;
+  /** XP สะสมฝั่ง school — ใช้คิดยศแพทย์ (lib/school/rank.ts) และ leaderboard */
+  school_xp: number;
   target_exam: "NL1" | "NL2" | "both" | "board" | null;
   weak_subjects: string[] | null;
   exam_schedule: ExamScheduleItem[] | null;

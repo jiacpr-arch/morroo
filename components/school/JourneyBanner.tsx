@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Sparkles, Lock } from "lucide-react";
+import RankBadge from "@/components/school/RankBadge";
 import {
   STAGES,
   getUnlockState,
@@ -30,7 +30,7 @@ export default function JourneyBanner(props: JourneyContext) {
             <span className="font-semibold">
               ด่าน {state.stageIndex + 1}/{totalStages} · {state.stage.title}
             </span>
-            <Badge variant="outline">Level {state.level}</Badge>
+            <RankBadge xp={props.xp} showLevel size="sm" />
           </div>
         </div>
         <p className="text-sm text-muted-foreground mb-3">{state.stage.desc}</p>

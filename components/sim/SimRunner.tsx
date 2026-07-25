@@ -23,6 +23,7 @@ import {
 import { track } from "@/lib/analytics";
 import DebriefLeadCta from "@/components/sim/DebriefLeadCta";
 import RankProgressCard from "@/components/sim/RankProgressCard";
+import { xpToRank } from "@/lib/school/rank";
 import {
   parseEmphasis,
   type ChoiceNode, type ChoiceOption, type NodeFx, type Pose,
@@ -94,11 +95,16 @@ interface SimRunnerProps {
    * บันทึกผลเพื่อคิดความเชี่ยวชาญรายสาขา null ได้สำหรับเคส ACLS
    */
   specialty?: string | null;
+  /**
+   * XP สะสมของผู้เล่น — โชว์ยศบนจอ title ให้เห็นเป้าก่อนเริ่มเล่น ไม่ใช่รู้ตอนจบ
+   * null = ไม่ได้ล็อกอิน (จอ title ไม่แสดงแถบยศ)
+   */
+  playerXp?: number | null;
 }
 
 export default function SimRunner({
   scenario, practice = false, characters, campaign = null, adSet = null,
-  autostart = false, specialty = null,
+  autostart = false, specialty = null, playerXp = null,
 }: SimRunnerProps) {
   const dbCharacters = useMemo(
     () => new Map((characters ?? []).map((c) => [c.slug, c])),
@@ -595,6 +601,20 @@ export default function SimRunner({
               ))}
             </div>
           </div>
+          {playerXp !== null && (() => {
+            const { rank, next, xpForNext, xpIntoRank } = xpToRank(playerXp);
+            return (
+              <div className="cbs-title-rank">
+                <span aria-hidden>{rank.icon}</span>
+                <span className="cbs-title-rank-name">{rank.title}</span>
+                {next && (
+                  <span className="cbs-title-rank-next">
+                    อีก {(xpForNext - xpIntoRank).toLocaleString("th-TH")} XP ถึง{next.title}
+                  </span>
+                )}
+              </div>
+            );
+          })()}
           <div className="cbs-title-row">
             {hiscore > 0 && <div className="cbs-hiscore-chip">HI-SCORE {hiscore}</div>}
             <button
@@ -654,7 +674,7 @@ export default function SimRunner({
               ))}
             </div>
           )}
-          {reward && reward.loggedIn && <RankProgressCard reward={reward} />}
+          {reward && reward.loggedIn && <RankProgressCard {...reward} />}
           {reward && !reward.loggedIn && !practice && (
             <DebriefLeadCta
               slug={scenario.slug}

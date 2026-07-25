@@ -77,6 +77,18 @@
 .cbs-title h1 .cbs-gold-text { color: var(--cbs-gold); }
 .cbs-title-sub { font-size: 15px; line-height: 1.8; color: var(--cbs-dim); }
 .cbs-title-sub b { color: var(--cbs-ink); font-weight: 700; }
+/* แถบยศบนจอ title — ให้เห็นเป้าก่อนเริ่มเล่น ไม่ใช่เพิ่งรู้ตอนจบเกม */
+.cbs-title-rank {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  align-self: flex-start;
+  border: 2px solid #2a4d55; border-radius: 8px;
+  background: rgba(4, 12, 16, .6); padding: 8px 14px;
+}
+.cbs-title-rank-name { font-size: 14px; font-weight: 800; color: var(--cbs-ink); }
+.cbs-title-rank-next {
+  font-family: var(--cbs-mono); font-size: 10.5px; color: var(--cbs-dim);
+  flex-basis: 100%;
+}
 .cbs-hiscore-chip {
   align-self: flex-start;
   font-family: var(--cbs-mono); font-size: 12px; letter-spacing: .1em;
@@ -426,66 +438,6 @@
 .cbs-login-hint { text-align: center; font-size: 13px; color: var(--cbs-dim); }
 .cbs-login-hint a { color: var(--cbs-teal); font-weight: 700; text-decoration: underline; }
 
-/* ---- ยศแพทย์ + ความเชี่ยวชาญ (ตัวละครของผู้เล่น) ---- */
-.cbs-rank-card {
-  display: flex; flex-direction: column; gap: 10px;
-  padding: 14px; border-radius: 12px;
-  border: 2px solid #2a4d55; background: rgba(8, 20, 26, .6);
-}
-.cbs-rank-up {
-  display: flex; flex-direction: column; align-items: center; gap: 3px;
-  padding: 8px 12px; border-radius: 8px; text-align: center;
-  color: #0d1a24; background: var(--cbs-gold);
-  box-shadow: 0 3px 12px rgba(242, 193, 78, .35);
-  animation: cbs-pop .45s ease-out;
-}
-.cbs-rank-up-label {
-  font-family: var(--cbs-mono); font-size: 10px;
-  letter-spacing: .22em; text-transform: uppercase; font-weight: 800;
-}
-.cbs-rank-up-path {
-  display: inline-flex; align-items: center; gap: 4px; flex-wrap: wrap;
-  justify-content: center; font-size: 13px; font-weight: 700;
-}
-.cbs-rank-head { display: flex; align-items: center; gap: 11px; }
-.cbs-rank-icon { font-size: 26px; line-height: 1; }
-.cbs-rank-name { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-.cbs-rank-title { font-size: 15px; font-weight: 800; color: var(--cbs-ink); }
-.cbs-rank-trait { font-size: 12px; line-height: 1.5; color: var(--cbs-dim); }
-.cbs-rank-bar-wrap { display: flex; flex-direction: column; gap: 5px; }
-.cbs-rank-bar {
-  height: 8px; border-radius: 999px; overflow: hidden;
-  background: rgba(159, 189, 192, .18);
-}
-.cbs-rank-bar-fill {
-  display: block; height: 100%; border-radius: 999px;
-  background: linear-gradient(90deg, var(--cbs-teal), var(--cbs-gold));
-  transition: width .6s ease-out;
-}
-.cbs-rank-bar-cap {
-  font-family: var(--cbs-mono); font-size: 11px; color: var(--cbs-dim);
-}
-.cbs-rank-bar-cap strong { color: var(--cbs-ink); }
-.cbs-rank-maxed {
-  display: inline-flex; align-items: center; gap: 6px; color: var(--cbs-gold);
-}
-.cbs-expertise {
-  display: flex; align-items: flex-start; gap: 9px;
-  padding-top: 10px; border-top: 1px dashed #2a4d55;
-}
-.cbs-expertise-dot { font-size: 15px; line-height: 1.4; color: var(--cbs-teal); }
-.cbs-expertise-body {
-  display: flex; flex-direction: column; gap: 2px;
-  font-size: 13px; color: var(--cbs-dim);
-}
-.cbs-expertise-body strong { color: var(--cbs-ink); font-weight: 700; }
-.cbs-expertise-next { font-family: var(--cbs-mono); font-size: 10.5px; }
-.cbs-expertise-new {
-  align-self: flex-start; margin-top: 2px;
-  font-size: 11px; font-weight: 800; color: #0d1a24;
-  background: var(--cbs-teal); border-radius: 999px; padding: 2px 9px;
-}
-.cbs-expertise-up .cbs-expertise-dot { animation: cbs-pop .45s ease-out; }
 
 .cbs-grade-row { display: flex; gap: 12px; align-items: stretch; margin-top: 8px; }
 .cbs-grade-box {
@@ -562,8 +514,7 @@
   .cbs-shake, .cbs-flash.cbs-go, .cbs-redflash.cbs-go,
   .cbs-title::before, .cbs-stage.cbs-drama::before, .cbs-stage.cbs-drama-red::before,
   .cbs-inter-burst, .cbs-adv, .cbs-choice, .cbs-sprite.cbs-pop,
-  .cbs-inter-bubble, .cbs-stamp, .cbs-rank-up, .cbs-expertise-up .cbs-expertise-dot {
+  .cbs-inter-bubble, .cbs-stamp {
     animation: none !important;
   }
-  .cbs-rank-bar-fill { transition: none !important; }
 }

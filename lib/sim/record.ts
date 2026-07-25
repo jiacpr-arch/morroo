@@ -5,7 +5,8 @@
 
 import { createClient } from "@/lib/supabase/client";
 import { awardBadge, awardXp } from "@/lib/school/xp";
-import { xpToRank, type RankProgress } from "@/lib/school/rank";
+import { NO_RANK_DELTA, rankDelta, readSchoolXp } from "@/lib/school/rank-delta";
+import type { RankProgress } from "@/lib/school/rank";
 import { normalizeSpecialty, OTHER_SPECIALTY } from "@/lib/casegame/normalize";
 import {
   EXPERT_LEVEL,
@@ -48,24 +49,13 @@ function emptyRun(): RecordedRun {
     loggedIn: false,
     xpEarned: 0,
     newBadges: [],
-    rankBefore: null,
-    rankAfter: null,
-    rankedUp: false,
+    ...NO_RANK_DELTA,
     expertise: null,
     expertiseUp: false,
   };
 }
 
 type Supabase = ReturnType<typeof createClient>;
-
-async function readXp(supabase: Supabase, userId: string): Promise<number | null> {
-  const { data } = await supabase
-    .from("profiles")
-    .select("school_xp")
-    .eq("id", userId)
-    .maybeSingle();
-  return data ? (data.school_xp ?? 0) : null;
-}
 
 /**
  * สาขาที่เอาไปเก็บ/นับความเชี่ยวชาญ — normalize ให้เป็นชื่อไทยมาตรฐานก่อนเสมอ
@@ -93,7 +83,7 @@ export async function recordSimRun(
     out.loggedIn = true;
 
     const specialty = specialtyForRun(specialtyRaw);
-    const xpBefore = await readXp(supabase, user.id);
+    const xpBefore = await readSchoolXp(user.id);
 
     await supabase.from("sim_runs").insert({
       user_id: user.id,
@@ -143,12 +133,7 @@ export async function recordSimRun(
     }
 
     // อ่านหลังแจกเหรียญ เพราะเหรียญแถม XP ด้วย (awardBadge → awardXp)
-    const xpAfter = await readXp(supabase, user.id);
-    if (xpBefore !== null && xpAfter !== null) {
-      out.rankBefore = xpToRank(xpBefore);
-      out.rankAfter = xpToRank(xpAfter);
-      out.rankedUp = out.rankAfter.rank.tier > out.rankBefore.rank.tier;
-    }
+    Object.assign(out, rankDelta(xpBefore, await readSchoolXp(user.id)));
   } catch {
     // Non-blocking
   }

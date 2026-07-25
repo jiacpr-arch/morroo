@@ -8,7 +8,8 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
 import { track } from "@/lib/analytics";
-import { User, Mail, Crown, Calendar, LogOut, Gift, Copy, Check, Users, MessageSquare, Link2, Loader2, Flag, Coins, Sparkles } from "lucide-react";
+import { User, Mail, Crown, Calendar, LogOut, Gift, Copy, Check, Users, MessageSquare, Link2, Loader2, Flag, Coins, Sparkles, GraduationCap } from "lucide-react";
+import { xpToRank } from "@/lib/school/rank";
 import type { Profile } from "@/lib/types";
 import { REWARD_TIER_LIST, availableReporterPoints } from "@/lib/bug-hunter";
 
@@ -235,6 +236,63 @@ export default function ProfilePage() {
                 </Button>
               </Link>
             )}
+          </CardContent>
+        </Card>
+
+        {/* ความก้าวหน้าการเรียน — ยศแพทย์จาก XP สะสม */}
+        <Card>
+          <CardHeader>
+            <h3 className="font-semibold flex items-center gap-2">
+              <GraduationCap className="h-5 w-5 text-amber-600" /> ความก้าวหน้าการเรียน
+            </h3>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            {(() => {
+              const xp = profile?.school_xp ?? 0;
+              const { rank, next, xpIntoRank, xpForNext, progress } = xpToRank(xp);
+              return (
+                <>
+                  <div className="flex items-start gap-3">
+                    <span className="text-3xl leading-none" aria-hidden>{rank.icon}</span>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-lg font-extrabold leading-snug">{rank.title}</p>
+                      <p className="mt-0.5 text-sm text-muted-foreground">{rank.trait}</p>
+                    </div>
+                    <span className="shrink-0 text-sm font-bold text-amber-700">
+                      {xp.toLocaleString("th-TH")} XP
+                    </span>
+                  </div>
+                  <div>
+                    <div
+                      className="h-2 overflow-hidden rounded-full bg-gray-200"
+                      role="progressbar"
+                      aria-valuenow={progress}
+                      aria-valuemin={0}
+                      aria-valuemax={100}
+                      aria-label={next ? `ความคืบหน้าไปยัง${next.title}` : "ถึงขั้นสูงสุดแล้ว"}
+                    >
+                      <span
+                        className="block h-full rounded-full bg-amber-500"
+                        style={{ width: `${progress}%` }}
+                      />
+                    </div>
+                    <p className="mt-1.5 text-xs text-muted-foreground">
+                      {next
+                        ? `${xpIntoRank.toLocaleString("th-TH")} / ${xpForNext.toLocaleString("th-TH")} XP — อีก ${(xpForNext - xpIntoRank).toLocaleString("th-TH")} XP ถึง${next.title}`
+                        : "ขั้นสูงสุดของสายวิชาการแล้ว"}
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Link href="/school/badges">
+                      <Button variant="outline" size="sm">เหรียญของฉัน</Button>
+                    </Link>
+                    <Link href="/school/leaderboard">
+                      <Button variant="outline" size="sm">Leaderboard</Button>
+                    </Link>
+                  </div>
+                </>
+              );
+            })()}
           </CardContent>
         </Card>
 
