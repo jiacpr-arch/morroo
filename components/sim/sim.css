@@ -336,12 +336,21 @@
 /* ตัวบอกให้แตะ — เดิมเป็นลูกศร 13px เฉยๆ ซึ่งคนที่ไม่เคยเล่นเกมแนว visual
    novel อ่านไม่ออกว่าหมายถึงอะไร ตอนนี้เป็นคำไทยเต็มและโผล่ตั้งแต่กำลังพิมพ์ */
 .cbs-adv {
-  position: absolute; right: 12px; bottom: 7px;
-  display: inline-flex; align-items: center; gap: 5px;
+  position: absolute; right: 10px; bottom: -14px;
+  display: inline-flex; align-items: center; gap: 6px;
   color: #0d1a24; background: var(--cbs-gold);
-  font-size: 11.5px; font-weight: 800;
-  border-radius: 999px; padding: 3px 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .35);
+  font-size: 13px; font-weight: 800;
+  /* ให้ดูเป็นปุ่มจริง ไม่ใช่ป้ายบอกสถานะ — ขอบขาว + เงายกตัวเป็นภาษาเดียวกับ
+     ปุ่มอื่นในเกม (.cbs-btn-main) ผู้เล่นรายงานว่า "หาปุ่มกดต่อไม่เจอ" */
+  border: 2.5px solid #fff; border-radius: 8px;
+  padding: 7px 14px;
+  box-shadow: 0 3px 0 #a8801f, 0 6px 14px rgba(0, 0, 0, .45);
+}
+/* ตอนกำลังพิมพ์เป็นแค่คำใบ้เบา ๆ ไม่ต้องแย่งสายตาไปจากบทพูด */
+.cbs-adv-typing {
+  background: rgba(8, 20, 26, .85); color: var(--cbs-gold);
+  border-color: #2a4d55; box-shadow: none;
+  font-size: 11.5px; font-weight: 700; padding: 4px 11px;
 }
 .cbs-adv-caret { animation: cbs-bob 1s ease-in-out infinite; }
 

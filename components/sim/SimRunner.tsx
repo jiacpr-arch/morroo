@@ -946,7 +946,7 @@ export default function SimRunner({
             {/* เดิมเป็น "▼" 13px มุมขวาล่าง และโผล่เฉพาะตอนพิมพ์จบ — ช่วงที่คน
                 เพิ่งเปิดเกม (กำลังพิมพ์) จึงไม่มีอะไรบอกเลยว่าแตะได้ */}
             {(typing || awaitTap) && (
-              <div className="cbs-adv">
+              <div className={`cbs-adv ${typing ? "cbs-adv-typing" : ""}`}>
                 {typing ? "แตะเพื่อข้าม" : "แตะเพื่อไปต่อ"}
                 <span className="cbs-adv-caret" aria-hidden>▼</span>
               </div>
