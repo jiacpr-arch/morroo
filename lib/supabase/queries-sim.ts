@@ -137,6 +137,65 @@ export async function getLongcaseGameCards(): Promise<LongcaseGameCard[]> {
   }
 }
 
+export interface MeqGameCard {
+  slug: string;
+  title: string;
+  subtitle: string;
+  specialty: string; // exams.category (สาขาไทย)
+  difficulty: string; // exams.difficulty (easy|medium|hard)
+}
+
+/**
+ * การ์ดเกมเคสที่แปลงจากข้อสอบ MEQ (sim_scenarios category='meq') — join กลับ
+ * exams ผ่าน source_exam_id เพื่อดึงสาขา (exams.category) + ความยาก ที่ตัว
+ * sim_scenarios ไม่มีเก็บไว้ ใช้ทำตัวกรอง/จัดกลุ่มในหน้า /casegame
+ */
+export async function getMeqGameCards(): Promise<MeqGameCard[]> {
+  try {
+    const supabase = await createClient();
+    const { data: scen } = await supabase
+      .from("sim_scenarios")
+      .select("slug, title, subtitle, source_exam_id")
+      .eq("category", "meq")
+      .eq("status", "published")
+      .order("created_at", { ascending: false });
+    type ScenRow = {
+      slug: string;
+      title: string;
+      subtitle: string | null;
+      source_exam_id: string | null;
+    };
+    const rows = (scen as ScenRow[] | null) ?? [];
+    if (rows.length === 0) return [];
+
+    // ดึงสาขา (exams.category) + ความยากของข้อสอบต้นฉบับแบบ batch
+    const examIds = [...new Set(rows.map((r) => r.source_exam_id).filter(Boolean))] as string[];
+    const examMap = new Map<string, { category: string | null; difficulty: string | null }>();
+    if (examIds.length > 0) {
+      const { data: exams } = await supabase
+        .from("exams")
+        .select("id, category, difficulty")
+        .in("id", examIds);
+      for (const e of (exams as { id: string; category: string | null; difficulty: string | null }[] | null) ?? []) {
+        examMap.set(e.id, { category: e.category, difficulty: e.difficulty });
+      }
+    }
+
+    return rows.map((r) => {
+      const ex = r.source_exam_id ? examMap.get(r.source_exam_id) : undefined;
+      return {
+        slug: r.slug,
+        title: r.title,
+        subtitle: r.subtitle ?? "",
+        specialty: ex?.category ?? "",
+        difficulty: ex?.difficulty ?? "medium",
+      };
+    });
+  } catch {
+    return [];
+  }
+}
+
 /**
  * จำนวนเกมเคสทั้งหมด (เคสขัดเงา + สังเคราะห์จาก long_cases) — ตัวเลขเดียวกับ
  * ที่โชว์บนหน้า /casegame ใช้โปรโมตบนหน้าแรก
