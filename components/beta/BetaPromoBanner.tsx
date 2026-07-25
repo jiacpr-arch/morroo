@@ -60,16 +60,22 @@ export default function BetaPromoBanner({ variant }: BetaPromoBannerProps) {
 
   return (
     <div className="relative bg-gradient-to-r from-emerald-600 to-emerald-700 text-white text-sm">
+      {/* แถบนี้อยู่บนสุดของทุกหน้า = สิ่งแรกที่คนเห็น จึงนำด้วย "ลองก่อน" ไม่ใช่
+          "สมัครเลย" (2026-07-25 เจ้าของสั่งว่าอยากโชว์ของก่อน ค่อยให้ลงทะเบียน
+          ทีหลัง) โปรโมชั่น Beta ยังอยู่ครบ แค่ลดเป็นข้อเสนอรอง */}
       <div className="mx-auto max-w-7xl px-4 py-2 pr-10 text-center">
         <span className="hidden sm:inline">🎉 </span>
-        <span className="font-medium">ช่วงเปิดตัว:</span>{" "}
-        สมัครฟรีรับ Beta 21 วัน · ทำข้อสอบ 25 ข้อกับ AI{" "}
-        <Link
-          href="/register"
-          className="underline font-semibold hover:opacity-90 ml-1"
-        >
-          สมัครเลย →
+        ทำข้อสอบจริงฟรีได้เลย ไม่ต้องสมัคร{" "}
+        <Link href="/nl/practice" className="underline font-semibold hover:opacity-90">
+          ลองเลย →
         </Link>
+        <span className="mx-2 hidden opacity-50 sm:inline">|</span>
+        <span className="block sm:inline">
+          <span className="opacity-90">ช่วงเปิดตัว: สมัครแล้วรับ Beta 21 วัน ทำข้อสอบ 25 ข้อกับ AI</span>{" "}
+          <Link href="/register" className="underline hover:opacity-90">
+            สมัครฟรี
+          </Link>
+        </span>
       </div>
       <button
         onClick={handleDismiss}

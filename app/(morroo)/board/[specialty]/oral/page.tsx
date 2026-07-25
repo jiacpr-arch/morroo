@@ -160,9 +160,11 @@ export default async function BoardOralPage({
                       <h3 className="font-bold text-lg">{c.title}</h3>
                     </div>
                     <div className="w-full sm:w-48">
+                      {/* Board Oral ไม่มีโควตาฟรีรายเดือนเหมือน Long Case ทั่วไป
+                          ต้องมีแพ็ก Board เท่านั้น จึงใช้ "locked" ไม่ใช่ "guest" */}
                       <LongCaseStartButton
                         caseId={c.id}
-                        hasAccess={accessData.hasAccess}
+                        entitlement={accessData.hasAccess ? "subscriber" : "locked"}
                       />
                     </div>
                   </div>

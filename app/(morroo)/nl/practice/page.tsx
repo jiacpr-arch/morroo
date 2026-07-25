@@ -153,7 +153,13 @@ async function PracticeContent({
   return (
     <div>
       <LandingPageTracker event="nl_practice_view" />
-      {!user && <FreeTrialBanner surface="nl_practice" />}
+      {!user && (
+        <FreeTrialBanner
+          surface="nl_practice"
+          tryHref="/casegame"
+          tryLabel="ลองเกมเคสฟรี"
+        />
+      )}
       <InternalAdsBanner placement="practice-top" className="mb-4" />
 
       {/* Recommended banner */}

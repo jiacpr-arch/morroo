@@ -57,13 +57,27 @@ export default async function HomePage() {
     <>
       <HeroAB forced={forcedHero} stats={examStats} />
 
-      {/* LINE add-friend strip — high-visibility CTA above the fold */}
-      <section className="bg-[#06C755]/10 border-b border-[#06C755]/20">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-3 px-4 py-4 text-center sm:flex-row sm:gap-5 sm:py-3 sm:text-left">
+      {/* ช่องใต้ hero = ที่ที่คนเห็นเยอะที่สุดรองจากหัวเรื่อง เดิมเป็นแถบชวนแอด
+          LINE ซึ่งเป็นการ "ขอ" ตั้งแต่ยังไม่ได้โชว์อะไรเลย เปลี่ยนเป็นทางลองของ
+          จริงทันที (2026-07-25 เจ้าของสั่งว่าอยากโชว์ของก่อน ค่อยให้ลงทะเบียน
+          ทีหลัง) แถบ LINE ย้ายลงไปอยู่กับส่วน "ติดตามหมอรู้" ด้านล่างแทน */}
+      <section className="border-b border-brand/20 bg-brand/5">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-3 px-4 py-4 text-center sm:flex-row sm:gap-5 sm:text-left">
           <p className="text-sm font-medium text-foreground sm:text-base">
-            📩 รับข้อสอบฟรีทุกเช้า 7 โมง + เทคนิคเตรียมสอบ ผ่าน LINE
+            อยากลองก่อนไหม? ทำข้อสอบจริงได้เลย — ไม่ต้องสมัคร ไม่ต้องใส่บัตร
           </p>
-          <LineCtaButton surface="home_hero" label="แอด LINE ฟรี" className="shrink-0" />
+          <div className="flex shrink-0 flex-wrap items-center justify-center gap-2">
+            <Link href="/nl/practice">
+              <Button className="bg-brand hover:bg-brand-light text-white gap-2">
+                ลองทำข้อสอบฟรี <ArrowRight className="h-4 w-4" />
+              </Button>
+            </Link>
+            <Link href="/casegame">
+              <Button variant="outline" className="gap-2">
+                เล่นเกมเคส
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -184,9 +198,13 @@ export default async function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold">ติดตามหมอรู้</h2>
           <p className="mt-2 text-muted-foreground">
-            แอด LINE, Facebook, Instagram เพื่อรับข่าวสารและเทคนิคเตรียมสอบใหม่ๆ
+            📩 แอด LINE รับข้อสอบฟรีทุกเช้า 7 โมง + เทคนิคเตรียมสอบ · ติดตาม Facebook, Instagram
+            เพื่อรับข่าวสารใหม่ๆ
           </p>
-          <SocialButtonsRow className="mt-6" />
+          <div className="mt-6 flex justify-center">
+            <LineCtaButton surface="home_social" label="แอด LINE ฟรี" />
+          </div>
+          <SocialButtonsRow className="mt-4" />
         </div>
       </section>
 
@@ -194,18 +212,19 @@ export default async function HomePage() {
       <section className="py-20 bg-brand-dark text-white">
         <div className="mx-auto max-w-3xl px-4 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold">
-            พร้อมเริ่มเตรียมสอบแล้วหรือยัง?
+            ลองก่อนได้ ไม่ต้องสมัคร
           </h2>
           <p className="mt-4 text-white/70 text-lg">
-            สมัครสมาชิกวันนี้ เข้าถึงข้อสอบ MEQ + NL + Long Case กับ AI พร้อมเฉลยละเอียดจากผู้เชี่ยวชาญ
+            ทำข้อสอบจริง เล่นเกมเคส และลองข้อสอบ MEQ ได้เลยโดยไม่ต้องมีบัญชี —
+            ถูกใจแล้วค่อยสมัครเพื่อเก็บความคืบหน้าและปลดล็อกเฉลยละเอียด
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/register">
+            <Link href="/nl/practice">
               <Button
                 size="lg"
                 className="bg-brand hover:bg-brand-light text-white px-8 text-base"
               >
-                สมัครสมาชิกฟรี
+                ลองทำข้อสอบฟรี
               </Button>
             </Link>
             <Link href="/exams">
@@ -213,10 +232,17 @@ export default async function HomePage() {
                 size="lg"
                 className="bg-transparent border border-white/30 text-white hover:bg-white/10 px-8 text-base"
               >
-                ดูข้อสอบตัวอย่าง
+                ดูข้อสอบ MEQ
               </Button>
             </Link>
           </div>
+          <p className="mt-6 text-sm text-white/60">
+            มีบัญชีแล้ว?{" "}
+            <Link href="/login" className="underline hover:text-white">เข้าสู่ระบบ</Link>
+            {" · "}
+            ยังไม่มี?{" "}
+            <Link href="/register" className="underline hover:text-white">สมัครฟรี</Link>
+          </p>
         </div>
       </section>
     </>
