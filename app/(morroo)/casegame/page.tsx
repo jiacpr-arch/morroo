@@ -14,6 +14,7 @@ import {
   type CaseCard,
 } from "@/lib/casegame/normalize";
 import CaseGameBrowser from "@/components/casegame/CaseGameBrowser";
+import { getBuiltinScenario } from "@/lib/sim/scenarios";
 
 export const metadata: Metadata = {
   title: "เกมเคส — Long Case Decision Game",
@@ -55,11 +56,14 @@ export default async function CaseGameHubPage({ searchParams }: PageProps) {
     searchParams,
   ]);
 
-  // "เคสแนะนำ" = เคสคัดมือที่เขียนเองในโค้ดเท่านั้น (ไม่มี sourceCaseId)
+  // "เคสแนะนำ" = เคสคัดมือที่เขียนเองในโค้ด (built-in) เท่านั้น
   // เคสที่ AI แปลงไว้มีเป็นร้อย ถ้าเอามาไว้ตรงนี้ทั้งหมดหน้าจะยาวมากและกรอง
   // ตามสาขาไม่ได้ — ย้ายลงลิสต์หลักที่จัดกลุ่ม/พับ/กรองได้แทน
+  //
+  // เช็คจาก built-in list ไม่ใช่ sourceCaseId เพราะเคสคัดมือก็ชี้ sourceCaseId
+  // ไปเคสต้นทางเหมือนกัน (เพื่อซ่อนเวอร์ชันสังเคราะห์)
   const featured: CaseCard[] = polished
-    .filter((s) => !s.sourceCaseId)
+    .filter((s) => getBuiltinScenario(s.slug))
     .map((s) => ({
       slug: s.slug,
       title: s.title,
@@ -70,7 +74,10 @@ export default async function CaseGameHubPage({ searchParams }: PageProps) {
     }));
 
   const cards: CaseCard[] = [
-    ...polishedCards.map((c) => ({
+    // กันซ้ำกับเคสแนะนำ ถ้าใน DB มี slug เดียวกับ built-in
+    ...polishedCards
+      .filter((c) => !getBuiltinScenario(c.slug))
+      .map((c) => ({
       slug: c.slug,
       title: c.title,
       subtitle: c.subtitle,

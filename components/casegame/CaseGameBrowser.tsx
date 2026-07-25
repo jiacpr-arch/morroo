@@ -25,22 +25,30 @@ const GRADE_TEXT: Record<string, string> = {
 };
 
 const chipBase =
-  "shrink-0 rounded-full border px-3 py-1 text-sm transition-colors whitespace-nowrap";
-const chipActive = "bg-brand text-white border-brand";
-const chipIdle = "bg-background hover:bg-muted text-foreground border-border";
+  "shrink-0 rounded-full border px-3 py-1.5 text-sm font-medium transition-colors whitespace-nowrap active:scale-[.97]";
+const chipActive = "bg-brand text-white border-brand shadow-sm";
+const chipIdle = "bg-white hover:bg-brand/5 hover:border-brand/40 text-foreground border-border";
 
 /** แถวเคสแบบหนาแน่น 1 บรรทัด — เห็นได้เยอะต่อจอ เลื่อนน้อย */
 function CaseRow({ card, best, href }: { card: CaseCard; best?: SimBest; href: string }) {
   return (
     <Link
       href={href}
-      className="group flex items-center gap-2 border-b px-2 py-2.5 hover:bg-muted/50"
+      className="group flex items-center gap-2.5 border-b px-3 py-3 transition-colors last:border-b-0 hover:bg-brand/5 active:bg-brand/10"
     >
-      <span
-        className={`shrink-0 rounded px-1.5 py-0.5 text-[11px] font-medium ${specialtyColor(card.specialty)}`}
-      >
-        {card.specialty}
-      </span>
+      {/* เคสคัดมือไม่ได้เก็บสาขาไว้ ถ้าโชว์ "อื่น ๆ" จะดูรกเปล่าๆ — ใช้ป้าย
+          "แนะนำ" ที่สื่อความหมายกว่าแทน */}
+      {card.type === "featured" ? (
+        <span className="shrink-0 rounded-md bg-amber-100 px-1.5 py-0.5 text-[11px] font-medium text-amber-700">
+          แนะนำ
+        </span>
+      ) : (
+        <span
+          className={`shrink-0 rounded-md px-1.5 py-0.5 text-[11px] font-medium ${specialtyColor(card.specialty)}`}
+        >
+          {card.specialty}
+        </span>
+      )}
       <span className="min-w-0 flex-1 truncate text-sm font-medium text-gray-900 group-hover:text-brand">
         {cleanTitle(card.title)}
       </span>
@@ -50,7 +58,11 @@ function CaseRow({ card, best, href }: { card: CaseCard; best?: SimBest; href: s
           {best.grade}
         </span>
       )}
-      <Play className="h-4 w-4 shrink-0 text-brand opacity-0 transition-opacity group-hover:opacity-100" />
+      {/* ปุ่มเล่นต้องเห็นตลอด — เดิมซ่อนไว้ให้โผล่ตอน hover ซึ่งบนมือถือไม่มี
+          hover เลยดูเป็นข้อความเฉยๆ ไม่รู้ว่ากดเล่นได้ */}
+      <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand transition-colors group-hover:bg-brand group-hover:text-white group-active:bg-brand group-active:text-white">
+        <Play className="h-3.5 w-3.5 fill-current" />
+      </span>
     </Link>
   );
 }
@@ -229,7 +241,7 @@ export default function CaseGameBrowser({ featured, cards, bests, utm }: Props) 
                   <button
                     type="button"
                     onClick={() => toggle(g.level)}
-                    className="flex flex-1 items-center gap-2 text-left"
+                    className="-mx-1 flex flex-1 items-center gap-2 rounded-lg px-1 py-1 text-left transition-colors hover:bg-muted/60 active:bg-muted"
                   >
                     <ChevronDown
                       className={`h-4 w-4 text-muted-foreground transition-transform ${open ? "" : "-rotate-90"}`}
@@ -242,7 +254,7 @@ export default function CaseGameBrowser({ featured, cards, bests, utm }: Props) 
                   <button
                     type="button"
                     onClick={() => goRandom(g.items)}
-                    className="inline-flex shrink-0 items-center gap-1 text-xs font-medium text-brand hover:underline"
+                    className="inline-flex shrink-0 items-center gap-1 rounded-full border border-brand/30 bg-brand/5 px-2.5 py-1 text-xs font-semibold text-brand transition-colors hover:bg-brand/10 active:bg-brand/15"
                   >
                     <Shuffle className="h-3 w-3" /> สุ่ม
                   </button>
@@ -253,13 +265,15 @@ export default function CaseGameBrowser({ featured, cards, bests, utm }: Props) 
                       <CaseRow key={c.slug} card={c} best={bests[c.slug]} href={href(c.slug)} />
                     ))}
                     {g.items.length > shownOf(g.level) && (
-                      <button
-                        type="button"
-                        onClick={() => showMore(g.level)}
-                        className="w-full border-t px-3 py-2.5 text-sm font-medium text-brand hover:bg-muted/50"
-                      >
-                        ดูเพิ่ม (เหลืออีก {g.items.length - shownOf(g.level)} เคส)
-                      </button>
+                      <div className="border-t p-2">
+                        <button
+                          type="button"
+                          onClick={() => showMore(g.level)}
+                          className="w-full rounded-lg border border-brand/30 bg-brand/5 px-3 py-2.5 text-sm font-semibold text-brand transition-colors hover:bg-brand/10 active:bg-brand/15"
+                        >
+                          ดูเพิ่ม · เหลืออีก {g.items.length - shownOf(g.level)} เคส
+                        </button>
+                      </div>
                     )}
                   </div>
                 )}
