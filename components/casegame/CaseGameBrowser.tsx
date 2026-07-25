@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ChevronDown, Play, Search, Shuffle, Star, Trophy } from "lucide-react";
@@ -69,6 +69,9 @@ export default function CaseGameBrowser({ featured, cards, bests, utm }: Props) 
   const [specialty, setSpecialty] = useState("ทั้งหมด");
   const [level, setLevel] = useState<"ทั้งหมด" | Difficulty>("ทั้งหมด");
   const [openLevels, setOpenLevels] = useState<Set<string> | null>(null);
+  // จำนวนแถวที่โชว์ต่อกลุ่ม — คลังมีเป็นร้อยเคส ถ้าเรนเดอร์หมดหน้าจะยาวมาก
+  // จนเลื่อนหาไม่เจอ ให้ทยอยกด "ดูเพิ่ม" เอา
+  const [shownPerLevel, setShownPerLevel] = useState<Record<string, number>>({});
 
   const href = (slug: string) => `/sim/${slug}${utm}`;
 
@@ -126,6 +129,16 @@ export default function CaseGameBrowser({ featured, cards, bests, utm }: Props) 
       return next;
     });
   };
+
+  // เปลี่ยนตัวกรอง = รายการชุดใหม่ ต้องเริ่มนับใหม่ ไม่งั้นหน้ายาวค้างจากของเดิม
+  useEffect(() => {
+    setShownPerLevel({});
+  }, [search, specialty, level]);
+
+  const PAGE = 8;
+  const shownOf = (lvl: string) => shownPerLevel[lvl] ?? PAGE;
+  const showMore = (lvl: string) =>
+    setShownPerLevel((prev) => ({ ...prev, [lvl]: (prev[lvl] ?? PAGE) + PAGE }));
 
   const goRandom = (pool: CaseCard[]) => {
     if (pool.length === 0) return;
@@ -236,9 +249,18 @@ export default function CaseGameBrowser({ featured, cards, bests, utm }: Props) 
                 </div>
                 {open && (
                   <div className="border-t">
-                    {g.items.map((c) => (
+                    {g.items.slice(0, shownOf(g.level)).map((c) => (
                       <CaseRow key={c.slug} card={c} best={bests[c.slug]} href={href(c.slug)} />
                     ))}
+                    {g.items.length > shownOf(g.level) && (
+                      <button
+                        type="button"
+                        onClick={() => showMore(g.level)}
+                        className="w-full border-t px-3 py-2.5 text-sm font-medium text-brand hover:bg-muted/50"
+                      >
+                        ดูเพิ่ม (เหลืออีก {g.items.length - shownOf(g.level)} เคส)
+                      </button>
+                    )}
                   </div>
                 )}
               </section>

@@ -5,6 +5,7 @@ import {
   getLongcaseGameCards,
   getMeqGameCards,
   getMySimBests,
+  getPolishedLongcaseCards,
   getSimScenariosByCategory,
 } from "@/lib/supabase/queries-sim";
 import {
@@ -45,25 +46,39 @@ interface PageProps {
 }
 
 export default async function CaseGameHubPage({ searchParams }: PageProps) {
-  const [polished, longcaseCards, meqCards, bests, sp] = await Promise.all([
+  const [polished, polishedCards, longcaseCards, meqCards, bests, sp] = await Promise.all([
     getSimScenariosByCategory("longcase"),
+    getPolishedLongcaseCards(),
     getLongcaseGameCards(),
     getMeqGameCards(),
     getMySimBests(),
     searchParams,
   ]);
 
-  // เคสคัดมือ/ขัดเงา = จุดเริ่มแนะนำ (ไม่มีสาขาเก็บไว้ → แสดงเฉพาะความยาก)
-  const featured: CaseCard[] = polished.map((s) => ({
-    slug: s.slug,
-    title: s.title,
-    subtitle: s.subtitle,
-    specialty: normalizeSpecialty(null),
-    difficulty: normalizeDifficulty(s.difficultyTag),
-    type: "featured",
-  }));
+  // "เคสแนะนำ" = เคสคัดมือที่เขียนเองในโค้ดเท่านั้น (ไม่มี sourceCaseId)
+  // เคสที่ AI แปลงไว้มีเป็นร้อย ถ้าเอามาไว้ตรงนี้ทั้งหมดหน้าจะยาวมากและกรอง
+  // ตามสาขาไม่ได้ — ย้ายลงลิสต์หลักที่จัดกลุ่ม/พับ/กรองได้แทน
+  const featured: CaseCard[] = polished
+    .filter((s) => !s.sourceCaseId)
+    .map((s) => ({
+      slug: s.slug,
+      title: s.title,
+      subtitle: s.subtitle,
+      specialty: normalizeSpecialty(null),
+      difficulty: normalizeDifficulty(s.difficultyTag),
+      type: "featured" as const,
+    }));
 
   const cards: CaseCard[] = [
+    ...polishedCards.map((c) => ({
+      slug: c.slug,
+      title: c.title,
+      subtitle: c.subtitle,
+      specialty: normalizeSpecialty(c.specialty),
+      difficulty: normalizeDifficulty(c.difficulty),
+      type: "longcase" as const,
+      audience: c.audience,
+    })),
     ...longcaseCards.map((c) => ({
       slug: c.slug,
       title: c.title,

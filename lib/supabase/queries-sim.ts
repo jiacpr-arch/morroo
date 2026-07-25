@@ -137,6 +137,83 @@ export async function getLongcaseGameCards(): Promise<LongcaseGameCard[]> {
   }
 }
 
+export interface PolishedLongcaseCard {
+  slug: string;
+  title: string;
+  subtitle: string;
+  specialty: string;
+  difficulty: string;
+  audience: string;
+}
+
+/**
+ * เกมเคส longcase ที่ AI แปลงไว้แล้ว (sim_scenarios category='longcase') พร้อม
+ * สาขา/ความยากที่ join กลับ long_cases ผ่าน source_case_id
+ *
+ * เดิมหน้า /casegame เอาชุดนี้ไปแสดงเป็น "เคสแนะนำ" ทั้งก้อน — พอมีเป็นร้อยเคส
+ * หน้าเลยยาวมากและกรองตามสาขาไม่ได้ (ตัว scenario ไม่เก็บสาขา) จึงต้องดึงสาขา
+ * มาให้ครบเพื่อให้เข้าลิสต์หลักที่จัดกลุ่ม/กรองได้เหมือนเคสอื่น
+ */
+export async function getPolishedLongcaseCards(): Promise<PolishedLongcaseCard[]> {
+  try {
+    const supabase = await createClient();
+    const { data } = await supabase
+      .from("sim_scenarios")
+      .select("slug, title, subtitle, source_case_id")
+      .eq("category", "longcase")
+      .eq("status", "published")
+      .not("source_case_id", "is", null)
+      .order("created_at", { ascending: false });
+    type Row = {
+      slug: string;
+      title: string;
+      subtitle: string | null;
+      source_case_id: string | null;
+    };
+    const rows = (data as Row[] | null) ?? [];
+    if (rows.length === 0) return [];
+
+    const caseIds = [...new Set(rows.map((r) => r.source_case_id).filter(Boolean))] as string[];
+    const caseMap = new Map<
+      string,
+      { specialty: string | null; difficulty: string | null; audience: string | null }
+    >();
+    if (caseIds.length > 0) {
+      const { data: cases } = await supabase
+        .from("long_cases")
+        .select("id, specialty, difficulty, audience")
+        .in("id", caseIds);
+      type CaseRow = {
+        id: string;
+        specialty: string | null;
+        difficulty: string | null;
+        audience: string | null;
+      };
+      for (const c of (cases as CaseRow[] | null) ?? []) {
+        caseMap.set(c.id, {
+          specialty: c.specialty,
+          difficulty: c.difficulty,
+          audience: c.audience,
+        });
+      }
+    }
+
+    return rows.map((r) => {
+      const c = r.source_case_id ? caseMap.get(r.source_case_id) : undefined;
+      return {
+        slug: r.slug,
+        title: r.title,
+        subtitle: r.subtitle ?? "",
+        specialty: c?.specialty ?? "",
+        difficulty: c?.difficulty ?? "medium",
+        audience: c?.audience ?? "student",
+      };
+    });
+  } catch {
+    return [];
+  }
+}
+
 export interface MeqGameCard {
   slug: string;
   title: string;
