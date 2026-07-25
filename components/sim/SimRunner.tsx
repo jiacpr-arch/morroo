@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { AlertTriangle, Home, RefreshCw, Shuffle, Volume2, VolumeX, Zap } from "lucide-react";
+import { AlertTriangle, Home, RefreshCw, Shuffle, Volume2, VolumeX, X, Zap } from "lucide-react";
 import { resolveCharacter, type SimDbCharacter } from "@/lib/sim/characters";
 import CharacterSprite from "@/components/sim/CharacterSprite";
 import EcgMonitor from "@/components/sim/EcgMonitor";
@@ -118,6 +118,7 @@ export default function SimRunner({
   const [view, setView] = useState<SimState>(() => snapshot(createInitialState(DEFAULT_DIFFICULTY)));
 
   const [screen, setScreen] = useState<"title" | "game" | "debrief">("title");
+  const [confirmExit, setConfirmExit] = useState(false);
   const [speaker, setSpeaker] = useState<Speaker | null>(null);
   const [plate, setPlate] = useState<{ name: string } | null>(null); // override (time-skip)
   const [dlgSegments, setDlgSegments] = useState<TextSegment[]>([]);
@@ -709,6 +710,14 @@ export default function SimRunner({
             )}
             <Link href={hubHref} className="cbs-btn-ghost">เลือกเคสอื่น</Link>
           </div>
+          {/* เส้นทางไปหน้าแพ็กเกจ — เดิมคนที่ไม่กรอกอีเมลจะไม่เจอทางไปสู่การ
+              สมัคร/ซื้อเลย วางเป็นลิงก์รองไม่ให้ไปแย่งความสนใจจาก CTA เก็บ lead */}
+          {!practice && (
+            <p className="cbs-upsell">
+              อยากฝึกครบทุกเคส + ข้อสอบเต็มระบบ?{" "}
+              <Link href="/pricing">ดูแพ็กเกจสมาชิก →</Link>
+            </p>
+          )}
         </section>
       </div>
     );
@@ -748,8 +757,35 @@ export default function SimRunner({
                 </div>
               </div>
               <div className="cbs-timechip">{fmtTime(st.simTime)}</div>
+              {/* ทางออกระหว่างเล่น — เดิมไม่มีเลย ใครอยากเลิกกลางคันต้องกด back
+                  ของเบราว์เซอร์ ถามยืนยันก่อนกันกดพลาดตอนจิ้มตัวเลือกรัวๆ */}
+              <button
+                type="button"
+                className="cbs-exit"
+                onClick={() => setConfirmExit(true)}
+                aria-label="ออกจากเคสนี้"
+              >
+                <X size={14} strokeWidth={3} /> ออก
+              </button>
             </div>
           </div>
+
+          {confirmExit && (
+            <div className="cbs-exit-overlay" role="dialog" aria-modal="true" aria-label="ยืนยันออกจากเคส">
+              <div className="cbs-exit-box">
+                <p className="cbs-exit-title">ออกจากเคสนี้?</p>
+                <p className="cbs-exit-sub">ความคืบหน้าในเคสนี้จะไม่ถูกบันทึก</p>
+                <div className="cbs-exit-actions">
+                  <button type="button" className="cbs-btn-main" onClick={() => setConfirmExit(false)}>
+                    เล่นต่อ
+                  </button>
+                  <Link href={hubHref} className="cbs-btn-ghost">
+                    ออกไปเลือกเคสอื่น
+                  </Link>
+                </div>
+              </div>
+            </div>
+          )}
 
           {speaker && (
             <div className={`cbs-sprite ${reducedMotion ? "" : "cbs-pop"}`} key={`sp-${speaker.popN}`}>
