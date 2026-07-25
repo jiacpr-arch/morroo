@@ -1,15 +1,18 @@
-import Link from "next/link";
 import type { Metadata } from "next";
-import { BookOpen, Play, Sparkles, Stethoscope, Trophy, Zap } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import Link from "next/link";
+import { BookOpen, Stethoscope, Zap } from "lucide-react";
 import {
   getLongcaseGameCards,
+  getMeqGameCards,
   getMySimBests,
   getSimScenariosByCategory,
-  type SimBest,
 } from "@/lib/supabase/queries-sim";
+import {
+  normalizeDifficulty,
+  normalizeSpecialty,
+  type CaseCard,
+} from "@/lib/casegame/normalize";
+import CaseGameBrowser from "@/components/casegame/CaseGameBrowser";
 
 export const metadata: Metadata = {
   title: "เกมเคส — Long Case Decision Game",
@@ -20,43 +23,12 @@ export const metadata: Metadata = {
 
 export const dynamic = "force-dynamic";
 
-const GRADE_STYLE: Record<string, string> = {
-  S: "bg-amber-100 text-amber-700",
-  A: "bg-teal-100 text-teal-700",
-  B: "bg-emerald-100 text-emerald-700",
-  C: "bg-rose-100 text-rose-700",
-};
-
-const SPECIALTY_COLOR: Record<string, string> = {
-  Medicine: "bg-blue-100 text-blue-700",
-  Surgery: "bg-red-100 text-red-700",
-  Obstetrics: "bg-pink-100 text-pink-700",
-  Pediatrics: "bg-green-100 text-green-700",
-  Emergency: "bg-orange-100 text-orange-700",
-  Cardiology: "bg-rose-100 text-rose-700",
-  Neurology: "bg-purple-100 text-purple-700",
-  Orthopedics: "bg-amber-100 text-amber-700",
-};
-
-function BestBadge({ best }: { best?: SimBest }) {
-  if (!best) return null;
-  return (
-    <Badge className={GRADE_STYLE[best.grade] ?? "bg-muted"}>
-      <Trophy className="mr-1 h-3 w-3" />
-      เกรดดีสุด {best.grade}
-    </Badge>
-  );
-}
-
 /**
  * ส่ง utm ต่อไปยังหน้าเล่นเกม — คนที่มาจากโฆษณาแล้วคลิกเลือกเคสจากหน้านี้
  * ต้องยังผูกกับแคมเปญได้ตอนกรอกอีเมลท้ายเกม ไม่งั้นเทียบปลายทางโฆษณาสองแบบ
  * (หน้ารวม vs ยิงเข้าเคสตรง) ไม่ได้เลย
  */
-function playHref(
-  slug: string,
-  sp: { [key: string]: string | string[] | undefined }
-): string {
+function utmQuery(sp: { [key: string]: string | string[] | undefined }): string {
   // `start` ส่งต่อด้วย เพื่อให้คนที่มาจากโฆษณาแล้วเลือกเคสจากหน้านี้เข้าเกมทันที
   // เหมือนกับคนที่โฆษณายิงเข้าเคสตรงๆ
   const carry = new URLSearchParams();
@@ -65,7 +37,7 @@ function playHref(
     if (typeof value === "string" && value) carry.set(key, value);
   }
   const qs = carry.toString();
-  return qs ? `/sim/${slug}?${qs}` : `/sim/${slug}`;
+  return qs ? `?${qs}` : "";
 }
 
 interface PageProps {
@@ -73,15 +45,44 @@ interface PageProps {
 }
 
 export default async function CaseGameHubPage({ searchParams }: PageProps) {
-  const [polished, cards, meqGames, bests, sp] = await Promise.all([
+  const [polished, longcaseCards, meqCards, bests, sp] = await Promise.all([
     getSimScenariosByCategory("longcase"),
     getLongcaseGameCards(),
-    getSimScenariosByCategory("meq"),
+    getMeqGameCards(),
     getMySimBests(),
     searchParams,
   ]);
 
-  const total = polished.length + cards.length + meqGames.length;
+  // เคสคัดมือ/ขัดเงา = จุดเริ่มแนะนำ (ไม่มีสาขาเก็บไว้ → แสดงเฉพาะความยาก)
+  const featured: CaseCard[] = polished.map((s) => ({
+    slug: s.slug,
+    title: s.title,
+    subtitle: s.subtitle,
+    specialty: normalizeSpecialty(null),
+    difficulty: normalizeDifficulty(s.difficultyTag),
+    type: "featured",
+  }));
+
+  const cards: CaseCard[] = [
+    ...longcaseCards.map((c) => ({
+      slug: c.slug,
+      title: c.title,
+      specialty: normalizeSpecialty(c.specialty),
+      difficulty: normalizeDifficulty(c.difficulty),
+      type: "longcase" as const,
+      audience: c.audience,
+    })),
+    ...meqCards.map((c) => ({
+      slug: c.slug,
+      title: c.title,
+      subtitle: c.subtitle,
+      specialty: normalizeSpecialty(c.specialty),
+      difficulty: normalizeDifficulty(c.difficulty),
+      type: "meq" as const,
+    })),
+  ];
+
+  const isEmpty = featured.length + cards.length === 0;
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6">
@@ -107,7 +108,7 @@ export default async function CaseGameHubPage({ searchParams }: PageProps) {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-2 pt-1 text-xs text-slate-300">
             <span className="inline-flex items-center gap-1 rounded-full border border-white/20 px-3 py-1">
-              <Stethoscope className="h-3.5 w-3.5 text-teal-400" /> อิงจาก Long Case จริงทุกเคส
+              <Stethoscope className="h-3.5 w-3.5 text-teal-400" /> เล่นไล่จากง่ายไปยาก
             </span>
             <span className="inline-flex items-center gap-1 rounded-full border border-white/20 px-3 py-1">
               <Zap className="h-3.5 w-3.5 text-amber-400" /> เก็บ XP + Badge
@@ -116,111 +117,18 @@ export default async function CaseGameHubPage({ searchParams }: PageProps) {
         </div>
       </section>
 
-      {total === 0 ? (
+      {isEmpty ? (
         <div className="mt-8 rounded-xl border bg-white py-16 text-center text-muted-foreground">
           <BookOpen className="mx-auto mb-3 h-12 w-12 opacity-30" />
           <p>กำลังเพิ่มเกมเคสใหม่ เร็วๆ นี้</p>
         </div>
       ) : (
-        <>
-          {/* เกมเคสที่คัดมือ/ขัดเงาแล้ว (built-in + DB) */}
-          {polished.length > 0 && (
-            <>
-              <h2 className="mb-3 mt-8 flex items-center gap-1.5 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
-                <Sparkles className="h-4 w-4 text-amber-500" /> เคสแนะนำ
-              </h2>
-              <div className="space-y-4">
-                {polished.map((s) => (
-                  <Card key={s.slug} className="transition-shadow hover:shadow-md hover:ring-brand/30">
-                    <CardContent className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center">
-                      <div className="flex-1 space-y-1.5">
-                        <div className="flex flex-wrap items-center gap-2">
-                          <Badge className="bg-amber-100 text-amber-700">เคสแนะนำ</Badge>
-                          <BestBadge best={bests[s.slug]} />
-                        </div>
-                        <h3 className="text-lg font-bold">{s.title.replace(/^LONG CASE:\s*/, "")}</h3>
-                        <p className="text-sm text-muted-foreground">{s.subtitle}</p>
-                      </div>
-                      <Link href={playHref(s.slug, sp)} className="shrink-0">
-                        <Button size="lg" className="w-full gap-2 sm:w-auto">
-                          <Play className="h-4 w-4" /> รับเคส
-                        </Button>
-                      </Link>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </>
-          )}
-
-          {/* เคสทั้งหมด (สังเคราะห์จาก long_cases) */}
-          {cards.length > 0 && (
-            <>
-              <h2 className="mb-3 mt-8 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
-                เคสทั้งหมด · {total} เคส
-              </h2>
-              <div className="grid gap-3 sm:grid-cols-2">
-                {cards.map((c) => (
-                  <Link
-                    key={c.slug}
-                    href={playHref(c.slug, sp)}
-                    className="group rounded-xl border bg-white p-4 transition-shadow hover:shadow-md"
-                  >
-                    <div className="mb-2 flex flex-wrap items-center gap-1.5">
-                      <span
-                        className={`rounded-full px-2 py-0.5 text-xs font-medium ${SPECIALTY_COLOR[c.specialty] ?? "bg-gray-100 text-gray-700"}`}
-                      >
-                        {c.specialty || "เคส"}
-                      </span>
-                      {c.audience === "board" && (
-                        <span className="rounded-full bg-purple-100 px-2 py-0.5 text-xs font-medium text-purple-700">
-                          บอร์ด
-                        </span>
-                      )}
-                      <BestBadge best={bests[c.slug]} />
-                    </div>
-                    <h3 className="text-sm font-semibold leading-snug text-gray-900 group-hover:text-brand">
-                      {c.title}
-                    </h3>
-                    <span className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-brand">
-                      <Play className="h-3 w-3" /> เล่นเคสนี้
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            </>
-          )}
-
-          {/* เกมเคสที่แปลงจากข้อสอบ MEQ (progressive case) */}
-          {meqGames.length > 0 && (
-            <>
-              <h2 className="mb-3 mt-8 flex items-center gap-1.5 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
-                <Sparkles className="h-4 w-4 text-teal-500" /> เกมเคสจากข้อสอบ MEQ
-              </h2>
-              <div className="space-y-4">
-                {meqGames.map((s) => (
-                  <Card key={s.slug} className="transition-shadow hover:shadow-md hover:ring-brand/30">
-                    <CardContent className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center">
-                      <div className="flex-1 space-y-1.5">
-                        <div className="flex flex-wrap items-center gap-2">
-                          <Badge className="bg-teal-100 text-teal-700">MEQ</Badge>
-                          <BestBadge best={bests[s.slug]} />
-                        </div>
-                        <h3 className="text-lg font-bold">{s.title.replace(/^MEQ:\s*/, "")}</h3>
-                        <p className="text-sm text-muted-foreground">{s.subtitle}</p>
-                      </div>
-                      <Link href={playHref(s.slug, sp)} className="shrink-0">
-                        <Button size="lg" className="w-full gap-2 sm:w-auto">
-                          <Play className="h-4 w-4" /> รับเคส
-                        </Button>
-                      </Link>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </>
-          )}
-        </>
+        <CaseGameBrowser
+          featured={featured}
+          cards={cards}
+          bests={bests}
+          utm={utmQuery(sp)}
+        />
       )}
 
       <p className="mt-8 text-center text-sm text-muted-foreground">

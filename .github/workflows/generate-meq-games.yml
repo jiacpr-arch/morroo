@@ -17,11 +17,15 @@ on:
         description: "เผยแพร่ทันที (true) หรือบันทึกเป็น draft ให้รีวิวก่อน (false)"
         type: boolean
         default: true
+      concurrency:
+        description: "แปลงพร้อมกันกี่เคส (ค่าเริ่มต้น 3)"
+        required: false
 
 jobs:
   generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    # backfill ทั้งคลังใช้เวลานาน (เคสละ ~1-2 นาที แม้แปลงขนานกัน)
+    timeout-minutes: 180
 
     steps:
       - uses: actions/checkout@v4
@@ -47,6 +51,9 @@ jobs:
           fi
           if [ -n "${{ github.event.inputs.limit }}" ]; then
             ARGS="$ARGS --limit ${{ github.event.inputs.limit }}"
+          fi
+          if [ -n "${{ github.event.inputs.concurrency }}" ]; then
+            ARGS="$ARGS --concurrency ${{ github.event.inputs.concurrency }}"
           fi
           echo "Running: npm run gen:meqgames -- $ARGS"
           npm run gen:meqgames -- $ARGS
