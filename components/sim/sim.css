@@ -77,6 +77,18 @@
 .cbs-title h1 .cbs-gold-text { color: var(--cbs-gold); }
 .cbs-title-sub { font-size: 15px; line-height: 1.8; color: var(--cbs-dim); }
 .cbs-title-sub b { color: var(--cbs-ink); font-weight: 700; }
+/* แถบยศบนจอ title — ให้เห็นเป้าก่อนเริ่มเล่น ไม่ใช่เพิ่งรู้ตอนจบเกม */
+.cbs-title-rank {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  align-self: flex-start;
+  border: 2px solid #2a4d55; border-radius: 8px;
+  background: rgba(4, 12, 16, .6); padding: 8px 14px;
+}
+.cbs-title-rank-name { font-size: 14px; font-weight: 800; color: var(--cbs-ink); }
+.cbs-title-rank-next {
+  font-family: var(--cbs-mono); font-size: 10.5px; color: var(--cbs-dim);
+  flex-basis: 100%;
+}
 .cbs-hiscore-chip {
   align-self: flex-start;
   font-family: var(--cbs-mono); font-size: 12px; letter-spacing: .1em;
@@ -448,10 +460,15 @@
   color: var(--cbs-ink); background: rgba(26, 188, 156, .18);
   border: 2px solid var(--cbs-teal);
 }
+.cbs-local-note {
+  text-align: center; font-size: 11.5px; line-height: 1.6; color: var(--cbs-dim);
+  margin-top: -2px;
+}
 .cbs-upsell { text-align: center; font-size: 13px; color: var(--cbs-dim); margin-top: 14px; }
 .cbs-upsell a { color: var(--cbs-teal); font-weight: 700; text-decoration: underline; }
 .cbs-login-hint { text-align: center; font-size: 13px; color: var(--cbs-dim); }
 .cbs-login-hint a { color: var(--cbs-teal); font-weight: 700; text-decoration: underline; }
+
 
 .cbs-grade-row { display: flex; gap: 12px; align-items: stretch; margin-top: 8px; }
 .cbs-grade-box {

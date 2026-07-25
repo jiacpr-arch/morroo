@@ -22,6 +22,8 @@ import {
 } from "@/lib/sim/track";
 import { track } from "@/lib/analytics";
 import DebriefLeadCta from "@/components/sim/DebriefLeadCta";
+import RankProgressCard from "@/components/sim/RankProgressCard";
+import { xpToRank } from "@/lib/school/rank";
 import {
   parseEmphasis,
   type ChoiceNode, type ChoiceOption, type NodeFx, type Pose,
@@ -88,11 +90,21 @@ interface SimRunnerProps {
    * คนที่กดโฆษณาเข้ามาได้เล่นทันทีโดยไม่ต้องกดอะไรอีก
    */
   autostart?: boolean;
+  /**
+   * สาขาของเคส (long_cases.specialty / exams.category) — เก็บลง sim_runs ตอน
+   * บันทึกผลเพื่อคิดความเชี่ยวชาญรายสาขา null ได้สำหรับเคส ACLS
+   */
+  specialty?: string | null;
+  /**
+   * XP สะสมของผู้เล่น — โชว์ยศบนจอ title ให้เห็นเป้าก่อนเริ่มเล่น ไม่ใช่รู้ตอนจบ
+   * null = ไม่ได้ล็อกอิน (จอ title ไม่แสดงแถบยศ)
+   */
+  playerXp?: number | null;
 }
 
 export default function SimRunner({
   scenario, practice = false, characters, campaign = null, adSet = null,
-  autostart = false,
+  autostart = false, specialty = null, playerXp = null,
 }: SimRunnerProps) {
   const dbCharacters = useMemo(
     () => new Map((characters ?? []).map((c) => [c.slug, c])),
@@ -280,7 +292,7 @@ export default function SimRunner({
     // บันทึกผล + XP/Badge เบื้องหลัง — จอ debrief โชว์ทันที รางวัลตามมา
     setReward(null);
     if (!practice) {
-      void recordSimRun(scenario.slug, st, { won, grade, score }).then(setReward);
+      void recordSimRun(scenario.slug, st, { won, grade, score }, specialty).then(setReward);
       track(
         CASEGAME_EVENTS.complete,
         buildCompleteProps({
@@ -596,6 +608,20 @@ export default function SimRunner({
               ))}
             </div>
           </div>
+          {playerXp !== null && (() => {
+            const { rank, next, xpForNext, xpIntoRank } = xpToRank(playerXp);
+            return (
+              <div className="cbs-title-rank">
+                <span aria-hidden>{rank.icon}</span>
+                <span className="cbs-title-rank-name">{rank.title}</span>
+                {next && (
+                  <span className="cbs-title-rank-next">
+                    อีก {(xpForNext - xpIntoRank).toLocaleString("th-TH")} XP ถึง{next.title}
+                  </span>
+                )}
+              </div>
+            );
+          })()}
           <div className="cbs-title-row">
             {hiscore > 0 && <div className="cbs-hiscore-chip">HI-SCORE {hiscore}</div>}
             <button
@@ -654,6 +680,17 @@ export default function SimRunner({
                 <span key={slug} className="cbs-badge-pill">🏅 {SIM_BADGE_NAMES[slug] ?? slug}</span>
               ))}
             </div>
+          )}
+          {reward && (reward.loggedIn || reward.isLocal) && (
+            <>
+              <RankProgressCard {...reward} />
+              {reward.isLocal && (
+                <p className="cbs-local-note">
+                  ความคืบหน้านี้เก็บไว้ในเครื่องนี้เท่านั้น ({reward.localRuns} เคส) —
+                  ล็อกอินแล้วระบบจะยกเข้าบัญชีให้ทันที
+                </p>
+              )}
+            </>
           )}
           {reward && !reward.loggedIn && !practice && (
             <DebriefLeadCta

@@ -159,7 +159,7 @@ export default function DebriefLeadCta({
         >
           เข้าสู่ระบบ
         </Link>{" "}
-        เพื่อเก็บ XP, Badge และขึ้น Leaderboard
+        ระบบจะยกเคสที่คุณเล่นไว้ในเครื่องนี้เข้าบัญชีให้ พร้อม XP และยศ
       </p>
     </form>
   );

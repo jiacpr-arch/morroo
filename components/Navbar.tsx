@@ -8,6 +8,7 @@ import { Menu, X, User, LogOut } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import type { User as SupabaseUser } from "@supabase/supabase-js";
 import BetaHeaderCounter from "@/components/beta/BetaHeaderCounter";
+import NavbarRankChip from "@/components/school/NavbarRankChip";
 
 const navLinks: { href: string; label: string; isNew?: boolean }[] = [
   { href: "/", label: "หน้าแรก" },
@@ -89,6 +90,7 @@ export default function Navbar() {
 
         {/* Auth buttons */}
         <div className="hidden md:flex items-center gap-3">
+          {user && <NavbarRankChip />}
           {user && <BetaHeaderCounter />}
           {user ? (
             <>
@@ -142,6 +144,7 @@ export default function Navbar() {
 
         {/* Mobile menu button */}
         <div className="md:hidden flex items-center gap-2">
+          {user && <NavbarRankChip />}
           {user && <BetaHeaderCounter />}
           <button onClick={() => setMobileOpen(!mobileOpen)}>
             {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
