@@ -34,34 +34,48 @@ function CaseRow({ card, best, href }: { card: CaseCard; best?: SimBest; href: s
   return (
     <Link
       href={href}
-      className="group flex items-center gap-2.5 border-b px-3 py-3 transition-colors last:border-b-0 hover:bg-brand/5 active:bg-brand/10"
+      className="group flex items-start gap-3 border-b px-3 py-3.5 transition-colors last:border-b-0 hover:bg-brand/5 active:bg-brand/10"
     >
-      {/* เคสคัดมือไม่ได้เก็บสาขาไว้ ถ้าโชว์ "อื่น ๆ" จะดูรกเปล่าๆ — ใช้ป้าย
-          "แนะนำ" ที่สื่อความหมายกว่าแทน */}
-      {card.type === "featured" ? (
-        <span className="shrink-0 rounded-md bg-amber-100 px-1.5 py-0.5 text-[11px] font-medium text-amber-700">
-          แนะนำ
-        </span>
-      ) : (
-        <span
-          className={`shrink-0 rounded-md px-1.5 py-0.5 text-[11px] font-medium ${specialtyColor(card.specialty)}`}
-        >
-          {card.specialty}
-        </span>
-      )}
-      <span className="min-w-0 flex-1 truncate text-sm font-medium text-gray-900 group-hover:text-brand">
-        {cleanTitle(card.title)}
-      </span>
-      {best && (
-        <span className={`shrink-0 text-xs font-bold ${GRADE_TEXT[best.grade] ?? "text-muted-foreground"}`}>
-          <Trophy className="mr-0.5 inline h-3 w-3" />
-          {best.grade}
-        </span>
-      )}
-      {/* ปุ่มเล่นต้องเห็นตลอด — เดิมซ่อนไว้ให้โผล่ตอน hover ซึ่งบนมือถือไม่มี
-          hover เลยดูเป็นข้อความเฉยๆ ไม่รู้ว่ากดเล่นได้ */}
-      <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand transition-colors group-hover:bg-brand group-hover:text-white group-active:bg-brand group-active:text-white">
-        <Play className="h-3.5 w-3.5 fill-current" />
+      <div className="min-w-0 flex-1">
+        <div className="mb-1 flex flex-wrap items-center gap-1.5">
+          {/* เคสคัดมือไม่ได้เก็บสาขาไว้ ถ้าโชว์ "อื่น ๆ" จะดูรกเปล่าๆ */}
+          {card.type === "featured" ? (
+            <span className="rounded-md bg-amber-100 px-1.5 py-0.5 text-[11px] font-medium text-amber-700">
+              แนะนำ
+            </span>
+          ) : (
+            <span
+              className={`rounded-md px-1.5 py-0.5 text-[11px] font-medium ${specialtyColor(card.specialty)}`}
+            >
+              {card.specialty}
+            </span>
+          )}
+          <span
+            className={`rounded-md px-1.5 py-0.5 text-[11px] font-medium ${DIFFICULTY_STYLE[card.difficulty]}`}
+          >
+            {card.difficulty}
+          </span>
+          {best && (
+            <span className={`text-[11px] font-bold ${GRADE_TEXT[best.grade] ?? "text-muted-foreground"}`}>
+              <Trophy className="mr-0.5 inline h-3 w-3" />
+              {best.grade}
+            </span>
+          )}
+        </div>
+        <h3 className="truncate text-[15px] font-semibold leading-snug text-gray-900 group-hover:text-brand">
+          {cleanTitle(card.title)}
+        </h3>
+        {/* โจทย์ผู้ป่วยหนึ่งบรรทัด — นี่คือสิ่งที่ทำให้เคสน่าเล่น ก่อนหน้านี้
+            แถวโชว์แค่ชื่อเคสเลยดูจืด ไม่รู้ว่าเจอเคสแบบไหน */}
+        {card.subtitle && (
+          <p className="mt-0.5 line-clamp-1 text-xs leading-relaxed text-muted-foreground">
+            {card.subtitle}
+          </p>
+        )}
+      </div>
+      {/* ปุ่มจริงมีตัวหนังสือ เห็นตลอด (ไม่ผูกกับ hover — มือถือไม่มี hover) */}
+      <span className="mt-0.5 inline-flex shrink-0 items-center gap-1 rounded-full bg-brand px-3 py-1.5 text-xs font-bold text-white shadow-sm transition group-hover:brightness-110 group-active:scale-95">
+        <Play className="h-3 w-3 fill-current" /> เล่น
       </span>
     </Link>
   );
@@ -147,7 +161,8 @@ export default function CaseGameBrowser({ featured, cards, bests, utm }: Props) 
     setShownPerLevel({});
   }, [search, specialty, level]);
 
-  const PAGE = 8;
+  // แถวสูงขึ้นเพราะมีโจทย์ผู้ป่วยกับปุ่มเล่น เลยลดจำนวนต่อหน้าลงกันหน้ายาว
+  const PAGE = 6;
   const shownOf = (lvl: string) => shownPerLevel[lvl] ?? PAGE;
   const showMore = (lvl: string) =>
     setShownPerLevel((prev) => ({ ...prev, [lvl]: (prev[lvl] ?? PAGE) + PAGE }));
