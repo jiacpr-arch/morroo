@@ -22,6 +22,7 @@ import {
 } from "@/lib/sim/track";
 import { track } from "@/lib/analytics";
 import DebriefLeadCta from "@/components/sim/DebriefLeadCta";
+import RankProgressCard from "@/components/sim/RankProgressCard";
 import {
   parseEmphasis,
   type ChoiceNode, type ChoiceOption, type NodeFx, type Pose,
@@ -88,11 +89,16 @@ interface SimRunnerProps {
    * คนที่กดโฆษณาเข้ามาได้เล่นทันทีโดยไม่ต้องกดอะไรอีก
    */
   autostart?: boolean;
+  /**
+   * สาขาของเคส (long_cases.specialty / exams.category) — เก็บลง sim_runs ตอน
+   * บันทึกผลเพื่อคิดความเชี่ยวชาญรายสาขา null ได้สำหรับเคส ACLS
+   */
+  specialty?: string | null;
 }
 
 export default function SimRunner({
   scenario, practice = false, characters, campaign = null, adSet = null,
-  autostart = false,
+  autostart = false, specialty = null,
 }: SimRunnerProps) {
   const dbCharacters = useMemo(
     () => new Map((characters ?? []).map((c) => [c.slug, c])),
@@ -279,7 +285,7 @@ export default function SimRunner({
     // บันทึกผล + XP/Badge เบื้องหลัง — จอ debrief โชว์ทันที รางวัลตามมา
     setReward(null);
     if (!practice) {
-      void recordSimRun(scenario.slug, st, { won, grade, score }).then(setReward);
+      void recordSimRun(scenario.slug, st, { won, grade, score }, specialty).then(setReward);
       track(
         CASEGAME_EVENTS.complete,
         buildCompleteProps({
@@ -648,6 +654,7 @@ export default function SimRunner({
               ))}
             </div>
           )}
+          {reward && reward.loggedIn && <RankProgressCard reward={reward} />}
           {reward && !reward.loggedIn && !practice && (
             <DebriefLeadCta
               slug={scenario.slug}

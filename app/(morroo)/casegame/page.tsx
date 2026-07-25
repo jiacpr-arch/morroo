@@ -4,10 +4,12 @@ import { BookOpen, Stethoscope, Zap } from "lucide-react";
 import {
   getLongcaseGameCards,
   getMeqGameCards,
+  getMyDoctorProfile,
   getMySimBests,
   getPolishedLongcaseCards,
   getSimScenariosByCategory,
 } from "@/lib/supabase/queries-sim";
+import DoctorCard from "@/components/casegame/DoctorCard";
 import {
   normalizeDifficulty,
   normalizeSpecialty,
@@ -47,14 +49,16 @@ interface PageProps {
 }
 
 export default async function CaseGameHubPage({ searchParams }: PageProps) {
-  const [polished, polishedCards, longcaseCards, meqCards, bests, sp] = await Promise.all([
-    getSimScenariosByCategory("longcase"),
-    getPolishedLongcaseCards(),
-    getLongcaseGameCards(),
-    getMeqGameCards(),
-    getMySimBests(),
-    searchParams,
-  ]);
+  const [polished, polishedCards, longcaseCards, meqCards, bests, doctor, sp] =
+    await Promise.all([
+      getSimScenariosByCategory("longcase"),
+      getPolishedLongcaseCards(),
+      getLongcaseGameCards(),
+      getMeqGameCards(),
+      getMySimBests(),
+      getMyDoctorProfile(),
+      searchParams,
+    ]);
 
   // "เคสแนะนำ" = เคสคัดมือที่เขียนเองในโค้ด (built-in) เท่านั้น
   // เคสที่ AI แปลงไว้มีเป็นร้อย ถ้าเอามาไว้ตรงนี้ทั้งหมดหน้าจะยาวมากและกรอง
@@ -138,6 +142,16 @@ export default async function CaseGameHubPage({ searchParams }: PageProps) {
           </div>
         </div>
       </section>
+
+      {doctor && (
+        <div className="mt-6">
+          <DoctorCard
+            xp={doctor.xp}
+            specialties={doctor.specialties}
+            totalWins={doctor.totalWins}
+          />
+        </div>
+      )}
 
       {isEmpty ? (
         <div className="mt-8 rounded-xl border bg-white py-16 text-center text-muted-foreground">
