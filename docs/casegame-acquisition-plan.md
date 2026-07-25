@@ -83,8 +83,9 @@
 - [x] **ยืนยันว่า event ยิงจริงบน production** — `casegame_start` / `casegame_first_decision` / `casegame_complete` มีข้อมูลจริงในตาราง `analytics_events` แล้ว
 - [ ] **ยืนยันฝั่ง Meta ด้วย Test Events** — ตั้ง `META_TEST_EVENT_CODE` แล้วเล่น 1 รอบ ต้องเห็น `ViewContent` พร้อม `content_type: casegame`
   ⚠️ ยังไม่ได้ทำ · dataset stats รวมแยกไม่ได้ว่า `ViewContent` ใบไหนมาจากเกม เพราะหน้า `/register` ก็ยิง event เดียวกัน
-- [ ] **สร้าง Custom Conversion "เริ่มเล่นเกมเคส"** บน pixel `966371002896288` จากกติกา `content_name` **ขึ้นต้นด้วย** `casegame_start`
+- [ ] **สร้าง Custom Conversion "เล่นเกมเคสจริง"** บน pixel `966371002896288` จากกติกา `content_name` **ขึ้นต้นด้วย** `casegame_first_decision`
   ⚠️ **ต้องทำในหน้า Events Manager เอง** — MCP ไม่มีเครื่องมือสร้าง Custom Conversion · ตัวนี้คือ optimization target ของทั้งแผน
+  ⚠️ **ห้ามใช้ `casegame_start`** — โฆษณายิงเข้าโหมด autostart (`?start=1`) เกมจึงเริ่มเองทุกครั้งที่หน้าโหลด `start` เลยมีค่าเท่ากับ Landing Page View ใช้เป็น optimization target ไม่ได้ · "ตัดสินใจข้อแรก" คือสัญญาณแรกที่พิสูจน์ว่าเล่นจริง และยังมีปริมาณพอให้เรียนรู้ (~70% ของคนที่เข้า)
 - [x] **สร้าง Custom Audience** `[MR] คนเล่นเกมเคส 180 วัน` = `52588558510197`
   กติกาใช้ URL (`url i_contains "/sim/"`) ไม่ใช่ `content_type` เพราะ WCA rule รองรับ filter แค่ `url`/`event` · เป็น seed ของ Lookalike 1% ที่ติดเงื่อนไข pool < 100 คน
 
@@ -100,11 +101,13 @@
 ปิด Advantage+ Audience (`advantage_audience: 0`) ให้อายุ 20–35 เป็นช่วงตายตัว ตามกฎไทยห้ามยิงต่ำกว่า 20
 ต้องวิ่ง**คู่กับ** `[MR]_Traffic_FreeTrial` (`52580729960597` — **ACTIVE อยู่จริง** ใช้ไป ฿849 ใน 7 วัน) เพื่อเทียบ **ไม่ใช่ไปแทนที่**
 
-**ทดสอบปลายทาง 2 แบบด้วย ad 2 ตัวใน ad set เดียว** (กระทบ `casegame_start` โดยตรง):
-- ก. Hub → `/casegame?...&utm_content=hub` — เห็นว่ามีหลายเคส แต่เพิ่ม 1 คลิก
-- ข. Direct → `/sim/lc-testicular-torsion-01?...&utm_content=direct` — ตัดคลิกทิ้ง ดัน `casegame_start` สูงสุด
+**ทุกปลายทางของโฆษณาต้องมี `&start=1`** — เกมจะข้ามจอ title แล้วเริ่มเล่นทันทีที่หน้าโหลด คนกดโฆษณาเข้ามาจึงได้ engage ทันทีโดยไม่ต้องกดอะไรอีก (ผู้ใช้ที่เข้ามาเองยังเจอจอ title ตามปกติ เพราะจอนั้นเป็นที่เลือกระดับความยาก)
 
-วัดด้วย `casegame_start / LPV` ของแต่ละ ad
+**ทดสอบปลายทาง 2 แบบด้วย ad 2 ตัวใน ad set เดียว:**
+- ก. Hub → `/casegame?...&utm_content=hub&start=1` — เห็นว่ามีหลายเคส แต่เพิ่ม 1 คลิก (หน้ารวมส่ง `start` ต่อให้เอง)
+- ข. Direct → `/sim/lc-testicular-torsion-01?...&utm_content=direct&start=1` — เข้าเกมทันที 0 คลิก
+
+วัดด้วย `casegame_first_decision / LPV` ของแต่ละ ad — ไม่ใช่ `casegame_start` ซึ่งตอนนี้เท่ากับ LPV ไปแล้ว
 
 **เมื่อ Custom Conversion สะสมได้ ~50/สัปดาห์** → เปลี่ยนแคมเปญเป็น Conversions optimize บน event นั้น (นี่คือเป้าหมายจริงของทั้งแผน)
 

@@ -143,6 +143,19 @@ describe("Meta CAPI helpers", () => {
     expect(capiContentName("start", "lc-1").startsWith("casegame_start")).toBe(true);
   });
 
+  it("carries first_decision, the optimization target once ads autostart the game", () => {
+    // ในโหมด autostart ตัว start เกิดทุก page view — Custom Conversion ต้องผูก
+    // กับ prefix นี้แทน ไม่งั้นจะ optimize บน landing page view เปล่าๆ
+    expect(capiContentName("first_decision", "lc-1")).toBe("casegame_first_decision:lc-1");
+    expect(
+      capiContentName("first_decision", "lc-1").startsWith("casegame_first_decision")
+    ).toBe(true);
+    // ต้องไม่ชนกับ prefix ของ start เวลาเอาไปทำกติกาแบบ "ขึ้นต้นด้วย"
+    expect(
+      capiContentName("first_decision", "lc-1").startsWith("casegame_start")
+    ).toBe(false);
+  });
+
   it("scopes the dedup id to one play-through", () => {
     expect(capiEventId("start", "run-1")).toBe("casegame:start:run-1");
     // คนละรอบเล่น = คนละ conversion; รอบเดียวกันยิงซ้ำ = ตัวเดียวกัน
