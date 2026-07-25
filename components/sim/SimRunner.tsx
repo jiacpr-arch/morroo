@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { AlertTriangle, Home, RefreshCw, Volume2, VolumeX, Zap } from "lucide-react";
+import { AlertTriangle, Home, RefreshCw, Shuffle, Volume2, VolumeX, Zap } from "lucide-react";
 import { resolveCharacter, type SimDbCharacter } from "@/lib/sim/characters";
 import CharacterSprite from "@/components/sim/CharacterSprite";
 import EcgMonitor from "@/components/sim/EcgMonitor";
@@ -92,8 +92,9 @@ export default function SimRunner({
     () => new Map((characters ?? []).map((c) => [c.slug, c])),
     [characters],
   );
-  // เกมเคส (long case) ใช้เอนจินเดียวกันแต่ไม่มี CPR/shock/rhythm — ปรับข้อความให้เข้าธีม ward
-  const isLongcase = scenario.category === "longcase";
+  // เกมเคส (long case + MEQ) ใช้เอนจินเดียวกันแต่ไม่มี CPR/shock/rhythm —
+  // ปรับข้อความให้เข้าธีม ward และกลับไปหน้ารวมเกมเคส ไม่ใช่หน้ารวม ACLS
+  const isLongcase = scenario.category === "longcase" || scenario.category === "meq";
   const hubHref = isLongcase ? "/casegame" : "/sim";
   const [reducedMotion] = useState(
     () => isBrowser && window.matchMedia("(prefers-reduced-motion: reduce)").matches,
@@ -530,7 +531,7 @@ export default function SimRunner({
           <h1>
             morroo<br />
             <span className="cbs-gold-text">{isLongcase ? "LONG CASE" : "CODE BLUE"}</span><br />
-            {scenario.title.replace(/^(CODE BLUE|LONG CASE):\s*/, "")}
+            {scenario.title.replace(/^(CODE BLUE|LONG CASE|MEQ):\s*/i, "")}
           </h1>
           <p className="cbs-title-sub">
             {scenario.subtitle}<br />
@@ -580,8 +581,14 @@ export default function SimRunner({
           </button>
           <Link href={hubHref} className="cbs-btn-ghost">
             <Home size={15} strokeWidth={2.4} style={{ display: "inline", verticalAlign: "-2px", marginRight: 6 }} />
-            กลับหน้ารวมเคส
+            เลือกเคสอื่น
           </Link>
+          {isLongcase && (
+            <Link href={`/casegame/random?exclude=${scenario.slug}`} className="cbs-btn-ghost">
+              <Shuffle size={15} strokeWidth={2.4} style={{ display: "inline", verticalAlign: "-2px", marginRight: 6 }} />
+              สุ่มเคสอื่น
+            </Link>
+          )}
           <div className="cbs-note">{isLongcase ? "DECISION GAME · LONG CASE · MORROO" : "DECISION GAME · ACLS TRAINING · MORROO"}</div>
         </section>
       </div>
@@ -669,7 +676,13 @@ export default function SimRunner({
               <RefreshCw size={16} strokeWidth={2.6} style={{ display: "inline", verticalAlign: "-2px", marginRight: 8 }} />
               เล่นเคสนี้อีกครั้ง
             </button>
-            <Link href={hubHref} className="cbs-btn-ghost">กลับหน้ารวมเคส</Link>
+            {isLongcase && (
+              <Link href={`/casegame/random?exclude=${scenario.slug}`} className="cbs-btn-ghost">
+                <Shuffle size={15} strokeWidth={2.4} style={{ display: "inline", verticalAlign: "-2px", marginRight: 6 }} />
+                สุ่มเคสถัดไป
+              </Link>
+            )}
+            <Link href={hubHref} className="cbs-btn-ghost">เลือกเคสอื่น</Link>
           </div>
         </section>
       </div>

@@ -3,10 +3,8 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Play, Search, Shuffle, Sparkles, Trophy } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { ChevronDown, Play, Search, Shuffle, Star, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import type { SimBest } from "@/lib/supabase/queries-sim";
 import {
@@ -19,76 +17,40 @@ import {
   type Difficulty,
 } from "@/lib/casegame/normalize";
 
-const GRADE_STYLE: Record<string, string> = {
-  S: "bg-amber-100 text-amber-700",
-  A: "bg-teal-100 text-teal-700",
-  B: "bg-emerald-100 text-emerald-700",
-  C: "bg-rose-100 text-rose-700",
-};
-
-const TYPE_LABEL: Record<CaseCard["type"], string> = {
-  featured: "แนะนำ",
-  longcase: "Long Case",
-  meq: "MEQ",
+const GRADE_TEXT: Record<string, string> = {
+  S: "text-amber-600",
+  A: "text-teal-600",
+  B: "text-emerald-600",
+  C: "text-rose-600",
 };
 
 const chipBase =
-  "inline-flex items-center gap-1 rounded-full border px-3 py-1.5 text-sm transition-colors";
+  "shrink-0 rounded-full border px-3 py-1 text-sm transition-colors whitespace-nowrap";
 const chipActive = "bg-brand text-white border-brand";
 const chipIdle = "bg-background hover:bg-muted text-foreground border-border";
 
-function BestBadge({ best }: { best?: SimBest }) {
-  if (!best) return null;
-  return (
-    <Badge className={GRADE_STYLE[best.grade] ?? "bg-muted"}>
-      <Trophy className="mr-1 h-3 w-3" />
-      เกรดดีสุด {best.grade}
-    </Badge>
-  );
-}
-
-function CaseTile({
-  card,
-  best,
-  href,
-}: {
-  card: CaseCard;
-  best?: SimBest;
-  href: string;
-}) {
+/** แถวเคสแบบหนาแน่น 1 บรรทัด — เห็นได้เยอะต่อจอ เลื่อนน้อย */
+function CaseRow({ card, best, href }: { card: CaseCard; best?: SimBest; href: string }) {
   return (
     <Link
       href={href}
-      className="group flex flex-col rounded-xl border bg-white p-4 transition-shadow hover:shadow-md"
+      className="group flex items-center gap-2 border-b px-2 py-2.5 hover:bg-muted/50"
     >
-      <div className="mb-2 flex flex-wrap items-center gap-1.5">
-        <span
-          className={`rounded-full px-2 py-0.5 text-xs font-medium ${specialtyColor(card.specialty)}`}
-        >
-          {card.specialty}
-        </span>
-        <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${DIFFICULTY_STYLE[card.difficulty]}`}>
-          {card.difficulty}
-        </span>
-        <span className="rounded-full bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-600">
-          {TYPE_LABEL[card.type]}
-        </span>
-        {card.audience === "board" && (
-          <span className="rounded-full bg-purple-100 px-2 py-0.5 text-xs font-medium text-purple-700">
-            บอร์ด
-          </span>
-        )}
-        <BestBadge best={best} />
-      </div>
-      <h3 className="text-sm font-semibold leading-snug text-gray-900 group-hover:text-brand">
-        {cleanTitle(card.title)}
-      </h3>
-      {card.subtitle && (
-        <p className="mt-1 line-clamp-2 text-xs text-muted-foreground">{card.subtitle}</p>
-      )}
-      <span className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-brand">
-        <Play className="h-3 w-3" /> เล่นเคสนี้
+      <span
+        className={`shrink-0 rounded px-1.5 py-0.5 text-[11px] font-medium ${specialtyColor(card.specialty)}`}
+      >
+        {card.specialty}
       </span>
+      <span className="min-w-0 flex-1 truncate text-sm font-medium text-gray-900 group-hover:text-brand">
+        {cleanTitle(card.title)}
+      </span>
+      {best && (
+        <span className={`shrink-0 text-xs font-bold ${GRADE_TEXT[best.grade] ?? "text-muted-foreground"}`}>
+          <Trophy className="mr-0.5 inline h-3 w-3" />
+          {best.grade}
+        </span>
+      )}
+      <Play className="h-4 w-4 shrink-0 text-brand opacity-0 transition-opacity group-hover:opacity-100" />
     </Link>
   );
 }
@@ -106,6 +68,7 @@ export default function CaseGameBrowser({ featured, cards, bests, utm }: Props) 
   const [search, setSearch] = useState("");
   const [specialty, setSpecialty] = useState("ทั้งหมด");
   const [level, setLevel] = useState<"ทั้งหมด" | Difficulty>("ทั้งหมด");
+  const [openLevels, setOpenLevels] = useState<Set<string> | null>(null);
 
   const href = (slug: string) => `/sim/${slug}${utm}`;
 
@@ -147,6 +110,23 @@ export default function CaseGameBrowser({ featured, cards, bests, utm }: Props) 
 
   const hasFilter = specialty !== "ทั้งหมด" || level !== "ทั้งหมด" || search.trim() !== "";
 
+  // พับกลุ่มไหนบ้าง: ค่าเริ่มต้น (openLevels = null) เปิดเฉพาะกลุ่มแรก (ง่ายสุด)
+  // เพื่อให้หน้าสั้น กลุ่มอื่นพับไว้กดเปิดเองได้; เมื่อกรอง/ค้นหาเปิดหมด
+  const firstLevel = groups[0]?.level;
+  const isOpen = (lvl: string) => {
+    if (hasFilter) return true;
+    return openLevels ? openLevels.has(lvl) : lvl === firstLevel;
+  };
+
+  const toggle = (lvl: string) => {
+    setOpenLevels((prev) => {
+      const next = new Set(prev ?? (firstLevel ? [firstLevel] : []));
+      if (next.has(lvl)) next.delete(lvl);
+      else next.add(lvl);
+      return next;
+    });
+  };
+
   const goRandom = (pool: CaseCard[]) => {
     if (pool.length === 0) return;
     const pick = pool[Math.floor(Math.random() * pool.length)];
@@ -154,15 +134,11 @@ export default function CaseGameBrowser({ featured, cards, bests, utm }: Props) 
   };
 
   return (
-    <div className="mt-8">
-      {/* แถบควบคุม: สุ่ม + ค้นหา + กรอง */}
-      <div className="space-y-3 rounded-2xl border bg-white/60 p-4">
-        <div className="flex flex-col gap-2 sm:flex-row">
-          <Button
-            onClick={() => goRandom(filtered.length ? filtered : cards)}
-            size="lg"
-            className="gap-2"
-          >
+    <div className="mt-6">
+      {/* แถบควบคุมปักบน: สุ่ม + ค้นหา + กรอง (หาเจอตลอด ไม่ต้องเลื่อนขึ้น) */}
+      <div className="sticky top-0 z-10 -mx-4 space-y-2 border-b bg-white/95 px-4 py-3 backdrop-blur sm:mx-0 sm:rounded-xl sm:border sm:px-3">
+        <div className="flex gap-2">
+          <Button onClick={() => goRandom(filtered.length ? filtered : cards)} className="gap-1.5">
             <Shuffle className="h-4 w-4" /> สุ่มเคส
           </Button>
           <div className="relative flex-1">
@@ -175,30 +151,20 @@ export default function CaseGameBrowser({ featured, cards, bests, utm }: Props) 
             />
           </div>
         </div>
-
-        {/* ระดับความยาก */}
-        <div className="flex flex-wrap gap-2">
-          <button
-            type="button"
-            onClick={() => setLevel("ทั้งหมด")}
-            className={`${chipBase} ${level === "ทั้งหมด" ? chipActive : chipIdle}`}
-          >
-            ทุกระดับ
-          </button>
-          {DIFFICULTY_ORDER.map((d) => (
+        {/* ระดับ + สาขา เลื่อนแนวนอนแถวเดียว ไม่กินพื้นที่แนวตั้ง */}
+        <div className="flex gap-1.5 overflow-x-auto pb-1">
+          {(["ทั้งหมด", ...DIFFICULTY_ORDER] as const).map((d) => (
             <button
               key={d}
               type="button"
               onClick={() => setLevel(d)}
               className={`${chipBase} ${level === d ? chipActive : chipIdle}`}
             >
-              {d}
+              {d === "ทั้งหมด" ? "ทุกระดับ" : d}
             </button>
           ))}
         </div>
-
-        {/* สาขา */}
-        <div className="flex flex-wrap gap-2">
+        <div className="flex gap-1.5 overflow-x-auto pb-1">
           <button
             type="button"
             onClick={() => setSpecialty("ทั้งหมด")}
@@ -213,78 +179,72 @@ export default function CaseGameBrowser({ featured, cards, bests, utm }: Props) 
               onClick={() => setSpecialty(s)}
               className={`${chipBase} ${specialty === s ? chipActive : chipIdle}`}
             >
-              {s}
-              <span className="text-xs opacity-70">{specialtyCounts.get(s)}</span>
+              {s} <span className="opacity-60">{specialtyCounts.get(s)}</span>
             </button>
           ))}
         </div>
       </div>
 
-      {/* เคสแนะนำ (pin เฉพาะตอนไม่ได้กรอง) */}
+      {/* เคสแนะนำ — แถวหนาแน่น อยู่บนสุดเป็นจุดเริ่ม (เฉพาะตอนไม่กรอง) */}
       {!hasFilter && featured.length > 0 && (
-        <section className="mt-8">
-          <h2 className="mb-3 flex items-center gap-1.5 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
-            <Sparkles className="h-4 w-4 text-amber-500" /> เริ่มที่เคสแนะนำ
+        <section className="mt-4">
+          <h2 className="mb-1 flex items-center gap-1.5 px-2 text-xs font-semibold uppercase tracking-wide text-amber-600">
+            <Star className="h-3.5 w-3.5" /> เริ่มที่เคสแนะนำ
           </h2>
-          <div className="space-y-4">
-            {featured.map((s) => (
-              <Card key={s.slug} className="transition-shadow hover:shadow-md hover:ring-brand/30">
-                <CardContent className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center">
-                  <div className="flex-1 space-y-1.5">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <Badge className="bg-amber-100 text-amber-700">เคสแนะนำ</Badge>
-                      <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${DIFFICULTY_STYLE[s.difficulty]}`}>
-                        {s.difficulty}
-                      </span>
-                      <BestBadge best={bests[s.slug]} />
-                    </div>
-                    <h3 className="text-lg font-bold">{cleanTitle(s.title)}</h3>
-                    {s.subtitle && <p className="text-sm text-muted-foreground">{s.subtitle}</p>}
-                  </div>
-                  <Link href={href(s.slug)} className="shrink-0">
-                    <Button size="lg" className="w-full gap-2 sm:w-auto">
-                      <Play className="h-4 w-4" /> รับเคส
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
+          <div className="overflow-hidden rounded-xl border bg-amber-50/40">
+            {featured.map((c) => (
+              <CaseRow key={c.slug} card={c} best={bests[c.slug]} href={href(c.slug)} />
             ))}
           </div>
         </section>
       )}
 
-      {/* รายการหลัก จัดกลุ่มตามความยาก ง่าย → ยาก */}
+      {/* รายการหลัก: พับตามระดับ ง่าย → ยาก (เริ่มเปิดกลุ่มแรก) */}
       {filtered.length === 0 ? (
         hasFilter ? (
-          <div className="mt-8 rounded-xl border bg-white py-16 text-center text-muted-foreground">
+          <div className="mt-6 rounded-xl border bg-white py-12 text-center text-sm text-muted-foreground">
             ไม่พบเคสที่ตรงกับตัวกรอง — ลองล้างตัวกรองหรือค้นหาคำอื่น
           </div>
         ) : null
       ) : (
-        groups.map((g) => (
-          <section key={g.level} className="mt-8">
-            <div className="mb-3 flex items-center justify-between">
-              <h2 className="flex items-center gap-1.5 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
-                <span className={`rounded-full px-2 py-0.5 text-xs ${DIFFICULTY_STYLE[g.level]}`}>
-                  {g.level}
-                </span>
-                · {g.items.length} เคส
-              </h2>
-              <button
-                type="button"
-                onClick={() => goRandom(g.items)}
-                className="inline-flex items-center gap-1 text-xs font-medium text-brand hover:underline"
-              >
-                <Shuffle className="h-3 w-3" /> สุ่มระดับนี้
-              </button>
-            </div>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {g.items.map((c) => (
-                <CaseTile key={c.slug} card={c} best={bests[c.slug]} href={href(c.slug)} />
-              ))}
-            </div>
-          </section>
-        ))
+        <div className="mt-4 space-y-3">
+          {groups.map((g) => {
+            const open = isOpen(g.level);
+            return (
+              <section key={g.level} className="overflow-hidden rounded-xl border bg-white">
+                <div className="flex items-center justify-between gap-2 px-3 py-2">
+                  <button
+                    type="button"
+                    onClick={() => toggle(g.level)}
+                    className="flex flex-1 items-center gap-2 text-left"
+                  >
+                    <ChevronDown
+                      className={`h-4 w-4 text-muted-foreground transition-transform ${open ? "" : "-rotate-90"}`}
+                    />
+                    <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${DIFFICULTY_STYLE[g.level]}`}>
+                      {g.level}
+                    </span>
+                    <span className="text-sm text-muted-foreground">{g.items.length} เคส</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => goRandom(g.items)}
+                    className="inline-flex shrink-0 items-center gap-1 text-xs font-medium text-brand hover:underline"
+                  >
+                    <Shuffle className="h-3 w-3" /> สุ่ม
+                  </button>
+                </div>
+                {open && (
+                  <div className="border-t">
+                    {g.items.map((c) => (
+                      <CaseRow key={c.slug} card={c} best={bests[c.slug]} href={href(c.slug)} />
+                    ))}
+                  </div>
+                )}
+              </section>
+            );
+          })}
+        </div>
       )}
     </div>
   );
