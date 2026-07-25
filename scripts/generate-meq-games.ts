@@ -43,6 +43,8 @@ const LIMIT = val("--limit") ? Number(val("--limit")) : undefined;
 const EXAM_ID = val("--exam");
 const CATEGORY = val("--category");
 const MODELS = [val("--model") ?? "claude-sonnet-4-6", "claude-haiku-4-5"];
+// แปลงพร้อมกันกี่เคส — ลำพังเคสละ ~1-2 นาที ถ้าไล่ทีละเคสจะเกิน timeout ของ CI
+const CONCURRENCY = Math.max(1, Number(val("--concurrency") ?? 3));
 
 // รับได้ทั้ง NEXT_PUBLIC_SUPABASE_URL (dev/local) และ SUPABASE_URL (CI secret)
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL ?? process.env.SUPABASE_URL;
@@ -84,7 +86,9 @@ async function generateOne(
     try {
       const res = await client.messages.create({
         model,
-        max_tokens: 8192,
+        // scenario 9-12 choice พร้อม then/why เต็มรูปแบบยาวเกิน 8k เสมอ —
+        // ที่ 8192 เคสส่วนใหญ่ตาย max_tokens (เทียบ generate-meq-weekly ใช้ 32k)
+        max_tokens: 32000,
         system,
         tools: [SCENARIO_TOOL],
         tool_choice: { type: "tool", name: "create_sim_scenario" },
@@ -175,7 +179,8 @@ async function run() {
   const client = new Anthropic({ apiKey: ANTHROPIC_API_KEY, maxRetries: 4 });
   let ok = 0;
   let fail = 0;
-  for (const [i, e] of exams.entries()) {
+
+  const convertOne = async (e: ExamRow, i: number) => {
     const label = `[${i + 1}/${exams.length}] ${e.title}`;
     try {
       const parts = await loadParts(e.id);
@@ -215,7 +220,19 @@ async function run() {
       fail += 1;
       console.error(`✗ ${label} — ${err instanceof Error ? err.message : String(err)}`);
     }
-  }
+  };
+
+  // worker pool: หยิบเคสถัดไปจากคิวเมื่อว่าง (ไม่ยิงพร้อมกันทั้งหมดกัน rate limit)
+  let cursor = 0;
+  const workers = Array.from({ length: Math.min(CONCURRENCY, exams.length) }, async () => {
+    for (;;) {
+      const i = cursor++;
+      if (i >= exams.length) return;
+      await convertOne(exams[i], i);
+    }
+  });
+  await Promise.all(workers);
+
   console.log(`\nเสร็จ: สำเร็จ ${ok}, ล้มเหลว ${fail}. รีวิว/publish ได้ที่ /admin/sim`);
 }
 
