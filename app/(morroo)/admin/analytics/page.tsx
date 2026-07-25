@@ -39,7 +39,7 @@ type Summary = {
   caseGameFirstDecisions: number;
   caseGameCompletes: number;
   caseGameCtaViews: number;
-  caseGameLeads: number;
+  caseGameCtaClicks: number;
   landingViews: { surface: string; count: number }[];
   topPaths: { path: string; count: number }[];
   topReferrers: { ref: string; count: number }[];
@@ -49,7 +49,7 @@ type Summary = {
   caseGameCompleteConv: number | null;
   /** เล่นจบ → เห็นฟอร์มเก็บอีเมล (คนที่ล็อกอินอยู่แล้วจะไม่เห็น) */
   caseGameCtaViewConv: number | null;
-  caseGameLeadConv: number | null;
+  caseGameCtaClickConv: number | null;
 };
 
 const RANGES = [
@@ -242,17 +242,17 @@ export default function AdminAnalyticsPage() {
           />
           <FunnelRow
             from="เล่นจบ"
-            to="เห็นฟอร์มขออีเมล"
+            to="เห็น CTA ท้ายเกม"
             fromValue={summary.caseGameCompletes}
             toValue={summary.caseGameCtaViews}
             conv={summary.caseGameCtaViewConv}
           />
           <FunnelRow
-            from="เห็นฟอร์ม"
-            to="ให้อีเมล (lead)"
+            from="เห็น CTA"
+            to="กดเข้าดูเนื้อหาต่อ"
             fromValue={summary.caseGameCtaViews}
-            toValue={summary.caseGameLeads}
-            conv={summary.caseGameLeadConv}
+            toValue={summary.caseGameCtaClicks}
+            conv={summary.caseGameCtaClickConv}
           />
         </CardContent>
       </Card>
@@ -418,7 +418,7 @@ function aggregate(rows: EventRow[]): Summary {
   let caseGameFirstDecisions = 0;
   let caseGameCompletes = 0;
   let caseGameCtaViews = 0;
-  let caseGameLeads = 0;
+  let caseGameCtaClicks = 0;
   const sessions = new Set<string>();
   const pathCounts = new Map<string, number>();
   const refCounts = new Map<string, number>();
@@ -478,8 +478,8 @@ function aggregate(rows: EventRow[]): Summary {
       case "casegame_cta_view":
         caseGameCtaViews++;
         break;
-      case "casegame_lead":
-        caseGameLeads++;
+      case "casegame_cta_click":
+        caseGameCtaClicks++;
         break;
     }
   }
@@ -503,7 +503,7 @@ function aggregate(rows: EventRow[]): Summary {
     caseGameFirstDecisions,
     caseGameCompletes,
     caseGameCtaViews,
-    caseGameLeads,
+    caseGameCtaClicks,
     landingViews: toSorted(landingCounts).map(([surface, count]) => ({
       surface,
       count,
@@ -521,8 +521,8 @@ function aggregate(rows: EventRow[]): Summary {
       caseGameCompletes > 0 ? (caseGameCtaViews / caseGameCompletes) * 100 : null,
     // ตัวหารคือ "เห็นฟอร์ม" ไม่ใช่ "เล่นจบ" — เดิมหารด้วยยอดเล่นจบซึ่งรวมคนที่
     // ล็อกอินอยู่แล้ว (ไม่เคยเห็นฟอร์ม) ทำให้ conversion ต่ำกว่าจริงเสมอ
-    caseGameLeadConv:
-      caseGameCtaViews > 0 ? (caseGameLeads / caseGameCtaViews) * 100 : null,
+    caseGameCtaClickConv:
+      caseGameCtaViews > 0 ? (caseGameCtaClicks / caseGameCtaViews) * 100 : null,
   };
 }
 
