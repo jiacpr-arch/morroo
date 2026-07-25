@@ -95,8 +95,10 @@
 |---|---|---|
 | Campaign `[MR]_Traffic_CaseGame` (OUTCOME_TRAFFIC) | `52588558588397` | PAUSED |
 | Ad set `CG1 Broad — TH 20-35` (LPV, ฿120/วัน, ABO) | `52588558665397` | PAUSED |
-| Ad `[MR] CaseGame — Hub` | `52588558807597` | PAUSED |
-| Ad `[MR] CaseGame — Direct` | `52588558810397` | PAUSED |
+| Ad `[MR] CaseGame — Hub (autostart)` | `52588565382197` | PAUSED |
+| Ad `[MR] CaseGame — Direct (autostart)` | `52588565384197` | PAUSED |
+
+> ad รุ่นแรก (`52588558807597`, `52588558810397`) ปลดระวางแล้ว — เปลี่ยนชื่อเป็น "เลิกใช้ ไม่มี autostart" และคง PAUSED ไว้ · link ของ creative แก้ในที่ไม่ได้ (immutable) การเปลี่ยนปลายทางจึงต้องสร้าง creative + ad ใหม่เสมอ
 
 ปิด Advantage+ Audience (`advantage_audience: 0`) ให้อายุ 20–35 เป็นช่วงตายตัว ตามกฎไทยห้ามยิงต่ำกว่า 20
 ต้องวิ่ง**คู่กับ** `[MR]_Traffic_FreeTrial` (`52580729960597` — **ACTIVE อยู่จริง** ใช้ไป ฿849 ใน 7 วัน) เพื่อเทียบ **ไม่ใช่ไปแทนที่**
