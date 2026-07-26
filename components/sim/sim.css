@@ -565,6 +565,47 @@
   font-size: 15px; padding: 14px 12px; line-height: 1.4;
 }
 
+/* ปุ่ม LINE — ตัวเลือกหลักท้ายเกม ใช้เขียวแบรนด์ LINE ให้ผู้ใช้ไทยจำได้ทันที
+   ว่าแตะแล้วเกิดอะไร (ล็อกอิน/แอด ไม่ต้องพิมพ์อะไรเลย) */
+.cbs-line-btn {
+  display: flex; align-items: center; justify-content: center; gap: 9px;
+  appearance: none; cursor: pointer; text-decoration: none;
+  background: #06c755; color: #fff;
+  border: 2.5px solid #fff; border-radius: 8px;
+  font-family: inherit; font-size: 16px; font-weight: 900;
+  padding: 14px; text-align: center;
+  box-shadow: 0 5px 0 #04913e, 0 10px 22px rgba(6, 199, 85, .32);
+  transition: transform .08s ease, box-shadow .08s ease;
+}
+.cbs-line-btn:active { transform: translateY(3px); box-shadow: 0 2px 0 #04913e; }
+.cbs-line-btn:focus-visible { outline: 3px solid var(--cbs-gold); outline-offset: 2px; }
+/* ตัวที่สอง (แอด OA) เบากว่า เพื่อไม่ให้แข่งสายตากับปุ่มล็อกอิน */
+.cbs-line-btn-alt {
+  background: rgba(6, 199, 85, .14); color: #4fe39a;
+  border-color: #06c755; box-shadow: none; font-size: 15px; padding: 12px;
+}
+.cbs-line-btn-alt:active { transform: translateY(2px); box-shadow: none; }
+.cbs-line-glyph { width: 20px; height: 20px; flex: none; }
+.cbs-line-note {
+  font-size: 11.5px; color: var(--cbs-dim); text-align: center; margin-top: -4px;
+}
+
+/* เส้นคั่น — บอกว่าลิงก์ด้านล่างเป็นทางเลือกรอง ไม่ใช่ขั้นตอนถัดไป */
+.cbs-browse-or {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 11.5px; color: #6f9198;
+}
+.cbs-browse-or::before, .cbs-browse-or::after {
+  content: ""; flex: 1; height: 1px; background: #2a4d55;
+}
+.cbs-browse-link {
+  display: block; text-align: center; text-decoration: none;
+  font-size: 14px; line-height: 1.45; color: var(--cbs-ink);
+  border: 2px solid #2a4d55; border-radius: 8px;
+  background: rgba(8, 20, 26, .6); padding: 11px 12px;
+}
+.cbs-browse-link:active { transform: translateY(2px); }
+
 @media (prefers-reduced-motion: reduce) {
   .cbs-shake, .cbs-flash.cbs-go, .cbs-redflash.cbs-go,
   .cbs-title::before, .cbs-stage.cbs-drama::before, .cbs-stage.cbs-drama-red::before,
