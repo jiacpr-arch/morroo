@@ -22,6 +22,15 @@ export type TrackProps = Record<string, string | number | boolean | null>;
 /** ชื่อ event — ใช้ชื่อเดียวครอบทั้งสองหมวด แล้วแยกด้วย prop `category` */
 export const CASEGAME_EVENTS = {
   start: "casegame_start",
+  /**
+   * แตะเดินเรื่องครั้งแรกของรอบเล่น — ขั้นที่หายไประหว่าง start กับ firstDecision
+   *
+   * ก่อนหน้านี้ระหว่างสองตัวนั้นไม่มีอะไรคั่นเลย พอเห็นว่าคนจากโฆษณา 373 คน
+   * เริ่มเล่นแต่ตัดสินใจข้อแรกแค่ 168 (45%) จึงบอกไม่ได้ว่าที่หายไปคือ "ไม่เคย
+   * แตะสักครั้ง" (ปัญหาอยู่ที่จอแรก/ไม่รู้ว่าต้องทำอะไร) หรือ "แตะไปหลายทีแล้ว
+   * เบื่อก่อนถึงตัวเลือกแรก" (ปัญหาอยู่ที่บทเกริ่นยาวไป) — สองอย่างนี้แก้คนละทาง
+   */
+  firstTap: "casegame_first_tap",
   firstDecision: "casegame_first_decision",
   complete: "casegame_complete",
   /**
@@ -83,15 +92,40 @@ export function buildStartProps(input: StartInput): TrackProps {
   };
 }
 
+export interface FirstTapInput extends RunScoped {
+  slug: string;
+  category?: string;
+  /** เวลาจริงตั้งแต่เริ่มรอบเล่นจนแตะครั้งแรก (ms) */
+  msToFirstTap: number;
+}
+
+export function buildFirstTapProps(input: FirstTapInput): TrackProps {
+  return {
+    slug: input.slug,
+    category: caseGameCategory(input.category),
+    sec_to_first_tap: durationSeconds(input.msToFirstTap),
+    run_id: input.runId,
+  };
+}
+
 export interface FirstDecisionInput extends RunScoped {
   slug: string;
   category?: string;
+  /**
+   * จำนวนแตะเดินเรื่องก่อนถึงตัวเลือกแรก — ถ้าค่านี้สูงแปลว่าบทเกริ่นยาวเกินไป
+   * ซึ่งเป็นคนละปัญหากับ "ไม่รู้ว่าต้องแตะตรงไหน" ที่แก้ไปแล้วใน #368
+   */
+  tapsBefore: number;
+  /** เวลาจริงตั้งแต่เริ่มรอบเล่นจนตัดสินใจข้อแรก (ms) */
+  msToFirstDecision: number;
 }
 
 export function buildFirstDecisionProps(input: FirstDecisionInput): TrackProps {
   return {
     slug: input.slug,
     category: caseGameCategory(input.category),
+    taps_before: input.tapsBefore,
+    sec_to_first_decision: durationSeconds(input.msToFirstDecision),
     run_id: input.runId,
   };
 }

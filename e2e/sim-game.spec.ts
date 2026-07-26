@@ -100,7 +100,16 @@ test("playing a case through to debrief fires the funnel events and shows the le
   }).toPass({ timeout: 90_000, intervals: [300] });
 
   await expect(page.locator(".cbs-debrief")).toBeVisible();
+  // แตะครั้งแรกต้องถูกนับด้วย — เป็นขั้นที่แยก "ไม่เคยแตะเลย" ออกจาก "แตะแล้ว
+  // เลิกกลางทาง" ซึ่งเป็นสองปัญหาที่แก้คนละทางกัน
+  expect(trackedEvents).toContain("casegame_first_tap");
   expect(trackedEvents).toContain("casegame_first_decision");
+  expect(trackedEvents.filter((e) => e === "casegame_first_tap")).toHaveLength(1);
+
+  // taps_before ต้องนับจริง ไม่ใช่ค้างที่ 0 — ถ้าค้างจะแยกบทเกริ่นยาวไม่ออก
+  const firstDecision = tracked.find((e) => e.name === "casegame_first_decision");
+  expect(typeof firstDecision?.props.taps_before).toBe("number");
+  expect(firstDecision?.props.taps_before as number).toBeGreaterThan(0);
   expect(trackedEvents).toContain("casegame_complete");
   expect(capiEvents).toContain("complete");
 
@@ -120,7 +129,7 @@ test("playing a case through to debrief fires the funnel events and shows the le
   // ทุก event ของรอบเล่นเดียวกันต้องมี run_id ค่าเดียวกัน — เป็นตัวที่ใช้ต่อ
   // funnel ใน SQL และใช้ตัดการรีโหลดหน้าซ้ำในโหมด autostart ออก
   const runIds = new Set(
-    ["casegame_start", "casegame_first_decision", "casegame_complete", "casegame_cta_view"].map(
+    ["casegame_start", "casegame_first_tap", "casegame_first_decision", "casegame_complete", "casegame_cta_view"].map(
       (name) => tracked.find((e) => e.name === name)?.props.run_id
     )
   );
