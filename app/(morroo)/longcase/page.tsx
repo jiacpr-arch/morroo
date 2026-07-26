@@ -7,7 +7,7 @@ import { getLongcaseGameMap } from "@/lib/supabase/queries-sim";
 import { createClient } from "@/lib/supabase/server";
 import { BookOpen, Stethoscope, Clock, Star, Gamepad2 } from "lucide-react";
 import type { Metadata } from "next";
-import LongCaseStartButton from "./LongCaseStartButton";
+import LongCaseStartButton, { type LongCaseEntitlement } from "./LongCaseStartButton";
 import AllExamsCountdown from "@/components/AllExamsCountdown";
 import InternalAdsBanner from "@/components/InternalAdsBanner";
 import LandingPageTracker from "@/components/LandingPageTracker";
@@ -50,16 +50,30 @@ export default async function LongCasePage() {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
 
-  let hasAccess = false;
+  // สิทธิ์ต้องสะท้อนกติกาจริงของ `app/api/longcase/start` แบบตรงตัว — คนที่
+  // ล็อกอินแล้วแต่ไม่มีแพ็กเกจ ยังเล่นได้ฟรี 1 เคส/เดือน ถ้าไม่นับเคสฟรีที่นี่
+  // ปุ่มจะขึ้นกุญแจให้คนที่ API ยอมให้เล่น ซึ่งขัดกับแบนเนอร์บนหน้าเดียวกันเอง
+  let entitlement: LongCaseEntitlement = user ? "free_case_available" : "guest";
   if (user) {
+    const now = new Date();
     const { data: profile } = await supabase
       .from("profiles")
       .select("membership_type, membership_expires_at")
       .eq("id", user.id)
       .single();
-    const now = new Date();
     const expires = profile?.membership_expires_at ? new Date(profile.membership_expires_at) : null;
-    hasAccess = profile?.membership_type !== "free" && !!expires && expires > now;
+
+    if (profile?.membership_type !== "free" && !!expires && expires > now) {
+      entitlement = "subscriber";
+    } else {
+      const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1).toISOString();
+      const { count } = await supabase
+        .from("long_case_sessions")
+        .select("id", { count: "exact", head: true })
+        .eq("user_id", user.id)
+        .gte("started_at", startOfMonth);
+      entitlement = (count ?? 0) >= 1 ? "free_case_used" : "free_case_available";
+    }
   }
 
   const [cases, gameMap] = await Promise.all([getLongCases(), getLongcaseGameMap()]);
@@ -69,7 +83,13 @@ export default async function LongCasePage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <LandingPageTracker event="longcase_view" />
-      {!user && <FreeTrialBanner surface="longcase" />}
+      {!user && (
+        <FreeTrialBanner
+          surface="longcase"
+          tryHref="/casegame"
+          tryLabel="เล่นเคสฟรีตอนนี้"
+        />
+      )}
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center gap-2 mb-3">
@@ -124,13 +144,25 @@ export default async function LongCasePage() {
         </div>
       </Link>
 
-      {/* Access banner for free users */}
-      {!hasAccess && (
+      {/* แถบสิทธิ์ — ข้อความต้องตรงกับปุ่มบนการ์ด ไม่งั้นคนอ่านแล้วสับสน
+          คนที่ยังไม่ล็อกอินไม่ต้องเห็นเรื่องแพ็กเกจเลย เขายังไม่ได้ลองอะไรสักอย่าง */}
+      {entitlement === "free_case_available" && (
+        <div className="mb-8 rounded-xl border-2 border-emerald-300 bg-emerald-50 p-5 flex items-center gap-4">
+          <div className="text-3xl shrink-0">🎁</div>
+          <div className="flex-1">
+            <p className="font-semibold text-emerald-900">เดือนนี้คุณเล่นฟรีได้อีก 1 เคส</p>
+            <p className="text-sm text-emerald-700">เลือกเคสไหนก็ได้ด้านล่าง กดเริ่มได้เลย ไม่ต้องอัปเกรด</p>
+          </div>
+        </div>
+      )}
+      {entitlement === "free_case_used" && (
         <div className="mb-8 rounded-xl border-2 border-amber-300 bg-amber-50 p-5 flex items-center gap-4">
           <div className="text-3xl shrink-0">🎁</div>
           <div className="flex-1">
-            <p className="font-semibold text-amber-900">ฟรี 1 เคส/เดือน สำหรับสมาชิกทั่วไป</p>
-            <p className="text-sm text-amber-700">อัปเกรดเป็นรายเดือนหรือรายปีเพื่อเล่น Long Case ไม่จำกัด</p>
+            <p className="font-semibold text-amber-900">ใช้เคสฟรีของเดือนนี้ไปแล้ว</p>
+            <p className="text-sm text-amber-700">
+              อัปเกรดเพื่อเล่นไม่จำกัด หรือเล่น<Link href="/casegame" className="underline">เวอร์ชันเกม</Link>ฟรีได้เรื่อยๆ
+            </p>
           </div>
           <Link href="/pricing">
             <Button className="bg-amber-500 hover:bg-amber-600 text-white shrink-0">
@@ -149,7 +181,7 @@ export default async function LongCasePage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {weeklyCases.map((c) => (
-              <CaseCard key={c.id} lc={c} hasAccess={hasAccess} gameSlug={gameMap[c.id]} isWeekly />
+              <CaseCard key={c.id} lc={c} entitlement={entitlement} gameSlug={gameMap[c.id]} isWeekly />
             ))}
           </div>
         </div>
@@ -161,7 +193,7 @@ export default async function LongCasePage() {
           <h2 className="text-xl font-bold text-gray-900 mb-4">เคสทั้งหมด</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {regularCases.map((c) => (
-              <CaseCard key={c.id} lc={c} hasAccess={hasAccess} gameSlug={gameMap[c.id]} />
+              <CaseCard key={c.id} lc={c} entitlement={entitlement} gameSlug={gameMap[c.id]} />
             ))}
           </div>
         </div>
@@ -177,9 +209,9 @@ export default async function LongCasePage() {
   );
 }
 
-function CaseCard({ lc, hasAccess, gameSlug, isWeekly }: {
+function CaseCard({ lc, entitlement, gameSlug, isWeekly }: {
   lc: Awaited<ReturnType<typeof getLongCases>>[0];
-  hasAccess: boolean;
+  entitlement: LongCaseEntitlement;
   gameSlug?: string;
   isWeekly?: boolean;
 }) {
@@ -213,7 +245,7 @@ function CaseCard({ lc, hasAccess, gameSlug, isWeekly }: {
             <Clock className="h-3.5 w-3.5" /> ~30 นาที
           </span>
         </div>
-        <LongCaseStartButton caseId={lc.id} hasAccess={hasAccess} />
+        <LongCaseStartButton caseId={lc.id} entitlement={entitlement} gameSlug={gameSlug} />
         {gameSlug && (
           <Link
             href={`/sim/${gameSlug}`}

@@ -114,7 +114,11 @@ export default async function GuidePage({
           <p className="mt-4 text-lg text-muted-foreground">{guide.intro}</p>
         </header>
 
-        <FreeTrialBanner surface={`guide_${guide.slug}_top`} />
+        <FreeTrialBanner
+          surface={`guide_${guide.slug}_top`}
+          tryHref="/nl/practice"
+          tryLabel="ลองทำข้อสอบฟรี"
+        />
 
         <div className="prose prose-base sm:prose-lg max-w-none">
           {guide.sections.map((section) => (
@@ -145,7 +149,11 @@ export default async function GuidePage({
         </div>
 
         <div className="mt-12">
-          <FreeTrialBanner surface={`guide_${guide.slug}_bottom`} />
+          <FreeTrialBanner
+            surface={`guide_${guide.slug}_bottom`}
+            tryHref="/nl/practice"
+            tryLabel="ลองทำข้อสอบฟรี"
+          />
         </div>
 
         {/* Closing CTA */}

@@ -21,7 +21,7 @@ import {
   buildStartProps, newRunId, sendCaseGameCapi,
 } from "@/lib/sim/track";
 import { track } from "@/lib/analytics";
-import DebriefLeadCta from "@/components/sim/DebriefLeadCta";
+import DebriefBrowseCta from "@/components/sim/DebriefBrowseCta";
 import RankProgressCard from "@/components/sim/RankProgressCard";
 import { xpToRank } from "@/lib/school/rank";
 import {
@@ -84,9 +84,6 @@ interface SimRunnerProps {
   practice?: boolean;
   /** ตัวละครจากตาราง sim_characters (เพิ่มจาก built-in 4 ตัว) */
   characters?: SimDbCharacter[];
-  /** utm ที่ส่งต่อมาจาก URL — ติดไปกับ lead ที่เก็บได้ท้ายเกม */
-  campaign?: string | null;
-  adSet?: string | null;
   /**
    * ข้ามจอ title แล้วเข้าเกมทันที — ใช้กับทราฟฟิกจากโฆษณา (`?start=1`) เพื่อให้
    * คนที่กดโฆษณาเข้ามาได้เล่นทันทีโดยไม่ต้องกดอะไรอีก
@@ -105,7 +102,7 @@ interface SimRunnerProps {
 }
 
 export default function SimRunner({
-  scenario, practice = false, characters, campaign = null, adSet = null,
+  scenario, practice = false, characters,
   autostart = false, specialty = null, playerXp = null,
 }: SimRunnerProps) {
   const dbCharacters = useMemo(
@@ -709,13 +706,11 @@ export default function SimRunner({
             </>
           )}
           {reward && !reward.loggedIn && !practice && (
-            <DebriefLeadCta
+            <DebriefBrowseCta
               slug={scenario.slug}
               category={scenario.category}
               grade={result.grade}
               runId={runIdRef.current}
-              campaign={campaign}
-              adSet={adSet}
             />
           )}
           <div className="cbs-grade-row">

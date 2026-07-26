@@ -550,34 +550,20 @@
 .cbs-tl-note { color: #7fa3a8; font-size: 12.5px; display: block; }
 .cbs-debrief-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
 
-/* CTA เก็บอีเมลท้ายเกม (ผู้เล่นที่ยังไม่ได้ล็อกอิน) */
-.cbs-lead-cta {
+/* CTA ท้ายเกม — ทางเข้าไปดูเนื้อหาจริงในเว็บ (ผู้เล่นที่ยังไม่ได้ล็อกอิน) */
+.cbs-browse-cta {
   display: flex; flex-direction: column; gap: 10px;
   border: 2.5px solid var(--cbs-teal); border-radius: 10px;
   background: linear-gradient(180deg, rgba(26, 188, 156, .14), rgba(8, 20, 26, .8));
   padding: 16px 14px; margin-top: 4px;
 }
-.cbs-lead-title { font-size: 15px; font-weight: 900; text-align: center; }
-.cbs-lead-sub { font-size: 13.5px; line-height: 1.6; color: var(--cbs-dim); text-align: center; }
-.cbs-lead-sub b { color: var(--cbs-gold); }
-.cbs-lead-input {
-  appearance: none; width: 100%; box-sizing: border-box;
-  border: 2.5px solid #2a4d55; border-radius: 6px;
-  background: rgba(4, 12, 16, .75); color: var(--cbs-ink);
-  font-family: inherit; font-size: 16px; /* 16px กัน iOS zoom ตอนโฟกัส */
-  padding: 13px 12px;
+.cbs-browse-title { font-size: 15px; font-weight: 900; text-align: center; }
+.cbs-browse-sub { font-size: 13.5px; line-height: 1.6; color: var(--cbs-dim); text-align: center; }
+.cbs-browse-sub b { color: var(--cbs-gold); }
+.cbs-browse-btn {
+  display: block; text-align: center; text-decoration: none;
+  font-size: 15px; padding: 14px 12px; line-height: 1.4;
 }
-.cbs-lead-input::placeholder { color: #6f9198; }
-.cbs-lead-input:focus-visible { outline: none; border-color: var(--cbs-teal); }
-.cbs-lead-consent {
-  display: flex; align-items: flex-start; gap: 9px; cursor: pointer;
-  font-size: 12px; line-height: 1.55; color: var(--cbs-dim); text-align: left;
-}
-.cbs-lead-consent input { margin-top: 2px; width: 17px; height: 17px; accent-color: var(--cbs-teal); flex: none; }
-.cbs-lead-consent a { color: var(--cbs-teal); text-decoration: underline; }
-.cbs-lead-cta .cbs-btn-main { font-size: 16px; padding: 14px; }
-.cbs-lead-cta .cbs-btn-main:disabled { opacity: .55; cursor: not-allowed; box-shadow: 0 6px 0 #7e1b1f; }
-.cbs-lead-error { font-size: 13px; color: var(--cbs-red); text-align: center; font-weight: 700; }
 
 @media (prefers-reduced-motion: reduce) {
   .cbs-shake, .cbs-flash.cbs-go, .cbs-redflash.cbs-go,

@@ -25,19 +25,18 @@ export const CASEGAME_EVENTS = {
   firstDecision: "casegame_first_decision",
   complete: "casegame_complete",
   /**
-   * ตัวหารของ CTA ท้ายเกม — ยิงตอนฟอร์มเก็บอีเมลโผล่บนจอ debrief
+   * ตัวหารของ CTA ท้ายเกม — ยิงตอน CTA โผล่บนจอ debrief
    *
    * ถ้ามีแต่ ctaClick อย่างเดียว เห็นเลข 0 แล้วแยกไม่ออกว่า "ไม่มีใครเล่นจนจบ",
-   * "จบแล้วแต่ไม่กรอก" หรือ "ฟอร์มพัง" — ซึ่งเป็นสามปัญหาที่แก้คนละทางกันหมด
+   * "จบแล้วแต่ไม่กด" หรือ "CTA พัง" — ซึ่งเป็นสามปัญหาที่แก้คนละทางกันหมด
    */
   ctaView: "casegame_cta_view",
-  ctaClick: "casegame_cta_click",
   /**
-   * ยิงคู่กับ `lp_lead_form_submit` ตอนเก็บ lead ได้ท้ายเกม — ต้องเป็นชื่อ event
-   * แยก เพราะหน้าแอดมินอ่าน analytics_events โดยไม่ดึงคอลัมน์ properties
-   * (จำกัด 50k แถว) จึงแยก lead ของเกมด้วย prop ไม่ได้
+   * ปลายทางของ funnel นี้ตั้งแต่ 2026-07-25 — เดิมคือ `casegame_lead` (เก็บอีเมล)
+   * แต่เจ้าของเลิกเก็บ lead แล้วเพราะไม่มีคนตามต่อ ตัวชี้ขาดจึงเป็น "คนเล่นจบ
+   * แล้วกดเข้าไปดูเนื้อหาจริงในเว็บ" แทน ดู prop `target` ว่าเข้าหน้าไหน
    */
-  lead: "casegame_lead",
+  ctaClick: "casegame_cta_click",
 } as const;
 
 /**
@@ -137,7 +136,7 @@ export function durationSeconds(durationMs: number): number {
 export interface CtaViewInput extends RunScoped {
   slug: string;
   category?: string;
-  /** เกรดที่เพิ่งได้ — ใช้ดูว่าคนเล่นที่ได้เกรดไหนยอมทิ้งอีเมลมากกว่ากัน */
+  /** เกรดที่เพิ่งได้ — ใช้ดูว่าคนเล่นที่ได้เกรดไหนเดินต่อเข้าเว็บมากกว่ากัน */
   grade: string | null;
 }
 

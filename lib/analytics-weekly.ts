@@ -19,7 +19,7 @@ export interface WeeklyAnalyticsSummary {
   socialLineClicks: number;
   caseGameStarts: number;
   caseGameCompletes: number;
-  caseGameLeads: number;
+  caseGameCtaClicks: number;
   topPath: { path: string; count: number } | null;
   topReferrer: { ref: string; count: number } | null;
   signupConversion: number | null; // signups / unique visitors %
@@ -40,7 +40,7 @@ const FUNNEL = {
   checkout: "stripe_checkout_click",
   caseGameStart: "casegame_start",
   caseGameComplete: "casegame_complete",
-  caseGameLead: "casegame_lead",
+  caseGameCtaClick: "casegame_cta_click",
 } as const;
 
 function aggregate(rows: EventRow[]) {
@@ -51,7 +51,7 @@ function aggregate(rows: EventRow[]) {
   let socialLineClicks = 0;
   let caseGameStarts = 0;
   let caseGameCompletes = 0;
-  let caseGameLeads = 0;
+  let caseGameCtaClicks = 0;
 
   const sessions = new Set<string>();
   const pathCounts = new Map<string, number>();
@@ -87,8 +87,8 @@ function aggregate(rows: EventRow[]) {
       case FUNNEL.caseGameComplete:
         caseGameCompletes++;
         break;
-      case FUNNEL.caseGameLead:
-        caseGameLeads++;
+      case FUNNEL.caseGameCtaClick:
+        caseGameCtaClicks++;
         break;
     }
   }
@@ -105,7 +105,7 @@ function aggregate(rows: EventRow[]) {
     socialLineClicks,
     caseGameStarts,
     caseGameCompletes,
-    caseGameLeads,
+    caseGameCtaClicks,
     topPath: topPath ? { path: topPath[0], count: topPath[1] } : null,
     topReferrer: topRef ? { ref: topRef[0], count: topRef[1] } : null,
   };

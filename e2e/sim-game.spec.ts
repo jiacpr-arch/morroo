@@ -104,13 +104,15 @@ test("playing a case through to debrief fires the funnel events and shows the le
   expect(trackedEvents).toContain("casegame_complete");
   expect(capiEvents).toContain("complete");
 
-  // ผู้เล่นที่ยังไม่ล็อกอินต้องเจอ CTA เก็บอีเมล ไม่ใช่แค่ลิงก์ "เข้าสู่ระบบ"
-  const cta = page.locator(".cbs-lead-cta");
+  // ผู้เล่นที่ยังไม่ล็อกอินต้องเจอทางเข้าไปดูเนื้อหาต่อในเว็บ ไม่ใช่แค่ลิงก์
+  // "เข้าสู่ระบบ" — และต้องไม่มีฟอร์มขออีเมลหลงเหลืออยู่ (เลิกเก็บ lead แล้ว)
+  const cta = page.locator(".cbs-browse-cta");
   await expect(cta).toBeVisible();
-  await expect(cta.locator("input[type=email]")).toBeVisible();
+  await expect(cta.locator("a.cbs-browse-btn").first()).toBeVisible();
+  await expect(cta.locator("input[type=email]")).toHaveCount(0);
 
-  // ...และต้องยิง cta_view ด้วย ไม่งั้นเวลาเห็น lead = 0 จะแยกไม่ออกว่าไม่มีคน
-  // เล่นถึง, เห็นแล้วไม่กรอก หรือฟอร์มพัง
+  // ...และต้องยิง cta_view ด้วย ไม่งั้นเวลาเห็นคลิก = 0 จะแยกไม่ออกว่าไม่มีคน
+  // เล่นถึง, เห็นแล้วไม่กด หรือ CTA พัง
   await expect
     .poll(() => trackedEvents.includes("casegame_cta_view"), { timeout: 5_000 })
     .toBe(true);

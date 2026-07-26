@@ -9,12 +9,17 @@ import { useIsLoggedIn } from "@/lib/hooks/useIsLoggedIn";
 
 const SHOWN_KEY = "morroo_exit_intent_shown";
 
-// Fires a single free-trial promo when the visitor signals they're about to
-// leave: desktop = mouse exits through the top of the viewport, mobile = a
-// fast upward swipe. Guests only — the CTA is "สมัครฟรีเลย" → /register, which
-// makes no sense for anyone already logged in. Stored in sessionStorage so we
-// never pester twice in the same tab. Wired into the root layout via
-// <Suspense> so it doesn't bail the rest of the page out of static rendering.
+// Fires once when the visitor signals they're about to leave: desktop = mouse
+// exits through the top of the viewport, mobile = a fast upward swipe. Guests
+// only — both CTAs are aimed at people without an account.
+//
+// ปุ่มหลักคือ "ลองทำข้อสอบเลย" → /nl/practice ไม่ใช่ /register — คนที่กำลังจะ
+// ปิดหน้าคือคนที่ยังไม่เชื่อว่าของเราดี การขอให้สมัครตอนนั้นยิ่งผลักออก
+// (2026-07-25 เจ้าของสั่งว่าอยากโชว์ของก่อน ค่อยให้ลงทะเบียนทีหลัง)
+//
+// Stored in sessionStorage so we never pester twice in the same tab. Wired into
+// the root layout via <Suspense> so it doesn't bail the rest of the page out of
+// static rendering.
 export default function ExitIntentPopup() {
   const [open, setOpen] = useState(false);
   const isLoggedIn = useIsLoggedIn();
@@ -126,21 +131,28 @@ export default function ExitIntentPopup() {
             รอเดี๋ยว! ลองข้อสอบฟรีก่อนไปไหม?
           </h2>
           <p className="text-sm text-muted-foreground">
-            สมัครฟรีเข้าถึง <span className="font-semibold text-foreground">MCQ 5 ข้อ/สาขา · MEQ 2 เคส · Long Case 1 เคส</span>
+            <span className="font-semibold text-foreground">ทำข้อสอบจริงได้เลย 5 ข้อ</span>
             <br />
-            ไม่ต้องใส่บัตรเครดิต ใช้เวลาแค่ 30 วินาที
+            ไม่ต้องสมัคร ไม่ต้องใส่บัตร กดแล้วเริ่มทำได้ทันที
           </p>
           <Link
-            href="/register"
-            onClick={() => track("exit_intent_cta_click")}
+            href="/nl/practice"
+            onClick={() => track("exit_intent_cta_click", { target: "try_free" })}
             className="w-full"
           >
             <Button
               size="lg"
               className="w-full bg-brand hover:bg-brand-light text-white"
             >
-              สมัครฟรีเลย <ArrowRight className="ml-2 h-4 w-4" />
+              ลองทำข้อสอบเลย <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
+          </Link>
+          <Link
+            href="/register"
+            onClick={() => track("exit_intent_cta_click", { target: "register" })}
+            className="text-xs font-medium text-brand underline underline-offset-4 hover:text-brand-light"
+          >
+            หรือสมัครฟรี เก็บความคืบหน้าไว้
           </Link>
           <button
             onClick={() => {

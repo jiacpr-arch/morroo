@@ -15,7 +15,7 @@ interface PageProps {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
-/** utm ที่ส่งต่อไปติดกับ lead ที่เก็บได้ท้ายเกม — array จาก query ซ้ำถือว่าไม่ถูกต้อง */
+/** ค่าเดียวจาก query — array (พารามิเตอร์ซ้ำ) ถือว่าไม่ถูกต้อง */
 function firstParam(value: string | string[] | undefined): string | null {
   return typeof value === "string" && value ? value : null;
 }
@@ -47,8 +47,6 @@ export default async function SimPlayPage({ params, searchParams }: PageProps) {
       characters={characters}
       specialty={specialty}
       playerXp={doctor?.xp ?? null}
-      campaign={firstParam(sp.utm_campaign) ?? firstParam(sp.campaign)}
-      adSet={firstParam(sp.utm_content) ?? firstParam(sp.ad_set)}
       autostart={firstParam(sp.start) === "1"}
     />
   );
