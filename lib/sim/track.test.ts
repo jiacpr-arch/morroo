@@ -4,6 +4,7 @@ import {
   buildCtaClickProps,
   buildCtaViewProps,
   buildFirstDecisionProps,
+  buildFirstTapProps,
   buildStartProps,
   capiContentName,
   capiEventId,
@@ -62,15 +63,61 @@ describe("buildStartProps", () => {
   });
 });
 
-describe("buildFirstDecisionProps", () => {
-  it("keeps the payload minimal", () => {
+describe("buildFirstTapProps", () => {
+  it("reports how long the player took to make the first tap", () => {
     expect(
-      buildFirstDecisionProps({ slug: "a", category: "longcase", runId: "run-1" })
+      buildFirstTapProps({
+        slug: "a",
+        category: "longcase",
+        msToFirstTap: 4_400,
+        runId: "run-1",
+      })
     ).toEqual({
       slug: "a",
       category: "longcase",
+      sec_to_first_tap: 4,
       run_id: "run-1",
     });
+  });
+
+  it("floors a missing start timestamp to 0 instead of a huge epoch value", () => {
+    const props = buildFirstTapProps({
+      slug: "a",
+      msToFirstTap: 0,
+      runId: "run-1",
+    });
+    expect(props.sec_to_first_tap).toBe(0);
+  });
+});
+
+describe("buildFirstDecisionProps", () => {
+  it("carries the tap count so a long intro can be told from a confusing one", () => {
+    expect(
+      buildFirstDecisionProps({
+        slug: "a",
+        category: "longcase",
+        tapsBefore: 7,
+        msToFirstDecision: 32_000,
+        runId: "run-1",
+      })
+    ).toEqual({
+      slug: "a",
+      category: "longcase",
+      taps_before: 7,
+      sec_to_first_decision: 32,
+      run_id: "run-1",
+    });
+  });
+
+  it("keeps taps_before at 0 when the player reached the choice without tapping", () => {
+    const props = buildFirstDecisionProps({
+      slug: "a",
+      tapsBefore: 0,
+      msToFirstDecision: 1_200,
+      runId: "run-1",
+    });
+    expect(props.taps_before).toBe(0);
+    expect(Object.keys(props)).toContain("taps_before");
   });
 });
 

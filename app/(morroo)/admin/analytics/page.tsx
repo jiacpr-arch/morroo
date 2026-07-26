@@ -36,6 +36,7 @@ type Summary = {
   exitIntentShows: number;
   exitIntentCtaClicks: number;
   caseGameStarts: number;
+  caseGameFirstTaps: number;
   caseGameFirstDecisions: number;
   caseGameCompletes: number;
   caseGameCtaViews: number;
@@ -222,14 +223,29 @@ export default function AdminAnalyticsPage() {
           <CardTitle className="text-base">เกมเคส — funnel</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
+          {/* แยกสองขั้นโดยตั้งใจ — "แตะครั้งแรก" บอกว่าเข้าใจวิธีเล่นแล้ว ส่วน
+              "ตัดสินใจข้อแรก" บอกว่าอยู่ต่อจนถึงจุดตัดสินใจ ถ้าคนหายระหว่าง
+              เริ่มเล่น→แตะแรก = ปัญหาอยู่ที่จอแรก · หายระหว่างแตะแรก→ตัดสินใจ
+              = บทเกริ่นยาวไป ต้องแก้คนละทางกัน */}
           <FunnelRow
             from="เริ่มเล่นเกม"
-            to="ตัดสินใจข้อแรก"
+            to="แตะครั้งแรก"
             fromValue={summary.caseGameStarts}
-            toValue={summary.caseGameFirstDecisions}
+            toValue={summary.caseGameFirstTaps}
             conv={
               summary.caseGameStarts > 0
-                ? (summary.caseGameFirstDecisions / summary.caseGameStarts) * 100
+                ? (summary.caseGameFirstTaps / summary.caseGameStarts) * 100
+                : null
+            }
+          />
+          <FunnelRow
+            from="แตะครั้งแรก"
+            to="ตัดสินใจข้อแรก"
+            fromValue={summary.caseGameFirstTaps}
+            toValue={summary.caseGameFirstDecisions}
+            conv={
+              summary.caseGameFirstTaps > 0
+                ? (summary.caseGameFirstDecisions / summary.caseGameFirstTaps) * 100
                 : null
             }
           />
@@ -415,6 +431,7 @@ function aggregate(rows: EventRow[]): Summary {
   let exitIntentShows = 0;
   let exitIntentCtaClicks = 0;
   let caseGameStarts = 0;
+  let caseGameFirstTaps = 0;
   let caseGameFirstDecisions = 0;
   let caseGameCompletes = 0;
   let caseGameCtaViews = 0;
@@ -469,6 +486,9 @@ function aggregate(rows: EventRow[]): Summary {
       case "casegame_start":
         caseGameStarts++;
         break;
+      case "casegame_first_tap":
+        caseGameFirstTaps++;
+        break;
       case "casegame_first_decision":
         caseGameFirstDecisions++;
         break;
@@ -500,6 +520,7 @@ function aggregate(rows: EventRow[]): Summary {
     exitIntentShows,
     exitIntentCtaClicks,
     caseGameStarts,
+    caseGameFirstTaps,
     caseGameFirstDecisions,
     caseGameCompletes,
     caseGameCtaViews,

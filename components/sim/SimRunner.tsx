@@ -18,7 +18,7 @@ import {
 import { SIM_BADGE_NAMES, recordSimRun, type RecordedRun } from "@/lib/sim/record";
 import {
   CASEGAME_EVENTS, buildCompleteProps, buildCtaClickProps, buildFirstDecisionProps,
-  buildStartProps, newRunId, sendCaseGameCapi,
+  buildFirstTapProps, buildStartProps, newRunId, sendCaseGameCapi,
 } from "@/lib/sim/track";
 import { track } from "@/lib/analytics";
 import DebriefBrowseCta from "@/components/sim/DebriefBrowseCta";
@@ -167,6 +167,9 @@ export default function SimRunner({
   const runIdRef = useRef("");
   const startedAtRef = useRef(0);
   const firstDecisionSentRef = useRef(false);
+  // นับแตะเดินเรื่องต่อรอบเล่น — แยก "ไม่เคยแตะเลย" ออกจาก "แตะแล้วเลิกกลางทาง"
+  const tapCountRef = useRef(0);
+  const firstTapSentRef = useRef(false);
 
   const stopMetronome = useCallback(() => {
     if (timers.current.metronome) {
@@ -438,6 +441,8 @@ export default function SimRunner({
         buildFirstDecisionProps({
           slug: scenario.slug,
           category: scenario.category,
+          tapsBefore: tapCountRef.current,
+          msToFirstDecision: startedAtRef.current ? Date.now() - startedAtRef.current : 0,
           runId: runIdRef.current,
         })
       );
@@ -503,6 +508,23 @@ export default function SimRunner({
         try { localStorage.setItem(TAP_COACH_KEY, "1"); } catch { /* โหมดส่วนตัว */ }
       }
     }
+    // นับทุกแตะที่ "มีผล" จริง (ข้ามการพิมพ์ก็นับ) — ตัวหารที่บอกว่าคนคนนี้
+    // เข้าใจวิธีเล่นแล้ว ต่อให้ยังไม่ถึงตัวเลือกแรกก็ตาม
+    if (!practice && !busyRef.current) {
+      tapCountRef.current += 1;
+      if (!firstTapSentRef.current) {
+        firstTapSentRef.current = true;
+        track(
+          CASEGAME_EVENTS.firstTap,
+          buildFirstTapProps({
+            slug: scenario.slug,
+            category: scenario.category,
+            msToFirstTap: startedAtRef.current ? Date.now() - startedAtRef.current : 0,
+            runId: runIdRef.current,
+          })
+        );
+      }
+    }
     if (busyRef.current) return;
     if (timers.current.type) { finishTyping(); return; }
     if (!awaitTap) return;
@@ -548,6 +570,8 @@ export default function SimRunner({
       runIdRef.current = newRunId();
       startedAtRef.current = Date.now();
       firstDecisionSentRef.current = false;
+      tapCountRef.current = 0;
+      firstTapSentRef.current = false;
       track(
         CASEGAME_EVENTS.start,
         buildStartProps({
