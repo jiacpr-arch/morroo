@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { getMyDoctorProfile, getMySimBests, getSimScenarios } from "@/lib/supabase/queries-sim";
 import DoctorCard from "@/components/casegame/DoctorCard";
+import ClaimLocalRuns from "@/components/casegame/ClaimLocalRuns";
 import LocalDoctorCard from "@/components/casegame/LocalDoctorCard";
 
 export const metadata: Metadata = {
@@ -75,11 +76,15 @@ export default async function SimHubPage() {
 
       <div className="mt-6">
         {doctor ? (
-          <DoctorCard
-            xp={doctor.xp}
-            specialties={doctor.specialties}
-            totalWins={doctor.totalWins}
-          />
+          <>
+            {/* เพิ่งล็อกอินแล้วมีของค้างในเครื่อง — ยกเข้าบัญชีเงียบๆ */}
+            <ClaimLocalRuns />
+            <DoctorCard
+              xp={doctor.xp}
+              specialties={doctor.specialties}
+              totalWins={doctor.totalWins}
+            />
+          </>
         ) : (
           /* ยังไม่ล็อกอิน — โชว์ความคืบหน้าที่เก็บไว้ในเครื่อง (ถ้ามี) */
           <LocalDoctorCard />

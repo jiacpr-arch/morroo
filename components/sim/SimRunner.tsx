@@ -15,7 +15,9 @@ import {
   initAudio, playBeep, playMetronomeClick, playROSCSound, playShockSound,
   playWarningBeep,
 } from "@/lib/sim/sound";
-import { SIM_BADGE_NAMES, recordSimRun, type RecordedRun } from "@/lib/sim/record";
+import {
+  SIM_BADGE_NAMES, claimPendingLocalRuns, recordSimRun, type RecordedRun,
+} from "@/lib/sim/record";
 import {
   CASEGAME_EVENTS, buildCompleteProps, buildCtaClickProps, buildFirstDecisionProps,
   buildFirstTapProps, buildStartProps, newRunId, sendCaseGameCapi,
@@ -123,6 +125,13 @@ export default function SimRunner({
   const [muted, setMuted] = useState(() => isBrowser && localStorage.getItem(MUTE_KEY) === "1");
   const mutedRef = useRef(muted);
   useEffect(() => { mutedRef.current = muted; }, [muted]);
+
+  // เพิ่งล็อกอินจาก CTA ท้ายเกมแล้วเด้งกลับมา — ยกเคสที่เล่นไว้เข้าบัญชีทันที
+  // ไม่ต้องรอให้เล่นจบอีกรอบ (playerXp ไม่ใช่ null = ล็อกอินอยู่)
+  useEffect(() => {
+    if (playerXp === null) return;
+    void claimPendingLocalRuns();
+  }, [playerXp]);
 
   // ---- engine state: mutable ใน ref (logic) + snapshot state (render) ----
   const S = useRef<SimState>(createInitialState(DEFAULT_DIFFICULTY));
@@ -723,8 +732,7 @@ export default function SimRunner({
               <RankProgressCard {...reward} />
               {reward.isLocal && (
                 <p className="cbs-local-note">
-                  ความคืบหน้านี้เก็บไว้ในเครื่องนี้เท่านั้น ({reward.localRuns} เคส) —
-                  ล็อกอินแล้วระบบจะยกเข้าบัญชีให้ทันที
+                  ความคืบหน้านี้เก็บไว้ในเครื่องนี้เท่านั้น ({reward.localRuns} เคส)
                 </p>
               )}
             </>
@@ -735,6 +743,7 @@ export default function SimRunner({
               category={scenario.category}
               grade={result.grade}
               runId={runIdRef.current}
+              localRuns={reward.localRuns}
             />
           )}
           <div className="cbs-grade-row">

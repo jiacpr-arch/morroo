@@ -117,7 +117,9 @@ test("playing a case through to debrief fires the funnel events and shows the le
   // "เข้าสู่ระบบ" — และต้องไม่มีฟอร์มขออีเมลหลงเหลืออยู่ (เลิกเก็บ lead แล้ว)
   const cta = page.locator(".cbs-browse-cta");
   await expect(cta).toBeVisible();
-  await expect(cta.locator("a.cbs-browse-btn").first()).toBeVisible();
+  // LINE เป็นตัวเลือกหลักท้ายเกม (ล็อกอิน หรืออย่างน้อยแอด OA เมื่อ flag ปิด)
+  await expect(cta.locator("a.cbs-line-btn").first()).toBeVisible();
+  await expect(cta.locator("a.cbs-browse-link").first()).toBeVisible();
   await expect(cta.locator("input[type=email]")).toHaveCount(0);
 
   // ...และต้องยิง cta_view ด้วย ไม่งั้นเวลาเห็นคลิก = 0 จะแยกไม่ออกว่าไม่มีคน

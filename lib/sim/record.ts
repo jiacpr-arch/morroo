@@ -121,6 +121,28 @@ function recordLocalRun(
  * XP รวมเป็นก้อนเดียว (reason `sim:claim:<n>`) แทนที่จะยิงทีละรอบ เพื่อให้ตาม
  * รอยได้ว่าก้อนไหนมาจากการยกเข้า ไม่ใช่การเล่นจริงหลังล็อกอิน
  */
+/**
+ * ยกประวัติที่ค้างในเครื่องเข้าบัญชี โดยไม่ต้องรอให้เล่นจบอีกรอบ
+ *
+ * จำเป็นเพราะ CTA ท้ายเกมพาไปล็อกอินด้วย LINE แล้วเด้งกลับมา ถ้ารอ recordSimRun
+ * รอบถัดไป คำสัญญา "ยกเคสที่เล่นไว้เข้าบัญชีให้" ก็ยังไม่จริงตอนที่เขากลับมาดู
+ *
+ * คืนจำนวนรอบที่ยกเข้าไป (0 = ไม่มีอะไรให้ยก หรือยังไม่ล็อกอิน)
+ */
+export async function claimPendingLocalRuns(): Promise<number> {
+  try {
+    if (readLocalRuns().length === 0) return 0; // ทางลัด ไม่ต้องถาม auth
+    const supabase = createClient();
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) return 0;
+    const pending = readLocalRuns().length;
+    await claimLocalRuns(supabase, user.id);
+    return pending;
+  } catch {
+    return 0;
+  }
+}
+
 async function claimLocalRuns(supabase: Supabase, userId: string): Promise<void> {
   const runs = readLocalRuns();
   if (runs.length === 0) return;
