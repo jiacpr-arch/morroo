@@ -125,3 +125,29 @@ test("playing a case through to debrief fires the funnel events and shows the le
   expect(runIds.size).toBe(1);
   expect([...runIds][0]).toBeTruthy();
 });
+
+/**
+ * คำใบ้การแตะ — 57% ของคนที่เปิดเกมจากโฆษณาเคยหายไปก่อนตัดสินใจข้อแรก
+ * เพราะไม่รู้ว่าต้องแตะตรงไหน เทสนี้กันไม่ให้คำใบ้หลุดหายไปอีก
+ */
+test("first-time player is told where to tap, and only once", async ({ page }) => {
+  await page.goto("/sim/vf-arrest-01?start=1");
+  await expect(page.locator(".cbs-dlg")).toBeVisible({ timeout: 20_000 });
+
+  // ต้องบอกตั้งแต่ตอนบทพูดยังพิมพ์ไม่จบ — ช่วงที่คนเพิ่งเปิดเกมเข้ามาพอดี
+  await expect(page.locator(".cbs-tap-coach")).toBeVisible();
+  await expect(page.locator(".cbs-adv")).toBeVisible();
+
+  // แตะกลางเวที (ไม่ใช่กล่องบทพูด) ต้องเดินเรื่องได้ และคำใบ้ต้องหายไป
+  const before = await page.locator(".cbs-dlg-text").innerText();
+  await page.locator(".cbs-stage").click({ position: { x: 195, y: 220 } });
+  await expect(page.locator(".cbs-tap-coach")).toHaveCount(0);
+  await expect(async () => {
+    expect(await page.locator(".cbs-dlg-text").innerText()).not.toBe(before);
+  }).toPass({ timeout: 20_000, intervals: [300] });
+
+  // เล่นรอบใหม่ในเครื่องเดิมไม่ต้องเจอคำใบ้อีก
+  await page.goto("/sim/vf-arrest-01?start=1");
+  await expect(page.locator(".cbs-dlg")).toBeVisible({ timeout: 20_000 });
+  await expect(page.locator(".cbs-tap-coach")).toHaveCount(0);
+});
