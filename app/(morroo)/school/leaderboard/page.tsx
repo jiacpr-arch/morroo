@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Trophy, Zap } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
-import { xpToLevel } from "@/lib/school/xp";
+import RankBadge from "@/components/school/RankBadge";
 import { getSpecialty } from "@/lib/school/specialty";
 
 export const dynamic = "force-dynamic";
@@ -132,9 +132,9 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
             <span className="text-2xl font-bold text-brand">#{myRank}</span>
             <div className="flex-1">
               <p className="font-semibold">{myRow.name ?? "คุณ"} (You)</p>
-              <p className="text-xs text-muted-foreground">
-                Level {xpToLevel(myRow.school_xp ?? 0).level}
-              </p>
+              <div className="mt-0.5">
+                <RankBadge xp={myRow.school_xp ?? 0} showLevel size="sm" />
+              </div>
             </div>
             <div className="flex items-center gap-1 text-amber-600 font-bold">
               <Zap className="h-4 w-4" /> {myRow.school_xp ?? 0}
@@ -153,7 +153,6 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
         <div className="space-y-2">
           {rows.map((r, i) => {
             const me = r.id === user?.id;
-            const { level } = xpToLevel(r.school_xp ?? 0);
             const rank = i + 1;
             const medal = rank === 1 ? "🥇" : rank === 2 ? "🥈" : rank === 3 ? "🥉" : `#${rank}`;
             const sp = getSpecialty(r.target_specialty);
@@ -166,10 +165,10 @@ export default async function LeaderboardPage({ searchParams }: PageProps) {
                       {r.name ?? "Anonymous"}
                       {me && <Badge variant="outline" className="ml-2 text-xs">You</Badge>}
                     </p>
-                    <p className="text-xs text-muted-foreground">
-                      Level {level}
-                      {r.current_year && ` · ปี ${r.current_year}`}
-                      {!isFiltered && sp && ` · ${sp.icon} ${sp.name_th}`}
+                    <p className="mt-0.5 flex flex-wrap items-center gap-1.5 text-xs text-muted-foreground">
+                      <RankBadge xp={r.school_xp ?? 0} showLevel size="sm" />
+                      {r.current_year && <span>ปี {r.current_year}</span>}
+                      {!isFiltered && sp && <span>{sp.icon} {sp.name_th}</span>}
                     </p>
                   </div>
                   <div className="flex items-center gap-1 text-amber-600 font-bold text-sm">

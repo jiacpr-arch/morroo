@@ -22,6 +22,8 @@ import {
 } from "@/lib/sim/track";
 import { track } from "@/lib/analytics";
 import DebriefBrowseCta from "@/components/sim/DebriefBrowseCta";
+import RankProgressCard from "@/components/sim/RankProgressCard";
+import { xpToRank } from "@/lib/school/rank";
 import {
   parseEmphasis,
   type ChoiceNode, type ChoiceOption, type NodeFx, type Pose,
@@ -32,6 +34,8 @@ import "./sim.css";
 const HISCORE_PREFIX = "morroo_sim_hiscore";
 const MUTE_KEY = "morroo_sim_muted";
 const DIFF_KEY = "morroo_sim_difficulty";
+/** เคยเห็นคำใบ้ "แตะเพื่อเล่นต่อ" แล้วหรือยัง — โชว์ครั้งเดียวต่อเครื่อง */
+const TAP_COACH_KEY = "morroo_sim_tap_coach";
 
 const isBrowser = typeof window !== "undefined";
 const hiscoreKey = (slug: string, diff: string) => `${HISCORE_PREFIX}_${slug}_${diff}`;
@@ -85,10 +89,21 @@ interface SimRunnerProps {
    * คนที่กดโฆษณาเข้ามาได้เล่นทันทีโดยไม่ต้องกดอะไรอีก
    */
   autostart?: boolean;
+  /**
+   * สาขาของเคส (long_cases.specialty / exams.category) — เก็บลง sim_runs ตอน
+   * บันทึกผลเพื่อคิดความเชี่ยวชาญรายสาขา null ได้สำหรับเคส ACLS
+   */
+  specialty?: string | null;
+  /**
+   * XP สะสมของผู้เล่น — โชว์ยศบนจอ title ให้เห็นเป้าก่อนเริ่มเล่น ไม่ใช่รู้ตอนจบ
+   * null = ไม่ได้ล็อกอิน (จอ title ไม่แสดงแถบยศ)
+   */
+  playerXp?: number | null;
 }
 
 export default function SimRunner({
-  scenario, practice = false, characters, autostart = false,
+  scenario, practice = false, characters,
+  autostart = false, specialty = null, playerXp = null,
 }: SimRunnerProps) {
   const dbCharacters = useMemo(
     () => new Map((characters ?? []).map((c) => [c.slug, c])),
@@ -139,6 +154,9 @@ export default function SimRunner({
   }>({ type: null, dec: null, misc: [], metronome: null });
   const busyRef = useRef(false);
   const [awaitTap, setAwaitTap] = useState(false);
+  // คำใบ้เต็มจอตอนเปิดเกมครั้งแรก — ทราฟฟิกจากโฆษณาเข้าโหมด autostart มาเจอ
+  // บทพูดค่อยๆ พิมพ์โดยไม่มีปุ่มอะไรเลย แล้วปิดทิ้งก่อนแตะสักครั้ง
+  const [tapCoach, setTapCoach] = useState(false);
   const currentChoiceRef = useRef<ChoiceData | null>(null);
   const retryChoiceRef = useRef<ChoiceData | null>(null);
   const hintUsedRef = useRef(false); // โหมดง่าย: ใบ้ target หลังตอบผิดครั้งแรกของแต่ละจุด
@@ -276,7 +294,7 @@ export default function SimRunner({
     // บันทึกผล + XP/Badge เบื้องหลัง — จอ debrief โชว์ทันที รางวัลตามมา
     setReward(null);
     if (!practice) {
-      void recordSimRun(scenario.slug, st, { won, grade, score }).then(setReward);
+      void recordSimRun(scenario.slug, st, { won, grade, score }, specialty).then(setReward);
       track(
         CASEGAME_EVENTS.complete,
         buildCompleteProps({
@@ -478,6 +496,13 @@ export default function SimRunner({
     // โหมด autostart ไม่มี user gesture ตอน startGame — AudioContext เลยถูกสร้าง
     // แบบ suspended ปลดล็อกที่การแตะครั้งแรกแทน
     if (!mutedRef.current) initAudio();
+    // แตะครั้งแรก = เข้าใจแล้ว ไม่ต้องสอนอีก (เก็บถาวรต่อเครื่อง)
+    if (tapCoach) {
+      setTapCoach(false);
+      if (isBrowser) {
+        try { localStorage.setItem(TAP_COACH_KEY, "1"); } catch { /* โหมดส่วนตัว */ }
+      }
+    }
     if (busyRef.current) return;
     if (timers.current.type) { finishTyping(); return; }
     if (!awaitTap) return;
@@ -511,6 +536,10 @@ export default function SimRunner({
     setDlgSegments([]);
     setDlgCount(0);
     setScreen("game");
+    // สอนเฉพาะคนที่ไม่เคยเล่น — คนเล่นซ้ำไม่ต้องเจอซ้ำ
+    if (isBrowser) {
+      try { setTapCoach(localStorage.getItem(TAP_COACH_KEY) !== "1"); } catch { setTapCoach(false); }
+    }
     // ปุ่ม "รับเคส" (title) และ "เล่นเคสนี้อีกครั้ง" (debrief) เรียกฟังก์ชันนี้ตัวเดียวกัน
     // — อ่าน result ก่อนถูกล้างที่ setResult(null) ด้านบนไม่ได้แล้ว จึงใช้ runIdRef
     // ที่ยังค้างจากรอบก่อนเป็นตัวบอกว่าเป็นการเล่นซ้ำ
@@ -592,6 +621,20 @@ export default function SimRunner({
               ))}
             </div>
           </div>
+          {playerXp !== null && (() => {
+            const { rank, next, xpForNext, xpIntoRank } = xpToRank(playerXp);
+            return (
+              <div className="cbs-title-rank">
+                <span aria-hidden>{rank.icon}</span>
+                <span className="cbs-title-rank-name">{rank.title}</span>
+                {next && (
+                  <span className="cbs-title-rank-next">
+                    อีก {(xpForNext - xpIntoRank).toLocaleString("th-TH")} XP ถึง{next.title}
+                  </span>
+                )}
+              </div>
+            );
+          })()}
           <div className="cbs-title-row">
             {hiscore > 0 && <div className="cbs-hiscore-chip">HI-SCORE {hiscore}</div>}
             <button
@@ -650,6 +693,17 @@ export default function SimRunner({
                 <span key={slug} className="cbs-badge-pill">🏅 {SIM_BADGE_NAMES[slug] ?? slug}</span>
               ))}
             </div>
+          )}
+          {reward && (reward.loggedIn || reward.isLocal) && (
+            <>
+              <RankProgressCard {...reward} />
+              {reward.isLocal && (
+                <p className="cbs-local-note">
+                  ความคืบหน้านี้เก็บไว้ในเครื่องนี้เท่านั้น ({reward.localRuns} เคส) —
+                  ล็อกอินแล้วระบบจะยกเข้าบัญชีให้ทันที
+                </p>
+              )}
+            </>
           )}
           {reward && !reward.loggedIn && !practice && (
             <DebriefBrowseCta
@@ -753,7 +807,13 @@ export default function SimRunner({
   return (
     <div className={`cbs-app ${shaking ? "cbs-shake" : ""}`}>
       <section className="cbs-game">
-        <div className={`cbs-stage ${drama === "red" ? "cbs-drama-red" : drama === "white" ? "cbs-drama" : ""}`}>
+        {/* พื้นที่แตะ = ทั้งเวที ไม่ใช่แค่กล่องบทพูด — คนมักแตะกลางจอ ซึ่งเดิม
+            ไม่มีผลอะไรเลยจนคิดว่าเกมค้าง (onDialogTap กันไว้อยู่แล้วเมื่อกำลัง
+            แสดงตัวเลือก จึงไม่ชนกับปุ่มตอบ) */}
+        <div
+          className={`cbs-stage ${drama === "red" ? "cbs-drama-red" : drama === "white" ? "cbs-drama" : ""}`}
+          onClick={onDialogTap}
+        >
           <div className="cbs-hud">
             <div className="cbs-hud-monitor">
               <span className={`cbs-rhythm-name ${rhythmBad ? "cbs-bad" : ""}`}>
@@ -779,7 +839,9 @@ export default function SimRunner({
               <button
                 type="button"
                 className="cbs-exit"
-                onClick={() => setConfirmExit(true)}
+                // กันไม่ให้เด้งไปที่ตัวจับแตะของเวที ไม่งั้นกด "ออก" แล้วบทพูด
+                // เดินหน้าไปด้วยพร้อมกัน
+                onClick={(e) => { e.stopPropagation(); setConfirmExit(true); }}
                 aria-label="ออกจากเคสนี้"
               >
                 <X size={14} strokeWidth={3} /> ออก
@@ -788,7 +850,13 @@ export default function SimRunner({
           </div>
 
           {confirmExit && (
-            <div className="cbs-exit-overlay" role="dialog" aria-modal="true" aria-label="ยืนยันออกจากเคส">
+            <div
+              className="cbs-exit-overlay"
+              role="dialog"
+              aria-modal="true"
+              aria-label="ยืนยันออกจากเคส"
+              onClick={(e) => e.stopPropagation()}
+            >
               <div className="cbs-exit-box">
                 <p className="cbs-exit-title">ออกจากเคสนี้?</p>
                 <p className="cbs-exit-sub">ความคืบหน้าในเคสนี้จะไม่ถูกบันทึก</p>
@@ -870,10 +938,26 @@ export default function SimRunner({
             <div className="cbs-dlg-text">
               <DlgText segments={dlgSegments} count={dlgCount} />
             </div>
-            {!typing && awaitTap && <div className="cbs-adv">▼</div>}
+            {/* เดิมเป็น "▼" 13px มุมขวาล่าง และโผล่เฉพาะตอนพิมพ์จบ — ช่วงที่คน
+                เพิ่งเปิดเกม (กำลังพิมพ์) จึงไม่มีอะไรบอกเลยว่าแตะได้ */}
+            {(typing || awaitTap) && (
+              <div className={`cbs-adv ${typing ? "cbs-adv-typing" : ""}`}>
+                {typing ? "แตะเพื่อข้าม" : "แตะเพื่อไปต่อ"}
+                <span className="cbs-adv-caret" aria-hidden>▼</span>
+              </div>
+            )}
           </div>
         </div>
       </section>
+
+      {/* คำใบ้ครั้งแรก — pointer-events: none เพื่อให้แตะทะลุไปโดนเวทีจริง
+          ผู้เล่นจะได้เดินเรื่องต่อด้วยการแตะเดียว ไม่ต้องปิดคำใบ้ก่อน */}
+      {tapCoach && (
+        <div className="cbs-tap-coach" aria-hidden>
+          <div className="cbs-tap-coach-ring" />
+          <p className="cbs-tap-coach-text">แตะที่หน้าจอเพื่อเล่นต่อ</p>
+        </div>
+      )}
 
       {inter && (
         <div className="cbs-inter">

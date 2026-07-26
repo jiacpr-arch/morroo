@@ -4,7 +4,9 @@ import { Activity, HeartPulse, Play, Trophy, Zap } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { getMySimBests, getSimScenarios } from "@/lib/supabase/queries-sim";
+import { getMyDoctorProfile, getMySimBests, getSimScenarios } from "@/lib/supabase/queries-sim";
+import DoctorCard from "@/components/casegame/DoctorCard";
+import LocalDoctorCard from "@/components/casegame/LocalDoctorCard";
 
 export const metadata: Metadata = {
   title: "Code Blue Sim — เกมจำลองกู้ชีพ ACLS",
@@ -27,7 +29,11 @@ const GRADE_STYLE: Record<string, string> = {
 };
 
 export default async function SimHubPage() {
-  const [scenarios, bests] = await Promise.all([getSimScenarios(), getMySimBests()]);
+  const [scenarios, bests, doctor] = await Promise.all([
+    getSimScenarios(),
+    getMySimBests(),
+    getMyDoctorProfile(),
+  ]);
   const aclsCases = scenarios.filter((s) => (s.category ?? "acls") !== "longcase");
   const longcaseGames = scenarios.filter((s) => (s.category ?? "acls") === "longcase");
 
@@ -66,6 +72,19 @@ export default async function SimHubPage() {
           </div>
         </div>
       </section>
+
+      <div className="mt-6">
+        {doctor ? (
+          <DoctorCard
+            xp={doctor.xp}
+            specialties={doctor.specialties}
+            totalWins={doctor.totalWins}
+          />
+        ) : (
+          /* ยังไม่ล็อกอิน — โชว์ความคืบหน้าที่เก็บไว้ในเครื่อง (ถ้ามี) */
+          <LocalDoctorCard />
+        )}
+      </div>
 
       {/* รายการเคส ACLS */}
       <h2 className="mb-3 mt-8 text-sm font-semibold uppercase tracking-wide text-muted-foreground">

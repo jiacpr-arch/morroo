@@ -1,0 +1,89 @@
+/* การ์ดยศ/ความเชี่ยวชาญท้ายเกม (RankProgressCard)
+   ใช้ร่วมกันทั้งเกมเคส (.cbs-app ธีม ER night) และ Resus Hero (.rss-app ธีม
+   เขียวมรกต) ซึ่งนิยามตัวแปรสีคนละชุด — จึงอ่านของ cbs ก่อน ตกไป rss แล้วค่อย
+   ตกมาที่ค่าคงที่ การ์ดจะได้กลืนกับเกมที่ครอบมันอยู่โดยไม่ต้องทำสองชุด */
+
+.cbs-rank-card {
+  --rc-ink: var(--cbs-ink, var(--rss-text, #f0f7f5));
+  --rc-dim: var(--cbs-dim, var(--rss-dim, #9fbdc0));
+  --rc-gold: var(--cbs-gold, var(--rss-gold, #f2c14e));
+  --rc-teal: var(--cbs-teal, var(--rss-teal, #1abc9c));
+  --rc-line: var(--cbs-box-hi, var(--rss-panel-2, #2a4d55));
+  --rc-mono: var(--cbs-mono, ui-monospace, "SF Mono", Menlo, Consolas, monospace);
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 12px;
+  border: 2px solid var(--rc-line);
+  background: rgba(8, 20, 26, .45);
+}
+
+.cbs-rank-up {
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  padding: 8px 12px; border-radius: 8px; text-align: center;
+  color: #0d1a24; background: var(--rc-gold);
+  box-shadow: 0 3px 12px rgba(242, 193, 78, .35);
+  animation: cbs-rank-pop .45s ease-out;
+}
+.cbs-rank-up-label {
+  font-family: var(--rc-mono); font-size: 10px;
+  letter-spacing: .22em; text-transform: uppercase; font-weight: 800;
+}
+.cbs-rank-up-path {
+  display: inline-flex; align-items: center; gap: 4px; flex-wrap: wrap;
+  justify-content: center; font-size: 13px; font-weight: 700;
+}
+
+.cbs-rank-head { display: flex; align-items: center; gap: 11px; }
+.cbs-rank-icon { font-size: 26px; line-height: 1; }
+.cbs-rank-name { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.cbs-rank-title { font-size: 15px; font-weight: 800; color: var(--rc-ink); }
+.cbs-rank-trait { font-size: 12px; line-height: 1.5; color: var(--rc-dim); }
+
+.cbs-rank-bar-wrap { display: flex; flex-direction: column; gap: 5px; }
+.cbs-rank-bar {
+  height: 8px; border-radius: 999px; overflow: hidden;
+  background: rgba(159, 189, 192, .18);
+}
+.cbs-rank-bar-fill {
+  display: block; height: 100%; border-radius: 999px;
+  background: linear-gradient(90deg, var(--rc-teal), var(--rc-gold));
+  transition: width .6s ease-out;
+}
+.cbs-rank-bar-cap { font-family: var(--rc-mono); font-size: 11px; color: var(--rc-dim); }
+.cbs-rank-bar-cap strong { color: var(--rc-ink); }
+.cbs-rank-maxed {
+  display: inline-flex; align-items: center; gap: 6px; color: var(--rc-gold);
+}
+
+.cbs-expertise {
+  display: flex; align-items: flex-start; gap: 9px;
+  padding-top: 10px; border-top: 1px dashed var(--rc-line);
+}
+.cbs-expertise-dot { font-size: 15px; line-height: 1.4; color: var(--rc-teal); }
+.cbs-expertise-body {
+  display: flex; flex-direction: column; gap: 2px;
+  font-size: 13px; color: var(--rc-dim);
+}
+.cbs-expertise-body strong { color: var(--rc-ink); font-weight: 700; }
+.cbs-expertise-next { font-family: var(--rc-mono); font-size: 10.5px; }
+.cbs-expertise-new {
+  align-self: flex-start; margin-top: 2px;
+  font-size: 11px; font-weight: 800; color: #0d1a24;
+  background: var(--rc-teal); border-radius: 999px; padding: 2px 9px;
+}
+.cbs-expertise-up .cbs-expertise-dot { animation: cbs-rank-pop .45s ease-out; }
+
+/* keyframe ของตัวเอง — ไฟล์นี้ถูก import จากทั้งสองเกม จะพึ่ง cbs-pop ใน
+   sim.css ไม่ได้ (Resus ไม่ได้โหลดไฟล์นั้น) */
+@keyframes cbs-rank-pop {
+  0% { transform: translateY(14px); opacity: 0; }
+  100% { transform: none; opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cbs-rank-up, .cbs-expertise-up .cbs-expertise-dot { animation: none !important; }
+  .cbs-rank-bar-fill { transition: none !important; }
+}

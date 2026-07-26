@@ -8,6 +8,8 @@ import { SIM_SCENARIOS, getBuiltinScenario } from "@/lib/sim/scenarios";
 import type { SimDbCharacter } from "@/lib/sim/characters";
 import { isValidScenario, type SimScenario } from "@/lib/sim/types";
 import { caseIdFromSlug, longCaseToScenario, slugForCase } from "@/lib/sim/longcase-to-scenario";
+import { summarizeExpertise, type SpecialtyExpertise } from "@/lib/sim/expertise";
+import { normalizeSpecialty, OTHER_SPECIALTY } from "@/lib/casegame/normalize";
 import { getLongCaseFull } from "./queries-longcase";
 
 interface SimScenarioRow {
@@ -79,6 +81,58 @@ export async function getSimScenario(slug: string): Promise<SimScenario | null> 
     } catch {
       // เงียบ — คืน null ด้านล่าง
     }
+  }
+  return null;
+}
+
+/**
+ * สาขาของเคสหนึ่ง ๆ — ส่งเข้าเกมเพื่อ denormalize ลง `sim_runs.specialty`
+ * ตอนบันทึกผล (ใช้คิดความเชี่ยวชาญรายสาขา ดู lib/sim/expertise.ts)
+ *
+ * ต้นทางต่างกันตามชนิดเคส: long case อยู่ที่ `long_cases.specialty`,
+ * MEQ อยู่ที่ `exams.category` และเกมสังเคราะห์ไม่มีแถวใน sim_scenarios เลย
+ * คืน null เมื่อหาไม่เจอ — เคส ACLS ไม่มีสาขาอยู่แล้ว
+ */
+export async function getScenarioSpecialty(slug: string): Promise<string | null> {
+  try {
+    const supabase = await createClient();
+    const { data } = await supabase
+      .from("sim_scenarios")
+      .select("source_case_id, source_exam_id")
+      .eq("slug", slug)
+      .eq("status", "published")
+      .maybeSingle();
+    const row = data as { source_case_id: string | null; source_exam_id: string | null } | null;
+
+    if (row?.source_case_id) {
+      const { data: lc } = await supabase
+        .from("long_cases")
+        .select("specialty")
+        .eq("id", row.source_case_id)
+        .maybeSingle();
+      if (lc?.specialty) return lc.specialty as string;
+    }
+    if (row?.source_exam_id) {
+      const { data: exam } = await supabase
+        .from("exams")
+        .select("category")
+        .eq("id", row.source_exam_id)
+        .maybeSingle();
+      if (exam?.category) return exam.category as string;
+    }
+
+    // เกมสังเคราะห์ slug = lc-<caseId> ที่ยังไม่มีแถวใน sim_scenarios
+    const caseId = caseIdFromSlug(slug);
+    if (caseId) {
+      const { data: lc } = await supabase
+        .from("long_cases")
+        .select("specialty")
+        .eq("id", caseId)
+        .maybeSingle();
+      if (lc?.specialty) return lc.specialty as string;
+    }
+  } catch {
+    // สาขาเป็นข้อมูลเสริม — หาไม่ได้ก็ให้เล่นต่อได้ตามปกติ
   }
   return null;
 }
@@ -381,4 +435,57 @@ export async function getMySimBests(): Promise<Record<string, SimBest>> {
     // Non-blocking
   }
   return bests;
+}
+
+export interface MyDoctorProfile {
+  /** XP สะสมทั้งเว็บ (profiles.school_xp) — ใช้คิดยศ */
+  xp: number;
+  /** ความเชี่ยวชาญทุกสาขา เรียงจากเก่งสุด */
+  specialties: SpecialtyExpertise[];
+  /** จำนวนเคสที่ชนะทั้งหมด */
+  totalWins: number;
+}
+
+/**
+ * "ตัวละคร" ของผู้ใช้ปัจจุบันสำหรับหน้ารวมเกมเคส — คืน null เมื่อไม่ได้ล็อกอิน
+ *
+ * สาขาถูก normalize อีกชั้นตอนอ่าน เพราะแถวที่ backfill จาก migration เก็บค่า
+ * ดิบไว้ (ไทย/อังกฤษปนกัน) ถ้าไม่ยุบจะกลายเป็นคนละสาขาแล้วไต่ขั้นไม่ถึง
+ */
+export async function getMyDoctorProfile(): Promise<MyDoctorProfile | null> {
+  try {
+    const supabase = await createClient();
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) return null;
+
+    const [{ data: profile }, { data: runs }] = await Promise.all([
+      supabase.from("profiles").select("school_xp").eq("id", user.id).maybeSingle(),
+      supabase
+        .from("sim_runs")
+        .select("specialty, won")
+        .eq("user_id", user.id)
+        .order("created_at", { ascending: false })
+        .limit(500),
+    ]);
+
+    type Row = { specialty: string | null; won: boolean };
+    const rows = (runs as Row[] | null) ?? [];
+    const specialties = summarizeExpertise(
+      rows.map((r) => {
+        const canonical = r.specialty ? normalizeSpecialty(r.specialty) : null;
+        return {
+          specialty: canonical === OTHER_SPECIALTY ? null : canonical,
+          won: r.won,
+        };
+      }),
+    );
+
+    return {
+      xp: profile?.school_xp ?? 0,
+      specialties,
+      totalWins: rows.filter((r) => r.won).length,
+    };
+  } catch {
+    return null;
+  }
 }

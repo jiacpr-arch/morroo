@@ -23,6 +23,7 @@ import {
   playRosc, playShock, playStepDone, playSubDone, playToolSelect,
 } from "@/lib/resus/sound";
 import { RESUS_BADGE_NAMES, recordResusRun, type RecordedRun } from "@/lib/resus/record";
+import RankProgressCard from "@/components/sim/RankProgressCard";
 import { parseEmphasis, type TextSegment } from "@/lib/sim/types";
 import type { Grade, Operation, ResusState, ToolId } from "@/lib/resus/types";
 import ResusField from "./ResusField";
@@ -458,6 +459,7 @@ export default function ResusRunner({ operation, practice = false }: ResusRunner
               ))}
             </div>
           )}
+          {reward && reward.loggedIn && <RankProgressCard {...reward} />}
           {reward && !reward.loggedIn && (
             <p className="rss-login-hint">
               <Link href="/login">เข้าสู่ระบบ</Link> เพื่อเก็บ XP, Badge และขึ้น Leaderboard

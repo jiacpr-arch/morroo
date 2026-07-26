@@ -6,6 +6,7 @@
 
 import { createClient } from "@/lib/supabase/client";
 import { awardBadge, awardXp } from "@/lib/school/xp";
+import { NO_RANK_DELTA, rankDelta, readSchoolXp, type RankDelta } from "@/lib/school/rank-delta";
 import { cprQualityFor } from "./engine";
 import type { Grade, ResusState } from "./types";
 
@@ -19,7 +20,7 @@ export interface ResusRunResult {
   stars: number;
 }
 
-export interface RecordedRun {
+export interface RecordedRun extends RankDelta {
   loggedIn: boolean;
   xpEarned: number;
   newBadges: string[];
@@ -30,12 +31,13 @@ export async function recordResusRun(
   state: ResusState,
   result: ResusRunResult,
 ): Promise<RecordedRun> {
-  const out: RecordedRun = { loggedIn: false, xpEarned: 0, newBadges: [] };
+  const out: RecordedRun = { loggedIn: false, xpEarned: 0, newBadges: [], ...NO_RANK_DELTA };
   try {
     const supabase = createClient();
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) return out;
     out.loggedIn = true;
+    const xpBefore = await readSchoolXp(user.id);
 
     await supabase.from("resus_runs").insert({
       user_id: user.id,
@@ -70,6 +72,9 @@ export async function recordResusRun(
         out.newBadges.push("resus_perfect_code");
       }
     }
+
+    // อ่านหลังแจกเหรียญ เพราะเหรียญแถม XP ด้วย (awardBadge → awardXp)
+    Object.assign(out, rankDelta(xpBefore, await readSchoolXp(user.id)));
   } catch {
     // Non-blocking
   }

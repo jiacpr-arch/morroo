@@ -14,7 +14,8 @@ import {
   Zap,
   Database,
 } from "lucide-react";
-import { xpToLevel } from "@/lib/school/xp";
+import RankBadge from "@/components/school/RankBadge";
+import { xpToRank } from "@/lib/school/rank";
 import {
   getSchoolSystems,
   getSchoolTopicsByYear,
@@ -225,18 +226,23 @@ export default async function SchoolPage() {
         <>
           {/* XP / Level banner */}
           {(() => {
-            const lvl = xpToLevel(xp);
+            const rankNow = xpToRank(xp);
             return (
               <Card className="mb-4 border-amber-200 bg-gradient-to-r from-amber-50 to-yellow-50">
                 <CardContent className="p-4">
                   <div className="flex items-center gap-3 mb-2">
                     <Zap className="h-8 w-8 text-amber-600" />
                     <div className="flex-1">
-                      <p className="text-xs text-muted-foreground">
-                        Level {lvl.level} · {xp} XP · {badgeCount} badges
-                      </p>
+                      <div className="flex flex-wrap items-center gap-2">
+                        <RankBadge xp={xp} showLevel size="sm" />
+                        <span className="text-xs text-muted-foreground">
+                          {xp} XP · {badgeCount} badges
+                        </span>
+                      </div>
                       <p className="font-bold text-amber-700">
-                        ถัดไป Level {lvl.level + 1} ({lvl.nextAt - xp} XP)
+                        {rankNow.next
+                          ? `อีก ${(rankNow.xpForNext - rankNow.xpIntoRank).toLocaleString("th-TH")} XP ถึง${rankNow.next.title}`
+                          : "ขั้นสูงสุดของสายวิชาการแล้ว"}
                       </p>
                     </div>
                     <Link href="/school/leaderboard">
@@ -248,7 +254,7 @@ export default async function SchoolPage() {
                   <div className="h-2 bg-amber-100 rounded-full overflow-hidden">
                     <div
                       className="h-full bg-amber-500 transition-all"
-                      style={{ width: `${lvl.progress}%` }}
+                      style={{ width: `${rankNow.progress}%` }}
                     />
                   </div>
                 </CardContent>
