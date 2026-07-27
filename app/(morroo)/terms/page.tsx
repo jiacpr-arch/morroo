@@ -88,11 +88,10 @@ export default function TermsPage() {
                 <span className="bg-emerald-100 text-emerald-700 text-sm font-semibold px-2.5 py-1 rounded-full">3</span>
                 ช่องทางการชำระเงิน
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
                   { icon: "💳", method: "บัตรเครดิต / เดบิต", detail: "Visa, Mastercard, JCB ผ่าน Stripe" },
                   { icon: "📱", method: "PromptPay QR Code", detail: "สแกนจ่ายผ่าน Banking App" },
-                  { icon: "🏦", method: "โอนเงินผ่านธนาคาร", detail: "แนบสลิปยืนยันการโอน" },
                 ].map((item) => (
                   <div key={item.method} className="p-4 bg-gray-50 rounded-xl text-center">
                     <div className="text-2xl mb-2">{item.icon}</div>
@@ -112,7 +111,6 @@ export default function TermsPage() {
               <ul className="space-y-2">
                 {[
                   "บัตรเครดิต / PromptPay: บัญชีเปิดใช้งานทันทีหลังการชำระเงินสำเร็จ",
-                  "โอนเงินผ่านธนาคาร: เปิดใช้งานภายใน 1-2 ชั่วโมงในวันทำการ หลังตรวจสอบสลิป",
                   "อีเมลยืนยันจะถูกส่งไปยังที่อยู่อีเมลที่ลงทะเบียนไว้",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm">
