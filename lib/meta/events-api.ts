@@ -76,7 +76,7 @@ export async function sendMetaEvent(input: MetaEventInput): Promise<void> {
   if (Object.keys(customData).length) eventData.custom_data = customData;
 
   const payload: Record<string, unknown> = { data: [eventData] };
-  const testCode = process.env.META_TEST_EVENT_CODE?.trim();
+  const testCode = resolveTestEventCode(input.event);
   if (testCode) payload.test_event_code = testCode;
 
   const endpoint = `https://graph.facebook.com/${API_VERSION}/${PIXEL_ID}/events?access_token=${encodeURIComponent(token)}`;
@@ -96,4 +96,36 @@ export async function sendMetaEvent(input: MetaEventInput): Promise<void> {
   } catch (err) {
     console.error(`[meta-capi] ${input.event} fetch error:`, err);
   }
+}
+
+/**
+ * `test_event_code` ห้ามหลุดขึ้น production เด็ดขาด
+ *
+ * event ที่แนบโค้ดนี้ไป Meta จะรับไว้ (ตอบ 200 ไม่มี error ให้เห็น) แต่โยนเข้า
+ * Test Events อย่างเดียว — ไม่นับเข้า dataset, ใช้ optimize ไม่ได้, ใช้ทำ
+ * attribution ไม่ได้ ผลคือแคมเปญยิงเงินไปโดยไม่มี conversion กลับมาสักตัว
+ * และไม่มีอะไรบอกเลยว่าพัง
+ *
+ * เกิดขึ้นจริงแล้ว: `META_TEST_EVENT_CODE` ถูกตั้งบน Vercel แบบ All Environments
+ * (รวม Production) ค้างไว้ตั้งแต่ 14 พ.ค. 2026 — conversion ทุกตัวหายเงียบ
+ * สองเดือนกว่า กว่าจะจับได้ตอนไล่ดูว่าทำไม dataset แทบไม่มีข้อมูล
+ *
+ * จึงไม่ไว้ใจ env อีกต่อไป: production เพิกเฉยต่อค่านี้เสมอ ไม่ว่าใครจะตั้งมา
+ * ยังไง แล้ว log เตือนไว้ให้เห็นว่ามีค่าค้างอยู่ที่ต้องไปลบ
+ */
+export function resolveTestEventCode(event: string): string | undefined {
+  const testCode = process.env.META_TEST_EVENT_CODE?.trim();
+  if (!testCode) return undefined;
+
+  // VERCEL_ENV = production เฉพาะ deployment ที่ผูกกับ production domain
+  // (preview/development ได้ค่าของตัวเอง) — เชื่อถือได้กว่า NODE_ENV ซึ่ง
+  // build ของ preview ก็เป็น "production" เหมือนกัน
+  if (process.env.VERCEL_ENV === "production") {
+    console.warn(
+      `[meta-capi] ignoring META_TEST_EVENT_CODE on production (${event}) — ` +
+        "ลบตัวแปรนี้ออกจาก Production ใน Vercel ได้เลย"
+    );
+    return undefined;
+  }
+  return testCode;
 }
