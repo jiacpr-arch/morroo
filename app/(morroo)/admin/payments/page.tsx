@@ -13,6 +13,7 @@ import {
   Loader2,
   Shield,
   ImageIcon,
+  BadgeCheck,
 } from "lucide-react";
 
 interface PaymentOrder {
@@ -21,15 +22,21 @@ interface PaymentOrder {
   plan_type: string;
   amount: number;
   status: string;
-  slip_url: string;
+  slip_url: string | null;
+  note: string | null;
+  trans_ref: string | null;
+  verified_by_provider: string | null;
   created_at: string;
   profiles?: { email: string; name: string };
+  slipSignedUrl?: string;
 }
 
 const planLabels: Record<string, string> = {
   monthly: "รายเดือน",
   yearly: "รายปี",
   bundle: "ชุดข้อสอบ",
+  board_monthly: "Board รายเดือน",
+  board_yearly: "Board รายปี",
 };
 
 const statusConfig: Record<string, { label: string; color: string }> = {
@@ -44,6 +51,7 @@ export default function AdminPaymentsPage() {
   const [loading, setLoading] = useState(true);
   const [isAdmin, setIsAdmin] = useState(false);
   const [processing, setProcessing] = useState<string | null>(null);
+  const [actionError, setActionError] = useState<string | null>(null);
 
   useEffect(() => {
     async function load() {
@@ -93,10 +101,26 @@ export default function AdminPaymentsPage() {
           }
         }
 
+        // Signed URLs so the slip images are actually viewable (bucket is
+        // private; admin SELECT-all storage policy allows signing).
+        const slipPaths = ordersData
+          .map((o: PaymentOrder) => o.slip_url)
+          .filter((p): p is string => Boolean(p && !p.startsWith("pending")));
+        const signedMap: Record<string, string> = {};
+        if (slipPaths.length > 0) {
+          const { data: signed } = await supabase.storage
+            .from("slips")
+            .createSignedUrls(slipPaths, 3600);
+          for (const s of signed ?? []) {
+            if (s.signedUrl && s.path) signedMap[s.path] = s.signedUrl;
+          }
+        }
+
         setOrders(
           ordersData.map((o: PaymentOrder) => ({
             ...o,
             profiles: profileMap[o.user_id] || { email: o.user_id.slice(0, 8), name: "" },
+            slipSignedUrl: o.slip_url ? signedMap[o.slip_url] : undefined,
           }))
         );
       } else {
@@ -107,48 +131,42 @@ export default function AdminPaymentsPage() {
     load();
   }, [router]);
 
-  const handleAction = async (
-    orderId: string,
-    action: "approved" | "rejected",
-    userId: string,
-    planType: string
-  ) => {
-    setProcessing(orderId);
-    const supabase = createClient();
-
-    // Update order status
-    await supabase
-      .from("payment_orders")
-      .update({
-        status: action,
-        reviewed_at: new Date().toISOString(),
-      })
-      .eq("id", orderId);
-
-    // If approved, update user membership
-    if (action === "approved") {
-      const expiresAt = new Date();
-      if (planType === "monthly") {
-        expiresAt.setMonth(expiresAt.getMonth() + 1);
-      } else if (planType === "yearly") {
-        expiresAt.setFullYear(expiresAt.getFullYear() + 1);
-      } else {
-        expiresAt.setFullYear(expiresAt.getFullYear() + 99); // bundle = no expiry
-      }
-
-      await supabase
-        .from("profiles")
-        .update({
-          membership_type: planType,
-          membership_expires_at: expiresAt.toISOString(),
-        })
-        .eq("id", userId);
+  const handleAction = async (orderId: string, action: "approve" | "reject") => {
+    let note: string | undefined;
+    if (action === "reject") {
+      const input = window.prompt(
+        "เหตุผลที่ปฏิเสธ (ลูกค้าจะเห็นข้อความนี้ทาง LINE/อีเมล):",
+        ""
+      );
+      if (input === null) return; // cancelled
+      note = input.trim() || undefined;
     }
 
-    // Refresh
-    setOrders((prev) =>
-      prev.map((o) => (o.id === orderId ? { ...o, status: action } : o))
-    );
+    setProcessing(orderId);
+    setActionError(null);
+
+    try {
+      const res = await fetch("/api/admin/payments/review", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ orderId, action, note }),
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        setActionError(data.error || "เกิดข้อผิดพลาด กรุณาลองใหม่");
+      } else {
+        setOrders((prev) =>
+          prev.map((o) =>
+            o.id === orderId
+              ? { ...o, status: action === "approve" ? "approved" : "rejected", note: note ?? o.note }
+              : o
+          )
+        );
+      }
+    } catch {
+      setActionError("เชื่อมต่อไม่สำเร็จ กรุณาลองใหม่");
+    }
     setProcessing(null);
   };
 
@@ -191,6 +209,12 @@ export default function AdminPaymentsPage() {
         )}
       </div>
 
+      {actionError && (
+        <div className="mb-4 rounded-lg border border-destructive/30 bg-destructive/5 p-3 text-sm text-destructive">
+          {actionError}
+        </div>
+      )}
+
       {orders.length === 0 ? (
         <Card className="text-center py-12">
           <CardContent>
@@ -218,7 +242,15 @@ export default function AdminPaymentsPage() {
                         {order.profiles?.email}
                       </p>
                     </div>
-                    <Badge className={status.color}>{status.label}</Badge>
+                    <div className="flex items-center gap-2">
+                      {order.verified_by_provider && (
+                        <Badge className="bg-emerald-100 text-emerald-700">
+                          <BadgeCheck className="h-3.5 w-3.5 mr-1" />
+                          ตรวจอัตโนมัติ ({order.verified_by_provider})
+                        </Badge>
+                      )}
+                      <Badge className={status.color}>{status.label}</Badge>
+                    </div>
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-3">
@@ -240,6 +272,17 @@ export default function AdminPaymentsPage() {
                       {new Date(order.created_at).toLocaleString("th-TH")}
                     </span>
                   </div>
+                  {order.trans_ref && (
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-muted-foreground">เลขอ้างอิงโอน</span>
+                      <span className="font-mono text-xs">{order.trans_ref}</span>
+                    </div>
+                  )}
+                  {order.note && (
+                    <div className="rounded-lg bg-amber-50 border border-amber-200 p-2 text-sm text-amber-800">
+                      {order.note}
+                    </div>
+                  )}
 
                   {/* Slip preview */}
                   {order.slip_url && !order.slip_url.startsWith("pending") && (
@@ -248,9 +291,24 @@ export default function AdminPaymentsPage() {
                         <ImageIcon className="h-4 w-4" />
                         สลิปการโอนเงิน
                       </div>
-                      <p className="text-xs text-muted-foreground break-all">
-                        {order.slip_url}
-                      </p>
+                      {order.slipSignedUrl ? (
+                        <a
+                          href={order.slipSignedUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {/* eslint-disable-next-line @next/next/no-img-element -- short-lived signed URL from private bucket, not suitable for next/image optimizer */}
+                          <img
+                            src={order.slipSignedUrl}
+                            alt="สลิปการโอนเงิน"
+                            className="max-h-72 rounded-md border object-contain"
+                          />
+                        </a>
+                      ) : (
+                        <p className="text-xs text-muted-foreground break-all">
+                          {order.slip_url}
+                        </p>
+                      )}
                     </div>
                   )}
 
@@ -260,14 +318,7 @@ export default function AdminPaymentsPage() {
                       <Button
                         className="flex-1 bg-brand hover:bg-brand-light text-white gap-1"
                         disabled={processing === order.id}
-                        onClick={() =>
-                          handleAction(
-                            order.id,
-                            "approved",
-                            order.user_id,
-                            order.plan_type
-                          )
-                        }
+                        onClick={() => handleAction(order.id, "approve")}
                       >
                         {processing === order.id ? (
                           <Loader2 className="h-4 w-4 animate-spin" />
@@ -280,14 +331,7 @@ export default function AdminPaymentsPage() {
                         variant="outline"
                         className="flex-1 text-destructive border-destructive/30 gap-1"
                         disabled={processing === order.id}
-                        onClick={() =>
-                          handleAction(
-                            order.id,
-                            "rejected",
-                            order.user_id,
-                            order.plan_type
-                          )
-                        }
+                        onClick={() => handleAction(order.id, "reject")}
                       >
                         <XCircle className="h-4 w-4" />
                         ปฏิเสธ

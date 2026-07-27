@@ -630,3 +630,63 @@ export function trialExpiryEmail({
 </body>
 </html>`;
 }
+
+export interface PaymentRejectedEmailProps {
+  name: string;
+  planLabel: string;
+  amount: number;
+  /** Admin's reason (Thai), shown verbatim to the customer. */
+  reason?: string;
+  /** Link back to the payment page so the customer can resubmit. */
+  retryUrl: string;
+}
+
+export function paymentRejectedEmail({
+  name,
+  planLabel,
+  amount,
+  reason,
+  retryUrl,
+}: PaymentRejectedEmailProps): string {
+  const reasonBlock = reason
+    ? `<div style="background: #fff8f0; border: 1px solid #f5c98a; border-radius: 8px; padding: 14px 16px; margin: 18px 0;">
+        <p style="color: #8a5a1a; font-size: 14px; margin: 0;"><strong>เหตุผล:</strong> ${reason}</p>
+      </div>`
+    : "";
+
+  return `<!DOCTYPE html>
+<html lang="th">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"></head>
+<body style="margin: 0; padding: 0; background: #f4f5f6;">
+  <div style="${baseStyle}">
+    ${headerHtml}
+    <div style="padding: 32px;">
+      <h2 style="color: ${DARK_COLOR}; font-size: 20px; margin: 0 0 16px;">
+        การแจ้งโอนเงินของคุณยังไม่ผ่านการตรวจสอบ
+      </h2>
+      <p style="color: #495057; font-size: 15px; line-height: 1.7; margin: 0 0 8px;">
+        สวัสดีคุณ${name},
+      </p>
+      <p style="color: #495057; font-size: 15px; line-height: 1.7; margin: 0 0 8px;">
+        เราตรวจสอบสลิปสำหรับแพ็กเกจ <strong>${planLabel}</strong>
+        ยอด <strong>฿${amount.toLocaleString("th-TH")}</strong> แล้ว
+        แต่ยังไม่สามารถยืนยันการชำระเงินได้
+      </p>
+      ${reasonBlock}
+      <p style="color: #495057; font-size: 15px; line-height: 1.7; margin: 0 0 24px;">
+        หากคุณโอนเงินแล้วจริง กรุณาส่งสลิปอีกครั้ง หรือติดต่อเราได้ที่
+        <a href="mailto:support@morroo.com" style="color: ${BRAND_COLOR};">support@morroo.com</a>
+        — ขออภัยในความไม่สะดวกครับ
+      </p>
+      <div style="text-align: center; margin: 28px 0;">
+        <a href="${retryUrl}"
+           style="background: ${BRAND_COLOR}; color: #ffffff; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-size: 16px; font-weight: bold; display: inline-block;">
+          ส่งสลิปอีกครั้ง
+        </a>
+      </div>
+    </div>
+    ${footerHtml}
+  </div>
+</body>
+</html>`;
+}

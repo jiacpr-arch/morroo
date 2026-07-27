@@ -6,6 +6,8 @@
  */
 
 import { Resend } from "resend";
+import { sendLineMessage } from "@/lib/line";
+import { buildSlipReviewFlex, type SlipReviewData } from "@/lib/line-flex-templates";
 
 const LINE_TOKEN  = process.env.LINE_CHANNEL_TOKEN ?? "";
 const LINE_TARGET = process.env.LINE_TARGET_ID     ?? "";
@@ -42,6 +44,22 @@ export async function lineNotifyNewOrder(params: {
     });
   } catch (err) {
     console.error("[LINE] notify error:", err);
+  }
+}
+
+/**
+ * Nudge the admin (personal OA chat) that a bank-transfer slip needs manual
+ * review — sent only when auto-verification could not approve the order.
+ * No-op if ADMIN_LINE_USER_ID is not configured.
+ */
+export async function notifyAdminPendingSlip(data: SlipReviewData): Promise<void> {
+  const adminLineId = process.env.ADMIN_LINE_USER_ID;
+  if (!adminLineId) return;
+
+  try {
+    await sendLineMessage(adminLineId, [buildSlipReviewFlex(data)]);
+  } catch (err) {
+    console.error("[LINE] pending-slip notify error:", err);
   }
 }
 

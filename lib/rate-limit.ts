@@ -22,6 +22,7 @@ export const RATE_LIMITS = {
   mcqRecommended: { max: 60, windowSeconds: 3600 },  // 60 recs / hour
   reportError: { max: 20, windowSeconds: 86400 },    // 20 reports / day
   redeemPoints: { max: 10, windowSeconds: 86400 },   // 10 point redeems / day
+  submitSlip: { max: 5, windowSeconds: 3600 },       // 5 slip submissions / hour
 } as const satisfies Record<string, RateLimitConfig>;
 
 /**
