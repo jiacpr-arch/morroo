@@ -565,6 +565,22 @@
   font-size: 15px; padding: 14px 12px; line-height: 1.4;
 }
 
+/* เคสถัดไปที่ควรเล่น — เหตุผลสำคัญพอๆ กับชื่อเคส เพราะเป็นสิ่งที่ทำให้กดต่อ */
+.cbs-next { display: flex; flex-direction: column; gap: 8px; }
+.cbs-next-item {
+  display: flex; flex-direction: column; gap: 3px;
+  text-decoration: none; text-align: left;
+  border: 2px solid #2a4d55; border-radius: 8px;
+  background: rgba(8, 20, 26, .6); padding: 11px 13px;
+}
+.cbs-next-item:active { transform: translateY(2px); }
+.cbs-next-title {
+  font-size: 14px; font-weight: 700; line-height: 1.45; color: var(--cbs-ink);
+}
+.cbs-next-reason {
+  font-size: 12px; line-height: 1.45; color: var(--cbs-gold);
+}
+
 /* ปุ่ม LINE — ตัวเลือกหลักท้ายเกม ใช้เขียวแบรนด์ LINE ให้ผู้ใช้ไทยจำได้ทันที
    ว่าแตะแล้วเกิดอะไร (ล็อกอิน/แอด ไม่ต้องพิมพ์อะไรเลย) */
 .cbs-line-btn {

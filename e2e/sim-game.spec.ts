@@ -164,3 +164,45 @@ test("first-time player is told where to tap, and only once", async ({ page }) =
   await expect(page.locator(".cbs-dlg")).toBeVisible({ timeout: 20_000 });
   await expect(page.locator(".cbs-tap-coach")).toHaveCount(0);
 });
+
+/**
+ * "เคสถัดไปที่ควรเล่น" — แทนปุ่มสุ่มมั่วที่ทำให้คนแตะจริงแค่ 14 จาก 157 เคส
+ * stub ปลายทางเพราะสภาพแวดล้อมทดสอบไม่มี DB (catalog ว่าง = คอมโพเนนต์ซ่อนตัว
+ * ตามตั้งใจ) เทสนี้จึงคุมการต่อสาย + การแสดงเหตุผล ไม่ใช่ตรรกะการจัดอันดับ
+ * ซึ่งมี unit test คุมอยู่แล้วที่ lib/casegame/recommend.test.ts
+ */
+test("debrief suggests what to play next, with a reason", async ({ page }) => {
+  await page.route("**/api/casegame/recommend", async (route) => {
+    const body = route.request().postDataJSON() as { excludeSlug?: string };
+    expect(body.excludeSlug).toBe("lc-testicular-torsion-01");
+    await route.fulfill({
+      json: {
+        picks: [{
+          slug: "lc-demo-1",
+          title: "ชายอายุ 24 ปี ปวดท้องขวาล่าง 8 ชั่วโมง",
+          specialty: "ศัลยศาสตร์",
+          difficulty: "ปานกลาง",
+          reason: "คุณเพิ่งพลาดเรื่องศัลยศาสตร์",
+        }],
+      },
+    });
+  });
+
+  await page.goto("/sim/lc-testicular-torsion-01?start=1");
+  await expect(page.locator(".cbs-dlg")).toBeVisible({ timeout: 20_000 });
+
+  await expect(async () => {
+    if (await page.locator(".cbs-debrief").isVisible().catch(() => false)) return;
+    if (await page.locator(".cbs-choices").isVisible().catch(() => false)) {
+      await page.locator(".cbs-choice").first().click({ timeout: 2_000 }).catch(() => {});
+    } else {
+      await page.locator(".cbs-dlg").click({ timeout: 2_000 }).catch(() => {});
+    }
+    expect(await page.locator(".cbs-debrief").isVisible().catch(() => false)).toBe(true);
+  }).toPass({ timeout: 120_000, intervals: [300] });
+
+  const next = page.locator(".cbs-next");
+  await expect(next).toBeVisible({ timeout: 20_000 });
+  await expect(next.locator(".cbs-next-reason").first()).toContainText("ศัลยศาสตร์");
+  await expect(next.locator("a").first()).toHaveAttribute("href", "/sim/lc-demo-1");
+});
