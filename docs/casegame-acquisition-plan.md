@@ -343,4 +343,55 @@
 
 - **คนเล่นเกม ≠ คนจ่ายเงิน** — ความเสี่ยงจริง แต่ต่ำกว่าปกติเพราะกลุ่มเป้าหมายแคบมาก (นศ.แพทย์ไทย) คนนอกวงไม่คลิกอยู่แล้ว คุมด้วยเกณฑ์ §4
 - **เคสน้อย** — §3.4 ต้องเดินคู่ขนาน ไม่งั้น retention พัง
-- **Custom Conversion / Lookalike สร้างผ่าน MCP ไม่ได้** — ต้องทำในหน้า Ads Manager เอง (เหมือนกรณี Lookalike ที่ `ads-campaign-setup-2026H2.md` ระบุไว้) เผื่อเวลาให้เจ้าของบัญชี
+- **Custom Conversion / Lookalike สร้างผ่าน MCP ไม่ได้** — ต้องทำในหน้า Ads Manager เอง (เหมือนกรณี Lookalike ที่ `ads-campaign-setup-2026H2.md` ระบุไว้) เผื่อเวลาให้เจ้าของบัญชี · **ขั้นตอนทีละคลิกอยู่ที่ §7**
+
+---
+
+## 7. วิธีสร้าง Custom Conversion "เล่นเกมเคสจริง" (ทีละคลิก)
+
+> เขียน 2026-07-27 · ตรวจ payload จากโค้ดจริงแล้ว (`app/api/track/casegame/route.ts` + `lib/sim/track.ts`)
+
+### 7.1 สิ่งที่โค้ดส่งเข้า Meta อยู่แล้ว (ไม่ต้องแก้อะไร)
+
+ยืนยันจาก `SimRunner.tsx` — ยิงครบทั้ง 3 จังหวะ: `start` (บรรทัด 595) · `first_decision` (459) · `complete` (324)
+
+| field | ค่าที่ส่งจริง |
+|---|---|
+| Pixel | `966371002896288` |
+| Standard event | `ViewContent` |
+| `content_type` | `casegame` |
+| `content_name` | `casegame_first_decision:<slug>` เช่น `casegame_first_decision:lc-testicular-torsion-01` |
+| `content_ids` | `longcase:<slug>` |
+| `event_id` | `casegame:first_decision:<runId>` (กันนับซ้ำ) |
+
+ส่งแบบ **server-side ทางเดียว** จึงรอด ad blocker และไม่ต้อง dedupe กับ browser pixel
+
+### 7.2 ขั้นตอนสร้าง
+
+1. เปิด **Events Manager** → เมนูซ้าย **Custom Conversions** → ปุ่ม **Create custom conversion**
+2. **Data source**: เลือก pixel `966371002896288`
+3. **Conversion event**: เลือก `ViewContent`
+4. **Rules**: เลือก **Event parameter** (ไม่ใช่ URL) → พารามิเตอร์ `content_name` → เงื่อนไข **Contains** → ใส่ค่า:
+   ```
+   casegame_first_decision
+   ```
+   > ใช้ `Contains` ปลอดภัย เพราะอีกสอง event ที่ยิงคือ `casegame_start:` และ `casegame_complete:` ซึ่งไม่มีสตริงนี้อยู่เลย จึงไม่มีทางนับปน
+5. **ชื่อ**: `เล่นเกมเคสจริง (first decision)` · **Category**: เลือกอะไรก็ได้ที่สื่อ (เช่น `Other`)
+6. **Value**: เว้นว่าง — เกมไม่มีมูลค่าเป็นเงิน ถ้าใส่มั่วจะทำให้ ROAS ในรายงานเพี้ยน
+7. กด **Create** แล้วรอให้เห็นตัวเลขเริ่มเดินใน Events Manager (ปกติภายในไม่กี่ชั่วโมง)
+
+### 7.3 ⚠️ กับดักที่ต้องรู้ก่อนสลับ optimization
+
+**แคมเปญ `[MR]_Traffic_CaseGame` (`52588558588397`) เป็น objective `OUTCOME_TRAFFIC`** ซึ่ง **เลือก Custom Conversion เป็นเป้า optimize ไม่ได้** — Traffic ให้เลือกได้แค่ Landing Page View / Link Click เท่านั้น
+
+ทางที่ถูกคือ **สร้างแคมเปญใหม่** (แก้ objective ของแคมเปญเดิมไม่ได้):
+- Objective: **Sales** (`OUTCOME_SALES`)
+- Conversion location: **Website**
+- Performance goal: **Maximize number of conversions** → เลือก Custom Conversion ที่เพิ่งสร้าง
+- ad set / creative / ปลายทาง: ก๊อปจาก `CG1 Broad — TH 20-35` ได้เลย (อย่าลืม `&start=1` ท้าย URL ตาม §3.2)
+
+แล้ว **ปล่อยตัวเก่าวิ่งคู่กันสักระยะ** เพื่อเทียบ ไม่ใช่ปิดทันที
+
+### 7.4 ปริมาณพอให้ Meta เรียนรู้แล้วหรือยัง — พอแล้ว
+
+Meta ต้องการ ~50 conversion/สัปดาห์เพื่อออกจาก learning phase · ข้อมูลจริง 7 วัน (§4.1) มี `casegame_first_decision` **563 ครั้ง = 11 เท่าของเกณฑ์** — ต่างจากตอนใช้ "สมัครสมาชิก" เป็นเป้าซึ่งได้แค่ ~5/สัปดาห์ จนอัลกอริทึมเรียนรู้ไม่ได้ (§1)
