@@ -366,7 +366,27 @@
 
 ส่งแบบ **server-side ทางเดียว** จึงรอด ad blocker และไม่ต้อง dedupe กับ browser pixel
 
-### 7.2 ขั้นตอนสร้าง
+### 7.2 ขั้นตอนสร้าง — ✅ สร้างแล้ว 2026-07-27
+
+**Custom Conversion `เล่นเกมเคสจริง (first decision)` — ID `2320764325124179`**
+กติกาที่ใช้จริง (ยืนยันจาก API):
+
+```json
+{"and":[{"event":{"eq":"ViewContent"}},
+        {"or":[{"content_name":{"i_contains":"casegame_first_decision"}}]}]}
+```
+
+> ### ⚠️ กับดักตอนกรอก: ช่องซ้ายคือ **ชื่อพารามิเตอร์** ช่องขวาคือ **ค่าที่ค้นหา**
+>
+> รอบแรกกรอกสลับกันเป็น `casegame_first_decision contains "content_name"` ซึ่ง
+> **ไม่มีวันตรงเลย** (ไปหาพารามิเตอร์ชื่อ `casegame_first_decision` ที่ไม่มีอยู่จริง)
+> หน้าจอไม่เตือนอะไร ขึ้นแค่ *"Never received event · 0"* เหมือนกับตอนที่ยังไม่มี
+> ทราฟฟิก — แยกไม่ออกด้วยตาเปล่า
+>
+> **เช็คเสมอหลังสร้าง** ด้วย `ads_get_customconversions` แล้วอ่าน `pixel_rule`:
+> ต้องเป็น `{"content_name": {...}}` ไม่ใช่ `{"casegame_first_decision": {...}}`
+
+ขั้นตอนถ้าต้องสร้างใหม่:
 
 1. เปิด **Events Manager** → เมนูซ้าย **Custom Conversions** → ปุ่ม **Create custom conversion**
 2. **Data source**: เลือก pixel `966371002896288`
@@ -379,6 +399,14 @@
 5. **ชื่อ**: `เล่นเกมเคสจริง (first decision)` · **Category**: เลือกอะไรก็ได้ที่สื่อ (เช่น `Other`)
 6. **Value**: เว้นว่าง — เกมไม่มีมูลค่าเป็นเงิน ถ้าใส่มั่วจะทำให้ ROAS ในรายงานเพี้ยน
 7. กด **Create** แล้วรอให้เห็นตัวเลขเริ่มเดินใน Events Manager (ปกติภายในไม่กี่ชั่วโมง)
+8. **ยืนยันกติกาด้วย API** ตามกล่องเตือนข้างบน — อย่าเชื่อหน้าจออย่างเดียว
+
+> **ทางเลือกที่ไม่ต้องพึ่ง Custom Conversion:** `promoted_object` รับ
+> `{"pixel_id":"966371002896288","custom_event_type":"VIEW_CONTENT"}` ได้ด้วย คือชี้ที่
+> standard event ตรงๆ — แต่ใช้กับเคสนี้ไม่ได้ เพราะหน้า `/register` ก็ยิง `ViewContent`
+> เหมือนกัน (`app/(morroo)/register/layout.tsx`) สัญญาณจะปนกัน · จะใช้ทางนั้นได้ต้อง
+> เปลี่ยนให้เกมยิง standard event ที่ไม่มีใครใช้ซ้ำก่อน ซึ่งไม่คุ้มเมื่อ Custom
+> Conversion ทำงานได้อยู่แล้ว
 
 ### 7.3 ⚠️ กับดักที่ต้องรู้ก่อนสลับ optimization
 
@@ -387,7 +415,8 @@
 ทางที่ถูกคือ **สร้างแคมเปญใหม่** (แก้ objective ของแคมเปญเดิมไม่ได้):
 - Objective: **Sales** (`OUTCOME_SALES`)
 - Conversion location: **Website**
-- Performance goal: **Maximize number of conversions** → เลือก Custom Conversion ที่เพิ่งสร้าง
+- Performance goal: **Maximize number of conversions** → เลือก `เล่นเกมเคสจริง (first decision)`
+- ถ้าสร้างผ่าน API: `promoted_object: {"custom_conversion_id": "2320764325124179"}` + `optimization_goal: OFFSITE_CONVERSIONS`
 - ad set / creative / ปลายทาง: ก๊อปจาก `CG1 Broad — TH 20-35` ได้เลย (อย่าลืม `&start=1` ท้าย URL ตาม §3.2)
 
 แล้ว **ปล่อยตัวเก่าวิ่งคู่กันสักระยะ** เพื่อเทียบ ไม่ใช่ปิดทันที
