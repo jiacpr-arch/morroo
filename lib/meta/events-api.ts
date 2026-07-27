@@ -40,6 +40,27 @@ async function sha256Lower(value: string): Promise<string> {
     .join("");
 }
 
+/**
+ * test_event_code ต้องไม่หลุดขึ้น production เด็ดขาด
+ *
+ * Meta ถือว่า event ที่แนบ test_event_code เป็น "อีเวนต์ทดสอบ" — โผล่ในแท็บ
+ * Test Events ให้ดูได้ แต่ **ไม่นับเป็น conversion จริง** จึงใช้ทำ Custom
+ * Conversion / optimization / attribution ไม่ได้เลย
+ *
+ * เคยเกิดขึ้นจริง: `META_TEST_EVENT_CODE` ถูกตั้งเป็น All Environments ใน Vercel
+ * ตั้งแต่ 2026-05-14 ทำให้ CAPI ของ production ทั้งระบบ (PageView, ViewContent
+ * ของเกมเคส, CompleteRegistration, Purchase) กลายเป็น test ทั้งหมดโดยไม่มีใคร
+ * รู้ — ตรวจพบ 2026-07-27 ตอนไล่หาสาเหตุที่ Meta ได้รับ ViewContent วันละ ~5
+ * ครั้ง ทั้งที่ระบบยิงไป ~900 ครั้ง
+ *
+ * ตัด env ทิ้งอย่างเดียวไม่พอ เพราะใครตั้งใหม่ผิดช่องก็พังเงียบอีก — gate ที่
+ * โค้ดจึงเป็นด่านที่เชื่อถือได้กว่า
+ */
+function resolveTestEventCode(): string | undefined {
+  if (process.env.VERCEL_ENV === "production") return undefined;
+  return process.env.META_TEST_EVENT_CODE?.trim() || undefined;
+}
+
 export async function sendMetaEvent(input: MetaEventInput): Promise<void> {
   const token = process.env.META_CAPI_ACCESS_TOKEN;
   if (!token) return;
@@ -76,7 +97,7 @@ export async function sendMetaEvent(input: MetaEventInput): Promise<void> {
   if (Object.keys(customData).length) eventData.custom_data = customData;
 
   const payload: Record<string, unknown> = { data: [eventData] };
-  const testCode = process.env.META_TEST_EVENT_CODE?.trim();
+  const testCode = resolveTestEventCode();
   if (testCode) payload.test_event_code = testCode;
 
   const endpoint = `https://graph.facebook.com/${API_VERSION}/${PIXEL_ID}/events?access_token=${encodeURIComponent(token)}`;
