@@ -41,6 +41,10 @@ type Summary = {
   caseGameCompletes: number;
   caseGameCtaViews: number;
   caseGameCtaClicks: number;
+  mcqPracticeViews: number;
+  mcqAnswers: number;
+  mcqAnswerSessions: number;
+  mcqFreeLimitHits: number;
   landingViews: { surface: string; count: number }[];
   topPaths: { path: string; count: number }[];
   topReferrers: { ref: string; count: number }[];
@@ -273,6 +277,44 @@ export default function AdminAnalyticsPage() {
         </CardContent>
       </Card>
 
+      {/* ทำข้อสอบฟรี — ปลายทางของโฆษณาชุด Browse ก่อนหน้านี้มองไม่เห็นอะไรเลย
+          หลังคนเปิดหน้ามา เพราะบันทึกลง DB เฉพาะคนที่ล็อกอิน */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-base">ทำข้อสอบฟรี (/nl/practice) — funnel</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <FunnelRow
+            from="เปิดหน้าทำข้อสอบ"
+            to="ตอบอย่างน้อย 1 ข้อ"
+            fromValue={summary.mcqPracticeViews}
+            toValue={summary.mcqAnswerSessions}
+            conv={
+              summary.mcqPracticeViews > 0
+                ? (summary.mcqAnswerSessions / summary.mcqPracticeViews) * 100
+                : null
+            }
+          />
+          <FunnelRow
+            from="ตอบอย่างน้อย 1 ข้อ"
+            to="ทำจนครบโควตาฟรี"
+            fromValue={summary.mcqAnswerSessions}
+            toValue={summary.mcqFreeLimitHits}
+            conv={
+              summary.mcqAnswerSessions > 0
+                ? (summary.mcqFreeLimitHits / summary.mcqAnswerSessions) * 100
+                : null
+            }
+          />
+          <p className="text-sm text-muted-foreground">
+            ตอบทั้งหมด {summary.mcqAnswers.toLocaleString("en-US")} ข้อ
+            {summary.mcqAnswerSessions > 0 && (
+              <> · เฉลี่ย {(summary.mcqAnswers / summary.mcqAnswerSessions).toFixed(1)} ข้อ/คน</>
+            )}
+          </p>
+        </CardContent>
+      </Card>
+
       {summary.landingViews.length > 0 && (
         <Card>
           <CardHeader>
@@ -431,6 +473,10 @@ function aggregate(rows: EventRow[]): Summary {
   let exitIntentShows = 0;
   let exitIntentCtaClicks = 0;
   let caseGameStarts = 0;
+  let mcqPracticeViews = 0;
+  let mcqAnswers = 0;
+  let mcqFreeLimitHits = 0;
+  const mcqAnswerSessionIds = new Set<string>();
   let caseGameFirstTaps = 0;
   let caseGameFirstDecisions = 0;
   let caseGameCompletes = 0;
@@ -446,6 +492,9 @@ function aggregate(rows: EventRow[]): Summary {
 
     const landingSurface = LANDING_VIEW_EVENTS[r.event_name];
     if (landingSurface) {
+      // ต้องนับตรงนี้ ไม่ใช่ใน switch ด้านล่าง — บล็อกนี้ `continue` ออกไปก่อน
+      // ทำให้ case ใน switch ไม่มีวันทำงาน (เคยพลาดมาแล้ว)
+      if (r.event_name === "nl_practice_view") mcqPracticeViews++;
       landingCounts.set(
         landingSurface,
         (landingCounts.get(landingSurface) ?? 0) + 1
@@ -486,6 +535,13 @@ function aggregate(rows: EventRow[]): Summary {
       case "casegame_start":
         caseGameStarts++;
         break;
+      case "mcq_answer_submit":
+        mcqAnswers++;
+        if (r.session_id) mcqAnswerSessionIds.add(r.session_id);
+        break;
+      case "mcq_free_limit_hit":
+        mcqFreeLimitHits++;
+        break;
       case "casegame_first_tap":
         caseGameFirstTaps++;
         break;
@@ -525,6 +581,10 @@ function aggregate(rows: EventRow[]): Summary {
     caseGameCompletes,
     caseGameCtaViews,
     caseGameCtaClicks,
+    mcqPracticeViews,
+    mcqAnswers,
+    mcqAnswerSessions: mcqAnswerSessionIds.size,
+    mcqFreeLimitHits,
     landingViews: toSorted(landingCounts).map(([surface, count]) => ({
       surface,
       count,

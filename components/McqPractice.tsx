@@ -24,6 +24,7 @@ import {
   updateMcqSession,
 } from "@/lib/supabase/mutations-mcq";
 import { createClient } from "@/lib/supabase/client";
+import { track } from "@/lib/analytics";
 import McqAiChat from "@/components/McqAiChat";
 import ReportErrorButton from "@/components/ReportErrorButton";
 import { useBeta } from "@/components/beta/BetaProvider";
@@ -123,6 +124,20 @@ export default function McqPractice({
     questionStartTime.current = Date.now();
   }, [currentIndex]);
 
+  // ปลายทางของ funnel ฝั่ง /nl/practice — คนที่ทำฟรีจนครบโควตาแล้วเจอกำแพง
+  // เทียบเท่า casegame_cta_view ของเกม: เป็นตัวหารที่บอกว่ามีคนไปถึงจุดตัดสินใจ
+  // กี่คน ยิงครั้งเดียวต่อการโหลดหน้า ไม่งั้น re-render จะยิงซ้ำรัว
+  const quotaEventSentRef = useRef(false);
+  useEffect(() => {
+    if (!isQuotaExhausted || quotaEventSentRef.current) return;
+    quotaEventSentRef.current = true;
+    track("mcq_free_limit_hit", {
+      logged_in: !!userId,
+      answered_in_session: sessionAnswered,
+      reason: isBetaExpired ? "beta_expired" : "quota",
+    });
+  }, [isQuotaExhausted, userId, sessionAnswered, isBetaExpired]);
+
   const question = questions[currentIndex];
 
   const handleSelectAnswer = useCallback(
@@ -141,6 +156,19 @@ export default function McqPractice({
         total: prev.total + 1,
       }));
       setSessionAnswered((prev) => prev + 1);
+
+      // ตัวชี้วัดเดียวที่บอกว่าคนที่กดโฆษณาเข้า /nl/practice "ทำข้อสอบจริง" ไหม
+      // saveMcqAttempt ด้านล่างบันทึกเฉพาะคนล็อกอิน ส่วนทราฟฟิกจากโฆษณาเกือบ
+      // ทั้งหมดยังไม่มีบัญชี ก่อนหน้านี้จึงมองไม่เห็นอะไรเลยหลังเขาเปิดหน้ามา
+      track("mcq_answer_submit", {
+        is_correct: isCorrect,
+        logged_in: !!userId,
+        is_premium: isPremium,
+        // ข้อที่เท่าไหร่ของรอบนี้ — บอกว่าคนอยู่ทำต่อกี่ข้อก่อนเลิก
+        answered_in_session: sessionAnswered + 1,
+        subject_id: question.subject_id ?? null,
+        difficulty: question.difficulty ?? null,
+      });
 
       // Save attempt to DB if logged in
       if (userId) {
