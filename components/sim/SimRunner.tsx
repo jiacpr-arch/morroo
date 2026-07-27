@@ -25,6 +25,7 @@ import {
 import { track } from "@/lib/analytics";
 import DebriefBrowseCta from "@/components/sim/DebriefBrowseCta";
 import RankProgressCard from "@/components/sim/RankProgressCard";
+import NextCaseSuggestions from "@/components/sim/NextCaseSuggestions";
 import { xpToRank } from "@/lib/school/rank";
 import {
   parseEmphasis,
@@ -785,6 +786,13 @@ export default function SimRunner({
               </div>
             ))}
           </div>
+          {isLongcase && !practice && (
+            <NextCaseSuggestions
+              slug={scenario.slug}
+              won={result.won}
+              grade={result.grade}
+            />
+          )}
           <div className="cbs-debrief-actions">
             <button type="button" className="cbs-btn-main" onClick={startGame}>
               <RefreshCw size={16} strokeWidth={2.6} style={{ display: "inline", verticalAlign: "-2px", marginRight: 8 }} />
@@ -793,7 +801,7 @@ export default function SimRunner({
             {isLongcase && (
               <Link href={`/casegame/random?exclude=${scenario.slug}`} className="cbs-btn-ghost">
                 <Shuffle size={15} strokeWidth={2.4} style={{ display: "inline", verticalAlign: "-2px", marginRight: 6 }} />
-                สุ่มเคสถัดไป
+                ไปเคสถัดไป
               </Link>
             )}
             <Link href={hubHref} className="cbs-btn-ghost">เลือกเคสอื่น</Link>
