@@ -103,10 +103,14 @@ export async function sendMetaEvent(input: MetaEventInput): Promise<void> {
   const endpoint = `https://graph.facebook.com/${API_VERSION}/${PIXEL_ID}/events?access_token=${encodeURIComponent(token)}`;
 
   try {
+    // callers ที่ต้องการความชัวร์ (เช่น app/api/track/casegame) รอผลลัพธ์นี้
+    // ก่อนตอบ response แล้ว — ต้องมี timeout กันไม่ให้ Meta ช้าแล้วดึงเวลาตอบ
+    // ผู้ใช้ยืดไม่มีที่สิ้นสุด
     const res = await fetch(endpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
+      signal: AbortSignal.timeout(5_000),
     });
     if (!res.ok) {
       const text = await res.text().catch(() => "");
