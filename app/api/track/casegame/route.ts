@@ -16,7 +16,7 @@
  * ใครก็ยิง conversion ปลอมเข้ามาจนอัลกอริทึมโฆษณาเรียนรู้ผิดได้
  */
 
-import { NextResponse, after } from "next/server";
+import { NextResponse } from "next/server";
 import { sendMetaEvent } from "@/lib/meta/events-api";
 import { getSimScenario } from "@/lib/supabase/queries-sim";
 import {
@@ -65,20 +65,25 @@ export async function POST(request: Request) {
     return match ? decodeURIComponent(match[1]) : null;
   };
 
-  after(() =>
-    sendMetaEvent({
-      event: "ViewContent",
-      eventId: capiEventId(capiEvent, runId),
-      ip: request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? null,
-      userAgent: request.headers.get("user-agent"),
-      fbc: readCookie("_fbc"),
-      fbp: readCookie("_fbp"),
-      url: request.headers.get("referer"),
-      contentType: "casegame",
-      contentName: capiContentName(capiEvent, slug),
-      contentIds: [`${caseGameCategory(scenario.category)}:${slug}`],
-    })
-  );
+  // เดิมใช้ after() แต่ยิงหายไปเกือบหมด (~97%) บน production — after() ยืด
+  // อายุ serverless invocation ผ่าน waitUntil ก็จริง แต่ในทางปฏิบัติ instance
+  // ยังถูกดับก่อน fetch ไปถึง graph.facebook.com เสร็จอยู่ดีเวลามีทราฟฟิกสูง
+  // (เจอวันที่ 2026-07-29: ระบบยิง 922 ครั้ง Meta ได้รับแค่ 5 — ไม่ใช่
+  // META_TEST_EVENT_CODE เพราะแก้ไปแล้วใน #375 และไม่มี error log แม้แต่บรรทัด
+  // เดียว แปลว่างานถูกตัดตอนเงียบๆ ไม่ใช่ fail) แลก latency นิดหน่อยเพื่อความ
+  // ชัวร์ว่ายิงถึงจริงก่อนตอบ response ดีกว่า
+  await sendMetaEvent({
+    event: "ViewContent",
+    eventId: capiEventId(capiEvent, runId),
+    ip: request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? null,
+    userAgent: request.headers.get("user-agent"),
+    fbc: readCookie("_fbc"),
+    fbp: readCookie("_fbp"),
+    url: request.headers.get("referer"),
+    contentType: "casegame",
+    contentName: capiContentName(capiEvent, slug),
+    contentIds: [`${caseGameCategory(scenario.category)}:${slug}`],
+  });
 
   return NextResponse.json({ ok: true });
 }

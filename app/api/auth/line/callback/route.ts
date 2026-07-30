@@ -309,7 +309,11 @@ export async function GET(request: Request) {
     const forwardedFor = request.headers.get("x-forwarded-for");
     const ip = forwardedFor?.split(",")[0]?.trim() ?? null;
     const signupEventId = `signup:${userId}`;
-    after(() =>
+    // เดิมใช้ after() แต่พบว่าหายเงียบเกือบหมดบน production (ดู
+    // app/api/track/casegame/route.ts) — ยิงครั้งต่อการสมัครสมาชิกใหม่หนึ่งครั้ง
+    // เท่านั้น แลก latency เพื่อความชัวร์ได้ (ต่างจาก welcome email ด้านล่างที่
+    // ยังปล่อยเป็น after() ไว้ ไม่ใช่ตัวชี้วัดที่แคมเปญโฆษณาต้องพึ่ง)
+    await Promise.all([
       sendTikTokEvent({
         event: "CompleteRegistration",
         eventId: signupEventId,
@@ -318,9 +322,7 @@ export async function GET(request: Request) {
         ip,
         userAgent,
         contentName: "signup",
-      })
-    );
-    after(() =>
+      }),
       sendMetaEvent({
         event: "CompleteRegistration",
         eventId: signupEventId,
@@ -329,8 +331,8 @@ export async function GET(request: Request) {
         ip,
         userAgent,
         contentName: "signup",
-      })
-    );
+      }),
+    ]);
 
     // Welcome email — only when LINE returned a real email (the placeholder
     // line_<uid>@line.morroo.com would bounce at Resend).

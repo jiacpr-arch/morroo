@@ -15,6 +15,11 @@
 //   แอด LINE OA     → บอทออกโค้ดทดลองให้เองแล้ว (detectTrialIntent, PR #367)
 // ทั้งสองทางไม่ต้องพิมพ์อะไรบนมือถือเลย ต่างจากการกรอกอีเมล
 //
+// 2026-07-28: ปุ่มแอด OA เปลี่ยนจาก plain add-friend link เป็น LINE "oaMessage"
+// prefilled-link (ยิ่งกว่าแตะเดียว — แตะแล้วกดส่งอีกทีในแชท LINE ก็ได้โค้ดเลย
+// ไม่ต้องพิมพ์เอง) ข้อความที่พรีฟิลไว้ต้องตรงกับ TRIAL_INTENT_PATTERNS ใน
+// lib/bot-intent.ts ไม่งั้นบอทจะไม่ยิงโค้ดให้ทั้งที่ผู้ใช้กดส่งแล้ว
+//
 // ลิงก์ดูเนื้อหาอื่นยังอยู่ แต่ลงมาเป็นทางเลือกรองสำหรับคนที่ยังไม่อยากผูก LINE
 // `casegame_cta_click` เป็นตัววัดปลายทาง แยกด้วย prop `target`
 
@@ -30,7 +35,14 @@ import {
 
 /** LINE Login ยังอยู่หลัง flag เดียวกับหน้า /login — ปิดอยู่ก็ยังเหลือทางแอด OA */
 const LINE_LOGIN_ENABLED = process.env.NEXT_PUBLIC_LINE_LOGIN_ENABLED === "true";
-const LINE_OA_ADD_URL = "https://line.me/R/ti/p/@901nmwcd";
+
+/**
+ * ข้อความพรีฟิลต้องแมตช์ TRIAL_INTENT_PATTERNS ใน lib/bot-intent.ts (มีคำว่า
+ * "ทดลอง" และ "โค้ด" ตรงๆ) ผู้ใช้แค่กดส่งในแชท LINE ก็ถึง handleBotIntent
+ * ที่ออกโค้ด monthly_1m ให้อัตโนมัติ — ไม่มีคนตอบ ไม่มีคิวรอ
+ */
+const LINE_TRIAL_MESSAGE = "ขอโค้ดทดลอง Premium ฟรี";
+const LINE_OA_TRIAL_URL = `https://line.me/R/oaMessage/@901nmwcd/?${encodeURIComponent(LINE_TRIAL_MESSAGE)}`;
 
 interface Props {
   slug: string;
@@ -132,14 +144,14 @@ export default function DebriefBrowseCta({
 
       <a
         className={`cbs-line-btn ${LINE_LOGIN_ENABLED ? "cbs-line-btn-alt" : ""}`}
-        href={LINE_OA_ADD_URL}
+        href={LINE_OA_TRIAL_URL}
         target="_blank"
         rel="noopener noreferrer"
-        onClick={() => handleClick("line_add")}
+        onClick={() => handleClick("line_trial")}
       >
-        <LineGlyph /> แอด LINE รับข้อสอบฟรี
+        <LineGlyph /> แอด LINE ขอโค้ดทดลอง Premium ฟรี
       </a>
-      <p className="cbs-line-note">แตะเดียว ไม่ต้องกรอกอะไร</p>
+      <p className="cbs-line-note">แตะเดียว กดส่งในแชท — บอทส่งโค้ดให้ทันที</p>
 
       <div className="cbs-browse-or"><span>หรือดูเนื้อหาอื่นก่อน</span></div>
 

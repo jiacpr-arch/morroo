@@ -17,7 +17,7 @@
  * stranger from spamming fake registration conversions.
  */
 
-import { NextResponse, after } from "next/server";
+import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { sendMetaEvent } from "@/lib/meta/events-api";
 import { sendTikTokEvent } from "@/lib/tiktok/events-api";
@@ -75,7 +75,12 @@ export async function POST(request: Request) {
   const eventId = `signup:${user.id}`;
   const url = request.headers.get("referer");
 
-  after(() =>
+  // เดิมใช้ after() แต่พบว่าหายเงียบเกือบหมดบน production (ดู
+  // app/api/track/casegame/route.ts) — instance ถูกดับก่อน fetch เสร็จเวลามี
+  // ทราฟฟิกสูง รอบนี้ยิงครั้งต่อการสมัครสมาชิกหนึ่งครั้งเท่านั้น ไม่ใช่ทุก
+  // request จึงแลก latency เพื่อความชัวร์ได้ — รันคู่กันเพราะสอง event เป็น
+  // อิสระต่อกัน (ทั้งคู่ไม่ throw เอง มี try/catch ในตัวอยู่แล้ว)
+  await Promise.all([
     sendMetaEvent({
       event: "CompleteRegistration",
       eventId,
@@ -87,9 +92,7 @@ export async function POST(request: Request) {
       fbp,
       url,
       contentName: "signup",
-    })
-  );
-  after(() =>
+    }),
     sendTikTokEvent({
       event: "CompleteRegistration",
       eventId,
@@ -101,8 +104,8 @@ export async function POST(request: Request) {
       ttp,
       url,
       contentName: "signup",
-    })
-  );
+    }),
+  ]);
 
   return NextResponse.json({ ok: true });
 }
