@@ -96,7 +96,12 @@ export async function GET(request: NextRequest) {
         const ttp = request.cookies.get("_ttp")?.value ?? null;
         const eventUrl = `${origin}${destination}`;
         const signupEventId = `signup:${data.user!.id}`;
-        after(() =>
+        // เดิมใช้ after() แต่พบว่าหายเงียบเกือบหมดบน production (ดู
+        // app/api/track/casegame/route.ts) — เส้นทางนี้คือ Google OAuth signup
+        // ซึ่งเป็นช่องทางสมัครสมาชิกหลัก ยิงครั้งต่อการสมัครใหม่หนึ่งครั้งเท่านั้น
+        // แลก latency เพื่อความชัวร์ได้ (ต่างจาก welcome email ด้านล่างที่ยังปล่อย
+        // เป็น after() ไว้ ไม่ใช่ตัวชี้วัดที่แคมเปญโฆษณาต้องพึ่ง)
+        await Promise.all([
           sendTikTokEvent({
             event: "CompleteRegistration",
             eventId: signupEventId,
@@ -108,9 +113,7 @@ export async function GET(request: NextRequest) {
             ttp,
             url: eventUrl,
             contentName: "signup",
-          })
-        );
-        after(() =>
+          }),
           sendMetaEvent({
             event: "CompleteRegistration",
             eventId: signupEventId,
@@ -122,8 +125,8 @@ export async function GET(request: NextRequest) {
             fbp,
             url: eventUrl,
             contentName: "signup",
-          })
-        );
+          }),
+        ]);
 
         const welcomeEmail = data.user!.email;
         const welcomeName =

@@ -61,7 +61,16 @@ export async function POST(request: NextRequest) {
         const ttclid = session.metadata?.ttclid || null;
         const ttp = session.metadata?.ttp || null;
         const currency = (session.currency ?? "thb").toUpperCase();
-        after(() =>
+        const fbc = session.metadata?.fbc || null;
+        const fbp = session.metadata?.fbp || null;
+        // เดิมใช้ after() แต่พบว่าหายเงียบเกือบหมดบน production (ดู
+        // app/api/track/casegame/route.ts) — Purchase คือ event ที่สำคัญที่สุด
+        // ในบรรดา CAPI ทั้งหมด ยิงครั้งต่อการชำระเงินหนึ่งครั้งเท่านั้น จึงแลก
+        // latency เพื่อความชัวร์ได้ (ต่างจาก sendFulfillmentNotifications ด้านบน
+        // ที่ยังปล่อยเป็น after() ไว้เหมือนเดิม เพราะเป็นงานไม่จำกัดเวลา — LINE
+        // + อีเมล 3 ฉบับ + ออกใบกำกับภาษีที่ FlowAccount — awaited ตรงนี้จะเสี่ยง
+        // ให้ Stripe webhook ตอบช้าจนถูก mark ว่า fail แล้ว retry ซ้ำ)
+        await Promise.all([
           sendTikTokEvent({
             event: "Subscribe",
             eventId: session.id,
@@ -74,12 +83,7 @@ export async function POST(request: NextRequest) {
             contentId: notify.planType,
             contentName: notify.planLabel,
             contentType: "subscription",
-          })
-        );
-
-        const fbc = session.metadata?.fbc || null;
-        const fbp = session.metadata?.fbp || null;
-        after(() =>
+          }),
           sendMetaEvent({
             event: "Purchase",
             eventId: session.id,
@@ -92,8 +96,8 @@ export async function POST(request: NextRequest) {
             contentIds: [notify.planType],
             contentName: notify.planLabel,
             contentType: "product",
-          })
-        );
+          }),
+        ]);
       }
     }
   } catch (err) {

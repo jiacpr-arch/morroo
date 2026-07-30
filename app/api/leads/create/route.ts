@@ -1,4 +1,4 @@
-import { NextResponse, after } from "next/server";
+import { NextResponse } from "next/server";
 import { cookies, headers } from "next/headers";
 import { createLead } from "@/lib/leads";
 import { sendMetaEvent } from "@/lib/meta/events-api";
@@ -86,21 +86,22 @@ export async function POST(request: Request) {
     headerStore.get("x-forwarded-for")?.split(",")[0]?.trim() || null;
   const fullName = typeof body.name === "string" ? body.name.trim() : "";
   const [firstName, ...restName] = fullName.split(/\s+/);
-  after(() =>
-    sendMetaEvent({
-      event: "Lead",
-      eventId: `lead:${result.code}`,
-      email,
-      firstName: firstName || null,
-      lastName: restName.join(" ") || null,
-      ip,
-      userAgent: headerStore.get("user-agent"),
-      fbc: cookieStore.get("_fbc")?.value ?? null,
-      fbp: cookieStore.get("_fbp")?.value ?? null,
-      url: "https://www.morroo.com/lp/free-trial",
-      contentName: "free_trial",
-    })
-  );
+  // เดิมใช้ after() แต่พบว่าหายเงียบเกือบหมดบน production (ดู
+  // app/api/track/casegame/route.ts) — ยิงครั้งต่อฟอร์มหนึ่งครั้งเท่านั้น
+  // แลก latency เพื่อความชัวร์ได้
+  await sendMetaEvent({
+    event: "Lead",
+    eventId: `lead:${result.code}`,
+    email,
+    firstName: firstName || null,
+    lastName: restName.join(" ") || null,
+    ip,
+    userAgent: headerStore.get("user-agent"),
+    fbc: cookieStore.get("_fbc")?.value ?? null,
+    fbp: cookieStore.get("_fbp")?.value ?? null,
+    url: "https://www.morroo.com/lp/free-trial",
+    contentName: "free_trial",
+  });
 
   return NextResponse.json({ ok: true, code: result.code });
 }

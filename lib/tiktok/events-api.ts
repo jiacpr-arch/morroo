@@ -81,6 +81,9 @@ export async function sendTikTokEvent(input: TikTokEventInput): Promise<void> {
   };
 
   try {
+    // callers ที่ต้องการความชัวร์ (routes ที่ await แทน after()) รอผลลัพธ์นี้
+    // ก่อนตอบ response แล้ว — ต้องมี timeout กันไม่ให้ TikTok ช้าแล้วดึงเวลาตอบ
+    // ผู้ใช้ยืดไม่มีที่สิ้นสุด (เทียบ lib/meta/events-api.ts)
     const res = await fetch(ENDPOINT, {
       method: "POST",
       headers: {
@@ -88,6 +91,7 @@ export async function sendTikTokEvent(input: TikTokEventInput): Promise<void> {
         "Access-Token": token,
       },
       body: JSON.stringify(body),
+      signal: AbortSignal.timeout(5_000),
     });
     if (!res.ok) {
       const text = await res.text().catch(() => "");
