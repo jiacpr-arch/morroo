@@ -35,12 +35,53 @@ export default async function YearPage({ params }: PageProps) {
     getSchoolBookMap(),
   ]);
 
-  // Group topics by system
-  const bySystem: Record<string, typeof topics> = {};
-  for (const t of topics) {
-    const key = t.school_systems?.slug ?? "other";
-    if (!bySystem[key]) bySystem[key] = [];
-    bySystem[key].push(t);
+  // Prefer grouping by term (ตรงกับโครงหลักสูตร: ปี → เทอม → รายวิชา).
+  // Fall back to grouping by system for years whose topics have no term set.
+  const hasTerms = topics.some((t) => t.term != null);
+
+  // Leading integer of a "credits" string like "2 (2-0-4)" → 2
+  const creditValue = (c: string | null) => {
+    const n = parseInt((c ?? "").trim(), 10);
+    return Number.isNaN(n) ? 0 : n;
+  };
+
+  type Group = { key: string; heading: string; icon?: string; list: typeof topics };
+  const groups: Group[] = [];
+
+  if (hasTerms) {
+    const byTerm = new Map<number, typeof topics>();
+    for (const t of topics) {
+      const key = t.term ?? 99; // unassigned terms sort last
+      if (!byTerm.has(key)) byTerm.set(key, []);
+      byTerm.get(key)!.push(t);
+    }
+    for (const term of [...byTerm.keys()].sort((a, b) => a - b)) {
+      const list = byTerm.get(term)!;
+      const credits = list.reduce((sum, t) => sum + creditValue(t.credits), 0);
+      groups.push({
+        key: `term-${term}`,
+        heading:
+          term === 99
+            ? "รายวิชาอื่น ๆ"
+            : `เทอม ${term}${credits ? ` · ${credits} หน่วยกิต` : ""}`,
+        list,
+      });
+    }
+  } else {
+    const bySystem = new Map<string, typeof topics>();
+    for (const t of topics) {
+      const key = t.school_systems?.slug ?? "other";
+      if (!bySystem.has(key)) bySystem.set(key, []);
+      bySystem.get(key)!.push(t);
+    }
+    for (const [slug, list] of bySystem) {
+      groups.push({
+        key: slug,
+        heading: list[0].school_systems?.name_th ?? "อื่น ๆ",
+        icon: list[0].school_systems?.icon,
+        list,
+      });
+    }
   }
 
   return (
@@ -64,16 +105,15 @@ export default async function YearPage({ params }: PageProps) {
         </div>
       ) : (
         <div className="space-y-8">
-          {Object.entries(bySystem).map(([slug, list]) => {
-            const sys = list[0].school_systems;
+          {groups.map((g) => {
             return (
-              <div key={slug}>
+              <div key={g.key}>
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="text-2xl">{sys?.icon}</span>
-                  <h2 className="text-xl font-bold">{sys?.name_th}</h2>
+                  {g.icon && <span className="text-2xl">{g.icon}</span>}
+                  <h2 className="text-xl font-bold">{g.heading}</h2>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {list.map((t) => {
+                  {g.list.map((t) => {
                     const fc = counts.flashcards[t.id] ?? 0;
                     const qz = counts.quizzes[t.id] ?? 0;
                     const bookId = bookMap[t.id];
@@ -83,7 +123,14 @@ export default async function YearPage({ params }: PageProps) {
                         <CardContent className="p-5 space-y-3">
                           <div>
                             <div className="flex items-start justify-between gap-2">
-                              <h3 className="font-semibold">{t.name_th}</h3>
+                              <h3 className="font-semibold">
+                                {t.school_systems?.icon && !g.icon && (
+                                  <span className="mr-1" aria-hidden>
+                                    {t.school_systems.icon}
+                                  </span>
+                                )}
+                                {t.name_th}
+                              </h3>
                               {empty && (
                                 <Badge
                                   variant="secondary"
@@ -96,6 +143,20 @@ export default async function YearPage({ params }: PageProps) {
                             <p className="text-xs text-muted-foreground mt-1">
                               {t.name_en}
                             </p>
+                            {(t.code || t.credits) && (
+                              <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
+                                {t.code && (
+                                  <span className="rounded bg-muted px-1.5 py-0.5 font-mono text-[10px] text-muted-foreground">
+                                    {t.code}
+                                  </span>
+                                )}
+                                {t.credits && (
+                                  <span className="text-[10px] text-muted-foreground">
+                                    {t.credits} นก.
+                                  </span>
+                                )}
+                              </div>
+                            )}
                           </div>
                           {t.summary && (
                             <p className="text-sm text-muted-foreground line-clamp-2">

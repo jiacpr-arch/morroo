@@ -22,9 +22,17 @@ export interface SchoolTopic {
   id: string;
   system_id: string;
   year: number;
+  /** ภาคการศึกษา 1/2 (3 = ภาคฤดูร้อน); null เมื่อยังไม่ระบุ */
+  term: number | null;
   slug: string;
+  /** รหัสวิชาอังกฤษ เช่น "FMMD 1108" */
+  code: string | null;
+  /** รหัสวิชาไทย เช่น "พศพบ 1108" */
+  code_th: string | null;
   name_th: string;
   name_en: string;
+  /** หน่วยกิต เช่น "2 (2-0-4)" (ทฤษฎี-ปฏิบัติ-ค้นคว้า) */
+  credits: string | null;
   summary: string | null;
   sort_order: number;
   school_systems?: SchoolSystem;
