@@ -29,6 +29,12 @@ export const SCENARIO_TOOL = {
       title: { type: "string", description: "ชื่อเคสภาษาไทย ขึ้นต้นด้วย LONG CASE: ..." },
       subtitle: { type: "string", description: "โจทย์ผู้ป่วย 1 ประโยค (อายุ เพศ อาการนำ)" },
       difficultyTag: { type: "string", enum: ["basic", "megacode"] },
+      bg: {
+        type: "string",
+        enum: ["er_bay", "opd_room", "ward_day", "ward_night", "labor_room", "nursery", "icu"],
+        description:
+          "ฉากหลังตามบริบทของเคส: er_bay (ฉุกเฉิน/arrest/trauma), opd_room (ตรวจ OPD/คลินิก/เคสเรื้อรัง), ward_day (หอผู้ป่วยกลางวัน), ward_night (เวรดึก), labor_room (สูติฯ/ห้องคลอด), nursery (ทารกแรกเกิด), icu (ผู้ป่วยวิกฤตใน ICU)",
+      },
       story: {
         type: "array",
         minItems: 8,
@@ -81,6 +87,7 @@ export function longcaseSystemPrompt(
 7. เนื้อหาต้องอิงข้อมูลในเคสเท่านั้น ห้ามแต่งข้อมูลผู้ป่วย/ผลตรวจเพิ่ม
 8. slug ขึ้นต้นด้วย lc- ; title ขึ้นต้นด้วย "LONG CASE: ..."
 9. tgt ของตัวเลือกใช้หมวดสั้น: ASK, PE, LAB, DX, MGMT, CONSULT
+10. เลือก bg (ฉากหลัง) ให้ตรงบริบทของเคส: opd_room (ตรวจ OPD/คลินิก/เคสเรื้อรัง), er_bay (ฉุกเฉิน/trauma/ความดันตก), ward_day / ward_night (ผู้ป่วยใน — night เมื่อเหตุเกิดกลางดึก), labor_room (สูติฯ), nursery (ทารกแรกเกิด), icu (วิกฤต/ใส่ท่อแล้ว)
 
 ## ข้อมูลเคส Long Case ที่ต้องแปลง
 ${JSON.stringify(caseRow)}

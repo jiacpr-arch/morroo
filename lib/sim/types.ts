@@ -74,6 +74,8 @@ export interface SimScenario {
   category?: string;
   /** id ของ long_cases ต้นฉบับ (เมื่อแปลงจากเคสจริง) */
   sourceCaseId?: string;
+  /** ฉากหลังของเวที — id จาก lib/sim/backgrounds.ts (ไม่ระบุ = er_bay) */
+  bg?: string;
   story: StoryNode[];
 }
 

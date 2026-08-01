@@ -3,6 +3,7 @@ import { requireAdmin } from "@/lib/admin-auth";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { SIM_SCENARIOS } from "@/lib/sim/scenarios";
 import { describeScenarioError } from "@/lib/sim/validate";
+import { SIM_BACKGROUNDS } from "@/lib/sim/backgrounds";
 
 export const runtime = "nodejs";
 
@@ -40,7 +41,7 @@ export async function PATCH(request: Request, context: Ctx) {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
 
-  const allowedKeys = ["slug", "title", "subtitle", "difficulty_tag", "category", "source_case_id", "status", "story"] as const;
+  const allowedKeys = ["slug", "title", "subtitle", "difficulty_tag", "category", "source_case_id", "status", "story", "bg"] as const;
   const update: Record<string, unknown> = {};
   for (const key of allowedKeys) {
     if (key in body) update[key] = body[key];
@@ -53,6 +54,12 @@ export async function PATCH(request: Request, context: Ctx) {
   }
   if ("category" in update && !CATEGORIES.includes(update.category as (typeof CATEGORIES)[number])) {
     return NextResponse.json({ error: "category ไม่ถูกต้อง" }, { status: 400 });
+  }
+  if ("bg" in update && update.bg !== null && !SIM_BACKGROUNDS[update.bg as string]) {
+    return NextResponse.json(
+      { error: `bg ไม่ถูกต้อง (ใช้ได้: ${Object.keys(SIM_BACKGROUNDS).join(", ")})` },
+      { status: 400 },
+    );
   }
   if (typeof update.slug === "string" && BUILTIN_SLUGS.has(update.slug)) {
     return NextResponse.json(

@@ -10,6 +10,7 @@ import { Loader2, Play, WandSparkles, X } from "lucide-react";
 import SimRunner from "@/components/sim/SimRunner";
 import { createClient } from "@/lib/supabase/client";
 import { describeScenarioError } from "@/lib/sim/validate";
+import { SIM_BACKGROUNDS } from "@/lib/sim/backgrounds";
 import type { SimDbCharacter } from "@/lib/sim/characters";
 import type { SimScenario } from "@/lib/sim/types";
 
@@ -31,6 +32,8 @@ export interface SimFormValues {
   difficultyTag: string;
   category: string;
   sourceCaseId?: string;
+  /** ฉากหลัง — "" = ไม่ระบุ (เกมใช้ er_bay) */
+  bg: string;
   status: string;
   storyJson: string; // เก็บเป็น string เสมอ — ห้ามทับข้อความผู้ใช้ตอน parse ไม่ผ่าน
 }
@@ -57,6 +60,7 @@ const EMPTY: SimFormValues = {
   difficultyTag: "basic",
   category: "acls",
   sourceCaseId: undefined,
+  bg: "",
   status: "draft",
   storyJson: "",
 };
@@ -162,6 +166,7 @@ export default function SimScenarioForm({ initial, submitLabel, onSubmit, showAi
       subtitle: values.subtitle.trim(),
       difficultyTag: values.difficultyTag,
       category: values.category,
+      bg: values.bg || undefined,
       story: story as SimScenario["story"],
     });
   }
@@ -218,6 +223,7 @@ export default function SimScenarioForm({ initial, submitLabel, onSubmit, showAi
         difficultyTag: s.difficultyTag ?? "basic",
         category: s.category ?? "acls",
         sourceCaseId: s.sourceCaseId ?? undefined,
+        bg: s.bg ?? "",
         status: "draft",
         storyJson: JSON.stringify(s.story, null, 2),
       });
@@ -346,6 +352,20 @@ export default function SimScenarioForm({ initial, submitLabel, onSubmit, showAi
           >
             <option value="acls">acls — Code Blue (หน้า /sim)</option>
             <option value="longcase">longcase — เกมเคส (หน้า /casegame)</option>
+          </select>
+        </div>
+        <div>
+          <Label htmlFor="bg">ฉากหลัง</Label>
+          <select
+            id="bg"
+            className="h-9 w-full rounded-md border bg-transparent px-3 text-sm sm:w-64"
+            value={values.bg}
+            onChange={(e) => set("bg", e.target.value)}
+          >
+            <option value="">ไม่ระบุ (er_bay)</option>
+            {Object.entries(SIM_BACKGROUNDS).map(([id, b]) => (
+              <option key={id} value={id}>{id} — {b.name}</option>
+            ))}
           </select>
         </div>
         <div>

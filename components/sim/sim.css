@@ -186,10 +186,15 @@
 .cbs-stage {
   position: relative; flex: 1; min-height: 54dvh;
   display: flex; align-items: flex-end; justify-content: center;
-  background:
-    url('/images/sim/backgrounds/er_bay.webp') center center / cover no-repeat,
+  /* ฉากหลังต่อโจทย์ — SimRunner เซ็ต --cbs-bg เป็น url ฉากของ scenario.bg;
+     gradient ชั้นล่างโชว์ระหว่างรูปโหลด/กรณีรูปหาย */
+  background-image:
+    var(--cbs-bg, url('/images/sim/backgrounds/er_bay.webp')),
     radial-gradient(ellipse 120% 70% at 50% 108%, rgba(26, 188, 156, .16), transparent 55%),
     linear-gradient(180deg, #0a161d 0%, #143540 62%, #1a4550 100%);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
   overflow: hidden;
 }
 .cbs-stage::after {

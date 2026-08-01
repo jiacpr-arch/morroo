@@ -179,6 +179,7 @@ async function run() {
           difficulty_tag: String(scenario.difficultyTag ?? "basic"),
           category: "longcase",
           source_case_id: id,
+          bg: typeof scenario.bg === "string" && scenario.bg ? scenario.bg : null,
           status: PUBLISH ? "published" : "draft",
           story: scenario.story,
           source: "ai",

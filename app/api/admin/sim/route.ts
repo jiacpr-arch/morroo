@@ -44,6 +44,7 @@ export async function POST(request: Request) {
     source?: string;
     category?: string;
     sourceCaseId?: string;
+    bg?: string;
   };
   try {
     body = await request.json();
@@ -63,6 +64,7 @@ export async function POST(request: Request) {
     title: body.title?.trim() ?? "",
     subtitle: body.subtitle?.trim() ?? "",
     difficultyTag: body.difficultyTag?.trim() || "basic",
+    bg: typeof body.bg === "string" && body.bg ? body.bg : undefined,
     story: body.story,
   };
 
@@ -99,6 +101,7 @@ export async function POST(request: Request) {
       difficulty_tag: scenario.difficultyTag,
       category,
       source_case_id: sourceCaseId,
+      bg: scenario.bg ?? null,
       status,
       story: scenario.story,
       source,
