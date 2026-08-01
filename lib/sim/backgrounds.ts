@@ -19,7 +19,7 @@ export const SIM_BACKGROUNDS: Record<string, { name: string }> = {
 };
 
 /** ฉากที่มีไฟล์รูปแล้ว — เพิ่ม id ที่นี่เมื่อวางรูปใน public/images/sim/backgrounds/ */
-const SIM_BG_READY = new Set(["er_bay", "opd_room"]);
+const SIM_BG_READY = new Set(["er_bay", "opd_room", "ward_day"]);
 
 export const DEFAULT_BG = "er_bay";
 
