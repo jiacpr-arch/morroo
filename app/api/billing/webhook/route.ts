@@ -45,8 +45,23 @@ export async function POST(request: NextRequest) {
   // After the signature is valid, we always ack with 200 so Stripe stops
   // retrying. Any processing failure is logged for manual follow-up.
   try {
-    if (event.type === "checkout.session.completed") {
+    // PromptPay (and other async payment methods) fire
+    // `checkout.session.completed` with payment_status "unpaid" and only
+    // confirm later via `checkout.session.async_payment_succeeded`.
+    // Cards arrive already "paid" inside the completed event. Fulfilling
+    // on completed alone would grant membership for async sessions whose
+    // payment later fails, so both event types funnel through the same
+    // paid-only check.
+    if (
+      event.type === "checkout.session.completed" ||
+      event.type === "checkout.session.async_payment_succeeded"
+    ) {
       const session = event.data.object as Stripe.Checkout.Session;
+
+      if (session.payment_status !== "paid") {
+        return NextResponse.json({ received: true }, { status: 200 });
+      }
+
       const result = await fulfillCheckoutSession(session);
 
       if (result.notify) {
