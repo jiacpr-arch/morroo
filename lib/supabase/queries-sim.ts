@@ -19,10 +19,11 @@ interface SimScenarioRow {
   difficulty_tag: string | null;
   category: string | null;
   source_case_id: string | null;
+  bg: string | null;
   story: unknown;
 }
 
-const SCENARIO_COLS = "slug, title, subtitle, difficulty_tag, category, source_case_id, story";
+const SCENARIO_COLS = "slug, title, subtitle, difficulty_tag, category, source_case_id, bg, story";
 
 function rowToScenario(row: SimScenarioRow): SimScenario | null {
   const scenario = {
@@ -32,6 +33,7 @@ function rowToScenario(row: SimScenarioRow): SimScenario | null {
     difficultyTag: row.difficulty_tag ?? undefined,
     category: row.category ?? "acls",
     sourceCaseId: row.source_case_id ?? undefined,
+    bg: row.bg ?? undefined,
     story: row.story,
   };
   return isValidScenario(scenario) ? scenario : null;

@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { AlertTriangle, Home, RefreshCw, Shuffle, Volume2, VolumeX, X, Zap } from "lucide-react";
 import { resolveCharacter, type SimDbCharacter } from "@/lib/sim/characters";
+import { simBgUrl } from "@/lib/sim/backgrounds";
 import CharacterSprite from "@/components/sim/CharacterSprite";
 import EcgMonitor from "@/components/sim/EcgMonitor";
 import {
@@ -853,6 +854,7 @@ export default function SimRunner({
             แสดงตัวเลือก จึงไม่ชนกับปุ่มตอบ) */}
         <div
           className={`cbs-stage ${drama === "red" ? "cbs-drama-red" : drama === "white" ? "cbs-drama" : ""}`}
+          style={{ "--cbs-bg": `url('${simBgUrl(scenario.bg)}')` } as React.CSSProperties}
           onClick={onDialogTap}
         >
           <div className="cbs-hud">

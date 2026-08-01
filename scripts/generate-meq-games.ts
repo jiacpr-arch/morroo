@@ -211,6 +211,7 @@ async function run() {
           difficulty_tag: String(scenario.difficultyTag ?? "basic"),
           category: "meq",
           source_exam_id: e.id,
+          bg: typeof scenario.bg === "string" && scenario.bg ? scenario.bg : null,
           status: PUBLISH ? "published" : "draft",
           story: scenario.story,
           source: "ai",

@@ -63,7 +63,7 @@ MEQ ต้นฉบับเป็นเคสเดียวที่ไล่�
 - ปิดด้วย att_dech สรุป key_points สำคัญ 2-3 ข้อ → { "inter": "เคสสำเร็จ!!", "green": true } → { "end": true }
 
 ## กติกาสำคัญ
-1. ตัวละคร (who): patient_generic (ผู้ป่วย — ใช้ตอบคำถามซักประวัติ), nurse_mint (พยาบาล), att_dech (อาจารย์/แพทย์อาวุโส), fon_defib และ boy_compressor (แพทย์/ทีมในวอร์ด ถ้าจำเป็น)${extraCharLines}
+1. ตัวละคร (who): ผู้ป่วยเลือกให้ตรงเพศ/วัยของเคส — patient_generic (ชายผู้ใหญ่), patient_female (หญิงผู้ใหญ่), patient_elderly (หญิงสูงอายุ), patient_pregnant (หญิงตั้งครรภ์), patient_child (เด็ก), mother_rel (แม่/ญาติ — ใช้ตอบซักประวัติแทนทารก/เด็กเล็กที่พูดเองไม่ได้); ทีมแพทย์: nurse_mint (พยาบาล), att_dech (อาจารย์/แพทย์อาวุโส), fon_defib และ boy_compressor (แพทย์/ทีมในวอร์ด ถ้าจำเป็น)${extraCharLines}
 2. pose: idle, talk, panic, stern, happy เท่านั้น
 3. **ห้ามใช้ fx ทุกชนิด** (ไม่มี alarm/cpr/shock/epi/rosc/rhythm) — นี่คือเคส ward ไม่ใช่ arrest
 4. เน้นคำสำคัญด้วย **คำเน้น** เท่านั้น — ห้ามใช้ HTML เด็ดขาด
@@ -72,6 +72,7 @@ MEQ ต้นฉบับเป็นเคสเดียวที่ไล่�
 7. เนื้อหาต้องอิงข้อมูลในข้อสอบเท่านั้น ห้ามแต่งข้อมูลผู้ป่วย/ผลตรวจเพิ่มนอกเหนือจาก scenario/answer/key_points
 8. slug ขึ้นต้นด้วย meq- ; title ขึ้นต้นด้วย "MEQ: ..."
 9. tgt ของตัวเลือกใช้หมวดสั้น: ASK, PE, LAB, DX, MGMT, CONSULT
+10. เลือก bg (ฉากหลัง) ให้ตรงบริบทของเคส: opd_room (ตรวจ OPD/คลินิก/เคสเรื้อรัง), er_bay (ฉุกเฉิน/trauma/ความดันตก), ward_day / ward_night (ผู้ป่วยใน — night เมื่อเหตุเกิดกลางดึก), labor_room (สูติฯ), nursery (ทารกแรกเกิด), icu (วิกฤต/ใส่ท่อแล้ว)
 
 ## ข้อมูลข้อสอบ MEQ ที่ต้องแปลง (สาขา ${exam.category ?? "-"}, ความยาก ${exam.difficulty ?? "-"})
 ${JSON.stringify(exam)}

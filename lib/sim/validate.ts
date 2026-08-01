@@ -2,6 +2,7 @@
 // (isValidScenario ใน types.ts เป็นตัวหลวมสำหรับ runtime load;
 //  ตัวนี้เพิ่มกติกาที่ engine คาดหวังจริง + รายงานตำแหน่งที่ผิดเป็นไทย)
 
+import { SIM_BACKGROUNDS } from "./backgrounds";
 import { SIM_CHARACTERS } from "./characters";
 import { isValidScenario, type SimScenario, type StoryNode } from "./types";
 
@@ -67,6 +68,9 @@ export function describeScenarioError(
   const last = s.story[s.story.length - 1];
   if (!("end" in last)) {
     return "story ต้องจบด้วย node { end: true }";
+  }
+  if (s.bg !== undefined && !SIM_BACKGROUNDS[s.bg]) {
+    return `bg "${s.bg}" ไม่รู้จัก (ใช้ได้: ${Object.keys(SIM_BACKGROUNDS).join(", ")})`;
   }
   const charIds = new Set([...Object.keys(SIM_CHARACTERS), ...extraCharIds]);
   return checkNodes(s.story, "story", charIds);

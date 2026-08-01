@@ -29,6 +29,12 @@ export const SCENARIO_TOOL = {
       title: { type: "string", description: "ชื่อเคสภาษาไทย ขึ้นต้นด้วย LONG CASE: ..." },
       subtitle: { type: "string", description: "โจทย์ผู้ป่วย 1 ประโยค (อายุ เพศ อาการนำ)" },
       difficultyTag: { type: "string", enum: ["basic", "megacode"] },
+      bg: {
+        type: "string",
+        enum: ["er_bay", "opd_room", "ward_day", "ward_night", "labor_room", "nursery", "icu"],
+        description:
+          "ฉากหลังตามบริบทของเคส: er_bay (ฉุกเฉิน/arrest/trauma), opd_room (ตรวจ OPD/คลินิก/เคสเรื้อรัง), ward_day (หอผู้ป่วยกลางวัน), ward_night (เวรดึก), labor_room (สูติฯ/ห้องคลอด), nursery (ทารกแรกเกิด), icu (ผู้ป่วยวิกฤตใน ICU)",
+      },
       story: {
         type: "array",
         minItems: 8,
@@ -72,7 +78,7 @@ export function longcaseSystemPrompt(
 8. debrief: attending สรุป teaching_points 2-3 ข้อ → { "inter": "เคสสำเร็จ!!", "green": true } → { "end": true }
 
 ## กติกาสำคัญ
-1. ตัวละคร (who): patient_generic (ผู้ป่วย — ใช้ตอบคำถามซักประวัติ), nurse_mint (พยาบาล), att_dech (อาจารย์/แพทย์อาวุโส), fon_defib และ boy_compressor (แพทย์/ทีมในวอร์ด ถ้าจำเป็น)${extraCharLines}
+1. ตัวละคร (who): ผู้ป่วยเลือกให้ตรงเพศ/วัยของเคส — patient_generic (ชายผู้ใหญ่), patient_female (หญิงผู้ใหญ่), patient_elderly (หญิงสูงอายุ), patient_pregnant (หญิงตั้งครรภ์), patient_child (เด็ก), mother_rel (แม่/ญาติ — ใช้ตอบซักประวัติแทนทารก/เด็กเล็กที่พูดเองไม่ได้); ทีมแพทย์: nurse_mint (พยาบาล), att_dech (อาจารย์/แพทย์อาวุโส), fon_defib และ boy_compressor (แพทย์/ทีมในวอร์ด ถ้าจำเป็น)${extraCharLines}
 2. pose: idle, talk, panic, stern, happy เท่านั้น
 3. **ห้ามใช้ fx ทุกชนิด** (ไม่มี alarm/cpr/shock/epi/rosc/rhythm) — นี่คือเคส ward ไม่ใช่ arrest
 4. เน้นคำสำคัญด้วย **คำเน้น** เท่านั้น — ห้ามใช้ HTML เด็ดขาด
@@ -81,6 +87,7 @@ export function longcaseSystemPrompt(
 7. เนื้อหาต้องอิงข้อมูลในเคสเท่านั้น ห้ามแต่งข้อมูลผู้ป่วย/ผลตรวจเพิ่ม
 8. slug ขึ้นต้นด้วย lc- ; title ขึ้นต้นด้วย "LONG CASE: ..."
 9. tgt ของตัวเลือกใช้หมวดสั้น: ASK, PE, LAB, DX, MGMT, CONSULT
+10. เลือก bg (ฉากหลัง) ให้ตรงบริบทของเคส: opd_room (ตรวจ OPD/คลินิก/เคสเรื้อรัง), er_bay (ฉุกเฉิน/trauma/ความดันตก), ward_day / ward_night (ผู้ป่วยใน — night เมื่อเหตุเกิดกลางดึก), labor_room (สูติฯ), nursery (ทารกแรกเกิด), icu (วิกฤต/ใส่ท่อแล้ว)
 
 ## ข้อมูลเคส Long Case ที่ต้องแปลง
 ${JSON.stringify(caseRow)}

@@ -42,6 +42,7 @@ export default function AdminSimNewPage() {
         difficultyTag: values.difficultyTag,
         category: values.category,
         sourceCaseId: values.sourceCaseId,
+        bg: values.bg || undefined,
         status: values.status,
         story,
       }),
