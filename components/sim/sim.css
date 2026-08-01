@@ -219,8 +219,8 @@
 }
 
 .cbs-sprite {
-  position: relative; z-index: 2;
-  width: min(64vw, 275px);
+  position: relative; z-index: 2; flex-shrink: 0;
+  width: min(105vw, 445px);
 }
 .cbs-sprite.cbs-pop { animation: cbs-pop .22s ease; }
 
