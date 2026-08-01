@@ -63,7 +63,7 @@ MEQ ต้นฉบับเป็นเคสเดียวที่ไล่�
 - ปิดด้วย att_dech สรุป key_points สำคัญ 2-3 ข้อ → { "inter": "เคสสำเร็จ!!", "green": true } → { "end": true }
 
 ## กติกาสำคัญ
-1. ตัวละคร (who): patient_generic (ผู้ป่วย — ใช้ตอบคำถามซักประวัติ), nurse_mint (พยาบาล), att_dech (อาจารย์/แพทย์อาวุโส), fon_defib และ boy_compressor (แพทย์/ทีมในวอร์ด ถ้าจำเป็น)${extraCharLines}
+1. ตัวละคร (who): ผู้ป่วยเลือกให้ตรงเพศ/วัยของเคส — patient_generic (ชายผู้ใหญ่), patient_female (หญิงผู้ใหญ่), patient_elderly (หญิงสูงอายุ), patient_pregnant (หญิงตั้งครรภ์), patient_child (เด็ก), mother_rel (แม่/ญาติ — ใช้ตอบซักประวัติแทนทารก/เด็กเล็กที่พูดเองไม่ได้); ทีมแพทย์: nurse_mint (พยาบาล), att_dech (อาจารย์/แพทย์อาวุโส), fon_defib และ boy_compressor (แพทย์/ทีมในวอร์ด ถ้าจำเป็น)${extraCharLines}
 2. pose: idle, talk, panic, stern, happy เท่านั้น
 3. **ห้ามใช้ fx ทุกชนิด** (ไม่มี alarm/cpr/shock/epi/rosc/rhythm) — นี่คือเคส ward ไม่ใช่ arrest
 4. เน้นคำสำคัญด้วย **คำเน้น** เท่านั้น — ห้ามใช้ HTML เด็ดขาด

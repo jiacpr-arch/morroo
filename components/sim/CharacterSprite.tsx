@@ -59,11 +59,19 @@ export default function CharacterSprite({ charId, pose = "idle", talking = false
     let alive = true;
     const baseUrl = characterImageUrl(charId, pose);
     const talkUrl = characterImageUrl(charId, pose, true);
-    Promise.all([probeImage(baseUrl), probeImage(talkUrl)]).then(([hasBase, hasTalk]) => {
+    Promise.all([probeImage(baseUrl), probeImage(talkUrl)]).then(async ([hasBase, hasTalk]) => {
+      if (!alive) return;
+      if (hasBase) {
+        setProbe({ key: `${charId}/${pose}`, result: { base: baseUrl, talk: hasTalk ? talkUrl : null } });
+        return;
+      }
+      // ท่านี้ไม่มีรูป — ถอยไปใช้รูป idle ก่อน placeholder (ตัวละครที่มีรูปเดียว)
+      const idleUrl = characterImageUrl(charId, "idle");
+      const hasIdle = pose !== "idle" && (await probeImage(idleUrl));
       if (!alive) return;
       setProbe({
         key: `${charId}/${pose}`,
-        result: hasBase ? { base: baseUrl, talk: hasTalk ? talkUrl : null } : false,
+        result: hasIdle ? { base: idleUrl, talk: null } : false,
       });
     });
     return () => { alive = false; };

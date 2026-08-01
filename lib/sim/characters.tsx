@@ -206,6 +206,40 @@ export const SIM_CHARACTERS: Record<string, SimCharacter> = {
       );
     },
   },
+
+  // ผู้ป่วยตามเพศ/วัย — ให้ AI/แอดมินเลือกตัวที่ตรงกับเคส
+  // มีรูปจริงเฉพาะ idle — pose อื่น CharacterSprite ถอยไปใช้รูป idle ให้เอง
+  // (placeholder ใช้ตัวกลางร่วมกัน — โผล่เฉพาะตอนรูปหาย)
+  patient_female: {
+    name: "ผู้ป่วยหญิง",
+    role: "Patient",
+    plate: ["#8A7A99", "#655B75"],
+    Placeholder: GenericPlaceholder,
+  },
+  patient_elderly: {
+    name: "ผู้ป่วยสูงอายุ",
+    role: "Patient",
+    plate: ["#9A8F7A", "#75695B"],
+    Placeholder: GenericPlaceholder,
+  },
+  patient_pregnant: {
+    name: "ผู้ป่วยตั้งครรภ์",
+    role: "Patient",
+    plate: ["#C98FA4", "#9A6478"],
+    Placeholder: GenericPlaceholder,
+  },
+  patient_child: {
+    name: "ผู้ป่วยเด็ก",
+    role: "Patient",
+    plate: ["#7AA0C9", "#5B7A9A"],
+    Placeholder: GenericPlaceholder,
+  },
+  mother_rel: {
+    name: "แม่ผู้ป่วย",
+    role: "Family",
+    plate: ["#C9A87A", "#9A7F5B"],
+    Placeholder: GenericPlaceholder,
+  },
 };
 
 export function getCharacter(charId: string): SimCharacter | null {
