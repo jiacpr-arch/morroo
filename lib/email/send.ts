@@ -10,6 +10,7 @@ import {
   redeemCodeEmail,
   leadFollowupEmail,
   trialExpiryEmail,
+  paymentRejectedEmail,
 } from "./templates";
 import type {
   WelcomeEmailProps,
@@ -19,6 +20,7 @@ import type {
   RedeemCodeEmailProps,
   LeadFollowupEmailProps,
   TrialExpiryEmailProps,
+  PaymentRejectedEmailProps,
 } from "./templates";
 
 const FROM_ADDRESS = "หมอรู้ <noreply@morroo.com>";
@@ -146,6 +148,16 @@ export async function sendLeadFollowupEmail(
     to: props.email,
     subject,
     html: leadFollowupEmail(props),
+  });
+}
+
+export async function sendPaymentRejectedEmail(
+  props: PaymentRejectedEmailProps & { email: string }
+) {
+  return sendEmail({
+    to: props.email,
+    subject: "การแจ้งโอนเงินของคุณยังไม่ผ่านการตรวจสอบ — หมอรู้",
+    html: paymentRejectedEmail(props),
   });
 }
 

@@ -12,6 +12,7 @@ import { User, Mail, Crown, Calendar, LogOut, Gift, Copy, Check, Users, MessageS
 import { xpToRank } from "@/lib/school/rank";
 import type { Profile } from "@/lib/types";
 import { REWARD_TIER_LIST, availableReporterPoints } from "@/lib/bug-hunter";
+import PaymentStatusCard from "@/components/PaymentStatusCard";
 
 const membershipLabels: Record<string, string> = {
   free: "ฟรี",
@@ -238,6 +239,9 @@ export default function ProfilePage() {
             )}
           </CardContent>
         </Card>
+
+        {/* สถานะการแจ้งโอนเงิน (แสดงเฉพาะคนที่เคยส่งสลิป) */}
+        <PaymentStatusCard />
 
         {/* ความก้าวหน้าการเรียน — ยศแพทย์จาก XP สะสม */}
         <Card>

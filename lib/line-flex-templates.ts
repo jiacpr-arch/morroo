@@ -1171,3 +1171,98 @@ export function buildAdsMergeConfirmFlex(args: {
     },
   };
 }
+
+// ───────────────────────────────────────────────────────────────────────────
+// Slip review — admin nudge when a bank-transfer order needs manual review
+// (auto-verification failed, provider down, or provider not configured).
+
+export interface SlipReviewData {
+  customerName: string;
+  customerEmail: string;
+  planLabel: string;
+  amount: number;
+  createdAt: string; // ISO
+  /** Why the slip landed in manual review (Thai, short). */
+  reason?: string;
+}
+
+export function buildSlipReviewFlex(data: SlipReviewData): LineMessage {
+  const amountThb = data.amount.toLocaleString();
+  const timeLabel = new Date(data.createdAt).toLocaleString("th-TH", {
+    timeZone: "Asia/Bangkok",
+  });
+
+  const infoRow = (label: string, value: string) => ({
+    type: "box",
+    layout: "horizontal",
+    contents: [
+      { type: "text", text: label, size: "sm", color: "#8c8c8c", flex: 2 },
+      {
+        type: "text",
+        text: value,
+        size: "sm",
+        color: "#111111",
+        weight: "bold",
+        flex: 4,
+        wrap: true,
+        align: "end",
+      },
+    ],
+  });
+
+  const rows = [
+    infoRow("ลูกค้า", data.customerName),
+    infoRow("อีเมล", data.customerEmail),
+    infoRow("แพ็กเกจ", data.planLabel),
+    infoRow("ยอดโอน", `฿${amountThb}`),
+    infoRow("เวลา", timeLabel),
+  ];
+  if (data.reason) {
+    rows.push(infoRow("เหตุผล", data.reason));
+  }
+
+  return {
+    type: "flex",
+    altText: `💸 ${data.customerName} แจ้งโอนเงิน ฿${amountThb} (${data.planLabel}) — รอตรวจสอบ`,
+    contents: {
+      type: "bubble",
+      body: {
+        type: "box",
+        layout: "vertical",
+        spacing: "md",
+        contents: [
+          {
+            type: "text",
+            text: "💸 สลิปรอตรวจสอบ",
+            weight: "bold",
+            size: "lg",
+            color: "#1DB446",
+          },
+          {
+            type: "box",
+            layout: "vertical",
+            spacing: "sm",
+            margin: "md",
+            contents: rows,
+          },
+        ],
+      },
+      footer: {
+        type: "box",
+        layout: "vertical",
+        contents: [
+          {
+            type: "button",
+            style: "primary",
+            color: "#1DB446",
+            action: {
+              type: "uri",
+              label: "ตรวจสอบสลิป",
+              uri: `${SITE}/admin/payments`,
+            },
+          },
+        ],
+      },
+    },
+  };
+}

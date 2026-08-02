@@ -15,7 +15,14 @@ import LandingPageTracker from "@/components/LandingPageTracker";
 import PaymentTrustSignals from "@/components/PaymentTrustSignals";
 import {
   ArrowLeft,
+  Building2,
+  Copy,
+  Check,
+  Upload,
+  ImageIcon,
   Loader2,
+  CheckCircle,
+  Clock,
   AlertCircle,
   CreditCard,
 } from "lucide-react";
@@ -29,11 +36,23 @@ const PLANS: Record<string, { name: string; price: number; period: string }> = {
   board_yearly: { name: "Board รายปี", price: 4990, period: "/ ปี" },
 };
 
+const BANK_INFO = {
+  bank: "ธนาคารกสิกรไทย",
+  branch: "สาขาอ้อมน้อย",
+  accountNumber: "439-2-76394-0",
+  accountName: "บจก. เจี่ยรักษา",
+};
+
 // Mirror of NEXT_PUBLIC_STRIPE_PROMPTPAY_ENABLED used by the Stripe checkout
 // route. When on, the Stripe option also offers an instant PromptPay QR, so we
 // advertise it.
 const PROMPTPAY_ENABLED =
   process.env.NEXT_PUBLIC_STRIPE_PROMPTPAY_ENABLED === "true";
+
+// Outcome of a slip submission — drives which success screen we show.
+type SlipResult =
+  | { kind: "approved"; expiresAt: string | null }
+  | { kind: "pending" };
 
 export default function PaymentPage({
   params,
@@ -44,7 +63,15 @@ export default function PaymentPage({
   const router = useRouter();
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
+  const [submitting, setSubmitting] = useState(false);
+  const [slipResult, setSlipResult] = useState<SlipResult | null>(null);
   const [error, setError] = useState("");
+  const [copied, setCopied] = useState(false);
+  const [slipFile, setSlipFile] = useState<File | null>(null);
+  const [slipPreview, setSlipPreview] = useState<string | null>(null);
+
+  // Payment method selection
+  const [paymentMethod, setPaymentMethod] = useState<"stripe" | "bank">("stripe");
 
   // Invoice / tax form
   const [wantInvoice, setWantInvoice] = useState(false);
@@ -72,12 +99,101 @@ export default function PaymentPage({
   }, [plan, router]);
 
   // Canonical InitiateCheckout: fires once per payment-page visit so Meta/TikTok
-  // get the signal before the user reaches Stripe checkout.
+  // get the signal regardless of whether the user pays via Stripe or bank slip.
   useEffect(() => {
     const info = PLANS[plan];
     if (!info) return;
     trackInitiateCheckout({ plan, value: info.price, currency: "THB" });
   }, [plan]);
+
+  const copyAccountNumber = () => {
+    navigator.clipboard.writeText("4392763940");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (!file.type.startsWith("image/")) {
+      setError("กรุณาเลือกไฟล์รูปภาพเท่านั้น");
+      return;
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      setError("ไฟล์ต้องมีขนาดไม่เกิน 5MB");
+      return;
+    }
+
+    setError("");
+    setSlipFile(file);
+    const reader = new FileReader();
+    reader.onload = (ev) => setSlipPreview(ev.target?.result as string);
+    reader.readAsDataURL(file);
+  };
+
+  const handleSubmit = async () => {
+    if (!slipFile || !user) return;
+
+    setSubmitting(true);
+    setError("");
+
+    try {
+      const supabase = createClient();
+
+      // Upload slip to Supabase Storage (own-folder policy), then let the
+      // server download + verify it. The server never trusts the client
+      // for plan price or verification outcome.
+      const fileExt = slipFile.name.split(".").pop();
+      const fileName = `${user.id}/${Date.now()}.${fileExt}`;
+
+      const { error: uploadError } = await supabase.storage
+        .from("slips")
+        .upload(fileName, slipFile);
+
+      if (uploadError) {
+        console.error("Slip upload failed:", uploadError.message);
+        setError(
+          "อัปโหลดสลิปไม่สำเร็จ กรุณาลองใหม่อีกครั้ง หากยังไม่สำเร็จกรุณาติดต่อแอดมิน"
+        );
+        setSubmitting(false);
+        return;
+      }
+
+      const res = await fetch("/api/payment/submit-slip", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ plan, storagePath: fileName }),
+      });
+      const data = await res.json();
+
+      if (res.status === 409) {
+        setError(data.message || "สลิปนี้ถูกใช้ยืนยันการชำระเงินไปแล้ว");
+        setSubmitting(false);
+        return;
+      }
+      if (!res.ok) {
+        setError(data.error || "เกิดข้อผิดพลาด กรุณาลองใหม่");
+        setSubmitting(false);
+        return;
+      }
+
+      track("bank_slip_submitted", {
+        plan,
+        price: planInfo.price,
+        result: data.status,
+      });
+
+      if (data.status === "approved") {
+        setSlipResult({ kind: "approved", expiresAt: data.expiresAt ?? null });
+      } else {
+        setSlipResult({ kind: "pending" });
+      }
+    } catch {
+      setError("เกิดข้อผิดพลาด กรุณาลองใหม่");
+    }
+    setSubmitting(false);
+  };
 
   const handleStripeCheckout = async () => {
     if (!user) return;
@@ -127,6 +243,78 @@ export default function PaymentPage({
     );
   }
 
+  // Success state — slip verified automatically, membership active now.
+  if (slipResult?.kind === "approved") {
+    return (
+      <div className="mx-auto max-w-lg px-4 py-16">
+        <Card className="text-center">
+          <CardContent className="py-12 space-y-4">
+            <div className="mx-auto w-16 h-16 rounded-full bg-brand/10 flex items-center justify-center">
+              <CheckCircle className="h-8 w-8 text-brand" />
+            </div>
+            <h1 className="text-2xl font-bold">ชำระเงินสำเร็จ!</h1>
+            <p className="text-muted-foreground">
+              ตรวจสอบสลิปเรียบร้อย เปิดใช้งานแพ็กเกจ{planInfo.name}ให้แล้วทันที
+              {slipResult.expiresAt && (
+                <>
+                  <br />
+                  ใช้งานได้ถึง{" "}
+                  <strong>
+                    {new Date(slipResult.expiresAt).toLocaleDateString("th-TH", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </strong>
+                </>
+              )}
+            </p>
+            <div className="pt-4">
+              <Link href="/exams">
+                <Button className="w-full bg-brand hover:bg-brand-light text-white">
+                  เริ่มใช้งานเลย
+                </Button>
+              </Link>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
+  // Pending state — slip needs manual review; customer will be notified.
+  if (slipResult?.kind === "pending") {
+    return (
+      <div className="mx-auto max-w-lg px-4 py-16">
+        <Card className="text-center">
+          <CardContent className="py-12 space-y-4">
+            <div className="mx-auto w-16 h-16 rounded-full bg-yellow-100 flex items-center justify-center">
+              <Clock className="h-8 w-8 text-yellow-600" />
+            </div>
+            <h1 className="text-2xl font-bold">ได้รับสลิปแล้ว กำลังตรวจสอบ</h1>
+            <p className="text-muted-foreground">
+              เราจะตรวจสอบและเปิดใช้งานให้ภายใน <strong>24 ชั่วโมง</strong>
+              <br />
+              แจ้งผลทาง <strong>LINE และอีเมล</strong> ทันทีที่เสร็จ
+            </p>
+            <div className="pt-4 space-y-2">
+              <Link href="/profile">
+                <Button className="w-full bg-brand hover:bg-brand-light text-white">
+                  ดูสถานะคำสั่งซื้อ
+                </Button>
+              </Link>
+              <Link href="/exams">
+                <Button variant="outline" className="w-full">
+                  กลับไปดูข้อสอบ
+                </Button>
+              </Link>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
   return (
     <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6">
       <LandingPageTracker
@@ -172,106 +360,308 @@ export default function PaymentPage({
 
         <PaymentTrustSignals />
 
-        {/* Stripe payment section */}
-        <Card className="border-brand/20">
-          <CardHeader>
-            <h2 className="font-semibold flex items-center gap-2">
-              <CreditCard className="h-5 w-5 text-brand" />
-              {PROMPTPAY_ENABLED
-                ? "ชำระด้วย PromptPay หรือบัตร"
-                : "ชำระผ่านบัตรเครดิต/เดบิต"}
-            </h2>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            {/* Optional tax invoice toggle */}
-            <div className="flex items-center gap-3">
-              <input
-                type="checkbox"
-                id="wantInvoice"
-                checked={wantInvoice}
-                onChange={(e) => setWantInvoice(e.target.checked)}
-                className="h-4 w-4 rounded border-gray-300 text-brand"
-              />
-              <Label htmlFor="wantInvoice" className="cursor-pointer font-medium">
-                ต้องการใบกำกับภาษี
-              </Label>
-            </div>
-
-            {wantInvoice && (
-              <div className="rounded-lg border bg-muted/30 p-4 space-y-3">
-                <div>
-                  <Label htmlFor="invoiceName" className="text-sm">
-                    ชื่อ / บริษัท <span className="text-destructive">*</span>
-                  </Label>
-                  <Input
-                    id="invoiceName"
-                    value={invoiceName}
-                    onChange={(e) => setInvoiceName(e.target.value)}
-                    placeholder="ชื่อบุคคลหรือบริษัท"
-                    className="mt-1"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="invoiceTaxId" className="text-sm">
-                    เลขประจำตัวผู้เสียภาษี (13 หลัก) <span className="text-destructive">*</span>
-                  </Label>
-                  <Input
-                    id="invoiceTaxId"
-                    value={invoiceTaxId}
-                    onChange={(e) => setInvoiceTaxId(e.target.value)}
-                    placeholder="0-0000-00000-00-0"
-                    maxLength={13}
-                    className="mt-1"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="invoiceAddress" className="text-sm">
-                    ที่อยู่ <span className="text-destructive">*</span>
-                  </Label>
-                  <Input
-                    id="invoiceAddress"
-                    value={invoiceAddress}
-                    onChange={(e) => setInvoiceAddress(e.target.value)}
-                    placeholder="ที่อยู่สำหรับออกใบกำกับภาษี"
-                    className="mt-1"
-                  />
-                </div>
-              </div>
-            )}
-
-            {error && (
-              <div className="flex items-center gap-2 text-sm text-destructive">
-                <AlertCircle className="h-4 w-4" />
-                {error}
-              </div>
-            )}
-
-            <Button
-              className="w-full bg-brand hover:bg-brand-light text-white"
-              size="lg"
-              disabled={stripeLoading}
-              onClick={handleStripeCheckout}
+        {/* Payment method selector */}
+        <div>
+          <h2 className="font-semibold mb-3">เลือกวิธีชำระเงิน</h2>
+          <div className="grid grid-cols-2 gap-3">
+            <button
+              type="button"
+              onClick={() => {
+                setPaymentMethod("stripe");
+                track("payment_method_selected", { method: "stripe", plan });
+              }}
+              className={`rounded-lg border-2 p-4 text-left transition-colors ${
+                paymentMethod === "stripe"
+                  ? "border-brand bg-brand/5"
+                  : "border-muted hover:border-muted-foreground/40"
+              }`}
             >
-              {stripeLoading ? (
-                <>
-                  <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                  กำลังเชื่อมต่อ...
-                </>
-              ) : (
-                <>
-                  <CreditCard className="h-4 w-4 mr-2" />
-                  ชำระผ่าน Stripe ฿{planInfo.price.toLocaleString()}
-                </>
-              )}
-            </Button>
+              <div className="flex items-center gap-2 mb-1">
+                <CreditCard className="h-5 w-5 text-brand" />
+                <span className="font-medium text-sm">
+                  {PROMPTPAY_ENABLED ? "PromptPay / บัตร" : "บัตรเครดิต/เดบิต"}
+                </span>
+              </div>
+              <p className="text-xs text-muted-foreground">
+                {PROMPTPAY_ENABLED
+                  ? "ชำระทันที สแกน QR หรือบัตร"
+                  : "ชำระทันที ผ่าน Stripe"}
+              </p>
+            </button>
 
-            <p className="text-xs text-center text-muted-foreground">
-              {PROMPTPAY_ENABLED
-                ? "สแกน PromptPay หรือจ่ายด้วยบัตร • อัปเกรดอัตโนมัติทันที • ปลอดภัยด้วย Stripe"
-                : "ระบบจะอัปเกรดอัตโนมัติหลังชำระเงิน • ปลอดภัยด้วย Stripe"}
-            </p>
-          </CardContent>
-        </Card>
+            <button
+              type="button"
+              onClick={() => {
+                setPaymentMethod("bank");
+                track("payment_method_selected", { method: "bank", plan });
+              }}
+              className={`rounded-lg border-2 p-4 text-left transition-colors ${
+                paymentMethod === "bank"
+                  ? "border-brand bg-brand/5"
+                  : "border-muted hover:border-muted-foreground/40"
+              }`}
+            >
+              <div className="flex items-center gap-2 mb-1">
+                <Building2 className="h-5 w-5 text-brand" />
+                <span className="font-medium text-sm">โอนเงิน</span>
+              </div>
+              <p className="text-xs text-muted-foreground">
+                แนบสลิป ระบบตรวจสอบอัตโนมัติ
+              </p>
+            </button>
+          </div>
+        </div>
+
+        {/* Stripe payment section */}
+        {paymentMethod === "stripe" && (
+          <Card className="border-brand/20">
+            <CardHeader>
+              <h2 className="font-semibold flex items-center gap-2">
+                <CreditCard className="h-5 w-5 text-brand" />
+                {PROMPTPAY_ENABLED
+                  ? "ชำระด้วย PromptPay หรือบัตร"
+                  : "ชำระผ่านบัตรเครดิต/เดบิต"}
+              </h2>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {/* Optional tax invoice toggle */}
+              <div className="flex items-center gap-3">
+                <input
+                  type="checkbox"
+                  id="wantInvoice"
+                  checked={wantInvoice}
+                  onChange={(e) => setWantInvoice(e.target.checked)}
+                  className="h-4 w-4 rounded border-gray-300 text-brand"
+                />
+                <Label htmlFor="wantInvoice" className="cursor-pointer font-medium">
+                  ต้องการใบกำกับภาษี
+                </Label>
+              </div>
+
+              {wantInvoice && (
+                <div className="rounded-lg border bg-muted/30 p-4 space-y-3">
+                  <div>
+                    <Label htmlFor="invoiceName" className="text-sm">
+                      ชื่อ / บริษัท <span className="text-destructive">*</span>
+                    </Label>
+                    <Input
+                      id="invoiceName"
+                      value={invoiceName}
+                      onChange={(e) => setInvoiceName(e.target.value)}
+                      placeholder="ชื่อบุคคลหรือบริษัท"
+                      className="mt-1"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="invoiceTaxId" className="text-sm">
+                      เลขประจำตัวผู้เสียภาษี (13 หลัก) <span className="text-destructive">*</span>
+                    </Label>
+                    <Input
+                      id="invoiceTaxId"
+                      value={invoiceTaxId}
+                      onChange={(e) => setInvoiceTaxId(e.target.value)}
+                      placeholder="0-0000-00000-00-0"
+                      maxLength={13}
+                      className="mt-1"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="invoiceAddress" className="text-sm">
+                      ที่อยู่ <span className="text-destructive">*</span>
+                    </Label>
+                    <Input
+                      id="invoiceAddress"
+                      value={invoiceAddress}
+                      onChange={(e) => setInvoiceAddress(e.target.value)}
+                      placeholder="ที่อยู่สำหรับออกใบกำกับภาษี"
+                      className="mt-1"
+                    />
+                  </div>
+                </div>
+              )}
+
+              {error && (
+                <div className="flex items-center gap-2 text-sm text-destructive">
+                  <AlertCircle className="h-4 w-4" />
+                  {error}
+                </div>
+              )}
+
+              <Button
+                className="w-full bg-brand hover:bg-brand-light text-white"
+                size="lg"
+                disabled={stripeLoading}
+                onClick={handleStripeCheckout}
+              >
+                {stripeLoading ? (
+                  <>
+                    <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                    กำลังเชื่อมต่อ...
+                  </>
+                ) : (
+                  <>
+                    <CreditCard className="h-4 w-4 mr-2" />
+                    ชำระผ่าน Stripe ฿{planInfo.price.toLocaleString()}
+                  </>
+                )}
+              </Button>
+
+              <p className="text-xs text-center text-muted-foreground">
+                {PROMPTPAY_ENABLED
+                  ? "สแกน PromptPay หรือจ่ายด้วยบัตร • อัปเกรดอัตโนมัติทันที • ปลอดภัยด้วย Stripe"
+                  : "ระบบจะอัปเกรดอัตโนมัติหลังชำระเงิน • ปลอดภัยด้วย Stripe"}
+              </p>
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Bank transfer section */}
+        {paymentMethod === "bank" && (
+          <>
+            {/* Bank transfer info */}
+            <Card className="border-brand/20">
+              <CardHeader>
+                <h2 className="font-semibold flex items-center gap-2">
+                  <Building2 className="h-5 w-5 text-brand" />
+                  ข้อมูลการโอนเงิน
+                </h2>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="rounded-lg bg-green-50 border border-green-200 p-4 space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">ธนาคาร</span>
+                    <span className="font-medium text-green-800">
+                      {BANK_INFO.bank}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">สาขา</span>
+                    <span className="font-medium text-green-800">
+                      {BANK_INFO.branch}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">
+                      เลขที่บัญชี
+                    </span>
+                    <div className="flex items-center gap-2">
+                      <span className="font-mono font-bold text-lg text-green-800">
+                        {BANK_INFO.accountNumber}
+                      </span>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="h-8 w-8"
+                        onClick={copyAccountNumber}
+                      >
+                        {copied ? (
+                          <Check className="h-4 w-4 text-green-600" />
+                        ) : (
+                          <Copy className="h-4 w-4" />
+                        )}
+                      </Button>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">ชื่อบัญชี</span>
+                    <span className="font-medium text-green-800">
+                      {BANK_INFO.accountName}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between pt-2 border-t border-green-200">
+                    <span className="text-sm font-medium text-green-700">
+                      ยอดที่ต้องโอน
+                    </span>
+                    <span className="text-xl font-bold text-green-800">
+                      ฿{planInfo.price.toLocaleString()}.00
+                    </span>
+                  </div>
+                </div>
+
+                <div className="rounded-lg bg-amber-50 border border-amber-200 p-3">
+                  <p className="text-sm text-amber-800">
+                    <strong>สำคัญ:</strong> กรุณาโอนเงินตามยอดที่ระบุ
+                    แล้วแนบสลิปด้านล่าง — สลิปที่ถูกต้องจะเปิดใช้งานให้
+                    <strong>ทันที</strong>
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Upload slip */}
+            <Card>
+              <CardHeader>
+                <h2 className="font-semibold flex items-center gap-2">
+                  <Upload className="h-5 w-5 text-brand" />
+                  แนบสลิปการโอนเงิน
+                </h2>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {slipPreview ? (
+                  <div className="space-y-3">
+                    <div className="relative rounded-lg overflow-hidden border bg-muted">
+                      {/* eslint-disable-next-line @next/next/no-img-element -- preview of user-uploaded blob URL, not suitable for next/image optimizer */}
+                      <img
+                        src={slipPreview}
+                        alt="สลิปการโอนเงิน"
+                        className="w-full max-h-80 object-contain"
+                      />
+                    </div>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => {
+                        setSlipFile(null);
+                        setSlipPreview(null);
+                      }}
+                    >
+                      เปลี่ยนรูป
+                    </Button>
+                  </div>
+                ) : (
+                  <label className="flex flex-col items-center justify-center h-48 rounded-lg border-2 border-dashed border-muted-foreground/30 bg-muted/30 cursor-pointer hover:bg-muted/50 transition-colors">
+                    <ImageIcon className="h-10 w-10 text-muted-foreground/50 mb-2" />
+                    <span className="text-sm font-medium text-muted-foreground">
+                      คลิกเพื่อเลือกรูปสลิป
+                    </span>
+                    <span className="text-xs text-muted-foreground/60 mt-1">
+                      PNG, JPG ขนาดไม่เกิน 5MB
+                    </span>
+                    <input
+                      type="file"
+                      accept="image/*"
+                      className="hidden"
+                      onChange={handleFileChange}
+                    />
+                  </label>
+                )}
+
+                {error && (
+                  <div className="flex items-center gap-2 text-sm text-destructive">
+                    <AlertCircle className="h-4 w-4" />
+                    {error}
+                  </div>
+                )}
+
+                <Button
+                  className="w-full bg-brand hover:bg-brand-light text-white"
+                  size="lg"
+                  disabled={!slipFile || submitting}
+                  onClick={handleSubmit}
+                >
+                  {submitting ? (
+                    <>
+                      <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                      กำลังตรวจสอบสลิป...
+                    </>
+                  ) : (
+                    "ยืนยันการชำระเงิน"
+                  )}
+                </Button>
+              </CardContent>
+            </Card>
+          </>
+        )}
       </div>
     </div>
   );

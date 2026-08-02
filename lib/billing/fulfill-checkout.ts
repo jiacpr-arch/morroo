@@ -10,11 +10,22 @@
  * Idempotency is keyed on `payment_orders.stripe_session_id`: if a row
  * already exists for the given session, this function is a no-op and
  * returns `alreadyProcessed: true`.
+ *
+ * The mechanics (expiry math, invoice numbering, VAT, referral reward) live
+ * in lib/billing/fulfillment-core.ts, shared with the bank-transfer path.
  */
 
 import type Stripe from "stripe";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { enqueueBoardGenJobs } from "@/lib/board/enqueue";
+import {
+  PLAN_LABELS_TH,
+  activateMembership,
+  applyReferralReward,
+  calcMembershipExpiry,
+  computeVat,
+  nextInvoiceNumber,
+} from "./fulfillment-core";
 
 export interface FulfillmentResult {
   alreadyProcessed: boolean;
@@ -73,33 +84,10 @@ export async function fulfillCheckoutSession(
     return { alreadyProcessed: true };
   }
 
-  // Calculate membership expiry
   const now = new Date();
-  let expiresAt: Date;
-  if (planType === "monthly" || planType === "board_monthly") {
-    expiresAt = new Date(now);
-    expiresAt.setMonth(expiresAt.getMonth() + 1);
-  } else if (planType === "yearly" || planType === "board_yearly") {
-    expiresAt = new Date(now);
-    expiresAt.setFullYear(expiresAt.getFullYear() + 1);
-  } else {
-    // bundle: 99 years
-    expiresAt = new Date(now);
-    expiresAt.setFullYear(expiresAt.getFullYear() + 99);
-  }
+  const expiresAt = calcMembershipExpiry(planType, now);
 
-  // Update profile membership
-  const { error: profileError } = await supabase
-    .from("profiles")
-    .update({
-      membership_type: planType,
-      membership_expires_at: expiresAt.toISOString(),
-    })
-    .eq("id", userId);
-
-  if (profileError) {
-    console.error("[fulfill] failed to update profile:", profileError);
-  }
+  await activateMembership(supabase, userId, planType, expiresAt);
 
   const totalAmount = (session.amount_total ?? 0) / 100;
 
@@ -121,22 +109,8 @@ export async function fulfillCheckoutSession(
     console.error("[fulfill] failed to create payment order:", orderError);
   }
 
-  // Generate invoice number: INV-YYYY-NNNN, scoped to the current year
-  const year = now.getFullYear();
-  const yearStart = `${year}-01-01T00:00:00Z`;
-  const yearEnd = `${year + 1}-01-01T00:00:00Z`;
-  const { count: invoiceCount } = await supabase
-    .from("invoices")
-    .select("id", { count: "exact", head: true })
-    .gte("issued_at", yearStart)
-    .lt("issued_at", yearEnd);
-
-  const sequence = ((invoiceCount ?? 0) + 1).toString().padStart(4, "0");
-  const invoiceNumber = `INV-${year}-${sequence}`;
-
-  // Calculate VAT (7%)
-  const amountBeforeVat = Math.round((totalAmount / 1.07) * 100) / 100;
-  const vatAmount = Math.round((totalAmount - amountBeforeVat) * 100) / 100;
+  const invoiceNumber = await nextInvoiceNumber(supabase, now);
+  const { amountBeforeVat, vatAmount } = computeVat(totalAmount);
 
   // Create invoice
   const { error: invoiceError } = await supabase.from("invoices").insert({
@@ -160,62 +134,10 @@ export async function fulfillCheckoutSession(
     console.error("[fulfill] failed to create invoice:", invoiceError);
   }
 
-  // Referral reward: extend referrer membership by 30 days
-  const { data: buyer } = await supabase
-    .from("profiles")
-    .select("referred_by, membership_expires_at")
-    .eq("id", userId)
-    .maybeSingle();
-
-  let referrerLineUserId: string | null = null;
-  let referrerRewardDays = 30;
-
-  if (buyer?.referred_by) {
-    const { data: pendingReferral } = await supabase
-      .from("referrals")
-      .select("id, referrer_id, reward_days")
-      .eq("referred_id", userId)
-      .eq("code", buyer.referred_by)
-      .eq("status", "pending")
-      .maybeSingle();
-
-    if (pendingReferral) {
-      // Extend referrer's membership
-      const { data: referrer } = await supabase
-        .from("profiles")
-        .select("membership_expires_at, membership_type")
-        .eq("id", pendingReferral.referrer_id)
-        .maybeSingle();
-
-      if (referrer) {
-        const base =
-          referrer.membership_expires_at && new Date(referrer.membership_expires_at) > new Date()
-            ? new Date(referrer.membership_expires_at)
-            : new Date();
-        base.setDate(base.getDate() + (pendingReferral.reward_days ?? 30));
-
-        await supabase
-          .from("profiles")
-          .update({ membership_expires_at: base.toISOString() })
-          .eq("id", pendingReferral.referrer_id);
-      }
-
-      // Mark referral as rewarded
-      await supabase
-        .from("referrals")
-        .update({ status: "rewarded", rewarded_at: new Date().toISOString() })
-        .eq("id", pendingReferral.id);
-
-      const { data: referrerProfile } = await supabase
-        .from("profiles")
-        .select("line_user_id")
-        .eq("id", pendingReferral.referrer_id)
-        .maybeSingle();
-
-      referrerLineUserId = referrerProfile?.line_user_id ?? null;
-      referrerRewardDays = pendingReferral.reward_days ?? 30;
-    }
-  }
+  const { referrerLineUserId, referrerRewardDays } = await applyReferralReward(
+    supabase,
+    userId
+  );
 
   // Board subscription → enqueue AI MCQ generation jobs (one row per
   // under-target specialty). Cron processes them ≤ 1 specialty/min.
@@ -242,11 +164,6 @@ export async function fulfillCheckoutSession(
     .maybeSingle();
 
   const publishedOn = now.toISOString().slice(0, 10);
-  const planLabels: Record<string, string> = {
-    monthly: "รายเดือน",
-    yearly: "รายปี",
-    bundle: "ชุดข้อสอบ",
-  };
 
   return {
     alreadyProcessed: false,
@@ -254,7 +171,7 @@ export async function fulfillCheckoutSession(
       sessionId: session.id,
       userId,
       planType,
-      planLabel: planLabels[planType] ?? planType,
+      planLabel: PLAN_LABELS_TH[planType] ?? planType,
       totalAmount,
       amountBeforeVat,
       vatAmount,
