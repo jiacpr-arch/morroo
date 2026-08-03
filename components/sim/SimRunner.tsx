@@ -146,7 +146,7 @@ export default function SimRunner({
   const [dlgSegments, setDlgSegments] = useState<TextSegment[]>([]);
   const [dlgCount, setDlgCount] = useState(0);
   const [typing, setTyping] = useState(false);
-  const [choice, setChoice] = useState<{ q: string; options: ChoiceOption[]; hintTgt: string | null } | null>(null);
+  const [choice, setChoice] = useState<{ q: string; options: ChoiceOption[]; hintTgt: string | null; tried: Set<string> } | null>(null);
   const [decisionLeft, setDecisionLeft] = useState(getDifficulty(difficulty).decisionTime);
   const [drama, setDrama] = useState<"red" | "white" | null>(null);
   const [inter, setInter] = useState<{ text: string; green: boolean } | null>(null);
@@ -170,6 +170,8 @@ export default function SimRunner({
   const [tapCoach, setTapCoach] = useState(false);
   const currentChoiceRef = useRef<ChoiceData | null>(null);
   const retryChoiceRef = useRef<ChoiceData | null>(null);
+  // ข้อที่ตอบผิดไปแล้วของคำถามปัจจุบัน — ขีดฆ่า + ปิดไม่ให้เลือกซ้ำตอนตอบใหม่
+  const wrongPicksRef = useRef<Set<string>>(new Set());
   const hintUsedRef = useRef(false); // โหมดง่าย: ใบ้ target หลังตอบผิดครั้งแรกของแต่ละจุด
   const typeDoneRef = useRef<(() => void) | null>(null);
   const fullSegmentsRef = useRef<TextSegment[]>([]);
@@ -334,6 +336,7 @@ export default function SimRunner({
   }
 
   function showChoice(c: ChoiceData) {
+    if (currentChoiceRef.current !== c) wrongPicksRef.current = new Set();
     currentChoiceRef.current = c;
     setDrama("white");
     const diff = getDifficulty(S.current.difficulty);
@@ -341,7 +344,8 @@ export default function SimRunner({
     const hintTgt = diff.hints && hintUsedRef.current
       ? (c.options.find((o) => o.ok)?.tgt || null)
       : null;
-    setChoice({ q: c.q, options: shuffled(c.options), hintTgt });
+    // snapshot ชุดข้อผิดเข้า state — อ่าน ref ระหว่าง render ไม่ได้ (react-hooks/refs)
+    setChoice({ q: c.q, options: shuffled(c.options), hintTgt, tried: new Set(wrongPicksRef.current) });
     setDecisionLeft(diff.decisionTime);
     if (timers.current.dec) clearInterval(timers.current.dec);
     let left = diff.decisionTime;
@@ -473,6 +477,7 @@ export default function SimRunner({
 
     recordWrong(st, option);
     pushEtco2(st);
+    if (option.label) wrongPicksRef.current.add(option.label); // timeout ไม่มี label — ไม่ต้องขีด
     hintUsedRef.current = true; // จุดนี้เคยพลาด — โหมดง่ายจะใบ้ตอนเล่นซ้ำ
     vibrate([60, 40, 60]);
     sfx(() => playBeep(160, 0.28, 0.35)); // เสียงผิดต่ำ
@@ -504,7 +509,7 @@ export default function SimRunner({
     retryChoiceRef.current = currentChoiceRef.current;
     setAwaitTap(true);
     typeText(
-      `**ช้าก่อน!**${whyText}${option.worsen ? " — ผู้ป่วยแย่ลง สีผิวคล้ำขึ้น!" : ""}`,
+      `**ช้าก่อน!**${whyText}${option.worsen ? " — ผู้ป่วยแย่ลง สีผิวคล้ำขึ้น!" : ""} แตะจอเพื่อ**ตอบใหม่** (ข้อที่ผิดถูกขีดฆ่าไว้แล้ว)`,
     );
   }
 
@@ -558,6 +563,7 @@ export default function SimRunner({
     setAwaitTap(false);
     currentChoiceRef.current = null;
     retryChoiceRef.current = null;
+    wrongPicksRef.current = new Set();
     hintUsedRef.current = false;
     setResult(null);
     setReward(null);
@@ -937,13 +943,15 @@ export default function SimRunner({
                 <div className="cbs-hint">💡 ลองสั่งหมวด <b>{choice.hintTgt}</b> ดูสิ</div>
               )}
               {choice.options.map((o, i) => {
-                const dim = choice.hintTgt && o.tgt !== choice.hintTgt;
+                const tried = choice.tried.has(o.label);
+                const dim = !tried && choice.hintTgt && o.tgt !== choice.hintTgt;
                 const glow = choice.hintTgt && o.tgt === choice.hintTgt;
                 return (
                   <button
                     key={i}
                     type="button"
-                    className={`cbs-choice ${dim ? "cbs-choice-dim" : ""} ${glow ? "cbs-choice-hint" : ""}`}
+                    disabled={tried}
+                    className={`cbs-choice ${tried ? "cbs-choice-tried" : ""} ${dim ? "cbs-choice-dim" : ""} ${glow ? "cbs-choice-hint" : ""}`}
                     onClick={() => pick(o)}
                   >
                     <span className="cbs-choice-tgt">▸ สั่ง {o.tgt}</span>
