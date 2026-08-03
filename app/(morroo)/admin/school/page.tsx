@@ -53,7 +53,7 @@ export default async function SchoolAdminPage() {
   // Recent topics for picker
   const { data: topicsRecent } = await supabase
     .from("school_topics")
-    .select("id, year, slug, name_th, school_systems(slug, name_th, icon)")
+    .select("id, year, slug, name_th, code, school_systems(slug, name_th, icon)")
     .order("created_at", { ascending: false })
     .limit(50);
   type TopicPick = {
@@ -61,6 +61,7 @@ export default async function SchoolAdminPage() {
     year: number;
     slug: string;
     name_th: string;
+    code?: string | null;
     school_systems?: { slug: string; name_th: string; icon?: string } | null;
   };
 

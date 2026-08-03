@@ -20,6 +20,7 @@ interface TopicOption {
   id: string;
   year: number;
   name_th: string;
+  code?: string | null;
   school_systems?: { name_th: string; icon?: string } | null;
 }
 
@@ -778,6 +779,7 @@ export default function ImportPanel({ topics }: Props) {
                       {topics.map((t) => (
                         <option key={t.id} value={t.id}>
                           Y{t.year} · {t.school_systems?.icon} {t.name_th}
+                          {t.code ? ` (${t.code})` : ""}
                         </option>
                       ))}
                     </select>

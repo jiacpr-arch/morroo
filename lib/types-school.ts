@@ -27,6 +27,13 @@ export interface SchoolTopic {
   name_en: string;
   summary: string | null;
   sort_order: number;
+  /** รหัสวิชาตามหลักสูตร เช่น "FMMD 1201" (null = ยังไม่ผูกรหัส) */
+  code: string | null;
+  /** รหัสวิชาภาษาไทย เช่น "พศพบ 1201" */
+  code_th: string | null;
+  credits: number | null;
+  /** (ทฤษฎี-ปฏิบัติ-ค้นคว้า) เช่น "2-3-4" */
+  credit_hours: string | null;
   school_systems?: SchoolSystem;
 }
 

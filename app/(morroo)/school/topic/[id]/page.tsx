@@ -95,6 +95,15 @@ export default async function TopicPage({ params }: PageProps) {
           </Badge>
         )}
         <Badge variant="outline">ปี {topic.year}</Badge>
+        {topic.code && (
+          <Badge variant="outline" className="font-mono">{topic.code}</Badge>
+        )}
+        {topic.credits != null && (
+          <Badge variant="outline">
+            {topic.credits} หน่วยกิต
+            {topic.credit_hours && ` (${topic.credit_hours})`}
+          </Badge>
+        )}
         {mastered && (
           <Badge className="bg-emerald-100 text-emerald-700">
             <CheckCircle2 className="h-3 w-3 mr-1" /> Mastered

@@ -35,6 +35,8 @@ export default async function YearPage({ params }: PageProps) {
     getSchoolBookMap(),
   ]);
 
+  const totalCredits = topics.reduce((sum, t) => sum + (t.credits ?? 0), 0);
+
   // Group topics by system
   const bySystem: Record<string, typeof topics> = {};
   for (const t of topics) {
@@ -51,9 +53,12 @@ export default async function YearPage({ params }: PageProps) {
             <ArrowLeft className="h-4 w-4" /> กลับ
           </Button>
         </Link>
-        <div className="mt-2 flex items-center gap-2">
+        <div className="mt-2 flex items-center gap-2 flex-wrap">
           <Badge className="bg-indigo-100 text-indigo-700">ปี {yearNum}</Badge>
-          <Badge variant="secondary">{topics.length} หัวข้อ</Badge>
+          <Badge variant="secondary">{topics.length} วิชา</Badge>
+          {totalCredits > 0 && (
+            <Badge variant="secondary">รวม {totalCredits} หน่วยกิต</Badge>
+          )}
         </div>
         <h1 className="text-3xl font-bold mt-2">ชั้นปี {yearNum}</h1>
       </div>
@@ -96,6 +101,18 @@ export default async function YearPage({ params }: PageProps) {
                             <p className="text-xs text-muted-foreground mt-1">
                               {t.name_en}
                             </p>
+                            {(t.code || t.credits != null) && (
+                              <p className="text-[11px] text-muted-foreground mt-1 font-mono">
+                                {t.code}
+                                {t.code && t.credits != null && " · "}
+                                {t.credits != null && (
+                                  <>
+                                    {t.credits} หน่วยกิต
+                                    {t.credit_hours && ` (${t.credit_hours})`}
+                                  </>
+                                )}
+                              </p>
+                            )}
                           </div>
                           {t.summary && (
                             <p className="text-sm text-muted-foreground line-clamp-2">
