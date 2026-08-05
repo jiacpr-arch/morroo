@@ -232,6 +232,7 @@ interface TopicCandidate {
   year: number;
   name_th: string;
   system_name: string;
+  code: string | null;
 }
 
 interface ClassifyResult {
@@ -297,7 +298,7 @@ async function loadTopicCandidates(
 ): Promise<TopicCandidate[]> {
   const { data } = await supabase
     .from("school_topics")
-    .select("id, year, name_th, school_systems(name_th)")
+    .select("id, year, name_th, code, school_systems(name_th)")
     .order("year")
     .limit(500);
   if (!data) return [];
@@ -305,6 +306,7 @@ async function loadTopicCandidates(
     id: string;
     year: number;
     name_th: string;
+    code: string | null;
     school_systems: { name_th: string } | { name_th: string }[] | null;
   }>).map((r) => {
     const sys = Array.isArray(r.school_systems)
@@ -315,6 +317,7 @@ async function loadTopicCandidates(
       year: r.year,
       name_th: r.name_th,
       system_name: sys?.name_th ?? "—",
+      code: r.code ?? null,
     };
   });
 }
@@ -328,7 +331,12 @@ async function classifyTopic(
   const client = createAnthropic();
 
   const topicList = topics
-    .map((t, i) => `${i}. Y${t.year} · ${t.system_name} · ${t.name_th}`)
+    .map(
+      (t, i) =>
+        `${i}. Y${t.year} · ${t.system_name} · ${t.name_th}${
+          t.code ? ` · รหัสวิชา ${t.code}` : ""
+        }`,
+    )
     .join("\n");
 
   const system = `You classify Thai medical-school study materials into the correct curriculum topic.
@@ -336,6 +344,8 @@ async function classifyTopic(
 You will be given (1) the source material (PDF/text/image), and (2) a numbered list of existing topics in the curriculum (year + system + topic name).
 
 Your job: pick the index of the topic that best matches the material's content, or return -1 if no existing topic is a reasonable fit (in which case propose a new topic).
+
+Many Thai lecture slides print the course code (e.g. "FMMD 1104", "พศพบ 1104") on the cover or header. If the material shows a course code that matches a topic's รหัสวิชา, that topic is the answer — confidence 0.95+.
 
 Be conservative — only return a high confidence (>0.8) if the match is clearly correct. If multiple topics could plausibly match, pick the closest and lower the confidence.`;
 

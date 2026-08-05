@@ -5,6 +5,9 @@
 -- ให้หน้า /school/1 แสดงว่า "ปี 1 เรียนอะไรบ้าง"
 -- หัวข้อทั้งหมดผูกกับระบบ 'foundation' ที่ seed ไว้แล้วใน 20260531_school_schema.sql
 -- เป็นโครงมาตรฐานที่แอดมินแก้เพิ่ม-ลบทีหลังได้ (idempotent ด้วย on conflict do nothing)
+--
+-- หมายเหตุ: โครงชุดนี้ถูกแทนด้วยรายวิชาจริงตามเล่มหลักสูตร (FMMD/พศพบ) ใน
+-- 20260803_school_y1_fmmd_curriculum.sql — ไฟล์นั้นจะลบวิชาชุดนี้ที่ยังไม่มีเนื้อหาทิ้ง
 
 insert into public.school_topics (system_id, year, slug, name_th, name_en, summary, sort_order)
 select s.id, 1, t.slug, t.name_th, t.name_en, t.summary, t.sort_order

@@ -32,6 +32,7 @@ interface Props {
     year: number;
     slug: string;
     name_th: string;
+    code?: string | null;
     school_systems?: { slug: string; name_th: string; icon?: string } | null;
   }[];
 }
@@ -344,6 +345,10 @@ function TopicForm({ systems, busy, setBusy, notify }: { systems: Props["systems
   const [nameTh, setNameTh] = useState("");
   const [nameEn, setNameEn] = useState("");
   const [summary, setSummary] = useState("");
+  const [code, setCode] = useState("");
+  const [codeTh, setCodeTh] = useState("");
+  const [credits, setCredits] = useState("");
+  const [creditHours, setCreditHours] = useState("");
 
   async function save() {
     if (!systemId || !slug || !nameTh || !nameEn) {
@@ -360,6 +365,10 @@ function TopicForm({ systems, busy, setBusy, notify }: { systems: Props["systems
         name_th: nameTh,
         name_en: nameEn,
         summary: summary || null,
+        code: code.trim() || null,
+        code_th: codeTh.trim() || null,
+        credits: credits.trim() ? Number(credits) : null,
+        credit_hours: creditHours.trim() || null,
       });
       if (error) throw error;
       notify("ok", `เพิ่ม topic "${nameTh}" สำเร็จ`);
@@ -367,6 +376,10 @@ function TopicForm({ systems, busy, setBusy, notify }: { systems: Props["systems
       setNameTh("");
       setNameEn("");
       setSummary("");
+      setCode("");
+      setCodeTh("");
+      setCredits("");
+      setCreditHours("");
     } catch (e) {
       notify("err", e instanceof Error ? e.message : "เกิดข้อผิดพลาด");
     } finally {
@@ -423,6 +436,40 @@ function TopicForm({ systems, busy, setBusy, notify }: { systems: Props["systems
             <input
               value={nameEn}
               onChange={(e) => setNameEn(e.target.value)}
+              className="w-full border rounded p-2 text-sm"
+            />
+          </Field>
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <Field label="รหัสวิชา">
+            <input
+              value={code}
+              onChange={(e) => setCode(e.target.value)}
+              placeholder="FMMD 1201"
+              className="w-full border rounded p-2 text-sm"
+            />
+          </Field>
+          <Field label="รหัสไทย">
+            <input
+              value={codeTh}
+              onChange={(e) => setCodeTh(e.target.value)}
+              placeholder="พศพบ 1201"
+              className="w-full border rounded p-2 text-sm"
+            />
+          </Field>
+          <Field label="หน่วยกิต">
+            <input
+              value={credits}
+              onChange={(e) => setCredits(e.target.value)}
+              placeholder="3"
+              className="w-full border rounded p-2 text-sm"
+            />
+          </Field>
+          <Field label="ทฤษฎี-ปฏิบัติ-ค้นคว้า">
+            <input
+              value={creditHours}
+              onChange={(e) => setCreditHours(e.target.value)}
+              placeholder="2-3-4"
               className="w-full border rounded p-2 text-sm"
             />
           </Field>
