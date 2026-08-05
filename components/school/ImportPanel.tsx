@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -14,6 +14,7 @@ import {
   Trash2,
   X,
   Check,
+  FileText,
 } from "lucide-react";
 
 interface TopicOption {
@@ -70,6 +71,8 @@ export default function ImportPanel({ topics }: Props) {
   const [mode, setMode] = useState<Mode>("file");
   const [extractMode, setExtractMode] = useState<ExtractMode>("expand");
   const [file, setFile] = useState<File | null>(null);
+  const [dragOver, setDragOver] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const [url, setUrl] = useState("");
   const [text, setText] = useState("");
   const [hint, setHint] = useState("");
@@ -364,12 +367,77 @@ export default function ImportPanel({ topics }: Props) {
         {mode === "file" && (
           <div>
             <input
+              ref={fileInputRef}
               type="file"
               accept="application/pdf,image/png,image/jpeg,image/webp"
               onChange={(e) => setFile(e.target.files?.[0] ?? null)}
-              className="text-sm"
+              className="sr-only"
             />
-            <p className="text-xs text-muted-foreground mt-1">
+            {/* กล่องอัปโหลดที่มองเห็นชัด — ตัว <input type=file> เปล่า ๆ
+                มันจางเกินไป ผู้ใช้หาไม่เจอว่าจะแนบไฟล์ตรงไหน */}
+            <div
+              role="button"
+              tabIndex={0}
+              onClick={() => fileInputRef.current?.click()}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  fileInputRef.current?.click();
+                }
+              }}
+              onDragOver={(e) => {
+                e.preventDefault();
+                setDragOver(true);
+              }}
+              onDragLeave={() => setDragOver(false)}
+              onDrop={(e) => {
+                e.preventDefault();
+                setDragOver(false);
+                const dropped = e.dataTransfer.files?.[0];
+                if (dropped) setFile(dropped);
+              }}
+              className={`w-full cursor-pointer rounded-lg border-2 border-dashed p-6 text-center transition-colors ${
+                dragOver
+                  ? "border-violet-500 bg-violet-50"
+                  : file
+                    ? "border-emerald-300 bg-emerald-50/50"
+                    : "border-muted-foreground/30 hover:border-violet-400 hover:bg-violet-50/40"
+              }`}
+            >
+              {file ? (
+                <div className="flex items-center justify-center gap-2 text-sm">
+                  <FileText className="h-5 w-5 text-emerald-600 shrink-0" />
+                  <span className="font-medium truncate max-w-[70%]">
+                    {file.name}
+                  </span>
+                  <span className="text-muted-foreground shrink-0">
+                    ({Math.round(file.size / 1024)} KB)
+                  </span>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setFile(null);
+                      if (fileInputRef.current) fileInputRef.current.value = "";
+                    }}
+                    className="ml-1 text-muted-foreground hover:text-rose-600 shrink-0"
+                  >
+                    <X className="h-4 w-4" />
+                  </button>
+                </div>
+              ) : (
+                <div className="flex flex-col items-center gap-1 text-sm">
+                  <Upload className="h-6 w-6 text-violet-500 mb-1" />
+                  <span className="font-semibold text-violet-700">
+                    แตะเพื่อเลือกไฟล์
+                  </span>
+                  <span className="text-xs text-muted-foreground">
+                    หรือลากไฟล์มาวางตรงนี้ — PDF, PNG, JPG, WEBP
+                  </span>
+                </div>
+              )}
+            </div>
+            <p className="text-xs text-muted-foreground mt-2">
               PDF ≤32 MB / รูปภาพ ≤4 MB · ถ้าใหญ่กว่านี้
               <button
                 type="button"
@@ -380,11 +448,6 @@ export default function ImportPanel({ topics }: Props) {
               </button>{" "}
               (มีคู่มือแปลงทุก tool)
             </p>
-            {file && (
-              <p className="text-xs mt-1">
-                ✓ {file.name} ({Math.round(file.size / 1024)} KB)
-              </p>
-            )}
           </div>
         )}
         {mode === "url" && (
