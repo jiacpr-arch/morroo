@@ -2,13 +2,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, BookOpen, BookOpenText, Layers } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import {
   getSchoolTopicsByYear,
   getSchoolTopicCounts,
   getSchoolBookMap,
 } from "@/lib/supabase/queries-school";
+import SubjectRail from "@/components/school/SubjectRail";
 
 export const revalidate = 60;
 
@@ -50,7 +50,7 @@ export default async function YearPage({ params }: PageProps) {
       <div className="mb-6">
         <Link href="/school">
           <Button variant="ghost" size="sm" className="gap-2 -ml-2">
-            <ArrowLeft className="h-4 w-4" /> กลับ
+            <ArrowLeft className="h-4 w-4" /> เลือกชั้นปีอื่น
           </Button>
         </Link>
         <div className="mt-2 flex items-center gap-2 flex-wrap">
@@ -61,6 +61,9 @@ export default async function YearPage({ params }: PageProps) {
           )}
         </div>
         <h1 className="text-3xl font-bold mt-2">ชั้นปี {yearNum}</h1>
+        <p className="text-sm text-muted-foreground mt-1">
+          ปัดดูวิชาทั้งหมดของปีนี้ แล้วแตะวิชาที่อยากเรียน
+        </p>
       </div>
 
       {topics.length === 0 ? (
@@ -68,7 +71,7 @@ export default async function YearPage({ params }: PageProps) {
           เนื้อหาปีนี้กำลังจัดทำ — เริ่มที่ปี 1 ก่อนได้เลย
         </div>
       ) : (
-        <div className="space-y-8">
+        <div className="space-y-10">
           {Object.entries(bySystem).map(([slug, list]) => {
             const sys = list[0].school_systems;
             return (
@@ -76,92 +79,23 @@ export default async function YearPage({ params }: PageProps) {
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-2xl">{sys?.icon}</span>
                   <h2 className="text-xl font-bold">{sys?.name_th}</h2>
+                  <Badge variant="secondary" className="ml-1">
+                    {list.length} วิชา
+                  </Badge>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {list.map((t) => {
-                    const fc = counts.flashcards[t.id] ?? 0;
-                    const qz = counts.quizzes[t.id] ?? 0;
-                    const bookId = bookMap[t.id];
-                    const empty = fc === 0 && qz === 0;
-                    return (
-                      <Card key={t.id} className="h-full">
-                        <CardContent className="p-5 space-y-3">
-                          <div>
-                            <div className="flex items-start justify-between gap-2">
-                              <h3 className="font-semibold">{t.name_th}</h3>
-                              {empty && (
-                                <Badge
-                                  variant="secondary"
-                                  className="shrink-0 text-[10px]"
-                                >
-                                  เร็วๆ นี้
-                                </Badge>
-                              )}
-                            </div>
-                            <p className="text-xs text-muted-foreground mt-1">
-                              {t.name_en}
-                            </p>
-                            {(t.code || t.credits != null) && (
-                              <p className="text-[11px] text-muted-foreground mt-1 font-mono">
-                                {t.code}
-                                {t.code && t.credits != null && " · "}
-                                {t.credits != null && (
-                                  <>
-                                    {t.credits} หน่วยกิต
-                                    {t.credit_hours && ` (${t.credit_hours})`}
-                                  </>
-                                )}
-                              </p>
-                            )}
-                          </div>
-                          {t.summary && (
-                            <p className="text-sm text-muted-foreground line-clamp-2">
-                              {t.summary}
-                            </p>
-                          )}
-                          <div className="flex gap-2 text-xs text-muted-foreground">
-                            <span className="flex items-center gap-1">
-                              <Layers className="h-3 w-3" /> {fc} cards
-                            </span>
-                            <span className="flex items-center gap-1">
-                              <BookOpen className="h-3 w-3" /> {qz} ข้อ
-                            </span>
-                          </div>
-                          {bookId && (
-                            <Link href={`/school/book/${bookId}`}>
-                              <Button
-                                size="sm"
-                                variant="outline"
-                                className="w-full gap-2 border-amber-300 text-amber-700 hover:bg-amber-50"
-                              >
-                                <BookOpenText className="h-4 w-4" /> อ่านหนังสือฉบับเต็ม
-                              </Button>
-                            </Link>
-                          )}
-                          {empty ? (
-                            <Button
-                              size="sm"
-                              variant="outline"
-                              className="w-full"
-                              disabled
-                            >
-                              เนื้อหาเร็วๆ นี้
-                            </Button>
-                          ) : (
-                            <Link href={`/school/topic/${t.id}`}>
-                              <Button
-                                size="sm"
-                                className="w-full bg-brand hover:bg-brand-light text-white"
-                              >
-                                เปิด Topic
-                              </Button>
-                            </Link>
-                          )}
-                        </CardContent>
-                      </Card>
-                    );
-                  })}
-                </div>
+                <SubjectRail
+                  subjects={list.map((t) => ({
+                    id: t.id,
+                    name_th: t.name_th,
+                    name_en: t.name_en,
+                    code: t.code,
+                    credits: t.credits,
+                    credit_hours: t.credit_hours,
+                    lessons: counts.lessons[t.id] ?? 0,
+                    quizzes: counts.quizzes[t.id] ?? 0,
+                    bookId: bookMap[t.id],
+                  }))}
+                />
               </div>
             );
           })}

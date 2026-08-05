@@ -44,8 +44,9 @@ const { values } = parseArgs({
 const TEMPLATE = {
   flashcardsMin: 10,
   flashcardsMax: 20,
-  quizzesMin: 5,
-  quizzesMax: 10,
+  /** ข้อสอบต้องแปรตามปริมาณเนื้อหา: อย่างน้อย 1 ข้อ ต่อเนื้อหาทุก ๆ เท่านี้คำ */
+  wordsPerQuiz: 100,
+  quizzesMin: 10,
 };
 
 if (!values.manifest) {
@@ -240,9 +241,15 @@ function checkTemplate(title, units) {
       `  ⚠ "${title}": ${fc} flashcards (template ${TEMPLATE.flashcardsMin}-${TEMPLATE.flashcardsMax})`
     );
   }
-  if (qz < TEMPLATE.quizzesMin || qz > TEMPLATE.quizzesMax) {
+  // ปริมาณข้อสอบต้องสมกับความยาวเนื้อหา ไม่ใช่ตัวเลขตายตัว
+  const words = (units.lesson?.body_md ?? "").split(/\s+/).filter(Boolean).length;
+  const expected = Math.max(
+    TEMPLATE.quizzesMin,
+    Math.ceil(words / TEMPLATE.wordsPerQuiz)
+  );
+  if (qz < expected) {
     console.warn(
-      `  ⚠ "${title}": ${qz} quizzes (template ${TEMPLATE.quizzesMin}-${TEMPLATE.quizzesMax})`
+      `  ⚠ "${title}": ${qz} quizzes สำหรับเนื้อหา ~${words} คำ (ควรมี ≥ ${expected})`
     );
   }
 }

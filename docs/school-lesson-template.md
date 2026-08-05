@@ -28,7 +28,10 @@ school_book_chapters             school_lessons (body_md)        school_flashcar
 ## 2. Retrieval (`school_quizzes`)
 
 - **1 mini-quiz ต่อ 1 Part** (gate): ต้องตอบก่อนจึงไป Part ถัดไป
-- **Final retrieval ตอนจบบท: 3–5 ข้อ** (ข้อที่เหลือจากที่ใช้เป็น gate)
+- **Final retrieval ตอนจบบท:** ข้อที่เหลือจากคลังหลังหักที่ใช้เป็น gate
+- ผู้เรียนเลือกโหมดได้เอง 3 แบบที่หน้าวิชา (`ChapterList`) และสลับได้ในบท:
+  `?mode=mixed` อ่าน+ควิซคั่น (ค่าเริ่มต้น) · `?mode=read` อ่านรวดเดียว ·
+  `?mode=quiz` ทำข้อสอบของบทนั้นทั้งหมดรวดเดียว (`LessonQuizRunner`)
 - รูปแบบข้อ: single-best-answer MCQ 4–5 ตัวเลือก พร้อมคำอธิบายเฉลย
 
 ### 2.1 ไล่ระดับความยากแบบค่อยเป็นค่อยไป (difficulty ramp)
@@ -57,9 +60,15 @@ school_book_chapters             school_lessons (body_md)        school_flashcar
 | หน่วย | จำนวน |
 |-------|-------|
 | Flashcards | **10–20 ใบ** (1 concept/ใบ) |
-| Quizzes | **5–10 ข้อ** |
+| Quizzes | **≥ 1 ข้อ ต่อเนื้อหาทุก ~100 คำ** (ขั้นต่ำ 10 ข้อ) |
 
-`import-school-content.mjs` จะ `console.warn` หากจำนวนหลุดช่วงนี้
+ข้อสอบต้อง **แปรตามปริมาณเนื้อหา** ไม่ใช่ตัวเลขตายตัว — บทที่ยาว 3,000 คำ
+ต้องมีข้อสอบ ~30 ข้อขึ้นไป และทุกประเด็นที่สอบได้ (นิยาม กลไก การจำแนก ค่า cut-off
+ยา ภาวะแทรกซ้อน การตัดสินใจทางคลินิก) ควรมีข้อสอบอย่างน้อย 1 ข้อ
+
+`import-school-content.mjs` จะ `console.warn` เมื่อ flashcards หลุดช่วง
+หรือจำนวนข้อสอบน้อยกว่าสัดส่วนข้างต้น (prompt ฝั่ง `/api/admin/school/import`
+ก็สั่งให้ AI ออกข้อตามสัดส่วนเดียวกัน)
 
 ## 4. เกณฑ์ผ่าน (Mastery)
 

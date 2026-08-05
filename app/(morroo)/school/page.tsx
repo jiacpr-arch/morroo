@@ -165,23 +165,14 @@ export default async function SchoolPage() {
         <SectionUpdatesBadge section="school" className="mt-3" />
       </div>
 
-      {/* Journey: ก้าวต่อไป + ด่านปลดล็อก (แทน "เริ่มยังไง 3 ขั้น") */}
-      <JourneyBanner
-        hasYear={currentYear != null}
-        xp={xp}
-        streak={streak.current_streak}
-        masteredCount={masteredCount}
-        dueCount={dueCount}
-      />
-
       {/* เลือกชั้นปี — จุดเริ่มต้น ยกขึ้นมาบนสุด */}
       <div className="mb-8">
         <div className="flex items-center gap-2 mb-1">
           <GraduationCap className="h-5 w-5 text-brand" />
-          <h2 className="text-2xl font-bold">1. เลือกชั้นปีของคุณ</h2>
+          <h2 className="text-2xl font-bold">เลือกชั้นปีของคุณ</h2>
         </div>
         <p className="text-sm text-muted-foreground mb-4">
-          แตะปีที่คุณกำลังเรียน เพื่อดูหัวข้อทั้งหมดของปีนั้น
+          แตะปีที่คุณกำลังเรียน แล้วปัดเลือกวิชาที่อยากเรียนได้เลย
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
           {YEARS.map((y) => {
@@ -212,7 +203,7 @@ export default async function SchoolPage() {
                     )}
                     <p className="text-2xl font-bold text-brand">Y{y}</p>
                     <p className="text-xs text-muted-foreground mt-1">
-                      {topicCount > 0 ? `${topicCount} หัวข้อ` : "เร็วๆ นี้"}
+                      {topicCount > 0 ? `${topicCount} วิชา` : "เร็วๆ นี้"}
                     </p>
                   </CardContent>
                 </Card>
@@ -221,6 +212,15 @@ export default async function SchoolPage() {
           })}
         </div>
       </div>
+
+      {/* Journey: ก้าวต่อไป + ด่านปลดล็อก (แทน "เริ่มยังไง 3 ขั้น") */}
+      <JourneyBanner
+        hasYear={currentYear != null}
+        xp={xp}
+        streak={streak.current_streak}
+        masteredCount={masteredCount}
+        dueCount={dueCount}
+      />
 
       {user && (
         <>
@@ -347,7 +347,7 @@ export default async function SchoolPage() {
       <div className="mb-12">
         <div className="flex items-center gap-2 mb-1">
           <Layers className="h-5 w-5 text-brand" />
-          <h2 className="text-2xl font-bold">2. เครื่องมือทั้งหมด</h2>
+          <h2 className="text-2xl font-bold">เครื่องมือทั้งหมด</h2>
         </div>
         <p className="text-sm text-muted-foreground mb-6">
           เครื่องมือที่ล็อกอยู่จะค่อยๆ ปลดล็อกเมื่อคุณเรียนคืบหน้า — ไม่ต้องรีบ ทำทีละนิด
