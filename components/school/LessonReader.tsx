@@ -4,7 +4,8 @@ import { useMemo, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, XCircle, ArrowRight, Sparkles } from "lucide-react";
+import Link from "next/link";
+import { CheckCircle, XCircle, ArrowRight, Sparkles, Brain } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import type { SchoolLesson, SchoolQuiz } from "@/lib/types-school";
@@ -23,6 +24,13 @@ import RelatedConcepts from "./RelatedConcepts";
 interface Props {
   lesson: SchoolLesson;
   miniQuizzes: SchoolQuiz[];
+  /**
+   * "mixed" (ค่าเริ่มต้น) = อ่านทีละ Part แล้วต้องตอบ mini quiz ก่อนไปต่อ
+   * "read" = อ่านรวดเดียวทั้งบท ไม่มีคำถามคั่น (ยังนับว่าอ่านจบและได้ XP)
+   */
+  mode?: "mixed" | "read";
+  /** ลิงก์ไปโหมดควิซของบทนี้ แสดงตอนอ่านจบ */
+  quizHref?: string;
 }
 
 /**
@@ -34,7 +42,13 @@ interface Props {
  * Reaching the end marks the lesson as read (XP awarded) and reveals a final
  * retrieval quiz tail.
  */
-export default function LessonReader({ lesson, miniQuizzes }: Props) {
+export default function LessonReader({
+  lesson,
+  miniQuizzes,
+  mode = "mixed",
+  quizHref,
+}: Props) {
+  const readOnly = mode === "read";
   const { sections, gateQuizzes } = useMemo(() => {
     const parsed = splitLessonParts(lesson.body_md);
     return { sections: parsed.parts, gateQuizzes: parsed.gateQuizzes };
@@ -90,7 +104,8 @@ export default function LessonReader({ lesson, miniQuizzes }: Props) {
     setPicks({ ...picks, [gateIdx]: label });
   }
 
-  const visibleSections = sections.slice(0, step + 1);
+  const visibleSections = readOnly ? sections : sections.slice(0, step + 1);
+  const finished = readOnly ? completed : step + 1 === sections.length;
 
   return (
     <div className="space-y-6">
@@ -115,7 +130,7 @@ export default function LessonReader({ lesson, miniQuizzes }: Props) {
 
           {/* Mini-quiz gate between sections — shown on the current part too
               so the reader can answer it and unlock the Continue button */}
-          {idx < totalGates && idx <= step && quizForGate(idx) && (
+          {!readOnly && idx < totalGates && idx <= step && quizForGate(idx) && (
             <MiniQuizCard
               quiz={quizForGate(idx)!}
               picked={picks[idx] ?? null}
@@ -124,7 +139,7 @@ export default function LessonReader({ lesson, miniQuizzes }: Props) {
           )}
 
           {/* Continue button */}
-          {idx === step && step + 1 < sections.length && (
+          {!readOnly && idx === step && step + 1 < sections.length && (
             <Button
               onClick={nextSection}
               disabled={idx < totalGates && !!quizForGate(idx) && !picks[idx]}
@@ -136,22 +151,36 @@ export default function LessonReader({ lesson, miniQuizzes }: Props) {
         </div>
       ))}
 
-      {step + 1 === sections.length && (
+      {/* อ่านอย่างเดียว: กดยืนยันเองว่าอ่านจบ (โหมด mixed นับให้อัตโนมัติ) */}
+      {readOnly && !completed && (
+        <Button onClick={markCompleted} className="w-full gap-2">
+          อ่านจบแล้ว <ArrowRight className="h-4 w-4" />
+        </Button>
+      )}
+
+      {finished && (
         <Card className="border-teal-300 bg-teal-50/40">
-          <CardContent className="p-5 space-y-2">
+          <CardContent className="p-5 space-y-3">
             <p className="font-bold flex items-center gap-2 text-teal-700">
               <Sparkles className="h-5 w-5" /> เรียนจบบทนี้แล้ว
             </p>
             <p className="text-sm text-muted-foreground">
               ระบบบันทึกความก้าวหน้า + ให้ XP แล้ว
             </p>
+            {readOnly && quizHref && (
+              <Link href={quizHref}>
+                <Button className="w-full gap-2 bg-emerald-600 hover:bg-emerald-700 text-white">
+                  <Brain className="h-4 w-4" /> ทำควิซของบทนี้
+                </Button>
+              </Link>
+            )}
             <NoteEditor unitType="lesson" unitId={lesson.id} />
           </CardContent>
         </Card>
       )}
 
       {/* Final retrieval — pick remaining quizzes not used as gates */}
-      {step + 1 === sections.length && miniQuizzes.length > totalGates && (
+      {!readOnly && step + 1 === sections.length && miniQuizzes.length > totalGates && (
         <FinalQuiz quizzes={miniQuizzes.slice(totalGates)} />
       )}
     </div>

@@ -5,14 +5,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   ArrowLeft,
-  BookOpen,
   BookOpenText,
   Layers,
   Brain,
   TrendingUp,
   Sparkles,
   CheckCircle2,
-  Circle,
 } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import {
@@ -25,6 +23,8 @@ import {
   getSchoolBookByTopic,
 } from "@/lib/supabase/queries-school";
 import VisualCard from "@/components/school/VisualCard";
+import ChapterList from "@/components/school/ChapterList";
+import { splitLessonParts } from "@/lib/school/lesson-parts";
 
 export const dynamic = "force-dynamic";
 
@@ -80,6 +80,20 @@ export default async function TopicPage({ params }: PageProps) {
   const allLessonsRead = lessons.length > 0 && lessons.every((l) => lessonsRead.has(l.id));
   const mastered = mastery.seen >= 5 && mastery.pct >= MASTERY_THRESHOLD;
 
+  // จำนวนข้อสอบต่อบท = mini quiz ที่ฝังในบท + คลังข้อสอบของ layer เดียวกัน
+  // (ชุดเดียวกับที่หน้าบทเรียนหยิบไปใช้ ทั้งตอนคั่นและตอน final retrieval)
+  const chapters = lessons.map((l) => {
+    const gates = splitLessonParts(l.body_md).gateQuizzes.filter(Boolean).length;
+    const pool = quizzes.filter((q) => q.layer === l.layer).length;
+    return {
+      id: l.id,
+      title: l.title,
+      estimated_min: l.estimated_min,
+      quizCount: gates + pool,
+      read: lessonsRead.has(l.id),
+    };
+  });
+
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
       <Link href={`/school/${topic.year}`}>
@@ -116,24 +130,10 @@ export default async function TopicPage({ params }: PageProps) {
         <p className="text-sm text-muted-foreground mb-6">{topic.summary}</p>
       )}
 
-      {/* Guided sequence CTA */}
-      <Card className="mb-8 border-violet-200 bg-violet-50/50">
-        <CardContent className="p-5 flex items-center justify-between gap-4">
-          <div>
-            <p className="font-semibold text-violet-700 flex items-center gap-2">
-              <Sparkles className="h-4 w-4" /> Guided Sequence (แนะนำ)
-            </p>
-            <p className="text-sm text-muted-foreground">
-              อ่าน concept → ฝึก flashcards → ทดสอบ → mastery check (ตาม Bloom hierarchy)
-            </p>
-          </div>
-          <Link href={`/school/topic/${id}/guided`}>
-            <Button className="bg-violet-600 hover:bg-violet-700 text-white">
-              เริ่ม
-            </Button>
-          </Link>
-        </CardContent>
-      </Card>
+      {/* เนื้อหาแยกเป็นบท + เลือกโหมดการเรียน — ทางเข้าหลักของวิชา */}
+      <div className="mb-8">
+        <ChapterList chapters={chapters} />
+      </div>
 
       {/* Full-text book (reference) — อ่านได้อิสระ ไม่ gating */}
       {book && bookChapterCount > 0 && (
@@ -159,8 +159,33 @@ export default async function TopicPage({ params }: PageProps) {
         </Card>
       )}
 
-      {/* Sections */}
-      <div className="space-y-4">
+      {/* เครื่องมือเสริม — พับไว้ ไม่ให้บังทางเข้าหลัก */}
+      <details className="group mt-4">
+        <summary className="cursor-pointer list-none rounded-lg border p-4 text-sm font-semibold flex items-center justify-between hover:bg-muted/50">
+          <span>เครื่องมือเพิ่มเติม (flashcards · คลังข้อสอบ · guided · ความคืบหน้า)</span>
+          <span className="text-muted-foreground group-open:rotate-90 transition-transform">›</span>
+        </summary>
+
+        <div className="space-y-4 mt-4">
+        {/* Guided sequence */}
+        <Card className="border-violet-200 bg-violet-50/50">
+          <CardContent className="p-5 flex items-center justify-between gap-4">
+            <div>
+              <p className="font-semibold text-violet-700 flex items-center gap-2">
+                <Sparkles className="h-4 w-4" /> Guided Sequence
+              </p>
+              <p className="text-sm text-muted-foreground">
+                อ่าน concept → ฝึก flashcards → ทดสอบ → mastery check (ตาม Bloom hierarchy)
+              </p>
+            </div>
+            <Link href={`/school/topic/${id}/guided`}>
+              <Button className="bg-violet-600 hover:bg-violet-700 text-white">
+                เริ่ม
+              </Button>
+            </Link>
+          </CardContent>
+        </Card>
+
         {/* 0. Visual Summaries — เด็กอ่านสรุปก่อน */}
         {visuals.length > 0 && (
           <div>
@@ -174,48 +199,6 @@ export default async function TopicPage({ params }: PageProps) {
             </div>
           </div>
         )}
-
-        {/* 1. Learn */}
-        <SectionCard
-          step={1}
-          icon={BookOpen}
-          color="teal"
-          title="Learn (อ่าน Concept)"
-          count={lessons.length}
-          completed={allLessonsRead}
-        >
-          {lessons.length === 0 ? (
-            <p className="text-sm text-muted-foreground">
-              ยังไม่มี concept reader สำหรับหัวข้อนี้
-            </p>
-          ) : (
-            <ul className="space-y-1">
-              {lessons.map((l, i) => {
-                const read = lessonsRead.has(l.id);
-                return (
-                  <li key={l.id}>
-                    <Link
-                      href={`/school/lesson/${l.id}`}
-                      className="flex items-center gap-3 p-2 rounded hover:bg-muted/50 transition-colors"
-                    >
-                      {read ? (
-                        <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
-                      ) : (
-                        <Circle className="h-4 w-4 text-muted-foreground shrink-0" />
-                      )}
-                      <span className="flex-1 text-sm">
-                        {i + 1}. {l.title}
-                      </span>
-                      <span className="text-xs text-muted-foreground">
-                        {l.estimated_min} นาที
-                      </span>
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          )}
-        </SectionCard>
 
         {/* 2. Practice */}
         <SectionCard
@@ -307,7 +290,8 @@ export default async function TopicPage({ params }: PageProps) {
             </p>
           )}
         </SectionCard>
-      </div>
+        </div>
+      </details>
     </div>
   );
 }

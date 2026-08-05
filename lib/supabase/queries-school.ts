@@ -42,14 +42,17 @@ export async function getSchoolTopicsByYear(year: number): Promise<SchoolTopic[]
 export async function getSchoolTopicCounts(): Promise<{
   flashcards: Record<string, number>;
   quizzes: Record<string, number>;
+  lessons: Record<string, number>;
 }> {
   const supabase = await createClient();
   const flashcards: Record<string, number> = {};
   const quizzes: Record<string, number> = {};
+  const lessons: Record<string, number> = {};
 
-  const [{ data: fc }, { data: qz }] = await Promise.all([
+  const [{ data: fc }, { data: qz }, { data: ls }] = await Promise.all([
     supabase.from("school_flashcards").select("topic_id").eq("status", "active"),
     supabase.from("school_quizzes").select("topic_id").eq("status", "active"),
+    supabase.from("school_lessons").select("topic_id").eq("status", "active"),
   ]);
 
   for (const row of (fc ?? []) as { topic_id: string }[]) {
@@ -58,7 +61,10 @@ export async function getSchoolTopicCounts(): Promise<{
   for (const row of (qz ?? []) as { topic_id: string }[]) {
     quizzes[row.topic_id] = (quizzes[row.topic_id] || 0) + 1;
   }
-  return { flashcards, quizzes };
+  for (const row of (ls ?? []) as { topic_id: string }[]) {
+    lessons[row.topic_id] = (lessons[row.topic_id] || 0) + 1;
+  }
+  return { flashcards, quizzes, lessons };
 }
 
 export async function getSchoolFlashcards(opts: {

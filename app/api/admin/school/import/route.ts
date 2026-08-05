@@ -53,7 +53,8 @@ const EXTRACT_TOOL: Anthropic.Tool = {
       },
       quizzes: {
         type: "array",
-        description: "Multiple-choice questions. faithful: 5-10, expand: 10-15, deep: 15-25.",
+        description:
+          "Multiple-choice questions for the topic question bank. COUNT MUST SCALE WITH THE SOURCE: at least one question per ~100 words of lesson content, and at least one per distinct testable fact/mechanism in the source. Never return only a handful of questions for a long source — a 3,000-word lecture needs 30+ questions.",
         items: {
           type: "object",
           properties: {
@@ -105,6 +106,8 @@ Output via the submit_extracted_content tool:
 
 3. **quizzes** — MCQs with 4-5 options + correct answer + 1-3 sentence explanation. These feed the topic question bank (separate from inline mini-quizzes).
 
+**Coverage rule for quizzes (important):** the question bank must cover the material, not sample it. Budget **one question per ~100 words of the lesson you wrote**, and make sure every distinct testable point in the source — definition, mechanism, classification, number/cut-off, drug, complication, clinical decision — has at least one question. Long source → many questions. A source that yields a 3,000-word lesson needs 30+ questions; returning 5 for it is a failure. Spread difficulty (~30% easy / 50% medium / 20% hard) and avoid near-duplicate stems.
+
 General quality rules:
 - Prefer clinically relevant content over rote trivia.
 - Use concrete examples, not abstract definitions.
@@ -114,7 +117,7 @@ const MODE_INSTRUCTIONS: Record<Mode, string> = {
   faithful: `MODE: FAITHFUL EXTRACTION
 - Stay strictly to what's in the source material.
 - Do NOT add facts, examples, or context not present in the source.
-- Output: 1 lesson (2-4 parts), 10-20 flashcards, 5-10 quizzes.
+- Output: 1 lesson (2-4 parts), 10-20 flashcards, quizzes = 1 per ~100 words of the lesson (minimum 10).
 - Use this mode when the source is authoritative (textbook, lecture).`,
 
   expand: `MODE: EXPAND FOR UNDERSTANDING
@@ -141,7 +144,7 @@ Lesson structure (use these sections):
   ## 🎯 Mnemonics (optional)
   ## 🔗 Connections to other topics
 
-Output: 1 lesson (longer, 4-6 parts), 20-35 flashcards, 10-15 quizzes.
+Output: 1 lesson (longer, 4-6 parts), 20-35 flashcards, quizzes = 1 per ~100 words of the lesson (minimum 20 — scale up with the source, do not stop at the minimum).
 estimated_min: 15-30.`,
 
   deep: `MODE: DEEP DIVE
@@ -162,14 +165,16 @@ Lesson structure:
   ## 🎯 Mnemonics
   ## 🔗 Connections to other topics
 
-Output: 1 lesson (long, 5-8 parts), 30-50 flashcards, 15-25 quizzes.
+Output: 1 lesson (long, 5-8 parts), 30-50 flashcards, quizzes = 1 per ~80 words of the lesson (minimum 30 — a long lecture should produce 40-60).
 estimated_min: 25-45.`,
 };
 
+// Quiz counts scale with source length, so leave room for a large question
+// bank on top of the lesson body + flashcards.
 const OUTPUT_TOKENS: Record<Mode, number> = {
-  faithful: 12000,
-  expand: 24000,
-  deep: 40000,
+  faithful: 20000,
+  expand: 36000,
+  deep: 60000,
 };
 
 interface ExtractedContent {
