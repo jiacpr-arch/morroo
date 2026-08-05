@@ -6,7 +6,7 @@ import remarkGfm from "remark-gfm";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Loader2, Check, AlertCircle, ImagePlus, Eye } from "lucide-react";
+import { Loader2, Check, AlertCircle, ImagePlus, Eye, ArrowUp, ArrowDown } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { normalizeImageUrl } from "@/lib/school/image-url";
 import ImportPanel from "./ImportPanel";
@@ -242,6 +242,35 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
     }
   }
 
+  // สลับลำดับกับบทข้างเคียง — หน้านักเรียนเรียง "บทที่ N" ตาม sort_order นี้ตรง ๆ
+  async function moveItem(dir: -1 | 1) {
+    const idx = items.findIndex((i) => i.id === selectedId);
+    const swapIdx = idx + dir;
+    if (idx === -1 || swapIdx < 0 || swapIdx >= items.length) return;
+    const a = items[idx];
+    const b = items[swapIdx];
+    setBusy(true);
+    try {
+      const supabase = createClient();
+      const table = kind === "lesson" ? "school_lessons" : "school_book_chapters";
+      const [{ error: e1 }, { error: e2 }] = await Promise.all([
+        supabase.from(table).update({ sort_order: b.sort_order }).eq("id", a.id),
+        supabase.from(table).update({ sort_order: a.sort_order }).eq("id", b.id),
+      ]);
+      if (e1 || e2) throw e1 ?? e2;
+      const next = [...items];
+      next[idx] = { ...a, sort_order: b.sort_order };
+      next[swapIdx] = { ...b, sort_order: a.sort_order };
+      next.sort((x, y) => x.sort_order - y.sort_order);
+      setItems(next);
+      notify("ok", "สลับลำดับแล้ว");
+    } catch (e) {
+      notify("err", e instanceof Error ? e.message : "เกิดข้อผิดพลาด");
+    } finally {
+      setBusy(false);
+    }
+  }
+
   return (
     <Card>
       <CardContent className="p-4 space-y-3">
@@ -265,19 +294,49 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
             </select>
           </Field>
           <Field label={loading ? "กำลังโหลด…" : `เลือกบท (${items.length})`}>
-            <select
-              value={selectedId}
-              onChange={(e) => selectItem(e.target.value)}
-              className="w-full border rounded p-2 text-sm"
-              disabled={loading || items.length === 0}
-            >
-              {items.length === 0 && <option value="">— ไม่มี —</option>}
-              {items.map((i) => (
-                <option key={i.id} value={i.id}>
-                  {i.sort_order + 1}. {i.title}
-                </option>
-              ))}
-            </select>
+            <div className="flex gap-1">
+              <select
+                value={selectedId}
+                onChange={(e) => selectItem(e.target.value)}
+                className="w-full border rounded p-2 text-sm"
+                disabled={loading || items.length === 0}
+              >
+                {items.length === 0 && <option value="">— ไม่มี —</option>}
+                {/* หมายเลขบทตรงกับที่นักเรียนเห็นในหน้าวิชา (ลำดับจริงจาก
+                    sort_order ไม่ใช่ตัวเลข sort_order เอง ซึ่งอาจมีช่องว่าง) */}
+                {items.map((i, idx) => (
+                  <option key={i.id} value={i.id}>
+                    {idx + 1}. {i.title}
+                  </option>
+                ))}
+              </select>
+              <Button
+                type="button"
+                variant="outline"
+                size="icon"
+                title="เลื่อนบทนี้ขึ้น"
+                disabled={
+                  busy || !selectedId || items.findIndex((i) => i.id === selectedId) <= 0
+                }
+                onClick={() => moveItem(-1)}
+              >
+                <ArrowUp className="h-4 w-4" />
+              </Button>
+              <Button
+                type="button"
+                variant="outline"
+                size="icon"
+                title="เลื่อนบทนี้ลง"
+                disabled={
+                  busy ||
+                  !selectedId ||
+                  items.findIndex((i) => i.id === selectedId) >= items.length - 1
+                }
+                onClick={() => moveItem(1)}
+              >
+                <ArrowDown className="h-4 w-4" />
+              </Button>
+            </div>
           </Field>
         </div>
 
@@ -497,6 +556,30 @@ function LessonForm({ topics, busy, setBusy, notify }: { topics: Props["topics"]
   const [body, setBody] = useState("");
   const [estMin, setEstMin] = useState(5);
   const [source, setSource] = useState("");
+  const [sortOrder, setSortOrder] = useState(0);
+  const [sortOrderTouched, setSortOrderTouched] = useState(false);
+
+  // แนะนำลำดับถัดไปของวิชานี้ให้อัตโนมัติ (หน้านักเรียนเรียง "บทที่ N" ตาม
+  // sort_order ตรง ๆ) — ยังแก้เองได้เผื่ออยากแทรกกลางแถว
+  useEffect(() => {
+    let cancelled = false;
+    async function suggest() {
+      if (!topicId) return;
+      const supabase = createClient();
+      const { count } = await supabase
+        .from("school_lessons")
+        .select("id", { count: "exact", head: true })
+        .eq("topic_id", topicId);
+      if (!cancelled) {
+        setSortOrder(count ?? 0);
+        setSortOrderTouched(false);
+      }
+    }
+    suggest();
+    return () => {
+      cancelled = true;
+    };
+  }, [topicId]);
 
   async function save() {
     if (!topicId || !title || !body) return notify("err", "ขาด topic / title / body");
@@ -510,9 +593,10 @@ function LessonForm({ topics, busy, setBusy, notify }: { topics: Props["topics"]
         body_md: body,
         estimated_min: estMin,
         source: source || null,
+        sort_order: sortOrder,
       });
       if (error) throw error;
-      notify("ok", `เพิ่ม lesson "${title}" สำเร็จ`);
+      notify("ok", `เพิ่ม lesson "${title}" (บทที่ ${sortOrder + 1}) สำเร็จ`);
       setTitle("");
       setBody("");
     } catch (e) {
@@ -567,14 +651,35 @@ function LessonForm({ topics, busy, setBusy, notify }: { topics: Props["topics"]
             placeholder={"# Part 1\n...\n\n## ⏸ Mini Quiz\n\n# Part 2\n..."}
           />
         </Field>
-        <Field label="Source (optional)">
-          <input
-            value={source}
-            onChange={(e) => setSource(e.target.value)}
-            placeholder="Guyton chapter 9"
-            className="w-full border rounded p-2 text-sm"
-          />
-        </Field>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <Field label="Source (optional)">
+            <input
+              value={source}
+              onChange={(e) => setSource(e.target.value)}
+              placeholder="Guyton chapter 9"
+              className="w-full border rounded p-2 text-sm"
+            />
+          </Field>
+          <Field
+            label={`ลำดับบท (นักเรียนจะเห็นเป็น "บทที่ ${sortOrder + 1}")`}
+          >
+            <input
+              type="number"
+              min={0}
+              value={sortOrder}
+              onChange={(e) => {
+                setSortOrder(Number(e.target.value));
+                setSortOrderTouched(true);
+              }}
+              className="w-full border rounded p-2 text-sm"
+            />
+            {!sortOrderTouched && (
+              <p className="text-[11px] text-muted-foreground mt-1">
+                แนะนำอัตโนมัติ = ต่อท้ายบทที่มีอยู่ของวิชานี้ — แก้เพื่อแทรกกลางแถวได้
+              </p>
+            )}
+          </Field>
+        </div>
         <Button onClick={save} disabled={busy}>
           {busy && <Loader2 className="h-4 w-4 mr-2 animate-spin" />}
           บันทึก

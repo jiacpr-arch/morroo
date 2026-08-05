@@ -51,6 +51,12 @@ export async function POST(req: NextRequest) {
     const errors: string[] = [];
 
     if (body.lesson) {
+      // ต่อท้ายลำดับบทที่มีอยู่ของวิชานี้ — หน้านักเรียนเรียง "บทที่ N" ตาม
+      // sort_order ตรง ๆ จึงต้องมีค่านี้เสมอ ไม่งั้นบทใหม่จะแทรกมั่วอยู่หัวแถว
+      const { count } = await supabase
+        .from("school_lessons")
+        .select("id", { count: "exact", head: true })
+        .eq("topic_id", body.topic_id);
       const { error } = await supabase.from("school_lessons").insert({
         topic_id: body.topic_id,
         layer: body.lesson.layer,
@@ -58,6 +64,7 @@ export async function POST(req: NextRequest) {
         body_md: body.lesson.body_md,
         estimated_min: body.lesson.estimated_min,
         source: body.source,
+        sort_order: count ?? 0,
       });
       if (error) errors.push(`lesson: ${error.message}`);
       else lessonInserted = 1;
