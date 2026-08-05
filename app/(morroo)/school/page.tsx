@@ -20,6 +20,7 @@ import {
   getSchoolSystems,
   getSchoolTopicsByYear,
   getSchoolTopicCounts,
+  getSchoolBookMap,
   getSchoolStreak,
   getDueCount,
   getSchoolMasteryByTopic,
@@ -34,6 +35,7 @@ import {
 import JourneyBanner from "@/components/school/JourneyBanner";
 import ToolGrid from "@/components/school/ToolGrid";
 import WeeklyQuests from "@/components/school/WeeklyQuests";
+import SubjectRail from "@/components/school/SubjectRail";
 import { createClient } from "@/lib/supabase/server";
 import SectionUpdatesBadge from "@/components/SectionUpdatesBadge";
 import type { Metadata } from "next";
@@ -53,10 +55,11 @@ export default async function SchoolPage() {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
 
-  const [systems, topicsByYearArr, counts] = await Promise.all([
+  const [systems, topicsByYearArr, counts, bookMap] = await Promise.all([
     getSchoolSystems(),
     Promise.all(YEARS.map((y) => getSchoolTopicsByYear(y))),
     getSchoolTopicCounts(),
+    getSchoolBookMap(),
   ]);
   const topics = topicsByYearArr.flat();
 
@@ -165,52 +168,99 @@ export default async function SchoolPage() {
         <SectionUpdatesBadge section="school" className="mt-3" />
       </div>
 
-      {/* เลือกชั้นปี — จุดเริ่มต้น ยกขึ้นมาบนสุด */}
-      <div className="mb-8">
-        <div className="flex items-center gap-2 mb-1">
-          <GraduationCap className="h-5 w-5 text-brand" />
-          <h2 className="text-2xl font-bold">เลือกชั้นปีของคุณ</h2>
+      {/* ชั้นปี + วิชา — เห็นชื่อวิชาตรงนี้เลย ไม่ต้องกดเข้าไปดูทีละปี */}
+      <div className="mb-8 space-y-6">
+        <div>
+          <div className="flex items-center gap-2 mb-1">
+            <GraduationCap className="h-5 w-5 text-brand" />
+            <h2 className="text-2xl font-bold">ชั้นปี & วิชา</h2>
+          </div>
+          <p className="text-sm text-muted-foreground">
+            ปัดเลือกวิชาที่อยากเรียนได้เลย
+          </p>
         </div>
-        <p className="text-sm text-muted-foreground mb-4">
-          แตะปีที่คุณกำลังเรียน แล้วปัดเลือกวิชาที่อยากเรียนได้เลย
-        </p>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-          {YEARS.map((y) => {
-            const topicCount = topicsByYear[y]?.length ?? 0;
-            const disabled = topicCount === 0;
-            const isCurrent = y === currentYear;
+
+        {YEARS.map((y) => {
+          const yearTopics = topicsByYear[y] ?? [];
+          const isCurrent = y === currentYear;
+
+          if (yearTopics.length === 0) {
             return (
-              <Link
+              <div
                 key={y}
-                href={disabled ? "#" : `/school/${y}`}
-                aria-disabled={disabled}
-                className={disabled ? "pointer-events-none" : ""}
+                className="flex items-center gap-2 text-sm text-muted-foreground border rounded-lg px-4 py-3"
               >
-                <Card
-                  className={[
-                    "h-full transition-all relative",
-                    disabled
-                      ? "opacity-50"
-                      : "hover:shadow-md hover:border-brand/30 cursor-pointer",
-                    isCurrent ? "border-brand border-2 bg-brand/5" : "",
-                  ].join(" ")}
-                >
-                  <CardContent className="p-4 text-center">
-                    {isCurrent && (
-                      <Badge className="absolute -top-2 left-1/2 -translate-x-1/2 bg-brand text-white text-[10px] px-2">
-                        ชั้นปีของคุณ
-                      </Badge>
-                    )}
-                    <p className="text-2xl font-bold text-brand">Y{y}</p>
-                    <p className="text-xs text-muted-foreground mt-1">
-                      {topicCount > 0 ? `${topicCount} วิชา` : "เร็วๆ นี้"}
-                    </p>
-                  </CardContent>
-                </Card>
-              </Link>
+                <Badge variant="outline">ปี {y}</Badge>
+                {isCurrent && (
+                  <Badge className="bg-brand text-white text-[10px]">
+                    ชั้นปีของคุณ
+                  </Badge>
+                )}
+                <span>เนื้อหากำลังจัดทำ</span>
+              </div>
             );
-          })}
-        </div>
+          }
+
+          // จัดกลุ่มวิชาของปีนี้ตามระบบ (system) เหมือนที่ /school/[year] ทำ
+          const bySystem: Record<string, typeof yearTopics> = {};
+          for (const t of yearTopics) {
+            const key = t.school_systems?.slug ?? "other";
+            if (!bySystem[key]) bySystem[key] = [];
+            bySystem[key].push(t);
+          }
+
+          return (
+            <div key={y}>
+              <div className="flex items-center gap-2 mb-3">
+                <Badge
+                  className={
+                    isCurrent
+                      ? "bg-brand text-white"
+                      : "bg-indigo-100 text-indigo-700"
+                  }
+                >
+                  ปี {y}
+                </Badge>
+                {isCurrent && (
+                  <span className="text-xs text-brand font-semibold">
+                    ชั้นปีของคุณ
+                  </span>
+                )}
+                <span className="text-xs text-muted-foreground">
+                  {yearTopics.length} วิชา
+                </span>
+              </div>
+              <div className="space-y-5 pl-1">
+                {Object.entries(bySystem).map(([slug, list]) => {
+                  const sys = list[0].school_systems;
+                  return (
+                    <div key={slug}>
+                      {Object.keys(bySystem).length > 1 && (
+                        <div className="flex items-center gap-2 mb-2 text-sm">
+                          <span>{sys?.icon}</span>
+                          <span className="font-medium">{sys?.name_th}</span>
+                        </div>
+                      )}
+                      <SubjectRail
+                        subjects={list.map((t) => ({
+                          id: t.id,
+                          name_th: t.name_th,
+                          name_en: t.name_en,
+                          code: t.code,
+                          credits: t.credits,
+                          credit_hours: t.credit_hours,
+                          lessons: counts.lessons[t.id] ?? 0,
+                          quizzes: counts.quizzes[t.id] ?? 0,
+                          bookId: bookMap[t.id],
+                        }))}
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
       </div>
 
       {/* Journey: ก้าวต่อไป + ด่านปลดล็อก (แทน "เริ่มยังไง 3 ขั้น") */}
