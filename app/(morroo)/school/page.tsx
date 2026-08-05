@@ -5,8 +5,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import {
   ArrowRight,
   GraduationCap,
-  Layers,
-  Sparkles,
   Clock,
   Flame,
   Target,
@@ -26,14 +24,12 @@ import {
   getSchoolMasteryByTopic,
   getWeeklyQuestMetrics,
 } from "@/lib/supabase/queries-school";
-import { getUnlockState } from "@/lib/school/journey";
 import {
   buildWeeklyQuests,
   topSystemSlugFor,
   type Quest,
 } from "@/lib/school/quests";
 import JourneyBanner from "@/components/school/JourneyBanner";
-import ToolGrid from "@/components/school/ToolGrid";
 import WeeklyQuests from "@/components/school/WeeklyQuests";
 import SubjectRail from "@/components/school/SubjectRail";
 import { createClient } from "@/lib/supabase/server";
@@ -131,15 +127,6 @@ export default async function SchoolPage() {
         : null,
     });
   }
-
-  // Progressive-disclosure unlock state for the tool grid + journey banner.
-  const unlockState = getUnlockState({
-    hasYear: currentYear != null,
-    xp,
-    streak: streak.current_streak,
-    masteredCount,
-    dueCount,
-  });
 
   const totalFlashcards = Object.values(counts.flashcards).reduce((a, b) => a + b, 0);
   const totalQuizzes = Object.values(counts.quizzes).reduce((a, b) => a + b, 0);
@@ -392,92 +379,6 @@ export default async function SchoolPage() {
           {quests.length > 0 && <WeeklyQuests quests={quests} />}
         </>
       )}
-
-      {/* โหมดทั้งหมด จัดเป็นหมวดหมู่ — ค่อยๆ ปลดล็อกตามความก้าวหน้า */}
-      <div className="mb-12">
-        <div className="flex items-center gap-2 mb-1">
-          <Layers className="h-5 w-5 text-brand" />
-          <h2 className="text-2xl font-bold">เครื่องมือทั้งหมด</h2>
-        </div>
-        <p className="text-sm text-muted-foreground mb-6">
-          เครื่องมือที่ล็อกอยู่จะค่อยๆ ปลดล็อกเมื่อคุณเรียนคืบหน้า — ไม่ต้องรีบ ทำทีละนิด
-        </p>
-        <ToolGrid state={unlockState} />
-      </div>
-
-      {/* Systems overview */}
-      <div className="mb-8">
-        <div className="flex items-center gap-2 mb-6">
-          <Sparkles className="h-5 w-5 text-brand" />
-          <h2 className="text-2xl font-bold">ระบบที่ครอบคลุม</h2>
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-          {systems.map((s) => (
-            <Card key={s.id} className="h-full">
-              <CardContent className="p-4 text-center">
-                <span className="text-3xl block mb-2">{s.icon}</span>
-                <h3 className="font-medium text-sm">{s.name_th}</h3>
-                <p className="text-xs text-muted-foreground mt-1">{s.name_en}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-
-      {/* Evidence-based explainer */}
-      <div className="border-t pt-8 mt-12">
-        <h2 className="text-xl font-bold mb-4">วิธีเรียนรู้ที่ระบบรองรับ (Evidence-based)</h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
-          <div>
-            <p className="font-semibold mb-1">✓ Spaced Repetition (SM-2)</p>
-            <p className="text-muted-foreground">การ์ดกลับมาทบทวนตามจังหวะที่ใกล้ลืม — Ebbinghaus</p>
-          </div>
-          <div>
-            <p className="font-semibold mb-1">✓ Active Recall / Retrieval</p>
-            <p className="text-muted-foreground">ดึงข้อมูลออกจากความจำ &gt; อ่านซ้ำ — Karpicke 2011</p>
-          </div>
-          <div>
-            <p className="font-semibold mb-1">✓ Interleaving (Mixed mode)</p>
-            <p className="text-muted-foreground">สลับ topic ในรอบเดียว — Rohrer & Taylor</p>
-          </div>
-          <div>
-            <p className="font-semibold mb-1">✓ Self-explanation (Feynman)</p>
-            <p className="text-muted-foreground">อธิบายให้คนอื่นฟัง → AI ตรวจให้คะแนน + บอกที่ขาด</p>
-          </div>
-          <div>
-            <p className="font-semibold mb-1">✓ Elaborative Interrogation</p>
-            <p className="text-muted-foreground">AI ตั้งคำถาม &quot;ทำไม / อย่างไร?&quot; บังคับคิดถึงกลไก — Dunlosky 2013</p>
-          </div>
-          <div>
-            <p className="font-semibold mb-1">✓ Generation Effect (Cloze)</p>
-            <p className="text-muted-foreground">ปิดคำตอบบางส่วน — บังคับเดา/สร้างคำตอบ — Slamecka & Graf 1978</p>
-          </div>
-          <div>
-            <p className="font-semibold mb-1">✓ Mastery Learning (Bloom)</p>
-            <p className="text-muted-foreground">ปลดล็อก topic ถัดไปเมื่อได้ 80%+ — bloom 1968</p>
-          </div>
-          <div>
-            <p className="font-semibold mb-1">✓ Adaptive / Weak-subject bias</p>
-            <p className="text-muted-foreground">ระบบหยิบ topic ที่คุณไม่ถนัดมาฝึกบ่อยขึ้น — Vygotsky ZPD</p>
-          </div>
-          <div>
-            <p className="font-semibold mb-1">✓ Variable Reward</p>
-            <p className="text-muted-foreground">รางวัลสุ่มหลังจบ session — Skinner box, dopamine loop</p>
-          </div>
-          <div>
-            <p className="font-semibold mb-1">✓ Dual Coding</p>
-            <p className="text-muted-foreground">คำ + ภาพ — แสดง diagram บน flashcard (ถ้ามี) — Paivio</p>
-          </div>
-          <div>
-            <p className="font-semibold mb-1">✓ Microlearning + Streak</p>
-            <p className="text-muted-foreground">5–10 นาที/วัน + habit loop เหมือน Duolingo</p>
-          </div>
-          <div>
-            <p className="font-semibold mb-1">✓ Concept Reader + Quiz</p>
-            <p className="text-muted-foreground">อ่าน 1 concept แล้ว retrieval ทันที</p>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
