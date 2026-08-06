@@ -1,0 +1,54 @@
+name: Rebalance Sim Choice Labels
+
+# เกลี่ยความยาว label ตัวเลือกในเกมเคสที่มีอยู่ (sim_scenarios) ไม่ให้ข้อถูก
+# ยาวจนเดาได้ — AI เขียนใหม่เฉพาะ label (ok/why/then ไม่ถูกแตะ) จึงรันซ้ำได้
+# กดรันเองจากแท็บ Actions (workflow_dispatch เท่านั้น ไม่มี schedule)
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "จำนวนเกมสูงสุดต่อรอบ (เว้นว่าง = ทุกเกมที่เข้าข่าย)"
+        required: false
+      slug:
+        description: "เกลี่ยเกมเดียว (slug เช่น lc-xxxx)"
+        required: false
+      dry_run:
+        description: "ดูรายชื่อเกมที่เข้าข่ายโดยไม่แก้อะไร"
+        type: boolean
+        default: false
+
+jobs:
+  rebalance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Rebalance choice labels
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          ARGS=""
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+          if [ -n "${{ github.event.inputs.limit }}" ]; then
+            ARGS="$ARGS --limit ${{ github.event.inputs.limit }}"
+          fi
+          if [ -n "${{ github.event.inputs.slug }}" ]; then
+            ARGS="$ARGS --slug ${{ github.event.inputs.slug }}"
+          fi
+          echo "Running: npm run rebalance:simchoices -- $ARGS"
+          npm run rebalance:simchoices -- $ARGS

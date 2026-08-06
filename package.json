@@ -14,7 +14,8 @@
     "e2e:install": "playwright install chromium",
     "seed:boards": "tsx scripts/seed-all-boards.ts",
     "gen:casegames": "tsx scripts/generate-longcase-games.ts",
-    "gen:meqgames": "tsx scripts/generate-meq-games.ts"
+    "gen:meqgames": "tsx scripts/generate-meq-games.ts",
+    "rebalance:simchoices": "tsx scripts/rebalance-sim-choices.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.80.0",

@@ -46,6 +46,14 @@ function txt(s: string): string {
 function truncate(s: string, n: number): string {
   return s.length > n ? `${s.slice(0, n - 1)}…` : s;
 }
+/**
+ * เพดานความยาว label ข้อถูก ไม่ให้เกิน 1.5 เท่าของตัวลวงที่ยาวสุด
+ * (กติกาเดียวกับ validate.ts — กันผู้เล่นเดาข้อถูกจากความยาว)
+ */
+function okLabelCap(wrongLabels: string[], hardCap: number): number {
+  const maxWrong = Math.max(25, ...wrongLabels.map((l) => l.length));
+  return Math.min(hardCap, Math.floor(maxWrong * 1.5));
+}
 function say(who: string, pose: Pose, text: string, t = 5): SayNode {
   return { say: { who, pose, text: txt(text) }, t };
 }
@@ -194,7 +202,7 @@ export function longCaseToScenario(lc: LongCaseFull): SimScenario | null {
         options: [
           {
             tgt: "PE",
-            label: `ตรวจ ${okSystem}`,
+            label: truncate(`ตรวจ ${okSystem}`, okLabelCap([`ตรวจ ${distSystem}`], 70)),
             ok: true,
             then: [say("fon_defib", "talk", `ตรวจ ${okSystem}: ${okFinding}`, 5)],
           },
@@ -222,12 +230,18 @@ export function longCaseToScenario(lc: LongCaseFull): SimScenario | null {
     const reveal: StoryNode[] = abnormal.map((a) =>
       say("nurse_mint", "talk", `${a.name}: ${a.value}`, 5),
     );
+    const wrongLabLabels = normal.slice(0, 2).map((d) => txt(truncate(`สั่ง ${d.name}`, 60)));
     const options: ChoiceOption[] = [
-      { tgt: "LAB", label: txt(truncate(`สั่ง ${ok.name}`, 60)), ok: true, then: reveal },
-      ...normal.slice(0, 2).map(
-        (d): ChoiceOption => ({
+      {
+        tgt: "LAB",
+        label: txt(truncate(`สั่ง ${ok.name}`, okLabelCap(wrongLabLabels, 60))),
+        ok: true,
+        then: reveal,
+      },
+      ...wrongLabLabels.map(
+        (label): ChoiceOption => ({
           tgt: "LAB",
-          label: txt(truncate(`สั่ง ${d.name}`, 60)),
+          label,
           ok: false,
           why: "ผลออกมาปกติ ไม่ช่วยแยกโรคในเคสนี้",
         }),
@@ -260,17 +274,18 @@ export function longCaseToScenario(lc: LongCaseFull): SimScenario | null {
       dxThen.push(say("att_dech", "happy", truncate(teachingPoints[0], 220), 4));
       tpUsedInDx = true;
     }
+    const wrongDxLabels = distractorsDx.slice(0, 3).map((d) => truncate(d, 70));
     const options: ChoiceOption[] = [
       {
         tgt: "DX",
-        label: truncate(correct, 70),
+        label: truncate(correct, okLabelCap(wrongDxLabels, 70)),
         ok: true,
         then: dxThen,
       },
-      ...distractorsDx.slice(0, 3).map(
-        (d): ChoiceOption => ({
+      ...wrongDxLabels.map(
+        (label): ChoiceOption => ({
           tgt: "DX",
-          label: truncate(d, 70),
+          label,
           ok: false,
           why: "เป็น DDx ที่ต้องนึกถึง แต่ไม่ใช่การวินิจฉัยหลักของเคสนี้",
         }),
@@ -293,7 +308,7 @@ export function longCaseToScenario(lc: LongCaseFull): SimScenario | null {
           options: [
             {
               tgt: "MGMT",
-              label: truncate(first, 70),
+              label: truncate(first, okLabelCap([truncate(second, 70)], 70)),
               ok: true,
               then: [say("att_dech", "talk", `แผนการรักษา: ${truncate(first, 220)}`, 5)],
             },

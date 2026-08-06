@@ -39,6 +39,21 @@ function checkNodes(nodes: StoryNode[], path: string, charIds: Set<string>): str
       if (oks.length !== 1) {
         return `${at}: choice "${node.choice.q}" ต้องมีตัวเลือกถูก (ok: true) ตัวเดียว — ตอนนี้มี ${oks.length}`;
       }
+      // ห้าม label ซ้ำใน choice เดียว — UI ใช้ label เป็น key ขีดฆ่าข้อที่ตอบผิดแล้ว
+      const labels = node.choice.options.map((o) => o.label.trim());
+      if (new Set(labels).size !== labels.length) {
+        return `${at}: choice "${node.choice.q}" มี label ซ้ำกัน`;
+      }
+      // กัน "ข้อถูกยาวสุด" — cue ที่ทำให้ผู้เล่นเดาถูกโดยไม่ต้องคิด
+      // (floor 25: ตัวลวงสั้นมากไม่ถือเป็น cue จนกว่าข้อถูกจะยาวจริงๆ)
+      const okLen = oks[0].label.trim().length;
+      const maxWrongLen = Math.max(
+        25,
+        ...node.choice.options.filter((o) => o.ok !== true).map((o) => o.label.trim().length),
+      );
+      if (okLen > maxWrongLen * 1.5) {
+        return `${at}: choice "${node.choice.q}" ข้อถูกยาว ${okLen} ตัวอักษร เกิน 1.5 เท่าของตัวลวงที่ยาวสุด (${maxWrongLen}) — ผู้เล่นเดาข้อถูกจากความยาวได้ ปรับ label ให้ยาวใกล้เคียงกัน`;
+      }
       for (const opt of node.choice.options) {
         if (opt.then) {
           const err = checkNodes(opt.then, `${at}.then`, charIds);
