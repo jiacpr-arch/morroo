@@ -26,4 +26,9 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          # Repository variable (Settings → Variables): "deepseek" ให้ข้อ easy/medium
+          # ใช้ DeepSeek; ไม่ตั้ง/ตั้ง "claude" = ใช้ Claude ตามเดิม — สลับได้ไม่ต้อง commit
+          MCQ_GEN_PROVIDER: ${{ vars.MCQ_GEN_PROVIDER }}
+          DEEPSEEK_MODEL: ${{ vars.DEEPSEEK_MODEL }}
         run: node scripts/generate-mcq-daily.mjs

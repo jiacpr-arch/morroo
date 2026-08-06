@@ -20,6 +20,7 @@
 
 import { createClient } from "@supabase/supabase-js";
 import { notifyCronFailure, notifyCronSuccess } from "./cron-notify.mjs";
+import { generateWithTool, resolveEasyMediumProvider } from "./lib/llm.mjs";
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -33,6 +34,10 @@ if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY || !ANTHROPIC_API_KEY) {
 }
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
+
+// DRY_RUN=1: generate + validate but skip all writes (inserts, audit rows,
+// LINE notifications) — for vetting a new provider's output safely.
+const DRY_RUN = !!process.env.DRY_RUN;
 
 // Module-scoped so the top-level catch can flip any still-running audit rows
 // to 'error' even when failures happen after rows are created but before the
@@ -200,58 +205,19 @@ function buildPrompt({
 10. ภาษาไทยหรืออังกฤษตามความเหมาะสม — case scenario ภาษาไทย, ศัพท์ทางการแพทย์ภาษาอังกฤษ`;
 }
 
-async function callClaude(model, maxTokens, prompt) {
-  const res = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: {
-      "x-api-key": ANTHROPIC_API_KEY,
-      "anthropic-version": "2023-06-01",
-      "content-type": "application/json",
-    },
-    body: JSON.stringify({
-      model,
-      max_tokens: maxTokens,
-      tools: [QUESTION_TOOL],
-      tool_choice: { type: "tool", name: "submit_board_questions" },
-      messages: [{ role: "user", content: prompt }],
-    }),
+async function generateQuestions(label, target, maxTokens, prompt) {
+  const res = await generateWithTool({
+    ...target,
+    maxTokens,
+    prompt,
+    tool: QUESTION_TOOL,
+    label,
   });
-
-  if (!res.ok) {
-    const err = await res.text();
-    throw new Error(`Claude API error (${model}): ${err}`);
+  const questions = res.data?.questions;
+  if (!Array.isArray(questions) || questions.length === 0) {
+    throw new Error(`[${label}] response missing questions array (${res.provider}:${res.model})`);
   }
-
-  const data = await res.json();
-  const toolUse = (data.content ?? []).find((b) => b.type === "tool_use");
-  if (!toolUse?.input?.questions) {
-    const blockTypes = (data.content ?? []).map((b) => b.type).join(",") || "(empty)";
-    throw new Error(
-      `No tool_use questions in response (${model}) — stop_reason=${data.stop_reason} blocks=[${blockTypes}] usage=${JSON.stringify(data.usage)}`
-    );
-  }
-  if (data.stop_reason === "max_tokens") {
-    console.warn(
-      `[${model}] hit max_tokens (${maxTokens}); got ${toolUse.input.questions.length} questions, may be truncated`
-    );
-  }
-  return toolUse.input.questions;
-}
-
-async function callClaudeWithRetry(label, model, maxTokens, prompt) {
-  for (let attempt = 1; attempt <= 2; attempt++) {
-    try {
-      return await callClaude(model, maxTokens, prompt);
-    } catch (err) {
-      const msg = err?.message ?? String(err);
-      if (attempt === 2) {
-        console.error(`[${label}] failed after retry: ${msg}`);
-        throw err;
-      }
-      console.warn(`[${label}] attempt ${attempt} failed, retrying: ${msg}`);
-      await new Promise((r) => setTimeout(r, 2000));
-    }
-  }
+  return { questions, tag: `${res.provider}:${res.model}` };
 }
 
 async function loadRotation() {
@@ -361,8 +327,10 @@ async function generateForSpecialty({
 
   const difficulty =
     DIFFICULTY_CYCLE[(dayOfYear + specialtyIndex) % DIFFICULTY_CYCLE.length];
-  const model =
-    difficulty === "hard" ? "claude-sonnet-4-6" : "claude-haiku-4-5-20251001";
+  const target =
+    difficulty === "hard"
+      ? { provider: "anthropic", model: "claude-sonnet-4-6" }
+      : resolveEasyMediumProvider();
 
   const subjectRow = await findSubjectForSection(
     chosen.specialty_slug,
@@ -394,8 +362,11 @@ async function generateForSpecialty({
   });
 
   let questions;
+  let genTag;
   try {
-    questions = await callClaudeWithRetry(`${slug}-${difficulty}`, model, 8000, prompt);
+    const res = await generateQuestions(`${slug}-${difficulty}`, target, 8000, prompt);
+    questions = res.questions;
+    genTag = res.tag;
   } catch (err) {
     return { slug, chosen, subjectRow, error: err?.message ?? String(err) };
   }
@@ -435,9 +406,7 @@ async function generateForSpecialty({
       ? q.difficulty
       : difficulty,
     is_ai_enhanced: true,
-    ai_notes: `Auto-generated board daily ${new Date().toISOString().split("T")[0]} | ${
-      model.includes("sonnet") ? "sonnet" : "haiku"
-    } | topic=${chosen.topic_slug}`,
+    ai_notes: `Auto-generated board daily ${new Date().toISOString().split("T")[0]} | ${genTag} | topic=${chosen.topic_slug}`,
     status: "active",
   };
   return { slug, chosen, subjectRow, row };
@@ -494,7 +463,7 @@ async function run() {
   // Open one audit row per specialty BEFORE the expensive work so a crash
   // mid-run leaves a tombstone explaining what was attempted.
   auditJobIds = [];
-  for (const sp of specialties) {
+  for (const sp of DRY_RUN ? [] : specialties) {
     const { data: jobRow, error: jobErr } = await supabase
       .from("board_gen_jobs")
       .insert({
@@ -541,6 +510,16 @@ async function run() {
       });
     }
   });
+
+  if (DRY_RUN) {
+    console.log(`[dry-run] would insert ${rowsToInsert.length} questions — sample:`);
+    if (rowsToInsert[0]) {
+      console.log(JSON.stringify(rowsToInsert[0].row, null, 2).slice(0, 2000));
+    }
+    const failed = perSpecialty.filter((r) => !r.row);
+    for (const f of failed) console.log(`[dry-run] ${f.slug}: FAIL (${f.error ?? "unknown"})`);
+    return;
+  }
 
   // Bulk-insert every generated question in one shot.
   if (rowsToInsert.length > 0) {

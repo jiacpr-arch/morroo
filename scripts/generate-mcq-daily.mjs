@@ -10,6 +10,7 @@
  */
 
 import { createClient } from "@supabase/supabase-js";
+import { generateWithTool, resolveEasyMediumProvider } from "./lib/llm.mjs";
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -122,56 +123,19 @@ function buildPrompt(subjectNameTh, count, difficultyInstruction, existingCount)
 8. ทุกข้อต้องเหมาะสมกับระดับ NL Step 2`;
 }
 
-async function callClaude(model, maxTokens, prompt) {
-  const res = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: {
-      "x-api-key": ANTHROPIC_API_KEY,
-      "anthropic-version": "2023-06-01",
-      "content-type": "application/json",
-    },
-    body: JSON.stringify({
-      model,
-      max_tokens: maxTokens,
-      tools: [QUESTION_TOOL],
-      tool_choice: { type: "tool", name: "submit_mcq_questions" },
-      messages: [{ role: "user", content: prompt }],
-    }),
+async function generateQuestions(label, target, maxTokens, prompt) {
+  const res = await generateWithTool({
+    ...target,
+    maxTokens,
+    prompt,
+    tool: QUESTION_TOOL,
+    label,
   });
-
-  if (!res.ok) {
-    const err = await res.text();
-    throw new Error(`Claude API error (${model}): ${err}`);
+  const questions = res.data?.questions;
+  if (!Array.isArray(questions) || questions.length === 0) {
+    throw new Error(`[${label}] response missing questions array (${res.provider}:${res.model})`);
   }
-
-  const data = await res.json();
-  const toolUse = (data.content ?? []).find((b) => b.type === "tool_use");
-  if (!toolUse?.input?.questions) {
-    const blockTypes = (data.content ?? []).map((b) => b.type).join(",") || "(empty)";
-    throw new Error(
-      `No tool_use questions in response (${model}) — stop_reason=${data.stop_reason} blocks=[${blockTypes}] usage=${JSON.stringify(data.usage)}`
-    );
-  }
-  if (data.stop_reason === "max_tokens") {
-    console.warn(`[${model}] hit max_tokens (${maxTokens}); got ${toolUse.input.questions.length} questions, may be truncated`);
-  }
-  return toolUse.input.questions;
-}
-
-async function callClaudeWithRetry(label, model, maxTokens, prompt) {
-  for (let attempt = 1; attempt <= 2; attempt++) {
-    try {
-      return await callClaude(model, maxTokens, prompt);
-    } catch (err) {
-      const msg = err?.message ?? String(err);
-      if (attempt === 2) {
-        console.error(`[${label}] failed after retry: ${msg}`);
-        throw err;
-      }
-      console.warn(`[${label}] attempt ${attempt} failed, retrying: ${msg}`);
-      await new Promise((r) => setTimeout(r, 2000));
-    }
-  }
+  return { questions, tag: `${res.provider}:${res.model}` };
 }
 
 async function run() {
@@ -221,22 +185,28 @@ async function run() {
     existing,
   );
 
-  console.log("Calling Haiku-easy (6q) + Haiku-medium (15q) + Sonnet-hard (9q) in parallel...");
-  const [haikuEasyResult, haikuMediumResult, sonnetResult] = await Promise.allSettled([
-    callClaudeWithRetry("haiku-easy", "claude-haiku-4-5-20251001", 16000, haikuEasyPrompt),
-    callClaudeWithRetry("haiku-medium", "claude-haiku-4-5-20251001", 32000, haikuMediumPrompt),
-    callClaudeWithRetry("sonnet-hard", "claude-sonnet-4-6", 24000, sonnetPrompt),
+  const easyMediumTarget = resolveEasyMediumProvider();
+  console.log(
+    `easy/medium → ${easyMediumTarget.provider}:${easyMediumTarget.model}, hard → anthropic:claude-sonnet-4-6`
+  );
+  console.log("Calling easy (6q) + medium (15q) + hard (9q) in parallel...");
+  const [easyResult, mediumResult, hardResult] = await Promise.allSettled([
+    generateQuestions("easy", easyMediumTarget, 16000, haikuEasyPrompt),
+    generateQuestions("medium", easyMediumTarget, 32000, haikuMediumPrompt),
+    generateQuestions("hard", { provider: "anthropic", model: "claude-sonnet-4-6" }, 24000, sonnetPrompt),
   ]);
 
   const allQuestions = [];
   for (const [label, result] of [
-    ["haiku-easy", haikuEasyResult],
-    ["haiku-medium", haikuMediumResult],
-    ["sonnet-hard", sonnetResult],
+    ["easy", easyResult],
+    ["medium", mediumResult],
+    ["hard", hardResult],
   ]) {
     if (result.status === "fulfilled") {
-      console.log(`${label}: ${result.value.length} questions`);
-      allQuestions.push(...result.value);
+      console.log(`${label}: ${result.value.questions.length} questions (${result.value.tag})`);
+      for (const q of result.value.questions) {
+        allQuestions.push({ ...q, gen_tag: result.value.tag });
+      }
     } else {
       console.error(`${label} batch failed: ${result.reason?.message ?? result.reason}`);
     }
@@ -267,7 +237,7 @@ async function run() {
       detailed_explanation: q.detailed_explanation || null,
       difficulty: ["easy", "medium", "hard"].includes(q.difficulty) ? q.difficulty : "medium",
       is_ai_enhanced: true,
-      ai_notes: `Auto-generated on ${now.toISOString().split("T")[0]} | ${q.difficulty === "hard" ? "sonnet" : "haiku"}`,
+      ai_notes: `Auto-generated on ${now.toISOString().split("T")[0]} | ${q.gen_tag}`,
       status: "active",
     }));
 
@@ -276,6 +246,12 @@ async function run() {
   if (validQuestions.length === 0) {
     console.error("No valid questions after validation");
     process.exit(1);
+  }
+
+  if (process.env.DRY_RUN) {
+    console.log(`[dry-run] would insert ${validQuestions.length} questions — sample:`);
+    console.log(JSON.stringify(validQuestions[0], null, 2).slice(0, 2000));
+    return;
   }
 
   const { data: inserted, error: insertErr } = await supabase
