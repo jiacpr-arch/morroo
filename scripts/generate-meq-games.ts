@@ -203,10 +203,16 @@ async function run() {
       const invalid = describeScenarioError(scenario, extraCharIds);
       if (invalid) throw new Error(`ไม่ผ่าน validate: ${invalid}`);
 
+      // fallback ต้องไม่ใช้ e.title ดิบ — อาจเฉลยโรค (มาจาก exams.title เก่า
+      // ที่ยังไม่ผ่านกติกาไม่สปอยล์); ใช้ placeholder กลางแทนถ้า AI ไม่ส่ง title มา
+      const safeTitle =
+        typeof scenario.title === "string" && scenario.title.trim()
+          ? scenario.title
+          : `MEQ: ข้อสอบ${e.category ? ` ${e.category}` : ""}`;
       const { error: insErr } = await supabase.from("sim_scenarios").upsert(
         {
           slug: `meq-${e.id}`,
-          title: String(scenario.title ?? e.title),
+          title: safeTitle,
           subtitle: scenario.subtitle ? String(scenario.subtitle) : null,
           difficulty_tag: String(scenario.difficultyTag ?? "basic"),
           category: "meq",

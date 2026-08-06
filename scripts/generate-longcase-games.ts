@@ -171,10 +171,16 @@ async function run() {
       const invalid = describeScenarioError(scenario, extraCharIds);
       if (invalid) throw new Error(`ไม่ผ่าน validate: ${invalid}`);
 
+      // fallback ต้องไม่ใช้ c.title ดิบ — อาจเฉลยโรค (มาจาก long_cases.title เก่า
+      // ที่ยังไม่ผ่านกติกาไม่สปอยล์); ใช้ placeholder กลางแทนถ้า AI ไม่ส่ง title มา
+      const safeTitle =
+        typeof scenario.title === "string" && scenario.title.trim()
+          ? scenario.title
+          : `LONG CASE: เคส${c.specialty ? ` ${c.specialty}` : ""}`;
       const { error: insErr } = await supabase.from("sim_scenarios").upsert(
         {
           slug: `lc-${id}`,
-          title: String(scenario.title ?? c.title),
+          title: safeTitle,
           subtitle: scenario.subtitle ? String(scenario.subtitle) : null,
           difficulty_tag: String(scenario.difficultyTag ?? "basic"),
           category: "longcase",
