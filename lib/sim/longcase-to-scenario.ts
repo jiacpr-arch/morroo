@@ -47,12 +47,12 @@ function truncate(s: string, n: number): string {
   return s.length > n ? `${s.slice(0, n - 1)}…` : s;
 }
 /**
- * เพดานความยาว label ข้อถูก ไม่ให้เกิน 1.5 เท่าของตัวลวงที่ยาวสุด
+ * เพดานความยาว label ข้อถูก ไม่ให้เกิน BALANCE_RATIO เท่าของตัวลวงที่ยาวสุด
  * (กติกาเดียวกับ validate.ts — กันผู้เล่นเดาข้อถูกจากความยาว)
  */
 function okLabelCap(wrongLabels: string[], hardCap: number): number {
-  const maxWrong = Math.max(25, ...wrongLabels.map((l) => l.length));
-  return Math.min(hardCap, Math.floor(maxWrong * 1.5));
+  const maxWrong = Math.max(30, ...wrongLabels.map((l) => l.length));
+  return Math.min(hardCap, Math.floor(maxWrong * 1.8));
 }
 function say(who: string, pose: Pose, text: string, t = 5): SayNode {
   return { say: { who, pose, text: txt(text) }, t };

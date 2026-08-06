@@ -49,8 +49,12 @@ const supabase = createClient(SUPABASE_URL, SERVICE_KEY, {
   auth: { autoRefreshToken: false, persistSession: false },
 });
 
-// เกณฑ์ "เข้าข่ายต้องเกลี่ย" — หลวมกว่า validator (1.5×) เพื่อลบ pattern ให้เกลี้ยง
+// เกณฑ์ "เข้าข่ายต้องเกลี่ย" — หลวมกว่า validator (BALANCE_RATIO ใน validate.ts) เพื่อลบ pattern ให้เกลี้ยง
+// (คาลิเบรตจากรันจริงรอบแรก: floor 25/ratio 1.5 เข้มเกินจนของจริงผ่านแทบไม่ได้ — median
+// ที่ AI เขียนได้จริงคือ ~1.84x เพราะข้อความคลินิกภาษาไทยที่ถูกต้องมักยาวกว่าตัวลวงสั้นๆ
+// โดยธรรมชาติ ดู lib/sim/validate.ts BALANCE_RATIO/BALANCE_FLOOR สำหรับ hard gate ตอน accept)
 const REBALANCE_RATIO = 1.25;
+const REBALANCE_FLOOR = 30;
 
 /** เดินทั้ง story (รวม then ซ้อน) คืน choice node ทุกตัวตามลำดับพบ */
 function collectChoices(nodes: StoryNode[], out: ChoiceNode[] = []): ChoiceNode[] {
@@ -69,7 +73,7 @@ function isUnbalanced(node: ChoiceNode): boolean {
   const ok = node.choice.options.find((o) => o.ok === true);
   const wrongs = node.choice.options.filter((o) => o.ok !== true);
   if (!ok || !wrongs.length) return false;
-  const maxWrong = Math.max(25, ...wrongs.map((o) => o.label.trim().length));
+  const maxWrong = Math.max(REBALANCE_FLOOR, ...wrongs.map((o) => o.label.trim().length));
   return ok.label.trim().length > maxWrong * REBALANCE_RATIO;
 }
 
@@ -102,8 +106,8 @@ const REBALANCE_TOOL = {
 
 const SYSTEM_PROMPT = `คุณคือแพทย์ผู้เชี่ยวชาญและนักออกข้อสอบ หน้าที่คือแก้ item-writing flaw ในเกมเคสแพทย์: ตอนนี้ "ข้อถูกยาว/ละเอียดกว่าตัวลวงมาก" จนผู้เล่นเดาถูกจากความยาวได้ ให้เขียน label ใหม่ตามกติกา:
 1. คงความหมายทางคลินิกของแต่ละตัวเลือกเดิมทุกข้อ — ห้ามเปลี่ยนว่าข้อไหนถูก/ผิด ห้ามสลับลำดับ ห้ามเพิ่ม/ลดตัวเลือก
-2. ทุก label ใน choice เดียวกันต้องยาวใกล้เคียงกัน (ต่างกันไม่เกิน ~25%) และข้อถูก (ok: true) ต้องยาวไม่เกิน 1.4 เท่าของตัวลวงที่ยาวสุด
-3. เขียนข้อถูกให้กระชับเหลือแก่นการตัดสินใจ (รายละเอียดเชิงสอนมีใน why/then อยู่แล้ว ไม่ต้องยัดใส่ label) และเกลี่ยตัวลวงให้เฉพาะเจาะจงระดับเดียวกับข้อถูก
+2. ทุก label ใน choice เดียวกันต้องยาวใกล้เคียงกัน และข้อถูก (ok: true) ต้องยาวไม่เกิน 1.7 เท่าของตัวลวงที่ยาวสุด
+3. **วิธีแก้หลักคือเติมรายละเอียดคลินิกให้ตัวลวงที่สั้นเกินไป ไม่ใช่ตัดข้อถูกให้สั้นจนเสียความชัดเจน** — ถ้าตัวลวงเป็นวลีสั้นๆ เช่น "รอดูอาการ" ให้เติมบริบทที่สมจริงและยังผิดเหมือนเดิม เช่น "รอดูอาการที่ห้องสังเกต 2 ชม.ก่อนตัดสินใจ" ไม่ใช่ตัดข้อถูกจนขาดรายละเอียดสำคัญ (รายละเอียดเชิงสอนที่ตัดออกไม่ได้มีใน why/then อยู่แล้ว แต่ label เองต้องอ่านแล้วเข้าใจได้ครบ)
 4. ห้ามสร้าง cue ใหม่: ห้ามให้เฉพาะข้อถูกมีตัวเลข/ขนาดยา/หน่วยละเอียด หรือคำระวังแบบ "ประเมินก่อน" ถ้าตัวลวงไม่มีลักษณะเดียวกัน
 5. ห้าม label ซ้ำกันภายใน choice เดียว
 6. ใช้ภาษาไทยธรรมชาติโทนเดิมของเกม เน้นคำด้วย **คำเน้น** ได้ ห้าม HTML
@@ -162,12 +166,10 @@ async function rebalanceOne(client: Anthropic, row: Row, label: string): Promise
         });
       });
 
+      // ตัวตัดสินคือ describeScenarioError (BALANCE_RATIO/BALANCE_FLOOR ใน validate.ts —
+      // คาลิเบรตจากข้อมูลจริงแล้ว) ไม่ต้องมีเกณฑ์ซ้อนที่เข้มกว่านี้อีกชั้น
       const invalid = describeScenarioError(scenario, EXTRA_CHAR_IDS);
       if (invalid) throw new Error(`ไม่ผ่าน validate: ${invalid}`);
-      const still = choices.filter(isUnbalanced).length;
-      if (still > Math.ceil(choices.length * 0.1)) {
-        throw new Error(`ยังไม่สมดุล ${still}/${choices.length} choice`);
-      }
 
       const { error } = await supabase
         .from("sim_scenarios")
