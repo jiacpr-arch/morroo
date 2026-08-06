@@ -37,7 +37,11 @@ const EXAM_TOOL = {
   input_schema: {
     type: "object",
     properties: {
-      title: { type: "string", description: "ชื่อ case เช่น 'ชาย 55 ปี อาเจียนเป็นเลือด'" },
+      title: {
+        type: "string",
+        description:
+          "ชื่อ case จากอาการนำ เช่น 'ชาย 55 ปี อาเจียนเป็นเลือด' — ห้ามมีชื่อโรค การวินิจฉัย หรือตัวย่อโรคในชื่อ (เช่น ห้ามใช้คำว่า 'DKA', 'Upper GI Bleeding', 'ไส้ติ่งอักเสบ') เพราะข้อสอบให้ผู้เรียนวินิจฉัยเอง",
+      },
       parts: {
         type: "array",
         minItems: 6,
@@ -95,7 +99,8 @@ async function run() {
 8. ตอนที่ 5: ถาม management plan
 9. ตอนที่ 6: complication หรือ follow-up → ถาม long-term management
 10. แต่ละตอน: scenario, question, answer (ละเอียด evidence-based), key_points (3-5 จุดสำคัญ), time_minutes (default 10)
-11. ภาษาไทย (medical term ภาษาอังกฤษได้)`;
+11. ภาษาไทย (medical term ภาษาอังกฤษได้)
+12. ห้ามเฉลยการวินิจฉัยในชื่อข้อสอบ (title) เด็ดขาด — ตั้งชื่อจากอาการนำ/สถานการณ์ผู้ป่วยเท่านั้น (เช่น "ชาย 55 ปี อาเจียนเป็นเลือด") ห้ามมีชื่อโรค คำวินิจฉัย หรือตัวย่อโรคปรากฏในชื่อ เพราะจะสปอยล์คำตอบก่อนผู้เรียนเริ่มทำข้อสอบ`;
 
   const res = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",

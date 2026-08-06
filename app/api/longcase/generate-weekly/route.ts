@@ -56,10 +56,11 @@ export async function POST(request: Request) {
 7. pe_findings: ผลตรวจร่างกายแยกตาม system
 8. lab_results: ผล lab ทั้ง normal และ abnormal
 9. ภาษาไทย (medical terms อังกฤษได้)
+10. ห้ามเฉลยการวินิจฉัยในชื่อเคส (title) เด็ดขาด — ตั้งชื่อจากอาการนำ/สถานการณ์เท่านั้น ห้ามมีชื่อโรค คำวินิจฉัย หรือตัวย่อโรคปรากฏในชื่อ
 
 ตอบเป็น JSON เท่านั้น:
 {
-  "title": "ชื่อ case เช่น 'ชาย 45 ปี แน่นหน้าอก'",
+  "title": "ชื่อ case จากอาการนำ ห้ามเฉลยโรค เช่น 'ชาย 45 ปี แน่นหน้าอก'",
   "difficulty": "medium|hard",
   "patient_info": {
     "age": 45,

@@ -30,7 +30,11 @@ const LONG_CASE_TOOL = {
   input_schema: {
     type: "object",
     properties: {
-      title: { type: "string" },
+      title: {
+        type: "string",
+        description:
+          "ชื่อเคสจากอาการนำ/สถานการณ์ผู้ป่วย เช่น 'ชาย 45 ปี ปวดท้องน้อยด้านขวา' — ห้ามมีชื่อโรค การวินิจฉัย หรือตัวย่อโรคในชื่อเด็ดขาด (เช่น ห้ามใช้ 'ไส้ติ่งอักเสบ', 'appendicitis') เพราะผู้เรียนต้องวินิจฉัยเอง",
+      },
       difficulty: { type: "string", enum: ["easy", "medium", "hard"] },
       patient_info: {
         type: "object",
@@ -114,7 +118,8 @@ async function run() {
 8. lab_results: object map ชื่อ test → ผล
 9. ภาษาไทย (medical terms อังกฤษได้)
 10. teaching_points: 3-5 จุด, examiner_questions: 3-5 ข้อ
-11. scoring_rubric: history 25, pe 20, lab 15, ddx 20, management 20`;
+11. scoring_rubric: history 25, pe 20, lab 15, ddx 20, management 20
+12. ห้ามเฉลยการวินิจฉัยในชื่อเคส (title) เด็ดขาด — ตั้งชื่อจากอาการนำ/สถานการณ์เท่านั้น (เช่น "ชาย 45 ปี ปวดท้องน้อยด้านขวา") ห้ามมีชื่อโรค คำวินิจฉัย หรือตัวย่อโรคปรากฏในชื่อ`;
 
   const res = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
