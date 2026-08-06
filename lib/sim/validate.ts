@@ -9,7 +9,20 @@ import { isValidScenario, type SimScenario, type StoryNode } from "./types";
 const POSE_SET = new Set(["idle", "talk", "panic", "stern", "happy"]);
 const RHYTHM_SET = new Set(["flat", "vf", "nsr"]);
 
-function checkNodes(nodes: StoryNode[], path: string, charIds: Set<string>): string | null {
+// ค่าเริ่มต้นกันเดาข้อถูกจากความยาว — คาลิเบรตจากข้อมูลจริง: ลองบังคับ 1.5x/floor 25
+// กับเกมที่มีอยู่จริง 161 เกมแล้วพบว่า median ที่เขียนได้จริงคือ ~1.84x (ข้อความคลินิก
+// ภาษาไทยที่ถูกต้องมักยาวกว่าตัวลวงสั้นๆ โดยธรรมชาติ) เข้มเกินจนของจริงผ่านแทบไม่ได้
+// (ratio: BALANCE_RATIO, floor: BALANCE_FLOOR)
+const BALANCE_RATIO = 1.8;
+const BALANCE_FLOOR = 30;
+
+function checkNodes(
+  nodes: StoryNode[],
+  path: string,
+  charIds: Set<string>,
+  balanceRatio: number,
+  balanceFloor: number,
+): string | null {
   for (let i = 0; i < nodes.length; i++) {
     const node = nodes[i];
     const at = `${path}[${i}]`;
@@ -45,18 +58,18 @@ function checkNodes(nodes: StoryNode[], path: string, charIds: Set<string>): str
         return `${at}: choice "${node.choice.q}" มี label ซ้ำกัน`;
       }
       // กัน "ข้อถูกยาวสุด" — cue ที่ทำให้ผู้เล่นเดาถูกโดยไม่ต้องคิด
-      // (floor 25: ตัวลวงสั้นมากไม่ถือเป็น cue จนกว่าข้อถูกจะยาวจริงๆ)
+      // (floor: ตัวลวงสั้นมากไม่ถือเป็น cue จนกว่าข้อถูกจะยาวจริงๆ)
       const okLen = oks[0].label.trim().length;
       const maxWrongLen = Math.max(
-        25,
+        balanceFloor,
         ...node.choice.options.filter((o) => o.ok !== true).map((o) => o.label.trim().length),
       );
-      if (okLen > maxWrongLen * 1.5) {
-        return `${at}: choice "${node.choice.q}" ข้อถูกยาว ${okLen} ตัวอักษร เกิน 1.5 เท่าของตัวลวงที่ยาวสุด (${maxWrongLen}) — ผู้เล่นเดาข้อถูกจากความยาวได้ ปรับ label ให้ยาวใกล้เคียงกัน`;
+      if (okLen > maxWrongLen * balanceRatio) {
+        return `${at}: choice "${node.choice.q}" ข้อถูกยาว ${okLen} ตัวอักษร เกิน ${balanceRatio} เท่าของตัวลวงที่ยาวสุด (${maxWrongLen}) — ผู้เล่นเดาข้อถูกจากความยาวได้ ปรับ label ให้ยาวใกล้เคียงกัน`;
       }
       for (const opt of node.choice.options) {
         if (opt.then) {
-          const err = checkNodes(opt.then, `${at}.then`, charIds);
+          const err = checkNodes(opt.then, `${at}.then`, charIds, balanceRatio, balanceFloor);
           if (err) return err;
         }
       }
@@ -68,10 +81,14 @@ function checkNodes(nodes: StoryNode[], path: string, charIds: Set<string>): str
 /**
  * คืน null เมื่อผ่าน หรือข้อความไทยอธิบายจุดที่ผิดจุดแรก
  * @param extraCharIds slug ตัวละครจากตาราง sim_characters ที่อนุญาตเพิ่มจาก built-in
+ * @param balanceRatio ข้อถูกยาวได้ไม่เกินกี่เท่าของตัวลวงที่ยาวสุด (ดีฟอลต์ BALANCE_RATIO)
+ * @param balanceFloor ตัวลวงสั้นกว่านี้ไม่นับเป็นฐานเทียบ (ดีฟอลต์ BALANCE_FLOOR)
  */
 export function describeScenarioError(
   scenario: unknown,
   extraCharIds: string[] = [],
+  balanceRatio: number = BALANCE_RATIO,
+  balanceFloor: number = BALANCE_FLOOR,
 ): string | null {
   if (!isValidScenario(scenario)) {
     return "โครงสร้างโจทย์ไม่ถูกต้อง — ต้องมี slug, title และ story (array ของ node แบบ say/inter/skip/choice/end โดยทุก choice มี ≥2 ตัวเลือกและมีข้อถูก)";
@@ -88,5 +105,5 @@ export function describeScenarioError(
     return `bg "${s.bg}" ไม่รู้จัก (ใช้ได้: ${Object.keys(SIM_BACKGROUNDS).join(", ")})`;
   }
   const charIds = new Set([...Object.keys(SIM_CHARACTERS), ...extraCharIds]);
-  return checkNodes(s.story, "story", charIds);
+  return checkNodes(s.story, "story", charIds, balanceRatio, balanceFloor);
 }

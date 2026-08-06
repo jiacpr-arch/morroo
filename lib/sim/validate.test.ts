@@ -29,7 +29,7 @@ describe("choice anti-guessing guards", () => {
     expect(describeScenarioError(s)).toBeNull();
   });
 
-  it("ไม่ผ่านเมื่อข้อถูกยาวเกิน 1.5 เท่าของตัวลวงที่ยาวสุด", () => {
+  it("ไม่ผ่านเมื่อข้อถูกยาวเกิน BALANCE_RATIO เท่าของตัวลวงที่ยาวสุด", () => {
     const s = scenarioWithOptions([
       {
         label: "ส่งตรวจ UA และ CBC พร้อมสั่ง Scrotal Doppler ultrasound ควบคู่กับปรึกษาศัลยแพทย์ทันทีไม่รอผล",
@@ -41,9 +41,9 @@ describe("choice anti-guessing guards", () => {
     expect(describeScenarioError(s)).toContain("เดาข้อถูกจากความยาว");
   });
 
-  it("floor 25: ตัวลวงสั้นมากไม่ flag ถ้าข้อถูกไม่ยาวจริง", () => {
+  it("floor 30: ตัวลวงสั้นมากไม่ flag ถ้าข้อถูกไม่ยาวจริง", () => {
     const s = scenarioWithOptions([
-      { label: "ตรวจ Cremasteric reflex สองข้าง", ok: true }, // ~30 ตัวอักษร
+      { label: "ตรวจ Cremasteric reflex สองข้างให้ครบ", ok: true }, // ~40 ตัวอักษร
       { label: "ทำ Prehn's sign" },
       { label: "คลำต่อมน้ำเหลือง" },
     ]);
