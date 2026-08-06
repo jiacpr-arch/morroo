@@ -25,9 +25,19 @@ export const SCENARIO_TOOL = {
     type: "object" as const,
     required: ["slug", "title", "subtitle", "difficultyTag", "story"],
     properties: {
-      slug: { type: "string", description: "kebab-case เช่น lc-appendicitis-01" },
-      title: { type: "string", description: "ชื่อเคสภาษาไทย ขึ้นต้นด้วย LONG CASE: ..." },
-      subtitle: { type: "string", description: "โจทย์ผู้ป่วย 1 ประโยค (อายุ เพศ อาการนำ)" },
+      slug: {
+        type: "string",
+        description: "kebab-case จากอาการนำ เช่น lc-abd-pain-01 — ห้ามมีชื่อโรค/การวินิจฉัยใน slug",
+      },
+      title: {
+        type: "string",
+        description:
+          "ชื่อเคสภาษาไทย ขึ้นต้นด้วย LONG CASE: ... — ตั้งจากอาการนำ/สถานการณ์ให้ชวนติดตาม ห้ามมีชื่อโรค การวินิจฉัย หรือตัวย่อโรค (ห้ามสปอยล์เฉลย)",
+      },
+      subtitle: {
+        type: "string",
+        description: "โจทย์ผู้ป่วย 1 ประโยค (อายุ เพศ อาการนำ) — ห้ามเฉลยการวินิจฉัย",
+      },
       difficultyTag: { type: "string", enum: ["basic", "megacode"] },
       bg: {
         type: "string",
@@ -85,7 +95,7 @@ export function longcaseSystemPrompt(
 5. ทุก choice มี 3 ตัวเลือก และมีข้อถูก (ok: true) เพียงข้อเดียว; ข้อถูกใส่ then เดินเรื่องต่อ
 6. **หัวใจของคุณภาพ — ตัวเลือกผิด (distractor) ต้องเป็น "กับดักคลินิกที่สมจริงเฉพาะเคสนี้" ไม่ใช่ตัวลวงงี่เง่าหรือกฎ generic** และ why ต้องอธิบายเหตุผลเฉพาะเคสว่าทำไมผิด (เช่น ในตัวอย่าง torsion: ตัวลวง "รอผล Doppler ก่อนผ่าตัด" + why "ถ้า suspicion สูงการรอ imaging ทำให้เลย golden period"). ให้เลียนแบบความลึกของ distractor + why จากตัวอย่างด้านล่าง
 7. เนื้อหาต้องอิงข้อมูลในเคสเท่านั้น ห้ามแต่งข้อมูลผู้ป่วย/ผลตรวจเพิ่ม
-8. slug ขึ้นต้นด้วย lc- ; title ขึ้นต้นด้วย "LONG CASE: ..."
+8. slug ขึ้นต้นด้วย lc- ; title ขึ้นต้นด้วย "LONG CASE: ..." — **ห้ามเฉลยโรคในชื่อเกม:** title/subtitle/slug ต้องตั้งจากอาการนำหรือสถานการณ์ที่ชวนติดตาม (เช่น "ปวดท้องย้ายลงท้องน้อยขวา") ห้ามมีชื่อโรค การวินิจฉัย หรือตัวย่อโรค (เช่น appendicitis, DKA, STEMI) เพราะผู้เล่นต้องได้ฝึกวินิจฉัยเอง — ยกเว้นเคสที่โจทย์ให้การวินิจฉัยมาตั้งแต่ต้นและเกมวัดการจัดการ (เช่น เคสวิสัญญีเตรียมผ่าตัด)
 9. tgt ของตัวเลือกใช้หมวดสั้น: ASK, PE, LAB, DX, MGMT, CONSULT
 10. เลือก bg (ฉากหลัง) ให้ตรงบริบทของเคส: opd_room (ตรวจ OPD/คลินิก/เคสเรื้อรัง), er_bay (ฉุกเฉิน/trauma/ความดันตก), ward_day / ward_night (ผู้ป่วยใน — night เมื่อเหตุเกิดกลางดึก), labor_room (สูติฯ), nursery (ทารกแรกเกิด), icu (วิกฤต/ใส่ท่อแล้ว)
 
