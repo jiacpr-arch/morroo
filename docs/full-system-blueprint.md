@@ -579,6 +579,9 @@ ADMIN_EMAIL=admin@yourdomain.com
 
 # === AI ===
 ANTHROPIC_API_KEY=sk-ant-...
+DEEPSEEK_API_KEY=sk-...          # DeepSeek — ใช้สร้างโจทย์ MCQ/board ข้อ easy/medium (GH Actions)
+MCQ_GEN_PROVIDER=claude          # "deepseek" | "claude" (default claude) — provider ของข้อ easy/medium
+DEEPSEEK_MODEL=deepseek-v4-flash # override โมเดล DeepSeek ได้ (optional)
 
 # === Image Generation ===
 TOGETHER_API_KEY=...             # Together AI for blog cover images
