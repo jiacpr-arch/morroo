@@ -2,19 +2,16 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Database } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
-import {
-  getSchoolSystems,
-  getSchoolConcepts,
-} from "@/lib/supabase/queries-school";
+import { getSchoolSystems } from "@/lib/supabase/queries-school";
 import SchoolAdminPanel from "@/components/school/SchoolAdminPanel";
 
 export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "Admin · School Content",
-  description: "เพิ่ม / แก้ไข topic / lesson / flashcard / quiz / case",
+  description: "อัปโหลดไฟล์เรียน → AI สร้างบทเรียน flashcards และข้อสอบ",
 };
 
 export default async function SchoolAdminPage() {
@@ -29,25 +26,20 @@ export default async function SchoolAdminPage() {
     .maybeSingle();
   if (profile?.role !== "admin") redirect("/school");
 
-  const [systems, concepts] = await Promise.all([
-    getSchoolSystems(),
-    getSchoolConcepts(),
-  ]);
+  const systems = await getSchoolSystems();
 
-  // Recent counts for dashboard
-  const [topicsRes, fcRes, lsRes, qzRes, csRes] = await Promise.all([
+  // Counts for the dashboard tiles — what the import actually produces.
+  const [topicsRes, fcRes, lsRes, qzRes] = await Promise.all([
     supabase.from("school_topics").select("id", { count: "exact", head: true }),
     supabase.from("school_flashcards").select("id", { count: "exact", head: true }),
     supabase.from("school_lessons").select("id", { count: "exact", head: true }),
     supabase.from("school_quizzes").select("id", { count: "exact", head: true }),
-    supabase.from("school_cases").select("id", { count: "exact", head: true }),
   ]);
   const counts = {
     topics: topicsRes.count ?? 0,
     flashcards: fcRes.count ?? 0,
     lessons: lsRes.count ?? 0,
     quizzes: qzRes.count ?? 0,
-    cases: csRes.count ?? 0,
   };
 
   // Topics for the pickers. The import panel filters these by ชั้นปี + เทอม, so
@@ -79,28 +71,22 @@ export default async function SchoolAdminPage() {
         <Badge className="bg-slate-200 text-slate-700">Admin</Badge>
         <Badge variant="outline">School content</Badge>
       </div>
-      <h1 className="text-2xl font-bold mb-1 flex items-center gap-2">
-        <Database className="h-6 w-6" /> School Content Management
-      </h1>
+      <h1 className="text-2xl font-bold mb-1">จัดการเนื้อหา School</h1>
       <p className="text-sm text-muted-foreground mb-6">
-        เพิ่มเนื้อหาเองได้ — หรือ paste JSON bulk import (รูปแบบเหมือน manifest)
+        อัปโหลดไฟล์เรียน → AI สร้างบทเรียน flashcards และข้อสอบให้
+        นักเรียนเลือกใช้เองว่าจะอ่านสรุป ไล่ flashcard หรือทำข้อสอบ
       </p>
 
-      <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
         {(
           [
-            ["Topics", counts.topics, "📚"],
-            ["Lessons", counts.lessons, "📖"],
-            ["Flashcards", counts.flashcards, "🎴"],
-            ["Quizzes", counts.quizzes, "🧠"],
-            ["Cases", counts.cases, "🩺"],
+            ["วิชา", counts.topics],
+            ["บทเรียน", counts.lessons],
+            ["Flashcards", counts.flashcards],
+            ["ข้อสอบ", counts.quizzes],
           ] as const
-        ).map(([label, n, icon]) => (
-          <div
-            key={label}
-            className="rounded border p-3 text-center bg-card"
-          >
-            <p className="text-2xl">{icon}</p>
+        ).map(([label, n]) => (
+          <div key={label} className="rounded border p-3 text-center bg-card">
             <p className="text-2xl font-bold">{n}</p>
             <p className="text-xs text-muted-foreground">{label}</p>
           </div>
@@ -109,7 +95,6 @@ export default async function SchoolAdminPage() {
 
       <SchoolAdminPanel
         systems={systems.map((s) => ({ id: s.id, slug: s.slug, name_th: s.name_th, icon: s.icon }))}
-        concepts={concepts.map((c) => ({ id: c.id, slug: c.slug, name_th: c.name_th, icon: c.icon }))}
         topics={(topicsRecent as TopicPick[] | null) ?? []}
       />
     </div>
