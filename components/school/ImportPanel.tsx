@@ -167,7 +167,17 @@ export default function ImportPanel({ topics: initialTopics, systems }: Props) {
         })
         .select("id, year, term, name_th, code")
         .single();
-      if (insErr) throw insErr;
+      // รหัสวิชามี unique index — ชนแล้วข้อความจาก Postgres อ่านไม่รู้เรื่อง
+      if (insErr) {
+        if (insErr.code === "23505") {
+          throw new Error(
+            code
+              ? `รหัสวิชา "${code}" มีอยู่แล้ว — เลือกวิชานั้นจาก dropdown หรือใช้รหัสอื่น`
+              : "วิชานี้มีอยู่แล้ว — เลือกจาก dropdown ได้เลย",
+          );
+        }
+        throw insErr;
+      }
       const created = data as TopicOption;
       setTopics((prev) => [...prev, created]);
       setTopicId(created.id);
