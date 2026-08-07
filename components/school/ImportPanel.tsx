@@ -43,8 +43,15 @@ interface Extracted {
   classification?: Classification | null;
 }
 
+interface SystemOption {
+  id: string;
+  slug: string;
+  name_th: string;
+}
+
 interface Props {
   topics: TopicOption[];
+  systems: SystemOption[];
 }
 
 type ExtractMode = "faithful" | "expand" | "deep";
@@ -74,10 +81,17 @@ const PDF_MAX = 32 * 1024 * 1024;
 /** Give up on a step rather than spin forever if the server side was killed. */
 const STEP_TIMEOUT_MS = 240_000;
 
-export default function ImportPanel({ topics }: Props) {
-  const [year, setYear] = useState<number>(topics[0]?.year ?? 1);
+export default function ImportPanel({ topics: initialTopics, systems }: Props) {
+  // Subjects added inline live here until the next server render picks them up.
+  const [topics, setTopics] = useState<TopicOption[]>(initialTopics);
+  const [year, setYear] = useState<number>(initialTopics[0]?.year ?? 1);
   const [term, setTerm] = useState<number>(1);
   const [topicId, setTopicId] = useState("");
+  const [addingTopic, setAddingTopic] = useState(false);
+  const [newTopicName, setNewTopicName] = useState("");
+  const [newTopicCode, setNewTopicCode] = useState("");
+  const [newTopicSystem, setNewTopicSystem] = useState(systems[0]?.id ?? "");
+  const [savingTopic, setSavingTopic] = useState(false);
   const [extractMode, setExtractMode] = useState<ExtractMode>("faithful");
   const [file, setFile] = useState<File | null>(null);
   const [dragOver, setDragOver] = useState(false);
@@ -113,6 +127,68 @@ export default function ImportPanel({ topics }: Props) {
 
   function topicLabel(t: TopicOption) {
     return `${t.name_th}${t.code ? ` (${t.code})` : ""}`;
+  }
+
+  /**
+   * Create a subject right here, so adding one never means leaving the upload
+   * screen. slug/name_en aren't shown to students anywhere (their pages address
+   * topics by id) — they're only NOT NULL in the table — so derive them from the
+   * course code or a timestamp rather than asking for them.
+   */
+  async function addTopic() {
+    const name = newTopicName.trim();
+    if (!name) {
+      setError("ใส่ชื่อวิชาก่อน");
+      return;
+    }
+    if (!newTopicSystem) {
+      setError("ไม่พบหมวดวิชา — สร้าง system ใน Supabase ก่อน");
+      return;
+    }
+    setSavingTopic(true);
+    setError(null);
+    try {
+      const { createClient } = await import("@/lib/supabase/client");
+      const supabase = createClient();
+      const code = newTopicCode.trim();
+      const slug = code
+        ? code.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")
+        : `topic-${Date.now()}`;
+      const { data, error: insErr } = await supabase
+        .from("school_topics")
+        .insert({
+          system_id: newTopicSystem,
+          year,
+          term,
+          slug,
+          name_th: name,
+          name_en: name,
+          code: code || null,
+        })
+        .select("id, year, term, name_th, code")
+        .single();
+      // รหัสวิชามี unique index — ชนแล้วข้อความจาก Postgres อ่านไม่รู้เรื่อง
+      if (insErr) {
+        if (insErr.code === "23505") {
+          throw new Error(
+            code
+              ? `รหัสวิชา "${code}" มีอยู่แล้ว — เลือกวิชานั้นจาก dropdown หรือใช้รหัสอื่น`
+              : "วิชานี้มีอยู่แล้ว — เลือกจาก dropdown ได้เลย",
+          );
+        }
+        throw insErr;
+      }
+      const created = data as TopicOption;
+      setTopics((prev) => [...prev, created]);
+      setTopicId(created.id);
+      setNewTopicName("");
+      setNewTopicCode("");
+      setAddingTopic(false);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "เพิ่มวิชาไม่สำเร็จ");
+    } finally {
+      setSavingTopic(false);
+    }
   }
 
   /**
@@ -359,8 +435,15 @@ export default function ImportPanel({ topics }: Props) {
           </label>
 
           <label className="block sm:col-span-2">
-            <span className="mb-1 block text-xs font-semibold text-muted-foreground">
+            <span className="mb-1 flex items-baseline justify-between gap-2 text-xs font-semibold text-muted-foreground">
               วิชา
+              <button
+                type="button"
+                onClick={() => setAddingTopic((v) => !v)}
+                className="font-normal underline hover:text-foreground"
+              >
+                {addingTopic ? "ยกเลิก" : "+ เพิ่มวิชาใหม่"}
+              </button>
             </span>
             <select
               value={topicId}
@@ -377,9 +460,47 @@ export default function ImportPanel({ topics }: Props) {
           </label>
         </div>
 
-        {visibleTopics.length === 0 && (
+        {addingTopic && (
+          <div className="space-y-2 rounded-lg border bg-muted/30 p-3">
+            <p className="text-xs text-muted-foreground">
+              วิชาใหม่จะถูกสร้างในปี {year} เทอม {term}
+            </p>
+            <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
+              <input
+                value={newTopicName}
+                onChange={(e) => setNewTopicName(e.target.value)}
+                placeholder="ชื่อวิชา เช่น ชีววิทยาของเซลล์"
+                className="w-full rounded border p-2 text-sm sm:col-span-2"
+              />
+              <input
+                value={newTopicCode}
+                onChange={(e) => setNewTopicCode(e.target.value)}
+                placeholder="รหัสวิชา (ไม่ใส่ก็ได้)"
+                className="w-full rounded border p-2 text-sm"
+              />
+            </div>
+            {systems.length > 1 && (
+              <select
+                value={newTopicSystem}
+                onChange={(e) => setNewTopicSystem(e.target.value)}
+                className="w-full rounded border p-2 text-sm"
+              >
+                {systems.map((s) => (
+                  <option key={s.id} value={s.id}>
+                    {s.name_th}
+                  </option>
+                ))}
+              </select>
+            )}
+            <Button size="sm" onClick={addTopic} disabled={savingTopic || !newTopicName.trim()}>
+              {savingTopic ? "กำลังเพิ่ม…" : "เพิ่มวิชา"}
+            </Button>
+          </div>
+        )}
+
+        {visibleTopics.length === 0 && !addingTopic && (
           <p className="text-xs text-amber-700">
-            ยังไม่มีวิชาสำหรับปี {year} เทอม {term} — สร้างที่แท็บ Topic ก่อน
+            ยังไม่มีวิชาสำหรับปี {year} เทอม {term} — กด &quot;+ เพิ่มวิชาใหม่&quot; ด้านบน
           </p>
         )}
 
