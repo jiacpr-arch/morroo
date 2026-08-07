@@ -279,4 +279,45 @@ describe("longCaseToScenario", () => {
     // element ที่ malformed (ไม่มี modelAnswer) ต้องถูกข้าม → ไม่มีช่วงซักถาม
     expect(sayTexts(malformed).some((t) => t.includes("ช่วงอาจารย์ซักถาม"))).toBe(false);
   });
+
+  // ---- sprite ผู้ป่วยต้องตรงเพศ/วัย (บั๊กเดิม: hardcode patient_generic ทุกเคส) ----
+  function hxWho(s: SimScenario): string[] {
+    // คนที่ตอบ HPI — อยู่ใน then ของข้อถูก choice ซักประวัติ หรือเป็น say ตรงๆ
+    const out: string[] = [];
+    for (const n of s.story) {
+      if ("say" in n) out.push(n.say.who);
+      if ("choice" in n) {
+        for (const o of n.choice.options) {
+          for (const t of o.then ?? []) if ("say" in t) out.push(t.say.who);
+        }
+      }
+    }
+    return out;
+  }
+  const hxCase = (patient_info: Record<string, unknown>, pi = "มีอาการมา 2 วัน") =>
+    longCaseToScenario(
+      mk({ correct_diagnosis: "X", accepted_ddx: ["X", "Y"], patient_info, history_script: { cc: "อาการนำ", pi, pmh: "ไม่มีโรคประจำตัว" } }),
+    )!;
+
+  it("voices the history with a sprite matching the patient's sex and age", () => {
+    expect(hxWho(hxCase({ age: 58, gender: "ชาย" }))).toContain("patient_generic");
+    expect(hxWho(hxCase({ age: 32, gender: "หญิง" }))).toContain("patient_female");
+    expect(hxWho(hxCase({ age: 72, gender: "หญิง" }))).toContain("patient_elderly");
+    const boy = hxWho(hxCase({ age: 10, gender: "ชาย" }));
+    expect(boy).toContain("patient_child");
+    expect(boy).not.toContain("patient_generic");
+  });
+
+  it("lets the mother answer for infants and toddlers who cannot speak", () => {
+    const infant = hxWho(hxCase({ age: "8 เดือน", gender: "ชาย" }));
+    expect(infant).toContain("mother_rel");
+    expect(infant).not.toContain("patient_generic");
+    expect(hxWho(hxCase({ age: 4, gender: "หญิง" }))).toContain("mother_rel");
+  });
+
+  it("uses the pregnant sprite only for visibly pregnant patients", () => {
+    expect(hxWho(hxCase({ age: 28, gender: "หญิง" }, "ตั้งครรภ์ GA 34 สัปดาห์ เจ็บครรภ์"))).toContain("patient_pregnant");
+    // ครรภ์อ่อน (ectopic 7 สัปดาห์) ยังไม่เห็นท้อง → sprite หญิงปกติ
+    expect(hxWho(hxCase({ age: 26, gender: "หญิง" }, "ประจำเดือนขาด ตั้งครรภ์ 7 สัปดาห์ ปวดท้องน้อย"))).toContain("patient_female");
+  });
 });

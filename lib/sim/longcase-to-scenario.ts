@@ -58,6 +58,46 @@ function say(who: string, pose: Pose, text: string, t = 5): SayNode {
   return { say: { who, pose, text: txt(text) }, t };
 }
 
+/** อายุเป็นปี (ทศนิยมได้) — รองรับทั้งตัวเลขล้วนและ string แบบ "8 เดือน"/"19 ปี" */
+function ageYears(raw: unknown): number | null {
+  if (typeof raw === "number" && Number.isFinite(raw)) return raw;
+  const s = asStr(raw);
+  const m = s.match(/([\d.]+)/);
+  if (!m) return null;
+  const n = Number(m[1]);
+  if (!Number.isFinite(n)) return null;
+  if (/เดือน|month/i.test(s)) return n / 12;
+  if (/วัน|day/i.test(s)) return n / 365;
+  return n;
+}
+
+/**
+ * เลือก sprite ผู้ป่วยให้ตรงเพศ/วัยจาก patient_info + ประวัติ
+ * (แก้บั๊กเดิมที่ hardcode patient_generic ทำให้เด็ก 8 เดือนโผล่เป็นชายวัย 50)
+ * - แสดงครรภ์เฉพาะเมื่อข้อความบอกชัดว่าท้องแก่/GA ≥ 20 สัปดาห์ — ครรภ์อ่อน
+ *   (เช่น ectopic 7 สัปดาห์) ยังไม่เห็นท้อง ใช้ sprite หญิงปกติถูกกว่า
+ * - ไม่มี sprite ชายสูงอายุ (patient_elderly เป็นหญิง) — ชายสูงอายุใช้
+ *   patient_generic (ชายวัยกลางคน) ซึ่งใกล้เคียงที่สุด
+ */
+function patientCharId(pi: Record<string, unknown>, hxText: string): string {
+  const age = ageYears(pi.age);
+  const female = /หญิง|female/i.test(asStr(pi.gender));
+  if (age !== null && age < 15) return "patient_child";
+  if (female) {
+    const ga = hxText.match(/(?:GA|อายุครรภ์|ตั้งครรภ์|ครรภ์)\D{0,10}(\d{1,2})\s*(?:สัปดาห์|wk|week)/i);
+    if (/ท้องแก่|ครรภ์แก่|ใกล้คลอด/.test(hxText) || (ga && Number(ga[1]) >= 20)) return "patient_pregnant";
+    if (age !== null && age >= 60) return "patient_elderly";
+    return "patient_female";
+  }
+  return "patient_generic";
+}
+
+/** เด็กเล็ก/ทารกพูดเองไม่ได้ — ให้แม่/ญาติเป็นคนตอบซักประวัติแทน */
+function historySpeaker(pi: Record<string, unknown>, patientChar: string): string {
+  const age = ageYears(pi.age);
+  return patientChar === "patient_child" && age !== null && age < 7 ? "mother_rel" : patientChar;
+}
+
 function vitalsLine(pi: Record<string, unknown>): string {
   const v = asObj(pi.vitals);
   const parts: string[] = [];
@@ -116,9 +156,16 @@ export function longCaseToScenario(lc: LongCaseFull): SimScenario | null {
     typeof lc.history_script === "string" ? { pi: lc.history_script } : asObj(lc.history_script),
   );
   const story: StoryNode[] = [];
+  const patientChar = patientCharId(pi, [hx.cc, hx.pi, hx.onset, hx.pmh].filter(Boolean).join(" "));
+  const hxSpeaker = historySpeaker(pi, patientChar);
 
   // ---- Act 0: เปิดเรื่อง ----
-  const demo = [asStr(pi.name) || "ผู้ป่วย", asStr(pi.age) && `อายุ ${asStr(pi.age)} ปี`, asStr(pi.gender)]
+  const ageStr = asStr(pi.age);
+  const demo = [
+    asStr(pi.name) || "ผู้ป่วย",
+    ageStr && (/ปี|เดือน|วัน/.test(ageStr) ? `อายุ ${ageStr}` : `อายุ ${ageStr} ปี`),
+    asStr(pi.gender),
+  ]
     .filter(Boolean)
     .join(" · ");
   const vit = vitalsLine(pi);
@@ -145,7 +192,7 @@ export function longCaseToScenario(lc: LongCaseFull): SimScenario | null {
             tgt: "ASK",
             label: "ซักประวัติปัจจุบัน (HPI)",
             ok: true,
-            then: [say("patient_generic", "talk", truncate(hpiText, 300), 6)],
+            then: [say(hxSpeaker, "talk", truncate(hpiText, 300), 6)],
           },
           {
             tgt: "ASK",
@@ -157,7 +204,7 @@ export function longCaseToScenario(lc: LongCaseFull): SimScenario | null {
       },
     });
   } else if (hpiText) {
-    story.push(say("patient_generic", "talk", truncate(hpiText, 300), 6));
+    story.push(say(hxSpeaker, "talk", truncate(hpiText, 300), 6));
   }
 
   if (laterCandidates.length >= 2) {

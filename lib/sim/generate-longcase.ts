@@ -79,7 +79,7 @@ export function longcaseSystemPrompt(
 
 ## โครงเรื่องมาตรฐาน (เดินตามลำดับนี้ 9-12 จุดตัดสินใจ)
 1. เปิดเรื่อง: พยาบาลรายงาน vitals จาก patient_info + inter อาการนำ + attending เปิดเคส
-2. ซักประวัติ (~2 choice): เลือกคำถามที่แยกโรคได้ — ข้อถูกใส่ then ให้ patient_generic ตอบตาม history_script
+2. ซักประวัติ (~2 choice): เลือกคำถามที่แยกโรคได้ — ข้อถูกใส่ then ให้ผู้ป่วยตอบตาม history_script (ใช้ sprite ผู้ป่วยที่ตรงเพศ/วัยตามกติกาข้อ 1 — ทารก/เด็กเล็กให้ mother_rel ตอบแทน)
 3. ตรวจร่างกาย (~2 choice): เลือกระบบ/สิ่งที่ตรวจ — then เผย pe_findings สำคัญ
 4. Investigation (~1-2 choice): เลือก lab/imaging ที่ถูก (อิง lab_results ตัวที่ isAbnormal:true) และรู้ว่าเมื่อไรไม่ควรรอผล
 5. วินิจฉัย (1 choice): ข้อถูก = correct_diagnosis; ข้อลวง = accepted_ddx ตัวอื่น
