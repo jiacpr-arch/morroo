@@ -50,15 +50,18 @@ export default async function SchoolAdminPage() {
     cases: csRes.count ?? 0,
   };
 
-  // Recent topics for picker
+  // Topics for the pickers. The import panel filters these by ชั้นปี + เทอม, so
+  // it needs the whole curriculum — not just the 50 most recent.
   const { data: topicsRecent } = await supabase
     .from("school_topics")
-    .select("id, year, slug, name_th, code, school_systems(slug, name_th, icon)")
-    .order("created_at", { ascending: false })
-    .limit(50);
+    .select("id, year, term, slug, name_th, code, school_systems(slug, name_th, icon)")
+    .order("year")
+    .order("sort_order")
+    .limit(500);
   type TopicPick = {
     id: string;
     year: number;
+    term?: number | null;
     slug: string;
     name_th: string;
     code?: string | null;

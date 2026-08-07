@@ -1,3 +1,21 @@
+/**
+ * School import — AI extraction, split into small steps.
+ *
+ * Why steps? Generating a lesson + all flashcards + a full question bank in one
+ * request needs 20k-60k output tokens. That takes several minutes of model time,
+ * which blows past the serverless execution limit (the function is killed and
+ * the browser just sees the request die) — and `max_tokens` that large is also
+ * rejected outright on a non-streaming request. So the client drives one small
+ * request per step instead:
+ *
+ *   step=lesson      → the source file, once. Returns lesson + topic guess.
+ *   step=flashcards  → derived from the returned lesson text (no re-upload).
+ *   step=quizzes     → same, one small batch per call; the client loops.
+ *
+ * Every step caps `max_tokens` low enough to finish in well under a minute, and
+ * streams the response so a slow generation can never trip the non-streaming
+ * duration ceiling.
+ */
 import { NextRequest, NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { createAnthropic } from "@/lib/anthropic";
@@ -10,51 +28,75 @@ export const runtime = "nodejs";
 export const maxDuration = 300;
 
 type Mode = "faithful" | "expand" | "deep";
+type Step = "lesson" | "flashcards" | "quizzes";
 
-const EXTRACT_TOOL: Anthropic.Tool = {
-  name: "submit_extracted_content",
-  description:
-    "Submit a lesson + flashcards + quizzes extracted (and optionally expanded) from the source material.",
+/** Output ceiling per step. Kept small on purpose — see the file header. */
+const STEP_MAX_TOKENS: Record<Step, number> = {
+  lesson: 6000,
+  flashcards: 4500,
+  quizzes: 5000,
+};
+
+// ────────────────────────────────────────────────────────────────────────────
+// Tools — one per step, so the model only ever fills a small payload
+// ────────────────────────────────────────────────────────────────────────────
+
+const LESSON_TOOL: Anthropic.Tool = {
+  name: "submit_lesson",
+  description: "Submit the lesson extracted from the source material.",
   input_schema: {
     type: "object",
     properties: {
-      lesson: {
-        type: "object",
-        properties: {
-          title: { type: "string", description: "Concise lesson title (Thai or English)" },
-          body_md: {
-            type: "string",
-            description:
-              "Markdown lesson split into 2-6 parts. Between consecutive parts put a `## ⏸ Mini Quiz` marker line, and immediately after each marker embed ONE quiz that tests the part just above it, as a fenced ```quiz block containing JSON: " +
-              '{ "stem": string, "choices": [{ "label": "A"|"B"|"C"|"D", "text": string }], "correct_answer": "A"|"B"|"C"|"D", "explanation": string }. ' +
-              "The inline quiz MUST be answerable from the part directly above it. " +
-              "In expand/deep modes, also include sections: ## 🧠 Why it matters, ## 🔑 Key concepts, ## 💡 Clinical pearls, ## 🎯 Mnemonics (when applicable), ## 🔗 Connections to other topics.",
-          },
-          layer: {
-            type: "string",
-            enum: ["foundation", "anatomy", "physio", "biochem", "path", "pharm", "clinical"],
-          },
-          estimated_min: { type: "integer", minimum: 1, maximum: 120 },
-        },
-        required: ["title", "body_md", "layer", "estimated_min"],
+      title: { type: "string", description: "Concise lesson title (Thai or English)" },
+      body_md: {
+        type: "string",
+        description:
+          "Markdown lesson split into 2-4 parts. Between consecutive parts put a `## ⏸ Mini Quiz` marker line, and immediately after each marker embed ONE quiz that tests the part just above it, as a fenced ```quiz block containing JSON: " +
+          '{ "stem": string, "choices": [{ "label": "A"|"B"|"C"|"D", "text": string }], "correct_answer": "A"|"B"|"C"|"D", "explanation": string }. ' +
+          "The inline quiz MUST be answerable from the part directly above it. " +
+          "Aim for 700-1200 words of prose — long enough to teach, short enough to return in one response.",
       },
+      layer: {
+        type: "string",
+        enum: ["foundation", "anatomy", "physio", "biochem", "path", "pharm", "clinical"],
+      },
+      estimated_min: { type: "integer", minimum: 1, maximum: 120 },
+    },
+    required: ["title", "body_md", "layer", "estimated_min"],
+  },
+};
+
+const FLASHCARDS_TOOL: Anthropic.Tool = {
+  name: "submit_flashcards",
+  description: "Submit a batch of atomic flashcards for the lesson.",
+  input_schema: {
+    type: "object",
+    properties: {
       flashcards: {
         type: "array",
-        description: "Atomic flashcards. faithful: 10-20, expand: 20-35, deep: 30-50.",
         items: {
           type: "object",
           properties: {
-            front: { type: "string" },
-            back: { type: "string" },
+            front: { type: "string", description: "Concept/question, under 120 chars" },
+            back: { type: "string", description: "Answer, 1-4 sentences, under 400 chars" },
             difficulty: { type: "string", enum: ["easy", "medium", "hard"] },
           },
           required: ["front", "back", "difficulty"],
         },
       },
+    },
+    required: ["flashcards"],
+  },
+};
+
+const QUIZZES_TOOL: Anthropic.Tool = {
+  name: "submit_quizzes",
+  description: "Submit a batch of multiple-choice questions for the topic question bank.",
+  input_schema: {
+    type: "object",
+    properties: {
       quizzes: {
         type: "array",
-        description:
-          "Multiple-choice questions for the topic question bank. COUNT MUST SCALE WITH THE SOURCE: at least one question per ~100 words of lesson content, and at least one per distinct testable fact/mechanism in the source. Never return only a handful of questions for a long source — a 3,000-word lecture needs 30+ questions.",
         items: {
           type: "object",
           properties: {
@@ -80,9 +122,13 @@ const EXTRACT_TOOL: Anthropic.Tool = {
         },
       },
     },
-    required: ["lesson", "flashcards", "quizzes"],
+    required: ["quizzes"],
   },
 };
+
+// ────────────────────────────────────────────────────────────────────────────
+// Prompts
+// ────────────────────────────────────────────────────────────────────────────
 
 const SYSTEM_BASE = `You are an expert medical educator creating micro-learning units for Thai medical students (นักศึกษาแพทย์ Y1-Y6).
 
@@ -91,24 +137,9 @@ Audience context:
 - Source material is often summary notes from senior students (รุ่นพี่) — concise, often missing foundational context that the senior assumed the reader knew.
 - Students need to BOTH pass exams (NL/comprehensive) AND understand for clinical practice.
 
-Output via the submit_extracted_content tool:
-
-1. **lesson.body_md** — markdown lesson split into clearly-marked parts.
-   - Use \`## ⏸ Mini Quiz\` between consecutive parts.
-   - Immediately after each marker, embed ONE inline quiz as a fenced \`\`\`quiz block of JSON: { stem, choices:[{label,text}], correct_answer, explanation }. The quiz must be answerable from the part directly above it.
-   - Use Thai mixed with English medical terms (the natural language of Thai med students).
-   - Format math/equations in plain text — no LaTeX.
-
-2. **flashcards** — atomic concept cards.
-   - Front = concept/question (under 120 chars).
-   - Back = concise answer (1-4 sentences, under 400 chars).
-   - Mix difficulty: ~30% easy / 50% medium / 20% hard.
-
-3. **quizzes** — MCQs with 4-5 options + correct answer + 1-3 sentence explanation. These feed the topic question bank (separate from inline mini-quizzes).
-
-**Coverage rule for quizzes (important):** the question bank must cover the material, not sample it. Budget **one question per ~100 words of the lesson you wrote**, and make sure every distinct testable point in the source — definition, mechanism, classification, number/cut-off, drug, complication, clinical decision — has at least one question. Long source → many questions. A source that yields a 3,000-word lesson needs 30+ questions; returning 5 for it is a failure. Spread difficulty (~30% easy / 50% medium / 20% hard) and avoid near-duplicate stems.
-
 General quality rules:
+- Write in Thai mixed with English medical terms (the natural language of Thai med students).
+- Format math/equations in plain text — no LaTeX.
 - Prefer clinically relevant content over rote trivia.
 - Use concrete examples, not abstract definitions.
 - When you state a mechanism, briefly explain WHY (cause → effect chain).`;
@@ -117,11 +148,10 @@ const MODE_INSTRUCTIONS: Record<Mode, string> = {
   faithful: `MODE: FAITHFUL EXTRACTION
 - Stay strictly to what's in the source material.
 - Do NOT add facts, examples, or context not present in the source.
-- Output: 1 lesson (2-4 parts), 10-20 flashcards, quizzes = 1 per ~100 words of the lesson (minimum 10).
 - Use this mode when the source is authoritative (textbook, lecture).`,
 
   expand: `MODE: EXPAND FOR UNDERSTANDING
-The source is a senior student's summary — often condensed and missing foundational context. Your job is to make it learnable for a student who is seeing this topic for the first time.
+The source is a senior student's summary — often condensed and missing foundational context. Make it learnable for a student seeing this topic for the first time.
 
 You MAY and SHOULD:
 - Fill in foundational concepts the source assumes (anatomy, physiology basics, prerequisites).
@@ -129,112 +159,106 @@ You MAY and SHOULD:
 - Add analogies that help intuition (เปรียบเทียบกับสิ่งใกล้ตัว).
 - Add Thai mnemonics (สูตรช่วยจำ) where they aid memorization.
 - Add "Why it matters" framing — when/why a clinician needs this knowledge.
-- Connect to other topics in the medical curriculum.
 - Add clinical pearls (high-yield points for NL/ward).
 
 You MUST NOT:
 - Invent facts that contradict the source.
 - Add speculative/unverified information.
+- State a specific drug dose, lab cut-off, or numeric threshold that is not in the source. If a number matters but the source omits it, describe it qualitatively instead.
 - Skip topics from the source.
 
-Lesson structure (use these sections):
-  ## 🧠 Why it matters
-  ## 🔑 Key concepts (split into 2-4 parts with mini-quizzes between)
-  ## 💡 Clinical pearls
-  ## 🎯 Mnemonics (optional)
-  ## 🔗 Connections to other topics
-
-Output: 1 lesson (longer, 4-6 parts), 20-35 flashcards, quizzes = 1 per ~100 words of the lesson (minimum 20 — scale up with the source, do not stop at the minimum).
-estimated_min: 15-30.`,
+Mark every section you added that is NOT derived from the source with a trailing " (เพิ่มโดย AI)" on its heading, so the reviewer knows what to fact-check.`,
 
   deep: `MODE: DEEP DIVE
-Same expansion rules as EXPAND mode, but go further:
+Same expansion rules as EXPAND mode (including the ban on inventing doses/cut-offs and the " (เพิ่มโดย AI)" heading marker), but go further:
 - Detailed mechanisms with step-by-step pathophysiology.
 - Multiple clinical scenarios per concept (Y3-Y6 ward perspective).
 - Common exam pitfalls and high-yield distinctions (e.g., "Don't confuse X with Y because…").
-- Include differential diagnosis thinking where relevant.
-- Add 'classic exam questions' style quizzes (NL/USMLE-style clinical vignettes).
+- Include differential diagnosis thinking where relevant.`,
+};
 
-Lesson structure:
+const LESSON_STRUCTURE: Record<Mode, string> = {
+  faithful: `Lesson: 2-4 parts with a mini-quiz between consecutive parts.`,
+  expand: `Lesson sections:
+  ## 🧠 Why it matters
+  ## 🔑 Key concepts (2-4 parts with mini-quizzes between)
+  ## 💡 Clinical pearls
+  ## 🎯 Mnemonics (optional)
+  ## 🔗 Connections to other topics
+estimated_min: 15-30.`,
+  deep: `Lesson sections:
   ## 🧠 Why it matters
   ## 📚 Foundation review (prerequisites)
-  ## 🔑 Key concepts (split into 3-6 parts with mini-quizzes between)
+  ## 🔑 Key concepts (3-4 parts with mini-quizzes between)
   ## 🩺 Clinical application (cases)
   ## 💡 Clinical pearls + high-yield
   ## ⚠️ Common pitfalls
   ## 🎯 Mnemonics
   ## 🔗 Connections to other topics
-
-Output: 1 lesson (long, 5-8 parts), 30-50 flashcards, quizzes = 1 per ~80 words of the lesson (minimum 30 — a long lecture should produce 40-60).
 estimated_min: 25-45.`,
 };
 
-// Quiz counts scale with source length, so leave room for a large question
-// bank on top of the lesson body + flashcards.
-const OUTPUT_TOKENS: Record<Mode, number> = {
-  faithful: 20000,
-  expand: 36000,
-  deep: 60000,
-};
+// ────────────────────────────────────────────────────────────────────────────
+// Model plumbing
+// ────────────────────────────────────────────────────────────────────────────
 
-interface ExtractedContent {
-  lesson?: {
-    title?: string;
-    body_md?: string;
-    layer?: string;
-    estimated_min?: number;
-  };
-  flashcards?: unknown[];
-  quizzes?: unknown[];
+/**
+ * Run one step. Streams so that a slow generation can't hit the API's
+ * non-streaming duration ceiling, then reads the single tool_use block.
+ */
+async function runStep(
+  step: Step,
+  tool: Anthropic.Tool,
+  system: Anthropic.TextBlockParam[],
+  content: Anthropic.MessageParam["content"],
+): Promise<Record<string, unknown>> {
+  if (!process.env.ANTHROPIC_API_KEY) throw new Error("ANTHROPIC_API_KEY not set");
+  const client = createAnthropic();
+  const message = await client.messages
+    .stream({
+      model: MODEL,
+      max_tokens: STEP_MAX_TOKENS[step],
+      system,
+      tools: [tool],
+      tool_choice: { type: "tool", name: tool.name },
+      messages: [{ role: "user", content }],
+    })
+    .finalMessage();
+  const block = message.content.find((b) => b.type === "tool_use");
+  if (!block || block.type !== "tool_use") {
+    throw new Error(`โมเดลไม่ได้ตอบเป็น ${tool.name}`);
+  }
+  return block.input as Record<string, unknown>;
 }
 
-async function callExtractor(
-  content: Anthropic.MessageParam["content"],
-  mode: Mode,
-) {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) {
-    throw new Error("ANTHROPIC_API_KEY not set");
-  }
-  const client = createAnthropic();
-
-  // Split system into cached base + per-request mode block.
-  // Base is identical across imports → cache hit on subsequent calls.
-  const system: Anthropic.TextBlockParam[] = [
-    {
-      type: "text",
-      text: SYSTEM_BASE,
-      cache_control: { type: "ephemeral" },
-    },
-    {
-      type: "text",
-      text: MODE_INSTRUCTIONS[mode],
-    },
+function systemFor(mode: Mode, extra?: string): Anthropic.TextBlockParam[] {
+  // Base is identical across every import → cache hit after the first call.
+  const blocks: Anthropic.TextBlockParam[] = [
+    { type: "text", text: SYSTEM_BASE, cache_control: { type: "ephemeral" } },
+    { type: "text", text: MODE_INSTRUCTIONS[mode] },
   ];
-
-  const response = await client.messages.create({
-    model: MODEL,
-    max_tokens: OUTPUT_TOKENS[mode],
-    system,
-    tools: [EXTRACT_TOOL],
-    tool_choice: { type: "tool", name: "submit_extracted_content" },
-    messages: [{ role: "user", content }],
-  });
-  const tool = response.content.find((b) => b.type === "tool_use");
-  if (!tool || tool.type !== "tool_use") {
-    throw new Error("No tool_use returned");
-  }
-  return tool.input as ExtractedContent;
+  if (extra) blocks.push({ type: "text", text: extra });
+  return blocks;
 }
 
 function parseMode(raw: unknown): Mode {
   if (raw === "faithful" || raw === "expand" || raw === "deep") return raw;
-  return "expand";
+  return "faithful";
 }
+
+function parseStep(raw: unknown): Step {
+  if (raw === "flashcards" || raw === "quizzes") return raw;
+  return "lesson";
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Topic classification (cheap, runs alongside the lesson step)
+// ────────────────────────────────────────────────────────────────────────────
 
 interface TopicCandidate {
   id: string;
   year: number;
+  term: number | null;
   name_th: string;
   system_name: string;
   code: string | null;
@@ -244,54 +268,28 @@ interface ClassifyResult {
   suggested_topic_id: string | null;
   confidence: number;
   reasoning: string;
-  suggested_new_topic?: {
-    year: number;
-    system_hint: string;
-    name_th: string;
-  };
 }
 
 const CLASSIFY_TOOL: Anthropic.Tool = {
   name: "submit_topic_classification",
-  description:
-    "Submit which existing curriculum topic best matches the material, or propose a new topic if none fit.",
+  description: "Submit which existing curriculum subject best matches the material.",
   input_schema: {
     type: "object",
     properties: {
       suggested_topic_index: {
         type: "integer",
         description:
-          "Index (0-based) of the best-matching topic from the provided list. Use -1 if no existing topic is a good match.",
+          "Index (0-based) of the best-matching subject from the provided list. Use -1 if none is a good match.",
       },
       confidence: {
         type: "number",
-        description:
-          "Confidence 0.0-1.0 that the suggested topic correctly matches the material.",
+        description: "Confidence 0.0-1.0 that the suggestion is correct.",
         minimum: 0,
         maximum: 1,
       },
       reasoning: {
         type: "string",
-        description:
-          "One short sentence (Thai) explaining why this topic matches, or why none fit.",
-      },
-      suggested_new_topic: {
-        type: "object",
-        description:
-          "Only when suggested_topic_index = -1: propose a new topic.",
-        properties: {
-          year: { type: "integer", minimum: 1, maximum: 6 },
-          system_hint: {
-            type: "string",
-            description:
-              "Best-guess system name in Thai (e.g. 'ระบบหัวใจและหลอดเลือด', 'ระบบหายใจ').",
-          },
-          name_th: {
-            type: "string",
-            description: "Proposed topic name in Thai.",
-          },
-        },
-        required: ["year", "system_hint", "name_th"],
+        description: "One short sentence (Thai) explaining the match, or why none fit.",
       },
     },
     required: ["suggested_topic_index", "confidence", "reasoning"],
@@ -303,23 +301,25 @@ async function loadTopicCandidates(
 ): Promise<TopicCandidate[]> {
   const { data } = await supabase
     .from("school_topics")
-    .select("id, year, name_th, code, school_systems(name_th)")
+    .select("id, year, term, name_th, code, school_systems(name_th)")
     .order("year")
     .limit(500);
   if (!data) return [];
-  return (data as Array<{
-    id: string;
-    year: number;
-    name_th: string;
-    code: string | null;
-    school_systems: { name_th: string } | { name_th: string }[] | null;
-  }>).map((r) => {
-    const sys = Array.isArray(r.school_systems)
-      ? r.school_systems[0]
-      : r.school_systems;
+  return (
+    data as Array<{
+      id: string;
+      year: number;
+      term: number | null;
+      name_th: string;
+      code: string | null;
+      school_systems: { name_th: string } | { name_th: string }[] | null;
+    }>
+  ).map((r) => {
+    const sys = Array.isArray(r.school_systems) ? r.school_systems[0] : r.school_systems;
     return {
       id: r.id,
       year: r.year,
+      term: r.term ?? null,
       name_th: r.name_th,
       system_name: sys?.name_th ?? "—",
       code: r.code ?? null,
@@ -331,28 +331,27 @@ async function classifyTopic(
   classifyContent: Anthropic.ContentBlockParam[],
   topics: TopicCandidate[],
 ): Promise<ClassifyResult | null> {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey || topics.length === 0) return null;
+  if (!process.env.ANTHROPIC_API_KEY || topics.length === 0) return null;
   const client = createAnthropic();
 
   const topicList = topics
     .map(
       (t, i) =>
-        `${i}. Y${t.year} · ${t.system_name} · ${t.name_th}${
+        `${i}. Y${t.year}${t.term ? ` เทอม${t.term}` : ""} · ${t.system_name} · ${t.name_th}${
           t.code ? ` · รหัสวิชา ${t.code}` : ""
         }`,
     )
     .join("\n");
 
-  const system = `You classify Thai medical-school study materials into the correct curriculum topic.
+  const system = `You classify Thai medical-school study materials into the correct curriculum subject.
 
-You will be given (1) the source material (PDF/text/image), and (2) a numbered list of existing topics in the curriculum (year + system + topic name).
+You will be given (1) the source material (PDF/text/image), and (2) a numbered list of existing subjects (year + term + system + subject name + course code).
 
-Your job: pick the index of the topic that best matches the material's content, or return -1 if no existing topic is a reasonable fit (in which case propose a new topic).
+Pick the index of the subject that best matches the material, or -1 if none is a reasonable fit.
 
-Many Thai lecture slides print the course code (e.g. "FMMD 1104", "พศพบ 1104") on the cover or header. If the material shows a course code that matches a topic's รหัสวิชา, that topic is the answer — confidence 0.95+.
+Many Thai lecture slides print the course code (e.g. "FMMD 1104", "พศพบ 1104") on the cover or header. If the material shows a course code matching a subject's รหัสวิชา, that subject is the answer — confidence 0.95+.
 
-Be conservative — only return a high confidence (>0.8) if the match is clearly correct. If multiple topics could plausibly match, pick the closest and lower the confidence.`;
+Be conservative — only return confidence >0.8 if the match is clearly correct.`;
 
   try {
     const response = await client.messages.create({
@@ -368,7 +367,7 @@ Be conservative — only return a high confidence (>0.8) if the match is clearly
             ...classifyContent,
             {
               type: "text",
-              text: `Existing topics (pick the index that matches, or -1 if none):\n\n${topicList}`,
+              text: `Existing subjects (pick the index that matches, or -1):\n\n${topicList}`,
             },
           ],
         },
@@ -380,14 +379,12 @@ Be conservative — only return a high confidence (>0.8) if the match is clearly
       suggested_topic_index: number;
       confidence: number;
       reasoning: string;
-      suggested_new_topic?: ClassifyResult["suggested_new_topic"];
     };
     const idx = input.suggested_topic_index;
     return {
       suggested_topic_id: idx >= 0 && idx < topics.length ? topics[idx].id : null,
       confidence: input.confidence,
       reasoning: input.reasoning,
-      suggested_new_topic: input.suggested_new_topic,
     };
   } catch (e) {
     console.error("classify error", e);
@@ -395,10 +392,115 @@ Be conservative — only return a high confidence (>0.8) if the match is clearly
   }
 }
 
+// ────────────────────────────────────────────────────────────────────────────
+// Step handlers
+// ────────────────────────────────────────────────────────────────────────────
+
+interface LessonShape {
+  title: string;
+  body_md: string;
+  layer: string;
+  estimated_min: number;
+}
+
+async function handleLessonStep(
+  supabase: Awaited<ReturnType<typeof createClient>>,
+  mode: Mode,
+  mediaBlocks: Anthropic.ContentBlockParam[],
+  hint: string,
+) {
+  const content: Anthropic.MessageParam["content"] = [
+    ...mediaBlocks,
+    {
+      type: "text",
+      text: `Write the lesson for this material.\n\n${LESSON_STRUCTURE[mode]}${
+        hint ? `\n\nHint: ${hint}` : ""
+      }`,
+    },
+  ];
+  const topics = await loadTopicCandidates(supabase);
+  // Classify off the first block only — one page/excerpt is plenty, and it
+  // keeps the Haiku call cheap.
+  const [lesson, classification] = await Promise.all([
+    runStep("lesson", LESSON_TOOL, systemFor(mode), content),
+    classifyTopic(mediaBlocks.slice(0, 1), topics),
+  ]);
+  return NextResponse.json({ lesson: lesson as unknown as LessonShape, classification });
+}
+
+async function handleFlashcardsStep(body: {
+  lesson?: LessonShape;
+  extractMode?: string;
+  count?: number;
+  existing?: string[];
+}) {
+  const mode = parseMode(body.extractMode);
+  if (!body.lesson?.body_md) {
+    return NextResponse.json({ error: "ต้องมี lesson ก่อนสร้าง flashcards" }, { status: 400 });
+  }
+  const count = Math.min(Math.max(body.count ?? 12, 1), 15);
+  const existing = (body.existing ?? []).slice(-60);
+  const extra = `TASK: produce exactly ${count} flashcards from the lesson below.
+- Front = concept/question (under 120 chars). Back = concise answer (1-4 sentences, under 400 chars).
+- Mix difficulty: ~30% easy / 50% medium / 20% hard.
+- One fact per card. No card may duplicate or paraphrase an already-covered card.`;
+  const content: Anthropic.MessageParam["content"] = [
+    {
+      type: "text",
+      text: `Lesson: ${body.lesson.title}\n\n${body.lesson.body_md}${
+        existing.length
+          ? `\n\n---\nAlready covered (do NOT repeat these):\n${existing.map((s) => `- ${s}`).join("\n")}`
+          : ""
+      }`,
+    },
+  ];
+  const out = await runStep("flashcards", FLASHCARDS_TOOL, systemFor(mode, extra), content);
+  return NextResponse.json({ flashcards: out.flashcards ?? [] });
+}
+
+async function handleQuizzesStep(body: {
+  lesson?: LessonShape;
+  extractMode?: string;
+  count?: number;
+  existing?: string[];
+}) {
+  const mode = parseMode(body.extractMode);
+  if (!body.lesson?.body_md) {
+    return NextResponse.json({ error: "ต้องมี lesson ก่อนสร้าง quizzes" }, { status: 400 });
+  }
+  const count = Math.min(Math.max(body.count ?? 8, 1), 10);
+  const existing = (body.existing ?? []).slice(-60);
+  const extra = `TASK: produce exactly ${count} multiple-choice questions from the lesson below.
+- 4-5 options, one correct answer, plus a 1-3 sentence explanation.
+- Spread difficulty (~30% easy / 50% medium / 20% hard).
+- Cover points the listed already-asked questions do NOT cover. No near-duplicate stems.
+- Distractors must be plausible, not obviously wrong.${
+    mode === "deep" ? "\n- Prefer NL/USMLE-style clinical vignettes." : ""
+  }`;
+  const content: Anthropic.MessageParam["content"] = [
+    {
+      type: "text",
+      text: `Lesson: ${body.lesson.title}\n\n${body.lesson.body_md}${
+        existing.length
+          ? `\n\n---\nAlready asked (do NOT repeat or paraphrase):\n${existing.map((s) => `- ${s}`).join("\n")}`
+          : ""
+      }`,
+    },
+  ];
+  const out = await runStep("quizzes", QUIZZES_TOOL, systemFor(mode, extra), content);
+  return NextResponse.json({ quizzes: out.quizzes ?? [] });
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+// Route
+// ────────────────────────────────────────────────────────────────────────────
+
 export async function POST(req: NextRequest) {
   try {
     const supabase = await createClient();
-    const { data: { user } } = await supabase.auth.getUser();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
     if (!user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     const { data: profile } = await supabase
       .from("profiles")
@@ -411,52 +513,40 @@ export async function POST(req: NextRequest) {
 
     const contentType = req.headers.get("content-type") ?? "";
 
-    // ── Branch 1 — multipart/form-data (file upload)
+    // ── Branch 1 — multipart/form-data: small file uploaded straight to us.
+    // Only the lesson step ever carries a file.
     if (contentType.startsWith("multipart/form-data")) {
       const form = await req.formData();
       const file = form.get("file");
       const hint = String(form.get("hint") ?? "");
-      const mode = parseMode(form.get("mode"));
+      const mode = parseMode(form.get("extractMode"));
       if (!(file instanceof File)) {
-        return NextResponse.json({ error: "Missing file" }, { status: 400 });
+        return NextResponse.json({ error: "ไม่พบไฟล์" }, { status: 400 });
       }
-      // Client falls back to browser text-extraction for big PDFs and sends
-      // the result via JSON branch instead — anything reaching this branch
-      // should be small. Cap at Vercel's effective limit; bigger requests
-      // would have been truncated upstream anyway.
-      const MAX_BYTES = 5 * 1024 * 1024;
+      // Bigger files go through Supabase Storage instead (see the client) —
+      // anything arriving here should already be under the platform body cap.
+      const MAX_BYTES = 4 * 1024 * 1024;
       if (file.size > MAX_BYTES) {
         const mb = (file.size / 1024 / 1024).toFixed(1);
         return NextResponse.json(
-          {
-            error: `ไฟล์ใหญ่เกินไป (${mb} MB) — สำหรับ PDF ใช้ฝั่งเบราว์เซอร์ extract ก่อน, รูปภาพต้อง ≤4 MB`,
-          },
+          { error: `ไฟล์ใหญ่เกินไป (${mb} MB) สำหรับช่องทางนี้` },
           { status: 413 },
         );
       }
       const bytes = await file.arrayBuffer();
       if (bytes.byteLength === 0) {
-        return NextResponse.json(
-          { error: "ไฟล์ว่าง — ลองอัปโหลดใหม่" },
-          { status: 400 },
-        );
+        return NextResponse.json({ error: "ไฟล์ว่าง — ลองอัปโหลดใหม่" }, { status: 400 });
       }
-      const b64 = Buffer.from(bytes).toString("base64");
-
       const isPdf = file.type === "application/pdf";
       const isImage = file.type.startsWith("image/");
       if (!isPdf && !isImage) {
-        return NextResponse.json({ error: "PDF or image only" }, { status: 400 });
+        return NextResponse.json({ error: "รับเฉพาะ PDF หรือรูปภาพ" }, { status: 400 });
       }
-
-      const mediaBlock: Anthropic.DocumentBlockParam | Anthropic.ImageBlockParam = isPdf
+      const b64 = Buffer.from(bytes).toString("base64");
+      const mediaBlock: Anthropic.ContentBlockParam = isPdf
         ? {
             type: "document",
-            source: {
-              type: "base64",
-              media_type: "application/pdf",
-              data: b64,
-            },
+            source: { type: "base64", media_type: "application/pdf", data: b64 },
           }
         : {
             type: "image",
@@ -466,175 +556,74 @@ export async function POST(req: NextRequest) {
               data: b64,
             },
           };
-      const content: Anthropic.MessageParam["content"] = [
-        mediaBlock,
-        {
-          type: "text",
-          text: `Extract a lesson + flashcards + quizzes from this material.${
-            hint ? `\n\nHint: ${hint}` : ""
-          }`,
-        },
-      ];
-      const topics = await loadTopicCandidates(supabase);
-      const [data, classification] = await Promise.all([
-        callExtractor(content, mode),
-        classifyTopic([mediaBlock], topics),
-      ]);
-      return NextResponse.json({ ...data, mode, classification });
+      return await handleLessonStep(supabase, mode, [mediaBlock], hint);
     }
 
-    // ── Branch 2 — JSON body (text, url, page images, or storage path)
+    // ── Branch 2 — JSON body
     const body = (await req.json()) as {
-      mode?: "text" | "url" | "images" | "storage";
+      step?: string;
       extractMode?: string;
-      text?: string;
-      url?: string;
       hint?: string;
-      images?: string[]; // base64 JPEG, one per page
-      storage_path?: string; // path inside school-imports bucket
+      storage_path?: string;
+      lesson?: LessonShape;
+      count?: number;
+      existing?: string[];
     };
+    const step = parseStep(body.step);
+
+    if (step === "flashcards") return await handleFlashcardsStep(body);
+    if (step === "quizzes") return await handleQuizzesStep(body);
+
+    // Lesson step from a storage upload (files too big for the request body).
     const mode = parseMode(body.extractMode);
-
-    // Branch 2a — storage upload (large PDFs uploaded directly to Supabase)
-    if (body.mode === "storage" && body.storage_path) {
-      const { createAdminClient } = await import("@/lib/supabase/admin");
-      const admin = createAdminClient();
-      const BUCKET = "school-imports";
-      const { data: blob, error: dlErr } = await admin.storage
-        .from(BUCKET)
-        .download(body.storage_path);
-      if (dlErr || !blob) {
-        return NextResponse.json(
-          { error: `ดาวน์โหลดจาก storage ไม่สำเร็จ: ${dlErr?.message ?? "no file"}` },
-          { status: 500 },
-        );
-      }
-      const arr = new Uint8Array(await blob.arrayBuffer());
-      // Anthropic PDF limit is 32 MB. Beyond that the model rejects the file.
-      const ANTHROPIC_PDF_MAX = 32 * 1024 * 1024;
-      if (arr.byteLength > ANTHROPIC_PDF_MAX) {
-        await admin.storage.from(BUCKET).remove([body.storage_path]);
-        const mb = (arr.byteLength / 1024 / 1024).toFixed(1);
-        return NextResponse.json(
-          {
-            error: `PDF ใหญ่เกิน Claude limit (${mb} MB / 32 MB) — บีบอัดให้เล็กลง หรือแยกไฟล์`,
-          },
-          { status: 413 },
-        );
-      }
-      const b64 = Buffer.from(arr).toString("base64");
-      const mediaBlock: Anthropic.DocumentBlockParam = {
-        type: "document",
-        source: {
-          type: "base64",
-          media_type: "application/pdf",
-          data: b64,
-        },
-      };
-      const content: Anthropic.MessageParam["content"] = [
-        mediaBlock,
-        {
-          type: "text",
-          text: `Extract a lesson + flashcards + quizzes from this material.${
-            body.hint ? `\n\nHint: ${body.hint}` : ""
-          }`,
-        },
-      ];
-      const topics = await loadTopicCandidates(supabase);
-      try {
-        const [data, classification] = await Promise.all([
-          callExtractor(content, mode),
-          classifyTopic([mediaBlock], topics),
-        ]);
-        return NextResponse.json({ ...data, mode, classification });
-      } finally {
-        // Always clean up the storage object — even on error — so we never
-        // accumulate temp PDFs.
-        admin.storage.from(BUCKET).remove([body.storage_path]).catch(() => {});
-      }
+    if (!body.storage_path) {
+      return NextResponse.json({ error: "ไม่พบไฟล์ต้นฉบับ" }, { status: 400 });
     }
-
-    // Branch 2b — page images (handwritten / scanned PDFs rendered in the browser)
-    if (body.mode === "images" && Array.isArray(body.images) && body.images.length > 0) {
-      // Cap at 12 to stay under Vercel body limits AND keep token cost
-      // bounded (Claude charges ~2k input tokens per image).
-      const MAX_IMAGES = 12;
-      const imgs = body.images.slice(0, MAX_IMAGES);
-      const imageBlocks: Anthropic.ImageBlockParam[] = imgs.map((b64) => ({
-        type: "image",
-        source: {
-          type: "base64",
-          media_type: "image/jpeg",
-          data: b64,
-        },
-      }));
-      const content: Anthropic.MessageParam["content"] = [
-        ...imageBlocks,
-        {
-          type: "text",
-          text: `Extract a lesson + flashcards + quizzes from these ${imgs.length} pages (handwritten or scanned).${
-            body.hint ? `\n\nHint: ${body.hint}` : ""
-          }`,
-        },
-      ];
-      // Classify off the first page only — saves Haiku tokens.
-      const classifyContent: Anthropic.ContentBlockParam[] = imageBlocks[0]
-        ? [imageBlocks[0]]
-        : [];
-      const topics = await loadTopicCandidates(supabase);
-      const [data, classification] = await Promise.all([
-        callExtractor(content, mode),
-        classifyTopic(classifyContent, topics),
-      ]);
-      return NextResponse.json({ ...data, mode, classification });
+    const { createAdminClient } = await import("@/lib/supabase/admin");
+    const admin = createAdminClient();
+    const BUCKET = "school-imports";
+    const { data: blob, error: dlErr } = await admin.storage
+      .from(BUCKET)
+      .download(body.storage_path);
+    if (dlErr || !blob) {
+      return NextResponse.json(
+        { error: `ดาวน์โหลดจาก storage ไม่สำเร็จ: ${dlErr?.message ?? "ไม่พบไฟล์"}` },
+        { status: 500 },
+      );
     }
-
-    let materialText = "";
-    if (body.mode === "text" && body.text) {
-      materialText = body.text;
-    } else if (body.mode === "url" && body.url) {
-      try {
-        const res = await fetch(body.url, {
-          headers: { "user-agent": "Mozilla/5.0 morroo-importer" },
-        });
-        const text = await res.text();
-        // Naive HTML strip
-        materialText = text
-          .replace(/<script[\s\S]*?<\/script>/gi, "")
-          .replace(/<style[\s\S]*?<\/style>/gi, "")
-          .replace(/<[^>]+>/g, " ")
-          .replace(/\s+/g, " ")
-          .slice(0, 60000);
-      } catch (e) {
-        return NextResponse.json({ error: `URL fetch failed: ${e}` }, { status: 400 });
-      }
-    } else {
-      return NextResponse.json({ error: "Provide mode + text/url" }, { status: 400 });
+    const arr = new Uint8Array(await blob.arrayBuffer());
+    // Anthropic rejects PDFs over 32 MB.
+    const ANTHROPIC_PDF_MAX = 32 * 1024 * 1024;
+    if (arr.byteLength > ANTHROPIC_PDF_MAX) {
+      await admin.storage.from(BUCKET).remove([body.storage_path]);
+      const mb = (arr.byteLength / 1024 / 1024).toFixed(1);
+      return NextResponse.json(
+        { error: `PDF ใหญ่เกินขีดจำกัด (${mb} MB / 32 MB) — บีบอัดหรือแยกไฟล์ก่อน` },
+        { status: 413 },
+      );
     }
-
-    const content: Anthropic.MessageParam["content"] = [
-      {
-        type: "text",
-        text: `Extract a lesson + flashcards + quizzes from the following material.\n\n${
-          body.hint ? `Hint: ${body.hint}\n\n` : ""
-        }---\n\n${materialText}`,
+    const mediaBlock: Anthropic.ContentBlockParam = {
+      type: "document",
+      source: {
+        type: "base64",
+        media_type: "application/pdf",
+        data: Buffer.from(arr).toString("base64"),
       },
-    ];
-    const classifyExcerpt = materialText.slice(0, 8000);
-    const topics = await loadTopicCandidates(supabase);
-    const [data, classification] = await Promise.all([
-      callExtractor(content, mode),
-      classifyTopic(
-        [{ type: "text", text: classifyExcerpt }],
-        topics,
-      ),
-    ]);
-    return NextResponse.json({ ...data, mode, classification });
+    };
+    try {
+      return await handleLessonStep(supabase, mode, [mediaBlock], body.hint ?? "");
+    } finally {
+      // Always clean up the temp object, even on failure.
+      admin.storage
+        .from(BUCKET)
+        .remove([body.storage_path])
+        .catch(() => {});
+    }
   } catch (e) {
-    console.error("import error", e);
+    console.error("school import error", e);
     return NextResponse.json(
       { error: e instanceof Error ? e.message : "Internal error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

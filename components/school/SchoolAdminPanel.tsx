@@ -30,6 +30,7 @@ interface Props {
   topics: {
     id: string;
     year: number;
+    term?: number | null;
     slug: string;
     name_th: string;
     code?: string | null;
@@ -400,6 +401,7 @@ interface CommonProps {
 function TopicForm({ systems, busy, setBusy, notify }: { systems: Props["systems"] } & CommonProps) {
   const [systemId, setSystemId] = useState(systems[0]?.id ?? "");
   const [year, setYear] = useState(1);
+  const [term, setTerm] = useState("");
   const [slug, setSlug] = useState("");
   const [nameTh, setNameTh] = useState("");
   const [nameEn, setNameEn] = useState("");
@@ -420,6 +422,7 @@ function TopicForm({ systems, busy, setBusy, notify }: { systems: Props["systems
       const { error } = await supabase.from("school_topics").insert({
         system_id: systemId,
         year,
+        term: term ? Number(term) : null,
         slug,
         name_th: nameTh,
         name_en: nameEn,
@@ -450,7 +453,7 @@ function TopicForm({ systems, busy, setBusy, notify }: { systems: Props["systems
     <Card>
       <CardContent className="p-4 space-y-3">
         <h3 className="font-bold">เพิ่ม Topic</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <Field label="System">
             <select
               value={systemId}
@@ -473,6 +476,18 @@ function TopicForm({ systems, busy, setBusy, notify }: { systems: Props["systems
               onChange={(e) => setYear(Number(e.target.value))}
               className="w-full border rounded p-2 text-sm"
             />
+          </Field>
+          <Field label="เทอม">
+            <select
+              value={term}
+              onChange={(e) => setTerm(e.target.value)}
+              className="w-full border rounded p-2 text-sm"
+            >
+              <option value="">ไม่ระบุ (ทุกเทอม)</option>
+              <option value="1">เทอม 1</option>
+              <option value="2">เทอม 2</option>
+              <option value="3">ภาคฤดูร้อน</option>
+            </select>
           </Field>
         </div>
         <Field label="Slug (English, dash)">

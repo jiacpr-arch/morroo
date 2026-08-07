@@ -1,25 +1,13 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import {
-  Upload,
-  Link as LinkIcon,
-  Type,
-  Loader2,
-  Sparkles,
-  Save,
-  Trash2,
-  X,
-  Check,
-  FileText,
-} from "lucide-react";
 
 interface TopicOption {
   id: string;
   year: number;
+  term?: number | null;
   name_th: string;
   code?: string | null;
   school_systems?: { name_th: string; icon?: string } | null;
@@ -47,11 +35,6 @@ interface Classification {
   suggested_topic_id: string | null;
   confidence: number;
   reasoning: string;
-  suggested_new_topic?: {
-    year: number;
-    system_hint: string;
-    name_th: string;
-  };
 }
 interface Extracted {
   lesson: ExtractedLesson;
@@ -64,166 +47,226 @@ interface Props {
   topics: TopicOption[];
 }
 
-type Mode = "file" | "url" | "text";
 type ExtractMode = "faithful" | "expand" | "deep";
 
+const MODE_LABEL: Record<ExtractMode, string> = {
+  faithful: "ตามต้นฉบับ — ไม่เพิ่มเนื้อหาที่ไม่มีในไฟล์",
+  expand: "ขยาย — เติมพื้นฐาน clinical pearls สูตรช่วยจำ (AI แต่งเพิ่ม ต้องตรวจ)",
+  deep: "ละเอียดสูงสุด — ขยาย + เคส + จุดที่มักออกสอบ (AI แต่งเพิ่มมาก ต้องตรวจ)",
+};
+
+/**
+ * How much to generate per depth, and how to slice it. Each batch is a separate
+ * request so no single call runs long enough to be killed mid-generation.
+ */
+const PLAN: Record<ExtractMode, { flashcards: number; quizzes: number }> = {
+  faithful: { flashcards: 12, quizzes: 16 },
+  expand: { flashcards: 24, quizzes: 24 },
+  deep: { flashcards: 36, quizzes: 32 },
+};
+const FC_PER_BATCH = 12;
+const QZ_PER_BATCH = 8;
+
+/** Files above this go through Supabase Storage — the request body can't hold them. */
+const DIRECT_UPLOAD_MAX = 4 * 1024 * 1024;
+const PDF_MAX = 32 * 1024 * 1024;
+
+/** Give up on a step rather than spin forever if the server side was killed. */
+const STEP_TIMEOUT_MS = 240_000;
+
 export default function ImportPanel({ topics }: Props) {
-  const [mode, setMode] = useState<Mode>("file");
-  const [extractMode, setExtractMode] = useState<ExtractMode>("expand");
+  const [year, setYear] = useState<number>(topics[0]?.year ?? 1);
+  const [term, setTerm] = useState<number>(1);
+  const [topicId, setTopicId] = useState("");
+  const [extractMode, setExtractMode] = useState<ExtractMode>("faithful");
   const [file, setFile] = useState<File | null>(null);
   const [dragOver, setDragOver] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const [url, setUrl] = useState("");
-  const [text, setText] = useState("");
-  const [hint, setHint] = useState("");
-  const [topicId, setTopicId] = useState(topics[0]?.id ?? "");
-  const [source, setSource] = useState("");
   const [loading, setLoading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [result, setResult] = useState<{
-    kind: "ok" | "err";
-    msg: string;
-  } | null>(null);
+  const [progress, setProgress] = useState<string | null>(null);
+  const [result, setResult] = useState<{ kind: "ok" | "err"; msg: string } | null>(null);
   const [data, setData] = useState<Extracted | null>(null);
-  const [progressMsg, setProgressMsg] = useState<string | null>(null);
 
-  async function extract() {
+  // ชั้นปี 1-6 คงที่ ไม่ผูกกับปีที่มีวิชาอยู่ — ปีที่ยังว่างจะขึ้นข้อความบอกให้
+  // ไปสร้างวิชาก่อน ดีกว่าซ่อนปีนั้นไปเลยแล้วหาไม่เจอ
+  const YEARS = [1, 2, 3, 4, 5, 6];
+
+  // วิชาที่ยังไม่ระบุเทอม (term = null) ให้ขึ้นในทุกเทอม — ไม่งั้นวิชาเดิม
+  // ที่ยังไม่ได้กรอกเทอมจะหายไปจาก dropdown ทั้งหมด
+  const visibleTopics = useMemo(
+    () => topics.filter((t) => t.year === year && (t.term == null || t.term === term)),
+    [topics, year, term],
+  );
+
+  const selectedTopic = visibleTopics.find((t) => t.id === topicId) ?? null;
+
+  function pickYear(y: number) {
+    setYear(y);
+    setTopicId("");
+  }
+  function pickTerm(t: number) {
+    setTerm(t);
+    setTopicId("");
+  }
+
+  function topicLabel(t: TopicOption) {
+    return `${t.name_th}${t.code ? ` (${t.code})` : ""}`;
+  }
+
+  /**
+   * POST one import step. Always bounded by a timeout — without one, a request
+   * the platform killed server-side leaves the button spinning forever with no
+   * hint that anything went wrong.
+   */
+  async function post(body: FormData | Record<string, unknown>): Promise<Response> {
+    const isForm = body instanceof FormData;
+    return fetch("/api/admin/school/import", {
+      method: "POST",
+      headers: isForm ? undefined : { "content-type": "application/json" },
+      body: isForm ? body : JSON.stringify(body),
+      signal: AbortSignal.timeout(STEP_TIMEOUT_MS),
+    });
+  }
+
+  /** One import step. Throws with the server's Thai message on failure. */
+  async function step<T>(body: Record<string, unknown>): Promise<T> {
+    const res = await post(body);
+    if (!res.ok) {
+      const j = (await res.json().catch(() => ({}))) as { error?: string };
+      throw new Error(j.error ?? `ขั้นตอนนี้ล้มเหลว (${res.status})`);
+    }
+    return (await res.json()) as T;
+  }
+
+  /** Upload a file too large for the request body, and return its storage path. */
+  async function uploadToStorage(f: File): Promise<string> {
+    const urlRes = await fetch("/api/admin/school/import/storage-url", { method: "POST" });
+    const urlJson = (await urlRes.json()) as {
+      bucket?: string;
+      path?: string;
+      token?: string;
+      error?: string;
+    };
+    if (!urlRes.ok || !urlJson.path || !urlJson.token) {
+      throw new Error(urlJson.error ?? "ขอ upload URL ไม่สำเร็จ");
+    }
+    const { createClient } = await import("@/lib/supabase/client");
+    const supa = createClient();
+    const { error: upErr } = await supa.storage
+      .from(urlJson.bucket ?? "school-imports")
+      .uploadToSignedUrl(urlJson.path, urlJson.token, f, {
+        contentType: "application/pdf",
+      });
+    if (upErr) throw new Error(`อัปโหลดไม่สำเร็จ: ${upErr.message}`);
+    return urlJson.path;
+  }
+
+  /** Ask for the lesson — the only step that carries the file itself. */
+  async function extractLesson(
+    f: File,
+    hint: string,
+  ): Promise<{ lesson: ExtractedLesson; classification?: Classification | null }> {
+    if (f.size > DIRECT_UPLOAD_MAX) {
+      setProgress("กำลังอัปโหลดไฟล์…");
+      const path = await uploadToStorage(f);
+      setProgress("AI กำลังอ่านไฟล์และเขียนบทเรียน…");
+      return step({ step: "lesson", storage_path: path, hint, extractMode });
+    }
+    setProgress("AI กำลังอ่านไฟล์และเขียนบทเรียน…");
+    const fd = new FormData();
+    fd.append("file", f);
+    fd.append("hint", hint);
+    fd.append("extractMode", extractMode);
+    const res = await post(fd);
+    if (!res.ok) {
+      const j = (await res.json().catch(() => ({}))) as { error?: string };
+      throw new Error(j.error ?? `อ่านไฟล์ไม่สำเร็จ (${res.status})`);
+    }
+    return res.json();
+  }
+
+  async function run() {
+    if (!file) {
+      setError("เลือกไฟล์ก่อน");
+      return;
+    }
+    if (!topicId) {
+      setError("เลือกวิชาก่อน");
+      return;
+    }
+    if (file.type === "application/pdf" && file.size > PDF_MAX) {
+      setError(
+        `PDF ใหญ่เกินไป (${(file.size / 1024 / 1024).toFixed(1)} MB) — สูงสุด 32 MB บีบอัดหรือแยกไฟล์ก่อน`,
+      );
+      return;
+    }
+    if (file.type !== "application/pdf" && file.size > DIRECT_UPLOAD_MAX) {
+      setError(`รูปภาพใหญ่เกินไป (${(file.size / 1024 / 1024).toFixed(1)} MB) — สูงสุด 4 MB`);
+      return;
+    }
+
     setLoading(true);
     setError(null);
+    setResult(null);
     setData(null);
-    setProgressMsg(null);
     try {
-      let res: Response;
-      if (mode === "file") {
-        if (!file) throw new Error("เลือกไฟล์ก่อน");
-        const DIRECT_UPLOAD_MAX = 4 * 1024 * 1024;
-        // Anthropic accepts PDFs up to 32 MB natively (it reads handwriting,
-        // diagrams, layout — better than any browser-side fallback). Files in
-        // the 4-32 MB range bypass Vercel's body limit by going through
-        // Supabase Storage, with the server then handing the PDF straight to
-        // Claude. No pdf.js parse in the browser, no canvas memory spike.
-        const STORAGE_PATH_MAX = 32 * 1024 * 1024;
-        if (
-          file.size > DIRECT_UPLOAD_MAX &&
-          file.size <= STORAGE_PATH_MAX &&
-          file.type === "application/pdf"
-        ) {
-          setProgressMsg("☁️ กำลังอัปโหลดไป storage...");
-          // 1. Mint signed upload URL
-          const urlRes = await fetch("/api/admin/school/import/storage-url", {
-            method: "POST",
-          });
-          const urlJson = (await urlRes.json()) as {
-            bucket?: string;
-            path?: string;
-            token?: string;
-            error?: string;
-          };
-          if (!urlRes.ok || !urlJson.path || !urlJson.token) {
-            throw new Error(urlJson.error ?? "Failed to get upload URL");
-          }
-          // 2. Upload to Supabase Storage
-          const { createClient: createSupabaseClient } = await import(
-            "@/lib/supabase/client"
-          );
-          const supa = createSupabaseClient();
-          const { error: upErr } = await supa.storage
-            .from(urlJson.bucket ?? "school-imports")
-            .uploadToSignedUrl(urlJson.path, urlJson.token, file, {
-              contentType: "application/pdf",
-            });
-          if (upErr) throw new Error(`Upload ล้มเหลว: ${upErr.message}`);
-          // 3. Tell server to process the storage path
-          setProgressMsg("AI กำลังอ่าน PDF...");
-          const fileHint =
-            (hint ? hint + " " : "") +
-            `(${file.name}, ${(file.size / 1024 / 1024).toFixed(1)} MB via storage)`;
-          res = await fetch("/api/admin/school/import", {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify({
-              mode: "storage",
-              storage_path: urlJson.path,
-              hint: fileHint,
-              extractMode,
-            }),
-          });
-          if (!res.ok) {
-            const j = await res.json().catch(() => ({}));
-            throw new Error(j.error ?? "Extract failed");
-          }
-          const d = (await res.json()) as Extracted;
-          setData(d);
-          const suggested = d.classification?.suggested_topic_id;
-          if (
-            suggested &&
-            (d.classification?.confidence ?? 0) >= 0.6 &&
-            topics.some((t) => t.id === suggested)
-          ) {
-            setTopicId(suggested);
-          }
-          return; // success — early exit from the function
-        }
-        const BROWSER_PARSE_MAX = 32 * 1024 * 1024;
-        if (file.size > BROWSER_PARSE_MAX && file.type === "application/pdf") {
-          const mb = (file.size / 1024 / 1024).toFixed(1);
-          throw new Error(
-            `PDF ใหญ่เกินไป (${mb} MB) — สูงสุด 32 MB · บีบอัดที่ ilovepdf.com/compress_pdf หรือแยกไฟล์`,
-          );
-        }
-        if (file.size > DIRECT_UPLOAD_MAX) {
-          // Non-PDF (image) too big for direct upload — no text-extraction path
-          const mb = (file.size / 1024 / 1024).toFixed(1);
-          throw new Error(
-            `รูปภาพใหญ่เกินไป (${mb} MB) — สูงสุด 4 MB`,
-          );
-        } else {
-          const fd = new FormData();
-          fd.append("file", file);
-          if (hint) fd.append("hint", hint);
-          fd.append("mode", extractMode);
-          res = await fetch("/api/admin/school/import", {
-            method: "POST",
-            body: fd,
-          });
-        }
-      } else if (mode === "url") {
-        if (!url) throw new Error("ใส่ URL");
-        res = await fetch("/api/admin/school/import", {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify({ mode: "url", url, hint, extractMode }),
+      const hint = selectedTopic
+        ? `ปี ${year} เทอม ${term} · วิชา ${topicLabel(selectedTopic)}`
+        : `ปี ${year} เทอม ${term}`;
+
+      // 1. Lesson (carries the file).
+      const { lesson, classification } = await extractLesson(file, hint);
+      setData({ lesson, flashcards: [], quizzes: [], classification });
+
+      const plan = PLAN[extractMode];
+
+      // 2. Flashcards, in batches, each request small enough to finish quickly.
+      const flashcards: ExtractedFlashcard[] = [];
+      while (flashcards.length < plan.flashcards) {
+        const want = Math.min(FC_PER_BATCH, plan.flashcards - flashcards.length);
+        setProgress(`สร้าง flashcards… (${flashcards.length}/${plan.flashcards})`);
+        const out = await step<{ flashcards: ExtractedFlashcard[] }>({
+          step: "flashcards",
+          lesson,
+          extractMode,
+          count: want,
+          existing: flashcards.map((c) => c.front),
         });
-      } else {
-        if (!text) throw new Error("ใส่ text");
-        res = await fetch("/api/admin/school/import", {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify({ mode: "text", text, hint, extractMode }),
+        if (!out.flashcards?.length) break; // model gave up — stop rather than loop forever
+        flashcards.push(...out.flashcards);
+        setData({ lesson, flashcards: [...flashcards], quizzes: [], classification });
+      }
+
+      // 3. Quizzes, same pattern.
+      const quizzes: ExtractedQuiz[] = [];
+      while (quizzes.length < plan.quizzes) {
+        const want = Math.min(QZ_PER_BATCH, plan.quizzes - quizzes.length);
+        setProgress(`สร้างข้อสอบ… (${quizzes.length}/${plan.quizzes})`);
+        const out = await step<{ quizzes: ExtractedQuiz[] }>({
+          step: "quizzes",
+          lesson,
+          extractMode,
+          count: want,
+          existing: quizzes.map((q) => q.stem),
         });
-      }
-      if (!res.ok) {
-        const j = await res.json().catch(() => ({}));
-        throw new Error(j.error ?? "Extract failed");
-      }
-      const d = (await res.json()) as Extracted;
-      setData(d);
-      // Auto-select the topic if AI is reasonably confident and the suggested
-      // topic exists in our local list. Admin can still override.
-      const suggested = d.classification?.suggested_topic_id;
-      if (
-        suggested &&
-        (d.classification?.confidence ?? 0) >= 0.6 &&
-        topics.some((t) => t.id === suggested)
-      ) {
-        setTopicId(suggested);
+        if (!out.quizzes?.length) break;
+        quizzes.push(...out.quizzes);
+        setData({ lesson, flashcards, quizzes: [...quizzes], classification });
       }
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Error");
+      const timedOut = e instanceof DOMException && e.name === "TimeoutError";
+      setError(
+        timedOut
+          ? "ขั้นตอนนี้ใช้เวลานานเกินไปแล้วถูกยกเลิก — ลองไฟล์ที่เล็กลง หรือลดระดับการขยายเนื้อหา"
+          : e instanceof Error
+            ? e.message
+            : "เกิดข้อผิดพลาด",
+      );
     } finally {
       setLoading(false);
-      setProgressMsg(null);
+      setProgress(null);
     }
   }
 
@@ -237,14 +280,13 @@ export default function ImportPanel({ topics }: Props) {
         headers: { "content-type": "application/json" },
         body: JSON.stringify({
           topic_id: topicId,
-          source: source || (mode === "url" ? url : file?.name) || null,
+          source: file?.name ?? null,
           lesson: data.lesson,
           flashcards: data.flashcards,
           quizzes: data.quizzes,
         }),
       });
       const j = (await res.json()) as {
-        ok?: boolean;
         lessonInserted?: number;
         fcInserted?: number;
         qzInserted?: number;
@@ -252,462 +294,281 @@ export default function ImportPanel({ topics }: Props) {
         error?: string;
       };
       if (!res.ok || j.error) {
-        setResult({ kind: "err", msg: j.error ?? "Save failed" });
+        setResult({ kind: "err", msg: j.error ?? "บันทึกไม่สำเร็จ" });
         return;
       }
       setResult({
         kind: "ok",
-        msg: `บันทึก: ${j.lessonInserted ?? 0} lesson + ${j.fcInserted ?? 0} cards + ${j.qzInserted ?? 0} quizzes${
-          j.errors?.length ? " (มี errors บางส่วน: " + j.errors.join(", ") + ")" : ""
-        }`,
+        msg: `บันทึกแล้ว: ${j.lessonInserted ?? 0} บทเรียน + ${j.fcInserted ?? 0} flashcards + ${
+          j.qzInserted ?? 0
+        } ข้อสอบ${j.errors?.length ? ` (มี error บางส่วน: ${j.errors.join(", ")})` : ""}`,
       });
       setData(null);
-      setText("");
-      setUrl("");
       setFile(null);
+      if (fileInputRef.current) fileInputRef.current.value = "";
     } catch (e) {
-      setResult({ kind: "err", msg: e instanceof Error ? e.message : "Error" });
+      setResult({ kind: "err", msg: e instanceof Error ? e.message : "เกิดข้อผิดพลาด" });
     } finally {
       setSaving(false);
     }
   }
 
-  function removeFlashcard(i: number) {
-    if (!data) return;
-    setData({
-      ...data,
-      flashcards: data.flashcards.filter((_, x) => x !== i),
-    });
-  }
-  function removeQuiz(i: number) {
-    if (!data) return;
-    setData({ ...data, quizzes: data.quizzes.filter((_, x) => x !== i) });
-  }
-
   return (
     <Card>
-      <CardContent className="p-4 space-y-4">
+      <CardContent className="space-y-5 p-4">
         <div>
-          <h3 className="font-bold flex items-center gap-2">
-            <Sparkles className="h-4 w-4 text-violet-600" /> Import + AI Generate
-          </h3>
+          <h3 className="font-bold">นำเข้าเนื้อหาด้วย AI</h3>
           <p className="text-xs text-muted-foreground">
-            Upload PDF / Image / URL / text → AI สรุป (และขยาย) เป็น lesson + flashcards + quizzes → preview + แก้ + กดบันทึก
+            เลือกชั้นปี เทอม วิชา → อัปโหลดไฟล์ → AI สร้างบทเรียน flashcards
+            และข้อสอบ → ตรวจแก้ก่อนบันทึก
           </p>
         </div>
 
-        {/* Extract depth */}
-        <div className="rounded-lg border bg-violet-50/30 p-3 space-y-2">
-          <p className="text-xs font-semibold text-violet-900">
-            ✨ ระดับการขยายเนื้อหา
+        {/* ชั้นปี / เทอม / วิชา */}
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+          <label className="block">
+            <span className="mb-1 block text-xs font-semibold text-muted-foreground">
+              ชั้นปี
+            </span>
+            <select
+              value={year}
+              onChange={(e) => pickYear(Number(e.target.value))}
+              className="w-full rounded border p-2 text-sm"
+            >
+              {YEARS.map((y) => (
+                <option key={y} value={y}>
+                  ปี {y}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <label className="block">
+            <span className="mb-1 block text-xs font-semibold text-muted-foreground">
+              เทอม
+            </span>
+            <select
+              value={term}
+              onChange={(e) => pickTerm(Number(e.target.value))}
+              className="w-full rounded border p-2 text-sm"
+            >
+              <option value={1}>เทอม 1</option>
+              <option value={2}>เทอม 2</option>
+              <option value={3}>ภาคฤดูร้อน</option>
+            </select>
+          </label>
+
+          <label className="block sm:col-span-2">
+            <span className="mb-1 block text-xs font-semibold text-muted-foreground">
+              วิชา
+            </span>
+            <select
+              value={topicId}
+              onChange={(e) => setTopicId(e.target.value)}
+              className="w-full rounded border p-2 text-sm"
+            >
+              <option value="">— เลือกวิชา —</option>
+              {visibleTopics.map((t) => (
+                <option key={t.id} value={t.id}>
+                  {topicLabel(t)}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+
+        {visibleTopics.length === 0 && (
+          <p className="text-xs text-amber-700">
+            ยังไม่มีวิชาสำหรับปี {year} เทอม {term} — สร้างที่แท็บ Topic ก่อน
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-            {(
-              [
-                {
-                  key: "faithful",
-                  label: "📋 ตามต้นฉบับ",
-                  desc: "ไม่เพิ่มเนื้อหา ใช้กับ lecture/ตำรา",
-                },
-                {
-                  key: "expand",
-                  label: "✨ ขยาย (แนะนำ)",
-                  desc: "เพิ่ม foundation, clinical pearls, mnemonics — เหมาะกับสรุปจากรุ่นพี่",
-                },
-                {
-                  key: "deep",
-                  label: "🔬 ละเอียดสูงสุด",
-                  desc: "Deep dive + cases + pitfalls (ใช้เวลา 40-90s)",
-                },
-              ] as const
-            ).map((opt) => (
-              <button
-                key={opt.key}
-                type="button"
-                onClick={() => setExtractMode(opt.key)}
-                className={`text-left rounded border p-2 text-xs transition ${
-                  extractMode === opt.key
-                    ? "border-violet-500 bg-violet-100 ring-1 ring-violet-300"
-                    : "border-border bg-card hover:border-violet-300"
-                }`}
-              >
-                <div className="font-semibold">{opt.label}</div>
-                <div className="text-muted-foreground mt-0.5 leading-tight">
-                  {opt.desc}
-                </div>
-              </button>
+        )}
+
+        {/* ระดับการขยายเนื้อหา */}
+        <label className="block">
+          <span className="mb-1 block text-xs font-semibold text-muted-foreground">
+            ระดับการขยายเนื้อหา
+          </span>
+          <select
+            value={extractMode}
+            onChange={(e) => setExtractMode(e.target.value as ExtractMode)}
+            className="w-full rounded border p-2 text-sm"
+          >
+            {(Object.keys(MODE_LABEL) as ExtractMode[]).map((m) => (
+              <option key={m} value={m}>
+                {MODE_LABEL[m]}
+              </option>
             ))}
-          </div>
-        </div>
+          </select>
+        </label>
 
-        {/* Mode tabs */}
-        <div className="flex border rounded-lg overflow-hidden">
-          {(
-            [
-              ["file", "📎 File", Upload],
-              ["url", "🔗 URL", LinkIcon],
-              ["text", "📝 Text", Type],
-            ] as const
-          ).map(([k, label]) => (
-            <button
-              key={k}
-              onClick={() => setMode(k as Mode)}
-              className={`flex-1 px-3 py-2 text-sm font-medium ${
-                mode === k
-                  ? "bg-violet-100 text-violet-700"
-                  : "text-muted-foreground hover:bg-muted/50"
-              }`}
-            >
-              {label}
-            </button>
-          ))}
-        </div>
-
-        {/* Input */}
-        {mode === "file" && (
-          <div>
-            <input
-              ref={fileInputRef}
-              type="file"
-              accept="application/pdf,image/png,image/jpeg,image/webp"
-              onChange={(e) => setFile(e.target.files?.[0] ?? null)}
-              className="sr-only"
-            />
-            {/* กล่องอัปโหลดที่มองเห็นชัด — ตัว <input type=file> เปล่า ๆ
-                มันจางเกินไป ผู้ใช้หาไม่เจอว่าจะแนบไฟล์ตรงไหน */}
-            <div
-              role="button"
-              tabIndex={0}
-              onClick={() => fileInputRef.current?.click()}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  fileInputRef.current?.click();
-                }
-              }}
-              onDragOver={(e) => {
-                e.preventDefault();
-                setDragOver(true);
-              }}
-              onDragLeave={() => setDragOver(false)}
-              onDrop={(e) => {
-                e.preventDefault();
-                setDragOver(false);
-                const dropped = e.dataTransfer.files?.[0];
-                if (dropped) setFile(dropped);
-              }}
-              className={`w-full cursor-pointer rounded-lg border-2 border-dashed p-6 text-center transition-colors ${
-                dragOver
-                  ? "border-violet-500 bg-violet-50"
-                  : file
-                    ? "border-emerald-300 bg-emerald-50/50"
-                    : "border-muted-foreground/30 hover:border-violet-400 hover:bg-violet-50/40"
-              }`}
-            >
-              {file ? (
-                <div className="flex items-center justify-center gap-2 text-sm">
-                  <FileText className="h-5 w-5 text-emerald-600 shrink-0" />
-                  <span className="font-medium truncate max-w-[70%]">
-                    {file.name}
-                  </span>
-                  <span className="text-muted-foreground shrink-0">
-                    ({Math.round(file.size / 1024)} KB)
-                  </span>
-                  <button
-                    type="button"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setFile(null);
-                      if (fileInputRef.current) fileInputRef.current.value = "";
-                    }}
-                    className="ml-1 text-muted-foreground hover:text-rose-600 shrink-0"
-                  >
-                    <X className="h-4 w-4" />
-                  </button>
-                </div>
-              ) : (
-                <div className="flex flex-col items-center gap-1 text-sm">
-                  <Upload className="h-6 w-6 text-violet-500 mb-1" />
-                  <span className="font-semibold text-violet-700">
-                    แตะเพื่อเลือกไฟล์
-                  </span>
-                  <span className="text-xs text-muted-foreground">
-                    หรือลากไฟล์มาวางตรงนี้ — PDF, PNG, JPG, WEBP
-                  </span>
-                </div>
-              )}
-            </div>
-            <p className="text-xs text-muted-foreground mt-2">
-              PDF ≤32 MB / รูปภาพ ≤4 MB · ถ้าใหญ่กว่านี้
-              <button
-                type="button"
-                onClick={() => setMode("text")}
-                className="ml-1 underline text-violet-700"
-              >
-                สลับไปแท็บ Text
-              </button>{" "}
-              (มีคู่มือแปลงทุก tool)
-            </p>
-          </div>
-        )}
-        {mode === "url" && (
+        {/* อัปโหลดไฟล์ */}
+        <div>
           <input
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
-            placeholder="https://..."
-            className="w-full border rounded p-2 text-sm"
+            ref={fileInputRef}
+            type="file"
+            accept="application/pdf,image/png,image/jpeg,image/webp"
+            onChange={(e) => setFile(e.target.files?.[0] ?? null)}
+            className="sr-only"
           />
-        )}
-        {mode === "text" && (
-          <div className="space-y-3">
-            <details className="rounded-lg border border-amber-300 bg-amber-50/40 group">
-              <summary className="cursor-pointer p-3 text-sm font-semibold text-amber-900 select-none list-none flex items-center justify-between">
-                <span>📖 วิธีแปลง PDF ลายมือ/scan เป็น text (กดเปิดดู)</span>
-                <span className="text-xs opacity-70 group-open:rotate-180 transition">
-                  ▼
+          <div
+            role="button"
+            tabIndex={0}
+            onClick={() => fileInputRef.current?.click()}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                fileInputRef.current?.click();
+              }
+            }}
+            onDragOver={(e) => {
+              e.preventDefault();
+              setDragOver(true);
+            }}
+            onDragLeave={() => setDragOver(false)}
+            onDrop={(e) => {
+              e.preventDefault();
+              setDragOver(false);
+              const dropped = e.dataTransfer.files?.[0];
+              if (dropped) setFile(dropped);
+            }}
+            className={`w-full cursor-pointer rounded-lg border-2 border-dashed p-6 text-center text-sm transition-colors ${
+              dragOver
+                ? "border-brand bg-muted"
+                : file
+                  ? "border-emerald-300 bg-emerald-50/50"
+                  : "border-muted-foreground/30 hover:border-brand hover:bg-muted/40"
+            }`}
+          >
+            {file ? (
+              <div className="flex items-center justify-center gap-2">
+                <span className="truncate font-medium">{file.name}</span>
+                <span className="shrink-0 text-muted-foreground">
+                  ({Math.round(file.size / 1024)} KB)
                 </span>
-              </summary>
-              <div className="px-3 pb-3 text-xs space-y-3 text-amber-900">
-                <p className="text-amber-800/90">
-                  เลือกวิธีที่สะดวกสำหรับคุณ —
-                  ทุกวิธีคัดข้อความออกแล้วเอามาวางในช่องด้านล่าง
-                </p>
-
-                {/* GoodNotes */}
-                <div className="rounded border border-amber-200 bg-white/60 p-2">
-                  <p className="font-bold mb-1">
-                    📱 GoodNotes (iPad/Mac) — แนะนำสำหรับลายมือ
-                  </p>
-                  <ol className="list-decimal pl-4 space-y-0.5">
-                    <li>เปิด PDF ใน GoodNotes (ลากเข้าไปได้เลย)</li>
-                    <li>เลือกหน้า → เครื่องมือ <b>Lasso</b> (วงรอบ)</li>
-                    <li>วงข้อความที่ต้องการ → กดค้าง → <b>Convert</b></li>
-                    <li>
-                      เลือก &quot;<b>Convert Handwriting to Text</b>&quot; →
-                      เลือกภาษา <b>Thai</b>
-                    </li>
-                    <li>Copy text ที่ได้ → paste ที่ช่องด้านล่าง</li>
-                  </ol>
-                  <p className="text-[10px] opacity-70 mt-1">
-                    💡 ทำทีละหน้า/ทีละ section ดีกว่า — แม่นยำสูงกว่า batch ทีเดียว
-                  </p>
-                </div>
-
-                {/* Apple Preview */}
-                <div className="rounded border border-amber-200 bg-white/60 p-2">
-                  <p className="font-bold mb-1">
-                    🍎 Apple Preview (Mac) — สำหรับ PDF text หรือ scan ที่ชัด
-                  </p>
-                  <ol className="list-decimal pl-4 space-y-0.5">
-                    <li>
-                      double-click เปิด PDF (จะเปิดด้วย Preview อัตโนมัติ)
-                    </li>
-                    <li>
-                      Tools เมนูบน → <b>Text Selection</b> (หรือกด <kbd>⌘+A</kbd>)
-                    </li>
-                    <li>ลาก highlight ข้อความ → <kbd>⌘+C</kbd></li>
-                    <li>ถ้าเป็น scan: Tools → <b>Annotate</b> → <b>OCR</b> (macOS 13+)</li>
-                    <li>paste ที่ช่องด้านล่าง</li>
-                  </ol>
-                </div>
-
-                {/* iLovePDF */}
-                <div className="rounded border border-amber-200 bg-white/60 p-2">
-                  <p className="font-bold mb-1">
-                    🌐 iLovePDF.com — ฟรี, ใช้ผ่านเว็บ ไม่ต้องลง app
-                  </p>
-                  <ol className="list-decimal pl-4 space-y-0.5">
-                    <li>
-                      เข้า{" "}
-                      <a
-                        href="https://www.ilovepdf.com/ocr"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-violet-700 underline"
-                      >
-                        ilovepdf.com/ocr
-                      </a>
-                    </li>
-                    <li>ลาก PDF เข้าไป (ฟรีสูงสุด 25 MB)</li>
-                    <li>เลือกภาษา <b>Thai + English</b></li>
-                    <li>กด <b>Convert to OCR</b> → รอ ~30s</li>
-                    <li>Download PDF → เปิดด้วย Preview/Acrobat → Select All → Copy</li>
-                    <li>paste ที่ช่องด้านล่าง</li>
-                  </ol>
-                  <p className="text-[10px] opacity-70 mt-1">
-                    💡 ทางเลือกอื่น: smallpdf.com/pdf-ocr, sejda.com/ocr-pdf
-                  </p>
-                </div>
-
-                {/* Adobe */}
-                <div className="rounded border border-amber-200 bg-white/60 p-2">
-                  <p className="font-bold mb-1">
-                    📕 Adobe Acrobat Pro (Mac/PC) — ถ้ามี subscription
-                  </p>
-                  <ol className="list-decimal pl-4 space-y-0.5">
-                    <li>เปิด PDF ใน Acrobat</li>
-                    <li>
-                      All tools → <b>Scan &amp; OCR</b> → <b>Recognize Text</b>
-                    </li>
-                    <li>เลือกภาษา <b>Thai</b> → Recognize</li>
-                    <li>File → <b>Export to</b> → <b>Text (Plain)</b></li>
-                    <li>เปิดไฟล์ .txt → Select All → Copy → paste ที่ช่องด้านล่าง</li>
-                  </ol>
-                </div>
-
-                {/* Phone */}
-                <div className="rounded border border-amber-200 bg-white/60 p-2">
-                  <p className="font-bold mb-1">
-                    📸 ถ่ายภาพด้วยมือถือ — กรณีไม่มี tool อะไรเลย
-                  </p>
-                  <ol className="list-decimal pl-4 space-y-0.5">
-                    <li>
-                      เปิดแอป <b>Notes</b> (iPhone) หรือ <b>Google Lens</b>
-                    </li>
-                    <li>กดถ่ายรูปหน้า PDF → app จะอ่านลายมือออกมาเป็น text</li>
-                    <li>กด <b>Copy</b> → paste ที่ช่องด้านล่าง</li>
-                  </ol>
-                  <p className="text-[10px] opacity-70 mt-1">
-                    💡 หรือใช้แท็บ &quot;File&quot; upload รูปภาพหน้านั้น ๆ
-                    (ไฟล์ ≤4 MB) ให้ AI อ่านโดยตรง
-                  </p>
-                </div>
-
-                <div className="rounded bg-emerald-100/60 border border-emerald-300 p-2 text-emerald-900">
-                  <p className="font-bold">✅ Tips การเตรียม text ที่ดี</p>
-                  <ul className="list-disc pl-4 space-y-0.5 mt-1">
-                    <li>
-                      ไม่ต้อง format สวย — AI อ่านได้แม้ text ปนกัน
-                    </li>
-                    <li>
-                      มีคำผิดจาก OCR นิดหน่อยไม่เป็นไร — AI เดาความหมายได้
-                    </li>
-                    <li>
-                      เนื้อหา 1 หัวข้อ (เช่น &quot;Cardiac Cycle&quot;) ต่อ 1 import ดีสุด
-                    </li>
-                    <li>
-                      ไม่ต้องลบเลข page / header / footer — AI กรองให้
-                    </li>
-                  </ul>
-                </div>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setFile(null);
+                    if (fileInputRef.current) fileInputRef.current.value = "";
+                  }}
+                  className="shrink-0 text-muted-foreground underline hover:text-rose-600"
+                >
+                  เอาออก
+                </button>
               </div>
-            </details>
-
-            <textarea
-              value={text}
-              onChange={(e) => setText(e.target.value)}
-              placeholder="paste text ที่แปลงมาแล้ว... (lecture notes, สรุปจากรุ่นพี่, ตำราที่ OCR แล้ว)"
-              className="w-full border rounded p-2 text-sm min-h-[200px] font-mono"
-            />
-            {text.length > 0 && (
-              <p className="text-xs text-muted-foreground">
-                ความยาว: {text.length.toLocaleString()} ตัวอักษร (~
-                {Math.round(text.length / 4).toLocaleString()} tokens)
-              </p>
+            ) : (
+              <div className="space-y-1">
+                <p className="font-semibold">แตะเพื่อเลือกไฟล์ หรือลากไฟล์มาวาง</p>
+                <p className="text-xs text-muted-foreground">
+                  PDF สูงสุด 32 MB · รูปภาพสูงสุด 4 MB
+                </p>
+              </div>
             )}
           </div>
-        )}
-
-        <input
-          value={hint}
-          onChange={(e) => setHint(e.target.value)}
-          placeholder="Hint (optional) — เช่น 'Y1 CVS — Cardiac Cycle'"
-          className="w-full border rounded p-2 text-sm"
-        />
+        </div>
 
         {error && (
-          <div className="border border-rose-300 bg-rose-50 text-rose-800 rounded p-3 text-sm">
+          <div className="rounded border border-rose-300 bg-rose-50 p-3 text-sm text-rose-800">
             {error}
           </div>
         )}
 
-        <Button onClick={extract} disabled={loading} className="gap-2">
-          {loading ? (
-            <>
-              <Loader2 className="h-4 w-4 animate-spin" />
-              {progressMsg
-                ? progressMsg
-                : extractMode === "deep"
-                  ? "AI กำลัง deep-dive… (60-120s)"
-                  : extractMode === "expand"
-                    ? "AI กำลังขยายเนื้อหา… (30-60s)"
-                    : "AI กำลังสรุป… (20-40s)"}
-            </>
-          ) : (
-            <>
-              <Sparkles className="h-4 w-4" />
-              {extractMode === "faithful"
-                ? "Extract"
-                : extractMode === "expand"
-                  ? "Extract + ขยายเนื้อหา"
-                  : "Extract + Deep Dive"}
-            </>
-          )}
-        </Button>
+        <div className="flex items-center gap-3">
+          <Button onClick={run} disabled={loading || !file || !topicId}>
+            {loading ? "กำลังสร้าง…" : "เริ่มสร้างเนื้อหา"}
+          </Button>
+          {progress && <span className="text-xs text-muted-foreground">{progress}</span>}
+        </div>
 
         {data && (
           <div className="space-y-4 border-t pt-4">
             <div className="flex items-center justify-between">
-              <p className="font-bold flex items-center gap-2">
-                ✨ Preview — แก้ได้ก่อนบันทึก
-              </p>
+              <p className="font-bold">ตรวจแก้ก่อนบันทึก</p>
               <button
                 onClick={() => setData(null)}
-                className="text-xs text-muted-foreground hover:text-rose-600 flex items-center gap-1"
+                className="text-xs text-muted-foreground underline hover:text-rose-600"
               >
-                <X className="h-3 w-3" /> ทิ้ง
+                ทิ้งผลลัพธ์
               </button>
             </div>
 
-            {/* Lesson */}
-            <Card>
-              <CardContent className="p-4 space-y-2">
-                <div className="flex items-center gap-2">
-                  <Badge className="bg-teal-100 text-teal-700">Lesson</Badge>
-                  <Badge variant="outline">{data.lesson.layer}</Badge>
-                  <Badge variant="outline">{data.lesson.estimated_min} นาที</Badge>
+            {extractMode !== "faithful" && (
+              <p className="rounded border border-amber-300 bg-amber-50 p-2 text-xs text-amber-900">
+                โหมดนี้ให้ AI แต่งเนื้อหาเพิ่มจากไฟล์ต้นฉบับ — หัวข้อที่ลงท้ายด้วย
+                &quot;(เพิ่มโดย AI)&quot; ไม่ได้มาจากไฟล์ ต้องตรวจความถูกต้องก่อนบันทึก
+              </p>
+            )}
+
+            {data.classification?.suggested_topic_id &&
+              data.classification.suggested_topic_id !== topicId && (
+                <div className="rounded border border-amber-300 bg-amber-50 p-2 text-xs text-amber-900">
+                  AI คิดว่าไฟล์นี้เป็นวิชา{" "}
+                  <b>
+                    {topics.find((t) => t.id === data.classification!.suggested_topic_id)
+                      ?.name_th ?? "ไม่พบในรายการ"}
+                  </b>{" "}
+                  ({Math.round(data.classification.confidence * 100)}%) —{" "}
+                  {data.classification.reasoning}
+                  <button
+                    onClick={() => {
+                      const s = topics.find(
+                        (t) => t.id === data.classification!.suggested_topic_id,
+                      );
+                      if (!s) return;
+                      setYear(s.year);
+                      if (s.term) setTerm(s.term);
+                      setTopicId(s.id);
+                    }}
+                    className="ml-1 underline"
+                  >
+                    เปลี่ยนไปวิชานี้
+                  </button>
                 </div>
+              )}
+
+            {/* บทเรียน */}
+            <Card>
+              <CardContent className="space-y-2 p-4">
+                <p className="text-xs font-semibold text-muted-foreground">
+                  บทเรียน · {data.lesson.layer} · {data.lesson.estimated_min} นาที
+                </p>
                 <input
                   value={data.lesson.title}
                   onChange={(e) =>
-                    setData({
-                      ...data,
-                      lesson: { ...data.lesson, title: e.target.value },
-                    })
+                    setData({ ...data, lesson: { ...data.lesson, title: e.target.value } })
                   }
-                  className="w-full border rounded p-2 text-sm font-semibold"
+                  className="w-full rounded border p-2 text-sm font-semibold"
                 />
                 <textarea
                   value={data.lesson.body_md}
                   onChange={(e) =>
-                    setData({
-                      ...data,
-                      lesson: { ...data.lesson, body_md: e.target.value },
-                    })
+                    setData({ ...data, lesson: { ...data.lesson, body_md: e.target.value } })
                   }
-                  className="w-full border rounded p-2 text-sm font-mono min-h-[200px]"
+                  className="min-h-[200px] w-full rounded border p-2 font-mono text-sm"
                 />
               </CardContent>
             </Card>
 
             {/* Flashcards */}
             <div>
-              <p className="font-semibold mb-2">
-                Flashcards ({data.flashcards.length})
-              </p>
+              <p className="mb-2 font-semibold">Flashcards ({data.flashcards.length})</p>
               <div className="space-y-2">
                 {data.flashcards.map((fc, i) => (
                   <Card key={i}>
-                    <CardContent className="p-3 space-y-1">
-                      <div className="flex items-center justify-between">
-                        <Badge variant="outline" className="text-xs">
-                          {fc.difficulty}
-                        </Badge>
+                    <CardContent className="space-y-1 p-3">
+                      <div className="flex items-center justify-between text-xs text-muted-foreground">
+                        <span>{fc.difficulty}</span>
                         <button
-                          onClick={() => removeFlashcard(i)}
-                          className="text-muted-foreground hover:text-rose-600"
+                          onClick={() =>
+                            setData({
+                              ...data,
+                              flashcards: data.flashcards.filter((_, x) => x !== i),
+                            })
+                          }
+                          className="underline hover:text-rose-600"
                         >
-                          <Trash2 className="h-3 w-3" />
+                          ลบ
                         </button>
                       </div>
                       <textarea
@@ -717,7 +578,7 @@ export default function ImportPanel({ topics }: Props) {
                           f[i] = { ...fc, front: e.target.value };
                           setData({ ...data, flashcards: f });
                         }}
-                        className="w-full border rounded p-2 text-sm"
+                        className="w-full rounded border p-2 text-sm"
                         rows={2}
                       />
                       <textarea
@@ -727,7 +588,7 @@ export default function ImportPanel({ topics }: Props) {
                           f[i] = { ...fc, back: e.target.value };
                           setData({ ...data, flashcards: f });
                         }}
-                        className="w-full border rounded p-2 text-sm bg-muted/30"
+                        className="w-full rounded border bg-muted/30 p-2 text-sm"
                         rows={2}
                       />
                     </CardContent>
@@ -736,47 +597,43 @@ export default function ImportPanel({ topics }: Props) {
               </div>
             </div>
 
-            {/* Quizzes */}
+            {/* ข้อสอบ */}
             <div>
-              <p className="font-semibold mb-2">Quizzes ({data.quizzes.length})</p>
+              <p className="mb-2 font-semibold">ข้อสอบ ({data.quizzes.length})</p>
               <div className="space-y-2">
                 {data.quizzes.map((qz, i) => (
                   <Card key={i}>
-                    <CardContent className="p-3 space-y-2">
-                      <div className="flex items-center justify-between">
-                        <div className="flex gap-1">
-                          <Badge variant="outline" className="text-xs">
-                            {qz.difficulty}
-                          </Badge>
-                          <Badge className="bg-emerald-100 text-emerald-700 text-xs">
-                            Ans: {qz.correct_answer}
-                          </Badge>
-                        </div>
+                    <CardContent className="space-y-2 p-3">
+                      <div className="flex items-center justify-between text-xs text-muted-foreground">
+                        <span>
+                          {qz.difficulty} · ตอบ {qz.correct_answer}
+                        </span>
                         <button
-                          onClick={() => removeQuiz(i)}
-                          className="text-muted-foreground hover:text-rose-600"
+                          onClick={() =>
+                            setData({
+                              ...data,
+                              quizzes: data.quizzes.filter((_, x) => x !== i),
+                            })
+                          }
+                          className="underline hover:text-rose-600"
                         >
-                          <Trash2 className="h-3 w-3" />
+                          ลบ
                         </button>
                       </div>
                       <p className="text-sm font-medium">{qz.stem}</p>
-                      <ul className="text-xs space-y-0.5">
+                      <ul className="space-y-0.5 text-xs">
                         {qz.choices.map((c) => (
                           <li
                             key={c.label}
-                            className={
-                              c.label === qz.correct_answer ? "font-bold" : ""
-                            }
+                            className={c.label === qz.correct_answer ? "font-bold" : ""}
                           >
-                            <span className="font-semibold mr-1">{c.label}.</span>
+                            <span className="mr-1 font-semibold">{c.label}.</span>
                             {c.text}
                           </li>
                         ))}
                       </ul>
                       {qz.explanation && (
-                        <p className="text-xs italic text-muted-foreground">
-                          {qz.explanation}
-                        </p>
+                        <p className="text-xs italic text-muted-foreground">{qz.explanation}</p>
                       )}
                     </CardContent>
                   </Card>
@@ -784,99 +641,35 @@ export default function ImportPanel({ topics }: Props) {
               </div>
             </div>
 
-            {/* Save form */}
-            <Card className="border-violet-300 bg-violet-50/30">
-              <CardContent className="p-4 space-y-3">
-                {data.classification && (
-                  <div
-                    className={`rounded border p-2 text-xs flex items-start gap-2 ${
-                      data.classification.suggested_topic_id &&
-                      data.classification.confidence >= 0.6
-                        ? "border-emerald-300 bg-emerald-50 text-emerald-900"
-                        : "border-amber-300 bg-amber-50 text-amber-900"
-                    }`}
-                  >
-                    <span>💡</span>
-                    <div className="flex-1">
-                      {data.classification.suggested_topic_id ? (
-                        <>
-                          <span className="font-semibold">
-                            AI คิดว่า:{" "}
-                            {(() => {
-                              const t = topics.find(
-                                (x) => x.id === data.classification!.suggested_topic_id,
-                              );
-                              return t
-                                ? `Y${t.year} · ${t.school_systems?.icon ?? ""} ${t.name_th}`
-                                : "(ไม่พบ topic ใน list)";
-                            })()}
-                          </span>
-                          <span className="ml-1 opacity-70">
-                            ({Math.round(data.classification.confidence * 100)}%)
-                          </span>
-                        </>
-                      ) : (
-                        <span className="font-semibold">
-                          AI ไม่พบ topic ที่ตรง — แนะนำสร้างใหม่
-                          {data.classification.suggested_new_topic
-                            ? `: Y${data.classification.suggested_new_topic.year} · ${data.classification.suggested_new_topic.system_hint} · ${data.classification.suggested_new_topic.name_th}`
-                            : ""}
-                        </span>
-                      )}
-                      <p className="mt-0.5 opacity-80">
-                        {data.classification.reasoning}
-                      </p>
-                    </div>
-                  </div>
-                )}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <label className="block">
-                    <span className="text-xs font-semibold text-muted-foreground block mb-1">
-                      Topic
-                    </span>
-                    <select
-                      value={topicId}
-                      onChange={(e) => setTopicId(e.target.value)}
-                      className="w-full border rounded p-2 text-sm"
-                    >
-                      {topics.map((t) => (
-                        <option key={t.id} value={t.id}>
-                          Y{t.year} · {t.school_systems?.icon} {t.name_th}
-                          {t.code ? ` (${t.code})` : ""}
-                        </option>
-                      ))}
-                    </select>
-                  </label>
-                  <label className="block">
-                    <span className="text-xs font-semibold text-muted-foreground block mb-1">
-                      Source (optional)
-                    </span>
-                    <input
-                      value={source}
-                      onChange={(e) => setSource(e.target.value)}
-                      placeholder="auto จาก file/url"
-                      className="w-full border rounded p-2 text-sm"
-                    />
-                  </label>
-                </div>
-                {result && (
-                  <div
-                    className={`rounded p-2 text-sm flex items-center gap-2 ${
-                      result.kind === "ok"
-                        ? "bg-emerald-50 text-emerald-800 border border-emerald-200"
-                        : "bg-rose-50 text-rose-800 border border-rose-200"
-                    }`}
-                  >
-                    {result.kind === "ok" ? <Check className="h-4 w-4" /> : <X className="h-4 w-4" />}
-                    {result.msg}
-                  </div>
-                )}
-                <Button onClick={save} disabled={saving || !topicId} className="gap-2">
-                  {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
-                  บันทึกทั้งหมด
-                </Button>
-              </CardContent>
-            </Card>
+            {result && (
+              <div
+                className={`rounded border p-2 text-sm ${
+                  result.kind === "ok"
+                    ? "border-emerald-200 bg-emerald-50 text-emerald-800"
+                    : "border-rose-200 bg-rose-50 text-rose-800"
+                }`}
+              >
+                {result.msg}
+              </div>
+            )}
+
+            <Button onClick={save} disabled={saving || loading || !topicId}>
+              {saving
+                ? "กำลังบันทึก…"
+                : `บันทึกลงวิชา ${selectedTopic ? topicLabel(selectedTopic) : ""}`}
+            </Button>
+          </div>
+        )}
+
+        {!data && result && (
+          <div
+            className={`rounded border p-2 text-sm ${
+              result.kind === "ok"
+                ? "border-emerald-200 bg-emerald-50 text-emerald-800"
+                : "border-rose-200 bg-rose-50 text-rose-800"
+            }`}
+          >
+            {result.msg}
           </div>
         )}
       </CardContent>
