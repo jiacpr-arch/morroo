@@ -308,6 +308,19 @@ describe("longCaseToScenario", () => {
     expect(boy).not.toContain("patient_generic");
   });
 
+  it("doesn't put a middle-aged patient_generic sprite on young or elderly men (บั๊กเดิม: ชาย 19 ปี ปวดอัณฑะ โผล่เป็นลุงวัย 50)", () => {
+    const young = hxWho(hxCase({ age: 19, gender: "ชาย" }));
+    expect(young).toContain("patient_young_male");
+    expect(young).not.toContain("patient_generic");
+    // ขอบเขต: <35 เป็นหนุ่ม, 35-59 เป็น patient_generic, ≥60 เป็นชายสูงอายุ
+    expect(hxWho(hxCase({ age: 34, gender: "ชาย" }))).toContain("patient_young_male");
+    expect(hxWho(hxCase({ age: 35, gender: "ชาย" }))).toContain("patient_generic");
+    const elderly = hxWho(hxCase({ age: 72, gender: "ชาย" }));
+    expect(elderly).toContain("patient_elderly_male");
+    expect(elderly).not.toContain("patient_generic");
+    expect(hxWho(hxCase({ age: 60, gender: "ชาย" }))).toContain("patient_elderly_male");
+  });
+
   it("lets the mother answer for infants and toddlers who cannot speak", () => {
     const infant = hxWho(hxCase({ age: "8 เดือน", gender: "ชาย" }));
     expect(infant).toContain("mother_rel");
