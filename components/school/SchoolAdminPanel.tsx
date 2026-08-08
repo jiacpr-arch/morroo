@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Loader2, Check, AlertCircle, ImagePlus, Eye, ArrowUp, ArrowDown } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
@@ -12,6 +11,8 @@ import { normalizeImageUrl } from "@/lib/school/image-url";
 import { splitLessonPartsRaw, joinLessonParts } from "@/lib/school/lesson-parts";
 import ImportPanel from "./ImportPanel";
 import ImageUploader from "./ImageUploader";
+import LessonReader from "./LessonReader";
+import type { SchoolLesson } from "@/lib/types-school";
 
 /**
  * Three tabs, on purpose. Everything students consume is produced by the AI
@@ -135,7 +136,8 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
   const [selectedId, setSelectedId] = useState("");
   const [body, setBody] = useState("");
   const [loading, setLoading] = useState(false);
-  const [viewMode, setViewMode] = useState<ViewMode>("edit");
+  // เริ่มที่หน้าเหมือนนักเรียน + ช่องแทรกรูป เพราะเป็นงานหลักของแท็บนี้
+  const [viewMode, setViewMode] = useState<ViewMode>("paragraphs");
   const taRef = useRef<HTMLTextAreaElement>(null);
 
   function handleYearChange(y: number) {
@@ -206,7 +208,7 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
     setSelectedId(id);
     const item = items.find((i) => i.id === id);
     setBody(item?.body_md ?? "");
-    setViewMode("edit");
+    setViewMode("paragraphs");
   }
 
   function insertAtCursor(text: string) {
@@ -257,6 +259,20 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
     setBody(next.join("\n\n"));
     notify("ok", "แทรกรูปแล้ว");
   }
+
+  // LessonReader ต้องการ SchoolLesson เต็มรูป แต่ตัว reader ใช้แค่ id/body_md/title
+  // ส่วนที่เหลือใส่ค่าพอให้ครบ type — หน้าแอดมินไม่ได้เขียน progress อยู่แล้ว
+  const selectedItem = items.find((i) => i.id === selectedId);
+  const previewLesson: SchoolLesson = {
+    id: selectedId,
+    topic_id: topicId,
+    layer: "foundation",
+    title: selectedItem?.title ?? "",
+    body_md: body,
+    estimated_min: 0,
+    sort_order: selectedItem?.sort_order ?? 0,
+    source: null,
+  };
 
   async function save() {
     if (!selectedId) return notify("err", "ยังไม่ได้เลือกบท");
@@ -314,10 +330,9 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
       <CardContent className="p-4 space-y-3">
         <h3 className="font-bold">แก้ไขเนื้อหา + แทรกรูป</h3>
         <p className="text-xs text-muted-foreground">
-          เลือกชั้นปี → เทอม → วิชา → บท เนื้อหาของบทนั้นจะขึ้นให้แก้ไข กด
-          &quot;อัปโหลด + แทรกรูป&quot; เพื่อวางรูปตรงเคอร์เซอร์ (แทนที่บรรทัด{" "}
-          <code>🖼️ รูปแนะนำ</code> ที่ AI ใส่ไว้) หรือสลับไปโหมด &quot;แทรกรูประหว่าง Part&quot;
-          เพื่อดูเนื้อหาเหมือนหน้าที่นักเรียนเห็นจริง แล้วกดไอคอนรูปตรงจุดที่ต้องการแทรกได้เลย แล้วบันทึก
+          เลือกชั้นปี → เทอม → วิชา → บท แล้วเนื้อหาจะขึ้นเป็นหน้าเดียวกับที่นักเรียนเห็น
+          โดยมีปุ่ม &quot;+ แทรกรูปตรงนี้&quot; คั่นก่อน/หลังทุก Part — กดอัปโหลดรูปตรงจุดที่ต้องการได้เลย
+          แล้วกดบันทึก (ถ้าอยากแก้ข้อความเอง สลับไปโหมด &quot;แก้ไข&quot;)
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           <Field label="ชั้นปี">
@@ -462,7 +477,7 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
                 onClick={() => setViewMode("paragraphs")}
               >
                 <ImagePlus className="h-4 w-4" />
-                {kind === "lesson" ? "แทรกรูประหว่าง Part" : "แทรกรูประหว่างพารากราฟ"}
+                {kind === "lesson" ? "หน้าเหมือนนักเรียน + แทรกรูป" : "แทรกรูประหว่างพารากราฟ"}
               </Button>
             </div>
 
@@ -481,35 +496,17 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
               />
             )}
 
-            {/* หน้าตาเหมือนที่นักเรียนเห็นจริงใน LessonReader เป๊ะ ๆ (การ์ด + Badge "Part x/y")
-                เพื่อให้แอดมินแทรกรูปตรงจุดที่ต้องการได้โดยไม่ต้องเดา — ตัว marker/mini quiz
-                ระหว่าง Part จะไม่ถูกแตะต้อง มีแค่เนื้อหาของ Part ที่ถูกแก้ */}
-            {viewMode === "paragraphs" && kind === "lesson" && lessonParts && (
-              <div className="space-y-3">
-                <PartGap onUploaded={(url) => insertImageInLessonPart(0, url)} />
-                {lessonParts.parts.map((p, i) => (
-                  <div key={i} className="space-y-3">
-                    <Card>
-                      <CardContent className="p-5">
-                        <div className="flex items-center gap-2 mb-3">
-                          <Badge variant="outline" className="text-xs">
-                            Part {i + 1} / {lessonParts.parts.length}
-                          </Badge>
-                        </div>
-                        <article className="prose prose-slate dark:prose-invert max-w-none">
-                          <ReactMarkdown remarkPlugins={[remarkGfm]}>{p}</ReactMarkdown>
-                        </article>
-                      </CardContent>
-                    </Card>
-                    {i < lessonParts.gateRaw.length && (
-                      <p className="text-center text-xs text-muted-foreground">
-                        ⏸ จุดคั่น Mini Quiz — ไม่ถูกแก้ไขจากตรงนี้
-                      </p>
-                    )}
-                    <PartGap onUploaded={(url) => insertImageInLessonPart(i + 1, url)} />
-                  </div>
-                ))}
-              </div>
+            {/* ใช้ LessonReader ตัวเดียวกับหน้านักเรียนเป๊ะ ๆ (การ์ด Part, mini quiz คั่น,
+                สรุปตอนจบ) แค่มีช่องอัปโหลดรูปคั่นก่อน/หลังทุก Part เพิ่มเข้ามา
+                — แทรกรูปแล้วเนื้อหาอัปเดตทันที ตัว marker/mini quiz ไม่ถูกแตะต้อง */}
+            {viewMode === "paragraphs" && kind === "lesson" && (
+              <LessonReader
+                key={selectedId}
+                lesson={previewLesson}
+                miniQuizzes={[]}
+                mode="read"
+                onInsertImage={insertImageInLessonPart}
+              />
             )}
 
             {viewMode === "paragraphs" && kind === "book_chapter" && (
