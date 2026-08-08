@@ -20,6 +20,7 @@ import type { SchoolDifficulty } from "@/lib/types-school";
 import BookmarkButton from "./BookmarkButton";
 import NoteEditor from "./NoteEditor";
 import RelatedConcepts from "./RelatedConcepts";
+import ImageUploader from "./ImageUploader";
 
 interface Props {
   lesson: SchoolLesson;
@@ -31,6 +32,12 @@ interface Props {
   mode?: "mixed" | "read";
   /** ลิงก์ไปโหมดควิซของบทนี้ แสดงตอนอ่านจบ */
   quizHref?: string;
+  /**
+   * โหมดแอดมิน: ถ้าส่งมา จะมีช่องอัปโหลดรูปคั่นก่อน/หลังทุก Part
+   * (gapIndex 0 = ก่อน Part 1, i = หลัง Part i) และปิดการนับ XP/ความก้าวหน้า
+   * เพราะแอดมินไม่ได้กำลังเรียน หน้าตาส่วนอื่นเหมือนที่นักเรียนเห็นทุกอย่าง
+   */
+  onInsertImage?: (gapIndex: number, url: string) => void;
 }
 
 /**
@@ -47,7 +54,9 @@ export default function LessonReader({
   miniQuizzes,
   mode = "mixed",
   quizHref,
+  onInsertImage,
 }: Props) {
+  const adminMode = !!onInsertImage;
   const readOnly = mode === "read";
   const { sections, gateQuizzes } = useMemo(() => {
     const parsed = splitLessonParts(lesson.body_md);
@@ -69,6 +78,7 @@ export default function LessonReader({
   async function markCompleted() {
     if (completed) return;
     setCompleted(true);
+    if (adminMode) return;
     await awardXp(XP.lessonRead, `lesson:${lesson.id}`);
     try {
       const supabase = createClient();
@@ -109,6 +119,7 @@ export default function LessonReader({
 
   return (
     <div className="space-y-6">
+      {adminMode && <ImageInsertSlot onUploaded={(u) => onInsertImage!(0, u)} />}
       {visibleSections.map((sec, idx) => (
         <div key={idx}>
           <Card>
@@ -148,17 +159,23 @@ export default function LessonReader({
               Part ถัดไป <ArrowRight className="h-4 w-4" />
             </Button>
           )}
+
+          {adminMode && (
+            <div className="mt-3">
+              <ImageInsertSlot onUploaded={(u) => onInsertImage!(idx + 1, u)} />
+            </div>
+          )}
         </div>
       ))}
 
       {/* อ่านอย่างเดียว: กดยืนยันเองว่าอ่านจบ (โหมด mixed นับให้อัตโนมัติ) */}
-      {readOnly && !completed && (
+      {readOnly && !completed && !adminMode && (
         <Button onClick={markCompleted} className="w-full gap-2">
           อ่านจบแล้ว <ArrowRight className="h-4 w-4" />
         </Button>
       )}
 
-      {finished && (
+      {finished && !adminMode && (
         <Card className="border-teal-300 bg-teal-50/40">
           <CardContent className="p-5 space-y-3">
             <p className="font-bold flex items-center gap-2 text-teal-700">
@@ -183,6 +200,17 @@ export default function LessonReader({
       {!readOnly && step + 1 === sections.length && miniQuizzes.length > totalGates && (
         <FinalQuiz quizzes={miniQuizzes.slice(totalGates)} />
       )}
+    </div>
+  );
+}
+
+/** ช่องอัปโหลดรูปคั่นระหว่าง Part — เห็นเฉพาะแอดมิน */
+function ImageInsertSlot({ onUploaded }: { onUploaded: (url: string) => void }) {
+  return (
+    <div className="flex items-center gap-2">
+      <div className="flex-1 border-t border-dashed" />
+      <ImageUploader onUploaded={onUploaded} label="+ แทรกรูปตรงนี้" />
+      <div className="flex-1 border-t border-dashed" />
     </div>
   );
 }
