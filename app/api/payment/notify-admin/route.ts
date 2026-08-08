@@ -20,6 +20,9 @@ const PLAN_LABELS: Record<string, string> = {
   bundle: "ชุดข้อสอบ",
   board_monthly: "Board รายเดือน",
   board_yearly: "Board รายปี",
+  school_monthly: "School รายเดือน",
+  school_term: "School ราย 1 ภาคเรียน",
+  school_yearly: "School รายปี",
 };
 
 function infoRow(label: string, value: string) {

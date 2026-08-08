@@ -46,7 +46,9 @@ export default async function SchoolAdminPage() {
   // it needs the whole curriculum — not just the 50 most recent.
   const { data: topicsRecent } = await supabase
     .from("school_topics")
-    .select("id, year, term, slug, name_th, code, school_systems(slug, name_th, icon)")
+    .select(
+      "id, year, term, slug, name_th, code, is_preview, school_systems(slug, name_th, icon)"
+    )
     .order("year")
     .order("sort_order")
     .limit(500);
@@ -57,6 +59,7 @@ export default async function SchoolAdminPage() {
     slug: string;
     name_th: string;
     code?: string | null;
+    is_preview?: boolean;
     school_systems?: { slug: string; name_th: string; icon?: string } | null;
   };
 

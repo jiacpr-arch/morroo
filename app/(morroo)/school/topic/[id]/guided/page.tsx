@@ -12,7 +12,8 @@ import {
   getSchoolMasteryByTopic,
 } from "@/lib/supabase/queries-school";
 import GuidedRunner from "@/components/school/GuidedRunner";
-import { hasSchoolAccess } from "@/lib/membership";
+import UpgradeGate from "@/components/school/UpgradeGate";
+import { canOpenTopic, schoolAccessFor } from "@/lib/school/access";
 
 export const dynamic = "force-dynamic";
 
@@ -39,14 +40,28 @@ export default async function GuidedPage({ params }: PageProps) {
     .select("membership_type, membership_expires_at")
     .eq("id", user.id)
     .maybeSingle();
-  const isPremium = hasSchoolAccess(profile);
+  const access = schoolAccessFor(profile);
+  const unlocked = canOpenTopic(access, topic);
 
-  const [lessons, cards, quizzes, masteryMap] = await Promise.all([
-    getSchoolLessons({ topicId: id }),
-    getSchoolFlashcards({ topicId: id, limit: 30 }),
-    getSchoolQuizzes({ topicId: id, limit: 20 }),
-    getSchoolMasteryByTopic(user.id),
-  ]);
+  const empty = {
+    lessons: [] as Awaited<ReturnType<typeof getSchoolLessons>>,
+    cards: [] as Awaited<ReturnType<typeof getSchoolFlashcards>>,
+    quizzes: [] as Awaited<ReturnType<typeof getSchoolQuizzes>>,
+    masteryMap: {} as Awaited<ReturnType<typeof getSchoolMasteryByTopic>>,
+  };
+  const { lessons, cards, quizzes, masteryMap } = unlocked
+    ? await Promise.all([
+        getSchoolLessons({ topicId: id }),
+        getSchoolFlashcards({ topicId: id, limit: 30 }),
+        getSchoolQuizzes({ topicId: id, limit: 20 }),
+        getSchoolMasteryByTopic(user.id),
+      ]).then(([lessons, cards, quizzes, masteryMap]) => ({
+        lessons,
+        cards,
+        quizzes,
+        masteryMap,
+      }))
+    : empty;
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6">
@@ -66,14 +81,23 @@ export default async function GuidedPage({ params }: PageProps) {
         อ่าน → ฝึก → ทดสอบ → mastery check
       </p>
 
-      <GuidedRunner
-        topicId={id}
-        lessons={lessons}
-        cards={cards}
-        quizzes={quizzes}
-        initialMastery={masteryMap[id] ?? { seen: 0, correct: 0, pct: 0 }}
-        isPremium={isPremium}
-      />
+      {unlocked ? (
+        <GuidedRunner
+          topicId={id}
+          lessons={lessons}
+          cards={cards}
+          quizzes={quizzes}
+          initialMastery={masteryMap[id] ?? { seen: 0, correct: 0, pct: 0 }}
+          isPremium={access.isPremium}
+        />
+      ) : (
+        <UpgradeGate
+          title="วิชานี้อยู่ในแพ็ก School"
+          description="Guided Sequence พาเดินจากอ่าน → ฝึก → ทดสอบ ทีละบท — สมัครแพ็ก School เพื่อเปิดใช้กับทุกวิชาในชั้นปี"
+          fallbackHref={`/school/topic/${id}`}
+          fallbackLabel="กลับหน้าวิชา"
+        />
+      )}
     </div>
   );
 }

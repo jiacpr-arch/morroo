@@ -13,7 +13,10 @@ import {
   getSchoolBookByTopic,
 } from "@/lib/supabase/queries-school";
 import ChapterList from "@/components/school/ChapterList";
+import UpgradeGate from "@/components/school/UpgradeGate";
 import { splitLessonParts } from "@/lib/school/lesson-parts";
+import { getSchoolAccess } from "@/lib/school/access-server";
+import { canOpenTopic } from "@/lib/school/access";
 
 export const dynamic = "force-dynamic";
 
@@ -39,11 +42,16 @@ export default async function TopicPage({ params }: PageProps) {
   const topic = await getSchoolTopic(id);
   if (!topic) notFound();
 
-  const [lessons, quizzes, bookResult] = await Promise.all([
-    getSchoolLessons({ topicId: id }),
-    getSchoolQuizzes({ topicId: id, limit: 100 }),
-    getSchoolBookByTopic(id),
-  ]);
+  const { access } = await getSchoolAccess();
+  const unlocked = canOpenTopic(access, topic);
+
+  const [lessons, quizzes, bookResult] = unlocked
+    ? await Promise.all([
+        getSchoolLessons({ topicId: id }),
+        getSchoolQuizzes({ topicId: id, limit: 100 }),
+        getSchoolBookByTopic(id),
+      ])
+    : [[], [], null];
   const book = bookResult?.book ?? null;
   const bookChapterCount = bookResult?.chapters.length ?? 0;
 
@@ -109,6 +117,9 @@ export default async function TopicPage({ params }: PageProps) {
             <CheckCircle2 className="h-3 w-3 mr-1" /> Mastered
           </Badge>
         )}
+        {topic.is_preview && (
+          <Badge className="bg-sky-100 text-sky-700">วิชาตัวอย่าง — ฟรี</Badge>
+        )}
       </div>
       <h1 className="text-3xl font-bold mb-3">{topic.name_th}</h1>
       <p className="text-muted-foreground mb-1">{topic.name_en}</p>
@@ -118,10 +129,17 @@ export default async function TopicPage({ params }: PageProps) {
 
       {/* เนื้อหาแยกเป็นบท + เลือกโหมดการเรียน — ทางเข้าหลักของวิชา */}
       <div className="mb-8">
-        <ChapterList chapters={chapters} />
+        {unlocked ? (
+          <ChapterList chapters={chapters} />
+        ) : (
+          <UpgradeGate
+            title="วิชานี้อยู่ในแพ็ก School"
+            description="สมัครแล้วเปิดอ่านได้ทุกบทของทุกวิชาในชั้นปี พร้อมข้อสอบ เฉลย และระบบทบทวนตามตารางลืม"
+          />
+        )}
       </div>
 
-      {/* Full-text book (reference) — อ่านได้อิสระ ไม่ gating */}
+      {/* Full-text book (reference) — มาพร้อมสิทธิ์ของวิชา (ล็อกพร้อมกัน) */}
       {book && bookChapterCount > 0 && (
         <Card className="mb-8 border-amber-200 bg-amber-50/50">
           <CardContent className="p-5 flex items-center justify-between gap-4">

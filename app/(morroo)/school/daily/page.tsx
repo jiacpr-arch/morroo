@@ -11,7 +11,7 @@ import {
 } from "@/lib/supabase/queries-school";
 import DailyLessonStepper from "@/components/school/DailyLessonStepper";
 import SubjectFilter from "@/components/school/SubjectFilter";
-import { hasSchoolAccess } from "@/lib/membership";
+import { schoolAccessFor } from "@/lib/school/access";
 import { redirect } from "next/navigation";
 
 export const dynamic = "force-dynamic";
@@ -45,7 +45,9 @@ export default async function DailyPage({ searchParams }: PageProps) {
   const activeTopic = subject ? topics.find((t) => t.id === subject) : undefined;
   const topicId = activeTopic?.id;
 
-  const isPremium = hasSchoolAccess(profile);
+  // Daily Lesson เป็นของฟรีตลอด (เป็นตัวสร้างนิสัยที่พาไปสู่การจ่ายเงิน)
+  // แต่เนื้อหาที่หยิบมาใช้จะจำกัดอยู่ในหัวข้อตัวอย่างสำหรับผู้ใช้ฟรี
+  const { isPremium, previewOnly } = schoolAccessFor(profile);
   const [lessons, cards, quizzes] = await Promise.all([
     getMixedLessons({
       userId: user.id,
@@ -53,6 +55,7 @@ export default async function DailyPage({ searchParams }: PageProps) {
       topicId,
       weakSystemIds: profile.weak_subjects ?? [],
       limit: 2,
+      previewOnly,
     }),
     getMixedFlashcards({
       userId: user.id,
@@ -60,12 +63,14 @@ export default async function DailyPage({ searchParams }: PageProps) {
       topicId,
       weakSystemIds: profile.weak_subjects ?? [],
       limit: 5,
+      previewOnly,
     }),
     getMixedQuizzes({
       userId: user.id,
       year: profile.current_year,
       topicId,
       limit: 3,
+      previewOnly,
     }),
   ]);
 
@@ -94,7 +99,7 @@ export default async function DailyPage({ searchParams }: PageProps) {
 
       <SubjectFilter
         basePath="/school/daily"
-        topics={topics}
+        topics={previewOnly ? topics.filter((t) => t.is_preview) : topics}
         activeTopicId={topicId}
       />
 
@@ -102,7 +107,9 @@ export default async function DailyPage({ searchParams }: PageProps) {
         <div className="border rounded-lg p-8 text-center text-muted-foreground">
           {activeTopic
             ? "ยังไม่มีเนื้อหาในรายวิชานี้ — ลองเลือกวิชาอื่น หรือกด “ทุกวิชา (สุ่ม)”"
-            : "ยังไม่มีเนื้อหาสำหรับชั้นปีของคุณ — ลองเปลี่ยนชั้นปีที่ Onboarding"}
+            : previewOnly
+              ? "ยังไม่มีเนื้อหาในวิชาตัวอย่างของชั้นปีนี้ — สมัครแพ็ก School เพื่อเปิดทุกวิชา"
+              : "ยังไม่มีเนื้อหาสำหรับชั้นปีของคุณ — ลองเปลี่ยนชั้นปีที่ Onboarding"}
         </div>
       ) : (
         <DailyLessonStepper
@@ -111,6 +118,16 @@ export default async function DailyPage({ searchParams }: PageProps) {
           quizzes={quizzes}
           isPremium={isPremium}
         />
+      )}
+
+      {previewOnly && (
+        <p className="mt-6 text-xs text-muted-foreground text-center">
+          บทเรียนประจำวันของผู้ใช้ฟรีสุ่มจากวิชาตัวอย่าง —{" "}
+          <Link href="/pricing#school" className="underline font-medium">
+            สมัครแพ็ก School
+          </Link>{" "}
+          เพื่อให้ระบบสุ่มจากทุกวิชาในชั้นปี
+        </p>
       )}
     </div>
   );

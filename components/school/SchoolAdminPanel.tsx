@@ -29,6 +29,8 @@ interface Props {
     slug: string;
     name_th: string;
     code?: string | null;
+    /** วิชาตัวอย่างที่ผู้ใช้ฟรีเข้าถึงได้เต็มรูปแบบ */
+    is_preview?: boolean;
     school_systems?: { slug: string; name_th: string; icon?: string } | null;
   }[];
 }
@@ -115,6 +117,35 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
   const [loading, setLoading] = useState(false);
   const [preview, setPreview] = useState(false);
   const taRef = useRef<HTMLTextAreaElement>(null);
+
+  // ธง "วิชาตัวอย่างฟรี" — เส้นแบ่งฟรี/จ่ายของฝั่งนักเรียนตัดที่ระดับวิชา
+  // (ดู lib/school/access.ts) ปกติควรเปิดไว้ 1 วิชาต่อระบบเป็นตัวชิม
+  const [isFreePreview, setIsFreePreview] = useState(false);
+  useEffect(() => {
+    setIsFreePreview(topics.find((t) => t.id === topicId)?.is_preview ?? false);
+  }, [topicId, topics]);
+
+  async function toggleFreePreview(next: boolean) {
+    if (!topicId) return;
+    setBusy(true);
+    try {
+      const supabase = createClient();
+      const { error } = await supabase
+        .from("school_topics")
+        .update({ is_preview: next })
+        .eq("id", topicId);
+      if (error) throw error;
+      setIsFreePreview(next);
+      notify(
+        "ok",
+        next ? "ตั้งเป็นวิชาตัวอย่างฟรีแล้ว" : "ปิดวิชาตัวอย่าง — วิชานี้ต้องมีแพ็ก School"
+      );
+    } catch (e) {
+      notify("err", e instanceof Error ? e.message : "เกิดข้อผิดพลาด");
+    } finally {
+      setBusy(false);
+    }
+  }
 
   useEffect(() => {
     let cancelled = false;
@@ -309,6 +340,23 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
             </div>
           </Field>
         </div>
+
+        <label className="flex items-start gap-2 rounded-lg border p-3 text-sm cursor-pointer">
+          <input
+            type="checkbox"
+            checked={isFreePreview}
+            disabled={busy || !topicId}
+            onChange={(e) => toggleFreePreview(e.target.checked)}
+            className="mt-0.5"
+          />
+          <span>
+            <span className="font-medium">เปิดวิชานี้เป็น “วิชาตัวอย่างฟรี”</span>
+            <span className="block text-xs text-muted-foreground">
+              ผู้ใช้ฟรีจะอ่านครบทุกบทและทำควิซครบทุกข้อของวิชานี้ได้ ส่วนวิชาที่ไม่ติ๊ก
+              ต้องสมัครแพ็ก School — แนะนำเปิดไว้ 1 วิชาต่อระบบเป็นตัวชิม
+            </span>
+          </span>
+        </label>
 
         {selectedId && (
           <>

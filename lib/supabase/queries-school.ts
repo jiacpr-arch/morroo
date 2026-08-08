@@ -10,6 +10,7 @@ import type {
   SchoolCaseStage,
   SchoolBook,
   SchoolBookChapter,
+  SchoolVisual,
 } from "../types-school";
 
 export async function getSchoolSystems(): Promise<SchoolSystem[]> {
@@ -67,11 +68,60 @@ export async function getSchoolTopicCounts(): Promise<{
   return { flashcards, quizzes, lessons };
 }
 
+/**
+ * นับของที่อยู่ในหัวข้อ "ที่ยังล็อก" (is_preview = false) — ใช้บอกผู้ใช้ฟรีตรง ๆ
+ * ว่าสมัครแล้วได้เพิ่มอีกเท่าไร ตัวเลขนี้ต้องมาจากคลังจริง ไม่ใช่เลขที่ตั้งไว้
+ */
+export async function getSchoolLockedCounts(year?: number): Promise<{
+  topics: number;
+  flashcards: number;
+  quizzes: number;
+  lessons: number;
+}> {
+  const supabase = await createClient();
+
+  let topicQuery = supabase
+    .from("school_topics")
+    .select("id", { count: "exact", head: true })
+    .eq("is_preview", false);
+  if (year) topicQuery = topicQuery.eq("year", year);
+
+  const contentCount = async (table: string) => {
+    let q = supabase
+      .from(table)
+      .select("id, school_topics!inner(year, is_preview)", {
+        count: "exact",
+        head: true,
+      })
+      .eq("status", "active")
+      .eq("school_topics.is_preview", false);
+    if (year) q = q.eq("school_topics.year", year);
+    const { count } = await q;
+    return count ?? 0;
+  };
+
+  const [topicsRes, flashcards, quizzes, lessons] = await Promise.all([
+    topicQuery,
+    contentCount("school_flashcards"),
+    contentCount("school_quizzes"),
+    contentCount("school_lessons"),
+  ]);
+
+  return {
+    topics: topicsRes.count ?? 0,
+    flashcards,
+    quizzes,
+    lessons,
+  };
+}
+
 export async function getSchoolFlashcards(opts: {
   topicId?: string;
   year?: number;
   limit?: number;
   randomize?: boolean;
+  /** ผู้ใช้ฟรี — จำกัดเฉพาะหัวข้อตัวอย่าง (กรองที่ DB ไม่ใช่ที่ client) */
+  previewOnly?: boolean;
 }): Promise<SchoolFlashcard[]> {
   const supabase = await createClient();
   let query = supabase
@@ -81,6 +131,7 @@ export async function getSchoolFlashcards(opts: {
 
   if (opts.topicId) query = query.eq("topic_id", opts.topicId);
   if (opts.year) query = query.eq("school_topics.year", opts.year);
+  if (opts.previewOnly) query = query.eq("school_topics.is_preview", true);
   query = query.limit(opts.limit ?? 30);
 
   const { data, error } = await query;
@@ -98,6 +149,8 @@ export async function getSchoolQuizzes(opts: {
   year?: number;
   limit?: number;
   randomize?: boolean;
+  /** ผู้ใช้ฟรี — จำกัดเฉพาะหัวข้อตัวอย่าง */
+  previewOnly?: boolean;
 }): Promise<SchoolQuiz[]> {
   const supabase = await createClient();
   let query = supabase
@@ -107,6 +160,7 @@ export async function getSchoolQuizzes(opts: {
 
   if (opts.topicId) query = query.eq("topic_id", opts.topicId);
   if (opts.year) query = query.eq("school_topics.year", opts.year);
+  if (opts.previewOnly) query = query.eq("school_topics.is_preview", true);
   query = query.limit(opts.limit ?? 20);
 
   const { data, error } = await query;
@@ -122,6 +176,8 @@ export async function getSchoolQuizzes(opts: {
 export async function getSchoolLessons(opts: {
   topicId?: string;
   year?: number;
+  /** ผู้ใช้ฟรี — จำกัดเฉพาะหัวข้อตัวอย่าง */
+  previewOnly?: boolean;
 }): Promise<SchoolLesson[]> {
   const supabase = await createClient();
   let query = supabase
@@ -131,6 +187,7 @@ export async function getSchoolLessons(opts: {
     .order("sort_order");
   if (opts.topicId) query = query.eq("topic_id", opts.topicId);
   if (opts.year) query = query.eq("school_topics.year", opts.year);
+  if (opts.previewOnly) query = query.eq("school_topics.is_preview", true);
   const { data, error } = await query;
   if (error) {
     console.error("Error fetching school lessons:", error);
@@ -278,6 +335,8 @@ export async function getMixedFlashcards(opts: {
   topicId?: string;
   limit?: number;
   weakSystemIds?: string[];
+  /** ผู้ใช้ฟรี — จำกัดเฉพาะหัวข้อตัวอย่าง */
+  previewOnly?: boolean;
 }): Promise<SchoolFlashcard[]> {
   const supabase = await createClient();
   const limit = opts.limit ?? 20;
@@ -303,6 +362,7 @@ export async function getMixedFlashcards(opts: {
       .in("id", dueIds);
     if (opts.topicId) q = q.eq("topic_id", opts.topicId);
     if (opts.year) q = q.eq("school_topics.year", opts.year);
+    if (opts.previewOnly) q = q.eq("school_topics.is_preview", true);
     const { data } = await q;
     cards.push(...((data as SchoolFlashcard[]) ?? []));
   }
@@ -324,6 +384,7 @@ export async function getMixedFlashcards(opts: {
       .limit(limit * 4);
     if (opts.topicId) q = q.eq("topic_id", opts.topicId);
     if (opts.year) q = q.eq("school_topics.year", opts.year);
+    if (opts.previewOnly) q = q.eq("school_topics.is_preview", true);
     const { data: pool } = await q;
     type RowWithTopic = SchoolFlashcard & { school_topics?: { system_id?: string } };
     const fresh = ((pool as RowWithTopic[]) ?? []).filter(
@@ -356,6 +417,8 @@ export async function getMixedQuizzes(opts: {
   year?: number;
   topicId?: string;
   limit?: number;
+  /** ผู้ใช้ฟรี — จำกัดเฉพาะหัวข้อตัวอย่าง */
+  previewOnly?: boolean;
 }): Promise<SchoolQuiz[]> {
   const supabase = await createClient();
   const limit = opts.limit ?? 10;
@@ -384,6 +447,7 @@ export async function getMixedQuizzes(opts: {
       .in("id", wrongIds);
     if (opts.topicId) q = q.eq("topic_id", opts.topicId);
     if (opts.year) q = q.eq("school_topics.year", opts.year);
+    if (opts.previewOnly) q = q.eq("school_topics.is_preview", true);
     const { data } = await q;
     quizzes.push(...((data as SchoolQuiz[]) ?? []));
   }
@@ -396,6 +460,7 @@ export async function getMixedQuizzes(opts: {
       .limit(limit * 3);
     if (opts.topicId) q = q.eq("topic_id", opts.topicId);
     if (opts.year) q = q.eq("school_topics.year", opts.year);
+    if (opts.previewOnly) q = q.eq("school_topics.is_preview", true);
     const { data: pool } = await q;
     const fresh = ((pool as SchoolQuiz[]) ?? []).filter(
       (q) => !correctIds.has(q.id)
@@ -419,6 +484,8 @@ export async function getMixedLessons(opts: {
   topicId?: string;
   limit?: number;
   weakSystemIds?: string[];
+  /** ผู้ใช้ฟรี — จำกัดเฉพาะหัวข้อตัวอย่าง */
+  previewOnly?: boolean;
 }): Promise<SchoolLesson[]> {
   const supabase = await createClient();
   const limit = opts.limit ?? 2;
@@ -440,6 +507,7 @@ export async function getMixedLessons(opts: {
     .limit(limit * 6);
   if (opts.topicId) q = q.eq("topic_id", opts.topicId);
   if (opts.year) q = q.eq("school_topics.year", opts.year);
+  if (opts.previewOnly) q = q.eq("school_topics.is_preview", true);
   const { data: pool } = await q;
 
   type RowWithTopic = SchoolLesson & { school_topics?: { system_id?: string } };
@@ -757,15 +825,18 @@ export async function getSchoolVisuals(opts: {
   topicId?: string;
   year?: number;
   limit?: number;
+  /** ผู้ใช้ฟรี — จำกัดเฉพาะหัวข้อตัวอย่าง */
+  previewOnly?: boolean;
 }): Promise<SchoolVisual[]> {
   const supabase = await createClient();
   let query = supabase
     .from("school_visuals")
-    .select("*, school_topics!inner(year, name_th, name_en)")
+    .select("*, school_topics!inner(year, name_th, name_en, is_preview)")
     .eq("status", "active")
     .order("sort_order");
   if (opts.topicId) query = query.eq("topic_id", opts.topicId);
   if (opts.year) query = query.eq("school_topics.year", opts.year);
+  if (opts.previewOnly) query = query.eq("school_topics.is_preview", true);
   if (opts.limit) query = query.limit(opts.limit);
   const { data, error } = await query;
   if (error) {

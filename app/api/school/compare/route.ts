@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { createAnthropic } from "@/lib/anthropic";
 import { friendlyAIError, logAIError } from "@/lib/anthropic-error";
+import { SCHOOL_ACCESS_FIELDS, schoolAccessFor } from "@/lib/school/access";
+import { consumeSchoolAiQuota, quotaExceededResponse } from "@/lib/school/ai-quota";
 
 const MODEL = "claude-sonnet-4-6";
 
@@ -24,6 +26,18 @@ export async function POST(req: NextRequest) {
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
+    // Quota ต่อวัน — ทุกคำถามเรียก Anthropic จริง จึงต้องมีเพดานทั้งฝั่งฟรีและจ่าย
+    const { data: profile } = await supabase
+      .from("profiles")
+      .select(SCHOOL_ACCESS_FIELDS)
+      .eq("id", user.id)
+      .maybeSingle();
+    const access = schoolAccessFor(profile);
+    const quota = await consumeSchoolAiQuota(user.id, access.aiDailyLimit);
+    if (!quota.allowed) {
+      return quotaExceededResponse(quota, access.isPremium);
     }
 
     const apiKey = process.env.ANTHROPIC_API_KEY;

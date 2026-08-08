@@ -27,6 +27,9 @@ const PLANS: Record<string, { name: string; price: number; period: string }> = {
   bundle: { name: "ชุดข้อสอบ 10 ข้อ", price: 299, period: "" },
   board_monthly: { name: "Board รายเดือน", price: 499, period: "/ เดือน" },
   board_yearly: { name: "Board รายปี", price: 4990, period: "/ ปี" },
+  school_monthly: { name: "School รายเดือน", price: 129, period: "/ เดือน" },
+  school_term: { name: "School 1 ภาคการศึกษา", price: 349, period: "/ 4 เดือน" },
+  school_yearly: { name: "School รายปี", price: 890, period: "/ ปี" },
 };
 
 // Mirror of NEXT_PUBLIC_STRIPE_PROMPTPAY_ENABLED used by the Stripe checkout

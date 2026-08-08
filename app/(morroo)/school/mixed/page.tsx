@@ -9,7 +9,8 @@ import {
 } from "@/lib/supabase/queries-school";
 import FlashcardSwiper from "@/components/school/FlashcardSwiper";
 import SubjectFilter from "@/components/school/SubjectFilter";
-import { hasSchoolAccess } from "@/lib/membership";
+import UpgradeGate from "@/components/school/UpgradeGate";
+import { schoolAccessFor } from "@/lib/school/access";
 import { redirect } from "next/navigation";
 
 export const dynamic = "force-dynamic";
@@ -35,20 +36,24 @@ export default async function MixedPage({ searchParams }: PageProps) {
     .eq("id", user.id)
     .maybeSingle();
   if (!profile?.current_year) redirect("/school/onboarding");
-  const isPremium = hasSchoolAccess(profile);
+  const { isPremium } = schoolAccessFor(profile);
 
   // Optional subject (รายวิชา) filter — none = random mix across the year.
   const topics = await getSchoolTopicsByYear(profile.current_year);
   const activeTopic = subject ? topics.find((t) => t.id === subject) : undefined;
   const topicId = activeTopic?.id;
 
-  const cards = await getMixedFlashcards({
-    userId: user.id,
-    year: profile.current_year,
-    topicId,
-    weakSystemIds: profile.weak_subjects ?? [],
-    limit: 30,
-  });
+  // Interleaving คือการดึงของข้ามวิชาโดยธรรมชาติ — ผู้ใช้ฟรีที่เปิดได้วิชาเดียว
+  // จะไม่ได้ประโยชน์จากโหมดนี้อยู่แล้ว จึงกั้นทั้งหน้าไว้ให้ผู้จ่ายเงิน
+  const cards = isPremium
+    ? await getMixedFlashcards({
+        userId: user.id,
+        year: profile.current_year,
+        topicId,
+        weakSystemIds: profile.weak_subjects ?? [],
+        limit: 30,
+      })
+    : [];
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6">
@@ -69,20 +74,29 @@ export default async function MixedPage({ searchParams }: PageProps) {
         ผสม topic หลายอันในรอบเดียว — งานวิจัยพบว่าเรียนแบบสลับ retention ระยะยาวดีกว่าทำทีละ topic
       </p>
 
-      <SubjectFilter
-        basePath="/school/mixed"
-        topics={topics}
-        activeTopicId={topicId}
-      />
+      {isPremium && (
+        <SubjectFilter
+          basePath="/school/mixed"
+          topics={topics}
+          activeTopicId={topicId}
+        />
+      )}
 
-      {cards.length === 0 ? (
+      {!isPremium ? (
+        <UpgradeGate
+          title="Mixed Practice อยู่ในแพ็ก School"
+          description="โหมดนี้สลับการ์ดข้ามวิชาในรอบเดียว ซึ่งต้องเปิดหลายวิชาพร้อมกัน — สมัครแพ็ก School เพื่อเปิดทุกวิชาในชั้นปีแล้วฝึกแบบ interleaving ได้เต็มที่"
+          fallbackLabel="ไปทำ Daily Lesson (ฟรี)"
+          fallbackHref="/school/daily"
+        />
+      ) : cards.length === 0 ? (
         <div className="border rounded-lg p-8 text-center text-muted-foreground">
           {activeTopic
             ? "ยังไม่มีการ์ดในรายวิชานี้ — ลองเลือกวิชาอื่น หรือกด “ทุกวิชา (สุ่ม)”"
             : "ยังไม่มีการ์ดในชั้นปีนี้"}
         </div>
       ) : (
-        <FlashcardSwiper cards={cards} isPremium={isPremium} freeLimit={15} />
+        <FlashcardSwiper cards={cards} />
       )}
     </div>
   );

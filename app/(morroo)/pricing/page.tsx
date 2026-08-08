@@ -8,8 +8,12 @@ import NlExamCountdown from "@/components/NlExamCountdown";
 import SocialProofSection from "@/components/SocialProofSection";
 import { PRICING_FAQ_ITEMS } from "@/lib/pricing-faq";
 import { LineCtaButton } from "@/components/SocialLinks";
-import { PRICING_PLANS, BOARD_PRICING_PLANS } from "@/lib/types";
-import { GraduationCap, Mic } from "lucide-react";
+import {
+  PRICING_PLANS,
+  BOARD_PRICING_PLANS,
+  SCHOOL_PRICING_PLANS,
+} from "@/lib/types";
+import { GraduationCap, Mic, School } from "lucide-react";
 import type { Metadata } from "next";
 
 const faqSchema = {
@@ -91,6 +95,32 @@ export default function PricingPage() {
         </div>
         <p className="text-xs text-muted-foreground text-center mt-4">
           * แพ็ก นศพ. ไม่รวมเนื้อหา Board และในทางกลับกัน — เลือกแพ็กให้ตรงกับเป้าหมายสอบ
+        </p>
+      </section>
+
+      {/* School plans — นศพ. ปี 1-6 (เนื้อหาตามหลักสูตร) */}
+      <section id="school" className="mb-16 scroll-mt-24">
+        <div className="text-center mb-6">
+          <div className="inline-flex items-center gap-2 bg-sky-100 text-sky-700 px-3 py-1 rounded-full text-xs font-semibold mb-3">
+            <School className="h-3.5 w-3.5" />
+            สำหรับ นศพ. ปี 1-6 (เนื้อหาระหว่างเรียน)
+          </div>
+          <h2 className="text-2xl font-bold">โหมด School</h2>
+          <p className="text-sm text-muted-foreground mt-1 max-w-xl mx-auto">
+            อ่านเนื้อหาตามหลักสูตร + ทำควิซรายวิชา + ทบทวนตามตารางลืม —
+            ใช้เรียนให้ทันสอบในเทอม ไม่ใช่รอเตรียมสอบ NL
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto items-start">
+          {SCHOOL_PRICING_PLANS.map((plan) => (
+            <PricingCard key={plan.name} {...plan} />
+          ))}
+        </div>
+        <p className="text-xs text-muted-foreground text-center mt-4 max-w-xl mx-auto">
+          * ใช้ฟรีได้เลยโดยไม่ต้องสมัคร — วิชาตัวอย่างของแต่ละระบบเปิดให้อ่านครบ
+          ทำควิซครบ พร้อม Daily Lesson ทุกวัน ส่วนแพ็กด้านบนคือการเปิดวิชาที่เหลือทั้งชั้นปี
+          <br />
+          * ผู้ที่สมัครแพ็ก นศพ. (รายเดือน/รายปี) ได้สิทธิ์โหมด School อยู่แล้ว ไม่ต้องซื้อซ้ำ
         </p>
       </section>
 

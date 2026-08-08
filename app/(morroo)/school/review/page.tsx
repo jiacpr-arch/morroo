@@ -4,8 +4,9 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Clock } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import FlashcardSwiper from "@/components/school/FlashcardSwiper";
+import UpgradeGate from "@/components/school/UpgradeGate";
 import type { SchoolFlashcard } from "@/lib/types-school";
-import { hasSchoolAccess } from "@/lib/membership";
+import { schoolAccessFor } from "@/lib/school/access";
 import { redirect } from "next/navigation";
 
 export const dynamic = "force-dynamic";
@@ -25,7 +26,7 @@ export default async function ReviewPage() {
     .select("membership_type, membership_expires_at, current_year")
     .eq("id", user.id)
     .maybeSingle();
-  const isPremium = hasSchoolAccess(profile);
+  const { isPremium } = schoolAccessFor(profile);
 
   // Pull due flashcards
   const { data: due } = await supabase
@@ -38,8 +39,10 @@ export default async function ReviewPage() {
     .limit(50);
 
   const ids = (due ?? []).map((d: { unit_id: string }) => d.unit_id);
+  // ผู้ใช้ฟรีเห็นว่ามีการ์ดค้างกี่ใบได้ แต่ไม่ดึงเนื้อการ์ดมา — SRS review
+  // เป็นสิทธิ์ของผู้จ่ายเงิน (และเป็นเหตุผลหลักที่คนยอมจ่ายด้วย)
   let cards: SchoolFlashcard[] = [];
-  if (ids.length) {
+  if (ids.length && isPremium) {
     const { data } = await supabase
       .from("school_flashcards")
       .select("*")
@@ -57,7 +60,7 @@ export default async function ReviewPage() {
       </Link>
       <div className="mb-6 flex items-center gap-2">
         <Badge className="bg-rose-100 text-rose-700">Review</Badge>
-        <Badge variant="outline">{cards.length} ใบใกล้ลืม</Badge>
+        <Badge variant="outline">{ids.length} ใบใกล้ลืม</Badge>
       </div>
       <h1 className="text-2xl font-bold mb-2 flex items-center gap-2">
         <Clock className="h-6 w-6 text-rose-600" /> ทบทวนตามตารางลืม
@@ -66,7 +69,18 @@ export default async function ReviewPage() {
         การ์ดที่ระบบ Spaced Repetition คำนวณว่าใกล้จะลืม — ทบทวนตอนนี้เพื่อ retention สูงสุด
       </p>
 
-      {cards.length === 0 ? (
+      {!isPremium ? (
+        <UpgradeGate
+          title="ทบทวนตามตารางลืมอยู่ในแพ็ก School"
+          description={
+            ids.length
+              ? `ระบบจับได้ว่ามี ${ids.length} ใบที่คุณกำลังจะลืม — สมัครแพ็ก School เพื่อทบทวนตามรอบที่คำนวณให้ ไม่จำกัดจำนวน`
+              : "Spaced Repetition จะคำนวณให้ว่าควรทบทวนใบไหนวันไหน — สมัครแพ็ก School เพื่อเปิดใช้ พร้อมเปิดทุกวิชาในชั้นปี"
+          }
+          fallbackLabel="ไปทำ Daily Lesson (ฟรี)"
+          fallbackHref="/school/daily"
+        />
+      ) : cards.length === 0 ? (
         <div className="border rounded-lg p-8 text-center text-muted-foreground space-y-3">
           <p>ไม่มีการ์ดที่ต้องทบทวนตอนนี้ 🎉</p>
           <p className="text-xs">
@@ -74,7 +88,7 @@ export default async function ReviewPage() {
           </p>
         </div>
       ) : (
-        <FlashcardSwiper cards={cards} isPremium={isPremium} freeLimit={20} />
+        <FlashcardSwiper cards={cards} />
       )}
     </div>
   );

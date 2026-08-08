@@ -3,9 +3,15 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import BiteQuiz from "@/components/school/BiteQuiz";
-import { getSchoolQuizzes, getSchoolTopicsByYear } from "@/lib/supabase/queries-school";
-import { createClient } from "@/lib/supabase/server";
-import { hasSchoolAccess } from "@/lib/membership";
+import UpgradeGate from "@/components/school/UpgradeGate";
+import {
+  getSchoolLockedCounts,
+  getSchoolQuizzes,
+  getSchoolTopic,
+  getSchoolTopicsByYear,
+} from "@/lib/supabase/queries-school";
+import { getSchoolAccess } from "@/lib/school/access-server";
+import { canOpenTopic } from "@/lib/school/access";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -24,24 +30,28 @@ export default async function QuizPage({ searchParams }: PageProps) {
   const year = params.year ? Number(params.year) : undefined;
   const topicId = params.topic;
 
-  const supabase = await createClient();
-  const { data: { user } } = await supabase.auth.getUser();
-  let isPremium = false;
-  if (user) {
-    const { data: profile } = await supabase
-      .from("profiles")
-      .select("membership_type, membership_expires_at")
-      .eq("id", user.id)
-      .maybeSingle();
-    isPremium = hasSchoolAccess(profile);
-  }
+  const { access } = await getSchoolAccess();
 
-  const [quizzes, topics] = await Promise.all([
-    getSchoolQuizzes({ topicId, year, limit: 30, randomize: true }),
+  const requestedTopic = topicId ? await getSchoolTopic(topicId) : null;
+  const topicLocked = Boolean(requestedTopic) && !canOpenTopic(access, requestedTopic);
+
+  const [quizzes, topics, lockedCounts] = await Promise.all([
+    topicLocked
+      ? Promise.resolve([])
+      : getSchoolQuizzes({
+          topicId,
+          year,
+          limit: 30,
+          randomize: true,
+          previewOnly: access.previewOnly,
+        }),
     year ? getSchoolTopicsByYear(year) : Promise.resolve([]),
+    access.previewOnly
+      ? getSchoolLockedCounts(year)
+      : Promise.resolve({ topics: 0, flashcards: 0, quizzes: 0, lessons: 0 }),
   ]);
 
-  const activeTopic = topics.find((t) => t.id === topicId);
+  const activeTopic = requestedTopic ?? topics.find((t) => t.id === topicId);
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6">
@@ -61,12 +71,17 @@ export default async function QuizPage({ searchParams }: PageProps) {
         </h1>
       </div>
 
-      {quizzes.length === 0 ? (
+      {topicLocked ? (
+        <UpgradeGate
+          title={`วิชา “${activeTopic?.name_th ?? "นี้"}” อยู่ในแพ็ก School`}
+          description={`สมัครแล้วทำข้อสอบได้ทุกวิชาในชั้นปี — ยังมีอีก ${lockedCounts.quizzes} ข้อในวิชาที่ล็อกอยู่`}
+        />
+      ) : quizzes.length === 0 ? (
         <div className="border rounded-lg p-8 text-center text-muted-foreground">
           ยังไม่มีข้อสอบสำหรับหัวข้อนี้ — กลับไปเลือกหัวข้ออื่นได้เลย
         </div>
       ) : (
-        <BiteQuiz quizzes={quizzes} isPremium={isPremium} freeLimit={5} />
+        <BiteQuiz quizzes={quizzes} lockedCount={lockedCounts.quizzes} />
       )}
     </div>
   );
