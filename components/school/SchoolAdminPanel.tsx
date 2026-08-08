@@ -101,20 +101,54 @@ interface EditItem {
   sort_order: number;
 }
 
+function termLabel(term: number | null) {
+  if (term === 1) return "เทอม 1";
+  if (term === 2) return "เทอม 2";
+  if (term === 3) return "ภาคฤดูร้อน";
+  return "ไม่ระบุเทอม";
+}
+
+type ViewMode = "edit" | "preview" | "paragraphs";
+
 /**
  * Edit the markdown body of an EXISTING lesson or book chapter, with inline
  * image upload + insert at the cursor. Fills the gap where the other tabs can
  * only create new rows, not edit content already in the database.
  */
 function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topics"] } & CommonProps) {
-  const [topicId, setTopicId] = useState(topics[0]?.id ?? "");
+  const years = Array.from(new Set(topics.map((t) => t.year))).sort((a, b) => a - b);
+  const [year, setYear] = useState<number>(topics[0]?.year ?? years[0] ?? 1);
+
+  const termsForYear = Array.from(
+    new Set(topics.filter((t) => t.year === year).map((t) => t.term ?? null))
+  ).sort((a, b) => (a ?? 0) - (b ?? 0));
+  const [term, setTerm] = useState<number | null>(topics[0]?.term ?? null);
+
+  const topicsForYearTerm = topics.filter(
+    (t) => t.year === year && (t.term ?? null) === term
+  );
+  const [topicId, setTopicId] = useState(topicsForYearTerm[0]?.id ?? topics[0]?.id ?? "");
   const [kind, setKind] = useState<EditKind>("lesson");
   const [items, setItems] = useState<EditItem[]>([]);
   const [selectedId, setSelectedId] = useState("");
   const [body, setBody] = useState("");
   const [loading, setLoading] = useState(false);
-  const [preview, setPreview] = useState(false);
+  const [viewMode, setViewMode] = useState<ViewMode>("edit");
   const taRef = useRef<HTMLTextAreaElement>(null);
+
+  function handleYearChange(y: number) {
+    const nextTerm = topics.find((t) => t.year === y)?.term ?? null;
+    const nextTopic = topics.find((t) => t.year === y && (t.term ?? null) === nextTerm);
+    setYear(y);
+    setTerm(nextTerm);
+    setTopicId(nextTopic?.id ?? "");
+  }
+
+  function handleTermChange(t: number | null) {
+    const nextTopic = topics.find((x) => x.year === year && (x.term ?? null) === t);
+    setTerm(t);
+    setTopicId(nextTopic?.id ?? "");
+  }
 
   useEffect(() => {
     let cancelled = false;
@@ -170,7 +204,7 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
     setSelectedId(id);
     const item = items.find((i) => i.id === id);
     setBody(item?.body_md ?? "");
-    setPreview(false);
+    setViewMode("edit");
   }
 
   function insertAtCursor(text: string) {
@@ -188,6 +222,19 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
       const pos = start + text.length;
       ta.setSelectionRange(pos, pos);
     });
+  }
+
+  // พารากราฟแบ่งด้วยบรรทัดว่าง — ใช้แทรกรูประหว่างพารากราฟโดยไม่ต้องหาตำแหน่งเคอร์เซอร์เอง
+  const paragraphs = body
+    .split(/\n{2,}/)
+    .map((p) => p.trim())
+    .filter(Boolean);
+
+  function insertImageAtGap(gapIndex: number, url: string) {
+    const next = [...paragraphs];
+    next.splice(gapIndex, 0, `![](${url})`);
+    setBody(next.join("\n\n"));
+    notify("ok", "แทรกรูปแล้ว");
   }
 
   async function save() {
@@ -246,12 +293,52 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
       <CardContent className="p-4 space-y-3">
         <h3 className="font-bold">แก้ไขเนื้อหา + แทรกรูป</h3>
         <p className="text-xs text-muted-foreground">
-          เลือกบทเรียน/บทในหนังสือ → กด &quot;อัปโหลด + แทรกรูป&quot; เพื่อวางรูปตรงเคอร์เซอร์
-          (แทนที่บรรทัด <code>🖼️ รูปแนะนำ</code> ที่ AI ใส่ไว้) แล้วบันทึก
+          เลือกชั้นปี → เทอม → วิชา → บท เนื้อหาของบทนั้นจะขึ้นให้แก้ไข กด
+          &quot;อัปโหลด + แทรกรูป&quot; เพื่อวางรูปตรงเคอร์เซอร์ (แทนที่บรรทัด{" "}
+          <code>🖼️ รูปแนะนำ</code> ที่ AI ใส่ไว้) หรือสลับไปโหมด &quot;แทรกรูประหว่างพารากราฟ&quot;
+          เพื่อเลือกตำแหน่งระหว่างย่อหน้าโดยตรง แล้วบันทึก
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <Field label="Topic">
-            <TopicPicker topics={topics} value={topicId} onChange={setTopicId} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <Field label="ชั้นปี">
+            <select
+              value={year}
+              onChange={(e) => handleYearChange(Number(e.target.value))}
+              className="w-full border rounded p-2 text-sm"
+            >
+              {years.map((y) => (
+                <option key={y} value={y}>
+                  ปี {y}
+                </option>
+              ))}
+            </select>
+          </Field>
+          <Field label="เทอม">
+            <select
+              value={term ?? ""}
+              onChange={(e) => handleTermChange(e.target.value === "" ? null : Number(e.target.value))}
+              className="w-full border rounded p-2 text-sm"
+            >
+              {termsForYear.map((t) => (
+                <option key={t ?? "none"} value={t ?? ""}>
+                  {termLabel(t)}
+                </option>
+              ))}
+            </select>
+          </Field>
+          <Field label="วิชา">
+            <select
+              value={topicId}
+              onChange={(e) => setTopicId(e.target.value)}
+              className="w-full border rounded p-2 text-sm"
+              disabled={topicsForYearTerm.length === 0}
+            >
+              {topicsForYearTerm.length === 0 && <option value="">— ไม่มีวิชา —</option>}
+              {topicsForYearTerm.map((t) => (
+                <option key={t.id} value={t.id}>
+                  {t.school_systems?.icon} {t.name_th}
+                </option>
+              ))}
+            </select>
           </Field>
           <Field label="ชนิด">
             <select
@@ -263,6 +350,8 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
               <option value="book_chapter">หนังสือ — บท</option>
             </select>
           </Field>
+        </div>
+        <div className="grid grid-cols-1 gap-3">
           <Field label={loading ? "กำลังโหลด…" : `เลือกบท (${items.length})`}>
             <div className="flex gap-1">
               <select
@@ -328,26 +417,63 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
               </Button>
               <Button
                 type="button"
-                variant="outline"
+                variant={viewMode === "edit" ? "default" : "outline"}
                 size="sm"
                 className="gap-2"
-                onClick={() => setPreview((p) => !p)}
+                onClick={() => setViewMode("edit")}
               >
-                <Eye className="h-4 w-4" /> {preview ? "แก้ไข" : "ดูตัวอย่าง"}
+                แก้ไข
+              </Button>
+              <Button
+                type="button"
+                variant={viewMode === "preview" ? "default" : "outline"}
+                size="sm"
+                className="gap-2"
+                onClick={() => setViewMode("preview")}
+              >
+                <Eye className="h-4 w-4" /> ดูตัวอย่าง
+              </Button>
+              <Button
+                type="button"
+                variant={viewMode === "paragraphs" ? "default" : "outline"}
+                size="sm"
+                className="gap-2"
+                onClick={() => setViewMode("paragraphs")}
+              >
+                <ImagePlus className="h-4 w-4" /> แทรกรูประหว่างพารากราฟ
               </Button>
             </div>
 
-            {preview ? (
+            {viewMode === "preview" && (
               <div className="rounded border p-4 prose prose-sm prose-slate dark:prose-invert max-w-none min-h-[200px]">
                 <ReactMarkdown remarkPlugins={[remarkGfm]}>{body}</ReactMarkdown>
               </div>
-            ) : (
+            )}
+
+            {viewMode === "edit" && (
               <textarea
                 ref={taRef}
                 value={body}
                 onChange={(e) => setBody(e.target.value)}
                 className="w-full border rounded p-2 text-sm min-h-[320px] font-mono"
               />
+            )}
+
+            {viewMode === "paragraphs" && (
+              <div className="rounded border divide-y">
+                <ParagraphGap onUploaded={(url) => insertImageAtGap(0, url)} />
+                {paragraphs.length === 0 && (
+                  <p className="p-4 text-sm text-muted-foreground">ยังไม่มีเนื้อหา</p>
+                )}
+                {paragraphs.map((p, i) => (
+                  <div key={i}>
+                    <div className="p-3 prose prose-sm prose-slate dark:prose-invert max-w-none">
+                      <ReactMarkdown remarkPlugins={[remarkGfm]}>{p}</ReactMarkdown>
+                    </div>
+                    <ParagraphGap onUploaded={(url) => insertImageAtGap(i + 1, url)} />
+                  </div>
+                ))}
+              </div>
             )}
 
             <Button onClick={save} disabled={busy}>
@@ -358,6 +484,17 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
         )}
       </CardContent>
     </Card>
+  );
+}
+
+/** แถวเล็ก ๆ คั่นระหว่างพารากราฟ ให้กดอัปโหลดรูปแทรกตรงจุดนั้นได้ทันที */
+function ParagraphGap({ onUploaded }: { onUploaded: (url: string) => void }) {
+  return (
+    <div className="flex items-center gap-2 py-1.5 px-3 bg-muted/20">
+      <div className="flex-1 border-t border-dashed" />
+      <ImageUploader onUploaded={onUploaded} label="+ แทรกรูปตรงนี้" />
+      <div className="flex-1 border-t border-dashed" />
+    </div>
   );
 }
 
