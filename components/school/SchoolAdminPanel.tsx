@@ -4,10 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Loader2, Check, AlertCircle, ImagePlus, Eye, ArrowUp, ArrowDown } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { normalizeImageUrl } from "@/lib/school/image-url";
+import { splitLessonPartsRaw, joinLessonParts } from "@/lib/school/lesson-parts";
 import ImportPanel from "./ImportPanel";
 import ImageUploader from "./ImageUploader";
 
@@ -224,14 +226,33 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
     });
   }
 
-  // พารากราฟแบ่งด้วยบรรทัดว่าง — ใช้แทรกรูประหว่างพารากราฟโดยไม่ต้องหาตำแหน่งเคอร์เซอร์เอง
-  const paragraphs = body
+  // Lesson bodies split into the same reading "Part"s students see (Lesson
+  // Reader gates each Part behind a mini quiz) — reused here so the admin
+  // view matches production exactly. Book chapters have no Part concept, so
+  // they fall back to plain blank-line paragraphs.
+  const lessonParts = kind === "lesson" ? splitLessonPartsRaw(body) : null;
+  const chapterParagraphs = body
     .split(/\n{2,}/)
     .map((p) => p.trim())
     .filter(Boolean);
 
-  function insertImageAtGap(gapIndex: number, url: string) {
-    const next = [...paragraphs];
+  /** gapIndex counts the gaps around lessonParts.parts: 0 = before part 1, i = after part i. */
+  function insertImageInLessonPart(gapIndex: number, url: string) {
+    if (!lessonParts) return;
+    const md = `![](${url})`;
+    const nextParts = [...lessonParts.parts];
+    if (gapIndex === 0) {
+      nextParts[0] = nextParts[0] ? `${md}\n\n${nextParts[0]}` : md;
+    } else {
+      const idx = gapIndex - 1;
+      nextParts[idx] = nextParts[idx] ? `${nextParts[idx]}\n\n${md}` : md;
+    }
+    setBody(joinLessonParts(nextParts, lessonParts.gateRaw));
+    notify("ok", "แทรกรูปแล้ว");
+  }
+
+  function insertImageInChapter(gapIndex: number, url: string) {
+    const next = [...chapterParagraphs];
     next.splice(gapIndex, 0, `![](${url})`);
     setBody(next.join("\n\n"));
     notify("ok", "แทรกรูปแล้ว");
@@ -295,8 +316,8 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
         <p className="text-xs text-muted-foreground">
           เลือกชั้นปี → เทอม → วิชา → บท เนื้อหาของบทนั้นจะขึ้นให้แก้ไข กด
           &quot;อัปโหลด + แทรกรูป&quot; เพื่อวางรูปตรงเคอร์เซอร์ (แทนที่บรรทัด{" "}
-          <code>🖼️ รูปแนะนำ</code> ที่ AI ใส่ไว้) หรือสลับไปโหมด &quot;แทรกรูประหว่างพารากราฟ&quot;
-          เพื่อเลือกตำแหน่งระหว่างย่อหน้าโดยตรง แล้วบันทึก
+          <code>🖼️ รูปแนะนำ</code> ที่ AI ใส่ไว้) หรือสลับไปโหมด &quot;แทรกรูประหว่าง Part&quot;
+          เพื่อดูเนื้อหาเหมือนหน้าที่นักเรียนเห็นจริง แล้วกดไอคอนรูปตรงจุดที่ต้องการแทรกได้เลย แล้วบันทึก
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           <Field label="ชั้นปี">
@@ -440,7 +461,8 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
                 className="gap-2"
                 onClick={() => setViewMode("paragraphs")}
               >
-                <ImagePlus className="h-4 w-4" /> แทรกรูประหว่างพารากราฟ
+                <ImagePlus className="h-4 w-4" />
+                {kind === "lesson" ? "แทรกรูประหว่าง Part" : "แทรกรูประหว่างพารากราฟ"}
               </Button>
             </div>
 
@@ -459,18 +481,49 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
               />
             )}
 
-            {viewMode === "paragraphs" && (
+            {/* หน้าตาเหมือนที่นักเรียนเห็นจริงใน LessonReader เป๊ะ ๆ (การ์ด + Badge "Part x/y")
+                เพื่อให้แอดมินแทรกรูปตรงจุดที่ต้องการได้โดยไม่ต้องเดา — ตัว marker/mini quiz
+                ระหว่าง Part จะไม่ถูกแตะต้อง มีแค่เนื้อหาของ Part ที่ถูกแก้ */}
+            {viewMode === "paragraphs" && kind === "lesson" && lessonParts && (
+              <div className="space-y-3">
+                <PartGap onUploaded={(url) => insertImageInLessonPart(0, url)} />
+                {lessonParts.parts.map((p, i) => (
+                  <div key={i} className="space-y-3">
+                    <Card>
+                      <CardContent className="p-5">
+                        <div className="flex items-center gap-2 mb-3">
+                          <Badge variant="outline" className="text-xs">
+                            Part {i + 1} / {lessonParts.parts.length}
+                          </Badge>
+                        </div>
+                        <article className="prose prose-slate dark:prose-invert max-w-none">
+                          <ReactMarkdown remarkPlugins={[remarkGfm]}>{p}</ReactMarkdown>
+                        </article>
+                      </CardContent>
+                    </Card>
+                    {i < lessonParts.gateRaw.length && (
+                      <p className="text-center text-xs text-muted-foreground">
+                        ⏸ จุดคั่น Mini Quiz — ไม่ถูกแก้ไขจากตรงนี้
+                      </p>
+                    )}
+                    <PartGap onUploaded={(url) => insertImageInLessonPart(i + 1, url)} />
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {viewMode === "paragraphs" && kind === "book_chapter" && (
               <div className="rounded border divide-y">
-                <ParagraphGap onUploaded={(url) => insertImageAtGap(0, url)} />
-                {paragraphs.length === 0 && (
+                <PartGap onUploaded={(url) => insertImageInChapter(0, url)} />
+                {chapterParagraphs.length === 0 && (
                   <p className="p-4 text-sm text-muted-foreground">ยังไม่มีเนื้อหา</p>
                 )}
-                {paragraphs.map((p, i) => (
+                {chapterParagraphs.map((p, i) => (
                   <div key={i}>
                     <div className="p-3 prose prose-sm prose-slate dark:prose-invert max-w-none">
                       <ReactMarkdown remarkPlugins={[remarkGfm]}>{p}</ReactMarkdown>
                     </div>
-                    <ParagraphGap onUploaded={(url) => insertImageAtGap(i + 1, url)} />
+                    <PartGap onUploaded={(url) => insertImageInChapter(i + 1, url)} />
                   </div>
                 ))}
               </div>
@@ -487,8 +540,8 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
   );
 }
 
-/** แถวเล็ก ๆ คั่นระหว่างพารากราฟ ให้กดอัปโหลดรูปแทรกตรงจุดนั้นได้ทันที */
-function ParagraphGap({ onUploaded }: { onUploaded: (url: string) => void }) {
+/** แถวเล็ก ๆ คั่นระหว่าง Part/พารากราฟ ให้กดอัปโหลดรูปแทรกตรงจุดนั้นได้ทันที */
+function PartGap({ onUploaded }: { onUploaded: (url: string) => void }) {
   return (
     <div className="flex items-center gap-2 py-1.5 px-3 bg-muted/20">
       <div className="flex-1 border-t border-dashed" />
