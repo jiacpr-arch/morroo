@@ -78,21 +78,19 @@ public/images/sim/characters/
 | `patient_elderly` | หญิงสูงอายุ ≥60 | ครบ |
 | `patient_pregnant` | หญิงตั้งครรภ์แก่/เห็นท้องชัด (GA ≥20 สัปดาห์ หรือข้อความบอกชัด) | ครบ |
 | `patient_generic` | ชายวัยกลางคน 35-59 | ครบ (ภาพลุงวัยกลางคน ~50) |
-| `patient_young_male` | ชายอายุ <35 | **ยังไม่มีรูปจริง — ใช้ SVG placeholder ไปก่อน** |
-| `patient_elderly_male` | ชายอายุ ≥60 | **ยังไม่มีรูปจริง — ใช้ SVG placeholder ไปก่อน** |
+| `patient_young_male` | ชายอายุ <35 | ครบ (5 pose รวม stern ซึ่ง `patient_generic`/`patient_female` เองยังไม่มี) |
+| `patient_elderly_male` | ชายอายุ ≥60 | ครบ (5 pose) |
 
 #### 5. `patient_young_male` — ผู้ป่วยชายหนุ่ม (Patient)
 - ชายไทย วัย ~18-30 ปี หน้าเด็กกว่า `patient_generic` ชัดเจน ผิวเรียบไม่มีริ้วรอย ทรงผมวัยรุ่น/หนุ่มออฟฟิศ
 - ชุดกาวน์ผู้ป่วยสีฟ้าอ่อนแบบเดียวกับ `patient_generic` (คนไข้ชายทั่วไป ใช้ชุดเดียวกันได้ ต่างที่หน้าตาอายุ)
 - ใช้กับเคสที่ผู้ป่วยเป็นชายอายุน้อย เช่น testicular torsion, อุบัติเหตุมอเตอร์ไซค์, first-episode psychosis
-- **สถานะรูป:** ยังไม่มี — ใช้ SVG placeholder ไปก่อน generate ตาม prompt ด้านล่างได้เลย
 
 #### 6. `patient_elderly_male` — ผู้ป่วยชายสูงอายุ (Patient)
 - ชายไทย วัย ~65-80 ปี ผมหงอกขาว/บางลง ริ้วรอยชัดเจนกว่า `patient_generic` มาก แก้มตอบ
 - ชุดกาวน์ผู้ป่วยสีฟ้าอ่อนแบบเดียวกับ `patient_generic`
 - ใช้กับเคสผู้ป่วยชายสูงอายุ (stroke, hip fracture, sepsis ในผู้สูงอายุ) แทนที่จะยืม `patient_generic`
   (ซึ่งวัยอ่อนกว่ามาก) หรือ `patient_elderly` (ซึ่งเป็นหญิง)
-- **สถานะรูป:** ยังไม่มี — ใช้ SVG placeholder ไปก่อน generate ตาม prompt ด้านล่างได้เลย
 
 ## Prompt template สำหรับ generate ด้วย AI
 
