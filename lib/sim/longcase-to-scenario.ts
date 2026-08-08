@@ -73,11 +73,13 @@ function ageYears(raw: unknown): number | null {
 
 /**
  * เลือก sprite ผู้ป่วยให้ตรงเพศ/วัยจาก patient_info + ประวัติ
- * (แก้บั๊กเดิมที่ hardcode patient_generic ทำให้เด็ก 8 เดือนโผล่เป็นชายวัย 50)
+ * (แก้บั๊กเดิมที่ hardcode patient_generic ทำให้เด็ก 8 เดือนโผล่เป็นชายวัย 50 —
+ * และแก้บั๊กที่ตามมาว่าชายหนุ่ม เช่น 19 ปี ปวดอัณฑะ ก็โผล่เป็น patient_generic
+ * ซึ่งวาดเป็นชายวัยกลางคน ~50 ปีเหมือนกันหมด ไม่ว่าอายุจริงจะเท่าไร)
  * - แสดงครรภ์เฉพาะเมื่อข้อความบอกชัดว่าท้องแก่/GA ≥ 20 สัปดาห์ — ครรภ์อ่อน
  *   (เช่น ectopic 7 สัปดาห์) ยังไม่เห็นท้อง ใช้ sprite หญิงปกติถูกกว่า
- * - ไม่มี sprite ชายสูงอายุ (patient_elderly เป็นหญิง) — ชายสูงอายุใช้
- *   patient_generic (ชายวัยกลางคน) ซึ่งใกล้เคียงที่สุด
+ * - ชาย: อายุ <35 ใช้ patient_young_male, 35-59 ใช้ patient_generic (ชายวัยกลางคน),
+ *   ≥60 ใช้ patient_elderly_male
  */
 function patientCharId(pi: Record<string, unknown>, hxText: string): string {
   const age = ageYears(pi.age);
@@ -89,6 +91,8 @@ function patientCharId(pi: Record<string, unknown>, hxText: string): string {
     if (age !== null && age >= 60) return "patient_elderly";
     return "patient_female";
   }
+  if (age !== null && age >= 60) return "patient_elderly_male";
+  if (age !== null && age < 35) return "patient_young_male";
   return "patient_generic";
 }
 
