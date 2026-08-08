@@ -6,7 +6,11 @@ import { notFound } from "next/navigation";
 import {
   getSchoolLesson,
   getSchoolQuizzes,
+  getSchoolTopic,
 } from "@/lib/supabase/queries-school";
+import UpgradeGate from "@/components/school/UpgradeGate";
+import { getSchoolAccess } from "@/lib/school/access-server";
+import { canOpenTopic } from "@/lib/school/access";
 import LessonReader from "@/components/school/LessonReader";
 import LessonQuizRunner, {
   type RunnerQuiz,
@@ -15,7 +19,9 @@ import AskMore from "@/components/school/AskMore";
 import { sortByDifficultyAsc } from "@/lib/school/difficulty";
 import { splitLessonParts } from "@/lib/school/lesson-parts";
 
-export const revalidate = 60;
+// สิทธิ์เข้าถึงขึ้นกับ membership ของผู้ใช้ จึง render ต่อ request
+// (เดิม revalidate = 60 แคชร่วมกันทุกคน ซึ่งใช้กับ paywall ไม่ได้)
+export const dynamic = "force-dynamic";
 
 type Mode = "mixed" | "read" | "quiz";
 
@@ -52,6 +58,29 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
   const mode = parseMode((await searchParams).mode);
   const lesson = await getSchoolLesson(id);
   if (!lesson) notFound();
+
+  // บทเรียนเข้าตรงด้วย URL ได้ จึงต้องเช็คสิทธิ์ของวิชาต้นทางที่นี่ด้วย
+  const [{ access }, topic] = await Promise.all([
+    getSchoolAccess(),
+    getSchoolTopic(lesson.topic_id),
+  ]);
+  if (!canOpenTopic(access, topic)) {
+    return (
+      <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+        <Link href={`/school/topic/${lesson.topic_id}`}>
+          <Button variant="ghost" size="sm" className="gap-2 -ml-2 mb-4">
+            <ArrowLeft className="h-4 w-4" /> กลับไปหน้าวิชา
+          </Button>
+        </Link>
+        <UpgradeGate
+          title={`บทนี้อยู่ในวิชา “${topic?.name_th ?? ""}” ของแพ็ก School`}
+          description="สมัครแล้วอ่านได้ทุกบทของทุกวิชาในชั้นปี พร้อมควิซคั่นบทและเฉลยเต็ม"
+          fallbackHref={`/school/topic/${lesson.topic_id}`}
+          fallbackLabel="กลับหน้าวิชา"
+        />
+      </div>
+    );
+  }
 
   // โหมดควิซใช้ข้อสอบทั้งคลังของ layer นี้ ส่วนโหมดอ่านคั่นใช้แค่พอเป็น gate
   // + final retrieval จึงจำกัดไว้ 10 ข้อเหมือนเดิม

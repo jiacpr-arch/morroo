@@ -9,6 +9,8 @@ import {
   getSchoolMasteryByTopic,
   getSchoolStreak,
 } from "@/lib/supabase/queries-school";
+import UpgradeGate from "@/components/school/UpgradeGate";
+import { canOpenTopic, schoolAccessFor } from "@/lib/school/access";
 import { redirect } from "next/navigation";
 
 export const dynamic = "force-dynamic";
@@ -27,10 +29,11 @@ export default async function ProgressPage() {
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("current_year")
+    .select("current_year, membership_type, membership_expires_at")
     .eq("id", user.id)
     .maybeSingle();
   if (!profile?.current_year) redirect("/school/onboarding");
+  const access = schoolAccessFor(profile);
 
   const [topics, mastery, streak] = await Promise.all([
     getSchoolTopicsByYear(profile.current_year),
@@ -40,18 +43,28 @@ export default async function ProgressPage() {
 
   // Sort topics by sort_order; mastery threshold gates next topic
   const sorted = [...topics].sort((a, b) => a.sort_order - b.sort_order);
-  let prevMastered = true;
-  const items = sorted.map((t) => {
+  const scored = sorted.map((t) => {
     const m = mastery[t.id] ?? { seen: 0, correct: 0, pct: 0 };
-    const mastered = m.seen >= 5 && m.pct >= MASTERY_THRESHOLD;
-    const unlocked = prevMastered;
-    prevMastered = mastered;
-    return { topic: t, mastery: m, mastered, unlocked };
+    return {
+      topic: t,
+      mastery: m,
+      mastered: m.seen >= 5 && m.pct >= MASTERY_THRESHOLD,
+    };
   });
+  // หัวข้อแรกเปิดเสมอ ที่เหลือเปิดเมื่อหัวข้อก่อนหน้าถึง mastery แล้ว
+  const allItems = scored.map((x, i) => ({
+    ...x,
+    unlocked: i === 0 || scored[i - 1].mastered,
+  }));
 
-  const overallPct = items.length
+  // ผู้ใช้ฟรีเห็นภาพรวม + รายวิชาเฉพาะวิชาตัวอย่าง ส่วนรายวิชาที่เหลือ
+  // (จุดอ่อนรายหัวข้อ) เป็นสิทธิ์ของผู้จ่ายเงิน
+  const items = allItems.filter((x) => canOpenTopic(access, x.topic));
+  const hiddenCount = allItems.length - items.length;
+
+  const overallPct = allItems.length
     ? Math.round(
-        items.reduce((sum, x) => sum + x.mastery.pct, 0) / items.length
+        allItems.reduce((sum, x) => sum + x.mastery.pct, 0) / allItems.length
       )
     : 0;
 
@@ -76,9 +89,16 @@ export default async function ProgressPage() {
       </p>
 
       {items.length === 0 ? (
-        <div className="border rounded-lg p-8 text-center text-muted-foreground">
-          ยังไม่มีหัวข้อในชั้นปีนี้
-        </div>
+        hiddenCount > 0 ? (
+          <UpgradeGate
+            title="Progress รายวิชาอยู่ในแพ็ก School"
+            description={`ชั้นปีนี้มี ${hiddenCount} วิชา — สมัครแพ็ก School เพื่อดูจุดอ่อนรายวิชาและ mastery ของทุกวิชา`}
+          />
+        ) : (
+          <div className="border rounded-lg p-8 text-center text-muted-foreground">
+            ยังไม่มีหัวข้อในชั้นปีนี้
+          </div>
+        )
       ) : (
         <div className="space-y-2">
           {items.map(({ topic, mastery: m, mastered, unlocked }) => (
@@ -144,6 +164,15 @@ export default async function ProgressPage() {
               </CardContent>
             </Card>
           ))}
+        </div>
+      )}
+
+      {items.length > 0 && hiddenCount > 0 && (
+        <div className="mt-6">
+          <UpgradeGate
+            title={`ยังมีอีก ${hiddenCount} วิชาที่ยังไม่เห็น progress`}
+            description="สมัครแพ็ก School เพื่อดู mastery และจุดอ่อนรายวิชาของทุกวิชาในชั้นปี"
+          />
         </div>
       )}
     </div>

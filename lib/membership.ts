@@ -8,6 +8,8 @@
  *   bundle               → 10 questions, lifetime
  *   monthly / yearly     → student full access (NL MCQ, MEQ, long case)
  *   board_monthly / board_yearly → board MCQ + oral exam access
+ *   school_monthly / school_term / school_yearly → School Y1–Y6 ทุกวิชา
+ *     (school_term = 4 เดือน ให้ตรงภาคการศึกษา)
  *
  * Note: `monthly` / `yearly` (student full) DOES NOT include board access by
  * default — board is a separate add-on tier. Users can hold both
@@ -29,6 +31,7 @@ export type MembershipType =
   | "board_monthly"
   | "board_yearly"
   | "school_monthly"
+  | "school_term"
   | "school_yearly";
 
 const FULL_STUDENT_TIERS = new Set<MembershipType>([
@@ -43,6 +46,7 @@ const BOARD_TIERS = new Set<MembershipType>(["board_monthly", "board_yearly"]);
 // Full student tiers (monthly/yearly) also include school access as a benefit.
 const SCHOOL_TIERS = new Set<MembershipType>([
   "school_monthly",
+  "school_term",
   "school_yearly",
   "monthly",
   "yearly",
@@ -61,6 +65,7 @@ const ANY_PAID_TIERS = new Set<MembershipType>([
   "board_monthly",
   "board_yearly",
   "school_monthly",
+  "school_term",
   "school_yearly",
 ]);
 

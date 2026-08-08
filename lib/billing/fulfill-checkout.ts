@@ -74,17 +74,27 @@ export async function fulfillCheckoutSession(
   }
 
   // Calculate membership expiry
+  //
+  // ตารางอายุแพ็กแบบชัดเจน — แพ็กที่ไม่อยู่ในตารางถือเป็น "ซื้อขาด" (bundle)
+  // ที่ไม่มีวันหมดอายุ ตัวเลข 99 ปีจึงต้องเป็นค่าที่ตั้งใจ ไม่ใช่ค่า fallback
+  // ที่แพ็กใหม่ตกลงมาโดยไม่ได้ตั้งใจ (school_monthly เคยจะได้ 99 ปีเพราะเหตุนี้)
+  const PLAN_DURATION_MONTHS: Record<string, number> = {
+    monthly: 1,
+    yearly: 12,
+    board_monthly: 1,
+    board_yearly: 12,
+    school_monthly: 1,
+    school_term: 4, // 1 ภาคการศึกษา
+    school_yearly: 12,
+  };
+
   const now = new Date();
-  let expiresAt: Date;
-  if (planType === "monthly" || planType === "board_monthly") {
-    expiresAt = new Date(now);
-    expiresAt.setMonth(expiresAt.getMonth() + 1);
-  } else if (planType === "yearly" || planType === "board_yearly") {
-    expiresAt = new Date(now);
-    expiresAt.setFullYear(expiresAt.getFullYear() + 1);
+  const expiresAt = new Date(now);
+  const durationMonths = PLAN_DURATION_MONTHS[planType];
+  if (durationMonths != null) {
+    expiresAt.setMonth(expiresAt.getMonth() + durationMonths);
   } else {
-    // bundle: 99 years
-    expiresAt = new Date(now);
+    // bundle และแพ็กซื้อขาดอื่น ๆ — ไม่มีวันหมดอายุ
     expiresAt.setFullYear(expiresAt.getFullYear() + 99);
   }
 

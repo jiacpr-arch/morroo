@@ -4,9 +4,15 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import FlashcardSwiper from "@/components/school/FlashcardSwiper";
-import { getSchoolFlashcards, getSchoolTopicsByYear } from "@/lib/supabase/queries-school";
-import { createClient } from "@/lib/supabase/server";
-import { hasSchoolAccess } from "@/lib/membership";
+import UpgradeGate from "@/components/school/UpgradeGate";
+import {
+  getSchoolFlashcards,
+  getSchoolLockedCounts,
+  getSchoolTopic,
+  getSchoolTopicsByYear,
+} from "@/lib/supabase/queries-school";
+import { getSchoolAccess } from "@/lib/school/access-server";
+import { canOpenTopic } from "@/lib/school/access";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -25,24 +31,29 @@ export default async function FlashcardsPage({ searchParams }: PageProps) {
   const year = params.year ? Number(params.year) : undefined;
   const topicId = params.topic;
 
-  const supabase = await createClient();
-  const { data: { user } } = await supabase.auth.getUser();
-  let isPremium = false;
-  if (user) {
-    const { data: profile } = await supabase
-      .from("profiles")
-      .select("membership_type, membership_expires_at")
-      .eq("id", user.id)
-      .maybeSingle();
-    isPremium = hasSchoolAccess(profile);
-  }
+  const { access } = await getSchoolAccess();
 
-  const [cards, topics] = await Promise.all([
-    getSchoolFlashcards({ topicId, year, limit: 50, randomize: true }),
+  // ขอเจาะจงวิชามา — ต้องเช็คก่อนว่าวิชานั้นเปิดให้ผู้ใช้ฟรีไหม
+  const requestedTopic = topicId ? await getSchoolTopic(topicId) : null;
+  const topicLocked = Boolean(requestedTopic) && !canOpenTopic(access, requestedTopic);
+
+  const [cards, topics, lockedCounts] = await Promise.all([
+    topicLocked
+      ? Promise.resolve([])
+      : getSchoolFlashcards({
+          topicId,
+          year,
+          limit: 50,
+          randomize: true,
+          previewOnly: access.previewOnly,
+        }),
     year ? getSchoolTopicsByYear(year) : Promise.resolve([]),
+    access.previewOnly
+      ? getSchoolLockedCounts(year)
+      : Promise.resolve({ topics: 0, flashcards: 0, quizzes: 0, lessons: 0 }),
   ]);
 
-  const activeTopic = topics.find((t) => t.id === topicId);
+  const activeTopic = requestedTopic ?? topics.find((t) => t.id === topicId);
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6">
@@ -62,13 +73,18 @@ export default async function FlashcardsPage({ searchParams }: PageProps) {
         </h1>
       </div>
 
-      {cards.length === 0 ? (
+      {topicLocked ? (
+        <UpgradeGate
+          title={`วิชา “${activeTopic?.name_th ?? "นี้"}” อยู่ในแพ็ก School`}
+          description={`สมัครแล้วเปิดได้ทุกวิชาในชั้นปี — รวม ${lockedCounts.flashcards} flashcards และ ${lockedCounts.quizzes} ข้อสอบที่ยังล็อกอยู่`}
+        />
+      ) : cards.length === 0 ? (
         <div className="border rounded-lg p-8 text-center text-muted-foreground">
           ยังไม่มี flashcards สำหรับหัวข้อนี้ — กลับไปเลือกหัวข้ออื่นได้เลย
         </div>
       ) : (
         <Suspense fallback={<div>Loading...</div>}>
-          <FlashcardSwiper cards={cards} isPremium={isPremium} freeLimit={10} />
+          <FlashcardSwiper cards={cards} lockedCount={lockedCounts.flashcards} />
         </Suspense>
       )}
     </div>

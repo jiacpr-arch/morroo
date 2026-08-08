@@ -20,8 +20,14 @@ import { XP, awardXp, awardBadge, detectBadges } from "@/lib/school/xp";
 
 interface Props {
   cards: SchoolFlashcard[];
-  isPremium?: boolean;
-  freeLimit?: number;
+  /**
+   * จำนวนการ์ดที่อยู่ในวิชา "ที่ยังล็อก" สำหรับผู้ใช้ฟรี (0 = ไม่มีอะไรล็อก)
+   *
+   * การกรองทำที่ฝั่งเซิร์ฟเวอร์แล้ว — คอมโพเนนต์นี้ได้รับเฉพาะการ์ดที่ผู้ใช้มี
+   * สิทธิ์เห็นจริง เดิมส่งการ์ดมาทั้งชุดแล้วค่อย slice ที่ client ซึ่งเปิดดูจาก
+   * network tab ก็เห็นของที่ล็อกไว้ทั้งหมด
+   */
+  lockedCount?: number;
 }
 
 const LAYER_BADGE: Record<string, string> = {
@@ -34,11 +40,7 @@ const LAYER_BADGE: Record<string, string> = {
   foundation: "bg-slate-100 text-slate-700",
 };
 
-export default function FlashcardSwiper({
-  cards,
-  isPremium = false,
-  freeLimit = 10,
-}: Props) {
+export default function FlashcardSwiper({ cards, lockedCount = 0 }: Props) {
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [seen, setSeen] = useState(0);
@@ -47,8 +49,7 @@ export default function FlashcardSwiper({
   const [elaborateOpen, setElaborateOpen] = useState(false);
   const [clozeMode, setClozeMode] = useState(false);
 
-  const effectiveCards = isPremium ? cards : cards.slice(0, freeLimit);
-  const card = effectiveCards[index];
+  const card = cards[index];
   const done = !card;
 
   async function rate(outcome: "again" | "hard" | "good" | "easy") {
@@ -125,9 +126,13 @@ export default function FlashcardSwiper({
           <p className="text-muted-foreground">
             ทบทวนไป {seen} ใบ จำได้ {knew} ใบ ({seen ? Math.round((knew / seen) * 100) : 0}%)
           </p>
-          {!isPremium && cards.length > freeLimit && (
+          {lockedCount > 0 && (
             <div className="border rounded-lg p-4 bg-amber-50 text-amber-900 text-sm">
-              ยังเหลืออีก {cards.length - freeLimit} ใบ — สมัคร Premium เพื่อทบทวนแบบไม่จำกัด
+              ยังมีอีก {lockedCount} ใบในวิชาที่ยังล็อก —{" "}
+              <Link href="/pricing#school" className="font-semibold underline">
+                สมัครแพ็ก School
+              </Link>{" "}
+              เพื่อเปิดทุกวิชา
             </div>
           )}
           <div className="flex gap-3 justify-center">
@@ -158,7 +163,7 @@ export default function FlashcardSwiper({
     <div className="space-y-4">
       <div className="flex items-center justify-between text-sm text-muted-foreground">
         <span>
-          ใบที่ {index + 1} / {effectiveCards.length}
+          ใบที่ {index + 1} / {cards.length}
         </span>
         <span>
           จำได้ {knew} / {seen}

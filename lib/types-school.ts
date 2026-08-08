@@ -27,6 +27,8 @@ export interface SchoolTopic {
   name_en: string;
   summary: string | null;
   sort_order: number;
+  /** true = หัวข้อตัวอย่างที่ผู้ใช้ฟรีเข้าถึงได้เต็มรูปแบบ */
+  is_preview: boolean;
   /** รหัสวิชาตามหลักสูตร เช่น "FMMD 1201" (null = ยังไม่ผูกรหัส) */
   code: string | null;
   /** รหัสวิชาภาษาไทย เช่น "พศพบ 1201" */

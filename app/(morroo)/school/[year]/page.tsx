@@ -9,8 +9,11 @@ import {
   getSchoolBookMap,
 } from "@/lib/supabase/queries-school";
 import SubjectRail from "@/components/school/SubjectRail";
+import { getSchoolAccess } from "@/lib/school/access-server";
+import { canOpenTopic } from "@/lib/school/access";
 
-export const revalidate = 60;
+// การ์ดวิชาบอกสถานะล็อก/ปลดล็อกของผู้ใช้คนนั้น จึง render ต่อ request
+export const dynamic = "force-dynamic";
 
 interface PageProps {
   params: Promise<{ year: string }>;
@@ -29,10 +32,11 @@ export default async function YearPage({ params }: PageProps) {
   const yearNum = Number(year);
   if (!Number.isInteger(yearNum) || yearNum < 1 || yearNum > 6) notFound();
 
-  const [topics, counts, bookMap] = await Promise.all([
+  const [topics, counts, bookMap, { access }] = await Promise.all([
     getSchoolTopicsByYear(yearNum),
     getSchoolTopicCounts(),
     getSchoolBookMap(),
+    getSchoolAccess(),
   ]);
 
   const totalCredits = topics.reduce((sum, t) => sum + (t.credits ?? 0), 0);
@@ -94,6 +98,8 @@ export default async function YearPage({ params }: PageProps) {
                     lessons: counts.lessons[t.id] ?? 0,
                     quizzes: counts.quizzes[t.id] ?? 0,
                     bookId: bookMap[t.id],
+                    isPreview: t.is_preview,
+                    locked: !canOpenTopic(access, t),
                   }))}
                 />
               </div>

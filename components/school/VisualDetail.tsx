@@ -133,7 +133,7 @@ export default function VisualDetail({ visual, flashcards }: Props) {
             <p className="text-xs font-bold uppercase text-sky-700">
               ทบทวนด้วย Flashcards ({flashcards.length})
             </p>
-            <FlashcardSwiper cards={flashcards} isPremium freeLimit={flashcards.length} />
+            <FlashcardSwiper cards={flashcards} />
           </CardContent>
         </Card>
       )}

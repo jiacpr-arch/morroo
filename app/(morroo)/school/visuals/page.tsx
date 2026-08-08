@@ -4,8 +4,10 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Image as ImageIcon } from "lucide-react";
 import { getSchoolVisuals } from "@/lib/supabase/queries-school";
 import VisualCard from "@/components/school/VisualCard";
+import { getSchoolAccess } from "@/lib/school/access-server";
 
-export const revalidate = 60;
+// รายการที่เห็นขึ้นกับสิทธิ์ของผู้ใช้ จึง render ต่อ request
+export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "Visual Summaries — School",
@@ -13,7 +15,8 @@ export const metadata = {
 };
 
 export default async function VisualsIndexPage() {
-  const visuals = await getSchoolVisuals({});
+  const { access } = await getSchoolAccess();
+  const visuals = await getSchoolVisuals({ previewOnly: access.previewOnly });
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">

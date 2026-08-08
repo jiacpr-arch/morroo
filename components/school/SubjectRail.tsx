@@ -11,6 +11,7 @@ import {
   Brain,
   ChevronLeft,
   ChevronRight,
+  Lock,
 } from "lucide-react";
 
 export interface RailSubject {
@@ -23,6 +24,10 @@ export interface RailSubject {
   lessons: number;
   quizzes: number;
   bookId?: string;
+  /** วิชาตัวอย่างที่ผู้ใช้ฟรีเปิดได้ */
+  isPreview?: boolean;
+  /** true = ผู้ใช้คนนี้ยังเปิดวิชานี้ไม่ได้ (ต้องสมัครแพ็ก School) */
+  locked?: boolean;
 }
 
 interface Props {
@@ -93,11 +98,19 @@ export default function SubjectRail({ subjects }: Props) {
                       {s.code}
                     </Badge>
                   )}
-                  {empty && (
+                  {empty ? (
                     <Badge variant="secondary" className="text-[10px]">
                       เร็วๆ นี้
                     </Badge>
-                  )}
+                  ) : s.isPreview ? (
+                    <Badge className="bg-sky-100 text-sky-700 text-[10px]">
+                      ตัวอย่าง — ฟรี
+                    </Badge>
+                  ) : s.locked ? (
+                    <Badge variant="secondary" className="text-[10px] gap-1">
+                      <Lock className="h-3 w-3" /> แพ็ก School
+                    </Badge>
+                  ) : null}
                 </div>
                 <div>
                   <h3 className="font-semibold leading-snug">{s.name_th}</h3>
@@ -119,7 +132,7 @@ export default function SubjectRail({ subjects }: Props) {
                     <Brain className="h-3 w-3" /> {s.quizzes} ข้อ
                   </span>
                 </div>
-                {s.bookId && (
+                {s.bookId && !s.locked && (
                   <Link href={`/school/book/${s.bookId}`}>
                     <Button
                       size="sm"
@@ -134,6 +147,12 @@ export default function SubjectRail({ subjects }: Props) {
                   <Button size="sm" variant="outline" className="w-full" disabled>
                     เนื้อหาเร็วๆ นี้
                   </Button>
+                ) : s.locked ? (
+                  <Link href="/pricing#school">
+                    <Button size="sm" variant="outline" className="w-full gap-2">
+                      <Lock className="h-4 w-4" /> ปลดล็อกด้วยแพ็ก School
+                    </Button>
+                  </Link>
                 ) : (
                   <Link href={`/school/topic/${s.id}`}>
                     <Button

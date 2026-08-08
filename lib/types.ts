@@ -23,6 +23,7 @@ export interface Profile {
     | "board_monthly"
     | "board_yearly"
     | "school_monthly"
+    | "school_term"
     | "school_yearly";
   membership_expires_at: string | null;
   created_at: string;
@@ -244,5 +245,65 @@ export const BOARD_PRICING_PLANS = [
     cta: "สมัคร Board รายปี",
     popular: false,
     type: "board_yearly" as const,
+  },
+] as const;
+
+/**
+ * School (นศพ. ปี 1-6) — คลังเนื้อหาอ่าน + ควิซตามหลักสูตร
+ *
+ * ตั้งราคาต่ำกว่าแพ็ก นศพ. (199/1490) สองเหตุผล: กำลังจ่ายของปี 1-3 ต่ำกว่า
+ * extern/intern และแพ็ก นศพ. รวมสิทธิ์ School อยู่แล้ว — School จึงเป็น entry
+ * tier ที่ upsell เป็นแพ็ก NL ตอนขึ้นชั้นคลินิก
+ *
+ * หน่วยการซื้อหลักคือ "ภาคการศึกษา" เพราะ นศพ. ซื้อของเรียนเป็นเทอม
+ */
+export const SCHOOL_PRICING_PLANS = [
+  {
+    name: "School รายเดือน",
+    price: 129,
+    period: "/ เดือน",
+    description: "ลองใช้แบบไม่ผูกมัด",
+    features: [
+      "📚 เปิดทุกวิชาในชั้นปี ไม่จำกัด",
+      "🧠 ควิซทุกข้อ + เฉลยเต็ม",
+      "🔁 ทบทวนตามตารางลืม (SRS)",
+      "🔀 Mixed Practice สลับวิชา",
+      "🤖 ถาม AI ติวเตอร์ 100 คำถาม/วัน",
+    ],
+    cta: "สมัครรายเดือน",
+    popular: false,
+    type: "school_monthly" as const,
+  },
+  {
+    name: "School 1 ภาคการศึกษา",
+    price: 349,
+    period: "/ 4 เดือน",
+    description: "ครอบคลุมทั้งเทอม ประหยัดกว่ารายเดือน 32%",
+    features: [
+      "ทุกอย่างในแพ็กรายเดือน",
+      "ใช้ได้ 4 เดือนเต็ม — ครบ 1 ภาคเรียน",
+      "ประหยัด ฿167 เทียบรายเดือน",
+      "📊 Progress + จุดอ่อนรายวิชา",
+      "เนื้อหาใหม่ที่เพิ่มระหว่างเทอมได้ทันที",
+    ],
+    cta: "สมัครราย 1 ภาคเรียน",
+    popular: true,
+    type: "school_term" as const,
+  },
+  {
+    name: "School รายปี",
+    price: 890,
+    period: "/ ปี",
+    description: "ถูกที่สุดต่อเดือน — ราคาเปิดตัว",
+    features: [
+      "ทุกอย่างในแพ็กราย 1 ภาคเรียน",
+      "ใช้ได้ตลอดปีการศึกษา",
+      "ประหยัด ฿658 เทียบรายเดือน",
+      "ล็อกราคาเปิดตัวไว้ตลอดอายุการใช้งาน",
+      "สิทธิ์ทดลอง feature ใหม่ก่อนใคร",
+    ],
+    cta: "สมัครรายปี",
+    popular: false,
+    type: "school_yearly" as const,
   },
 ] as const;

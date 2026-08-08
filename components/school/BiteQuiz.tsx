@@ -14,8 +14,11 @@ import { XP, awardXp, detectBadges } from "@/lib/school/xp";
 
 interface Props {
   quizzes: SchoolQuiz[];
-  isPremium?: boolean;
-  freeLimit?: number;
+  /**
+   * จำนวนข้อที่อยู่ในวิชา "ที่ยังล็อก" สำหรับผู้ใช้ฟรี (0 = ไม่มีอะไรล็อก)
+   * ชุดข้อสอบที่ส่งมาถูกกรองตามสิทธิ์จาก server แล้ว
+   */
+  lockedCount?: number;
 }
 
 const LAYER_BADGE: Record<string, string> = {
@@ -28,17 +31,12 @@ const LAYER_BADGE: Record<string, string> = {
   foundation: "bg-slate-100 text-slate-700",
 };
 
-export default function BiteQuiz({
-  quizzes,
-  isPremium = false,
-  freeLimit = 5,
-}: Props) {
-  const effective = isPremium ? quizzes : quizzes.slice(0, freeLimit);
+export default function BiteQuiz({ quizzes, lockedCount = 0 }: Props) {
   const [index, setIndex] = useState(0);
   const [picked, setPicked] = useState<string | null>(null);
   const [score, setScore] = useState({ correct: 0, total: 0 });
 
-  const quiz = effective[index];
+  const quiz = quizzes[index];
   const done = !quiz;
   const revealed = picked !== null;
   const isCorrect = revealed && picked === quiz?.correct_answer;
@@ -119,9 +117,13 @@ export default function BiteQuiz({
           <p className="text-muted-foreground">
             ตอบถูก {score.correct} จาก {score.total} ข้อ ({pct}%)
           </p>
-          {!isPremium && quizzes.length > freeLimit && (
+          {lockedCount > 0 && (
             <div className="border rounded-lg p-4 bg-amber-50 text-amber-900 text-sm">
-              ยังเหลืออีก {quizzes.length - freeLimit} ข้อ — สมัคร Premium เพื่อทำต่อไม่จำกัด
+              ยังมีอีก {lockedCount} ข้อในวิชาที่ยังล็อก —{" "}
+              <Link href="/pricing#school" className="font-semibold underline">
+                สมัครแพ็ก School
+              </Link>{" "}
+              เพื่อเปิดทุกวิชา
             </div>
           )}
           <div className="flex gap-3 justify-center">
@@ -150,7 +152,7 @@ export default function BiteQuiz({
     <div className="space-y-4">
       <div className="flex items-center justify-between text-sm text-muted-foreground">
         <span>
-          ข้อ {index + 1} / {effective.length}
+          ข้อ {index + 1} / {quizzes.length}
         </span>
         <span>
           ถูก {score.correct} / {score.total}
