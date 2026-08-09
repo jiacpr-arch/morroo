@@ -222,6 +222,18 @@ export const SIM_CHARACTERS: Record<string, SimCharacter> = {
     plate: ["#9A8F7A", "#75695B"],
     Placeholder: GenericPlaceholder,
   },
+  patient_young_male: {
+    name: "ผู้ป่วยชายหนุ่ม",
+    role: "Patient",
+    plate: ["#6E8FA6", "#4E6B7F"],
+    Placeholder: GenericPlaceholder,
+  },
+  patient_elderly_male: {
+    name: "ผู้ป่วยชายสูงอายุ",
+    role: "Patient",
+    plate: ["#8F8677", "#6B6355"],
+    Placeholder: GenericPlaceholder,
+  },
   patient_pregnant: {
     name: "ผู้ป่วยตั้งครรภ์",
     role: "Patient",
