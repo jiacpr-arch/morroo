@@ -5,6 +5,7 @@ import { ArrowLeft, BookOpen, Brain, Zap } from "lucide-react";
 import { notFound } from "next/navigation";
 import {
   getSchoolLesson,
+  getSchoolLessons,
   getSchoolQuizzes,
 } from "@/lib/supabase/queries-school";
 import LessonReader from "@/components/school/LessonReader";
@@ -98,6 +99,15 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
   const modeLabel =
     mode === "read" ? "อ่านอย่างเดียว" : mode === "quiz" ? "ควิซอย่างเดียว" : "อ่าน + ควิซ";
 
+  // เรียนจบแล้วต้องรู้ว่าไปไหนต่อ — หาบทถัดไปในวิชาเดียวกันตาม sort_order
+  const topicHref = `/school/topic/${lesson.topic_id}`;
+  const siblings = await getSchoolLessons({ topicId: lesson.topic_id });
+  const currentIdx = siblings.findIndex((l) => l.id === lesson.id);
+  const next = currentIdx >= 0 ? siblings[currentIdx + 1] : undefined;
+  const nextLesson = next
+    ? { href: `/school/lesson/${next.id}?mode=${mode}`, title: next.title }
+    : null;
+
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
       <Link href={`/school/topic/${lesson.topic_id}`}>
@@ -151,6 +161,8 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
             quizzes={runnerQuizzes}
             lessonId={lesson.id}
             readHref={`/school/lesson/${id}?mode=read`}
+            nextLesson={nextLesson}
+            topicHref={topicHref}
           />
         )
       ) : (
@@ -159,6 +171,8 @@ export default async function LessonPage({ params, searchParams }: PageProps) {
           miniQuizzes={pool}
           mode={mode}
           quizHref={`/school/lesson/${id}?mode=quiz`}
+          nextLesson={nextLesson}
+          topicHref={topicHref}
         />
       )}
 
