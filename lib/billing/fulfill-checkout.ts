@@ -252,10 +252,17 @@ export async function fulfillCheckoutSession(
     .maybeSingle();
 
   const publishedOn = now.toISOString().slice(0, 10);
+  // ข้อความนี้ไปโผล่ใน LINE/อีเมลของลูกค้า ("แพ็กเกจ: MorRoo <label>") แพ็กที่ไม่มี
+  // ในตารางจะได้ชื่อ slug ดิบ ๆ อย่าง "school_term" ติดไป จึงต้องมีให้ครบทุกแพ็ก
   const planLabels: Record<string, string> = {
     monthly: "รายเดือน",
     yearly: "รายปี",
     bundle: "ชุดข้อสอบ",
+    board_monthly: "Board รายเดือน",
+    board_yearly: "Board รายปี",
+    school_monthly: "School รายเดือน",
+    school_term: "School 1 ภาคการศึกษา",
+    school_yearly: "School รายปี",
   };
 
   return {

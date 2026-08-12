@@ -128,7 +128,9 @@ begin
 end;
 $$;
 
+-- ผู้ใช้เรียกเองไม่ได้ — เฉพาะ service role จาก API route (lib/school/ai-quota.ts)
 revoke all on function public.school_bump_ai_usage(uuid, int) from public, anon, authenticated;
+grant execute on function public.school_bump_ai_usage(uuid, int) to service_role;
 
 -- ----------------------------------------------
 -- 4. เพดาน bookmark / note ของผู้ใช้ฟรี
@@ -143,6 +145,7 @@ set search_path = public
 as $$
 declare
   v_has_school boolean;
+  v_exists boolean;
   v_used int;
 begin
   select p.membership_type = any (array[
@@ -154,6 +157,21 @@ begin
    where p.id = new.user_id;
 
   if coalesce(v_has_school, false) then
+    return new;
+  end if;
+
+  -- NoteEditor บันทึกด้วย upsert (on conflict user_id,unit_type,unit_id) ซึ่ง
+  -- BEFORE INSERT ยิงก่อน Postgres จะรู้ว่าชน conflict — ถ้าไม่กันไว้ ผู้ใช้ที่
+  -- มีโน้ตครบ 20 ชิ้นจะแก้โน้ตเดิมของตัวเองไม่ได้ นับเฉพาะการบันทึก "ชิ้นใหม่"
+  execute format(
+    'select exists(select 1 from public.%I
+       where user_id = $1 and unit_type = $2 and unit_id = $3)',
+    tg_table_name
+  )
+     into v_exists
+    using new.user_id, new.unit_type, new.unit_id;
+
+  if v_exists then
     return new;
   end if;
 

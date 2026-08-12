@@ -72,6 +72,11 @@ export async function POST(request: Request) {
         monthly: "รายเดือน",
         yearly: "รายปี",
         bundle: "ชุดข้อสอบ",
+        board_monthly: "Board รายเดือน",
+        board_yearly: "Board รายปี",
+        school_monthly: "School รายเดือน",
+        school_term: "School 1 ภาคการศึกษา",
+        school_yearly: "School รายปี",
       };
       const planLabel = planLabels[planType] ?? planType;
 

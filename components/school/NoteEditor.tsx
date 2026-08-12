@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { StickyNote, Loader2, Check, X } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
@@ -16,6 +17,9 @@ export default function NoteEditor({ unitType, unitId }: Props) {
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
   const [loading, setLoading] = useState(true);
+  // ผู้ใช้ฟรีบันทึกโน้ตใหม่ได้ 20 ชิ้น (บังคับที่ trigger ใน DB) — การแก้โน้ตเดิม
+  // ยังทำได้ตลอด ปุ่มจึงต้องไม่ขึ้น "บันทึกแล้ว" ตอนที่ DB ปฏิเสธจริง
+  const [capped, setCapped] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -51,7 +55,7 @@ export default function NoteEditor({ unitType, unitId }: Props) {
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) return;
       if (body.trim()) {
-        await supabase
+        const { error } = await supabase
           .from("school_user_notes")
           .upsert(
             {
@@ -63,6 +67,11 @@ export default function NoteEditor({ unitType, unitId }: Props) {
             },
             { onConflict: "user_id,unit_type,unit_id" }
           );
+        if (error) {
+          if (error.message.includes("SCHOOL_FREE_SAVE_CAP")) setCapped(true);
+          return;
+        }
+        setCapped(false);
       } else {
         await supabase
           .from("school_user_notes")
@@ -115,6 +124,15 @@ export default function NoteEditor({ unitType, unitId }: Props) {
             placeholder="เพิ่ม mnemonic, สรุปย่อ, หรือทริคจำของคุณเอง..."
             className="w-full border rounded p-2 text-sm min-h-[80px] bg-background"
           />
+          {capped && (
+            <p className="rounded border border-amber-300 bg-amber-50 p-2 text-xs text-amber-900">
+              ผู้ใช้ฟรีเก็บ Note ได้ 20 ชิ้น —{" "}
+              <Link href="/pricing#school" className="font-semibold underline">
+                สมัครแพ็ก School
+              </Link>{" "}
+              เพื่อเก็บไม่จำกัด (โน้ตเดิมยังแก้ได้ตามปกติ)
+            </p>
+          )}
           <Button size="sm" onClick={save} disabled={saving} className="gap-1">
             {saving ? (
               <Loader2 className="h-3 w-3 animate-spin" />
