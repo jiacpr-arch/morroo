@@ -51,6 +51,11 @@ export interface HubGame {
   icon: HubIconName;
   accent: HubAccent;
   audience: GameAudience;
+  /** ภาพอธิบายสิ่งที่จะได้ฝึกบนการ์ดหลัก */
+  image?: {
+    src: string;
+    alt: string;
+  };
   /** การ์ดกะทัดรัด (แถวเว็บคอร์สทักษะ 3 ใบ) */
   compact?: boolean;
 }
@@ -88,6 +93,10 @@ export const HUB_GAMES: HubGame[] = [
     icon: "Bandage",
     accent: "emerald",
     audience: "public",
+    image: {
+      src: "/images/games/courses/firstaid-simulation.jpg",
+      alt: "ชุดปฐมพยาบาลและตัวอย่างสถานการณ์แผลไหม้ ข้อเท้าพลิก และผู้ที่ต้องการความช่วยเหลือ",
+    },
   },
   {
     id: "cpr_hero",
@@ -99,6 +108,10 @@ export const HUB_GAMES: HubGame[] = [
     icon: "Heart",
     accent: "rose",
     audience: "public",
+    image: {
+      src: "/images/games/courses/cpr-hero.jpg",
+      alt: "ฝึกกดหน้าอกและใช้เครื่อง AED กับหุ่นฝึก CPR",
+    },
   },
 
   // ---- บุคลากร / ผู้เรียนคอร์ส -----------------------------------------
@@ -111,6 +124,10 @@ export const HUB_GAMES: HubGame[] = [
     icon: "HeartPulse",
     accent: "sky",
     audience: "provider",
+    image: {
+      src: "/images/games/courses/bls-team.jpg",
+      alt: "ทีมกู้ชีพฝึกแบ่งบทบาทกดหน้าอก ช่วยหายใจ และบันทึกเวลาในสถานการณ์ BLS",
+    },
   },
   {
     id: "acls_hub",
@@ -121,6 +138,10 @@ export const HUB_GAMES: HubGame[] = [
     icon: "Activity",
     accent: "red",
     audience: "provider",
+    image: {
+      src: "/images/games/courses/acls-leader.jpg",
+      alt: "ทีม ACLS ฝึกอ่านคลื่นไฟฟ้าหัวใจ ใช้เครื่องช็อกไฟฟ้า และตัดสินใจให้ยา",
+    },
   },
   {
     id: "skill_airway",
@@ -166,6 +187,10 @@ export const HUB_GAMES: HubGame[] = [
     icon: "Siren",
     accent: "rose",
     audience: "doctor",
+    image: {
+      src: "/images/games/courses/code-blue-sim.jpg",
+      alt: "แพทย์ฝึกเป็นผู้นำทีม Code Blue และเลือกคำสั่งในสถานการณ์จำลอง",
+    },
   },
   {
     id: "morroo_casegame",
@@ -176,6 +201,10 @@ export const HUB_GAMES: HubGame[] = [
     icon: "Stethoscope",
     accent: "teal",
     audience: "doctor",
+    image: {
+      src: "/images/games/courses/long-case-meq.jpg",
+      alt: "ฝึกคิดวิเคราะห์เคสตั้งแต่ซักประวัติ ตรวจร่างกาย ส่งตรวจ จนถึงวางแผนรักษา",
+    },
   },
   {
     id: "morroo_resus",
@@ -186,6 +215,10 @@ export const HUB_GAMES: HubGame[] = [
     icon: "Ambulance",
     accent: "amber",
     audience: "doctor",
+    image: {
+      src: "/images/games/courses/resus-procedures.jpg",
+      alt: "สถานีฝึกช่วยหายใจ เปิดเส้นทางกระดูก และติดแผ่นช็อกไฟฟ้ากับหุ่นฝึก",
+    },
   },
 ];
 

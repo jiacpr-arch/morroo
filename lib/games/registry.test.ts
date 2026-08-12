@@ -1,4 +1,6 @@
 import { describe, expect, it } from "vitest";
+import { existsSync } from "node:fs";
+import { join } from "node:path";
 import { AUDIENCE_GROUPS, HUB_GAMES, gamesForAudience } from "./registry";
 
 describe("games hub registry", () => {
@@ -26,6 +28,14 @@ describe("games hub registry", () => {
     const groupIds = new Set(AUDIENCE_GROUPS.map((g) => g.id));
     for (const g of HUB_GAMES) {
       expect(groupIds.has(g.audience), `${g.id} → ${g.audience}`).toBe(true);
+    }
+  });
+
+  it("every featured game has a local teaching image and useful alt text", () => {
+    for (const game of HUB_GAMES.filter((g) => !g.compact)) {
+      expect(game.image?.src, game.id).toMatch(/^\/images\/games\/courses\/.+\.jpg$/);
+      expect(game.image?.alt.length, game.id).toBeGreaterThan(20);
+      expect(existsSync(join(process.cwd(), "public", game.image!.src)), game.id).toBe(true);
     }
   });
 });
