@@ -22,6 +22,19 @@ export const HUB_ICON_NAMES = [
 ] as const;
 export type HubIconName = (typeof HUB_ICON_NAMES)[number];
 
+/** สีประจำการ์ด — จับคู่กับแบรนด์จริงของเว็บปลายทาง (BLS = ฟ้า Sky, firstaid =
+ * เขียว, CPR = แดงหัวใจ ฯลฯ) เพื่อให้การ์ดไม่กลืนกันและจำเว็บต้นทางได้
+ * GameHubCard ต้องมี style map ครบทุกสี (คุมด้วย type) */
+export type HubAccent =
+  | "emerald"
+  | "rose"
+  | "sky"
+  | "red"
+  | "cyan"
+  | "amber"
+  | "violet"
+  | "teal";
+
 /** กลุ่มผู้เล่น — เรียงจากพื้นฐานสุด → เฉพาะทางสุด ตามลำดับที่แสดงบนหน้า */
 export type GameAudience = "public" | "provider" | "doctor";
 
@@ -36,6 +49,7 @@ export interface HubGame {
   badge?: string;
   tags: string[];
   icon: HubIconName;
+  accent: HubAccent;
   audience: GameAudience;
   /** การ์ดกะทัดรัด (แถวเว็บคอร์สทักษะ 3 ใบ) */
   compact?: boolean;
@@ -72,6 +86,7 @@ export const HUB_GAMES: HubGame[] = [
     href: "https://firstaid.morroo.com/simulation",
     tags: ["40 เคส", "ไม่ต้องมีพื้นฐาน", "มีใบประกาศ"],
     icon: "Bandage",
+    accent: "emerald",
     audience: "public",
   },
   {
@@ -82,6 +97,7 @@ export const HUB_GAMES: HubGame[] = [
     badge: "ในคอร์ส CPR & AED",
     tags: ["เรียนจบใน 1 วัน", "ใบเซอร์ + ส่วนลดคอร์สปฏิบัติ"],
     icon: "Heart",
+    accent: "rose",
     audience: "public",
   },
 
@@ -93,6 +109,7 @@ export const HUB_GAMES: HubGame[] = [
     href: "https://bls.morroo.com",
     tags: ["BLS", "ILCOR 2025", "เล่นฟรีไม่ต้องล็อกอิน"],
     icon: "HeartPulse",
+    accent: "sky",
     audience: "provider",
   },
   {
@@ -102,6 +119,7 @@ export const HUB_GAMES: HubGame[] = [
     href: "https://acls.morroo.com",
     tags: ["ACLS", "ILCOR 2025", "เล่นฟรีไม่ต้องล็อกอิน"],
     icon: "Activity",
+    accent: "red",
     audience: "provider",
   },
   {
@@ -111,6 +129,7 @@ export const HUB_GAMES: HubGame[] = [
     href: "https://airway.morroo.com",
     tags: [],
     icon: "Wind",
+    accent: "cyan",
     audience: "provider",
     compact: true,
   },
@@ -121,6 +140,7 @@ export const HUB_GAMES: HubGame[] = [
     href: "https://defib.morroo.com",
     tags: [],
     icon: "Zap",
+    accent: "amber",
     audience: "provider",
     compact: true,
   },
@@ -131,6 +151,7 @@ export const HUB_GAMES: HubGame[] = [
     href: "https://iv.morroo.com",
     tags: [],
     icon: "Syringe",
+    accent: "violet",
     audience: "provider",
     compact: true,
   },
@@ -143,6 +164,7 @@ export const HUB_GAMES: HubGame[] = [
     href: "https://www.morroo.com/sim",
     tags: ["เก็บ XP + Badge", "Leaderboard"],
     icon: "Siren",
+    accent: "rose",
     audience: "doctor",
   },
   {
@@ -152,6 +174,7 @@ export const HUB_GAMES: HubGame[] = [
     href: "https://www.morroo.com/casegame",
     tags: ["เคสใหม่ทุกสัปดาห์", "อาจารย์ซักถามท้ายเคส"],
     icon: "Stethoscope",
+    accent: "teal",
     audience: "doctor",
   },
   {
@@ -161,6 +184,7 @@ export const HUB_GAMES: HubGame[] = [
     href: "https://www.morroo.com/resus",
     tags: ["หัตถการกู้ชีพ"],
     icon: "Ambulance",
+    accent: "amber",
     audience: "doctor",
   },
 ];
