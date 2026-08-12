@@ -88,7 +88,9 @@ export const HUB_GAMES: HubGame[] = [
     id: "firstaid_sim",
     title: "สถานการณ์จำลองปฐมพยาบาล",
     desc: "40 เหตุฉุกเฉินใกล้ตัว — เลือกทำทีละขั้นเหมือนอยู่ในเหตุการณ์จริง แล้วดูว่าคุณช่วยเขาทันไหม",
-    href: "https://firstaid.morroo.com/simulation",
+    // สุ่มฉากแล้วเข้าเล่นทันที (app/(firstaid)/firstaid/simulation/random/route.ts)
+    // แทนที่จะพาไปหน้าเลือกฉากก่อน — ลดจำนวนครั้งที่ต้องกด
+    href: "https://firstaid.morroo.com/simulation/random",
     tags: ["40 เคส", "ไม่ต้องมีพื้นฐาน", "มีใบประกาศ"],
     icon: "Bandage",
     accent: "emerald",
@@ -182,7 +184,9 @@ export const HUB_GAMES: HubGame[] = [
     id: "morroo_sim",
     title: "Code Blue Sim",
     desc: "คุณคือ Team Leader — ทีมทั้งห้องรอฟังคำสั่ง ตัดสินใจผิดผู้ป่วยแย่ลงจริง เวลาไม่เคยรอใคร",
-    href: "https://www.morroo.com/sim",
+    // เข้าเคสเรือธง (VF arrest) พร้อม autostart=1 (lib/sim/…/[slug]/page.tsx
+    // อ่าน ?start=1 แล้วสั่ง SimRunner เริ่มเกมทันทีไม่ต้องกดซ้ำ) แทนหน้ารวมเคส
+    href: "https://www.morroo.com/sim/vf-arrest-01?start=1",
     tags: ["เก็บ XP + Badge", "Leaderboard"],
     icon: "Siren",
     accent: "rose",
@@ -196,7 +200,9 @@ export const HUB_GAMES: HubGame[] = [
     id: "morroo_casegame",
     title: "เกมเคส (Long Case + MEQ)",
     desc: "ไล่เคสจริงตั้งแต่ซักประวัติ ตรวจร่างกาย สั่ง investigation จนถึงวางแผนรักษา — จากคลังข้อสอบจริง",
-    href: "https://www.morroo.com/casegame",
+    // /casegame/random เลือกเคสให้ (สุ่ม หรือแนะนำตามประวัติถ้าล็อกอิน) แล้ว
+    // redirect ต่อไป /sim/{slug}?start=1 ให้เข้าเล่นทันที (route.ts มีอยู่แล้ว)
+    href: "https://www.morroo.com/casegame/random?start=1",
     tags: ["เคสใหม่ทุกสัปดาห์", "อาจารย์ซักถามท้ายเคส"],
     icon: "Stethoscope",
     accent: "teal",
@@ -210,7 +216,9 @@ export const HUB_GAMES: HubGame[] = [
     id: "morroo_resus",
     title: "Resus Hero",
     desc: "เกมกู้ชีพภาคปฏิบัติ — ลงมือทำหัตถการเองทีละขั้น ไม่ใช่แค่เลือกคำตอบ",
-    href: "https://www.morroo.com/resus",
+    // เข้าเคสเรือธง (VF arrest, ด่าน 1) พร้อม ?start=1 (app/(morroo)/resus/[slug]/page.tsx
+    // อ่านแล้วสั่ง ResusRunner autostart) แทนหน้ารวมด่าน
+    href: "https://www.morroo.com/resus/vf-arrest-01?start=1",
     tags: ["หัตถการกู้ชีพ"],
     icon: "Ambulance",
     accent: "amber",

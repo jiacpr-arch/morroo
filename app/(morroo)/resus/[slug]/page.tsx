@@ -7,6 +7,12 @@ export const dynamic = "force-dynamic";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+/** ค่าเดียวจาก query — array (พารามิเตอร์ซ้ำ) ถือว่าไม่ถูกต้อง */
+function firstParam(value: string | string[] | undefined): string | null {
+  return typeof value === "string" && value ? value : null;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -19,10 +25,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function ResusPlayPage({ params }: PageProps) {
+export default async function ResusPlayPage({ params, searchParams }: PageProps) {
   const { slug } = await params;
-  const operation = await getResusCase(slug);
+  const [operation, sp] = await Promise.all([getResusCase(slug), searchParams]);
   if (!operation) notFound();
 
-  return <ResusRunner operation={operation} />;
+  return <ResusRunner operation={operation} autostart={firstParam(sp.start) === "1"} />;
 }
