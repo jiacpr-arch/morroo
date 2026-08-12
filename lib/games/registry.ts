@@ -119,6 +119,26 @@ export const HUB_GAMES: HubGame[] = [
       alt: "ฝึกกดหน้าอกและใช้เครื่อง AED กับหุ่นฝึก CPR",
     },
   },
+  {
+    id: "firstaid_game",
+    title: "FIRST AID HERO",
+    desc: "คุณคือผู้ช่วยเหลือคนแรกในที่เกิดเหตุ — ตัดสินใจไว ผิดพลาดแล้วผู้ป่วยแย่ลงจริง เวลาไม่เคยรอใคร",
+    // เกมโบนัสของ firstaid.morroo.com — คนละระบบกับ firstaid_sim (/simulation,
+    // เกม decision-tree ทีละขั้น) อันนี้เป็น engine เดียวกับ Code Blue Sim
+    // ?random=play สุ่มเคสแล้วข้ามจอเลือกเคส/title เข้าเกมทันที (PR #86 ของ
+    // repo firstaid — คนละค่ากับ ?random=1 เดิมที่ใช้ในลิงก์ LINE OA/QR บูธ
+    // ซึ่งข้ามแค่ไปจอ title)
+    //
+    // compact ชั่วคราว — ยังไม่มีรูปประกอบ (registry.test.ts บังคับให้การ์ด
+    // featured ทุกใบต้องมีรูปสอนจริงในเครื่อง) พอมีรูปแล้วเปลี่ยนกลับเป็น
+    // featured + เพิ่ม image ให้เหมือนการ์ดอื่น
+    href: "https://firstaid.morroo.com/game?random=play",
+    tags: [],
+    icon: "Siren",
+    accent: "violet",
+    audience: "public",
+    compact: true,
+  },
 
   // ---- บุคลากร / ผู้เรียนคอร์ส -----------------------------------------
   {
