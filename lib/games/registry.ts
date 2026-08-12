@@ -104,7 +104,11 @@ export const HUB_GAMES: HubGame[] = [
     id: "cpr_hero",
     title: "CPR Hero",
     desc: "เกมกู้ชีพในคอร์ส CPR & AED ออนไลน์ — เคสสำลัก หัวใจหยุดเต้น จนถึงด่านสุดท้าย Final Rescue",
-    href: "https://cpr.morroo.com",
+    // เล่นฟรีทุกเคส ไม่ได้ล็อกหลัง paywall จริง (ล็อกเฉพาะด่านสุดท้าย
+    // Final Rescue ที่ต้องผ่านข้อสอบจบคอร์สก่อน) — ?game=random คือลิงก์
+    // เดียวกับปุ่มแบนเนอร์ "ท้าดวลกู้ชีพ" ในแอป (src/App.jsx ของ jia-online)
+    // สุ่มเคสแล้วเข้าเล่นทันที ข้ามหน้า landing/เลือกเคส
+    href: "https://cpr.morroo.com/?game=random",
     badge: "ในคอร์ส CPR & AED",
     tags: ["เรียนจบใน 1 วัน", "ใบเซอร์ + ส่วนลดคอร์สปฏิบัติ"],
     icon: "Heart",
