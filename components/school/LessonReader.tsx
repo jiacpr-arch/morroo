@@ -287,23 +287,28 @@ function FinalQuiz({ quizzes }: { quizzes: SchoolQuiz[] }) {
           ทดสอบความเข้าใจตอนจบบท — ใช้ active recall เพื่อ retention
         </p>
         <ul className="space-y-2">
-          {quizzes.map((q) => (
-            <li key={q.id} className="border rounded p-3">
-              <div className="mb-2 flex items-start gap-2">
-                <p className="text-sm font-medium flex-1">{q.stem}</p>
-                {q.difficulty && <DifficultyBadge difficulty={q.difficulty} />}
-              </div>
-              <details>
-                <summary className="text-xs text-muted-foreground cursor-pointer">
-                  ดูเฉลย
-                </summary>
-                <div className="mt-2 space-y-1 text-xs">
-                  <p className="font-semibold">{q.correct_answer}</p>
-                  {q.explanation && <p className="text-muted-foreground">{q.explanation}</p>}
+          {quizzes.map((q) => {
+            const answerText =
+              q.choices.find((c) => c.label === q.correct_answer)?.text ??
+              q.correct_answer;
+            return (
+              <li key={q.id} className="border rounded p-3">
+                <div className="mb-2 flex items-start gap-2">
+                  <p className="text-sm font-medium flex-1">{q.stem}</p>
+                  {q.difficulty && <DifficultyBadge difficulty={q.difficulty} />}
                 </div>
-              </details>
-            </li>
-          ))}
+                <details>
+                  <summary className="text-xs text-muted-foreground cursor-pointer">
+                    ดูเฉลย
+                  </summary>
+                  <div className="mt-2 space-y-1 text-xs">
+                    <p className="font-semibold">{answerText}</p>
+                    {q.explanation && <p className="text-muted-foreground">{q.explanation}</p>}
+                  </div>
+                </details>
+              </li>
+            );
+          })}
         </ul>
       </CardContent>
     </Card>
