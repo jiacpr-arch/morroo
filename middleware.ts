@@ -12,12 +12,22 @@ const BOT_UA_RE =
 // own root layout (app/(firstaid)) with its own Meta pixel.
 const FIRSTAID_HOST_RE = /^firstaid(-beta)?\./i;
 
+// game.morroo.com (games hub) follows the same pattern: host-rewrite into the
+// /games route tree under its own root layout (app/(games)). Unlike firstaid
+// it has no pixel of its own, so morroo's CAPI PageView keeps firing for it.
+const GAME_HOST_RE = /^game(-beta)?\./i;
+
 // Public URL space that belongs to the firstaid app on its subdomain. Only
 // these get the host-rewrite; anything else on the subdomain (unknown paths)
 // still rewrites and 404s inside the firstaid layout, which is what we want.
 function isFirstAidHost(request: NextRequest): boolean {
   const host = request.headers.get("host") ?? "";
   return FIRSTAID_HOST_RE.test(host);
+}
+
+function isGameHost(request: NextRequest): boolean {
+  const host = request.headers.get("host") ?? "";
+  return GAME_HOST_RE.test(host);
 }
 
 function shouldSendCapiPageView(request: NextRequest): boolean {
@@ -34,6 +44,7 @@ function shouldSendCapiPageView(request: NextRequest): boolean {
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const firstaidHost = isFirstAidHost(request);
+  const gameHost = isGameHost(request);
 
   let rewriteUrl: URL | undefined;
   if (firstaidHost) {
@@ -48,19 +59,35 @@ export async function middleware(request: NextRequest) {
       rewriteUrl = request.nextUrl.clone();
       rewriteUrl.pathname = `/firstaid${pathname === "/" ? "" : pathname}`;
     }
+  } else if (gameHost) {
+    if (pathname.startsWith("/games")) {
+      // Canonicalise เหมือนฝั่ง firstaid — กัน /games ซ้อนเป็น URL ที่สอง
+      const url = request.nextUrl.clone();
+      url.pathname = pathname.replace(/^\/games/, "") || "/";
+      return NextResponse.redirect(url, 301);
+    }
+    if (!pathname.startsWith("/api") && !pathname.startsWith("/_next")) {
+      rewriteUrl = request.nextUrl.clone();
+      rewriteUrl.pathname = `/games${pathname === "/" ? "" : pathname}`;
+    }
   } else {
-    // Reverse direction: on the production www host the /firstaid tree is not
-    // a public URL — 301 to the subdomain so ads/SEO see one canonical home.
-    // Previews and localhost keep /firstaid/* reachable directly for QA.
+    // Reverse direction: on the production www host the /firstaid and /games
+    // trees are not public URLs — 301 to each subdomain so ads/SEO see one
+    // canonical home. Previews and localhost keep them reachable for QA.
     const host = request.headers.get("host") ?? "";
-    if (
-      pathname.startsWith("/firstaid") &&
-      /(^|\.)morroo\.com$/i.test(host.split(":")[0])
-    ) {
+    const isProdMorroo = /(^|\.)morroo\.com$/i.test(host.split(":")[0]);
+    if (pathname.startsWith("/firstaid") && isProdMorroo) {
       const target = new URL(request.url);
       target.host = "firstaid.morroo.com";
       target.port = "";
       target.pathname = pathname.replace(/^\/firstaid/, "") || "/";
+      return NextResponse.redirect(target, 301);
+    }
+    if (pathname.startsWith("/games") && isProdMorroo) {
+      const target = new URL(request.url);
+      target.host = "game.morroo.com";
+      target.port = "";
+      target.pathname = pathname.replace(/^\/games/, "") || "/";
       return NextResponse.redirect(target, 301);
     }
   }
