@@ -5,7 +5,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import { CheckCircle, XCircle, ArrowRight, Sparkles, Brain } from "lucide-react";
+import {
+  CheckCircle,
+  XCircle,
+  ArrowRight,
+  ArrowLeft,
+  Sparkles,
+  Brain,
+} from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import type { SchoolLesson, SchoolQuiz } from "@/lib/types-school";
@@ -32,6 +39,10 @@ interface Props {
   mode?: "mixed" | "read";
   /** ลิงก์ไปโหมดควิซของบทนี้ แสดงตอนอ่านจบ */
   quizHref?: string;
+  /** บทถัดไปในวิชาเดียวกัน — เป็นปุ่มหลักตอนเรียนจบ ถ้าไม่มีคือบทสุดท้ายแล้ว */
+  nextLesson?: { href: string; title: string } | null;
+  /** ลิงก์กลับหน้าวิชา — ทางออกเสมอ แม้จะเป็นบทสุดท้าย */
+  topicHref?: string;
   /**
    * โหมดแอดมิน: ถ้าส่งมา จะมีช่องอัปโหลดรูปคั่นก่อน/หลังทุก Part
    * (gapIndex 0 = ก่อน Part 1, i = หลัง Part i) และปิดการนับ XP/ความก้าวหน้า
@@ -54,6 +65,8 @@ export default function LessonReader({
   miniQuizzes,
   mode = "mixed",
   quizHref,
+  nextLesson,
+  topicHref,
   onInsertImage,
 }: Props) {
   const adminMode = !!onInsertImage;
@@ -200,7 +213,51 @@ export default function LessonReader({
       {!readOnly && step + 1 === sections.length && miniQuizzes.length > totalGates && (
         <FinalQuiz quizzes={miniQuizzes.slice(totalGates)} />
       )}
+
+      {/* ทางไปต่อ — อยู่ท้ายสุดเสมอ (หลัง final retrieval) เพื่อไม่ให้ดึงคนออก
+          จากบทก่อนได้ทบทวน แต่จบแล้วต้องมีปุ่มบอกว่าไปไหนต่อ */}
+      {finished && !adminMode && (nextLesson || topicHref) && (
+        <NextSteps nextLesson={nextLesson} topicHref={topicHref} />
+      )}
     </div>
+  );
+}
+
+/** ปุ่มไปต่อตอนเรียนจบบท: บทถัดไปเป็นปุ่มหลัก + กลับหน้าวิชาเสมอ */
+function NextSteps({
+  nextLesson,
+  topicHref,
+}: {
+  nextLesson?: { href: string; title: string } | null;
+  topicHref?: string;
+}) {
+  return (
+    <Card>
+      <CardContent className="p-5 space-y-3">
+        <p className="text-sm font-semibold">ไปต่อ</p>
+        {nextLesson ? (
+          <Link href={nextLesson.href} className="block">
+            <Button className="w-full gap-2 justify-between">
+              <span className="truncate text-left">
+                บทถัดไป: {nextLesson.title}
+              </span>
+              <ArrowRight className="h-4 w-4 shrink-0" />
+            </Button>
+          </Link>
+        ) : (
+          <p className="text-xs text-muted-foreground">
+            บทนี้เป็นบทสุดท้ายของวิชาแล้ว 🎉
+          </p>
+        )}
+        {topicHref && (
+          <Link href={topicHref} className="block">
+            <Button variant="outline" className="w-full gap-2">
+              <ArrowLeft className="h-4 w-4" /> กลับไปหน้าวิชา
+            </Button>
+          </Link>
+        )}
+      </CardContent>
+    </Card>
   );
 }
 
@@ -287,23 +344,28 @@ function FinalQuiz({ quizzes }: { quizzes: SchoolQuiz[] }) {
           ทดสอบความเข้าใจตอนจบบท — ใช้ active recall เพื่อ retention
         </p>
         <ul className="space-y-2">
-          {quizzes.map((q) => (
-            <li key={q.id} className="border rounded p-3">
-              <div className="mb-2 flex items-start gap-2">
-                <p className="text-sm font-medium flex-1">{q.stem}</p>
-                {q.difficulty && <DifficultyBadge difficulty={q.difficulty} />}
-              </div>
-              <details>
-                <summary className="text-xs text-muted-foreground cursor-pointer">
-                  ดูเฉลย
-                </summary>
-                <div className="mt-2 space-y-1 text-xs">
-                  <p className="font-semibold">{q.correct_answer}</p>
-                  {q.explanation && <p className="text-muted-foreground">{q.explanation}</p>}
+          {quizzes.map((q) => {
+            const answerText =
+              q.choices.find((c) => c.label === q.correct_answer)?.text ??
+              q.correct_answer;
+            return (
+              <li key={q.id} className="border rounded p-3">
+                <div className="mb-2 flex items-start gap-2">
+                  <p className="text-sm font-medium flex-1">{q.stem}</p>
+                  {q.difficulty && <DifficultyBadge difficulty={q.difficulty} />}
                 </div>
-              </details>
-            </li>
-          ))}
+                <details>
+                  <summary className="text-xs text-muted-foreground cursor-pointer">
+                    ดูเฉลย
+                  </summary>
+                  <div className="mt-2 space-y-1 text-xs">
+                    <p className="font-semibold">{answerText}</p>
+                    {q.explanation && <p className="text-muted-foreground">{q.explanation}</p>}
+                  </div>
+                </details>
+              </li>
+            );
+          })}
         </ul>
       </CardContent>
     </Card>

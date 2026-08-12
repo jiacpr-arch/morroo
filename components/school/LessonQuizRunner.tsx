@@ -5,7 +5,14 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle, RotateCcw, Trophy, XCircle } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  CheckCircle,
+  RotateCcw,
+  Trophy,
+  XCircle,
+} from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { nextSrsState } from "@/lib/school/srs";
 import { XP, awardXp } from "@/lib/school/xp";
@@ -30,6 +37,10 @@ interface Props {
   lessonId: string;
   /** ลิงก์กลับไปอ่านเนื้อหาบทนี้ */
   readHref: string;
+  /** บทถัดไปในวิชาเดียวกัน — ทางไปต่อตอนทำควิซจบ */
+  nextLesson?: { href: string; title: string } | null;
+  /** ลิงก์กลับหน้าวิชา — ทางออกเสมอ แม้จะเป็นบทสุดท้าย */
+  topicHref?: string;
 }
 
 const XP_BY_DIFFICULTY: Record<SchoolDifficulty, number> = {
@@ -43,7 +54,13 @@ const XP_BY_DIFFICULTY: Record<SchoolDifficulty, number> = {
  * ข้อที่มาจากคลัง (มี dbId) จะบันทึก SRS ให้ด้วย ส่วน mini quiz ที่ฝังใน
  * เนื้อหาไม่มีแถวในฐาน จึงให้แค่ XP และนับคะแนนในรอบนี้
  */
-export default function LessonQuizRunner({ quizzes, lessonId, readHref }: Props) {
+export default function LessonQuizRunner({
+  quizzes,
+  lessonId,
+  readHref,
+  nextLesson,
+  topicHref,
+}: Props) {
   const [index, setIndex] = useState(0);
   const [picked, setPicked] = useState<string | null>(null);
   const [score, setScore] = useState({ correct: 0, total: 0 });
@@ -129,6 +146,26 @@ export default function LessonQuizRunner({ quizzes, lessonId, readHref }: Props)
               <Button className="w-full sm:w-auto">อ่านเนื้อหาบทนี้</Button>
             </Link>
           </div>
+          {/* จบควิซแล้วต้องมีทางไปต่อ ไม่ใช่ค้างอยู่หน้าคะแนน */}
+          {(nextLesson || topicHref) && (
+            <div className="flex flex-col sm:flex-row gap-2 justify-center border-t pt-3">
+              {nextLesson && (
+                <Link href={nextLesson.href}>
+                  <Button variant="ghost" className="w-full sm:w-auto gap-2">
+                    บทถัดไป: {nextLesson.title}
+                    <ArrowRight className="h-4 w-4 shrink-0" />
+                  </Button>
+                </Link>
+              )}
+              {topicHref && (
+                <Link href={topicHref}>
+                  <Button variant="ghost" className="w-full sm:w-auto gap-2">
+                    <ArrowLeft className="h-4 w-4" /> กลับไปหน้าวิชา
+                  </Button>
+                </Link>
+              )}
+            </div>
+          )}
         </CardContent>
       </Card>
     );
