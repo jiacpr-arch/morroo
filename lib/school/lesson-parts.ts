@@ -46,7 +46,8 @@ export interface LessonParts {
   gateQuizzes: (InlineQuiz | null)[];
 }
 
-const MARKER_RE = /^##\s*⏸\s*Mini Quiz.*$/m;
+/** Same marker, but capturing so `.split` keeps the exact marker text for lossless reconstruction. */
+const MARKER_CAPTURE_RE = /(^##\s*⏸\s*Mini Quiz.*$)/m;
 const QUIZ_BLOCK_RE = /^\s*```quiz\s*\n([\s\S]*?)\n```\s*/;
 
 function parseQuiz(raw: string): InlineQuiz | null {
@@ -81,19 +82,48 @@ function parseQuiz(raw: string): InlineQuiz | null {
 }
 
 export function splitLessonParts(md: string): LessonParts {
-  if (!md) return { parts: [""], gateQuizzes: [] };
+  const { parts, gateQuizzes } = splitLessonPartsRaw(md);
+  return { parts, gateQuizzes };
+}
 
-  const segments = md.split(MARKER_RE);
-  const parts: string[] = [segments[0].trim()];
+export interface LessonPartsRaw extends LessonParts {
+  /**
+   * gateRaw[i] is the exact original text (marker line + inline quiz fence,
+   * if any) that sat between parts[i] and parts[i+1] — kept verbatim so an
+   * editor can rewrite part text without disturbing the marker/quiz it
+   * doesn't touch. Pair with `joinLessonParts` to reconstruct `body_md`.
+   */
+  gateRaw: string[];
+}
+
+/** Like `splitLessonParts`, but also keeps the raw separator text for editing round-trips. */
+export function splitLessonPartsRaw(md: string): LessonPartsRaw {
+  if (!md) return { parts: [""], gateQuizzes: [], gateRaw: [] };
+
+  // Capturing split → [content0, marker1, content1, marker2, content2, ...]
+  const chunks = md.split(MARKER_CAPTURE_RE);
+  const parts: string[] = [chunks[0].trim()];
   const gateQuizzes: (InlineQuiz | null)[] = [];
+  const gateRaw: string[] = [];
 
-  for (let i = 1; i < segments.length; i++) {
-    const block = segments[i].match(QUIZ_BLOCK_RE);
+  for (let i = 1; i < chunks.length; i += 2) {
+    const markerLine = chunks[i];
+    const rest = chunks[i + 1] ?? "";
+    const block = rest.match(QUIZ_BLOCK_RE);
     const quiz = block ? parseQuiz(block[1]) : null;
     gateQuizzes.push(quiz);
-    // Strip the consumed quiz block so it isn't rendered as part text.
-    parts.push((quiz ? segments[i].slice(block![0].length) : segments[i]).trim());
+    gateRaw.push(block ? `${markerLine}\n${block[0].trim()}` : markerLine);
+    parts.push((block ? rest.slice(block[0].length) : rest).trim());
   }
 
-  return { parts, gateQuizzes };
+  return { parts, gateQuizzes, gateRaw };
+}
+
+/** Inverse of `splitLessonPartsRaw` — rebuilds `body_md` from (possibly edited) parts + the untouched gate separators. */
+export function joinLessonParts(parts: string[], gateRaw: string[]): string {
+  let out = (parts[0] ?? "").trim();
+  for (let i = 0; i < gateRaw.length; i++) {
+    out += `\n\n${gateRaw[i]}\n\n${(parts[i + 1] ?? "").trim()}`;
+  }
+  return out;
 }

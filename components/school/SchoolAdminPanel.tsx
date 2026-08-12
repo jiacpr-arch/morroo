@@ -8,8 +8,11 @@ import { Button } from "@/components/ui/button";
 import { Loader2, Check, AlertCircle, ImagePlus, Eye, ArrowUp, ArrowDown } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { normalizeImageUrl } from "@/lib/school/image-url";
+import { splitLessonPartsRaw, joinLessonParts } from "@/lib/school/lesson-parts";
 import ImportPanel from "./ImportPanel";
 import ImageUploader from "./ImageUploader";
+import LessonReader from "./LessonReader";
+import type { SchoolLesson } from "@/lib/types-school";
 
 /**
  * Three tabs, on purpose. Everything students consume is produced by the AI
@@ -103,19 +106,40 @@ interface EditItem {
   sort_order: number;
 }
 
+function termLabel(term: number | null) {
+  if (term === 1) return "เทอม 1";
+  if (term === 2) return "เทอม 2";
+  if (term === 3) return "ภาคฤดูร้อน";
+  return "ไม่ระบุเทอม";
+}
+
+type ViewMode = "edit" | "preview" | "paragraphs";
+
 /**
  * Edit the markdown body of an EXISTING lesson or book chapter, with inline
  * image upload + insert at the cursor. Fills the gap where the other tabs can
  * only create new rows, not edit content already in the database.
  */
 function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topics"] } & CommonProps) {
-  const [topicId, setTopicId] = useState(topics[0]?.id ?? "");
+  const years = Array.from(new Set(topics.map((t) => t.year))).sort((a, b) => a - b);
+  const [year, setYear] = useState<number>(topics[0]?.year ?? years[0] ?? 1);
+
+  const termsForYear = Array.from(
+    new Set(topics.filter((t) => t.year === year).map((t) => t.term ?? null))
+  ).sort((a, b) => (a ?? 0) - (b ?? 0));
+  const [term, setTerm] = useState<number | null>(topics[0]?.term ?? null);
+
+  const topicsForYearTerm = topics.filter(
+    (t) => t.year === year && (t.term ?? null) === term
+  );
+  const [topicId, setTopicId] = useState(topicsForYearTerm[0]?.id ?? topics[0]?.id ?? "");
   const [kind, setKind] = useState<EditKind>("lesson");
   const [items, setItems] = useState<EditItem[]>([]);
   const [selectedId, setSelectedId] = useState("");
   const [body, setBody] = useState("");
   const [loading, setLoading] = useState(false);
-  const [preview, setPreview] = useState(false);
+  // เริ่มที่หน้าเหมือนนักเรียน + ช่องแทรกรูป เพราะเป็นงานหลักของแท็บนี้
+  const [viewMode, setViewMode] = useState<ViewMode>("paragraphs");
   const taRef = useRef<HTMLTextAreaElement>(null);
 
   // ธง "วิชาตัวอย่างฟรี" — เส้นแบ่งฟรี/จ่ายของฝั่งนักเรียนตัดที่ระดับวิชา
@@ -145,6 +169,20 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
     } finally {
       setBusy(false);
     }
+  }
+
+  function handleYearChange(y: number) {
+    const nextTerm = topics.find((t) => t.year === y)?.term ?? null;
+    const nextTopic = topics.find((t) => t.year === y && (t.term ?? null) === nextTerm);
+    setYear(y);
+    setTerm(nextTerm);
+    setTopicId(nextTopic?.id ?? "");
+  }
+
+  function handleTermChange(t: number | null) {
+    const nextTopic = topics.find((x) => x.year === year && (x.term ?? null) === t);
+    setTerm(t);
+    setTopicId(nextTopic?.id ?? "");
   }
 
   useEffect(() => {
@@ -201,7 +239,7 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
     setSelectedId(id);
     const item = items.find((i) => i.id === id);
     setBody(item?.body_md ?? "");
-    setPreview(false);
+    setViewMode("paragraphs");
   }
 
   function insertAtCursor(text: string) {
@@ -220,6 +258,52 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
       ta.setSelectionRange(pos, pos);
     });
   }
+
+  // Lesson bodies split into the same reading "Part"s students see (Lesson
+  // Reader gates each Part behind a mini quiz) — reused here so the admin
+  // view matches production exactly. Book chapters have no Part concept, so
+  // they fall back to plain blank-line paragraphs.
+  const lessonParts = kind === "lesson" ? splitLessonPartsRaw(body) : null;
+  const chapterParagraphs = body
+    .split(/\n{2,}/)
+    .map((p) => p.trim())
+    .filter(Boolean);
+
+  /** gapIndex counts the gaps around lessonParts.parts: 0 = before part 1, i = after part i. */
+  function insertImageInLessonPart(gapIndex: number, url: string) {
+    if (!lessonParts) return;
+    const md = `![](${url})`;
+    const nextParts = [...lessonParts.parts];
+    if (gapIndex === 0) {
+      nextParts[0] = nextParts[0] ? `${md}\n\n${nextParts[0]}` : md;
+    } else {
+      const idx = gapIndex - 1;
+      nextParts[idx] = nextParts[idx] ? `${nextParts[idx]}\n\n${md}` : md;
+    }
+    setBody(joinLessonParts(nextParts, lessonParts.gateRaw));
+    notify("ok", "แทรกรูปแล้ว");
+  }
+
+  function insertImageInChapter(gapIndex: number, url: string) {
+    const next = [...chapterParagraphs];
+    next.splice(gapIndex, 0, `![](${url})`);
+    setBody(next.join("\n\n"));
+    notify("ok", "แทรกรูปแล้ว");
+  }
+
+  // LessonReader ต้องการ SchoolLesson เต็มรูป แต่ตัว reader ใช้แค่ id/body_md/title
+  // ส่วนที่เหลือใส่ค่าพอให้ครบ type — หน้าแอดมินไม่ได้เขียน progress อยู่แล้ว
+  const selectedItem = items.find((i) => i.id === selectedId);
+  const previewLesson: SchoolLesson = {
+    id: selectedId,
+    topic_id: topicId,
+    layer: "foundation",
+    title: selectedItem?.title ?? "",
+    body_md: body,
+    estimated_min: 0,
+    sort_order: selectedItem?.sort_order ?? 0,
+    source: null,
+  };
 
   async function save() {
     if (!selectedId) return notify("err", "ยังไม่ได้เลือกบท");
@@ -277,12 +361,51 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
       <CardContent className="p-4 space-y-3">
         <h3 className="font-bold">แก้ไขเนื้อหา + แทรกรูป</h3>
         <p className="text-xs text-muted-foreground">
-          เลือกบทเรียน/บทในหนังสือ → กด &quot;อัปโหลด + แทรกรูป&quot; เพื่อวางรูปตรงเคอร์เซอร์
-          (แทนที่บรรทัด <code>🖼️ รูปแนะนำ</code> ที่ AI ใส่ไว้) แล้วบันทึก
+          เลือกชั้นปี → เทอม → วิชา → บท แล้วเนื้อหาจะขึ้นเป็นหน้าเดียวกับที่นักเรียนเห็น
+          โดยมีปุ่ม &quot;+ แทรกรูปตรงนี้&quot; คั่นก่อน/หลังทุก Part — กดอัปโหลดรูปตรงจุดที่ต้องการได้เลย
+          แล้วกดบันทึก (ถ้าอยากแก้ข้อความเอง สลับไปโหมด &quot;แก้ไข&quot;)
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <Field label="Topic">
-            <TopicPicker topics={topics} value={topicId} onChange={setTopicId} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <Field label="ชั้นปี">
+            <select
+              value={year}
+              onChange={(e) => handleYearChange(Number(e.target.value))}
+              className="w-full border rounded p-2 text-sm"
+            >
+              {years.map((y) => (
+                <option key={y} value={y}>
+                  ปี {y}
+                </option>
+              ))}
+            </select>
+          </Field>
+          <Field label="เทอม">
+            <select
+              value={term ?? ""}
+              onChange={(e) => handleTermChange(e.target.value === "" ? null : Number(e.target.value))}
+              className="w-full border rounded p-2 text-sm"
+            >
+              {termsForYear.map((t) => (
+                <option key={t ?? "none"} value={t ?? ""}>
+                  {termLabel(t)}
+                </option>
+              ))}
+            </select>
+          </Field>
+          <Field label="วิชา">
+            <select
+              value={topicId}
+              onChange={(e) => setTopicId(e.target.value)}
+              className="w-full border rounded p-2 text-sm"
+              disabled={topicsForYearTerm.length === 0}
+            >
+              {topicsForYearTerm.length === 0 && <option value="">— ไม่มีวิชา —</option>}
+              {topicsForYearTerm.map((t) => (
+                <option key={t.id} value={t.id}>
+                  {t.school_systems?.icon} {t.name_th}
+                </option>
+              ))}
+            </select>
           </Field>
           <Field label="ชนิด">
             <select
@@ -294,6 +417,8 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
               <option value="book_chapter">หนังสือ — บท</option>
             </select>
           </Field>
+        </div>
+        <div className="grid grid-cols-1 gap-3">
           <Field label={loading ? "กำลังโหลด…" : `เลือกบท (${items.length})`}>
             <div className="flex gap-1">
               <select
@@ -376,26 +501,77 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
               </Button>
               <Button
                 type="button"
-                variant="outline"
+                variant={viewMode === "edit" ? "default" : "outline"}
                 size="sm"
                 className="gap-2"
-                onClick={() => setPreview((p) => !p)}
+                onClick={() => setViewMode("edit")}
               >
-                <Eye className="h-4 w-4" /> {preview ? "แก้ไข" : "ดูตัวอย่าง"}
+                แก้ไข
+              </Button>
+              <Button
+                type="button"
+                variant={viewMode === "preview" ? "default" : "outline"}
+                size="sm"
+                className="gap-2"
+                onClick={() => setViewMode("preview")}
+              >
+                <Eye className="h-4 w-4" /> ดูตัวอย่าง
+              </Button>
+              <Button
+                type="button"
+                variant={viewMode === "paragraphs" ? "default" : "outline"}
+                size="sm"
+                className="gap-2"
+                onClick={() => setViewMode("paragraphs")}
+              >
+                <ImagePlus className="h-4 w-4" />
+                {kind === "lesson" ? "หน้าเหมือนนักเรียน + แทรกรูป" : "แทรกรูประหว่างพารากราฟ"}
               </Button>
             </div>
 
-            {preview ? (
+            {viewMode === "preview" && (
               <div className="rounded border p-4 prose prose-sm prose-slate dark:prose-invert max-w-none min-h-[200px]">
                 <ReactMarkdown remarkPlugins={[remarkGfm]}>{body}</ReactMarkdown>
               </div>
-            ) : (
+            )}
+
+            {viewMode === "edit" && (
               <textarea
                 ref={taRef}
                 value={body}
                 onChange={(e) => setBody(e.target.value)}
                 className="w-full border rounded p-2 text-sm min-h-[320px] font-mono"
               />
+            )}
+
+            {/* ใช้ LessonReader ตัวเดียวกับหน้านักเรียนเป๊ะ ๆ (การ์ด Part, mini quiz คั่น,
+                สรุปตอนจบ) แค่มีช่องอัปโหลดรูปคั่นก่อน/หลังทุก Part เพิ่มเข้ามา
+                — แทรกรูปแล้วเนื้อหาอัปเดตทันที ตัว marker/mini quiz ไม่ถูกแตะต้อง */}
+            {viewMode === "paragraphs" && kind === "lesson" && (
+              <LessonReader
+                key={selectedId}
+                lesson={previewLesson}
+                miniQuizzes={[]}
+                mode="read"
+                onInsertImage={insertImageInLessonPart}
+              />
+            )}
+
+            {viewMode === "paragraphs" && kind === "book_chapter" && (
+              <div className="rounded border divide-y">
+                <PartGap onUploaded={(url) => insertImageInChapter(0, url)} />
+                {chapterParagraphs.length === 0 && (
+                  <p className="p-4 text-sm text-muted-foreground">ยังไม่มีเนื้อหา</p>
+                )}
+                {chapterParagraphs.map((p, i) => (
+                  <div key={i}>
+                    <div className="p-3 prose prose-sm prose-slate dark:prose-invert max-w-none">
+                      <ReactMarkdown remarkPlugins={[remarkGfm]}>{p}</ReactMarkdown>
+                    </div>
+                    <PartGap onUploaded={(url) => insertImageInChapter(i + 1, url)} />
+                  </div>
+                ))}
+              </div>
             )}
 
             <Button onClick={save} disabled={busy}>
@@ -406,6 +582,17 @@ function ContentEditor({ topics, busy, setBusy, notify }: { topics: Props["topic
         )}
       </CardContent>
     </Card>
+  );
+}
+
+/** แถวเล็ก ๆ คั่นระหว่าง Part/พารากราฟ ให้กดอัปโหลดรูปแทรกตรงจุดนั้นได้ทันที */
+function PartGap({ onUploaded }: { onUploaded: (url: string) => void }) {
+  return (
+    <div className="flex items-center gap-2 py-1.5 px-3 bg-muted/20">
+      <div className="flex-1 border-t border-dashed" />
+      <ImageUploader onUploaded={onUploaded} label="+ แทรกรูปตรงนี้" />
+      <div className="flex-1 border-t border-dashed" />
+    </div>
   );
 }
 
