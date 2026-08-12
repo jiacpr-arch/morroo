@@ -17,6 +17,8 @@ const navLinks: { href: string; label: string; isNew?: boolean }[] = [
   { href: "/exams", label: "MEQ" },
   { href: "/longcase", label: "Long Case" },
   { href: "/casegame", label: "เกมเคส", isNew: true },
+  // middleware 301 ไป game.morroo.com บนโปรดักชัน (hub รวมเกมทุกเว็บ)
+  { href: "/games", label: "เกม" },
   { href: "/acls-reader", label: "ACLS" },
   { href: "/board", label: "Board" },
   { href: "/blog", label: "บทความ" },
