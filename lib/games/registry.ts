@@ -58,6 +58,9 @@ export interface HubGame {
   };
   /** การ์ดกะทัดรัด (แถวเว็บคอร์สทักษะ 3 ใบ) */
   compact?: boolean;
+  /** การ์ดเด่นเต็มความกว้าง แยกไว้เหนือการ์ดปกติของกลุ่ม — ใช้กับเกมตัวชูโรง
+   * ของกลุ่มผู้เล่นนั้น (ตอนนี้มีแค่ "เกมเคส" ของกลุ่มแพทย์/นักศึกษาแพทย์) */
+  spotlight?: boolean;
 }
 
 export const AUDIENCE_GROUPS: {
@@ -236,6 +239,9 @@ export const HUB_GAMES: HubGame[] = [
     icon: "Stethoscope",
     accent: "teal",
     audience: "doctor",
+    // ตัวชูโรงของกลุ่มแพทย์/นักศึกษาแพทย์ — ขึ้นเป็นการ์ดเด่นเต็มความกว้าง
+    // เหนือ Code Blue Sim / Resus Hero แทนที่จะเท่ากันทั้งสามใบ
+    spotlight: true,
     image: {
       src: "/images/games/courses/long-case-meq.jpg",
       alt: "ฝึกคิดวิเคราะห์เคสตั้งแต่ซักประวัติ ตรวจร่างกาย ส่งตรวจ จนถึงวางแผนรักษา",
