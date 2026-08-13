@@ -87,11 +87,13 @@ export const HUB_GAMES: HubGame[] = [
   {
     id: "firstaid_sim",
     title: "สถานการณ์จำลองปฐมพยาบาล",
-    desc: "40 เหตุฉุกเฉินใกล้ตัว — เลือกทำทีละขั้นเหมือนอยู่ในเหตุการณ์จริง แล้วดูว่าคุณช่วยเขาทันไหม",
+    desc: "17 เหตุฉุกเฉินใกล้ตัว — เลือกทำทีละขั้นเหมือนอยู่ในเหตุการณ์จริง แล้วดูว่าคุณช่วยเขาทันไหม",
     // สุ่มเคสแล้วเข้าเล่นทันที ข้ามหน้าเลือกฉาก — ใช้เกม FIRST AID HERO
     // (engine เดียวกับ Code Blue Sim, ?random=play ดูรายละเอียดที่ firstaid_game ด้านล่าง)
+    // 17 เคส ไม่มีใบประกาศ — เกมนี้เป็นโหมดโบนัส แยกจาก progress/post-test/ใบเซอร์
+    // ของคอร์สหลัก (firstaid/src/pages/FirstAidGame.jsx:33-34)
     href: "https://firstaid.morroo.com/game?random=play",
-    tags: ["40 เคส", "ไม่ต้องมีพื้นฐาน", "มีใบประกาศ"],
+    tags: ["17 เคส", "ไม่ต้องมีพื้นฐาน"],
     icon: "Bandage",
     accent: "emerald",
     audience: "public",
