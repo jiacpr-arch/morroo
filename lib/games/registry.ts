@@ -87,11 +87,13 @@ export const HUB_GAMES: HubGame[] = [
   {
     id: "firstaid_sim",
     title: "สถานการณ์จำลองปฐมพยาบาล",
-    desc: "40 เหตุฉุกเฉินใกล้ตัว — เลือกทำทีละขั้นเหมือนอยู่ในเหตุการณ์จริง แล้วดูว่าคุณช่วยเขาทันไหม",
-    // สุ่มฉากแล้วเข้าเล่นทันที (app/(firstaid)/firstaid/simulation/random/route.ts)
-    // แทนที่จะพาไปหน้าเลือกฉากก่อน — ลดจำนวนครั้งที่ต้องกด
-    href: "https://firstaid.morroo.com/simulation/random",
-    tags: ["40 เคส", "ไม่ต้องมีพื้นฐาน", "มีใบประกาศ"],
+    desc: "17 เหตุฉุกเฉินใกล้ตัว — เลือกทำทีละขั้นเหมือนอยู่ในเหตุการณ์จริง แล้วดูว่าคุณช่วยเขาทันไหม",
+    // สุ่มเคสแล้วเข้าเล่นทันที ข้ามหน้าเลือกฉาก — ใช้เกม FIRST AID HERO
+    // (engine เดียวกับ Code Blue Sim, ?random=play ดูรายละเอียดที่ firstaid_game ด้านล่าง)
+    // 17 เคส ไม่มีใบประกาศ — เกมนี้เป็นโหมดโบนัส แยกจาก progress/post-test/ใบเซอร์
+    // ของคอร์สหลัก (firstaid/src/pages/FirstAidGame.jsx:33-34)
+    href: "https://firstaid.morroo.com/game?random=play",
+    tags: ["17 เคส", "ไม่ต้องมีพื้นฐาน"],
     icon: "Bandage",
     accent: "emerald",
     audience: "public",
@@ -118,6 +120,26 @@ export const HUB_GAMES: HubGame[] = [
       src: "/images/games/courses/cpr-hero.jpg",
       alt: "ฝึกกดหน้าอกและใช้เครื่อง AED กับหุ่นฝึก CPR",
     },
+  },
+  {
+    id: "firstaid_game",
+    title: "FIRST AID HERO",
+    desc: "คุณคือผู้ช่วยเหลือคนแรกในที่เกิดเหตุ — ตัดสินใจไว ผิดพลาดแล้วผู้ป่วยแย่ลงจริง เวลาไม่เคยรอใคร",
+    // เกมโบนัสของ firstaid.morroo.com — คนละระบบกับ firstaid_sim (/simulation,
+    // เกม decision-tree ทีละขั้น) อันนี้เป็น engine เดียวกับ Code Blue Sim
+    // ?random=play สุ่มเคสแล้วข้ามจอเลือกเคส/title เข้าเกมทันที (PR #86 ของ
+    // repo firstaid — คนละค่ากับ ?random=1 เดิมที่ใช้ในลิงก์ LINE OA/QR บูธ
+    // ซึ่งข้ามแค่ไปจอ title)
+    //
+    // compact ชั่วคราว — ยังไม่มีรูปประกอบ (registry.test.ts บังคับให้การ์ด
+    // featured ทุกใบต้องมีรูปสอนจริงในเครื่อง) พอมีรูปแล้วเปลี่ยนกลับเป็น
+    // featured + เพิ่ม image ให้เหมือนการ์ดอื่น
+    href: "https://firstaid.morroo.com/game?random=play",
+    tags: [],
+    icon: "Siren",
+    accent: "violet",
+    audience: "public",
+    compact: true,
   },
 
   // ---- บุคลากร / ผู้เรียนคอร์ส -----------------------------------------
