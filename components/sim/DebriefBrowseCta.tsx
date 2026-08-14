@@ -31,6 +31,9 @@ import {
   buildCtaViewProps,
   CASEGAME_EVENTS,
   caseGameCategory,
+  LINE_CTA_TARGETS,
+  sendCaseGameLineCtaCapi,
+  type CaseGameLineCtaTarget,
 } from "@/lib/sim/track";
 
 /** LINE Login ยังอยู่หลัง flag เดียวกับหน้า /login — ปิดอยู่ก็ยังเหลือทางแอด OA */
@@ -114,6 +117,12 @@ export default function DebriefBrowseCta({
       CASEGAME_EVENTS.ctaClick,
       buildCtaClickProps({ slug, category, grade, runId, target })
     );
+    // ปุ่ม LINE สองปุ่มคือ conversion "Lead" ของ Meta — ยิงฝั่ง server
+    // (แนบ _fbp/_fbc จาก cookie) ให้แคมเปญ optimize ได้ ปุ่ม browse อื่น
+    // เป็นแค่การเดินดูต่อ ไม่นับ
+    if (LINE_CTA_TARGETS.has(target as CaseGameLineCtaTarget)) {
+      sendCaseGameLineCtaCapi(slug, runId, target as CaseGameLineCtaTarget);
+    }
   }
 
   return (

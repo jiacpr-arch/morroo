@@ -222,6 +222,57 @@ export function capiEventId(event: CaseGameCapiEvent, runId: string): string {
   return `casegame:${event}:${runId}`;
 }
 
+/**
+ * ปุ่ม LINE ท้ายเกม (DebriefBrowseCta) คือ "ความตั้งใจ" เดียวที่วัดได้ของ
+ * funnel นี้หลังเลิกเก็บอีเมล — ยิงเข้า Meta เป็น standard event `Lead`
+ * เพื่อให้แคมเปญใช้เป็น optimization target ได้ (ViewContent ของ start/complete
+ * บอกแค่ว่า "เล่น" แต่ไม่บอกว่า "อยากไปต่อ")
+ */
+export type CaseGameLineCtaTarget = "line_login" | "line_trial";
+
+export const LINE_CTA_TARGETS = new Set<CaseGameLineCtaTarget>([
+  "line_login",
+  "line_trial",
+]);
+
+/**
+ * content_name สำหรับ Custom Conversion (กติกา: ขึ้นต้นด้วย "casegame_line_cta")
+ * — target ต่อท้ายเพื่อแยก "ผูกบัญชี" กับ "ขอโค้ดทดลอง" ใน Events Manager ได้
+ */
+export function lineCtaContentName(target: CaseGameLineCtaTarget): string {
+  return `casegame_line_cta:${target}`;
+}
+
+/** eventId กันเบิ้ล — หนึ่งรอบเล่นกดเป้าเดียวกันซ้ำกี่ครั้งก็นับหนึ่ง Lead */
+export function lineCtaEventId(
+  runId: string,
+  target: CaseGameLineCtaTarget
+): string {
+  return `casegame:line_cta:${runId}:${target}`;
+}
+
+/**
+ * ยิง Lead เข้า Meta ผ่าน server route เดียวกับ event เกม — fire-and-forget
+ * keepalive สำคัญเป็นพิเศษที่นี่เพราะการกดพาออกไปแอป LINE ทันที
+ */
+export function sendCaseGameLineCtaCapi(
+  slug: string,
+  runId: string,
+  target: CaseGameLineCtaTarget
+): void {
+  if (typeof window === "undefined") return;
+  try {
+    void fetch("/api/track/casegame", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ event: "line_cta", slug, runId, target }),
+      keepalive: true,
+    }).catch(() => {});
+  } catch {
+    // analytics ต้องไม่ทำให้เกมพัง
+  }
+}
+
 /** id ต่อหนึ่งรอบการเล่น — ผูก start/complete คู่เดียวกันเข้าด้วยกัน */
 export function newRunId(): string {
   if (typeof crypto !== "undefined" && crypto.randomUUID) return crypto.randomUUID();

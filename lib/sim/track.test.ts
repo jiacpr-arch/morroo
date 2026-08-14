@@ -10,6 +10,9 @@ import {
   capiEventId,
   caseGameCategory,
   durationSeconds,
+  LINE_CTA_TARGETS,
+  lineCtaContentName,
+  lineCtaEventId,
 } from "./track";
 import { createInitialState } from "./engine";
 
@@ -243,5 +246,35 @@ describe("Meta CAPI helpers", () => {
     // คนละรอบเล่น = คนละ conversion; รอบเดียวกันยิงซ้ำ = ตัวเดียวกัน
     expect(capiEventId("start", "run-1")).not.toBe(capiEventId("start", "run-2"));
     expect(capiEventId("start", "run-1")).not.toBe(capiEventId("complete", "run-1"));
+  });
+});
+
+describe("LINE CTA Lead helpers", () => {
+  it("accepts exactly the two targets DebriefBrowseCta renders", () => {
+    // browse_*/login เป็นแค่การเดินดูต่อ ต้องไม่ผ่านเข้ามาเป็น Lead
+    expect(LINE_CTA_TARGETS.has("line_login")).toBe(true);
+    expect(LINE_CTA_TARGETS.has("line_trial")).toBe(true);
+    expect(LINE_CTA_TARGETS.size).toBe(2);
+  });
+
+  it("builds a content_name the Custom Conversion rule can prefix-match", () => {
+    expect(lineCtaContentName("line_trial")).toBe("casegame_line_cta:line_trial");
+    expect(
+      lineCtaContentName("line_login").startsWith("casegame_line_cta")
+    ).toBe(true);
+    // ต้องไม่ชน prefix ของ event เกม (casegame_start ฯลฯ) เวลาทำกติกาขึ้นต้นด้วย
+    expect(lineCtaContentName("line_login").startsWith("casegame_start")).toBe(false);
+  });
+
+  it("dedups per run+target so a double-tap is one Lead but the two buttons are two", () => {
+    expect(lineCtaEventId("run-1", "line_trial")).toBe(
+      "casegame:line_cta:run-1:line_trial"
+    );
+    expect(lineCtaEventId("run-1", "line_trial")).not.toBe(
+      lineCtaEventId("run-2", "line_trial")
+    );
+    expect(lineCtaEventId("run-1", "line_trial")).not.toBe(
+      lineCtaEventId("run-1", "line_login")
+    );
   });
 });
