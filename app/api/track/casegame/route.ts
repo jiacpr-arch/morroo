@@ -21,6 +21,8 @@ import { sendMetaEvent } from "@/lib/meta/events-api";
 import { getSimScenario } from "@/lib/supabase/queries-sim";
 import {
   capiContentName, capiEventId, caseGameCategory, type CaseGameCapiEvent,
+  LINE_CTA_TARGETS, lineCtaContentName, lineCtaEventId,
+  type CaseGameLineCtaTarget,
 } from "@/lib/sim/track";
 import { rateLimited } from "@/lib/firstaid/server/rateLimit";
 
@@ -30,7 +32,9 @@ export const runtime = "nodejs";
 // เผื่อหลายคนหลัง NAT เดียวกัน แต่ยังตัดการยิงถล่มทิ้ง
 const RATE_LIMIT = { key: "casegame-track", limit: 40, windowMs: 60_000 };
 
-const EVENTS = new Set(["start", "first_decision", "complete"]);
+// line_cta = กดปุ่ม LINE ท้ายเกม — ยิงเป็น `Lead` (ไม่ใช่ ViewContent) เพราะ
+// เป็นสัญญาณความตั้งใจเดียวของ funnel หลังเลิกเก็บอีเมล ใช้ optimize แคมเปญได้
+const EVENTS = new Set(["start", "first_decision", "complete", "line_cta"]);
 const SLUG_RE = /^[a-z0-9][a-z0-9-]{0,63}$/i;
 // runId มาจาก crypto.randomUUID() ฝั่ง client
 const RUN_ID_RE = /^[0-9a-z-]{8,64}$/i;
@@ -39,7 +43,7 @@ export async function POST(request: Request) {
   const limitedResponse = rateLimited(request, RATE_LIMIT);
   if (limitedResponse) return limitedResponse;
 
-  let body: { event?: unknown; slug?: unknown; runId?: unknown };
+  let body: { event?: unknown; slug?: unknown; runId?: unknown; target?: unknown };
   try {
     body = await request.json();
   } catch {
@@ -49,8 +53,13 @@ export async function POST(request: Request) {
   const event = typeof body.event === "string" ? body.event : "";
   const slug = typeof body.slug === "string" ? body.slug : "";
   const runId = typeof body.runId === "string" ? body.runId : "";
+  const target = typeof body.target === "string" ? body.target : "";
 
   if (!EVENTS.has(event) || !SLUG_RE.test(slug) || !RUN_ID_RE.test(runId)) {
+    return NextResponse.json({ ok: false }, { status: 400 });
+  }
+  const isLineCta = event === "line_cta";
+  if (isLineCta && !LINE_CTA_TARGETS.has(target as CaseGameLineCtaTarget)) {
     return NextResponse.json({ ok: false }, { status: 400 });
   }
 
@@ -58,7 +67,6 @@ export async function POST(request: Request) {
   const scenario = await getSimScenario(slug);
   if (!scenario) return NextResponse.json({ ok: true });
 
-  const capiEvent = event as CaseGameCapiEvent;
   const cookies = request.headers.get("cookie") ?? "";
   const readCookie = (name: string): string | null => {
     const match = cookies.match(new RegExp(`(?:^|;\\s*)${name}=([^;]+)`));
@@ -72,16 +80,21 @@ export async function POST(request: Request) {
   // META_TEST_EVENT_CODE เพราะแก้ไปแล้วใน #375 และไม่มี error log แม้แต่บรรทัด
   // เดียว แปลว่างานถูกตัดตอนเงียบๆ ไม่ใช่ fail) แลก latency นิดหน่อยเพื่อความ
   // ชัวร์ว่ายิงถึงจริงก่อนตอบ response ดีกว่า
+  const ctaTarget = target as CaseGameLineCtaTarget;
   await sendMetaEvent({
-    event: "ViewContent",
-    eventId: capiEventId(capiEvent, runId),
+    event: isLineCta ? "Lead" : "ViewContent",
+    eventId: isLineCta
+      ? lineCtaEventId(runId, ctaTarget)
+      : capiEventId(event as CaseGameCapiEvent, runId),
     ip: request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? null,
     userAgent: request.headers.get("user-agent"),
     fbc: readCookie("_fbc"),
     fbp: readCookie("_fbp"),
     url: request.headers.get("referer"),
     contentType: "casegame",
-    contentName: capiContentName(capiEvent, slug),
+    contentName: isLineCta
+      ? lineCtaContentName(ctaTarget)
+      : capiContentName(event as CaseGameCapiEvent, slug),
     contentIds: [`${caseGameCategory(scenario.category)}:${slug}`],
   });
 
