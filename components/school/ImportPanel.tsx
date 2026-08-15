@@ -167,6 +167,16 @@ export default function ImportPanel({ topics: initialTopics, systems }: Props) {
 
   const totalBytes = files.reduce((sum, f) => sum + f.size, 0);
 
+  /** ทำไมปุ่ม "เริ่มสร้างเนื้อหา" ยังกดไม่ได้ — null แปลว่าพร้อมแล้ว */
+  const blockedReason =
+    files.length === 0
+      ? "เลือกไฟล์ก่อน"
+      : !topicId
+        ? visibleTopics.length === 0
+          ? `ยังไม่มีวิชาสำหรับปี ${year} เทอม ${term} — กด "+ เพิ่มวิชาใหม่" ด้านบนก่อน`
+          : "เลือกวิชาก่อนถึงจะเริ่มได้"
+        : null;
+
   /**
    * Create a subject right here, so adding one never means leaving the upload
    * screen. slug/name_en aren't shown to students anywhere (their pages address
@@ -681,6 +691,14 @@ export default function ImportPanel({ topics: initialTopics, systems }: Props) {
                 : "เริ่มสร้างเนื้อหา"}
           </Button>
           {progress && <span className="text-xs text-muted-foreground">{progress}</span>}
+          {/*
+            ปุ่มที่กดไม่ได้ต้องบอกเหตุผลด้วย ไม่งั้นคนที่เลือกไฟล์ครบแล้วแต่ลืมเลือกวิชา
+            จะเห็นแค่ปุ่มจาง ๆ กดไม่ลง แล้วไม่รู้ว่าต้องทำอะไรต่อ (ข้อความเตือนในโค้ด
+            อยู่หลังการกดปุ่ม จึงไม่มีวันโผล่)
+          */}
+          {!loading && blockedReason && (
+            <span className="text-xs text-amber-700">{blockedReason}</span>
+          )}
         </div>
 
         {data && (
