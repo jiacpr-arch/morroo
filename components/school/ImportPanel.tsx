@@ -42,6 +42,8 @@ interface Extracted {
   flashcards: ExtractedFlashcard[];
   quizzes: ExtractedQuiz[];
   classification?: Classification | null;
+  /** The lesson hit the model's output cap and is missing its tail. */
+  truncated?: boolean;
 }
 
 interface SystemOption {
@@ -79,8 +81,14 @@ const QZ_PER_BATCH = 8;
 const DIRECT_UPLOAD_MAX = 4 * 1024 * 1024;
 const PDF_MAX = 32 * 1024 * 1024;
 
-/** Give up on a step rather than spin forever if the server side was killed. */
-const STEP_TIMEOUT_MS = 240_000;
+/**
+ * Give up on a step rather than spin forever if the server side was killed.
+ * The lesson step reads the whole file and writes the most tokens, so it gets
+ * nearly the route's full 300s `maxDuration`; the derived steps are far shorter
+ * and shouldn't leave the user waiting minutes on a request that's already dead.
+ */
+const LESSON_TIMEOUT_MS = 290_000;
+const STEP_TIMEOUT_MS = 120_000;
 
 export default function ImportPanel({ topics: initialTopics, systems }: Props) {
   // Subjects added inline live here until the next server render picks them up.
@@ -200,19 +208,22 @@ export default function ImportPanel({ topics: initialTopics, systems }: Props) {
    * the platform killed server-side leaves the button spinning forever with no
    * hint that anything went wrong.
    */
-  async function post(body: FormData | Record<string, unknown>): Promise<Response> {
+  async function post(
+    body: FormData | Record<string, unknown>,
+    timeoutMs = STEP_TIMEOUT_MS,
+  ): Promise<Response> {
     const isForm = body instanceof FormData;
     return fetch("/api/admin/school/import", {
       method: "POST",
       headers: isForm ? undefined : { "content-type": "application/json" },
       body: isForm ? body : JSON.stringify(body),
-      signal: AbortSignal.timeout(STEP_TIMEOUT_MS),
+      signal: AbortSignal.timeout(timeoutMs),
     });
   }
 
   /** One import step. Throws with the server's Thai message on failure. */
-  async function step<T>(body: Record<string, unknown>): Promise<T> {
-    const res = await post(body);
+  async function step<T>(body: Record<string, unknown>, timeoutMs?: number): Promise<T> {
+    const res = await post(body, timeoutMs);
     if (!res.ok) {
       const j = (await res.json().catch(() => ({}))) as { error?: string };
       throw new Error(j.error ?? `ขั้นตอนนี้ล้มเหลว (${res.status})`);
@@ -247,19 +258,26 @@ export default function ImportPanel({ topics: initialTopics, systems }: Props) {
   async function extractLesson(
     f: File,
     hint: string,
-  ): Promise<{ lesson: ExtractedLesson; classification?: Classification | null }> {
+  ): Promise<{
+    lesson: ExtractedLesson;
+    classification?: Classification | null;
+    truncated?: boolean;
+  }> {
     if (f.size > DIRECT_UPLOAD_MAX) {
       setProgress("กำลังอัปโหลดไฟล์…");
       const path = await uploadToStorage(f);
-      setProgress("AI กำลังอ่านไฟล์และเขียนบทเรียน…");
-      return step({ step: "lesson", storage_path: path, hint, extractMode });
+      setProgress("AI กำลังอ่านไฟล์และเขียนบทเรียน… (อาจใช้เวลา 2-4 นาที)");
+      return step(
+        { step: "lesson", storage_path: path, hint, extractMode },
+        LESSON_TIMEOUT_MS,
+      );
     }
-    setProgress("AI กำลังอ่านไฟล์และเขียนบทเรียน…");
+    setProgress("AI กำลังอ่านไฟล์และเขียนบทเรียน… (อาจใช้เวลา 2-4 นาที)");
     const fd = new FormData();
     fd.append("file", f);
     fd.append("hint", hint);
     fd.append("extractMode", extractMode);
-    const res = await post(fd);
+    const res = await post(fd, LESSON_TIMEOUT_MS);
     if (!res.ok) {
       const j = (await res.json().catch(() => ({}))) as { error?: string };
       throw new Error(j.error ?? `อ่านไฟล์ไม่สำเร็จ (${res.status})`);
@@ -297,8 +315,8 @@ export default function ImportPanel({ topics: initialTopics, systems }: Props) {
         : `ปี ${year} เทอม ${term}`;
 
       // 1. Lesson (carries the file).
-      const { lesson, classification } = await extractLesson(file, hint);
-      setData({ lesson, flashcards: [], quizzes: [], classification });
+      const { lesson, classification, truncated } = await extractLesson(file, hint);
+      setData({ lesson, flashcards: [], quizzes: [], classification, truncated });
 
       const plan = PLAN[extractMode];
 
@@ -316,7 +334,7 @@ export default function ImportPanel({ topics: initialTopics, systems }: Props) {
         });
         if (!out.flashcards?.length) break; // model gave up — stop rather than loop forever
         flashcards.push(...out.flashcards);
-        setData({ lesson, flashcards: [...flashcards], quizzes: [], classification });
+        setData({ lesson, flashcards: [...flashcards], quizzes: [], classification, truncated });
       }
 
       // 3. Quizzes, same pattern.
@@ -333,7 +351,7 @@ export default function ImportPanel({ topics: initialTopics, systems }: Props) {
         });
         if (!out.quizzes?.length) break;
         quizzes.push(...out.quizzes);
-        setData({ lesson, flashcards, quizzes: [...quizzes], classification });
+        setData({ lesson, flashcards, quizzes: [...quizzes], classification, truncated });
       }
     } catch (e) {
       const timedOut = e instanceof DOMException && e.name === "TimeoutError";
@@ -617,6 +635,14 @@ export default function ImportPanel({ topics: initialTopics, systems }: Props) {
                 ทิ้งผลลัพธ์
               </button>
             </div>
+
+            {data.truncated && (
+              <p className="rounded border border-rose-300 bg-rose-50 p-2 text-xs text-rose-900">
+                บทเรียนนี้ยาวเกินโควตาต่อครั้ง AI จึงเขียนไม่จบ — ส่วนท้ายขาดหายไป
+                (มีหมายเหตุกำกับไว้ท้ายบทเรียน) เติมให้ครบก่อนบันทึก
+                หรือแยกไฟล์ให้เล็กลงแล้วสร้างใหม่
+              </p>
+            )}
 
             {extractMode !== "faithful" && (
               <p className="rounded border border-amber-300 bg-amber-50 p-2 text-xs text-amber-900">
