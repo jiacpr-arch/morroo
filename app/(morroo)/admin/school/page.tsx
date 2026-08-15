@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
 import { getSchoolSystems } from "@/lib/supabase/queries-school";
+import { compareTopicByCode } from "@/lib/school/topic-order";
 import SchoolAdminPanel from "@/components/school/SchoolAdminPanel";
 
 export const dynamic = "force-dynamic";
@@ -59,6 +60,10 @@ export default async function SchoolAdminPage() {
     code?: string | null;
     school_systems?: { slug: string; name_th: string; icon?: string } | null;
   };
+  // ในแต่ละชั้นปี เรียงตามรหัสวิชา — ให้ dropdown ตรงกับลิสต์ฝั่งนักเรียน
+  const topics = ((topicsRecent as TopicPick[] | null) ?? []).sort(
+    (a, b) => a.year - b.year || compareTopicByCode(a, b),
+  );
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
@@ -95,7 +100,7 @@ export default async function SchoolAdminPage() {
 
       <SchoolAdminPanel
         systems={systems.map((s) => ({ id: s.id, slug: s.slug, name_th: s.name_th, icon: s.icon }))}
-        topics={(topicsRecent as TopicPick[] | null) ?? []}
+        topics={topics}
       />
     </div>
   );

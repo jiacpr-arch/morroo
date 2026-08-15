@@ -21,6 +21,7 @@ import { NextRequest, NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { createAnthropic } from "@/lib/anthropic";
 import { createClient } from "@/lib/supabase/server";
+import { compareTopicByCode } from "@/lib/school/topic-order";
 import {
   estimateMinutes,
   keepComplete,
@@ -366,7 +367,9 @@ async function loadTopicCandidates(
       system_name: sys?.name_th ?? "—",
       code: r.code ?? null,
     };
-  });
+  })
+  // เรียงตามชั้นปี + รหัสวิชา ให้ลิสต์ที่ส่งให้โมเดลอ่านง่ายเหมือนฝั่งนักเรียน
+  .sort((a, b) => a.year - b.year || compareTopicByCode(a, b));
 }
 
 async function classifyTopic(

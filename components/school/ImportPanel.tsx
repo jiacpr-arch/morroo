@@ -3,6 +3,7 @@
 import { useMemo, useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { sortTopicsByCode } from "@/lib/school/topic-order";
 
 interface TopicOption {
   id: string;
@@ -118,7 +119,10 @@ export default function ImportPanel({ topics: initialTopics, systems }: Props) {
   // วิชาที่ยังไม่ระบุเทอม (term = null) ให้ขึ้นในทุกเทอม — ไม่งั้นวิชาเดิม
   // ที่ยังไม่ได้กรอกเทอมจะหายไปจาก dropdown ทั้งหมด
   const visibleTopics = useMemo(
-    () => topics.filter((t) => t.year === year && (t.term == null || t.term === term)),
+    () =>
+      sortTopicsByCode(
+        topics.filter((t) => t.year === year && (t.term == null || t.term === term)),
+      ),
     [topics, year, term],
   );
 
