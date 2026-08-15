@@ -103,11 +103,16 @@ interface SimRunnerProps {
    * null = ไม่ได้ล็อกอิน (จอ title ไม่แสดงแถบยศ)
    */
   playerXp?: number | null;
+  /**
+   * ผู้เล่นซื้อแพ็กเกจไว้แล้วและยังไม่หมดอายุ — ปิดคำชวนซื้อท้ายเกม
+   * default false เพราะคนที่ไม่ได้ล็อกอินย่อมยังไม่ได้ซื้อ
+   */
+  isPremium?: boolean;
 }
 
 export default function SimRunner({
   scenario, practice = false, characters,
-  autostart = false, specialty = null, playerXp = null,
+  autostart = false, specialty = null, playerXp = null, isPremium = false,
 }: SimRunnerProps) {
   const dbCharacters = useMemo(
     () => new Map((characters ?? []).map((c) => [c.slug, c])),
@@ -814,28 +819,33 @@ export default function SimRunner({
             <Link href={hubHref} className="cbs-btn-ghost">เลือกเคสอื่น</Link>
           </div>
           {/* เส้นทางไปหน้าแพ็กเกจ — เดิมคนที่ไม่กรอกอีเมลจะไม่เจอทางไปสู่การ
-              สมัคร/ซื้อเลย วางเป็นลิงก์รองไม่ให้ไปแย่งความสนใจจาก CTA เก็บ lead */}
-          {!practice && (
-            <p className="cbs-upsell">
-              อยากฝึกครบทุกเคส + ข้อสอบเต็มระบบ?{" "}
-              <Link
-                href="/pricing"
-                onClick={() =>
-                  track(
-                    CASEGAME_EVENTS.ctaClick,
-                    buildCtaClickProps({
-                      slug: scenario.slug,
-                      category: scenario.category,
-                      grade: result.grade,
-                      runId: runIdRef.current,
-                      target: "pricing",
-                    })
-                  )
-                }
-              >
-                ดูแพ็กเกจสมาชิก →
-              </Link>
-            </p>
+              สมัคร/ซื้อเลย เคยวางเป็นบรรทัดข้อความจาง ๆ ไม่ให้แย่งความสนใจจาก
+              CTA เก็บ lead แต่เลิกเก็บ lead ไปแล้ว (2026-07-25) เหลือไว้เป็น
+              ตัวหนังสือเล็กจึงไม่มีใครเห็น — ยกขึ้นเป็นปุ่มเต็มความกว้าง
+
+              ซ่อนจากคนที่ซื้อแพ็กเกจไปแล้ว (isPremium มาจากเซิร์ฟเวอร์) — จบเคส
+              แล้วยังโดนชวนซื้อของที่จ่ายไปแล้วคือประสบการณ์ที่แย่ และทำให้
+              `casegame_cta_click:pricing` ปนคลิกของคนที่ไม่มีทางซื้อซ้ำ */}
+          {!practice && !isPremium && (
+            <Link
+              href="/pricing"
+              className="cbs-upsell-btn"
+              onClick={() =>
+                track(
+                  CASEGAME_EVENTS.ctaClick,
+                  buildCtaClickProps({
+                    slug: scenario.slug,
+                    category: scenario.category,
+                    grade: result.grade,
+                    runId: runIdRef.current,
+                    target: "pricing",
+                  })
+                )
+              }
+            >
+              <span className="cbs-upsell-label">ดูแพ็กเกจสมาชิก →</span>
+              <span className="cbs-upsell-sub">ฝึกครบทุกเคส + ข้อสอบเต็มระบบ</span>
+            </Link>
           )}
         </section>
       </div>

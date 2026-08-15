@@ -47,6 +47,7 @@ export default async function SimPlayPage({ params, searchParams }: PageProps) {
       characters={characters}
       specialty={specialty}
       playerXp={doctor?.xp ?? null}
+      isPremium={doctor?.isPremium ?? false}
       autostart={firstParam(sp.start) === "1"}
     />
   );
